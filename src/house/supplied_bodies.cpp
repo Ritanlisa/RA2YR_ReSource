@@ -3,7 +3,6 @@
 // GENERATED supplied bodies (supply_missing_bodies.py) -- no-body
 // no-file FAIL family; bodies are cache-verbatim transforms.
 #include "core/utility_ext.hpp"
-#include "e4/classes/AbstractClass_e4.hpp"
 #include "core/vector.hpp"
 #include "house/house.hpp"
 #include "misc/audio.hpp"
@@ -13,6 +12,7 @@
 #include "structure/building.hpp"
 #include "team/team.hpp"
 #include "ui/message_list.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "core/init_stubs.hpp"  // G42.32 S R3: TimerGetTicks (init_stubs carrier)
 #include "e4/classes/Audio_e4.hpp"  // gB C2027 supply
@@ -22,7 +22,10 @@
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int vftable;  // 词表 (canon 无条目, int 兜底) L579
+extern char aEvaInsufficien[];  // G57w8: raw IDA string-label vocab
 // ---- g57b5 W6 end ----
+struct Math { static int RoundToInt(double a1); };  // G57w8 raw fn_49 词表 (Math::RoundToInt)
+struct Rules { static int GetProductionTimeMult(...); };  // G57w8 raw 0x4F8BCB 词表 (Rules::GetProductionTimeMult)
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
 int TeamClass_CreateOneOf(...);   // g57b5 W5: raw 词表 (纯变参兜底)
@@ -102,7 +105,7 @@ int HouseClass::createStartingUnits(int a2)
     {
       result = 3 * a2; /*0x431421*/
       v4 = 0; /*0x431424*/
-      v5 = this + 3 * a2; /*0x431426*/
+      v5 = (void **)(this + 3 * a2); /*0x431426*/  // G57w8 ptr 桥
       do /*0x43143f*/
       {
         if ( *v5 ) /*0x43142a*/
@@ -154,7 +157,7 @@ namespace gamemd {
 void HouseClass::Update_TogglePower(double a2)
 {
     int v2; // ecx
-    ObjectClass *v3; // esi
+    Object *v3; // esi
     int v4; // ecx
     int v5; // eax
     int v6; // ecx
@@ -181,7 +184,7 @@ void HouseClass::Update_TogglePower(double a2)
     int v27; // ecx
     int *v28; // eax
     int v29; // eax
-    ObjectClass *v30; // eax
+    Object *v30; // eax
     int ClosestObjectCell; // eax
     int v32; // edi
     int v33; // ebx
@@ -273,7 +276,7 @@ void HouseClass::Update_TogglePower(double a2)
     int v124; // [esp+54h] [ebp-28h]
     void **v125[7]; // [esp+60h] [ebp-1Ch] BYREF
 
-    v3 = (ObjectClass *)v2; /*0x4f8446*/
+    v3 = (Object *)v2; /*0x4f8446*/
     v4 = *(unsigned int *)(v2 + 676); /*0x4f844b*/
     v5 = *(unsigned int *)v3[1].vtable4; /*0x4f8451*/
     if ( v4 != -1 ) /*0x4f8460*/
@@ -382,12 +385,12 @@ void HouseClass::Update_TogglePower(double a2)
       v3->__pad_140[183] = 0; /*0x4f8657*/
       if ( *(unsigned int *)&dword_A8B238 ) /*0x4f8666*/
       {
-        if ( v3 != dword_A83D4C ) /*0x4f8690*/
+        if ( (unsigned int)v3 != dword_A83D4C ) /*0x4f8690*/  // G57w8 uint 桥
         {
           if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x4f86c0*/
             && dword_A8B23C
-            && (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C)
-            && (*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable1 + 8))(dword_A8B23C) )
+            && (*(unsigned __int8 (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C)
+            && (*(unsigned __int8 (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 8))(dword_A8B23C) )
           {
             v20 = v3->__pad_140[172]; /*0x4f86ce*/
             if ( !*(unsigned int *)&dword_A8B238 ) /*0x4f86d4*/
@@ -459,7 +462,7 @@ void HouseClass::Update_TogglePower(double a2)
       byte_A8ECD0 = 1; /*0x4f87b2*/
       goto LABEL_83; /*0x4f87b9*/
     }
-    if ( v3 == dword_A83D4C ) /*0x4f87b0*/
+    if ( (unsigned int)v3 == dword_A83D4C ) /*0x4f87b0*/  // G57w8 uint 桥
       goto LABEL_81; /*0x4f87b0*/
   LABEL_82:
     byte_A83D49 = 1; /*0x4f87bb*/
@@ -490,7 +493,7 @@ void HouseClass::Update_TogglePower(double a2)
     if ( dword_A83D4C->nextObject == v3->nextObject
       && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4)
       && dword_A8B23C
-      && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) )
+      && !(*(unsigned __int8 (__thiscall **)(Object *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) )
     {
       if ( (byte_A8F03C & 1) == 0 ) /*0x4f8873*/
       {
@@ -514,7 +517,7 @@ void HouseClass::Update_TogglePower(double a2)
     {
       Ticks = 0; /*0x4f8956*/
       v119 = 0; /*0x4f895a*/
-      v30 = (ObjectClass *)CellCoord_To_CellObj((void *)&dword_87F7E8, (__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
+      v30 = (Object *)CellCoord_To_CellObj((void *)&dword_87F7E8, (__int16 *)&v3[31].__pad_140[320]); /*0x4f895e*/
       ClosestObjectCell = ObjectClass_FindClosestObjectCell(v30, &Ticks, 0, 0); /*0x4f8965*/
       v32 = ClosestObjectCell; /*0x4f896a*/
       if ( ClosestObjectCell ) /*0x4f896e*/
@@ -580,8 +583,8 @@ void HouseClass::Update_TogglePower(double a2)
     {
       AISelectTeamHouseClass(v125, (int)v3, 0); /*0x4f8a6a*/
       TeamTypeVector_CopyConstruct(&v121, v125); /*0x4f8a78*/
-      v121 = (TeamTypeVector)&TypeList<TeamTypeClass const *>::`vftable'; /*0x4f8a86*/
-      v125[0] = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x4f8a8e*/
+      v121 = *(TeamTypeVector *)&vftable; /*0x4f8a86*/  // G57w8: 解引用形（ptr->struct 值语义）
+      v125[0] = (void **)&vftable; /*0x4f8a8e*/  // G57w8 同上
       VectorClass::ClearAndFree3((int)v125); /*0x4f8a92*/
       if ( v124 > 0 ) /*0x4f8a9d*/
       {
@@ -594,26 +597,26 @@ void HouseClass::Update_TogglePower(double a2)
       v44 = Block; /*0x4f8adf*/
       *(unsigned int *)&v3[33].__pad_EC[16] = v43; /*0x4f8ae3*/
       *(unsigned int *)&v3[33].__pad_EC[20] = v42; /*0x4f8aeb*/
-      v121 = (TeamTypeVector)&VectorClass<TeamTypeClass const *>::`vftable'; /*0x4f8af1*/
+      v121 = *(TeamTypeVector *)&vftable; /*0x4f8af1*/  // G57w8: 解引用形（ptr->struct 值语义）
       if ( v44 && v123 ) /*0x4f8afd*/
         RA2_OPDEL(v44); /*0x4f8b00*/
     }
   LABEL_135:
-    if ( dword_A83D4C == v3 ) /*0x4f8b0e*/
+    if ( dword_A83D4C == (unsigned int)v3 ) /*0x4f8b0e*/  // G57w8 uint 桥
     {
       if ( !*(unsigned int *)&v3[1].attachedBomb[24] && byte_880999 ) /*0x4f8b23*/
         BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x4f8b2b*/
-      if ( dword_A83D4C == v3 ) /*0x4f8b36*/
+      if ( dword_A83D4C == (unsigned int)v3 ) /*0x4f8b36*/  // G57w8 uint 桥
       {
         v45 = *(unsigned int *)&v3[33].__pad_EC[72]; /*0x4f8b3c*/
         Object_field_0x13C = v3[33].Object_field_0x13C; /*0x4f8b42*/
-        v47 = &v3[33].__pad_EC[72]; /*0x4f8b48*/
+        v47 = (char *)&v3[33].__pad_EC[72]; /*0x4f8b48*/  // G57w8 同上
         if ( v45 != -1 ) /*0x4f8b51*/
         {
           if ( (int)dword_A8ED84 - v45 >= Object_field_0x13C ) /*0x4f8b5d*/
           {
   LABEL_144:
-            if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&v3->vtable4[24] + 24))(&v3->vtable4[24]) < 100 /*0x4f8b94*/
+            if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&v3->vtable4[24] + 24))((char *)&v3->vtable4[24]) < 100 /*0x4f8b94*/  // G57w8 char* 桥
               && *(unsigned int *)&v3[31].__pad_140[220]
                + *(unsigned int *)&v3[31].__pad_140[224]
                + *(unsigned int *)&v3[31].__pad_140[228]
@@ -958,7 +961,7 @@ void HouseClass::Update_TogglePower(double a2)
           && *(int *)(v110 + 108) > 0
           && (*(int (__thiscall **)(int))(*(unsigned int *)v110 + 388))(v110) != 19
           && *(unsigned int *)(v110 + 180) != 19
-          && dword_A83D4C == *(ObjectClass **)(v110 + 540) )
+          && dword_A83D4C == *(Object **)(v110 + 540) )
         {
           (*(void (__thiscall **)(int))(*(unsigned int *)v110 + 1248))(v110); /*0x4f92d2*/
         }

@@ -509,6 +509,9 @@ public:
 
 };
 // 14 methods in IDA
+#ifndef GAMEMD_E4_FLAT_UDPInterfaceClass_Destru  // G57w8: three-way interlock (e4 full carrier / minimal_carriers / network_ext)
+#define GAMEMD_E4_FLAT_UDPInterfaceClass_Destru 1
+
 class UDPInterfaceClass_Destru
 {
 public:
@@ -548,6 +551,7 @@ public:
     int Connect(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x7b3720
     // === FUNCS-MOVE (END) ===
 };
+#endif  // GAMEMD_E4_FLAT_UDPInterfaceClass_Destru
 // 1 methods in IDA
 class WOLGameClass
 {

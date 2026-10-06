@@ -43,6 +43,9 @@
 #include "e4/classes/Turret_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/Function_e4.hpp"
+#include "e4/classes/CrateClass_e4.hpp"
+#include "e4/classes/DriveLocomotionClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
@@ -142,7 +145,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   char v90[48]; // [esp+118h] [ebp-30h] BYREF
 
   v2 = (double)(this);
-  v74 = this; /*0x439b0b*/
+  v74 = (double *)(this); /*0x439b0b*/
   v3 = *(this + 2); /*0x439b17*/
   v4 = (float *)(this + 3); /*0x439b1a*/
   *(double *)((unsigned int *)(v72))[0].__tail_0 = v3; /*0x439b22*/
@@ -278,7 +281,7 @@ LABEL_35:
   ((Coord *)(v58))->Scale(v63); /*0x439e31*/
   v73 = (unsigned int)(-v73); /*0x439e46*/
   v27 = (Triple *)((Matrix3x3 *)(v85))->TransformPoint( (float *)v72, (float *)(v64)); /*0x439e51*/
-  v28 = (unsigned int)(v74); /*0x439e58*/
+  v28 = (double *)((unsigned int)(v74)); /*0x439e58*/
   ((unsigned int *)(v72))[0] = (unsigned int)(*v27); /*0x439e5c*/
   v29 = (char *)(v74 + 8); /*0x439e65*/
   ((unsigned int *)(v72))[1] = (unsigned int)(v27[1]); /*0x439e68*/
@@ -652,7 +655,7 @@ LABEL_51:
   v52 = v14; /*0x4b00c6*/
   LOWORD(v16) = Math::RoundToInt(v48 * v49); /*0x4b00ca*/
   LOWORD(v17) = Math::RoundToInt(v49 - (double)v16); /*0x4b00db*/
-  v18 = ((unsigned int *)a1)[0]; /*0x4b00e0*/
+  v18 = (gamemd::FootClass *)(((unsigned int *)a1)[0]); /*0x4b00e0*/
   v50 = v17; /*0x4b00e5*/
   if ( *(float *)&((unsigned int *)v18)[0] < 0.0 ) /*0x4b00fa*/
     v52 = -v15; /*0x4b00fe*/
@@ -773,7 +776,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       }
       else
       {
-        JumpjetLocomotion::MoveTo( (IUnknown *)((int)a1 - 4), (int)(&v12), 1); /*0x4b0d3a*/
+        JumpjetLocomotion::MoveTo( (IUnknown *)((int)a1 - 4), (int)(&v12),(void *)( 1)); /*0x4b0d3a*/
         LOBYTE(v4) = (unsigned char)a1 + 48; /*0x4b0d3f*/
         a1->SlopeTimer[3] = a3; /*0x4b0d4a*/
         *(unsigned long long *)a1->Dest = a4; /*0x4b0d4c*/
@@ -847,7 +850,7 @@ v5 = (int *)(*(int (**)(DriveLocomotionClass *, unsigned int *))(*(unsigned int 
             v15 = (int *)((JumpjetLocomotion *)((JumpjetLocomotion *)&v4[-1].Piggybackee))->TransformCoords( (unsigned int *)(v21), (int *)(v20), (int *)&a1); /*0x4b49e1*/
             v16 = *v15; /*0x4b49e6*/
             v17 = v15[1]; /*0x4b49e8*/
-            location = ((unsigned int *)v4)[0]; /*0x4b49ee*/
+            location = (int *)(((unsigned int *)v4)[0]); /*0x4b49ee*/
             v21[0] = *location; /*0x4b49f5*/
             v21[1] = location[1]; /*0x4b49fc*/
             v22 = location[2]; /*0x4b4a03*/

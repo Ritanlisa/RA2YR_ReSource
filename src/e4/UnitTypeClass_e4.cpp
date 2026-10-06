@@ -41,7 +41,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
     v1 = 0; /*0x6b4dde*/
-    v9 = this; /*0x6b4de3*/
+    v9 = (char *)(this); /*0x6b4de3*/
     INIClass::ClearSection((int)this, (int)unk_81732C, 0); /*0x6b4de7*/
     v7 = 0; /*0x6b4dec*/
     do /*0x6b4e8e*/
@@ -115,7 +115,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     *(unsigned int *)(this + 4) = (unsigned int)(void*)&UnitTypeClass_vftable; /*0x7471c5*/
     *(unsigned int *)(this + 8) = (unsigned int)(void*)&UnitTypeClass_vftable; /*0x7471cb*/
     *(unsigned int *)(this + 12) = (unsigned int)(void*)&UnitTypeClass_vftable; /*0x7471d2*/
-    AbstractClass::GenerateUniqueID(this + 4); /*0x7471d9*/
+    AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x7471d9*/
     *(unsigned int *)(this + 1816) = 32; /*0x7471de*/
     v3 = dword_A83CF0; /*0x7471e8*/
     if ( dword_A83CF0 < dword_A83CE8 /*0x747226*/
@@ -141,7 +141,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     else
     {
       v6 = (unsigned int *)(dword_A83CE4); /*0x747243*/
-      while ( *v6 != this ) /*0x74724b*/
+      while ( *v6   !=   (unsigned int)((unsigned int)(this ))) /*0x74724b*/
       {
         ++v5; /*0x74724d*/
         ++v6; /*0x74724e*/
@@ -216,8 +216,9 @@ int UnitTypeClass::ConstructUnit(void *ppv)
 }
 // 0x747620
 namespace gamemd {
-char UnitTypeClass_LoadFromINI(double a2, unsigned char *** a3)
+char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
 {
+    UnitTypeClass *self = (UnitTypeClass *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x747620) */
     BuildingClass *v3; // ecx
     BuildingClass *v4; // edi
     unsigned __int8 *p_occupant; // ebp
@@ -512,7 +513,7 @@ char UnitTypeClass_LoadFromINI(double a2, unsigned char *** a3)
     while ( v35 < 4 ); /*0x747b47*/
     strcpy( (char *)(Source), (const char *)&v4[1].ProductionTimer + 2); /*0x747b6f*/
     INIClass::GetString((INIClass *)self, p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
-    _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2, Ext); /*0x747ba6*/
+    _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2,(const char *)( Ext)); /*0x747ba6*/
     v83[1].BunkerState = (int)SearchMIXFile( (char *)(v86), 0); /*0x747bc4*/
     if ( ((AbstractTypeClass *)(int)v83)->NameEquals( g_INI_Key_TRUCKA.?) ) /*0x747bca*/
     {
@@ -578,7 +579,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
     int v2; // esi
     VoxelAnimTypeClass *v3; // eax
 
-    if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x74b97c*/
+    if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x74b97c*/
       return 0; /*0x74b9df*/
     v2 = 0; /*0x74b98d*/
     if ( stru_A8EB00.ObjectTypeClass[14] <= 0 ) /*0x74b991*/
@@ -586,7 +587,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
   LABEL_6:
       v3 = (VoxelAnimTypeClass *)RA2_OPNEW(0x308u); /*0x74b9b6*/
       if ( v3 ) /*0x74b9c5*/
-        return ((VoxelAnimTypeClass *)v3)->Constructor( (char *)(Source)); /*0x74b9d1*/
+        return (gamemd::VoxelAnimTypeClass **)(((VoxelAnimTypeClass *)v3)->Constructor( (char *)(Source))); /*0x74b9d1*/
       return 0; /*0x74b9c5*/
     }
     while ( _strcmpi((*(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v2) + 36), Source) ) /*0x74b9aa*/
@@ -719,7 +720,7 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     char v3; // [esp+7h] [ebp-105h] BYREF
     char Buffer[260]; // [esp+8h] [ebp-104h] BYREF
 
-    result = ((TechnoTypeClass *)(((TechnoTypeClass *)this)))->SaveLoad_Prefix( a2); /*0x748024*/
+    result = (int)(((TechnoTypeClass *)(((TechnoTypeClass *)this)))->SaveLoad_Prefix( a2)); /*0x748024*/
     if ( result >= 0 ) /*0x74802b*/
     {
       if ( this ) /*0x74802f*/

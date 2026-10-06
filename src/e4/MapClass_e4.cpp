@@ -191,7 +191,7 @@ v5 = (*(int (**)(char *, char *))(*(unsigned int *)&stru_87F5F0.__pad_E12[1346] 
       }
     }
   }
-  if ( this->MapClass_field_0x2C == v3 ) /*0x485194*/
+  if ( this->MapClass_field_0x2C   ==   (unsigned int)((unsigned int)(v3 ))) /*0x485194*/
     this->MapClass_field_0x2C = 0; /*0x485196*/
   if ( *(void **)this->__pad_30 == v3 ) /*0x4851a0*/
     *(unsigned int *)this->__pad_30 = 0; /*0x4851a2*/
@@ -882,7 +882,7 @@ void MapClass::Destru_vt07()
   Event::Dispatch(); /*0x565a24*/
   ((VectorCursor_uint_DynamicVectorClass_uint____13 *)((GScreenClass *)this))->Remove(); /*0x565a2b*/
   Event::Dispatch(); /*0x565a30*/
-  v2 = &this->__pad_144[20]; /*0x565a35*/
+  v2 = (char *)(&this->__pad_144[20]); /*0x565a35*/
   v3 = 256; /*0x565a3b*/
   do /*0x565a76*/
   {
@@ -955,7 +955,7 @@ unsigned int * MapClass::InitAllCells()
     v4 = 512; /*0x565bd0*/
     do /*0x565bf4*/
     {
-      if ( v2 < this->q140 ) /*0x565bdb*/
+      if ( v2   <   (int)((int)(this->q140 ))) /*0x565bdb*/
       {
         result = (unsigned int *)(this->MapClass_field_0x13C); /*0x565bdd*/
         v6 = (CellClass *)result[v3]; /*0x565be3*/

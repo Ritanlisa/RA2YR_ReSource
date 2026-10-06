@@ -35,6 +35,20 @@
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
+#include "e4/classes/AbstractClassVector_e4.hpp"
+#include "e4/classes/AirstrikeClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/AudioFile_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/ParasiteClass_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/SpawnManagerClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/TemporalClass_e4.hpp"
 #include "e4/classes/Delegate_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
 
@@ -392,7 +406,7 @@ unsigned int * TechnoClass::Update(int a2)
   v3 = (TechnoClass *)v2; /*0x6f3f41*/
   v4 = *(Object **)(v2 + 540); /*0x6f3f43*/
   if ( v4 ) /*0x6f3f4b*/
-    *(unsigned char *)(v2 + 1050) = dword_A83D4C == v4; /*0x6f3f55*/
+    *(unsigned char *)(v2 + 1050) = dword_A83D4C   ==   (unsigned int)((unsigned int)(v4)); /*0x6f3f55*/
   result = (unsigned int *)(*(int (**)(void))(*(unsigned int *)v2 + 132))(); /*0x6f3f69*/
   if ( result ) /*0x6f3f71*/
   {
@@ -413,7 +427,7 @@ unsigned int * TechnoClass::Update(int a2)
       {
         v8 = 0; /*0x6f3ffb*/
       }
-      v3->spawnManager = (SpawnManagerClass *)v8; /*0x6f3ffd*/
+      v3->spawnManager = (gamemd::CaptureManagerClass *)((SpawnManagerClass *)v8); /*0x6f3ffd*/
     }
     if ( *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)) + 3392) ) /*0x6f400d*/
     {
@@ -424,7 +438,7 @@ unsigned int * TechnoClass::Update(int a2)
         v32 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)) + 3400); /*0x6f404a*/
         v30 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)) + 3396); /*0x6f405b*/
         v10 = (*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)); /*0x6f405e*/
-        v11 = ((SlaveManagerClass *)v9)->ctor( (TechnoClass *)((int)v3), *(unsigned int *)(v10 + 3392), v30, v32, v34); /*0x6f406e*/
+        v11 = (int)(((SlaveManagerClass *)v9)->ctor( (TechnoClass *)((int)v3), *(unsigned int *)(v10 + 3392), v30, v32, v34)); /*0x6f406e*/
       }
       else
       {
@@ -448,7 +462,7 @@ unsigned int * TechnoClass::Update(int a2)
       {
         v15 = 0; /*0x6f40f0*/
       }
-      v3->captureManager = (CaptureManagerClass *)v15; /*0x6f40f2*/
+      v3->captureManager = (gamemd::FootClass *)((CaptureManagerClass *)v15); /*0x6f40f2*/
     }
     if ( (*((int (**)(TechnoClass *))v3->vtable1 + 11))( (TechnoClass *)(v3)) != 6 /*0x6f412a*/
       && *(unsigned int *)(*((int (**)(TechnoClass *, unsigned int))v3->vtable1 + 254))( (TechnoClass *)(v3), 0)
@@ -484,13 +498,13 @@ unsigned int * TechnoClass::Update(int a2)
         v22 = AirstrikeClass::AirstrikeClass(v21, (int)v3); /*0x6f41e5*/
       else
         v22 = 0; /*0x6f41ec*/
-      v3->airstrike = (AirstrikeClass *)v22; /*0x6f41ee*/
+      v3->airstrike = (unsigned int)((AirstrikeClass *)v22); /*0x6f41ee*/
     }
     if ( *(unsigned char *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)) + 3375) /*0x6f4212*/
       && *(unsigned char *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)) + 3376) )
     {
       owner = v3->owner; /*0x6f421c*/
-      v3->isDisguisedFlag = 1; /*0x6f4222*/
+      v3->isDisguisedFlag = (gamemd::TechnoClass *)(1); /*0x6f4222*/
       v3->disguisedAsHouse = owner; /*0x6f4229*/
       sideIndex = owner->sideIndex; /*0x6f422f*/
       if ( sideIndex ) /*0x6f4237*/
@@ -587,7 +601,7 @@ int TechnoClass::DTOR()
     *((unsigned int *)this + 157) = 0; /*0x6f459e*/
   }
   v8 = *(unsigned int **)&this->airstrike; /*0x6f45a4*/
-  if ( v8 && v8[19] == this ) /*0x6f45b1*/
+  if ( v8 && v8[19]   ==   (unsigned int)((unsigned int)(this ))) /*0x6f45b1*/
   {
     (*(void (**)(unsigned int *, int))(*v8 + 32))( (unsigned int *)(v8), 1); /*0x6f45bb*/
     *((unsigned int *)this + 165) = 0; /*0x6f45be*/

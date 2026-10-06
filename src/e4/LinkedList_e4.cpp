@@ -237,7 +237,7 @@ void * LinkedList_flat::MoveNode(void * a2)
   if ( a2 != this ) /*0x55660a*/
   {
     (*(void (**)(LinkedList *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x55660e*/
-    (*(void (**)(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))( this, (void *)(a2)); /*0x556616*/
+    (*(void ((gamemd::LinkedList *)(**))(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))( this, (void *)(a2)); /*0x556616*/
   }
   return (void *)this; /*0x55661b*/
 
@@ -280,7 +280,7 @@ LinkClass * * LinkedList_flat::InsertAfter(int a2)
   this->m_Next = (unsigned int)(v3); /*0x5566b7*/
   if ( v3 ) /*0x5566ba*/
     v3->m_Prev = (unsigned int)(this); /*0x5566bc*/
-  return (*(int (**)(void *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x5566c6*/
+  return (gamemd::LinkClass **)((*(int (**)(void *))(*(unsigned int *)this->__pad_0 + 24))(this)); /*0x5566c6*/
 
 }
 } // namespace gamemd
@@ -293,8 +293,8 @@ unsigned int * LinkedList_flat::Attach(int a2)
 
   (*(void (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566d5*/
   v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_60))(a2);  /*0x5566de*/
-  v3->m_Prev = this; /*0x5566e1*/
-  this->m_Next = v3; /*0x5566e4*/
+  v3->m_Prev = (gamemd::LinkClass *)(this); /*0x5566e1*/
+  this->m_Next = (unsigned int)(v3); /*0x5566e4*/
   this->m_Prev = 0; /*0x5566e7*/
   return this->__pad_0; /*0x5566f0*/
 
@@ -314,7 +314,7 @@ LinkClass * * LinkedList_flat::Append(int a2, void *a2_2)
   this->m_Prev = (unsigned int)(v3); /*0x556714*/
   v4 = *(unsigned int *)this->__pad_0; /*0x556717*/
   this->m_Next = 0; /*0x55671b*/
-  return (*(int (**)(void *))(v4 + 24))(this); /*0x556725*/
+  return (gamemd::LinkClass **)((*(int (**)(void *))(v4 + 24))(this)); /*0x556725*/
 
 }
 } // namespace gamemd
@@ -332,10 +332,10 @@ int LinkedList_flat::RemoveNode()
   v3 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x556740*/
   m_Prev = (LinkClass *)(this->m_Prev); /*0x556743*/
   if ( m_Prev ) /*0x55674a*/
-    m_Prev->m_Next = this->m_Next; /*0x55674f*/
+    m_Prev->m_Next = (gamemd::LinkClass *)(this->m_Next); /*0x55674f*/
   m_Next = (LinkClass *)(this->m_Next); /*0x556752*/
   if ( m_Next ) /*0x556757*/
-    m_Next->m_Prev = this->m_Prev; /*0x55675c*/
+    m_Next->m_Prev = (gamemd::LinkClass *)(this->m_Prev); /*0x55675c*/
   this->m_Prev = 0; /*0x556761*/
   this->m_Next = 0; /*0x556764*/
   if ( v2 != this ) /*0x556767*/
@@ -416,7 +416,7 @@ int LinkedList_flat::Contains(IUnknown * aP1)
   result = *((unsigned int *)this + 10); /*0x6e5380*/
   if ( result ) /*0x6e5385*/
   {
-    while ( result != aP1 ) /*0x6e538d*/
+    while ( result   !=   (int)((int)(aP1 ))) /*0x6e538d*/
     {
       result = *(unsigned int *)(result + 40); /*0x6e538f*/
       if ( !result ) /*0x6e5394*/

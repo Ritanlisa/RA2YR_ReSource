@@ -65,6 +65,10 @@
 #include "e4/classes/PriorityQueue_e4.hpp"
 #include "e4/classes/ArtConfig_e4.hpp"
 #include "e4/classes/MSVQAnim_e4.hpp"
+#include "e4/classes/DDraw_e4.hpp"
+#include "e4/classes/MSPCXAnim_e4.hpp"
+#include "e4/classes/Map_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
@@ -287,21 +291,21 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     int v40; // [esp+BCh] [ebp-4h]
     void *retaddr; // [esp+C0h] [ebp+0h]
 
-    v38.abstractFlags = (int)v3; /*0x4f1caf*/
-    v38.uniqueId = (int)a2; /*0x4f1cb3*/
+    v38.abstractFlags = (void *)((int)v3); /*0x4f1caf*/
+    v38.uniqueId = (void *)((int)a2); /*0x4f1cb3*/
     v40 = 0; /*0x4f1cb7*/
     v5 = (unsigned __int8 *)((String *)v3)->GetOrEmpty_Alt(); /*0x4f1cbe*/
     if ( !INIClass::BinarySearchSection( (INIClass *)((int)a2), (void *)(v5)) ) /*0x4f1cc6*/
       return 0; /*0x4f1cc6*/
-    v7 = RA2_OPNEW(0x70u); /*0x4f1cdd*/
+    v7 = (int)(RA2_OPNEW(0x70u)); /*0x4f1cdd*/
     v8 = v7; /*0x4f1ce2*/
-    v38.NeedsSaveOrLink = v7; /*0x4f1ce9*/
+    v38.NeedsSaveOrLink = (void *)(v7); /*0x4f1ce9*/
     if ( !v7 ) /*0x4f1ced*/
       return 0; /*0x4f1cda*/
     p_nextObject = (int *)a3; /*0x4f1cef*/
     ((MSEngine *)(v7 + 4))->Construct(); /*0x4f1cf3*/
     ((String *)(v8 + 76))->Assign( (const char *)(aTitlePcx)); /*0x4f1d02*/
-    v38.referenceCount = v8 + 80; /*0x4f1d0f*/
+    v38.referenceCount = (void *)(v8 + 80); /*0x4f1d0f*/
     ((String *)(v8 + 80))->Assign( (const char *)(g_INI_Key_Intro)); /*0x4f1d13*/
     v9 = v8 + 88; /*0x4f1d18*/
     *(unsigned int *)(v8 + 84) = 0; /*0x4f1d1b*/
@@ -341,7 +345,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
         v14 = (MSVQAnim *)RA2_OPNEW(0x30u); /*0x4f1e25*/
         if ( v14 ) /*0x4f1e2f*/
         {
-          Config = MSVQAnim::ConstructMSVQAnimHidden( /*0x4f1e4e*/
+          Config = MSVQAnim::ConstructMSVQAnimHidden((char **)( /*0x4f1e4e*/)          Config = MSVQAnim::ConstructMSVQAnimHidden( /*0x4f1e4e*/
                      v14,
                      (char **)&v38.vtable1,
                      &DSurface_Alternate->DSurface_field_0x0,
@@ -356,7 +360,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
             else
               ((PriorityQueue *)(v8 + 4))->Add( (int)Config); /*0x4f1f81*/
             *(unsigned int *)(v8 + 84) = (unsigned int)Config; /*0x4f1f86*/
-            p_nextObject = &v38.nextObject; /*0x4f1f91*/
+            p_nextObject = (int *)(&v38.nextObject); /*0x4f1f91*/
             v22 = (int *)(*(int (**)(unsigned int *))(*Config + 24))( (unsigned int *)(Config)); /*0x4f1f92*/
             v23 = *v22; /*0x4f1f95*/
             v24 = v22[1]; /*0x4f1f97*/
@@ -433,7 +437,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
       ((String *)v38.referenceCount)->Reassign( (const char **)&v38.vtable2); /*0x4f200a*/
     ((String *)&v38.vtable1)->Assign( (const char *)(aItemmax)); /*0x4f2018*/
     Int = INIClass::ReadInt(uniqueId, abstractFlags, (char **)&v38.vtable1, 100); /*0x4f202c*/
-    v38.referenceCount = Int; /*0x4f2032*/
+    v38.referenceCount = (void *)(Int); /*0x4f2032*/
     j_DeleteAndZero( (void *)((ObjectClass *)&v38.vtable1)); /*0x4f2036*/
     v29 = 0; /*0x4f203b*/
     if ( Int >= 0 ) /*0x4f203f*/
@@ -471,7 +475,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
         }
         ++v29; /*0x4f210b*/
       }
-      while ( v29 <= v38.referenceCount ); /*0x4f210e*/
+      while ( v29   <=   (int)((int)(v38.referenceCount ))); /*0x4f210e*/
     }
     j_DeleteAndZero( (void *)((ObjectClass *)&v38.nextArrayIndex)); /*0x4f2118*/
     j_DeleteAndZero( (void *)((ObjectClass *)&v38.vtable2)); /*0x4f2121*/
@@ -631,9 +635,9 @@ v6 = (*((int (**)(DSurface *, _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorCl
     UI_Process(v16); /*0x4f260f*/
     ((Theme *)(int)&unk_A83D10)->QueueSong( -3); /*0x4f261b*/
     if ( v4 ) /*0x4f2622*/
-      return v4->Players; /*0x4f2624*/
+      return (gamemd::ObjectClass **)(v4->Players); /*0x4f2624*/
     else
-      return -1; /*0x4f2632*/
+      return (gamemd::ObjectClass **)(-1); /*0x4f2632*/
 }
 }
 // 0x4F2640
@@ -747,7 +751,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void 
                  v21.__pad_0[0]);
         j_DeleteAndZero( (void *)((ObjectClass *)&v19.m_3[1])); /*0x4f2ef3*/
         j_DeleteAndZero( (void *)((ObjectClass *)&v19)); /*0x4f2efc*/
-        return v8; /*0x4f2f01*/
+        return (int)(v8); /*0x4f2f01*/
       }
       else
       {
@@ -807,7 +811,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * a
   v23 = v10; /*0x4f31bb*/
   v24 = v11; /*0x4f31c3*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v22)); /*0x4f31c7*/
-  vtable0 = a4.AbstractClass; /*0x4f31cc*/
+  vtable0 = (unsigned int *)(a4.AbstractClass); /*0x4f31cc*/
   v13 = *(unsigned int *)a4.AbstractClass; /*0x4f31dd*/
   v26 = 0; /*0x4f31df*/
   v23 += v13; /*0x4f31e9*/
@@ -855,7 +859,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * a
   ((INIClass *)(a2))->ReadString( (char **)(Source), (char **)&a4, (char **)&v22, (int)&v17); /*0x4f33ca*/
   j_DeleteAndZero( (void *)(&a4)); /*0x4f33d3*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v22)); /*0x4f33dc*/
-  v16 = RA2_OPNEW(0x38u); /*0x4f33e3*/
+  v16 = (int)(RA2_OPNEW(0x38u)); /*0x4f33e3*/
   if ( v16 ) /*0x4f33ed*/
     v8 = sub_4F3460( /*0x4f3423*/
            v16,
@@ -915,11 +919,11 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     unknown_libname_73(this + 52); /*0x4f34aa*/
     v15 = (const char **)(a9); /*0x4f34af*/
     *(unsigned int *)this = (unsigned int)(void*)&GraphicMenuImageItem_vftable; /*0x4f34b3*/
-    if ( ((String *)v15)->Length() && (a3 = RA2_OPNEW(0x10u)) != 0 ) /*0x4f34d4*/
+    if ( ((String *)v15)->Length() && (a3 = (gamemd::ReferenceCounted *)(RA2_OPNEW(0x10u))) != 0 ) /*0x4f34d4*/
     {
       ((String *)(char **)&a2)->Assign( (const char *)(aHighlightsound)); /*0x4f34df*/
       v10 = 1; /*0x4f34ee*/
-      v16 = ((Audio *)(int)a3)->ParseVolume( (const char **)&a2, (ObjectClass *)(v15)); /*0x4f34f3*/
+      v16 = (int)(((Audio *)(int)a3)->ParseVolume( (const char **)&a2, (ObjectClass *)(v15))); /*0x4f34f3*/
     }
     else
     {
@@ -995,17 +999,17 @@ void sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
     v6 = (unsigned int *)(0); /*0x4f3914*/
     if ( (unsigned __int8)((String *)(const char **)&v13)->Equals_Alt( (const char *)(g_INI_Key_Image)) ) /*0x4f391b*/
     {
-      v7 = (unsigned int *)ParseINIGadgetDefinition(Source, a2, a3, a4); /*0x4f3932*/
+      v7 = (unsigned int *)ParseINIGadgetDefinition((gamemd::ObjectClass *)(Source),(gamemd::ObjectClass *)( a2),(unsigned int *)( a3), a4); /*0x4f3932*/
     }
     else if ( (unsigned __int8)((String *)(const char **)&v13)->Equals_Alt( aShortcut) ) /*0x4f3942*/
     {
-      v7 = sub_4F3B80(Source, a2); /*0x4f394f*/
+      v7 = (unsigned int *)(sub_4F3B80(Source, a2)); /*0x4f394f*/
     }
     else
     {
       if ( !(unsigned __int8)((String *)(const char **)&v13)->Equals_Alt( (const char *)(aAnim_0)) ) /*0x4f3966*/
         goto LABEL_15; /*0x4f3966*/
-      v7 = ParseINIAnimGadgetDefinition(Source, a2, a3, a4); /*0x4f397a*/
+      v7 = (unsigned int *)(ParseINIAnimGadgetDefinition(Source, a2, a3, a4)); /*0x4f397a*/
     }
     v6 = v7; /*0x4f397f*/
     if ( v7 ) /*0x4f3983*/
@@ -1018,12 +1022,12 @@ void sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
       j_DeleteAndZero( (void *)((void **)&v15)); /*0x4f39d8*/
       if ( v8 ) /*0x4f39df*/
       {
-        v9 = RA2_OPNEW(0x10u); /*0x4f39e8*/
+        v9 = (int)(RA2_OPNEW(0x10u)); /*0x4f39e8*/
         if ( v9 ) /*0x4f39ef*/
         {
           ((String *)&a3)->Assign( aSelectsound); /*0x4f39fa*/
           v10 = 1; /*0x4f3a0b*/
-          v11 = ((Audio *)v9)->ParseVolume( (const char **)&a3, (ObjectClass *)((const char **)&a4)); /*0x4f3a10*/
+          v11 = (int)(((Audio *)v9)->ParseVolume( (const char **)&a3, (ObjectClass *)((const char **)&a4))); /*0x4f3a10*/
         }
         else
         {

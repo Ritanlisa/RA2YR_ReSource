@@ -68,6 +68,8 @@
 #include "e4/classes/FontRenderer_e4.hpp"
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/TextGroup_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4A0190
@@ -729,12 +731,12 @@ int Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
         v11 = v10 - Ticks; /*0x4a3cc1*/
         if ( v11 >= v22 ) /*0x4a3cc5*/
 // 0x4a4780
-          return ((Surface*)v26)->CreateSurfacePalette(); /*0x4a3cc5*/
+          return (int)(((Surface*)v26)->CreateSurfacePalette()); /*0x4a3cc5*/
         v9 = v22 - v11; /*0x4a3ccb*/
       }
       if ( !v9 ) /*0x4a3ccf*/
 // 0x4a4780
-        return ((Surface*)v26)->CreateSurfacePalette(); /*0x4a3daf*/
+        return (int)(((Surface*)v26)->CreateSurfacePalette()); /*0x4a3daf*/
       qmemcpy( (void *)(Src), (const void *)(v24), sizeof(Src)); /*0x4a3ce8*/
       v12 = v22; /*0x4a3cea*/
       if ( v8 != -1 ) /*0x4a3cee*/
@@ -1275,7 +1277,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   v9 = (unsigned int *)(a4); /*0x4a5ebe*/
   v10 = (Char *)g_FogOfWarState; /*0x4a5ec8*/
   v11 = a4[1] + *(unsigned int *)((char *)a5 +); /*0x4a5ed3*/
-  v12 = *(unsigned int *)a5 + *a4; /*0x4a5ed8*/
+  v12 = (int)(*(unsigned int *)a5 + *a4); /*0x4a5ed8*/
   ((Text *)(g_FogOfWarState))->Layout( (unsigned short *)(a2), (int *)(&a5), (unsigned int *)(&a4), a4[2]); /*0x4a5eec*/
   v13 = IDA_BYTE1(a8); /*0x4a5ef1*/
   if ( (a8 & 0x100) != 0 ) /*0x4a5efc*/
@@ -1291,7 +1293,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   {
     if ( (v13 & 4) != 0 ) /*0x4a5f64*/
     {
-      v24 = a5 + 2; /*0x4a5f6c*/
+      v24 = (int)(a5 + 2); /*0x4a5f6c*/
       v25 = (char *)a4 + 2; /*0x4a5f7a*/
       v23 = v11 - 1; /*0x4a5f82*/
       v22 = v12 - 1; /*0x4a5f86*/
@@ -1300,11 +1302,11 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   }
   else
   {
-    v24 = a5 + 2; /*0x4a5f21*/
+    v24 = (int)(a5 + 2); /*0x4a5f21*/
     v23 = v11 - 1; /*0x4a5f2c*/
     v25 = (char *)a4 + 2; /*0x4a5f30*/
     v22 = v12 - 1; /*0x4a5f42*/
-    v14 = *a3; /*0x4a5f46*/
+    v14 = (int)(*a3); /*0x4a5f46*/
     IDA_LOWORD(a8) = 0; /*0x4a5f4c*/
     IDA_BYTE2(a8) = 0; /*0x4a5f57*/
     (*(void (**)(int *, int *, int *, int))(v14 + 28))( (int *)(a3), (int *)(&v22), (int *)(&a8), 60); /*0x4a5f5c*/
@@ -1319,9 +1321,9 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   v26[3] = v16 + v18; /*0x4a5fb5*/
   ((Char *)(v10))->Swap(1); /*0x4a5fb9*/
   ((TextGroup *)((TextGroup *)v10))->SetRect( (unsigned int *)(v26)); /*0x4a5fc5*/
-  ((Property *)((Property *)v10))->Set(a6); /*0x4a5fd1*/
+  ((Property *)((Property *)v10))->Set((int16_t)(a6)); /*0x4a5fd1*/
   FontRenderer::DrawText(v10, a3, a2, v12, v11, 0, 0); /*0x4a5fed*/
-  *a1 = v12; /*0x4a5ff7*/
+  *a1 = (void *)(v12); /*0x4a5ff7*/
   a1[1] = v11; /*0x4a5ff9*/
   return a1; /*0x4a5ff6*/
 }
@@ -1349,7 +1351,7 @@ void globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5, 
           a7,
           a8,
           a9);
-  *a1 = *v12; /*0x4a60b9*/
+  *a1 = (void *)(*v12); /*0x4a60b9*/
   a1[1] = v12[1]; /*0x4a60bf*/
   return a1; /*0x4a60bb*/
 }
@@ -1489,7 +1491,7 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
   }
   *a1 = *v12; /*0x4a6602*/
   a1[1] = v12[1]; /*0x4a660a*/
-  return a1; /*0x4a6604*/
+  return (int **)(a1); /*0x4a6604*/
 }
 }
 // 0x4A66D0
@@ -1500,7 +1502,7 @@ void globalHelper_0A66D0(int * a1, void * a2, void * a3, void * a4, void * a5, s
   int v14; // eax
   int v15[2]; // [esp+8h] [ebp-8h] BYREF
 
-  if ( a9 == -1 ) /*0x4a66e0*/
+  if ( a9  ==  (void *)(-1) ) /*0x4a66e0*/
   {
     v12 = (int *)RenderTextLabel(v15, a2, a3, a4, a5, a6, a7, a8, a10); /*0x4a670b*/
   }
@@ -1542,7 +1544,7 @@ int * * sub_4A67E0(char a1, int a2)
   IDA_LOWORD(v2) = a2; /*0x4a67fa*/
   *(int *)((char *)&dword_8A0158 + 3) = v2; /*0x4a6802*/
   IDA_HIBYTE(dword_8A015C) = a2; /*0x4a6808*/
-  return &dword_8A0150; /*0x4a6813*/
+  return (int **)(&dword_8A0150); /*0x4a6813*/
 }
 }
 // 0x4A6840
@@ -1597,11 +1599,11 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   }
   p_vtable3 = (int *)&((unsigned int *)this)[0]; /*0x4a6929*/
   DC = GetDC(hWnd); /*0x4a692e*/
-  ((unsigned int *)this)[0] = CreateDIBSection(DC, (const BITMAPINFO *)((unsigned int *)this)[0], 0, &((unsigned int *)this)[0], 0, 0); /*0x4a693f*/
+  ((unsigned int *)this)[0] = (unsigned int)(CreateDIBSection(DC, (const BITMAPINFO *)((unsigned int *)this)[0], 0,(void **)( &((unsigned int *)this)[0]), 0, 0)); /*0x4a693f*/
   ReleaseDC(hWnd, DC); /*0x4a6942*/
   if ( !((unsigned int *)this)[0] ) /*0x4a6948*/
     goto LABEL_12; /*0x4a6948*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x4a6951*/
+  vtable1 = (unsigned int *)(((unsigned int *)this)[0]); /*0x4a6951*/
   ((unsigned int *)this)[0] = vtable1[1]; /*0x4a6957*/
   uniqueId = ((unsigned int *)this)[0]; /*0x4a6962*/
   ((unsigned int *)this)[0] = abs32(vtable1[2]); /*0x4a6965*/
@@ -1623,7 +1625,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( v15 ) /*0x4a69a6*/
   {
     abstractFlags = ((unsigned int *)this)[0]; /*0x4a69a8*/
-    vtable3 = ((unsigned int *)this)[0]; /*0x4a69ab*/
+    vtable3 = (void *)(((unsigned int *)this)[0]); /*0x4a69ab*/
     *((unsigned int *)v15 + 2) = abstractFlags; /*0x4a69ae*/
     *((unsigned int *)v15 + 1) = v14; /*0x4a69b9*/
     *((unsigned int *)v15 + 3) = 0; /*0x4a69bc*/
@@ -1640,7 +1642,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   if ( !v15 ) /*0x4a69e0*/
 LABEL_12:
     LOBYTE(this->AbstractClass) = 1; /*0x4a69e2*/
-  return (char *)this; /*0x4a69e7*/
+  return (gamemd::AbstractClass **)((char *)this); /*0x4a69e7*/
 
 }
 }
@@ -1960,7 +1962,7 @@ void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, Display
   int v15; // [esp+34h] [ebp+8h]
   int v16; // [esp+38h] [ebp+Ch]
 
-  if ( aP1 != *((unsigned int *)dword_A83D4C + 12) ) /*0x4a9086*/
+  if ( aP1 != (gamemd::DisplayClass *)(*((unsigned int *)dword_A83D4C + 12) )) /*0x4a9086*/
     return 1; /*0x4a9086*/
   if ( byte_A8ED6B ) /*0x4a9093*/
     return 1; /*0x4a9093*/
@@ -2086,7 +2088,7 @@ unsigned char * sub_4AA2B0(unsigned char * a1)
 
   v8[4] = 0; /*0x4aa2b7*/
   *(unsigned int *)v8 = a1 == 0; /*0x4aa2c8*/
-  v1 = &unk_820030; /*0x4aa2d1*/
+  v1 = (unsigned int *)(&unk_820030); /*0x4aa2d1*/
   while ( 1 ) /*0x4aa2d8*/
   {
     v2 = 0; /*0x4aa2d8*/
@@ -2238,8 +2240,8 @@ ScenarioClass * * sub_4AC4F0()
   result = (void *)(dword_A8B230); /*0x4ac62d*/
   dword_A8B230[14].nextArrayIndex = dword_A8B230[14].abstractFlags; /*0x4ac638*/
   if ( g_TacticalClass_Instance ) /*0x4ac646*/
-    return (void *)((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition( (int *)(&v11)); /*0x4ac64d*/
-  return result; /*0x4ac5c5*/
+    return (gamemd::ScenarioClass **)((void *)((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition( (int *)(&v11))); /*0x4ac64d*/
+  return (gamemd::ScenarioClass **)(result); /*0x4ac5c5*/
 }
 }
 // 0x4AE750

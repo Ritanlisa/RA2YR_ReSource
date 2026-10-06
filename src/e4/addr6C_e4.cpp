@@ -1402,7 +1402,7 @@ int DlgProcScoreScreen(HWND hWnd, UINT a2, WPARAM wParam, LPARAM a4)
       v14 = (wchar_t *)((char *)dword_A8B230 + 13744); /*0x6c9235*/
       v15 = (wchar_t *)((char *)dword_A8B230 + 13775); /*0x6c923b*/
     }
-    String = (unsigned int)GetStringCSF( (wchar_t *)(v14), 0, (const char *)aDRa2mdpostStls, 138); /*0x6c926e*/
+    String = (wchar_t *)((unsigned int)GetStringCSF( (wchar_t *)(v14), 0, (const char *)aDRa2mdpostStls, 138)); /*0x6c926e*/
     v17 = GetStringCSF( (wchar_t *)(v15), 0, (const char *)aDRa2mdpostStls, 139); /*0x6c927b*/
     v18 = GetDlgItem(hWnd, 1779); /*0x6c927d*/
     v33 = (LPARAM)String; /*0x6c927f*/
@@ -3193,7 +3193,7 @@ int sub_6CFBA0()
     --v1; /*0x6cfbb6*/
   }
   while ( v1 ); /*0x6cfbb7*/
-  return atexit(sub_6CFBD0); /*0x6cfbc6*/
+  return atexit((void (__cdecl *)(void))(sub_6CFBD0)); /*0x6cfbc6*/
 }
 } // namespace gamemd
 
@@ -3225,7 +3225,7 @@ namespace gamemd {
 int sub_6CFC00()
 {
   ShapeButtonClass::Init((void *)&stru_B0CCB0); /*0x6cfc05*/
-  return atexit(sub_6CFC20); /*0x6cfc15*/
+  return atexit((void (__cdecl *)(void))(sub_6CFC20)); /*0x6cfc15*/
 }
 } // namespace gamemd
 
@@ -3246,7 +3246,7 @@ namespace gamemd {
 int sub_6CFC40()
 {
   ShapeButtonClass::Init((void *)&stru_B0CC40); /*0x6cfc45*/
-  return atexit(sub_6CFC60); /*0x6cfc55*/
+  return atexit((void (__cdecl *)(void))(sub_6CFC60)); /*0x6cfc55*/
 }
 } // namespace gamemd
 

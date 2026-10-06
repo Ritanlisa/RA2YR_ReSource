@@ -161,7 +161,7 @@ int TacticalMap::Redraw()
   {
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 0); /*0x4f44df*/
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 1); /*0x4f44f4*/
-    (*(void (**)(GScreenClass *, bool))(((unsigned int *)&this->vfptr)[0] + 64))(this, v7); /*0x4f4502*/
+    (*(void ((gamemd::GScreenClass *)(**))(GScreenClass *, bool))(((unsigned int *)&this->vfptr)[0] + 64))(this, v7); /*0x4f4502*/
     TacticalMap::Render((int)g_TacticalClass_Instance, (int)DSurface_Composite, v6, 2); /*0x4f4515*/
   }
   if ( byte_B0B519 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x4f452b*/
@@ -721,7 +721,7 @@ int TacticalMap::RenderAllObjects(int a2)
               goto LABEL_54; /*0x6d8fe1*/
           }
           v21 = (unsigned int *)(*(int (**)(int *, char *))(*v18 + 72))( (int *)(v18), (char *)(v107)); /*0x6d8ff3*/
-          v22 = g_TacticalClass_Instance; /*0x6d8ff6*/
+          v22 = (LPPERSISTSTREAM)(g_TacticalClass_Instance); /*0x6d8ff6*/
           v23 = Coord::To_ScreenRaw( (int *)((int)(&v106)), (unsigned int *)(v21)); /*0x6d9007*/
           v81 = *v23; /*0x6d9010*/
           v82 = v23[1]; /*0x6d9017*/
@@ -803,7 +803,7 @@ LABEL_25:
               if ( v39 < v14 || v39 >= v14 + v95 || v40 < v15 || v40 >= v15 + v96 ) /*0x6d92fe*/
                 goto LABEL_54; /*0x6d92fe*/
               v41 = (int *)(*(int (**)(int *, unsigned char *))(*v18 + 72))( (int *)(v18), (unsigned char *)(v104)); /*0x6d9310*/
-              v42 = g_TacticalClass_Instance; /*0x6d9313*/
+              v42 = (LPPERSISTSTREAM)(g_TacticalClass_Instance); /*0x6d9313*/
               v43 = v41; /*0x6d9319*/
               v44 = IsoCoord::ToPixel(&v97, *v41, v41[1]); /*0x6d932b*/
               v45 = *v44; /*0x6d932d*/
@@ -880,7 +880,7 @@ LABEL_54:
           if ( ((unsigned int *)v54)[0] && ((unsigned int *)v54)[0] ) /*0x6d9458*/
           {
             v55 = (int *)(*((int (**)(BuildingClass *, unsigned char *))v54->vtable1 + 43))( (BuildingClass *)(v54), (unsigned char *)(v105)); /*0x6d9472*/
-            v56 = g_TacticalClass_Instance; /*0x6d9478*/
+            v56 = (LPPERSISTSTREAM)(g_TacticalClass_Instance); /*0x6d9478*/
             v57 = v55; /*0x6d947e*/
             v58 = IsoCoord::ToPixel(&v83, *v55, v55[1]); /*0x6d948b*/
             v59 = v58[1]; /*0x6d9494*/

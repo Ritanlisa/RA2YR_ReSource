@@ -40,6 +40,8 @@
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/GameSettings_e4.hpp"
+#include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/StringVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Config_e4.hpp"  // G42.36 C2027 supply
@@ -52,7 +54,7 @@ void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
   INT_PTR result; // eax
   HWND DlgItem; // esi
 
-  if ( a2 > 0x110 ) /*0x792cfa*/
+  if ( a2  >  (void *)0x110 ) /*0x792cfa*/
   {
     switch ( a2 ) /*0x792d68*/
     {
@@ -69,7 +71,7 @@ void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
         }
         break;
       case 0x113u: /*0x792d68*/
-        if ( a3 == 69 ) /*0x792de3*/
+        if ( a3  ==  (void *)(69) ) /*0x792de3*/
         {
           ShowWindow(hWnd, 5); /*0x792dec*/
           KillTimer(hWnd, 0x45u); /*0x792df5*/
@@ -87,7 +89,7 @@ void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
     }
     return 0; /*0x792d78*/
   }
-  if ( a2 == 272 ) /*0x792cfc*/
+  if ( a2  ==  (void *)(272) ) /*0x792cfc*/
     return 0; /*0x792e3f*/
   switch ( a2 ) /*0x792d16*/
   {
@@ -123,13 +125,13 @@ int sub_793280(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
   int i; // esi
   HWND v9; // edi
 
-  if ( a2 > 0x111 ) /*0x79328c*/
+  if ( a2  >  (void *)0x111 ) /*0x79328c*/
   {
-    if ( a2 < 0x132 ) /*0x793355*/
+    if ( a2  <  (void *)0x132 ) /*0x793355*/
       return 0; /*0x793355*/
-    if ( a2 <= 0x138 ) /*0x79335c*/
+    if ( a2  <=  (void *)0x138 ) /*0x79335c*/
       return (int)GetStockObject(4); /*0x793420*/
-    if ( a2 != 1175 ) /*0x793367*/
+    if ( a2  !=  (void *)(1175) ) /*0x793367*/
       return 0; /*0x793331*/
     v5 = 0; /*0x793374*/
     v6 = dword_84A1F0; /*0x793376*/
@@ -157,7 +159,7 @@ int sub_793280(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
   }
   else
   {
-    if ( a2 != 273 ) /*0x793292*/
+    if ( a2  !=  (void *)(273) ) /*0x793292*/
     {
       switch ( a2 ) /*0x793297*/
       {
@@ -312,7 +314,7 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
   LABEL_26:
         v10 = GetStringCSF((wchar_t *)(aTxtFailedToTal), 0,(const char *)(g_Str_File_wonline_cpp), 18888); /*0x7936d5*/
 // 0x5e2700
-        return Dialog::ShowMessage(-1, (size_t)v10); /*0x7936e2*/
+        return (gamemd::AbstractClass **)(Dialog::ShowMessage(-1, (size_t)v10)); /*0x7936e2*/
       }
     }
   }
@@ -1068,7 +1070,7 @@ AbstractClass * * WOL_StartGame()
         if ( ++v4 >= g_WOL_UserList.owningHouseIndex ) /*0x794cd4*/
           goto LABEL_18; /*0x794cd4*/
       }
-      if ( &g_WebBrowserConfig == (ObjectClass *)-36 /*0x794cf1*/
+      if ( &g_WebBrowserConfig == (int *)-36 /*0x794cf1*/
         || (v5 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(),
             _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v5)) )
       {
@@ -1154,7 +1156,7 @@ AbstractClass * * WOL_StartGame()
           if ( v14 >= g_WOL_UserList.owningHouseIndex ) /*0x794ed6*/
             goto LABEL_52; /*0x794ed6*/
         }
-        if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x794ee1*/
+        if ( &g_WebBrowserConfig != (int *)-36 ) /*0x794ee1*/
         {
           v16 = 0; /*0x794ee3*/
           if ( v10 > 0 ) /*0x794ee7*/
@@ -1231,7 +1233,7 @@ AbstractClass * * WOL_StartGame()
         if ( v19 >= g_WOL_UserList.owningHouseIndex ) /*0x79506b*/
           goto LABEL_77; /*0x79506b*/
       }
-      if ( &g_WebBrowserConfig == (ObjectClass *)-36 /*0x795088*/
+      if ( &g_WebBrowserConfig == (int *)-36 /*0x795088*/
         || (v21 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(),
             _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v21)) )
       {
@@ -1290,7 +1292,7 @@ AbstractClass * * WOL_StartGame()
             if ( v24 >= g_WOL_UserList.owningHouseIndex ) /*0x79519a*/
               goto LABEL_97; /*0x79519a*/
           }
-          if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x795346*/
+          if ( &g_WebBrowserConfig != (int *)-36 ) /*0x795346*/
           {
             v35 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(); /*0x795351*/
             if ( !_strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v35) ) /*0x79535c*/
@@ -1361,7 +1363,7 @@ AbstractClass * * WOL_StartGame()
                 v30 = strlen((char *)&::Delimiter) + 1; /*0x795314*/
                 v31 = &byte_B76568[strlen( (const char *)(byte_B76568))]; /*0x795322*/
                 qmemcpy( (void *)(v31), (char *)&::Delimiter, 4 * (v30 >> 2)); /*0x795326*/
-                v33 = (char *)&::Delimiter[4 * (v30 >> 2)]; /*0x795326*/
+                v33 = (char *)&::(&Delimiter)[4 * (v30 >> 2)]; /*0x795326*/
                 v32 = &v31[4 * (v30 >> 2)]; /*0x795326*/
                 v34 = v30; /*0x795328*/
                 v26 = v47; /*0x79532a*/
@@ -1398,7 +1400,7 @@ AbstractClass * * WOL_StartGame()
               {
                 strcat( (char *)(&byte_B77A04), (const char *)&v37->occupant); /*0x7954dc*/
                 v41 = strlen((char *)&::Delimiter) + 1; /*0x7954f5*/
-                v42 = &byte_B77A04; /*0x7954f7*/
+                v42 = (const char *)(&byte_B77A04); /*0x7954f7*/
               }
               qmemcpy((void *)&v42[strlen( (const char *)(v42))], (char *)&::Delimiter, v41); /*0x79554a*/
               owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79555b*/
@@ -1542,7 +1544,7 @@ int WOL_NegotiateScenario(char a1)
         if ( &byte_B777B0 ) /*0x796216*/
         {
           v20 = CharToWideString( (unsigned char *)(unk_B777D4)); /*0x79621d*/
-          ((Network *)((int)unk_A8E9C0))->SendToPlayer((int)((Network *)((int)unk_A8E9C0)), (int)v53, 47, 1, (wchar_t *)v20); /*0x796231*/
+          ((Network *)((int)unk_A8E9C0))->SendToPlayer((int)((Network *)((int)unk_A8E9C0)), (int)v53, 47,(wchar_t *)( 1), (wchar_t *)v20); /*0x796231*/
         }
       }
   LABEL_75:
@@ -1665,7 +1667,7 @@ int WOL_NegotiateScenario(char a1)
               v29 += 108; /*0x796589*/
             }
             while ( v28 < (int)dword_B77900 ); /*0x796569*/
-            if ( &byte_B777B0 && !_strcmpi(byte_A8D63C, unk_B777D4) ) /*0x7965a5*/
+            if ( &byte_B777B0 && !_strcmpi((const char *)(byte_A8D63C),(const char *)( unk_B777D4)) ) /*0x7965a5*/
             {
               if ( dword_A8D638 == 11 ) /*0x7965b9*/
               {
@@ -1697,7 +1699,7 @@ int WOL_NegotiateScenario(char a1)
       while ( 1 ) /*0x79662e*/
       {
         v33 = ToWideStringChar( (IUnknown *)(*(char **)(dword_A8DA78 + 4 * v32))); /*0x79662e*/
-        if ( !_strcmpi(v33, unk_B777D4) ) /*0x796634*/
+        if ( !_strcmpi(v33,(const char *)( unk_B777D4)) ) /*0x796634*/
           break; /*0x796634*/
         if ( ++v32 >= dword_A8DA84 ) /*0x796648*/
           goto LABEL_142; /*0x796648*/
@@ -1754,7 +1756,7 @@ int WOL_NegotiateScenario(char a1)
             if ( ((NetworkID *)(*(unsigned int *)(v7 * 4 + dword_A8DA78 + 4) + 40))->Compare((int)&dword_A8D804) ) /*0x795e28*/
             {
               v8 = ToWideStringChar( (IUnknown *)(*(char **)(v7 * 4 + dword_A8DA78 + 4))); /*0x795e44*/
-              if ( !_strcmpi(v8, byte_A8D63C) && !v52[v7 + 5] ) /*0x795e5a*/
+              if ( !_strcmpi(v8,(const char *)( byte_A8D63C)) && !v52[v7 + 5] ) /*0x795e5a*/
               {
                 v9 = dword_A8D638; /*0x795e66*/
                 if ( dword_A8D638 == 16 ) /*0x795e6e*/

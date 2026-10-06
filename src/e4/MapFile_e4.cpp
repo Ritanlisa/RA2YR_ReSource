@@ -48,7 +48,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x69d577*/
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
     __3_YAXPAX_Z(this); /*0x69d581*/
-  return this->__pad_0; /*0x69d58b*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x69d58b*/
 
 }
 } // namespace gamemd

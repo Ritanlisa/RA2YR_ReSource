@@ -337,7 +337,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
   this->m_8 = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
     __3_YAXPAX_Z(this); /*0x53c7bb*/
-  return this->__pad_0; /*0x53c7c5*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x53c7c5*/
 
 }
 } // namespace gamemd
@@ -360,7 +360,7 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1
   this->m_8 = 0; /*0x53c801*/
   if ( (a2 & 1) != 0 ) /*0x53c808*/
     __3_YAXPAX_Z(this); /*0x53c80b*/
-  return this->__pad_0; /*0x53c815*/
+  return (int)(this->__pad_0); /*0x53c815*/
 
 }
 } // namespace gamemd

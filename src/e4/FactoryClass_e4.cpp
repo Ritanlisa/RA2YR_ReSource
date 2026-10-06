@@ -62,8 +62,8 @@ int FactoryClass::UpdateProduction()
     }
     if ( this->specialItem == ((&char)[4])(-1) || ((unsigned int *)&this->production)[0] != 54 ) /*0x4c9b5d*/
     {
-      v3 = (int *)((unsigned int *)&this->production[2]); /*0x4c9b63*/
-      Speed = Locomotor::GetSpeed((Locomotor *)(unsigned int *)&this->production[2]); /*0x4c9b68*/
+      v3 = (int *)((unsigned int *)&(&this->production)[2]); /*0x4c9b63*/
+      Speed = Locomotor::GetSpeed((Locomotor *)(unsigned int *)&(&this->production)[2]); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
         LOBYTE(((unsigned int *)&this->production)[1]) = 0; /*0x4c9bba*/
@@ -512,14 +512,14 @@ int FactoryClass::CountType(IUnknown * aP1)
   v3 = 0; /*0x4ca679*/
   v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
-    v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) == aP1; /*0x4ca68e*/
+    v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4)   ==   (int)((int)(aP1)); /*0x4ca68e*/
   v5 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca693*/
   if ( v5 > 0 ) /*0x4ca698*/
   {
     v6 = *(unsigned int **)&this->__pad_42[2]; /*0x4ca69a*/
     do /*0x4ca6a6*/
     {
-      if ( *v6 == aP1 ) /*0x4ca69f*/
+      if ( *v6   ==   (unsigned int)((unsigned int)(aP1 ))) /*0x4ca69f*/
         ++v3; /*0x4ca6a1*/
       ++v6; /*0x4ca6a2*/
       --v5; /*0x4ca6a5*/
@@ -727,7 +727,7 @@ char FactoryClass::RemoveOneFromQueue(char a2)
   int v5; // ecx
 
   p_onHold = (char *)(&this->onHold); /*0x4ca624*/
-  v3 = (*(int ((**))(char *, char *))(*(unsigned int *)&this->onHold + 16))(&this->onHold, &a2); /*0x4ca62e*/
+  v3 = (*(int ((char *)((**)))(char *, char *))(*(unsigned int *)&this->onHold + 16))(&this->onHold, &a2); /*0x4ca62e*/
   if ( v3 == -1 ) /*0x4ca634*/
     return 0; /*0x4ca634*/
   v4 = *((unsigned int *)p_onHold + 4); /*0x4ca636*/

@@ -512,7 +512,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
         if ( a2 == (void *)(2) ) /*0x5e3a71*/
         {
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
-          String = (unsigned int)GetStringCSF((wchar_t *)(aGuiHostmaptran), 0,(const char *)(g_Str_File_netshare_cpp), 1173); /*0x5e3a93*/
+          String = (wchar_t *)((unsigned int)GetStringCSF((wchar_t *)(aGuiHostmaptran), 0,(const char *)(g_Str_File_netshare_cpp), 1173)); /*0x5e3a93*/
 // 0x5e2700
           return Dialog::ShowMessage( (int)((gamemd::ObjectClass *)(-1)), (size_t)((gamemd::CampaignScore *)((size_t)String)), (char *)(v11), 11055906); /*0x5e3a9b*/
         }
@@ -882,7 +882,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
         v25 = (CCINIClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject);
         v26 = v25;
         if ( v25 )
-          *(unsigned int *)&aP0_160[32][i] = atol(v25->__pad_0);
+          *(unsigned int *)&aP0_160[32][i] = atol((const char *)(v25->__pad_0));
       }
       if ( v26 )
       {
@@ -1035,7 +1035,7 @@ LABEL_102:
           }
           SetupSkirmishSpawnLocations((HWND)v31, ResourceIDCSF, *(int *)v198);
           v35 = *(unsigned int *)&stru_830620[4228];
-          v5 = (unsigned int)*(char **)&v198[40];
+          v5 = (char *)((unsigned int)*(char **)&v198[40]);
           *(unsigned int *)&(&HouseClass_Player)[21864[4 * *(unsigned int *)&stru_830620[4228] + 18396] = (unsigned int)v37;
 LABEL_98:
           if ( v35 >= 0 && v35 != *(unsigned int *)&(&HouseClass_Player)[40256 )
@@ -1043,7 +1043,7 @@ LABEL_98:
         }
       }
 LABEL_101:
-      *(unsigned int *)v198 = v5;
+      *(unsigned int *)v198 = (unsigned int)(v5);
       goto LABEL_102;
     case 'A':
       v47 = (CCINIClass *)atol(v5 + 1);

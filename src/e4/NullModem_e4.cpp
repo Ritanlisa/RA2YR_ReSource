@@ -19,6 +19,7 @@
 namespace gamemd {
 char NullModem_TestConnection(void * a1)
 {
+  NullModem *self = (NullModem *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x5F03B0) */
   wchar_t * v1;
   wchar_t *StringCSF; // esi
   wchar_t *v3; // eax

@@ -8,6 +8,14 @@
 namespace gamemd {
 struct CampaignClass;  // fix_fwd_type_supply
 struct ScriptAction {
+// G57w8 raw-vocab supply (usage-driven; offsets per til names)
+    void *__pad_0;  // 0x0 vfptr slot witness (raw *(u32*)this->__pad_0 + 8 vt call)
+    void **__pad_C;  // 0xC
+    unsigned char __pad_78[8];  // 0x78
+    int ScriptAction_field_0x14;  // 0x14
+    void *ScriptAction_field_0x8C;  // 0x8C
+    void *ScriptAction_field_0x94;  // 0x94
+    int ScriptAction_field_0x98;  // 0x98
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int u32_3;  // 0x3

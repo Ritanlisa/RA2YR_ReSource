@@ -452,7 +452,7 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
   this->m_8 = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
     __3_YAXPAX_Z(this); /*0x6cf88b*/
-  return this->__pad_0; /*0x6cf895*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x6cf895*/
 
 }
 } // namespace gamemd
@@ -475,7 +475,7 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
   this->m_8 = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
     __3_YAXPAX_Z(this); /*0x6cf8db*/
-  return this->__pad_0; /*0x6cf8e5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x6cf8e5*/
 
 }
 } // namespace gamemd

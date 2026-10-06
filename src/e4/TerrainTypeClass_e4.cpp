@@ -268,7 +268,7 @@ int TerrainTypeClass::LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a
     this->FoundationData = (unsigned int)((CellStruct *)(8 * v10 + 11595200)); /*0x71df96*/
     if ( !(unsigned char)v9 ) /*0x71df9c*/
     {
-      _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), Ext); /*0x71dfad*/
+      _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]),(const char *)( Ext)); /*0x71dfad*/
       ((unsigned int *)this)[0] = (unsigned int)((SHPStruct *)SearchMIXFile( (char *)(Buffer), 0)); /*0x71dfc0*/
     }
     v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))this->vtable1 + 39))(this); /*0x71dfca*/
@@ -445,8 +445,8 @@ unsigned int *  TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
   if ( v7 < GroundHeight ) /*0x71e100*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x71e111*/
   a1->ObjectTypeClass = v5; /*0x71e11e*/
-  ((unsigned int *)a1)[0] = v6; /*0x71e124*/
-  ((unsigned int *)a1)[0] = v3; /*0x71e128*/
+  ((unsigned int *)a1)[0] = (unsigned int)(v6); /*0x71e124*/
+  ((unsigned int *)a1)[0] = (unsigned int)(v3); /*0x71e128*/
   return a1; /*0x71e12b*/
 
 }

@@ -261,7 +261,7 @@ LABEL_162:
       {
         int v94 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[44448] + 4 * v93);
         if ( *(unsigned int *)(v94 + 36) == *(unsigned int *)((unsigned int)(a1)+ 80) )
-          ((BuildingClass *)(v94))->ExecuteTriggers(0, *(TriggerClass **)&(&stru_B05488)[37368]);
+          ((BuildingClass *)(v94))->ExecuteTriggers(0,(char)( *(TriggerClass **)&(&stru_B05488)[37368]));
         ++v93;
       }
       while ( v93 < *(int *)&((unsigned int *)(HouseClass_Player))[44460] );
@@ -325,7 +325,7 @@ LABEL_162:
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
         v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];
       }
-      v61->missionTimer_text_csf = &(&stru_87C374)[46016];
+      v61->missionTimer_text_csf = (unsigned int)(&(&stru_87C374)[46016]);
       ((ScriptAction *)(Destination))->CopyStringField( (char *)(&((unsigned int *)(stru_87C374))[56304]));
   char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
       ((ScriptAction *)((*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600)))->CopyStructField( (void *)(v137), (const void *)(Destination));
@@ -468,7 +468,7 @@ LABEL_157:
       *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 192) = *(unsigned int *)(*(unsigned int *)&stru_87C374[44652]
                                                                                + 1360);
       *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 196) = *(unsigned int *)(v83 + 4);
-      HouseClass_Player[45136] = 1;
+      (&HouseClass_Player)[45136] = 1;
       ((Timer*)(*(HWND **)&stru_87C374[13308]))->PumpMessages();
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
       ((Mouse *)(&stru_87C374[13428]))->ReleaseCapture();

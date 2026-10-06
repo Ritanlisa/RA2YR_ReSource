@@ -27,19 +27,20 @@
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/SortedArray_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 
 // 0x511650
 namespace gamemd {
 unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * a2)
 {
     ((AbstractTypeClass *)(int)this)->Init( (int)(a2)); /*0x511658*/
-    this->veteranInfantry[0] = (int)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x51165d*/
+    this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)(void*)&TypeList_InfantryTypeClass_const___vftable); /*0x51165d*/
     *(unsigned int *)&this->prefix = (unsigned int)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x511667*/
     *(unsigned int *)&this->__pad_16D[23] = (unsigned int)(void*)&TypeList_AircraftTypeClass_const___vftable; /*0x511671*/
     this->AbstractClass = (void*)&HouseTypeClass_vftable; /*0x51167b*/
-    ((void **)this)[1] = (unsigned int)(void*)&HouseTypeClass_vftable;
-    ((void **)this)[2] = (unsigned int)(void*)&HouseTypeClass_vftable;
-    ((void **)this)[3] = (unsigned int)(void*)&HouseTypeClass_vftable;
+    ((void **)this)[1] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
+    ((void **)this)[2] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
+    ((void **)this)[3] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
     return &this->AbstractClass; /*0x511698*/
 }
 }
@@ -54,9 +55,9 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
     HouseTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
     this->AbstractClass = (void*)&HouseTypeClass_vftable; /*0x5116a7*/
-    ((void **)this)[1] = (unsigned int)(void*)&HouseTypeClass_vftable;
-    ((void **)this)[2] = (unsigned int)(void*)&HouseTypeClass_vftable;
-    ((void **)this)[3] = (unsigned int)(void*)&HouseTypeClass_vftable;
+    ((void **)this)[1] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
+    ((void **)this)[2] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
+    ((void **)this)[3] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
     AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5116c2*/
     v7 = this; /*0x5116d7*/
     v2 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))( (unsigned int *)(&dword_A83C98), (HouseTypeClass **)(&v7)); /*0x5116db*/
@@ -88,7 +89,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
     this->__pad_16D[8] = 0; /*0x511774*/
     *(unsigned int *)&this->__pad_16D[3] = 0; /*0x51177a*/
     veteranInfantryCount = (void *)this->veteranInfantryCount; /*0x511780*/
-    this->veteranInfantry[0] = (int)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x511786*/
+    this->veteranInfantry[0] = (gamemd::InfantryTypeClass *)((int)(void*)&VectorClass_InfantryTypeClass_const___vftable); /*0x511786*/
     if ( veteranInfantryCount && IDA_BYTE1(this->veteranUnitsCount) ) /*0x511794*/
     {
       RA2_OPDEL(veteranInfantryCount); /*0x51179d*/
@@ -191,7 +192,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     INIClass::GetString((INIClass *)v4, (unsigned __int8 *)(_EBX + 36), aParentcountry, (char *)(_EBX + 36), Source, 25); /*0x5118e2*/
     if ( Source ) /*0x5118ed*/
     {
-      strncpy( Destination.__pad_0, (const char *)(Source), 0x18u); /*0x511901*/
+      strncpy((char *)( Destination.__pad_0), (const char *)(Source), 0x18u); /*0x511901*/
       IDA_LOBYTE(Destination.UnitTypeVector_field_0x18) = 0; /*0x511909*/
     }
     else
@@ -469,7 +470,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
         }
       }
     }
-    return 1; /*0x512151*/
+    return (gamemd::AbstractClass *)(1); /*0x512151*/
 }
 }
 // 0x512170
@@ -483,12 +484,12 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
     Power::TimerProcess(this->arrayIndex2); /*0x512188*/
     Power::TimerProcess(this->sideIndex); /*0x512196*/
     Power::TimerProcess(this->colorSchemeIndex); /*0x5121a4*/
-    ((Checksummer *)a2)->Add_double( this->firepowerMult[0], this->firepowerMult[1]); /*0x5121b9*/
-    ((Checksummer *)a2)->Add_double( this->groundspeedMult[0], this->groundspeedMult[1]); /*0x5121ce*/
-    ((Checksummer *)a2)->Add_double( this->airspeedMult[0], this->airspeedMult[1]); /*0x5121e3*/
-    ((Checksummer *)a2)->Add_double( this->armorMult[0], this->armorMult[1]); /*0x5121f8*/
-    ((Checksummer *)a2)->Add_double( this->rofMult[0], this->rofMult[1]); /*0x51220d*/
-    ((Checksummer *)a2)->Add_double( this->costMult[0], this->costMult[1]); /*0x512222*/
+    ((Checksummer *)a2)->Add_double( (&this->firepowerMult)[0], (&this->firepowerMult)[1]); /*0x5121b9*/
+    ((Checksummer *)a2)->Add_double( (&this->groundspeedMult)[0], (&this->groundspeedMult)[1]); /*0x5121ce*/
+    ((Checksummer *)a2)->Add_double( (&this->airspeedMult)[0], (&this->airspeedMult)[1]); /*0x5121e3*/
+    ((Checksummer *)a2)->Add_double( (&this->armorMult)[0], (&this->armorMult)[1]); /*0x5121f8*/
+    ((Checksummer *)a2)->Add_double( (&this->rofMult)[0], (&this->rofMult)[1]); /*0x51220d*/
+    ((Checksummer *)a2)->Add_double( (&this->costMult)[0], (&this->costMult)[1]); /*0x512222*/
     ((Checksummer *)a2)->Add_double( this->buildtimeMult[0], this->buildtimeMult[1]); /*0x512237*/
     Checksummer::Add_Buffer( (Checksummer *)a2, (unsigned char *)((unsigned char)((unsigned __int8 *)&this->__pad_16D[51])), strlen( (const char *)(&this->__pad_16D[51]))); /*0x512252*/
     IDA_LOBYTE(v3) = this->__pad_16D[55]; /*0x512257*/
@@ -540,7 +541,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
         *(unsigned int *)&v2->prefix = (unsigned int)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x51235c*/
       }
       (*(void (__stdcall **)(int, HouseTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &this, 4, 0);  /*0x51236f*/
-      for ( i = 0; i < (int)this; ++i ) /*0x51237a*/
+      for ( i = 0; i < (unsigned int *)((int)this); ++i ) /*0x51237a*/
       {
         (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &a2, 4, 0);  /*0x512388*/
         VectorClass::PushBack((VectorClass *)&v2->prefix, &a2); /*0x512392*/
@@ -553,7 +554,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
         (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &a2, 4, 0);  /*0x5123d4*/
         ((HouseTypeClass *)&v2->__pad_16D[23])->readPowerPlants( (TypeList_flat *)(&a2)); /*0x5123de*/
       }
-      for ( k = 0; k < v2->veteranAircraft[0]; ++k ) /*0x5123f4*/
+      for ( k = 0; k  <  (int)(v2->veteranAircraft[0]); ++k ) /*0x5123f4*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2->veteranInfantryCount + 4 * k)); /*0x512405*/
       for ( m = 0; m < *(unsigned int *)&v2->__pad_16D[11]; ++m ) /*0x51241f*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)&v2->smartAi + 4 * m)); /*0x512430*/

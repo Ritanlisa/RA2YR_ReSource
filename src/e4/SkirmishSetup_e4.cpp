@@ -434,7 +434,7 @@ LABEL_28:
       v33 = SendDlgItemMessageA((HWND)aP0, 1771, 0x199u, v32, 0); /*0x5e6e7d*/
       if ( v33 ) /*0x5e6e85*/
       {
-        v34 = ((WideString*)(wchar_t **)(v33 + 36))->GetOrEmpty_Alt(); /*0x5e6e8a*/
+        v34 = (wchar_t *)(((WideString*)(wchar_t **)(v33 + 36))->GetOrEmpty_Alt()); /*0x5e6e8a*/
         ((WideString *)(v30))->Assign_Alt( (wchar_t *)(v34)); /*0x5e6e92*/
       }
     }

@@ -127,7 +127,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         v10 = ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
         for ( result = (void **)(((Count *)((Count *)&unk_A8EA70))->GetCountQueue()); /*0x5e77d8*/
               result > 0;
-              result = ((Count *)((Count *)&unk_A8EA70))->GetCountQueue() )
+              result = (void **)(((Count *)((Count *)&unk_A8EA70))->GetCountQueue() ))
         {
           result = (void **)(v17);
           v11 = 1800; /*0x5e77de*/

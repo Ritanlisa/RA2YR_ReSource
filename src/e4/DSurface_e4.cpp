@@ -90,7 +90,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = 7; /*0x4ba604*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 12) = (unsigned int)(aP1); /*0x4ba60e*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 8) = (unsigned int)(aP2); /*0x4ba618*/
-    if ( aP3 == (gamemd::ObjectClass *)(1) ) /*0x4ba621*/
+    if ( aP3  ==  (int)((int)(1) )) /*0x4ba621*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 8256; /*0x4ba63e*/
@@ -590,7 +590,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
-    return ((XSurface *)((void **)((XSurface *)this)))->BlitPart((void **)a2,(void **)((gamemd::XSurface *)(v10)), (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
+    return (gamemd::DSurface **)(((XSurface *)((void **)((XSurface *)this)))->BlitPart((void **)a2,(void **)((gamemd::XSurface *)(v10)), (void **)aP5, (void **)a7, 1)); /*0x4bb2a2*/
   v17 = a2[1]; /*0x4bb2a7*/
   v18 = a2[2]; /*0x4bb2aa*/
   v49 = (int)(*a2); /*0x4bb2ad*/
@@ -717,7 +717,7 @@ LABEL_71:
     v43.Y = v61 + v57; /*0x4bb588*/
     v43.Height = v57 + v61 + v59; /*0x4bb5a0*/
     v43.Width = v56 + v60 + v58; /*0x4bb5a4*/
-return (*(int (**)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C[0] + 20))( /*0x4bb5d5*/ v48->DSurface_field_0x1C[0], (unsigned int *)(v53), a3[7], (Rect *)(&v43), 0x1000000, 0) == 0;
+return (gamemd::DSurface **)((*(int (**)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C[0] + 20))( /*0x4bb5d5*/ v48->DSurface_field_0x1C[0], (unsigned int *)(v53), a3[7], (Rect *)(&v43), 0x1000000, 0) == 0);
 
 
 
@@ -829,7 +829,7 @@ LABEL_15:
           memset( (void *)(v33), 0, sizeof(v33)); /*0x4bb7ba*/
           v33[20] = a4; /*0x4bb7c8*/
           v33[0] = 100; /*0x4bb7da*/
-return (*(int (**)(int, unsigned int *, unsigned int, unsigned int, int, unsigned int *))(*(unsigned int *)v23 + 20))( /*0x4bb7f9*/ v23, (unsigned int *)(v29), 0, 0, 16778240, (unsigned int *)(v33)) == 0;
+return (void *)((*(int (**)(int, unsigned int *, unsigned int, unsigned int, int, unsigned int *))(*(unsigned int *)v23 + 20))( /*0x4bb7f9*/ v23, (unsigned int *)(v29), 0, 0, 16778240, (unsigned int *)(v33)) == 0);
 
 
 
@@ -1129,7 +1129,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
   unsigned short *SamplePosition; // [esp+9Ch] [ebp+18h]
 
   DSurface_field_0x0 = (int (**)(unsigned int *))a1->DSurface_field_0x0; /*0x4bbca3*/
-  v95[0] = a1; /*0x4bbcae*/
+  v95[0] = (unsigned int)(a1); /*0x4bbcae*/
   v11 = (int *)DSurface_field_0x0[30](&v95[1]); /*0x4bbcb2*/
   v12 = (int *)ClipRectIntersection( (RectangleStruct*)(&v93), (const RectangleStruct*)((int *)a3), (const RectangleStruct*)(v11), 0, 0); /*0x4bbcc2*/
   v13 = *v12; /*0x4bbcc9*/

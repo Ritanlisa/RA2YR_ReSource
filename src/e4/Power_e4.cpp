@@ -90,7 +90,7 @@ unsigned int * Power::UpdateAll()
   Power::ComputeHousePowerChecksum( (unsigned int *)((int)dword_A8B230),  (unsigned int *)&v53); /*0x67c70a*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x67c718*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C9C + i) + 52))( *((unsigned int *)dword_A83C9C + i), (int *)(&v53)); /*0x67c72a*/
-  for ( j = 0; j < ((char *)&stru_A80220); ++j ) /*0x67c740*/
+  for ( j = 0; j  <  (int)((*(int *)&stru_A80220)); ++j ) /*0x67c740*/
 (*(void (**)(unsigned int, int *))(**((unsigned int **)((char *)&stru_A80220) + j) + 52))( /*0x67c752*/ *((unsigned int *)((char *)&stru_A80220) + j), (int *)(&v53));
 
 
@@ -482,7 +482,7 @@ int Power::FlagProcess(int Power_field_0x8, int a2, int a1)
     this->a2 = 0; /*0x4a1ca9*/
   *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = (unsigned char)a2 != 0; /*0x4a1cb7*/
   result = (int)this->Power_field_0x4 + 1; /*0x4a1cbf*/
-  this->Power_field_0x4 = (void *)result; /*0x4a1cc1*/
+  this->Power_field_0x4 = (unsigned int)((void *)result); /*0x4a1cc1*/
   if ( result == 4 ) /*0x4a1cc7*/
   {
     LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1ccc*/

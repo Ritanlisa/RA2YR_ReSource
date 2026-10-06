@@ -356,7 +356,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(char a2)
   ((ConnectionClass *)((ConnectionClass *)this))->dtor(); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(this); /*0x5406c8*/
-  return this->__pad_0; /*0x5406d2*/
+  return (gamemd::IPXGlobalConnClass *)(this->__pad_0); /*0x5406d2*/
 
 }
 } // namespace gamemd

@@ -16,6 +16,8 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/SlaveControlVector_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
@@ -536,7 +538,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
               v27 = a1[9]; /*0x6af93f*/
               v84[1] = v26 / 2; /*0x6af946*/
               v28 = (unsigned short *)(*(int (**)(int, unsigned short *))(v27->airstrikeTintTimer))( v27, (unsigned short *)(v87));  /*0x6af95c*/
-              v82 = *((CellStruct *)(v28))->Add( (unsigned int *)(&v91), (unsigned short *)(v84)); /*0x6af96b*/
+              v82 = (int)(*((CellStruct *)(v28))->Add( (unsigned int *)(&v91), (unsigned short *)(v84))); /*0x6af96b*/
             }
             else
             {

@@ -244,7 +244,7 @@ LABEL_48:
             }
           }
         }
-        if ( aP1 != (IUnknown *)(-1) ) /*0x47d94c*/
+        if ( aP1  !=  (int)((int)(-1) )) /*0x47d94c*/
           *((unsigned char *)this + 283) = (unsigned char)(aP1); /*0x47d94e*/
         TechnoClass::GetTileAnimationData((TechnoClass *)v19, *(uint8_t *)&this->u32_11A, v59, &v58); /*0x47d969*/
         v33 = *((unsigned int *)this + 80); /*0x47d988*/

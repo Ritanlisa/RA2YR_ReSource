@@ -251,7 +251,7 @@ void* TacticalClass::ProcessScroll(int * a2)
         LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac4a6*/
         if ( !DisplayClass_field_0x11B0_high && !this->__pad_11B4[0] ) /*0x4ac4af*/
         {
-          g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4ac4c0*/
+          (&g_TacticalClass_Instance)[863].__tail_0[1] = 1; /*0x4ac4c0*/
           TacticalClass::InitScrollBounds((TacticalClass *)g_TacticalClass_Instance, &this->DisplayClass_field_0x11D4); /*0x4ac4cc*/
           LOBYTE(v4) = ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x4ac4da*/
         }
@@ -266,7 +266,7 @@ void* TacticalClass::ProcessScroll(int * a2)
     v5 = (void *)((int)((void *)a2[1]));
     if ( *a2 < 0 ) /*0x4ac3db*/
       v4 = (void *)(0); /*0x4ac3dd*/
-    if ( v4 >= *(int *)DSurface_ViewBounds.__pad_8 ) /*0x4ac3e1*/
+    if ( v4 >= (void *)(*(int *)DSurface_ViewBounds.__pad_8 )) /*0x4ac3e1*/
       v4 =(void *)*(unsigned int *)DSurface_ViewBounds.__pad_8 - 1; /*0x4ac3e3*/
     if ( (int)v5 < 0 ) /*0x4ac3e8*/
       v5 = (void *)(0); /*0x4ac3ea*/
@@ -277,7 +277,7 @@ void* TacticalClass::ProcessScroll(int * a2)
     v12 = v5; /*0x4ac3ff*/
     if ( (void *)v4 != DisplayClass_field_0x11DC || v5 != (void *)(this->DisplayClass_field_0x11E0) ) /*0x4ac40b*/
     {
-      g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4ac41c*/
+      (&g_TacticalClass_Instance)[863].__tail_0[1] = 1; /*0x4ac41c*/
       LOBYTE(v4) = TacticalClass::UpdateScrollMaxBounds((TacticalClass *)g_TacticalClass_Instance, &v11); /*0x4ac429*/
     }
   }
@@ -541,7 +541,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
   result = byte_A9FA94; /*0x4f474e*/
   if ( !byte_A9FA94 ) /*0x4f4755*/
   {
-    result = Frame::Present( /*0x4f4761*/
+    result = (char)(Frame::Present( )/*0x4f4761*/
                (int)DSurface_Composite,
                v3,
                a2,
@@ -700,7 +700,7 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
     IDA_LOBYTE(result) = v8; /*0x6d0672*/
     return result; /*0x6d0672*/
   }
-  v10 = &stru_B0C1C0; /*0x6d05cc*/
+  v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0); /*0x6d05cc*/
   do /*0x6d05e2*/
   {
     (*(void (**)(CommandClass *, ShapeButtonClass *))(*(unsigned int *)v6 + 52))( (CommandClass *)(v6), (ShapeButtonClass *)(v10)); /*0x6d05d6*/
@@ -714,7 +714,7 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
     v12 = *v11; /*0x6d05f5*/
     if ( *v11 >= 0 && v12 < 25 ) /*0x6d05fe*/
     {
-      v13 = &stru_B0C1C0 + 8 * v12; /*0x6d0606*/
+      v13 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v12); /*0x6d0606*/
       if ( v13 ) /*0x6d060d*/
         HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], *(unsigned int *)v13[3].__pad_0); /*0x6d0619*/
     }
@@ -1157,7 +1157,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
       while ( v26 >= 0 ); /*0x6d71cd*/
     }
   }
-  return result; /*0x6d71d3*/
+  return (void **)(result); /*0x6d71d3*/
 
 }
 }
@@ -1187,7 +1187,7 @@ int TacticalClass::CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5)
   v6 = this->visibleArea[1]; /*0x6d9b5d*/
   v17 = v5 + a2; /*0x6d9b6a*/
   v18 = v6 + a3; /*0x6d9b75*/
-  v7 = a2 + v5 + aP3; /*0x6d9b86*/
+  v7 = (int)(a2 + v5 + aP3); /*0x6d9b86*/
   v8 = 0; /*0x6d9b8a*/
   v20 = a3 + a5 + v6; /*0x6d9b8c*/
   v16 = 0; /*0x6d9b98*/
@@ -1247,7 +1247,7 @@ void * TacticalClass::IsOccupiedByTechno(unsigned int * a2)
   v20[0] = a2[1] + this->visibleArea[1]; /*0x6da3ab*/
   v16 = -1; /*0x6da3b7*/
   v17 = 0; /*0x6da3bf*/
-  if ( this->floats[0] <= 0 ) /*0x6da3c3*/
+  if ( (&this->floats)[0] <= 0 ) /*0x6da3c3*/
   {
 LABEL_18:
     v13 = v2[1]; /*0x6da4b8*/
@@ -1306,7 +1306,7 @@ LABEL_15:
     v4 += 3; /*0x6da491*/
     ++v17; /*0x6da4a1*/
   }
-  while ( v17 < this->floats[0] ); /*0x6da4a5*/
+  while ( v17 < (&this->floats)[0] ); /*0x6da4a5*/
   result = v18; /*0x6da4ab*/
   if ( !v18 ) /*0x6da4b2*/
   {

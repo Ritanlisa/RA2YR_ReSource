@@ -38,6 +38,7 @@
 namespace gamemd {
 int Check(void *a1_1, void *a2_1, void *a3_1)
 {
+    RandomMap *self = (RandomMap *)a1_1;  /* G57w8: this-pronoun (truth raw_decomp 0x486790) */
     int v1; // eax
 
     v1 = self->RandomMap_field_0x38[0]; /*0x486790*/
@@ -46,8 +47,9 @@ int Check(void *a1_1, void *a2_1, void *a3_1)
 }
 // 0x58BF70
 namespace gamemd {
-unsigned int * TerrainTileDataConstructor(int a2)
+unsigned int * TerrainTileDataConstructor(void *a1, int a2)
 {
+    RandomMap *self = (RandomMap *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x58BF70) */
     Cell *v3; // eax
     char IsGroundTypeRange; // al
     void *v5; // ecx
@@ -57,7 +59,7 @@ unsigned int * TerrainTileDataConstructor(int a2)
     *(unsigned int *)&self->RandomMap_field_0x2[2] = 0; /*0x58bf7c*/
     self->RandomMap_field_0x8 = (void *)g_MissionQueueFrame.localVariables[164]; /*0x58bf8a*/
     self->RandomMap_field_0xC = 0; /*0x58bf8d*/
-    self->RandomMap_field_0x10 = (void *)*((char *)CellCoord::To_CellObj( /*0x58bfa6*/
+    self->RandomMap_field_0x10 = (unsigned int)((void *)*((char *)CellCoord::To_CellObj( )/*0x58bfa6*/
                                                      (CellCoord *)&stru_87F5F0.__pad_58[416],
                                                      (__int16 *)&a2)
                                          + 283);
@@ -65,7 +67,7 @@ unsigned int * TerrainTileDataConstructor(int a2)
     IsGroundTypeRange = ((Cell *)v3)->IsGroundTypeRange(); /*0x58bfb0*/
     v5 = (void *)a2; /*0x58bfb5*/
     IDA_LOBYTE(self->RandomMap_field_0x14) = IsGroundTypeRange; /*0x58bfb9*/
-    *(void **)((char *)&self->RandomMap_field_0x14 + 2) = (unsigned int)v5; /*0x58bfbe*/
+    *(void **)((char *)&self->RandomMap_field_0x14 + 2) = (void *)((unsigned int)v5); /*0x58bfbe*/
     IDA_BYTE2(self->RandomMap_field_0x18) = 0; /*0x58bfc1*/
     IDA_HIBYTE(self->RandomMap_field_0x18) = 1; /*0x58bfc4*/
     self->RandomMap_field_0x1C = 0; /*0x58bfc7*/
@@ -187,9 +189,9 @@ int GenerateTerrain(RandomMap *self)
         *(unsigned int *)(80 * ((__int16)v45 + g_MapCellWidth * IDA_SHIWORD(v45)) + g_MissionQueueFrame.localVariables[163] + 60) = *(unsigned int *)v47; /*0x58c906*/
         if ( g_MissionQueueFrame.localVariables[163] ) /*0x58c912*/
           *(unsigned int *)(80 * ((__int16)v45 + g_MapCellWidth * IDA_SHIWORD(v45)) + g_MissionQueueFrame.localVariables[163] + 56) = v5; /*0x58c92d*/
-        for ( i = 0; i < 8; ++i ) /*0x58c931*/
+        for ( i = (unsigned int)(0); i < 8; ++i ) /*0x58c931*/
         {
-          IDA_LODWORD(v52) = *((CellStruct *)&v45)->Add( (unsigned int *)(&v53), (unsigned short *)(4 * (i & 7) + 9041544)); /*0x58c956*/
+          IDA_LODWORD(v52) = (unsigned int)(*((CellStruct *)&v45)->Add( (unsigned int *)(&v53), (unsigned short *)(4 * (i & 7) + 9041544))); /*0x58c956*/
           *(unsigned int *)v46 = IDA_LODWORD(v52); /*0x58c95a*/
           v7 = g_MissionQueueFrame.localVariables[160]; /*0x58c968*/
           v8 = g_MissionQueueFrame.localVariables[163] + 80 * (SLOWORD(v52) + g_MapCellWidth * IDA_SWORD1(v52)); /*0x58c97d*/
@@ -313,7 +315,7 @@ int GenerateTerrain(RandomMap *self)
       *(unsigned int *)v47 = *(unsigned int *)(v17[1] + 4 * v19); /*0x58cb2a*/
       while ( 1 ) /*0x58cb51*/
       {
-        IDA_LODWORD(v52) = *((CellStruct *)v47)->Add( (unsigned int *)(&v53), (unsigned short *)(4 * (v20 & 7) + 9041544)); /*0x58cb51*/
+        IDA_LODWORD(v52) = (unsigned int)(*((CellStruct *)v47)->Add( (unsigned int *)(&v53), (unsigned short *)(4 * (v20 & 7) + 9041544))); /*0x58cb51*/
         *(unsigned int *)v49 = IDA_LODWORD(v52); /*0x58cb55*/
         v21 = IDA_SWORD1(v52) + SLOWORD(v52); /*0x58cb61*/
         if ( v21 > g_MissionQueueFrame.localVariables[160] ) /*0x58cb66*/
@@ -399,13 +401,14 @@ int GenerateTerrain(RandomMap *self)
     }
     *(unsigned int *)v54.__pad_0 = (unsigned int)(void*)&VectorClass_Cell_vftable; /*0x58ce77*/
     Buffer::Cleanup( (void *)(&v54)); /*0x58ce7f*/
-    return v41; /*0x58cc98*/
+    return (int)(v41); /*0x58cc98*/
 }
 }
 // 0x58D1C0
 namespace gamemd {
-MapClass * * ExpandTerrainCells(int a2, int a3)
+MapClass * * ExpandTerrainCells(void *a1, int a2, int a3)
 {
+    RandomMap *self = (RandomMap *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x58D1C0) */
     int result; // eax
     int v4; // ebx
     int v5; // ebp
@@ -507,7 +510,7 @@ MapClass * * ExpandTerrainCells(int a2, int a3)
                   && v18 <= g_MissionQueueFrame.localVariables[161] )
                 {
                   v19 = g_MissionQueueFrame.localVariables[163] + 80 * ((__int16)v28 + g_MapCellWidth * v17); /*0x58d31f*/
-                  if ( *(void **)(v19 + 56) == self->RandomMap_field_0x8 ) /*0x58d326*/
+                  if ( *(void **)(v19 + 56) == (void *)(self->RandomMap_field_0x8) ) /*0x58d326*/
                   {
                     if ( *(unsigned int *)(v19 + 60) != v26 + 1 ) /*0x58d334*/
                     {
@@ -521,7 +524,7 @@ MapClass * * ExpandTerrainCells(int a2, int a3)
 
                       {
                         vtable0 = v12[1].vtable0; /*0x58d362*/
-                        Items = v12->Items; /*0x58d365*/
+                        Items = (unsigned int *)(v12->Items); /*0x58d365*/
                         v12[1].vtable0 = (char *)vtable0 + 1; /*0x58d36b*/
                         Items[(unsigned int)vtable0] = v28; /*0x58d372*/
                       }
@@ -572,6 +575,7 @@ MapClass * * ExpandTerrainCells(int a2, int a3)
 namespace gamemd {
 unsigned int * TerrainAlloc(void *a1_1)
 {
+    RandomMap *self = (RandomMap *)a1_1;  /* G57w8: this-pronoun (truth raw_decomp 0x58D410) */
     VectorClass *v1; // eax
     VectorClass *v2; // esi
     VectorClass *v3; // ebx
@@ -608,7 +612,7 @@ unsigned int * TerrainAlloc(void *a1_1)
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x58d458*/
     v4 = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x58d467*/
     if ( !v4 ) /*0x58d46b*/
-      return &v3->vtable0; /*0x58d592*/
+      return (unsigned int *)(&v3->vtable0); /*0x58d592*/
     do
     {
       v5 = *(unsigned int *)(v4 + 36); /*0x58d478*/
@@ -616,7 +620,7 @@ unsigned int * TerrainAlloc(void *a1_1)
         v6 = *(unsigned int *)(80 * ((__int16)v5 + g_MapCellWidth * IDA_SHIWORD(v5)) + g_MissionQueueFrame.localVariables[163] + 56); /*0x58d49f*/
       else
         v6 = -1; /*0x58d483*/
-      if ( (void *)v6 == self->RandomMap_field_0x8 )
+      if ( (void *)v6 == (void *)(self->RandomMap_field_0x8) )
       {
         v16 = 0; /*0x58d4b0*/
         for ( i = 0; i < 8; ++i )
@@ -634,7 +638,7 @@ unsigned int * TerrainAlloc(void *a1_1)
                             + g_MissionQueueFrame.localVariables[163]
                             + 56)
                  : (void *)-1;
-              if ( v9 != self->RandomMap_field_0x8 ) /*0x58d51c*/
+              if ( v9 != (void *)(self->RandomMap_field_0x8) ) /*0x58d51c*/
                 v16 = 1; /*0x58d51e*/
             }
             v3 = v17; /*0x58d523*/
@@ -646,11 +650,11 @@ unsigned int * TerrainAlloc(void *a1_1)
           v11 = *(unsigned int *)(v4 + 36); /*0x58d53b*/
           if ( (int)v3[1].vtable0 < Capacity /*0x58d55d*/
             || (v3->IsAllocated || !Capacity)
-            && (v12 = (int)v3[1].Items, v12 > 0)
+            && (v12 = (int)((unsigned int *)((int)v3[1].Items)), v12 > 0)
             && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))v3->vtable0 + 2))( (VectorClass *)(v3), Capacity + v12, 0) )
           {
             vtable0 = v3[1].vtable0; /*0x58d564*/
-            Items = v3->Items; /*0x58d567*/
+            Items = (unsigned int *)(v3->Items); /*0x58d567*/
             v3[1].vtable0 = (char *)vtable0 + 1; /*0x58d56d*/
             Items[(unsigned int)vtable0] = v11; /*0x58d570*/
           }
@@ -659,13 +663,14 @@ unsigned int * TerrainAlloc(void *a1_1)
       v4 = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x58d57d*/
     }
     while ( v4 );
-    return &v3->vtable0; /*0x58d588*/
+    return (unsigned int *)(&v3->vtable0); /*0x58d588*/
 }
 }
 // 0x58E740
 namespace gamemd {
-RandomMap * * CollectTerrainCells(int a2, void *a2_2)
+RandomMap * * CollectTerrainCells(void *a1, int a2, void *a2_2)
 {
+    RandomMap *self = (RandomMap *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x58E740) */
     VectorClass *v2; // eax
     VectorClass *v3; // esi
     VectorClass *v4; // ebp
@@ -736,7 +741,7 @@ RandomMap * * CollectTerrainCells(int a2, void *a2_2)
               && v11 <= g_MissionQueueFrame.localVariables[161] )
             {
               v12 = (char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( (int16_t *)(v24)); /*0x58e838*/
-              if ( (void *)v12[283] == v26->RandomMap_field_0x10 ) /*0x58e84b*/
+              if ( (void *)v12[283] == (void *)(v26->RandomMap_field_0x10) ) /*0x58e84b*/
               {
                 v13 = g_MissionQueueFrame.localVariables[163] + 80 * (v24[0] + g_MapCellWidth * v24[1]); /*0x58e870*/
                 v14 = *(void **)(v13 + 56); /*0x58e872*/
@@ -756,7 +761,7 @@ RandomMap * * CollectTerrainCells(int a2, void *a2_2)
 
                   {
                     vtable0 = v4[1].vtable0; /*0x58e8df*/
-                    Items = v4->Items; /*0x58e8e2*/
+                    Items = (unsigned int *)(v4->Items); /*0x58e8e2*/
                     v4[1].vtable0 = (char *)vtable0 + 1; /*0x58e8e8*/
                     Items[(unsigned int)vtable0] = *(unsigned int *)v24; /*0x58e8ef*/
                   }
@@ -764,7 +769,7 @@ RandomMap * * CollectTerrainCells(int a2, void *a2_2)
                   *(unsigned int *)(v13 + 56) = v26->RandomMap_field_0x8; /*0x58e903*/
                   *((unsigned char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( (int16_t *)(v24)) + 283) = v21->RandomMap_field_0x10; /*0x58e90e*/
                 }
-                else if ( v14 != v26->RandomMap_field_0x8 ) /*0x58e91d*/
+                else if ( v14 != (void *)(v26->RandomMap_field_0x8) ) /*0x58e91d*/
                 {
                   if ( p_vtable0 ) /*0x58e98c*/
                     (*(void (**)(unsigned int *, int))*p_vtable0)( (unsigned int *)(p_vtable0), 1); /*0x58e992*/
@@ -788,11 +793,11 @@ RandomMap * * CollectTerrainCells(int a2, void *a2_2)
       }
       if ( v5 ) /*0x58e94b*/
         (*(void (**)(unsigned int *, int))*v5)( (unsigned int *)(v5), 1); /*0x58e951*/
-      p_vtable0 = &v4->vtable0; /*0x58e95c*/
+      p_vtable0 = (unsigned int *)(&v4->vtable0); /*0x58e95c*/
     }
     if ( p_vtable0 ) /*0x58e972*/
       (*(void (**)(unsigned int *, int))*p_vtable0)( (unsigned int *)(p_vtable0), 1); /*0x58e978*/
-    return 1; /*0x58e97a*/
+    return (gamemd::RandomMap **)(1); /*0x58e97a*/
 }
 }
 // 0x58E9B0
@@ -900,7 +905,7 @@ AbstractClass * * PlaceRandomMapTerrain(RandomMap *self)
     v19.vtable0 = (void*)&VectorClass_Cell_vftable; /*0x58eb93*/
     if ( v19.Items && v19.IsAllocated ) /*0x58eba6*/
       RA2_OPDEL(v19.Items); /*0x58eba9*/
-    return 1; /*0x58eb91*/
+    return (gamemd::AbstractClass **)(1); /*0x58eb91*/
 }
 }
 // 0x58F0C0
@@ -998,7 +1003,7 @@ void* CollectBorderCells(RandomMap *self)
     }
     for ( i = 0; i < g_MissionQueueFrame.localVariables[164]; ++i ) /*0x58f201*/
     {
-      if ( Block[i] &(void *)&i != v1->RandomMap_field_0x8 ) /*0x58f210*/
+      if ( Block[i] &(void *)&i != (void *)(v1->RandomMap_field_0x8) ) /*0x58f210*/
       {
         v18 = *(unsigned int *)&v1->RandomMap_field_0x2[2]; /*0x58f212*/
         v19 = *(unsigned int *)(v18 + 8); /*0x58f215*/
@@ -1014,12 +1019,12 @@ void* CollectBorderCells(RandomMap *self)
         }
       }
     }
-    v23 = 0; /*0x58f25a*/
+    v23 = (int)((void *)(0)); /*0x58f25a*/
     v1->RandomMap_field_0xC = 0; /*0x58f25c*/
     v24 = g_MapCellWidth * g_MapCellWidth; /*0x58f265*/
     if ( g_MapCellWidth * g_MapCellWidth > 0 ) /*0x58f26a*/
     {
-      RandomMap_field_0x8 = v1->RandomMap_field_0x8; /*0x58f26c*/
+      RandomMap_field_0x8 = (void *)(v1->RandomMap_field_0x8); /*0x58f26c*/
       v26 = g_MissionQueueFrame.localVariables[163]; /*0x58f26f*/
       do /*0x58f29b*/
       {
@@ -1040,8 +1045,9 @@ void* CollectBorderCells(RandomMap *self)
 }
 // 0x58F2C0
 namespace gamemd {
-void* PlaceBuildings(int a2, int a3)
+void* PlaceBuildings(void *a1, int a2, int a3)
 {
+    RandomMap *self = (RandomMap *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x58F2C0) */
     int v4; // eax
     int v5; // ecx
     char result; // al
@@ -1860,7 +1866,7 @@ int AllocateArea()
           if ( (*(int *)(*(unsigned int *)(v13 + 4) + 16) > 1 || *(int *)(v13 + 12) > 50) && !*(unsigned char *)(v13 + 20) ) /*0x5906b7*/
           {
             v14 = (void *)v39[4]; /*0x5906c5*/
-            if ( *(void **)(v13 + 16) == v14 && v14 == v1->RandomMap_field_0x10 ) /*0x5906cf*/
+            if ( *(void **)(v13 + 16) == (void *)((void *)(v14) && v14 == v1->RandomMap_field_0x10 )) /*0x5906cf*/
             {
               ((RandomMap *)v1)->PlaceBuildings( (int)v39, v13); /*0x5906d5*/
               v5 = g_MissionQueueFrame.briefing[339]; /*0x5906da*/

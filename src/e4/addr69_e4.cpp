@@ -87,6 +87,8 @@
 #include "e4/classes/FileStraw_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
 #include "e4/classes/ListBox_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/INISectionList_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -474,7 +476,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v25 = a2 / 0xC0; /*0x69422f*/
   if ( a2 % 0xC0 ) /*0x69422a*/
     v25 = ++v7; /*0x694238*/
-  Block = (unsigned int)(void *)RA2_OPNEW(v7); /*0x69424e*/
+  Block = (void *)((unsigned int)(void *)RA2_OPNEW(v7)); /*0x69424e*/
   memset( (void *)(Block), 0, v7); /*0x694253*/
   v26 = 0; /*0x694257*/
   lpBuffer = (LPCVOID)RA2_OPNEW(a2); /*0x694269*/
@@ -995,7 +997,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
             {
               do /*0x694f42*/
               {
-                v40 = gamemd::Network::SendToPlayer( /*0x694f39*/
+                v40 = (int)(gamemd::Network::SendToPlayer( )/*0x694f39*/
                         (int)&unk_A8E9C0,
                         (int)&v57.__pad_0[12],
                         220,
@@ -1065,7 +1067,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   v6 = 0; /*0x695221*/
   if ( dword_A8B8D8 <= 0 ) /*0x695225*/
     return 0; /*0x69540d*/
-  while ( _strcmpi((const char *)((const void *)(*(unsigned int *)(dword_A8B8CC + 4 * v6) + 88)), v5) ) /*0x695249*/
+  while ( _strcmpi((const char *)((const void *)(*(unsigned int *)(dword_A8B8CC + 4 * v6) + 88)),(const char *)( v5)) ) /*0x695249*/
   {
   LABEL_17:
     if ( ++v6 >= dword_A8B8D8 ) /*0x6953fb*/
@@ -1390,7 +1392,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
       v11 = v10; /*0x6995a2*/
       if ( v10 ) /*0x6995a9*/
       {
-        v12 = strstr(v10 + 5, asc_83F484); /*0x6995b4*/
+        v12 = (char *)(strstr(v10 + 5, asc_83F484)); /*0x6995b4*/
         v19 = v12; /*0x6995be*/
         if ( v12 > v11 ) /*0x6995c2*/
         {

@@ -401,7 +401,7 @@ void* sub_7B84F0()
       dword_B78148 = (unsigned int)(16);
       dword_B7814C = (unsigned int)(0);
       dword_B7813C = (unsigned int)(0);
-      result = (HANDLE)((unsigned int)(CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158)));
+      result = (HANDLE)((unsigned int)(CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0,(LPDWORD)( &dword_B78158))));
       dword_B78154 = (unsigned int)(result);
       if ( result ) /*0x7b856f*/
       {
@@ -457,7 +457,7 @@ void sub_53E6B0()
 
   if ( dword_AA0448 ) /*0x53e6b7*/
   {
-    EnterCriticalSection(&unk_AA0418); /*0x53e6be*/
+    EnterCriticalSection((LPCRITICAL_SECTION)(&unk_AA0418)); /*0x53e6be*/
     if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 ) /*0x53e6dd*/
     {
       if ( dword_AA0464 ) /*0x53e6e7*/
@@ -467,7 +467,7 @@ void sub_53E6B0()
         fflush((FILE *)(dword_AA0468)); /*0x53e708*/
       }
     }
-    LeaveCriticalSection(&unk_AA0418); /*0x53e715*/
+    LeaveCriticalSection((LPCRITICAL_SECTION)(&unk_AA0418)); /*0x53e715*/
   }
 }
 } // namespace gamemd

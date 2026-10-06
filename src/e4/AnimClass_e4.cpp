@@ -41,6 +41,8 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Input_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
+#include "e4/classes/BSurface_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {

@@ -13,6 +13,7 @@
 namespace gamemd {
 wchar_t DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 {
+  DropListClass *self = (DropListClass *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x4B5030) */
   int v3; // ecx
   wchar_t **v4; // edi
   int *v5; // esi

@@ -1377,7 +1377,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
         dword_ABDC74 = (unsigned int)(aP1); /*0x5733b7*/
         v21 = (char *)&unk_ABDC50; /*0x5733bc*/
       }
-      LOBYTE(v9) = (unsigned char)(Cell::SetTileType((IUnknown *)(v31),(IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3),(IUnknown *)(-1), v21[283] - 4, 0)); /*0x5733e7*/
+      LOBYTE(v9) = (unsigned char)(Cell::SetTileType((IUnknown *)(v31),(IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3),(IUnknown *)(-1),(IUnknown *)( v21[283] - 4), 0)); /*0x5733e7*/
     }
   }
   return (gamemd::HouseClass **)(v9); /*0x5733ec*/
@@ -1703,11 +1703,11 @@ char CellClass::SetTileType13(IUnknown * aP0, int a2)
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x572c38*/
   {
-    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2),(IUnknown *)(g_Cell_BuildabilityLUT + g_TerrainSoundConfig), -1, -1, 0)); /*0x572c48*/
+    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2),(IUnknown *)(g_Cell_BuildabilityLUT + g_TerrainSoundConfig),(IUnknown *)( -1),(IUnknown *)( -1), 0)); /*0x572c48*/
   }
   else if ( v7 == g_TerrainSoundConfig + 2 ) /*0x572c58*/
   {
-    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2),(IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2), -1, -1, 0)); /*0x572c6a*/
+    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2),(IUnknown *)(g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2),(IUnknown *)( -1),(IUnknown *)( -1), 0)); /*0x572c6a*/
   }
   return v7; /*0x572c4d*/
 
@@ -1755,15 +1755,15 @@ char CellClass::SetTileType14(IUnknown * aP0, int a2)
   v7 = v5[14] - g_Cell_BuildabilityLUT + 1; /*0x572d33*/
   if ( v7 == dword_AA1548 || v7 == dword_AA0740 ) /*0x572d3e*/
   {
-    LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)((int16_t *)&a2), 1, 0)); /*0x572d8e*/
+    LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)((int16_t *)&a2),(IUnknown *)( 1), 0)); /*0x572d8e*/
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x572d48*/
   {
-    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 1, -1, -1, 0)); /*0x572d5a*/
+    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2),(IUnknown *)( g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 1),(IUnknown *)( -1),(IUnknown *)( -1), 0)); /*0x572d5a*/
   }
   else if ( v7 == g_TerrainSoundConfig + 1 ) /*0x572d6a*/
   {
-    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2), g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2, -1, -1, 0)); /*0x572d7c*/
+    LOBYTE(v7) = (unsigned char)(Cell::SetTileType((IUnknown *)((int16_t *)&a2),(IUnknown *)( g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2),(IUnknown *)( -1),(IUnknown *)( -1), 0)); /*0x572d7c*/
   }
   return v7; /*0x572d5f*/
 

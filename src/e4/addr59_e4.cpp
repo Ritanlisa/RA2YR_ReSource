@@ -262,7 +262,7 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
   v29 = v6; /*0x59445a*/
   ((VectorClass *)(&v32))->CellConstructor(0, 0); /*0x59445e*/
   v7 = *(int16_t *)(a1 + 36) + g_MapCellWidth * *(int16_t *)(a1 + 38); /*0x594478*/
-  v32 = (void*)&DynamicVectorClass_Cell_vftable; /*0x59447a*/
+  v32 = (void **)((void*)&DynamicVectorClass_Cell_vftable); /*0x59447a*/
   v36 = 0; /*0x594482*/
   v37 = 20000; /*0x59448d*/
   *((unsigned int *)dword_ABED10 + 20 * v7 + 15) = v6; /*0x594498*/
@@ -354,7 +354,7 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
       v6 = v29; /*0x5944f8*/
     }
   }
-  v32 = (void*)&VectorClass_Cell_vftable; /*0x5946d2*/
+  v32 = (void **)((void*)&VectorClass_Cell_vftable); /*0x5946d2*/
   if ( Block ) /*0x5946dd*/
   {
     if ( v35 ) /*0x5946e5*/
@@ -775,7 +775,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   *(unsigned int *)v17.__pad_0 = (unsigned int)((void*)&rc_ptr_WDTTerritory_vftable); /*0x595fd8*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x595fe5*/
   {
-    WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.q008, *(int *)dword_A8B240); /*0x595ff1*/
+    WDTTerritoryClass = (unsigned int *)(FindWDTTerritoryClass((rc_ptr *)&v17.q008, *(int *)dword_A8B240)); /*0x595ff1*/
     ((ComPtr *)(&v17))->Set(WDTTerritoryClass[1]); /*0x595ffe*/
     v17.q008 = (int)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
     ((ComPtr *)((ComPtr *)&v17.q008))->Release(); /*0x59600b*/
@@ -852,7 +852,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
       CompressScreenshot( (int *)(&v17.q010), *(int **)g_MissionQueueFrame.briefing[451], (void *)(&FileSystem_TEMPERAT_PAL)); /*0x596237*/
       if ( FindFirstFileA((LPCSTR)((char *)&stru_82BA00 + 6), &FindFileData) == (HANDLE)-1 ) /*0x596252*/
         CreateDirectoryA((LPCSTR)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/
-      CopyFileA(ExistingFileName, Destination, 0); /*0x59626e*/
+      CopyFileA((LPCSTR)(ExistingFileName), Destination, 0); /*0x59626e*/
       CleanupRandomMapCache(v16); /*0x596274*/
       ((RawFileClass *)((RawFileClass *)&v17.ComPtr_field_0x10))->Dtor(); /*0x59627d*/
       v13 = (ComPtr *)g_MissionQueueFrame.briefing[451]; /*0x596282*/
@@ -977,12 +977,12 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   v34 = aP2[1]; /*0x59a9df*/
   v33 = *(unsigned int *)aP2;
   ((VectorClass *)(&v43))->Construct(0, 0); /*0x59a9ed*/
-  v43 = (void*)&DynamicVectorClass_int_vftable; /*0x59a9f8*/
+  v43 = (void **)((void*)&DynamicVectorClass_int_vftable); /*0x59a9f8*/
   v48 = 10; /*0x59aa00*/
   v47 = 0; /*0x59aa0b*/
   ((VectorClass *)(&v37))->Construct(0, 0); /*0x59aa12*/
   v10 = 0; /*0x59aa1b*/
-  v37 = (void*)&DynamicVectorClass_int_vftable; /*0x59aa1f*/
+  v37 = (void **)((void*)&DynamicVectorClass_int_vftable); /*0x59aa1f*/
   v42 = 10; /*0x59aa27*/
   i = 0; /*0x59aa2f*/
   if ( v23 > 0 ) /*0x59aa33*/
@@ -1086,13 +1086,13 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       v33 = *v7; /*0x59ac8f*/
     ++v16; /*0x59aca0*/
   }
-  v37 = (void*)&VectorClass_int_vftable; /*0x59acb8*/
+  v37 = (void **)((void*)&VectorClass_int_vftable); /*0x59acb8*/
   if ( Block && IDA_BYTE1(v40) ) /*0x59acc4*/
   {
     RA2_OPDEL(Block); /*0x59acc7*/
     Block = (void *)(0); /*0x59accf*/
   }
-  v43 = (void*)&VectorClass_int_vftable; /*0x59acdb*/
+  v43 = (void **)((void*)&VectorClass_int_vftable); /*0x59acdb*/
   IDA_BYTE1(v40) = 0; /*0x59ace2*/
   v39 = 0; /*0x59ace9*/
   if ( v44 ) /*0x59acf2*/
@@ -1197,7 +1197,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
   ObjectClass *v12; // [esp+10h] [ebp-4h]
 
   v2 = a2; /*0x5942f5*/
-  v12 = this; /*0x5942f9*/
+  v12 = (gamemd::ObjectClass *)(this); /*0x5942f9*/
   v3 = a2[1]; /*0x5942fd*/
   result = v3 + a2[3]; /*0x594303*/
   v10 = v3; /*0x594305*/

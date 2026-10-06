@@ -289,7 +289,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameOptionsClass() = default;
 
-    virtual void UnlockMovieIfNeeded_MoviesList(void a2); // 0x5FBF80
+    virtual char *UnlockMovieIfNeeded_MoviesList(void *a2); // 0x5FBF80  // G57w8: raw fn_5F.c 签名对齐 (char* thiscall(this, void*))
     virtual void PopulateMovieList(HWND hWnd); // 0x5FC000
 
     uint8_t GameOptionsClass_field_0x04[4];

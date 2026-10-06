@@ -71,6 +71,11 @@
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
+#include "e4/classes/AudioFrame_e4.hpp"
+#include "e4/classes/Campaign_e4.hpp"
+#include "e4/classes/FileSystem_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -813,7 +818,7 @@ char Map_Helper_584030(IUnknown * aP0)
     IDA_HIWORD(v11) = v4 + aP0[1]; /*0x58405e*/
     IDA_LOWORD(v11) = v5 + *aP0; /*0x584063*/
     v6 = (unsigned int)((int16_t)v11 + (IDA_SHIWORD(v11) << 9)); /*0x584071*/
-    if ( v6 >= 0x40000 || (v7 = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x584081*/
+    if ( v6 >= 0x40000 || (v7 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v6))) == 0 ) /*0x584081*/
     {
       dword_ABDC74 = (unsigned int)((unsigned int *)(v11));
       v7 = unk_ABDC50; /*0x58408c*/
@@ -1159,7 +1164,7 @@ char sub_63AB60(int a1, int a2)
   if ( v7 == v3 ) /*0x63ac3f*/
   {
   LABEL_17:
-    Mission_e4::SetAndCall((int)((int *)&dword_87F7E8), 0, 1); /*0x63ac45*/
+    Mission_e4::SetAndCall((int)((int *)&dword_87F7E8), 0,(void *)( 1)); /*0x63ac45*/
     return 1; /*0x63ac4e*/
   }
   Mission_e4::SetAndCall((int)((int *)&dword_87F7E8), 0, 0); /*0x63ac43*/
@@ -1740,7 +1745,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
       *(unsigned int *)&this->m_1[3] = (unsigned int)v5; /*0x76a4c4*/
       this->m_8 = v3; /*0x76a4ca*/
       BYTE1(this->m_C) = a3 == 0; /*0x76a4cd*/
-      return 1; /*0x76a4d3*/
+      return (gamemd::AbstractClass **)(1); /*0x76a4d3*/
     }
     else
     {
@@ -1750,7 +1755,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
   else
   {
     (*(void (**)(_VectorClass_VCentroid_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a4dd*/
-    return 1; /*0x76a4e3*/
+    return (gamemd::AbstractClass **)(1); /*0x76a4e3*/
   }
 
 }
@@ -1813,7 +1818,7 @@ unsigned int * sub_58BB00(unsigned int * a1, int a2)
   else
   {
     *a1 = (&dword_ABE328)[2 * a2]; /*0x58bb15*/
-    (&a1)[1] = (&dword_ABE32C)[2 * a2]; /*0x58bb1e*/
+    (&a1)[1] = (unsigned int *)((&dword_ABE32C)[2 * a2]); /*0x58bb1e*/
   }
   return result; /*0x58bb21*/
 }
@@ -1873,7 +1878,7 @@ v5 = (*(int (**)(int *, unsigned int **))(g_MissionQueueFrame.briefing[338] + 16
         }
       }
       v6 = (void *)v4[11]; /*0x58cf43*/
-      v4[10] = (void*)&VectorClass_Cell_vftable; /*0x58cf46*/
+      v4[10] = (unsigned int)((void*)&VectorClass_Cell_vftable); /*0x58cf46*/
       if ( v6 && *((unsigned char *)v4 + 53) ) /*0x58cf51*/
       {
         RA2_OPDEL(v6); /*0x58cf57*/
@@ -1998,7 +2003,7 @@ const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
   unknown_libname_73( (void *)(v10)); /*0x5ade50*/
   v10[1] = (void *)TimerGetTicks(); /*0x5ade61*/
   v10[3] = 0; /*0x5ade72*/
-  ((unsigned int *)&v9)[0] = (void*)&MapSelect_vftable; /*0x5ade7d*/
+  ((unsigned int *)&v9)[0] = (unsigned int)((void*)&MapSelect_vftable); /*0x5ade7d*/
   v4 = !((SessionClass *)((SessionClass *)(char *)&v9))->LoadGameSession( (int)(a1), (const char **)&v9); /*0x5ade93*/
   j_DeleteAndZero( (void *)((ObjectClass *)v10)); /*0x5ade96*/
   ((MSEngine *)&v9.customSound_controller[1])->Destructor(); /*0x5ade9f*/
@@ -2062,7 +2067,7 @@ char sub_5DB650(int a1, char a2, char a3)
   HWND v5; // eax
 
   v5 = (HWND)((Dialog*)((void *)0xBC))->FindByHandle(); /*0x5db65b*/
-  return Map_Handle_5EC880(v5, a1, a2, a3); /*0x5db66f*/
+  return (char)(Map_Handle_5EC880(v5, a1, a2, a3)); /*0x5db66f*/
 }
 } // namespace gamemd
 
@@ -2371,7 +2376,7 @@ void Map_Load_72E9F0(ConvertClass * a1, int * a2)
   v5 = 0; /*0x72ea16*/
   v4 = *(unsigned int *)dword_B0FC1C; /*0x72ea20*/
   v5 = *((unsigned int *)dword_B0FC1C + 1); /*0x72ea4a*/
-  DrawToSurfaceSHP( (int)a1, dword_B0FBA8, (ConvertClass *)((int)dword_B0FB34), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72ea57*/
+  DrawToSurfaceSHP( (int)a1, dword_B0FBA8, (ConvertClass *)((int)dword_B0FB34), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72ea57*/
 }
 } // namespace gamemd
 
@@ -2388,7 +2393,7 @@ void Map_Load_72EAD0(ConvertClass * a1, int * a2)
   v5 = 0; /*0x72eaf6*/
   v4 = *(unsigned int *)dword_B0FC1C; /*0x72eb00*/
   v5 = *((unsigned int *)dword_B0FC1C + 1); /*0x72eb2a*/
-  DrawToSurfaceSHP( (int)a1, dword_B0FBB4, (ConvertClass *)((int)dword_B0FB1C), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72eb37*/
+  DrawToSurfaceSHP( (int)a1, dword_B0FBB4, (ConvertClass *)((int)dword_B0FB1C), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72eb37*/
 }
 } // namespace gamemd
 

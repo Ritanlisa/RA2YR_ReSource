@@ -28,6 +28,8 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x5236A0
@@ -116,7 +118,7 @@ LABEL_11:
   else
   {
     v6 = (unsigned int *)(dword_A8E34C);
-    while ( *(unsigned int *)(unsigned int)(v6) != this ) /*0x52386a*/
+    while ( *(unsigned int *)(unsigned int)(v6)   !=   (unsigned int)((unsigned int)(this ))) /*0x52386a*/
     {
       ++v5; /*0x52386c*/
       ++v6; /*0x52386d*/
@@ -602,7 +604,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
     v5->Sequence[0] = 0; /*0x52497d*/
   }
   v7 = (unsigned int)a2; /*0x524983*/
-  result = ((TechnoTypeClass *)(((TechnoTypeClass *)v5)))->SaveLoad_Prefix( (int)(a2)); /*0x524989*/
+  result = (int)(((TechnoTypeClass *)(((TechnoTypeClass *)v5)))->SaveLoad_Prefix( (int)(a2))); /*0x524989*/
   v14 = result; /*0x524990*/
   if ( result >= 0 ) /*0x524994*/
   {
@@ -624,7 +626,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
         ((DynamicVector *)((DynamicVector *)v5->VoiceComment))->Add_Alt( (unsigned int *)(&a3)); /*0x5249ff*/
         ++v6; /*0x524a04*/
       }
-      while ( v6 < a2 ); /*0x524a09*/
+      while ( v6   <   (int)((int)(a2 ))); /*0x524a09*/
     }
     if ( v5 != (InfantryTypeClass *)-3664 ) /*0x524a13*/
     {
@@ -632,7 +634,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
       (&v5->DeadBodies)[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524a20*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a2), 4, 0); /*0x524a33*/
-    for ( i = 0; i < a2; ++i ) /*0x524a3e*/
+    for ( i = 0; i   <   (int)((int)(a2)); ++i ) /*0x524a3e*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a3), 4, 0); /*0x524a4c*/
       ((DynamicVector *)((DynamicVector *)v5->DeadBodies))->Add_Alt4( (unsigned int *)(&a3)); /*0x524a56*/
@@ -652,7 +654,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
     }
     for ( m = 0; m < (&v5->DeathAnims)[4]; ++m ) /*0x524aef*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)((&v5->DeathAnims)[1] + 4 * m)); /*0x524b00*/
-    v13 = RA2_OPNEW(0x5E8u); /*0x524b15*/
+    v13 = (int)(RA2_OPNEW(0x5E8u)); /*0x524b15*/
     v5->Sequence[0] = v13; /*0x524b1d*/
     (*(void (**)(int, int, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, v13, 1512, 0); /*0x524b2e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5->OccupyWeapon); /*0x524b3d*/
@@ -683,7 +685,7 @@ TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix(InfantryTypeClass *aP0, un
   if ( result >= 0 ) /*0x524b7b*/
   {
     v8 = *a2; /*0x524b87*/
-    a3 = ((int *)&aP0->VoiceComment)[4]; /*0x524b94*/
+    a3 = (int *)(((int *)&aP0->VoiceComment)[4]); /*0x524b94*/
     (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v8 + 16))( (unsigned int *)(a2), (int **)(&a3), 4, 0, v5); /*0x524b98*/
     for ( i = 0; i < a4; ++i ) /*0x524ba3*/
       (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), (&aP0->VoiceComment)[1] + 4 * i, 4, 0); /*0x524bb6*/
@@ -732,37 +734,37 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   }
   __3_YAXPAX_Z((void *)this->Sequence[0]); /*0x524de7*/
   this->Sequence[0] = 0; /*0x524df1*/
-  v4 = (void *)this->VoiceComment[1]; /*0x524df7*/
-  this->VoiceComment[0] = (int)&vt_VectorClass; /*0x524dff*/
-  if ( v4 && BYTE1(this->VoiceComment[3]) ) /*0x524e0b*/
+  v4 = (void *)(&this->VoiceComment)[1]; /*0x524df7*/
+  (&this->VoiceComment)[0] = (int)&vt_VectorClass; /*0x524dff*/
+  if ( v4 && BYTE1((&this->VoiceComment)[3]) ) /*0x524e0b*/
   {
     __3_YAXPAX_Z(v4); /*0x524e14*/
-    this->VoiceComment[1] = 0; /*0x524e1c*/
+    (&this->VoiceComment)[1] = 0; /*0x524e1c*/
   }
-  BYTE1(this->VoiceComment[3]) = 0; /*0x524e22*/
-  this->VoiceComment[2] = 0; /*0x524e28*/
-  v5 = (void *)this->DeathAnims[1]; /*0x524e2e*/
-  this->DeathAnims[0] = (int)&vt_VectorClass; /*0x524e34*/
-  if ( v5 && BYTE1(this->DeathAnims[3]) ) /*0x524e42*/
+  BYTE1((&this->VoiceComment)[3]) = 0; /*0x524e22*/
+  (&this->VoiceComment)[2] = 0; /*0x524e28*/
+  v5 = (void *)(&this->DeathAnims)[1]; /*0x524e2e*/
+  (&this->DeathAnims)[0] = (int)&vt_VectorClass; /*0x524e34*/
+  if ( v5 && BYTE1((&this->DeathAnims)[3]) ) /*0x524e42*/
   {
     __3_YAXPAX_Z(v5); /*0x524e4b*/
-    this->DeathAnims[1] = 0; /*0x524e53*/
+    (&this->DeathAnims)[1] = 0; /*0x524e53*/
   }
-  BYTE1(this->DeathAnims[3]) = 0; /*0x524e59*/
-  this->DeathAnims[2] = 0; /*0x524e5f*/
-  v6 = (void *)this->DeadBodies[1]; /*0x524e65*/
-  this->DeadBodies[0] = (int)&vt_VectorClass; /*0x524e6b*/
-  if ( v6 && BYTE1(this->DeadBodies[3]) ) /*0x524e79*/
+  BYTE1((&this->DeathAnims)[3]) = 0; /*0x524e59*/
+  (&this->DeathAnims)[2] = 0; /*0x524e5f*/
+  v6 = (void *)(&this->DeadBodies)[1]; /*0x524e65*/
+  (&this->DeadBodies)[0] = (int)&vt_VectorClass; /*0x524e6b*/
+  if ( v6 && BYTE1((&this->DeadBodies)[3]) ) /*0x524e79*/
   {
     __3_YAXPAX_Z(v6); /*0x524e82*/
-    this->DeadBodies[1] = 0; /*0x524e8a*/
+    (&this->DeadBodies)[1] = 0; /*0x524e8a*/
   }
-  BYTE1(this->DeadBodies[3]) = 0; /*0x524e92*/
-  this->DeadBodies[2] = 0; /*0x524e98*/
+  BYTE1((&this->DeadBodies)[3]) = 0; /*0x524e92*/
+  (&this->DeadBodies)[2] = 0; /*0x524e98*/
   TechnoTypeClass::DTOR( (void *)((int)this)); /*0x524e9e*/
   if ( (a2 & 1) != 0 ) /*0x524eaa*/
     __3_YAXPAX_Z(this); /*0x524ead*/
-  return (int)this; /*0x524eb7*/
+  return (gamemd::InfantryTypeClass *)((int)this); /*0x524eb7*/
 
 }
 }  // G42.18c ns repair
@@ -794,7 +796,7 @@ LABEL_8:
   ((unsigned int *)this)[0] = (unsigned int)v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x524f52*/
+  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x524f52*/
   v6 = 0; /*0x524f55*/
   BYTE1(((unsigned int *)this)[0]) = 1; /*0x524f59*/
   if ( (int)vtable2 <= 0 ) /*0x524f5d*/
@@ -830,12 +832,12 @@ LABEL_6:
       return WeaponTypeClass::Constructor(v3, Source); /*0x773011*/
     return 0; /*0x773005*/
   }
-  while ( _strcmpi((*((unsigned int *)g_WeaponTypeConfig + v2) + 36), Source) ) /*0x772fea*/
+  while ( _strcmpi((const char *)((*((unsigned int *)g_WeaponTypeConfig + v2) + 36)), Source) ) /*0x772fea*/
   {
     if ( ++v2 >= g_WeaponTypePool ) /*0x772ff4*/
       goto LABEL_6; /*0x772ff4*/
   }
-  return (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + v2); /*0x77300f*/
+  return (gamemd::WeaponTypeClass **)((unsigned int *)*((unsigned int *)g_WeaponTypeConfig + v2)); /*0x77300f*/
 
 }
 }  // G42.18c ns repair

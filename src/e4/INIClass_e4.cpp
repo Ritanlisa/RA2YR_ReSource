@@ -206,7 +206,7 @@ unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char 
   v9 = (uint8_t *)(a2); /*0x528a3d*/
   if ( !a2 ) /*0x528a43*/
     return 0; /*0x528a43*/
-  if ( aP1 == (gamemd::INIClass *)(uint8_t *)this->headNode[0] ) /*0x528a4f*/
+  if ( aP1  ==  (int)((int)(uint8_t *)this->headNode[0] )) /*0x528a4f*/
   {
     v10 = this->headNode[1]; /*0x528a55*/
     goto LABEL_7; /*0x528a55*/
@@ -433,7 +433,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
   if ( v6 ) /*0x526d49*/
   {
     v7 = (int)(aP2); /*0x526d4b*/
-    if ( aP2 < *(unsigned int *)(v6 + 48) ) /*0x526d54*/
+    if ( aP2 < (gamemd::CCINIClass *)(*(unsigned int *)(v6 + 48) )) /*0x526d54*/
     {
       v8 = *(unsigned int **)(v6 + 24); /*0x526d56*/
       if ( v8 ) /*0x526d5b*/

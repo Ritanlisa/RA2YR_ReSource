@@ -141,7 +141,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_DriveLocomotionClass;
-  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_DriveLocomotionClass;
+  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)&vt_DriveLocomotionClass;
   *(unsigned int *)this->__pad_18 = (unsigned int)&off_7E7E8C;
   Piggybackee = (ILocomotion *)(this->Piggybackee); /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/
@@ -149,7 +149,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
   ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
     __3_YAXPAX_Z(this); /*0x4b4d33*/
-  return this->LocomotionClass; /*0x4b4d3d*/
+  return (gamemd::DriveLocomotionClass *)(this->LocomotionClass); /*0x4b4d3d*/
 
 }
 } // namespace gamemd

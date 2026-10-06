@@ -33,7 +33,7 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x767fe1*/
   *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
   ((ComPtr *)((ComPtr *)a1))->Set((int)v7); /*0x767fef*/
-  return a1; /*0x767ff6*/
+  return (gamemd::rc_ptr *)(a1); /*0x767ff6*/
 }
 } // namespace gamemd
 

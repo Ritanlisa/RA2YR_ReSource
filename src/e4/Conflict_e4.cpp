@@ -436,7 +436,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   this->m_8 = 0; /*0x766ff2*/
   if ( (a2 & 1) != 0 ) /*0x766ff9*/
     __3_YAXPAX_Z(this); /*0x766ffc*/
-  return this->__pad_0; /*0x767006*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x767006*/
 
 }
 } // namespace gamemd
@@ -459,7 +459,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   this->m_8 = 0; /*0x7670b2*/
   if ( (a2 & 1) != 0 ) /*0x7670b9*/
     __3_YAXPAX_Z(this); /*0x7670bc*/
-  return this->__pad_0; /*0x7670c6*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x7670c6*/
 
 }
 } // namespace gamemd

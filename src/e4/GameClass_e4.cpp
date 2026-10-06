@@ -310,7 +310,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
       if ( *(unsigned int *)&this->__pad_24[16] ) /*0x632e01*/
       {
         v9 = (char *)((unsigned int)((char *)((int)((char *)(*((unsigned int *)this + 80))))));
-        if ( v9 >= (unsigned int)(char *)(aP2) ) /*0x632e7e*/
+        if ( v9 >= (char *)((unsigned int)(char *)(aP2) )) /*0x632e7e*/
           v9 = (char *)(aP2); /*0x632e80*/
         memcpy( (void *)(&this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24]), (const void *)(Src), (size_t)(v9)); /*0x632e97*/
         v3 = &Src[v9]; /*0x632eb0*/
@@ -318,7 +318,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         aP2 -= v9; /*0x632eb4*/
         *((unsigned int *)this + 80) -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
-          return v5 + ((Delegate*)((Pipe *)this))->Dispatch((int)v3, aP2); /*0x632ec1*/
+          return (void *)(v5 + ((Delegate*)((Pipe *)this))->Dispatch((int)v3, aP2)); /*0x632ec1*/
         BigInt::RSAOperation( /*0x632ed6*/
           *(unsigned int *)&this->__pad_24[20],
           (char *)&this->field_3C,
@@ -344,9 +344,9 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
       }
       this->__pad_0[12] = 0; /*0x632eea*/
     }
-    return v5 + ((Delegate*)((Pipe *)this))->Dispatch((int)v3, aP2); /*0x632f0a*/
+    return (void *)(v5 + ((Delegate*)((Pipe *)this))->Dispatch((int)v3, aP2)); /*0x632f0a*/
   }
-  return ((Delegate *)(Pipe *)this)->Dispatch( (int)Src, aP2); /*0x632f02*/
+  return (void *)(((Delegate *)(Pipe *)this)->Dispatch( (int)Src, aP2)); /*0x632f02*/
 
 }
 }
@@ -396,7 +396,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
       if ( v9 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
       BigInt::RSAOperation(v8, Src, v9, (char *)&this->m_3C); /*0x6331f4*/
-      GameClass::updateUI( (int)((GameClass *)&this->ptr_14), (int)&this->m_3C, 56); /*0x6331fc*/
+      GameClass::updateUI( (int)((GameClass *)&this->ptr_14), (int)&this->m_3C,(void *)( 56)); /*0x6331fc*/
     }
     else
     {
@@ -410,7 +410,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
       v14 = BigInt::DecryptBlock(v12, Src, v13, (char *)&this->m_3C); /*0x63324d*/
       this->m_140 = v14; /*0x633258*/
       this->u32_13C = v14; /*0x63325e*/
-      GameClass::updateUI( (int)((GameClass *)&this->ptr_14), (int)Src, 56); /*0x633268*/
+      GameClass::updateUI( (int)((GameClass *)&this->ptr_14), (int)Src,(void *)( 56)); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
     LOBYTE(this->m_C) = 0; /*0x633274*/
@@ -479,7 +479,7 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
     RevokeActiveObject( (void *)((void *)(dwRegister)), 0); /*0x6becaa*/
     dwRegister = -1; /*0x6becb0*/
   }
-  CoDisconnectObject(&punk, 0); /*0x6becc1*/
+  CoDisconnectObject((LPUNKNOWN)(&punk), 0); /*0x6becc1*/
   OleUninitialize(); /*0x6becc7*/
   if ( stru_887598.lineTrailer ) /*0x6becd5*/
   {
@@ -738,7 +738,7 @@ namespace gamemd {
 int GameClass::loadGameState(int a2)
 {
 
-  return (*(int (**)(PKPipe *, int))(*(unsigned int *)this->__pad_0 + 12))(this, a2); /*0x632fea*/
+  return (*(int ((gamemd::PKPipe *)(**))(PKPipe *, int))(*(unsigned int *)this->__pad_0 + 12))(this, a2); /*0x632fea*/
 
 }
 } // namespace gamemd
@@ -764,7 +764,7 @@ PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
   ((Pipe *)(((Pipe *)this)))->Dtor(); /*0x633025*/
   if ( (a2 & 1) != 0 ) /*0x63302f*/
     __3_YAXPAX_Z(this); /*0x633032*/
-  return this->__pad_0; /*0x63303c*/
+  return (gamemd::PKPipe *)(this->__pad_0); /*0x63303c*/
 
 }
 } // namespace gamemd
@@ -774,7 +774,7 @@ namespace gamemd {
 int GameClass::parseGameOptions(int a2)
 {
 
-  return (*(int (**)(PKStraw *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2); /*0x63336a*/
+  return (*(int ((gamemd::PKStraw *)(**))(PKStraw *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2); /*0x63336a*/
 
 }
 } // namespace gamemd
@@ -800,7 +800,7 @@ PKStrawClass * GameClass::applyGameSettings(unsigned int * Block, char a2)
   ((Straw *)(((Straw *)this)))->Dtor(); /*0x6333a5*/
   if ( (a2 & 1) != 0 ) /*0x6333af*/
     __3_YAXPAX_Z(this); /*0x6333b2*/
-  return this->__pad_0; /*0x6333bc*/
+  return (gamemd::PKStrawClass *)(this->__pad_0); /*0x6333bc*/
 
 }
 } // namespace gamemd

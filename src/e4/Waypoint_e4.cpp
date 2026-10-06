@@ -26,7 +26,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 
   v2 = (char *)((int)((char *)(0)));
   v10 = (char *)((int)((char *)(0)));
-  for ( i = (unsigned char *)this + 528; ; i += 4 ) /*0x5023bf*/
+  for ( i = (char *)((unsigned char *)this + 528); ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
     {
@@ -100,7 +100,7 @@ int Waypoint::FindCell(unsigned int * a2)
      || (uint16_t)(i[1] / 256) != (uint16_t)(a2[1] / 256);
         i += 3 )
   {
-    if ( ++v3 >= (int)v6 ) /*0x763ac5*/
+    if ( ++v3 >= (void *)((int)v6 )) /*0x763ac5*/
       return 0; /*0x763ac5*/
   }
   *(unsigned int *)&v7->__pad_0[36] = (unsigned int)(v3); /*0x763ad0*/
@@ -113,14 +113,14 @@ namespace gamemd {
 CHAR * Waypoint::To_String(int aP0)
 {
 
-  if ( aP0 == (gamemd::CCINIClass *)(-1) ) /*0x763613*/
+  if ( aP0  ==  (int)((int)(-1) )) /*0x763613*/
   {
     byte_B72654 = 0; /*0x763615*/
     return (gamemd::CHAR *)(&byte_B72654); /*0x76361c*/
   }
   else
   {
-    if ( aP0 >= (gamemd::CCINIClass *)(26) ) /*0x763625*/
+    if ( aP0  >=  (int)((int)(26) )) /*0x763625*/
       wsprintfA((LPSTR)(&byte_B72654), "%c%c", (unsigned int)(aP0)/ 26 + 64, aP0 % 26 + 65); /*0x763671*/
     else
       wsprintfA((LPSTR)(&byte_B72654), "%c", aP0 + 65); /*0x763635*/

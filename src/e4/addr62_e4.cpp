@@ -956,7 +956,7 @@ int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3)
   v35[3] = (unsigned int)((gamemd::AbstractClass **)(v3[3]));
   v35[1] = (unsigned int)((gamemd::AbstractClass **)(v20 - v28.top));
   v35[0] = (int)((unsigned int)((gamemd::AbstractClass **)(v21 - v28.left)));
-  return (gamemd::AbstractClass **)((*(int (**)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/ DSurface_Alternate, (int *)(v3), (unsigned int *)(v7), (unsigned int *)(v35), 0, 1));
+  return (int)((gamemd::AbstractClass **)((*(int (**)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/ DSurface_Alternate, (int *)(v3), (unsigned int *)(v7), (unsigned int *)(v35), 0, 1)));
 }
 }
 // 0x6223C0
@@ -1142,12 +1142,12 @@ int SetupDialog(Dialog *hWnd, int a2)
   DialogClass::RegisterWinClasses(); /*0x62282b*/
   dword_AC48A8 = (int)hWnd; /*0x622836*/
   EnumChildWindows((HWND)hWnd, Dialog::InitWindow, 1); /*0x622844*/
-  Dialog::InitWindow((HWND)hWnd, 1); /*0x622849*/
+  Dialog::InitWindow((int)((HWND)hWnd), 1); /*0x622849*/
   EnumChildWindows((HWND)hWnd, Dialog::SubclassEditControl, 1); /*0x622856*/
   EnumChildWindows((HWND)hWnd, Dialog::InitializeControls, 0); /*0x622861*/
   Dialog::InitializeControls((HWND)hWnd, 0); /*0x622865*/
   EnumChildWindows((HWND)hWnd, Dialog::InitWindow, 0); /*0x622871*/
-  Dialog::InitWindow((HWND)hWnd, 0); /*0x622875*/
+  Dialog::InitWindow((int)((HWND)hWnd), 0); /*0x622875*/
   ((Dialog *)hWnd)->GetField(); /*0x62287c*/
   lParam[0] = (LPARAM)hWnd; /*0x622890*/
   v14 = 0; /*0x622894*/
@@ -1244,7 +1244,7 @@ int SetupDialog(Dialog *hWnd, int a2)
   EnumChildWindows((HWND)hWnd, Dialog::HandleTabKey, 0); /*0x622b30*/
   EnumChildWindows((HWND)hWnd, Dialog::DispatchEvent, 0); /*0x622b39*/
 // 0x777060
-  return ((Dialog *)hWnd)->RestoreParent(); /*0x622b42*/
+  return (int)(((Dialog *)hWnd)->RestoreParent()); /*0x622b42*/
 }
 }
 // 0x622B50
@@ -1319,7 +1319,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       UI_Helper_60C930(aP0); /*0x622f79*/
       UI_Helper_60CCC0(aP0); /*0x622f80*/
       UI_Helper_60CDB0(aP0); /*0x622f87*/
-      EnumChildWindows(aP0, GadgetClass::FindByWindow, 0); /*0x622f93*/
+      EnumChildWindows((HWND)(aP0), GadgetClass::FindByWindow, 0); /*0x622f93*/
       if ( (uint8_t)((Control *)aP0)->CheckControlTypeDialog() ) /*0x622f97*/
       {
   LABEL_41:
@@ -1330,7 +1330,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
         v23(aP0, Dialog::HandleTabKey, 0); /*0x623071*/
         v23(aP0, Dialog::DispatchEvent, 0); /*0x623081*/
         ((Dialog *)aP0)->RestoreParent(); /*0x623085*/
-        SetFocus(aP0); /*0x62308b*/
+        SetFocus((HWND)(aP0)); /*0x62308b*/
         return 0; /*0x62309a*/
       }
     }
@@ -1338,7 +1338,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     {
       InitializeDialogControls(aP0, 0); /*0x622fcc*/
       ((Dialog *)aP0)->GetField(); /*0x622fd3*/
-      hWnda[0] = aP0; /*0x622fe7*/
+      hWnda[0] = (HWND)(aP0); /*0x622fe7*/
       aP2 = 0; /*0x622feb*/
       HashTable::Get(hWnda, &aP2); /*0x622fef*/
       if ( aP2 ) /*0x622ffa*/
@@ -1350,7 +1350,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       UI_Helper_60CCC0(aP0); /*0x623024*/
       UI_Helper_60CDB0(aP0); /*0x62302b*/
       v23 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x623030*/
-      EnumChildWindows(aP0, GadgetClass::FindByWindow, 0); /*0x62303d*/
+      EnumChildWindows((HWND)(aP0), GadgetClass::FindByWindow, 0); /*0x62303d*/
       if ( (uint8_t)((Control *)aP0)->CheckControlTypeDialog() ) /*0x623041*/
         goto LABEL_41; /*0x623048*/
     }
@@ -1364,7 +1364,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       case 2u: /*0x622b7f*/
         ((DialogQueue *)aP0)->RemoveEntry(); /*0x622b88*/
         --dword_A8ED8C; /*0x622b9b*/
-        SetFocus(g_hWnd); /*0x622ba1*/
+        SetFocus((HWND)(g_hWnd)); /*0x622ba1*/
         return 0; /*0x622bb0*/
       case 0xFu: /*0x622b7f*/
         aP2 = (unsigned int)aP0; /*0x622bd0*/

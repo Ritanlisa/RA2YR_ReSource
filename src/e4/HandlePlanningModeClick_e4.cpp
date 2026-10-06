@@ -19,7 +19,7 @@ BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
   if ( *a2 >= (int)this->AbstractClass && *a2 < (int)((int)this->AbstractClass + (unsigned int)((unsigned int *)this)[0]) ) /*0x63db36*/
   {
     v2 = a2[1]; /*0x63db38*/
-    vtable1 = ((unsigned int *)this)[0]; /*0x63db3b*/
+    vtable1 = (void *)(((unsigned int *)this)[0]); /*0x63db3b*/
     if ( v2 >= (int)vtable1 && v2 < (int)((int)vtable1 + (unsigned int)((unsigned int *)this)[0]) ) /*0x63db49*/
       return 1; /*0x63db2b*/
   }

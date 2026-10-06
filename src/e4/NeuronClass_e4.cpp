@@ -47,7 +47,7 @@ NeuronClass::NeuronClass()
   this->vtable2 =(void *)(int)&vt_NeuronClass; /*0x43a37b*/
   this->vtable3 =(void *)(int)&vt_NeuronClass; /*0x43a382*/
   this->vtable4 =(void *)(int)&vt_NeuronClass; /*0x43a389*/
-  if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x43a3c5*/
+  if ( *((unsigned int *)((unsigned int)&g_BuildingLoadQueue_Array + 1)) < (*(unsigned int *)&g_BuildingLoadQueue_Array) /*0x43a3c5*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
     && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 8))(
@@ -87,7 +87,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   this->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a9d3*/
   this->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a9da*/
   this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a9e1*/
-  v6 = this; /*0x43a9ef*/
+  v6 = (unsigned int *)(this); /*0x43a9ef*/
 v3 = (*(int (**)(int *, NeuronClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x43a9f3*/ &g_BuildingLoadQueue_Array.LightVisibility, (NeuronClass **)(&v6));
 
 
@@ -287,7 +287,7 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x43ace1*/
   if ( (a2 & 1) != 0 ) /*0x43ace8*/
     __3_YAXPAX_Z(this); /*0x43aceb*/
-  return this->__pad_0; /*0x43acf5*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x43acf5*/
 
 }
 } // namespace gamemd

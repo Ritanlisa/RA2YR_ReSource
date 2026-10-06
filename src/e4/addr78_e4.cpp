@@ -3649,7 +3649,7 @@ int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
       goto LABEL_14; /*0x788887*/
     Debug::Log("Leave_Channel, channel %s type %d\n"); /*0x78889d G57c1: IDA 0x78889d push offset g_Str_Trace_Leave_Channel__channel__s_type__d*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)((LPVOID)((void *)ppv)))))); /*0x7888ad*/
-    String = (unsigned int)GetStringCSF( (wchar_t *)g_Str_WOL_LeavingChannel, 0, (const char *)(g_Str_File_wonline_cpp), 10704); /*0x7888c1*/
+    String = (wchar_t *)((unsigned int)GetStringCSF( (wchar_t *)g_Str_WOL_LeavingChannel, 0, (const char *)(g_Str_File_wonline_cpp), 10704)); /*0x7888c1*/
     ((WideString *)((wchar_t **)&v12))->Assign( (wchar_t *)(String)); /*0x7888cb*/
     ShowUIMessage(64, (wchar_t **)&v12, 1); /*0x7888db*/
     ((DeleteAndZero*)&v12)->Alt(); /*0x7888e4*/
@@ -4891,7 +4891,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)((LPVOID)((void *)ppv))))), (char *)(v45)); /*0x78d7ee*/
         return 0; /*0x78d7fd*/
       }
-      String = (unsigned int)GetStringCSF( (wchar_t *)g_Str_TXT_NAME_ERROR, 0, (const char *)(g_Str_File_wonline_cpp), 14080); /*0x78d811*/
+      String = (wchar_t *)((unsigned int)GetStringCSF( (wchar_t *)g_Str_TXT_NAME_ERROR, 0, (const char *)(g_Str_File_wonline_cpp), 14080)); /*0x78d811*/
     }
     else
     {
@@ -4919,7 +4919,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         ((DeleteAndZero*)&v39)->Alt(); /*0x78d71f*/
         return 0; /*0x78d730*/
       }
-      String = (unsigned int)GetStringCSF( (wchar_t *)aTxtNosquad, 0, (const char *)(g_Str_File_wonline_cpp), 14176); /*0x78d664*/
+      String = (wchar_t *)((unsigned int)GetStringCSF( (wchar_t *)aTxtNosquad, 0, (const char *)(g_Str_File_wonline_cpp), 14176)); /*0x78d664*/
     }
     Dialog::ShowStatusText(-1, (size_t)String); /*0x78d66c*/
     return 0; /*0x78d680*/
@@ -5191,7 +5191,7 @@ int sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
       SetFocus(v39); /*0x78e77a*/
       v40 = GetDlgItem(hWnd, 1582); /*0x78e788*/
       ((ListBox *)(v40))->Clear(); /*0x78e78c*/
-      String = (unsigned int)GetStringCSF( (wchar_t *)g_Str_TXT_JANUARY, 0, (const char *)(g_Str_File_wonline_cpp), 15162); /*0x78e7a2*/
+      String = (wchar_t *)((unsigned int)GetStringCSF( (wchar_t *)g_Str_TXT_JANUARY, 0, (const char *)(g_Str_File_wonline_cpp), 15162)); /*0x78e7a2*/
       SendMessageA( (HWND)(v40), 0x4C2u, 0, (LPARAM)((LPARAM)((LPARAM)String))); /*0x78e7b0*/
       v42 = GetStringCSF( (wchar_t *)g_Str_TXT_FEBRUARY, 0, (const char *)(g_Str_File_wonline_cpp), 15163); /*0x78e7c3*/
       SendMessageA( (HWND)(v40), 0x4C2u, 0, (LPARAM)((LPARAM)((LPARAM)v42))); /*0x78e7d1*/

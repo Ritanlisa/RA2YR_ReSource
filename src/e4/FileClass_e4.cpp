@@ -42,7 +42,7 @@ const char* FileClass::SetFileName(char *aP1)
 {
 
   *((unsigned int *)this + 26) = 0; /*0x473fc4*/
-  return ((FileClass *)(CDFileClass *)this)->OpenWithCDSearch( (char *)(aP1)); /*0x473fd1*/
+  return (const char *)(((FileClass *)(CDFileClass *)this)->OpenWithCDSearch( (char *)(aP1))); /*0x473fd1*/
 
 }
 } // namespace gamemd
@@ -95,7 +95,7 @@ int FileClass::Open(int a2)
       v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc40*/
   LABEL_12:
       LastError = GetLastError(); /*0x65cc7f*/
-      result = (*(int (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
+      result = (*(int ((gamemd::RawFileClass *)(**))(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
       goto LABEL_13; /*0x65cc8a*/
     }
   LABEL_14:
@@ -130,7 +130,7 @@ int FileClass::Read(char *aP1, signed int aP2)
       return result; /*0x65cd05*/
     v14 = 1; /*0x65cd0f*/
   }
-  if ( this->FileName == (void *)-1 ) /*0x65cd1e*/
+  if ( this->FileName == (unsigned int)-1 ) /*0x65cd1e*/
   {
     v7 = (char *)aP2; /*0x65cd3b*/
   }
@@ -164,7 +164,7 @@ int FileClass::Read(char *aP1, signed int aP2)
       v9 = *(unsigned int *)this->FileClass; /*0x65cd81*/
       v12 = *(unsigned int *)&this->FileNameAllocated; /*0x65cd83*/
       LastError = GetLastError(); /*0x65cd86*/
-      (*(void (**)(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
+      (*(void ((gamemd::RawFileClass *)(**))(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
       v4 = nNumberOfBytesToReada; /*0x65cd92*/
     }
   }
@@ -206,7 +206,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
   int v26; // [esp-Ch] [ebp-14h]
   int v27; // [esp-4h] [ebp-Ch]
 
-  FileName = (unsigned int)(char *)this->FileName; /*0x65cf04*/
+  FileName = (char *)((unsigned int)(char *)this->FileName); /*0x65cf04*/
   if ( FileName != (char *)-1 ) /*0x65cf0a*/
   {
     v5 = dwMoveMethod; /*0x65cf10*/

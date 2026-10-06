@@ -271,7 +271,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( v20 < 0 && v20 != -2147467262 ) /*0x710269*/
           WinAPI::Wrapper(v20); /*0x71026c*/
       }
-      ((COMObject *)((COMObject *)&v28.m_Data))->SwapReference(v28.m_Position); /*0x71027a*/
+      ((COMObject *)((COMObject *)&v28.m_Data))->SwapReference((int)(v28.m_Position)); /*0x71027a*/
       if ( v28.m_Position ) /*0x710285*/
         (*(void (**)(int))(*(unsigned int *)v28.m_Position + 8))((int)v28.m_Position); /*0x71028a*/
       if ( v28.m_Data )
@@ -285,7 +285,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))((int)v28.m_Data, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
-        if ( *v10 != a1 ) /*0x7102e3*/
+        if ( *v10   !=   (int)((int)(a1 ))) /*0x7102e3*/
         {
           *v10 = (int)(a1); /*0x7102e7*/
           ((SuperClass *)((SuperClass *)(v6 + 413)))->SetFieldX(); /*0x7102e9*/

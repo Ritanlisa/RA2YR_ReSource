@@ -424,7 +424,7 @@ namespace ra2::game {
 int AudioController::Init()
 {
     this->AudioController_field_0C = &dword_87E294; /*0x405be2*/
-    this->AudioController_field_00[0] = 0; /*0x405be9*/
+    (&this->AudioController_field_00)[0] = 0; /*0x405be9*/
     this->AudioController_field_04 = 0; /*0x405beb*/
     this->AudioController_field_08 = 0; /*0x405bee*/
     return 0; /*0x405bf1*/

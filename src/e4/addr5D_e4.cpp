@@ -65,6 +65,11 @@
 #include "e4/classes/ListBox_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {
@@ -569,7 +574,7 @@ void* Dialog_MessageLoop()
   if ( g_hWnd ) /*0x5d4d5e*/
   {
     ++dword_AA0430; /*0x5d4d77*/
-    for ( result = (HWND)GameLoopMessagePump( (MSG*)(&Msg), 0, 0, 0, 0); result; result = (HWND)GameLoopMessagePump( /*0x5d4d84*/
+    for ( result = (HWND)GameLoopMessagePump((MSG *)( (MSG*)(&Msg)), 0, 0, 0, 0); result; result = (HWND)GameLoopMessagePump( /*0x5d4d84*/
                                                                                          &Msg,
                                                                                          0,
                                                                                          0,
@@ -728,11 +733,11 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
     v19.health = 0; /*0x5d75ce*/
     v19.estimatedHealth = 0; /*0x5d75d2*/
     ((GenericList*)(GenericList *)&v19.isOnMap)->Constructor(); /*0x5d75d6*/
-    *(void **)&v19.isOnMap = (unsigned int)(void*)&List_INIClass_INISection___vftable; /*0x5d75e8*/
+    *(void **)&v19.isOnMap = (void *)((unsigned int)(void*)&List_INIClass_INISection___vftable); /*0x5d75e8*/
     memset( (void *)(&v19.isAliveFlag), 0, 13); /*0x5d75f3*/
     v19.location[1] = 0; /*0x5d760f*/
     v19.location[2] = 0; /*0x5d7616*/
-    *(void **)&v19.bombVisible = (unsigned int)(void*)&INIClass_vftable; /*0x5d761d*/
+    *(void **)&v19.bombVisible = (void *)((unsigned int)(void*)&INIClass_vftable); /*0x5d761d*/
     if ( ((FileStraw *)((FileStraw *)&v19.bombVisible))->Open((int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
     {
       v19.customSound_controller[4] = ((INIClass *)&v19.bombVisible)->FindKey( (char **)(v2)); /*0x5d763e*/
@@ -752,7 +757,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
           if ( String_v <= 0 ) /*0x5d76bb*/
             goto LABEL_49; /*0x5d76bb*/
           unknown_libname_73(((char *)&v19)); /*0x5d76c5*/
-          v6 = ((String *)&v19)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((char *)&v19)); /*0x5d76e2*/
+          v6 = (int)(((String *)&v19)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((char *)&v19))); /*0x5d76e2*/
           if ( ((String*)((String *)(char *)&v19))->Length() ) /*0x5d76e4*/
             break; /*0x5d76e4*/
   LABEL_48:
@@ -774,7 +779,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         StringCSF = GetStringCSF((wchar_t *)v7, 0, (const char *)aDRa2mdpostMult, 1030); /*0x5d7752*/
         ((WideString *)((wchar_t **)((char *)&v19)))->Assign( (wchar_t *)(StringCSF)); /*0x5d775c*/
         unknown_libname_73(((char *)&v19)); /*0x5d7765*/
-        v9 = ((String *)&v19)->Tokenize( v6, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((char *)&v19)); /*0x5d7782*/
+        v9 = (int)(((String *)&v19)->Tokenize( v6, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((char *)&v19))); /*0x5d7782*/
         if ( !((String*)((String *)(char *)&v19))->Length() ) /*0x5d778b*/
         {
   LABEL_47:
@@ -792,7 +797,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         v11 = GetStringCSF((wchar_t *)v10, 0, (const char *)aDRa2mdpostMult, 1041); /*0x5d77f2*/
         ((WideString *)((wchar_t **)((char *)&v19)))->Assign( (wchar_t *)(v11)); /*0x5d77fc*/
         unknown_libname_73(((char *)&v19)); /*0x5d7805*/
-        v12 = ((String *)&v19)->Tokenize( v9, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((char *)&v19)); /*0x5d7822*/
+        v12 = (int)(((String *)&v19)->Tokenize( v9, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((char *)&v19))); /*0x5d7822*/
         if ( !((String*)((String *)(char *)&v19))->Length() ) /*0x5d782b*/
         {
   LABEL_46:
@@ -807,7 +812,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
         ((String*)((String *)(char *)&v19))->TrimRight((gamemd::ObjectClass *)(const char **)&v19.ambientSoundController[3]); /*0x5d786d*/
         j_DeleteAndZero( (void *)((ObjectClass *)&v19.ambientSoundController[3])); /*0x5d7876*/
         unknown_libname_73( (void *)((char *)&v19)); /*0x5d787f*/
-        v13 = ((String *)&v19)->Tokenize( v12, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)(char *)&v19)); /*0x5d789c*/
+        v13 = (int)(((String *)&v19)->Tokenize( v12, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)(char *)&v19))); /*0x5d789c*/
         ((String *)((String *)&v19.customSound_controller[2]))->Assign((const char *)asc_830A14); /*0x5d78a3*/
         String::TrimLeft((String *)(char *)&v19, (const char **)&v19.customSound_controller[2]); /*0x5d78b1*/
         j_DeleteAndZero( (void *)((ObjectClass *)&v19.customSound_controller[2])); /*0x5d78ba*/
@@ -953,10 +958,10 @@ v19.occupant = (*(int (**)(int, int *, void **, void **, int *, int, int))(*(uns
   LABEL_50:
     ((HashTable *)((INIClass *)&v19.bombVisible))->DestroyHashTableINIClass(); /*0x5d7c82*/
   }
-  v19.lineTrailer = (void*)&CCFileClass_vftable; /*0x5d7c92*/
+  v19.lineTrailer = (gamemd::LineTrail *)((void*)&CCFileClass_vftable); /*0x5d7c92*/
   v21 = 0; /*0x5d7c9d*/
   ((Vector *)((int)v20))->Clear((int)((Vector *)((int)v20))); /*0x5d7ca4*/
-  v19.lineTrailer = &off_7E1668; /*0x5d7cb0*/
+  v19.lineTrailer = (gamemd::LineTrail *)(&off_7E1668); /*0x5d7cb0*/
 // 0x431b80
   return (Coord * *)((BufferIOFileClass *)((BufferIOFileClass *)&v19.lineTrailer))->Dtor(); /*0x5d7cc0*/
 }
@@ -988,27 +993,27 @@ int GameInit_Complete()
     if ( v2 ) /*0x5d7d32*/
       (**v2)(v2, 1); /*0x5d7d37*/
   }
-  *(void **)&v4.q4 = (unsigned int)(void*)&MultiplayerGameMode_Initializer_MultiplayerBattle_vftable; /*0x5d7d45*/
+  *(void **)&v4.q4 = (void *)((unsigned int)(void*)&MultiplayerGameMode_Initializer_MultiplayerBattle_vftable); /*0x5d7d45*/
   ((String *)(&v4))->Assign(aBattle); /*0x5d7d4d*/
   LoadMultiplayerModesList((char **)&v4, (int)&v4.q4); /*0x5d7d5a*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v4)); /*0x5d7d63*/
-  v5 = (void*)&MultiplayerGameMode_Initializer_MultiplayerManBattle_vftable; /*0x5d7d6c*/
+  v5 = (void **)((void*)&MultiplayerGameMode_Initializer_MultiplayerManBattle_vftable); /*0x5d7d6c*/
   ((String *)(&v4))->Assign(aManbattle); /*0x5d7d79*/
   LoadMultiplayerModesList((char **)&v4, (int)&v5); /*0x5d7d86*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v4)); /*0x5d7d8f*/
-  v6 = (void*)&MultiplayerGameMode_Initializer_MultiplayerSiege_vftable; /*0x5d7d98*/
+  v6 = (void **)((void*)&MultiplayerGameMode_Initializer_MultiplayerSiege_vftable); /*0x5d7d98*/
   ((String *)(&v4))->Assign(aSiege); /*0x5d7da5*/
   LoadMultiplayerModesList((char **)&v4, (int)&v6); /*0x5d7db2*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v4)); /*0x5d7dbb*/
-  v7 = (void*)&MultiplayerGameMode_Initializer_UnholyAlliance_vftable; /*0x5d7dc4*/
+  v7 = (void **)((void*)&MultiplayerGameMode_Initializer_UnholyAlliance_vftable); /*0x5d7dc4*/
   ((String *)(&v4))->Assign(aUnholy); /*0x5d7dd1*/
   LoadMultiplayerModesList((char **)&v4, (int)&v7); /*0x5d7dde*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v4)); /*0x5d7de7*/
-  v8 = (void*)&MultiplayerGameMode_Initializer_FreeForAll_vftable; /*0x5d7df0*/
+  v8 = (void **)((void*)&MultiplayerGameMode_Initializer_FreeForAll_vftable); /*0x5d7df0*/
   ((String *)(&v4))->Assign(aFreeforall); /*0x5d7dfd*/
   LoadMultiplayerModesList((char **)&v4, (int)&v8); /*0x5d7e0a*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v4)); /*0x5d7e13*/
-  v9 = (void*)&MultiplayerGameMode_Initializer_MPCooperative_vftable; /*0x5d7e1c*/
+  v9 = (void **)((void*)&MultiplayerGameMode_Initializer_MPCooperative_vftable); /*0x5d7e1c*/
   ((String *)(&v4))->Assign(aCooperative); /*0x5d7e29*/
   LoadMultiplayerModesList((char **)&v4, (int)&v9); /*0x5d7e36*/
   return j_DeleteAndZero( (void *)((ObjectClass *)&v4)); /*0x5d7e44*/
@@ -1125,7 +1130,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
       Debug::Log("Incremental port allocation detected\n"); /*0x5d9e7b G57c1: IDA 0x5d9e7b push offset aIncrementalPor*/
       *a4 = 0; /*0x5d9e8d*/
       *a5 = 1; /*0x5d9e90*/
-      return 1; /*0x5d9e97*/
+      return (gamemd::AbstractClass **)(1); /*0x5d9e97*/
     }
   }
   if ( v16 == 2 ) /*0x5d9e9d*/
@@ -1136,7 +1141,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
       Debug::Log("Semi-incremental port allocation detected\n"); /*0x5d9ebe G57c1: IDA 0x5d9ebe push offset aSemiIncrementa*/
       *a4 = 0; /*0x5d9ece*/
       *a5 = 1; /*0x5d9ed6*/
-      return 2; /*0x5d9eda*/
+      return (gamemd::AbstractClass **)(2); /*0x5d9eda*/
     }
   }
   v20 = a3[2]; /*0x5d9edf*/
@@ -1287,7 +1292,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
         if ( ((SessionClass *)(int)dword_A8B238)->IsValidHouse( (void *)v4) ) /*0x5da959*/
         {
           byte_A8E2D0 = 1; /*0x5da96b*/
-          v7 = ((EventClass *)&unk_B052D0)->validateEventType(); /*0x5da972*/
+          v7 = (int)(((EventClass *)&unk_B052D0)->validateEventType()); /*0x5da972*/
           v7 = v7; /*0x5da977*/
           if ( v7 != -1 ) /*0x5da97c*/
           {
@@ -1359,7 +1364,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
         goto LABEL_54; /*0x5daaaf*/
     }
     v16 = 0; /*0x5daab9*/
-    v17 = &dword_A8DA90; /*0x5daabb*/
+    v17 = (LPARAM *)(&dword_A8DA90); /*0x5daabb*/
     while ( *v17 != *(unsigned int *)(dword_A8DA78 + 4 * v13) ) /*0x5daac2*/
     {
       ++v17; /*0x5daac4*/
@@ -1579,7 +1584,7 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
   while ( 1 ) /*0x5dbf69*/
   {
     v9 = ToWideStringChar(*v8); /*0x5dbf69*/
-    if ( !_strcmpi(v9, aP0) ) /*0x5dbf70*/
+    if ( !_strcmpi(v9,(const char *)( aP0)) ) /*0x5dbf70*/
       break; /*0x5dbf70*/
     ++v8; /*0x5dbf7c*/
     ++v7; /*0x5dbf7f*/
@@ -1596,7 +1601,7 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
     v11 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5dbfbf*/
   v12 = (int *)dword_A8DA90[v5]; /*0x5dbfc1*/
   v28 = v12; /*0x5dbfca*/
-  if ( ((SessionClass *)(v12))->GetPlayerSide() != aP1 ) /*0x5dbfd9*/
+  if ( ((SessionClass *)(v12))->GetPlayerSide()  !=  (int)(aP1 )) /*0x5dbfd9*/
   {
     v26 = 1; /*0x5dbfde*/
     ((SessionClass *)(v12))->SetPlayerOption( (int)(aP1)); /*0x5dbfe6*/
@@ -1613,7 +1618,7 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
   }
   ResourceID2CSF = GetResourceID2CSF( (int)((ObjectClass *)v5)); /*0x5dc03a*/
   v14 = GetComboBoxSelected( (HWND)(v11), ResourceID2CSF, -1) == -3; /*0x5dc04a*/
-  if ( aP1 == -3 ) /*0x5dc050*/
+  if ( aP1  ==  (gamemd::CCINIClass *)(-3) ) /*0x5dc050*/
   {
     if ( !v14 ) /*0x5dc054*/
     {

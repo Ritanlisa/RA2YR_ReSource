@@ -31,6 +31,9 @@
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/GameSettings_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/BuildingAnim_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
 
 // 0x7937B0
 namespace gamemd {
@@ -79,7 +82,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
       v19 = 0; /*0x793803*/
       if ( v4 - 1 > 0 ) /*0x79380d*/
       {
-        v5 = &v26[1]; /*0x79380f*/
+        v5 = (int *)(&v26[1]); /*0x79380f*/
         do /*0x793865*/
         {
           v6 = *v5; /*0x793813*/
@@ -114,8 +117,8 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
         if ( v11 < v10 ) /*0x7938cb*/
         {
           v13 = *v12; /*0x7938d1*/
-          v14 = v12 + 1; /*0x7938d3*/
-          v15 = this + 8 * v9; /*0x7938d6*/
+          v14 = (int *)(v12 + 1); /*0x7938d3*/
+          v15 = (char *)(this + 8 * v9); /*0x7938d6*/
           do /*0x793906*/
           {
             v16 = *v14; /*0x7938d9*/
@@ -192,7 +195,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
           v7 = (char *)g_WOL_UserList.nextObject + v4; /*0x7a4f66*/
         if ( *((unsigned int *)v7 + 5) != a3 ) /*0x7a4f75*/
           goto LABEL_38; /*0x7a4f75*/
-        *(unsigned int *)&v20[8] = v7 + 87; /*0x7a4f90*/
+        *(unsigned int *)&v20[8] = (unsigned int)(v7 + 87); /*0x7a4f90*/
         strcpy(v7 + 87, (const char *)(a4 + 401)); /*0x7a4fa8*/
         strcpy(v7 + 46, (const char *)(a4 + 360)); /*0x7a4fcb*/
         memset( (void *)(&v20[120]), 0, 0x6Cu); /*0x7a4ff0*/
@@ -376,7 +379,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3, i
     }
     if ( !dword_B77EA4 ) /*0x7a5442*/
     {
-      (*(void (__stdcall **)(LPVOID, int *))(*(unsigned int *)ppv + 132))(ppv, &a2); /*0x7a5457*/
+      (*(void ((LPVOID)(__stdcall **))(LPVOID, int *))(*(unsigned int *)ppv + 132))(ppv, &a2); /*0x7a5457*/
       v6 = (char *)RA2_OPNEW(strlen((const char *)a2) + 32); /*0x7a5477*/
       strcpy( (char *)(v6), (const char *)a2); /*0x7a5493*/
       strcat( (char *)(v6), (const char *)(a1018)); /*0x7a54bb*/
@@ -455,7 +458,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
         memset( (void *)(Buffer), 0, sizeof(Buffer)); /*0x7a5813*/
         ((GameConfig *)Buffer)->BuildChecksum(); /*0x7a5819*/
         Buffer[40] = 0; /*0x7a5827*/
-        (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
+        (*(void ((LPVOID)(__stdcall **))(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
       }
       v11 = (HWND)Dialog::FindByHandle(  (Dialog *)0xC4); /*0x7a583b*/
       if ( v11 ) /*0x7a5845*/
@@ -615,7 +618,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
           if ( v15 >= g_WOL_UserList.owningHouseIndex ) /*0x7a7e4e*/
             goto LABEL_41; /*0x7a7e4e*/
         }
-        if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x7a7e59*/
+        if ( &g_WebBrowserConfig != (int *)-36 ) /*0x7a7e59*/
           BulkCharToWide( (unsigned short *)(word_A8E258), (uint8_t *)((unsigned __int8 *)&g_WebBrowserConfig.ambientSoundController[3]), -1); /*0x7a7e67*/
       }
   LABEL_41:
@@ -696,7 +699,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         && *Source <= 57
         && g_WOL_UserList.owningHouseIndex == 2 )
       {
-        (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, g_INI_Key_A1); /*0x7a7ffc*/
+        (*(void ((LPVOID)(__stdcall **))(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, g_INI_Key_A1); /*0x7a7ffc*/
       }
       ((DeleteAndZero *)&v23)->Alt(); /*0x7a8003*/
       return 0; /*0x7a8014*/
@@ -768,7 +771,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         sprintf((char *const)Buffer, "P%s", byte_A8B8E0); /*0x7a81cf*/
         if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a81de*/
           qmemcpy( (void *)(v25), g_WOL_UserList.nextObject, sizeof(v25)); /*0x7a81ef*/
-        (*(void (__stdcall **)(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))(ppv, v25, Buffer); /*0x7a8203*/
+        (*(void ((LPVOID)(__stdcall **))(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))(ppv, v25, Buffer); /*0x7a8203*/
         Debug::Log("Sent private game option packet requesting a preview download\n"); /*0x7a820b G57c1: IDA 0x7a820b push offset aSentPrivateGam*/
         Event_Play(v5); /*0x7a8213*/
       }
@@ -1114,7 +1117,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
           }
         }
         DlgItem = GetDlgItem((HWND)Current, 1343); /*0x7a94b5*/
-        ChatCommand = ExtractChatCommand((String *)&v26.DeleteAndZero_field_0x04, DlgItem); /*0x7a94c8*/
+        ChatCommand = (gamemd::String *)(ExtractChatCommand((String *)&v26.DeleteAndZero_field_0x04, DlgItem)); /*0x7a94c8*/
         v21 = GetDlgItem((HWND)Current, 1816); /*0x7a94ce*/
         v22 = ((String *)ChatCommand)->GetOrEmpty_Alt(); /*0x7a94d0*/
         SendMessageA( (HWND)(v21), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)v22))); /*0x7a94de*/
@@ -1124,7 +1127,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
       {
         v23 = *(unsigned int *)ppv; /*0x7a9500*/
         v24 = (wchar_t *)((WideString *)(wchar_t **)&stru_B7622C.?)->GetOrEmpty(); /*0x7a9502*/
-        (*(void (__stdcall **)(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
+        (*(void ((LPVOID)(__stdcall **))(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
       }
       PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a952d*/
       ((DeleteAndZero *)&v26)->Alt(); /*0x7a9536*/
@@ -1250,7 +1253,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     {
       v16 = *(unsigned int *)ppv; /*0x7a97ab*/
       v17 = (wchar_t *)((WideString *)(wchar_t **)&stru_B7622C.?)->GetOrEmpty(); /*0x7a97b2*/
-      (*(void (__stdcall **)(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
+      (*(void ((LPVOID)(__stdcall **))(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
     }
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a97dd*/
     return 0; /*0x7a9561*/
@@ -1520,7 +1523,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
     v23 = (ObjectClass *)v5; /*0x7ab6a2*/
     memset( (void *)(byte_B785C0), 0, sizeof(byte_B785C0)); /*0x7ab6af*/
     v7 = (char *)(a3 + 52); /*0x7ab6c5*/
-    if ( !_strnicmp((const char *)(a3 + 52), g_Str_Lob_41_, strlen( (const char *)(g_Str_Lob_41_))) ) /*0x7ab6cf*/
+    if ( !_strnicmp((const char *)(a3 + 52),(const char *)( g_Str_Lob_41_), strlen( (const char *)(g_Str_Lob_41_))) ) /*0x7ab6cf*/
     {
       v8 = atol((const char *)(strlen( (const char *)(g_Str_Lob_41_)) + a3 + 52)); /*0x7ab6f2*/
       v9 = v8 / 8; /*0x7ab6fd*/

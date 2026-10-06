@@ -98,6 +98,8 @@ protected:
 
 class SuperClass : public AbstractClass
 {
+    unsigned int vtable26;  // G57w8 raw-vocab (0x6CE320 &this->vtable26 首槽)
+    unsigned int *vtable2;  // G57w8 raw-vocab (0x6CE33B this->vtable2 数组槽)
 public:
     static constexpr AbstractType AbsID = AbstractType::Super;
     static DynamicVectorClass<SuperClass*>* Array; // data: 0x87F670

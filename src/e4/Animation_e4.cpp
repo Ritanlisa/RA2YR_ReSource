@@ -304,9 +304,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
   unknown_libname_73( (void *)(&aP2)); /*0x770678*/
-  for ( i = ((String *)&a1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)); /*0x770697*/
+  for ( i = (int)(((String *)&a1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2))); /*0x770697*/
         i != -1;
-        i = ((String *)&a1)->Tokenize( i, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)) )
+        i = (int)(((String *)&a1)->Tokenize( i, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)) ))
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x77069d*/
     v9 = *(unsigned int *)&v22[900]; /*0x7706a2*/
@@ -343,9 +343,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/
   unknown_libname_73( (void *)(&aP2)); /*0x770797*/
-  for ( j = ((String *)&a1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)); /*0x7707b6*/
+  for ( j = (int)(((String *)&a1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2))); /*0x7707b6*/
         j != -1;
-        j = ((String *)&a1)->Tokenize( j, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)) )
+        j = (int)(((String *)&a1)->Tokenize( j, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)) ))
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x7707bc*/
     v16 = *(unsigned int *)&v22[924]; /*0x7707c1*/

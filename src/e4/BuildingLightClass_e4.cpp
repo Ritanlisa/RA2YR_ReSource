@@ -62,7 +62,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
   ((unsigned int *)&this->Speed)[1] = 0; /*0x436bfa*/
   this->BehaviourMode = (int)aP1; /*0x436c00*/
   *(unsigned int *)this->__pad_B4 = 0; /*0x436c06*/
-  if ( aP1 == (unsigned int *)3 ) /*0x436c0c*/
+  if ( aP1   ==   (int)((int)((int)3 ))) /*0x436c0c*/
   {
 v5 = *(unsigned int *)(*((int (**)(BuildingLightClass *, Object **))this->vtable1 + 110))( /*0x436c21*/ this, (Object **)(&nextArrayIndex));
 

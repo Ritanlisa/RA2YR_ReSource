@@ -412,7 +412,7 @@ void* BufferIOFileClass::Constructor() {
     *(unsigned int *)this->FileNameAllocated = 0; /*0x431b3a*/
     *(unsigned short *)this->BufferDirty = 0; /*0x431b3d*/
     *(unsigned short *)this->BufferWritePending = 0; /*0x431b41*/
-    this->CacheReadAhead[0] = 0; /*0x431b45*/
+    (&this->CacheReadAhead)[0] = 0; /*0x431b45*/
     this->BufferOffset = 0; /*0x431b48*/
     IDA_LOBYTE(this->BufferSize) = 0; /*0x431b54*/
     IDA_BYTE1(this->BufferSize) = 0; /*0x431b57*/
@@ -652,7 +652,7 @@ int FileClass::BufferedWriter() {
               this->TotalBytesRead = -1; /*0x432156*/
               IDA_HIBYTE(this->BufferOffset) = 1; /*0x432159*/
             }
-            memcpy((void *)(this->FileBaseOffset + this->StreamSize), &lpBuffer[v21], v7); /*0x432175*/
+            memcpy((void *)(this->FileBaseOffset + this->StreamSize), &(&lpBuffer)[v21], v7); /*0x432175*/
             StreamSize = this->StreamSize; /*0x43217e*/
             v21 += v7; /*0x432186*/
             BufferCursor = this->BufferCursor; /*0x43218a*/

@@ -66,7 +66,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       {
         v5 = 1024; /*0x431c1b*/
         if ( a3 ) /*0x431c20*/
-          (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 22, 0, 0); /*0x431c2a*/
+          (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 22, 0, 0); /*0x431c2a*/
       }
       this->attachedTag = (TagClass *)v5; /*0x431c2f*/
       if ( v5 ) /*0x431c32*/
@@ -87,7 +87,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       this->nextObject = (ObjectClass *)RA2_OPNEW((size_t)this->attachedTag); /*0x431c61*/
     if ( !this->nextObject ) /*0x431c67*/
     {
-      (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 12, 0, 0); /*0x431d7d*/
+      (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 12, 0, 0); /*0x431d7d*/
       return 0; /*0x431d7d*/
     }
     v6 = this->ambientSoundController[3]; /*0x431c6d*/
@@ -131,16 +131,16 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
         else
         {
           if ( v7 ) /*0x431ce5*/
-            (*((void (**)(ObjectClass *, unsigned int, unsigned int))this->AbstractClass + 10))(this, 0, 0); /*0x431ced*/
+            (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, unsigned int, unsigned int))this->AbstractClass + 10))(this, 0, 0); /*0x431ced*/
           this->attachedBomb = v7; /*0x431cf0*/
           this->ambientSoundController[4] = (int)v7; /*0x431cf3*/
         }
       }
-if ( (TagClass *)(*((int (**)(ObjectClass *, ObjectClass *, TagClass *))this->AbstractClass + 9))( /*0x431d30*/ this, (ObjectClass *)(this->nextObject), (TagClass *)(attachedTag)) != attachedTag )
+if ( (TagClass *)(*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, ObjectClass *, TagClass *))this->AbstractClass + 9))( /*0x431d30*/ this, (ObjectClass *)(this->nextObject), (TagClass *)(attachedTag)) != attachedTag )
 
 
 
-        (*((void (**)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
+        (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
       if ( v11 ) /*0x431d41*/
       {
         (*((void (**)(ObjectClass *))this->AbstractClass + 13))(this); /*0x431d47*/
@@ -148,7 +148,7 @@ if ( (TagClass *)(*((int (**)(ObjectClass *, ObjectClass *, TagClass *))this->Ab
         IDA_BYTE1(this->owningHouseIndex) = 1; /*0x431d4e*/
         return 1; /*0x431d58*/
       }
-      (*((void (**)(ObjectClass *, BombClass *, unsigned int))this->AbstractClass + 10))( this, (BombClass *)(v7), 0); /*0x431d61*/
+      (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, BombClass *, unsigned int))this->AbstractClass + 10))( this, (BombClass *)(v7), 0); /*0x431d61*/
       IDA_HIBYTE(this->occupant) = 1; /*0x431d64*/
     }
     IDA_BYTE1(this->owningHouseIndex) = 1; /*0x431d68*/
@@ -349,7 +349,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
         if ( g_ZBufferDescriptor ) /*0x4376e7*/
         {
           v44 = (void *)((unsigned int)(v63)+ 2 * (v17 + 0x7FFFFFFF * *((unsigned int *)g_ZBufferDescriptor + 10)));
-          if ( v44 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x437703*/
+          if ( v44 >= (void *)(*((unsigned int *)g_ZBufferDescriptor + 7) )) /*0x437703*/
             (unsigned int)(v44)-= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x437705*/
           v63 = v44; /*0x43770d*/
           v18 += 1 - v17; /*0x437713*/
@@ -415,7 +415,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
             if ( g_ZBufferDescriptor ) /*0x4377fb*/
             {
               v51 = v50 + 2 * v65; /*0x437801*/
-              if ( v51 < *((unsigned int *)g_ZBufferDescriptor + 6) ) /*0x437809*/
+              if ( v51 < (void *)(*((unsigned int *)g_ZBufferDescriptor + 6) )) /*0x437809*/
                 (unsigned int)(v51)+= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x43780b*/
               v63 = v51; /*0x437812*/
               v52 = (unsigned int)(v67)+ v64; /*0x43781a*/
@@ -485,7 +485,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
           if ( g_ZBufferDescriptor ) /*0x43790e*/
           {
             v58 = v57 + 2 * v65; /*0x437914*/
-            if ( v58 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x43791c*/
+            if ( v58 >= (void *)(*((unsigned int *)g_ZBufferDescriptor + 7) )) /*0x43791c*/
               (unsigned int)(v58)-= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x43791e*/
             v63 = v58; /*0x437925*/
             v59 = (unsigned int)(v67)+ v64; /*0x43792d*/
@@ -586,7 +586,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v64 = (char)(a5[2]);
   v44 = (char)(0);
   v65 = (char)(a5[3]);
-  v42 = (char)(0);
+  v42 = (char *)((char)(0));
   m_Stream = (gamemd::StreamClass *)((char)(0));
   v58 = (char)(*aP2);
   v51 = (char)(0);
@@ -731,8 +731,8 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
         if ( g_ZBufferDescriptor ) /*0x437e4c*/
         {
           v38 = SamplePosition + 2 * (unsigned int)m_Stream; /*0x437e56*/
-          if ( v38 >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x437e5e*/
-            v38 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x437e60*/
+          if ( v38 >= (&g_ZBufferDescriptor)[1].Stream_field_08 ) /*0x437e5e*/
+            v38 -= (&g_ZBufferDescriptor)[1].Stream_field_0C; /*0x437e60*/
           SamplePosition = v38; /*0x437e63*/
           if ( a12 ) /*0x437e70*/
           {
@@ -973,7 +973,7 @@ int sub_430190()
     memset( (void *)(g_VisibilitySystem), 0, sizeof(g_VisibilitySystem)); /*0x43019d*/
     dword_89C410 = 0; /*0x4301a4*/
     dword_89C42C = 0; /*0x4301a9*/
-    return atexit(sub_4301C0); /*0x4301b6*/
+    return atexit((void (__cdecl *)(void))(sub_4301C0)); /*0x4301b6*/
 }
 } // namespace gamemd
 

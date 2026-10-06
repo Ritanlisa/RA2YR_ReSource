@@ -276,7 +276,7 @@ VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a
   this->m_8 = 0; /*0x45a9f1*/
   if ( (a2 & 1) != 0 ) /*0x45a9f8*/
     __3_YAXPAX_Z(this); /*0x45a9fb*/
-  return this->__pad_0; /*0x45aa05*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x45aa05*/
 
 }
 } // namespace gamemd
@@ -520,7 +520,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void 
   this->m_8 = 0; /*0x4786b1*/
   if ( (a2 & 1) != 0 ) /*0x4786b8*/
     __3_YAXPAX_Z(this); /*0x4786bb*/
-  return this->__pad_0; /*0x4786c5*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x4786c5*/
 
 }
 } // namespace gamemd
@@ -704,7 +704,7 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, vo
   this->m_8 = 0; /*0x512e51*/
   if ( (a2 & 1) != 0 ) /*0x512e58*/
     __3_YAXPAX_Z(this); /*0x512e5b*/
-  return this->__pad_0; /*0x512e65*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x512e65*/
 
 }
 } // namespace gamemd
@@ -799,7 +799,7 @@ DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, 
   this->m_8 = 0; /*0x513221*/
   if ( (a2 & 1) != 0 ) /*0x513228*/
     __3_YAXPAX_Z(this); /*0x51322b*/
-  return this->__pad_0; /*0x513235*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x513235*/
 
 }
 } // namespace gamemd
@@ -822,7 +822,7 @@ DynamicVector * TypeList_Infantry::Constructor_1(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x5135f1*/
   if ( (a2 & 1) != 0 ) /*0x5135f8*/
     __3_YAXPAX_Z(this); /*0x5135fb*/
-  return this->__pad_0; /*0x513605*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x513605*/
 
 }
 } // namespace gamemd
@@ -1611,7 +1611,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->vfptr + 12))((_DynamicVectorClass_PBVVoxelAnimTypeClass *)this); /*0x67ad5e*/
   }
   v7 =(int)this->Capacity; /*0x67ad61*/
-  if ( v7 < this->Count ) /*0x67ad69*/
+  if ( v7   <   (int)((int)(this->Count ))) /*0x67ad69*/
     this->Count =(void *)v7; /*0x67ad6b*/
   return 1; /*0x67ad6e*/
 
@@ -1920,7 +1920,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b45e*/
   }
   v7 =(int)this->Capacity; /*0x67b461*/
-  if ( v7 < this->Count ) /*0x67b469*/
+  if ( v7   <   (int)((int)(this->Count ))) /*0x67b469*/
     this->Count =(void *)v7; /*0x67b46b*/
   return 1; /*0x67b46e*/
 

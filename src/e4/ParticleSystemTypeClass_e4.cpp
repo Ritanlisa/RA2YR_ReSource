@@ -313,7 +313,7 @@ v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83
   ((ObjectTypeClass *)((int)this))->Destruct(); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
     __3_YAXPAX_Z(this); /*0x6449de*/
-  return &this->ParticleSystemTypeClass_field_0x0; /*0x6449e8*/
+  return (gamemd::ParticleSystemTypeClass *)(&this->ParticleSystemTypeClass_field_0x0); /*0x6449e8*/
 
 }
 } // namespace gamemd

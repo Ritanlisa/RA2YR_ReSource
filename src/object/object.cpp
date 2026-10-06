@@ -262,8 +262,8 @@ void AudioController::Stop()
     {
       if ( this->AudioController_field_0C == &dword_87E294 ) /*0x405d60*/
       {
-        v2 = this->AudioController_field_00[0]; /*0x405d66*/
-        if ( this->AudioController_field_00[0] ) /*0x405d66*/
+        v2 = (&this->AudioController_field_00)[0]; /*0x405d66*/
+        if ( (&this->AudioController_field_00)[0] ) /*0x405d66*/
         {
           if ( this->AudioController_field_08 == *(void **)(v2 + 36) /*0x405d93*/
             && this->AudioController_field_04 == *(void **)(v2 + 312)

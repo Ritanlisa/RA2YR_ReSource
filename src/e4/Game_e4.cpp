@@ -189,6 +189,16 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/GameOptions_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/BulletTypeClass_e4.hpp"
+#include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/ProgressAnim_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
+#include "e4/classes/SuperWeapon_e4.hpp"
+#include "e4/classes/SwizzleManager_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/VtableStub_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Mixer_e4.hpp"  // G42.36 C2027 supply
@@ -995,7 +1005,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   v1 = Buffer; /*0x5dbb6a*/
   v21 = Buffer; /*0x5dbb70*/
   v22 = 0; /*0x5dbb74*/
-  if ( &dword_A8B320 == (int *)-2 ) /*0x5dbb7c*/
+  if ( &dword_A8B320 == (unsigned int *)-2 ) /*0x5dbb7c*/
   {
     v2 = 4; /*0x5dbba5*/
     v3 = ((String *)((char **)&v19))->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x5dbbaa*/
@@ -1550,7 +1560,7 @@ result = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->_
                            (char *)((char *)&FootClass_Array) + *((unsigned int *)((char *)&FootClass_Array + 0)),
                            0) )
                     {
-                      v7 = ((char *)&FootClass_Array)++; /*0x67fb90*/
+                      v7 = (gamemd::ParticleSystemClass *)(((char *)&FootClass_Array)++); /*0x67fb90*/
                       *((unsigned int *)(char *)&FootClass_Array->ObjectClass + (unsigned int)v7) = v14; /*0x67fb9d*/
                     }
                     if ( ++v6 >= v13 ) /*0x67fba7*/
@@ -1661,7 +1671,7 @@ int sub_685120()
   Game_Load_Load_53AB50(); /*0x6851ac*/
   FindBuildingClass(v3); /*0x6851b1*/
   ((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&dword_87F7E8))), 2); /*0x6851bd*/
-  InvalidateRect(g_hWnd, 0, 0); /*0x6851cc*/
+  InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x6851cc*/
   Map_Reset_734210(); /*0x6851d2*/
   ((Selection *)0)->ClearGlobals(); /*0x6851d9*/
   return Map_Reset_660C50(); /*0x6851de*/
@@ -1729,7 +1739,7 @@ CellStruct * * Game::Game_DumpMultiplayerGameInfo()
   if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x698f36*/
   {
     fprintf(v3, "Type = IPX\n"); /*0x698f3e*/
-    return 1; /*0x698f46*/
+    return (gamemd::CellStruct **)(1); /*0x698f46*/
   }
   else
   {
@@ -1737,7 +1747,7 @@ CellStruct * * Game::Game_DumpMultiplayerGameInfo()
       fprintf(v3, "Type = INTERNET\n"); /*0x698f5c*/
     else
       fprintf(v3, "Type = !!Unknown!!\n"); /*0x698f75*/
-    return 1; /*0x698f64*/
+    return (gamemd::CellStruct **)(1); /*0x698f64*/
   }
 
 }
@@ -1788,7 +1798,7 @@ void Game::EncodeGameSetupState(char * Buffer)
   v1 = Buffer; /*0x77e43a*/
   v35 = Buffer; /*0x77e440*/
   v37[2] = 0; /*0x77e444*/
-  if ( &dword_A8B320 == (int *)-2 ) /*0x77e44c*/
+  if ( &dword_A8B320 == (unsigned int *)-2 ) /*0x77e44c*/
   {
     v2 = 4; /*0x77e475*/
     v3 = ((String *)((char **)&v24))->Assign( (const char *)(&g_INI_DefaultBuffer)); /*0x77e47a*/
@@ -1859,7 +1869,7 @@ void Game::EncodeGameSetupState(char * Buffer)
         v26 = *v9; /*0x77e5c4*/
         v27 = (void *)ToWideStringChar( (IUnknown *)(*(char **)(dword_A8DA78 + 4 * v5))); /*0x77e5d4*/
         v10 = ToWideStringChar( (IUnknown *)(v26)); /*0x77e5d8*/
-        if ( !_strcmpi(v27, v10) ) /*0x77e5e3*/
+        if ( !_strcmpi((const char *)(v27), v10) ) /*0x77e5e3*/
           break; /*0x77e5e3*/
         ++v9; /*0x77e5ef*/
         ++v8; /*0x77e5f2*/

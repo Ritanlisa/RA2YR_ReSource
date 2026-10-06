@@ -16,7 +16,7 @@ namespace gamemd {
 int DialogClass::GetFlag(void *a1)
 {
 
-  return this->q034; /*0x5d6353*/
+  return (int)(this->q034); /*0x5d6353*/
 
 }
 }
@@ -86,7 +86,7 @@ ATOM DialogClass::RegisterWinClasses()
   if ( dword_AC48CC != 1 ) /*0x60d460*/
   {
     dword_AC48CC = 1; /*0x60d469*/
-    WndClass.hInstance = g_hInstance; /*0x60d48a*/
+    WndClass.hInstance = (HINSTANCE)(g_hInstance); /*0x60d48a*/
     WndClass.style = 3; /*0x60d496*/
     WndClass.lpfnWndProc = (WNDPROC)GameScreen::DlgProc; /*0x60d49e*/
     WndClass.cbClsExtra = 0; /*0x60d4a6*/
@@ -99,9 +99,9 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.lpfnWndProc = sub_60D520; /*0x60d4e4*/
     WndClass.cbClsExtra = 0; /*0x60d4ec*/
     WndClass.cbWndExtra = 0; /*0x60d4f0*/
-    WndClass.hInstance = g_hInstance; /*0x60d4f4*/
+    WndClass.hInstance = (HINSTANCE)(g_hInstance); /*0x60d4f4*/
     memset( (void *)(&WndClass.hIcon), 0, 16); /*0x60d4f8*/
-    WndClass.lpszClassName = g_INI_Key_NewEdit; /*0x60d508*/
+    WndClass.lpszClassName = (LPCSTR)(g_INI_Key_NewEdit); /*0x60d508*/
     LOWORD(result) = RegisterClassA(&WndClass); /*0x60d510*/
   }
   return result; /*0x60d515*/

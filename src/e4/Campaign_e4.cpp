@@ -69,7 +69,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = (unsigned int)((int *)__2_YAPAXI_Z(8 * a2 + 4)); /*0x765867*/
+    v5 = (int *)((unsigned int)((int *)__2_YAPAXI_Z(8 * a2 + 4))); /*0x765867*/
     if ( !v5 ) /*0x765871*/
     {
       v8 = (ComPtr *)(0); /*0x76589f*/
@@ -245,7 +245,7 @@ VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Blo
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr;
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     __3_YAXPAX_Z(this); /*0x765782*/
-  return this->__pad_0; /*0x76578c*/
+  return (gamemd::VectorCursor *)(this->__pad_0); /*0x76578c*/
 
 }
 } // namespace gamemd
@@ -356,7 +356,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   this->m_8 = 0; /*0x765b92*/
   if ( (a2 & 1) != 0 ) /*0x765b99*/
     __3_YAXPAX_Z(this); /*0x765b9c*/
-  return this->__pad_0; /*0x765ba6*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x765ba6*/
 
 }
 } // namespace gamemd

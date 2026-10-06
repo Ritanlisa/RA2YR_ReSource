@@ -58,6 +58,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // IDA: INIClass @ 0x535AA0 -- size ~0x40 (64 bytes)
 // vtable at 0x7EA5F4
 // CSP: INIClass matched via T1
+#ifndef GAMEMD_E4_INIClass  // G57w8: e4 flat carrier wins in opt-in TUs (C2011 vs INIClass_e4.hpp; CCINIClass 依赖基类一并让位)
 class INIClass {
 public:
     static constexpr size_t kSize = 0x40;
@@ -181,10 +182,13 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadInt(int a1, int a2, int a3);  // 0x5278f0
     // === FUNCS-MOVE (END) ===
 };
+#endif  // G57w8 INIClass
+
 
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
 // vtable at 0x7E1AF4 (CCINIClass_Vtable)
 // Extends INIClass with CCFileClass integration
+#ifndef GAMEMD_E4_INIClass  // G57w8: e4 flat carrier wins in opt-in TUs (C2011 vs INIClass_e4.hpp; CCINIClass 依赖基类一并让位)
 class CCINIClass : public INIClass {
 public:
     static constexpr size_t kSize = 0x58;
@@ -236,6 +240,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadInfantryTypeList(int a1, int a2);  // 0x41f490
     // === FUNCS-MOVE (END) ===
 };
+#endif  // G57w8 CCINIClass
+
 
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)
 class INIHashTable {

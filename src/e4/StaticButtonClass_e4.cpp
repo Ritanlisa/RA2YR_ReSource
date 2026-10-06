@@ -27,7 +27,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   ((GadgetClass *)((ShpButtonClass *)this))->Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     __3_YAXPAX_Z(this); /*0x6c68b0*/
-  return this->__pad_0; /*0x6c68ba*/
+  return (gamemd::StaticButtonClass *)(this->__pad_0); /*0x6c68ba*/
 
 }
 } // namespace gamemd

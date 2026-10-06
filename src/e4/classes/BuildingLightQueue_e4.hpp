@@ -1,13 +1,12 @@
-#ifndef GAMEMD_E4_GAP2_RENDER_EXT
-#define GAMEMD_E4_GAP2_RENDER_EXT 1  // G57c6: gap2 ext below defines class twins that minimal_carriers.hpp guards against
-#endif
-#include "render/render_ext.hpp"  // G42.55 tree truth
-// GENERATED minimal flat class (fix_c2039_methods)
+// GENERATED flat e4 class (mechanical; render_ext bridge cut G57w8d --
+// e4 flat carrier wins, truth render_ext.hpp:821 vtable slot semantics)
 #pragma once
 
 namespace gamemd {
 
-// G42.55 absorbed: single truth is BuildingLightQueue
-
+struct BuildingLightQueue {
+    virtual ~BuildingLightQueue();
+    virtual int RemoveEntry();  // 0x5FF2D0
+};
 
 } // namespace gamemd

@@ -241,7 +241,7 @@ void ParasiteClass::DeploySquad()
               if ( v15 ) /*0x62991a*/
               {
                 _ESI[1].AbstractClass = v15; /*0x62991c*/
-                if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x629953*/
+                if ( *((unsigned int *)((unsigned int)&g_BuildingLoadQueue_Array + 1)) < (*(unsigned int *)&g_BuildingLoadQueue_Array) /*0x629953*/
                   || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
                   && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
                   && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(

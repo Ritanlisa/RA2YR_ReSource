@@ -29,7 +29,7 @@ unsigned int StreamClass::ReadAndSeek(int aP1, int aP2)
 
   v4 = (*(int (**)(unsigned int, int, int))(*(unsigned int *)this->u32_5 + 92))(this->u32_5, aP1, aP2); /*0x4114c9*/
   (*(void (**)(unsigned int))(*(unsigned int *)this->u32_5 + 96))(this->u32_5); /*0x4114cd*/
-  result = v4 + this->m_Data; /*0x4114d6*/
+  result = (int)(v4 + this->m_Data); /*0x4114d6*/
   if ( result >= (unsigned int)this->u32_7 ) /*0x4114da*/
     result -= this->u32_8; /*0x4114dc*/
   return result; /*0x4114df*/

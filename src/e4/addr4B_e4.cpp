@@ -96,7 +96,7 @@ char JumpjetLocomotionClass_Process(int a1)
     movementDestination = ((unsigned int *)v1)[0]->movementDestination; /*0x4b066f*/
     if ( movementDestination /*0x4b06ad*/
       && (*((int (**)(AbstractClass *))movementDestination->vtable1 + 11))( (AbstractClass *)(movementDestination)) == 11
-      && (v12 = ((unsigned int *)v1)[0],
+      && (v12 = (gamemd::FootClass *)(((unsigned int *)v1)[0]),
           v13 =(gamemd::AbstractClass *)v12->movementDestination + 1,
 v14 = (unsigned short *)(*((int (**)(FootClass *, DriveLocomotionClass **))v12->vtable1 + 110))( (FootClass *)(v12), (DriveLocomotionClass **)(&a1)),
 
@@ -673,7 +673,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int a
     v7 = (CellClass *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x4b0e81*/
     if ( (uint8_t)((CrateClass *)((CrateClass *)v7))->ProcessPickup((int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x4b0e94*/
     {
-      JumpjetLocomotion::MoveTo((IUnknown *)(int)this, aP1, 1); /*0x4b0ea3*/
+      JumpjetLocomotion::MoveTo((IUnknown *)(int)this, aP1,(void *)( 1)); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
     }
     if ( *((unsigned char *)((unsigned int *)this)[0] + 144) ) /*0x4b0eb3*/
@@ -720,7 +720,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   LOBYTE(this->M72) = 0; /*0x4b4e62*/
   this->M76 = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((ShapeButtonClass *)&this->q050, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
-  ((ListClass *)((int)(unsigned int *)this + 176))->Construct( 0, (int)(aP5), aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, (int)(aP4), (int)(a10), a11); /*0x4b4ea3*/
+  ((ListClass *)((int)(unsigned int *)this + 176))->Construct( 0, (int)(aP5),(int)( aP6 + *(int16_t *)(a11 + 4)),(int)( aP7 + *(int16_t *)(a11 + 2)), a9, (int)(aP4), (int)(a10), a11); /*0x4b4ea3*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DropListClass); /*0x4b4eac*/
   Instance = (int)(TextRenderer::GetInstance()); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/
@@ -842,7 +842,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
   void *vtable2; // ecx
   int v6; // eax
 
-  if ( this == (ObjectClass *)a2 ) /*0x4b583a*/
+  if ( this == (gamemd::E4Recv_4B5830 *)a2 ) /*0x4b583a*/
 return (unsigned int *)this; /*0x4b583a*/
   (*((void (**)(ObjectClass *))this->vtable1 + 3))((gamemd::ObjectClass *)this); /*0x4b583e*/
   v3 = (void *)a2[2]; /*0x4b5841*/

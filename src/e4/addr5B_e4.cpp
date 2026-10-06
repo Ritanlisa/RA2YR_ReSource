@@ -776,7 +776,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
         v16 = (unsigned char *)dword_ABF168[v15]; /*0x5bc9d9*/
         v17 = 0; /*0x5bc9e0*/
         dword_ABF23C = (int)v16; /*0x5bc9e2*/
-        v18 = v16 + 2000; /*0x5bc9e8*/
+        v18 = (unsigned int *)(v16 + 2000); /*0x5bc9e8*/
         do /*0x5bca11*/
         {
           v19 = &v16[v17]; /*0x5bc9ee*/
@@ -804,7 +804,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
         v16 = (unsigned char *)dword_ABF168[v22]; /*0x5bca40*/
         v23 = 0; /*0x5bca47*/
         dword_ABF23C = (int)v16; /*0x5bca49*/
-        v24 = v16 + 2000; /*0x5bca4f*/
+        v24 = (unsigned int *)(v16 + 2000); /*0x5bca4f*/
         do /*0x5bca78*/
         {
           v25 = &v16[v23]; /*0x5bca55*/
@@ -926,7 +926,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
           return 0; /*0x5bc8bd*/
         Enabled = Audio::GetEnabled(); /*0x5bc8c6*/
         v12 = ((AudioStream *)(Enabled))->Constructor(0x1388u); /*0x5bc8cd*/
-        *(&dword_ABF114 + dword_ABF228) = v12; /*0x5bc8da*/
+        *(&dword_ABF114 + dword_ABF228) = (unsigned int)(v12); /*0x5bc8da*/
         if ( !v12 ) /*0x5bc8e1*/
           return 0; /*0x5bc8e1*/
         if ( ThreadAudioMixerMain( (unsigned int *)(v12), (RawFileClass *)(aIntroWav), 1) ) /*0x5bc8ec*/
@@ -954,7 +954,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
   if ( dword_ABF240 ) /*0x5bcaac*/
   {
     byte_ABF23A = 0; /*0x5bcab1*/
-    ShowWindow(dword_ABF240, 0); /*0x5bcab8*/
+    ShowWindow((HWND)(dword_ABF240), 0); /*0x5bcab8*/
   }
   return 1; /*0x5bc743*/
 }
@@ -1013,7 +1013,7 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
             v19 = v26; /*0x5bcf2e*/
             if ( v26 > v5 ) /*0x5bcf34*/
             {
-              v20 = this + (unsigned int)&v16[v17 + v26]; /*0x5bcf3a*/
+              v20 = (void **)(this + (unsigned int)&v16[v17 + v26]); /*0x5bcf3a*/
               do /*0x5bcf50*/
               {
                 --v20; /*0x5bcf41*/
@@ -1117,7 +1117,7 @@ void sub_5BF390(int a1, char a2)
     v3 = *((unsigned int *)dword_ABF394 + a1); /*0x5bf3ad*/
     if ( !dword_A8B238 ) /*0x5bf3b7*/
     {
-      v4 = CreateMovie(v3, DSurface_Sidebar, 0); /*0x5bf3c5*/
+      v4 = (unsigned int *)(CreateMovie(v3, DSurface_Sidebar, 0)); /*0x5bf3c5*/
       v5 = (unsigned char *)(v4); /*0x5bf3ca*/
       if ( v4 ) /*0x5bf3ce*/
       {
@@ -1154,8 +1154,8 @@ ObjectClass * * sub_5BF8C0()
   result = TestBitArray(15); /*0x5bf8c8*/
   if ( !result ) /*0x5bf8cf*/
   {
-    GetClientRect(g_hWnd, &Rect); /*0x5bf8e0*/
-    ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5bf8f1*/
+    GetClientRect((HWND)(g_hWnd), &Rect); /*0x5bf8e0*/
+    ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5bf8f1*/
     v2 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5bf90c*/
     v3 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5bf90f*/
     v4 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5bf911*/
@@ -1233,8 +1233,8 @@ AbstractClass * * sub_5BF950(int a2, int a3)
 
       }
     }
-    GetClientRect(g_hWnd, &Rect); /*0x5bfa30*/
-    ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5bfa41*/
+    GetClientRect((HWND)(g_hWnd), &Rect); /*0x5bfa30*/
+    ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5bfa41*/
     v8 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5bfa59*/
     v9 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 60); /*0x5bfa5c*/
     v10 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5bfa61*/
@@ -1297,7 +1297,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
 
   FullPath = Source; /*0x5bfab2*/
   v43 = 0; /*0x5bfab6*/
-  v14 = RA2_OPNEW(0x4Cu); /*0x5bfaba*/
+  v14 = (int)(RA2_OPNEW(0x4Cu)); /*0x5bfaba*/
   v15 = v14; /*0x5bfabf*/
   if ( !v14 ) /*0x5bfac6*/
     return 0; /*0x5bfac6*/
@@ -1340,7 +1340,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
     v41 = v41; /*0x5bfb97*/
   }
   if ( a12 == 1 ) /*0x5bfba3*/
-    v43 = sub_5BF950; /*0x5bfba5*/
+    v43 = (char (__cdecl *)(gamemd::ObjectClass *,int,int))(sub_5BF950); /*0x5bfba5*/
   v19 = (char *)RA2_OPNEW(0x554u); /*0x5bfbb2*/
   if ( v19 ) /*0x5bfbbc*/
     v20 = (char *)((Stream *)v19)->InitializeBinkAudio( (const char *)(Source), (IUnknown *)(v41), (int)sub_5BF850, (int)sub_5BF8B0, (IUnknown *)((int)v43), -1, -1); /*0x5bfbd9*/
@@ -1410,8 +1410,8 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   }
   if ( v49 < 1 ) /*0x5bfdee*/
     goto LABEL_47; /*0x5bfdee*/
-  if ( v48 + v46 > a9 + v29 ) /*0x5bfe05*/
-    v48 = a7 + a9 - v46; /*0x5bfe16*/
+  if ( v48 + v46  >  (int)(a9 + v29 )) /*0x5bfe05*/
+    v48 = (int)(a7 + a9 - v46); /*0x5bfe16*/
   if ( v48 < 1 ) /*0x5bfe1f*/
     goto LABEL_47; /*0x5bfe1f*/
   v31 = v47; /*0x5bfe35*/
@@ -1449,7 +1449,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   SurfaceTracker = (unsigned int *)BinkMovie::CreateSurfaceTracker( (char *)(FullPath)); /*0x5bfed0*/
   v15->q048 = SurfaceTracker; /*0x5bfed7*/
   if ( SurfaceTracker ) /*0x5bfeda*/
-    **(unsigned int **)v15 = SurfaceTracker; /*0x5bfede*/
+    **(unsigned int **)v15 = (unsigned int)(SurfaceTracker); /*0x5bfede*/
   v15->u8_45 = 1; /*0x5bfee0*/
   return (unsigned int *)v15; /*0x5bfc12*/
 }

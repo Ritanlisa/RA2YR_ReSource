@@ -543,7 +543,7 @@ MapSeedClass * MapSeedClass::QueryInterface(char a2, int a3)
   ((LoadOptions *)this)->Cleanup(); /*0x5ac273*/
   if ( (a2 & 1) != 0 ) /*0x5ac27d*/
     __3_YAXPAX_Z(this); /*0x5ac280*/
-  return this->__pad_0; /*0x5ac28a*/
+  return (gamemd::MapSeedClass *)(this->__pad_0); /*0x5ac28a*/
 
 }
 } // namespace gamemd
@@ -814,7 +814,7 @@ VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2
   this->m_8 = 0; /*0x5ad461*/
   if ( (a2 & 1) != 0 ) /*0x5ad468*/
     __3_YAXPAX_Z(this); /*0x5ad46b*/
-  return this->__pad_0; /*0x5ad475*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x5ad475*/
 
 }
 } // namespace gamemd
@@ -837,7 +837,7 @@ DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(un
   this->m_8 = 0; /*0x5ad4b1*/
   if ( (a2 & 1) != 0 ) /*0x5ad4b8*/
     __3_YAXPAX_Z(this); /*0x5ad4bb*/
-  return this->__pad_0; /*0x5ad4c5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x5ad4c5*/
 
 }
 } // namespace gamemd

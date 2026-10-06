@@ -107,16 +107,16 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   *((unsigned int *)this + 2) = 0; /*0x5d0395*/
   *((unsigned int *)this + 3) = 0; /*0x5d0398*/
   unknown_libname_73( (void *)(&v10)); /*0x5d039b*/
-  v3 = ((String *)aP1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&v10)); /*0x5d03ba*/
+  v3 = (int)(((String *)aP1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&v10))); /*0x5d03ba*/
   if ( ((String*)((String *)&v10))->Length() ) /*0x5d03bc*/
     ((String *)((String *)this))->Reassign((const char **)&v10); /*0x5d03cc*/
-  v4 = ((String *)aP1)->Tokenize( v3, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&v10)); /*0x5d03e7*/
+  v4 = (int)(((String *)aP1)->Tokenize( v3, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&v10))); /*0x5d03e7*/
   if ( ((String*)((String *)&v10))->Length() ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d03f6*/
     *((unsigned int *)this + 1) = v5; /*0x5d03fb*/
   }
-  v6 = ((String *)aP1)->Tokenize( v4, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&v10)); /*0x5d0414*/
+  v6 = (int)(((String *)aP1)->Tokenize( v4, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&v10))); /*0x5d0414*/
   if ( ((String*)((String *)&v10))->Length() ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((const char **)&v10); /*0x5d0423*/

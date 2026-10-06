@@ -94,7 +94,7 @@ extern bool byte_A8ED64;
 void RestartNetworkSession(int mode);
 void ToggleNetworkSession(int enable);
 void ResetIntroFlags(int* obj);           // 0x6B8AE0 (ScenarioClass::ResetIntroFlags)
-void FindGameDirectoryCD(const char* path); // 0x47AB10 (Game::FindGameDirectoryCD)
+int FindGameDirectoryCD(const char* path); // 0x47AB10 (Game::FindGameDirectoryCD)  // G57w8: raw fn_47.c BOOL 返回对齐（与 init_stubs.hpp 统一）
 void NetworkAssignAddress(void* addr, void* port, int arg); // 0x53ECE0 (NetworkAddress::Assign)
 void NetworkGetField(int port);           // 0x542430 (Network::GetField)
 struct SessionClass;

@@ -335,7 +335,7 @@ BSurface * BSurface::ScalarDtor(char * Block, char a2)
   *(unsigned int *)this->XSurface = (unsigned int)&Surface_Vtable; /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
     __3_YAXPAX_Z(this); /*0x41166a*/
-  return this->XSurface; /*0x411674*/
+  return (gamemd::BSurface *)(this->XSurface); /*0x411674*/
 
 }
 } // namespace gamemd

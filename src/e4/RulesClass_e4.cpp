@@ -707,7 +707,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/
-      v7 = ((TerrainTypeClass *)i)->FindOrCreate(); /*0x67be4b*/
+      v7 = (int)(((TerrainTypeClass *)i)->FindOrCreate()); /*0x67be4b*/
       if ( v7 /*0x67be7b*/
         && (v21 < v19
          || (v20 || !v19)

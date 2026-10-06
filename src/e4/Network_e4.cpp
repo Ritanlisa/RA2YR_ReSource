@@ -43,6 +43,7 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/IPXInterfaceClass_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MessageListClass_e4.hpp"  // G42.36 C2027 supply
@@ -270,7 +271,7 @@ LABEL_5:
         v22 = -1; /*0x4315b8*/
         v23 = Object_field_0x30; /*0x4315bc*/
         result = 0; /*0x4315c0*/
-        v14 = &this->Network_field_0x0 + 3 * Object_field_0x30; /*0x4315c8*/
+        v14 = (int *)(&this->Network_field_0x0 + 3 * Object_field_0x30); /*0x4315c8*/
         do /*0x4315dc*/
         {
           if ( *v14 == v10 ) /*0x4315cd*/
@@ -423,7 +424,7 @@ LABEL_10:
           v6 = 1; /*0x48d304*/
           if ( dword_A8DA84 > 1 ) /*0x48d306*/
           {
-            v44 = &MEMORY[0xA8E2B4]; /*0x48d30c*/
+            v44 = (unsigned short *)(&MEMORY[0xA8E2B4]); /*0x48d30c*/
             do /*0x48d484*/
             {
               LOWORD(v5) = *v44; /*0x48d318*/
@@ -506,7 +507,7 @@ LABEL_25:
   LOBYTE(i) = BYTE2(stru_A8D600.Network_field_0xC); /*0x48d527*/
   if ( !BYTE2(stru_A8D600.Network_field_0xC) ) /*0x48d52e*/
   {
-    for ( i = Network::Send( /*0x48d554*/
+    for ( i = Network::Send((int)( /*0x48d554*/)    for ( i = Network::Send( /*0x48d554*/
                 (Network *)&unk_A8E9C0,
                 (int)&stru_A8D600.__pad_34[4],
                 (int)&unk_A8D800,
@@ -514,7 +515,7 @@ LABEL_25:
                 (int)&word_A8D810);
           i;
           i = Network::Send(
-                (Network *)&unk_A8E9C0,
+                (Network *)&unk_A8E9C0(int)(),
                 (int)&stru_A8D600.__pad_34[4],
                 (int)&unk_A8D800,
                 (int)dword_A8D804,
@@ -1081,7 +1082,7 @@ int Network::sendData(AnimClass * aP1)
   v4 = 0; /*0x540f13*/
   if ( v3 <= 0 ) /*0x540f17*/
     return 0; /*0x540f2f*/
-  for ( i = (char *)this + 40; *(unsigned int *)(*(unsigned int *)i + 100) != aP1; i += 4 ) /*0x540f1d*/
+  for ( i = (int)((char *)this + 40); *(unsigned int *)(*(unsigned int *)i + 100)  !=  (unsigned int)(aP1); i += 4 ) /*0x540f1d*/
   {
     if ( ++v4 >= v3 ) /*0x540f2d*/
       return 0; /*0x540f2d*/
@@ -1407,7 +1408,7 @@ void * Network::ReceiveLoop()
   int16_t v46[2]; // [esp+34h] [ebp-4B8h] BYREF
   Network v47[2]; // [esp+38h] [ebp-4B4h] BYREF
 
-  v47[0].Network_field_0x10 = (void *)1; /*0x541830*/
+  v47[0].Network_field_0x10 = (unsigned char)((void *)1); /*0x541830*/
   ((Waypoint*)((Waypoint *)v47))->InitInvalid(); /*0x541838*/
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x541844*/
   {
@@ -1481,7 +1482,7 @@ LABEL_14:
                       while ( 1 ) /*0x541a1b*/
                       {
                         v11 = ToWideStringChar( (IUnknown *)((char *)dword_A8DA78[v10])); /*0x541a1b*/
-                        if ( !_strcmpi(v11, &v47[0].__pad_14[8]) ) /*0x541a21*/
+                        if ( !_strcmpi(v11,(const char *)( &v47[0].__pad_14[8])) ) /*0x541a21*/
                           break; /*0x541a21*/
                         if ( ++v10 >= dword_A8DA84 ) /*0x541a35*/
                           goto LABEL_87; /*0x541a35*/

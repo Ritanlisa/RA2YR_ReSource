@@ -215,7 +215,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, void * s, int a4, u
   unsigned int v45; // [esp+40h] [ebp+10h]
 
   v39 = 0; /*0x7b3ab2*/
-  if ( s == 1140 ) /*0x7b3ab7*/
+  if ( s  ==  (void *)(1140) ) /*0x7b3ab7*/
   {
     v6 = *((unsigned int *)this + 64539); /*0x7b3ab9*/
     sa = (void *)(v6); /*0x7b3ac5*/
@@ -240,7 +240,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, void * s, int a4, u
   }
   else
   {
-    if ( s != 1141 ) /*0x7b3afd*/
+    if ( s  !=  (void *)(1141) ) /*0x7b3afd*/
       return (gamemd::AbstractClass **)(1); /*0x7b40dd*/
     v6 = *((unsigned int *)this + 64540); /*0x7b3b03*/
     v39 = 1; /*0x7b3b09*/
@@ -763,7 +763,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
       *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x7b35d1*/
     }
     Debug::Log("About to open alternate UDP socket\n"); /*0x7b35e9 G57c1: IDA 0x7b35e9 push offset aAboutToOpenAlt*/
-    v14 = socket( (void *)((void *)(2)), 2, 0); /*0x7b35f8*/
+    v14 = socket( (void *)((void *)(2)),(void *)( 2), 0); /*0x7b35f8*/
     *((unsigned int *)this + 64540) = v14; /*0x7b3600*/
     if ( v14 == -1 ) /*0x7b3606*/
     {
@@ -807,7 +807,7 @@ return (*(int16_t (**)(UDPInterfaceClass *, const void *, unsigned int, int))(th
 
 
   else
-    return ((AudioQueue *)(WinsockInterfaceClass *)this)->WriteBuffer( (WinsockInterfaceClass *)(aP1), arg4, (const void *)(a3), a5, (WinsockInterfaceClass *)(aP5), a7, a8); /*0x7b3713*/
+    return (short)(((AudioQueue *)(WinsockInterfaceClass *)this)->WriteBuffer( (WinsockInterfaceClass *)(aP1), arg4, (const void *)(a3), a5, (WinsockInterfaceClass *)(aP5), a7, a8)); /*0x7b3713*/
 
 }
 } // namespace gamemd
@@ -915,7 +915,7 @@ int UDPInterfaceClass_Destru::Receive()
     while ( 1 ) /*0x7b38b8*/
     {
       v4 = (HWND)(*(int (**)(UDPInterfaceClass *, int))(this->Socket + 56))((UDPInterfaceClass *)this, -1); /*0x7b38b8*/
-      if ( WSAAsyncSelect(*v3, (SOCKET)g_hWnd, v4, 3u, v6) == (AnimClass *)-1 ) /*0x7b38ce*/
+      if ( WSAAsyncSelect(*v3, (SOCKET)g_hWnd, v4, 3u, v6)  ==  (int)((int))-1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/
       ++v3; /*0x7b38d7*/

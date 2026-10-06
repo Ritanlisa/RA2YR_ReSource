@@ -420,8 +420,8 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
       0);
     if ( *v7 ) /*0x411f66*/
     {
-      (*(unsigned int (*)(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f84*/
-      (*(unsigned int (*)(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f8b*/
+      (*(unsigned int ((unsigned int)(*))(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f84*/
+      (*(unsigned int ((unsigned int)(*))(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f8b*/
       v13 = *v7; /*0x411f91*/
       *(unsigned int *)(v3 + 68) = 0; /*0x411f96*/
       *(unsigned int *)(v3 + 156) = 0; /*0x411f99*/
@@ -771,7 +771,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
     if ( v7 != -1 ) /*0x41b187*/
     {
       v8 = (TypeClass *)strtok(0, (char *)&::Delimiter); /*0x41b194*/
-      v9 = ((TypeClass*)v8)->FindByName(); /*0x41b1a3*/
+      v9 = (int)(((TypeClass*)v8)->FindByName()); /*0x41b1a3*/
       if ( v9 != -1 ) /*0x41b1a8*/
       {
         v10 = (IUnknown *)*((unsigned int *)((char *)&stru_A80220) + v7); /*0x41b1b9*/
@@ -1377,7 +1377,7 @@ int sub_412870()
   dword_889E08 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x4128bc*/
   dword_889E1C = 10; /*0x4128c6*/
   dword_889E18 = 0; /*0x4128d0*/
-  return atexit(sub_4128F0); /*0x4128de*/
+  return atexit((void (__cdecl *)(void))(sub_4128F0)); /*0x4128de*/
 }
 } // namespace gamemd
 
@@ -1901,7 +1901,7 @@ int sub_41D280()
   dword_889FB8 = (int)&DynamicVectorClass_AirstrikeClass___vftable; /*0x41d29d*/
   dword_889FCC = 10; /*0x41d2a7*/
   dword_889FC8 = 0; /*0x41d2b1*/
-  return atexit(sub_41D2C0); /*0x41d2bc*/
+  return atexit((void (__cdecl *)(void))(sub_41D2C0)); /*0x41d2bc*/
 }
 } // namespace gamemd
 

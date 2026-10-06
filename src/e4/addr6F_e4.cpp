@@ -134,7 +134,7 @@ v3 = (void ***)((int)((void ***)(0)));
     IDA_LOBYTE(v53[0]) = 0; /*0x6f0b64*/
     if ( v6 < *(unsigned int *)(WallPenetratorThreshold_high + v9) || v3 < (void ***)(v6) / 2 ) /*0x6f0b77*/
     {
-      if ( v3 > *(unsigned int *)(IDA_LODWORD(((unsigned int *)dword_8871E0)[0]) + v9) ) /*0x6f0bd4*/
+      if ( v3 > (void ***)(*(unsigned int *)(IDA_LODWORD(((unsigned int *)dword_8871E0)[0]) + v9) )) /*0x6f0bd4*/
         IDA_LOBYTE(v53[0]) = 1; /*0x6f0bd6*/
     }
     else
@@ -367,7 +367,7 @@ v3 = (void ***)((int)((void ***)(0)));
     v46[2] = (void **)((unsigned int)(0));
     *((unsigned char *)v46 + 12) = 1; /*0x6f0f1c*/
     *((unsigned char *)v46 + 13) = 0; /*0x6f0f20*/
-    *(void **)v46 = (unsigned int)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
+    *(void **)v46 = (void *)((unsigned int)(void*)&VectorClass_TeamTypeClass_const___vftable); /*0x6f0f24*/
     Team_Helper_6F2780(&v56); /*0x6f0f2a*/
     *(unsigned int *)v40 = (unsigned int)((void*)&TypeList_TeamTypeClass_const___vftable); /*0x6f0f2f*/
     v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f35*/
@@ -403,7 +403,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   *(unsigned int *)(a8) = 0; /*0x6f8972*/
   *(unsigned int *)a9) = 0; /*0x6f8979*/
   v11 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(a6)); /*0x6f898d*/
-  if ( a10 != -1 ) /*0x6f8992*/
+  if ( a10  !=  (void *)(-1) ) /*0x6f8992*/
   {
     v12 = (*((int (**)(TechnoClass *))a1->vtable1 + 33))( (TechnoClass *)(a1)); /*0x6f899a*/
     if ( ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex( (int16_t *)(a6), *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/

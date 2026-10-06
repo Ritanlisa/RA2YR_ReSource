@@ -203,7 +203,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   if ( !((unsigned int *)this)[0] && !this->DrawFlat ) /*0x5fe8fb*/
   {
-    _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x5fe917*/
+    _makepath(Buffer, 0, 0,(const char *)( ((unsigned int *)this)[0]),(const char *)( Ext)); /*0x5fe917*/
     ((unsigned int *)this)[0] = (unsigned int)(SHPStruct *)SearchMIXFile( (char *)(Buffer), 1); /*0x5fe92d*/
   }
   Coord = INIClass::GetCoord( /*0x5fe947*/
@@ -234,7 +234,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                           (uint8_t *)((unsigned int *)this)[0],
                           aIsrubble,
                           this->RadarColor[2]);
-  return 1; /*0x5fea11*/
+  return (gamemd::AnimTypeClass **)(1); /*0x5fea11*/
 
 }
 }  // G42.18c ns repair
@@ -268,7 +268,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
       }
       else
       {
-        _makepath(&v3[1], 0, 0, ((unsigned int *)a1)[0], Ext); /*0x5febc0*/
+        _makepath(&v3[1], 0, 0,(const char *)( ((unsigned int *)a1)[0]),(const char *)( Ext)); /*0x5febc0*/
         TheaterObjectTypeClassSpecificID( (char *)(&v3[1]), (&dword_A8B230)[130].uniqueId); /*0x5febd7*/
       }
       if ( !((unsigned int *)a1)[0] ) /*0x5febdc*/
@@ -292,7 +292,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   int v6; // [esp+68h] [ebp-208h]
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
-  result = ((unsigned int *)this)[0]; /*0x5fede9*/
+  result = (void *)(((unsigned int *)this)[0]); /*0x5fede9*/
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
     Debug::Log("Demand loading image for %s\n"); /*0x5fee0e G57c1: IDA 0x5fee0e push offset aDemandLoadingI*/
@@ -302,7 +302,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     }
     else if ( ((unsigned int *)this)[0] ) /*0x5fee59*/
     {
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x5fee78*/
+      _makepath(Buffer, 0, 0,(const char *)( ((unsigned int *)this)[0]),(const char *)( Ext)); /*0x5fee78*/
       TheaterObjectTypeClassSpecificID( (char *)(Buffer), (&dword_A8B230)[130].uniqueId); /*0x5fee90*/
     }
     ((CCFileClass*)&v4)->Construct( (char *)(Buffer)); /*0x5fee9f*/
@@ -315,9 +315,9 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     ((Vector *)((int)v5))->Clear((int)((Vector *)((int)v5))); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = (unsigned int)&off_7E1668;
     ((BufferIOFileClass *)((BufferIOFileClass *)&v4))->Dtor(); /*0x5feee5*/
-    return v3; /*0x5feeea*/
+    return (gamemd::AnimTypeClass **)(v3); /*0x5feeea*/
   }
-  return result; /*0x5feeed*/
+  return (gamemd::AnimTypeClass **)(result); /*0x5feeed*/
 
 }
 }  // G42.18c ns repair
@@ -437,7 +437,7 @@ dword_AC1644 = 2147450879; /*0x5fe504*/
     dword_AC1644 = 2147450879; /*0x5fe504*/
     atexit(nullsub_213); /*0x5fe50a*/
   }
-  return &dword_AC1640; /*0x5fe518*/
+  return (int *)(&dword_AC1640); /*0x5fe518*/
 
 }
 }  // G42.18c ns repair
@@ -462,7 +462,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
 
   v3 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
-    return ((Object *)(v3))->SpawnAtCell( (int)this, (int16_t *)(&word_AC1608), -1); /*0x5fe58e*/
+    return (gamemd::OverlayClass *)(((Object *)(v3))->SpawnAtCell( (int)this, (int16_t *)(&word_AC1608), -1)); /*0x5fe58e*/
   else
     return 0; /*0x5fe597*/
 

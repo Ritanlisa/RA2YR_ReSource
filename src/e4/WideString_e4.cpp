@@ -423,7 +423,7 @@ wchar_t ** WideString::Append(CampaignScore * aP1, void *a2_1)
   wchar_t *v6; // eax
 
   v2 = (wchar_t *)*aP1; /*0x7b6b67*/
-  if ( *aP1 || (v2 = &g_TypeClass_DefaultString) != 0 ) /*0x7b6b76*/
+  if ( *aP1 || (v2 = (wchar_t *)(&g_TypeClass_DefaultString)) != 0 ) /*0x7b6b76*/
   {
     v4 = (wchar_t *)((unsigned int)(*(wchar_t **)this));
     v5 = (unsigned int)(wcslen(v2) + 1);
@@ -516,7 +516,7 @@ wchar_t ** WideString::ConcatAlloc(wchar_t ** a1, ObjectClass * aP2)
     wcscpy( (wchar_t *)(v4), *(const wchar_t **)this); /*0x7b6cd2*/
   }
   v6 = (wchar_t *)*aP2; /*0x7b6ce0*/
-  if ( *aP2 || (v6 = &g_TypeClass_DefaultString) != 0 ) /*0x7b6ced*/
+  if ( *aP2 || (v6 = (wchar_t *)(&g_TypeClass_DefaultString)) != 0 ) /*0x7b6ced*/
   {
     v7 =(wchar_t *)v4; /*0x7b6cf0*/
     v8 = wcslen(v6) + 1; /*0x7b6cfc*/

@@ -211,7 +211,7 @@ LABEL_55:
             if ( v21 ) /*0x4fa68d*/
               *(unsigned int *)(v10 + 36) = v18; /*0x4fa68f*/
           }
-          if ( dword_A83D4C == (Object *)this ) /*0x4fa698*/
+          if ( dword_A83D4C  ==  (unsigned int)((unsigned int)this )) /*0x4fa698*/
             Sidebar::FindProductionType( (FactoryClass *)((Sidebar *)&stru_87F5F0.__pad_58[416]), (MouseClass *)(v10), (int)a1, (void *)(aP2)); /*0x4fa6aa*/
           return 0; /*0x4fa6b2*/
         }
@@ -336,13 +336,13 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
   {
     while ( strcmp( /*0x533f9f*/
               (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)),
-              this) )
+              this) (const char *)()) (const char *)()) (const char *)()) )
     {
       result = (int)((gamemd::CreateTeamCommand **)(dword_87F668)); /*0x533fa1*/
       if ( ++v2 >= dword_87F668 ) /*0x533fa9*/
         return (gamemd::CreateTeamCommand **)(result); /*0x533fa9*/
     }
-    return (*(int (**)(unsigned int, unsigned int))(**((unsigned int **)dword_87F65C + v2) + 32))( /*0x533fbc*/
+    return (gamemd::CreateTeamCommand **)((*(int (**)(unsigned int, unsigned int))(**((unsigned int **)dword_87F65C + v2) + 32))( /*0x533fbc*/)
              *((unsigned int *)dword_87F65C + v2),
              0);
   }
@@ -381,7 +381,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
       v6 = (void *)(0); /*0x63633e*/
     else
       v6 = (void *)*((unsigned int *)v4->Array_field_0x4 + Value); /*0x636345*/
-    Block = (void *)((int *)(v6)); /*0x63634a*/
+    Block = (int *)((void *)((int *)(v6))); /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
       ((FactoryClass*)(int *)v4->__pad_0)->FinishProduction((int)v6); /*0x636353*/
@@ -419,7 +419,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = Block; /*0x636437*/
     if ( !stru_AC4B30.__pad_EC[217] ) /*0x63643d*/
     {
-v11 = (*(int (**)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/ &stru_AC4B30.__pad_EC[92], (void **)(&Block));
+v11 = (*(int ((char *)(**))(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/ &stru_AC4B30.__pad_EC[92], (void **)(&Block));
 
 
       if ( v11 != -1 ) /*0x636454*/
@@ -916,7 +916,7 @@ int Sidebar_UpdateProductionDisplay(void * a1, void * a3)
   result = *(unsigned char *)((char *)a1 +8);
   if ( result )
   {
-    if ( *(unsigned char *)((char *)a1 +0) || (result = a3) != 0 )
+    if ( *(unsigned char *)((char *)a1 +0) || (result = (char)(a3)) != 0 )
     {
   int v86; // [esp+2Ah] [ebp-460h]
   int v82; // [esp+1Ah] [ebp-470h] BYREF
@@ -1040,7 +1040,7 @@ LABEL_13:
 
 
 
-                      || (v86 = TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22]),
+                      || (v86 = (int)(TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22])),
   bool v74; // [esp+10h] [ebp-47Ah]
                           v74 = ((HouseClass *)(((gamemd::TechnoTypeClass*)HouseClass_Player).field_0))->CanBuild( (int)((IUnknown *)v86), 0, 0) == -1,
                           ShouldDisableCameo = ((HouseClass *)((gamemd::HouseClass*)HouseClass_Player).field_0)->ShouldDisableCameo( v86),
@@ -1183,8 +1183,8 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( *(unsigned int *)(v84 + 52 * v90 + 136) > *(int *)&HouseClass_Player[45112]
-                  && *(unsigned int *)&HouseClass_Player[45112] % 16 > 8 )
+                if ( *(unsigned int *)(v84 + 52 * v90 + 136) > *(int *)&(&HouseClass_Player)[45112]
+                  && *(unsigned int *)&(&HouseClass_Player)[45112] % 16 > 8 )
                 {
                   *(unsigned int *)&aP3[120] = v15;
                   *(unsigned int *)&aP3[124] = v17;

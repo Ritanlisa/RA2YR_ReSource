@@ -294,7 +294,7 @@ int sub_626C60()
     if ( v2 ) /*0x626c98*/
     {
       ((StringVector *)((int)(v2)))->Construct( 0, 0); /*0x626ca0*/
-      *(void **)v3 = (unsigned int)(void*)&DynamicVectorClass_char___vftable; /*0x626caa*/
+      *(void **)v3 = (void *)((unsigned int)(void*)&DynamicVectorClass_char___vftable); /*0x626caa*/
       v3[5] = 10; /*0x626cb0*/
       v3[4] = 0; /*0x626cb3*/
     }
@@ -308,7 +308,7 @@ int sub_626C60()
     if ( v4 ) /*0x626cd4*/
     {
       ((VectorClass *)(v4))->ConstructHSV(0, 0); /*0x626cdc*/
-      *(void **)v5 = (unsigned int)(void*)&DynamicVectorClass_HSVClass_vftable; /*0x626ce1*/
+      *(void **)v5 = (void *)((unsigned int)(void*)&DynamicVectorClass_HSVClass_vftable); /*0x626ce1*/
       v5[5] = 10; /*0x626ce7*/
       v5[4] = 0; /*0x626cea*/
     }
@@ -779,7 +779,7 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
             v5 += 2 * v10; /*0x6ba637*/
             do /*0x6ba64d*/
             {
-              if ( *v13 != aP3 ) /*0x6ba641*/
+              if ( *v13  !=  (int)(aP3 )) /*0x6ba641*/
                 *v14 = *v13; /*0x6ba643*/
               ++v13; /*0x6ba646*/
               ++v14; /*0x6ba649*/
@@ -1754,7 +1754,7 @@ int Surface::CommitSurfaceBuffersAudio()
     v7 = *((uint16_t *)this + 935); /*0x7bd735*/
   else
     v7 = *((uint8_t *)this + 245); /*0x7bd746*/
-  if ( v7 != this->BytesPerPixel ) /*0x7bd74b*/
+  if ( v7  !=  (int)(this->BytesPerPixel )) /*0x7bd74b*/
   {
     v8 = *((unsigned int *)this + 34); /*0x7bd75c*/
     v52 = 0; /*0x7bd762*/
@@ -1877,22 +1877,22 @@ LABEL_57:
   *((unsigned int *)this + 85) |= 1u; /*0x7bd90f*/
   v21 = (unsigned int *)(0); /*0x7bd91b*/
   *((unsigned int *)this + 474) = (*(unsigned int *)&this->u32_10A + 16) & 0xFFFFFFFC; /*0x7bd927*/
-  v22 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v49); /*0x7bd92d*/
+  v22 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v49); /*0x7bd92d*/
   *((unsigned int *)this + 444) = v22; /*0x7bd935*/
   if ( !v22 ) /*0x7bd93b*/
     goto LABEL_103; /*0x7bd93b*/
-  (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v22, *((unsigned int *)this + 477)); /*0x7bd95c*/
+  (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v22, *((unsigned int *)this + 477)); /*0x7bd95c*/
   *((unsigned int *)this + 12) += *((unsigned int *)this + 477); /*0x7bd96d*/
   v56 = 0; /*0x7bd978*/
   if ( *((int *)this + 35) > 0 ) /*0x7bd97c*/
   {
     while ( 1 ) /*0x7bd991*/
     {
-      v23 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 474) + 24); /*0x7bd991*/
+      v23 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 474) + 24); /*0x7bd991*/
       v24 = (unsigned int *)v23; /*0x7bd994*/
       if ( !v23 ) /*0x7bd99b*/
         goto LABEL_103; /*0x7bd99b*/
-      (*((void (**)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v23, *((unsigned int *)this + 474) + 24); /*0x7bd9af*/
+      (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v23, *((unsigned int *)this + 474) + 24); /*0x7bd9af*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 474) + 24; /*0x7bd9c4*/
       memset( (void *)(v24), 0, 0x18u); /*0x7bd9cc*/
       *v24 = (unsigned int)(v24 + 6); /*0x7bd9d6*/
@@ -1947,7 +1947,7 @@ LABEL_57:
   LOBYTE(v30) = v30 & 0xFC; /*0x7bdab1*/
   *((unsigned int *)this + 85) |= 2u; /*0x7bdab6*/
   *((unsigned int *)this + 475) = v30; /*0x7bdabc*/
-  v31 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v50); /*0x7bdac2*/
+  v31 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v50); /*0x7bdac2*/
   *((unsigned int *)this + 442) = v31; /*0x7bdaca*/
   if ( !v31 ) /*0x7bdad0*/
   {
@@ -1955,7 +1955,7 @@ LABEL_103:
     ((DSurface *)this)->CommitBuffers(); /*0x7bdf14*/
     return -8; /*0x7bdf27*/
   }
-  (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v31, *((unsigned int *)this + 478)); /*0x7bdaf1*/
+  (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v31, *((unsigned int *)this + 478)); /*0x7bdaf1*/
   *((unsigned int *)this + 12) += *((unsigned int *)this + 478); /*0x7bdb02*/
   v57 = 0; /*0x7bdb0d*/
   if ( *((int *)this + 34) > 0 ) /*0x7bdb11*/
@@ -1969,7 +1969,7 @@ LABEL_103:
                         *((unsigned int *)this + 476) + *((unsigned int *)this + 475) + 44);
       if ( !v32 ) /*0x7bdb37*/
         goto LABEL_103; /*0x7bdb37*/
-(*((void (**)(BSurface *, int, unsigned int *, int))(unsigned int *)this + 17))( /*0x7bdb52*/ this, 4, (unsigned int *)(v32), *((unsigned int *)this + 476) + *((unsigned int *)this + 475) + 44);
+(*((void ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int *, int))(unsigned int *)this + 17))( /*0x7bdb52*/ this, 4, (unsigned int *)(v32), *((unsigned int *)this + 476) + *((unsigned int *)this + 475) + 44);
 
 
 
@@ -2053,42 +2053,42 @@ LABEL_103:
       }
       else
       {
-        v42 = (*((int (**)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 38)); /*0x7bdcf5*/
+        v42 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 38)); /*0x7bdcf5*/
         *((unsigned int *)this + 483) = v42; /*0x7bdcfb*/
         if ( !v42 ) /*0x7bdd03*/
           goto LABEL_103; /*0x7bdd03*/
-        (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v42, *((unsigned int *)this + 38)); /*0x7bdd24*/
+        (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v42, *((unsigned int *)this + 38)); /*0x7bdd24*/
         *((unsigned int *)this + 12) += *((unsigned int *)this + 38); /*0x7bdd35*/
       }
       v51 = *((unsigned int *)this + 38) / *((unsigned int *)this + 39); /*0x7bdd4d*/
       *((unsigned int *)this + 487) = v51; /*0x7bdd53*/
-      v43 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v51); /*0x7bdd59*/
+      v43 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v51); /*0x7bdd59*/
       *((unsigned int *)this + 485) = v43; /*0x7bdd5f*/
       if ( !v43 ) /*0x7bdd67*/
         goto LABEL_103; /*0x7bdd67*/
-      (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v43, *((unsigned int *)this + 487)); /*0x7bdd88*/
+      (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v43, *((unsigned int *)this + 487)); /*0x7bdd88*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 487); /*0x7bdd96*/
       memset(*((void **)this + 485), 0, *((unsigned int *)this + 487)); /*0x7bddac*/
-      v44 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 2 * *((unsigned int *)this + 487)); /*0x7bddc3*/
+      v44 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 2 * *((unsigned int *)this + 487)); /*0x7bddc3*/
       *((unsigned int *)this + 486) = v44; /*0x7bddc9*/
       if ( !v44 ) /*0x7bddd1*/
         goto LABEL_103; /*0x7bddd1*/
-      (*((void (**)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v44, 2 * *((unsigned int *)this + 487)); /*0x7bddf4*/
+      (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v44, 2 * *((unsigned int *)this + 487)); /*0x7bddf4*/
       *((unsigned int *)this + 12) += 2 * *((unsigned int *)this + 487); /*0x7bde04*/
       memset(*((void **)this + 486), 0, 2 * *((unsigned int *)this + 487)); /*0x7bde1c*/
       v48 = 2 * (*((unsigned int *)this + 499) / (unsigned int)*((uint8_t *)this + 244)) + 100; /*0x7bde3b*/
       *((unsigned int *)this + 493) = v48; /*0x7bde41*/
-      v45 = (*((int (**)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v48); /*0x7bde47*/
+      v45 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v48); /*0x7bde47*/
       *((unsigned int *)this + 490) = v45; /*0x7bde4d*/
       if ( !v45 ) /*0x7bde55*/
         goto LABEL_103; /*0x7bde55*/
-      (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v45, *((unsigned int *)this + 493)); /*0x7bde76*/
+      (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v45, *((unsigned int *)this + 493)); /*0x7bde76*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 493); /*0x7bde84*/
-      v46 = (*((int (**)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 39)); /*0x7bde93*/
+      v46 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 39)); /*0x7bde93*/
       *((unsigned int *)this + 494) = v46; /*0x7bde99*/
       if ( !v46 ) /*0x7bdea1*/
         goto LABEL_103; /*0x7bdea1*/
-      (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v46, *((unsigned int *)this + 39)); /*0x7bdec2*/
+      (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v46, *((unsigned int *)this + 39)); /*0x7bdec2*/
       memset(*((void **)this + 494), 0, *((unsigned int *)this + 39)); /*0x7bded8*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 39); /*0x7bdeef*/
     }
@@ -2101,7 +2101,7 @@ LABEL_103:
   *((unsigned int *)this + 473) = v47; /*0x7bdf0a*/
   if ( !v47 ) /*0x7bdf12*/
     goto LABEL_103; /*0x7bdf12*/
-  (*((void (**)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v47, 4 * *((uint16_t *)this + 118)); /*0x7bdf4d*/
+  (*((void ((gamemd::BSurface *)(**))(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v47, 4 * *((uint16_t *)this + 118)); /*0x7bdf4d*/
   *((unsigned int *)this + 12) += 4 * *((uint16_t *)this + 118); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
 
@@ -2166,7 +2166,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
   int v8; // ebx
   char v9; // [esp+8h] [ebp-4h]
 
-  if ( Src != (Surface *)&unk_89F990 ) /*0x4a478b*/
+  if ( Src != (gamemd::AbstractClass *)&unk_89F990 ) /*0x4a478b*/
     memcpy( (void *)(&unk_89F990), (const void *)(Src), 0x300u); /*0x4a4798*/
   result = (int)g_lpDirectDraw7; /*0x4a47a0*/
   if ( g_lpDirectDraw7 ) /*0x4a47a7*/
@@ -2180,7 +2180,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
       {
         v6 = (uint8_t)v4->__pad_0[0]; /*0x4a47bf*/
         v9 = v4->__pad_0[1]; /*0x4a47c5*/
-        v7 = &v4->__pad_0[2]; /*0x4a47c9*/
+        v7 = (char *)(&v4->__pad_0[2]); /*0x4a47c9*/
         v5 += 4; /*0x4a47cc*/
         v8 = (uint8_t)*v7; /*0x4a47cf*/
         *(v5 - 5) = v6; /*0x4a47d1*/
@@ -2189,16 +2189,16 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
         *(v5 - 3) = v8; /*0x4a47dc*/
       }
       while ( (int)v5 < 9044117 ); /*0x4a47e5*/
-      result = g_DDraw_Palette; /*0x4a47e7*/
+      result = (int)(g_DDraw_Palette); /*0x4a47e7*/
       if ( g_DDraw_Palette ) /*0x4a47ef*/
       {
         if ( !byte_8A0098 ) /*0x4a47f9*/
         {
           (*(void (**)(int, int))(*(unsigned int *)v3 + 124))(v3, g_DDraw_Palette); /*0x4a47ff*/
-          result = g_DDraw_Palette; /*0x4a4802*/
+          result = (int)(g_DDraw_Palette); /*0x4a4802*/
           byte_8A0098 = 1; /*0x4a4807*/
         }
-return (*(int (**)(int, unsigned int, unsigned int, int, void *))(*(unsigned int *)result + 24))( /*0x4a481f*/ result, 0, 0, 256, (void *)(&g_DDraw_PaletteEntries));
+return (LPDIRECTDRAW)((*(int (**)(int, unsigned int, unsigned int, int, void *))(*(unsigned int *)result + 24))( /*0x4a481f*/ result, 0, 0, 256, (void *)(&g_DDraw_PaletteEntries)));
 
 
 
@@ -2207,7 +2207,7 @@ return (*(int (**)(int, unsigned int, unsigned int, int, void *))(*(unsigned int
       }
     }
   }
-  return result; /*0x4a4822*/
+  return (LPDIRECTDRAW)(result); /*0x4a4822*/
 
 }
 }  // G42.18c ns repair
@@ -2216,8 +2216,8 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2, void *a3, void *a4, void *a5, void *a6)
 {
 
-  this->Width = aP1; /*0x4aec6a*/
-  this->Height = aP2; /*0x4aec6d*/
+  this->Width = (int)(aP1); /*0x4aec6a*/
+  this->Height = (int)(aP2); /*0x4aec6d*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&Surface_Vtable); /*0x4aec70*/
   return this->__pad_0; /*0x4aec76*/
 

@@ -183,7 +183,7 @@ int VectorClass_flat::RemoveObjectById()
   char *v6; // ecx
   VectorClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  v7 = this; /*0x4137a0*/
+  v7 = (gamemd::VectorClass *)(this); /*0x4137a0*/
   if ( !*((unsigned int *)this + 2404) ) /*0x4137a1*/
     return 0; /*0x4137ab*/
   v2 = (VectorClass *)((unsigned int *)this + 600); /*0x4137b6*/
@@ -469,7 +469,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)(v6); /*0x4e091a*/
       this->m_8 = a2; /*0x4e0922*/
-      ((unsigned char*)&this->IsInitialized)[1] = (gamemd::AbstractClass **)(v4 == 0); /*0x4e0925*/
+      ((unsigned char*)&this->IsInitialized)[1] = (unsigned char)((gamemd::AbstractClass **)(v4 == 0)); /*0x4e0925*/
       return (gamemd::AbstractClass **)(1); /*0x4e092b*/
     }
     else
@@ -688,7 +688,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
   (&this->__tail_18)[0] = 1; /*0x4a0c3d*/
   (&this->__tail_18)[1] = (unsigned int)(0); /*0x4a0c41*/
   *(unsigned int *)&this->IsInitialized = (unsigned int)(&vt_VectorClass); /*0x4a0c44*/
-  if ( &this->IsInitialized != (char *)aP1 ) /*0x4a0c4a*/
+  if ( &this->IsInitialized != (void **)aP1 ) /*0x4a0c4a*/
   {
     VectorClass::CleanupTyped((int)&this->IsInitialized); /*0x4a0c4e*/
     v4 = (int)(aP1[2]); /*0x4a0c54*/
@@ -1009,7 +1009,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
     do /*0x50150f*/
     {
       v2 = *(BuildingClass **)(*(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v1); /*0x501423*/
-      if ( (HouseClass *)((char *)a1 - 36) == ((unsigned int *)v2)[0] && ((unsigned int *)v2)[0] && !((unsigned int *)v2)[0] ) /*0x50143d*/
+      if ( (HouseClass *)((char *)a1 - 36) == (gamemd::HouseClass *)(((unsigned int *)v2)[0] && ((unsigned int *)v2)[0] && !((unsigned int *)v2)[0] )) /*0x50143d*/
       {
         if ( ((unsigned int *)v2)[0] /*0x50146d*/
           && *(unsigned char *)((*((int (**)(unsigned int))v2->vtable1 + 33))(*(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 152)
@@ -1075,7 +1075,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
       v4 = a3; /*0x50f68e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x50f68a*/
-    this->IsInitialized = 1; /*0x50f692*/
+    this->IsInitialized = (void *)(1); /*0x50f692*/
     if ( !v4 ) /*0x50f696*/
       return 0; /*0x50f70a*/
     if ( this->Items ) /*0x50f698*/
@@ -1102,7 +1102,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
   v7 = this->Capacity; /*0x50f6f1*/
   if ( (int)v7 < (int)this->Count ) /*0x50f6f9*/
     this->Count = v7; /*0x50f6fb*/
-  return 1; /*0x50f6fe*/
+  return (gamemd::AbstractClass **)(1); /*0x50f6fe*/
 
 }
 }
@@ -1174,7 +1174,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
       if ( *(unsigned int *)&this->m_1[3] ) /*0x62899a*/
       {
         m_8 = this->m_8; /*0x6289a1*/
-        if ( aP1 < m_8 ) /*0x6289a6*/
+        if ( aP1 < (gamemd::CCINIClass *)(m_8) ) /*0x6289a6*/
           m_8 = (unsigned int)aP1; /*0x6289a8*/
         if ( m_8 > 0 ) /*0x6289ac*/
         {
@@ -1202,7 +1202,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
       *(unsigned int *)&this->m_1[3] = (unsigned int)v15; /*0x628a0a*/
       this->m_8 = v3; /*0x628a13*/
       BYTE1(this->m_C) = a2 == 0; /*0x628a1a*/
-      return 1; /*0x628a1f*/
+      return (gamemd::AbstractClass **)(1); /*0x628a1f*/
     }
     else
     {
@@ -1212,7 +1212,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
   else
   {
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x628a2d*/
-    return 1; /*0x628a33*/
+    return (gamemd::AbstractClass **)(1); /*0x628a33*/
   }
 
 }
@@ -1345,13 +1345,13 @@ LABEL_13:
   }
   v7 = (char *)(0); /*0x6dc8b1*/
 LABEL_14:
-  this->IsInitialized = 1; /*0x6dc8de*/
+  this->IsInitialized = (void *)(1); /*0x6dc8de*/
   if ( !v7 ) /*0x6dc8e4*/
     return 0; /*0x6dc967*/
   if ( this->Items ) /*0x6dc8e6*/
   {
     Capacity = (char *)this->Capacity; /*0x6dc8ed*/
-    if ( aP1 < (int)Capacity ) /*0x6dc8f2*/
+    if ( aP1 < (gamemd::CCINIClass *)((int)Capacity )) /*0x6dc8f2*/
       Capacity = (char *)aP1; /*0x6dc8f4*/
     if ( (int)Capacity > 0 ) /*0x6dc8f8*/
     {
@@ -1380,7 +1380,7 @@ LABEL_26:
   v13 = this->Capacity; /*0x6dc94d*/
   if ( (int)v13 < (int)this->Count ) /*0x6dc955*/
     this->Count = v13; /*0x6dc957*/
-  return 1; /*0x6dc95a*/
+  return (gamemd::AbstractClass **)(1); /*0x6dc95a*/
 
 }
 }
@@ -1404,7 +1404,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
   if ( !a2 ) /*0x6b44ae*/
   {
     (*(void (**)(_VectorClass_UUndoInfoStruct *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6b4591*/
-    return 1; /*0x6b4597*/
+    return (gamemd::AbstractClass **)(1); /*0x6b4597*/
   }
   v5 = a3; /*0x6b44b4*/
   LOBYTE(this->m_C) = 0; /*0x6b44b8*/
@@ -1483,7 +1483,7 @@ LABEL_14:
   *(unsigned int *)&this->m_1[3] = (unsigned int)v8; /*0x6b4578*/
   this->m_8 = v3; /*0x6b457e*/
   BYTE1(this->m_C) = a3 == 0; /*0x6b4581*/
-  return 1; /*0x6b451b*/
+  return (gamemd::AbstractClass **)(1); /*0x6b451b*/
 
 }
 }
@@ -1590,7 +1590,7 @@ LABEL_26:
   v14 = this->m_8; /*0x6b4734*/
   if ( v14 < this->m_10 ) /*0x6b473c*/
     this->m_10 = v14; /*0x6b473e*/
-  return 1; /*0x6b4741*/
+  return (gamemd::AbstractClass **)(1); /*0x6b4741*/
 
 }
 }

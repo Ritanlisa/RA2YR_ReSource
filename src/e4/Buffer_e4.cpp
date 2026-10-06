@@ -74,7 +74,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
 
   v5 = *((unsigned int *)this + 10); /*0x7bcb60*/
   v52 = this->Buffer_field_10 / 2 % v5; /*0x7bcb72*/
-  if ( (int)abs32(a2) > v5 || (result = (char *)abs32(aP2), (int)result > *((unsigned int *)this + 11)) ) /*0x7bcb8e*/
+  if ( (int)abs32((int)(a2)) > v5 || (result = (char *)abs32(aP2), (int)result > *((unsigned int *)this + 11)) ) /*0x7bcb8e*/
   {
     v50 = *((unsigned int *)this + 11); /*0x7bcf06*/
     v53 = 0; /*0x7bcf0b*/
@@ -486,7 +486,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   unsigned char *v16; // [esp+28h] [ebp+8h]
 
   Buffer_field_08 = (int *)(this->Buffer_field_08);
-  if ( Buffer_field_08 + 12 > (unsigned int)(this->Buffer_field_04 + this->Buffer_field_00) ) /*0x6c89f9*/
+  if ( Buffer_field_08 + (int *)(12) >  (unsigned int)(this->Buffer_field_04 + this->Buffer_field_00) ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
   v15 = this->Buffer_field_08; /*0x6c89fd*/
   this->Buffer_field_08 = (unsigned int)(Buffer_field_08 + 12); /*0x6c8a01*/

@@ -860,7 +860,7 @@ void Audio_Process()
     }
   }
   v42 = 0; /*0x404377*/
-  v14 = &stru_87DE38; /*0x40437f*/
+  v14 = (gamemd::DListNode *)(&stru_87DE38); /*0x40437f*/
   v15 = 7; /*0x404384*/
   do /*0x40439c*/
   {

@@ -43,13 +43,13 @@ namespace gamemd {
 // ---- g57b5 W3 end ----
 class CellClass;                // firstObject 载体前置 (system/cell.hpp)
 namespace gamemd {
-namespace Debug { void Log(); }                    // raw 0x449612 家族 (closure 无 Debug 载体)
+struct Debug { static void Log(); };                // G57w8: _fwd struct Debug 完全体（namespace 形与 fwd 对撞 C2757）
 struct Cell {                                   // csp_canon:127590 同名类静态词表
     static int ApplyDamage(Cell *a1, int a2, int a3, int a4, int a5);
     static void *GetNeighbourContent(Cell *a1, int a2);  // raw 0x449640 (g57b5 W2r3)
 };
 extern int ZCoordToScreenY(int a1);            // 0x423A6C 真形 (raw fn_42)
-namespace Math { int RoundToInt(double a1); }  // raw fn_49 家族 (closure 无 Math 载体)
+struct Math { static int RoundToInt(double a1); };  // G57w8: _fwd struct Math 完全体（同上）
 // (g57b5 W2r2: namespace WinAPI 移除 — stream_ext.hpp:12 class WinAPI::Wrapper 已在闭包内)
 struct Power {                                 // raw 0x4254xx FlagProcess/TimerProcess 家族
     static int FlagProcess(Power *a1, unsigned int a2);
@@ -635,7 +635,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
     v10 = Map_InvalidCoord_Z; /*0x421f3f*/
     this->__pad_118[0] = 0; /*0x421f44*/
     this->__pad_118[1] = 0; /*0x421f4a*/
-    *(unsigned int *)&this->__pad_10C[4] = v10; /*0x421f50*/
+    *(unsigned int *)&(&this->__pad_10C)[4] = v10; /*0x421f50*/
     this->AnimClass_field_0x114 = 0; /*0x421f53*/
     this->__pad_118[2] = 0; /*0x421f59*/
     this->__pad_118[3] = 0; /*0x421f5f*/
@@ -672,7 +672,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
     this->AnimClass_field_0x4 = (int)&vt_AnimClass; /*0x422022*/
     this->AnimClass_field_0x8 = (int)&vt_AnimClass; /*0x422028*/
     *(unsigned int *)this->vtable4 = (unsigned int)&off_7E3328; /*0x422030*/
-    this->__pad_D8[4] = 0; /*0x422037*/
+    (&this->__pad_D8)[4] = 0; /*0x422037*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->AnimClass_field_0x4); /*0x42203d*/
     ((AudioController *)&this->AnimClass_field_0x1A0)->Init(); /*0x422048*/
     ((AudioController *)&this->AnimClass_field_0x1B4)->Init(); /*0x422053*/

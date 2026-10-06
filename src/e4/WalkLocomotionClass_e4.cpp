@@ -300,7 +300,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_WalkLocomotionClass;
-  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_WalkLocomotionClass;
+  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)&vt_WalkLocomotionClass;
   *(unsigned int *)this->__pad_18 = (unsigned int)&vt_WalkLocomotionClass;
   Piggybackee =(gamemd::ILocomotion *)this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/

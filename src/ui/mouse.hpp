@@ -117,13 +117,13 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~MouseClass() = default;
 
-    virtual bool SetCursor(MouseCursorType cursor, bool miniMap) override;
+    virtual bool SetCursor(MouseCursorType cursor, bool miniMap);  // G57w8: MouseClass own slot (RadarClass 无此虚函数)
     // design: inline accessor, inlined at all call sites
-    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap) override;
+    virtual bool UpdateCursor(MouseCursorType cursor, bool miniMap);  // G57w8: MouseClass own slot (RadarClass 无此虚函数)
     // unmatched: no callgraph reference and no git history record
-    virtual bool RestoreCursor() override;
+    virtual bool RestoreCursor();  // G57w8: MouseClass own slot (RadarClass 无此虚函数)
     // design: inline accessor, inlined at all call sites
-    virtual void UpdateCursorMinimapState(bool miniMap) override;
+    virtual void UpdateCursorMinimapState(bool miniMap);  // G57w8: MouseClass own slot (RadarClass 无此虚函数)
     // design: inline accessor, inlined at all call sites
     virtual MouseCursorType GetLastMouseCursor();
 
@@ -138,6 +138,8 @@ public:
 protected:
     MouseClass() = default;
     unsigned char m_1[4];  // 0x1
+    int m_8;  // G57w8 raw-vocab (0x40D75F this->m_8)
+    unsigned int u32_5564;  // G57w8 raw-vocab (0x40D286 this->u32_5564)
     unsigned int m_C;  // 0xC
     unsigned char __pad_0;  // 0x0
     int u32_8;  // 0x8

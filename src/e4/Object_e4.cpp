@@ -526,7 +526,7 @@ LABEL_5:
   else
   {
     v8 = *(OverlayTypeClass ***)stru_A83D50.__pad_34; /*0x5fd9d1*/
-    while ( *v8 != this->Type ) /*0x5fd9d9*/
+    while ( *v8 != (gamemd::OverlayTypeClass *)(this->Type) ) /*0x5fd9d9*/
     {
       ++v7; /*0x5fd9db*/
       ++v8; /*0x5fd9dc*/
@@ -992,7 +992,7 @@ char Object_Init(char a1, int a2, int a3, char a4, int a5)
   char *v5; // eax
   char v7[112]; // [esp+8h] [ebp-70h] BYREF
 
-  v5 = ScriptAction::InitActionFields( /*0x646ef0*/
+  v5 = (char *)(ScriptAction::InitActionFields( )/*0x646ef0*/
          v7,
          *((unsigned int *)dword_A83D4C + 12),
          a3,
@@ -1841,7 +1841,7 @@ char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a
     IDA_LOWORD(v30) = a28; /*0x637df2*/
     IDA_BYTE2(v30) = IDA_BYTE2(a28); /*0x637df4*/
 // 0x6521c0
-    return Network::RecordEvent( /*0x637df5*/
+    return (char)(Network::RecordEvent( /*0x637df5*/)
              *(int64_t *)v29,
              *(int *)&v29[8],
              *(int *)&v29[12],
@@ -1893,7 +1893,7 @@ SessionClass * Object::DtorWithDelete(void ** Block, char a2)
   j_DeleteAndZero( (void *)((ObjectClass *)this)); /*0x7ad333*/
   if ( (a2 & 1) != 0 ) /*0x7ad33d*/
     __3_YAXPAX_Z(this); /*0x7ad340*/
-  return (void **)this; /*0x7ad34a*/
+  return (gamemd::SessionClass *)((void **)this); /*0x7ad34a*/
 
 }
 } // namespace gamemd

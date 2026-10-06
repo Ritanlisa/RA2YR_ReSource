@@ -93,7 +93,7 @@ int SuperClass::Constructor(void *a1, void *a2, void *a3)
   *(unsigned int *)&this->__pad_3C[16] = 0; /*0x6caee8*/
   *(unsigned int *)&this->__pad_3C[20] = -1; /*0x6caeeb*/
   LOBYTE(this->SuperClass_field_0x60) = 1; /*0x6caeee*/
-  *(void **)((char *)&this->SuperClass_field_0x60 + 2) = (unsigned int)(void *)dword_B0C000; /*0x6caef8*/
+  *(void **)((char *)&this->SuperClass_field_0x60 + 2) = (void *)((unsigned int)(void *)dword_B0C000); /*0x6caef8*/
   this->SuperClass_field_0x68 = 0; /*0x6caefb*/
   LOBYTE(this->SuperClass_field_0x6C) = 0; /*0x6caefe*/
   BYTE1(this->SuperClass_field_0x6C) = 0; /*0x6caf01*/
@@ -191,7 +191,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5
     v7 = dword_B0F6D8++; /*0x6cb0fc*/
     *((unsigned int *)dword_B0F6CC + v7) = (unsigned int)(this); /*0x6cb10b*/
   }
-  return this; /*0x6cb110*/
+  return (int)(this); /*0x6cb110*/
 
 }
 }
@@ -909,7 +909,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
     SuperClass_field_0x68[405] = 0; /*0x6ce0bd*/
     this->SuperClass_field_0x68 = 0; /*0x6ce0c4*/
     v12[0] = (unsigned int)(this); /*0x6ce0db*/
-v3 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce0df*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
+v3 = (*(int ((int *)(**))(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce0df*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
 
 
     if ( v3 != -1 ) /*0x6ce0e5*/
@@ -918,7 +918,7 @@ v3 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingL
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6ce0f2*/
   {
     v12[0] = (unsigned int)(this); /*0x6ce109*/
-v4 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce10d*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
+v4 = (*(int ((int *)(**))(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce10d*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
 
 
     if ( v4 != -1 ) /*0x6ce113*/
@@ -977,7 +977,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     SuperClass_field_0x68[405] = 0; /*0x6cb3ad*/
     this->SuperClass_field_0x68 = 0; /*0x6cb3b4*/
     v9 = this; /*0x6cb3cb*/
-v6 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3cf*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
+v6 = (*(int ((int *)(**))(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3cf*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
 
 
     if ( v6 != -1 ) /*0x6cb3d5*/
@@ -986,7 +986,7 @@ v6 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLo
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6cb3e2*/
   {
     v9 = this; /*0x6cb3f9*/
-v7 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3fd*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
+v7 = (*(int ((int *)(**))(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3fd*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
 
 
     if ( v7 != -1 ) /*0x6cb403*/
@@ -1005,7 +1005,7 @@ v7 = (*(int (**)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLo
     {
       this->SuperClass_field_0x68 = (unsigned int)(result); /*0x6cb472*/
       result = (void **)((char *)&g_BuildingLoadQueue_Array); /*0x6cb475*/
-      if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x6cb4ae*/
+      if ( *((unsigned int *)((unsigned int)&g_BuildingLoadQueue_Array + 1)) < (*(unsigned int *)&g_BuildingLoadQueue_Array) /*0x6cb4ae*/
         || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
         && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
 && (result = (void **)(*(int (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))( (int *)(((char *)(int *)&g_BuildingLoadQueue_Array)), ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)), 0), (unsigned char)result) )
@@ -1210,7 +1210,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
       *(unsigned int *)aP0->__pad_C = (unsigned int)(&vt_SuperClass); /*0x6cdf27*/
     }
     if ( aP0->SuperClass_field_0x68 /*0x6cdf70*/
-      && (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array)
+      && (*((unsigned int *)((unsigned int)&g_BuildingLoadQueue_Array + 1)) < (*(unsigned int *)&g_BuildingLoadQueue_Array)
        || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
        && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
 && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))( (int *)(((char *)(int *)&g_BuildingLoadQueue_Array)), ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)), 0)) )
@@ -1256,11 +1256,11 @@ long long SuperClass::ExecuteAction(unsigned int a2, int a3)
   int64_t result; // rax
 
   result = a2; /*0x6cdff0*/
-  if ( (void *)a2 == this->SuperClass_field_0x2C ) /*0x6cdffc*/
+  if ( (void *)a2 == (void *)(this->SuperClass_field_0x2C) ) /*0x6cdffc*/
     this->SuperClass_field_0x2C = 0; /*0x6cdffe*/
-  if ( (void *)a2 == this->SuperClass_field_0x28 ) /*0x6ce004*/
+  if ( (void *)a2 == (void *)(this->SuperClass_field_0x28) ) /*0x6ce004*/
     this->SuperClass_field_0x28 = 0; /*0x6ce006*/
-  if ( (void *)a2 == this->SuperClass_field_0x68 ) /*0x6ce00f*/
+  if ( (void *)a2 == (void *)(this->SuperClass_field_0x68) ) /*0x6ce00f*/
   {
     this->SuperClass_field_0x68 = 0; /*0x6ce011*/
     LOBYTE(this->SuperClass_field_0x6C) = 1; /*0x6ce014*/

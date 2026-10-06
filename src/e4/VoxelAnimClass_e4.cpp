@@ -792,7 +792,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       }
     }
   }
-  v67 = ((JumpjetLocomotionClass *)(&v1->__pad_98[24]))->Update2( (float *)&v1->__pad_98[24]); /*0x74a7b3*/
+  v67 = (int)(((JumpjetLocomotionClass *)(&v1->__pad_98[24]))->Update2( (float *)&v1->__pad_98[24])); /*0x74a7b3*/
   if ( *((unsigned char *)v1->VoxelAnimClass_field_0x104 + 720) ) /*0x74a7be*/
     *(float *)&v1->__pad_98[68] = *(float *)&v1->__pad_98[68] + *(double *)&v1->__pad_98[32]; /*0x74a7d4*/
   v68 = v67 - 1; /*0x74a7da*/
@@ -853,7 +853,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     }
   }
   VoxelAnimClass_field_0x0 = (int (**)(VoxelAnimClass *, int))v1->VoxelAnimClass_field_0x0; /*0x74a934*/
-  v81 = ((Coord *)(&v108))->GetCoords( v86); /*0x74a941*/
+  v81 = (int)(((Coord *)(&v108))->GetCoords( v86)); /*0x74a941*/
   return VoxelAnimClass_field_0x0[109](v1, v81); /*0x749f7b*/
 
 }
@@ -1014,7 +1014,7 @@ float * VoxelAnimClass::QuaternionToMatrix(float * a2, void *a2_2)
   float *v2; // esi
   float v4[12]; // [esp+8h] [ebp-30h] BYREF
 
-  v2 = ToQuaternionMatrix(v4, (unsigned int *)this + 12); /*0x4399f1*/
+  v2 = (float *)(ToQuaternionMatrix(v4, (unsigned int *)this + 12)); /*0x4399f1*/
   qmemcpy( (void *)(a2), (const void *)(v2), 0x30u); /*0x4399fe*/
   return a2; /*0x439a00*/
 

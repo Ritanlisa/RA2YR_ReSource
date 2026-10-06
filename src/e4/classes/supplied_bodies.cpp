@@ -1,5 +1,160 @@
 // G42.32 P: tree-universe marker -- e4 tree-owned decls suppressed
 #define GAMEMD_TREE_UNIVERSE 1
+// G57w8: utility_ext flat-twin suppression battery (full; C2011 x48 root fix)
+#ifndef GAMEMD_E4_AllocCallback
+#define GAMEMD_E4_AllocCallback 1
+#endif
+#ifndef GAMEMD_E4_Buffer
+#define GAMEMD_E4_Buffer 1
+#endif
+#ifndef GAMEMD_E4_COM
+#define GAMEMD_E4_COM 1
+#endif
+#ifndef GAMEMD_E4_COMClass
+#define GAMEMD_E4_COMClass 1
+#endif
+#ifndef GAMEMD_E4_COMObject
+#define GAMEMD_E4_COMObject 1
+#endif
+#ifndef GAMEMD_E4_ComPtr
+#define GAMEMD_E4_ComPtr 1
+#endif
+#ifndef GAMEMD_E4_Compare
+#define GAMEMD_E4_Compare 1
+#endif
+#ifndef GAMEMD_E4_Config
+#define GAMEMD_E4_Config 1
+#endif
+#ifndef GAMEMD_E4_Delegate
+#define GAMEMD_E4_Delegate 1
+#endif
+#ifndef GAMEMD_E4_EnumConnectionPointsClass
+#define GAMEMD_E4_EnumConnectionPointsClass 1
+#endif
+#ifndef GAMEMD_E4_EnumConnectionsClass
+#define GAMEMD_E4_EnumConnectionsClass 1
+#endif
+#ifndef GAMEMD_E4_EventQueue
+#define GAMEMD_E4_EventQueue 1
+#endif
+#ifndef GAMEMD_E4_Event_Dispatch
+#define GAMEMD_E4_Event_Dispatch 1
+#endif
+#ifndef GAMEMD_E4_Flag
+#define GAMEMD_E4_Flag 1
+#endif
+#ifndef GAMEMD_E4_Float
+#define GAMEMD_E4_Float 1
+#endif
+#ifndef GAMEMD_E4_Float4
+#define GAMEMD_E4_Float4 1
+#endif
+#ifndef GAMEMD_E4_GraphicMenuAnimItem
+#define GAMEMD_E4_GraphicMenuAnimItem 1
+#endif
+#ifndef GAMEMD_E4_GraphicMenuItem
+#define GAMEMD_E4_GraphicMenuItem 1
+#endif
+#ifndef GAMEMD_E4_Hash
+#define GAMEMD_E4_Hash 1
+#endif
+#ifndef GAMEMD_E4_Helper
+#define GAMEMD_E4_Helper 1
+#endif
+#ifndef GAMEMD_E4_LoadGame
+#define GAMEMD_E4_LoadGame 1
+#endif
+#ifndef GAMEMD_E4_Main
+#define GAMEMD_E4_Main 1
+#endif
+#ifndef GAMEMD_E4_MoveFeedback
+#define GAMEMD_E4_MoveFeedback 1
+#endif
+#ifndef GAMEMD_E4_Player
+#define GAMEMD_E4_Player 1
+#endif
+#ifndef GAMEMD_E4_PlayerClass
+#define GAMEMD_E4_PlayerClass 1
+#endif
+#ifndef GAMEMD_E4_Process
+#define GAMEMD_E4_Process 1
+#endif
+#ifndef GAMEMD_E4_PtrVector
+#define GAMEMD_E4_PtrVector 1
+#endif
+#ifndef GAMEMD_E4_Random
+#define GAMEMD_E4_Random 1
+#endif
+#ifndef GAMEMD_E4_Rect
+#define GAMEMD_E4_Rect 1
+#endif
+#ifndef GAMEMD_E4_Rect_Point
+#define GAMEMD_E4_Rect_Point 1
+#endif
+#ifndef GAMEMD_E4_RefCount
+#define GAMEMD_E4_RefCount 1
+#endif
+#ifndef GAMEMD_E4_Return
+#define GAMEMD_E4_Return 1
+#endif
+#ifndef GAMEMD_E4_SHA1
+#define GAMEMD_E4_SHA1 1
+#endif
+#ifndef GAMEMD_E4_Selection
+#define GAMEMD_E4_Selection 1
+#endif
+#ifndef GAMEMD_E4_Settings
+#define GAMEMD_E4_Settings 1
+#endif
+#ifndef GAMEMD_E4_StringVector
+#define GAMEMD_E4_StringVector 1
+#endif
+#ifndef GAMEMD_E4_Struct
+#define GAMEMD_E4_Struct 1
+#endif
+#ifndef GAMEMD_E4_Time
+#define GAMEMD_E4_Time 1
+#endif
+#ifndef GAMEMD_E4_Type
+#define GAMEMD_E4_Type 1
+#endif
+#ifndef GAMEMD_E4_Value
+#define GAMEMD_E4_Value 1
+#endif
+#ifndef GAMEMD_E4_Vector2
+#define GAMEMD_E4_Vector2 1
+#endif
+#ifndef GAMEMD_E4_Vector3
+#define GAMEMD_E4_Vector3 1
+#endif
+#ifndef GAMEMD_E4_VectorCursor
+#define GAMEMD_E4_VectorCursor 1
+#endif
+#ifndef GAMEMD_E4_WinMain
+#define GAMEMD_E4_WinMain 1
+#endif
+#ifndef GAMEMD_E4_unknown
+#define GAMEMD_E4_unknown 1
+#endif
+#ifndef GAMEMD_E4_HashTable
+#define GAMEMD_E4_HashTable 1
+#endif
+#ifndef GAMEMD_E4_Queue
+#define GAMEMD_E4_Queue 1
+#endif
+#ifndef GAMEMD_E4_StringList
+#define GAMEMD_E4_StringList 1
+#endif
+#ifndef GAMEMD_E4_AnimTypeList
+#define GAMEMD_E4_AnimTypeList 1
+#endif
+#ifndef GAMEMD_E4_VoxelAnimTypeVector
+#define GAMEMD_E4_VoxelAnimTypeVector 1
+#endif
+#ifndef GAMEMD_E4_MATH_ALIASES
+#define GAMEMD_E4_MATH_ALIASES 1  // G57w8: tree-universe TU consumes math.hpp aliases; flat CoordStruct/CellStruct/Point2D twins stand down
+#endif
+// G57w8 battery end
 // G42.32 S: guard-order tree-bridge -- ra2::game full defs precede e4 leaf headers
 #include "object/abstract.hpp"
 #ifdef GAMEMD_TREE_UNIVERSE
@@ -33,51 +188,6 @@ bool ScriptAction::SetField10() {
 }
 } // namespace gamemd
 
-// 0x638CE0
-namespace gamemd {
-int ScriptAction::ClassifyAction(int *a1, char *a2) {
-    char v3; // cl
-    int *Type; // eax
-    int v6; // ecx
-    Array *v7; // esi
-    int Value; // eax
-    int v9; // eax
-    unsigned char *v10; // esi
-    unsigned char v11[108]; // [esp+8h] [ebp-70h] BYREF
-    int16_t v12; // [esp+74h] [ebp-4h]
-    char v13; // [esp+76h] [ebp-2h]
-
-    v3 = *a2; /*0x638ce8*/
-    if ( *a2 == 9 || v3 == 6 || v3 == 7 ) /*0x638cf8*/
-      return 0; /*0x638d01*/
-    if ( Team_Load(a1, a2[12], *(unsigned int *)(a2 + 14), a2[18]) ) /*0x638d1a*/
-      return 0; /*0x638d2a*/
-    Type = (int *)BuildingClass::GetType((BuildingClass *)a1); /*0x638d2d*/
-    if ( !Type ) /*0x638d34*/
-      return -1; /*0x638d34*/
-    v6 = Type[5]; /*0x638d36*/
-    if ( v6 <= 0 ) /*0x638d3b*/
-      return -1; /*0x638d3b*/
-    v7 = *(Array **)(Type[2] + 4 * v6 - 4); /*0x638d43*/
-    Value = ((Array*)v7)->FindValue(*Type); /*0x638d49*/
-    if ( Value == -1 ) /*0x638d51*/
-      v9 = 0; /*0x638d53*/
-    else
-      v9 = *((unsigned int *)v7->Array_field_0x4 + Value); /*0x638d5a*/
-    v10 = *(unsigned char **)(v9 + 4); /*0x638d5d*/
-    qmemcpy(v11, v10, sizeof(v11)); /*0x638d69*/
-    v10 += 108; /*0x638d69*/
-    v12 = *(unsigned short *)v10; /*0x638d6b*/
-    v13 = v10[2]; /*0x638d6d*/
-    if ( v11[12] == 7 || v11[12] == 8 || v11[12] == 9 ) /*0x638d80*/
-      return 1; /*0x638d8c*/
-    if ( (v11[12] == 1 || v11[12] == 11) && (v11[18] == 11 || v11[12] == 11 && !v11[18]) ) /*0x638da7*/
-      return 2; /*0x638da9*/
-    else
-      return -1; /*0x638db5*/
-}
-} // namespace gamemd
-
 // 0x6E47C0
 namespace gamemd {
 void * ScriptAction::CopyStructField(void *a2, const void *a3) {
@@ -87,34 +197,6 @@ void * ScriptAction::CopyStructField(void *a2, const void *a3) {
     return a2; /*0x6e47e4*/
 }
 } // namespace gamemd
-
-// 0x403730
-namespace gamemd {
-int AudioQueue::StopAllVoices() {
-    int v1; // edx
-    int v2; // ecx
-    int v3; // ebx
-    int result; // eax
-    AudioQueue *v5; // esi
-    int v6; // edi
-    Voice *v7; // [esp+0h] [ebp-Ch]
-
-    v3 = v1; /*0x403733*/
-    result = ((AudioQueue*)(AudioQueue *)(v2 + 248))->GetNext(); /*0x40373b*/
-    v5 = (AudioQueue *)result; /*0x403740*/
-    v6 = result; /*0x403744*/
-    if ( result ) /*0x403746*/
-    {
-      do /*0x403766*/
-      {
-        result = ((AudioQueue*)v5)->GetNextAlt(); /*0x40374a*/
-        v5 = (AudioQueue *)result; /*0x403752*/
-        if ( v3 == -1 || *(unsigned int *)(v6 + 12) == v3 ) /*0x403759*/
-          result = ((Voice*)v7)->Stop(); /*0x40375d*/
-        v6 = (int)v5; /*0x403764*/
-      }
-      while ( v5 ); /*0x403766*/
-    }
 
 // 0x638CE0
 namespace gamemd {
@@ -159,17 +241,6 @@ int ScriptAction::ClassifyAction(int *a1, char *a2)
       return 2; /*0x638da9*/
     else
       return -1; /*0x638db5*/
-}
-} // namespace gamemd
-
-// 0x6E47C0
-namespace gamemd {
-void * ScriptAction::CopyStructField(void *a2, const void *a3)
-{
-    if ( a3 != this ) /*0x6e47ca*/
-      qmemcpy(this, a3, 0x20u); /*0x6e47d3*/
-    qmemcpy(a2, this, 0x20u); /*0x6e47e2*/
-    return a2; /*0x6e47e4*/
 }
 } // namespace gamemd
 

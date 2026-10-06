@@ -209,7 +209,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v33; // [esp+30h] [ebp-10h]
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  v3 = ((Coord *)(&dword_87F7E8))->To_Cell(&a1); /*0x53a31a*/
+  v3 = (unsigned int *)(((Coord *)(&dword_87F7E8))->To_Cell(&a1)); /*0x53a31a*/
   Coords = ((CellClass *)v3)->GetCoords( &v29); /*0x53a31f*/
   v5 = Coords[1]; /*0x53a328*/
   v6 = Coords[2]; /*0x53a32b*/
@@ -246,7 +246,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     {
       v13 = (unsigned int)(gamemd::RulesClass *)(((Random *)((unsigned int *)dword_A8B230 + 134))->State()); /*0x53a47a*/
       StartAudioControllerAt( *(unsigned int *)(((unsigned int *)dword_8871E0)[1] + 4 * (v13 % ((unsigned int *)dword_8871E0)[0])), (unsigned int *)((int)&v31), 0); /*0x53a49e*/
-      v12 = (int)(dword_8871E0); /*0x53a4a3*/
+      v12 = (gamemd::RulesClass *)((int)(dword_8871E0)); /*0x53a4a3*/
     }
     Climb = v12[1]; /*0x53a4ae*/
     WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier( Climb, HIDWORD(v12[1]), v3[59], (BulletClass *)(&v31)); /*0x53a4c7*/

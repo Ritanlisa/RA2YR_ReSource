@@ -266,7 +266,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
     v6 = (uint8_t *)(a3); /*0x528235*/
     if ( a3 ) /*0x52823b*/
     {
-      if ( a2 == ((unsigned int *)this)[0] ) /*0x528248*/
+      if ( a2 == (unsigned char *)(((unsigned int *)this)[0] )) /*0x528248*/
       {
         vtable2 = (unsigned int *)(((unsigned int *)this)[0]); /*0x52824e*/
 LABEL_5:
@@ -390,7 +390,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   Source = (char *)(&g_INI_DefaultBuffer); /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
-  if ( v7 == ((unsigned int *)this)[0] ) /*0x529ebc*/
+  if ( v7 == (char *)(((unsigned int *)this)[0] )) /*0x529ebc*/
   {
     vtable2 = (int *)((unsigned int *)this)[0]; /*0x529ec2*/
   }
@@ -473,7 +473,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   Checksummer v21; // [esp+18h] [ebp-58h] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  Source = (unsigned int)(char *)(&g_INI_DefaultBuffer); /*0x52a11f*/
+  Source = (char *)((unsigned int)(char *)(&g_INI_DefaultBuffer)); /*0x52a11f*/
   if ( !Destination ) /*0x52a127*/
     goto LABEL_18; /*0x52a127*/
   v6 = (uint8_t *)(a3); /*0x52a12d*/
@@ -482,7 +482,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   v7 = a4; /*0x52a13b*/
   if ( a4 == 0.0 ) /*0x52a141*/
     goto LABEL_18; /*0x52a141*/
-  if ( a3 == ((unsigned int *)this)[0] ) /*0x52a14a*/
+  if ( a3 == (unsigned char *)(((unsigned int *)this)[0] )) /*0x52a14a*/
   {
     vtable2 = (int *)((unsigned int *)this)[0]; /*0x52a150*/
   }
@@ -584,7 +584,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x52a330*/
     goto LABEL_18; /*0x52a330*/
-  if ( v7 == ((unsigned int *)this)[0] ) /*0x52a33c*/
+  if ( v7 == (char *)(((unsigned int *)this)[0] )) /*0x52a33c*/
   {
     vtable2 = (int *)((unsigned int *)this)[0]; /*0x52a342*/
   }
@@ -647,7 +647,7 @@ LABEL_19:
   *a2 = v14; /*0x52a4b8*/
   *((unsigned int *)a2 + 1) = (unsigned int)v15; /*0x52a4c0*/
   a2[2] = v16; /*0x52a4c3*/
-  return a2; /*0x52a4c6*/
+  return (gamemd::Color **)(a2); /*0x52a4c6*/
 
 }
 }
@@ -753,7 +753,7 @@ ObjectClass * * E4Recv_52A610::sub_52A610(void * a2, void * aPrivatekey, void * 
   INIClass::ReadBase64Data((char *)this, (uint8_t *)aPublickey, (int)v6, v3); /*0x52a63a*/
   v4 = sub_631FE0((ObjectClass *)a2, v6); /*0x52a646*/
   INIClass::ReadBase64Data((char *)this, (uint8_t *)aPrivatekey, (int)v6, v4); /*0x52a658*/
-  return 1; /*0x52a65d*/
+  return (gamemd::ObjectClass **)(1); /*0x52a65d*/
 
 }
 }
@@ -853,7 +853,7 @@ void InitGame()
     *(unsigned int *)&(&HouseClass_Player)[29924 = 0;
     goto LABEL_3;
   }
-  *(unsigned int *)&(&HouseClass_Player)[29924 = ScenarioClass::Constructor(v0);
+  *(unsigned int *)&(&HouseClass_Player)[29924 = (int)(ScenarioClass::Constructor(v0));
   if ( !*(unsigned int *)&(&HouseClass_Player)[29924 )
   {
 LABEL_3:
@@ -888,7 +888,7 @@ LABEL_3:
   }
   unsigned int * v5 = (unsigned int *)operator new(4u);
   if ( v5 )
-    unk_89C4B8 = ((BitTextClass *)v5)->LoadFont();
+    unk_89C4B8 = (unsigned char)(((BitTextClass *)v5)->LoadFont());
   else
     unk_89C4B8 = 0;
   Init::StubPlaceholder();
@@ -900,7 +900,7 @@ LABEL_3:
   memcpy(&(&stru_87C374)[40972, v7, 0x300u);
   for ( i = 0; i < 256; ++i )
   {
-    esi20 = &((unsigned int **)&stru_87C374)[22428][3 * (i % 256) + 18544];
+    esi20 = (char *)(&((unsigned int **)&stru_87C374)[22428][3 * (i % 256) + 18544]);
   unsigned char v89[4]; // [esp+34h] [ebp-2F0Ch] BYREF
     v9 = (ObjectClass *)Palette::SixBitTo16Bit(
                           v89,
@@ -929,7 +929,7 @@ LABEL_3:
   (&stru_87C374)[39438] = (&stru_87C374)[35598];
   IDA_LOBYTE(v16) = 0;
   *(unsigned short *)&(&stru_87C374)[39436 = *(unsigned short *)&(&stru_87C374)[35596;
-  eax23 = (AbstractClass *)SearchMIXFile( (char *)(&g_Str_File_MOUSE_SHA[108]), v16);
+  eax23 = (AbstractClass *)SearchMIXFile( (char *)(&(&g_Str_File_MOUSE_SHA)[108]),(char)( v16));
   memcpy( (void *)(&stru_87C374[36364]), (const void *)(eax23), 0x300u);
   for ( k = 0; k < 256; ++k )
   {

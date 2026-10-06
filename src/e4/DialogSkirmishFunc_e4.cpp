@@ -175,7 +175,7 @@ LABEL_151:
             PlayerCountMap = ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]);
   int v65; // ecx
             if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(HouseClass_Player))[29936] + 4))(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29936])
-              || (v65 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4580), v65 > PlayerCountMap) )
+              || (v65 = *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4580), v65 > PlayerCountMap) )
             {
               v65 = PlayerCountMap;
             }
@@ -233,7 +233,7 @@ LABEL_151:
               DlgItem = GetDlgItem((HWND)hWnd, 1559);
               EnableWindow(DlgItem, 0);
             }
-            Format = (unsigned int)(VectorClass_flat *)ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]);
+            Format = (gamemd::VectorClass_flat *)((unsigned int)(VectorClass_flat *)ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]));
             v75 = (VectorClass_flat *)(0);
             do
             {
@@ -422,25 +422,25 @@ if ( !(*(uint8_t (**)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->__pad
               if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v32, 0x150u, v34, 0) <= 2 )
               {
                 v35 = SendDlgItemMessageA((HWND)hWnd, v32, 0x147u, 0, 0);
-                *(unsigned int *)&HouseClass_Player[21864 + 4 * v31 + 8136] = SendDlgItemMessageA(
+                *(unsigned int *)&(&HouseClass_Player)[21864 + 4 * v31 + 8136] = SendDlgItemMessageA(
                                                                              (HWND)hWnd,
                                                                              v32,
                                                                              0x150u,
                                                                              v35,
                                                                              0);
-*(unsigned int *)&HouseClass_Player[21864 + 4 * v31 + 8168] = GetComboBoxSelected( (HWND)((ReferenceCounted *)hWnd), ResourceID2CSF, 0xFFFFFFFF);
+*(unsigned int *)&(&HouseClass_Player)[21864 + 4 * v31 + 8168] = GetComboBoxSelected( (HWND)((ReferenceCounted *)hWnd), ResourceID2CSF, 0xFFFFFFFF);
 
 
 
-*(unsigned int *)&HouseClass_Player[21864 + 4 * v31 + 8200] = GetComboBoxSelectedRaw( (HWND)((ReferenceCounted *)hWnd), (int)Formata, 0xFFFFFFFF);
+*(unsigned int *)&(&HouseClass_Player)[21864 + 4 * v31 + 8200] = GetComboBoxSelectedRaw( (HWND)((ReferenceCounted *)hWnd), (int)Formata, 0xFFFFFFFF);
 
 
 
-                *(unsigned int *)&HouseClass_Player[21864 + 4 * v31 + 8232] = SetComboBoxSelection(
+                *(unsigned int *)&(&HouseClass_Player)[21864 + 4 * v31 + 8232] = SetComboBoxSelection(
                                                                              (HWND)hWnd,
                                                                              (int)ResourceID3,
                                                                              0xFFFFFFFF);
-                *(unsigned int *)&HouseClass_Player[21864 + 4 * v31 + 8264] = GetComboBoxSelectedRaw2(
+                *(unsigned int *)&(&HouseClass_Player)[21864 + 4 * v31 + 8264] = GetComboBoxSelectedRaw2(
                                                                              (HWND)hWnd,
                                                                              (int)nIDDlgItema,
                                                                              0xFFFFFFFF);

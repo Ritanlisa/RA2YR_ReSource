@@ -43,6 +43,8 @@
 #include "e4/classes/StringVector_e4.hpp"
 #include "e4/classes/DynamicArray_e4.hpp"
 #include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/OwnerDrawControl_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
@@ -368,7 +370,7 @@ char WOL_RequestMatch(void * a1)
   ((String *)((String *)v31))->Append2( (char **)(v20)); /*0x7a0b8a*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v31[4])); /*0x7a0b93*/
   ((String *)((String *)v31))->Append( (const char *)(aRes)); /*0x7a0ba1*/
-  v21 = FromStringInt( (IUnknown *)((char **)&v31[4]), stru_A8EB00.ObjectTypeClass[33]); /*0x7a0bb0*/
+  v21 = (char **)(FromStringInt( (IUnknown *)((char **)&v31[4]), stru_A8EB00.ObjectTypeClass[33])); /*0x7a0bb0*/
   ((String *)((String *)v31))->Append2( (char **)(v21)); /*0x7a0bba*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v31[4])); /*0x7a0bc3*/
   ((Network *)((Network *)&stru_A8DBC0))->GetAddress((unsigned int *)(&v31[56]), (int)&v31[48],(unsigned short *)(&v31[46])); /*0x7a0bdc*/
@@ -515,7 +517,7 @@ Coord * * WOL_ProcessPingRequests()
                 (void *)(((char *)&stru_B76AC4) + 4 * (unsigned int)v11),
                 (const void *)(((char *)&stru_B76AC4) + 4 * (unsigned int)(v11 + 1)),
                 4 * ((int)((char *)&stru_B76AC4) + 0x3FFFFFFF * (unsigned int)(v11 + 1)));
-              if ( 3 * (int)--((char *)&stru_B76AC4) <= ((char *)&stru_B76AC4) ) /*0x7a12ef*/
+              if ( 3 * (int)--(*(int *)&stru_B76AC4)  <=  (int)((*(int *)&stru_B76AC4) )) /*0x7a12ef*/
                 ((VectorClass *)((VectorClass *)((char *)&stru_B76AC4)))->Shrink(); /*0x7a12f6*/
             }
           }
@@ -713,7 +715,7 @@ Coord * * UpdateWOLLobbyPings()
         if ( v13 >= g_WOL_UserList.owningHouseIndex ) /*0x7a164a*/
           goto LABEL_40; /*0x7a164a*/
       }
-      if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x7a1655*/
+      if ( &g_WebBrowserConfig != (int *)-36 ) /*0x7a1655*/
       {
         v15 = *(unsigned int *)ppv; /*0x7a165d*/
         v16 = ((String *)((String *)&v19.m_3[1]))->GetOrEmpty(); /*0x7a1663*/
@@ -858,7 +860,7 @@ AbstractClass * * WOL_MatchGame()
   g_NetworkLobbyState = 0; /*0x7a1bbc*/
   Network::Init(); /*0x7a1bc2*/
   strncpy( (char *)(Destination), stru_B73708.__pad_C, 0x100u); /*0x7a1bd9*/
-  strtok(Destination, asc_8318B8); /*0x7a1beb*/
+  strtok(Destination,(const char *)( asc_8318B8)); /*0x7a1beb*/
   v2 = strtok(0, (char *)&::Delimiter); /*0x7a1bfb*/
   *(unsigned int *)&v28[12] = (unsigned int)v2; /*0x7a1c03*/
   strtok(0, (char *)&::Delimiter); /*0x7a1c07*/
@@ -908,7 +910,7 @@ AbstractClass * * WOL_MatchGame()
     {
       v10 = GetStringCSF( (wchar_t *)(aWolMatchwaitin), 0, (const char *)(g_Str_File_wonline_cpp), 28871); /*0x7a1d45*/
       Dialog::ShowMessage(-1, (size_t)v10, v4); /*0x7a1d51*/
-      return 1; /*0x7a1d65*/
+      return (gamemd::AbstractClass **)(1); /*0x7a1d65*/
     }
     v12 = GetStringCSF( (wchar_t *)(aWolMatcherrorc), 0, (const char *)(g_Str_File_wonline_cpp), 28878); /*0x7a1d77*/
     Dialog::ShowMessage(2146559, (size_t)v12); /*0x7a1d82*/
@@ -935,7 +937,7 @@ AbstractClass * * WOL_MatchGame()
   {
     if ( stru_B76510.StringVector_field_0x10 && !RequestChannelListWOL() ) /*0x7a1e4c*/
       goto LABEL_28; /*0x7a1e4c*/
-    v15 = &Handles; /*0x7a1e52*/
+    v15 = (HANDLE *)(&Handles); /*0x7a1e52*/
     do /*0x7a1e69*/
       ResetEvent(*v15++); /*0x7a1e5a*/
     while ( (int)v15 < (int)g_WOL_RequestObject ); /*0x7a1e69*/
@@ -985,12 +987,12 @@ AbstractClass * * WOL_MatchGame()
     if ( v18 >= 0 && v1 < referenceCount ) /*0x7a1edc*/
       qmemcpy( (void *)(&v28[16]), (const void *)(v18 + stru_B76AC4.occupant), 0x10Cu); /*0x7a1ef0*/
     v19 = ((String *)((String *)v28))->GetOrEmpty(); /*0x7a1ef6*/
-    if ( !_strcmpi(&v28[68], v19) ) /*0x7a1f01*/
+    if ( !_strcmpi((const char *)(&v28[68]), v19) ) /*0x7a1f01*/
       break; /*0x7a1f01*/
     referenceCount = (unsigned int)((char *)&stru_B76AC4); /*0x7a1f11*/
     ++v1; /*0x7a1f16*/
     v18 += 268; /*0x7a1f17*/
-    if ( v1 >= ((char *)&stru_B76AC4) ) /*0x7a1f1f*/
+    if ( v1  >=  (int)((*(int *)&stru_B76AC4) )) /*0x7a1f1f*/
     {
       v2 = *(char **)&v28[12]; /*0x7a1f21*/
       v1 = 0; /*0x7a1f25*/
@@ -1007,7 +1009,7 @@ AbstractClass * * WOL_MatchGame()
     g_WOL_GameProcessState = 90; /*0x7a2007*/
     g_WOL_GameListPool = time(0); /*0x7a201d*/
     j_DeleteAndZero( (void *)((ObjectClass *)v28)); /*0x7a2022*/
-    return 1; /*0x7a2027*/
+    return (gamemd::AbstractClass **)(1); /*0x7a2027*/
   }
   else
   {
@@ -1048,7 +1050,7 @@ Coord * * E4Recv_7A2830::sub_7A2830()
       if ( v3 >= g_WOL_UserList.owningHouseIndex ) /*0x7a288d*/
         return (Coord * *)result; /*0x7a288d*/
     }
-    return (*(int (**)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 84))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (unsigned int *)(v6)); /*0x7a28a4*/
+    return (gamemd::Coord **)((*(int (**)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 84))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (unsigned int *)(v6))); /*0x7a28a4*/
   }
   return (Coord * *)result; /*0x7a288f*/
 
@@ -1301,12 +1303,12 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
     if ( !dword_B77DC8 ) /*0x7a4c6c*/
       CloseDialog( (HWND)(v6), 0); /*0x7a4c72*/
   }
-  Current = Dialog::GetCurrent(); /*0x7a4c77*/
+  Current = (HWND)(Dialog::GetCurrent()); /*0x7a4c77*/
   DlgItem = GetDlgItem(Current, 1344); /*0x7a4c82*/
   if ( DlgItem ) /*0x7a4c8a*/
     SetFocus(DlgItem); /*0x7a4c8d*/
   v9 = GetStringCSF( aTxtUpgraderequ, 0, (const char *)(g_Str_File_wonline_cpp), 5504); /*0x7a4cab*/
-  if ( ShowDialogConfirm( (void *)(v9), 4, (void *)((int)GameLoop::Thunk), 0) == 7 ) /*0x7a4cbf*/
+  if ( ShowDialogConfirm( (void *)(v9),(void *)( 4), (void *)((int)GameLoop::Thunk), 0) == 7 ) /*0x7a4cbf*/
   {
   LABEL_16:
     SetEvent( (void *)((void *)(Handles))); /*0x7a4ea4*/
@@ -1321,7 +1323,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       sprintf(v22, "%s/%s", (const char *)(v4 + 81), (const char *)(v4 + 337)); /*0x7a4cef*/
       sprintf(v23, "%s\\%s", (const char *)(v4 + 468), (const char *)(v4 + 337)); /*0x7a4d09*/
       CreateDirectoryA((LPCSTR)(v4 + 468), 0); /*0x7a4d14*/
-(*(void (**)(LPVOID, int, int, int, char *, char *, char *))(*(unsigned int *)dword_AC1174 + 12))( /*0x7a4d49*/ dword_AC1174, v4 + 16, v4 + 370, v4 + 403, (char *)(v22), (char *)(v23), (char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven));
+(*(void ((LPVOID)(**))(LPVOID, int, int, int, char *, char *, char *))(*(unsigned int *)dword_AC1174 + 12))( /*0x7a4d49*/ dword_AC1174, v4 + 16, v4 + 370, v4 + 403, (char *)(v22), (char *)(v23), (char *)(g_Str_SOFTWARE_Westwood_Yuri_s_Reven));
 
 
 

@@ -175,7 +175,7 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int
 
   if ( !a2 || !a3 ) /*0x4a0648*/
     return -2147467261; /*0x4a06ec*/
-  updated = ((AbstractClass *)dword_A8B230)->updateAITimer(); /*0x4a0661*/
+  updated = (int *)(((AbstractClass *)dword_A8B230)->updateAITimer()); /*0x4a0661*/
   if ( (**a2)(a2, (int)&a1->ConnectionPointClass_field_0x04, &v8) < 0 ) /*0x4a0671*/
     return -2147220990; /*0x4a0675*/
   v4 = *((unsigned int *)a1 + 9); /*0x4a0681*/
@@ -197,7 +197,7 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int
   ConnectionPointClass_field_0x20 = a1->ConnectionPointClass_field_0x20; /*0x4a06b3*/
   *((unsigned int *)a1 + 11) = v6 + 1; /*0x4a06ba*/
   *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6) = v8; /*0x4a06c1*/
-  *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6 + 4) = updated; /*0x4a06c9*/
+  *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6 + 4) = (unsigned int)(updated); /*0x4a06c9*/
   *a3 = updated; /*0x4a06d1*/
   return 0; /*0x4a0673*/
 

@@ -467,7 +467,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate(char *Source, int a2, int aP0, int
 LABEL_6:
     v3 = (AnimTypeClass *)__2_YAPAXI_Z(0x378u); /*0x428bd6*/
     if ( v3 ) /*0x428be5*/
-      return ((AnimTypeClass *)v3)->Construct( (char *)(Source)); /*0x428bf1*/
+      return (gamemd::AnimTypeClass **)(((AnimTypeClass *)v3)->Construct( (char *)(Source))); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v2) + 36),(const char *)(Source)) ) /*0x428bca*/
@@ -789,11 +789,11 @@ int AnimTypeClass::ReadINIString(unsigned __int8 *a3, unsigned __int8 *aP1, unsi
   char *v5; // eax
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
-  v5 = globalHelper_08E090(a3); /*0x47706d*/
+  v5 = (char *)(globalHelper_08E090(a3)); /*0x47706d*/
   if ( ((INIClass*)((INIClass *)this))->GetString(aP1, a2, v5, Destination, 128) ) /*0x477085*/
     return ((AnimTypeClass *)Destination)->LookupByName(); /*0x477092*/
   else
-    return a3; /*0x4770a2*/
+    return (int)(a3); /*0x4770a2*/
 
 }
 } // namespace gamemd

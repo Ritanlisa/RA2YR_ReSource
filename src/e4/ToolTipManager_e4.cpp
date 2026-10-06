@@ -76,7 +76,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
     __3_YAXPAX_Z(this); /*0x724f7b*/
-  return this->__pad_0; /*0x724f85*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x724f85*/
 
 }
 } // namespace gamemd

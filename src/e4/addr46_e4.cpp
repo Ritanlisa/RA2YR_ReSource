@@ -690,7 +690,7 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   if ( CoCreateInstance(*(const IID *)&rclsid, 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
-  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2),(int)(aP3),(int)(aP4), a6, aP7); /*0x46b0a6*/
+  ((Particle *)((int *)ppv))->Init((int)(aP0),(int)(aP1),(int)(aP2),(int)(aP3),(int)(aP4), a6,(char)( aP7)); /*0x46b0a6*/
   return (LPVOID)((int)v10); /*0x46b07c*/
 }
 } // namespace gamemd
@@ -1167,7 +1167,7 @@ int Lobby_GetPlayerColor(int a1)
     return -2; /*0x46f839*/
   if ( v2 == (wchar_t *)g_Lobby_PlayerCount ) /*0x46f846*/
     return -2; /*0x46f849*/
-  if ( v2 == g_Lobby_PlayerReady ) /*0x46f856*/
+  if ( v2 == (wchar_t *)(g_Lobby_PlayerReady) ) /*0x46f856*/
     return -2; /*0x46f859*/
   if ( v2 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x46f866*/
     return -2; /*0x46f869*/
@@ -1189,7 +1189,7 @@ int HouseClass_GetSideIndex(int a1)
     return -2; /*0x46f8a9*/
   if ( v2 == (wchar_t *)g_Lobby_PlayerCount ) /*0x46f8b6*/
     return -2; /*0x46f8b9*/
-  if ( v2 == g_Lobby_PlayerReady ) /*0x46f8c6*/
+  if ( v2 == (wchar_t *)(g_Lobby_PlayerReady) ) /*0x46f8c6*/
     return -2; /*0x46f8c9*/
   if ( v2 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x46f8d6*/
     return -2; /*0x46f8d9*/

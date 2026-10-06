@@ -371,7 +371,7 @@ int sub_799D30()
       v13.DeleteAndZero_field_0x04 = (int)&off_7F7624; /*0x799e6c*/
       RunDialog( /*0x799e70*/
         0x114u,
-        (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL,
+        (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL(INT_PTR (__stdcall *)(HWND,UINT,WPARAM,LPARAM))(),
         (LPARAM)&v13.DeleteAndZero_field_0x04);
       System_Init_72CA10(v1); /*0x799e75*/
       v10 = dword_A8B244 != 0; /*0x799e8b*/
@@ -397,7 +397,7 @@ void sub_7A2970()
     {
       ((SimpleDialogControl *)(v0))->Constructor(); /*0x7a299e*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29b2*/
-      RunDialog(0x122u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0); /*0x7a29ba*/
+      RunDialog(0x122u,(INT_PTR (__stdcall *)(HWND,UINT,WPARAM,LPARAM))( (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL), (LPARAM)v0); /*0x7a29ba*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29c3*/
       ((OwnerDrawControl *)(v0))->InitVtable(); /*0x7a29cb*/
     }

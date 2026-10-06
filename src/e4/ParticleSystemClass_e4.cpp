@@ -720,7 +720,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
   this->m_8 = 0; /*0x4ef601*/
   if ( (a2 & 1) != 0 ) /*0x4ef608*/
     __3_YAXPAX_Z(this); /*0x4ef60b*/
-  return this->__pad_0; /*0x4ef615*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4ef615*/
 
 }
 } // namespace gamemd
@@ -743,7 +743,7 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, 
   this->m_8 = 0; /*0x4efd81*/
   if ( (a2 & 1) != 0 ) /*0x4efd88*/
     __3_YAXPAX_Z(this); /*0x4efd8b*/
-  return this->__pad_0; /*0x4efd95*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x4efd95*/
 
 }
 } // namespace gamemd
@@ -766,7 +766,7 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, 
   this->m_8 = 0; /*0x4efe21*/
   if ( (a2 & 1) != 0 ) /*0x4efe28*/
     __3_YAXPAX_Z(this); /*0x4efe2b*/
-  return this->__pad_0; /*0x4efe35*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x4efe35*/
 
 }
 } // namespace gamemd
@@ -789,7 +789,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
   this->m_8 = 0; /*0x4efe71*/
   if ( (a2 & 1) != 0 ) /*0x4efe78*/
     __3_YAXPAX_Z(this); /*0x4efe7b*/
-  return this->__pad_0; /*0x4efe85*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4efe85*/
 
 }
 } // namespace gamemd
@@ -812,7 +812,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
   this->m_8 = 0; /*0x4eff11*/
   if ( (a2 & 1) != 0 ) /*0x4eff18*/
     __3_YAXPAX_Z(this); /*0x4eff1b*/
-  return this->__pad_0; /*0x4eff25*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4eff25*/
 
 }
 } // namespace gamemd

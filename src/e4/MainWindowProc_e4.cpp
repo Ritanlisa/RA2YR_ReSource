@@ -79,7 +79,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
   if ( result ) /*0x7775a1*/
   {
     unsigned int v4 = 0;  /* G37 hoist */
-        Current = ((Dialog *)self)->GetCurrent();
+        Current = (HWND)(((Dialog *)self)->GetCurrent());
     SetActiveWindow(Current); /*0x7775a9*/
         v4 = ((Dialog *)self)->GetCurrent();
     return (gamemd::AbstractClass **)((int)SetFocus(v5)); /*0x7775b5*/

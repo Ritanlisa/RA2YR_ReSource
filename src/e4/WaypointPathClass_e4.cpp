@@ -73,7 +73,7 @@ int WaypointPathClass::Construct(unsigned int aP1)
   *((unsigned int *)this + 1) = (unsigned int)(&vt_WaypointPathClass); /*0x76384b*/
   *((unsigned int *)this + 2) = (unsigned int)(&vt_WaypointPathClass); /*0x763852*/
   *((unsigned int *)this + 3) = (unsigned int)(&vt_WaypointPathClass); /*0x763859*/
-  if ( aP1 < (gamemd::WaypointClass *)(0xC) /*0x76389a*/
+  if ( aP1 < (unsigned int)(0xC) /*0x76389a*/
     && (dword_B72618 < dword_B72610
      || (byte_B72615 || !dword_B72610)
      && dword_B7261C > 0
@@ -367,15 +367,15 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
     }
     while ( v3 < dword_B72618 ); /*0x763e8d*/
   }
-  v4 = this->waypoints[1]; /*0x763e8f*/
-  this->waypoints[0] = (int)&vt_VectorClass; /*0x763e92*/
-  if ( v4 && BYTE1(this->waypoints[3]) ) /*0x763e9d*/
+  v4 = (&this->waypoints)[1]; /*0x763e8f*/
+  (&this->waypoints)[0] = (int)&vt_VectorClass; /*0x763e92*/
+  if ( v4 && BYTE1((&this->waypoints)[3]) ) /*0x763e9d*/
   {
     __3_YAXPAX_Z((void *)(v4 - 4)); /*0x763eb0*/
-    this->waypoints[1] = 0; /*0x763eb8*/
+    (&this->waypoints)[1] = 0; /*0x763eb8*/
   }
-  BYTE1(this->waypoints[3]) = 0; /*0x763ec1*/
-  this->waypoints[2] = 0; /*0x763ec5*/
+  BYTE1((&this->waypoints)[3]) = 0; /*0x763ec1*/
+  (&this->waypoints)[2] = 0; /*0x763ec5*/
   ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
     __3_YAXPAX_Z(this); /*0x763ed9*/

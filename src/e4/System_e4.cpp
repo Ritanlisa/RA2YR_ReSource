@@ -254,7 +254,7 @@ char sub_626AB0(const char * a1, int a2)
       if ( v4 ) /*0x626af9*/
       {
         ((StringVector *)((int)(v4)))->Construct( 0, 0); /*0x626b01*/
-        *(void **)v5 = (unsigned int)(void*)&DynamicVectorClass_char___vftable; /*0x626b06*/
+        *(void **)v5 = (void *)((unsigned int)(void*)&DynamicVectorClass_char___vftable); /*0x626b06*/
         v5[5] = 10; /*0x626b0c*/
         v5[4] = 0; /*0x626b0f*/
       }
@@ -268,7 +268,7 @@ char sub_626AB0(const char * a1, int a2)
       if ( v6 ) /*0x626b2b*/
       {
         ((VectorClass *)(v6))->ConstructHSV(0, 0); /*0x626b33*/
-        *(void **)v7 = (unsigned int)(void*)&DynamicVectorClass_HSVClass_vftable; /*0x626b38*/
+        *(void **)v7 = (void *)((unsigned int)(void*)&DynamicVectorClass_HSVClass_vftable); /*0x626b38*/
         v7[5] = 10; /*0x626b3e*/
         v7[4] = 0; /*0x626b41*/
       }
@@ -538,7 +538,7 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x7668c5*/
   ((ComPtr *)((ComPtr *)a1))->Set((int)inited); /*0x7668cc*/
   j_DeleteAndZero( (void *)((ObjectClass *)&a4)); /*0x7668d5*/
-  return a1; /*0x7668dc*/
+  return (gamemd::rc_ptr *)(a1); /*0x7668dc*/
 }
 } // namespace gamemd
 
@@ -564,7 +564,7 @@ rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x76771c*/
   *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_MapSizeGameOption_vftable; /*0x767723*/
   ((ComPtr *)((ComPtr *)a1))->Set(v5); /*0x76772a*/
-  return a1; /*0x767731*/
+  return (gamemd::rc_ptr *)(a1); /*0x767731*/
 }
 } // namespace gamemd
 

@@ -23,6 +23,8 @@
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x5FA620
 namespace gamemd {
@@ -333,13 +335,13 @@ void * GameSettings::ParseNetworkAddress()
     v2 = *((unsigned short *)this + 37); /*0x5fb057*/
     if ( v2 == 0xFFFF ) /*0x5fb05f*/
     {
-      Network::GetField( (HWND)(unk_A8E9C0), 34835); /*0x5fb066*/
+      Network::GetField( (HWND)(unk_A8E9C0),(void *)( 34835)); /*0x5fb066*/
     }
     else if ( v2 < 0x4000u ) /*0x5fb06c*/
     {
-      Network::GetField( (HWND)(unk_A8E9C0), v2 + 0x4000); /*0x5fb079*/
+      Network::GetField( (HWND)(unk_A8E9C0),(void *)( v2 + 0x4000)); /*0x5fb079*/
     }
-    v3 = this + 88; /*0x5fb07e*/
+    v3 = (const char *)(this + 88); /*0x5fb07e*/
     result = (char *)(0); /*0x5fb086*/
     v5 = strlen( (const char *)(v3)) + 1; /*0x5fb088*/
     if ( v5 != 1 ) /*0x5fb08d*/
@@ -347,14 +349,14 @@ void * GameSettings::ParseNetworkAddress()
       v6 = (char *)RA2_OPNEW(v5); /*0x5fb09a*/
       strcpy( (char *)(v6), (const char *)(v3)); /*0x5fb0b8*/
       v7 = 0; /*0x5fb0c1*/
-      result = strtok(v6, asc_826598); /*0x5fb0c3*/
+      result = strtok(v6,(const char *)( asc_826598)); /*0x5fb0c3*/
       if ( result ) /*0x5fb0cd*/
       {
         do /*0x5fb10f*/
         {
           sscanf(result, "%x", &v9); /*0x5fb0de*/
           *((unsigned char *)&v10 + v7++) = v9; /*0x5fb0ef*/
-          result = strtok(0, asc_826598); /*0x5fb105*/
+          result = strtok(0,(const char *)( asc_826598)); /*0x5fb105*/
         }
         while ( result ); /*0x5fb10f*/
         if ( v7 >= 4 ) /*0x5fb114*/
@@ -362,7 +364,7 @@ void * GameSettings::ParseNetworkAddress()
           v11 = -1; /*0x5fb11a*/
           v12 = -1; /*0x5fb126*/
           dword_A8D5FC = 1; /*0x5fb131*/
-          v8 = ((NetworkAddress *)v13)->Assign( (unsigned int *)(&v10), (IUnknown *)((int)&v11), 0); /*0x5fb13b*/
+          v8 = (int *)(((NetworkAddress *)v13)->Assign( (unsigned int *)(&v10), (IUnknown *)((int)&v11), 0)); /*0x5fb13b*/
           stru_A8D600 = *v8; /*0x5fb142*/
           dword_A8D604 = v8[1]; /*0x5fb14b*/
           result = (char *)v8[2]; /*0x5fb151*/
@@ -380,7 +382,7 @@ void GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
     int result; // eax
 
     result = (unsigned int)a2; /*0x721290*/
-    if ( a2 >= 255 ) /*0x721299*/
+    if ( a2  >=  (void *)(255) ) /*0x721299*/
       result = 255; /*0x72129b*/
     this->ObjectTypeClass[3] = result; /*0x7212a0*/
     return result; /*0x7212a3*/
@@ -405,6 +407,6 @@ char * GameSettings::FindFlagged()
       if ( ++v0 >= (int)dword_B77900 ) /*0x7931da*/
         return 0; /*0x7931da*/
     }
-    return &byte_B777B0; /*0x7931dc*/
+    return (char *)(&byte_B777B0); /*0x7931dc*/
 }
 } // namespace gamemd

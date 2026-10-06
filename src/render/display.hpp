@@ -7,6 +7,7 @@
 #include "core/enums.hpp"
 #include "fundamentals.hpp"
 #include "object/abstract.hpp"
+#if !defined(GAMEMD_E4_UNIVERSE)  // G57w8: e4 TUs carry flat MapClass/GScreenClass carriers; display.hpp twins are gap2-only
 
 namespace gamemd
 {
@@ -207,3 +208,4 @@ protected:
 };
 
 } // namespace gamemd
+#endif  // G57w8 display.hpp e4-universe gate

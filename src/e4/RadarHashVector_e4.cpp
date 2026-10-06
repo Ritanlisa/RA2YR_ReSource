@@ -348,7 +348,7 @@ VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2
   this->m_8 = 0; /*0x658d41*/
   if ( (a2 & 1) != 0 ) /*0x658d48*/
     __3_YAXPAX_Z(this); /*0x658d4b*/
-  return this->__pad_0; /*0x658d55*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x658d55*/
 
 }
 } // namespace gamemd

@@ -1412,6 +1412,8 @@ public:
     uint8_t VoxClass_Vector_field_0x10[4];
 };
 // 1 methods in IDA
+#ifndef GAMEMD_E4_VoxelAnimTypeVector  // G57w8: e4 flat carrier wins in e4 TUs (C2011 vs _tree_full_e4.hpp G57e1 carrier)
+
 class VoxelAnimTypeVector
 {
 public:
@@ -1421,6 +1423,7 @@ public:
     virtual unsigned int* Constructor(int a2, int a3); // 0x67C310  // G42.35 def-truth sync
 
 };
+#endif  // G57w8 VoxelAnimTypeVector
 // 3 methods in IDA
 class VoxelModel
 {

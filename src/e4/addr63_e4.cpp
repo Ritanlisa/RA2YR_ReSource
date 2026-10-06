@@ -115,6 +115,9 @@
 #include "e4/classes/BuildingLoadQueue_e4.hpp"
 #include "e4/classes/PhoneEditor_e4.hpp"
 #include "e4/classes/Function_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -1245,7 +1248,7 @@ int E4Recv_6375B0::sub_6375B0()
     v3 = (unsigned char *)(0); /*0x6375c9*/
   }
   qmemcpy( (void *)(v3), this, 0x6Cu); /*0x6375d3*/
-  p_health = &this->health; /*0x6375d3*/
+  p_health = (int *)(&this->health); /*0x6375d3*/
   *((unsigned short *)v3 + 54) = *(unsigned short *)p_health; /*0x6375d5*/
   v3[110] = *((unsigned char *)p_health + 2); /*0x6375d7*/
   if ( *v3 == 4 ) /*0x6375dd*/
@@ -1661,7 +1664,7 @@ int FactoryClass_ClearProduction(unsigned int * a1, int a2)
             }
             if ( v7 ) /*0x6387ba*/
             {
-              Block = (unsigned int)*(void **)v6; /*0x6387be*/
+              Block = (void *)((unsigned int)*(void **)v6); /*0x6387be*/
               v12 = *((unsigned int *)Block + 135); /*0x6387c2*/
               Object_field_0x30 = *(void **)(v12 + 48); /*0x6387c8*/
               if ( (uint8_t)((House *)v12)->IsHumanPlayer() ) /*0x6387cb*/
@@ -1724,7 +1727,7 @@ AbstractClass * * sub_638E60()
       {
         v4 = *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC + 4 * v3); /*0x638ea7*/
         ScreenPos = (int *)(((ScriptAction*)(ScriptAction *)v4)->GetScreenPos( (unsigned int *)(&v8))); /*0x638eac*/
-        v6 = (int *)(ComputeBounds((gamemd::AbstractClass *)(v13), 8, *ScreenPos, ScreenPos[1])); /*0x638ec1*/
+        v6 = (int *)(ComputeBounds((gamemd::AbstractClass *)(v13),(gamemd::ObjectClass *)( 8), *ScreenPos, ScreenPos[1])); /*0x638ec1*/
         v9 = *v6; /*0x638ec8*/
         v10 = v6[1]; /*0x638ecf*/
         v11 = v6[2]; /*0x638ed6*/
@@ -2055,7 +2058,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   v34 = (int)v2; /*0x63982e*/
   v7 = (*(int (**)(int, int *))(v6 + 16))( Type + 4, (int *)(&v34)); /*0x639838*/
   v8 = (TeamClass *)BuildingClass::GetType(v4); /*0x63983f*/
-  ((TeamClass *)v8)->UpdateBuildQueue( (AbstractClass *)(a1), (TechnoClass *)(v7), v8->abstractFlags - v7); /*0x63984b*/
+  ((TeamClass *)v8)->UpdateBuildQueue( (AbstractClass *)(a1), (TechnoClass *)(v7),(gamemd::TechnoClass *)( v8->abstractFlags - v7)); /*0x63984b*/
   v32 = (ScriptAction *)-1; /*0x639855*/
   v34 = -1; /*0x639859*/
   v33 = (ScriptAction *)(0); /*0x63985d*/
@@ -2129,7 +2132,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   }
   v22 = v32; /*0x639987*/
   v11[36] = v17; /*0x63998f*/
-  v11[37] = v22; /*0x639995*/
+  v11[37] = (unsigned int)(v22); /*0x639995*/
   *((unsigned char *)v11 + 152) = 1; /*0x63999b*/
   if ( v2 ) /*0x6399a1*/
     ((ScriptAction *)v2)->FindSquadMember(); /*0x6399a5*/
@@ -2240,9 +2243,9 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
     aP0 = (MouseClass *)(dword_AC4CCC); /*0x63a70d*/
     if ( dword_AC4CCC && dword_AC4CCC != v3 ) /*0x63a719*/
     {
-      Mission_e4::SetAndCall( (int)((int *)&dword_87F7E8), 0, 1); /*0x63a727*/
+      Mission_e4::SetAndCall( (int)((int *)&dword_87F7E8), 0,(void *)( 1)); /*0x63a727*/
       dword_AC4C38 = (unsigned int)aP0; /*0x63a730*/
-      return v16 || aP0; /*0x63a757*/
+      return (gamemd::AbstractClass **)(v16 || aP0); /*0x63a757*/
     }
   }
   else
@@ -2259,7 +2262,7 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
     v7 = (unsigned int **)*((unsigned int *)dword_AC4B34 + v6); /*0x63a601*/
     v17[1] = v4; /*0x63a604*/
     ScreenPosScriptAction = (int *)((ScriptAction*)v7)->GetScreenPos( (unsigned int *)(&v18)); /*0x63a60a*/
-    v9 = (int *)ComputeBounds( (AbstractClass *)(v27), 8, *ScreenPosScriptAction, ScreenPosScriptAction[1]); /*0x63a61f*/
+    v9 = (int *)ComputeBounds( (AbstractClass *)(v27),(gamemd::ObjectClass *)( 8), *ScreenPosScriptAction, ScreenPosScriptAction[1]); /*0x63a61f*/
     v22 = *v9; /*0x63a626*/
     v23 = v9[1]; /*0x63a62d*/
     v24 = v9[2]; /*0x63a634*/
@@ -2279,7 +2282,7 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
   LABEL_21:
     v12 = UI_Process_639DA0(); /*0x63a7c4*/
     if ( v12 == -1 ) /*0x63a7cc*/
-      return v16 || aP0; /*0x63a7cc*/
+      return (gamemd::AbstractClass **)(v16 || aP0); /*0x63a7cc*/
     if ( v12 ) /*0x63a7d4*/
     {
       if ( v12 == 1 ) /*0x63a803*/
@@ -2290,9 +2293,9 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
           StringCSF = GetStringCSF( aMsgPlanningmod_5, 0, (const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x63a82a*/
           AddMessageListPlayerMessage( (wchar_t *)(StringCSF), 480); /*0x63a836*/
           PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a852*/
-          return 1; /*0x63a860*/
+          return (gamemd::AbstractClass **)(1); /*0x63a860*/
         }
-        return 1; /*0x63a80c*/
+        return (gamemd::AbstractClass **)(1); /*0x63a80c*/
       }
       if ( v12 == 2 && !byte_AC4C08 ) /*0x63a86f*/
       {
@@ -2309,10 +2312,10 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
       AddMessageListPlayerMessage( (wchar_t *)(v13), 480); /*0x63a88e*/
       PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a8b2*/
     }
-    return 1; /*0x63a8c0*/
+    return (gamemd::AbstractClass **)(1); /*0x63a8c0*/
   }
   if ( BuildingClass::CheckBuildability(v7) == -1 ) /*0x63a768*/
-    return v16 || aP0; /*0x63a768*/
+    return (gamemd::AbstractClass **)(v16 || aP0); /*0x63a768*/
   if ( !byte_AC4C08 ) /*0x63a771*/
   {
     byte_AC4C08 = 1; /*0x63a784*/
@@ -2320,7 +2323,7 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
     AddMessageListPlayerMessage( (wchar_t *)(v11), 480); /*0x63a797*/
     PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a7b3*/
   }
-  return 1; /*0x63a5b0*/
+  return (gamemd::AbstractClass **)(1); /*0x63a5b0*/
 }
 }
 // 0x63AD50
@@ -2588,7 +2591,7 @@ AbstractClass * * sub_63B150()
     if ( (uint8_t)(((HouseClass *)(*(void **)(***(unsigned int ***)(v5 + 4) + 540)))->IsAlliedWith( (HouseClass *)((void *)dword_A83D4C))) ) /*0x63b1ba*/
     {
       DrawColor = BuildingClass::GetDrawColor(v5); /*0x63b1d2*/
-      Viewport = ((Display *)v24)->GetViewport(); /*0x63b1d4*/
+      Viewport = (int *)(((Display *)v24)->GetViewport()); /*0x63b1d4*/
       v23[0] = *Viewport; /*0x63b1db*/
       v23[1] = Viewport[1]; /*0x63b1e2*/
       v23[2] = Viewport[2]; /*0x63b1e9*/
@@ -2598,7 +2601,7 @@ AbstractClass * * sub_63B150()
       v17[1] = Coords[1]; /*0x63b20d*/
       v17[2] = Coords[2]; /*0x63b218*/
       v9 = (int *)ToCoordPixel( (unsigned int *)(&v16), (unsigned int *)(v17)); /*0x63b21c*/
-      v10 = (int *)ComputeBounds( (AbstractClass *)(v25), 8, *v9, v9[1]); /*0x63b236*/
+      v10 = (int *)ComputeBounds( (AbstractClass *)(v25),(gamemd::ObjectClass *)( 8), *v9, v9[1]); /*0x63b236*/
       v19 = *v10; /*0x63b23a*/
       v20 = v10[1]; /*0x63b241*/
       v11 = v10[2]; /*0x63b245*/
@@ -2674,13 +2677,13 @@ void RenderScriptActionHighlight()
      | (IDA_BYTE2(stru_A80220.AbstractClass) >> g_BitMask_Red << g_BitShift_Blue);
   if ( *(unsigned int *)&stru_AC4B30.__pad_EC[176] ) /*0x63b351*/
   {
-    Viewport = ((Display *)v27)->GetViewport(); /*0x63b35b*/
+    Viewport = (int *)(((Display *)v27)->GetViewport()); /*0x63b35b*/
     v23 = *Viewport; /*0x63b362*/
     v24 = Viewport[1]; /*0x63b369*/
     v25 = Viewport[2]; /*0x63b370*/
     v26 = Viewport[3]; /*0x63b37e*/
     ScreenPos = (int *)((ScriptAction*)v1)->GetScreenPos( (unsigned int *)(&v15)); /*0x63b382*/
-    v6 = ComputeBounds( (AbstractClass *)(v27), 8, *ScreenPos, ScreenPos[1]); /*0x63b397*/
+    v6 = ComputeBounds( (AbstractClass *)(v27),(gamemd::ObjectClass *)( 8), *ScreenPos, ScreenPos[1]); /*0x63b397*/
     v7 = v6[1] - 4; /*0x63b3a6*/
     v8 = v6[2] + 8; /*0x63b3ac*/
     v9 = v6[3]; /*0x63b3af*/
@@ -2718,7 +2721,7 @@ result = (*(int (**)(AudioStream *, int *, int *, int))(*(unsigned int *)DSurfac
   v11 = *(ObjectClass **)&stru_AC4B30.__pad_70[80]; /*0x63b42c*/
   if ( *(unsigned int *)&stru_AC4B30.__pad_70[80] ) /*0x63b434*/
   {
-    v12 = ((Display *)&v23)->GetViewport(); /*0x63b43e*/
+    v12 = (int *)(((Display *)&v23)->GetViewport()); /*0x63b43e*/
     v27[0] = *v12; /*0x63b445*/
     v27[1] = v12[1]; /*0x63b44c*/
     v27[2] = v12[2]; /*0x63b453*/
@@ -2852,7 +2855,7 @@ AbstractClass * * Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, 
   {
     v12 = (v10 + v9) / 2; /*0x63d6a5*/
     v13 = (v7 + v8) / 2; /*0x63d6a7*/
-    Viewport = ((Display *)v28)->GetViewport(); /*0x63d6af*/
+    Viewport = (int *)(((Display *)v28)->GetViewport()); /*0x63d6af*/
     v23 = *Viewport; /*0x63d6b6*/
     v24 = Viewport[1]; /*0x63d6bd*/
     v25 = Viewport[2]; /*0x63d6c7*/

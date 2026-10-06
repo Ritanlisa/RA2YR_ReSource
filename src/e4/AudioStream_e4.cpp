@@ -1460,7 +1460,7 @@ int AudioStream::UpdateTimers()
   if ( g_AudioConfigState ) /*0x404fd8*/
   {
     v1 = (void **)g_AudioStreamObject; /*0x404fda*/
-    if ( g_AudioStreamObject != &g_AudioStreamObject ) /*0x404fe6*/
+    if ( g_AudioStreamObject  != (int)(&g_AudioStreamObject) ) /*0x404fe6*/
     {
       do /*0x405031*/
       {
@@ -1499,7 +1499,7 @@ int AudioStream::UpdateCountdowners()
   if ( g_AudioConfigState ) /*0x405048*/
   {
     v1 = (void **)g_AudioStreamObject; /*0x40504a*/
-    if ( g_AudioStreamObject != &g_AudioStreamObject ) /*0x405056*/
+    if ( g_AudioStreamObject  != (int)(&g_AudioStreamObject) ) /*0x405056*/
     {
       do /*0x4050b9*/
       {
@@ -1546,7 +1546,7 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream)
   if ( !this ) /*0x40786b*/
     return 0; /*0x40786e*/
   v3 = HIDWORD(a2); /*0x407876*/
-  if ( a2 < 0x1B58 ) /*0x40788a*/
+  if ( a2  <  (void *)0x1B58 ) /*0x40788a*/
   {
     LODWORD(a2) = 7000; /*0x407896*/
     v3 = 0; /*0x40789a*/
@@ -1574,8 +1574,8 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream)
         *(unsigned int *)(*(unsigned int *)(v4 + 20) + 176) = AudioStream::ReadStreamAndSyncPosition,
         *(unsigned int *)(*(unsigned int *)(v4 + 20) + 184) = AudioStream::SetPlaybackCallback,
         *(unsigned int *)(*(unsigned int *)(v4 + 20) + 188) = AudioStream::ProcessCallback,
-        v7 = sub_4087F0(),
-        (*(unsigned int *)(v4 + 48) = v7) != 0) )
+        v7 = (unsigned int *)(sub_4087F0()),
+        (*(unsigned int *)(v4 + 48) = (unsigned int)(v7)) != 0) )
   {
     EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407996*/
     InsertBeforeLinkedList((int *)&stru_87E790.__pad_5C[36], (int *)v4); /*0x4079a3*/

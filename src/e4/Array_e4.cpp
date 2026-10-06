@@ -27,7 +27,7 @@ int Array::GetClamped(int aP1)
   {
     v3 = (gamemd::CheckListClass *)((unsigned int)((gamemd::CheckListClass *)((int)(aP1))));
     v4 = (gamemd::CheckListClass *)((int)((gamemd::CheckListClass *)(result - 1)));
-    if ( aP1 >= (gamemd::CheckListClass *)(v4) ) /*0x557ad1*/
+    if ( aP1    >=    (int)((int)((int)((int)(v4) )))) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
     return *(unsigned int *)(*((unsigned int *)this + 14) + 4 * v3); /*0x557ad8*/
   }
@@ -196,7 +196,7 @@ namespace gamemd {
 int Array::GetElement(int aP1)
 {
 
-  if ( aP1 < 0 || aP1 >= (gamemd::CampaignScore *)(int)this->Array_field_0x38 ) /*0x76398b*/
+  if ( aP1 < 0 || aP1    >=    (int)((int)((int)((int)(int)this->Array_field_0x38 )))) /*0x76398b*/
     return 0; /*0x763999*/
   else
     return (int)this->Array_field_0x2C + 12 * aP1; /*0x763993*/
@@ -242,7 +242,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
 
   v4 = (gamemd::ObjectClass *)((int)(aP2));
   v5 = *(unsigned int *)this->__pad_0; /*0x7ad799*/
-  if ( aP2 > (gamemd::ObjectClass *)(v5) ) /*0x7ad79e*/
+  if ( aP2    >    (int)((int)((int)((int)(v5) )))) /*0x7ad79e*/
   {
     aP2 = (int)((gamemd::ObjectClass *)(v5));
     v4 = (gamemd::ObjectClass *)(v5);
@@ -281,7 +281,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     *(unsigned int *)this->__pad_8 = (unsigned int)(v17); /*0x7ad8b1*/
     this->Array_field_0x4 = (unsigned int)((void *)v11); /*0x7ad8b4*/
   }
-  if ( v4 < *(unsigned int *)this->__pad_0 ) /*0x7ad8bc*/
+  if ( v4 < (gamemd::ObjectClass *)(*(unsigned int *)this->__pad_0 )) /*0x7ad8bc*/
     memcpy( /*0x7ad8f2*/
       (void *)(*(unsigned int *)this->__pad_8 + 268 * (v4 + 1)),
       (const void *)(*(unsigned int *)this->__pad_8 + 268 * v4),
@@ -382,7 +382,7 @@ char Array::GetElementAt(unsigned int * a2, int a3)
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
     v3 = (unsigned int)this->q038; /*0x49d086*/
-  if ( v3 < 0 || v3 >= this->q010 ) /*0x49d094*/
+  if ( v3 < 0 || v3     >=     (int)((int)((int)((int)(this->q010 ))))) /*0x49d094*/
     v3 = -1; /*0x49d096*/
   if ( this->q06C ) /*0x49d09a*/
   {
@@ -423,7 +423,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
             {
               --v2; /*0x55b8b1*/
               v5 = v3; /*0x55b8b2*/
-              for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
+              for ( dword_8B40D8 = (unsigned int)(v2); v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
                 ((unsigned int *)(v4))[v5] = (unsigned int)((unsigned int *)(v4[v5 + 1]));
                 v2 = (unsigned int *)((int)((unsigned int *)(dword_8B40D8)));

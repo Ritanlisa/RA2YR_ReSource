@@ -34,6 +34,8 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
+#include "e4/classes/AudioFileClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/PowerClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Matrix3x3_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Turret_e4.hpp"  // G42.36 C2027 supply
@@ -100,7 +102,7 @@ int ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
   if ( this->rockerLinkedUnit && !*(unsigned char *)((*(int (**)(TechnoClass *))((char *)this->vtable1 + 132))(this) + 1682) ) /*0x4d7d81*/
     return 0; /*0x4d7d8d*/
   v7 = (int16_t *)(aP2); /*0x4d7d9a*/
-referenceCount = (*(int (**)(TechnoClass *, int16_t *, unsigned int, void **))((char *)this->vtable1 + 112))( /*0x4d7db1*/ this, (int16_t *)(aP2), 0, (void **)(aP4));
+referenceCount = (*(int ((gamemd::TechnoClass *)(**))(TechnoClass *, int16_t *, unsigned int, void **))((char *)this->vtable1 + 112))( /*0x4d7db1*/ this, (int16_t *)(aP2), 0, (void **)(aP4));
 
 
 
@@ -160,7 +162,7 @@ referenceCount = (*(int (**)(TechnoClass *, int16_t *, unsigned int, void **))((
       goto LABEL_38; /*0x4d8062*/
     case 2: /*0x4d7de0*/
 LABEL_38:
-      aP4 = (void **)*FindPlacementCell((ObjectClass *)&v42, referenceCount, v7, 0, v38, v39); /*0x4d8065*/
+      aP4 = (void **)*FindPlacementCell((gamemd::FootClass *)((ObjectClass *)&v42), referenceCount,(IUnknown **)( v7), 0, v38, v39); /*0x4d8065*/
       if ( aP4 == (gamemd::FootClass *)((void **))g_FootClass_Pool ) /*0x4d8081*/
         return 0; /*0x4d8081*/
       vtable0 = (unsigned int)this->vtable1; /*0x4d8099*/
@@ -190,7 +192,7 @@ LABEL_52:
       }
       else
       {
-        (*(void (**)(TechnoClass *, int, int, unsigned int, unsigned int))((char *)this->vtable1 + 888))(this, 1, v22, 0, 0); /*0x4d80d8*/
+        (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, int, unsigned int, unsigned int))((char *)this->vtable1 + 888))(this, 1, v22, 0, 0); /*0x4d80d8*/
         return 1; /*0x4d80e0*/
       }
     case 6: /*0x4d7de0*/
@@ -241,7 +243,7 @@ LABEL_52:
     case 51: /*0x4d7de0*/
       if ( !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 160))(this) ) /*0x4d7df3*/
         return 0; /*0x4d7df3*/
-      PlacementCell = (void ***)FindPlacementCell((ObjectClass *)&v41, referenceCount, v7, 0, v38, v39); /*0x4d7dff*/
+      PlacementCell = (void ***)FindPlacementCell((gamemd::FootClass *)((ObjectClass *)&v41), referenceCount,(IUnknown **)( v7), 0, v38, v39); /*0x4d7dff*/
       v10 = (unsigned int)this->vtable1; /*0x4d7e06*/
       aP4 = (void **)((gamemd::FootClass *)(*PlacementCell)); /*0x4d7e0c*/
       v11 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj((int16_t *)&aP4); /*0x4d7e18*/
@@ -456,7 +458,7 @@ LABEL_28:
               if ( *(unsigned int *)(aP0 + 1468) < v14 /*0x4db525*/
                 || (*(unsigned char *)(aP0 + 1465) || !v14)
                 && (v15 = *(unsigned int *)(aP0 + 1472), v15 > 0)
-                && (*(uint8_t ((**))(int, int, unsigned int))(*(unsigned int *)v12 + 8))(aP0 + 1452, v14 + v15, 0) )
+                && (*(uint8_t ((int)((**)))(int, int, unsigned int))(*(unsigned int *)v12 + 8))(aP0 + 1452, v14 + v15, 0) )
               {
                 v16 = *(unsigned int *)(aP0 + 1468); /*0x4db52c*/
                 v17 = *(unsigned int *)(aP0 + 1456); /*0x4db52f*/
@@ -482,7 +484,7 @@ LABEL_28:
           if ( *(unsigned int *)(aP0 + 1432) < v8 /*0x4db477*/
             || (*(unsigned char *)(aP0 + 1429) || !v8)
             && (v9 = *(unsigned int *)(aP0 + 1436), v9 > 0)
-            && (*(uint8_t ((**))(int, int, unsigned int))(*(unsigned int *)v6 + 8))(aP0 + 1416, v8 + v9, 0) )
+            && (*(uint8_t ((int)((**)))(int, int, unsigned int))(*(unsigned int *)v6 + 8))(aP0 + 1416, v8 + v9, 0) )
           {
             v10 = *(unsigned int *)(aP0 + 1432); /*0x4db47e*/
             v11 = *(unsigned int *)(aP0 + 1420); /*0x4db481*/
@@ -771,11 +773,11 @@ LABEL_34:
   if ( __PAIR32__(v34[1], (uint16_t)v27) != g_FootClass_Pool ) /*0x4de541*/
   {
     aP0->AbstractClass = v27; /*0x4de558*/
-    return aP0; /*0x4de55f*/
+    return (void **)(aP0); /*0x4de55f*/
   }
 LABEL_36:
   aP0->AbstractClass = (void *)g_FootClass_Pool; /*0x4de562*/
-  return aP0; /*0x4de555*/
+  return (void **)(aP0); /*0x4de555*/
 
 }
 } // namespace ra2
@@ -890,7 +892,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
 LABEL_16:
     v24 = v10; /*0x514275*/
     qmemcpy( (void *)(a2), (const void *)(v24), 0x30u); /*0x514285*/
-    return a2; /*0x514277*/
+    return (gamemd::AbstractClass **)(a2); /*0x514277*/
   }
   v7 = (unsigned int *)(a1->vtable2 + 156); /*0x513f97*/
   v36[0] = *v7; /*0x513f9f*/
@@ -913,7 +915,7 @@ LABEL_16:
     }
   }
   qmemcpy( (void *)(a2), (const void *)(&v37), 0x30u); /*0x514070*/
-  return a2; /*0x514073*/
+  return (gamemd::AbstractClass **)(a2); /*0x514073*/
 
 }
 } // namespace ra2
@@ -996,10 +998,10 @@ ObjectClass * * ObjectClass::Dtor()
   ObjectClass *v10; // [esp+10h] [ebp-4h] BYREF
 
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f3b84*/
-  this->vtable1 = (int)&vt_ObjectClass; /*0x5f3b87*/
-  this->vtable1 = (int)&vt_ObjectClass; /*0x5f3b8f*/
-  this->vtable2 = (int)&vt_ObjectClass; /*0x5f3b96*/
-  this->vtable3 = (int)&vt_ObjectClass; /*0x5f3b9d*/
+  this->vtable1 = (void *)((int)&vt_ObjectClass); /*0x5f3b87*/
+  this->vtable1 = (void *)((int)&vt_ObjectClass); /*0x5f3b8f*/
+  this->vtable2 = (void *)((int)&vt_ObjectClass); /*0x5f3b96*/
+  this->vtable3 = (void *)((int)&vt_ObjectClass); /*0x5f3b9d*/
   if ( attachedBomb ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f3ba6*/
   v10 = this; /*0x5f3bbb*/
@@ -1055,7 +1057,7 @@ ObjectClass * * ObjectClass::Dtor()
     while ( v7 < dword_B0F628 ); /*0x5f3d16*/
   }
   this->nextObject = 0; /*0x5f3d1d*/
-  this->isAliveFlag[0] = 0; /*0x5f3d26*/
+  (&this->isAliveFlag)[0] = 0; /*0x5f3d26*/
   ((AudioController *)((AudioController *)this->ambientSoundController))->Stop(); /*0x5f3d2d*/
   ((AudioController *)((AudioController *)this->customSound_controller))->Stop(); /*0x5f3d37*/
   AudioFileClass::Release( (AudioFileClass *)this->ambientSoundController); /*0x5f3d3e*/
@@ -1063,10 +1065,10 @@ ObjectClass * * ObjectClass::Dtor()
   lineTrailer = (TacticalClass *)this->lineTrailer; /*0x5f3d4a*/
   if ( lineTrailer ) /*0x5f3d54*/
   {
-    TacticalClass::GetField(lineTrailer); /*0x5f3d56*/
+    TacticalClass::GetField((HWND)(lineTrailer)); /*0x5f3d56*/
     this->lineTrailer = 0; /*0x5f3d5b*/
   }
-  if ( this->isInLogic[0] ) /*0x5f3d65*/
+  if ( (&this->isInLogic)[0] ) /*0x5f3d65*/
     ((VectorClass *)((DynamicVectorClass *)&dword_87F778))->RemoveItem((int)this); /*0x5f3d75*/
   return AbstractClass::DTOR(int a1) ; /*0x5f3d81*/
 

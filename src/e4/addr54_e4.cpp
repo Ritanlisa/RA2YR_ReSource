@@ -93,7 +93,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   v7 = (int)((unsigned int *)(1)); /*0x541194*/
   if ( dword_A8DA84 <= 1 ) /*0x54119b*/
     return 0; /*0x54119b*/
-  for ( i = dword_A8DA78 + 1; *(unsigned int *)(*i + 111) != a5; ++i ) /*0x54119d*/
+  for ( i = (unsigned int *)(dword_A8DA78 + 1); *(unsigned int *)(*i + 111) != a5; ++i ) /*0x54119d*/
   {
     if ( ++v7 >= dword_A8DA84 ) /*0x5411ad*/
       return 0; /*0x5411ad*/
@@ -147,7 +147,7 @@ int E4Recv_542F30::sub_542F30()
   v8 = (int)((int *)(0)); /*0x542f45*/
   if ( (&this->ambientSoundController)[2] > 0 ) /*0x542f49*/
   {
-    for ( i = &this->owningHouseIndex; ; ++i ) /*0x542f4d*/
+    for ( i = (int *)(&this->owningHouseIndex); ; ++i ) /*0x542f4d*/
     {
       v5 =(int)(int *)(int)(int *)0; /*0x542f52*/
       v6 = *(unsigned int *)(*i + 4); /*0x542f54*/

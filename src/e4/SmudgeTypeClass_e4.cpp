@@ -134,7 +134,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
     v10 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(a6)); /*0x6b5674*/
     v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
-    DrawToSurfaceSHP( (int)g_DSurface_Hidden_2, v10[13], (gamemd::ConvertClass *)(v7), 0, (ConvertClass *)(&v13), (ConvertClass *)(a3), 3584, 0, -1 - v11, 0, (ConvertClass *)(v12), 0, 0, 0, 0, 0); /*0x6b56b4*/
+    DrawToSurfaceSHP( (int)g_DSurface_Hidden_2, v10[13], (gamemd::ConvertClass *)(v7), 0, (ConvertClass *)(&v13), (ConvertClass *)(a3),(gamemd::ConvertClass *)( 3584), 0, -1 - v11, 0,(int)( (ConvertClass *)(v12)), 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 
 }

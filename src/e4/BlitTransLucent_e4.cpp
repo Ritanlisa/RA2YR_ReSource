@@ -272,7 +272,7 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
     __3_YAXPAX_Z(this); /*0x49a74d*/
-  return this->__pad_0; /*0x49a757*/
+  return (gamemd::BlitTransLucent25AlphaZReadWrite_ushort *)(this->__pad_0); /*0x49a757*/
 
 }
 } // namespace gamemd

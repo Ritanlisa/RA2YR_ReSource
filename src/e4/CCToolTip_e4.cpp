@@ -22,7 +22,7 @@ CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
   ((ToolTipClass *)((ToolTipClass *)this))->updateString(); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
     __3_YAXPAX_Z(this); /*0x7784b6*/
-  return this->__pad_0; /*0x7784c0*/
+  return (gamemd::CCToolTip *)(this->__pad_0); /*0x7784c0*/
 
 }
 } // namespace gamemd

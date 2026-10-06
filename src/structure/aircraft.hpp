@@ -107,7 +107,7 @@ public:
     // === Phase 3: Spawn/Dock ===
     int ProcessDockCheck();  // 0x41ADC0
     int FlightUpdate(int a2 = 0, int a3 = 0);  // 0x415EE0 (IDA 名 BulletClass::FlightUpdate 为误名, 地址在 Aircraft 区)
-    int vt_entry_540();  // 0x41C140 FootClass vt+0x540
+    virtual void vt_entry_540();  // 0x41C140 FootClass vt+0x540  // G57w8: 与基类 foot.hpp 声明对齐 (C2555)
     int UpdateDocking();  // 0x41B9F0
     int CheckDockState();  // 0x41C070
     int CheckReloadTimer();  // 0x41C020

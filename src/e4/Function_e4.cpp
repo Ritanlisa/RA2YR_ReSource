@@ -22,7 +22,7 @@ namespace gamemd {
 int Function::sub_645D00(int a2)
 {
 
-  return (unsigned char *)this + 4 * a2; /*0x645d07*/
+  return (int)((unsigned char *)this + 4 * a2); /*0x645d07*/
 
 }
 } // namespace gamemd

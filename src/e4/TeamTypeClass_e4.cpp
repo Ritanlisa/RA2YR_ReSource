@@ -41,6 +41,8 @@
 #include "e4/classes/TagTypeClass_e4.hpp"
 #include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
 
 // 0x4C98B0
 namespace gamemd {
@@ -181,7 +183,7 @@ LABEL_17:
     }
     return 0; /*0x691d3e*/
   }
-  while ( _strcmpi((*((unsigned int *)dword_8B41CC + v2) + 36),(const char *)(Source)) ) /*0x691c52*/
+  while ( _strcmpi((const char *)((*((unsigned int *)dword_8B41CC + v2) + 36)),(const char *)(Source)) ) /*0x691c52*/
   {
     if ( ++v2 >= dword_8B41D8 ) /*0x691c60*/
       goto LABEL_6; /*0x691c60*/
@@ -206,15 +208,15 @@ AbstractClass * * TeamTypeClass::FindOrCreateTaskForce(char *Source, int a2, int
 LABEL_6:
     v3 = (TaskForceClass *)__2_YAPAXI_Z(0xD4u); /*0x6e8646*/
     if ( v3 ) /*0x6e8655*/
-      return ((TaskForceClass *)(v3))->Construct((char *)(Source)); /*0x6e8661*/
+      return (gamemd::AbstractClass **)(((TaskForceClass *)(v3))->Construct((char *)(Source))); /*0x6e8661*/
     return 0; /*0x6e8655*/
   }
-  while ( _strcmpi((*((unsigned int *)dword_A8E8D4 + v2) + 36),(const char *)(Source)) ) /*0x6e863a*/
+  while ( _strcmpi((const char *)((*((unsigned int *)dword_A8E8D4 + v2) + 36)),(const char *)(Source)) ) /*0x6e863a*/
   {
     if ( ++v2 >= dword_A8E8E0 ) /*0x6e8644*/
       goto LABEL_6; /*0x6e8644*/
   }
-  return (unsigned int *)*((unsigned int *)dword_A8E8D4 + v2); /*0x6e865f*/
+  return (gamemd::AbstractClass **)((unsigned int *)*((unsigned int *)dword_A8E8D4 + v2)); /*0x6e865f*/
 
 }
 }
@@ -344,7 +346,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   v4 = -1; /*0x6f10be*/
   if ( v3 ) /*0x6f10c3*/
     v4 = *(unsigned int *)(*(unsigned int *)(v3 + 52) + 184); /*0x6f10c8*/
-  v5 = (HouseClass *)SuperWeaponTypeClass::FindOrCreate( /*0x6f10e1*/
+  v5 = (HouseClass *)SuperWeaponTypeClass::FindOrCreate((gamemd::INIClass *)( /*0x6f10e1*/)  v5 = (HouseClass *)SuperWeaponTypeClass::FindOrCreate( /*0x6f10e1*/
                        (SuperWeaponTypeClass *)aP1,
                        (uint8_t *)&this->TeamTypeClass_field_24,
                        (uint8_t *)&g_INI_Key_Special.SidebarImageFile[1],
@@ -818,7 +820,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         v6 = v5 + 1; /*0x6f2329*/
         if ( a2 - 1 >= 0 ) /*0x6f232c*/
         {
-          v7 = v5 + 2; /*0x6f232e*/
+          v7 = (unsigned int *)(v5 + 2); /*0x6f232e*/
           v8 = a2; /*0x6f2331*/
           do /*0x6f233c*/
           {
@@ -866,7 +868,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
       *(unsigned int *)&this->m_1[3] = (unsigned int)v6; /*0x6f23ca*/
       this->m_8 = a2; /*0x6f23d2*/
       BYTE1(this->m_C) = v4 == 0; /*0x6f23d5*/
-      return 1; /*0x6f23db*/
+      return (gamemd::AbstractClass **)(1); /*0x6f23db*/
     }
     else
     {
@@ -876,7 +878,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   else
   {
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f23e5*/
-    return 1; /*0x6f23eb*/
+    return (gamemd::AbstractClass **)(1); /*0x6f23eb*/
   }
 
 }
@@ -930,7 +932,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
         v6 = v5 + 1; /*0x6f24e9*/
         if ( a2 - 1 >= 0 ) /*0x6f24ec*/
         {
-          v7 = v5 + 2; /*0x6f24ee*/
+          v7 = (unsigned int *)(v5 + 2); /*0x6f24ee*/
           v8 = a2; /*0x6f24f1*/
           do /*0x6f24fc*/
           {
@@ -991,7 +993,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
   v16 = this->m_8; /*0x6f25ae*/
   if ( v16 < this->m_10 ) /*0x6f25b6*/
     this->m_10 = v16; /*0x6f25b8*/
-  return 1; /*0x6f25bb*/
+  return (gamemd::AbstractClass **)(1); /*0x6f25bb*/
 
 }
 }

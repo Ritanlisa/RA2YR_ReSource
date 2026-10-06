@@ -152,7 +152,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
     result = (unsigned int *)RA2_OPNEW(0x14u); /*0x5c0885*/
     if ( result ) /*0x5c088f*/
     {
-      *(void **)result = (unsigned int)(void*)&BinkMovieHandle_vftable; /*0x5c0897*/
+      *(void **)result = (void *)((unsigned int)(void*)&BinkMovieHandle_vftable); /*0x5c0897*/
       result[4] = (unsigned int)(v9); /*0x5c089d*/
       if ( v9 ) /*0x5c08a0*/
       {
@@ -575,7 +575,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
     {
       v20 = (unsigned int)(32 - a2);
       v8 = 0; /*0x5c67ee*/
-      for ( result = aP2 - 1; aP2; --aP2 ) /*0x5c67f7*/
+      for ( result = (gamemd::Buffer *)(aP2 - 1); aP2; --aP2 ) /*0x5c67f7*/
       {
         v9 = (unsigned int)(*v5++);
         v10 = (v8 >> v20) | (v9 << v4); /*0x5c6811*/
@@ -585,7 +585,7 @@ int RotateBitBufferLeft(int *a0, int a2, int aP2)
       }
     }
   }
-  return result; /*0x5c67ce*/
+  return (int)(result); /*0x5c67ce*/
 }
 }
 // 0x5C6960
@@ -1436,7 +1436,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36))))))));
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)((char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36)))))))))));
           *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/
@@ -2626,7 +2626,7 @@ char ModCryptoExp(char * a1, int edx0)
           }
           if ( v21 > 1 ) /*0x5c91a9*/
             break; /*0x5c91a9*/
-          if ( ++v19 >= word_82E178 ) /*0x5c91b8*/
+          if ( ++v19 >= (uint16_t *)(word_82E178) ) /*0x5c91b8*/
             return 1; /*0x5c91b8*/
         }
         return 0; /*0x5c91a9*/
@@ -2957,7 +2957,7 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
     }
     while ( (uint16_t)((WideString *)ecx0)->GetChar( v3) ); /*0x5cdac6*/
   }
-  return *(unsigned int *)&v31.q4; /*0x5cdad9*/
+  return (gamemd::MultiplayerGameMode **)(*(unsigned int *)&v31.q4); /*0x5cdad9*/
 }
 }
 // 0x5CE0C0
@@ -3047,7 +3047,7 @@ LABEL_5:
   *a3 = this->attachedBomb; /*0x5ce1ee*/
   a3[1] = v19; /*0x5ce1f4*/
   a3[2] = v12; /*0x5ce1f7*/
-  a3[3] = vtable2; /*0x5ce1fa*/
+  a3[3] = (unsigned int)(vtable2); /*0x5ce1fa*/
   if ( this->occupant == 2 ) /*0x5ce203*/
   {
     this->customSound_controller[1] = 0; /*0x5ce20b*/

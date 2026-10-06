@@ -16,6 +16,7 @@ struct Blitter;  // fix_fwd_type_supply
 struct BlitPlainXlat;  // fix_fwd_type_supply
 struct BlitTransXlat;  // fix_fwd_type_supply
 struct RLEBlitter;  // fix_fwd_type_supply
+#ifndef GAMEMD_TREE_UNIVERSE  // G57w8: tree TUs carry render/display.hpp GScreenClass (C2011 collision; e4 TUs keep this flat copy)
 struct GScreenClass {
     void Initialize(TechnoClass * aP1, TechnoClass * aP2);
     unsigned int * checkVisibility(char a2);
@@ -93,7 +94,9 @@ struct GScreenClass {
     int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);
     int checkTeamObjective();
     FileClass * processAITrigger(unsigned int * Block, char a2);
-};  // G42.37 class-body supply (defs in AbstractClass_e4.cpp)
+};
+#endif  // G57w8 GScreenClass tree guard
+  // G42.37 class-body supply (defs in AbstractClass_e4.cpp)
 #ifndef GAMEMD_TREE_UNIVERSE
 #ifndef GAMEMD_USING_AbstractClass
 #define GAMEMD_USING_AbstractClass 1

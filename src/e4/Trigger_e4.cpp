@@ -131,7 +131,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                                                       + 8 * v25.q008));
     v9 = (int (***)(unsigned int, int))((WDTObject *)(v8))->GetAndClearFlag(); /*0x76d519*/
     if ( v9 ) /*0x76d520*/
-      ((Session *)((Session *)this))->RemoveTeam(v9); /*0x76d525*/
+      ((Session *)((Session *)this))->RemoveTeam((int (__thiscall ***)(unsigned int,int))(v9)); /*0x76d525*/
     (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 8))( (VectorCursor *)(&v25)); /*0x76d532*/
   }
   v24 = (gamemd::ObjectClass *)(a2);
@@ -161,7 +161,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       v14 = !*(unsigned char *)(this + 1092) || a5; /*0x76d635*/
       Map_Process_76FD40( /*0x76d64f*/
         *(unsigned int *)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
-        CellType,
+        CellType(gamemd::ObjectClass *)(),
         v13,
         v13,
         (int *)this,
@@ -180,7 +180,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           v18 = (Trigger *)__2_YAPAXI_Z(0x48u); /*0x76d6be*/
           if ( v18 ) /*0x76d6c8*/
             inited = ((Trigger*)/*0x76d6ec*/
-                       v18)->initTrigger(/*0x76d6ec*/ *(char ***)(this + 1136), v16, v17, *(unsigned int *)(this + 1132), 3, 512, this + 24);
+                       v18)->initTrigger(/*0x76d6ec*/ *(char ***)(this + 1136), v16, v17, *(unsigned int *)(this + 1132), 3, 512,(int)( this + 24));
           if ( (int)v28.attachedBomb < (int)v28.nextObject /*0x76d71b*/
             || (BYTE1(v28.attachedTag) || !v28.nextObject)
             && v28.ambientSoundController[0] > 0
@@ -218,10 +218,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         ((MSAnim *)(v21))->SetField(*(unsigned int *)(this + 1144) - 1); /*0x76d7c8*/
         ((MSAnim *)(v21))->GetField(0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL((ObjectClass *)v21, 0); /*0x76d7d8*/
-        Trigger::executeActions( /*0x76d7f0*/
+        Trigger::executeActions((int)( /*0x76d7f0*/)        Trigger::executeActions( /*0x76d7f0*/
           *(Trigger **)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
           (int)v21);
-        if ( (int)((char *)&v28) < ((char *)&v28) /*0x76d821*/
+        if ( (int)(*(int *)&v28) < (*(int *)&v28) /*0x76d821*/
           || (((unsigned char *)&v28)[1] || !((char *)&v28))
           && v28.occupant > 0
           && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&v28) + 8))( (int *)((char *)&v28), v28.occupant + ((char *)&v28), 0) )
@@ -287,9 +287,9 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         (*(void (**)(int *))(v25.q018 + 8))( (int *)(&v25.q018)); /*0x76da15*/
       }
       ((PriorityQueue *)((PriorityQueue *)this))->Add(*(unsigned int *)(*((unsigned int *)((char *)&v28) + 1) + 4 * (int)((char *)&v28))); /*0x76da29*/
-      (*((void (**)(void **))((char *)&v28) + 2))((char *)&v28); /*0x76da36*/
+      (*((void ((void **)(**))(void **))((char *)&v28) + 2))((char *)&v28); /*0x76da36*/
     }
-    while ( (*((uint8_t (**)(void **))((char *)&v28) + 1))((char *)&v28) ); /*0x76da41*/
+    while ( (*((uint8_t ((void **)(**))(void **))((char *)&v28) + 1))((char *)&v28) ); /*0x76da41*/
   }
   ((ComPtr *)((ComPtr *)(this + 1160)))->Set(*(unsigned int *)(a3 + 4)); /*0x76da5d*/
   ((unsigned int *)&v28)[0] = (unsigned int)(&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76da66*/

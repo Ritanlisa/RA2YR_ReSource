@@ -177,7 +177,7 @@ LABEL_14:
     goto LABEL_12; /*0x4d54a9*/
   }
   if ( !*(unsigned char *)(v4[432] + 3778) && !(uint8_t)((TechnoTypeClass *)v4)->HasVoiceResponse( 14) /*0x4d5428*/
-    || (target = ((unsigned int *)a1)[0]) == 0
+    || (target = (gamemd::AbstractClass *)(((unsigned int *)a1)[0])) == 0
     || (*((int (**)(AbstractClass *))target->vtable1 + 11))( (AbstractClass *)(target)) != 6 )
   {
     if ( !*(unsigned char *)(v4[432] + 3782) ) /*0x4d547a*/

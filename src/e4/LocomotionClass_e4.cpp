@@ -237,7 +237,7 @@ LocomotionClass * LocomotionClass::ProcessMove(char a2)
   ((LocomotionClass *)this)->Construct(); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
     __3_YAXPAX_Z(this); /*0x517300*/
-  return this->ILocomotion; /*0x51730a*/
+  return (gamemd::LocomotionClass *)(this->ILocomotion); /*0x51730a*/
 
 }
 } // namespace gamemd

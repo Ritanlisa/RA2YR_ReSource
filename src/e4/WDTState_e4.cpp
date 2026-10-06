@@ -180,7 +180,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     __3_YAXPAX_Z(this); /*0x76bc4c*/
-  return this->__pad_0; /*0x76bc56*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x76bc56*/
 
 }
 } // namespace gamemd

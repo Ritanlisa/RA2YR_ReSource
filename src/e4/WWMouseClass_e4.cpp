@@ -336,7 +336,7 @@ MouseClass * WWMouseClass::updateHotspot(char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Mouse;
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     __3_YAXPAX_Z(this); /*0x7ba312*/
-  return this->__pad_0; /*0x7ba31c*/
+  return (gamemd::MouseClass *)(this->__pad_0); /*0x7ba31c*/
 
 }
 } // namespace gamemd

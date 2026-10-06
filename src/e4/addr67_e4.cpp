@@ -110,7 +110,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     {
       if ( !*i ) /*0x67b5c0*/
         break; /*0x67b5c2*/
-      v7 = ((BuildingTypeClass *)i)->FindOrCreate(); /*0x67b5cb*/
+      v7 = (int)(((BuildingTypeClass *)i)->FindOrCreate()); /*0x67b5cb*/
       if ( v7 /*0x67b5fb*/
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)

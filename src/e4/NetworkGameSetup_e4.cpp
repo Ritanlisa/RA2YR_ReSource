@@ -70,7 +70,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5ba9fb*/
     v3 = (char *)(CharToWideString((unsigned char *)(unk_A8B380))); /*0x5baa05*/
     v4 = dword_A8B394; /*0x5baa0d*/
-    Format = (unsigned int)(wchar_t *)v3; /*0x5baa19*/
+    Format = (wchar_t *)((unsigned int)(wchar_t *)v3); /*0x5baa19*/
     DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1343); /*0x5baa23*/
     if ( DlgItem ) /*0x5baa27*/
     {

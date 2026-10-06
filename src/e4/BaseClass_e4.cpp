@@ -82,7 +82,7 @@ LABEL_34:
                   v16 = (&aP0->unknown54)[5]; /*0x42eff9*/
                   if ( (&aP0->unknown54)[7] < v16 /*0x42f021*/
                     || (BYTE1((&aP0->unknown54)[6]) || !v16)
-                    && (owner = aP0->owner, (int)owner > 0)
+                    && (owner = (gamemd::HouseClass *)(aP0->owner), (int)owner > 0)
                     && (*(uint8_t (**)(int *, int, unsigned int))((&aP0->unknown54)[3] + 8))(
                          (int *)&(&aP0->unknown54)[3],
                          (int)owner + v16,

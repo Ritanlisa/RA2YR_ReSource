@@ -323,7 +323,7 @@ LABEL_14:
       {
 LABEL_15:
         (*(void (**)(int))(*(unsigned int *)v3 + 52))(v3); /*0x5bd6ea*/
-        return 1; /*0x5bd6f4*/
+        return (gamemd::AbstractClass **)(1); /*0x5bd6f4*/
       }
     }
     else
@@ -714,7 +714,7 @@ LABEL_25:
     v9 = (int)(__2_YAPAXI_Z(v8)); /*0x76ae05*/
     v10 = v14; /*0x76ae0a*/
     *((unsigned int *)this + 4) = v9; /*0x76ae0e*/
-    Block = (unsigned int)(void *)__2_YAPAXI_Z(v10); /*0x76ae17*/
+    Block = (void *)((unsigned int)(void *)__2_YAPAXI_Z(v10)); /*0x76ae17*/
     v20 = (u_short *)(0); /*0x76ae23*/
     if ( !*((unsigned char *)this + 72) ) /*0x76ae1b*/
     {

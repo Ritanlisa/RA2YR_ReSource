@@ -557,6 +557,8 @@ public:
     virtual void Parse(); // 0x523D00
 
 };
+#ifndef GAMEMD_E4_AnimTypeList  // G57w8: e4 flat carrier wins in e4 TUs (C2011 vs _tree_full_e4.hpp G57e1 carrier)
+
 // 1 methods in IDA
 // CSP: AnimTypeList matched via T1
 class AnimTypeList
@@ -568,6 +570,7 @@ public:
     virtual int Constructor(); // 0x67A470
 
 };
+#endif  // G57w8 AnimTypeList
 // 1 methods in IDA
 class AnimTypeVector
 {

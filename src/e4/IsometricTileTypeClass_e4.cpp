@@ -303,7 +303,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
   this->m_8 = 0; /*0x54a791*/
   if ( (a2 & 1) != 0 ) /*0x54a798*/
     __3_YAXPAX_Z(this); /*0x54a79b*/
-  return this->__pad_0; /*0x54a7a5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x54a7a5*/
 
 }
 } // namespace gamemd

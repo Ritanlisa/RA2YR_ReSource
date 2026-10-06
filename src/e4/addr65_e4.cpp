@@ -752,7 +752,7 @@ v6 = (int *)(*((int (**)(DSurface *, int *, unsigned int))DSurface_Sidebar->DSur
 
 
 
-    DrawToSurfaceSHP( (int)DSurface_Sidebar, v5, (gamemd::ConvertClass *)(dword_B04A38), 0x20u, (gamemd::ConvertClass *)(&v43), (gamemd::ConvertClass *)(v6), 0, 0, 0, 1000, 0, 0, 0, 0, 0, (ConvertClass *)(v41)); /*0x65400b*/
+    DrawToSurfaceSHP( (int)DSurface_Sidebar, v5, (gamemd::ConvertClass *)(dword_B04A38), 0x20u, (gamemd::ConvertClass *)(&v43), (gamemd::ConvertClass *)(v6), 0, 0, 0,(gamemd::ConvertClass *)( 1000), 0, 0, 0, 0, 0, (ConvertClass *)(v41)); /*0x65400b*/
     v7 = v4[1149] + 2; /*0x65401c*/
     v43 = v4[1148]; /*0x65401f*/
     v44 = v7; /*0x654031*/
@@ -795,7 +795,7 @@ v31 = (unsigned int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface
 
     v16 = v13 + 4; /*0x65414f*/
     v3 = 0; /*0x654152*/
-    for ( i = 0; v3 < ((char *)&stru_A80220); i = v3 ) /*0x65415a*/
+    for ( i = 0; v3  <  (int)((*(int *)&stru_A80220)); i = v3 ) /*0x65415a*/
     {
       v44 = *((unsigned int *)((char *)&stru_A80220) + v3); /*0x65416d*/
       v17 = v44; /*0x654168*/
@@ -1031,7 +1031,7 @@ AbstractClass * * UpdateProjectileTrails()
     while ( 1 ) /*0x659282*/
     {
       v10 = *((unsigned int *)dword_B04A64 + v9); /*0x659282*/
-      Block = (unsigned int)(void *)v10; /*0x659285*/
+      Block = (void *)((unsigned int)(void *)v10); /*0x659285*/
       v11 = *(unsigned int *)(v10 + 16); /*0x659289*/
       if ( v11 == 1 ) /*0x65928f*/
         break; /*0x65928f*/
@@ -1147,7 +1147,7 @@ int sub_65B160()
   RadSiteClass_Array = (int)&DynamicVectorClass_RadSiteClass___vftable; /*0x65b17d*/
   dword_B04BE4 = 10; /*0x65b187*/
   dword_B04BE0 = 0; /*0x65b191*/
-  return atexit(sub_65B1A0); /*0x65b19c*/
+  return atexit((void (__cdecl *)(void))(sub_65B1A0)); /*0x65b19c*/
 }
 }
 // 0x65B1A0
@@ -1343,8 +1343,8 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
   result = (int)(aP1); /*0x65c913*/
   v5 = a3; /*0x65c919*/
   v6 = (int)((gamemd::ObjectClass *)(aP1)); /*0x65c91e*/
-  v7 = (int)(aP1 == a3); /*0x65c920*/
-  v8 = aP1 <= a3; /*0x65c920*/
+  v7 = (int)(aP1 == (gamemd::ObjectClass *)(a3)); /*0x65c920*/
+  v8 = aP1 <= (gamemd::ObjectClass *)(a3); /*0x65c920*/
   v19 = (gamemd::ObjectClass *)(this); /*0x65c922*/
   v23 = (int)(aP1); /*0x65c926*/
   if ( !v7 ) /*0x65c92a*/
@@ -1574,7 +1574,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   *(unsigned char *)(v11 + 116) = 0; /*0x65d99f*/
   if ( !v10 ) /*0x65d9a3*/
     return 0; /*0x65dd1e*/
-  v12 = a2 != -1; /*0x65d9ac*/
+  v12 = a2  !=  (void *)(-1); /*0x65d9ac*/
   v12 = v12; /*0x65d9b1*/
   if ( v12 ) /*0x65d9b5*/
     Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (unsigned int *)(v48), *(int *)v48); /*0x65d9c7*/

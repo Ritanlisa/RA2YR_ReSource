@@ -198,7 +198,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     {
       if ( operator new(0x188u) ) /*0x53133a*/
       {
-        v31 = (void (***)(unsigned int, int))ConvertClass::Construct( /*0x531363*/
+        v31 = (void (***)(unsigned int, int))ConvertClass::Construct((int)( /*0x531363*/)        v31 = (void (***)(unsigned int, int))ConvertClass::Construct( /*0x531363*/
                                                     v4,
                                                     &FileSystem_TEMPERAT_PAL,
                                                     g_DSurface_Primary,
@@ -209,7 +209,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
           v8 = (unsigned int)(aGlssmdShp);
           if ( g_DisplayWidth != 640 ) /*0x531378*/
             v8 = (unsigned int)(aGlslmdShp); /*0x53137a*/
-          Block = (unsigned int)(void *)SearchMIXFile((char *)(v8), 0); /*0x531386*/
+          Block = (void *)((unsigned int)(void *)SearchMIXFile((char *)(v8), 0)); /*0x531386*/
           v3 = (int16_t *)Block; /*0x53138a*/
         }
       }
@@ -229,7 +229,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     v9 = v3[2]; /*0x5313cf*/
     v32[0] = (Rect.right - Rect.left - v3[1]) / 2; /*0x5313d5*/
     v32[1] = (Rect.bottom - Rect.top - v9) / 2; /*0x5313e5*/
-    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31,(gamemd::ConvertClass *)((int)v3), 0,(gamemd::ConvertClass *)(v32),(gamemd::ConvertClass *)(v35), 0, 0, 0, 0,(gamemd::ConvertClass *)(1000), 0, 0, 0, 0, 0); /*0x53140e*/
+    DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31,(gamemd::ConvertClass *)((int)v3), 0,(gamemd::ConvertClass *)(v32),(gamemd::ConvertClass *)(v35), 0, 0, 0, 0,(int)((gamemd::ConvertClass *)(1000)), 0, 0, 0, 0, 0); /*0x53140e*/
   }
   v10 = (int)(GetStringCSF((wchar_t *)(aTxtCopyright),(unsigned int *)((int)g_Str_File_Init_CPP),(const char *)(4930)));
   v11 = (int)(((TextRenderer *)(void *)(22))->GetInstance());

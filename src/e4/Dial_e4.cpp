@@ -277,7 +277,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
     __3_YAXPAX_Z(this); /*0x4a806b*/
-  return this->__pad_0; /*0x4a8075*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x4a8075*/
 
 }
 } // namespace gamemd
@@ -300,7 +300,7 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigne
   this->m_8 = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
     __3_YAXPAX_Z(this); /*0x4a80bb*/
-  return this->__pad_0; /*0x4a80c5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4a80c5*/
 
 }
 } // namespace gamemd

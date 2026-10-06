@@ -48,6 +48,9 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CampaignClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CheckListClass_e4.hpp"  // G42.36 C2027 supply
@@ -239,7 +242,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   sub_48B070(&v117, 0, 0);
   var94 = (int)((gamemd::ObjectClass *)(10));
   v121 = (int *)(0);
-  if ( !aP1 || (**(unsigned char **)&((unsigned int *)(HouseClass_Player))[29924] & 0x20) != 0 || (v8 = aP3) == 0 )
+  if ( !aP1 || (**(unsigned char **)&((unsigned int *)(HouseClass_Player))[29924] & 0x20) != 0 || (v8 = (gamemd::ObjectClass *)(aP3)) == 0 )
   {
     v117 = (IUnknown *)&vt_VectorClass_DamageGroup;
     if ( Block && IDA_BYTE1(v127) )
@@ -247,7 +250,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
     return 1;
   }
   v134 = Math::RoundToInt(*(float *)&aP3[1].spawnStatus * 256.0);
-  bool v106 = aP3 == *(ObjectClass **)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 4012);
+  bool v106 = aP3   ==   (int)((int)(*(ObjectClass **)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 4012)));
   int v108; // [esp+50h] [ebp-D0h]
   IDA_LOWORD(v108) = *(unsigned int *)aP0->__pad_0 / 256;
   IDA_HIWORD(v108) = *(unsigned int *)&aP0->__pad_0[4] / 256;
@@ -711,9 +714,9 @@ LABEL_166:
               if ( (&aP3)[1].isInLogic )
               {
   int v88; // eax
-                if ( aP3 == *(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080)
+                if ( aP3   ==   (int)((int)(*(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080)))
                   || (v88 = Random::Range(
-                              (unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 536),
+                              (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
                               (IUnknown *)1,
                               *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
                       v88 < (int)v120) )
@@ -750,7 +753,7 @@ LABEL_189:
   int v91; // eax
             if ( aP3 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080)
               || (v91 = Random::Range(
-                          (unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 536),
+                          (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
                           (IUnknown *)1,
                           *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
                   v91 < (int)v120) )
@@ -765,7 +768,7 @@ LABEL_189:
   int v93; // eax
             if ( aP3 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080)
               || (v93 = Random::Range(
-                          (unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 536),
+                          (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
                           (IUnknown *)1,
                           *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
                   v93 < (int)v120) )
@@ -789,7 +792,7 @@ LABEL_151:
   int v82; // eax
             if ( aP3 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080)
               || (v82 = Random::Range(
-                          (unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 536),
+                          (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
                           (IUnknown *)1,
                           *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
                   v82 < (int)v120) )
@@ -841,12 +844,12 @@ LABEL_203:
     ((Cell *)((int *)&stru_87C374[13428]))->SetRadar( (int16_t *)((IUnknown *)&v71->field_24));
     Radar::Update((IUnknown *)&stru_87C374[13428], (IUnknown *)&v71->field_24);
     ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget((int)((AbstractClass *)((int)v71)));
-    v95 = (void *)operator new(0x1C8u);
+    v95 = (void **)((void *)operator new(0x1C8u));
     v94 = aP2;
     if ( v95 )
       AnimClass::ctor(
         v95,
-        *(CoordStruct **)(*(unsigned int *)&stru_87C374[44652] + 84),
+        *(CoordStruct **)(*(unsigned int *)&stru_87C374[44652] + 84)(int *)(),
         aP2,
         0,
         (CoordStruct *)1,
@@ -863,7 +866,7 @@ PlaySoundEffectAt( (TechnoClass *)v94, (int)(*(IUnknown **)(*(unsigned int *)&st
     int v97 = 0;
     if ( *(int *)(*(unsigned int *)&stru_87C374[44652] + 104) > 0 )
     {
-      while ( Random::Range((*(unsigned int *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)0x63) >= 15 )
+      while ( Random::Range((*(unsigned int *)&(&HouseClass_Player)[29924] + 536), 0, (IUnknown *)0x63) >= 15 )
       {
         if ( ++v97 >= *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 104) )
           goto LABEL_213;
@@ -877,12 +880,12 @@ PlaySoundEffectAt( (TechnoClass *)v94, (int)(*(IUnknown **)(*(unsigned int *)&st
           0);
     }
 LABEL_213:
-    if ( Random::Range((*(unsigned int *)&HouseClass_Player[29924] + 536), 0, (IUnknown *)0x63) < 25 )
+    if ( Random::Range((*(unsigned int *)&(&HouseClass_Player)[29924] + 536), 0, (IUnknown *)0x63) < 25 )
     {
       int v99 = operator new(0x100u);
       if ( v99 )
       {
-        v100 = ParticleSystemClass::Constructor(
+        v100 = (gamemd::ParticleSystemClass *)(ParticleSystemClass::Constructor()
                  v99,
                  *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 116),
                  (IUnknown *)v94,
@@ -902,7 +905,7 @@ LABEL_213:
   {
     int v101 = operator new(0x100u);
     if ( v101 )
-      v102 = ParticleSystemClass::Constructor(
+      v102 = (gamemd::ParticleSystemClass *)(ParticleSystemClass::Constructor()
                v101,
                (IUnknown *)aP3[1].lastLayer,
                (IUnknown *)v94,

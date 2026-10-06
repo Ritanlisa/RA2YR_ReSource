@@ -11264,7 +11264,8 @@ extern unsigned char stru_8A0390;
 extern unsigned char stru_8A06F8;
 extern unsigned char stru_8A38E0;
 extern unsigned char stru_A80220;
-extern unsigned char stru_A83D50;
+struct stru_A83D50_t { unsigned char __pad_C8[64]; };  // g57w8: til __pad_C8 vocab (raw stru_A83D50.__pad_C8[28] corpus form)
+extern struct stru_A83D50_t stru_A83D50;
 extern unsigned char stru_A8BB1C;
 extern unsigned char stru_A8DA5C;
 extern unsigned char stru_A8DA74;
@@ -11280,7 +11281,8 @@ extern unsigned char stru_AA0400;
 extern unsigned char stru_AA0418;
 extern unsigned char stru_ABBED0;
 extern unsigned char stru_AC1858;
-extern unsigned char stru_AC4B30;
+struct stru_AC4B30_t { unsigned char __pad_EC[66320]; };  // g57w8: til __pad_EC vocab (raw stru_AC4B30.__pad_EC[N] corpus-wide; size = DataGlobal_AC4B30 twin)
+extern struct stru_AC4B30_t stru_AC4B30;
 extern unsigned char stru_AC4C40;
 extern unsigned char stru_B04910;
 extern unsigned char stru_B04978;

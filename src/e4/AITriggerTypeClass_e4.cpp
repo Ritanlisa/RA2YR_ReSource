@@ -56,7 +56,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
     return v11; /*0x41ecaa*/
   while ( *(unsigned int *)(*(unsigned int *)(*((unsigned int *)((char *)&stru_A80220) + v4) + 52) + 188) != ((HouseTypeClass*)&g_INI_Key_Civilian)->Find() ) /*0x41eccc*/
   {
-    if ( ++v4 >= ((char *)&stru_A80220) ) /*0x41ecd6*/
+    if ( ++v4   >=   (int)((int)((*(int *)&stru_A80220) ))) /*0x41ecd6*/
       return 0; /*0x41ece2*/
   }
   v6 = *((unsigned int *)((char *)&stru_A80220) + v4); /*0x41ece5*/
@@ -366,12 +366,12 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   if ( !((INIClass*)/*0x41f5b9*/
           (INIClass *)a2)->GetString(/*0x41f5b9*/ (uint8_t *)aAitriggertypes, (uint8_t *)&this->AITriggerTypeClass_field_0x24, &g_INI_DefaultBuffer, ((unsigned int *)(v46))[0], 512) )
     return 0; /*0x41f5b9*/
-  v4 = strtok(((unsigned int *)(v46))[0], (char *)&::Delimiter); /*0x41f5d3*/
+  v4 = strtok((char *)(((unsigned int *)(v46))[0]), (char *)&::Delimiter); /*0x41f5d3*/
   if ( !v4 ) /*0x41f5df*/
     return 0; /*0x41f5df*/
   strncpy( (char *)(&((unsigned int *)&((unsigned int *)(v46))[0])[8]), (const char *)(v4), 0x30u); 
   LOBYTE(v46[0]) = 0; /*0x41f5fe*/
-  if ( &((unsigned int *)&((unsigned int *)(v46))[0])[8] != (char *)this + 100 ) /*0x41f602*/
+  if ( &((unsigned int *)&((unsigned int *)(v46))[0])[8] != (unsigned int *)this + 100 ) /*0x41f602*/
   {
     qmemcpy( (char *)this + 100, (const void *)(&((unsigned int *)&((unsigned int *)(v46))[0])[8]), 0x30u); /*0x41f60d*/
     *((unsigned char *)this + 148) = ((unsigned int *)(v46))[0]; /*0x41f60f*/
@@ -435,7 +435,7 @@ LABEL_25:
     v10 = v13[Index]; /*0x41f7db*/
     goto LABEL_26; /*0x41f7db*/
   }
-  v14 = ((TypeClass*)(TypeClass *)v46)->FindByName(); /*0x41f7b2*/
+  v14 = (int)(((TypeClass*)(TypeClass *)v46)->FindByName()); /*0x41f7b2*/
   if ( v14 != -1 ) /*0x41f7ba*/
   {
     v10 = *((unsigned int *)dword_A8B21C + v14); /*0x41f7c2*/

@@ -1035,7 +1035,7 @@ LRESULT UI_Draw(HWND hWnd, wchar_t *Source, size_t Count, LPARAM lParam)
   memset( (void *)(&word_AC029C), 0, 0x400u); /*0x5e29b5*/
   wcsncpy( (wchar_t *)(&word_AC029C), (const wchar_t *)(Source), Count); /*0x5e29c2*/
   v5 = (wchar_t *)(wcschr(&word_AC029C, 0xDu)); /*0x5e29ce*/
-  if ( v5 || (v5 = wcschr(&word_AC029C, 0xAu)) != 0 ) /*0x5e29eb*/
+  if ( v5 || (v5 = (wchar_t *)(wcschr(&word_AC029C, 0xAu))) != 0 ) /*0x5e29eb*/
     *v5 = 0; /*0x5e29ed*/
   v11 = SendMessageA( (HWND)(hWnd), 0x49Du, 0, 1); /*0x5e2a0e*/
   v6 = SendMessageA( (HWND)(hWnd), 0x18Eu, 0, 0); /*0x5e2a14*/
@@ -1092,12 +1092,12 @@ bool UI_Connect(HWND hWnd, LONG, LONG, void * a2, void * a3)
   GetWindowRect(hWnd, &Rect); /*0x6231c4*/
   Rect.right -= Rect.left; /*0x6231d8*/
   Rect.bottom -= Rect.top; /*0x6231e5*/
-  if ( a2 == -1 ) /*0x6231e9*/
+  if ( a2  ==  (void *)(-1) ) /*0x6231e9*/
     v5 = Rect.left - Point.x; /*0x6231eb*/
   else
     v5 = (unsigned int)a2; /*0x6231f1*/
   Rect.left = v5; /*0x6231f7*/
-  if ( a3 == -1 ) /*0x6231fe*/
+  if ( a3  ==  (void *)(-1) ) /*0x6231fe*/
     v6 = Rect.top - Point.y; /*0x623200*/
   else
     v6 = (unsigned int)a3; /*0x623206*/
@@ -1298,7 +1298,7 @@ int sub_642E80(int * a1, unsigned int * a2)
   unsigned char v8[30]; // [esp+14h] [ebp-20h] BYREF
   int16_t v9; // [esp+32h] [ebp-2h]
 
-  Instance = TextRenderer::GetInstance(); /*0x642e97*/
+  Instance = (int)(TextRenderer::GetInstance()); /*0x642e97*/
   v4 = (unsigned short *)(v8); /*0x642e99*/
   v5 = 15; /*0x642e9d*/
   do /*0x642eb6*/
@@ -1330,7 +1330,7 @@ int * E4Recv_643670::UI_Render_643670(int a5, int a1, size_t a2, int a3, int a4)
   unsigned char v13[30]; // [esp+24h] [ebp-20h] BYREF
   int16_t v14; // [esp+42h] [ebp-2h]
 
-  Instance = TextRenderer::GetInstance(); /*0x643680*/
+  Instance = (int)(TextRenderer::GetInstance()); /*0x643680*/
   v6 = (unsigned short *)(v13); /*0x643682*/
   v7 = 15; /*0x643686*/
   do /*0x64369f*/
@@ -1405,7 +1405,7 @@ int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
       v13 = (unsigned short *)v15; /*0x6ac57a*/
       ((Text *)((unsigned int *)v6))->Layout( (unsigned short *)((uint16_t *)v15), (int *)(&v17), (unsigned int *)(&v16), a4); /*0x6ac584*/
 // 0x434cd0
-      return Font::Print( (AbstractClass *)(v6), (AbstractClass *)(DSurface_Sidebar), (AbstractClass *)(v13), v20, *(unsigned int *)(v6 + 28) - v16 + v5, (AbstractClass *)(a4), 0, 0, 0, 0); /*0x6ac5b2*/
+      return Font::Print( (AbstractClass *)(v6), (AbstractClass *)(DSurface_Sidebar), (AbstractClass *)(v13), v20,(gamemd::AbstractClass *)( *(unsigned int *)(v6 + 28) - v16 + v5), (AbstractClass *)(a4), 0, 0, 0, 0); /*0x6ac5b2*/
     }
   }
   return result; /*0x6ac5bb*/
@@ -1667,9 +1667,9 @@ void UI_Draw_72E730(ConvertClass * aP0, int * a1, int a3, int aP2, int a5)
   v8 = *(unsigned int *)dword_B0FC1C; /*0x72e79d*/
   v9 = *((unsigned int *)dword_B0FC1C + 1); /*0x72e7a4*/
   if ( g_DisplayWidth == 640 ) /*0x72e7b2*/
-    DrawToSurfaceSHP( (int)(aP0), a3, (ConvertClass *)(aP2), 0, (ConvertClass *)(&v8), (ConvertClass *)(v10), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e7df*/
+    DrawToSurfaceSHP( (int)(aP0), a3, (ConvertClass *)(aP2), 0, (ConvertClass *)(&v8), (ConvertClass *)(v10),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e7df*/
   else
-    DrawToSurfaceSHP( (int)(aP0), a3, (ConvertClass *)(a5), 0, (ConvertClass *)(&v8), (ConvertClass *)(v10), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e815*/
+    DrawToSurfaceSHP( (int)(aP0), a3, (ConvertClass *)(a5), 0, (ConvertClass *)(&v8), (ConvertClass *)(v10),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e815*/
 }
 } // namespace gamemd
 
@@ -1684,7 +1684,7 @@ void UI_Draw_72E860(int a1, ConvertClass * a2)
   v3 = 0; /*0x72e870*/
   v2 = *(unsigned int *)dword_B0FC14; /*0x72e877*/
   v3 = *((unsigned int *)dword_B0FC14 + 1); /*0x72e87e*/
-  DrawToSurfaceSHP( a1, dword_B0FBCC, (ConvertClass *)((int)dword_B0F9DC), 0, (ConvertClass *)(&v2), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e8a8*/
+  DrawToSurfaceSHP( a1, dword_B0FBCC, (ConvertClass *)((int)dword_B0F9DC), 0, (ConvertClass *)(&v2), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e8a8*/
 }
 } // namespace gamemd
 
@@ -1699,7 +1699,7 @@ void UI_Draw_72E8C0(int a1, ConvertClass * a2)
   v3 = 0; /*0x72e8d0*/
   v2 = *(unsigned int *)dword_B0FC20; /*0x72e8d7*/
   v3 = *((unsigned int *)dword_B0FC20 + 1); /*0x72e8de*/
-  DrawToSurfaceSHP( a1, dword_B0FBCC, (ConvertClass *)((int)dword_B0FAF8), 1u, (ConvertClass *)(&v2), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e909*/
+  DrawToSurfaceSHP( a1, dword_B0FBCC, (ConvertClass *)((int)dword_B0FAF8), 1u, (ConvertClass *)(&v2), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e909*/
 }
 } // namespace gamemd
 
@@ -1718,7 +1718,7 @@ void UI_Draw_72E920(int a1, ConvertClass * a2)
   v4 = *((unsigned int *)dword_B0FC1C + 1); /*0x72e93d*/
   if ( g_DisplayWidth >= 800 ) /*0x72e94b*/
     v3 = v2 + 80; /*0x72e952*/
-  DrawToSurfaceSHP( a1, dword_B0FBA8, (ConvertClass *)((int)dword_B0FB00), 0, (ConvertClass *)(&v3), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e97d*/
+  DrawToSurfaceSHP( a1, dword_B0FBA8, (ConvertClass *)((int)dword_B0FB00), 0, (ConvertClass *)(&v3), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72e97d*/
 }
 } // namespace gamemd
 
@@ -1945,7 +1945,7 @@ bool sub_7930A0()
   if ( !&byte_B777B0 ) /*0x7930e9*/
     return 0; /*0x7930ed*/
   v3 = ((String *)((char **)&dword_B73E40))->GetOrEmpty_Alt(); /*0x7930f6*/
-  return _strcmpi(unk_B777D4, v3) == 0; /*0x7930dc*/
+  return _strcmpi((const char *)(unk_B777D4), v3) == 0; /*0x7930dc*/
 }
 } // namespace gamemd
 
@@ -1964,7 +1964,7 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
   while ( 1 ) /*0x793a38*/
   {
     v6 = ToWideStringChar(*v5); /*0x793a38*/
-    result = _strcmpi(v6, a1); /*0x793a3e*/
+    result = _strcmpi(v6,(const char *)( a1)); /*0x793a3e*/
     if ( !result ) /*0x793a48*/
       break; /*0x793a48*/
     ++v5; /*0x793a4a*/
@@ -1987,7 +1987,7 @@ void sub_7A2750()
   wchar_t *StringCSF; // eax
   void *v4; // [esp+8h] [ebp-4h] BYREF
 
-  Current = Dialog::GetCurrent(); /*0x7a2753*/
+  Current = (HWND)(Dialog::GetCurrent()); /*0x7a2753*/
   DlgItem = GetDlgItem(Current, 1439); /*0x7a2768*/
   ((String *)((char **)&v4))->Assign(0); /*0x7a276c*/
   v2 = SendMultiplayerStartSignal_Start_77EBA0((const char **)&v4) != 1; /*0x7a2781*/
@@ -2023,8 +2023,8 @@ wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
   v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 2); /*0x7b841b*/
   v7 = (char *)*a2; /*0x7b841d*/
   if ( !*a2 ) /*0x7b841d*/
-    v7 = &g_INI_DefaultBuffer; /*0x7b8426*/
-  BinkMovieClass::OpenFile((uint8_t *)v7, v6, v5); /*0x7b8430*/
+    v7 = (char *)(&g_INI_DefaultBuffer); /*0x7b8426*/
+  BinkMovieClass::OpenFile((LPCSTR)((uint8_t *)v7),(LPOFSTRUCT)( v6), v5); /*0x7b8430*/
   if ( v6 ) /*0x7b8437*/
     v8 = wcslen(v6) + 1; /*0x7b8442*/
   else
@@ -2052,7 +2052,7 @@ wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
 namespace gamemd {
 void sub_7BA2C0()
 {
-  if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba2d6*/
+  if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7ba2d6*/
     Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7ba2e7 G57c1: IDA 0x7ba2e7 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
 }
 } // namespace gamemd

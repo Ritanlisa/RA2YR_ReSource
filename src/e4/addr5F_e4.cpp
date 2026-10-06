@@ -149,7 +149,7 @@ char HandlePlayerDisconnection(int a1, int a2)
               goto LABEL_20; /*0x5f02ba*/
           }
           RA2_OPDEL(*(void **)(dword_A8DA78 + 4 * v7)); /*0x5f02c7*/
-          v8 = (*(int ((**))(int *, int))(stru_A8DA74 + 16))(&stru_A8DA74, dword_A8DA78 + 4 * v7); /*0x5f02e3*/
+          v8 = (*(int ((int *)((**)))(int *, int))(stru_A8DA74 + 16))(&stru_A8DA74, dword_A8DA78 + 4 * v7); /*0x5f02e3*/
           if ( v8 != -1 && v8 < dword_A8DA84 && v8 < --dword_A8DA84 ) /*0x5f02fe*/
           {
             do /*0x5f0316*/
@@ -217,7 +217,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   if ( !MessageBox ) /*0x5f2d6d*/
     return (gamemd::AbstractClass **)(3); /*0x5f3155*/
   ((Dialog *)(MessageBox))->Show(); /*0x5f2d76*/
-(*(void (**)(HWND, int (*)(), int))(*(unsigned int *)g_ClipboardBuffer + 36))( /*0x5f2d88*/ g_ClipboardBuffer, PumpEventLoop, (int)(a2));
+(*(void ((HWND)(**))(HWND, int (*)(), int))(*(unsigned int *)g_ClipboardBuffer + 36))( /*0x5f2d88*/ g_ClipboardBuffer, PumpEventLoop, (int)(a2));
 
 
 
@@ -470,7 +470,7 @@ int FindBuildingByTiberiumType(int aP0)
   int v6; // esi
   const char *v8[17]; // [esp-34h] [ebp-48h] BYREF
 
-  if ( aP0 == (IUnknown *)(-1) ) /*0x5fdd28*/
+  if ( aP0  ==  (int)((int)(-1) )) /*0x5fdd28*/
     return -1; /*0x5fdd28*/
   v1 = *((unsigned int *)(unsigned int)(g_BuildingTypeClass_Array)+ aP0); /*0x5fdd33*/
   v1 = v1; /*0x5fdd36*/
@@ -491,10 +491,10 @@ int FindBuildingByTiberiumType(int aP0)
     {
       v4 = *(unsigned int **)v3; /*0x5fdd5a*/
       v5 = *(unsigned int *)(*(unsigned int *))(v3->q0E0 + 660);  /*0x5fdd62*/
-      if ( aP0 >= (IUnknown *)(v5) && aP0 < (IUnknown *)(v5) + v4[58] ) /*0x5fdd76*/
+      if ( aP0   >=   (int)((int)((IUnknown *)(v5) &(int)(&aP0)  <   (int)((IUnknown *)(v5) + v4[58] )))) /*0x5fdd76*/
         break; /*0x5fdd76*/
       v6 = v4[58]; /*0x5fdd78*/
-      if ( aP0 >= (IUnknown *)(v6) + (IUnknown *)(v5) && aP0 < (IUnknown *)(v5) + v6 + v4[59] ) /*0x5fdd91*/
+      if ( aP0 >= (IUnknown *)(v6) + (IUnknown *)(v5) &(int)(&aP0)  <   (int)((IUnknown *)(v5) + v6 + v4[59] )) /*0x5fdd91*/
         break; /*0x5fdd91*/
       ++v2; /*0x5fdd98*/
       v3 += 4; /*0x5fdd99*/
@@ -1403,7 +1403,7 @@ int sub_5F6FF0()
   dword_AC1418 = (int)&DynamicVectorClass_ObjectTypeClass___vftable; /*0x5f700d*/
   dword_AC142C = 10; /*0x5f7017*/
   dword_AC1428 = 0; /*0x5f7021*/
-  return atexit(sub_5F7030); /*0x5f702c*/
+  return atexit((void (__cdecl *)(void))(sub_5F7030)); /*0x5f702c*/
 }
 } // namespace gamemd
 
@@ -1455,7 +1455,7 @@ int TheaterObjectTypeClassSpecificID(char *a1, int a2)
     if ( ((unsigned char)result == 103 || (unsigned char)result == 110 || (unsigned char)result == 99 || (unsigned char)result == 121) /*0x5f96ea*/
       && (v3 == 97 || v3 == 116) )
     {
-      (&a1)[1] = (&byte_7E1BCE)[112 * a2]; /*0x5f96fe*/
+      (&a1)[1] = (char *)((&byte_7E1BCE)[112 * a2]); /*0x5f96fe*/
       return 112 * a2; /*0x5f96f5*/
     }
   }
@@ -2103,7 +2103,7 @@ int sub_5FF1D0()
   dword_AC1678 = (int)&DynamicVectorClass_SpotLightClass___vftable; /*0x5ff1ed*/
   dword_AC168C = 10; /*0x5ff1f7*/
   dword_AC1688 = 0; /*0x5ff201*/
-  return atexit(sub_5FF210); /*0x5ff20c*/
+  return atexit((void (__cdecl *)(void))(sub_5FF210)); /*0x5ff20c*/
 }
 } // namespace gamemd
 

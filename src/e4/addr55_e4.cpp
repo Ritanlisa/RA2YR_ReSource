@@ -48,6 +48,7 @@
 #include "e4/classes/ListClass_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/SaveLoadDialog_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CopyProtection_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Tooltip_e4.hpp"  // G42.36 C2027 supply
@@ -1321,7 +1322,7 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
   {
     v6 = *(unsigned int *)this->__pad_0; /*0x557b53*/
     v7 = (*(int (**)(char *))(*((unsigned int *)this + 70) + 144))((char *)this + 280); /*0x557b55*/
-    return (*(char (**)(ListClass *, int))(v6 + 192))(this, v7); /*0x557b5e*/
+    return (gamemd::ControlClass **)((*(char (**)(ListClass *, int))(v6 + 192))(this, v7)); /*0x557b5e*/
   }
   return (gamemd::ControlClass **)(result); /*0x557b64*/
 
@@ -1396,7 +1397,7 @@ LABEL_9:
   {
     vtable0 = (&dword_A8B230)[129].vtable0; /*0x55b7cc*/
     vtable2 = (char *)(&dword_A8B230)[129].vtable2; /*0x55b7d2*/
-    v10 = dword_A8B230 + 129; /*0x55b7d8*/
+    v10 = (gamemd::AbstractClass *)(dword_A8B230 + 129); /*0x55b7d8*/
     if ( vtable0 != (unsigned char *)-1 ) /*0x55b7e1*/
     {
       if ( (unsigned char *)v3 - vtable0 >= (int)vtable2 ) /*0x55b7e9*/
@@ -1502,17 +1503,17 @@ void CompressLCWBuffer(Pipe * aP0, int edx0, unsigned char * a2, unsigned int * 
 
   v5 = (uint8_t *)(aP0); /*0x55bc07*/
   v6 = (uint8_t *)(a2); /*0x55bc0d*/
-  v65 = &aP0[edx0]; /*0x55bc17*/
+  v65 = (uint8_t *)(&aP0[edx0]); /*0x55bc17*/
   v7 = *aP0 ^ (32 * (aP0[1] ^ (32 * aP0[2]))); /*0x55bc33*/
   v8 = a5; /*0x55bc35*/
   v64 = (uint8_t *)(aP0); /*0x55bc3b*/
   *(unsigned int *)(a5 + 4 * (((40799 * v7) >> 5) & 0x3FFF)) = (unsigned int)aP0; /*0x55bc58*/
   v9 = (v7 >> 5) ^ (*v5 >> 5) ^ (v5[3] << 10); /*0x55bc6d*/
-  *(unsigned int *)(a5 + 4 * (((40799 * v9) >> 5) & 0x3FFF)) = v5 + 1; /*0x55bc89*/
+  *(unsigned int *)(a5 + 4 * (((40799 * v9) >> 5) & 0x3FFF)) = (unsigned int)(v5 + 1); /*0x55bc89*/
   v10 = (v9 >> 5) ^ (v5[1] >> 5) ^ (v5[4] << 10); /*0x55bc9e*/
-  *(unsigned int *)(a5 + 4 * (((40799 * v10) >> 5) & 0x3FFF)) = v5 + 2; /*0x55bcbb*/
+  *(unsigned int *)(a5 + 4 * (((40799 * v10) >> 5) & 0x3FFF)) = (unsigned int)(v5 + 2); /*0x55bcbb*/
   v11 = (v10 >> 5) ^ (v5[2] >> 5) ^ (v5[5] << 10); /*0x55bcce*/
-  *(unsigned int *)(a5 + 4 * (((40799 * v11) >> 5) & 0x3FFF)) = v5 + 3; /*0x55bce7*/
+  *(unsigned int *)(a5 + 4 * (((40799 * v11) >> 5) & 0x3FFF)) = (unsigned int)(v5 + 3); /*0x55bce7*/
   for ( i = v5 + 4; ; v11 = *i ^ (32 * (i[1] ^ (32 * i[2]))) ) /*0x55bcea*/
   {
     while ( 1 ) /*0x55bcfd*/
@@ -1645,7 +1646,7 @@ void CompressLCWBuffer(Pipe * aP0, int edx0, unsigned char * a2, unsigned int * 
               v41 = *i; /*0x55be87*/
               v42 = *v40; /*0x55be89*/
               ++i; /*0x55be8b*/
-              v43 = v40 + 1; /*0x55be8c*/
+              v43 = (unsigned char *)(v40 + 1); /*0x55be8c*/
               if ( v42 == v41 ) /*0x55be8f*/
               {
                 for ( ; i < v65; ++i ) /*0x55be9b*/
@@ -1833,7 +1834,7 @@ int DecodeBlockLCW(AbstractClass * aP0, int aP1, unsigned char *a2, unsigned int
   v5 = (uint8_t *)(aP0); /*0x55c0e5*/
   *a3 = 0; /*0x55c0e8*/
   v6 = a2; /*0x55c0ef*/
-  v7 = &aP0[aP1]; /*0x55c0f3*/
+  v7 = (uint8_t *)(&aP0[aP1]); /*0x55c0f3*/
   if ( *aP0 > 0x11u ) /*0x55c0fc*/
   {
     v8 = *aP0 - 17; /*0x55c104*/
@@ -2079,7 +2080,7 @@ AbstractClass * * Game_Frame_Check()
           ((Tooltip *)(v4))->Enable(byte_A8EB80); /*0x55d16d*/
   LABEL_52:
           --dword_A8DAB4; /*0x55d341*/
-          return byte_A8E9A0 == 0; /*0x55d341*/
+          return (gamemd::AbstractClass **)(byte_A8E9A0 == 0); /*0x55d341*/
         }
       }
     }
@@ -2139,7 +2140,7 @@ AbstractClass * * Game_Frame_Check()
     }
     goto LABEL_52; /*0x55d24b*/
   }
-  return byte_A8E9A0 == 0; /*0x55d351*/
+  return (gamemd::AbstractClass **)(byte_A8E9A0 == 0); /*0x55d351*/
 }
 }
 // 0x55D360
@@ -2291,7 +2292,7 @@ void GameFrameLoop()
     }
     Timer::DisableHighPrecision(); /*0x55d568*/
     v5 = (wchar_t *)dword_887330; /*0x55d572*/
-    if ( g_TacticalState != -1 ) /*0x55d57b*/
+    if ( g_TacticalState  !=  (void *)(-1) ) /*0x55d57b*/
     {
       v6 = timeGetTime() - g_TacticalState; /*0x55d587*/
       if ( v6 >= (int)v5 ) /*0x55d58f*/
@@ -2323,7 +2324,7 @@ void GameFrameLoop()
           if ( v8 >= v7 / 4 ) /*0x55d604*/
           {
             v11 = dword_887330; /*0x55d60b*/
-            if ( g_TacticalState != -1 ) /*0x55d616*/
+            if ( g_TacticalState  !=  (void *)(-1) ) /*0x55d616*/
             {
               v12 = timeGetTime() - g_TacticalState; /*0x55d622*/
               if ( v12 >= v11 ) /*0x55d62a*/
@@ -2342,7 +2343,7 @@ void GameFrameLoop()
           if ( v8 >= v7 / 2 ) /*0x55d67f*/
           {
             v13 = dword_887330; /*0x55d686*/
-            if ( g_TacticalState != -1 ) /*0x55d68e*/
+            if ( g_TacticalState  !=  (void *)(-1) ) /*0x55d68e*/
             {
               v14 = timeGetTime() - g_TacticalState; /*0x55d69a*/
               if ( v14 >= v13 ) /*0x55d6a2*/
@@ -2361,7 +2362,7 @@ void GameFrameLoop()
           if ( v8 >= 3 * v7 / 4 ) /*0x55d6f7*/
           {
             v15 = dword_887330; /*0x55d702*/
-            if ( g_TacticalState != -1 ) /*0x55d70a*/
+            if ( g_TacticalState  !=  (void *)(-1) ) /*0x55d70a*/
             {
               v16 = timeGetTime() - g_TacticalState; /*0x55d716*/
               if ( v16 >= v15 ) /*0x55d71e*/

@@ -168,7 +168,7 @@ int Vector::RemoveAt(int aP1)
 
   Vector_field_0x10 = (char *)((int)((char *)this->Vector_field_0x10));
   result = (gamemd::AbstractClass *)(aP1); /*0x45ae13*/
-  if ( aP1 >= (gamemd::AbstractClass *)(int)Vector_field_0x10 ) /*0x45ae19*/
+  if ( aP1 >= (int)(int)Vector_field_0x10 ) /*0x45ae19*/
   {
     LOBYTE(result) = 0; /*0x45ae3c*/
   }
@@ -176,7 +176,7 @@ int Vector::RemoveAt(int aP1)
   {
     v4 = (char *)((unsigned int)(Vector_field_0x10 - 1));
     this->Vector_field_0x10 = (unsigned int)(v4);
-    if ( aP1 < (gamemd::AbstractClass *)(int)v4 ) /*0x45ae21*/
+    if ( aP1 < (int)(int)v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
       {
@@ -251,7 +251,7 @@ namespace gamemd {
 BOOL Vector::HasCapacity()
 {
 
-  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
+  return this->q008 < (void *)(*(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16)); /*0x76f0bd*/
 
 }
 } // namespace gamemd

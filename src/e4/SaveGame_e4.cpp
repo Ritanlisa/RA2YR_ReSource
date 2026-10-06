@@ -18,6 +18,7 @@
 #include "e4/classes/IStream_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4391C0
@@ -580,7 +581,7 @@ int SaveGame::SaveIteratedData(int a2)
 
   v2 = (int)((char *)(a2)); /*0x413853*/
   v3 = 0; /*0x413858*/
-  for ( i = &this->__pad_0[4]; ; i += 24 ) /*0x41385a*/
+  for ( i = (char *)(&this->__pad_0[4]); ; i += 24 ) /*0x41385a*/
   {
     v5 =(int)(char *)(int)(char *)*(unsigned int *)v2; /*0x413860*/
     a2 = *((unsigned int *)i + 3); /*0x41386c*/

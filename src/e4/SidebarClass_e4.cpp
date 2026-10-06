@@ -405,7 +405,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0,
         0);
-      v21 = (unsigned int)(void *)((int)(v4 + *((int16_t *)dword_B0B470 + 2)));
+      v21 = (void *)((unsigned int)(void *)((int)(v4 + *((int16_t *)dword_B0B470 + 2))));
       v20 = 0; /*0x6a6e6b*/
       DrawToSurfaceSHP( /*0x6a6e6f*/
         (int)DSurface_Sidebar,

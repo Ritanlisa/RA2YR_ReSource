@@ -74,7 +74,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a1a*/
   v5 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a2)); /*0x4d0a2a*/
   PlacementRect = ((BuildingClass *)v5)->GetPlacementRect( v25); /*0x4d0a3b*/
-  StartCoords = ((gamemd::House *)((gamemd::House*)v5))->GetStartCoords(v26); /*0x4d0a3d*/
+  StartCoords = (int *)(((gamemd::House *)((gamemd::House*)v5))->GetStartCoords(v26)); /*0x4d0a3d*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4d0a4e*/
   {
     v8 = *PlacementRect; /*0x4d0adf*/
@@ -525,7 +525,7 @@ LABEL_47:
     --v46; /*0x4d1306*/
   }
   while ( !v43 ); /*0x4d130a*/
-  Cell::CreateCrater(*((unsigned int *)this + 16), *((unsigned int *)this + 17), *((unsigned int *)this + 18), *((unsigned int *)this + 19), 0); /*0x4d1338*/
+  Cell::CreateCrater((void *)(*((unsigned int *)this + 16)),(void *)( *((unsigned int *)this + 17)),(void *)( *((unsigned int *)this + 18)), *((unsigned int *)this + 19), 0); /*0x4d1338*/
   *((unsigned int *)this + 16) += (&g_TacticalClass_Instance)[44].__tail_0; /*0x4d134d*/
   *((unsigned int *)this + 17) += (&g_TacticalClass_Instance)[45].__tail_0; /*0x4d135f*/
 return (gamemd::AbstractClass *)this; /*0x4d1364*/
@@ -826,7 +826,7 @@ unsigned int * FoggedObjectClass::CheckVisibility(unsigned int * v3)
 
   LOWORD(v3) = this->u32_34 / 256; /*0x4d28e0*/
   HIWORD(v3) = this->u32_38 / 256; /*0x4d28f4*/
-  *v3 = v3; /*0x4d2901*/
+  *v3 = (unsigned int)(v3); /*0x4d2901*/
 
 }
 } // namespace gamemd
@@ -1124,7 +1124,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
   *(unsigned int *)&this->__pad_5[3] = 0; /*0x4d2d91*/
   if ( (a2 & 1) != 0 ) /*0x4d2d98*/
     __3_YAXPAX_Z(this); /*0x4d2d9b*/
-  return this->__pad_0; /*0x4d2da5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4d2da5*/
 
 }
 }  // G42.18c ns repair
@@ -1349,7 +1349,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
     (*(void (**)(FoggedObjectClass *))((char *)this->vtable1 + 12))((FoggedObjectClass *)this); /*0x4e078e*/
   }
   v7 =(int)this->vtable2; /*0x4e0791*/
-  if ( v7 < this->uniqueId ) /*0x4e0799*/
+  if ( v7   <   (int)((int)(this->uniqueId ))) /*0x4e0799*/
     this->uniqueId =(void *)v7; /*0x4e079b*/
   return 1; /*0x4e079e*/
 
@@ -1374,7 +1374,7 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
   this->m_8 = 0; /*0x4e0d11*/
   if ( (a2 & 1) != 0 ) /*0x4e0d18*/
     __3_YAXPAX_Z(this); /*0x4e0d1b*/
-  return this->__pad_0; /*0x4e0d25*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x4e0d25*/
 
 }
 } // namespace gamemd

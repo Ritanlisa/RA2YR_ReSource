@@ -157,7 +157,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     return 0; /*0x48bfcd*/
   }
   qmemcpy( (void *)(*((unsigned int *)this + 8) + 14), (const void *)(aP1), (size_t)aP2); /*0x48bfe5*/
-  if ( !ConnectionClass::queueSendPacket(*((unsigned int *)this + 8), aP2 + 14, 0, 0, 0) ) /*0x48c006*/
+  if ( !ConnectionClass::queueSendPacket((const void *)(*((unsigned int *)this + 8)),(int)( aP2 + 14), 0, 0, 0) ) /*0x48c006*/
     return 0; /*0x48c006*/
   if ( aP3 ) /*0x48c00e*/
     ++*((unsigned int *)this + 16); /*0x48c015*/

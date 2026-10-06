@@ -44,6 +44,8 @@ struct BaseClass
     uint8_t         unknown54[32];    // +0x2C
     HouseClass*     owner;            // +0x4C
     unsigned int m_10;  // 0x10
+    unsigned char *m_1;  // G57w8 raw-vocab (0x42F490 &this->m_1[3])
+    int m_8;  // G57w8 raw-vocab (0x42F49B this->m_8)
     unsigned char __pad_0;  // 0x0
     int Count;  // 0x22
     unsigned int u32_52;  // 0x52

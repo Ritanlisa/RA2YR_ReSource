@@ -176,7 +176,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
     goto LABEL_26; /*0x5ca868*/
   }
   v6 = *(unsigned int *)(((unsigned int *)(dword_A8DA78))[v3] + 111); /*0x5ca876*/
-  if ( v6 < 0 || v6 >= ((char *)&stru_A80220) ) /*0x5ca887*/
+  if ( v6 < 0 || v6  >=  (int)((*(int *)&stru_A80220) )) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/
     *(unsigned int *)v14 = (unsigned int)(&vt_VectorClass); /*0x5ca984*/
@@ -199,7 +199,7 @@ LABEL_26:
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   ((HouseClass *)(v7))->SetMapSeed(v8); /*0x5ca8e8*/
-  for ( i = 0; i < ((char *)&stru_A80220); ++i ) /*0x5ca8f6*/
+  for ( i = 0; i  <  (int)((*(int *)&stru_A80220)); ++i ) /*0x5ca8f6*/
   {
     v10 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + i); /*0x5ca8fe*/
     if ( !*(unsigned char *)(v10->relatedTagsCapacity + 422) && v10 != v7 ) /*0x5ca910*/

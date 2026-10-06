@@ -83,7 +83,7 @@ int CampaignClass::LoadFromINIList()
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x46ce48*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)( /*0x46ce48*/)    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x46ce48*/
                                          this->__pad_0,
                                          (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
@@ -333,7 +333,7 @@ LABEL_47:
   ((Vector *)((int)v34))->Clear((int)((Vector *)((int)v34))); /*0x49cab9*/
   *(unsigned int *)v33.CDFileClass = (unsigned int)(&off_7E1668); /*0x49cac5*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v33))->Dtor(); /*0x49cacc*/
-  LOBYTE((&this->scenario)[17]) = (gamemd::AbstractClass **)(1); /*0x49cad2*/
+  LOBYTE((&this->scenario)[17]) = (unsigned char)((gamemd::AbstractClass **)(1)); /*0x49cad2*/
   return (gamemd::AbstractClass **)(1); /*0x49c618*/
 
 }

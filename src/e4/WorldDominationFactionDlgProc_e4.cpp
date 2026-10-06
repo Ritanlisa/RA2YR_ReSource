@@ -39,7 +39,7 @@ int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
       v5 = 3; /*0x7af603*/
       ((unsigned int *)this)[0] = ((unsigned int *)this)[0]; /*0x7af608*/
     }
-    if ( ((unsigned int *)this)[0] != (void *)v5 ) /*0x7af61b*/
+    if ( ((unsigned int *)this)[0]  !=  (unsigned int)((unsigned int)v5 )) /*0x7af61b*/
     {
       ((unsigned int *)this)[0] = (unsigned int)((void *)v5); /*0x7af626*/
       return InvalidateRect(hWnd, 0, 0); /*0x7af629*/

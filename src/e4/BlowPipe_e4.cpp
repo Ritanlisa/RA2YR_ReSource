@@ -635,7 +635,7 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x63edc1*/
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
     __3_YAXPAX_Z(this); /*0x63edcb*/
-  return this->__pad_0; /*0x63edd5*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x63edd5*/
 
 }
 } // namespace gamemd
@@ -658,7 +658,7 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x63ee11*/
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
     __3_YAXPAX_Z(this); /*0x63ee1b*/
-  return this->__pad_0; /*0x63ee25*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x63ee25*/
 
 }
 } // namespace gamemd
@@ -681,7 +681,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x63ee61*/
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
     __3_YAXPAX_Z(this); /*0x63ee6b*/
-  return this->__pad_0; /*0x63ee75*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x63ee75*/
 
 }
 } // namespace gamemd
@@ -704,7 +704,7 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x63eeb1*/
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
     __3_YAXPAX_Z(this); /*0x63eebb*/
-  return this->__pad_0; /*0x63eec5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x63eec5*/
 
 }
 } // namespace gamemd
@@ -727,7 +727,7 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x63ef51*/
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
     __3_YAXPAX_Z(this); /*0x63ef5b*/
-  return this->__pad_0; /*0x63ef65*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x63ef65*/
 
 }
 } // namespace gamemd

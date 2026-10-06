@@ -1193,7 +1193,7 @@ int sub_777E00()
   dword_B7356C = 0; /*0x777e1a*/
   word_B730EC = 0; /*0x777e1f*/
   if ( dword_B7355C ) /*0x777e25*/
-    return ImmNotifyIME(dword_B7355C, 0x15u, 4u, 0); /*0x777e2d*/
+    return ImmNotifyIME((HIMC)(dword_B7355C), 0x15u, 4u, 0); /*0x777e2d*/
   return result; /*0x777e32*/
 }
 }
@@ -1644,7 +1644,7 @@ void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5, void 
   ModifyWorldTransform(hdc, 0, 1u); /*0x7760d1*/
   SetViewportOrgEx(hdc, 0, 0, 0); /*0x7760db*/
   SetWindowOrgEx(hdc, 0, 0, 0); /*0x7760e5*/
-  pt.x = a3; /*0x776101*/
+  pt.x = (LONG)(a3); /*0x776101*/
   pt.y = a4; /*0x776105*/
   DPtoLP(hdc, &pt, 1); /*0x776109*/
   memset( (void *)(&lf.lfWidth), 0, 12); /*0x77610f*/
@@ -1928,7 +1928,7 @@ int sub_6D9A50(int a1, int a2, int a3, int a4)
         v8 = dword_886FA4 + v6[1]; /*0x6d9ac4*/
         if ( a1 < v6[2] + v7 && a2 < v6[3] + v8 && a1 + a3 > v7 && a4 + a2 > v8 ) /*0x6d9af2*/
         {
-          Cell::CreateCrater(*v6, v6[1], v6[2], v6[3], 0); /*0x6d9b15*/
+          Cell::CreateCrater((void *)(*v6),(void *)( v6[1]),(void *)( v6[2]), v6[3], 0); /*0x6d9b15*/
           v5[128] = 0; /*0x6d9b1a*/
         }
       }

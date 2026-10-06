@@ -115,7 +115,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
 
   v1 = (gamemd::ObjectClass *)(dword_A8DA8C); /*0x46f8f5*/
   v14 = (gamemd::ObjectClass *)(dword_A8DA8C); /*0x46f906*/
-  if ( dword_A8DA8C != (ObjectClass *)-1 ) /*0x46f90a*/
+  if ( dword_A8DA8C  !=  (unsigned int)((unsigned int))-1 ) /*0x46f90a*/
   {
     ResourceIDCSF = GetResourceIDCSF(dword_A8DA8C); /*0x46f90e*/
     v4 = (SessionClass *)(&dword_A8DA90)[(unsigned int)v1]; /*0x46f913*/
@@ -618,7 +618,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           switch ( v15 ) /*0x6ae604*/
           {
             case -1: /*0x6ae604*/
-              v16 = (wchar_t *)GetStringCSF((wchar_t *)(aSttPlayernone),(unsigned int *)((int)g_Str_File_Skirmish_cpp), 135); /*0x6ae617*/
+              v16 = (wchar_t *)GetStringCSF((wchar_t *)(aSttPlayernone),(unsigned int *)((int)g_Str_File_Skirmish_cpp),(const char *)( 135)); /*0x6ae617*/
               ((WideString *)v16)->Assign_Alt(); /*0x6ae61f*/
               return (gamemd::ReferenceCounted **)(1); /*0x6ae62d*/
             case 2: /*0x6ae604*/
@@ -988,7 +988,7 @@ LABEL_44:
   SetDialogPlayerName((HWND)hWnd, (int)v28); /*0x6aec86*/
   ((Dialog*)(Dialog *)hWnd)->ShowPlayerName(); /*0x6aec8d*/
   PtrVector::Destroy((HWND)(&stru_A8DA74)); /*0x6aec97*/
-  v36 = GetDlgItem; /*0x6aecad*/
+  v36 = (HWND (__cdecl *)(HWND,int))(GetDlgItem); /*0x6aecad*/
   *(unsigned int *)&stru_A8B250.__pad_0[24] = dword_A8B3CC; /*0x6aecb9*/
   *(unsigned int *)&stru_A8B250.__pad_0[12] = dword_A8B3D0; /*0x6aecbf*/
   *(unsigned int *)&stru_A8B250.__pad_0[32] = dword_A8B3D4; /*0x6aecc5*/
@@ -999,7 +999,7 @@ LABEL_44:
     v39 = 6 - *(unsigned int *)&stru_A8B250.__pad_0[24]; /*0x6aecea*/
     SendMessageA( (HWND)(v37), 0x406u, 1u, 393216); /*0x6aecec*/
     SendMessageA( (HWND)(v38), 0x405u, 1u, (LPARAM)((LPARAM)(v39))); /*0x6aecf7*/
-    v36 = GetDlgItem; /*0x6aecf9*/
+    v36 = (HWND (__cdecl *)(HWND,int))(GetDlgItem); /*0x6aecf9*/
   }
   v40 = v36((HWND)hWnd, 1297); /*0x6aed07*/
   if ( v40 ) /*0x6aed0b*/

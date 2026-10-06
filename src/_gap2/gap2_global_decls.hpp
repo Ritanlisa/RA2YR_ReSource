@@ -40,15 +40,15 @@ namespace ra2 { namespace game { class TechnoClass; } }
 namespace ra2 { namespace game { class WDTState; } }
 namespace gamemd { using ::ra2::game::AbstractClass; }
 namespace gamemd { using ::ra2::game::BlowStraw; }
-namespace gamemd { using ::ra2::game::CCINIClass; }
+namespace gamemd { class CCINIClass; }  // G57w8: native fwd (ini_class.hpp defines gamemd::CCINIClass later; ra2::game bridge double-declared C2888)
 namespace gamemd { using ::ra2::game::DynamicVector; }
 namespace gamemd { using ::ra2::game::FootClass; }
-namespace gamemd { using ::ra2::game::HashTable; }
-namespace gamemd { using ::ra2::game::INIClass; }
+// G57w8: using ::ra2::game::HashTable removed -- utility_ext native gamemd::HashTable already in scope (C2874)
+namespace gamemd { class INIClass; }  // G57w8: native fwd (ini_class.hpp defines gamemd::INIClass later; ra2::game bridge double-declared C2888)
 namespace gamemd { using ::ra2::game::InfantryClass; }
 namespace gamemd { using ::ra2::game::MapClass; }
 namespace gamemd { using ::ra2::game::RadarClass; }
-namespace gamemd { using ::ra2::game::ReferenceCounted; }
+// G57w8: using ::ra2::game::ReferenceCounted removed -- utility_ext native gamemd::ReferenceCounted already in scope (C2874)
 namespace gamemd { using ::ra2::game::ScoreScreen; }
 namespace gamemd { using ::ra2::game::ScriptClass; }
 namespace gamemd { using ::ra2::game::Selection_WorldDominationTour; }
@@ -85,9 +85,22 @@ namespace gamemd {
     };
     struct Gap2Recv_4048B0 {
         int PrefetchAudioSamples();  // G42.39 def-derived
+        // G57w8 raw-vocab supply (0x4048B0 体 this-> 引用)
+        int lineTrailer;
+        int occupant;
+        int owningHouseIndex;
     };
     struct Gap2Recv_4055C0 {
         int UpdateVoicePlayback();  // G42.39 def-derived
+        // G57w8 raw-vocab supply (0x4055C0/0x405xxx 体 this-> 引用; usage-driven)
+        int nextArrayIndex;
+        int suspendedMission;
+        int referenceCount;
+        int lineTrailer;
+        int occupant;
+        int owningHouseIndex;
+        int armorMultiplier[2];
+        int NeedsSaveOrLink;
     public:  // g57c5 W4 supply slot
     int gattlingStage;  // 0x144 g57c5 W4 supply (ml Gap2Recv_4055C0@0x144)
 public:  // g57c5 W4 supply slot
@@ -2649,9 +2662,11 @@ public:  // g57c5 W4 supply slot
     struct ObjectPlacement {
         static int * CalcPosition(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6);  // 0x481180 (G42.39a static-call supply)
     };
+#ifndef GAMEMD_E4_LinkedList  // G57w8: e4 flat carrier wins where explicitly included (C2011 vs LinkedList_flat_e4.hpp)
     struct LinkedList {
         static void * Pop(void * aP1);  // G42.39a static-call supply
     };
+#endif
     int MoveCoordByDirection(int a1, int * a2);  // 0x40acd0 (G42.39a decl supply)
     int StartAudioControllerAt(unsigned int aP1, int aP2, int aP3);  // 0x7509E0 (G42.39a decl supply)
 }  // namespace gamemd
@@ -2659,7 +2674,15 @@ public:  // g57c5 W4 supply slot
 // ---- pending thiscall free defs converted to member form (D1-1a) ----
 namespace gamemd {
     struct Gap2Free_3A80 {
-        int DumpAudioDeviceDebug(int p1);  // 0x403a80
+        // G57w8 raw this=TechnoClass* vocab (0x403A80 body this-> refs; usage-driven types)
+        char *nextArrayIndex;  // this->nextArrayIndex + 12 (byte ptr arith)
+        int *radioLinks;  // radioLinks[3] -> %d
+        char *idleActionTimer;  // &idleActionTimer[2]
+        char *animation;  // (AudioQueue*)animation / animation[6]
+        void *isDisguisedFlag;  // *(_DWORD*)isDisguisedFlag
+        int disguiseCreationFrame;  // %d
+        int *infantryBlinkTimer;  // infantryBlinkTimer[0] -> %d
+        int DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3);  // 0x403a80  // G57w8 sig-sync (raw fn_40.c)
     };
 }  // namespace gamemd
 

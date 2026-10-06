@@ -308,7 +308,7 @@ int ScenarioClass::AssignStartPositions(char a1)
   char v7; // [esp+11h] [ebp-Bh]
 
   ((Multiplayer *)(v5))->FindStartPositions(); /*0x5d6bec*/
-  for ( i = 0; i < ((char *)&stru_A80220); ++i ) /*0x5d6bfa*/
+  for ( i = 0; i  <  (int)((*(int *)&stru_A80220)); ++i ) /*0x5d6bfa*/
   {
     v2 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + i); /*0x5d6c02*/
     if ( !*(unsigned char *)(v2->relatedTagsCapacity + 422) ) /*0x5d6c08*/
@@ -466,7 +466,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
   CHAR v23[28]; // [esp+E0h] [ebp-1Ch] BYREF
 
   v4 = (char *)(Source); /*0x683ab8*/
-  if ( (!Source || !strlen((const char *)(Source))) && a4 != -1 ) /*0x683ade*/
+  if ( (!Source || !strlen((const char *)(Source))) && a4  !=  (void *)(-1) ) /*0x683ade*/
   {
     if ( *((unsigned int *)((char *)&stru_A8EB00 + 377)) == 1 ) /*0x683ae7*/
       v4 = &stru_A83D50.__pad_C8[48]; /*0x683ae9*/
@@ -821,8 +821,8 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       {
         ((CCINIClass *)(var158))->Load( (int)(aP1), 0, 0);
         *(unsigned short *)g_ScenarioClass_Instance->name = 0;
-        if ( &g_INI_Key_UIName == (INIClass *)-8 )
-          Section = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
+        if ( &g_INI_Key_UIName == (int *)-8 )
+          Section = (int)(INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName));
         else
           Section = HashTableSection::FindSection(
                       (int)var158,
@@ -841,7 +841,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v10 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v10 = HashTableSection::FindSection(
-                  (int)var158,
+                  (int)var158(uint8_t *)(),
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[37112]);
         if ( v10 )
@@ -858,11 +858,11 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
   int v12; // eax
         if ( &g_INI_Key_UIName )
           v12 = HashTableSection::FindSection(
-                  (int)var158,
+                  (int)var158(uint8_t *)(),
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&g_INI_Key_UIName);
         else
-          v12 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
+          v12 = (int)(INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName));
         if ( v12 )
         {
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&g_INI_Key_UIName, (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->uiName, 32);
@@ -887,7 +887,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v15 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v15 = HashTableSection::FindSection(
-                  (int)var158,
+                  (int)var158(uint8_t *)(),
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54792]);
         if ( v15 )
@@ -897,7 +897,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v16 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v16 = HashTableSection::FindSection(
-                  (int)var158,
+                  (int)var158(uint8_t *)(),
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54776]);
         if ( v16 )
@@ -906,7 +906,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v17 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v17 = HashTableSection::FindSection(
-                  (int)var158,
+                  (int)var158(uint8_t *)(),
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54760]);
         if ( v17 )

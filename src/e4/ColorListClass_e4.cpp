@@ -106,7 +106,7 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   ((ListClass *)((ListClass *)this))->Destruct(); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
     __3_YAXPAX_Z(this); /*0x488f57*/
-  return this->__pad_0; /*0x488f61*/
+  return (gamemd::ColorListClass *)(this->__pad_0); /*0x488f61*/
 
 }
 } // namespace gamemd

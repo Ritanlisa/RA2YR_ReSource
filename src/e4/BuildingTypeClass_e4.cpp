@@ -294,7 +294,7 @@ LABEL_11:
   else
   {
     v7 = (unsigned int *)(dword_A83C6C);
-    while ( *(unsigned int *)(unsigned int)(v7) != this ) /*0x45e350*/
+    while ( *(unsigned int *)(unsigned int)(v7)    !=    (unsigned int)((unsigned int)((unsigned int)(this )))) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
       ++v7; /*0x45e353*/
@@ -1202,7 +1202,7 @@ int BuildingTypeClass::UpdatePower()
   v25 = ((Power *)((Power *)v54))->FlagProcess(v24); /*0x464dd9*/
   LOBYTE(v25) = this->SecretLab; /*0x464dde*/
   ((Power *)((Power *)v54))->FlagProcess(v25); /*0x464de7*/
-  LOBYTE(v26) = this->Flat_flag; /*0x464dec*/
+  LOBYTE(v26) = (unsigned char)(this->Flat_flag); /*0x464dec*/
   ((Power *)((Power *)v54))->FlagProcess(v26); /*0x464df5*/
   LOBYTE(v27) = this->DockUnload; /*0x464dfa*/
   v28 = ((Power *)((Power *)v54))->FlagProcess(v27); /*0x464e03*/
@@ -1333,7 +1333,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
     LOBYTE(v1[1].AltCameo) = 0; /*0x465128*/
   }
   v2 = v14; /*0x46512e*/
-  result = ((TechnoTypeClass *)v1)->SaveLoad_Prefix( v14); /*0x465134*/
+  result = (int)(((TechnoTypeClass *)v1)->SaveLoad_Prefix( v14)); /*0x465134*/
   if ( result >= 0 ) /*0x46513b*/
   {
     if ( v1 ) /*0x465143*/
@@ -1341,7 +1341,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))( v2, (int *)(&v14), 4, 0); /*0x46515c*/
     if ( result >= 0 ) /*0x465161*/
     {
-      v4 = &v1[1].Weapon[244]; /*0x465167*/
+      v4 = (char *)(&v1[1].Weapon[244]); /*0x465167*/
       if ( v1 != (TechnoTypeClass *)-6020 ) /*0x46516f*/
       {
         *(unsigned int *)&v1[1].Weapon[248] = 0; /*0x465171*/
@@ -1360,7 +1360,7 @@ LABEL_32:
         SpeedType = v1[1].ChargerTurrets[15]; /*0x4651fb*/
         v1[1].UIName = 0; /*0x465210*/
         SpeedType *= 120; /*0x465219*/
-        v1[1].vtable1 = (int)&dword_89C900 + SpeedType; /*0x465228*/
+        v1[1].vtable1 = (void *)((int)&dword_89C900 + SpeedType); /*0x465228*/
         v1[1].ChargerTurrets[8] = (int)&dword_89D368 + SpeedType; /*0x46522e*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((unsigned int *)&v1[1].UINameLabel)[31]); /*0x465234*/
         ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)v1[1].ImageAllocated); /*0x465245*/
@@ -1430,15 +1430,15 @@ BuildingTypeClass * * BuildingTypeClass::FindOrCreate(char *Source)
 LABEL_6:
     v3 = (unsigned int)__2_YAPAXI_Z(0x1798u); /*0x465416*/
     if ( v3 ) /*0x465425*/
-      return BuildingTypeClass::ConstructFull( (char *)(v3), (void *)(Source)); /*0x465431*/
+      return (gamemd::BuildingTypeClass **)(BuildingTypeClass::ConstructFull( (char *)(v3), (void *)(Source))); /*0x465431*/
     return 0; /*0x465425*/
   }
-  while ( _strcmpi((*((unsigned int *)dword_A83C6C + v2) + 36), Source) ) /*0x46540a*/
+  while ( _strcmpi((const char *)((*((unsigned int *)dword_A83C6C + v2) + 36)), Source) ) /*0x46540a*/
   {
     if ( ++v2 >= dword_A83C78 ) /*0x465414*/
       goto LABEL_6; /*0x465414*/
   }
-  return *((unsigned int *)dword_A83C6C + v2); /*0x46542f*/
+  return (gamemd::BuildingTypeClass **)(*((unsigned int *)dword_A83C6C + v2)); /*0x46542f*/
 
 }
 } // namespace gamemd
@@ -1587,7 +1587,7 @@ LABEL_15:
                                + g_MissionQueueFrame.localVariables[163]
                                + 56)
                    : -1;
-            if ( (void *)result != ((unsigned int *)this)[0] && result != v12 ) /*0x59413b*/
+            if ( (void *)result != (void *)(((unsigned int *)this)[0] && result != v12 )) /*0x59413b*/
               break; /*0x59413b*/
             v14 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP1); /*0x594147*/
             result = ((Cell*)v14)->IsEmpty(); /*0x59414e*/
@@ -1615,7 +1615,7 @@ OverlayTypeClass * * BuildingTypeClass::FindOrCreate2(ObjectClass * Source)
   int v2; // esi
   OverlayTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x5fec8c*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x5fec8c*/
     return 0; /*0x5fecef*/
   v2 = 0; /*0x5fec9d*/
   if ( *(int *)&stru_A83D50.__pad_3C[4] <= 0 ) /*0x5feca1*/
@@ -1643,7 +1643,7 @@ ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet(ObjectClass * Source)
   int v2; // esi
   OverlayTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6448ac*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x6448ac*/
     return 0; /*0x64490f*/
   v2 = 0; /*0x6448bd*/
   if ( (int)stru_A83D50.SuperClass_field_0x28 <= 0 ) /*0x6448c1*/
@@ -1651,7 +1651,7 @@ ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet(ObjectClass * Source)
 LABEL_6:
     v3 = (OverlayTypeClass *)__2_YAPAXI_Z(0x310u); /*0x6448e6*/
     if ( v3 ) /*0x6448f5*/
-      return ((OverlayTypeClass *)v3)->Construct( (char *)(Source)); /*0x644901*/
+      return (gamemd::ParticleSystemTypeClass **)(((OverlayTypeClass *)v3)->Construct( (char *)(Source))); /*0x644901*/
     return 0; /*0x6448f5*/
   }
   while ( _strcmpi((*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v2) + 36), Source) ) /*0x6448da*/
@@ -1752,7 +1752,7 @@ ParticleTypeClass * * BuildingTypeClass::FindOrCreateEx(char *Source)
   unsigned int *i; // edx
 
   if ( !_strcmpi(Source, g_Str__none_) ) /*0x645444*/
-    return -1; /*0x645444*/
+    return (gamemd::ParticleTypeClass **)(-1); /*0x645444*/
   v2 = 0; /*0x64544b*/
   if ( *(int *)&stru_A83D50.__pad_3C[28] <= 0 ) /*0x64544f*/
   {
@@ -1768,11 +1768,11 @@ LABEL_5:
       for ( i = *(unsigned int **)&stru_A83D50.__pad_3C[16]; (unsigned int *)*i != v4; ++i ) /*0x6454a2*/
       {
         if ( ++v6 >= *(int *)&stru_A83D50.__pad_3C[28] ) /*0x6454b2*/
-          return -1; /*0x6454b2*/
+          return (gamemd::ParticleTypeClass **)(-1); /*0x6454b2*/
       }
       return (ParticleTypeClass * *)v6; /*0x6454bb*/
     }
-    return -1; /*0x6454b9*/
+    return (gamemd::ParticleTypeClass **)(-1); /*0x6454b9*/
   }
   while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v2) + 36)) ) /*0x645468*/
   {

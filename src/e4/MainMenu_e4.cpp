@@ -22,6 +22,7 @@
 namespace gamemd {
 long MainMenu_Screen(void * a1, void * a2)
 {
+  MainMenu *self = (MainMenu *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x531CC0) */
   HWND v2; // esi
   HWND DlgItem; // esi
   int v4; // ecx

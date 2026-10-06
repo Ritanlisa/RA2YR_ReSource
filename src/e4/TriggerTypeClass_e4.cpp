@@ -365,48 +365,48 @@ LABEL_139:
   }
 LABEL_164:
   if ( *(unsigned char *)(v38 + 297) && a0->fireParticles ) /*0x6fc98b*/
-    return 3; /*0x6fc9a1*/
+    return (gamemd::TechnoClass **)(3); /*0x6fc9a1*/
   if ( *(unsigned char *)(v38 + 301) && a0->railgunParticles ) /*0x6fc9ae*/
-    return 3; /*0x6fc9c4*/
+    return (gamemd::TechnoClass **)(3); /*0x6fc9c4*/
   if ( *(unsigned char *)(v38 + 298) && a0->sparkParticles ) /*0x6fc9d1*/
-    return 3; /*0x6fc9e7*/
+    return (gamemd::TechnoClass **)(3); /*0x6fc9e7*/
   if ( *(unsigned char *)(v38 + 304) && a0->damageParticles_2 ) /*0x6fc9f4*/
-    return 3; /*0x6fca0a*/
+    return (gamemd::TechnoClass **)(3); /*0x6fca0a*/
   if ( !a0->ammo ) /*0x6fca0d*/
-    return 1; /*0x6fca23*/
+    return (gamemd::TechnoClass **)(1); /*0x6fca23*/
   if ( *(unsigned char *)(v38 + 307) /*0x6fca4d*/
     && a0->cloakState
     && ((*((int (**)(TechnoClass *))a0->vtable1 + 11))( (TechnoClass *)(a0)) != 2 || a0->cloakState == 2) )
   {
-    return 9; /*0x6fca5b*/
+    return (gamemd::TechnoClass **)(9); /*0x6fca5b*/
   }
   if ( *(unsigned char *)((*((int (**)(TechnoClass *))a0->vtable1 + 33))( (TechnoClass *)(a0)) + 3367) ) /*0x6fca68*/
-    return 8; /*0x6fca7e*/
+    return (gamemd::TechnoClass **)(8); /*0x6fca7e*/
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345)
     && a0
     && (((unsigned int *)a0)[0] & 4) != 0
-    && !((ParasiteClass*)*((ParasiteClass **)a0 + 423))->CanInfect((((unsigned int *)v25)[0] & 4) != 0 ? v25 : 0) )
+    && !((ParasiteClass*)*((ParasiteClass **)a0 + 423))->CanInfect((unsigned int *)((((unsigned int *)v25)[0] & 4) != 0 ? v25 : 0)) )
   {
-    return 5; /*0x6fcac2*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcac2*/
   }
   v32 = *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345); /*0x6fcacb*/
-  if ( v32 && (((unsigned int *)v25)[0] & 4) != 0 && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) < v25->unknown698 ) /*0x6fcae9*/
-    return 5; /*0x6fcaf7*/
+  if ( v32 && (((unsigned int *)v25)[0] & 4) != 0 && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416)  <  (int)(v25->unknown698 )) /*0x6fcae9*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/
   if ( v32 && (*((uint8_t (**)(void **))*v8 + 88))( (void **)(v8)) ) /*0x6fcb0b*/
-    return 5; /*0x6fcb21*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcb21*/
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 341) && !((CaptureManagerClass *)((int)a0->captureManager))->CanCapture( (unsigned int *)(v8)) ) /*0x6fcb3b*/
-    return 5; /*0x6fcb50*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcb50*/
   v33 = *(unsigned int *)(v38 + 172); /*0x6fcb56*/
   if ( *(double *)(v33 + 8 * *(unsigned int *)((*((int (**)(void **))*v8 + 33))( (void **)(v8)) + 156) + 160) == 0.0 ) /*0x6fcb7c*/
-    return 5; /*0x6fcb8a*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcb8a*/
   if ( *(unsigned char *)(v33 + 366) && !v8[14] ) /*0x6fcb97*/
-    return 5; /*0x6fcbaa*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcbaa*/
   if ( *(unsigned char *)(v33 + 343) && v8[14] ) /*0x6fcbb7*/
-    return 5; /*0x6fcbca*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcbca*/
   if ( *((unsigned char *)v8 + 973) ) /*0x6fcbcd*/
-    return 5; /*0x6fcbe3*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcbe3*/
   if ( ((unsigned int *)a0)[0] == *((unsigned char *)v8 + 140) ) /*0x6fcbf4*/
     goto LABEL_231; /*0x6fcbf4*/
   if ( (*((int (**)(TechnoClass *))a0->vtable1 + 111))( (TechnoClass *)(a0)) /*0x6fcc4c*/
@@ -415,7 +415,7 @@ LABEL_164:
     && (*((int (**)(void **))*v8 + 111))( (void **)(v8))
     && (*(unsigned int *)((*((int (**)(void **))*v8 + 111))( (void **)(v8)) + 320) & 0x100) != 0 )
   {
-    return 5; /*0x6fcc5a*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcc5a*/
   }
   v34 = (int *)(v8 + 39); /*0x6fcc63*/
   v39 = ((unsigned int *)a0)[0]; /*0x6fcc6b*/
@@ -427,17 +427,17 @@ LABEL_164:
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345) ) /*0x6fcc90*/
   {
     if ( (int)abs32(v36 - v34[2]) > 2 * *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x6fccac*/
-      return 5; /*0x6fccb1*/
+      return (gamemd::TechnoClass **)(5); /*0x6fccb1*/
   }
 LABEL_231:
   if ( *(unsigned char *)((*((int (**)(TechnoClass *))a0->vtable1 + 33))( (TechnoClass *)(a0)) + 3479) /*0x6fccd5*/
     && (*((uint8_t (**)(TechnoClass *))a0->vtable1 + 224))( (TechnoClass *)(a0)) )
   {
-    return 5; /*0x6fcce2*/
+    return (gamemd::TechnoClass **)(5); /*0x6fcce2*/
   }
   if ( !aP4 || (*((uint8_t (**)(TechnoClass *, unsigned char *, int))a0->vtable1 + 234))( (TechnoClass *)(a0), (unsigned char *)(aP2), a4) ) /*0x6fcd04*/
     return 0; /*0x6fcd20*/
-  return 8; /*0x6fc0df*/
+  return (gamemd::TechnoClass **)(8); /*0x6fc0df*/
 
 }
 }

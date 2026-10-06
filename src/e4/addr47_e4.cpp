@@ -91,7 +91,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v21))->Construct(0, 0); /*0x477121*/
     *(unsigned int *)v21.__pad_0 = (unsigned int)((void*)&TypeList_int_vftable); /*0x47712a*/
-    for ( i = strtok(v21.__pad_20, (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x477144*/
+    for ( i = strtok((char *)(v21.__pad_20), (char *)&::Delimiter); i; i = strtok(0, (char *)&::Delimiter) ) /*0x477144*/
     {
       if ( !*i ) /*0x47714a*/
         break; /*0x47714d*/
@@ -2047,7 +2047,7 @@ namespace gamemd {
 char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
 
-  return ((INIClass *)(char *)this)->SetDouble( this, (char *)(a3), (double)a4 * 0.00390625); /*0x47467f*/
+  return ((INIClass *)(char *)this)->SetDouble((unsigned char *)( this), (char *)(a3), (double)a4 * 0.00390625); /*0x47467f*/
 
 }
 } // namespace gamemd
@@ -2510,7 +2510,7 @@ bool sub_47AAC0()
   }
   CmdLine_NoCD = 0; /*0x47aaee*/
 // 0x47ab10
-  return Game::FindGameDirectoryCD(byte_89E41C); /*0x47aafd*/
+  return Game::FindGameDirectoryCD((const char *)(byte_89E41C)); /*0x47aafd*/
 }
 } // namespace gamemd
 

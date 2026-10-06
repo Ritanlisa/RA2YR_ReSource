@@ -62,7 +62,7 @@ int AbstractClassVector::Construct(int aP1, int aP2)
       this->AbstractClassVector_field_0x04 = (unsigned char)(aP2);
 return (int)this->__pad_0; /*0x4e0eae*/
     }
-    this->AbstractClassVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x4e0ebd*/
+    this->AbstractClassVector_field_0x04 = (unsigned char)(__2_YAPAXI_Z(4 * aP1)); /*0x4e0ebd*/
     BYTE1(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0ec0*/
   }
 return (int)this->__pad_0; /*0x4e0ead*/

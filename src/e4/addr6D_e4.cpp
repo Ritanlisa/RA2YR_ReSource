@@ -485,7 +485,7 @@ int ZCoordToScreenY(int aP0)
 {
   int result; // eax
 
-  IDA_LOWORD(result) = Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0 >= (IUnknown *)(728)) + 0.5); /*0x6d2113*/
+  IDA_LOWORD(result) = Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0  >=  (int)((int)(728))) + 0.5); /*0x6d2113*/
   return result; /*0x6d2118*/
 }
 } // namespace gamemd
@@ -537,7 +537,7 @@ long long sub_6D6A90(unsigned int * a1)
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/
 // 0x47b3a0
-  return ((Isometric*)(gamemd::IUnknown *)((int)v1))->InitTables( (unsigned int *)(v4)); /*0x6d6abc*/
+  return (__int64)(((Isometric*)(gamemd::IUnknown *)((int)v1))->InitTables( (unsigned int *)(v4))); /*0x6d6abc*/
 }
 } // namespace gamemd
 

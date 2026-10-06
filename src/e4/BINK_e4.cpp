@@ -30,12 +30,12 @@ HWND BINK::Background_Setup(HWND hDlg)
       v4 = 0; /*0x52b9f0*/
     SetWindowPos(v2, 0, v3, v4, -1, -1, 0xDu); /*0x52ba09*/
     SendMessageA( (HWND)(v2), 0x4E3u, 1u, 0); /*0x52ba1f*/
-    if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x52ba2b*/
+    if ( g_DisplayWidth   ==   (int)((int)((int)640 ))) /*0x52ba2b*/
       return SendMessageA( (HWND)(v2), 0x4E4u, 0, (LPARAM)((LPARAM)((LPARAM)aRa2tsS))); /*0x52ba3a*/
     else
       return SendMessageA( (HWND)(v2), 0x4E4u, 0, (LPARAM)((LPARAM)((LPARAM)aRa2tsL))); /*0x52ba4c*/
   }
-  return result; /*0x52ba3c*/
+  return (HWND)(result); /*0x52ba3c*/
 
 }
 } // namespace gamemd

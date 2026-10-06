@@ -78,7 +78,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   this->MultiplayerGameMode_field_0x10 = 0; /*0x5d7fb1*/
   if ( (a2 & 1) != 0 ) /*0x5d7fb8*/
     __3_YAXPAX_Z(this); /*0x5d7fbb*/
-  return this->__pad_0; /*0x5d7fc5*/
+  return (gamemd::MultiplayerGameMode *)(this->__pad_0); /*0x5d7fc5*/
 
 }
 } // namespace gamemd

@@ -29,7 +29,7 @@ int INIEntry::GetTechnoType(uint8_t *aP1, uint8_t *a2)
   Index = ((BuildingTypeClass *)((BuildingTypeClass *)Destination))->FindIndex(); /*0x476eff*/
   if ( Index != -1 ) /*0x476f07*/
     return *((unsigned int *)dword_A83CE4 + Index); /*0x476f10*/
-  v6 = ((TypeClass*)Destination)->FindByName(); /*0x476f20*/
+  v6 = (int)(((TypeClass*)Destination)->FindByName()); /*0x476f20*/
   if ( v6 != -1 ) /*0x476f28*/
     return *((unsigned int *)dword_A8B21C + v6); /*0x476f31*/
   IndexByName = ((BuildingTypeClass *)((BuildingTypeClass *)Destination))->FindIndexByName(); /*0x476f41*/

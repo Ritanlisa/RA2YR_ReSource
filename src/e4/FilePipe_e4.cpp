@@ -179,7 +179,7 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)this + 1); /*0x477a73*/
-  this->vfptr = &vt_VectorClass; /*0x477a76*/
+  this->vfptr = (unsigned int)(&vt_VectorClass); /*0x477a76*/
   if ( v3 && *((unsigned char *)this + 13) ) /*0x477a80*/
   {
     __3_YAXPAX_Z(v3); /*0x477a88*/
@@ -189,7 +189,7 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
   *((unsigned int *)this + 2) = 0; /*0x477aa1*/
   if ( (a2 & 1) != 0 ) /*0x477aa8*/
     __3_YAXPAX_Z(this); /*0x477aab*/
-  return &this->vfptr; /*0x477ab5*/
+  return (gamemd::TypeList_flat *)(&this->vfptr); /*0x477ab5*/
 
 }
 } // namespace gamemd
@@ -373,7 +373,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x478701*/
   if ( (a2 & 1) != 0 ) /*0x478708*/
     __3_YAXPAX_Z(this); /*0x47870b*/
-  return this->__pad_0; /*0x478715*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x478715*/
 
 }
 } // namespace gamemd
@@ -605,7 +605,7 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x4ba191*/
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
     __3_YAXPAX_Z(this); /*0x4ba19b*/
-  return this->__pad_0; /*0x4ba1a5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4ba1a5*/
 
 }
 } // namespace gamemd
@@ -628,7 +628,7 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x4ba231*/
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
     __3_YAXPAX_Z(this); /*0x4ba23b*/
-  return this->__pad_0; /*0x4ba245*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4ba245*/
 
 }
 } // namespace gamemd
@@ -651,7 +651,7 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x4ba2d1*/
   if ( (a2 & 1) != 0 ) /*0x4ba2d8*/
     __3_YAXPAX_Z(this); /*0x4ba2db*/
-  return this->__pad_0; /*0x4ba2e5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x4ba2e5*/
 
 }
 } // namespace gamemd

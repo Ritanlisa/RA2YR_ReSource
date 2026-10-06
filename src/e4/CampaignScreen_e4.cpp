@@ -21,6 +21,7 @@
 namespace gamemd {
 int CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
 {
+  CampaignScreen *self = (CampaignScreen *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x470D30) */
   const wchar_t *v5; // ebp
   int result; // eax
   unsigned int *WindowLongA; // eax

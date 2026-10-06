@@ -9,6 +9,14 @@
 namespace gamemd {
 struct SessionClass;  // fix_fwd_type_supply
 struct Object {
+    // G57w8 raw-vocab supply (fn_4F HouseClass 区域 til-Object 词表; usage-driven)
+    unsigned char __pad_B0[52];  // 0xB0
+    unsigned char *__pad_140;  // 0x140 slot witness
+    int vtable1;
+    char *attachedBomb;  // G57w8: [24] 下标载体  // G57w8 canon 0x38 词表
+    int vtable3;
+    unsigned int *vtable4;
+    unsigned char *ptr_2;
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
@@ -96,8 +104,8 @@ struct Object {
     unsigned char *__pad_C;  // 0xC
     unsigned char Object_field_0xAC;  // 0xAC
     unsigned char Object_field_0xE8;  // 0xE8
-    void* attachedTag;  // 0x0 (no offset truth)
-    void* nextObject;  // 0x0 (no offset truth)
+    char* attachedTag;  // g57w8: +N 指针算术载体  // 0x0 (no offset truth)
+    char* nextObject;  // g57w8: 同上  // 0x0 (no offset truth)
     void* parachute;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3);

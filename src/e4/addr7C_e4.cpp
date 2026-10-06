@@ -6117,7 +6117,7 @@ void _splitpath(const char * FullPath, char * Drive, char * Dir, char * aP3, cha
     }
     else if ( v8 == 46 ) /*0x7cb6e9*/
     {
-      Source = (unsigned int)(uint8_t *)v6; /*0x7cb6eb*/
+      Source = (uint8_t *)((unsigned int)(uint8_t *)v6); /*0x7cb6eb*/
     }
     ++v6; /*0x7cb6f6*/
   }
@@ -6835,7 +6835,7 @@ char * * _Gettnames()
       *v36 = v12; /*0x7cc8fb*/
       v13 = strcpy( (char *)(v12), *(v41 - 7)); /*0x7cc904*/
       v14 = &v12[strlen( (const char *)(v13)) + 1]; /*0x7cc912*/
-      *(const char **)((char *)v41 + v40) = (unsigned int)v14; /*0x7cc919*/
+      *(const char **)((char *)v41 + v40) = (const char *)((unsigned int)v14); /*0x7cc919*/
       v15 = strcpy( (char *)(v14), *v41); /*0x7cc91f*/
       v16 = strlen( (const char *)(v15)); /*0x7cc925*/
       ++v36; /*0x7cc92a*/
@@ -6849,7 +6849,7 @@ char * * _Gettnames()
     v17 = v0 + 14; /*0x7cc94b*/
     for ( i = v0 + 14; ; v17 = i ) /*0x7cc94e*/
     {
-      *(const char **)((char *)v17 + v40) = (unsigned int)v12; /*0x7cc959*/
+      *(const char **)((char *)v17 + v40) = (const char *)((unsigned int)v12); /*0x7cc959*/
       v18 = strcpy( (char *)(v12), *v17); /*0x7cc95f*/
       v19 = &v12[strlen( (const char *)(v18)) + 1]; /*0x7cc96a*/
       *v37 = v19; /*0x7cc971*/
@@ -8116,14 +8116,14 @@ int _flsbuf(int Ch, FILE * File)  // G42.33 b16 truth int (TU9 fwd sync)
     }
     else
     {
-      File = (unsigned int)(FILE *)_write( v4, (const void *)(base), v7); /*0x7ce22a*/
+      File = (FILE *)((unsigned int)(FILE *)_write( v4, (const void *)(base), v7)); /*0x7ce22a*/
     }
     *((_iobuf_msvc6 *)v2)->_base = Ch; /*0x7ce26b*/
   }
   else
   {
     v7 = 1; /*0x7ce274*/
-    File = (unsigned int)(FILE *)_write( v4, (const void *)(&Ch), 1u); /*0x7ce280*/
+    File = (FILE *)((unsigned int)(FILE *)_write( v4, (const void *)(&Ch), 1u)); /*0x7ce280*/
   }
   if ( File == (FILE *)v7 ) /*0x7ce287*/
     return (uint8_t)Ch; /*0x7ce297*/

@@ -396,13 +396,13 @@ AbstractClass * * IPXInterfaceClass::Receive()
   int v7; // [esp+0h] [ebp-4h]
 
   v2 = (HWND)(*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))((WinsockInterfaceClass *)this, -1); /*0x7b1bc9*/
-  if ( WSAAsyncSelect(*((AnimClass **)this + 64539), (SOCKET)g_hWnd, v2, 3u, v6) != (AnimClass *)-1 ) /*0x7b1be3*/
+  if ( WSAAsyncSelect(*((AnimClass **)this + 64539), (SOCKET)g_hWnd, v2, 3u, v6)  !=  (int)((int))-1 ) /*0x7b1be3*/
   {
     v4 = *((unsigned int *)this + 64540); /*0x7b1bfc*/
     if ( v4 == -1 ) /*0x7b1c05*/
       return (gamemd::AbstractClass **)(1); /*0x7b1c05*/
     v5 = (HWND)(*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))((WinsockInterfaceClass *)this, v4); /*0x7b1c0e*/
-    if ( WSAAsyncSelect(*((AnimClass **)this + 64540), (SOCKET)g_hWnd, v5, 3u, v7) != (AnimClass *)-1 ) /*0x7b1c27*/
+    if ( WSAAsyncSelect(*((AnimClass **)this + 64540), (SOCKET)g_hWnd, v5, 3u, v7)  !=  (int)((int))-1 ) /*0x7b1c27*/
       return (gamemd::AbstractClass **)(1); /*0x7b1c40*/
   }
   WSAGetLastError(); /*0x7b1be5*/
@@ -601,7 +601,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
                                                                                              + 12))(this);
   }
   v7 = this->LocalNetwork; /*0x7b2ab1*/
-  if ( v7 < this->Count ) /*0x7b2ab9*/
+  if ( v7   <   (int)((int)(this->Count ))) /*0x7b2ab9*/
     this->Count =(void *)v7; /*0x7b2abb*/
   return (gamemd::AbstractClass **)(1); /*0x7b2abe*/
 
@@ -720,7 +720,7 @@ int IPXInterfaceClass::GetAddress(SOCKET s, void *a2, void *a3, void *a4)
 
   v1 = (gamemd::WinsockInterfaceClass *)(s); /*0x7b25e6*/
   optlen = 4; /*0x7b25fb*/
-  getsockopt( (void *)((void *)((SOCKET)s)), 0xFFFF, 4103, (void *)((char *)&s), (void *)(&optlen)); /*0x7b2603*/
+  getsockopt( (void *)((void *)((SOCKET)s)),(void *)( 0xFFFF),(void *)( 4103), (void *)((char *)&s), (void *)(&optlen)); /*0x7b2603*/
   s = 0; /*0x7b261d*/
   return setsockopt((SOCKET)v1, 0xFFFF, 4103, (const char *)&s, optlen); /*0x7b262a*/
 

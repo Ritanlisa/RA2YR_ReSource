@@ -347,7 +347,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
   this->m_8 = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
     __3_YAXPAX_Z(this); /*0x7ad3ab*/
-  return this->__pad_0; /*0x7ad3b5*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x7ad3b5*/
 
 }
 } // namespace gamemd
@@ -370,7 +370,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   this->m_8 = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
     __3_YAXPAX_Z(this); /*0x7ad3fb*/
-  return this->__pad_0; /*0x7ad405*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x7ad405*/
 
 }
 } // namespace gamemd

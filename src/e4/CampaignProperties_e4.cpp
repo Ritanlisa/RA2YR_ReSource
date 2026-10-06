@@ -74,7 +74,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
   this->m_8 = 0; /*0x5d2cd1*/
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
     __3_YAXPAX_Z(this); /*0x5d2cdb*/
-  return this->__pad_0; /*0x5d2ce5*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x5d2ce5*/
 
 }
 } // namespace gamemd

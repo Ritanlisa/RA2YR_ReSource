@@ -108,7 +108,7 @@ LABEL_11:
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            String = (unsigned int)(wchar_t *)(GetStringCSF( (wchar_t *)(v6), 0, (const char *)(g_Str_File_GOptions_CPP), 196));
+            String = (wchar_t *)((unsigned int)(wchar_t *)(GetStringCSF( (wchar_t *)(v6), 0, (const char *)(g_Str_File_GOptions_CPP), 196)));
             SendMessageA( (HWND)(v8), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)String))); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
@@ -188,7 +188,7 @@ LABEL_39:
           return 0; /*0x4f13bf*/
         if ( ((unsigned int *)(dword_A8B238))[0] && ((unsigned int *)(dword_A8B238))[0] != 5 ) /*0x4f13d1*/
         {
-          v15 = (char *)(((EventClass*)(int)(v29))->AddEvent(*((unsigned int *)dword_A83D4C + 12), (void *)(0x1Du))); /*0x4f13e5*/
+          v15 = (char *)(((EventClass*)(int)(v29))->AddEvent(*((unsigned int *)dword_A83D4C + 12),(unsigned char)( (void *)(0x1Du)))); /*0x4f13e5*/
           ((void (*)(char *))OptionQueue::PushEntry)(v15); /*0x4f13f0*/
           *WindowLongA = 1311; /*0x4f13f6*/
           return 0; /*0x4f1408*/
@@ -237,7 +237,7 @@ LABEL_39:
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = (char *)(((EventClass*)(gamemd::AnimClass *)(v31))->Add2( *((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0x24u), (int)((void *)((int)v19)))); /*0x4f15c6*/
+            v20 = (char *)(((EventClass*)(gamemd::AnimClass *)(v31))->Add2( *((unsigned int *)dword_A83D4C + 12),(unsigned char)( (IUnknown *)(0x24u)), (int)((void *)((int)v19)))); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             Debug::Log("LATENCYFUDGE event created - %d\n"); /*0x4f15dc G57c1: IDA 0x4f15dc push offset aLatencyfudgeEv*/
           }
@@ -255,7 +255,7 @@ LABEL_39:
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = (char *)(((EventClass*)((gamemd::AnimClass *)(v30)))->Add2( *((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0xDu), (int)((void *)(v22)))); /*0x4f166f*/
+            v23 = (char *)(((EventClass*)((gamemd::AnimClass *)(v30)))->Add2( *((unsigned int *)dword_A83D4C + 12),(unsigned char)( (IUnknown *)(0xDu)), (int)((void *)(v22)))); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/

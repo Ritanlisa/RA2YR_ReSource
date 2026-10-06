@@ -38,7 +38,7 @@ int Theme::QueueSong(int aP1)
       {
         LOBYTE(IsSoundEnabled) = (unsigned char)(aP1); /*0x720b3e*/
         *((unsigned int *)this + 2) = (unsigned int)(aP1); /*0x720b45*/
-        if ( aP1 != (IUnknown *)(-1) && aP1 != (IUnknown *)(-2) && aP1 != *((unsigned int *)this + 1) ) /*0x720b52*/
+        if ( aP1     !=     (int)((int)((int)((int)((IUnknown *)(-1) && aP1 != (IUnknown *)(-2) && aP1 != *((unsigned int *)this + 1) ))))) /*0x720b52*/
         {
           LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
           if ( *((unsigned int *)this + 11) ) /*0x720b5f*/
@@ -98,7 +98,7 @@ int Theme::Stop(char aP1)
         else
         {
 LABEL_14: result = (int)(Debug::Log("Theme::Stop(%d)\n") /*G57c1: IDA 0x720f37 push offset aThemeStopD*/);
-          v6 = (int)((gamemd::Audio *)*((unsigned int *)this + 11));
+          v6 = (gamemd::Audio *)((int)((gamemd::Audio *)*((unsigned int *)this + 11)));
           if ( v6 ) /*0x720f44*/
             result = ((gamemd::Audio *)(v6))->Release(); /*0x720f46*/
         }

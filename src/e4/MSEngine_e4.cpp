@@ -534,7 +534,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x5ad501*/
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
     __3_YAXPAX_Z(this); /*0x5ad50b*/
-  return this->__pad_0; /*0x5ad515*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x5ad515*/
 
 }
 } // namespace gamemd
@@ -557,7 +557,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
   this->m_8 = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
     __3_YAXPAX_Z(this); /*0x5ad55b*/
-  return this->__pad_0; /*0x5ad565*/
+  return (gamemd::CampaignClass *)(this->__pad_0); /*0x5ad565*/
 
 }
 } // namespace gamemd

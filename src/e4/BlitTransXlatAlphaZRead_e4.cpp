@@ -428,7 +428,7 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
     __3_YAXPAX_Z(this); /*0x49a44d*/
-  return this->__pad_0; /*0x49a457*/
+  return (gamemd::BlitTransXlatAlphaZRead_ushort *)(this->__pad_0); /*0x49a457*/
 
 }
 } // namespace gamemd

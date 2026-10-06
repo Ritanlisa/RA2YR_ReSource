@@ -101,7 +101,7 @@ int CheckListClass::ddtor(int a2)
     (*(void (**)(char *, int))(*((unsigned int *)this + 46) + 12))((char *)this + 184, a2); /*0x557e3c*/
     (*(void (**)(char *, int))(*((unsigned int *)this + 22) + 12))((char *)this + 88, a2); /*0x557e46*/
   }
-  return LinkedList::InsertAfter(  (LinkClass *)this, a2); /*0x557e51*/
+  return (int)(LinkedList::InsertAfter(  (LinkClass *)this, a2)); /*0x557e51*/
 
 }
 }  // G42.18c ns repair

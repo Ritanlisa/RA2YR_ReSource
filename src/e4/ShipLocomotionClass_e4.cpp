@@ -142,7 +142,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_ShipLocomotionClass;
-  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_ShipLocomotionClass;
+  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)&vt_ShipLocomotionClass;
   *(unsigned int *)this->__pad_18 = (unsigned int)&off_7F2D68;
   Piggybackee = (ILocomotion *)(this->Piggybackee); /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
@@ -150,7 +150,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
   ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
     __3_YAXPAX_Z(this); /*0x6a42e3*/
-  return this->LocomotionClass; /*0x6a42ed*/
+  return (gamemd::ShipLocomotionClass *)(this->LocomotionClass); /*0x6a42ed*/
 
 }
 } // namespace gamemd

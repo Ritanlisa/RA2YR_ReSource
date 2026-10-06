@@ -37,6 +37,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/SwizzleManagerClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/MPBattleClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
 struct Type;  // fix_tu_missing_types
@@ -576,7 +577,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
   switch ( v4 ) /*0x725911*/
   {
     case 24: /*0x725911*/
-      if ( aP0 == *(AbstractClass **)(unsigned int *)((char *)&stru_A8EB00 + 404) ) /*0x72591d*/
+      if ( aP0     ==     (int)((int)((int)((int)(*(AbstractClass **)(unsigned int *)((char *)&stru_A8EB00 + 404) ))))) /*0x72591d*/
         *(unsigned int *)((char *)&stru_A8EB00 + 404) = 0; /*0x72591f*/
       break;
     case 13: /*0x725911*/
@@ -620,7 +621,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
       nullsub_3((int)aP0); /*0x7259aa*/
     ((AbstractClass *)(aP0))->processRadarEvent(); /*0x7259b1*/
     if ( g_TacticalClass_Instance ) /*0x7259be*/
-(*(void (**)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0))( /*0x7259c5*/ g_TacticalClass_Instance, (AbstractClass *)(aP0), 1);
+(*(void ((LPPERSISTSTREAM)(**))(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0))( /*0x7259c5*/ g_TacticalClass_Instance, (AbstractClass *)(aP0), 1);
 
 
 
@@ -977,7 +978,7 @@ Surface * AbstractClass::getObjectValue(char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)(&Surface_Vtable); /*0x4115d9*/
   if ( (a2 & 1) != 0 ) /*0x4115df*/
     __3_YAXPAX_Z(this); /*0x4115e2*/
-  return (std::locale::facet *)this; /*0x4115ec*/
+  return (gamemd::Surface *)((std::locale::facet *)this); /*0x4115ec*/
 
 }
 } // namespace gamemd
@@ -1281,7 +1282,7 @@ namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
 
-  this->vtable1 = (int)&vt_Animate; /*0x427279*/
+  this->vtable1 = (void *)((int)&vt_Animate); /*0x427279*/
   if ( (a2 & 1) != 0 ) /*0x42727f*/
     __3_YAXPAX_Z(this); /*0x427282*/
   return (std::locale::facet *)this; /*0x42728c*/
@@ -1342,7 +1343,7 @@ int AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3
   aP0->vtable1 = v3; /*0x464aa5*/
   aP0->vtable1 = v7; /*0x464aab*/
   aP0->vtable2 = GroundHeight; /*0x464aaf*/
-  return &aP0->vtable1; /*0x464a9f*/
+  return (int)(&aP0->vtable1); /*0x464a9f*/
 }
 }
 // 0x465910
@@ -1383,7 +1384,7 @@ Blitter * AbstractClass::getTileIndex(char a2)
   *(unsigned int *)this->BlitterCore = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     __3_YAXPAX_Z(this); /*0x499cd2*/
-  return (std::locale::facet *)this; /*0x499cdc*/
+  return (gamemd::Blitter *)((std::locale::facet *)this); /*0x499cdc*/
 
 }
 } // namespace gamemd
@@ -1435,7 +1436,7 @@ RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
   *(unsigned int *)this->RLEBlitterCore = (unsigned int)&vt_RLEBlitter;
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     __3_YAXPAX_Z(this); /*0x499db2*/
-  return (std::locale::facet *)this; /*0x499dbc*/
+  return (gamemd::RLEBlitter *)((std::locale::facet *)this); /*0x499dbc*/
 
 }
 } // namespace gamemd
@@ -1508,7 +1509,7 @@ GScreenClass * AbstractClass::getHouseHandle(char a2)
   this->vfptr[0] = (int)&off_7EA6FC; /*0x4f4c09*/
   if ( (a2 & 1) != 0 ) /*0x4f4c0f*/
     __3_YAXPAX_Z(this); /*0x4f4c12*/
-  return (std::locale::facet *)this; /*0x4f4c1c*/
+  return (gamemd::GScreenClass *)((std::locale::facet *)this); /*0x4f4c1c*/
 
 }
 } // namespace gamemd
@@ -1538,7 +1539,7 @@ namespace gamemd {
 int AbstractClass::saveToStream(int a1, const void * a2, unsigned int * a3)
 {
 
-  return HouseClass::QueryInterface( a1 - 4, (const void *)(a2), (unsigned int *)(a3));
+  return HouseClass::QueryInterface((gamemd::CCINIClass *)( a1 - 4), (const void *)(a2), (unsigned int *)(a3));
 
 }
 } // namespace gamemd
@@ -1680,7 +1681,7 @@ MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
   ((ObjectClass *)((ObjectClass *)this))->Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     __3_YAXPAX_Z(this); /*0x5b3a8b*/
-  return &this->vtable1; /*0x5b3a95*/
+  return (gamemd::MissionClass *)(&this->vtable1); /*0x5b3a95*/
 
 }
 } // namespace gamemd
@@ -2121,7 +2122,7 @@ FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
   *Block = (unsigned int)&vt_FileClass;
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
     __3_YAXPAX_Z(Block); /*0x65c622*/
-  return Block; /*0x65c62c*/
+  return (gamemd::FileClass *)(Block); /*0x65c62c*/
 
 }
 } // namespace gamemd

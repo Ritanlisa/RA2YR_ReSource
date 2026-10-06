@@ -195,9 +195,9 @@ v3 = (*(int (**)(int *, unsigned int **))(g_BuildingLoadQueue_Array.ToTile + 16)
       {
         v4 = __RTtypeid(v8); /*0x725cf8*/
         if ( __8type_info_QBEHABV0__Z((const char *)0, v4) /*0x725d61*/
-          || (v5 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)0, v5))
-          || (v6 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)0, v6))
-          || (v7 = __RTtypeid(v8),
+          || (v5 = (int)(__RTtypeid(v8)), __8type_info_QBEHABV0__Z((const char *)0, v5))
+          || (v6 = (int)(__RTtypeid(v8)), __8type_info_QBEHABV0__Z((const char *)0, v6))
+          || (v7 = (int)(__RTtypeid(v8)),
               (result = __8type_info_QBEHABV0__Z((const char *)0, v7)) != 0) )
         {
           result = (int)v8; /*0x725d63*/
@@ -308,7 +308,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   v4 = (char *)((CCFileClass *)(&v17))->ReadEntireFile(); /*0x72adfe*/
   if ( v4 ) /*0x72ae06*/
   {
-    v5 = RA2_OPNEW(0x300u); /*0x72ae11*/
+    v5 = (int)(RA2_OPNEW(0x300u)); /*0x72ae11*/
     if ( v5 ) /*0x72ae1b*/
     {
       v6 = (unsigned char *)(v5 + 2); /*0x72ae1d*/
@@ -328,7 +328,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v5 = 0; /*0x72ae38*/
     }
     *v3 = v5; /*0x72ae3b*/
-    v8 = v4 + 1; /*0x72ae3e*/
+    v8 = (unsigned char *)(v4 + 1); /*0x72ae3e*/
     v9 = 0; /*0x72ae45*/
     while ( 1 ) /*0x72ae5d*/
     {
@@ -719,7 +719,7 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
     0);
   v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1148]; /*0x72e6ad*/
   i = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1148] + 4); /*0x72e6b9*/
-  if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72e6c2*/
+  if ( g_DisplayWidth  ==  (int)((int)640 )) /*0x72e6c2*/
     DrawToSurfaceSHP( /*0x72e6ec*/
       (int)a1,
       *(int *)&g_BuildingLoadQueue_Array.__pad_F70[1052],
@@ -954,7 +954,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   {
     dword_B0FC2C = 0; /*0x72ef45*/
   }
-  return result; /*0x72ef32*/
+  return (int **)(result); /*0x72ef32*/
 }
 }
 // 0x72F540
@@ -987,41 +987,41 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
   i = *((unsigned int *)dword_B0FC30 + 1); /*0x72f59b*/
   if ( g_DisplayWidth == 640 ) /*0x72f5a4*/
   {
-    DrawToSurfaceSHP( a1, dword_B0FBF0, (ConvertClass *)((int)dword_B0FAD4), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f5ca*/
+    DrawToSurfaceSHP( a1, dword_B0FBF0, (ConvertClass *)((int)dword_B0FAD4), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f5ca*/
   }
   else if ( g_DisplayWidth == 800 ) /*0x72f5d1*/
   {
-    DrawToSurfaceSHP( a1, dword_B0FBF0, (ConvertClass *)((int)dword_B0FAC8), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f5f6*/
+    DrawToSurfaceSHP( a1, dword_B0FBF0, (ConvertClass *)((int)dword_B0FAC8), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f5f6*/
   }
   else
   {
-    DrawToSurfaceSHP( a1, dword_B0FBF0, (ConvertClass *)((int)dword_B0FA50), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f624*/
+    DrawToSurfaceSHP( a1, dword_B0FBF0, (ConvertClass *)((int)dword_B0FA50), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f624*/
   }
   v8 = *(unsigned int *)dword_B0FC34; /*0x72f630*/
   i = *((unsigned int *)dword_B0FC34 + 1); /*0x72f65a*/
-  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FB08), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f667*/
+  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FB08), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f667*/
   v8 = *(unsigned int *)dword_B0FC38; /*0x72f67a*/
   i = *((unsigned int *)dword_B0FC38 + 1); /*0x72f681*/
-  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0F9E0), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f6aa*/
+  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0F9E0), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f6aa*/
   v8 = *(unsigned int *)dword_B0FC3C; /*0x72f6b6*/
   i = *((unsigned int *)dword_B0FC3C + 1); /*0x72f6e0*/
-  DrawToSurfaceSHP( a1, dword_B0FBF8, (ConvertClass *)((int)dword_B0FA68), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f6ed*/
+  DrawToSurfaceSHP( a1, dword_B0FBF8, (ConvertClass *)((int)dword_B0FA68), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f6ed*/
   v8 = *(unsigned int *)dword_B0FC44; /*0x72f700*/
   i = *((unsigned int *)dword_B0FC44 + 1); /*0x72f707*/
-  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA70), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f730*/
+  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA70), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f730*/
   v5 = 0; /*0x72f73a*/
   v8 = *(unsigned int *)dword_B0FC48; /*0x72f73e*/
   for ( i = *((unsigned int *)dword_B0FC48 + 1); v5 < dword_B0FADC; i += *((unsigned int *)dword_B0FC48 + 3) ) /*0x72f750*/
   {
-    DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA00), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f77d*/
+    DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA00), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f77d*/
     ++v5; /*0x72f796*/
   }
   v8 = *(unsigned int *)dword_B0FC4C; /*0x72f7a6*/
   i = *((unsigned int *)dword_B0FC4C + 1); /*0x72f7d0*/
-  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA8C), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f7dd*/
+  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA8C), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f7dd*/
   v8 = *(unsigned int *)dword_B0FC50; /*0x72f7ec*/
   i = *((unsigned int *)dword_B0FC50 + 1); /*0x72f7f3*/
-  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA48), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f820*/
+  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA48), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f820*/
   v10[0] = *a2; /*0x72f829*/
   v10[1] = a2[1]; /*0x72f830*/
   v11 = a2[2]; /*0x72f837*/
@@ -1033,17 +1033,17 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
   v15 = dword_886FBC; /*0x72f86e*/
   v8 = *(unsigned int *)dword_B0FC5C; /*0x72f874*/
   i = *((unsigned int *)dword_B0FC5C + 1); /*0x72f882*/
-  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA3C), 0, (ConvertClass *)(&v8), (ConvertClass *)(v10), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f8b0*/
+  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA3C), 0, (ConvertClass *)(&v8), (ConvertClass *)(v10),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f8b0*/
   if ( a3 ) /*0x72f8bb*/
   {
     v8 = *(unsigned int *)dword_B0FC60; /*0x72f8c8*/
     i = *((unsigned int *)dword_B0FC60 + 1); /*0x72f8f3*/
-    DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA90), 2u, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f900*/
+    DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA90), 2u, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f900*/
     v7 = 0; /*0x72f90a*/
     v8 = *(unsigned int *)dword_B0FC68; /*0x72f90e*/
     for ( i = *((unsigned int *)dword_B0FC68 + 1); v7 < dword_B0F9E4; v8 += *((unsigned int *)dword_B0FC68 + 2) ) /*0x72f920*/
     {
-      DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FAA8), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f952*/
+      DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FAA8), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f952*/
       ++v7; /*0x72f96a*/
     }
   }
@@ -1051,11 +1051,11 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
   {
     v8 = *(unsigned int *)dword_B0FC64; /*0x72f97f*/
     i = *((unsigned int *)dword_B0FC64 + 1); /*0x72f986*/
-    DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA90), 2u, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f9b4*/
+    DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FA90), 2u, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f9b4*/
   }
   v8 = *(unsigned int *)dword_B0FC6C; /*0x72f9c0*/
   i = *((unsigned int *)dword_B0FC6C + 1); /*0x72f9ea*/
-  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FABC), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f9f7*/
+  DrawToSurfaceSHP( a1, dword_B0FBE8, (ConvertClass *)((int)dword_B0FABC), 0, (ConvertClass *)(&v8), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f9f7*/
 }
 }
 // 0x72FC60
@@ -1726,7 +1726,7 @@ int sub_721640()
   dword_B0F4E8 = (int)&DynamicVectorClass_TiberiumClass___vftable; /*0x72165d*/
   dword_B0F4FC = 10; /*0x721667*/
   dword_B0F4F8 = 0; /*0x721671*/
-  return atexit(sub_721680); /*0x72167c*/
+  return atexit((void (__cdecl *)(void))(sub_721680)); /*0x72167c*/
 }
 } // namespace gamemd
 

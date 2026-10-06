@@ -72,7 +72,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
         if ( ++v7 >= *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) ) /*0x6f1a56*/
           goto LABEL_7; /*0x6f1a56*/
       }
-      Base = (unsigned int)(unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
+      Base = (unsigned int *)((unsigned int)(unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7))));
       goto LABEL_11; /*0x6f1a82*/
     }
   LABEL_7: v8 = (gamemd::TeamTypeClass *)((gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u)));

@@ -29,6 +29,7 @@
 #include "e4/classes/TypeList_flat_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/AnimTypeVector_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x48DCD0
@@ -861,7 +862,7 @@ LABEL_5:
     return this; /*0x711acb*/
   }
   v5 = (unsigned int *)(dword_A8EB04); /*0x711a72*/
-  while ( *v5 != this ) /*0x711a7a*/
+  while ( *v5   !=   (unsigned int)((unsigned int)(this ))) /*0x711a7a*/
   {
     ++v4; /*0x711a7c*/
     ++v5; /*0x711a7d*/
@@ -1187,7 +1188,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((unsigned int *)aP0)[1348]); /*0x7164ce*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((unsigned int *)aP0)[1492]); /*0x7164df*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((unsigned int *)aP0)[1496]); /*0x7164f0*/
-    if ( aP0 != (TechnoTypeClass *)-1000 ) /*0x7164f7*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1000 ) /*0x7164f7*/
       TypeList::BuildingTypeConstructor(v3); /*0x7164fb*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x71650c*/
     for ( i = 0; i < v36; ++i ) /*0x71651d*/
@@ -1195,7 +1196,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x71652b*/
       ((DynamicVector *)v3)->Add_Alt3( (VectorClass_flat *)(&v37)); /*0x716535*/
     }
-    if ( aP0 != (TechnoTypeClass *)-788 ) /*0x71654d*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-788 ) /*0x71654d*/
       TypeList::VoxelAnimConstructor((TypeList *)&((unsigned int *)aP0)[560]); /*0x716551*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x716562*/
     for ( j = 0; j < v36; ++j ) /*0x71656d*/
@@ -1203,7 +1204,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x71657b*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[560]))->Add2( (unsigned int *)(&v37)); /*0x716585*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1476 ) /*0x716599*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1476 ) /*0x716599*/
       AnimTypeList::Constructor((AnimTypeList *)&((unsigned int *)aP0)[1248]); /*0x71659d*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x7165ae*/
     for ( k = 0; k < v36; ++k ) /*0x7165b9*/
@@ -1211,7 +1212,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x7165c7*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1248]))->Add_Alt4( (unsigned int *)(&v37)); /*0x7165d1*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1044 ) /*0x7165e5*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1044 ) /*0x7165e5*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[816]); /*0x7165e9*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x7165fa*/
     for ( m = 0; m < v36; ++m ) /*0x716605*/
@@ -1219,7 +1220,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x716613*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[816]))->Add_Alt( (unsigned int *)(&v37)); /*0x71661d*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1072 ) /*0x716631*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1072 ) /*0x716631*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[844]); /*0x716635*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x716646*/
     for ( n = 0; n < v36; ++n ) /*0x716651*/
@@ -1227,7 +1228,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x71665f*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[844]))->Add_Alt( (unsigned int *)(&v37)); /*0x716669*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1100 ) /*0x71667d*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1100 ) /*0x71667d*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[872]); /*0x716681*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x716692*/
     for ( ii = 0; ii < v36; ++ii ) /*0x71669d*/
@@ -1235,7 +1236,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x7166ab*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[872]))->Add_Alt( (unsigned int *)(&v37)); /*0x7166b5*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1128 ) /*0x7166c9*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1128 ) /*0x7166c9*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[900]); /*0x7166cd*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x7166de*/
     for ( jj = 0; jj < v36; ++jj ) /*0x7166e9*/
@@ -1243,7 +1244,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x7166f7*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[900]))->Add_Alt( (unsigned int *)(&v37)); /*0x716701*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1156 ) /*0x716715*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1156 ) /*0x716715*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[928]); /*0x716719*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x71672a*/
     for ( kk = 0; kk < v36; ++kk ) /*0x716735*/
@@ -1251,7 +1252,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x716743*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[928]))->Add_Alt( (unsigned int *)(&v37)); /*0x71674d*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1184 ) /*0x716761*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1184 ) /*0x716761*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[956]); /*0x716765*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x716776*/
     for ( mm = 0; mm < v36; ++mm ) /*0x716781*/
@@ -1259,7 +1260,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x71678f*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[956]))->Add_Alt( (unsigned int *)(&v37)); /*0x716799*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1212 ) /*0x7167ad*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1212 ) /*0x7167ad*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[984]); /*0x7167b1*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x7167c2*/
     for ( nn = 0; nn < v36; ++nn ) /*0x7167cd*/
@@ -1267,7 +1268,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x7167db*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[984]))->Add_Alt( (unsigned int *)(&v37)); /*0x7167e5*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1240 ) /*0x7167f9*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1240 ) /*0x7167f9*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[1012]); /*0x7167fd*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x71680e*/
     for ( i1 = 0; i1 < v36; ++i1 ) /*0x716819*/
@@ -1275,7 +1276,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x716827*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1012]))->Add_Alt( (unsigned int *)(&v37)); /*0x716831*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1268 ) /*0x716845*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1268 ) /*0x716845*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[1040]); /*0x716849*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x71685a*/
     for ( i2 = 0; i2 < v36; ++i2 ) /*0x716865*/
@@ -1283,7 +1284,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x716873*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1040]))->Add_Alt( (unsigned int *)(&v37)); /*0x71687d*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1296 ) /*0x716891*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1296 ) /*0x716891*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[1068]); /*0x716895*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x7168a6*/
     for ( i3 = 0; i3 < v36; ++i3 ) /*0x7168b1*/
@@ -1291,7 +1292,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x7168bf*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1068]))->Add_Alt( (unsigned int *)(&v37)); /*0x7168c9*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1836 ) /*0x7168dd*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1836 ) /*0x7168dd*/
       AnimTypeList::Constructor((AnimTypeList *)&((unsigned int *)aP0)[1608]); /*0x7168e1*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x7168f2*/
     for ( i4 = 0; i4 < v36; ++i4 ) /*0x7168fd*/
@@ -1299,7 +1300,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x71690b*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1608]))->Add_Alt4( (unsigned int *)(&v37)); /*0x716915*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1864 ) /*0x716929*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1864 ) /*0x716929*/
       AnimTypeList::Constructor((AnimTypeList *)&((unsigned int *)aP0)[1636]); /*0x71692d*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x71693e*/
     for ( i5 = 0; i5 < v36; ++i5 ) /*0x716949*/
@@ -1307,7 +1308,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x716957*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1636]))->Add_Alt4( (unsigned int *)(&v37)); /*0x716961*/
     }
-    if ( aP0 != (TechnoTypeClass *)-816 ) /*0x716975*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-816 ) /*0x716975*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[588]); /*0x716979*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x71698a*/
     for ( i6 = 0; i6 < v36; ++i6 ) /*0x716995*/
@@ -1315,7 +1316,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x7169a3*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[588]))->Add_Alt( (unsigned int *)(&v37)); /*0x7169ad*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1592 ) /*0x7169c1*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1592 ) /*0x7169c1*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[1364]); /*0x7169c5*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x7169d6*/
     for ( i7 = 0; i7 < v36; ++i7 ) /*0x7169e1*/
@@ -1323,7 +1324,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x7169ef*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1364]))->Add_Alt( (unsigned int *)(&v37)); /*0x7169f9*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1620 ) /*0x716a0d*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1620 ) /*0x716a0d*/
       TypeList::Construct((TypeList *)&((unsigned int *)aP0)[1392]); /*0x716a11*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x716a22*/
     for ( i8 = 0; i8 < v36; ++i8 ) /*0x716a2d*/
@@ -1331,7 +1332,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x716a3b*/
       ((DynamicVector *)((DynamicVector *)&((unsigned int *)aP0)[1392]))->Add_Alt( (unsigned int *)(&v37)); /*0x716a45*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1912 ) /*0x716a59*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1912 ) /*0x716a59*/
       TechnoTypeClass::Constructor((TechnoTypeClass *)&((unsigned int *)aP0)[1684]); /*0x716a5d*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x716a6e*/
     for ( i9 = 0; i9 < v36; ++i9 ) /*0x716a79*/
@@ -1339,7 +1340,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v37), 4, 0); /*0x716a87*/
       TypeList::PushBack((TypeList *)&((unsigned int *)aP0)[1684], &v37); /*0x716a91*/
     }
-    if ( aP0 != (TechnoTypeClass *)-1940 ) /*0x716aa5*/
+    if ( aP0 != (gamemd::ObjectTypeClass *)-1940 ) /*0x716aa5*/
       TechnoTypeClass::Constructor((TechnoTypeClass *)&((unsigned int *)aP0)[1712]); /*0x716aa9*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( aP1, (int *)(&v36), 4, 0); /*0x716aba*/
     for ( i10 = 0; i10 < v36; ++i10 ) /*0x716ac5*/
@@ -1379,7 +1380,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)&((unsigned int *)aP0)[1688] + 4 * i16)); /*0x716c15*/
     for ( i17 = 0; i17 < *(unsigned int *)&((unsigned int *)aP0)[1728]; ++i17 ) /*0x716c2f*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)&((unsigned int *)aP0)[1716] + 4 * i17)); /*0x716c40*/
-    _makepath(Buffer, 0, 0, &((unsigned int *)aP0)[276], Ext); /*0x716c66*/
+    _makepath(Buffer, 0, 0,(const char *)( &((unsigned int *)aP0)[276]), Ext); /*0x716c66*/
     aP0->ObjectTypeClass[41] = (int)SearchMIXFile( (char *)(Buffer), 0); /*0x716c96*/
     /*0x716c9c*/
       ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716c9c*/ &((unsigned int *)aP0)[276], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_Key_TRUCKA.__pad_1714[80], Filename, 256);

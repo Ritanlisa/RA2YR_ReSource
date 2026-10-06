@@ -62,7 +62,7 @@ LinkClass * LinkClass::Destru_vt00(unsigned int * Block, char a2)
   ((LinkClass*)this)->Destruct(); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
     __3_YAXPAX_Z(this); /*0x4e1ae0*/
-  return this->__pad_0; /*0x4e1aea*/
+  return (gamemd::LinkClass *)(this->__pad_0); /*0x4e1aea*/
 
 }
 } // namespace gamemd

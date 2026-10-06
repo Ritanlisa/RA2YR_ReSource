@@ -86,7 +86,7 @@ LABEL_11:
   else
   {
     v6 = (unsigned int *)(dword_A8B21C); /*0x41c97a*/
-    while ( *v6 != this ) /*0x41c982*/
+    while ( *v6    !=    (unsigned int)((unsigned int)((unsigned int)(this )))) /*0x41c982*/
     {
       ++v5; /*0x41c984*/
       ++v6; /*0x41c985*/
@@ -114,6 +114,7 @@ LABEL_11:
 namespace gamemd {
 AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3)
 {
+  AircraftTypeClass *self = (AircraftTypeClass *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x41CC20) */
   int v3; // ecx
   int v4; // esi
   char Bool_Overwrite; // al
@@ -373,7 +374,7 @@ namespace gamemd {  // G42.18c ns repair
 int AircraftTypeClass::GetAuxField()
 {
 
-  return this->ArrayIndex; /*0x41cfd6*/
+  return (int)(this->ArrayIndex); /*0x41cfd6*/
 
 }
 }  // G42.18c ns repair

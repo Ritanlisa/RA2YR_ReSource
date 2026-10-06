@@ -69,7 +69,7 @@ VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr;
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     __3_YAXPAX_Z(this); /*0x766a02*/
-  return this->__pad_0; /*0x766a0c*/
+  return (gamemd::VectorCursor *)(this->__pad_0); /*0x766a0c*/
 
 }
 } // namespace gamemd

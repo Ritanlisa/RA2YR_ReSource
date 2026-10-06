@@ -59,12 +59,12 @@ int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const
   ReadRegistryOptionsWOL((ObjectClass *)&v22[0].uniqueId); /*0x7a3dfe*/
   if ( (uint8_t)((Flag *)((Flag *)&v22[0].uniqueId))->IsNot2() ) /*0x7a3e07*/
   {
-    v22[0].vtable0 = FindChannelWOL( (const char *)(lParama), (int)v23, 1u, *(unsigned int *)(v22[0].vtable2 + 16)); /*0x7a3e2d*/
+    v22[0].vtable0 = (void *)(FindChannelWOL( (const char *)(lParama), (int)v23, 1u, *(unsigned int *)(v22[0].vtable2 + 16))); /*0x7a3e2d*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x7a3e31*/
   }
   v21 = (unsigned int)(1);
   v20 = (unsigned int)(0);
-  v5 = (unsigned int)((HWND)((Dialog*)(Dialog *)0x10F)->FindByHandle());
+  v5 = (HWND)((unsigned int)((HWND)((Dialog*)(Dialog *)0x10F)->FindByHandle()));
   if ( v5 /*0x7a3e7a*/
     || (v5 = (HWND)((Dialog*)(Dialog *)0x11D)->FindByHandle(), v20 = v5 != 0, v5)
     || (v21 = 0, (v5 = (HWND)((Dialog*)(Dialog *)0x114)->FindByHandle()) != 0) )

@@ -182,7 +182,7 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
     v17[0] = v13 + 128; /*0x6e2165*/
     v17[2] = dword_B0E6D4; /*0x6e2171*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v17), (int *)(v16)); /*0x6e217d*/
-    Cell::CreateCrater(v16[0] - 128, v16[1] - 128, 256, 256, 0); /*0x6e21af*/
+    Cell::CreateCrater((void *)(v16[0] - 128),(void *)( v16[1] - 128),(void *)( 256), 256, 0); /*0x6e21af*/
   }
   return v15; /*0x6e21b8*/
 }

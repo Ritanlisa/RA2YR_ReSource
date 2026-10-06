@@ -39,7 +39,7 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
   this->m_8 = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
     __3_YAXPAX_Z(this); /*0x5c597b*/
-  return this->__pad_0; /*0x5c5985*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x5c5985*/
 
 }
 } // namespace gamemd

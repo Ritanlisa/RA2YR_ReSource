@@ -226,6 +226,7 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 #include "D:\RA2YR_ReSource\src\e4\classes\addr49_carriers_e4.hpp"  // G42.42q minimal carriers
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
 
@@ -1871,7 +1872,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   if ( !*((unsigned char *)this + 28) ) /*0x49c0e6*/
     return 0; /*0x49c0ee*/
   v3 = 0; /*0x49c0f7*/
-  v4 = this; /*0x49c0fb*/
+  v4 = (char *)(this); /*0x49c0fb*/
   if ( *this )
   {
     do
@@ -1964,7 +1965,7 @@ LABEL_44:
     v29[0] = (unsigned int)(&vt_CCFileClass); /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     ((Vector *)((int)v30))->Clear((int)((Vector *)((int)v30))); /*0x49c575*/
-    v29[0] = &off_7E1668; /*0x49c581*/
+    v29[0] = (unsigned int)(&off_7E1668); /*0x49c581*/
     ((BufferIOFileClass *)(v29))->Dtor(); /*0x49c58c*/
     return 0; /*0x49c594*/
   }
@@ -2003,11 +2004,11 @@ LABEL_44:
   }
   v21 = dword_89F570 + 76 * v20; /*0x49c486*/
   *((unsigned int *)this + 16) = *(char *)(v21 + 8); /*0x49c489*/
-  *((unsigned int *)this + 15) = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
+  *((unsigned int *)this + 15) = (unsigned int)(__2_YAPAXI_Z(4 * *(char *)(v21 + 8))); /*0x49c499*/
   for ( j = 0; j < *((unsigned int *)this + 16); ++j ) /*0x49c4a6*/
   {
     sprintf(Buffer, "Map%d", j + 1); /*0x49c4b9*/
-    *(unsigned int *)(*((unsigned int *)this + 15) + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
+    *(unsigned int *)(*((unsigned int *)this + 15) + 4 * j) = (unsigned int)(__2_YAPAXI_Z(0x104u)); /*0x49c4ce*/
     /*0x49c4f3*/
       ((INIClass*)((uint8_t ***)v24))->GetString(/*0x49c4f3*/ (uint8_t *)v28, (uint8_t *)Buffer, g_Str_undefined, *(char **)(*((unsigned int *)this + 15) + 4 * j), 260);
   }
@@ -2016,9 +2017,9 @@ LABEL_44:
   v29[0] = &vt_CCFileClass; /*0x49c515*/
   v31 = 0; /*0x49c520*/
   ((Vector *)((int)v30))->Clear((int)((Vector *)((int)v30))); /*0x49c527*/
-  v29[0] = &off_7E1668; /*0x49c533*/
+  v29[0] = (unsigned int)(&off_7E1668); /*0x49c533*/
   ((BufferIOFileClass *)(v29))->Dtor(); /*0x49c53e*/
-  return 1; /*0x49c543*/
+  return (gamemd::AbstractClass **)(1); /*0x49c543*/
 
 }
 }
@@ -2089,13 +2090,13 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     *((unsigned int *)this + 15) = 0; /*0x49cdc8*/
     *((unsigned int *)this + 16) = 0; /*0x49cdcb*/
     v16 = 0; /*0x49cdde*/
-    *((unsigned int *)this + 15) = __2_YAPAXI_Z(4 * a7); /*0x49cde2*/
+    *((unsigned int *)this + 15) = (unsigned int)(__2_YAPAXI_Z(4 * a7)); /*0x49cde2*/
     if ( a7 > 0 ) /*0x49cde5*/
     {
       v17 = 0; /*0x49cde7*/
       do /*0x49ce2e*/
       {
-        *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v16) = __2_YAPAXI_Z(0x104u); /*0x49cdff*/
+        *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v16) = (unsigned int)(__2_YAPAXI_Z(0x104u)); /*0x49cdff*/
         strncpy( /*0x49ce20*/
           *(char **)(*((unsigned int *)this + 15) + 4 * v16),
           (const char *)(*(unsigned int *)(v33 + 12) + 260 * (v17 + *((unsigned int *)Block + v16))),
@@ -2309,7 +2310,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   char Buffer[32]; // [esp+D0h] [ebp-84h] BYREF
   char v25[100]; // [esp+F0h] [ebp-64h] BYREF
 
-  v2 = this; /*0x49d399*/
+  v2 = (char *)(this); /*0x49d399*/
   if ( !*this ) /*0x49d39d*/
     return 0; /*0x49d39d*/
   v3 = (char *)((unsigned char *)this + 28); /*0x49d3a8*/
@@ -2331,7 +2332,7 @@ LABEL_5:
     v17[0] = &vt_CCFileClass; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     ((Vector *)((int)v18))->Clear((int)((Vector *)((int)v18))); /*0x49d436*/
-    v17[0] = &off_7E1668; /*0x49d43f*/
+    v17[0] = (unsigned int)(&off_7E1668); /*0x49d43f*/
     ((BufferIOFileClass *)(v17))->Dtor(); /*0x49d447*/
     return 0; /*0x49d457*/
   }
@@ -2400,13 +2401,13 @@ LABEL_5:
   sprintf(Buffer, "Map%d", IntOverwriteINIClass + 1); /*0x49d5d1*/
   /*0x49d602*/
     ((INIClass*)((uint8_t ***)v20))->GetString(/*0x49d602*/ (uint8_t *)v25, (uint8_t *)Buffer, g_Str_undefined, aP1, 260);
-  if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
+  if ( strcmp((const char *)(aP1),(const char *)( g_Str_undefined)) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   ((HashTable *)(v20))->DestroyHashTableINIClass(); /*0x49d644*/
   v17[0] = &vt_CCFileClass; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   ((Vector *)((int)v18))->Clear((int)((Vector *)((int)v18))); /*0x49d659*/
-  v17[0] = &off_7E1668; /*0x49d662*/
+  v17[0] = (unsigned int)(&off_7E1668); /*0x49d662*/
   ((BufferIOFileClass *)(v17))->Dtor(); /*0x49d66a*/
   return 1; /*0x49d44c*/
 
@@ -2472,7 +2473,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
     {
       v5 = v23; /*0x49d723*/
       v6 = 0; /*0x49d727*/
-      while ( _strcmpi((const void *)(v5 + *(unsigned int *)(v24 + 12)), *(const void **)(*((unsigned int *)this + 15) + 4 * v4)) ) /*0x49d748*/
+      while ( _strcmpi((const char *)((const void *)(v5 + *(unsigned int *)(v24 + 12))),(const char *)( *(const void **)(*((unsigned int *)this + 15) + 4 * v4))) ) /*0x49d748*/
       {
         ++v6; /*0x49d74a*/
         v5 += 260; /*0x49d74b*/
@@ -2491,7 +2492,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   }
   strcat( (char *)(Buffer), (const char *)(a1_0)); /*0x49d7d9*/
   v7 = 0; /*0x49d7e7*/
-  v8 = this; /*0x49d7e9*/
+  v8 = (char *)(this); /*0x49d7e9*/
   if ( *this )
   {
     do
@@ -2573,7 +2574,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   Debug::Log("@@@@ Sending campaign game option string: %s\n"); /*0x49d9b6 G57c1: IDA 0x49d9b6 push offset aSendingCampaig_0*/
   ((Network *)Buffer)->SendOptionsGame(); /*0x49d9c2*/
   Debug::Log("@@@@ Sent\n"); /*0x49d9cc G57c1: IDA 0x49d9cc push offset aSent*/
-  return 1; /*0x49d692*/
+  return (gamemd::AbstractClass **)(1); /*0x49d692*/
 
 }
 }
@@ -2635,7 +2636,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
     }
     if ( (a2 & 1) != 0 ) /*0x49e856*/
       __3_YAXPAX_Z(v4); /*0x49e859*/
-    return v4; /*0x49e861*/
+    return (gamemd::AbstractClass **)(v4); /*0x49e861*/
   }
   else
   {
@@ -2661,7 +2662,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
     ((unsigned int *)this)[0] = 0; /*0x49e8c6*/
     if ( (a2 & 1) != 0 ) /*0x49e8c9*/
       __3_YAXPAX_Z(this); /*0x49e8cc*/
-    return (char *)this; /*0x49e8d4*/
+    return (gamemd::AbstractClass **)((char *)this); /*0x49e8d4*/
   }
 
 }

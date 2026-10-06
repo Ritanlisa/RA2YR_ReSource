@@ -42,7 +42,7 @@ int DisplayClass::UpdateDisplayTimer()
   int v2; // edx
   void *DisplayClass_field_0x12C; // eax
 
-  if ( this->DisplayClass_field_0x130 == (void *)1 ) /*0x487637*/
+  if ( this->DisplayClass_field_0x130  ==  (unsigned int)((unsigned int)1 )) /*0x487637*/
     this->DisplayClass_field_0x130 = 0; /*0x487639*/
   v1 = (char *)this->DisplayClass_field_0x130 - 1; /*0x487649*/
   this->DisplayClass_field_0x130 = (unsigned int)(v1); /*0x48764a*/
@@ -116,7 +116,7 @@ int DisplayClass::LoadTypeData()
   ((gamemd::MapClass*)this)->Destru_vt05(); /*0x4a8856*/
   stru_8A0390.health = SearchMIXFile((char *)(aPlaceShp), 0); /*0x4a886e*/
   dword_8A072C = (unsigned int)SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
-  Viewport = ((Display *)v7)->GetViewport(); /*0x4a8881*/
+  Viewport = (int *)(((Display *)v7)->GetViewport()); /*0x4a8881*/
   v6[0] = *Viewport; /*0x4a8888*/
   v6[1] = Viewport[1]; /*0x4a888f*/
   v6[2] = Viewport[2]; /*0x4a8896*/
@@ -740,7 +740,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
     if ( !*((unsigned char *)this + 13) && v5 ) /*0x5519e2*/
       return 0; /*0x5519e2*/
     v6 = *((unsigned int *)this + 5); /*0x5519e4*/
-    if ( v6 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)this + 8))(this, v5 + v6, 0) ) /*0x5519f4*/
+    if ( v6 <= 0 || !(*(uint8_t ((int)(**))(int, int, unsigned int))(*(unsigned int *)this + 8))(this, v5 + v6, 0) ) /*0x5519f4*/
       return 0; /*0x551a04*/
   }
   v7 = *((unsigned int *)this + 4); /*0x551a0a*/
@@ -1002,7 +1002,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   v13 = 0; /*0x4aac2c*/
   if ( (a2 & 0x55) != 0 ) /*0x4aac34*/
   {
-    v5 = (&dword_87F770)[1]; /*0x4aac3d*/
+    v5 = (HWND)((&dword_87F770)[1]); /*0x4aac3d*/
     v12 = (int)*dword_87F770; /*0x4aac40*/
     v13 = v5; /*0x4aac44*/
   }
@@ -1119,7 +1119,7 @@ DisplayClass * DisplayClass::Read(char * Block, char a2)
   ((gamemd::MapClass*)(char *)this)->Destruct(); /*0x4aebf3*/
   if ( (a2 & 1) != 0 ) /*0x4aebfd*/
     __3_YAXPAX_Z(this); /*0x4aec00*/
-  return (char *)this; /*0x4aec0a*/
+  return (gamemd::DisplayClass *)((char *)this); /*0x4aec0a*/
 
 }
 } // namespace gamemd

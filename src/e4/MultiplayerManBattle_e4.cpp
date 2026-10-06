@@ -20,7 +20,7 @@ MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block
   ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Dtor(); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
     __3_YAXPAX_Z(this); /*0x5c61b6*/
-  return &this->MultiplayerManBattle_field_00; /*0x5c61c0*/
+  return (gamemd::MultiplayerManBattle *)(&this->MultiplayerManBattle_field_00); /*0x5c61c0*/
 
 }
 } // namespace gamemd

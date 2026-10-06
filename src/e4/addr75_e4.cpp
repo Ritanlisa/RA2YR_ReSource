@@ -108,7 +108,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     v8 = Math::RoundToInt(a3 * 16384.0); /*0x75098e*/
     if ( v8 >= 0x4000 ) /*0x750996*/
       v8 = (int)(0x4000); /*0x750998*/
-    if ( v6 || (v6 = ((AudioPool *)(v5))->ProcessQueue()) != 0 ) /*0x7509ac*/
+    if ( v6 || (v6 = (int)(((AudioPool *)(v5))->ProcessQueue())) != 0 ) /*0x7509ac*/
     {
       AudioMixer::PlayBuffer((unsigned int *)(v6), v8); /*0x7509b2*/
       ((AudioMixer *)(v6))->RequestOrEndBuffer((int)((AudioMixer *)(v6)), a2); /*0x7509bd*/
@@ -301,7 +301,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
           lpRootPathName,
           (LPSTR)a2 + 4,
           0x40u,
-          a2 + 17,
+          a2 + 17(LPDWORD)(),
           &MaximumComponentLength,
           &FileSystemFlags,
           (LPSTR)a2 + 72,
@@ -496,7 +496,7 @@ void ThemeQueue_ClearPlaylist(int a1)
     for ( i = (int)(((AudioQueue *)(*((unsigned int *)g_InfantryRenderPool + a1)))->FindByData()); /*0x752a61*/
           i;
           i = (int)(((AudioQueue *)(*((unsigned int *)g_InfantryRenderPool + a1)))->FindByData() ) { if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/ LinkedList::Init(  (unsigned int **)i));
-      if ( (void *)i == dword_B1D4B8 ) /*0x752a75*/
+      if ( (void *)i == (void *)(dword_B1D4B8) ) /*0x752a75*/
         dword_B1D4B8 = 0; /*0x752a77*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x752a85*/
       RA2_OPDEL((void *)i); /*0x752a8c*/
@@ -936,7 +936,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v17 = v10 + 1; /*0x7543f5*/
       do /*0x75440b*/
       {
-        ((Voxel *)(**v16))->ProcessColor( (*v16), (float *)(&v33)); /*0x754402*/
+        ((Voxel *)(**v16))->ProcessColor((unsigned int *)( (*v16)), (float *)(&v33)); /*0x754402*/
         --v16; /*0x754407*/
         --v17; /*0x75440a*/
       }
@@ -951,7 +951,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
       v19 = (unsigned int ***)&unk_B2FE78; /*0x754415*/
       do /*0x754434*/
       {
-        ((Voxel *)(**v19))->ProcessColor( (*v19), (float *)(&v33)); /*0x754424*/
+        ((Voxel *)(**v19))->ProcessColor((unsigned int *)( (*v19)), (float *)(&v33)); /*0x754424*/
         ++v18; /*0x75442e*/
         ++v19; /*0x75442f*/
       }
@@ -1262,7 +1262,7 @@ void ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
                 v11 = v21; /*0x7574d7*/
                 IDA_LOWORD(a1) = (&g_VoxelOffsetTable)[v21]; /*0x7574dc*/
                 a3 += a1; /*0x7574e4*/
-                IDA_LOWORD(a1) = IDA_HIWORD(g_VoxelOffsetTable[v21]); /*0x7574e6*/
+                IDA_LOWORD(a1) = IDA_HIWORD((&g_VoxelOffsetTable)[v21]); /*0x7574e6*/
                 a2 += a1; /*0x7574ee*/
                 a1 = v10 + a4; /*0x7574f4*/
                 v10 = v19 - v21; /*0x7574fa*/
@@ -1332,7 +1332,7 @@ void ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
   int v36; // [esp+40h] [ebp-4h]
   int v37; // [esp+48h] [ebp+4h]
 
-  g_VoxelOffsetTable[0] = 0; /*0x757987*/
+  (&g_VoxelOffsetTable)[0] = 0; /*0x757987*/
   v6 = 1; /*0x7579a1*/
   if ( *(unsigned char *)(a5 + 50) > 1u ) /*0x7579a6*/
   {
@@ -1380,9 +1380,9 @@ void ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
               {
                 v12 = *v11; /*0x757a4a*/
                 v13 = v11 + 1; /*0x757a4c*/
-                IDA_LOWORD(a2) = g_VoxelOffsetTable[v12]; /*0x757a5a*/
+                IDA_LOWORD(a2) = (&g_VoxelOffsetTable)[v12]; /*0x757a5a*/
                 a4 += a2; /*0x757a62*/
-                IDA_LOWORD(a2) = IDA_HIWORD(g_VoxelOffsetTable[v12]); /*0x757a64*/
+                IDA_LOWORD(a2) = IDA_HIWORD((&g_VoxelOffsetTable)[v12]); /*0x757a64*/
                 a3 += a2; /*0x757a6c*/
                 IDA_LOWORD(a2) = *(unsigned short *)(a5 + 46) * v12; /*0x757a74*/
                 a1 += a2; /*0x757a79*/
@@ -1414,11 +1414,11 @@ void ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
                       v15 = v19 + 1; /*0x757ada*/
                       byte_B1D5E0[v16] = v17; /*0x757adf*/
                       byte_B1D5E1[v16] = v17; /*0x757aeb*/
-                      a2 = (uint8_t)g_VoxelShadeTable[v24] << 8; /*0x757b05*/
-                      IDA_LOBYTE(a2) = g_VoxelColorPalette[a2 + v20]; /*0x757b0e*/
+                      a2 = (uint8_t)(&g_VoxelShadeTable)[v24] << 8; /*0x757b05*/
+                      IDA_LOBYTE(a2) = (&g_VoxelColorPalette)[a2 + v20]; /*0x757b0e*/
                       a3 = v26; /*0x757b15*/
-                      g_VoxelRenderBuffer[v16] = a2; /*0x757b19*/
-                      g_VoxelDepthBuffer[v16] = a2; /*0x757b1f*/
+                      (&g_VoxelRenderBuffer)[v16] = a2; /*0x757b19*/
+                      (&g_VoxelDepthBuffer)[v16] = a2; /*0x757b1f*/
                     }
                     IDA_LOWORD(v16) = *(unsigned short *)(a5 + 42); /*0x757b2a*/
                     a4 += v16; /*0x757b32*/
@@ -1494,7 +1494,7 @@ void VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
   int v34; // [esp+44h] [ebp-4h]
   int v35; // [esp+4Ch] [ebp+4h]
 
-  g_VoxelOffsetTable[0] = 0; /*0x757bf9*/
+  (&g_VoxelOffsetTable)[0] = 0; /*0x757bf9*/
   v5 = 1; /*0x757c10*/
   if ( *(unsigned char *)(a4 + 50) > 1u ) /*0x757c15*/
   {
@@ -1562,13 +1562,13 @@ void VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
                     {
                       v24 = *v13; /*0x757d03*/
                       v13 -= 2; /*0x757d11*/
-                      v15 = (uint8_t)g_VoxelShadeTable[v24] << 8; /*0x757d31*/
+                      v15 = (uint8_t)(&g_VoxelShadeTable)[v24] << 8; /*0x757d31*/
                       v16 = v13[1]; /*0x757d34*/
                       byte_B1D5E0[v14] = v9; /*0x757d3a*/
                       byte_B1D5E1[v14] = v9; /*0x757d40*/
-                      IDA_LOBYTE(v15) = g_VoxelColorPalette[v15 + v16]; /*0x757d46*/
-                      g_VoxelRenderBuffer[v14] = v15; /*0x757d4d*/
-                      g_VoxelDepthBuffer[v14] = v15; /*0x757d53*/
+                      IDA_LOBYTE(v15) = (&g_VoxelColorPalette)[v15 + v16]; /*0x757d46*/
+                      (&g_VoxelRenderBuffer)[v14] = v15; /*0x757d4d*/
+                      (&g_VoxelDepthBuffer)[v14] = v15; /*0x757d53*/
                       a1 = v21; /*0x757d59*/
                     }
                     IDA_LOWORD(v14) = *(unsigned short *)(a4 + 42); /*0x757d62*/
@@ -1586,9 +1586,9 @@ void VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
                 }
                 v22 = *(v13 - 1); /*0x757d93*/
                 v11 = v13 - 2; /*0x757d97*/
-                IDA_LOWORD(v9) = g_VoxelOffsetTable[v22]; /*0x757da1*/
+                IDA_LOWORD(v9) = (&g_VoxelOffsetTable)[v22]; /*0x757da1*/
                 a3 += v9; /*0x757da9*/
-                IDA_LOWORD(v9) = IDA_HIWORD(g_VoxelOffsetTable[v22]); /*0x757dab*/
+                IDA_LOWORD(v9) = IDA_HIWORD((&g_VoxelOffsetTable)[v22]); /*0x757dab*/
                 a1 += v9; /*0x757db3*/
                 IDA_LOWORD(v9) = *(unsigned short *)(a4 + 46) * v22; /*0x757dbb*/
                 a2 += v9; /*0x757dc0*/
@@ -1663,7 +1663,7 @@ void ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
   int v33; // [esp+38h] [ebp-4h]
 
   v4 = a4; /*0x7581f0*/
-  g_VoxelOffsetTable[0] = 0; /*0x7581f7*/
+  (&g_VoxelOffsetTable)[0] = 0; /*0x7581f7*/
   v5 = 1; /*0x758211*/
   if ( *((unsigned char *)a4 + 50) > 1u ) /*0x758216*/
   {
@@ -1715,9 +1715,9 @@ void ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
                 v13 = v12 + 1; /*0x7582c9*/
                 v14 = (uint8_t)v10; /*0x7582ce*/
                 IDA_LOWORD(v10) = *((unsigned short *)v4 + 23) * (uint8_t)v10; /*0x7582d6*/
-                IDA_LOWORD(a1) = g_VoxelOffsetTable[v14]; /*0x7582e0*/
+                IDA_LOWORD(a1) = (&g_VoxelOffsetTable)[v14]; /*0x7582e0*/
                 a3 += (int)a1; /*0x7582e8*/
-                IDA_LOWORD(a1) = IDA_HIWORD(g_VoxelOffsetTable[v14]); /*0x7582ea*/
+                IDA_LOWORD(a1) = IDA_HIWORD((&g_VoxelOffsetTable)[v14]); /*0x7582ea*/
                 a2 += (int)a1; /*0x7582f2*/
                 a1 = (int *)((char *)a4 + (unsigned int)v10); /*0x7582f8*/
                 v10 = (int *)((char *)v22 - v14); /*0x7582fe*/
@@ -1755,7 +1755,7 @@ void ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
                   while ( !v19 ); /*0x75838b*/
                 }
                 IDA_HIWORD(v11) = IDA_HIWORD(v22); /*0x75838d*/
-                v12 = v16 + 1; /*0x758391*/
+                v12 = (unsigned char *)(v16 + 1); /*0x758391*/
               }
               while ( v22 ); /*0x758394*/
             }
@@ -1952,14 +1952,14 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
   v3 = 0; /*0x758ae2*/
   if ( !(*(int (**)(int *, int))(*a2 + 28))( (int *)(a2), 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  vtable2 = ((unsigned int *)this)[0]; /*0x758aed*/
-  vtable1 = ((unsigned int *)this)[0]; /*0x758af0*/
+  vtable2 = (void *)(((unsigned int *)this)[0]); /*0x758aed*/
+  vtable1 = (void *)(((unsigned int *)this)[0]); /*0x758af0*/
   v9[0] = this->AbstractClass; /*0x758af3*/
-  vtable3 = ((unsigned int *)this)[0]; /*0x758af7*/
-  v9[2] = vtable2; /*0x758afa*/
-  v9[1] = vtable1; /*0x758afe*/
+  vtable3 = (void *)(((unsigned int *)this)[0]); /*0x758af7*/
+  v9[2] = (unsigned int)(vtable2); /*0x758afa*/
+  v9[1] = (unsigned int)(vtable1); /*0x758afe*/
   v7 = *a2; /*0x758b02*/
-  v9[3] = vtable3; /*0x758b08*/
+  v9[3] = (unsigned int)(vtable3); /*0x758b08*/
   if ( (*(int (**)(int *, unsigned int *, int))(v7 + 48))( (int *)(a2), (unsigned int *)(v9), 16) != 16 /*0x758b4a*/
     || (*(int (**)(int *, int, int))(*a2 + 48))( (int *)(a2), ((unsigned int *)this)[0], 768) != 768
     || (*(int (**)(int *, int, int))(*a2 + 48))( (int *)(a2), ((unsigned int *)this)[0], (int)((unsigned int *)this)[0] << 8) != (int)((unsigned int *)this)[0] << 8 )
@@ -1983,7 +1983,7 @@ int sub_759180()
   dword_B45B58 = (int)&DynamicVectorClass_MovieHandle___vftable; /*0x75919d*/
   dword_B45B6C = 10; /*0x7591a7*/
   g_AsyncIOState = 0; /*0x7591b1*/
-  return atexit(sub_7591C0); /*0x7591bc*/
+  return atexit((void (__cdecl *)(void))(sub_7591C0)); /*0x7591bc*/
 }
 }
 // 0x7591C0
@@ -2096,7 +2096,7 @@ unsigned int * * sub_75A2F0(int a1, int a2, unsigned int * Block, size_t Size)
   switch ( a2 ) /*0x75a2fc*/
   {
     case 2: /*0x75a2fc*/
-      result = malloc(Size); /*0x75a308*/
+      result = (unsigned int *)(malloc(Size)); /*0x75a308*/
       break; /*0x75a310*/
     case 3: /*0x75a2fc*/
       free( (void *)(Block)); /*0x75a316*/
@@ -2114,7 +2114,7 @@ unsigned int * * sub_75A2F0(int a1, int a2, unsigned int * Block, size_t Size)
       result = (unsigned int *)(0); /*0x75a330*/
       break; /*0x75a330*/
   }
-  return result; /*0x75a310*/
+  return (unsigned int **)(result); /*0x75a310*/
 }
 }
 // 0x75A350
@@ -2362,7 +2362,7 @@ int sub_750300()
   dword_B1D378 = (int)&DynamicVectorClass_VocClass___vftable; /*0x75031d*/
   dword_B1D38C = 10; /*0x750327*/
   g_VocPlayState = 0; /*0x750331*/
-  return atexit(sub_750340); /*0x75033c*/
+  return atexit((void (__cdecl *)(void))(sub_750340)); /*0x75033c*/
 }
 } // namespace gamemd
 
@@ -2415,7 +2415,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
   }
   if ( v6 ) /*0x750a3a*/
   {
-    v9 = ComputeAudioPosition(a2, &a1, *(float *)&v6); /*0x750a43*/
+    v9 = ComputeAudioPosition((gamemd::AudioMixer *)(a2), &a1, *(float *)&v6); /*0x750a43*/
     if ( v9 <= 0.0 ) /*0x750a53*/
     {
       if ( v5 ) /*0x750a9a*/

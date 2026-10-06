@@ -41,6 +41,17 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AirstrikeClass_e4.hpp"
+#include "e4/classes/CrateClass_e4.hpp"
+#include "e4/classes/Function_e4.hpp"
+#include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/ProgressAnim_e4.hpp"
+#include "e4/classes/SHPClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/NukeFlash_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/PsyDom_e4.hpp"  // G42.36 C2027 supply
@@ -178,7 +189,7 @@ int Scenario::ReadTeams()
               v67 = (int *)(atoi(v15));
               v16 = strtok(0, (char *)&::Delimiter); /*0x44f9bf*/
               v58 = (unsigned int)(int *)(0);
-              v17 = (unsigned int)(strtok(0, (char *)&::Delimiter));
+              v17 = (char *)((unsigned int)(strtok(0, (char *)&::Delimiter)));
               if ( v17 ) /*0x44f9d0*/
                 v58 = atoi(v17) != 0; /*0x44f9dd*/
               v57 = 0; /*0x44f9e9*/
@@ -462,15 +473,15 @@ Game * * Scenario::ComputeDisplayPosition()
 
   v1 = (gamemd::LoadingScreen *)(g_DisplayWidth); /*0x552b12*/
   v2 = 640; /*0x552b20*/
-  if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552b2b*/
+  if ( g_DisplayWidth  !=  (int)((int)640 )) /*0x552b2b*/
     v2 = 800; /*0x552b2d*/
   if ( *(unsigned int *)&dword_A8B238 ) /*0x552b3b*/
   {
     v9 = 480; /*0x552b9a*/
-    if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552ba2*/
+    if ( g_DisplayWidth  !=  (int)((int)640 )) /*0x552ba2*/
       v9 = 600; /*0x552ba4*/
     v10 = (int)*(&g_DisplayWidth + 1); /*0x552baa*/
-    this->q024 = v2; /*0x552baf*/
+    this->q024 = (void *)(v2); /*0x552baf*/
     this->q028 = (void *)v9; /*0x552bb4*/
     this->q020 = (void *)((v10 - v9) / 2); /*0x552bc6*/
     result = (int)&v1->__pad_0[-v2] / 2; /*0x552bc9*/
@@ -479,12 +490,12 @@ Game * * Scenario::ComputeDisplayPosition()
   else
   {
     v3 = 480; /*0x552b3f*/
-    if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552b44*/
+    if ( g_DisplayWidth  !=  (int)((int)640 )) /*0x552b44*/
       v3 = 600; /*0x552b46*/
     v4 = (void *)(v3 - 80); /*0x552b4b*/
     v5 = (char *)&(*(&g_DisplayWidth + 1))[1].LoadingScreen_field_0x10 - v3; /*0x552b5c*/
     this->q014 = (void *)v2; /*0x552b5e*/
-    this->q024 = v2; /*0x552b64*/
+    this->q024 = (void *)(v2); /*0x552b64*/
     v6 = (int)(v5 - 80) / 2; /*0x552b6f*/
     this->q010 = (void *)v6; /*0x552b71*/
     v6 += 40; /*0x552b74*/
@@ -496,7 +507,7 @@ Game * * Scenario::ComputeDisplayPosition()
     this->q02C = (void *)v7; /*0x552b84*/
     result = (int)v4 + v6; /*0x552b88*/
     this->q028 = v4; /*0x552b8b*/
-    this->q018 = (unsigned char)((void *)40); /*0x552b8f*/
+    this->q018 = (void *)((unsigned char)((void *)40)); /*0x552b8f*/
     this->q030 = (void *)result; /*0x552b92*/
     this->Scenario_field_0x38 = (unsigned char)((gamemd::Game **)((void *)40)); /*0x552b95*/
   }
@@ -526,7 +537,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
     v7 = *v6; /*0x552c40*/
     v8 = v6[1]; /*0x552c48*/
     result = a2; /*0x552c54*/
-    if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x552c52*/
+    if ( g_DisplayWidth  ==  (int)((int)640 )) /*0x552c52*/
     {
       v9 = v7 + 12; /*0x552c58*/
       v10 = v8 + 256; /*0x552c5b*/
@@ -544,7 +555,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
     Scenario_field_0x2C = (char *)this->q02C; /*0x552bf8*/
     Scenario_field_0x30 = (char *)this->q030; /*0x552bff*/
     result = a2; /*0x552c02*/
-    if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x552bfd*/
+    if ( g_DisplayWidth  ==  (int)((int)640 )) /*0x552bfd*/
       v5 = Scenario_field_0x2C + 84; /*0x552c06*/
     else
       v5 = Scenario_field_0x2C + 164; /*0x552c1f*/
@@ -759,7 +770,7 @@ LABEL_42:
   }
   if ( ((int)v14->vtable1 & 0x1000) != 0 && *(double *)(v13 + 5704) != 0.0 ) /*0x55b2dd*/
   {
-    vtable0 = v14[129].vtable0; /*0x55b2df*/
+    vtable0 = (unsigned char *)(v14[129].vtable0); /*0x55b2df*/
     vtable2 = (char *)v14[129].vtable2; /*0x55b2e5*/
     if ( vtable0 != (unsigned char *)-1 ) /*0x55b2f4*/
     {
@@ -768,7 +779,7 @@ LABEL_42:
 LABEL_50:
         LOWORD(v23) = Math::RoundToInt(*(double *)(v13 + 5704) * 900.0); /*0x55b304*/
         v24 = (void *)v65; /*0x55b315*/
-        v14[129].vtable0 = (void *)v15; /*0x55b319*/
+        v14[129].vtable0 = (unsigned int)((void *)v15); /*0x55b319*/
         v14[129].vtable1 = v24; /*0x55b31b*/
         v14[129].vtable2 = v23; /*0x55b323*/
         ((MapClass *)&stru_87F5F0.__pad_58[416])->ProcessFogTransition(); /*0x55b326*/
@@ -785,7 +796,7 @@ LABEL_50:
 LABEL_51:
   if ( v14[378].vtable2 != v14[378].vtable1 && *(double *)(v13 + 5736) != 0.0 )
   {
-    v25 = v14[130].vtable0; /*0x55b368*/
+    v25 = (unsigned char *)(v14[130].vtable0); /*0x55b368*/
     v26 = (char *)v14[130].vtable2; /*0x55b36e*/
     if ( v25 != (unsigned char *)-1 ) /*0x55b377*/
     {
@@ -800,7 +811,7 @@ LABEL_57:
     if ( NukeFlash::IsActive() || NukeFlash::ProcessEffect() || (uint8_t)ChronoScreen::IsActive() ) /*0x55b39b*/
     {
       v28 = (&dword_A8B230)[380].vtable2; /*0x55b40e*/
-      v29 = dword_A8B230 + 130; /*0x55b414*/
+      v29 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x55b414*/
       (&dword_A8B230)[130].vtable0 = *(void **)((char *)&stru_A8EB00 + 416); /*0x55b41a*/
       v30 = (void *)v65; /*0x55b41c*/
     }
@@ -811,14 +822,14 @@ LABEL_57:
         v31 = *(void **)((char *)&stru_A8EB00 + 416); /*0x55b3d2*/
         LOWORD(v32) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5736) * 900.0); /*0x55b3e4*/
         v33 = (void *)v65; /*0x55b3ef*/
-        v34 = dword_A8B230 + 130; /*0x55b3f3*/
+        v34 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x55b3f3*/
         (&dword_A8B230)[130].vtable0 = v31; /*0x55b3f9*/
         v34->vtable1 = v33; /*0x55b3fb*/
         v34->vtable2 = v32; /*0x55b3fe*/
         goto LABEL_65; /*0x55b401*/
       }
       v28 = (&dword_A8B230)[381].vtable0; /*0x55b3b8*/
-      v29 = dword_A8B230 + 130; /*0x55b3be*/
+      v29 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x55b3be*/
       (&dword_A8B230)[130].vtable0 = *(void **)((char *)&stru_A8EB00 + 416); /*0x55b3c4*/
       v30 = (void *)v65; /*0x55b3c6*/
     }
@@ -882,7 +893,7 @@ LABEL_81:
     {
 LABEL_79:
       v44 = v71++; /*0x55b55f*/
-      *((unsigned int *)Block + v44) = *v43; /*0x55b570*/
+      *((unsigned int *)Block + v44) = (unsigned int)(*v43); /*0x55b570*/
     }
     v42 = v69; /*0x55b573*/
     goto LABEL_81; /*0x55b573*/
@@ -918,7 +929,7 @@ LABEL_82:
   (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_170))( (LPPERSISTSTREAM)((LPPERSISTSTREAM)((LPPERSISTSTREAM)((LPPERSISTSTREAM)(g_TacticalClass_Instance)))));  /*0x55b667*/
   for ( ii = 0; ii < *(int *)&stru_A83D50.__pad_C8[40]; ++ii ) /*0x55b673*/
     (*(void (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii) + 92))(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * ii)); /*0x55b680*/
-  for ( jj = 0; jj < ((char *)&stru_A80220); ++jj ) /*0x55b696*/
+  for ( jj = 0; jj  <  (int)((*(int *)&stru_A80220)); ++jj ) /*0x55b696*/
   {
     v53 = *((unsigned int *)((char *)&stru_A80220) + jj); /*0x55b69d*/
     if ( v53 ) /*0x55b6a2*/
@@ -1117,7 +1128,7 @@ int Scenario::LoadWithProgress(double a2)
         v11 = 1; /*0x6848c2*/
         if ( dword_A8DA84 > 1 ) /*0x6848c4*/
         {
-          v12 = &dword_A8E2B2 + 2; /*0x6848ca*/
+          v12 = (unsigned short *)(&dword_A8E2B2 + 2); /*0x6848ca*/
           do /*0x684955*/
           {
             ((Network *)((Network *)(dword_A8DA78[v11] + 40)))->CopyAddress( (unsigned int *)(&v31), (int)v30); /*0x6848e5*/

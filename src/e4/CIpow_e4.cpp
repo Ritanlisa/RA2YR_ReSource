@@ -26,6 +26,7 @@
 namespace gamemd {
 void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
+  ObjectClass *self = (ObjectClass *)a1;  /* G57w8: this-pronoun (truth raw_decomp 0x7C8FD2) */
   int v4; // eax
   double v5; // st6
   int v6; // ecx

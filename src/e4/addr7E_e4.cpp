@@ -81,7 +81,7 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
   do /*0x7e0167*/
   {
     v15 = (a4 - 2) >> 1; /*0x7e00c8*/
-    v6 = &byte_879124; /*0x7e00cb*/
+    v6 = (unsigned int *)(&byte_879124); /*0x7e00cb*/
     v7 = (unsigned int *)(a2); /*0x7e00d0*/
     do /*0x7e011b*/
     {
@@ -195,15 +195,15 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 
   v8 = (unsigned char *)(a4 >> 1);
   v13 = (unsigned int)(a5 >> 1);
-  ObfuscateDataBlock(a1, dword_877D20, a4); /*0x7e022a*/
+  ObfuscateDataBlock(a1,(unsigned int *)( dword_877D20), a4); /*0x7e022a*/
   v7 = &unk_878720; /*0x7e023b*/
   v6 = (unsigned char *)(dword_877D20); /*0x7e023e*/
   v11 = (int *)((char *)a1 + a4); /*0x7e0241*/
   v12 = a3 - 1; /*0x7e0244*/
   do /*0x7e02aa*/
   {
-    ObfuscateDataBlock(v11, v7, a4); /*0x7e0250*/
-    sub_7E01D2(v6, v7, byte_879124, a4); /*0x7e0266*/
+    ObfuscateDataBlock(v11,(unsigned int *)( v7), a4); /*0x7e0250*/
+    sub_7E01D2(v6, v7,(unsigned char *)( byte_879124), a4); /*0x7e0266*/
     qmemcpy( (void *)(a2), (const void *)(v6), 4 * v8); /*0x7e0277*/
     v10 = &a2[v13]; /*0x7e0287*/
     qmemcpy( (void *)(v10), (const void *)(byte_879124), 4 * v8); /*0x7e028a*/
@@ -215,7 +215,7 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     --v12; /*0x7e02a7*/
   }
   while ( v12 ); /*0x7e02aa*/
-  ObfuscateDataBlock(v11, v7, a4); /*0x7e02b5*/
+  ObfuscateDataBlock(v11,(unsigned int *)( v7), a4); /*0x7e02b5*/
   qmemcpy( (void *)(a2), (const void *)(v7), 4 * v8); /*0x7e02c6*/
 }
 } // namespace gamemd

@@ -30,6 +30,8 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/Control_e4.hpp"
+#include "e4/classes/DialogClass_e4.hpp"
 
 // 0x600750
 namespace gamemd {
@@ -1438,7 +1440,7 @@ AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
      || v5 == 3015)
     && DlgCtrlID == 1820 )
   {
-    return LoadFileSHP((char *)(off_833674),(bool *)(a3)); /*0x603a08*/
+    return (gamemd::AbstractClass **)(LoadFileSHP((char *)(off_833674),(bool *)(a3))); /*0x603a08*/
   }
   if ( v5 == 148 ) /*0x603a2c*/
   {
@@ -1513,7 +1515,7 @@ int IsDialogWindowClass(HWND a1, HWND a2)
   *(unsigned int *)(v5 + 176) = 2; /*0x603b97*/
   hWnd = a2; /*0x603bac*/
   GetClassNameA(a2, ClassName, 128); /*0x603bb0*/
-  if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x603c05*/
+  if ( !strcmp(ClassName,(const char *)( g_INI_Key_Edit)) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x603c05*/
     return 192; /*0x603c2c*/
   if ( !strcmp(ClassName,(const char *)(g_INI_Key_ListBox)) /*0x603c99*/
     && dword_AC1B04
@@ -1868,7 +1870,7 @@ LABEL_23:
   int v25 = v24 + 1;
   int v101 = v24 + 1;
   int * v26 = (int *)operator new(4 * (v24 + 3));
-  Block = (unsigned int)v26;
+  Block = (void *)((unsigned int)v26);
   int v27 = 1;
   if ( v24 + 1 > 0 )
   {
@@ -1914,11 +1916,11 @@ LABEL_23:
         int v37 = v64 - *((unsigned int *)Block + v70);
         if ( v37 < 0 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), a2 != 0 ? 6 : 0, (gamemd::ConvertClass *)v102, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), a2 != 0 ? 6 : 0, (gamemd::ConvertClass *)v102, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v37 >= 6 && !a2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), 6u, (gamemd::ConvertClass *)v102, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)(v35), 6u, (gamemd::ConvertClass *)v102, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
       }
       if ( v61 )
@@ -1930,11 +1932,11 @@ LABEL_23:
         int v39 = v64 - *((unsigned int *)Block + v101);
         if ( v39 < 0 )
         {
-          DrawToSurfaceSHP( DSurface_Alternate, v32, (gamemd::ConvertClass *)((int)v79), a2 == 0, (ConvertClass *)(&v76), (ConvertClass *)(v72), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP( DSurface_Alternate, v32, (gamemd::ConvertClass *)((int)v79), a2 == 0, (ConvertClass *)(&v76), (ConvertClass *)(v72),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else if ( v39 >= 6 )
         {
-          DrawToSurfaceSHP( DSurface_Alternate, v32, (gamemd::ConvertClass *)((int)v79), a2 != 0, (ConvertClass *)(&v76), (ConvertClass *)(v72), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP( DSurface_Alternate, v32, (gamemd::ConvertClass *)((int)v79), a2 != 0, (ConvertClass *)(&v76), (ConvertClass *)(v72),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         else
         {
@@ -1942,7 +1944,7 @@ LABEL_23:
           int * v40 = (int *)(Copy8Bytes(&v118, v109));
           v76 = *v40;
           v77 = v40[1];
-          DrawToSurfaceSHP( DSurface_Alternate, v32, (gamemd::ConvertClass *)((int)v79), 1u, (ConvertClass *)(&v76), (ConvertClass *)(v72), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP( DSurface_Alternate, v32, (gamemd::ConvertClass *)((int)v79), 1u, (ConvertClass *)(&v76), (ConvertClass *)(v72),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
   int v117; // [esp+1ACh] [ebp-18h] BYREF
           int * v41 = (int *)(Copy8Bytes(&v117, &v97));
           v76 = *v41;
@@ -2000,7 +2002,7 @@ LABEL_68:
         if ( v43 < 6 )
           goto LABEL_68;
         if ( a2 )
-          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v73), 0, (gamemd::ConvertClass *)v103, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32,(gamemd::ConvertClass *)((int)v73), 0, (gamemd::ConvertClass *)v103, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_69:
       if ( v74 > 0 )
@@ -2016,15 +2018,15 @@ LABEL_69:
           v90[1] = v45;
           if ( v46 < 0 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else if ( v46 >= 6 )
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           else
           {
-            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v46, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v46, (gamemd::ConvertClass *)v90, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           }
           ++v44;
           v45 += v84;
@@ -2052,7 +2054,7 @@ LABEL_69:
             if ( v50 != -1 )
               break;
           }
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0xA : 0, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0xA : 0, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 LABEL_89:
           v47 += v84;
           --v48;
@@ -2062,11 +2064,11 @@ LABEL_89:
         }
         if ( v50 != -2 )
         {
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v87 + v68 * v50, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v87 + v68 * v50, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_89;
         }
 LABEL_87:
-        DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0 : 10, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 0 : 10, (gamemd::ConvertClass *)v92, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_89;
       }
 LABEL_90:
@@ -2085,14 +2087,14 @@ LABEL_90:
         if ( v53 == -1 )
         {
 LABEL_94:
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 10 : 1, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_98;
         }
         if ( v53 == -2 )
 LABEL_96:
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), a2 != 0 ? 1 : 10, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         else
-          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v53, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+          DrawToSurfaceSHP(DSurface_Alternate, v31,(gamemd::ConvertClass *)(v33), v78 + v68 * v53, (gamemd::ConvertClass *)v91, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
       }
 LABEL_98:
       char v54 = v63;
@@ -2130,7 +2132,7 @@ LABEL_98:
           v57 = (void *)(DataGlobal_B0FB34);
         }
 LABEL_106:
-        DrawToSurfaceSHP(DSurface_Alternate, (int)v62,(gamemd::ConvertClass *)((int)v57), 0, (gamemd::ConvertClass *)v69, (gamemd::ConvertClass *)v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+        DrawToSurfaceSHP(DSurface_Alternate, (int)v62,(gamemd::ConvertClass *)((int)v57), 0, (gamemd::ConvertClass *)v69, (gamemd::ConvertClass *)v72,(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         goto LABEL_116;
       }
       if ( g_DDraw_Active >= 800 )
@@ -3235,7 +3237,7 @@ bool sub_609CF0(int a1, HWND a2)
     if ( !v5 ) /*0x609db8*/
       return 0; /*0x609dc0*/
   }
-  v8 = v5 + 1; /*0x609deb*/
+  v8 = (unsigned int *)(v5 + 1); /*0x609deb*/
   return v8 && !v8[26] && (uint8_t)GetDialogDefaultButton( a1, (HWND)(a2)); /*0x609e08*/
 }
 }
@@ -3498,7 +3500,7 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
     v10 = GetParent(hWnd); /*0x60b14f*/
     GetWindowRect(v10, &v18); /*0x60b15b*/
     GetWindowRect(hWnd, &v17); /*0x60b163*/
-    return MoveWindow( /*0x60b1a0*/
+    return (gamemd::AbstractClass **)(MoveWindow( /*0x60b1a0*/)
              hWnd,
              v9,
              v12[1] + v8 * (((v17.bottom - v17.top) / 2 + v17.top - v18.top - 198) / 44),
@@ -3519,7 +3521,7 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
       v7 = v6 / v5 + 1; /*0x60b1a6*/
     else
       v7 = v6 / v5; /*0x60b11b*/
-    return MoveWindow(
+    return (gamemd::AbstractClass **)(MoveWindow()
              hWnd,
              Rect.right
            - ((Rect.right - Rect.left - 800) / 2 < 0 ? 0 : (Rect.right - Rect.left - 800) / 2)
@@ -3755,7 +3757,7 @@ namespace gamemd {  // G42.18c ns repair
 int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *a2)
 {
 
-  MoveWindow(hWndParent, 0, 0, g_DisplayWidth, *(&g_DisplayWidth + 1), 0); /*0x60c4ba*/
+  MoveWindow((HWND)(hWndParent), 0, 0, g_DisplayWidth, *(&g_DisplayWidth + 1), 0); /*0x60c4ba*/
   dword_AC48A8 = (int)hWndParent; /*0x60c4c0*/
   return EnumChildWindows(hWndParent, (WNDENUMPROC)RepositionDialogControls, lParam); /*0x60c4d3*/
 
@@ -3850,7 +3852,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
         goto LABEL_20; /*0x60f665*/
     }
     v9[9] = 0; /*0x60f6a8*/
-    return 1; /*0x60f6ad*/
+    return (gamemd::AbstractClass **)(1); /*0x60f6ad*/
   }
   else
   {
@@ -3875,7 +3877,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     if ( v17[15] ) /*0x60f725*/
       ((DeleteAndZero *)(void **)v17[15])->OrFree( 1); /*0x60f729*/
     v15[8] = 0; /*0x60f734*/
-    return 1; /*0x60f738*/
+    return (gamemd::AbstractClass **)(1); /*0x60f738*/
   }
 }
 }
@@ -4021,7 +4023,7 @@ namespace gamemd {
 int sub_600530()
 {
   sub_6B9450(g_DialogHashTable); /*0x600535*/
-  return atexit(unknown_libname_26); /*0x600545*/
+  return atexit((void (__cdecl *)(void))(unknown_libname_26)); /*0x600545*/
 }
 } // namespace gamemd
 
@@ -4066,7 +4068,7 @@ int sub_6006B0()
   dword_AC1B4C = 0; /*0x6006ff*/
   byte_AC1B5C = 0; /*0x600705*/
   dword_AC1B50 = 1 << (v1 - 1); /*0x60070b*/
-  dword_AC1B48 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600723*/
+  dword_AC1B48 = (unsigned int)(RA2_OPNEW(4 * (1 << (v1 - 1)))); /*0x600723*/
   memset( (void *)(dword_AC1B48), 0, 4 * dword_AC1B50); /*0x600729*/
   dword_AC1B60 = (int (*)(unsigned int))ReadPointerFromECX; /*0x600730*/
   return atexit(sub_600750); /*0x600742*/
@@ -4096,7 +4098,7 @@ int sub_600880()
   unk_AC18C4 = 0; /*0x6008cf*/
   byte_AC18D4 = 0; /*0x6008d5*/
   dword_AC18C8 = 1 << (v1 - 1); /*0x6008db*/
-  g_DialogPool = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x6008f3*/
+  g_DialogPool = (int)(RA2_OPNEW(4 * (1 << (v1 - 1)))); /*0x6008f3*/
   memset( (void *)(g_DialogPool), 0, 4 * dword_AC18C8); /*0x6008f9*/
   dword_AC18D8 = (int (*)(unsigned int))ReadPointerFromECX; /*0x600900*/
   return atexit(sub_600920); /*0x600912*/
@@ -4126,7 +4128,7 @@ int sub_600A50()
   dword_AC1B04 = 0; /*0x600a9f*/
   byte_AC1B14 = 0; /*0x600aa5*/
   dword_AC1B08 = 1 << (v1 - 1); /*0x600aab*/
-  dword_AC1B00 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600ac3*/
+  dword_AC1B00 = (unsigned int)(RA2_OPNEW(4 * (1 << (v1 - 1)))); /*0x600ac3*/
   memset( (void *)(dword_AC1B00), 0, 4 * dword_AC1B08); /*0x600ac9*/
   dword_AC1B18 = (int (*)(unsigned int))ReadPointerFromECX; /*0x600ad0*/
   return atexit(sub_600AF0); /*0x600ae2*/

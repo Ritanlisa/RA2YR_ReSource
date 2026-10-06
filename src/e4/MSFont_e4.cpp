@@ -454,7 +454,7 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
     __3_YAXPAX_Z(this); /*0x5d571b*/
-  return this->__pad_0; /*0x5d5725*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x5d5725*/
 
 }
 } // namespace gamemd
@@ -477,7 +477,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
   this->m_8 = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
     __3_YAXPAX_Z(this); /*0x5d576b*/
-  return this->__pad_0; /*0x5d5775*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x5d5775*/
 
 }
 } // namespace gamemd
@@ -500,7 +500,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
   this->m_8 = 0; /*0x5d5801*/
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
     __3_YAXPAX_Z(this); /*0x5d580b*/
-  return this->__pad_0; /*0x5d5815*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x5d5815*/
 
 }
 } // namespace gamemd

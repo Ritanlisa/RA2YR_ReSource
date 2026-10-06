@@ -88,6 +88,7 @@
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Render_e4.hpp"  // G42.36 C2027 supply
@@ -768,7 +769,7 @@ void PostLoadInitScenario()
     v7 = (TeamClass *)*((unsigned int *)dword_B0E784 + j); /*0x684d5c*/
     if ( (((Debug*)(Debug *)v7)->AccumFlags() & 4) != 0 ) /*0x684d68*/
     {
-      v8 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684d77*/
+      v8 = (int)(((TeamClass *)(v7))->FindOrCreate()); /*0x684d77*/
       if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 6)) /*0x684da9*/
         || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !((unsigned int *)&FootClass_Array)[6])
         && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
@@ -783,7 +784,7 @@ void PostLoadInitScenario()
     }
     if ( (((Debug*)(Debug *)v7)->AccumFlags() & 0x10) != 0 ) /*0x684dd1*/
     {
-      v10 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684de0*/
+      v10 = (int)(((TeamClass *)(v7))->FindOrCreate()); /*0x684de0*/
       if ( (int)((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x684e13*/
         || (IDA_BYTE1(((char *)&FootClass_Array)) || !((char *)&FootClass_Array))
         && *((unsigned int *)((char *)&FootClass_Array + 0)) > 0
@@ -798,7 +799,7 @@ void PostLoadInitScenario()
     }
     if ( (((Debug*)(Debug *)v7)->AccumFlags() & 8) != 0 ) /*0x684e3b*/
     {
-      v12 = ((TeamClass *)(v7))->FindOrCreate(); /*0x684e44*/
+      v12 = (int)(((TeamClass *)(v7))->FindOrCreate()); /*0x684e44*/
       Owner = ((HouseClass *)(*(HouseClass **)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v12 + 36) + 160) + 164) + 184)))->FindOwner(); /*0x684e5b*/
       if ( Owner ) /*0x684e62*/
       {
@@ -837,7 +838,7 @@ void PostLoadInitScenario()
   if ( IDA_BYTE2((&dword_A8B230)[374].nextArrayIndex) ) /*0x684f02*/
   {
     v22 = 0; /*0x684f12*/
-    for ( k = 0; v22 < ((char *)&stru_A80220); k = v22 ) /*0x684f1a*/
+    for ( k = 0; v22  <  (int)((*(int *)&stru_A80220)); k = v22 ) /*0x684f1a*/
     {
       v23 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + v22); /*0x684f23*/
       if ( v23 ) /*0x684f28*/
@@ -884,7 +885,7 @@ void PostLoadInitScenario()
       v37 = 2688; /*0x685013*/
       GroundHeight = 0; /*0x685017*/
       v29 = WarheadTypeClass::applyDamage(aGascloudsys); /*0x68501b*/
-      *(unsigned int *)((char *)&stru_A8EB00 + 404) = ParticleSystemClass::Constructor( /*0x685040*/
+      *(unsigned int *)((char *)&stru_A8EB00 + 404) = ParticleSystemClass::Constructor((int)( /*0x685040*/)      *(unsigned int *)((char *)&stru_A8EB00 + 404) = ParticleSystemClass::Constructor( /*0x685040*/
                                          v28,
                                          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v29),
                                          &v36,
@@ -1149,11 +1150,11 @@ void SaveScenarioToINI(char * Source, char a2, int a3)
   v10.vtable2 = 0; /*0x687cf4*/
   v10.vtable3 = 0; /*0x687cf8*/
   ((GenericList *)(&v10.uniqueId))->Constructor(); /*0x687cfc*/
-  v10.uniqueId = (int)&List_INIClass_INISection___vftable; /*0x687d05*/
+  v10.uniqueId = (void *)((int)&List_INIClass_INISection___vftable); /*0x687d05*/
   Node::Init((MixFileClass *)&v10.fallRate); /*0x687d0d*/
   v10.ambientSoundController[1] = 0; /*0x687d17*/
   IDA_LOBYTE(v10.ambientSoundController[2]) = 0; /*0x687d1d*/
-  v10.vtable1 = (int)&CCINIClass_Vtable; /*0x687d21*/
+  v10.vtable1 = (void *)((int)&CCINIClass_Vtable); /*0x687d21*/
   if ( byte_A8ED6B ) /*0x687d29*/
   {
     v4 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v10.customSound_controller[3]))->Construct( (char *)(Source)); /*0x687d34*/

@@ -104,7 +104,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
   ((gamemd::LocomotionClass*)this)->Construct(); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     __3_YAXPAX_Z(this); /*0x6635dd*/
-  return this->LocomotionClass; /*0x6635e7*/
+  return (gamemd::RocketLocomotionClass *)(this->LocomotionClass); /*0x6635e7*/
 
 }
 }  // G42.18c ns repair
@@ -399,7 +399,7 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
   this->m_8 = 0; /*0x664af1*/
   if ( (a2 & 1) != 0 ) /*0x664af8*/
     __3_YAXPAX_Z(this); /*0x664afb*/
-  return this->__pad_0; /*0x664b05*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x664b05*/
 
 }
 } // namespace gamemd

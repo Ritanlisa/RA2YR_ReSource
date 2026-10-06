@@ -26,6 +26,7 @@
 #include "e4/classes/MSEngine_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
@@ -142,7 +143,7 @@ int TextRenderer::MeasureBuilding(int a2, int aP2, int aP3, char aP4, char a6)
   int v23; // [esp+44h] [ebp+4h]
 
   result = a2; /*0x642c80*/
-  if ( a2 == -1 && aP2 == (gamemd::ProgressScreenClass *)(-1) ) /*0x642c9a*/
+  if ( a2  ==  (int)(-1 && aP2 == (int)(-1) )) /*0x642c9a*/
   {
     v19 = *((char *)this + 97); /*0x642cb1*/
     FoundationSize = Building::GetFoundationSize((unsigned int *)(v21), 0); /*0x642cb5*/
@@ -258,7 +259,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   *(unsigned int *)(a1) += 10; /*0x642fd1*/
   v14 = (void *)(*(unsigned int *)(a2) + 4); /*0x642fd5*/
   *(unsigned int *)(a2) = (unsigned int)(v14); /*0x642fdb*/
-  if ( a3 > (void *)(1) ) /*0x642fe3*/
+  if ( a3  >  (int)((int)(1) )) /*0x642fe3*/
     *(unsigned int *)(a2) = (unsigned int)(a3)* v14; /*0x642fe8*/
   return result; /*0x642fdf*/
 

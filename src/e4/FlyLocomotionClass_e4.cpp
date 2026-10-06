@@ -83,7 +83,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
-    || (owner = ((unsigned int *)a1)[0], owner->enemyHouseIndex == -1)
+    || (owner = (gamemd::HouseClass *)(((unsigned int *)a1)[0]), owner->enemyHouseIndex == -1)
     || (thisa = 1, (uint8_t)((House *)((House *)owner))->IsCurrentPlayer()) )
   {
     thisa = 0; /*0x4cfefd*/
@@ -229,11 +229,11 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_FlyLocomotionClass;
-  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_FlyLocomotionClass;
+  *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)&vt_FlyLocomotionClass;
   ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     __3_YAXPAX_Z(this); /*0x4d03bd*/
-  return this->LocomotionClass; /*0x4d03c7*/
+  return (gamemd::FlyLocomotionClass *)(this->LocomotionClass); /*0x4d03c7*/
 
 }
 } // namespace gamemd

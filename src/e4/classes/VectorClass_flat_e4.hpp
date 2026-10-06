@@ -80,8 +80,8 @@ unsigned int * Construct(int a2, int a3, void *a3_2, void *a4, void *a5, void *a
 unsigned int * ConstructSubzone(int a2, int a3);
 unsigned int * ConstructorWithVtable(TechnoTypeClass * aP1, TechnoTypeClass * aP2);
 unsigned int * Copy(VectorClass_flat * aP1, void *a2);
-unsigned int *  CopyBuilding(VectorClass * aP1);
-unsigned int *  CopyDefault(VectorClass * aP1);
+unsigned int *  CopyBuilding(VectorClass_flat * aP1);  // G57w8: bare VectorClass resolves to template in this TU
+unsigned int *  CopyDefault(VectorClass_flat * aP1);  // G57w8
 unsigned int * CopySmudge(CCINIClass * aP1);
 unsigned int * PointConstructor(MapClass * aP1, MapClass * aP2);
 unsigned int * WstringConstructor(int a2, unsigned int * a3);

@@ -65,10 +65,10 @@ int __sbh_heap_check()
     int v35; // [esp+140h] [ebp-8h]
     unsigned int *v36; // [esp+144h] [ebp-4h]
 
-    if ( IsBadWritePtr(::lp, 20 * dword_B78B94) ) /*0x7d03ad*/
+    if ( IsBadWritePtr((LPVOID)(::lp), 20 * dword_B78B94) ) /*0x7d03ad*/
       return -1; /*0x7d03ba*/
-    v2 = ::lp; /*0x7d03bf*/
-    v23 = ::lp; /*0x7d03cd*/
+    v2 = (unsigned int *)(::lp); /*0x7d03bf*/
+    v23 = (unsigned int *)(::lp); /*0x7d03cd*/
     v29 = 0; /*0x7d03d0*/
     if ( dword_B78B94 <= 0 ) /*0x7d03d3*/
       return 0; /*0x7d03d3*/
@@ -79,8 +79,8 @@ int __sbh_heap_check()
       {
         v4 = (void *)v2[3]; /*0x7d03f4*/
         v26 = 0; /*0x7d03f7*/
-        lp = (unsigned int)v4; /*0x7d03fa*/
-        v27 = v3 + 81; /*0x7d0403*/
+        lp = (LPVOID)((unsigned int)v4); /*0x7d03fa*/
+        v27 = (int *)(v3 + 81); /*0x7d0403*/
         v5 = v3 + 49; /*0x7d0409*/
         v32 = v2[2]; /*0x7d040f*/
         v31 = 0; /*0x7d0412*/
@@ -100,7 +100,7 @@ int __sbh_heap_check()
             v7 = (unsigned int *)((char *)lp + 4092); /*0x7d0459*/
             while ( 2 ) /*0x7d045f*/
             {
-              v8 = v7 - 1020; /*0x7d045f*/
+              v8 = (int *)(v7 - 1020); /*0x7d045f*/
               if ( *(v7 - 1021) != -1 || *v7 != -1 ) /*0x7d0475*/
                 return -5; /*0x7d0695*/
               do /*0x7d04e1*/
@@ -210,7 +210,7 @@ int __sbh_heap_check()
           }
           if ( v28 != *(v5 - 32) || v30 != *v5 ) /*0x7d0629*/
             return -16; /*0x7d06b7*/
-          lp = (unsigned int)(char *)lp + 0x8000; /*0x7d062f*/
+          lp = (LPVOID)((unsigned int)(char *)lp + 0x8000); /*0x7d062f*/
           v27 += 129; /*0x7d0636*/
           v32 *= 2; /*0x7d063d*/
           ++v25; /*0x7d0640*/
@@ -860,7 +860,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
   IDA_LOBYTE(v11) = v11 & 0xFC; /*0x7d11bd*/
   v12 = alloca(v11); /*0x7d11bf*/
   ms_exc.old_esp = (DWORD)v18; /*0x7d11c4*/
-  lpWideCharStr = (unsigned int)v18; /*0x7d11c9*/
+  lpWideCharStr = (LPWSTR)((unsigned int)v18); /*0x7d11c9*/
   ms_exc.registration.TryLevel = -1; /*0x7d11cc*/
   if ( !v18 ) /*0x7d11e8*/
     return 0; /*0x7d11e8*/

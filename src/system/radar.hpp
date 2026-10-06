@@ -22,6 +22,7 @@ class RadarClass : public DisplayClass
 {
 public:
     virtual ~RadarClass() = default;  // 0x652C00
+    static void *Destruct(...);  // G57w8 raw-vocab (ui/gap2_defs RadarClass::Destruct 0x652C00)
 
     // wrapper: delegates to RadarClass::Destruct at 0x652C00
     virtual void CreateEmptyMap(const RectangleStruct& map_rect, bool reuse, int8_t n_level, bool unk);

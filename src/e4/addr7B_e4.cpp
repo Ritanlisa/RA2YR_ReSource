@@ -676,7 +676,7 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   Block = (char *)(0); /*0x7b6412*/
   if ( v6 ) /*0x7b641a*/
   {
-    Block = (unsigned int)(char *)RA2_OPNEW(strlen( (const char *)(v6)) + 1); /*0x7b6439*/
+    Block = (char *)((unsigned int)(char *)RA2_OPNEW(strlen( (const char *)(v6)) + 1)); /*0x7b6439*/
     strcpy( (char *)(Block), (const char *)(v6)); /*0x7b644c*/
   }
   v7 = (char *)(*a2);
@@ -814,7 +814,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v21 = (void *)((int)(v5));
   if ( *((unsigned short *)(unsigned int)(this->AbstractClass)+ v5) == 13 ) /*0x7b7c62*/
   {
-    v10 = (unsigned int)(void *)((int)(v5 + 1));
+    v10 = (void *)((unsigned int)(void *)((int)(v5 + 1)));
     if ( v9[v10] == 10 ) /*0x7b7c6a*/
       v21 = v10; /*0x7b7c6c*/
   }

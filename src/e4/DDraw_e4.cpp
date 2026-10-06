@@ -129,7 +129,7 @@ int DDraw::WaitForIdle()
   int result; // eax
 
   do /*0x4a4846*/
-    result = (*(int (**)(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
+    result = (*(int ((int)(**))(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
 

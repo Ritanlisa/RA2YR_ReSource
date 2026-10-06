@@ -360,7 +360,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   IDA_LODWORD(v37) = (unsigned int)(v12)/ 2; /*0x456a48*/
   v49[0] = v40 - v12; /*0x456a4c*/
   v49[2] = 2 * v12; /*0x456a53*/
-  v49[3] = v12; /*0x456a5a*/
+  v49[3] = (int)(v12); /*0x456a5a*/
   v13 = (double *)ClipRectIntersection((RectangleStruct *)(v47),(const RectangleStruct *)(v49),(const RectangleStruct *)(&DSurface_ViewBounds), 0, 0); /*0x456a66*/
   v48 = *v13; /*0x456a6a*/
   v14 = *((unsigned int *)v13 + 2); /*0x456a75*/
@@ -931,7 +931,7 @@ int E4Recv_4517D0::sub_4517D0()
     v6 = *v12; /*0x45180c*/
     if ( *v12 ) /*0x45180c*/
     {
-      v7 = Matrix3x4::TransformCell( /*0x45182b*/
+      v7 = Matrix3x4::TransformCell((gamemd::AbstractClass *)( /*0x45182b*/)      v7 = Matrix3x4::TransformCell( /*0x45182b*/
              (float *)g_TacticalClass_Instance,
              v17,
              (int *)(*((unsigned int *)this + 328) + v3 + 3964));

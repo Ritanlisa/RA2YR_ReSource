@@ -17,6 +17,7 @@
 #include "e4/classes/AudioFileClass_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x4F4780
 namespace gamemd {

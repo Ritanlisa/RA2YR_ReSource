@@ -79,6 +79,6 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x76f948*/
   *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
   ((ComPtr *)((ComPtr *)a1))->Set((int)v9); /*0x76f956*/
-  return a1; /*0x76f95d*/
+  return (gamemd::rc_ptr *)(a1); /*0x76f95d*/
 }
 } // namespace gamemd

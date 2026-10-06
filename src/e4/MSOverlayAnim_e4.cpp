@@ -33,7 +33,7 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(unsigned int * Block, char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSAnim;
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
     __3_YAXPAX_Z(this); /*0x5cebba*/
-  return this->__pad_0; /*0x5cebc4*/
+  return (gamemd::MSShapeAnim *)(this->__pad_0); /*0x5cebc4*/
 
 }
 } // namespace gamemd

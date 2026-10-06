@@ -102,7 +102,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           && (v11 = *(unsigned int *)(&dword_A8022C)[4 * v10], (hDlga = (void *)v11) != 0)
           && *(unsigned char *)(*(unsigned int *)(v11 + 52) + 421) )
         {
-          if ( !BYTE1((&dword_8871E0)[1].InfantryBrute) || (void *)HouseClass_Observer == dword_A83D4C || dword_A8B244 == 2 ) /*0x657ef9*/
+          if ( !BYTE1((&dword_8871E0)[1].InfantryBrute) || (void *)HouseClass_Observer == (void *)(dword_A83D4C) || dword_A8B244 == 2 ) /*0x657ef9*/
           {
             ShowWindow(v9, 0); /*0x657f73*/
           }
@@ -191,7 +191,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       if ( (&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4 ) /*0x658124*/
       {
         v18 = GetDlgItem(hDlg, 1062); /*0x658134*/
-        v19 = ((WideString*)(wchar_t **)(dword_A8B23C + 32))->GetOrEmpty_Alt(); /*0x658139*/
+        v19 = (wchar_t *)(((WideString*)(wchar_t **)(dword_A8B23C + 32))->GetOrEmpty_Alt()); /*0x658139*/
         SendMessageA( (HWND)(v18), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v19))); /*0x658147*/
       }
       v20 = GetDlgItem(hDlg, 1819); /*0x658153*/

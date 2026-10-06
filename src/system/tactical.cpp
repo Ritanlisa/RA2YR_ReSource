@@ -1102,7 +1102,7 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
         v94 = *(char **)(v4 + 68); /*0x4d1917*/
         v95 = *(unsigned int *)(v4 + 72); /*0x4d1921*/
         v96 = *(unsigned int *)(v4 + 76); /*0x4d192b*/
-        v93 -= *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4d193e*/
+        v93 -= *(unsigned int *)&(&g_TacticalClass_Instance)[44]; /*0x4d193e*/
         v94 = (char *)DSurface_ViewBounds.field_4 + (unsigned int)&v94[-*(unsigned int *)&g_TacticalClass_Instance[45]]; /*0x4d195d*/
         v93 += DSurface_ViewBounds.field_0; /*0x4d1964*/
         v5 = ClipRectIntersection(v112, (int *)viewRect, &v93, 0, 0); /*0x4d197c*/

@@ -258,11 +258,11 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v66 = (int *)(FoundationSize[1]);
           v21 = (int *)(FoundationSize[2]);
           v67 = (int *)(FoundationSize[3]);
-          if ( v13 <= (int)(v58) + v66 ) /*0x4210dd*/
+          if ( v13   <=   (int)((int)((int)(v58) + v66 ))) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
           v60 = (int *)(v41 - v58 - v66); /*0x4210fd*/
           v37 = (int *)(v57 + v13); /*0x421118*/
-          if ( v57 + v13 >= (int)(v66) + v67 + v58 ) /*0x42111c*/
+          if ( v57 + v13   >=   (int)((int)((int)(v66) + v67 + v58 ))) /*0x42111c*/
             v37 = (unsigned int)(v66)+ v67 + v58; /*0x42111e*/
           v40 = (int *)&v55; /*0x42112b*/
           if ( v55 <= (int)((unsigned int)(v17)+ v20) ) /*0x42112f*/
@@ -324,7 +324,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
             v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))))))))))))));
             do /*0x4212ad*/
             {
-              if ( v29 < (int *)(int)(v42) ) /*0x421239*/
+              if ( v29  <  (unsigned int)((unsigned int)(int)(v42) )) /*0x421239*/
               {
                 v30 = (int *)((int)(v42 - v29));
                 do /*0x421281*/
@@ -566,7 +566,7 @@ unsigned int * CreateUnitOnCompletion_addr42(ObjectClass *self)
     IDA_HIWORD(v17) = v2[1] / 256; /*0x424f3e*/
     *(unsigned int *)v19 = v17; /*0x424f4b*/
     v3 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj( (int16_t *)(v19)); /*0x424f50*/
-    vtable0 = self->vtable0; /*0x424f55*/
+    vtable0 = (int)(self->vtable0); /*0x424f55*/
     v5 = 30; /*0x424f57*/
     v21 = v3; /*0x424f5e*/
     v18 = 30; /*0x424f62*/
@@ -767,7 +767,7 @@ int ConstructionPositionTracker(ObjectClass *self)
       if ( (int)((Coord *)&v54)->Length() > 18 ) /*0x42573d*/
       {
         v54 = *location; /*0x4258f3*/
-        vtable0 = self->vtable0; /*0x4258f7*/
+        vtable0 = (int)(self->vtable0); /*0x4258f7*/
         v55 = self->location[1]; /*0x4258fc*/
         v21 = self->location[2]; /*0x425904*/
         v22 = (int *)(*(int (**)(TechnoClass *, int *))(vtable0 + 72))( (TechnoClass *)(self), (int *)(&v54)); /*0x42590a*/
@@ -790,7 +790,7 @@ int ConstructionPositionTracker(ObjectClass *self)
           GroundHeight = Map_MaxHeight + Cell::GetGroundHeight( &v51); /*0x4259e5*/
         else
           GroundHeight = Cell::GetGroundHeight( &v51); /*0x4259cf*/
-        v27 = self->vtable0; /*0x4259eb*/
+        v27 = (int)(self->vtable0); /*0x4259eb*/
         v53 = GroundHeight; /*0x4259ed*/
         (*(void (**)(TechnoClass *, int *))(v27 + 436))( (TechnoClass *)(self), (int *)(&v51)); /*0x4259f8*/
       }

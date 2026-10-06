@@ -162,6 +162,12 @@
 #ifndef GAMEMD_E4_StringVector
 #define GAMEMD_E4_StringVector 1
 #endif
+#ifndef GAMEMD_E4_AnimTypeList
+#define GAMEMD_E4_AnimTypeList 1
+#endif
+#ifndef GAMEMD_E4_VoxelAnimTypeVector
+#define GAMEMD_E4_VoxelAnimTypeVector 1
+#endif
 
 #include "e4/classes/_fwd_e4.hpp"
 #include "core/utility_ext.hpp"  // G42.55 tree truth

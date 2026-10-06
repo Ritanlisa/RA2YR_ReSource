@@ -165,7 +165,7 @@ LABEL_26:
   if ( v18 == -1 ) /*0x655ffa*/
   {
 LABEL_37:
-    if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % 2 != 1 || *(void **)(v13 + 540) != dword_A83D4C ) /*0x65603a*/
+    if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % (void *)(2) !=   (void *)((void *)((void *)(1) || *(void **)(v13 + 540) != dword_A83D4C ))) /*0x65603a*/
       goto LABEL_41; /*0x65603a*/
     (*(void (**)(unsigned int, int *, int))(**(unsigned int **)&this->u32_121C + 36))(*((unsigned int *)this + 1159), (int *)aP1, ~v17); /*0x656048*/
   }
@@ -446,7 +446,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     v10 = (unsigned int)(aP0[1] / 256);
     v2 = (unsigned int)(v1 / 2 + 1);
     v3 = (unsigned int)((int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9));
-    if ( v3 >= 0x40000 || (v4 = *(unsigned int **)(dword_87F924 + 4 * v3)) == 0 ) /*0x58651e*/
+    if ( v3 >= 0x40000 || (v4 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v3))) == 0 ) /*0x58651e*/
     {
       IDA_LOWORD(v11) =(unsigned int)v8 - v2; /*0x5864fa*/
       IDA_HIWORD(v11) = v10 - v2; /*0x5864f5*/

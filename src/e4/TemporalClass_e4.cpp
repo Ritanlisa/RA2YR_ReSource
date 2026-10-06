@@ -260,7 +260,7 @@ LABEL_10:
               {
                 do /*0x71a9d6*/
                 {
-                  v29 = LinkedList::Pop(  (LinkedList *)(v28 + 276)); /*0x71a9c4*/
+                  v29 = (int)(LinkedList::Pop(  (LinkedList *)(v28 + 276))); /*0x71a9c4*/
                   if ( v29 ) /*0x71a9cb*/
                     (*(void (**)(int, int))(*(unsigned int *)v29 + 32))(v29, 1); /*0x71a9d3*/
                 }

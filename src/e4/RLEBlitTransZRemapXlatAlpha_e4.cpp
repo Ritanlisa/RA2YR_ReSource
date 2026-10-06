@@ -171,7 +171,7 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitter;
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     __3_YAXPAX_Z(this); /*0x49aa6d*/
-  return this->__pad_0; /*0x49aa77*/
+  return (gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)(this->__pad_0); /*0x49aa77*/
 
 }
 } // namespace gamemd

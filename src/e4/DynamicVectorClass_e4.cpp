@@ -375,7 +375,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
     if ( *(unsigned int *)&this->m_1[3] ) /*0x628c52*/
     {
       m_8 = this->m_8; /*0x628c59*/
-      if ( aP1 < m_8 ) /*0x628c5e*/
+      if ( aP1 < (gamemd::CCINIClass *)(m_8) ) /*0x628c5e*/
         m_8 = (int)(aP1); /*0x628c60*/
       if ( m_8 > 0 ) /*0x628c64*/
       {
@@ -670,7 +670,7 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, cha
   this->m_8 = 0; /*0x42db41*/
   if ( (a2 & 1) != 0 ) /*0x42db48*/
     __3_YAXPAX_Z(this); /*0x42db4b*/
-  return this->__pad_0; /*0x42db55*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x42db55*/
 
 }
 } // namespace gamemd
@@ -693,7 +693,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
   this->m_8 = 0; /*0x42db91*/
   if ( (a2 & 1) != 0 ) /*0x42db98*/
     __3_YAXPAX_Z(this); /*0x42db9b*/
-  return this->__pad_0; /*0x42dba5*/
+  return (gamemd::DynamicVectorClass_uint *)(this->__pad_0); /*0x42dba5*/
 
 }
 } // namespace gamemd
@@ -713,7 +713,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x4779f3*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x4779f7*/
   *(unsigned int *)this->vtable1 = (unsigned int)&vt_VectorClass;
-  if ( this != (DynamicVectorClass *)aP1 ) /*0x477a00*/
+  if ( this != (gamemd::DynamicVectorClass_flat *)aP1 ) /*0x477a00*/
   {
     ((gamemd::VectorClass*)((int)this))->Destroy(); /*0x477a02*/
     v3 = (int)(aP1[2]); /*0x477a08*/
@@ -747,7 +747,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   this->Count = (int)(aP1[4]); /*0x477a51*/
   this->CapacityIncrement = (int)(aP1[5]); /*0x477a57*/
   *(unsigned int *)this->vtable1 = (unsigned int)&vt_DynamicVectorClass;
-  return this->VectorClass; /*0x477a62*/
+  return (unsigned int *)(this->VectorClass); /*0x477a62*/
 
 }
 }  // G42.18c ns repair
@@ -776,7 +776,7 @@ unsigned int * DynamicVectorClass_flat::Construct(int a2, int a3, void *a3_2, vo
   *(unsigned int *)this->vtable1 = (unsigned int)&vt_DynamicVectorClass;
   this->CapacityIncrement = 10; /*0x477df9*/
   this->Count = 0; /*0x477e00*/
-  return this->VectorClass; /*0x477e09*/
+  return (unsigned int *)(this->VectorClass); /*0x477e09*/
 
 }
 }  // G42.18c ns repair
@@ -1117,7 +1117,7 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
   this->m_8 = 0; /*0x49ee41*/
   if ( (a2 & 1) != 0 ) /*0x49ee48*/
     __3_YAXPAX_Z(this); /*0x49ee4b*/
-  return this->__pad_0; /*0x49ee55*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x49ee55*/
 
 }
 } // namespace gamemd
@@ -1140,7 +1140,7 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
   this->m_8 = 0; /*0x49f021*/
   if ( (a2 & 1) != 0 ) /*0x49f028*/
     __3_YAXPAX_Z(this); /*0x49f02b*/
-  return this->__pad_0; /*0x49f035*/
+  return (gamemd::VectorClass_flat *)(this->__pad_0); /*0x49f035*/
 
 }
 } // namespace gamemd
@@ -1163,7 +1163,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
   this->m_8 = 0; /*0x49f071*/
   if ( (a2 & 1) != 0 ) /*0x49f078*/
     __3_YAXPAX_Z(this); /*0x49f07b*/
-  return this->__pad_0; /*0x49f085*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x49f085*/
 
 }
 } // namespace gamemd
@@ -1252,7 +1252,7 @@ unsigned int * DynamicVectorClass_flat::AnimTypeConstructor(DynamicVector * aP1,
   *(unsigned int *)this->vtable1 = (unsigned int)&vt_DynamicVectorClass;
   this->CapacityIncrement = 10; /*0x525299*/
   this->Count = 0; /*0x5252a0*/
-  return this->VectorClass; /*0x5252a9*/
+  return (unsigned int *)(this->VectorClass); /*0x5252a9*/
 
 }
 }  // G42.18c ns repair
@@ -1306,7 +1306,7 @@ unsigned int * DynamicVectorClass_flat::BuildingTypeConstructor(int a2, int a3)
   *(unsigned int *)this->vtable1 = (unsigned int)&vt_DynamicVectorClass;
   this->CapacityIncrement = 10; /*0x5ac949*/
   this->Count = 0; /*0x5ac950*/
-  return this->VectorClass; /*0x5ac959*/
+  return (unsigned int *)(this->VectorClass); /*0x5ac959*/
 
 }
 }  // G42.18c ns repair
@@ -1382,7 +1382,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
       }
     }
     *(unsigned int *)&this->m_1[3] = (unsigned int)(v4); /*0x5c558a*/
-    this->Capacity = a2; /*0x5c5592*/
+    this->Capacity = (void *)(a2); /*0x5c5592*/
     ((unsigned char*)&this->IsInitialized)[1] = a3 == 0; /*0x5c5595*/
   }
   else
@@ -1390,8 +1390,8 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
     (*(void (**)(void *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
   }
   v7 = (unsigned int)this->Capacity; /*0x5c55a1*/
-  if ( v7 < this->Count ) /*0x5c55a9*/
-    this->Count = v7; /*0x5c55ab*/
+  if ( v7   <   (int)((int)(this->Count ))) /*0x5c55a9*/
+    this->Count = (void *)(v7); /*0x5c55ab*/
   return 1; /*0x5c55ae*/
 
 }
@@ -1560,7 +1560,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
   this->m_8 = 0; /*0x628671*/
   if ( (a2 & 1) != 0 ) /*0x628678*/
     __3_YAXPAX_Z(this); /*0x62867b*/
-  return this->__pad_0; /*0x628685*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x628685*/
 
 }
 } // namespace gamemd
@@ -1587,7 +1587,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
   this->m_8 = 0; /*0x6287e1*/
   if ( (a2 & 1) != 0 ) /*0x6287e8*/
     __3_YAXPAX_Z(this); /*0x6287eb*/
-  return this->__pad_0; /*0x6287f5*/
+  return (gamemd::DynamicVector *)(this->__pad_0); /*0x6287f5*/
 
 }
 } // namespace gamemd
@@ -1624,7 +1624,7 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear(int a2, int
   int v3; // esi
 
   v3 = *(unsigned int *)&this->m_1[3] + 260 * a3; /*0x628876*/
-  String::Copy( (char *)a2,  (const char *)v3); /*0x62887a*/
+  String::Copy( (char *)a2,(void *)(  (const char *)v3)); /*0x62887a*/
   *(unsigned int *)(a2 + 256) = *(unsigned int *)(v3 + 256); /*0x628887*/
   return a2; /*0x62888d*/
 

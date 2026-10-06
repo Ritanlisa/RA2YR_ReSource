@@ -108,7 +108,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   int16_t v59; // [esp+58h] [ebp+18h]
 
   v11 = (int)((uint16_t *)((int)((unsigned short *)(0))));
-  if ( aP0 && (v12 = aP2) != 0 ) /*0x434ceb*/
+  if ( aP0 && (v12 = (uint16_t *)(aP2)) != 0 ) /*0x434ceb*/
   {
     ((FontRenderer *)((unsigned int *)aP0))->InitContext((int *)aP1); /*0x434cf8*/
     ((Field *)((unsigned int *)aP0))->Int_Set(aP1a); /*0x434d04*/
@@ -176,7 +176,7 @@ LABEL_18:
             if ( v22 == -1 ) /*0x434e84*/
               goto LABEL_73; /*0x434e84*/
             v44 = *v12++; /*0x434e99*/
-            xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v44, xLeft, aP4, v22)); /*0x434ea6*/
+            xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v44,(int)( xLeft),(int)( aP4), v22)); /*0x434ea6*/
             if ( v12 < (unsigned short *)(aP2) ) /*0x434eb0*/
             {
               v19 = (gamemd::AbstractClass *)((int)(aP8));
@@ -275,7 +275,7 @@ LABEL_26:
         if ( v35 == -1 ) /*0x4350bf*/
           break; /*0x4350bf*/
         v45 = *v12++; /*0x4350d4*/
-        xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v45, xLeft, aP4, v35)); /*0x4350e1*/
+        xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v45,(int)( xLeft),(int)( aP4), v35)); /*0x4350e1*/
         if ( v12 >= (unsigned short *)(aP2) ) /*0x4350eb*/
         {
           v28 = v52; /*0x4350f1*/
@@ -362,7 +362,7 @@ LABEL_59:
           if ( v43 == -1 ) /*0x43529c*/
             break; /*0x43529c*/
           v46 = *v12++; /*0x4352ad*/
-          xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v46, xLeft, aP4, v43)); /*0x4352ba*/
+          xLeft = (gamemd::AbstractClass *)(((FontClass*)aP0)->RenderGlyph(v46,(int)( xLeft),(int)( aP4), v43)); /*0x4352ba*/
           if ( v12 >= (unsigned short *)(aP2) ) /*0x4352c4*/
             break; /*0x4352c4*/
           v17 = v49; /*0x4352c6*/

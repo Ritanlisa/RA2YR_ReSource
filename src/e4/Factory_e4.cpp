@@ -144,7 +144,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
 
   v6 = (unsigned int *)((int *)(v6));
   v8 = (int *)(v6 + 10);
-  if ( v6[10] == ((char *)&g_BuildingLoadQueue_Array) /*0x718b9d*/
+  if ( v6[10] == (*(unsigned int *)&g_BuildingLoadQueue_Array) /*0x718b9d*/
     && v6[11] == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))
     && v6[12] == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) )
   {
@@ -163,8 +163,8 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
   v73[1] = (unsigned int)((void *)(aP0->field_4));
   v74 = (void *)(aP0->field_8);
   if ( v11 == ((char *)&g_BuildingLoadQueue_Array) /*0x718c13*/
-    && aP0->field_4 == (void *)((unsigned int *)&g_BuildingLoadQueue_Array)[0]
-    && aP0->field_8 == (void *)((unsigned int *)&g_BuildingLoadQueue_Array)[0] )
+    && aP0->field_4 == (unsigned int)((unsigned int *)&g_BuildingLoadQueue_Array)[0]
+    && aP0->field_8 == (unsigned int)((unsigned int *)&g_BuildingLoadQueue_Array)[0] )
   {
     *v8 = *(unsigned int *)aP0->__pad_0; /*0x71923b*/
     v6[11] = aP0->field_4; /*0x719240*/
@@ -301,7 +301,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
                                 (int16_t *)v67,
                                 0,
                                 0);
-            if ( *(unsigned int *)v66 != ((char *)&g_BuildingLoadQueue_Array) ) /*0x71901f*/
+            if ( *(unsigned int *)v66 != (*(unsigned int *)&g_BuildingLoadQueue_Array) ) /*0x71901f*/
             {
               v38 = (void *)((int *)(((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v66))));
               v61 = (char)aP0; /*0x71904f*/
@@ -330,7 +330,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         v44 = (int)aP0->field_4 / 256; /*0x7190d2*/
         IDA_LOWORD(aP0) = v43; /*0x7190dc*/
         IDA_HIWORD(aP0) = v44; /*0x7190e1*/
-        if ( IDA___PAIR32__(v44, v43) != ((char *)&g_BuildingLoadQueue_Array) ) /*0x7190ee*/
+        if ( IDA___PAIR32__(v44, v43) != (*(unsigned int *)&g_BuildingLoadQueue_Array) ) /*0x7190ee*/
         {
           v45 = *(unsigned int *)v6[3]; /*0x719106*/
           v46 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0); /*0x719114*/
@@ -378,21 +378,21 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
       }
     }
   }
-  if ( *v8 == ((char *)&g_BuildingLoadQueue_Array) /*0x71926e*/
+  if ( *v8 == (*(int *)&g_BuildingLoadQueue_Array) /*0x71926e*/
     && v6[11] == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))
     && v6[12] == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) )
   {
     v56 = (unsigned int *)v6[3]; /*0x719286*/
-    v75 = v56[39]; /*0x719295*/
-    v76 = v56[40]; /*0x71929c*/
-    v77 = v56[41]; /*0x7192a3*/
+    v75 = (int *)(v56[39]); /*0x719295*/
+    v76 = (int *)(v56[40]); /*0x71929c*/
+    v77 = (int *)(v56[41]); /*0x7192a3*/
     (*(void (**)(unsigned int *, int *))(*v56 + 240))( (unsigned int *)(v56), (int *)(&v75)); /*0x7192ae*/
     return 0; /*0x7192b5*/
   }
   else
   {
     (*(void (**)(unsigned int, unsigned int *))(*(unsigned int *)v6[3] + 240))(v6[3], v6 + 10); /*0x719276*/
-    return 1; /*0x71927d*/
+    return (void *)(1); /*0x71927d*/
   }
 }
 }
@@ -403,14 +403,14 @@ int Factory::FindExitCellByName()
 
   int v2; // esi
 
-  if ( !_strcmpi(this->__pad_0, g_Str__none_) ) /*0x523c9a*/
+  if ( !_strcmpi((const char *)(this->__pad_0), g_Str__none_) ) /*0x523c9a*/
     return -1; /*0x523c9a*/
-  if ( !_strcmpi(this->__pad_0, g_Str_none) ) /*0x523cac*/
+  if ( !_strcmpi((const char *)(this->__pad_0), g_Str_none) ) /*0x523cac*/
     return -1; /*0x523cac*/
   v2 = 0; /*0x523cbd*/
   if ( dword_A8E358 <= 0 ) /*0x523cc1*/
     return -1; /*0x523ce6*/
-  while ( _strcmpi((*((unsigned int *)dword_A8E34C + v2) + 36), this->__pad_0) ) /*0x523cda*/
+  while ( _strcmpi((const char *)((*((unsigned int *)dword_A8E34C + v2) + 36)),(const char *)( this->__pad_0)) ) /*0x523cda*/
   {
     if ( ++v2 >= dword_A8E358 ) /*0x523ce4*/
       return -1; /*0x523ce4*/

@@ -549,7 +549,7 @@ int WDT_InitGameOptions()
   }
   v27 = (void **)((void*)&rc_ptr_WorldDominationTour_GameOption_vftable); /*0x7664be*/
   ((ComPtr *)(&v27))->Release(); /*0x7664c2*/
-  v29[0] = (void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable; /*0x7664cb*/
+  v29[0] = (unsigned int)((void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable); /*0x7664cb*/
   ((ComPtr *)(v29))->Release(); /*0x7664d3*/
   v26 = 1; /*0x7664d8*/
   v25 = v18; /*0x7664da*/
@@ -557,15 +557,15 @@ int WDT_InitGameOptions()
   v24 = 1; /*0x7664e7*/
   v23 = v19; /*0x7664e9*/
   ((String *)(&v23))->Assign( (const char *)(aWdtNocrates)); /*0x7664f1*/
-  v20 = ConstructorWDTFlagOption(v29, 256, v23, v24, v25, v26); /*0x766508*/
+  v20 = (unsigned int *)(ConstructorWDTFlagOption(v29, 256, v23, v24, v25, v26)); /*0x766508*/
   ((ComPtr *)(&v27))->Constructor(); /*0x76650a*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76650f*/
+  v27 = (void **)((void*)&rc_ptr_WorldDominationTour_GameOption_vftable); /*0x76650f*/
   ((ComPtr *)(&v27))->Set(v20[1]); /*0x76651b*/
   System_Init_766EE0(&v27); /*0x76652a*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766533*/
+  v27 = (void **)((void*)&rc_ptr_WorldDominationTour_GameOption_vftable); /*0x766533*/
   ((ComPtr *)(&v27))->Release(); /*0x766537*/
   System_Init_766900(v29); /*0x766540*/
-  v21 = System_Init_7676F0(&v27, 201326592); /*0x76654e*/
+  v21 = (int)(System_Init_7676F0(&v27, 201326592)); /*0x76654e*/
   System_Init_766F70(v21); /*0x766558*/
   System_Init_766EE0(v29); /*0x766567*/
   System_Init_7668F0(v29); /*0x766570*/
@@ -711,7 +711,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   ((unsigned int *)&v55)[0] = &v51; /*0x7696af*/
   IDA_BYTE1(v54) = 1; /*0x7696b7*/
   ((unsigned int *)&v55)[0] = 0; /*0x7696bc*/
-  ((unsigned int *)&v55)[0] = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x7696c0*/
+  ((unsigned int *)&v55)[0] = (unsigned int)((void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable); /*0x7696c0*/
   if ( Map_WorldDominationTour_38::AddRef(  (char *)&v55) ) /*0x7696c8*/
   {
     do /*0x769700*/
@@ -721,9 +721,9 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
       v8[1] = 0; /*0x7696e8*/
       v8[2] = 0; /*0x7696eb*/
       v8[3] = 0; /*0x7696ee*/
-      (*((void (**)(void **))((char *)&v55) + 2))((char *)&v55); /*0x7696f5*/
+      (*((void ((void **)(**))(void **))((char *)&v55) + 2))((char *)&v55); /*0x7696f5*/
     }
-    while ( (*((uint8_t (**)(void **))((char *)&v55) + 1))((char *)&v55) ); /*0x769700*/
+    while ( (*((uint8_t ((void **)(**))(void **))((char *)&v55) + 1))((char *)&v55) ); /*0x769700*/
   }
   v9 = 0; /*0x76970b*/
   v50 = 0; /*0x76970f*/
@@ -736,7 +736,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
         break; /*0x769723*/
   LABEL_67:
       v50 = ++v9; /*0x769a2a*/
-      if ( v9 >= ((char *)&v55) ) /*0x769a2e*/
+      if ( v9 >= (*(int *)&v55) ) /*0x769a2e*/
         goto LABEL_68; /*0x769a2e*/
     }
     while ( 1 ) /*0x769736*/
