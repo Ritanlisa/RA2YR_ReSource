@@ -193,10 +193,10 @@ int NetworkLobby_UpdatePlayerList()
   LRESULT wParam; // [esp+0h] [ebp-A4h]
   wchar_t lParam[80]; // [esp+4h] [ebp-A0h] BYREF
 
-    result = Dialog::GetCurrentType();
+    result = gamemd::Dialog::GetCurrentType();
   if ( result == 187 ) /*0x5db9c0*/
   {
-        Current = (HWND)(Dialog::GetCurrent());
+        Current = (HWND)(gamemd::Dialog::GetCurrent());
     DlgItem = GetDlgItem(Current, 1353); /*0x5db9e3*/
     if ( (int)g_NetworkSetupConfig >= dword_A8DA6C ) /*0x5db9ec*/
     {
@@ -235,7 +235,7 @@ namespace gamemd {
 int NetworkLobby::CreateGame()
 {
 
-  Dialog *DialogIndirect; // esi
+  gamemd::Dialog *DialogIndirect; // esi
   void (*v2)(const MSG *); // edi
   void (*v3)(const MSG *); // ebx
   int v4; // eax
@@ -247,14 +247,14 @@ int NetworkLobby::CreateGame()
   HWND v10; // esi
   HWND DlgItem; // eax
   HWND v12; // eax
-  Dialog *v13; // esi
+  gamemd::Dialog *v13; // esi
   int m; // esi
   int v15; // esi
   int v16; // eax
   int n; // esi
   int v18; // esi
   int v19; // eax
-  Dialog *v20; // esi
+  gamemd::Dialog *v20; // esi
   HWND v21; // eax
   HWND v22; // esi
   HWND v23; // eax
@@ -309,7 +309,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
   int PlayerCountMap; // edi
   void *vtable2; // ecx
   HWND DlgItem; // eax
-  Dialog *DlgCtrlID; // edi
+  gamemd::Dialog *DlgCtrlID; // edi
   GameSetup *ComboBoxSelectedRaw; // eax
   wchar_t *DifficultyString; // eax
   SideClass *ComboBoxSelected; // eax
@@ -639,7 +639,7 @@ LABEL_75:
           v40 = 0; /*0x5deae0*/
           v38[0] = 22; /*0x5deaf5*/
           strcpy((char *)&v38[1],(const char *)(unk_A8B380)); /*0x5deb06*/
-          Player::BuildListString( (wchar_t *)((Player *)&v38[11] + 3)); /*0x5deb13*/
+          ((Player *)(((Player *)&v38[11] + 3)))->BuildListString(); /*0x5deb13*/
           v18 = dword_A8DA84; /*0x5deb18*/
           for ( i = 1; i < v18; ++i ) /*0x5deb25*/
           {
@@ -737,7 +737,7 @@ LABEL_75:
 }
 // 0x5E00B0
 namespace gamemd {
-void NetworkLobby_MessageHandler()
+int NetworkLobby_MessageHandler()
 {
   char result; // al
   wchar_t *v10; // eax
@@ -799,7 +799,7 @@ void NetworkLobby_MessageHandler()
   do
   {
     Event::Dispatch();
-    if ( !Network::Send(
+    if ( !gamemd::Network::Send(
             (int)&HouseClass_Player[44148],
             (int)&HouseClass_Player[39148],
             (int)&HouseClass_Player[39604],
@@ -1038,7 +1038,7 @@ LABEL_79:
       case 0x16:
         if ( !Settings::CheckString() )
         {
-          NetworkLobby::SetupPlayers((wchar_t *)&HouseClass_Player[39195]);
+          ((NetworkLobby *)(&HouseClass_Player[39195]))->SetupPlayers();
           v110 = 1;
         }
         continue;
@@ -1716,7 +1716,7 @@ LABEL_276:
                     char v131 = 0;
                     v129[0] = 22;
                     strcpy( (char *)&v129[1], (const char *)(&HouseClass_Player[30260]));
-                    Player::BuildListString((wchar_t *)((char *)&v129[11] + 3));
+                    ((Player *)(((char *)&v129[11] + 3)))->BuildListString();
                     int v102 = *(unsigned int *)&HouseClass_Player[40248];
                     for ( k = 1; k < v102; ++k )
                     {
@@ -1791,7 +1791,7 @@ LABEL_276:
           0);
         Event::Dispatch();
       }
-      ((Network *)(int)&HouseClass_Player[44148])->SendMessage( (int)v126, 455, 0, 0, 0, 0);
+      ((gamemd::Network*)(int)&HouseClass_Player[44148])->SendMessage( (int)v126, 455, 0, 0, 0, 0);
       if ( *(unsigned int *)&HouseClass_Player[39088] )
         Network::SendMessage(
           (int)&HouseClass_Player[44148],
@@ -1963,7 +1963,7 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
       ((DeleteAndZero*)&v25)->Alt(); /*0x5e8fa7*/
       if ( !v12 ) /*0x5e8fae*/
       {
-        v12 = Player::FindByName( (wchar_t *)((Player *)i)); /*0x5e8fb7*/
+        v12 = ((Player *)(((Player *)i)))->FindByName(); /*0x5e8fb7*/
         if ( !v12 ) /*0x5e8fbb*/
           v12 = g_Lobby_PlayerReady; /*0x5e8fbd*/
       }
@@ -1977,15 +1977,15 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
          || v12 == (wchar_t *)g_Lobby_PlayerColor
          || *(unsigned int *)&v12->q_6B != -1) )
       {
-        v13 = (HWND)((Dialog*)((Dialog *)0xC2))->FindByHandle(); /*0x5e9017*/
+        v13 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xC2))->FindByHandle(); /*0x5e9017*/
         if ( !v13 ) /*0x5e901b*/
         {
-          v13 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x5e9027*/
+          v13 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xC9))->FindByHandle(); /*0x5e9027*/
           if ( !v13 ) /*0x5e902b*/
           {
-            v13 = (HWND)((Dialog*)((Dialog *)0xBC))->FindByHandle(); /*0x5e9037*/
+            v13 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xBC))->FindByHandle(); /*0x5e9037*/
             if ( !v13 ) /*0x5e903b*/
-              v13 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5e9047*/
+              v13 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xBD))->FindByHandle(); /*0x5e9047*/
           }
         }
         if ( v25.__pad_0[(unsigned int)v10 + 4] )
@@ -2039,15 +2039,15 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
       }
       else
       {
-        v18 = (HWND)((Dialog*)((Dialog *)0xC2))->FindByHandle(); /*0x5e911c*/
+        v18 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xC2))->FindByHandle(); /*0x5e911c*/
         if ( !v18 ) /*0x5e9120*/
         {
-          v18 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x5e912c*/
+          v18 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xC9))->FindByHandle(); /*0x5e912c*/
           if ( !v18 ) /*0x5e9130*/
           {
-            v18 = (HWND)((Dialog*)((Dialog *)0xBC))->FindByHandle(); /*0x5e913c*/
+            v18 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xBC))->FindByHandle(); /*0x5e913c*/
             if ( !v18 ) /*0x5e9140*/
-              v18 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5e914c*/
+              v18 = (HWND)((gamemd::Dialog*)((gamemd::Dialog*)0xBD))->FindByHandle(); /*0x5e914c*/
           }
         }
         if ( !v25.__pad_0[(unsigned int)v10 + 4] )
@@ -2133,15 +2133,15 @@ int NetworkLobby::InitLobbyDropdowns(SessionClass * hDlg)
 {
 
   int i; // ebp
-  Dialog *ResourceID4CSF; // esi
+  gamemd::Dialog *ResourceID4CSF; // esi
   int ComboBoxSelectedRaw2; // edi
   int result; // eax
 
   for ( i = 0; i < 8; ++i ) /*0x5e9e06*/
   {
-    ResourceID4CSF = (Dialog *)GetResourceID4CSF( (int)((ObjectClass *)i)); /*0x5e9e0f*/
+    ResourceID4CSF = (gamemd::Dialog*)GetResourceID4CSF( (int)((ObjectClass *)i)); /*0x5e9e0f*/
     ComboBoxSelectedRaw2 = GetComboBoxSelectedRaw2((HWND)hDlg, (int)ResourceID4CSF, -1); /*0x5e9e1e*/
-    result = ((Dialog *)ResourceID4CSF)->OptionIDToIndex(); /*0x5e9e20*/
+    result = ((gamemd::Dialog*)ResourceID4CSF)->OptionIDToIndex(); /*0x5e9e20*/
     if ( (ObjectClass *)result == dword_A8DA8C ) /*0x5e9e2b*/
     {
       SetupLobbyPlayerSlots((HWND)hDlg, (int)ResourceID4CSF, ComboBoxSelectedRaw2); /*0x5e9e32*/
@@ -2330,11 +2330,11 @@ char NetworkLobby::FillOptionCombo()
   int v10; // [esp+8h] [ebp-4h]
 
   v8 = 1; /*0x5ee3a8*/
-  hDlg = (HWND)((Dialog*)((void *)0xC2))->FindByHandle(); /*0x5ee3b4*/
+  hDlg = (HWND)((gamemd::Dialog*)((void *)0xC2))->FindByHandle(); /*0x5ee3b4*/
   if ( hDlg /*0x5ee3ee*/
-    || (hDlg = (HWND)((Dialog*)((void *)0xC9))->FindByHandle()) != 0
-    || (hDlg = (HWND)((Dialog*)((void *)0xBC))->FindByHandle()) != 0
-    || (ResourceID4 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle(), (hDlg = ResourceID4) != 0) )
+    || (hDlg = (HWND)((gamemd::Dialog*)((void *)0xC9))->FindByHandle()) != 0
+    || (hDlg = (HWND)((gamemd::Dialog*)((void *)0xBC))->FindByHandle()) != 0
+    || (ResourceID4 = (HWND)((gamemd::Dialog*)((void *)0xBD))->FindByHandle(), (hDlg = ResourceID4) != 0) )
   {
     if ( dword_A8B23C ) /*0x5ee3fb*/
       v8 = *(unsigned char *)(dword_A8B23C + 60); /*0x5ee400*/

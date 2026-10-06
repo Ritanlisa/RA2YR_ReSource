@@ -63,7 +63,7 @@ int DDraw::CapabilityCheck()
   int v7[9]; // [esp+28h] [ebp-24h] BYREF
 
   ((DSurface*)((char *)v7))->Construct(64, 64, 0, 0); /*0x4a3e51*/
-  ((Debug *)aCheckingHardwa)->Log(); /*0x4a3e5b*/
+  ((gamemd::Debug*)aCheckingHardwa)->Log(); /*0x4a3e5b*/
   byte_8205D4 = 1; /*0x4a3e67*/
   ((XSurface *)v7)->Fill( 0); /*0x4a3e6f*/
   v2 = 5; /*0x4a3e82*/
@@ -213,7 +213,7 @@ int DDraw::HandleSuspend()
   LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 412)); /*0x5d2530*/
   if ( *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1 ) /*0x5d253b*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x5d2546*/
+    Debug::Log("MSEngine - Pausing animations\n"); /*0x5d2546 G57c1: IDA 0x5d2546 push offset aMsenginePausin*/
     for ( i = 0; i < this->u32_28; ++i ) /*0x5d2555*/
     {
       v4 = *(unsigned int *)(this->u32_1C + 4 * i); /*0x5d255a*/
@@ -221,11 +221,11 @@ int DDraw::HandleSuspend()
     }
     while ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x5d2571*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x5d257e*/
+      Debug::Log("MSEngine - Sleeping\n"); /*0x5d257e G57c1: IDA 0x5d257e push offset aMsengineSleepi*/
       Sleep(0x1F4u); /*0x5d258b*/
       MessageLoop(); /*0x5d258d*/
     }
-    ((gamemd::Debug *)this)->Log(); /*0x5d25a0*/
+    Debug::Log("MSEngine - Resuming animations\n"); /*0x5d25a0 G57c1: IDA 0x5d25a0 push offset aMsengineResumi*/
     result = this->u32_28; /*0x5d25a5*/
     for ( j = 0; j < result; ++j ) /*0x5d25af*/
     {

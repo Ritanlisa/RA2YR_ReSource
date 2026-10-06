@@ -451,7 +451,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f7826*/
         {
           v5 -= 9; /*0x5f781b*/
-          FileTreeNode::Destroy((HWND)(v5)); /*0x5f7820*/
+          ((FileTreeNode *)((HWND)(v5)))->Destroy(); /*0x5f7820*/
           --v6; /*0x5f7825*/
         }
         while ( v6 ); /*0x5f7826*/
@@ -475,7 +475,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f7866*/
         {
           v11 -= 9; /*0x5f785b*/
-          FileTreeNode::Destroy((HWND)(v11)); /*0x5f7860*/
+          ((FileTreeNode *)((HWND)(v11)))->Destroy(); /*0x5f7860*/
           --v12; /*0x5f7865*/
         }
         while ( v12 ); /*0x5f7866*/
@@ -499,7 +499,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f78a6*/
         {
           v17 -= 9; /*0x5f789b*/
-          FileTreeNode::Destroy((HWND)(v17)); /*0x5f78a0*/
+          ((FileTreeNode *)((HWND)(v17)))->Destroy(); /*0x5f78a0*/
           --v18; /*0x5f78a5*/
         }
         while ( v18 ); /*0x5f78a6*/
@@ -523,7 +523,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         do /*0x5f78e6*/
         {
           v23 -= 9; /*0x5f78db*/
-          FileTreeNode::Destroy((HWND)(v23)); /*0x5f78e0*/
+          ((FileTreeNode *)((HWND)(v23)))->Destroy(); /*0x5f78e0*/
           --v24; /*0x5f78e5*/
         }
         while ( v24 ); /*0x5f78e6*/
@@ -855,7 +855,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   v2 = (void *)((gamemd::ObjectTypeClass*)aP0)->MainVoxel[0]; /*0x5f9777*/
   if ( v2 ) /*0x5f977f*/
   {
-    WaveClass::Destroy( (WaveClass *)((gamemd::ObjectTypeClass*)aP0)->MainVoxel[0]); /*0x5f9783*/
+    ((WaveClass *)(((gamemd::ObjectTypeClass*)aP0)->MainVoxel[0]))->Destroy(); /*0x5f9783*/
     __3_YAXPAX_Z(v2); /*0x5f9789*/
   }
   v3 = (String *)((gamemd::ObjectTypeClass*)aP0)->TurretVoxel[0]; /*0x5f9791*/
@@ -975,7 +975,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     return *(unsigned int *)&((unsigned int *)this)[1548]; /*0x7120bf*/
   if ( (&dword_A83D4C)[1].__pad_C[19] ) /*0x71204c*/
   {
-    if ( (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) == 16 ) /*0x712060*/
+    if ( (*(int (**)(gamemd::TechnoTypeClass*))(this->ObjectTypeClass[0] + 44))(this) == 16 ) /*0x712060*/
     {
       result = *(unsigned int *)&((unsigned int *)this)[1580]; /*0x712062*/
       if ( result ) /*0x71206a*/
@@ -988,8 +988,8 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
   }
   if ( !v1 /*0x7120a1*/
     || !v1[1].__pad_C[20]
-    || (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 40
-    && ((*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 7
+    || (*(int (**)(gamemd::TechnoTypeClass*))(this->ObjectTypeClass[0] + 44))(this) != 40
+    && ((*(int (**)(gamemd::TechnoTypeClass*))(this->ObjectTypeClass[0] + 44))(this) != 7
      || !*(unsigned int *)&((unsigned int *)this)[804]) )
   {
     return *(unsigned int *)&((unsigned int *)this)[1548]; /*0x7120a1*/
@@ -1337,7 +1337,7 @@ int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
   char *Name; // eax
   StringTable Destination[4]; // [esp+4h] [ebp-20h] BYREF
 
-  Name = ((AbstractType *)a4)->FindName(); /*0x475001*/
+  Name = ((AbstractType_e4 *)a4)->FindName(); /*0x475001*/
   ((INIClass*)((INIClass *)this))->GetString(aP1, a2, Name, Destination[0].__pad_0, 32); /*0x475013*/
   return StringTable::Lookup(Destination); /*0x475021*/
 
@@ -1482,7 +1482,7 @@ void ObjectTypeClass::ReleaseWaveAndString(void *a1)
   vtable0 = this->AbstractTypeClass; /*0x5f61a4*/
   if ( this->AbstractTypeClass ) /*0x5f61a4*/
   {
-    WaveClass::Destroy( (WaveClass *)this->AbstractTypeClass); /*0x5f61ac*/
+    ((WaveClass *)(this->AbstractTypeClass))->Destroy(); /*0x5f61ac*/
     __3_YAXPAX_Z(vtable0); /*0x5f61b2*/
   }
   vtable1 = (String *)((unsigned int *)this)[0]; /*0x5f61ba*/
@@ -1527,7 +1527,7 @@ void ObjectTypeClass::CleanupWeapons()
     v3 = (void *)*((unsigned int *)v1 - 1); /*0x5f8091*/
     if ( v3 ) /*0x5f8096*/
     {
-      WaveClass::Destroy(*((unsigned int *)v1 - 1)); /*0x5f809a*/
+      ((WaveClass *)(*((unsigned int *)v1 - 1)))->Destroy(); /*0x5f809a*/
       __3_YAXPAX_Z(v3); /*0x5f80a0*/
       *((unsigned int *)v1 - 1) = 0; /*0x5f80a8*/
     }
@@ -1541,7 +1541,7 @@ void ObjectTypeClass::CleanupWeapons()
     v5 = (void *)*((unsigned int *)v1 + 35); /*0x5f80c3*/
     if ( v5 ) /*0x5f80cb*/
     {
-      WaveClass::Destroy(*((unsigned int *)v1 + 35)); /*0x5f80cf*/
+      ((WaveClass *)(*((unsigned int *)v1 + 35)))->Destroy(); /*0x5f80cf*/
       __3_YAXPAX_Z(v5); /*0x5f80d5*/
       *((unsigned int *)v1 + 35) = 0; /*0x5f80dd*/
     }

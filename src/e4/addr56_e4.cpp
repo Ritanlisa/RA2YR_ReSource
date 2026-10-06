@@ -80,7 +80,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   unsigned int v31[4]; // [esp+6Ch] [ebp-10h] BYREF
 
   v2 = IDA___PAIR64__(yBottom, xRight); /*0x560bf9*/
-    Debug::Log();
+    Debug::Log("About to set video mode\n") /*G57c1: IDA 0x560c00 push offset aAboutToSetVide*/;
   lParam = *(unsigned long long *)&g_DisplayWidth; /*0x560c13*/
   BitShift_Green = GetBitShift_Green(); /*0x560c20*/
   BitShift_Red = GetBitShift_Red(); /*0x560c27*/
@@ -96,46 +96,46 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     *(unsigned int *)&DSurface_ViewBounds.__pad_8[12] = 0; /*0x560c78*/
     *(unsigned long long *)&DSurface_ViewBounds.__pad_8[16] = v2; /*0x560c7e*/
     *(unsigned long long *)&g_DisplayWidth = v2; /*0x560c8a*/
-        Debug::Log();
+        Debug::Log("VisibleRect: %dx%d\n") /*G57c1: IDA 0x560c96 push offset aVisiblerectDxD*/;
   LABEL_19:
     if ( DSurface_Alternate ) /*0x560e07*/
     {
-            Debug::Log();
+            Debug::Log("Deleting AlternateSurface\n") /*G57c1: IDA 0x560e0e push offset aDeletingAltern*/;
       if ( DSurface_Alternate ) /*0x560e1e*/
         (*(void (**)(DSurface *, int))DSurface_Alternate->DSurface_field_0x0)(DSurface_Alternate, 1); /*0x560e24*/
       DSurface_Alternate = 0; /*0x560e26*/
     }
     if ( g_DSurface_Hidden ) /*0x560e32*/
     {
-            Debug::Log();
+            Debug::Log("Deleting HiddenSurface\n") /*G57c1: IDA 0x560e39 push offset aDeletingHidden*/;
       if ( g_DSurface_Hidden ) /*0x560e49*/
         (*(void (**)(ObjectClass *, int))g_DSurface_Hidden->AbstractClass)(g_DSurface_Hidden, 1); /*0x560e4f*/
       g_DSurface_Hidden = 0; /*0x560e51*/
     }
     if ( DSurface_Tile ) /*0x560e5d*/
     {
-            Debug::Log();
+            Debug::Log("Deleting TileSurface\n") /*G57c1: IDA 0x560e64 push offset aDeletingTilesu*/;
       if ( DSurface_Tile ) /*0x560e74*/
         (*(void (**)(DSurface *, int))DSurface_Tile->DSurface_field_0x0)(DSurface_Tile, 1); /*0x560e7a*/
       DSurface_Tile = 0; /*0x560e7c*/
     }
     if ( DSurface_Sidebar ) /*0x560e88*/
     {
-            Debug::Log();
+            Debug::Log("Deleting SidebarSurface\n") /*G57c1: IDA 0x560e8f push offset aDeletingSideba*/;
       if ( DSurface_Sidebar ) /*0x560e9f*/
         (*(void (**)(DSurface *, int))DSurface_Sidebar->DSurface_field_0x0)(DSurface_Sidebar, 1); /*0x560ea5*/
       DSurface_Sidebar = 0; /*0x560ea7*/
     }
     if ( DSurface_Composite ) /*0x560eb3*/
     {
-            Debug::Log();
+            Debug::Log("Deleting CompositeSurface\n") /*G57c1: IDA 0x560eba push offset aDeletingCompos*/;
       if ( DSurface_Composite ) /*0x560eca*/
         (**(void (***)(AudioStream *, int))DSurface_Composite->__pad_0)(DSurface_Composite, 1); /*0x560ed0*/
       DSurface_Composite = 0; /*0x560ed2*/
     }
     if ( g_DDraw_Initialized ) /*0x560ee6*/
     {
-            Debug::Log();
+            Debug::Log("Setting new window size to %dx%d\n") /*G57c1: IDA 0x560f1f push offset aSettingNewWind*/;
       SetRect(&rc, 0, 0, v2, IDA_SHIDWORD(v2)); /*0x560f30*/
       WindowLongA = GetWindowLongA((HWND)(g_hWnd), -20); /*0x560f4c*/
       v16 = GetMenu((HWND)(g_hWnd)) != 0; /*0x560f60*/
@@ -145,9 +145,9 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     }
     else
     {
-            Debug::Log();
+            Debug::Log("Setting new window size to %dx%d\n") /*G57c1: IDA 0x560ee8 push offset aSettingNewWind*/;
       SetWindowPos((HWND)(g_hWnd), 0, 0, 0, v2, IDA_SHIDWORD(v2), 2u); /*0x560efe*/
-            Debug::Log();
+            Debug::Log("Creating primary surface\n") /*G57c1: IDA 0x560f09 push offset aCreatingPrimar*/;
       g_DSurface_Primary = (int)((DSurface *)((DSurface*)0)->CreatePrimary()); /*0x560f18*/
     }
     Viewport = ((Display*)v30)->GetViewport(); /*0x560fa1*/
@@ -173,7 +173,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     v30[1] = 0; /*0x56100a*/
     AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8],(gamemd::ObjectClass *)((int)v30),(gamemd::ObjectClass *)((int)v29), (int)&rc, 0); /*0x56100e*/
     g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56101e*/
-        Debug::Log();
+        Debug::Log("Recalc color remap tables\n") /*G57c1: IDA 0x561024 push offset aRecalcColorRem*/;
     sub_491100((gamemd::ObjectClass *)(BitShift_Red), BitShift_Green, 0,(gamemd::ObjectClass *)(BitMask_Blue), BitMask_Green, BitMask_Red,(short)(BitShift_Blue)); /*0x561046*/
     if ( stru_887598.lineTrailer ) /*0x561053*/
     {
@@ -197,7 +197,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
           v14,
           0);
       }
-      Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x5610bf*/
+      Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x5610bf*/
       ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x5610cb*/
       (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x5610d8*/
     }
@@ -206,43 +206,43 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     SidebarClass::InitButtons((TabClass *)&stru_87F5F0.__pad_58[416]); /*0x561107*/
     TacticalClass::BuildCommandBar((TabClass *)1, v2, v19); /*0x561113*/
     SidebarClass::LoadResources(v20); /*0x56111d*/
-    MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x561129*/
+    ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x561129*/
         for ( i = (MouseClass *)Dialog::GetCurrent(); i; i = (MouseClass *)((Dialog*)i)->FindByPtr() )
     {
       DestroyDialog((ObjectClass *)i); /*0x56113b*/
       ResizeDialogAndEnum((HWND)i,(void *)((LPARAM)&lParam)); /*0x561146*/
     }
     (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x561160*/
-        Debug::Log();
+        Debug::Log("Mode change complete.\n") /*G57c1: IDA 0x561168 push offset aModeChangeComp*/;
     return 1; /*0x561170*/
   }
   if ( stru_887598.lineTrailer ) /*0x560cac*/
   {
-        Debug::Log();
+        Debug::Log("Removing mouse handler\n") /*G57c1: IDA 0x560cb3 push offset aRemovingMouseH*/;
     if ( stru_887598.lineTrailer ) /*0x560cc3*/
       (**(void (***)(void *, int))stru_887598.lineTrailer)(stru_887598.lineTrailer, 1); /*0x560cc9*/
     stru_887598.lineTrailer = 0; /*0x560ccb*/
   }
   if ( g_DSurface_Primary ) /*0x560cd7*/
   {
-        Debug::Log();
+        Debug::Log("Deleting primary surface\n") /*G57c1: IDA 0x560cde push offset aDeletingPrimar*/;
     if ( g_DSurface_Primary ) /*0x560cee*/
       (*(void (**)(DSurface *, int))g_DSurface_Primary->DSurface_field_0x0)(g_DSurface_Primary, 1); /*0x560cf4*/
     g_DSurface_Primary = 0; /*0x560cf6*/
   }
   if ( InitializeDDraw((int)g_hWnd, v2, IDA_HIDWORD(v2), 0x10u) ) /*0x560d07*/
   {
-        Debug::Log();
+        Debug::Log("Mode apparently set OK\n") /*G57c1: IDA 0x560dd4 push offset aModeApparently*/;
     *(unsigned int *)&DSurface_ViewBounds.__pad_8[8] = 0; /*0x560de2*/
     *(unsigned int *)&DSurface_ViewBounds.__pad_8[12] = 0; /*0x560de7*/
     *(unsigned long long *)&DSurface_ViewBounds.__pad_8[16] = v2; /*0x560ded*/
-        Debug::Log();
+        Debug::Log("VisibleRect: %dx%d\n") /*G57c1: IDA 0x560df9 push offset aVisiblerectDxD*/;
     goto LABEL_19; /*0x560df9*/
   }
-    Debug::Log();
-    Debug::Log();
+    Debug::Log("Set_Video_Mode failed.\n") /*G57c1: IDA 0x560d19 push offset aSetVideoModeFa*/;
+    Debug::Log("Restoring primary surface\n") /*G57c1: IDA 0x560d23 push offset aRestoringPrima*/;
   g_DSurface_Primary = (int)((DSurface *)((DSurface*)0)->CreatePrimary()); /*0x560d32*/
-    Debug::Log();
+    Debug::Log("Restoring mouse handler\n") /*G57c1: IDA 0x560d3c push offset aRestoringMouse*/;
   v4 = (MouseClass *)RA2_OPNEW(0x98u); /*0x560d46*/
   if ( v4 ) /*0x560d50*/
     stru_887598.lineTrailer = ((MouseClass *)(v4))->Construct((int)g_DSurface_Primary, (int)g_hWnd); /*0x560d67*/
@@ -259,7 +259,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       v5,
       0);
   }
-  Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x560da9*/
+  Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x560da9*/
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x560db5*/
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x560dc2*/
   return 0; /*0x560dc7*/

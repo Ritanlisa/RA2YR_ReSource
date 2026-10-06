@@ -1644,7 +1644,7 @@ bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
 }
 // 0x4E5E20
 namespace gamemd {
-void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
+int Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
 {
   int v2; // edi
   int v3; // eax
@@ -2877,11 +2877,11 @@ int E4Recv_4E6070::sub_4E6070()
 
   *(unsigned int *)&this->bombVisible = 0; /*0x4e6087*/
   this->health = 0; /*0x4e608a*/
-  Debug::Log(); /*0x4e608d*/
+  Debug::Log("GetCDClass constructor\n"); /*0x4e608d G57c1: IDA 0x4e608d push offset aGetcdclassCons*/
   memset(this, 0xFFu, 0x18u); /*0x4e609f*/
   LOWORD(((unsigned int *)this)[0]) = -1; /*0x4e60a9*/
   *((unsigned int *)this + (*(unsigned int *)&this->bombVisible)++) = 2; /*0x4e60cc*/
-  Debug::Log(); /*0x4e60d6*/
+  Debug::Log("CD drive found - %c:\n"); /*0x4e60d6 G57c1: IDA 0x4e60d6 push offset aCdDriveFoundC*/
   return (int)this; /*0x4e612c*/
 
 }
@@ -4456,7 +4456,7 @@ int unknown_libname_13()
   (&stru_A8E7B0)[3 = 0; /*0x661713*/
   (&stru_A8E7B0)[4 = 0; /*0x661716*/
   memset(&(&stru_A8E7B0)[5, 0, 0x100u); /*0x661719*/
-  Straw::Dtor( (void *a1 =)(stru_A8E7B0)); /*0x66171d*/
+  ((Straw *)(stru_A8E7B0))->Dtor(); /*0x66171d*/
 }
 } // namespace gamemd
 

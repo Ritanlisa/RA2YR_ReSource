@@ -33,7 +33,7 @@ void AudioSettings::SetFlag70(char a2)
 
   *((unsigned char *)this + 70) = a2; /*0x5fa444*/
   byte_A83D22 = a2; /*0x5fa447*/
-  ((gamemd::Debug *)this)->Log(); /*0x5fa463*/
+  Debug::Log("ScoreShuffle is %s\n"); /*0x5fa463 G57c1: IDA 0x5fa463 push offset g_Str_Trace_ScoreShuffle_is__s*/
 
 }
 } // namespace gamemd
@@ -44,7 +44,7 @@ void AudioSettings::SetFlag68(char a2)
 
   *((unsigned char *)this + 68) = a2; /*0x5fa474*/
   byte_A83D20 = a2; /*0x5fa477*/
-  ((gamemd::Debug *)this)->Log(); /*0x5fa493*/
+  Debug::Log("ScoreRepeat is %s\n"); /*0x5fa493 G57c1: IDA 0x5fa493 push offset g_Str_Trace_ScoreRepeat_is__s*/
 
 }
 } // namespace gamemd

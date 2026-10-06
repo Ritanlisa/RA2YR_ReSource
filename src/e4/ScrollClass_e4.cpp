@@ -39,7 +39,7 @@ char * ScrollClass::Read(char * Block, char a2)
   do /*0x693916*/
   {
     v3 -= 997; /*0x693905*/
-    Array::ForEachReverse((gamemd::ObjectClass *)v3, 52, 75, (int (*)(int))nullsub_56); /*0x693910*/
+    ((Array *)v3)->ForEachReverse( 52, 75, (int (*)(int))nullsub_56); /*0x693910*/
     --v4; /*0x693915*/
   }
   while ( v4 ); /*0x693916*/

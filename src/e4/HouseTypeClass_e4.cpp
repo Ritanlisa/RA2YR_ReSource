@@ -637,7 +637,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
 }
 // 0x512480
 namespace gamemd {
-void HouseTypeClass_SaveLoad_Prefix_0(HouseTypeClass *aP0, int * a2, int * a3, int a4, int a5)
+int HouseTypeClass_SaveLoad_Prefix_0(HouseTypeClass *aP0, int * a2, int * a3, int a4, int a5)
 {
     int v5; // ebx
     int result; // eax
@@ -733,7 +733,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
 
     if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, String, 128) ) /*0x67b91c*/
     {
-      AircraftTypeVector::Constructor( (int)(&v17), 0, 0); /*0x67b931*/
+      ((AircraftTypeVector *)((int)(&v17)))->Constructor( 0, 0); /*0x67b931*/
       v22 = 10; /*0x67b93a*/
       v21 = 0; /*0x67b948*/
       v17 = (AircraftTypeVector)(void*)&TypeList_AircraftTypeClass_const___vftable; /*0x67b94c*/

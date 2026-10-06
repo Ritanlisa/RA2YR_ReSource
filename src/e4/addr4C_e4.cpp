@@ -356,7 +356,7 @@ void InitializeRadialGradientTexture()
                     v21 = v7; /*0x4c18cb*/
                   }
                   while ( v7 + 128 < 256 ); /*0x4c18db*/
-                  if ( AudioStream::ReadSamples( (const void *)(dword_8A0E04), v20) ) /*0x4c18ec*/
+                  if ( ((AudioStream *)((const void *)(dword_8A0E04)))->ReadSamples( v20) ) /*0x4c18ec*/
                     return 3; /*0x4c18f5*/
                   memset(v25, 0, sizeof(v25)); /*0x4c1911*/
                   v25[0] = 108; /*0x4c1919*/
@@ -677,12 +677,12 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
 }
 // 0x4C83E0
 namespace gamemd {
-void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
+int DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 {
   if ( a2 > 0x111 ) /*0x4c83ea*/
   {
     if ( a2 == 534 ) /*0x4c84bc*/
-      return (uint8_t)Window::ClampToScreen( (int *)(a4)); /*0x4c84d6*/
+      return (uint8_t)((Window *)(a4))->ClampToScreen(); /*0x4c84d6*/
     return 0; /*0x4c84bc*/
   }
   if ( a2 == 273 ) /*0x4c83f0*/
@@ -900,7 +900,7 @@ void * E4Recv_4CB6A0::sub_4CB6A0(char * Destination, RandomStruct * aP1, int a3)
 }
 // 0x4CEFB0
 namespace gamemd {
-void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
+int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
 {
   int **v6; // esi
   int *v7; // eax
@@ -1106,7 +1106,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       IDA_LOWORD(a4) = 0; /*0x4cf320*/
       if ( !v55 /*0x4cf34a*/
         || (IDA_LOWORD(a4) = (*(uint16_t (**)(int))(v55->u32_10))(v55) << 13, !v55)
-        || !(*(int (**)(int))(v55->q020)(v55) )
+        || !(*(int (**)(int))(v55->q020)(v55) ))
       {
         ((FacingClass *)(char *)*v6 + 928)->Update( &a4); /*0x4cf356*/
       }

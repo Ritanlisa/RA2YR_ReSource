@@ -72,7 +72,7 @@ v2 = (LPVOID)(ppv);
       v6 = ToWideStringChar((IUnknown *)(*(char **)(dword_A8DA78 + 4 * i))); /*0x5e3953*/
       if ( !_strcmpi(v6,(const char *)(a1)) ) /*0x5e3959*/
       {
-        ((gamemd::Debug *)this)->Log(); /*0x5e3974*/
+        Debug::Log("Sending private game options to %ls\n"); /*0x5e3974 G57c1: IDA 0x5e3974 push offset aSendingPrivate*/
         ((Network *)(int)unk_A8E9C0)->SendMessage( (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
         ((gamemd::Event *)this)->Dispatch(); /*0x5e39a5*/
       }
@@ -228,7 +228,7 @@ void sub_72BB10()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[892]; /*0x72bb25*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[892]); /*0x72bb31*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[892]))->Destroy(); /*0x72bb31*/
         RA2_OPDEL(v1); /*0x72bb37*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1440] = 0; /*0x72bb3f*/

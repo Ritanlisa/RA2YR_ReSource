@@ -895,7 +895,7 @@ namespace gamemd {
 char globalHelper_0E2C20(int a1, int a2, int a3, IUnknown * aP3)
 {
   LayerClass::ClearFactoryCellAssignments(&dword_87F7E8); /*0x6e2c25*/
-  MapClass::MarkForRedraw( (int)(&dword_87F7E8), 1); /*0x6e2c31*/
+  ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 1); /*0x6e2c31*/
   return 1; /*0x6e2c38*/
 }
 } // namespace gamemd

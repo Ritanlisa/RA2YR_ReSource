@@ -16,7 +16,7 @@ struct BinkMo { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_TU_rc_ptr_base  // G57c6: addr6C_e4.cpp defines its own TU-local twin
-struct rc_ptr_base { void* vfptr; };  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
+struct rc_ptr_base;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_TU_rc_ptr_base
 } // namespace gamemd
 namespace gamemd {
@@ -34,7 +34,9 @@ struct AudioCodec;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; 
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_DSurface  // G57c2 dedup: full flat carrier DSurface_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_DSurface  // G57c2 dedup: full flat carrier DSurface_e4.hpp wins (include order verified carrier-first)
 struct DSurface { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_DSurface
 #endif  // GAMEMD_E4_FLAT_DSurface
 } // namespace gamemd
 namespace gamemd {
@@ -63,7 +65,9 @@ struct GameScreen;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; 
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_DynamicVector  // G57c2 dedup: full flat carrier DynamicVector_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_DynamicVector  // G57c2 dedup: full flat carrier DynamicVector_e4.hpp wins (include order verified carrier-first)
 struct DynamicVector { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_DynamicVector
 #endif  // GAMEMD_E4_FLAT_DynamicVector
 } // namespace gamemd
 namespace gamemd {
@@ -92,7 +96,9 @@ struct ChronoScreen;  // G57c2 dedup: fwd only -- other def lives in classes.hpp
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_DropPodLocomotionClass  // G57c2 dedup: full flat carrier DropPodLocomotionClass_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_DropPodLocomotionClass  // G57c2 dedup: full flat carrier DropPodLocomotionClass_e4.hpp wins (include order verified carrier-first)
 struct DropPodLocomotionClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_DropPodLocomotionClass
 #endif  // GAMEMD_E4_FLAT_DropPodLocomotionClass
 } // namespace gamemd
 namespace gamemd {
@@ -140,7 +146,9 @@ struct Map_WorldDominationTour;  // G57c2 dedup: fwd only -- other def lives in 
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_MIXFile  // G57c2 dedup: full flat carrier MIXFile_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_MIXFile  // G57c2 dedup: full flat carrier MIXFile_e4.hpp wins (include order verified carrier-first)
 struct MIXFile { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_MIXFile
 #endif  // GAMEMD_E4_FLAT_MIXFile
 } // namespace gamemd
 namespace gamemd {
@@ -153,7 +161,9 @@ struct TechnoTypeClass { void* vfptr; };  // minimal E2 (size-fix pending til ev
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_ScriptClass  // G57c2 dedup: full flat carrier ScriptClass_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_ScriptClass  // G57c2 dedup: full flat carrier ScriptClass_e4.hpp wins (include order verified carrier-first)
 struct ScriptClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_ScriptClass
 #endif  // GAMEMD_E4_FLAT_ScriptClass
 } // namespace gamemd
 namespace gamemd {
@@ -171,7 +181,7 @@ struct StartCombo;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; 
 } // namespace gamemd
 namespace gamemd {
 #if !defined(GAMEMD_E4_GAP2_MISC_EXT)  // G57c6: misc_ext leak TUs (addr63/addr7A) use the gap2 def
-struct Heap { void* vfptr; };  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
+struct Heap;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_GAP2_MISC_EXT (Heap)
 } // namespace gamemd
 namespace gamemd {
@@ -197,7 +207,7 @@ namespace gamemd {
 struct Check { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 struct MapPreview;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 struct MultiMissionVector;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
-struct SkirmishVector { void* vfptr; };  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
+struct SkirmishVector;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct MPGameModeClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
@@ -218,7 +228,7 @@ struct TeknoClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; 
 } // namespace gamemd
 namespace gamemd {
 #if !defined(GAMEMD_E4_GAP2_MISC_EXT)  // G57c6: misc_ext leak TUs (addr63/addr7A) use the gap2 def
-struct IsoCoord { void* vfptr; };  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
+struct IsoCoord;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_GAP2_MISC_EXT (IsoCoord)
 } // namespace gamemd
 namespace gamemd {
@@ -237,22 +247,30 @@ struct BinkMovieClass;  // G57c2 dedup: fwd only -- other def lives in classes.h
 } // namespace gamemd
 namespace gamemd {
 #if !defined(GAMEMD_E4_FLAT_CCINIClass) && !defined(GAMEMD_E4_GAP2_AUDIO_EXT)  // G57c2 + G57c9: flat carrier wins; audio-chain leak TUs (addr40: AudioList_e4 -> audio_ext -> audio.hpp -> system file family) get the gap2 rich def instead
+#ifndef GAMEMD_E4_FLAT_CCINIClass  // G57c2 dedup: full flat carrier CCINIClass_e4.hpp wins (include order verified carrier-first)
 struct CCINIClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_CCINIClass
 #endif  // GAMEMD_E4_FLAT_CCINIClass
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_BombClass  // G57c2 dedup: full flat carrier BombClass_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_BombClass  // G57c2 dedup: full flat carrier BombClass_e4.hpp wins (include order verified carrier-first)
 struct BombClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_BombClass
 #endif  // GAMEMD_E4_FLAT_BombClass
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_UDPInterfaceClass_Destru  // G57c2 dedup: full flat carrier UDPInterfaceClass_Destru_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_UDPInterfaceClass_Destru  // G57c2 dedup: full flat carrier UDPInterfaceClass_Destru_e4.hpp wins (include order verified carrier-first)
 struct UDPInterfaceClass_Destru { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_UDPInterfaceClass_Destru
 #endif  // GAMEMD_E4_FLAT_UDPInterfaceClass_Destru
 } // namespace gamemd
 namespace gamemd {
 #ifndef GAMEMD_E4_FLAT_WinsockInterface  // G57c2 dedup: full flat carrier WinsockInterface_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_WinsockInterface  // G57c2 dedup: full flat carrier WinsockInterface_e4.hpp wins (include order verified carrier-first)
 struct WinsockInterface { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_WinsockInterface
 #endif  // GAMEMD_E4_FLAT_WinsockInterface
 } // namespace gamemd
 namespace gamemd {
@@ -274,10 +292,10 @@ namespace gamemd {
 struct Bootstrap { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 struct Copy { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 #if !defined(GAMEMD_E4_GAP2_MISC_EXT)  // G57c6: misc_ext leak TUs (addr63/addr7A) use the gap2 def
-struct IntVector { void* vfptr; };  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
+struct IntVector;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_GAP2_MISC_EXT (IntVector)
 #if !defined(GAMEMD_E4_GAP2_MISC_EXT)  // G57c6: misc_ext leak TUs (addr63/addr7A) use the gap2 def
-struct KeyValuePair { void* vfptr; };  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
+struct KeyValuePair;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_GAP2_MISC_EXT (KeyValuePair)
 } // namespace gamemd
 namespace gamemd {
@@ -289,7 +307,9 @@ struct MapData;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twi
 namespace gamemd {
 struct Add { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 #ifndef GAMEMD_E4_FLAT_MouseClass  // G57c2 dedup: full flat carrier MouseClass_e4.hpp wins (include order verified carrier-first)
+#ifndef GAMEMD_E4_FLAT_MouseClass  // G57c2 dedup: full flat carrier MouseClass_e4.hpp wins (include order verified carrier-first)
 struct MouseClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_MouseClass
 #endif  // GAMEMD_E4_FLAT_MouseClass
 struct TileData;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
@@ -317,20 +337,24 @@ struct ScriptActionVector;  // G57c2 dedup: fwd only -- other def lives in class
 } // namespace gamemd
 namespace gamemd {
 #if !defined(GAMEMD_E4_FLAT_AudioSample) && !defined(GAMEMD_E4_GAP2_AUDIO_EXT)  // G57c2 + G57c9: flat carrier wins; audio-chain leak TUs (addr40: AudioList_e4 -> audio_ext -> audio.hpp -> system file family) get the gap2 rich def instead
+#ifndef GAMEMD_E4_FLAT_AudioSample  // G57c2 dedup: full flat carrier AudioSample_e4.hpp wins (include order verified carrier-first)
 struct AudioSample { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_AudioSample
 #endif  // GAMEMD_E4_FLAT_AudioSample
 } // namespace gamemd
 namespace gamemd {
 struct OverlayClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 struct PlanningNodeClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 #if !defined(GAMEMD_E4_FLAT_RawFileClass) && !defined(GAMEMD_E4_GAP2_AUDIO_EXT)  // G57c2 + G57c9: flat carrier wins; audio-chain leak TUs (addr40: AudioList_e4 -> audio_ext -> audio.hpp -> system file family) get the gap2 rich def instead
+#ifndef GAMEMD_E4_FLAT_RawFileClass  // G57c2 dedup: full flat carrier RawFileClass_e4.hpp wins (include order verified carrier-first)
 struct RawFileClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+#endif  // GAMEMD_E4_FLAT_RawFileClass
 #endif  // GAMEMD_E4_FLAT_RawFileClass
 } // namespace gamemd
 namespace gamemd {
 struct FileStraw_Destru;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 #if !defined(GAMEMD_E4_GAP2_MISC_EXT)  // G57c6: misc_ext leak TUs (addr63/addr7A) use the gap2 def
-struct ScriptActionQueue { void* vfptr; };  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
+struct ScriptActionQueue;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // G57c6 restore: complete-type uses exist in TUs without the classes.hpp def  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_GAP2_MISC_EXT (ScriptActionQueue)
 } // namespace gamemd
 namespace gamemd {

@@ -380,12 +380,12 @@ AbstractClass * * ProcessNetworkEvents()
     {
       return; /*0x64738a*/
     }
-    if ( CCFileClass::Read(&dword_A8D58C, &Buffer, 4) != 4 ) /*0x6473cf*/
+    if ( ((CCFileClass *)(&dword_A8D58C))->Read( &Buffer, 4) != 4 ) /*0x6473cf*/
       goto LABEL_30; /*0x6473cf*/
     v2 = 0; /*0x6473d9*/
     if ( Buffer > 0 ) /*0x6473dd*/
     {
-      while ( CCFileClass::Read(&dword_A8D58C, v8, 111) == 111 ) /*0x6473fd*/
+      while ( ((CCFileClass *)(&dword_A8D58C))->Read( v8, 111) == 111 ) /*0x6473fd*/
       {
         v8[1] &= ~1u; /*0x647414*/
         if ( dword_8B41F8 < 0x4000 ) /*0x647418*/
@@ -976,7 +976,7 @@ LABEL_50:
     if ( byte_B04470 )
       (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 24))(*(unsigned int *)&(&stru_87C374)[45772]);
     (&HouseClass_Player)[42540] = byte_B04894;
-    MapClass::MarkForRedraw( (int)(&(&stru_87C374)[13428]), 2);
+    ((MapClass *)((int)(&(&stru_87C374)[13428])))->MarkForRedraw( 2);
     if ( v94 )
     {
       v76 = (ObjectClass *)((Dialog*)(void *)0xEA)->FindByHandle();
@@ -986,7 +986,7 @@ LABEL_50:
           (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 24))(*(unsigned int *)&(&stru_87C374)[45772]);
         CloseDialog((HWND)v76, 0);
         (&HouseClass_Player)[42540] = byte_B04894;
-        MapClass::MarkForRedraw( (int)(&(&stru_87C374)[13428]), 2);
+        ((MapClass *)((int)(&(&stru_87C374)[13428])))->MarkForRedraw( 2);
         if ( (&HouseClass_Player)[42540] )
           ((TacticalMap*)&(&stru_87C374)[13428])->Redraw();
       }
@@ -1004,7 +1004,7 @@ LABEL_50:
       return 8;
     }
   }
-  RemainingMs = ((Timer*)(signed int *)&v101)->GetRemainingMs();
+  RemainingMs = ((gamemd::Timer*)(signed int *)&v101)->GetRemainingMs();
   if ( v29 )
     goto LABEL_54;
   if ( (wchar_t *)(RemainingMs / 60) != dword_B04898 )
@@ -1254,7 +1254,7 @@ LABEL_223:
                       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                     CloseDialog(esi224, 0);
                     HouseClass_Player[42540] = byte_B04894;
-                    MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+                    ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
                     if ( HouseClass_Player[42540] )
                       ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
                   }
@@ -1397,7 +1397,7 @@ LABEL_148:
                       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                     CloseDialog(v81, 0);
                     HouseClass_Player[42540] = byte_B04894;
-                    MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+                    ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
                     if ( HouseClass_Player[42540] )
                       ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
                   }
@@ -1407,7 +1407,7 @@ LABEL_148:
                 Network::SendUnreachable();
                 return 7;
               }
-              MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+              ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
               ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
               v63 = (ObjectClass *)TimerGetTicks();
               v134[6] = (int)v13;
@@ -1447,7 +1447,7 @@ LABEL_148:
                   (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                 CloseDialog(v82, 0);
                 HouseClass_Player[42540] = byte_B04894;
-                MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+                ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
                 if ( HouseClass_Player[42540] )
                   ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
               }
@@ -1465,7 +1465,7 @@ LABEL_148:
                   (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                 CloseDialog(v83, 0);
                 HouseClass_Player[42540] = byte_B04894;
-                MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+                ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
                 if ( HouseClass_Player[42540] )
                   ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
               }
@@ -1495,7 +1495,7 @@ LABEL_116:
           (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
         CloseDialog(esi181, 0);
         HouseClass_Player[42540] = byte_B04894;
-        MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+        ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
         if ( HouseClass_Player[42540] )
           ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       }
@@ -1506,7 +1506,7 @@ LABEL_116:
   {
     if ( Network_Process_64B410((int)v8, a7) )
     {
-      MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+      ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
       ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       v60 = (ObjectClass *)TimerGetTicks();
       v134[3] = (int)v13;
@@ -1534,7 +1534,7 @@ LABEL_116:
           (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
         CloseDialog((HWND)v79, 0);
         HouseClass_Player[42540] = byte_B04894;
-        MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 2);
+        ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 2);
         if ( HouseClass_Player[42540] )
           ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       }
@@ -1687,7 +1687,7 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
 }
 // 0x64A000
 namespace gamemd {
-void Network_SendFrameSync(int * a1, short a2)
+int Network_SendFrameSync(int * a1, short a2)
 {
   char v3; // dl
   int v4; // edx
@@ -2013,7 +2013,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     }
     if ( wcslen(v6) ) /*0x64a704*/
       wcscpy((wchar_t *)&dword_A8D110 + 1, v6); /*0x64a718*/
-    MapClass::MarkForRedraw(&dword_87F7E8, 2); /*0x64a727*/
+    ((MapClass *)(&dword_87F7E8))->MarkForRedraw( 2); /*0x64a727*/
     return 4; /*0x64a727*/
   }
   if ( v3 == 120 ) /*0x64a737*/
@@ -2164,7 +2164,7 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
 }
 // 0x64B4D0
 namespace gamemd {
-void Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned char * a3, const void * a4, char a5)
+int Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned char * a3, const void * a4, char a5)
 {
   int result; // eax
   uint8_t v6; // dl
@@ -3070,8 +3070,8 @@ void Network_ProcessMapEvent(int a1, int a2)
                       if ( *v62 == *v61 && v62[1] == v61[1] ) /*0x64d7ca*/
                       {
                         v63 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v76); /*0x64d7da*/
-                        ScriptAction::GetWaypointCoords(&v125, v63); /*0x64d7e7*/
-                        WaypointCoords = ScriptAction::GetWaypointCoords(v134, *((unsigned int **)Block + v28)); /*0x64d7fb*/
+                        ((ScriptAction *)(&v125))->GetWaypointCoords( v63); /*0x64d7e7*/
+                        WaypointCoords = ((ScriptAction *)v134)->GetWaypointCoords( *((unsigned int **)Block + v28)); /*0x64d7fb*/
                         v128 = *(unsigned int *)WaypointCoords; /*0x64d802*/
                         v2 = v2; /*0x64d809*/
                         if ( v2 <= i ) /*0x64d814*/
@@ -3230,8 +3230,8 @@ void Network_ProcessMapEvent(int a1, int a2)
                 v76 = (unsigned int *)*v48; /*0x64d698*/
                 *((unsigned int *)v101 + v119) = v76; /*0x64d6a0*/
                 v53 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v76); /*0x64d6a9*/
-                ScriptAction::GetWaypointCoords(&v123, v53); /*0x64d6b6*/
-                v54 = ScriptAction::GetWaypointCoords(v133, v29); /*0x64d6c3*/
+                ((ScriptAction *)(&v123))->GetWaypointCoords( v53); /*0x64d6b6*/
+                v54 = ((ScriptAction *)v133)->GetWaypointCoords( v29); /*0x64d6c3*/
                 v129 = *(unsigned int *)v54; /*0x64d6ca*/
                 v55 = a1; /*0x64d6d1*/
                 if ( a1 <= i ) /*0x64d6de*/

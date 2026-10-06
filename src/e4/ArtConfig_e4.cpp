@@ -45,7 +45,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   v6 = aP3[1] + *((unsigned int *)this + 7); /*0x76fc6b*/
   v7 = *aP3 + *((unsigned int *)this + 6); /*0x76fc72*/
   ((CCFileClass *)(v11))->Construct2((char **)((char *)this + 32)); /*0x76fc74*/
-  if ( CCFil  if ((int)(((CCFileClass *)(v11))->Open(0))) 
+  if ((int)(((CCFileClass *)(v11))->Open(0))) 
   {
     v8 = (void *)((unsigned int)(__2_YAPAXI_Z(0x4Cu)));
     if ( v8 ) /*0x76fc94*/

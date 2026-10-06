@@ -42,7 +42,7 @@ char Winsock::VerifyCRC(int a1)
       ComputeHash((unsigned int *)(&a1), *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/
     if ( a1 == *(WinsockInterfaceClass **)&v1[2].Initialized ) /*0x7b20c5*/
       return 1; /*0x7b20ca*/
-    ((gamemd::Debug *)this)->Log(); /*0x7b20d2*/
+    Debug::Log("Error in Winsock packet CRC\n"); /*0x7b20d2 G57c1: IDA 0x7b20d2 push offset aErrorInWinsock*/
   }
   return 0; /*0x7b20c9*/
 

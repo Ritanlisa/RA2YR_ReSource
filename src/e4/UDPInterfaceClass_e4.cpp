@@ -76,7 +76,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
           return; /*0x7b3343*/
       }
       v6 = (SOCKET *)this + v4 + 64704; /*0x7b3352*/
-      Debug::Log(); /*0x7b335f*/
+      Debug::Log("Closing spare socket %d\n"); /*0x7b335f G57c1: IDA 0x7b335f push offset aClosingSpareSo*/
       closesocket((*v6)); /*0x7b336a*/
       if ( *v6 == *((unsigned int *)this + 64717) ) /*0x7b3379*/
         *((unsigned int *)this + 64717) = -1; /*0x7b337b*/
@@ -154,7 +154,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
     v5 = (AnimClass **)((unsigned int *)this + 32352); /*0x7b3a31*/
     do /*0x7b3a6e*/
     {
-      Debug::Log(); /*0x7b3a3f*/
+      Debug::Log("Closing spare socket %d\n"); /*0x7b3a3f G57c1: IDA 0x7b3a3f push offset aClosingSpareSo*/
       WSAAsyncSelect(*v5, (SOCKET)g_hWnd, 0, 0, v6); /*0x7b3a55*/
       closesocket((void *)((SOCKET)*v5)); /*0x7b3a5d*/
       result = *((unsigned int *)this + 64716); /*0x7b3a62*/
@@ -252,7 +252,7 @@ LABEL_11:
     if ( HIWORD(a5) ) /*0x7b3ebb*/
     {
 LABEL_22:
-      Debug::Log(); /*0x7b3b8b*/
+      Debug::Log("FD_WRITE - Got error code %d\n"); /*0x7b3b8b G57c1: IDA 0x7b3b8b push offset aFdWriteGotErro*/
       (*(void (**)(UDPInterfaceClass *, SOCKET))(this->Socket + 36))(this, v6); /*0x7b3b99*/
       return 0; /*0x7b3ba5*/
     }
@@ -297,7 +297,7 @@ LABEL_71:
       {
         *((unsigned int *)v13 + 1) = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3fc4*/
         ntohs(*(u_short *)netshort.sa_data); /*0x7b3fd4*/
-        Debug::Log(); /*0x7b4000*/
+        Debug::Log("Throwing away malformed packet from %d . %d . %d . %d ; %d\n"); /*0x7b4000 G57c1: IDA 0x7b4000 push offset aThrowingAwayMa_0*/
         if ( !byte_B78124 ) /*0x7b400f*/
           byte_B78124 = 1; /*0x7b4011*/
         if ( v13[22] ) /*0x7b4018*/
@@ -355,7 +355,7 @@ LABEL_60:
         if ( v12->Socket == *((unsigned int *)this + 64717) ) /*0x7b3b58*/
         {
           v6 = *((unsigned int *)this + 64717); /*0x7b3b5a*/
-          Debug::Log(); /*0x7b3b62*/
+          Debug::Log("FD_WRITE - Using socket %d\n"); /*0x7b3b62 G57c1: IDA 0x7b3b62 push offset aFdWriteUsingSo*/
         }
         ++v11; /*0x7b3b70*/
         v12 = (UDPInterfaceClass *)((char *)v12 + 4); /*0x7b3b71*/
@@ -371,7 +371,7 @@ LABEL_60:
     if ( !*((unsigned int *)this + 18) ) /*0x7b3bb0*/
     {
 LABEL_25:
-      Debug::Log(); /*0x7b3bb7*/
+      Debug::Log("FD_WRITE - No AltOutBuffers left - nothing to do\n"); /*0x7b3bb7 G57c1: IDA 0x7b3bbc push offset aFdWriteNoAltou*/
       return 0; /*0x7b3bcd*/
     }
     v13 = (unsigned char *)**((unsigned int **)this + 15); /*0x7b3bd3*/
@@ -416,11 +416,11 @@ LABEL_25:
   {
 LABEL_43:
     ntohs(*(u_short *)netshort.sa_data); /*0x7b3d18*/
-    Debug::Log(); /*0x7b3d54*/
+    Debug::Log("sendto %d.%d.%d.%d ; %d\n"); /*0x7b3d54 G57c1: IDA 0x7b3d54 push offset aSendtoDDDDD*/
     if ( sendto( (void *)(sa), v13 + 28, *((unsigned int *)v13 + 4) + 4, 0, &netshort, 16) == -1 && WSAGetLastError() != 10035 ) /*0x7b3d89*/
     {
       WSAGetLastError(); /*0x7b3d8b*/
-      Debug::Log(); /*0x7b3d96*/
+      Debug::Log("sendto returned error %d\n"); /*0x7b3d96 G57c1: IDA 0x7b3d96 push offset aSendtoReturned*/
       (*(void (**)(UDPInterfaceClass *, SOCKET))(this->Socket + 36))( this, (SOCKET)(sa)); /*0x7b3da4*/
       return 0; /*0x7b3db0*/
     }
@@ -439,7 +439,7 @@ LABEL_43:
         goto LABEL_43; /*0x7b3d16*/
     }
     ntohs(*(u_short *)netshort.sa_data); /*0x7b3db8*/
-    Debug::Log(); /*0x7b3def*/
+    Debug::Log("FD_WRITE - %d.%d.%d.%d ; %d is unreachable\n"); /*0x7b3def G57c1: IDA 0x7b3def push offset aFdWriteDDDDDIs*/
     v13 = (unsigned char *)v45; /*0x7b3df4*/
   }
   if ( !v39 ) /*0x7b3e01*/
@@ -708,15 +708,15 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
     || (result = (*(int (**)(UDPInterfaceClass *))(this->Socket + 100))((UDPInterfaceClass *)this)) != 0 )
   {
     (*(void (**)(UDPInterfaceClass *, u_short))(this->Socket + 92))((UDPInterfaceClass *)this, hostshort); /*0x7b3483*/
-    Debug::Log(); /*0x7b348b*/
+    Debug::Log("About to query the host name\n"); /*0x7b348b G57c1: IDA 0x7b348b push offset aAboutToQueryTh*/
     if ( gethostname(name, 128) ) /*0x7b349d*/
-      Debug::Log(); /*0x7b34b0*/
-    Debug::Log(); /*0x7b34bd*/
+      Debug::Log("Host name is '%s'\n"); /*0x7b34b0 G57c1: IDA 0x7b34b0 push offset aHostNameIsS*/
+    Debug::Log("About to call gethostbyname\n"); /*0x7b34bd G57c1: IDA 0x7b34bd push offset aAboutToCallGet_0*/
     v4 = gethostbyname(name); /*0x7b34cf*/
     if ( !v4 ) /*0x7b34d3*/
     {
       WSAGetLastError(); /*0x7b34d5*/
-      Debug::Log(); /*0x7b34e0*/
+      Debug::Log("gethostbyname failed! Error code %d\n"); /*0x7b34e0 G57c1: IDA 0x7b34e0 push offset g_Str_Trace_gethostbyname_failed__Error_code__d*/
     }
     while ( *((unsigned int *)this + 64856) ) /*0x7b34e8*/
     {
@@ -739,7 +739,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
     {
       v18 = *(unsigned int *)i; /*0x7b3565*/
       ++h_addr_list; /*0x7b3569*/
-      Debug::Log(); /*0x7b3587*/
+      Debug::Log("Found local address: %d.%d.%d.%d\n"); /*0x7b3587 G57c1: IDA 0x7b3587 push offset aFoundLocalAddr*/
       v9 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x7b3593*/
       *v9 = v18; /*0x7b3598*/
       v10 = *((unsigned int *)this + 64854); /*0x7b359b*/
@@ -762,7 +762,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
       *((unsigned int *)this + 64856) = v12 + 1; /*0x7b35ce*/
       *(unsigned int *)(v13 + 4 * v12) = (unsigned int)(v9); /*0x7b35d1*/
     }
-    Debug::Log(); /*0x7b35e9*/
+    Debug::Log("About to open alternate UDP socket\n"); /*0x7b35e9 G57c1: IDA 0x7b35e9 push offset aAboutToOpenAlt*/
     v14 = socket((void *)(2), 2, 0); /*0x7b35f8*/
     *((unsigned int *)this + 64540) = v14; /*0x7b3600*/
     if ( v14 == -1 ) /*0x7b3606*/
@@ -774,7 +774,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
       v19.sa_family = 2; /*0x7b361c*/
       *(unsigned short *)v19.sa_data = htons((void *)(dword_841F38)); /*0x7b362a*/
       *(unsigned int *)&v19.sa_data[2] = htonl(0); /*0x7b3639*/
-      Debug::Log(); /*0x7b363d*/
+      Debug::Log("About to bind the UDP socket\n"); /*0x7b363d G57c1: IDA 0x7b363d push offset aAboutToBindThe_0*/
       if ( bind(*((unsigned int *)this + 64540), &v19, 16) == -1 ) /*0x7b365b*/
       {
         (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))((UDPInterfaceClass *)this); /*0x7b3661*/
@@ -786,7 +786,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
         memset( (void *)(optval), 0, sizeof(optval)); /*0x7b3689*/
         setsockopt(v15, 0xFFFF, 128, optval, 4); /*0x7b3693*/
         ((Socket *)((WinsockInterfaceClass *)this))->ConfigureBuffers(*((unsigned int *)this + 64540)); /*0x7b36a1*/
-        Debug::Log(); /*0x7b36ab*/
+        Debug::Log("Alternate UDP Socket init complete\n"); /*0x7b36ab G57c1: IDA 0x7b36ab push offset aAlternateUdpSo*/
         return (gamemd::AbstractClass **)(1); /*0x7b36b3*/
       }
     }
@@ -813,7 +813,7 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
 } // namespace gamemd
 // 0x7B3720
 namespace gamemd {
-void UDPInterfaceClass_Destru_Connect(int a2, const void * a3, unsigned int a4, char a5, char a6)
+int UDPInterfaceClass_Destru_Connect(int a2, const void * a3, unsigned int a4, char a5, char a6)
 {
   int v6; // ecx
   int v7; // ebx
@@ -922,7 +922,7 @@ int UDPInterfaceClass_Destru::Receive()
       if ( v2 >= *((unsigned int *)this + 64716) ) /*0x7b38dc*/
         goto LABEL_6; /*0x7b38dc*/
     }
-    result = Debug::Log(); /*0x7b38ee*/
+    result = Debug::Log("Async select failed on spare socket.\n"); /*0x7b38ee G57c1: IDA 0x7b38ee push offset aAsyncSelectFai_1*/
     LOBYTE(result) = 0; /*0x7b38f6*/
   }
   else

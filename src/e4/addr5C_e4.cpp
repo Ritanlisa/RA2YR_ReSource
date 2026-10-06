@@ -143,7 +143,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
   v7 = strrchr(Str, 46); /*0x5c083a*/
   if ( v7 && !_strcmpi(v7,(const char *)(aBik)) ) /*0x5c084c*/
   {
-        ((Debug*)aPlayMovieAsBin)->Log();
+        Debug::Log("Play_Movie() as Bink!\n") /*G57c1: IDA 0x5c085d push offset aPlayMovieAsBin*/;
     v8 = (BinkMovie *)RA2_OPNEW(0x34u); /*0x5c0864*/
     if ( v8 ) /*0x5c086e*/
       v9 = (unsigned int *)(((BinkMovie *)(v8))->Open(Str, (int)a2)); /*0x5c087d*/
@@ -3117,7 +3117,7 @@ void E4Recv_5C0E10::sub_5C0E10()
 {
 
   this->m_0 = (int)&vt_MultiplayerBattle; /*0x5c0e10*/
-  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5c0e16*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5c0e16*/
 
 }
 } // namespace gamemd
@@ -3412,7 +3412,7 @@ void E4Recv_5C5D20::sub_5C5D20()
 {
 
   this->m_0 = (int)&vt_FreeForAll; /*0x5c5d20*/
-  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5c5d26*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5c5d26*/
 
 }
 } // namespace gamemd
@@ -3577,7 +3577,7 @@ void E4Recv_5C6190::sub_5C6190()
 {
 
   this->MultiplayerManBattle_field_00 = (int)&vt_MultiplayerManBattle; /*0x5c6190*/
-  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5c6196*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5c6196*/
 
 }
 } // namespace gamemd
@@ -4143,7 +4143,7 @@ void E4Recv_5C9420::sub_5C9420()
 {
 
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Megawealth;
-  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5c9426*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5c9426*/
 
 }
 } // namespace gamemd
@@ -4441,7 +4441,7 @@ void E4Recv_5CA670::sub_5CA670()
 {
 
   this->MultiplayerSiege_field_00 = (int)&vt_MultiplayerSiege; /*0x5ca670*/
-  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5ca676*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5ca676*/
 
 }
 } // namespace gamemd
@@ -4620,7 +4620,7 @@ void E4Recv_5CB3E0::sub_5CB3E0()
 {
 
   *(unsigned int *)&this->m_Enabled = (unsigned int)&vt_UnholyAlliance;
-  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5cb3e6*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5cb3e6*/
 
 }
 } // namespace gamemd

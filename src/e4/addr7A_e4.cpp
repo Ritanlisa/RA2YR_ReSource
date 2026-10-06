@@ -216,7 +216,7 @@ char WOL_RequestMatch(void * a1)
   CollectWOLConnectionTokens(v28); /*0x7a072c*/
   memset(&v31[168], 0, 0x6Cu); /*0x7a074b*/
   v4 = -1; /*0x7a074d*/
-    ((Debug *)0)->Log();
+    Debug::Log("User list is %d long, adding to ping request queue\n") /*G57c1: IDA 0x7a0750 push offset aUserListIsDLon*/;
   v5 = 0; /*0x7a075e*/
   if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x7a0762*/
     goto LABEL_17; /*0x7a0762*/
@@ -455,7 +455,7 @@ Coord * * WOL_ProcessPingRequests()
   result = g_NetworkLobbyState; /*0x7a1079*/
   if ( !g_NetworkLobbyState ) /*0x7a1080*/
   {
-        ((Debug *)0)->Log();
+        Debug::Log("Requesting match pings, request list is %d long, pending list is %d long\n") /*G57c1: IDA 0x7a1098 push offset aRequestingMatc*/;
     result = (char)((char *)&stru_B76AC4); /*0x7a109d*/
     if ( ((char *)&stru_B76AC4) ) /*0x7a10a7*/
     {
@@ -471,7 +471,7 @@ Coord * * WOL_ProcessPingRequests()
         if ( (int)((char *)&stru_B76AC4) > 0 ) /*0x7a10da*/
           ((String *)(&v13))->Reassign((const char **)((char *)&stru_B76AC4)); /*0x7a10e7*/
         ((String *)(&v13))->GetOrEmpty(); /*0x7a10f0*/
-        ((Debug *)0)->Log(); /*0x7a10fb*/
+        Debug::Log("Got %s from request list\n"); /*0x7a10fb G57c1: IDA 0x7a10fb push offset aGotSFromReques*/
         v3 = ((String *)(&v13))->GetOrEmpty(); /*0x7a1107*/
         ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->Assign(v3); /*0x7a1111*/
         owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a1116*/
@@ -529,7 +529,7 @@ Coord * * WOL_ProcessPingRequests()
         if ( !S_addr ) /*0x7a119c*/
           break; /*0x7a119c*/
         ((String *)(&v13))->GetOrEmpty(); /*0x7a11a6*/
-        Debug::Log(); /*0x7a11b1*/
+        Debug::Log("Pinging %s\n"); /*0x7a11b1 G57c1: IDA 0x7a11b1 push offset aPingingS*/
         v9 = (int)((*(unsigned int *)g_UIPointerTable)); /*0x7a11c3*/
         v10 = (char *)(ntoainet((struct in_addr)S_addr)); /*0x7a11cc*/
         if ( !(*(int (**)(LPVOID, char *, int, int *))(v9 + 24))( g_UIPointerTable, v10, 1000, (int *)(&v14)) /*0x7a11e5*/
@@ -546,7 +546,7 @@ Coord * * WOL_ProcessPingRequests()
           }
   LABEL_36:
           ((String *)(&v13))->GetOrEmpty(); /*0x7a12fb*/
-          Debug::Log(); /*0x7a130a*/
+          Debug::Log("%s not found in info\n"); /*0x7a130a G57c1: IDA 0x7a130a push offset aSNotFoundInInf*/
           goto LABEL_37; /*0x7a130a*/
         }
         v12 = 1; /*0x7a1235*/
@@ -603,7 +603,7 @@ Coord * * UpdateWOLLobbyPings()
   if ( !g_NetworkLobbyState ) /*0x7a1353*/
   {
     ((String *)((String *)&v19.m_3[1]))->Assign((const char *)(aPings)); /*0x7a1364*/
-    Debug::Log(); /*0x7a1374*/
+    Debug::Log("Sending ping list, pending list is %d long\n"); /*0x7a1374 G57c1: IDA 0x7a1374 push offset aSendingPingLis*/
     if ( stru_B76900.estimatedHealth ) /*0x7a1383*/
     {
       v1 = v26[6]; /*0x7a138a*/
@@ -629,7 +629,7 @@ Coord * * UpdateWOLLobbyPings()
           }
         }
         ((String *)(&v19))->GetOrEmpty(); /*0x7a142e*/
-        Debug::Log(); /*0x7a1439*/
+        Debug::Log("Removed %s from ping pending list\n"); /*0x7a1439 G57c1: IDA 0x7a1439 push offset aRemovedSFromPi*/
         v3 = ((String *)(&v19))->GetOrEmpty(); /*0x7a1445*/
         ((String *)(&v22))->Assign(v3); /*0x7a144f*/
         owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a1454*/
@@ -672,12 +672,12 @@ Coord * * UpdateWOLLobbyPings()
         {
   LABEL_27:
           ((String *)(&v19))->GetOrEmpty(); /*0x7a15dc*/
-          Debug::Log(); /*0x7a15e7*/
+          Debug::Log("Error measuring %s/'s ping\n"); /*0x7a15e7 G57c1: IDA 0x7a15e7 push offset aErrorMeasuring*/
         }
         else
         {
           ((String *)(&v19))->GetOrEmpty(); /*0x7a152d*/
-          Debug::Log(); /*0x7a1538*/
+          Debug::Log("%s avg ping is %d\n"); /*0x7a1538 G57c1: IDA 0x7a1538 push offset aSAvgPingIsD*/
           v18 = ((String *)(&v25))->Assign((const char *)(asc_81C8FC)); /*0x7a1556*/
           v17 = FromStringInt((IUnknown *)((char **)&v23.q4), v20); /*0x7a1565*/
           v9 = ((String *)(&v23))->Assign((char *)&::Delimiter); /*0x7a1570*/
@@ -719,7 +719,7 @@ Coord * * UpdateWOLLobbyPings()
         v16 = ((String *)((String *)&v19.m_3[1]))->GetOrEmpty(); /*0x7a1663*/
         (*(void (**)(LPVOID, int *, char *))(v15 + 48))( ppv, (int *)(&g_WebBrowserConfig.occupant), v16); /*0x7a1675*/
         ((String *)((String *)&v19.m_3[1]))->GetOrEmpty(); /*0x7a167c*/
-        Debug::Log(); /*0x7a1687*/
+        Debug::Log("Sending ping list : %s\n"); /*0x7a1687 G57c1: IDA 0x7a1687 push offset aSendingPingLis_0*/
       }
     }
   LABEL_40:
@@ -805,14 +805,14 @@ ObjectClass * * HandleWOLMatchMessage(void * a2, void * aExit_0, void * aFail, v
   else if ( a2 && !_strnicmp(String1, aStart_0, 6u) ) /*0x7a1922*/
   {
     strncpy( (char *)(unk_B73714), String1 + 6, 0xFFu); /*0x7a193c*/
-    Debug::Log(); /*0x7a194b*/
+    Debug::Log("%s\n"); /*0x7a194b G57c1: IDA 0x7a194b push offset g_Str_Trace__s*/
     SetEvent( (void *)(dword_B736C4)); /*0x7a195a*/
   }
   else if ( _strcmpi(String1, aAck) && _strcmpi(String1, aNack_0) ) /*0x7a197b*/
   {
     if ( !_strnicmp(String1, aNeed, 5u) ) /*0x7a198f*/
     {
-      Debug::Log(); /*0x7a19a1*/
+      Debug::Log("%s\n"); /*0x7a19a1 G57c1: IDA 0x7a19a1 push offset g_Str_Trace__s*/
     }
     else if ( a2 ) /*0x7a19ae*/
     {
@@ -940,7 +940,7 @@ AbstractClass * * WOL_MatchGame()
       ResetEvent(*v15++); /*0x7a1e5a*/
     while ( (int)v15 < (int)g_WOL_RequestObject ); /*0x7a1e69*/
     *(unsigned int *)&v28[8] = 41; /*0x7a1e73*/
-    Debug::Log(); /*0x7a1e7b*/
+    Debug::Log("Requesting channel list type = %d, ping = %d\n"); /*0x7a1e7b G57c1: IDA 0x7a1e7b push offset g_Str_Trace_Requesting_channel_list_type____d__ping_*/
     if ( (*(int (**)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, *(unsigned int *)&v28[8], 0) ) /*0x7a1e91*/
     {
       SetEvent( (void *)(Handles)); /*0x7a1f54*/

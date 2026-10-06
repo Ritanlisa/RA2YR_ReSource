@@ -100,7 +100,7 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
   v6 = v4; /*0x561188*/
   v20 = v4; /*0x561191*/
   dwNewLong = -1; /*0x561195*/
-    ((Debug *)0)->Log();
+    Debug::Log("Testing display mode @ %dx%d\n") /*G57c1: IDA 0x56119d push offset aTestingDisplay*/;
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x5611ad*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
   Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v13), (void *)(v15), v17); /*0x5611c7*/
@@ -149,13 +149,13 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
     if ( dwNewLong == 1 ) /*0x5612e4*/
     {
   LABEL_13:
-            ((Debug *)0)->Log();
+            Debug::Log("Keeping display mode @ %dx%d\n") /*G57c1: IDA 0x561331 push offset aKeepingDisplay*/;
       g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden);
       return 1; /*0x561343*/
     }
     else
     {
-            ((Debug *)0)->Log();
+            Debug::Log("Resetting display mode @ %dx%d\n") /*G57c1: IDA 0x5612f8 push offset aResettingDispl*/;
       ChangeVideoMode(stru_A8EB00.ObjectTypeClass[33], stru_A8EB00.ObjectTypeClass[34]); /*0x56130c*/
       g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden); /*0x56131b*/
       return 0; /*0x561317*/
@@ -346,7 +346,7 @@ Game * * E4Recv_634B20::sub_634B20()
       v18[54] = *(unsigned short *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634b60*/
-      ((gamemd::Debug *)this)->Log(); /*0x634b7d*/
+      Debug::Log("Branch [%d];  Member count[%d];  Origin event location[%d, %d, %d]\n"); /*0x634b7d G57c1: IDA 0x634b7d push offset aBranchDMemberC*/
       uniqueId = ((unsigned int *)this)[0]; /*0x634b82*/
       v5 = 0; /*0x634b88*/
       v14 = uniqueId; /*0x634b8a*/
@@ -358,7 +358,7 @@ Game * * E4Recv_634B20::sub_634B20()
           v7 = *v6; /*0x634ba1*/
           (*(int (**)(unsigned int))(*(unsigned int *)*v6 + 136))(*v6); /*0x634ba7*/
           v16[1] = *(unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v7 + 440))(v7, v16); /*0x634bc3*/
-          ((gamemd::Debug *)this)->Log(); /*0x634bd7*/
+          Debug::Log("  Member [%s];  Cell location[%d, %d]\n"); /*0x634bd7 G57c1: IDA 0x634bd7 push offset aMemberSCellLoc*/
           v5 = i; /*0x634bdc*/
           uniqueId = v14; /*0x634be0*/
         }
@@ -372,7 +372,7 @@ Game * * E4Recv_634B20::sub_634B20()
   {
     qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634c24*/
-    ((gamemd::Debug *)this)->Log(); /*0x634c43*/
+    Debug::Log("Loop Branch [%d];  Member count[%d];  Origin event location[%d, %d, %d]\n"); /*0x634c43 G57c1: IDA 0x634c43 push offset aLoopBranchDMem*/
     v8 = ((unsigned int *)this)[0]; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
@@ -383,7 +383,7 @@ Game * * E4Recv_634B20::sub_634B20()
         v11 = *(unsigned int *)v10; /*0x634c65*/
         (*(int (**)(unsigned int))(**(unsigned int **)v10 + 136))(*(unsigned int *)v10); /*0x634c6b*/
         (*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 440))(v11, v16); /*0x634c7f*/
-        ((gamemd::Debug *)this)->Log(); /*0x634c9b*/
+        Debug::Log("  Member [%s];  Cell location[%d, %d]\n"); /*0x634c9b G57c1: IDA 0x634c9b push offset aMemberSCellLoc*/
         v8 = j; /*0x634ca0*/
       }
     }
@@ -582,7 +582,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   ((ScoreText *)(v13))->ShowAlt((const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0,(const char *)(g_Str_File_WDTSel_cpp), 1230)); /*0x76ed62*/
   ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
-  ScoreText::Show( v13, (void *a1 =)((const wchar_t **)&v9)); /*0x76ed7a*/
+  ScoreText::Show( v13, ((const wchar_t **)&v9)); /*0x76ed7a*/
   ((DeleteAndZero*)(void **)&v9)->Alt(); /*0x76ed83*/
   Team_Start_76E2F0((int)v13, a2); /*0x76ed8d*/
   ShowWDTTerritorySelection(v13, (int)&v11); /*0x76ed9b*/

@@ -131,7 +131,7 @@ void AudioController::GetVolume()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[776]; /*0x72d185*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[776] ) /*0x72d18d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[776]); /*0x72d191*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[776]))->Destroy(); /*0x72d191*/
         __3_YAXPAX_Z(v1); /*0x72d197*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1309] = 0; /*0x72d19f*/

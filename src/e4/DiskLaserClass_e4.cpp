@@ -37,7 +37,7 @@ DiskLaserClass::DiskLaserClass()
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
+  ((AbstractClass *)this)->Constructor(); /*0x4a7a33*/
   *(unsigned int *)this->__pad_0 = &vt_DiskLaserClass; /*0x4a7a3a*/
   this->DiskLaserClass_field_0x04 = (int)&vt_DiskLaserClass; /*0x4a7a40*/
   this->DiskLaserClass_field_0x08 = (int)&vt_DiskLaserClass; /*0x4a7a47*/

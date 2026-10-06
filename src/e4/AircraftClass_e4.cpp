@@ -366,7 +366,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   team = (gamemd::TeamClass *)(((unsigned int *)this)[0]); /*0x4196bc*/
   if ( team /*0x4196d7*/
     && (uint8_t)TechnoClass::IsWaypointHidden( (TechnoClass *)team)
-    && !(uint8_t)((gamemd::Type *)((Type *)&stru_87F5F0.__pad_58[416]))->CheckAmbiguity((int)a2, 1) )
+    && !(uint8_t)((gamemd::Type *)((gamemd::Type*)&stru_87F5F0.__pad_58[416]))->CheckAmbiguity((int)a2, 1) )
   {
     return 0; /*0x4196d7*/
   }
@@ -413,7 +413,7 @@ int AircraftClass::EvaluateTargetingState()
   {
     if ( !((unsigned int *)this)[0] /*0x41a99c*/
       && (*((uint8_t (**)(AircraftClass *))this->vtable1 + 171))(this)
-      && !(uint8_t)Team::AllMembersValid( (Team *)this) )
+      && !(uint8_t)((Team *)this)->AllMembersValid() )
     {
       (*((void (**)(AircraftClass *, unsigned int, int))this->vtable1 + 289))(this, 0, 1); /*0x41a9ad*/
     }
@@ -460,7 +460,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
     {
       goto LABEL_35; /*0x41aada*/
     }
-    if ( (uint8_t)Team::AllMembersValid( (Team *)a1) ) /*0x41aae8*/
+    if ( (uint8_t)((Team *)a1)->AllMembersValid() ) /*0x41aae8*/
     {
       v10 = (Array *)AbstractClass::IsTechnoType( a3); /*0x41ac4e*/
       v11 = v10; /*0x41ac53*/
@@ -915,7 +915,7 @@ namespace gamemd {
 HRESULT AircraftClass::CheckPassengerCount(int a1, int pPStm, int a3)
 {
 
-  return ObjectClass::SaveToStream_Common( (IPersistStream *)((ObjectClass *)a1), (FootClass *)(pPStm), (struct IPersistStreamVtbl *)(a3)); /*0x41b5d4*/
+  return ((ObjectClass *)(((ObjectClass *)a1)))->SaveToStream_Common( (FootClass *)(pPStm), (struct IPersistStreamVtbl *)(a3)); /*0x41b5d4*/
 
 }
 } // namespace gamemd

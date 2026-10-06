@@ -1563,7 +1563,7 @@ void Object_Calc_7DF640(MouseClass * a1, unsigned char * a2, unsigned short * a3
 }
 // 0x5A7E90
 namespace gamemd {
-void sub_5A7E90(int a1, unsigned short * a2)
+int sub_5A7E90(int a1, unsigned short * a2)
 {
   unsigned int *v2; // ebx
   int result; // eax
@@ -1626,7 +1626,7 @@ void sub_5A7E90(int a1, unsigned short * a2)
 }
 // 0x710890
 namespace gamemd {
-void sub_710890(int a1, int a2, int * a3)
+int sub_710890(int a1, int a2, int * a3)
 {
   int v3; // esi
   int v4; // ebx

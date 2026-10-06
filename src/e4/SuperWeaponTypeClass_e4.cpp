@@ -222,7 +222,7 @@ int SuperWeaponTypeClass::Construct(char *aP1)
     SuperWeaponTypeClass **v7; // edx
     SuperWeaponTypeClass **v8; // ecx
 
-    ((AbstractTypeClass *)(int *)this)->Constructor( Source); /*0x5113fa*/
+    ((gamemd::AbstractTypeClass*)(int *)this)->Constructor( Source); /*0x5113fa*/
     v3 = 0; /*0x5113ff*/
     IDA_LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
     this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
@@ -270,7 +270,7 @@ int SuperWeaponTypeClass::Construct(char *aP1)
     *((unsigned int *)this + 95) = 10; /*0x511520*/
     *((unsigned int *)this + 94) = 0; /*0x511527*/
     *((unsigned int *)this + 90) = (void*)&TypeList_UnitTypeClass_const___vftable; /*0x51152a*/
-    AircraftTypeVector::Constructor( (int)((AircraftTypeVector *)this + 97), 0, 0); /*0x51153a*/
+    ((AircraftTypeVector *)((int)((AircraftTypeVector *)this + 97)))->Constructor( 0, 0); /*0x51153a*/
     *((unsigned int *)this + 102) = 10; /*0x511542*/
     *((unsigned int *)this + 101) = 0; /*0x511549*/
     *((unsigned int *)this + 97) = (void*)&TypeList_AircraftTypeClass_const___vftable; /*0x51154c*/
@@ -516,7 +516,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
            (char *)&v45,
            128) )
     {
-      v26 = BuildingTypeClass::FindOrCreate( (char)((char *)&v45)); /*0x6ced1f*/
+      v26 = ((BuildingTypeClass *)((char)((char *)&v45)))->FindOrCreate(); /*0x6ced1f*/
     }
     else
     {
@@ -639,7 +639,7 @@ unsigned int * SuperWeaponTypeClass::SDDTOR(char a2)
       }
       while ( v3 < dword_A8E340 ); /*0x6cf046*/
     }
-    ((AbstractTypeClass *)(AbstractTypeClass *)this)->Dtor(); /*0x6cf04a*/
+    ((gamemd::AbstractTypeClass*)(gamemd::AbstractTypeClass*)this)->Dtor(); /*0x6cf04a*/
     if ( (a2 & 1) != 0 ) /*0x6cf054*/
       RA2_OPDEL(this); /*0x6cf057*/
     return &this->AbstractTypeClass; /*0x6cf061*/
@@ -821,7 +821,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       if ( this ) /*0x6ce823*/
       {
-        ((AbstractTypeClass *)(int)this)->Init( (int)&v4); /*0x6ce82c*/
+        ((gamemd::AbstractTypeClass*)(int)this)->Init( (int)&v4); /*0x6ce82c*/
         this->SidebarImage = 0; /*0x6ce831*/
         this->AbstractTypeClass = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce83b*/
         ((void **)this)[1] = (void*)&SuperWeaponTypeClass_vftable;
@@ -886,7 +886,7 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
     int v8; // edx
     int v9; // eax
 
-    ((AbstractTypeClass *)(AbstractTypeClass *)this)->ProcessPower( a2); /*0x6ce919*/
+    ((gamemd::AbstractTypeClass*)(gamemd::AbstractTypeClass*)this)->ProcessPower( a2); /*0x6ce919*/
     Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
     Power::TimerProcess(this->ActionValue[0]); /*0x6ce935*/
     Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/

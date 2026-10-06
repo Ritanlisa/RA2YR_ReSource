@@ -28,7 +28,7 @@
 
 // 0x5D5DE0
 namespace gamemd {
-int GameMode::IsValid(unsigned int a2)
+int GameMode_e4::IsValid(unsigned int a2)
 {
 
   return (!this->u32_FC || a2 != -2) && a2 < 4; /*0x5d5df2*/
@@ -37,7 +37,7 @@ int GameMode::IsValid(unsigned int a2)
 }
 // 0x6B8CA0
 namespace gamemd {
-unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyablebri, void * aFixedalliance, void * aHarvesterimmun, void * aInert, void * aInitialveteran, void * aIonstorms, void * aMcvdeploy, void * aMeteorites, void * aTiberiumspread, void * aVisceroids)
+unsigned int GameMode_e4::ReadFlagsFromINI(CCINIClass * aP1, void * aDestroyablebri, void * aFixedalliance, void * aHarvesterimmun, void * aInert, void * aInitialveteran, void * aIonstorms, void * aMcvdeploy, void * aMeteorites, void * aTiberiumspread, void * aVisceroids)
 {
 
   char Bool_Overwrite; // al

@@ -4,7 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct GameMode {
+struct GameMode_e4 {
 // --- flat members (BEGIN) ---
     unsigned int u32_18;  // 0x18
     unsigned int q024;  // 0x24

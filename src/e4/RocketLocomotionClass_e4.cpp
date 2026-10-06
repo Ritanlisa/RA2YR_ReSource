@@ -101,7 +101,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_RocketLocomotionClass;
   *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_RocketLocomotionClass;
-  ((LocomotionClass*)(LocomotionClass *)this)->Construct(); /*0x6635d0*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass*)this)->Construct(); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     __3_YAXPAX_Z(this); /*0x6635dd*/
   return this->LocomotionClass; /*0x6635e7*/

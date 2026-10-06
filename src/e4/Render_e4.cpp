@@ -1332,7 +1332,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
     if ( !wcslen(v2) ) /*0x6ca40f*/
       return (gamemd::WinModemClass **)(1); /*0x6ca48f*/
   }
-    ((Debug *)0)->Log();
+    Debug::Log("Error on line %d: syntax error\n") /*G57c1: IDA 0x6ca436 push offset aErrorOnLineDSy*/;
   return 0; /*0x6ca440*/
 }
 }
@@ -1445,7 +1445,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
   {
     v14[0] = (unsigned int)(aP4)+ aP2 - v8; /*0x554245*/
   }
-  Rect::Inflate( v10, v11, (int)(dy)); /*0x554252*/
+  ((Rect *)v10)->Inflate( v11, (int)(dy)); /*0x554252*/
 // 0x621b80
   return DSurface::FillRectWithColor(v14,(int)((gamemd::ObjectClass *)(a2)), 0, 0x9Fu); /*0x554269*/
 }
@@ -1882,23 +1882,23 @@ int Render_Get(ScoreScreen * aP0)
     while ( v10 < dword_A80238 ); /*0x68ee21*/
     v12 = v2; /*0x68ee23*/
   }
-  Debug::Log(); /*0x68ee34*/
+  Debug::Log("Remaining: %ld, Total: %ld\n"); /*0x68ee34 G57c1: IDA 0x68ee34 push offset aRemainingLdTot*/
   if ( v2 + v1 <= 0 ) /*0x68ee3e*/
     v11 = 0.0; /*0x68ee4e*/
   else
     v11 = (double)v12 / (double)(v2 + v1); /*0x68ee48*/
-  Debug::Log(); /*0x68ee65*/
+  Debug::Log("BuildEconomy = %f\n"); /*0x68ee65 G57c1: IDA 0x68ee65 push offset aBuildeconomyF*/
   (*(void (**)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36); /*0x68ee82*/
-  Debug::Log(); /*0x68ee8b*/
+  Debug::Log("Money: %ld, Harvested: %ld, Initial: %ld\n"); /*0x68ee8b G57c1: IDA 0x68ee8b push offset aMoneyLdHarvest*/
   othera = (void *)(*((unsigned int *)aP0 + 184) + *((unsigned int *)aP0 + 119)); /*0x68eea3*/
   if ( (int)othera <= 0 ) /*0x68eea7*/
     otherb = 0.0; /*0x68eec1*/
   else
     otherb = (double)(*(int (**)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36) /*0x68eebb*/
            / (double)(int)othera;
-  Debug::Log(); /*0x68eed8*/
+  Debug::Log("MoneyEconomy = %f\n"); /*0x68eed8 G57c1: IDA 0x68eed8 push offset aMoneyeconomyF*/
   v9 = Math::RoundToInt((otherb + v11) * 0.5 * 100.0); /*0x68eef8*/
-  Debug::Log(); /*0x68eefe*/
+  Debug::Log("Efficiency: %ld\n"); /*0x68eefe G57c1: IDA 0x68eefe push offset aEfficiencyLd*/
   return v9; /*0x68ef08*/
 }
 } // namespace gamemd

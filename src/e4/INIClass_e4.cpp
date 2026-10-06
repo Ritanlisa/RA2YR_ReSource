@@ -429,7 +429,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
     *((unsigned int *)v3 + 4) = v5; /*0x526d32*/
   }
   aP1 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d3c*/
-  v6 = *(unsigned int *)SortedArray::FindValue( &aP1); /*0x526d45*/
+  v6 = *(unsigned int *)((SortedArray *)(&aP1))->FindValue(); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
     v7 = (int)(aP2); /*0x526d4b*/

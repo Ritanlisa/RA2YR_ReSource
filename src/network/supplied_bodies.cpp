@@ -237,7 +237,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       v26 = v17; /*0x53feaa*/
       v27 = v18; /*0x53feb4*/
       v25 = 0; /*0x53feb9*/
-      Debug::Log(); /*0x53febe*/
+      Debug::Log("Sending global ack packet to port %d\n"); /*0x53febe G57c1: IDA 0x53febe push offset aSendingGlobalA*/
       v19 = dword_A8EA0C; /*0x53fec3*/
       IDA_LOBYTE(v19) = this == (IPXGlobalConnClass *)dword_A8EA0C; /*0x53fed3*/
       if ( (*(int (__thiscall **)(IPXGlobalConnClass *, short *, int, int *, int, int, int))(*(unsigned int *)this->__pad_0 /*0x53fee4*/
@@ -253,7 +253,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
         return 1; /*0x53fee9*/
       }
   LABEL_30:
-      Debug::Log(); /*0x53fef0*/
+      Debug::Log("Failed to ack global packet\n"); /*0x53fef0 G57c1: IDA 0x53fef0 push offset aFailedToAckGlo*/
       return 1; /*0x53fef0*/
     }
     if ( *((unsigned char *)a2 + 2) == 1 ) /*0x53fce0*/
@@ -807,14 +807,14 @@ void NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)  // 
             v38 = 1,
             dword_887628) )
       {
-        Debug::Log(); /*0x560560*/
+        Debug::Log("Creating IPX Interface\n"); /*0x560560 G57c1: IDA 0x560560 push offset aCreatingIpxInt*/
         v39 = dword_887628; /*0x56056d*/
         for ( i = 0; i < 20; ++i ) /*0x560571*/
         {
           if ( NetworkOptions_ApplySettings((int)v39, i, (char *)lParam, 64) ) /*0x56057f*/
           {
-            Debug::Log(); /*0x56058e*/
-            Debug::Log(); /*0x56059d*/
+            Debug::Log("Got address for network card %d\n"); /*0x56058e G57c1: IDA 0x56058e push offset aGotAddressForN*/
+            Debug::Log("Address is %s\n"); /*0x56059d G57c1: IDA 0x56059d push offset aAddressIsS*/
             if ( SendMessageA(v5, 0x4B8u, 0, (LPARAM)lParam) == -1 ) /*0x5605b7*/
               SendMessageA(v5, 0x4BCu, 0, (LPARAM)lParam); /*0x5605c6*/
           }
@@ -876,7 +876,7 @@ void ModemGuest::Dialog()
     char v7; // bl
     int v9; // [esp+0h] [ebp-10h]
 
-    Debug::Log(); /*0x5b49c1*/
+    Debug::Log("ModemGuest.Dialog(enter)\n"); /*0x5b49c1 G57c1: IDA 0x5b49c1 push offset aModemguestDial*/
     this->ModemGuest_field_0x04 = -1; /*0x5b49d7*/
     Dialog = (HWND)CreateDialog(0xF2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameSetupDialogProc, 0); /*0x5b49da*/
     *(unsigned int *)this->__pad_0 = Dialog; /*0x5b49e1*/
@@ -931,7 +931,7 @@ void ModemGuest::Dialog()
     }
     v7 = 1; /*0x5b4ad8*/
   LABEL_17:
-    Debug::Log(); /*0x5b4afa*/
+    Debug::Log("ModemGuest.Dialog(exit %s)\n"); /*0x5b4afa G57c1: IDA 0x5b4b00 push offset aModemguestDial_0*/
     return v7; /*0x5b4b0a*/
 }
 } // namespace gamemd
@@ -989,7 +989,7 @@ void ModemGuest::InitDialog()
     wchar_t Format[1024]; // [esp+214h] [ebp-800h] BYREF
 
     v1 = (HWND *)this; /*0x5b4eea*/
-    Debug::Log(); /*0x5b4ef5*/
+    Debug::Log("ModemGuest.InitDialog(enter)\n"); /*0x5b4ef5 G57c1: IDA 0x5b4ef5 push offset aModemguestInit*/
     v2 = GetDlgItem; /*0x5b4efd*/
     DlgItem = GetDlgItem(*v1, 1473); /*0x5b4f0c*/
     v4 = DlgItem; /*0x5b4f14*/
@@ -999,7 +999,7 @@ void ModemGuest::InitDialog()
       v5 = CharToWideString(unk_A8B380); /*0x5b4f2b*/
       SendMessageA(v4, 0x4B2u, 0, (LPARAM)v5); /*0x5b4f39*/
     }
-    Debug::Log(); /*0x5b4f45*/
+    Debug::Log("Name: %ls\n"); /*0x5b4f45 G57c1: IDA 0x5b4f45 push offset aNameLs*/
     v6 = GetDlgItem(*v1, 1029); /*0x5b4f56*/
     v7 = v6; /*0x5b4f58*/
     if ( v6 ) /*0x5b4f5c*/

@@ -44,12 +44,12 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int i; // [esp+10h] [ebp-8h]
 
   v2 = (gamemd::CCINIClass *)((int)(a2));
-  result = (int)(INIClass::GetKeyCount( (gamemd::INIClass *)(a1), (void)((uint8_t *)aAitriggertypes)));
+  result = (int)(gamemd::INIClass::GetKeyCount( (gamemd::INIClass *)(a1), (void)((uint8_t *)aAitriggertypes)));
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
   while ( v5 < v14 ) /*0x41f302*/
   {
-    StringByIndex = (char *)INIClass::GetStringByIndex( (gamemd::CCINIClass *)(a1), (gamemd::CCINIClass *)((uint8_t *)aAitriggertypes), (void)((void *)(v5))); /*0x41f317*/
+    StringByIndex = (char *)gamemd::INIClass::GetStringByIndex( (gamemd::CCINIClass *)(a1), (gamemd::CCINIClass *)((uint8_t *)aAitriggertypes), (void)((void *)(v5))); /*0x41f317*/
     if ( _strcmpi((const char *)(g_Str__none_), StringByIndex) ) /*0x41f31f*/
     {
       if ( _strcmpi((const char *)(g_Str_none), StringByIndex) ) /*0x41f335*/
@@ -93,11 +93,11 @@ LABEL_13: v2 = (gamemd::CCINIClass *)((int)(a2));
   }
   if ( !v2 ) /*0x41f3c8*/
   {
-    result = (int)(INIClass::GetKeyCount( (gamemd::INIClass *)(a1), (void)((uint8_t *)aAitriggertypes_0)));
+    result = (int)(gamemd::INIClass::GetKeyCount( (gamemd::INIClass *)(a1), (void)((uint8_t *)aAitriggertypes_0)));
     v10 = 0; /*0x41f3dc*/
     for ( i = result; v10 < i; ++v10 ) /*0x41f3e4*/
     {
-      v11 = (char *)INIClass::GetStringByIndex( (gamemd::CCINIClass *)(a1), (gamemd::CCINIClass *)((uint8_t *)aAitriggertypes_0), (void)((void *)(v10))); /*0x41f3f9*/
+      v11 = (char *)gamemd::INIClass::GetStringByIndex( (gamemd::CCINIClass *)(a1), (gamemd::CCINIClass *)((uint8_t *)aAitriggertypes_0), (void)((void *)(v10))); /*0x41f3f9*/
       v12 = 0; /*0x41f400*/
       if ( dword_A8B210 > 0 ) /*0x41f404*/
       {
@@ -108,7 +108,7 @@ LABEL_13: v2 = (gamemd::CCINIClass *)((int)(a2));
         }
         v13 = *((unsigned int *)dword_A8B204 + v12); /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
-          *(unsigned char *)(v13 + 164) = (uint8_t)INIClass::ReadBool_Overwrite( /*0x41f46c*/
+          *(unsigned char *)(v13 + 164) = (uint8_t)gamemd::INIClass::ReadBool_Overwrite( /*0x41f46c*/
                                                      (int *)a1,
                                                      (uint8_t *)aAitriggertypes_0,
                                                      (uint8_t *)v11,
@@ -158,11 +158,11 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v10[3] = a2; /*0x47421b*/
   v11 = 0; /*0x47421f*/
   v10[0] = (int)&vt_FileStraw; /*0x474223*/
-  File = INIClass::LoadFile((gamemd::INIClass *)this, (int)v10, a4); /*0x474230*/
+  File = gamemd::INIClass::LoadFile((gamemd::INIClass *)this, (int)v10, a4); /*0x474230*/
   this->ownsFile = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
-  Base64Data = INIClass::GetBase64Data((gamemd::INIClass *)this, g_INI_Key_Digest, (int)v20, 0x14u); /*0x47425b*/
+  Base64Data = gamemd::INIClass::GetBase64Data((gamemd::INIClass *)this, g_INI_Key_Digest, (int)v20, 0x14u); /*0x47425b*/
   if ( !Base64Data ) /*0x474262*/
   {
     v7 = 2; /*0x474264*/
@@ -269,11 +269,11 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   int k; // edi
   char Destination[32]; // [esp+10h] [ebp-20h] BYREF
 
-  KeyCount = (int)(INIClass::GetKeyCount(a1->__pad_0, (void)((uint8_t *)aAitriggertypes)));
+  KeyCount = (int)(gamemd::INIClass::GetKeyCount(a1->__pad_0, (void)((uint8_t *)aAitriggertypes)));
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)((uint8_t *)aAitriggertypes), i); /*0x41f4b8*/
-    ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)aAitriggertypes, (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 32); /*0x41f4d2*/
+    StringByIndex = (uint8_t *)gamemd::INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)((uint8_t *)aAitriggertypes), i); /*0x41f4b8*/
+    ((gamemd::INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)aAitriggertypes, (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 32); /*0x41f4d2*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/

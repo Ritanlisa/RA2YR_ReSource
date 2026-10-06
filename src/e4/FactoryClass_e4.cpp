@@ -400,21 +400,21 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   int v6; // eax
   int v7; // eax
 
-  Debug::Log(); /*0x4ca43f*/
-  Debug::Log(); /*0x4ca44d*/
+  Debug::Log("Frame == %d\n"); /*0x4ca43f G57c1: IDA 0x4ca43f push offset aFrameD_1*/
+  Debug::Log("QueuedObjects.Count() == %d\n"); /*0x4ca44d G57c1: IDA 0x4ca44d push offset aQueuedobjectsC*/
   (*(void (**)(unsigned int))(**(unsigned int **)&this->__pad_42[22] + 44))(*(unsigned int *)&this->__pad_42[22]); /*0x4ca45a*/
-  Debug::Log(); /*0x4ca463*/
+  Debug::Log("Object->RTTI == %d\n"); /*0x4ca463 G57c1: IDA 0x4ca463 push offset aObjectRttiD*/
   (*(void (**)(unsigned int))(**(unsigned int **)&this->__pad_42[22] + 64))(*(unsigned int *)&this->__pad_42[22]); /*0x4ca470*/
-  Debug::Log(); /*0x4ca479*/
-  Debug::Log(); /*0x4ca489*/
-  Debug::Log(); /*0x4ca499*/
-  Debug::Log(); /*0x4ca4a7*/
-  Debug::Log(); /*0x4ca4b5*/
-  Debug::Log(); /*0x4ca4c3*/
+  Debug::Log("Object->HeapID == %d\n"); /*0x4ca479 G57c1: IDA 0x4ca479 push offset aObjectHeapidD*/
+  Debug::Log("IsSuspended\t= %d\n"); /*0x4ca489 G57c1: IDA 0x4ca489 push offset aIssuspendedD*/
+  Debug::Log("IsDifferent\t= %d\n"); /*0x4ca499 G57c1: IDA 0x4ca499 push offset aIsdifferentD*/
+  Debug::Log("Balance\t= %d\n"); /*0x4ca4a7 G57c1: IDA 0x4ca4a7 push offset aBalanceD*/
+  Debug::Log("OriginalBalance = %d\n"); /*0x4ca4b5 G57c1: IDA 0x4ca4b5 push offset aOriginalbalanc*/
+  Debug::Log("SpecialItem\t= %d\n"); /*0x4ca4c3 G57c1: IDA 0x4ca4c3 push offset aSpecialitemD*/
   (*((void (**)(void **))this->((unsigned int *)owner)[0] + 4))(&this->((unsigned int *)owner)[0]); /*0x4ca4d4*/
-  Debug::Log(); /*0x4ca4dd*/
+  Debug::Log("House->Fetch_ID()\t= %d\n"); /*0x4ca4dd G57c1: IDA 0x4ca4dd push offset aHouseFetchIdD*/
   (*((void ((void **)(**))(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
-  Debug::Log(); /*0x4ca4f5*/
+  Debug::Log("ID\t= %d\n"); /*0x4ca4f5 G57c1: IDA 0x4ca4f5 push offset aIdD_0*/
   v3 = ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x4ca50f*/

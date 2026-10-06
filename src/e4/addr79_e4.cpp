@@ -262,14 +262,14 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
           case 0: /*0x79354a*/
             v6 = 1; /*0x793557*/
             ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x79355c*/
-                        ((Debug *)0)->Log();
+                        Debug::Log("Player %s was unable to establish a connection\n") /*G57c1: IDA 0x793567 push offset aPlayerSWasUnab*/;
             v11 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
             StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)aTxtTalkReporte, 0,(const char *)(g_Str_File_wonline_cpp), 18840));
             goto LABEL_19; /*0x793589*/
           case 1: /*0x79354a*/
             v6 = 1; /*0x793591*/
             ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x793596*/
-                        ((Debug *)0)->Log();
+                        Debug::Log("Unable to connect to player %s\n") /*G57c1: IDA 0x7935a1 push offset aUnableToConnec*/;
             v11 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
             StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkLocalPr), 0,(const char *)(g_Str_File_wonline_cpp), 18850));
   LABEL_19:
@@ -280,14 +280,14 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
             v6 = 1; /*0x7935ee*/
             if ( v7 == v3 ) /*0x7935f0*/
             {
-                            ((Debug *)0)->Log();
+                            Debug::Log("Unable to talk to the pserver port\n") /*G57c1: IDA 0x7935f7 push offset aUnableToTalkTo*/;
               v12 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward), 0,(const char *)(g_Str_File_wonline_cpp), 18861));
               Dialog::ShowMessage(-1, (size_t)v12); /*0x79361d*/
             }
             else
             {
               ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v7])); /*0x79362a*/
-                            ((Debug *)0)->Log();
+                            Debug::Log("Player %s was unable to connect to the pserver port\n") /*G57c1: IDA 0x793635 push offset aPlayerSWasUnab_0*/;
               v13 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
               v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtTalkForward_0), 0,(const char *)(g_Str_File_wonline_cpp), 18864));
               swprintf(Buffer, (const size_t)v9, v13); /*0x793663*/
@@ -296,7 +296,7 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
             break; /*0x79361d*/
           case 3: /*0x79354a*/
             v6 = 1; /*0x793683*/
-                        ((Debug *)0)->Log();
+                        Debug::Log("The game host reported a connection problem between players\n") /*G57c1: IDA 0x793685 push offset aTheGameHostRep*/;
             v14 = GetStringCSF((wchar_t *)(aTxtTalkHostAbo), 0,(const char *)(g_Str_File_wonline_cpp), 18875); /*0x7936a3*/
             Dialog::ShowMessage(-1, (size_t)v14); /*0x7936aa*/
             break; /*0x7936aa*/
@@ -332,7 +332,7 @@ int sub_793B30(char a1, const char * a2)
     strcpy( v4, (const char *)(a2)); /*0x793b68*/
   else
     v4[0] = 0; /*0x793b76*/
-    ((Debug *)0)->Log();
+    Debug::Log("Sending public options string %s\n") /*G57c1: IDA 0x793b85 push offset g_Str_Trace_Sending_public_options_string__s*/;
   return (*(int (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 60))(ppv, v3); /*0x793b9d*/
 }
 }
@@ -449,7 +449,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   ((Waypoint*)&v91)->InitInvalid(); /*0x793d68*/
   v66 = 0; /*0x793d74*/
   v57 = 0; /*0x793d7f*/
-    ((Debug *)0)->Log();
+    Debug::Log("Start_Talking_To player %d, retries = %d\n") /*G57c1: IDA 0x793d84 push offset aStartTalkingTo*/;
   v62 = -1; /*0x793d93*/
   if ( dword_A8DA84 <= 0 ) /*0x793d9b*/
     goto LABEL_6; /*0x793d9b*/
@@ -467,9 +467,9 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   {
   LABEL_6:
     strcpy((char *)(&((unsigned int *)(v91.__pad_0))[12]), "Z10"); /*0x793de5*/
-        ((Debug *)0)->Log();
+        Debug::Log("Sending public options string %s\n") /*G57c1: IDA 0x793e0b push offset g_Str_Trace_Sending_public_options_string__s*/;
     (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))( ppv, (char *)(&((unsigned int *)(v91.__pad_0))[12])); /*0x793e23*/
-        ((Debug *)0)->Log();
+        Debug::Log("session_players_index == %d, returning false from Start_Talking_To.\n") /*G57c1: IDA 0x793e2d push offset aSessionPlayers*/;
     return 0; /*0x793e41*/
   }
   v9 = (char *)&unk_A8E060; /*0x793e44*/
@@ -478,7 +478,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     v10 = (char *)(ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3]))); /*0x793e55*/
     if ( !_strcmpi(v9, v10) ) /*0x793e66*/
     {
-            ((Debug *)0)->Log();
+            Debug::Log("Behind the same NAT, mangling == false\n") /*G57c1: IDA 0x793e7a push offset aBehindTheSameN*/;
       v56 = 0; /*0x793e82*/
       break; /*0x793e82*/
     }
@@ -489,7 +489,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   v11 = *(unsigned int *)&stru_A8DBC0.alignmentPadding69[4 * v3 + 3]; /*0x793e87*/
   if ( v56 && (!v11 || (v11 & 1) != 0) && (!(unsigned short)dword_ABFEC8 || (dword_ABFEC8 & 1) != 0) ) /*0x793eac*/
   {
-        ((Debug *)0)->Log();
+        Debug::Log("Both have crap firewalls, or modems, or somesuch. mangling = false\n") /*G57c1: IDA 0x793eb3 push offset aBothHaveCrapFi*/;
     v56 = 0; /*0x793ebb*/
   }
   v61 = 0; /*0x793ec2*/
@@ -498,16 +498,16 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   while ( 1 ) /*0x793ece*/
   {
     v12 = v62; /*0x793ece*/
-        ((Debug *)0)->Log();
+        Debug::Log("Sending keep alive packets\n") /*G57c1: IDA 0x793ed7 push offset aSendingKeepAli*/;
     Network_Connect_793BB0(v55); /*0x793edf*/
     if ( v56 ) /*0x793eea*/
     {
       v14 = 0; /*0x793f1d*/
       v15 = dword_ABFEC8; /*0x793f1f*/
-            ((Debug *)0)->Log();
+            Debug::Log("Raw firewall behavior is %d\n") /*G57c1: IDA 0x793f2b push offset aRawFirewallBeh*/;
       if ( (v15 & 0x40) != 0 ) /*0x793f36*/
         goto LABEL_110; /*0x793f36*/
-            ((Debug *)0)->Log();
+            Debug::Log("No destination port delta - looking for earlier connections at the same address\n") /*G57c1: IDA 0x793f41 push offset aNoDestinationP*/;
       v59 = 0; /*0x793f50*/
       if ( dword_A8E224 <= 0 ) /*0x793f54*/
         goto LABEL_110; /*0x793f54*/
@@ -523,7 +523,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         if ( (uint8_t)((NetworkID *)((int)(v84)))->Compare(v19) ) /*0x793f9a*/
         {
           v14 = ((unsigned int *)(dword_A8E184))[v17]; /*0x793fa3*/
-                    ((Debug *)0)->Log();
+                    Debug::Log("Found old connection port number to use - port number %d\n") /*G57c1: IDA 0x793fb8 push offset aFoundOldConnec*/;
         }
         ++v16; /*0x793fcb*/
         ++v59; /*0x793fd0*/
@@ -532,7 +532,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       if ( !v14 ) /*0x793fd9*/
       {
   LABEL_110:
-                ((Debug *)0)->Log();
+                Debug::Log("Work out what my port will be.\n") /*G57c1: IDA 0x793fe4 push offset aWorkOutWhatMyP*/;
         v20 = 0; /*0x793ff1*/
         if ( dword_A8DA84 > 0 ) /*0x793ff5*/
         {
@@ -546,9 +546,9 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
               goto LABEL_34; /*0x794027*/
           }
           v23 = *(&dword_A8E2B2 + v20); /*0x79402b*/
-                    ((Debug *)0)->Log();
+                    Debug::Log("My default port = %d\n") /*G57c1: IDA 0x794041 push offset aMyDefaultPortD*/;
           v14 = ((Network *)((Network *)&dword_ABFEC8))->ResolveNetworkAddress(v23); /*0x794054*/
-                    ((Debug *)0)->Log();
+                    Debug::Log("My mangled port = %d\n") /*G57c1: IDA 0x794061 push offset aMyMangledPortD*/;
         }
       }
   LABEL_34:
@@ -568,7 +568,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           {
             qmemcpy(v94, "Z4", sizeof(v94)); /*0x7940c3*/
             sprintf(Buffer, "%d", v14); /*0x7940da*/
-                        ((Debug *)0)->Log();
+                        Debug::Log("Sending string %s to user %s\n") /*G57c1: IDA 0x7940ed push offset aSendingStringS*/;
             (*(void (**)(LPVOID, char *, char *))(*(unsigned int *)ppv + 56))(ppv, v26, v94); /*0x794106*/
           }
           owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79410d*/
@@ -585,7 +585,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     else
     {
       v13 = *(&dword_A8E2B2 + v62); /*0x793eec*/
-            ((Debug *)0)->Log();
+            Debug::Log("Easy mangling, Session.OtherPlayersMangledPorts[%d] = %d\n") /*G57c1: IDA 0x793f02 push offset aEasyManglingSe*/;
       dword_A8E050[v3] = v13; /*0x793f0a*/
     }
     Ticks = ((Timer *)0)->GetTicks(); /*0x79413a*/
@@ -632,7 +632,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     v71 = v31; /*0x7941fe*/
     if ( (unsigned short)v31 ) /*0x794202*/
     {
-      ((Debug *)0)->Log(); /*0x79420e*/
+      Debug::Log("Session.OtherPlayersMangledPorts[%d] != 0\n"); /*0x79420e G57c1: IDA 0x79420e push offset aSessionOtherpl*/
       *(&dword_A8E2B2 + v12) = (unsigned int)(dword_A8E050[v3]); /*0x79421e*/
       ((Network *)((gamemd::IPXManagerClass *)((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40))))->SetPort((void *)(dword_A8E050[v3])); /*0x79423b*/
       ((Network *)((Network *)(dword_A8DA90[v3] + 40)))->SetPort(dword_A8E050[v3]); /*0x794253*/
@@ -643,7 +643,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       strcpy((char *)&v98[1], ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty()); /*0x79429d*/
       if ( (dword_ABFEC8 & 8) != 0 && (stru_A8DBC0.alignmentPadding69[4 * v3 + 3] & 8) == 0 ) /*0x7942b7*/
       {
-        ((Debug *)this)->Log(); /*0x7942be*/
+        ((gamemd::Debug*)this)->Log(); /*0x7942be*/
         v33 = 240; /*0x7942cf*/
         v73 = ((Timer *)this)->GetTicks(); /*0x7942d4*/
         for ( i = 240; ; v33 = i ) /*0x7942d8*/
@@ -661,7 +661,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         }
       }
       ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3])); /*0x794305*/
-      ((Debug *)this)->Log(); /*0x794322*/
+      ((gamemd::Debug*)this)->Log(); /*0x794322*/
       v36 = ((Timer *)this)->GetTicks(); /*0x794331*/
       v88 = 360; /*0x794342*/
       v87 = v36; /*0x794351*/
@@ -682,7 +682,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           goto LABEL_68; /*0x79439d*/
         }
   LABEL_69:
-        ((Debug *)this)->Log(); /*0x7943a5*/
+        ((gamemd::Debug*)this)->Log(); /*0x7943a5*/
         ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)v98, 47, 0, (wchar_t *)dword_A8DA90[v3]); /*0x7943d3*/
         v41 = TimerGetTicks(); /*0x7943dc*/
         v37 = 30; /*0x7943e5*/
@@ -711,19 +711,19 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           {
             if ( v96 != 41 ) /*0x794476*/
               goto LABEL_89; /*0x794476*/
-            Debug::Log(); /*0x794481*/
+            Debug::Log("Got NET_PORT_PROBE packet\n"); /*0x794481 G57c1: IDA 0x794481 push offset aGotNetPortProb_0*/
             if ( (uint8_t)((NetworkID *)((bool *)((&dword_A8DA78)[v62] + 40)))->Compare((int)&v91) ) /*0x7944a1*/
             {
               v45 = (char *)(ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3]))); /*0x7944bd*/
               if ( !_strcmpi(v45, v97) ) /*0x7944c3*/
               {
-                Debug::Log(); /*0x7944e0*/
+                Debug::Log("Got NET_PORT_PROBE packet from %s\n"); /*0x7944e0 G57c1: IDA 0x7944e0 push offset aGotNetPortProb_1*/
                 qmemcpy(v92, "Z1;", sizeof(v92)); /*0x7944f1*/
                 if ( v97 ) /*0x794509*/
                   strcpy(v93, v97); /*0x79452d*/
                 else
                   v93[0] = 0; /*0x794538*/
-                Debug::Log(); /*0x79454d*/
+                Debug::Log("Sending public options string %s\n"); /*0x79454d G57c1: IDA 0x79454d push offset g_Str_Trace_Sending_public_options_string__s*/
                 (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, v92); /*0x794565*/
                 if ( v62 >= 0 && v62 < dword_A8DA84 ) /*0x794576*/
                 {
@@ -757,7 +757,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         }
         if ( (&dword_A8DE4C)[v70] == 11 ) /*0x79463f*/
         {
-          Debug::Log(); /*0x79469c*/
+          Debug::Log("Got connection result - my packet must have got through\n"); /*0x79469c G57c1: IDA 0x79469c push offset aGotConnectionR*/
           goto LABEL_100; /*0x7946a4*/
         }
   LABEL_89:
@@ -767,7 +767,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           v51 = v50 - 1; /*0x794656*/
           if ( v50 - 1 > v61 ) /*0x79465f*/
           {
-            Debug::Log(); /*0x7946ac*/
+            Debug::Log("Other player is trying again - their_try = %d\n"); /*0x7946ac G57c1: IDA 0x7946ac push offset aOtherPlayerIsT*/
             v61 = v51 - 1; /*0x7946b5*/
             goto LABEL_100; /*0x7946b9*/
           }
@@ -803,11 +803,11 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
       strcpy((char *)(&v91.__pad_0[15]), v54); /*0x79473a*/
     else
       v91.__pad_0[15] = 0; /*0x794745*/
-    Debug::Log(); /*0x79475a*/
+    Debug::Log("Sending public options string %s\n"); /*0x79475a G57c1: IDA 0x79475a push offset g_Str_Trace_Sending_public_options_string__s*/
     (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))( ppv, (char *)(&v91.__pad_0[12])); /*0x794772*/
-    Debug::Log(); /*0x79477b*/
+    Debug::Log("Trying again - trying = %d\n"); /*0x79477b G57c1: IDA 0x79477b push offset aTryingAgainTry*/
   }
-  Debug::Log(); /*0x794794*/
+  Debug::Log("trying >= retries\n"); /*0x794794 G57c1: IDA 0x794794 push offset aTryingRetries*/
   return v42; /*0x793e37*/
 }
 }
@@ -866,12 +866,12 @@ char NetworkLobby_WaitForPlayers()
       PostMessageA(v1, 0xFu, 0, 0); /*0x794849*/
     }
   }
-  Debug::Log(); /*0x79485b*/
+  Debug::Log("Session.NumConnectionPairs = %d\n"); /*0x79485b G57c1: IDA 0x79485b push offset aSessionNumconn*/
   v28 = 0; /*0x79486a*/
   if ( dword_A8E04C <= 0 ) /*0x79486e*/
   {
   LABEL_44:
-    Debug::Log(); /*0x794b38*/
+    Debug::Log("Everyones happy\n"); /*0x794b38 G57c1: IDA 0x794b3d push offset aEveryonesHappy*/
     return 1; /*0x794b4e*/
   }
   v3 = (int *)(dword_A8DE4C); /*0x794874*/
@@ -882,7 +882,7 @@ char NetworkLobby_WaitForPlayers()
     v6 = (char *)*(&dword_A8DA90 + v5); /*0x79489e*/
     ToWideStringChar((IUnknown *)((char *)*(&dword_A8DA90 + v4))); /*0x7948a5*/
     ToWideStringChar((IUnknown *)(v6)); /*0x7948ae*/
-    Debug::Log(); /*0x7948bf*/
+    Debug::Log("Connecting pair %d, %s and %s\n"); /*0x7948bf G57c1: IDA 0x7948bf push offset aConnectingPair*/
     v7 = ToWideStringChar((IUnknown *)((char *)*(&dword_A8DA90 + v4))); /*0x7948d8*/
     v8 = ((String *)((char **)&dword_B73E40))->GetOrEmpty(); /*0x7948da*/
     if ( _strcmpi(v7, v8) ) /*0x7948e1*/
@@ -910,7 +910,7 @@ char NetworkLobby_WaitForPlayers()
     }
     if ( v9 != -1 ) /*0x794956*/
       break; /*0x794956*/
-    Debug::Log(); /*0x7949cb*/
+    Debug::Log("Waiting for other guys to connect\n"); /*0x7949cb G57c1: IDA 0x7949cb push offset aWaitingForOthe*/
     Ticks = TimerGetTicks(); /*0x7949e0*/
     v31 = 960; /*0x7949f5*/
     v19 = 0; /*0x7949f9*/
@@ -929,7 +929,7 @@ char NetworkLobby_WaitForPlayers()
       }
       else
       {
-        Debug::Log(); /*0x794a43*/
+        Debug::Log("Connecting player 1 is trying again - try_now = %d\n"); /*0x794a43 G57c1: IDA 0x794a43 push offset aConnectingPlay*/
         v19 = v22; /*0x794a4f*/
         Ticks = TimerGetTicks(); /*0x794a63*/
         v23 = 840; /*0x794a67*/
@@ -937,7 +937,7 @@ char NetworkLobby_WaitForPlayers()
       }
       if ( v21 >= 1 && v21 < 11 && v21 - 1 > v19 ) /*0x794a8a*/
       {
-        Debug::Log(); /*0x794a92*/
+        Debug::Log("Connecting player 2 is trying again - try_now = %d\n"); /*0x794a92 G57c1: IDA 0x794a92 push offset aConnectingPlay_0*/
         v19 = v21 - 1; /*0x794a9e*/
         Ticks = TimerGetTicks(); /*0x794aa9*/
         v23 = 840; /*0x794aba*/
@@ -955,11 +955,11 @@ char NetworkLobby_WaitForPlayers()
         goto LABEL_41; /*0x794ae6*/
       v12 = i; /*0x794ae8*/
     }
-    Debug::Log(); /*0x794af6*/
+    Debug::Log("Got both results - woohoo!\n"); /*0x794af6 G57c1: IDA 0x794af6 push offset aGotBothResults*/
   LABEL_41:
     if ( *i != 11 || i[1] != 11 ) /*0x794b0b*/
       goto LABEL_45; /*0x794b0b*/
-    Debug::Log(); /*0x794b12*/
+    Debug::Log("Connection good, next pair\n"); /*0x794b12 G57c1: IDA 0x794b12 push offset aConnectionGood*/
     v26 = ++v28 < dword_A8E04C; /*0x794b28*/
     i += 2; /*0x794b2e*/
     if ( !v26 ) /*0x794b32*/
@@ -974,11 +974,11 @@ char NetworkLobby_WaitForPlayers()
   else
     v17 = NetworkLobby::GetPlayerCount(*v14); /*0x79498e*/
   v18 = v17; /*0x79499d*/
-  Debug::Log(); /*0x7949a5*/
+  Debug::Log("About to enter Start_Talking_To, retries = %d"); /*0x7949a5 G57c1: IDA 0x7949a5 push offset aAboutToEnterSt*/
   if ( NegotiateNetworkConnection((IUnknown *)(v9), v29, v18) ) /*0x7949b4*/
     goto LABEL_41; /*0x7949bb*/
   LABEL_45:
-  Debug::Log(); /*0x794b7d*/
+  Debug::Log("res2 != CONNRESULT_CONNECTED\n"); /*0x794b7d G57c1: IDA 0x794b82 push offset aRes2Connresult*/
   return 0; /*0x7947f5*/
 }
 }
@@ -1035,7 +1035,7 @@ AbstractClass * * WOL_StartGame()
   int v47; // [esp+1Ch] [ebp-4h]
   TagClass **v48; // [esp+1Ch] [ebp-4h]
 
-  Debug::Log(); /*0x794bac*/
+  Debug::Log("Start_Game_Now\n"); /*0x794bac G57c1: IDA 0x794bac push offset aStartGameNow*/
   byte_B77E26 = 1; /*0x794bbd*/
   if ( g_WOL_UserList.owningHouseIndex ) /*0x794bc4*/
   {
@@ -1542,7 +1542,7 @@ int WOL_NegotiateScenario(char a1)
         if ( &byte_B777B0 ) /*0x796216*/
         {
           v20 = CharToWideString( (unsigned char *)(unk_B777D4)); /*0x79621d*/
-          Network::SendToPlayer( (int)unk_A8E9C0, (int)v53, 47, 1, (void)((wchar_t *)v20)); /*0x796231*/
+          ((Network *)((int)unk_A8E9C0))->SendToPlayer( (int)v53, 47, 1, (void)((wchar_t *)v20)); /*0x796231*/
         }
       }
   LABEL_75:
@@ -1596,7 +1596,7 @@ int WOL_NegotiateScenario(char a1)
           if ( &byte_B777B0 ) /*0x79636d*/
           {
             v25 = CharToWideString( (unsigned char *)(unk_B777D4)); /*0x796374*/
-            Network::SendToPlayer( (int)unk_A8E9C0, (int)v53, 47, 1, (void)((wchar_t *)v25)); /*0x796388*/
+            ((gamemd::Network*)((int)unk_A8E9C0))->SendToPlayer( (int)v53, 47, 1, (void)((wchar_t *)v25)); /*0x796388*/
           }
         }
   LABEL_99:
@@ -1646,7 +1646,7 @@ int WOL_NegotiateScenario(char a1)
     while ( 1 ) /*0x79651a*/
     {
       Event::Dispatch(); /*0x79651a*/
-      if ( ((Network *)((int)unk_A8E9C0))->Send((int)&dword_A8D638, (int)&unk_A8D800, (int)&dword_A8D804, (int)&word_A8D810) ) /*0x796538*/
+      if ( ((gamemd::Network*)((int)unk_A8E9C0))->Send((int)&dword_A8D638, (int)&unk_A8D800, (int)&dword_A8D804, (int)&word_A8D810) ) /*0x796538*/
       {
         if ( word_A8D810 == -22012 ) /*0x796548*/
         {
@@ -1740,7 +1740,7 @@ int WOL_NegotiateScenario(char a1)
   do /*0x795f56*/
   {
     Event::Dispatch(); /*0x795dbc*/
-    if ( ((Network *)((int)unk_A8E9C0))->Send((int)&dword_A8D638, (int)&unk_A8D800, (int)&dword_A8D804, (int)&word_A8D810) ) /*0x795dda*/
+    if ( ((gamemd::Network*)((int)unk_A8E9C0))->Send((int)&dword_A8D638, (int)&unk_A8D800, (int)&dword_A8D804, (int)&word_A8D810) ) /*0x795dda*/
     {
       if ( word_A8D810 == -22012 ) /*0x795df0*/
       {
@@ -1875,7 +1875,7 @@ int WOL_NegotiateScenario(char a1)
     do /*0x796159*/
     {
       Event::Dispatch(); /*0x796112*/
-      if ( Network::SendToPlayer((int)unk_A8E9C0, (int)v53, 47, 1, *(wchar_t **)(dword_A8DA78 + 4 * i)) ) /*0x79612f*/
+      if ( ((gamemd::Network*)((int)unk_A8E9C0))->SendToPlayer( (int)v53, 47, 1, *(wchar_t **)(dword_A8DA78 + 4 * i)) ) /*0x79612f*/
         break; /*0x796136*/
       v16 = v46; /*0x79613c*/
       if ( v43 != -1 ) /*0x796142*/
@@ -1889,13 +1889,13 @@ int WOL_NegotiateScenario(char a1)
     while ( v16 ); /*0x796159*/
   }
   LABEL_147:
-  if ( (unsigned int)(8 * ((Network *)unk_A8E9C0)->GetLobbyStatus()) >= 0x78 ) /*0x7966b0*/
-    v36 = 8 * ((Network *)unk_A8E9C0)->GetLobbyStatus(); /*0x7966c3*/
+  if ( (unsigned int)(8 * ((gamemd::Network*)unk_A8E9C0)->GetLobbyStatus()) >= 0x78 ) /*0x7966b0*/
+    v36 = 8 * ((gamemd::Network*)unk_A8E9C0)->GetLobbyStatus(); /*0x7966c3*/
   else
     v36 = 120; /*0x7966b2*/
   v39 = v36; /*0x7966c8*/
-  LobbyStatus = ((Network *)unk_A8E9C0)->GetLobbyStatus(); /*0x7966d0*/
-  ((Network *)(unk_A8E9C0))->SetConnectionParams(LobbyStatus + 2, -1, v39, 1); /*0x7966de*/
+  LobbyStatus = ((gamemd::Network*)unk_A8E9C0)->GetLobbyStatus(); /*0x7966d0*/
+  ((gamemd::Network*)(unk_A8E9C0))->SetConnectionParams(LobbyStatus + 2, -1, v39, 1); /*0x7966de*/
   ((Connection *)(unk_A8E9C0))->Close(); /*0x7966e8*/
   result = v42; /*0x7966ed*/
   if ( v42 != 2 && v40 ) /*0x7966fc*/
@@ -1914,7 +1914,7 @@ char HandleWOLRematch()
   HWND DlgItem; // eax
   int v5; // eax
   ObjectClass *i; // edx
-  Network *v8; // [esp+0h] [ebp-254h]
+  gamemd::Network *v8; // [esp+0h] [ebp-254h]
   unsigned short v9[3]; // [esp+Eh] [ebp-246h] BYREF
   Waypoint v10[2]; // [esp+14h] [ebp-240h] BYREF
   int v11; // [esp+8Ch] [ebp-1C8h] BYREF
@@ -1952,7 +1952,7 @@ char HandleWOLRematch()
     return 0; /*0x7967ae*/
   Event::Dispatch(); /*0x7967bb*/
   *(unsigned int *)&v9[1] = 455; /*0x7967e0*/
-  if ( !((Network *)((int)&unk_A8E9C0))->SendPacketThunk(0, (int)&v11, (int)&v9[1], (int)v10, (int)v9, 0) || v11 != 25 ) /*0x796803*/
+  if ( !((gamemd::Network*)((int)&unk_A8E9C0))->SendPacketThunk(0, (int)&v11, (int)&v9[1], (int)v10, (int)v9, 0) || v11 != 25 ) /*0x796803*/
     return 0; /*0x796803*/
   v3 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x79680e*/
   if ( v3 ) /*0x796815*/
@@ -1963,8 +1963,8 @@ char HandleWOLRematch()
   if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x796833*/
     qmemcpy(&v10[0].__pad_0[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796844*/
   *(unsigned int *)&v10[0].__pad_0[44] = 0; /*0x79684a*/
-  ((Network *)v8)->SyncPlayerList(); /*0x796852*/
-  if ( !((Network *)((Network *)&unk_A8E9C0))->Send((int)&v11, (int)&v9[1], (int)v10, (int)v9) ) /*0x796873*/
+  ((gamemd::Network*)v8)->SyncPlayerList(); /*0x796852*/
+  if ( !((gamemd::Network*)((gamemd::Network*)&unk_A8E9C0))->Send((int)&v11, (int)&v9[1], (int)v10, (int)v9) ) /*0x796873*/
     return 0; /*0x796873*/
   if ( v11 != 25 ) /*0x796883*/
     return 0; /*0x796883*/
@@ -2804,7 +2804,7 @@ int sub_7982D0(int a1, DWORD a2)
 }
 // 0x7983E0
 namespace gamemd {
-void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+int Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -2986,7 +2986,7 @@ void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int
 }
 // 0x7988C0
 namespace gamemd {
-void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+int Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx
@@ -4957,7 +4957,7 @@ AbstractClass * * CleanupWOLSession()
 }
 // 0x79D720
 namespace gamemd {
-void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
+int WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
 {
   HWND v4; // ebp
   unsigned int v5; // esi
@@ -5124,7 +5124,7 @@ char ** ExtractChatCommand(char ** a1, HWND a2)
 }
 // 0x79DFE0
 namespace gamemd {
-void WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
+int WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 {
   int result; // eax
   LONG WindowLongA; // ecx

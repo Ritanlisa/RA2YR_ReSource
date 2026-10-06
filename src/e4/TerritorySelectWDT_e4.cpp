@@ -173,7 +173,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
     if ( Map_Remove_770CE0(vtable0, *(unsigned int *)((&this->barrelFacing)[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
-      if ( !(uint8_t)Audio::IsPlaying() ) /*0x77157c*/
+      if ( !(uint8_t)gamemd::Audio::IsPlaying() ) /*0x77157c*/
       {
         (&this->secondaryFacing)[3] = TimerGetTicks(); /*0x771598*/
         (&this->secondaryFacing)[4] = v17.DeleteAndZero_field_0x08; /*0x7715a2*/

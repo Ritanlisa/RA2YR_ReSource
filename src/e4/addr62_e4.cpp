@@ -1076,7 +1076,7 @@ int AddDynamicVector(HWND a1, int * a2)
 }
 // 0x622650
 namespace gamemd {
-void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM)
+int sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM)
 {
   int v4; // ebp
   int result; // eax
@@ -1848,7 +1848,7 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
 }
 // 0x6241F0
 namespace gamemd {
-void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM)
+int Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM)
 {
   HWND Dialog; // eax
   Dialog *v4; // edi

@@ -108,7 +108,7 @@ void sub_72BCF0()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[744]; /*0x72bd05*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[744] ) /*0x72bd0d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[744]); /*0x72bd11*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[744]))->Destroy(); /*0x72bd11*/
         RA2_OPDEL(v1); /*0x72bd17*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1428] = 0; /*0x72bd1f*/
@@ -162,7 +162,7 @@ void sub_72C650()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[860]; /*0x72c665*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[860] ) /*0x72c66d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[860]); /*0x72c671*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[860]))->Destroy(); /*0x72c671*/
         RA2_OPDEL(v1); /*0x72c677*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1368] = 0; /*0x72c67f*/

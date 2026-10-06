@@ -49,7 +49,7 @@ int ConnectionClass::allocPacketSlot(const void *a2, signed int a3, const void *
   if ( v8 == -1 ) /*0x48b793*/
   {
 LABEL_9:
-    ((gamemd::Debug *)this)->Log(); /*0x48b795*/
+    Debug::Log("Can't queue incoming packet - Unable to find free slot in array.\n"); /*0x48b795 G57c1: IDA 0x48b79a push offset aCanTQueueIncom*/
     return 0; /*0x48b7a7*/
   }
   v12 = 24 * v8; /*0x48b7ae*/
@@ -141,7 +141,7 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
   {
     *(unsigned char *)(*((unsigned int *)this + 8) + 2) = 0; /*0x48bf59*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = *((unsigned int *)this + 16); /*0x48bf63*/
-    ((gamemd::Debug *)this)->Log(); /*0x48bf6f*/
+    Debug::Log("NumSendAck = %d\n"); /*0x48bf6f G57c1: IDA 0x48bf6f push offset aNumsendackD*/
   }
   else
   {
@@ -152,8 +152,8 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
     *(unsigned char *)(*((unsigned int *)this + 8) + 3) = (unsigned char)(aP4); /*0x48bfa2*/
   if ( *((unsigned int *)this + 7) < (unsigned int)(aP2) ) /*0x48bfae*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x48bfb6*/
-    ((gamemd::Debug *)this)->Log(); /*0x48bfc1*/
+    Debug::Log("MaxPacketLen = %d\n"); /*0x48bfb6 G57c1: IDA 0x48bfb6 push offset aMaxpacketlenD*/
+    Debug::Log("buflen = %d\n"); /*0x48bfc1 G57c1: IDA 0x48bfc1 push offset aBuflenD*/
     return 0; /*0x48bfcd*/
   }
   qmemcpy( (void *)(*((unsigned int *)this + 8) + 14), (const void *)(aP1), (size_t)aP2); /*0x48bfe5*/
@@ -223,7 +223,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
         }
         else
         {
-          ((gamemd::Debug *)this)->Log(); /*0x48c12d*/
+          Debug::Log("Error - unable to queue incoming packet. %s %s\n"); /*0x48c12d G57c1: IDA 0x48c12d push offset aErrorUnableToQ*/
           ++this->PacketsReceived; /*0x48c139*/
           return 0; /*0x48c13f*/
         }
@@ -231,7 +231,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
       else
       {
         ++this->PacketsReceived; /*0x48c0f4*/
-        ((gamemd::Debug *)this)->Log(); /*0x48c0f7*/
+        Debug::Log("Error - ConnectClass::Receive_Packet Queue full on PACKET_DATA_NOACK\n"); /*0x48c0f7 G57c1: IDA 0x48c0f7 push offset aErrorConnectcl*/
         return 0; /*0x48c0ff*/
       }
     }
@@ -249,7 +249,7 @@ LABEL_40:
           v29[0] = *(unsigned char *)(a2 + 3); /*0x48c2aa*/
         else
           v29[0] = 0; /*0x48c2b0*/
-        ((gamemd::Debug *)this)->Log(); /*0x48c2c6*/
+        Debug::Log("Sending ACK for packet %d to be forwarded to %02x\n"); /*0x48c2c6 G57c1: IDA 0x48c2c6 push offset aSendingAckForP*/
         v26 = dword_A8EA0C; /*0x48c2cb*/
         LOBYTE(v26) = this == (gamemd::ConnectionClass *)((ModemConnectionClass *))dword_A8EA0C; /*0x48c2d7*/
         (*(void (**)(ModemConnectionClass *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/
@@ -314,10 +314,10 @@ LABEL_40:
         goto LABEL_40; /*0x48c257*/
       }
     }
-    ((gamemd::Debug *)this)->Log(); /*0x48c301*/
+    Debug::Log("Error - ConnectClass::Receive_Packet did not understand packet->Code\n"); /*0x48c301 G57c1: IDA 0x48c301 push offset aErrorConnectcl_2*/
     return 0; /*0x48c309*/
   }
-  ((gamemd::Debug *)this)->Log(); /*0x48c079*/
+  Debug::Log("Received ACK for packet %d\n"); /*0x48c079 G57c1: IDA 0x48c079 push offset aReceivedAckFor*/
   v6 = (int)(this->PlayerIndex); /*0x48c07e*/
   v7 = 0; /*0x48c084*/
   if ( *(int *)(v6 + 40) > 0 ) /*0x48c08b*/
@@ -506,7 +506,7 @@ int ConnectionClass::serviceSendQueue()
   while ( v7 < v22 ); /*0x48c552*/
   if ( !v21 ) /*0x48c55e*/
     return 1; /*0x48c57a*/
-  ((gamemd::Debug *)this)->Log(); /*0x48c565*/
+  Debug::Log("ConnectionClass::Service_Send_Queue bad connection\n"); /*0x48c565 G57c1: IDA 0x48c565 push offset aConnectionclas*/
   return 0; /*0x48c56f*/
 
 }

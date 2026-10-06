@@ -465,7 +465,7 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
     v5 = (wchar_t *)(GetStringCSF((wchar_t *)(aTxtFindingPatc), 0,(const char *)(g_Str_File_wonline_cpp), 5195)); /*0x7ad5b4*/
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
-  Current = (HWND)Dialog::GetCurrent(); /*0x7ad5e5*/
+  Current = (HWND)gamemd::Dialog::GetCurrent(); /*0x7ad5e5*/
   DlgItem = GetDlgItem(Current, 1480); /*0x7ad5eb*/
   SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad5fe*/
   return 0; /*0x7ad606*/

@@ -118,7 +118,7 @@ v3 = (void ***)((int)((void ***)(0)));
       dword_8B40F8 = dword_8B40F8; /*0x6f0b32*/
       do /*0x6f0b4d*/
       {
-        if ( *(unsigned int *)(*(unsigned int *)&v7->u32_B0 == a2 ) /*0x6f0b39*/
+        if ( *(unsigned int *)(*(unsigned int *)&v7->u32_B0 == a2 )) /*0x6f0b39*/
         {
           ++v6; /*0x6f0b3e*/
           if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)v7 + 36) + 246) ) /*0x6f0b3f*/

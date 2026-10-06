@@ -84,7 +84,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   int i; // [esp+1Ch] [ebp+4h]
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af1a8*/
-  SlaveControlVector::Constructor((int)((unsigned int *)((char *)this + 56)), 0, 0); /*0x6af1b6*/
+  ((SlaveControlVector *)((int)((unsigned int *)((char *)this + 56))))->Constructor( 0, 0); /*0x6af1b6*/
   *((unsigned int *)this + 14) = (unsigned int)(&vt_DynamicVectorClass); /*0x6af1c3*/
   *((unsigned int *)this + 19) = 10; /*0x6af1c9*/
   *((unsigned int *)this + 18) = 0; /*0x6af1d0*/
@@ -706,7 +706,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
   LABEL_60:
           if ( !v70 ) /*0x6afd16*/
   LABEL_61:
-            SlaveManagerClass::CreateSlave( (wchar_t **)(v7)); /*0x6afd1b*/
+            ((SlaveManagerClass *)(v7))->CreateSlave(); /*0x6afd1b*/
           goto LABEL_62; /*0x6afd1b*/
         default:
           goto LABEL_62;
@@ -826,7 +826,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
     if ( v3 ) /*0x6b1192*/
     {
       ((AbstractClass *)(AbstractClass *)v3)->InitVtables( (int)&a1); /*0x6b119b*/
-      SlaveControlVector::Constructor( (int)((SlaveControlVector *)v3->slaves), 0, 0); /*0x6b11a7*/
+      ((SlaveControlVector *)((int)((SlaveControlVector *)v3->slaves)))->Constructor( 0, 0); /*0x6b11a7*/
       v3->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6b11b0*/
       *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b11b6*/
       *(unsigned int *)v3->__pad_48 = 0; /*0x6b11bd*/
@@ -843,7 +843,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       slaves = v3->slaves; /*0x6b11fc*/
       if ( v3 != (SlaveManagerClass *)-56 ) /*0x6b1201*/
       {
-        SlaveControlVector::Constructor( (int)((SlaveControlVector *)v3->slaves), 0, 0); /*0x6b1207*/
+        ((SlaveControlVector *)((int)((SlaveControlVector *)v3->slaves)))->Constructor( 0, 0); /*0x6b1207*/
         *slaves = (int)&vt_DynamicVectorClass; /*0x6b120c*/
         *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b1212*/
         *(unsigned int *)v3->__pad_48 = 0; /*0x6b1219*/

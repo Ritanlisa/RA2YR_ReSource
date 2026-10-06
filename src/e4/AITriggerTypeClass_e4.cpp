@@ -688,7 +688,7 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
     }
     while ( v3 < dword_A8B210 ); /*0x420056*/
   }
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x42005a*/
+  ((gamemd::AbstractTypeClass*)((gamemd::AbstractTypeClass*)this))->Dtor(); /*0x42005a*/
   if ( (a2 & 1) != 0 ) /*0x420064*/
     __3_YAXPAX_Z(this); /*0x420067*/
   return this->__pad_0; /*0x420071*/

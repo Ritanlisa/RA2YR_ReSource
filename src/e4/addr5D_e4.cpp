@@ -664,7 +664,7 @@ char sub_5D6000(HWND hWnd, int a2)
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d6034*/
     {
       g_MultiplayerMode |= 1u; /*0x5d603d*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass((int)(&g_MultiplayerModeConfig), 0, 0); /*0x5d6048*/
+      ((MultiplayerGameMode *)((int)(&g_MultiplayerModeConfig)))->ConstructMultiplayerGameModeVectorClass( 0, 0); /*0x5d6048*/
       g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d604d*/
       dword_ABFDB4 = 10; /*0x5d6057*/
       dword_ABFDB0 = 0; /*0x5d6066*/
@@ -675,7 +675,7 @@ char sub_5D6000(HWND hWnd, int a2)
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d6087*/
     {
       g_MultiplayerMode |= 1u; /*0x5d6090*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass((int)(&g_MultiplayerModeConfig), 0, 0); /*0x5d609b*/
+      ((MultiplayerGameMode *)((int)(&g_MultiplayerModeConfig)))->ConstructMultiplayerGameModeVectorClass( 0, 0); /*0x5d609b*/
       g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d60a0*/
       dword_ABFDB4 = 10; /*0x5d60aa*/
       dword_ABFDB0 = 0; /*0x5d60b9*/
@@ -850,7 +850,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
             if ( (v16 & 1) == 0 ) /*0x5d79e0*/
             {
               g_MultiplayerMode = v16 | 1; /*0x5d79eb*/
-              MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass( (int)(&g_MultiplayerModeConfig), 0, 0); /*0x5d79f0*/
+              ((MultiplayerGameMode *)((int)(&g_MultiplayerModeConfig)))->ConstructMultiplayerGameModeVectorClass( 0, 0); /*0x5d79f0*/
               g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d79fa*/
               *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a05*/
               g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7a0b*/
@@ -963,7 +963,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
 }
 // 0x5D7CE0
 namespace gamemd {
-void GameInit_Complete()
+int GameInit_Complete()
 {
   int i; // esi
   void (***v2)(unsigned int, int); // ecx
@@ -1078,7 +1078,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
   int v29; // [esp+1Ch] [ebp+Ch]
 
   v5 = a2; /*0x5d9db2*/
-  Debug::Log(); /*0x5d9dd9*/
+  Debug::Log("Looking for port allocation pattern in original_ports %d, %d, %d, %d\n"); /*0x5d9dd9 G57c1: IDA 0x5d9dd9 push offset aLookingForPort*/
   v6 = a1; /*0x5d9dde*/
   if ( a1 > 0 ) /*0x5d9deb*/
   {
@@ -1122,7 +1122,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
     v17 = a3[2]; /*0x5d9e5e*/
     if ( (uint16_t)v17 - v15 == 1 && a3[3] - v17 == 1 ) /*0x5d9e74*/
     {
-      Debug::Log(); /*0x5d9e7b*/
+      Debug::Log("Incremental port allocation detected\n"); /*0x5d9e7b G57c1: IDA 0x5d9e7b push offset aIncrementalPor*/
       *a4 = 0; /*0x5d9e8d*/
       *a5 = 1; /*0x5d9e90*/
       return 1; /*0x5d9e97*/
@@ -1133,7 +1133,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
     v19 = a3[2]; /*0x5d9ea1*/
     if ( (uint16_t)v19 - v15 == 2 && a3[3] - v19 == 2 ) /*0x5d9eb7*/
     {
-      Debug::Log(); /*0x5d9ebe*/
+      Debug::Log("Semi-incremental port allocation detected\n"); /*0x5d9ebe G57c1: IDA 0x5d9ebe push offset aSemiIncrementa*/
       *a4 = 0; /*0x5d9ece*/
       *a5 = 1; /*0x5d9ed6*/
       return 2; /*0x5d9eda*/
@@ -1146,7 +1146,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
   {
     if ( v21 == v22 ) /*0x5d9f42*/
     {
-      Debug::Log(); /*0x5d9f4a*/
+      Debug::Log("Probable absolute allocation sequence delta of %d\n"); /*0x5d9f4a G57c1: IDA 0x5d9f4a push offset aProbableAbsolu*/
       *a4 = 0; /*0x5d9f5a*/
       *a5 = 0; /*0x5d9f62*/
       return (AbstractClass * *)v21; /*0x5d9f66*/
@@ -1171,7 +1171,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
     {
       if ( v26 == v28 ) /*0x5d9fa7*/
       {
-        Debug::Log(); /*0x5d9faf*/
+        Debug::Log("Looks good for a relative port range delta of %d\n"); /*0x5d9faf G57c1: IDA 0x5d9faf push offset aLooksGoodForAR*/
         *a4 = 1; /*0x5d9fbf*/
         *a5 = 1; /*0x5d9fc7*/
         return (AbstractClass * *)v27; /*0x5d9fcb*/
@@ -1181,7 +1181,7 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
     {
       if ( v26 == v28 ) /*0x5d9fd4*/
       {
-        Debug::Log(); /*0x5d9fdc*/
+        Debug::Log("Detected probable broken relative port range delta of %d\n"); /*0x5d9fdc G57c1: IDA 0x5d9fdc push offset aDetectedProbab*/
         *a4 = 1; /*0x5d9fec*/
         *a5 = 0; /*0x5d9fef*/
         return (AbstractClass * *)v26; /*0x5d9ff2*/
@@ -1193,20 +1193,20 @@ AbstractClass * * DetectPortAllocationPattern(int a1, short * a2, unsigned short
         return 0; /*0x5da00c*/
       }
     }
-    Debug::Log(); /*0x5da018*/
+    Debug::Log("Detected probable broken relative port range delta of %d\n"); /*0x5da018 G57c1: IDA 0x5da018 push offset aDetectedProbab*/
     *a4 = 1; /*0x5da028*/
     *a5 = 0; /*0x5da030*/
     return (AbstractClass * *)v27; /*0x5da02b*/
   }
   if ( v21 == v22 ) /*0x5d9ef6*/
   {
-    Debug::Log(); /*0x5d9efd*/
+    Debug::Log("Looks good for absolute allocation sequence delta of %d\n"); /*0x5d9efd G57c1: IDA 0x5d9efd push offset aLooksGoodForAb*/
     *a4 = 0; /*0x5d9f0d*/
     *a5 = 1; /*0x5d9f10*/
   }
   else
   {
-    Debug::Log(); /*0x5d9f21*/
+    Debug::Log("Probable absolute allocation sequence delta of %d\n"); /*0x5d9f21 G57c1: IDA 0x5d9f21 push offset aProbableAbsolu*/
     *a4 = 0; /*0x5d9f33*/
     *a5 = 0; /*0x5d9f36*/
   }
@@ -1241,7 +1241,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   v4 = *(unsigned int *)(&dword_A8022C)[4 * a1; /*0x5da762*/
   a1 = a1; /*0x5da76c*/
   if ( byte_A8ED74 ) /*0x5da770*/
-    Debug::Log(); /*0x5da77f*/
+    Debug::Log("Destroying connection for house %d (%ls)\n"); /*0x5da77f G57c1: IDA 0x5da77f push offset aDestroyingConn*/
   if ( !v4 || !v4->u8_1EC ) /*0x5da78f*/
     return; /*0x5da797*/
   String[0] = 0; /*0x5da7a0*/
@@ -1259,7 +1259,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   {
     v5 = Math::RoundToInt(*(double *)&(&dword_8871E0)[1.__pad_A0 * 900.0); /*0x5da822*/
     MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v4->q034 + 192), 16454, v5, 0); /*0x5da845*/
-    MapClass::MarkForRedraw( (int)(&dword_87F7E8), 0); /*0x5da851*/
+    ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 0); /*0x5da851*/
   }
   ((void (*)(int))Network::sendData)(v2); /*0x5da85d*/
   if ( a2 ) /*0x5da864*/
@@ -1549,7 +1549,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
 }
 // 0x5DBF50
 namespace gamemd {
-void UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int a5)
+int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int a5)
 {
   int v5; // edi
   int v7; // ebx
@@ -1730,12 +1730,12 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
     ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v11, 455, 1, *(unsigned int *)(dword_A8DA48 + 4 * i) + 40, 0, 0); /*0x5ddb32*/
     Event::Dispatch(); /*0x5ddb37*/
   }
-  ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v11, 455, 0, 0, 0, 0); /*0x5ddb5d*/
+  ((gamemd::Network*)&unk_A8E9C0.Socket)->SendMessage( (int)v11, 455, 0, 0, 0, 0); /*0x5ddb5d*/
   if ( dword_A8D5FC ) /*0x5ddb69*/
-    ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v11, 455, 0, (int)&stru_A8D600, 0, 0); /*0x5ddb85*/
-  while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() > 0 ) /*0x5ddb96*/
+    ((gamemd::Network*)&unk_A8E9C0.Socket)->SendMessage( (int)v11, 455, 0, (int)&stru_A8D600, 0, 0); /*0x5ddb85*/
+  while ( ((gamemd::Network*)(&unk_A8E9C0))->GetQueueCount() > 0 ) /*0x5ddb96*/
   {
-    if ( !((Network *)(&unk_A8E9C0))->ReceiveLoop() ) /*0x5ddb9d*/
+    if ( !((gamemd::Network*)(&unk_A8E9C0))->ReceiveLoop() ) /*0x5ddb9d*/
       break; /*0x5ddba4*/
     Event::Dispatch(); /*0x5ddba6*/
   }
@@ -2058,7 +2058,7 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
 }
 // 0x5DFE00
 namespace gamemd {
-void Network_SendPlayerOptions(unsigned int * a1, int a2)
+int Network_SendPlayerOptions(unsigned int * a1, int a2)
 {
   char *v3; // eax
   char *v4; // eax
@@ -2241,7 +2241,7 @@ int sub_5D36A0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
     }
     else if ( a2 == 534 ) /*0x5d36d5*/
     {
-      return (uint8_t)Window::ClampToScreen( (int *)(a4)); /*0x5d36ea*/
+      return (uint8_t)((Window *)(a4))->ClampToScreen(); /*0x5d36ea*/
     }
     return 0; /*0x5d374a*/
   }
@@ -3240,7 +3240,7 @@ char InitNetworkGameState()
   {
     if ( dword_A8D5FC ) /*0x5db6a7*/
     {
-      ((Network *)(&stru_A8D600))->CopyAddress(&v1, (int)v2); /*0x5db6b8*/
+      ((gamemd::Network*)(&stru_A8D600))->CopyAddress(&v1, (int)v2); /*0x5db6b8*/
       Network_Init_542FC0(&v1); /*0x5db6c7*/
     }
   }
@@ -3334,11 +3334,11 @@ int Network_BroadcastMessage(int a1)
     Event::Dispatch(); /*0x5df93e*/
   }
   if ( (g_NetworkSettingsState == 1 || g_NetworkSettingsState == 2) /*0x5df968*/
-    && !((Network *)((*(unsigned int *)(dword_A8DA60 + 4 * a1) + 40)))->IsBroadcastAddr() )
+    && !((gamemd::Network*)((*(unsigned int *)(dword_A8DA60 + 4 * a1) + 40)))->IsBroadcastAddr() )
   {
-    ((Network *)(int)unk_A8E9C0)->SendMessage( (int)v4, 455, 1, *(unsigned int *)(dword_A8DA60 + 4 * a1) + 40, 0, 0); /*0x5df991*/
+    ((gamemd::Network*)(int)unk_A8E9C0)->SendMessage( (int)v4, 455, 1, *(unsigned int *)(dword_A8DA60 + 4 * a1) + 40, 0, 0); /*0x5df991*/
   }
-  ((Network *)(int)unk_A8E9C0)->SendMessage( (int)v4, 455, 0, 0, 0, 0); /*0x5df9ad*/
+  ((gamemd::Network*)(int)unk_A8E9C0)->SendMessage( (int)v4, 455, 0, 0, 0, 0); /*0x5df9ad*/
   Game::ResetFlags(); /*0x5df9b2*/
   GameClass::InitDifficultyButtons(); /*0x5df9b7*/
   result = PtrVector::Destroy( (void)(&stru_A8DA74)); /*0x5df9c1*/

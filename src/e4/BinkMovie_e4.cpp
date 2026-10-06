@@ -219,7 +219,7 @@ LABEL_15:
     FullPath = (LPCSTR *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)&this->q00C + 120))( /*0x43295e*/
                            *((unsigned int *)this + 3),
                            v31);
-    Rect::Set(0, 0, 0, 0); /*0x432965*/
+    ((Rect *)(0))->Set( 0, 0, 0); /*0x432965*/
     v22 = (LPCSTR *)v3; /*0x43296e*/
     Rect.bottom = v30; /*0x432974*/
     Rect.left = v16; /*0x432978*/
@@ -394,7 +394,7 @@ void BinkMovie::Play(void *a1_1)
   else
   {
     BinkGetError(); /*0x432c7d*/
-    return ((gamemd::Debug *)this)->Log(); /*0x432c89*/
+    return Debug::Log("Bink Error: %s\n"); /*0x432c89 G57c1: IDA 0x432c89 push offset aBinkErrorS*/
   }
 
 }
@@ -430,7 +430,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
   {
     if ( !v6 ) /*0x432eb8*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x432ebf*/
+      Debug::Log("Resume bink movie\n"); /*0x432ebf G57c1: IDA 0x432ebf push offset aResumeBinkMovi*/
       v8 = *((unsigned int *)this + 1); /*0x432ec4*/
       *((unsigned int *)this + 44) = 1; /*0x432eca*/
       BinkPause((void *)(v8), 0); /*0x432ed1*/
@@ -450,7 +450,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
   }
   else if ( v6 == 1 ) /*0x432e8e*/
   {
-    Debug::Log(); /*0x432e99*/
+    Debug::Log("Pause bink movie\n"); /*0x432e99 G57c1: IDA 0x432e99 push offset aPauseBinkMovie*/
     v7 = *((unsigned int *)this + 1); /*0x432e9e*/
     *((unsigned int *)this + 44) = 0; /*0x432ea4*/
     BinkPause((void *)(v7), 1); /*0x432eab*/
@@ -525,7 +525,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
     BinkCopyToBuffer((void *)(this->BinkMovie_field_0x4[0]), v6, v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
     (*(void     ((*(void (**)(int))(*(unsigned int *)aP1 + 96)))(aP1); 
   }
-  return (in  return ((gamemd::DSurface *)(int))((BinkMovie *)(this))->BlitToTarget(aP1); 
+  return (in  return (gamemd::DSurface *)(int)((BinkMovie *)(this))->BlitToTarget(aP1); 
 
 }
 }
@@ -1080,7 +1080,7 @@ unsigned int * BinkMovie::VtableDispatch(int a2)
   a2 = 0; /*0x6c9ed1*/
   (*(void (**)(int, int *, int))(*(unsigned int *)v3 + 8))( v3, (int *)(&a2), 2); /*0x6c9ede*/
   if ( (unsigned short)a2 != 0xFEFF ) /*0x6c9ee8*/
-    Debug::Log(); /*0x6c9eef*/
+    Debug::Log("Error: Subtitle control file is not unicode!\n"); /*0x6c9eef G57c1: IDA 0x6c9eef push offset aErrorSubtitleC*/
   return this->__pad_0; /*0x6c9ef9*/
 
 }

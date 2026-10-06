@@ -76,7 +76,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     int v5; // ecx
     unsigned int *v6; // edx
 
-    TechnoTypeClass::ReadINI((char *)this, Source, -1); /*0x7470de*/
+    ((TechnoTypeClass *)this)->ReadINI( Source, -1); /*0x7470de*/
     *(unsigned int *)(this + 3576) = -1; /*0x7470e3*/
     *(unsigned int *)(this + 3580) = -1; /*0x7470eb*/
     *(unsigned int *)(this + 3584) = 0; /*0x7470f1*/
@@ -183,7 +183,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     v4 = (int *)RA2_OPNEW(0x8E8u); /*0x7474bb*/
     if ( !v4 ) /*0x7474c5*/
       return 0; /*0x7474c5*/
-    v5 = (int *)UnitClass::Construct(v4, (int)this, ppv); /*0x7474d8*/
+    v5 = (int *)((UnitClass *)v4)->Construct( (int)this, ppv); /*0x7474d8*/
     if ( !v5 ) /*0x7474dc*/
       return 0; /*0x747554*/
     IDA_LOWORD(ppv) = 0; /*0x7474e4*/
@@ -209,7 +209,7 @@ int UnitTypeClass::ConstructUnit(void *ppv)
 
     v3 = (int *)RA2_OPNEW(0x8E8u); /*0x747568*/
     if ( v3 ) /*0x747572*/
-      return UnitClass::Construct(v3, (int)this, ppv); /*0x74757c*/
+      return ((UnitClass *)v3)->Construct( (int)this, ppv); /*0x74757c*/
     else
       return 0; /*0x747585*/
 }
@@ -719,7 +719,7 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     char v3; // [esp+7h] [ebp-105h] BYREF
     char Buffer[260]; // [esp+8h] [ebp-104h] BYREF
 
-    result = TechnoTypeClass::SaveLoad_Prefix( (ObjectTypeClass *)((TechnoTypeClass *)this), a2); /*0x748024*/
+    result = ((TechnoTypeClass *)(((TechnoTypeClass *)this)))->SaveLoad_Prefix( a2); /*0x748024*/
     if ( result >= 0 ) /*0x74802b*/
     {
       if ( this ) /*0x74802f*/

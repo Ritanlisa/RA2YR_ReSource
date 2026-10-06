@@ -254,7 +254,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
     if ( v3 != 3 ) /*0x47978e*/
     {
 LABEL_5:
-      Debug::Log(); /*0x479790*/
+      Debug::Log("Attempt to open non-removable volume for locking or ejection\n"); /*0x479790 G57c1: IDA 0x479795 push offset g_Str_Attempt_to_open_non_removable_*/
       return; /*0x4797a2*/
     }
     v4 = 0x80000000; /*0x4797a5*/
@@ -271,7 +271,7 @@ LABEL_5:
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479822*/
   {
     GetLastError(); /*0x479824*/
-    Debug::Log(); /*0x47982c*/
+    Debug::Log("DeviceIoControl failed to lock volume. Error %d - %s\n"); /*0x47982c G57c1: IDA 0x47982c push offset g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E*/
     Sleep(0x1F4u); /*0x479839*/
     if ( ++v6 >= 20 ) /*0x479843*/
       goto LABEL_18; /*0x479843*/
@@ -281,7 +281,7 @@ LABEL_5:
     || !DeviceIoControl(FileA, 0x2D4808u, 0, 0, 0, 0, &BytesReturned, 0) )
   {
     GetLastError(); /*0x4798d4*/
-    Debug::Log(); /*0x4798dc*/
+    Debug::Log("DeviceIoControl failed to eject media. Error %d - %s\n"); /*0x4798dc G57c1: IDA 0x4798dc push offset g_Str_Trace_DeviceIoControl_failed_to_eject_media__E*/
   }
 LABEL_18:
   CloseHandle(FileA); /*0x4798e4*/
@@ -310,7 +310,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479bd8*/
     {
   LABEL_3:
-            Debug::Log();
+            Debug::Log("Attempt to open non-removable volume for locking or ejection\n") /*G57c1: IDA 0x479bdf push offset g_Str_Attempt_to_open_non_removable_*/;
       return 0; /*0x479bee*/
     }
     v4 = 0x80000000; /*0x479bf1*/
@@ -327,7 +327,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479c70*/
   {
     GetLastError(); /*0x479c72*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to lock volume. Error %d - %s\n") /*G57c1: IDA 0x479c7e push offset g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E*/;
     Sleep(0x1F4u); /*0x479c8b*/
     if ( ++v6 >= 20 ) /*0x479c91*/
       goto LABEL_17; /*0x479c91*/
@@ -341,7 +341,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   else
   {
     GetLastError(); /*0x479d2e*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to eject media. Error %d - %s\n") /*G57c1: IDA 0x479d3a push offset g_Str_Trace_DeviceIoControl_failed_to_eject_media__E*/;
   }
   LABEL_17:
   CloseHandle(FileA); /*0x479d49*/
@@ -369,7 +369,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479d94*/
     {
   LABEL_3:
-            Debug::Log();
+            Debug::Log("Attempt to open non-removable volume for locking or ejection\n") /*G57c1: IDA 0x479d9b push offset g_Str_Attempt_to_open_non_removable_*/;
       return 0; /*0x479dab*/
     }
     v4 = 0x80000000; /*0x479dae*/
@@ -386,7 +386,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479e2f*/
   {
     GetLastError(); /*0x479e32*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to lock volume. Error %d - %s\n") /*G57c1: IDA 0x479e3a push offset g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E*/;
     Sleep(0x1F4u); /*0x479e47*/
     if ( ++v6 >= 20 ) /*0x479e4d*/
       goto LABEL_13; /*0x479e4d*/
@@ -395,7 +395,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
   if ( !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0) ) /*0x479e6e*/
   {
     GetLastError(); /*0x479e7f*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to prevent media removal. Error %d - %s\n") /*G57c1: IDA 0x479e87 push offset g_Str_Trace_DeviceIoControl_failed_to_prevent_media_*/;
   }
   LABEL_13:
   for ( i = 0; i < 20; ++i ) /*0x479e8f*/
@@ -403,7 +403,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     if ( DeviceIoControl(FileA, 0x9001Cu, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479ea6*/
       break; /*0x479eae*/
     GetLastError(); /*0x479eb1*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to unlock volume. Error %d - %s\n") /*G57c1: IDA 0x479eb9 push offset g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_*/;
     Sleep(0x1F4u); /*0x479ec6*/
   }
   CloseHandle(FileA); /*0x479ecf*/
@@ -431,7 +431,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479f24*/
     {
   LABEL_3:
-            Debug::Log();
+            Debug::Log("Attempt to open non-removable volume for locking or ejection\n") /*G57c1: IDA 0x479f2b push offset g_Str_Attempt_to_open_non_removable_*/;
       return 0; /*0x479f3b*/
     }
     v4 = 0x80000000; /*0x479f3e*/
@@ -448,7 +448,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479fbf*/
   {
     GetLastError(); /*0x479fc2*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to lock volume. Error %d - %s\n") /*G57c1: IDA 0x479fca push offset g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E*/;
     Sleep(0x1F4u); /*0x479fd7*/
     if ( ++v6 >= 20 ) /*0x479fdd*/
       goto LABEL_13; /*0x479fdd*/
@@ -457,7 +457,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
   if ( !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0) ) /*0x479ffe*/
   {
     GetLastError(); /*0x47a00f*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to prevent media removal. Error %d - %s\n") /*G57c1: IDA 0x47a017 push offset g_Str_Trace_DeviceIoControl_failed_to_prevent_media_*/;
   }
   LABEL_13:
   for ( i = 0; i < 20; ++i ) /*0x47a01f*/
@@ -465,7 +465,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     if ( DeviceIoControl(FileA, 0x9001Cu, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x47a036*/
       break; /*0x47a03e*/
     GetLastError(); /*0x47a041*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to unlock volume. Error %d - %s\n") /*G57c1: IDA 0x47a049 push offset g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_*/;
     Sleep(0x1F4u); /*0x47a056*/
   }
   CloseHandle(FileA); /*0x47a05f*/
@@ -487,12 +487,12 @@ void ObjectClass::sub_47A080(DWORD a2)
   FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a0b3*/
   if ( !(uint8_t)CDROM::LockVolume((int)this, FileA, a2, 0, 0) ) /*0x47a0ba*/
   {
-    Debug::Log(); /*0x47a0cf*/
+    Debug::Log("Unable to lock volume %c:\n"); /*0x47a0cf G57c1: IDA 0x47a0cf push offset g_Str_Trace_Unable_to_lock_volume__c_*/
     return; /*0x47a0de*/
   }
   if ( !CDROM::DeviceIoControl(FileA, a2) ) /*0x47a0e5*/
   {
-    Debug::Log(); /*0x47a0fa*/
+    Debug::Log("Could not unlock media from drive %c:\n"); /*0x47a0fa G57c1: IDA 0x47a0fa push offset aCouldNotUnlock*/
     DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, a2); /*0x47a105*/
     return; /*0x47a111*/
   }
@@ -503,9 +503,9 @@ void ObjectClass::sub_47A080(DWORD a2)
   if ( !DeviceIoControl(FileA, 1u, InBuffer, 0x1Cu, InBuffer, 0x1Cu, &BytesReturned, 0) ) /*0x47a14f*/
   {
     GetLastError(); /*0x47a160*/
-    Debug::Log(); /*0x47a16c*/
+    Debug::Log("DeviceIoControl failed to perform DOS IO control function. Error %d - %s\n"); /*0x47a16c G57c1: IDA 0x47a16c push offset g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO*/
 LABEL_8:
-    Debug::Log(); /*0x47a17d*/
+    Debug::Log("Could not eject media from drive %c:\n"); /*0x47a17d G57c1: IDA 0x47a186 push offset aCouldNotEjectM*/
     goto LABEL_9; /*0x47a186*/
   }
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a17b*/
@@ -544,7 +544,7 @@ int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
     if ( result ) /*0x47a98b*/
       break; /*0x47a98b*/
     GetLastError(); /*0x47a98f*/
-        Debug::Log();
+        Debug::Log("DeviceIoControl failed to perform DOS IO control function. Error %d - %s\n") /*G57c1: IDA 0x47a99b push offset g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO*/;
   LABEL_5:
     IDA_LOBYTE(result) = 0; /*0x47a9ac*/
     if ( v4 == 8 ) /*0x47a9b1*/
@@ -2029,7 +2029,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   ((INIClass *)(INIClass *)this)->WriteToString( (int)&v6); /*0x4745c5*/
   ((SHA1 *)(&v6))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
-  Pipe::Dtor( (void *a1 =)((Pipe *)&v6)); /*0x4745df*/
+  ((Pipe *)(((Pipe *)&v6)))->Dtor(); /*0x4745df*/
   INIClass::ReadBase64Data( /*0x4745ee*/
     (char *)this,
     (uint8_t *)g_INI_Key_Digest,
@@ -2078,7 +2078,7 @@ int E4Recv_476E20::sub_476E20()
   ((INIClass *)(INIClass *)this)->WriteToString( (int)&v3); /*0x476e74*/
   ((SHA1 *)(&v3))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
-  return Pipe::Dtor( (void *a1 =)((Pipe *)&v3)); /*0x476e93*/
+  return ((Pipe *)(((Pipe *)&v3)))->Dtor(); /*0x476e93*/
 
 }
 } // namespace gamemd
@@ -2283,7 +2283,7 @@ int sub_479900(char a1)
   {
     if ( v1 != 3 ) /*0x479933*/
     {
-      Debug::Log(); /*0x47993a*/
+      Debug::Log("Attempt to open non-removable volume for locking or ejection\n"); /*0x47993a G57c1: IDA 0x47993a push offset g_Str_Attempt_to_open_non_removable_*/
       return -1; /*0x47994a*/
     }
     v3 = 0x80000000; /*0x47994d*/
@@ -2295,7 +2295,7 @@ int sub_479900(char a1)
   sprintf(FileName, "\\\\.\\%c:", a1 + 65); /*0x479964*/
   FileA = CreateFileA(FileName, v3, 3u, 0, 3u, 0, 0); /*0x479982*/
   if ( FileA == (HANDLE)-1 ) /*0x479987*/
-    Debug::Log(); /*0x47998f*/
+    Debug::Log("Unable to open drive %c: for ejection\n"); /*0x47998f G57c1: IDA 0x47998f push offset g_Str_Trace_Unable_to_open_drive__c__for_ejection*/
   return (int)FileA; /*0x479945*/
 }
 } // namespace gamemd
@@ -2312,7 +2312,7 @@ char sub_4799D0(HANDLE hDevice)
   while ( !DeviceIoControl(v1, 0x90018u, 0, 0, 0, 0, (LPDWORD)&hDevice, 0) ) /*0x479a03*/
   {
     GetLastError(); /*0x479a06*/
-    Debug::Log(); /*0x479a0e*/
+    Debug::Log("DeviceIoControl failed to lock volume. Error %d - %s\n"); /*0x479a0e G57c1: IDA 0x479a0e push offset g_Str_Trace_DeviceIoControl_failed_to_lock_volume__E*/
     Sleep(0x1F4u); /*0x479a1b*/
     if ( ++v2 >= 20 ) /*0x479a21*/
       return 0; /*0x479a29*/
@@ -2333,7 +2333,7 @@ char sub_479A40(HANDLE hDevice)
   while ( !DeviceIoControl(v1, 0x9001Cu, 0, 0, 0, 0, (LPDWORD)&hDevice, 0) ) /*0x479a73*/
   {
     GetLastError(); /*0x479a76*/
-    Debug::Log(); /*0x479a7e*/
+    Debug::Log("DeviceIoControl failed to unlock volume. Error %d - %s\n"); /*0x479a7e G57c1: IDA 0x479a7e push offset g_Str_Trace_DeviceIoControl_failed_to_unlock_volume_*/
     Sleep(0x1F4u); /*0x479a8b*/
     if ( ++v2 >= 20 ) /*0x479a91*/
       return 0; /*0x479a99*/
@@ -2350,33 +2350,33 @@ char ObjectClass::sub_47A1B0(DWORD BytesReturned)
   HANDLE FileA; // esi
   char v5; // bl
 
-  Debug::Log(); /*0x47a1bc*/
-  Debug::Log(); /*0x47a1d6*/
+  Debug::Log("CDControlClass::Lock_CD_Drive_95\n"); /*0x47a1bc G57c1: IDA 0x47a1bc push offset aCdcontrolclass*/
+  Debug::Log("Preventing ejection on CD drive %c\n"); /*0x47a1d6 G57c1: IDA 0x47a1d6 push offset aPreventingEjec*/
   LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a1e0*/
   FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a203*/
-  Debug::Log(); /*0x47a205*/
+  Debug::Log("About to lock logical volume to enable exclusive access\n"); /*0x47a205 G57c1: IDA 0x47a205 push offset aAboutToLockLog*/
   if ( (uint8_t)CDROM::LockVolume((int)this, FileA, BytesReturned, 0, 0) ) /*0x47a218*/
   {
-    Debug::Log(); /*0x47a244*/
-    Debug::Log(); /*0x47a24e*/
+    Debug::Log("Volume locked OK\n"); /*0x47a244 G57c1: IDA 0x47a244 push offset aVolumeLockedOk*/
+    Debug::Log("About to prevent CD tray ejection\n"); /*0x47a24e G57c1: IDA 0x47a24e push offset aAboutToPrevent*/
     if ( sub_47A560(FileA, BytesReturned) ) /*0x47a25a*/
     {
-      Debug::Log(); /*0x47a280*/
+      Debug::Log("CD tray ejection disabled OK\n"); /*0x47a280 G57c1: IDA 0x47a280 push offset aCdTrayEjection*/
       v5 = 1; /*0x47a285*/
     }
     else
     {
-      Debug::Log(); /*0x47a26f*/
+      Debug::Log("Could not lock CD tray in drive %c:\n"); /*0x47a26f G57c1: IDA 0x47a26f push offset aCouldNotLockCd*/
       v5 = 0; /*0x47a277*/
     }
     DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a28f*/
     CloseHandle(FileA); /*0x47a295*/
-    Debug::Log(); /*0x47a2af*/
+    Debug::Log("CDControlClass::Lock_CD_Drive_95 returning %s\n"); /*0x47a2af G57c1: IDA 0x47a2af push offset aCdcontrolclass_0*/
     return v5; /*0x47a2b7*/
   }
   else
   {
-    Debug::Log(); /*0x47a22d*/
+    Debug::Log("Unable to lock volume %c:\n"); /*0x47a22d G57c1: IDA 0x47a22d push offset g_Str_Trace_Unable_to_lock_volume__c_*/
     return 0; /*0x47a235*/
   }
 
@@ -2391,33 +2391,33 @@ char ObjectClass::sub_47A2D0(DWORD BytesReturned)
   HANDLE FileA; // esi
   char v5; // bl
 
-  Debug::Log(); /*0x47a2dc*/
-  Debug::Log(); /*0x47a2f6*/
+  Debug::Log("CDControlClass::Unlock_CD_Drive_95\n"); /*0x47a2dc G57c1: IDA 0x47a2dc push offset aCdcontrolclass_1*/
+  Debug::Log("Allowing ejection on CD drive %c\n"); /*0x47a2f6 G57c1: IDA 0x47a2f6 push offset aAllowingEjecti*/
   LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a300*/
   FileA = CreateFileA((LPCSTR)(g_Str_____vwin32), 0, 0, 0, 0, 0x4000000u, 0); /*0x47a323*/
-  Debug::Log(); /*0x47a325*/
+  Debug::Log("About to lock logical volume to enable exclusive access\n"); /*0x47a325 G57c1: IDA 0x47a325 push offset aAboutToLockLog*/
   if ( (uint8_t)CDROM::LockVolume((int)this, FileA, BytesReturned, 0, 0) ) /*0x47a338*/
   {
-    Debug::Log(); /*0x47a364*/
-    Debug::Log(); /*0x47a36e*/
+    Debug::Log("Volume locked OK\n"); /*0x47a364 G57c1: IDA 0x47a364 push offset aVolumeLockedOk*/
+    Debug::Log("About to allow CD tray ejection\n"); /*0x47a36e G57c1: IDA 0x47a36e push offset aAboutToAllowCd*/
     if ( CDROM::DeviceIoControl(FileA, BytesReturned) ) /*0x47a37a*/
     {
-      Debug::Log(); /*0x47a3a0*/
+      Debug::Log("CD tray ejection enabled OK\n"); /*0x47a3a0 G57c1: IDA 0x47a3a0 push offset aCdTrayEjection_0*/
       v5 = 1; /*0x47a3a5*/
     }
     else
     {
-      Debug::Log(); /*0x47a38f*/
+      Debug::Log("Could not unlock CD tray in drive %c:\n"); /*0x47a38f G57c1: IDA 0x47a38f push offset aCouldNotUnlock_0*/
       v5 = 0; /*0x47a397*/
     }
     DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a3af*/
     CloseHandle(FileA); /*0x47a3b5*/
-    Debug::Log(); /*0x47a3cf*/
+    Debug::Log("CDControlClass::Unlock_CD_Drive_95 returning %s\n"); /*0x47a3cf G57c1: IDA 0x47a3cf push offset aCdcontrolclass_2*/
     return v5; /*0x47a3d7*/
   }
   else
   {
-    Debug::Log(); /*0x47a34d*/
+    Debug::Log("Unable to lock volume %c:\n"); /*0x47a34d G57c1: IDA 0x47a34d push offset g_Str_Trace_Unable_to_lock_volume__c_*/
     return 0; /*0x47a355*/
   }
 
@@ -2444,7 +2444,7 @@ bool sub_47A560(HANDLE hDevice, DWORD BytesReturned)
   if ( !DeviceIoControl(hDevice, 1u, InBuffer, 0x1Cu, InBuffer, 0x1Cu, &BytesReturned, 0) ) /*0x47a5d2*/
   {
     GetLastError(); /*0x47a5e6*/
-    Debug::Log(); /*0x47a5f2*/
+    Debug::Log("DeviceIoControl failed to perform DOS IO control function. Error %d - %s\n"); /*0x47a5f2 G57c1: IDA 0x47a5f2 push offset g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO*/
     return 0; /*0x47a5ff*/
   }
   return (InBuffer[6] & 1) == 0; /*0x47a607*/
@@ -2464,7 +2464,7 @@ bool sub_47A620(HANDLE hDevice, DWORD BytesReturned)
   if ( !DeviceIoControl(hDevice, 1u, InBuffer, 0x1Cu, InBuffer, 0x1Cu, &BytesReturned, 0) ) /*0x47a666*/
   {
     GetLastError(); /*0x47a678*/
-    Debug::Log(); /*0x47a684*/
+    Debug::Log("DeviceIoControl failed to perform DOS IO control function. Error %d - %s\n"); /*0x47a684 G57c1: IDA 0x47a684 push offset g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO*/
     return 0; /*0x47a691*/
   }
   return (InBuffer[6] & 1) == 0; /*0x47a699*/

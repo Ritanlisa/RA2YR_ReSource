@@ -151,7 +151,7 @@ LABEL_11:
         v12 = (void (*)(HWND, int))ShowWindow; /*0x4f148f*/
         ShowWindow(hDlg, 0); /*0x4f1497*/
         Options_Constructor = (const char **)LoadOptions::LoadOptions(v28); /*0x4f14a0*/
-        Options::PrepareSaveLoadDlg(Options_Constructor); /*0x4f14a7*/
+        ((Options *)Options_Constructor)->PrepareSaveLoadDlg(); /*0x4f14a7*/
         v16 = v28; /*0x4f14ac*/
       }
       else
@@ -227,9 +227,9 @@ LABEL_39:
         v19 = (wchar_t *)(3 - SendMessageA(v18, 0x400u, 0, 0)); /*0x4f156e*/
         if ( v19 != (wchar_t *)(dword_A8DB9C) ) /*0x4f1577*/
         {
-          if ( ((Timer*)&dword_A8EE40)->GetRemainingMs() ) /*0x4f157e*/
+          if ( ((gamemd::Timer*)&dword_A8EE40)->GetRemainingMs() ) /*0x4f157e*/
           {
-            ((gamemd::Debug *)this)->Log(); /*0x4f15eb*/
+            Debug::Log("Ignoring latency change to avoid cheating\n"); /*0x4f15eb G57c1: IDA 0x4f15eb push offset aIgnoringLatenc*/
           }
           else
           {
@@ -239,7 +239,7 @@ LABEL_39:
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
             v20 = (char *)(((EventClass*)(gamemd::AnimClass *)(v31))->Add2(*((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0x24u), (void *)((int)v19))); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
-            ((gamemd::Debug *)this)->Log(); /*0x4f15dc*/
+            Debug::Log("LATENCYFUDGE event created - %d\n"); /*0x4f15dc G57c1: IDA 0x4f15dc push offset aLatencyfudgeEv*/
           }
         }
       }
@@ -249,7 +249,7 @@ LABEL_39:
         v22 = 6 - SendMessageA(v21, 0x400u, 0, 0); /*0x4f1614*/
         if ( *(unsigned int *)dword_A8EB60 != v22 ) /*0x4f161d*/
         {
-          if ( !((Timer*)&dword_A8EE30)->GetRemainingMs() ) /*0x4f1628*/
+          if ( !((gamemd::Timer*)&dword_A8EE30)->GetRemainingMs() ) /*0x4f1628*/
           {
             ((gamemd::Timer *)(v25))->Init(0x384u); /*0x4f163a*/
             dword_A8EE30 = v25[0]; /*0x4f164e*/
@@ -260,7 +260,7 @@ LABEL_39:
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
           }
-          ((gamemd::Debug *)this)->Log(); /*0x4f169e*/
+          Debug::Log("Ignoring speed change to avoid cheating\n"); /*0x4f169e G57c1: IDA 0x4f169e push offset aIgnoringSpeedC*/
         }
       }
     }
@@ -399,7 +399,7 @@ char Options::Screen_Dialog()
         Process(v2); /*0x55fcf0*/
       }
       ((Options *)(v1))->Screen_Save(); /*0x55fcff*/
-      ((Dialog*)v1)->Destroy(); /*0x55fd06*/
+      ((gamemd::Dialog*)v1)->Destroy(); /*0x55fd06*/
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
       v9 = -1; /*0x55fd2d*/
@@ -417,7 +417,7 @@ char Options::Screen_Dialog()
           LOBYTE(v5) = 0; /*0x55fd73*/
           Process(v5); /*0x55fd75*/
         }
-        ((Dialog*)v4)->Destroy(); /*0x55fd84*/
+        ((gamemd::Dialog*)v4)->Destroy(); /*0x55fd84*/
       }
     }
     if ( dwNewLong != 1486 ) /*0x55fd1c*/
@@ -814,7 +814,7 @@ void Options::SetScoreVolume(float volume, int pad, void *a3_1)
   EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerChannel_Theme), v5); /*0x5fa4d6*/
   LOWORD(v6) = Math::RoundToInt(*((float *)this + 16) * 255.0); /*0x5fa4e4*/
   TechnoTypeClass::CheckFlag(&unk_A83D10, v6); /*0x5fa4ef*/
-  return Debug::Log(); /*0x5fa50b*/
+  return Debug::Log("ScoreVolume = %f\n"); /*0x5fa50b G57c1: IDA 0x5fa502 push offset g_Str_Trace_ScoreVolume____f*/
 
 }
 } // namespace gamemd
@@ -836,7 +836,7 @@ void Options::SetSoundVolume(float volume, int pad, void *a3_1)
   EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerChannel_Score), v4); /*0x5fa546*/
   if ( pad ) /*0x5fa551*/
     PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, 1.0, 0); /*0x5fa56a*/
-  return Debug::Log(); /*0x5fa586*/
+  return Debug::Log("SoundVolume = %f\n"); /*0x5fa586 G57c1: IDA 0x5fa57d push offset g_Str_Trace_SoundVolume____f*/
 
 }
 } // namespace gamemd
@@ -856,12 +856,12 @@ void Options::SetVoiceVolume(float volume, int pad, void *a3_1)
     v4 = volume; /*0x5fa5a4*/
   *((float *)this + 15) = v4; /*0x5fa5b0*/
   LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fa5b9*/
-  ThemeClass::GetField(v5); /*0x5fa5c0*/
+  ((ThemeClass *)v5)->GetField(); /*0x5fa5c0*/
   LOWORD(v6) = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5fa5ce*/
   EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerChannel_Voice), v6); /*0x5fa5db*/
   if ( pad ) /*0x5fa5e6*/
     PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, *((float *)this + 15), 0); /*0x5fa5ff*/
-  return Debug::Log(); /*0x5fa61b*/
+  return Debug::Log("VoiceVolume = %f\n"); /*0x5fa61b G57c1: IDA 0x5fa612 push offset g_Str_Trace_VoiceVolume____f*/
 
 }
 } // namespace gamemd

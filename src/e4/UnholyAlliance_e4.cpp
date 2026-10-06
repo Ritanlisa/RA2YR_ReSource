@@ -115,7 +115,7 @@ namespace gamemd {  // G42.18c ns repair
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
 
-  return stru_A8B250.__pad_0[8] && ((gamemd::MPCooperative *)uint8_t)ScenarioClass::MissionStubReturnZero2((gamemd::MPCooperative *)(int *)&aP0->m_Enabled); /*0x5cb41c*/
+  return stru_A8B250.__pad_0[8] && ((gamemd::MPCooperative *)uint8_t)((ScenarioClass *)(&aP0->m_Enabled))->MissionStubReturnZero2(); /*0x5cb41c*/
 
 }
 }  // G42.18c ns repair

@@ -45,7 +45,7 @@ namespace gamemd {
 void ToolTipManager::read(int a1)
 {
 
-  ((gamemd::Debug *)this)->Log(); /*0x724bbd*/
+  Debug::Log("ToolTip: %s\n"); /*0x724bbd G57c1: IDA 0x724bbd push offset aTooltipS*/
 
 }
 } // namespace gamemd

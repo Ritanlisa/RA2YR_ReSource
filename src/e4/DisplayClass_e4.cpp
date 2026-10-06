@@ -113,7 +113,7 @@ int DisplayClass::LoadTypeData()
   unsigned int v6[4]; // [esp+4h] [ebp-20h] BYREF
   int v7[4]; // [esp+14h] [ebp-10h] BYREF
 
-  ((MapClass *)(MapClass *)this)->Destru_vt05(); /*0x4a8856*/
+  ((gamemd::MapClass*)(gamemd::MapClass*)this)->Destru_vt05(); /*0x4a8856*/
   stru_8A0390.health = SearchMIXFile((char *)(aPlaceShp), 0); /*0x4a886e*/
   dword_8A072C = (unsigned int)SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
   Viewport = ((Display *)v7)->GetViewport(); /*0x4a8881*/
@@ -135,7 +135,7 @@ int DisplayClass::SetSize()
   LayerClass *v2; // esi
   int result; // eax
 
-  ((MapClass*)(gamemd::MapClass *)this)->Destru_vt07(); /*0x4a88c3*/
+  ((gamemd::MapClass*)(gamemd::MapClass *)this)->Destru_vt07(); /*0x4a88c3*/
   *(unsigned int *)&this->__pad_1198[12] = 0; /*0x4a88cd*/
   this->DisplayClass_field_0x11A8 = 0; /*0x4a88d3*/
   *(unsigned int *)this->__pad_11AC = -1; /*0x4a88d9*/
@@ -360,7 +360,7 @@ LABEL_36:
     }
   }
   if ( v30 ) /*0x4a9c55*/
-    CellClass::SpiralFindClosest((gamemd::IUnknown *)((int)v5),(gamemd::MouseClass *)(aP2),(IUnknown *)(v39)); /*0x4a9c67*/
+    ((CellClass *)(((int)v5)))->SpiralFindClosest((gamemd::MouseClass *)(aP2),(IUnknown *)(v39)); /*0x4a9c67*/
   if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4a9c88*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4a9c8c*/
   return (gamemd::Tactical **)(v30); /*0x4a9c91*/
@@ -474,7 +474,7 @@ LABEL_13:
     }
   }
   if ( v29 ) /*0x4a9fff*/
-    CellClass::SpiralFindClosest((gamemd::IUnknown *)((int)v5),(gamemd::MouseClass *)(aP2),(IUnknown *)(v28)); /*0x4aa011*/
+    ((CellClass *)(((int)v5)))->SpiralFindClosest((gamemd::MouseClass *)(aP2),(IUnknown *)(v28)); /*0x4aa011*/
   if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4aa032*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4aa036*/
   return (gamemd::VectorClass_flat **)(v29); /*0x4aa03b*/
@@ -588,7 +588,7 @@ LABEL_13:
     }
   }
   if ( v8 ) /*0x4aa266*/
-    CellClass::SpiralFindClosest((gamemd::IUnknown *)(v28),(gamemd::MouseClass *)(aP2),(IUnknown *)(v27)); /*0x4aa27c*/
+    ((CellClass *)(v28))->SpiralFindClosest((gamemd::MouseClass *)(aP2),(IUnknown *)(v27)); /*0x4aa27c*/
   return v8; /*0x4aa281*/
 
 }
@@ -663,7 +663,7 @@ void * DisplayClass::Draw(int a2)
   v6 = v5[1]; /*0x4ae54a*/
   v17[0] = *v5 - v3; /*0x4ae54d*/
   v17[1] = v6 - (unsigned int)v4; /*0x4ae557*/
-  Tactical::MouseOver( (gamemd::MouseClass *)(v17), (gamemd::MouseClass *)(v16), (gamemd::MouseClass *)(v19), (MouseClass *)(&v15), (MouseClass *)(&v14[3]), (MouseClass *)((bool *)&a2)); /*0x4ae571*/
+  ((Tactical *)(v17))->MouseOver( (gamemd::MouseClass *)(v16), (gamemd::MouseClass *)(v19), (MouseClass *)(&v15), (MouseClass *)(&v14[3]), (MouseClass *)((bool *)&a2)); /*0x4ae571*/
   if ( LOBYTE(stru_A8EB00.__pad_CD4[1]) ) /*0x4ae57e*/
   {
     swprintf(&word_8A0630, (const size_t)aDD_2, (const wchar_t *const)(v19[0] / 256), v19[1] / 256); /*0x4ae5ac*/
@@ -1019,7 +1019,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v11, &v12); /*0x4aac8d*/
   v12 -= DSurface_ViewBounds.field_0; /*0x4aaca3*/
   v13 = (HWND)((char *)v13 - dword_886FA4); /*0x4aacb1*/
-  Tactical::MouseOver( (gamemd::MouseClass *)(&v12), v9, v14, (MouseClass *)(&v10), (MouseClass *)(&v8[1]), (MouseClass *)(&a2)); /*0x4aacd4*/
+  ((Tactical *)(&v12))->MouseOver( v9, v14, (MouseClass *)(&v10), (MouseClass *)(&v8[1]), (MouseClass *)(&a2)); /*0x4aacd4*/
   if ( *(unsigned int *)v9 != dword_88095C ) /*0x4aace5*/
     ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove(v11,(unsigned int *)(v9)); /*0x4aad04*/
   return ((COMObject *)((GadgetClass *)this))->ActivateThunk(0, a3, 0); /*0x4aad19*/
@@ -1116,7 +1116,7 @@ namespace gamemd {
 DisplayClass * DisplayClass::Read(char * Block, char a2)
 {
 
-  ((MapClass*)(char *)this)->Destruct(); /*0x4aebf3*/
+  ((gamemd::MapClass*)(char *)this)->Destruct(); /*0x4aebf3*/
   if ( (a2 & 1) != 0 ) /*0x4aebfd*/
     __3_YAXPAX_Z(this); /*0x4aec00*/
   return (char *)this; /*0x4aec0a*/
@@ -1129,7 +1129,7 @@ int * DisplayClass::processDisplayMode(char a2)
 {
 
   ((Vector *)((int)((unsigned int *)this + 1)))->Clear(); /*0x4aec36*/
-  Straw::Dtor( (void *a1 =)((Straw *)this)); /*0x4aec3d*/
+  ((Straw *)(((Straw *)this)))->Dtor(); /*0x4aec3d*/
   if ( (a2 & 1) != 0 ) /*0x4aec47*/
     __3_YAXPAX_Z(this); /*0x4aec4a*/
   return (int *)this->vtable1; /*0x4aec54*/

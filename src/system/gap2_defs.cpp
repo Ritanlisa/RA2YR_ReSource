@@ -380,7 +380,7 @@ void CCFileClass::Create() {
     }
     else
     {
-      Debug::Log(); /*0x430a32*/
+      Debug::Log("Failed to load BeaconArt"); /*0x430a32 G57c1: IDA 0x430a32 push offset aFailedToLoadBe*/
     }
     RawFileClass::Construct(&v5, (int)aRdrbeacnShp); /*0x430a43*/
     v3 = (__int16 *)CCFileClass::ReadEntireFile((CCFileClass *)&v5); /*0x430a4c*/
@@ -395,7 +395,7 @@ void CCFileClass::Create() {
     }
     else
     {
-      Debug::Log(); /*0x430a9c*/
+      Debug::Log("Failed to load RadarBeaconArt"); /*0x430a9c G57c1: IDA 0x430a9c push offset aFailedToLoadRa*/
     }
     RawFileClass::Dtor(&v5); /*0x430aa8*/
     RawFileClass::Dtor(&v6); /*0x430ab1*/

@@ -775,7 +775,7 @@ unsigned char * CreateTeamCommand::performAction_30()
     ((MapClass *)v7)->UnselectAll_ClearLimboLaunchers(); /*0x536668*/
     (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536671*/
     ((TacticalClass *)v8)->InterpolateView(); /*0x53667c*/
-    return (AnimClass *)MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 1); /*0x536688*/
+    return (AnimClass *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 1); /*0x536688*/
   }
   return result; /*0x53668e*/
 
@@ -1223,7 +1223,7 @@ unsigned char * CreateTeamCommand::performAction_69()
     ((MapClass *)v7)->UnselectAll_ClearLimboLaunchers(); /*0x536ad8*/
     (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536ae1*/
     ((TacticalClass *)v8)->InterpolateView(); /*0x536aec*/
-    return (AnimClass *)MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 1); /*0x536af8*/
+    return (AnimClass *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 1); /*0x536af8*/
   }
   return result; /*0x536afe*/
 
@@ -1520,7 +1520,7 @@ wchar_t * CreateTeamCommand::performAction_99()
   if ( (int)g_SelectionManager > 0 ) /*0x536e07*/
   {
     TacticalClass::InterpolateView(); /*0x536e0e*/
-    return (wchar_t *)MapClass::MarkForRedraw( (int)(&MapClass_Instance), 1); /*0x536e1a*/
+    return (wchar_t *)((MapClass *)((int)(&MapClass_Instance)))->MarkForRedraw( 1); /*0x536e1a*/
   }
   return result; /*0x536e1f*/
 

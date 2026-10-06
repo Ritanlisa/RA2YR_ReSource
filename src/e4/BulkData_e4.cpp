@@ -29,7 +29,7 @@ void BulkData::InitMissionHashing()
   unsigned int v5; // ebx
   DWORD Time; // [esp+10h] [ebp-4h] BYREF
 
-  ((SessionClass*)(gamemd::SessionClass *)this)->LoadMissionList(); /*0x697ad7*/
+  ((gamemd::SessionClass*)(gamemd::SessionClass *)this)->LoadMissionList(); /*0x697ad7*/
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash((unsigned int *)(&Time), v2); /*0x697af1*/
@@ -46,7 +46,7 @@ void BulkData::InitMissionHashing()
     }
   }
   *((unsigned int *)this + 81) = Time; /*0x697b41*/
-  ((gamemd::Debug *)this)->Log(); /*0x697b47*/
+  Debug::Log("Session one time init. UniqueID is %08x\n"); /*0x697b47 G57c1: IDA 0x697b47 push offset aSessionOneTime*/
 
 }
 } // namespace gamemd

@@ -226,7 +226,7 @@ namespace gamemd {
 TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  ((LocomotionClass *)(LocomotionClass *)this)->Construct(); /*0x72a213*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass*)this)->Construct(); /*0x72a213*/
   if ( (a2 & 1) != 0 ) /*0x72a21d*/
     __3_YAXPAX_Z(this); /*0x72a220*/
   return this->LocomotionClass; /*0x72a22a*/

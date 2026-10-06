@@ -878,7 +878,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     Matrix3x3::ApplyCol0(v37.m_Data, v28); /*0x514206*/
     ((Matrix3x3 *)(v37.m_Data))->RotateX(*(float *)(a1->vtable2 + 808)); /*0x514219*/
     Matrix3D::RotateZ(v37.m_Data, *(float *)(a1->vtable2 + 812)); /*0x51422c*/
-    Transform = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v40, (unsigned int *)(a3)); /*0x51423b*/
+    Transform = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v40, (unsigned int *)(a3)); /*0x51423b*/
     Transform::Copy(v38, Transform); /*0x514245*/
     v23 = MultiplyMatrix3x4(v41, (float *)v39.m_Data, (float *)&v38[0].Transform_field_00); /*0x514262*/
     v10 = MultiplyMatrix3x4(v42, v23, (float *)v37.m_Data); /*0x514270*/
@@ -886,7 +886,7 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
   }
   if ( (*(uint8_t (**)(TechnoClass *))(a1->vtable1 + 96))( (TechnoClass *)(a1)) ) /*0x513f88*/
   {
-    v10 = Turret::GetTransform( (signed int)((LocomotionClass *)a1), (float *)&v38[0].Transform_field_00, (unsigned int *)(a3)); /*0x51408d*/
+    v10 = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( (float *)&v38[0].Transform_field_00, (unsigned int *)(a3)); /*0x51408d*/
 LABEL_16:
     v24 = v10; /*0x514275*/
     qmemcpy( (void *)(a2), v24, 0x30u); /*0x514285*/

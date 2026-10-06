@@ -55,7 +55,7 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
     a1->CStreamClass_field_0x14 = v9; /*0x4a2d7d*/
     if ( v9 == 0x10000 ) /*0x4a2d80*/
     {
-      result = IStream::Read((IStream *)a1->CStreamClass_field_0x18, (void *)0x10000, v10); /*0x4a2d8d*/
+      result = ((IStream *)(a1->CStreamClass_field_0x18))->Read( (void *)0x10000, v10); /*0x4a2d8d*/
       if ( result < 0 ) /*0x4a2d94*/
         return result; /*0x4a2d94*/
       a1->CStreamClass_field_0x14 = 0; /*0x4a2d96*/
@@ -77,7 +77,7 @@ LABEL_23:
   }
   while ( 1 ) /*0x4a2db1*/
   {
-    result = IStream::Read((v4),(void *)0x10000, v10); /*0x4a2db1*/
+    result = ((IStream *)(v4))->Read((void *)0x10000, v10); /*0x4a2db1*/
     if ( result < 0 ) /*0x4a2db8*/
       return result; /*0x4a2ce2*/
     v6 -= 0x10000; /*0x4a2dba*/

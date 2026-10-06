@@ -61,7 +61,7 @@ bool sub_46D650()
 
   if ( dword_A8D638 != 50 ) /*0x46d65b*/
     return 0; /*0x46d80a*/
-    Debug::Log();
+    Debug::Log("Decoding Campaign Options...\n") /*G57c1: IDA 0x46d666 push offset aDecodingCampai*/;
   v0 = dword_A8EB68 != (char)dword_A8D667; /*0x46d67f*/
   dword_A8EB68 = (char)dword_A8D667; /*0x46d686*/
   v1 = (HWND)((Dialog*)(void *)0xBC6)->FindByHandle(); /*0x46d68b*/
@@ -95,7 +95,7 @@ bool sub_46D650()
     ((SessionClass *)(*v4))->GetPlayerColor(); /*0x46d733*/
     ((SessionClass *)(*v4))->GetPlayerSide(); /*0x46d73b*/
     ((SessionClass *)(*v4))->GetOption(); /*0x46d743*/
-        Debug::Log();
+        Debug::Log("Player %i %s: Start %i, Country %i, Color %i\n") /*G57c1: IDA 0x46d750 push offset aPlayerISStartI*/;
     v9 = *(v4 - 242); /*0x46d755*/
     if ( *(v4 - 2557) != v9 ) /*0x46d766*/
       v0 = 1; /*0x46d768*/
@@ -116,7 +116,7 @@ bool sub_46D650()
     if ( *(v4 - 2533) != v13 ) /*0x46d7be*/
       v0 = 1; /*0x46d7c0*/
     *(v4 - 2533) = v13; /*0x46d7c2*/
-        Debug::Log();
+        Debug::Log("AI %i: Difficulty %i, Country %i, Color %i, Start %i, Ally %i\n") /*G57c1: IDA 0x46d7eb push offset aAiIDifficultyI*/;
     ++v4; /*0x46d7f3*/
     ++v3; /*0x46d7f6*/
   }
@@ -282,7 +282,7 @@ void sub_46DA70()
       v15 = v2->u32_54E8; /*0x46dbce*/
       if ( v15 > 0 ) /*0x46dbd6*/
         ((unsigned int *)(dword_A8D25C))[v4] += v15; /*0x46dbd8*/
-            Debug::Log();
+            Debug::Log("%s: %s\n Scheme: %d\n Lost = %d\n Kills = %d\n Built = %d\n Score = %d\n") /*G57c1: IDA 0x46dc1c push offset aSSSchemeDLostD*/;
       v1 = i; /*0x46dc21*/
       v0 = v17; /*0x46dc25*/
     }
@@ -1133,7 +1133,7 @@ int sub_46D810()
   result = dword_A8DA90; /*0x46d878*/
   if ( dword_A8DA90 ) /*0x46d881*/
   {
-    Network::SendToPlayer( (int)&unk_A8E9C0, (int)&v2, 455, (wchar_t *)(1), (void)((wchar_t *)dword_A8DA90)); /*0x46d895*/
+    ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)&v2, 455, (wchar_t *)(1), (void)((wchar_t *)dword_A8DA90)); /*0x46d895*/
 // 0x541820
     return (int)(((Network *)(&unk_A8E9C0))->ReceiveLoop()); /*0x46d89f*/
   }

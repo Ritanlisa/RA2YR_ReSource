@@ -59,7 +59,7 @@ int sub_679CC0()
   {
     v1[1] = (void *)((unsigned int)(0));
     v1[2] = (void *)((unsigned int)((void *)((unsigned int)(0))));
-    GenericList::Constructor(v2); /*0x679ce2*/
+    ((GenericList *)v2)->Constructor(); /*0x679ce2*/
     ((unsigned int *)(v2))[0] = (unsigned int)((void*)&List_INIClass_INISection___vftable); /*0x679ceb*/
     memset(&((unsigned int *)(v2))[7], 0, 12); /*0x679cf8*/
     v3 = 0; /*0x679d04*/
@@ -110,7 +110,7 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
     {
       if ( !*i ) /*0x67b5c0*/
         break; /*0x67b5c2*/
-      v7 = BuildingTypeClass::FindOrCreate(i); /*0x67b5cb*/
+      v7 = ((BuildingTypeClass *)i)->FindOrCreate(); /*0x67b5cb*/
       if ( v7 /*0x67b5fb*/
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)

@@ -345,7 +345,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
     *(unsigned int *)(this + 248) = 0; /*0x75cee4*/
     *(unsigned int *)(this + 252) = 1072693248; /*0x75ceeb*/
     *(unsigned int *)(this + 256) = 0; /*0x75cef8*/
-    AnimTypeVector::Constructor( (int)((unsigned int *)(this + 260)), 0, 0); /*0x75cefe*/
+    ((AnimTypeVector *)((int)((unsigned int *)(this + 260))))->Constructor( 0, 0); /*0x75cefe*/
     *(unsigned int *)(this + 276) = 0; /*0x75cf08*/
     *(unsigned int *)(this + 280) = 10; /*0x75cf0b*/
     *(unsigned int *)(this + 260) = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x75cf0e*/
@@ -1244,7 +1244,7 @@ void* WarheadTypeClass_ReadINI()
            String,
            128) )
     {
-      v55 = WarheadTypeClass::FindOrCreate( (ObjectClass *)(String)); /*0x77296c*/
+      v55 = ((WarheadTypeClass *)(String))->FindOrCreate(); /*0x77296c*/
     }
     else
     {
@@ -1450,7 +1450,7 @@ int WarheadTypeClass::LoadType()
     {
       StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( v6->__pad_0, (CCINIClass *)(g_INI_Key_Warheads), i); /*0x6729c2*/
       if ( INIClass::GetString(v6, g_INI_Key_Warheads, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) ) /*0x6729cf*/
-        WarheadTypeClass::FindOrCreate( (ObjectClass *)(Destination)); /*0x6729dc*/
+        ((WarheadTypeClass *)(Destination))->FindOrCreate(); /*0x6729dc*/
     }
     return KeyCount > 0; /*0x6729e8*/
 }

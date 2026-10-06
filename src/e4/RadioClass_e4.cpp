@@ -65,7 +65,7 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   int v7; // ecx
   int v8; // eax
 
-  AbstractClass::COMStub_13( (void *)((int)this), (void *a1 =)(aP1)); /*0x65ab1a*/
+  AbstractClass::COMStub_13( (void *)((int)this), (aP1)); /*0x65ab1a*/
   Power::TimerProcess((&this->radioLinks)[2]); /*0x65ab28*/
   result = (&this->radioLinks)[2]; /*0x65ab2d*/
   for ( i = 0; i < result; ++i ) /*0x65ab37*/

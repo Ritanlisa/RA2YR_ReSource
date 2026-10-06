@@ -1045,7 +1045,7 @@ int InitializeVeinholeSystem(char a1)
 }
 // 0x74F3C0
 namespace gamemd {
-int _::AddRef(int a2)
+char _e4::AddRef(int a2)
 {
 
   int m_8; // esi
@@ -1075,7 +1075,7 @@ int _::AddRef(int a2)
 }
 // 0x74F400
 namespace gamemd {
-AbstractClass * * _::Release(int a2, unsigned int * a3)
+char _e4::Release(int a2, unsigned int * a3)
 {
 
   unsigned int *v4; // edi
@@ -1125,7 +1125,7 @@ AbstractClass * * _::Release(int a2, unsigned int * a3)
 }
 // 0x74F4B0
 namespace gamemd {
-void _::ddtor()
+wchar_t * _e4::ddtor()
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x74f4bd*/
@@ -1141,7 +1141,7 @@ void _::ddtor()
 
 // 0x74F4E0
 namespace gamemd {
-int _::Read(unsigned int * a2)
+int _e4::Read(unsigned int * a2)
 {
 
   int result; // eax
@@ -1165,7 +1165,7 @@ int _::Read(unsigned int * a2)
 }
 // 0x74F520
 namespace gamemd {
-unsigned int _::Write(int a2)
+unsigned int _e4::Write(int a2)
 {
 
   if ( *((unsigned char *)this + 12) ) /*0x74f520*/
@@ -2020,7 +2020,7 @@ void sub_74C3C0()
 
 // 0x74F3B0
 namespace gamemd {
-int _::Seek(int a2)
+int _e4::Seek(int a2)
 {
 
   return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x74f3ba*/
@@ -2039,7 +2039,7 @@ void E4Recv_74F63A::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_0()
 
 // 0x74F650
 namespace gamemd {
-VectorClass_flat * _::QueryInterface(unsigned int * Block, char a2)
+VectorClass_flat * _e4::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax

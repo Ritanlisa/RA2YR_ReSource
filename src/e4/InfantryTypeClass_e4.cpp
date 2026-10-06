@@ -41,7 +41,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   unsigned int *v6; // edx
   int i; // eax
 
-  TechnoTypeClass::ReadINI((char *)this,(int)(aP1), 0); /*0x5236ae*/
+  ((TechnoTypeClass *)this)->ReadINI((int)(aP1), 0); /*0x5236ae*/
   *((unsigned int *)this + 894) = -1; /*0x5236b3*/
   *((unsigned int *)this + 895) = 1; /*0x5236bd*/
   *((unsigned int *)this + 896) = 7; /*0x5236c7*/
@@ -50,11 +50,11 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   *((unsigned int *)this + 913) = 0; /*0x5236e3*/
   *((unsigned int *)this + 914) = 0; /*0x5236ea*/
   *((unsigned int *)this + 915) = 0; /*0x5236f3*/
-  AnimTypeVector::Constructor((int)((unsigned int *)((char *)this + 3664)), 0, 0); /*0x5236f9*/
+  ((AnimTypeVector *)((int)((unsigned int *)((char *)this + 3664))))->Constructor( 0, 0); /*0x5236f9*/
   *((unsigned int *)this + 920) = 0; /*0x523703*/
   *((unsigned int *)this + 921) = 10; /*0x523706*/
   *((unsigned int *)this + 916) = (unsigned int)(&vt_TypeList); /*0x523709*/
-  AnimTypeVector::Constructor((int)((unsigned int *)((char *)this + 3692)), 0, 0); /*0x523719*/
+  ((AnimTypeVector *)((int)((unsigned int *)((char *)this + 3692))))->Constructor( 0, 0); /*0x523719*/
   *((unsigned int *)this + 928) = 10; /*0x52371e*/
   *((unsigned int *)this + 927) = 0; /*0x523721*/
   *((unsigned int *)this + 923) = (unsigned int)(&vt_TypeList); /*0x523724*/
@@ -201,7 +201,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   v5 = (int)(__2_YAPAXI_Z(0x6F0u)); /*0x523b4b*/
   if ( v5 ) /*0x523b55*/
   {
-    v6 = InfantryClass::Construct(v5, v3, (int)this, ppv); /*0x523b68*/
+    v6 = ((InfantryClass *)v5)->Construct( v3, (int)this, ppv); /*0x523b68*/
     if ( v6 ) /*0x523b6c*/
     {
       v7 = a2[1] << 8; /*0x523b85*/
@@ -602,7 +602,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
     v5->Sequence[0] = 0; /*0x52497d*/
   }
   v7 = a2; /*0x524983*/
-  result = TechnoTypeClass::SaveLoad_Prefix( (ObjectTypeClass *)((TechnoTypeClass *)v5), (int)(a2)); /*0x524989*/
+  result = ((TechnoTypeClass *)(((TechnoTypeClass *)v5)))->SaveLoad_Prefix( (int)(a2)); /*0x524989*/
   v14 = result; /*0x524990*/
   if ( result >= 0 ) /*0x524994*/
   {
@@ -849,7 +849,7 @@ InfantryClass *  InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 
   v4 = (unsigned int)__2_YAPAXI_Z(0x6F0u); /*0x523b18*/
   if ( v4 ) /*0x523b22*/
-    return (InfantryClass *)InfantryClass::Construct(v4, v2, (int)this, ppv); /*0x523b2c*/
+    return (InfantryClass *)((InfantryClass *)v4)->Construct( v2, (int)this, ppv); /*0x523b2c*/
   else
     return 0; /*0x523b35*/
 

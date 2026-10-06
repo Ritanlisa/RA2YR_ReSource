@@ -740,7 +740,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3, void *a3_2)
       v16 = v14 + 1; /*0x755e76*/
       do /*0x755e8f*/
       {
-        Array::ForEach(v15, 12, 8, __0Iostream_init_QAE_XZ_8); /*0x755e83*/
+        ((Array *)v15)->ForEach( 12, 8, __0Iostream_init_QAE_XZ_8); /*0x755e83*/
         v15 += 164; /*0x755e88*/
         --v16; /*0x755e8e*/
       }
@@ -853,7 +853,7 @@ LABEL_59:
         *(unsigned char *)(*((unsigned int *)this + 5) + v29 + 162) = v111; /*0x75618a*/
         *(unsigned char *)(*((unsigned int *)this + 5) + v29 + 163) = v112; /*0x75619b*/
         *(float *)(*((unsigned int *)this + 5) + v29 + 12) = *(float *)&v101[3]; /*0x7561b3*/
-        qmemcpy((void *)(*((unsigned int *)this + 5) + v29 + 16), (const void *)Matrix::Copy12Float(v102), 0x30u); /*0x7561d2*/
+        qmemcpy((void *)(*((unsigned int *)this + 5) + v29 + 16), (const void *)((Matrix *)v102)->Copy12Float(), 0x30u); /*0x7561d2*/
         v30 = v103; /*0x7561d4*/
         v31 = v104; /*0x7561db*/
         v32 = v105; /*0x7561e2*/
@@ -1096,7 +1096,7 @@ int Voxel::ProcessColor(unsigned int *a2, float *a3)
     v13 |= 4u; /*0x75682e*/
   if ( !*(unsigned char *)(v4 + 163) ) /*0x756831*/
     v13 |= 8u; /*0x75683b*/
-  LOBYTE(result) = ((char (__usercall *)(int, int, int))funcs_756843[v13])(v4, (int)v8, (int)v19); /*0x756843*/
+  LOBYTE(result) = ((char (*)(int, int, int))funcs_756843[v13])(v4, (int)v8, (int)v19); /*0x756843*/
   return result; /*0x75684d*/
 
 }

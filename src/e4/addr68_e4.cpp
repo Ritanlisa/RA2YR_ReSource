@@ -506,7 +506,7 @@ int sub_683FB0()
   }
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 != -1 ) /*0x683ff7*/
         TimerGetTicks();
-    Debug::Log();
+    Debug::Log("Resume ElapsedTimer = %ld\n") /*G57c1: IDA 0x68400b push offset aResumeElapsedt*/;
   if ( dword_887368 ) /*0x68401d*/
     ((Tooltip *)(dword_887368))->Enable(byte_A8EB80); /*0x684026*/
   EndBufferMixer( (VolumeStruct*)(&g_MixerState->vtable1), dword_83D834); /*0x684037*/
@@ -580,7 +580,7 @@ ScenarioClass * * Mouse_Update()
   int result; // eax
 
   if ( IDA_BYTE2((&dword_A8B230)[381].vtable3) == 1 /*0x6842a6*/
-    && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) )
+    && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) ))
   {
     do /*0x6842c0*/
       (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x6842b5*/
@@ -740,7 +740,7 @@ void PostLoadInitScenario()
   ++dword_A8E7AC; /*0x684c3f*/
   for ( i = 0; i < stru_A8EB00.ObjectTypeClass[20]; ++i ) /*0x684c4c*/
     (*(void (**)(unsigned int))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[17] + 4 * i) + 1248))(*(unsigned int *)(stru_A8EB00.ObjectTypeClass[17] + 4 * i)); /*0x684c58*/
-  MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x684c6f*/
+  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x684c6f*/
   if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x684c7b*/
   {
     TacticalClass::BuildCommandBar((TabClass *)1, v1, (int)v34); /*0x684c88*/
@@ -937,7 +937,7 @@ void PostLoadInitScenario()
 }
 // 0x6851F0
 namespace gamemd {
-void ScenarioClass_Reset()
+int ScenarioClass_Reset()
 {
   int i; // esi
   int v1; // eax
@@ -1094,11 +1094,11 @@ void ScenarioClass_Reset()
   dword_87F8D8 = 0; /*0x685554*/
   g_Cell_PositionLUT = 0; /*0x68555a*/
   g_CellPositionOffset = 0; /*0x685560*/
-  Debug::Log(); /*0x685566*/
+  Debug::Log("Map.Init_Clear()\n"); /*0x685566 G57c1: IDA 0x685566 push offset aMapInitClear*/
   MouseClass::HandleClick(&MapClass_Instance); /*0x685573*/
-  Debug::Log(); /*0x68557d*/
+  Debug::Log("Logic.Init()\n"); /*0x68557d G57c1: IDA 0x68557d push offset aLogicInit*/
   (*(void (**)(int *))(g_GameConfigManager + 12))( (int *)(&g_GameConfigManager)); /*0x685590*/
-  Debug::Log(); /*0x685598*/
+  Debug::Log("CurrentObjects.Clear()\n"); /*0x685598 G57c1: IDA 0x685598 push offset aCurrentobjects*/
   g_SelectionManager = 0; /*0x6855a7*/
   if ( g_ObjectClass_CurrentCount && byte_A8ECC5 ) /*0x6855b5*/
   {
@@ -1107,7 +1107,7 @@ void ScenarioClass_Reset()
   }
   byte_A8ECC5 = 0; /*0x6855cb*/
   dword_A8ECC0 = 0; /*0x6855d1*/
-  Debug::Log(); /*0x6855d7*/
+  Debug::Log("Scen->Clear_All_Waypoints()\n"); /*0x6855d7 G57c1: IDA 0x6855d7 push offset aScenClearAllWa*/
   v11 = (char *)g_ScenarioClass_Instance + 1586; /*0x6855e4*/
   v12 = 702; /*0x6855e9*/
   do /*0x6855fa*/
@@ -1116,7 +1116,7 @@ void ScenarioClass_Reset()
     --v12; /*0x6855f9*/
   }
   while ( v12 ); /*0x6855fa*/
-  Debug::Log(); /*0x685601*/
+  Debug::Log("Init_Campaigns()\n"); /*0x685601 G57c1: IDA 0x685601 push offset aInitCampaigns_0*/
   Credits::Screen(); /*0x685609*/
   if ( dword_A8ED78 ) /*0x685616*/
   {
@@ -1148,7 +1148,7 @@ void SaveScenarioToINI(char * Source, char a2, int a3)
 
   v10.vtable2 = 0; /*0x687cf4*/
   v10.vtable3 = 0; /*0x687cf8*/
-  GenericList::Constructor((GenericList *)&v10.uniqueId); /*0x687cfc*/
+  ((GenericList *)(&v10.uniqueId))->Constructor(); /*0x687cfc*/
   v10.uniqueId = (int)&List_INIClass_INISection___vftable; /*0x687d05*/
   Node::Init((MixFileClass *)&v10.fallRate); /*0x687d0d*/
   v10.ambientSoundController[1] = 0; /*0x687d17*/
@@ -1207,11 +1207,11 @@ void SaveScenarioToINI(char * Source, char a2, int a3)
   {
     nullsub_34(); /*0x687e92*/
     ScriptTypeClass::ReadINI((INIClass *)&v10.vtable1, 0); /*0x687e9d*/
-    TeamTypeClass::ReadScriptData( (char *)((INIClass *)&v10.vtable1), 0); /*0x687ea8*/
-    CCINIClass::ReadInfantryTypeList( (char *)((INIClass *)&v10.vtable1), 0); /*0x687eb3*/
+    ((TeamTypeClass *)(((INIClass *)&v10.vtable1)))->ReadScriptData( 0); /*0x687ea8*/
+    ((CCINIClass *)(((gamemd::INIClass*)&v10.vtable1)))->ReadInfantryTypeList( 0); /*0x687eb3*/
   }
-  ReadAudioEventINI((INIClass *)&v10.vtable1); /*0x687ebc*/
-  SaveTriggerTagsToINI((INIClass *)&v10.vtable1); /*0x687ec5*/
+  ReadAudioEventINI((gamemd::INIClass*)&v10.vtable1); /*0x687ebc*/
+  SaveTriggerTagsToINI((gamemd::INIClass*)&v10.vtable1); /*0x687ec5*/
   ((RawFileClass*)((BufferIOFileClass *)&v13))->Construct((int)Source); /*0x687ed2*/
   INIClass::WriteDigest((CCINIClass *)&v10.vtable1, (int)&v13, 1); /*0x687ee5*/
   ((RawFileClass *)((BufferIOFileClass *)&v13))->Dtor(); /*0x687ef1*/
@@ -1748,7 +1748,7 @@ void GenerateScenarioUnits()
           {
             v54[252] = ppv; /*0x688b5a*/
             v41 = ((BuildingClass *)ppv)->FindBySWType( (int)&dword_8871E0->SovietSurvivorDivisor[1]); /*0x688b5e*/
-            v42 = (int *)UnitClass::Construct((int)v39, v41, (LPVOID)v54[252]); /*0x688b6b*/
+            v42 = (int *)((UnitClass *)((int)v39))->Construct( v41, (LPVOID)v54[252]); /*0x688b6b*/
           }
           else
           {

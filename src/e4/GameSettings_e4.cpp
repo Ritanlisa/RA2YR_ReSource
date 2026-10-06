@@ -61,13 +61,13 @@ int GameSettings::Read()
     wchar_t String[200]; // [esp+18h] [ebp-190h] BYREF
 
     _ESI = this; /*0x5fa62f*/
-    Debug::Log(); /*0x5fa636*/
+    Debug::Log("--------- Loading SUN.INI settings ---------------\n"); /*0x5fa636 G57c1: IDA 0x5fa636 push offset aLoadingSunIniS*/
     *(unsigned int *)_ESI = INIClass::ReadInt_Overwrite( /*0x5fa65b*/
                         (bool *)&DSurface_ViewBounds.__pad_FC[36],
                         (unsigned __int8 *)g_INI_Key_Options,
                         (unsigned __int8 *)g_INI_Key_GameSpeed,
                         *(unsigned int *)_ESI);
-    Debug::Log(); /*0x5fa65d*/
+    Debug::Log("GameSpeed = %d\n"); /*0x5fa65d G57c1: IDA 0x5fa65d push offset aGamespeedD*/
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5fa678*/
                       (bool *)&DSurface_ViewBounds.__pad_FC[36],
                       (unsigned __int8 *)g_INI_Key_Options,
@@ -78,7 +78,7 @@ int GameSettings::Read()
       Int_Overwrite = 4; /*0x5fa685*/
     *(unsigned int *)(_ESI.v + 4) = Int_Overwrite; /*0x5fa68c*/
     *(unsigned int *)(_ESI.v + 4) = Int_Overwrite <= 0 ? 0 : Int_Overwrite;
-    Debug::Log(); /*0x5fa6a0*/
+    Debug::Log("Difficulty = %d\n"); /*0x5fa6a0 G57c1: IDA 0x5fa6a0 push offset aDifficultyD*/
     v4 = INIClass::ReadInt_Overwrite( /*0x5fa6bb*/
            (bool *)&DSurface_ViewBounds.__pad_FC[36],
            (unsigned __int8 *)g_INI_Key_Options,
@@ -89,25 +89,25 @@ int GameSettings::Read()
       v4 = 2; /*0x5fa6c8*/
     *(unsigned int *)(_ESI.v + 8) = v4; /*0x5fa6cf*/
     *(unsigned int *)(_ESI.v + 8) = v4 <= 0 ? 0 : v4;
-    Debug::Log(); /*0x5fa6e3*/
+    Debug::Log("CampDifficulty = %d\n"); /*0x5fa6e3 G57c1: IDA 0x5fa6e3 push offset aCampdifficulty_0*/
     *(unsigned int *)(_ESI.v + 12) = INIClass::ReadInt_Overwrite( /*0x5fa709*/
                              (bool *)&DSurface_ViewBounds.__pad_FC[36],
                              (unsigned __int8 *)g_INI_Key_Options,
                              (unsigned __int8 *)aScrollmethod,
                              *(unsigned int *)(_ESI.v + 12));
-    Debug::Log(); /*0x5fa70c*/
+    Debug::Log("ScrollMethod = %d\n"); /*0x5fa70c G57c1: IDA 0x5fa70c push offset aScrollmethodD*/
     *(unsigned int *)(_ESI.v + 16) = INIClass::ReadInt_Overwrite( /*0x5fa732*/
                              (bool *)&DSurface_ViewBounds.__pad_FC[36],
                              (unsigned __int8 *)g_INI_Key_Options,
                              (unsigned __int8 *)aScrollrate,
                              *(unsigned int *)(_ESI.v + 16));
-    Debug::Log(); /*0x5fa735*/
+    Debug::Log("ScrollRate = %d\n"); /*0x5fa735 G57c1: IDA 0x5fa735 push offset aScrollrateD*/
     *(unsigned char *)(_ESI.v + 20) = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa75a*/
                                (int *)&DSurface_ViewBounds.__pad_FC[36],
                                (unsigned __int8 *)g_INI_Key_Options,
                                (unsigned __int8 *)aAutoscroll,
                                *(unsigned char *)(_ESI.v + 20));
-    Debug::Log(); /*0x5fa771*/
+    Debug::Log("AutoScroll is %s\n"); /*0x5fa771 G57c1: IDA 0x5fa771 push offset aAutoscrollIsS*/
     v5 = INIClass::ReadInt_Overwrite( /*0x5fa78c*/
            (bool *)&DSurface_ViewBounds.__pad_FC[36],
            (unsigned __int8 *)g_INI_Key_Options,
@@ -118,33 +118,33 @@ int GameSettings::Read()
       v5 = 2; /*0x5fa799*/
     *(unsigned int *)(_ESI.v + 24) = v5; /*0x5fa7a0*/
     *(unsigned int *)(_ESI.v + 24) = v5 <= 0 ? 0 : v5;
-    Debug::Log(); /*0x5fa7b4*/
+    Debug::Log("DetailLevel = %d\n"); /*0x5fa7b4 G57c1: IDA 0x5fa7b4 push offset aDetaillevelD*/
     *(unsigned char *)(_ESI.v + 28) = (GameSettings)1; /*0x5fa7c3*/
-    Debug::Log(); /*0x5fa7c6*/
+    Debug::Log("SideBar on %s\n"); /*0x5fa7c6 G57c1: IDA 0x5fa7c6 push offset aSidebarOnS*/
     *(unsigned char *)(_ESI.v + 29) = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa7e6*/
                                (int *)&DSurface_ViewBounds.__pad_FC[36],
                                (unsigned __int8 *)g_INI_Key_Options,
                                (unsigned __int8 *)aSidebarcameote,
                                *(unsigned char *)(_ESI.v + 29));
-    Debug::Log(); /*0x5fa7fd*/
+    Debug::Log("Sidebar Text is %s\n"); /*0x5fa7fd G57c1: IDA 0x5fa7fd push offset aSidebarTextIsS*/
     *(unsigned char *)(_ESI.v + 30) = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa81d*/
                                (int *)&DSurface_ViewBounds.__pad_FC[36],
                                (unsigned __int8 *)g_INI_Key_Options,
                                (unsigned __int8 *)aUnitactionline,
                                *(unsigned char *)(_ESI.v + 30));
-    Debug::Log(); /*0x5fa834*/
+    Debug::Log("ActionLines are %s\n"); /*0x5fa834 G57c1: IDA 0x5fa834 push offset aActionlinesAre*/
     *(unsigned char *)(_ESI.v + 31) = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa854*/
                                (int *)&DSurface_ViewBounds.__pad_FC[36],
                                (unsigned __int8 *)g_INI_Key_Options,
                                (unsigned __int8 *)aShowhidden,
                                *(unsigned char *)(_ESI.v + 31));
-    Debug::Log(); /*0x5fa86b*/
+    Debug::Log("ShowHidden is %s\n"); /*0x5fa86b G57c1: IDA 0x5fa86b push offset aShowhiddenIsS*/
     *(unsigned char *)(_ESI.v + 32) = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa88b*/
                                (int *)&DSurface_ViewBounds.__pad_FC[36],
                                (unsigned __int8 *)g_INI_Key_Options,
                                (unsigned __int8 *)aTooltips,
                                *(unsigned char *)(_ESI.v + 32));
-    Debug::Log(); /*0x5fa8a2*/
+    Debug::Log("ToolTips are %s\n"); /*0x5fa8a2 G57c1: IDA 0x5fa8a2 push offset aTooltipsAreS*/
     v6 = INIClass::ReadInt_Overwrite( /*0x5fa8bd*/
            (bool *)&DSurface_ViewBounds.__pad_FC[36],
            g_INI_Key_Video,
@@ -157,7 +157,7 @@ int GameSettings::Read()
                              g_INI_Key_Video,
                              (unsigned __int8 *)g_INI_Key_ScreenHeight,
                              v7);
-    Debug::Log(); /*0x5fa8ea*/
+    Debug::Log("Resolution = %d X %d\n"); /*0x5fa8ea G57c1: IDA 0x5fa8ea push offset aResolutionDXD*/
     Bool_Overwrite = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa905*/
                                      (int *)&DSurface_ViewBounds.__pad_FC[36],
                                      g_INI_Key_Video,
@@ -166,13 +166,13 @@ int GameSettings::Read()
     *(unsigned char *)(_ESI.v + 52) = Bool_Overwrite; /*0x5fa90c*/
     v9 = Bool_Overwrite == 1 && g_DDraw_AllowStretchBlits == 1; /*0x5fa919*/
     *(unsigned char *)(_ESI.v + 52) = (GameSettings)v9; /*0x5fa91f*/
-    Debug::Log(); /*0x5fa936*/
+    Debug::Log("StretchMovies is %s\n"); /*0x5fa936 G57c1: IDA 0x5fa936 push offset aStretchmoviesI*/
     *(unsigned char *)(_ESI.v + 53) = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fa956*/
                                (int *)&DSurface_ViewBounds.__pad_FC[36],
                                g_INI_Key_Video,
                                aAllowhiresmode,
                                *(unsigned char *)(_ESI.v + 53));
-    Debug::Log(); /*0x5fa96d*/
+    Debug::Log("AllowHiRes is %s\n"); /*0x5fa96d G57c1: IDA 0x5fa96d push offset aAllowhiresIsS*/
     *(unsigned int *)((char *)&stru_A8EB00 + 611) = INIClass::ReadBool_Overwrite( /*0x5fa990*/
                            (int *)&DSurface_ViewBounds.__pad_FC[36],
                            g_INI_Key_Video,
@@ -236,7 +236,7 @@ int GameSettings::Read()
     *(float *)(_ESI.v + 60) = _ET1; /*0x5faa42*/
     __asm { fmul ds:dbl_7EAA50 } /*0x5faa45*/
     IDA_LOWORD(v16) = Math::RoundToInt(v1); /*0x5faa4b*/
-    ThemeClass::GetField(v16); /*0x5faa52*/
+    ((ThemeClass *)v16)->GetField(); /*0x5faa52*/
     __asm /*0x5faa57*/
     {
       fld dword ptr [esi+3Ch]

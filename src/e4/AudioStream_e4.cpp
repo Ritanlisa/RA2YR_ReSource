@@ -89,7 +89,7 @@ void AudioStream::DestroyAll(void * Block)
   for ( i = (AudioStream *)Next; Next; i = (AudioStream *)Next ) /*0x403407*/
   {
     Next = (AudioQueue *)((AudioQueue *)(Next))->GetNextAlt(); /*0x403412*/
-    AudioStream::Destructor((unsigned int *)(i)); /*0x403414*/
+    ((AudioStream *)((unsigned int *)(i)))->Destructor(); /*0x403414*/
   }
   (*(void (**)(AudioStream *))(*(unsigned int *)(this->AudioStream_field_0x18[0] + 12) + 32))(this); /*0x403427*/
   *(unsigned int *)(this->AudioStream_field_0x18[0] + 4 * (int)this->AudioStream_field_0x1C + 28) = 0; /*0x403430*/
@@ -1470,7 +1470,7 @@ int AudioStream::UpdateTimers()
           LODWORD(v0) = (unsigned int)(v1[7]); /*0x404ff3*/
           if ( (unsigned int)v0 == 2 ) /*0x404ff9*/
           {
-            LODWORD(v0) = Audio::Callback(); /*0x404ffb*/
+            LODWORD(v0) = gamemd::Audio::Callback(); /*0x404ffb*/
             *((unsigned long long *)v1 + 40) -= v0; /*0x405010*/
           }
         }
@@ -1516,7 +1516,7 @@ int AudioStream::UpdateCountdowners()
             LODWORD(v0) = (unsigned int)(v1[7]); /*0x405088*/
             if ( (unsigned int)v0 == 2 ) /*0x40508e*/
             {
-              LODWORD(v3) = Audio::Callback(); /*0x405090*/
+              LODWORD(v3) = gamemd::Audio::Callback(); /*0x405090*/
               v0 = *((unsigned long long *)v1 + 40) + v3; /*0x4050a3*/
               *((unsigned long long *)v1 + 40) = v0; /*0x4050a5*/
             }
@@ -1584,7 +1584,7 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream)
   }
   else
   {
-    AudioSample::Destructor( (void *a1 =)((AudioSample *)v4)); /*0x407984*/
+    AudioSample::Destructor( ((AudioSample *)v4)); /*0x407984*/
     return 0; /*0x407989*/
   }
 

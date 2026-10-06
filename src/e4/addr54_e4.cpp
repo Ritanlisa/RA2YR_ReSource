@@ -121,7 +121,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   if ( !v13 ) /*0x541229*/
   {
     ++(&this->location)[1]; /*0x541232*/
-    ((gamemd::Debug *)this)->Log(); /*0x541240*/
+    Debug::Log("Send overflow %d\n"); /*0x541240 G57c1: IDA 0x541240 push offset g_Str_Trace_Send_overflow__d*/
   }
   return (gamemd::AbstractClass **)(v13); /*0x5411af*/
 
@@ -1077,7 +1077,7 @@ LABEL_26:
               v37 = v70;
               v70 = (MapClass *)((char *)v70 + 1);
               v87 = (AbstractClass *)((char *)v87 + 1);
-              v3 = TerrainTypeClass::Construct( (int)(v36), (int)v37, 0xBFu, 0, (char)((MapClass *)Filename), 0);
+              v3 = ((TerrainTypeClass *)((int)(v36)))->Construct( (int)v37, 0xBFu, 0, (char)((MapClass *)Filename), 0);
             }
             else
             {
@@ -1247,7 +1247,7 @@ LABEL_190:
             break;
           eax193 = (unsigned int *)operator new(0x30Cu);
           if ( eax193 )
-            v3 = TerrainTypeClass::Construct( eax193, (int)v87, 0xBFu, 0, (char)((MapClass *)Filename), 1);
+            v3 = ((TerrainTypeClass *)eax193)->Construct( (int)v87, 0xBFu, 0, (char)((MapClass *)Filename), 1);
           else
             v3 = 0;
           if ( Source )

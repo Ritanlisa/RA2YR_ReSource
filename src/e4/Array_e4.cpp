@@ -408,7 +408,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 
   if ( aP0 ) /*0x55b887*/
   {
-    if ( (*(    if ((int)((*(int (**)(int))(*(unsigned int *)aP0 + 44))( (int)(aP0)) == 44)) 
+    if ((int)((*(int (**)(int))(*(unsigned int *)aP0 + 44))( (int)(aP0)) == 44)) 
     {
       v2 = (unsigned int *)(dword_8B40D8);
       v3 = 0; /*0x55b89b*/

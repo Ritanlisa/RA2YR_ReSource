@@ -74,7 +74,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a1a*/
   v5 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a2)); /*0x4d0a2a*/
   PlacementRect = ((BuildingClass *)(BuildingClass *)v5)->GetPlacementRect( v25); /*0x4d0a3b*/
-  StartCoords = ((gamemd::House *)((House *)v5))->GetStartCoords(v26); /*0x4d0a3d*/
+  StartCoords = ((gamemd::House *)((gamemd::House*)v5))->GetStartCoords(v26); /*0x4d0a3d*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4d0a4e*/
   {
     v8 = *PlacementRect; /*0x4d0adf*/
@@ -398,7 +398,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
     goto LABEL_11; /*0x4d108a*/
   if ( !dword_8B3CC8 ) /*0x4d108e*/
     v10 = 10; /*0x4d1090*/
-  if ( (uint8_t)Vector::ReallocDynamic(v10) ) /*0x4d109b*/
+  if ( (uint8_t)((Vector *)v10)->ReallocDynamic() ) /*0x4d109b*/
   {
 LABEL_11:
     *((unsigned int *)g_MissionPool + 2 * g_MissionState) = v11; /*0x4d10af*/

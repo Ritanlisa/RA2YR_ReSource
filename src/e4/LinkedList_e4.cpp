@@ -64,7 +64,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
   int v28; // [esp+CCh] [ebp-4h]
 
   v5 = v4; /*0x479201*/
-  ((gamemd::Debug *)this)->Log(); /*0x479208*/
+  Debug::Log("***** Swapping to disk %d *****\n"); /*0x479208 G57c1: IDA 0x479208 push offset aSwappingToDisk*/
   if ( *(unsigned int *)(v5 + 4) == -1 ) /*0x479216*/
   {
     v6 = dword_A83D14; /*0x479218*/
@@ -75,49 +75,49 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(int a2, int a3, int a4, 
   ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x479232*/
   if ( g_MixFile_MOVIES ) /*0x47923e*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x479249*/
+    Debug::Log("     Releasing %s\n"); /*0x479249 G57c1: IDA 0x479249 push offset g_Str_Trace_Releasing__s*/
     if ( g_MixFile_MOVIES ) /*0x479259*/
       (**(void (***)(int, int))g_MixFile_MOVIES)(g_MixFile_MOVIES, 1); /*0x47925f*/
     g_MixFile_MOVIES = 0; /*0x479261*/
   }
   if ( g_MixFile_THEME ) /*0x47926e*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x479279*/
+    Debug::Log("     Releasing %s\n"); /*0x479279 G57c1: IDA 0x479279 push offset g_Str_Trace_Releasing__s*/
     if ( g_MixFile_THEME ) /*0x479289*/
       (**(void (***)(int, int))g_MixFile_THEME)(g_MixFile_THEME, 1); /*0x47928f*/
     g_MixFile_THEME = 0; /*0x479291*/
   }
   if ( MixFileClass_MULTI ) /*0x47929e*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x4792a9*/
+    Debug::Log("     Releasing %s\n"); /*0x4792a9 G57c1: IDA 0x4792a9 push offset g_Str_Trace_Releasing__s*/
     if ( MixFileClass_MULTI ) /*0x4792b9*/
       (**(void (***)(int, int))MixFileClass_MULTI)(MixFileClass_MULTI, 1); /*0x4792bf*/
     MixFileClass_MULTI = 0; /*0x4792c1*/
   }
   if ( g_MixFile_MULTIMD ) /*0x4792ce*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x4792d9*/
+    Debug::Log("     Releasing %s\n"); /*0x4792d9 G57c1: IDA 0x4792d9 push offset g_Str_Trace_Releasing__s*/
     if ( g_MixFile_MULTIMD ) /*0x4792e9*/
       (**(void (***)(int, int))g_MixFile_MULTIMD)(g_MixFile_MULTIMD, 1); /*0x4792ef*/
     g_MixFile_MULTIMD = 0; /*0x4792f1*/
   }
   if ( g_MixFile_MAPSFirst ) /*0x4792fe*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x479309*/
+    Debug::Log("     Releasing %s\n"); /*0x479309 G57c1: IDA 0x479309 push offset g_Str_Trace_Releasing__s*/
     if ( g_MixFile_MAPSFirst ) /*0x479319*/
       (**(void (***)(int, int))g_MixFile_MAPSFirst)(g_MixFile_MAPSFirst, 1); /*0x47931f*/
     g_MixFile_MAPSFirst = 0; /*0x479321*/
   }
   if ( g_MixFile_MAPSMDFirst ) /*0x47932e*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x479339*/
+    Debug::Log("     Releasing %s\n"); /*0x479339 G57c1: IDA 0x479339 push offset g_Str_Trace_Releasing__s*/
     if ( g_MixFile_MAPSMDFirst ) /*0x479349*/
       (**(void (***)(int, int))g_MixFile_MAPSMDFirst)(g_MixFile_MAPSMDFirst, 1); /*0x47934f*/
     g_MixFile_MAPSMDFirst = 0; /*0x479351*/
   }
   if ( dword_884E34 ) /*0x47935e*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x479369*/
+    Debug::Log("     Releasing %s\n"); /*0x479369 G57c1: IDA 0x479369 push offset g_Str_Trace_Releasing__s*/
     if ( dword_884E34 ) /*0x479379*/
       (**(void (***)(int, int))dword_884E34)(dword_884E34, 1); /*0x47937f*/
     dword_884E34 = 0; /*0x479381*/
@@ -130,35 +130,35 @@ return (gamemd::AbstractClass **)1; /*0x47939b*/
   else
     v9 = 0; /*0x4793bf*/
   dword_884E34 = (int)v9; /*0x4793c1*/
-  ((gamemd::Debug *)this)->Log(); /*0x4793cf*/
+  Debug::Log("     Initialized %s\n"); /*0x4793cf G57c1: IDA 0x4793cf push offset aInitializedS*/
   v10 = (char *)aP0 + 1; /*0x4793d4*/
   sprintf(Buffer, "MAPSMD%02d.MIX", &aP0->__tail_0[1]); /*0x4793e7*/
-  ((gamemd::Debug *)this)->Log(); /*0x4793f6*/
+  Debug::Log("     Initializing %s\n"); /*0x4793f6 G57c1: IDA 0x4793f6 push offset g_Str_Trace_Initializing__s*/
   v11 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
   if ( v11 ) /*0x479407*/
     g_MixFile_MAPSMDFirst = (int)((MixFileClass *)(v11))->FromFile(Buffer, (int)dword_886980); /*0x47941a*/
   else
     g_MixFile_MAPSMDFirst = 0; /*0x479421*/
   sprintf(Buffer, "MAPS%02d.MIX", v10); /*0x479432*/
-  ((gamemd::Debug *)this)->Log(); /*0x479441*/
+  Debug::Log("     Initializing %s\n"); /*0x479441 G57c1: IDA 0x479441 push offset g_Str_Trace_Initializing__s*/
   v12 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x479448*/
   if ( !v12 ) /*0x479452*/
   {
     g_MixFile_MAPSFirst = 0; /*0x479489*/
 LABEL_61:
-    ((gamemd::Debug *)this)->Log(); /*0x479664*/
+    Debug::Log("     FAILED!\n"); /*0x479664 G57c1: IDA 0x479669 push offset g_Str_FAILED_*/
     return 0; /*0x47967c*/
   }
   g_MixFile_MAPSFirst = (int)((MixFileClass *)(v12))->FromFile(Buffer, (int)dword_886980); /*0x479467*/
   if ( !g_MixFile_MAPSFirst ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
-  ((gamemd::Debug *)this)->Log(); /*0x479496*/
+  Debug::Log("     Initializing New Multi.Mix\n"); /*0x479496 G57c1: IDA 0x479496 push offset aInitializingNe*/
   v13 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47949d*/
   if ( v13 ) /*0x4794a7*/
     g_MixFile_MULTIMD = (int)((MixFileClass *)(v13))->FromFile((char *)(g_Str_File_MULTIMD_MIX), (int)dword_886980); /*0x4794ba*/
   else
     g_MixFile_MULTIMD = 0; /*0x4794c1*/
-  ((gamemd::Debug *)this)->Log(); /*0x4794cc*/
+  Debug::Log("     Initializing Multi.Mix\n"); /*0x4794cc G57c1: IDA 0x4794cc push offset aInitializingMu*/
   v14 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4794d3*/
   if ( !v14 ) /*0x4794dd*/
   {
@@ -177,7 +177,7 @@ LABEL_61:
   ((BufferIOFileClass *)((BufferIOFileClass *)((char *)&v24)))->Dtor(); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x47956c*/
+    Debug::Log("     Initializing Themes.MIX\n"); /*0x47956c G57c1: IDA 0x47956c push offset aInitializingTh_0*/
     v17 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x479573*/
     if ( v17 ) /*0x47957d*/
     {
@@ -187,7 +187,7 @@ LABEL_61:
   }
   else
   {
-    ((gamemd::Debug *)this)->Log(); /*0x479597*/
+    Debug::Log("     Initializing Themes.MIX\n"); /*0x479597 G57c1: IDA 0x479597 push offset aInitializingTh_0*/
     v18 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47959e*/
     if ( v18 ) /*0x4795a8*/
     {
@@ -208,7 +208,7 @@ LABEL_58:
   ((BufferIOFileClass *)((BufferIOFileClass *)&v24))->Dtor(); /*0x479623*/
   if ( v20 ) /*0x47962b*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x479637*/
+    Debug::Log("     Initializing %s\n"); /*0x479637 G57c1: IDA 0x479637 push offset g_Str_Trace_Initializing__s*/
     v21 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x47963e*/
     if ( v21 ) /*0x479648*/
       goto LABEL_60; /*0x479648*/
@@ -217,7 +217,7 @@ LABEL_63:
     goto LABEL_61; /*0x4796c5*/
   }
   sprintf(Buffer, "MOVIES%02d.MIX", v10); /*0x479691*/
-  ((gamemd::Debug *)this)->Log(); /*0x4796a0*/
+  Debug::Log("     Initializing %s\n"); /*0x4796a0 G57c1: IDA 0x4796a0 push offset g_Str_Trace_Initializing__s*/
   v21 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4796a7*/
   if ( !v21 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/

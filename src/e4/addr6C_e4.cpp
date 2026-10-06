@@ -226,7 +226,7 @@ int ProcessGameResults(char a1)
     ((ResultNode *)(v262))->CleanupList();
     return 0;
   }
-  ((Debug *)0)->Log();
+  Debug::Log("Sending game results.  SawCompletion=%d\n") /*G57c1: IDA 0x6c6fac push offset aSendingGameRes_0*/;
   v2 = dword_B779D4;
   char * v3 = (char *)operator new(0x10u);
   if ( v3 )
@@ -379,7 +379,7 @@ int ProcessGameResults(char a1)
     do
     {
       eax72 = *(CampaignScore **)v55;
-      if ( *(unsigned char *)(*(unsigned int * *)&v55->q7B0 && eax72 != v57 )
+      if ( *(unsigned char *)(*(unsigned int * *)&v55->q7B0 && eax72 != v57 ))
       {
         v60 = aP2;
         *ecx71++ = eax72;
@@ -2026,7 +2026,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   vtable2[2] = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
   vtable2[3] = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
   *((unsigned int *)vtable2 + 2) = ((unsigned int *)this)[0]; /*0x6c8b70*/
-  v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
+  v8 = ((CellStruct *)a3)->Copy( &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
   v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&a2->q_170))(a2, *v8, v8[1]);  /*0x6c8b92*/
   v15 = 0; /*0x6c8b9b*/

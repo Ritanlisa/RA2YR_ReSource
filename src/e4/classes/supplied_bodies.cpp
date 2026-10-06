@@ -687,7 +687,7 @@ char ScriptAction::HitTest(int a1, int a2)
     v12 = *(unsigned int *)&stru_AC4B30.__pad_EC[176]; /*0x63aa3f*/
     if ( !*(unsigned int *)&stru_AC4B30.__pad_EC[176] || *(unsigned int *)&stru_AC4B30.__pad_EC[176] != v3 ) /*0x63aa4b*/
       goto LABEL_5; /*0x63aa4b*/
-    Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 1); /*0x63aa59*/
+    Mission_e4::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 1); /*0x63aa59*/
     ExportSelectionAsScriptAction(v11); /*0x63aa5e*/
     return v3 || v12; /*0x63a8f0*/
 }

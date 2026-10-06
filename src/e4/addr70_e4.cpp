@@ -515,7 +515,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
 }
 // 0x709550
 namespace gamemd {
-AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
+AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
 {
   unsigned int *v2; // ecx
   unsigned int *v3; // edi

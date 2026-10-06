@@ -304,7 +304,7 @@ int Trigger_AllocateLog(int a1)
     {
       RA2_OPDEL(*(void **)(v3 + 820));
       *(unsigned int *)(v3 + 824) = (v14 + 0xFFFF) & 0xFFFF0000;
-      ((Debug *)0)->Log();
+      Debug::Log("Adjusted allocation of log %d to %dKb\n") /*G57c1: IDA 0x650ce7 push offset aAdjustedAlloca*/;
       *(unsigned int *)(v3 + 820) = (unsigned int)(operator new(*(unsigned int *)(v3 + 824)));
     }
     int v15 = *(unsigned int *)(v3 + 820);
@@ -338,7 +338,7 @@ int Trigger_AllocateLog(int a1)
           v21 = v20[18] | (v20[19] << 16);
         }
         void * v22 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v20 + 44))(v20);
-        Name = ((AbstractType*)v22)->FindName();
+        Name = ((AbstractType_e4*)v22)->FindName();
         *(unsigned char *)(v15 + 91) = 0;
         *(unsigned int *)(v15 + 64) = v21;
         strncpy((char *)(v15 + 68), Name, 0x17u);
@@ -361,7 +361,7 @@ int Trigger_AllocateLog(int a1)
           v25 = v24[18] | (v24[19] << 16);
         }
         void * v26 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v24 + 44))(v24);
-        char * v27 = ((AbstractType*)v26)->FindName();
+        char * v27 = ((AbstractType_e4*)v26)->FindName();
         *(unsigned char *)(v15 + 63) = 0;
         *(unsigned int *)(v15 + 36) = v25;
         strncpy( (char *)(v15 + 40), (const char *)(v27), 0x17u);
@@ -414,7 +414,7 @@ int Trigger_AllocateLog(int a1)
             v32 = v31[18] | (v31[19] << 16);
           }
           void * v33 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v31 + 44))(v31);
-          char * v34 = ((AbstractType*)v33)->FindName();
+          char * v34 = ((AbstractType_e4*)v33)->FindName();
           *(unsigned char *)(v15 + 91) = 0;
           *(unsigned int *)(v15 + 64) = v32;
           strncpy( (char *)(v15 + 68), (const char *)(v34), 0x17u);
@@ -437,7 +437,7 @@ int Trigger_AllocateLog(int a1)
             v36 = v35[18] | (v35[19] << 16);
           }
           void * v37 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v35 + 44))(v35);
-          char * v38 = ((AbstractType*)v37)->FindName();
+          char * v38 = ((AbstractType_e4*)v37)->FindName();
           *(unsigned char *)(v15 + 63) = 0;
           *(unsigned int *)(v15 + 36) = v36;
           strncpy( (char *)(v15 + 40), (const char *)(v38), 0x17u);
@@ -486,7 +486,7 @@ int Trigger_AllocateLog(int a1)
             v45 = v44[18] | (v44[19] << 16);
           }
           void * v46 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v44 + 44))(v44);
-          char * v47 = ((AbstractType*)v46)->FindName();
+          char * v47 = ((AbstractType_e4*)v46)->FindName();
           *(unsigned char *)(v15 + 91) = 0;
           *(unsigned int *)(v15 + 64) = v45;
           strncpy( (char *)(v15 + 68), (const char *)(v47), 0x17u);
@@ -509,7 +509,7 @@ int Trigger_AllocateLog(int a1)
             v49 = v48[18] | (v48[19] << 16);
           }
           void * v50 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v48 + 44))(v48);
-          char * v51 = ((AbstractType*)v50)->FindName();
+          char * v51 = ((AbstractType_e4*)v50)->FindName();
           *(unsigned char *)(v15 + 63) = 0;
           *(unsigned int *)(v15 + 36) = v49;
           strncpy( (char *)(v15 + 40), (const char *)(v51), 0x17u);
@@ -556,7 +556,7 @@ int Trigger_AllocateLog(int a1)
           v56 = v58[18] | (v58[19] << 16);
         }
         void * v59 = (void *)(*(int (**)(int16_t *))(*(unsigned int *)v58 + 44))(v58);
-        char * v60 = ((AbstractType*)v59)->FindName();
+        char * v60 = ((AbstractType_e4*)v59)->FindName();
         *(unsigned char *)(v15 + 63) = 0;
         *(unsigned int *)(v15 + 36) = v56;
         strncpy( (char *)(v15 + 40), (const char *)(v60), 0x17u);
@@ -931,7 +931,7 @@ int ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
 }
 // 0x6586D0
 namespace gamemd {
-void sub_6586D0()
+int sub_6586D0()
 {
   Dialog *Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -955,7 +955,7 @@ void sub_6586D0()
   }
   ((Timer*)(*(Timer **)&((unsigned int *)(stru_87F5F0.__pad_58))[296]))->PumpMessages(); /*0x658740*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2((&dword_A8B230)[381].vtable3); /*0x658758*/
-  return MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x658763*/
+  return ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x658763*/
 }
 }
 // 0x6591B0

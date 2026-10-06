@@ -69,7 +69,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 
   v3 = (IStream *)pPStm; /*0x69ef16*/
   v4 =(gamemd::ShipLocomotionClass *)a1; /*0x69ef1b*/
-  IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x69ef27*/
+  IPersistStream = LoadIPersistStream((gamemd::LocomotionClass*)a1, pPStm, a3); /*0x69ef27*/
   if ( IPersistStream < 0 ) /*0x69ef2b*/
     return IPersistStream; /*0x69ef2b*/
   if ( !v4->Piggybackee ) /*0x69ef36*/
@@ -147,7 +147,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
   Piggybackee = this->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x6a42d6*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
     __3_YAXPAX_Z(this); /*0x6a42e3*/
   return this->LocomotionClass; /*0x6a42ed*/

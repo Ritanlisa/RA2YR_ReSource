@@ -761,7 +761,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 }
 // 0x633AB0
 namespace gamemd {
-void sub_633AB0()
+int sub_633AB0()
 {
     return *((unsigned int *)this + 48);
 }
@@ -1174,7 +1174,7 @@ char ExecutePlanningQueue()
       ((FactoryClass *)((FactoryClass *)v21))->ClearObjects(); /*0x637405*/
       v22 = *(unsigned int *)(v21 + 16); /*0x63740a*/
       for ( i = 0; i < v22; ++i ) /*0x637411*/
-        ScriptAction::PlaceObject((void *)(v21), *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/
+        ((ScriptAction *)(v21))->PlaceObject( *(unsigned int **)(*(unsigned int *)(v21 + 4) + 4 * i)); /*0x63741c*/
       ((ScriptAction*)(ScriptAction *)v21)->FindSquadMember(); /*0x637428*/
       v24 = ++v20 < v34; /*0x637432*/
       *(unsigned char *)(v21 + 28) = 0; /*0x637434*/
@@ -1290,7 +1290,7 @@ AbstractClass * * sub_637920()
       if ( v4 > 0 ) /*0x63794e*/
       {
         do /*0x637961*/
-          ScriptAction::PlaceObject((void *)(v3), *(unsigned int **)(*(unsigned int *)(v3 + 4) + 4 * v1++)); /*0x637959*/
+          ((ScriptAction *)(v3))->PlaceObject( *(unsigned int **)(*(unsigned int *)(v3 + 4) + 4 * v1++)); /*0x637959*/
         while ( v1 < v4 ); /*0x637961*/
       }
       ((ScriptAction*)(ScriptAction *)v3)->FindSquadMember(); /*0x637965*/
@@ -1605,7 +1605,7 @@ char ExecuteActionPlanManager(IUnknown * a1, char * a2)
 }
 // 0x6386E0
 namespace gamemd {
-void FactoryClass_ClearProduction(unsigned int * a1, int a2)
+int FactoryClass_ClearProduction(unsigned int * a1, int a2)
 {
   int result; // eax
   int v5; // ebx
@@ -1756,7 +1756,7 @@ AbstractClass * * sub_638E60()
 }
 // 0x639040
 namespace gamemd {
-void sub_639040(void * aMsgPlanningmod_2)
+int sub_639040(void * aMsgPlanningmod_2)
 {
   wchar_t *v1; // ebp
   int v2; // eax
@@ -1815,7 +1815,7 @@ void sub_639040(void * aMsgPlanningmod_2)
 }
 // 0x639130
 namespace gamemd {
-void sub_639130(void * aMsgPlannermaxi)
+int sub_639130(void * aMsgPlannermaxi)
 {
   unsigned int Object_field_0x30; // ecx
   int v2; // ebp
@@ -2088,7 +2088,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
             v40 = *(unsigned short *)v18; /*0x63991a*/
             v41 = v18[2]; /*0x63991c*/
             v19 = v37; /*0x63991d*/
-            WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v38, v37); /*0x639926*/
+            WaypointCoords = ((ScriptAction *)v38)->GetWaypointCoords( v37); /*0x639926*/
             *(unsigned int *)&v39[7] = *(unsigned int *)WaypointCoords; /*0x63992d*/
             v39[11] = WaypointCoords[4]; /*0x63993e*/
             ((ScriptAction *)(v32))->CreatePlacementAction(v19, v39); /*0x639942*/
@@ -2132,7 +2132,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   v11[37] = v22; /*0x639995*/
   *((unsigned char *)v11 + 152) = 1; /*0x63999b*/
   if ( v2 ) /*0x6399a1*/
-    ScriptAction::FindSquadMember(v2); /*0x6399a5*/
+    ((ScriptAction *)v2)->FindSquadMember(); /*0x6399a5*/
   IDA_LOBYTE(v23) = stru_AC4B30.__pad_EC[180]; /*0x6399aa*/
   if ( !stru_AC4B30.__pad_EC[180] ) /*0x6399b1*/
   {
@@ -2240,7 +2240,7 @@ AbstractClass * * HandlePlanningModeClick(MouseClass * aP0, int a2)
     aP0 = dword_AC4CCC; /*0x63a70d*/
     if ( dword_AC4CCC && dword_AC4CCC != v3 ) /*0x63a719*/
     {
-      Mission::SetAndCall( (int)((int *)&dword_87F7E8), 0, 1); /*0x63a727*/
+      Mission_e4::SetAndCall( (int)((int *)&dword_87F7E8), 0, 1); /*0x63a727*/
       dword_AC4C38 = aP0; /*0x63a730*/
       return v16 || aP0; /*0x63a757*/
     }
@@ -2475,12 +2475,12 @@ AbstractClass * * ExportSelectionAsScriptAction()
       _63B050 = Team_Load_63B050((ObjectClass *)&v29[132]); /*0x63af61*/
       if ( _63B050 ) /*0x63af68*/
       {
-        WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v29, _63B050); /*0x63af6f*/
+        WaypointCoords = ((ScriptAction *)v29)->GetWaypointCoords( _63B050); /*0x63af6f*/
         v19 = *(unsigned int *)WaypointCoords; /*0x63af74*/
         IDA_LOBYTE(WaypointCoords) = WaypointCoords[4]; /*0x63af7b*/
         *(unsigned int *)&v23[104] = v19; /*0x63af7f*/
         IDA_LOBYTE(v24) = (unsigned char)WaypointCoords; /*0x63af81*/
-        v20 = ScriptAction::GetWaypointCoords((ScriptAction *)&v29[12], v16); /*0x63af88*/
+        v20 = ((ScriptAction *)(&v29[12]))->GetWaypointCoords( v16); /*0x63af88*/
         ScenarioClass::SetEvent( /*0x63afac*/
           &v29[20],
           (int)dword_A83D4C->Object_field_0x30,
@@ -4638,7 +4638,7 @@ int j_PlanningNodeClass_CleanupAll()
 
 // 0x637550
 namespace gamemd {
-void __usercall FlushPlanningQueue(CCINIClass * a1)
+void FlushPlanningQueue(CCINIClass * a1)
 {
   int i; // esi
   void *v2; // edi
@@ -4738,12 +4738,12 @@ char sub_6394E0(IUnknown * a1, int a2)
   Next = BuildingLoadQueue::GetNext(v4); /*0x639529*/
   if ( Next ) /*0x639530*/
   {
-    WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)&v12[8], Next); /*0x639537*/
+    WaypointCoords = ((ScriptAction *)(&v12[8]))->GetWaypointCoords( Next); /*0x639537*/
     v7 = *(unsigned int *)WaypointCoords; /*0x63953c*/
     IDA_LOBYTE(WaypointCoords) = WaypointCoords[4]; /*0x639543*/
     *(unsigned int *)&v10[104] = v7; /*0x639547*/
     IDA_LOBYTE(v11) = (unsigned char)WaypointCoords; /*0x639549*/
-    v8 = ScriptAction::GetWaypointCoords( (ScriptAction *)v12, (void *a1 =)(a1)); /*0x639550*/
+    v8 = ((ScriptAction *)v12)->GetWaypointCoords( (a1)); /*0x639550*/
     ScenarioClass::SetEvent( /*0x639577*/
       &v12[128],
       (int)dword_A83D4C->Object_field_0x30,

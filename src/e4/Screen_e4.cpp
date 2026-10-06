@@ -22,7 +22,7 @@
 
 // 0x52FEC0
 namespace gamemd {
-void Screen_Capture(void * a1, void * a2, void * a3, void * a4)
+int Screen_Capture(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int v4;
   int v5; // ebx

@@ -127,7 +127,7 @@ int GameConfig::ComputeHash()
     return dword_B053B4 + v0; /*0x679ea8*/
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
-  GenericList::Constructor(v7); /*0x679df1*/
+  ((GenericList *)v7)->Constructor(); /*0x679df1*/
   v7[0] = (unsigned int)(&vt_List); /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/

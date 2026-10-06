@@ -57,7 +57,7 @@ char Credits::Screen()
         v4 = v2 + 3; /*0x52cc0b*/
         v2[1] = 0; /*0x52cc0e*/
         v2[2] = 0; /*0x52cc13*/
-        GenericList::Constructor(v2 + 3); /*0x52cc16*/
+        ((GenericList *)(v2 + 3))->Constructor(); /*0x52cc16*/
         *v4 = &vt_List; /*0x52cc1b*/
         v3[10] = 0; /*0x52cc21*/
         v3[11] = 0; /*0x52cc24*/
@@ -100,7 +100,7 @@ LABEL_15:
       v8 = v6 + 3; /*0x52cceb*/
       v6[1] = 0; /*0x52ccee*/
       v6[2] = 0; /*0x52ccf3*/
-      GenericList::Constructor(v6 + 3); /*0x52ccf6*/
+      ((GenericList *)(v6 + 3))->Constructor(); /*0x52ccf6*/
       *v8 = &vt_List; /*0x52ccff*/
       v7[10] = 0; /*0x52cd08*/
       v7[11] = 0; /*0x52cd0b*/

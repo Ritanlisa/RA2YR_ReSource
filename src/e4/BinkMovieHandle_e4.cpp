@@ -147,7 +147,7 @@ LABEL_6:
       goto LABEL_6; /*0x433155*/
     }
   }
-  return Bin  return ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->BlitToTarget((int)width); 
+  return ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->BlitToTarget((int)width); 
 
 }
 } // namespace gamemd
@@ -217,7 +217,7 @@ namespace gamemd {
 int BinkMovieHandle::Pause(int a2, int a3)
 {
 
-  return Bin  return BinkMovieHandle::RenderFrameClipped( this->height, a2, (void)((void *)(a3))); 
+  return BinkMovieHandle::RenderFrameClipped( this->height, a2, (void)((void *)(a3))); 
 
 }
 } // namespace gamemd

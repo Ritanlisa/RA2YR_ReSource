@@ -160,7 +160,7 @@ HWND Mouse::ReleaseCapture()
 
   int result; // eax
 
-  ((DisplayClass*)(gamemd::DisplayClass *)this)->ExitMode(); /*0x6938c3*/
+  ((gamemd::DisplayClass*)(gamemd::DisplayClass *)this)->ExitMode(); /*0x6938c3*/
   *((unsigned char *)this + 21850) = 0; /*0x6938c8*/
   result = (int)GetCapture(); /*0x6938cf*/
   if ( (HWND)result == (HWND)(g_hWnd) ) /*0x6938de*/

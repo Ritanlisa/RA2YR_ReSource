@@ -1547,7 +1547,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
   v6 = 4; /*0x506f51*/
   do /*0x506f63*/
   {
-    DynamicVector::Constructor_Cell(v5, 0, 0); /*0x506f5a*/
+    ((DynamicVector *)v5)->Constructor_Cell( 0, 0); /*0x506f5a*/
     v5 = (DynamicVector *)((char *)v5 + 24); /*0x506f5f*/
     --v6; /*0x506f62*/
   }
@@ -2528,7 +2528,7 @@ int HouseClass::CreateRadarOutage(int a2)
 }
 // 0x50D320
 namespace gamemd {
-void HouseClass_RespawnStartingBuildings(_UNKNOWN ** a2, unsigned int * a3, int a4)
+int HouseClass_RespawnStartingBuildings(_UNKNOWN ** a2, unsigned int * a3, int a4)
 {
   int v4; // ecx
   int result; // eax

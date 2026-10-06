@@ -56,12 +56,12 @@ namespace gamemd {
 extern unsigned char * _mbsnbcpy(unsigned char * aP0, const unsigned char * aP1, unsigned int aP2);  // CRT internal (no def in TU)
 int wcsncnt(const wchar_t * aP0, int a2);  // def later in this TU
 int _store_num(int a1, unsigned int a2, unsigned int * a3, unsigned int * a4);  // def later in this TU
-void _store_str(unsigned char * a1, unsigned int * a2, unsigned int * a3);  // def later in this TU
-void _store_winword(unsigned char * a1, int a2, unsigned int * a3, unsigned int * a4, int a5);  // def later in this TU
+int _store_str(unsigned char * a1, unsigned int * a2, unsigned int * a3);  // def later in this TU
+int _store_winword(unsigned char * a1, int a2, unsigned int * a3, unsigned int * a4, int a5);  // def later in this TU
 char _abstract_sw(unsigned int aP0 = 0);  // def later (b24: body decodes aP0; callers render 0-arg)
 extern void ** __pxcptinfoptrs(void);  // CRT internal
 typedef void (__cdecl *_PVFV)(void);
-void _initterm(_PVFV * First, _PVFV * Last);  // def later in this TU
+int _initterm(_PVFV * First, _PVFV * Last);  // def later in this TU
 HANDLE GetCurrentProcess(void);  // 0x7C847C def later in this TU (fwd struct in _fwd_e4 shadows name)
 // G42.33 b12 TU-local supplies (CRT internals, no defs in TU; flattened b14 — was nested gamemd::gamemd)
 extern int _isindst(int aP0);  // CRT internal (call sites pre-cast to int)
@@ -6359,7 +6359,7 @@ int wcstoxl(wint_t * a1, wint_t ** a2, int a3, int a4)
 }
 // 0x7CBE1C
 namespace gamemd {
-void doexit(UINT uExitCode, int a2, int a3)
+int doexit(UINT uExitCode, int a2, int a3)
 {
   HANDLE CurrentProcess; // eax
   void (**v4)(void); // esi
@@ -8776,7 +8776,7 @@ void * __ffexpm1(int a1, double a2)  // G42.33 b17: params restored
 }
 // 0x7CF0F1
 namespace gamemd {
-int _isintTOS(double a1)  // G42.33 b23: truth int __usercall isintTOS@<eax>(double a1@<st0>)
+int _isintTOS(double a1)  // G42.33 b23: truth int isintTOS@<eax>(double a1@<st0>)
 {
   _ST6 = a1; /*0x7cf0f1*/
   __asm { frndint } /*0x7cf0f3*/
@@ -12603,7 +12603,7 @@ void nullsub_268()
 
 // 0x7C8FB0
 namespace gamemd {
-double __CIpow(unsigned long long x, double y)  // G42.33 b23: truth double __usercall _CIpow@<st0>(u64 x@<st0>, double y@<st1>)
+double __CIpow(unsigned long long x, double y)  // G42.33 b23: truth double _CIpow@<st0>(u64 x@<st0>, double y@<st1>)
 {
   CIpow_Helper(x, IDA_HIDWORD(x), IDA_LODWORD(y), IDA_HIDWORD(y)); /*0x7c8fc0*/
   return y; /*0x7c8fc5*/
@@ -15232,7 +15232,7 @@ void __declspec(noreturn) _startTwoArgErrorHandling()  // G42.33 b26: IDA __nore
 
 // 0x7CF347
 namespace gamemd {
-double __startOneArgErrorHandling(int a1, int a2, int a3, double a4, short a5, int a7, int a8)  // G42.33 b26: truth double __usercall@<st0> (ida_cache 0x7CF347)
+double __startOneArgErrorHandling(int a1, int a2, int a3, double a4, short a5, int a7, int a8)  // G42.33 b26: truth double @<st0> (ida_cache 0x7CF347)
 {
   unsigned int v9[6]; // [esp+0h] [ebp-20h] BYREF
   double v10; // [esp+18h] [ebp-8h]

@@ -162,7 +162,7 @@ LABEL_5:
                 v17[56] = v14; /*0x4313a9*/
                 for ( v17[55] = v11; v12 < dword_A8DA84; ++v12 ) /*0x4313b1*/
                 {
-                  Debug::Log(); /*0x4313c2*/
+                  Debug::Log("Sending beacon delete to %s\n"); /*0x4313c2 G57c1: IDA 0x4313c2 push offset aSendingBeaconD*/
                   ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)&v16, 61, 1, (&dword_A8DA78)[v12] + 40, 0, 0); /*0x4313e9*/
                   result = dword_A8DA84; /*0x4313ee*/
                 }
@@ -287,7 +287,7 @@ LABEL_5:
           result = dword_A8DA84; /*0x4315e7*/
           for ( i = 1; i < dword_A8DA84; ++i ) /*0x4315f3*/
           {
-            Debug::Log(); /*0x431608*/
+            Debug::Log("Sending beacon text to %s\n"); /*0x431608 G57c1: IDA 0x431608 push offset aSendingBeaconT*/
             ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)&v20, 455, 1, (&dword_A8DA78)[i] + 40, 0, 0); /*0x431632*/
             result = dword_A8DA84; /*0x431637*/
           }
@@ -418,7 +418,7 @@ LABEL_10:
           v51[0] = 41; /*0x48d2d6*/
           CopyWideToChar((unsigned char *)(&v51[1]), (char *)*dword_A8DA78, -1); /*0x48d2e6*/
           Network_Disconnect(); /*0x48d2eb*/
-          Debug::Log(); /*0x48d2f5*/
+          Debug::Log("Sending NET_PORT_PROBE packets in Call_Back\n"); /*0x48d2f5 G57c1: IDA 0x48d2f5 push offset aSendingNetPort*/
           HIWORD(v5) = HIWORD(dword_A8DA84); /*0x48d2fa*/
           v6 = 1; /*0x48d304*/
           if ( dword_A8DA84 > 1 ) /*0x48d306*/
@@ -432,7 +432,7 @@ LABEL_10:
               if ( !v7 ) /*0x48d322*/
               {
                 ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA78)[v6])); /*0x48d331*/
-                Debug::Log(); /*0x48d33c*/
+                Debug::Log("Sending to %s\n"); /*0x48d33c G57c1: IDA 0x48d33c push offset aSendingToS*/
                 ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v51, 91, 0, (&dword_A8DA78)[v6] + 40, v46, 0); /*0x48d366*/
                 MessageLoop(); /*0x48d36b*/
                 ((Network *)(&unk_A8E9C0))->ReceiveLoop(); /*0x48d375*/
@@ -456,13 +456,13 @@ LABEL_10:
                 if ( v12 - (&dword_A8E284)[v42] > 2400 ) /*0x48d3fa*/
                 {
                   ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA78)[v6])); /*0x48d404*/
-                  Debug::Log(); /*0x48d40f*/
+                  Debug::Log("No PORT_PROBE from %s in the last 40 seconds\n"); /*0x48d40f G57c1: IDA 0x48d40f push offset aNoPortProbeFro*/
                   v13 = (&dword_A8DA78)[v6]; /*0x48d41d*/
                   v14 = *(unsigned short *)(v13 + 131); /*0x48d420*/
                   if ( v14 != (unsigned short)v46 && v14 >= 0x400u ) /*0x48d432*/
                   {
                     ToWideStringChar((IUnknown *)((char *)v13)); /*0x48d434*/
-                    Debug::Log(); /*0x48d43f*/
+                    Debug::Log("Sending to %s on mangled port from pserver\n"); /*0x48d43f G57c1: IDA 0x48d43f push offset aSendingToSOnMa*/
                     v15 = (&dword_A8DA78)[v6]; /*0x48d44d*/
                     LOWORD(v16) = *(unsigned short *)(v15 + 131); /*0x48d456*/
                     ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v51, 91, 0, v15 + 40, v16, 0); /*0x48d46c*/
@@ -557,12 +557,12 @@ LABEL_25:
                 v41,
                 0);
               PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x48d995*/
-              MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x48d9a1*/
+              ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x48d9a1*/
               wcscpy(MEMORY[0xA8D112], (const wchar_t *)&stru_A8D600.__pad_64[4]); /*0x48d9b0*/
             }
             break; /*0x48d9b8*/
           case 0xF: /*0x48d583*/
-            Debug::Log(); /*0x48da4a*/
+            Debug::Log("Processing NET_PROGRESS_REPORT\n"); /*0x48da4a G57c1: IDA 0x48da4a push offset aProcessingNetP*/
             v38 = 0; /*0x48da57*/
             if ( dword_A8DA84 > 0 ) /*0x48da5b*/
             {
@@ -639,14 +639,14 @@ LABEL_25:
                   }
                   Class = (char *)((Network *)((Network *)&unk_A8E9C0))->GetClass((*(int *)&stru_A8D600.__pad_64[3])); /*0x48d5fa*/
                   ToWideStringChar((IUnknown *)(Class)); /*0x48d601*/
-                  Debug::Log(); /*0x48d60c*/
+                  Debug::Log("Got NET_IM_STILL_HERE packet from %s.\n"); /*0x48d60c G57c1: IDA 0x48d60c push offset aGotNetImStillH*/
                   Network_Helper_646DF0(v21); /*0x48d616*/
                 }
               }
             }
             break; /*0x48d61b*/
           case 0x29: /*0x48d583*/
-            Debug::Log(); /*0x48d635*/
+            Debug::Log("Got NET_PORT_PROBE packet from %s - port = %d\n"); /*0x48d635 G57c1: IDA 0x48d635 push offset aGotNetPortProb*/
             v23 = 0; /*0x48d642*/
             if ( dword_A8DA84 > 0 ) /*0x48d646*/
             {
@@ -680,12 +680,12 @@ LABEL_56:
                     v30 = *(unsigned short *)dword_A8D804; /*0x48d708*/
                     if ( *(unsigned short *)dword_A8D804 != *(unsigned short *)((&dword_A8DA78)[v23] + 40) || *(unsigned short *)dword_A8D804 != *v43 ) /*0x48d724*/
                     {
-                      Debug::Log(); /*0x48d72b*/
+                      Debug::Log("Strange port number in PORT_PROBE packet\n"); /*0x48d72b G57c1: IDA 0x48d72b push offset aStrangePortNum*/
                       if ( !v30 ) /*0x48d73f*/
                         v30 = 1234; /*0x48d741*/
                       *v43 = v30; /*0x48d746*/
                       ((Network *)((Network *)((&dword_A8DA78)[v23] + 40)))->SetPort(v30); /*0x48d756*/
-                      Debug::Log(); /*0x48d76d*/
+                      Debug::Log("Adjusting port number for player %s from %d to %d\n"); /*0x48d76d G57c1: IDA 0x48d76d push offset aAdjustingPortN*/
                     }
                   }
                 }
@@ -696,7 +696,7 @@ LABEL_56:
             }
             break; /*0x48d788*/
           case 0x2F: /*0x48d583*/
-            Debug::Log(); /*0x48d87c*/
+            Debug::Log("Got NET_PORT_UNREACHABLE message from %s\n"); /*0x48d87c G57c1: IDA 0x48d87c push offset aGotNetPortUnre*/
             if ( *(unsigned int *)&dword_A8B238 == 4 && *(unsigned int *)&stru_887598.isAliveFlag ) /*0x48d898*/
             {
               v34 = ((Network *)(Network *)&stru_B052C0.__pad_0[16])->processAcknowledgment( &stru_A8D600.__pad_34[8]); /*0x48d8a8*/
@@ -824,7 +824,7 @@ AbstractClass * * Network::Init()
   dword_A8B24C = 2; /*0x52f467*/
   (*(void (**)(int, unsigned int))(*(unsigned int *)v0 + 60))(v0, 0); /*0x52f474*/
   Network::SetConnectionParams(30, -1, 600, 1); /*0x52f489*/
-  ((Debug *)aAboutToInitial)->Log(); /*0x52f493*/
+  ((gamemd::Debug*)aAboutToInitial)->Log(); /*0x52f493*/
   v4 = Network_Init_5DA6C0(); /*0x52f4a6*/
   (*(void (**)(int))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_70))(dword_887628);  /*0x52f4ac*/
   dword_A8E2B2 = 0; /*0x52f4b3*/
@@ -860,7 +860,7 @@ AbstractClass * * Network::Init()
       dword_A8E228 = 1250; /*0x52f583*/
     byte_A8E250 = 0; /*0x52f58d*/
   }
-  RawFileClass::Construct( aRa2mdIni); /*0x52f59c*/
+  ((RawFileClass *)aRa2mdIni)->Construct(); /*0x52f59c*/
   INIClass::SetInt(aMultiplayer, aPortbase, dword_A8E228, 0); /*0x52f5b7*/
   INIClass::SetInt(aMultiplayer, aPortpool, dword_ABFED8, 0); /*0x52f5d3*/
   ((INIClass *)v5)->WriteDigest( 0); /*0x52f5e3*/
@@ -995,7 +995,7 @@ int Network::processPacket(TechnoTypeClass * aP1)
 }
 // 0x53F5B0
 namespace gamemd {
-void sub_53F5B0()
+int sub_53F5B0()
 {
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x53f5b8*/
     (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 32))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x53f5bc*/
@@ -1024,8 +1024,8 @@ AbstractClass * * Network::SetConnectionParams(int aP1, int a3, int a4, char aP4
   *((unsigned int *)this + 22) = aP1; /*0x540c75*/
   *((unsigned int *)this + 23) = a3; /*0x540c78*/
   *((unsigned int *)this + 24) = a4; /*0x540c7b*/
-  Debug::Log(); /*0x540c7e*/
-  Debug::Log(); /*0x540c8e*/
+  Debug::Log("IPX Manager: RetryDelta = %d\n"); /*0x540c7e G57c1: IDA 0x540c7e push offset aIpxManagerRetr*/
+  Debug::Log("MaxAhead is %d\n"); /*0x540c8e G57c1: IDA 0x540c8e push offset aMaxaheadIsD*/
   if ( aP4 ) /*0x540c9c*/
     (*(void (**)(IPXManagerClass *, unsigned int, unsigned int, unsigned int))(this->Socket + 56))( /*0x540cae*/
       this,
@@ -1199,7 +1199,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
   if ( !v9 ) /*0x541142*/
   {
     ++*((char *)this + 40); /*0x54114b*/
-    Debug::Log(); /*0x541159*/
+    Debug::Log("Send overflow %d\n"); /*0x541159 G57c1: IDA 0x541159 push offset g_Str_Trace_Send_overflow__d*/
   }
   return v9; /*0x541165*/
 
@@ -1332,7 +1332,7 @@ int Network::SendPacket(int a2, int a3, unsigned char a4)
   if ( !v6 ) /*0x54144f*/
   {
     ++*((char *)this + 40); /*0x541458*/
-    Debug::Log(); /*0x541466*/
+    Debug::Log("Send overflow %d\n"); /*0x541466 G57c1: IDA 0x541466 push offset g_Str_Trace_Send_overflow__d*/
   }
   return v6; /*0x541471*/
 
@@ -4493,7 +4493,7 @@ AbstractClass * * Network::SyncPlayerList()
       if ( v3 >= 0 && v2 < owningHouseIndex ) /*0x792f38*/
         qmemcpy(v16, (char *)g_WOL_UserList.nextObject + v3, sizeof(v16)); /*0x792f4b*/
       v4 = CharToWideString( (unsigned char *)(&v16[9])); /*0x792f51*/
-      v5 = Player::FindByName( (wchar_t *)((Player *)v4)); /*0x792f58*/
+      v5 = ((Player *)(((Player *)v4)))->FindByName(); /*0x792f58*/
       v6 = v5; /*0x792f5d*/
       if ( v5 && (uint8_t)IsKnownPointer((ObjectClass *)v5) ) /*0x792f65*/
         *(unsigned int *)&v6->q07B = v16[5]; /*0x792f72*/
@@ -4503,7 +4503,7 @@ AbstractClass * * Network::SyncPlayerList()
         if ( (v16[0] & 1) != 0 ) /*0x792f96*/
         {
           v8 = CharToWideString( (unsigned char *)(&v16[9])); /*0x792f9c*/
-          v9 = Player::FindByName( (wchar_t *)((Player *)v8)); /*0x792fa3*/
+          v9 = ((Player *)(((Player *)v8)))->FindByName(); /*0x792fa3*/
           ((Network *)((Network *)(v9 + 20)))->CopyAddress(&v14, (int)v15); /*0x792fb5*/
           ((NetworkID *)((NetworkID *)&stru_A8BB1C))->Assign(&v14, (int)v15, 0); /*0x792fcb*/
         }
@@ -4639,7 +4639,7 @@ int Network::finalizeSession()
 }
 // 0x793BB0
 namespace gamemd {
-void sub_793BB0()
+int sub_793BB0()
 {
   int result; // eax
   int *v2; // ebp
@@ -4678,7 +4678,7 @@ void sub_793BB0()
         strcpy((char *)&v8[1], ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty()); /*0x793c39*/
         ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[*v3])); /*0x793c4b*/
         Debug::Log(); /*0x793c56*/
-        Network::SendToPlayer( (int)&unk_A8E9C0, (int)v8, 47, 0, (void)((wchar_t *)dword_A8DA90[*v3])); /*0x793c76*/
+        ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)v8, 47, 0, (void)((wchar_t *)dword_A8DA90[*v3])); /*0x793c76*/
         *v2 = TimerGetTicks(); /*0x793c8f*/
         v2[1] = v7; /*0x793c99*/
         v2[2] = 1200; /*0x793c9c*/
@@ -4695,7 +4695,7 @@ void sub_793BB0()
 }
 // 0x7A2730
 namespace gamemd {
-void sub_7A2730()
+int sub_7A2730()
 {
   int result; // eax
 
@@ -5242,7 +5242,7 @@ short Network::WaitForPacket(int a1, int a2)
     Event::Dispatch(); /*0x5d92a7*/
     if ( v2 >= ((Connection *)(unk_A8E9C0))->GetSpeed() ) /*0x5d92b8*/
       v2 = 0; /*0x5d92ba*/
-    if ( Network::SendPacketThunk( v2, v15, v12, v14, (int)(&v7), (int)(&v11)) && v7 == -22012 && v15[0] == 44 && a1 == v11 ) /*0x5d9304*/
+    if ( gamemd::Network::SendPacketThunk( v2, v15, v12, v14, (int)(&v7), (int)(&v11)) && v7 == -22012 && v15[0] == 44 && a1 == v11 ) /*0x5d9304*/
     {
       v5 = v16; /*0x5d9314*/
       Debug::Log( /*0x5d9322*/
@@ -5848,7 +5848,7 @@ void sub_72CDB0()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[764]; /*0x72cdc5*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[764] ) /*0x72cdcd*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[764]); /*0x72cdd1*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[764]))->Destroy(); /*0x72cdd1*/
         RA2_OPDEL(v1); /*0x72cdd7*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1332] = 0; /*0x72cddf*/

@@ -483,7 +483,7 @@ XSurface * * XSurface::FillRectEx(unsigned int *a2, int *a3, int a4)
     return 0; /*0x7bb11f*/
   v56 = (unsigned int *)v16; /*0x7bb125*/
   v58 = (int *)(*(int (**)(XSurface *))(*(unsigned int *)v4->Surface + 116))(v4); /*0x7bb132*/
-  v17 = CellStruct::Copy((CellStruct *)v47, &v51); /*0x7bb139*/
+  v17 = ((CellStruct *)v47)->Copy( &v51); /*0x7bb139*/
   v18 = (*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)v4->Surface + 92))(v4, *v17, v17[1]); /*0x7bb154*/
   v53 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/

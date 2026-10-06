@@ -673,7 +673,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen(aWdtmapmdIni_0, (CHAR *)1); /*0x76957a*/
   v55.ambientSoundController[2] = 0; /*0x769588*/
   v55.ambientSoundController[3] = 0; /*0x76958c*/
-  GenericList::Constructor((GenericList *)&v55.ambientSoundController[4]); /*0x769593*/
+  ((GenericList *)(&v55.ambientSoundController[4]))->Constructor(); /*0x769593*/
   v55.ambientSoundController[4] = (int)&List_INIClass_INISection___vftable; /*0x76959f*/
   Node::Init((Node *)&v55.bombVisible); /*0x7695aa*/
   v55.visibilityFlags = 0; /*0x7695bc*/
@@ -692,7 +692,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   v4 = (int *)RA2_OPNEW(0x1E0u); /*0x769640*/
   v5 = v4; /*0x769645*/
   if ( v4 ) /*0x76964c*/
-    Array::ForEach(v4, 16, 30, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769657*/
+    ((Array *)v4)->ForEach( 16, 30, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769657*/
   else
     v5 = 0; /*0x76965e*/
   *(unsigned int *)&v51.m_1[3] = v5; /*0x769665*/
@@ -704,7 +704,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   v6 = (int *)RA2_OPNEW(0x168u); /*0x769687*/
   v7 = v6; /*0x76968c*/
   if ( v6 ) /*0x769693*/
-    Array::ForEach(v6, 12, 30, (int (*)(int))unknown_libname_37); /*0x76969e*/
+    ((Array *)v6)->ForEach( 12, 30, (int (*)(int))unknown_libname_37); /*0x76969e*/
   else
     v7 = 0; /*0x7696a5*/
   Block = v7; /*0x7696ab*/
@@ -752,7 +752,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
           v12 = (int *)RA2_OPNEW(12 * v11); /*0x769773*/
           v13 = v12; /*0x769778*/
           if ( v12 ) /*0x76977f*/
-            Array::ForEach(v12, 12, abstractFlags + 1, (int (*)(int))unknown_libname_37); /*0x76978a*/
+            ((Array *)v12)->ForEach( 12, abstractFlags + 1, (int (*)(int))unknown_libname_37); /*0x76978a*/
           else
             v13 = 0; /*0x769791*/
           IDA_LOBYTE(v54) = 1; /*0x769795*/
@@ -802,7 +802,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
             v21 = (int *)RA2_OPNEW(16 * v11); /*0x76984e*/
             v22 = v21; /*0x769853*/
             if ( v21 ) /*0x76985a*/
-              Array::ForEach(v21, 16, v11, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769865*/
+              ((Array *)v21)->ForEach( 16, v11, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769865*/
             else
               v22 = 0; /*0x76986c*/
             IDA_LOBYTE(v51.m_C) = 1; /*0x769870*/

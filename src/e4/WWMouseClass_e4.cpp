@@ -83,13 +83,13 @@ int WWMouseClass::hideCursor()
   unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b994f*/
-    ((gamemd::Debug *)this)->Log(); /*0x7b9960*/
+    Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b9960 G57c1: IDA 0x7b9960 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
   if ( !this->WWMouseClass_field_0xC ) /*0x7b9968*/
   {
     if ( (*(uint8_t (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9977*/
     {
       if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9994*/
-        ((gamemd::Debug *)this)->Log(); /*0x7b99a5*/
+        Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b99a5 G57c1: IDA 0x7b99a5 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
       if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b99ba*/
       {
         WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b99bc*/
@@ -158,15 +158,15 @@ void* WWMouseClass::captureMouse()
 
   if ( this && !(*(uint8_t (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9a70*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x7b9a82*/
+    Debug::Log("Capture_Mouse()\n"); /*0x7b9a82 G57c1: IDA 0x7b9a82 push offset aCaptureMouse*/
     if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9aa3*/
-      ((gamemd::Debug *)this)->Log(); /*0x7b9ab4*/
+      Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b9ab4 G57c1: IDA 0x7b9ab4 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
     v2 = *(unsigned int *)this->__pad_0; /*0x7b9abc*/
     LOBYTE(this->WWMouseClass_field_0x10) = 1; /*0x7b9ac0*/
     if ( !(*(uint8_t (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9ac4*/
     {
       if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9ae7*/
-        ((gamemd::Debug *)this)->Log(); /*0x7b9af8*/
+        Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b9af8 G57c1: IDA 0x7b9af8 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
       if ( (uint8_t)((BSurface *)((int)this))->CreateTripleBuffer() && this->WWMouseClass_field_0x24 ) /*0x7b9b0f*/
       {
         ((Rect *)(&v16))->Set(0, 0, 0, 0); /*0x7b9b26*/
@@ -237,15 +237,15 @@ void WWMouseClass::releaseMouse()
 
   if ( this && (*(uint8_t (**)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 28))(this) ) /*0x7b9c40*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x7b9c51*/
+    Debug::Log("Release_Mouse()\n"); /*0x7b9c51 G57c1: IDA 0x7b9c51 push offset aReleaseMouse*/
     if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9c72*/
-      ((gamemd::Debug *)this)->Log(); /*0x7b9c83*/
+      Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b9c83 G57c1: IDA 0x7b9c83 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
     v2 = *(unsigned int *)this->__pad_0; /*0x7b9c8b*/
     LOBYTE(this->WWMouseClass_field_0x10) = 0; /*0x7b9c8f*/
     if ( !(*(uint8_t (**)(WWMouseClass *))(v2 + 8))(this) ) /*0x7b9c93*/
     {
       if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b9cb0*/
-        ((gamemd::Debug *)this)->Log(); /*0x7b9cc1*/
+        Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b9cc1 G57c1: IDA 0x7b9cc1 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
       if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b9cd6*/
       {
         WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b9cd8*/

@@ -337,7 +337,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   if ( /*0x645051*/
          ((INIClass*)((INIClass *)aP1))->GetString(/*0x645051*/ v45, v46, (char *)p_ParticleTypeClass_field_0x24, (char *)v48, ParticleTypeClass_field_0x2F8) )
   {
-    v11 = (void *)WarheadTypeClass::FindOrCreate( (ObjectClass *)(Destination)); /*0x64505e*/
+    v11 = (void *)((WarheadTypeClass *)(Destination))->FindOrCreate(); /*0x64505e*/
   }
   else
   {

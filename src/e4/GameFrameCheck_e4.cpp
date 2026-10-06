@@ -49,7 +49,7 @@ int sub_6863E0(void * a1, void * a2)
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[35] /*0x686404*/
     && *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] )
   {
-        ((Debug *)0)->Log();
+        Debug::Log("Toggle display mode back to shell res\n") /*G57c1: IDA 0x68640b push offset g_Str_Toggle_display_mode_back_to_sh*/;
     ChangeVideoMode(stru_A8EB00.ObjectTypeClass[35], stru_A8EB00.ObjectTypeClass[36]); /*0x68641f*/
   }
   *((unsigned int *)((char *)&stru_A8EB00 + 376)) = 0; /*0x68642a*/
@@ -73,7 +73,7 @@ int sub_6863E0(void * a1, void * a2)
     ((AudioQueue *)0)->DrainAll();
   StopThemeClass(1); /*0x6864c5*/
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x6864ca*/
-  Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6864d8*/
+  Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6864d8*/
   ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6864e3*/
   ScenarioClass::LoadScenarioAndStart((char *)&((unsigned int *)(dword_A8B230))[130].abstractFlags, 0, a2, (&dword_A8B230)[375].uniqueId); /*0x6864fc*/
   ((GameResult*)(GameResult *)&stru_8A38E0)->CalcScore(); /*0x686506*/
@@ -82,7 +82,7 @@ int sub_6863E0(void * a1, void * a2)
     v6 = 60; /*0x68650f*/
     if ( v10 != -1 ) /*0x686516*/
     {
-            v5 = ((Timer *)0)->GetTicks() - v7;
+            v5 = ((gamemd::Timer*)0)->GetTicks() - v7;
       if ( v7 >= 60 ) /*0x686527*/
         break; /*0x686527*/
       v6 = 60 - v7; /*0x686529*/
@@ -91,7 +91,7 @@ int sub_6863E0(void * a1, void * a2)
       break; /*0x68652d*/
         ((Event *)0)->Dispatch();
   }
-  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x686536*/
+  ((gamemd::Timer*)(*(gamemd::Timer**)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x686536*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x68654a*/
     ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(stru_A8EB00.ObjectTypeClass[32]); /*0x686553*/
 // 0x4f4480
@@ -117,7 +117,7 @@ AbstractClass * * sub_686570()
   byte_A8E378 = 0; /*0x686585*/
   if ( ((unsigned int *)(dword_A8B230))[43].vtable2 != (void *)-1 ) /*0x68658e*/
   {
-        Ticks = ((Timer *)0)->GetTicks();
+        Ticks = ((gamemd::Timer*)0)->GetTicks();
     v3 = (char *)p_vtable2[2]; /*0x68659a*/
     v4 = Ticks - (unsigned int)*p_vtable2; /*0x68659d*/
     *p_vtable2 = (void *)-1; /*0x68659f*/
@@ -125,13 +125,13 @@ AbstractClass * * sub_686570()
   }
   ((unsigned int *)(dword_A8B230))[130].vtable3 = (void *)1; /*0x6865b0*/
   ((AsyncIO *)(v9))->Shutdown(); /*0x6865ba*/
-  ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6865c5*/
+  ((gamemd::Timer*)(*(gamemd::Timer**)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6865c5*/
   (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))(  /*0x6865d9*/
     stru_887598.lineTrailer,
     g_DSurface_Hidden,
     0);
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50))(stru_887598.lineTrailer);  /*0x6865e4*/
-  Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6865ee*/
+  Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6865ee*/
   ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x6865fa*/
   ((Audio*)(Audio *)g_MixerState)->GetFlag(); /*0x686605*/
   ((VoxClass *)(&stru_83DB34))->FindAndPlay(-1); /*0x686616*/
@@ -160,7 +160,7 @@ AbstractClass * * sub_686570()
     result = stru_A8EB00.ObjectTypeClass[36]; /*0x6866c8*/
     if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] ) /*0x6866cf*/
     {
-            ((Debug *)0)->Log();
+            Debug::Log("Toggle display mode back to shell res\n") /*G57c1: IDA 0x6866d6 push offset g_Str_Toggle_display_mode_back_to_sh*/;
       result = ChangeVideoMode(stru_A8EB00.ObjectTypeClass[35], stru_A8EB00.ObjectTypeClass[36]); /*0x6866ea*/
     }
   }

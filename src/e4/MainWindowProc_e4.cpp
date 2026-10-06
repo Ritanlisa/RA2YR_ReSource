@@ -24,9 +24,9 @@ AbstractClass * * sub_777420(ObjectClass *self)
   HWND Current; // eax
   HWND v5; // eax
 
-    ((Debug *)0)->Log();
+    Debug::Log("Focus_Restore()\n") /*G57c1: IDA 0x777425 push offset aFocusRestore*/;
   sub_407040(v1); /*0x77742d*/
-    ((Debug *)0)->Log();
+    Debug::Log("Focus_Restore(): _MouseCaptured = %s\n") /*G57c1: IDA 0x77744b push offset aFocusRestoreMo*/;
   if ( stru_887598.lineTrailer && byte_B73560 == 1 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x77746d*/
     (*(void (**)(void))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60))();  /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
@@ -71,7 +71,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
         0);
     }
   }
-  MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x77757c*/
+  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x77757c*/
   InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x77758c*/
   IDA_LOBYTE(v2) = 0; /*0x777592*/
   ((AsyncIO *)(v2))->Read(); /*0x777594*/

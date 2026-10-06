@@ -75,7 +75,7 @@ int sub_4116A0(unsigned int a1)
   v3 = 188 * v2 + 8943480; /*0x4116bd*/
   if ( ((&dword_8877A0)[47 * v2] & 1) != 0 ) /*0x4116c4*/
   {
-        ((Debug *)0)->Log();
+        Debug::Log("Ahandle: Paused %ld\n") /*G57c1: IDA 0x4116cf push offset aAhandlePausedL*/;
     return *(unsigned int *)(v3 + 32); /*0x4116df*/
   }
     v5 = ((Time *)this->0)->GetElapsedMS() - *((unsigned int *)&g_abs_887794 + 47 * v2);
@@ -173,14 +173,14 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       result = (int)(sub_411B20((DWORD_PTR)dwUser,(gamemd::AnimClass *)(a3), a4)); /*0x411862*/
       break; /*0x41186e*/
     case 3: /*0x411835*/
-            ((Debug *)0)->Log();
+            Debug::Log("Closing VQ audio handler\n") /*G57c1: IDA 0x411874 push offset aClosingVqAudio*/;
       LockCount = dwUser[2].LockCount; /*0x411880*/
       v6 = 188 * LockCount + 8943480; /*0x411894*/
       if ( (&byte_887778)[188 * LockCount] == 1 ) /*0x41189b*/
       {
         if ( (&dword_887804)[47 * LockCount] ) /*0x4118a1*/
         {
-                    ((Debug *)0)->Log();
+                    Debug::Log("Stop_Audio_Handler\n") /*G57c1: IDA 0x4118b2 push offset aStopAudioHandl*/;
           v7 = 188 * dwUser[2].LockCount + 8943480; /*0x4118ce*/
           if ( (&dword_887804)[47 * dwUser[2].LockCount] ) /*0x4118c5*/
           {
@@ -195,16 +195,16 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
             LeaveCriticalSection((LPCRITICAL_SECTION)(v7 + 160)); /*0x411913*/
           }
         }
-                ((Debug *)0)->Log();
+                Debug::Log("Calling timeKillEvent\n") /*G57c1: IDA 0x41191e push offset aCallingTimekil*/;
         timeKillEvent((*(unsigned int *)(v6 + 96))); /*0x41192a*/
         *(unsigned int *)(v6 + 96) = 0; /*0x411935*/
-                ((Debug *)0)->Log();
+                Debug::Log("Calling timeEndPeriod\n") /*G57c1: IDA 0x411938 push offset aCallingTimeend*/;
         timeEndPeriod((void *)(0x10u)); /*0x411942*/
         *(unsigned char *)v6 = 0; /*0x41194d*/
-                ((Debug *)0)->Log();
+                Debug::Log("Deleting the critical section object\n") /*G57c1: IDA 0x411950 push offset aDeletingTheCri*/;
         DeleteCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x41195f*/
       }
-            ((Debug *)0)->Log();
+            Debug::Log("VQ audio handler closed OK\n") /*G57c1: IDA 0x41196a push offset aVqAudioHandler*/;
       result = (int)(-1);
       break; /*0x411979*/
     case 4: /*0x411835*/
@@ -262,7 +262,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
         else
         {
                     *(unsigned int *)(v13 + 28) = ((Time *)0)->GetElapsedMS() - *(unsigned int *)(v13 + 24);
-                    ((Debug *)0)->Log();
+                    Debug::Log("Ahandle: PauseAdjust %ld\n") /*G57c1: IDA 0x411a55 push offset g_Str_Trace_Ahandle__PauseAdjust__ld*/;
           v14 = *(unsigned int *)(v13 + 40); /*0x411a5a*/
           IDA_LOBYTE(v14) = v14 & 0xFE; /*0x411a60*/
           *(unsigned int *)(v13 + 40) = v14; /*0x411a62*/
@@ -295,9 +295,9 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   unsigned int v11[24]; // [esp+Ch] [ebp-60h] BYREF
 
   DirectSound = (gamemd::AbstractClass **)((LPDIRECTSOUND)((gamemd::AbstractClass **)(((Audio *)0)->GetDirectSound())));
-    ((Debug *)0)->Log();
+    Debug::Log("Opening VQ audio handler\n") /*G57c1: IDA 0x411b33 push offset aOpeningVqAudio*/;
   GetCurrentThreadId(); /*0x411b3b*/
-    ((Debug *)0)->Log();
+    Debug::Log("Current thread ID is %08x\n") /*G57c1: IDA 0x411b47 push offset aCurrentThreadI*/;
     if ( !((Audio *)0)->IsSoundEnabled() )
     return (gamemd::AbstractClass **)(-13);
   v3 = 0; /*0x411b5c*/
@@ -333,7 +333,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v11[0] = 96; /*0x411c1c*/
   DirectSound->lpVtbl->GetCaps(DirectSound, (LPDSCAPS)v11); /*0x411c28*/
   if ( (v11[1] & 0x20) != 0 ) /*0x411c30*/
-        ((Debug *)0)->Log();
+        Debug::Log("Ahandle detected emulated sound driver. LatencyAdjustment = %ld ticks\n") /*G57c1: IDA 0x411c3e push offset aAhandleDetecte*/;
   else
     *(unsigned int *)(dwUser + 196) = 0; /*0x411c48*/
   v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
@@ -341,12 +341,12 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
   dword_88776C = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((int (*)(unsigned int))*((unsigned int *)aP1 + 2)))); /*0x411c6c*/
   dword_887770 = (unsigned int)((int (*)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3)); /*0x411c75*/
-    ((Debug *)0)->Log();
+    Debug::Log("Calling timeBeginPeriod\n") /*G57c1: IDA 0x411c7b push offset aCallingTimebeg*/;
   if ( timeBeginPeriod((void *)(0x10u)) == 97 ) /*0x411c90*/
     return (gamemd::AbstractClass **)(-13); /*0x411cd5*/
-    ((Debug *)0)->Log();
+    Debug::Log("Creating VQ audio timer thread\n") /*G57c1: IDA 0x411c97 push offset aCreatingVqAudi*/;
   *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, fptc, dwUser, 1u); /*0x411cb6*/
-    ((Debug *)0)->Log();
+    Debug::Log("VQ audio handler opened OK\n") /*G57c1: IDA 0x411cb9 push offset aVqAudioHandler_0*/;
   return (gamemd::AbstractClass **)(*((unsigned int *)v5 + 24) != 0 ? -1 : -13);
 }
 }
@@ -457,7 +457,7 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
   else
   {
         *(unsigned int *)(v3 + 28) = ((Time *)0)->GetElapsedMS() - *(unsigned int *)(v3 + 24);
-        ((Debug *)0)->Log();
+        Debug::Log("Ahandle: PauseAdjust %ld\n") /*G57c1: IDA 0x411e60 push offset g_Str_Trace_Ahandle__PauseAdjust__ld*/;
     v4 = *(unsigned int *)(v3 + 40); /*0x411e65*/
     IDA_LOBYTE(v4) = v4 & 0xFE; /*0x411e6b*/
     *(unsigned int *)(v3 + 40) = v4; /*0x411e6d*/
@@ -778,7 +778,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
         v11 = RA2_OPNEW(0x6D8u); /*0x41b1bc*/
         if ( v11 ) /*0x41b1c6*/
         {
-          v12 = AircraftClass::Construct(v11, v9, *((unsigned int *)dword_A8B21C + v9), v10); /*0x41b1de*/
+          v12 = ((AircraftClass *)v11)->Construct( v9, *((unsigned int *)dword_A8B21C + v9), v10); /*0x41b1de*/
           if ( v12 ) /*0x41b1e2*/
           {
             v13 = strtok(0, (char *)&::Delimiter); /*0x41b1ef*/

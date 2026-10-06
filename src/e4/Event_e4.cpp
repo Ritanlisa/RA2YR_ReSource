@@ -45,7 +45,7 @@ int Event::Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1)
   result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0aa*/
   if ( ((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x48d0b7*/
   {
-    ((Network *)this)->Dispatch(); /*0x48d0b9*/
+    ((gamemd::Network*)this)->Dispatch(); /*0x48d0b9*/
     result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0be*/
   }
   if ( result == 1 ) /*0x48d0c6*/
@@ -92,7 +92,7 @@ LABEL_11:
 }
 // 0x5E2FA0
 namespace gamemd {
-void sub_5E2FA0()
+int sub_5E2FA0()
 {
   int result; // eax
   HWND Current; // esi
@@ -118,7 +118,7 @@ void sub_5E2FA0()
 }
 // 0x5E95E0
 namespace gamemd {
-void sub_5E95E0()
+int sub_5E95E0()
 {
   int v0; // edx
   LPARAM *v1; // ecx
@@ -158,13 +158,13 @@ void sub_5E95E0()
   LABEL_13:
   if ( Game_PlayerCount - v4 <= v5 ) /*0x5e9671*/
     return 0; /*0x5e9694*/
-    ((Debug *)0)->Log();
+    Debug::Log("Channel full - Session.ScenarioMaxPlayers = %d\n") /*G57c1: IDA 0x5e967f push offset aChannelFullSes*/;
   return 1; /*0x5e9689*/
 }
 }
 // 0x796960
 namespace gamemd {
-void sub_796960()
+int sub_796960()
 {
   Network *v1; // edi
   int owningHouseIndex; // eax
@@ -206,13 +206,13 @@ void sub_796960()
     if ( !g_NetworkLobbyState && stru_B76AC4.ambientSoundController[4] ) /*0x796a00*/
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
-        qmemcpy(&v9[((unsigned int *)(0].__pad_0))[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
-      *(unsigned int *)&v9[((unsigned int *)(0].__pad_0))[44] = 0; /*0x796a21*/
+        qmemcpy(&v9[0].__pad_0[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
+      *(unsigned int *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
       ((Network *)(v1))->SyncPlayerList(); /*0x796a29*/
       ((Event *)0)->Dispatch(); /*0x796a2e*/
       ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796a42*/
       ((Network *)(&stru_A8BB1C))->FormatAddress(0); /*0x796a4e*/
-            ((Debug *)0)->Log();
+            Debug::Log("Poke_The_Host - Host address is %s\n") /*G57c1: IDA 0x796a59 push offset aPokeTheHostHos*/;
       memset(v10, 0, sizeof(v10)); /*0x796a6f*/
       v11 = 0; /*0x796a79*/
       v12 = 0; /*0x796a7b*/
@@ -236,7 +236,7 @@ void sub_796960()
         if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x796ae4*/
         {
           v7 = CharToWideString( (unsigned char *)(&g_WebBrowserConfig.ambientSoundController[3])); /*0x796aeb*/
-          Network::SendToPlayer( (int)&unk_A8E9C0, (int)v10, 455, (wchar_t *)(1), (void)((wchar_t *)v7)); /*0x796b04*/
+          ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)v10, 455, (wchar_t *)(1), (void)((wchar_t *)v7)); /*0x796b04*/
         }
       }
   LABEL_24:
@@ -297,7 +297,7 @@ int sub_7A0F40()
       }
       while ( v1 < v10 ); /*0x7a102a*/
     }
-        ((Debug *)0)->Log();
+        Debug::Log("Sending pings for users: %s\n") /*G57c1: IDA 0x7a103c push offset aSendingPingsFo*/;
 // 0x5e3720
     return ((Network *)(Source))->SendOptionsGame(); /*0x7a1048*/
   }
@@ -306,7 +306,7 @@ int sub_7A0F40()
 }
 // 0x786270
 namespace gamemd {
-void sub_786270()
+int sub_786270()
 {
   HKEY phkResult; // [esp+4h] [ebp-110h] BYREF
   BYTE Data[4]; // [esp+8h] [ebp-10Ch] BYREF
@@ -333,7 +333,7 @@ void sub_786270()
     (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
-    ((Debug *)0)->Log();
+    Debug::Log("Get_WDT_State_Silent: WDTHost is %s, port is %d\n") /*G57c1: IDA 0x786353 push offset aGetWdtStateSil*/;
   (*(void (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
     &g_WindowManager.__pad_70[28],
@@ -344,7 +344,7 @@ void sub_786270()
 }
 // 0x7C5F3D
 namespace gamemd {
-void sub_7C5F3D()
+int sub_7C5F3D()
 {
   unsigned int v0; // kr00_4
   unsigned int v1; // kr04_4

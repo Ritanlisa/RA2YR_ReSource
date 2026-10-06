@@ -4,7 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 
 namespace gamemd {
-struct AbstractType {
+struct AbstractType_e4 {
     void* vfptr;  // minimal E2 declaration
     char * FindName();  // 0x40DCB0
 };

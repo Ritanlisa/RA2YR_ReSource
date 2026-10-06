@@ -533,7 +533,7 @@ ObjectClass * * MapClass::LoadFileData()
     __3_YAXPAX_Z(*(void **)&this->__pad_5C[72]); /*0x54704e*/
   v3 = (void *)__2_YAPAXI_Z(Size); /*0x547057*/
   *(unsigned int *)&this->__pad_5C[72] = (unsigned int)(v3); /*0x547063*/
-  CCFileClass::Read(&v12, v3, Size); /*0x54706b*/
+  ((CCFileClass *)(&v12))->Read( v3, Size); /*0x54706b*/
   v4 = *(uint8_t **)&this->__pad_5C[72]; /*0x547070*/
   this->__pad_5C[76] = 1; /*0x547078*/
   v5 = 0; /*0x54707f*/
@@ -875,7 +875,7 @@ void MapClass::Destru_vt07()
   bool v5; // zf
   int v6; // eax
 
-  Debug::Log(); /*0x5659fa*/
+  Debug::Log("MapClass::Init_Clear entry\n"); /*0x5659fa G57c1: IDA 0x5659fa push offset aMapclassInitCl*/
   Event::Dispatch(); /*0x565a02*/
   ((MapClass *)((MapClass *)g_ZBufferDescriptor))->isCellShrouded(0xFFFFu); /*0x565a12*/
   ((MapClass *)((MapClass *)dword_87E8A4))->isLocationShrouded(0x7Fu); /*0x565a1f*/
@@ -908,7 +908,7 @@ void MapClass::Destru_vt07()
   while ( v3 ); /*0x565a76*/
   *(unsigned int *)&this->__pad_144[4] = 13; /*0x565a7d*/
   this->__pad_1140[24] = 0; /*0x565a87*/
-  Debug::Log(); /*0x565a8e*/
+  Debug::Log("MapClass::Init_Clear done\n"); /*0x565a8e G57c1: IDA 0x565a8e push offset aMapclassInitCl_0*/
 
 }
 } // namespace gamemd
@@ -2804,7 +2804,7 @@ LABEL_24:
     }
 LABEL_26:
     ((FogOfWar *)((FogOfWar *)&dword_87F7E8))->Render(); /*0x578064*/
-    return (void *)MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 1); /*0x578075*/
+    return (void *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 1); /*0x578075*/
   }
   return result; /*0x57807a*/
 

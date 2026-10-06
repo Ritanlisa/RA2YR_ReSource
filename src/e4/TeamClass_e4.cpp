@@ -67,10 +67,10 @@ int ((TeamClass *)double a2)->CheckCohesion()
   unsigned char v13[12]; // [esp+30h] [ebp-Ch] BYREF
 
   v3 = v2; /*0x4d9e74*/
-  v4 = (*((int (__usercall **)(ObjectClass *, double))v2->vtable1 + 11))(v2, a2); /*0x4d9e78*/
+  v4 = (*((int (**)(ObjectClass *, double))v2->vtable1 + 11))(v2, a2); /*0x4d9e78*/
   if ( v4 > 0 /*0x4d9f52*/
     && v4 <= 2
-    && (uint8_t)Team::AllMembersValid((Team *)v3)
+    && (uint8_t)((Team *)v3)->AllMembersValid()
     && (v5 = ((Array *)((Array *)v3))->Get(0), (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6)
     && *(unsigned char *)(*(unsigned int *)(((Array *)((Array *)v3))->Get(0) + 1312) + 5801)
     && (v6 = ((Array *)((Array *)v3))->Get(0),
@@ -123,7 +123,7 @@ int TeamClass::DisbandTeam(int a2)
   }
   if ( !a2 ) /*0x577be2*/
 LABEL_7:
-    ((gamemd::Debug *)this)->Log(); /*0x577be4*/
+    Debug::Log("We tried to reset the shroud without an owner"); /*0x577be4 G57c1: IDA 0x577be9 push offset g_Str_We_tried_to_reset_the_shroud_w*/
   v4 = *((unsigned int *)this + 61); /*0x577bf1*/
   *((unsigned int *)this + 67) = 1; /*0x577bf7*/
   *((unsigned int *)this + 68) = v4; /*0x577c01*/
@@ -786,7 +786,7 @@ LABEL_13:
         v13 += 108; /*0x63683e*/
         v31 = *(unsigned short *)v13; /*0x636847*/
         v32 = v13[2]; /*0x63684e*/
-        WaypointCoords = ScriptAction::GetWaypointCoords( (ScriptAction *)v29, (void *a1 =)(aP1)); /*0x63684f*/
+        WaypointCoords = ((ScriptAction *)v29)->GetWaypointCoords( (aP1)); /*0x63684f*/
         *(unsigned int *)&v30[7] = *(unsigned int *)WaypointCoords; /*0x636858*/
         v30[11] = WaypointCoords[4]; /*0x63685f*/
         v15 = (int)(__2_YAPAXI_Z(0x10u)); /*0x636863*/
@@ -834,7 +834,7 @@ LABEL_13:
         }
         if ( *(unsigned int *)(Type + 140) == -1 ) /*0x636940*/
           *(unsigned int *)(Type + 140) = *(unsigned int *)(Type + 20) - 1; /*0x636946*/
-        ScriptAction::PlaceObject((void *)(v8), v16); /*0x63694f*/
+        ((ScriptAction *)(v8))->PlaceObject( v16); /*0x63694f*/
         result = ++v27; /*0x63695c*/
         if ( v27 >= aP2 + aP3 ) /*0x636963*/
           break; /*0x636963*/
@@ -918,7 +918,7 @@ LABEL_13:
         v11 += 108; /*0x636a13*/
         v30 = *(unsigned short *)v11; /*0x636a15*/
         v31 = v11[2]; /*0x636a1c*/
-        WaypointCoords = ScriptAction::GetWaypointCoords( (ScriptAction *)v28, (void *a1 =)(a2)); /*0x636a1d*/
+        WaypointCoords = ((ScriptAction *)v28)->GetWaypointCoords( (a2)); /*0x636a1d*/
         *(unsigned int *)&v29[7] = *(unsigned int *)WaypointCoords; /*0x636a26*/
         v29[11] = WaypointCoords[4]; /*0x636a2d*/
         v13 = (int)(__2_YAPAXI_Z(0x10u)); /*0x636a31*/
@@ -966,7 +966,7 @@ LABEL_13:
         }
         if ( *(unsigned int *)(Type + 140) == -1 ) /*0x636b0e*/
           *(unsigned int *)(Type + 140) = *(unsigned int *)(Type + 20) - 1; /*0x636b14*/
-        ScriptAction::PlaceObject((void *)(v6), v14); /*0x636b1d*/
+        ((ScriptAction *)(v6))->PlaceObject( v14); /*0x636b1d*/
         result = ++v25; /*0x636b2a*/
         if ( v25 >= v27 ) /*0x636b31*/
           break; /*0x636b31*/
@@ -2987,7 +2987,7 @@ bool TeamClass::ValidateMember(TechnoClass * aP1, int * a2, char a4)
   result = *(unsigned int *)(aP1 + 540); /*0x6ea661*/
   if ( (HouseClass *)result != this->owner ) /*0x6ea66c*/
     goto LABEL_39; /*0x6ea66c*/
-  if ( (uint8_t)Team::AllMembersValid( (Team *)aP1) ) /*0x6ea674*/
+  if ( (uint8_t)((Team *)aP1)->AllMembersValid() ) /*0x6ea674*/
   {
     result = (*(int (**)(int))(*(unsigned int *)&aP1->__pad_0B0))( (int)(aP1));  /*0x6ea681*/
     if ( result != 2 ) /*0x6ea687*/

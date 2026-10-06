@@ -47,7 +47,7 @@ int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const
   ObjectClass v22[59]; // [esp+Ch] [ebp-2818h] BYREF
   char *v23; // [esp+2838h] [ebp+14h]
 
-  ((Debug *)this)->Log(); /*0x7a3da1*/
+  ((gamemd::Debug*)this)->Log(); /*0x7a3da1*/
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/

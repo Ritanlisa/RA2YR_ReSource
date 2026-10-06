@@ -466,7 +466,7 @@ int * CellClass::GetScreenRect(int *a2) {
     }
     if ( v9 < 0 || v9 >= *(int *)&(&stru_A8EB00)[340] )
     {
-      Debug::Log(); /*0x4800e0*/
+      Debug::Log("Invalid tile at (%d, %d)\n"); /*0x4800e0 G57c1: IDA 0x4800e0 push offset aInvalidTileAtD*/
     }
     else
     {

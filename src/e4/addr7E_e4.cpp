@@ -21,7 +21,7 @@ void nullsub_272()
 
 // 0x7E0001
 namespace gamemd {
-void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
+void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
 {
   unsigned int v6; // ecx
   unsigned int *v7; // edi
@@ -64,7 +64,7 @@ void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int 
 
 // 0x7E00A6
 namespace gamemd {
-void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
+void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
   unsigned int *v6; // ecx
   unsigned int *v7; // edi
@@ -126,7 +126,7 @@ void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, uns
 
 // 0x7E0170
 namespace gamemd {
-void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
+void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
 {
   unsigned int v3; // ecx
   int v6; // eax
@@ -160,7 +160,7 @@ void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
 
 // 0x7E01D2
 namespace gamemd {
-void  __spoils<ecx> sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned char * a3, int a4)
+void  sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned char * a3, int a4)
 {
   int v7; // eax
   int v8; // ecx

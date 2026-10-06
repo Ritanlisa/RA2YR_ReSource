@@ -11,14 +11,14 @@
 
 // 0x40DCB0
 namespace gamemd {
-char * AbstractType::FindName()
+char * AbstractType_e4::FindName()
 {
 
   int v1; // edx
-  AbstractType **v2; // eax
+  AbstractType_e4 **v2; // eax
 
   v1 = 0; /*0x40dcb0*/
-  v2 = (AbstractType **)dword_816EE4; /*0x40dcb2*/
+  v2 = (AbstractType_e4 **)dword_816EE4; /*0x40dcb2*/
   while ( *v2 != this ) /*0x40dcb9*/
   {
     v2 += 2; /*0x40dcbb*/

@@ -2054,7 +2054,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
 LABEL_61:
         if ( *((unsigned int *)v23 + 131) == -1 /*0x692996*/
           || !(uint8_t)((int (__fastcall *)Radar::IsRadarTargetEligible)(v23)
-          || (v30 = 42, !((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea(v14, 1)) )
+          || (v30 = 42, !((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea(v14, 1)) ))
         {
           v30 = 43; /*0x6929a7*/
         }
@@ -2071,7 +2071,7 @@ LABEL_59:
         goto LABEL_61; /*0x692970*/
       }
       if ( (uint8_t)((int (__fastcall *)Radar::IsRadarTargetEligible)(dword_A83D4C) /*0x692955*/
-        && VectorClass::GetAtChecked(*((int **)dword_A83D4C + aP0 + 132), (int)v21) )
+        && VectorClass::GetAtChecked(*((int **)dword_A83D4C + aP0 + 132), (int)v21) ))
       {
         v30 = 47; /*0x69295e*/
         goto LABEL_65; /*0x692966*/

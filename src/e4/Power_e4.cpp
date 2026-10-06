@@ -325,7 +325,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)this + 1821)); /*0x68b9c2*/
   Power::TimerProcess(*((unsigned int *)this + 1825)); /*0x68b9d0*/
   Power::TimerProcess(*((unsigned int *)this + 1820)); /*0x68b9de*/
-  Checksummer::Add_double(*((unsigned int *)this + 1822), *((unsigned int *)this + 1823)); /*0x68b9f3*/
+  ((Checksummer *)(*((unsigned int *)this + 1822)))->Add_double( *((unsigned int *)this + 1823)); /*0x68b9f3*/
   LOBYTE(v3) = *((unsigned char *)this + 13500); /*0x68b9f8*/
   ((Power *)((int *)a2))->FlagProcess(v3); /*0x68ba01*/
   LOBYTE(v4) = *((unsigned char *)this + 13485); /*0x68ba06*/

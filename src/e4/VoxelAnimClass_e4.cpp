@@ -515,12 +515,12 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v27 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1b4*/
         v28 = v27[188]; /*0x74a1c9*/
         v84 = v27[190]; /*0x74a1cf*/
-        Coords = (unsigned int *)Coord::GetCoords( (int *)(&v101), 0); /*0x74a1d8*/
+        Coords = (unsigned int *)((Coord *)(&v101))->GetCoords( 0); /*0x74a1d8*/
         PlaySoundEffectAt((gamemd::TechnoClass *)(Coords), v28, v83, v84, 1, 0); /*0x74a1e1*/
         v30 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1e6*/
         v90 = v30[190]; /*0x74a1f6*/
         v31 = v30[188]; /*0x74a1fa*/
-        v32 = (int *)Coord::GetCoords( (int *)(&v101), 0); /*0x74a205*/
+        v32 = (int *)((Coord *)(&v101))->GetCoords( 0); /*0x74a205*/
         CreateSmokeEffectAt(v31, v90, *v32, v32[1], v32[2], v85, 0); /*0x74a225*/
       }
     }
@@ -587,7 +587,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       v110 = 0; /*0x74a24c*/
       if ( v33[720] ) /*0x74a250*/
       {
-        v34 = (int *)Coord::GetCoords( (int *)(&v101), v86); /*0x74a269*/
+        v34 = (int *)((Coord *)(&v101))->GetCoords( v86); /*0x74a269*/
         v97 = (int)((*v34)); /*0x74a270*/
         v98 = v34[1]; /*0x74a277*/
         v99 = v34[2]; /*0x74a27e*/
@@ -724,7 +724,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       {
         if ( !v87 ) /*0x74a5ca*/
         {
-          v54 = (unsigned int *)Coord::GetCoords( (int *)(&v101), v86); /*0x74a5db*/
+          v54 = (unsigned int *)((Coord *)(&v101))->GetCoords( v86); /*0x74a5db*/
           v55 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v54); /*0x74a5eb*/
           if ( (uint8_t)IsCoordValidMap((int)v55, 0) ) /*0x74a5f0*/
           {
@@ -792,7 +792,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       }
     }
   }
-  v67 = JumpjetLocomotionClass::Update2((double *)&v1->__pad_98[24], (float *)&v1->__pad_98[24]); /*0x74a7b3*/
+  v67 = ((JumpjetLocomotionClass *)(&v1->__pad_98[24]))->Update2( (float *)&v1->__pad_98[24]); /*0x74a7b3*/
   if ( *((unsigned char *)v1->VoxelAnimClass_field_0x104 + 720) ) /*0x74a7be*/
     *(float *)&v1->__pad_98[68] = *(float *)&v1->__pad_98[68] + *(double *)&v1->__pad_98[32]; /*0x74a7d4*/
   v68 = v67 - 1; /*0x74a7da*/
@@ -825,13 +825,13 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           ((AnimClass *)(v69))->ctor(*((void **)v1->VoxelAnimClass_field_0x104 + 185), v100, 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
         }
       }
-      v72 = (unsigned int *)Coord::GetCoords( (int *)(&v105), v86); /*0x74a88b*/
+      v72 = (unsigned int *)((Coord *)(&v105))->GetCoords( v86); /*0x74a88b*/
       for ( i = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v72)->firstObject; i; i = i->nextObject ) /*0x74a8a3*/
       {
         v74 = i->location[0]; /*0x74a8af*/
         v102 = i->location[1]; /*0x74a8b8*/
         v103 = i->location[2]; /*0x74a8ca*/
-        v75 = (unsigned int *)Coord::GetCoords( (int *)(&v108), v86); /*0x74a8ce*/
+        v75 = (unsigned int *)((Coord *)(&v108))->GetCoords( v86); /*0x74a8ce*/
         v76 = abs32(*v75 - v74) + abs32(v75[1] - v102); /*0x74a8ee*/
         v77 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a8f0*/
         if ( v76 <= v77[189] ) /*0x74a8fc*/
@@ -853,7 +853,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
     }
   }
   VoxelAnimClass_field_0x0 = (int (**)(VoxelAnimClass *, int))v1->VoxelAnimClass_field_0x0; /*0x74a934*/
-  v81 = Coord::GetCoords( (int *)(&v108), v86); /*0x74a941*/
+  v81 = ((Coord *)(&v108))->GetCoords( v86); /*0x74a941*/
   return VoxelAnimClass_field_0x0[109](v1, v81); /*0x749f7b*/
 
 }
@@ -974,7 +974,7 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   *(unsigned int *)&this->__pad_144[100] = 0; /*0x75ec38*/
   *(unsigned int *)&this->__pad_144[140] = 0; /*0x75ec44*/
   *(unsigned int *)&this->__pad_144[144] = 0; /*0x75ec4a*/
-  FrameSnapshot::Init((FrameSnapshot *)&this->__pad_144[148]); /*0x75ec50*/
+  ((FrameSnapshot *)(&this->__pad_144[148]))->Init(); /*0x75ec50*/
   *(unsigned int *)&this->__pad_144[176] = 0; /*0x75ec57*/
   *(unsigned int *)&this->__pad_144[180] = 5; /*0x75ec5d*/
   this->__pad_144[184] = 1; /*0x75ec67*/

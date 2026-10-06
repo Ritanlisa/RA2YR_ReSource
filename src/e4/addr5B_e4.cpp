@@ -537,7 +537,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
       }
     }
   }
-  Debug::Log(); /*0x5b69e9*/
+  Debug::Log("Decoding game options\n"); /*0x5b69e9 G57c1: IDA 0x5b69e9 push offset aDecodingGameOp*/
   stru_A8B250.__pad_0[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
   dword_A8B320 = (aP0->wasFallingDown & 4) != 0; /*0x5b6a0c*/
   v5 = (&dword_A8E960)[0]; /*0x5b6a18*/
@@ -611,7 +611,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 }
 // 0x5BB290
 namespace gamemd {
-LZOPipe * * __usercall GenerateRandomMapPreview(int a1, void * aPreviewBin)
+LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
 {
   int v1; // esi
   int v2; // eax
@@ -713,13 +713,13 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1, void * aPreviewBin)
     ((RawFileClass *)((RawFileClass *)v18))->Dtor(); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v19); /*0x5bb533*/
     ((Vector *)((int)&v15.Pipe_field_0x0C))->Clear(); /*0x5bb53c*/
-    Pipe::Dtor( (void *a1 =)(&v15)); /*0x5bb545*/
+    ((Pipe *)(&v15))->Dtor(); /*0x5bb545*/
   }
 }
 }
 // 0x5BC6E0
 namespace gamemd {
-void AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
+int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
 {
   int v5; // ecx
   int v6; // ecx
@@ -1281,7 +1281,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   unsigned int v40; // [esp-Ch] [ebp-BCh]
   int v41; // [esp+10h] [ebp-A0h]
   int Width; // [esp+10h] [ebp-A0h]
-  char (__usercall *v43)(ObjectClass *, int, int); // [esp+14h] [ebp-9Ch]
+  char (*v43)(ObjectClass *, int, int); // [esp+14h] [ebp-9Ch]
   int v44; // [esp+14h] [ebp-9Ch]
   bool v45; // [esp+1Bh] [ebp-95h]
   int v46; // [esp+1Ch] [ebp-94h] BYREF
@@ -1456,7 +1456,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
 }
 // 0x5BFF60
 namespace gamemd {
-void Movie_RenderFrame(int a1, char a2, int a3, char a4)
+int Movie_RenderFrame(int a1, char a2, int a3, char a4)
 {
   char result; // al
   int v6; // ebx
@@ -2291,7 +2291,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   char *v4; // eax
   unsigned int v5; // edi
   HWND v6; // esi
-  int (__usercall *v7)(char, char); // edi
+  int (*v7)(char, char); // edi
   HWND vtable0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
@@ -2334,7 +2334,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
             if ( v5 >= 8 ) /*0x5b5904*/
               v7 = Math::InitDegToRad; /*0x5b5914*/
             else
-              v7 = (int (__usercall *)(char, char))dword_8316A8[v5]; /*0x5b590b*/
+              v7 = (int (*)(char, char))dword_8316A8[v5]; /*0x5b590b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b5934*/
             return DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b5946*/
           }
@@ -2408,7 +2408,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
   char *v3; // eax
   unsigned int v4; // edi
   HWND DlgItem; // esi
-  int (__usercall *v6)(char, char); // edi
+  int (*v6)(char, char); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
   int16_t v9; // [esp+10Ch] [ebp-204h]
@@ -2433,7 +2433,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
       if ( v4 >= 8 ) /*0x5b6e5b*/
         v6 = Math::InitDegToRad; /*0x5b6e6b*/
       else
-        v6 = (int (__usercall *)(char, char))dword_8316A8[v4]; /*0x5b6e62*/
+        v6 = (int (*)(char, char))dword_8316A8[v4]; /*0x5b6e62*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5b6e84*/
       DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5b6e96*/
     }
@@ -2488,7 +2488,7 @@ HWND sub_5B6F30()
     MessageLoop(); /*0x5b7047*/
     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5b7051*/
   }
-  result = (HWND)Network::CleanupOnDisconnect(); /*0x5b7069*/
+  result = (HWND)gamemd::Network::CleanupOnDisconnect(); /*0x5b7069*/
   if ( v2 ) /*0x5b7070*/
 // 0x622720
     return ((Dialog *)v2)->Destroy(); /*0x5b7074*/
@@ -2643,7 +2643,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   char *v4; // eax
   unsigned int v5; // edi
   HWND v6; // esi
-  int (__usercall *v7)(char, char); // edi
+  int (*v7)(char, char); // edi
   HWND vtable0; // [esp-8h] [ebp-518h]
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
@@ -2687,7 +2687,7 @@ HWND E4Recv_5B9250::sub_5B9250()
             if ( v5 >= 8 ) /*0x5b9394*/
               v7 = Math::InitDegToRad; /*0x5b93a4*/
             else
-              v7 = (int (__usercall *)(char, char))dword_8316A8[v5]; /*0x5b939b*/
+              v7 = (int (*)(char, char))dword_8316A8[v5]; /*0x5b939b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b93c4*/
             return DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b93d6*/
           }
@@ -2792,7 +2792,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
 {
 
   HWND DlgItem; // edi
-  int (__usercall *v5)(char, char); // esi
+  int (*v5)(char, char); // esi
   wchar_t Buffer[256]; // [esp+8h] [ebp-200h] BYREF
 
   if ( a4 ) /*0x5baa91*/
@@ -2803,7 +2803,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
       if ( a3 >= 8 ) /*0x5baab1*/
         v5 = Math::InitDegToRad; /*0x5baac1*/
       else
-        v5 = (int (__usercall *)(char, char))dword_8316A8[a3]; /*0x5baab8*/
+        v5 = (int (*)(char, char))dword_8316A8[a3]; /*0x5baab8*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5baada*/
       DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5baae9*/
     }
@@ -2858,7 +2858,7 @@ HWND sub_5BAB00()
     MessageLoop(); /*0x5bac17*/
     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5bac21*/
   }
-  result = (HWND)Network::CleanupOnDisconnect(); /*0x5bac39*/
+  result = (HWND)gamemd::Network::CleanupOnDisconnect(); /*0x5bac39*/
   if ( v2 ) /*0x5bac40*/
 // 0x622720
     return ((Dialog *)v2)->Destroy(); /*0x5bac44*/

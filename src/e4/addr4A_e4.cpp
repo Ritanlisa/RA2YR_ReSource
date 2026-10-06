@@ -637,7 +637,7 @@ namespace gamemd {
 AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
 {
   char *v3; // esi
-  AbstractClass ** result;
+  gamemd::AbstractClass **result;
   void *v5; // esi
   size_t v6; // ebx
   bool v7; // zf
@@ -1404,7 +1404,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
         do /*0x4a6409*/
         {
           ++v17; /*0x4a63eb*/
-          v14 = (wchar_t *)FontClass::GetPixelData(v14); /*0x4a63ee*/
+          v14 = (wchar_t *)((FontClass *)v14)->GetPixelData(); /*0x4a63ee*/
           v16 += (int)v14; /*0x4a63f3*/
           IDA_LOWORD(v14) = *v17; /*0x4a63f5*/
         }
@@ -1413,7 +1413,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
         if ( v16 + v13 >= a9 ) /*0x4a6417*/
         {
           IDA_LOWORD(v18) = *(v17 - 1); /*0x4a6419*/
-          v16 -= FontClass::GetPixelData(v18); /*0x4a642a*/
+          v16 -= ((FontClass *)v18)->GetPixelData(); /*0x4a642a*/
           *(v17 - 1) = 0; /*0x4a642c*/
           v24 = 0; /*0x4a6431*/
         }
@@ -3250,7 +3250,7 @@ void E4Recv_4A2880::sub_4A2880()
   if ( CStreamClass_field_0x08 ) /*0x4a2898*/
   {
     if ( BYTE1(this->CStreamClass_field_0x10) && this->CStreamClass_field_0x14 > 0 && this->CStreamClass_field_0x08 ) /*0x4a28aa*/
-      IStream::Read((IStream *)this->CStreamClass_field_0x18, (void *)this->CStreamClass_field_0x14, v6); /*0x4a28b4*/
+      ((IStream *)(this->CStreamClass_field_0x18))->Read( (void *)this->CStreamClass_field_0x14, v6); /*0x4a28b4*/
     if ( this->CStreamClass_field_0x08 /*0x4a28da*/
       && (*(int (**)(int, unsigned int))(*(unsigned int *)this->CStreamClass_field_0x08 + 32))(
            this->CStreamClass_field_0x08,

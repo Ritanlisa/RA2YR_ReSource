@@ -231,7 +231,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       if ( Flagged ) /*0x693c50*/
       {
         v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36)));
-        Network::SendToPlayer( (int)unk_A8E9C0, (int)v43, 455, (wchar_t *)(1), (void)((wchar_t *)v5)); /*0x693c6f*/
+        ((Network *)((int)unk_A8E9C0))->SendToPlayer( (int)v43, 455, (wchar_t *)(1), (void)((wchar_t *)v5)); /*0x693c6f*/
       }
     }
     while ( ((Network *)((int)unk_A8E9C0))->GetQueueCount() > 0 ) /*0x693c80*/
@@ -239,7 +239,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v6 = 3600; /*0x693c8a*/
       if ( Ticks != -1 ) /*0x693c91*/
       {
-                v7 = ((Timer *)0)->GetTicks() - Ticks;
+                v7 = ((gamemd::Timer*)0)->GetTicks() - Ticks;
         if ( v7 >= 3600 ) /*0x693ca2*/
           break; /*0x693ca2*/
         v6 = 3600 - v7; /*0x693ca8*/
@@ -252,7 +252,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v10 = 3600; /*0x693d39*/
   if ( Ticks != -1 ) /*0x693d44*/
   {
-        v11 = ((Timer *)0)->GetTicks() - Ticks;
+        v11 = ((gamemd::Timer*)0)->GetTicks() - Ticks;
     if ( v11 >= 3600 ) /*0x693d55*/
     {
   LABEL_24:
@@ -318,7 +318,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     strcpy( (char *)(a1), v51); /*0x693e84*/
   }
   v36 = v17; /*0x693f18*/
-  ((Debug*)aHostRespondedW)->Log(); /*0x693f1c*/
+  Debug::Log("Host responded with file info\n"); /*0x693f1c G57c1: IDA 0x693f1c push offset aHostRespondedW*/
   Debug::Log( "File name is %s\n", a1); /*0x693f2b*/
   LABEL_50:
   v20 = 3600; /*0x693f33*/
@@ -336,7 +336,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   }
   if ( !v20 ) /*0x693f55*/
     goto LABEL_54; /*0x693f55*/
-  ((Debug *)aSendingFileInf)->Log(); /*0x693f78*/
+  Debug::Log("Sending file info received ack\n"); /*0x693f78 G57c1: IDA 0x693f78 push offset aSendingFileInf*/
     v34 = ((Timer *)0)->GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693faa*/
   {
@@ -372,7 +372,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       if ( v22 ) /*0x694010*/
       {
         v23 = (char *)(CharToWideString((unsigned char *)(v22 + 36)));
-        Network::SendToPlayer( (int)unk_A8E9C0, (int)v43, 455, (wchar_t *)(1), (void)((wchar_t *)v23)); /*0x69402f*/
+        ((Network *)((int)unk_A8E9C0))->SendToPlayer( (int)v43, 455, (wchar_t *)(1), (void)((wchar_t *)v23)); /*0x69402f*/
       }
     }
     else
@@ -384,7 +384,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v24 = 3600; /*0x69406e*/
       if ( v34 != -1 ) /*0x694075*/
       {
-                v25 = ((Timer *)0)->GetTicks() - v34;
+                v25 = ((gamemd::Timer*)0)->GetTicks() - v34;
         if ( v25 >= 3600 ) /*0x694086*/
           break; /*0x694086*/
         v24 = 3600 - v25; /*0x69408c*/
@@ -397,7 +397,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v28 = 3600; /*0x69411d*/
   if ( v34 != -1 ) /*0x694128*/
   {
-        v29 = ((Timer *)0)->GetTicks() - v34;
+        v29 = ((gamemd::Timer*)0)->GetTicks() - v34;
     if ( v29 >= 3600 ) /*0x694139*/
     {
   LABEL_78:
@@ -465,7 +465,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   ((Waypoint*)(Waypoint *)v42)->InitInvalid(); /*0x6941c7*/
   v23 = 0; /*0x6941cc*/
   v6 = (char *)RA2_OPNEW(0x1E7u); /*0x6941e1*/
-    ((Debug *)0)->Log();
+    Debug::Log("Receiving download of file %s\n") /*G57c1: IDA 0x6941e3 push offset aReceivingDownl*/;
   ((RawFileClass *)((BufferIOFileClass *)v43))->Construct(a1); /*0x6941f0*/
   if ( (uint8_t)((FileClass *)((RawFileClass *)v43))->Open(0) ) /*0x6941fb*/
     ((FileClass *)((RawFileClass *)v43))->Delete(); /*0x694208*/
@@ -480,7 +480,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   lpBuffer = (LPCVOID)RA2_OPNEW(a2); /*0x694269*/
   if ( a4 ) /*0x694279*/
   {
-    ProgressAnim::Init((int)&dword_AC4F58, 0, 1079574528, 1, 0); /*0x69428f*/
+    ((ProgressAnim *)((int)&dword_AC4F58))->Init( 0, 1079574528, 1, 0); /*0x69428f*/
     ((SHPClass *)((int)&dword_AC4F58))->Load((char *)(g_Str_File_PROGBARM_SHP), 0, 0); /*0x6942a2*/
     StringCSF = GetStringCSF( (wchar_t *)(aGuiMaptransfer), 0, (const char *)(aDRa2mdpostSend), 355); /*0x6942c2*/
     ((TextRenderer *)((int *)dword_AC4F58.__pad_0))->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
@@ -491,7 +491,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v9 = a3; /*0x694307*/
   if ( a3 == 3 || (v10 = 10800, a3 != 4) ) /*0x69431b*/
     v10 = 3600; /*0x69431d*/
-    v32.CampaignScore_field_0x04 = ((Timer *)0)->GetTicks();
+    v32.CampaignScore_field_0x04 = ((gamemd::Timer*)0)->GetTicks();
   v34 = v40; /*0x694333*/
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
@@ -501,7 +501,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   }
   if ( a3 == 3 || (v11 = 10800, a3 != 4) ) /*0x69436f*/
     v11 = 3600; /*0x694371*/
-  Ticks = ((Timer *)0)->GetTicks(); /*0x694383*/
+  Ticks = ((gamemd::Timer*)0)->GetTicks(); /*0x694383*/
   v34 = v40; /*0x694387*/
   v35 = v11; /*0x69438b*/
   v12 = 0; /*0x69438f*/
@@ -519,7 +519,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     *((unsigned char *)Block + v18) = 1; /*0x694570*/
     ++v26; /*0x69457c*/
     v12 += 100; /*0x694580*/
-    v39 = ((Timer *)0)->GetTicks(); /*0x69458c*/
+    v39 = ((gamemd::Timer*)0)->GetTicks(); /*0x69458c*/
     Ticks = v39; /*0x694595*/
     v34 = v40; /*0x69459b*/
     v35 = 1800; /*0x69459f*/
@@ -585,7 +585,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   v35 = v17 / 2; /*0x694486*/
   if ( v36 != -1 ) /*0x69448a*/
     TimerGetTicks(); /*0x694490*/
-  Debug::Log(); /*0x6944b5*/
+  Debug::Log("Received file chunk %d/%d with %d seconds left\n"); /*0x6944b5 G57c1: IDA 0x6944b5 push offset aReceivedFileCh*/
   qmemcpy((char *)lpBuffer + 192 * *((uint16_t *)v6 + 12), v6 + 28, *((uint16_t *)v6 + 13)); /*0x6944e1*/
   if ( a4 ) /*0x6944ef*/
   {
@@ -603,13 +603,13 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
   ((FileClass *)((RawFileClass *)v43))->Write2(lpBuffer, nNumberOfBytesToWrite); /*0x6946ce*/
   RA2_OPDEL((void *)lpBuffer); /*0x6946d8*/
   RA2_OPDEL(Block); /*0x6946e2*/
-  Debug::Log(); /*0x6946fa*/
+  Debug::Log("File download failed to complete\n"); /*0x6946fa G57c1: IDA 0x6946fa push offset aFileDownloadFa*/
   ((FileClass *)((RawFileClass *)v43))->CloseHandle(); /*0x694706*/
-  Debug::Log(); /*0x694710*/
+  Debug::Log("Download file closed\n"); /*0x694710 G57c1: IDA 0x694710 push offset aDownloadFileCl*/
   if ( !v21 && (uint8_t)((FileClass *)((RawFileClass *)v43))->Open(0) ) /*0x694722*/
   {
     ((FileClass *)((RawFileClass *)v43))->Delete(); /*0x69472f*/
-    Debug::Log(); /*0x694739*/
+    Debug::Log("Partial file deleted\n"); /*0x694739 G57c1: IDA 0x694739 push offset aPartialFileDel*/
   }
   RA2_OPDEL(v6); /*0x694742*/
   ((RawFileClass *)((BufferIOFileClass *)v43))->Dtor(); /*0x69474e*/
@@ -684,7 +684,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   v51 = a2; /*0x694772*/
   TimerGetTicks(); /*0x694776*/
   v47 = 0; /*0x69478b*/
-  Debug::Log(); /*0x694790*/
+  Debug::Log("Send file %s to clients\n"); /*0x694790 G57c1: IDA 0x694790 push offset aSendFileSToCli*/
   ((CCFileClass*)&v54)->Construct(Source); /*0x69479d*/
   if ( !(uint8_t)((CCFileClass *)(&v54))->Open((int)(0)) ) /*0x6947a7*/
   {
@@ -699,7 +699,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   Size = CCFileClass::GetSize( &v54); /*0x6947f4*/
   v49 = Size; /*0x6947fa*/
   Ticks = TimerGetTicks(); /*0x694803*/
-  Debug::Log(); /*0x69481d*/
+  Debug::Log("Sending file info to clients\n"); /*0x69481d G57c1: IDA 0x69481d push offset aSendingFileInf_0*/
   if ( a2 != 1 && a2 != 2 ) /*0x694831*/
   {
     v60 = 17; /*0x69484f*/
@@ -714,7 +714,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
         while ( 1 ) /*0x6948c0*/
         {
           Event::Dispatch(); /*0x6948c0*/
-          if ( Network::SendToPlayer( (int)&unk_A8E9C0, (int)&v60, 455, (wchar_t *)(1), (void)((wchar_t *)(&dword_A8DA78)[v8])) ) /*0x6948e3*/
+          if ( ((gamemd::Network*)((int)&unk_A8E9C0))->SendToPlayer( (int)&v60, 455, (wchar_t *)(1), (void)((wchar_t *)(&dword_A8DA78)[v8])) ) /*0x6948e3*/
             goto LABEL_12; /*0x6948ea*/
           v9 = 3600; /*0x6948f0*/
           if ( Ticks == -1 ) /*0x6948f6*/
@@ -743,7 +743,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     if ( dword_A8BB18 <= 0 ) /*0x694927*/
     {
   LABEL_21:
-      while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() > 0 ) /*0x6949ba*/
+      while ( ((gamemd::Network*)(&unk_A8E9C0))->GetQueueCount() > 0 ) /*0x6949ba*/
       {
         v14 = 3600; /*0x6949c4*/
         if ( Ticks != -1 ) /*0x6949cb*/
@@ -762,8 +762,8 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     while ( 1 ) /*0x694930*/
     {
       Event::Dispatch(); /*0x694930*/
-      Debug::Log(); /*0x69494b*/
-      if ( Network::SendToPlayer( (int)&unk_A8E9C0, (int)&v60, 455, (wchar_t *)(1), (void)((wchar_t *)(&dword_A8DA78)[(&byte_A8BB10)[v11]])) ) /*0x694978*/
+      Debug::Log("Sending file info packet to player %d\n"); /*0x69494b G57c1: IDA 0x69494b push offset aSendingFileInf_1*/
+      if ( ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)&v60, 455, (wchar_t *)(1), (void)((wchar_t *)(&dword_A8DA78)[(&byte_A8BB10)[v11]])) ) /*0x694978*/
         goto LABEL_20; /*0x69497f*/
       v12 = 3600; /*0x694985*/
       if ( Ticks == -1 ) /*0x69498b*/
@@ -812,7 +812,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     if ( v19 >= 3600 ) /*0x694ab5*/
     {
   LABEL_38:
-      Debug::Log(); /*0x694abd*/
+      Debug::Log("File info send timed out\n"); /*0x694abd G57c1: IDA 0x694ac2 push offset aFileInfoSendTi*/
       *(unsigned int *)v54.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x694ad1*/
       v56 = 0; /*0x694ad9*/
       ((Vector *)((int)v55))->Clear(); /*0x694ae4*/
@@ -850,7 +850,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
       if ( !v24 || v21 <= 0 ) /*0x694c1d*/
         goto LABEL_62; /*0x694c1d*/
     }
-    Debug::Log(); /*0x694c26*/
+    Debug::Log("Client responded with file info ack\n"); /*0x694c26 G57c1: IDA 0x694c26 push offset aClientResponde*/
   }
   else
   {
@@ -858,7 +858,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     {
       Event::Dispatch(); /*0x694b60*/
       v48 = 455; /*0x694b84*/
-      if ( ((Network *)((Network *)&unk_A8E9C0))->Send((int)v65, (int)&v48, (int)&v57, (int)v52) && v65[0] == 21 ) /*0x694b9c*/
+      if ( ((gamemd::Network*)((gamemd::Network*)&unk_A8E9C0))->Send((int)v65, (int)&v48, (int)&v57, (int)v52) && v65[0] == 21 ) /*0x694b9c*/
         ++v20; /*0x694b9e*/
       v22 = 3600; /*0x694ba3*/
       if ( v44 != -1 ) /*0x694baa*/
@@ -877,7 +877,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   v27 = 0; /*0x694c56*/
   if ( a4 ) /*0x694c61*/
   {
-    ProgressAnim::Init((int)&stru_AC4B30.__pad_EC[828], 0, 1079574528, 1, 0); /*0x694c75*/
+    ((ProgressAnim *)((int)&stru_AC4B30.__pad_EC[828]))->Init( 0, 1079574528, 1, 0); /*0x694c75*/
     ((SHPClass *)((int)&stru_AC4B30.__pad_EC[828]))->Load(g_Str_File_PROGBARM_SHP, 0, 0); /*0x694c86*/
     StringCSF = GetStringCSF( (wchar_t *)(aGuiMaptransfer), 0, (const char *)(aDRa2mdpostSend), 658); /*0x694ca5*/
     ((TextRenderer *)((int *)&stru_AC4B30.__pad_EC[828]))->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x694cb2*/
@@ -940,12 +940,12 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
           *(unsigned short *)&v57.__pad_0[38] = 192; /*0x695003*/
         v31 -= *(uint16_t *)&v57.__pad_0[38]; /*0x695021*/
         v49 = v31; /*0x695028*/
-        v41 = CCFileClass::Read(&v54, &v57.__pad_0[40], *(uint16_t *)&v57.__pad_0[38]); /*0x69502c*/
+        v41 = ((CCFileClass *)(&v54))->Read( &v57.__pad_0[40], *(uint16_t *)&v57.__pad_0[38]); /*0x69502c*/
         if ( v41 == *(uint16_t *)&v57.__pad_0[38] ) /*0x695040*/
         {
           if ( v45 != -1 ) /*0x69504f*/
             TimerGetTicks(); /*0x695055*/
-          Debug::Log(); /*0x695072*/
+          Debug::Log("Sending file chunk %d/%d, %d sec left\n"); /*0x695072 G57c1: IDA 0x695072 push offset aSendingFileChu*/
           ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)&v57.__pad_0[12], 220, 1); /*0x69508e*/
         }
         ++v27; /*0x69509e*/
@@ -960,7 +960,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     Event::Dispatch(); /*0x694dc2*/
     if ( v27 < v26 ) /*0x694dce*/
     {
-      if ( ((Network *)(&unk_A8E9C0))->GetQueueCount() < 10 ) /*0x694ddc*/
+      if ( ((gamemd::Network*)(&unk_A8E9C0))->GetQueueCount() < 10 ) /*0x694ddc*/
       {
         *(unsigned int *)&v57.__pad_0[12] = 18; /*0x694de4*/
         *(unsigned short *)&v57.__pad_0[36] = v27; /*0x694def*/
@@ -971,19 +971,19 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
         v35 = v49; /*0x694e31*/
         strcpy((char *)(&v57.__pad_0[16]), v34); /*0x694e38*/
         v49 = v35 - *(uint16_t *)&v57.__pad_0[38]; /*0x694e5c*/
-        v36 = CCFileClass::Read(&v54, &v57.__pad_0[40], *(uint16_t *)&v57.__pad_0[38]); /*0x694e60*/
+        v36 = ((CCFileClass *)(&v54))->Read( &v57.__pad_0[40], *(uint16_t *)&v57.__pad_0[38]); /*0x694e60*/
         if ( v36 == *(uint16_t *)&v57.__pad_0[38] ) /*0x694e74*/
         {
           if ( v45 != -1 ) /*0x694e85*/
             TimerGetTicks(); /*0x694e8b*/
-          Debug::Log(); /*0x694ea6*/
+          Debug::Log("Sending file chunk %d/%d, %d sec left\n"); /*0x694ea6 G57c1: IDA 0x694ea6 push offset aSendingFileChu*/
           if ( a3 ) /*0x694eb7*/
           {
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x694ec5*/
             {
               do /*0x694ef6*/
               {
-                v38 = (int)(Network::SendToPlayer( (int)&unk_A8E9C0, (int)&v57.__pad_0[12], 220, (wchar_t *)(1), (void)((wchar_t *)(&dword_A8DA78)[i]))); /*0x694eed*/
+                v38 = (int)(((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)&v57.__pad_0[12], 220, (wchar_t *)(1), (void)((wchar_t *)(&dword_A8DA78)[i]))); /*0x694eed*/
                 Event::Dispatch(); /*0x694eef*/
               }
               while ( !v38 ); /*0x694ef6*/
@@ -995,7 +995,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
             {
               do /*0x694f42*/
               {
-                v40 = Network::SendToPlayer( /*0x694f39*/
+                v40 = gamemd::Network::SendToPlayer( /*0x694f39*/
                         (int)&unk_A8E9C0,
                         (int)&v57.__pad_0[12],
                         220,
@@ -1023,14 +1023,14 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
   while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() ); /*0x694fb0*/
   if ( v45 != -1 ) /*0x6950f5*/
     TimerGetTicks(); /*0x6950fb*/
-  Debug::Log(); /*0x695114*/
+  Debug::Log("We sent the file properly with %d seconds left!\n"); /*0x695114 G57c1: IDA 0x695114 push offset aWeSentTheFileP*/
   v42 = 1; /*0x695125*/
   if ( a4 ) /*0x695127*/
     Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 100.0, NAN); /*0x69513f*/
   LABEL_116:
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x69517c*/
     ((IPXManagerClass *)(&unk_A8E9C0))->destroyConnection(); /*0x695183*/
-  Debug::Log(); /*0x69519c*/
+  Debug::Log("File upload completed - %s\n"); /*0x69519c G57c1: IDA 0x69519c push offset aFileUploadComp*/
   *(unsigned int *)v54.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x6951ab*/
   v56 = 0; /*0x6951b3*/
   ((Vector *)((int)v55))->Clear(); /*0x6951be*/
@@ -1107,7 +1107,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   }
   v13[1] = 0; /*0x69530a*/
   v13[2] = 0; /*0x69530e*/
-  GenericList::Constructor(v14); /*0x695312*/
+  ((GenericList *)v14)->Constructor(); /*0x695312*/
   v14[0] = (unsigned int)((void*)&List_INIClass_INISection___vftable); /*0x695321*/
   memset(&v14[7], 0, 12); /*0x695329*/
   v15 = 0; /*0x695335*/
@@ -1134,7 +1134,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
 }
 // 0x695760
 namespace gamemd {
-void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
+int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 {
   int result; // eax
   LONG WindowLongA; // ebx
@@ -1384,7 +1384,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
       if ( !v8 ) /*0x699578*/
         break; /*0x699578*/
       BufferIOFileClass::Seek(&v20, 0, 0); /*0x699584*/
-      CCFileClass::Read(&v20, v8, v9); /*0x69958f*/
+      ((CCFileClass *)(&v20))->Read( v8, v9); /*0x69958f*/
       *((unsigned char *)v8 + v9) = 0; /*0x699594*/
       v10 = strstr((const char *)v8, aBasic_0); /*0x69959d*/
       v11 = v10; /*0x6995a2*/
@@ -1408,14 +1408,14 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
             if ( !v14 ) /*0x699633*/
               goto LABEL_20; /*0x699633*/
             BufferIOFileClass::Seek(&v20, -v15, 2u); /*0x699644*/
-            CCFileClass::Read(&v20, v14, v15); /*0x69964f*/
+            ((CCFileClass *)(&v20))->Read( v14, v15); /*0x69964f*/
             *((unsigned char *)v14 + v15) = 0; /*0x699654*/
             if ( strstr((const char *)v14, aDigest_0) ) /*0x69965d*/
             {
               Debug::Log(); /*0x699693*/
               v27.headNode[0] = 0; /*0x6996a2*/
               v27.headNode[1] = 0; /*0x6996a9*/
-              INISectionList::Constructor((INISectionList *)&v27.headNode[2]); /*0x6996b0*/
+              ((INISectionList *)(&v27.headNode[2]))->Constructor(); /*0x6996b0*/
               Node::Init((Node *)&v27.__pad_20[8]); /*0x6996bc*/
               v27.INIClass_field_3C = 0; /*0x6996d5*/
               v28 = 0; /*0x6996dc*/
@@ -1429,7 +1429,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               CCINIClass::LoadAndVerifyDigest((int *)v27.__pad_0, (int)&v25.Buffer_field_10, 0, 0); /*0x69972b*/
               v29.headNode[0] = 0; /*0x699737*/
               v29.headNode[1] = 0; /*0x69973e*/
-              INISectionList::Constructor((INISectionList *)&v29.headNode[2]); /*0x699745*/
+              ((INISectionList *)(&v29.headNode[2]))->Constructor(); /*0x699745*/
               Node::Init((Node *)&v29.__pad_20[8]); /*0x699751*/
               *(unsigned int *)v29.__pad_0 = &CCINIClass_Vtable; /*0x699756*/
               v29.INIClass_field_3C = 0; /*0x699764*/
@@ -1441,23 +1441,23 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v25.Buffer_field_0C = 0; /*0x6997ae*/
               *(unsigned int *)v23.__pad_0 = (void*)&BufferStraw_vftable; /*0x6997b5*/
               CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
-              *a5 = INIClass::ReadInt_Overwrite( /*0x6997e5*/
+              *a5 = gamemd::INIClass::ReadInt_Overwrite( /*0x6997e5*/
                       (bool *)v27.__pad_0,
                       (uint8_t *)(char *)&stru_82BA00,
                       aMinplayers,
                       *a5);
-              *a6 = INIClass::ReadInt_Overwrite( /*0x69981b*/
+              *a6 = gamemd::INIClass::ReadInt_Overwrite( /*0x69981b*/
                       (bool *)v27.__pad_0,
                       (uint8_t *)(char *)&stru_82BA00,
                       aMaxplayers,
                       *a6);
               /*0x699833*/
-                ((INIClass*)&v27)->GetString(/*0x699833*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_GameMode, &g_INI_DefaultBuffer, aP3, 256);
+                ((gamemd::INIClass*)&v27)->GetString(/*0x699833*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_GameMode, &g_INI_DefaultBuffer, aP3, 256);
               /*0x699858*/
-                ((INIClass*)&v27)->GetString(/*0x699858*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v31, 64);
+                ((gamemd::INIClass*)&v27)->GetString(/*0x699858*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v31, 64);
               BulkCharToWide( (unsigned short *)(a1), (uint8_t *)v31, -1); /*0x69986a*/
-              ((INIClass*)&v29)->GetString((uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
-              *a4 = INIClass::ReadBool_Overwrite( /*0x6998ba*/
+              ((gamemd::INIClass*)&v29)->GetString((uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
+              *a4 = gamemd::INIClass::ReadBool_Overwrite( /*0x6998ba*/
                       (int *)v27.__pad_0,
                       (uint8_t *)(char *)&stru_82BA00,
                       (uint8_t *)g_INI_Key_Official,
@@ -1467,10 +1467,10 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               RA2_OPDEL(v8); /*0x6998f1*/
               RA2_OPDEL(v14); /*0x6998f7*/
               ((Vector *)((int)&v25))->Clear(); /*0x699906*/
-              Straw::Dtor( (void *a1 =)(&v23)); /*0x699912*/
+              ((Straw *)(&v23))->Dtor(); /*0x699912*/
               ((HashTable *)(&v29))->DestroyHashTableINIClass(); /*0x69991e*/
               ((Vector *)((int)&v25.Buffer_field_1C))->Clear(); /*0x69992a*/
-              Straw::Dtor( (void *a1 =)((Straw *)&v25.Buffer_field_10)); /*0x699936*/
+              ((Straw *)(((Straw *)&v25.Buffer_field_10)))->Dtor(); /*0x699936*/
               ((HashTable *)(&v27))->DestroyHashTableINIClass(); /*0x699942*/
               goto LABEL_20; /*0x699942*/
             }

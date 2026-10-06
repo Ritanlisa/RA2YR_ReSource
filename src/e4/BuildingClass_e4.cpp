@@ -479,7 +479,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   int v3; // edi
   int v4; // ebp
 
-  result = RadioClass::LoadState((int)((gamemd::ObjectClass *)(aP0)), aP2); /*0x70bf5c*/
+  result = ((RadioClass *)((int)((gamemd::ObjectClass *)(aP0))))->LoadState( aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
     *(unsigned int *)(aP0 + 1300) = 0; /*0x70bf79*/

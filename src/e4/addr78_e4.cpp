@@ -2785,7 +2785,7 @@ int WOL_LoginFlow()
   ((DeleteAndZero *)&v41)->Alt(); /*0x7873b5*/
   if ( v38 ) /*0x7873c0*/
     return 0; /*0x7873cb*/
-  Debug::Log(); /*0x7873d1*/
+  Debug::Log("Creating login dlg\n"); /*0x7873d1 G57c1: IDA 0x7873d1 push offset aCreatingLoginD*/
   ((SimpleDialogControl *)((SimpleDialogControl *)&v43.Flag_field_0x08))->Constructor(); /*0x7873dd*/
   v43.Flag_field_0x08 = (int)&off_7F7624; /*0x7873eb*/
   v14 = -((uint8_t)((Flag *)(&v43))->IsNot2() != 0); /*0x7873f6*/
@@ -3158,7 +3158,7 @@ int NetworkLobbyWOL(HWND hWnd, char a2)
       v63.StringVector_field_0x04 = 0; /*0x787c69*/
       *(unsigned int *)&v63 = g_Str_Trace_Requesting_channel_list_type____d__ping_; /*0x787c6b*/
       *(unsigned int *)&v66.u32_2D = 0; /*0x787c70*/
-      Debug::Log(); /*0x787c78*/
+      Debug::Log("Requesting channel list type = %d, ping = %d\n"); /*0x787c78 G57c1: IDA 0x787c78 push offset g_Str_Trace_Requesting_channel_list_type____d__ping_*/
       if ( (*(int (**)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))( (LPVOID)((void *)ppv), *(unsigned int *)&v66.q4, 0) ) /*0x787c8f*/
       {
         SetEvent((HANDLE)(unsigned int)Handles); /*0x787d0d*/
@@ -3432,7 +3432,7 @@ int WOL_FindLobbyID(char a1)  // G42.42a: FULL body restored (G42.41i stub rever
     v2 = (unsigned int *)RA2_OPNEW(0x28u); /*0x7881fb*/
     v3 = 0; /*0x788200*/
     if ( v2 ) /*0x788207*/
-      v4 = ((MixFileClass *)(v2))->FromFile((char *)g_Str_File_WDT_MIX, (int)&dword_886980); /*0x78821a*/
+      v4 = ((gamemd::MixFileClass*)(v2))->FromFile((char *)g_Str_File_WDT_MIX, (int)&dword_886980); /*0x78821a*/
     else
       v4 = 0; /*0x78821e*/
     v18[1] = 0; /*0x788224*/
@@ -3595,7 +3595,7 @@ int sub_788710(int a1, char a2)  // G42.42a: def head rebuilt (truth = raw_decom
 
   if ( dword_B77DD0 ) /*0x78871e*/
   {
-    Debug::Log(); /*0x788734*/
+    Debug::Log("Leave_Channel, channel %s type %d\n"); /*0x788734 G57c1: IDA 0x788734 push offset g_Str_Trace_Leave_Channel__channel__s_type__d*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((void *)ppv)); /*0x788744*/
     StringCSF = GetStringCSF( (wchar_t *)g_Str_WOL_LeavingChannel, 0, (const char *)(g_Str_File_wonline_cpp), 10704); /*0x788758*/
     ((WideString *)((wchar_t **)&v10))->Assign(StringCSF); /*0x788762*/
@@ -3647,7 +3647,7 @@ int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
   {
     if ( !dword_B77DD0 ) /*0x788887*/
       goto LABEL_14; /*0x788887*/
-    Debug::Log(); /*0x78889d*/
+    Debug::Log("Leave_Channel, channel %s type %d\n"); /*0x78889d G57c1: IDA 0x78889d push offset g_Str_Trace_Leave_Channel__channel__s_type__d*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((void *)ppv)); /*0x7888ad*/
     String = (unsigned int)GetStringCSF( (wchar_t *)g_Str_WOL_LeavingChannel, 0, (const char *)(g_Str_File_wonline_cpp), 10704); /*0x7888c1*/
     ((WideString *)((wchar_t **)&v12))->Assign(String); /*0x7888cb*/
@@ -3685,7 +3685,7 @@ int WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
       ((WideString *)((wchar_t **)&v12))->Assign(v10); /*0x7889c4*/
       ShowUIMessage(2, (wchar_t **)&v12, 0); /*0x7889d4*/
       ((DeleteAndZero*)&v12)->Alt(); /*0x7889dd*/
-      Debug::Log(); /*0x7889e8*/
+      Debug::Log("Requesting channel join %s\n"); /*0x7889e8 G57c1: IDA 0x7889e8 push offset aRequestingChan_0*/
       v11 = (*(int (**)(LPVOID, int))(*(unsigned int *)ppv + 32))( (LPVOID)((void *)ppv), a1); /*0x788a00*/
       ((DeleteAndZero*)&a3)->Alt(); /*0x788a02*/
       return v11; /*0x788a07*/
@@ -3817,7 +3817,7 @@ int CreateAccountWOL(int a2, int a3)
   ((WideString *)((wchar_t **)&v50))->Assign(StringCSF); /*0x788baa*/
   ShowUIMessage(128, (wchar_t **)&v50, 0); /*0x788bb9*/
   ((DeleteAndZero*)&v50)->Alt(); /*0x788bc2*/
-  Debug::Log(); /*0x788bcc*/
+  Debug::Log("Newnick update check\n"); /*0x788bcc G57c1: IDA 0x788bcc push offset aNewnickUpdateC*/
   (*(void (**)(LPVOID, int, int, char *, char *, int))(*(unsigned int *)ppv + 16))( /*cast*/
     (void *)ppv,
     g_NetworkRematchState,
@@ -4250,7 +4250,7 @@ int PopulateWOLUserList(HWND hWnd, char a2)
       v9 = 0; /*0x7897bc*/
       if ( v8 >= 0 && v4 < v7 ) /*0x7897c4*/
         v9 = (char *)dword_B778E0 + v8; /*0x7897cc*/
-      Debug::Log(); /*0x7897d8*/
+      Debug::Log("Server found %s\n"); /*0x7897d8 G57c1: IDA 0x7897d8 push offset aServerFoundS*/
       ((String *)((char **)&v18))->Assign(v9 + 24); /*0x7897e5*/
       unknown_libname_73(&v23); /*0x7897ee*/
       v10 = (int)(unsigned int)(((String *)&v18)->Tokenize(0, (ObjectClass *)&asc_8318B8, (ObjectClass *)&v23)); /*0x789803*/
@@ -4534,7 +4534,7 @@ char CreateGameWOL(int a2)
   v48[8] = dword_B77DD4 + v5; /*0x789dc6*/
   if ( ((HashTable *)&stru_B77D80)->HashTable_field_0x50 ) /*0x789dda*/
   {
-    Debug::Log(); /*0x789df0*/
+    Debug::Log("Leave_Channel, channel %s type %d\n"); /*0x789df0 G57c1: IDA 0x789df0 push offset g_Str_Trace_Leave_Channel__channel__s_type__d*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((void *)ppv)); /*0x789e00*/
     StringCSF = GetStringCSF( (wchar_t *)g_Str_WOL_LeavingChannel, 0, (const char *)(g_Str_File_wonline_cpp), 10704); /*0x789e14*/
     ((WideString *)((wchar_t **)&v46.DeleteAndZero_field_0x04))->Assign(StringCSF); /*0x789e1e*/

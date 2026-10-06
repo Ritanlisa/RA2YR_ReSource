@@ -913,7 +913,7 @@ int ConstructionPositionTracker(ObjectClass *self)
 }
 // 0x4261D0
 namespace gamemd {
-void sub_4261D0()
+int sub_4261D0()
 {
     int result; // eax
     int i; // edi
@@ -1525,7 +1525,7 @@ void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
 }
 // 0x42B080
 namespace gamemd {
-void sub_42B080(short * a1, int a2)
+int sub_42B080(short * a1, int a2)
 {
     unsigned short *v2; // ebx
     int v3; // edi

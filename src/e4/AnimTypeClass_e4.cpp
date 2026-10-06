@@ -447,7 +447,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess((int)((void *)(this->RandomLoopDelay[1]))); 
   Power::TimerProcess((int)((void *)(this->Translucency))); 
   LOBYTE(v14) = this->Tiled; /*0x428b5f*/
-  return Pow  return ((Power *)((int)((Power *)a2)))->FlagProcess(v14); 
+  return ((Power *)((int)((Power *)a2)))->FlagProcess(v14); 
 
 }
 }
@@ -459,7 +459,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate(char *Source, int a2, int aP0, int
   int v2; // esi
   AnimTypeClass *v3; // eax
 
-  if ( !_str  if ((const char *)(!_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source))) 
+  if ((const char *)(!_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source))) 
     return 0; /*0x428bff*/
   v2 = 0; /*0x428bad*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) <= 0 ) /*0x428bb1*/
@@ -500,7 +500,7 @@ int AnimTypeClass::GetDamage()
   result = (int)((unsigned int *)this)[0]; /*0x428c39*/
   if ( !result && this->DemandLoad ) /*0x428c47*/
   {
-    Debug::Log(); /*0x428c5e*/
+    Debug::Log("Demand loading image for %s\n"); /*0x428c5e G57c1: IDA 0x428c5e push offset aDemandLoadingI*/
     ImageFile = (const char *)(((unsigned int *)this)[0]); /*0x428c69*/
     if ( !((unsigned int *)this)[0] ) /*0x428c63*/
       ImageFile = (const char *)((unsigned int *)this)[0]; /*0x428c76*/

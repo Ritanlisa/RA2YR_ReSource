@@ -293,7 +293,7 @@ int sub_626C60()
     v3 = v2; /*0x626c91*/
     if ( v2 ) /*0x626c98*/
     {
-      StringVector::Construct((int)(v2), 0, 0); /*0x626ca0*/
+      ((StringVector *)((int)(v2)))->Construct( 0, 0); /*0x626ca0*/
       *(void **)v3 = (void*)&DynamicVectorClass_char___vftable; /*0x626caa*/
       v3[5] = 10; /*0x626cb0*/
       v3[4] = 0; /*0x626cb3*/
@@ -329,7 +329,7 @@ int sub_626C60()
       {
         v9 = v8 + 1; /*0x626d2f*/
         *v8 = 31; /*0x626d37*/
-        Array::ForEach((int)(v8 + 1), 24, 31, (int (*)(int))FileSystem::readFile); /*0x626d3d*/
+        ((Array *)((int)(v8 + 1)))->ForEach( 24, 31, (int (*)(int))FileSystem::readFile); /*0x626d3d*/
       }
       else
       {

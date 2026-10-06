@@ -129,7 +129,7 @@ void Lobby::UpdatePlayerLabels()
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb09d*/
   {
-    if ( !((gamemd::Network *)this)->IsMultiplayerActive() || ((Network *)this)->IsLobbyFeature() ) /*0x5eb0a8*/
+    if ( !((gamemd::Network *)this)->IsMultiplayerActive() || ((gamemd::Network*)this)->IsLobbyFeature() ) /*0x5eb0a8*/
       v1 = 6; /*0x5eb0b8*/
     else
       v1 = 2; /*0x5eb0b1*/
@@ -145,7 +145,7 @@ void Lobby::UpdatePlayerLabels()
     goto LABEL_25; /*0x5eb0d7*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb0df*/
   {
-    if ( !((gamemd::Network *)this)->IsMultiplayerActive() || ((Network *)this)->IsLobbyFeature() ) /*0x5eb0ea*/
+    if ( !((gamemd::Network *)this)->IsMultiplayerActive() || ((gamemd::Network*)this)->IsLobbyFeature() ) /*0x5eb0ea*/
       v2 = 6; /*0x5eb0fa*/
     else
       v2 = 2; /*0x5eb0f3*/

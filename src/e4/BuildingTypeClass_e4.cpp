@@ -66,7 +66,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   int v19; // ecx
   unsigned int *v20; // edi
 
-  TechnoTypeClass::ReadINI((char *)this,(int)(Source), 0); /*0x45dda1*/
+  ((TechnoTypeClass *)this)->ReadINI((int)(Source), 0); /*0x45dda1*/
   *((unsigned int *)this + 894) = -1; /*0x45ddaf*/
   *((unsigned int *)this + 895) = 0; /*0x45ddb5*/
   *((unsigned int *)this + 896) = 0; /*0x45ddbb*/
@@ -1333,7 +1333,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
     LOBYTE(v1[1].AltCameo) = 0; /*0x465128*/
   }
   v2 = v14; /*0x46512e*/
-  result = TechnoTypeClass::SaveLoad_Prefix(v1, v14); /*0x465134*/
+  result = ((TechnoTypeClass *)v1)->SaveLoad_Prefix( v14); /*0x465134*/
   if ( result >= 0 ) /*0x46513b*/
   {
     if ( v1 ) /*0x465143*/
@@ -1829,22 +1829,22 @@ void* BuildingTypeClass::ProcessPower(int *aP1)
   int v41; // ecx
 
   ((AbstractTypeClass *)((char *)this))->ProcessPower(aP1); /*0x7171a9*/
-  Checksummer::Add_double(*((unsigned int *)this + 188), *((unsigned int *)this + 189)); /*0x7171be*/
+  ((Checksummer *)(*((unsigned int *)this + 188)))->Add_double( *((unsigned int *)this + 189)); /*0x7171be*/
   Power::TimerProcess(*((unsigned int *)this + 190)); /*0x7171cc*/
-  Checksummer::Add_double(*((unsigned int *)this + 192), *((unsigned int *)this + 193)); /*0x7171e1*/
-  Checksummer::Add_double(*((unsigned int *)this + 194), *((unsigned int *)this + 195)); /*0x7171f6*/
+  ((Checksummer *)(*((unsigned int *)this + 192)))->Add_double( *((unsigned int *)this + 193)); /*0x7171e1*/
+  ((Checksummer *)(*((unsigned int *)this + 194)))->Add_double( *((unsigned int *)this + 195)); /*0x7171f6*/
   Power::TimerProcess(*((unsigned int *)this + 196)); /*0x717204*/
   Power::TimerProcess(*((unsigned int *)this + 201)); /*0x717212*/
   Power::TimerProcess(*((unsigned int *)this + 373)); /*0x717220*/
   Power::TimerProcess(*((unsigned int *)this + 254)); /*0x71722e*/
   Power::TimerProcess(*((unsigned int *)this + 208)); /*0x71723c*/
   ((Checksummer*)((unsigned int *)aP1))->Add_Buffer((uint8_t *)((char *)this + 844), 16); /*0x71724c*/
-  Checksummer::Add_double(*((unsigned int *)this + 216), *((unsigned int *)this + 217)); /*0x717261*/
-  Checksummer::Add_double(*((unsigned int *)this + 218), *((unsigned int *)this + 219)); /*0x717276*/
-  Checksummer::Add_double(*((unsigned int *)this + 220), *((unsigned int *)this + 221)); /*0x71728b*/
-  Checksummer::Add_double(*((unsigned int *)this + 222), *((unsigned int *)this + 223)); /*0x7172a0*/
-  Checksummer::Add_double(*((unsigned int *)this + 224), *((unsigned int *)this + 225)); /*0x7172b5*/
-  Checksummer::Add_double(*((unsigned int *)this + 226), *((unsigned int *)this + 227)); /*0x7172ca*/
+  ((Checksummer *)(*((unsigned int *)this + 216)))->Add_double( *((unsigned int *)this + 217)); /*0x717261*/
+  ((Checksummer *)(*((unsigned int *)this + 218)))->Add_double( *((unsigned int *)this + 219)); /*0x717276*/
+  ((Checksummer *)(*((unsigned int *)this + 220)))->Add_double( *((unsigned int *)this + 221)); /*0x71728b*/
+  ((Checksummer *)(*((unsigned int *)this + 222)))->Add_double( *((unsigned int *)this + 223)); /*0x7172a0*/
+  ((Checksummer *)(*((unsigned int *)this + 224)))->Add_double( *((unsigned int *)this + 225)); /*0x7172b5*/
+  ((Checksummer *)(*((unsigned int *)this + 226)))->Add_double( *((unsigned int *)this + 227)); /*0x7172ca*/
   LOBYTE(v3) = *((unsigned char *)this + 912); /*0x7172cf*/
   ((Power *)(aP1))->FlagProcess(v3); /*0x7172d8*/
   v4 = Power::TimerProcess(*((unsigned int *)this + 230)); /*0x7172e6*/
@@ -1854,13 +1854,13 @@ void* BuildingTypeClass::ProcessPower(int *aP1)
   ((Power *)(aP1))->FlagProcess(v5); /*0x717302*/
   LOBYTE(v6) = *((unsigned char *)this + 3216); /*0x717307*/
   ((Power *)(aP1))->FlagProcess(v6); /*0x717310*/
-  Checksummer::Add_double(*((unsigned int *)this + 232), *((unsigned int *)this + 233)); /*0x717325*/
-  Checksummer::Add_double(*((unsigned int *)this + 236), *((unsigned int *)this + 237)); /*0x71733a*/
-  Checksummer::Add_double(*((unsigned int *)this + 234), *((unsigned int *)this + 235)); /*0x71734f*/
+  ((Checksummer *)(*((unsigned int *)this + 232)))->Add_double( *((unsigned int *)this + 233)); /*0x717325*/
+  ((Checksummer *)(*((unsigned int *)this + 236)))->Add_double( *((unsigned int *)this + 237)); /*0x71733a*/
+  ((Checksummer *)(*((unsigned int *)this + 234)))->Add_double( *((unsigned int *)this + 235)); /*0x71734f*/
   Power::TimerProcess(*((unsigned int *)this + 390)); /*0x71735d*/
   Power::TimerProcess(*((unsigned int *)this + 238)); /*0x71736b*/
   Power::TimerProcess(*((unsigned int *)this + 239)); /*0x717379*/
-  Checksummer::Add_double(*((unsigned int *)this + 242), *((unsigned int *)this + 243)); /*0x71738e*/
+  ((Checksummer *)(*((unsigned int *)this + 242)))->Add_double( *((unsigned int *)this + 243)); /*0x71738e*/
   Power::TimerProcess(*((unsigned int *)this + 244)); /*0x71739c*/
   Power::TimerProcess(*((unsigned int *)this + 245)); /*0x7173aa*/
   Power::TimerProcess(*((unsigned int *)this + 265)); /*0x7173b8*/

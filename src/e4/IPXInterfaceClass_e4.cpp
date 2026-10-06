@@ -76,12 +76,12 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   optlen = 4; /*0x7b0e4e*/
   if ( stru_887598.onBridge && stru_887598.AbstractClass == (void *)4 && !((char *)&stru_887598) ) /*0x7b0e63*/
   {
-    ((Debug *)this)->Log(); /*0x7b0eae*/
+    Debug::Log("Skipping IPX_MAX_ADAPTER_NUM call due to bug in Win95\n"); /*0x7b0eae G57c1: IDA 0x7b0eae push offset aSkippingIpxMax*/
   }
   else if ( getsockopt( (void *)(v4), (void *)(1000), (void *)(16397), (void *)(optval), &optlen) ) /*0x7b0e7a*/
   {
     WSAGetLastError(); /*0x7b0e94*/
-    ((Debug *)this)->Log(); /*0x7b0e9f*/
+    Debug::Log("getsockopt with IPX_MAX_ADAPTER_NUM failed with error code %d\n"); /*0x7b0e9f G57c1: IDA 0x7b0e9f push offset aGetsockoptWith*/
   }
   else if ( aP1 >= *(int *)optval ) /*0x7b0e87*/
   {
@@ -93,7 +93,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   if ( getsockopt((void *)(v4),(void *)(1000),(void *)(16391), v12, &v10) == -1 ) /*0x7b0eee*/
   {
     WSAGetLastError(); /*0x7b0ef0*/
-    ((Debug *)this)->Log(); /*0x7b0efc*/
+    Debug::Log("Failed to get address of net card %d - error code %d.\n"); /*0x7b0efc G57c1: IDA 0x7b0efc push offset aFailedToGetAdd*/
     closesocket((void *)(v4)); /*0x7b0f05*/
     return 0; /*0x7b0f0c*/
   }
@@ -274,7 +274,7 @@ LABEL_6:
     }
     return 0; /*0x7b1711*/
   }
-  ((Debug *)this)->Log(); /*0x7b1671*/
+  Debug::Log("Throwing away malformed packet\n"); /*0x7b1671 G57c1: IDA 0x7b1671 push offset aThrowingAwayMa*/
   if ( !byte_B7801C ) /*0x7b1680*/
     byte_B7801C = 1; /*0x7b1682*/
   if ( BYTE2(v18[2].NetworkID_field_0x04) ) /*0x7b1689*/
@@ -357,7 +357,7 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   *((unsigned int *)this + 64532) = 0; /*0x7b1a88*/
   *((unsigned int *)this + 64533) = 0; /*0x7b1a8e*/
   *((unsigned int *)this + 1) = 576; /*0x7b1a94*/
-  ((Debug *)this)->Log(); /*0x7b1a9b*/
+  Debug::Log("WinsockInterface constructed\n"); /*0x7b1a9b G57c1: IDA 0x7b1a9b push offset aWinsockinterfa*/
   return this; /*0x7b1aa5*/
 
 }
@@ -406,7 +406,7 @@ AbstractClass * * IPXInterfaceClass::Receive()
       return (gamemd::AbstractClass **)(1); /*0x7b1c40*/
   }
   WSAGetLastError(); /*0x7b1be5*/
-  Debug::Log(); /*0x7b1bf0*/
+  Debug::Log("Async select failed on primary socket - error code %d.\n"); /*0x7b1bf0 G57c1: IDA 0x7b1bf0 push offset aAsyncSelectFai*/
   return 0; /*0x7b1bfa*/
 
 }
@@ -734,12 +734,12 @@ char IPXInterfaceClass::ReceivePacket(char * name, AnimClass * aP1)
   if ( gethostname((char *)name, aP1) == -1 ) /*0x7b26e3*/
   {
     WSAGetLastError(); /*0x7b26e5*/
-    Debug::Log(); /*0x7b26f0*/
+    Debug::Log("Error - WinsockInterface Unable to get host name. Error code %d\n"); /*0x7b26f0 G57c1: IDA 0x7b26f0 push offset aErrorWinsockin*/
     return 0; /*0x7b26f8*/
   }
   else
   {
-    Debug::Log(); /*0x7b2704*/
+    Debug::Log("WinsockInterface Host name is %s\n"); /*0x7b2704 G57c1: IDA 0x7b2704 push offset aWinsockinterfa_2*/
     return 1; /*0x7b270c*/
   }
 

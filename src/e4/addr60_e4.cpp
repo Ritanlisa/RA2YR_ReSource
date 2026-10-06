@@ -3241,7 +3241,7 @@ bool sub_609CF0(int a1, HWND a2)
 }
 // 0x609E20
 namespace gamemd {
-void FilterDialogButtonAction(int a1, HWND a2)
+int FilterDialogButtonAction(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   int v4; // esi
@@ -3576,7 +3576,7 @@ bool sub_60B880(int a1, HWND a2)
 }
 // 0x60C0C0
 namespace gamemd {
-void RepositionDialogControls(HWND hWnd, HWND a2)
+int RepositionDialogControls(HWND hWnd, HWND a2)
 {
   HWND v2; // esi
   HWND Parent; // ebx

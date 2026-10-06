@@ -276,7 +276,7 @@ int HouseClass::sub_5092F0(int a2)
         MapClass::RevealArea0((MapClass *)&dword_87F7E8, v8, *(unsigned int *)(v7 + 1512), this, 0, 0, 0, 1, 1); /*0x50938e*/
       }
     }
-    return MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 2); /*0x5093a4*/
+    return ((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 2); /*0x5093a4*/
   }
   return result; /*0x5093a9*/
 

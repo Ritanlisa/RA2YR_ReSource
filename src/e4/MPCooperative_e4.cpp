@@ -445,7 +445,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   int v23; // eax
   int v24; // edx
 
-  MultiplayerGameMode::Construct((MultiplayerGameMode *)this, aP1, aP2, aP3, aP4, 0, aP6); /*0x5c1494*/
+  ((MultiplayerGameMode *)this)->Construct( aP1, aP2, aP3, aP4, 0, aP6); /*0x5c1494*/
   AbstractClass::updateAnimationState((AbstractClass *)&this->MPCooperative_field_0x58, 0, 0); /*0x5c14a0*/
   this->MPCooperative_field_0x58 = (unsigned int)(&vt_DynamicVectorClass); /*0x5c14a5*/
   this->q06C = (void *)10; /*0x5c14ab*/
@@ -748,7 +748,7 @@ CampaignClass * * MPCooperative::CopyTo()
 
   g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5c1a13*/
   Debug::Log(); /*0x5c1a28*/
-  Network::SendOptionsGame((char *)(aO8)); /*0x5c1a35*/
+  ((Network *)(aO8))->SendOptionsGame(); /*0x5c1a35*/
   if ( ((Dialog*)(Dialog *)0xC2)->FindByHandle() || ((Dialog*)(Dialog *)0xBC)->FindByHandle() ) /*0x5c1a4d*/
   {
     MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1a56*/
@@ -1406,7 +1406,7 @@ LABEL_31:
     }
   }
   Debug::Log(); /*0x5c2a26*/
-  Network::SendOptionsGame(Buffer); /*0x5c2a32*/
+  ((Network *)Buffer)->SendOptionsGame(); /*0x5c2a32*/
   Debug::Log(); /*0x5c2a3c*/
   return 1; /*0x5c2a46*/
 
@@ -2353,7 +2353,7 @@ LABEL_21:
   }
   if ( !BYTE1(this->MPCooperative_field_0x48) ) /*0x5c3f9b*/
     goto LABEL_21; /*0x5c3f9b*/
-  Current = (HWND)Dialog::GetCurrent(); /*0x5c3fa6*/
+  Current = (HWND)gamemd::Dialog::GetCurrent(); /*0x5c3fa6*/
   DlgItem = GetDlgItem(Current, 1363); /*0x5c3fba*/
   v4 = SendMessageA(DlgItem, 0x18Bu, 0, 0); /*0x5c3fc6*/
   if ( v4 != -1 ) /*0x5c3fcb*/
@@ -2836,7 +2836,7 @@ LABEL_16:
 }
 // 0x5C4F10
 namespace gamemd {
-void MPCooperative_QueryInterface(int a2, char a3)
+int MPCooperative_QueryInterface(int a2, char a3)
 {
   void *v3; // ecx
   void *v4; // esi
@@ -3020,7 +3020,7 @@ char MPCooperative::Write(int a2)
     if ( MPCooperative_field_0x40 ) /*0x5c1d92*/
       ((String *)(MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1da0*/
   }
-  return ScenarioClass::MissionStubReturnZero2( (MPCooperative *)((int *)a2)); /*0x5c1db1*/
+  return ((ScenarioClass *)(((int *)a2)))->MissionStubReturnZero2(); /*0x5c1db1*/
 
 }
 } // namespace gamemd

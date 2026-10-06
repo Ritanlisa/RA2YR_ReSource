@@ -131,14 +131,14 @@ LABEL_22:
     v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6884b9*/
 LABEL_24:
     v23 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x6884bf*/
-    Debug::Log(); /*0x6884d9*/
+    Debug::Log("Multiplayer start waypoint found at cell %d,%d\n"); /*0x6884d9 G57c1: IDA 0x6884d9 push offset aMultiplayerSta*/
     v4 = v27; /*0x6884de*/
     v3 = (gamemd::AbstractClass *)(dword_A8B230); /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
   }
   if ( v10 - v26 > 0 ) /*0x688502*/
   {
-    Debug::Log(); /*0x68850d*/
+    Debug::Log("Multiplayer start waypoint deficiency - looking for more start positions\n"); /*0x68850d G57c1: IDA 0x68850d push offset aMultiplayerSta_0*/
     if ( v26 < v10 ) /*0x68851b*/
     {
       do /*0x688643*/
@@ -183,7 +183,7 @@ LABEL_24:
             v15 = v26++; /*0x688612*/
             *((unsigned int *)v25.Items + v15) = v19; /*0x68861d*/
           }
-          Debug::Log(); /*0x688631*/
+          Debug::Log("Random multiplayer start waypoint added at cell %d,%d\n"); /*0x688631 G57c1: IDA 0x688631 push offset aRandomMultipla*/
         }
       }
       while ( v26 < v20 ); /*0x688643*/
@@ -340,18 +340,18 @@ void Multiplayer::ShowProgress(int a2)
           }
           if ( (_AX & 0x100) != 0 ) /*0x69afb6*/
           {
-            ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
+            ((gamemd::Network*)&unk_A8E9C0.Socket)->SendMessage( (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
           }
           else
           {
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
             {
               Debug::Log(); /*0x69afe6*/
-              Network::SendToPlayer( (int)&unk_A8E9C0, (int)v16, 51, 1, (void)((wchar_t *)dword_A8DA78[i])); /*0x69b006*/
+              ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)v16, 51, 1, (void)((wchar_t *)dword_A8DA78[i])); /*0x69b006*/
             }
           }
           Event::Dispatch(); /*0x69b015*/
-          while ( ((Network *)(&unk_A8E9C0))->GetQueueCount() > 5 ) /*0x69b027*/
+          while ( ((gamemd::Network*)(&unk_A8E9C0))->GetQueueCount() > 5 ) /*0x69b027*/
           {
             v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/

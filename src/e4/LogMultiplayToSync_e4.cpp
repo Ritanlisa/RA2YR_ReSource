@@ -18,7 +18,7 @@
 
 // 0x6516F0
 namespace gamemd {
-CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)
+CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)
 {
   CellStruct * v3;
   int v4; // ebx
@@ -96,7 +96,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     ModuleInternalVersion = (char *)(GetModuleInternalVersion((void *)((int)&g_CoordScatterManager))); /*0x6517a9*/
     fprintf((FILE *const )(v5), "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
-    Time::FormatDate(v62); /*0x6517cb*/
+    ((Time *)v62)->FormatDate(); /*0x6517cb*/
     v52 = (char *)(((String *)(Destination))->CopyConstant()); /*0x6517f2*/
     v9 = (char *)(((String *)(v64))->FormatDword()); /*0x6517f3*/
     fprintf((FILE *const )(v5), "Release Build: %s by %s - %s\r\n", v9, v52, v62);
@@ -378,13 +378,13 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
           v37 = *((unsigned short *)v36 + 18); /*0x651e2f*/
           if ( v37 == 43 || v37 == 19 ) /*0x651e40*/
           {
-            v39 = ((AbstractType*)(void *)v37)->FindName(); /*0x651e68*/
+            v39 = ((AbstractType_e4*)(void *)v37)->FindName(); /*0x651e68*/
             fprintf((FILE *const )(v5), "%s\t(Type:%d) ", v39, 0); /*0x651e74*/
           }
           else
           {
             v50 = *((unsigned int *)v36 + 1); /*0x651e49*/
-            v38 = ((AbstractType*)(void *)v37)->FindName(); /*0x651e4d*/
+            v38 = ((AbstractType_e4*)(void *)v37)->FindName(); /*0x651e4d*/
             fprintf((FILE *const )(v5), "%s\t(Type:%d(%s)) ", v38, v50, v36 + 8); /*0x651e59*/
           }
           v40 = v36[32]; /*0x651e7c*/
@@ -416,13 +416,13 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
         v44 = *((unsigned short *)v43 + 18); /*0x651f21*/
         if ( v44 == 43 || v44 == 19 ) /*0x651f32*/
         {
-          v46 = ((AbstractType*)(void *)v44)->FindName(); /*0x651f5a*/
+          v46 = ((AbstractType_e4*)(void *)v44)->FindName(); /*0x651f5a*/
           fprintf((FILE *const )(v5), "%s\t(Type:%d) ", v46, 0); /*0x651f66*/
         }
         else
         {
           v51 = *((unsigned int *)v43 + 1); /*0x651f3b*/
-          v45 = ((AbstractType*)(void *)v44)->FindName(); /*0x651f3f*/
+          v45 = ((AbstractType_e4*)(void *)v44)->FindName(); /*0x651f3f*/
           fprintf((FILE *const )(v5), "%s\t(Type:%d(%s)) ", v45, v51, v43 + 8); /*0x651f4b*/
         }
         v47 = v43[32]; /*0x651f6e*/

@@ -138,7 +138,7 @@ char HandlePlayerDisconnection(int a1, int a2)
         {
           v6 = Math::RoundToInt(*(double *)&((unsigned int *)(dword_8871E0))[1].__pad_A0 * 900.0); /*0x5f0250*/
           MessageListClass::AddMessage((void *)(unk_A8BC60), 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v6, 0); /*0x5f0273*/
-          MapClass::MarkForRedraw((int)(&dword_87F7E8), 0); /*0x5f027f*/
+          ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 0); /*0x5f027f*/
         }
         v7 = 0; /*0x5f028b*/
         if ( dword_A8DA84 > 0 ) /*0x5f028f*/
@@ -169,7 +169,7 @@ char HandlePlayerDisconnection(int a1, int a2)
           swprintf(String, (const size_t)&off_8240B4, v9); /*0x5f0352*/
           v10 = Math::RoundToInt(*(double *)&((unsigned int *)(dword_8871E0))[1].__pad_A0 * 900.0); /*0x5f036e*/
           MessageListClass::AddMessage((void *)(unk_A8BC60), 0, 0, String, *(unsigned int *)(v3->relatedTagsCapacity + 192), 16454, v10, 0); /*0x5f0391*/
-          return MapClass::MarkForRedraw((int)(&dword_87F7E8), 0); /*0x5f039d*/
+          return ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 0); /*0x5f039d*/
         }
       }
     }
@@ -208,7 +208,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   else
     StringCSF = GetStringCSF( (wchar_t *)(aTxtWaitingForC_0), 0, (const char *)(g_Str_File_NullMgr_CPP), 1582); /*0x5f2d26*/
   v5 = (LPARAM)StringCSF; /*0x5f2d30*/
-    ((Debug *)0)->Log();
+    Debug::Log("Waiting for ring\n") /*G57c1: IDA 0x5f2d32 push offset aWaitingForRing*/;
   v6 = (gamemd::AbstractClass **)((int)((char)((gamemd::AbstractClass **)(1))));
   g_NetworkTestFlag = (int)((wchar_t *)(0));
   v7 = (wchar_t *)((gamemd::AbstractClass **)((wchar_t *)((gamemd::AbstractClass **)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullMgr_CPP), 1589)))));
@@ -228,7 +228,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
         if ( ((Dialog *)0)->PumpMessages() == 1 || *((unsigned char *)&g_MatrixTransformState + 9524) )
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)((int)((HWND)(6))));
-            ((Debug *)0)->Log();
+            Debug::Log("Answering cancelled\n") /*G57c1: IDA 0x5f30fa push offset aAnsweringCance*/;
       v14 = (HWND)(g_ClipboardBuffer);
       if ( !g_ClipboardBuffer ) /*0x5f310a*/
         goto LABEL_36; /*0x5f310a*/
@@ -243,11 +243,11 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
            Source,
            81,
            v19 != 0 ? 15 : -1);
-        ((Debug *)0)->Log();
+        Debug::Log("Get_Modem_Result returned %d\n") /*G57c1: IDA 0x5f2ded push offset aGetModemResult*/;
     if ( v9 == -1000 ) /*0x5f2dfb*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)((int)((HWND)(6))));
-            ((Debug *)0)->Log();
+            Debug::Log("Answering cancelled\n") /*G57c1: IDA 0x5f30c5 push offset aAnsweringCance*/;
       v14 = (HWND)(g_ClipboardBuffer);
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
         goto LABEL_36; /*0x5f30d5*/
@@ -259,13 +259,13 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
     }
     _strupr((char *)(Source)); /*0x5f2e06*/
     if ( strlen((const char *)(Source)) ) /*0x5f2e0f*/
-            ((Debug *)0)->Log();
+            Debug::Log("Get_Modem_Result returned string:%s\n") /*G57c1: IDA 0x5f2e28 push offset aGetModemResult_0*/;
     if ( !strncmp((const char *)(Source), aRing, 4u) ) /*0x5f2e3c*/
     {
-            ((Debug *)0)->Log();
+            Debug::Log("RING\n") /*G57c1: IDA 0x5f2e4d push offset aRing_0*/;
       v11 = GetStringCSF( (wchar_t *)(aTxtAnswering), 0, (const char *)(g_Str_File_NullMgr_CPP), 1647); /*0x5f2e66*/
       Network_Start(hWnd, (LPARAM)v11); /*0x5f2e71*/
-            ((Debug *)0)->Log();
+            Debug::Log("Answering with ATA\n") /*G57c1: IDA 0x5f2e7b push offset aAnsweringWithA*/;
       ((WinModemClass *)((int *)g_ClipboardBuffer))->WriteSerial(aAta, strlen( (const char *)(aAta))); /*0x5f2e9e*/
       v19 = 1; /*0x5f2ea7*/
       v9 = *(unsigned int *)(Buffer + 36); /*0x5f2eac*/
@@ -276,24 +276,24 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
       memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2ed8*/
       strncpy((char *)(byte_AC1288),(const char *)(Source), 0x4Fu); /*0x5f2ee4*/
       v3 = 0; /*0x5f2eed*/
-            ((Debug *)0)->Log();
+            Debug::Log("Result is %s\n") /*G57c1: IDA 0x5f2ef5 push offset g_Str_Trace_Result_is__s*/;
     }
     else if ( !strncmp((const char *)(Source), aBusy, 4u) ) /*0x5f2f0e*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(2));
-            ((Debug *)0)->Log();
+            Debug::Log("Result is %s\n") /*G57c1: IDA 0x5f2f29 push offset g_Str_Trace_Result_is__s*/;
     }
     else if ( !strncmp((const char *)(Source), aNoC, 4u) ) /*0x5f2f42*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(1));
-            ((Debug *)0)->Log();
+            Debug::Log("Result is %s\n") /*G57c1: IDA 0x5f2f5d push offset g_Str_Trace_Result_is__s*/;
     }
     else
     {
       if ( strncmp((const char *)(Source), aErro, 4u) ) /*0x5f2f73*/
         goto LABEL_22; /*0x5f2f7d*/
       v3 = 3; /*0x5f2f83*/
-            ((Debug *)0)->Log();
+            Debug::Log("Result is %s\n") /*G57c1: IDA 0x5f2f8e push offset g_Str_Trace_Result_is__s*/;
       v21 = (gamemd::AbstractClass **)((wchar_t *)((HWND)asc_82083C));
       v16 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_NullMgr_CPP), 1671));
       v12 = (int *)GetStringCSF( (wchar_t *)(aTxtErrorError), 0, (const char *)(g_Str_File_NullMgr_CPP), 1671); /*0x5f2fcc*/
@@ -314,21 +314,21 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   }
   if ( (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 ) /*0x5f3009*/
   {
-        ((Debug *)0)->Log();
+        Debug::Log("NullModemClass::Answer_Modem has timed out\n") /*G57c1: IDA 0x5f3038 push offset aNullmodemclass_1*/;
     if ( strlen((const char *)(Source)) ) /*0x5f3041*/
-            ((Debug *)0)->Log();
+            Debug::Log("Answer result is %s\n") /*G57c1: IDA 0x5f305a push offset aAnswerResultIs*/;
     v21 = (gamemd::AbstractClass **)((wchar_t *)((HWND)asc_82083C));
     v17 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_NullMgr_CPP), 1687));
     v13 = (int *)GetStringCSF((wchar_t *)(g_Str_TXT_ERROR_TIMEOUT), 0,(const char *)(g_Str_File_NullMgr_CPP), 1687); /*0x5f3098*/
     ((Dialog *)v13)->ShowMessageBox( v17, 0, 0, 0, v18); /*0x5f30a2*/
-        ((Debug *)0)->Log();
+        Debug::Log("Not connected\n") /*G57c1: IDA 0x5f30ac push offset aNotConnected*/;
     v3 = 5; /*0x5f30b4*/
   }
   else
   {
     sprintf((char *const )(byte_AC1288), "%s", aConnected); /*0x5f301a*/
     v3 = 0; /*0x5f3024*/
-        ((Debug *)0)->Log();
+        Debug::Log("Connected\n") /*G57c1: IDA 0x5f3026 push offset aConnected_0*/;
   }
   LABEL_36:
   (*(void (**)(HWND, unsigned int))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f3129*/

@@ -105,7 +105,7 @@ LABEL_14:
   }
   else
   {
-    ((gamemd::Debug *)this)->Log(); /*0x533efe*/
+    Debug::Log("Unable to load KEYBOARDMD.INI\n"); /*0x533efe G57c1: IDA 0x533efe push offset aUnableToLoadKe*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     ((Vector *)((int)v11))->Clear(); /*0x533f1c*/

@@ -98,10 +98,10 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
         while ( v19 < dword_A8DA84 - 1 ); /*0x793865*/
       }
     }
-    Debug::Log(); /*0x793897*/
+    Debug::Log("Connection order = %d, %d, %d, %d, %d, %d\n"); /*0x793897 G57c1: IDA 0x793897 push offset aConnectionOrde*/
     v9 = 0; /*0x79389c*/
     v20 = 0; /*0x7938a3*/
-    Debug::Log(); /*0x7938a7*/
+    Debug::Log("Connection pairs....\n"); /*0x7938a7 G57c1: IDA 0x7938a7 push offset aConnectionPair*/
     v10 = dword_A8DA84; /*0x7938ac*/
     if ( dword_A8DA84 > 0 ) /*0x7938b6*/
     {
@@ -121,7 +121,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs(void *a1_1)
             v16 = *v14; /*0x7938d9*/
             *(unsigned int *)v15 = v13; /*0x7938db*/
             *((unsigned int *)v15 + 1) = v16; /*0x7938e4*/
-            Debug::Log(); /*0x7938e7*/
+            Debug::Log("\t%d & %d\n"); /*0x7938e7 G57c1: IDA 0x7938e7 push offset aDD_4*/
             v10 = dword_A8DA84; /*0x7938f0*/
             v17 = v20 + 1; /*0x7938f8*/
             v15 += 8; /*0x7938f9*/
@@ -449,11 +449,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
       qmemcpy( &stru_B76AC4.ambientSoundController[4], (const void *)(a3), 0x10Cu); /*0x7a57d8*/
       dword_B77E4C = 1; /*0x7a57e0*/
       ++stru_B77D80.HashTable_field_0x50; /*0x7a57eb*/
-      Debug::Log(); /*0x7a57f1*/
+      Debug::Log("Created channel\n"); /*0x7a57f1 G57c1: IDA 0x7a57f1 push offset aCreatedChannel*/
       if ( ppv && *(unsigned int *)a3 ) /*0x7a5802*/
       {
         memset(Buffer, 0, sizeof(Buffer)); /*0x7a5813*/
-        GameConfig::BuildChecksum(Buffer); /*0x7a5819*/
+        ((GameConfig *)Buffer)->BuildChecksum(); /*0x7a5819*/
         Buffer[40] = 0; /*0x7a5827*/
         (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
       }
@@ -521,7 +521,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
     v18 = 1; /*0x7a7b71*/
     v22 = g_WOL_UserList.owningHouseIndex; /*0x7a7b76*/
     v21 = 0; /*0x7a7b7a*/
-    dword_B76478 = Timer::GetTicks(); /*0x7a7b87*/
+    dword_B76478 = gamemd::Timer::GetTicks(); /*0x7a7b87*/
     dword_B7647C = v23; /*0x7a7b90*/
     dword_B76480 = 0; /*0x7a7b9e*/
     if ( byte_B77E27 ) /*0x7a7ba4*/
@@ -575,10 +575,10 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
     {
       if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7a7cd9*/
       {
-        v11 = (HWND)Dialog::FindByHandle( (void)((Dialog *)0x117)); /*0x7a7ce0*/
+        v11 = (HWND)gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0x117)); /*0x7a7ce0*/
         CloseDialog(v11, 0); /*0x7a7ce9*/
       }
-      v12 = (HWND)Dialog::FindByHandle( (void)((Dialog *)0xCF)); /*0x7a7cf3*/
+      v12 = (HWND)gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xCF)); /*0x7a7cf3*/
       CloseDialog(v12, 0); /*0x7a7cfc*/
       *(unsigned int *)&g_WOL_BuddyList.__pad_20[4] = a5; /*0x7a7d14*/
       *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7a7d1e*/
@@ -592,14 +592,14 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
       if ( v14 > 0 && g_WOL_UserList.nextObject ) /*0x7a7d8b*/
         strcpy( (char *)(byte_B779E0), (const char *)&g_WOL_UserList.nextObject->occupant); /*0x7a7da7*/
       *(unsigned int *)dword_B77788 = time(0); /*0x7a7dbc*/
-      Debug::Log(); /*0x7a7dc1*/
+      Debug::Log("OnGameStart\n"); /*0x7a7dc1 G57c1: IDA 0x7a7dc1 push offset aOngamestart*/
       if ( a3 ) /*0x7a7dd2*/
         dword_B77DD4 = (unsigned __int8)*(unsigned int *)(a3 + 32); /*0x7a7ddd*/
       byte_B77E26 = 0; /*0x7a7dea*/
       byte_B77E27 = 1; /*0x7a7df1*/
       ((Network *)v17)->SyncPlayerList(); /*0x7a7df8*/
       g_NetworkLobbyState = 2; /*0x7a7e03*/
-      Debug::Log(); /*0x7a7e0f*/
+      Debug::Log("Starting a %d player game.\n"); /*0x7a7e0f G57c1: IDA 0x7a7e0f push offset aStartingADPlay*/
       v15 = 0; /*0x7a7e1d*/
       if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a7e21*/
       {
@@ -659,7 +659,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     if ( (byte_B78600 & 1) == 0 ) /*0x7a7ead*/
     {
       byte_B78600 |= 1u; /*0x7a7eb9*/
-      dword_B78608 = Timer::GetTicks(); /*0x7a7ec9*/
+      dword_B78608 = gamemd::Timer::GetTicks(); /*0x7a7ec9*/
       atexit(nullsub_265); /*0x7a7ece*/
     }
     if ( a2 < 0 ) /*0x7a7ee3*/
@@ -687,7 +687,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     {
       CharStringToWide( (ObjectClass *)((wchar_t **)&v23), (const char **)&g_WindowManager.__pad_EC[684]); /*0x7a7f93*/
       v10 = ((WideString *)(wchar_t **)&v23)->GetOrEmpty(); /*0x7a7f9c*/
-      v11 = (int *)Player::FindByName( (wchar_t *)((Player *)v10)); /*0x7a7fa3*/
+      v11 = (int *)((Player *)(((Player *)v10)))->FindByName(); /*0x7a7fa3*/
       v12 = (SessionClass *)v11; /*0x7a7fa8*/
       if ( v11 /*0x7a7fed*/
         && SessionClass::GetPlayerSide(v11) >= 0
@@ -709,7 +709,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         v22 = 1; /*0x7a8033*/
         dword_B78608 = Timer::GetTicks(); /*0x7a8046*/
         dword_B7860C = v23.DeleteAndZero_field_0x04; /*0x7a804b*/
-        Debug::Log(); /*0x7a8051*/
+        Debug::Log("New scenario - requesting a map preview\n"); /*0x7a8051 G57c1: IDA 0x7a8051 push offset aNewScenarioReq*/
       }
       if ( Timer::GetTicks() - dword_B78608 > 900 ) /*0x7a806e*/
       {
@@ -725,7 +725,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
           else
           {
             v22 = 1; /*0x7a80b6*/
-            Debug::Log(); /*0x7a80bb*/
+            Debug::Log("Never recieved preview; re-requesting\n"); /*0x7a80bb G57c1: IDA 0x7a80bb push offset aNeverRecievedP*/
           }
         }
       }
@@ -746,7 +746,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
               if ( *(unsigned int *)(*dword_A8DA78 + 119) ) /*0x7a816f*/
               {
                 *(unsigned int *)(*dword_A8DA78 + 119) = 0; /*0x7a817b*/
-                Network::SendOptionsGame( (char *)(aA0)); /*0x7a8182*/
+                ((Network *)(aA0))->SendOptionsGame(); /*0x7a8182*/
                 DlgItem = GetDlgItem(Current, 1439); /*0x7a818f*/
                 EnableWindow(DlgItem, 0); /*0x7a8196*/
               }
@@ -769,7 +769,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a81de*/
           qmemcpy(v25, g_WOL_UserList.nextObject, sizeof(v25)); /*0x7a81ef*/
         (*(void (__stdcall **)(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))(ppv, v25, Buffer); /*0x7a8203*/
-        Debug::Log(); /*0x7a820b*/
+        Debug::Log("Sent private game option packet requesting a preview download\n"); /*0x7a820b G57c1: IDA 0x7a820b push offset aSentPrivateGam*/
         Event_Play(v5); /*0x7a8213*/
       }
       return 0; /*0x7a8224*/
@@ -814,11 +814,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
           {
             v8 = 1; /*0x7a8e0e*/
           }
-          else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7a8e17*/
+          else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7a8e17*/
           {
             v8 = 1; /*0x7a8e20*/
           }
-          else if ( Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7a8e29*/
+          else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7a8e29*/
           {
             v8 = 1; /*0x7a8e32*/
           }
@@ -872,7 +872,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
     v6 = a4; /*0x7a8efc*/
     if ( a4 ) /*0x7a8f02*/
     {
-      if ( (*a4 & 1) != 0 || Dialog::FindByHandle( (void)((Dialog *)0xC2)) || Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7a8f1c*/
+      if ( (*a4 & 1) != 0 || gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) || gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7a8f1c*/
         goto LABEL_21; /*0x7a8f1c*/
       v7 = (unsigned __int8)((WideString *)(const wchar_t **)&a2)->IsASCII() == 0; /*0x7a8f2e*/
       DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a8f30*/
@@ -923,11 +923,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_17(int a1, int a
         {
           v7 = 1; /*0x7a9047*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7a9050*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7a9050*/
         {
           v7 = 1; /*0x7a9059*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7a9062*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7a9062*/
         {
           v7 = 1; /*0x7a906b*/
         }
@@ -962,7 +962,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_17(int a1, int a
     if ( (*a3 & 1) != 0 ) /*0x7a8ff6*/
       HandleWOLMatchMessage(String1, 1); /*0x7a8ffe*/
     else
-      Debug::Log(); /*0x7a9018*/
+      Debug::Log("Received message from non-channel owner %s: %s\n"); /*0x7a9018 G57c1: IDA 0x7a9018 push offset aReceivedMessag_0*/
     return 0; /*0x7a9003*/
 }
 }
@@ -985,7 +985,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a
     v5 = a3; /*0x7a913c*/
     if ( a3 ) /*0x7a9142*/
     {
-      if ( (*a3 & 1) != 0 || Dialog::FindByHandle( (void)((Dialog *)0xC2)) || Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7a915c*/
+      if ( (*a3 & 1) != 0 || gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) || gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7a915c*/
         goto LABEL_21; /*0x7a915c*/
       v6 = (unsigned __int8)((WideString *)(const wchar_t **)&a2)->IsASCII() == 0; /*0x7a916e*/
       DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a9170*/
@@ -1025,7 +1025,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
     int v11; // eax
     wchar_t *StringCSF; // eax
     wchar_t *v13; // eax
-    Dialog *Current; // esi
+    gamemd::Dialog *Current; // esi
     wchar_t *v15; // eax
     wchar_t *v16; // eax
     HWND Dialog; // eax
@@ -1048,7 +1048,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
     j_DeleteAndZero((ObjectClass *)&v26.DeleteAndZero_field_0x04); /*0x7a923d*/
     if ( !a3 ) /*0x7a924b*/
       goto LABEL_12; /*0x7a924b*/
-    if ( (*a3 & 1) == 0 && !Dialog::FindByHandle( (void)((Dialog *)0xC2)) && !Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7a9266*/
+    if ( (*a3 & 1) == 0 && !gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) && !gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7a9266*/
     {
       v5 = (unsigned __int8)((WideString *)(const wchar_t **)&v26)->IsASCII() == 0; /*0x7a9278*/
       DynamicVector_field_0x10 = g_WOL_BuddyList.DynamicVector_field_0x10; /*0x7a927a*/
@@ -1072,7 +1072,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
         v25 = v11; /*0x7a9365*/
         StringCSF = GetStringCSF( (wchar_t *)(aTxtHowToReply), 0, (const char *)(g_Str_File_wonline_cpp), 8066); /*0x7a937a*/
         MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, StringCSF, Type, 22, v25, 0); /*0x7a9389*/
-        MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 0); /*0x7a9395*/
+        ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 0); /*0x7a9395*/
         v13 = ((WideString *)(wchar_t **)&v26)->GetOrEmpty(); /*0x7a939e*/
         ((Dialog *)0xFFFFFF)->ShowStatusText( (size_t)g_Str_Trace___hs_, a3 + 36, v13); /*0x7a93b1*/
         dword_B76478 = Timer::GetTicks(); /*0x7a93cb*/
@@ -1148,7 +1148,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     void *DynamicVector_field_0x10; // eax
     int Type; // ebx
     int v10; // eax
-    Dialog *Current; // esi
+    gamemd::Dialog *Current; // esi
     HWND DlgItem; // eax
     String *ChatCommand; // ebx
     HWND v14; // esi
@@ -1167,11 +1167,11 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
       {
         v6 = 1; /*0x7a9594*/
       }
-      else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7a959d*/
+      else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7a959d*/
       {
         v6 = 1; /*0x7a95a6*/
       }
-      else if ( Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7a95af*/
+      else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7a95af*/
       {
         v6 = 1; /*0x7a95b8*/
       }
@@ -1207,7 +1207,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
         22,
         v10,
         0);
-      MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 0); /*0x7a966b*/
+      ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 0); /*0x7a966b*/
       ((Dialog *)0xFFFFFF)->ShowStatusText( (size_t)g_Str_Trace___hs_, a3 + 36, String); /*0x7a967d*/
     }
     else
@@ -1318,7 +1318,7 @@ ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
 }
 // 0x7AA6D0
 namespace gamemd {
-void CComObject_CChatEventSink___ATL_DispatchStub_19(int a2, int a3)
+int CComObject_CChatEventSink___ATL_DispatchStub_19(int a2, int a3)
 {
     const wchar_t *v3; // esi
     wchar_t *StringCSF; // eax
@@ -1345,7 +1345,7 @@ void CComObject_CChatEventSink___ATL_DispatchStub_19(int a2, int a3)
           Type = BuildingAnim::GetType(); /*0x7aa761*/
           IDA_LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7aa776*/
           MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Buffer, Type, 22, v7, 0); /*0x7aa78d*/
-          MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 0); /*0x7aa799*/
+          ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 0); /*0x7aa799*/
           memset(&stru_B76AC4.ambientSoundController[4], 0, 0x10Cu); /*0x7aa7af*/
           memset(&g_WindowManager.__pad_EC[84], 0, 0x10Cu); /*0x7aa7bb*/
           IDA_BYTE2(stru_B77D80.HashTable_field_0x40) = 1; /*0x7aa7bd*/
@@ -1542,7 +1542,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
         v18 = CharToWideString(v7); /*0x7ab880*/
         v16 = CharToWideString((unsigned char *)(a4 + 36)); /*0x7ab889*/
         StringCSF = GetStringCSF( (wchar_t *)(aTxtUserKicked), 0, (const char *)(g_Str_File_wonline_cpp), 8940); /*0x7ab89b*/
-        ((Dialog *)-1)->ShowMessage( (size_t)StringCSF, v16, v18, v22); /*0x7ab8a8*/
+        ((gamemd::Dialog*)-1)->ShowMessage( (size_t)StringCSF, v16, v18, v22); /*0x7ab8a8*/
       }
     }
     else
@@ -1564,7 +1564,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
       }
       if ( stru_B76AC4.ambientSoundController[4] ) /*0x7ab7f0*/
       {
-        v13 = (HWND)Dialog::FindByHandle( (void)((Dialog *)0x113)); /*0x7ab829*/
+        v13 = (HWND)gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0x113)); /*0x7ab829*/
         if ( v13 ) /*0x7ab830*/
         {
           DlgItem = GetDlgItem(v13, 1343); /*0x7ab83e*/
@@ -2212,11 +2212,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
           {
             v8 = 1; /*0x7a8e0e*/
           }
-          else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7a8e17*/
+          else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7a8e17*/
           {
             v8 = 1; /*0x7a8e20*/
           }
-          else if ( Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7a8e29*/
+          else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7a8e29*/
           {
             v8 = 1; /*0x7a8e32*/
           }
@@ -2343,13 +2343,13 @@ int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, c
         {
           v6 = 1; /*0x7aafeb*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7aaff4*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7aaff4*/
         {
           v6 = 1; /*0x7aaffd*/
         }
         else
         {
-          v6 = Dialog::FindByHandle( (void)((Dialog *)0xC9)) || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab00d*/
+          v6 = gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab00d*/
         }
       }
       else
@@ -2397,11 +2397,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char 
         {
           v6 = 1; /*0x7ab0db*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7ab0e4*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7ab0e4*/
         {
           v6 = 1; /*0x7ab0ed*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7ab0f6*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7ab0f6*/
         {
           v6 = 1; /*0x7ab0ff*/
         }
@@ -2451,13 +2451,13 @@ int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, cons
         {
           v7 = 1; /*0x7ab1ab*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7ab1b4*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7ab1b4*/
         {
           v7 = 1; /*0x7ab1bd*/
         }
         else
         {
-          v7 = Dialog::FindByHandle( (void)((Dialog *)0xC9)) || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab1cd*/
+          v7 = gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) || g_WOL_BuddyList.DynamicVector_field_0x10 != 0; /*0x7ab1cd*/
         }
       }
       else
@@ -2505,11 +2505,11 @@ int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, con
         {
           v7 = 1; /*0x7ab29b*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC2)) ) /*0x7ab2a4*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC2)) ) /*0x7ab2a4*/
         {
           v7 = 1; /*0x7ab2ad*/
         }
-        else if ( Dialog::FindByHandle( (void)((Dialog *)0xC9)) ) /*0x7ab2b6*/
+        else if ( gamemd::Dialog::FindByHandle( (void)((gamemd::Dialog*)0xC9)) ) /*0x7ab2b6*/
         {
           v7 = 1; /*0x7ab2bf*/
         }

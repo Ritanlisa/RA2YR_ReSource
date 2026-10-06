@@ -236,7 +236,7 @@ LABEL_162:
       {
         ((Conditions *)i + 36)->CheckResult( (IUnknown *, unsigned int a1, unsigned int a5)HouseClass_Player.field_0);
       }
-      MapClass::MarkForRedraw( (int)(&((unsigned int *)(stru_87C374))[13428]), (void)((void *)(1)));
+      ((MapClass *)((int)(&((unsigned int *)(stru_87C374))[13428])))->MarkForRedraw( (void)((void *)(1)));
       return 1;
     case 0x11:
       return ((TActionClass *)(int *)a1)->RevealWaypointArea( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
@@ -326,7 +326,7 @@ LABEL_162:
         v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];
       }
       v61->missionTimer_text_csf = &(&stru_87C374)[46016];
-      ScriptAction::CopyStringField( (char *)(Destination), (char *)(&((unsigned int *)(stru_87C374))[56304]));
+      ((ScriptAction *)(Destination))->CopyStringField( (char *)(&((unsigned int *)(stru_87C374))[56304]));
   char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
       ((ScriptAction *)((*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600)))->CopyStructField(v137, Destination);
       ((ObjectClass *)(&(&stru_87C374)[13428]))->PreDraw();
@@ -387,7 +387,7 @@ LABEL_157:
     case 0x24:
       return ((TActionClass *)(unsigned int *)a1)->ConvertHouseUnits( (int)aP1, (int)v9, a5, (IUnknown *)aP4);
     case 0x25:
-      v48 = (HouseClass *)ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)((char *)a1 +44));
+      v48 = (HouseClass *)((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)((char *)a1 +44));
       int v49 = (int)v48;
       if ( !v48 )
         return 0;
@@ -395,7 +395,7 @@ LABEL_157:
       ((HouseClass *)(v49))->HandleAlliance((HouseClass *)aP1, 0);
       return 1;
     case 0x26:
-      eax105 = (IUnknown *)ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)((char *)a1 +44));
+      eax105 = (IUnknown *)((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)((char *)a1 +44));
       int v51 = (int)eax105;
       if ( !eax105 )
         return 0;
@@ -472,7 +472,7 @@ LABEL_157:
       ((Timer*)(*(HWND **)&stru_87C374[13308]))->PumpMessages();
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
       ((Mouse *)(&stru_87C374[13428]))->ReleaseCapture();
-      MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 0);
+      ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 0);
       ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       Sleep(0x3E8u);
       return 1;
@@ -482,7 +482,7 @@ LABEL_157:
       ((Timer*)(*(HWND **)&stru_87C374[13308]))->PumpMessages();
       HouseClass_Player[45136] = *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13730);
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
-      MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 0);
+      ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 0);
       ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
       return 1;
     case 0x33:
@@ -703,13 +703,13 @@ LABEL_60:
                                                                                       + 13608);
       return 1;
     case 0x4A:
-      int v99 = ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)(a1 + 144));
+      int v99 = ((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)(a1 + 144));
       if ( !v99 )
         return 0;
       *(unsigned char *)(v99 + 498) = 1;
       return 1;
     case 0x4B:
-      int v100 = ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)(a1 + 144));
+      int v100 = ((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)(a1 + 144));
       if ( !v100 )
         return 0;
       *(unsigned char *)(v100 + 498) = 0;
@@ -905,7 +905,7 @@ LABEL_60:
                                                                                     + 13477) == 0;
       return 1;
     case 0x62:
-      Array::ForEach(aP0, 4, (IUnknown *)0x64, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+      ((Array *)aP0)->ForEach( 4, (IUnknown *)0x64, (int (*)(int))__0Iostream_init_QAE_XZ_2);
       int v65 = 0;
       int v66 = 0;
       v67 = aP0;
@@ -965,7 +965,7 @@ LABEL_60:
       return 1;
     case 0x67:
       char * v64 = *(unsigned char *)(a1 + 109) != 0 ? (char *)(a1 + 109) : 0;
-      ScriptAction::CopyStringField( (char *)(Destination), (char *)(v64));
+      ((ScriptAction *)(Destination))->CopyStringField( (char *)(v64));
       if ( v64 )
       {
 *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4596) = (unsigned int)GetStringCSF( (wchar_t *)v64, 0, (const char *)(&stru_830620[75224]), 2242);
@@ -982,7 +982,7 @@ LABEL_60:
       else
       {
         *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4596) = &stru_87C374[46016];
-        ScriptAction::CopyStringField( v137, (char *)(&stru_87C374[56304]));
+        ((ScriptAction *)v137)->CopyStringField( (char *)(&stru_87C374[56304]));
   char v139[32]; // [esp+A0h] [ebp-1B0h] BYREF
         ((ScriptAction *)((*(unsigned int *)&HouseClass_Player[29924] + 4600)))->CopyStructField(v139, v137);
       }
@@ -1070,7 +1070,7 @@ LABEL_290:
       ((Tactical *)(*(int *)&stru_87C374[44976]))->SetTacticalPosition((IUnknown *)&v113);
       return 1;
     case 0x71:
-      v120 = (AnimClass *)ObjectClass::FindOwner( (unsigned int *)(a5), *(AnimClass **)(a1 + 144));
+      v120 = (AnimClass *)((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)(a1 + 144));
       if ( !v120 )
         return 0;
       HouseClass::NotifyImpactWater(v120);

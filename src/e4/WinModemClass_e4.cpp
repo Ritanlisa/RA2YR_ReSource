@@ -65,7 +65,7 @@ int WinModemClass::ReadSerial()
     {
       if ( GetLastError() == 996 ) /*0x7749f7*/
         return 0; /*0x774a02*/
-      ((gamemd::Debug *)this)->Log(); /*0x774a09*/
+      Debug::Log("GetOverlappedResult in WinModemClass::Read_Serial_Chars returned error %s\n"); /*0x774a09 G57c1: IDA 0x774a09 push offset aGetoverlappedr*/
     }
   }
   ResetEvent(*(HANDLE *)((char *)&this->q0146)); /*0x774a15*/
@@ -120,7 +120,7 @@ int WinModemClass::ReadSerial()
     this->q014 = 1; /*0x774aff*/
     return !v10; /*0x774b0d*/
   }
-  ((gamemd::Debug *)this)->Log(); /*0x774b14*/
+  Debug::Log("Reading from port handle failed with error %s\n"); /*0x774b14 G57c1: IDA 0x774b14 push offset aReadingFromPor*/
   return v16 != 0; /*0x7749fb*/
 
 }
@@ -182,7 +182,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, DWORD aP2)
     if ( result == 997 ) /*0x774ca5*/
       this->u32_51 = 1; /*0x774ca7*/
     else
-      return ((gamemd::Debug *)this)->Log(); /*0x774cb7*/
+      return Debug::Log("Writing to port handle failed with error %s\n"); /*0x774cb7 G57c1: IDA 0x774cb7 push offset g_Str_Trace_Writing_to_port_handle_failed_with_error*/
   }
   return result; /*0x774cab*/
 
@@ -321,23 +321,23 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
   unsigned int v3; // kr18_4
   char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
 
-  ((gamemd::Debug *)this)->Log(); /*0x774f5e*/
+  Debug::Log("Creating dial string\n"); /*0x774f5e G57c1: IDA 0x774f5e push offset aCreatingDialSt*/
   strcpy(Buffer,(const char *)(aAtd)); /*0x774f83*/
   if ( this->u32_18 ) /*0x774f87*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x774fd5*/
+    Debug::Log("Dial type is pulse\n"); /*0x774fd5 G57c1: IDA 0x774fd5 push offset aDialTypeIsPuls*/
     strcat(Buffer, (const char *)aP); /*0x775002*/
   }
   else
   {
     strcat(Buffer,(const char *)(g_Str_T)); /*0x774fbd*/
-    ((gamemd::Debug *)this)->Log(); /*0x774fc6*/
+    Debug::Log("Dial type is tone\n"); /*0x774fc6 G57c1: IDA 0x774fc6 push offset aDialTypeIsTone*/
   }
-  ((gamemd::Debug *)this)->Log(); /*0x775010*/
+  Debug::Log("Appending dial string\n"); /*0x775010 G57c1: IDA 0x775010 push offset aAppendingDialS*/
   strcat( Buffer, (const char *)(NumberOfBytesWritten)); /*0x77503e*/
-  ((gamemd::Debug *)this)->Log(); /*0x775047*/
+  Debug::Log("Appending carriage return\n"); /*0x775047 G57c1: IDA 0x775047 push offset aAppendingCarri*/
   strcat(Buffer, (const char *)&word_8327A0); /*0x775071*/
-  ((gamemd::Debug *)this)->Log(); /*0x775084*/
+  Debug::Log("Send to modem: %s\n"); /*0x775084 G57c1: IDA 0x775084 push offset aSendToModemS*/
   v3 = strlen(Buffer) + 1; /*0x775095*/
   ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x77509e*/
   if ( !WriteFile(*((HANDLE *)&this->q0083), Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7750b6*/
@@ -347,7 +347,7 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
       this->u32_51 = 1; /*0x7750cf*/
       return ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x7750df*/
     }
-    ((gamemd::Debug *)this)->Log(); /*0x7750e9*/
+    Debug::Log("Writing to port handle failed with error %s\n"); /*0x7750e9 G57c1: IDA 0x7750e9 push offset g_Str_Trace_Writing_to_port_handle_failed_with_error*/
   }
   return ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x7750d8*/
 
@@ -399,7 +399,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       if ( GetLastError() == 997 ) /*0x77521e*/
         *((unsigned char *)this + 81) = 1; /*0x775220*/
       else
-        ((gamemd::Debug *)this)->Log(); /*0x77522d*/
+        Debug::Log("Writing to port handle failed with error %s\n"); /*0x77522d G57c1: IDA 0x77522d push offset g_Str_Trace_Writing_to_port_handle_failed_with_error*/
     }
     ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x775237*/
     v10 = Ticks; /*0x77523c*/
@@ -490,7 +490,7 @@ LABEL_21:
       if ( GetLastError() == 997 ) /*0x7753ed*/
         *((unsigned char *)this + 81) = 1; /*0x7753ef*/
       else
-        ((gamemd::Debug *)this)->Log(); /*0x7753fc*/
+        Debug::Log("Writing to port handle failed with error %s\n"); /*0x7753fc G57c1: IDA 0x7753fc push offset g_Str_Trace_Writing_to_port_handle_failed_with_error*/
     }
     ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x775406*/
     Sleep(0x64u); /*0x77540d*/
@@ -530,57 +530,57 @@ int WinModemClass::LogCommErrors(int aP1, char a3, int a4, int a5)
   {
     if ( ((unsigned int)(aP1)& 8) != 0 ) /*0x7754e3*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x7754ea*/
+      Debug::Log("Communications 'Framing' error detected.\n"); /*0x7754ea G57c1: IDA 0x7754ea push offset aCommunications*/
       result = this->WinModemClass_field_0x04 + 1; /*0x7754f5*/
       this->WinModemClass_field_0x04 = result; /*0x7754f6*/
     }
     if ( ((unsigned int)(aP1)& 0x10) != 0 ) /*0x7754fc*/
-      result = ((gamemd::Debug *)this)->Log(); /*0x775503*/
+      result = Debug::Log("Communications 'Break' detected.\n"); /*0x775503 G57c1: IDA 0x775503 push offset aCommunications_0*/
     if ( ((unsigned int)(aP1)& 0x400) != 0 ) /*0x77550e*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x775515*/
+      Debug::Log("Communications 'IO' error detected.\n"); /*0x775515 G57c1: IDA 0x775515 push offset aCommunications_1*/
       result = this->WinModemClass_field_0x08 + 1; /*0x775520*/
       this->WinModemClass_field_0x08 = result; /*0x775521*/
     }
     if ( ((unsigned int)(aP1)& 2) != 0 ) /*0x775527*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x77552e*/
+      Debug::Log("Communications 'Receive Overrun' error detected.\n"); /*0x77552e G57c1: IDA 0x77552e push offset aCommunications_2*/
       result = this->WinModemClass_field_0x0C + 1; /*0x775539*/
       this->WinModemClass_field_0x0C = result; /*0x77553a*/
     }
     if ( ((unsigned int)(aP1)& 1) != 0 ) /*0x775540*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x775547*/
+      Debug::Log("Communications 'Receive Queue Overflow' error detected.\n"); /*0x775547 G57c1: IDA 0x775547 push offset aCommunications_3*/
       result = this->WinModemClass_field_0x10 + 1; /*0x775552*/
       this->WinModemClass_field_0x10 = result; /*0x775553*/
     }
     if ( ((unsigned int)(aP1)& 4) != 0 ) /*0x775559*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x775560*/
+      Debug::Log("Communications 'Parity' error detected.\n"); /*0x775560 G57c1: IDA 0x775560 push offset aCommunications_4*/
       result = this->WinModemClass_field_0x14 + 1; /*0x77556b*/
       this->WinModemClass_field_0x14 = result; /*0x77556c*/
     }
     if ( ((unsigned int)(aP1)& 0x100) != 0 ) /*0x775572*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x775579*/
+      Debug::Log("Communications 'Transmit Queue Full' error detected.\n"); /*0x775579 G57c1: IDA 0x775579 push offset aCommunications_5*/
       result = this->WinModemClass_field_0x18 + 1; /*0x775584*/
       this->WinModemClass_field_0x18 = result; /*0x775585*/
     }
   }
   if ( (a3 & 1) != 0 ) /*0x77558f*/
-    result = ((gamemd::Debug *)this)->Log(); /*0x775596*/
+    result = Debug::Log("Comm status - Tx waiting for CTS signal\n"); /*0x775596 G57c1: IDA 0x775596 push offset aCommStatusTxWa*/
   if ( (a3 & 2) != 0 ) /*0x7755a1*/
-    result = ((gamemd::Debug *)this)->Log(); /*0x7755a8*/
+    result = Debug::Log("Comm status - Tx waiting for DSR signal\n"); /*0x7755a8 G57c1: IDA 0x7755a8 push offset aCommStatusTxWa_0*/
   if ( (a3 & 4) != 0 ) /*0x7755b3*/
-    result = ((gamemd::Debug *)this)->Log(); /*0x7755ba*/
+    result = Debug::Log("Comm status - Tx waiting for RLSD signal\n"); /*0x7755ba G57c1: IDA 0x7755ba push offset aCommStatusTxWa_1*/
   if ( (a3 & 8) != 0 ) /*0x7755c5*/
-    result = ((gamemd::Debug *)this)->Log(); /*0x7755cc*/
+    result = Debug::Log("Comm status - Tx waiting, XOFF char received\n"); /*0x7755cc G57c1: IDA 0x7755cc push offset aCommStatusTxWa_2*/
   if ( (a3 & 0x10) != 0 ) /*0x7755d7*/
-    result = ((gamemd::Debug *)this)->Log(); /*0x7755de*/
+    result = Debug::Log("Comm status - Tx waiting, XOFF char sent\n"); /*0x7755de G57c1: IDA 0x7755de push offset aCommStatusTxWa_3*/
   if ( (a3 & 0x20) != 0 ) /*0x7755e9*/
-    result = ((gamemd::Debug *)this)->Log(); /*0x7755f0*/
+    result = Debug::Log("Comm status - EOF character sent\n"); /*0x7755f0 G57c1: IDA 0x7755f0 push offset aCommStatusEofC*/
   if ( (a3 & 0x40) != 0 ) /*0x7755fd*/
-    return ((gamemd::Debug *)this)->Log(); /*0x775604*/
+    return Debug::Log("Comm status - Character waiting for Tx\n"); /*0x775604 G57c1: IDA 0x775604 push offset aCommStatusChar*/
   return result; /*0x7755f8*/
 
 }
@@ -596,7 +596,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_WinModemClass;
   if ( v3 != -1 ) /*0x77561f*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x775626*/
+    Debug::Log("Closing serial port\n"); /*0x775626 G57c1: IDA 0x775626 push offset g_Str_Closing_serial_port*/
     CloseHandle(*((HANDLE *)this + 23)); /*0x775632*/
     *((unsigned int *)this + 23) = -1; /*0x775638*/
   }

@@ -6,7 +6,7 @@
 
 namespace gamemd {
 struct ScriptClass;  // fix_fwd_type_supply
-struct Mission {
+struct Mission_e4 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4

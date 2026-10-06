@@ -177,7 +177,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   (&this->SpreadPercentage)[1] = 0; /*0x721713*/
   this->Growth = 0; /*0x721719*/
   (&this->GrowthPercentage)[0] = 0; /*0x72171f*/
-  AnimTypeVector::Constructor((AnimTypeVector *)&(&this->GrowthPercentage)[1], 0, 0); /*0x721725*/
+  ((AnimTypeVector *)(&(&this->GrowthPercentage)[1]))->Constructor( 0, 0); /*0x721725*/
   this->Image = (OverlayTypeClass *)10; /*0x72172a*/
   (&this->Debris)[0] = 0; /*0x721731*/
   (&this->GrowthPercentage)[1] = (int)&vt_TypeList; /*0x721734*/

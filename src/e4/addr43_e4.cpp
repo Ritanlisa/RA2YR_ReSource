@@ -255,7 +255,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       v71 = v73 + aP1[1]; /*0x437490*/
       v25 = v71 - v24; /*0x437494*/
       v70 = v72 + v23; /*0x43749a*/
-      v61 = StreamClass::ReadAndSeek(v72 + v23, v71 - v24); /*0x4374ac*/
+      v61 = ((StreamClass *)(v72 + v23))->ReadAndSeek( v71 - v24); /*0x4374ac*/
       v21 = (2 * (v25 & 1)) | ((uint8_t)v70 ^ v25) & 1; /*0x4374b7*/
     }
     if ( g_ZBufferDescriptor ) /*0x4374c3*/
@@ -605,8 +605,8 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     return (MouseClass * *)result; /*0x437ab8*/
   v71 = v62 - *a4; /*0x437ad6*/
   v48 = v63 - a4[1]; /*0x437ae7*/
-  v41 = CellStruct::Copy((CellStruct *)&v58, v53); /*0x437afd*/
-  v21 = (Coord2D *)CellStruct::Copy( (void *)(a1), &v55); /*0x437b02*/
+  v41 = ((CellStruct *)(&v58))->Copy( v53); /*0x437afd*/
+  v21 = (Coord2D *)((CellStruct *)(a1))->Copy( &v55); /*0x437b02*/
   v22 = ((Coord2D *)(v21))->Add(v54, v41); /*0x437b09*/
   v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))((int)aP0, *v22, v22[1]); /*0x437b28*/
   if ( !v68 ) /*0x437b2f*/

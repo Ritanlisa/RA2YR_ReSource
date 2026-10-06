@@ -577,7 +577,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         if ( v14 ) /*0x4e0bcb*/
         {
           v15 = v14 - 1; /*0x4e0bd0*/
-          Array::ForEachReverse(v14, 8, *(v14 - 1), (int (*)(int))nullsub_138); /*0x4e0bdc*/
+          ((Array *)v14)->ForEachReverse( 8, *(v14 - 1), (int (*)(int))nullsub_138); /*0x4e0bdc*/
           __3_YAXPAX_Z(v15); /*0x4e0be2*/
           v4 = a3; /*0x4e0be7*/
         }
@@ -3752,7 +3752,7 @@ namespace gamemd {  // G42.18c ns repair
 int * VectorClass_flat::ScalarDtor(char a2)
 {
 
-  Pipe::Dtor( (void *a1 =)((Pipe *)this)); /*0x477753*/
+  ((Pipe *)(((Pipe *)this)))->Dtor(); /*0x477753*/
   if ( (a2 & 1) != 0 ) /*0x47775d*/
     __3_YAXPAX_Z(this); /*0x477760*/
   return (int *)this->__pad_0; /*0x47776a*/
@@ -8517,7 +8517,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_1(a1 - 36);
+  return ((HouseClass *)(a1 - 36))->COMStub_Ret1_1();
 
 }
 } // namespace gamemd
@@ -8527,7 +8527,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_2(a1 - 36);
+  return ((HouseClass *)(a1 - 36))->COMStub_Ret1_2();
 
 }
 } // namespace gamemd
@@ -8547,7 +8547,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_1(a1 - 40);
+  return ((HouseClass *)(a1 - 40))->COMStub_Ret1_1();
 
 }
 } // namespace gamemd
@@ -8557,7 +8557,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_2(a1 - 40);
+  return ((HouseClass *)(a1 - 40))->COMStub_Ret1_2();
 
 }
 } // namespace gamemd
@@ -8597,7 +8597,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_1(a1 - 44);
+  return ((HouseClass *)(a1 - 44))->COMStub_Ret1_1();
 
 }
 } // namespace gamemd
@@ -8607,7 +8607,7 @@ namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_2(a1 - 44);
+  return ((HouseClass *)(a1 - 44))->COMStub_Ret1_2();
 
 }
 } // namespace gamemd

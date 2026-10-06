@@ -248,7 +248,7 @@ int TActionClass::executeRepairAction(int a2)
   }
   if ( !a2 ) /*0x577cc2*/
 LABEL_7:
-    ((gamemd::Debug *)this)->Log(); /*0x577cc4*/
+    Debug::Log("We tried to reset the shroud without an owner"); /*0x577cc4 G57c1: IDA 0x577cc9 push offset g_Str_We_tried_to_reset_the_shroud_w*/
   ((HouseClass *)(0))->ResetObjectOrders(0); /*0x577cd1*/
   v4 = *((unsigned int *)this + 61); /*0x577ce0*/
   *((unsigned int *)this + 67) = 1; /*0x577ce6*/

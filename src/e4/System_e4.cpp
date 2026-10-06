@@ -164,7 +164,7 @@ int sub_6269A0()
       v5 = v4; /*0x6269d0*/
       if ( v4 ) /*0x6269d7*/
       {
-        StringVector::Construct((int)(v4), 0, 0); /*0x6269df*/
+        ((StringVector *)((int)(v4)))->Construct( 0, 0); /*0x6269df*/
         *(unsigned int *)v5->__pad_0 = (unsigned int)((void*)&DynamicVectorClass_char___vftable); /*0x6269e4*/
         v5->StringVector_field_0x14 = 10; /*0x6269ea*/
         v5->StringVector_field_0x10 = 0; /*0x6269f1*/
@@ -253,7 +253,7 @@ char sub_626AB0(const char * a1, int a2)
       v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
-        StringVector::Construct((int)(v4), 0, 0); /*0x626b01*/
+        ((StringVector *)((int)(v4)))->Construct( 0, 0); /*0x626b01*/
         *(void **)v5 = (void*)&DynamicVectorClass_char___vftable; /*0x626b06*/
         v5[5] = 10; /*0x626b0c*/
         v5[4] = 0; /*0x626b0f*/
@@ -338,7 +338,7 @@ int sub_7C8F46()
 }
 // 0x7A2EA0
 namespace gamemd {
-void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, int a3, int a4)
+int sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *), int a2, int a3, int a4)
 {
   int (__stdcall **v4)(unsigned int, void *, int *); // ecx
   int v5; // esi
@@ -478,7 +478,7 @@ void sub_72CA10()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[688]; /*0x72ca25*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[688] ) /*0x72ca2d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[688]); /*0x72ca31*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[688]))->Destroy(); /*0x72ca31*/
         RA2_OPDEL(v1); /*0x72ca37*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1344] = 0; /*0x72ca3f*/

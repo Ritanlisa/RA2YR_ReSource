@@ -435,7 +435,7 @@ MapClass * * ExpandTerrainCells(int a2, int a3)
     int j; // [esp+1Ch] [ebp-Ch]
     int v30; // [esp+20h] [ebp-8h]
 
-    result = (int)RandomMap::TerrainAlloc(self); /*0x58d1c9*/
+    result = (int)((RandomMap *)self)->TerrainAlloc(); /*0x58d1c9*/
     v4 = a2; /*0x58d1ce*/
     v5 = result; /*0x58d1d2*/
     v25 = result; /*0x58d1d7*/
@@ -695,7 +695,7 @@ RandomMap * * CollectTerrainCells(int a2, void *a2_2)
     int i; // [esp+24h] [ebp-4h]
 
     v26 = self; /*0x58e747*/
-    p_vtable0 = RandomMap::TerrainAlloc(self); /*0x58e750*/
+    p_vtable0 = ((RandomMap *)self)->TerrainAlloc(); /*0x58e750*/
     for ( i = 0; i < a2; ++i ) /*0x58e760*/
     {
       v2 = (VectorClass *)RA2_OPNEW(0x18u); /*0x58e768*/
@@ -819,7 +819,7 @@ AbstractClass * * PlaceRandomMapTerrain(RandomMap *self)
     int j; // [esp+30h] [ebp-8h]
     int v21; // [esp+34h] [ebp-4h]
 
-    v1 = RandomMap::TerrainAlloc( (void)(self)); /*0x58e9c7*/
+    v1 = ((RandomMap *)((void)(self)))->TerrainAlloc(); /*0x58e9c7*/
     ((VectorClass *)&v19)->CellConstructor( 0, 0); /*0x58e9c9*/
     v2 = 50000; /*0x58e9ce*/
     v19.vtable0 = (void*)&DynamicVectorClass_Cell_vftable; /*0x58e9d3*/
@@ -956,7 +956,7 @@ void* CollectBorderCells(RandomMap *self)
     v5 = 0; /*0x58f119*/
     for ( Block = (unsigned char *)v4; v5 < g_MissionQueueFrame.localVariables[164]; ++v5 ) /*0x58f121*/
       *(unsigned char *)(v5 + v4) = 0; /*0x58f123*/
-    v6 = RandomMap::TerrainAlloc(v1); /*0x58f139*/
+    v6 = ((RandomMap *)v1)->TerrainAlloc(); /*0x58f139*/
     v7 = 0; /*0x58f13b*/
     v29 = v6; /*0x58f13d*/
     v28 = 0; /*0x58f141*/
@@ -1806,7 +1806,7 @@ int AllocateArea()
           else
           {
             v8 = v5; /*0x590625*/
-            while ( *(unsigned int *)(*(unsigned int *)&v8->needsSave != *(unsigned int *)(*(unsigned int *)(v3 + 4) + *(unsigned int *)v41) ) /*0x59062c*/
+            while ( *(unsigned int *)(*(unsigned int *)&v8->needsSave != *(unsigned int *)(*(unsigned int *)(v3 + 4) + *(unsigned int *)v41) )) /*0x59062c*/
             {
               ++v7; /*0x59062e*/
               v8 += 4; /*0x59062f*/
@@ -1848,7 +1848,7 @@ int AllocateArea()
           {
             v11 = *(unsigned int *)(*(unsigned int *)(v3 + 4) + 4 * v9); /*0x590678*/
             v12 = v5; /*0x59067b*/
-            while ( *(unsigned int *)(*(unsigned int * *)&v12->NeedsSaveOrLink != v11 ) /*0x590682*/
+            while ( *(unsigned int *)(*(unsigned int * *)&v12->NeedsSaveOrLink != v11 )) /*0x590682*/
             {
               ++v10; /*0x590684*/
               v12 += 4; /*0x590685*/
@@ -1898,7 +1898,7 @@ int AllocateArea()
           {
             v20 = *(unsigned int *)(*(unsigned int *)(v16 + 4) + 4 * v42); /*0x590756*/
             v21 = g_MissionQueueFrame.briefing[339]; /*0x590759*/
-            while ( *(unsigned int *)(*(unsigned int * *)&v21->q020 != v20 ) /*0x590760*/
+            while ( *(unsigned int *)(*(unsigned int * *)&v21->q020 != v20 )) /*0x590760*/
             {
               ++v19; /*0x590766*/
               v21 += 4; /*0x590767*/
@@ -1951,7 +1951,7 @@ int AllocateArea()
             else
             {
               v30 = g_MissionQueueFrame.briefing[339]; /*0x590839*/
-              while ( *(void **)(*(unsigned int *)&v30->needsSave != RandomMap_field_0x8 ) /*0x590840*/
+              while ( *(void **)(*(unsigned int *)&v30->needsSave != RandomMap_field_0x8 )) /*0x590840*/
               {
                 ++v29; /*0x590846*/
                 v30 += 4; /*0x590847*/
@@ -1960,7 +1960,7 @@ int AllocateArea()
               }
               v31 = *(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * v29); /*0x590960*/
             }
-            v32 = RandomMap::TerrainAlloc(v31); /*0x590857*/
+            v32 = ((RandomMap *)v31)->TerrainAlloc(); /*0x590857*/
             if ( v45 <= 0 ) /*0x59085f*/
               goto LABEL_66; /*0x59085f*/
             do /*0x590913*/
@@ -2910,7 +2910,7 @@ CampaignClass * * CleanupRandomMapData()
     }
     this->__pad_4C[329] = 0; /*0x595ba0*/
     *(unsigned int *)&this->__pad_4C[324] = 0; /*0x595ba6*/
-    LoadOptions::Cleanup( (LoadOptions *)this); /*0x595bac*/
+    ((LoadOptions *)this)->Cleanup(); /*0x595bac*/
 }
 }
 // 0x596E50
@@ -3456,7 +3456,7 @@ WeaponStruct * * LoadConfig()
       {
         if ( !*i ) /*0x5987d5*/
           break; /*0x5987d8*/
-        IntList = (DynamicVectorClass *)BuildingTypeClass::FindOrCreate(i); /*0x5987e3*/
+        IntList = (DynamicVectorClass *)((BuildingTypeClass *)i)->FindOrCreate(); /*0x5987e3*/
         if ( IntList ) /*0x5987e7*/
           ((DynamicVector *)&v27)->Add_Alt3( &IntList); /*0x5987f2*/
       }
@@ -3481,7 +3481,7 @@ WeaponStruct * * LoadConfig()
       {
         if ( !*j ) /*0x5988a4*/
           break; /*0x5988a7*/
-        IntList = (DynamicVectorClass *)BuildingTypeClass::FindOrCreate(j); /*0x5988b2*/
+        IntList = (DynamicVectorClass *)((BuildingTypeClass *)j)->FindOrCreate(); /*0x5988b2*/
         if ( IntList ) /*0x5988b6*/
           ((DynamicVector *)&v27)->Add_Alt3( &IntList); /*0x5988c1*/
       }
@@ -3564,7 +3564,7 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     v38 = IDA_LOBYTE(dword_A8B230[381].vtable1) == 0; /*0x5989e7*/
     if ( !IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x5989dc*/
     {
-      ProgressAnim::Init((int)&stru_AC4B30.__pad_EC[828], 0, 1079574528, 1, (int)hDlg); /*0x5989fb*/
+      ((ProgressAnim *)((int)&stru_AC4B30.__pad_EC[828]))->Init( 0, 1079574528, 1, (int)hDlg); /*0x5989fb*/
       SHPClass::Load((int)&stru_AC4B30.__pad_EC[828], (char *)&stru_82BA00.?[2], 0, 0); /*0x598a0c*/
       ((TextRenderer *)(int *)&stru_AC4B30.__pad_EC[828])->MeasureBuilding( -1, -1, 0, 0, 1); /*0x598a22*/
       LoadScreen::Render((int)&stru_AC4B30.__pad_EC[828], 0, (int)this, NAN); /*0x598a34*/
@@ -4072,7 +4072,7 @@ AbstractClass * * SetupTheater(char a2)
     *((unsigned int *)this + 195) = 4; /*0x59976e*/
     v80.headNode[0] = 0; /*0x599774*/
     v80.headNode[1] = 0; /*0x599778*/
-    INISectionList::Constructor((INISectionList *)&v80.headNode[2]); /*0x59977c*/
+    ((INISectionList *)(&v80.headNode[2]))->Constructor(); /*0x59977c*/
     Node::Init((Node *)&v80.__pad_20[8]); /*0x599785*/
     v80.INIClass_field_3C = 0; /*0x599790*/
     v81 = 0; /*0x599797*/

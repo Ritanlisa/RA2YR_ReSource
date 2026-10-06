@@ -593,7 +593,7 @@ LABEL_23:
 LABEL_25:
     ((Radar *)(0))->UpdateReveal(0); /*0x577efc*/
     ((FogOfWar *)((FogOfWar *)&dword_87F7E8))->Render(); /*0x577f0d*/
-    return (void *)MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 2); /*0x577f19*/
+    return (void *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/
 

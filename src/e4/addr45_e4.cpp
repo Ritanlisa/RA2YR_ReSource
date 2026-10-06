@@ -218,7 +218,7 @@ int sub_452000(unsigned int * a1)
     && (a1 ? (v4 = (*(int (**)(unsigned int *))(*a1 + 44))( (unsigned int *)(a1)) == 6 ? a1 : 0) : (v4 = 0),
         *(unsigned int **)(a1[165] + 80) == v4) )
   {
-    IDA_LOWORD((int)v3) = (unsigned short)(Techno::StartInvulnerability((gamemd::BuildingTypeClass *)(v3))); /*0x452078*/
+    IDA_LOWORD((int)v3) = (unsigned short)(((Techno *)(v3))->StartInvulnerability()); /*0x452078*/
   }
   *((unsigned short *)a1 + 896) = v3; /*0x45207a*/
   v15 = a1 + 343; /*0x452091*/
@@ -481,12 +481,12 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
   v4 = (*(int (**)(unsigned int *, int))(*a1 + 1124))( (unsigned int *)(a1), a3); /*0x456fc7*/
   if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))( (unsigned int *)(a1)) ) /*0x456fc9*/
 // 0x70e360
-    return Techno::StartInvulnerability((int)(gamemd::BuildingTypeClass *)(v4)); /*0x456fc9*/
+    return ((Techno *)((int)(gamemd::BuildingTypeClass *)(v4)))->StartInvulnerability(); /*0x456fc9*/
   if ( a1[165]
     && (a1 ? (v5 = (*(int (**)(unsigned int *))(*a1 + 44))( (unsigned int *)(a1)) == 6 ? a1 : 0) : (v5 = 0),
         *(unsigned int **)(a1[165] + 80) == v5) )
   {
-    return (gamemd::BuildingTypeClass **)(Techno::StartInvulnerability((gamemd::BuildingTypeClass *)(v4)));
+    return (gamemd::BuildingTypeClass **)(((Techno *)(v4))->StartInvulnerability());
   }
   else
   {
@@ -791,7 +791,7 @@ int Map_InitCellOffsets()
   unk_89DBAC = *(unsigned int *)((CellStruct *)(&v1))->Set(5, 3);
   unk_89DBB0 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset(&stru_89DBB4, 0, 0x24u);
-  Array::ForEach((int)&stru_89DBB4, 4, 9, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  ((Array *)((int)&stru_89DBB4))->ForEach( 4, 9, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DBD8 = *(unsigned int *)((CellStruct *)(&v1))->Set(-1, -1);
   unk_89DBDC = *(unsigned int *)((CellStruct *)(&v1))->Set(0, -1);
   unk_89DBE0 = *(unsigned int *)((CellStruct *)(&v1))->Set(1, -1);
@@ -816,7 +816,7 @@ int Map_InitCellOffsets()
   unk_89DC2C = *(unsigned int *)((CellStruct *)(&v1))->Set(4, 4);
   unk_89DC30 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset(&stru_89DC34, 0, 0x1Cu);
-  Array::ForEach((int)&stru_89DC34, 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  ((Array *)((int)&stru_89DC34))->ForEach( 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   DataGlobal_0089DC50 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 4);
   DataGlobal_0089DC54 = *(unsigned int *)((CellStruct *)(&v1))->Set(1, 4);
   unk_89DC58 = *(unsigned int *)((CellStruct *)(&v1))->Set(2, 4);
@@ -835,14 +835,14 @@ int Map_InitCellOffsets()
   unk_89DC8C = *(unsigned int *)((CellStruct *)(&v1))->Set(3, -1);
   unk_89DC90 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset(&stru_89DC94, 0, 0x34u);
-  Array::ForEach((int)&stru_89DC94, 4, 13, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  ((Array *)((int)&stru_89DC94))->ForEach( 4, 13, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DCC8 = *(unsigned int *)((CellStruct *)(&v1))->Set(2, -1);
   unk_89DCCC = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset(&stru_89DCD0, 0, 0x70u);
-  Array::ForEach((int)&stru_89DCD0, 4, 28, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  ((Array *)((int)&stru_89DCD0))->ForEach( 4, 28, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DD40 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset(&stru_89DD44, 0, 0x74u);
-  return Array::ForEach((int)&stru_89DD44, 4, 29, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  return ((Array *)((int)&stru_89DD44))->ForEach( 4, 29, (int (*)(int))__0Iostream_init_QAE_XZ_2);
 }
 } // namespace gamemd
 

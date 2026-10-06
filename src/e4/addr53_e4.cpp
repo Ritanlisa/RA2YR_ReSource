@@ -269,7 +269,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v19 = Block; /*0x53160e*/
   if ( Block ) /*0x531614*/
   {
-    FileTreeNode::Destroy((HWND)(Block)); /*0x531618*/
+    ((FileTreeNode *)((HWND)(Block)))->Destroy(); /*0x531618*/
     RA2_OPDEL(v19); /*0x53161e*/
   }
   if ( v31 ) /*0x531630*/
@@ -337,7 +337,7 @@ char BulkData_Initialize()
   if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 244) ) /*0x53178d*/
   {
   LABEL_11:
-        Debug::Log();
+        Debug::Log("Failed to create VoxLib!\n") /*G57c1: IDA 0x531794 push offset aFailedToCreate_0*/;
   LABEL_12:
     *(unsigned int *)v7.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x53179c*/
     v9 = 0; /*0x5317a8*/
@@ -357,7 +357,7 @@ char BulkData_Initialize()
   if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 248) ) /*0x531803*/
   {
   LABEL_16:
-        Debug::Log();
+        Debug::Log("Failed to create MotLib!\n") /*G57c1: IDA 0x53180a push offset aFailedToCreate_1*/;
     *(unsigned int *)v10.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x531819*/
     v12 = 0; /*0x531821*/
     ((Vector *)((int)v11))->Clear(); /*0x531828*/
@@ -531,7 +531,7 @@ CreateTeamCommand * * InitCommands()
            ((unsigned int *)(dword_87F5D8))[34] + (&dword_87F5D8)[37],
            0) )
     {
-      CreateTeamCommand *v2 = (gamemd::CreateTeamCommand *)((&dword_87F5D8)[36]++); /*0x5321be*/
+      unsigned int v2 = ((&dword_87F5D8)[36]++; /*0x5321be*/
       *(unsigned int *)((&dword_87F5D8)[33] + 4 * v2) = v1; /*0x5321cd*/
     }
     unsigned int * v3 = (unsigned int *)operator new(4); /*0x5321d2*/
@@ -551,7 +551,7 @@ CreateTeamCommand * * InitCommands()
            (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
            0) )
     {
-      CreateTeamCommand *v5 = (gamemd::CreateTeamCommand *)((&dword_87F5D8)[36]++); /*0x53222b*/
+      unsigned int v5 = ((&dword_87F5D8)[36]++; /*0x53222b*/
       *(unsigned int *)((&dword_87F5D8)[33] + 4 * v5) = v4; /*0x53223a*/
     }
   }
@@ -572,7 +572,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v8 = (gamemd::CreateTeamCommand *)((&dword_87F5D8)[36]++); /*0x532298*/
+    unsigned int v8 = ((&dword_87F5D8)[36]++; /*0x532298*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v8) = v7; /*0x5322a7*/
   }
   v9 = (unsigned int *)operator new(4); /*0x5322ac*/
@@ -592,7 +592,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v11 = (&dword_87F5D8)[36]++; /*0x532305*/
+    unsigned int v11 = (&dword_87F5D8)[36]++; /*0x532305*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v11) = v10; /*0x532314*/
   }
   v12 = (unsigned int *)operator new(4); /*0x532319*/
@@ -612,7 +612,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v14 = (&dword_87F5D8)[36]++; /*0x532372*/
+    unsigned int v14 = (&dword_87F5D8)[36]++; /*0x532372*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v14) = v13; /*0x532381*/
   }
   v15 = (unsigned int *)operator new(4); /*0x532386*/
@@ -632,7 +632,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v17 = (&dword_87F5D8)[36]++; /*0x5323df*/
+    unsigned int v17 = (&dword_87F5D8)[36]++; /*0x5323df*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v17) = v16; /*0x5323ee*/
   }
   v18 = (unsigned int *)operator new(4); /*0x5323f3*/
@@ -652,7 +652,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v20 = (&dword_87F5D8)[36]++; /*0x53244c*/
+    unsigned int v20 = (&dword_87F5D8)[36]++; /*0x53244c*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v20) = v19; /*0x53245b*/
   }
   v21 = (unsigned int *)operator new(4); /*0x532460*/
@@ -672,7 +672,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v23 = (&dword_87F5D8)[36]++; /*0x5324b9*/
+    unsigned int v23 = (&dword_87F5D8)[36]++; /*0x5324b9*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v23) = v22; /*0x5324c8*/
   }
   v24 = (unsigned int *)operator new(4); /*0x5324cd*/
@@ -692,7 +692,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v26 = (&dword_87F5D8)[36]++; /*0x532526*/
+    unsigned int v26 = (&dword_87F5D8)[36]++; /*0x532526*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v26) = v25; /*0x532535*/
   }
   v27 = (unsigned int *)operator new(4); /*0x53253a*/
@@ -712,7 +712,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v29 = (&dword_87F5D8)[36]++; /*0x532593*/
+    unsigned int v29 = (&dword_87F5D8)[36]++; /*0x532593*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v29) = v28; /*0x5325a2*/
   }
   v30 = (unsigned int *)operator new(4); /*0x5325a7*/
@@ -732,7 +732,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v32 = (&dword_87F5D8)[36]++; /*0x532600*/
+    unsigned int v32 = (&dword_87F5D8)[36]++; /*0x532600*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v32) = v31; /*0x53260f*/
   }
   v33 = (unsigned int *)operator new(4); /*0x532614*/
@@ -752,7 +752,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v34 = (&dword_87F5D8)[36]++; /*0x532675*/
+    unsigned int v34 = (&dword_87F5D8)[36]++; /*0x532675*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v34) = v173; /*0x532684*/
   }
   v35 = (unsigned int *)operator new(4); /*0x532689*/
@@ -772,7 +772,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v37 = (&dword_87F5D8)[36]++; /*0x5326e1*/
+    unsigned int v37 = (&dword_87F5D8)[36]++; /*0x5326e1*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v37) = v36; /*0x5326f0*/
   }
   v38 = (unsigned int *)operator new(4); /*0x5326f5*/
@@ -792,7 +792,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v40 = (&dword_87F5D8)[36]++; /*0x53274e*/
+    unsigned int v40 = (&dword_87F5D8)[36]++; /*0x53274e*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v40) = v39; /*0x53275d*/
   }
   v41 = (unsigned int *)operator new(4); /*0x532762*/
@@ -812,7 +812,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v42 = (&dword_87F5D8)[36]++; /*0x5327c3*/
+    unsigned int v42 = (&dword_87F5D8)[36]++; /*0x5327c3*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v42) = v174; /*0x5327d2*/
   }
   v43 = (unsigned int *)operator new(4); /*0x5327d7*/
@@ -832,7 +832,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v45 = (&dword_87F5D8)[36]++; /*0x53282f*/
+    unsigned int v45 = (&dword_87F5D8)[36]++; /*0x53282f*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v45) = v44; /*0x53283e*/
   }
   v46 = (unsigned int *)operator new(4); /*0x532843*/
@@ -852,7 +852,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v48 = (&dword_87F5D8)[36]++; /*0x53289c*/
+    unsigned int v48 = (&dword_87F5D8)[36]++; /*0x53289c*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v48) = v47; /*0x5328ab*/
   }
   v49 = (unsigned int *)operator new(4); /*0x5328b0*/
@@ -872,7 +872,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v51 = (&dword_87F5D8)[36]++; /*0x532909*/
+    unsigned int v51 = (&dword_87F5D8)[36]++; /*0x532909*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v51) = v50; /*0x532918*/
   }
   v52 = (unsigned int *)operator new(4); /*0x53291d*/
@@ -892,7 +892,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v54 = (&dword_87F5D8)[36]++; /*0x532976*/
+    unsigned int v54 = (&dword_87F5D8)[36]++; /*0x532976*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v54) = v53; /*0x532985*/
   }
   v55 = (unsigned int *)operator new(4); /*0x53298a*/
@@ -912,7 +912,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v57 = (&dword_87F5D8)[36]++; /*0x5329e3*/
+    unsigned int v57 = (&dword_87F5D8)[36]++; /*0x5329e3*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v57) = v56; /*0x5329f2*/
   }
   v58 = (unsigned int *)operator new(4); /*0x5329f7*/
@@ -932,7 +932,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v60 = (&dword_87F5D8)[36]++; /*0x532a50*/
+    unsigned int v60 = (&dword_87F5D8)[36]++; /*0x532a50*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v60) = v59; /*0x532a5f*/
   }
   v61 = (unsigned int *)operator new(4); /*0x532a64*/
@@ -952,7 +952,7 @@ CreateTeamCommand * * InitCommands()
          (&dword_87F5D8)[34] + (&dword_87F5D8)[37],
          0) )
   {
-    CreateTeamCommand *v63 = (&dword_87F5D8)[36]++; /*0x532abd*/
+    unsigned int v63 = (&dword_87F5D8)[36]++; /*0x532abd*/
     *(unsigned int *)((&dword_87F5D8)[33] + 4 * v63) = v62; /*0x532acc*/
   }
   v64 = (unsigned int *)operator new(4); /*0x532ad1*/
@@ -992,7 +992,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v69 = dword_87F5D8[36]++; /*0x532b97*/
+    unsigned int v69 = dword_87F5D8[36]++; /*0x532b97*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v69) = v68; /*0x532ba6*/
   }
   v70 = (unsigned int *)operator new(4); /*0x532bab*/
@@ -1012,7 +1012,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v72 = dword_87F5D8[36]++; /*0x532c04*/
+    unsigned int v72 = dword_87F5D8[36]++; /*0x532c04*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v72) = v71; /*0x532c13*/
   }
   v73 = (unsigned int *)operator new(4); /*0x532c18*/
@@ -1032,7 +1032,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v75 = dword_87F5D8[36]++; /*0x532c71*/
+    unsigned int v75 = dword_87F5D8[36]++; /*0x532c71*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v75) = v74; /*0x532c80*/
   }
   v76 = (unsigned int *)operator new(4); /*0x532c85*/
@@ -1052,7 +1052,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v78 = dword_87F5D8[36]++; /*0x532cde*/
+    unsigned int v78 = dword_87F5D8[36]++; /*0x532cde*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v78) = v77; /*0x532ced*/
   }
   v79 = (unsigned int *)operator new(4); /*0x532cf2*/
@@ -1072,7 +1072,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v81 = dword_87F5D8[36]++; /*0x532d4b*/
+    unsigned int v81 = dword_87F5D8[36]++; /*0x532d4b*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v81) = v80; /*0x532d5a*/
   }
   v82 = (unsigned int *)operator new(4); /*0x532d5f*/
@@ -1092,7 +1092,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v84 = dword_87F5D8[36]++; /*0x532db8*/
+    unsigned int v84 = dword_87F5D8[36]++; /*0x532db8*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v84) = v83; /*0x532dc7*/
   }
   v85 = (unsigned int *)operator new(4); /*0x532dcc*/
@@ -1112,7 +1112,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v87 = dword_87F5D8[36]++; /*0x532e25*/
+    unsigned int v87 = dword_87F5D8[36]++; /*0x532e25*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v87) = v86; /*0x532e34*/
   }
   v88 = (unsigned int *)operator new(4); /*0x532e39*/
@@ -1132,7 +1132,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v90 = dword_87F5D8[36]++; /*0x532e92*/
+    unsigned int v90 = dword_87F5D8[36]++; /*0x532e92*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v90) = v89; /*0x532ea1*/
   }
   v91 = (unsigned int *)operator new(4); /*0x532ea6*/
@@ -1152,7 +1152,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v93 = dword_87F5D8[36]++; /*0x532eff*/
+    unsigned int v93 = dword_87F5D8[36]++; /*0x532eff*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v93) = v92; /*0x532f0e*/
   }
   v94 = (unsigned int *)operator new(4); /*0x532f13*/
@@ -1172,7 +1172,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v96 = dword_87F5D8[36]++; /*0x532f6c*/
+    unsigned int v96 = dword_87F5D8[36]++; /*0x532f6c*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v96) = v95; /*0x532f7b*/
   }
   v97 = (unsigned int *)operator new(4); /*0x532f80*/
@@ -1192,7 +1192,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v99 = dword_87F5D8[36]++; /*0x532fd9*/
+    unsigned int v99 = dword_87F5D8[36]++; /*0x532fd9*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v99) = v98; /*0x532fe8*/
   }
   v100 = (unsigned int *)operator new(4); /*0x532fed*/
@@ -1212,7 +1212,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v102 = dword_87F5D8[36]++; /*0x533046*/
+    unsigned int v102 = dword_87F5D8[36]++; /*0x533046*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v102) = v101; /*0x533055*/
   }
   v103 = (unsigned int *)operator new(4); /*0x53305a*/
@@ -1232,7 +1232,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v105 = dword_87F5D8[36]++; /*0x5330b3*/
+    unsigned int v105 = dword_87F5D8[36]++; /*0x5330b3*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v105) = v104; /*0x5330c2*/
   }
   v106 = (unsigned int *)operator new(4); /*0x5330c7*/
@@ -1252,7 +1252,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v108 = dword_87F5D8[36]++; /*0x533120*/
+    unsigned int v108 = dword_87F5D8[36]++; /*0x533120*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v108) = v107; /*0x53312f*/
   }
   v109 = (unsigned int *)operator new(8); /*0x533134*/
@@ -1273,7 +1273,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v111 = dword_87F5D8[36]++; /*0x533194*/
+    unsigned int v111 = dword_87F5D8[36]++; /*0x533194*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v111) = v110; /*0x5331a3*/
   }
   v112 = (unsigned int *)operator new(8); /*0x5331a8*/
@@ -1294,7 +1294,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v114 = dword_87F5D8[36]++; /*0x533208*/
+    unsigned int v114 = dword_87F5D8[36]++; /*0x533208*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v114) = v113; /*0x533217*/
   }
   v115 = (unsigned int *)operator new(8); /*0x53321c*/
@@ -1315,7 +1315,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v117 = dword_87F5D8[36]++; /*0x53327c*/
+    unsigned int v117 = dword_87F5D8[36]++; /*0x53327c*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v117) = v116; /*0x53328b*/
   }
   v118 = (unsigned int *)operator new(8); /*0x533290*/
@@ -1336,7 +1336,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v120 = dword_87F5D8[36]++; /*0x5332f0*/
+    unsigned int v120 = dword_87F5D8[36]++; /*0x5332f0*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v120) = v119; /*0x5332ff*/
   }
   v121 = (unsigned int *)operator new(8); /*0x533304*/
@@ -1357,7 +1357,7 @@ CreateTeamCommand * * InitCommands()
          dword_87F5D8[34] + dword_87F5D8[37],
          0) )
   {
-    CreateTeamCommand *v123 = dword_87F5D8[36]++; /*0x533364*/
+    unsigned int v123 = dword_87F5D8[36]++; /*0x533364*/
     *(unsigned int *)(dword_87F5D8[33] + 4 * v123) = v122; /*0x533373*/
   }
   v124 = (unsigned int *)operator new(8); /*0x533378*/
@@ -1698,38 +1698,38 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   const char *v27; // eax
   bool v29; // [esp+29h] [ebp-1h]
 
-  ((Debug *)aAllocatingNewS)->Log(); /*0x533fdd*/
+  ((gamemd::Debug*)aAllocatingNewS)->Log(); /*0x533fdd*/
   if ( DSurface_Alternate ) /*0x533fee*/
   {
-    ((Debug *)aDeletingAltern)->Log(); /*0x533ff5*/
+    ((gamemd::Debug*)aDeletingAltern)->Log(); /*0x533ff5*/
     if ( DSurface_Alternate ) /*0x534005*/
       (**(void (***)(int, int))DSurface_Alternate)(DSurface_Alternate, 1); /*0x53400b*/
     DSurface_Alternate = 0; /*0x53400d*/
   }
   if ( g_DSurface_Hidden ) /*0x534019*/
   {
-    ((Debug *)aDeletingHidden)->Log(); /*0x534020*/
+    ((gamemd::Debug*)aDeletingHidden)->Log(); /*0x534020*/
     if ( g_DSurface_Hidden ) /*0x534030*/
       (**(void (***)(int, int))g_DSurface_Hidden)(g_DSurface_Hidden, 1); /*0x534036*/
     g_DSurface_Hidden = 0; /*0x534038*/
   }
   if ( DSurface_Composite ) /*0x534044*/
   {
-    ((Debug *)aDeletingCompos)->Log(); /*0x53404b*/
+    ((gamemd::Debug*)aDeletingCompos)->Log(); /*0x53404b*/
     if ( DSurface_Composite ) /*0x53405b*/
       (**(void (***)(int, int))DSurface_Composite)(DSurface_Composite, 1); /*0x534061*/
     DSurface_Composite = 0; /*0x534063*/
   }
   if ( DSurface_Tile ) /*0x53406f*/
   {
-    ((Debug *)aDeletingTilesu)->Log(); /*0x534076*/
+    ((gamemd::Debug*)aDeletingTilesu)->Log(); /*0x534076*/
     if ( DSurface_Tile ) /*0x534086*/
       (**(void (***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x53408c*/
     DSurface_Tile = 0; /*0x53408e*/
   }
   if ( DSurface_Sidebar ) /*0x53409a*/
   {
-    ((Debug *)aDeletingSideba)->Log(); /*0x5340a1*/
+    ((gamemd::Debug*)aDeletingSideba)->Log(); /*0x5340a1*/
     if ( DSurface_Sidebar ) /*0x5340b1*/
       (**(void (***)(int, int))DSurface_Sidebar)(DSurface_Sidebar, 1); /*0x5340b7*/
     DSurface_Sidebar = 0; /*0x5340b9*/
@@ -2292,7 +2292,7 @@ char sub_538F20(int a1, int a2, char * Source)
       if ( (uint8_t)((CCFileClass *)(&v20))->Open(0) ) /*0x538f62*/
       {
         ((FileClass *)&v20)->Load( (const CHAR *)1); /*0x538f71*/
-        CCFileClass::Read(&v20, &byte_A8F91C, 0x10000); /*0x538f84*/
+        ((CCFileClass *)(&v20))->Read( &byte_A8F91C, 0x10000); /*0x538f84*/
         CCFileClass::Reset( &v20); /*0x538f8d*/
         byte_A9F91C = 0; /*0x538f92*/
       }
@@ -2310,8 +2310,8 @@ char sub_538F20(int a1, int a2, char * Source)
     ((CCFileClass*)&v20)->Construct(Source); /*0x538fd6*/
     if ( !(uint8_t)((CCFileClass *)(&v20))->Open(0) ) /*0x538fe1*/
     {
-      ((FileClass *)&v20)->Load( (const CHAR *)2); /*0x538ff0*/
-      ((FileClass *)&v20)->Write( &byte_A8F91C, 0x10000u); /*0x539003*/
+      ((gamemd::FileClass*)&v20)->Load( (const CHAR *)2); /*0x538ff0*/
+      ((gamemd::FileClass*)&v20)->Write( &byte_A8F91C, 0x10000u); /*0x539003*/
       CCFileClass::Reset( &v20); /*0x53900c*/
     }
     v20.FileClass = (FileClass)(void*)&CCFileClass_vftable; /*0x539015*/
@@ -2380,7 +2380,7 @@ int sub_539570()
 }
 // 0x53A6C0
 namespace gamemd {
-void SuperWeapon_Update()
+int SuperWeapon_Update()
 {
   int i; // esi
   unsigned int *v2; // ecx
@@ -2426,7 +2426,7 @@ void SuperWeapon_Update()
       NukeFlash_Duration = 15; /*0x53a6f6*/
       NukeFlash_StartTime = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53a700*/
       ScenarioClass::UpdateLighting(); /*0x53a705*/
-      MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 1); /*0x53a711*/
+      ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 1); /*0x53a711*/
     }
   }
   else if ( NukeFlash_Status == 2 /*0x53a736*/
@@ -2752,7 +2752,7 @@ AnimClass * * UpdateChronosphereEffect()
         SetScenarioClassTimer(0); /*0x53b612*/
       if ( !ChronoScreenEffect_Duration ) /*0x53b61e*/
       {
-        MapClass::MarkForRedraw( (int)(&MapClass_Instance), 2); /*0x53b62b*/
+        ((MapClass *)((int)(&MapClass_Instance)))->MarkForRedraw( 2); /*0x53b62b*/
         (*(void (**)(int, unsigned int))(*(unsigned int *)g_ChronoEffectState + 24))(g_ChronoEffectState, 0); /*0x53b63a*/
         dword_A9FAAC = DSurface_Composite; /*0x53b649*/
         DSurface_Composite = g_ChronoEffectState; /*0x53b654*/
@@ -2790,7 +2790,7 @@ AnimClass * * UpdateChronosphereEffect()
         if ( g_ChronoEffectState ) /*0x53b74e*/
           (**(void (***)(int, int))g_ChronoEffectState)(g_ChronoEffectState, 1); /*0x53b754*/
         g_ChronoEffectState = 0; /*0x53b75d*/
-        MapClass::MarkForRedraw( (int)(&MapClass_Instance), 2); /*0x53b767*/
+        ((MapClass *)((int)(&MapClass_Instance)))->MarkForRedraw( 2); /*0x53b767*/
       }
       break; /*0x53b767*/
     default:
@@ -3322,7 +3322,7 @@ int InitializeAudioStreaming(int a1, int a2)
 }
 // 0x53E730
 namespace gamemd {
-void Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
+int Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
 {
   int result; // eax
 
@@ -3406,7 +3406,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
   LABEL_13:
             if ( dword_AA0478 ) /*0x53e8b9*/
               goto LABEL_30; /*0x53e8b9*/
-            SampleSize = ((Audio *)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e8c5*/
+            SampleSize = ((gamemd::Audio*)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e8c5*/
             if ( SampleSize ) /*0x53e8cc*/
             {
               if ( SampleSize >= 0xC ) /*0x53e984*/
@@ -3454,7 +3454,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
                 v6(&unk_AA0418); /*0x53ea7c*/
                 if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53ea9f*/
                 {
-                  v13 = ((Audio *)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53eaa2*/
+                  v13 = ((gamemd::Audio*)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53eaa2*/
                   WriteAudioStreamToFile( dword_AA0464, (FILE *)(dword_AA0468), v13, 0); /*0x53eab4*/
                   fflush(dword_AA0468); /*0x53eac0*/
                 }
@@ -3481,7 +3481,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
           v6(&unk_AA0418); /*0x53e8fc*/
           if ( dword_AA0468 && dword_AA045C && dword_AA0444 == 1 && dword_AA0464 ) /*0x53e91f*/
           {
-            v9 = ((Audio *)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e922*/
+            v9 = ((gamemd::Audio*)(unsigned int *)dword_AA0464)->GetSampleSize(); /*0x53e922*/
             WriteAudioStreamToFile( dword_AA0464, (FILE *)(dword_AA0468), v9, 0); /*0x53e934*/
             fflush(dword_AA0468); /*0x53e940*/
           }
@@ -3611,7 +3611,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
   if ( (uint8_t)((CCFileClass *)(&v2))->Open(0) ) /*0x538c53*/
   {
     ((FileClass *)&v2)->Load( (const CHAR *)1); /*0x538c62*/
-    CCFileClass::Read(&v2, &byte_A8F91C, 0x10000); /*0x538c75*/
+    ((CCFileClass *)(&v2))->Read( &byte_A8F91C, 0x10000); /*0x538c75*/
     CCFileClass::Reset( &v2); /*0x538c7e*/
     byte_A9F91C = 0; /*0x538c83*/
   }
@@ -4122,7 +4122,7 @@ int UpdateSurfaceAnimations(int a1, int aP1, int a3, int a4)
     }
   }
   ((MapClass *)&dword_87F7E8)->UpdateLightingPostProcess(); /*0x53addb*/
-  return MapClass::MarkForRedraw( (int)(&dword_87F7E8), 1); /*0x53adec*/
+  return ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 1); /*0x53adec*/
 }
 } // namespace gamemd
 

@@ -285,7 +285,7 @@ unsigned char LoadMouseClassResources()
 }
 // 0x72ADE0
 namespace gamemd {
-void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
+int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
 {
   int *v3; // ebx
   char *v4; // ebp
@@ -491,7 +491,7 @@ int * * LoadingScreen_InitResources()
 }
 // 0x72E2D0
 namespace gamemd {
-void DrawScoreScreenStats(ConvertClass * aP0, int a2)
+int DrawScoreScreenStats(ConvertClass * aP0, int a2)
 {
   int result; // eax
   int v5; // edi
@@ -3952,7 +3952,7 @@ void FileTree_Cleanup()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[616]; /*0x72cfa5*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[616] ) /*0x72cfad*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[616]); /*0x72cfb1*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[616]))->Destroy(); /*0x72cfb1*/
         RA2_OPDEL(v1); /*0x72cfb7*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1320] = 0; /*0x72cfbf*/

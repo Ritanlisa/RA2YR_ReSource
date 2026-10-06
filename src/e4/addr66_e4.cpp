@@ -297,7 +297,7 @@ char UpdateBullets(int a1)
   CoordStruct aP2; // [esp+B4h] [ebp-Ch] BYREF
 
   v1 = *(ObjectClass **)(a1 + 8);
-  int v2 = *(unsigned int *)&v1[((unsigned int *)(10].__pad_0))[12];
+  int v2 = *(unsigned int *)&v1[10].__pad_0[12];
   if ( v2 == *(unsigned int *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1248) )
   {
     v3 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1200);
@@ -646,7 +646,7 @@ LABEL_119:
         v111 = *(ObjectClass **)(a1 + 8);
         v110 = *v108;
         desiredFacing = (ObjectClass *)v110;
-        if ( (unsigned short)v110 != *(unsigned short *)v111[8].__pad_0 || IDA_HIWORD(desiredFacing) != *(unsigned short *)&v111[((unsigned int *)(8].__pad_0))[2] )
+        if ( (unsigned short)v110 != *(unsigned short *)v111[8].__pad_0 || IDA_HIWORD(desiredFacing) != *(unsigned short *)&v111[8].__pad_0[2] )
         {
     unsigned int v90 = 0;  /* G37 hoist */
           if ( v111->isAliveFlag )
@@ -887,7 +887,7 @@ LABEL_11:
       if ( !v9 ) /*0x664083*/
         break; /*0x664083*/
       Event::Dispatch(); /*0x664085*/
-      if ( ((Network *)(Network *)&unk_A8E9C0)->SendPacketThunk2( (int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
+      if ( ((gamemd::Network*)(gamemd::Network*)&unk_A8E9C0)->SendPacketThunk2( (int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
       {
         v10 = 1; /*0x6640be*/
         Debug::Log(); /*0x6640c3*/

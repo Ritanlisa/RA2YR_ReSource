@@ -58,7 +58,7 @@ MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, cha
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_MechLocomotionClass;
   *(unsigned int *)(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_MechLocomotionClass;
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x5b1b60*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     __3_YAXPAX_Z(this); /*0x5b1b6d*/
   return this->LocomotionClass; /*0x5b1b77*/

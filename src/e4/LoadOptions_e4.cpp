@@ -41,7 +41,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   byte_A8ED5C = 0; /*0x559dae*/
   byte_A8E378 = 0; /*0x559db5*/
   ((WTFMode*)&dword_A8B238)->Shutdown(); /*0x559dbc*/
-  Saved = Game::LoadSaved(lpMultiByteStr); /*0x559dd0*/
+  Saved = ((Game *)lpMultiByteStr)->LoadSaved(); /*0x559dd0*/
   while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))( (MouseClass *)(dword_887640)) < v1 ) /*0x559dd9*/
     (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))( (MouseClass *)(dword_887640)); /*0x559de3*/
   while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))( (MouseClass *)(dword_887640)) > v1 ) /*0x559e02*/

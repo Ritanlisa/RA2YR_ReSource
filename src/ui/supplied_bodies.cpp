@@ -2499,7 +2499,7 @@ char FontClass::LoadFontResources(int16_t a2) {
         FileClass::SetFileName((void *)v16, g_Str_File_FULLFNT3_SHP); /*0x5d2ecf*/
         *(unsigned int *)(this + 20) = (unsigned int)CCFileClass::ReadEntireFile(v16); /*0x5d2ee2*/
         *(unsigned char *)(this + 28) = 1; /*0x5d2ee5*/
-        Debug::Log(); /*0x5d2ee9*/
+        Debug::Log("MSFont: AllocLoaded FULLFNT3.SHP\n"); /*0x5d2ee9 G57c1: IDA 0x5d2ee9 push offset aMsfontAllocloa*/
       }
       if ( !*(unsigned int *)(this + 20) ) /*0x5d2ef1*/
         goto LABEL_15; /*0x5d2ef1*/
@@ -3293,7 +3293,7 @@ int Tooltip::Enable(char a2) {
         if ( this->u32_4 ) /*0x7241c2*/
           (*(void (__thiscall **)(Tooltip *, Tooltip *))(*(unsigned int *)this + 8))(this, this + 6); /*0x7241d1*/
       }
-      return Debug::Log(); /*0x7241eb*/
+      return Debug::Log("Tooltips are %s.\n"); /*0x7241eb G57c1: IDA 0x7241eb push offset aTooltipsAreS_0*/
     }
     return result; /*0x7241f3*/
 }

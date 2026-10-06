@@ -25,7 +25,7 @@ int WaypointPathClass::Init()
 
   int v2; // eax
 
-  AbstractClass::Constructor( (AbstractClass *)this); /*0x763733*/
+  ((gamemd::AbstractClass*)this)->Constructor(); /*0x763733*/
   this->idxArray = -1; /*0x76373a*/
   (&this->waypoints)[1] = 0; /*0x763741*/
   (&this->waypoints)[2] = 0; /*0x763744*/
@@ -60,7 +60,7 @@ int WaypointPathClass::Construct(unsigned int aP1)
 
   int v3; // eax
 
-  AbstractClass::Constructor( (AbstractClass *)this); /*0x763813*/
+  ((gamemd::AbstractClass*)this)->Constructor(); /*0x763813*/
   *((unsigned int *)this + 9) = -1; /*0x76381e*/
   *((unsigned int *)this + 11) = 0; /*0x763825*/
   *((unsigned int *)this + 12) = 0; /*0x763828*/
@@ -94,7 +94,7 @@ namespace gamemd {
 int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 {
 
-  AbstractClass *v2; // esi
+  gamemd::AbstractClass *v2; // esi
   int v3; // edi
   int result; // eax
   WaypointPathClass *p_vtable1; // esi
@@ -111,14 +111,14 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
   int v16; // [esp+2Ch] [ebp-8h]
   int v17; // [esp+30h] [ebp-4h]
 
-  v2 = (AbstractClass *)a1; /*0x763c76*/
+  v2 = (gamemd::AbstractClass*)a1; /*0x763c76*/
   v3 = a2; /*0x763c7b*/
-  result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1),(gamemd::AbstractClass *)(a2)); /*0x763c81*/
+  result = gamemd::AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(a1),(gamemd::AbstractClass *)(a2)); /*0x763c81*/
   if ( result >= 0 ) /*0x763c8a*/
   {
     if ( v2 ) /*0x763c92*/
     {
-      ((AbstractClass *)v2)->InitVtables( (int)&a2); /*0x763c9b*/
+      ((gamemd::AbstractClass*)v2)->InitVtables( (int)&a2); /*0x763c9b*/
       v2[1].vtable1 = &vt_DynamicVectorClass; /*0x763ca0*/
       v2->vtable1 = &vt_WaypointPathClass; /*0x763ca7*/
       v2->vtable1 = &vt_WaypointPathClass; /*0x763cad*/
@@ -258,7 +258,7 @@ namespace gamemd {
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
 
-  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x763c09*/
+  ((gamemd::AbstractClass*)(gamemd::AbstractClass*)this)->ProcessPower(); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
   return Power::TimerProcess((&this->waypoints)[4]); /*0x763c24*/
 
@@ -291,7 +291,7 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ebp
   int i; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x763da3*/
+  result = gamemd::AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); /*0x763da3*/
   if ( result >= 0 ) /*0x763daa*/
   {
     v4 = *a1; /*0x763daf*/

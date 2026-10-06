@@ -26,7 +26,7 @@ int AbstractTypeClass::Constructor(char *aP1)
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
 
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x410809*/
+  ((gamemd::AbstractClass*)((gamemd::AbstractClass*)this))->Constructor(); /*0x410809*/
   v3 = (char *)((char *)this + 9); /*0x410812*/
   *((unsigned char *)this + 36) = 0; /*0x410817*/
   *((unsigned char *)this + 61) = 0; /*0x41081a*/
@@ -113,7 +113,7 @@ int AbstractTypeClass::Dtor()
     }
     while ( v2 < dword_A8E978 ); /*0x410a26*/
   }
-  return ((AbstractClass*)(AbstractClass *)this)->DTOR(); /*0x410a2f*/
+  return ((gamemd::AbstractClass*)(gamemd::AbstractClass*)this)->DTOR(); /*0x410a2f*/
 
 }
 } // namespace gamemd
@@ -130,7 +130,7 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x410a74*/
-  result = ((gamemd::INIClass *)(int))(INIClass::BinarySearchSection( (int)aP1, (void)((uint8_t *)this->__pad_24))); 
+  result = (gamemd::INIClass *)(int)(INIClass::BinarySearchSection( (int)aP1, (void)((uint8_t *)this->__pad_24))); 
   if ( result ) /*0x410a86*/
   {
     Name = (char *)(this->Name);
@@ -207,7 +207,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
     }
     while ( v3 < dword_A8E978 ); /*0x410c96*/
   }
-  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x410c9a*/
+  ((gamemd::AbstractClass*)((gamemd::AbstractClass*)this))->DTOR(); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     __3_YAXPAX_Z(this); /*0x410ca7*/
   return this; /*0x410cb1*/
@@ -221,7 +221,7 @@ int AbstractTypeClass::Init(int aP1)
 
   char v3; // al
 
-  ((AbstractClass *)(unsigned int *)this)->InitVtables( aP1); /*0x410968*/
+  ((gamemd::AbstractClass*)(unsigned int *)this)->InitVtables( aP1); /*0x410968*/
   v3 = this->UINameLabel; /*0x41096d*/
   *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
   this->vtable2 = (void *)(&vt_AbstractTypeClass);
@@ -240,7 +240,7 @@ namespace gamemd {
 BOOL AbstractTypeClass::NameEquals(void *a2)
 {
 
-  return _st  return _strcmpi((const char *)(a2),(const char *)((const void *)((char *)this + 36))) == 0; 
+  return _strcmpi((const char *)(a2),(const char *)((const void *)((char *)this + 36))) == 0; 
 
 }
 } // namespace gamemd
@@ -265,7 +265,7 @@ namespace gamemd {
 int AbstractTypeClass::ProcessPower(int *aP1)
 {
 
-  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x410be9*/
+  ((gamemd::AbstractClass*)(gamemd::AbstractClass*)this)->ProcessPower(); /*0x410be9*/
   ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->__pad_24); /*0x410bf4*/
   ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->Name); /*0x410bff*/
   return ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->UINameLabel); /*0x410c0f*/

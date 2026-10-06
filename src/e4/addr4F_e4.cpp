@@ -115,7 +115,7 @@ int InGameUI_Open()
     }
     if ( dwNewLong == 1004 ) /*0x4f1189*/
       ScenarioClass::ShowMissionBriefing(dword_A8B230); /*0x4f1191*/
-    return MapClass::MarkForRedraw(2); /*0x4f11a2*/
+    return ((MapClass *)(2))->MarkForRedraw(); /*0x4f11a2*/
 }
 }
 // 0x4F1840
@@ -654,7 +654,7 @@ int E4Recv_4F2640::sub_4F2640(int (***a2)(unsigned int, int))
 }
 // 0x4F2C70
 namespace gamemd {
-void ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void * aOrigin)
+int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void * aOrigin)
 {
     int Int; // ebx
     int *v8; // ebp

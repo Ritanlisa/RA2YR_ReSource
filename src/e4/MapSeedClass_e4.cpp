@@ -540,7 +540,7 @@ namespace gamemd {
 MapSeedClass * MapSeedClass::QueryInterface(char a2, int a3)
 {
 
-  LoadOptions::Cleanup( (LoadOptions *)this); /*0x5ac273*/
+  ((LoadOptions *)this)->Cleanup(); /*0x5ac273*/
   if ( (a2 & 1) != 0 ) /*0x5ac27d*/
     __3_YAXPAX_Z(this); /*0x5ac280*/
   return this->__pad_0; /*0x5ac28a*/

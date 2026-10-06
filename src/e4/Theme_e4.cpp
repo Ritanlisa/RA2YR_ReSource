@@ -68,8 +68,8 @@ int Theme::Stop(char aP1)
 
   int result; // eax
   AudioSample *v4; // ecx
-  ThemeClass *v5; // ecx
-  Audio *v6; // ecx
+  gamemd::ThemeClass *v5; // ecx
+  gamemd::Audio *v6; // ecx
 
   LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 144)); /*0x720ea0*/
   if ( *((unsigned int *)((char *)&stru_A8EB00 + 144)) ) /*0x720eaa*/
@@ -86,18 +86,18 @@ int Theme::Stop(char aP1)
         if ( !v4 ) /*0x720ee0*/
           goto LABEL_14; /*0x720ee0*/
         if ( *((unsigned char *)this + 17) && !((AudioSample *)(v4))->IsBuffering() ) /*0x720ee9*/
-          ((gamemd::Audio *)(*((Audio **)this + 11)))->Release(); /*0x720ef5*/
-        if ( ((gamemd::Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0 ) /*0x720f04*/
+          ((gamemd::Audio *)(*((gamemd::Audio**)this + 11)))->Release(); /*0x720ef5*/
+        if ( ((gamemd::Audio *)(*((gamemd::Audio**)this + 11)))->IsSoundPlaying() != 0 ) /*0x720f04*/
         {
-          result = ((Debug *)this)->Log(); /*0x720f14*/
-          v5 = (ThemeClass *)*((unsigned int *)this + 11); /*0x720f19*/
+          result = Debug::Log("Theme::Stop(%d) - Fading\n"); /*0x720f14 G57c1: IDA 0x720f14 push offset aThemeStopDFadi*/
+          v5 = (gamemd::ThemeClass*)*((unsigned int *)this + 11); /*0x720f19*/
           if ( v5 ) /*0x720f21*/
             result = ((gamemd::ThemeClass *)(v5))->RequestBuffer(); /*0x720f23*/
           *((unsigned char *)this + 17) = 1; /*0x720f28*/
         }
         else
         {
-LABEL_14: result = (int)(((Debug *)this)->Log());
+LABEL_14: result = (int)(Debug::Log("Theme::Stop(%d)\n") /*G57c1: IDA 0x720f37 push offset aThemeStopD*/);
           v6 = (int)((gamemd::Audio *)*((unsigned int *)this + 11));
           if ( v6 ) /*0x720f44*/
             result = ((gamemd::Audio *)(v6))->Release(); /*0x720f46*/
@@ -125,9 +125,9 @@ bool Theme::IsPlaying()
   if ( *((unsigned char *)this + 17) ) /*0x720fda*/
   {
     if ( !((AudioSample *)(v2))->IsBuffering() ) /*0x720fe1*/
-      ((gamemd::Audio *)(*((Audio **)this + 11)))->Release(); /*0x720fed*/
+      ((gamemd::Audio *)(*((gamemd::Audio**)this + 11)))->Release(); /*0x720fed*/
   }
-  return ((gamemd::Audio *)(*((Audio **)this + 11)))->IsSoundPlaying() != 0; /*0x720ffe*/
+  return ((gamemd::Audio *)(*((gamemd::Audio**)this + 11)))->IsSoundPlaying() != 0; /*0x720ffe*/
 
 }
 } // namespace gamemd

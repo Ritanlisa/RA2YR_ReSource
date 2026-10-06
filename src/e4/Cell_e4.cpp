@@ -86,7 +86,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
       v11 = (unsigned short *)(*(int (**)(Cell *, unsigned int *))(v10->Cell_field_0x0 + 440))(v10, v15); /*0x419c2d*/
       if ( *v11 == *a2 && v11[1] == a2[1] ) /*0x419c44*/
         break; /*0x419c44*/
-      if ( *(void **)&v10[((unsigned int *)(2].__pad_3C))[40] == v14 ) /*0x419c52*/
+      if ( *(void **)&v10[2].__pad_3C[40] == v14 ) /*0x419c52*/
         break; /*0x419c52*/
     }
     if ( ++v9 >= ((char *)&FootClass_Array) ) /*0x419c5c*/
@@ -611,7 +611,7 @@ LABEL_12:
   ((Coord *)(v17))->Subtract(((int16_t)aP1 << 8) + 128, (SHIWORD(aP1) << 8) + 128, 0); /*0x487ad0*/
   v16[0] = 128; /*0x487adc*/
   v16[1] = 128; /*0x487ae0*/
-  v7 = (int)(Isometric::InitTables(v16)); /*0x487ae9*/
+  v7 = (int)(((Isometric *)v16)->InitTables()); /*0x487ae9*/
   v14 = -2; /*0x487aeb*/
   do /*0x487bff*/
   {
@@ -920,7 +920,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
       return (gamemd::AbstractClass **)((char)v7); /*0x56e9e5*/
     if ( v7 == (unsigned int *)255 ) /*0x56e9f0*/
       return (gamemd::AbstractClass **)((char)v7); /*0x56e9f0*/
-    LOBYTE(v7) = CellClass::GetTerrainFlag(*((uint8_t *)v6 + 282)); /*0x56ea0a*/
+    LOBYTE(v7) = ((CellClass *)(*((uint8_t *)v6 + 282)))->GetTerrainFlag(); /*0x56ea0a*/
     if ( !(unsigned char)v7 ) /*0x56ea11*/
       return (gamemd::AbstractClass **)((char)v7); /*0x56ea11*/
     v8 = aP0[1] << 8; /*0x56ea2a*/
@@ -1552,7 +1552,7 @@ LABEL_15:
 }
 // 0x6D2790
 namespace gamemd {
-void* Cell::CreateCrater(a1, void *a2, void *a3, void *a4, void *a5)
+void* Cell::CreateCrater(int a1, void *a2, void *a3, void *a4, void *a5)
 {
 
   int v5; // ecx
@@ -1726,7 +1726,7 @@ LABEL_43:
   else
   {
     v20 = a5 || *((unsigned char *)g_CraterPool + 20 * v29 + 16); /*0x6d2ae0*/
-    v12 = Rect::Union((LPRECT)((char *)g_CraterPool + 20 * v29), v25, v26); /*0x6d2b01*/
+    v12 = ((Rect *)((LPRECT)((char *)g_CraterPool + 20 * v29)))->Union( v25, v26); /*0x6d2b01*/
     v21 = *(unsigned int *)(v12 + 4); /*0x6d2b08*/
     v39[0] = *(unsigned int *)v12; /*0x6d2b0b*/
     v22 = *(unsigned int *)(v12 + 8); /*0x6d2b0f*/

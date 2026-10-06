@@ -18,7 +18,7 @@
 
 // 0x537F90
 namespace gamemd {
-void DeleteCommandClass_Undo()
+int DeleteCommandClass_Undo()
 {
   return UI_Delete(); /*0x537f95*/
 }

@@ -40,12 +40,12 @@
 
 // 0x41A9E0
 namespace gamemd {
-void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, void * a5)
+int TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int result; // eax
   int v7; // edi
 
-  result = (int)(TriggerTypeClass::ReadINI( (unsigned int *)(a1), (gamemd::TechnoClass *)(a2), (gamemd::TechnoClass *)(a3), (int)(a4), (TechnoClass *)(a5)));
+  result = (int)(((TriggerTypeClass *)((unsigned int *)(a1)))->ReadINI( (gamemd::TechnoClass *)(a2), (gamemd::TechnoClass *)(a3), (int)(a4), (TechnoClass *)(a5)));
   if ( !result ) /*0x41a9fd*/
   {
         if ( !*(unsigned char *)((unsigned int)(a1)+ 1737) || *(unsigned int *)((unsigned int)(a1)+ 280) )
@@ -220,8 +220,8 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   Delegate::GetField((Delegate *)&this->tiltSidewaysAngle); /*0x6f2ece*/
   TechnoClass::checkCloakState((TechnoClass *)this->storedTiberium); /*0x6f2ed9*/
   ((FrameSnapshot *)((FrameSnapshot *)this->barrelFacing))->InitMax(3); /*0x6f2ee6*/
-  FrameSnapshot::Init((FrameSnapshot *)this->primaryFacing); /*0x6f2ef1*/
-  FrameSnapshot::Init((FrameSnapshot *)this->secondaryFacing); /*0x6f2efc*/
+  ((FrameSnapshot *)(this->primaryFacing))->Init(); /*0x6f2ef1*/
+  ((FrameSnapshot *)(this->secondaryFacing))->Init(); /*0x6f2efc*/
   this->currentBurstIndex = 0; /*0x6f2f01*/
   this->targetLaserTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2f0d*/
   this->targetLaserTimer[2] = 0; /*0x6f2f13*/
@@ -1231,7 +1231,7 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
 
 // 0x73B470
 namespace gamemd {
-void TechnoClass_DrawVoxel()
+int TechnoClass_DrawVoxel()
 {
   ObjectClass *v16; // eax
   float *inited; // eax
@@ -1711,7 +1711,7 @@ LABEL_81:
   int v51; // esi
   int v50; // ecx
   int v49; // edx
-    started = Techno::StartInvulnerability(ecx0, v45);
+    started = ((Techno *)ecx0)->StartInvulnerability( v45);
     int v46 = *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 6312);
     int v47 = *(unsigned int *)&stru_87C374[44652] + 2 * v46;
     v113 = *(unsigned char *)(v46 + v47 + 6260);

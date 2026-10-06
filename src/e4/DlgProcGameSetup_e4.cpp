@@ -44,7 +44,7 @@ void sub_72B930()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[932]; /*0x72b945*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[932] ) /*0x72b94d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[932]); /*0x72b951*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[932]))->Destroy(); /*0x72b951*/
         RA2_OPDEL(v1); /*0x72b957*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1452] = 0; /*0x72b95f*/

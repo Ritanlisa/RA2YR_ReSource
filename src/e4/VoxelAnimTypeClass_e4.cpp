@@ -331,7 +331,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   if ( /*0x74b42d*/
          ((INIClass*)((INIClass *)a2))->GetString(/*0x74b42d*/ (uint8_t *)(v4 + 36), g_INI_Key_Warhead, &g_INI_DefaultBuffer, (char *)&Destination, 128) )
   {
-    v35 = WarheadTypeClass::FindOrCreate((gamemd::ObjectClass *)((char *)&Destination)); /*0x74b43a*/
+    v35 = ((WarheadTypeClass *)(((char *)&Destination)))->FindOrCreate(); /*0x74b43a*/
   }
   else
   {
@@ -342,7 +342,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   if ( /*0x74b46c*/
          ((INIClass*)((INIClass *)a2))->GetString(/*0x74b46c*/ (uint8_t *)(v4 + 36), aAttachedsystem, &g_INI_DefaultBuffer, (char *)&Destination, 128) )
   {
-    v36 = (unsigned int *)(BuildingTypeClass::LoadOrGet( (ObjectClass *)((char *)&Destination))); /*0x74b479*/
+    v36 = (unsigned int *)(((BuildingTypeClass *)(((char *)&Destination)))->LoadOrGet()); /*0x74b479*/
   }
   else
   {
@@ -386,7 +386,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v40 = *(void **)(v4 + 176); /*0x74b59d*/
     if ( v40 ) /*0x74b5a5*/
     {
-      WaveClass::Destroy(*(WaveClass **)(v4 + 176)); /*0x74b5a9*/
+      ((WaveClass *)(*(WaveClass **)(v4 + 176)))->Destroy(); /*0x74b5a9*/
       __3_YAXPAX_Z(v40); /*0x74b5af*/
     }
     v41 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x74b5b9*/

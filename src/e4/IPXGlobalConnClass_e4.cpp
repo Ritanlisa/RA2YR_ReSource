@@ -45,15 +45,15 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   int v10; // ecx
   unsigned int *v11; // edx
 
-  ((gamemd::Debug *)this)->Log(); /*0x540132*/
+  Debug::Log("Stripping queue entries older than %d seconds. Num receive = %d\n"); /*0x540132 G57c1: IDA 0x540132 push offset aStrippingQueue*/
   IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
     TileType = ((Terrain *)(IPXGlobalConnClass_field_0x04))->GetTileType(i); /*0x540158*/
-    ((gamemd::Debug *)this)->Log(); /*0x54015a*/
+    Debug::Log("i = %d\n"); /*0x54015a G57c1: IDA 0x54015a push offset aID*/
     if ( TileType ) /*0x540164*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x540170*/
+      Debug::Log("Checking packet %d\n"); /*0x540170 G57c1: IDA 0x540170 push offset aCheckingPacket*/
       v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x540175*/
       v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x540186*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x540188*/
@@ -66,13 +66,13 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
       {
         if ( v6 != -1 ) /*0x54023d*/
           ((gamemd::Timer *)this)->GetTicks(); /*0x540244*/
-        ((gamemd::Debug *)this)->Log(); /*0x54026f*/
+        Debug::Log("Leaving global packet due to age of %d seconds\n"); /*0x54026f G57c1: IDA 0x54026f push offset aLeavingGlobalP*/
       }
       else
       {
         if ( v6 != -1 ) /*0x5401b9*/
           ((gamemd::Timer *)this)->GetTicks(); /*0x5401c0*/
-        ((gamemd::Debug *)this)->Log(); /*0x5401eb*/
+        Debug::Log("Stripping global packet due to age of %d seconds\n"); /*0x5401eb G57c1: IDA 0x5401eb push offset aStrippingGloba*/
         v9 = 0; /*0x5401fa*/
         v10 = this->u32_D4; /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
@@ -93,7 +93,7 @@ LABEL_14:
     }
     IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x54027b*/
   }
-  ((gamemd::Debug *)this)->Log(); /*0x540296*/
+  Debug::Log("Done stripping. Num receive = %d\n"); /*0x540296 G57c1: IDA 0x540296 push offset aDoneStrippingN*/
 
 }
 } // namespace gamemd

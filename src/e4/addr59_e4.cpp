@@ -179,7 +179,7 @@ void sub_594190(int * a1, int a2)
               else
               {
                 v12 = (char *)dword_ABDF94; /*0x59424f*/
-                while ( *(unsigned int *)(v12->vtable3 != v9 ) /*0x59425a*/
+                while ( *(unsigned int *)(v12->vtable3 != v9 )) /*0x59425a*/
                 {
                   ++v11; /*0x59425c*/
                   v12 += 4; /*0x59425d*/
@@ -437,7 +437,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
                    + 56) == -1
       && !*(unsigned int *)(i + 76)
 // 0x56d230
-      && MapClass::GetTileIndex(__int16 *a2, int a3, char a4)
+      && MapClass::GetTileIndex(__int16 *a2, int a3, char a4))
     {
       FloodFillRandomMapTerrain(i, v4, v5); /*0x594c32*/
     }
@@ -1247,7 +1247,7 @@ namespace gamemd {
 int j_Options::j_Options_GetValue(const char ** dwNewLong)
 {
 
-  return Options::PrepareSaveLoadDlg( (const char **)((Options *)dwNewLong));
+  return ((Options *)((const char **)((Options *)dwNewLong)))->PrepareSaveLoadDlg();
 
 }
 // 0x598000

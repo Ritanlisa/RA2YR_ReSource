@@ -190,7 +190,7 @@ namespace gamemd {
 int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a7_1, void *a8_1)
 {
 
-  ((Debug *)this)->Log(); /*0x4c6afc*/
+  Debug::Log("Adding event %s\n"); /*0x4c6afc G57c1: IDA 0x4c6afc push offset g_Str_Trace_Adding_event__s*/
   if ( aP1 < 0 ) /*0x4c6b0a*/
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6b49*/

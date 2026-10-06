@@ -131,7 +131,7 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
   int v3; // eax
   int v4; // eax
 
-  ((ObjectTypeClass *)((int *)this))->ConstructFull((char *)(aP1)); /*0x46bbc9*/
+  ((gamemd::ObjectTypeClass*)((int *)this))->ConstructFull((char *)(aP1)); /*0x46bbc9*/
   *((unsigned char *)this + 660) = 0; /*0x46bbd5*/
   *((unsigned char *)this + 661) = 0; /*0x46bbdb*/
   *((unsigned char *)this + 662) = 0; /*0x46bbe1*/
@@ -259,7 +259,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
 
   v4 = v3; /*0x46beef*/
   ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x46bef3*/
-  if ( !((ObjectTypeClass *)((ObjectTypeClass *)v4))->LoadFromINI((uint8_t ***)a2) ) /*0x46befb*/
+  if ( !((gamemd::ObjectTypeClass*)((gamemd::ObjectTypeClass*)v4))->LoadFromINI((uint8_t ***)a2) ) /*0x46befb*/
     return 0; /*0x46c42a*/
   *(unsigned int *)(v4 + 752) = INIClass::ReadInt_Overwrite( /*0x46bf21*/
                             a2->ObjectTypeClass,
@@ -904,19 +904,19 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup( (IUnknown *)((ObjectTypeClass *)aP0), (ObjectTypeClass *)(aP1)); /*0x46c6ab*/
+  result = gamemd::ObjectTypeClass::LoadCleanup( (IUnknown *)((gamemd::ObjectTypeClass*)aP0), (gamemd::ObjectTypeClass*)(aP1)); /*0x46c6ab*/
   if ( result >= 0 ) /*0x46c6b2*/
   {
     if ( aP0 ) /*0x46c6b6*/
     {
-      ((ObjectTypeClass*)((ObjectTypeClass *)aP0))->Construct((int)&aP1); /*0x46c6bf*/
+      ((gamemd::ObjectTypeClass*)((gamemd::ObjectTypeClass*)aP0))->Construct((int)&aP1); /*0x46c6bf*/
       *(unsigned int *)aP0->vtable1 = (unsigned int)&vt_BulletTypeClass;
       *(unsigned int *)aP0[4] = (unsigned int)&vt_BulletTypeClass;
       *(unsigned int *)aP0[8] = (unsigned int)&vt_BulletTypeClass;
       *(unsigned int *)aP0[12] = (unsigned int)&vt_BulletTypeClass;
     }
     ((VoxelAnimType*)(aP0->ObjectTypeClass))->LoadAnim(); /*0x46c6e1*/
-    ((ObjectTypeClass*)(aP0->ObjectTypeClass))->Load2DArt(); /*0x46c6e8*/
+    ((gamemd::ObjectTypeClass*)(aP0->ObjectTypeClass))->Load2DArt(); /*0x46c6e8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/
@@ -933,7 +933,7 @@ int BulletTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * 
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper( (TechnoTypeClass *)((AbstractClass *)aP0), (ObjectTypeClass *)(aP1), (TechnoTypeClass *)(aP2)); /*0x46c73f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper( (TechnoTypeClass *)((AbstractClass *)aP0), (gamemd::ObjectTypeClass*)(aP1), (TechnoTypeClass *)(aP2)); /*0x46c73f*/
   if ( result >= 0 ) /*0x46c746*/
     return 0; /*0x46c748*/
   return result; /*0x46c74a*/

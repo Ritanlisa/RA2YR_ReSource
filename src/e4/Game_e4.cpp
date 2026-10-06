@@ -258,7 +258,7 @@ int Game::SendCampaignOptions()
   result = ((gamemd::Settings *)this)->CheckString(); /*0x46d4d6*/
   if ( (unsigned char)result )
   {
-    ((Debug *)aSendingCampaig)->Log(); /*0x46d4e8*/
+    Debug::Log("Sending Campaign Options...\n"); /*0x46d4e8 G57c1: IDA 0x46d4e8 push offset aSendingCampaig*/
     v14[43] = dword_A8EB68; /*0x46d4f6*/
     for ( i = 0; i < 8; ++i )
     {
@@ -313,7 +313,7 @@ int Game::SendCampaignOptions()
         result = IsKnownPointer(*v12); /*0x46d60b*/
         if ( (unsigned char)result ) /*0x46d612*/
         {
-          Network::SendToPlayer((int)unk_A8E9C0, (int)&v13, 455,(wchar_t *)(1), *v12); /*0x46d628*/
+          ((Network *)((int)unk_A8E9C0))->SendToPlayer( (int)&v13, 455,(wchar_t *)(1), *v12); /*0x46d628*/
           result = (int)(((Network *)(unk_A8E9C0))->ReceiveLoop()); /*0x46d632*/
         }
       }
@@ -813,7 +813,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   int v14[3]; // [esp+15Ch] [ebp-14h] BYREF
   int v15; // [esp+168h] [ebp-8h]
 
-  Debug::Log(); /*0x5ba66f*/
+  Debug::Log("Sending game options packet\n"); /*0x5ba66f G57c1: IDA 0x5ba66f push offset aSendingGameOpt*/
   DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1); /*0x5ba67e*/
   EnableWindow(DlgItem, 0); /*0x5ba685*/
   v3 = *(unsigned int *)&this->__pad_44[20]; /*0x5ba696*/
@@ -1087,8 +1087,8 @@ void Game::BuildGameSettingsPacket(char * Buffer)
   }
   while ( (int)v9 < (int)MEMORY[0xA8B2BC] ); /*0x5dbda8*/
   strlen( (const char *)(byte_ABFF94)); /*0x5dbdaf*/
-  Debug::Log(); /*0x5dbdbf*/
-  Debug::Log(); /*0x5dbdce*/
+  Debug::Log("Size of options string is %d bytes\n"); /*0x5dbdbf G57c1: IDA 0x5dbdbf push offset aSizeOfOptionsS*/
+  Debug::Log("Options: %s\n"); /*0x5dbdce G57c1: IDA 0x5dbdce push offset aOptionsS*/
   strcat( v1, (const char *)(byte_ABFF94)); /*0x5dbdf7*/
   j_DeleteAndZero(&v18); /*0x5dbe04*/
 
@@ -1142,7 +1142,7 @@ unsigned char Game::ManageGameSpeed()
     *((unsigned int *)this + 1156) = v8; /*0x657aae*/
     *((unsigned int *)this + 1157) = 168; /*0x657ab1*/
     *((unsigned int *)this + 1158) = 110; /*0x657ab4*/
-    result = Debug::Log(); /*0x657ab7*/
+    result = Debug::Log("Radar: Movie full redrawn\n"); /*0x657ab7 G57c1: IDA 0x657ab7 push offset aRadarMovieFull*/
     v3 = v17; /*0x657abc*/
   }
   if ( !v5 ) /*0x657ac5*/
@@ -1173,7 +1173,7 @@ LABEL_13:
     v5 = g_AsyncIOState != 0; /*0x657b9d*/
     if ( g_AsyncIOState ) /*0x657ba2*/
     {
-      Debug::Log(); /*0x657ba9*/
+      Debug::Log("Radar: Next movie.\n"); /*0x657ba9 G57c1: IDA 0x657ba9 push offset aRadarNextMovie*/
       ((Mixer*)((Mixer *)this + 1328))->ReleaseChannel(); /*0x657bb9*/
       v10 = (unsigned int *)PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1784), 0x2000, 1.0, 0); /*0x657bd8*/
       result = SetAudioSource((int)(unsigned int *)this + 5312, v10, 0); /*0x657be1*/
@@ -1200,7 +1200,7 @@ LABEL_22:
   *((unsigned char *)this + 5337) = 0; /*0x657bfa*/
   if ( !v5 ) /*0x657c03*/
   {
-    Debug::Log(); /*0x657c0a*/
+    Debug::Log("Radar: Movie done.\n"); /*0x657c0a G57c1: IDA 0x657c0a push offset aRadarMovieDone*/
     v11 = *((unsigned int *)this + 1325); /*0x657c0f*/
     *((unsigned int *)this + 1323) = 5; /*0x657c1a*/
     RadarClass::SetViewMode((int *)this->__pad_0, v11, 0); /*0x657c27*/
@@ -1273,8 +1273,8 @@ int Game::LoadSaved(void *a1_1)
   WCHAR pwcsName[64]; // [esp+D0h] [ebp-474h] BYREF
   unsigned char v13[1012]; // [esp+150h] [ebp-3F4h] BYREF
 
-  Debug::Log(); /*0x67e452*/
-  GameState::Reset(v13); /*0x67e461*/
+  Debug::Log("\nLOADING GAME [%s]\n"); /*0x67e452 G57c1: IDA 0x67e452 push offset aLoadingGameS*/
+  ((GameState *)v13)->Reset(); /*0x67e461*/
   ppstgOpen = 0; /*0x67e47a*/
   MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67e47e*/
   ComPtr::ReleaseSimple( (void)((int *)&ppstgOpen)); /*0x67e484*/
@@ -1325,7 +1325,7 @@ LABEL_6:
       if ( v5 < 0 && v5 != -2147467262 ) /*0x67e639*/
         WinAPI::Wrapper(v5); /*0x67e63c*/
     }
-    ProgressAnim::Init((int)dword_AC4F58, 0, 1079574528, 0, 0); /*0x67e64e*/
+    ((ProgressAnim *)((int)dword_AC4F58))->Init( 0, 1079574528, 0, 0); /*0x67e64e*/
     ((LoadGame *)pStm)->Start(); /*0x67e659*/
     if ( !v7 ) /*0x67e664*/
       WinAPI::Wrapper(-2147467261); /*0x67e66b*/
@@ -1637,7 +1637,7 @@ int Game::validateScenario(unsigned int *a2)
 }
 // 0x685120
 namespace gamemd {
-void sub_685120()
+int sub_685120()
 {
   int v1; // ecx
   TechnoClass *v3; // [esp+0h] [ebp-4h]
@@ -1660,7 +1660,7 @@ void sub_685120()
   CellClass::setOverlayType((CellClass *)&unk_87E8B8, (int)&dword_87F8D4); /*0x6851a7*/
   Game_Load_Load_53AB50(); /*0x6851ac*/
   FindBuildingClass(v3); /*0x6851b1*/
-  MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 2); /*0x6851bd*/
+  ((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 2); /*0x6851bd*/
   InvalidateRect(g_hWnd, 0, 0); /*0x6851cc*/
   Map_Reset_734210(); /*0x6851d2*/
   ((Selection *)0)->ClearGlobals(); /*0x6851d9*/
@@ -2151,7 +2151,7 @@ Coord * * Game::ProcessIdle()
   if ( ppv && dword_B76B10 && dword_B77E4C && time(0) - dword_B77E6C > 10 ) /*0x77ff62*/
   {
     memset(Buffer, 0, 0x50u); /*0x77ff6f*/
-    GameConfig::BuildChecksum((char *)Buffer); /*0x77ff75*/
+    ((GameConfig *)Buffer)->BuildChecksum(); /*0x77ff75*/
     Buffer[10].S_un.S_un_b.s_b1 = 0; /*0x77ff83*/
     (*(void (**)(LPVOID, struct in_addr *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x77ff8c*/
     dword_B77E6C = time(0); /*0x77ff9b*/
@@ -2338,7 +2338,7 @@ LABEL_6:
   if ( v16 ) /*0x7a251d*/
   {
     GameOption::SetDigest(v18); /*0x7a25b6*/
-    GameOption::SetDescriptionWStr( *(wchar_t **)(dword_A8B8CC + 4 * v17), (CampaignScore *)(&unk_ABE050)); /*0x7a25c8*/
+    ((GameOption *)(*(wchar_t **)(dword_A8B8CC + 4 * v17)))->SetDescriptionWStr( (CampaignScore *)(&unk_ABE050)); /*0x7a25c8*/
   }
   else
   {

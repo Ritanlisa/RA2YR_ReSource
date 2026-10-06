@@ -320,7 +320,7 @@ int E4Recv_5ADD10::Map_Delete()
   }
   else
   {
-    ((gamemd::Debug *)this)->Log(); /*0x5addf6*/
+    Debug::Log("MapSelect: Scenario - %s, Stage - %ld\n"); /*0x5addf6 G57c1: IDA 0x5addf6 push offset aMapselectScena*/
     return strlen((const char *)this + 4700) != 0 ? (unsigned int)(unsigned int *)this + 4700 : 0;
   }
 
@@ -503,7 +503,7 @@ char sub_55CF10()
   int v3; // eax
   Network *Ticks; // [esp+0h] [ebp-Ch]
 
-    ((Debug *)0)->Log();
+    Debug::Log("Disconnect_Gracefully\n") /*G57c1: IDA 0x55cf18 push offset aDisconnectGrac*/;
   result = (char)dword_A8B238; /*0x55cf1d*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x55cf28*/
   {
@@ -628,7 +628,7 @@ int sub_5C98A0()
         v16 = ((unsigned int *)(dword_A8D25C))[v4]; /*0x5c9a05*/
         ((unsigned int *)(dword_A8D25C))[v4] = v16 + v16 / 2 + Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, v16 / 2, v16); /*0x5c9a2a*/
       }
-            ((Debug *)0)->Log();
+            Debug::Log("%hs: %s\n Scheme: %d\n Lost = %d\n Kills = %d\n Built = %d\n Score = %d\n") /*G57c1: IDA 0x5c9a6e push offset aHsSSchemeDLost*/;
       result = i; /*0x5c9a73*/
       v0 = v18; /*0x5c9a77*/
     }
@@ -1159,10 +1159,10 @@ char sub_63AB60(int a1, int a2)
   if ( v7 == v3 ) /*0x63ac3f*/
   {
   LABEL_17:
-    Mission::SetAndCall((int)((int *)&dword_87F7E8), 0, 1); /*0x63ac45*/
+    Mission_e4::SetAndCall((int)((int *)&dword_87F7E8), 0, 1); /*0x63ac45*/
     return 1; /*0x63ac4e*/
   }
-  Mission::SetAndCall((int)((int *)&dword_87F7E8), 0, 0); /*0x63ac43*/
+  Mission_e4::SetAndCall((int)((int *)&dword_87F7E8), 0, 0); /*0x63ac43*/
   return 1; /*0x63ab6f*/
 }
 }
@@ -1334,7 +1334,7 @@ int sub_682240(int a1, int a2, unsigned short * a3)
 }
 // 0x6824B0
 namespace gamemd {
-void sub_6824B0(int a1, int a2, unsigned int * a3)
+int sub_6824B0(int a1, int a2, unsigned int * a3)
 {
   unsigned int *v3; // edi
   int v4; // ecx
@@ -2036,7 +2036,7 @@ char sub_5BF580()
 
 // 0x5C9720
 namespace gamemd {
-void __usercall sub_5C9720(int a1, int a2, int a3)
+void sub_5C9720(int a1, int a2, int a3)
 {
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4; // [esp+4h] [ebp-Ch]
@@ -2280,7 +2280,7 @@ int sub_6823D0(int a1, int a2, wchar_t * Destination)
 
 // 0x6C8E80
 namespace gamemd {
-void __usercall sub_6C8E80(int a1, int a2, int a3)
+void sub_6C8E80(int a1, int a2, int a3)
 {
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4; // [esp+4h] [ebp-Ch]
@@ -2336,7 +2336,7 @@ void sub_72D780()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[876]; /*0x72d79c*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876] ) /*0x72d7a4*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[876]); /*0x72d7a8*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[876]))->Destroy(); /*0x72d7a8*/
         RA2_OPDEL(v1); /*0x72d7ae*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1229] = 0; /*0x72d7b6*/

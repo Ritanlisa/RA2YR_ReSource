@@ -92,7 +92,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
         StringCSF = GetStringCSF( (wchar_t *)(aTxtLightningSt), 0, (const char *)(g_Str_File_Ion_cpp), 531); /*0x53a067*/
         MessageListClass::AddMessage(unk_A8BC60, 0, 0, StringCSF, v10, 16454, 150, 0); /*0x53a076*/
       }
-      return MapClass::MarkForRedraw( (int)(&dword_87F7E8), 1); /*0x53a082*/
+      return ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 1); /*0x53a082*/
     }
   }
   return result; /*0x539f76*/

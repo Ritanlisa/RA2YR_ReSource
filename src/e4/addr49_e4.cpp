@@ -1826,7 +1826,7 @@ int FillScoreScreenStats(IUnknown * Destination, char a2)
     *((unsigned int *)Destination + 24) += v16; /*0x49b8ec*/
   ToWideStringChar((IUnknown *)((char *)Destination)); /*0x49b902*/
 // 0x4068e0
-  return Debug::Log(); /*0x49b826*/
+  return Debug::Log("@@@@ %s: %s\n Scheme: %d\n Lost = %d\n Kills = %d\n Built = %d\n Score = %d\n"); /*0x49b826 G57c1: IDA 0x49b922 push offset aSSSchemeDLostD_0*/
 }
 }
 // 0x49C0D0
@@ -1952,7 +1952,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   ((CCFileClass*)v29)->Construct(g_Str_File_coopsave_ini); /*0x49c28d*/
   v24[1] = 0; /*0x49c298*/
   v24[2] = 0; /*0x49c29c*/
-  INISectionList::Constructor(v25); /*0x49c2a0*/
+  ((INISectionList *)v25)->Constructor(); /*0x49c2a0*/
   Node::Init(v26); /*0x49c2a9*/
   v26[5] = 0; /*0x49c2bc*/
   v27 = 0; /*0x49c2c0*/
@@ -2271,7 +2271,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     {
       *((unsigned char *)this + 28) = 0; /*0x49d031*/
     }
-    Debug::Log(); /*0x49d03e*/
+    Debug::Log("@@@@ SetCampaignInfo saw campaign_type %d\n"); /*0x49d03e G57c1: IDA 0x49d03e push offset aSetcampaigninf*/
   }
   v32 = *((unsigned char *)this + 108); /*0x49d04c*/
   if ( Block && HIBYTE(a6) ) /*0x49d059*/
@@ -2318,7 +2318,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   ((CCFileClass*)v17)->Construct(g_Str_File_coopsave_ini); /*0x49d3bc*/
   v20[1] = 0; /*0x49d3c8*/
   v20[2] = 0; /*0x49d3cc*/
-  INISectionList::Constructor(v21); /*0x49d3d3*/
+  ((INISectionList *)v21)->Constructor(); /*0x49d3d3*/
   Node::Init(v22); /*0x49d3df*/
   v22[5] = 0; /*0x49d3f2*/
   v23 = 0; /*0x49d3f9*/
@@ -2570,9 +2570,9 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   }
   (&g_IsWindowed)[i] = 0; /*0x49d981*/
   strcat( Buffer, (const char *)(g_IsWindowed)); /*0x49d9a3*/
-  Debug::Log(); /*0x49d9b6*/
-  Network::SendOptionsGame(Buffer); /*0x49d9c2*/
-  Debug::Log(); /*0x49d9cc*/
+  Debug::Log("@@@@ Sending campaign game option string: %s\n"); /*0x49d9b6 G57c1: IDA 0x49d9b6 push offset aSendingCampaig_0*/
+  ((Network *)Buffer)->SendOptionsGame(); /*0x49d9c2*/
+  Debug::Log("@@@@ Sent\n"); /*0x49d9cc G57c1: IDA 0x49d9cc push offset aSent*/
   return 1; /*0x49d692*/
 
 }

@@ -707,7 +707,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     {
       if ( !*i ) /*0x67be40*/
         break; /*0x67be42*/
-      v7 = TerrainTypeClass::FindOrCreate(i); /*0x67be4b*/
+      v7 = ((TerrainTypeClass *)i)->FindOrCreate(); /*0x67be4b*/
       if ( v7 /*0x67be7b*/
         && (v21 < v19
          || (v20 || !v19)
@@ -1028,7 +1028,7 @@ int RulesClass::ReadSidesList(void * aSuperweapontyp)
     if ( /*0x672633*/
            ((INIClass*)v6)->GetString(/*0x672633*/ (uint8_t *)aSuperweapontyp, StringByIndex, &g_INI_DefaultBuffer, Destination, 32) )
     {
-      WeaponTypeClass::Process( (ObjectClass *)(Destination)); /*0x672640*/
+      ((WeaponTypeClass *)(Destination))->Process(); /*0x672640*/
     }
   }
   return KeyCount > 0; /*0x67264c*/

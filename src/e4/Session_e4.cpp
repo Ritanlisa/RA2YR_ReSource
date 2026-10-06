@@ -166,7 +166,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       {
         strcpy((char *)(Str),(const char *)(byte_A8B8E0)); /*0x5e765a*/
         _strupr((char *)(Str)); /*0x5e7668*/
-        ((gamemd::Debug *)this)->Log(); /*0x5e7677*/
+        Debug::Log("Checking for file %s in local directory\n"); /*0x5e7677 G57c1: IDA 0x5e7677 push offset aCheckingForFil*/
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
         ((RawFileClass *)(&v18))->Construct((int)byte_A8B8E0); /*0x5e76c1*/
@@ -242,7 +242,7 @@ LABEL_44:
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36))); /*0x5e75b0*/
-      v3 = (int)(Network::SendToPlayer( (int)&unk_A8E9C0, (int)Str, 47, (wchar_t *)(1), (void)((wchar_t *)v5))); /*0x5e75c4*/
+      v3 = (int)(((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)Str, 47, (wchar_t *)(1), (void)((wchar_t *)v5))); /*0x5e75c4*/
     }
     if ( v3 ) /*0x5e75cb*/
     {

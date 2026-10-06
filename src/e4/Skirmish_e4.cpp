@@ -598,7 +598,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
     {
       if ( a2 != 1257 ) /*0x6ae4a9*/
         return 0; /*0x6ae4b1*/
-      WideString::Assign_Alt(0); /*0x6ae4bb*/
+      ((WideString *)(0))->Assign_Alt(); /*0x6ae4bb*/
       if ( *(unsigned int *)a4 && *(unsigned int *)(a4 + 4) != -1 ) /*0x6ae4ce*/
       {
         DlgCtrlID = GetDlgCtrlID(*(HWND *)a4); /*0x6ae4d5*/
@@ -619,22 +619,22 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           {
             case -1: /*0x6ae604*/
               v16 = (wchar_t *)GetStringCSF((wchar_t *)(aSttPlayernone),(unsigned int *)((int)g_Str_File_Skirmish_cpp), 135); /*0x6ae617*/
-              WideString::Assign_Alt(v16); /*0x6ae61f*/
+              ((WideString *)v16)->Assign_Alt(); /*0x6ae61f*/
               return (gamemd::ReferenceCounted **)(1); /*0x6ae62d*/
             case 2: /*0x6ae604*/
               v17 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerDumbAI),(unsigned int *)((int)g_Str_File_Skirmish_cpp),(const char *)(137)); /*0x6ae646*/
-              WideString::Assign_Alt(v17); /*0x6ae64e*/
+              ((WideString *)v17)->Assign_Alt(); /*0x6ae64e*/
               return (gamemd::ReferenceCounted **)(1); /*0x6ae65c*/
             case 1: /*0x6ae604*/
               v18 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerSmartAI),(unsigned int *)((int)g_Str_File_Skirmish_cpp),(const char *)(139)); /*0x6ae675*/
-              WideString::Assign_Alt(v18); /*0x6ae67d*/
+              ((WideString *)v18)->Assign_Alt(); /*0x6ae67d*/
               return (gamemd::ReferenceCounted **)(1); /*0x6ae68b*/
             case 0: /*0x6ae604*/
               v19 = (wchar_t *)GetStringCSF((wchar_t *)(g_Str_STT_PlayerGeniusAI),(unsigned int *)((int)g_Str_File_Skirmish_cpp),(const char *)(141)); /*0x6ae6a3*/
-              WideString::Assign_Alt(v19); /*0x6ae6ab*/
+              ((WideString *)v19)->Assign_Alt(); /*0x6ae6ab*/
               return (gamemd::ReferenceCounted **)(1); /*0x6ae6b9*/
           }
-          WideString::Assign_Alt(0); /*0x6ae6c1*/
+          ((WideString *)(0))->Assign_Alt(); /*0x6ae6c1*/
         }
         else if ( CountryCombo::IDToIndex(DlgCtrlID) == -1 ) /*0x6ae53b*/
         {
@@ -642,14 +642,14 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           {
             v10 = (int)((gamemd::ReferenceCounted **)(GetComboBoxSelectedRaw(hDlg, v7, *(unsigned int *)(a4 + 4)))); /*0x6ae589*/
             v11 = (wchar_t *)((GameSetup *)(v10))->GetColorTooltip(); /*0x6ae590*/
-            WideString::Assign_Alt(v11); /*0x6ae598*/
+            ((WideString *)v11)->Assign_Alt(); /*0x6ae598*/
             return (gamemd::ReferenceCounted **)(1); /*0x6ae5a6*/
           }
           if ( ((Dialog *)(v7))->SideIDToIndex() != -1 ) /*0x6ae553*/
           {
             v8 = SetComboBoxSelection(hDlg, v7, *(unsigned int *)(a4 + 4)); /*0x6ae561*/
             v9 = (wchar_t *)sub_4E4F30((void *)(v8)); /*0x6ae568*/
-            WideString::Assign_Alt(v9); /*0x6ae570*/
+            ((WideString *)v9)->Assign_Alt(); /*0x6ae570*/
             return (gamemd::ReferenceCounted **)(1); /*0x6ae57e*/
           }
         }
@@ -659,7 +659,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           if ( v12 != -1 ) /*0x6ae5b9*/
           {
             v13 = (wchar_t *)((SideClass *)(v12))->GetName(); /*0x6ae5c1*/
-            WideString::Assign_Alt(v13); /*0x6ae5c9*/
+            ((WideString *)v13)->Assign_Alt(); /*0x6ae5c9*/
             return (gamemd::ReferenceCounted **)(1); /*0x6ae5d7*/
           }
         }

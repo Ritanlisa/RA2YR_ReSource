@@ -29,7 +29,7 @@ void Main::CreateDialog()
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x4e1d1d*/
-  ((gamemd::Debug *)this)->Log(); /*0x4e1d25*/
+  Debug::Log("GameControls: GameSpeed = %d, ScrollRate = %d, Detail = %d\n"); /*0x4e1d25 G57c1: IDA 0x4e1d25 push offset aGamecontrolsGa*/
   v2 = 3003; /*0x4e1d3b*/
   if ( byte_A8E9A0 != 1 ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
@@ -56,7 +56,7 @@ void Main::CreateDialog()
     }
     ((Dialog*)(gamemd::Dialog *)this->Main_field_00)->Destroy(); /*0x4e1db2*/
   }
-  ((gamemd::Debug *)this)->Log(); /*0x4e1dd0*/
+  Debug::Log("GameControls: GameSpeed = %d, ScrollRate = %d, Detail = %d\n"); /*0x4e1dd0 G57c1: IDA 0x4e1dd0 push offset aGamecontrolsGa*/
 
 }
 } // namespace gamemd

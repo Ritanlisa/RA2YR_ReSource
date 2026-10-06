@@ -181,7 +181,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
                 v13[13] = (gamemd::MovieContext)(0); /*0x5bf008*/
                 v13[16] = (gamemd::MovieContext)(v16); /*0x5bf00b*/
                 v13[14] = (MovieContext)((*(unsigned int *)&DSurface_ViewBounds.__pad_8[20] - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
-                ((gamemd::Debug *)this)->Log(); /*0x5bf02b*/
+                Debug::Log("Stretching movie %dx%d -> %dx%d\n"); /*0x5bf02b G57c1: IDA 0x5bf02b push offset aStretchingMovi*/
               }
             }
           }
@@ -215,7 +215,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
             ((AudioMixer *)this)->Pump(); /*0x5bf105*/
             LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf10a*/
           }
-          MovieContext::Cleanup(v13); /*0x5bf112*/
+          ((MovieContext *)v13)->Cleanup(); /*0x5bf112*/
           BinkMovie::Cleanup( (void)((BinkMovie *)v13)); /*0x5bf119*/
           __3_YAXPAX_Z(v13); /*0x5bf11f*/
           if ( a5 == 1 ) /*0x5bf130*/
@@ -224,12 +224,12 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
             Frame::Present((void *)((int)g_DSurface_Hidden), 0, (void *)v10, (void *)v9, 0, (void *)v19, (void *)v20, v21); /*0x5bf147*/
           }
           (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x5bf154*/
-          MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x5bf15e*/
+          ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x5bf15e*/
           ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x5bf169*/
         }
         else
         {
-          MovieContext::Cleanup(v13); /*0x5bef85*/
+          ((MovieContext *)v13)->Cleanup(); /*0x5bef85*/
           BinkMovie::Cleanup( (void)((BinkMovie *)v13)); /*0x5bef8c*/
           __3_YAXPAX_Z(v13, unsigned int a3); /*0x5bef92*/
         }
@@ -237,7 +237,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
     }
     else
     {
-      ((gamemd::Debug *)this)->Log(); /*0x5bedad*/
+      Debug::Log("Play_Movie() as Bink!\n"); /*0x5bedad G57c1: IDA 0x5bedad push offset aPlayMovieAsBin*/
       (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x5bedbd*/
       if ( a7 ) /*0x5bedc7*/
       {
@@ -278,7 +278,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       }
       ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x5beed3*/
       (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x5beee0*/
-      MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x5beeea*/
+      ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x5beeea*/
       ((BinkMovie *)(&v23))->Stop(); /*0x5beef3*/
     }
   }
@@ -308,7 +308,7 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
   void *IsSoundEnabled; // eax
   AudioSample *v3; // ecx
 
-  IsSoundEnabled = (void *)Audio::IsSoundEnabled(); /*0x7209d3*/
+  IsSoundEnabled = (void *)gamemd::Audio::IsSoundEnabled(); /*0x7209d3*/
   if ( IsSoundEnabled ) /*0x7209da*/
   {
     LOBYTE(IsSoundEnabled) = *((unsigned int *)((char *)&stru_A8EB00 + 384)); /*0x7209e0*/
@@ -324,8 +324,8 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
           if ( this->__pad_10[1] && !((AudioSample *)(v3))->IsBuffering() ) /*0x720a0f*/
-            ((gamemd::Audio *)(*(Audio **)&this->__pad_28[4]))->Release(); /*0x720a1b*/
-          LOBYTE(IsSoundEnabled) = ((gamemd::Audio *)(*(Audio **)&this->__pad_28[4]))->IsSoundPlaying() != 0; /*0x720a2a*/
+            ((gamemd::Audio *)(*(gamemd::Audio**)&this->__pad_28[4]))->Release(); /*0x720a1b*/
+          LOBYTE(IsSoundEnabled) = ((gamemd::Audio *)(*(gamemd::Audio**)&this->__pad_28[4]))->IsSoundPlaying() != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/
           {
 LABEL_10:
@@ -335,7 +335,7 @@ LABEL_10:
               if ( IsSoundEnabled == (void *)-2 ) /*0x720a4b*/
               {
                 this->Movie_field_0x8 = ((Movie *)((int)this))->SelectNextBuildableType((int)this->Movie_field_0x4); /*0x720a5e*/
-                Debug::Log(); /*0x720a61*/
+                Debug::Log("Theme::AI(Next song = %d)\n"); /*0x720a61 G57c1: IDA 0x720a61 push offset aThemeAiNextSon*/
               }
               LOBYTE(IsSoundEnabled) = ((ThemeClass *)((ThemeClass *)this))->Play(this->Movie_field_0x8); /*0x720a6f*/
               this->Movie_field_0x8 = -2; /*0x720a74*/

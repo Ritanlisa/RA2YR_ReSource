@@ -404,7 +404,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   *((unsigned int *)this + 366) = 0; /*0x710fb1*/
   *((unsigned int *)this + 367) = 0; /*0x710fb7*/
   *((unsigned int *)this + 368) = 0; /*0x710fbd*/
-  AnimTypeVector::Constructor( (int)((unsigned int *)this + 369), 0, 0); /*0x710fc3*/
+  ((AnimTypeVector *)((int)((unsigned int *)this + 369)))->Constructor( 0, 0); /*0x710fc3*/
   *((unsigned int *)this + 374) = 10; /*0x710fc8*/
   *((unsigned int *)this + 373) = 0; /*0x710fce*/
   *((unsigned int *)this + 369) = (unsigned int)(&vt_TypeList); /*0x710fd4*/
@@ -504,11 +504,11 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
   *((unsigned int *)this + 456) = 0; /*0x711222*/
   *((unsigned char *)this + 1828) = 1; /*0x711229*/
   *((unsigned int *)this + 458) = 0; /*0x711237*/
-  AnimTypeVector::Constructor( (int)((unsigned int *)this + 459), 0, 0); /*0x71123d*/
+  ((AnimTypeVector *)((int)((unsigned int *)this + 459)))->Constructor( 0, 0); /*0x71123d*/
   *((unsigned int *)this + 464) = 10; /*0x71124a*/
   *((unsigned int *)this + 463) = 0; /*0x711250*/
   *((unsigned int *)this + 459) = (unsigned int)(&vt_TypeList); /*0x711256*/
-  AnimTypeVector::Constructor( (int)((unsigned int *)this + 466), 0, 0); /*0x711260*/
+  ((AnimTypeVector *)((int)((unsigned int *)this + 466)))->Constructor( 0, 0); /*0x711260*/
   *((unsigned int *)this + 471) = 10; /*0x711265*/
   *((unsigned int *)this + 470) = 0; /*0x71126b*/
   *((unsigned int *)this + 466) = (unsigned int)(&vt_TypeList); /*0x711271*/
@@ -802,7 +802,7 @@ void TechnoTypeClass::Construct(int aP1)
   *((unsigned int *)this + 317) = (unsigned int)(&vt_TypeList); /*0x71194b*/
   IntDynamicVector::Construct((unsigned int *)((char *)this + 1296), aP1); /*0x71195b*/
   *((unsigned int *)this + 324) = (unsigned int)(&vt_TypeList); /*0x711960*/
-  ObjectTypeClass::CheckFlag( (ObjectTypeClass *)(aP1)); /*0x711970*/
+  ((ObjectTypeClass *)(aP1))->CheckFlag(); /*0x711970*/
   *((unsigned int *)this + 369) = (unsigned int)(&vt_TypeList); /*0x711975*/
   IntDynamicVector::Construct((unsigned int *)((char *)this + 1592), aP1); /*0x711985*/
   *((unsigned int *)this + 398) = (unsigned int)&vt_TypeList;
@@ -810,9 +810,9 @@ void TechnoTypeClass::Construct(int aP1)
   *((unsigned int *)this + 405) = (unsigned int)&vt_TypeList;
   *((unsigned char *)this + 1750) = 0; /*0x7119ac*/
   *((unsigned char *)this + 1781) = 0; /*0x7119b5*/
-  ObjectTypeClass::CheckFlag( (ObjectTypeClass *)(aP1)); /*0x7119bb*/
+  ((ObjectTypeClass *)(aP1))->CheckFlag(); /*0x7119bb*/
   *((unsigned int *)this + 459) = (unsigned int)&vt_TypeList;
-  ObjectTypeClass::CheckFlag( (ObjectTypeClass *)(aP1)); /*0x7119d0*/
+  ((ObjectTypeClass *)(aP1))->CheckFlag(); /*0x7119d0*/
   *((unsigned int *)this + 466) = (unsigned int)&vt_TypeList;
   TypeList::ParticleConstructor(0, 0); /*0x7119e6*/
   *((unsigned int *)this + 478) = (unsigned int)&vt_TypeList;

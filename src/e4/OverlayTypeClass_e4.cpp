@@ -295,7 +295,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
   result = ((unsigned int *)this)[0]; /*0x5fede9*/
   if ( !result && this->DrawFlat ) /*0x5fedf7*/
   {
-    Debug::Log(); /*0x5fee0e*/
+    Debug::Log("Demand loading image for %s\n"); /*0x5fee0e G57c1: IDA 0x5fee0e push offset aDemandLoadingI*/
     if ( ((unsigned int *)this)[0] ) /*0x5fee13*/
     {
       _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x5fee4f*/

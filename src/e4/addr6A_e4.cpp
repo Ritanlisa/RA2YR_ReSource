@@ -1396,7 +1396,7 @@ char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
   this->customSound_controller[13 * v5 + 5] = a2; /*0x6aba9e*/
   BYTE1(this->ambientSoundController[0]) = 1; /*0x6abaa2*/
   LOBYTE(this->ambientSoundController[0]) = 1; /*0x6abaa5*/
-  MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 0); /*0x6abaad*/
+  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 0); /*0x6abaad*/
   return 1; /*0x6aba88*/
 
 }

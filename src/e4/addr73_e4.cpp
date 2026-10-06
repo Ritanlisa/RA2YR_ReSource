@@ -335,7 +335,7 @@ AbstractClass * * sub_731AA0()
 }
 // 0x731EB0
 namespace gamemd {
-unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
+unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int), int a2)
 {
   unsigned int *v2; // eax
   unsigned int *v3; // esi
@@ -392,7 +392,7 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
 }
 // 0x731F70
 namespace gamemd {
-unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int) a1, int a2)
+unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int), int a2)
 {
   unsigned int *v2; // eax
   unsigned int *v3; // esi
@@ -641,7 +641,7 @@ int SelectAllOfType()
 }
 // 0x732FF0
 namespace gamemd {
-char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int), int a3)
 {
   int HeightMap; // eax
   unsigned int *v4; // esi
@@ -2003,7 +2003,7 @@ wchar_t * FillUnitTooltipUI(wchar_t * Destination, wchar_t * Source)
 
 // 0x732110
 namespace gamemd {
-int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
+int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int), int a3)
 {
   int v4; // esi
   int v6; // ebx
@@ -2023,7 +2023,7 @@ int sub_732110(int a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
 
 // 0x732140
 namespace gamemd {
-int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fastcall *a3)(int, int) a3, int a4, int a5)
+int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int), void (__fastcall *a3)(int, int), int a4, int a5)
 {
   int result; // eax
   int v7; // edi
@@ -2045,7 +2045,7 @@ int sub_732140(int a1, unsigned char (__fastcall *a2)(int, int) a2, void (__fast
 
 // 0x732190
 namespace gamemd {
-char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int), int a3)
 {
   int v4; // esi
   int v6; // ebp
@@ -2065,7 +2065,7 @@ char sub_732190(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, in
 
 // 0x7321D0
 namespace gamemd {
-char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int) a2, int a3)
+char sub_7321D0(int a1, unsigned char (__fastcall *a2)(unsigned int, int), int a3)
 {
   int v4; // esi
   int v6; // ebp
@@ -2291,7 +2291,7 @@ unsigned char CharToWide_Bulk(unsigned short * a1, unsigned char * a2, int a3)
 
 // 0x735090
 namespace gamemd {
-void WideToChar_Copy(unsigned char * a1, char * a2, int a3)
+int WideToChar_Copy(unsigned char * a1, char * a2, int a3)
 {
   int result; // eax
 

@@ -49,7 +49,7 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   {
     *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_LocomotionClass;
     *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_LocomotionClass;
-    FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
+    ((FrameSnapshot *)(a1->LocomotionFacing))->Init(); /*0x5170db*/
     *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_HoverLocomotionClass;
     *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_HoverLocomotionClass;
   }
@@ -73,7 +73,7 @@ HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, c
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_HoverLocomotionClass;
   *(unsigned int *)(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_HoverLocomotionClass;
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x5172d0*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     __3_YAXPAX_Z(this); /*0x5172dd*/
   return this->LocomotionClass; /*0x5172e7*/

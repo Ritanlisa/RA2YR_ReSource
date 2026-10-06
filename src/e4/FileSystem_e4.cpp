@@ -74,7 +74,7 @@ int FileSystem::ProcessNextFileExtension()
       v4 = v3; /*0x626dd4*/
       if ( v3 ) /*0x626ddb*/
       {
-        StringVector::Construct((int)(v3), 0, 0); /*0x626de1*/
+        ((StringVector *)((int)(v3)))->Construct( 0, 0); /*0x626de1*/
         *(unsigned int *)v4->__pad_0 = (unsigned int)(&vt_DynamicVectorClass); /*0x626de6*/
         v4->StringVector_field_0x14 = 10; /*0x626dec*/
         v4->StringVector_field_0x10 = 0; /*0x626df3*/
@@ -86,7 +86,7 @@ int FileSystem::ProcessNextFileExtension()
       *(unsigned int *)&v1[4] = (unsigned int)(v4); /*0x626dfc*/
       v5 = (FileExtension *)__2_YAPAXI_Z(0x18u); /*0x626dff*/
       if ( v5 ) /*0x626e09*/
-        v6 = FileExtension::Constructor((int)(v5), 0, 0); /*0x626e0f*/
+        v6 = ((FileExtension *)((int)(v5)))->Constructor( 0, 0); /*0x626e0f*/
       else
         v6 = 0; /*0x626e16*/
       *(unsigned int *)&v1[8] = (unsigned int)(v6); /*0x626e1a*/
@@ -257,7 +257,7 @@ void FileSystem::CleanupTrees()
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[900]; /*0x72d370*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] ) /*0x72d378*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[900]); /*0x72d37c*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[900]))->Destroy(); /*0x72d37c*/
         __3_YAXPAX_Z(v1); /*0x72d382*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1216] = 0; /*0x72d38a*/
@@ -268,7 +268,7 @@ void FileSystem::CleanupTrees()
       v2 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[848]; /*0x72d39f*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] ) /*0x72d3a7*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[848]); /*0x72d3ab*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[848]))->Destroy(); /*0x72d3ab*/
         __3_YAXPAX_Z(v2); /*0x72d3b1*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1217] = 0; /*0x72d3b9*/
@@ -279,7 +279,7 @@ void FileSystem::CleanupTrees()
       v3 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[896]; /*0x72d3ce*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[896] ) /*0x72d3d6*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[896]); /*0x72d3da*/
+        ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[896]))->Destroy(); /*0x72d3da*/
         __3_YAXPAX_Z(v3); /*0x72d3e0*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1218] = 0; /*0x72d3e8*/

@@ -922,12 +922,12 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   {
     if ( v8 - (int)a2 < 0 ) /*0x5ebe9c*/
       DisableCampaignSlots((HWND)aP0, v8); /*0x5ebea0*/
-    Lobby::SetupPlayerWidgets( (HWND)(aP0)); /*0x5ebea7*/
+    ((Lobby *)((HWND)(aP0)))->SetupPlayerWidgets(); /*0x5ebea7*/
   }
   else
   {
     UpdateMultiplayerLobbySlots((HWND)aP0,(gamemd::ObjectClass *)(a2), v8 - (unsigned int)a2); /*0x5ebe8b*/
-    Lobby::SetupPlayerWidgets( (HWND)(aP0)); /*0x5ebe92*/
+    ((Lobby *)((HWND)(aP0)))->SetupPlayerWidgets(); /*0x5ebe92*/
   }
 }
 }
@@ -947,7 +947,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
 
   v13 = -1; /*0x793938*/
   v12 = -1; /*0x79393c*/
-  Debug::Log(); /*0x793952*/
+  Debug::Log("Registering connection state from %s to %s. conn_state = %d\n"); /*0x793952 G57c1: IDA 0x793952 push offset aRegisteringCon*/
   v5 = 0; /*0x79395a*/
   v6 = (char **)&dword_A8DA90; /*0x79395c*/
   do /*0x79399d*/
@@ -1355,7 +1355,7 @@ int * E4Recv_643670::UI_Render_643670(int a5, int a1, size_t a2, int a3, int a4)
 
 // 0x6AC480
 namespace gamemd {
-void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
+int sub_6AC480(int a1, int * a2, unsigned int * a3, int a4, void * aDarkred)
 {
   char result; // al
   int v5; // ebx
@@ -1853,7 +1853,7 @@ char sub_732CC0()
     if ( v0 <= 500 ) /*0x732ce6*/
     {
       SelectAllOfType(); /*0x732ce8*/
-      IDA_LOBYTE(v0) = MapClass::MarkForRedraw( (int)(&dword_87F7E8), 1); /*0x732cf4*/
+      IDA_LOBYTE(v0) = ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 1); /*0x732cf4*/
     }
   }
   return v0; /*0x732cf9*/
@@ -1958,7 +1958,7 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
   char *v6; // eax
   int result; // eax
 
-  Debug::Log(); /*0x793a26*/
+  Debug::Log("Player %s is telling us we should send to port %d\n"); /*0x793a26 G57c1: IDA 0x793a26 push offset aPlayerSIsTelli*/
   v4 = 0; /*0x793a2e*/
   v5 = (char **)&dword_A8DA90; /*0x793a30*/
   while ( 1 ) /*0x793a38*/
@@ -2053,6 +2053,6 @@ namespace gamemd {
 void sub_7BA2C0()
 {
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba2d6*/
-    Debug::Log(); /*0x7ba2e7*/
+    Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7ba2e7 G57c1: IDA 0x7ba2e7 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
 }
 } // namespace gamemd

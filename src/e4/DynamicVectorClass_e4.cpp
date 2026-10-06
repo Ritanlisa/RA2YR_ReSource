@@ -715,7 +715,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
   *(unsigned int *)this->vtable1 = (unsigned int)&vt_VectorClass;
   if ( this != (DynamicVectorClass *)aP1 ) /*0x477a00*/
   {
-    ((VectorClass *)((int)this))->Destroy(); /*0x477a02*/
+    ((gamemd::VectorClass*)((int)this))->Destroy(); /*0x477a02*/
     v3 = (int)(aP1[2]); /*0x477a08*/
     *(unsigned int *)&((unsigned int *)this)[3] = v3; /*0x477a0d*/
     if ( v3 ) /*0x477a10*/

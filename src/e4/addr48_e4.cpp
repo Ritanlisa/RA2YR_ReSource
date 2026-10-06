@@ -722,7 +722,7 @@ LABEL_166:
                   if ( ((CellClass *)&stru_87C374[13428])->SetTerrainType( (IUnknown *)&v115) )
                   {
 LABEL_189:
-                    AbstractClass::ClearTargetToMeClearManagerTarget((int)v71);
+                    ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget();
                   }
                   else
                   {
@@ -755,8 +755,8 @@ LABEL_189:
                           *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
                   v91 < (int)v120) )
             {
-              if ( CellClass::CheckTilePassable2((IUnknown *)&v115) )
-                AbstractClass::ClearTargetToMeClearManagerTarget((int)v71);
+              if ( ((CellClass *)(&v115))->CheckTilePassable2() )
+                ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget();
             }
           }
           int v92 = v71->field_44;
@@ -770,8 +770,8 @@ LABEL_189:
                           *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
                   v93 < (int)v120) )
             {
-              if ( CellClass::CheckTilePassable((IUnknown *)&v115) )
-                AbstractClass::ClearTargetToMeClearManagerTarget((int)v71);
+              if ( ((CellClass *)(&v115))->CheckTilePassable() )
+                ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget();
             }
           }
           goto LABEL_203;
@@ -798,7 +798,7 @@ LABEL_151:
               if ( ((CellClass *)&stru_87C374[13428])->SetTerrainType( (IUnknown *)&v115) )
               {
 LABEL_163:
-                AbstractClass::ClearTargetToMeClearManagerTarget((int)v71);
+                ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget();
               }
               else
               {
@@ -840,7 +840,7 @@ LABEL_203:
     ((House *)((int)v71))->AnnounceUpgrade((IUnknown *)0xFFFFFFFF);
     ((Cell *)((int *)&stru_87C374[13428]))->SetRadar((IUnknown *)&v71->field_24);
     Radar::Update((IUnknown *)&stru_87C374[13428], (IUnknown *)&v71->field_24);
-    AbstractClass::ClearTargetToMeClearManagerTarget((int)v71);
+    ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget();
     v95 = (void *)operator new(0x1C8u);
     v94 = aP2;
     if ( v95 )
@@ -958,7 +958,7 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
       }
       if ( RA2_OPNEW(0x18u) ) /*0x48a6bf*/
       {
-        v7 = ObjectClass::RegisterInArray(a3, a4, a5, v11); /*0x48a6e7*/
+        v7 = gamemd::ObjectClass::RegisterInArray(a3, a4, a5, v11); /*0x48a6e7*/
         v7->abstractFlags |= a7; /*0x48a6ec*/
       }
       else
@@ -972,7 +972,7 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
 }
 // 0x48A9D0
 namespace gamemd {
-void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
+int Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
 {
   double v7; // st7
   double v8; // st7
@@ -1396,7 +1396,7 @@ void MainGame()
     }
     while ( !GameFrameCheck(v9) ); /*0x48cea8*/
     InitLoadingScreenResources(); /*0x48ceaa*/
-    WTFMode::Shutdown( (void *a1 =)(&dword_A8B238)); /*0x48ceb4*/
+    WTFMode::Shutdown( (&dword_A8B238)); /*0x48ceb4*/
     byte_A8ED5C = 0; /*0x48cebf*/
     byte_A8E378 = 0; /*0x48cec7*/
     Debug::Log(); /*0x48cee2*/

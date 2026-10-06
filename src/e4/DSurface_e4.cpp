@@ -181,13 +181,13 @@ AbstractClass * * DSurface::CreatePrimary()
   int v28; // [esp+20h] [ebp-8h] BYREF
   int v29; // [esp+24h] [ebp-4h] BYREF
 
-  ((Debug *)this)->Log(); /*0x4ba780*/
+  Debug::Log("DSurface::Create_Primary\n"); /*0x4ba780 G57c1: IDA 0x4ba780 push offset aDsurfaceCreate*/
   v1 = ((DDraw *)this)->CheckCapabilities(); /*0x4ba78d*/
   g_DDraw_AllowStretchBlits = (v1 & 0x40) != 0; /*0x4ba79b*/
-  ((Debug *)this)->Log(); /*0x4ba7b4*/
+  Debug::Log("DSurface::AllowStretchBlits = %s\n"); /*0x4ba7b4 G57c1: IDA 0x4ba7b4 push offset aDsurfaceAllows*/
   if ( (v1 & 0x10) == 0 ) /*0x4ba7bf*/
     LOBYTE(stru_820320.Start) = 0; /*0x4ba7c1*/
-  ((Debug *)this)->Log(); /*0x4ba7e3*/
+  Debug::Log("DSurface::AllowHWFill = %s\n"); /*0x4ba7e3 G57c1: IDA 0x4ba7e3 push offset aDsurfaceAllowh*/
   v2 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4ba7ea*/
   v3 = (unsigned int *)v2; /*0x4ba7ef*/
   if ( v2 ) /*0x4ba7f8*/
@@ -219,7 +219,7 @@ AbstractClass * * DSurface::CreatePrimary()
     *(unsigned int *)(v5[8] + 4) |= 0x20u; /*0x4ba879*/
     *(unsigned int *)(v5[8] + 20) = this != 0; /*0x4ba87f*/
   }
-  ((Debug *)this)->Log(); /*0x4ba887*/
+  Debug::Log("DSurface::Create_Primary - Creating surface\n"); /*0x4ba887 G57c1: IDA 0x4ba887 push offset aDsurfaceCreate_0*/
   v6 = (int *)(v5 + 7); /*0x4ba897*/
   v7 = g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba8a1*/
          g_lpDirectDraw7,
@@ -228,7 +228,7 @@ AbstractClass * * DSurface::CreatePrimary()
          0);
   if ( !v7 ) /*0x4ba8a8*/
   {
-    ((Debug *)this)->Log(); /*0x4ba8b3*/
+    Debug::Log("CreateSurface OK\n"); /*0x4ba8b3 G57c1: IDA 0x4ba8b3 push offset aCreatesurfaceO*/
     if ( this ) /*0x4ba8bd*/
     {
       v8 = *v6; /*0x4ba8bf*/
@@ -246,7 +246,7 @@ AbstractClass * * DSurface::CreatePrimary()
     memset((void *)v5[8], 0, 0x6Cu); /*0x4ba90b*/
     *(unsigned int *)v5[8] = 108; /*0x4ba910*/
     if ( (*(int (**)(int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, v5[8]) ) /*0x4ba91f*/
-      ((Debug *)this)->Log(); /*0x4ba92b*/
+      Debug::Log("Failed to get description of primary surface\n"); /*0x4ba92b G57c1: IDA 0x4ba92b push offset aFailedToGetDes*/
     v11 = (unsigned int *)v5[8]; /*0x4ba933*/
     v5[4] = (unsigned int)(v11[21] + 7) >> 3; /*0x4ba948*/
     v12 = (v11[26] & 0x4000) != 0; /*0x4ba951*/
@@ -355,7 +355,7 @@ AbstractClass * * DSurface::CreatePrimary()
         if ( v22 == 2 && g_BitShift_Red == 11 && g_BitShift_Green_0 == 3 ) /*0x4babd2*/
         {
           stru_820320.Rate = (gamemd::AbstractClass **)(2);
-          ((Debug *)this)->Log(); /*0x4babdf*/
+          Debug::Log("DSurface::Create_Primary done\n"); /*0x4babdf G57c1: IDA 0x4babdf push offset aDsurfaceCreate_1*/
           return (gamemd::AbstractClass **)(v5); /*0x4babf0*/
         }
         goto LABEL_60; /*0x4babd2*/
@@ -365,7 +365,7 @@ AbstractClass * * DSurface::CreatePrimary()
         if ( g_BitShift_Green_0 == 3 ) /*0x4bab72*/
         {
           stru_820320.Rate = (gamemd::AbstractClass **)(0);
-          ((Debug *)this)->Log(); /*0x4bab87*/
+          Debug::Log("DSurface::Create_Primary done\n"); /*0x4bab87 G57c1: IDA 0x4bab87 push offset aDsurfaceCreate_1*/
           return (gamemd::AbstractClass **)(v5); /*0x4bab98*/
         }
         goto LABEL_60; /*0x4bab72*/
@@ -373,7 +373,7 @@ AbstractClass * * DSurface::CreatePrimary()
       if ( g_BitShift_Red != 11 || g_BitShift_Green_0 != 2 ) /*0x4bac05*/
       {
 LABEL_60:
-        ((Debug *)this)->Log(); /*0x4bac11*/
+        Debug::Log("DSurface::Create_Primary done\n"); /*0x4bac11 G57c1: IDA 0x4bac16 push offset aDsurfaceCreate_1*/
         return (gamemd::AbstractClass **)(v5); /*0x4bac27*/
       }
     }
@@ -384,8 +384,8 @@ LABEL_60:
     stru_820320.Rate = 1; /*0x4bac07*/
     goto LABEL_60; /*0x4bac07*/
   }
-  DDraw::LogError( v7, (int)((void *)(1))); /*0x4bac2f*/
-  ((Debug *)this)->Log(); /*0x4bac3a*/
+  ((DDraw *)v7)->LogError( (int)((void *)(1))); /*0x4bac2f*/
+  Debug::Log("CreateSurface failed with error code %08x\n"); /*0x4bac3a G57c1: IDA 0x4bac3a push offset aCreatesurfaceF*/
   if ( v5 ) /*0x4bac44*/
     (*(void (**)(unsigned int *, int))*v5)(v5, 1); /*0x4bac4d*/
   return 0; /*0x4bab91*/
@@ -846,7 +846,7 @@ LABEL_15:
 } // namespace gamemd
 // 0x4BB830
 namespace gamemd {
-void DSurface_FillRectWithFlags(DSurface *aP0, int a2, int a3, unsigned char * a4, unsigned int a5)
+int DSurface_FillRectWithFlags(DSurface *aP0, int a2, int a3, unsigned char * a4, unsigned int a5)
 {
   int v5; // ecx
   int v6; // edi
@@ -909,7 +909,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0, int a2, int a3, unsigned char * a
   v12 = 0xFFu >> g_BitMask_Blue << g_BitMask_Green; /*0x4bb8f5*/
   v30 = v12; /*0x4bb908*/
   v34 = 0xFFu >> g_BitMask_Red << g_BitShift_Blue; /*0x4bb917*/
-  v13 = CellStruct::Copy((CellStruct *)v39, v38); /*0x4bb91b*/
+  v13 = ((CellStruct *)v39)->Copy( v38); /*0x4bb91b*/
   v35 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&v6->q_170))(v6, *v13, v13[1]);  /*0x4bb938*/
   if ( !v35 ) /*0x4bb93c*/
     return 0; /*0x4bb93e*/

@@ -103,7 +103,7 @@ void sub_40D1B0()
   do /*0x40d1f0*/
   {
     v0 -= 997; /*0x40d1d0*/
-    Array::ForEachReverse(v0 + 20, 52, 75, (int (*)(int))nullsub_56); /*0x40d1e3*/
+    ((Array *)(v0 + 20))->ForEachReverse( 52, 75, (int (*)(int))nullsub_56); /*0x40d1e3*/
     nullsub_57(v2); /*0x40d1ea*/
     --v1; /*0x40d1ef*/
   }
@@ -188,7 +188,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 
   int v2; // eax
 
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Init(); /*0x5afef3*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Init(); /*0x5afef3*/
   (&this->MovingDestination)[0] = (&g_MissionQueueFrame.localVariables)[227]; /*0x5aff01*/
   (&this->MovingDestination)[1] = (&g_MissionQueueFrame.localVariables)[228]; /*0x5aff0a*/
   (&this->MovingDestination)[2] = (&g_MissionQueueFrame.localVariables)[229]; /*0x5aff16*/
@@ -212,7 +212,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 
   if ( ((INIClass*)(INIClass *)a1)->GetString((unsigned char *)(edx0), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67b51e*/
 // 0x75e3b0
-    return WarheadTypeClass::FindOrCreate((gamemd::ObjectClass *)(Destination)); /*0x67b52b*/
+    return ((WarheadTypeClass *)(Destination))->FindOrCreate(); /*0x67b52b*/
   else
     return a4; /*0x67b539*/
 }
@@ -302,7 +302,7 @@ namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
 
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Init(); /*0x728a03*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Init(); /*0x728a03*/
   (&this->CurrentState)[0] = 0; /*0x728a0d*/
   (&this->CurrentState)[1] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[352]; /*0x728a16*/
   (&this->CurrentState)[2] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[356]; /*0x728a1e*/

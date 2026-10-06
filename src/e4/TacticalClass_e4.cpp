@@ -251,7 +251,7 @@ void* TacticalClass::ProcessScroll(int * a2)
         LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac4a6*/
         if ( !DisplayClass_field_0x11B0_high && !this->__pad_11B4[0] ) /*0x4ac4af*/
         {
-          g_TacticalClass_Instance[((unsigned int *)(863].__tail_0))[1] = 1; /*0x4ac4c0*/
+          g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4ac4c0*/
           TacticalClass::InitScrollBounds((TacticalClass *)g_TacticalClass_Instance, &this->DisplayClass_field_0x11D4); /*0x4ac4cc*/
           LOBYTE(v4) = ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x4ac4da*/
         }
@@ -277,7 +277,7 @@ void* TacticalClass::ProcessScroll(int * a2)
     v12 = v5; /*0x4ac3ff*/
     if ( (void *)v4 != DisplayClass_field_0x11DC || v5 != (void *)(this->DisplayClass_field_0x11E0) ) /*0x4ac40b*/
     {
-      g_TacticalClass_Instance[((unsigned int *)(863].__tail_0))[1] = 1; /*0x4ac41c*/
+      g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4ac41c*/
       LOBYTE(v4) = TacticalClass::UpdateScrollMaxBounds((TacticalClass *)g_TacticalClass_Instance, &v11); /*0x4ac429*/
     }
   }
@@ -508,12 +508,12 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
   {
     goto LABEL_13; /*0x4f45dd*/
   }
-  if ( !AudioStream::ReadSamples((AudioStream *)dword_8A0E08, 0) ) /*0x4f45ea*/
+  if ( !((AudioStream *)dword_8A0E08)->ReadSamples( 0) ) /*0x4f45ea*/
   {
     v4 = (gamemd::DDraw *)(dword_8A0E0C);
     if ( !dword_8A0E0C ) /*0x4f45ff*/
       goto LABEL_8; /*0x4f45ff*/
-    if ( !AudioStream::ReadSamples((AudioStream *)dword_8A0E0C, 0) ) /*0x4f4602*/
+    if ( !((AudioStream *)dword_8A0E0C)->ReadSamples( 0) ) /*0x4f4602*/
     {
       v4 = (gamemd::DDraw *)(dword_8A0E0C);
   LABEL_8:
@@ -640,7 +640,7 @@ LABEL_17:
 }
 // 0x6D04F0
 namespace gamemd {
-void TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
+int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
 {
   CommandClass *v3; // ecx
   int v4; // ebx

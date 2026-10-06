@@ -442,7 +442,7 @@ namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return Abs  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); 
+  return AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)aP0),(gamemd::ObjectTypeClass *)(a1),(gamemd::ObjectTypeClass *)(aP2)); 
 
 }
 } // namespace gamemd
@@ -474,7 +474,7 @@ char AirstrikeClass::StartMission(int * a2)
   if ( !*((unsigned char *)this + 60) ) /*0x41d830*/
     return AirstrikeClass::SpawnAircraft(a2) ; /*0x41d83c*/
   if ( a2 != *(int **)((char *)this + 80) ) /*0x41d847*/
-    return A    return AirstrikeClass::ReassignTarget( a1, (void)((void *)((int)a2))); 
+    return AirstrikeClass::ReassignTarget( a1, (void)((void *)((int)a2))); 
   return result; /*0x41d841*/
 
 }

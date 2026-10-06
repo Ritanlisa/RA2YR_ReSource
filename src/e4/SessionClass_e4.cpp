@@ -162,7 +162,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
       if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x552d36*/
       {
         PlayerSide =(unsigned int)(unsigned int *)(unsigned int)(unsigned int *)(void *)((SessionClass *)(*(unsigned int *)Game_PlayerInfoArray))->GetPlayerSide(); /*0x552d51*/
-        return PaletteManager::Load((int)(PlayerSide)); /*0x552d58*/
+        return ((PaletteManager *)((int)(PlayerSide)))->Load(); /*0x552d58*/
       }
       else
       {
@@ -213,10 +213,10 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
   v4 = *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * *(unsigned int *)(*((unsigned int *)dword_A83C9C + *(unsigned int *)(aP1 + 7284)) + 188)); /*0x5adf5b*/
   if ( !v4 ) /*0x5adf60*/
   {
-    ((Debug *)this)->Log(); /*0x5adf67*/
+    Debug::Log("MapSelect: Invalid side!\n"); /*0x5adf67 G57c1: IDA 0x5adf67 push offset aMapselectInval*/
     return 0; /*0x5adf78*/
   }
-  ((Debug *)this)->Log(); /*0x5adf84*/
+  Debug::Log("MapSelect: Side %s\n"); /*0x5adf84 G57c1: IDA 0x5adf84 push offset aMapselectSideS*/
   ((String *)((String *)&((unsigned int *)(v13.m_3))[1]))->Assign((const char *)(v4 + 36)); /*0x5adf91*/
   pad_50 = (char *)(this->__pad_50); /*0x5adf96*/
   v7 = ((SessionClass *)((SessionClass *)pad_50))->LoadMapSelection((char **)&((unsigned int *)(v13.m_3))[1]) == 0; /*0x5adfab*/
@@ -224,7 +224,7 @@ MixFileClass * SessionClass::LoadGameSession(int aP1, const char **aP2)
   if ( v7 || (v8 = ((CampaignClass *)((CampaignClass *)pad_50))->Check(*(unsigned short *)(aP1 + 13728))) == 0 ) /*0x5adfea*/
   {
     ((SessionClass *)((SessionClass *)pad_50))->Destruct(); /*0x5adfb9*/
-    ((Debug *)this)->Log(); /*0x5adfc3*/
+    Debug::Log("MapSelect: Unable to initialize choices!\n"); /*0x5adfc3 G57c1: IDA 0x5adfc3 push offset aMapselectUnabl*/
     return 0; /*0x5adfd4*/
   }
   ((ScenarioClass *)(char *)aP1)->SetFileName(&g_INI_DefaultBuffer); /*0x5ae013*/
@@ -537,7 +537,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
   else
   {
 LABEL_17:
-    Debug::Log(); /*0x5cf07d*/
+    Debug::Log("MapSelect: There isn't any stages!\n"); /*0x5cf07d G57c1: IDA 0x5cf07d push offset aMapselectThere*/
     j_DeleteAndZero((ObjectClass *)(char *)&v43); /*0x5cf089*/
     j_DeleteAndZero((ObjectClass *)(char *)&v43); /*0x5cf092*/
     ((HashTable *)((INIClass *)(char *)&v43))->DestroyHashTableINIClass(); /*0x5cf09b*/
@@ -1549,7 +1549,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   Description = 0; /*0x69998b*/
   v60.headNode[0] = 0; /*0x699992*/
   v60.headNode[1] = 0; /*0x699996*/
-  GenericList::Constructor((GenericList *)&v60.headNode[2]); /*0x69999a*/
+  ((GenericList *)(&v60.headNode[2]))->Constructor(); /*0x69999a*/
   v3 = this->unknown_310[224]; /*0x69999f*/
   v4 = &this->unknown_310[224]; /*0x6999a5*/
   v60.headNode[2] = (int)&vt_List; /*0x6999ad*/
@@ -1607,7 +1607,7 @@ AbstractClass * * SessionClass::LoadMissionList()
           cAlternateFileName = FindFileData.cFileName; /*0x699b26*/
         if ( _strcmpi(cAlternateFileName, aMissionsmdPkt) )
         {
-          ((FileClass *)(&v63))->SetFileName(cAlternateFileName); /*0x699b48*/
+          ((gamemd::FileClass*)(&v63))->SetFileName(cAlternateFileName); /*0x699b48*/
           ((FileStraw *)((FileStraw *)&v60))->Open((int)&v63, 0); /*0x699b58*/
           v15 = INIClass::GetKeyCount(v60.__pad_0, g_INI_Key_MultiMaps); /*0x699b6b*/
           for ( i = 0; i < v15; ++i )
@@ -1677,7 +1677,7 @@ AbstractClass * * SessionClass::LoadMissionList()
               *((unsigned char *)&v71[62] + v30 + 1) = 0; /*0x699d8f*/
               strcat( (char *)(Destination), (const char *)&off_83F4F0); /*0x699d9f*/
               Destination[v30] = 0; /*0x699da8*/
-              ((FileClass *)(&v63))->SetFileName(Destination); /*0x699dbb*/
+              ((gamemd::FileClass*)(&v63))->SetFileName(Destination); /*0x699dbb*/
               if ( (uint8_t)((CCFileClass *)(&v63))->Open(0) ) /*0x699dc7*/
               {
                 ((FileStraw *)((FileStraw *)&v60))->Open((int)&v63, 0); /*0x699dde*/
@@ -2481,7 +2481,7 @@ LABEL_15:
     v14 = ((String *)(&v21))->GetOrEmpty(); /*0x78f193*/
     (*(void (**)(LPVOID, char *))(v13 + 156))(ppv, v14); /*0x78f1a0*/
     memset(v26, 0, sizeof(v26)); /*0x78f1b1*/
-    GameConfig::BuildChecksum(v26); /*0x78f1b7*/
+    ((GameConfig *)v26)->BuildChecksum(); /*0x78f1b7*/
     v26[40] = 0; /*0x78f1c5*/
     (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, v26); /*0x78f1ce*/
     (*(void (**)(LPVOID, int, char *))(*(unsigned int *)ppv + 252))( ppv, 1, (char *)(&v8[v20])); /*0x78f1e5*/

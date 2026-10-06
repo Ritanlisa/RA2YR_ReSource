@@ -2421,7 +2421,7 @@ unsigned int * _getstream()
 }
 // 0x7D2FC8
 namespace gamemd {
-void _putwc_lk(wchar_t WCh, FILE * File)
+int _putwc_lk(wchar_t WCh, FILE * File)
 {
     FILE *v2; // esi
     char *v3; // eax
@@ -2494,7 +2494,7 @@ void _putwc_lk(wchar_t WCh, FILE * File)
 }
 // 0x7D30D1
 namespace gamemd {
-void _commit(int FileHandle)
+int _commit(int FileHandle)
 {
     int v1; // esi
     void *osfhandle; // eax
@@ -2530,7 +2530,7 @@ void _commit(int FileHandle)
 }
 // 0x7D3164
 namespace gamemd {
-void _ioinit()
+int _ioinit()
 {
     char *v1; // eax
     char *v2; // esi
@@ -2680,7 +2680,7 @@ void* _ioterm_0()
 }
 // 0x7D3482
 namespace gamemd {
-void _setmbcp(int CodePage)
+int _setmbcp(int CodePage)
 {
     UINT SystemCP; // eax
     UINT v2; // ebx
@@ -3006,7 +3006,7 @@ unsigned char * _mbsnbcpy(IUnknown * aP0, const unsigned char * Source, size_t C
 }
 // 0x7D3920
 namespace gamemd {
-void iswctype(wint_t C, wctype_t Type)
+int iswctype(wint_t C, wctype_t Type)
 {
     int v2; // ecx
     WORD v3; // ax
@@ -3761,7 +3761,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
 }
 // 0x7D453C
 namespace gamemd {
-void _hextodec_0(wint_t C)
+int _hextodec_0(wint_t C)
 {
     wint_t result; // ax
     bool v3; // zf
@@ -3862,7 +3862,7 @@ void * signal_7D482C(int Signal, void * Function)
 }
 // 0x7D4A10
 namespace gamemd {
-void raise(int Signal)
+int raise(int Signal)
 {
     void (__cdecl *v2)(unsigned int); // ebx
     int *v3; // edi
@@ -4226,7 +4226,7 @@ void* _tzset_lk()
 }
 // 0x7D4FCC
 namespace gamemd {
-void _isindst_0(unsigned int * a1)
+int _isindst_0(unsigned int * a1)
 {
     int v2; // eax
     int v3; // ecx
@@ -4404,7 +4404,7 @@ void cvtdate(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int
 }
 // 0x7D544A
 namespace gamemd {
-void _sopen(const char * FileName, int OpenFlag, int ShareFlag, ...)
+int _sopen(const char * FileName, int OpenFlag, int ShareFlag, ...)
 {
     unsigned int v3; // ecx
     DWORD v5; // esi
@@ -5273,7 +5273,7 @@ AbstractClass * * __init_ctype()
 }
 // 0x7D6D2A
 namespace gamemd {
-void __get_qualified_locale(char * a1, CCINIClass * a2, int a3)
+int __get_qualified_locale(char * a1, CCINIClass * a2, int a3)
 {
     char *v3; // eax
     int v4; // edi
@@ -5342,7 +5342,7 @@ void __get_qualified_locale(char * a1, CCINIClass * a2, int a3)
 }
 // 0x7D6F86
 namespace gamemd {
-void LangCountryEnumProc_4(LPSTR a1)
+int LangCountryEnumProc_4(LPSTR a1)
 {
     int v1; // esi
     int v2; // eax
@@ -5417,7 +5417,7 @@ void LangCountryEnumProc_4(LPSTR a1)
 }
 // 0x7D71E0
 namespace gamemd {
-void LanguageEnumProc_4(LPSTR a1)
+int LanguageEnumProc_4(LPSTR a1)
 {
     int v1; // esi
     int v2; // eax
@@ -5547,7 +5547,7 @@ void * memset(void * a0, int Val, AbstractClass * aP2)
 }
 // 0x7D77D6
 namespace gamemd {
-void _wctomb_lk(LPSTR lpMultiByteStr, WCHAR WideCharStr)
+int _wctomb_lk(LPSTR lpMultiByteStr, WCHAR WideCharStr)
 {
     int result; // eax
 
@@ -6594,7 +6594,7 @@ void* unknown_libname_93(double a1, double a2)
 }
 // 0x7D8C6B
 namespace gamemd {
-void _87except(int a1, int a2, unsigned short * a3)
+int _87except(int a1, int a2, unsigned short * a3)
 {
     unsigned __int16 *v3; // ecx
     bool v4; // zf
@@ -6721,7 +6721,7 @@ void __decomp(double a1, int * a2)
 }
 // 0x7D8EE3
 namespace gamemd {
-void _frnd(double a1)
+int _frnd(double a1)
 {
     double result; // st7
 
@@ -6835,7 +6835,7 @@ double _nextafter(double X, double Y)
 }
 // 0x7D93A1
 namespace gamemd {
-void _alloc_osfhnd()
+int _alloc_osfhnd()
 {
     int v1; // edi
     int v2; // ebx
@@ -7429,7 +7429,7 @@ void * sub_7D9FAC()
 }
 // 0x7D9FCA
 namespace gamemd {
-void _flswbuf(unsigned short Buf, FILE * a2)
+int _flswbuf(unsigned short Buf, FILE * a2)
 {
     FILE *v2; // esi
     int flag; // eax
@@ -7510,7 +7510,7 @@ void _flswbuf(unsigned short Buf, FILE * a2)
 }
 // 0x7DA0F1
 namespace gamemd {
-void __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINIClass * aP3, UINT CodePage, LCID Locale)
+int __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINIClass * aP3, UINT CodePage, LCID Locale)
 {
     int v6; // eax
     int v8; // eax
@@ -7694,7 +7694,7 @@ ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, Cam
 }
 // 0x7DA512
 namespace gamemd {
-void _getwc_lk(FILE * File)
+int _getwc_lk(FILE * File)
 {
     FILE *v1; // esi
     char *v2; // eax
@@ -7762,7 +7762,7 @@ void _getwc_lk(FILE * File)
 }
 // 0x7DA638
 namespace gamemd {
-void _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
+int _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
 {
     wchar_t v2; // bx
     unsigned int *v3; // esi
@@ -7826,7 +7826,7 @@ void _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
 }
 // 0x7DA725
 namespace gamemd {
-void __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cchCount1, CHAR * lpString2, int cchCount2, UINT CodePage)
+int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cchCount1, CHAR * lpString2, int cchCount2, UINT CodePage)
 {
     int v7; // esi
     BYTE *LeadByte; // eax
@@ -8081,7 +8081,7 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
 }
 // 0x7DAC6C
 namespace gamemd {
-void _chsize_lk(int FileHandle, LONG lDistanceToMove)
+int _chsize_lk(int FileHandle, LONG lDistanceToMove)
 {
     int v2; // esi
     DWORD v3; // eax
@@ -8147,7 +8147,7 @@ void _chsize_lk(int FileHandle, LONG lDistanceToMove)
 }
 // 0x7DAE6E
 namespace gamemd {
-void isctype_CRT(unsigned char a1, int a2, unsigned char a3)
+int isctype_CRT(unsigned char a1, int a2, unsigned char a3)
 {
     int result; // eax
 
@@ -8161,7 +8161,7 @@ void isctype_CRT(unsigned char a1, int a2, unsigned char a3)
 }
 // 0x7DAE9F
 namespace gamemd {
-void __crtMessageBoxA(int a1, int a2, int a3)
+int __crtMessageBoxA(int a1, int a2, int a3)
 {
     int v3; // ebx
     HMODULE LibraryA; // eax
@@ -8194,7 +8194,7 @@ void __crtMessageBoxA(int a1, int a2, int a3)
 }
 // 0x7DAF28
 namespace gamemd {
-void __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * a4)
+int __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * a4)
 {
     char *v4; // edi
     size_t LocaleInfoA; // esi
@@ -8452,7 +8452,7 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
 }
 // 0x7DB68B
 namespace gamemd {
-void _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, short a4, double * a5, double * a6)
+int _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, short a4, double * a5, double * a6)
 {
     char v6; // cl
     unsigned int *v7; // esi
@@ -8627,7 +8627,7 @@ void _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, s
 }
 // 0x7DB93E
 namespace gamemd {
-void _handle_exc(char a1, double * a2, short a3)
+int _handle_exc(char a1, double * a2, short a3)
 {
     int v3; // edi
     int v4; // ecx
@@ -8769,7 +8769,7 @@ void* __clrfp(short a1)
 }
 // 0x7DBCF0
 namespace gamemd {
-void ldexp(double X, int Y)
+int ldexp(double X, int Y)
 {
     __int16 v2; // cx
     int v3; // edi
@@ -8851,7 +8851,7 @@ void ldexp(double X, int Y)
 }
 // 0x7DBED6
 namespace gamemd {
-void __ld12mul(int a1, int a2)
+int __ld12mul(int a1, int a2)
 {
     __int16 v4; // cx
     __int16 v5; // ax
@@ -9009,7 +9009,7 @@ void __ld12mul(int a1, int a2)
 }
 // 0x7DC291
 namespace gamemd {
-void _filwbuf(unsigned short ** a1)
+int _filwbuf(unsigned short ** a1)
 {
     unsigned __int16 *v1; // eax
     unsigned int v2; // eax
@@ -9108,7 +9108,7 @@ unsigned char * _mbschr(const unsigned char * Str, unsigned int C)
 }
 // 0x7DC468
 namespace gamemd {
-void _setmode_lk(int a1, int a2)
+int _setmode_lk(int a1, int a2)
 {
     char *v2; // edx
     char v3; // cl
@@ -9137,7 +9137,7 @@ void _setmode_lk(int a1, int a2)
 }
 // 0x7DC4C9
 namespace gamemd {
-void __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData, UINT CodePage)
+int __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData, UINT CodePage)
 {
     int v5; // eax
     int LocaleInfoA; // eax
@@ -9191,7 +9191,7 @@ void __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchDat
 }
 // 0x7DC5DC
 namespace gamemd {
-void __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass * aP2, int cchData, UINT CodePage)
+int __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass * aP2, int cchData, UINT CodePage)
 {
     int v5; // eax
     int LocaleInfoW; // eax
@@ -10322,7 +10322,7 @@ BlowStraw * * _wcsupr(CampaignScore * aP0)
 }
 // 0x7DE200
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24to556(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  ConvertRGB24to556(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -10505,7 +10505,7 @@ unsigned int  __spoils<ecx> ConvertRGB24to556(int a1, unsigned short * a2, __m64
 }
 // 0x7DE53A
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -10688,7 +10688,7 @@ unsigned int  __spoils<ecx> ConvertRGB24toRGB565(int a1, unsigned short * a2, __
 }
 // 0x7DE87A
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24to655(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  ConvertRGB24to655(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -10871,7 +10871,7 @@ unsigned int  __spoils<ecx> ConvertRGB24to655(int a1, unsigned short * a2, __m64
 }
 // 0x7DEBBA
 namespace gamemd {
-unsigned int  __spoils<ecx> ConvertRGB24to565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
+unsigned int  ConvertRGB24to565(int a1, unsigned short * a2, __m64 a3, __m64 a4, int a5)
 {
   unsigned short *v5; // edi
   uint8_t *v6; // esi
@@ -12775,7 +12775,7 @@ int _get_lc_time(CCINIClass * a1)
 
 // 0x7D6494
 namespace gamemd {
-void _free_lc_time(CCINIClass * a1)
+int _free_lc_time(CCINIClass * a1)
 {
     int result; // eax
 
@@ -12984,7 +12984,7 @@ char fix_grouping_0(char * a1)
 
 // 0x7D6A54
 namespace gamemd {
-void _free_lc_lconv(CCINIClass * a1)
+int _free_lc_lconv(CCINIClass * a1)
 {
     void *result; // eax
 

@@ -707,7 +707,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
   char String[2048]; // [esp+38h] [ebp-800h] BYREF
 
   v4 = v3; /*0x7510d9*/
-  DListNode::Init((DListNode *)&unk_B1D320); /*0x7510e0*/
+  ((DListNode *)(&unk_B1D320))->Init(); /*0x7510e0*/
   dword_B1D3A4 = (unsigned int)(VtableStub *)AllocLinkedListMemory(200, 60); /*0x7510f6*/
   dword_B1D3A8 = 0; /*0x751100*/
   dword_B1D3AC = 0; /*0x75110a*/
@@ -2519,7 +2519,7 @@ void Audio::Shutdown(void *a1_1)
   }
   if ( g_Audio_Enabled ) /*0x406dbe*/
   {
-    AudioStream::DestroyAll( (void *)(g_Audio_Enabled)); /*0x406dc0*/
+    ((AudioStream *)(g_Audio_Enabled))->DestroyAll(); /*0x406dc0*/
     g_Audio_Enabled = 0; /*0x406dc5*/
   }
   sub_402990((ObjectClass *)this); /*0x406dcc*/
@@ -2612,12 +2612,12 @@ int sub_752290()
   v0 = stru_B1D450; /*0x7522a5*/
   do /*0x7522ba*/
   {
-    DListNode::Init(v0); /*0x7522ac*/
+    ((DListNode *)v0)->Init(); /*0x7522ac*/
     v0 += 12; /*0x7522b1*/
   }
   while ( (int)v0 < (int)&unk_B1D480 ); /*0x7522ba*/
-  DListNode::Init(&stru_B1D3F0); /*0x7522c1*/
-  DListNode::Init(&stru_B1D3C8); /*0x7522cb*/
+  ((DListNode *)(&stru_B1D3F0))->Init(); /*0x7522c1*/
+  ((DListNode *)(&stru_B1D3C8))->Init(); /*0x7522cb*/
   result = (int)g_InfantryDrawState; /*0x7522d0*/
   dword_B1D4B8 = 0; /*0x7522d5*/
   dword_B1D4BC = 1; /*0x7522e1*/
@@ -2627,8 +2627,8 @@ int sub_752290()
         (g_InfantryDrawState = (void *)result) != 0) )
   {
     SetAudioFileName(result, aEvaStream); /*0x752311*/
-    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice); /*0x752322*/
-    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient); /*0x752333*/
+    ((AudioQueue *)((int)g_InfantryDrawState))->IsEmpty( g_MixerChannel_Voice); /*0x752322*/
+    ((AudioQueue *)((int)g_InfantryDrawState))->IsNotEmpty( g_MixerChannel_Ambient); /*0x752333*/
     return 1; /*0x752338*/
   }
   return result; /*0x752309*/
@@ -2642,8 +2642,8 @@ void sub_752340()
   ThemeClass::ClearQueues(); /*0x752340*/
   if ( g_InfantryDrawState ) /*0x75234d*/
   {
-    ((Audio *)(g_InfantryDrawState))->Release(); /*0x75234f*/
-    AudioSample::Destructor( (void *a1 =)(g_InfantryDrawState)); /*0x75235a*/
+    ((gamemd::Audio*)(g_InfantryDrawState))->Release(); /*0x75234f*/
+    AudioSample::Destructor( (g_InfantryDrawState)); /*0x75235a*/
     g_InfantryDrawState = 0; /*0x75235f*/
   }
 }
@@ -2691,8 +2691,8 @@ int sub_752AD0()
         (dword_B1D4D8 = (void *)result) != 0) )
   {
     SetAudioFileName(result, aTauntStream); /*0x752afc*/
-    AudioQueue::IsEmpty((int)g_InfantryDrawState, g_MixerChannel_Voice); /*0x752b0d*/
-    AudioQueue::IsNotEmpty((int)g_InfantryDrawState, g_MixerChannel_Ambient); /*0x752b1e*/
+    ((AudioQueue *)((int)g_InfantryDrawState))->IsEmpty( g_MixerChannel_Voice); /*0x752b0d*/
+    ((AudioQueue *)((int)g_InfantryDrawState))->IsNotEmpty( g_MixerChannel_Ambient); /*0x752b1e*/
     unk_B1D480 = 0; /*0x752b23*/
     return 1; /*0x752b2d*/
   }
@@ -2706,8 +2706,8 @@ void sub_752B40()
 {
   if ( dword_B1D4D8 ) /*0x752b48*/
   {
-    ((Audio *)(dword_B1D4D8))->Release(); /*0x752b4a*/
-    AudioSample::Destructor( (void *a1 =)(dword_B1D4D8)); /*0x752b55*/
+    ((gamemd::Audio*)(dword_B1D4D8))->Release(); /*0x752b4a*/
+    AudioSample::Destructor( (dword_B1D4D8)); /*0x752b55*/
     dword_B1D4D8 = 0; /*0x752b5a*/
   }
 }

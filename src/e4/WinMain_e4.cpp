@@ -433,7 +433,7 @@ LSTATUS WinMain::CleanupResource()
   HKEY phkResult; // [esp+0h] [ebp-4h] BYREF
 
   phkResult = (HKEY)this; /*0x49f8b0*/
-  Debug::Log(); /*0x49f8b6*/
+  Debug::Log("COPYPROTECTION - Shutdown\n"); /*0x49f8b6 G57c1: IDA 0x49f8b6 push offset aCopyprotection_2*/
   if ( g_DDrawSurfaceManager.description[6] ) /*0x49f8c5*/
   {
     UnmapViewOfFile((LPCVOID)g_DDrawSurfaceManager.description[6]); /*0x49f8c8*/

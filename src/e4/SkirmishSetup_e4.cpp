@@ -69,7 +69,7 @@ char SkirmishSetup_Setup(HWND hWnd, int a2)
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d6168*/
     {
       g_MultiplayerMode |= 1u; /*0x5d6171*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass((int)(&g_MultiplayerModeConfig), 0, 0); /*0x5d617c*/
+      ((MultiplayerGameMode *)((int)(&g_MultiplayerModeConfig)))->ConstructMultiplayerGameModeVectorClass( 0, 0); /*0x5d617c*/
       g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d6181*/
       dword_ABFDB4 = 10; /*0x5d618b*/
       dword_ABFDB0 = 0; /*0x5d619a*/
@@ -80,7 +80,7 @@ char SkirmishSetup_Setup(HWND hWnd, int a2)
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d61bb*/
     {
       g_MultiplayerMode |= 1u; /*0x5d61c4*/
-      MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass((int)(&g_MultiplayerModeConfig), 0, 0); /*0x5d61cf*/
+      ((MultiplayerGameMode *)((int)(&g_MultiplayerModeConfig)))->ConstructMultiplayerGameModeVectorClass( 0, 0); /*0x5d61cf*/
       g_MultiplayerModeConfig = (int)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d61d4*/
       dword_ABFDB4 = 10; /*0x5d61de*/
       dword_ABFDB0 = 0; /*0x5d61ed*/
@@ -574,7 +574,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
       if ( ++v6 >= dword_A8B8D8 ) /*0x5e8653*/
         goto LABEL_18; /*0x5e8653*/
     }
-    GameOption::SetDescriptionWStr((wchar_t *)(*(GameOption **)(dword_A8B8CC + 4 * v6)),(gamemd::CampaignScore *)(&unk_ABE050)); /*0x5e8701*/
+    ((GameOption *)((*(GameOption **)(dword_A8B8CC + 4 * v6))))->SetDescriptionWStr((gamemd::CampaignScore *)(&unk_ABE050)); /*0x5e8701*/
     v11 = (char **)(dword_A8B8CC + 4 * v6); /*0x5e870b*/
     v12 = GameConfig::ComputeCRC(); /*0x5e870e*/
     ((GameOption *)(*v11))->SetDigest(v12); /*0x5e8716*/

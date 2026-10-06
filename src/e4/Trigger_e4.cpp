@@ -243,7 +243,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   ((unsigned int *)&v28)[0] = (unsigned int)(((char *)&v28)); /*0x76d89f*/
   ((unsigned int *)&v28)[0] = 0; /*0x76d8a3*/
   ((unsigned int *)&v28)[0] = (unsigned int)(&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76d8a7*/
-  if ( CampaignProperties_WorldDominationTour_22::AddRef(((char *)&v28)) ) /*0x76d8ab*/
+  if ( ((CampaignProperties_WorldDominationTour_22 *)(((char *)&v28)))->AddRef() ) /*0x76d8ab*/
   {
     do /*0x76da41*/
     {

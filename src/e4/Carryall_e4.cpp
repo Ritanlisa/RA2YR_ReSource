@@ -61,11 +61,11 @@ FootClass * * Carryall::MissionStateMachine()
   switch ( *((unsigned int *)this + 47) ) /*0x416d64*/
   {
     case 0: /*0x416d64*/
-      ((gamemd::Debug *)this)->Log(); /*0x416d70*/
+      Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ\n"); /*0x416d70 G57c1: IDA 0x416d70 push offset aDoMissionMoveC_0*/
       v2 = (AbstractClass *)*((unsigned int *)this + 361); /*0x416d75*/
       if ( !v2 ) /*0x416d80*/
       {
-        ((gamemd::Debug *)this)->Log(); /*0x416d87*/
+        Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ - NavCom == NULL\n"); /*0x416d87 G57c1: IDA 0x416d87 push offset aDoMissionMoveC_1*/
 LABEL_4:
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1156))(this, 0, 1); /*0x416d8f*/
         goto LABEL_5; /*0x416d97*/
@@ -85,7 +85,7 @@ LABEL_4:
       }
       if ( (*(int (**)(unsigned char *))(*(unsigned int *)v6 + 44))(v6) != 1 ) /*0x416e31*/
         goto LABEL_18; /*0x416e31*/
-      ((gamemd::Debug *)this)->Log(); /*0x416e3c*/
+      Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ - target != NULL\n"); /*0x416e3c G57c1: IDA 0x416e3c push offset aDoMissionMoveC_2*/
       if ( (unsigned char *)((Team *)((Team *)this))->GetMember(0) != v6 ) /*0x416e4f*/
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 3); /*0x416e57*/
       if ( (*(int (**)(Carryall *, int, unsigned char *))(this->Carryall_field_00 + 632))(this, 2, v6) != 1 ) /*0x416e6d*/
@@ -93,7 +93,7 @@ LABEL_4:
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1152))(this, 0, 1); /*0x416f1e*/
         goto LABEL_4; /*0x416f24*/
       }
-      ((gamemd::Debug *)this)->Log(); /*0x416e78*/
+      Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ - RADIO_HELLO got RADIO_ROGER\n"); /*0x416e78 G57c1: IDA 0x416e78 push offset aDoMissionMoveC_3*/
       if ( (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 36) == 1 ) /*0x416e8f*/
       {
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 7); /*0x416ec3*/
@@ -105,11 +105,11 @@ LABEL_18:
         if ( v10 ) /*0x416eec*/
           TeamClass::SelectMember( (gamemd::AbstractClass *)(v10), (void)((void *)(*((unsigned int *)this + 361)))); /*0x416ef5*/
         *((unsigned int *)this + 47) = 1; /*0x416eff*/
-        ((gamemd::Debug *)this)->Log(); /*0x416f09*/
+        Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ - Status = TAKE_OFF\n"); /*0x416f09 G57c1: IDA 0x416f09 push offset aDoMissionMoveC_5*/
       }
       else
       {
-        ((gamemd::Debug *)this)->Log(); /*0x416e96*/
+        Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ - RADIO_WANT_RIDE did not get RADIO_ROGER\n"); /*0x416e96 G57c1: IDA 0x416e96 push offset aDoMissionMoveC_4*/
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 3); /*0x416ea4*/
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1156))(this, 0, 1); /*0x416eb2*/
       }
@@ -142,7 +142,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClas
         && (*(int (**)(int))(*(unsigned int *)v13 + 44))(v13) != 11
         && ((Team *)((Team *)this))->GetMember(0) != *((unsigned int *)this + 361) )
       {
-        ((gamemd::Debug *)this)->Log(); /*0x416fce*/
+        Debug::Log("Do_MISSION_MOVE_Carryall - FLY_TO_LZ - Lost contact\n"); /*0x416fce G57c1: IDA 0x416fce push offset aDoMissionMoveC_6*/
         *((unsigned int *)this + 47) = (unsigned int)((gamemd::FootClass **)(0)); /*0x416fd6*/
         return (gamemd::FootClass **)(1); /*0x416fe8*/
       }
@@ -160,7 +160,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClas
         WinAPI::Wrapper(-2147467261); /*0x417032*/
       if ( (*(int (**)(unsigned int))(**((unsigned int **)this + 413) + 144))(*((unsigned int *)this + 413)) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
-      ((gamemd::Debug *)this)->Log(); /*0x417054*/
+      Debug::Log("Do_MISSION_MOVE_Carryall - FLY_TO_LZ - Begin landing\n"); /*0x417054 G57c1: IDA 0x417054 push offset aDoMissionMoveC_7*/
       v15 = *((unsigned int *)this + 361); /*0x417059*/
       if ( !v15 /*0x4170e9*/
         || (*(int (**)(int))(*(unsigned int *)v15 + 44))(v15) != 1
@@ -180,7 +180,7 @@ LABEL_44:
           WinAPI::Wrapper(-2147467261); /*0x417125*/
         if ( !(*(uint8_t (**)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x417133*/
         {
-          ((gamemd::Debug *)this)->Log(); /*0x41713f*/
+          Debug::Log("Do_MISSION_MOVE_Carryall - FLY_TO_LZ - Stopped moving\n"); /*0x41713f G57c1: IDA 0x41713f push offset aDoMissionMoveC_9*/
           *((unsigned int *)this + 47) = 3; /*0x417147*/
         }
         return (gamemd::FootClass **)(1);
@@ -188,11 +188,11 @@ LABEL_44:
       else
       {
         *((unsigned int *)this + 47) = 0; /*0x4170f0*/
-        ((gamemd::Debug *)this)->Log(); /*0x4170fa*/
+        Debug::Log("Do_MISSION_MOVE_Carryall - FLY_TO_LZ - Target moved\n"); /*0x4170fa G57c1: IDA 0x4170fa push offset aDoMissionMoveC_8*/
         return (gamemd::FootClass **)(1); /*0x417102*/
       }
     case 3: /*0x416d64*/
-      ((gamemd::Debug *)this)->Log(); /*0x417163*/
+      Debug::Log("Do_MISSION_MOVE_Carryall - LAND\n"); /*0x417163 G57c1: IDA 0x417163 push offset aDoMissionMoveC_10*/
       if ( *((unsigned int *)this + 70) ) /*0x417168*/
       {
         if ( *((unsigned int *)this + 320) ) /*0x417177*/
@@ -210,7 +210,7 @@ LABEL_44:
       }
       else
       {
-        ((gamemd::Debug *)this)->Log(); /*0x4171cd*/
+        Debug::Log("Do_MISSION_MOVE_Carryall - LAND - Picking up cargo\n"); /*0x4171cd G57c1: IDA 0x4171cd push offset aDoMissionMoveC_11*/
         (*(void (**)(Carryall *, unsigned int))(this->Carryall_field_00 + 292))(this, 0); /*0x4171da*/
         v27[0] = *((unsigned int *)this + 39); /*0x4171ea*/
         v27[1] = *((unsigned int *)this + 40); /*0x4171f1*/
@@ -225,9 +225,9 @@ LABEL_44:
         Building = (unsigned char *)(((CellClass *)(v23))->FindBuilding(v26)); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (unsigned char *)((Team *)((Team *)this))->GetMember(0)
-          && (((gamemd::Debug *)this)->Log(), (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 19) == 1) )
+          && (Debug::Log("Do_MISSION_MOVE_Carryall - LAND - Got Cell_Unit\n") /*G57c1: IDA 0x417259 push offset aDoMissionMoveC_12*/, (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 19) == 1) )
         {
-          ((gamemd::Debug *)this)->Log(); /*0x417277*/
+          Debug::Log("Do_MISSION_MOVE_Carryall - LAND - RADIO_NEED_TO_MOVE got RADIO_ROGER\n"); /*0x417277 G57c1: IDA 0x417277 push offset aDoMissionMoveC_13*/
           (*(void (**)(unsigned char *))(*(unsigned int *)Building + 212))(Building); /*0x417283*/
           Building[140] = 0; /*0x417290*/
           Building[1060] = 1; /*0x417297*/

@@ -44,10 +44,10 @@ int ConnectionClass::queueSendPacket(const void *a2, int32_t a3, const void *a4,
     {
       if ( v8 == PlayerIndex ) /*0x48b52f*/
       {
-        Debug::Log(); /*0x48b536*/
+        Debug::Log("Queue_Send - No room in send queue\n"); /*0x48b536 G57c1: IDA 0x48b536 push offset aQueueSendNoRoo*/
         return 0; /*0x48b544*/
       }
-      Debug::Log(); /*0x48b552*/
+      Debug::Log("buflen > MaxPacketSize by %d bytes\n"); /*0x48b552 G57c1: IDA 0x48b552 push offset aBuflenMaxpacke*/
       return 0; /*0x48b552*/
     }
     v9 = 0; /*0x48b433*/

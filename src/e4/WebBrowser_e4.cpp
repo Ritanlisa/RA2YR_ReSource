@@ -50,7 +50,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   RegCloseKey(phkResult); /*0x7736c2*/
   if ( v3 ) /*0x7736ca*/
     return 0; /*0x7736ca*/
-  ((gamemd::Debug *)this)->Log(); /*0x7736e5*/
+  Debug::Log("Showing webpage '%s' - %s\n"); /*0x7736e5 G57c1: IDA 0x7736e5 push offset aShowingWebpage*/
   if ( !*((unsigned int *)this + 2) ) /*0x7736f2*/
     return WebBrowser::OpenURL(Data); /*0x773843*/
   mbstowcs((wchar_t *)((char *)this + 12), (const char *)Data, 0x200u); /*0x773709*/
@@ -105,7 +105,7 @@ int WebBrowser::ShowDialog()
   v1 = (const char *)(this);
   v9 = (const char *)(this);
   if ( !this || !strlen((const char *)(this)) ) /*0x773eaa*/
-    return (int)((HWND)((Debug*)aDowebpagedialo)->Log()); /*0x774060*/
+    return (int)((HWND)((gamemd::Debug*)aDowebpagedialo)->Log()); /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
   result = (HWND)CreateDialog(0x131u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_773E30, 0); /*0x773ecf*/
   v3 = result; /*0x773ed4*/
@@ -173,10 +173,10 @@ int WebBrowser::GoForward()
   char v4; // [esp+10h] [ebp+4h]
 
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_WebBrowser); /*0x7740a8*/
-  ((gamemd::Debug *)this)->Log(); /*0x7740ae*/
+  Debug::Log("Destructing embedded WebBrowser\n"); /*0x7740ae G57c1: IDA 0x7740ae push offset aDestructingEmb*/
   if ( this->WebBrowser_field_0x8 ) /*0x7740b3*/
   {
-    ((gamemd::Debug *)this)->Log(); /*0x7740c2*/
+    Debug::Log("Releasing WOLBrowser\n"); /*0x7740c2 G57c1: IDA 0x7740c2 push offset aReleasingWolbr*/
     (*(void (**)(void *, WebBrowser *))(*(unsigned int *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
       (void *)this->WebBrowser_field_0x8,
       this);
@@ -408,7 +408,7 @@ int WebBrowser::Clone()
   wchar_t Dest[260]; // [esp+114h] [ebp-208h] BYREF
   int v9; // [esp+320h] [ebp+4h]
 
-  ((gamemd::Debug *)this)->Log(); /*0x773bcc*/
+  Debug::Log("!!!!! PAGE FAILED CERTIFICATION !!!!!\n"); /*0x773bcc G57c1: IDA 0x773bcc push offset aPageFailedCert*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE,(LPCSTR)(g_Str_Software_Westwood_Yuri_s_Reven), 0, 0x20019u, &phkResult) ) /*0x773bea*/
     return 0; /*0x773bea*/
   cbData = 260; /*0x773c13*/
@@ -437,7 +437,7 @@ namespace gamemd {
 int WebBrowser::Navigate()
 {
 
-  ((gamemd::Debug *)this)->Log(); /*0x773d2a*/
+  Debug::Log("OnErrorMsg- %S\n"); /*0x773d2a G57c1: IDA 0x773d2a push offset aOnerrormsgS*/
   return 0; /*0x773d34*/
 
 }
@@ -458,7 +458,7 @@ int WebBrowser::GoBack()
   wcstombs((char *)&((unsigned int *)(v4))[0].Flag_field_0x08, Source, 0x40u); /*0x773d55*/
   wcstombs(v5, v7, 0x40u); /*0x773d69*/
   ((String *)(&v2))->Assign((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08); /*0x773d7a*/
-  ((gamemd::Debug *)this)->Log(); /*0x773d8e*/
+  Debug::Log("Register WWOnline login: %s - %s\n"); /*0x773d8e G57c1: IDA 0x773d8e push offset aRegisterWwonli*/
   LoadPlayerProfile((gamemd::ObjectClass *)(&((unsigned int *)(v2.m_3))[1]), (const char **)&v2); /*0x773d9e*/
   *(unsigned int *)((unsigned int *)(v4))[0].__pad_0 = 0; /*0x773da9*/
   LOBYTE(v4[0].Flag_field_0x04) = 0; /*0x773dad*/

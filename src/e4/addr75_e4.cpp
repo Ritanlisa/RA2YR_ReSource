@@ -308,7 +308,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
           0x40u) )
   {
   LABEL_2:
-        ((Debug *)0)->Log();
+        Debug::Log("GetDiskFreeSpace() failed: %s\n") /*G57c1: IDA 0x751e13 push offset aGetdiskfreespa*/;
     return 0; /*0x751e23*/
   }
   return 1; /*0x751e1d*/
@@ -619,18 +619,18 @@ int CCINIClass::InitFromINIEVA()
 
   v1 = (gamemd::ObjectClass *)(this);
   v13 = (int)this; /*0x753011*/
-  LOBYTE(KeyCount) = ((INIClass *)(gamemd::INIClass *)((int)this))->BinarySearchSection((void *)(g_INI_Key_DialogList)) != 0; /*0x75301c*/
+  LOBYTE(KeyCount) = ((gamemd::INIClass*)(gamemd::INIClass *)((int)this))->BinarySearchSection((void *)(g_INI_Key_DialogList)) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = (int)(((INIClass *)(gamemd::INIClass *)((char *)v1))->GetKeyCount((void *)(g_INI_Key_DialogList)));
+    KeyCount = (int)(((gamemd::INIClass*)(gamemd::INIClass *)((char *)v1))->GetKeyCount((void *)(g_INI_Key_DialogList)));
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( (gamemd::CCINIClass *)((char *)v1), (gamemd::CCINIClass *)(g_INI_Key_DialogList), (void)((void *)v4)); /*0x753060*/
+      StringByIndex = (uint8_t *)gamemd::INIClass::GetStringByIndex( (gamemd::CCINIClass *)((char *)v1), (gamemd::CCINIClass *)(g_INI_Key_DialogList), (void)((void *)v4)); /*0x753060*/
       KeyCount = /*0x75306d*/
-                   ((INIClass*)((INIClass *)v1))->GetString(/*0x75306d*/ g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200);
+                   ((gamemd::INIClass*)((gamemd::INIClass*)v1))->GetString(/*0x75306d*/ g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200);
       if ( KeyCount ) /*0x753074*/
       {
         if ( &v11 == (int *)-28 ) /*0x753080*/
@@ -2165,7 +2165,7 @@ int AnimSystem_Reset(int a1)
 }
 // 0x75F230
 namespace gamemd {
-void sub_75F230(unsigned int * a1, unsigned int * a2)
+int sub_75F230(unsigned int * a1, unsigned int * a2)
 {
   int v2; // esi
   int v3; // edi
@@ -2813,7 +2813,7 @@ namespace gamemd {
 void ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ()
 {
   if ( dword_B1D4D8 ) /*0x752ca8*/
-    ((Audio *)(dword_B1D4D8))->Release(); /*0x752caa*/
+    ((gamemd::Audio*)(dword_B1D4D8))->Release(); /*0x752caa*/
 }
 } // namespace gamemd
 
@@ -2930,7 +2930,7 @@ int sub_753B10()
   v1 = 64; /*0x753b17*/
   do /*0x753b32*/
   {
-    result = Array::ForEach((int)v0, 12, 8, (int (*)(int))__0Iostream_init_QAE_XZ_8); /*0x753b26*/
+    result = ((Array *)((int)v0))->ForEach( 12, 8, (int (*)(int))__0Iostream_init_QAE_XZ_8); /*0x753b26*/
     v0 += 136; /*0x753b2b*/
     --v1; /*0x753b31*/
   }
@@ -2951,7 +2951,7 @@ int sub_753B40()
   v1 = 64; /*0x753b47*/
   do /*0x753b5f*/
   {
-    result = Array::ForEach((int)v0, 12, 4, (int (*)(int))__0Iostream_init_QAE_XZ_8); /*0x753b56*/
+    result = ((Array *)((int)v0))->ForEach( 12, 4, (int (*)(int))__0Iostream_init_QAE_XZ_8); /*0x753b56*/
     v0 += 72; /*0x753b5b*/
     --v1; /*0x753b5e*/
   }

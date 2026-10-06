@@ -797,7 +797,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
     GetMenu((HWND)(g_hWnd)); /*0x77764f*/
   if ( Render_Draw_778030(v13, Msg, wParam, (LPARAM)lParam) ) /*0x777665*/
   {
-    Debug::Log(); /*0x777673*/
+    Debug::Log("Default\n"); /*0x777673 G57c1: IDA 0x777673 push offset aDefault*/
     return dword_B73570; /*0x777684*/
   }
   v14 = Msg; /*0x777687*/
@@ -884,7 +884,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
     if ( Msg != 522 ) /*0x777962*/
     {
       if ( Msg == 534 ) /*0x777967*/
-        return (uint8_t)Window::ClampToScreen( (int *)(lParam)); /*0x777982*/
+        return (uint8_t)((Window *)(lParam))->ClampToScreen(); /*0x777982*/
       goto LABEL_70; /*0x777967*/
     }
     if ( !byte_B73561 ) /*0x77798b*/
@@ -916,18 +916,18 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
           }
           else
           {
-            Debug::Log(); /*0x7778da*/
+            Debug::Log("Focus_Loss()\n"); /*0x7778da G57c1: IDA 0x7778da push offset aFocusLoss*/
             IDA_LOBYTE(v19) = 1; /*0x7778e2*/
             ((AsyncIO *)(v19))->Read(); /*0x7778e4*/
             sub_407020(); /*0x7778e9*/
             if ( stru_887598.lineTrailer ) /*0x7778f6*/
             {
               byte_B73560 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70))(stru_887598.lineTrailer);  /*0x7778fd*/
-              Debug::Log(); /*0x777916*/
+              Debug::Log("Focus_Loss(): _MouseCaptured = %s\n"); /*0x777916 G57c1: IDA 0x777916 push offset aFocusLossMouse*/
               (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50))(stru_887598.lineTrailer);  /*0x777926*/
             }
           }
-          Debug::Log(); /*0x77793a*/
+          Debug::Log("Focus gained\n"); /*0x77793a G57c1: IDA 0x77793a push offset aFocusGained*/
           g_LoadScreenFlag = 1; /*0x777942*/
         }
         return 0; /*0x77794f*/
@@ -2400,7 +2400,7 @@ int sub_77D840()
   MessageDialogLoopAlt(Dialog, (uint8_t (*)(void))v2, 0, 1, 1); /*0x77d88a*/
   ((Timer*)((HWND *)dword_87F770))->PumpMessages(); /*0x77d895*/
   byte_A8ED9C = *((unsigned char *)dword_A8B230 + 13730); /*0x77d8a7*/
-  return MapClass::MarkForRedraw( (int)(&dword_87F7E8), 2); /*0x77d8b7*/
+  return ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( 2); /*0x77d8b7*/
 }
 }
 // 0x77DC90
@@ -4328,7 +4328,7 @@ INT_PTR sub_775B40(HWND a1, UINT, WPARAM, LPARAM)
 
 // 0x775B50
 namespace gamemd {
-int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, int a3, LONG * a4)
+int sub_775B50(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), int a3, LONG * a4)
 {
   HWND DialogParamA; // esi
   LONG bottom; // ecx

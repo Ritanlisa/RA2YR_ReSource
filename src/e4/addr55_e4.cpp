@@ -1203,7 +1203,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
       byte_ABCA4D = 0; /*0x554fc3*/
       dword_ABCA48 = 0; /*0x554fca*/
       byte_ABCA84 = 0; /*0x554fd4*/
-      MapClass::MarkForRedraw( (int)(&dword_87F7E8), (void)((void *)(1))); /*0x554fdb*/
+      ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw( (void)((void *)(1))); /*0x554fdb*/
     }
   }
   v12 = ((Timer*)&dbl_884D88)->GetHighPrecision(); /*0x554fe9*/
@@ -1338,7 +1338,7 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
   if ( !aP1 ) /*0x55881d*/
     p_referenceCount = (char *)&(&dword_A8B230)[137].referenceCount; /*0x558824*/
   *((unsigned int *)this + 3) = (unsigned int)(p_referenceCount); /*0x558829*/
-  return SaveLoadDialog::DlgProc( (void *a1 =)((SaveLoadDialog *)this)); /*0x558831*/
+  return SaveLoadDialog::DlgProc( ((SaveLoadDialog *)this)); /*0x558831*/
 
 }
 }
@@ -2045,7 +2045,7 @@ AbstractClass * * Game_Frame_Check()
           byte_8B41C0 = 0; /*0x55d12f*/
           byte_A83D48 = 0; /*0x55d135*/
           InitLoadingScreenResources(); /*0x55d13b*/
-          WTFMode::Shutdown( (void *a1 =)(&dword_A8B238)); /*0x55d145*/
+          WTFMode::Shutdown( (&dword_A8B238)); /*0x55d145*/
           Scenario::EndGameFlow(v9); /*0x55d14a*/
           WTFMode::Init(&dword_A8B238); /*0x55d154*/
           v4 = dword_887368; /*0x55d159*/
@@ -2068,7 +2068,7 @@ AbstractClass * * Game_Frame_Check()
           byte_8B41C0 = 0; /*0x55d1bd*/
           byte_A83D48 = 0; /*0x55d1c3*/
           InitLoadingScreenResources(); /*0x55d1c9*/
-          WTFMode::Shutdown( (void *a1 =)(&dword_A8B238)); /*0x55d1d3*/
+          WTFMode::Shutdown( (&dword_A8B238)); /*0x55d1d3*/
           Scenario::EndGame(v9); /*0x55d1d8*/
           WTFMode::Init(&dword_A8B238); /*0x55d1e2*/
           v4 = dword_887368; /*0x55d1e7*/
@@ -2089,7 +2089,7 @@ AbstractClass * * Game_Frame_Check()
       byte_A8ECD0 = 0; /*0x55d21f*/
       byte_8B41C0 = 0; /*0x55d225*/
       byte_A83D48 = 0; /*0x55d22b*/
-      WTFMode::Shutdown( (void *a1 =)(&dword_A8B238)); /*0x55d231*/
+      WTFMode::Shutdown( (&dword_A8B238)); /*0x55d231*/
       GameFrameCheck_Check(); /*0x55d236*/
       WTFMode::Init(&dword_A8B238); /*0x55d240*/
       byte_ABCD58 = 0; /*0x55d245*/
@@ -2101,11 +2101,11 @@ AbstractClass * * Game_Frame_Check()
       byte_8B41C0 = 0; /*0x55d268*/
       byte_A83D48 = 0; /*0x55d26e*/
       InitLoadingScreenResources(); /*0x55d274*/
-      WTFMode::Shutdown( (void *a1 =)(&dword_A8B238)); /*0x55d27e*/
+      WTFMode::Shutdown( (&dword_A8B238)); /*0x55d27e*/
       GameFrameCheck_Check_686570((ObjectClass *)v9); /*0x55d283*/
       WTFMode::Init(&dword_A8B238); /*0x55d28d*/
       byte_ABCD58 = 0; /*0x55d292*/
-      Debug::Log(); /*0x55d29d*/
+      Debug::Log("Disconnect_Gracefully\n"); /*0x55d29d G57c1: IDA 0x55d29d push offset aDisconnectGrac*/
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_887628 && byte_A8DBA0 ) /*0x55d2c5*/
       {
         if ( dword_A8EA0C ) /*0x55d2cd*/
@@ -2133,7 +2133,7 @@ AbstractClass * * Game_Frame_Check()
         if ( !dword_A8B23C /*0x55d335*/
           || !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 8))( (ObjectClass *)(dword_A8B23C)) )
         {
-          ((Network *)v10)->SendUnreachable(); /*0x55d33c*/
+          ((gamemd::Network*)v10)->SendUnreachable(); /*0x55d33c*/
         }
       }
     }
@@ -2461,7 +2461,7 @@ void GameFrameLoop()
       ((FileClass *)&dword_A8D58C)->Write( &v50.__pad_6[6], 4u); /*0x55d9c5*/
       for ( i = 0; i < *(int *)&v50.__pad_6[2]; ++i ) /*0x55d9d0*/
       {
-        v28 = ScriptAction::GetWaypointCoords((ScriptAction *)&v50.__pad_6[14], *((unsigned int **)dword_A8ECBC + i)); /*0x55d9e0*/
+        v28 = ((ScriptAction *)(&v50.__pad_6[14]))->GetWaypointCoords( *((unsigned int **)dword_A8ECBC + i)); /*0x55d9e0*/
         v29 = v28[4]; /*0x55d9e5*/
         if ( v29 ) /*0x55d9ea*/
           v30 = *(unsigned int *)v28 & 0xFFFFFF | (v29 << 24); /*0x55da02*/
@@ -2478,14 +2478,14 @@ void GameFrameLoop()
     }
     if ( (v21 & 2) != 0 ) /*0x55da57*/
     {
-      if ( CCFileClass::Read(&dword_A8D58C, &Time, 8) == 8 ) /*0x55da71*/
+      if ( ((CCFileClass *)(&dword_A8D58C))->Read( &Time, 8) == 8 ) /*0x55da71*/
         TacticalMapClass::SetCameraPosition((TacticalClass *)g_TacticalClass_Instance, (int *)&Time); /*0x55da7e*/
-      if ( CCFileClass::Read(&dword_A8D58C, &v50.__pad_6[2], 4) == 4 ) /*0x55da97*/
+      if ( ((CCFileClass *)(&dword_A8D58C))->Read( &v50.__pad_6[2], 4) == 4 ) /*0x55da97*/
       {
         v31 = 0; /*0x55daa2*/
         for ( *(unsigned int *)&v50.__pad_6[6] = 0; v31 < (int)dword_A8ECC8; *(unsigned int *)&v50.__pad_6[6] += v34 ) /*0x55daaa*/
         {
-          v32 = ScriptAction::GetWaypointCoords((ScriptAction *)&v50.__pad_6[14], *((unsigned int **)dword_A8ECBC + v31)); /*0x55daba*/
+          v32 = ((ScriptAction *)(&v50.__pad_6[14]))->GetWaypointCoords( *((unsigned int **)dword_A8ECBC + v31)); /*0x55daba*/
           v33 = v32[4]; /*0x55dabf*/
           if ( v33 ) /*0x55dac4*/
             v34 = *(unsigned int *)v32 & 0xFFFFFF | (v33 << 24); /*0x55dadb*/
@@ -2493,13 +2493,13 @@ void GameFrameLoop()
             v34 = -1; /*0x55dac6*/
           ++v31; /*0x55dae8*/
         }
-        CCFileClass::Read(&dword_A8D58C, &v50.__pad_1C[4], 4); /*0x55dafd*/
+        ((CCFileClass *)(&dword_A8D58C))->Read( &v50.__pad_1C[4], 4); /*0x55dafd*/
         if ( *(unsigned int *)&v50.__pad_1C[4] != *(unsigned int *)&v50.__pad_6[6] ) /*0x55db0c*/
           ((MapClass *)(MapClass *)v43)->UnselectAll_ClearLimboLaunchers(); /*0x55db0e*/
         v35 = 0; /*0x55db17*/
         for ( g_MoveFeedback = 1; v35 < *(int *)&v50.__pad_6[2]; ++v35 ) /*0x55db22*/
         {
-          if ( CCFileClass::Read(&dword_A8D58C, v50.__pad_1C, 4) == 4 ) /*0x55db38*/
+          if ( ((CCFileClass *)(&dword_A8D58C))->Read( v50.__pad_1C, 4) == 4 ) /*0x55db38*/
           {
             IDA_LOBYTE(v50.m_18) = 0; /*0x55db48*/
             CheckNetworkSync((ObjectClass *)&v50.__pad_6[14], (int)&v50.__pad_1C[20], *(int *)v50.__pad_1C); /*0x55db4d*/
@@ -2516,9 +2516,9 @@ void GameFrameLoop()
         }
         g_MoveFeedback = 1; /*0x55db85*/
       }
-      CCFileClass::Read(&dword_A8D58C, &dword_ABCDFC, 4); /*0x55db98*/
-      CCFileClass::Read(&dword_A8D58C, &dword_ABCE00, 4); /*0x55dba9*/
-      MapClass::MarkForRedraw( (int)((GScreenClass *)&dword_87F7E8), 0); /*0x55dbb4*/
+      ((CCFileClass *)(&dword_A8D58C))->Read( &dword_ABCDFC, 4); /*0x55db98*/
+      ((CCFileClass *)(&dword_A8D58C))->Read( &dword_ABCE00, 4); /*0x55dba9*/
+      ((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 0); /*0x55dbb4*/
       ((TacticalMap*)((GScreenClass *)&dword_87F7E8))->Redraw(); /*0x55dbbe*/
     }
   }
@@ -4214,7 +4214,7 @@ int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
       switch ( a2 ) /*0x558a63*/
       {
         case 0x216u: /*0x558a63*/
-          return (uint8_t)Window::ClampToScreen((int *)a4); /*0x558b2f*/
+          return (uint8_t)((Window *)a4)->ClampToScreen(); /*0x558b2f*/
         case 0xFu: /*0x558a63*/
           Dialog::StopBink(hWnd); /*0x558b0b*/
           return 1; /*0x558b19*/
@@ -4282,7 +4282,7 @@ int sub_558B90(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
       switch ( a2 ) /*0x558bbf*/
       {
         case 0x216u: /*0x558bbf*/
-          return (uint8_t)Window::ClampToScreen((int *)a4); /*0x558c17*/
+          return (uint8_t)((Window *)a4)->ClampToScreen(); /*0x558c17*/
         case 0xFu: /*0x558bbf*/
           Dialog::StopBink(hWnd); /*0x558bf3*/
           return 1; /*0x558c01*/
@@ -4322,7 +4322,7 @@ int sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
       switch ( a2 ) /*0x558ce3*/
       {
         case 0x216u: /*0x558ce3*/
-          return (uint8_t)Window::ClampToScreen( (int *)(a4)); /*0x558d71*/
+          return (uint8_t)((Window *)(a4))->ClampToScreen(); /*0x558d71*/
         case 0xFu: /*0x558ce3*/
           Dialog::StopBink(hWnd); /*0x558d4d*/
           return 1; /*0x558d5b*/
@@ -4368,7 +4368,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     vtable2 = (const char *)((unsigned int *)this)[0]; /*0x559607*/
     v3 = rand(); /*0x559608*/
     sprintf(Buffer, "SAVE%04lX.%3s", v3, vtable2); /*0x559614*/
-    ((FileClass *)(&v6))->SetFileName(Buffer); /*0x559621*/
+    ((gamemd::FileClass*)(&v6))->SetFileName(Buffer); /*0x559621*/
   }
   while ( (uint8_t)((CCFileClass *)(&v6))->Open(0) == 1 ); /*0x559633*/
   *(unsigned int *)v6.CDFileClass = (unsigned int)&vt_CCFileClass;

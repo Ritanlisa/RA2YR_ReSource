@@ -854,7 +854,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     if ( v32 >= v26 ) /*0x57b68d*/
       goto LABEL_39; /*0x57b68d*/
   }
-  v17 = MapClass::GetTileDataField14( (MapResourceClass *)((short *)((gamemd::MapResourceClass *)(&v31)))); /*0x57b571*/
+  v17 = ((MapClass *)(((short *)((gamemd::MapResourceClass *)(&v31)))))->GetTileDataField14(); /*0x57b571*/
   if ( aP5 ) /*0x57b57c*/
   {
     v17 = 0; /*0x57b57e*/
@@ -930,7 +930,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
 }
 // 0x57C870
 namespace gamemd {
-void sub_57C870(int a1)
+int sub_57C870(int a1)
 {
     int v1; // edi
     __int16 v2; // bx
@@ -999,7 +999,7 @@ void sub_57C870(int a1)
 }
 // 0x57C990
 namespace gamemd {
-void sub_57C990(int a1)
+int sub_57C990(int a1)
 {
     int v1; // edi
     __int16 v2; // bx
@@ -1068,7 +1068,7 @@ void sub_57C990(int a1)
 }
 // 0x57DAF0
 namespace gamemd {
-void sub_57DAF0(int a1)
+int sub_57DAF0(int a1)
 {
     int v1; // edi
     __int16 v2; // bx
@@ -1137,7 +1137,7 @@ void sub_57DAF0(int a1)
 }
 // 0x57DC20
 namespace gamemd {
-void sub_57DC20(int a1)
+int sub_57DC20(int a1)
 {
     int v1; // edi
     __int16 v2; // bx
@@ -1451,10 +1451,10 @@ return (gamemd::AbstractClass **)result; /*0x57dff0*/
           rcDst.bottom = v34; /*0x57e111*/
         }
       }
-      v35 = (int *)Rect::Union( (IUnknown *)(&rcDst), v44, v45); /*0x57e15f*/
+      v35 = (int *)((Rect *)(&rcDst))->Union( v44, v45); /*0x57e15f*/
       v43 = v35[3]; /*0x57e16a*/
       v42 = v35[2]; /*0x57e16f*/
-      v36 = CellStruct::Copy(v35, v52); /*0x57e17d*/
+      v36 = ((CellStruct *)v35)->Copy( v52); /*0x57e17d*/
       v37 = ((Coord2D *)(v36))->Sub(v50, v62); /*0x57e184*/
       v38 = ((Rect*)v55)->Construct(v37, v42, v43); /*0x57e18e*/
       v58 = *v38; /*0x57e19c*/
@@ -1732,10 +1732,10 @@ void* CreateCliffStraightMap(IUnknown * aP0)
           rcDst.bottom = bottom; /*0x57e603*/
         }
       }
-      v36 = (int *)Rect::Union( (IUnknown *)(&rcDst), v47, v48); /*0x57e654*/
+      v36 = (int *)((Rect *)(&rcDst))->Union( v47, v48); /*0x57e654*/
       v46 = v36[3]; /*0x57e65f*/
       v45 = v36[2]; /*0x57e664*/
-      v37 = CellStruct::Copy(v36, v56); /*0x57e672*/
+      v37 = ((CellStruct *)v36)->Copy( v56); /*0x57e672*/
       v38 = ((Coord2D *)(v37))->Sub(v51, v61); /*0x57e679*/
       v39 = ((Rect*)v62)->Construct(v38, v45, v46); /*0x57e683*/
       v57 = *v39; /*0x57e691*/
@@ -2017,10 +2017,10 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
           rcDst.bottom = v34; /*0x57eb6b*/
         }
       }
-      v35 = (int *)Rect::Union( (IUnknown *)(&rcDst), v44, v45); /*0x57ebb9*/
+      v35 = (int *)((Rect *)(&rcDst))->Union( v44, v45); /*0x57ebb9*/
       v43 = v35[3]; /*0x57ebc4*/
       v42 = v35[2]; /*0x57ebc9*/
-      v36 = CellStruct::Copy(v35, v52); /*0x57ebd7*/
+      v36 = ((CellStruct *)v35)->Copy( v52); /*0x57ebd7*/
       v37 = ((Coord2D *)(v36))->Sub(v50, v62); /*0x57ebde*/
       v38 = ((Rect*)v55)->Construct(v37, v42, v43); /*0x57ebe8*/
       v58 = *v38; /*0x57ebf6*/
@@ -2299,10 +2299,10 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
           rcDst.bottom = bottom; /*0x57f06d*/
         }
       }
-      v36 = (int *)Rect::Union( (IUnknown *)(&rcDst), v47, v48); /*0x57f0be*/
+      v36 = (int *)((Rect *)(&rcDst))->Union( v47, v48); /*0x57f0be*/
       v46 = v36[3]; /*0x57f0c9*/
       v45 = v36[2]; /*0x57f0ce*/
-      v37 = CellStruct::Copy(v36, v56); /*0x57f0dc*/
+      v37 = ((CellStruct *)v36)->Copy( v56); /*0x57f0dc*/
       v38 = ((Coord2D *)(v37))->Sub(v51, v61); /*0x57f0e3*/
       v39 = ((Rect*)v62)->Construct(v38, v45, v46); /*0x57f0ed*/
       v57 = *v39; /*0x57f0fb*/

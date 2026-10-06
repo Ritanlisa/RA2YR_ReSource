@@ -113,7 +113,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   (&this->DownReport)[5] = 10; /*0x771ce9*/
   (&this->DownReport)[4] = 0; /*0x771cf0*/
   (&this->DownReport)[0] = (int)&vt_TypeList; /*0x771cf3*/
-  AnimTypeVector::Constructor( (int)((AnimTypeVector *)this->Anim), 0, 0); /*0x771d03*/
+  ((AnimTypeVector *)((int)((AnimTypeVector *)this->Anim)))->Constructor( 0, 0); /*0x771d03*/
   (&this->Anim)[5] = 10; /*0x771d08*/
   (&this->Anim)[4] = 0; /*0x771d0f*/
   (&this->Anim)[0] = (int)&vt_TypeList; /*0x771d12*/
@@ -341,7 +341,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
 } // namespace gamemd
 // 0x772CD0
 namespace gamemd {
-void WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5)
+int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int v4; // ebx
   WeaponTypeClass *v5; // edi
@@ -407,7 +407,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
 }
 // 0x772EB0
 namespace gamemd {
-void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4, void * a5)
+int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int v5; // ebx
   int result; // eax
@@ -575,7 +575,7 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
     {
       if ( Source[0] ) /*0x475cb1*/
         strcat( (char *)(Source), (char *)&::Delimiter); /*0x475cd8*/
-      SampleNameByIndex = VocClass::GetSampleNameByIndex(*v10++); /*0x475ce8*/
+      SampleNameByIndex = ((VocClass *)(*v10++))->GetSampleNameByIndex(); /*0x475ce8*/
       strcat( (char *)(Source), SampleNameByIndex); /*0x475d0d*/
       --v11; /*0x475d14*/
     }

@@ -62,7 +62,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5 = v4; /*0x438eb4*/
     if ( v4 ) /*0x438ebb*/
     {
-      AbstractClass::Constructor(v4); /*0x438ec3*/
+      ((AbstractClass *)v4)->Constructor(); /*0x438ec3*/
       v5[2].vtable3 = 0; /*0x438ecb*/
       v5->vtable1 = (void *)((unsigned int)(&vt_BombClass)); /*0x438ece*/
       v5->vtable1 = &vt_BombClass; /*0x438ed4*/
@@ -1327,7 +1327,7 @@ int AbstractClass::COMStub_Return0_270()
 
 // 0x464A70
 namespace gamemd {
-void AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3)
+int AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3)
 {
   void *v3; // esi
   void *GroundHeight; // eax
@@ -1548,7 +1548,7 @@ namespace gamemd {
 int AbstractClass::loadFromStream(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_1(a1 - 4);
+  return ((HouseClass *)(a1 - 4))->COMStub_Ret1_1();
 
 }
 } // namespace gamemd
@@ -1558,7 +1558,7 @@ namespace gamemd {
 int AbstractClass::computeSize(int a1)
 {
 
-  return HouseClass::COMStub_Ret1_2(a1 - 4);
+  return ((HouseClass *)(a1 - 4))->COMStub_Ret1_2();
 
 }
 } // namespace gamemd

@@ -490,7 +490,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1, void *a2, vo
   if ( /*0x6f1341*/
          ((INIClass*)((INIClass *)aP1))->GetString(/*0x6f1341*/ (uint8_t *)&this->TeamTypeClass_field_24, (uint8_t *)off_81728C, &g_INI_DefaultBuffer, Destination, 128) )
   {
-    v27 = (char *)(TagTypeClass::FindOrCreate((gamemd::ObjectClass *)(Destination))); /*0x6f134e*/
+    v27 = (char *)(((TagTypeClass *)(Destination))->FindOrCreate()); /*0x6f134e*/
   }
   else
   {
@@ -973,7 +973,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
         if ( v14 ) /*0x6f256b*/
         {
           v15 = v14 - 1; /*0x6f2570*/
-          Array::ForEachReverse(v14, 8, *(v14 - 1), (int (*)(int))nullsub_240); /*0x6f257c*/
+          ((Array *)v14)->ForEachReverse( 8, *(v14 - 1), (int (*)(int))nullsub_240); /*0x6f257c*/
           __3_YAXPAX_Z(v15); /*0x6f2582*/
           v4 = a3; /*0x6f2587*/
         }

@@ -27,7 +27,7 @@ int FlyLocomotionClass::LocomotionClass()
 
   int v2; // edx
 
-  ((LocomotionClass *)(LocomotionClass *)this)->Init(); /*0x4cc9a3*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass*)this)->Init(); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
   this->MovingDestination[0] = dword_8B3C78; /*0x4cc9b6*/
   this->MovingDestination[1] = dword_8B3C7C; /*0x4cc9be*/
@@ -230,7 +230,7 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_FlyLocomotionClass;
   *(unsigned int *)(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_FlyLocomotionClass;
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4d03b0*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     __3_YAXPAX_Z(this); /*0x4d03bd*/
   return this->LocomotionClass; /*0x4d03c7*/

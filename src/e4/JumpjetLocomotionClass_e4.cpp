@@ -576,7 +576,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform(unsigned int * a1, float * 
         *a3 = v31; /*0x4b02c4*/
         *a3 = v31 + a1->TurnRate; /*0x4b02cb*/
       }
-      Transform = Turret::GetTransform( (int)((LocomotionClass *)a1), v60, (unsigned int *)(a3)); /*0x4b02d7*/
+      Transform = ((Turret *)((int)((LocomotionClass *)a1)))->GetTransform( v60, (unsigned int *)(a3)); /*0x4b02d7*/
       Transform::Copy(v59, Transform); /*0x4b02e4*/
       ((Matrix3x4*)&v55)->Identity(); /*0x4b02ed*/
       v33 = a1->Accel; /*0x4b02f2*/
@@ -668,7 +668,7 @@ LABEL_51:
   Matrix3D::RotateZ(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x4b017b*/
   if ( a3 ) /*0x4b0185*/
     *a3 = -1; /*0x4b0187*/
-  v19 = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v65, (unsigned int *)(a3)); /*0x4b0197*/
+  v19 = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v65, (unsigned int *)(a3)); /*0x4b0197*/
   Transform::Copy(v58, v19); /*0x4b01a4*/
   ((Matrix3x4*)&v55)->Identity(); /*0x4b01ad*/
   v20 = a1->Accel; /*0x4b01b2*/
@@ -2249,7 +2249,7 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
     Matrix3x3::ApplyCol0(v31.m_Data, v22); /*0x54de83*/
     ((Matrix3x3 *)(v31.m_Data))->RotateX(*(float *)&((unsigned int *)a1)[0]); /*0x54de96*/
     Matrix3D::RotateZ(v31.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x54dea9*/
-    Transform = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v35, (unsigned int *)(a3)); /*0x54deb8*/
+    Transform = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v35, (unsigned int *)(a3)); /*0x54deb8*/
     Transform::Copy(v33, Transform); /*0x54dec5*/
     v16 = MultiplyMatrix3x4(v36, (float *)v32.m_Data, (float *)&v33[0].Transform_field_00); /*0x54dee2*/
     v17 = MultiplyMatrix3x4(v34, v16, (float *)v31.m_Data); /*0x54def5*/
@@ -2258,7 +2258,7 @@ void * JumpjetLocomotionClass::ComputeMovementTransform(signed int a1, float * a
   }
   else
   {
-    v19 = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v34, (unsigned int *)(a3)); /*0x54df29*/
+    v19 = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v34, (unsigned int *)(a3)); /*0x54df29*/
     qmemcpy( (void *)(a2), v19, 0x30u); /*0x54df39*/
     return a2; /*0x54df30*/
   }
@@ -2502,7 +2502,7 @@ void * JumpjetLocomotionClass::ComputeVoxelTransform2(unsigned int * a1, float *
         *a3 = v31; /*0x69f9d4*/
         *a3 = v31 + a1->TurnRate; /*0x69f9db*/
       }
-      Transform = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v60, (unsigned int *)(a3)); /*0x69f9e7*/
+      Transform = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v60, (unsigned int *)(a3)); /*0x69f9e7*/
       Transform::Copy(v59, Transform); /*0x69f9f4*/
       ((Matrix3x4*)&v55)->Identity(); /*0x69f9fd*/
       v33 = a1->Accel; /*0x69fa02*/
@@ -2594,7 +2594,7 @@ LABEL_51:
   Matrix3D::RotateZ(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x69f88b*/
   if ( a3 ) /*0x69f895*/
     *a3 = -1; /*0x69f897*/
-  v19 = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v65, (unsigned int *)(a3)); /*0x69f8a7*/
+  v19 = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v65, (unsigned int *)(a3)); /*0x69f8a7*/
   Transform::Copy(v58, v19); /*0x69f8b4*/
   ((Matrix3x4*)&v55)->Identity(); /*0x69f8bd*/
   v20 = a1->Accel; /*0x69f8c2*/
@@ -2748,7 +2748,7 @@ LABEL_5:
   LinkedTo = ((unsigned int *)a1)[0]; /*0x719c1c*/
   if ( !((unsigned int *)LinkedTo)[0] ) /*0x719c1f*/
   {
-    Mission::GetMissionDelay( (void)((Mission *)LinkedTo)); /*0x719c29*/
+    Mission_e4::GetMissionDelay( (void)((Mission_e4 *)LinkedTo)); /*0x719c29*/
     if ( !((JumpjetLocomotionClass *)(JumpjetLocomotionClass *)((unsigned int *)a1)[0])->StubReturnZero_16() ) /*0x719c31*/
       (*((void (**)(FootClass *, unsigned int, int))((unsigned int *)a1)[0]->vtable1 + 289))(((unsigned int *)a1)[0], 0, 1); /*0x719c43*/
   }
@@ -2877,7 +2877,7 @@ void* * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void *
         v22 = 0.0; /*0x729db2*/
         break; /*0x729db2*/
     }
-    Transform = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v28, (unsigned int *)(a3)); /*0x729dcc*/
+    Transform = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v28, (unsigned int *)(a3)); /*0x729dcc*/
     Transform::Copy(v27, Transform); /*0x729dd9*/
     if ( a3 && *a3 != -1 ) /*0x729de7*/
     {
@@ -2900,7 +2900,7 @@ void* * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void *
     ((Matrix3x4*)&v25)->Identity(); /*0x729ba9*/
     if ( slopeIndex ) /*0x729bb1*/
     {
-      v6 = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v30, (unsigned int *)(a3)); /*0x729bbc*/
+      v6 = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v30, (unsigned int *)(a3)); /*0x729bbc*/
       Transform::Copy(v26, v6); /*0x729bc6*/
       v7 = (float *)CopyAudioData(v29, slopeIndex); /*0x729bd9*/
       v8 = MultiplyMatrix3x4(v28, v7, (float *)&v26[0].Transform_field_00); /*0x729bf1*/
@@ -2909,7 +2909,7 @@ void* * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void *
     }
     else
     {
-      v10 = Turret::GetTransform( (signed int)((LocomotionClass *)a1), v28, (unsigned int *)(a3)); /*0x729c1b*/
+      v10 = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( v28, (unsigned int *)(a3)); /*0x729c1b*/
       Transform::Copy(v26, v10); /*0x729c25*/
       result = a2; /*0x729c2a*/
       qmemcpy(&v25, v26, sizeof(v25)); /*0x729c3a*/
@@ -4495,7 +4495,7 @@ char JumpjetLocomotionClass::IsBridgeBlocking(int a1)
   unsigned int v12[2]; // [esp+10h] [ebp-Ch] BYREF
   int v13; // [esp+18h] [ebp-4h]
 
-  if ( (uint8_t)Team::AllMembersValid( (Team *)((unsigned int *)a1)[0]) ) /*0x516cab*/
+  if ( (uint8_t)((Team *)(((unsigned int *)a1)[0]))->AllMembersValid() ) /*0x516cab*/
   {
     Member = ((Team *)((Team *)((unsigned int *)a1)[0]))->GetMember(0); /*0x516cb9*/
     if ( (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x516cc8*/

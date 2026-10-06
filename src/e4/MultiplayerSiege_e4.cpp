@@ -69,7 +69,7 @@ int MultiplayerSiege::Write(void ** a1)
   wchar_t *v10; // eax
   wchar_t *v11; // eax
 
-  result = ScenarioClass::MissionStubReturnZero2( (MPCooperative *)(&a1->MultiplayerSiege_field_00)); /*0x5ca6d9*/
+  result = ((ScenarioClass *)(&a1->MultiplayerSiege_field_00))->MissionStubReturnZero2(); /*0x5ca6d9*/
   if ( result ) /*0x5ca6e0*/
   {
     v2 = 0; /*0x5ca6ef*/
@@ -195,7 +195,7 @@ LABEL_26:
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
   }
-  ((gamemd::Debug *)this)->Log(); /*0x5ca8d2*/
+  Debug::Log("Assigning Starting Points for Defending house %d (%s)\n"); /*0x5ca8d2 G57c1: IDA 0x5ca8d2 push offset aAssigningStart_0*/
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   ((HouseClass *)(v7))->SetMapSeed(v8); /*0x5ca8e8*/
@@ -204,7 +204,7 @@ LABEL_26:
     v10 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + i); /*0x5ca8fe*/
     if ( !*(unsigned char *)(v10->relatedTagsCapacity + 422) && v10 != v7 ) /*0x5ca910*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x5ca91c*/
+      Debug::Log("Assigning Starting Points for Attacking house %d (%s)\n"); /*0x5ca91c G57c1: IDA 0x5ca91c push offset aAssigningStart_1*/
       v11 = (int *)(*(int (**)(MultiplayerSiege *, char *, int, Multiplayer *, unsigned int *))(this->MultiplayerSiege_field_00 + 196))( /*0x5ca939*/
                      this,
                      &a2,
@@ -381,7 +381,7 @@ MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
 
   this->MultiplayerSiege_field_00 = (int)&vt_MultiplayerSiege; /*0x5cabd3*/
-  MultiplayerGameMode::Dtor( (MultiplayerGameMode *)this); /*0x5cabd9*/
+  ((MultiplayerGameMode *)this)->Dtor(); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(this); /*0x5cabe6*/
 return (gamemd::MultiplayerSiege *)&this->MultiplayerSiege_field_00; /*0x5cabf0*/

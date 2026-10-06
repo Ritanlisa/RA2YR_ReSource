@@ -30,7 +30,7 @@ int AlphaShapeClass::SD_vt13(int a2)
   Power::TimerProcess((int)((*((unsigned int *)this + 10)))); 
   Power::TimerProcess((int)((*((unsigned int *)this + 11)))); 
   Power::TimerProcess((int)((*((unsigned int *)this + 12)))); 
-  return Pow  return Power::TimerProcess((int)((*((unsigned int *)this + 13)))); 
+  return Power::TimerProcess((int)((*((unsigned int *)this + 13)))); 
 
 }
 } // namespace gamemd

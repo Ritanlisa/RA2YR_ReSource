@@ -2394,7 +2394,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
 }
 // 0x6BB390
 namespace gamemd {
-void sub_6BB390()
+int sub_6BB390()
 {
   int v1; // eax
   int v2; // eax
@@ -2498,7 +2498,7 @@ void sub_6BB390()
 }
 // 0x6BB9A0
 namespace gamemd {
-void WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
   HWND WindowA; // eax
   HWND v6; // esi
@@ -3834,7 +3834,7 @@ void WinMain_Setup()
   byte_A8E9A0 = 0; /*0x6be1cc*/
   if ( dword_A8F794 ) /*0x6be1d2*/
   {
-    FileTreeNode::Destroy( (void *a1 =)(dword_A8F794)); /*0x6be1d6*/
+    ((FileTreeNode *)(dword_A8F794))->Destroy(); /*0x6be1d6*/
     RA2_OPDEL(v0); /*0x6be1dc*/
     dword_A8F794 = 0; /*0x6be1e4*/
   }

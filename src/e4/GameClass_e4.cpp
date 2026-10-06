@@ -503,7 +503,7 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
         do /*0x6bed27*/
         {
           v5 -= 9; /*0x6bed1c*/
-          FileTreeNode::Destroy((HWND)(v5)); /*0x6bed21*/
+          ((FileTreeNode *)((HWND)(v5)))->Destroy(); /*0x6bed21*/
           --v6; /*0x6bed26*/
         }
         while ( v6 ); /*0x6bed27*/
@@ -665,7 +665,7 @@ int * GameClass::initDisplay(char a2)
 {
 
   ((Vector *)((int)((unsigned int *)this + 1)))->Clear(); /*0x4aeca6*/
-  Pipe::Dtor( (void *a1 =)((Pipe *)this)); /*0x4aecad*/
+  ((Pipe *)(((Pipe *)this)))->Dtor(); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
     __3_YAXPAX_Z(this); /*0x4aecba*/
   return (int *)this->__pad_0; /*0x4aecc4*/
@@ -760,8 +760,8 @@ PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
     __3_YAXPAX_Z(v3); /*0x63300d*/
   }
   v4->Pipe_field_0x0C = 0; /*0x633017*/
-  Pipe::Dtor(v4); /*0x63301e*/
-  Pipe::Dtor( (void *a1 =)((Pipe *)this)); /*0x633025*/
+  ((Pipe *)v4)->Dtor(); /*0x63301e*/
+  ((Pipe *)(((Pipe *)this)))->Dtor(); /*0x633025*/
   if ( (a2 & 1) != 0 ) /*0x63302f*/
     __3_YAXPAX_Z(this); /*0x633032*/
   return this->__pad_0; /*0x63303c*/
@@ -796,8 +796,8 @@ PKStrawClass * GameClass::applyGameSettings(unsigned int * Block, char a2)
     __3_YAXPAX_Z(v3); /*0x63338d*/
   }
   p_m_14[1].Straw_field_0x04 = 0; /*0x633397*/
-  Straw::Dtor(p_m_14); /*0x63339e*/
-  Straw::Dtor( (void *a1 =)((Straw *)this)); /*0x6333a5*/
+  ((Straw *)p_m_14)->Dtor(); /*0x63339e*/
+  ((Straw *)(((Straw *)this)))->Dtor(); /*0x6333a5*/
   if ( (a2 & 1) != 0 ) /*0x6333af*/
     __3_YAXPAX_Z(this); /*0x6333b2*/
   return this->__pad_0; /*0x6333bc*/

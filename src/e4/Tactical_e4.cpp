@@ -105,7 +105,7 @@ void * Tactical::ConstructTacticalSurface()
   v3 = 3; /*0x42a71b*/
   do /*0x42a73d*/
   {
-    VectorClassUInt::Constructor(0, 0); /*0x42a724*/
+    ((VectorClassUInt *)(0))->Constructor( 0); /*0x42a724*/
     *v2 = (unsigned int)(&vt_DynamicVectorClass); /*0x42a729*/
     v2[5] = 10; /*0x42a72f*/
     v2[4] = 0; /*0x42a736*/
@@ -1103,7 +1103,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 aP4 = *(HWND *)aP4; /*0x693138*/
                 v12 = (int16_t)aP4 - DSurface_ViewBounds.field_0; /*0x693148*/
                 v13 = SHIWORD(aP4) - (unsigned int)DSurface_ViewBounds.field_4; /*0x693150*/
-                LOBYTE(v5) = Tactical::MouseOver( (MouseClass *)(&v12), (MouseClass *)(&v10), v14, (MouseClass *)(&a2), (MouseClass *)((bool *)&aP4), v11); /*0x693170*/
+                LOBYTE(v5) = ((Tactical *)(&v12))->MouseOver( (MouseClass *)(&v10), v14, (MouseClass *)(&a2), (MouseClass *)((bool *)&aP4), v11); /*0x693170*/
                 if ( (unsigned char)v5 ) /*0x693177*/
                 {
                   LOBYTE(v5) = HandlePlanningModeClick(v12, v13); /*0x693187*/
@@ -1130,7 +1130,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 LOBYTE(v5) = ScriptAction::HitTest(v12, v13); /*0x693225*/
                 if ( !(unsigned char)v5 && *((unsigned char *)this + 21850) ) /*0x693232*/
                 {
-                  Tactical::MouseOver( (MouseClass *)(&v12), (MouseClass *)(&v10), v14, (MouseClass *)(&a2), (MouseClass *)((bool *)&aP4), v11); /*0x69325e*/
+                  ((Tactical *)(&v12))->MouseOver( (MouseClass *)(&v10), v14, (MouseClass *)(&a2), (MouseClass *)((bool *)&aP4), v11); /*0x69325e*/
                   v8 = Radar::ScanWaypoints( (int)&v10, (MouseClass *)(a2), 0); /*0x693271*/
                   PlayerClass::ExecuteCommand((DisplayClass *)&stru_87F5F0.__pad_58[416], (int)v14, &v10, a2, v8, 0); /*0x69328b*/
                   *((unsigned char *)this + 21850) = 0; /*0x693290*/
@@ -1144,7 +1144,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                 LOBYTE(v5) = UI_Handle(v12, v13); /*0x6932d0*/
                 if ( !*((unsigned char *)this + 21850) ) /*0x6932d5*/
                 {
-                  LOBYTE(v5) = Tactical::MouseOver( (MouseClass *)(&v12), (MouseClass *)(&v10), v14, (MouseClass *)(&a2), (MouseClass *)((bool *)&aP4), v11); /*0x693301*/
+                  LOBYTE(v5) = ((Tactical *)(&v12))->MouseOver( (MouseClass *)(&v10), v14, (MouseClass *)(&a2), (MouseClass *)((bool *)&aP4), v11); /*0x693301*/
                   if ( (unsigned char)v5 ) /*0x693308*/
                   {
                     if ( !((unsigned int *)&stru_A8EB00)[440] ) /*0x693314*/

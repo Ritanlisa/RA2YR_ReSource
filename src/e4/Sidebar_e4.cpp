@@ -116,7 +116,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
     if ( !a5 || !(*(int (**)(int, int, unsigned int, int, int))(*(unsigned int *)v9 + 148))(v9, 1, 0, 1, this) ) /*0x4fa45b*/
     {
 LABEL_40:
-      Debug::Log(); /*0x4fa533*/
+      Debug::Log("Request to Begin_Production of '%s' was rejected. Cannot queue buildings.\n"); /*0x4fa533 G57c1: IDA 0x4fa53c push offset aRequestToBegin_1*/
       return (gamemd::AbstractClass **)(3); /*0x4fa550*/
     }
     v24 = 1; /*0x4fa465*/
@@ -226,21 +226,21 @@ LABEL_55:
   }
   if ( ((FactoryClass *)v10)->DemandProduction( v9, (void *)this, a5) ) /*0x4fa5d1*/
     goto LABEL_55; /*0x4fa5df*/
-  Debug::Log(); /*0x4fa6c4*/
+  Debug::Log("Request to Begin_Production of '%s' was rejected. Factory was unable to create the requested object\n"); /*0x4fa6c4 G57c1: IDA 0x4fa6c4 push offset aRequestToBegin_2*/
   if ( *(unsigned int *)(v10 + 80) || *(unsigned int *)(v10 + 88) ) /*0x4fa6d9*/
     return (gamemd::AbstractClass **)(3); /*0x4fa807*/
-  Debug::Log(); /*0x4fa6ec*/
-  Debug::Log(); /*0x4fa6fc*/
-  Debug::Log(); /*0x4fa70a*/
+  Debug::Log("type=%d\n"); /*0x4fa6ec G57c1: IDA 0x4fa6ec push offset aTypeD*/
+  Debug::Log("Frame == %d\n"); /*0x4fa6fc G57c1: IDA 0x4fa6fc push offset aFrameD_1*/
+  Debug::Log("fptr->QueuedObjects.Count() == %d\n"); /*0x4fa70a G57c1: IDA 0x4fa70a push offset unk_824828*/
   v19 = *(unsigned int *)(v10 + 88); /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
     (*(void (**)(int))(*(unsigned int *)v19 + 44))(v19); /*0x4fa71b*/
-  Debug::Log(); /*0x4fa729*/
+  Debug::Log("Object->RTTI == %d\n"); /*0x4fa729 G57c1: IDA 0x4fa729 push offset aObjectRttiD*/
   v20 = *(unsigned int *)(v10 + 88); /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
     (*(void (**)(int))(*(unsigned int *)v20 + 64))(v20); /*0x4fa73a*/
-  Debug::Log(); /*0x4fa748*/
-  Debug::Log(); /*0x4fa758*/
+  Debug::Log("Object->HeapID == %d\n"); /*0x4fa748 G57c1: IDA 0x4fa748 push offset aObjectHeapidD*/
+  Debug::Log("IsSuspended\t= %d\n"); /*0x4fa758 G57c1: IDA 0x4fa758 push offset aIssuspendedD*/
   (*(void (**)(int, int))(*(unsigned int *)v10 + 32))(v10, 1); /*0x4fa76a*/
   switch ( (unsigned int)v23 ) /*0x4fa782*/
   {
@@ -869,7 +869,7 @@ LABEL_25:
 }
 // 0x6A9540
 namespace gamemd {
-void Sidebar_UpdateProductionDisplay(void * a1, void * a3)
+int Sidebar_UpdateProductionDisplay(void * a1, void * a3)
 {
   char result; // al
   IUnknown *v6; // ebx
@@ -1720,7 +1720,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, v
   *(unsigned int *)&v8[52 * v7 + 100] = aP1; /*0x6a61fa*/
   v8[61] = 1; /*0x6a61fe*/
   v8[60] = 1; /*0x6a6202*/
-  MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 0); /*0x6a620b*/
+  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 0); /*0x6a620b*/
   return 1; /*0x6a61e6*/
 
 }

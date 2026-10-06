@@ -539,7 +539,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
       }
     }
   }
-  ((UDPInterfaceClass*)this)->connect(); /*0x7b2f04*/
+  ((gamemd::UDPInterfaceClass*)this)->connect(); /*0x7b2f04*/
   v8 = (void *)*((unsigned int *)this + 64853); /*0x7b2f09*/
   *((unsigned int *)this + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b2f0f*/
   if ( v8 && *((unsigned char *)this + 259421) ) /*0x7b2f1d*/
@@ -814,7 +814,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v21 = (void *)((int)(v5));
   if ( *((unsigned short *)(unsigned int)(this->AbstractClass)+ v5) == 13 ) /*0x7b7c62*/
   {
-    v10 = ((unsigned int)(void)*)((int)(v5 + 1));
+    v10 = (unsigned int)(void *)((int)(v5 + 1));
     if ( v9[v10] == 10 ) /*0x7b7c6a*/
       v21 = v10; /*0x7b7c6c*/
   }
@@ -888,7 +888,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b954c*/
-    ((gamemd::Debug *)this)->Log(); /*0x7b955d*/
+    Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b955d G57c1: IDA 0x7b955d push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
   if ( (uint8_t)((BSurface *)((int)this))->CreateTripleBuffer() && this->occupant ) /*0x7b9574*/
   {
     v2 = 0; /*0x7b9585*/
@@ -898,7 +898,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     if ( ((unsigned int *)this)[0] ) /*0x7b957f*/
     {
       if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b95a8*/
-        ((gamemd::Debug *)this)->Log(); /*0x7b95b9*/
+        Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b95b9 G57c1: IDA 0x7b95b9 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
       FoundationSize = (int *)(Building::GetFoundationSize(v21, (unsigned int)((unsigned int *)this)[0])); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
       abstractFlags = ((unsigned int *)this)[0]; /*0x7b95d4*/
@@ -1110,15 +1110,15 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
     }
     v9 = v25[0]; /*0x7bc137*/
   }
-  v23 = CellStruct::Copy( (void *)(aP2), v26); /*0x7bc14f*/
-  v16 = (Coord2D *)CellStruct::Copy(v10, v27); /*0x7bc154*/
+  v23 = ((CellStruct *)(aP2))->Copy( v26); /*0x7bc14f*/
+  v16 = (Coord2D *)((CellStruct *)v10)->Copy( v27); /*0x7bc154*/
   v17 = ((Coord2D *)(v16))->Add(v25, v23); /*0x7bc15b*/
   v18 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v9 + 92))(v9, *v17, v17[1]); /*0x7bc173*/
   *a7 = v18; /*0x7bc17c*/
   if ( !v18 ) /*0x7bc17e*/
     return 0; /*0x7bc17e*/
-  v24 = CellStruct::Copy( (void *)(aP5), v27); /*0x7bc190*/
-  v19 = (Coord2D *)CellStruct::Copy( (void *)(a4), v25); /*0x7bc19b*/
+  v24 = ((CellStruct *)(aP5))->Copy( v27); /*0x7bc190*/
+  v19 = (Coord2D *)((CellStruct *)(a4))->Copy( v25); /*0x7bc19b*/
   v20 = ((Coord2D *)(v19))->Add(v26, v24); /*0x7bc1a2*/
   v21 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)arg4 + 92))(arg4, *v20, v20[1]); /*0x7bc1bc*/
   *a8 = v21; /*0x7bc1c5*/

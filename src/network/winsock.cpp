@@ -218,64 +218,64 @@ bool IPXInterfaceClass::Bind(uint32_t network, const uint8_t node[6], uint16_t s
       return result; /*0x7b10d7*/
   }
   *((unsigned int *)network + 64707) = sock; /*0x7b10fd*/
-  Debug::Log(); /*0x7b1103*/
+  Debug::Log("IPX Socket number is %04x\n"); /*0x7b1103 G57c1: IDA 0x7b1103 push offset aIpxSocketNumbe*/
   *(unsigned int *)&name.sa_data[4] = -1; /*0x7b110e*/
   name.sa_family = 6; /*0x7b1112*/
   *(unsigned int *)name.sa_data = 0; /*0x7b111a*/
   *(unsigned short *)&name.sa_data[8] = -1; /*0x7b1122*/
   *(unsigned short *)&name.sa_data[10] = htons(sock); /*0x7b1131*/
-  Debug::Log(); /*0x7b1136*/
+  Debug::Log("About to create an IPX socket\n"); /*0x7b1136 G57c1: IDA 0x7b1136 push offset aAboutToCreateA*/
   v4 = socket(6, 2, 1000); /*0x7b1147*/
   *((unsigned int *)network + 64539) = v4; /*0x7b114f*/
   if ( v4 == -1 ) /*0x7b1156*/
   {
     WSAGetLastError(); /*0x7b1158*/
-    Debug::Log(); /*0x7b1163*/
+    Debug::Log("Failed to create IPX socket - error code %d.\n"); /*0x7b1163 G57c1: IDA 0x7b1163 push offset aFailedToCreate_5*/
     closesocket(*((unsigned int *)network + 64539)); /*0x7b1172*/
     return 0; /*0x7b1177*/
   }
   else
   {
-    Debug::Log(); /*0x7b1185*/
+    Debug::Log("IPX Socket created OK\n"); /*0x7b1185 G57c1: IDA 0x7b1185 push offset aIpxSocketCreat*/
     if ( ((IPXInterfaceClass*)network)->initSocket(*((unsigned int *)network + 64702), (int)&name) ) /*0x7b119b*/
     {
-      Debug::Log(); /*0x7b1236*/
+      Debug::Log("IPX net card address is %02x %02x %02x %02x : %02x %02x %02x %02x %02x %02x\n"); /*0x7b1236 G57c1: IDA 0x7b1236 push offset aIpxNetCardAddr*/
       v5 = *(unsigned short *)&name.sa_data[8]; /*0x7b123f*/
       *(unsigned int *)((char *)network + 258822) = *(unsigned int *)&name.sa_data[4]; /*0x7b124f*/
       *((unsigned short *)network + 129413) = v5; /*0x7b1251*/
-      Debug::Log(); /*0x7b1255*/
+      Debug::Log("About to bind IPX Socket\n"); /*0x7b1255 G57c1: IDA 0x7b1255 push offset aAboutToBindIpx*/
       if ( bind(*((unsigned int *)network + 64539), &name, 16) == -1 ) /*0x7b1273*/
       {
         WSAGetLastError(); /*0x7b1275*/
-        Debug::Log(); /*0x7b1280*/
+        Debug::Log("IPX socket bind failed with error code %d.\n"); /*0x7b1280 G57c1: IDA 0x7b1280 push offset aIpxSocketBindF*/
         closesocket(*((unsigned int *)network + 64539)); /*0x7b128f*/
         return 0; /*0x7b1294*/
       }
       else
       {
-        Debug::Log(); /*0x7b12a2*/
+        Debug::Log("IPX Socket bound OK\n"); /*0x7b12a2 G57c1: IDA 0x7b12a2 push offset aIpxSocketBound*/
         *(unsigned int *)optval = 1; /*0x7b12ac*/
         *(unsigned int *)v6 = 4; /*0x7b12b4*/
-        Debug::Log(); /*0x7b12bc*/
+        Debug::Log("About to set IPX socket option SO_BROADCAST\n"); /*0x7b12bc G57c1: IDA 0x7b12bc push offset aAboutToSetIpxS*/
         if ( setsockopt(*((unsigned int *)network + 64539), 0xFFFF, 32, optval, 4) == -1 ) /*0x7b12e1*/
           WSAGetLastError(); /*0x7b12e3*/
-        Debug::Log(); /*0x7b12ee*/
-        Debug::Log(); /*0x7b130a*/
+        Debug::Log("Failed to set IPX socket option SO_BROADCAST - error code %d.\n"); /*0x7b12ee G57c1: IDA 0x7b12ee push offset aFailedToSetIpx*/
+        Debug::Log("About to set IPX socket option IPX_PTYPE\n"); /*0x7b130a G57c1: IDA 0x7b130a push offset aAboutToSetIpxS_0*/
         if ( setsockopt(*((unsigned int *)network + 64539), 1000, 0x4000, v6, 4) == -1 ) /*0x7b1332*/
           WSAGetLastError(); /*0x7b1334*/
-        Debug::Log(); /*0x7b133f*/
-        Debug::Log(); /*0x7b135b*/
+        Debug::Log("Failed to set IPX protocol option IPX_PTYPE - error code %d.\n"); /*0x7b133f G57c1: IDA 0x7b133f push offset aFailedToSetIpx_0*/
+        Debug::Log("About to set IPX socket option IPX_FILTERTYPE\n"); /*0x7b135b G57c1: IDA 0x7b135b push offset aAboutToSetIpxS_1*/
         if ( setsockopt(*((unsigned int *)network + 64539), 1000, 16385, v6, 4) == -1 ) /*0x7b1383*/
           WSAGetLastError(); /*0x7b1385*/
-        Debug::Log(); /*0x7b1390*/
+        Debug::Log("Failed to set IPX protocol option IPX_FILTERTYPE - error code %d.\n"); /*0x7b1390 G57c1: IDA 0x7b1390 push offset aFailedToSetIpx_1*/
         ((Socket*)(WinsockInterfaceClass *)network)->ConfigureBuffers(0xFFFFFFFF); /*0x7b13ab*/
-        Debug::Log(); /*0x7b13b5*/
+        Debug::Log("IPX Socket init complete\n"); /*0x7b13b5 G57c1: IDA 0x7b13b5 push offset aIpxSocketInitC*/
         return 1; /*0x7b13bd*/
       }
     }
     else
     {
-      Debug::Log(); /*0x7b11a9*/
+      Debug::Log("IPX Error - failed to get the net card address\n"); /*0x7b11a9 G57c1: IDA 0x7b11a9 push offset aIpxErrorFailed*/
       closesocket(*((unsigned int *)network + 64539)); /*0x7b11b8*/
       return 0; /*0x7b11bd*/
     }

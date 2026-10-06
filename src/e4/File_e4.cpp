@@ -305,7 +305,7 @@ LABEL_14:
         }
         while ( (*(int (**)(int, unsigned char *, int))(*(unsigned int *)v3 + 36))(v3, v15, 48) == 48 ) /*0x5bd69d*/
         {
-          v9 = (const void *)Matrix::Copy12Float((int)(v15)); /*0x5bd6a8*/
+          v9 = (const void *)((Matrix *)((int)(v15)))->Copy12Float(); /*0x5bd6a8*/
           v10 = (void *)(*((unsigned int *)this + 3) + 48 * (v8 + v11 * *((unsigned int *)this + 1))); /*0x5bd6c7*/
           ++v8; /*0x5bd6c9*/
           qmemcpy(v10, v9, 0x30u); /*0x5bd6ca*/
@@ -476,11 +476,11 @@ LABEL_42:
     while ( v18 == 1279413280 ) /*0x734a12*/
     {
       ((CCFileClass *)(&v23))->Read(&v20, 4); /*0x734a23*/
-      CCFileClass::Read(&v23, &Size, 4); /*0x734a33*/
+      ((CCFileClass *)(&v23))->Read( &Size, 4); /*0x734a33*/
       v2 = Size; /*0x734a38*/
       if ( Size ) /*0x734a3e*/
       {
-        CCFileClass::Read(&v23, byte_B1BF38, Size); /*0x734a4a*/
+        ((CCFileClass *)(&v23))->Read( byte_B1BF38, Size); /*0x734a4a*/
         v2 = Size; /*0x734a4f*/
       }
       v3 = (char *)dword_B1CF74; /*0x734a53*/
@@ -498,14 +498,14 @@ LABEL_42:
         v6 = 4 * v4; /*0x734ac3*/
         do /*0x734c79*/
         {
-          CCFileClass::Read(&v23, &v18, 4); /*0x734ad5*/
+          ((CCFileClass *)(&v23))->Read( &v18, 4); /*0x734ad5*/
           if ( v18 != 1398034976 && v18 != 1398035031 ) /*0x734aea*/
             goto LABEL_43; /*0x734aea*/
-          CCFileClass::Read(&v23, &Size, 4); /*0x734afb*/
+          ((CCFileClass *)(&v23))->Read( &Size, 4); /*0x734afb*/
           v7 = Size; /*0x734b00*/
           if ( Size ) /*0x734b06*/
           {
-            CCFileClass::Read(&v23, dword_B17F24, 2 * Size); /*0x734b15*/
+            ((CCFileClass *)(&v23))->Read( dword_B17F24, 2 * Size); /*0x734b15*/
             v7 = Size; /*0x734b1a*/
           }
           (&dword_B17F24)[v7] = 0; /*0x734b1e*/
@@ -565,11 +565,11 @@ LABEL_31:
           wcscpy(*(wchar_t **)((char *)dword_B1CF78 + v6),(const wchar_t *)(dword_B17F24)); /*0x734be3*/
           if ( v18 == 1398035031 ) /*0x734bf4*/
           {
-            CCFileClass::Read(&v23, &Size, 4); /*0x734c01*/
+            ((CCFileClass *)(&v23))->Read( &Size, 4); /*0x734c01*/
             v15 = Size; /*0x734c06*/
             if ( Size ) /*0x734c0c*/
             {
-              CCFileClass::Read(&v23, byte_B1BF38, Size); /*0x734c18*/
+              ((CCFileClass *)(&v23))->Read( byte_B1BF38, Size); /*0x734c18*/
               v15 = Size; /*0x734c1d*/
             }
             (&byte_B1BF38)[v15] = 0; /*0x734c23*/
@@ -589,7 +589,7 @@ LABEL_31:
       v1 += 40; /*0x734c87*/
       v21 = v1; /*0x734c97*/
       v19 += v5; /*0x734c9b*/
-      if ( CCFileClass::Read(&v23, &v18, 4) != 4 ) /*0x734ca7*/
+      if ( ((CCFileClass *)(&v23))->Read( &v18, 4) != 4 ) /*0x734ca7*/
         goto LABEL_42; /*0x734ca7*/
     }
   }

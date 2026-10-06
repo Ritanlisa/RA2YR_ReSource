@@ -710,7 +710,7 @@ LABEL_24:
         v2[127].abstractFlags = v12; /*0x55b1c1*/
         *p_vtable3 = (void *)-1; /*0x55b1c4*/
       }
-      MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 2); /*0x55b1cd*/
+      ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x55b1cd*/
       v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b1d2*/
     }
   }
@@ -850,7 +850,7 @@ LABEL_69:
     v37[378].vtable1 = v38; /*0x55b4ae*/
     HIBYTE((&dword_A8B230)[374].uniqueId) = 1; /*0x55b4ba*/
     MapClass::UpdateLightingPostProcess(); /*0x55b4c6*/
-    MapClass::MarkForRedraw( (int)((GScreenClass *)&stru_87F5F0.__pad_58[416]), 1); /*0x55b4d2*/
+    ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 1); /*0x55b4d2*/
   }
 LABEL_71:
   UpdateAudioTriggers(v55); /*0x55b4d7*/
@@ -1051,14 +1051,14 @@ int Scenario::LoadWithProgress(double a2)
     BYTE1(dword_A8B230[375].vtable0) = 0; /*0x6846be*/
   else
     BYTE1(dword_A8B230[375].vtable0) = 1; /*0x6846aa*/
-  Debug::Log(); /*0x6846c5*/
+  Debug::Log("Scen->IsRandom = false\n"); /*0x6846c5 G57c1: IDA 0x6846c5 push offset aScenIsrandomFa*/
   v29 = 0; /*0x6846d4*/
   if ( !byte_A8ED6B ) /*0x6846d8*/
   {
     v2 = 1; /*0x6846eb*/
     if ( *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x6846f2*/
       v2 = dword_A8DA84; /*0x6846f4*/
-    ProgressAnim::Init((int)&dword_AC4F58, 0, 1079574528, v2, 0); /*0x684706*/
+    ((ProgressAnim *)((int)&dword_AC4F58))->Init( 0, 1079574528, v2, 0); /*0x684706*/
     v3 = 0; /*0x684710*/
     if ( *(unsigned int *)&dword_A8B238 == 4 && *(unsigned int *)dword_B779C4 ) /*0x68471c*/
     {
@@ -1107,7 +1107,7 @@ int Scenario::LoadWithProgress(double a2)
     {
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8DA84 > 1 ) /*0x684865*/
       {
-        Debug::Log(); /*0x684870*/
+        Debug::Log("Setting addresses for UDP broadcast\n"); /*0x684870 G57c1: IDA 0x684870 push offset aSettingAddress*/
         (*(void (**)(unsigned int *))(*dword_887628 + 48))( (unsigned int *)(dword_887628)); /*0x684880*/
         strcpy(Buffer, "xxx.xxx.xxx.xxx"); /*0x68489a*/
         v33 = 0; /*0x6848a3*/
@@ -1243,7 +1243,7 @@ int Scenario::LoadWithProgress(double a2)
 }
 // 0x685670
 namespace gamemd {
-void Scenario_EndGameFlow()
+int Scenario_EndGameFlow()
 {
   char v1; // bl
   AsyncIO *v2; // edi
@@ -1301,7 +1301,7 @@ void Scenario_EndGameFlow()
     g_DSurface_Hidden,
     0);
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50))(stru_887598.lineTrailer);  /*0x6856f3*/
-  Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6856ff*/
+  Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6856ff*/
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x68570c*/
   ((Audio *)(Audio *)g_MixerState)->GetFlag(); /*0x685715*/
   ((Audio *)(Audio *)g_MixerState)->WaitForCallback(); /*0x685720*/
@@ -1527,7 +1527,7 @@ void Scenario_EndGameFlow()
 }
 // 0x685DC0
 namespace gamemd {
-void Scenario_EndGame()
+int Scenario_EndGame()
 {
   AsyncIO *v1; // edi
   double v2; // st7
@@ -1586,7 +1586,7 @@ void Scenario_EndGame()
     g_DSurface_Hidden,
     0);
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50))(stru_887598.lineTrailer);  /*0x685e43*/
-  Mission::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x685e4f*/
+  Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x685e4f*/
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x685e5c*/
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[35] /*0x685e7b*/
     && *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] )

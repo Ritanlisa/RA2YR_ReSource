@@ -149,7 +149,7 @@ void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
   *(unsigned int *)this->ConnectionClass = (unsigned int)&vt_NullModemClass;
   if ( v3 ) /*0x5f365f*/
   {
-    FileFind::Close(v3); /*0x5f3663*/
+    ((FileFind *)v3)->Close(); /*0x5f3663*/
     __3_YAXPAX_Z(v3); /*0x5f3669*/
   }
   ((ObjectClass *)((ObjectClass *)this))->FreeResources(); /*0x5f3673*/
@@ -193,7 +193,7 @@ int NullModemClass::sendData()
   struct _COMSTAT Stat; // [esp+14h] [ebp-28h] BYREF
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
-  ((gamemd::Debug *)this)->Log(); /*0x77467d*/
+  Debug::Log("WinModemClass - Entering failsafe mode\n"); /*0x77467d G57c1: IDA 0x77467d push offset aWinmodemclassE*/
   PurgeComm(*((HANDLE *)this + 23), 0xFu); /*0x77468b*/
   ResetEvent(*((HANDLE *)this + 14)); /*0x77469b*/
   ResetEvent(*((HANDLE *)this + 19)); /*0x7746a1*/
@@ -210,13 +210,13 @@ int NullModemClass::sendData()
     *((unsigned int *)&DCB + 2) = *((unsigned int *)&DCB + 2) & 0xFFFF88C0 | 0x1011; /*0x7746ec*/
     if ( !SetCommState(v2, &DCB) ) /*0x7746f0*/
     {
-      ((gamemd::Debug *)this)->Log(); /*0x774700*/
+      Debug::Log("SetCommState returned error %s.\n"); /*0x774700 G57c1: IDA 0x774700 push offset g_Str_Trace_SetCommState_returned_error__s_*/
       return 0; /*0x774710*/
     }
   }
   else
   {
-    ((gamemd::Debug *)this)->Log(); /*0x774717*/
+    Debug::Log("GetCommState returned error %s.\n"); /*0x774717 G57c1: IDA 0x774717 push offset aGetcommstateRe*/
   }
   GetCommMask(*((HANDLE *)this + 23), &EvtMask); /*0x774728*/
   (*(void (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774734*/
@@ -224,7 +224,7 @@ int NullModemClass::sendData()
   if ( !EscapeCommFunction(*((HANDLE *)this + 23), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
-    ((gamemd::Debug *)this)->Log(); /*0x77475b*/
+    Debug::Log("Enter_Failsafe_Mode - EscapeCommFunction failed to set state of RTS line. Error code %d, %s\n"); /*0x77475b G57c1: IDA 0x77475b push offset aEnterFailsafeM*/
   }
   if ( ClearCommError(*((HANDLE *)this + 23), &Errors, &Stat) ) /*0x774771*/
   {
@@ -254,7 +254,7 @@ int NullModemClass::receiveData()
   DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
-  ((gamemd::Debug *)this)->Log(); /*0x7747cd*/
+  Debug::Log("WinModemClass - Leaving failsafe mode\n"); /*0x7747cd G57c1: IDA 0x7747cd push offset aWinmodemclassL*/
   PurgeComm(*((HANDLE *)this + 23), 0xFu); /*0x7747db*/
   ResetEvent(*((HANDLE *)this + 14)); /*0x7747eb*/
   ResetEvent(*((HANDLE *)this + 19)); /*0x7747f1*/
@@ -262,11 +262,11 @@ int NullModemClass::receiveData()
   *((unsigned char *)this + 80) = 0; /*0x774800*/
   *((unsigned char *)this + 81) = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)((char *)this + 8300)) ) /*0x774806*/
-    ((gamemd::Debug *)this)->Log(); /*0x774816*/
+    Debug::Log("SetCommState returned error %s.\n"); /*0x774816 G57c1: IDA 0x774816 push offset g_Str_Trace_SetCommState_returned_error__s_*/
   if ( !EscapeCommFunction(*((HANDLE *)this + 23), 3u) ) /*0x774824*/
   {
     GetLastError(); /*0x77482f*/
-    ((gamemd::Debug *)this)->Log(); /*0x77483b*/
+    Debug::Log("Leave_Failsafe_Mode - EscapeCommFunction failed to set state of RTS line. Error code %d, %s\n"); /*0x77483b G57c1: IDA 0x77483b push offset aLeaveFailsafeM*/
   }
   if ( ClearCommError(*((HANDLE *)this + 23), &Errors, &Stat) ) /*0x774851*/
   {

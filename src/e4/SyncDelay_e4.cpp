@@ -21,7 +21,7 @@ namespace gamemd {
 signed int SyncDelay::Start(void *a1, void *a2)
 {
 
-  DDraw *v1; // edi
+  gamemd::DDraw *v1; // edi
   int v2; // ecx
   int v3; // esi
   int Ticks; // eax
@@ -123,7 +123,7 @@ LABEL_19:
   }
   if ( v12 ) /*0x55e2d6*/
   {
-    ((DDraw *)(gamemd::DDraw *)(v1))->WaitForIdle(); /*0x55e2d8*/
+    ((gamemd::DDraw*)(gamemd::DDraw *)(v1))->WaitForIdle(); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/

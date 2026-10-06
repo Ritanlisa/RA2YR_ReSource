@@ -307,7 +307,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
 
-  MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
+  ((MultiplayerGameMode *)this)->Construct( a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
   *(unsigned int *)this->MPGameModeClass = (unsigned int)&vt_UnholyAlliance;
   return this->MPGameModeClass; /*0x5cb3d0*/
 

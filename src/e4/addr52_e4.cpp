@@ -845,7 +845,7 @@ void InitGame()
   char Buffer[200]; // [esp+678h] [ebp-28C8h] BYREF
   INIClass Source[160]; // [esp+740h] [ebp-2800h] BYREF
 
-  Debug::Log();
+  Debug::Log("Init Game\n") /*G57c1: IDA 0x52ba73 push offset aInitGame*/;
   int v0 = operator new(0x3740u);
   int v1 = 0;
   if ( !v0 )
@@ -857,7 +857,7 @@ void InitGame()
   if ( !*(unsigned int *)&(&HouseClass_Player)[29924 )
   {
 LABEL_3:
-    Debug::Log();
+    Debug::Log("Failed to instantiate Scenario!\n") /*G57c1: IDA 0x52baa0 push offset aFailedToInstan*/;
     return -1;
   }
   v3 = (RulesClass *)new RulesClass;
@@ -869,7 +869,7 @@ LABEL_3:
   *(unsigned int *)&(&stru_87C374)[44652 = RulesClass::RulesClass(v3);
   if ( !*(unsigned int *)&(&stru_87C374)[44652 )
     goto LABEL_3;
-  Debug::Log();
+  Debug::Log("Bootstrap.....") /*G57c1: IDA 0x52bb07 push offset aBootstrap*/;
   if ( !g_Is16BitMode )
     FadePalette(&(&stru_87C374)[35596, 0, 0);
   if ( (&stru_89E138)[616] == 1 )
@@ -882,7 +882,7 @@ LABEL_3:
   ((TextBuffer *)TextBufferEntry)->Init();
   if ( !MixFileClass::Bootstrap() )
   {
-    Debug::Log();
+    Debug::Log("Failed to initialize bootstrap mixfiles!\n") /*G57c1: IDA 0x52bb72 push offset aFailedToInitia*/;
     Debug::Log_0();
     return -1;
   }
@@ -976,7 +976,7 @@ LABEL_3:
                                                  0);
   else
     *(unsigned int *)&stru_87C374[13124] = 0;
-  Array::ForEach((AbstractClass *)a0, 3, (IUnknown *)0x100, (int (*)(int))Struct::Zero3);
+  ((Array *)a0)->ForEach( 3, (IUnknown *)0x100, (int (*)(int))Struct::Zero3);
   IDA_LOBYTE(edx30) = 0;
   v27 = (AbstractClass *)SearchMIXFile( (char *)(&g_Str_File_MOUSE_SHA[84]), edx30);
   memcpy(a0, v27, sizeof(a0));
@@ -1170,7 +1170,7 @@ LABEL_3:
       *(unsigned int *)&stru_B05488[26728],
       0);
   }
-  Mission::SetAndCall( (int)((int *)&stru_87C374[13428]), 0, 0);
+  Mission_e4::SetAndCall( (int)((int *)&stru_87C374[13428]), 0, 0);
   Event::Dispatch();
   Debug::Log();
   if ( !*(unsigned int *)&stru_89E138[728] )
@@ -1872,7 +1872,7 @@ LABEL_2:
     int v8 = i + *(unsigned int *)&HouseClass_Player[38972];
     *(unsigned int *)&HouseClass_Player[21864][4 * v8 + 16264] = -1;
   }
-  Mission::SetAndCall( (int)((int *)&stru_87C374[13428]), 0, 0);
+  Mission_e4::SetAndCall( (int)((int *)&stru_87C374[13428]), 0, 0);
   if ( *(unsigned int *)&stru_87C374[45044] )
     ((Tooltip *)(*(void **)&stru_87C374[45044]))->Enable(0);
   if ( *(unsigned int *)&HouseClass_Player[29932] )
@@ -2303,7 +2303,7 @@ LABEL_189:
           ((MouseClass *)(&stru_87C374[13428]))->GetPosition();
           if ( !HouseClass_Player[45087] )
             TacticalClass::BuildCommandBar(&stru_87C374[13428], j, 1);
-          MapClass::MarkForRedraw( (int)(&stru_87C374[13428]), 0);
+          ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw( 0);
           Event::Dispatch();
           (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
           ChatMessageWOL(0, (wchar_t *)&stru_87C374[46016]);
@@ -2321,7 +2321,7 @@ LABEL_183:
   unsigned int v61[14]; // [esp+32h] [ebp-F4h] BYREF
         Options = LoadOptions::LoadOptions(v61);
         char v25 = LoadOptions::Run(Options);
-        LoadOptions::Cleanup(v61);
+        ((LoadOptions *)v61)->Cleanup();
         if ( v25 )
         {
           v55 = 1;
@@ -3333,7 +3333,7 @@ INT_PTR ReadModConfigINI(HWND hDlg, UINT a2, WPARAM a3, int * a4)
     }
     else if ( a2 == 534 ) /*0x52d51d*/
     {
-      return (uint8_t)Window::ClampToScreen( (int *)(a4)); /*0x52d546*/
+      return (uint8_t)((Window *)(a4))->ClampToScreen(); /*0x52d546*/
     }
     return 0; /*0x52d51d*/
   }

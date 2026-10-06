@@ -66,7 +66,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 
   v3 = (IStream *)pPStm; /*0x4af806*/
   v4 =(gamemd::DriveLocomotionClass *)a1; /*0x4af80b*/
-  IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4af817*/
+  IPersistStream = LoadIPersistStream((gamemd::LocomotionClass*)a1, pPStm, a3); /*0x4af817*/
   if ( IPersistStream < 0 ) /*0x4af81b*/
     return IPersistStream; /*0x4af81b*/
   if ( !v4->Piggybackee ) /*0x4af826*/
@@ -146,7 +146,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
   Piggybackee = this->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
-  ((LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4b4d26*/
+  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Construct(); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
     __3_YAXPAX_Z(this); /*0x4b4d33*/
   return this->LocomotionClass; /*0x4b4d3d*/

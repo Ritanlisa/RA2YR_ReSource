@@ -199,7 +199,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   do /*0x7702b6*/
   {
     unknown_libname_73(v4); /*0x770289*/
-    Array::ForEach(v5, 24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
+    ((Array *)v5)->ForEach( 24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
     ((String *)(v4))->Assign_Alt((const char *)(&g_INI_DefaultBuffer)); /*0x7702a4*/
     v4 += 37; /*0x7702a9*/
     v5 += 148; /*0x7702af*/
@@ -269,10 +269,10 @@ int WinsockInterface::Init()
   unsigned char ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
   char v14; // [esp+28h] [ebp-FE8h] BYREF
 
-  Debug::Log(); /*0x7b1df3*/
+  Debug::Log("WinsockInterface init.\n"); /*0x7b1df3 G57c1: IDA 0x7b1df3 push offset aWinsockinterfa_0*/
   if ( LOBYTE(this->m_3F068) ) /*0x7b1df8*/
   {
-    result = Debug::Log(); /*0x7b1e0a*/
+    result = Debug::Log("WinsockInterface already initialised\n"); /*0x7b1e0a G57c1: IDA 0x7b1e0a push offset aWinsockinterfa_1*/
     LOBYTE(result) = 1; /*0x7b1e12*/
   }
   else
@@ -289,31 +289,31 @@ int WinsockInterface::Init()
     *((unsigned int *)this + 64539) = -1; /*0x7b1e65*/
     (*(void (**)(WinsockInterface *))(v4 + 20))(this); /*0x7b1e6f*/
     (*(void (**)(WinsockInterface *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x7b1e76*/
-    Debug::Log(); /*0x7b1e7e*/
+    Debug::Log("About to call WSAStartup\n"); /*0x7b1e7e G57c1: IDA 0x7b1e7e push offset aAboutToCallWsa*/
     if ( WSAStartup((void *)(0x101u), v5) ) /*0x7b1e8c*/
     {
-      Debug::Log(); /*0x7b1e9b*/
+      Debug::Log("Winsock failed to initialise - error code %d.\n"); /*0x7b1e9b G57c1: IDA 0x7b1e9b push offset aWinsockFailedT*/
       __3_YAXPAX_Z(v5); /*0x7b1ea1*/
       LOBYTE(result) = 0; /*0x7b1ea9*/
     }
     else
     {
-      Debug::Log(); /*0x7b1eb9*/
+      Debug::Log("Winsock initialised OK\n"); /*0x7b1eb9 G57c1: IDA 0x7b1eb9 push offset aWinsockInitial*/
       if ( (uint8_t)v5->wVersion != 1 || ((v5->wVersion ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
       {
-        Debug::Log(); /*0x7b1fad*/
+        Debug::Log("Winsock version is less than 1.1\n"); /*0x7b1fad G57c1: IDA 0x7b1fad push offset aWinsockVersion_0*/
         __3_YAXPAX_Z(v5); /*0x7b1fb3*/
         LOBYTE(result) = 0; /*0x7b1fbb*/
       }
       else
       {
-        Debug::Log(); /*0x7b1efa*/
+        Debug::Log("Winsock version is %d.%d\n"); /*0x7b1efa G57c1: IDA 0x7b1efa push offset aWinsockVersion*/
         *(unsigned int *)&this->m_1[3] = 546; /*0x7b1f0a*/
         dwBufferLength = 4096; /*0x7b1f18*/
         v6 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/
         if ( v6 == -1 ) /*0x7b1f28*/
         {
-          Debug::Log(); /*0x7b1f9e*/
+          Debug::Log("Failed to get protocol enumeration\n"); /*0x7b1f9e G57c1: IDA 0x7b1f9e push offset aFailedToGetPro*/
         }
         else
         {
@@ -324,7 +324,7 @@ int WinsockInterface::Init()
             v9 = v6; /*0x7b1f38*/
             do /*0x7b1f63*/
             {
-              Debug::Log(); /*0x7b1f46*/
+              Debug::Log("Found protocol %s, max frame size is %d\n"); /*0x7b1f46 G57c1: IDA 0x7b1f46 push offset aFoundProtocolS*/
               v10 = *v8; /*0x7b1f4b*/
               if ( *v8 && v10 != -1 && v7 >= v10 ) /*0x7b1f5b*/
                 v7 = *v8; /*0x7b1f5d*/
