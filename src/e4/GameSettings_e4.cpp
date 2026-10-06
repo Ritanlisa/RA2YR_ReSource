@@ -25,6 +25,23 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aIngamemusic[];  // data: 0x833070 truth(IDA G42.57w9)
+extern char aIsscorerepeat[];  // data: 0x83308c truth(IDA G42.57w9)
+extern char aIsscoreshuffle[];  // data: 0x83307c truth(IDA G42.57w9)
+extern char aNetcard[];  // data: 0x833014 truth(IDA G42.57w9)
+extern char aNetid[];  // data: 0x833068 truth(IDA G42.57w9)
+extern char aScorevolume[];  // data: 0x83309c truth(IDA G42.57w9)
+extern char aSoundlatency[];  // data: 0x833050 truth(IDA G42.57w9)
+extern char aSoundvolume[];  // data: 0x8330bc truth(IDA G42.57w9)
+extern char aVoicevolume[];  // data: 0x8330a8 truth(IDA G42.57w9)
+extern unsigned char aAllowhiresmode;  // data: 0x833100 truth(IDA G42.57w9)
+extern unsigned char aAllowmodetoggl;  // data: 0x8330dc truth(IDA G42.57w9)
+extern unsigned char aAllowvramsideb;  // data: 0x8330c8 truth(IDA G42.57w9)
+extern unsigned int dword_A8D5FC;  // data: 0xa8d5fc truth(IDA G42.57w9)
+extern unsigned int dword_A8D604;  // data: 0xa8d604 truth(IDA G42.57w9)
+extern unsigned int dword_A8D608;  // data: 0xa8d608 truth(IDA G42.57w9)
+
 
 // 0x5FA620
 namespace gamemd {

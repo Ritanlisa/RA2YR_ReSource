@@ -70,6 +70,15 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aBattle[];  // data: 0x830c00 truth(IDA G42.57w9)
+extern char aCooperative[];  // data: 0x830bcc truth(IDA G42.57w9)
+extern char aFreeforall[];  // data: 0x830bd8 truth(IDA G42.57w9)
+extern char aManbattle[];  // data: 0x830bf4 truth(IDA G42.57w9)
+extern char aSiege[];  // data: 0x830bec truth(IDA G42.57w9)
+extern char aUnholy[];  // data: 0x830be4 truth(IDA G42.57w9)
+extern unsigned int aDRa2mdpostNetd;  // data: 0x831214 truth(IDA G42.57w9)
+
 
 // 0x5D0190
 namespace gamemd {

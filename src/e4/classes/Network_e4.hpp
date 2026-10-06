@@ -11,6 +11,7 @@ struct HashTable_flat;  // fix_fwd_type_supply
 struct Network {
 // --- flat members (BEGIN) ---
     WinModemClass* q000;  // 0x0
+    unsigned int q003;  // 0x3
     void* q004;  // 0x4
     void* q008;  // 0x8
     void* q00C;  // 0xC
@@ -24,6 +25,7 @@ struct Network {
     unsigned char q02C;  // 0x2C
     unsigned int u32_30;  // 0x30
     unsigned char q034;  // 0x34
+    unsigned int __pad_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int q040;  // 0x40
     void* q044;  // 0x44
@@ -58,12 +60,14 @@ struct Network {
     unsigned char u8_B2;  // 0xB2
     unsigned char u8_B3;  // 0xB3
     unsigned char q0B4;  // 0xB4
+    unsigned int __pad_B6;  // 0xB6
     unsigned int u32_B8;  // 0xB8
     unsigned char u8_BC;  // 0xBC
     unsigned char u8_BD;  // 0xBD
     unsigned char u8_BE;  // 0xBE
     unsigned char u8_BF;  // 0xBF
     unsigned char q0C0;  // 0xC0
+    unsigned int __pad_C2;  // 0xC2
     unsigned char q0C4;  // 0xC4
     unsigned int u32_C8;  // 0xC8
     unsigned char q0CC;  // 0xCC
@@ -87,6 +91,7 @@ struct Network {
     unsigned int q114;  // 0x114
     unsigned int q118;  // 0x118
     unsigned char q11C;  // 0x11C
+    unsigned int __pad_124;  // 0x124
     unsigned int q128;  // 0x128
     unsigned char q12C;  // 0x12C
     unsigned char q130;  // 0x130

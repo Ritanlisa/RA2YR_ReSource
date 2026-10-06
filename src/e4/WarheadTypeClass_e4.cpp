@@ -33,6 +33,13 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char aAmbientdamage;  // data: 0x849548 truth(IDA G42.57w9)
+extern unsigned char aDecloaktofire;  // data: 0x84951c truth(IDA G42.57w9)
+extern unsigned char aIssonic;  // data: 0x849540 truth(IDA G42.57w9)
+extern unsigned char aLimbolaunch;  // data: 0x84952c truth(IDA G42.57w9)
+extern unsigned char aSpawner;  // data: 0x849538 truth(IDA G42.57w9)
+
 
 // 0x474810
 namespace gamemd {

@@ -1075,33 +1075,33 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   *a6 = 0; /*0x7bc05a*/
   *a7 = 0; /*0x7bc05d*/
   *a8 = 0; /*0x7bc063*/
-  v11 = *(unsigned int *)((gamemd::Building*)aP2)->__pad_8; /*0x7bc069*/
+  v11 = *(unsigned int *)&((gamemd::Building*)aP2)->q008; /*0x7bc069*/
   v26[0] = (unsigned int)(a1); /*0x7bc06f*/
   v25[0] = ecx0; /*0x7bc073*/
   if ( v11 <= 0 /*0x7bc0d8*/
-    || *(int *)&((gamemd::Building*)aP2)->__pad_8[4] <= 0
-    || *(int *)((gamemd::Building*)a1)->__pad_8 <= 0
-    || *(int *)&((gamemd::Building*)a1)->__pad_8[4] <= 0
-    || *(int *)((gamemd::Building*)aP5)->__pad_8 <= 0
-    || *(int *)&((gamemd::Building*)aP5)->__pad_8[4] <= 0
-    || *(int *)((gamemd::Building*)a4)->__pad_8 <= 0
-    || *(int *)&((gamemd::Building*)a4)->__pad_8[4] <= 0
-    || !(uint8_t)IntersectSurfaceRects( (IUnknown *)(&((gamemd::Building*)aP2)->field_0), (int)a1, (XSurface *)(&aP5->field_0), (int)a4) )
+    || *(int *)&((gamemd::Building*)aP2)->q00C <= 0
+    || *(int *)&((gamemd::Building*)a1)->q008 <= 0
+    || *(int *)&((gamemd::Building*)a1)->q00C <= 0
+    || *(int *)&((gamemd::Building*)aP5)->q008 <= 0
+    || *(int *)&((gamemd::Building*)aP5)->q00C <= 0
+    || *(int *)&((gamemd::Building*)a4)->q008 <= 0
+    || *(int *)&((gamemd::Building*)a4)->q00C <= 0
+    || !(uint8_t)IntersectSurfaceRects( (IUnknown *)(&((gamemd::Building*)aP2)->q000), (int)a1, (XSurface *)aP5, (int)a4) )
   {
     return 0; /*0x7bc0d8*/
   }
   *a6 = 0; /*0x7bc0e9*/
   if ( arg4 == v9 ) /*0x7bc0f2*/
   {
-    v12 = ((gamemd::Building*)aP2)->field_0; /*0x7bc0f4*/
-    v13 = ((gamemd::Building*)aP5)->field_0; /*0x7bc0f9*/
-    if ( ((gamemd::Building*)aP5)->field_0 < aP2->field_0 + *(unsigned int *)((gamemd::Building*)aP2)->__pad_8 ) /*0x7bc0ff*/
+    v12 = *(unsigned int *)&((gamemd::Building*)aP2)->q000; /*0x7bc0f4*/
+    v13 = *(unsigned int *)&((gamemd::Building*)aP5)->q000; /*0x7bc0f9*/
+    if ( *(unsigned int *)&((gamemd::Building*)aP5)->q000 < *(unsigned int *)aP2 + *(unsigned int *)&((gamemd::Building*)aP2)->q008 ) /*0x7bc0ff*/
     {
-      v14 = (int)((gamemd::Building*)aP2)->field_4; /*0x7bc101*/
-      v15 = (int)((gamemd::Building*)aP5)->field_4; /*0x7bc107*/
-      if ( v15 < v14 + *(unsigned int *)&((gamemd::Building*)aP2)->__pad_8[4] /*0x7bc12a*/
-        && *(unsigned int *)((gamemd::Building*)aP5)->__pad_8 + v13 > v12
-        && *(unsigned int *)&((gamemd::Building*)aP5)->__pad_8[4] + v15 > v14
+      v14 = (int)((gamemd::Building*)aP2)->q004; /*0x7bc101*/
+      v15 = (int)((gamemd::Building*)aP5)->q004; /*0x7bc107*/
+      if ( v15 < v14 + *(unsigned int *)&((gamemd::Building*)aP2)->q00C /*0x7bc12a*/
+        && *(unsigned int *)&((gamemd::Building*)aP5)->q008 + v13 > v12
+        && *(unsigned int *)&((gamemd::Building*)aP5)->q00C + v15 > v14
         && (v15 < v14 || v15 == v14 && v13 < v12) )
       {
         *a6 = 1; /*0x7bc130*/

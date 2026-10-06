@@ -36,11 +36,15 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "classes/Targeting_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/PowerClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Matrix3x3_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Turret_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Transform_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern const IID IID_ILocomotion;  // data: 0x7ed358 truth(IDA G42.57w9)
+
 
 // 0x483610
 namespace gamemd {

@@ -73,6 +73,10 @@
 #include "e4/classes/AudioPool_e4.hpp"
 #include "e4/classes/AudioSource_e4.hpp"
 #include "e4/classes/WDTClass_e4.hpp"
+#include "classes/AudioMixer_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/INIClass_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/Surface_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/ThemeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x750920

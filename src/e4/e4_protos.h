@@ -480,7 +480,7 @@ extern int ImageList_DragShowNolock(void *a1 = 0);
 extern int IsDialogControlVisible(int a1 = 0, HWND a2 = 0);
 extern int LoadSHPFile(int lpBuffer, char* Source);
 extern int MapSkirmishDialogPlayerToControl(HWND a1 = 0, int a2 = 0);
-extern int OleLoadFromStream();
+extern int OleLoadFromStream(void * aP0, void * a1, void * aP2);  // G42.57w9 fix: stale zero-arg decl unmasked by IID_ILocomotion supply (call form 0x4af7f1/0x69ef01, ole32 truth)
 extern int OleRun(void *a1 = 0);
 extern int OleSaveToStream(void *a1 = 0, void *a2 = 0);
 extern int PackRGB565(int a1, int a2, int a3);
@@ -683,6 +683,229 @@ extern wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1
 extern wchar_t ** Render_Format(wchar_t ** a1, char ** a2);
 extern int ZCoordToScreenY(int aP0);
 
+
+// ==== G42.57w9 free-function supply (raw-anchored) ====
+extern __int64 ComputeSessionColorVector(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ComputeSessionColorVector@0x50ba00)
+// removed G42.57w9: CreateDialog -- clash in Main_e4.hpp
+extern void Map_Init(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Map_Init@0x55af50)
+// removed G42.57w9: ReadAudioEventINI -- clash in E4Recv_727880_e4.hpp
+extern int ReadFootINI(char * aP0);  // G42.57w9 supply (raw ObjectClass::ReadFootINI@0x7436e0)
+extern int SaveAircraftToINI(char * aP0);  // G42.57w9 supply (raw ObjectClass::SaveAircraftToINI@0x41af80)
+// removed G42.57w9: SaveTriggerTagsToINI -- clash in E4Recv_6E5FE0_e4.hpp
+// removed G42.57w9: nullsub_34 -- defined in e4 TU (reverted to C3861, no net regress)
+
+// ==== G42.57w9 free-function supply (raw-anchored) ====
+extern bool ApplyGameOptions_Helper(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::ApplyGameOptions_Helper@0x6b8af0)
+extern char ApplyModemConfigSettings(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ApplyModemConfigSettings@0x695bc0)
+extern char * Audio_Create_76BF00(char * aP0, int a2);  // G42.57w9 supply (raw ReferenceCounted::Audio_Create_76BF00@0x76bf00)
+// removed G42.57w9: Audio_Read_6C6B00 -- clash in E4Recv_6C6B00_e4.hpp
+extern char Audio_Read_6C8870(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Audio_Read_6C8870@0x6c8870)
+// removed G42.57w9: BlitterCopySHP -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: BlitterRLEBlitSHP -- defined in e4 TU (reverted to C3861, no net regress)
+extern int COMStub_432C10(WeaponTypeClass * aP0, int a2);  // G42.57w9 supply (raw WeaponTypeClass::COMStub_432C10@0x432c10)
+extern char * CampaignConstructorWDT(char * aP0, char * * a2, int a3);  // G42.57w9 supply (raw ReferenceCounted::CampaignConstructorWDT@0x764b90)
+extern int CellToTileIndexMap(ObjectClass * aP0, __int16 * a2);  // G42.57w9 supply (raw ObjectClass::CellToTileIndexMap@0x56d3f0)
+// removed G42.57w9: ComputeModularInverse -- clash in E4Recv_5C80A0_e4.hpp
+// removed G42.57w9: ConstructTeamMembers -- clash in E4Recv_65DD30_e4.hpp
+// removed G42.57w9: ConstructWDTSelection -- clash in E4Recv_76C290_e4.hpp
+// removed G42.57w9: ConstructWDTSelection_Create_767FB0_Create -- clash in E4Recv_768000_e4.hpp
+// removed G42.57w9: CreateFireAtSW -- clash in E4Recv_62E430_e4.hpp
+// removed G42.57w9: CtlDialogColorHandler -- defined in e4 TU (reverted to C3861, no net regress)
+extern void DestroyCliffMap(TechnoClass * aP0, int a2, int a3, int * a4);  // G42.57w9 supply (raw ObjectClass::DestroyCliffMap@0x569760)
+extern int DispatchBuildingAudioEvents(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::DispatchBuildingAudioEvents@0x438bf0)
+// removed G42.57w9: DispatchDialogControlAction -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: DlgProcLoadGame_Load -- clash in E4Recv_6967B0_e4.hpp
+extern int DlgProcLoadGame_Load_696AE0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::DlgProcLoadGame_Load_696AE0@0x696ae0)
+extern int DlgProcLoadGame_Load_696C40(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::DlgProcLoadGame_Load_696C40@0x696c40)
+// removed G42.57w9: DrawScoreScreenStats -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: DrawTechnoDeployCircle -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: DrawUnitExperiencePopup -- clash in E4Recv_7336C0_e4.hpp
+extern char Event_Process(ObjectClass * aP0, __int16 a2);  // G42.57w9 supply (raw ObjectClass::Event_Process@0x54f530)
+// removed G42.57w9: ExchangeMultiplayerGameInfo -- defined in e4 TU (reverted to C3861, no net regress)
+extern _DWORD * ExecuteActionPlanManager_Helper(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper@0x633ac0)
+extern int ExecuteActionPlanManager_Helper_636EB0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper_636EB0@0x636eb0)
+extern bool ExecuteActionPlanManager_Helper_638C40(ObjectClass * aP0, int a2, char a3);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper_638C40@0x638c40)
+extern _DWORD * ExecuteActionPlanManager_Helper_63DEC0(void * aP0, int a2, int a3);  // G42.57w9 supply (raw VectorClass::ExecuteActionPlanManager_Helper_63DEC0@0x63dec0)
+extern _DWORD * ExecuteActionPlanManager_Helper_63E1D0(void * aP0, int a2, int a3);  // G42.57w9 supply (raw VectorClass::ExecuteActionPlanManager_Helper_63E1D0@0x63e1d0)
+extern int FillBuddyListWOL(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::FillBuddyListWOL@0x79af10)
+// removed G42.57w9: FillPersonaInfoWOL -- clash in E4Recv_77A9F0_e4.hpp
+// removed G42.57w9: FilterDialogButtonAction -- defined in e4 TU (reverted to C3861, no net regress)
+extern int FindWDTTerritoryClass_Find_Find(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::FindWDTTerritoryClass_Find_Find@0x766060)
+// removed G42.57w9: GameListRenderWOL -- defined in e4 TU (reverted to C3861, no net regress)
+extern int GameOptionsScreenWOL(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::GameOptionsScreenWOL@0x79f140)
+extern void * Game_Load_Load_53AB50(void);  // G42.57w9 supply (raw Game_Load_Load_53AB50@0x53ab50)
+// removed G42.57w9: GenerateImageThumbnail -- clash in E4Recv_6547C0_e4.hpp
+extern char GetCellRadarColors(int aP0, int a2, int a3);  // G42.57w9 supply (raw ObjectClass::GetCellRadarColors@0x47c060)
+// removed G42.57w9: GetDialogControlSHP -- defined in e4 TU (reverted to C3861, no net regress)
+extern int GetHeightMap(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::GetHeightMap@0x6dc420)
+// removed G42.57w9: GetKeyCount -- clash in INIClass_e4.hpp
+// removed G42.57w9: GetRegionStringWOL -- clash in E4Recv_7AF3D0_e4.hpp
+extern int GetResourceIDHardcodedCSF(void * aP0);  // aP0 void*: receiver rendered as ObjectClass* and char* at different sites  // G42.57w9 supply (raw ObjectClass::GetResourceIDHardcodedCSF@0x4e3320)
+// removed G42.57w9: Get_Waypoint_Location -- clash in ScenarioClass_e4.hpp
+extern BOOL HandlePlanningModeClick_Handle(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::HandlePlanningModeClick_Handle@0x63db20)
+// removed G42.57w9: HandleToolTipMessage -- clash in E4Recv_724200_e4.hpp
+extern void Hash_Check(void);  // G42.57w9 supply (raw Hash_Check@0x5c61d0)
+extern int Hash_Check_5C61E0(void);  // G42.57w9 supply (raw Hash_Check_5C61E0@0x5c61e0)
+// removed G42.57w9: HideSkirmishSpawnLocations -- defined in e4 TU (reverted to C3861, no net regress)
+extern char InitDialogCountryIcons(int a1, int a2);  // G42.57w9 supply (raw InitDialogCountryIcons@0x61f210)
+extern int InitInterfaceStubsCOM(TechnoClass * aP0);  // G42.57w9 supply (raw ObjectClass::InitInterfaceStubsCOM@0x678850)
+// removed G42.57w9: InitializeAudioSubsystem -- clash in E4Recv_406B10_e4.hpp
+// removed G42.57w9: InitializeDialogControls -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: InitializeTileAudioOcclusion -- clash in E4Recv_756860_e4.hpp
+extern int InitializeWestwoodOnline(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::InitializeWestwoodOnline@0x785370)
+// removed G42.57w9: InvalidateTileRegionMap -- clash in E4Recv_56DB70_e4.hpp
+extern bool IsBuddyOrIgnoreWOL(char * aP0);  // G42.57w9 supply (raw ObjectClass::IsBuddyOrIgnoreWOL@0x77d4c0)
+extern int IsCoordValidMap(int aP0, int a2);  // G42.57w9 supply (raw ObjectClass::IsCoordValidMap@0x4838e0)
+// removed G42.57w9: IsValidActionDialog -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: LoadAccountInfoWOL_Load -- clash in E4Recv_779690_e4.hpp
+// removed G42.57w9: LoadVocFromINI -- clash in E4Recv_750440_e4.hpp
+extern int LookupNameIndex(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::LookupNameIndex@0x48df30)
+// removed G42.57w9: LookupWaypointName -- clash in E4Recv_5B3910_e4.hpp
+extern _DWORD * Map_Cleanup(void * aP0, int a2, int a3);  // G42.57w9 supply (raw VectorClass::Map_Cleanup@0x5ad9f0)
+extern int Map_Create(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Map_Create@0x57b870)
+extern char Map_Create_57B990(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Map_Create_57B990@0x57b990)
+extern int Map_Create_57CAB0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Map_Create_57CAB0@0x57cab0)
+extern char Map_Create_57CBE0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Map_Create_57CBE0@0x57cbe0)
+extern char * Map_Delete_5CEDD0(DynamicVector * aP0);  // G42.57w9 supply (raw DynamicVector::Map_Delete_5CEDD0@0x5cedd0)
+extern char Map_Helper_5AD930(int aP0, int a2);  // G42.57w9 supply (raw ObjectClass::Map_Helper_5AD930@0x5ad930)
+extern void Map_Helper_65FE00(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Map_Helper_65FE00@0x65fe00)
+extern int Map_Load_72B380(void);  // G42.57w9 supply (raw Map_Load_72B380@0x72b380)
+extern void Map_Process_5CC690(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Map_Process_5CC690@0x5cc690)
+extern int Map_Save(ObjectClass * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::Map_Save@0x681060)
+extern wchar_t * Map_Save_6810A0(ObjectClass * aP0, wchar_t * Source);  // G42.57w9 supply (raw ObjectClass::Map_Save_6810A0@0x6810a0)
+extern wchar_t * Map_Save_6810D0(ObjectClass * aP0, wchar_t * Source);  // G42.57w9 supply (raw ObjectClass::Map_Save_6810D0@0x6810d0)
+extern char * Map_Save_6811C0(char * aP0, char * Source);  // G42.57w9 supply (raw ObjectClass::Map_Save_6811C0@0x6811c0)
+// removed G42.57w9: Map_Save_6812C0 -- clash in E4Recv_6812C0_e4.hpp
+extern char Network_Check(ObjectClass * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::Network_Check@0x5e23d0)
+extern void Network_Disconnect_69BBF0(char * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::Network_Disconnect_69BBF0@0x69bbf0)
+// removed G42.57w9: Network_Load -- clash in E4Recv_5CF830_e4.hpp
+// removed G42.57w9: Network_Process_6E7C20 -- arity/receiver landmine (reverted to C3861, no net regress)
+extern int Network_Process_7B2730(void);  // G42.57w9 supply (raw Network_Process_7B2730@0x7b2730)
+extern void Network_Set(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Network_Set@0x6319c0)
+// removed G42.57w9: ObjectTypeClass_Read -- clash in E4Recv_6CEE60_e4.hpp
+// removed G42.57w9: ParseAndApplyAlliances -- clash in E4Recv_69B170_e4.hpp
+// removed G42.57w9: ParseMovieSubtitles -- clash in E4Recv_6C9F10_e4.hpp
+// removed G42.57w9: ParseWDTTerritories -- clash in E4Recv_76B180_e4.hpp
+extern char PlaceMapSeedCityArea(ObjectClass * aP0, __int16 * a2, __int16 * a3, void * a4);  // G42.57w9 supply (raw ObjectClass::PlaceMapSeedCityArea@0x591740)
+// removed G42.57w9: PlaceMapSeedCityBlockDiagonal -- clash in E4Recv_593030_e4.hpp
+// removed G42.57w9: PlaceMapSeedCityBlockVariant2 -- clash in E4Recv_593AF0_e4.hpp
+// removed G42.57w9: PlaceNeutralBuilding -- clash in E4Recv_595400_e4.hpp
+extern void PlacePlayerBeacon(ObjectClass * aP0, int a2, int a3, int a4, int a5, int a6);  // G42.57w9 supply (raw ObjectClass::PlacePlayerBeacon@0x430ba0)
+// removed G42.57w9: PlaceRandomWaypoints -- clash in E4Recv_594870_e4.hpp
+extern int PrefetchAudioSamples(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::PrefetchAudioSamples@0x4048b0)
+extern char ProcessDataCellClass(TechnoClass * aP0);  // G42.57w9 supply (raw ObjectClass::ProcessDataCellClass@0x459ca0)
+// removed G42.57w9: ProcessDeployAction -- clash in TechnoClass_e4.hpp
+// removed G42.57w9: ProcessGraphicMenu -- clash in E4Recv_4F2300_e4.hpp
+extern void ProcessVeinholeMonster(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ProcessVeinholeMonster@0x74e1c0)
+// removed G42.57w9: PropagateCellOccupancy -- clash in E4Recv_722440_e4.hpp
+extern char QueryNATPortWOL(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::QueryNATPortWOL@0x795650)
+// removed G42.57w9: RebuildBuildingOccupancy -- clash in E4Recv_722F00_e4.hpp
+// removed G42.57w9: RenderGradientTrapezoid -- clash in E4Recv_660050_e4.hpp
+extern char RenderMovieFrame(int a1, char a2, int a3, char a4);  // G42.57w9 supply (raw RenderMovieFrame@0x5bff60)
+// removed G42.57w9: RenderProjectileTrail -- clash in E4Recv_659650_e4.hpp
+extern int RenderScenarioActionLines(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::RenderScenarioActionLines@0x63c690)
+extern int RenderTactical3DScene(ObjectClass * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::RenderTactical3DScene@0x4a3660)
+// removed G42.57w9: Render_Helper -- clash in E4Recv_626120_e4.hpp
+extern char Render_Load_7597A0(TechnoClass * aP0);  // G42.57w9 supply (raw ObjectClass::Render_Load_7597A0@0x7597a0)
+extern int Render_Load_759EA0(TechnoClass * aP0);  // G42.57w9 supply (raw ObjectClass::Render_Load_759EA0@0x759ea0)
+extern bool Render_Load_759EB0(TechnoClass * aP0, int a2, unsigned int a3, unsigned int a4, int a5, int a6);  // G42.57w9 supply (raw ObjectClass::Render_Load_759EB0@0x759eb0)
+extern int Render_Load_759F20(TechnoClass * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::Render_Load_759F20@0x759f20)
+extern int Render_Render_556B70(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Render_Render_556B70@0x556b70)
+extern _DWORD * Render_Render_556C00(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Render_Render_556C00@0x556c00)
+extern _DWORD * Render_Render_6345A0(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::Render_Render_6345A0@0x6345a0)
+extern int RequestMatchWOL_Helper(void);  // G42.57w9 supply (raw RequestMatchWOL_Helper@0x7b0370)
+extern int RespawnStartingBuildings(HouseClass * aP0);  // G42.57w9 supply (raw HouseClass::RespawnStartingBuildings@0x50d320)
+// removed G42.57w9: SaveMultiplayerLobbySettings -- defined in e4 TU (reverted to C3861, no net regress)
+extern int ScenarioPropertyReadCOM(int aP0, int a2);  // G42.57w9 supply (raw ObjectClass::ScenarioPropertyReadCOM@0x681840)
+// removed G42.57w9: SeedInitRNG -- clash in E4Recv_65C6D0_e4.hpp
+extern char SelectAllOfType_Helper(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::SelectAllOfType_Helper@0x7342c0)
+extern __int16 SelectSimilarBuildingTypes(ObjectClass * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::SelectSimilarBuildingTypes@0x50d6d0)
+// removed G42.57w9: SelectionInitializeWOL -- clash in E4Recv_76C6E0_e4.hpp
+// removed G42.57w9: SendMultiplayerStartSignal_Start -- clash in E4Recv_5DBEC0_e4.hpp
+extern int SendMultiplayerStartSignal_Start_77EBA0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::SendMultiplayerStartSignal_Start_77EBA0@0x77eba0)
+extern bool SetupLobbyPlayerSlotDialog(HWND a1, int a2);  // G42.57w9 supply (raw SetupLobbyPlayerSlotDialog@0x4e5e20)
+// removed G42.57w9: SetupSkirmishSpawnLocationEntry -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: ShowWDTTerritorySelection -- arity/receiver landmine (reverted to C3861, no net regress)
+extern void SidebarClearReferences(char * aP0);  // G42.57w9 supply (raw ObjectClass::SidebarClearReferences@0x7310d0)
+extern int SidebarCountAvailableUnits(char * aP0);  // G42.57w9 supply (raw ObjectClass::SidebarCountAvailableUnits@0x730a10)
+extern char SidebarHasAvailableUnit(char * aP0);  // G42.57w9 supply (raw ObjectClass::SidebarHasAvailableUnit@0x730990)
+extern int SidebarUpdateAll(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::SidebarUpdateAll@0x6d04d0)
+extern int SmallFunc_5AFEF0(MechLocomotionClass * aP0);  // G42.57w9 supply (raw MechLocomotionClass::SmallFunc_5AFEF0@0x5afef0)
+extern int StartGameWOL_Start(ObjectClass * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::StartGameWOL_Start@0x5430c0)
+// removed G42.57w9: StartGameWOL_Start_7ACB90 -- clash in E4Recv_7ACB90_e4.hpp
+// removed G42.57w9: StartWDTCampaign -- defined in e4 TU (reverted to C3861, no net regress)
+extern bool String_Helper(ObjectClass * aP0, wchar_t * String2);  // G42.57w9 supply (raw ObjectClass::String_Helper@0x7b6780)
+extern char String_Helper_7B7660(ObjectClass * aP0, wchar_t a2, size_t a3);  // G42.57w9 supply (raw ObjectClass::String_Helper_7B7660@0x7b7660)
+extern char String_Process_7B4A10(ObjectClass * aP0, char * a2);  // G42.57w9 supply (raw ObjectClass::String_Process_7B4A10@0x7b4a10)
+extern int System_Get_7515C0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::System_Get_7515C0@0x7515c0)
+extern void System_Init_74E8A0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::System_Init_74E8A0@0x74e8a0)
+extern _DWORD * System_Init_7668F0(void * aP0);  // G42.57w9 supply (raw rc_ptr::System_Init_7668F0@0x7668f0)
+extern void * System_Init_766A10(void * aP0, int a2, int a3, void * a4, int a5);  // G42.57w9 supply (raw GameOption@WorldDominationTour::System_Init_766A10@0x766a10)
+// removed G42.57w9: System_Init_766EE0 -- clash in E4Recv_766EE0_e4.hpp
+// removed G42.57w9: System_Init_766F70 -- clash in E4Recv_766F70_e4.hpp
+extern _DWORD * System_Load_67BFA0(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::System_Load_67BFA0@0x67bfa0)
+extern int System_Read_6E7330(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::System_Read_6E7330@0x6e7330)
+extern _DWORD * Team_Create_765C90(ObjectClass * aP0, int a2, _DWORD * a3);  // G42.57w9 supply (raw ObjectClass::Team_Create_765C90@0x765c90)
+// removed G42.57w9: Team_Destroy -- clash in E4Recv_63E5D0_e4.hpp
+extern void Team_Get(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Team_Get@0x634b20)
+// removed G42.57w9: Team_Helper_6342E0 -- clash in E4Recv_6342E0_e4.hpp
+extern _DWORD * Team_Helper_6F2230(void * aP0, int a2, int a3);  // G42.57w9 supply (raw VectorClass::Team_Helper_6F2230@0x6f2230)
+extern char Team_Helper_6F25E0(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::Team_Helper_6F25E0@0x6f25e0)
+// removed G42.57w9: Team_Helper_6F2780 -- clash in E4Recv_6F2780_e4.hpp
+extern _DWORD * Team_Helper_6F27F0(void * aP0, int a2, _DWORD * a3);  // G42.57w9 supply (raw VectorClass::Team_Helper_6F27F0@0x6f27f0)
+extern void * Team_Load_63B050(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Team_Load_63B050@0x63b050)
+extern void * Team_Remove(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Team_Remove@0x637640)
+// removed G42.57w9: Team_Start_76E2F0 -- arity/receiver landmine (reverted to C3861, no net regress)
+// removed G42.57w9: Team_Start_76E750 -- clash in E4Recv_76E750_e4.hpp
+extern int TerritoryUpdateDisplayWOL(ObjectClass * aP0, int a2);  // G42.57w9 supply (raw ObjectClass::TerritoryUpdateDisplayWOL@0x5cb790)
+extern int * UI_Create_734120_Create(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Create_734120_Create@0x660bb0)
+extern int * UI_Create_734120_Create_660BE0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Create_734120_Create_660BE0@0x660be0)
+extern int UI_Create_7342A0(void);  // G42.57w9 supply (raw UI_Create_7342A0@0x7342a0)
+extern int UI_Create_7342B0(void);  // G42.57w9 supply (raw UI_Create_7342B0@0x7342b0)
+extern char UI_Delete_Delete(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Delete_Delete@0x637d00)
+// removed G42.57w9: UI_Get_60B350 -- clash in E4Recv_60B350_e4.hpp
+// removed G42.57w9: UI_Get_60B420 -- clash in E4Recv_60B420_e4.hpp
+// removed G42.57w9: UI_Get_60B550 -- clash in E4Recv_60B550_e4.hpp
+// removed G42.57w9: UI_Get_60B610 -- clash in E4Recv_60B610_e4.hpp
+// removed G42.57w9: UI_Get_60B7A0 -- clash in E4Recv_60B7A0_e4.hpp
+extern char UI_Get_630EA0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Get_630EA0@0x630ea0)
+extern char UI_Helper_60C7D0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Helper_60C7D0@0x60c7d0)
+extern char UI_Helper_60C930(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Helper_60C930@0x60c930)
+extern char UI_Helper_60CAF0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Helper_60CAF0@0x60caf0)
+extern char UI_Helper_60CCC0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Helper_60CCC0@0x60ccc0)
+extern char UI_Helper_60CDB0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Helper_60CDB0@0x60cdb0)
+extern int UI_Helper_72CC80(void);  // G42.57w9 supply (raw UI_Helper_72CC80@0x72cc80)
+extern int UI_Helper_72DAC0(void);  // G42.57w9 supply (raw UI_Helper_72DAC0@0x72dac0)
+extern int UI_Helper_72DAD0(void);  // G42.57w9 supply (raw UI_Helper_72DAD0@0x72dad0)
+extern int UI_Helper_72E2A0(void);  // G42.57w9 supply (raw UI_Helper_72E2A0@0x72e2a0)
+extern int UI_Helper_72E2C0(void);  // G42.57w9 supply (raw UI_Helper_72E2C0@0x72e2c0)
+extern _DWORD * UI_Load(void * aP0, char * * a2, int a3, char a4);  // G42.57w9 supply (raw MSAnim::UI_Load@0x5ce4a0)
+extern int UI_Load_5D1C90(ObjectClass * aP0, void * a2, void * a3);  // G42.57w9 supply (raw ObjectClass::UI_Load_5D1C90@0x5d1c90)
+extern _DWORD * UI_Pop(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::UI_Pop@0x631380)
+extern _DWORD * UI_Setup(void * a1, void * a2, int a3);  // G42.57w9 supply (raw UI_Setup@0x793930)
+// removed G42.57w9: UpdateDeferredLightSurfaces -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: UpdateObserveButtonWOL -- clash in E4Recv_5EE200_e4.hpp
+extern int UpdateVoicePlayback(TechnoClass * aP0);  // G42.57w9 supply (raw ObjectClass::UpdateVoicePlayback@0x4055c0)
+// removed G42.57w9: ValidateDialogControl -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: ValidateDialogEvent -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: VtableStub_72D450 -- vtablestub void-sig landmine
+// removed G42.57w9: VtableStub_72E280 void-sig decl vs 1-arg calls (raw seg sig mismatch; sites stay C3861)
+// removed G42.57w9: WaitForMultiplayerLoadSync -- defined in e4 TU (reverted to C3861, no net regress)
+extern char WaypointClass_Find(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::WaypointClass_Find@0x7639a0)
+extern int Weapon_Update_Update(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Weapon_Update_Update@0x659e30)
+extern int Weapon_Update_Update_659EE0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::Weapon_Update_Update_659EE0@0x659ee0)
+extern __int64 Weapon_Update_Update_659FF0(int aP0);  // G42.57w9 supply (raw ObjectClass::Weapon_Update_Update_659FF0@0x659ff0)
+extern int WorldDominationFactionDlgProc_Helper(ObjectClass * aP0, HWND hWnd, int * a3);  // G42.57w9 supply (raw ObjectClass::WorldDominationFactionDlgProc_Helper@0x7af540)
+// removed G42.57w9: gethostbyname void* ret breaks hostent** assigns (winsock OS API; sites stay C3861)
+// removed G42.57w9: gethostname -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: nullsub_158 -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: nullsub_3 -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: nullsub_35 -- defined in e4 TU (reverted to C3861, no net regress)
+// removed G42.57w9: nullsub_40 -- clash in _tree_full_e4.hpp
+// removed G42.57w9: nullsub_69 -- clash in _tree_full_e4.hpp
+// removed G42.57w9: sub_48B070 -- clash in E4Recv_48B070_e4.hpp
+// removed G42.57w9: sub_4A4E30 -- clash in E4Recv_4A4E30_e4.hpp
+// removed G42.57w9: sub_4F2C00 -- clash in E4Recv_4F2C00_e4.hpp
 } // namespace gamemd
 
 namespace gamemd {

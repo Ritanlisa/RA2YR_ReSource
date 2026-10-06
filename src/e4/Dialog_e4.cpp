@@ -38,6 +38,15 @@
 #include "e4/classes/ListBox_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BinkMovie_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aButton[];  // data: 0x835814 truth(IDA G42.57w9)
+extern char aMsctlsHotkey32[];  // data: 0x835804 truth(IDA G42.57w9)
+extern char aMsctlsProgress[];  // data: 0x835834 truth(IDA G42.57w9)
+extern char aMsctlsTrackbar[];  // data: 0x835848 truth(IDA G42.57w9)
+extern char aScrollbar[];  // data: 0x83585c truth(IDA G42.57w9)
+extern char aStatic[];  // data: 0x83582c truth(IDA G42.57w9)
+extern char aSystabcontrol3[];  // data: 0x83581c truth(IDA G42.57w9)
+
 
 // 0x49F740
 namespace gamemd {

@@ -40,6 +40,8 @@ struct VoxelAnimClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     TagClass* attachedTag;  // 0x34
+    unsigned char q035;  // 0x35
+    unsigned int q036;  // 0x36
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03C;  // 0x3C
@@ -104,6 +106,7 @@ struct VoxelAnimClass {
     unsigned int q13C;  // 0x13C
     Coord* q140;  // 0x140
     unsigned int q144;  // 0x144
+    unsigned char q148;  // 0x148
     unsigned int u32_14C;  // 0x14C
     unsigned int q150;  // 0x150
     unsigned char q154;  // 0x154
@@ -116,7 +119,17 @@ struct VoxelAnimClass {
     unsigned int u32_1A8;  // 0x1A8
     unsigned int q1AC;  // 0x1AC
     unsigned int q1B0;  // 0x1B0
+    void* q1D0;  // 0x1D0
+    unsigned int Audio4;  // 0x1D4 (ml name; ml size=192 yrpp decl-order, flat carrier 4B compile vehicle)
+    unsigned char q1D8;  // 0x1D8
     unsigned char q1EC;  // 0x1EC
+    unsigned int u32_1F0;  // 0x1F0
+    unsigned int u32_1F4;  // 0x1F4
+    unsigned int u32_1F8;  // 0x1F8
+    unsigned char u8_1FC;  // 0x1FC
+    unsigned char u8_1FD;  // 0x1FD
+    unsigned int q200;  // 0x200
+    unsigned int q204;  // 0x204
     void* q20C;  // 0x20C
     unsigned char q258;  // 0x258
     AbstractClass* q264;  // 0x264

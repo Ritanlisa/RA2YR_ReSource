@@ -38,7 +38,39 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/FileFind_e4.hpp"
 #include "e4/classes/Straw_e4.hpp"
+#include "classes/ObjectTypeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char byte_8B40E0;  // data: 0x8b40e0 truth(IDA G42.57w9)
+extern unsigned char byte_8B40E1;  // data: 0x8b40e1 truth(IDA G42.57w9)
+extern unsigned char byte_8B40E2;  // data: 0x8b40e2 truth(IDA G42.57w9)
+extern unsigned char byte_A83CD4;  // data: 0xa83cd4 truth(IDA G42.57w9)
+extern unsigned char byte_A83CD5;  // data: 0xa83cd5 truth(IDA G42.57w9)
+extern unsigned char byte_A83CD6;  // data: 0xa83cd6 truth(IDA G42.57w9)
+extern unsigned char byte_A83CD9;  // data: 0xa83cd9 truth(IDA G42.57w9)
+extern unsigned char byte_A83DC0;  // data: 0xa83dc0 truth(IDA G42.57w9)
+extern unsigned char byte_A83DC1;  // data: 0xa83dc1 truth(IDA G42.57w9)
+extern unsigned char byte_A83DC2;  // data: 0xa83dc2 truth(IDA G42.57w9)
+extern unsigned char byte_A83EC8;  // data: 0xa83ec8 truth(IDA G42.57w9)
+extern unsigned char byte_A83EC9;  // data: 0xa83ec9 truth(IDA G42.57w9)
+extern unsigned char byte_A83ECA;  // data: 0xa83eca truth(IDA G42.57w9)
+extern unsigned char byte_A8E8C4;  // data: 0xa8e8c4 truth(IDA G42.57w9)
+extern unsigned char byte_A8E8C5;  // data: 0xa8e8c5 truth(IDA G42.57w9)
+extern unsigned char byte_A8E8C6;  // data: 0xa8e8c6 truth(IDA G42.57w9)
+extern unsigned char byte_A8E980;  // data: 0xa8e980 truth(IDA G42.57w9)
+extern unsigned char byte_A8E981;  // data: 0xa8e981 truth(IDA G42.57w9)
+extern unsigned char byte_A8E982;  // data: 0xa8e982 truth(IDA G42.57w9)
+extern unsigned char byte_A8EAE4;  // data: 0xa8eae4 truth(IDA G42.57w9)
+extern unsigned int a2;  // data: 0x822bc0 truth(IDA G42.57w9)
+extern unsigned int a3;  // data: 0x822bbc truth(IDA G42.57w9)
+extern unsigned int a4;  // data: 0x822bb8 truth(IDA G42.57w9)
+extern unsigned int a5;  // data: 0x822bb4 truth(IDA G42.57w9)
+extern unsigned int a6;  // data: 0x822bb0 truth(IDA G42.57w9)
+extern unsigned int a7;  // data: 0x822bac truth(IDA G42.57w9)
+extern unsigned int a8;  // data: 0x822ba8 truth(IDA G42.57w9)
+extern unsigned short word_A83CDA;  // data: 0xa83cda truth(IDA G42.57w9)
+extern unsigned short word_A8EAE5;  // data: 0xa8eae5 truth(IDA G42.57w9)
+
 
 // 0x4E0A00
 namespace gamemd {

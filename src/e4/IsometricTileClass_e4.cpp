@@ -9,6 +9,7 @@
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "classes/Array_e4.hpp"  // G42.57w9 method-carrier supply
 
 // 0x543780
 IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)

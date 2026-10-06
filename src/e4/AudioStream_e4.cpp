@@ -28,6 +28,7 @@
 #include "e4/classes/Voice_e4.hpp"
 #include "e4/classes/AudioSample_e4.hpp"
 #include "e4/classes/Struct_e4.hpp"
+#include "classes/Audio_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x401910

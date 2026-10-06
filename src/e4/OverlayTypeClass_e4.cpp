@@ -30,6 +30,23 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AbstractTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MixFileClass_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char aCellanim;  // data: 0x833544 truth(IDA G42.57w9)
+extern unsigned char aChainreaction;  // data: 0x8334f0 truth(IDA G42.57w9)
+extern unsigned char aCrate;  // data: 0x833578 truth(IDA G42.57w9)
+extern unsigned char aCratetrigger;  // data: 0x833568 truth(IDA G42.57w9)
+extern unsigned char aDamagelevels;  // data: 0x833534 truth(IDA G42.57w9)
+extern unsigned char aDrawflat;  // data: 0x8334e4 truth(IDA G42.57w9)
+extern unsigned char aExplodes;  // data: 0x83355c truth(IDA G42.57w9)
+extern unsigned char aIsarock;  // data: 0x8334dc truth(IDA G42.57w9)
+extern unsigned char aIsrubble;  // data: 0x8334d0 truth(IDA G42.57w9)
+extern unsigned char aIsveinholemons;  // data: 0x833500 truth(IDA G42.57w9)
+extern unsigned char aIsveins;  // data: 0x8184a8 truth(IDA G42.57w9)
+extern unsigned char aLand;  // data: 0x833580 truth(IDA G42.57w9)
+extern unsigned char aNousetilelandt;  // data: 0x833514 truth(IDA G42.57w9)
+extern unsigned char aOverrides;  // data: 0x833550 truth(IDA G42.57w9)
+extern unsigned char aRadarcolor;  // data: 0x833528 truth(IDA G42.57w9)
+
 
 // 0x5FE250
 namespace gamemd {  // G42.18c ns repair

@@ -83,6 +83,8 @@
 #include "e4/classes/Voice_e4.hpp"
 #include "e4/classes/Queue_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
+#include "classes/AudioIndex_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/AudioNode_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/VtableStub_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers

@@ -48,6 +48,16 @@
 #include "e4/classes/Player_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GameConfig_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aMissionsmdPkt[];  // data: 0x83f520 truth(IDA G42.57w9)
+extern char aNoFileName[];  // data: 0x83f658 truth(IDA G42.57w9)
+extern char aPkt[];  // data: 0x83f50c truth(IDA G42.57w9)
+extern char aYrm_0[];  // data: 0x83f490 truth(IDA G42.57w9)
+extern char aYro[];  // data: 0x83f504 truth(IDA G42.57w9)
+extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
+extern unsigned int aMissionsYro;  // data: 0x83f4f4 truth(IDA G42.57w9)
+extern unsigned int aRecordBin;  // data: 0x83eeac truth(IDA G42.57w9)
+
 
 // 0x540DC0
 namespace gamemd {

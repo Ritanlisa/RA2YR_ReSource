@@ -28,6 +28,26 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Checksummer_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char aBehaveslike;  // data: 0x837044 truth(IDA G42.57w9)
+extern unsigned char aLaser;  // data: 0x836f94 truth(IDA G42.57w9)
+extern unsigned char aLasercolor;  // data: 0x836f88 truth(IDA G42.57w9)
+extern unsigned char aLifetime;  // data: 0x837050 truth(IDA G42.57w9)
+extern unsigned char aLightsize;  // data: 0x836f68 truth(IDA G42.57w9)
+extern unsigned char aMovementpertur;  // data: 0x836fbc truth(IDA G42.57w9)
+extern unsigned char aOneframelight;  // data: 0x836f58 truth(IDA G42.57w9)
+extern unsigned char aParticlesperco;  // data: 0x837020 truth(IDA G42.57w9)
+extern unsigned char aPositionpertur;  // data: 0x836fdc truth(IDA G42.57w9)
+extern unsigned char aSlowdown;  // data: 0x837080 truth(IDA G42.57w9)
+extern unsigned char aSparkspawnfram;  // data: 0x836f74 truth(IDA G42.57w9)
+extern unsigned char aSpawncutoff;  // data: 0x837074 truth(IDA G42.57w9)
+extern unsigned char aSpawndirection;  // data: 0x837034 truth(IDA G42.57w9)
+extern unsigned char aSpawnsparkperc;  // data: 0x836f40 truth(IDA G42.57w9)
+extern unsigned char aSpawntransluce;  // data: 0x83705c truth(IDA G42.57w9)
+extern unsigned char aSpiraldeltaper;  // data: 0x83700c truth(IDA G42.57w9)
+extern unsigned char aSpiralradius;  // data: 0x836ffc truth(IDA G42.57w9)
+extern unsigned char aVelocitypertur;  // data: 0x836f9c truth(IDA G42.57w9)
+
 
 // 0x6442D0
 namespace gamemd {

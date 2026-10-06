@@ -28,6 +28,7 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/Checksummer_e4.hpp"
+#include "classes/ObjectPtr_e4.hpp"  // G42.57w9 method-carrier supply
 
 // 0x511650
 namespace gamemd {

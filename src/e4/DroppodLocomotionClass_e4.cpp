@@ -31,6 +31,9 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern const IID IID_ILocomotion;  // data: 0x7ed358 truth(IDA G42.57w9)
+
 
 // 0x4B5B70
 namespace gamemd {

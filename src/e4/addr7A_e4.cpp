@@ -47,6 +47,20 @@
 #include "e4/classes/OwnerDrawControl_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aInfo[];  // data: 0x84d410 truth(IDA G42.57w9)
+extern char aNeed[];  // data: 0x84d3d4 truth(IDA G42.57w9)
+extern char aPool[];  // data: 0x84d408 truth(IDA G42.57w9)
+extern char aStart_0[];  // data: 0x84d3e8 truth(IDA G42.57w9)
+extern unsigned int aAck;  // data: 0x84d3e4 truth(IDA G42.57w9)
+extern unsigned int aNack_0;  // data: 0x84d3dc truth(IDA G42.57w9)
+extern unsigned int aWdtFactionsele;  // data: 0x833cec truth(IDA G42.57w9)
+extern wchar_t aGuiMatchingpro[];  // data: 0x84d418 truth(IDA G42.57w9)
+extern wchar_t aTxtUpgraderequ[];  // data: 0x84abec truth(IDA G42.57w9)
+extern wchar_t aWolAddbuddyque[];  // data: 0x84d694 truth(IDA G42.57w9)
+extern wchar_t aWolMatchingpla[];  // data: 0x84d3f0 truth(IDA G42.57w9)
+extern wchar_t aWolMatchunknow[];  // data: 0x84d3b4 truth(IDA G42.57w9)
+
 
 // 0x7A0430
 namespace gamemd {

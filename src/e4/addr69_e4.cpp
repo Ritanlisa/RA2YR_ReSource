@@ -89,6 +89,12 @@
 #include "e4/classes/ListBox_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/INISectionList_e4.hpp"
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aBasic_0[];  // data: 0x83f488 truth(IDA G42.57w9)
+extern char aDigest_0[];  // data: 0x83f440 truth(IDA G42.57w9)
+extern unsigned char aMaxplayers;  // data: 0x83f3f0 truth(IDA G42.57w9)
+extern unsigned char aMinplayers;  // data: 0x83f3fc truth(IDA G42.57w9)
+
 
 // 0x690400
 namespace gamemd {

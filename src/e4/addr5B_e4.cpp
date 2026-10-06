@@ -80,6 +80,7 @@
 #include "e4/classes/Palette_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "classes/VocClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Count_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Text_e4.hpp"  // G42.36 C2027 supply

@@ -48,6 +48,9 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned int algn_7E7B29;  // data: 0x7e7b29 truth(IDA G42.57w9)
+
 
 // 0x439B00
 namespace gamemd {

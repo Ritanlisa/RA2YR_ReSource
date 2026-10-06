@@ -56,6 +56,10 @@
 #include "e4/classes/NetworkEventQueueClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Theme_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char byte_A8B8B4;  // data: 0xa8b8b4 truth(IDA G42.57w9)
+extern unsigned char byte_A8EDDC;  // data: 0xa8eddc truth(IDA G42.57w9)
+
 
 // 0x550080
 namespace gamemd {

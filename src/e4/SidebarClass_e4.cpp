@@ -49,6 +49,7 @@
 #include "e4/classes/DisplayClass_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
 #include "e4/classes/Rect_Point_e4.hpp"
+#include "classes/FogOfWar_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4C9C50

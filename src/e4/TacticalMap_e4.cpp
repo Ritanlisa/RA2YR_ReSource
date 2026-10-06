@@ -39,6 +39,7 @@
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/Matrix3x3_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "classes/TacticalMap_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Vector2_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers

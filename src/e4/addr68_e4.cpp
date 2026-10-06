@@ -98,6 +98,10 @@
 #include "e4/classes/ScriptTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TeamTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aGascloudsys[];  // data: 0x83da90 truth(IDA G42.57w9)
+extern char aHumanPlayer[];  // data: 0x83dc8c truth(IDA G42.57w9)
+
 
 // 0x682640
 namespace gamemd {

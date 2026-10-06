@@ -32,6 +32,9 @@
 #include "e4/classes/COMObject_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aShadowShp[];  // data: 0x820074 truth(IDA G42.57w9)
+
 
 // 0x487630
 namespace gamemd {

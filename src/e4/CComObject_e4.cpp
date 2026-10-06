@@ -34,6 +34,12 @@
 #include "e4/classes/BuildingAnim_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern wchar_t aTxtPagefailed[];  // data: 0x84b034 truth(IDA G42.57w9)
+extern wchar_t aTxtWolConnlost[];  // data: 0x84b190 truth(IDA G42.57w9)
+extern wchar_t aTxtYoureDiscon[];  // data: 0x84b15c truth(IDA G42.57w9)
+
 
 // 0x7937B0
 namespace gamemd {

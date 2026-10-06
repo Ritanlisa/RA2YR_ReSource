@@ -24,6 +24,43 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char aAltimage;  // data: 0x845c94 truth(IDA G42.57w9)
+extern unsigned char aBrainblastturr;  // data: 0x845b38 truth(IDA G42.57w9)
+extern unsigned char aBrainblastturr_0;  // data: 0x845b20 truth(IDA G42.57w9)
+extern unsigned char aChronoturretin;  // data: 0x845adc truth(IDA G42.57w9)
+extern unsigned char aChronoturretwe;  // data: 0x845ac8 truth(IDA G42.57w9)
+extern unsigned char aCowturretindex;  // data: 0x845a7c truth(IDA G42.57w9)
+extern unsigned char aCowturretweapo;  // data: 0x845a6c truth(IDA G42.57w9)
+extern unsigned char aExplodeturreti;  // data: 0x845b64 truth(IDA G42.57w9)
+extern unsigned char aExplodeturretw;  // data: 0x845b50 truth(IDA G42.57w9)
+extern unsigned char aFlakturretinde;  // data: 0x845c04 truth(IDA G42.57w9)
+extern unsigned char aFlakturretweap;  // data: 0x845bf0 truth(IDA G42.57w9)
+extern unsigned char aGuardianturret;  // data: 0x8459d4 truth(IDA G42.57w9)
+extern unsigned char aGuardianturret_0;  // data: 0x8459bc truth(IDA G42.57w9)
+extern unsigned char aInitiateturret;  // data: 0x845a58 truth(IDA G42.57w9)
+extern unsigned char aInitiateturret_0;  // data: 0x845a40 truth(IDA G42.57w9)
+extern unsigned char aMachinegunturr;  // data: 0x845c2c truth(IDA G42.57w9)
+extern unsigned char aMachinegunturr_0;  // data: 0x845c14 truth(IDA G42.57w9)
+extern unsigned char aNormalturretin;  // data: 0x845c80 truth(IDA G42.57w9)
+extern unsigned char aNormalturretwe;  // data: 0x845c6c truth(IDA G42.57w9)
+extern unsigned char aPistolturretin;  // data: 0x845bdc truth(IDA G42.57w9)
+extern unsigned char aPistolturretwe;  // data: 0x845bc8 truth(IDA G42.57w9)
+extern unsigned char aRadcannonturre;  // data: 0x845b08 truth(IDA G42.57w9)
+extern unsigned char aRadcannonturre_0;  // data: 0x845af0 truth(IDA G42.57w9)
+extern unsigned char aRepairturretin;  // data: 0x845c58 truth(IDA G42.57w9)
+extern unsigned char aRepairturretwe;  // data: 0x845c44 truth(IDA G42.57w9)
+extern unsigned char aShockturretind;  // data: 0x845b8c truth(IDA G42.57w9)
+extern unsigned char aShockturretwea;  // data: 0x845b78 truth(IDA G42.57w9)
+extern unsigned char aSniperturretin;  // data: 0x845bb4 truth(IDA G42.57w9)
+extern unsigned char aSniperturretwe;  // data: 0x845ba0 truth(IDA G42.57w9)
+extern unsigned char aTerroristexplo;  // data: 0x845aac truth(IDA G42.57w9)
+extern unsigned char aTerroristexplo_0;  // data: 0x845a8c truth(IDA G42.57w9)
+extern unsigned char aVirusturretind;  // data: 0x845a2c truth(IDA G42.57w9)
+extern unsigned char aVirusturretwea;  // data: 0x845a18 truth(IDA G42.57w9)
+extern unsigned char aYuriprimeturre;  // data: 0x845a00 truth(IDA G42.57w9)
+extern unsigned char aYuriprimeturre_0;  // data: 0x8459e8 truth(IDA G42.57w9)
+
 
 // 0x6B4DD0
 namespace gamemd {

@@ -15,6 +15,9 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Function_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern const IID IID_ILocomotion;  // data: 0x7ed358 truth(IDA G42.57w9)
+
 
 // 0x4AF780
 namespace gamemd {

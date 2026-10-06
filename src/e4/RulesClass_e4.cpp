@@ -25,6 +25,9 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char a0None[];  // data: 0x83d4ac truth(IDA G42.57w9)
+
 
 // 0x48ACF0
 namespace gamemd {

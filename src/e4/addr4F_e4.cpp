@@ -69,8 +69,20 @@
 #include "e4/classes/MSPCXAnim_e4.hpp"
 #include "e4/classes/Map_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
+#include "classes/DSurface_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/ThemeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aActiverect[];  // data: 0x824240 truth(IDA G42.57w9)
+extern char aAlt[];  // data: 0x82437c truth(IDA G42.57w9)
+extern char aCtrl[];  // data: 0x824384 truth(IDA G42.57w9)
+extern char aKeys[];  // data: 0x824340 truth(IDA G42.57w9)
+extern char aOrigin[];  // data: 0x82424c truth(IDA G42.57w9)
+extern char aSelectsound[];  // data: 0x8242fc truth(IDA G42.57w9)
+extern char aShift[];  // data: 0x824374 truth(IDA G42.57w9)
+extern char aShortcut[];  // data: 0x824308 truth(IDA G42.57w9)
+extern unsigned char aLoop;  // data: 0x824238 truth(IDA G42.57w9)
+
 
 // 0x4F10E0
 namespace gamemd {

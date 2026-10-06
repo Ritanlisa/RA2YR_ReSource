@@ -935,14 +935,14 @@ int VoxelAnimClass::Reset(void *a1, void *a2)
   ((LocomotionClass *)this)->Init(); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C[0] = g_AsyncMovieState; /*0x75aaa1*/
   *(unsigned int *)this->needsSave = g_MovieFrameState1; /*0x75aaaa*/
-  *(unsigned int *)&this->__pad_20[4] = g_MovieFrameState2; /*0x75aab6*/
-  *(unsigned int *)&this->__pad_20[8] = g_AsyncMovieState; /*0x75aabe*/
-  *(unsigned int *)&this->__pad_20[12] = g_MovieFrameState1; /*0x75aac6*/
-  *(unsigned int *)&this->__pad_20[16] = g_MovieFrameState2; /*0x75aace*/
-  this->__pad_20[20] = 0; /*0x75aad3*/
-  this->__pad_20[21] = 0; /*0x75aad6*/
-  this->__pad_20[22] = 0; /*0x75aad9*/
-  *(unsigned int *)&this->__pad_20[24] = 0; /*0x75aadc*/
+  *(unsigned int *)&this->q024 = g_MovieFrameState2; /*0x75aab6*/
+  *(unsigned int *)&this->q028 = g_AsyncMovieState; /*0x75aabe*/
+  *(unsigned int *)&this->q02C = g_MovieFrameState1; /*0x75aac6*/
+  *(unsigned int *)&this->nextObject = g_MovieFrameState2; /*0x75aace*/
+  this->attachedTag = 0; /*0x75aad3*/
+  this->q035 = 0; /*0x75aad6*/
+  this->q036 = 0; /*0x75aad9*/
+  *(unsigned int *)&this->q038 = 0; /*0x75aadc*/
   this->VoxelAnimClass_field_0x0 = (unsigned int)(&vt_WalkLocomotionClass); /*0x75aadf*/
   this->VoxelAnimClass_field_0x4[0] = (int)&vt_WalkLocomotionClass; /*0x75aae5*/
   *(unsigned int *)&this->__pad_C[12] = (unsigned int)(&vt_WalkLocomotionClass); /*0x75aaec*/
@@ -967,24 +967,24 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   *(unsigned int *)&this->__pad_12C[4] = 100; /*0x75ec0a*/
   *(unsigned int *)&this->__pad_12C[16] = 0; /*0x75ec14*/
   *(unsigned int *)this->q144 = 0; /*0x75ec1a*/
-  *(unsigned int *)&this->__pad_144[4] = 0; /*0x75ec20*/
-  *(unsigned int *)&this->__pad_144[8] = 0; /*0x75ec26*/
-  *(unsigned int *)&this->__pad_144[92] = 0; /*0x75ec2c*/
-  *(unsigned int *)&this->__pad_144[96] = 0; /*0x75ec32*/
-  *(unsigned int *)&this->__pad_144[100] = 0; /*0x75ec38*/
-  *(unsigned int *)&this->__pad_144[140] = 0; /*0x75ec44*/
-  *(unsigned int *)&this->__pad_144[144] = 0; /*0x75ec4a*/
-  ((FrameSnapshot *)(&this->__pad_144[148]))->Init(); /*0x75ec50*/
-  *(unsigned int *)&this->__pad_144[176] = 0; /*0x75ec57*/
-  *(unsigned int *)&this->__pad_144[180] = 5; /*0x75ec5d*/
-  this->__pad_144[184] = 1; /*0x75ec67*/
-  this->__pad_144[185] = 0; /*0x75ec6e*/
-  *(unsigned int *)&this->__pad_144[172] = (unsigned int)&vt_VectorClass;
-  *(unsigned int *)&this->__pad_144[176] = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
-  this->__pad_144[185] = 1; /*0x75ec89*/
-  *(unsigned int *)&this->__pad_144[172] = (unsigned int)&vt_DynamicVectorClass;
-  *(unsigned int *)&this->__pad_144[192] = 10; /*0x75ec9a*/
-  *(unsigned int *)&this->__pad_144[188] = 0; /*0x75eca4*/
+  *(unsigned int *)&this->q148 = 0; /*0x75ec20*/
+  *(unsigned int *)&this->u32_14C = 0; /*0x75ec26*/
+  *(unsigned int *)&this->u32_1A0 = 0; /*0x75ec2c*/
+  *(unsigned int *)&this->u32_1A4 = 0; /*0x75ec32*/
+  *(unsigned int *)&this->u32_1A8 = 0; /*0x75ec38*/
+  *(unsigned int *)&this->q1D0 = 0; /*0x75ec44*/
+  *(unsigned int *)&this->Audio4 = 0; /*0x75ec4a*/
+  ((FrameSnapshot *)(&this->q1D8))->Init(); /*0x75ec50*/
+  *(unsigned int *)&this->u32_1F4 = 0; /*0x75ec57*/
+  *(unsigned int *)&this->u32_1F8 = 5; /*0x75ec5d*/
+  this->u8_1FC = 1; /*0x75ec67*/
+  this->u8_1FD = 0; /*0x75ec6e*/
+  *(unsigned int *)&this->u32_1F0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)&this->u32_1F4 = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
+  this->u8_1FD = 1; /*0x75ec89*/
+  *(unsigned int *)&this->u32_1F0 = (unsigned int)&vt_DynamicVectorClass;
+  *(unsigned int *)&this->q204 = 10; /*0x75ec9a*/
+  *(unsigned int *)&this->q200 = 0; /*0x75eca4*/
   this->VoxelAnimClass_field_0x0 = (unsigned int)(&vt_WaveClass); /*0x75ecaa*/
   this->VoxelAnimClass_field_0x4[0] = (int)&vt_WaveClass; /*0x75ecb0*/
   this->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
@@ -1034,7 +1034,7 @@ char VoxelAnimClass::UpdateMatrix()
   int v8; // [esp+10h] [ebp-8h] BYREF
   int v9; // [esp+14h] [ebp-4h] BYREF
 
-  if ( *(unsigned int *)&this->__pad_20[4] > Cell::GetGroundHeight(this->VoxelAnimClass_field_0x1C) + 120 ) /*0x4d02cc*/
+  if ( *(unsigned int *)&this->q024 > Cell::GetGroundHeight(this->VoxelAnimClass_field_0x1C) + 120 ) /*0x4d02cc*/
     return 1; /*0x4d02d4*/
   v3 = *(unsigned int *)this->__pad_C; /*0x4d02d5*/
   if ( *(unsigned int *)(v3 + 692) && *(unsigned int *)(v3 + 764) ) /*0x4d02e2*/
@@ -1084,7 +1084,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
 
   v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->VoxelAnimClass_field_0x0 + 18))( this, (unsigned char *)(v7)); /*0x749b2f*/
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
-    this->__pad_20[96] = 1; /*0x749b46*/
+    this->q080 = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect((ObjectClass *)this); /*0x749b60*/
 
 }

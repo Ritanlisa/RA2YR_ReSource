@@ -52,10 +52,18 @@
 #include "e4/classes/SHPClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
+#include "classes/AudioMixer_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/NukeFlash_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/NukeFlash_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/PsyDom_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned int aSed;  // data: 0x83da88 truth(IDA G42.57w9)
+extern unsigned int aSpldbrShp;  // data: 0x83da40 truth(IDA G42.57w9)
+extern wchar_t aTxtGameId[];  // data: 0x83da4c truth(IDA G42.57w9)
+extern wchar_t aTxtUnableReadS[];  // data: 0x831af0 truth(IDA G42.57w9)
+
 
 // 0x44F820
 namespace gamemd {

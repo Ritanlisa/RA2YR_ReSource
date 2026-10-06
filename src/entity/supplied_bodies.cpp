@@ -123,7 +123,7 @@ int AnimClass::SimpleCtor()
     this->AnimClass_field_0x0 = &vt_AnimClass; /*0x422847*/
     this->AnimClass_field_0x4 = (unsigned int)&vt_AnimClass; /*0x42284d*/
     this->AnimClass_field_0x8 = (unsigned int)&vt_AnimClass; /*0x422854*/
-    *(unsigned int *)this->vtable4 = (unsigned int)&off_7E3328; /*0x42285b*/
+    *(unsigned int *)&this->q000 = (unsigned int)&off_7E3328; /*0x42285b*/
     if ( dword_A8E9B8 < dword_A8E9B0 /*0x422896*/
       || (byte_A8E9B5 || !dword_A8E9B0)
       && dword_A8E9BC > 0
@@ -671,7 +671,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
     this->AnimClass_field_0x0 = (int)&vt_AnimClass; /*0x42201c*/
     this->AnimClass_field_0x4 = (int)&vt_AnimClass; /*0x422022*/
     this->AnimClass_field_0x8 = (int)&vt_AnimClass; /*0x422028*/
-    *(unsigned int *)this->vtable4 = (unsigned int)&off_7E3328; /*0x422030*/
+    *(unsigned int *)&this->q000 = (unsigned int)&off_7E3328; /*0x422030*/
     (&this->__pad_D8)[4] = 0; /*0x422037*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->AnimClass_field_0x4); /*0x42203d*/
     ((AudioController *)&this->AnimClass_field_0x1A0)->Init(); /*0x422048*/

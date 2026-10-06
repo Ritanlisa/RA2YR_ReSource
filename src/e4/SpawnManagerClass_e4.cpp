@@ -499,7 +499,7 @@ int SpawnManagerClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   if ( result >= 0 ) /*0x6b80c9*/
   {
     v4 = *a1; /*0x6b80ce*/
-    aP2 = *(unsigned int *)aP0->__pad_48; /*0x6b80da*/
+    aP2 = *(unsigned int *)&aP0->u32_48; /*0x6b80da*/
     result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)(a1), (int *)(&aP2), 4, 0); /*0x6b80de*/
     if ( result >= 0 ) /*0x6b80e3*/
     {
@@ -507,7 +507,7 @@ int SpawnManagerClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
       {
         result = (*(int (**)(int *, unsigned int, int, unsigned int))(*a1 + 16))( /*0x6b80fd*/
                    a1,
-                   *(unsigned int *)(aP0->spawnVectorCount + 4 * i),
+                   *(unsigned int *)(*(unsigned int *)&aP0->zero_3C + 4 * i),
                    24,
                    0);
         if ( result < 0 ) /*0x6b8102*/
@@ -560,15 +560,15 @@ void SpawnManagerClass_25::ddtor(void *a1_1, void *a2_1)
 
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x6b8166*/
-  this->m_10 = 0; /*0x6b8169*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x6b8170*/
+  v2 = *(void **)&this->q004; /*0x6b8166*/
+  this->q010 = 0; /*0x6b8169*/
+  if ( v2 && BYTE1(this->q00C) ) /*0x6b8170*/
   {
     __3_YAXPAX_Z(v2); /*0x6b8176*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6b817e*/
+    *(unsigned int *)&this->q004 = 0; /*0x6b817e*/
   }
-  BYTE1(this->m_C) = 0; /*0x6b8181*/
-  this->m_8 = 0; /*0x6b8184*/
+  BYTE1(this->q00C) = 0; /*0x6b8181*/
+  this->q008 = 0; /*0x6b8184*/
 
 }
 } // namespace gamemd
@@ -578,8 +578,8 @@ namespace gamemd {
 unsigned int SpawnManagerClass_25::LoadState(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x6b8190*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x6b81a5*/
+  if ( LOBYTE(this->q00C) ) /*0x6b8190*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x6b81a5*/
   else
     return 0; /*0x6b8197*/
 
@@ -591,7 +591,7 @@ namespace gamemd {
 int SpawnManagerClass_25::SaveState(int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6b81ba*/
+  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x6b81ba*/
 
 }
 } // namespace gamemd
@@ -612,7 +612,7 @@ char SpawnManagerClass_25::AddRef(int a2)
     v3 = 0; /*0x6b822f*/
     if ( v2 <= 0 ) /*0x6b8233*/
       return 1; /*0x6b8253*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x6b8235*/
+    v4 = *(unsigned int **)&this->q004; /*0x6b8235*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6b823b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6b8244*/
     {
@@ -669,38 +669,38 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6b840c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x6b8412*/
+    LOBYTE(this->q00C) = 0; /*0x6b8412*/
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6b842a*/
-    LOBYTE(this->m_C) = 1; /*0x6b8432*/
+    LOBYTE(this->q00C) = 1; /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x6b8438*/
+    if ( *(unsigned int *)&this->q004 ) /*0x6b8438*/
     {
-      m_8 = this->m_8; /*0x6b843f*/
+      m_8 = this->q008; /*0x6b843f*/
       if ( a2 < m_8 ) /*0x6b8444*/
         m_8 = a2; /*0x6b8446*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x6b844c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x6b844c*/
         ++i; /*0x6b8451*/
-      if ( BYTE1(this->m_C) ) /*0x6b845e*/
+      if ( BYTE1(this->q00C) ) /*0x6b845e*/
       {
-        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6b8469*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x6b8471*/
+        __3_YAXPAX_Z(*(void **)&this->q004); /*0x6b8469*/
+        *(unsigned int *)&this->q004 = 0; /*0x6b8471*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x6b847a*/
-    this->m_8 = a2; /*0x6b8482*/
-    BYTE1(this->m_C) = a3 == 0; /*0x6b8485*/
+    *(unsigned int *)&this->q004 = (unsigned int)v4; /*0x6b847a*/
+    this->q008 = a2; /*0x6b8482*/
+    BYTE1(this->q00C) = a3 == 0; /*0x6b8485*/
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6b848e*/
+    (*(void (**)(void *))(*(unsigned int *)&this->q000 + 12))(this); /*0x6b848e*/
   }
-  v7 = this->m_8; /*0x6b8491*/
-  if ( v7 < this->m_10 ) /*0x6b8499*/
-    this->m_10 = v7; /*0x6b849b*/
+  v7 = this->q008; /*0x6b8491*/
+  if ( v7 < this->q010 ) /*0x6b8499*/
+    this->q010 = v7; /*0x6b849b*/
   return 1; /*0x6b849e*/
 
 }
@@ -715,11 +715,11 @@ int SpawnManagerClass_25::Spawn(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x6b84b0*/
+  m_10 = this->q010; /*0x6b84b0*/
   result = 0; /*0x6b84b3*/
   if ( m_10 <= 0 ) /*0x6b84b8*/
     return -1; /*0x6b84cf*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x6b84be*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x6b84be*/
   {
     if ( ++result >= m_10 ) /*0x6b84cd*/
       return -1; /*0x6b84cd*/
@@ -735,18 +735,18 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char 
 
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x6b8793*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
-  if ( v3 && BYTE1(this->m_C) ) /*0x6b87a0*/
+  v3 = *(void **)&this->q004; /*0x6b8793*/
+  *(unsigned int *)&this->q000 = (unsigned int)&vt_VectorClass;
+  if ( v3 && BYTE1(this->q00C) ) /*0x6b87a0*/
   {
     __3_YAXPAX_Z(v3); /*0x6b87a8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6b87b0*/
+    *(unsigned int *)&this->q004 = 0; /*0x6b87b0*/
   }
-  BYTE1(this->m_C) = 0; /*0x6b87bb*/
-  this->m_8 = 0; /*0x6b87c1*/
+  BYTE1(this->q00C) = 0; /*0x6b87bb*/
+  this->q008 = 0; /*0x6b87c1*/
   if ( (a2 & 1) != 0 ) /*0x6b87c8*/
     __3_YAXPAX_Z(this); /*0x6b87cb*/
-  return this->__pad_0; /*0x6b87d5*/
+  return (VectorClass_flat *)this; /*0x6b87d5*/
 
 }
 } // namespace gamemd

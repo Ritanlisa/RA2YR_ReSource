@@ -37,6 +37,9 @@
 #include "e4/classes/CreateTeamCommand_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Vector4_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned int a2;  // data: 0x822bc0 truth(IDA G42.57w9)
+
 
 // 0x4FA350
 namespace gamemd {

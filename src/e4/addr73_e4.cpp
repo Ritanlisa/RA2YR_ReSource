@@ -47,6 +47,14 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FootClass_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aMissingHs[];  // data: 0x845820 truth(IDA G42.57w9)
+extern unsigned int a2;  // data: 0x822bc0 truth(IDA G42.57w9)
+extern unsigned int aFatalStringMan;  // data: 0x84583c truth(IDA G42.57w9)
+extern wchar_t aMsgNavempty[];  // data: 0x8455dc truth(IDA G42.57w9)
+extern wchar_t aMsgNounitssel[];  // data: 0x8455fc truth(IDA G42.57w9)
+extern wchar_t aMsgUnitsworth[];  // data: 0x8455ec truth(IDA G42.57w9)
+
 
 // 0x730A90
 namespace gamemd {

@@ -43,6 +43,11 @@
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/PlayerClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned int aDefensetab;  // data: 0x827014 truth(IDA G42.57w9)
+extern unsigned int aNextobject;  // data: 0x827234 truth(IDA G42.57w9)
+extern unsigned int aStructuretab;  // data: 0x826fc8 truth(IDA G42.57w9)
+
 
 // 0x535CF0
 namespace gamemd {

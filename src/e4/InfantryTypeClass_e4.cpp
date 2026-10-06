@@ -31,6 +31,35 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char aAgent;  // data: 0x825954 truth(IDA G42.57w9)
+extern unsigned char aAssaulter;  // data: 0x82599c truth(IDA G42.57w9)
+extern unsigned char aC4;  // data: 0x825978 truth(IDA G42.57w9)
+extern unsigned char aCrawls;  // data: 0x8258f4 truth(IDA G42.57w9)
+extern unsigned char aCyborg;  // data: 0x825a0c truth(IDA G42.57w9)
+extern unsigned char aDeployedcrusha;  // data: 0x825914 truth(IDA G42.57w9)
+extern unsigned char aDeployer;  // data: 0x825928 truth(IDA G42.57w9)
+extern unsigned char aDetectiondista;  // data: 0x825988 truth(IDA G42.57w9)
+extern unsigned char aDoggie;  // data: 0x825934 truth(IDA G42.57w9)
+extern unsigned char aEngineer;  // data: 0x82596c truth(IDA G42.57w9)
+extern unsigned char aEnterwatersoun;  // data: 0x8259f0 truth(IDA G42.57w9)
+extern unsigned char aFearless;  // data: 0x8259d4 truth(IDA G42.57w9)
+extern unsigned char aFireprone;  // data: 0x8257b8 truth(IDA G42.57w9)
+extern unsigned char aFireup;  // data: 0x8257d8 truth(IDA G42.57w9)
+extern unsigned char aFraidycat;  // data: 0x8259c8 truth(IDA G42.57w9)
+extern unsigned char aHarvestrate;  // data: 0x82597c truth(IDA G42.57w9)
+extern unsigned char aInfiltrate;  // data: 0x8259bc truth(IDA G42.57w9)
+extern unsigned char aIvan;  // data: 0x8259b4 truth(IDA G42.57w9)
+extern unsigned char aJumpjetturn;  // data: 0x8258fc truth(IDA G42.57w9)
+extern unsigned char aLeavewatersoun;  // data: 0x8259e0 truth(IDA G42.57w9)
+extern unsigned char aNothuman;  // data: 0x825a00 truth(IDA G42.57w9)
+extern unsigned char aOccupier;  // data: 0x8259a8 truth(IDA G42.57w9)
+extern unsigned char aSecondaryfire;  // data: 0x825680 truth(IDA G42.57w9)
+extern unsigned char aThief;  // data: 0x82594c truth(IDA G42.57w9)
+extern unsigned char aTiberiumproof;  // data: 0x82595c truth(IDA G42.57w9)
+extern unsigned char aUseownname;  // data: 0x825908 truth(IDA G42.57w9)
+extern unsigned char aVehiclethief;  // data: 0x82593c truth(IDA G42.57w9)
+
 
 // 0x5236A0
 namespace gamemd {

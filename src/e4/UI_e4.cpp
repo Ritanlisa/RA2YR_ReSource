@@ -62,6 +62,12 @@
 #include "e4/classes/TextGroup_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned int aMsgPlanningmod_10;  // data: 0x836cb4 truth(IDA G42.57w9)
+extern unsigned int aMsgPlanningmod_9;  // data: 0x836cd0 truth(IDA G42.57w9)
+extern wchar_t aGuiHostgamesta_0[];  // data: 0x83168c truth(IDA G42.57w9)
+extern wchar_t aMsgPlanningmod_11[];  // data: 0x836c9c truth(IDA G42.57w9)
+
 
 // 0x52B6D0
 namespace gamemd {

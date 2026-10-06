@@ -26,6 +26,9 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WTFMode_e4.hpp"
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
+
 
 // 0x41D860
 namespace gamemd {

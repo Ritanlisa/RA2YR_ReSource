@@ -49,6 +49,7 @@
 #include "e4/classes/SpawnManagerClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
+#include "classes/BuildingClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Delegate_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
 

@@ -523,7 +523,7 @@ int FontClass::GetPixelData(unsigned short a2) {
     uint8_t *v4b = nullptr; (void)v4b;
     uint8_t *v4; // eax
 
-    unsigned int *fb = *(unsigned int **)&this->FontClass_field_0x04;  // G42.39: alias restored (member holds a pointer value)
+    unsigned int *fb = *(unsigned int **)&this->q004;  // G42.39: alias restored (member holds a pointer value)
     if ( fb /*0x4349dc*/
       && (v3 = *(uint16_t *)(fb[6] + 2 * a2), (unsigned short)v3)
       && (v4 = (uint8_t *)(fb[7] + (v3 - 1) * fb[5])) != 0 )
@@ -3245,33 +3245,33 @@ void ToolTipClass::updateString() {
     ToolTipClass_field_0x08 = (HWND)this->m_8; /*0x7240ba*/
     *(unsigned int *)this->__pad_0 = 0; /*0x7240bd*/
     KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
-    if ( this->ToolTipClass_field_0x04 ) /*0x7240ca*/
-      (*(void (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, (int *)&this->ToolTipClass_field_0x18); /*0x7240db*/
+    if ( *(unsigned int *)this->Position ) /*0x7240ca*/
+      (*(void (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 8))(this, (int *)&this->q018); /*0x7240db*/
     RA2_OPDEL(*((void **)this + 147)); /*0x7240e5*/
     this->u32_24C = 0; /*0x7240ea*/
     this->u32_250 = 0; /*0x7240f0*/
     this->u32_254 = 0; /*0x7240f6*/
     this->u32_258 = 0; /*0x7240fc*/
     this->u32_25C = 0; /*0x724102*/
-    for ( i = 0; i < this->q091; ++i ) /*0x724115*/
+    for ( i = 0; i < this->__pad_244; ++i ) /*0x724115*/
     {
-      v4 = this->q08E; /*0x724117*/
+      v4 = this->__pad_238; /*0x724117*/
       if ( *(unsigned int *)(v4 + 4 * i) ) /*0x72411d*/
         RA2_OPDEL(*(void **)(v4 + 4 * i)); /*0x724125*/
     }
-    (*(void (__thiscall **)(char *))(this->q08D + 12))((char *)this + 564); /*0x724146*/
+    (*(void (__thiscall **)(char *))(this->__pad_234 + 12))((char *)this + 564); /*0x724146*/
     RA2_OPDEL(*((void **)this + 147)); /*0x724150*/
     this->u32_24C = 0; /*0x724155*/
     this->u32_250 = 0; /*0x72415b*/
     this->u32_254 = 0; /*0x724161*/
     this->u32_258 = 0; /*0x724167*/
     this->u32_25C = 0; /*0x72416d*/
-    v5 = (void *)this->q08E; /*0x724173*/
-    this->q08D = 0; /*0x72417b*/
+    v5 = (void *)this->__pad_238; /*0x724173*/
+    this->__pad_234 = 0; /*0x72417b*/
     if ( v5 && this->u32_241 ) /*0x724183*/
     {
       RA2_OPDEL(v5); /*0x724189*/
-      this->q08E = 0; /*0x724191*/
+      this->__pad_238 = 0; /*0x724191*/
     }
     this->u32_241 = 0; /*0x724194*/
     this->u32_23C = 0; /*0x724197*/
@@ -3419,7 +3419,7 @@ int ToolTipClass::initString() {
     const wchar_t *v5; // edi
     int ToolTipClass_field_0x10; // edx
 
-    ToolTipClass_field_0x04 = (unsigned int *)this->ToolTipClass_field_0x04; /*0x724ad7*/
+    ToolTipClass_field_0x04 = *(unsigned int **)this->Position; /*0x724ad7*/
     if ( ToolTipClass_field_0x04 ) /*0x724adc*/
     {
       v3 = (wchar_t *)ToolTipClass_field_0x04[5]; /*0x724ae2*/
@@ -3432,32 +3432,32 @@ int ToolTipClass::initString() {
       v5 = StringCSF; /*0x724b06*/
       if ( StringCSF && wcslen(StringCSF) ) /*0x724b0d*/
       {
-        wcsncpy((wchar_t *)&this->ToolTipClass_field_0x28, v5, 0x100u); /*0x724b23*/
-        ToolTipClass_field_0x10 = this->ToolTipClass_field_0x10; /*0x724b28*/
-        this->ToolTipClass_field_0x1C = this->ToolTipClass_field_0x14; /*0x724b36*/
-        this->ToolTipClass_field_0x18 = ToolTipClass_field_0x10; /*0x724b39*/
+        wcsncpy((wchar_t *)&this->q028, v5, 0x100u); /*0x724b23*/
+        ToolTipClass_field_0x10 = this->Duration; /*0x724b28*/
+        *(unsigned int *)&this->q01C = *(unsigned int *)&this->DisplayTimer; /*0x724b36*/
+        *(unsigned int *)&this->q018 = ToolTipClass_field_0x10; /*0x724b39*/
         if ( !(*(uint8_t (__thiscall **)(ToolTipClass *, int *))(*(unsigned int *)this->__pad_0 + 4))( /*0x724b3e*/
                 this,
-                (int *)&this->ToolTipClass_field_0x18) )
+                (int *)&this->q018) )
         {
-          this->ToolTipClass_field_0x18 = 0; /*0x724b47*/
-          this->ToolTipClass_field_0x1C = 0; /*0x724b49*/
-          this->ToolTipClass_field_0x20 = 0; /*0x724b4c*/
-          this->ToolTipClass_field_0x24 = 0; /*0x724b4f*/
-          *(unsigned int *)this->ToolTipClass_field_0x04 = 0; /*0x724b54*/
+          this->q018 = 0; /*0x724b47*/
+          this->q01C = 0; /*0x724b49*/
+          *(unsigned int *)&this->TextBuffer = 0; /*0x724b4c*/
+          this->q024 = 0; /*0x724b4f*/
+          **(unsigned int **)this->Position = 0; /*0x724b54*/
           return 0; /*0x724b5f*/
         }
       }
       else
       {
-        this->ToolTipClass_field_0x18 = 0; /*0x724b60*/
-        this->ToolTipClass_field_0x1C = 0; /*0x724b63*/
-        this->ToolTipClass_field_0x20 = 0; /*0x724b66*/
-        this->ToolTipClass_field_0x24 = 0; /*0x724b69*/
-        *(unsigned int *)this->ToolTipClass_field_0x04 = 0; /*0x724b6c*/
+        this->q018 = 0; /*0x724b60*/
+        this->q01C = 0; /*0x724b63*/
+        *(unsigned int *)&this->TextBuffer = 0; /*0x724b66*/
+        this->q024 = 0; /*0x724b69*/
+        **(unsigned int **)this->Position = 0; /*0x724b6c*/
       }
     }
-    return this->ToolTipClass_field_0x04 != 0; /*0x724b59*/
+    return *(unsigned int *)this->Position != 0; /*0x724b59*/
 }
 } // namespace gamemd
 

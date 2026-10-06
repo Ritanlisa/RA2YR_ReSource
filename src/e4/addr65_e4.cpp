@@ -217,6 +217,10 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
+extern unsigned int a3;  // data: 0x822bbc truth(IDA G42.57w9)
+
 
 // 0x650A90
 namespace gamemd {

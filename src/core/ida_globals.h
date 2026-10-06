@@ -11264,7 +11264,7 @@ extern unsigned char stru_8A0390;
 extern unsigned char stru_8A06F8;
 extern unsigned char stru_8A38E0;
 extern unsigned char stru_A80220;
-struct stru_A83D50_t { unsigned char __pad_C8[64]; };  // g57w8: til __pad_C8 vocab (raw stru_A83D50.__pad_C8[28] corpus form)
+struct stru_A83D50_t { unsigned char __pad_34[4]; unsigned char __pad_C8[64]; };  // g57w9: +__pad_34[4] @0x34 (dword_A83D84 disasm-verified; array form for decay-deref usage)  // g57w8: til __pad_C8 vocab (raw stru_A83D50.__pad_C8[28] corpus form)
 extern struct stru_A83D50_t stru_A83D50;
 extern unsigned char stru_A8BB1C;
 extern unsigned char stru_A8DA5C;

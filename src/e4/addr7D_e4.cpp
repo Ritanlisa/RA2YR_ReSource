@@ -25,6 +25,9 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/E4Recv_7B9530_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
+
 
 // 0x7D038F
 namespace gamemd {

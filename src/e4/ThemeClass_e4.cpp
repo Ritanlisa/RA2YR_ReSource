@@ -22,6 +22,9 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/TextBuffer_e4.hpp"
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned int aMusicStream;  // data: 0x844750 truth(IDA G42.57w9)
+
 
 // 0x4080C0
 namespace gamemd {

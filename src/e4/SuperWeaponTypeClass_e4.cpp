@@ -33,6 +33,15 @@
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned char aAuxbuilding;  // data: 0x842664 truth(IDA G42.57w9)
+extern unsigned char aLinemultiplier;  // data: 0x842680 truth(IDA G42.57w9)
+extern unsigned char aManualcontrol;  // data: 0x842644 truth(IDA G42.57w9)
+extern unsigned char aPredependent;  // data: 0x842670 truth(IDA G42.57w9)
+extern unsigned char aRechargetime;  // data: 0x842634 truth(IDA G42.57w9)
+extern unsigned char aSidebarimage;  // data: 0x842624 truth(IDA G42.57w9)
+extern unsigned char aUsechargedrain;  // data: 0x842654 truth(IDA G42.57w9)
+
 
 // 0x4F6540
 namespace gamemd {

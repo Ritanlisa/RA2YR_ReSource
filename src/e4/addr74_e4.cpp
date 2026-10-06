@@ -57,6 +57,10 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern char aViscLrgShp[];  // data: 0x84599c truth(IDA G42.57w9)
+extern char aViscSmlShp[];  // data: 0x8459ac truth(IDA G42.57w9)
+
 
 // 0x743270
 namespace gamemd {

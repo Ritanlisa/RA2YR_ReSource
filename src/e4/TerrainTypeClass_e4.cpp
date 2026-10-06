@@ -39,6 +39,16 @@
 #include "e4/classes/Tiberium_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "classes/AbstractTypeClass_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/AircraftClass_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/AircraftTypeClass_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/Checksummer_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/Power_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/TerrainClass_e4.hpp"  // G42.57w9 method-carrier supply
+#include "classes/Terrain_e4.hpp"  // G42.57w9 method-carrier supply
+// ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
+extern unsigned int unk_7E95EC;  // data: 0x7e95ec truth(IDA G42.57w9)
+
 
 // 0x5447C0
 namespace gamemd {

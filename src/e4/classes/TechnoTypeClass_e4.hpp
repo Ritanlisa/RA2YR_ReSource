@@ -41,6 +41,7 @@ struct TechnoTypeClass {
     int alignmentPadding;  // 0x33
     void* q034;  // 0x34
     unsigned char q03A;  // 0x3A
+    unsigned char zero_3C;  // 0x3C
     char UINameLabel;  // 0x3D
     int q044;  // 0x44
     unsigned int u32_48;  // 0x48
