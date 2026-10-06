@@ -160,10 +160,42 @@ void VoxelProjectionSetup() {}
 
 // LoadExpansionMixFiles defined in src/misc/rules.cpp
 REVERSE(0x4a38d0, "LoadFileSHP: IDA verified", "None")
-// IDA 0x4A38D0 -- LoadFileSHP: loads SHP file and returns handle
-int  LoadFileSHP(const char* filename) {
-    void* data = FileSystem::LoadFile(filename, true);
-    return data ? 1 : 0; // returns handle/index (simplified: non-zero = loaded)
+// IDA 0x5B40B0 -- SearchMIXFile (truth: void *__fastcall(char *Source, char); body in addr5B_e4.cpp)
+void* SearchMIXFile(char* Source, char aP1);
+// IDA 0x4A38D0 -- LoadFileSHP: MIX-first SHP loader (truth: void *__fastcall(char*, bool*))
+// MIX hit  -> cached buffer returned, *a2 stays 0. MIX miss -> CCFileClass disk read into an
+// operator-new buffer; *a2 = (buffer != 0); stack object destroyed via vtable-install dtor chain.
+void* LoadFileSHP(char* Source, bool* a2) {
+    void* result;      // eax
+    void* v5;          // esi: loaded buffer
+    size_t v6;         // edi: file size
+    bool v7;           // zf
+    unsigned int v8[27];  // CCFileClass stack object @0x4A38ED (true size 0x6C: Construct writes +88..+104; til 84 stale)
+    int v9[5];            // obj+0x58 Buffer member tail {ptr,count,flag,FileID} (decompiler-split local)
+
+    *a2 = 0;                                                                                   /*0x4a38db*/
+    result = (void*)SearchMIXFile(Source, 0);                                                  /*0x4a38de*/
+    if (!result) {                                                                             /*0x4a38e5*/
+        ((CCFileClass*)v8)->Construct((void*)Source);                                          /*0x4a38ed*/
+        v5 = (void*)0;                                                                         /*0x4a38f2*/
+        if ((*(uint8_t(__thiscall**)(CCFileClass*, int))(*(uint32_t*)v8 + 20))((CCFileClass*)v8, 0)) {          /*0x4a38fd*/
+            v6 = (size_t)(*(int(__thiscall**)(CCFileClass*))(*(uint32_t*)v8 + 44))((CCFileClass*)v8);          /*0x4a390f*/
+            v5 = __2_YAPAXI_Z((unsigned int)v6);                                               /*0x4a3917*/
+            v7 = (v5 == 0);                                                                    /*0x4a391c*/
+            if (v5)                                                                            /*0x4a391e*/
+                (*(void(__thiscall**)(CCFileClass*, void*, size_t))(*(uint32_t*)v8 + 36))((CCFileClass*)v8, v5, v6); /*0x4a392a*/
+        } else {
+            v7 = (v5 == 0);                                                                    /*0x4a392d*/
+        }
+        *a2 = !v7;                                                                             /*0x4a392f*/
+        *(uint32_t*)v8 = (uint32_t)&CCFileClass_vftable;      // CCFileClass base-dtor vftable install /*0x4a3938*/
+        v9[3] = 0;                                                                             /*0x4a3940*/
+        ((VectorClass<int>*)(void*)v9)->Clear();               // Vector::Clear @0x43AE50           /*0x4a3948*/
+        *(uint32_t*)v8 = (uint32_t)&off_7E1668;                // CDFileClass vftable install       /*0x4a3951*/
+        BufferIOFileClass::Dtor((BufferIOFileClass*)(void*)v8);                                   /*0x4a3959*/
+        return v5;                                                                             /*0x4a395e*/
+    }
+    return result;                                                                             /*0x4a3961*/
 }
 // IDA 0x5BDA80 -- Mission::SetAndCall
 void MissionSetAndCall(int a, int b) { LOG_DEBUG("MissionSetAndCall(%d, %d)", a, b); }
@@ -681,7 +713,7 @@ int InitGame(bool no_cd)
     LoadExpansionMixFiles();
 
     // IDA 0x52C358: LoadFileSHP("MOUSE.SHA") -- WWMouseClass interaction
-    g_MouseSHP = (void*)LoadFileSHP("MOUSE.SHA");
+    g_MouseSHP = LoadFileSHP((char*)"MOUSE.SHA", (bool*)&byte_B0BCF4);  // 0x52C347-58: ecx="MOUSE.SHA", edx=&byte_B0BCF4, ret->g_MouseSHP (G57e1)
     if (g_MouseSHP && WWMouseClass_Instance) {
         // IDA: WWMouseClass vtable[3] -- set mouse approach
         // IDA: WWMouseClass vtable[1] -- set position

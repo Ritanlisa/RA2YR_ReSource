@@ -545,7 +545,7 @@ int RadSiteClass::GetSpread() const {  // g57c5 W7: const-sync (rad_site.hpp:53)
 } // namespace gamemd
 // 0x421EA0
 namespace gamemd {
-int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7)
+int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7)  // g57e2 W5e: raw 8th param
 {
     wchar_t *v9; // eax
     int v10; // eax

@@ -2260,13 +2260,13 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
     *((unsigned int *)this + 2) = a2; /*0x67c31e*/
     *((unsigned char *)this + 12) = 1; /*0x67c321*/
     *((unsigned char *)this + 13) = 0; /*0x67c325*/
-    *this = (VoxelAnimTypeVector)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c328*/
+    *(unsigned int *)this = (unsigned int)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c328*/
     if ( a2 ) /*0x67c32e*/
     {
       if ( a3 ) /*0x67c336*/
       {
         *((unsigned int *)this + 1) = a3; /*0x67c338*/
-        return this; /*0x67c33e*/
+        return (unsigned int *)this; /*0x67c33e*/
       }
       *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x67c34d*/
       *((unsigned char *)this + 13) = 1; /*0x67c350*/

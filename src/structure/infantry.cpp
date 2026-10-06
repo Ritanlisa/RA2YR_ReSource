@@ -131,7 +131,7 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
   int v26; // [esp+14h] [ebp-4h]
 
   v4 = deploy_type; /*0x51d6f6*/
-  if ( deploy_type == -1 || !*(unsigned int *)(this->Type->Sequence[0] + 36 * deploy_type + 4) || this->SequenceAnim[0] == 33 && ((unsigned int *)this)[0] ) /*0x51d72b*/
+  if ( deploy_type == -1 || !*(unsigned int *)(this->Type->Sequence[0] + 36 * deploy_type + 4) || ((unsigned int *)&this->SequenceAnim)[0] == 33 && ((unsigned int *)this)[0] ) /*0x51d72b*/  // g57e2 W3
     return 0; /*0x51d72b*/
   if ( ((unsigned int *)this)[0] /*0x51d771*/
     && *(unsigned int *)((*((int (**)(InfantryClass *))this->vtable1 + 33))(this) + 2048)
@@ -214,7 +214,7 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
   {
     v4 = 23; /*0x51d8ee*/
   }
-  v12 = this->SequenceAnim[0]; /*0x51d90b*/
+  v12 = ((unsigned int *)&this->SequenceAnim)[0]; /*0x51d90b*/  // g57e2 W3
   if ( v4 == v12 || v12 != -1 && !a3 && !(&byte_7EAF7C)[4 * v12] ) /*0x51d925*/
     return 0; /*0x51d92e*/
   if ( v4 == 27 ) /*0x51d937*/
@@ -223,7 +223,7 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
     {
       v24 = ((unsigned int *)this)[0]; /*0x51d95d*/
       v25 = ((unsigned int *)this)[1]; /*0x51d966*/
-      vtable0 = (int (**)(InfantryClass *))this->FootClass; /*0x51d96a*/
+      vtable0 = *(int (***)(InfantryClass *))this; /*0x51d96a*/  // g57e2 W2
       v26 = ((unsigned int *)this)[2]; /*0x51d96f*/
       v14 = *(unsigned int *)(vtable0[33](this) + 1388); /*0x51d979*/
       StartAudioControllerAt(v14, &v24, 0); /*0x51d97f*/
@@ -232,13 +232,13 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
   else if ( v4 == 31 && *(unsigned int *)((*((int (**)(InfantryClass *))this->vtable1 + 33))(this) + 1392) != -1 ) /*0x51d996*/
   {
     v24 = ((unsigned int *)this)[0]; /*0x51d9a6*/
-    v15 = (int (**)(InfantryClass *))this->FootClass; /*0x51d9aa*/
+    v15 = *(int (***)(InfantryClass *))this; /*0x51d9aa*/  // g57e2 W2
     v25 = ((unsigned int *)this)[1]; /*0x51d9af*/
     v26 = ((unsigned int *)this)[2]; /*0x51d9b6*/
     v16 = *(unsigned int *)(v15[33](this) + 1392); /*0x51d9c2*/
     StartAudioControllerAt(v16, &v24, 0); /*0x51d9ca*/
   }
-  this->SequenceAnim[0] = v4; /*0x51d9d2*/
+  ((unsigned int *)&this->SequenceAnim)[0] = v4; /*0x51d9d2*/  // g57e2 W3
   if ( v4 == 9 || v4 == 10 || v4 == 18 || v4 == 19 || v4 == 23 || v4 == 32 ) /*0x51d9f1*/
   {
     ProductionTimeMult = (int)Rules::GetProductionTimeMult( /*0x51da02*/
@@ -310,14 +310,14 @@ AnimClass * * InfantryClass::ProcessIdleDeploy()
     {
       if ( PanicDurationLeft < 50 ) /*0x52011e*/
       {
-        v3 = this->SequenceAnim[0]; /*0x520124*/
+        v3 = ((unsigned int *)&this->SequenceAnim)[0]; /*0x520124*/  // g57e2 W3
         if ( v3 != 27 && v3 != 28 && v3 != 29 && v3 != 30 ) /*0x520148*/
           (*((void (**)(InfantryClass *, int, unsigned int, unsigned int))this->vtable1 + 342))(this, 7, 0, 0); /*0x520158*/
       }
     }
     else if ( PanicDurationLeft >= 50 ) /*0x520163*/
     {
-      v4 = this->SequenceAnim[0]; /*0x520165*/
+      v4 = ((unsigned int *)&this->SequenceAnim)[0]; /*0x520165*/  // g57e2 W3
       if ( v4 != 27 && v4 != 28 && v4 != 29 && v4 != 30 ) /*0x52017d*/
       {
         if ( !(uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsCurrentPlayer() ) /*0x520185*/
@@ -341,7 +341,7 @@ AnimClass * * InfantryClass::ProcessIdleDeploy()
   {
     if ( this->PanicDurationLeft > 50 ) /*0x5201f3*/
     {
-      movementDestination = (AbstractClass *)this->SequenceAnim[0]; /*0x5201f5*/
+      movementDestination = (AbstractClass *)((unsigned int *)&this->SequenceAnim)[0]; /*0x5201f5*/  // g57e2 W3
       if ( movementDestination != (AbstractClass *)27 /*0x52020d*/
         && movementDestination != (AbstractClass *)28
         && movementDestination != (AbstractClass *)29
@@ -357,7 +357,7 @@ AnimClass * * InfantryClass::ProcessIdleDeploy()
           {
             movementDestination = (ra2::game::AbstractClass *)(((unsigned int *)this)[0]); /*0x52023d*/
             if ( !movementDestination ) /*0x520245*/
-              IDA_LOBYTE(movementDestination) = (*((char (**)(InfantryClass *, unsigned char *, int, unsigned int))this->FootClass /*0x520254*/
+              IDA_LOBYTE(movementDestination) = (*(*(char (***)(InfantryClass *, unsigned char *, int, unsigned int))this /*0x520254*/  // g57e2 W2
                                              + 93))(
                                               this,
                                               &((unsigned int *)&stru_A8EB00)[1564],
@@ -388,7 +388,7 @@ AnimClass * InfantryClass::CanInitiateDeploy()
   {
     return 0; /*0x521be7*/
   }
-  v3 = this->SequenceAnim[0]; /*0x521bf1*/
+  v3 = ((unsigned int *)&this->SequenceAnim)[0]; /*0x521bf1*/  // g57e2 W3
   return v3 == -1 || (&byte_7EAF7C)[4 * v3]; /*0x521c0b*/
 }
 // 0x5221d0
@@ -581,7 +581,7 @@ AnimClass * InfantryClass::CreateDeployLocomotor(int a2, int a3, int a4)  // g57
     WinAPI::Wrapper(-2147467261); /*0x523049*/
   (*(void (**)(int, unsigned int))(*(unsigned int *)((unsigned int *)this)[0] + 156))(((unsigned int *)this)[0], 0); /*0x523059*/
   (*((void (**)(InfantryClass *, int *))this->vtable1 + 61))(this, &a2); /*0x523068*/
-  vtable0 = (void (**)(InfantryClass *, CellClass *, int))this->FootClass; /*0x52306e*/
+  vtable0 = *(void (***)(InfantryClass *, CellClass *, int))this; /*0x52306e*/  // g57e2 W2
   ((unsigned int *)this)[0] = 1; /*0x52307c*/
   v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2); /*0x523083*/
   vtable0[288](this, v6, 1); /*0x52308b*/
@@ -619,7 +619,7 @@ AnimClass * InfantryClass::CreateDeployLocomotor(int a2, int a3, int a4)  // g57
   }
   v11 = a2; /*0x5231af*/
   v12 = a3; /*0x5231b3*/
-  v13 = (void (**)(InfantryClass *, CellClass *, int))this->FootClass; /*0x5231bd*/
+  v13 = *(void (***)(InfantryClass *, CellClass *, int))this; /*0x5231bd*/  // g57e2 W2
   ((unsigned int *)this)[0] = 1; /*0x5231c1*/
   ((unsigned int *)this)[0] = v11; /*0x5231c8*/
   v14 = a4; /*0x5231ca*/
@@ -657,7 +657,7 @@ AnimClass * InfantryClass::IsBombDeployMission()
   result = 0; /*0x5228fa*/
   if ( this->Type->Deployer ) /*0x5228d6*/
   {
-    v1 = this->SequenceAnim[0]; /*0x5228e0*/
+    v1 = ((unsigned int *)&this->SequenceAnim)[0]; /*0x5228e0*/  // g57e2 W3
     if ( v1 == 27 || v1 == 28 || v1 == 29 || v1 == 30 ) /*0x5228f8*/
       return (AnimClass *)1; /*0x5228de*/
   }

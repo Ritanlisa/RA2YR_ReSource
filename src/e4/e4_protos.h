@@ -319,7 +319,7 @@ extern AbstractClass * * GenerateRangeRingTextures(void *a1 = 0);
 extern AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2);
 extern int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2);
 extern char InsertGameSettings(unsigned char * a1, char a2);  // 0x781FB0 truth (G42.33 b2)
-extern AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1);
+extern void *LoadFileSHP(char *aP0, bool *aP1);  // 0x4A38D0 IDA truth (G57e1)
 extern char PlayerSkirmishSlotHandler(HWND a1 = 0, int a2 = 0, LPARAM a3 = 0, int a4 = 0);
 extern AbstractClass * * PopulateWOLLobbyListBox(void *a1 = 0);
 extern AbstractClass * * ProcessSelectionExperience(void *a1 = 0);
@@ -578,7 +578,7 @@ extern int DivideBigInteger(unsigned int * a1, char * a2, int a3);
 extern int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd);
 extern void DrawPowerBarForPlayers(HWND hDlg);
 extern int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9);
-extern void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, ConvertClass * aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15);
+extern void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, int aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15);  // G57e1: p10 int per IDA truth 0x4AED70 (raw literal 0/2/1000)
 extern int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned);
 extern int EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char *a2, int a4);
 extern char FillComboBoxSides(HWND hDlg, int nIDDlgItem);
@@ -630,7 +630,7 @@ extern void Resize(HWND hWnd, void *a2 = 0, void *a3 = 0);
 extern int RotateBitBufferLeft(int *a0, int a2, int aP2);
 extern int SeekAudioStream(int a1, signed int aP1, signed int aP2, int a4, unsigned int a5);
 extern int SelectAllOfType(void *a1 = 0);
-extern void SetAudioSource(AudioMixer * aP0, unsigned int * a1, int a3);
+extern int SetAudioSource(AudioMixer * aP0, unsigned int * a1, int a3);  // 0x4060F0 IDA truth: int __fastcall(int, _DWORD*, int) (G57e1)
 extern void SetDialogPlayerName(HWND hDlg, int a2);
 extern void SetGameSetupPlayerState(char * a1, int a2);
 extern void SetSoundWarning(int level);

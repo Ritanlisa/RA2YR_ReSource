@@ -24,7 +24,7 @@ char sub_72C240()
   if ( !byte_B0FD21 ) /*0x72c247*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c253*/
-      dword_B0FA30 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D9C),(gamemd::ConvertClass *)((bool *)&byte_B0FD20))); /*0x72c265*/
+      dword_B0FA30 = (unsigned int)(LoadFileSHP((char *)(off_844D9C),(bool *)((bool *)&byte_B0FD20))); /*0x72c265*/
     result = LoadPaletteSimple( (char *)(off_844DA0), (int *)(&dword_B0FD24), (unsigned int *)(&dword_B0FD28)); /*0x72c27a*/
     byte_B0FD21 = 1; /*0x72c27f*/
   }
@@ -78,7 +78,7 @@ char sub_72C420()
   if ( !byte_B0FD15 ) /*0x72c427*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c433*/
-      dword_B0FA64 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D94),(gamemd::ConvertClass *)((bool *)&byte_B0FD14))); /*0x72c445*/
+      dword_B0FA64 = (unsigned int)(LoadFileSHP((char *)(off_844D94),(bool *)((bool *)&byte_B0FD14))); /*0x72c445*/
     result = LoadPaletteSimple( (char *)(off_844D98), (int *)(&dword_B0FD18), (unsigned int *)(&dword_B0FD1C)); /*0x72c45a*/
     byte_B0FD15 = 1; /*0x72c45f*/
   }

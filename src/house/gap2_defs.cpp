@@ -418,7 +418,7 @@ namespace gamemd {
 void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
   int v5; // eax
 
-  this->mapCoords[0] = 0; /*0x42fc4a*/
+  ((short *)&this->mapCoords)[0] = 0; /*0x42fc4a*/  // g57e2 W3
   *(unsigned int *)&this->placed = a1; /*0x42fc51*/
   IDA_LOBYTE(this->attempts) = 1; /*0x42fc54*/
   IDA_BYTE1(this->attempts) = 0; /*0x42fc58*/
@@ -427,18 +427,18 @@ void* BaseNodeClass::Vector_Constructor(int a1, int a2) {
   {
     if ( a2 ) /*0x42fc6a*/
     {
-      this->mapCoords[0] = a2; /*0x42fc6d*/
+      ((short *)&this->mapCoords)[0] = a2; /*0x42fc6d*/  // g57e2 W3
       return &this->buildingTypeIndex; /*0x42fc78*/
     }
     v5 = (int)(RA2_OPNEW(16 * a1)); /*0x42fc81*/
     if ( v5 ) /*0x42fc8b*/
     {
-      this->mapCoords[0] = v5; /*0x42fc8e*/
+      ((short *)&this->mapCoords)[0] = v5; /*0x42fc8e*/  // g57e2 W3
       IDA_BYTE1(this->attempts) = 1; /*0x42fc95*/
       return &this->buildingTypeIndex; /*0x42fc9d*/
     }
     IDA_BYTE1(this->attempts) = 1; /*0x42fca2*/
-    this->mapCoords[0] = 0; /*0x42fca6*/
+    ((short *)&this->mapCoords)[0] = 0; /*0x42fca6*/  // g57e2 W3
   }
 }
 }
@@ -561,17 +561,17 @@ int HouseClass::Process() {
   int v4; // eax
   int v5; // [esp+8h] [ebp-8h]
 
-  v2 = *(unsigned int *)(this->builtInfantryTypes[126] + 5472); /*0x458767*/
-  this->builtInfantryTypes[234] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x45876d*/
-  this->builtInfantryTypes[235] = v5; /*0x458773*/
-  this->builtInfantryTypes[236] = v2; /*0x458776*/
+  v2 = *(unsigned int *)(((unsigned int *)&this->builtInfantryTypes)[126] + 5472); /*0x458767*/  // g57e2 W3
+  ((unsigned int *)&this->builtInfantryTypes)[234] = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x45876d*/  // g57e2 W3
+  ((unsigned int *)&this->builtInfantryTypes)[235] = v5; /*0x458773*/  // g57e2 W3
+  ((unsigned int *)&this->builtInfantryTypes)[236] = v2; /*0x458776*/  // g57e2 W3
   result = *(unsigned char *)(*(unsigned int *)(this->planningPaths[3] + 52) + 422); /*0x458782*/
   if ( !result ) /*0x45878a*/
   {
     result = (*((int (**)(HouseClass *))this->vtable1 + 212))(this); /*0x458790*/
     if ( result ) /*0x458798*/
     {
-      v4 = *(unsigned int *)(this->builtInfantryTypes[126] + 5468); /*0x4587a0*/
+      v4 = *(unsigned int *)(((unsigned int *)&this->builtInfantryTypes)[126] + 5468); /*0x4587a0*/  // g57e2 W3
       if ( v4 <= 0 ) /*0x4587a8*/
 }
 }

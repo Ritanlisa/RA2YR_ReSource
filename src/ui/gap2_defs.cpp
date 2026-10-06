@@ -233,7 +233,7 @@ int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4, int a5
       {
         if ( v9 == 9 ) /*0x433f99*/
         {
-          v6 = v5->MessageRect[2] + v6 - (v5->MessageRect[2] + v6) % v5->MessageRect[2]; /*0x433fee*/
+          v6 = ((unsigned int *)&v5->MessageRect)[2] + v6 - (((unsigned int *)&v5->MessageRect)[2] + v6) % ((unsigned int *)&v5->MessageRect)[2]; /*0x433fee*/  // g57e2 W3
         }
         else if ( v9 != 10 && v9 != 13 ) /*0x433fa1*/
         {
@@ -243,7 +243,7 @@ int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4, int a5
             ScrollOffset = (unsigned __int8 *)(MaxMessageCount[7] + (v11 - 1) * MaxMessageCount[5]); /*0x433fbd*/
           v8 = a2; /*0x433fc0*/
           if ( ScrollOffset || (ScrollOffset = (unsigned __int8 *)this->ScrollOffset) != 0 ) /*0x433fd1*/
-            v6 += *ScrollOffset + this->MessageRect[3]; /*0x433fe0*/
+            v6 += *ScrollOffset + ((unsigned int *)&this->MessageRect)[3]; /*0x433fe0*/  // g57e2 W3
         }
         v12 = ++v17; /*0x433ff8*/
         if ( v6 > a3 ) /*0x433fff*/
@@ -7253,23 +7253,23 @@ void* CampaignScore::LoadScreenAssets() {
       {
         if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72d507*/
         {
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = LoadFileSHP( /*0x72d51f*/
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = (unsigned int)LoadFileSHP( /*0x72d51f*/
                                                                    off_844C70,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1216]);
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = LoadFileSHP( /*0x72d534*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1216));
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = (unsigned int)LoadFileSHP( /*0x72d534*/
                                                                    off_844C78,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1217]);
-          result = LoadFileSHP(off_844C80, (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1218]); /*0x72d539*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1217));
+          result = LoadFileSHP(off_844C80, (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1218)); /*0x72d539*/
         }
         else
         {
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = LoadFileSHP( /*0x72d55a*/
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = (unsigned int)LoadFileSHP( /*0x72d55a*/
                                                                    off_844C74,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1216]);
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = LoadFileSHP( /*0x72d56f*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1216));
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = (unsigned int)LoadFileSHP( /*0x72d56f*/
                                                                    off_844C7C,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1217]);
-          result = LoadFileSHP(off_844C84, (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1218]); /*0x72d574*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1217));
+          result = LoadFileSHP(off_844C84, (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1218)); /*0x72d574*/
         }
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[896] = result; /*0x72d53e*/
       }
@@ -7277,23 +7277,23 @@ void* CampaignScore::LoadScreenAssets() {
       {
         if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72d589*/
         {
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = LoadFileSHP( /*0x72d5a1*/
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = (unsigned int)LoadFileSHP( /*0x72d5a1*/
                                                                    off_844C88,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1216]);
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = LoadFileSHP( /*0x72d5b6*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1216));
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = (unsigned int)LoadFileSHP( /*0x72d5b6*/
                                                                    off_844C90,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1217]);
-          result = LoadFileSHP(off_844C98, (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1218]); /*0x72d5bb*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1217));
+          result = LoadFileSHP(off_844C98, (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1218)); /*0x72d5bb*/
         }
         else
         {
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = LoadFileSHP( /*0x72d5dc*/
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = (unsigned int)LoadFileSHP( /*0x72d5dc*/
                                                                    off_844C8C,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1216]);
-          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = LoadFileSHP( /*0x72d5f1*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1216));
+          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = (unsigned int)LoadFileSHP( /*0x72d5f1*/
                                                                    off_844C94,
-                                                                   (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1217]);
-          result = LoadFileSHP(off_844C9C, (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1218]); /*0x72d5f6*/
+                                                                   (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1217));
+          result = LoadFileSHP(off_844C9C, (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1218)); /*0x72d5f6*/
         }
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[896] = result; /*0x72d5c0*/
       }
@@ -7302,23 +7302,23 @@ void* CampaignScore::LoadScreenAssets() {
     {
       if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72d477*/
       {
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = LoadFileSHP( /*0x72d48f*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = (unsigned int)LoadFileSHP( /*0x72d48f*/
                                                                  off_844C58,
-                                                                 (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1216]);
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = LoadFileSHP( /*0x72d4a4*/
+                                                                 (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1216));
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = (unsigned int)LoadFileSHP( /*0x72d4a4*/
                                                                  off_844C60,
-                                                                 (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1217]);
-        result = LoadFileSHP(off_844C68, (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1218]); /*0x72d4a9*/
+                                                                 (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1217));
+        result = LoadFileSHP(off_844C68, (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1218)); /*0x72d4a9*/
       }
       else
       {
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = LoadFileSHP( /*0x72d4ca*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[900] = (unsigned int)LoadFileSHP( /*0x72d4ca*/
                                                                  off_844C5C,
-                                                                 (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1216]);
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = LoadFileSHP( /*0x72d4df*/
+                                                                 (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1216));
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[848] = (unsigned int)LoadFileSHP( /*0x72d4df*/
                                                                  off_844C64,
-                                                                 (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1217]);
-        result = LoadFileSHP(off_844C6C, (bool *)&g_BuildingLoadQueue_Array.__pad_F70[1218]); /*0x72d4e4*/
+                                                                 (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1217));
+        result = LoadFileSHP(off_844C6C, (bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1218)); /*0x72d4e4*/
       }
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[896] = result; /*0x72d4ae*/
     }

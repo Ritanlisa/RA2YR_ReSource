@@ -594,7 +594,7 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
 }
 // 0x4A38D0
 namespace gamemd {
-AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
+void * LoadFileSHP(char * aP0, bool * aP1)
 {
   void *result; // eax
   int v5; // esi
@@ -616,20 +616,20 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
       v7 = v5 == 0; /*0x4a391c*/
       if ( !v5 ) /*0x4a391e*/
       {
-  LABEL_6: *aP1 = (gamemd::AbstractClass **)(!v7);
+  LABEL_6: *aP1 = !v7;
         *(unsigned int *)v8.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x4a3938*/
         v9[3] = (unsigned int)(0); /*0x4a3940*/
         ((Vector *)((int)v9))->Clear((int)((Vector *)((int)v9))); /*0x4a3948*/
         *(unsigned int *)v8.CDFileClass = (unsigned int)((gamemd::AbstractClass **)(&off_7E1668)); /*0x4a3951*/
         ((BufferIOFileClass *)((BufferIOFileClass *)&v8))->Dtor(); /*0x4a3959*/
-        return (gamemd::AbstractClass **)((void *)v5); /*0x4a395e*/
+        return (void *)v5; /*0x4a395e*/
       }
       (*(void (**)(CCFileClass *, int, size_t))(*(unsigned int *)v8.CDFileClass + 36))( (CCFileClass *)(&v8), v5, (size_t)(v6)); /*0x4a392a*/
     }
     v7 = v5 == 0; /*0x4a392d*/
     goto LABEL_6; /*0x4a392d*/
   }
-  return (gamemd::AbstractClass **)(result);
+  return result;
 }
 }
 // 0x4A3970
@@ -2446,7 +2446,7 @@ void sub_4AEA20(int a1, int a2)
 }
 // 0x4AED70
 namespace gamemd {
-void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, ConvertClass * aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15)
+void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, int aP10, ConvertClass * aP11  // G57e1: p10 int per IDA truth 0x4AED70 (raw literal 0/2/1000), int a13, ConvertClass * aP13, int a15, ConvertClass * aP15)
 {
   int result; // eax
   int v17; // edi
@@ -2640,7 +2640,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
                 v33,
                 aP7a,
                 aP9,
-                aP10,
+                (TechnoClass *)(TechnoClass *)aP10,
                 0,
                 (int)v39,
                 v54,
@@ -2661,7 +2661,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
               v49 = v45; /*0x4af211*/
               v52 = v64[1]; /*0x4af261*/
               v53 = v64[2]; /*0x4af265*/
-              BlitterCopySHP(v56, &v60, &v46, v64, (int)&v50, &v42, SHPFrame, aP7a, aP9, aP10, aP11, 0); /*0x4af269*/
+              BlitterCopySHP(v56, &v60, &v46, v64, (int)&v50, &v42, SHPFrame, aP7a, aP9, (ConvertClass *)(ConvertClass *)aP10, aP11, 0); /*0x4af269*/
             }
           }
         }

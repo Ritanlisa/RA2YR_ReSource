@@ -643,7 +643,7 @@ int FootClass::vt_entry_530(int a2, int a3, int a4)
     int v6; // [esp+0h] [ebp-4h] BYREF
 
     v6 = (int)this; /*0x4dee50*/
-    vtable0 = (int (__thiscall **)(FootClass *, int, int, int, int *))this->TechnoClass; /*0x4dee55*/
+    vtable0 = *(int (__thiscall ***)(FootClass *, int, int, int, int *))this; /*0x4dee55*/  // g57e2 W2
     v6 = -1; /*0x4dee67*/
     return vtable0[331](this, a2, a3, a4, &v6); /*0x4dee76*/
 }
@@ -924,7 +924,7 @@ int ObjectClass::Cleanup()
     v6 = *(unsigned int **)&this->isInLogic; /*0x402279*/
     if ( v6 ) /*0x402281*/
       EndFrameAudioMixer(v3, v6); /*0x402285*/
-    v7 = (unsigned int *)this->location[0]; /*0x40228a*/
+    v7 = (unsigned int *)((unsigned int *)&this->location)[0]; /*0x40228a*/  // g57e2 W3
     if ( v7 ) /*0x402292*/
       EndFrameAudioMixer(v3, v7); /*0x402296*/
     result = EndFrameAudioMixer(v3, (unsigned int *)(v2 + 104)); /*0x4022a0*/
@@ -1181,7 +1181,7 @@ int TechnoClass::ScatterFromThreat()
 
     target = this->target; /*0x415966*/
     *((unsigned char *)this + 1746) = 1; /*0x41596c*/
-    if ( !target || !this->passengers[1] ) /*0x41597b*/
+    if ( !target || !((unsigned int *)&this->passengers)[1] ) /*0x41597b*/  // g57e2 W3
     {
       *((unsigned char *)this + 1746) = 0; /*0x415a0a*/
   LABEL_9:
@@ -1201,9 +1201,9 @@ int TechnoClass::ScatterFromThreat()
       }
       goto LABEL_9; /*0x4159ae*/
     }
-    v5[0] = this->location[0]; /*0x4159d4*/
-    v5[1] = this->location[1]; /*0x4159e0*/
-    v5[2] = this->location[2]; /*0x4159e7*/
+    v5[0] = ((unsigned int *)&this->location)[0]; /*0x4159d4*/  // g57e2 W3
+    v5[1] = ((unsigned int *)&this->location)[1]; /*0x4159e0*/  // g57e2 W3
+    v5[2] = ((unsigned int *)&this->location)[2]; /*0x4159e7*/  // g57e2 W3
     if ( (unsigned __int8)IsCoordVisibleMap((ObjectClass *)&dword_87F7E8, v5) ) /*0x4159f0*/
     {
       ProcessTechnoMovementAction((char *)this); /*0x4159fb*/
@@ -1305,7 +1305,7 @@ int FootClass::MissionMoveCarryallLand()
       }
       else
       {
-        vtable0 = (void (__thiscall **)(FootClass *, void *, int))this->TechnoClass; /*0x416d10*/
+        vtable0 = *(void (__thiscall ***)(FootClass *, void *, int))this; /*0x416d10*/  // g57e2 W2
         v12 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&ppv); /*0x416d1e*/
         vtable0[288](this, v12, 1); /*0x416d26*/
       }

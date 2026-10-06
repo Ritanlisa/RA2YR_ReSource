@@ -4543,7 +4543,7 @@ int BuildingClass::RenderExitPosition()
 
     if ( this->Type->CanBeOccupied && (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 258))(this) > 0 ) /*0x453865*/
     {
-      v2 = (int *)World_ToScreen(v34, &this->Type->__pad_1584[8 * this->Audio8[4] + 4], v33); /*0x453886*/
+      v2 = (int *)World_ToScreen(v34, &this->Type->__pad_1584[8 * ((unsigned int *)&this->Audio8)[4] + 4], v33); /*0x453886*/  // g57e2 W3
       v3 = *v2; /*0x45388b*/
       v4 = v2[1]; /*0x45388d*/
       v5 = (int *)(*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 43))(this, v35); /*0x453899*/
@@ -4558,7 +4558,7 @@ int BuildingClass::RenderExitPosition()
     else
     {
       Type = this->Type; /*0x4538c5*/
-      if ( Type->PrimaryFirePixelOffset[0] == 0xFFFF && Type->PrimaryFirePixelOffset[1] == 0xFFFF ) /*0x4538e6*/
+      if ( ((short *)&Type->PrimaryFirePixelOffset)[0] == 0xFFFF && ((short *)&Type->PrimaryFirePixelOffset)[1] == 0xFFFF ) /*0x4538e6*/  // g57e2 W3
       {
         if ( Type->BarrelAnimIsVoxel ) /*0x4539a1*/
         {
@@ -5310,10 +5310,10 @@ int BuildingClass::UpdateConstruction()
         }
         if ( !v29->WeaponsFactory ) /*0x444161*/
         {
-          if ( v29->Factory[0] == 16 || v29->Hospital || v29->Armory || v29->Cloning ) /*0x44462a*/
+          if ( ((unsigned int *)&v29->Factory)[0] == 16 || v29->Hospital || v29->Armory || v29->Cloning ) /*0x44462a*/  // g57e2 W3
           {
             ((TechnoClass *)v244)->SetFocus((int)((unsigned int *)this)[0]); /*0x444997*/
-            vtable0 = (int (__thiscall **)(BuildingClass *))this->TechnoClass; /*0x4449a1*/
+            vtable0 = *(int (__thiscall ***)(BuildingClass *))this; /*0x4449a1*/  // g57e2 W2
             v200 = g_TerrainTypeTable; /*0x4449a3*/
             v199 = (int)v244; /*0x4449ab*/
             v198 = &v228; /*0x4449ac*/
@@ -5321,7 +5321,7 @@ int BuildingClass::UpdateConstruction()
             if ( *(unsigned int *)v202 == g_TerrainTypeTable ) /*0x4449c5*/
               return 0; /*0x4449c5*/
             v89 = this->Type; /*0x4449d9*/
-            if ( v89->Factory[0] == 16 && !v89->Cloning ) /*0x4449e7*/
+            if ( ((unsigned int *)&v89->Factory)[0] == 16 && !v89->Cloning ) /*0x4449e7*/  // g57e2 W3
             {
               v90 = (int *)(*(int (__thiscall **)(char *))(*(unsigned int *)v244 + 132))(v244); /*0x4449fb*/
               owner = ((unsigned int *)this)[0]; /*0x4449fd*/
@@ -5350,7 +5350,7 @@ int BuildingClass::UpdateConstruction()
             Math::CalcAngle((double)v96[1] - (double)*(int *)v203, (double)*(int *)v202 - (double)v211); /*0x444aa7*/
             IDA_LOWORD(v211) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x444ac0*/
             v211 = (unsigned __int8)((((unsigned int)v211 >> 7) + 1) >> 1); /*0x444adf*/
-            v97 = (int (__thiscall **)(BuildingClass *, char *))this->TechnoClass; /*0x444ae3*/
+            v97 = *(int (__thiscall ***)(BuildingClass *, char *))this; /*0x444ae3*/  // g57e2 W2
             *(unsigned int *)v202 = v198; /*0x444ae8*/
             v98 = *(unsigned int *)v97[110](this, v232); /*0x444af2*/
             v99 = this->Type; /*0x444af4*/
@@ -5391,9 +5391,9 @@ int BuildingClass::UpdateConstruction()
             {
               if ( (int *)(__int16)v197 == (int *)((char *)v198 + 1) && IDA_SHIWORD(v197) == v200 + 2 ) /*0x444ba8*/
               {
-                v108 = (unsigned int *)((char *)v105 + v106->ExitCoord[1]); /*0x444bb8*/
-                v109 = v106->ExitCoord[2]; /*0x444bba*/
-                v107 = v106->ExitCoord[0] + v104; /*0x444bc0*/
+                v108 = (unsigned int *)((char *)v105 + ((unsigned int *)&v106->ExitCoord)[1]); /*0x444bb8*/  // g57e2 W3
+                v109 = ((unsigned int *)&v106->ExitCoord)[2]; /*0x444bba*/  // g57e2 W3
+                v107 = ((unsigned int *)&v106->ExitCoord)[0] + v104; /*0x444bc0*/  // g57e2 W3
                 v208 = v108; /*0x444bc2*/
                 v207 = v107; /*0x444bc6*/
                 bunkersCount = v109; /*0x444bca*/
@@ -5406,18 +5406,18 @@ int BuildingClass::UpdateConstruction()
             }
             if ( v106->NODBarracks && (int *)(__int16)v197 == (int *)((char *)v198 + 2) && IDA_SHIWORD(v197) == v200 + 2 ) /*0x444c00*/
             {
-              v110 = v106->ExitCoord[2]; /*0x444c08*/
-              v107 += v106->ExitCoord[0]; /*0x444c0e*/
-              v108 = (unsigned int *)((char *)v108 + v106->ExitCoord[1]); /*0x444c1e*/
+              v110 = ((unsigned int *)&v106->ExitCoord)[2]; /*0x444c08*/  // g57e2 W3
+              v107 += ((unsigned int *)&v106->ExitCoord)[0]; /*0x444c0e*/  // g57e2 W3
+              v108 = (unsigned int *)((char *)v108 + ((unsigned int *)&v106->ExitCoord)[1]); /*0x444c1e*/  // g57e2 W3
               v207 = v107; /*0x444c20*/
               v208 = v108; /*0x444c24*/
               bunkersCount += v110; /*0x444c28*/
             }
             if ( v106->YuriBarracks && (int *)(__int16)v197 == (int *)((char *)v198 + 2) && IDA_SHIWORD(v197) == v200 + 1 ) /*0x444c52*/
             {
-              v111 = v106->ExitCoord[0] + v107; /*0x444c5e*/
-              v112 = v106->ExitCoord[1]; /*0x444c60*/
-              v113 = v106->ExitCoord[2]; /*0x444c66*/
+              v111 = ((unsigned int *)&v106->ExitCoord)[0] + v107; /*0x444c5e*/  // g57e2 W3
+              v112 = ((unsigned int *)&v106->ExitCoord)[1]; /*0x444c60*/  // g57e2 W3
+              v113 = ((unsigned int *)&v106->ExitCoord)[2]; /*0x444c66*/  // g57e2 W3
               v207 = v111; /*0x444c70*/
               v208 = (unsigned int *)((char *)v108 + v112); /*0x444c74*/
               bunkersCount += v113; /*0x444c78*/
@@ -5440,7 +5440,7 @@ int BuildingClass::UpdateConstruction()
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x444d3c*/
                 *(unsigned int *)v193 = *BuildingPlacement::FindPosition(&v223, v244); /*0x444d5f*/
-                if ( *(unsigned int *)v193 == g_TerrainTypeTable || !this->Type->Factory[0] ) /*0x444d79*/
+                if ( *(unsigned int *)v193 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x444d79*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x444db7*/
                 }
@@ -5459,7 +5459,7 @@ int BuildingClass::UpdateConstruction()
           }
           else
           {
-            v63 = (int (__thiscall **)(BuildingClass *, char *, char *))this->TechnoClass; /*0x44463f*/
+            v63 = *(int (__thiscall ***)(BuildingClass *, char *, char *))this; /*0x44463f*/  // g57e2 W2
             v200 = (int)v245; /*0x444641*/
             v64 = *(unsigned int *)v63[309](this, v229, v244); /*0x444653*/
             v65 = v64; /*0x444655*/
@@ -5467,7 +5467,7 @@ int BuildingClass::UpdateConstruction()
             v66 = IDA_HIWORD(v64); /*0x444663*/
             if ( v64 == g_TerrainTypeTable ) /*0x444668*/
               return 0; /*0x444668*/
-            v67 = (int (__thiscall **)(BuildingClass *, char *))this->TechnoClass; /*0x44467d*/
+            v67 = *(int (__thiscall ***)(BuildingClass *, char *))this; /*0x44467d*/  // g57e2 W2
             v215 = (v65 << 8) + 128; /*0x44468a*/
             v216 = (v66 << 8) + 128; /*0x44469b*/
             v68 = (int *)v67[18](this, v241); /*0x4446a2*/
@@ -5475,7 +5475,7 @@ int BuildingClass::UpdateConstruction()
             Math::CalcAngle((double)v68[1] - (double)v215, (double)v214 - (double)v205); /*0x4446c7*/
             IDA_LOWORD(v205) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x4446e0*/
             v214 = (unsigned __int8)((((unsigned int)v205 >> 7) + 1) >> 1); /*0x4446ff*/
-            v69 = (int (__thiscall **)(BuildingClass *, unsigned int *))this->TechnoClass; /*0x444703*/
+            v69 = *(int (__thiscall ***)(BuildingClass *, unsigned int *))this; /*0x444703*/  // g57e2 W2
             v208 = v201; /*0x444708*/
             v70 = *(unsigned int *)v69[110](this, v227); /*0x444712*/
             v71 = this->Type; /*0x444714*/
@@ -5516,9 +5516,9 @@ int BuildingClass::UpdateConstruction()
             {
               if ( (unsigned int *)(__int16)v200 == (unsigned int *)((char *)v201 + 1) && IDA_SHIWORD(v200) == *(unsigned int *)v203 + 2 ) /*0x4447cb*/
               {
-                v79 = v76 + v78->ExitCoord[0]; /*0x4447d9*/
-                v81 = v78->ExitCoord[2]; /*0x4447db*/
-                v80 = v77 + v78->ExitCoord[1]; /*0x4447e1*/
+                v79 = v76 + ((unsigned int *)&v78->ExitCoord)[0]; /*0x4447d9*/  // g57e2 W3
+                v81 = ((unsigned int *)&v78->ExitCoord)[2]; /*0x4447db*/  // g57e2 W3
+                v80 = v77 + ((unsigned int *)&v78->ExitCoord)[1]; /*0x4447e1*/  // g57e2 W3
                 v210 = v79; /*0x4447e3*/
                 v211 = v80; /*0x4447e7*/
                 v212 = v81; /*0x4447eb*/
@@ -5533,9 +5533,9 @@ int BuildingClass::UpdateConstruction()
               && (unsigned int *)(__int16)v200 == (unsigned int *)((char *)v201 + 2)
               && IDA_SHIWORD(v200) == *(unsigned int *)v203 + 2 )
             {
-              v82 = v80 + v78->ExitCoord[1]; /*0x444835*/
-              v79 += v78->ExitCoord[0]; /*0x44483f*/
-              v206 = (unsigned int *)(v212 + v78->ExitCoord[2]); /*0x444841*/
+              v82 = v80 + ((unsigned int *)&v78->ExitCoord)[1]; /*0x444835*/  // g57e2 W3
+              v79 += ((unsigned int *)&v78->ExitCoord)[0]; /*0x44483f*/  // g57e2 W3
+              v206 = (unsigned int *)(v212 + ((unsigned int *)&v78->ExitCoord)[2]); /*0x444841*/  // g57e2 W3
               v80 = v82; /*0x444849*/
               v210 = v79; /*0x44484b*/
               v211 = v82; /*0x44484f*/
@@ -5545,9 +5545,9 @@ int BuildingClass::UpdateConstruction()
               && (unsigned int *)(__int16)v200 == (unsigned int *)((char *)v201 + 2)
               && IDA_SHIWORD(v200) == *(unsigned int *)v203 + 1 )
             {
-              v83 = v78->ExitCoord[0] + v79; /*0x444889*/
-              v84 = v78->ExitCoord[1]; /*0x44488b*/
-              v85 = v78->ExitCoord[2]; /*0x444891*/
+              v83 = ((unsigned int *)&v78->ExitCoord)[0] + v79; /*0x444889*/  // g57e2 W3
+              v84 = ((unsigned int *)&v78->ExitCoord)[1]; /*0x44488b*/  // g57e2 W3
+              v85 = ((unsigned int *)&v78->ExitCoord)[2]; /*0x444891*/  // g57e2 W3
               v210 = v83; /*0x44489b*/
               v211 = v80 + v84; /*0x44489f*/
               v212 += v85; /*0x4448a3*/
@@ -5563,7 +5563,7 @@ int BuildingClass::UpdateConstruction()
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x44490f*/
                 *(unsigned int *)v196 = *BuildingPlacement::FindPosition(&v226, v244); /*0x444932*/
-                if ( *(unsigned int *)v196 == g_TerrainTypeTable || !this->Type->Factory[0] ) /*0x44494c*/
+                if ( *(unsigned int *)v196 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x44494c*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x44496c*/
                 }
@@ -5675,7 +5675,7 @@ int BuildingClass::UpdateConstruction()
           CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v203); /*0x444322*/
           JUMPOUT(0x444329); /*0x444329*/
         }
-        v43 = (int (__thiscall **)(BuildingClass *, unsigned int *))this->TechnoClass; /*0x44434b*/
+        v43 = *(int (__thiscall ***)(BuildingClass *, unsigned int *))this; /*0x44434b*/  // g57e2 W2
         v216 = 0; /*0x44434f*/
         v44 = (unsigned int *)v43[18](this, &v210); /*0x444367*/
         *(unsigned int *)v195 = 0; /*0x44436c*/
@@ -5740,7 +5740,7 @@ int BuildingClass::UpdateConstruction()
           if ( HouseClass::IonSensitivesShouldBeOffline() ) /*0x443f6f*/
           {
             PlacementCellsAlt = MapClass::FindPlacementCellsAlt((char *)v4, &v231, (int)this); /*0x443f83*/
-            v17 = (unsigned __int8 (__thiscall **)(ObjectClass *, int *, int))v4->AbstractClass; /*0x443f8a*/
+            v17 = *(unsigned __int8 (__thiscall ***)(ObjectClass *, int *, int))v4; /*0x443f8a*/  // g57e2 W2
             bunkersCount = *PlacementCellsAlt; /*0x443f90*/
             v227[1] = 0; /*0x443f94*/
             v226 = ((__int16)bunkersCount << 8) + 128; /*0x443fac*/
@@ -5755,7 +5755,7 @@ int BuildingClass::UpdateConstruction()
           }
           else
           {
-            v19 = (unsigned __int8 (__thiscall **)(ObjectClass *, int))v4->AbstractClass; /*0x443fe5*/
+            v19 = *(unsigned __int8 (__thiscall ***)(ObjectClass *, int))v4; /*0x443fe5*/  // g57e2 W2
             v20 = AbstractClass::GetField9(); /*0x443fea*/
             v21 = (*((int (__thiscall **)(BuildingClass *, unsigned char *, ObjectClass *, int))this->vtable1 + 42))( /*0x443ffd*/
                     this,
@@ -5766,7 +5766,7 @@ int BuildingClass::UpdateConstruction()
             {
               (*((void (__thiscall **)(BuildingClass *, int, ObjectClass *))this->vtable1 + 158))(this, 2, v4); /*0x44401b*/
               (*((void (__thiscall **)(BuildingClass *, int, ObjectClass *))this->vtable1 + 158))(this, 24, v4); /*0x444028*/
-              v22 = (void (__thiscall **)(ObjectClass *, int))v4->AbstractClass; /*0x444030*/
+              v22 = *(void (__thiscall ***)(ObjectClass *, int))v4; /*0x444030*/  // g57e2 W2
               v23 = (*((int (__thiscall **)(BuildingClass *, int *, ObjectClass *))this->vtable1 + 42))( /*0x44403e*/
                       this,
                       v240,
@@ -5798,7 +5798,7 @@ int BuildingClass::UpdateConstruction()
           v7 = *(unsigned short *)&stru_87F5F0.__pad_58[660] /*0x443d76*/
              - *(unsigned short *)&stru_87F5F0.__pad_58[668]
              + *(unsigned short *)&stru_87F5F0.__pad_58[672];
-          v8 = (int (__thiscall **)(BuildingClass *, char *))this->TechnoClass; /*0x443d79*/
+          v8 = *(int (__thiscall ***)(BuildingClass *, char *))this; /*0x443d79*/  // g57e2 W2
           IDA_HIWORD(v206) = v7; /*0x443d82*/
           v9 = (unsigned int *)v8[18](this, v236); /*0x443d88*/
           IDA_LOWORD(v217) = *v9 / 256; /*0x443d9b*/
@@ -5831,7 +5831,7 @@ int BuildingClass::UpdateConstruction()
           v199 = 0; /*0x443e6e*/
           v224[0] = ((__int16)v204 << 8) + 128; /*0x443e79*/
           ++dword_A8E7AC; /*0x443e84*/
-          v12 = v4->AbstractClass; /*0x443e89*/
+          v12 = *(void ***)v4; /*0x443e89*/  // g57e2 W2c: til base-member = vtable load
           v224[1] = (IDA_SHIWORD(v204) << 8) + 128; /*0x443e95*/
           v224[2] = 0; /*0x443e99*/
           if ( (*((unsigned __int8 (__thiscall **)(ObjectClass *, unsigned int *, unsigned int))v12 + 54))(v4, v224, 0) ) /*0x443ea0*/
@@ -5852,7 +5852,7 @@ int BuildingClass::UpdateConstruction()
               }
               else
               {
-                v14 = (void (__thiscall **)(ObjectClass *, void *, int))v4->AbstractClass; /*0x443f05*/
+                v14 = *(void (__thiscall ***)(ObjectClass *, void *, int))v4; /*0x443f05*/  // g57e2 W2
                 v15 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v203); /*0x443f14*/
                 v14[288](v4, v15, 1); /*0x443f1c*/
                 (*((void (__thiscall **)(ObjectClass *, int))v4->vtable1 + 124))(v4, 2); /*0x443f29*/

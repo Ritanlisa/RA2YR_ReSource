@@ -418,7 +418,7 @@ int Skirmish::RenderPreview(HWND aP1)
     if ( (stru_AC4B30.__pad_EC[628] & 1) == 0 ) /*0x64089b*/
     {
       stru_AC4B30.__pad_EC[628] |= 1u; /*0x6408a8*/
-      *(unsigned int *)&stru_AC4B30.__pad_EC[612] = LoadFileSHP((gamemd::ConvertClass *)(aStartbutShp),(gamemd::ConvertClass *)((bool *)&v23 + 3)); /*0x6408b2*/
+      *(unsigned int *)&stru_AC4B30.__pad_EC[612] = (unsigned int)LoadFileSHP((char *)(aStartbutShp),(bool *)((bool *)&v23 + 3)); /*0x6408b2*/
     }
     v25 = VtableStub_72E280(); /*0x6408c3*/
     BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)((unsigned int *)((char *)&stru_820320 + 12)), 1); /*0x6408c7*/

@@ -698,7 +698,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1337) = 0; /*0x45f392*/
       *v7 = 0; /*0x45f398*/
     }
-    FileSHP = (void *)LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352))); /*0x45f3a0*/
+    FileSHP = (void *)LoadFileSHP((char *)(Source),(bool *)((bool *)((char *)this + 5352))); /*0x45f3a0*/
     *((unsigned int *)this + 1337) = (unsigned int)(FileSHP); /*0x45f3a7*/
     if ( !FileSHP ) /*0x45f3ad*/
     {
@@ -709,7 +709,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1337) = 0; /*0x45f3cf*/
         *v7 = (unsigned int)(0); /*0x45f3d5*/
       }
-      *((unsigned int *)this + 1337) = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352)))); /*0x45f3e2*/
+      *((unsigned int *)this + 1337) = (unsigned int)(LoadFileSHP((char *)(Source),(bool *)((bool *)((char *)this + 5352)))); /*0x45f3e2*/
     }
   }
   /*0x45f405*/
@@ -725,7 +725,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1343) = 0; /*0x45f46a*/
       *v9 = 0; /*0x45f470*/
     }
-    v10 = (void *)LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5376))); /*0x45f478*/
+    v10 = (void *)LoadFileSHP((char *)(Source),(bool *)((bool *)((char *)this + 5376))); /*0x45f478*/
     *((unsigned int *)this + 1343) = (unsigned int)(v10); /*0x45f47f*/
     if ( !v10 ) /*0x45f485*/
     {
@@ -736,7 +736,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
         *((unsigned int *)this + 1343) = 0; /*0x45f4a7*/
         *v9 = (unsigned int)(0); /*0x45f4ad*/
       }
-      *((unsigned int *)this + 1343) = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5352)))); /*0x45f4be*/
+      *((unsigned int *)this + 1343) = (unsigned int)(LoadFileSHP((char *)(Source),(bool *)((bool *)((char *)this + 5352)))); /*0x45f4be*/
     }
   }
   /*0x45f4e1*/
@@ -766,7 +766,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1339) = 0; /*0x45f5ca*/
       *v12 = 0; /*0x45f5d0*/
     }
-    v13 = (void *)LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5360))); /*0x45f5d8*/
+    v13 = (void *)LoadFileSHP((char *)(Source),(bool *)((bool *)((char *)this + 5360))); /*0x45f5d8*/
     *((unsigned int *)this + 1339) = (unsigned int)(v13); /*0x45f5df*/
     if ( !v13 ) /*0x45f5e5*/
     {
@@ -793,7 +793,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f68e*/
     TheaterObjectTypeClassSpecificID( (char *)(Source), aP1); /*0x45f6a1*/
-    v15 = (void *)LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5368))); /*0x45f6ac*/
+    v15 = (void *)LoadFileSHP((char *)(Source),(bool *)((bool *)((char *)this + 5368))); /*0x45f6ac*/
     *((unsigned int *)this + 1341) = (unsigned int)(v15); /*0x45f6b3*/
     if ( !v15 ) /*0x45f6b9*/
     {
@@ -820,7 +820,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1345) = 0; /*0x45f776*/
       *v16 = 0; /*0x45f77c*/
     }
-    v17 = (void *)LoadFileSHP((gamemd::ConvertClass *)(Source),(gamemd::ConvertClass *)((bool *)((char *)this + 5384))); /*0x45f784*/
+    v17 = (void *)LoadFileSHP((char *)(Source),(bool *)((bool *)((char *)this + 5384))); /*0x45f784*/
     *((unsigned int *)this + 1345) = (unsigned int)(v17); /*0x45f78b*/
     if ( !v17 ) /*0x45f791*/
     {
@@ -861,7 +861,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
       *((unsigned int *)this + 1350) = 0; /*0x45f8d2*/
       *v19 = (unsigned int)(0); /*0x45f8d8*/
     }
-    v20 = (void *)LoadFileSHP( (gamemd::ConvertClass *)(Source), (ConvertClass *)((bool *)((char *)this + 5404))); /*0x45f8e0*/
+    v20 = (void *)LoadFileSHP( (char *)(Source), (bool *)((bool *)((char *)this + 5404))); /*0x45f8e0*/
     *((unsigned int *)this + 1350) = (unsigned int)(v20); /*0x45f8e7*/
     if ( !v20 ) /*0x45f8ed*/
     {

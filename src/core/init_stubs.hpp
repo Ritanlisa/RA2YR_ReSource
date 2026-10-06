@@ -80,7 +80,7 @@ void ArrayForEach3ByteZero(void* buf, int stride, int count);
 bool LoadExpansionMixFiles();  // 0x530000
 
 // IDA 0x4A38D0 -- LoadFileSHP
-int LoadFileSHP(const char* filename);  // 0x4A38D0
+void *LoadFileSHP(char *Source, bool *a2);  // 0x4A38D0 IDA truth: void *__fastcall(char*, bool*) (G57e1)
 
 // IDA 0x5BDA80 -- Mission::SetAndCall
 void MissionSetAndCall(int a, int b);  // 0x5BDA80

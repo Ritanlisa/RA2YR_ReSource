@@ -66,7 +66,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
 } // namespace gamemd
 // 0x50BDF0
 namespace gamemd {
-double TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5)
+double TechnoTypeClass::Dispatch(unsigned int * aP1)
 {
 
   double result; // st7
@@ -94,6 +94,12 @@ double TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void
   }
   return result; /*0x50be6b*/
 
+}
+
+// G42.35 static-form sync (G57e1): qualified-call sites pass explicit this
+double TechnoTypeClass::Dispatch(TechnoTypeClass * aP1, unsigned int *a2)
+{
+  return aP1->Dispatch(a2);
 }
 } // namespace gamemd
 // 0x50BEB0
@@ -802,7 +808,7 @@ void TechnoTypeClass::Construct(int aP1)
   *((unsigned int *)this + 317) = (unsigned int)(&vt_TypeList); /*0x71194b*/
   IntDynamicVector::Construct((unsigned int *)((char *)this + 1296), aP1); /*0x71195b*/
   *((unsigned int *)this + 324) = (unsigned int)(&vt_TypeList); /*0x711960*/
-  ((ObjectTypeClass *)(aP1))->CheckFlag(); /*0x711970*/
+  ((ObjectTypeClass *)((char *)this + 1476))->CheckFlag(aP1); /*0x711970 G57e1: raw lea ebp,[esi+5C4h]; push edi; call*/
   *((unsigned int *)this + 369) = (unsigned int)(&vt_TypeList); /*0x711975*/
   IntDynamicVector::Construct((unsigned int *)((char *)this + 1592), aP1); /*0x711985*/
   *((unsigned int *)this + 398) = (unsigned int)&vt_TypeList;
@@ -810,9 +816,9 @@ void TechnoTypeClass::Construct(int aP1)
   *((unsigned int *)this + 405) = (unsigned int)&vt_TypeList;
   *((unsigned char *)this + 1750) = 0; /*0x7119ac*/
   *((unsigned char *)this + 1781) = 0; /*0x7119b5*/
-  ((ObjectTypeClass *)(aP1))->CheckFlag(); /*0x7119bb*/
+  ((ObjectTypeClass *)((char *)this + 1836))->CheckFlag(aP1); /*0x7119bb G57e1 truth receiver*/
   *((unsigned int *)this + 459) = (unsigned int)&vt_TypeList;
-  ((ObjectTypeClass *)(aP1))->CheckFlag(); /*0x7119d0*/
+  ((ObjectTypeClass *)((char *)this + 1864))->CheckFlag(aP1); /*0x7119d0 G57e1 truth receiver*/
   *((unsigned int *)this + 466) = (unsigned int)&vt_TypeList;
   TypeList::ParticleConstructor(0, 0); /*0x7119e6*/
   *((unsigned int *)this + 478) = (unsigned int)&vt_TypeList;
@@ -1045,7 +1051,7 @@ int TechnoTypeClass::ComputeValueSimple(float * a2)
 
   if ( !a2 ) /*0x711f0d*/
     return (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711f52*/
-  v5 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, this); /*0x711f17*/
+  v5 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, (unsigned int *)this); /*0x711f17*/
   ThreatMultiplier = ((TechnoTypeClass *)(float *)a2)->GetThreatMultiplier( this); /*0x711f27*/
   v6 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711f31*/
   LOWORD(result) = Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5); /*0x711f41*/
@@ -1074,7 +1080,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
     v9 = 1.0; /*0x711f7e*/
   if ( a2 ) /*0x711f8c*/
   {
-    v12 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, this); /*0x711f9a*/
+    v12 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, (unsigned int *)this); /*0x711f9a*/
     ThreatMultiplier = ((TechnoTypeClass *)(float *)a2)->GetThreatMultiplier( this); /*0x711fac*/
     if ( *(unsigned int *)&((unsigned int *)this)[1328] ) /*0x711fa6*/
     {

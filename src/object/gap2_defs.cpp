@@ -742,12 +742,12 @@ int ObjectClass::Set(void* a1) {
     this->nextObject = 0; /*0x431a6f*/
     this->attachedTag = 0; /*0x431a72*/
     this->attachedBomb = 0; /*0x431a75*/
-    this->ambientSoundController[0] = 0; /*0x431a78*/
-    this->ambientSoundController[1] = -1; /*0x431a7b*/
-    this->ambientSoundController[2] = -1; /*0x431a7e*/
-    this->ambientSoundController[3] = 0; /*0x431a81*/
-    this->ambientSoundController[4] = 0; /*0x431a84*/
-    this->customSound_controller[0] = 0; /*0x431a87*/
+    ((unsigned int *)&this->ambientSoundController)[0] = 0; /*0x431a78*/  // g57e2 W3
+    ((unsigned int *)&this->ambientSoundController)[1] = -1; /*0x431a7b*/  // g57e2 W3
+    ((unsigned int *)&this->ambientSoundController)[2] = -1; /*0x431a7e*/  // g57e2 W3
+    ((unsigned int *)&this->ambientSoundController)[3] = 0; /*0x431a81*/  // g57e2 W3
+    ((unsigned int *)&this->ambientSoundController)[4] = 0; /*0x431a84*/  // g57e2 W3
+    ((unsigned int *)&this->customSound_controller)[0] = 0; /*0x431a87*/  // g57e2 W3
     this->vtable1 = (int)&vt_BufferIOFileClass; /*0x431a8a*/
     if ( ObjectClass::GetMember06((RawFileClass *)this) && IDA_BYTE1(this->owningHouseIndex) ) /*0x431a9a*/
     {
@@ -778,12 +778,12 @@ int ObjectClass::CleanupAudioAndRefs() {
       *(unsigned int *)(fallRate + 56) = 0; /*0x4389bd*/
       *(unsigned char *)(this->fallRate + 104) = 0; /*0x4389c3*/
     }
-    IDA_LOBYTE(this->customSound_controller[2]) = 1; /*0x4389c9*/
+    IDA_LOBYTE(((unsigned int *)&this->customSound_controller)[2]) = 1; /*0x4389c9*/  // g57e2 W3
     this->occupant = 0; /*0x4389cd*/
     this->fallRate = 0; /*0x4389d0*/
     this->owningHouseIndex = 0; /*0x4389d3*/
     result = AudioFile_Stop((void *)this->ambientSoundController); /*0x4389d6*/
-    this->customSound_controller[1] = 0; /*0x4389db*/
+    ((unsigned int *)&this->customSound_controller)[1] = 0; /*0x4389db*/  // g57e2 W3
     return result; /*0x4389de*/
 }
 }
@@ -1096,7 +1096,7 @@ int FootClass::DrawPlacementPreview() {
     float *v130; // [esp+1CEh] [ebp+8h]
 
     v3 = *(unsigned int *)(*((int (__thiscall **)(BuildingClass *, __int16 *))this->vtable1 + 110))(this, v105); /*0x43da9c*/
-    vtable0 = (int (__thiscall **)(BuildingClass *))this->TechnoClass; /*0x43da9e*/
+    vtable0 = *(int (__thiscall ***)(BuildingClass *))this; /*0x43da9e*/  // g57e2 W2
     *(unsigned int *)v111 = v3; /*0x43daa3*/
     if ( vtable0[97](this) == 16 /*0x43dae6*/
       && ((unsigned __int8)Window::IsVisible((Window *)((unsigned int *)this)[0])

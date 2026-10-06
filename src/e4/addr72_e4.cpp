@@ -251,11 +251,11 @@ unsigned char LoadMouseClassResources()
 {
   uint8_t result; // al
 
-  dword_B0FC80 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844C44), (ConvertClass *)((bool *)&byte_B0FC90)); /*0x72aa5b*/
-  dword_B0FC84 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844C48), (ConvertClass *)((bool *)&byte_B0FC91)); /*0x72aa70*/
-  dword_B0FC88 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844C4C), (ConvertClass *)((bool *)&byte_B0FC92)); /*0x72aa85*/
-  dword_B0FC8C = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844C50), (ConvertClass *)((bool *)&byte_B0FC93)); /*0x72aa9a*/
-  dword_B0FACC = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844C54), (ConvertClass *)((bool *)&byte_B0FC94)); /*0x72aab4*/
+  dword_B0FC80 = (unsigned int)LoadFileSHP( (char *)(off_844C44), (bool *)((bool *)&byte_B0FC90)); /*0x72aa5b*/
+  dword_B0FC84 = (unsigned int)LoadFileSHP( (char *)(off_844C48), (bool *)((bool *)&byte_B0FC91)); /*0x72aa70*/
+  dword_B0FC88 = (unsigned int)LoadFileSHP( (char *)(off_844C4C), (bool *)((bool *)&byte_B0FC92)); /*0x72aa85*/
+  dword_B0FC8C = (unsigned int)LoadFileSHP( (char *)(off_844C50), (bool *)((bool *)&byte_B0FC93)); /*0x72aa9a*/
+  dword_B0FACC = (unsigned int)LoadFileSHP( (char *)(off_844C54), (bool *)((bool *)&byte_B0FC94)); /*0x72aab4*/
   LoadPaletteSimple( (char *)(off_844BA4), (int *)(&dword_B0FB64), (unsigned int *)(&dword_B0FB68)); /*0x72aab9*/
   LoadPaletteSimple( (char *)(off_844BA0), (int *)(&dword_B0FB6C), (unsigned int *)(&dword_B0FB70)); /*0x72aace*/
   LoadPaletteSimple( (char *)(off_844B9C), (int *)(&dword_B0FB5C), (unsigned int *)(&dword_B0FB60)); /*0x72aae3*/
@@ -264,16 +264,16 @@ unsigned char LoadMouseClassResources()
   if ( !byte_B0FBE0 ) /*0x72ab04*/
   {
     AssetClass::ReleaseAndReload(); /*0x72ab0a*/
-    dword_B0FAC4 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CD4), (ConvertClass *)((bool *)&byte_B0FC95)); /*0x72ab2a*/
-    dword_B0F9DC = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CD8), (ConvertClass *)((bool *)&byte_B0FC96)); /*0x72ab3f*/
-    dword_B0FAC0 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CDC), (ConvertClass *)((bool *)&byte_B0FC97)); /*0x72ab54*/
-    dword_B0FB50 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CE0), (ConvertClass *)((bool *)&byte_B0FC98)); /*0x72ab69*/
-    dword_B0FA04 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CE4), (ConvertClass *)((bool *)&byte_B0FC99)); /*0x72ab7e*/
-    dword_B0FAF8 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CE8), (ConvertClass *)((bool *)&byte_B0FC9A)); /*0x72ab93*/
-    dword_B0FA74 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CEC), (ConvertClass *)((bool *)&byte_B0FC9B)); /*0x72aba8*/
-    dword_B0FA38 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CF0), (ConvertClass *)((bool *)&byte_B0FC9C)); /*0x72abbd*/
-    dword_B0FAE8 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CF4), (ConvertClass *)((bool *)&byte_B0FC9D)); /*0x72abd2*/
-    dword_B0FA54 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CF8), (ConvertClass *)((bool *)&byte_B0FC9E)); /*0x72abec*/
+    dword_B0FAC4 = (unsigned int)LoadFileSHP( (char *)(off_844CD4), (bool *)((bool *)&byte_B0FC95)); /*0x72ab2a*/
+    dword_B0F9DC = (unsigned int)LoadFileSHP( (char *)(off_844CD8), (bool *)((bool *)&byte_B0FC96)); /*0x72ab3f*/
+    dword_B0FAC0 = (unsigned int)LoadFileSHP( (char *)(off_844CDC), (bool *)((bool *)&byte_B0FC97)); /*0x72ab54*/
+    dword_B0FB50 = (unsigned int)LoadFileSHP( (char *)(off_844CE0), (bool *)((bool *)&byte_B0FC98)); /*0x72ab69*/
+    dword_B0FA04 = (unsigned int)LoadFileSHP( (char *)(off_844CE4), (bool *)((bool *)&byte_B0FC99)); /*0x72ab7e*/
+    dword_B0FAF8 = (unsigned int)LoadFileSHP( (char *)(off_844CE8), (bool *)((bool *)&byte_B0FC9A)); /*0x72ab93*/
+    dword_B0FA74 = (unsigned int)LoadFileSHP( (char *)(off_844CEC), (bool *)((bool *)&byte_B0FC9B)); /*0x72aba8*/
+    dword_B0FA38 = (unsigned int)LoadFileSHP( (char *)(off_844CF0), (bool *)((bool *)&byte_B0FC9C)); /*0x72abbd*/
+    dword_B0FAE8 = (unsigned int)LoadFileSHP( (char *)(off_844CF4), (bool *)((bool *)&byte_B0FC9D)); /*0x72abd2*/
+    dword_B0FA54 = (unsigned int)LoadFileSHP( (char *)(off_844CF8), (bool *)((bool *)&byte_B0FC9E)); /*0x72abec*/
     LoadPaletteSimple( (char *)(off_844BE4), (int *)(&dword_B0FBC8), (unsigned int *)(&dword_B0FBCC)); /*0x72abf1*/
     LoadPaletteSimple( (char *)(off_844BE8), (int *)(&dword_B0FBD0), (unsigned int *)(&dword_B0FBD4)); /*0x72ac06*/
     LoadPaletteSimple( (char *)(off_844BEC), (int *)(&dword_B0FBD8), (unsigned int *)(&dword_B0FBDC)); /*0x72ac1b*/
@@ -441,34 +441,34 @@ int * * LoadingScreen_InitResources()
   {
   LABEL_3:
     ((AssetClass *)v1)->ReleaseAndReload(); /*0x72e071*/
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[788] = (unsigned int)LoadFileSHP( /*0x72e091*/ (ConvertClass *)(off_844CD4), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1253]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[788] = (unsigned int)LoadFileSHP( /*0x72e091*/ (char *)(off_844CD4), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1253)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[556] = (unsigned int)LoadFileSHP( /*0x72e0a6*/ (ConvertClass *)(off_844CD8), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1254]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[556] = (unsigned int)LoadFileSHP( /*0x72e0a6*/ (char *)(off_844CD8), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1254)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[784] = (unsigned int)LoadFileSHP( /*0x72e0bb*/ (ConvertClass *)(off_844CDC), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1255]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[784] = (unsigned int)LoadFileSHP( /*0x72e0bb*/ (char *)(off_844CDC), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1255)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928] = (unsigned int)LoadFileSHP( /*0x72e0d0*/ (ConvertClass *)(off_844CE0), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1256]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[928] = (unsigned int)LoadFileSHP( /*0x72e0d0*/ (char *)(off_844CE0), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1256)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[596] = (unsigned int)LoadFileSHP( /*0x72e0e5*/ (ConvertClass *)(off_844CE4), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1257]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[596] = (unsigned int)LoadFileSHP( /*0x72e0e5*/ (char *)(off_844CE4), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1257)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[840] = (unsigned int)LoadFileSHP( /*0x72e0fa*/ (ConvertClass *)(off_844CE8), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1258]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[840] = (unsigned int)LoadFileSHP( /*0x72e0fa*/ (char *)(off_844CE8), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1258)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[708] = (unsigned int)LoadFileSHP( /*0x72e10f*/ (ConvertClass *)(off_844CEC), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1259]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[708] = (unsigned int)LoadFileSHP( /*0x72e10f*/ (char *)(off_844CEC), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1259)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[648] = (unsigned int)LoadFileSHP( /*0x72e124*/ (ConvertClass *)(off_844CF0), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1260]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[648] = (unsigned int)LoadFileSHP( /*0x72e124*/ (char *)(off_844CF0), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1260)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[824] = (unsigned int)LoadFileSHP( /*0x72e139*/ (ConvertClass *)(off_844CF4), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1261]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[824] = (unsigned int)LoadFileSHP( /*0x72e139*/ (char *)(off_844CF4), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1261)));
 
 
-*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[676] = (unsigned int)LoadFileSHP( /*0x72e153*/ (ConvertClass *)(off_844CF8), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1262]));
+*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[676] = (unsigned int)LoadFileSHP( /*0x72e153*/ (char *)(off_844CF8), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1262)));
 
 
     LoadPaletteSimple( /*0x72e158*/
@@ -4048,20 +4048,20 @@ int sub_72D9A0()
 
   if ( g_DisplayWidth == 640 ) /*0x72d9af*/
   {
-    dword_B0FB48 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CB8), (ConvertClass *)((bool *)&byte_B0FCC8)); /*0x72d9c7*/
-    dword_B0FB10 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844CC4), (ConvertClass *)((bool *)&byte_B0FCCA)); /*0x72d9dc*/
-    FileSHP = (void *)LoadFileSHP( (ConvertClass *)(off_844CC8), (ConvertClass *)((bool *)&byte_B0FCCB)); /*0x72d9e1*/
+    dword_B0FB48 = (unsigned int)LoadFileSHP( (char *)(off_844CB8), (bool *)((bool *)&byte_B0FCC8)); /*0x72d9c7*/
+    dword_B0FB10 = (unsigned int)LoadFileSHP( (char *)(off_844CC4), (bool *)((bool *)&byte_B0FCCA)); /*0x72d9dc*/
+    FileSHP = (void *)LoadFileSHP( (char *)(off_844CC8), (bool *)((bool *)&byte_B0FCCB)); /*0x72d9e1*/
     v1 = off_844CD0[0]; /*0x72d9e6*/
   }
   else
   {
-    dword_B0FB48 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844D4C), (ConvertClass *)((bool *)&byte_B0FCC8)); /*0x72da0e*/
-    dword_B0FB10 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844D54), (ConvertClass *)((bool *)&byte_B0FCCA)); /*0x72da23*/
-    FileSHP = (void *)LoadFileSHP( (ConvertClass *)(off_844CCC), (ConvertClass *)((bool *)&byte_B0FCCB)); /*0x72da28*/
+    dword_B0FB48 = (unsigned int)LoadFileSHP( (char *)(off_844D4C), (bool *)((bool *)&byte_B0FCC8)); /*0x72da0e*/
+    dword_B0FB10 = (unsigned int)LoadFileSHP( (char *)(off_844D54), (bool *)((bool *)&byte_B0FCCA)); /*0x72da23*/
+    FileSHP = (void *)LoadFileSHP( (char *)(off_844CCC), (bool *)((bool *)&byte_B0FCCB)); /*0x72da28*/
     v1 = (char *)(off_844D5C); /*0x72da2d*/
   }
   dword_B0F9F8 = (unsigned int)FileSHP; /*0x72d9ec*/
-  dword_B0FA6C = (unsigned int)LoadFileSHP( (ConvertClass *)(v1), (ConvertClass *)((bool *)&byte_B0FCCC)); /*0x72da52*/
+  dword_B0FA6C = (unsigned int)LoadFileSHP( (char *)(v1), (bool *)((bool *)&byte_B0FCCC)); /*0x72da52*/
   LoadPaletteSimple( (char *)(off_844BE0), (int *)(&dword_B0FBBC), (unsigned int *)(&dword_B0FBC0)); /*0x72da57*/
   LoadPaletteSimple( (char *)(off_844D50), (int *)(&dword_B0FCB0), (unsigned int *)(&dword_B0FCB4)); /*0x72da6c*/
   LoadPaletteSimple( (char *)(off_844D58), (int *)(&dword_B0FCB8), (unsigned int *)(&dword_B0FCBC)); /*0x72da81*/

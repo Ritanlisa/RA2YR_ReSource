@@ -207,7 +207,7 @@ char sub_72BAC0()
   if ( !byte_B0FD51 ) /*0x72bac7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bad3*/
-      dword_B0FB2C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DBC),(gamemd::ConvertClass *)((bool *)&byte_B0FD50))); /*0x72bae5*/
+      dword_B0FB2C = (unsigned int)(LoadFileSHP((char *)(off_844DBC),(bool *)((bool *)&byte_B0FD50))); /*0x72bae5*/
     result = LoadPaletteSimple( (char *)(off_844DC0), (int *)(&dword_B0FD54), (unsigned int *)(&dword_B0FD58)); /*0x72bafa*/
     byte_B0FD51 = 1; /*0x72baff*/
   }

@@ -653,8 +653,8 @@ int AnimTypeList::Constructor()
     *((unsigned char *)this + 13) = 0; /*0x67a47e*/
     *((unsigned int *)this + 5) = 10; /*0x67a481*/
     *((unsigned int *)this + 4) = 0; /*0x67a488*/
-    *this = (AnimTypeList)(void *)&TypeList_AnimTypeClass_const___vftable; /*0x67a48b*/
-    return this; /*0x67a491*/
+    *(unsigned int *)this = (unsigned int)&TypeList_AnimTypeClass_const___vftable; /*0x67a48b*/
+    return (int)this; /*0x67a491*/
 }
 // 0x525680
 // G42 T9: body quarantined -- raw dump used param names a2/a3 that do not

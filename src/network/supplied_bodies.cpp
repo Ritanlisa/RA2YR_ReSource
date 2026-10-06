@@ -146,11 +146,11 @@ int NetworkID::Compare(int a2) {
 namespace gamemd {
 unsigned int * IPXConnClass::QueryInterface(char,int,int,int)
 {
-    *(unsigned int *)this->ConnectionClass = &vt_IPXConnClass; /*0x53f853*/
+    *(unsigned int *)this = &vt_IPXConnClass; /*0x53f853*/  // g57e2 W2
     ConnectionClass_dtor((void *)this); /*0x53f859*/
     if ( (a2 & 1) != 0 ) /*0x53f863*/
       RA2_OPDEL(this); /*0x53f866*/
-    return this->ConnectionClass; /*0x53f870*/
+    return this; /*0x53f870*/  // g57e2 W2
 }
 } // namespace gamemd
 

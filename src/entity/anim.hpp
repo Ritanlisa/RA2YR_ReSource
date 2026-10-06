@@ -106,6 +106,9 @@ public:
     unsigned int AnimClass_field_0x4;  // 0x4
     unsigned int AnimClass_field_0x8;  // 0x8
     unsigned int AnimClass_field_0xAC;  // 0xAC
+    unsigned char __pad_A0[4];  // 0xA0 (ml AnimClass@0xA0=q0A0 slot witness; g57e2 W4)
+    unsigned int AnimClass_field_0x9C;  // 0x9C (ml AnimClass@0x9C=q09C slot witness; g57e2 W4)
+    unsigned int AnimClass_field_0xA4;  // 0xA4 (ml AnimClass@0xA4=q0A4 slot witness; g57e2 W4)
     unsigned int AnimClass_field_0xB4;  // 0xB4
     unsigned int AnimClass_field_0xBC;  // 0xBC
     unsigned int AnimClass_field_0xC0;  // 0xC0
@@ -123,7 +126,7 @@ public:
     unsigned char __pad_C4;  // 0xC4
     unsigned char __pad_D8;  // 0xD8
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7); // 0x421EA0
+    void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7); // 0x421EA0  // g57e2 W5i: raw proto (void*,int*,void*,int,void*,void*,char)
     int SimpleCtor();  // 0x422720
     int SetAnimSpeed();  // 0x422BC0
     int * UpdateZAdjust(int * a1);  // 0x422BE0

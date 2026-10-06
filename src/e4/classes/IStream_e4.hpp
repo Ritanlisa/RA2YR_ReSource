@@ -10,7 +10,7 @@ struct IStream {
     unsigned char q000;  // 0x0
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    int Read(IStream * pstm, void * pv, ULONG cb);
+    int Read(void * pv, ULONG cb);  // COM truth: HRESULT __thiscall IStream::Read(this, void*, ULONG); old pstm param was double-counted receiver (G57e1 B3)
 };
 
 

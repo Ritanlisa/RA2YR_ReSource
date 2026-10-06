@@ -5,6 +5,27 @@
 #include "object/radbeam.hpp"
 #include "structure/building.hpp"
 #include "type/building_type.hpp"
+#include "misc/audio_ext.hpp"  // g57e2 W5: AudioSource cast operand
+#include "entity/anim.hpp"  // g57e2 W5c: AnimClass full def (C2027)
+// dword_8871E0 host (render/supplied_bodies.cpp:205 precedent; ml RulesClass
+// Normal@0xB9C int[20] g7-til-merge + q0A0/q0B8 byte windows) -- g57e2 W5
+int StartAudioController(unsigned int *aP0, ::gamemd::AudioSource *a1);  // g57e2 W5c: TU-local (entity/supplied_bodies.cpp:40 precedent; raw 0x423b00)
+struct dword_8871E0_v {
+    unsigned char __pad_0[0x94];
+    void *InfantryBrute;  // 0x94 (ml RulesClass@0x94 InfantryBrute g7-til-merge; g57e2 W5f)
+    unsigned char __pad_98[8];
+    unsigned char __pad_A0[28];
+    unsigned char __pad_BC[0xB9C - 0xBC];
+    int Normal[20];
+};
+extern dword_8871E0_v *dword_8871E0_t;
+extern unsigned int dword_87F7E8;
+extern unsigned int dword_A8B230;  // data: 0xA8B230 (Scenario singleton window)
+struct dword_A8B230_elem_te { unsigned int NeedsSaveOrLink; };  // g57e2 W5g (object/supplied_bodies.cpp:191 precedent)
+#define dword_A8B230_te ((dword_A8B230_elem_te *)&dword_A8B230)
+int Random_Range(void *a1, int a2, int a3);  // raw 0x6e17e3 Random::Range (g57b5 W3 decl; g57e2 W5f)  // data: 0x87F7E8 (g57e2 W5e; global obj as Coord window)  // data: 0x8871E0 (Rules instance pointer)
+#define dword_8871E0 dword_8871E0_t
+
 
 #include <cstring>
 // G42.34 T1: bridge for HouseClass_e4.hpp bare AbstractClass*
@@ -1184,7 +1205,7 @@ bool TechnoClass::CreateUnit()
     unsigned int *v3; // eax
     unsigned int *v4; // eax
     CellClass *v5; // eax
-    BuildingClass *v6; // eax
+    ::gamemd::BuildingClass *v6; // eax  // g57e2 W5: qualify (TU ns ra2::game; C2027)
     int AnimClass_field_0x0; // eax
     int v8; // eax
     int *p_AnimClass_field_0x9C; // edi
@@ -1318,13 +1339,13 @@ bool TechnoClass::CreateUnit()
     int v145; // [esp+8Ch] [ebp-14h]
     char v146[16]; // [esp+90h] [ebp-10h] BYREF
 
-    _ESI = this; /*0x423acc*/
-    if ( !this->__pad_194[4] && *(unsigned int *)(this->AnimClass_field_0xC8 + 760) != -1 ) /*0x423ae8*/
+    ::gamemd::AnimClass *_ESI = (::gamemd::AnimClass *)this; /*0x423acc*/  // g57e2 W5b: raw this=AnimClass* (wrong-universe debt, gB_audit #7); ns qualify (TU=ra2::game)
+    if ( !((unsigned int *)&_ESI->__pad_194)[4] && *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 760) != -1 ) /*0x423ae8*/  // g57e2 W3
     {
-      v3 = (unsigned int *)(*(int (__thiscall **)(AnimClass *, int *))(this->AnimClass_field_0x0 + 72))( /*0x423af9*/
-                       this,
+      v3 = (unsigned int *)(*(int (__thiscall **)(::gamemd::AnimClass *, int *))((char *)_ESI->AnimClass_field_0x0 + 72))( /*0x423af9*/
+                       _ESI,
                        &AnimClass_field_0x9C);
-      StartAudioController(v3, (AudioSource *)&_ESI->AnimClass_field_0x1A0); /*0x423b00*/
+      StartAudioController(v3, (::gamemd::AudioSource *)&_ESI->AnimClass_field_0x1A0); /*0x423b00*/
     }
     if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 852) ) /*0x423b0b*/
     {
@@ -1333,10 +1354,10 @@ bool TechnoClass::CreateUnit()
     }
     if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 883) ) /*0x423b29*/
     {
-      v4 = (unsigned int *)(*(int (__thiscall **)(AnimClass *, int *))(_ESI->AnimClass_field_0x0 + 72))( /*0x423b3c*/
+      v4 = (unsigned int *)(*(int (__thiscall **)(::gamemd::AnimClass *, int *))((char *)_ESI->AnimClass_field_0x0 + 72))( /*0x423b3c*/
                        _ESI,
                        &AnimClass_field_0x9C);
-      v5 = Coord_To_Cell((Coord *)&dword_87F7E8, v4); /*0x423b45*/
+      v5 = (CellClass *)::gamemd::Coord_To_Cell(&::gamemd::dword_87F7E8, v4); /*0x423b45*/  // g57e2 W5d: drop undeclared Coord cast (param void*)
       _ESI->__pad_194[9] = Cell_CanPlaceBuilding((void *)_ESI->AnimClass_field_0x180, v5) == 0; /*0x423b5c*/
     }
     if ( _ESI->AnimClass_field_0xC8 == *(unsigned int *)&dword_8871E0->__pad_A0[24] ) /*0x423b74*/
@@ -1348,29 +1369,29 @@ bool TechnoClass::CreateUnit()
     }
     if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 857) ) /*0x423b95*/
     {
-      v6 = (BuildingClass *)(*(int (__thiscall **)(AnimClass *))(_ESI->AnimClass_field_0x0 + 444))(_ESI); /*0x423ba3*/
-      _ESI->__pad_194[9] = !v6 || !BuildingClass::GetNthOfType(v6); /*0x423bb8*/
+      v6 = (::gamemd::BuildingClass *)(*(int (__thiscall **)(::gamemd::AnimClass *))((char *)_ESI->AnimClass_field_0x0 + 444))(_ESI); /*0x423ba3*/  // g57e2 W5d
+      _ESI->__pad_194[9] = !v6 || !v6->GetNthOfType(); /*0x423bb8*/  // g57e2 W5: f2 thiscall form (raw Building::GetNthOfType(v6))
     }
     if ( *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 844) != -1 ) /*0x423bd4*/
     {
       AnimClass_field_0x9C = _ESI->AnimClass_field_0x9C; /*0x423be2*/
-      AnimClass_field_0x0 = _ESI->AnimClass_field_0x0; /*0x423be6*/
+      AnimClass_field_0x0 = (unsigned int)_ESI->AnimClass_field_0x0; /*0x423be6*/  // g57e2 W5d
       v137 = *(unsigned int *)_ESI->__pad_A0; /*0x423beb*/
       AnimClass_field_0xA4 = _ESI->AnimClass_field_0xA4; /*0x423bf9*/
-      (*(void (__thiscall **)(AnimClass *, int *))(AnimClass_field_0x0 + 240))(_ESI, &AnimClass_field_0x9C); /*0x423bfd*/
+      (*(void (__thiscall **)(::gamemd::AnimClass *, int *))(AnimClass_field_0x0 + 240))(_ESI, &AnimClass_field_0x9C); /*0x423bfd*/  // g57e2 W5d
     }
     if ( _ESI->__pad_118[3] && _ESI->AnimClass_field_0x11C == _ESI->AnimClass_field_0xAC ) /*0x423c1b*/
       _ESI->__pad_118[3] = 0; /*0x423c1d*/
     if ( _ESI->__pad_194[0] ) /*0x423c24*/
     {
-      v8 = (*(int (__thiscall **)(AnimClass *))(_ESI->AnimClass_field_0x0 + 488))(_ESI); /*0x423c36*/
+      v8 = (*(int (__thiscall **)(::gamemd::AnimClass *))((char *)_ESI->AnimClass_field_0x0 + 488))(_ESI); /*0x423c36*/  // g57e2 W5d
       if ( v8 == 2 || v8 == 1 ) /*0x423c44*/
       {
-        p_AnimClass_field_0x9C = &_ESI->AnimClass_field_0x9C; /*0x423c4a*/
+        p_AnimClass_field_0x9C = (int *)&_ESI->AnimClass_field_0x9C; /*0x423c4a*/  // g57e2 W5d
         AnimClass_field_0x9C = _ESI->AnimClass_field_0x9C; /*0x423c54*/
         v137 = *(unsigned int *)_ESI->__pad_A0; /*0x423c60*/
         AnimClass_field_0xA4 = _ESI->AnimClass_field_0xA4; /*0x423c67*/
-        landType = Coord_To_Cell((Coord *)&dword_87F7E8, &AnimClass_field_0x9C)->landType; /*0x423c75*/
+        landType = *(int *)((char *)::gamemd::Coord_To_Cell(&::gamemd::dword_87F7E8, &AnimClass_field_0x9C) + 236); /*0x423c75*/  // g57e2 W5d: ml CellClass landType@236(0xEC) byte window
         AnimClass_field_0x9C = _ESI->AnimClass_field_0x9C; /*0x423c82*/
         v137 = *(unsigned int *)_ESI->__pad_A0; /*0x423c89*/
         v11 = _ESI->AnimClass_field_0xA4; /*0x423c8d*/
@@ -1399,8 +1420,7 @@ bool TechnoClass::CreateUnit()
               IDA_LOWORD(v26) = Math_RoundToInt(v1); /*0x423e46*/
               AnimClass_field_0xC8 = _ESI->AnimClass_field_0xC8; /*0x423e4b*/
               AnimClass_field_0xA4 = v26; /*0x423e5a*/
-              AnimClass::ctor( /*0x423e70*/
-                v23,
+              ((::gamemd::AnimClass *)v23)->ctor( /*0x423e70*/
                 *(void **)(AnimClass_field_0xC8 + 772),
                 &AnimClass_field_0x9C,
                 0,
@@ -1437,8 +1457,7 @@ bool TechnoClass::CreateUnit()
             AnimClass_field_0x9C = v15; /*0x423d06*/
             v137 = v16; /*0x423d20*/
             AnimClass_field_0xA4 = v17 + 3; /*0x423d24*/
-            AnimClass::ctor( /*0x423d3c*/
-              v14,
+            ((::gamemd::AnimClass *)v14)->ctor( /*0x423d3c*/
               *(void **)(dword_8871E0->Normal[10] + 4 * dword_8871E0->Normal[13] - 4),
               &AnimClass_field_0x9C,
               0,
@@ -1456,7 +1475,7 @@ bool TechnoClass::CreateUnit()
             AnimClass_field_0x9C = *p_AnimClass_field_0x9C; /*0x423d61*/
             v137 = *(unsigned int *)_ESI->__pad_A0; /*0x423d6a*/
             AnimClass_field_0xA4 = _ESI->AnimClass_field_0xA4; /*0x423d76*/
-            AnimClass::ctor(v18, (void *)dword_8871E0->InfantryBrute, &AnimClass_field_0x9C, 0, 1, (void *)0x600, 0, 0); /*0x423d89*/
+            ((::gamemd::AnimClass *)v18)->ctor( (void *)dword_8871E0->InfantryBrute, &AnimClass_field_0x9C, 0, 1, (void *)0x600, 0, 0); /*0x423d89*/
           }
           v19 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x423d93*/
           if ( v19 ) /*0x423d9d*/
@@ -1467,7 +1486,7 @@ bool TechnoClass::CreateUnit()
             AnimClass_field_0x9C = v20; /*0x423db5*/
             v137 = v21; /*0x423dc9*/
             AnimClass_field_0xA4 = v22 + 3; /*0x423dcd*/
-            AnimClass::ctor(v19, *(void **)dword_8871E0->Normal[10], &AnimClass_field_0x9C, 0, 1, (void *)0x600, 0, 0); /*0x423ddd*/
+            ((::gamemd::AnimClass *)v19)->ctor( *(void **)dword_8871E0->Normal[10], &AnimClass_field_0x9C, 0, 1, (void *)0x600, 0, 0); /*0x423ddd*/
           }
         }
         if ( !v12 || v129 ) /*0x423f07*/
@@ -1482,10 +1501,9 @@ bool TechnoClass::CreateUnit()
             v39 = *(unsigned int *)(v38 + 756); /*0x423f45*/
             if ( v39 > 0 ) /*0x423f4d*/
             {
-              v40 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v39); /*0x423f69*/
+              v40 = Random_Range((void *)&dword_A8B230_te[14].NeedsSaveOrLink, 0, v39); /*0x423f69*/
               v41 = v40 /*0x423f84*/
-                  + Random::Range(
-                      (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+                  + Random_Range((void *)&dword_A8B230_te[14].NeedsSaveOrLink,
                       0,
                       *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 756));
               if ( v41 > 0 ) /*0x423f88*/
@@ -1495,8 +1513,7 @@ bool TechnoClass::CreateUnit()
                 {
                   v43 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x423f91*/
                   if ( v43 ) /*0x423f9b*/
-                    AnimClass::ctor( /*0x423fbe*/
-                      v43,
+                    ((::gamemd::AnimClass *)v43)->ctor( /*0x423fbe*/
                       *(void **)(_ESI->AnimClass_field_0xC8 + 752),
                       &AnimClass_field_0x9C,
                       0,
@@ -1561,7 +1578,7 @@ bool TechnoClass::CreateUnit()
                         if ( v52 ) /*0x4240f8*/
                         {
                           *(unsigned int *)v133 = *(unsigned int *)&v51->vtable4[24]; /*0x42410c*/
-                          v53 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3); /*0x424110*/
+                          v53 = Random_Range((void *)&dword_A8B230_te[14].NeedsSaveOrLink, 0, 3); /*0x424110*/
                           ObjectClass::SpawnAtCell( /*0x42413b*/
                             v52,
                             *(&dword_A83D84->vtable1
@@ -1570,7 +1587,7 @@ bool TechnoClass::CreateUnit()
                             v133,
                             -1);
                         }
-                        v51->__pad_7C[162] = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x424155*/
+                        v51->__pad_7C[162] = Random_Range((void *)&dword_A8B230_te[14].NeedsSaveOrLink, 0, 2); /*0x424155*/
                         StartCoords = HouseClass::GetStartCoords(v51, v146); /*0x424167*/
                         v55 = *StartCoords; /*0x42416f*/
                         v56 = StartCoords[1] - dword_886FA4; /*0x424174*/
@@ -1649,7 +1666,7 @@ bool TechnoClass::CreateUnit()
               v66 = (int *)(*(int (__thiscall **)(AnimClass *, int *))(_ESI->AnimClass_field_0x0 + 72))( /*0x42430a*/
                              _ESI,
                              &AnimClass_field_0x9C);
-              AnimClass::ctor(v65, *(void **)(_ESI->AnimClass_field_0xC8 + 776), v66, (void *)1, 1, (void *)0x600, 0, 0); /*0x42431d*/
+              ((::gamemd::AnimClass *)v65)->ctor( *(void **)(_ESI->AnimClass_field_0xC8 + 776), v66, (void *)1, 1, (void *)0x600, 0, 0); /*0x42431d*/
             }
           }
         }
@@ -1859,7 +1876,7 @@ bool TechnoClass::CreateUnit()
               v97 = *(unsigned int *)(result + 732); /*0x4247b7*/
               if ( v97 || *(unsigned int *)(result + 736) ) /*0x4247c1*/
               {
-                result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v97, *(unsigned int *)(result + 736)); /*0x4247e0*/
+                result = Random_Range((void *)&dword_A8B230_te[14].NeedsSaveOrLink, v97, *(unsigned int *)(result + 736)); /*0x4247e0*/
                 _ESI->AnimClass_field_0x184 = result; /*0x4247e5*/
               }
               return result; /*0x4247f2*/
@@ -1890,7 +1907,7 @@ bool TechnoClass::CreateUnit()
               ProductionTimeMult = *(char **)(v101 + 688); /*0x424891*/
               if ( v104 || *(unsigned int *)(v103 + 744) ) /*0x42489b*/
                 ProductionTimeMult = (char *)Random::Range( /*0x4248b7*/
-                                               (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+                                               (Random *)&dword_A8B230_te[14].NeedsSaveOrLink,
                                                v104,
                                                *(unsigned int *)(v103 + 744));
               if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 866) ) /*0x4248c2*/

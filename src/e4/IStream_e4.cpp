@@ -12,7 +12,7 @@
 
 // 0x4A3020
 namespace gamemd {
-int IStream::Read(IStream * pstm, void * pv, ULONG cb)
+int IStream::Read(void * pv, ULONG cb)
 {
 
   int v3; // ecx

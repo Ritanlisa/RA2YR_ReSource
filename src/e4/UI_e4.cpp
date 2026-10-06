@@ -1574,7 +1574,7 @@ char sub_72D120()
   if ( !byte_B0FCCE ) /*0x72d127*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72d133*/
-      dword_B0FAB8 = (unsigned int)LoadFileSHP( (ConvertClass *)(off_844D64), (ConvertClass *)((bool *)&byte_B0FCCD)); /*0x72d145*/
+      dword_B0FAB8 = (unsigned int)LoadFileSHP( (char *)(off_844D64), (bool *)((bool *)&byte_B0FCCD)); /*0x72d145*/
     result = LoadPaletteSimple( (char *)(off_844D68), (int *)(&dword_B0FCD0), (unsigned int *)(&dword_B0FCD4)); /*0x72d15a*/
     byte_B0FCCE = 1; /*0x72d15f*/
   }

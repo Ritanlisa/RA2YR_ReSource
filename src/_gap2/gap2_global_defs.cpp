@@ -113,7 +113,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     {
       do /*0x40317d*/
       {
-        vtable0 = (ObjectClass *)v8->AbstractClass; /*0x4030de*/
+        vtable0 = (ObjectClass *)v8; /*0x4030de*/  // g57e2 W2
         if ( (v8->location.Z & 1) != 0 && ((unsigned int *)(v8))[2] ) /*0x4030ee*/
         {
           if ( (((Audio*)(char *)&((unsigned int *)v8)[0])->InitChannels(), IsActive) /*0x403158*/

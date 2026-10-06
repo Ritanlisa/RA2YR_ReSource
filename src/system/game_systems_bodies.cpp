@@ -898,7 +898,7 @@ int GameOptions::SaveLoad(int a2)
 void GameOptions::GetEntry() {}
 
 // 0x5fbf80
-void GameOptionsClass::UnlockMovieIfNeeded_MoviesList()
+int GameOptionsClass::UnlockMovieIfNeeded_MoviesList(void a2)
 {
     int v2; // edi
     char **v4; // esi
@@ -955,7 +955,7 @@ void GameOptionsClass::UnlockMovieIfNeeded_MoviesList()
 }
 
 // 0x5fc000
-void GameOptionsClass::PopulateMovieList()
+int GameOptionsClass::PopulateMovieList(HWND hWnd)
 {
     GameOptionsClass *v2; // ebx
     wchar_t *StringCSF; // eax
@@ -1043,7 +1043,7 @@ void GameOptionsClass::PopulateMovieList()
 }
 
 // 0x4c6210
-void GameResult::CalcScore()
+int GameResult::CalcScore()
 {
     signed int i; // esi
     double v3; // st7
@@ -5953,7 +5953,7 @@ void LoadingScreen::Render()
           }
           v30 = Render_Render_72B500(); /*0x5534ec*/
         }
-        *((unsigned int *)this + 18) = LoadFileSHP(Buffer, (bool *)this + 81); /*0x553504*/
+        *((unsigned int *)this + 18) = (unsigned int)LoadFileSHP(Buffer, (bool *)this + 81); /*0x553504*/
         *(unsigned int *)((char *)&v88 + 0) = 0; /*0x553507*/
         *(unsigned int *)((char *)&v88 + 1) = 0; /*0x55350e*/
         INISectionList::Constructor((INISectionList *)((char *)&v88 + 2)); /*0x553515*/
@@ -6342,9 +6342,9 @@ void LoadingScreen::Render()
           Value = LoadingScreen::GetValue((LoadingScreen *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828]); /*0x552f0d*/
           BackgroundImage = LoadingScreen::GetBackgroundImage(g_DisplayWidth, Value); /*0x552f22*/
           OverlayImage = LoadingScreen::GetOverlayImage(g_DisplayWidth, Value); /*0x552f2e*/
-          *((unsigned int *)this + 17) = LoadFileSHP(BackgroundImage, (bool *)this + 80); /*0x552f3a*/
-          *((unsigned int *)this + 19) = LoadFileSHP(OverlayImage, (bool *)this + 82); /*0x552f47*/
-          *((unsigned int *)this + 18) = LoadFileSHP(p_uniqueId, (bool *)this + 81); /*0x552f4f*/
+          *((unsigned int *)this + 17) = (unsigned int)LoadFileSHP(BackgroundImage, (bool *)this + 80); /*0x552f3a*/
+          *((unsigned int *)this + 19) = (unsigned int)LoadFileSHP(OverlayImage, (bool *)this + 82); /*0x552f47*/
+          *((unsigned int *)this + 18) = (unsigned int)LoadFileSHP(p_uniqueId, (bool *)this + 81); /*0x552f4f*/
           v10 = Render_Render_72B340(); /*0x552f57*/
           v11 = Render_Render_72B360(); /*0x552f5e*/
           _72B380 = Map_Load_72B380(); /*0x552f60*/

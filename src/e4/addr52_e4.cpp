@@ -1156,7 +1156,7 @@ LABEL_3:
   ((CCFileClass *)Buffer)->Destruct();
   Debug::Log_0();
   Debug::Log();
-*(unsigned int *)&stru_B05488[26728] = (unsigned int)LoadFileSHP( (ConvertClass *)(&g_Str_File_MOUSE_SHA), (ConvertClass *)&stru_B05488[26732]);
+*(unsigned int *)&stru_B05488[26728] = (unsigned int)LoadFileSHP( (char *)(&g_Str_File_MOUSE_SHA), (bool *)&stru_B05488[26732]);
 
 
   if ( *(unsigned int *)&stru_B05488[26728] )

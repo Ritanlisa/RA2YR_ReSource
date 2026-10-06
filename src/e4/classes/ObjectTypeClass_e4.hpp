@@ -166,7 +166,7 @@ struct ObjectTypeClass {
     int loadTypeMember_5717AB0(int a2);
     int loadTypeMember_5717AD0();
     unsigned char ** ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5);
-    unsigned int * CheckFlag(ObjectTypeClass * aP1);
+    unsigned int * CheckFlag(int aP1);  // 0x717BF0 IDA truth: _DWORD* __thiscall(this, int); old ObjectTypeClass* param was double-counted receiver (G57e1 B3)
     BulletTypeClass * Construct(int aP1);
     unsigned int * Copy(unsigned int * a0, ObjectTypeClass * aP1);
     unsigned int * InitTripleTen(unsigned int * a1);

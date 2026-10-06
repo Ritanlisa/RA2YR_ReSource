@@ -1101,4 +1101,15 @@ struct _RLEBlitTransZRemapXlatZReadWrite_G;  // supplied (R_fix): ?$Blit*@G mang
 struct _RLEBlitTransZRemapXlatZRead_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
 struct _RLEBlitTransZRemapXlat_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
 struct _VectorClass_G;  // supplied (R_fix): ?$Blit*@G mangled-template family, fnptr cast annotation carrier
+// ==== G57e1 carrier supply (B4 _tree_full paradigm; truth csp_canon/classes.hpp:115171/405479) ====
+// AnimTypeList  size=4  (TiberiumClass_e4.cpp C2027 carrier)
+struct AnimTypeList {
+    unsigned char q000[4];  // 0x0
+    static void Constructor(AnimTypeList *aP1);  // 0x67A470; G42.35 static-form (qualified site 0x721FF9)
+};
+// VoxelAnimTypeVector  size=4  (TechnoTypeClass_e4.cpp C2027 carrier)
+struct VoxelAnimTypeVector {
+    unsigned char q000[4];  // 0x0
+    static int Constructor(VoxelAnimTypeVector *aP1, void *a2);  // 0x67C310; G42.35 static-form (qualified site 0x710BEE)
+};
 } // namespace gamemd

@@ -175,7 +175,8 @@ struct TechnoTypeClass {
     unsigned int q0F0;
     unsigned int vtable0;
     void* waypoints;  // 0x0 (no offset truth)
-    void* CheckFlag;  // 0x0 (no offset truth)
+    int CheckFlag(int aP1);  // 0x721290 IDA truth: int __thiscall(this, int) (G57e1; was bogus filler field)
+    static int CheckFlag(TechnoTypeClass *aP1, int a2);  // G42.35 static-form sync (qualified sites 0x5FA4EF/0x5FAAE6/0x5FB251) (G57e1)
     void* Debris;  // 0x0 (no offset truth)
     void* Value;  // 0x0 (no offset truth)
     void* aP2;  // 0x0 (no offset truth)
@@ -193,7 +194,8 @@ struct TechnoTypeClass {
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);
     int DTOR();
-    void Dispatch(TechnoTypeClass * aP1, void *a2, void *a3, void *a4, void *a5);
+    double Dispatch(unsigned int *aP1);  // 0x50BDF0 IDA truth: double __thiscall(this, _DWORD*) (G57e1)
+    static double Dispatch(TechnoTypeClass *aP1, unsigned int *a2);  // G42.35 static-form sync (qualified sites 0x711F17/0x711F9A) (G57e1)
     int GetThreatMultiplier(TechnoTypeClass * aP1);
     int  SaveLoadDataArray(TechnoTypeClass * aP1);
     int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5);

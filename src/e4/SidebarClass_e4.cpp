@@ -218,13 +218,13 @@ void * SidebarClass::LoadAssets()
                                               v2)->Construct(/*0x6a58ad*/ (int)v14, (int)v14, (int)g_DSurface_Primary, 1, 0);
   else
     *(unsigned int *)&stru_87F5F0.__pad_58[132] = 0; /*0x6a58b4*/
-  dword_B0B484 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aGclock2Shp),(gamemd::ConvertClass *)((bool *)&byte_B0B48F))); /*0x6a58d4*/
+  dword_B0B484 = (unsigned int)(LoadFileSHP((char *)(aGclock2Shp),(bool *)((bool *)&byte_B0B48F))); /*0x6a58d4*/
   v12 = 0; /*0x6a58d9*/
-  FileSHP = (void *)LoadFileSHP((gamemd::ConvertClass *)(aSellShp),(gamemd::ConvertClass *)((bool *)&v12)); /*0x6a58dd*/
+  FileSHP = (void *)LoadFileSHP((char *)(aSellShp),(bool *)((bool *)&v12)); /*0x6a58dd*/
   ((ShapeButton *)(&stru_B07DF8))->SetShape((int)FileSHP, 0, 0); /*0x6a58e8*/
   ((ButtonClass *)((ButtonClass *)&stru_B07DF8))->SetState(v12); /*0x6a58f7*/
   dword_B07E48 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a590c*/
-  v4 = (void *)LoadFileSHP((gamemd::ConvertClass *)(aRepairShp),(gamemd::ConvertClass *)((bool *)&v12)); /*0x6a5911*/
+  v4 = (void *)LoadFileSHP((char *)(aRepairShp),(bool *)((bool *)&v12)); /*0x6a5911*/
   ((ShapeButton *)(&stru_B0B3A0))->SetShape((int)v4, 0, 0); /*0x6a591c*/
   ((ButtonClass *)((ButtonClass *)&stru_B0B3A0))->SetState(v12); /*0x6a592b*/
   v5 = 0; /*0x6a5936*/
@@ -233,7 +233,7 @@ void * SidebarClass::LoadAssets()
   do /*0x6a598c*/
   {
     sprintf(Buffer, "TAB%02d.SHP", v5); /*0x6a594e*/
-    v7 = (void *)LoadFileSHP((gamemd::ConvertClass *)(Buffer),(gamemd::ConvertClass *)((bool *)&v12)); /*0x6a5960*/
+    v7 = (void *)LoadFileSHP((char *)(Buffer),(bool *)((bool *)&v12)); /*0x6a5960*/
     ((ShapeButton *)(v6))->SetShape((int)v7, 0, 0); /*0x6a5968*/
     ((ButtonClass *)((ButtonClass *)v6))->SetState(v12); /*0x6a5974*/
     ++v5; /*0x6a597f*/
@@ -241,18 +241,18 @@ void * SidebarClass::LoadAssets()
     (unsigned int)(v6)+= 8; /*0x6a5983*/
   }
   while ( (int)v6 < (int)&dword_B07DC8 ); /*0x6a598c*/
-  v8 = (void *)LoadFileSHP((gamemd::ConvertClass *)(aRDnShp),(gamemd::ConvertClass *)((bool *)&v12)); /*0x6a5999*/
+  v8 = (void *)LoadFileSHP((char *)(aRDnShp),(bool *)((bool *)&v12)); /*0x6a5999*/
   ((ShapeButton *)(&stru_B0B328))->SetShape((int)v8, 0, 0); /*0x6a59a4*/
   ((ButtonClass *)((ButtonClass *)&stru_B0B328))->SetState(v12); /*0x6a59b3*/
   dword_B0B378 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a59bf*/
-  v9 = (void *)LoadFileSHP((gamemd::ConvertClass *)(aRUpShp),(gamemd::ConvertClass *)((bool *)&v12)); /*0x6a59cf*/
+  v9 = (void *)LoadFileSHP((char *)(aRUpShp),(bool *)((bool *)&v12)); /*0x6a59cf*/
   ((ShapeButton *)(&g_SidebarFlag))->SetShape((int)v9, 0, 0); /*0x6a59da*/
   ((ButtonClass *)((ButtonClass *)&g_SidebarFlag))->SetState(v12); /*0x6a59e9*/
   dword_B0B458 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x6a59fd*/
-  dword_B0B468 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aSide1Shp),(gamemd::ConvertClass *)((bool *)&byte_B0B488))); /*0x6a5a11*/
-  dword_B0B46C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aSide2Shp),(gamemd::ConvertClass *)((bool *)&byte_B0B489))); /*0x6a5a25*/
-  dword_B0B470 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aSide3Shp),(gamemd::ConvertClass *)((bool *)&byte_B0B48A))); /*0x6a5a39*/
-  dword_B0B474 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aAddonShp),(gamemd::ConvertClass *)((bool *)&byte_B0B48B))); /*0x6a5a43*/
+  dword_B0B468 = (unsigned int)(LoadFileSHP((char *)(aSide1Shp),(bool *)((bool *)&byte_B0B488))); /*0x6a5a11*/
+  dword_B0B46C = (unsigned int)(LoadFileSHP((char *)(aSide2Shp),(bool *)((bool *)&byte_B0B489))); /*0x6a5a25*/
+  dword_B0B470 = (unsigned int)(LoadFileSHP((char *)(aSide3Shp),(bool *)((bool *)&byte_B0B48A))); /*0x6a5a39*/
+  dword_B0B474 = (unsigned int)(LoadFileSHP((char *)(aAddonShp),(bool *)((bool *)&byte_B0B48B))); /*0x6a5a43*/
   qmemcpy( (void *)(v15), UI_Load_72F4E0(), sizeof(v15)); /*0x6a5a5b*/
   if ( *(unsigned int *)&stru_87F5F0.__pad_58[136] ) /*0x6a5a65*/
   {
@@ -270,21 +270,21 @@ void * SidebarClass::LoadAssets()
                                               0);
   else
     *(unsigned int *)&stru_87F5F0.__pad_58[136] = 0; /*0x6a5aac*/
-  dword_B0B490 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aObsalliShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4CC))); /*0x6a5acb*/
-  dword_B0B494 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aObssoviShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4CD))); /*0x6a5adf*/
-  dword_B0B498 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aObsyuriShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4CE))); /*0x6a5af3*/
-  dword_B0B49C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aRaniShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4CF))); /*0x6a5b07*/
-  dword_B0B4A0 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aObsiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D0))); /*0x6a5b1b*/
-  dword_B0B4A4 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aUsaiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D1))); /*0x6a5b2f*/
-  dword_B0B4A8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aJapiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D2))); /*0x6a5b43*/
-  dword_B0B4AC = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aFraiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D3))); /*0x6a5b57*/
-  dword_B0B4B0 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aGeriShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D4))); /*0x6a5b6b*/
-  dword_B0B4B4 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aGbriShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D5))); /*0x6a5b7f*/
-  dword_B0B4B8 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aDjbiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D6))); /*0x6a5b93*/
-  dword_B0B4BC = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aArbiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D7))); /*0x6a5ba7*/
-  dword_B0B4C0 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aLatiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D8))); /*0x6a5bbb*/
-  dword_B0B4C4 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(aRusiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4D9))); /*0x6a5bcf*/
-  result = (void *)LoadFileSHP((gamemd::ConvertClass *)(aYriiShp),(gamemd::ConvertClass *)((bool *)&byte_B0B4DA)); /*0x6a5bd4*/
+  dword_B0B490 = (unsigned int)(LoadFileSHP((char *)(aObsalliShp),(bool *)((bool *)&byte_B0B4CC))); /*0x6a5acb*/
+  dword_B0B494 = (unsigned int)(LoadFileSHP((char *)(aObssoviShp),(bool *)((bool *)&byte_B0B4CD))); /*0x6a5adf*/
+  dword_B0B498 = (unsigned int)(LoadFileSHP((char *)(aObsyuriShp),(bool *)((bool *)&byte_B0B4CE))); /*0x6a5af3*/
+  dword_B0B49C = (unsigned int)(LoadFileSHP((char *)(aRaniShp),(bool *)((bool *)&byte_B0B4CF))); /*0x6a5b07*/
+  dword_B0B4A0 = (unsigned int)(LoadFileSHP((char *)(aObsiShp),(bool *)((bool *)&byte_B0B4D0))); /*0x6a5b1b*/
+  dword_B0B4A4 = (unsigned int)(LoadFileSHP((char *)(aUsaiShp),(bool *)((bool *)&byte_B0B4D1))); /*0x6a5b2f*/
+  dword_B0B4A8 = (unsigned int)(LoadFileSHP((char *)(aJapiShp),(bool *)((bool *)&byte_B0B4D2))); /*0x6a5b43*/
+  dword_B0B4AC = (unsigned int)(LoadFileSHP((char *)(aFraiShp),(bool *)((bool *)&byte_B0B4D3))); /*0x6a5b57*/
+  dword_B0B4B0 = (unsigned int)(LoadFileSHP((char *)(aGeriShp),(bool *)((bool *)&byte_B0B4D4))); /*0x6a5b6b*/
+  dword_B0B4B4 = (unsigned int)(LoadFileSHP((char *)(aGbriShp),(bool *)((bool *)&byte_B0B4D5))); /*0x6a5b7f*/
+  dword_B0B4B8 = (unsigned int)(LoadFileSHP((char *)(aDjbiShp),(bool *)((bool *)&byte_B0B4D6))); /*0x6a5b93*/
+  dword_B0B4BC = (unsigned int)(LoadFileSHP((char *)(aArbiShp),(bool *)((bool *)&byte_B0B4D7))); /*0x6a5ba7*/
+  dword_B0B4C0 = (unsigned int)(LoadFileSHP((char *)(aLatiShp),(bool *)((bool *)&byte_B0B4D8))); /*0x6a5bbb*/
+  dword_B0B4C4 = (unsigned int)(LoadFileSHP((char *)(aRusiShp),(bool *)((bool *)&byte_B0B4D9))); /*0x6a5bcf*/
+  result = (void *)LoadFileSHP((char *)(aYriiShp),(bool *)((bool *)&byte_B0B4DA)); /*0x6a5bd4*/
   dword_B0B4C8 = (unsigned int)(result); /*0x6a5bdb*/
   return result; /*0x6a5bd9*/
 

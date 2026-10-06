@@ -1726,7 +1726,7 @@ BOOL ObjectTypeClass::loadTypeMember_5717AE0()
 } // namespace gamemd
 // 0x717BF0
 namespace gamemd {
-unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
+unsigned int * ObjectTypeClass::CheckFlag(int aP1)
 {
 
   this->vtable1 = &vt_DynamicVectorClass; /*0x717bf2*/

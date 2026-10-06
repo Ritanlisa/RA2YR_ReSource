@@ -87,7 +87,7 @@ char sub_72BCA0()
   if ( !byte_B0FD45 ) /*0x72bca7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
-      dword_B0FA98 = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844DB4),(gamemd::ConvertClass *)((bool *)&byte_B0FD44))); /*0x72bcc5*/
+      dword_B0FA98 = (unsigned int)(LoadFileSHP((char *)(off_844DB4),(bool *)((bool *)&byte_B0FD44))); /*0x72bcc5*/
     result = LoadPaletteSimple( (char *)(off_844DB8), (int *)(&dword_B0FD48), (unsigned int *)(&dword_B0FD4C)); /*0x72bcda*/
     byte_B0FD45 = 1; /*0x72bcdf*/
   }
@@ -141,7 +141,7 @@ char sub_72C600()
   if ( !byte_B0FD09 ) /*0x72c607*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c613*/
-      dword_B0FB0C = (unsigned int)(LoadFileSHP((gamemd::ConvertClass *)(off_844D8C),(gamemd::ConvertClass *)((bool *)&byte_B0FD08))); /*0x72c625*/
+      dword_B0FB0C = (unsigned int)(LoadFileSHP((char *)(off_844D8C),(bool *)((bool *)&byte_B0FD08))); /*0x72c625*/
     result = LoadPaletteSimple( (char *)(off_844D90), (int *)(&dword_B0FD0C), (unsigned int *)(&dword_B0FD10)); /*0x72c63a*/
     byte_B0FD09 = 1; /*0x72c63f*/
   }

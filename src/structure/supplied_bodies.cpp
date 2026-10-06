@@ -1150,7 +1150,7 @@ int UnitClass::Mission_Harvest()
                 && (v15 = *(unsigned int *)(DB + 1492)) != 0
                 && *TechnoClass_GetWaypointCoords(*(TechnoClass **)(v15 + 36), &v30) != g_AircraftStatusFlag )
               {
-                vtable0 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x415375*/
+                vtable0 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x415375*/  // g57e2 W2
                 WaypointCoords = (short *)TechnoClass_GetWaypointCoords( /*0x415381*/
                                               *(TechnoClass **)(*(unsigned int *)(v14 + 1492) + 36),
                                               &v31);
@@ -1160,7 +1160,7 @@ int UnitClass::Mission_Harvest()
               }
               else
               {
-                v20 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x4153ad*/
+                v20 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x4153ad*/  // g57e2 W2
                 Waypoint_Location = (short *)ScenarioClass_Get_Waypoint_Location((char *)dword_A8B230, &v32, 700); /*0x4153bb*/
                 v22 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], Waypoint_Location); /*0x4153c6*/
                 v23 = InfantryClass_FindNearbyCell((void *)this, (int)v22); /*0x4153ce*/
@@ -1194,7 +1194,7 @@ int UnitClass::Mission_Harvest()
           }
           else
           {
-            v11 = (void (__thiscall **)(AircraftClass *, void *, int))this->FootClass; /*0x4152e9*/
+            v11 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x4152e9*/  // g57e2 W2
             ClosestPlacementCell = TechnoClass_FindClosestPlacementCell((void *)this); /*0x4152ef*/
             v11[288](this, ClosestPlacementCell, 1); /*0x4152f7*/
           }
@@ -1323,7 +1323,7 @@ int BuildingClass::AimTurret(_BYTE a2)
       v18 = *v7; /*0x424bcb*/
       v19 = v7[1]; /*0x424bd2*/
       v8 = v7[2]; /*0x424bda*/
-      vtable0 = (int (__thiscall **)(BuildingClass *, unsigned int *))this->TechnoClass; /*0x424bdd*/
+      vtable0 = *(int (__thiscall ***)(BuildingClass *, unsigned int *))this; /*0x424bdd*/  // g57e2 W2
       v20 = v8; /*0x424be2*/
       *(unsigned int *)&this->q0CC = 0; /*0x424be6*/
       result = vtable0[109](this, &v18); /*0x424bf0*/

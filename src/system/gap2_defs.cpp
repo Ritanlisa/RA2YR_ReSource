@@ -28998,8 +28998,8 @@ int RadarClass::Destru_vt53() {
     dword_B048C8 = v3; /*0x652f3e*/
     dword_B048CC = (int)p_MapClass_field_0x4; /*0x652f4a*/
     stru_B04A10.Width = (int)this->RadarClass_field_0x11F0; /*0x652f55*/
-    dword_B048E0 = LoadFileSHP(off_8391F4, (bool *)&byte_B048F9); /*0x652f70*/
-    dword_B048AC = LoadFileSHP(off_8391F8, (bool *)&byte_B048F8); /*0x652f80*/
+    dword_B048E0 = (unsigned int)LoadFileSHP(off_8391F4, (bool *)&byte_B048F9); /*0x652f70*/
+    dword_B048AC = (unsigned int)LoadFileSHP(off_8391F8, (bool *)&byte_B048F8); /*0x652f80*/
     dword_B04A08 = *((__int16 *)dword_B048E0 + 1); /*0x652f89*/
     dword_B04A0C = *((__int16 *)dword_B048E0 + 2); /*0x652f93*/
     dword_B048D0 = *((__int16 *)dword_B048AC + 1); /*0x652fa3*/
@@ -33227,8 +33227,8 @@ int RadarClass::Destru_vt53() {
     dword_B048C8 = v3; /*0x652f3e*/
     dword_B048CC = (int)p_MapClass_field_0x4; /*0x652f4a*/
     stru_B04A10.Width = (int)this->RadarClass_field_0x11F0; /*0x652f55*/
-    dword_B048E0 = LoadFileSHP(off_8391F4, (bool *)&byte_B048F9); /*0x652f70*/
-    dword_B048AC = LoadFileSHP(off_8391F8, (bool *)&byte_B048F8); /*0x652f80*/
+    dword_B048E0 = (unsigned int)LoadFileSHP(off_8391F4, (bool *)&byte_B048F9); /*0x652f70*/
+    dword_B048AC = (unsigned int)LoadFileSHP(off_8391F8, (bool *)&byte_B048F8); /*0x652f80*/
     dword_B04A08 = *((__int16 *)dword_B048E0 + 1); /*0x652f89*/
     dword_B04A0C = *((__int16 *)dword_B048E0 + 2); /*0x652f93*/
     dword_B048D0 = *((__int16 *)dword_B048AC + 1); /*0x652fa3*/
@@ -35791,8 +35791,8 @@ int RadarClass::Destru_vt53() {
     dword_B048C8 = v3; /*0x652f3e*/
     dword_B048CC = (int)p_MapClass_field_0x4; /*0x652f4a*/
     stru_B04A10.Width = (int)this->RadarClass_field_0x11F0; /*0x652f55*/
-    dword_B048E0 = LoadFileSHP(off_8391F4, (bool *)&byte_B048F9); /*0x652f70*/
-    dword_B048AC = LoadFileSHP(off_8391F8, (bool *)&byte_B048F8); /*0x652f80*/
+    dword_B048E0 = (unsigned int)LoadFileSHP(off_8391F4, (bool *)&byte_B048F9); /*0x652f70*/
+    dword_B048AC = (unsigned int)LoadFileSHP(off_8391F8, (bool *)&byte_B048F8); /*0x652f80*/
     dword_B04A08 = *((__int16 *)dword_B048E0 + 1); /*0x652f89*/
     dword_B04A0C = *((__int16 *)dword_B048E0 + 2); /*0x652f93*/
     dword_B048D0 = *((__int16 *)dword_B048AC + 1); /*0x652fa3*/

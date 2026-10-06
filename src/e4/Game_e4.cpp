@@ -2668,9 +2668,9 @@ void * Game::shutdownGame()
     if ( this == (Game *)1 ) /*0x72d86f*/
     {
       if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72d87b*/
-        result = (void *)LoadFileSHP( (ConvertClass *)(off_844CA8), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1229])); /*0x72d883*/
+        result = (void *)LoadFileSHP( (char *)(off_844CA8), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d883*/
       else
-        result = (void *)LoadFileSHP( (ConvertClass *)(off_844CAC), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1229])); /*0x72d894*/
+        result = (void *)LoadFileSHP( (char *)(off_844CAC), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d894*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876] = (unsigned int)result; /*0x72d888*/
     }
     else
@@ -2678,16 +2678,16 @@ void * Game::shutdownGame()
       v2 = off_844CB0[0]; /*0x72d89f*/
       if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x72d8af*/
         v2 = (char *)(off_844CB4); /*0x72d8b1*/
-      result = (void *)LoadFileSHP( (ConvertClass *)(v2), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1229])); /*0x72d8b7*/
+      result = (void *)LoadFileSHP( (char *)(v2), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d8b7*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876] = (unsigned int)result; /*0x72d8bc*/
     }
   }
   else
   {
     if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72d843*/
-      result = (void *)LoadFileSHP( (ConvertClass *)(off_844CA0), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1229])); /*0x72d84b*/
+      result = (void *)LoadFileSHP( (char *)(off_844CA0), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d84b*/
     else
-      result = (void *)LoadFileSHP( (ConvertClass *)(off_844CA4), (ConvertClass *)((bool *)&g_BuildingLoadQueue_Array.__pad_F70[1229])); /*0x72d85c*/
+      result = (void *)LoadFileSHP( (char *)(off_844CA4), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d85c*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876] = (unsigned int)result; /*0x72d850*/
   }
   return result; /*0x72d855*/
