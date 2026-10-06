@@ -13,33 +13,33 @@
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct UpdateWOLLobbyPings;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct UpdateLobbyGraphicsWOL;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct UI_Move;
-struct UI_Load_72F4E0;
-struct UI_Load_72F4A0;
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct TransformMatrix3x4Point;
-struct ToWideStringChar;
-struct ToCoordPixel;
-struct ThreadAudioMixerMain;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 struct TextLabelResult;
-struct TerrainInitMap;
-struct Team_Helper_6F26E0;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct StartAudioControllerAt;
-struct StartAudioController;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 struct Source;
-struct SkirmishSetup_Setup_5E8590;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -50,13 +50,13 @@ struct SkirmishSetup_Setup_5E8590;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct SetupSkirmishDialogPlayerSlot;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct SetupLobbyCountryCombo;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -69,10 +69,10 @@ struct SetupLobbyCountryCombo;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct SetAudioFileName;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct SearchMIXFile;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -103,21 +103,21 @@ struct SearchMIXFile;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct RoundToInt;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct Resize;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct Render_Render_7760B0;
-struct Render_Format;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct RenderTextLabel;
-struct RenderScoreScreen;
-struct RenderFogOfWarOverlay;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -128,27 +128,21 @@ struct RectangleStruct;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct RandomCoordScatter;
-struct QuaternionMathMultiply;
-struct PumpMessages;
-struct ProcessSelectionExperience;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct PlayerSkirmishSlotHandler;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct ParseStringCommaInts;
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -157,20 +151,26 @@ struct ParseStringCommaInts;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct MultiplyMatrix3x4;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 struct Msg;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct LoadVQMovie;
-struct LoadToSurfaceSHP;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct LoadSHPFile;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct LoadNetworkShareStrings;
-struct LoadFileSHP;
-struct LaunchMultiplayerHost;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -183,9 +183,9 @@ struct LaunchMultiplayerHost;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct InitSkirmishDialogControls;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct InitGameDropdownColors;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -193,17 +193,17 @@ struct InitGameDropdownColors;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct HandleMultiplayerMapSelection;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct GetStringCSF;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct GetINIClassIntList;
-struct GetField;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -211,33 +211,33 @@ struct GetField;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct GetBitShift_Blue;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct GenerateTerrainMap;
-struct GenerateRangeRingTextures;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct FromStringInt;
-struct FormatWideStringPrefix;
-struct FormatWideString;
-struct FormatWOLPlayerInfo;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct FindClearPlacementCell;
-struct FindBuildingByTiberiumType;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct FillRectangle;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -247,20 +247,20 @@ struct FillRectangle;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct DrawTextRendererMultiline;
-struct DrawTacticalLaserLine;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct DrawHUD;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct DlgSkirmishMenuProc;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct DestructParticleSystemClass;
-struct DestroyHashTableINIClass;
-struct DestroyDialog;
-struct Destroy;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 struct Destination;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
@@ -269,42 +269,42 @@ struct Destination;
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct CreateSmokeEffectAt;
-struct CreateMessageBox;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct ConcatStringAlloc;
-struct ComputeSpiralOffset;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct ComputeMapCameraBounds;
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct ComputeBounds;
-// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct ClipRectIntersection;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct CharToWideString;
-struct CharStringToWide;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct CalcSurfaceBlitRects;
-struct CacheDialogInvalidate;
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 struct BytesReturned;
-struct BuildResultPacket;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct BaseDialogProc;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct AssignWOLPlayerSide;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
-struct AllocateSurfaceScreenSurfaces;
+// removed pseudo-struct fwd v3 (G57w6: fn-name shadow causes C2660 ctor-parse)
 // removed pseudo-struct fwd (G57w3: clashes with fn decl, zero type usage)
 namespace gamemd {
 
