@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
@@ -692,7 +692,7 @@ int ScenarioClass_Construct(void * a2)
     Debug::Log("Read_Scenario_INI - Filename is %s\n"); /*0x6867aa G57c1: IDA 0x6867aa push offset aReadScenarioIn*/
     if ( ((CCINIClass *)(&v5))->Load((int)&v6, 1, 0) ) /*0x6867be*/
     {
-      strcpy((char *)&(&dword_A8B230)[130.abstractFlags, Source); /*0x686836*/
+      strcpy((char *)&(&dword_A8B230)[130].abstractFlags, Source); /*0x686836*/
       Map = ScenarioClass::LoadMap(0, (bool *)v5.INIClass, a2); /*0x686851*/
       *(unsigned int *)v6.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x686853*/
       v8 = 0; /*0x68685b*/

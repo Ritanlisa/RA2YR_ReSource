@@ -1,10 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/classes/Tooltip_e4.hpp"
 #include "e4/classes/Progress_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_681070_e4.hpp"
 #include "e4/classes/E4Recv_681090_e4.hpp"
 #include "e4/classes/E4Recv_6810C0_e4.hpp"

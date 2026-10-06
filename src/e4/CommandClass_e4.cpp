@@ -18,7 +18,6 @@
 #include "e4/classes/ComStreamClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
-#include "e4/classes/Commands_e4.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 #include "e4/classes/TEventClass_e4.hpp"
 #include "e4/classes/PushCommandClass_e4.hpp"

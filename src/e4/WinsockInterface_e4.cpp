@@ -154,8 +154,8 @@
 #define GAMEMD_E4_StringVector 1
 #endif
 #include <cstdint>
-#include "e4/classes/VectorClassUInt_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/VectorClassUInt_e4.hpp"
 #include "e4/classes/WinsockInterface_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"

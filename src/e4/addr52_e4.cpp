@@ -1,9 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/Checksummer_e4.hpp"
 
-#include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_520260_e4.hpp"
 #include "e4/classes/E4Recv_522100_e4.hpp"
 #include "e4/classes/E4Recv_522540_e4.hpp"

@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/Progress_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/Math_e4.hpp"

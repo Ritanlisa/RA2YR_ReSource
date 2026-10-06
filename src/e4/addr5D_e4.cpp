@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 
-#include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5D0190_e4.hpp"
 #include "e4/classes/E4Recv_5D0240_e4.hpp"
 #include "e4/classes/E4Recv_5D25D0_e4.hpp"
@@ -1257,7 +1257,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   }
   if ( wcslen(String) ) /*0x5da802*/
   {
-    v5 = Math::RoundToInt(*(double *)&(&dword_8871E0)[1.__pad_A0 * 900.0); /*0x5da822*/
+    v5 = Math::RoundToInt(*(double *)&(&dword_8871E0)[1].__pad_A0 * 900.0); /*0x5da822*/
     MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v4->q034 + 192), 16454, v5, 0); /*0x5da845*/
     ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw((int)((MapClass *)((int)(&dword_87F7E8))), 0); /*0x5da851*/
   }

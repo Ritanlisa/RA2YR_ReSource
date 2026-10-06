@@ -1,7 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
-#include "e4/classes/SerialPort_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/SerialPort_e4.hpp"
 #include "e4/classes/E4Recv_4E0A00_e4.hpp"
 #include "e4/classes/E4Recv_4E2A50_e4.hpp"
 #include "e4/classes/E4Recv_4E6070_e4.hpp"

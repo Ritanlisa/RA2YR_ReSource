@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/GadgetGrid_e4.hpp"
 #include "e4/classes/FacingClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_660050_e4.hpp"
 #include "e4/classes/E4Recv_660AD0_e4.hpp"
 #include "e4/classes/E4Recv_660AE0_e4.hpp"

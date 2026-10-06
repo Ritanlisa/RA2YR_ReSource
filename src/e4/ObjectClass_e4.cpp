@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/AbstractClassVector_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"

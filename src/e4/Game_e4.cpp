@@ -154,10 +154,10 @@
 #define GAMEMD_E4_StringVector 1
 #endif
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"

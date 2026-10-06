@@ -1029,7 +1029,7 @@ LABEL_42:
     FillUnitTooltipUI(Destination, StringCSF); /*0x73356f*/
     v16 = 3; /*0x73357a*/
     if ( dword_A83D4C ) /*0x733584*/
-      v16 = *(unsigned int *)&(&(&dword_A83D4C)[134.__pad_90)[4]; /*0x733586*/
+      v16 = *(unsigned int *)&(&(&dword_A83D4C)[134].__pad_90)[4]; /*0x733586*/
     MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Destination, v16, 16454, 240, 1); /*0x7335a7*/
     dword_845560 = v18; /*0x7335b6*/
     result = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] + 16); /*0x7335bc*/

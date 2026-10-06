@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/Hash_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"

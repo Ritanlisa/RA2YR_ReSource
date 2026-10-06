@@ -187,7 +187,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     if ( !v5 ) /*0x7474dc*/
       return 0; /*0x747554*/
     IDA_LOWORD(ppv) = 0; /*0x7474e4*/
-    v6 = Random::State(  (Random *)&(&dword_A8B230)[14.NeedsSaveOrLink); /*0x7474f1*/
+    v6 = Random::State(  (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink); /*0x7474f1*/
     v7 = (unsigned int)ppv; /*0x7474f6*/
     IDA_LOBYTE(v8) = 0; /*0x7474fa*/
     IDA_HIBYTE(v8) = v6; /*0x7474fc*/

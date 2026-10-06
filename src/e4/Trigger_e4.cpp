@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/EventQueue_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
 #include "e4/classes/MSEngine_e4.hpp"

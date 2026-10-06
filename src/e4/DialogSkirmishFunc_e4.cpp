@@ -1,9 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"

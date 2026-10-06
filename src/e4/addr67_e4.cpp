@@ -1,9 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
 #include "e4/classes/GenericList_e4.hpp"
 
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"

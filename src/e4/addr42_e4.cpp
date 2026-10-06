@@ -492,7 +492,7 @@ void * ProductionCompletionCallback(ObjectClass *self)
         {
           v6 = (unsigned int *)*(&dword_B0F4EC->vtable0 + v3); /*0x424db3*/
           ((CellClass *)&v5->mapCoords)->ReduceTiberium( ((unsigned int *)&(unsigned __int8)v5->powerup)[0] + 1); /*0x424dc0*/
-          if ( (int)v6[53] > 0 && !((int)abs32(Random::State(  (Random *)&(&dword_A8B230)[14.NeedsSaveOrLink)) % 3) ) /*0x424def*/
+          if ( (int)v6[53] > 0 && !((int)abs32(Random::State(  (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink)) % 3) ) /*0x424def*/
           {
             v7 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x424e04*/
             if ( v7 ) /*0x424e0b*/
@@ -505,7 +505,7 @@ void * ProductionCompletionCallback(ObjectClass *self)
               v20 = v11 + 10; /*0x424e2e*/
               v17 = v6[53] - 1; /*0x424e3f*/
               v19 = v10; /*0x424e42*/
-              v12 = Random::Range( (Random *)&(&dword_A8B230)[14.NeedsSaveOrLink, 0, v17); /*0x424e46*/
+              v12 = Random::Range( (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v17); /*0x424e46*/
               v13 = ((AnimClass *)v7)->ctor( *(void **)(v6[50] + 4 * v12), (int *)(&v18), 0, 1, (void *)0x600, 0, 0); /*0x424e69*/
             }
             else
@@ -600,7 +600,7 @@ unsigned int * CreateUnitOnCompletion_addr42(ObjectClass *self)
       v12 = self->missionTimer[0]; /*0x425060*/
       if ( !*(unsigned char *)(v12 + 875) /*0x4250ab*/
         || *(unsigned char *)(v12 + 877)
-        && (v20 = Random::Range( (Random *)&(&dword_A8B230)[14.NeedsSaveOrLink, 0, 2147483646),
+        && (v20 = Random::Range( (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2147483646),
             (double)v20 * 4.656612877414201e-10 >= 0.5) )
       {
         IDA_LOBYTE(v11) = *(unsigned char *)(self->missionTimer[0] + 877); /*0x4250d7*/

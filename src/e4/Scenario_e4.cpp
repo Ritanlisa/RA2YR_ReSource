@@ -729,7 +729,7 @@ LABEL_24:
   v15 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b22e*/
   nextArrayIndex = (&dword_A8B230)[128].nextArrayIndex; /*0x55b234*/
   NeedsSaveOrLink = (char *)(&dword_A8B230)[128].NeedsSaveOrLink; /*0x55b23a*/
-  p_nextArrayIndex = &(&dword_A8B230)[128.nextArrayIndex; /*0x55b240*/
+  p_nextArrayIndex = &(&dword_A8B230)[128].nextArrayIndex; /*0x55b240*/
   if ( nextArrayIndex == -1 ) /*0x55b249*/
     goto LABEL_38; /*0x55b249*/
   if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex < (int)NeedsSaveOrLink ) /*0x55b251*/

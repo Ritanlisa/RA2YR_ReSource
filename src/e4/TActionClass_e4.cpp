@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/DisplayClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
@@ -1210,7 +1210,7 @@ char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
     ++v7; /*0x6e17c5*/
   }
   while ( v7 < 702 ); /*0x6e17cc*/
-  v9 = (int16_t *)&v15[Random::Range( (Random *)&(&dword_A8B230)[14.NeedsSaveOrLink, 0, v5 - 1)]; /*0x6e17e3*/
+  v9 = (int16_t *)&v15[Random::Range( (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v5 - 1)]; /*0x6e17e3*/
   v10 = (v9[1] << 8) + 128; /*0x6e1800*/
   v13[0] = (*v9 << 8) + 128; /*0x6e1805*/
   v11 = *(unsigned int *)&this->pad_6E[34]; /*0x6e1809*/

@@ -1,10 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #define GAMEMD_E4_EnumConnectionsClass 1  // G57b: e4 flat-carrier opt-in (suppress core/aux twin)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/Char_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_4A02B0_e4.hpp"
 #include "e4/classes/E4Recv_4A0380_e4.hpp"
 #include "e4/classes/E4Recv_4A0450_e4.hpp"

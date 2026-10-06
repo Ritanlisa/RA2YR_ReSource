@@ -1,12 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/Input_e4.hpp"
 #include "e4/classes/GadgetGrid_e4.hpp"
 #include "e4/classes/FacingClass_e4.hpp"
 #include "e4/classes/CrateClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Math_e4.hpp"

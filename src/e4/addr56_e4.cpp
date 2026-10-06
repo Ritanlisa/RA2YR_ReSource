@@ -1,7 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
-#include "e4/classes/LCWPipe_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/LCWPipe_e4.hpp"
 #include "e4/classes/E4Recv_5654E0_e4.hpp"
 #include "e4/classes/E4Recv_565610_e4.hpp"
 #include "e4/classes/E4Recv_56AE40_e4.hpp"

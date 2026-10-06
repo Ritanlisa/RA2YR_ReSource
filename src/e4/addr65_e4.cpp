@@ -154,10 +154,10 @@
 #define GAMEMD_E4_StringVector 1
 #endif
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/TypeClass_e4.hpp"
 #include "e4/classes/FileStraw_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_652CD0_e4.hpp"
 #include "e4/classes/E4Recv_6547C0_e4.hpp"
 #include "e4/classes/E4Recv_655050_e4.hpp"

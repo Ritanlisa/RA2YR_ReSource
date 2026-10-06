@@ -1,10 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/Lobby_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Session_e4.hpp"

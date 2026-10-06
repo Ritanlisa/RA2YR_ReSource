@@ -1,11 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/DListNode_e4.hpp"
 #include "e4/classes/AudioFile_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/E4Recv_5E9340_e4.hpp"
 #include "e4/classes/E4Recv_6C6B00_e4.hpp"

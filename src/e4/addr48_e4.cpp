@@ -1,8 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"  // G42.42b supply (Random::Range)
-#include "e4/e4_globals.hpp"
 #include "e4/classes/CommBufferClass_e4.hpp"
 #include "e4/classes/E4Recv_483710_e4.hpp"
 #include "e4/classes/E4Recv_484F50_e4.hpp"

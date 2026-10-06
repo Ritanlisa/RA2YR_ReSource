@@ -27,7 +27,6 @@
 #include "e4/classes/BlowPipe_23_e4.hpp"
 #include "e4/classes/BlowPipe_31_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
-#include "e4/classes/Commands_e4.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 #include "e4/classes/TEventClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"

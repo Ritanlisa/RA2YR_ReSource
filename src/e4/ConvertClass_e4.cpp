@@ -1,7 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
-#include "e4/classes/Color_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Color_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/CoopCampaignVector_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"

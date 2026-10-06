@@ -1,7 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
-#include "e4/classes/LayerClass_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"  // G42.35f: C2027 supply
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"

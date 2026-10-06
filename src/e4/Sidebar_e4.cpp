@@ -1,9 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
-#include "e4/e4_globals.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"

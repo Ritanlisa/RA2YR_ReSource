@@ -1,12 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/e4_globals.hpp"
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 
-#include "e4/e4_globals.hpp"
 #include "e4/classes/NetworkLobby_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"

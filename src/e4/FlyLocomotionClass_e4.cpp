@@ -1,7 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
-#include "e4/classes/Random_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Random_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/FlyLocomotionClass_e4.hpp"
 #include "e4/classes/FogOfWar_e4.hpp"

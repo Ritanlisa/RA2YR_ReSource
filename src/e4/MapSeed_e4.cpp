@@ -1,7 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
-#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
