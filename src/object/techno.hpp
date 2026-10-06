@@ -1165,6 +1165,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     uint8_t u32_6E1;  // ml name (0x746400 use)
     uint8_t u32_6E2;  // ml name (0x746400 use)
     // === FUNCS-MOVE (END) ===
+public:  // g57c5 W4b supply slot
+    TimerStruct __pad_194;  // 0x194 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W6 owner supply
+    unsigned int q0F2;  // 0xF2 g57c5 W6 (ml TechnoClass@0xF2 own)
 };
 
 } // namespace game

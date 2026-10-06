@@ -88,7 +88,21 @@ namespace gamemd {
     };
     struct Gap2Recv_4055C0 {
         int UpdateVoicePlayback();  // G42.39 def-derived
-    };
+    public:  // g57c5 W4 supply slot
+    int gattlingStage;  // 0x144 g57c5 W4 supply (ml Gap2Recv_4055C0@0x144)
+public:  // g57c5 W4 supply slot
+    int alignmentPadding154;  // 0x158 g57c5 W4 supply (ml Gap2Recv_4055C0@0x158)
+public:  // g57c5 W4 supply slot
+    int infantryBlinkTimer;  // 0x1E0 g57c5 W4 supply (ml Gap2Recv_4055C0@0x1E0)
+public:  // g57c5 W4 supply slot
+    int initialOwner;  // 0x150 g57c5 W4 supply (ml Gap2Recv_4055C0@0x150)
+public:  // g57c5 W4 supply slot
+    int veterancy;  // 0x154 g57c5 W4 supply (ml Gap2Recv_4055C0@0x154)
+public:  // g57c5 W4 supply slot
+    int currentWeaponSlot;  // 0x138 g57c5 W4 supply (ml Gap2Recv_4055C0@0x138)
+public:  // g57c5 W4 supply slot
+    int temporalTargetingMe;  // 0x278 g57c5 W4 supply (ml Gap2Recv_4055C0@0x278)
+};
     struct Gap2Recv_40AA70 {
     int hasParachute;  // G42.39a supply
     int isAliveFlag[8];  // G42.39a supply (indexed usage)

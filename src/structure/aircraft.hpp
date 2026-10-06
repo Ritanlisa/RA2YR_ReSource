@@ -55,7 +55,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual long __stdcall Is_Locked() override;
 
-    virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppvObject) override;  // 0x414290
+    virtual HRESULT __stdcall QueryInterface(const IID& iid, void** ppvObject, void * ppv); // 0x414290
     virtual ULONG __stdcall AddRef() override;  // 0x4142F0
     virtual ULONG __stdcall Release() override;  // 0x414300
 

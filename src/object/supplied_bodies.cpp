@@ -52,8 +52,19 @@
 #include "ui/power.hpp"
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
-// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
-extern int AudioMixer;  // 词表 (canon 无条目, int 兜底) L880
+#include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioMixer;  // 词表 (canon 无条目, int 兜底) L880
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace ra2 {
+class Math;  // g57c5 W5 fwd
+int AudioController_GetOffset(...);  // g57c5 W5 vocab
+int DListNode_InitEmpty(...);  // g57c5 W5 vocab
+int Debug_Log(...);  // g57c5 W5 vocab
+int ObjectClass_ClearFlags2(...);  // g57c5 W5 vocab
+int Queue_GetNext(...);  // g57c5 W5 vocab
+int TechnoClass_MapHouseRelationIndex(...);  // g57c5 W5 vocab
+}
+// ---- g57c5 W5 end ----
 extern int CellCoord;  // 词表 (canon 无条目, int 兜底) L1335
 extern int Coord;  // 词表 (canon 无条目, int 兜底) L1411
 extern int Descriptor;  // 词表 (canon 无条目, int 兜底) L1327
@@ -4824,7 +4835,7 @@ unsigned int * FootClass::vt_entry_4F0(unsigned int *a2) {
     unsigned int *v2; // ecx
     unsigned char v4[12]; // [esp+4h] [ebp-Ch] BYREF
 
-    v2 = (unsigned int *)(*((int (__thiscall **)(FootClass *, unsigned char *))*(void * *)&this->q029)(this, v4); /*0x4da001*/
+    v2 = (unsigned int *)(*((int (__thiscall **)(FootClass *, unsigned char *))*(void * *)&this->q029))(this, v4); /*0x4da001*/
     *a2 = *v2; /*0x4da00b*/
     a2[1] = v2[1]; /*0x4da010*/
     a2[2] = v2[2]; /*0x4da017*/
@@ -4846,11 +4857,11 @@ char FootClass::CanBeControlled() {
 
     if ( !*(bool *)&this->q3D5 ) /*0x4da1d3*/
       return 0; /*0x4da1dd*/
-    if ( *(unsigned char *)((*((int (__thiscall **)(FootClass *))*(void * *)&this->q021)(this) + 3220) ) /*0x4da1eb*/
+    if ( *(unsigned char *)((*((int (__thiscall **)(FootClass *))*(void * *)&this->q021))(this) + 3220) ) /*0x4da1eb*/
       return 1; /*0x4da1eb*/
     if ( *(bool *)&this->isALoaner ) /*0x4da1f5*/
       return 1; /*0x4da1f5*/
-    if ( (*((int (__thiscall **)(FootClass *))*(void * *)&this->q061)(this) == 4 ) /*0x4da20c*/
+    if ( (*((int (__thiscall **)(FootClass *))*(void * *)&this->u32_61))(this) == 4 ) /*0x4da20c*/
       return 1; /*0x4da20c*/
     team = this->team; /*0x4da20e*/
     if ( team ) /*0x4da216*/

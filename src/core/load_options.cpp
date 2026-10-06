@@ -170,7 +170,7 @@ char LoadOptions::Check()
     struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
     v2 = 0; /*0x559c2f*/
-    v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
+    v3 = *(const char **)&this->mode[4]; /*0x559c31*/
     v9 = 0; /*0x559c34*/
     v10 = -1; /*0x559c42*/
     v12 = -1; /*0x559c4d*/
@@ -278,7 +278,7 @@ bool LoadOptions::SaveGame(const char* filename, const wchar_t* description) {
     struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
     v2 = 0; /*0x559c2f*/
-    v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
+    v3 = *(const char **)&this->mode[4]; /*0x559c31*/
     v9 = 0; /*0x559c34*/
     v10 = -1; /*0x559c42*/
     v12 = -1; /*0x559c4d*/

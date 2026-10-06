@@ -28,7 +28,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // IDA 0x4F4410: Hash::InsertOrdered (stub).
 // NOTE: previous annotation pointed at Int_CompareFunc4 (a different function).
 // 0x4f4410
-void Hash::InsertOrdered(void* table, const void* entry, int a2)  // g57b5 W4: raw 真值补参 (a2)
+int Hash::InsertOrdered(void* table, const void* entry, int a2)
 {
     int result; // eax
 
@@ -50,13 +50,13 @@ void Hash::InsertOrdered(void* table, const void* entry, int a2)  // g57b5 W4: r
     return result; /*0x4f4421*/
 }
 // 0x69d960
-EditClass * * SHA1::Process(const void* data, uint32_t size)
+int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
 {
     int result; // eax
     int *v5; // edi
     int v6; // ebx
 
-    this->__pad_0[0] = 0; /*0x69d96f*/
+    this->state[0] = 0; /*0x69d96f*/
     SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d972*/
     result = a3; /*0x69d977*/
     if ( a3 ) /*0x69d97d*/
@@ -81,7 +81,7 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
     return result; /*0x69d9d5*/
 }
 // 0x69d9e0
-void SHA1::Compute(char *a2, int a1)
+int SHA1::Compute(char *a2, int a1)
 {
     int v3; // edx
     int v4; // ebx
@@ -94,7 +94,7 @@ void SHA1::Compute(char *a2, int a1)
     unsigned int v12[5]; // [esp+14h] [ebp-54h] BYREF
     int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-    if ( this->__pad_0[0] ) /*0x69d9e9*/
+    if ( this->state[0] ) /*0x69d9e9*/
       qmemcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
     v3 = *((unsigned int *)this + 12); /*0x69d9fd*/
     v4 = *((unsigned int *)this + 11); /*0x69da00*/
@@ -128,12 +128,12 @@ void SHA1::Compute(char *a2, int a1)
       *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
     }
     while ( v9 ); /*0x69db0b*/
-    this->__pad_0[0] = 1; /*0x69db18*/
+    this->state[0] = 1; /*0x69db18*/
     qmemcpy(a2, &this->SHA1_field_0x04, 0x14u); /*0x69db1c*/
     return 20; /*0x69db1e*/
 }
 // 0x69db30
-void SHA1::Transform(int *a1, unsigned int *a2)
+int SHA1::Transform(int *a1, unsigned int *a2)
 {
     int *v2; // ecx
     int v3; // esi
@@ -340,7 +340,7 @@ static const uint32_t crc32_table[256] = {
 
 // IDA 0x69E000: Compute
 // 0x4a1fb0
-uint32_t CRC32::Compute(const void* data, uint32_t size)
+uint32_t CRC32::Compute(const void* data, uint32_t size, int a3)
 {
     int v4; // edx
     unsigned int v5; // eax

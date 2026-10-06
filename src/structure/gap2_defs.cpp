@@ -26,9 +26,15 @@ using ra2::game::ObjectClass;
 #include "structure/unit.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Power_e4.hpp"
-#include "misc/misc_ext.hpp"
+#include "misc/misc_ext.hpp"// 0x517CC0
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+Coord * CalculateShading();  // g57c5 W5 vocab (csp)
+int Length(void* a1, void* a2);  // g57c5 W5 vocab (csp)
+namespace Coord { int * Subtract(...); }  // g57c5 W5 vocab
+} // namespace gamemd
+// ---- g57c5 W5 end ----
 
-// 0x517CC0
 namespace gamemd { 
 int InfantryClass::PerFrameUpdate(int a2)
 {
@@ -2313,8 +2319,6 @@ int BuildingClass::PushScriptAction() {
 }
 // 0x660b80
       return ScriptActionQueue::PushNext(&v7); /*0x44d7c0*/
-    }
-  }
 // 0x459FF0
 namespace gamemd { 
 void BuildingClass::initBuildingData() {
@@ -2326,6 +2330,8 @@ void BuildingClass::initBuildingData() {
   {
     RA2_OPDEL(v2); /*0x45a006*/
     this->vtable2 = 0; /*0x45a00e*/
+  }
+  }
   }
 // 0x45A020
 namespace gamemd { 
@@ -2799,8 +2805,6 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
 }
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
-}
-}
 // 0x4DA030
 namespace gamemd { 
 int InfantryClass::ProcessExitQueue() {
@@ -2856,6 +2860,8 @@ int InfantryClass::ProcessExitQueue() {
         }
       }
     }
+  }
+  }
   }
 // 0x487130
 namespace gamemd { 
@@ -2888,8 +2894,6 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
 }
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
-}
-}
 // 0x4DA030
 namespace gamemd { 
 int InfantryClass::ProcessExitQueue() {
@@ -2945,6 +2949,8 @@ int InfantryClass::ProcessExitQueue() {
         }
       }
     }
+  }
+  }
   }
 // 0x487170
 namespace gamemd { 
@@ -2970,8 +2976,6 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
 }
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
-}
-}
 // 0x4DA030
 namespace gamemd { 
 int InfantryClass::ProcessExitQueue() {
@@ -3027,6 +3031,8 @@ int InfantryClass::ProcessExitQueue() {
         }
       }
     }
+  }
+  }
   }
 // 0x487180
 namespace gamemd { 
@@ -3045,8 +3051,6 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
 }
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
-}
-}
 // 0x4DA030
 namespace gamemd { 
 int InfantryClass::ProcessExitQueue() {
@@ -3103,6 +3107,8 @@ int InfantryClass::ProcessExitQueue() {
       }
     }
   }
+  }
+  }
 // 0x4AA290
 namespace gamemd { 
 int BuildingClass::updateSellBack(void* aP1, void* aP2) {
@@ -3113,8 +3119,6 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
 }
 // 0x47c5a0
   return ObjectClass::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
-}
-}
 // 0x4DA030
 namespace gamemd { 
 int InfantryClass::ProcessExitQueue() {
@@ -3170,6 +3174,8 @@ int InfantryClass::ProcessExitQueue() {
         }
       }
     }
+  }
+  }
   }
 // 0x4DA030
 namespace gamemd { 
@@ -3242,9 +3248,6 @@ double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
 }
 // 0x6c9650
     return Float4::Sum(v1) / ((unsigned int *)&(double)dword_8871E0[1])[1]; /*0x4f9780*/
-}
-}
-}
 // 0x4FAD20
 namespace gamemd { 
 int SuperWeapon::SelectSuperWeaponTarget(int a1) {
@@ -3300,6 +3303,8 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
       v13 = v13; /*0x4fae37*/
       IDA_LOBYTE(v5) = SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v13); /*0x4fae3f*/
     }
+  }
+  }
   }
 // 0x4FAD20
 namespace gamemd { 
@@ -3357,6 +3362,7 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
       IDA_LOBYTE(v5) = SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v13); /*0x4fae3f*/
     }
   }
+}
 }
 // 0x4FAE50
 namespace gamemd { 
@@ -4663,8 +4669,6 @@ int BuildingClass::updateAnimationState() {
 // 0x731cd0
     return Factory::IdleHandler(); /*0x63d553*/
   return -1; /*0x63d55b*/
-}
-}
 // 0x6A60E0
 namespace gamemd { 
 void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
@@ -4682,6 +4686,8 @@ void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
       result = (wchar_t *)(*(unsigned int *)&stru_A8EB00.gapE4[416] + 2); /*0x6a6128*/
       this->q53A0 = *(unsigned int *)&stru_A8EB00.gapE4[416] + 2; /*0x6a612b*/
     }
+  }
+  }
   }
 // 0x5AEAF0
 namespace gamemd { 
@@ -4714,8 +4720,6 @@ int BuildingClass::updateAnimationState() {
 // 0x731cd0
     return Factory::IdleHandler(); /*0x63d553*/
   return -1; /*0x63d55b*/
-}
-}
 // 0x6A60E0
 namespace gamemd { 
 void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
@@ -4733,6 +4737,8 @@ void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
       result = (wchar_t *)(*(unsigned int *)&stru_A8EB00.gapE4[416] + 2); /*0x6a6128*/
       this->q53A0 = *(unsigned int *)&stru_A8EB00.gapE4[416] + 2; /*0x6a612b*/
     }
+  }
+  }
   }
 // 0x5AEB20
 namespace gamemd { 
@@ -4757,8 +4763,6 @@ int BuildingClass::updateAnimationState() {
 // 0x731cd0
     return Factory::IdleHandler(); /*0x63d553*/
   return -1; /*0x63d55b*/
-}
-}
 // 0x6A60E0
 namespace gamemd { 
 void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
@@ -4777,6 +4781,8 @@ void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
       this->q53A0 = *(unsigned int *)&stru_A8EB00.gapE4[416] + 2; /*0x6a612b*/
     }
   }
+  }
+  }
 // 0x63D540
 namespace gamemd { 
 int BuildingClass::updateAnimationState() {
@@ -4792,8 +4798,6 @@ int BuildingClass::updateAnimationState() {
 // 0x731cd0
     return Factory::IdleHandler(); /*0x63d553*/
   return -1; /*0x63d55b*/
-}
-}
 // 0x6A60E0
 namespace gamemd { 
 void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
@@ -4811,6 +4815,8 @@ void* SuperWeapon::UpdateTargetRedrawState(void* a1) {
       result = (wchar_t *)(*(unsigned int *)&stru_A8EB00.gapE4[416] + 2); /*0x6a6128*/
       this->q53A0 = *(unsigned int *)&stru_A8EB00.gapE4[416] + 2; /*0x6a612b*/
     }
+  }
+  }
   }
 // 0x6A60E0
 namespace gamemd { 

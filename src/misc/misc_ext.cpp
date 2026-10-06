@@ -509,7 +509,7 @@ int AnimFile::Check( int a2)  // G42 sig-sync: IDA int __thiscall Check(this,int
 // &DSurface_ViewBounds.__pad_FC[228], IDA string labels aSequence/aN/aNe/aE/
 // aSe/aS_5/aSw/aNw/asc_8258AC undeclared, u32_E3C e4-flat member absent).
 // Truth = .omo/ida_cache/func_0x523d00.json.
-void AnimSequence::Parse()
+int AnimSequence::Parse()
 {
     unsigned __int8 **result; // eax
     int v3; // esi
@@ -690,7 +690,7 @@ void CSFClass::CopyString()
 // G42 T9: body quarantined -- raw dump treats this as char* (this + 10540),
 // off_83ED04/byte_83ED14 walk, vtable3-as-member. Truth =
 // .omo/ida_cache/func_0x6977c0.json (int __thiscall sub_6977C0(char*)).
-void CSFClass::LoadMissingStrings()
+int CSFClass::LoadMissingStrings()
 {
     char *v1; // esi
     wchar_t **v2; // edi
@@ -726,7 +726,7 @@ void CSFClass::LoadMissingStrings()
 // G42 T9: body quarantined -- raw dump treats this as const char*
 // (strcpy targets), returns value from void fn. Truth =
 // .omo/ida_cache/func_0x7346a0.json (int __thiscall CSFClass_LoadFile).
-void CSFClass::LoadFile()
+int CSFClass::LoadFile()
 {
     char *v2; // eax
     int v3; // esi
@@ -1516,7 +1516,7 @@ void* DamageAnimClass::Constructor(int a2, int *a3, int a4)
     this->VoxelAnimClass_field_0x0 = (int)(void *)&VoxelAnimClass_vftable; /*0x749434*/
     this->VoxelAnimClass_field_0x4 = (int)(void *)&VoxelAnimClass_vftable; /*0x74943a*/
     this->VoxelAnimClass_field_0x8 = (int)(void *)&VoxelAnimClass_vftable; /*0x749440*/
-    *(unsigned int *)this->__pad_C = (unsigned int)(void *)&VoxelAnimClass_vftable; /*0x749447*/
+    *(unsigned int *)this->vtable4 = (unsigned int)(void *)&VoxelAnimClass_vftable; /*0x749447*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->VoxelAnimClass_field_0x4); /*0x74944e*/
     AudioController::Init((AudioController *)&this->VoxelAnimClass_field_0x114); /*0x749459*/
     AudioController::Init((AudioController *)&this->VoxelAnimClass_field_0x128); /*0x749464*/
@@ -4506,7 +4506,7 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
     unsigned int v80[9]; // [esp+DCh] [ebp-36Ch] BYREF
     Coord v81; // [esp+100h] [ebp-348h] BYREF
 
-    v9 = (int *)&v81.__pad_C[124]; /*0x4c1f33*/
+    v9 = (int *)&v81.vtable4[124]; /*0x4c1f33*/
     v10 = 8; /*0x4c1f3a*/
     do /*0x4c1f64*/
     {
@@ -4549,19 +4549,19 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
       v78[2] = a7; /*0x4c1ffa*/
       v79 = (102 * result) >> 8; /*0x4c2014*/
       v61 = *((unsigned int *)this + 6); /*0x4c202c*/
-      v63 = &v81.__pad_C[124]; /*0x4c2033*/
+      v63 = &v81.vtable4[124]; /*0x4c2033*/
       v78[0] = a5; /*0x4c203c*/
       qmemcpy(&v78[3], v78, 0x18u); /*0x4c2043*/
       v80[1] = a3; /*0x4c2048*/
       v80[0] = a2; /*0x4c204f*/
       v80[2] = a4; /*0x4c2059*/
       qmemcpy(&v80[3], v80, 0x18u); /*0x4c207c*/
-      v69 = &v81.__pad_C[160]; /*0x4c207e*/
+      v69 = &v81.vtable4[160]; /*0x4c207e*/
       v68 = 0; /*0x4c208d*/
-      v65 = (char *)v78 - &v81.__pad_C[124]; /*0x4c209e*/
+      v65 = (char *)v78 - &v81.vtable4[124]; /*0x4c209e*/
       v13 = (23 * result) >> 8; /*0x4c20a6*/
       v57 = v13; /*0x4c20ab*/
-      v67 = (char *)v77 - &v81.__pad_C[124]; /*0x4c20af*/
+      v67 = (char *)v77 - &v81.vtable4[124]; /*0x4c20af*/
       while ( 1 )
       {
         while ( result > 64 && v66 < 8 ) /*0x4c20c1*/
@@ -4581,7 +4581,7 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
             __asm { fild [esp+408h+var_3F4] } /*0x4c2116*/
             v56 = 0; /*0x4c211a*/
             v19 = 0; /*0x4c211f*/
-            v20 = &v81.__pad_C[60]; /*0x4c2121*/
+            v20 = &v81.vtable4[60]; /*0x4c2121*/
             __asm { fstp [esp+408h+var_3D0] } /*0x4c2128*/
             do /*0x4c2166*/
             {
@@ -4605,12 +4605,12 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
             while ( v19 < 6 ); /*0x4c2166*/
             v23 = &v77[1]; /*0x4c216f*/
             v24 = 3; /*0x4c217f*/
-            v25 = (*(unsigned int *)&v81.__pad_C[68] + *(unsigned int *)&v81.__pad_C[76] + 2 * v13) >> 1; /*0x4c2184*/
+            v25 = (*(unsigned int *)&v81.vtable4[68] + *(unsigned int *)&v81.vtable4[76] + 2 * v13) >> 1; /*0x4c2184*/
             do /*0x4c21c0*/
             {
-              v26 = *(unsigned int *)&v81.__pad_C[80]; /*0x4c219b*/
-              *(v23 - 1) += *(unsigned int *)&v81.__pad_C[60] + *(unsigned int *)&v81.__pad_C[72]; /*0x4c21a2*/
-              *v23 += *(unsigned int *)&v81.__pad_C[64] + v26; /*0x4c21b2*/
+              v26 = *(unsigned int *)&v81.vtable4[80]; /*0x4c219b*/
+              *(v23 - 1) += *(unsigned int *)&v81.vtable4[60] + *(unsigned int *)&v81.vtable4[72]; /*0x4c21a2*/
+              *v23 += *(unsigned int *)&v81.vtable4[64] + v26; /*0x4c21b2*/
               v23[1] += v25; /*0x4c21b9*/
               v23 += 3; /*0x4c21bc*/
               --v24; /*0x4c21bf*/
@@ -4704,16 +4704,16 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
           qmemcpy(v78, v77, sizeof(v78)); /*0x4c23f5*/
           v68 = (v68 + v61) >> 1; /*0x4c23f7*/
         }
-        *(unsigned int *)&v81.__pad_C[24] = v78[3]; /*0x4c2415*/
-        *(unsigned int *)&v81.__pad_C[28] = v78[4]; /*0x4c2423*/
-        *(unsigned int *)&v81.__pad_C[32] = v78[5]; /*0x4c2431*/
-        *(unsigned int *)&v81.__pad_C[36] = v80[3]; /*0x4c243f*/
-        *(unsigned int *)&v81.__pad_C[40] = v80[4]; /*0x4c2446*/
-        *(unsigned int *)&v81.__pad_C[44] = v80[5]; /*0x4c245b*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.__pad_C[36], (int *)&v81.__pad_C[84]); /*0x4c246a*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.__pad_C[24], (int *)&v81.__pad_C[116]); /*0x4c2485*/
-        v46 = v61 - ZCoordToScreenY(*(int *)&v81.__pad_C[44]) - 2; /*0x4c24a5*/
-        v71 = v68 - ZCoordToScreenY(*(int *)&v81.__pad_C[32]) - 2; /*0x4c24ba*/
+        *(unsigned int *)&v81.vtable4[24] = v78[3]; /*0x4c2415*/
+        *(unsigned int *)&v81.vtable4[28] = v78[4]; /*0x4c2423*/
+        *(unsigned int *)&v81.vtable4[32] = v78[5]; /*0x4c2431*/
+        *(unsigned int *)&v81.vtable4[36] = v80[3]; /*0x4c243f*/
+        *(unsigned int *)&v81.vtable4[40] = v80[4]; /*0x4c2446*/
+        *(unsigned int *)&v81.vtable4[44] = v80[5]; /*0x4c245b*/
+        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.vtable4[36], (int *)&v81.vtable4[84]); /*0x4c246a*/
+        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.vtable4[24], (int *)&v81.vtable4[116]); /*0x4c2485*/
+        v46 = v61 - ZCoordToScreenY(*(int *)&v81.vtable4[44]) - 2; /*0x4c24a5*/
+        v71 = v68 - ZCoordToScreenY(*(int *)&v81.vtable4[32]) - 2; /*0x4c24ba*/
         v47 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372); /*0x4c24c6*/
         v48 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1
             ? *(unsigned __int8 *)(v47 + a8)
@@ -4722,28 +4722,28 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
                                                                                                    + 52))(
           DSurface_Composite,
           &DSurface_ViewBounds,
-          &v81.__pad_C[84],
-          &v81.__pad_C[116],
+          &v81.vtable4[84],
+          &v81.vtable4[116],
           v48,
           v46,
           v71,
           0);
-        *(unsigned int *)&v81.__pad_C[48] = v78[6]; /*0x4c252a*/
-        *(unsigned int *)&v81.__pad_C[52] = v78[7]; /*0x4c2538*/
-        *(unsigned int *)&v81.__pad_C[12] = v80[6]; /*0x4c2546*/
-        *(unsigned int *)&v81.__pad_C[16] = v80[7]; /*0x4c254d*/
-        *(unsigned int *)&v81.__pad_C[56] = v78[8]; /*0x4c255b*/
-        *(unsigned int *)&v81.__pad_C[20] = v80[8]; /*0x4c2578*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.__pad_C[12], (int *)&v81.__pad_C[108]); /*0x4c257f*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.__pad_C[48], (int *)&v81.__pad_C[92]); /*0x4c259a*/
-        v49 = v61 - ZCoordToScreenY(*(int *)&v81.__pad_C[20]) - 2; /*0x4c25b6*/
-        v72 = v68 - ZCoordToScreenY(*(int *)&v81.__pad_C[56]) - 2; /*0x4c25c7*/
+        *(unsigned int *)&v81.vtable4[48] = v78[6]; /*0x4c252a*/
+        *(unsigned int *)&v81.vtable4[52] = v78[7]; /*0x4c2538*/
+        *(unsigned int *)&v81.vtable4[12] = v80[6]; /*0x4c2546*/
+        *(unsigned int *)&v81.vtable4[16] = v80[7]; /*0x4c254d*/
+        *(unsigned int *)&v81.vtable4[56] = v78[8]; /*0x4c255b*/
+        *(unsigned int *)&v81.vtable4[20] = v80[8]; /*0x4c2578*/
+        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.vtable4[12], (int *)&v81.vtable4[108]); /*0x4c257f*/
+        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81.vtable4[48], (int *)&v81.vtable4[92]); /*0x4c259a*/
+        v49 = v61 - ZCoordToScreenY(*(int *)&v81.vtable4[20]) - 2; /*0x4c25b6*/
+        v72 = v68 - ZCoordToScreenY(*(int *)&v81.vtable4[56]) - 2; /*0x4c25c7*/
         if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x4c25d4*/
           (*(void (__thiscall **)(AudioStream *, CellStruct *, char *, char *, unsigned int, int, int, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 52))( /*0x4c25e8*/
             DSurface_Composite,
             &DSurface_ViewBounds,
-            &v81.__pad_C[108],
-            &v81.__pad_C[92],
+            &v81.vtable4[108],
+            &v81.vtable4[92],
             *(unsigned __int8 *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + a8),
             v49,
             v72,
@@ -4752,21 +4752,21 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
           (*(void (__thiscall **)(AudioStream *, CellStruct *, char *, char *, unsigned int, int, int, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 52))( /*0x4c2627*/
             DSurface_Composite,
             &DSurface_ViewBounds,
-            &v81.__pad_C[108],
-            &v81.__pad_C[92],
+            &v81.vtable4[108],
+            &v81.vtable4[92],
             *(unsigned __int16 *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 2 * a8),
             v49,
             v72,
             0);
         *(unsigned int *)v81.__pad_0 = v78[0]; /*0x4c2636*/
         *(unsigned int *)&v81.Coord_field_0x2[2] = v78[1]; /*0x4c2644*/
-        *(unsigned int *)v81.__pad_C = v80[0]; /*0x4c2652*/
-        *(unsigned int *)&v81.__pad_C[4] = v80[1]; /*0x4c2659*/
+        *(unsigned int *)v81.vtable4 = v80[0]; /*0x4c2652*/
+        *(unsigned int *)&v81.vtable4[4] = v80[1]; /*0x4c2659*/
         v81.Coord_field_0x8 = (void *)v78[2]; /*0x4c266b*/
-        *(unsigned int *)&v81.__pad_C[8] = v80[2]; /*0x4c2681*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, v81.__pad_C, &v74); /*0x4c2688*/
-        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81, (int *)&v81.__pad_C[100]); /*0x4c26a3*/
-        v50 = v61 - ZCoordToScreenY(*(int *)&v81.__pad_C[8]) - 2; /*0x4c26bd*/
+        *(unsigned int *)&v81.vtable4[8] = v80[2]; /*0x4c2681*/
+        Coord::To_Screen((Coord *)g_TacticalClass_Instance, v81.vtable4, &v74); /*0x4c2688*/
+        Coord::To_Screen((Coord *)g_TacticalClass_Instance, &v81, (int *)&v81.vtable4[100]); /*0x4c26a3*/
+        v50 = v61 - ZCoordToScreenY(*(int *)&v81.vtable4[8]) - 2; /*0x4c26bd*/
         v51 = v68 - ZCoordToScreenY((int)v81.Coord_field_0x8) - 2; /*0x4c26cc*/
         v52 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1
             ? *(unsigned __int8 *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 15)
@@ -4776,7 +4776,7 @@ void Lightning::Draw( int a2, int a3, int a4, int a5, int a6, int a7, int a8)
           DSurface_Composite,
           &DSurface_ViewBounds,
           &v74,
-          &v81.__pad_C[100],
+          &v81.vtable4[100],
           v52,
           v50,
           v51,
@@ -9327,7 +9327,7 @@ void ScoreScreen::Display()
       &v289,
       0,
       1);
-    v105 = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 24))(&dword_A83D4C->__pad_C[24]); /*0x68d9f0*/
+    v105 = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 24))(&dword_A83D4C->vtable4[24]); /*0x68d9f0*/
     sprintf(v311, "%d", v105); /*0x68da01*/
     v106 = strlen(v311) + 1; /*0x68da17*/
     v107 = RA2_OPNEW(0x2Cu); /*0x68da2b*/
@@ -15813,12 +15813,12 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
               {
                 if ( dword_A8B244 == 3 ) /*0x7a6de5*/
                 {
-                  v127 = strchr(stru_B73708.__pad_C, 58); /*0x7a6dfc*/
+                  v127 = strchr(stru_B73708.vtable4, 58); /*0x7a6dfc*/
                   Game::SetupWOLTournament(v127); /*0x7a6e06*/
                 }
                 else
                 {
-                  SetupNetworkLobbyDialog(stru_B73708.__pad_C, 0); /*0x7a6dee*/
+                  SetupNetworkLobbyDialog(stru_B73708.vtable4, 0); /*0x7a6dee*/
                 }
                 v128 = 0; /*0x7a6e10*/
                 if ( dword_A8B8D8 > 0 ) /*0x7a6e14*/
@@ -19933,14 +19933,14 @@ void CrateClass::ProcessPickup(int aP1)
             if ( *(unsigned int *)&dword_A8B238 ) /*0x481b2d*/
             {
               v14 = *(unsigned int *)(a2 + 540); /*0x481ba6*/
-              *(unsigned int *)&v122.__pad_C[20] = BuildingClass::FindBySWType( /*0x481bb4*/
+              *(unsigned int *)&v122.vtable4[20] = BuildingClass::FindBySWType( /*0x481bb4*/
                                                (BuildingClass *)v14,
                                                *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2848);
               if ( !*(unsigned int *)(v14 + 752) /*0x481bf4*/
                 && (*(int (__stdcall **)(int))(*(unsigned int *)(v14 + 36) + 24))(v14 + 36) > 1500
                 && !DynamicVector::GetOrGrow(
                       (DynamicVector *)(v14 + 21780),
-                      *(unsigned int *)(*(unsigned int *)&v122.__pad_C[20] + 3576))
+                      *(unsigned int *)(*(unsigned int *)&v122.vtable4[20] + 3576))
                 && stru_A8B250.__pad_0[8] )
               {
                 v11 = 1; /*0x481bf6*/
@@ -20058,8 +20058,8 @@ void CrateClass::ProcessPickup(int aP1)
                 v121 = v11; /*0x481b90*/
               }
             }
-            *(unsigned int *)&v122.__pad_C[20] = *((unsigned int *)this + 9); /*0x481d93*/
-            CellClass::CreateBuildingCrater((CellClass *)&stru_87F5F0.__pad_58[416], (__int16 *)&v122.__pad_C[20]); /*0x481d97*/
+            *(unsigned int *)&v122.vtable4[20] = *((unsigned int *)this + 9); /*0x481d93*/
+            CellClass::CreateBuildingCrater((CellClass *)&stru_87F5F0.__pad_58[416], (__int16 *)&v122.vtable4[20]); /*0x481d97*/
             result = *(unsigned int *)&dword_A8B238; /*0x481d9c*/
             if ( *(unsigned int *)&dword_A8B238 && stru_A8B250.__pad_0[17] ) /*0x481dac*/
               CrateClass::FindPlacement((CrateClass *)&stru_87F5F0.__pad_58[416]); /*0x481db3*/
@@ -20161,51 +20161,51 @@ void CrateClass::ProcessPickup(int aP1)
                 v39 = (unsigned int *)result; /*0x48220b*/
                 if ( !result ) /*0x48220f*/
                   goto LABEL_221; /*0x48220f*/
-                *(unsigned int *)&v122.__pad_C[8] = *((unsigned int *)this + 9); /*0x48221a*/
+                *(unsigned int *)&v122.vtable4[8] = *((unsigned int *)this + 9); /*0x48221a*/
                 Coord::Subtract( /*0x48223f*/
                   &v122,
-                  (*(__int16 *)&v122.__pad_C[8] << 8) + 128,
-                  (*(__int16 *)&v122.__pad_C[10] << 8) + 128,
+                  (*(__int16 *)&v122.vtable4[8] << 8) + 128,
+                  (*(__int16 *)&v122.vtable4[10] << 8) + 128,
                   0);
-                *(unsigned int *)v122.__pad_C = 128; /*0x48224b*/
-                *(unsigned int *)&v122.__pad_C[4] = 128; /*0x48224f*/
-                inited = (void *)Isometric::InitTables((int)this, v122.__pad_C); /*0x482258*/
-                *(unsigned int *)&v122.__pad_C[76] = *(unsigned int *)v122.__pad_0; /*0x482265*/
+                *(unsigned int *)v122.vtable4 = 128; /*0x48224b*/
+                *(unsigned int *)&v122.vtable4[4] = 128; /*0x48224f*/
+                inited = (void *)Isometric::InitTables((int)this, v122.vtable4); /*0x482258*/
+                *(unsigned int *)&v122.vtable4[76] = *(unsigned int *)v122.__pad_0; /*0x482265*/
                 v122.Coord_field_0x8 = inited; /*0x482273*/
-                *(unsigned int *)&v122.__pad_C[80] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x482277*/
-                *(unsigned int *)&v122.__pad_C[84] = inited; /*0x48227e*/
-                if ( (*(unsigned __int8 (__thiscall **)(unsigned int *, char *, unsigned int))(*v39 + 216))(v39, &v122.__pad_C[76], 0) ) /*0x48228b*/
+                *(unsigned int *)&v122.vtable4[80] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x482277*/
+                *(unsigned int *)&v122.vtable4[84] = inited; /*0x48227e*/
+                if ( (*(unsigned __int8 (__thiscall **)(unsigned int *, char *, unsigned int))(*v39 + 216))(v39, &v122.vtable4[76], 0) ) /*0x48228b*/
                 {
                   result = House::IsHumanPlayer(*(House **)(a2 + 540)); /*0x4822a2*/
                   if ( (unsigned char)result ) /*0x4822a9*/
                   {
-                    *(unsigned int *)&v122.__pad_C[8] = *((unsigned int *)this + 9); /*0x4822b7*/
+                    *(unsigned int *)&v122.vtable4[8] = *((unsigned int *)this + 9); /*0x4822b7*/
                     Coord::Subtract( /*0x4822d4*/
                       &v122,
-                      (*(__int16 *)&v122.__pad_C[8] << 8) + 128,
-                      (*(__int16 *)&v122.__pad_C[10] << 8) + 128,
+                      (*(__int16 *)&v122.vtable4[8] << 8) + 128,
+                      (*(__int16 *)&v122.vtable4[10] << 8) + 128,
                       0);
                     v120 = 0x8000000080LL; /*0x4822e0*/
                     v41 = (void *)Isometric::InitTables((int)this, &v120); /*0x4822e8*/
-                    *(unsigned int *)&v122.__pad_C[176] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x4822f5*/
+                    *(unsigned int *)&v122.vtable4[176] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x4822f5*/
                     v122.Coord_field_0x8 = v41; /*0x4822fc*/
-                    *(unsigned int *)&v122.__pad_C[172] = *(unsigned int *)v122.__pad_0; /*0x482300*/
-                    *(unsigned int *)&v122.__pad_C[180] = v41; /*0x482307*/
+                    *(unsigned int *)&v122.vtable4[172] = *(unsigned int *)v122.__pad_0; /*0x482300*/
+                    *(unsigned int *)&v122.vtable4[180] = v41; /*0x482307*/
                     result = (int)StartAudioControllerAt( /*0x482316*/
                                     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 504),
-                                    &v122.__pad_C[172],
+                                    &v122.vtable4[172],
                                     0);
                   }
                   goto LABEL_119; /*0x482316*/
                 }
-                *(unsigned int *)&v122.__pad_C[48] = *((unsigned int *)this + 9); /*0x48231f*/
-                *(unsigned short *)&v122.__pad_C[20] = 0; /*0x482335*/
-                *(unsigned short *)&v122.__pad_C[22] = 0; /*0x48233a*/
+                *(unsigned int *)&v122.vtable4[48] = *((unsigned int *)this + 9); /*0x48231f*/
+                *(unsigned short *)&v122.vtable4[20] = 0; /*0x482335*/
+                *(unsigned short *)&v122.vtable4[22] = 0; /*0x48233a*/
                 v42 = *LayerClass::Pathfinding_Find( /*0x48236b*/
                          &stru_87F5F0.__pad_58[416],
-                         (int)&v122.__pad_C[48],
-                         &v122.__pad_C[196],
-                         (__int16 *)&v122.__pad_C[48],
+                         (int)&v122.vtable4[48],
+                         &v122.vtable4[196],
+                         (__int16 *)&v122.vtable4[48],
                          *(unsigned int *)(v39[433] + 1660),
                          -1,
                          0,
@@ -20216,34 +20216,34 @@ void CrateClass::ProcessPickup(int aP1)
                          0,
                          0,
                          1,
-                         (__int16 *)&v122.__pad_C[20],
+                         (__int16 *)&v122.vtable4[20],
                          0,
                          0);
-                *(unsigned int *)&v122.__pad_C[8] = v42; /*0x482374*/
+                *(unsigned int *)&v122.vtable4[8] = v42; /*0x482374*/
                 if ( v42 != dword_89E748 ) /*0x48237d*/
                 {
-                  *(unsigned int *)&v122.__pad_C[164] = (IDA_SHIWORD(v42) << 8) + 128; /*0x4823a3*/
-                  *(unsigned int *)&v122.__pad_C[160] = ((__int16)v42 << 8) + 128; /*0x4823aa*/
-                  *(unsigned int *)&v122.__pad_C[168] = 0; /*0x4823b1*/
+                  *(unsigned int *)&v122.vtable4[164] = (IDA_SHIWORD(v42) << 8) + 128; /*0x4823a3*/
+                  *(unsigned int *)&v122.vtable4[160] = ((__int16)v42 << 8) + 128; /*0x4823aa*/
+                  *(unsigned int *)&v122.vtable4[168] = 0; /*0x4823b1*/
                   if ( (*(unsigned __int8 (__thiscall **)(unsigned int *, char *, unsigned int))(*v39 + 216))( /*0x4823c5*/
                          v39,
-                         &v122.__pad_C[160],
+                         &v122.vtable4[160],
                          0) )
                   {
                     result = House::IsHumanPlayer(*(House **)(a2 + 540)); /*0x4823dc*/
                     if ( (unsigned char)result ) /*0x4823e3*/
                     {
-                      *(unsigned int *)&v122.__pad_C[8] = *((unsigned int *)this + 9); /*0x4823ec*/
-                      v43 = (*(__int16 *)&v122.__pad_C[8] << 8) + 128; /*0x482406*/
-                      v44 = (*(__int16 *)&v122.__pad_C[10] << 8) + 128; /*0x48240c*/
+                      *(unsigned int *)&v122.vtable4[8] = *((unsigned int *)this + 9); /*0x4823ec*/
+                      v43 = (*(__int16 *)&v122.vtable4[8] << 8) + 128; /*0x482406*/
+                      v44 = (*(__int16 *)&v122.vtable4[10] << 8) + 128; /*0x48240c*/
                       v120 = 0x8000000080LL; /*0x48240e*/
                       v45 = Isometric::InitTables((int)this, &v120); /*0x482416*/
-                      *(unsigned int *)&v122.__pad_C[112] = v43; /*0x48241b*/
-                      *(unsigned int *)&v122.__pad_C[116] = v44; /*0x482422*/
-                      *(unsigned int *)&v122.__pad_C[120] = v45; /*0x482429*/
+                      *(unsigned int *)&v122.vtable4[112] = v43; /*0x48241b*/
+                      *(unsigned int *)&v122.vtable4[116] = v44; /*0x482422*/
+                      *(unsigned int *)&v122.vtable4[120] = v45; /*0x482429*/
                       result = (int)StartAudioControllerAt( /*0x482444*/
                                       *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 504),
-                                      &v122.__pad_C[112],
+                                      &v122.vtable4[112],
                                       0);
                     }
                     goto LABEL_119; /*0x482444*/
@@ -20266,20 +20266,20 @@ void CrateClass::ProcessPickup(int aP1)
                 result = House::IsHumanPlayer(*(House **)(a2 + 540)); /*0x4824e2*/
                 if ( (unsigned char)result ) /*0x4824e9*/
                 {
-                  *(unsigned int *)&v122.__pad_C[8] = *((unsigned int *)this + 9); /*0x4824f7*/
+                  *(unsigned int *)&v122.vtable4[8] = *((unsigned int *)this + 9); /*0x4824f7*/
                   Coord::Subtract( /*0x482515*/
                     &v122,
-                    (*(__int16 *)&v122.__pad_C[8] << 8) + 128,
-                    (*(__int16 *)&v122.__pad_C[10] << 8) + 128,
+                    (*(__int16 *)&v122.vtable4[8] << 8) + 128,
+                    (*(__int16 *)&v122.vtable4[10] << 8) + 128,
                     0);
                   v120 = 0x8000000080LL; /*0x482521*/
                   v122.Coord_field_0x8 = (void *)Isometric::InitTables((int)this, &v120); /*0x482536*/
-                  *(unsigned int *)&v122.__pad_C[72] = v122.Coord_field_0x8; /*0x48253a*/
-                  *(unsigned int *)&v122.__pad_C[64] = *(unsigned int *)v122.__pad_0; /*0x482546*/
-                  *(unsigned int *)&v122.__pad_C[68] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x48254a*/
+                  *(unsigned int *)&v122.vtable4[72] = v122.Coord_field_0x8; /*0x48253a*/
+                  *(unsigned int *)&v122.vtable4[64] = *(unsigned int *)v122.__pad_0; /*0x482546*/
+                  *(unsigned int *)&v122.vtable4[68] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x48254a*/
                   result = (int)StartAudioControllerAt( /*0x482560*/
                                   *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 484),
-                                  &v122.__pad_C[64],
+                                  &v122.vtable4[64],
                                   0);
                 }
                 goto LABEL_221; /*0x482560*/
@@ -20287,16 +20287,16 @@ void CrateClass::ProcessPickup(int aP1)
                 Debug::Log(); /*0x482b9e*/
                 if ( (unsigned __int8)House::IsHumanPlayer(*(House **)(a2 + 540)) ) /*0x482baf*/
                 {
-                  *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x482bbf*/
-                  v80 = (*(__int16 *)v122.__pad_C << 8) + 128; /*0x482bd9*/
-                  v81 = (*(__int16 *)&v122.__pad_C[2] << 8) + 128; /*0x482bdb*/
+                  *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x482bbf*/
+                  v80 = (*(__int16 *)v122.vtable4 << 8) + 128; /*0x482bd9*/
+                  v81 = (*(__int16 *)&v122.vtable4[2] << 8) + 128; /*0x482bdb*/
                   v120 = 0x8000000080LL; /*0x482bdd*/
-                  *(unsigned int *)&v122.__pad_C[108] = Isometric::InitTables((int)this, &v120); /*0x482bea*/
-                  *(unsigned int *)&v122.__pad_C[100] = v80; /*0x482bf6*/
-                  *(unsigned int *)&v122.__pad_C[104] = v81; /*0x482bfd*/
+                  *(unsigned int *)&v122.vtable4[108] = Isometric::InitTables((int)this, &v120); /*0x482bea*/
+                  *(unsigned int *)&v122.vtable4[100] = v80; /*0x482bf6*/
+                  *(unsigned int *)&v122.vtable4[104] = v81; /*0x482bfd*/
                   StartAudioControllerAt( /*0x482c13*/
                     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1816),
-                    &v122.__pad_C[100],
+                    &v122.vtable4[100],
                     0);
                 }
                 result = *(unsigned int *)&stru_87F5F0.__pad_58[320]; /*0x482c18*/
@@ -20309,10 +20309,10 @@ void CrateClass::ProcessPickup(int aP1)
                   {
                     v84 = (*(int (__thiscall **)(unsigned int *))(*v83 + 136))(v83); /*0x482c58*/
                     v85 = *v83; /*0x482c6e*/
-                    *(unsigned int *)v122.__pad_C = v83[27] - *(unsigned int *)(v84 + 160); /*0x482c72*/
+                    *(unsigned int *)v122.vtable4 = v83[27] - *(unsigned int *)(v84 + 160); /*0x482c72*/
                     (*(void (__thiscall **)(unsigned int *, char *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v85 + 364))( /*0x482c8c*/
                       v83,
-                      v122.__pad_C,
+                      v122.vtable4,
                       0,
                       *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
                       0,
@@ -20335,20 +20335,20 @@ void CrateClass::ProcessPickup(int aP1)
                     {
                       if ( (v119[20] & 1) != 0 ) /*0x48289d*/
                       {
-                        *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x4828aa*/
-                        v68 = (*(__int16 *)v122.__pad_C << 8) + 128; /*0x4828c4*/
-                        v69 = (*(__int16 *)&v122.__pad_C[2] << 8) + 128; /*0x4828c6*/
+                        *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x4828aa*/
+                        v68 = (*(__int16 *)v122.vtable4 << 8) + 128; /*0x4828c4*/
+                        v69 = (*(__int16 *)&v122.vtable4[2] << 8) + 128; /*0x4828c6*/
                         v120 = 0x8000000080LL; /*0x4828c8*/
-                        *(unsigned int *)&v122.__pad_C[16] = Isometric::InitTables((int)this, &v120); /*0x4828d9*/
+                        *(unsigned int *)&v122.vtable4[16] = Isometric::InitTables((int)this, &v120); /*0x4828d9*/
                         v70 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, char *))(*(unsigned int *)v119 + 72))( /*0x4828e7*/
                                           v119,
-                                          &v122.__pad_C[224]);
+                                          &v122.vtable4[224]);
                         v71 = v70[2]; /*0x4828ec*/
                         *(unsigned int *)v122.__pad_0 = v68 - *v70; /*0x4828f5*/
                         *(unsigned int *)&v122.Coord_field_0x2[2] = v69 - v70[1]; /*0x482904*/
-                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.__pad_C[16] - v71); /*0x482908*/
+                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.vtable4[16] - v71); /*0x482908*/
                         Math::Sqrt( /*0x482930*/
-                          (double)(*(unsigned int *)&v122.__pad_C[16] - v71) * (double)(*(unsigned int *)&v122.__pad_C[16] - v71)
+                          (double)(*(unsigned int *)&v122.vtable4[16] - v71) * (double)(*(unsigned int *)&v122.vtable4[16] - v71)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]
                         + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
                         IDA_LOWORD(v72) = Math::RoundToInt(v17); /*0x482938*/
@@ -20364,12 +20364,12 @@ void CrateClass::ProcessPickup(int aP1)
                 Debug::Log(); /*0x482574*/
                 v48 = v120; /*0x482579*/
                 IDA_LOWORD(v49) = Math::RoundToInt(*(double *)&v120); /*0x482580*/
-                *(unsigned int *)&v122.__pad_C[8] = v49; /*0x482590*/
+                *(unsigned int *)&v122.vtable4[8] = v49; /*0x482590*/
                 v113 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x4825a0*/
                 v119 = v49; /*0x4825a1*/
                 (*(void (__thiscall **)(int, char *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)a2 + 364))( /*0x4825ae*/
                   a2,
-                  &v122.__pad_C[8],
+                  &v122.vtable4[8],
                   0,
                   v113,
                   0,
@@ -20379,20 +20379,20 @@ void CrateClass::ProcessPickup(int aP1)
                 j = 5; /*0x4825b4*/
                 do /*0x482713*/
                 {
-                  *(unsigned int *)v122.__pad_C = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 512); /*0x4825d3*/
-                  *(unsigned int *)&v122.__pad_C[8] = *((unsigned int *)this + 9); /*0x4825da*/
-                  v50 = (*(__int16 *)&v122.__pad_C[8] << 8) + 128; /*0x4825f8*/
-                  v51 = (*(__int16 *)&v122.__pad_C[10] << 8) + 128; /*0x4825fe*/
+                  *(unsigned int *)v122.vtable4 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 512); /*0x4825d3*/
+                  *(unsigned int *)&v122.vtable4[8] = *((unsigned int *)this + 9); /*0x4825da*/
+                  v50 = (*(__int16 *)&v122.vtable4[8] << 8) + 128; /*0x4825f8*/
+                  v51 = (*(__int16 *)&v122.vtable4[10] << 8) + 128; /*0x4825fe*/
                   v120 = 0x8000000080LL; /*0x482600*/
                   v52 = Isometric::InitTables((int)this, &v120); /*0x482608*/
-                  *(unsigned int *)&v122.__pad_C[136] = v50; /*0x482622*/
-                  *(unsigned int *)&v122.__pad_C[140] = v51; /*0x482629*/
-                  *(unsigned int *)&v122.__pad_C[144] = v52; /*0x482630*/
+                  *(unsigned int *)&v122.vtable4[136] = v50; /*0x482622*/
+                  *(unsigned int *)&v122.vtable4[140] = v51; /*0x482629*/
+                  *(unsigned int *)&v122.vtable4[144] = v52; /*0x482630*/
                   v53 = RandomCoordScatter( /*0x482637*/
-                          (int *)&v122.__pad_C[260],
-                          (int *)&v122.__pad_C[136],
+                          (int *)&v122.vtable4[260],
+                          (int *)&v122.vtable4[136],
                           *(double *)&v48,
-                          *(int *)v122.__pad_C,
+                          *(int *)v122.vtable4,
                           0);
                   *(unsigned int *)v122.__pad_0 = *v53; /*0x482642*/
                   *(unsigned int *)&v122.Coord_field_0x2[2] = v53[1]; /*0x482651*/
@@ -20444,22 +20444,22 @@ void CrateClass::ProcessPickup(int aP1)
                 v57 = *((unsigned int *)this + 9); /*0x482732*/
                 v58 = ((__int16)v57 << 8) + 128; /*0x482751*/
                 v59 = (IDA_SHIWORD(v57) << 8) + 128; /*0x482753*/
-                *(unsigned int *)v122.__pad_C = 128; /*0x482755*/
-                *(unsigned int *)&v122.__pad_C[4] = 128; /*0x482759*/
-                v122.Coord_field_0x8 = (void *)Isometric::InitTables((int)this, v122.__pad_C); /*0x48276a*/
-                v60 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)a2 + 72))(a2, &v122.__pad_C[212]); /*0x482778*/
+                *(unsigned int *)v122.vtable4 = 128; /*0x482755*/
+                *(unsigned int *)&v122.vtable4[4] = 128; /*0x482759*/
+                v122.Coord_field_0x8 = (void *)Isometric::InitTables((int)this, v122.vtable4); /*0x48276a*/
+                v60 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)a2 + 72))(a2, &v122.vtable4[212]); /*0x482778*/
                 v61 = *v60 + v58; /*0x482782*/
                 v62 = v59 + v60[1]; /*0x482787*/
                 v63 = ((int)v122.Coord_field_0x8 + v60[2]) / 2; /*0x4827a9*/
-                *(unsigned int *)&v122.__pad_C[52] = v61 / 2; /*0x4827ab*/
-                *(unsigned int *)&v122.__pad_C[56] = v62 / 2; /*0x4827af*/
-                *(unsigned int *)&v122.__pad_C[60] = v63; /*0x4827b3*/
+                *(unsigned int *)&v122.vtable4[52] = v61 / 2; /*0x4827ab*/
+                *(unsigned int *)&v122.vtable4[56] = v62 / 2; /*0x4827af*/
+                *(unsigned int *)&v122.vtable4[60] = v63; /*0x4827b3*/
                 v64 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4827b7*/
                 if ( v64 ) /*0x4827c1*/
                   AnimClass::ctor( /*0x4827e3*/
                     v64,
                     *(void **)(unsigned int *)((char *)&FootClass_Array + 3),
-                    (int *)&v122.__pad_C[52],
+                    (int *)&v122.vtable4[52],
                     0,
                     1,
                     (void *)0x600,
@@ -20468,10 +20468,10 @@ void CrateClass::ProcessPickup(int aP1)
                 IDA_LOWORD(v65) = Math::RoundToInt(*(double *)&v120); /*0x4827ec*/
                 v66 = v65; /*0x4827f4*/
                 v67 = *(unsigned int *)a2; /*0x4827fd*/
-                *(unsigned int *)v122.__pad_C = v65; /*0x4827ff*/
+                *(unsigned int *)v122.vtable4 = v65; /*0x4827ff*/
                 (*(void (__thiscall **)(int, char *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(v67 + 364))( /*0x482817*/
                   a2,
-                  v122.__pad_C,
+                  v122.vtable4,
                   0,
                   *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3972),
                   0,
@@ -20479,7 +20479,7 @@ void CrateClass::ProcessPickup(int aP1)
                   0,
                   0);
                 result = PlaySoundEffectAt( /*0x482836*/
-                           &v122.__pad_C[52],
+                           &v122.vtable4[52],
                            v66,
                            0,
                            *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3972),
@@ -20493,20 +20493,20 @@ void CrateClass::ProcessPickup(int aP1)
               case 8: /*0x481de0*/
                 Debug::Log(); /*0x481fac*/
                 LayerClass::Reveal(&stru_87F5F0.__pad_58[416], *(unsigned int *)(a2 + 540)); /*0x481fc3*/
-                *(unsigned int *)&v122.__pad_C[8] = *((unsigned int *)this + 9); /*0x481fd0*/
+                *(unsigned int *)&v122.vtable4[8] = *((unsigned int *)this + 9); /*0x481fd0*/
                 Coord::Subtract( /*0x481fee*/
                   &v122,
-                  (*(__int16 *)&v122.__pad_C[8] << 8) + 128,
-                  (*(__int16 *)&v122.__pad_C[10] << 8) + 128,
+                  (*(__int16 *)&v122.vtable4[8] << 8) + 128,
+                  (*(__int16 *)&v122.vtable4[10] << 8) + 128,
                   0);
                 v120 = 0x8000000080LL; /*0x481ffa*/
                 v122.Coord_field_0x8 = (void *)Isometric::InitTables((int)this, &v120); /*0x48200f*/
-                *(unsigned int *)&v122.__pad_C[192] = v122.Coord_field_0x8; /*0x482013*/
-                *(unsigned int *)&v122.__pad_C[184] = *(unsigned int *)v122.__pad_0; /*0x48201f*/
-                *(unsigned int *)&v122.__pad_C[188] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x482026*/
+                *(unsigned int *)&v122.vtable4[192] = v122.Coord_field_0x8; /*0x482013*/
+                *(unsigned int *)&v122.vtable4[184] = *(unsigned int *)v122.__pad_0; /*0x48201f*/
+                *(unsigned int *)&v122.vtable4[188] = *(unsigned int *)&v122.Coord_field_0x2[2]; /*0x482026*/
                 result = (int)StartAudioControllerAt( /*0x48203c*/
                                 *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 488),
-                                &v122.__pad_C[184],
+                                &v122.vtable4[184],
                                 0);
                 goto LABEL_221; /*0x48203c*/
               case 9: /*0x481de0*/
@@ -20521,17 +20521,17 @@ void CrateClass::ProcessPickup(int aP1)
                     {
                       if ( (*(unsigned char *)(j + 20) & 1) != 0 ) /*0x482da5*/
                       {
-                        *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x482db2*/
-                        *(unsigned int *)&v122.__pad_C[8] = 128; /*0x482dd0*/
-                        *(unsigned int *)&v122.__pad_C[12] = 128; /*0x482dd4*/
-                        *(unsigned int *)&v122.__pad_C[44] = Isometric::InitTables((int)this, &v122.__pad_C[8]); /*0x482de1*/
-                        v90 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)j + 72))(j, &v122.__pad_C[272]); /*0x482def*/
+                        *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x482db2*/
+                        *(unsigned int *)&v122.vtable4[8] = 128; /*0x482dd0*/
+                        *(unsigned int *)&v122.vtable4[12] = 128; /*0x482dd4*/
+                        *(unsigned int *)&v122.vtable4[44] = Isometric::InitTables((int)this, &v122.vtable4[8]); /*0x482de1*/
+                        v90 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)j + 72))(j, &v122.vtable4[272]); /*0x482def*/
                         v91 = v90[2]; /*0x482df4*/
-                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.__pad_C << 8) + 128 - *v90; /*0x482dfd*/
-                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.__pad_C[2] << 8) + 128 - v90[1]; /*0x482e0c*/
-                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.__pad_C[44] - v91); /*0x482e10*/
+                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.vtable4 << 8) + 128 - *v90; /*0x482dfd*/
+                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.vtable4[2] << 8) + 128 - v90[1]; /*0x482e0c*/
+                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.vtable4[44] - v91); /*0x482e10*/
                         Math::Sqrt( /*0x482e38*/
-                          (double)(*(unsigned int *)&v122.__pad_C[44] - v91) * (double)(*(unsigned int *)&v122.__pad_C[44] - v91)
+                          (double)(*(unsigned int *)&v122.vtable4[44] - v91) * (double)(*(unsigned int *)&v122.vtable4[44] - v91)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]
                         + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
                         IDA_LOWORD(v92) = Math::RoundToInt(v17); /*0x482e40*/
@@ -20557,16 +20557,16 @@ void CrateClass::ProcessPickup(int aP1)
                 result = House::IsHumanPlayer(*(House **)(a2 + 540)); /*0x482ec9*/
                 if ( (unsigned char)result ) /*0x482ed0*/
                 {
-                  *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x482edd*/
-                  v95 = (*(__int16 *)v122.__pad_C << 8) + 128; /*0x482ef7*/
-                  v96 = (*(__int16 *)&v122.__pad_C[2] << 8) + 128; /*0x482ef9*/
+                  *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x482edd*/
+                  v95 = (*(__int16 *)v122.vtable4 << 8) + 128; /*0x482ef7*/
+                  v96 = (*(__int16 *)&v122.vtable4[2] << 8) + 128; /*0x482ef9*/
                   v120 = 0x8000000080LL; /*0x482efb*/
-                  *(unsigned int *)&v122.__pad_C[132] = Isometric::InitTables((int)this, &v120); /*0x482f08*/
-                  *(unsigned int *)&v122.__pad_C[124] = v95; /*0x482f14*/
-                  *(unsigned int *)&v122.__pad_C[128] = v96; /*0x482f1b*/
+                  *(unsigned int *)&v122.vtable4[132] = Isometric::InitTables((int)this, &v120); /*0x482f08*/
+                  *(unsigned int *)&v122.vtable4[124] = v95; /*0x482f14*/
+                  *(unsigned int *)&v122.vtable4[128] = v96; /*0x482f1b*/
                   result = (int)StartAudioControllerAt( /*0x482f31*/
                                   *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 496),
-                                  &v122.__pad_C[124],
+                                  &v122.vtable4[124],
                                   0);
                 }
                 goto LABEL_221; /*0x482f31*/
@@ -20582,17 +20582,17 @@ void CrateClass::ProcessPickup(int aP1)
                     {
                       if ( (*(unsigned char *)(j + 20) & 4) != 0 ) /*0x482f88*/
                       {
-                        *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x482f95*/
-                        *(unsigned int *)&v122.__pad_C[8] = 128; /*0x482fb3*/
-                        *(unsigned int *)&v122.__pad_C[12] = 128; /*0x482fb7*/
-                        *(unsigned int *)&v122.__pad_C[44] = Isometric::InitTables((int)this, &v122.__pad_C[8]); /*0x482fc4*/
-                        v97 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)j + 72))(j, &v122.__pad_C[296]); /*0x482fd2*/
+                        *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x482f95*/
+                        *(unsigned int *)&v122.vtable4[8] = 128; /*0x482fb3*/
+                        *(unsigned int *)&v122.vtable4[12] = 128; /*0x482fb7*/
+                        *(unsigned int *)&v122.vtable4[44] = Isometric::InitTables((int)this, &v122.vtable4[8]); /*0x482fc4*/
+                        v97 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)j + 72))(j, &v122.vtable4[296]); /*0x482fd2*/
                         v98 = v97[2]; /*0x482fd7*/
-                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.__pad_C << 8) + 128 - *v97; /*0x482fe0*/
-                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.__pad_C[2] << 8) + 128 - v97[1]; /*0x482fef*/
-                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.__pad_C[44] - v98); /*0x482ff3*/
+                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.vtable4 << 8) + 128 - *v97; /*0x482fe0*/
+                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.vtable4[2] << 8) + 128 - v97[1]; /*0x482fef*/
+                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.vtable4[44] - v98); /*0x482ff3*/
                         Math::Sqrt( /*0x48301b*/
-                          (double)(*(unsigned int *)&v122.__pad_C[44] - v98) * (double)(*(unsigned int *)&v122.__pad_C[44] - v98)
+                          (double)(*(unsigned int *)&v122.vtable4[44] - v98) * (double)(*(unsigned int *)&v122.vtable4[44] - v98)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]
                         + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
                         IDA_LOWORD(v99) = Math::RoundToInt(v17); /*0x483023*/
@@ -20618,16 +20618,16 @@ void CrateClass::ProcessPickup(int aP1)
                 result = House::IsHumanPlayer(*(House **)(a2 + 540)); /*0x4830b8*/
                 if ( (unsigned char)result ) /*0x4830bf*/
                 {
-                  *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x4830cc*/
-                  v101 = (*(__int16 *)v122.__pad_C << 8) + 128; /*0x4830e6*/
-                  v102 = (*(__int16 *)&v122.__pad_C[2] << 8) + 128; /*0x4830e8*/
+                  *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x4830cc*/
+                  v101 = (*(__int16 *)v122.vtable4 << 8) + 128; /*0x4830e6*/
+                  v102 = (*(__int16 *)&v122.vtable4[2] << 8) + 128; /*0x4830e8*/
                   v120 = 0x8000000080LL; /*0x4830ea*/
-                  *(unsigned int *)&v122.__pad_C[156] = Isometric::InitTables((int)this, &v120); /*0x4830f7*/
-                  *(unsigned int *)&v122.__pad_C[148] = v101; /*0x483103*/
-                  *(unsigned int *)&v122.__pad_C[152] = v102; /*0x48310a*/
+                  *(unsigned int *)&v122.vtable4[156] = Isometric::InitTables((int)this, &v120); /*0x4830f7*/
+                  *(unsigned int *)&v122.vtable4[148] = v101; /*0x483103*/
+                  *(unsigned int *)&v122.vtable4[152] = v102; /*0x48310a*/
                   result = (int)StartAudioControllerAt( /*0x483120*/
                                   *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 500),
-                                  &v122.__pad_C[148],
+                                  &v122.vtable4[148],
                                   0);
                 }
                 goto LABEL_221; /*0x483120*/
@@ -20643,18 +20643,18 @@ void CrateClass::ProcessPickup(int aP1)
                     {
                       if ( (*(unsigned char *)(j + 20) & 1) != 0 ) /*0x483174*/
                       {
-                        *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x483181*/
-                        *(unsigned int *)&v122.__pad_C[8] = 128; /*0x48319f*/
-                        *(unsigned int *)&v122.__pad_C[12] = 128; /*0x4831a3*/
-                        *(unsigned int *)&v122.__pad_C[44] = Isometric::InitTables((int)this, &v122.__pad_C[8]); /*0x4831b0*/
+                        *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x483181*/
+                        *(unsigned int *)&v122.vtable4[8] = 128; /*0x48319f*/
+                        *(unsigned int *)&v122.vtable4[12] = 128; /*0x4831a3*/
+                        *(unsigned int *)&v122.vtable4[44] = Isometric::InitTables((int)this, &v122.vtable4[8]); /*0x4831b0*/
                         v103 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)j + 72))(j, v124); /*0x4831be*/
                         v104 = v103[2]; /*0x4831c3*/
-                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.__pad_C << 8) + 128 - *v103; /*0x4831cc*/
-                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.__pad_C[2] << 8) + 128 - v103[1]; /*0x4831d7*/
-                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.__pad_C[44] - v104); /*0x4831db*/
+                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.vtable4 << 8) + 128 - *v103; /*0x4831cc*/
+                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.vtable4[2] << 8) + 128 - v103[1]; /*0x4831d7*/
+                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.vtable4[44] - v104); /*0x4831db*/
                         Math::Sqrt( /*0x483207*/
                           (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0
-                        + (double)(*(unsigned int *)&v122.__pad_C[44] - v104) * (double)(*(unsigned int *)&v122.__pad_C[44] - v104)
+                        + (double)(*(unsigned int *)&v122.vtable4[44] - v104) * (double)(*(unsigned int *)&v122.vtable4[44] - v104)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]);
                         IDA_LOWORD(v105) = Math::RoundToInt(v17); /*0x48320f*/
                         if ( v105 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5932) /*0x48323a*/
@@ -20679,16 +20679,16 @@ void CrateClass::ProcessPickup(int aP1)
                 result = House::IsHumanPlayer(*(House **)(a2 + 540)); /*0x483298*/
                 if ( (unsigned char)result ) /*0x48329f*/
                 {
-                  *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x4832a8*/
-                  v108 = (*(__int16 *)v122.__pad_C << 8) + 128; /*0x4832c2*/
-                  v109 = (*(__int16 *)&v122.__pad_C[2] << 8) + 128; /*0x4832c4*/
+                  *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x4832a8*/
+                  v108 = (*(__int16 *)v122.vtable4 << 8) + 128; /*0x4832c2*/
+                  v109 = (*(__int16 *)&v122.vtable4[2] << 8) + 128; /*0x4832c4*/
                   v120 = 0x8000000080LL; /*0x4832c6*/
-                  *(unsigned int *)&v122.__pad_C[32] = Isometric::InitTables((int)this, &v120); /*0x4832d3*/
-                  *(unsigned int *)&v122.__pad_C[24] = v108; /*0x4832dc*/
-                  *(unsigned int *)&v122.__pad_C[28] = v109; /*0x4832e0*/
+                  *(unsigned int *)&v122.vtable4[32] = Isometric::InitTables((int)this, &v120); /*0x4832d3*/
+                  *(unsigned int *)&v122.vtable4[24] = v108; /*0x4832dc*/
+                  *(unsigned int *)&v122.vtable4[28] = v109; /*0x4832e0*/
                   result = (int)StartAudioControllerAt( /*0x4832f0*/
                                   *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 492),
-                                  &v122.__pad_C[24],
+                                  &v122.vtable4[24],
                                   0);
                 }
                 goto LABEL_221; /*0x4832f0*/
@@ -20700,8 +20700,8 @@ void CrateClass::ProcessPickup(int aP1)
                 v88 = *(unsigned int *)(v87 + 612); /*0x482ccf*/
                 if ( v88 <= 0 ) /*0x482cd7*/
                   goto LABEL_221; /*0x482cd7*/
-                *(unsigned int *)v122.__pad_C = *(unsigned int *)(v87 + 600); /*0x482ce3*/
-                v89 = *(unsigned int *)v122.__pad_C; /*0x482ce7*/
+                *(unsigned int *)v122.vtable4 = *(unsigned int *)(v87 + 600); /*0x482ce3*/
+                v89 = *(unsigned int *)v122.vtable4; /*0x482ce7*/
                 break; /*0x482ce7*/
               case 14: /*0x481de0*/
                 Debug::Log(); /*0x482981*/
@@ -20714,19 +20714,19 @@ void CrateClass::ProcessPickup(int aP1)
                     {
                       if ( (v119[20] & 1) != 0 ) /*0x4829cf*/
                       {
-                        *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x4829dc*/
-                        *(unsigned int *)&v122.__pad_C[8] = 128; /*0x4829fa*/
-                        *(unsigned int *)&v122.__pad_C[12] = 128; /*0x4829fe*/
-                        *(unsigned int *)&v122.__pad_C[44] = Isometric::InitTables((int)this, &v122.__pad_C[8]); /*0x482a0b*/
+                        *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x4829dc*/
+                        *(unsigned int *)&v122.vtable4[8] = 128; /*0x4829fa*/
+                        *(unsigned int *)&v122.vtable4[12] = 128; /*0x4829fe*/
+                        *(unsigned int *)&v122.vtable4[44] = Isometric::InitTables((int)this, &v122.vtable4[8]); /*0x482a0b*/
                         v73 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, char *))(*(unsigned int *)v119 + 72))( /*0x482a19*/
                                           v119,
-                                          &v122.__pad_C[248]);
+                                          &v122.vtable4[248]);
                         v74 = v73[2]; /*0x482a1e*/
-                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.__pad_C << 8) + 128 - *v73; /*0x482a27*/
-                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.__pad_C[2] << 8) + 128 - v73[1]; /*0x482a36*/
-                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.__pad_C[44] - v74); /*0x482a3a*/
+                        *(unsigned int *)v122.__pad_0 = (*(__int16 *)v122.vtable4 << 8) + 128 - *v73; /*0x482a27*/
+                        *(unsigned int *)&v122.Coord_field_0x2[2] = (*(__int16 *)&v122.vtable4[2] << 8) + 128 - v73[1]; /*0x482a36*/
+                        v122.Coord_field_0x8 = (void *)(*(unsigned int *)&v122.vtable4[44] - v74); /*0x482a3a*/
                         Math::Sqrt( /*0x482a62*/
-                          (double)(*(unsigned int *)&v122.__pad_C[44] - v74) * (double)(*(unsigned int *)&v122.__pad_C[44] - v74)
+                          (double)(*(unsigned int *)&v122.vtable4[44] - v74) * (double)(*(unsigned int *)&v122.vtable4[44] - v74)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]
                         + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
                         IDA_LOWORD(v75) = Math::RoundToInt(v17); /*0x482a6a*/
@@ -20747,7 +20747,7 @@ void CrateClass::ProcessPickup(int aP1)
                                   Power::ChangedHouse((Power *)v77, 1); /*0x482ad5*/
                                 if ( VeinholeClass::GetState((float *)v77->__pad_0) ) /*0x482adc*/
                                   Crate::processCratePickup((Crate *)v77, 1); /*0x482ae9*/
-                                *(unsigned int *)v122.__pad_C = ++v76; /*0x482aef*/
+                                *(unsigned int *)v122.vtable4 = ++v76; /*0x482aef*/
                                 v17 = (double)v76; /*0x482af3*/
                               }
                               while ( v17 < *(double *)&v120 ); /*0x482b00*/
@@ -20761,16 +20761,16 @@ void CrateClass::ProcessPickup(int aP1)
                 result = House::IsHumanPlayer(*(House **)(a2 + 540)); /*0x482b22*/
                 if ( (unsigned char)result ) /*0x482b29*/
                 {
-                  *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x482b36*/
-                  v78 = (*(__int16 *)v122.__pad_C << 8) + 128; /*0x482b50*/
-                  v79 = (*(__int16 *)&v122.__pad_C[2] << 8) + 128; /*0x482b52*/
+                  *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x482b36*/
+                  v78 = (*(__int16 *)v122.vtable4 << 8) + 128; /*0x482b50*/
+                  v79 = (*(__int16 *)&v122.vtable4[2] << 8) + 128; /*0x482b52*/
                   v120 = 0x8000000080LL; /*0x482b54*/
-                  *(unsigned int *)&v122.__pad_C[96] = Isometric::InitTables((int)this, &v120); /*0x482b61*/
-                  *(unsigned int *)&v122.__pad_C[88] = v78; /*0x482b6d*/
-                  *(unsigned int *)&v122.__pad_C[92] = v79; /*0x482b74*/
+                  *(unsigned int *)&v122.vtable4[96] = Isometric::InitTables((int)this, &v120); /*0x482b61*/
+                  *(unsigned int *)&v122.vtable4[88] = v78; /*0x482b6d*/
+                  *(unsigned int *)&v122.vtable4[92] = v79; /*0x482b74*/
                   result = (int)StartAudioControllerAt( /*0x482b8a*/
                                   *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 508),
-                                  &v122.__pad_C[88],
+                                  &v122.vtable4[88],
                                   0);
                 }
                 goto LABEL_221; /*0x482b8a*/
@@ -20781,7 +20781,7 @@ void CrateClass::ProcessPickup(int aP1)
                 v20 = *(unsigned int *)this->__pad_0; /*0x481e13*/
                 v21 = (int)v19; /*0x481e17*/
                 v119 = v19; /*0x481e28*/
-                v22 = (unsigned int *)(*(int (__thiscall **)(CrateClass *, char *))(v20 + 72))(this, &v122.__pad_C[200]); /*0x481e2c*/
+                v22 = (unsigned int *)(*(int (__thiscall **)(CrateClass *, char *))(v20 + 72))(this, &v122.vtable4[200]); /*0x481e2c*/
                 PlaySoundEffectAt(v22, v21, 0, v18, 0, 0); /*0x481e33*/
                 v23 = 0; /*0x481e38*/
                 v24 = 1; /*0x481e3a*/
@@ -20790,8 +20790,8 @@ void CrateClass::ProcessPickup(int aP1)
                   if ( v24 ) /*0x481e3d*/
                   {
                     j = *((unsigned int *)this + 9); /*0x481e47*/
-                    *(unsigned int *)&v122.__pad_C[8] = *NeighborCoord(v122.__pad_C, &j, v23); /*0x481e64*/
-                    v25 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&v122.__pad_C[8]); /*0x481e68*/
+                    *(unsigned int *)&v122.vtable4[8] = *NeighborCoord(v122.vtable4, &j, v23); /*0x481e64*/
+                    v25 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&v122.vtable4[8]); /*0x481e68*/
                   }
                   else
                   {
@@ -20819,8 +20819,8 @@ void CrateClass::ProcessPickup(int aP1)
                     v114 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 768); /*0x481f21*/
                     v30 = (int *)(*(int (__thiscall **)(CrateClass *, char *))(*(unsigned int *)this->__pad_0 + 72))( /*0x481f27*/
                                    this,
-                                   &v122.__pad_C[236]);
-                    v31 = RandomCoordScatter((int *)&v122.__pad_C[284], v30, v17, v114, 1); /*0x481f33*/
+                                   &v122.vtable4[236]);
+                    v31 = RandomCoordScatter((int *)&v122.vtable4[284], v30, v17, v114, 1); /*0x481f33*/
                     *(unsigned int *)v122.__pad_0 = *v31; /*0x481f3c*/
                     *(unsigned int *)&v122.Coord_field_0x2[2] = v31[1]; /*0x481f44*/
                     v122.Coord_field_0x8 = (void *)v31[2]; /*0x481f55*/
@@ -20843,7 +20843,7 @@ void CrateClass::ProcessPickup(int aP1)
             }
             if ( result != -1 /*0x482d30*/
               && SuperClass::StartTimer(
-                   *(unsigned int *)(*(unsigned int *)v122.__pad_C + 4 * *(unsigned int *)(FirstOfAction + 152)),
+                   *(unsigned int *)(*(unsigned int *)v122.vtable4 + 4 * *(unsigned int *)(FirstOfAction + 152)),
                    1,
                    0,
                    0)
@@ -20857,20 +20857,20 @@ void CrateClass::ProcessPickup(int aP1)
   LABEL_221:
             if ( dword_81DAD8[v121] != -1 ) /*0x483301*/
             {
-              *(unsigned int *)v122.__pad_C = *((unsigned int *)this + 9); /*0x48330e*/
-              v110 = (*(__int16 *)v122.__pad_C << 8) + 128; /*0x483328*/
-              v111 = (*(__int16 *)&v122.__pad_C[2] << 8) + 128; /*0x48332a*/
+              *(unsigned int *)v122.vtable4 = *((unsigned int *)this + 9); /*0x48330e*/
+              v110 = (*(__int16 *)v122.vtable4 << 8) + 128; /*0x483328*/
+              v111 = (*(__int16 *)&v122.vtable4[2] << 8) + 128; /*0x48332a*/
               v120 = 0x8000000080LL; /*0x48332c*/
               v112 = Isometric::InitTables((int)this, &v120); /*0x483334*/
-              *(unsigned int *)&v122.__pad_C[24] = v110; /*0x483343*/
-              *(unsigned int *)&v122.__pad_C[28] = v111; /*0x483347*/
-              *(unsigned int *)&v122.__pad_C[32] = v112 + 200; /*0x48334b*/
+              *(unsigned int *)&v122.vtable4[24] = v110; /*0x483343*/
+              *(unsigned int *)&v122.vtable4[28] = v111; /*0x483347*/
+              *(unsigned int *)&v122.vtable4[32] = v112 + 200; /*0x48334b*/
               result = RA2_OPNEW(0x1C8u); /*0x48334f*/
               if ( result ) /*0x483359*/
                 result = (int)AnimClass::ctor( /*0x483384*/
                                 (AnimClass *)result,
                                 *(void **)(*(unsigned int *)((char *)&FootClass_Array + 3) + 4 * dword_81DAD8[v121]),
-                                (int *)&v122.__pad_C[24],
+                                (int *)&v122.vtable4[24],
                                 0,
                                 1,
                                 (void *)0x600,

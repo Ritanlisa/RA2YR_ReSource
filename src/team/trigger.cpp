@@ -390,7 +390,7 @@ HRESULT __stdcall TriggerTypeClass::Load(IStream* stream) { return 0; }
 HRESULT __stdcall TriggerTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
 void TriggerTypeClass::pointerExpired(AbstractClass* ptr, bool removed) {}
 AbstractType __stdcall TriggerTypeClass::whatAmI() const { return AbstractType::TriggerType; }
-int TriggerTypeClass::objectSize() const { return 0; }
+int TriggerTypeClass::objectSize() const { return 0; 
 void TriggerTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd

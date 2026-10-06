@@ -2,8 +2,22 @@
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "command_ext.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
-// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+#include "e4/classes/BufferIOFileClass_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/CCFileClass_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/Vector_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/XSurface_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
+class BufferIOFileClass;  // g57c5 W5 fwd
+class CCFileClass;  // g57c5 W5 fwd
+class Math;  // g57c5 W5 fwd
+class XSurface;  // g57c5 W5 fwd
+} // namespace gamemd
+// ---- g57c5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 
+namespace gamemd {
+
     struct MQF_ABC5F8_c { unsigned int waypoints[1]; };  // 0xABC5F8 宿主词汇 (MQF_ABFBE0_c 同款 [1] 界约)
     extern MQF_ABC5F8_c g_MissionQueueFrame;             // data: 0xABC5F8 (csp_canon/globals.hpp:1106)
     struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
@@ -32,7 +46,7 @@ void DeleteAndZero::Alt2() {}
 void DeleteAndZero::Alt() {}
 
 // 0x55cc20
-void ScreenCapture::Frame()
+char ScreenCapture::Frame()
 {
     int v1; // eax
     int v2; // eax

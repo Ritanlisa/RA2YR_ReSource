@@ -35,9 +35,12 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.35: Coord::To_ScreenRaw 静态站点载体（0x6D7F8E/0x6D843B 同款 e4 TU）
 #include "e4/classes/AudioStream_e4.hpp"  // G42.35: g_DSurface_Hidden_2 宿主基类（完整 AudioStream）
-#include "core/ida_vtables.h"  // gC_vftable3
-
-// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+#include "core/ida_vtables.h"  // gC_vftable3// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+namespace Timer { int GetTicks(...); }  // g57c5 W5 vocab
+} // namespace gamemd
+// ---- g57c5 W5 end ----
 extern int g_INI_Key_Special;
 
 // ============================================================================
@@ -3820,7 +3823,7 @@ void Voxel_Section::Draw()
         v51 = UnitTypeClass::FindOrCreate(j); /*0x75db41*/
         if ( v51 /*0x75db74*/
           && ((int)v86.DynamicVector_field_0x10 < v86.DynamicVector_field_0x8
-           || (v86.__pad_C[1] || !v86.DynamicVector_field_0x8)
+           || (v86.vtable4[1] || !v86.DynamicVector_field_0x8)
            && *(int *)v86.__pad_14 > 0
            && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v86.__pad_0 + 8))(
                 &v86,

@@ -1679,6 +1679,6 @@ int AircraftClass::CheckStateFlag2()
 // ============================================================
 
 // 0x41be70
-bool AircraftClass::StubReturnFalse2() { return false; }
+bool AircraftClass::StubReturnFalse2() { return false; 
 
 } // namespace gamemd  // G42.35b: file-scope close (namespace opens at L12)

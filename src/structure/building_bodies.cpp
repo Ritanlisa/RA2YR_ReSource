@@ -17,18 +17,13 @@ using ra2::game::AbstractClass;
 #include "structure/globals_structure.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
-
+#include "e4/classes/Math_e4.hpp"  // g57c5 W5e Math single-source (minimal twin removed)
 namespace gamemd {
-namespace Math {
-int unknown::RoundToInt(double value) {
-    return (int)(value >= 0.0 ? value + 0.5 : value - 0.5);
-}
-}
 }
 
 namespace gamemd {
 // 0x50af10
-void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
+int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
 {
     int result; // eax
     unsigned char *v3; // eax
@@ -152,5 +147,4 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
       }
     }
     return result; /*0x50b1c6*/
-}
 }

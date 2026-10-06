@@ -351,6 +351,12 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     void LoadRepairAnimations(int a1);  // 0x45e970
     // === FUNCS-MOVE (END) ===
+public:  // g57c5 W4b supply slot
+    bool __pad_1584;  // 0x1584 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    unsigned char __pad_F70[348];  // 0xF70 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    char __pad_1714;  // 0x1714 g57c5 W4b (self-desc vocab, ml slot witness)
 };
 
 } // namespace gamemd

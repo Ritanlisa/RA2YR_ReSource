@@ -590,7 +590,7 @@ int AudioSample::SetField() {
     {
     *(unsigned int *)&this->q004 = 0; /*0x408958 +4*/
     }
-    *(unsigned int *)&this->q008 = 0; /*0x40894b +8*/
+    *(unsigned int *)&this->vtable3 = 0; /*0x40894b +8*/
     *(unsigned int *)&this->q010 &= ~1u; /*0x408954 +0x10*/
     return result; /*0x408957*/
 }

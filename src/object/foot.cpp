@@ -4,8 +4,24 @@
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TeamClass_e4.hpp"  // gB C2027 supply
-// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+#include "e4/classes/Cell_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/House_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/MovementAI_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace ra2 { namespace game {
+class Math;  // g57c5 W5 fwd
+class MovementAI;  // g57c5 W5 fwd
+class Random;  // g57c5 W5 fwd
+class Type;  // g57c5 W5 fwd
+int StartAudioControllerAt(...);  // g57c5 W5 vocab
+int WinAPI_Wrapper(...);  // g57c5 W5 vocab
+void GetTraversability();  // g57c5 W5 vocab (csp)
+} }
+// ---- g57c5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 
 namespace gamemd {
+
     void Mixer_ReleaseChannel(void *a1);               // raw 0x4220d9 Mixer::ReleaseChannel;
     void WinAPI_Wrapper(int a1);                       // 0x7DC720 真形 (stream_ext.hpp:12 同形);
     void MapClass_RevealArea2(void *self, int *coords, int a3, int a4, int a5);  // 0x567DA0 真形;
@@ -546,10 +562,11 @@ uint32_t FootClass::isAreaClear(uint32_t a, uint32_t b, uint32_t c) const { retu
 void FootClass::onAreaEntry(uint32_t a, uint32_t b) {}
 uint32_t FootClass::getWaypointData(uint32_t a) { return 0; }
 void FootClass::onWaypointReached(uint32_t a) {}
-void FootClass::onPathComplete() {}
-void FootClass::onMovementDone() {}
+void FootClass::onPathComplete() {
+void FootClass::onMovementDone() {
+}
 // 0x709290
-bool FootClass::CanEnterCell(uint32_t a) { return false; }
+bool FootClass::CanEnterCell(uint32_t a) { return false; 
 
 } // namespace game
 } // namespace ra2

@@ -1,6 +1,13 @@
 #include "misc/audio_ext.hpp"
-// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+#include "e4/classes/Matrix2D_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
+class Matrix2D;  // g57c5 W5 fwd
+} // namespace gamemd
+// ---- g57c5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 
+namespace gamemd {
+
     void *Coord_To_Cell(void *a1, void *a2);           // raw Coord::To_Cell 家族 (fn_42:3240);
     struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
         unsigned char __pad_0[0x58];

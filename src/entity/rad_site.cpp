@@ -10,5 +10,5 @@ HRESULT __stdcall RadSiteClass::Save(IStream* stream, int clear_dirty) { return 
 AbstractType __stdcall RadSiteClass::whatAmI() const { return kObjectTypeId; }
 int RadSiteClass::objectSize() const { return sizeof(RadSiteClass); }
 // 0x65b4c0
-void RadSiteClass::SetBaseCell(CellStruct* cell) {}
+void RadSiteClass::SetBaseCell(CellStruct* cell) {
 } // namespace gamemd

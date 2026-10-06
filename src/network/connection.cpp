@@ -10,9 +10,12 @@
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
-#include "e4/classes/Debug_e4.hpp"
-
-namespace gamemd
+#include "e4/classes/Debug_e4.hpp"namespace gamemd
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+void Network_Helper();  // g57c5 W5 vocab (csp)
+} // namespace gamemd
+// ---- g57c5 W5 end ----
 {
 
 // ============================================================================
@@ -468,5 +471,5 @@ int IPXManagerClass::release(int a5, int a2, int a3, int a4)
     return 1; /*0x541533*/
 }
 // 0x542330
-int32_t IPXManagerClass::GetConnectionCount() { return 0; }
+int32_t IPXManagerClass::GetConnectionCount() { return 0; 
 }  // L-fix: close namespace tail 1

@@ -37,7 +37,6 @@ using ra2::game::AbstractClass;
 // g57b5 W1b: e4 Vector3 include removed (C2011 vs utility_ext.hpp:1861 provider-in-TU)
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "misc/misc_ext.hpp"
-
 // 0x415EE0
 namespace gamemd { 
 void* BulletClass::FlightUpdate(int a1, int a2) {
@@ -444,7 +443,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
 // 0x425510
 namespace gamemd { 
 int AnimClass::CheckEndOfSequence() {
-    return *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[52]; /*0x42551c*/
+    return *(unsigned int *)&this->AnimClass_field_0xC8[2].vtable4[52]; /*0x42551c*/
 }
 }
 // 0x425530
@@ -455,7 +454,7 @@ int AnimClass::Undeploy() {
     unsigned int v5[3]; // [esp+4h] [ebp-Ch] BYREF
 
     AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x425536*/
-    if ( AnimClass_field_0xC8 && AnimClass_field_0xC8[2].__pad_C[201] ) /*0x425540*/
+    if ( AnimClass_field_0xC8 && AnimClass_field_0xC8[2].vtable4[201] ) /*0x425540*/
     {
       v5[0] = this->AnimClass_field_0x9C; /*0x425556*/
       v5[1] = *(unsigned int *)this->__pad_A0; /*0x425567*/
@@ -487,11 +486,11 @@ int AnimClass::ProcessCraterFormation() {
       AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x4255e4*/
       if ( AnimClass_field_0xC8 ) /*0x4255ec*/
       {
-        if ( *(unsigned int *)&AnimClass_field_0xC8[2].__pad_C[112] != -1 ) /*0x4255f5*/
+        if ( *(unsigned int *)&AnimClass_field_0xC8[2].vtable4[112] != -1 ) /*0x4255f5*/
         {
           v4 = (unsigned int *)(*((int (__thiscall **)(AnimClass *, unsigned char *))this->AnimClass_field_0x0 + 18))(this, v6); /*0x425607*/
           StartAudioControllerAt( /*0x425618*/
-            *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[112],
+            *(unsigned int *)&this->AnimClass_field_0xC8[2].vtable4[112],
             v4,
             (int **)&this->AnimClass_field_0x1B4);
         }
@@ -573,9 +572,9 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
     this->AnimClass_field_0x0 = (void *)a3; /*0x4397f7*/
     this->AnimClass_field_0x4 = (void *)a4; /*0x4397fd*/
     this->AnimClass_field_0x8 = (void *)a5; /*0x439804*/
-    *(unsigned int *)this->__pad_C = a6; /*0x43980e*/
+    *(unsigned int *)this->vtable4 = a6; /*0x43980e*/
     _EAX = a2; /*0x439811*/
-    *(unsigned int *)&this->__pad_C[4] = a7; /*0x439815*/
+    *(unsigned int *)&this->vtable4[4] = a7; /*0x439815*/
     this->AnimClass_field_0x14 = (WinModemClass *)a8; /*0x439818*/
     __asm { fild dword ptr [eax] } /*0x43981b*/
     __asm { fstp dword ptr [esi+18h] }
@@ -1821,8 +1820,8 @@ namespace gamemd {
 void* BulletClass::ResetDetonationTimer() {
     *(unsigned int *)this->__pad_0 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1108*/
     this->BulletClass_field_0x8 = 0; /*0x4e110c*/
-    *(unsigned int *)this->__pad_C = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1115*/
-    *(unsigned int *)&this->__pad_C[8] = 0; /*0x4e1118*/
+    *(unsigned int *)this->vtable4 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1115*/
+    *(unsigned int *)&this->vtable4[8] = 0; /*0x4e1118*/
     this->BulletClass_field_0x18 = 0; /*0x4e111b*/
     *(unsigned int *)this->__pad_1C = 0; /*0x4e111e*/
     *(unsigned int *)&this->__pad_1C[4] = 0; /*0x4e1121*/
@@ -1849,9 +1848,9 @@ int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
     *(unsigned int *)this->__pad_0 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e114f*/
     this->BulletClass_field_0x4 = v12; /*0x4e1155*/
     this->BulletClass_field_0x8 = v7; /*0x4e1158*/
-    *(unsigned int *)this->__pad_C = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1163*/
-    *(unsigned int *)&this->__pad_C[4] = v12; /*0x4e116a*/
-    *(unsigned int *)&this->__pad_C[8] = a4; /*0x4e1171*/
+    *(unsigned int *)this->vtable4 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4e1163*/
+    *(unsigned int *)&this->vtable4[4] = v12; /*0x4e116a*/
+    *(unsigned int *)&this->vtable4[8] = a4; /*0x4e1171*/
     this->BulletClass_field_0x18 = (void *)*a3; /*0x4e117b*/
     *(unsigned int *)this->__pad_1C = a3[1]; /*0x4e1180*/
     *(unsigned int *)&this->__pad_1C[4] = a3[2]; /*0x4e1186*/
@@ -1897,8 +1896,8 @@ int BulletClass::CheckProximityDetonation(void* a1) {
     int v11; // [esp+10h] [ebp-8h]
     int v12; // [esp+14h] [ebp-4h]
 
-    v4 = *(unsigned int *)this->__pad_C; /*0x4e11f6*/
-    v5 = *(unsigned int *)&this->__pad_C[8]; /*0x4e11f9*/
+    v4 = *(unsigned int *)this->vtable4; /*0x4e11f6*/
+    v5 = *(unsigned int *)&this->vtable4[8]; /*0x4e11f9*/
     if ( v4 == -1 ) /*0x4e11ff*/
     {
   LABEL_4:
@@ -8913,11 +8912,11 @@ void AnimClass::ProcessSequence() {
     if ( (double)(v2 - v4) / (double)*(int *)this->__pad_34 == 1.0 ) /*0x7293b8*/
     {
   LABEL_7:
-      (*(void (__thiscall **)(unsigned int, unsigned int, int))(**(unsigned int **)this->__pad_C + 1348))( /*0x7293ca*/
-        *(unsigned int *)this->__pad_C,
+      (*(void (__thiscall **)(unsigned int, unsigned int, int))(**(unsigned int **)this->vtable4 + 1348))( /*0x7293ca*/
+        *(unsigned int *)this->vtable4,
         0,
         1072693248);
-      v5 = *(int **)this->__pad_C; /*0x7293d0*/
+      v5 = *(int **)this->vtable4; /*0x7293d0*/
       *(unsigned int *)this->__pad_18 = 3; /*0x7293d3*/
       v5 += 39; /*0x7293da*/
       v8 = *v5; /*0x7293e4*/
@@ -8927,7 +8926,7 @@ void AnimClass::ProcessSequence() {
       v6 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x72940f*/
       if ( v6 ) /*0x729419*/
       {
-        v7 = (int *)(*(unsigned int *)this->__pad_C + 156); /*0x729420*/
+        v7 = (int *)(*(unsigned int *)this->vtable4 + 156); /*0x729420*/
         v8 = *v7; /*0x729433*/
         v9 = v7[1]; /*0x72943a*/
         v10 = v7[2]; /*0x729446*/
@@ -8941,7 +8940,7 @@ void AnimClass::ProcessSequence() {
           0,
           0);
       }
-      (*(void (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)this->__pad_C + 220))(*(unsigned int *)this->__pad_C, 0); /*0x729465*/
+      (*(void (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)this->vtable4 + 220))(*(unsigned int *)this->vtable4, 0); /*0x729465*/
     }
 }
 }

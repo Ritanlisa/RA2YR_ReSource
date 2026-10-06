@@ -13,9 +13,12 @@
 #include "core/reverse_marker.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Debug_e4.hpp"
-#include "system/minimal_carriers.hpp"  // G42.42q minimal carriers
-
-namespace gamemd
+#include "system/minimal_carriers.hpp"  // G42.42q minimal carriersnamespace gamemd
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace mix {
+void SetSoundWarning(...);  // g57c5 W5 vocab
+}
+// ---- g57c5 W5 end ----
 {
 
 // ============================================================

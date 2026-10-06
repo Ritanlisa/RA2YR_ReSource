@@ -275,7 +275,7 @@ void HouseClass::Update_TogglePower(double a2)
 
     v3 = (ObjectClass *)v2; /*0x4f8446*/
     v4 = *(unsigned int *)(v2 + 676); /*0x4f844b*/
-    v5 = *(unsigned int *)v3[1].__pad_C; /*0x4f8451*/
+    v5 = *(unsigned int *)v3[1].vtable4; /*0x4f8451*/
     if ( v4 != -1 ) /*0x4f8460*/
     {
       if ( (int)dword_A8ED84 - v4 >= v5 ) /*0x4f8468*/
@@ -285,14 +285,14 @@ void HouseClass::Update_TogglePower(double a2)
     if ( v5 == 1 ) /*0x4f846f*/
     {
       v6 = v119; /*0x4f8471*/
-      *(unsigned int *)&v3[1].Object_field_0x2[2] = dword_A8ED84; /*0x4f8477*/
-      v3[1].Object_field_0x8 = v6; /*0x4f847d*/
-      *(unsigned int *)v3[1].__pad_C = 0; /*0x4f8483*/
+      *(unsigned int *)&v3[1].ptr_2[2] = dword_A8ED84; /*0x4f8477*/
+      v3[1].vtable3 = v6; /*0x4f847d*/
+      *(unsigned int *)v3[1].vtable4 = 0; /*0x4f8483*/
       v3[33].__pad_B0[40] = 1; /*0x4f8489*/
     }
   LABEL_6:
-    v7 = *(unsigned int *)&v3[1].__pad_C[4]; /*0x4f8490*/
-    v8 = *(unsigned int *)&v3[1].__pad_C[12]; /*0x4f8496*/
+    v7 = *(unsigned int *)&v3[1].vtable4[4]; /*0x4f8490*/
+    v8 = *(unsigned int *)&v3[1].vtable4[12]; /*0x4f8496*/
     if ( v7 != -1 ) /*0x4f849f*/
     {
       if ( (int)dword_A8ED84 - v7 >= v8 ) /*0x4f84ab*/
@@ -302,9 +302,9 @@ void HouseClass::Update_TogglePower(double a2)
     if ( v8 == 1 ) /*0x4f84b2*/
     {
       v9 = v119; /*0x4f84ba*/
-      *(unsigned int *)&v3[1].__pad_C[4] = dword_A8ED84; /*0x4f84c0*/
-      *(unsigned int *)&v3[1].__pad_C[8] = v9; /*0x4f84c6*/
-      *(unsigned int *)&v3[1].__pad_C[12] = 0; /*0x4f84cc*/
+      *(unsigned int *)&v3[1].vtable4[4] = dword_A8ED84; /*0x4f84c0*/
+      *(unsigned int *)&v3[1].vtable4[8] = v9; /*0x4f84c6*/
+      *(unsigned int *)&v3[1].vtable4[12] = 0; /*0x4f84cc*/
       v3[33].__pad_B0[41] = 1; /*0x4f84d2*/
     }
   LABEL_11:
@@ -351,7 +351,7 @@ void HouseClass::Update_TogglePower(double a2)
     if ( !v3->__pad_140[183] ) /*0x4f85cb*/
       goto LABEL_65; /*0x4f85cb*/
     v16 = *(unsigned int *)&v3->__pad_140[344]; /*0x4f85d1*/
-    v17 = *(unsigned int *)v3[1].__pad_0; /*0x4f85d7*/
+    v17 = *(unsigned int *)v3[1].vtable1; /*0x4f85d7*/
     if ( v16 != -1 ) /*0x4f85e0*/
     {
       if ( (int)dword_A8ED84 - v16 >= v17 ) /*0x4f85eb*/
@@ -418,7 +418,7 @@ void HouseClass::Update_TogglePower(double a2)
     if ( !v3->__pad_140[184] ) /*0x4f8706*/
       goto LABEL_83; /*0x4f8706*/
     v21 = *(unsigned int *)&v3->__pad_140[344]; /*0x4f870c*/
-    v22 = *(unsigned int *)v3[1].__pad_0; /*0x4f8712*/
+    v22 = *(unsigned int *)v3[1].vtable1; /*0x4f8712*/
     if ( v21 != -1 ) /*0x4f871b*/
     {
       if ( (int)dword_A8ED84 - v21 >= v22 ) /*0x4f8726*/
@@ -467,7 +467,7 @@ void HouseClass::Update_TogglePower(double a2)
     if ( !v3->__pad_140[182] ) /*0x4f87ca*/
       goto LABEL_89; /*0x4f87ca*/
     v25 = *(unsigned int *)&v3->__pad_140[344]; /*0x4f87cc*/
-    v26 = *(unsigned int *)v3[1].__pad_0; /*0x4f87d2*/
+    v26 = *(unsigned int *)v3[1].vtable1; /*0x4f87d2*/
     if ( v25 == -1 ) /*0x4f87db*/
     {
   LABEL_87:
@@ -487,7 +487,7 @@ void HouseClass::Update_TogglePower(double a2)
   LABEL_89:
     *(unsigned int *)&v3[31].__pad_140[260] &= (*(unsigned int *)&v3[31].__pad_140[260] <= 0) - 1; /*0x4f87ff*/
     *(unsigned int *)&v3[31].__pad_140[264] &= (*(unsigned int *)&v3[31].__pad_140[264] <= 0) - 1; /*0x4f8825*/
-    if ( dword_A83D4C->Object_field_0x30 == v3->Object_field_0x30
+    if ( dword_A83D4C->nextObject == v3->nextObject
       && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4)
       && dword_A8B23C
       && !(*(unsigned __int8 (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable1 + 4))(dword_A8B23C) )
@@ -576,7 +576,7 @@ void HouseClass::Update_TogglePower(double a2)
     v40 = v3->__pad_140[172]; /*0x4f8a27*/
     if ( !*(unsigned int *)&dword_A8B238 ) /*0x4f8a34*/
       v40 = v40 || v3->__pad_140[173]; /*0x4f8a48*/
-    if ( !v40 && !*(unsigned char *)(v3->Object_field_0x34 + 422) ) /*0x4f8a55*/
+    if ( !v40 && !*(unsigned char *)(v3->attachedTag + 422) ) /*0x4f8a55*/
     {
       AISelectTeamHouseClass(v125, (int)v3, 0); /*0x4f8a6a*/
       TeamTypeVector_CopyConstruct(&v121, v125); /*0x4f8a78*/
@@ -601,7 +601,7 @@ void HouseClass::Update_TogglePower(double a2)
   LABEL_135:
     if ( dword_A83D4C == v3 ) /*0x4f8b0e*/
     {
-      if ( !*(unsigned int *)&v3[1].__pad_38[24] && byte_880999 ) /*0x4f8b23*/
+      if ( !*(unsigned int *)&v3[1].attachedBomb[24] && byte_880999 ) /*0x4f8b23*/
         BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x4f8b2b*/
       if ( dword_A83D4C == v3 ) /*0x4f8b36*/
       {
@@ -613,7 +613,7 @@ void HouseClass::Update_TogglePower(double a2)
           if ( (int)dword_A8ED84 - v45 >= Object_field_0x13C ) /*0x4f8b5d*/
           {
   LABEL_144:
-            if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&v3->__pad_C[24] + 24))(&v3->__pad_C[24]) < 100 /*0x4f8b94*/
+            if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&v3->vtable4[24] + 24))(&v3->vtable4[24]) < 100 /*0x4f8b94*/
               && *(unsigned int *)&v3[31].__pad_140[220]
                + *(unsigned int *)&v3[31].__pad_140[224]
                + *(unsigned int *)&v3[31].__pad_140[228]

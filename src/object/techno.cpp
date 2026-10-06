@@ -11,8 +11,19 @@
 using ra2::game::AbstractClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
-// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
-extern int AudioSource;  // 词表 (canon 无条目, int 兜底) L1306
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioSource;  // 词表 (canon 无条目, int 兜底) L1306
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace ra2 { namespace game {
+int Cell_CanPlaceBuilding(...);  // g57c5 W5 vocab
+int Cell_GetGroundHeight(...);  // g57c5 W5 vocab
+int ConstructionPositionTracker(...);  // g57c5 W5 vocab
+int Coord_GetCoords(...);  // g57c5 W5 vocab
+int CreateSmokeEffectAt(...);  // g57c5 W5 vocab
+int Math_RoundToInt(...);  // g57c5 W5 vocab
+int ObjectClass_DetectCloaked(...);  // g57c5 W5 vocab
+int PlaySoundEffectAt(...);  // g57c5 W5 vocab
+} }
+// ---- g57c5 W5 end ----
 extern int Coord;  // 词表 (canon 无条目, int 兜底) L1352
 extern int byte_A8EB7F;  // 词表 (canon 无条目, int 兜底) L1323
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int dword_8871E0;  // 词表 (canon 无条目, int 兜底) L1321
@@ -1549,7 +1560,7 @@ bool TechnoClass::CreateUnit()
                         v52 = (ObjectClass *)RA2_OPNEW(0xB0u); /*0x4240f1*/
                         if ( v52 ) /*0x4240f8*/
                         {
-                          *(unsigned int *)v133 = *(unsigned int *)&v51->__pad_C[24]; /*0x42410c*/
+                          *(unsigned int *)v133 = *(unsigned int *)&v51->vtable4[24]; /*0x42410c*/
                           v53 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3); /*0x424110*/
                           ObjectClass::SpawnAtCell( /*0x42413b*/
                             v52,
@@ -3722,7 +3733,7 @@ char RadBeam::drawPassengerPips(char a2) {
   return a2; /*0x659557*/
 }
 // 0x633d30
-int TechnoClass::ClearScriptPlanningData() { return 0; }
+int TechnoClass::ClearScriptPlanningData() { return 0; 
 // G42.34 T10: orphan raw body removed (def is the stub above; body was
 // stranded at namespace scope by the L-fix close-stub wave and never compiled).
 /* ASM:
@@ -4244,9 +4255,10 @@ int TechnoClass::sub_744720() { return 0; }  // L-fix: close stub
 int TechnoClass::sub_7440B0() { return 0; }  // L-fix: close stub
 int TechnoClass::sub_744100() { return 0; }  // L-fix: close stub
 // 0x743190
-int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
+int TechnoClass::SelectAutoTargetWithGarrison() { return 0; 
+}
 // 0x732050
-int TechnoClass::GatherAllBuildings() { return 0; }
+int TechnoClass::GatherAllBuildings() { return 0; 
 
 } // namespace game
 } // namespace ra2

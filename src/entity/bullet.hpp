@@ -161,6 +161,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ValidateTarget();  // 0x46aff0
     int PowerDrainProcess(int a1, int a2);  // 0x46b560
     // === FUNCS-MOVE (END) ===
+public:  // g57c5 W4b supply slot
+    int BulletClass_field_0x10C;  // 0x10C g57c5 W4b (self-desc vocab, ml slot witness)
 };
 
 } // namespace gamemd

@@ -509,7 +509,7 @@ int ComPtr::ReleaseSimple() {
 
   result = *(unsigned int *)this->__pad_0; /*0x67fdd0*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x67fdd0*/
-    return (*(int (**)(int))(result->q008)(result); /*0x67fdd9*/
+    return (*(int (**)(int))(result->vtable3)(result); /*0x67fdd9*/
   return result; /*0x67fddc*/
 }
 }

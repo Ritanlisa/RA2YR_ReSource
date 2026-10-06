@@ -51,11 +51,11 @@ public:
 
     void SetBaseCell(CellStruct* cell);  // 0x65B4C0
     int GetSpread() const;  // 0x65B4B0
-    void SetSpread(int cells);  // 0x65B4D0
-    void SetRadLevel(int level);  // 0x65B4F0
+    void SetSpread(int a2); // 0x65B4D0
+    void SetRadLevel(int a2); // 0x65B4F0
     // 0x65B510 GetRadLevel
     int GetRadLevel() const;
-    void Add(int radLevel);  // 0x65B530
+    void Add(int a2); // 0x65B530
     // 0x65B580 Activate
     void Activate();
     int GetRadLevelAt(CellStruct* cell);  // 0x65B8F0
@@ -91,6 +91,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SaveLoad_Prefix(int a1, int a2);  // 0x65b3d0
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x65b450
     // === FUNCS-MOVE (END) ===
+public:  // g57c5 W4 supply slot
+    void* RadDuration;  // 0x6C g57c5 W4 supply (ml RadSiteClass@0x6C)
+public:  // g57c5 W4 supply slot
+    void* RadTimeLeft;  // 0x70 g57c5 W4 supply (ml RadSiteClass@0x70)
 };
 
 } // namespace gamemd

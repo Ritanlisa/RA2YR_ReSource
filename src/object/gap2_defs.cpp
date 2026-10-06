@@ -26,8 +26,27 @@ namespace gamemd { using ra2::game::AbstractClass;
 #endif
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimClass_e4.hpp"  // gB C2027 supply
-// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
-extern int AudioConfig;  // 词表 (canon 无条目, int 兜底) L1062
+#include "e4/classes/AirstrikeClass_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace ra2 { namespace game {
+int AbstractClass_Constructor(...);  // g57c5 W5 vocab
+int AnimTypeClass_FindIndex(...);  // g57c5 W5 vocab
+int AudioFile_Stop(...);  // g57c5 W5 vocab
+int BufferIO_Flush(...);  // g57c5 W5 vocab
+int CCINIClass_GetDB(...);  // g57c5 W5 vocab
+int FootClass_MovementAI(...);  // g57c5 W5 vocab
+int LayerClass_CoordinatesLegal(...);  // g57c5 W5 vocab
+int LayerClass_IsWithinUsableArea(...);  // g57c5 W5 vocab
+int Random_Range(...);  // g57c5 W5 vocab
+int StartAudioControllerAt(...);  // g57c5 W5 vocab
+int WTFMode_ResetUnitFlags(...);  // g57c5 W5 vocab
+int WinAPI_Wrapper(...);  // g57c5 W5 vocab
+int nullsub_84(...);  // g57c5 W5 vocab
+} }
+// ---- g57c5 W5 end ----
+
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioConfig;  // 词表 (canon 无条目, int 兜底) L1062
+
 extern int Matrix3x4;  // 词表 (canon 无条目, int 兜底) L1059
 extern int dword_889FB8;  // 词表 (canon 无条目, int 兜底) L587
 extern int BufferIOFileClass;  // 词表 (canon 无条目, int 兜底) L717
@@ -9890,7 +9909,5 @@ int AbstractClass::updateSuperWeaponTimer(int a1) {
 namespace ra2 { namespace game { 
 void* AbstractClass::fireSuperWeapon(void* a1, int a2) { return nullptr; } } } {
   return nullptr;  /* G42.33b2 restub: auto restub (pass4+, 48 errs): wrong-universe gap2 body; truth func_0x763f60.json */
-}
-}
 }
 

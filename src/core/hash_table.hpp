@@ -28,7 +28,7 @@ public:
     static uint32_t ComputeHashSHA1(const void* data, uint32_t size);  // 0x476D80
 
     // IDA 0x52B720
-    static void InsertOrdered(void* table, const void* entry, int a2);  // 0x4F4410
+    static int InsertOrdered(void* table, const void* entry, int a2); // 0x4F4410
 
     // IDA 0x69D8C0 area
     void Reset();
@@ -52,13 +52,13 @@ public:
     void Init();
 
     // IDA 0x69DA00
-    void Process(const void* data, uint32_t size);  // 0x69D960
+    int Process(int a2, int a3);  // 0x69D960
 
     // IDA 0x69DC00
-    void Compute(uint8_t digest[20]);  // 0x69D9E0
+    int Compute(char *a2, int a1); // 0x69D9E0
 
     // IDA 0x69D8C0 area
-    void Transform();  // 0x69DB30
+    int Transform(int *a1, unsigned int *a2); // 0x69DB30
 
     // IDA 0x69D8C0 area
     // design: no binary equivalent found in IDA
@@ -77,8 +77,8 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ComputeThunk(int a1);  // 0x69e9e0 -- SHA1::ComputeThunk
     // === SYMBOL-ANCHOR (END) ===
-    void Compute(char *a2, int a1);
-    void Transform(int *a1, unsigned int *a2);
+public:  // g57c5 W4b supply slot
+    unsigned int SHA1_field_0x04;  // 0x4 g57c5 W4b (self-desc vocab, ml slot witness)
 };
 
 // ============================================================================
@@ -92,7 +92,7 @@ public:
     CRC32();
 
     // IDA 0x69E000
-    static uint32_t Compute(const void* data, uint32_t size);  // 0x4A1FB0
+    static uint32_t Compute(const void* data, uint32_t size, int a3); // 0x4A1FB0
 
     uint32_t    m_CRC;          // 0x00
     uint32_t    m_Count;        // 0x04

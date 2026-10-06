@@ -2,10 +2,16 @@
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "utility_ext.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
-
 namespace gamemd {
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+void j_DeleteAndZero();  // g57c5 W5 vocab (csp)
+} // namespace gamemd
+// ---- g57c5 W5 end ----
+
+
 // 0x7be5d0
-int AllocCallback::Dispatch()
+int AllocCallback::Dispatch(int a1, int a2, unsigned int Block, size_t Size)
 {
     unsigned int *result; // eax
 
@@ -33,7 +39,7 @@ int AllocCallback::Dispatch()
     return result; /*0x7be5f5*/
 }
 // 0x4f3840
-void GraphicMenuImageItem::QueryInterface()
+int GraphicMenuImageItem::QueryInterface(char a2)
 {
     ObjectClass *v3; // edi
 

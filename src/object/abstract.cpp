@@ -153,8 +153,8 @@ CoordStruct* AbstractClass::fetchAlternateCoordinates(CoordStruct* out) const { 
 void AbstractClass::updateLogic() {}
 CoordStruct AbstractClass::fetchCoordinatesHere() const { CoordStruct crd; fetchCoordinatesHere(&crd); return crd; }
 CoordStruct AbstractClass::fetchDestination(TechnoClass* docker) const { CoordStruct crd; fetchDestination(&crd, docker); return crd; }
-CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd; } 
-bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId; } 
+CoordStruct AbstractClass::fetchAlternateCoordinates() const { CoordStruct crd; fetchAlternateCoordinates(&crd); return crd;  
+bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId < rhs.uniqueId;  
 
 } // namespace game
 } // namespace ra2

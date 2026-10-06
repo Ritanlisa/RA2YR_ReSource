@@ -1,7 +1,16 @@
 #include "network/network_ext.hpp"
-#include "e4/e4_globals_decls.hpp"
-
+#include "e4/e4_globals_decls.hpp"namespace gamemd {
+#include "e4/classes/ConnectionClass_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/IPXInterfaceClass_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/Waypoint_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
+class ConnectionClass;  // g57c5 W5 fwd
+class IPXInterfaceClass;  // g57c5 W5 fwd
+} // namespace gamemd
+// ---- g57c5 W5 end ----
+
+
 
 // --- IPXGlobalConnClass ---
 
@@ -80,5 +89,4 @@ void NetworkOptions::ApplySettings(int a2, char a3, int a4)  // g57b5 W4: raw çœ
       strcpy(a3, Buffer); /*0x7b10a5*/
     }
     return v6; /*0x7b0f62*/
-}
 } // namespace gamemd

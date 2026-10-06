@@ -1,6 +1,14 @@
 #include "core/stream_ext.hpp"
-// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+#include "e4/classes/Audio_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/AudioStream_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
+class AudioBuffer;  // g57c5 W5 fwd
+} // namespace gamemd
+// ---- g57c5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 
+namespace gamemd {
+
     void Debug_Log(void);                              // raw 0x449612 Debug::Log;
 } // namespace gamemd
 // ---- g57b5 W3 end ----
@@ -10,7 +18,7 @@ namespace gamemd {
 // --- Buffer ---
 
 // 0x40a340
-void Buffer::CreateDirectSound()
+int Buffer::CreateDirectSound()
 {
     int *v1; // ebx
     unsigned int *v2; // esi

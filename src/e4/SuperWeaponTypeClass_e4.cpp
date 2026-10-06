@@ -457,13 +457,10 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     {
       v20 = v19; /*0x6cebd8*/
     }
-    __asm { fld dword ptr [ebp+0F8h] } /*0x6cebda*/
+    v34 = (double)*(float *)(_EBP + 248); /*0x6cebda G57c4 x87c4: fld dword [ebp+0F8h] + fstp var_408@0x6cebeb*/
     *(unsigned int *)(_EBP + 196) = v20; /*0x6cebe5*/
-    __asm { fstp qword ptr [esp+408h+var_408]; double } /*0x6cebeb*/
-    INIClass::ReadDouble_Overwrite((double *)this, (unsigned __int8 *)(_EBP + 36), g_INI_Key_Range, v34); /*0x6cebf4*/
+    *(float *)(_EBP + 248) = (float)INIClass::ReadDouble_Overwrite((double *)this, (unsigned __int8 *)(_EBP + 36), g_INI_Key_Range, v34); /*0x6cebf4 G57c4 x87c4: merged fstp dword [ebp+0F8h]@0x6cec01*/
     v21 = *(unsigned int *)(_EBP + 252); /*0x6cebf9*/
-    __asm { fstp dword ptr [ebp+0F8h] } /*0x6cec01*/
-    *(float *)(_EBP + 248) = _ET1; /*0x6cec01*/
     *(unsigned int *)(_EBP + 252) = INIClass::ReadInt_Overwrite( /*0x6cec13*/
                                 (bool *)this,
                                 (unsigned __int8 *)(_EBP + 36),
@@ -532,20 +529,10 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
                                (unsigned __int8 *)(_EBP + 36),
                                aManualcontrol,
                                v38);
-    INIClass::ReadDouble_Overwrite((double *)this, (unsigned __int8 *)(_EBP + 36), aRechargetime, 0.0); /*0x6ced6e*/
-    __asm /*0x6ced73*/
+    v34 = INIClass::ReadDouble_Overwrite((double *)this, (unsigned __int8 *)(_EBP + 36), aRechargetime, 0.0); /*0x6ced6e*/
+    if ( v34 != dbl_7E2800 ) /*0x6ced7e G57c4 x87c4: fcom/fnstsw@0x6CED73 C3!=0 -> st0==0.0 -> discard; else scale*/
     {
-      fcom ds:dbl_7E2800
-      fnstsw ax
-    }
-    if ( (_AX & 0x4000) != 0 ) /*0x6ced7e*/
-    {
-      __asm { fstp st } /*0x6ced93*/
-    }
-    else
-    {
-      __asm { fmul ds:flt_7F4100 } /*0x6ced80*/
-      IDA_LOWORD(v30) = Math::RoundToInt(a3); /*0x6ced86*/
+      IDA_LOWORD(v30) = Math::RoundToInt(v34 * flt_7F4100); /*0x6ced86 G57c4 x87c4: fmul ds:flt_7F4100@0x6ced80*/
       *(unsigned int *)(_EBP + 176) = v30; /*0x6ced8b*/
     }
     v31 = (char *)(_EBP + 204); /*0x6ced9c*/

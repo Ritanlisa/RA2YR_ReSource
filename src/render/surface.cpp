@@ -354,7 +354,7 @@ bool DSurface::BlitPart(
     RectangleStruct dest_bounds;
     src->GetRect(&src_bounds);
     ::gamemd::Surface::GetRect(&dest_bounds);
-    return Blit(dest_bounds, dest_rect, src, src_bounds, src_rect, option1, option2);
+    return Blit((int*)&dest_bounds, (int*)&dest_rect, (unsigned int*)src, (int*)&src_bounds, (int*)&src_rect, (int)option1, (char)option2);  // g57c5 W5g2: raw 真形调用适配
 }
 // ============================================================
 // IntersectSurfaceRects — IDA: 0x7BBE20 (463B)
@@ -550,7 +550,7 @@ char DSurface::BlitCore(
     {
         RectangleStruct dest_r = { a3[0], a3[1], a3[2], a3[3] };
         RectangleStruct src_r  = { a6[0], a6[1], a6[2], a6[3] };
-        return dst->XSurface_BlitPart(
+        return dst->BlitPart(
                     dest_r, const_cast<class Surface*>(src),
                     src_r, a7 != 0, true) ? 1 : 0;
     }
@@ -697,7 +697,7 @@ hw_fail_dst:
 // DSurface::BlitCore (same body, raw-int ABI shared with the REPLACE hook);
 // the virtual forwards its typed rectangle arguments positionally.
 // 0x4bb0d0
-bool DSurface::Blit(const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2, class Surface* src, const RectangleStruct& dest_rect, const RectangleStruct& src_rect, bool option1, bool option2, int a2, int a3, unsigned int *a4, int a5, int a6, int a7, char a8)  // g57b5 W4: raw 真值补参 (a2,a3,a4,a5,a6,a7,a8)
+bool DSurface::Blit(int *a2, int *a3, unsigned int *a4, int *a5, int *a6, int a7, char a8)  // g57c5 W5g2: raw 0x4BB0D0 真形同步 (a2..a8 即 7 参本体)  // g57b5 W4: raw 真值补参 (a2,a3,a4,a5,a6,a7,a8)
 {
     int v9; // ecx
     void **v10; // ebx

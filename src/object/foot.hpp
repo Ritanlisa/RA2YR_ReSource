@@ -360,6 +360,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* vtable1;  // 0x0 (ml truth)  gB vtable supply
     void* vtable2;  // 0x4 (ml truth)  gB vtable supply
     void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+public:  // g57c5 W4 supply slot
+    ILocomotion* Locomotor;  // 0x674 g57c5 W4 supply (ml FootClass@0x674)
 };
 
 } // namespace game

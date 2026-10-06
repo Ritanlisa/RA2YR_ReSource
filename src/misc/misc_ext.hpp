@@ -517,6 +517,8 @@ virtual int GetClassIdentifier(unsigned int *a2);  // 0x41E500 (G42 sig-sync: ID
     unsigned int q0144;  // 0x144
     unsigned int q0147;  // 0x147
     unsigned int q0148;  // 0x148
+public:  // g57c5 W4b supply slot
+    void* __pad_0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
 };
 // 7 methods in IDA
 // CSP: AnimFile matched via T1

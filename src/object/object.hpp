@@ -636,6 +636,10 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* RenderTechnoOverlaySHP( TechnoClass * aP1, int a3, TechnoClass * aP3, int a5, TechnoClass * aP5, TechnoClass * aP6, int a8, char a9, TechnoClass * aP9, TechnoClass * aP10, int a12);  // G42.39 supply
     void* vtable1;  // 0x0 (ml truth)  gB vtable supply
     void* vtable3;  // 0x8 (ml truth)  gB vtable supply
+public:  // g57c5 W6 owner supply
+    unsigned int u32_61;  // 0x61 g57c5 W6 (ml ObjectClass@0x61 own)
+public:  // g57c5 W6 owner supply
+    unsigned int q0AB;  // 0xAB g57c5 W6 (ml ObjectClass@0xAB own)
 };
 
 } // namespace game

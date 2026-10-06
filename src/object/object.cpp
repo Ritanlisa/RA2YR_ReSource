@@ -23,8 +23,17 @@ using ra2::game::TechnoClass;
 #include <cmath>
 #include "core/reverse_marker.hpp"
 #include "e4/e4_globals_decls.hpp"
-// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+#include "e4/classes/RefCount_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/Voice_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace ra2 { namespace game {
+class RefCount;  // g57c5 W5 fwd
+class Voice;  // g57c5 W5 fwd
+} }
+// ---- g57c5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 
 namespace gamemd {
+
     void AudioStream_ReleaseChannel(void *a1);   // raw 0x405dbc;
 } // namespace gamemd
 // ---- g57b5 W3 end ----
@@ -299,10 +308,8 @@ void AudioController::Stop()
           *result = 0; /*0x405e6f*/
         }
       }
-    }
     result[2] = 0; /*0x405e71*/
     return result; /*0x405e74*/
-}
 
 } // namespace game
 } // namespace ra2  // G42.35c: file-scope closes

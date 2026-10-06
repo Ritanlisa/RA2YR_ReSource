@@ -18,8 +18,15 @@
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
 // ---- g57b5 W2b: TU-local vocab supply (object/supplied_bodies.cpp 同款) ----
 #include "core/cellcoord.hpp"  // CellCoord::To_CellObj 单源权威 (G42.36)
-// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
-extern int Mixer;  // 词表 (canon 无条目, int 兜底) L513
+#include "e4/classes/Rules_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int Mixer;  // 词表 (canon 无条目, int 兜底) L513
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+class Rules;  // g57c5 W5 fwd
+bool ProductionCompletionCallback(...);  // g57c5 W5 vocab
+int RemoveTarget(...);  // g57c5 W5 vocab
+} // namespace gamemd
+// ---- g57c5 W5 end ----
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
@@ -54,7 +61,7 @@ struct Checksummer {                           // raw 0x425490 Add_double
 struct Coord {                                 // csp_canon:130963 同名类 + raw fn_42:3239 静态词表
     static void *GetCoords(void *a1, void *a2);
     static CellClass *To_Cell(void *a1, void *a2);
-    unsigned char __pad_C[0x400];              // 0xC 槽词汇 (v12[2].__pad_C[..] 词表)
+    unsigned char __pad_C[0x400];              // 0xC 槽词汇 (v12[2].vtable4[..] 词表)
 };
 struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
     unsigned char __pad_0[0x58];
@@ -116,7 +123,7 @@ int AnimClass::SimpleCtor()
     this->AnimClass_field_0x0 = &vt_AnimClass; /*0x422847*/
     this->AnimClass_field_0x4 = (unsigned int)&vt_AnimClass; /*0x42284d*/
     this->AnimClass_field_0x8 = (unsigned int)&vt_AnimClass; /*0x422854*/
-    *(unsigned int *)this->__pad_C = (unsigned int)&off_7E3328; /*0x42285b*/
+    *(unsigned int *)this->vtable4 = (unsigned int)&off_7E3328; /*0x42285b*/
     if ( dword_A8E9B8 < dword_A8E9B0 /*0x422896*/
       || (byte_A8E9B5 || !dword_A8E9B0)
       && dword_A8E9BC > 0
@@ -255,17 +262,17 @@ int AnimClass::UpdateProjectileTrajectory()
     v4 = ((JumpjetLocomotionClass *)(double *)&this->__pad_120[8])->Update2(); /*0x423946*/
     AnimClass_field_0xC8 = (Coord *)(unsigned int)this->AnimClass_field_0xC8; /*0x423948*/
     v24 = v4; /*0x42394e*/
-    if ( AnimClass_field_0xC8[2].__pad_C[202] ) /*0x423952*/
+    if ( AnimClass_field_0xC8[2].vtable4[202] ) /*0x423952*/
       *((float *)v3 + 11) = *((float *)v3 + 11) + *((double *)v3 + 1); /*0x423962*/
     if ( v4 == 1 ) /*0x423968*/
     {
-      if ( *(unsigned int *)&((Coord *)(unsigned int)this->AnimClass_field_0xC8)[2].__pad_C[116] ) /*0x423987*/
+      if ( *(unsigned int *)&((Coord *)(unsigned int)this->AnimClass_field_0xC8)[2].vtable4[116] ) /*0x423987*/
       {
         v6 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x42399b*/
         if ( v6 ) /*0x4239a2*/
         {
           v7 = (int *)(*((int (__thiscall **)(AnimClass *, char *))this->AnimClass_field_0x0 + 18))(this, v25); /*0x4239bb*/
-          ((AnimClass *)v6)->ctor(*(void **)&((Coord *)(unsigned int)this->AnimClass_field_0xC8)[2].__pad_C[116], v7, 0, 1, (void *)0x600, 0, 0); /*0x4239ce*/
+          ((AnimClass *)v6)->ctor(*(void **)&((Coord *)(unsigned int)this->AnimClass_field_0xC8)[2].vtable4[116], v7, 0, 1, (void *)0x600, 0, 0); /*0x4239ce*/
         }
       }
       Coords = (unsigned int *)Coord::GetCoords(v26, v21); /*0x4239da*/
@@ -280,12 +287,12 @@ int AnimClass::UpdateProjectileTrajectory()
           v11 = (unsigned int *)Coord::GetCoords(v28, v21); /*0x423a11*/
           v12 = (Coord *)(unsigned int)this->AnimClass_field_0xC8; /*0x423a29*/
           v13 = abs32(v11[1] - v10[1]) + abs32(*v11 - *v10); /*0x423a3a*/
-          if ( v13 <= *(unsigned int *)&v12[2].__pad_C[168] ) /*0x423a44*/
+          if ( v13 <= *(unsigned int *)&v12[2].vtable4[168] ) /*0x423a44*/
           {
-            IDA_LOWORD(v14) = Math::RoundToInt(*(double *)&v12[2].__pad_C[28]); /*0x423a4c*/
+            IDA_LOWORD(v14) = Math::RoundToInt(*(double *)&v12[2].vtable4[28]); /*0x423a4c*/
             vtable0 = firstObject->vtable1; /*0x423a51*/
             v22 = v14; /*0x423a55*/
-            v20 = *(unsigned int *)&v12[2].__pad_C[164]; /*0x423a65*/
+            v20 = *(unsigned int *)&v12[2].vtable4[164]; /*0x423a65*/
             v23 = (void (__thiscall **)(ObjectClass *, unsigned int *, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))vtable0; /*0x423a68*/
             v16 = ZCoordToScreenY(v13); /*0x423a6c*/
             v23[91](firstObject, (unsigned int *)&v22, v16, v20, 0, 0, 0, 0); /*0x423a7d*/
@@ -461,6 +468,11 @@ int AnimClass::resetAnimation()
 } // namespace gamemd
 
 // 0x449A50
+// g57c5 W7 DEBT (wrong-universe body): raw decompile this=AnimClass* is an IDA til
+// misbind -- body operates on BuildingClass production-exit state machine
+// (BuildingClass_StartProduction / vtable1+157 / 311 / 122, WasOnline outparam,
+// BuildingClass_field_bool_6DD). Same family as techno.cpp CreateUnit (gB audit
+// §C.7). C2664/C2039 residuals here are honest debt pending re-ownership.
 namespace gamemd {
 int AnimClass::setLoopCount()
 {
@@ -527,153 +539,13 @@ bool BulletClass::CheckMirrorState(int a2) {
 
 // 0x65B4B0
 namespace gamemd {
-int RadSiteClass::GetSpread() {
+int RadSiteClass::GetSpread() const {  // g57c5 W7: const-sync (rad_site.hpp:53)
     return this->Spread; /*0x65b4b3*/
 }
 } // namespace gamemd
-
-    int AnimClass_field_0xCC; // ecx
-    int v14; // eax
-    unsigned int *v15; // eax
-    unsigned int *v17; // ecx
-    int v18; // ecx
-    int v19; // eax
-    unsigned int *v20; // ecx
-    int v21; // edx
-    char *ProductionTimeMult; // eax
-    int v23; // ecx
-    int v24; // edx
-    int v25; // eax
-    int v26; // eax
-    int v27; // eax
-    double v28; // st7
-    int v29; // eax
-    double v30; // st7
-    double v31; // st7
-    float v32; // eax
-    float v33; // eax
-    float v34; // eax
-    unsigned int *v35; // eax
-    int v36; // ecx
-    int v37; // eax
-    int *v38; // eax
-    int v39; // edx
-    unsigned int *v40; // edi
-    unsigned int *v41; // eax
-    int v42; // ecx
-    int v43; // edx
-    int v44; // eax
-    int *v45; // eax
-    int v46; // ebx
-    int v47; // eax
-    int v48; // edi
-    int v49; // eax
-    double v50; // st7
-    int v51; // eax
-    double v52; // st6
-    char v53; // cl
-    char v54; // al
-    int v55; // [esp+Ch] [ebp-54h]
-    float v56; // [esp+Ch] [ebp-54h]
-    int v57; // [esp+Ch] [ebp-54h]
-    int v58; // [esp+10h] [ebp-50h]
-    unsigned int *Coords; // [esp+10h] [ebp-50h]
-    int v60; // [esp+10h] [ebp-50h]
-    float v61; // [esp+10h] [ebp-50h]
-    int v62; // [esp+14h] [ebp-4Ch]
-    float v63; // [esp+18h] [ebp-48h] BYREF
-    float v64; // [esp+1Ch] [ebp-44h]
-    float v65; // [esp+20h] [ebp-40h]
-    int vfptr; // [esp+24h] [ebp-3Ch] BYREF
-    int v67; // [esp+28h] [ebp-38h]
-    int v68; // [esp+2Ch] [ebp-34h]
-    float v69; // [esp+30h] [ebp-30h] BYREF
-    float v70; // [esp+34h] [ebp-2Ch]
-    float v71; // [esp+38h] [ebp-28h]
-    CoordStruct v72; // [esp+3Ch] [ebp-24h] BYREF
-    int v73; // [esp+40h] [ebp-20h]
-    CoordStruct out; // [esp+48h] [ebp-18h] BYREF
-    CoordStruct v75; // [esp+54h] [ebp-Ch] BYREF
-
-    ((ObjectClass *)this)->ctor(); /*0x421eae*/
-    this->AnimClass_field_0xAC = 0; /*0x421eb8*/
-    this->__pad_B0[0] = 0; /*0x421ebe*/
-    v9 = dword_A8ED84; /*0x421ec4*/
-    this->AnimClass_field_0xBC = 0; /*0x421ec9*/
-    this->AnimClass_field_0xB4 = (int)v9; /*0x421ecf*/
-    this->AnimClass_field_0xC0 = 0; /*0x421ed5*/
-    *(unsigned int *)this->__pad_C4 = 1; /*0x421edb*/
-    this->AnimClass_field_0xC8 = (int)a2; /*0x421ee5*/
-    this->AnimClass_field_0xCC = 0; /*0x421eee*/
-    this->AnimClass_field_0xD0 = -1; /*0x421ef4*/
-    this->AnimClass_field_0xD4 = 0; /*0x421efa*/
-    *(unsigned int *)this->__pad_D8 = -1; /*0x421f00*/
-    this->AnimClass_field_0xFC = 1000; /*0x421f06*/
-    this->AnimClass_field_0x100 = 0; /*0x421f10*/
-    this->AnimClass_field_0x104 = 0; /*0x421f16*/
-    this->AnimClass_field_0x108 = Map_InvalidCoord_X; /*0x421f32*/
-    *(unsigned int *)this->__pad_10C = Map_InvalidCoord_Y; /*0x421f3c*/
-    v10 = Map_InvalidCoord_Z; /*0x421f3f*/
-    this->__pad_118[0] = 0; /*0x421f44*/
-    this->__pad_118[1] = 0; /*0x421f4a*/
-    *(unsigned int *)&this->__pad_10C[4] = v10; /*0x421f50*/
-    this->AnimClass_field_0x114 = 0; /*0x421f53*/
-    this->__pad_118[2] = 0; /*0x421f59*/
-    this->__pad_118[3] = 0; /*0x421f5f*/
-    this->AnimClass_field_0x11C = 0; /*0x421f65*/
-    this->__pad_120[0] = 0; /*0x421f6b*/
-    *(unsigned int *)&this->__pad_120[8] = 0; /*0x421f71*/
-    *(unsigned int *)&this->__pad_120[16] = 0; /*0x421f73*/
-    *(unsigned int *)&this->__pad_120[24] = 0; /*0x421f76*/
-    *(unsigned int *)&this->__pad_120[12] = 0; /*0x421f7d*/
-    *(unsigned int *)&this->__pad_120[20] = 0; /*0x421f80*/
-    *(unsigned int *)&this->__pad_120[28] = 0; /*0x421f83*/
-    ((Int4 *)((Int4 *)&this->__pad_120[56]))->Set(0, 0, 0, 1065353216); /*0x421f86*/
-    ((Int4 *)((Int4 *)&this->__pad_120[72]))->Set(0, 0, 0, 1065353216); /*0x421f96*/
-    this->AnimClass_field_0x188 = 0; /*0x421fa4*/
-    this->__pad_178[0] = 0; /*0x421faa*/
-    this->__pad_178[1] = 0; /*0x421fb0*/
-    this->AnimClass_field_0x17C = 0; /*0x421fb6*/
-    this->AnimClass_field_0x180 = 0; /*0x421fbc*/
-    this->AnimClass_field_0x184 = (int)a4; /*0x421fc2*/
-    *(unsigned int *)this->__pad_18C = 1072693248; /*0x421fc8*/
-    this->AnimClass_field_0x190 = (int)a6; /*0x421fd2*/
-    this->__pad_194[0] = 0; /*0x421fd8*/
-    this->__pad_194[1] = 1; /*0x421fde*/
-    this->__pad_194[2] = 0; /*0x421fe5*/
-    this->__pad_194[3] = 0; /*0x421feb*/
-    this->__pad_194[4] = 0; /*0x421ff1*/
-    this->__pad_194[5] = 0; /*0x421ff7*/
-    this->__pad_194[6] = 0; /*0x421ffd*/
-    this->__pad_194[7] = 0; /*0x422003*/
-    this->__pad_194[8] = 1; /*0x422009*/
-    this->__pad_194[9] = 0; /*0x422010*/
-    this->__pad_194[10] = 0; /*0x422016*/
-    this->AnimClass_field_0x0 = (int)0; /*0x42201c*/
-    this->AnimClass_field_0x4 = (int)0; /*0x422022*/
-    this->AnimClass_field_0x8 = (int)0; /*0x422028*/
-    *(unsigned int *)this->__pad_C = (unsigned int)&off_7E3328; /*0x422030*/
-    this->__pad_D8[4] = 0; /*0x422037*/
-    AbstractClass::GenerateUniqueID((AbstractClass *)&this->AnimClass_field_0x4); /*0x42203d*/
-    ((AudioController *)&this->AnimClass_field_0x1A0)->Init(); /*0x422048*/
-    ((AudioController *)&this->AnimClass_field_0x1B4)->Init(); /*0x422053*/
-    if ( dword_A8E9B8 < dword_A8E9B0 /*0x42208b*/
-      || (byte_A8E9B5 || !dword_A8E9B0)
-      && dword_A8E9BC > 0
-      && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8E9A8 + 8))(
-           &dword_A8E9A8,
-           dword_A8E9BC + dword_A8E9B0,
-           0) )
-    {
-      v11 = dword_A8E9B8++; /*0x422098*/
-      *((unsigned int *)dword_A8E9AC + v11) = this; /*0x4220a7*/
-    }
-
-}
-}
 // 0x421EA0
 namespace gamemd {
-void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7)
+int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7)
 {
     wchar_t *v9; // eax
     int v10; // eax
@@ -799,7 +671,7 @@ void* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, 
     this->AnimClass_field_0x0 = (int)&vt_AnimClass; /*0x42201c*/
     this->AnimClass_field_0x4 = (int)&vt_AnimClass; /*0x422022*/
     this->AnimClass_field_0x8 = (int)&vt_AnimClass; /*0x422028*/
-    *(unsigned int *)this->__pad_C = (unsigned int)&off_7E3328; /*0x422030*/
+    *(unsigned int *)this->vtable4 = (unsigned int)&off_7E3328; /*0x422030*/
     this->__pad_D8[4] = 0; /*0x422037*/
     AbstractClass::GenerateUniqueID((AbstractClass *)&this->AnimClass_field_0x4); /*0x42203d*/
     ((AudioController *)&this->AnimClass_field_0x1A0)->Init(); /*0x422048*/
@@ -1088,7 +960,7 @@ int AnimClass::ClearTargetReferences(int a2, int a3)
 
 // 0x65B4D0
 namespace gamemd {
-void RadSiteClass::SetSpread(int a2)
+int RadSiteClass::SetSpread(int a2)
 {
     int result; // eax
 
@@ -1101,7 +973,7 @@ void RadSiteClass::SetSpread(int a2)
 
 // 0x65B4F0
 namespace gamemd {
-void RadSiteClass::SetRadLevel(int a2)
+int RadSiteClass::SetRadLevel(int a2)
 {
     int result; // eax
 
@@ -1115,7 +987,7 @@ void RadSiteClass::SetRadLevel(int a2)
 
 // 0x65B530
 namespace gamemd {
-void RadSiteClass::Add(int a2)
+int RadSiteClass::Add(int a2)
 {
     int v3; // eax
     int v4; // edi

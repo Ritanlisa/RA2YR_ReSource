@@ -12,6 +12,7 @@
 #include "misc/misc_ext.hpp"
 #include "structure/building.hpp"
 #include "e4/classes/Cell_e4.hpp"  // G42.34j: after tree headers (fwd names provided)
+#include "e4/classes/Math_e4.hpp"  // G42.36 C2027 supply
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
 int Sqrt(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
@@ -1099,8 +1100,8 @@ int UnitClass::SimpleDeployerDeploy()
             ((unsigned int *)this)[0] = 1; /*0x739b2c*/
           if ( this->Deploying && (v3 = ((unsigned int *)this)[0]) != 0 ) /*0x739b44*/
           {
-            if ( *(unsigned int *)&this->radioContact >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[52] /*0x739b64*/
-                             + *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[40]
+            if ( *(unsigned int *)&this->radioContact >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].vtable4[52] /*0x739b64*/
+                             + *(unsigned int *)&v3->AnimClass_field_0xC8[2].vtable4[40]
                              - 1 )
               *(unsigned short *)&this->Deployed = 1; /*0x739b6a*/
           }
@@ -1127,9 +1128,9 @@ int UnitClass::SimpleDeployerDeploy()
                 ((unsigned int *)this)[0]->AnimClass_field_0xD4 = (IUnknown *)(*((int (__thiscall **)(UnitClass *))this->vtable1 + 121))(this); /*0x739c1a*/
               }
               deployAnim = ((unsigned int *)this)[0]; /*0x739c20*/
-              *(unsigned int *)&this->radioContact = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[40]; /*0x739c32*/
+              *(unsigned int *)&this->radioContact = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].vtable4[40]; /*0x739c32*/
               v7 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x739c3e*/
-              v8 = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[36]; /*0x739c44*/
+              v8 = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].vtable4[36]; /*0x739c44*/
               ((unsigned int *)this)[5] = v8; /*0x739c50*/
               ((unsigned int *)this)[2] = v7; /*0x739c56*/
               ((unsigned int *)this)[3] = v13; /*0x739c5c*/
@@ -1346,8 +1347,8 @@ int UnitClass::SimpleDeployerUndeploy()
     {
       if ( this->Undeploying && (v3 = ((unsigned int *)this)[0]) != 0 ) /*0x739cf7*/
       {
-        if ( *(unsigned int *)&this->radioContact >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[52] /*0x739d17*/
-                         + *(unsigned int *)&v3->AnimClass_field_0xC8[2].__pad_C[40]
+        if ( *(unsigned int *)&this->radioContact >= *(unsigned int *)&v3->AnimClass_field_0xC8[2].vtable4[52] /*0x739d17*/
+                         + *(unsigned int *)&v3->AnimClass_field_0xC8[2].vtable4[40]
                          - 2 )
         {
           vtable0 = (int (__thiscall **)(UnitClass *))this->FootClass; /*0x739d1d*/
@@ -1383,9 +1384,9 @@ int UnitClass::SimpleDeployerUndeploy()
           ((unsigned int *)this)[0]->AnimClass_field_0xD4 = (IUnknown *)(*((int (__thiscall **)(UnitClass *))this->vtable1 + 121))(this); /*0x739dfe*/
         }
         deployAnim = ((unsigned int *)this)[0]; /*0x739e04*/
-        ((unsigned int *)this)[0] = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[40]; /*0x739e16*/
+        ((unsigned int *)this)[0] = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].vtable4[40]; /*0x739e16*/
         v11 = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x739e22*/
-        v12 = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].__pad_C[36]; /*0x739e28*/
+        v12 = *(unsigned int *)&deployAnim->AnimClass_field_0xC8[2].vtable4[36]; /*0x739e28*/
         ((unsigned int *)this)[5] = v12; /*0x739e34*/
         ((unsigned int *)this)[2] = v11; /*0x739e3a*/
         ((unsigned int *)this)[3] = v18; /*0x739e40*/
@@ -10847,7 +10848,6 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 #include "e4/classes/TeamClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/UnitTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
-#include "e4/classes/Math_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 
@@ -10892,6 +10892,5 @@ AbstractType __stdcall UnitClass::whatAmI() const { return kObjectTypeId; }
 int UnitClass::objectSize() const { return sizeof(UnitClass); }
 void UnitClass::DrawAsVXL(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {}
 void UnitClass::DrawAsSHP(Point2D* coords, RectangleStruct* bounding_rect, uint32_t dwUnk7, uint32_t dwUnk8) {
-}
 
 } // namespace gamemd

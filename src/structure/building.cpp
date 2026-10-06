@@ -4503,7 +4503,7 @@ bool BuildingClass::CheckExitPath()
   return result; /*0x639d22*/
 }
 // 0x453840
-void BuildingClass::RenderExitPosition()
+int BuildingClass::RenderExitPosition()
 {
     int *v2; // eax
     int v3; // edi
@@ -11184,6 +11184,7 @@ void BuildingClass::Infiltrate()
 //DUPDEF     goto LABEL_63; /*0x457513*/
 //DUPDEF   }
 //DUPDEF }
+}
 // 0x458200
 int BuildingClass::ProcessStructureAbandoned() {
     int result; // eax
@@ -11621,6 +11622,7 @@ void BuildingClass::EjectCrew()
 //DUPDEF-G42.33c5-surplus-close   }
 //DUPDEF   return v7; /*0x4433f9*/
 //DUPDEF }
+}
 // 0x454DB0
 int BuildingClass::CleanupOccupation() {
     BuildingClass *v1; // esi
@@ -17394,9 +17396,9 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF }
 //DUPDEF uint32_t BuildingClass::GetField184() const { return BuildingClass_field_544; }
 // 0x447210
-//DUPDEF void BuildingClass::GetActionOnObject() {}
+//DUPDEF void BuildingClass::GetActionOnObject() {
 // 0x41c060
-//DUPDEF bool BuildingClass::vt_entry_4E4()  { return false; }
+//DUPDEF bool BuildingClass::vt_entry_4E4()  { return false; 
 
 // G42.33 ph7v2: structural tail repairs applied
 

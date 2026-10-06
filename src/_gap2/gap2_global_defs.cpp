@@ -14001,8 +14001,8 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
   p_DynamicVector_field_0x28 = &this->DynamicVector_field_0x28; /*0x5cedd8*/
   *(unsigned int *)&this->DynamicVector_field_0x1[3] = 0; /*0x5ceddb*/
   this->DynamicVector_field_0x8 = 0; /*0x5cede0*/
-  this->__pad_C[0] = 1; /*0x5cede3*/
-  this->__pad_C[1] = 0; /*0x5cede7*/
+  this->vtable4[0] = 1; /*0x5cede3*/
+  this->vtable4[1] = 0; /*0x5cede7*/
   *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x5cedea*/
   *(unsigned int *)this->__pad_14 = 10; /*0x5cedf0*/
   this->DynamicVector_field_0x10 = 0; /*0x5cedf7*/

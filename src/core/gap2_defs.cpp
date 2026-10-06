@@ -17,8 +17,17 @@
 #include "core/stream_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
-// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
+#include "e4/classes/OwnerDrawControl_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/WinModemClass_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
+class OwnerDrawControl;  // g57c5 W5 fwd
+class WinModemClass;  // g57c5 W5 fwd
+} // namespace gamemd
+// ---- g57c5 W5 end ----
+// ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 
+namespace gamemd {
+
     double Math_SinCos(double a1);                     // raw 0x5ae775 Math::SinCos 家族;
     double Math_ArcTan2(double a1);                    // raw 0x5af0a5 Math::ArcTan2 家族;
 } // namespace gamemd

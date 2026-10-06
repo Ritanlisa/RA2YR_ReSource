@@ -113,7 +113,7 @@ int release(int,int,int,int);  // 0x5414C0
     int32_t CheckStatus();  // 0x5424A0
     int ProcessQueue();                                              // 0x542520
     void Flush();                                                     // 0x542EC0
-    int32_t getPlayerName();                                          // 0x543100
+    int32_t getPlayerName(char a2); // 0x543100
 
     uint32_t  Socket;
     bool      Initialized;

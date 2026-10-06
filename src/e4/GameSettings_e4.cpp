@@ -183,105 +183,47 @@ int GameSettings::Read()
                           g_INI_Key_Video,
                           aAllowvramsideb,
                           *(unsigned char *)(_ESI.v + 54));
-    __asm { fld dword ptr [esi+38h] } /*0x5fa9ad*/
+    v34 = (double)*(float *)(_ESI.v + 56); /*0x5fa9ad G57c4 x87c4: fld dword [esi+38h] + fstp var slot@0x5fa9bb*/
     *(unsigned char *)(_ESI.v + 54) = v10; /*0x5fa9b8*/
-    __asm { fstp [esp+1A8h+var_1A8]; double } /*0x5fa9bb*/
-    INIClass::ReadDouble_Overwrite( /*0x5fa9c8*/
+    v1 = INIClass::ReadDouble_Overwrite( /*0x5fa9c8*/
       (double *)&DSurface_ViewBounds.__pad_FC[36],
       g_INI_Key_Audio,
       (unsigned __int8 *)aSoundvolume,
       v34);
-    __asm /*0x5fa9cd*/
-    {
-      fcom ds:dbl_7E1718
-      fnstsw ax
-    }
-    if ( (_AX & 0x100) == 0 ) /*0x5fa9d8*/
-    {
-      __asm /*0x5fa9da*/
-      {
-        fstp st
-        fld ds:dbl_7E1718
-      }
-    }
-    __asm { fst dword ptr [esi+38h] } /*0x5fa9e2*/
-    *(float *)(_ESI.v + 56) = _ET1; /*0x5fa9e2*/
-    __asm { fmul ds:flt_7EF38C } /*0x5fa9e5*/
-    IDA_LOWORD(v13) = Math::RoundToInt(v1); /*0x5fa9eb*/
+    if ( v1 >= dbl_7E1718 ) /*0x5fa9d8 G57c4 x87c4: fcom/fnstsw@0x5fa9cd C0==0 -> st0>=1.0 (NaN-identical)*/
+        v1 = dbl_7E1718; /*0x5fa9da G57c4 x87c4: fstp st + fld*/
+    *(float *)(_ESI.v + 56) = (float)v1; /*0x5fa9e2 G57c4 x87c4: fst dword [esi+38h]*/
+    IDA_LOWORD(v13) = Math::RoundToInt(v1 * flt_7EF38C); /*0x5fa9e5 G57c4 x87c4: fmul ds:flt_7EF38C*/ /*0x5fa9eb*/
     EndBufferMixer( (VolumeStruct*)((int *)g_MixerChannel_Score), v13); /*0x5fa9f8*/
-    __asm { fld dword ptr [esi+38h] } /*0x5fa9fd*/
-    __asm { fstp [esp+1A8h+var_1A8] }
-    Debug::Log(); /*0x5faa0b*/
-    __asm { fld dword ptr [esi+3Ch] } /*0x5faa10*/
-    __asm { fstp [esp+1A8h+var_1A8]; double }
-    INIClass::ReadDouble_Overwrite( /*0x5faa28*/
+    Debug::Log("SoundVolume = %f\n", (double)*(float *)(_ESI.v + 56)); /*0x5faa0b G57c1: IDA 0x5faa06 push offset g_Str_Trace_SoundVolume____f; G57c4 x87c4: fld/fstp vararg*/
+    v36 = (double)*(float *)(_ESI.v + 60); /*0x5faa10 G57c4 x87c4: fld dword [esi+3Ch] + fstp var slot@*/
+    v1 = INIClass::ReadDouble_Overwrite( /*0x5faa28*/
       (double *)&DSurface_ViewBounds.__pad_FC[36],
       g_INI_Key_Audio,
       (unsigned __int8 *)aVoicevolume,
       v36);
-    __asm /*0x5faa2d*/
-    {
-      fcom ds:dbl_7E1718
-      fnstsw ax
-    }
-    if ( (_AX & 0x100) == 0 ) /*0x5faa38*/
-    {
-      __asm /*0x5faa3a*/
-      {
-        fstp st
-        fld ds:dbl_7E1718
-      }
-    }
-    __asm { fst dword ptr [esi+3Ch] } /*0x5faa42*/
-    *(float *)(_ESI.v + 60) = _ET1; /*0x5faa42*/
-    __asm { fmul ds:dbl_7EAA50 } /*0x5faa45*/
-    IDA_LOWORD(v16) = Math::RoundToInt(v1); /*0x5faa4b*/
+    if ( v1 >= dbl_7E1718 ) /*0x5faa38 G57c4 x87c4: fcom/fnstsw@0x5faa2d C0==0 -> st0>=1.0 (NaN-identical)*/
+        v1 = dbl_7E1718; /*0x5faa3a G57c4 x87c4: fstp st + fld*/
+    *(float *)(_ESI.v + 60) = (float)v1; /*0x5faa42 G57c4 x87c4: fst dword [esi+3Ch]*/
+    IDA_LOWORD(v16) = Math::RoundToInt(v1 * dbl_7EAA50); /*0x5faa45 G57c4 x87c4: fmul ds:dbl_7EAA50*/ /*0x5faa4b*/
     ((ThemeClass *)v16)->GetField(); /*0x5faa52*/
-    __asm /*0x5faa57*/
-    {
-      fld dword ptr [esi+3Ch]
-      fmul ds:flt_7EF38C
-    }
-    IDA_LOWORD(v17) = Math::RoundToInt(v1); /*0x5faa60*/
+    IDA_LOWORD(v17) = Math::RoundToInt(*(float *)(_ESI.v + 60) * flt_7EF38C); /*0x5faa57 G57c4 x87c4: fld+fmul [esi+3Ch]*flt_7EF38C*/ /*0x5faa60*/
     EndBufferMixer( (VolumeStruct*)((int *)g_MixerChannel_Voice), v17); /*0x5faa6d*/
-    __asm { fld dword ptr [esi+3Ch] } /*0x5faa72*/
-    __asm { fstp [esp+1A8h+var_1A8] }
-    Debug::Log(); /*0x5faa80*/
-    __asm { fld dword ptr [esi+40h] } /*0x5faa85*/
-    __asm { fstp [esp+1A8h+var_1A8]; double }
-    INIClass::ReadDouble_Overwrite( /*0x5faa9d*/
+    Debug::Log("VoiceVolume = %f\n", (double)*(float *)(_ESI.v + 60)); /*0x5faa80 G57c1: IDA 0x5faa7b push offset g_Str_Trace_VoiceVolume____f; G57c4 x87c4: fld/fstp vararg*/
+    v38 = (double)*(float *)(_ESI.v + 64); /*0x5faa85 G57c4 x87c4: fld dword [esi+40h] + fstp var slot@*/
+    v1 = INIClass::ReadDouble_Overwrite( /*0x5faa9d*/
       (double *)&DSurface_ViewBounds.__pad_FC[36],
       g_INI_Key_Audio,
       (unsigned __int8 *)aScorevolume,
       v38);
-    __asm /*0x5faaa2*/
-    {
-      fcom ds:dbl_7E1718
-      fnstsw ax
-    }
-    if ( (_AX & 0x100) == 0 ) /*0x5faaad*/
-    {
-      __asm /*0x5faaaf*/
-      {
-        fstp st
-        fld ds:dbl_7E1718
-      }
-    }
-    __asm { fst dword ptr [esi+40h] } /*0x5faab7*/
-    *(float *)(_ESI.v + 64) = _ET1; /*0x5faab7*/
-    __asm { fmul ds:flt_7EF38C } /*0x5faaba*/
-    IDA_LOWORD(v20) = Math::RoundToInt(v1); /*0x5faac0*/
+    if ( v1 >= dbl_7E1718 ) /*0x5faaad G57c4 x87c4: fcom/fnstsw@0x5faaa2 C0==0 -> st0>=1.0 (NaN-identical)*/
+        v1 = dbl_7E1718; /*0x5faaaf G57c4 x87c4: fstp st + fld*/
+    *(float *)(_ESI.v + 64) = (float)v1; /*0x5faab7 G57c4 x87c4: fst dword [esi+40h]*/
+    IDA_LOWORD(v20) = Math::RoundToInt(v1 * flt_7EF38C); /*0x5faaba G57c4 x87c4: fmul ds:flt_7EF38C*/ /*0x5faac0*/
     EndBufferMixer( (VolumeStruct*)((int *)g_MixerChannel_Theme), v20); /*0x5faacd*/
-    __asm /*0x5faad2*/
-    {
-      fld dword ptr [esi+40h]
-      fmul ds:dbl_7EAA50
-    }
-    IDA_LOWORD(v21) = Math::RoundToInt(v1); /*0x5faadb*/
+    IDA_LOWORD(v21) = Math::RoundToInt(*(float *)(_ESI.v + 64) * dbl_7EAA50); /*0x5faad2 G57c4 x87c4: fld+fmul [esi+40h]*dbl_7EAA50*/ /*0x5faadb*/
     TechnoTypeClass::CheckFlag((TechnoTypeClass *)&unk_A83D10, v21); /*0x5faae6*/
-    __asm { fld dword ptr [esi+40h] } /*0x5faaeb*/
-    __asm { fstp [esp+1A8h+var_1A8] }
-    Debug::Log(); /*0x5faaf9*/
+    Debug::Log("ScoreVolume = %f\n", (double)*(float *)(_ESI.v + 64)); /*0x5faaf9 G57c1: IDA 0x5faaf4 push offset g_Str_Trace_ScoreVolume____f; G57c4 x87c4: fld/fstp vararg*/
     v22 = (GameSettings)INIClass::ReadBool_Overwrite( /*0x5fab14*/
                           (int *)&DSurface_ViewBounds.__pad_FC[36],
                           g_INI_Key_Audio,

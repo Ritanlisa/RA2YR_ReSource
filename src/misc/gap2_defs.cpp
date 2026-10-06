@@ -31,6 +31,7 @@ using ra2::game::ObjectClass;
 #include "misc/super_weapon.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+#include "e4/classes/BuildingTypeClass_e4.hpp"  // g57c5 W5d scope supply
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int aColoradd;  // 词表 (canon 无条目, int 兜底) L1404
 extern int aCountries;  // 词表 (canon 无条目, int 兜底) L1416
@@ -1188,7 +1189,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
 
 // 0x583820
 namespace gamemd { 
-void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
+int* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
     unsigned int v5; // eax
     int *v6; // eax
     int *v7; // ecx
@@ -2643,7 +2644,7 @@ int RulesClass::LoadFromINI() {
       DynamicVector_field_0x1C->abstractFlags = BuildingTypeClassPrerequisites->CapacityIncrement; /*0x66e7b0*/
       DynamicVector_field_0x1C->nextArrayIndex = *(unsigned int *)BuildingTypeClassPrerequisites[1].VectorClass; /*0x66e7b6*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e7bf*/
-      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.__pad_C[1] ) /*0x66e7cf*/
+      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e7cf*/
         RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e7d2*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[308]); /*0x66e7e8*/
       v91 = LoadBuildingTypeClassPrerequisites( /*0x66e825*/
@@ -2665,7 +2666,7 @@ int RulesClass::LoadFromINI() {
       v92->abstractFlags = v91->CapacityIncrement; /*0x66e844*/
       v92->nextArrayIndex = *(unsigned int *)v91[1].VectorClass; /*0x66e84a*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e853*/
-      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.__pad_C[1] ) /*0x66e863*/
+      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e863*/
         RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e866*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[336]); /*0x66e87c*/
       v93 = LoadBuildingTypeClassPrerequisites( /*0x66e8b8*/
@@ -2687,7 +2688,7 @@ int RulesClass::LoadFromINI() {
       v94->abstractFlags = v93->CapacityIncrement; /*0x66e8d7*/
       v94->nextArrayIndex = *(unsigned int *)v93[1].VectorClass; /*0x66e8dd*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e8e6*/
-      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.__pad_C[1] ) /*0x66e8f6*/
+      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e8f6*/
         RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e8f9*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[364]); /*0x66e90f*/
       v95 = LoadBuildingTypeClassPrerequisites( /*0x66e94c*/
@@ -2709,7 +2710,7 @@ int RulesClass::LoadFromINI() {
       v96->abstractFlags = v95->CapacityIncrement; /*0x66e96b*/
       v96->nextArrayIndex = *(unsigned int *)v95[1].VectorClass; /*0x66e971*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66e97a*/
-      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.__pad_C[1] ) /*0x66e98a*/
+      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66e98a*/
         RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66e98d*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[392]); /*0x66e9a3*/
       v97 = LoadBuildingTypeClassPrerequisites( /*0x66e9df*/
@@ -2731,7 +2732,7 @@ int RulesClass::LoadFromINI() {
       v98->abstractFlags = v97->CapacityIncrement; /*0x66e9fe*/
       v98->nextArrayIndex = *(unsigned int *)v97[1].VectorClass; /*0x66ea04*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66ea0d*/
-      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.__pad_C[1] ) /*0x66ea1d*/
+      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66ea1d*/
         RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66ea20*/
       IntVector::Copy((IntVector *)&v329, &_ESI->__pad_240[420]); /*0x66ea36*/
       v99 = LoadBuildingTypeClassPrerequisites( /*0x66ea73*/
@@ -2753,7 +2754,7 @@ int RulesClass::LoadFromINI() {
       v100->abstractFlags = v99->CapacityIncrement; /*0x66ea92*/
       v100->nextArrayIndex = *(unsigned int *)v99[1].VectorClass; /*0x66ea98*/
       *(unsigned int *)v332.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x66eaa1*/
-      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.__pad_C[1] ) /*0x66eab1*/
+      if ( *(unsigned int *)&v332.DynamicVector_field_0x1[3] && v332.vtable4[1] ) /*0x66eab1*/
         RA2_OPDEL(*(void **)&v332.DynamicVector_field_0x1[3]); /*0x66eab4*/
       v101 = *(unsigned int *)&_ESI->__pad_240[784]; /*0x66eac2*/
       v331[1] = *(unsigned int *)&_ESI->__pad_240[788]; /*0x66eace*/

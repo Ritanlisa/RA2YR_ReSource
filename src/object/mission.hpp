@@ -121,6 +121,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AssignTeamMemberMissions(int a1, int a2);  // 0x6ed7e0 -- Mission::AssignTeamMemberMissions
     int GetMissionDelay();  // 0x70f770 -- Mission::GetMissionDelay
     // === SYMBOL-ANCHOR (END) ===
+public:  // g57c5 W6 owner supply
+    unsigned int q0CC;  // 0xCC g57c5 W6 (ml MissionClass@0xCC own)
 };
 
 } // namespace game

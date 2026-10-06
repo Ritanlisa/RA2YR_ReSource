@@ -3242,7 +3242,7 @@ void ToolTipClass::updateString() {
     unsigned int *v4; // edx (G42.39 retype: q08E array base)
     void *v5; // eax
 
-    ToolTipClass_field_0x08 = (HWND)this->ToolTipClass_field_0x08; /*0x7240ba*/
+    ToolTipClass_field_0x08 = (HWND)this->m_8; /*0x7240ba*/
     *(unsigned int *)this->__pad_0 = 0; /*0x7240bd*/
     KillTimer(ToolTipClass_field_0x08, 0x54544950u); /*0x7240c4*/
     if ( this->ToolTipClass_field_0x04 ) /*0x7240ca*/

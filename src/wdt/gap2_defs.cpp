@@ -25,9 +25,13 @@ using ra2::game::ObjectClass;
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
-#include "ui/ui_ext.hpp"
+#include "ui/ui_ext.hpp"// 0x4104C0
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+void DisableCampaignSlots(...);  // g57c5 W5 vocab
+} // namespace gamemd
+// ---- g57c5 W5 end ----
 
-// 0x4104C0
 namespace gamemd { namespace wdt { 
 // 0x4104c0
 int Map::GetInvalidCoord() {

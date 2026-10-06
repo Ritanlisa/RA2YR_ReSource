@@ -180,7 +180,7 @@ public:
     uint8_t Pathfinding_field_0x14[4];
     uint8_t Pathfinding_field_0x18[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* CheckCliff(void* a1, void* a2, int a3, int a4);  // 0x583820
+    void* CheckCliff(void* a1, void* a2, int a3, int a4); // 0x583820
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===

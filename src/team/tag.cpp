@@ -402,7 +402,7 @@ HRESULT __stdcall TagTypeClass::Load(IStream* stream) { return 0; }
 HRESULT __stdcall TagTypeClass::Save(IStream* stream, int clear_dirty) { return 0; }
 void TagTypeClass::pointerExpired(AbstractClass* ptr, bool removed) {}
 AbstractType __stdcall TagTypeClass::whatAmI() const { return AbstractType::TagType; }
-int TagTypeClass::objectSize() const { return 0; }
+int TagTypeClass::objectSize() const { return 0; 
 void TagTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd

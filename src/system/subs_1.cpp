@@ -3,9 +3,13 @@
 // Regenerate: python tools/task17_generate.py
 
 #include <cstdint>
-#include <cstddef>
-
-// IDA-named globals referenced (extern stubs)
+#include <cstddef>// IDA-named globals referenced (extern stubs)
+#include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+class Math;  // g57c5 W5 fwd
+} // namespace gamemd
+// ---- g57c5 W5 end ----
 
 namespace gamemd {
 

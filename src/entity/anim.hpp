@@ -123,7 +123,7 @@ public:
     unsigned char __pad_C4;  // 0xC4
     unsigned char __pad_D8;  // 0xD8
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7);  // 0x421EA0
+    void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7); // 0x421EA0
     int SimpleCtor();  // 0x422720
     int SetAnimSpeed();  // 0x422BC0
     int * UpdateZAdjust(int * a1);  // 0x422BE0
@@ -168,6 +168,18 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetAnimation(int a1, int a2);  // 0x7298f0
     // === FUNCS-MOVE (END) ===
     unsigned int AnimClass_field_0x190; // 0x190  gB member supply
+public:  // g57c5 W4b supply slot
+    int AnimClass_field_0x108;  // 0x108 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    int __pad_10C;  // 0x10C g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    int AnimClass_field_0x114;  // 0x114 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    int AnimClass_field_0x17C;  // 0x17C g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    int AnimClass_field_0x180;  // 0x180 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    int AnimClass_field_0xB8;  // 0xB8 g57c5 W4b (self-desc vocab, ml slot witness)
 };
 
 } // namespace gamemd

@@ -915,7 +915,7 @@ int BuildingClass::SquaredDistanceTo(ObjectClass* target, int a2) const  // g57b
 
 // 0x6B0300
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
-void BuildingClass::FindPlacementCells2(int* outCell, int inCell, unsigned int *a2, int a3)  // g57b5 W4: raw 真值补参 (a2,a3)
+int BuildingClass::FindPlacementCells2(int* outCell, int inCell, unsigned int *a2, int a3)
 {
     int occupant; // ecx
     int v5; // edi
@@ -1040,7 +1040,7 @@ bool BuildingClass::IsBeingRepairedOrCaptured()
 
 // 0x414290
 namespace gamemd {
-HRESULT __stdcall AircraftClass::QueryInterface(const IID& iid, void** ppvObject)
+HRESULT __stdcall AircraftClass::QueryInterface(const IID& iid, void** ppvObject, void * ppv)
 {
     int result; // eax
 
@@ -1271,7 +1271,7 @@ int AircraftClass::MissionStubReturnZero()
 
 // 0x424B50
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
-void BuildingClass::AimTurret()
+int BuildingClass::AimTurret(_BYTE a2)
 {
     unsigned char *v3; // ebp
     char isOnMap; // bl

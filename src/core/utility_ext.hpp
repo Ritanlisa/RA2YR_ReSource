@@ -799,7 +799,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AllocCallback() = default;
 
-    virtual int Dispatch(); // 0x7BE5D0
+    virtual int Dispatch(int a1, int a2, unsigned int Block, size_t Size); // 0x7BE5D0
 
 };
 #endif  // GAMEMD_E4_AllocCallback
@@ -1343,7 +1343,7 @@ public:
     virtual int Load(char a2); // 0x4F3690 G42.34 C5 体签名
     virtual int Draw(char a2); // 0x4F3720 G42.34 C5 体签名
 virtual unsigned int * ddtor(unsigned int *);  // 0x4F37A0
-    virtual void QueryInterface(); // 0x4F3840
+    virtual void QueryInterface(char a2); // 0x4F3840
 
     uint8_t GraphicMenuImageItem_field_0x04[4];
     uint8_t GraphicMenuImageItem_field_0x08[4];

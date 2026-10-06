@@ -406,7 +406,6 @@ bool UDPInterfaceClass::SetNonBlocking(bool nonBlock)
     if (!Socket || Socket == INVALID_SOCKET) return false;
     u_long mode = nonBlock ? 1 : 0;
     return ioctlsocket((SOCKET)Socket, FIONBIO, &mode) == 0;
-}
 
 bool UDPInterfaceClass::SetBroadcast(bool enable)
 {

@@ -32,7 +32,6 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 #include "core/ida_vtables.h"  // gC_vftable3
-
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern int FootClass_Array;
 extern int g_BuildingLoadQueue_Array;
@@ -25179,8 +25178,8 @@ void* RadarClass::drawRadarTerrain(int a1, int a2) {
     v4 = 0; /*0x58adb9*/
     this->RadarClass_field_0x4 = 0; /*0x58adbd*/
     this->RadarClass_field_0x8 = (void *)a2; /*0x58adc0*/
-    this->__pad_C[0] = 1; /*0x58adc3*/
-    this->__pad_C[1] = 0; /*0x58adc7*/
+    this->vtable4[0] = 1; /*0x58adc3*/
+    this->vtable4[1] = 0; /*0x58adc7*/
     this->RadarClass_field_0x0 = (unsigned int)(void *)&VectorClass_ZoneConnectionClass_vftable; /*0x58adca*/
     if ( !a2 ) /*0x58add0*/
       return &this->RadarClass_field_0x0; /*0x58ae56*/
@@ -25209,7 +25208,7 @@ void* RadarClass::drawRadarTerrain(int a1, int a2) {
         v4 = (void *)v8; /*0x58ae4d*/
       }
       this->RadarClass_field_0x4 = v4; /*0x58ae4f*/
-      this->__pad_C[1] = 1; /*0x58ae52*/
+      this->vtable4[1] = 1; /*0x58ae52*/
       return &this->RadarClass_field_0x0; /*0x58ae52*/
     }
     if ( a2 - 1 >= 0 ) /*0x58ade3*/
@@ -25252,8 +25251,8 @@ void* RadarClass::RenderJammerRadius(int a1, void* a2) {
     v4 = 0; /*0x58ae6b*/
     this->RadarClass_field_0x4 = 0; /*0x58ae73*/
     this->RadarClass_field_0x8 = (void *)a2; /*0x58ae76*/
-    this->__pad_C[0] = 1; /*0x58ae79*/
-    this->__pad_C[1] = 0; /*0x58ae7d*/
+    this->vtable4[0] = 1; /*0x58ae79*/
+    this->vtable4[1] = 0; /*0x58ae7d*/
     this->RadarClass_field_0x0 = (unsigned int)(void *)&VectorClass_SubzoneTrackingStruct_vftable; /*0x58ae80*/
     if ( !a2 ) /*0x58ae87*/
       return &v3->RadarClass_field_0x0; /*0x58af69*/
@@ -25294,7 +25293,7 @@ void* RadarClass::RenderJammerRadius(int a1, void* a2) {
         v4 = v9; /*0x58af5f*/
       }
       v3->RadarClass_field_0x4 = v4; /*0x58af61*/
-      v3->__pad_C[1] = 1; /*0x58af64*/
+      v3->vtable4[1] = 1; /*0x58af64*/
       return &v3->RadarClass_field_0x0; /*0x58af64*/
     }
     *a3 = a2; /*0x58ae95*/
@@ -25342,7 +25341,7 @@ int RadarClass::drawRadarEvents(void* a1) {
     RadarClass_field_0x8 = this->RadarClass_field_0x8; /*0x58af83*/
     if ( (int)this->RadarClass_field_0x10 >= (int)RadarClass_field_0x8 ) /*0x58af8b*/
     {
-      if ( !this->__pad_C[1] && RadarClass_field_0x8 ) /*0x58af96*/
+      if ( !this->vtable4[1] && RadarClass_field_0x8 ) /*0x58af96*/
         return 0; /*0x58af96*/
       v4 = *(unsigned int *)this->__pad_14; /*0x58af98*/
       if ( v4 <= 0 /*0x58afa8*/

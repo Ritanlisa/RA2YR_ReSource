@@ -258,7 +258,7 @@ void GraphicMenuAnimItem::Stub() {
 // 0x4F4000
 namespace gamemd {
 unsigned int * VectorCursor_uint_DynamicVectorClass_uint::ddtor() {
-    --this->q008; /*0x4f4002*/
+    --this->vtable3; /*0x4f4002*/
     return this->__pad_0; /*0x4f4005*/
 }
 } // namespace gamemd
@@ -702,7 +702,7 @@ namespace gamemd {
 int Vector3::Magnitude() {
     return Math::Sqrt( /*0x41c3e9*/
              *(double *)this * *(double *)this
-           + this->q008 * this->q008
+           + this->vtable3 * this->vtable3
            + this->q040 * this->q040);
 }
 } // namespace gamemd
@@ -2827,7 +2827,7 @@ BOOL GraphicMenuImageItem::Release(unsigned int *a2) {
       {
         v3 = a2[1]; /*0x4f3660*/
         v4 = this->u32_18; /*0x4f3663*/
-        if ( v3 >= v4 && v3 < v4 + this->q008 ) /*0x4f3671*/
+        if ( v3 >= v4 && v3 < v4 + this->vtable3 ) /*0x4f3671*/
           return 1; /*0x4f3646*/
       }
     }
@@ -2995,14 +2995,14 @@ unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
 // 0x4F3FC0
 namespace gamemd {
 BOOL VectorCursor_uint_DynamicVectorClass_uint::AddRef() {
-    return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f3fcd*/
+    return this->vtable3 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f3fcd*/
 }
 } // namespace gamemd
 
 // 0x4F3FF0
 namespace gamemd {
 unsigned int * VectorCursor_uint_DynamicVectorClass_uint::Release() {
-    ++this->q008; /*0x4f3ff2*/
+    ++this->vtable3; /*0x4f3ff2*/
     return this->__pad_0; /*0x4f3ff5*/
 }
 } // namespace gamemd

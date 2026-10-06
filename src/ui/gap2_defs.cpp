@@ -72,7 +72,7 @@ void* MouseClass::InitMouse(int a1, char a2) {  // g57b5 W4: raw 真值补参 (a
     int v4; // edi
     ObjectClass *v6; // [esp+0h] [ebp-Ch]
 
-    this->MouseClass_field_0x0 = (unsigned int)(void *)&MouseClass_vftable; /*0x40d295*/
+    this->__pad_0 = (unsigned int)(void *)&MouseClass_vftable; /*0x40d295*/
     *((unsigned int *)this + 5446) = (unsigned int)(void *)&MouseClass_vftable; /*0x40d29b*/
     v3 = (int *)((char *)this + 21404); /*0x40d2a5*/
     v4 = 4; /*0x40d2ab*/
@@ -2928,9 +2928,9 @@ int SidebarClass::addToList(void* a1) {
     unsigned int *SidebarClass_field_0x4; // edx
 
     SidebarClass_field_0x8 = this->SidebarClass_field_0x8; /*0x63e883*/
-    if ( *(unsigned int *)&this->__pad_C[4] >= (int)SidebarClass_field_0x8 ) /*0x63e88b*/
+    if ( *(unsigned int *)&this->vtable4[4] >= (int)SidebarClass_field_0x8 ) /*0x63e88b*/
     {
-      if ( !this->__pad_C[1] && SidebarClass_field_0x8 ) /*0x63e896*/
+      if ( !this->vtable4[1] && SidebarClass_field_0x8 ) /*0x63e896*/
         return 0; /*0x63e896*/
       SidebarClass_field_0x14 = this->SidebarClass_field_0x14; /*0x63e898*/
       if ( (int)SidebarClass_field_0x14 <= 0 /*0x63e8a8*/
@@ -2942,9 +2942,9 @@ int SidebarClass::addToList(void* a1) {
         return 0; /*0x63e8af*/
       }
     }
-    v6 = *(unsigned int *)&this->__pad_C[4]; /*0x63e8b5*/
+    v6 = *(unsigned int *)&this->vtable4[4]; /*0x63e8b5*/
     SidebarClass_field_0x4 = this->SidebarClass_field_0x4; /*0x63e8b8*/
-    *(unsigned int *)&this->__pad_C[4] = v6 + 1; /*0x63e8be*/
+    *(unsigned int *)&this->vtable4[4] = v6 + 1; /*0x63e8be*/
     SidebarClass_field_0x4[v6] = *a2; /*0x63e8c8*/
     return 1; /*0x63e8b1*/
 }
@@ -3054,8 +3054,8 @@ void PowerClass::updatePowerBarAnimation() {
         goto LABEL_8; /*0x63fef5*/
     }
   LABEL_9:
-    if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 36))(&dword_A83D4C->__pad_C[24]) == *((unsigned int *)this + 1359) /*0x63ff76*/
-      && (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 32))(&dword_A83D4C->__pad_C[24]) == *((unsigned int *)this + 1360)
+    if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 36))(&dword_A83D4C->vtable4[24]) == *((unsigned int *)this + 1359) /*0x63ff76*/
+      && (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 32))(&dword_A83D4C->vtable4[24]) == *((unsigned int *)this + 1360)
       && !IDA_LOBYTE(this->field_1538) )
     {
       goto LABEL_66; /*0x63ff76*/
@@ -3063,8 +3063,8 @@ void PowerClass::updatePowerBarAnimation() {
     IDA_LOBYTE(this->field_150C) = 1; /*0x63ff7c*/
     byte_884B8E = 1; /*0x63ff89*/
     MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x63ff8f*/
-    if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 36))(&dword_A83D4C->__pad_C[24]) != *((unsigned int *)this + 1359) /*0x63ffc2*/
-      || (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 32))(&dword_A83D4C->__pad_C[24]) != *((unsigned int *)this + 1360) )
+    if ( (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 36))(&dword_A83D4C->vtable4[24]) != *((unsigned int *)this + 1359) /*0x63ffc2*/
+      || (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 32))(&dword_A83D4C->vtable4[24]) != *((unsigned int *)this + 1360) )
     {
       IDA_LOBYTE(this->field_1538) = 1; /*0x63ffc8*/
       *(unsigned int *)&this->__pad_1510[12] = 10; /*0x63ffce*/
@@ -3072,8 +3072,8 @@ void PowerClass::updatePowerBarAnimation() {
       *(unsigned int *)&this->__pad_1510[4] = v45; /*0x63ffee*/
       *(unsigned int *)&this->__pad_1510[8] = 3; /*0x63fff1*/
     }
-    *((unsigned int *)this + 1359) = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 36))(&dword_A83D4C->__pad_C[24]); /*0x640004*/
-    *((unsigned int *)this + 1360) = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 32))(&dword_A83D4C->__pad_C[24]); /*0x640018*/
+    *((unsigned int *)this + 1359) = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 36))(&dword_A83D4C->vtable4[24]); /*0x640004*/
+    *((unsigned int *)this + 1360) = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 32))(&dword_A83D4C->vtable4[24]); /*0x640018*/
     PowerBar::ComputeFill(&v43, &v44, &v40); /*0x64002f*/
     v7 = this->field_1528; /*0x64003a*/
     if ( this->field_1520 != -1 ) /*0x640043*/
@@ -3982,8 +3982,8 @@ int SidebarClass::Init() {
         v12 = dword_B0B504; /*0x6a5510*/
         v11->SidebarClass_field_0x4 = 0; /*0x6a5519*/
         v11->SidebarClass_field_0x8 = 0; /*0x6a551b*/
-        *(unsigned int *)v11->__pad_C = 60; /*0x6a5523*/
-        *(unsigned int *)&v11->__pad_C[4] = v12; /*0x6a5529*/
+        *(unsigned int *)v11->vtable4 = 60; /*0x6a5523*/
+        *(unsigned int *)&v11->vtable4[4] = v12; /*0x6a5529*/
         SidebarClass::InitCameoGrid((SidebarClass *)((char *)v11 - 36), v10++); /*0x6a552c*/
         v11 = (SidebarClass *)((char *)v11 + 3988); /*0x6a5532*/
       }
@@ -5686,7 +5686,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                   v46 = dword_A8B550; /*0x6ab842*/
                   v47 = *(unsigned int *)v45; /*0x6ab848*/
                   v69 = (ObjectClass *)dword_A8B550; /*0x6ab84d*/
-                  v48 = &dword_A83D4C->__pad_C[24]; /*0x6ab851*/
+                  v48 = &dword_A83D4C->vtable4[24]; /*0x6ab851*/
                   v49 = (int)((unsigned __int64)(1272582903LL /*0x6ab86b*/
                                                * (int)v46
                                                * (*(int (__thiscall **)(unsigned char *, Object *))(v47 + 132))(v45, dword_A83D4C)) >> 32) >> 4;
@@ -5922,7 +5922,7 @@ void* SidebarClass::initButtons() {
     this->SidebarClass_field_0x0 = 0; /*0x6ac874*/
     IDA_LOBYTE(this->SidebarClass_field_0x4) = 0; /*0x6ac876*/
     v2 = *(void **)((char *)&stru_A8EB00 + 416); /*0x6ac879*/
-    *(unsigned int *)&this->__pad_C[4] = 0; /*0x6ac87f*/
+    *(unsigned int *)&this->vtable4[4] = 0; /*0x6ac87f*/
     this->SidebarClass_field_0x8 = v2; /*0x6ac882*/
     this->SidebarClass_field_0x14 = 0; /*0x6ac885*/
     *(unsigned int *)this->__pad_18 = 1; /*0x6ac888*/

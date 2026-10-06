@@ -2,8 +2,13 @@
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "game_systems.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
-// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
-extern int InitDegToRad;  // 词表 (canon 无条目, int 兜底) L315
+#include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+// ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int InitDegToRad;  // 词表 (canon 无条目, int 兜底) L315
+// ---- g57c5 W5 vocab (declaration-only) ----
+namespace gamemd {
+class Math;  // g57c5 W5 fwd
+} // namespace gamemd
+// ---- g57c5 W5 end ----
 extern int Tooltip;  // 词表 (canon 无条目, int 兜底) L508
 extern int g_INI_Key_A1;  // 词表 (canon 无条目, int 兜底) L356
 extern int g_NetworkOptionsState;  // 词表 (canon 无条目, int 兜底) L328
@@ -104,6 +109,10 @@ namespace gamemd {
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern unsigned int stru_A8EB00;
+extern unsigned int stru_A8D600;  // g57c5 W5f (e4_globals_decls.hpp data 0xA8D600)
+extern unsigned int stru_A8B250;  // g57c5 W5f (e4_globals_decls.hpp data 0xA8B250)
+extern unsigned int stru_82BA00;  // g57c5 W5f (e4_globals_decls.hpp data 0x82BA00)
+extern unsigned int stru_87F5F0;  // g57c5 W5f (e4_globals_decls.hpp data 0x87F5F0)
 
 namespace gamemd {
 // 0x5d86d0
@@ -133,7 +142,7 @@ void GameInit::InitMultiplayerModes(int a2, int a3)  // g57b5 W4: raw 真值补�
 }
 
 // 0x5e1ca0
-void GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  // g57b5 W4: raw 真值补参 (a2,hWnd,a4,a5,a6)
+int GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  // g57c5 W5f: raw int 真值同步
 {
     int v6; // ebx
     Skirmish *v7; // esi
@@ -538,7 +547,7 @@ void GameOptions_GameSpeedChanged()
 }
 
 // 0x5b8ce0
-void GameOptions::ReadSettings()
+char GameOptions::ReadSettings()
 {
     int v2; // edi
     HWND DlgItem; // eax
@@ -674,7 +683,7 @@ void GameOptions::ReadSettings()
 }
 
 // 0x6812e0
-void GameOptions::SaveLoad()
+int GameOptions::SaveLoad(int a2)
 {
     int v2; // edi
     int (__stdcall **v5)(int, void *, int **); // eax
@@ -3819,7 +3828,7 @@ void LoadScreen::RenderLoop()
 
     abstractFlags = dword_A8B230[375].abstractFlags; /*0x4b6c53*/
     v2 = 0; /*0x4b6c5e*/
-    v318 = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->__pad_C[24] + 24))(&dword_A83D4C->__pad_C[24]); /*0x4b6c65*/
+    v318 = (*(int (__stdcall **)(char *))(*(unsigned int *)&dword_A83D4C->vtable4[24] + 24))(&dword_A83D4C->vtable4[24]); /*0x4b6c65*/
     IDA_LODWORD(v336) = 0; /*0x4b6c6c*/
     do /*0x4b6cfa*/
     {

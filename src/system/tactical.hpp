@@ -303,6 +303,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindOverlay(int a1, int a2, int a3);  // 0x6d97d0
     int SetPositionThunk(int a1);  // 0x653f70
     // === FUNCS-MOVE (END) ===
+public:  // g57c5 W4 supply slot
+    void* q174;  // 0x174 g57c5 W4 supply (ml TacticalClass@0x174)
 };
 
 } // namespace gamemd

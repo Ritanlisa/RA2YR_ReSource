@@ -80,7 +80,7 @@ int Construct(int,int);  // 0x43B740
     bool ValidateCell(int cell_x, int cell_y);  // 0x4DD9F0
     bool ValidatePlacementEx();  // 0x4DEE80
     void FindPlacementCells();  // 0x7447B0
-    void FindPlacementCells2(int* outCell, int inCell, unsigned int *a2, int a3);  // 0x6B0300  // g57b5 W4
+    void FindPlacementCells2(int* outCell, int inCell, unsigned int *a2, int a3); // 0x6B0300  // g57b5 W4
     int SearchPlacement(int a2, int a3);  // 0x56BEC0
     void VisualizePlacement();  // 0x485AF0
     int GetPlacementCoords(int* out, unsigned int* a3);  // 0x45F160
@@ -105,7 +105,7 @@ int Construct(int,int);  // 0x43B740
     void SetRallyPoint(CoordStruct* target);  // 0x443860
     void MarkExitPath();  // 0x4A9650
     bool CheckExitPath();  // 0x639CB0
-    void RenderExitPosition();  // 0x453840
+    void RenderExitPosition(); // 0x453840
     // wrapper: delegates to BuildingClass::RenderExitPosition at 0x453840
     void ReassignFlagPosition();
     virtual bool TogglePrimaryFactory();  // 0x447E90
@@ -232,7 +232,7 @@ int CanAcceptType(int,int);  // 0x452670
 
     // Combat / Targeting
     void ProcessAttack();  // 0x442230
-    void AimTurret();  // 0x424B50
+    void AimTurret(_BYTE a2); // 0x424B50
     void CalculateTurretAngle();  // 0x447B20
     int GetFacingToTarget();  // 0x445E50
     int GetTargetFacing();  // 0x44D7D0

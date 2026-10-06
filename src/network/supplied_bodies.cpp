@@ -585,7 +585,7 @@ void IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
 
 // 0x543100
 namespace gamemd {
-int32_t IPXManagerClass::getPlayerName()
+int32_t IPXManagerClass::getPlayerName(char a2)
 {
     this->m_0 = (int)&vt_ConnManClass; /*0x543109*/
     if ( (a2 & 1) != 0 ) /*0x54310f*/
@@ -611,7 +611,7 @@ unsigned int * NetworkSession::ResetState()
 
 // 0x560480
 namespace gamemd {
-void NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)  // g57b5 W4: raw 真值补参 (hWnd,a2,a3,hCtl)
+int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
 {
     int result; // eax
     HWND v5; // edi
@@ -866,7 +866,7 @@ void NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)  // 
 
 // 0x5B49B0
 namespace gamemd {
-void ModemGuest::Dialog()
+char ModemGuest::Dialog()
 {
     HWND Dialog; // eax
     int v3; // edi

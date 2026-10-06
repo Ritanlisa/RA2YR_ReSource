@@ -333,10 +333,7 @@ public:
     virtual bool BlitPart( // 0x4BB080
         const RectangleStruct& dest_rect, Surface* src,
         const RectangleStruct& src_rect, bool option1, bool option2) override;
-    virtual bool Blit( // 0x4BB0D0
-        const RectangleStruct& clip_rect, const RectangleStruct& clip_rect2,
-        Surface* src, const RectangleStruct& dest_rect,
-        const RectangleStruct& src_rect, bool option1, bool option2) override;
+    virtual bool Blit(int *a2, int *a3, unsigned int *a4, int *a5, int *a6, int a7, char a8);  // 0x4BB0D0  g57c5 W5g2: raw 真形同步 (override dropped: base sig differs)
     virtual bool FillRectEx( // 0x4BB620
         const RectangleStruct& clip_rect,
         const RectangleStruct& fill_rect, uint32_t color) override;
@@ -438,6 +435,14 @@ private:
     int CommitBuffers();  // 0x7bdf80 -- DSurface::CommitBuffers
     int Flip();  // 0x7c2c60 -- DSurface::Flip
     // === SYMBOL-ANCHOR (END) ===
+public:  // g57c5 W4b supply slot
+    void* DSurface_field_0x0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    void* DSurface_field_0x18;  // 0x18 g57c5 W4b (self-desc vocab, ml slot witness)
+public:  // g57c5 W4b supply slot
+    void* DSurface_field_0x1C[4];  // 0x1C g57c5 W4b (subscripted usage, ml slot witness)
+public:  // g57c5 W4b supply slot
+    void* DSurface_field_0xC;  // 0xC g57c5 W4b (self-desc vocab, ml slot witness)
 };
 
 } // namespace gamemd

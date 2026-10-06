@@ -247,7 +247,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameLobby() = default;
 
-    virtual void DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6); // 0x5E1CA0  // g57b5 W4: raw 真值补参
+    virtual int DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6); // 0x5E1CA0  // g57c5 W5f: raw int 真值同步 (C2562)
 
 };
 // 2 methods in IDA
@@ -273,12 +273,14 @@ public:
 
     virtual void GameSpeedChanged(); // 0x4E1DE0
     virtual void ReadSettings(); // 0x5B8CE0
-    virtual void SaveLoad(); // 0x6812E0
+    virtual void SaveLoad(int a2); // 0x6812E0
     virtual void GetEntry(); // 0x777B50
 
     uint8_t GameOptions_field_0x04[4];
     uint8_t GameOptions_field_0x08[4];
     uint8_t GameOptions_field_0x0C[4];
+public:  // g57c5 W4b supply slot
+    unsigned char __pad_0;  // 0x0 g57c5 W4b (self-desc vocab, ml slot witness)
 };
 // 2 methods in IDA
 class GameOptionsClass
