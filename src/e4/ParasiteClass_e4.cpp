@@ -46,9 +46,9 @@ int ParasiteClass::Constructor()
   int v3; // eax
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x629213*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x62921f*/
+  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
-  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x629225*/
+  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   this->vtable1 = &vt_ParasiteClass; /*0x629231*/
@@ -128,7 +128,7 @@ int ParasiteClass::Attach(int * a2)
   int v4; // eax
   int v5; // edx
 
-  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x6294d9*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x6294d9*/
   v3 = *((unsigned int *)this + 17); /*0x6294de*/
   if ( v3 ) /*0x6294e3*/
   {
@@ -215,13 +215,13 @@ void ParasiteClass::DeploySquad()
   v55 = v4[39]; /*0x629828*/
   v56 = v4[40]; /*0x62982f*/
   v57 = v4[41]; /*0x629836*/
-  v6 = (Cell *)(*(int (**)(int *))(*v4 + 444))(v4); /*0x62983c*/
+  v6 = (Cell *)(*(int (**)(int *))(*v4 + 444))( (int *)(v4)); /*0x62983c*/
   v44 = 0x3FF0000000000000LL; /*0x629844*/
   if ( !v6 || (uint8_t)((Cell*)v6)->IsValidHeight() ) /*0x629854*/
   {
     v10 = *(unsigned int *)(v5 + 368); /*0x629898*/
     v11 = (unsigned int *)(*(unsigned int *)((ParasiteClass*)_ESI)-> + 1696); /*0x62989e*/
-    *v11 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6298a4*/
+    *v11 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6298a4*/
     v11[1] = v59; /*0x6298aa*/
     v11[2] = v10; /*0x6298ad*/
     switch ( (unsigned int)*(unsigned char *)(_ESI.v + 1) ) /*0x6298bc*/
@@ -237,7 +237,7 @@ void ParasiteClass::DeploySquad()
             v14 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x6298f5*/
             if ( v14 ) /*0x6298ff*/
             {
-              v15 = ((AnimClass *)(v14))->ctor(v13, &v55, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
+              v15 = ((AnimClass *)(v14))->ctor( (void *)(v13), (int *)(&v55), 0, 1, (void *)0x600, 0, 0); /*0x629913*/
               if ( v15 ) /*0x62991a*/
               {
                 _ESI[1].AbstractClass = v15; /*0x62991c*/
@@ -256,8 +256,8 @@ void ParasiteClass::DeploySquad()
             }
           }
         }
-        *(unsigned char *)(_ESI.v + 1) = (void *)1; /*0x629974*/
-        *(unsigned char *)(_ESI.v + 1) = (gamemd::BuildingClass *)(0); /*0x62997b*/
+        *(unsigned char *)(_ESI.v + 1) = (unsigned int)(void *)1; /*0x629974*/
+        *(unsigned char *)(_ESI.v + 1) = (unsigned int)(gamemd::BuildingClass *)(0); /*0x62997b*/
         *(unsigned char *)(_ESI.v + 1) = 0; /*0x62997e*/
         ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x629981*/
         goto LABEL_47; /*0x629986*/
@@ -266,7 +266,7 @@ void ParasiteClass::DeploySquad()
         {
           v17 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x6299b7*/
-          *(unsigned char *)(_ESI.v + 1) = (gamemd::BuildingClass *)((void *)(3 - (v17 != 0))); /*0x6299ba*/
+          *(unsigned char *)(_ESI.v + 1) = (unsigned int)(gamemd::BuildingClass *)((void *)(3 - (v17 != 0))); /*0x6299ba*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x6299bd*/
           ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x6299c0*/
           ((FootClass *)(*(FootClass **)((Random*)_ESI)->))->CreateWakes(v55, v56, v57); /*0x6299e1*/
@@ -279,7 +279,7 @@ void ParasiteClass::DeploySquad()
 LABEL_20:
         if ( ((BuildingClass *)((BuildingClass *)_ESI))->AnimController() ) /*0x6299fd*/
         {
-          *(unsigned char *)(_ESI.v + 1) = (void *)4; /*0x629a08*/
+          *(unsigned char *)(_ESI.v + 1) = (unsigned int)(void *)4; /*0x629a08*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x629a0f*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x629a12*/
           ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x629a15*/
@@ -384,23 +384,23 @@ LABEL_20:
           BuildingClass::Deploy(v43, 0, (int)v30); /*0x629c62*/
           v31 = *(unsigned int *)v30; /*0x629c67*/
           v30[973] = 1; /*0x629c69*/
-          (*(void (**)(unsigned char *, int))(v31 + 952))(v30, _ESI->creationFrame); /*0x629c76*/
-          (*(void (**)(unsigned char *))(*(unsigned int *)v30 + 928))(v30); /*0x629c80*/
+          (*(void (**)(unsigned char *, int))(v31 + 952))( (unsigned char *)(v30), _ESI->creationFrame); /*0x629c76*/
+          (*(void (**)(unsigned char *))(*(unsigned int *)v30 + 928))( (unsigned char *)(v30)); /*0x629c80*/
           vtable0 = _ESI[1].AbstractClass; /*0x629c86*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x629c89*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x629c8e*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x629c91*/
           if ( vtable0 ) /*0x629c94*/
           {
-            (*(void (**)(void *))(*(unsigned int *)vtable0 + 248))(vtable0); /*0x629c98*/
+            (*(void (**)(void *))(*(unsigned int *)vtable0 + 248))( (void *)(vtable0)); /*0x629c98*/
             _ESI[1].AbstractClass = 0; /*0x629c9e*/
           }
           if ( LOBYTE(*(unsigned char *)(_ESI.v + 1)) ) /*0x629ca1*/
           {
             v48[0] = _ESI; /*0x629cb8*/
-            v33 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x629cbc*/
-                    ((char *)&g_BuildingLoadQueue_Array),
-                    v48);
+v33 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x629cbc*/ ((char *)&g_BuildingLoadQueue_Array), (unsigned int *)(v48));
+
+
             if ( v33 != -1 && v33 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x629ccc*/
             {
               --((unsigned int *)&g_BuildingLoadQueue_Array)[1]; /*0x629cd1*/
@@ -423,20 +423,20 @@ LABEL_20:
         {
           v35 = *(unsigned int *)_ESI->__pad_28; /*0x629d27*/
           v49 = *(unsigned int *)(v48[1] + 164); /*0x629d2a*/
-          (*(void (**)(int, int *, unsigned int, unsigned int, int, unsigned int, int, unsigned int))(*(unsigned int *)&v35->q_5B0))(  /*0x629d3b*/
-            v35,
-            &v49,
-            0,
-            v48[0],
-            _ESI->creationFrame,
-            0,
-            1,
-            0);
+(*(void (**)(int, int *, unsigned int, unsigned int, int, unsigned int, int, unsigned int))(*(unsigned int *)&v35->q_5B0))( /*0x629d3b*/ v35, (int *)(&v49), 0, v48[0], _ESI->creationFrame, 0, 1, 0);
+
+
+
+
+
+
+
+
           if ( *(unsigned int *)_ESI->__pad_28 ) /*0x629d41*/
           {
             v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x629d58*/
             *(unsigned char *)(_ESI.v + 1) = 0; /*0x629d66*/
-            *(unsigned char *)(_ESI.v + 1) = (void *)(3 - (v36 != 0)); /*0x629d69*/
+            *(unsigned char *)(_ESI.v + 1) = (unsigned int)(void *)(3 - (v36 != 0)); /*0x629d69*/
             *(unsigned char *)(_ESI.v + 1) = 0; /*0x629d6c*/
             ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x629d6f*/
             ((FootClass *)(*(FootClass **)_ESI->__pad_28))->CreateWakes(v55, v56, v57); /*0x629d90*/
@@ -449,15 +449,15 @@ LABEL_20:
             *(unsigned char *)(_ESI.v + 1) = 0; /*0x629dfe*/
             if ( v40 ) /*0x629e01*/
             {
-              (*(void (**)(void *))(*(unsigned int *)v40 + 248))(v40); /*0x629e05*/
+              (*(void (**)(void *))(*(unsigned int *)v40 + 248))( (void *)(v40)); /*0x629e05*/
               _ESI[1].AbstractClass = 0; /*0x629e0b*/
             }
             if ( LOBYTE(*(unsigned char *)(_ESI.v + 1)) ) /*0x629e0e*/
             {
               v48[1] = _ESI; /*0x629e25*/
-              v41 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x629e29*/
-                      ((char *)&g_BuildingLoadQueue_Array),
-                      &v48[1]);
+v41 = (*(int (**)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x629e29*/ ((char *)&g_BuildingLoadQueue_Array), (unsigned int *)(&v48[1]));
+
+
               if ( v41 != -1 && v41 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x629e39*/
               {
                 --((unsigned int *)&g_BuildingLoadQueue_Array)[1]; /*0x629e3e*/
@@ -628,7 +628,7 @@ LABEL_8:
       {
         v17 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x62a144*/
         if ( v17 ) /*0x62a14e*/
-          ((AnimClass *)(v17))->ctor(v16, &v31, 0, 1, (void *)0x600, 0, 0); /*0x62a165*/
+          ((AnimClass *)(v17))->ctor( (void *)(v16), (int *)(&v31), 0, 1, (void *)0x600, 0, 0); /*0x62a165*/
       }
     }
     v18 = -(Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1) != 0); /*0x62a189*/
@@ -701,7 +701,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   if ( *((unsigned char *)this + 84) ) /*0x62a9a6*/
   {
     v14 = (unsigned int)this;
-    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( ((char *)&g_BuildingLoadQueue_Array), (int *)(&v14)); /*0x62a9c1*/
+    v4 = (*(int (**)(int *, int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( (int *)(((char *)&g_BuildingLoadQueue_Array)), (int *)(&v14)); /*0x62a9c1*/
     if ( v4 != -1 ) /*0x62a9c7*/
       ((DynamicVector *)((DynamicVector *)((char *)&g_BuildingLoadQueue_Array)))->RemoveItem(v4); /*0x62a9cf*/
     *((unsigned char *)this + 84) = 0; /*0x62a9d4*/
@@ -709,7 +709,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   *((unsigned int *)this + 14) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x62a9e6*/
   *((unsigned int *)this + 15) = v16; /*0x62a9ed*/
   *((unsigned int *)this + 16) = 0; /*0x62a9f0*/
-  if ( ((ParasiteClass *)(ParasiteClass *)this)->CanInfect( a2) ) /*0x62a9f5*/
+  if ( ((ParasiteClass *)this)->CanInfect( (unsigned int *)(a2)) ) /*0x62a9f5*/
   {
     v12 = (unsigned int *)(*((unsigned int *)this + 9) + 1652); /*0x62aae2*/
     v13 = a2[39]; /*0x62aae8*/
@@ -719,13 +719,13 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
       WinAPI::Wrapper(-2147467261); /*0x62ab03*/
     result = (*(int (**)(unsigned int, int, int, int, int))(*(unsigned int *)*v12 + 112))(*v12, -1, v13, v16, v17); /*0x62ab24*/
     a2[421] = *((unsigned int *)this + 9); /*0x62ab2b*/
-    *((unsigned int *)this + 10) = a2; /*0x62ab31*/
+    *((unsigned int *)this + 10) = (unsigned int)a2; /*0x62ab31*/
   }
   else
   {
     v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)(*((unsigned int *)this + 9) + 1372)); /*0x62aa11*/
     v6 = **(unsigned int **)&this->creationFrame; /*0x62aa1f*/
-    v7 = (*(int (**)(void *, int *, unsigned int))(*(unsigned int *)v5 + 72))( v5, (int *)(&v15), 0); /*0x62aa25*/
+    v7 = (*(int (**)(void *, int *, unsigned int))(*(unsigned int *)v5 + 72))( (void *)(v5), (int *)(&v15), 0); /*0x62aa25*/
     v8 = (*(int (**)(unsigned int, int))(v6 + 216))(*((unsigned int *)this + 9), v7); /*0x62aa2c*/
     v9 = *((unsigned int *)this + 9); /*0x62aa32*/
     if ( v8 ) /*0x62aa37*/
@@ -735,7 +735,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
       v15 = v11[39]; /*0x62aa67*/
       v16 = v11[40]; /*0x62aa6e*/
       v17 = v11[41]; /*0x62aa75*/
-      ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->RevealArea2(&v15, v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
+      ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->RevealArea2( (int *)(&v15), v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
       if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->creationFrame + 1196))(*((unsigned int *)this + 9)) ) /*0x62aa9b*/
       {
         (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&this->creationFrame + 968))(*((unsigned int *)this + 9), 0); /*0x62aaab*/
@@ -817,9 +817,9 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
 
   v3 = *((unsigned int *)this + 17); /*0x62af77*/
   this->vtable1 = &vt_ParasiteClass; /*0x62af7a*/
-  ((unsigned int *)this)[0] = &vt_ParasiteClass; /*0x62af82*/
-  ((unsigned int *)this)[0] = &vt_ParasiteClass; /*0x62af89*/
-  ((unsigned int *)this)[0] = &vt_ParasiteClass; /*0x62af90*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_ParasiteClass; /*0x62af82*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_ParasiteClass; /*0x62af89*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_ParasiteClass; /*0x62af90*/
   *((unsigned int *)this + 19) = 0; /*0x62af97*/
   *((unsigned int *)this + 20) = 0; /*0x62af9a*/
   *((unsigned int *)this + 18) = 0; /*0x62af9d*/
@@ -831,9 +831,9 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   if ( *((unsigned char *)this + 84) ) /*0x62afad*/
   {
     v7 = this; /*0x62afc2*/
-    v4 = (*(int (**)(int *, ParasiteClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x62afc6*/
-           ((char *)&g_BuildingLoadQueue_Array),
-           &v7);
+v4 = (*(int (**)(int *, ParasiteClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x62afc6*/ ((char *)&g_BuildingLoadQueue_Array), (ParasiteClass **)(&v7));
+
+
     if ( v4 != -1 && v4 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x62afd6*/
     {
       --((unsigned int *)&g_BuildingLoadQueue_Array)[1]; /*0x62afdb*/
@@ -861,7 +861,7 @@ void * ParasiteClass::UpdateParasite(ParasiteClass * Block, char a2)
   ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
     __3_YAXPAX_Z(this); /*0x62b056*/
-  return this; /*0x62b060*/
+  return (void *)this; /*0x62b060*/
 
 }
 } // namespace ra2
@@ -1003,7 +1003,7 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   v46 = v12; /*0x62bed7*/
   LOWORD(v13) = Math::RoundToInt(v64); /*0x62bed8*/
   ((Coord3D *)(v68))->Set(v13, v46, v49); /*0x62bee2*/
-  ((Vector3 *)((int *)this + 51))->AddAssign(v52); /*0x62beec*/
+  ((Vector3 *)((int *)this + 51))->AddAssign( (float *)(v52)); /*0x62beec*/
   LOWORD(v14) = Math::RoundToInt(v66); /*0x62bef5*/
   v50 = v14; /*0x62befe*/
   LOWORD(v15) = Math::RoundToInt(v65); /*0x62beff*/
@@ -1012,7 +1012,7 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
   ((Coord3D *)(v70))->Set(v16, v47, v50); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(v70); /*0x62bf2d*/
   v67 = dword_AC4A0C + GroundHeight; /*0x62bf3d*/
-  v17 = ((Coord *)(&dword_87F7E8))->To_Cell(v70); /*0x62bf46*/
+  v17 = (CellClass *)((Coord *)(&dword_87F7E8))->To_Cell(v70); /*0x62bf46*/
   v58 = 0; /*0x62bf4d*/
   v57 = 0; /*0x62bf52*/
   if ( (v17->flags[0] & 0x100) != 0 || (((Coord *)(&dword_87F7E8))->To_Cell(v68)->flags[0] & 0x100) != 0 ) /*0x62bf74*/
@@ -1041,7 +1041,7 @@ Coord * * ParasiteClass::Update(void *a1, void *a2, void *a3, void *a4)
         {
           if ( *(unsigned char *)(v19[328] + 5823) ) /*0x62c00e*/
             v56 = v19[390] < 8; /*0x62c021*/
-          if ( (*(uint8_t (**)(unsigned int *))(*v19 + 128))(v19) ) /*0x62c02a*/
+          if ( (*(uint8_t (**)(unsigned int *))(*v19 + 128))( (unsigned int *)(v19)) ) /*0x62c02a*/
             v56 = 0; /*0x62c034*/
         }
       }
@@ -1082,21 +1082,21 @@ LABEL_47:
   }
   v66 = (float)v67; /*0x62c1bd*/
 LABEL_39:
-  Byte284 = CellClass::GetByte284(v70); /*0x62c09e*/
-  qmemcpy(v73, CopyAudioData((char *)v75, Byte284), sizeof(v73)); /*0x62c0cb*/
-  v21 = InvertMatrix3x3Signs(v75, v73); /*0x62c0d4*/
+  Byte284 = CellClass::GetByte284( (IUnknown *)(v70)); /*0x62c09e*/
+  qmemcpy( (void *)(v73), CopyAudioData((char *)v75, Byte284), sizeof(v73)); /*0x62c0cb*/
+  v21 = InvertMatrix3x3Signs( (float *)(v75), (float *)(v73)); /*0x62c0d4*/
   v22 = *((float *)this + 52); /*0x62c0d9*/
   v23 = *v8; /*0x62c0ea*/
-  qmemcpy(v74, v21, sizeof(v74)); /*0x62c0ec*/
+  qmemcpy( (void *)(v74), (const void *)(v21), sizeof(v74)); /*0x62c0ec*/
   *(float *)&v48 = -v22; /*0x62c0f9*/
   ((Triple *)&v59)->Set( v23, v48, *((unsigned int *)this + 53)); /*0x62c0fd*/
-  v24 = ((Matrix3x3 *)(v71))->TransformPoint((float *)&v59, v53); /*0x62c113*/
+  v24 = ((Matrix3x3 *)(v71))->TransformPoint( (float *)&v59, (float *)(v53)); /*0x62c113*/
   v59 = *(unsigned int *)v24; /*0x62c11f*/
   v60 = *(float *)(v24 + 4); /*0x62c126*/
   v61 = *(float *)(v24 + 8); /*0x62c131*/
   ((Coord *)((int *)0x3F800000))->Scale(v54); /*0x62c135*/
   v61 = -v61; /*0x62c14a*/
-  v25 = ((Matrix3x3 *)(v71))->TransformPoint((float *)&v59, v55); /*0x62c152*/
+  v25 = ((Matrix3x3 *)(v71))->TransformPoint( (float *)&v59, (float *)(v55)); /*0x62c152*/
   v59 = *(unsigned int *)v25; /*0x62c159*/
   v60 = *(float *)(v25 + 4); /*0x62c160*/
   v26 = *(float *)(v25 + 8); /*0x62c164*/
@@ -1207,28 +1207,28 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
   {
     if ( a0 ) /*0x6295cd*/
     {
-      ((AbstractClass *)(AbstractClass *)a0)->InitVtables( (int)&aP1); /*0x6295d6*/
+      ((AbstractClass *)a0)->InitVtables( (int)&aP1); /*0x6295d6*/
       v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6295db*/
       a0->ParasiteClass_field_34 = 0; /*0x6295e1*/
       *(unsigned int *)&a0->__pad_28[4] = v4; /*0x6295e8*/
       a0->ParasiteClass_field_38 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6295f0*/
       a0->ParasiteClass_field_40 = 0; /*0x6295f3*/
       a0->vtable1 = &vt_ParasiteClass; /*0x6295fa*/
-      ((unsigned int *)a0)[0] = &vt_ParasiteClass; /*0x629600*/
-      ((unsigned int *)a0)[0] = &vt_ParasiteClass; /*0x629607*/
-      ((unsigned int *)a0)[0] = &vt_ParasiteClass; /*0x62960e*/
+      ((unsigned int *)a0)[0] = (unsigned int)&vt_ParasiteClass; /*0x629600*/
+      ((unsigned int *)a0)[0] = (unsigned int)&vt_ParasiteClass; /*0x629607*/
+      ((unsigned int *)a0)[0] = (unsigned int)&vt_ParasiteClass; /*0x62960e*/
     }
     if ( *((unsigned int *)a0 + 17) /*0x629657*/
       && (*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array)
        || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
        && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
-       && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))(
-            ((char *)&g_BuildingLoadQueue_Array),
-            ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
-            0)) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))( (int *)(((char *)&g_BuildingLoadQueue_Array)), ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)), 0)) )
+
+
+
     {
       v5 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1))++; /*0x629664*/
-      *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v5) = a0; /*0x629673*/
+      *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 4 * v5) = (unsigned int)a0; /*0x629673*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a0->creationFrame); /*0x62967f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a0->__pad_28); /*0x62968d*/

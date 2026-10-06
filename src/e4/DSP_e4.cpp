@@ -109,7 +109,7 @@ LABEL_23: result = (gamemd::DSurface *)(Audio_Process_7C0530(a1, (int)v11, 1));
               goto LABEL_27;
           }
         }
-        result = (unsigned int)((int)(ProcessAudioStreamPlayback( a1, v11, *(uint8_t *)(a1 + 245), 0, 0, (char *)(&a5))));
+        result = (unsigned int)((int)(ProcessAudioStreamPlayback( a1, (unsigned int)(v11), *(uint8_t *)(a1 + 245), 0, 0, (char *)(&a5))));
 LABEL_27:
         *(unsigned int *)(a1 + 384) = (unsigned int)(v11);
         if ( result != (gamemd::DSurface *)(-1) )

@@ -74,7 +74,7 @@ LABEL_17:
     v14 = 2; /*0x6545b7*/
     if ( v12 == (RadarClass *)-1 ) /*0x6545bc*/
     {
-      v12 = 0; /*0x6545be*/
+      v12 = (RadarClass *)(0); /*0x6545be*/
     }
     else if ( v12 != (RadarClass *)(2 * *(unsigned int *)&this->__pad_C0[68] - 1) ) /*0x6545ce*/
     {

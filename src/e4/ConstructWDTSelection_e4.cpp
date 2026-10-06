@@ -29,9 +29,9 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
   if ( v6 ) /*0x767fc5*/
     v7 = ConstructWDTSelection_Create_767FB0_Create(v6, a2, a3, aP3); /*0x767fd9*/
   else
-    v7 = 0; /*0x767fdd*/
+    v7 = (void *)(0); /*0x767fdd*/
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x767fe1*/
-  *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
+  *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
   ((ComPtr *)((ComPtr *)a1))->Set((int)v7); /*0x767fef*/
   return a1; /*0x767ff6*/
 }

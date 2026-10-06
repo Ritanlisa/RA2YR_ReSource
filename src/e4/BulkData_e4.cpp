@@ -34,15 +34,15 @@ void BulkData::InitMissionHashing()
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash((unsigned int *)(&Time), v2); /*0x697af1*/
   inited = Object_Init_7CBC11((char *)(aPath)); /*0x697afb*/
-  v4 = inited; /*0x697b00*/
+  v4 = (const char *)(inited); /*0x697b00*/
   if ( inited ) /*0x697b07*/
   {
     v5 = 0; /*0x697b10*/
-    if ( strlen(inited) ) /*0x697b12*/
+    if ( strlen( (const char *)(inited)) ) /*0x697b12*/
     {
       do /*0x697b35*/
         ComputeHash((unsigned int *)(&Time), v4[v5++]); /*0x697b21*/
-      while ( v5 < strlen(v4) ); /*0x697b35*/
+      while ( v5 < strlen( (const char *)(v4)) ); /*0x697b35*/
     }
   }
   *((unsigned int *)this + 81) = Time; /*0x697b41*/

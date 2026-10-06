@@ -56,7 +56,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
     v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x766c37*/
     if ( !v5 ) /*0x766c41*/
     {
-      v8 = 0; /*0x766c6f*/
+      v8 = (ComPtr *)(0); /*0x766c6f*/
       goto LABEL_14; /*0x766c71*/
     }
     *v5 = a2; /*0x766c43*/
@@ -155,7 +155,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
           v14 = a2; /*0x766e02*/
           do /*0x766e19*/
           {
-            Conflict_WorldDominationTour_12::Constructor_3(v7); /*0x766e08*/
+            Conflict_WorldDominationTour_12::Constructor_3( (void *)(v7)); /*0x766e08*/
             (unsigned int)(v7)+= 2; /*0x766e11*/
             --v14; /*0x766e15*/
           }
@@ -164,7 +164,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
       }
       else
       {
-        v6 = 0; /*0x766e1d*/
+        v6 = (ComPtr *)(0); /*0x766e1d*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x766e4f*/

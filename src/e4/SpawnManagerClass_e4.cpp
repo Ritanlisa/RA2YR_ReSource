@@ -36,8 +36,8 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   int i; // [esp+20h] [ebp+4h]
 
   ((AbstractClass *)this)->Constructor(); /*0x6b6c99*/
-  ((SpawnControlVector *)(0))->Constructor( 0); /*0x6b6ca7*/
-  *((unsigned int *)this + 14) = &vt_DynamicVectorClass; /*0x6b6cb0*/
+  ((SpawnControlVector *)((unsigned int *)this + 14))->Constructor((int)((SpawnControlVector *)((unsigned int *)this + 14)), 0, 0); /*0x6b6ca7*/
+  *((unsigned int *)this + 14) = (unsigned int)&vt_DynamicVectorClass;
   *((unsigned int *)this + 19) = 10; /*0x6b6cb6*/
   *((unsigned int *)this + 18) = 0; /*0x6b6cbd*/
   v7 = dword_A8ED84; /*0x6b6cc0*/
@@ -47,10 +47,10 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   *((unsigned int *)this + 25) = 0; /*0x6b6cdc*/
   *((unsigned int *)this + 10) = a3; /*0x6b6cdf*/
   *((unsigned int *)this + 9) = a2; /*0x6b6ce6*/
-  *(unsigned int *)this = &vt_SpawnManagerClass; /*0x6b6cef*/
-  *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b6cf5*/
-  *((unsigned int *)this + 2) = &vt_SpawnManagerClass; /*0x6b6cfc*/
-  *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b6d03*/
+  *(unsigned int *)this = (unsigned int)&vt_SpawnManagerClass;
+  *((unsigned int *)this + 1) = (unsigned int)&vt_SpawnManagerClass;
+  *((unsigned int *)this + 2) = (unsigned int)&vt_SpawnManagerClass;
+  *((unsigned int *)this + 3) = (unsigned int)&vt_SpawnManagerClass;
   *((unsigned int *)this + 11) = a4; /*0x6b6d0a*/
   *((unsigned int *)this + 12) = a5; /*0x6b6d0d*/
   *((unsigned int *)this + 13) = a6; /*0x6b6d10*/
@@ -82,7 +82,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
       if ( *((unsigned int *)this + 18) < v14 /*0x6b6dda*/
         || (*((unsigned char *)this + 69) || !v14)
         && (v15 = *((unsigned int *)this + 19), v15 > 0)
-        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v14 + v15, 0) )
+        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))( (int)((char *)this + 56), v14 + v15, 0) )
       {
         v16 = *((unsigned int *)this + 18); /*0x6b6de1*/
         v17 = *((unsigned int *)this + 15); /*0x6b6de4*/
@@ -103,13 +103,13 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   if ( dword_B0B890 < dword_B0B888 /*0x6b6e69*/
     || (byte_B0B88D || !dword_B0B888)
     && dword_B0B894 > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(SpawnManagerClass_Array + 8))(
-         &SpawnManagerClass_Array,
-         dword_B0B888 + dword_B0B894,
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(SpawnManagerClass_Array + 8))( (int *)(&SpawnManagerClass_Array), dword_B0B888 + dword_B0B894, 0) )
+
+
+
   {
     v18 = dword_B0B890++; /*0x6b6e76*/
-    *((unsigned int *)dword_B0B884 + v18) = this; /*0x6b6e85*/
+    *((unsigned int *)dword_B0B884 + v18) = (unsigned int)this;
   }
   return this; /*0x6b6e8a*/
 
@@ -125,7 +125,7 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
   int v4; // [esp+10h] [ebp-8h]
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6b6ea8*/
-  ((SpawnControlVector *)((int)((SpawnControlVector *)this->spawns)))->Constructor( 0, 0); /*0x6b6eb6*/
+  ((SpawnControlVector *)((int)((SpawnControlVector *)this->spawns)))->Constructor((int)((SpawnControlVector *)((int)((SpawnControlVector *)this->spawns))), 0, 0); /*0x6b6eb6*/
   (&this->spawns)[0] = (int)&vt_DynamicVectorClass; /*0x6b6ebb*/
   *(unsigned int *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
   *(unsigned int *)this->__pad_48 = 0; /*0x6b6ec8*/
@@ -152,10 +152,10 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
   if ( dword_B0B890 < dword_B0B888 /*0x6b6f69*/
     || (byte_B0B88D || !dword_B0B888)
     && dword_B0B894 > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(SpawnManagerClass_Array + 8))(
-         &SpawnManagerClass_Array,
-         dword_B0B888 + dword_B0B894,
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(SpawnManagerClass_Array + 8))( (int *)(&SpawnManagerClass_Array), dword_B0B888 + dword_B0B894, 0) )
+
+
+
   {
     v2 = dword_B0B890++; /*0x6b6f76*/
     *((unsigned int *)dword_B0B884 + v2) = (unsigned int)(this); /*0x6b6f85*/
@@ -306,7 +306,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   TechnoClass *owner; // esi
   int v14; // eax
 
-  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x6b7de9*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x6b7de9*/
   Power::TimerProcess(this->SpawnManagerClass_field_70); /*0x6b7df4*/
   SpawnManagerClass_field_6C = this->SpawnManagerClass_field_6C; /*0x6b7df9*/
   if ( SpawnManagerClass_field_6C ) /*0x6b7dfe*/
@@ -351,7 +351,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   owner = this->owner; /*0x6b7ea4*/
   if ( owner ) /*0x6b7ea9*/
   {
-    v14 = (*((int (**)(void **))((unsigned int *)owner)[0] + 4))(&((unsigned int *)owner)[0]); /*0x6b7eb2*/
+    v14 = (*((int (**)(void **))((unsigned int *)owner)[0] + 4))( (void **)(&((unsigned int *)owner)[0])); /*0x6b7eb2*/
     return Power::TimerProcess(v14); /*0x6b7eb8*/
   }
   return result; /*0x6b7ebd*/
@@ -379,32 +379,32 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
   int v14; // esi
   int v16; // [esp+28h] [ebp-4h] BYREF
 
-  v2 = aP1; /*0x6b7f12*/
-  v3 = aP1_4; /*0x6b7f18*/
+  v2 = (SpawnManagerClass *)(aP1); /*0x6b7f12*/
+  v3 = (unsigned int)aP1_4; /*0x6b7f18*/
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(aP1), (AbstractClass *)(aP1_4)); /*0x6b7f24*/
   v5 = 0; /*0x6b7f26*/
   if ( Prefix_0 >= 0 ) /*0x6b7f2a*/
   {
     if ( v2 ) /*0x6b7f32*/
     {
-      ((AbstractClass *)(AbstractClass *)v2)->InitVtables( (int)&aP1); /*0x6b7f3b*/
-      ((SpawnManagerClass *)(SpawnManagerClass *)v2->spawns)->Constructor_6B83A0( 0, 0); /*0x6b7f45*/
+      ((AbstractClass *)v2)->InitVtables( (int)&aP1); /*0x6b7f3b*/
+      ((SpawnManagerClass *)v2->spawns)->Constructor_6B83A0( 0, 0); /*0x6b7f45*/
       *(unsigned int *)&v2->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       ((Timer *)((Timer *)&v2->SpawnManagerClass_field_5C))->Start(0); /*0x6b7f5a*/
       v2->vtable1 = &vt_SpawnManagerClass; /*0x6b7f5f*/
-      ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f65*/
-      ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f6c*/
-      ((unsigned int *)v2)[0] = &vt_SpawnManagerClass; /*0x6b7f73*/
+      ((unsigned int *)v2)[0] = (unsigned int)&vt_SpawnManagerClass; /*0x6b7f65*/
+      ((unsigned int *)v2)[0] = (unsigned int)&vt_SpawnManagerClass; /*0x6b7f6c*/
+      ((unsigned int *)v2)[0] = (unsigned int)&vt_SpawnManagerClass; /*0x6b7f73*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&v3->u32_30))( v3, (int *)(&v16), 4, 0);  /*0x6b7f88*/
     if ( Prefix_0 >= 0 ) /*0x6b7f8c*/
     {
-      spawns = v2->spawns; /*0x6b7f92*/
+      spawns = (int *)(v2->spawns); /*0x6b7f92*/
       if ( v2 != (SpawnManagerClass *)-56 ) /*0x6b7f97*/
       {
-        ((SpawnControlVector *)((int)((SpawnControlVector *)v2->spawns)))->Constructor( 0, 0); /*0x6b7f9d*/
-        *spawns = (int)&vt_DynamicVectorClass; /*0x6b7fa2*/
+        ((SpawnControlVector *)((int)((SpawnControlVector *)v2->spawns)))->Constructor((int)((SpawnControlVector *)((int)((SpawnControlVector *)v2->spawns))), 0, 0); /*0x6b7f9d*/
+        *spawns = (unsigned int)(int)&vt_DynamicVectorClass;
         *(unsigned int *)&v2->__pad_48[4] = 10; /*0x6b7fa8*/
         *(unsigned int *)v2->__pad_48 = 0; /*0x6b7faf*/
       }
@@ -446,10 +446,10 @@ LABEL_20:
           if ( *(unsigned int *)v2->__pad_48 < spawnVectorCapacity /*0x6b8020*/
             || (BYTE1(v2->creationFrame) || !spawnVectorCapacity)
             && (v11 = *(unsigned int *)&v2->__pad_48[4], v11 > 0)
-            && (*(uint8_t (**)(int *, int, unsigned int))(*spawns + 8))(
-                 v2->spawns,
-                 spawnVectorCapacity + v11,
-                 0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(*spawns + 8))( (int *)(v2->spawns), spawnVectorCapacity + v11, 0) )
+
+
+
           {
             v12 = *(unsigned int *)v2->__pad_48; /*0x6b8027*/
             spawnVectorCount = v2->spawnVectorCount; /*0x6b802a*/
@@ -548,7 +548,7 @@ SpawnManagerClass * SpawnManagerClass::ProcessEvent(void * Block, char a2)
   ((SpawnManagerClass *)(TaskManager *)this)->Constructor_SpawnManagerClass(); /*0x6b8143*/
   if ( (a2 & 1) != 0 ) /*0x6b814d*/
     __3_YAXPAX_Z(this); /*0x6b8150*/
-  return this; /*0x6b815a*/
+  return (SpawnManagerClass *)this; /*0x6b815a*/
 
 }
 } // namespace gamemd
@@ -633,7 +633,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
 {
 
   ((unsigned int *)this)[0] = 0; /*0x6b83a9*/
-  ((unsigned int *)this)[0] = (void *)aP1; /*0x6b83b0*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)aP1; /*0x6b83b0*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x6b83b3*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x6b83b7*/
   this->vtable1 = &vt_VectorClass; /*0x6b83bb*/
@@ -641,18 +641,18 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
   {
     if ( aP2 ) /*0x6b83c9*/
     {
-      ((unsigned int *)this)[0] = (void *)aP2; /*0x6b83cb*/
+      ((unsigned int *)this)[0] = (unsigned int)(void *)aP2; /*0x6b83cb*/
     }
     else
     {
-      ((unsigned int *)this)[0] = (void *)__2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
+      ((unsigned int *)this)[0] = (unsigned int)(void *)__2_YAPAXI_Z(4 * aP1); /*0x6b83dc*/
       BYTE1(((unsigned int *)this)[0]) = 1; /*0x6b83df*/
     }
   }
   this->vtable1 = &vt_DynamicVectorClass; /*0x6b83e3*/
   ((unsigned int *)this)[0] = 10; /*0x6b83e9*/
   ((unsigned int *)this)[0] = 0; /*0x6b83f0*/
-  return this; /*0x6b83f9*/
+  return (unsigned int *)this; /*0x6b83f9*/
 
 }
 } // namespace gamemd
@@ -690,7 +690,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x6b8471*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x6b847a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x6b847a*/
     this->m_8 = a2; /*0x6b8482*/
     BYTE1(this->m_C) = a3 == 0; /*0x6b8485*/
   }

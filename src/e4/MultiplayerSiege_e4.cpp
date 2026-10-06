@@ -78,7 +78,7 @@ int MultiplayerSiege::Write(void ** a1)
     if ( dword_A8DA84 <= 0 ) /*0x5ca6f7*/
     {
 LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0,(const char *)(g_Str_File_MPSiege_cpp), 65));
-      ((WideString *)((void **)a1))->Assign_Alt(StringCSF); /*0x5ca73a*/
+      ((WideString *)((void **)a1))->Assign_Alt( (wchar_t *)(StringCSF)); /*0x5ca73a*/
       return 0; /*0x5ca742*/
     }
     else
@@ -95,7 +95,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0,(co
             if ( v7 != 1 ) /*0x5ca70d*/
             {
               v9 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpIllegalteam), 0,(const char *)(g_Str_File_MPSiege_cpp), 60));
-              ((WideString *)((void **)a1))->Assign_Alt(v9); /*0x5ca75e*/
+              ((WideString *)((void **)a1))->Assign_Alt( (wchar_t *)(v9)); /*0x5ca75e*/
               return 0; /*0x5ca769*/
             }
             ++v3; /*0x5ca70f*/
@@ -105,7 +105,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0,(co
             if ( v2 ) /*0x5ca714*/
             {
               v10 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpOnlyonebesei), 0,(const char *)(g_Str_File_MPSiege_cpp), 51));
-              ((WideString *)((void **)a1))->Assign_Alt(v10); /*0x5ca782*/
+              ((WideString *)((void **)a1))->Assign_Alt( (wchar_t *)(v10)); /*0x5ca782*/
               return 0; /*0x5ca78d*/
             }
             v2 = 1; /*0x5ca716*/
@@ -124,7 +124,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNodefender), 0,(co
       else
       {
         v11 = (wchar_t *)(GetStringCSF((wchar_t *)(aMpNoattackers), 0,(const char *)(g_Str_File_MPSiege_cpp), 70));
-        ((WideString *)((void **)a1))->Assign_Alt(v11); /*0x5ca7ab*/
+        ((WideString *)((void **)a1))->Assign_Alt( (wchar_t *)(v11)); /*0x5ca7ab*/
         return 0; /*0x5ca7b3*/
       }
     }
@@ -154,7 +154,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
 
   ((Multiplayer *)(v14))->FindStartPositions(); /*0x5ca811*/
   v3 = 0; /*0x5ca81c*/
-  memset(v13, 0, sizeof(v13)); /*0x5ca824*/
+  memset( (void *)(v13), 0, sizeof(v13)); /*0x5ca824*/
   if ( dword_A8DA84 > 0 ) /*0x5ca836*/
   {
     v4 = (unsigned int *)(dword_A8DA78);
@@ -205,12 +205,12 @@ LABEL_26:
     if ( !*(unsigned char *)(v10->relatedTagsCapacity + 422) && v10 != v7 ) /*0x5ca910*/
     {
       Debug::Log("Assigning Starting Points for Attacking house %d (%s)\n"); /*0x5ca91c G57c1: IDA 0x5ca91c push offset aAssigningStart_1*/
-      v11 = (int *)(*(int (**)(MultiplayerSiege *, char *, int, Multiplayer *, unsigned int *))(this->MultiplayerSiege_field_00 + 196))( /*0x5ca939*/
-                     this,
-                     &a2,
-                     i,
-                     v14,
-                     v13);
+v11 = (int *)(*(int (**)(MultiplayerSiege *, char *, int, Multiplayer *, unsigned int *))(this->MultiplayerSiege_field_00 + 196))( /*0x5ca939*/ this, (char *)(&a2), i, (Multiplayer *)(v14), (unsigned int *)(v13));
+
+
+
+
+
       ((HouseClass *)(v10))->SetMapSeed(*v11); /*0x5ca944*/
     }
   }
@@ -257,15 +257,15 @@ char MultiplayerSiege::CheckStatus(int a1)
   if ( v1 ) /*0x5ca9be*/
     v2 = ((MPCombatTeam*)v1)->Constructor(); /*0x5ca9c7*/
   else
-    v2 = 0; /*0x5ca9cb*/
+    v2 = (wchar_t **)(0); /*0x5ca9cb*/
   MultiplayerSiege_field_08 = a1->MultiplayerSiege_field_08; /*0x5ca9d1*/
   if ( a1->MultiplayerSiege_field_10 < MultiplayerSiege_field_08 /*0x5ca9f6*/
     || (BYTE1(a1->MultiplayerSiege_field_0C) || !MultiplayerSiege_field_08)
     && (v4 = *((unsigned int *)a1 + 5), v4 > 0)
-    && (*(uint8_t (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
-         a1,
-         MultiplayerSiege_field_08 + v4,
-         0) )
+&& (*(uint8_t (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))( (MultiplayerSiege *)(a1), MultiplayerSiege_field_08 + v4, 0) )
+
+
+
   {
     MultiplayerSiege_field_10 = (unsigned int)(a1->MultiplayerSiege_field_10);
     MultiplayerSiege_field_04 = (unsigned int)(a1->MultiplayerSiege_field_04);
@@ -276,15 +276,15 @@ char MultiplayerSiege::CheckStatus(int a1)
   if ( v7 ) /*0x5caa18*/
     v8 = ((MPCombatTeam *)(v7))->MPTeam(); /*0x5caa21*/
   else
-    v8 = 0; /*0x5caa25*/
+    v8 = (wchar_t **)(0); /*0x5caa25*/
   v9 = a1->MultiplayerSiege_field_08; /*0x5caa27*/
   if ( a1->MultiplayerSiege_field_10 < v9 /*0x5caa4c*/
     || (BYTE1(a1->MultiplayerSiege_field_0C) || !v9)
     && (v10 = *((unsigned int *)a1 + 5), v10 > 0)
-    && (*(uint8_t (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
-         a1,
-         v9 + v10,
-         0) )
+&& (*(uint8_t (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))( (MultiplayerSiege *)(a1), v9 + v10, 0) )
+
+
+
   {
     v11 = (unsigned int)(a1->MultiplayerSiege_field_10);
     v12 = (unsigned int)(a1->MultiplayerSiege_field_04);
@@ -295,16 +295,16 @@ char MultiplayerSiege::CheckStatus(int a1)
   if ( v13 ) /*0x5caa6e*/
     v14 = ((MPCombatTeam *)(v13))->Constructor2(); /*0x5caa77*/
   else
-    v14 = 0; /*0x5caa7b*/
+    v14 = (wchar_t **)(0); /*0x5caa7b*/
   v15 = a1->MultiplayerSiege_field_08; /*0x5caa7d*/
   if ( a1->MultiplayerSiege_field_10 < v15 /*0x5caaa7*/
     || ((LOBYTE(v16) = BYTE1(a1->MultiplayerSiege_field_0C), (unsigned char)v16) || !v15)
     && (v16 = *((unsigned int *)a1 + 5), v16 > 0)
-    && (LOBYTE(v16) = (*(int (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
-                        a1,
-                        v15 + v16,
-                        0),
-        (unsigned char)v16) )
+&& (LOBYTE(v16) = (*(int (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))( (MultiplayerSiege *)(a1), v15 + v16, 0), (unsigned char)v16) )
+
+
+
+
   {
     v16 = (unsigned int)(a1->MultiplayerSiege_field_10);
     v17 = (unsigned int)(a1->MultiplayerSiege_field_04);
@@ -364,13 +364,13 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   if ( !v7 ) /*0x5cab69*/
     return 0; /*0x5cab69*/
   v9 = *v7; /*0x5cab6b*/
-  StartCoords = ((HouseClass *)(HouseClass *)ppv)->GetStartCoords( v12); /*0x5cab76*/
-  if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v9 + 216))(v8, StartCoords, 0) ) /*0x5cab7e*/
+  StartCoords = ((HouseClass *)ppv)->GetStartCoords( v12); /*0x5cab76*/
+  if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v9 + 216))( (int *)(v8), (unsigned int *)(StartCoords), 0) ) /*0x5cab7e*/
     return 1; /*0x5cab7e*/
-  CurrentOption = (int16_t *)((HouseClass *)(HouseClass *)ppv)->GetCurrentOption( &a2); /*0x5cab91*/
-  if ( FindInfantryDeployPosition(v8,(gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5cab9a*/
+  CurrentOption = (int16_t *)((HouseClass *)ppv)->GetCurrentOption( &a2); /*0x5cab91*/
+  if ( FindInfantryDeployPosition( (int *)(v8), (gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
-  (*(void (**)(int *, int))(*v8 + 32))(v8, 1); /*0x5caba9*/
+  (*(void (**)(int *, int))(*v8 + 32))( (int *)(v8), 1); /*0x5caba9*/
   return 0; /*0x5cab08*/
 
 }

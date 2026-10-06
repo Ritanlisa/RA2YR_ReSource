@@ -167,7 +167,7 @@ char sub_46D8B0()
       PlayerSide = ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->GetPlayerSide(); /*0x46d93a*/
       if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
-        v8 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))(dword_A8B23C); /*0x46d958*/
+        v8 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))( (ObjectClass *)(dword_A8B23C)); /*0x46d958*/
         ((SessionClass *)((int *)((unsigned int *)(dword_A8DA90))[v2]))->SetPlayerOption(v8); /*0x46d960*/
       }
     }
@@ -1126,14 +1126,14 @@ int sub_46D810()
   int PlayerColor; // [esp+3Fh] [ebp-191h]
 
   v2 = 51; /*0x46d82c*/
-  strcpy(v3,(const char *)(unk_A8B380)); /*0x46d83d*/
+  strcpy( (char *)(v3), (const char *)(unk_A8B380)); /*0x46d83d*/
   Option = ((SessionClass *)((int *)*(unsigned int *)(dword_A8DA78)))->GetOption(); /*(unsigned int *)(0x46d859)*/
   PlayerSide = ((SessionClass *)((int *)*(unsigned int *)(dword_A8DA78)))->GetPlayerSide(); /*0x46d864*/
   PlayerColor = ((SessionClass *)((SessionClass *)*(unsigned int *)(dword_A8DA78)))->GetPlayerColor(); /*0x46d874*/
   result = dword_A8DA90; /*0x46d878*/
   if ( dword_A8DA90 ) /*0x46d881*/
   {
-    ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)&v2, 455, (wchar_t *)(1), (void)((wchar_t *)dword_A8DA90)); /*0x46d895*/
+    ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)&v2, 455, (wchar_t *)(1), (wchar_t *)dword_A8DA90); /*0x46d895*/
 // 0x541820
     return (int)(((Network *)(&unk_A8E9C0))->ReceiveLoop()); /*0x46d89f*/
   }
@@ -1150,7 +1150,7 @@ LRESULT sub_46DA20(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
 
   swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, Format); /*0x46da38*/
   DlgItem = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x46da42*/
-  return SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x46da5b*/
+  return SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)Buffer))); /*0x46da5b*/
 }
 } // namespace gamemd
 

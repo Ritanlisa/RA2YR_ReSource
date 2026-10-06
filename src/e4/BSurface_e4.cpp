@@ -62,7 +62,7 @@ _DWORD * BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a
   }
   else
   {
-    v13 = 0; /*0x410d57*/
+    v13 = (void *)(0); /*0x410d57*/
   }
   v14 = *((unsigned int *)this + 10); /*0x410d5c*/
   a5 = *((unsigned int *)this + 11); /*0x410d5f*/
@@ -70,7 +70,7 @@ _DWORD * BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a
   a2 = 0; /*0x410d66*/
   a3 = 0; /*0x410d6a*/
   a4 = v14; /*0x410d6e*/
-  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))( v13, (int *)(&a2), 127); /*0x410d7b*/
+  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))( (void *)(v13), (int *)(&a2), 127); /*0x410d7b*/
   v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))( (void *)(this->Buffer), 0, 0); /*0x410d89*/
   v16 = *((unsigned int *)this + 11); /*0x410d8c*/
   *((unsigned int *)this + 6) = v15; /*0x410d8f*/
@@ -78,9 +78,9 @@ _DWORD * BSurface::Construct(int a2, int a3, int a4, int a5, void *a5_2, void *a
   this->BytesPerPixel = 0; /*0x410d96*/
   *((unsigned int *)this + 9) = 0x8000; /*0x410d99*/
   v18 = v15 + 2 * v17; /*0x410da0*/
-  Buffer = this->Buffer; /*0x410da3*/
+  Buffer = (void *)(this->Buffer); /*0x410da3*/
   *((unsigned int *)this + 7) = v18; /*0x410da6*/
-  (*(void (**)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x410dab*/
+  (*(void (**)(void *))(*(unsigned int *)Buffer + 96))( (void *)(Buffer)); /*0x410dab*/
   return (_DWORD *)(this->XSurface); /*0x410db0*/
 
 }
@@ -166,7 +166,7 @@ bool BSurface::CreateTripleBuffer()
         }
         else
         {
-          v8 = 0; /*0x7b8d8a*/
+          v8 = (unsigned int *)(0); /*0x7b8d8a*/
         }
         *((unsigned int *)this + 17) = (unsigned int)(v8); /*0x7b8d8c*/
       }
@@ -189,7 +189,7 @@ bool BSurface::CreateTripleBuffer()
         }
         else
         {
-          v13 = 0; /*0x7b8de8*/
+          v13 = (unsigned int *)(0); /*0x7b8de8*/
         }
         *((unsigned int *)this + 22) = (unsigned int)(v13); /*0x7b8dea*/
       }
@@ -212,7 +212,7 @@ bool BSurface::CreateTripleBuffer()
         }
         else
         {
-          v18 = 0; /*0x7b8e46*/
+          v18 = (unsigned int *)(0); /*0x7b8e46*/
         }
         *((unsigned int *)this + 27) = (unsigned int)(v18); /*0x7b8e48*/
       }
@@ -274,7 +274,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   }
   else
   {
-    v13 = 0; /*0x7bc9e7*/
+    v13 = (void *)(0); /*0x7bc9e7*/
   }
   v14 = *((unsigned int *)this + 10); /*0x7bc9ec*/
   a5 = *((unsigned int *)this + 11); /*0x7bc9ef*/
@@ -282,7 +282,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   a2 = 0; /*0x7bc9f6*/
   a3 = 0; /*0x7bc9fa*/
   a4 = v14; /*0x7bc9fe*/
-  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))( v13, (int *)(&a2), 0xFFFF); /*0x7bca0e*/
+  (*(void (**)(void *, int *, int))(*(unsigned int *)v13 + 20))( (void *)(v13), (int *)(&a2), 0xFFFF); /*0x7bca0e*/
   v15 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))( (void *)(this->Buffer), 0, 0); /*0x7bca1c*/
   v16 = *((unsigned int *)this + 11); /*0x7bca1f*/
   *((unsigned int *)this + 6) = v15; /*0x7bca22*/
@@ -290,9 +290,9 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   this->BytesPerPixel = 0; /*0x7bca29*/
   *((unsigned int *)this + 9) = 0x8000; /*0x7bca2c*/
   v18 = v15 + 2 * v17; /*0x7bca33*/
-  Buffer = this->Buffer; /*0x7bca36*/
+  Buffer = (void *)(this->Buffer); /*0x7bca36*/
   *((unsigned int *)this + 7) = v18; /*0x7bca39*/
-  (*(void (**)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x7bca3e*/
+  (*(void (**)(void *))(*(unsigned int *)Buffer + 96))( (void *)(Buffer)); /*0x7bca3e*/
   return (unsigned int *)(this->XSurface); /*0x7bca43*/
 
 }
@@ -331,8 +331,8 @@ namespace gamemd {
 BSurface * BSurface::ScalarDtor(char * Block, char a2)
 {
 
-  ((Vector *)((int)&this->Buffer))->Clear(); /*0x411656*/
-  *(unsigned int *)this->XSurface = &Surface_Vtable; /*0x41165f*/
+  ((Vector *)((int)&this->Buffer))->Clear((int)((Vector *)((int)&this->Buffer))); /*0x411656*/
+  *(unsigned int *)this->XSurface = (unsigned int)&Surface_Vtable; /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
     __3_YAXPAX_Z(this); /*0x41166a*/
   return this->XSurface; /*0x411674*/

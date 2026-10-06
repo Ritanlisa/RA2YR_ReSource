@@ -50,14 +50,14 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   void *v15[128]; // [esp+10h] [ebp-200h] BYREF
 
   ((DynamicArray *)(&dword_AC1B48))->Resize((int *)&hWnd,(unsigned int *)(&v14)); /*0x61058a*/
-  memset(v15, 0, sizeof(v15)); /*0x6105a0*/
+  memset( (void *)(v15), 0, sizeof(v15)); /*0x6105a0*/
   v15[26] = (void *)11; /*0x6105a4*/
   v15[25] = (void *)g_FogOfWarState; /*0x6105ac*/
   v2 = RA2_OPNEW(4u); /*0x6105b0*/
   if ( v2 ) /*0x6105bc*/
-    v3 = (void *)unknown_libname_74(v2); /*0x6105c0*/
+    v3 = (void *)unknown_libname_74( (void *)(v2)); /*0x6105c0*/
   else
-    v3 = 0; /*0x6105c7*/
+    v3 = (void *)(0); /*0x6105c7*/
   v15[15] = v3; /*0x6105c9*/
   v15[16] = 0; /*0x6105df*/
   v15[23] = 0; /*0x6105e3*/
@@ -73,7 +73,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   {
     do /*0x61064d*/
     {
-      v5 = 0; /*0x610614*/
+      v5 = (unsigned int *)(0); /*0x610614*/
       v6 = v4; /*0x610618*/
       if ( !v4 ) /*0x61061a*/
         break; /*0x61061a*/
@@ -136,7 +136,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM)
   LABEL_29:
       if ( *(float *)&v14 <= dbl_AC18E0 ) /*0x61073d*/
   LABEL_30:
-        HashTable::Shrink2( (void)(&g_DialogPool)); /*0x61073f*/
+        HashTable::Shrink2( (void *)(&g_DialogPool)); /*0x61073f*/
     }
   }
   LABEL_31: WindowLongA = (gamemd::AbstractClass **)((void *)GetWindowLongA(hWnd, -21));
@@ -174,13 +174,13 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
       v9[0] = 0; /*0x610879*/
       v9[1] = 0; /*0x61087d*/
       v10 = *((unsigned long long *)&dword_AC1CB8 + 1); /*0x610881*/
-      (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x61088c*/
-        g_DSurface_Primary,
-        v11,
-        dword_AC1CC8,
-        v9,
-        0,
-        1);
+(*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x61088c*/ g_DSurface_Primary, (unsigned int *)(v11), dword_AC1CC8, (unsigned int *)(v9), 0, 1);
+
+
+
+
+
+
       dword_AC1DD0 = 1; /*0x610894*/
     }
     if ( dword_AC1CC8 ) /*0x6108a2*/
@@ -191,7 +191,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
   StringCSF = (wchar_t *)((unsigned int)(GetStringCSF((wchar_t *)(aGuiTooltip), 0,(const char *)(g_Str_File_ownrdraw_cpp), 7457)));
   swprintf((wchar_t *)&word_AC1CCC, (const wchar_t *)StringCSF, v8); /*0x6108e5*/
   if ( a2 ) /*0x6108ef*/
-    wcscpy((wchar_t *)(word_AC1CCC), a2); /*0x6108f7*/
+    wcscpy( (wchar_t *)(word_AC1CCC), (const wchar_t *)(a2)); /*0x6108f7*/
   *(unsigned long long *)&dword_AC1CB8 = *(unsigned long long *)a1; /*0x610901*/
   DWORD2(dword_AC1CB8) = *(unsigned int *)(a1 + 8); /*0x610917*/
   v6 = *(unsigned int *)(a1 + 12); /*0x61091c*/
@@ -221,14 +221,14 @@ char sub_610B50()
   v4[0] = *(unsigned long long *)((char *)&g_DialogPool + 0x208 + 496); /*0x610bab*/
   v4[1] = *(unsigned long long *)((char *)&g_DialogPool + 0x208 + 504); /*0x610bc4*/
   v3 = *(unsigned long long *)((char *)&g_DialogPool + 0x208 + 504); /*0x610bc8*/
-  (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))((DSurface *)g_DSurface_Primary)->DSurface_field_0x0 /*0x610bd3*/
-   + 2))(
-    (DSurface *)g_DSurface_Primary,
-    v4,
-    *(unsigned int *)((char *)&g_DialogPool + 0x208 + 512),
-    v2,
-    0,
-    1);
+(*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))((DSurface *)g_DSurface_Primary)->DSurface_field_0x0 /*0x610bd3*/ + 2))( (DSurface *)g_DSurface_Primary, (unsigned long long *)(v4), *(unsigned int *)((char *)&g_DialogPool + 0x208 + 512), (unsigned int *)(v2), 0, 1);
+
+
+
+
+
+
+
   *(unsigned int *)((char *)&g_DialogPool + 0x208 + 776) = 1; /*0x610bd6*/
   return 1; /*0x610b61*/
 }
@@ -252,14 +252,14 @@ AbstractClass * * sub_610BF0()
     v2[0] = 0; /*0x610c53*/
     v2[1] = 0; /*0x610c57*/
     v3 = *(unsigned long long *)((char *)&g_DialogPool + 0x208 + 504); /*0x610c5b*/
-    (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))((DSurface *)g_DSurface_Primary)->DSurface_field_0x0 /*0x610c66*/
-     + 2))(
-      (DSurface *)g_DSurface_Primary,
-      v4,
-      *(unsigned int *)((char *)&g_DialogPool + 0x208 + 512),
-      v2,
-      0,
-      1);
+(*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))((DSurface *)g_DSurface_Primary)->DSurface_field_0x0 /*0x610c66*/ + 2))( (DSurface *)g_DSurface_Primary, (unsigned long long *)(v4), *(unsigned int *)((char *)&g_DialogPool + 0x208 + 512), (unsigned int *)(v2), 0, 1);
+
+
+
+
+
+
+
     *(unsigned int *)((char *)&g_DialogPool + 0x208 + 776) = 1; /*0x610c69*/
   LABEL_6:
     if ( *(unsigned int *)((char *)&g_DialogPool + 0x208 + 512) ) /*0x610c7c*/
@@ -350,10 +350,10 @@ void sub_612930()
 namespace gamemd {
 AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
 {
-  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
+  LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // esi
   int v5; // eax
   HWND v6; // ecx
-  LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM); // eax
   int v8; // eax
   AbstractClass ** v9;
   HDC v10; // esi
@@ -379,7 +379,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
     v6 = hWnd; /*0x612ab5*/
   }
   LABEL_10:
-  ScreenDialogToClient( (void *)(v6), &v12); /*0x612ab9*/
+  ScreenDialogToClient( (void *)((void *)(v6)), (void *)(&v12)); /*0x612ab9*/
   GetClientRect(hWnd, &Rect); /*0x612acc*/
   if ( dword_AC1B04 && (v8 = *((unsigned int *)dword_AC1B00 + (((unsigned int (__cdecl *)(void *))dword_AC1B18)(&hWnd) & ((1 << dword_AC1B0C) - 1)))) != 0 ) /*0x612aff*/
   {

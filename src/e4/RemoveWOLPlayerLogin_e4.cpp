@@ -35,7 +35,7 @@ void E4Recv_7AE830::sub_7AE830()
     v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x7ae86f*/
     v6 = 4 * (int)((unsigned int *)this)[0]; /*0x7ae874*/
     this->AbstractClass = (unsigned int)(v5); /*0x7ae87b*/
-    memset(v5, 0, v6); /*0x7ae880*/
+    memset( (void *)(v5), 0, v6); /*0x7ae880*/
     if ( (int)vtable2 > 0 ) /*0x7ae88b*/
     {
       v7 = vtable0; /*0x7ae88d*/

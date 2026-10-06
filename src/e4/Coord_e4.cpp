@@ -73,7 +73,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
   if ( v9 != v16 ) /*0x41399a*/
   {
     v17 = (char *)((unsigned char *)this + 24 * v9); /*0x4139ae*/
-    v18 = (*(int (**)(char *, int *))(*(unsigned int *)v17 + 16))( v17, (int *)(&aP1)); /*0x4139b4*/
+    v18 = (*(int (**)(char *, int *))(*(unsigned int *)v17 + 16))( (char *)(v17), (int *)(&aP1)); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
       v19 = *((unsigned int *)v17 + 4); /*0x4139bc*/

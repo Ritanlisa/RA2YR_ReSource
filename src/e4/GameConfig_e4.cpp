@@ -51,11 +51,11 @@ char * GameConfig::ComputeCRC()
   unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
   v0 = (int *)((unsigned int)((int *)(0)));
-  qmemcpy(v11, &unk_ABE050, sizeof(v11)); /*0x5e84ea*/
+  qmemcpy( (void *)(v11), (const void *)(&unk_ABE050), sizeof(v11)); /*0x5e84ea*/
   v1 = (int *)(&dword_ABE010); /*0x5e84ec*/
   v10 = (int *)(&dword_ABE010); /*0x5e84fd*/
   v2 = 320; /*0x5e8501*/
-  memset(&unk_ABE050, 0, 0x100u); /*0x5e8506*/
+  memset( (void *)(&unk_ABE050), 0, 0x100u); /*0x5e8506*/
   do /*0x5e854a*/
   {
     v3 = (unsigned int)(v0)>> 31; /*0x5e850a*/
@@ -86,7 +86,7 @@ char * GameConfig::ComputeCRC()
   while ( v2 > 0 ); /*0x5e854a*/
   v8 = (char *)__2_YAPAXI_Z(0xCu); /*0x5e8553*/
   sprintf(v8, "%08X", v0); /*0x5e855c*/
-  qmemcpy(&unk_ABE050, v11, 0x100u); /*0x5e8572*/
+  qmemcpy( (void *)(&unk_ABE050), (const void *)(v11), 0x100u); /*0x5e8572*/
   return v8; /*0x5e8574*/
 
 }
@@ -129,19 +129,19 @@ int GameConfig::ComputeHash()
   v6[2] = 0; /*0x679ded*/
   ((GenericList *)v7)->Constructor(); /*0x679df1*/
   v7[0] = (unsigned int)(&vt_List); /*0x679dfa*/
-  memset(&v7[7], 0, 12); /*0x679e07*/
+  memset( (void *)(&v7[7]), 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
   v9 = 0; /*0x679e17*/
   v10 = 0; /*0x679e1b*/
   v11 = 0; /*0x679e1f*/
   v6[0] = &CCINIClass_Vtable; /*0x679e23*/
-  ((CCFileClass*)v12)->Construct((void *)(g_Str_File_CoopCampMD_ini)); /*0x679e2b*/
+  ((CCFileClass*)v12)->Construct( (char *)((void *)(g_Str_File_CoopCampMD_ini))); /*0x679e2b*/
   if ( ((CCINIClass *)(v6))->Load((int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = ((Hash*)((int)v6))->ComputeHashSHA1(); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
   v12[0] = (unsigned int)(&vt_CCFileClass); /*0x679e60*/
-  v14 = 0; /*0x679e68*/
-  ((Vector *)((int)v13))->Clear(); /*0x679e6f*/
+  v14 = (void **)(0); /*0x679e68*/
+  ((Vector *)((int)v13))->Clear((int)((Vector *)((int)v13))); /*0x679e6f*/
   v12[0] = (unsigned int)(&off_7E1668); /*0x679e78*/
   ((BufferIOFileClass *)(v12))->Dtor(); /*0x679e80*/
   ((HashTable *)(v6))->DestroyHashTableINIClass(); /*0x679e89*/
@@ -176,7 +176,7 @@ void GameConfig::Constructor()
       *(unsigned int *)(v2 + 16) = (unsigned int)(&vt_GenericNode); /*0x5d67ec*/
       ((GenericNode *)((GenericNode *)(v2 + 28)))->Constructor(); /*0x5d67f2*/
       *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_GenericList); /*0x5d67fa*/
-      ((LinkedList *)(LinkedList *)(v3 + 16))->Prepend( v3 + 28); /*0x5d6801*/
+      ((LinkedList *)(v3 + 16))->Prepend( v3 + 28); /*0x5d6801*/
       v1 = (gamemd::GameConfig *)((unsigned int)(this)); /*0x5d6806*/
       *(unsigned int *)(v3 + 12) = (unsigned int)(&vt_List); /*0x5d680a*/
       *(unsigned int *)(v3 + 40) = 0; /*0x5d6811*/
@@ -197,8 +197,8 @@ void GameConfig::Constructor()
     if ( (uint8_t)((CCFileClass *)(&v6))->Open((int)(0)) ) /*0x5d6846*/
       ((CCINIClass *)(*(CCINIClass **)&v1->__pad_0[56]))->Load((int)&v6, 0, 0); /*0x5d685a*/
     *(unsigned int *)v6.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5d6863*/
-    v8 = 0; /*0x5d686b*/
-    ((Vector *)((int)v7))->Clear(); /*0x5d686f*/
+    v8 = (void **)(0); /*0x5d686b*/
+    ((Vector *)((int)v7))->Clear((int)((Vector *)((int)v7))); /*0x5d686f*/
     *(unsigned int *)v6.CDFileClass = (unsigned int)(&off_7E1668); /*0x5d6878*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x5d6880*/
   }
@@ -225,7 +225,7 @@ int  GameConfig::BuildChecksum(char * Buffer)
   v2 = dword_B76B1C; /*0x77e7a5*/
   if ( dword_B76B1C > 0 ) /*0x77e7ad*/
   {
-    v3 = dword_B76E58; /*0x77e7af*/
+    v3 = (int *)(dword_B76E58); /*0x77e7af*/
     do /*0x77e7c0*/
     {
       v3 += 37; /*0x77e7b6*/

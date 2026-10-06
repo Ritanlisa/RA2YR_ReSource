@@ -634,11 +634,11 @@ int TechnoClass::ProcessDeployAction()
       }
       else
       {
-        v3 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6afe1c*/
-                          this->occupant,
-                          &v31,
-                          *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
-                          1);
+v3 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6afe1c*/ this->occupant, (int *)(&v31), *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256, 1);
+
+
+
+
         v30 = v3; /*0x6afe25*/
         *(unsigned int *)v29 = v3; /*0x6afe29*/
         if ( v3 == dword_B0B5B8 /*0x6afe57*/
@@ -647,13 +647,13 @@ int TechnoClass::ProcessDeployAction()
               v3 == dword_B0B5B8) )
         {
           this->customSound_controller[3] = 0; /*0x6afe67*/
-          this->customSound_controller[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6afe74*/
+          this->customSound_controller[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6afe74*/
         }
         else
         {
           v7 = *(unsigned int *)this->occupant; /*0x6afe87*/
-          v8 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v29); /*0x6afe8e*/
-          (*(void (**)(int, void *, int))(v7 + 1152))(this->occupant, v8, 1); /*0x6afe97*/
+          v8 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v29)); /*0x6afe8e*/
+          (*(void (**)(int, void *, int))(v7 + 1152))( this->occupant, (void *)(v8), 1); /*0x6afe97*/
           LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))(this->occupant, 2, 0); /*0x6afea6*/
           this->customSound_controller[3] = 2; /*0x6afeac*/
           this->customSound_controller[4] = 0x7FFFFFFF; /*0x6afeb3*/
@@ -675,7 +675,7 @@ int TechnoClass::ProcessDeployAction()
           }
           else
           {
-            v10 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6aff16*/
+            v10 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6aff16*/
             this->customSound_controller[3] = 3; /*0x6aff23*/
             this->customSound_controller[0] = v10; /*0x6aff2a*/
             v3 = v36; /*0x6aff2c*/
@@ -688,7 +688,7 @@ int TechnoClass::ProcessDeployAction()
       else
       {
         this->customSound_controller[3] = 0; /*0x6afed3*/
-        this->customSound_controller[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6afee0*/
+        this->customSound_controller[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6afee0*/
       }
       break; /*0x6afee8*/
     case 3:
@@ -705,7 +705,7 @@ int TechnoClass::ProcessDeployAction()
       {
         this->customSound_controller[3] = 0; /*0x6aff56*/
         LOBYTE(v3) = *((unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x6aff5d*/
-        this->customSound_controller[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6aff62*/
+        this->customSound_controller[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6aff62*/
       }
       break; /*0x6aff6a*/
     case 4:
@@ -744,23 +744,23 @@ int TechnoClass::ProcessDeployAction()
       {
         this->customSound_controller[3] = 0; /*0x6b004d*/
         LOBYTE(v3) = *((unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x6b0054*/
-        this->customSound_controller[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b0059*/
+        this->customSound_controller[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b0059*/
       }
       else
       {
-        v3 = *(unsigned int *)(*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)this->occupant + 824))( /*0x6b008d*/
-                          this->occupant,
-                          &v31,
-                          *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6016) / 256,
-                          0);
+v3 = *(unsigned int *)(*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)this->occupant + 824))( /*0x6b008d*/ this->occupant, (int *)(&v31), *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6016) / 256, 0);
+
+
+
+
         v30 = v3; /*0x6b0096*/
         if ( v3 == dword_B0B5B8 ) /*0x6b009a*/
         {
-          *(unsigned int *)v29 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6b00e7*/
-                                        this->occupant,
-                                        &v31,
-                                        *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
-                                        1);
+*(unsigned int *)v29 = *(unsigned int *)(*(int (**)(int, int *, int, int))(*(unsigned int *)this->occupant + 824))( /*0x6b00e7*/ this->occupant, (int *)(&v31), *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256, 1);
+
+
+
+
           v30 = *((BuildingClass *)((BuildingClass *)this))->FindPlacementCells2((unsigned int *)(&v33), *(int *)v29); /*0x6b0100*/
           v16 = (unsigned int *)(((CellStruct *)((CellStruct *)&v30))->Sub((unsigned int *)(&v34),(unsigned short *)(v29))); /*0x6b0104*/
           v17 = *((int16_t *)v16 + 1); /*0x6b0109*/
@@ -782,10 +782,10 @@ int TechnoClass::ProcessDeployAction()
           }
           Math::Sqrt(v26); /*0x6b0134*/
           v19 = Math::RoundToInt(v1); /*0x6b0144*/
-          v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/
-                                this->occupant,
-                                v35);
-          v21 = ((CellStruct *)(v20))->Sub(&v34, v29); /*0x6b015f*/
+v20 = (CellStruct *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->occupant + 440))( /*0x6b014d*/ this->occupant, (unsigned char *)(v35));
+
+
+          v21 = (unsigned int *)((CellStruct *)(v20))->Sub( (unsigned int *)(&v34), (unsigned short *)(v29)); /*0x6b015f*/
           v22 = *(int16_t *)v21; /*0x6b0168*/
           v31 = *((int16_t *)v21 + 1); /*0x6b016b*/
           __asm { fild [esp+38h+var_20] } /*0x6b0172*/
@@ -809,7 +809,7 @@ int TechnoClass::ProcessDeployAction()
           {
             *(unsigned char *)(this->occupant + 1272) = 1; /*0x6b01c4*/
             v24 = (*(int (**)(int))(*(unsigned int *)this->occupant + 444))(this->occupant); /*0x6b01d0*/
-            ((TechnoClass *)(TechnoClass *)this->occupant)->SetFocus( v24); /*0x6b01da*/
+            ((TechnoClass *)this->occupant)->SetFocus( v24); /*0x6b01da*/
             LOBYTE(v3) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)this->occupant + 488))( /*0x6b01e8*/
                            this->occupant,
                            19,
@@ -872,10 +872,10 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     HIBYTE(this->customSound_controller[4]) = 1; /*0x6a0540*/
     this->ambientSoundController[3] = v6; /*0x6a0544*/
     vtable3 = ((unsigned int *)this)[0]; /*0x6a054a*/
-    v7 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x6a0551*/
+    v7 = (CellClass *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x6a0551*/
     if ( (uint8_t)((CrateClass *)((CrateClass *)v7))->ProcessPickup((int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x6a0564*/
     {
-      ((WalkLocomotion *)((int)this))->MoveTo(aP1, 1); /*0x6a0573*/
+      ((WalkLocomotion *)((int)this))->MoveTo( (unsigned int *)(aP1), 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
     }
     if ( *((unsigned char *)((unsigned int *)this)[0] + 144) ) /*0x6a0583*/
@@ -1164,7 +1164,7 @@ int sub_6A4BF0()
 namespace gamemd {
 int sub_6A4C10()
 {
-  GadgetClass::Construct( (void)(&stru_B07E58), 0, 0, 1, 1, 8, 0); /*0x6a4c21*/
+  GadgetClass::Construct( (void *)(&stru_B07E58), 0, 0, 1, 1, 8, 0); /*0x6a4c21*/
   stru_B07E58 = (int)&SidebarClass_SBGadgetClass_vftable; /*0x6a4c2b*/
   return atexit(sub_6A4C40); /*0x6a4c3b*/
 }
@@ -1323,7 +1323,7 @@ int sub_6A4DC0()
     ControlClass::Construct(v0, 0, 0, 0, 60, 48, 25, 0); /*0x6a4ddb*/
     v0[11] = 0; /*0x6a4de0*/
     v0[12] = 0; /*0x6a4de3*/
-    *v0 = (void*)&SidebarClass_StripClass_SelectClass_vftable; /*0x6a4de6*/
+    *v0 = (unsigned int)(void*)&SidebarClass_StripClass_SelectClass_vftable; /*0x6a4de6*/
     v0 += 14; /*0x6a4dec*/
     --v1; /*0x6a4def*/
   }
@@ -1396,7 +1396,7 @@ char E4Recv_6ABA60::sub_6ABA60(int a2, int a3, int a4)
   this->customSound_controller[13 * v5 + 5] = a2; /*0x6aba9e*/
   BYTE1(this->ambientSoundController[0]) = 1; /*0x6abaa2*/
   LOBYTE(this->ambientSoundController[0]) = 1; /*0x6abaa5*/
-  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 0); /*0x6abaad*/
+  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 0); /*0x6abaad*/
   return 1; /*0x6aba88*/
 
 }
@@ -1577,7 +1577,7 @@ void sub_6ACE80(SessionClass * hDlg, int a2)
     }
     for ( i = (char *)v3; (int)i < v4; ++i ) /*0x6acead*/
     {
-      ResourceID4CSF = GetResourceID4CSF(i); /*0x6aceb6*/
+      ResourceID4CSF = GetResourceID4CSF( (int)(i)); /*0x6aceb6*/
       if ( dword_A8B23C && *(unsigned char *)(dword_A8B23C + 60) ) /*0x6acec1*/
         SetupLobbyPlayerSlots( (SessionClass *)(hDlg), ResourceID4CSF, 3); /*0x6aceca*/
       else

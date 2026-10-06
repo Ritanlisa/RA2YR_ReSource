@@ -58,26 +58,26 @@ AbstractClass * FootClass::Destruct()
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35ac*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FootClass); /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
-    ((TeamClass *)(team))->LiberateMember_Start((int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
+    ((TeamClass *)(team))->LiberateMember_Start( (void *)((int)this), 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
-  v3 = (*((int (**)(FootClass *, FootClass **))FootClass_Array.TechnoClass + 4))(&FootClass_Array, &v11); /*0x4d35e1*/
+  v3 = (*((int (**)(FootClass *, FootClass **))FootClass_Array.TechnoClass + 4))( (FootClass *)(&FootClass_Array), (FootClass **)(&v11)); /*0x4d35e1*/
   if ( v3 != -1 ) /*0x4d35e7*/
     ((FootClass *)&FootClass_Array)->RemoveFromPointerArray( v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
-  v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x4d3608*/
-         (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
-         &v11);
+v4 = (*(int (**)(char *, FootClass **))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x4d3608*/ (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2), (FootClass **)(&v11));
+
+
   if ( v4 != -1 ) /*0x4d360e*/
     ((DynamicVector *)((DynamicVector *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)))->RemoveItem(v4); /*0x4d3616*/
   parasiteImUsing = (gamemd::ParasiteClass *)(this->parasiteImUsing); /*0x4d361b*/
   if ( parasiteImUsing ) /*0x4d3623*/
   {
-    (*((void (**)(ParasiteClass *, int))parasiteImUsing->vtable1 + 8))(parasiteImUsing, 1); /*0x4d3629*/
+    (*((void (**)(ParasiteClass *, int))parasiteImUsing->vtable1 + 8))( (ParasiteClass *)(parasiteImUsing), 1); /*0x4d3629*/
     this->parasiteImUsing = 0; /*0x4d362c*/
   }
   if ( (&this->currentJumpjetMapCoords)[0] != g_FootClass_Pool ) /*0x4d3646*/
   {
-    v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)this->currentJumpjetMapCoords); /*0x4d365b*/
+    v6 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)this->currentJumpjetMapCoords); /*0x4d365b*/
     if ( (FootClass *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
@@ -140,8 +140,8 @@ int FootClass::updateThreat()
   v2 = ((unsigned int *)this)[2]; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
-    if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < v2 ) /*0x70f7fb*/
-      return v2 == *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v1; /*0x70f808*/
+    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < v2 ) /*0x70f7fb*/
+      return v2 == *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1; /*0x70f808*/
     v2 = 0; /*0x70f809*/
   }
   return v2 == 0; /*0x70f808*/
@@ -189,7 +189,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
     if ( v7 ) /*0x71001f*/
       ((TaskManager *)(v7))->Update(); /*0x710021*/
     v8 = (unsigned int *)v6[421]; /*0x710026*/
-    if ( v8 && v8[423] && *(unsigned char *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 3278) ) /*0x710042*/
+    if ( v8 && v8[423] && *(unsigned char *)((*(int (**)(unsigned int *))(*v8 + 132))( (unsigned int *)(v8)) + 3278) ) /*0x710042*/
       BuildingClass::Deploy(v27, v4, v5); /*0x710058*/
     v9 = v6[413]; /*0x71005d*/
     v10 = v6 + 413; /*0x710063*/
@@ -200,7 +200,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       if ( v11 < 0 && v11 != -2147467262 ) /*0x710088*/
         WinAPI::Wrapper(v11); /*0x71008b*/
     }
-    if ( *(unsigned char *)((*(int (**)(int *))(*v6 + 132))(v6) + 1516)
+    if ( *(unsigned char *)((*(int (**)(int *))(*v6 + 132))( (int *)(v6)) + 1516)
       && *(unsigned int *)v28.__pad_0
       && !v6[172]
       && (*(uint8_t (**)(unsigned int))(**(unsigned int **)v28.__pad_0 + 28))(*(unsigned int *)v28.__pad_0) )
@@ -214,8 +214,8 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( !v13 ) /*0x710126*/
           WinAPI::Wrapper(-2147467261); /*0x71012d*/
         (*(void (**)(int))(*(unsigned int *)*v10 + 72))(*v10); /*0x710137*/
-        (*(void (**)(int *, int))(*v6 + 496))(v6, -1); /*0x710140*/
-        (*(void (**)(int *, int, unsigned int))(*v6 + 488))(v6, 13, 0); /*0x71014e*/
+        (*(void (**)(int *, int))(*v6 + 496))( (int *)(v6), -1); /*0x710140*/
+        (*(void (**)(int *, int, unsigned int))(*v6 + 488))( (int *)(v6), 13, 0); /*0x71014e*/
       }
       else
       {
@@ -244,11 +244,11 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         dword_B0EA94,
         v29);
       v15 = *v6; /*0x7101b6*/
-      v16 = (*(int (**)(int *, int *))(*v6 + 72))(v6, (int *)&v28.StreamClass_field_0C); /*0x7101bf*/
-      (*(void (**)(int *, int))(v15 + 244))(v6, v16); /*0x7101c5*/
+      v16 = (*(int (**)(int *, int *))(*v6 + 72))( (int *)(v6), (int *)&v28.StreamClass_field_0C); /*0x7101bf*/
+      (*(void (**)(int *, int))(v15 + 244))( (int *)(v6), v16); /*0x7101c5*/
       v17 = *v6; /*0x7101cb*/
       *((unsigned char *)v6 + 1718) = 1; /*0x7101cf*/
-      (*(void (**)(int *))(v17 + 976))(v6); /*0x7101d6*/
+      (*(void (**)(int *))(v17 + 976))( (int *)(v6)); /*0x7101d6*/
       v12 = *v10 == 0; /*0x7101e0*/
       v28.m_Data = 0; /*0x7101e2*/
       if ( !v12 ) /*0x7101e6*/
@@ -257,17 +257,17 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( v18 < 0 && v18 != -2147467262 ) /*0x7101fb*/
           WinAPI::Wrapper(v18); /*0x7101fe*/
       }
-      a1 = 0; /*0x71020f*/
+      a1 = (void *)(0); /*0x71020f*/
       InstanceCOM = CreateInstanceCOM((ObjectClass *)&a1, (IID *)&a2, 0, 7u); /*0x710213*/
       if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x710221*/
         WinAPI::Wrapper(InstanceCOM); /*0x710224*/
       if ( !a1 ) /*0x71022f*/
         WinAPI::Wrapper(-2147467261); /*0x710236*/
-      (*(void (**)(int, int *))(*(unsigned int *)a1 + 12))((int)a1, v6); /*0x710243*/
+      (*(void (**)(int, int *))(*(unsigned int *)a1 + 12))( (int)a1, (int *)(v6)); /*0x710243*/
       v28.m_Position = 0; /*0x71024a*/
       if ( a1 ) /*0x710250*/
       {
-        v20 = ((StreamClass *)((StreamClass *)&v28.m_Position))->Set(&a1); /*0x71025b*/
+        v20 = ((StreamClass *)((StreamClass *)&v28.m_Position))->Set( (unsigned int *)(&a1)); /*0x71025b*/
         if ( v20 < 0 && v20 != -2147467262 ) /*0x710269*/
           WinAPI::Wrapper(v20); /*0x71026c*/
       }
@@ -278,9 +278,9 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       {
         m_Size = (int)(v28.m_Size); /*0x710297*/
         if ( *(unsigned int *)(v28.m_Size + 684) ) /*0x71029b*/
-          ((TechnoClass *)(TechnoClass *)v28.m_Size)->EjectPassengers( 0); /*0x7102a6*/
+          ((TechnoClass *)v28.m_Size)->EjectPassengers( 0); /*0x7102a6*/
         if ( v6[171] ) /*0x7102ab*/
-          ((TechnoClass *)(TechnoClass *)v6)->EjectPassengers( 1); /*0x7102b7*/
+          ((TechnoClass *)v6)->EjectPassengers( 1); /*0x7102b7*/
         if ( !v28.m_Data ) /*0x7102c4*/
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))((int)v28.m_Data, *v10); /*0x7102d8*/
@@ -301,18 +301,18 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         (*(void (**)(unsigned int))(**(unsigned int **)(m_Size + 684) + 336))(*(unsigned int *)(m_Size + 684)); /*0x710334*/
         v23 = (int *)v6[373]; /*0x71033a*/
         if ( v23 ) /*0x710342*/
-          ((TeamClass *)(v23))->LiberateMember_Start((int)v6, 0xFFFFFFFF, 0); /*0x710349*/
+          ((TeamClass *)(v23))->LiberateMember_Start( (void *)((int)v6), 0xFFFFFFFF, 0); /*0x710349*/
         *((unsigned char *)v6 + 1709) = 1; /*0x710352*/
         Member = ((Team *)((Team *)v6))->GetMember(0); /*0x710359*/
         if ( Member && (*(int (**)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71036c*/
-          (*(void (**)(int *, int))(*v6 + 640))(v6, 3); /*0x710374*/
+          (*(void (**)(int *, int))(*v6 + 640))( (int *)(v6), 3); /*0x710374*/
         (*(void (**)(unsigned int, int, int))(**(unsigned int **)(m_Size + 684) + 488))(*(unsigned int *)(m_Size + 684), 5, 1); /*0x710386*/
         v25 = *(unsigned int **)(m_Size + 684); /*0x71038c*/
-        if ( !*(unsigned char *)(v25[135] + 492) && !*(unsigned char *)((*(int (**)(unsigned int *))(*v25 + 132))(v25) + 1516) ) /*0x7103aa*/
+        if ( !*(unsigned char *)(v25[135] + 492) && !*(unsigned char *)((*(int (**)(unsigned int *))(*v25 + 132))( (unsigned int *)(v25)) + 1516) ) /*0x7103aa*/
         {
           v26 = *(unsigned int **)(m_Size + 684); /*0x7103b4*/
           if ( !*(unsigned char *)(*(unsigned int *)(v26[135] + 52) + 422) ) /*0x7103c3*/
-            (*(void (**)(unsigned int *, int, unsigned int))(*v26 + 488))(v26, 15, 0); /*0x7103d5*/
+            (*(void (**)(unsigned int *, int, unsigned int))(*v26 + 488))( (unsigned int *)(v26), 15, 0); /*0x7103d5*/
         }
       }
       if ( a1 ) /*0x7103e1*/

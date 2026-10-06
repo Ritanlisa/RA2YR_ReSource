@@ -370,7 +370,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       v35 = 0; /*0x651e06*/
       if ( *v34 > 0 )
       {
-        v54 = 0; /*0x651e13*/
+        v54 = (const char *)(0); /*0x651e13*/
         do
         {
           v36 = &v54[v34[5]]; /*0x651e1e*/
@@ -407,7 +407,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     v41 = 0; /*0x651eef*/
     if ( (int)v59[203] > 0 )
     {
-      v54 = 0; /*0x651f00*/
+      v54 = (const char *)(0); /*0x651f00*/
       do
       {
         v59 = v59; /*0x651f04*/
@@ -437,7 +437,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       while ( v41 < v48 );
     }
     fprintf((FILE *const )(v5), "\nRandom Number:%d\n", v59[1]); /*0x651fcb*/
-    v49 = a2; /*0x651fd0*/
+    v49 = (uint8_t *)(a2); /*0x651fd0*/
     if ( a2 )
     {
       fprintf((FILE *const )(v5), "Offending event:\n"); /*0x651fe2*/

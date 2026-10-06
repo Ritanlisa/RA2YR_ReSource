@@ -52,7 +52,7 @@ char CopyProtection::NotifyLauncher()
       if ( timeGetTime() >= v0 ) /*0x49f689*/
         goto LABEL_9; /*0x49f689*/
     }
-    SetEvent( (void *)(v1)); /*0x49f690*/
+    SetEvent( (void *)((void *)(v1))); /*0x49f690*/
     CloseHandle(v1); /*0x49f697*/
     ((gamemd::Debug*)aLauncherNotifi)->Log(); /*0x49f6a2*/
     ((gamemd::Debug*)aWaitingForMess)->Log(); /*0x49f6ac*/

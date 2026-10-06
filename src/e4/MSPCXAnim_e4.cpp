@@ -46,7 +46,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
       if ( v5 ) /*0x5d09f0*/
         v6 = (unsigned int *)v5; /*0x5d09f5*/
       else
-        v6 = 0; /*0x5d09fd*/
+        v6 = (unsigned int *)(0); /*0x5d09fd*/
     }
     LOBYTE(this->m_C) = 1; /*0x5d0a0c*/
     if ( !v6 ) /*0x5d0a10*/

@@ -101,10 +101,10 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477194*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
-               &v21,
-               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
-               0) )
+&& (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))( (DynamicVector *)(&v21), v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14, 0) )
+
+
+
         {
           v14 = v21.DynamicVector_field_0x10++; /*0x47719f*/
           *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v14) = -1; /*0x4771aa*/
@@ -116,10 +116,10 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4771f2*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
-               &v21,
-               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
-               0) )
+&& (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))( (DynamicVector *)(&v21), v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14, 0) )
+
+
+
         {
           v15 = v21.DynamicVector_field_0x10++; /*0x4771fd*/
           *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v15) = -2; /*0x477208*/
@@ -131,10 +131,10 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477250*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
-               &v21,
-               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
-               0) )
+&& (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))( (DynamicVector *)(&v21), v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14, 0) )
+
+
+
         {
           v16 = v21.DynamicVector_field_0x10++; /*0x47725b*/
           *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v16) = -3; /*0x477266*/
@@ -146,10 +146,10 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4772ae*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
-               &v21,
-               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
-               0) )
+&& (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))( (DynamicVector *)(&v21), v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14, 0) )
+
+
+
         {
           v17 = v21.DynamicVector_field_0x10++; /*0x4772b9*/
           *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v17) = -4; /*0x4772c4*/
@@ -161,10 +161,10 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47730c*/
           || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
-               &v21,
-               v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
-               0) )
+&& (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))( (DynamicVector *)(&v21), v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14, 0) )
+
+
+
         {
           v18 = v21.DynamicVector_field_0x10++; /*0x477317*/
           *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v18) = -5; /*0x477322*/
@@ -177,16 +177,16 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         {
           v21.DynamicVector_field_0x1C = ((BuildingTypeClass *)((BuildingTypeClass *)i))->FindIndexByName(); /*0x477397*/
           if ( v21.DynamicVector_field_0x1C != -1 ) /*0x47739b*/
-            ((DynamicVector *)(&v21))->Add_Alt(&v21.DynamicVector_field_0x1C); /*0x4773a6*/
+            ((DynamicVector *)(&v21))->Add_Alt( (unsigned int *)(&v21.DynamicVector_field_0x1C)); /*0x4773a6*/
         }
       }
       else if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47736a*/
              || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
              && *(int *)v21.__pad_14 > 0
-             && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
-                  &v21,
-                  v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
-                  0) )
+&& (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))( (DynamicVector *)(&v21), v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14, 0) )
+
+
+
       {
         v19 = v21.DynamicVector_field_0x10++; /*0x477375*/
         *(unsigned int *)(*(unsigned int *)&(&v21.DynamicVector_field_0x1)[3] + 4 * v19) = -6; /*0x477380*/
@@ -493,10 +493,10 @@ void ObjectClass::sub_47A080(DWORD a2)
   if ( !CDROM::DeviceIoControl(FileA, a2) ) /*0x47a0e5*/
   {
     Debug::Log("Could not unlock media from drive %c:\n"); /*0x47a0fa G57c1: IDA 0x47a0fa push offset aCouldNotUnlock*/
-    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, a2); /*0x47a105*/
+    DriveControlCD( (gamemd::ObjectClass *)(int)this, (HANDLE)(FileA), a2); /*0x47a105*/
     return; /*0x47a111*/
   }
-  memset(&InBuffer[1], 0, 0x18u); /*0x47a123*/
+  memset( (void *)(&InBuffer[1]), 0, 0x18u); /*0x47a123*/
   InBuffer[3] = 17421; /*0x47a13b*/
   InBuffer[0] = v2; /*0x47a143*/
   InBuffer[2] = 2121; /*0x47a147*/
@@ -511,7 +511,7 @@ LABEL_8:
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a17b*/
     goto LABEL_8; /*0x47a17b*/
 LABEL_9:
-  DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, a2); /*0x47a18e*/
+  DriveControlCD( (gamemd::ObjectClass *)(int)this, (HANDLE)(FileA), a2); /*0x47a18e*/
   CloseHandle(FileA); /*0x47a19b*/
 
 }
@@ -528,7 +528,7 @@ int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
   unsigned int InBuffer[7]; // [esp+10h] [ebp-1Ch] BYREF
 
   v3 = (char)BytesReturned; /*0x47a92c*/
-  memset(&InBuffer[1], 0, 0x18u); /*0x47a93b*/
+  memset( (void *)(&InBuffer[1]), 0, 0x18u); /*0x47a93b*/
   v4 = 0; /*0x47a943*/
   while ( 1 )
   {
@@ -662,7 +662,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e157*/
     IDA_HIWORD(v41) = IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e166*/
     *(unsigned int *)v48 = v41; /*0x47e16f*/
-    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v48); /*0x47e17d*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v48)); /*0x47e17d*/
   }
   v13 = v4->flags[0]; /*0x47e18f*/
   IDA_BYTE1(v13) &= ~1u; /*0x47e195*/
@@ -695,7 +695,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v42) = v49[0] + v19; /*0x47e232*/
     IDA_HIWORD(v42) = v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e241*/
     *(unsigned int *)v49 = v42; /*0x47e24a*/
-    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v49); /*0x47e258*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v49)); /*0x47e258*/
     v18 = a3; /*0x47e25a*/
   }
   v20 = v4->flags[0]; /*0x47e262*/
@@ -725,7 +725,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v43) = v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e2fc*/
     IDA_HIWORD(v43) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e305*/
     *(unsigned int *)v50 = v43; /*0x47e314*/
-    mapCoords = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e318*/
+    mapCoords = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e318*/
     v24 = a3; /*0x47e31d*/
   }
   else
@@ -743,7 +743,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v46) = v50[0] + v29; /*0x47e366*/
     IDA_HIWORD(v46) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82]); /*0x47e375*/
     *(unsigned int *)v50 = v46; /*0x47e37e*/
-    v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e387*/
+    v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e387*/
     v24 = a3; /*0x47e38c*/
     v28 = (int)v30; /*0x47e390*/
   }
@@ -874,7 +874,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e587*/
     IDA_HIWORD(v41) = IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e596*/
     *(unsigned int *)v48 = v41; /*0x47e59f*/
-    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v48); /*0x47e5ad*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v48)); /*0x47e5ad*/
   }
   v13 = v4->flags[0]; /*0x47e5bf*/
   IDA_BYTE1(v13) &= ~1u; /*0x47e5c5*/
@@ -907,7 +907,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v42) = v49[0] + v19; /*0x47e662*/
     IDA_HIWORD(v42) = v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e671*/
     *(unsigned int *)v49 = v42; /*0x47e67a*/
-    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v49); /*0x47e688*/
+    v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v49)); /*0x47e688*/
     v18 = a3; /*0x47e68a*/
   }
   v20 = v4->flags[0]; /*0x47e692*/
@@ -937,7 +937,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v43) = v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e72c*/
     IDA_HIWORD(v43) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e735*/
     *(unsigned int *)v50 = v43; /*0x47e744*/
-    mapCoords = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e748*/
+    mapCoords = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e748*/
     v24 = a3; /*0x47e74d*/
   }
   else
@@ -955,7 +955,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     IDA_LOWORD(v46) = v50[0] + v29; /*0x47e796*/
     IDA_HIWORD(v46) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82]); /*0x47e7a5*/
     *(unsigned int *)v50 = v46; /*0x47e7ae*/
-    v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v50); /*0x47e7b7*/
+    v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e7b7*/
     v24 = a3; /*0x47e7bc*/
     v28 = (int)v30; /*0x47e7c0*/
   }
@@ -1363,7 +1363,7 @@ LRESULT sub_470C40(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
 
   swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, Format); /*0x470c58*/
   DlgItem = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x470c62*/
-  return SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x470c7b*/
+  return SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)Buffer))); /*0x470c7b*/
 }
 } // namespace gamemd
 
@@ -1822,17 +1822,17 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
   *this = (CarryoverClass)&vt_CarryoverClass; /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
-    v4 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 44))(v3); /*0x473783*/
+    v4 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 44))( (CarryoverClass *)(v3)); /*0x473783*/
     *((unsigned int *)this + 3) = v4; /*0x473786*/
     v5 = v4 - 1; /*0x473789*/
     if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 ) /*0x473794*/
     {
-      v7 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 132))(v3); /*0x4737a6*/
+      v7 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 132))( (CarryoverClass *)(v3)); /*0x4737a6*/
       *((unsigned int *)this + 4) = (*(int (**)(int))(*(unsigned int *)v7 + 64))(v7); /*0x4737b3*/
     }
     *((unsigned int *)this + 7) = *(CarryoverClass *)(*(unsigned int *)(*(unsigned int *)&v3[135] + 52) + 184); /*0x4737c7*/
     *((unsigned int *)this + 6) = v3[27]; /*0x4737cd*/
-    *((unsigned int *)this + 5) = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))( v3, (unsigned int **)(&a2)); /*0x4737df*/
+    *((unsigned int *)this + 5) = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))( (CarryoverClass *)(v3), (unsigned int **)(&a2)); /*0x4737df*/
   }
   return (unsigned int *)(this); /*0x4737e4*/
 
@@ -2015,9 +2015,9 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   int v13; // [esp+44h] [ebp-44h]
 
   if ( !a3 ) /*0x474552*/
-    return ((INIClass *)(INIClass *)this)->WriteToString( aP1); /*0x47455c*/
+    return (CCINIClass *)((INIClass *)this)->WriteToString( aP1); /*0x47455c*/
   INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x474575*/
-  memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
+  memset( (void *)(&v6.SHA1_field_0x04), 0, 9); /*0x47457e*/
   v12 = 0; /*0x47458d*/
   v13 = 0; /*0x474591*/
   v7 = 1732584193; /*0x474595*/
@@ -2026,7 +2026,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
   *(unsigned int *)v6.__pad_0 = (unsigned int)&vt_SHAPipe;
-  ((INIClass *)(INIClass *)this)->WriteToString( (int)&v6); /*0x4745c5*/
+  ((INIClass *)this)->WriteToString( (int)&v6); /*0x4745c5*/
   ((SHA1 *)(&v6))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
   ((Pipe *)(((Pipe *)&v6)))->Dtor(); /*0x4745df*/
@@ -2035,7 +2035,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
     (uint8_t *)g_INI_Key_Digest,
     (int)&this->ambientSoundController[1] + 1,
     20);
-  v5 = ((INIClass *)(INIClass *)this)->WriteToString( aP1); /*0x47460a*/
+  v5 = ((INIClass *)this)->WriteToString( aP1); /*0x47460a*/
   INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x47460c*/
   return (gamemd::CCINIClass *)(v5); /*0x474561*/
 
@@ -2047,7 +2047,7 @@ namespace gamemd {
 char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
 
-  return ((INIClass *)(char *)this)->SetDouble(this, a3, (double)a4 * 0.00390625); /*0x47467f*/
+  return ((INIClass *)(char *)this)->SetDouble( this, (char *)(a3), (double)a4 * 0.00390625); /*0x47467f*/
 
 }
 } // namespace gamemd
@@ -2066,7 +2066,7 @@ int E4Recv_476E20::sub_476E20()
   int v9; // [esp+3Ch] [ebp-48h]
   int v10; // [esp+40h] [ebp-44h]
 
-  memset(&v3.SHA1_field_0x04, 0, 9); /*0x476e29*/
+  memset( (void *)(&v3.SHA1_field_0x04), 0, 9); /*0x476e29*/
   v9 = 0; /*0x476e35*/
   v10 = 0; /*0x476e39*/
   v4 = 1732584193; /*0x476e44*/
@@ -2075,7 +2075,7 @@ int E4Recv_476E20::sub_476E20()
   v7 = 271733878; /*0x476e5c*/
   v8 = -1009589776; /*0x476e64*/
   *(unsigned int *)v3.__pad_0 = (unsigned int)&vt_SHAPipe;
-  ((INIClass *)(INIClass *)this)->WriteToString( (int)&v3); /*0x476e74*/
+  ((INIClass *)this)->WriteToString( (int)&v3); /*0x476e74*/
   ((SHA1 *)(&v3))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
   return ((Pipe *)(((Pipe *)&v3)))->Dtor(); /*0x476e93*/
@@ -2246,7 +2246,7 @@ int sub_479080()
 namespace gamemd {
 int sub_4796E0()
 {
-  memset(&unk_89E3A8, 0, 0x68u); /*0x4796ed*/
+  memset( (void *)(&unk_89E3A8), 0, 0x68u); /*0x4796ed*/
   return atexit(nullsub_109); /*0x4796fc*/
 }
 } // namespace gamemd
@@ -2369,7 +2369,7 @@ char ObjectClass::sub_47A1B0(DWORD BytesReturned)
       Debug::Log("Could not lock CD tray in drive %c:\n"); /*0x47a26f G57c1: IDA 0x47a26f push offset aCouldNotLockCd*/
       v5 = 0; /*0x47a277*/
     }
-    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a28f*/
+    DriveControlCD( (gamemd::ObjectClass *)(int)this, (HANDLE)(FileA), BytesReturned); /*0x47a28f*/
     CloseHandle(FileA); /*0x47a295*/
     Debug::Log("CDControlClass::Lock_CD_Drive_95 returning %s\n"); /*0x47a2af G57c1: IDA 0x47a2af push offset aCdcontrolclass_0*/
     return v5; /*0x47a2b7*/
@@ -2410,7 +2410,7 @@ char ObjectClass::sub_47A2D0(DWORD BytesReturned)
       Debug::Log("Could not unlock CD tray in drive %c:\n"); /*0x47a38f G57c1: IDA 0x47a38f push offset aCouldNotUnlock_0*/
       v5 = 0; /*0x47a397*/
     }
-    DriveControlCD((gamemd::ObjectClass *)(int)this, FileA, BytesReturned); /*0x47a3af*/
+    DriveControlCD( (gamemd::ObjectClass *)(int)this, (HANDLE)(FileA), BytesReturned); /*0x47a3af*/
     CloseHandle(FileA); /*0x47a3b5*/
     Debug::Log("CDControlClass::Unlock_CD_Drive_95 returning %s\n"); /*0x47a3cf G57c1: IDA 0x47a3cf push offset aCdcontrolclass_2*/
     return v5; /*0x47a3d7*/
@@ -2433,7 +2433,7 @@ bool sub_47A560(HANDLE hDevice, DWORD BytesReturned)
   unsigned int InBuffer[7]; // [esp+10h] [ebp-1Ch] BYREF
 
   v2 = BytesReturned; /*0x47a564*/
-  memset(&InBuffer[1], 0, 0x18u); /*0x47a583*/
+  memset( (void *)(&InBuffer[1]), 0, 0x18u); /*0x47a583*/
   v4[1] = 0; /*0x47a58d*/
   CDROM::DeviceIoControl(hDevice, BytesReturned); /*0x47a591*/
   InBuffer[0] = v2; /*0x47a59d*/
@@ -2457,7 +2457,7 @@ bool sub_47A620(HANDLE hDevice, DWORD BytesReturned)
 {
   unsigned int InBuffer[7]; // [esp+4h] [ebp-1Ch] BYREF
 
-  memset(&InBuffer[1], 0, 0x18u); /*0x47a62f*/
+  memset( (void *)(&InBuffer[1]), 0, 0x18u); /*0x47a62f*/
   InBuffer[0] = (char)BytesReturned; /*0x47a645*/
   InBuffer[3] = 17421; /*0x47a656*/
   InBuffer[2] = 2121; /*0x47a65e*/
@@ -2482,7 +2482,7 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
   *((unsigned char *)this + 84) = 0; /*0x47aa0c*/
   *(unsigned int *)this->BufferIOFileClass =(unsigned int)(&off_7E1668); /*0x47aa10*/
   v3 = ((String *)((String *)a2))->GetOrEmpty_Alt(); /*0x47aa16*/
-  ((FileClass*)this)->OpenWithCDSearch(v3); /*0x47aa1e*/
+  ((FileClass*)this)->OpenWithCDSearch( (char *)(v3)); /*0x47aa1e*/
 return (gamemd::CDFileClass *)this->BufferIOFileClass; /*0x47aa25*/
 
 }

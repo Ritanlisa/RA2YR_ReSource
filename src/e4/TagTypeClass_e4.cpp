@@ -107,7 +107,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
       v3 = (unsigned int *)v2[42]; /*0x6e5cdb*/
       v2[42] = 0; /*0x6e5ce1*/
       if ( v2 ) /*0x6e5ced*/
-        (*(void (**)(unsigned int *, int))(*v2 + 32))(v2, 1); /*0x6e5cf3*/
+        (*(void (**)(unsigned int *, int))(*v2 + 32))( (unsigned int *)(v2), 1); /*0x6e5cf3*/
       v2 = v3; /*0x6e5cf8*/
     }
     while ( v3 ); /*0x6e5cfa*/
@@ -123,7 +123,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
       {
         if ( v6 ) /*0x6e5d16*/
         {
-          (*(void (**)(unsigned int *, int))(*v6 + 32))(v6, 1); /*0x6e5d1c*/
+          (*(void (**)(unsigned int *, int))(*v6 + 32))( (unsigned int *)(v6), 1); /*0x6e5d1c*/
           v5 = g_TagClassCount; /*0x6e5d1f*/
         }
         --v4; /*0x6e5d24*/
@@ -133,9 +133,9 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     while ( v4 < g_GameObjectCleanup ); /*0x6e5d2e*/
   }
   v10 = (gamemd::AbstractTypeClass *)(this);
-  v7 = (*(int (**)(int *, AbstractTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5d44*/
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         &v10);
+v7 = (*(int (**)(int *, AbstractTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5d44*/ &g_BuildingLoadQueue_Array.LightVisibility, (AbstractTypeClass **)(&v10));
+
+
   if ( v7 != -1 && v7 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x6e5d54*/
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e5d59*/
@@ -199,7 +199,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   v3 = strtok(0, (char *)&::Delimiter); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
-    strncpy( (char *)(Destination), v3, 0x30u); /*0x6e6101*/
+    strncpy( (char *)(Destination), (const char *)(v3), 0x30u); /*0x6e6101*/
     v7 = 0; /*0x6e6109*/
   }
   else
@@ -211,8 +211,8 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     qmemcpy( (char *)this + 100, (const void *)(Destination), 0x30u); /*0x6e6123*/
     *((unsigned char *)this + 148) = v7; /*0x6e6125*/
   }
-  v4 = (void *)(strtok(0, (char *)&::Delimiter));
-  *((unsigned int *)this + 40) = (unsigned int)(TagTypeClass::FindOrCreateTriggerType(v4)); /*0x6e613d*/
+  v4 = (char *)((void *)(strtok(0, (char *)&::Delimiter)));
+  *((unsigned int *)this + 40) = (unsigned int)(TagTypeClass::FindOrCreateTriggerType( (char *)(v4))); /*0x6e613d*/
   return (void *)(1); /*0x6e6143*/
 
 }
@@ -255,7 +255,7 @@ AbstractTypeClass * TagTypeClass::FindOrCreate(ObjectClass * Source)
 LABEL_6:
     v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
     if ( v3 ) /*0x6e6375*/
-      return ((TagTypeClass *)v3)->Construct( Source); /*0x6e6381*/
+      return ((TagTypeClass *)v3)->Construct( (char *)(Source)); /*0x6e6381*/
     return 0; /*0x6e6375*/
   }
   while ( _strcmpi((const char *)((const void *)(*((unsigned int *)dword_B0E784 + v2) + 36)),(const char *)(Source)) ) /*0x6e635a*/
@@ -272,7 +272,7 @@ namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
 {
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6e63e9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x6e63e9*/
   return Power::TimerProcess(*((unsigned int *)this + 39)); /*0x6e63fc*/
 
 }
@@ -302,7 +302,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(char *Source)
 LABEL_6:
     v3 = (TriggerTypeClass *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return (gamemd::TriggerTypeClass **)(((TriggerTypeClass *)(v3))->Construct(Source)); /*0x727b11*/
+      return (gamemd::TriggerTypeClass **)(((TriggerTypeClass *)(v3))->Construct( (char *)(Source))); /*0x727b11*/
     return 0; /*0x727b05*/
   }
   while ( _strcmpi((char *)(*(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v2) + 36), Source) ) /*0x727aea*/
@@ -396,10 +396,10 @@ namespace gamemd {
 TagTypeClass * TagTypeClass::ddtor(char a2)
 {
 
-  TagTypeClass::CleanupMembers( (void)((AbstractTypeClass *)this)); /*0x6e64c3*/
+  TagTypeClass::CleanupMembers(  (AbstractTypeClass *)this); /*0x6e64c3*/
   if ( (a2 & 1) != 0 ) /*0x6e64cd*/
     __3_YAXPAX_Z(this); /*0x6e64d0*/
-  return this; /*0x6e64da*/
+  return (TagTypeClass *)this; /*0x6e64da*/
 
 }
 } // namespace gamemd

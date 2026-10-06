@@ -19,7 +19,7 @@ LRESULT sub_5E23A0()
 
     Current = ((Dialog *)this)->GetCurrent();
   DlgItem = GetDlgItem(Current, 1439); /*0x5e23ab*/
-  return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x5e23c1*/
+  return SendMessageA( (HWND)(DlgItem), 0x4DCu, 0, 0); /*0x5e23c1*/
 }
 } // namespace gamemd
 
@@ -32,6 +32,6 @@ LRESULT sub_7A27D0()
 
     Current = ((Dialog *)this)->GetCurrent();
   DlgItem = GetDlgItem(Current, 1439); /*0x7a27db*/
-  return SendMessageA(DlgItem, 0x4DCu, 0, 0); /*0x7a27f1*/
+  return SendMessageA( (HWND)(DlgItem), 0x4DCu, 0, 0); /*0x7a27f1*/
 }
 } // namespace gamemd

@@ -37,7 +37,7 @@ namespace gamemd {
 int IPXInterfaceClass::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6)
 {
 
-  IPXInterfaceClass::bindSocket( (void)((char *)this)); /*0x7b0d93*/
+  IPXInterfaceClass::bindSocket(  (char *)this); /*0x7b0d93*/
   this->Socket = (int)&vt_IPXInterfaceClass; /*0x7b0da4*/
   *((unsigned int *)this + 64703) = -1; /*0x7b0dad*/
   *((unsigned int *)this + 64704) = -1; /*0x7b0db3*/
@@ -62,14 +62,14 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   struct sockaddr name; // [esp+18h] [ebp-28h] BYREF
   char v12[24]; // [esp+28h] [ebp-18h] BYREF
 
-  v4 = socket((void *)(6),(void *)(2),(void *)(1000)); /*0x7b0de6*/
+  v4 = socket( (void *)((void *)(6)), (void *)((void *)(2)), (void *)((void *)(1000))); /*0x7b0de6*/
   if ( v4 == -1 ) /*0x7b0deb*/
     return 0; /*0x7b0df5*/
   memset(name.sa_data, 0, 12); /*0x7b0dfe*/
   name.sa_family = 6; /*0x7b0e13*/
-  if ( bind( (void *)(v4), &name, 14) == -1 ) /*0x7b0e22*/
+  if ( bind( (void *)((void *)(v4)), (void *)(&name), 14) == -1 ) /*0x7b0e22*/
   {
-    closesocket((void *)(v4)); /*0x7b0e25*/
+    closesocket( (void *)((void *)(v4))); /*0x7b0e25*/
     return 0; /*0x7b0e32*/
   }
   *(unsigned int *)optval = 1; /*0x7b0e44*/
@@ -78,7 +78,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   {
     Debug::Log("Skipping IPX_MAX_ADAPTER_NUM call due to bug in Win95\n"); /*0x7b0eae G57c1: IDA 0x7b0eae push offset aSkippingIpxMax*/
   }
-  else if ( getsockopt( (void *)(v4), (void *)(1000), (void *)(16397), (void *)(optval), &optlen) ) /*0x7b0e7a*/
+  else if ( getsockopt( (void *)((void *)(v4)), (void *)((void *)(1000)), (void *)((void *)(16397)), (void *)((void *)(optval)), (void *)(&optlen)) ) /*0x7b0e7a*/
   {
     WSAGetLastError(); /*0x7b0e94*/
     Debug::Log("getsockopt with IPX_MAX_ADAPTER_NUM failed with error code %d\n"); /*0x7b0e9f G57c1: IDA 0x7b0e9f push offset aGetsockoptWith*/
@@ -87,14 +87,14 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   {
     return 0; /*0x7b0e91*/
   }
-  memset(v12, 0, sizeof(v12)); /*0x7b0ec2*/
+  memset( (void *)(v12), 0, sizeof(v12)); /*0x7b0ec2*/
   *(unsigned int *)v12 = (unsigned int)(aP1); /*0x7b0ed9*/
   v10 = 24; /*0x7b0edd*/
-  if ( getsockopt((void *)(v4),(void *)(1000),(void *)(16391), v12, &v10) == -1 ) /*0x7b0eee*/
+  if ( getsockopt( (void *)((void *)(v4)), (void *)((void *)(1000)), (void *)((void *)(16391)), (void *)(v12), (void *)(&v10)) == -1 ) /*0x7b0eee*/
   {
     WSAGetLastError(); /*0x7b0ef0*/
     Debug::Log("Failed to get address of net card %d - error code %d.\n"); /*0x7b0efc G57c1: IDA 0x7b0efc push offset aFailedToGetAdd*/
-    closesocket((void *)(v4)); /*0x7b0f05*/
+    closesocket( (void *)((void *)(v4))); /*0x7b0f05*/
     return 0; /*0x7b0f0c*/
   }
   else
@@ -105,7 +105,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
     *((unsigned int *)(unsigned int)(this)+ 64703) = v6; /*0x7b0f26*/
     *(unsigned int *)((unsigned int)(aP2)+ 6) = *(unsigned int *)&v12[8]; /*0x7b0f33*/
     *(unsigned short *)(aP2 + 10) = v7; /*0x7b0f35*/
-    closesocket((void *)(v4)); /*0x7b0f39*/
+    closesocket( (void *)((void *)(v4))); /*0x7b0f39*/
     return 1; /*0x7b0f40*/
   }
 
@@ -159,7 +159,7 @@ LABEL_6:
           v25 = *((unsigned short *)this + 129414); /*0x7b1446*/
           v7 = (Network *)**((unsigned int **)this + 9); /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
-          *(unsigned short *)&to.sa_data[10] = htons((void *)(v25)); /*0x7b1453*/
+          *(unsigned short *)&to.sa_data[10] = htons( (void *)((void *)(v25))); /*0x7b1453*/
           if ( v7->__pad_14[0] ) /*0x7b1458*/
           {
             *(unsigned int *)to.sa_data = *((unsigned int *)this + 64703); /*0x7b146b*/
@@ -173,7 +173,7 @@ LABEL_6:
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
           }
-          if ( sendto(*((unsigned int *)this + 64539), &v7->__pad_14[8], (int)v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
+          if ( sendto( *((unsigned int *)this + 64539), (void *)(&v7->__pad_14[8]), (void *)((int)v7->Network_field_0x10 + 4), 0, (void *)(&to), 14) == -1 /*0x7b14da*/
             && WSAGetLastError() != 10035 )
           {
             break; /*0x7b14da*/
@@ -214,7 +214,7 @@ LABEL_6:
   }
   v11 = *((unsigned int *)this + 64539); /*0x7b1577*/
   fromlen = 14; /*0x7b157d*/
-  v12 = recvfrom( (void *)(v11), (char *)this + 258164, 640, 0, &to, (int *)&fromlen); /*0x7b1586*/
+  v12 = recvfrom( (void *)((void *)(v11)), (void *)((char *)this + 258164), 640, 0, (void *)(&to), (void *)((int *)&fromlen)); /*0x7b1586*/
   v26 = v12; /*0x7b158e*/
   if ( v12 == -1 ) /*0x7b1592*/
   {
@@ -255,8 +255,8 @@ LABEL_6:
   v18 = (NetworkID *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
   *(unsigned int *)v18[2].__pad_0 = v26 - 4; /*0x7b1646*/
   v18[3].NetworkID_field_0x04 = *((unsigned int *)this + 64541); /*0x7b1651*/
-  qmemcpy(&v18[4], (char *)this + 258168, v26 - 4); /*0x7b1657*/
-  if ( (*(uint8_t (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
+  qmemcpy( (void *)(&v18[4]), (char *)this + 258168, v26 - 4); /*0x7b1657*/
+  if ( (*(uint8_t (**)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))( this, (NetworkID *)(v18)) ) /*0x7b1665*/
   {
     ((NetworkID *)(v18))->Assign((unsigned int *)(&a3), (int)&v27, 0); /*0x7b16d0*/
     v19 = *(unsigned int *)&(&this->LocalNode)[4]; /*0x7b16d5*/
@@ -265,7 +265,7 @@ LABEL_6:
     if ( v20 < v19 /*0x7b16fe*/
       || (*((unsigned char *)p_LocalNetwork + 13) || !v19)
       && (v22 = p_LocalNetwork[5], v22 > 0)
-      && (*(uint8_t (**)(int *, int, unsigned int))(*p_LocalNetwork + 8))(p_LocalNetwork, v19 + v22, 0) )
+      && (*(uint8_t (**)(int *, int, unsigned int))(*p_LocalNetwork + 8))( (int *)(p_LocalNetwork), v19 + v22, 0) )
     {
       v23 = (unsigned int)(p_LocalNetwork[4]);
       v24 = (unsigned int)(p_LocalNetwork[1]);
@@ -358,7 +358,7 @@ void * IPXInterfaceClass::bindSocket(void *a1)
   *((unsigned int *)this + 64533) = 0; /*0x7b1a8e*/
   *((unsigned int *)this + 1) = 576; /*0x7b1a94*/
   Debug::Log("WinsockInterface constructed\n"); /*0x7b1a9b G57c1: IDA 0x7b1a9b push offset aWinsockinterfa*/
-  return this; /*0x7b1aa5*/
+  return (void *)this; /*0x7b1aa5*/
 
 }
 } // namespace gamemd
@@ -371,13 +371,13 @@ int IPXInterfaceClass::AddRef(void *a1)
 
   if ( this->u32_3F06C != -1 ) /*0x7b1b8c*/
   {
-    closesocket((void *)(this->u32_3F06C)); /*0x7b1b8f*/
+    closesocket( (void *)((void *)(this->u32_3F06C))); /*0x7b1b8f*/
     this->u32_3F06C = -1; /*0x7b1b94*/
   }
   result = this->u32_3F070; /*0x7b1b9e*/
   if ( result != -1 ) /*0x7b1ba7*/
   {
-    result = closesocket((void *)(this->u32_3F070)); /*0x7b1baa*/
+    result = closesocket( (void *)((void *)(this->u32_3F070))); /*0x7b1baa*/
     this->u32_3F070 = -1; /*0x7b1baf*/
   }
   return result; /*0x7b1bb9*/
@@ -460,7 +460,7 @@ unsigned char * IPXInterfaceClass::processPacket(void *a1)
   int v2; // edi
   int v3; // esi
 
-  result = 0; /*0x7b2249*/
+  result = (unsigned char *)(0); /*0x7b2249*/
   if ( this->u32_3F05C == 128 ) /*0x7b2253*/
   {
     result = (unsigned char *)new unsigned char[0x2A0u]; /*0x7b225a*/
@@ -669,7 +669,7 @@ IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2, int a1, int a3, i
   WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b1793*/
   if ( (a2 & 1) != 0 ) /*0x7b179d*/
     __3_YAXPAX_Z(this); /*0x7b17a0*/
-  return this; /*0x7b17aa*/
+  return (IPXInterfaceClass *)this; /*0x7b17aa*/
 
 }
 } // namespace gamemd
@@ -720,7 +720,7 @@ int IPXInterfaceClass::GetAddress(SOCKET s, void *a2, void *a3, void *a4)
 
   v1 = (gamemd::WinsockInterfaceClass *)(s); /*0x7b25e6*/
   optlen = 4; /*0x7b25fb*/
-  getsockopt((void *)((SOCKET)s), 0xFFFF, 4103, (char *)&s, &optlen); /*0x7b2603*/
+  getsockopt( (void *)((void *)((SOCKET)s)), 0xFFFF, 4103, (void *)((char *)&s), (void *)(&optlen)); /*0x7b2603*/
   s = 0; /*0x7b261d*/
   return setsockopt((SOCKET)v1, 0xFFFF, 4103, (const char *)&s, optlen); /*0x7b262a*/
 

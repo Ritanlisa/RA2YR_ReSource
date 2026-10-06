@@ -122,7 +122,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   int v30[3]; // [esp+138h] [ebp-14h] BYREF
   int v31; // [esp+144h] [ebp-8h]
 
-  inited = 0; /*0x76d4da*/
+  inited = (void *)(0); /*0x76d4da*/
   v7 = ((Count *)((Count *)(this + 1112)))->Get(); /*0x76d4e3*/
   ((VectorCursor *)(&v25))->Construct(v7 + 44, 0); /*0x76d4f0*/
   while ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))( (VectorCursor *)(&v25)) ) /*0x76d4fd*/
@@ -184,19 +184,19 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           if ( (int)v28.attachedBomb < (int)v28.nextObject /*0x76d71b*/
             || (BYTE1(v28.attachedTag) || !v28.nextObject)
             && v28.ambientSoundController[0] > 0
-            && (*(uint8_t (**)(int *, char *, unsigned int))(v28.owningHouseIndex + 8))(
-                 &v28.owningHouseIndex,
-                 (char *)v28.nextObject + v28.ambientSoundController[0],
-                 0) )
+&& (*(uint8_t (**)(int *, char *, unsigned int))(v28.owningHouseIndex + 8))( (int *)(&v28.owningHouseIndex), (char *)v28.nextObject + v28.ambientSoundController[0], 0) )
+
+
+
           {
             v19 = (gamemd::BombClass *)((unsigned int)(v28.attachedBomb)++); /*0x76d726*/
             *(unsigned int *)(v28.fallRate + 4 * (unsigned int)v19) = (unsigned int)(inited); /*0x76d731*/
           }
-          inited = 0; /*0x76d734*/
+          inited = (void *)(0); /*0x76d734*/
         }
         v28.ambientSoundController[1] = (int)&vt_CCFileClass; /*0x76d73d*/
         v28.location[2] = 0; /*0x76d745*/
-        ((Vector *)((int)&v28.isInLogic))->Clear(); /*0x76d74c*/
+        ((Vector *)((int)&v28.isInLogic))->Clear((int)((Vector *)((int)&v28.isInLogic))); /*0x76d74c*/
         v28.ambientSoundController[1] = (int)&off_7E1668; /*0x76d755*/
         ((BufferIOFileClass *)((BufferIOFileClass *)&v28.ambientSoundController[1]))->Dtor(); /*0x76d75d*/
       }
@@ -232,7 +232,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       }
       *(unsigned int *)v29.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x76d841*/
       v31 = 0; /*0x76d84c*/
-      ((Vector *)((int)v30))->Clear(); /*0x76d853*/
+      ((Vector *)((int)v30))->Clear((int)((Vector *)((int)v30))); /*0x76d853*/
       ((BufferIOFileClass *)((BufferIOFileClass *)&v29))->Destruct(); /*0x76d85f*/
     }
     (*(void (**)(int *))(v25.q00C + 8))( (int *)(&v25.q00C)); /*0x76d86c*/
@@ -277,10 +277,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
               (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 8))( (VectorCursor *)(&v25)); /*0x76d99b*/
             }
             if ( (*(uint8_t (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 4))( (VectorCursor *)(&v25)) ) /*0x76d9b5*/
-              nullsub_24(v24); /*0x76d9ca*/
+              nullsub_24(); /*0x76d9ca*/
             *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_VectorCursorMSSfxEntryDynamicVectorClass); /*0x76d9cf*/
           }
-          j_DeleteAndZero(&v28); /*0x76d9d7*/
+          j_DeleteAndZero( (void *)(&v28)); /*0x76d9d7*/
           ((PriorityQueue *)((PriorityQueue *)this))->Add(*(unsigned int *)(p_owningHouseIndex[1] + 4 * v27)); /*0x76d9ed*/
           ((MSEngine *)((MSEngine *)this))->ProcessEvents(*(unsigned int *)(p_owningHouseIndex[1] + 4 * v27), 300000); /*0x76da08*/
         }

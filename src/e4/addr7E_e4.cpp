@@ -50,7 +50,7 @@ void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
     while ( v6 ); /*0x7e0074*/
     v11 = *(unsigned short *)a1; /*0x7e0078*/
     *(unsigned char *)v7 = *(unsigned short *)a1; /*0x7e007b*/
-    v12 = (char *)v7 + 1; /*0x7e007d*/
+    v12 = (unsigned char *)((char *)v7 + 1); /*0x7e007d*/
     a1 = (int *)((char *)a1 + 2); /*0x7e007e*/
     *v12++ = byte_A8F91C[v11]; /*0x7e0087*/
     *v12 = IDA_HIBYTE(v11); /*0x7e008a*/
@@ -82,7 +82,7 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
   {
     v15 = (a4 - 2) >> 1; /*0x7e00c8*/
     v6 = &byte_879124; /*0x7e00cb*/
-    v7 = a2; /*0x7e00d0*/
+    v7 = (unsigned int *)(a2); /*0x7e00d0*/
     do /*0x7e011b*/
     {
       v8 = *a1; /*0x7e00e0*/
@@ -103,8 +103,8 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     v12 = *(unsigned short *)a1; /*0x7e011f*/
     *(unsigned char *)v7 = *(unsigned short *)a1; /*0x7e0122*/
     *(unsigned char *)v6 = v12; /*0x7e0124*/
-    v13 = (char *)v7 + 1; /*0x7e0126*/
-    v14 = (char *)v6 + 1; /*0x7e0127*/
+    v13 = (unsigned char *)((char *)v7 + 1); /*0x7e0126*/
+    v14 = (unsigned char *)((char *)v6 + 1); /*0x7e0127*/
     IDA_LOBYTE(v12) = byte_A8F91C[v12]; /*0x7e012b*/
     *v13 = v12; /*0x7e0131*/
     *v14 = v12; /*0x7e0133*/
@@ -115,7 +115,7 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     v13[1] = 0; /*0x7e013d*/
     v14[1] = 0; /*0x7e0140*/
     v17 = &a2[a5 >> 1]; /*0x7e0148*/
-    qmemcpy(v17, &byte_879124, 4 * (a4 >> 1)); /*0x7e015a*/
+    qmemcpy( (void *)(v17), (const void *)(&byte_879124), 4 * (a4 >> 1)); /*0x7e015a*/
     a1 = (int *)((char *)a1 + 2); /*0x7e015d*/
     a2 = &v17[a5 >> 1]; /*0x7e015e*/
     --a3; /*0x7e0164*/
@@ -151,7 +151,7 @@ void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
   while ( v3 ); /*0x7e01b6*/
   v9 = *(unsigned short *)a1; /*0x7e01ba*/
   *(unsigned char *)a2 = *(unsigned short *)a1; /*0x7e01bd*/
-  v10 = (char *)a2 + 1; /*0x7e01bf*/
+  v10 = (unsigned char *)((char *)a2 + 1); /*0x7e01bf*/
   *v10++ = byte_A8F91C[v9]; /*0x7e01c6*/
   *v10 = IDA_HIBYTE(v9); /*0x7e01c9*/
   v10[1] = 0; /*0x7e01cc*/
@@ -206,7 +206,7 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     sub_7E01D2(v6, v7, byte_879124, a4); /*0x7e0266*/
     qmemcpy( (void *)(a2), (const void *)(v6), 4 * v8); /*0x7e0277*/
     v10 = &a2[v13]; /*0x7e0287*/
-    qmemcpy( v10, (const void *)(byte_879124), 4 * v8); /*0x7e028a*/
+    qmemcpy( (void *)(v10), (const void *)(byte_879124), 4 * v8); /*0x7e028a*/
     v11 = (int *)((char *)v11 + a4); /*0x7e0295*/
     a2 = &v10[v13]; /*0x7e0298*/
     v5 = (unsigned int)(v7); /*0x7e029b*/

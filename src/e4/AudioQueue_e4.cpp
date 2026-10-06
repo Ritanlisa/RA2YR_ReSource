@@ -34,7 +34,7 @@ unsigned int * AudioQueue::CreateNode()
   DListNode *v2; // esi
 
   v2 = (DListNode *)__2_YAPAXI_Z(0x60u); /*0x402afc*/
-  memset(v2, 0, 0x60u); /*0x402b07*/
+  memset( (void *)(v2), 0, 0x60u); /*0x402b07*/
   ((DListNode *)(v2))->InitEmpty(); /*0x402b0e*/
   *(unsigned int *)v2[2].__pad_0 = 0; /*0x402b13*/
   v2[1].DListNode_field_0x04 = (int)this; /*0x402b1c*/
@@ -42,7 +42,7 @@ unsigned int * AudioQueue::CreateNode()
   {
     if ( v2 ) /*0x402b28*/
     {
-      (*(void (**)(DListNode *))(v2[1].DListNode_field_0x04 + 24))(v2); /*0x402b2f*/
+      (*(void (**)(DListNode *))(v2[1].DListNode_field_0x04 + 24))( (DListNode *)(v2)); /*0x402b2f*/
       *(unsigned int *)(v2[1].DListNode_field_0x04 + 12) &= ~1u; /*0x402b36*/
       __3_YAXPAX_Z(v2); /*0x402b3a*/
       return 0; /*0x402b47*/
@@ -373,7 +373,7 @@ unsigned char * AudioQueue::AllocBuffer(char aP1)
   int v5; // edi
   int v6; // esi
 
-  result = 0; /*0x7b20e7*/
+  result = (unsigned char *)(0); /*0x7b20e7*/
   if ( aP1 ) /*0x7b20ed*/
   {
     if ( this->u32_3F064 == 128 ) /*0x7b219e*/
@@ -512,9 +512,9 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   *((unsigned int *)v9 + 4) = arg4; /*0x7b23e6*/
   v9[20] = 0; /*0x7b23f4*/
   v9[24] = a7; /*0x7b23f8*/
-  qmemcpy( v9, (const void *)(a3), a5); /*0x7b23fb*/
+  qmemcpy( (void *)(v9), (const void *)(a3), a5); /*0x7b23fb*/
   *((unsigned short *)v9 + 13) = a8; /*0x7b2409*/
-  (*(void (**)(WinsockInterfaceClass *, unsigned char *))((char *)this->Socket + 84))((WinsockInterfaceClass *)this, v9); /*0x7b2411*/
+  (*(void (**)(WinsockInterfaceClass *, unsigned char *))((char *)this->Socket + 84))( (WinsockInterfaceClass *)this, (unsigned char *)(v9)); /*0x7b2411*/
   if ( aP5 ) /*0x7b241a*/
   {
     v10 = *((unsigned int *)this + 16); /*0x7b241c*/
@@ -806,7 +806,7 @@ int AudioQueue::DrainAll()
     {
       Next_Alt = (gamemd::Init)(((AudioQueue *)(v1))->GetNextAlt()); /*0x750fbc*/
       ((AudioController *)(v1 + 3))->Stop(); /*0x750fbe*/
-      LinkedList::Init( (void)((unsigned int **)v1)); /*0x750fc5*/
+      LinkedList::Init(  (unsigned int **)v1); /*0x750fc5*/
       result = PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), (int)v1); /*0x750fd2*/
       v1 = (int *)Next_Alt; /*0x750fdd*/
       --dword_B1D3A8; /*0x750fe2*/

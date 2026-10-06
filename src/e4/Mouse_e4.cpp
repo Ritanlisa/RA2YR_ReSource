@@ -65,8 +65,8 @@ int Mouse::SetBounds(const void *aP1)
       byte_8A0618 |= 1u; /*0x4a8c68*/
       atexit(nullsub_10); /*0x4a8c6e*/
     }
-    qmemcpy(&stru_8A0390.onBridge, v5, 0x1E0u); /*0x4a8c85*/
-    *((unsigned int *)this + 1119) = &stru_8A0390.onBridge; /*0x4a8c8f*/
+    qmemcpy( (void *)(&stru_8A0390.onBridge), (const void *)(v5), 0x1E0u); /*0x4a8c85*/
+    *((unsigned int *)this + 1119) = (unsigned int)&stru_8A0390.onBridge; /*0x4a8c8f*/
     v7 = *CoordList::GetBounds(&aP1, (int16_t *)&stru_8A0390.onBridge); /*0x4a8c9e*/
     v9[0] = v7 - 1; /*0x4a8ca6*/
     v9[1] = HIWORD(v7) - 1; /*0x4a8cab*/
@@ -103,7 +103,7 @@ int Mouse::SetCursor(int aP1, char aP2)
   result = (gamemd::ObjectClass *)((int)(aP1));
   if ( (&dword_82D034)[7 * aP1] == -1 ) /*0x5bdca6*/
   {
-    v5 = 0; /*0x5bdca8*/
+    v5 = (ObjectClass *)(0); /*0x5bdca8*/
     aP2 = 0; /*0x5bdcaa*/
   }
   else
@@ -139,11 +139,11 @@ int Mouse::SetCursor(int aP1, char aP2)
       v8 = *((int16_t *)dword_ABF294 + 2); /*0x5bdd74*/
     v14 = v8; /*0x5bdd7c*/
     v13 = v11; /*0x5bdd87*/
-    (*(void (**)(int, int *, void *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))(  /*0x5bdd93*/
-      dword_887640,
-      &v13,
-      (void *)dword_ABF294,
-      v9);
+(*(void (**)(int, int *, void *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x5bdd93*/ dword_887640, (int *)(&v13), (void *)dword_ABF294, v9);
+
+
+
+
     result = (gamemd::ObjectClass *)((unsigned char)(aP1));
     *((unsigned int *)this + 5464) = (unsigned int)(aP1); /*0x5bdd9f*/
     *((unsigned char *)this + 21852) = (unsigned char)(aP2); /*0x5bdda5*/
@@ -226,10 +226,10 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/
       v18 = v7; /*0x7b94f2*/
-      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))( (int *)(aP1), v19); /*0x7b94f9*/
+      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))( (int *)(aP1), (unsigned char *)(v19)); /*0x7b94f9*/
     }
     BlitterDrawSHP(aP1, *(int *)&stru_87F5F0.__pad_58[128], v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
-    ((Vector *)((int)v21))->Clear(); /*0x7b951f*/
+    ((Vector *)((int)v21))->Clear((int)((Vector *)((int)v21))); /*0x7b951f*/
   }
 
 }

@@ -26,9 +26,9 @@ RadSiteClass::RadSiteClass()
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
-  this->RadLevelTimer[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f3*/
+  this->RadLevelTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f3*/
   this->RadLevelTimer[2] = 0; /*0x65b1f6*/
-  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f9*/
+  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f9*/
   this->RadLightTimer[2] = 0; /*0x65b1ff*/
   this->RadLightTimer[0] = v2; /*0x65b202*/
   LOWORD(this->BaseCell[0]) = 0; /*0x65b205*/
@@ -49,10 +49,10 @@ RadSiteClass::RadSiteClass()
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(RadSiteClass_Array + 8))(
-         &RadSiteClass_Array,
-         dword_B04BD8 + dword_B04BE4,
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(RadSiteClass_Array + 8))( (int *)(&RadSiteClass_Array), dword_B04BD8 + dword_B04BE4, 0) )
+
+
+
   {
     v3 = (unsigned int)(dword_B04BE0++);
     *((unsigned int *)dword_B04BD4 + v3) = (unsigned int)(this); /*0x65b293*/
@@ -94,11 +94,11 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x65b3e9*/
     {
-      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x65b3f2*/
-      v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b3f7*/
+      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x65b3f2*/
+      v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b3f7*/
       (&aP0->RadLevelTimer)[2] = 0; /*0x65b3fd*/
       (&aP0->RadLevelTimer)[0] = v3; /*0x65b404*/
-      (&aP0->RadLightTimer)[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
+      (&aP0->RadLightTimer)[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
       (&aP0->RadLightTimer)[2] = 0; /*0x65b40f*/
       aP0->vtable1 = &vt_RadSiteClass; /*0x65b416*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_RadSiteClass); /*0x65b41c*/

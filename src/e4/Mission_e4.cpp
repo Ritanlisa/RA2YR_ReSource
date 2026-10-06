@@ -85,8 +85,8 @@ int Mission_e4::ExecuteTechnoMissionAction()
             v8 = *(unsigned int *)this->__pad_0; /*0x520c94*/
             v6 = &v20; /*0x520c96*/
 LABEL_19:
-            v9 = (int *)(*(int (**)(Mission_e4 *, char *))(v8 + 72))(this, v6); /*0x520c9a*/
-            ((AnimClass *)(v4))->ctor(v7, v9, 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
+            v9 = (int *)(*(int (**)(Mission_e4 *, char *))(v8 + 72))( this, (char *)(v6)); /*0x520c9a*/
+            ((AnimClass *)(v4))->ctor( (void *)(v7), (int *)(v9), 0, 1, (void *)0x600, 0, 0); /*0x520ca4*/
           }
         }
 LABEL_20:
@@ -128,7 +128,7 @@ LABEL_20:
           if ( v10 != -1 ) /*0x520d01*/
           {
             LOWORD(v18) = (unsigned short)v10 << 13; /*0x520d11*/
-            ((FacingClass*)&this->__pad_18C[508])->Set_SyncLog(&v18); /*0x520d16*/
+            ((FacingClass*)&this->__pad_18C[508])->Set_SyncLog( (unsigned int *)(&v18)); /*0x520d16*/
           }
         }
         if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520d1b*/
@@ -198,7 +198,7 @@ LABEL_51:
           v19[0] = *(unsigned int *)&this->__pad_C[144]; /*0x520ecb*/
           v19[1] = *(unsigned int *)&this->__pad_C[148]; /*0x520ed6*/
           v19[2] = *(unsigned int *)&this->__pad_C[152]; /*0x520edd*/
-          StartAudioControllerAt(*v16, v19, 0); /*0x520ee4*/
+          StartAudioControllerAt( *v16, (unsigned int *)(v19), 0); /*0x520ee4*/
         }
       }
       result = *(unsigned int *)(v14 + 16); /*0x520ee9*/
@@ -262,7 +262,7 @@ char Mission_e4::ProcessUnitMissionAI()
   v4 = *(unsigned int *)&this->__pad_18C[1048]; /*0x520faf*/
   if ( v4 ) /*0x520fb7*/
   {
-    v5 = (unsigned int *)(*(int (**)(int, char *, Mission_e4 *))(*(unsigned int *)v4 + 76))(v4, v25, this); /*0x520fc5*/
+    v5 = (unsigned int *)(*(int (**)(int, char *, Mission_e4 *))(*(unsigned int *)v4 + 76))( v4, (char *)(v25), this); /*0x520fc5*/
     LOWORD(v22) = *v5 / 256; /*0x520fd8*/
     HIWORD(v22) = v5[1] / 256; /*0x520fec*/
     LOBYTE(v5) = this->__pad_5B8[292]; /*0x520ff1*/
@@ -292,7 +292,7 @@ char Mission_e4::ProcessUnitMissionAI()
             v9 = *(unsigned int *)this->__pad_0; /*0x5210b8*/
             v22 = v20; /*0x5210bb*/
             v19 = (*(int (**)(Mission_e4 *))(v9 + 800))(this); /*0x5210c9*/
-            v10 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(&v21) + 80) >> 8; /*0x5210de*/
+            v10 = *((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(&v21)) + 80) >> 8; /*0x5210de*/
             LOBYTE(v10) = v10 & 1; /*0x5210e1*/
             v11 = (*(int (**)(Mission_e4 *, unsigned int, int, int))(*(unsigned int *)this->__pad_0 + 188))( /*0x5210e9*/
                     this,
@@ -345,7 +345,7 @@ char Mission_e4::ProcessUnitMissionAI()
     if ( !v14 ) /*0x5211e4*/
 LABEL_33:
       WinAPI::Wrapper(-2147467261); /*0x5211eb*/
-    (*(void (**)(int, char *))(*(unsigned int *)v14 + 12))(v14, v25); /*0x5211fc*/
+    (*(void (**)(int, char *))(*(unsigned int *)v14 + 12))( v14, (char *)(v25)); /*0x5211fc*/
     v16 = memcmp(v25, &g_CLSID_JumpjetLocomotion, 0x10u) == 0; /*0x521215*/
     if ( v22 ) /*0x52121a*/
       (*(void (**)(int))(*(unsigned int *)v22 + 8))(v22); /*0x52121f*/
@@ -476,9 +476,9 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
         }
         else if ( !i[361] ) /*0x6ed87c*/
         {
-          (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed88e*/
-          (*(void (**)(int *, unsigned int))(*i + 968))(i, 0); /*0x6ed89a*/
-          (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, *((unsigned int *)this + 13), 1); /*0x6ed8aa*/
+          (*(void (**)(int *, int, unsigned int))(*i + 488))( (int *)(i), 2, 0); /*0x6ed88e*/
+          (*(void (**)(int *, unsigned int))(*i + 968))( (int *)(i), 0); /*0x6ed89a*/
+          (*(void (**)(int *, unsigned int, int))(*i + 1152))( (int *)(i), *((unsigned int *)this + 13), 1); /*0x6ed8aa*/
         }
       }
       LOBYTE(v3) = *((unsigned char *)i + 144); /*0x6ed8b9*/
@@ -489,7 +489,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
         {
           if ( dword_A8E7AC || (LOBYTE(v3) = *((unsigned char *)i + 129), !(unsigned char)v3) )
           {
-            if ( *((unsigned char *)i + 1673) || (v3 = (*(int (**)(int *))(*i + 44))(i), v3 == 2) )
+            if ( *((unsigned char *)i + 1673) || (v3 = (*(int (**)(int *))(*i + 44))( (int *)(i)), v3 == 2) )
             {
               v3 = i[173]; /*0x6ed903*/
               if ( !v3 )
@@ -506,15 +506,15 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                     v3 = i[361]; /*0x6eda1b*/
                     if ( !v3 ) /*0x6eda23*/
                     {
-                      v3 = (*(int (**)(int *))(*i + 388))(i); /*0x6eda29*/
+                      v3 = (*(int (**)(int *))(*i + 388))( (int *)(i)); /*0x6eda29*/
                       if ( v3 != v4 ) /*0x6eda31*/
                       {
-                        if ( v4 != 5 || (v3 = (*(int (**)(int *))(*i + 388))(i), v3 != 16) ) /*0x6eda45*/
+                        if ( v4 != 5 || (v3 = (*(int (**)(int *))(*i + 388))( (int *)(i)), v3 != 16) ) /*0x6eda45*/
                         {
                           ((TechnoClass *)i)->SetFocus( 0); /*0x6eda4b*/
-                          (*(void (**)(int *, int, unsigned int))(*i + 488))(i, v4, 0); /*0x6eda57*/
-                          (*(void (**)(int *, unsigned int))(*i + 968))(i, 0); /*0x6eda63*/
-                          LOBYTE(v3) = (*(int (**)(int *, unsigned int, int))(*i + 1152))(i, 0, 1); /*0x6eda71*/
+                          (*(void (**)(int *, int, unsigned int))(*i + 488))( (int *)(i), v4, 0); /*0x6eda57*/
+                          (*(void (**)(int *, unsigned int))(*i + 968))( (int *)(i), 0); /*0x6eda63*/
+                          LOBYTE(v3) = (*(int (**)(int *, unsigned int, int))(*i + 1152))( (int *)(i), 0, 1); /*0x6eda71*/
                         }
                       }
                     }
@@ -522,12 +522,12 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                 }
                 else
                 {
-                  (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed97a*/
-                  (*(void (**)(int *, unsigned int, int))(*i + 1152))(i, *((unsigned int *)this + 13), 1); /*0x6ed98a*/
-                  (*(void (**)(int *, int, unsigned int))(*i + 488))(i, 2, 0); /*0x6ed998*/
-                  v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)&this->ptr_34 + 72))( /*0x6ed9a8*/
-                                    *((unsigned int *)this + 13),
-                                    v21);
+                  (*(void (**)(int *, int, unsigned int))(*i + 488))( (int *)(i), 2, 0); /*0x6ed97a*/
+                  (*(void (**)(int *, unsigned int, int))(*i + 1152))( (int *)(i), *((unsigned int *)this + 13), 1); /*0x6ed98a*/
+                  (*(void (**)(int *, int, unsigned int))(*i + 488))( (int *)(i), 2, 0); /*0x6ed998*/
+v11 = (unsigned int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)&this->ptr_34 + 72))( /*0x6ed9a8*/ *((unsigned int *)this + 13), (unsigned char *)(v21));
+
+
                   LOWORD(v22) = *v11 / 256; /*0x6ed9bb*/
                   HIWORD(v22) = v11[1] / 256; /*0x6ed9d7*/
                   v16 = v22; /*0x6ed9e4*/
@@ -535,7 +535,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                   v13 = *i; /*0x6ed9ef*/
                   v17 = *v12; /*0x6ed9fd*/
                   v14 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v17); /*0x6eda01*/
-                  LOBYTE(v3) = (*(int (**)(int *, void *, int))(v13 + 1152))(i, v14, 1); /*0x6eda09*/
+                  LOBYTE(v3) = (*(int (**)(int *, void *, int))(v13 + 1152))( (int *)(i), (void *)(v14), 1); /*0x6eda09*/
                 }
               }
             }
@@ -563,9 +563,9 @@ int Mission_e4::GetMissionDelay(void *a1_1)
   p_Mission_field_0x180 = (int *)(&this->Mission_field_0x180); /*0x70f783*/
   if ( Mission_field_0x180 != -1 ) /*0x70f789*/
   {
-    if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180 >= result ) /*0x70f795*/
+    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180 >= result ) /*0x70f795*/
       return result; /*0x70f795*/
-    result -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180; /*0x70f797*/
+    result -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - Mission_field_0x180; /*0x70f797*/
   }
   if ( result > 10 ) /*0x70f79c*/
   {
@@ -573,7 +573,7 @@ int Mission_e4::GetMissionDelay(void *a1_1)
     if ( !dword_A8E7AC ) /*0x70f7a5*/
     {
       result = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
-      *p_Mission_field_0x180 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x70f7c1*/
+      *p_Mission_field_0x180 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x70f7c1*/
       p_Mission_field_0x180[1] = v4; /*0x70f7c7*/
       p_Mission_field_0x180[2] = result; /*0x70f7ca*/
     }

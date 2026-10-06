@@ -177,7 +177,7 @@ void Array::ByteSwap()
     v3 = (u_long *)this; /*0x74916c*/
     do /*0x749184*/
     {
-      *v3 =       *v3 = ntohl((void *)(*v3)); 
+      *v3 =       *v3 = ntohl( (void *)((void *)(*v3))); 
       ++v2; /*0x74917e*/
       ++v3; /*0x74917f*/
     }
@@ -213,7 +213,7 @@ int Array::CleanupArrayWOL()
 
   for ( i = 0; i < *(unsigned int *)this->__pad_0; ++i ) /*0x7acd39*/
   {
-    j_DeleteAndZero((ObjectClass *)(*(unsigned int *)this->__pad_8 + 4 * i)); /*0x7acd41*/
+    j_DeleteAndZero( (void *)((ObjectClass *)(*(unsigned int *)this->__pad_8 + 4 * i))); /*0x7acd41*/
     result = *(unsigned int *)this->__pad_0; /*0x7acd46*/
   }
   *(unsigned int *)this->__pad_0 = 0; /*0x7acd4d*/
@@ -254,11 +254,11 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
     v8 = (void *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
-    memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
+    memset( (void *)(v8), 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
     v16 = v8; /*0x7ad7ec*/
     v9 = *(const void **)this->__pad_8; /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
-      qmemcpy(v8, v9, 268 * *(unsigned int *)this->__pad_0); /*0x7ad80f*/
+      qmemcpy( (void *)(v8), (const void *)(v9), 268 * *(unsigned int *)this->__pad_0); /*0x7ad80f*/
     __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad81c*/
     v4 = (gamemd::ObjectClass *)(aP2); /*0x7ad825*/
     *(unsigned int *)this->__pad_8 = (unsigned int)(v16); /*0x7ad82c*/
@@ -271,11 +271,11 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
     v12 = (void *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
-    memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
+    memset( (void *)(v12), 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
     v17 = v12; /*0x7ad871*/
     v13 = *(const void **)this->__pad_8; /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
-      qmemcpy(v12, v13, 268 * *(unsigned int *)this->__pad_0); /*0x7ad894*/
+      qmemcpy( (void *)(v12), (const void *)(v13), 268 * *(unsigned int *)this->__pad_0); /*0x7ad894*/
     __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad8a1*/
     v4 = (gamemd::ObjectClass *)(aP2); /*0x7ad8aa*/
     *(unsigned int *)this->__pad_8 = (unsigned int)(v17); /*0x7ad8b1*/
@@ -286,9 +286,9 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
       (void *)(*(unsigned int *)this->__pad_8 + 268 * (v4 + 1)),
       (const void *)(*(unsigned int *)this->__pad_8 + 268 * v4),
       268 * *(unsigned int *)this->__pad_0 - 268 * v4);
-  v14 = (gamemd::AbstractClass **)((void *)(*(unsigned int *)this->__pad_8 + 268 * v4));
+  v14 = (void *)((gamemd::AbstractClass **)((void *)(*(unsigned int *)this->__pad_8 + 268 * v4)));
   if ( v14 ) /*0x7ad90c*/
-    qmemcpy( v14, (const void *)(a1), 0x10Cu); /*0x7ad917*/
+    qmemcpy( (void *)(v14), (const void *)(a1), 0x10Cu); /*0x7ad917*/
   ++*(unsigned int *)this->__pad_0; /*0x7ad91e*/
   return (gamemd::AbstractClass **)(1); /*0x7ad91b*/
 
@@ -381,7 +381,7 @@ char Array::GetElementAt(unsigned int * a2, int a3)
   LOBYTE(result) = 0; /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
-    v3 = this->q038; /*0x49d086*/
+    v3 = (unsigned int)this->q038; /*0x49d086*/
   if ( v3 < 0 || v3 >= this->q010 ) /*0x49d094*/
     v3 = -1; /*0x49d096*/
   if ( this->q06C ) /*0x49d09a*/

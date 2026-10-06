@@ -95,7 +95,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       ((BuildingClass *)((BuildingClass *)this))->ProcessAnimationStates(); /*0x454a7b*/
     if ( *(unsigned char *)(*((unsigned int *)this + 328) + 5492) ) /*0x454a86*/
     {
-      ((BuildingClass *)(BuildingClass *)this)->ClearAnims( 19); /*0x454a98*/
+      ((BuildingClass *)this)->ClearAnims( 19); /*0x454a98*/
       v8 = 0; /*0x454a9d*/
       for ( i = 0; i < 1428; i += 68 ) /*0x454a9f*/
       {
@@ -134,13 +134,13 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     v14 = *((unsigned int *)this + 135); /*0x454b24*/
     *((unsigned char *)this + 1634) = 0; /*0x454b2a*/
-    HouseClass::LostPoweredCenter( v14, (void)((void *)(*(unsigned int *)(v3 + 1036)))); 
+    HouseClass::LostPoweredCenter( v14,  (void *)(*(unsigned int *)(v3 + 1036))); 
   }
   v15 = (CaptureManager *)*((unsigned int *)this + 175); /*0x454b3d*/
   if ( v15 ) /*0x454b45*/
     CaptureManager::FreeAll(v15); /*0x454b47*/
   if ( *((unsigned int *)this + 171) ) /*0x454b4c*/
-    ((TechnoClass *)(TechnoClass *)this)->EjectPassengers( 1); /*0x454b5a*/
+    ((TechnoClass *)this)->EjectPassengers( 1); /*0x454b5a*/
   v16 = *((unsigned int *)this + 328); /*0x454b5f*/
   if ( *(unsigned char *)(v16 + 5831) && *((char *)this + 1771) >= 0 && *((unsigned char *)this + 1772) ) /*0x454b79*/
   {
@@ -204,7 +204,7 @@ LABEL_52:
       for ( j = 0; j < 1428; j += 68 ) /*0x454cac*/
       {
         if ( *(unsigned char *)(j + *((unsigned int *)this + 328) + 3983) ) /*0x454cb4*/
-          ((BuildingClass *)(BuildingClass *)this)->ClearAnims( v27); /*0x454cc2*/
+          ((BuildingClass *)this)->ClearAnims( v27); /*0x454cc2*/
         ++v27; /*0x454cca*/
       }
       return; /*0x454cd1*/
@@ -281,32 +281,32 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   while ( 1 ) /*0x770574*/
   {
     v6 = *(void **)this; /*0x770574*/
-    String::    ((String *)((const char *)((String *)&aP2)))->Assign(off_83E188); 
+    String::    ((String *)((const char *)((String *)&aP2)))->Assign( (const char *)(off_83E188)); 
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 0, (char **)&aP2); /*0x770590*/
-    j_DeleteAndZero((ObjectClass *)&aP2); /*0x770599*/
-    String::    ((String *)((const char *)((String *)&a1)))->Assign(g_INI_Key_Lose); 
+    j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x770599*/
+    String::    ((String *)((const char *)((String *)&a1)))->Assign( (const char *)(g_INI_Key_Lose)); 
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 1, (char **)&a1); /*0x7705b8*/
-    j_DeleteAndZero((ObjectClass *)&a1); /*0x7705c1*/
-    String::    ((String *)((const char *)(&v23)))->Assign(aDraw); 
+    j_DeleteAndZero( (void *)((ObjectClass *)&a1)); /*0x7705c1*/
+    String::    ((String *)((const char *)(&v23)))->Assign( (const char *)(aDraw)); 
     INIClass::ReadTokenizedPair(v5, v4, v3, v6, 2, (char **)&v23); /*0x7705e0*/
-    j_DeleteAndZero((ObjectClass *)&v23); /*0x7705e9*/
+    j_DeleteAndZero( (void *)((ObjectClass *)&v23)); /*0x7705e9*/
     v5 = (INIClass *)((char *)v5 + 148); /*0x7705f2*/
     if ( !--*(unsigned int *)&((unsigned int *)(v23.m_3))[1] ) /*0x7705fd*/
       break; /*0x7705fd*/
     this = v22; /*0x770570*/
   }
-  String::As  ((String *)((const char *)(&v23)))->Assign(aStartup); 
+  String::As  ((String *)((const char *)(&v23)))->Assign( (const char *)(aStartup)); 
   v7 = (char **)(((StaticString *)(*(StaticString **)v22))->Factory()); /*0x77061c*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v7, (char **)&v23); 
-  unknown_libname_73(&a1); /*0x770630*/
-  String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 
-  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
-  j_DeleteAndZero((ObjectClass *)&aP2); /*0x77065e*/
+  unknown_libname_73( (void *)(&a1)); /*0x770630*/
+  String::As  ((String *)((const char *)((String *)&aP2)))->Assign( (const char *)(&g_INI_DefaultBuffer)); 
+  ((INIClass *)(v4))->ReadString( (char **)(v3), (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770655*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x77065e*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[892] + 12))(v22 + 892); /*0x770671*/
-  unknown_libname_73(&aP2); /*0x770678*/
-  for ( i = ((String *)(String *)&a1)->Tokenize( 0, (char *)&::Delimiter, (void **)&aP2); /*0x770697*/
+  unknown_libname_73( (void *)(&aP2)); /*0x770678*/
+  for ( i = ((String *)&a1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)); /*0x770697*/
         i != -1;
-        i = ((String *)(String *)&a1)->Tokenize( i, (char *)&::Delimiter, (void **)&aP2) )
+        i = ((String *)&a1)->Tokenize( i, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)) )
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x77069d*/
     v9 = *(unsigned int *)&v22[900]; /*0x7706a2*/
@@ -330,22 +330,22 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     *(unsigned int *)&v22[908] = v12 + 1; /*0x7706d9*/
     *(unsigned int *)(v13 + 4 * v12) = v24; /*0x7706e0*/
   }
-  j_DeleteAndZero((ObjectClass *)&aP2); /*0x770702*/
-  j_DeleteAndZero((ObjectClass *)&a1); /*0x77070b*/
-  j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v23.m_3))[1]); /*0x770714*/
-  j_DeleteAndZero((ObjectClass *)&v23); /*0x77071d*/
-  String::As  ((String *)((const char *)(&v23)))->Assign(aTerritoryselec); 
+  j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x770702*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&a1)); /*0x77070b*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&((unsigned int *)(v23.m_3))[1])); /*0x770714*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&v23)); /*0x77071d*/
+  String::As  ((String *)((const char *)(&v23)))->Assign( (const char *)(aTerritoryselec)); 
   v14 = (char **)(((StaticString *)(*(StaticString **)v22))->Factory()); /*0x77073b*/
   ConcatStringAlloc((gamemd::ObjectClass *)((char **)&((unsigned int *)(v23.m_3))[1]), (const char **)v14, (char **)&v23); 
-  unknown_libname_73(&a1); /*0x77074f*/
-  String::As  ((String *)((const char *)((String *)&aP2)))->Assign(&g_INI_DefaultBuffer); 
-  ((INIClass *)(v4))->ReadString(v3, (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
-  j_DeleteAndZero((ObjectClass *)&aP2); /*0x77077d*/
+  unknown_libname_73( (void *)(&a1)); /*0x77074f*/
+  String::As  ((String *)((const char *)((String *)&aP2)))->Assign( (const char *)(&g_INI_DefaultBuffer)); 
+  ((INIClass *)(v4))->ReadString( (char **)(v3), (char **)&v23.m_3[1], (char **)&aP2, (int)&a1); /*0x770774*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x77077d*/
   (*(void (**)(Animation *))(*(unsigned int *)&v22[916] + 12))(v22 + 916); /*0x770790*/
-  unknown_libname_73(&aP2); /*0x770797*/
-  for ( j = ((String *)(String *)&a1)->Tokenize( 0, (char *)&::Delimiter, (void **)&aP2); /*0x7707b6*/
+  unknown_libname_73( (void *)(&aP2)); /*0x770797*/
+  for ( j = ((String *)&a1)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)); /*0x7707b6*/
         j != -1;
-        j = ((String *)(String *)&a1)->Tokenize( j, (char *)&::Delimiter, (void **)&aP2) )
+        j = ((String *)&a1)->Tokenize( j, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&aP2)) )
   {
     __1_Timevec_std__QAE_XZ((const char **)&aP2); /*0x7707bc*/
     v16 = *(unsigned int *)&v22[924]; /*0x7707c1*/
@@ -369,10 +369,10 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     *(unsigned int *)&v22[932] = v20 + 1; /*0x7707f6*/
     *(unsigned int *)(v21 + 4 * v20) = v18; /*0x7707f9*/
   }
-  j_DeleteAndZero((ObjectClass *)&aP2); /*0x77081b*/
-  j_DeleteAndZero((ObjectClass *)&a1); /*0x770824*/
-  j_DeleteAndZero((ObjectClass *)&((unsigned int *)(v23.m_3))[1]); /*0x77082d*/
-  j_DeleteAndZero((ObjectClass *)&v23); /*0x770836*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x77081b*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&a1)); /*0x770824*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&((unsigned int *)(v23.m_3))[1])); /*0x77082d*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&v23)); /*0x770836*/
 
 }
 } // namespace gamemd

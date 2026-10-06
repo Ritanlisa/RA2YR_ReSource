@@ -41,10 +41,10 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   wchar_t v15[506]; // [esp+ECh] [ebp-3F4h] BYREF
 
     ((Debug *)this)->Log();
-  ppstgOpen = 0; /*0x67cf1b*/
-  MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67cf1f*/
+  ppstgOpen = (IStorage *)(0); /*0x67cf1b*/
+  MultiByteToWideChar( 0, 0, (LPCCH)(lpMultiByteStr), -1, (LPWSTR)(WideCharStr), 64); /*0x67cf1f*/
   ((ComPtr *)(int *)&ppstgOpen)->ReleaseSimple(); /*0x67cf29*/
-  ppstgOpen = 0; /*0x67cf3e*/
+  ppstgOpen = (IStorage *)(0); /*0x67cf3e*/
   if ( StgCreateDocfile(WideCharStr, 0x1012u, 0, &ppstgOpen) < 0 ) /*0x67cf4a*/
   {
     ((ComPtr *)(int *)&ppstgOpen)->ReleaseSimple(); /*0x67cf50*/
@@ -81,11 +81,11 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   }
   v9 = 0; /*0x67d0c2*/
   ((Game*)&v9)->readIniSettings(); /*0x67d0c6*/
-  if ( CoCreateInstance(*(const IID *)&stru_7E9540, 0, 7u, &riid, &ppv) >= 0 ) /*0x67d0e5*/
+  if ( CoCreateInstance(*(const IID *)&stru_7E9540, 0, 7u, *(const IID *)&riid, &ppv) >= 0 ) /*0x67d0e5*/
   {
     if ( OleRun((LPUNKNOWN)ppv) >= 0 ) /*0x67d0f4*/
       (**(void (***)(LPVOID, IID *, int *))ppv)(ppv, &stru_83D598, &v9); /*0x67d107*/
-    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x67d110*/
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x67d110*/
   }
   if ( !v9 ) /*0x67d119*/
     WinAPI::Wrapper(-2147467261); /*0x67d120*/

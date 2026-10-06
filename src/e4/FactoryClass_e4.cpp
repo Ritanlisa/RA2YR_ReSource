@@ -62,7 +62,7 @@ int FactoryClass::UpdateProduction()
     }
     if ( this->specialItem == ((&char)[4])(-1) || ((unsigned int *)&this->production)[0] != 54 ) /*0x4c9b5d*/
     {
-      v3 = (unsigned int *)&this->production[2]; /*0x4c9b63*/
+      v3 = (int *)((unsigned int *)&this->production[2]); /*0x4c9b63*/
       Speed = Locomotor::GetSpeed((Locomotor *)(unsigned int *)&this->production[2]); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
@@ -321,7 +321,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
   {
     if ( v3 ) /*0x4ca290*/
     {
-      ((AbstractClass *)(AbstractClass *)v3)->InitVtables( (int)&a2); /*0x4ca299*/
+      ((AbstractClass *)v3)->InitVtables( (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3((unsigned int *)&v3production)[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)&v3->onHold, 0, 0); /*0x4ca2b2*/
       *(unsigned int *)&v3->onHold = (unsigned int)(&vt_DynamicVectorClass); /*0x4ca2b7*/
@@ -334,7 +334,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
     }
     v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
-    result = (*(int (**)(int *, FactoryClass **, int, unsigned int))(v5 + 12))( v2, (FactoryClass **)(&a1), 4, 0); /*0x4ca2f2*/
+    result = (*(int (**)(int *, FactoryClass **, int, unsigned int))(v5 + 12))( (int *)(v2), (FactoryClass **)(&a1), 4, 0); /*0x4ca2f2*/
     if ( result >= 0 ) /*0x4ca2f7*/
     {
       v6 = (gamemd::FactoryClass *)(a1); /*0x4ca2fd*/
@@ -360,18 +360,18 @@ LABEL_14:
         while ( 1 ) /*0x4ca309*/
         {
           v7 = *v2; /*0x4ca309*/
-          a2 = 0; /*0x4ca315*/
-          result = (*(int (**)(int *, int **, int, unsigned int))(v7 + 12))( v2, (int **)(&a2), 4, 0); /*0x4ca319*/
+          a2 = (int *)(0); /*0x4ca315*/
+          result = (*(int (**)(int *, int **, int, unsigned int))(v7 + 12))( (int *)(v2), (int **)(&a2), 4, 0); /*0x4ca319*/
           if ( result < 0 ) /*0x4ca31e*/
             break; /*0x4ca31e*/
           v8 = *(unsigned int *)&v3->__pad_42[6]; /*0x4ca324*/
           if ( *(unsigned int *)&v3->__pad_42[14] < v8 /*0x4ca349*/
             || (v3->__pad_42[11] || !v8)
             && (v9 = *(unsigned int *)&v3->__pad_42[18], v9 > 0)
-            && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&v3->onHold + 8))(
-                 &v3->onHold,
-                 v8 + v9,
-                 0) )
+&& (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&v3->onHold + 8))( (char *)(&v3->onHold), v8 + v9, 0) )
+
+
+
           {
             v10 = *(unsigned int *)&v3->__pad_42[14]; /*0x4ca350*/
             v11 = *(unsigned int *)&v3->__pad_42[2]; /*0x4ca353*/
@@ -411,11 +411,11 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log("Balance\t= %d\n"); /*0x4ca4a7 G57c1: IDA 0x4ca4a7 push offset aBalanceD*/
   Debug::Log("OriginalBalance = %d\n"); /*0x4ca4b5 G57c1: IDA 0x4ca4b5 push offset aOriginalbalanc*/
   Debug::Log("SpecialItem\t= %d\n"); /*0x4ca4c3 G57c1: IDA 0x4ca4c3 push offset aSpecialitemD*/
-  (*((void (**)(void **))this->((unsigned int *)owner)[0] + 4))(&this->((unsigned int *)owner)[0]); /*0x4ca4d4*/
+  (*((void (**)(void **))this->((unsigned int *)owner)[0] + 4))( (void **)(&this->((unsigned int *)owner)[0])); /*0x4ca4d4*/
   Debug::Log("House->Fetch_ID()\t= %d\n"); /*0x4ca4dd G57c1: IDA 0x4ca4dd push offset aHouseFetchIdD*/
   (*((void ((void **)(**))(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
   Debug::Log("ID\t= %d\n"); /*0x4ca4f5 G57c1: IDA 0x4ca4f5 push offset aIdD_0*/
-  v3 = ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
+  v3 = ((AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x4ca50f*/
   LOBYTE(v4) = this->__pad_42[27]; /*0x4ca514*/
@@ -429,8 +429,8 @@ AbstractClass * * FactoryClass::Stat(int * a2)
     Power::TimerProcess(v6); /*0x4ca549*/
   }
   Power::TimerProcess((int)(this->specialItem)); /*0x4ca554*/
-  v7 = (*((int (**)(void **))this->((unsigned int *)owner)[0] + 4))(&this->((unsigned int *)owner)[0]); /*0x4ca563*/
-  return Power::TimerProcess(v7); /*0x4ca56e*/
+  v7 = (*((int (**)(void **))this->((unsigned int *)owner)[0] + 4))( (void **)(&this->((unsigned int *)owner)[0])); /*0x4ca563*/
+  return (AbstractClass * *)Power::TimerProcess(v7); /*0x4ca56e*/
 
 }
 }
@@ -484,12 +484,12 @@ int FactoryClass::StartProduction_2()
             ++v6; /*0x4ca5db*/
           }
         }
-        v2 = (*(int (**)(unsigned char *))(*(unsigned int *)v3 + 64))(v3); /*0x4ca5ee*/
+        v2 = (*(int (**)(unsigned char *))(*(unsigned int *)v3 + 64))( (unsigned char *)(v3)); /*0x4ca5ee*/
         if ( v2 >= 0 ) /*0x4ca5f3*/
         {
           v10 = v3[3278]; /*0x4ca5ff*/
           v9 = v2; /*0x4ca600*/
-          v7 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v3 + 44))(v3); /*0x4ca603*/
+          v7 = (void *)(*(int (**)(unsigned char *))(*(unsigned int *)v3 + 44))( (unsigned char *)(v3)); /*0x4ca603*/
           LOBYTE(v2) = (unsigned char)(((Sidebar *)((int)this->owner))->StartSidebarProduction((gamemd::HouseClass *)(v7), v9, v10, 1)); /*0x4ca60a*/
         }
       }
@@ -568,9 +568,9 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x4ca791*/
   v7 = (gamemd::FactoryClass *)(this); /*0x4ca7a6*/
-  v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/
-         &stru_A83D50.__pad_C8[24],
-         &v7);
+v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/ &stru_A83D50.__pad_C8[24], (FactoryClass **)(&v7));
+
+
   if ( v3 != -1 && v3 < *(int *)&stru_A83D50.__pad_C8[40] ) /*0x4ca7ba*/
   {
     --*(unsigned int *)&stru_A83D50.__pad_C8[40]; /*0x4ca7bf*/
@@ -585,9 +585,9 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   if ( byte_A8E9A0 ) /*0x4ca7e6*/
     BuildingClass::AbandonProduction((int)this); /*0x4ca7ea*/
   v7 = (gamemd::FactoryClass *)(this); /*0x4ca7ff*/
-  v4 = (*(int (**)(int *, FactoryClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4ca803*/
-         &g_BuildingLoadQueue_Array.PowerBonus,
-         &v7);
+v4 = (*(int (**)(int *, FactoryClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4ca803*/ &g_BuildingLoadQueue_Array.PowerBonus, (FactoryClass **)(&v7));
+
+
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4ca813*/
   {
     --g_BuildingLoadQueue_Array.Foundation[0]; /*0x4ca818*/
@@ -611,7 +611,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
     __3_YAXPAX_Z(this); /*0x4ca877*/
-  return this; /*0x4ca881*/
+  return (void *)this; /*0x4ca881*/
 
 }
 }
@@ -652,11 +652,11 @@ int FactoryClass::FinishProduction(int a2)
           if ( dword_AC4CA8 < dword_AC4CA0 /*0x6350f4*/
             || (byte_AC4CA5 || !dword_AC4CA0)
             && dword_AC4CAC > 0
-            && (result = (*(int (**)(unsigned int *, int, unsigned int))(dword_AC4C98 + 8))(
-                           &dword_AC4C98,
-                           dword_AC4CA0 + dword_AC4CAC,
-                           0),
-                (unsigned char)result) )
+&& (result = (*(int (**)(unsigned int *, int, unsigned int))(dword_AC4C98 + 8))( (unsigned int *)(&dword_AC4C98), dword_AC4CA0 + dword_AC4CAC, 0), (unsigned char)result) )
+
+
+
+
           {
             result = dword_AC4CA8++; /*0x6350fc*/
             *((unsigned int *)dword_AC4C9C + result) = (unsigned int)(this); /*0x63510b*/
@@ -838,7 +838,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9ae*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4ca9b7*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x4ca9b7*/
       this->m_8 = a2; /*0x4ca9bf*/
       BYTE1(this->m_C) = a3 == 0; /*0x4ca9c2*/
       return 1; /*0x4ca9c8*/

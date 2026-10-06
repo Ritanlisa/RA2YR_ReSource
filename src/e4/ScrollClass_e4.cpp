@@ -22,7 +22,7 @@ int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
 
   TacticalClass::ProcessView( (TacticalClass *)this); /*0x6922e3*/
-  return ((BlowStraw_29 *)((TabClass *)this))->Seek(a1,(unsigned int *)(aP2)); /*0x6922f9*/
+  return ((BlowStraw_29 *)((TabClass *)this))->Seek( (int *)(a1), (unsigned int *)(aP2)); /*0x6922f9*/
 
 }
 } // namespace gamemd

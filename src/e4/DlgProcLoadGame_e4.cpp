@@ -31,36 +31,36 @@ HWND E4Recv_696AE0::sub_696AE0()
     if ( result ) /*0x696b15*/
     {
       p_vtable2 = (char *)&((unsigned int *)this)[0]; /*0x696b21*/
-      SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)p_vtable2); /*0x696b30*/
-      SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
+      SendMessageA( (HWND)(DlgItem), 0x4B5u, 0x80u, (LPARAM)((LPARAM)((LPARAM)p_vtable2))); /*0x696b30*/
+      SendMessageA( (HWND)(DlgItem), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)&g_INI_DefaultBuffer))); /*0x696b3f*/
       ((String *)(p_vtable2))->Trim(); /*0x696b43*/
       result = 0; /*0x696b4d*/
-      if ( strlen(p_vtable2) ) /*0x696b4f*/
+      if ( strlen( (const char *)(p_vtable2)) ) /*0x696b4f*/
       {
         _strupr(p_vtable2); /*0x696b5b*/
-        v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)p_vtable2); /*0x696b6e*/
+        v6 = SendMessageA( (HWND)(v4), 0x4C4u, 0xFFFFFFFF, (LPARAM)((LPARAM)((LPARAM)p_vtable2))); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
           v8 = (char *)((HWND)((char *)__2_YAPAXI_Z(0x29u)));
-          strcpy(v8, p_vtable2); /*0x696ba2*/
-          result = SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
+          strcpy( (char *)(v8), (const char *)(p_vtable2)); /*0x696ba2*/
+          result = SendMessageA( (HWND)(v4), 0x4C8u, 0, (LPARAM)((LPARAM)((LPARAM)v8))); /*0x696bb1*/
           v6 = result; /*0x696bb3*/
           if ( result == -1 ) /*0x696bb8*/
             return (HWND)(result); /*0x696bb8*/
           if ( dword_A8DB5C < dword_A8DB54 /*0x696bf1*/
             || (byte_A8DB59 || !dword_A8DB54)
             && dword_A8DB60 > 0
-            && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8DB4C + 8))(
-                 &dword_A8DB4C,
-                 dword_A8DB54 + dword_A8DB60,
-                 0) )
+&& (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8DB4C + 8))( (unsigned int *)(&dword_A8DB4C), dword_A8DB54 + dword_A8DB60, 0) )
+
+
+
           {
             v7 = (unsigned int)(dword_A8DB5C++);
             *(unsigned int *)(dword_A8DB50 + 4 * v7) = (unsigned int)(v8); /*0x696c11*/
           }
         }
-        SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
-        SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
+        SendMessageA( (HWND)(v4), 0x186u, v6, 0); /*0x696c1d*/
+        SendMessageA( (HWND)(v4), 0x197u, v6, 0); /*0x696c28*/
         *(unsigned int *)&this->isInLogic = v6; /*0x696c2e*/
         return (HWND)((int)this); /*0x696c2a*/
       }
@@ -88,11 +88,11 @@ HWND E4Recv_696C40::sub_696C40()
     result = SendMessageA((HWND)result, 0x18Bu, 0, 0); /*0x696c6f*/
     if ( result > 0 ) /*0x696c73*/
     {
-      result = SendMessageA(v3, 0x188u, 0, 0); /*0x696c7f*/
+      result = SendMessageA( (HWND)(v3), 0x188u, 0, 0); /*0x696c7f*/
       v4 = result; /*0x696c81*/
       if ( result != -1 ) /*0x696c86*/
       {
-        SendMessageA(v3, 0x182u, result, 0); /*0x696c91*/
+        SendMessageA( (HWND)(v3), 0x182u, result, 0); /*0x696c91*/
         if ( v4 < dword_A8DB5C ) /*0x696c9b*/
         {
           v5 = v4; /*0x696c9e*/
@@ -106,10 +106,10 @@ HWND E4Recv_696C40::sub_696C40()
             while ( v5 < dword_A8DB5C ); /*0x696cc0*/
           }
         }
-        if ( v4 >= SendMessageA(v3, 0x18Bu, 0, 0) ) /*0x696cd0*/
+        if ( v4 >= SendMessageA( (HWND)(v3), 0x18Bu, 0, 0) ) /*0x696cd0*/
           --v4; /*0x696cd2*/
-        SendMessageA(v3, 0x186u, v4, 0); /*0x696cdc*/
-        result = SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
+        SendMessageA( (HWND)(v3), 0x186u, v4, 0); /*0x696cdc*/
+        result = SendMessageA( (HWND)(v3), 0x197u, v4, 0); /*0x696ce7*/
         *(unsigned int *)&this->isInLogic = v4; /*0x696ce9*/
       }
     }

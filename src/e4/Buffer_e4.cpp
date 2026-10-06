@@ -82,10 +82,10 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     v56 = v50; /*0x7bcf17*/
     Buffer_field_14 = this->Buffer_field_14; /*0x7bcf1b*/
     v55 = v5; /*0x7bcf24*/
-    result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)Buffer_field_14 + 20))( /*0x7bcf2f*/
-                       Buffer_field_14,
-                       &v53,
-                       a4);
+result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)Buffer_field_14 + 20))( /*0x7bcf2f*/ Buffer_field_14, (int *)(&v53), a4);
+
+
+
     this->Buffer_field_24 = 0x8000; /*0x7bcf32*/
     return result; /*0x7bcf32*/
   }
@@ -136,10 +136,10 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       v54 = 0; /*0x7bcc37*/
       v56 = *((unsigned int *)this + 11); /*0x7bcc3e*/
       v55 = -a2; /*0x7bcc46*/
-      result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)this->Buffer_field_14 + 20))( /*0x7bcc5a*/
-                         this->Buffer_field_14,
-                         &v53,
-                         a4);
+result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)this->Buffer_field_14 + 20))( /*0x7bcc5a*/ this->Buffer_field_14, (int *)(&v53), a4);
+
+
+
     }
     else
     {
@@ -192,7 +192,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
           *v46++ = a4; /*0x7bce47*/
           --v47; /*0x7bce4d*/
         }
-        v48 = 0; /*0x7bce50*/
+        v48 = (uint16_t *)(0); /*0x7bce50*/
         if ( v47 >> 1 ) /*0x7bce55*/
         {
           memset32(v46, 65537 * a4, v47 >> 1); /*0x7bce70*/
@@ -208,7 +208,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
           v37 += 2; /*0x7bce9e*/
           --v38; /*0x7bcea1*/
         }
-        result = 0; /*0x7bcea4*/
+        result = (char *)(0); /*0x7bcea4*/
         v49 = v38 >> 1; /*0x7bcea9*/
         if ( !(v38 >> 1) ) /*0x7bceab*/
           goto LABEL_54; /*0x7bceab*/
@@ -242,7 +242,7 @@ LABEL_55:
           *v40++ = a4; /*0x7bcdeb*/
           --v41; /*0x7bcdf1*/
         }
-        result = 0; /*0x7bcdf4*/
+        result = (char *)(0); /*0x7bcdf4*/
         v42 = v41 >> 1; /*0x7bcdf9*/
         if ( v41 >> 1 ) /*0x7bcdf9*/
         {
@@ -261,7 +261,7 @@ LABEL_55:
         v31 = (char *)(v28 + 2); /*0x7bcd6d*/
         LOBYTE(v57) = --v32; /*0x7bcd71*/
       }
-      v33 = 0; /*0x7bcd77*/
+      v33 = (uint16_t *)(0); /*0x7bcd77*/
       v34 = v32 >> 1; /*0x7bcd7c*/
       if ( v32 >> 1 ) /*0x7bcd7c*/
       {
@@ -284,7 +284,7 @@ LABEL_60:
         --v38; /*0x7bcef8*/
       }
     }
-    result = 0; /*0x7bcef9*/
+    result = (char *)(0); /*0x7bcef9*/
     v49 = v38 >> 1; /*0x7bcf00*/
     if ( !(v38 >> 1) ) /*0x7bcf02*/
       goto LABEL_54; /*0x7bcf02*/
@@ -323,7 +323,7 @@ int Buffer::AllocateCodecFrameBuffers()
   int v28; // [esp+28h] [ebp-8h] BYREF
   unsigned int v29; // [esp+2Ch] [ebp-4h]
 
-  if ( (*((int (**)(Buffer *, int, int *, int))(unsigned int *)&this->Buffer_field_046))(this, 5, &v28, 8) ) /*0x7c1743*/
+  if ( (*((int (**)(Buffer *, int, int *, int))(unsigned int *)&this->Buffer_field_046))( this, 5, (int *)(&v28), 8) ) /*0x7c1743*/
     return -2; /*0x7c1759*/
   if ( v28 != 1212371789 ) /*0x7c1762*/
     return -4; /*0x7c1770*/
@@ -342,7 +342,7 @@ int Buffer::AllocateCodecFrameBuffers()
     return -8; /*0x7c17ef*/
   (*((void (**)(Buffer *, int, int, int))(unsigned int *)&this->Buffer_field_047))(this, 4, v7, v6); /*0x7c17f5*/
   this->Buffer_field_0C += v6; /*0x7c17ff*/
-  if ( (*((int (**)(Buffer *, int, int *, int))(unsigned int *)&this->Buffer_field_046))(this, 5, &v28, 8) ) /*0x7c180a*/
+  if ( (*((int (**)(Buffer *, int, int *, int))(unsigned int *)&this->Buffer_field_046))( this, 5, (int *)(&v28), 8) ) /*0x7c180a*/
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
     return -4; /*0x7c1837*/
@@ -450,7 +450,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2, int a3, 
   *((unsigned int *)this + 2) = 0; /*0x488061*/
   if ( (a2 & 1) != 0 ) /*0x488068*/
     __3_YAXPAX_Z(this); /*0x48806b*/
-  return this; /*0x488075*/
+  return (DynamicVector *)this; /*0x488075*/
 
 }
 } // namespace gamemd
@@ -461,9 +461,9 @@ int * Buffer::RotateBufferCrypto(int * a2, int a3)
 
   int v4[64]; // [esp+8h] [ebp-100h] BYREF
 
-  qmemcpy(v4, this, sizeof(v4)); /*0x632b8c*/
-  RotateBitBufferLeft(v4, a3, 64); /*0x632b92*/
-  qmemcpy( (void *)(a2), v4, 0x100u); /*0x632ba9*/
+  qmemcpy( (void *)(v4), this, sizeof(v4)); /*0x632b8c*/
+  RotateBitBufferLeft( (int *)(v4), a3, 64); /*0x632b92*/
+  qmemcpy( (void *)(a2), (const void *)(v4), 0x100u); /*0x632ba9*/
   return a2; /*0x632bab*/
 
 }
@@ -506,15 +506,15 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 ) /*0x6c8a8a*/
     {
-      v10 = Map_Append(v16, (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
+      v10 = Map_Append( (unsigned char *)(v16), (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
       v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + this->Buffer_field_00 /*0x6c8aa4*/
         || (this->Buffer_field_08 = (int)&v11[v10], !v11) )
       {
-        (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8ae6*/
+        (*(void (**)(int *))(*v8 + 96))( (int *)(v8)); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
       }
-      qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
+      qmemcpy( (void *)(v11), (const void *)(&g_SidebarButtonState.needsRedraw), v10); /*0x6c8ab0*/
       v13 = *(int *)aP1; /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(void *))(v13 + 116))( (void *)(aP1)); /*0x6c8ad6*/
@@ -522,10 +522,10 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         break; /*0x6c8ada*/
       v8 = (int *)(aP1); /*0x6c8adc*/
     }
-    Buffer_field_08 = (int *)(v15);
+    Buffer_field_08 = (int *)&v15;
     v8 = (int *)(aP1);
   }
-  (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8b01*/
+  (*(void (**)(int *))(*v8 + 96))( (int *)(v8)); /*0x6c8b01*/
   return (int)(Buffer_field_08); /*0x6c8a08*/
 
 }

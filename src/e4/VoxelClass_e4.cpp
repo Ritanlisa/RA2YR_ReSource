@@ -170,7 +170,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     g_DSurface_Hidden_2 = (int)((void *)(dword_B1D13C));
     v63 = (void *)(128);
     v62[1] = 128; /*0x73c7cd*/
-    v26 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)dword_B1D13C + 120))(dword_B1D13C, v69); /*0x73c7d8*/
+    v26 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)dword_B1D13C + 120))( dword_B1D13C, (unsigned int *)(v69)); /*0x73c7d8*/
     v65[0] = *v26; /*0x73c7dd*/
     v65[1] = v26[1]; /*0x73c7e4*/
     v65[2] = v26[2]; /*0x73c7eb*/
@@ -187,11 +187,11 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v66 = -1; /*0x73c84e*/
       if ( !v28 ) /*0x73c858*/
         WinAPI::Wrapper(-2147467261); /*0x73c85f*/
-      v29 = (const void *)(*(int (**)(unsigned int, unsigned char *, int *))(**((unsigned int **)a1 + 413) + 36))( /*0x73c87a*/
-                            *((unsigned int *)a1 + 413),
-                            v73,
-                            &v66);
-      Transform::Copy( v70, (void)((void *)(v29))); /*0x73c885*/
+v29 = (const void *)(*(int (**)(unsigned int, unsigned char *, int *))(**((unsigned int **)a1 + 413) + 36))( /*0x73c87a*/ *((unsigned int *)a1 + 413), (unsigned char *)(v73), (int *)(&v66));
+
+
+
+      Transform::Copy( (const void *)(v70), (void *)(v29)); /*0x73c885*/
       v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
       ((Matrix3x4 *)(v70))->Translate(v46); /*0x73c8b2*/
       v54 = (double)(int)((((unsigned int)((*(unsigned int *)((ProgressTimer*)((unsigned (unsigned int)(short)*)a1 + 464))->GetValue(&v56) >> 10) + 1) >> 1) & 0x1F) /*0x73c8ee*/
@@ -203,7 +203,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
           * -0.1963495408493621;
       ((Matrix2D *)(v70))->Rotate(v47); /*0x73c922*/
       v68 = v70[3]; /*0x73c967*/
-      qmemcpy(v71, v70, sizeof(v71)); /*0x73c96d*/
+      qmemcpy( (void *)(v71), (const void *)(v70), sizeof(v71)); /*0x73c96d*/
       *(float *)&v69[1] = v70[11]; /*0x73c973*/
       *(float *)&v58 = -v70[3]; /*0x73c977*/
       *(float *)v69 = v70[7]; /*0x73c97f*/
@@ -230,7 +230,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v55 = v59; /*0x73ca84*/
       ((Matrix3x3 *)(v71))->Multiply((float *)&v54); /*0x73ca90*/
       v30 = *(unsigned int *)a1; /*0x73ca95*/
-      qmemcpy(v72, (const void *)(unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
+      qmemcpy( (void *)(v72), (const void *)(unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
       if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(unsigned char *, unsigned int))(v30 + 1016))((unsigned char *)a1, 0) + 160) + 670) ) /*0x73cabe*/
       {
         v31 =((unsigned int *)int)(unsigned int *)((uint8_t)((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 7) + 1) >> 1)); /*0x73cae1*/
@@ -251,8 +251,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v56 =((unsigned int *)int)(unsigned int *)((((unsigned int)((*(unsigned int *)((ProgressTimer*)v72)->GetValue(&v57) >> 10) + 1) >> 1) & 0x1F) - 8); /*0x73cb81*/
       v50 = -((double)v56 * -0.1963495408493621); /*0x73cb91*/
       Matrix3D::RotateZ(v71, v50); /*0x73cb94*/
-      ((Matrix3x3 *)(v71))->Multiply(v67); /*0x73cba5*/
-      ((Matrix3x3 *)(v71))->Multiply(&v68); /*0x73cbb6*/
+      ((Matrix3x3 *)(v71))->Multiply( (float *)(v67)); /*0x73cba5*/
+      ((Matrix3x3 *)(v71))->Multiply( (float *)(&v68)); /*0x73cbb6*/
       if ( (((unsigned int)((*(unsigned int *)((ProgressTimer*)((unsigned (unsigned int)(short)*)a1 + 464))->GetValue(&v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
         || (v52 = 1, (((unsigned int)((*((ProgressTimer *)((unsigned short *)a1 + 464))->GetValue(&v56) >> 13) + 1) >> 1) & 3) == 3) )
       {
@@ -283,7 +283,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     {
       v34 = (float *)((int)((*(unsigned int *)a1)));
       inited = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cc75*/
-      v36 = MultiplyMatrix3x4(v70, inited, v71); /*0x73cc83*/
+      v36 = MultiplyMatrix3x4( (ObjectClass *)(v70), (float *)(inited), (float *)(v71)); /*0x73cc83*/
       (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
         a1,
         *((unsigned int *, unsigned int a1, unsigned int a8)a1 + 433) + 192,
@@ -322,7 +322,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       {
         v38 = (float *)((int)((*(unsigned int *)a1)));
         v39 = (float *)((AudioConfig *)(v73))->InitDefault(); /*0x73cd47*/
-        v40 = MultiplyMatrix3x4(v70, v39, v71); /*0x73cd55*/
+        v40 = MultiplyMatrix3x4( (ObjectClass *)(v70), (float *)(v39), (float *)(v71)); /*0x73cd55*/
         (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
           (unsigned char *)a1,
           *((unsigned int *)a1 + 433) + 192,
@@ -350,10 +350,10 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       (int)a7,
       v41,
       (int)a9);
-    result = (*(int (**)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags))(  /*0x73cdf0*/
-               g_DSurface_Hidden_2,
-               &dword_B1CFA8,
-               0);
+result = (*(int (**)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags))( /*0x73cdf0*/ g_DSurface_Hidden_2, (int *)(&dword_B1CFA8), 0);
+
+
+
     g_DSurface_Hidden_2 = v60; /*0x73cdf3*/
     a1[1747] = 0; /*0x73cdf9*/
   }

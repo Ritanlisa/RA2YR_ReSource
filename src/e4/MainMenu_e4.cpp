@@ -41,7 +41,7 @@ long MainMenu_Screen(void * a1, void * a2)
   if ( v2 ) /*0x531ced*/
   {
     SetWindowLongA(v2, 8, (LONG)&dwNewLong); /*0x531cfe*/
-    SetDialogParent(v2,(HWND)(g_hWnd)); /*0x531d0c*/
+    SetDialogParent( (HWND)(v2), (HWND)(g_hWnd)); /*0x531d0c*/
     ((Dialog *)(v2))->Show(); /*0x531d13*/
     SetFocus((HWND)(g_hWnd)); /*0x531d1f*/
     DlgItem = GetDlgItem(v2, 1818); /*0x531d31*/
@@ -56,11 +56,11 @@ long MainMenu_Screen(void * a1, void * a2)
       else
         v5 = 0; /*0x531d5f*/
       SetWindowPos(DlgItem, 0, v4, v5, -1, -1, 0xDu); /*0x531d78*/
-      SendMessageA(DlgItem, 0x4E3u, 1u, 0); /*0x531d8e*/
+      SendMessageA( (HWND)(DlgItem), 0x4E3u, 1u, 0); /*0x531d8e*/
       if ( g_DisplayWidth == 640 ) /*0x531d9a*/
-        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x531da1*/
+        SendMessageA( (HWND)(DlgItem), 0x4E4u, 0, (LPARAM)((LPARAM)((LPARAM)aRa2tsS))); /*0x531da1*/
       else
-        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x531db0*/
+        SendMessageA( (HWND)(DlgItem), 0x4E4u, 0, (LPARAM)((LPARAM)((LPARAM)aRa2tsL))); /*0x531db0*/
     }
     do /*0x531f04*/
     {

@@ -73,13 +73,13 @@ char TriggerClass::FindByEventType(char a1)
     v9[0] = 0; /*0x6109f5*/
     v9[1] = 0; /*0x6109f9*/
     v10 = *((unsigned long long *)&dword_AC1CB8 + 1); /*0x6109fd*/
-    (*(void (**)(int, unsigned int *, int, __int128 *, unsigned int, int))(*(unsigned int *)v5 + 8))( /*0x610a08*/
-      v5,
-      v9,
-      g_DSurface_Primary,
-      &dword_AC1CB8,
-      0,
-      1);
+(*(void (**)(int, unsigned int *, int, __int128 *, unsigned int, int))(*(unsigned int *)v5 + 8))( /*0x610a08*/ v5, (unsigned int *)(v9), g_DSurface_Primary, (__int128 *)(&dword_AC1CB8), 0, 1);
+
+
+
+
+
+
   }
   v8 = dword_AC1CB8; /*0x610a25*/
   dword_AC1DD0 = 0; /*0x610a32*/
@@ -94,7 +94,7 @@ char TriggerClass::FindByEventType(char a1)
   (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
   Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
   v7 = wcslen((const wchar_t *)(word_AC1CCC)); /*0x610ae0*/
-  DrawTextRendererTextAligned(dword_AC18A4, 0,(gamemd::ObjectClass *)((int *)&v8),(unsigned short *)(word_AC1CCC), v7, 1, 1,(int *)(g_DSurface_Primary), 0); /*0x610afb*/
+  DrawTextRendererTextAligned(dword_AC18A4, 0,(gamemd::ObjectClass *)((int *)&v8),(unsigned short *)(word_AC1CCC), v7, 1, 1,(int *)&g_DSurface_Primary, 0); /*0x610afb*/
   HIDWORD(v8) -= 2; /*0x610b1e*/
   LODWORD(v8) = v8 + 1; /*0x610b2a*/
   ++DWORD1(v8); /*0x610b2e*/
@@ -191,7 +191,7 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x726876*/
     {
-      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x72687f*/
+      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x72687f*/
       aP0->vtable1 = &vt_TriggerClass; /*0x726884*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x72688a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TriggerClass); /*0x726891*/

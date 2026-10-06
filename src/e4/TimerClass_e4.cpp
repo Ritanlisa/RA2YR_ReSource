@@ -94,7 +94,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
     v20 = (unsigned int)(dword_ABC888++);
     *((unsigned int *)dword_ABC87C + v20) = (unsigned int)(this); /*0x54ffa1*/
   }
-  return this; /*0x54ffa6*/
+  return (void *)this; /*0x54ffa6*/
 
 }
 }

@@ -15,7 +15,7 @@ namespace gamemd {
 void * Timer::Start(int aP1)
 {
 
-  *(unsigned int *)this->__pad_0 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x46b64c*/
+  *(unsigned int *)this->__pad_0 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x46b64c*/
   *(unsigned int *)&this->__pad_6[2] = (unsigned int)(aP1); /*0x46b64e*/
   return this->__pad_0; /*0x46b651*/
 
@@ -35,7 +35,7 @@ int Timer::StartDouble(double a2)
     LOBYTE(this->m_18) = 1; /*0x4a525e*/
     *(double *)this->__pad_0 = a2 * 900.0; /*0x4a5262*/
     LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
-    v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4a5269*/
+    v4 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4a5269*/
     BYTE1(this->m_18) = 0; /*0x4a5272*/
     *(unsigned int *)&this->__pad_6[2] = v4; /*0x4a5276*/
     *(unsigned int *)&this->__pad_6[6] = v5; /*0x4a527c*/
@@ -140,8 +140,8 @@ namespace gamemd {
 void * Timer::EnableHighPrecision()
 {
 
-  timeBeginPeriod((void *)(1u)); /*0x5d5875*/
-  return this; /*0x5d587d*/
+  timeBeginPeriod( (void *)((void *)(1u))); /*0x5d5875*/
+  return (void *)this; /*0x5d587d*/
 
 }
 } // namespace gamemd
@@ -151,7 +151,7 @@ namespace gamemd {
 MMRESULT Timer::DisableHighPrecision()
 {
 
-  return timeEndPeriod((void *)(1u)); /*0x5d5888*/
+  return timeEndPeriod( (void *)((void *)(1u))); /*0x5d5888*/
 
 }
 } // namespace gamemd

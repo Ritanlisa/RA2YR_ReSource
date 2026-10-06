@@ -110,7 +110,7 @@ int DamageArea::CheckOccupancyEligibility()
     }
     else
     {
-      v2 = 0; /*0x4d019a*/
+      v2 = (unsigned int *)(0); /*0x4d019a*/
     }
   }
   if ( this->u32_51 || !this->u32_5C ) /*0x4d01c1*/

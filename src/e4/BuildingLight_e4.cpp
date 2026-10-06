@@ -83,7 +83,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
   if ( (v2[5] & 0xE) != 0 /*0x5ff879*/
     || (v5 = PingPongBuffer::GetWriteOffset(), *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= v5) )
   {
-    LOBYTE(v5) = (unsigned char)(((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v3, v47)); /*0x5ff88b*/
+    LOBYTE(v5) = (unsigned char)(((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v3), (int *)(v47))); /*0x5ff88b*/
     if ( (unsigned char)v5 ) /*0x5ff892*/
     {
       if ( ((int)dword_A8B230->vtable1 & 0x1000) == 0 || (LOBYTE(v5) = Game::Stub3( (int)((IUnknown *)((int)v3))), !(unsigned char)v5) ) /*0x5ff8b2*/
@@ -114,7 +114,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
         v31 = 0; /*0x5ff9a7*/
         v50 = 127; /*0x5ff9ac*/
         v51[3] = 127; /*0x5ff9b0*/
-        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects((int)v39, v53,(gamemd::IUnknown *)(v52), v40, v51,(gamemd::IUnknown *)(v48),(unsigned char *)(&v31), (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
+        LOBYTE(v5) = (unsigned char)(CalcSurfaceBlitRects( (int)v39, (int *)(v53), (gamemd::IUnknown *)(v52), v40, (int *)(v51), (gamemd::IUnknown *)(v48), (unsigned char *)(&v31), (int *)&v41, (int *)&v42)); /*0x5ff9b7*/
         if ( (unsigned char)v5 ) /*0x5ff9be*/
         {
           v10 = v41; /*0x5ff9c4*/
@@ -270,27 +270,27 @@ LABEL_23:
             {
               case 0: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa00*/
-                  Object_Calc_7DF3C2((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa15*/
+                  Object_Calc_7DF3C2( (gamemd::MouseClass *)a2, (unsigned char *)(v42), (unsigned short *)(v41), 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa15*/
                 else
-                  Object_Calc_7DF191((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffa34*/
+                  Object_Calc_7DF191( (gamemd::MouseClass *)(v42), (unsigned short *)(v41), 256, v9, v49, v50); /*0x5ffa34*/
                 break; /*0x5ffa1d*/
               case 1: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa49*/
-                  Object_Calc_7DF500((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa5e*/
+                  Object_Calc_7DF500( (gamemd::MouseClass *)a2, (unsigned char *)(v42), (unsigned short *)(v41), 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffa5e*/
                 else
-                  Object_Calc_7DF0B4((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffa7d*/
+                  Object_Calc_7DF0B4( (gamemd::MouseClass *)(v42), (unsigned short *)(v41), 256, v9, v49, v50); /*0x5ffa7d*/
                 break; /*0x5ffa66*/
               case 2: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffa92*/
-                  Object_Calc_7DF280((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaa7*/
+                  Object_Calc_7DF280( (gamemd::MouseClass *)a2, (unsigned char *)(v42), (unsigned short *)(v41), 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaa7*/
                 else
-                  Object_Calc((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffac6*/
+                  Object_Calc( (gamemd::MouseClass *)(v42), (unsigned short *)(v41), 256, v9, v49, v50); /*0x5ffac6*/
                 break; /*0x5ffaaf*/
               case 3: /*0x5ff9f1*/
                 if ( dword_AC1838 ) /*0x5ffadb*/
-                  Object_Calc_7DF640((gamemd::MouseClass *)a2, v42, v41, 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaf0*/
+                  Object_Calc_7DF640( (gamemd::MouseClass *)a2, (unsigned char *)(v42), (unsigned short *)(v41), 256, v9, v49, v50, (int)dword_AC1838); /*0x5ffaf0*/
                 else
-                  Object_Calc_7DEFD7((gamemd::MouseClass *)(v42), v41, 256, v9, v49, v50); /*0x5ffb0f*/
+                  Object_Calc_7DEFD7( (gamemd::MouseClass *)(v42), (unsigned short *)(v41), 256, v9, v49, v50); /*0x5ffb0f*/
                 break; /*0x5ffaf8*/
               default:
                 goto LABEL_23;

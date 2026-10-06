@@ -69,24 +69,24 @@ void PsyDom::Fire()
   v1 = (ActionQueue *)__2_YAPAXI_Z(0x14u); /*0x53b08e*/
   if ( v1 ) /*0x53b097*/
   {
-    v2 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(&PsyDom_Coords); /*0x53b0a3*/
-    v3 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v2 + 72))(v2, v34); /*0x53b0b1*/
+    v2 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(&PsyDom_Coords)); /*0x53b0a3*/
+    v3 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v2 + 72))( (void *)(v2), (int *)(v34)); /*0x53b0b1*/
     v4 = ((ActionQueue *)(v1))->PushEntry(*v3, v3[1], v3[2]); /*0x53b0cb*/
   }
   else
   {
-    v4 = 0; /*0x53b0d2*/
+    v4 = (unsigned int *)(0); /*0x53b0d2*/
   }
   v4[4] = 1; /*0x53b0d4*/
   v5 = *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 768); /*0x53b0e6*/
-  v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(&PsyDom_Coords); /*0x53b0f1*/
-  v7 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v6 + 72))(v6, v34); /*0x53b0ff*/
+  v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(&PsyDom_Coords)); /*0x53b0f1*/
+  v7 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v6 + 72))( (void *)(v6), (int *)(v34)); /*0x53b0ff*/
   v33[0] = *v7; /*0x53b104*/
   v33[1] = v7[1]; /*0x53b110*/
   v33[2] = v7[2]; /*0x53b117*/
   v8 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x53b11b*/
   if ( v8 ) /*0x53b125*/
-    PsyDom_Anim = (int)((AnimClass *)(v8))->ctor(v5, v33, 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
+    PsyDom_Anim = (int)((AnimClass *)(v8))->ctor( (void *)(v5), (int *)(v33), 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
   else
     PsyDom_Anim = 0; /*0x53b145*/
   PlaySoundEffectAt( /*0x53b16b*/
@@ -117,8 +117,8 @@ void PsyDom::Fire()
       *(unsigned int *)v31 = v29; /*0x53b1f7*/
       v32[0] = 0; /*0x53b1fb*/
       v32[1] = 0; /*0x53b1ff*/
-      v13 = (Object *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v31); /*0x53b203*/
-      for ( i = ((Object *)(v13))->FindClosestObjectCell(v32, 0, 0); i; i = (*(unsigned char *)(v24 + 20) & 1) != 0 ? v24 : 0 )
+      v13 = (Object *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v31)); /*0x53b203*/
+      for ( i = ((Object *)(v13))->FindClosestObjectCell( (unsigned int *)(v32), 0, 0); i; i = (*(unsigned char *)(v24 + 20) & 1) != 0 ? v24 : 0 )
       {
         if ( (*(int (**)(int))(*(unsigned int *)i + 44))(i) != 6 /*0x53b26b*/
           && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)i + 132))(i) + 3381)
@@ -127,12 +127,12 @@ void PsyDom::Fire()
           && !(*(uint8_t (**)(int))(*(unsigned int *)i + 84))(i) )
         {
           if ( *(unsigned int *)(i + 704) ) /*0x53b276*/
-            ((CaptureManagerClass *)(IUnknown *)((CaptureManagerClass *)i))->FreeUnit( 0,(IUnknown *)((int)v11),(IUnknown *)(v26), v27,(IUnknown **)(v28)); /*0x53b287*/
+            ((CaptureManagerClass *)(IUnknown *)((CaptureManagerClass *)i))->FreeUnit( 0, (int)((IUnknown *)((int)v11)), (unsigned int *)((IUnknown *)(v26)), v27, (unsigned int *)((IUnknown **)(v28))); /*0x53b287*/
           (*(void (**)(int, House *, int))(*(unsigned int *)i + 980))(i, (House *)PsyDom_Owner, 1); /*0x53b298*/
           v15 = *(unsigned int *)i; /*0x53b29e*/
           *(unsigned char *)(i + 708) = 1; /*0x53b2a2*/
           v16 = *(unsigned int *)((*(int (**)(int))(v15 + 132))(i) + 1548); /*0x53b2af*/
-          v17 = (int *)(*(int (**)(int, char *))(*(unsigned int *)i + 72))(i, v35); /*0x53b2be*/
+          v17 = (int *)(*(int (**)(int, char *))(*(unsigned int *)i + 72))( i, (char *)(v35)); /*0x53b2be*/
           v18 = *v17; /*0x53b2c1*/
           v19 = v17[1]; /*0x53b2c3*/
           v20 = v17[2]; /*0x53b2c6*/
@@ -144,7 +144,7 @@ void PsyDom::Fire()
             v22 = (BuildingClass *)((AnimClass*)/*0x53b306*/
                                      v21)->ctor(/*0x53b306*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 804), v34, 0, 1, (void *)0x600, 0, 0);
           else
-            v22 = 0; /*0x53b30d*/
+            v22 = (BuildingClass *)(0); /*0x53b30d*/
           *(unsigned int *)(i + 712) = (unsigned int)(v22); /*0x53b311*/
           if ( v22 ) /*0x53b317*/
             ((BuildingClass *)v22)->AimTurret( (unsigned char *)i); /*0x53b31c*/

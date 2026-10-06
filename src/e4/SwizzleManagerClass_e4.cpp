@@ -77,7 +77,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
       }
       else
       {
-        v5 = 0; /*0x6cf5ec*/
+        v5 = (unsigned int *)(0); /*0x6cf5ec*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x6cf607*/
@@ -186,7 +186,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
       }
       else
       {
-        v5 = 0; /*0x6cf76c*/
+        v5 = (unsigned int *)(0); /*0x6cf76c*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x6cf787*/

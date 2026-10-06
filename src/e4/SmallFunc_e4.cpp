@@ -56,31 +56,31 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   unsigned int *Base; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = (int)(INIClass::GetKeyCount(a1->__pad_0, (void)((uint8_t *)((char *)&g_INI_Key_TRUCKA)))); /*0x6f19c1*/
+  result = (int)(INIClass::GetKeyCount(a1->__pad_0,  (uint8_t *)((char *)&g_INI_Key_TRUCKA))); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)((uint8_t *)((char *)&g_INI_Key_TRUCKA)), i); /*0x6f19db*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)((uint8_t *)((char *)&g_INI_Key_TRUCKA)), (void *)(i)); /*0x6f19db*/
     ((INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)((char *)&g_INI_Key_TRUCKA), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), (char *)(int)(Source), 32); /*0x6f19f4*/
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
     if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) > 0 ) /*0x6f1a2e*/
     {
-      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
+      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
       {
         if ( ++v7 >= *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204) ) /*0x6f1a56*/
           goto LABEL_7; /*0x6f1a56*/
       }
-      Base = (unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
+      Base = (unsigned int)(unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
       goto LABEL_11; /*0x6f1a82*/
     }
   LABEL_7: v8 = (gamemd::TeamTypeClass *)((gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u)));
     if ( v8 ) /*0x6f1a67*/
-      Base = ((TechnoTypeClass *)(v8))->LoadBase(Source); /*0x6f1a75*/
+      Base = ((TechnoTypeClass *)(v8))->LoadBase( (char *)(Source)); /*0x6f1a75*/
     else
   LABEL_10:
-      Base = 0; /*0x6f1a84*/
+      Base = (unsigned int *)(0); /*0x6f1a84*/
   LABEL_11:
     result = (*(int (**)(unsigned int *, INIClass *))(*Base + 100))( (unsigned int *)(Base), (INIClass *)a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
@@ -96,7 +96,7 @@ void sub_40D1B0()
   int v1; // edi
   ObjectClass *v2; // [esp+0h] [ebp-8h]
 
-  *(unsigned int *)&stru_87F5F0.__pad_58[416] = (void*)&MouseClass_vftable; /*0x40d1b2*/
+  *(unsigned int *)&stru_87F5F0.__pad_58[416] = (unsigned int)(void*)&MouseClass_vftable; /*0x40d1b2*/
   dword_884D00 = (int)&MouseClass_vftable; /*0x40d1bc*/
   v0 = (int *)(&dword_884B84); /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
@@ -104,7 +104,7 @@ void sub_40D1B0()
   {
     v0 -= 997; /*0x40d1d0*/
     ((Array *)(v0 + 20))->ForEachReverse( 52, 75, (int (*)(int))nullsub_56); /*0x40d1e3*/
-    nullsub_57(v2); /*0x40d1ea*/
+    nullsub_57(); /*0x40d1ea*/
     --v1; /*0x40d1ef*/
   }
   while ( v1 ); /*0x40d1f0*/
@@ -307,7 +307,7 @@ int E4Recv_728A00::sub_728A00()
   (&this->CurrentState)[1] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[352]; /*0x728a16*/
   (&this->CurrentState)[2] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[356]; /*0x728a1e*/
   (&this->CurrentState)[3] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[360]; /*0x728a27*/
-  (&this->CurrentState)[4] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
+  (&this->CurrentState)[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
   (&this->CurrentState)[6] = 0; /*0x728a33*/
   (&this->CurrentState)[7] = 0; /*0x728a36*/
   LOBYTE((&this->CurrentState)[8]) = 0; /*0x728a39*/

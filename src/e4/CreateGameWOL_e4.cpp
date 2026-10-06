@@ -20,7 +20,7 @@ HWND sub_792EC0(int a1)
   {
     dword_B77DC8 &= ~a1; /*0x792edb*/
     if ( !dword_B77DC8 ) /*0x792ee1*/
-      CloseDialog(v2, 0); /*0x792ee7*/
+      CloseDialog( (HWND)(v2), 0); /*0x792ee7*/
   }
     Current = ((Dialog *)this)->GetCurrent();
   result = GetDlgItem(Current, 1344); /*0x792ef7*/

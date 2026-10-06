@@ -84,7 +84,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       }
       if ( v3 == dword_A8E9B8 ) /*0x42294e*/
       {
-        (*(void (**)(void *))(*(unsigned int *)AnimClass_field_0xCC + 380))(a2->AnimClass_field_0xCC); /*0x422955*/
+        (*(void (**)(void *))(*(unsigned int *)AnimClass_field_0xCC + 380))( (void *)(a2->AnimClass_field_0xCC)); /*0x422955*/
         AnimClass_field_0xCC[132] = 0; /*0x42295b*/
       }
       a2->AnimClass_field_0xCC = 0; /*0x422961*/
@@ -102,9 +102,9 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
       RemoveTarget((int)((gamemd::IUnknown *)((int)a2))); 
   }
   v12 = (gamemd::AnimClass *)(a2);
-  v7 = (*(int (**)(int *, AnimClass **))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0xE30) + 16))( /*0x4229e3*/
-         (int *)((char *)&g_BuildingLoadQueue_Array + 0xE30),
-         &v12);
+v7 = (*(int (**)(int *, AnimClass **))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0xE30) + 16))( /*0x4229e3*/ (int *)((char *)&g_BuildingLoadQueue_Array + 0xE30), (AnimClass **)(&v12));
+
+
   if ( v7 != -1 && v7 < *(int *)((char *)&g_BuildingLoadQueue_Array + 0xE40) ) /*0x4229f3*/
   {
     --*(int *)((char *)&g_BuildingLoadQueue_Array + 0xE40); /*0x4229f8*/
@@ -118,7 +118,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   }
   v8 = (AnimClass *)a2->AnimClass_field_0xC8; /*0x422a18*/
   if ( v8 ) /*0x422a20*/
-    AnimClass::FreeRenderBuffer(v8); /*0x422a22*/
+    AnimClass::FreeRenderBuffer( (void *)(v8)); /*0x422a22*/
   ((Mixer*)((Mixer *)a2->AnimClass_field_0x1A0))->ReleaseChannel(); /*0x422a2f*/
   ((Mixer*)((Mixer *)&a2->AnimClass_field_0x1B4))->ReleaseChannel(); /*0x422a3c*/
   AudioFileClass::Release( (AudioFileClass *)a2->AnimClass_field_0x1A0); /*0x422a43*/
@@ -128,9 +128,9 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
   if ( AbstractClass::GetVtable3((AbstractClass *)&a2->AnimClass_field_0x4) == -2 ) /*0x422a67*/
   {
     v12 = (gamemd::AnimClass *)(a2);
-    v9 = (*((int (**)(void **, AnimClass **))(*(unsigned int *)((char *)&stru_A83D50 + 0xB0) + 4)))( /*0x422a7d*/
-           (void **)((char *)&stru_A83D50 + 0xB0),
-           &v12);
+v9 = (*((int (**)(void **, AnimClass **))(*(unsigned int *)((char *)&stru_A83D50 + 0xB0) + 4)))( /*0x422a7d*/ (void **)((char *)&stru_A83D50 + 0xB0), (AnimClass **)(&v12));
+
+
     if ( v9 != -1 && v9 < *(int *)((char *)&stru_A83D50 + 0xC0) ) /*0x422a91*/
     {
       --*(unsigned int *)((char *)&stru_A83D50 + 0xC0); /*0x422a96*/
@@ -284,11 +284,11 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     AnimClass_field_0xBC = (IUnknown *)(this->AnimClass_field_0xBC);
     if ( AnimClass_field_0xB4 != (IUnknown *)-1 ) /*0x422cf3*/
     {
-      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)AnimClass_field_0xB4 >= (int)AnimClass_field_0xBC ) /*0x422cff*/
-        AnimClass_field_0xBC = 0; /*0x422d05*/
+      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)AnimClass_field_0xB4 >= (int)AnimClass_field_0xBC ) /*0x422cff*/
+        AnimClass_field_0xBC = (IUnknown *)(0); /*0x422d05*/
       else
         AnimClass_field_0xBC = (IUnknown *)((char *)AnimClass_field_0xBC /*0x422d01*/
-                                          - (*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416)
+                                          - (*(unsigned int *)((char *)&stru_A8EB00 + 416)
                                            - (unsigned int)AnimClass_field_0xB4));
     }
     v7 = (int)AnimClass_field_0xC0 /*0x422d12*/
@@ -359,14 +359,14 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v18 = v88; /*0x422ee6*/
     *(float *)v100 = (float)*(int *)v101; /*0x422eef*/
     v19 = *(unsigned int *)v100; /*0x422ef3*/
-    ((Tactical*)v110.__pad_0)->SetCellTransform( 0, *(int *)v100, (void *)(v88), v104, 0, 0); /*0x422efa*/
+    ((Tactical*)v110.__pad_0)->SetCellTransform((int)((Tactical*)v110.__pad_0), 0, *(int *)v100, (void *)(v88), v104, 0, 0); /*0x422efa*/
     *(float *)v100 = (float)v107; /*0x422f0f*/
-    ((Tactical*)(v110.__pad_0))->SetCellTransform(1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
+    ((Tactical*)(v110.__pad_0))->SetCellTransform((int)((Tactical*)(v110.__pad_0)), 1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
     *(float *)&v89 = (float)v106; /*0x422f37*/
-    ((Tactical*)(v110.__pad_0))->SetCellTransform(2, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f47*/
-    ((Tactical*)(v111.__pad_0))->SetCellTransform(0, v19, v18, v104, 0, 0); /*0x422f5c*/
-    ((Tactical*)(v111.__pad_0))->SetCellTransform(1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
-    ((Tactical*)(v111.__pad_0))->SetCellTransform(2, v89, v18, v104, 1065353216, 0); /*0x422f97*/
+    ((Tactical*)(v110.__pad_0))->SetCellTransform((int)((Tactical*)(v110.__pad_0)), 2, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f47*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform( (int)((Tactical*)(v111.__pad_0)), 0, v19, (void *)(v18), v104, 0, 0); /*0x422f5c*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform((int)((Tactical*)(v111.__pad_0)), 1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform( (int)((Tactical*)(v111.__pad_0)), 2, v89, (void *)(v18), v104, 1065353216, 0); /*0x422f97*/
     ((StructTable *)((void *)(dword_8A0E10)))->Append(&v110); /*0x422fa7*/
     ((StructTable *)((void *)(dword_8A0E10)))->Append(&v111); /*0x422fba*/
     return; /*0x422fc9*/
@@ -471,13 +471,13 @@ LABEL_47:
                         + 780);
     if ( v25[2].__pad_C[209] ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/
-    v26 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108); /*0x423166*/
+    v26 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))( this, (int *)(&v108)); /*0x423166*/
     v27 = *(int16_t *)&((gamemd::CellClass *)((Coord *)((gamemd::Coord *)((char *)&stru_87F5F0 + 0x1F8)))->To_Cell(v26))->CellClass_field_10C; /*0x423177*/
     goto LABEL_77; /*0x42317e*/
   }
   if ( this->__pad_194[2] ) /*0x4231f3*/
   {
-    v30 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108); /*0x42320a*/
+    v30 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))( this, (int *)(&v108)); /*0x42320a*/
     LOWORD(v91) = *v30 / 256; /*0x423220*/
     HIWORD(v91) = v30[1] / 256; /*0x423238*/
     *(float *)v100 = v91; /*0x423241*/
@@ -502,7 +502,7 @@ LABEL_47:
       v105[0] = *(unsigned int *)(**(unsigned int **)((char *)&stru_B054D0 + 0x4) + 780); /*0x4232f0*/
     if ( !v25[2].__pad_C[209] ) /*0x4232f4*/
     {
-      v33 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v108); /*0x423307*/
+      v33 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))( this, (int *)(&v108)); /*0x423307*/
       LOWORD(v92) = *v33 / 256; /*0x42331d*/
       HIWORD(v92) = v33[1] / 256; /*0x423336*/
       *(float *)v100 = v92; /*0x423343*/
@@ -545,7 +545,7 @@ LABEL_78:
   *(float *)v100 = 0.0; /*0x4233f8*/
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
-  v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108); /*0x42340b*/
+  v42 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))( this, (int *)(&v108)); /*0x42340b*/
   v43 = (gamemd::CellClass *)(((Coord *)((gamemd::Coord *)((char *)&stru_87F5F0 + 0x1F8)))->To_Cell(v42)); /*0x423414*/
   v44 = ((Cell *)((Cell *)v43))->IsBridge(); /*0x42341b*/
   v93 = v44; /*0x423422*/
@@ -592,7 +592,7 @@ LABEL_89:
     LODWORD(v41) |= v48 | (32 * ((32 * v49) | v50)); /*0x4234ee*/
     *(float *)v100 = v41; /*0x4234f0*/
   }
-  if ( !(*(uint8_t (**)(unsigned int *))(*v93 + 352))(v93) || v93[113] != 1 ) /*0x423513*/
+  if ( !(*(uint8_t (**)(unsigned int *))(*v93 + 352))( (unsigned int *)(v93)) || v93[113] != 1 ) /*0x423513*/
     goto LABEL_99; /*0x423513*/
   v52 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6320); /*0x42351f*/
   v53 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2 * v52; /*0x423525*/
@@ -635,11 +635,11 @@ LABEL_98:
   LODWORD(v41) |= v55 | (32 * ((32 * v56) | v57)); /*0x4235cd*/
   *(float *)v100 = v41; /*0x4235cf*/
 LABEL_99:
-  v60 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v108); /*0x4235d3*/
+  v60 = (unsigned int *)(*((int (**)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))( this, (int *)(&v108)); /*0x4235d3*/
   LOWORD(v94) = *v60 / 256; /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   *(unsigned int *)v101 = v94; /*0x423615*/
-  v61 = (CellClass *)((CellCoord *)((gamemd::CellCoord *)((char *)&stru_87F5F0 + 0x1F8)))->To_CellObj(v101); /*0x42361a*/
+  v61 = (CellClass *)((CellCoord *)((gamemd::CellCoord *)((char *)&stru_87F5F0 + 0x1F8)))->To_CellObj( (int16_t *)(v101)); /*0x42361a*/
   if ( (uint8_t)((CellClass *)(v61))->QuickPassable() ) /*0x423621*/
   {
     v41 = 0.0; /*0x42362a*/
@@ -1386,7 +1386,7 @@ int AnimClass::ProcessFrame()
   v4 = *(unsigned int *)&this->__pad_120[16] - 1; /*0x761074*/
   *(unsigned int *)&this->__pad_120[16] = v4; /*0x761075*/
   if ( v4 >= 0 ) /*0x76107b*/
-    return ObjectClass::DetectCloaked( (void)((UnitClass *)this)); /*0x76108f*/
+    return ObjectClass::DetectCloaked(  (UnitClass *)this); /*0x76108f*/
   else
     return (*(int (**)(AnimClass *))(this->AnimClass_field_0x0 + 248))(this); /*0x761081*/
 

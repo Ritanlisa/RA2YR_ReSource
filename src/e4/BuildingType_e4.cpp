@@ -32,29 +32,29 @@ int BuildingType::FindDefault()
 
   result = 0; /*0x4e3560*/
   if ( this == (BuildingType *)-2 ) /*0x4e3565*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844AE8, 0); /*0x4e3573*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844AE8, 0); /*0x4e3573*/
   if ( !this ) /*0x4e357b*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844AF0, 0); /*0x4e358a*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844AF0, 0); /*0x4e358a*/
   if ( this == (BuildingType *)1 ) /*0x4e3593*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844AF4, 0); /*0x4e35a3*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844AF4, 0); /*0x4e35a3*/
   if ( this == (BuildingType *)2 ) /*0x4e35ac*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844AF8, 0); /*0x4e35bb*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844AF8, 0); /*0x4e35bb*/
   if ( this == (BuildingType *)3 ) /*0x4e35c4*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844AFC, 0); /*0x4e35d4*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844AFC, 0); /*0x4e35d4*/
   if ( this == (BuildingType *)4 ) /*0x4e35dd*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844B00, 0); /*0x4e35ed*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844B00, 0); /*0x4e35ed*/
   if ( this == (BuildingType *)5 ) /*0x4e35f6*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844B04, 0); /*0x4e3605*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844B04, 0); /*0x4e3605*/
   if ( this == (BuildingType *)6 ) /*0x4e360e*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844B08, 0); /*0x4e361e*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844B08, 0); /*0x4e361e*/
   if ( this == (BuildingType *)7 ) /*0x4e3627*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844B0C, 0); /*0x4e3637*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844B0C, 0); /*0x4e3637*/
   if ( this == (BuildingType *)8 ) /*0x4e3640*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844B10, 0); /*0x4e364f*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844B10, 0); /*0x4e364f*/
   if ( this == (BuildingType *)-3 ) /*0x4e3658*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844AEC, 0); /*0x4e3668*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844AEC, 0); /*0x4e3668*/
   if ( this == (BuildingType *)9 ) /*0x4e3671*/
-    return HashTable::Find( (void)(&g_DialogHashTable), (const char *)off_844B14, 0); /*0x4e3681*/
+    return HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_844B14, 0); /*0x4e3681*/
   return result; /*0x4e3578*/
 
 }

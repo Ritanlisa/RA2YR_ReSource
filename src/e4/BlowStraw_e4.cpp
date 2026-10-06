@@ -95,13 +95,13 @@ LABEL_6:
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
           if ( FontClassEntry ) /*0x6d0891*/
-            HashTable::Remove( (void)((HashTable *)dword_887368), *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
+            HashTable::Remove(  (HashTable *)dword_887368, *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
         }
-        HashTable::Remove( (void)((HashTable *)dword_887368), 240); /*0x6d08b3*/
+        HashTable::Remove(  (HashTable *)dword_887368, 240); /*0x6d08b3*/
         v16 = this->TabClass_field_0x0; /*0x6d08b8*/
         *((unsigned char *)this + 21828) = 0; /*0x6d08c1*/
         (*(void (**)(TabClass *, GadgetClass *))(v16 + 48))((TabClass *)this, (GadgetClass *)&stru_B0CC40); /*0x6d08c8*/
-        PushCommandClass::Execute( (unsigned int)((unsigned int *)(&stru_B0CC40)), (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
+        PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(&stru_B0CC40))), (int)g_Str_Tip_ThumbClosed); /*0x6d08d5*/
         v17 = this->TabClass_field_0x0; /*0x6d08da*/
         *((unsigned char *)this + 21829) = 1; /*0x6d08e0*/
         (*(void (**)(TabClass *, unsigned int))(v17 + 56))((TabClass *)this, 0); /*0x6d08e6*/
@@ -115,7 +115,7 @@ LABEL_6:
         if ( !*((unsigned char *)this + 21828) ) /*0x6d091f*/
         {
           (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))((TabClass *)this, (GadgetClass *)&stru_B0CC40); /*0x6d0932*/
-          HashTable::Remove( (void)((HashTable *)dword_887368), 241); /*0x6d0940*/
+          HashTable::Remove(  (HashTable *)dword_887368, 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
           ((CommandClass*)(gamemd::CommandClass *)this)->BuildBar(); /*0x6d094d*/
           v18 = this->TabClass_field_0x0; /*0x6d0952*/
@@ -150,7 +150,7 @@ LABEL_6:
     }
     else if ( v10 == dword_B0CB20 ) /*0x6d0764*/
     {
-      ProcessSelectionExperience(v21); /*0x6d0766*/
+      ProcessSelectionExperience( (void *)(v21)); /*0x6d0766*/
     }
     else if ( v10 == dword_B0CB68 ) /*0x6d0776*/
     {
@@ -160,7 +160,7 @@ LABEL_6:
     {
       v11 = (gamemd::ShapeButtonClass *)((unsigned int)((gamemd::ShapeButtonClass *)(((unsigned int *)(g_ObjectTrackingPool))[dword_B0CC1C])));
       if ( v11 > (gamemd::ShapeButtonClass *)(0x18) ) /*0x6d0795*/
-        v12 = 0; /*0x6d07a9*/
+        v12 = (ShapeButtonClass *)(0); /*0x6d07a9*/
       else
         v12 = &stru_B0C1C0 + 8 * v11; /*0x6d07a2*/
       if ( BYTE1(v12[3].ShapeButtonClass_field_0x08) ) /*0x6d07ab*/
@@ -175,7 +175,7 @@ LABEL_6:
     else if ( v10 < dword_B0CC20 || v10 > dword_B0CD28 ) /*0x6d07ea*/
     {
       if ( v10 == dword_B0CB38 ) /*0x6d082d*/
-        SelectAllOfType(v21); /*0x6d0833*/
+        SelectAllOfType( (void *)(v21)); /*0x6d0833*/
     }
     else
     {
@@ -194,7 +194,7 @@ LABEL_6:
     }
   }
   ((CountdownTimer *)((CountdownTimer *)this + 5447))->UpdateDisplay(0); /*0x6d099d*/
-  return ((SidebarClass *)((SidebarClass *)this))->UpdateStrips(aP1, a2); /*0x6d09af*/
+  return ((SidebarClass *)((SidebarClass *)this))->UpdateStrips( (int *)(aP1), (unsigned int *)(a2)); /*0x6d09af*/
 
 }
 }
@@ -212,7 +212,7 @@ CellStruct * * sub_731AF0()
   int v8; // ecx
 
   result = *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731af1*/
-  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x731afa*/
+  if ( !*(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x731afa*/
   {
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_MSG_NothingSelected), 0,(const char *)(g_Str_File_UICmnds_cpp), 856));
     v3 = 3; /*0x731b18*/
@@ -229,7 +229,7 @@ CellStruct * * sub_731AF0()
                           1);
     goto LABEL_5; /*0x731b3e*/
   }
-  v4 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731b4e*/
+  v4 = *(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x731b4e*/
   v5 = 0; /*0x731b50*/
   if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 228) <= 0 ) /*0x731b54*/
   {
@@ -240,12 +240,12 @@ CellStruct * * sub_731AF0()
   while ( 1 ) /*0x731b56*/
   {
     result = *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 216); /*0x731b56*/
-    v6 = *(unsigned char **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v5); /*0x731b5b*/
+    v6 = *(unsigned char **)(*(unsigned int *)((char *)&stru_A8EB00 + 216) + 4 * v5); /*0x731b5b*/
     if ( v6 ) /*0x731b60*/
     {
       if ( (v6[20] & 1) != 0 ) /*0x731b6c*/
       {
-        result = (wchar_t *)(*(int (**)(unsigned char *))(*(unsigned int *)v6 + 1216))(v6); /*0x731b70*/
+        result = (wchar_t *)(*(int (**)(unsigned char *))(*(unsigned int *)v6 + 1216))( (unsigned char *)(v6)); /*0x731b70*/
         if ( !(unsigned char)result ) /*0x731b78*/
           break; /*0x731b78*/
       }

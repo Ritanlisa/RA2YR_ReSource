@@ -36,7 +36,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
       do /*0x69d558*/
       {
         v6 = (ObjectClass *)((char *)v6 - 4); /*0x69d54d*/
-        j_DeleteAndZero(v6); /*0x69d552*/
+        j_DeleteAndZero( (void *)(v6)); /*0x69d552*/
         --v8; /*0x69d557*/
       }
       while ( v8 ); /*0x69d558*/

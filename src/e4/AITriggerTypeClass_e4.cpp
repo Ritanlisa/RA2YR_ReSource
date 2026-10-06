@@ -133,7 +133,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   bool result; // al
   bool v9; // [esp+7h] [ebp-1h]
 
-  v9 = (gamemd::DynamicVector **)(0);
+  v9 = (unsigned int)(gamemd::DynamicVector **)(0);
   if ( !a2 ) /*0x41ee9f*/
     return (gamemd::DynamicVector **)(v9); /*0x41efcb*/
   v4 = this->u32_D8; /*0x41eea6*/
@@ -369,17 +369,17 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   v4 = strtok(((unsigned int *)(v46))[0], (char *)&::Delimiter); /*0x41f5d3*/
   if ( !v4 ) /*0x41f5df*/
     return 0; /*0x41f5df*/
-  strncpy((char *)(&((unsigned int *)&((unsigned int *)(v46))[0])[8]), v4, 0x30u); 
+  strncpy( (char *)(&((unsigned int *)&((unsigned int *)(v46))[0])[8]), (const char *)(v4), 0x30u); 
   LOBYTE(v46[0]) = 0; /*0x41f5fe*/
   if ( &((unsigned int *)&((unsigned int *)(v46))[0])[8] != (char *)this + 100 ) /*0x41f602*/
   {
-    qmemcpy((char *)this + 100, &((unsigned int *)&((unsigned int *)(v46))[0])[8], 0x30u); /*0x41f60d*/
+    qmemcpy( (char *)this + 100, (const void *)(&((unsigned int *)&((unsigned int *)(v46))[0])[8]), 0x30u); /*0x41f60d*/
     *((unsigned char *)this + 148) = ((unsigned int *)(v46))[0]; /*0x41f60f*/
   }
   v5 = strtok(0, (char *)&::Delimiter); /*0x41f616*/
   if ( !v5 ) /*0x41f620*/
     return 0; /*0x41f620*/
-  strncpy((char *)v46, v5, 0x18u); /*0x41f62e*/
+  strncpy( (char *)v46, (const char *)(v5), 0x18u); /*0x41f62e*/
   HIBYTE(v46[0]) = 0; /*0x41f63a*/
   ((String *)((char *)v46))->Trim(); /*0x41f63e*/
   *((unsigned int *)this + 55) = 0; /*0x41f643*/
@@ -388,7 +388,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   v6 = strtok(0, (char *)&::Delimiter); /*0x41f676*/
   if ( !v6 ) /*0x41f680*/
     return 0; /*0x41f680*/
-  strncpy((char *)v46, v6, 0x18u); /*0x41f68e*/
+  strncpy( (char *)v46, (const char *)(v6), 0x18u); /*0x41f68e*/
   HIBYTE(v46[0]) = 0; /*0x41f69a*/
   ((String *)((char *)v46))->Trim(); /*0x41f69e*/
   *((unsigned int *)this + 40) = 0; /*0x41f6a3*/
@@ -417,7 +417,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   v9 = strtok(0, (char *)&::Delimiter); /*0x41f750*/
   if ( !v9 ) /*0x41f75a*/
     return 0; /*0x41f75a*/
-  strncpy((char *)v46, v9, 0x18u); /*0x41f768*/
+  strncpy( (char *)v46, (const char *)(v9), 0x18u); /*0x41f768*/
   HIBYTE(v46[0]) = 0; /*0x41f774*/
   ((String *)((char *)v46))->Trim(); /*0x41f778*/
   v10 = 0; /*0x41f781*/
@@ -452,7 +452,7 @@ LABEL_26:
   v15 = strtok(0, (char *)&::Delimiter); /*0x41f7ea*/
   if ( !v15 ) /*0x41f7f4*/
     return 0; /*0x41faf5*/
-  strcpy(v44, "00"); /*0x41f807*/
+  strcpy( (char *)(v44), "00"); /*0x41f807*/
   v16 = 0; /*0x41f80e*/
   v17 = *v15 == 0; /*0x41f810*/
   v18 = v15; /*0x41f812*/
@@ -538,12 +538,12 @@ LABEL_26:
   v34 = strtok(0, (char *)&::Delimiter); /*0x41f994*/
   if ( v34 ) /*0x41f99e*/
   {
-    strncpy((char *)&((unsigned int *)(v46))[0], v34, 0x18u); /*0x41f9a8*/
+    strncpy( (char *)&((unsigned int *)(v46))[0], (const char *)(v34), 0x18u); /*0x41f9a8*/
     ((unsigned int *)&((unsigned int *)(v46))[0])[7] = 0; /*0x41f9b4*/
     ((String*)((char *)&((unsigned int *)(v46))[0]))->Trim(); /*0x41f9b8*/
     *((unsigned int *)this + 56) = 0; /*0x41f9bd*/
     if ( _strcmpi((char *)&((unsigned int *)(v46))[0], (char *)off_818114) ) /*0x41f9cf*/
-      *((unsigned int *)this + 56) = ((TeamTypeClass *)(TeamTypeClass *)&v46[0])->FindByName(); /*0x41f9e4*/
+      *((unsigned int *)this + 56) = ((TeamTypeClass *)&v46[0])->FindByName(); /*0x41f9e4*/
   }
   v35 = strtok(0, (char *)&::Delimiter); /*0x41f9f0*/
   if ( v35 ) /*0x41f9fa*/
@@ -766,7 +766,7 @@ char AITriggerTypeClass_40::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x4203d2*/
+  m_8 = (unsigned int)this->m_8; /*0x4203d2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4203dd*/
   {
     v3 = 0; /*0x4203df*/
@@ -808,7 +808,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
     {
       if ( *(unsigned int *)&this->m_1[3] ) /*0x420455*/
       {
-        m_8 = this->m_8; /*0x42045c*/
+        m_8 = (unsigned int)this->m_8; /*0x42045c*/
         if ( a2 < m_8 ) /*0x420461*/
           m_8 = a2; /*0x420463*/
         for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x420469*/
@@ -819,7 +819,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x42048e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x420497*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x420497*/
       this->m_8 = a2; /*0x42049f*/
       BYTE1(this->m_C) = a3 == 0; /*0x4204a2*/
       return 1; /*0x4204a8*/
@@ -865,7 +865,7 @@ int AITriggerTypeClass_40::Read(unsigned int * a2, void *a2_2)
 
   if ( !LOBYTE(this->m_C) ) /*0x4204f0*/
     return 0; /*0x4204f8*/
-  m_8 = this->m_8; /*0x4204fe*/
+  m_8 = (unsigned int)this->m_8; /*0x4204fe*/
   result = 0; /*0x420501*/
   if ( m_8 <= 0 ) /*0x420505*/
     return -1; /*0x42051c*/
@@ -914,7 +914,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
       return 0; /*0x4205fa*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x420588*/
     {
-      m_8 = this->m_8; /*0x42058f*/
+      m_8 = (unsigned int)this->m_8; /*0x42058f*/
       if ( a2 < m_8 ) /*0x420594*/
         m_8 = a2; /*0x420596*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x42059c*/
@@ -925,7 +925,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x4205c1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x4205ca*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x4205ca*/
     this->m_8 = a2; /*0x4205d2*/
     BYTE1(this->m_C) = a3 == 0; /*0x4205d5*/
   }
@@ -933,7 +933,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4205de*/
   }
-  v7 = this->m_8; /*0x4205e1*/
+  v7 = (unsigned int)this->m_8; /*0x4205e1*/
   if ( v7 < this->m_10 ) /*0x4205e9*/
     this->m_10 = v7; /*0x4205eb*/
   return 1; /*0x4205ee*/
@@ -950,7 +950,7 @@ int AITriggerTypeClass_40::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x420600*/
+  m_10 = (unsigned int)this->m_10; /*0x420600*/
   result = 0; /*0x420603*/
   if ( m_10 <= 0 ) /*0x420608*/
     return -1; /*0x42061f*/

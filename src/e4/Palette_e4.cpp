@@ -108,9 +108,9 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v11 = (*(int (**)(int))(*(unsigned int *)v10 + 120))(v10); /*0x64219c*/
   ((DSurface *)((DSurface *)&v61))->BlitPart((int)&v57, *(unsigned int *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
   v12 = (void *)RA2_OPNEW(0x4000u); /*0x6421bb*/
-  memset(v12, 0, 0x4000u); /*0x6421c6*/
+  memset( (void *)(v12), 0, 0x4000u); /*0x6421c6*/
   v49 = (unsigned int *)(v12); /*0x6421cd*/
-  Block = 0; /*0x6421d1*/
+  Block = (char *)(0); /*0x6421d1*/
   DSurface::Lock((DSurface *)&v61, 0, 0); /*0x6421db*/
   v42 = 0; /*0x6421e4*/
   if ( v61.Height > 0 ) /*0x6421ea*/
@@ -146,13 +146,13 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
           Width = v61.Width; /*0x6422d8*/
         }
         while ( v14 < (int)(v61.Width) ); /*0x6422de*/
-        v12 = v49; /*0x6422e4*/
+        v12 = (void *)(v49); /*0x6422e4*/
       }
       ++v42; /*0x6422f3*/
     }
     while ( v42 < (int)(v61.Height) ); /*0x6422f7*/
   }
-  ((DSurface *)(DSurface *)&v61)->Unlock(); /*0x642301*/
+  ((DSurface *)&v61)->Unlock(); /*0x642301*/
   v21 = a2; /*0x642306*/
   v22 = RA2_OPNEW(2 * a2); /*0x642311*/
   Blocka = (unsigned short *)v22; /*0x642319*/
@@ -261,16 +261,16 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
     }
   }
   LABEL_38:
-  ((DSurface *)(DSurface *)&v61)->Unlock(); /*0x64252f*/
+  ((DSurface *)&v61)->Unlock(); /*0x64252f*/
   v38 = 2 * v21 + 12 + (unsigned int)(v61.Height)* v61.Width; /*0x642545*/
   v54[0] = 2 * v21 + 12; /*0x642547*/
-  v39 = (int *)RA2_OPNEW(v38); /*0x642551*/
+  v39 = (void *)((int *)RA2_OPNEW(v38)); /*0x642551*/
   *(unsigned int *)(v39) = (unsigned int)(v61.Width); /*0x64255b*/
   v39[1] = v61.Height; /*0x642562*/
   v39[2] = v21; /*0x64256a*/
   v40 = v54[0]; /*0x642570*/
-  qmemcpy((unsigned int)(v39)+ 3, Blocka, 2 * v21); /*0x642577*/
-  qmemcpy((char *)v39 + v40, v53, (unsigned int)(v61.Height)* v61.Width); /*0x642595*/
+  qmemcpy( (void *)((unsigned int)(v39)+ 3), (const void *)(Blocka), 2 * v21); /*0x642577*/
+  qmemcpy( (char *)v39 + v40, (const void *)(v53), (unsigned int)(v61.Height)* v61.Width); /*0x642595*/
   RA2_OPDEL(Blocka); /*0x6425a3*/
   RA2_OPDEL(v53); /*0x6425ad*/
   RA2_OPDEL(v49); /*0x6425b7*/
@@ -320,7 +320,7 @@ int Palette::FindClosestColor(Palette *a2)
   {
     v7 = (uint8_t *)this; /*0x626218*/
     this += 3; /*0x626219*/
-    v5 = Palette::CalcColorDistance((unsigned char *)(a2), v7); /*0x62621c*/
+    v5 = Palette::CalcColorDistance( (unsigned char *)(a2), (void *)(v7)); /*0x62621c*/
     if ( v3 == -1 || v5 < v3 ) /*0x626228*/
     {
       v3 = v5; /*0x62622a*/

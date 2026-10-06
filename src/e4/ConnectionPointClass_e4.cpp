@@ -163,7 +163,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 }
 // 0x4A0630
 namespace gamemd {  // G42.18c ns repair
-int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, int, int *), int * updated)
+int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int, int *), int * updated)
 {
 
   int v4; // ecx
@@ -185,10 +185,10 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, i
       return -2147220991; /*0x4a0697*/
     v5 = *((unsigned int *)a1 + 12); /*0x4a0699*/
     if ( v5 <= 0 /*0x4a06a9*/
-      || !(*(uint8_t (**)(int *, int, unsigned int))(a1->ConnectionPointClass_field_0x1C + 8))(
-            &a1->ConnectionPointClass_field_0x1C,
-            v4 + v5,
-            0) )
+|| !(*(uint8_t (**)(int *, int, unsigned int))(a1->ConnectionPointClass_field_0x1C + 8))( (int *)(&a1->ConnectionPointClass_field_0x1C), v4 + v5, 0) )
+
+
+
     {
       return -2147220991; /*0x4a06de*/
     }

@@ -71,7 +71,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
 
   _ESI = this; /*0x6442de*/
   ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6442e3*/
-  if ( !((ObjectTypeClass *)((ObjectTypeClass *)_ESI))->LoadFromINI(aP1) ) /*0x6442eb*/
+  if ( !((ObjectTypeClass *)((ObjectTypeClass *)_ESI))->LoadFromINI( (uint8_t ***)(aP1)) ) /*0x6442eb*/
     return 0; /*0x644622*/
   /*0x64430f*/
     ((INIClass*)((INIClass *)aP1))->GetString(/*0x64430f*/ (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->, aHoldswhat, &g_INI_DefaultBuffer, Destination, 64);
@@ -267,7 +267,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 
   int v3; // ecx
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x644709*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x644709*/
   Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x294); /*0x644717*/
   LOBYTE(v3) = this->__pad_298[0]; /*0x64471c*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x644725*/
@@ -278,7 +278,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   ((Checksummer *)((Checksummer *)a2))->Add_float(this->ParticleSystemTypeClass_field_0x2AC); /*0x64476b*/
   ((Checksummer *)((Checksummer *)a2))->Add_float(this->DamageDelay); /*0x644779*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
-return (void *)Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
+return (void*)(void *)Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
 
 }
 }
@@ -296,9 +296,9 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   this->SpawnCount = &vt_ParticleSystemTypeClass; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(&this->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
   v5 =(gamemd::ParticleSystemTypeClass *)this; /*0x644996*/
-  v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
-         &stru_A83D50.__pad_14[4],
-         &v5);
+v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/ &stru_A83D50.__pad_14[4], (ParticleSystemTypeClass **)(&v5));
+
+
   if ( v3 != -1 && v3 < (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6449aa*/
   {
     --stru_A83D50.SuperClass_field_0x28; /*0x6449af*/

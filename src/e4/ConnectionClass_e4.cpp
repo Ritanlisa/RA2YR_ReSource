@@ -252,14 +252,14 @@ LABEL_40:
         Debug::Log("Sending ACK for packet %d to be forwarded to %02x\n"); /*0x48c2c6 G57c1: IDA 0x48c2c6 push offset aSendingAckForP*/
         v26 = dword_A8EA0C; /*0x48c2cb*/
         LOBYTE(v26) = this == (gamemd::ConnectionClass *)((ModemConnectionClass *))dword_A8EA0C; /*0x48c2d7*/
-        (*(void (**)(ModemConnectionClass *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/
-          (ModemConnectionClass *)this,
-          &v27,
-          14,
-          0,
-          0,
-          v26,
-          0);
+(*(void (**)(ModemConnectionClass *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/ (ModemConnectionClass *)this, (int16_t *)(&v27), 14, 0, 0, v26, 0);
+
+
+
+
+
+
+
         return 1; /*0x48c2f9*/
       }
       v14 = (Terrain *)this->PlayerIndex; /*0x48c1a1*/

@@ -79,7 +79,7 @@ int __sbh_heap_check()
       {
         v4 = (void *)v2[3]; /*0x7d03f4*/
         v26 = 0; /*0x7d03f7*/
-        lp = v4; /*0x7d03fa*/
+        lp = (unsigned int)v4; /*0x7d03fa*/
         v27 = v3 + 81; /*0x7d0403*/
         v5 = v3 + 49; /*0x7d0409*/
         v32 = v2[2]; /*0x7d040f*/
@@ -90,14 +90,14 @@ int __sbh_heap_check()
         {
           v28 = 0; /*0x7d0421*/
           v30 = 0; /*0x7d0424*/
-          v36 = 0; /*0x7d0427*/
-          memset(v21, 0, sizeof(v21)); /*0x7d0436*/
+          v36 = (unsigned int *)(0); /*0x7d0427*/
+          memset( (void *)(v21), 0, sizeof(v21)); /*0x7d0436*/
           if ( v32 >= 0 ) /*0x7d0438*/
           {
             if ( IsBadWritePtr(lp, 0x8000u) ) /*0x7d0446*/
               return -4; /*0x7d0685*/
             v6 = 0; /*0x7d0457*/
-            v7 = (char *)lp + 4092; /*0x7d0459*/
+            v7 = (unsigned int *)((char *)lp + 4092); /*0x7d0459*/
             while ( 2 ) /*0x7d045f*/
             {
               v8 = v7 - 1020; /*0x7d045f*/
@@ -122,7 +122,7 @@ int __sbh_heap_check()
                 }
                 if ( v9 < 16 || (v9 & 0xF) != 0 || v9 > 4080 ) /*0x7d04ca*/
                   return -7; /*0x7d0693*/
-                v12 = (int *)((char *)v8 + v9); /*0x7d04d4*/
+                v12 = (unsigned int *)((int *)((char *)v8 + v9)); /*0x7d04d4*/
                 if ( *(int *)((char *)v8 + v9 - 4) != v10 ) /*0x7d04d7*/
                   return -8; /*0x7d04d7*/
                 v8 = (int *)((char *)v8 + v9); /*0x7d04dd*/
@@ -233,9 +233,9 @@ int __sbh_heap_check()
 }
 // 0x7D06BE
 namespace gamemd {
-int _set_new_handler_shape(int (__cdecl *a1)(unsigned int), unsigned int a2)
+int _set_new_handler_shape(int (__cdecl *)(unsigned int), unsigned int a2)
 {
-    int (__cdecl *v1)(unsigned int); // esi
+    int (__cdecl *)(unsigned int); // esi
 
     _lock(9); /*0x7d06c1*/
     v1 = dword_B782C8; /*0x7d06ca*/
@@ -525,7 +525,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
     {
       case 0u: /*0x7d0c04*/
   TrailDown0_0:
-        result = (gamemd::exception **)(a0);
+        result = (void *)((gamemd::exception **)(a0));
         break; /*0x7d0d16*/
       case 1u: /*0x7d0c04*/
   TrailDown1_0:
@@ -679,7 +679,7 @@ int _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToWr
     }
     else
     {
-      v15 = lpBuffer; /*0x7d0e1e*/
+      v15 = (char *)(lpBuffer); /*0x7d0e1e*/
       FileHandlea = 0; /*0x7d0e21*/
       while ( 1 ) /*0x7d0e2a*/
       {
@@ -750,7 +750,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
   {
     while ( 1 ) /*0x7d0f75*/
     {
-      v4 = 0; /*0x7d0f75*/
+      v4 = (void *)(0); /*0x7d0f75*/
       if ( v3 > 0xFFFFFFE0 ) /*0x7d0f7a*/
         goto LABEL_27; /*0x7d0f7a*/
       _lock(9); /*0x7d0f82*/
@@ -776,7 +776,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
     {
       if ( __sbh_resize_block(v5, aP0, v3) ) /*0x7d0fa5*/
       {
-        v4 = aP0; /*0x7d0fb1*/
+        v4 = (void *)(aP0); /*0x7d0fb1*/
   LABEL_22:
         _unlock(9); /*0x7d1024*/
         goto LABEL_26; /*0x7d102c*/
@@ -787,7 +787,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
         v6 = *((unsigned int *)aP0 - 1) - 1; /*0x7d0fc5*/
         if ( v6 >= v3 ) /*0x7d0fc8*/
           v6 = v3; /*0x7d0fca*/
-        memcpy_0( v4, (const void *)(aP0), (unsigned int)((AbstractClass *)(v6))); /*0x7d0fcf*/
+        memcpy_0( (void *)(v4), (const void *)(aP0), (unsigned int)((AbstractClass *)(v6))); /*0x7d0fcf*/
         __sbh_free_block(Sizea, aP0); /*0x7d0fd8*/
         goto LABEL_22; /*0x7d0fd8*/
       }
@@ -801,7 +801,7 @@ void * realloc(CCINIClass * aP0, size_t Size)
       v7 = *((unsigned int *)aP0 - 1) - 1; /*0x7d1009*/
       if ( v7 >= v3 ) /*0x7d100c*/
         v7 = v3; /*0x7d100e*/
-      memcpy_0( v4, (const void *)(aP0), (unsigned int)((AbstractClass *)(v7))); /*0x7d1013*/
+      memcpy_0( (void *)(v4), (const void *)(aP0), (unsigned int)((AbstractClass *)(v7))); /*0x7d1013*/
       __sbh_free_block(Sizea, aP0); /*0x7d101c*/
     }
     goto LABEL_22; /*0x7d101c*/
@@ -851,7 +851,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     return 0; /*0x7d1177*/
   if ( !CodePage ) /*0x7d1180*/
     CodePage = ::CodePage; /*0x7d1187*/
-  v9 = MultiByteToWideChar(CodePage, a8 != 0 ? 9 : 1, aP2, cchSrc, 0, 0);
+  v9 = MultiByteToWideChar( CodePage, a8 != 0 ? 9 : 1, (LPCCH)(aP2), cchSrc, 0, 0);
   v10 = v9; /*0x7d11a7*/
   v22 = v9; /*0x7d11a9*/
   if ( !v9 ) /*0x7d11ae*/
@@ -860,11 +860,11 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
   IDA_LOBYTE(v11) = v11 & 0xFC; /*0x7d11bd*/
   v12 = alloca(v11); /*0x7d11bf*/
   ms_exc.old_esp = (DWORD)v18; /*0x7d11c4*/
-  lpWideCharStr = v18; /*0x7d11c9*/
+  lpWideCharStr = (unsigned int)v18; /*0x7d11c9*/
   ms_exc.registration.TryLevel = -1; /*0x7d11cc*/
   if ( !v18 ) /*0x7d11e8*/
     return 0; /*0x7d11e8*/
-  if ( !MultiByteToWideChar(CodePage, 1u, aP2, cchSrc, lpWideCharStr, v10) ) /*0x7d11f9*/
+  if ( !MultiByteToWideChar( CodePage, 1u, (LPCCH)(aP2), cchSrc, (LPWSTR)(lpWideCharStr), v10) ) /*0x7d11f9*/
     return 0; /*0x7d11f9*/
   v13 = LCMapStringW(aP0, dwMapFlags, lpWideCharStr, v10, 0, 0); /*0x7d120f*/
   v14 = v13; /*0x7d1215*/
@@ -887,8 +887,8 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     if ( !v18 || !LCMapStringW(aP0, dwMapFlags, lpWideCharStr, v22, v18, v14) ) /*0x7d12aa*/
       return 0; /*0x7d12aa*/
     v17 = cchDest
-        ? WideCharToMultiByte(CodePage, 0x220u, v18, v14, lpDestStr, cchDest, 0, 0)
-        : WideCharToMultiByte(CodePage, 0x220u, v18, v14, 0, 0, 0, 0);
+        ? WideCharToMultiByte( CodePage, 0x220u, (LPCWCH)(v18), v14, (LPSTR)(lpDestStr), cchDest, 0, 0)
+        : WideCharToMultiByte( CodePage, 0x220u, (LPCWCH)(v18), v14, 0, 0, 0, 0);
     v14 = v17; /*0x7d12d5*/
     if ( !v17 ) /*0x7d12d9*/
       return 0; /*0x7d12d9*/
@@ -1107,7 +1107,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
     v64 = 0; /*0x7d17c7*/
     v74 = 0; /*0x7d17ca*/
     v73 = 1; /*0x7d17cd*/
-    v61 = 0; /*0x7d17d1*/
+    v61 = (wchar_t *)(0); /*0x7d17d1*/
     do /*0x7d187f*/
     {
       v12 = (uint8_t)*++v3; /*0x7d17d4*/
@@ -1275,7 +1275,7 @@ ControlClass * * _input(FILE * Stream, char * a2, int a3)
           if ( *v30 != 94 ) /*0x7d1bd0*/
           {
   LABEL_141:
-            memset(v54, 0, sizeof(v54)); /*0x7d1c7d*/
+            memset( (void *)(v54), 0, sizeof(v54)); /*0x7d1c7d*/
             if ( v57 == 123 && *v30 == 93 ) /*0x7d1c96*/
             {
               IDA_LOBYTE(v32) = 93; /*0x7d1c98*/
@@ -1987,7 +1987,7 @@ return (AbstractClass **)v51; /*0x7d21ef*/
                   v26 = v53--; /*0x7d278b*/
                   *v26 = v24; /*0x7d2791*/
                 }
-                v27 = (unsigned char *)(v36 - v53++); /*0x7d279b*/
+                v27 = (unsigned int)(unsigned char *)(v36 - v53++); /*0x7d279b*/
                 j = v27; /*0x7d27a5*/
                 if ( (v55 & 0x200) != 0 && (*v53 != 48 || !j) ) /*0x7d27b6*/
                 {
@@ -2372,7 +2372,7 @@ unsigned int * _getstream()
   int v3; // esi
   int v4; // eax
 
-  v0 = 0; /*0x7d2dad*/
+  v0 = (unsigned int *)(0); /*0x7d2dad*/
   _lock(2); /*0x7d2daf*/
   v1 = 0; /*0x7d2db4*/
   if ( (int)Count > 0 ) /*0x7d2dbd*/
@@ -2582,7 +2582,7 @@ int _ioinit()
           if ( !v7 ) /*0x7d320e*/
             break; /*0x7d320e*/
           uNumber += 32; /*0x7d3210*/
-          *v6 = v7; /*0x7d3217*/
+          *v6 = (unsigned int)v7; /*0x7d3217*/
           for ( j = (unsigned int)(v7 + 1152); (unsigned int)v7 < j; j = *v6 + 1152 ) /*0x7d3219*/
           {
             v7[4] = 0; /*0x7d3223*/
@@ -2730,7 +2730,7 @@ int _setmbcp(int CodePage)
       if ( *v5 == v2 ) /*0x7d34c1*/
       {
         v22 = 0; /*0x7d3537*/
-        memset(&unk_B78960, 0, 0x100u); /*0x7d3548*/
+        memset( (void *)(&unk_B78960), 0, 0x100u); /*0x7d3548*/
         v9 = 48 * v4; /*0x7d354a*/
         unk_B78A60 = 0; /*0x7d354d*/
         v10 = (char *)&unk_87C968 + 48 * v4; /*0x7d354e*/
@@ -2778,7 +2778,7 @@ int _setmbcp(int CodePage)
     if ( GetCPInfo(v2, &CPInfo) ) /*0x7d34d3*/
     {
       dword_B78A64 = 0; /*0x7d34e6*/
-      memset(&unk_B78960, 0, 0x100u); /*0x7d34f8*/
+      memset( (void *)(&unk_B78960), 0, 0x100u); /*0x7d34f8*/
       unk_B78A60 = 0; /*0x7d34fa*/
       dword_B78840 = v2; /*0x7d34fb*/
       if ( CPInfo.MaxCharSize <= 1 ) /*0x7d3501*/
@@ -2823,7 +2823,7 @@ int _setmbcp(int CodePage)
 namespace gamemd {
 void* setSBCS()
 {
-  memset(&unk_B78960, 0, 0x100u); /*0x7d36b7*/
+  memset( (void *)(&unk_B78960), 0, 0x100u); /*0x7d36b7*/
   unk_B78A60 = 0; /*0x7d36b9*/
   dword_B78840 = 0; /*0x7d36c1*/
   dword_B7885C = 0; /*0x7d36c6*/
@@ -2865,7 +2865,7 @@ ControlClass * * int setSBUpLow()
       {
         v4 = *v3; /*0x7d371e*/
         if ( v2 <= v4 ) /*0x7d3726*/
-          memset(&SrcStr[v2], 0x20u, v4 - v2 + 1); /*0x7d373c*/
+          memset( (void *)(&SrcStr[v2]), 0x20u, v4 - v2 + 1); /*0x7d373c*/
         v3 += 2; /*0x7d3746*/
         v2 = *(v3 - 1); /*0x7d3747*/
       }
@@ -2955,14 +2955,14 @@ unsigned char * _mbsnbcpy(IUnknown * aP0, const unsigned char * Source, size_t C
   size_t v11; // eax
   size_t v12; // edx
 
-  v3 = aP0; /*0x7d3891*/
+  v3 = (uint8_t *)(aP0); /*0x7d3891*/
   if ( !dword_B7885C ) /*0x7d3897*/
     return (uint8_t *)strncpy((char *)aP0, (const char *)Source, Count); /*0x7d38a8*/
   _lock(25); /*0x7d38ad*/
   v5 = Count; /*0x7d38b2*/
   if ( !Count ) /*0x7d38b8*/
     goto LABEL_14; /*0x7d38b8*/
-  v6 = Source; /*0x7d38ba*/
+  v6 = (const uint8_t *)(Source); /*0x7d38ba*/
   while ( 1 ) /*0x7d38bd*/
   {
     v7 = *v6; /*0x7d38bd*/
@@ -2999,7 +2999,7 @@ unsigned char * _mbsnbcpy(IUnknown * aP0, const unsigned char * Source, size_t C
   v11 = v5; /*0x7d38f7*/
   v12 = v5 - 1; /*0x7d38f9*/
   if ( v11 ) /*0x7d38fd*/
-    memset(v3, 0, v12 + 1); /*0x7d3909*/
+    memset( (void *)(v3), 0, v12 + 1); /*0x7d3909*/
   _unlock(25); /*0x7d3914*/
   return aP0; /*0x7d391d*/
 }
@@ -3096,7 +3096,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
 
   v66 = 0; /*0x7d3a7a*/
   IDA_LOWORD(v3) = C[0]; /*0x7d3a80*/
-  v4 = aP1; /*0x7d3a84*/
+  v4 = (wint_t *)(aP1); /*0x7d3a84*/
   v5 = *(unsigned int *)aP1;
   v73 = 0; /*0x7d3a8c*/
   v57 = 0; /*0x7d3a92*/
@@ -3239,7 +3239,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
         case 's': /*0x7d3f59*/
           if ( v72 > 0 ) /*0x7d405e*/
             v67 = 1; /*0x7d4060*/
-          v27 = asc_87CA48; /*0x7d4064*/
+          v27 = (wchar_t *)(asc_87CA48); /*0x7d4064*/
           break;
         case 'u': /*0x7d3f59*/
           goto LABEL_175; /*0x7d3f6a*/
@@ -3253,7 +3253,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
           if ( *v27 != 94 ) /*0x7d3fb5*/
           {
   LABEL_138:
-            v29 = (int)memset(v49, 0, sizeof(v49)); /*0x7d406d*/
+            v29 = (int)memset( (void *)(v49), 0, sizeof(v49)); /*0x7d406d*/
             if ( v10 == 123 ) /*0x7d4086*/
             {
               IDA_HIWORD(v29) = 0; /*0x7d408a*/
@@ -3383,7 +3383,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
       }
       if ( v72 > 0 ) /*0x7d3f44*/
         v67 = 1; /*0x7d3f46*/
-      v27 = asc_87CA54; /*0x7d3f4a*/
+      v27 = (wchar_t *)(asc_87CA54); /*0x7d3f4a*/
       goto LABEL_137; /*0x7d3f4f*/
     }
     if ( v10 != 100 )
@@ -3789,7 +3789,7 @@ void * signal_7D482C(int Signal, void * Function)
     unsigned int *v2; // esi
     void *v3; // eax
     unsigned int v4; // eax
-    void (__cdecl *v5)(int); // edi
+    void (__cdecl *)(int); // edi
     DWORD LastError; // esi
 
     if ( Function == (_crt_signal_t)4 || Function == (_crt_signal_t)3 ) /*0x7d4841*/
@@ -3843,7 +3843,7 @@ void * signal_7D482C(int Signal, void * Function)
         *_errno() = 22; /*0x7d4962*/
         return (_crt_signal_t)-1; /*0x7d4974*/
       }
-      memcpy_0(v3, &unk_87CB20, Size); /*0x7d48b1*/
+      memcpy_0( (void *)(v3), (const void *)(&unk_87CB20), Size); /*0x7d48b1*/
     }
     v4 = siglookup(Signal, v2[20]); /*0x7d48bd*/
     if ( !v4 ) /*0x7d48c6*/
@@ -3853,7 +3853,7 @@ void * signal_7D482C(int Signal, void * Function)
     {
       if ( *(unsigned int *)(v4 + 4) != Signal ) /*0x7d48d2*/
         break; /*0x7d48d2*/
-      *(unsigned int *)(v4 + 8) = Function; /*0x7d48db*/
+      *(unsigned int *)(v4 + 8) = (unsigned int)Function; /*0x7d48db*/
       v4 += 12; /*0x7d48e7*/
     }
     while ( v4 < v2[20] + 12 * dword_87CBA4 ); /*0x7d48f2*/
@@ -3864,7 +3864,7 @@ void * signal_7D482C(int Signal, void * Function)
 namespace gamemd {
 int raise(int Signal)
 {
-    void (__cdecl *v2)(unsigned int); // ebx
+    void (__cdecl *)(unsigned int); // ebx
     int *v3; // edi
     unsigned int *v4; // esi
     int v5; // edx
@@ -3978,7 +3978,7 @@ ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
   int v8; // edx
   int v9; // eax
 
-  v2 = aP0; /*0x7d4c00*/
+  v2 = (char *)(aP0); /*0x7d4c00*/
   if ( ((uint8_t)aP0 & 3) == 0 ) /*0x7d4c0b*/
     goto find_end_of_dest_string_loop; /*0x7d4c0b*/
   do /*0x7d4c1a*/
@@ -4018,7 +4018,7 @@ ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
   }
   v6 = v2 - 4; /*0x7d4c5e*/
   copy_start_0:
-  v7 = aP1; /*0x7d4c61*/
+  v7 = (const char *)(aP1); /*0x7d4c61*/
   if ( ((uint8_t)aP1 & 3) == 0 ) /*0x7d4c6b*/
     goto main_loop_entrance_1; /*0x7d4c6b*/
   while ( 1 ) /*0x7d4c6d*/
@@ -4112,7 +4112,7 @@ void* _tzset_lk()
   dword_87CAF8 = -1; /*0x7d4d41*/
   dword_B782F0 = 0; /*0x7d4d48*/
   v0 = getenv("TZ"); /*0x7d4d55*/
-  v1 = v0; /*0x7d4d5a*/
+  v1 = (const char *)(v0); /*0x7d4d5a*/
   if ( !v0 ) /*0x7d4d5f*/
   {
     _unlock(12); /*0x7d4d66*/
@@ -4170,14 +4170,14 @@ void* _tzset_lk()
   if ( *v0 && (!dword_B783A4 || strcmp(v0, dword_B783A4)) ) /*0x7d4e76*/
   {
     free( (void *)(dword_B783A4)); /*0x7d4e8b*/
-    v2 = strlen(v1); /*0x7d4e91*/
+    v2 = strlen( (const char *)(v1)); /*0x7d4e91*/
     v3 = (char *)malloc(v2 + 1); /*0x7d4e98*/
-    dword_B783A4 = v3; /*0x7d4ea2*/
+    dword_B783A4 = (unsigned int)v3; /*0x7d4ea2*/
     if ( v3 ) /*0x7d4ea7*/
     {
-      strcpy(v3, v1); /*0x7d4eaf*/
+      strcpy( (char *)(v3), (const char *)(v1)); /*0x7d4eaf*/
       _unlock(12); /*0x7d4eb5*/
-      strncpy( (char *)(lpMultiByteStr), v1, 3u); /*0x7d4ec3*/
+      strncpy( (char *)(lpMultiByteStr), (const char *)(v1), 3u); /*0x7d4ec3*/
       v4 = v1 + 3; /*0x7d4ecd*/
       lpMultiByteStr[3] = 0; /*0x7d4ed3*/
       if ( *v4 == 45 ) /*0x7d4eda*/
@@ -4214,7 +4214,7 @@ void* _tzset_lk()
       dword_87CA64 = v7; /*0x7d4f72*/
       if ( v7 ) /*0x7d4f77*/
       {
-        strncpy( (char *)(off_87CAF0), v4, 3u); /*0x7d4f82*/
+        strncpy( (char *)(off_87CAF0), (const char *)(v4), 3u); /*0x7d4f82*/
         off_87CAF0[3] = 0; /*0x7d4f8f*/
         return; /*0x7d4f93*/
       }
@@ -4539,7 +4539,7 @@ int _sopen(const char * FileName, int OpenFlag, int ShareFlag, ...)
       return -1; /*0x7d55e5*/
     }
     v7 = CreateFileA(FileName, dwDesiredAccess, dwShareMode, &SecurityAttributes, dwCreationDisposition, v5, 0); /*0x7d55fd*/
-    v8 = v7; /*0x7d5603*/
+    v8 = (void *)(v7); /*0x7d5603*/
     if ( v7 == (HANDLE)-1 ) /*0x7d5607*/
       goto LABEL_51; /*0x7d5607*/
     FileType = GetFileType(v7); /*0x7d561e*/
@@ -4607,11 +4607,11 @@ unsigned char * _mbsrchr(const unsigned char * String, unsigned int C)
   int v6; // eax
   bool v7; // zf
 
-  v2 = 0; /*0x7d5723*/
+  v2 = (uint8_t *)(0); /*0x7d5723*/
   if ( !dword_B7885C ) /*0x7d572b*/
     return (uint8_t *)strrchr((const char *)String, C); /*0x7d573a*/
   _lock(25); /*0x7d573f*/
-  v4 = String; /*0x7d5745*/
+  v4 = (const uint8_t *)(String); /*0x7d5745*/
   do /*0x7d5781*/
   {
     v5 = *v4; /*0x7d5748*/
@@ -4724,21 +4724,21 @@ int _setenvp()
 
     if ( !dword_B78BB8 ) /*0x7d5acb*/
       __initmbctable(); /*0x7d5acd*/
-    v0 = dword_B78228; /*0x7d5ad2*/
+    v0 = (char *)(dword_B78228); /*0x7d5ad2*/
     v1 = 0; /*0x7d5ad8*/
     while ( *v0 ) /*0x7d5ade*/
     {
       if ( *v0 != 61 ) /*0x7d5ae2*/
         ++v1; /*0x7d5ae4*/
-      v0 += strlen(v0) + 1; /*0x7d5aec*/
+      v0 += strlen( (const char *)(v0)) + 1; /*0x7d5aec*/
     }
     v2 = (char **)malloc(4 * v1 + 4); /*0x7d5aff*/
-    dword_B781E4 = v2; /*0x7d5b04*/
+    dword_B781E4 = (unsigned int)v2; /*0x7d5b04*/
     if ( !v2 ) /*0x7d5b0a*/
       _amsg_exit(9u); /*0x7d5b0e*/
     for ( i = dword_B78228; *i; i += v5 ) /*0x7d5b1a*/
     {
-      v4 = strlen(i); /*0x7d5b20*/
+      v4 = strlen( (const char *)(i)); /*0x7d5b20*/
       v5 = v4 + 1; /*0x7d5b28*/
       if ( *i != 61 ) /*0x7d5b2c*/
       {
@@ -4746,7 +4746,7 @@ int _setenvp()
         *v2 = v6; /*0x7d5b37*/
         if ( !v6 ) /*0x7d5b39*/
           _amsg_exit(9u); /*0x7d5b3d*/
-        strcpy(*v2++, i); /*0x7d5b46*/
+        strcpy( *v2++, (const char *)(i)); /*0x7d5b46*/
       }
     }
     result = free( (void *)(dword_B78228)); /*0x7d5b5d*/
@@ -4769,7 +4769,7 @@ int _setargv()
       __initmbctable(); /*0x7d5b8b*/
     GetModuleFileNameA(0, Filename, 0x104u); /*0x7d5b9c*/
     dword_B781F4 = (int)Filename; /*0x7d5ba7*/
-    v0 = Filename; /*0x7d5bad*/
+    v0 = (CHAR *)(Filename); /*0x7d5bad*/
     if ( *(unsigned char *)dword_B78BA8 ) /*0x7d5baf*/
       v0 = (CHAR *)dword_B78BA8; /*0x7d5bb3*/
     parse_cmdline(v0, 0, 0, &v4, &v3); /*0x7d5bc0*/
@@ -4800,10 +4800,10 @@ unsigned int * parse_cmdline(unsigned char * a1, unsigned char ** a2, unsigned c
   BOOL v18; // [esp+24h] [ebp+18h]
 
   *a5 = 0; /*0x7d5c1d*/
-  v6 = a3; /*0x7d5c20*/
-  v7 = a2; /*0x7d5c24*/
+  v6 = (uint8_t *)(a3); /*0x7d5c20*/
+  v7 = (uint8_t **)(a2); /*0x7d5c24*/
   *a4 = 1; /*0x7d5c27*/
-  v8 = a1; /*0x7d5c2d*/
+  v8 = (uint8_t *)(a1); /*0x7d5c2d*/
   if ( a2 ) /*0x7d5c32*/
   {
     *a2 = a3; /*0x7d5c34*/
@@ -4870,7 +4870,7 @@ unsigned int * parse_cmdline(unsigned char * a1, unsigned char ** a2, unsigned c
     if ( v7 ) /*0x7d5cef*/
     {
       *v7++ = v6; /*0x7d5cf1*/
-      a2 = v7; /*0x7d5cf6*/
+      a2 = (unsigned char **)(v7); /*0x7d5cf6*/
     }
     ++*a4; /*0x7d5cfc*/
     while ( 1 ) /*0x7d5cfe*/
@@ -4890,7 +4890,7 @@ unsigned int * parse_cmdline(unsigned char * a1, unsigned char ** a2, unsigned c
             ++v8; /*0x7d5d2a*/
           else
             v17 = 0; /*0x7d5d2e*/
-          v7 = a2; /*0x7d5d31*/
+          v7 = (uint8_t **)(a2); /*0x7d5d31*/
           v18 = !v18; /*0x7d5d3c*/
         }
         v11 >>= 1; /*0x7d5d3f*/
@@ -4961,8 +4961,8 @@ int * __crtGetEnvironmentStringsA()
   CHAR *Block; // [esp+10h] [ebp-8h]
   int cchWideChar; // [esp+14h] [ebp-4h]
 
-  v0 = 0; /*0x7d5dd7*/
-  EnvironmentStringsW = 0; /*0x7d5dd9*/
+  v0 = (CHAR *)(0); /*0x7d5dd7*/
+  EnvironmentStringsW = (WCHAR *)(0); /*0x7d5dd9*/
   EnvironmentStrings = 0; /*0x7d5ddb*/
   if ( dword_B784FC ) /*0x7d5ddf*/
   {
@@ -4987,7 +4987,7 @@ int * __crtGetEnvironmentStringsA()
           while ( *i ); /*0x7d5e36*/
         }
         cchWideChar = i - EnvironmentStringsW + 1; /*0x7d5e55*/
-        v4 = WideCharToMultiByte(0, 0, EnvironmentStringsW, cchWideChar, 0, 0, 0, 0); /*0x7d5e59*/
+        v4 = WideCharToMultiByte( 0, 0, (LPCWCH)(EnvironmentStringsW), cchWideChar, 0, 0, 0, 0); /*0x7d5e59*/
         v5 = v4; /*0x7d5e5b*/
         if ( v4 ) /*0x7d5e5f*/
         {
@@ -4995,10 +4995,10 @@ int * __crtGetEnvironmentStringsA()
           Block = v6; /*0x7d5e6a*/
           if ( v6 ) /*0x7d5e6e*/
           {
-            if ( !WideCharToMultiByte(0, 0, EnvironmentStringsW, cchWideChar, v6, v5, 0, 0) ) /*0x7d5e7b*/
+            if ( !WideCharToMultiByte( 0, 0, (LPCWCH)(EnvironmentStringsW), cchWideChar, (LPSTR)(v6), v5, 0, 0) ) /*0x7d5e7b*/
             {
               free( (void *)(Block)); /*0x7d5e85*/
-              Block = 0; /*0x7d5e8b*/
+              Block = (CHAR *)(0); /*0x7d5e8b*/
             }
             v0 = Block; /*0x7d5e8f*/
           }
@@ -5029,9 +5029,9 @@ int * __crtGetEnvironmentStringsA()
   v10 = malloc(v9); /*0x7d5ec9*/
   v11 = v10; /*0x7d5ece*/
   if ( v10 ) /*0x7d5ed3*/
-    memcpy_0( v10, (const void *)(EnvironmentStrings), v9); /*0x7d5edc*/
+    memcpy_0( (void *)(v10), (const void *)(EnvironmentStrings), v9); /*0x7d5edc*/
   else
-    v11 = 0; /*0x7d5ed5*/
+    v11 = (void *)(0); /*0x7d5ed5*/
   FreeEnvironmentStringsA(EnvironmentStrings); /*0x7d5ee5*/
   return (CHAR *)v11; /*0x7d5ef1*/
 }
@@ -5052,13 +5052,13 @@ void* __init_time()
     if ( _get_lc_time(v0) ) /*0x7d60d9*/
     {
       _free_lc_time(v1); /*0x7d60e4*/
-      free(v1); /*0x7d60ea*/
+      free( (void *)(v1)); /*0x7d60ea*/
       return 1; /*0x7d60f1*/
     }
     off_87C1E0 = v1; /*0x7d60f9*/
     _free_lc_time((void **)dword_B78504); /*0x7d60ff*/
     free( (void *)(dword_B78504)); /*0x7d610a*/
-    dword_B78504 = v1; /*0x7d6110*/
+    dword_B78504 = (unsigned int)v1; /*0x7d6110*/
   }
   else
   {
@@ -5166,18 +5166,18 @@ AbstractClass * * __init_ctype()
   void *Block; // [esp+24h] [ebp-4h]
 
   v1 = 0; /*0x7d6aa9*/
-  Block = 0; /*0x7d6ab1*/
+  Block = (void *)(0); /*0x7d6ab1*/
   lpSrcStr = 0; /*0x7d6ab4*/
   if ( dword_B782A0 ) /*0x7d6ab7*/
   {
     if ( !CodePage && __getlocaleinfo(0, (uint16_t)word_B7852C, 0x1004u, (char **)&CodePage) ) /*0x7d6ada*/
       goto LABEL_38; /*0x7d6ada*/
     v2 = (WORD *)malloc(0x202u); /*0x7d6af5*/
-    v16 = v2; /*0x7d6af8*/
+    v16 = (void *)(v2); /*0x7d6af8*/
     v17 = malloc(0x202u); /*0x7d6b05*/
     Block = malloc(0x101u); /*0x7d6b0e*/
     v3 = (const WCHAR *)malloc(0x202u); /*0x7d6b11*/
-    lpSrcStr = v3; /*0x7d6b1b*/
+    lpSrcStr = (unsigned int)v3; /*0x7d6b1b*/
     if ( !v2 ) /*0x7d6b1e*/
       goto LABEL_38; /*0x7d6b1e*/
     if ( !v17 ) /*0x7d6b27*/
@@ -5226,7 +5226,7 @@ AbstractClass * * __init_ctype()
           v12 = *(v11 - 1); /*0x7d6c17*/
           if ( v12 <= *v11 ) /*0x7d6c20*/
           {
-            v13 = (char *)v16 + 2 * v12 + 2; /*0x7d6c25*/
+            v13 = (unsigned short *)((char *)v16 + 2 * v12 + 2); /*0x7d6c25*/
             do /*0x7d6c36*/
             {
               *v13 = 0x8000; /*0x7d6c29*/
@@ -5239,20 +5239,20 @@ AbstractClass * * __init_ctype()
         }
         while ( *(v11 - 1) ); /*0x7d6c3a*/
       }
-      off_87C594 = v10; /*0x7d6c42*/
-      off_87C590 = (char *)v16 + 2; /*0x7d6c4b*/
+      off_87C594 = (void*)(v10); /*0x7d6c42*/
+      off_87C590 = (void*)((char *)v16 + 2); /*0x7d6c4b*/
       if ( dword_B78518 ) /*0x7d6c57*/
         free( (void *)(dword_B78518)); /*0x7d6c5a*/
-      dword_B78518 = v16; /*0x7d6c63*/
+      dword_B78518 = (unsigned int)v16; /*0x7d6c63*/
       if ( dword_B7851C ) /*0x7d6c6f*/
         free( (void *)(dword_B7851C)); /*0x7d6c72*/
-      dword_B7851C = v17; /*0x7d6c7b*/
+      dword_B7851C = (unsigned int)v17; /*0x7d6c7b*/
     }
     else
     {
   LABEL_38:
-      free(v16); /*0x7d6c9b*/
-      free(v17); /*0x7d6ca3*/
+      free( (void *)(v16)); /*0x7d6c9b*/
+      free( (void *)(v17)); /*0x7d6ca3*/
       v1 = 1; /*0x7d6cac*/
     }
     free( (void *)(Block)); /*0x7d6c83*/
@@ -5287,7 +5287,7 @@ int __get_qualified_locale(char * a1, CCINIClass * a2, int a3)
     }
     if ( !a1 ) /*0x7d6d5c*/
       goto LABEL_20; /*0x7d6d5c*/
-    dword_B78554 = a1; /*0x7d6d62*/
+    dword_B78554 = (unsigned int)a1; /*0x7d6d62*/
     if ( *a1 ) /*0x7d6d68*/
       TranslateName(&off_87D1B0, 64, &dword_B78554); /*0x7d6d78*/
     v3 = a1 + 64; /*0x7d6d80*/
@@ -5295,7 +5295,7 @@ int __get_qualified_locale(char * a1, CCINIClass * a2, int a3)
     if ( a1 != (char *)-64 && *v3 ) /*0x7d6d8c*/
     {
       TranslateName(&off_87D0F8, 22, &dword_B78558); /*0x7d6d9c*/
-      v3 = dword_B78558; /*0x7d6da1*/
+      v3 = (char *)(dword_B78558); /*0x7d6da1*/
     }
     dword_B7855C = 0; /*0x7d6daf*/
     if ( !dword_B78554 || !*dword_B78554 ) /*0x7d6db9*/
@@ -5510,11 +5510,11 @@ void * memset(void * a0, int Val, AbstractClass * aP2)
   size_t v7; // ecx
   unsigned int v8; // ecx
 
-  v3 = aP2; /*0x7d75e0*/
+  v3 = (unsigned int)aP2; /*0x7d75e0*/
   if ( !aP2 ) /*0x7d75ea*/
     return a0; /*0x7d7633*/
   IDA_LOBYTE(v4) = Val; /*0x7d75ee*/
-  v5 = a0; /*0x7d75f3*/
+  v5 = (unsigned char *)(a0); /*0x7d75f3*/
   if ( aP2 < 4 ) /*0x7d75f8*/
     goto LABEL_13; /*0x7d75f8*/
   v6 = -(int)a0 & 3; /*0x7d75fc*/
@@ -6614,7 +6614,7 @@ int _87except(int a1, int a2, unsigned short * a3)
     v3 = (unsigned __int16 *)*a3; /*0x7d8c79*/
     v5 = *(unsigned int *)a2 - 1; /*0x7d8c7f*/
     v4 = *(unsigned int *)a2 == 1; /*0x7d8c7f*/
-    a3 = v3; /*0x7d8c80*/
+    a3 = (unsigned short *)(v3); /*0x7d8c80*/
     if ( v4 ) /*0x7d8c83*/
       goto LABEL_13; /*0x7d8c83*/
     v6 = v5 - 1; /*0x7d8c85*/
@@ -6852,7 +6852,7 @@ int _alloc_osfhnd()
     v2 = 0; /*0x7d93b1*/
     v9 = 0; /*0x7d93b4*/
     v10 = 0; /*0x7d93b8*/
-    v3 = dword_B78A80; /*0x7d93bc*/
+    v3 = (int *)(dword_B78A80); /*0x7d93bc*/
     while ( 1 ) /*0x7d93c1*/
     {
       v4 = *v3; /*0x7d93c1*/
@@ -6964,11 +6964,11 @@ void __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD 
           v13 = alloca(v12); /*0x7d9808*/
           ms_exc.old_esp = (DWORD)v15; /*0x7d980d*/
           v16 = v15; /*0x7d9812*/
-          memset(v15, 0, v11); /*0x7d9818*/
+          memset( (void *)(v15), 0, v11); /*0x7d9818*/
           ms_exc.registration.TryLevel = -1; /*0x7d982d*/
           if ( v15 ) /*0x7d9833*/
           {
-            v14 = MultiByteToWideChar(CodePage, 1u, lpSrcStr, cchSrc, v15, cchWideChar); /*0x7d9844*/
+            v14 = MultiByteToWideChar( CodePage, 1u, lpSrcStr, cchSrc, (LPWSTR)(v15), cchWideChar); /*0x7d9844*/
             if ( v14 ) /*0x7d984c*/
               return GetStringTypeW(dwInfoType, v15, v14, lpCharType); /*0x7d985c*/
           }
@@ -7276,7 +7276,7 @@ ControlClass * * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int
           v28 = 0; /*0x7d9cd2*/
           v27 = 0; /*0x7d9cd4*/
           v26 = 0; /*0x7d9cd6*/
-          v25 = 0; /*0x7d9cd8*/
+          v25 = (char *)(0); /*0x7d9cd8*/
           v45 = 4; /*0x7d9cda*/
         }
         else
@@ -7337,11 +7337,11 @@ ControlClass * * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int
             v28 = 0; /*0x7d9cc8*/
             v27 = 0; /*0x7d9cca*/
             v26 = 0; /*0x7d9ccc*/
-            v25 = 0; /*0x7d9cce*/
+            v25 = (char *)(0); /*0x7d9cce*/
           }
           if ( v39 ) /*0x7d9c81*/
           {
-            v25 = 0; /*0x7d9c83*/
+            v25 = (char *)(0); /*0x7d9c83*/
             v27 = 0x7FFF; /*0x7d9c85*/
             v26 = 0x80000000; /*0x7d9c8a*/
             v28 = 0; /*0x7d9c8f*/
@@ -7352,7 +7352,7 @@ ControlClass * * __strgtold12(int a1, char ** a2, char * a3, int a4, int a5, int
             v28 = 0; /*0x7d9ce9*/
             v27 = 0; /*0x7d9ceb*/
             v26 = 0; /*0x7d9ced*/
-            v25 = 0; /*0x7d9cef*/
+            v25 = (char *)(0); /*0x7d9cef*/
             v45 = 1; /*0x7d9cf1*/
           }
         }
@@ -7391,7 +7391,7 @@ int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned in
     }
     if ( *((char *)off_87C590 + 2 * v3 + 1) >= 0 ) /*0x7d9e2e*/
     {
-      if ( MultiByteToWideChar(CodePage, 9u, (LPCCH)lpMultiByteStr, 1, lpWideCharStr, lpWideCharStr != 0) ) /*0x7d9e95*/
+      if ( MultiByteToWideChar( CodePage, 9u, (LPCCH)lpMultiByteStr, 1, (LPWSTR)(lpWideCharStr), lpWideCharStr != 0) ) /*0x7d9e95*/
         return 1; /*0x7d9e1e*/
       goto LABEL_18; /*0x7d9e9d*/
     }
@@ -7400,7 +7400,7 @@ int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned in
     {
       if ( (int)a3 >= (int)SrcSizeInBytes ) /*0x7d9e3d*/
       {
-        v5 = MultiByteToWideChar(CodePage, 9u, (LPCCH)lpMultiByteStr, SrcSizeInBytes, lpWideCharStr, lpWideCharStr != 0) == 0; /*0x7d9e5b*/
+        v5 = MultiByteToWideChar( CodePage, 9u, (LPCCH)lpMultiByteStr, SrcSizeInBytes, (LPWSTR)(lpWideCharStr), lpWideCharStr != 0) == 0; /*0x7d9e5b*/
         result = SrcSizeInBytes; /*0x7d9e5d*/
         if ( !v5 ) /*0x7d9e62*/
           return result; /*0x7d9e62*/
@@ -7420,7 +7420,7 @@ int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned in
 namespace gamemd {
 void * sub_7D9FAC()
 {
-    LONG (__stdcall *result)(struct _EXCEPTION_POINTERS *); // eax
+    LONG (__stdcall *)(struct _EXCEPTION_POINTERS *); // eax
 
     result = SetUnhandledExceptionFilter(___CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z); /*0x7d9fb1*/
     lpfn = result; /*0x7d9fb7*/
@@ -7465,7 +7465,7 @@ int _flswbuf(unsigned short Buf, FILE * a2)
   LABEL_6:
     v5 = v2->_flag; /*0x7da007*/
     v2->_cnt = 0; /*0x7da00a*/
-    a2 = 0; /*0x7da00f*/
+    a2 = (FILE *)(0); /*0x7da00f*/
     IDA_LOBYTE(v5) = v5 & 0xED | 2; /*0x7da012*/
     v2->_flag = v5; /*0x7da018*/
     if ( (v5 & 0x10C) == 0 ) /*0x7da01b*/
@@ -7491,7 +7491,7 @@ int _flswbuf(unsigned short Buf, FILE * a2)
       }
       else
       {
-        a2 = (FILE *)_write(file, base, v7); /*0x7da06e*/
+        a2 = (FILE *)_write( file, (const void *)(base), v7); /*0x7da06e*/
       }
       v9 = Buf; /*0x7da0ab*/
       *(unsigned short *)v2->_base = Buf; /*0x7da0ae*/
@@ -7500,7 +7500,7 @@ int _flswbuf(unsigned short Buf, FILE * a2)
     {
       v9 = Buf; /*0x7da0b3*/
       v7 = 2; /*0x7da0b8*/
-      a2 = (FILE *)_write(file, &Buf, 2u); /*0x7da0cb*/
+      a2 = (FILE *)_write( file, (const void *)(&Buf), 2u); /*0x7da0cb*/
     }
     if ( a2 == (FILE *)v7 ) /*0x7da0d2*/
       return v9; /*0x7da0e1*/
@@ -7560,11 +7560,11 @@ int __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINICla
         v11 = alloca(v10); /*0x7da1bf*/
         ms_exc.old_esp = (DWORD)v16; /*0x7da1c4*/
         lpMultiByteStr = (LPSTR)v16; /*0x7da1c9*/
-        memset(v16, 0, v9); /*0x7da1cf*/
+        memset( (void *)(v16), 0, v9); /*0x7da1cf*/
         ms_exc.registration.TryLevel = -1; /*0x7da1d7*/
         if ( lpMultiByteStr ) /*0x7da1f3*/
         {
-          if ( WideCharToMultiByte(CodePage, 0x220u, lpSrcStr, cchSrc, lpMultiByteStr, v9, 0, 0) ) /*0x7da20d*/
+          if ( WideCharToMultiByte( CodePage, 0x220u, lpSrcStr, cchSrc, (LPSTR)(lpMultiByteStr), v9, 0, 0) ) /*0x7da20d*/
           {
             v12 = 2 * v9 + 5; /*0x7da226*/
             IDA_LOBYTE(v12) = v12 & 0xFC; /*0x7da229*/
@@ -7583,7 +7583,7 @@ int __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINICla
               StringTypeA = GetStringTypeA(v14, dwInfoType, lpMultiByteStr, v18, v16); /*0x7da27e*/
               if ( *(v15 - 1) != 0xFFFF && *v15 == 0xFFFF ) /*0x7da28e*/
               {
-                memcpy(lpCharType, v16, 2 * cchSrc); /*0x7da295*/
+                memcpy( lpCharType, (const void *)(v16), 2 * cchSrc); /*0x7da295*/
                 return StringTypeA; /*0x7da2a0*/
               }
             }
@@ -7635,7 +7635,7 @@ ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, Cam
   {
     if ( !aP6 ) /*0x7da374*/
       aP6 = ::aP6; /*0x7da37b*/
-    v8 = WideCharToMultiByte(aP6, 0x220u, aP2, cchSrc, 0, 0, 0, 0); /*0x7da390*/
+    v8 = WideCharToMultiByte( (UINT)(aP6), 0x220u, (LPCWCH)(aP2), cchSrc, 0, 0, 0, 0); /*0x7da390*/
     cbMultiByte = v8; /*0x7da396*/
     if ( v8 ) /*0x7da39b*/
     {
@@ -7643,11 +7643,11 @@ ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, Cam
       IDA_LOBYTE(v9) = v9 & 0xFC; /*0x7da3a7*/
       v10 = alloca(v9); /*0x7da3a9*/
       ms_exc.old_esp = (DWORD)v17; /*0x7da3ae*/
-      lpMultiByteStr = v17; /*0x7da3b3*/
+      lpMultiByteStr = (unsigned int)v17; /*0x7da3b3*/
       ms_exc.registration.TryLevel = -1; /*0x7da3c4*/
       if ( v17 ) /*0x7da3cb*/
       {
-        if ( WideCharToMultiByte(aP6, 0x220u, aP2, cchSrc, lpMultiByteStr, cbMultiByte, 0, 0) ) /*0x7da3e7*/
+        if ( WideCharToMultiByte( (UINT)(aP6), 0x220u, (LPCWCH)(aP2), cchSrc, (LPSTR)(lpMultiByteStr), cbMultiByte, 0, 0) ) /*0x7da3e7*/
         {
           v11 = LCMapStringA(aP0, aP1, lpMultiByteStr, cbMultiByte, 0, 0); /*0x7da403*/
           v12 = v11; /*0x7da409*/
@@ -7666,19 +7666,19 @@ ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, Cam
               {
                 if ( (aP1 & 0x400) != 0 ) /*0x7da467*/
                 {
-                  v15 = aP5; /*0x7da469*/
+                  v15 = (unsigned int)aP5; /*0x7da469*/
                   if ( aP5 ) /*0x7da46e*/
                   {
                     if ( aP5 >= v12 ) /*0x7da472*/
                       v15 = v12; /*0x7da474*/
-                    strncpy((char *)aP4, v17, v15); /*0x7da47b*/
+                    strncpy( (char *)aP4, (const char *)(v17), v15); /*0x7da47b*/
                   }
                   return (ControlClass * *)v12; /*0x7da483*/
                 }
                 if ( aP5 ) /*0x7da488*/
-                  v16 = MultiByteToWideChar(aP6, 1u, v17, v12, aP4, aP5); /*0x7da49b*/
+                  v16 = MultiByteToWideChar( (UINT)(aP6), 1u, (LPCCH)(v17), v12, (LPWSTR)(aP4), (int)(aP5)); /*0x7da49b*/
                 else
-                  v16 = MultiByteToWideChar(aP6, 1u, v17, v12, 0, 0); /*0x7da48c*/
+                  v16 = MultiByteToWideChar( (UINT)(aP6), 1u, (LPCCH)(v17), v12, 0, 0); /*0x7da48c*/
                 v12 = v16; /*0x7da4a1*/
                 if ( v16 ) /*0x7da4a5*/
                   return (ControlClass * *)v12; /*0x7da4a9*/
@@ -7729,7 +7729,7 @@ int _getwc_lk(FILE * File)
       v3 = --File->_cnt < 0; /*0x7da553*/
       v4 = 1; /*0x7da558*/
       if ( v3 ) /*0x7da559*/
-        v5 = _filbuf(v1); /*0x7da566*/
+        v5 = _filbuf( (FILE *)(v1)); /*0x7da566*/
       else
         v5 = *(unsigned __int8 *)v1->_ptr++; /*0x7da55d*/
       if ( v5 == -1 ) /*0x7da56f*/
@@ -7739,7 +7739,7 @@ int _getwc_lk(FILE * File)
       {
         v3 = --v1->_cnt < 0; /*0x7da58d*/
         if ( v3 ) /*0x7da590*/
-          v7 = _filbuf(v1); /*0x7da59d*/
+          v7 = _filbuf( (FILE *)(v1)); /*0x7da59d*/
         else
           v7 = *(unsigned __int8 *)v1->_ptr++; /*0x7da594*/
         if ( v7 == -1 ) /*0x7da5a6*/
@@ -7920,7 +7920,7 @@ int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cch
           return 1; /*0x7da81f*/
         }
       }
-      v13 = MultiByteToWideChar(CodePage, 9u, lpString1, v7, 0, 0); /*0x7da8ae*/
+      v13 = MultiByteToWideChar( CodePage, 9u, (LPCCH)(lpString1), v7, 0, 0); /*0x7da8ae*/
       cchWideChar = v13; /*0x7da8b4*/
       if ( v13 ) /*0x7da8b9*/
       {
@@ -7928,13 +7928,13 @@ int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cch
         IDA_LOBYTE(v14) = v14 & 0xFC; /*0x7da8c7*/
         v15 = alloca(v14); /*0x7da8c9*/
         ms_exc.old_esp = (DWORD)v21; /*0x7da8ce*/
-        lpWideCharStr = v21; /*0x7da8d3*/
+        lpWideCharStr = (unsigned int)v21; /*0x7da8d3*/
         ms_exc.registration.TryLevel = -1; /*0x7da8d6*/
         if ( v21 ) /*0x7da8f5*/
         {
-          if ( MultiByteToWideChar(CodePage, 1u, lpString1, v7, lpWideCharStr, cchWideChar) ) /*0x7da90f*/
+          if ( MultiByteToWideChar( CodePage, 1u, (LPCCH)(lpString1), v7, (LPWSTR)(lpWideCharStr), cchWideChar) ) /*0x7da90f*/
           {
-            v16 = MultiByteToWideChar(CodePage, 9u, lpString2, cchCount2, 0, 0); /*0x7da922*/
+            v16 = MultiByteToWideChar( CodePage, 9u, (LPCCH)(lpString2), cchCount2, 0, 0); /*0x7da922*/
             v17 = v16; /*0x7da924*/
             v25 = v16; /*0x7da926*/
             if ( v16 ) /*0x7da92b*/
@@ -7947,7 +7947,7 @@ int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cch
               ms_exc.registration.TryLevel = -1; /*0x7da945*/
               if ( v21 ) /*0x7da95f*/
               {
-                if ( MultiByteToWideChar(CodePage, 1u, lpString2, cchCount2, v21, v17) ) /*0x7da96e*/
+                if ( MultiByteToWideChar( CodePage, 1u, (LPCCH)(lpString2), cchCount2, (LPWSTR)(v21), v17) ) /*0x7da96e*/
                   return CompareStringW(Locale, dwCmpFlags, lpWideCharStr, cchWideChar, v21, v17); /*0x7da98c*/
               }
             }
@@ -7988,12 +7988,12 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
   v19 = v2; /*0x7da9ec*/
   if ( !v2 || Str == (char *)v2 ) /*0x7da9f4*/
     return -1; /*0x7da9f4*/
-  v4 = dword_B781E4; /*0x7da9f6*/
+  v4 = (void *)(dword_B781E4); /*0x7da9f6*/
   v5 = v3[1] == 0; /*0x7daa00*/
   if ( dword_B781E4 == (void *)dword_B781E8 ) /*0x7daa09*/
   {
     v4 = (void *)copy_environ(dword_B781E4); /*0x7daa0c*/
-    dword_B781E4 = v4; /*0x7daa12*/
+    dword_B781E4 = (unsigned int)v4; /*0x7daa12*/
   }
   if ( !v4 ) /*0x7daa19*/
   {
@@ -8007,7 +8007,7 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
       if ( v5 ) /*0x7daa3b*/
         return 0; /*0x7daa3b*/
       v7 = malloc(4u); /*0x7daa43*/
-      dword_B781E4 = v7; /*0x7daa4b*/
+      dword_B781E4 = (unsigned int)v7; /*0x7daa4b*/
       if ( !v7 ) /*0x7daa50*/
         return -1; /*0x7daa50*/
       *v7 = 0; /*0x7daa52*/
@@ -8021,8 +8021,8 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
       }
     }
   }
-  v9 = dword_B781E4; /*0x7daa72*/
-  Block = dword_B781E4; /*0x7daa78*/
+  v9 = (unsigned int *)(dword_B781E4); /*0x7daa72*/
+  Block = (void *)(dword_B781E4); /*0x7daa78*/
   v10 = findenv((uint8_t *)Str, v3 - (uint8_t *)Str); /*0x7daa7f*/
   v11 = v10; /*0x7daa84*/
   if ( v10 >= 0 && *v9 )
@@ -8034,7 +8034,7 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
     }
     v18 = (void *)v9[v10]; /*0x7daa95*/
     v12 = &v9[v10]; /*0x7daa98*/
-    free(v18); /*0x7daa9b*/
+    free( (void *)(v18)); /*0x7daa9b*/
     while ( *v12 ) /*0x7daaa4*/
     {
       ++v11; /*0x7daaa9*/
@@ -8049,20 +8049,20 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
       {
         v14 = strlen( (const char *)(Str)); /*0x7dab0a*/
         v15 = (char *)malloc(v14 + 2); /*0x7dab12*/
-        v16 = v15; /*0x7dab17*/
+        v16 = (CHAR *)(v15); /*0x7dab17*/
         if ( v15 )
         {
-          strcpy( v15, (const char *)(Str)); /*0x7dab23*/
+          strcpy( (char *)(v15), (const char *)(Str)); /*0x7dab23*/
           v17 = &v19[v16 - Str]; /*0x7dab2f*/
           *v17 = 0; /*0x7dab32*/
           SetEnvironmentVariableA(v16, !v5 ? (LPCSTR)v17 + 1 : 0);
-          free(v16); /*0x7dab47*/
+          free( (void *)(v16)); /*0x7dab47*/
         }
       }
       return 0; /*0x7dab47*/
     }
   LABEL_30:
-    dword_B781E4 = v13; /*0x7daafc*/
+    dword_B781E4 = (unsigned int)v13; /*0x7daafc*/
     goto LABEL_31; /*0x7daafc*/
   }
   if ( !v5 ) /*0x7daad1*/
@@ -8072,7 +8072,7 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
     v13 = realloc(v9, 4 * v11 + 8); /*0x7daae2*/
     if ( !v13 ) /*0x7daaeb*/
       return -1; /*0x7daaeb*/
-    *((unsigned int *)v13 + v11) = Str; /*0x7daaf4*/
+    *((unsigned int *)v13 + v11) = (unsigned int)Str; /*0x7daaf4*/
     *((unsigned int *)v13 + v11 + 1) = 0; /*0x7daaf7*/
     goto LABEL_30; /*0x7daaf7*/
   }
@@ -8121,7 +8121,7 @@ int _chsize_lk(int FileHandle, LONG lDistanceToMove)
     }
     else
     {
-      memset(Buffer, 0, sizeof(Buffer)); /*0x7dacc7*/
+      memset( (void *)(Buffer), 0, sizeof(Buffer)); /*0x7dacc7*/
       lDistanceToMovea = _setmode_lk(FileHandle, 0x8000); /*0x7dacdc*/
       while ( 1 ) /*0x7dace1*/
       {
@@ -8210,7 +8210,7 @@ int __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * a4)
 
     if ( a1 == 1 ) /*0x7daf38*/
     {
-      v4 = Source; /*0x7daf4a*/
+      v4 = (char *)(Source); /*0x7daf4a*/
       v15 = 0; /*0x7daf50*/
       LocaleInfoA = __crtGetLocaleInfoA(Locale, LCType, Source, 128, 0); /*0x7daf5b*/
       if ( !LocaleInfoA ) /*0x7daf62*/
@@ -8222,7 +8222,7 @@ int __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * a4)
         if ( !v6 ) /*0x7daf84*/
           return -1; /*0x7daf84*/
         v8 = (CHAR *)malloc(v6); /*0x7daf87*/
-        v4 = v8; /*0x7daf8c*/
+        v4 = (char *)(v8); /*0x7daf8c*/
         if ( !v8 ) /*0x7daf91*/
           return -1; /*0x7daf91*/
         v15 = 1; /*0x7daf96*/
@@ -8237,12 +8237,12 @@ int __getlocaleinfo(int a1, LCID Locale, LCTYPE LCType, CCINIClass * a4)
         if ( !v15 ) /*0x7dafc4*/
           return -1; /*0x7dafd4*/
   LABEL_9:
-        free(v4); /*0x7dafc6*/
+        free( (void *)(v4)); /*0x7dafc6*/
         return -1; /*0x7dafc7*/
       }
-      strncpy(v9, v4, LocaleInfoA); /*0x7dafd8*/
+      strncpy( (char *)(v9), (const char *)(v4), LocaleInfoA); /*0x7dafd8*/
       if ( v15 ) /*0x7dafe3*/
-        free(v4); /*0x7dafe6*/
+        free( (void *)(v4)); /*0x7dafe6*/
     }
     else
     {
@@ -8297,7 +8297,7 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
 
   v5 = v26; /*0x7db211*/
   v6 = a3 & 0x8000; /*0x7db21c*/
-  memset(v23, 204, 10); /*0x7db228*/
+  memset( (void *)(v23), 204, 10); /*0x7db228*/
   v23[10] = -5; /*0x7db250*/
   v23[11] = 63; /*0x7db254*/
   v25 = 1; /*0x7db258*/
@@ -8381,7 +8381,7 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
       *(unsigned int *)&a4 = v11 + 1; /*0x7db3e5*/
       do /*0x7db430*/
       {
-        a1 = *(ObjectClass **)v24; /*0x7db3ee*/
+        a1 = (unsigned int)*(ObjectClass **)v24; /*0x7db3ee*/
         __SET_PAIR__(a3, a2, *(unsigned long long *)&v24[4]); /*0x7db3f4*/
         __shl_12((unsigned int *)v24); /*0x7db3f5*/
         __shl_12((unsigned int *)v24); /*0x7db3fe*/
@@ -8875,7 +8875,7 @@ int __ld12mul(int a1, int a2)
 
     v4 = *(unsigned short *)(a2 + 10); /*0x7dbee4*/
     v15 = 0; /*0x7dbeeb*/
-    memset(v13, 0, sizeof(v13)); /*0x7dbeee*/
+    memset( (void *)(v13), 0, sizeof(v13)); /*0x7dbeee*/
     v5 = *(unsigned short *)(a1 + 10); /*0x7dbef7*/
     v6 = v5 ^ v4; /*0x7dbf02*/
     result = v5 & 0x7FFF; /*0x7dbf04*/
@@ -9184,9 +9184,9 @@ int __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData
     if ( !v11 || !GetLocaleInfoA(Locale, LCType, v11, v13) ) /*0x7dc59f*/
       return 0; /*0x7dc5a7*/
     if ( cchData ) /*0x7dc5ac*/
-      return MultiByteToWideChar(CodePage, 1u, v11, -1, lpLCData, cchData); /*0x7dc5c0*/
+      return MultiByteToWideChar( CodePage, 1u, (LPCCH)(v11), -1, (LPWSTR)(lpLCData), cchData); /*0x7dc5c0*/
     else
-      return MultiByteToWideChar(CodePage, 1u, v11, -1, 0, 0); /*0x7dc5b0*/
+      return MultiByteToWideChar( CodePage, 1u, (LPCCH)(v11), -1, 0, 0); /*0x7dc5b0*/
 }
 }
 // 0x7DC5DC
@@ -9238,9 +9238,9 @@ int __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass * aP2, int cchDat
     if ( !v11 || !GetLocaleInfoW(Locale, LCType, v11, v13) ) /*0x7dc6b8*/
       return 0; /*0x7dc6c0*/
     if ( cchData ) /*0x7dc6c7*/
-      return WideCharToMultiByte(CodePage, 0x220u, v11, -1, lpLCData, cchData, 0, 0); /*0x7dc6de*/
+      return WideCharToMultiByte( CodePage, 0x220u, (LPCWCH)(v11), -1, lpLCData, cchData, 0, 0); /*0x7dc6de*/
     else
-      return WideCharToMultiByte(CodePage, 0x220u, v11, -1, 0, 0, 0, 0); /*0x7dc6cb*/
+      return WideCharToMultiByte( CodePage, 0x220u, (LPCWCH)(v11), -1, 0, 0, 0, 0); /*0x7dc6cb*/
 }
 }
 // 0x7DC7CB
@@ -9296,9 +9296,9 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
     *a8 = 0; /*0x7dc7d7*/
     if ( !a1 ) /*0x7dc7de*/
       return -2147467261; /*0x7dc7e5*/
-    v44 = 0; /*0x7dc7ef*/
+    v44 = (unsigned char *)(0); /*0x7dc7ef*/
     v9 = lpString; /*0x7dc7f0*/
-    v45 = 0; /*0x7dc7f3*/
+    v45 = (int *)(0); /*0x7dc7f3*/
     v46 = 0; /*0x7dc7f4*/
     v47 = 0; /*0x7dc7f7*/
     if ( lpString ) /*0x7dc7f8*/
@@ -9325,9 +9325,9 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
       IDA_LOBYTE(v12) = v12 & 0xFC; /*0x7dc83b*/
       v13 = alloca(v12); /*0x7dc83d*/
       v14 = v42; /*0x7dc842*/
-      memset(v42, 0, v11); /*0x7dc84d*/
+      memset( (void *)(v42), 0, v11); /*0x7dc84d*/
       v51 = v42; /*0x7dc851*/
-      v52 = v9; /*0x7dc857*/
+      v52 = (unsigned short *)(v9); /*0x7dc857*/
       v44 = v42; /*0x7dc85f*/
       v15 = *v9 == 0; /*0x7dc865*/
       v16 = (unsigned __int16 *)&v42[16 * v46 - 16]; /*0x7dc869*/
@@ -9486,7 +9486,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
           v35 = 0; /*0x7dc9e0*/
           if ( v47 ) /*0x7dc9e5*/
           {
-            v36 = v51; /*0x7dc9e7*/
+            v36 = (unsigned int *)(v51); /*0x7dc9e7*/
             v37 = &v51[16 * v32]; /*0x7dc9ef*/
             do /*0x7dca03*/
             {
@@ -9508,7 +9508,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
     }
     VariantInit(&pvarg); /*0x7dca12*/
     v49 = -1; /*0x7dca1d*/
-    memset(v43, 0, sizeof(v43)); /*0x7dca32*/
+    memset( (void *)(v43), 0, sizeof(v43)); /*0x7dca32*/
     v39 = (*(int (__stdcall **)(int, int, void *, unsigned int, int, unsigned char **, VARIANTARG *, unsigned int *, int *))(*(unsigned int *)a1 + 24))(
             a1,
             a2,
@@ -9574,7 +9574,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
       return v39; /*0x7dcbae*/
     if ( v43[6] ) /*0x7dca7d*/
       ((void (__stdcall *)(unsigned int *))v43[6])(v43); /*0x7dca83*/
-    pperrinfo = 0; /*0x7dca89*/
+    pperrinfo = (ICreateErrorInfo *)(0); /*0x7dca89*/
     if ( CreateErrorInfo(&pperrinfo) >= 0 ) /*0x7dca95*/
     {
       pperrinfo->lpVtbl->SetGUID(pperrinfo, (const GUID *const)&unk_87DA00); /*0x7dcaa2*/
@@ -9641,7 +9641,7 @@ void * _strupr(char * String)
   char *Block; // [esp+8h] [ebp-8h]
   int v10; // [esp+Ch] [ebp-4h]
 
-  Block = 0; /*0x7dcfd3*/
+  Block = (char *)(0); /*0x7dcfd3*/
   if ( dword_B782A0 ) /*0x7dcfd6*/
   {
     InterlockedIncrement(&dword_B78BA4); /*0x7dd008*/
@@ -9662,7 +9662,7 @@ void * _strupr(char * String)
       if ( v6 ) /*0x7dd095*/
       {
         v8 = (CHAR *)malloc(v6); /*0x7dd098*/
-        Block = v8; /*0x7dd0a0*/
+        Block = (char *)(v8); /*0x7dd0a0*/
         if ( v8 ) /*0x7dd0a3*/
         {
           if ( __crtLCMapStringA(dword_B782A0, 0x200u, String, -1, v8, v7, 0, 1) ) /*0x7dd0b7*/
@@ -10075,7 +10075,7 @@ void output(char * a1, int a2)
                 }
                 else
                 {
-                  p_MbCh = off_87C4C8; /*0x7dd871*/
+                  p_MbCh = (char *)(off_87C4C8); /*0x7dd871*/
                   v18 = strlen( (const char *)(off_87C4C8)); /*0x7dd908*/
                 }
                 goto LABEL_147; /*0x7dd867*/
@@ -10162,8 +10162,8 @@ void output(char * a1, int a2)
                 {
                   if ( !v10 ) /*0x7dd95d*/
                   {
-                    v11 = off_87C4C8; /*0x7dd95f*/
-                    p_MbCh = off_87C4C8; /*0x7dd965*/
+                    v11 = (char *)(off_87C4C8); /*0x7dd95f*/
+                    p_MbCh = (char *)(off_87C4C8); /*0x7dd965*/
                   }
                   for ( j = v11; ; ++j ) /*0x7dd968*/
                   {
@@ -10258,7 +10258,7 @@ BlowStraw * * _wcsupr(CampaignScore * aP0)
   wchar_t *Block; // [esp+8h] [ebp-8h]
   int v9; // [esp+Ch] [ebp-4h]
 
-  Block = 0; /*0x7ddce5*/
+  Block = (wchar_t *)(0); /*0x7ddce5*/
   if ( dword_B782A0 ) /*0x7ddce8*/
   {
     InterlockedIncrement(&dword_B78BA4); /*0x7ddd1f*/
@@ -10278,11 +10278,11 @@ BlowStraw * * _wcsupr(CampaignScore * aP0)
       if ( v6 ) /*0x7dddaf*/
       {
         v7 = (WCHAR *)malloc(2 * v6); /*0x7dddb5*/
-        Block = v7; /*0x7dddbd*/
+        Block = (wchar_t *)(v7); /*0x7dddbd*/
         if ( v7 ) /*0x7dddc0*/
         {
           if ( __crtLCMapStringW(dword_B782A0, 0x200u, aP0, -1, v7, v6, 0) ) /*0x7dddd2*/
-            wcscpy(aP0, Block); /*0x7ddde4*/
+            wcscpy( (wchar_t *)(aP0), (const wchar_t *)(Block)); /*0x7ddde4*/
         }
       }
       if ( v9 ) /*0x7dddf0*/
@@ -10298,7 +10298,7 @@ BlowStraw * * _wcsupr(CampaignScore * aP0)
         _unlock(19); /*0x7ddd58*/
       else
         InterlockedDecrement(&dword_B78BA4); /*0x7ddd61*/
-      result = aP0; /*0x7ddd67*/
+      result = (wchar_t *)(aP0); /*0x7ddd67*/
       for ( i = aP0; *i; ++i ) /*0x7ddd6c*/
       {
         v5 = *i; /*0x7ddd75*/
@@ -10309,7 +10309,7 @@ BlowStraw * * _wcsupr(CampaignScore * aP0)
   }
   else
   {
-    result = aP0; /*0x7ddcea*/
+    result = (wchar_t *)(aP0); /*0x7ddcea*/
     for ( j = aP0; *j; ++j ) /*0x7ddcef*/
     {
       v3 = *j; /*0x7ddcf8*/
@@ -11140,7 +11140,7 @@ unsigned char * strncnt(const unsigned char * String, int Count)
   unsigned char *v2; // eax
   int v3; // ecx
 
-  v2 = String; /*0x7d12ea*/
+  v2 = (unsigned char *)(String); /*0x7d12ea*/
   v3 = Count - 1; /*0x7d12f1*/
   if ( Count ) /*0x7d12f4*/
   {
@@ -11654,7 +11654,7 @@ ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(void * Block, char a2)
     Exception::Destructor((Exception *)this); /*0x7d2e82*/
     if ( (a2 & 1) != 0 ) /*0x7d2e8c*/
       RA2_OPDEL(this); /*0x7d2e8f*/
-    return this; /*0x7d2e97*/
+    return (ObjectClass *)this; /*0x7d2e97*/
 }
 } // namespace gamemd
 
@@ -11665,14 +11665,14 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
     int v3; // eax
     char *v4; // eax
 
-    *(unsigned int *)this = (void*)&exception_vftable; /*0x7d2ea3*/
+    *(unsigned int *)this = (unsigned int)(void*)&exception_vftable; /*0x7d2ea3*/
     v3 = strlen(*a2); /*0x7d2eab*/
     v4 = (char *)RA2_OPNEW(v3 + 1); /*0x7d2eb2*/
-    *((unsigned int *)this + 1) = v4; /*0x7d2eb8*/
+    *((unsigned int *)this + 1) = (unsigned int)v4; /*0x7d2eb8*/
     if ( v4 ) /*0x7d2ebe*/
-      strcpy(v4, *a2); /*0x7d2ec3*/
+      strcpy( (char *)(v4), *a2); /*0x7d2ec3*/
     *((unsigned int *)this + 2) = 1; /*0x7d2eca*/
-    return this; /*0x7d2ed3*/
+    return (exception *)this; /*0x7d2ed3*/
 }
 } // namespace gamemd
 
@@ -11684,22 +11684,22 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
     int v4; // eax
     char *v5; // eax
 
-    *(unsigned int *)this = (void*)&exception_vftable; /*0x7d2ee0*/
+    *(unsigned int *)this = (unsigned int)(void*)&exception_vftable; /*0x7d2ee0*/
     v3 = *((unsigned int *)a2 + 2); /*0x7d2ee6*/
     *((unsigned int *)this + 2) = v3; /*0x7d2eeb*/
     if ( v3 ) /*0x7d2eee*/
     {
       v4 = strlen(*((const char **)a2 + 1)); /*0x7d2ef3*/
       v5 = (char *)RA2_OPNEW(v4 + 1); /*0x7d2efa*/
-      *((unsigned int *)this + 1) = v5; /*0x7d2f00*/
+      *((unsigned int *)this + 1) = (unsigned int)v5; /*0x7d2f00*/
       if ( v5 ) /*0x7d2f06*/
-        strcpy(v5, *((const char **)a2 + 1)); /*0x7d2f0c*/
+        strcpy( (char *)(v5), *((const char **)a2 + 1)); /*0x7d2f0c*/
     }
     else
     {
       *((unsigned int *)this + 1) = *((unsigned int *)a2 + 1); /*0x7d2f18*/
     }
-    return this; /*0x7d2f1d*/
+    return (exception *)this; /*0x7d2f1d*/
 }
 } // namespace gamemd
 
@@ -11712,7 +11712,7 @@ ObjectClass * E4Recv_7D2F22::__4exception_QAEAAV0_ABV0__Z(struct exception * a2)
       Exception::Destructor(this); /*0x7d2f2b*/
       __0exception_QAE_ABV0__Z(this, a2); /*0x7d2f36*/
     }
-    return this; /*0x7d2f3d*/
+    return (ObjectClass *)this; /*0x7d2f3d*/
 }
 } // namespace gamemd
 
@@ -11735,7 +11735,7 @@ void  __noreturn _CxxThrowException_8(void * pExceptionObject, _ThrowInfo * pThr
 {
   DWORD dwExceptionCode[8]; // [esp+8h] [ebp-20h] BYREF
 
-  qmemcpy(dwExceptionCode, &unk_7F9928, sizeof(dwExceptionCode)); /*0x7d2f7a*/
+  qmemcpy( (void *)(dwExceptionCode), (const void *)(&unk_7F9928), sizeof(dwExceptionCode)); /*0x7d2f7a*/
   dwExceptionCode[6] = (DWORD)pExceptionObject; /*0x7d2f7c*/
   dwExceptionCode[7] = (DWORD)pThrowInfo; /*0x7d2f82*/
   RaiseException(dwExceptionCode[0], dwExceptionCode[1], dwExceptionCode[4], &dwExceptionCode[5]); /*0x7d2f92*/
@@ -11773,7 +11773,7 @@ void * calloc(size_t Count, size_t Size)
   }
   do /*0x7d33e7*/
   {
-    v4 = 0; /*0x7d3394*/
+    v4 = (void *)(0); /*0x7d3394*/
     if ( v2 <= 0xFFFFFFE0 ) /*0x7d3399*/
     {
       if ( v3 <= dword_87C584 ) /*0x7d33a1*/
@@ -11783,7 +11783,7 @@ void * calloc(size_t Count, size_t Size)
         _unlock(9); /*0x7d33b4*/
         if ( v4 ) /*0x7d33be*/
         {
-          memset(v4, 0, v3); /*0x7d33ef*/
+          memset( (void *)(v4), 0, v3); /*0x7d33ef*/
           return v4; /*0x7d33fc*/
         }
       }
@@ -12014,13 +12014,13 @@ int __wtomb_environ()
       return 0; /*0x7d467f*/
     while ( 1 ) /*0x7d4641*/
     {
-      v2 = WideCharToMultiByte(1u, 0, v1, -1, 0, 0, 0, 0); /*0x7d4641*/
+      v2 = WideCharToMultiByte( 1u, 0, (LPCWCH)(v1), -1, 0, 0, 0, 0); /*0x7d4641*/
       v3 = v2; /*0x7d4643*/
       if ( !v2 ) /*0x7d4647*/
         break; /*0x7d4647*/
       v4 = (CHAR *)malloc(v2); /*0x7d464a*/
-      Str = v4; /*0x7d4652*/
-      if ( !v4 || !WideCharToMultiByte(1u, 0, *(LPCWCH *)v0, -1, v4, v3, 0, 0) ) /*0x7d4663*/
+      Str = (char *)(v4); /*0x7d4652*/
+      if ( !v4 || !WideCharToMultiByte( 1u, 0, *(LPCWCH *)v0, -1, (LPSTR)(v4), v3, 0, 0) ) /*0x7d4663*/
         break; /*0x7d4663*/
       __crtsetenv(Str, 0); /*0x7d466e*/
       v1 = *(const WCHAR **)(v0 + 4); /*0x7d4673*/
@@ -12199,7 +12199,7 @@ char * _ui64toa(unsigned long long Value, char * Buffer, int Radix)
 namespace gamemd {
 bool ctrlevent_capture_4(DWORD CtrlType)
 {
-    void (__cdecl *v1)(int); // esi
+    void (__cdecl *)(int); // esi
     int *v2; // eax
     int v3; // edi
     int v5; // [esp-4h] [ebp-10h]
@@ -12340,11 +12340,11 @@ struct tm * gmtime(CampaignScore * aP0)
     }
   }
   v7->tm_year = v10; /*0x7d5333*/
-  v11 = dword_87D580; /*0x7d533e*/
+  v11 = (int *)(dword_87D580); /*0x7d533e*/
   v7->tm_yday = v9 / 86400; /*0x7d5343*/
   v12 = v9 % 86400; /*0x7d534c*/
   if ( !v2 ) /*0x7d5350*/
-    v11 = dword_87D5B4; /*0x7d5352*/
+    v11 = (int *)(dword_87D5B4); /*0x7d5352*/
   v13 = 1; /*0x7d535c*/
   for ( i = v11 + 1; *i < v7->tm_yday; ++i ) /*0x7d535d*/
     ++v13; /*0x7d5364*/
@@ -12394,7 +12394,7 @@ char * _strdup(INIClass * aP0)
   char *v2; // eax
 
   if ( aP0 && (v1 = strlen( (const char *)(aP0)), (v2 = (char *)malloc(v1 + 1)) != 0) ) /*0x7d5422*/
-    return strcpy( v2, (const char *)(aP0)); /*0x7d5426*/
+    return strcpy( (char *)(v2), (const char *)(aP0)); /*0x7d5426*/
   else
     return 0; /*0x7d542f*/
 }
@@ -12492,7 +12492,7 @@ LONG _XcptFilter(ObjectClass * a1, struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
     unsigned int *v2; // esi
     int *v3; // eax
-    void (__cdecl *v4)(int); // ebx
+    void (__cdecl *)(int); // ebx
     int v6; // ecx
     int v7; // edx
     int v8; // ecx
@@ -12630,7 +12630,7 @@ int * _NMSG_WRITE(DWORD NumberOfBytesWritten)
   int savedregs; // [esp+1A4h] [ebp+0h] BYREF
 
   v1 = 0; /*0x7d5f3d*/
-  result = dword_87CBA8; /*0x7d5f3f*/
+  result = (int *)(dword_87CBA8); /*0x7d5f3f*/
   do /*0x7d5f51*/
   {
     if ( NumberOfBytesWritten == *result ) /*0x7d5f46*/
@@ -12657,14 +12657,14 @@ int * _NMSG_WRITE(DWORD NumberOfBytesWritten)
     {
       if ( !GetModuleFileNameA(0, Filename, 0x104u) ) /*0x7d5f9e*/
         strcpy( (char *)(Filename), "<program name unknown>"); /*0x7d5fb4*/
-      v4 = Filename; /*0x7d5fc3*/
+      v4 = (char *)(Filename); /*0x7d5fc3*/
       if ( (unsigned int)(strlen( (const char *)(Filename)) + 1) > 0x3C ) /*0x7d5fd3*/
       {
         v4 = (char *)&savedregs + strlen( (const char *)(Filename)) - 479; /*0x7d5fee*/
-        strncpy(v4, "...", 3u); /*0x7d5ff6*/
+        strncpy( (char *)(v4), "...", 3u); /*0x7d5ff6*/
       }
       strcpy( (char *)(Destination), "Runtime Error!\n\nProgram: ");
-      strcat( (char *)(Destination), v4); /*0x7d6017*/
+      strcat( (char *)(Destination), (const char *)(v4)); /*0x7d6017*/
       strcat( (char *)(Destination), (const char *)(asc_83F318)); /*0x7d6028*/
       strcat( (char *)(Destination), (&off_87CBAC)[v3]); /*0x7d603a*/
       return (int *)__crtMessageBoxA(Destination, "Microsoft Visual C++ Runtime Library", 73744); /*0x7d6050*/
@@ -12837,7 +12837,7 @@ char fix_grouping(CCINIClass * a1)
     char result; // al
     char *v3; // eax
 
-    v1 = a1; /*0x7d67f9*/
+    v1 = (char *)(a1); /*0x7d67f9*/
     for ( result = *a1; *v1; result = *v1 ) /*0x7d67fd*/
     {
       if ( result < 48 || result > 57 ) /*0x7d680a*/
@@ -12880,7 +12880,7 @@ int __init_monetary()
       if ( _get_lc_lconv(v0) ) /*0x7d6851*/
       {
         _free_lc_lconv(v1); /*0x7d685c*/
-        free(v1); /*0x7d6862*/
+        free( (void *)(v1)); /*0x7d6862*/
         return 1; /*0x7d6869*/
       }
       *v1 = *off_87D620; /*0x7d6872*/
@@ -12889,7 +12889,7 @@ int __init_monetary()
       off_87D620 = (void **)v1; /*0x7d6890*/
       _free_lc_lconv((void **)dword_B78514); /*0x7d6896*/
       free( (void *)(dword_B78514)); /*0x7d68a1*/
-      dword_B78514 = v1; /*0x7d68a7*/
+      dword_B78514 = (unsigned int)v1; /*0x7d68a7*/
     }
     else
     {
@@ -13021,8 +13021,8 @@ char * strpbrk(const char * Str, const char * Control)
   char *result; // eax
   signed int32_t v5[9]; // [esp+0h] [ebp-24h] BYREF
 
-  result = 0; /*0x7d6cf4*/
-  memset(v5, 0, 32); /*0x7d6cfd*/
+  result = (char *)(0); /*0x7d6cf4*/
+  memset( (void *)(v5), 0, 32); /*0x7d6cfd*/
   while ( 1 ) /*0x7d6d04*/
   {
     IDA_LOBYTE(result) = *Control; /*0x7d6d04*/
@@ -13141,7 +13141,7 @@ int ProcessCodePage(char * String)
     int result; // eax
     unsigned char v3[8]; // [esp+4h] [ebp-8h] BYREF
 
-    v1 = String; /*0x7d737a*/
+    v1 = (const char *)(String); /*0x7d737a*/
     if ( String && *String && strcmp(String, off_7FA2D8) ) /*0x7d738c*/
     {
       if ( strcmp(String, off_7FA2D4) ) /*0x7d739d*/
@@ -13154,7 +13154,7 @@ int ProcessCodePage(char * String)
     }
     if ( !result ) /*0x7d73cb*/
       return result; /*0x7d73cb*/
-    v1 = v3; /*0x7d73cd*/
+    v1 = (const char *)(v3); /*0x7d73cd*/
     return atol(v1); /*0x7d73d7*/
 }
 } // namespace gamemd
@@ -13243,13 +13243,13 @@ int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData
         v9 = &a040a[44 * v6]; /*0x7d7543*/
         break;
       case 3u: /*0x7d74e3*/
-        v9 = (char *)&unk_87CC50 + 44 * v6; /*0x7d7539*/
+        v9 = (const char *)((char *)&unk_87CC50 + 44 * v6); /*0x7d7539*/
         break;
       case 7u: /*0x7d74e3*/
-        v9 = (char *)&unk_87CC58 + 44 * v6; /*0x7d752f*/
+        v9 = (const char *)((char *)&unk_87CC58 + 44 * v6); /*0x7d752f*/
         break;
       case 0xBu: /*0x7d74e3*/
-        v9 = (char *)&unk_87CC5C + 44 * v6; /*0x7d7525*/
+        v9 = (const char *)((char *)&unk_87CC5C + 44 * v6); /*0x7d7525*/
         break;
       case 0x1001u: /*0x7d74e3*/
         v9 = (&off_87CC4C)[11 * v6]; /*0x7d751a*/
@@ -13265,7 +13265,7 @@ int crtGetLocaleInfoA_16(LCID Locale, LCTYPE LCType, LPSTR lpLCData, int cchData
     }
     if ( !v9 || cchData < 1 ) /*0x7d7553*/
       return GetLocaleInfoA(Locale, LCType, lpLCData, cchData); /*0x7d7553*/
-    strncpy( (char *)(lpLCData), v9, cchData - 1); /*0x7d7562*/
+    strncpy( (char *)(lpLCData), (const char *)(v9), cchData - 1); /*0x7d7562*/
     lpLCData[cchData - 1] = 0; /*0x7d756a*/
     return 1; /*0x7d74d8*/
 }
@@ -13750,8 +13750,8 @@ char * _fptostr(BlowStraw * aP0, char * a1, int a3)
   }
   else
   {
-    v10 = strlen(v7); /*0x7d7daa*/
-    return (char *)memcpy( (void *)(aP0), v7, v10 + 1); /*0x7d7db3*/
+    v10 = strlen( (const char *)(v7)); /*0x7d7daa*/
+    return (char *)memcpy( (void *)(aP0), (const void *)(v7), v10 + 1); /*0x7d7db3*/
   }
   return result; /*0x7d7dbb*/
 }
@@ -13779,7 +13779,7 @@ unsigned int * _fltout2(char a1, int a2, unsigned int * a3, char * Destination)
   a3[2] = v4; /*0x7d7df6*/
   *v5 = v10; /*0x7d7dfd*/
   v5[1] = v9; /*0x7d7e03*/
-  strcpy( v6, (const char *)(Source)); /*0x7d7e0b*/
+  strcpy( (char *)(v6), (const char *)(Source)); /*0x7d7e0b*/
   v5[3] = v6; /*0x7d7e13*/
   return v5; /*0x7d7e18*/
 }
@@ -14425,7 +14425,7 @@ int wcsncnt_0(CampaignScore * a1, int a2)
     int v3; // ecx
     int v4; // esi
 
-    v2 = a1; /*0x7da4c3*/
+    v2 = (unsigned short *)(a1); /*0x7da4c3*/
     v3 = a2 - 1; /*0x7da4ca*/
     if ( a2 ) /*0x7da4cd*/
     {
@@ -15790,7 +15790,7 @@ unsigned char * _getextendedkeycode(int a1)
   v1 = *(unsigned int *)(a1 + 12); /*0x7dd43a*/
   if ( (v1 & 0x100) != 0 ) /*0x7dd440*/
   {
-    result = 0; /*0x7dd446*/
+    result = (unsigned char *)(0); /*0x7dd446*/
     v3 = 0; /*0x7dd448*/
     v4 = &unk_87DA30; /*0x7dd44a*/
     while ( *v4 != *(unsigned short *)(a1 + 8) ) /*0x7dd452*/
@@ -15945,7 +15945,7 @@ wchar_t * _wcsdup(CampaignScore * aP0)
   wchar_t *v2; // eax
 
   if ( aP0 && (v1 = wcslen(aP0), (v2 = (wchar_t *)malloc(2 * v1 + 2)) != 0) ) /*0x7dde30*/
-    return wcscpy(v2, aP0); /*0x7dde34*/
+    return wcscpy( (wchar_t *)(v2), (const wchar_t *)(aP0)); /*0x7dde34*/
   else
     return 0; /*0x7dde3d*/
 }
@@ -15960,7 +15960,7 @@ char * _strrev(IUnknown * aP0)
   char *i; // edi
   char v4; // ah
 
-  v1 = aP0; /*0x7dde5a*/
+  v1 = (char *)(aP0); /*0x7dde5a*/
   v2 = strlen( (const char *)(aP0)) + 1; /*0x7dde61*/
   if ( ~v2 != -2 ) /*0x7dde66*/
   {

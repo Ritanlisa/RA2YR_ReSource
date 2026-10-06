@@ -48,7 +48,7 @@ void * WeaponTypeClass::Create(AbstractClass * Source)
 LABEL_6:
     v3 = (SuperWeaponTypeClass *)__2_YAPAXI_Z(0x1B0u); /*0x5126d6*/
     if ( v3 ) /*0x5126e5*/
-      return ((SuperWeaponTypeClass *)v3)->Construct( Source); /*0x5126f1*/
+      return ((SuperWeaponTypeClass *)v3)->Construct( (char *)(Source)); /*0x5126f1*/
     return 0; /*0x5126e5*/
   }
   while ( _strcmpi((*((unsigned int *)dword_A83C9C + v2) + 36),(const char *)(Source)) ) /*0x5126ca*/
@@ -113,7 +113,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   (&this->DownReport)[5] = 10; /*0x771ce9*/
   (&this->DownReport)[4] = 0; /*0x771cf0*/
   (&this->DownReport)[0] = (int)&vt_TypeList; /*0x771cf3*/
-  ((AnimTypeVector *)((int)((AnimTypeVector *)this->Anim)))->Constructor( 0, 0); /*0x771d03*/
+  ((AnimTypeVector *)((int)((AnimTypeVector *)this->Anim)))->Constructor((int)((AnimTypeVector *)((int)((AnimTypeVector *)this->Anim))), 0, 0); /*0x771d03*/
   (&this->Anim)[5] = 10; /*0x771d08*/
   (&this->Anim)[4] = 0; /*0x771d0f*/
   (&this->Anim)[0] = (int)&vt_TypeList; /*0x771d12*/
@@ -190,7 +190,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
     v3 = g_WeaponTypePool++; /*0x771ed7*/
     *((unsigned int *)g_WeaponTypeConfig + v3) = (unsigned int)(this); /*0x771ee6*/
   }
-  return this; /*0x771eeb*/
+  return (unsigned int *)this; /*0x771eeb*/
 
 }
 } // namespace gamemd
@@ -282,7 +282,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   int v21; // ecx
   int v22; // edx
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x772ae9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x772ae9*/
   Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
   LOBYTE(v3) = this->IsSonic; /*0x772afc*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x772b05*/
@@ -367,10 +367,10 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
       ((DynamicVectorClass *)((DynamicVectorClass *)v5->Anim))->AnimTypeConstructor(0, 0); /*0x772d2b*/
       (&v5->Anim)[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x772d30*/
     }
-    (*(void (**)(int *, WeaponTypeClass **, int, unsigned int, int))(*v7 + 12))( v7, (WeaponTypeClass **)(&aP0), 4, 0, v4); /*0x772d42*/
+    (*(void (**)(int *, WeaponTypeClass **, int, unsigned int, int))(*v7 + 12))( (int *)(v7), (WeaponTypeClass **)(&aP0), 4, 0, v4); /*0x772d42*/
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
-      (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))( v7, (int *)(&a3), 4, 0); /*0x772d5b*/
+      (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))( (int *)(v7), (int *)(&a3), 4, 0); /*0x772d5b*/
       ((DynamicVector *)((DynamicVector *)v5->Anim))->Add_Alt4((unsigned int *)(&a3)); /*0x772d69*/
     }
     if ( Report ) /*0x772d77*/
@@ -378,18 +378,18 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
       ((DynamicVectorClass *)((DynamicVectorClass *)Report))->Construct(0, 0); /*0x772d7f*/
       *Report = (int)&TypeList_int_vftable; /*0x772d84*/
     }
-    (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))( v7, (int **)(&a2), 4, 0); /*0x772d97*/
+    (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))( (int *)(v7), (int **)(&a2), 4, 0); /*0x772d97*/
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
-      (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))( v7, (int *)(&a3), 4, 0); /*0x772db0*/
+      (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))( (int *)(v7), (int *)(&a3), 4, 0); /*0x772db0*/
       ((DynamicVector *)((DynamicVector *)Report))->Add_Alt((unsigned int *)(&a3)); /*0x772dba*/
     }
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
-    (*(void (**)(int *, int **, int))(*v7 + 12))( v7, (int **)(&a2), 4); /*0x772de3*/
+    (*(void (**)(int *, int **, int))(*v7 + 12))( (int *)(v7), (int **)(&a2), 4); /*0x772de3*/
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
-      (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))( v7, (int **)(&a2), 4, 0); /*0x772dfc*/
+      (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))( (int *)(v7), (int **)(&a2), 4, 0); /*0x772dfc*/
       ((DynamicVector *)((DynamicVector *)v5->DownReport))->Add_Alt((unsigned int *)(&a2)); /*0x772e06*/
     }
     ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/
@@ -418,11 +418,11 @@ int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4
   int v11; // edx
   int k; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((gamemd::ObjectTypeClass *)((int *)a1),(gamemd::ObjectTypeClass *)(a2), (int)a3); /*0x772ec1*/
+  result = AbstractClass::SaveLoad_Prefix( (gamemd::ObjectTypeClass *)((int *)a1), (gamemd::ObjectTypeClass *)(a2), (ObjectTypeClass *)((int)a3)); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
     v7 = (int)(*a2); /*0x772ed4*/
-    a3 = (int *)a1->Anim[4]; /*0x772ee1*/
+    a3 = (void *)((int *)a1->Anim[4]); /*0x772ee1*/
     (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))( (int *)(a2), (int **)(&a3), 4, 0, v5); /*0x772ee5*/
     for ( i = 0; i < a4; ++i ) /*0x772ef0*/
       (*(void (**)(int *, int, int, unsigned int))(*(char *)a2 +6))( (int *)(a2), a1->Anim[1] + 4 * i, 4, 0); /*0x772f03*/
@@ -521,7 +521,7 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
   char v11; // [esp+8Bh] [ebp-1h]
 
   Source[0] = g_INI_DefaultBuffer; /*0x475b80*/
-  memset(&Source[1], 0, 0x7Cu); /*0x475b8f*/
+  memset( (void *)(&Source[1]), 0, 0x7Cu); /*0x475b8f*/
   v10 = 0; /*0x475b91*/
   v11 = 0; /*0x475b93*/
   v4 = dword_A83C78; /*0x475b94*/
@@ -546,7 +546,7 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
     }
     while ( v5 < v4 ); /*0x475c3a*/
   }
-  return ((INIClass *)(char *)this)->SetString( this, a3, Source); /*0x475c61*/
+  return ((INIClass *)(char *)this)->SetString( this, (char *)(a3), (char *)(Source)); /*0x475c61*/
 
 }
 }  // G42.18c ns repair
@@ -564,7 +564,7 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
   char v18; // [esp+8Bh] [ebp-1h]
 
   Source[0] = g_INI_DefaultBuffer; /*0x475c81*/
-  memset(&Source[1], 0, 0x7Cu); /*0x475c90*/
+  memset( (void *)(&Source[1]), 0, 0x7Cu); /*0x475c90*/
   v17 = 0; /*0x475c92*/
   v18 = 0; /*0x475c94*/
   if ( a8 > 0 ) /*0x475c9e*/
@@ -575,13 +575,13 @@ char  WeaponTypeClass::ReadVeteranData(uint8_t * a2, char * a3, int a4, int * Bl
     {
       if ( Source[0] ) /*0x475cb1*/
         strcat( (char *)(Source), (char *)&::Delimiter); /*0x475cd8*/
-      SampleNameByIndex = ((VocClass *)(*v10++))->GetSampleNameByIndex(); /*0x475ce8*/
-      strcat( (char *)(Source), SampleNameByIndex); /*0x475d0d*/
+      SampleNameByIndex = ((VocClass *)(*v10++))->GetSampleNameByIndex((int)((VocClass *)(*v10++))); /*0x475ce8*/
+      strcat( (char *)(Source), (const char *)(SampleNameByIndex)); /*0x475d0d*/
       --v11; /*0x475d14*/
     }
     while ( v11 ); /*0x475d17*/
   }
-  v13 = ((INIClass *)(char *)this)->SetString( a2, a3, Source); /*0x475d39*/
+  v13 = ((INIClass *)(char *)this)->SetString( (unsigned __int8 *)(a2), (char *)(a3), (char *)(Source)); /*0x475d39*/
   if ( Block && HIBYTE(a7) ) /*0x475d4f*/
     __3_YAXPAX_Z(Block); /*0x475d52*/
   return v13; /*0x475d5c*/
@@ -598,10 +598,10 @@ unsigned int *  WeaponTypeClass::loadWeaponProperties(int aP1)
   (&this->DownReport)[0] = (int)&vt_TypeList; /*0x771f18*/
   (&this->Anim)[0] = (int)&vt_TypeList; /*0x771f1e*/
   this->vtable1 = &vt_WeaponTypeClass; /*0x771f28*/
-  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f2e*/
-  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f35*/
-  ((unsigned int *)this)[0] = &vt_WeaponTypeClass; /*0x771f3c*/
-  return this; /*0x771f45*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_WeaponTypeClass; /*0x771f2e*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_WeaponTypeClass; /*0x771f35*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_WeaponTypeClass; /*0x771f3c*/
+  return (unsigned int *)this; /*0x771f45*/
 
 }
 }  // G42.18c ns repair

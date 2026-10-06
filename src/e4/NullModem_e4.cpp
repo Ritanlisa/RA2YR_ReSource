@@ -49,7 +49,7 @@ char NullModem_TestConnection(void * a1)
   g_NetworkTestFlag = (int)((wchar_t *)(0));
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_CANCEL), 0,(const char *)(g_Str_File_NullDlg_CPP), 6489));
   v3 = (wchar_t *)((HWND)(GetStringCSF((wchar_t *)(aTxtNullConnerr), 0,(const char *)(g_Str_File_NullDlg_CPP), 6489)));
-  MessageBox = (HWND)(CreateMessageBox((LPARAM)v3, (LPARAM)StringCSF, (LONG)&g_NetworkTestFlag));
+  MessageBox = (HWND)(CreateMessageBox( (LPARAM)((LPARAM)((LPARAM)v3)), (LPARAM)((LPARAM)((LPARAM)StringCSF)), (LONG)&g_NetworkTestFlag));
   hWnd = (HWND)(MessageBox);
   if ( !MessageBox ) /*0x5f0407*/
     return 0; /*0x5f067c*/
@@ -75,7 +75,7 @@ char NullModem_TestConnection(void * a1)
       v10 = dword_887340; /*0x5f048e*/
       if ( v7 != -1 ) /*0x5f0497*/
                 v10 += ((Timer *)self)->GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
-      memset(v23, 0, sizeof(v23)); /*0x5f04bc*/
+      memset( (void *)(v23), 0, sizeof(v23)); /*0x5f04bc*/
       v24 = 0; /*0x5f04be*/
       v6 = v10; /*0x5f04d1*/
       v23[0] = 100; /*0x5f04d3*/
@@ -94,10 +94,10 @@ char NullModem_TestConnection(void * a1)
         {
           v17 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0,(const char *)(g_Str_File_NullDlg_CPP), 6530));
           v15 = (int *)GetStringCSF((wchar_t *)(aTxtSystemNotRe), 0,(const char *)(g_Str_File_NullDlg_CPP), 6530); /*0x5f0655*/
-          ((Dialog *)v15)->ShowMessageBox( v17, 0, 0, 0, a1); /*0x5f065f*/
+          ((Dialog *)v15)->ShowMessageBox( (unsigned short *)(v17), 0, 0, 0, (int)(a1)); /*0x5f065f*/
           break; /*0x5f065f*/
         }
-        memset(v23, 0, sizeof(v23)); /*0x5f0560*/
+        memset( (void *)(v23), 0, sizeof(v23)); /*0x5f0560*/
         v24 = 0; /*0x5f0571*/
         v23[0] = 100; /*0x5f0573*/
         IDA_LOBYTE(v23[6]) = dword_A8B394; /*0x5f057b*/
@@ -116,7 +116,7 @@ char NullModem_TestConnection(void * a1)
           ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5f05d7*/
         }
         v1 = (wchar_t *)(1);
-        v19 = 0; /*0x5f05e0*/
+        v19 = (wchar_t *)(0); /*0x5f05e0*/
       }
     }
     v14 = dword_887340; /*0x5f05ea*/

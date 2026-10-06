@@ -74,7 +74,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       }
       else
       {
-        v5 = 0; /*0x5d55ec*/
+        v5 = (unsigned int *)(0); /*0x5d55ec*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x5d5607*/
@@ -127,7 +127,7 @@ MSFont * MSFont::QueryInterface(char a2, int a3)
   MSFont::Constructor_MSFont(this); /*0x5d3453*/
   if ( (a2 & 1) != 0 ) /*0x5d345d*/
     __3_YAXPAX_Z(this); /*0x5d3460*/
-  return this; /*0x5d346a*/
+  return (MSFont *)this; /*0x5d346a*/
 
 }
 }  // G42.18c ns repair

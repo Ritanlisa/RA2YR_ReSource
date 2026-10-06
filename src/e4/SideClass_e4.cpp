@@ -87,31 +87,31 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   for ( i1 = 0; i1 < g_WeaponTypePool; ++i1 ) /*0x679b82*/
     ((WeaponTypeClass *)(*((WeaponTypeClass **)g_WeaponTypeConfig + i1)))->CalculateSpeed(); /*0x679b8c*/
   for ( i2 = 0; i2 < dword_A83C78; ++i2 ) /*0x679ba4*/
-    nullsub_7(v22); /*0x679baf*/
+    nullsub_7(); /*0x679baf*/
   for ( i3 = 0; i3 < dword_A8E328; ++i3 ) /*0x679bc7*/
     (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E31C + i3) + 100))( /*0x679bd5*/
       *((unsigned int *)dword_A8E31C + i3),
       (unsigned int *)aP0);
   for ( i4 = 0; i4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68); ++i4 ) /*0x679beb*/
-    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4) + 100))( /*0x679bf9*/
-      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4),
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4) + 100))( /*0x679bf9*/
+      *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4),
       (unsigned int *)aP0);
   for ( i5 = 0; i5 < *(int *)&stru_A83D50.__pad_3C[4]; ++i5 ) /*0x679c0f*/
-    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i5) + 100))( /*0x679c1c*/
-      *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i5),
-      aP0);
+(*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i5) + 100))( /*0x679c1c*/ *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i5), (unsigned int *)(aP0));
+
+
   for ( i6 = 0; i6 < *(int *)&stru_A83D50.__pad_3C[28]; ++i6 ) /*0x679c32*/
-    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i6) + 100))( /*0x679c3f*/
-      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i6),
-      aP0);
+(*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i6) + 100))( /*0x679c3f*/ *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i6), (unsigned int *)(aP0));
+
+
   for ( i7 = 0; i7 < (int)stru_A83D50.SuperClass_field_0x28; ++i7 ) /*0x679c55*/
-    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i7) + 100))( /*0x679c62*/
-      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i7),
-      aP0);
+(*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i7) + 100))( /*0x679c62*/ *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i7), (unsigned int *)(aP0));
+
+
   for ( i8 = 0; i8 < stru_A8EB00.ObjectTypeClass[14]; ++i8 ) /*0x679c78*/
-    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8) + 100))( /*0x679c85*/
-      *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8),
-      aP0);
+(*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8) + 100))( /*0x679c85*/ *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8), (unsigned int *)(aP0));
+
+
   v19 = (char *)((gamemd::MissionClass *)(0));
   v20 = (gamemd::MissionClass *)(&stru_A8E3A8);
   do /*0x679cad*/
@@ -166,7 +166,7 @@ namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6a4719*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x6a4719*/
   return Power::TimerProcess(*((unsigned int *)this + 42)); /*0x6a472c*/
 
 }
@@ -228,10 +228,10 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
           continue; /*0x6a4854*/
         v8 = (int)p_houseTypes[5]; /*0x6a4856*/
         if ( v8 <= 0 /*0x6a4865*/
-          || !(*((uint8_t (**)(void **, int, unsigned int))*p_houseTypes + 2))(
-                p_houseTypes,
-                (int)v7 + v8,
-                0) )
+|| !(*((uint8_t (**)(void **, int, unsigned int))*p_houseTypes + 2))( (void **)(p_houseTypes), (int)v7 + v8, 0) )
+
+
+
         {
           continue; /*0x6a4865*/
         }
@@ -285,7 +285,7 @@ void * SideClass::Init(void ** Block, char a2, void *a3, void *a4, void *a5, voi
   ((AbstractTypeClass *)((AbstractTypeClass *)this))->Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     __3_YAXPAX_Z(this); /*0x6a49f0*/
-  return this; /*0x6a49fa*/
+  return (void *)this; /*0x6a49fa*/
 
 }
 }

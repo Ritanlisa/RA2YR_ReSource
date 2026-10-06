@@ -117,7 +117,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v4 = 0; /*0x5a5391*/
+    v4 = (unsigned int *)(0); /*0x5a5391*/
   }
   v79 = v4; /*0x5a5395*/
   v5 = (int *)__2_YAPAXI_Z(0x14u); /*0x5a5399*/
@@ -144,7 +144,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v6 = 0; /*0x5a53e3*/
+    v6 = (int *)(0); /*0x5a53e3*/
   }
   v10 = 0; /*0x5a53e7*/
   v11 = *v6 < 0; /*0x5a53e9*/
@@ -165,7 +165,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     v80 = *(int *)(i + 36); /*0x5a541c*/
     *((unsigned int *)dword_ABED10 + 20 * (int16_t)v80 + 20 * g_MapCellWidth * SHIWORD(v80) + 15) = 0; /*0x5a5441*/
   }
-  v13 = a1; /*0x5a544e*/
+  v13 = (int16_t *)(a1); /*0x5a544e*/
   *v4 = *(unsigned int *)a1; /*0x5a5454*/
   v4[1] = 0; /*0x5a5456*/
   v14 = 5 * (*v13 + g_MapCellWidth * v13[1]); /*0x5a546f*/
@@ -204,7 +204,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v20 = 0; /*0x5a54e0*/
+    v20 = (unsigned short *)(0); /*0x5a54e0*/
   }
   v74 = v20; /*0x5a550e*/
   v23 = (unsigned int *)(__2_YAPAXI_Z(0x18u)); /*0x5a5512*/
@@ -218,7 +218,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v24 = 0; /*0x5a5541*/
+    v24 = (unsigned int *)(0); /*0x5a5541*/
   }
   LODWORD(v78) = (unsigned int)(v24); /*0x5a5547*/
   v25 = a2 <= 0; /*0x5a554b*/
@@ -232,7 +232,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       if ( v24[4] < v26 /*0x5a55a2*/
         || (*((unsigned char *)v24 + 13) || !v26)
         && (v27 = v24[5], v27 > 0)
-        && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v24 + 8))(v24, v26 + v27, 0) )
+        && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v24 + 8))( (unsigned int *)(v24), v26 + v27, 0) )
       {
         v28 = v24[4]; /*0x5a55a9*/
         v29 = v24[1]; /*0x5a55ac*/
@@ -259,7 +259,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
             v35 = (char *)dword_ABED10 + 80 * (int16_t)v73 + 80 * SHIWORD(v73) * g_MapCellWidth; /*0x5a5678*/
             if ( *((unsigned int *)v35 + 15) != 1 && !v35[69] ) /*0x5a5684*/
             {
-              v36 = a1; /*0x5a568f*/
+              v36 = (int16_t *)(a1); /*0x5a568f*/
               *(unsigned int *)LODWORD(v30) = v73; /*0x5a5693*/
               v37 = *v36 - v34; /*0x5a569f*/
               v38 = v36[1] - v33; /*0x5a56a1*/
@@ -323,7 +323,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       }
       else
       {
-        v74 = 0; /*0x5a579e*/
+        v74 = (unsigned short *)(0); /*0x5a579e*/
       }
       v24 = (unsigned int *)v78; /*0x5a57d6*/
       if ( v75 >= a2 ) /*0x5a57dc*/
@@ -341,7 +341,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     __3_YAXPAX_Z((void *)v6[2]); /*0x5a57f7*/
     __3_YAXPAX_Z(v6); /*0x5a57fd*/
   }
-  v51 = (int)(globalHelper_0A7640(v81, v24)); /*0x5a580b*/
+  v51 = (int)(globalHelper_0A7640( (unsigned int *)(v81), (int)(v24))); /*0x5a580b*/
   v83 = *(unsigned long long *)v51; /*0x5a5812*/
   v52 = *(unsigned int *)(v51 + 8); /*0x5a5821*/
   v53 = *(unsigned int *)(v51 + 12); /*0x5a5827*/
@@ -350,7 +350,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     for ( j = v24[4] - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
       v72 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(v24[1] + 4 * j--))); /*0x5a5ab6*/
     if ( v24 ) /*0x5a5ac3*/
-      (*(void (**)(unsigned int *, int))*v24)(v24, 1); /*0x5a5acb*/
+      (*(void (**)(unsigned int *, int))*v24)( (unsigned int *)(v24), 1); /*0x5a5acb*/
     return 0; /*0x5a5ad0*/
   }
   else
@@ -363,7 +363,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       {
         v57 = v24[1]; /*0x5a5868*/
         a2 = 0; /*0x5a586b*/
-        a1 = *(int16_t **)(v57 + 4 * v55); /*0x5a5872*/
+        a1 = (short *)(*(int16_t **)(v57 + 4 * v55)); /*0x5a5872*/
         do /*0x5a5910*/
         {
           LODWORD(v81[0]) = (unsigned int)(*((CellStruct *)(&a1))->Add((unsigned int *)(&v82), (unsigned short *)(4 * (v56 & 7) + 9041544))); /*0x5a5897*/

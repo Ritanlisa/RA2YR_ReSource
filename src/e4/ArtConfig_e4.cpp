@@ -51,14 +51,14 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     if ( v8 ) /*0x76fc94*/
       v9 = (gamemd::Init)(MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)(aP1 + 6), 1, 0, 0)); /*0x76fcb6*/
     else
-      v9 = 0; /*0x76fcbd*/
+      v9 = (void *)(0); /*0x76fcbd*/
     *((unsigned int *)this + 10) = (unsigned int)(v9); /*0x76fcbf*/
-    (*(void (**)(void *, unsigned int))(*(unsigned int *)v9 + 4))(v9, 0); /*0x76fcc8*/
+    (*(void (**)(void *, unsigned int))(*(unsigned int *)v9 + 4))( (void *)(v9), 0); /*0x76fcc8*/
     ((PriorityQueue *)((int)(aP1)))->Add(*((unsigned int *)this + 10)); /*0x76fcd6*/
   }
   v11[0] = (unsigned int)(&vt_CCFileClass);
   v13 = (unsigned int)(0);
-  Vector::Cl  ((Vector *)((void *)((int)v12)))->Clear(); 
+  Vector::Cl  ((Vector *)((void *)((int)v12)))->Clear((int)((Vector *)((void *)((int)v12)))); 
   v11[0] = (unsigned int)(&off_7E1668); /*0x76fcf8*/
   return ((BufferIOFileClass *)(v11))->Dtor(); /*0x76fd05*/
 
@@ -75,9 +75,9 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
   if ( v8 ) /*0x76f922*/
     v9 = WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, a4, aP5); /*0x76f940*/
   else
-    v9 = 0; /*0x76f944*/
+    v9 = (char *)(0); /*0x76f944*/
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x76f948*/
-  *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
+  *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
   ((ComPtr *)((ComPtr *)a1))->Set((int)v9); /*0x76f956*/
   return a1; /*0x76f95d*/
 }

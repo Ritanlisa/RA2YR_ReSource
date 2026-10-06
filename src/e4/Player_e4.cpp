@@ -30,7 +30,7 @@ void Player::BuildListString(wchar_t * Destination)
   do /*0x5e8e89*/
   {
     v3 = *v2; /*0x5e8dd2*/
-    unknown_libname_74(&v6); /*0x5e8dd8*/
+    unknown_libname_74( (void *)(&v6)); /*0x5e8dd8*/
     if ( !v3 /*0x5e8e17*/
       || v3 == (wchar_t *)g_HouseClass_ObserverFlags
       || v3 == (wchar_t *)g_Lobby_PlayerCount
@@ -40,15 +40,15 @@ void Player::BuildListString(wchar_t * Destination)
       || v3 == (wchar_t *)g_Lobby_PlayerSide
       || v3 == (wchar_t *)g_Lobby_PlayerColor )
     {
-      GetPlayerTypeString((gamemd::String *)((char **)&v6.DeleteAndZero_field_0x04), v3); /*0x5e8e2b*/
+      GetPlayerTypeString( (gamemd::String *)((char **)&v6.DeleteAndZero_field_0x04), (wchar_t *)(v3)); /*0x5e8e2b*/
       v4 = CharStringToWide((gamemd::ObjectClass *)((wchar_t **)&v6.DeleteAndZero_field_0x08), (const char **)&v6.DeleteAndZero_field_0x04); /*0x5e8e38*/
       ((WideString *)((void **)&v6))->Reassign_Alt((const wchar_t **)v4); /*0x5e8e42*/
       ((DeleteAndZero*)(DeleteAndZero *)&v6.DeleteAndZero_field_0x08)->Alt(); /*0x5e8e4b*/
-      j_DeleteAndZero((ObjectClass *)&v6.DeleteAndZero_field_0x04); /*0x5e8e54*/
+      j_DeleteAndZero( (void *)((ObjectClass *)&v6.DeleteAndZero_field_0x04)); /*0x5e8e54*/
     }
     else
     {
-      ((WideString *)((void **)&v6))->Assign_Alt(v3); /*0x5e8e1e*/
+      ((WideString *)((void **)&v6))->Assign_Alt( (wchar_t *)(v3)); /*0x5e8e1e*/
     }
     v5 = (wchar_t *)(((WideString*)(wchar_t **)&v6)->GetOrEmpty());
     wcscat((wchar_t *)Destination, v5); /*0x5e8e64*/

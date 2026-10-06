@@ -46,7 +46,7 @@ int AbstractTypeClass::Constructor(char *aP1)
   sprintf(Buffer, "%08X", this); /*0x41084b*/
   if ( Buffer ) /*0x410859*/
   {
-    strncpy( (char *)(Destination), Buffer, 0x18u); /*0x41086d*/
+    strncpy( (char *)(Destination), (const char *)(Buffer), 0x18u); /*0x41086d*/
     Destination[24] = 0; /*0x410875*/
   }
   else
@@ -56,7 +56,7 @@ int AbstractTypeClass::Constructor(char *aP1)
   if ( Destination != v3 ) /*0x410880*/
   {
 LABEL_8:
-    qmemcpy( v3, (const void *)(Destination), 0x18u); /*0x4108b5*/
+    qmemcpy( (void *)(v3), (const void *)(Destination), 0x18u); /*0x4108b5*/
     *((unsigned char *)this + 60) = Destination[24]; /*0x4108b7*/
   }
 LABEL_9:
@@ -113,7 +113,7 @@ int AbstractTypeClass::Dtor()
     }
     while ( v2 < dword_A8E978 ); /*0x410a26*/
   }
-  return ((gamemd::AbstractClass*)(gamemd::AbstractClass*)this)->DTOR(); /*0x410a2f*/
+  return ((gamemd::AbstractClass*)this)->DTOR(); /*0x410a2f*/
 
 }
 } // namespace gamemd
@@ -130,7 +130,7 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x410a74*/
-  result = (gamemd::INIClass *)(int)(INIClass::BinarySearchSection( (int)aP1, (void)((uint8_t *)this->__pad_24))); 
+  result = (unsigned int)(gamemd::INIClass *)(int)(INIClass::BinarySearchSection( (INIClass *)((int)aP1), (uint8_t *)this->__pad_24)); 
   if ( result ) /*0x410a86*/
   {
     Name = (char *)(this->Name);
@@ -147,7 +147,7 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
     }
     if ( Destination != Name ) /*0x410ad2*/
     {
-      qmemcpy( Name, (const void *)(Destination), 0x30u); /*0x410add*/
+      qmemcpy( (void *)(Name), (const void *)(Destination), 0x30u); /*0x410add*/
       (&this->Name)[48] = v7; /*0x410adf*/
     }
     UINameLabel = (char *)(this->UINameLabel);
@@ -164,7 +164,7 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
     }
     result = (int)Destination; /*0x410b27*/
     if ( Destination != UINameLabel ) /*0x410b2d*/
-      qmemcpy( UINameLabel, (const void *)(Destination), 0x20u); /*0x410b3a*/
+      qmemcpy( (void *)(UINameLabel), (const void *)(Destination), 0x20u); /*0x410b3a*/
     if ( *UINameLabel ) /*0x410b3c*/
     {
       result = (unsigned int)((int)GetStringCSF( (wchar_t *)this->UINameLabel, 0, (const char *)(aDRa2mdpostAbst), 215));
@@ -210,7 +210,7 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2, int aP1, int a3, int a4, i
   ((gamemd::AbstractClass*)((gamemd::AbstractClass*)this))->DTOR(); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
     __3_YAXPAX_Z(this); /*0x410ca7*/
-  return this; /*0x410cb1*/
+  return (AbstractTypeClass *)this; /*0x410cb1*/
 
 }
 } // namespace gamemd
@@ -253,9 +253,9 @@ char AbstractTypeClass::WriteINI(char *aP1)
 
   pad_24 = (uint8_t *)this->__pad_24; /*0x410b9b*/
   INIClass::ClearSection((int *)aP1, (int)this->__pad_24, 0); /*0x410ba1*/
-  ((INIClass *)aP1)->SetString(pad_24, (char *)g_INI_Key_Name, &this->Name); /*0x410bb2*/
+  ((INIClass *)aP1)->SetString( (unsigned __int8 *)(pad_24), (char *)g_INI_Key_Name, (char *)(&this->Name)); /*0x410bb2*/
   if ( (&this->UINameLabel)[0] ) /*0x410bb7*/
-    ((INIClass *)aP1)->SetString(pad_24, (char *)g_INI_Key_UIName, &this->UINameLabel); /*0x410bca*/
+    ((INIClass *)aP1)->SetString( (unsigned __int8 *)(pad_24), (char *)g_INI_Key_UIName, (char *)(&this->UINameLabel)); /*0x410bca*/
   return 1; /*0x410bcf*/
 
 }
@@ -265,7 +265,7 @@ namespace gamemd {
 int AbstractTypeClass::ProcessPower(int *aP1)
 {
 
-  ((gamemd::AbstractClass*)(gamemd::AbstractClass*)this)->ProcessPower(); /*0x410be9*/
+  ((gamemd::AbstractClass*)this)->ProcessPower(); /*0x410be9*/
   ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->__pad_24); /*0x410bf4*/
   ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->Name); /*0x410bff*/
   return ((Checksum *)((Checksum *)aP1))->AddString((uint8_t *)this->UINameLabel); /*0x410c0f*/

@@ -50,14 +50,14 @@ INIClass * * UnitTypeClass::ReadINIEntry()
       {
         v8[0] = i; /*0x6b4df6*/
         v8[1] = v1; /*0x6b4e01*/
-        v3 = ((CellCoord *)&dword_87F7E8)->To_CellObj( v8); /*0x6b4e0b*/
+        v3 = (unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj( (int16_t *)(v8)); /*0x6b4e0b*/
         v4 = v3[18]; /*0x6b4e0d*/
         if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
         {
           v5 = *((unsigned int *)dword_A8EC1C + v4); /*0x6b4e29*/
           sprintf(Buffer, "%d", v7); /*0x6b4e37*/
           sprintf(Source, "%s,%d,%d,%d", (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
-          IDA_LOBYTE(v4) = ((INIClass *)v9)->SetString( (unsigned __int8 *)unk_81732C, Buffer, Source); /*0x6b4e71*/
+          IDA_LOBYTE(v4) = ((INIClass *)v9)->SetString( (unsigned __int8 *)unk_81732C, (char *)(Buffer), (char *)(Source)); /*0x6b4e71*/
           ++v7; /*0x6b4e76*/
         }
       }
@@ -111,25 +111,25 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     *(unsigned char *)(this + 3676) = 12; /*0x7471ab*/
     *(unsigned char *)(this + 3677) = 0; /*0x7471b2*/
     *(unsigned char *)(this + 3678) = 0; /*0x7471b8*/
-    *(unsigned int *)this = (void*)&UnitTypeClass_vftable; /*0x7471bf*/
-    *(unsigned int *)(this + 4) = (void*)&UnitTypeClass_vftable; /*0x7471c5*/
-    *(unsigned int *)(this + 8) = (void*)&UnitTypeClass_vftable; /*0x7471cb*/
-    *(unsigned int *)(this + 12) = (void*)&UnitTypeClass_vftable; /*0x7471d2*/
+    *(unsigned int *)this = (unsigned int)(void*)&UnitTypeClass_vftable; /*0x7471bf*/
+    *(unsigned int *)(this + 4) = (unsigned int)(void*)&UnitTypeClass_vftable; /*0x7471c5*/
+    *(unsigned int *)(this + 8) = (unsigned int)(void*)&UnitTypeClass_vftable; /*0x7471cb*/
+    *(unsigned int *)(this + 12) = (unsigned int)(void*)&UnitTypeClass_vftable; /*0x7471d2*/
     AbstractClass::GenerateUniqueID(this + 4); /*0x7471d9*/
     *(unsigned int *)(this + 1816) = 32; /*0x7471de*/
     v3 = dword_A83CF0; /*0x7471e8*/
     if ( dword_A83CF0 < dword_A83CE8 /*0x747226*/
       || (byte_A83CED || !dword_A83CE8)
       && dword_A83CF4 > 0
-      && (v4 = (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A83CE0 + 8))(
-                 &dword_A83CE0,
-                 dword_A83CE8 + dword_A83CF4,
-                 0) == 0,
-          v3 = dword_A83CF0,
-          !v4) )
+&& (v4 = (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A83CE0 + 8))( (int *)(&dword_A83CE0), dword_A83CE8 + dword_A83CF4, 0) == 0, v3 = dword_A83CF0, !v4) )
+
+
+
+
+
     {
       dword_A83CF0 = v3 + 1; /*0x74722b*/
-      *((unsigned int *)dword_A83CE4 + v3) = this; /*0x747235*/
+      *((unsigned int *)dword_A83CE4 + v3) = (unsigned int)this;
       v3 = dword_A83CF0; /*0x747238*/
     }
     v5 = 0; /*0x74723d*/
@@ -140,7 +140,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     }
     else
     {
-      v6 = dword_A83CE4; /*0x747243*/
+      v6 = (unsigned int *)(dword_A83CE4); /*0x747243*/
       while ( *v6 != this ) /*0x74724b*/
       {
         ++v5; /*0x74724d*/
@@ -187,7 +187,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     if ( !v5 ) /*0x7474dc*/
       return 0; /*0x747554*/
     IDA_LOWORD(ppv) = 0; /*0x7474e4*/
-    v6 = Random::State( (void)((Random *)&(&dword_A8B230)[14.NeedsSaveOrLink)); /*0x7474f1*/
+    v6 = Random::State(  (Random *)&(&dword_A8B230)[14.NeedsSaveOrLink); /*0x7474f1*/
     v7 = (unsigned int)ppv; /*0x7474f6*/
     IDA_LOBYTE(v8) = 0; /*0x7474fa*/
     IDA_HIBYTE(v8) = v6; /*0x7474fc*/
@@ -198,7 +198,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     v13[0] = (*a2 << 8) + 128; /*0x74752e*/
     v11 = *v5; /*0x747532*/
     v13[1] = v10; /*0x747534*/
-    return (*(char (**)(int *, unsigned int *, unsigned int))(v11 + 216))(v5, v13, (unsigned __int8)(((v9 >> 7) + 1) >> 1)); /*0x74754d*/
+    return (*(char (**)(int *, unsigned int *, unsigned int))(v11 + 216))( (int *)(v5), (unsigned int *)(v13), (unsigned __int8)(((v9 >> 7) + 1) >> 1)); /*0x74754d*/
 }
 }
 // 0x747560
@@ -305,7 +305,7 @@ char UnitTypeClass_LoadFromINI(double a2, unsigned char *** a3)
     v4 = v3; /*0x74762f*/
     v83 = v3; /*0x747633*/
     INIClass::ResetSection( (INIClass *)self); /*0x747637*/
-    if ( !(unsigned __int8)ObjectTypeClass::LoadExtras( (CCINIClass *)((TechnoTypeClass *)self), a2, v79) ) /*0x74763f*/
+    if ( !(unsigned __int8)ObjectTypeClass::LoadExtras( (CCINIClass *)((TechnoTypeClass *)self), a2, (unsigned char ***)(v79)) ) /*0x74763f*/
       return 0; /*0x747ea0*/
     p_occupant = (unsigned __int8 *)&v4->?; /*0x747654*/
     v4[1].__pad_6B8[21] = INIClass::ReadBool_Overwrite( /*0x747665*/
@@ -513,7 +513,7 @@ char UnitTypeClass_LoadFromINI(double a2, unsigned char *** a3)
     strcpy( (char *)(Source), (const char *)&v4[1].ProductionTimer + 2); /*0x747b6f*/
     INIClass::GetString((INIClass *)self, p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
     _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2, Ext); /*0x747ba6*/
-    v83[1].BunkerState = (int)SearchMIXFile(v86, 0); /*0x747bc4*/
+    v83[1].BunkerState = (int)SearchMIXFile( (char *)(v86), 0); /*0x747bc4*/
     if ( ((AbstractTypeClass *)(int)v83)->NameEquals( g_INI_Key_TRUCKA.?) ) /*0x747bca*/
     {
       v36 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aNormalturretin, 0); /*0x747bf0*/
@@ -586,7 +586,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
   LABEL_6:
       v3 = (VoxelAnimTypeClass *)RA2_OPNEW(0x308u); /*0x74b9b6*/
       if ( v3 ) /*0x74b9c5*/
-        return ((VoxelAnimTypeClass *)v3)->Constructor( Source); /*0x74b9d1*/
+        return ((VoxelAnimTypeClass *)v3)->Constructor( (char *)(Source)); /*0x74b9d1*/
       return 0; /*0x74b9c5*/
     }
     while ( _strcmpi((*(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v2) + 36), Source) ) /*0x74b9aa*/
@@ -689,7 +689,7 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
     int v10; // edx
     int v11; // eax
 
-    ((BuildingTypeClass *)(int)this)->ProcessPower( a2); /*0x747f79*/
+    ((BuildingTypeClass *)(int)this)->ProcessPower( (int *)(a2)); /*0x747f79*/
     Power::TimerProcess(this->MovementRestrictedTo[0]); /*0x747f87*/
     IDA_LOBYTE(v3) = this->Passive; /*0x747f8c*/
     Power::FlagProcess((Power *)a2, v3); /*0x747f95*/
@@ -726,16 +726,16 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
       {
         ((TechnoTypeClass *)(int)this)->Construct( (int)&v3); /*0x748038*/
         this->TechnoTypeClass = (void*)&UnitTypeClass_vftable; /*0x74803d*/
-        ((void **)this)[1] = (void*)&UnitTypeClass_vftable;
-        ((void **)this)[2] = (void*)&UnitTypeClass_vftable;
-        ((void **)this)[3] = (void*)&UnitTypeClass_vftable;
+        ((void **)this)[1] = (unsigned int)(void*)&UnitTypeClass_vftable;
+        ((void **)this)[2] = (unsigned int)(void*)&UnitTypeClass_vftable;
+        ((void **)this)[3] = (unsigned int)(void*)&UnitTypeClass_vftable;
       }
       ((VoxelAnimType *)(char *)this)->LoadAnim(); /*0x74805a*/
       ((ObjectTypeClass *)(char *)this)->Load2DArt(); /*0x748061*/
       if ( this->AltImage[0] ) /*0x748066*/
       {
         _makepath(Buffer, 0, 0, this->__tail_E5E, Ext); /*0x748085*/
-        this->AltImage[0] = (int)SearchMIXFile(Buffer, 0); /*0x748098*/
+        this->AltImage[0] = (int)SearchMIXFile( (char *)(Buffer), 0); /*0x748098*/
       }
       return 0; /*0x74809e*/
     }
@@ -809,7 +809,7 @@ UnitTypeClass * UnitTypeClass::ddtor(char a2)
       }
       while ( v4 < dword_A83CF0 ); /*0x7481fd*/
     }
-    TechnoTypeClass::DTOR((int)v3); /*0x748201*/
+    TechnoTypeClass::DTOR( (void *)((int)v3)); /*0x748201*/
     if ( ((unsigned __int8)this & 1) != 0 ) /*0x74820b*/
       RA2_OPDEL(v3); /*0x74820e*/
     return v3; /*0x748218*/

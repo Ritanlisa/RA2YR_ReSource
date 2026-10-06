@@ -47,7 +47,7 @@ _DWORD * ScoreScreen::LoadScoreFont(int aP1)
   ++dword_B0558C; /*0x690a3c*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreFullFontClass); /*0x690a44*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690a4a*/
-  v3 = SearchMIXFile((char *)(g_Str_File_FULLFNT3_SHP), 0); /*0x690a4d*/
+  v3 = (void *)SearchMIXFile((char *)(g_Str_File_FULLFNT3_SHP), 0); /*0x690a4d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690a54*/
   if ( !v3 ) /*0x690a57*/
   {
@@ -58,7 +58,7 @@ _DWORD * ScoreScreen::LoadScoreFont(int aP1)
     Debug::Log("ScoreScreen: Loaded FULLFNT3.SHP\n"); /*0x690a85 G57c1: IDA 0x690a85 push offset aScorescreenLoa*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690a91*/
     v7 = 0; /*0x690a99*/
-    ((Vector *)((int)v6))->Clear(); /*0x690a9d*/
+    ((Vector *)((int)v6))->Clear((int)((Vector *)((int)v6))); /*0x690a9d*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690aa6*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x690aae*/
   }
@@ -88,7 +88,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   ++dword_B0558C; /*0x690b0c*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_ScoreBigFontClass); /*0x690b14*/
   LOBYTE(this->ScoreScreen_field_0x10) = 0; /*0x690b1a*/
-  v3 = SearchMIXFile((char *)(aBigfontShp), 0); /*0x690b1d*/
+  v3 = (void *)SearchMIXFile((char *)(aBigfontShp), 0); /*0x690b1d*/
   this->ScoreScreen_field_0x0C = (int)v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
@@ -99,7 +99,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     Debug::Log("ScoreScreen: Loaded BIGFONT.SHP\n"); /*0x690b55 G57c1: IDA 0x690b55 push offset aScorescreenLoa_3*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x690b61*/
     v7 = 0; /*0x690b69*/
-    ((Vector *)((int)v6))->Clear(); /*0x690b6d*/
+    ((Vector *)((int)v6))->Clear((int)((Vector *)((int)v6))); /*0x690b6d*/
     *(unsigned int *)v5.CDFileClass = (unsigned int)(&off_7E1668); /*0x690b76*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v5))->Dtor(); /*0x690b7e*/
   }
@@ -170,7 +170,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
   }
   if ( !*((unsigned int *)this + 239) ) /*0x77131e*/
     *((unsigned char *)this + 952) = 1; /*0x771328*/
-  unknown_libname_73(&v25); /*0x771333*/
+  unknown_libname_73( (void *)(&v25)); /*0x771333*/
   v13 = (char *)(&this->__pad_0[148 * a2 + 48 * a3]); /*0x771352*/
   if ( Map_Remove(*(unsigned int *)this->__pad_0, (int)(v13 + 8), (void **)&v25) )
   {
@@ -225,7 +225,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
       }
     }
   }
-  return (gamemd::DeleteAndZero)(j_DeleteAndZero((ObjectClass *)&v25)); /*0x7714a0*/
+  return (gamemd::DeleteAndZero)(j_DeleteAndZero( (void *)((ObjectClass *)&v25))); /*0x7714a0*/
 
 }
 } // namespace gamemd
@@ -274,8 +274,8 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   {
     v28 = (*(int (**)(int *, int, int))(*(void *)((unsigned int)(void *))(a2) + 124))( (int *)(a2), (int)(a4), (int)(a3)); /*0x778251*/
     v9 = (*(int (**)(int *))(*(void *)((unsigned int)(void *))(a2) + 128))( (int *)(a2)); /*0x77825b*/
-    v33 = 0; /*0x778261*/
-    v34 = 0; /*0x778265*/
+    v33 = (void *)(0); /*0x778261*/
+    v34 = (void *)(0); /*0x778265*/
     v35 = v28; /*0x778269*/
     v36 = v9; /*0x77826d*/
     v10 = RA2_OPNEW(0x20u); /*0x778276*/
@@ -291,7 +291,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
     }
     else
     {
-      v10 = 0; /*0x7782b5*/
+      v10 = (void *)(0); /*0x7782b5*/
     }
     Render_Draw((int)(v10),(int *)(&v33), 0); /*0x7782bf*/
     (*(void (**)(int *, int, unsigned int, int))(*(void *)((unsigned int)(void *))(a2) + 4))( (int *)(a2), (int)(v10), 0, 1); /*0x7782cd*/
@@ -299,8 +299,8 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       (**(void (**)(int, int))v10)((int)v10, 1); /*0x7782da*/
     v11 = 0; /*0x7782e0*/
     v12 = 0; /*0x7782e2*/
-    v29 = (*(int (**)(int *))(*v8 + 124))(v8); /*0x7782eb*/
-    v30[0] = (*(int (**)(int *))(*v8 + 128))(v8); /*0x7782f5*/
+    v29 = (*(int (**)(int *))(*v8 + 124))( (int *)(v8)); /*0x7782eb*/
+    v30[0] = (*(int (**)(int *))(*v8 + 128))( (int *)(v8)); /*0x7782f5*/
     if ( (*(int (**)(int *))(*(void *)((unsigned int)(void *))(a2) + 124))( (int *)(a2)) > 1024 ) /*0x778306*/
     {
       Viewport =(int *)((Display*)v37)->GetViewport(); /*0x77830c*/
@@ -309,7 +309,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v11 = (Viewport[2] - v29) / 2; /*0x77833e*/
       v12 = (Viewport[3] - v30[0]) / 2; /*0x778340*/
     }
-    if ( a7 && (*(int (**)(int *))(*v8 + 112))(v8) == 1 ) /*0x77835b*/
+    if ( a7 && (*(int (**)(int *))(*v8 + 112))( (int *)(v8)) == 1 ) /*0x77835b*/
     {
       v14 = (gamemd::ConvertClass *)((int)((ConvertClass *)RA2_OPNEW(0x188u)));
       if ( v14 ) /*0x778370*/
@@ -317,36 +317,36 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v15 = (void *)(*(unsigned int *)a2)); /*0x778395*/
       v30[0] = v11; /*0x7783af*/
       v30[1] = v12; /*0x7783b3*/
-      v26 = (*(int (**)(int *, int *))((unsigned int)(v15)+ 120))((int *)a2, v37); /*0x7783c2*/
-      v16 = (unsigned int *)(*(int (**)(int *))(*v8 + 120))(v8); /*0x7783c9*/
+      v26 = (*(int (**)(int *, int *))((unsigned int)(v15)+ 120))( (int *)a2, (int *)(v37)); /*0x7783c2*/
+      v16 = (unsigned int *)(*(int (**)(int *))(*v8 + 120))( (int *)(v8)); /*0x7783c9*/
       BlitterDrawSHP(a2, (int)v27, v8, v16, v31, v30, v26, 0, 0, 0, 0, 1000, 0); /*0x7783d6*/
       if ( v27 ) /*0x7783dd*/
         (**v27)((unsigned int)v27, 1); /*0x7783e5*/
     }
     else
     {
-      v17 = (void *)((int)((void *)((*(int (**)(int *))(*v8 + 124))(v8))));
+      v17 = (void *)((int)((void *)((*(int (**)(int *))(*v8 + 124))( (int *)(v8)))));
       v18 = (void *)((int)((void *)(*v8)));
       v31[0] = (int)((void *)(v17));
-      v19 = (unsigned int)(void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))(v8));
+      v19 = (unsigned int)(void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))( ((unsigned int)(int)*)(v8)));
       v20 = (void *)((int)((void *)(*v8)));
       v34 = (void *)((int)((void *)(v19)));
       v33 = (void *)((int)((void *)(v31[0])));
       v32[0] = (unsigned int)((void *)(v11));
       v21 = (void *)(*(unsigned int *)(a2)); /*0x778418*/
       v32[1] = v12; /*0x77841d*/
-      v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))( v8, (CCFileClass *)(&v38), 0, 1); /*0x778421*/
-      v23 = (*(int (**)(int *, unsigned char *, int))(*v8 + 120))(v8, v41, v22); /*0x778431*/
-      v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))( (int *)a2, (void **)(&retaddr), v32, v8, v23); /*0x778447*/
+      v22 = (*(int (**)(int *, CCFileClass *, unsigned int, int))((unsigned int)(v20)+ 120))( (int *)(v8), (CCFileClass *)(&v38), 0, 1); /*0x778421*/
+      v23 = (*(int (**)(int *, unsigned char *, int))(*v8 + 120))( (int *)(v8), (unsigned char *)(v41), v22); /*0x778431*/
+      v24 = (*(int (**)(int *, void **, unsigned int *, int *, int))(*(unsigned int *)(a2) + 120))( (int *)a2, (void **)(&retaddr), (unsigned int *)(v32), (int *)(v8), v23); /*0x778447*/
       (*(void (**)(int *, int))((unsigned int)(v21)+ 12))((int *)a2, v24); /*0x77844d*/
     }
-    (*(void (**)(int *, int))*v8)(v8, 1); /*0x778456*/
+    (*(void (**)(int *, int))*v8)( (int *)(v8), 1); /*0x778456*/
   }
   *(unsigned int *)v38.CDFileClass = (unsigned int)((void*)&CCFileClass_vftable); /*0x778461*/
   v40 = 0; /*0x778469*/
-  ((Vector *)((int)v39))->Clear(); /*0x778474*/
+  ((Vector *)((int)v39))->Clear((int)((Vector *)((int)v39))); /*0x778474*/
   *(unsigned int *)v38.CDFileClass = (unsigned int)(&off_7E1668); /*0x77847d*/
 // 0x431b80
-return (gamemd::AbstractClass **)((BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor(); /*0x77848a*/
+return (AbstractClass * *)(gamemd::AbstractClass **)((BufferIOFileClass *)((BufferIOFileClass *)&v38))->Dtor(); /*0x77848a*/
 }
 }

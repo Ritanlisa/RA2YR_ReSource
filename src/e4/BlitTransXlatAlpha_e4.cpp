@@ -157,7 +157,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
       ++a7; /*0x493e78*/
       ++a2; /*0x493e7b*/
       if ( (unsigned int)a7 >= *(unsigned int *)(v14 + 28) ) /*0x493e80*/
-        a7 = (uint16_t *)((char *)a7 - *(unsigned int *)(v14 + 32)); /*0x493e82*/
+        a7 = (unsigned short *)((uint16_t *)((char *)a7 - *(unsigned int *)(v14 + 32))); /*0x493e82*/
       v17 = (uint16_t *)((char *)v17 - 1); /*0x493e8a*/
     }
     while ( v17 ); /*0x493e8e*/
@@ -440,7 +440,7 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
 
   v3 = (void *)*((unsigned int *)this + 2); /*0x49a248*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlpha;
-  FractalNoise::Dtor(v3); /*0x49a252*/
+  FractalNoise::Dtor( (void *)(v3)); /*0x49a252*/
   *((unsigned int *)this + 2) = 0; /*0x49a25b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a26a*/

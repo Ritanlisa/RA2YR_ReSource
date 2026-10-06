@@ -86,7 +86,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
       {
         if ( a2 == 1175 ) /*0x4f1200*/
         {
-          Options::InitDialogControls(hDlg); /*0x4f1208*/
+          Options::InitDialogControls( (HWND)(hDlg)); /*0x4f1208*/
           return 0; /*0x4f1219*/
         }
         return 0; /*0x4f1200*/
@@ -108,8 +108,8 @@ LABEL_11:
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            String = (unsigned int)(wchar_t *)(GetStringCSF(v6, 0,(const char *)(g_Str_File_GOptions_CPP), 196));
-            SendMessageA(v8, 0x4B2u, 0, (LPARAM)String); /*0x4f128e*/
+            String = (unsigned int)(wchar_t *)(GetStringCSF( (wchar_t *)(v6), 0, (const char *)(g_Str_File_GOptions_CPP), 196));
+            SendMessageA( (HWND)(v8), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)String))); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
           return 0; /*0x4f126c*/
@@ -204,7 +204,7 @@ LABEL_39:
         v16 = v26; /*0x4f1475*/
       }
       ((LoadOptions *)(v16))->Cleanup(); /*0x4f14b3*/
-      Options::InitDialogControls(hDlg); /*0x4f14ba*/
+      Options::InitDialogControls( (HWND)(hDlg)); /*0x4f14ba*/
       goto LABEL_39; /*0x4f14ba*/
     }
     if ( (uint16_t)a3 == 1314 ) /*0x4f1508*/
@@ -224,7 +224,7 @@ LABEL_39:
       v18 = GetDlgItem(hDlg, 1007); /*0x4f154d*/
       if ( v18 ) /*0x4f1557*/
       {
-        v19 = (wchar_t *)(3 - SendMessageA(v18, 0x400u, 0, 0)); /*0x4f156e*/
+        v19 = (wchar_t *)(3 - SendMessageA( (HWND)(v18), 0x400u, 0, 0)); /*0x4f156e*/
         if ( v19 != (wchar_t *)(dword_A8DB9C) ) /*0x4f1577*/
         {
           if ( ((gamemd::Timer*)&dword_A8EE40)->GetRemainingMs() ) /*0x4f157e*/
@@ -237,7 +237,7 @@ LABEL_39:
             dword_A8EE40 = v24[0]; /*0x4f15a4*/
             dword_A8EE44 = v24[1]; /*0x4f15b0*/
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
-            v20 = (char *)(((EventClass*)(gamemd::AnimClass *)(v31))->Add2(*((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0x24u), (void *)((int)v19))); /*0x4f15c6*/
+            v20 = (char *)(((EventClass*)(gamemd::AnimClass *)(v31))->Add2( *((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0x24u), (int)((void *)((int)v19)))); /*0x4f15c6*/
             ((void (*)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
             Debug::Log("LATENCYFUDGE event created - %d\n"); /*0x4f15dc G57c1: IDA 0x4f15dc push offset aLatencyfudgeEv*/
           }
@@ -246,7 +246,7 @@ LABEL_39:
       v21 = GetDlgItem(hDlg, 1321); /*0x4f15f9*/
       if ( v21 ) /*0x4f15fd*/
       {
-        v22 = 6 - SendMessageA(v21, 0x400u, 0, 0); /*0x4f1614*/
+        v22 = 6 - SendMessageA( (HWND)(v21), 0x400u, 0, 0); /*0x4f1614*/
         if ( *(unsigned int *)dword_A8EB60 != v22 ) /*0x4f161d*/
         {
           if ( !((gamemd::Timer*)&dword_A8EE30)->GetRemainingMs() ) /*0x4f1628*/
@@ -255,7 +255,7 @@ LABEL_39:
             dword_A8EE30 = v25[0]; /*0x4f164e*/
             dword_A8EE34 = v25[1]; /*0x4f1658*/
             dword_A8EE38 = v25[2]; /*0x4f165e*/
-            v23 = (char *)(((EventClass*)((gamemd::AnimClass *)(v30)))->Add2(*((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0xDu), (void *)(v22))); /*0x4f166f*/
+            v23 = (char *)(((EventClass*)((gamemd::AnimClass *)(v30)))->Add2( *((unsigned int *)dword_A83D4C + 12), (IUnknown *)(0xDu), (int)((void *)(v22)))); /*0x4f166f*/
             ((void (*)(char *))OptionQueue::PushEntry)(v23); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -305,7 +305,7 @@ AbstractClass * * Options::Screen_Save()
   DlgItem = GetDlgItem((HWND)this, 1323); /*0x55fab2*/
   if ( DlgItem )
   {
-    v3 = SendMessageA(DlgItem, 0x400u, 0, 0) != 0 ? 2 : 0;
+    v3 = SendMessageA( (HWND)(DlgItem), 0x400u, 0, 0) != 0 ? 2 : 0;
     if ( stru_A8EB00.ObjectTypeClass[30] != v3 ) /*0x55fad9*/
     {
       stru_A8EB00.ObjectTypeClass[30] = v3; /*0x55fae0*/
@@ -314,26 +314,26 @@ AbstractClass * * Options::Screen_Save()
   }
   v4 = GetDlgItem((HWND)this, 1295); /*0x55faf0*/
   if ( v4 ) /*0x55faf4*/
-    stru_A8EB00.ObjectTypeClass[25] = SendMessageA(v4, 0x400u, 0, 0); /*0x55fb02*/
+    stru_A8EB00.ObjectTypeClass[25] = SendMessageA( (HWND)(v4), 0x400u, 0, 0); /*0x55fb02*/
   v5 = GetDlgItem((HWND)this, 1537); /*0x55fb0d*/
   if ( v5 ) /*0x55fb11*/
   {
-    BYTE2(stru_A8EB00.ObjectTypeClass[31]) = SendMessageA(v5, 0xF0u, 0, 0) == 1; /*0x55fb25*/
+    BYTE2(stru_A8EB00.ObjectTypeClass[31]) = SendMessageA( (HWND)(v5), 0xF0u, 0, 0) == 1; /*0x55fb25*/
     SetGlobalFlag(SBYTE2(stru_A8EB00.ObjectTypeClass[31])); /*0x55fb2b*/
   }
   v6 = GetDlgItem((HWND)this, 1540); /*0x55fb36*/
   if ( v6 ) /*0x55fb3a*/
-    HIBYTE(stru_A8EB00.ObjectTypeClass[31]) = SendMessageA(v6, 0xF0u, 0, 0) == 1; /*0x55fb4e*/
+    HIBYTE(stru_A8EB00.ObjectTypeClass[31]) = SendMessageA( (HWND)(v6), 0xF0u, 0, 0) == 1; /*0x55fb4e*/
   v7 = GetDlgItem((HWND)this, 1538); /*0x55fb59*/
   if ( v7 ) /*0x55fb5d*/
-    LOBYTE(stru_A8EB00.ObjectTypeClass[32]) = SendMessageA(v7, 0xF0u, 0, 0) == 1; /*0x55fb71*/
+    LOBYTE(stru_A8EB00.ObjectTypeClass[32]) = SendMessageA( (HWND)(v7), 0xF0u, 0, 0) == 1; /*0x55fb71*/
   v8 = GetDlgItem((HWND)this, 1322); /*0x55fb7d*/
   if ( v8 ) /*0x55fb81*/
-    stru_A8EB00.ObjectTypeClass[28] = 6 - SendMessageA(v8, 0x400u, 0, 0); /*0x55fb96*/
+    stru_A8EB00.ObjectTypeClass[28] = 6 - SendMessageA( (HWND)(v8), 0x400u, 0, 0); /*0x55fb96*/
   v9 = GetDlgItem((HWND)this, 1327); /*0x55fba2*/
   if ( v9 ) /*0x55fba6*/
   {
-    v13 = (double)SendMessageA(v9, 0x400u, 0, 0) * 0.1; /*0x55fbca*/
+    v13 = (double)SendMessageA( (HWND)(v9), 0x400u, 0, 0) * 0.1; /*0x55fbca*/
     Audio::SetScoreVolume(&stru_A8EB00.ObjectTypeClass[24], v13, 0); /*0x55fbcd*/
     if ( *(float *)&stru_A8EB00.ObjectTypeClass[40] == 0.0 ) /*0x55fbe3*/
     {
@@ -347,13 +347,13 @@ AbstractClass * * Options::Screen_Save()
   v11 = GetDlgItem((HWND)this, 1330); /*0x55fc11*/
   if ( v11 ) /*0x55fc15*/
   {
-    v14 = (double)SendMessageA(v11, 0x400u, 0, 0) * 0.1; /*0x55fc39*/
+    v14 = (double)SendMessageA( (HWND)(v11), 0x400u, 0, 0) * 0.1; /*0x55fc39*/
     Audio::SetSoundVolume(&stru_A8EB00.ObjectTypeClass[24], v14, 0); /*0x55fc3c*/
   }
   result = (int)GetDlgItem((HWND)this, 1334); /*0x55fc47*/
   if ( result ) /*0x55fc4b*/
   {
-    v15 = (gamemd::AbstractClass **)((double)SendMessageA((HWND)result, 0x400u, 0, 0) * 0.1); /*0x55fc6f*/
+    v15 = (unsigned int)(gamemd::AbstractClass **)((double)SendMessageA((HWND)result, 0x400u, 0, 0) * 0.1); /*0x55fc6f*/
     return Audio::SetVoiceVolume(&stru_A8EB00.ObjectTypeClass[24], v15, 0); /*0x55fc72*/
   }
   return (gamemd::AbstractClass **)(result); /*0x55fc77*/
@@ -383,7 +383,7 @@ char Options::Screen_Dialog()
     {
       do /*0x55fcca*/
       {
-        qmemcpy(&unk_ABCE70, (const void *)dword_A8EB60, 0xB8u); /*0x55fcb1*/
+        qmemcpy( (void *)(&unk_ABCE70), (const void *)dword_A8EB60, 0xB8u); /*0x55fcb1*/
         dwNewLong = -1; /*0x55fcbd*/
         v0 = (HWND)CreateDialog(0); /*0x55fcc1*/
         v1 = v0; /*0x55fcc6*/
@@ -422,7 +422,7 @@ char Options::Screen_Dialog()
     }
     if ( dwNewLong != 1486 ) /*0x55fd1c*/
       break; /*0x55fd1c*/
-    ShowHotkeyOptionsDialog((void *)(dword_A8EB60)); /*0x55fd1e*/
+    ShowHotkeyOptionsDialog( (void *)((void *)(dword_A8EB60))); /*0x55fd1e*/
   }
   ((ScenarioClass *)(dword_A8EB60))->SaveGameOptions(); /*0x55fd8e*/
   byte_A8E9A0 = v7; /*0x55fd9a*/
@@ -489,7 +489,7 @@ char Options::EnsureCapacity()
   v7 = (void *)(this->field_8); /*0x6248e2*/
   v8 = v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
-    qmemcpy(v6, v7, 24 * *(unsigned int *)this->__pad_0); /*0x624901*/
+    qmemcpy( (void *)(v6), (const void *)(v7), 24 * *(unsigned int *)this->__pad_0); /*0x624901*/
   __3_YAXPAX_Z((void *)(this->field_8)); /*0x62490f*/
   this->field_8 = (unsigned int)(v8); /*0x62491b*/
   this->field_4 = (unsigned int)((void *)v5); /*0x62491e*/
@@ -518,10 +518,10 @@ int Options::GrowBuffer()
     v4 = 10; /*0x6253d9*/
   }
   v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x6253ec*/
-  memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
+  memset( (void *)(v5), 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( this->field_8 ) /*0x625403*/
   {
-    qmemcpy( v5, (const void *)(this->field_8), 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
+    qmemcpy( (void *)(v5), (const void *)(this->field_8), 4 * *(unsigned int *)this->__pad_0); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
   __3_YAXPAX_Z((void *)(this->field_8)); /*0x625429*/
@@ -556,7 +556,7 @@ int Options::ReadOptionValue()
   v7 = (void *)(this->field_8); /*0x625512*/
   v8 = v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
-    qmemcpy(v6, v7, 20 * *(unsigned int *)this->__pad_0); /*0x625531*/
+    qmemcpy( (void *)(v6), (const void *)(v7), 20 * *(unsigned int *)this->__pad_0); /*0x625531*/
   __3_YAXPAX_Z((void *)(this->field_8)); /*0x62553f*/
   this->field_8 = (unsigned int)(v8); /*0x62554b*/
   this->field_4 = (unsigned int)((void *)v5); /*0x62554e*/
@@ -582,7 +582,7 @@ AbstractClass * * Options::DestroyComposite(void * Block, char a2)
   for ( i = *(unsigned int **)&this->__pad_34[4]; i; i = *(unsigned int **)&this->__pad_34[4] ) /*0x62557f*/
   {
     v4 = i; /*0x625581*/
-    v5 = 0; /*0x625583*/
+    v5 = (unsigned int *)(0); /*0x625583*/
     while ( i != v4 ) /*0x62558b*/
     {
       v5 = v4; /*0x62558d*/
@@ -643,8 +643,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   this->field_8 = 0; /*0x625615*/
   this->field_C = 0; /*0x625617*/
   this->field_10 = 0; /*0x62561a*/
-  unknown_libname_74(&v19); /*0x62561d*/
-  unknown_libname_74(&v19.DeleteAndZero_field_0x04); /*0x625626*/
+  unknown_libname_74( (void *)(&v19)); /*0x62561d*/
+  unknown_libname_74( (void *)(&v19.DeleteAndZero_field_0x04)); /*0x625626*/
   v18 = 0; /*0x62562e*/
   v19.DeleteAndZero_field_0x08 = -1; /*0x625632*/
   v21 = -1; /*0x625636*/
@@ -729,11 +729,11 @@ int Options::SaveOptionValue()
   if ( 2 * v2 < 10 ) /*0x625a3b*/
     v4 = 10; /*0x625a3d*/
   v5 = (void *)__2_YAPAXI_Z(20 * v4); /*0x625a4f*/
-  memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
+  memset( (void *)(v5), 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
   v7 = v5; /*0x625a64*/
   v6 = (void *)(this->field_8); /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
-    qmemcpy(v5, v6, 20 * *(unsigned int *)this->__pad_0); /*0x625a80*/
+    qmemcpy( (void *)(v5), (const void *)(v6), 20 * *(unsigned int *)this->__pad_0); /*0x625a80*/
   __3_YAXPAX_Z((void *)(this->field_8)); /*0x625a8d*/
   this->field_4 = (unsigned int)((void *)v4); /*0x625a99*/
   this->field_8 = (unsigned int)(v7); /*0x625a9c*/
@@ -779,15 +779,15 @@ HWND Options::InitDialogControls(HWND hDlg)
       if ( v3 ) /*0x4f176b*/
       {
         v5 = 3 - (unsigned int)dword_A8DB9C; /*0x4f1785*/
-        SendMessageA(v3, 0x406u, 1u, 196608); /*0x4f1787*/
-        SendMessageA(v4, 0x405u, 1u, v5); /*0x4f1792*/
+        SendMessageA( (HWND)(v3), 0x406u, 1u, 196608); /*0x4f1787*/
+        SendMessageA( (HWND)(v4), 0x405u, 1u, (LPARAM)((LPARAM)(v5))); /*0x4f1792*/
       }
       result = (int)GetDlgItem((HWND)hDlg, 1321); /*0x4f179a*/
       v6 = (HWND)result; /*0x4f17a0*/
       if ( result ) /*0x4f17a4*/
       {
         SendMessageA((HWND)result, 0x406u, 1u, 393216); /*0x4f17b7*/
-        return SendMessageA(v6, 0x405u, 1u, 6 - stru_A8EB00.ObjectTypeClass[24]); /*0x4f17cf*/
+        return SendMessageA( (HWND)(v6), 0x405u, 1u, 6 - stru_A8EB00.ObjectTypeClass[24]); /*0x4f17cf*/
       }
     }
   }
@@ -856,7 +856,7 @@ void Options::SetVoiceVolume(float volume, int pad, void *a3_1)
     v4 = volume; /*0x5fa5a4*/
   *((float *)this + 15) = v4; /*0x5fa5b0*/
   LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fa5b9*/
-  ((ThemeClass *)v5)->GetField(); /*0x5fa5c0*/
+  ((ThemeClass *)v5)->GetField((int)((ThemeClass *)v5)); /*0x5fa5c0*/
   LOWORD(v6) = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5fa5ce*/
   EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerChannel_Voice), v6); /*0x5fa5db*/
   if ( pad ) /*0x5fa5e6*/

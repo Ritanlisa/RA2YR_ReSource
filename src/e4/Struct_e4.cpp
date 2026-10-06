@@ -132,7 +132,7 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup_0()
 {
 
-  return Struct::ZeroInitAndSetup( (void)((ConnectionClass *)this));
+  return Struct::ZeroInitAndSetup(  (ConnectionClass *)this);
 
 }
 }
@@ -141,7 +141,7 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup_0_0()
 {
 
-  return Struct::ZeroInitAndSetup( (void)((ConnectionClass *)this));
+  return Struct::ZeroInitAndSetup(  (ConnectionClass *)this);
 
 }
 }

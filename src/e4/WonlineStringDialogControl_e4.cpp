@@ -19,7 +19,7 @@ void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(Dia
 {
 
   this->m_0 = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
-  j_DeleteAndZero((ObjectClass *)&(&this->__pad_9)[3]); /*0x7ac63c*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&(&this->__pad_9)[3])); /*0x7ac63c*/
   this->m_0 = (int)&off_7F7624; /*0x7ac643*/
   ((OwnerDrawControl *)((OwnerDrawControl *)this))->InitVtable(); /*0x7ac649*/
   if ( (a2 & 1) != 0 ) /*0x7ac653*/
@@ -73,7 +73,7 @@ LABEL_17:
     goto LABEL_17; /*0x7ad751*/
   }
   v9 = (char *)((unsigned int)((char *)v3[1] + (unsigned int)a2));
-  (*(void (**)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ad775*/
+  (*(void (**)(char *))(*(unsigned int *)v9 + 4))( (char *)(v9)); /*0x7ad775*/
   *v10 = (unsigned int)(v9); /*0x7ad778*/
   return 0; /*0x7ad6a1*/
 
@@ -383,7 +383,7 @@ int WonlineStringDialogControl_28::ddtor(int a1)
   HWND Current; // eax
 
   Current = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7ad449*/
-  SendMessageA(Current, 0x5F4u, 0, 0); /*0x7ad44f*/
+  SendMessageA( (HWND)(Current), 0x5F4u, 0, 0); /*0x7ad44f*/
   return 0; /*0x7ad457*/
 
 }
@@ -398,7 +398,7 @@ int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
   LPARAM lParama; // [esp+8h] [ebp+8h]
 
   Current = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7ad46c*/
-  SendMessageA(Current, 0x5F5u, 0, lParama); /*0x7ad472*/
+  SendMessageA( (HWND)(Current), 0x5F5u, 0, (LPARAM)((LPARAM)(lParama))); /*0x7ad472*/
   return 0; /*0x7ad47a*/
 
 }
@@ -434,7 +434,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   {
     v8 = (HWND)((gamemd::Dialog *)this)->GetCurrent(); /*0x7ad538*/
     DlgItem = GetDlgItem(v8, 1480); /*0x7ad53e*/
-    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad551*/
+    SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)Buffer))); /*0x7ad551*/
     dword_B77EA8 = time(0); /*0x7ad561*/
   }
   return 0; /*0x7ad52f*/
@@ -467,7 +467,7 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
   }
   Current = (HWND)gamemd::Dialog::GetCurrent(); /*0x7ad5e5*/
   DlgItem = GetDlgItem(Current, 1480); /*0x7ad5eb*/
-  SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad5fe*/
+  SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)Buffer))); /*0x7ad5fe*/
   return 0; /*0x7ad606*/
 
 }

@@ -76,7 +76,7 @@ signed int SyncDelay::Start(void *a1, void *a2)
       if ( !v6 ) /*0x55e1ed*/
         goto LABEL_38; /*0x55e1ed*/
       ((gamemd::Event *)this)->Dispatch(); /*0x55e1f3*/
-      if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 444) && *((unsigned int *)((char *)&stru_A8EB00 + 412)) == 1 ) /*0x55e20b*/
+      if ( !*(unsigned int *)((char *)&stru_A8EB00 + 444) && *((unsigned int *)((char *)&stru_A8EB00 + 412)) == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
 LABEL_23:
       Sleep(0); /*0x55e2ac*/
@@ -92,9 +92,9 @@ LABEL_23:
     }
     if ( v8 > 10 ) /*0x55e23d*/
     {
-      ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable(&v24, v26, &v25); /*0x55e253*/
+      ((InputManager_ProcessEvents *)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Vtable( (unsigned int *)(&v24), (unsigned int *)(v26), (unsigned int *)(&v25)); /*0x55e253*/
       ((SyncDelayClass*)&v24)->ProcessNetworkSync(); /*0x55e25c*/
-      (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_170))(g_TacticalClass_Instance);  /*0x55e269*/
+      (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_170))( (LPPERSISTSTREAM)((LPPERSISTSTREAM)((LPPERSISTSTREAM)((LPPERSISTSTREAM)(g_TacticalClass_Instance)))));  /*0x55e269*/
       ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
     }

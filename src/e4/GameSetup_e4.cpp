@@ -33,7 +33,7 @@ int GameSetup::LookupDialogHash()
     return 0; /*0x60d32c*/
   v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
                       + 4
-                      * ((*(int (**)(GameSetup **))&g_DialogPool.__pad_208[80])(&v4)
+                      * ((*(int (**)(GameSetup **))&g_DialogPool.__pad_208[80])( (GameSetup **)(&v4))
                        & ((1 << g_DialogPool.__pad_208[68]) - 1)));
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/

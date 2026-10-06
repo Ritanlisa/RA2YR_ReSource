@@ -79,7 +79,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   v12 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v25));
   v28 = (unsigned char *)(v12);
   v27 = (unsigned char *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v26));
-  v13 = v12; /*0x4cc22f*/
+  v13 = (void *)(v12); /*0x4cc22f*/
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/
     return 0; /*0x4cc302*/
@@ -90,7 +90,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   {
     v14 = *aP0 + v19; /*0x4cc254*/
     v15 = v20 + aP0[1]; /*0x4cc259*/
-    result = TrajectoryHelper::GetObstacle( v28, v27, (int)v13, v14, v15, aP0[2] + v22, arg0, (void *)(a3)); /*0x4cc281*/
+    result = TrajectoryHelper::GetObstacle( (unsigned char *)(v28), (unsigned char *)(v27), (int)v13, v14, v15, aP0[2] + v22, arg0, (void *)(a3)); /*0x4cc281*/
     if ( result ) /*0x4cc288*/
       break; /*0x4cc288*/
     LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
@@ -179,10 +179,10 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       && a1[283] <= v8[283]
       && (!LOBYTE((&dword_8871E0)[1][3])
        || (v15 = *(void **)(&dword_A8022C)[4 * v10[20]]) == 0
-       || !(uint8_t)(((HouseClass *)(v15))->IsAlliedWith(other))) )
+       || !(uint8_t)(((HouseClass *)(v15))->IsAlliedWith( (HouseClass *)(other)))) )
     {
 LABEL_16:
-      v16 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v10 + 72))( v10, (int *)(&v45)); /*0x4cc489*/
+      v16 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v10 + 72))( (unsigned int *)(v10), (int *)(&v45)); /*0x4cc489*/
       v17 = a4 - *v16; /*0x4cc49c*/
       v18 = v16[1]; /*0x4cc4a2*/
       v19 = v16[2]; /*0x4cc4a7*/
@@ -201,7 +201,7 @@ LABEL_16:
       v24 = v21[2]; /*0x4cc50d*/
       v25 = *(unsigned int *)a2; /*0x4cc510*/
       v47 = v24; /*0x4cc512*/
-      v26 = (int *)(*(int (**)(unsigned char *, char *))(v25 + 72))( (unsigned char *)(a2), v48); /*0x4cc51b*/
+      v26 = (int *)(*(int (**)(unsigned char *, char *))(v25 + 72))( (unsigned char *)(a2), (char *)(v48)); /*0x4cc51b*/
       v27 = *v26; /*0x4cc51e*/
       v46 = v26[1]; /*0x4cc523*/
       v47 = v26[2]; /*0x4cc52a*/
@@ -235,7 +235,7 @@ LABEL_22:
               if ( !LOBYTE((&dword_8871E0)[1][3]) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/
               v39 = *(void **)(&dword_A8022C)[4 * v33[20]]; /*0x4cc639*/
-              if ( !v39 || !(uint8_t)(((HouseClass *)(v39))->IsAlliedWith(other)) ) /*0x4cc645*/
+              if ( !v39 || !(uint8_t)(((HouseClass *)(v39))->IsAlliedWith( (HouseClass *)(other))) ) /*0x4cc645*/
                 return v42; /*0x4cc64c*/
             }
           }

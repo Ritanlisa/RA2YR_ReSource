@@ -268,21 +268,21 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   v111 = (*(int (**)(int *))(v16 + 128))( (int *)(a2)); /*0x7b0729*/
   v112 = 0; /*0x7b0739*/
   v45 = 0; /*0x7b073d*/
-  memset(v113, 0, sizeof(v113)); /*0x7b0741*/
+  memset( (void *)(v113), 0, sizeof(v113)); /*0x7b0741*/
   if ( !(*(uint8_t (**)(int *))(*a1 + 24))( (int *)(a1)) ) /*0x7b0749*/
   {
     (*(void (**)(int *, int))(*a1 + 28))( (int *)(a1), 2); /*0x7b0757*/
     v45 = 1; /*0x7b075a*/
   }
-  (*(void (**)(int *, unsigned char *, int))(*a1 + 48))( (int *)(a1), v54, 128); /*0x7b076e*/
+  (*(void (**)(int *, unsigned char *, int))(*a1 + 48))( (int *)(a1), (unsigned char *)(v54), 128); /*0x7b076e*/
   if ( (*(int (**)(int *))(*a2 + 112))( (int *)(a2)) != 2 ) /*0x7b077b*/
   {
     if ( v58 + 1 <= 0 ) /*0x7b097c*/
       goto LABEL_33; /*0x7b097c*/
-    v116 = 0; /*0x7b0982*/
+    v116 = (char *)(0); /*0x7b0982*/
     while ( 1 ) /*0x7b0999*/
     {
-      v35 = (char *)(*(int (**)(int *, char *, int))(*a2 + 92))( (int *)(a2), v116, v5); /*0x7b0999*/
+      v35 = (char *)(*(int (**)(int *, char *, int))(*a2 + 92))( (int *)(a2), (char *)(v116), v5); /*0x7b0999*/
       v36 = 1; /*0x7b099b*/
       v37 = *v35; /*0x7b09a1*/
       v43 = *v35; /*0x7b09ac*/
@@ -368,8 +368,8 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
     a1->vt_slot_48(&v47, 1); /*0x7b0a9f*/
     if ( (*(int (**)(int *))(*a2 + 112))( (int *)(a2)) == 1 ) /*0x7b0aac*/
     {
-      memcpy( v117, (const void *)(Src), sizeof(v117)); /*0x7b0ac3*/
-      (*(void (**)(int *, unsigned char *, int))(*a1 + 48))( (int *)(a1), v117, 768); /*0x7b0add*/
+      memcpy( (void *)(v117), (const void *)(Src), sizeof(v117)); /*0x7b0ac3*/
+      (*(void (**)(int *, unsigned char *, int))(*a1 + 48))( (int *)(a1), (unsigned char *)(v117), 768); /*0x7b0add*/
     }
     if ( v45 ) /*0x7b0ae6*/
       (*(void (**)(int *))(*a1 + 52))( (int *)(a1)); /*0x7b0aed*/
@@ -385,8 +385,8 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
     if ( (*(int (**)(int *))(v26 + 124))( (int *)(a2)) > 0 ) /*0x7b0822*/
     {
       v27 = (unsigned char *)(v49);
-      v114 = (unsigned char *)Block - (unsigned char *)v49; /*0x7b0834*/
-      v115 = (unsigned char *)v22 - (unsigned char *)v49; /*0x7b0841*/
+      v114 = (unsigned int)(unsigned char *)Block - (unsigned char *)v49; /*0x7b0834*/
+      v115 = (unsigned int)(unsigned char *)v22 - (unsigned char *)v49; /*0x7b0841*/
       do /*0x7b08b9*/
       {
         v28 = *v52++; /*0x7b0853*/
@@ -404,13 +404,13 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
       v25 = v116; /*0x7b08bb*/
     }
     (*(void (**)(int *))(*a2 + 96))( (int *)(a2)); /*0x7b08c6*/
-    (*(void (**)(int *, char *))(*a2 + 124))( (int *)(a2), v25); /*0x7b08ce*/
+    (*(void (**)(int *, char *))(*a2 + 124))( (int *)(a2), (char *)(v25)); /*0x7b08ce*/
     v32 = EncodeScreenshotRLE(v42); /*0x7b08de*/
     (*(void (**)(int *))(*a2 + 124))( (int *)(a2)); /*0x7b08e6*/
     v33 = EncodeScreenshotRLE(&v25[v32]) + v32; /*0x7b08f6*/
     (*(void (**)(int *))(*a2 + 124))( (int *)(a2)); /*0x7b08fe*/
     v42 = EncodeScreenshotRLE(&v25[v33]) + v33; /*0x7b0911*/
-    (*(void (**)(int *, char *))(*a1 + 48))( (int *)(a1), v25); /*0x7b0915*/
+    (*(void (**)(int *, char *))(*a1 + 48))( (int *)(a1), (char *)(v25)); /*0x7b0915*/
     if ( ++v50 >= v58 + 1 ) /*0x7b092e*/
       goto LABEL_11; /*0x7b092e*/
   }
@@ -616,14 +616,14 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     __3_YAXPAX_Z(*a3); /*0x7b6167*/
   *a3 = (void *)((const char *)(0));
   if ( v10 ) /*0x7b6177*/
-    v11 = strlen(v10) + 1; /*0x7b6180*/
+    v11 = strlen( (const char *)(v10)) + 1; /*0x7b6180*/
   else
     v11 = 1; /*0x7b6186*/
   v12 = (unsigned char *)__2_YAPAXI_Z(v11); /*0x7b618c*/
   *a3 = v12; /*0x7b6194*/
   *v12 = 0; /*0x7b6198*/
   if ( v10 ) /*0x7b619b*/
-    strcpy((char *)*a3, v10); /*0x7b61b3*/
+    strcpy( (char *)*a3, (const char *)(v10)); /*0x7b61b3*/
   v13 = (const char *)(&g_INI_DefaultBuffer); /*0x7b61c4*/
   v14 = (void *)((unsigned int)(v20)- a2 + 1); /*0x7b61c9*/
   if ( *a3 ) /*0x7b61c0*/
@@ -632,23 +632,23 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   v16 = v15; /*0x7b61d9*/
   *v15 = 0; /*0x7b61e0*/
   if ( v13 ) /*0x7b61e4*/
-    strncpy(v15, v13,(size_t)(v14)); /*0x7b61e9*/
+    strncpy( (char *)(v15), (const char *)(v13), (size_t)(v14)); /*0x7b61e9*/
   v16[v14] = 0; /*0x7b61f1*/
   v17 = (const char *)(&g_INI_DefaultBuffer); /*0x7b61f5*/
   if ( v16 ) /*0x7b61fc*/
-    v17 = v16; /*0x7b61fe*/
+    v17 = (const char *)(v16); /*0x7b61fe*/
   if ( *a3 ) /*0x7b6200*/
     __3_YAXPAX_Z(*a3); /*0x7b6207*/
   *a3 = 0; /*0x7b6211*/
   if ( v17 ) /*0x7b6217*/
-    v18 = strlen(v17) + 1; /*0x7b6220*/
+    v18 = strlen( (const char *)(v17)) + 1; /*0x7b6220*/
   else
     v18 = 1; /*0x7b6226*/
   v19 = (unsigned char *)__2_YAPAXI_Z(v18); /*0x7b622c*/
   *a3 = v19; /*0x7b6234*/
   *v19 = 0; /*0x7b6238*/
   if ( v17 ) /*0x7b623b*/
-    strcpy((char *)*a3, v17); /*0x7b6253*/
+    strcpy( (char *)*a3, (const char *)(v17)); /*0x7b6253*/
   if ( v16 ) /*0x7b625e*/
     __3_YAXPAX_Z(v16); /*0x7b6261*/
   return (gamemd::AbstractClass **)((unsigned int)(v20)+ 1); /*0x7b6104*/
@@ -672,12 +672,12 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   v6 = (char *)RA2_OPNEW(v5); /*0x7b63e5*/
   *v6 = 0; /*0x7b63ec*/
   if ( aP1 ) /*0x7b63ef*/
-    strcpy(v6,(const char *)(aP1)); /*0x7b6407*/
-  Block = 0; /*0x7b6412*/
+    strcpy( (char *)(v6), (const char *)(aP1)); /*0x7b6407*/
+  Block = (char *)(0); /*0x7b6412*/
   if ( v6 ) /*0x7b641a*/
   {
-    Block = (unsigned int)(char *)RA2_OPNEW(strlen(v6) + 1); /*0x7b6439*/
-    strcpy( (char *)(Block), v6); /*0x7b644c*/
+    Block = (unsigned int)(char *)RA2_OPNEW(strlen( (const char *)(v6)) + 1); /*0x7b6439*/
+    strcpy( (char *)(Block), (const char *)(v6)); /*0x7b644c*/
   }
   v7 = (char *)(*a2);
   if ( !*a2 ) /*0x7b6459*/
@@ -688,7 +688,7 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
   {
     v8 = (char *)RA2_OPNEW(strlen( (const char *)(Block)) + 1); /*0x7b6490*/
     *aP0 = v8; /*0x7b649a*/
-    strcpy( v8, (const char *)(Block)); /*0x7b64ac*/
+    strcpy( (char *)(v8), (const char *)(Block)); /*0x7b64ac*/
     RA2_OPDEL(Block); /*0x7b64be*/
   }
   if ( v6 ) /*0x7b64c8*/
@@ -712,11 +712,11 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   char *v15; // [esp+18h] [ebp+4h]
 
   v4 = (char **)(aP0);
-  v5 = 0; /*0x7b64eb*/
+  v5 = (char *)(0); /*0x7b64eb*/
   if ( *a1 ) /*0x7b64e9*/
   {
     v5 = (char *)RA2_OPNEW(strlen(*a1) + 1); /*0x7b6506*/
-    strcpy(v5, *a1); /*0x7b651f*/
+    strcpy( (char *)(v5), *a1); /*0x7b651f*/
   }
   v6 = *a2; /*0x7b652c*/
   if ( *a2 ) /*0x7b652c*/
@@ -726,28 +726,28 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   }
   else
   {
-    v7 = (char *)(&g_INI_DefaultBuffer);
+    v7 = (const char *)((char *)(&g_INI_DefaultBuffer));
     v15 = (char *)(&g_INI_DefaultBuffer);
   }
   if ( v7 ) /*0x7b6545*/
   {
     v8 = v5; /*0x7b6552*/
-    v9 = strlen(v7) + 1; /*0x7b6554*/
+    v9 = strlen( (const char *)(v7)) + 1; /*0x7b6554*/
     v10 = v9; /*0x7b655b*/
     if ( v5 ) /*0x7b655e*/
-      v10 = strlen(v5) + v9; /*0x7b656a*/
+      v10 = strlen( (const char *)(v5)) + v9; /*0x7b656a*/
     v11 = (char *)RA2_OPNEW(v10); /*0x7b656d*/
     v5 = v11; /*0x7b6575*/
     if ( v8 ) /*0x7b6579*/
     {
-      strcpy(v11, v8); /*0x7b6591*/
-      v7 = v15; /*0x7b659a*/
+      strcpy( (char *)(v11), (const char *)(v8)); /*0x7b6591*/
+      v7 = (const char *)(v15); /*0x7b659a*/
     }
     else
     {
       *v11 = 0; /*0x7b65a0*/
     }
-    strcat(v11, v7); /*0x7b65c1*/
+    strcat( (char *)(v11), (const char *)(v7)); /*0x7b65c1*/
     if ( v8 ) /*0x7b65cc*/
       RA2_OPDEL(v8); /*0x7b65cf*/
     v4 = (char **)(aP0); /*0x7b65d7*/
@@ -755,9 +755,9 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   *v4 = 0; /*0x7b65dd*/
   if ( v5 ) /*0x7b65e4*/
   {
-    v12 = (char *)RA2_OPNEW(strlen(v5) + 1); /*0x7b65f7*/
+    v12 = (char *)RA2_OPNEW(strlen( (const char *)(v5)) + 1); /*0x7b65f7*/
     *v4 = v12; /*0x7b6600*/
-    strcpy(v12, v5); /*0x7b6613*/
+    strcpy( (char *)(v12), (const char *)(v5)); /*0x7b6613*/
     RA2_OPDEL(v5); /*0x7b661c*/
   }
   return v4; /*0x7b6624*/
@@ -798,7 +798,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v5 = (void *)((int)((void *)(a2)));
   vtable0 = (void *)(this->AbstractClass);
   if ( this->AbstractClass ) /*0x7b7c0b*/
-    vtable0 = (gamemd::AbstractClass **)((void *)wcslen((const wchar_t *)this->AbstractClass)); /*0x7b7c12*/
+    vtable0 = (void *)((gamemd::AbstractClass **)((void *)wcslen((const wchar_t *)this->AbstractClass))); /*0x7b7c12*/
   if ( a2 >= (int)vtable0 ) /*0x7b7c1c*/
     return (gamemd::AbstractClass **)(-1); /*0x7b7c20*/
   while ( 1 ) /*0x7b7c27*/
@@ -830,7 +830,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   *a3 = v13; /*0x7b7cad*/
   *v13 = 0; /*0x7b7cb1*/
   if ( v11 ) /*0x7b7cb6*/
-    wcscpy((wchar_t *)*a3, v11); /*0x7b7cbc*/
+    wcscpy( (wchar_t *)*a3, (const wchar_t *)(v11)); /*0x7b7cbc*/
   v14 = (void *)((unsigned int)(v21)- a2 + 1); /*0x7b7ccd*/
   v15 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7cce*/
   if ( *a3 ) /*0x7b7cc8*/
@@ -839,11 +839,11 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v17 = v16; /*0x7b7ce3*/
   *v16 = 0; /*0x7b7cea*/
   if ( v15 ) /*0x7b7cef*/
-    wcsncpy(v16, v15,(size_t)(v14)); /*0x7b7cf4*/
+    wcsncpy( (wchar_t *)(v16), (const wchar_t *)(v15), (size_t)(v14)); /*0x7b7cf4*/
   v17[v14] = 0; /*0x7b7cfc*/
   v18 = (const wchar_t *)(&g_TypeClass_DefaultString); /*0x7b7d05*/
   if ( v17 ) /*0x7b7d0a*/
-    v18 = v17; /*0x7b7d0c*/
+    v18 = (const wchar_t *)(v17); /*0x7b7d0c*/
   if ( *a3 ) /*0x7b7d0e*/
     __3_YAXPAX_Z(*a3); /*0x7b7d15*/
   *a3 = 0; /*0x7b7d1f*/
@@ -855,7 +855,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   *a3 = v20; /*0x7b7d44*/
   *v20 = 0; /*0x7b7d48*/
   if ( v18 ) /*0x7b7d4d*/
-    wcscpy((wchar_t *)*a3, v18); /*0x7b7d53*/
+    wcscpy( (wchar_t *)*a3, (const wchar_t *)(v18)); /*0x7b7d53*/
   if ( v17 ) /*0x7b7d5d*/
     __3_YAXPAX_Z(v17); /*0x7b7d60*/
   return (gamemd::AbstractClass **)((unsigned int)(v21)+ 1); /*0x7b7c1e*/
@@ -899,7 +899,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     {
       if ( WaitForSingleObject((HANDLE)(hMutex), 0x2710u) == 258 ) /*0x7b95a8*/
         Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n"); /*0x7b95b9 G57c1: IDA 0x7b95b9 push offset g_Str_Trace_Warning__Probable_deadlock_occurred_on_M*/
-      FoundationSize = (int *)(Building::GetFoundationSize(v21, (unsigned int)((unsigned int *)this)[0])); /*0x7b95cd*/
+      FoundationSize = (int *)(Building::GetFoundationSize( (unsigned int *)(v21), (unsigned int)((unsigned int *)this)[0])); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
       abstractFlags = ((unsigned int *)this)[0]; /*0x7b95d4*/
       v9 = FoundationSize[1]; /*0x7b95d7*/
@@ -929,13 +929,13 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     v19[1] = 0; /*0x7b9641*/
     occupant = this->occupant; /*0x7b964e*/
     v20 = v5; /*0x7b964f*/
-    (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)v15 + 8))( /*0x7b965a*/
-      v15,
-      v19,
-      occupant,
-      v18,
-      0,
-      1);
+(*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)v15 + 8))( /*0x7b965a*/ v15, (unsigned int *)(v19), occupant, (unsigned int *)(v18), 0, 1);
+
+
+
+
+
+
   }
   ((Mouse *)((Mouse *)this))->DrawCursor((int *)this->occupant, 0, 0); /*0x7b966a*/
   return (gamemd::AbstractClass **)(ReleaseMutex((HANDLE)(hMutex))); /*0x7b967c*/
@@ -1112,14 +1112,14 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   }
   v23 = ((CellStruct *)(aP2))->Copy( v26); /*0x7bc14f*/
   v16 = (Coord2D *)((CellStruct *)v10)->Copy( v27); /*0x7bc154*/
-  v17 = ((Coord2D *)(v16))->Add(v25, v23); /*0x7bc15b*/
+  v17 = ((Coord2D *)(v16))->Add( (unsigned int *)(v25), (unsigned int *)(v23)); /*0x7bc15b*/
   v18 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v9 + 92))(v9, *v17, v17[1]); /*0x7bc173*/
   *a7 = v18; /*0x7bc17c*/
   if ( !v18 ) /*0x7bc17e*/
     return 0; /*0x7bc17e*/
   v24 = ((CellStruct *)(aP5))->Copy( v27); /*0x7bc190*/
   v19 = (Coord2D *)((CellStruct *)(a4))->Copy( v25); /*0x7bc19b*/
-  v20 = ((Coord2D *)(v19))->Add(v26, v24); /*0x7bc1a2*/
+  v20 = ((Coord2D *)(v19))->Add( (unsigned int *)(v26), (unsigned int *)(v24)); /*0x7bc1a2*/
   v21 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)arg4 + 92))(arg4, *v20, v20[1]); /*0x7bc1bc*/
   *a8 = v21; /*0x7bc1c5*/
   if ( !v21 ) /*0x7bc1c7*/
@@ -1139,12 +1139,12 @@ char sub_7BC1F0(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
   if ( (*(int (**)(int *))(*a1 + 112))( (int *)(a1)) == 1 ) /*0x7bc1ff*/
   {
     v7 = (void*)&BlitPlain_unsigned_char_vftable; /*0x7bc20a*/
-    return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc218*/
+    return BlitterCopySimpleSHP( (XSurface *)(a1), (XSurface *)(a2), (int)(aP2), arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc218*/
   }
   else
   {
     v7 = (void*)&BlitPlain_unsigned_short_vftable; /*0x7bc223*/
-    return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc240*/
+    return BlitterCopySimpleSHP( (XSurface *)(a1), (XSurface *)(a2), (int)(aP2), arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc240*/
   }
 }
 }
@@ -1157,12 +1157,12 @@ char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
   if ( (*(int (**)(int *))(*a1 + 112))( (int *)(a1)) == 1 ) /*0x7bc25f*/
   {
     v7 = (void*)&BlitTrans_unsigned_char_vftable; /*0x7bc26a*/
-    return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc278*/
+    return BlitterCopySimpleSHP( (XSurface *)(a1), (XSurface *)(a2), (int)(aP2), arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc278*/
   }
   else
   {
     v7 = (void*)&BlitTrans_unsigned_short_vftable; /*0x7bc283*/
-    return BlitterCopySimpleSHP(a1, a2, aP2, arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc2a0*/
+    return BlitterCopySimpleSHP( (XSurface *)(a1), (XSurface *)(a2), (int)(aP2), arg4, (int *)&v7, 0, 3, 1000, 0); /*0x7bc2a0*/
   }
 }
 }
@@ -1575,7 +1575,7 @@ int AudioStream_FillBuffer(int a1, int a2)
   int v10; // eax
   unsigned int *v11; // ecx
   int v12; // edi
-  int (__cdecl *v13)(int, int, int, int); // eax
+  int (__cdecl *)(int, int, int, int); // eax
   int result; // eax
   int v15; // eax
   int v16; // eax
@@ -1867,7 +1867,7 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
   v3 = 0; /*0x7b03a2*/
   v7[3] = 0; /*0x7b03a6*/
   FindWDTTerritoryClass_Find((char *)stru_B77F68.ComPtr_field_0x04, v7, a2); /*0x7b03aa*/
-  if ( (*(uint8_t (**)(unsigned int *))(v7[0] + 4))(v7) ) /*0x7b03b7*/
+  if ( (*(uint8_t (**)(unsigned int *))(v7[0] + 4))( (unsigned int *)(v7)) ) /*0x7b03b7*/
   {
     v4 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)(v7[1] + 4) + 8 * v7[2] + 4) + 8); /*0x7b03d0*/
   }
@@ -1879,7 +1879,7 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
     v4 = v6; /*0x7b03eb*/
   }
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x7b03f1*/
-  *(unsigned int *)a1 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03f6*/
+  *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WDTTerritory_vftable; /*0x7b03f6*/
   ((ComPtr *)((ComPtr *)a1))->Set(v4[1]); /*0x7b0402*/
   if ( (v3 & 1) != 0 ) /*0x7b040a*/
   {
@@ -2370,7 +2370,7 @@ char E4Recv_7B4AC0::sub_7B4AC0(size_t Count, char * Source)
   v6 = (unsigned char *)__2_YAPAXI_Z(v4); /*0x7b4ae2*/
   this->AbstractClass = v6; /*0x7b4aee*/
   if ( vtable0 ) /*0x7b4af1*/
-    strcpy(v6, vtable0); /*0x7b4b0a*/
+    strcpy( (char *)(v6), (const char *)(vtable0)); /*0x7b4b0a*/
   else
     *v6 = 0; /*0x7b4b16*/
   if ( Source ) /*0x7b4b1f*/
@@ -2399,7 +2399,7 @@ char E4Recv_7B4B50::sub_7B4B50(char ** a2)
   if ( *a2 ) /*0x7b4b57*/
   {
     v10 = *a2; /*0x7b4b6a*/
-    v4 = v2; /*0x7b4b6e*/
+    v4 = (const char *)(v2); /*0x7b4b6e*/
   }
   else
   {
@@ -2408,7 +2408,7 @@ char E4Recv_7B4B50::sub_7B4B50(char ** a2)
   }
   if ( v4 ) /*0x7b4b72*/
   {
-    v5 = strlen(v4) + 1; /*0x7b4b80*/
+    v5 = strlen( (const char *)(v4)) + 1; /*0x7b4b80*/
     vtable0 = (char *)this->AbstractClass; /*0x7b4b82*/
     v7 = v5; /*0x7b4b8a*/
     if ( this->AbstractClass ) /*0x7b4b82*/
@@ -2417,14 +2417,14 @@ char E4Recv_7B4B50::sub_7B4B50(char ** a2)
     this->AbstractClass = v8; /*0x7b4ba8*/
     if ( vtable0 ) /*0x7b4bab*/
     {
-      strcpy(v8, vtable0); /*0x7b4bc3*/
-      v4 = v10; /*0x7b4bcc*/
+      strcpy( (char *)(v8), (const char *)(vtable0)); /*0x7b4bc3*/
+      v4 = (const char *)(v10); /*0x7b4bcc*/
     }
     else
     {
       *v8 = 0; /*0x7b4bd2*/
     }
-    strcat((char *)this->AbstractClass, v4); /*0x7b4bf4*/
+    strcat( (char *)this->AbstractClass, (const char *)(v4)); /*0x7b4bf4*/
     if ( vtable0 ) /*0x7b4c00*/
       __3_YAXPAX_Z(vtable0); /*0x7b4c03*/
   }
@@ -2448,19 +2448,19 @@ char E4Recv_7B50F0::sub_7B50F0(char a2)
   vtable0 = (const char *)this->AbstractClass; /*0x7b50f6*/
   if ( !this->AbstractClass ) /*0x7b50f6*/
     return 0; /*0x7b50fe*/
-  v6 = strlen(vtable0); /*0x7b5119*/
+  v6 = strlen( (const char *)(vtable0)); /*0x7b5119*/
   v7 = strchr(vtable0, a2); /*0x7b511b*/
   if ( v7 ) /*0x7b5125*/
   {
     do /*0x7b5157*/
     {
-      memcpy( v7, v7 + 1, (size_t)((char *)this->AbstractClass - (char *)v7 + v6-- - 1)); /*0x7b513b*/
+      memcpy( (void *)(v7), v7 + 1, (size_t)((char *)this->AbstractClass - (char *)v7 + v6-- - 1)); /*0x7b513b*/
       *((unsigned char *)this->AbstractClass + v6) = 0; /*0x7b5145*/
       v7 = strchr((const char *)this->AbstractClass, a2); /*0x7b514d*/
     }
     while ( v7 ); /*0x7b5157*/
     v8 = (char *)__2_YAPAXI_Z(strlen((const char *)this->AbstractClass) + 1); /*0x7b516c*/
-    strcpy(v8, (const char *)this->AbstractClass); /*0x7b5182*/
+    strcpy( (char *)(v8), (const char *)this->AbstractClass); /*0x7b5182*/
     __3_YAXPAX_Z(this->AbstractClass); /*0x7b518f*/
     this->AbstractClass = v8; /*0x7b5194*/
     return 1; /*0x7b5197*/
@@ -2484,7 +2484,7 @@ void E4Recv_7B5360::sub_7B5360(int Size)
   {
     v3 = (void *)__2_YAPAXI_Z(Size); /*0x7b538a*/
     this->AbstractClass = v3; /*0x7b5393*/
-    memset(v3, 0, Size); /*0x7b5398*/
+    memset( (void *)(v3), 0, Size); /*0x7b5398*/
   }
 
 }
@@ -2504,7 +2504,7 @@ unsigned int E4Recv_7B53B0::sub_7B53B0(ObjectClass * aP1, size_t Count)
   if ( v4 - 1 < Count ) /*0x7b53da*/
   {
     result = 538976288; /*0x7b53e3*/
-    memset(&aP1[v4 - 1], 0x20u, Count - (v4 - 1)); /*0x7b53ed*/
+    memset( (void *)(&aP1[v4 - 1]), 0x20u, Count - (v4 - 1)); /*0x7b53ed*/
   }
   aP1[Count] = 0; /*0x7b53f6*/
   return result; /*0x7b53fa*/
@@ -2542,12 +2542,12 @@ char E4Recv_7B54D0::sub_7B54D0(const char * Src, unsigned int a3)
   if ( this->AbstractClass ) /*0x7b54d5*/
   {
     if ( a3 > strlen((const char *)this->AbstractClass) ) /*0x7b5542*/
-      a3 = strlen(vtable0); /*0x7b5550*/
-    v8 = (char *)__2_YAPAXI_Z(strlen(vtable0) + 1 + strlen( (const char *)(Src))); /*0x7b557d*/
-    memset(v8, 0, strlen((const char *)this->AbstractClass) + 1 + strlen( (const char *)(Src))); /*0x7b55a0*/
-    strcpy(v8, (const char *)this->AbstractClass); /*0x7b55c3*/
-    memcpy(&v8[strlen( (const char *)(Src)) + a3], &v8[a3], strlen((const char *)this->AbstractClass) + 1 - a3); /*0x7b55ff*/
-    memcpy( &v8[a3], (const void *)(Src), strlen( (const char *)(Src))); /*0x7b5617*/
+      a3 = strlen( (const char *)(vtable0)); /*0x7b5550*/
+    v8 = (char *)__2_YAPAXI_Z(strlen( (const char *)(vtable0)) + 1 + strlen( (const char *)(Src))); /*0x7b557d*/
+    memset( (void *)(v8), 0, strlen((const char *)this->AbstractClass) + 1 + strlen( (const char *)(Src))); /*0x7b55a0*/
+    strcpy( (char *)(v8), (const char *)this->AbstractClass); /*0x7b55c3*/
+    memcpy( (void *)(&v8[strlen( (const char *)(Src)) + a3]), (const void *)(&v8[a3]), strlen((const char *)this->AbstractClass) + 1 - a3); /*0x7b55ff*/
+    memcpy( (void *)(&v8[a3]), (const void *)(Src), strlen( (const char *)(Src))); /*0x7b5617*/
     __3_YAXPAX_Z(this->AbstractClass); /*0x7b561f*/
     this->AbstractClass = v8; /*0x7b5627*/
     return 1; /*0x7b5629*/
@@ -2597,11 +2597,11 @@ char E4Recv_7B5640::sub_7B5640(char a2, unsigned int a3)
     v14 = 0; /*0x7b56e4*/
     v11 = vtable0[a3]; /*0x7b56ef*/
     vtable0[a3] = 0; /*0x7b56f1*/
-    strcpy(v8, (const char *)this->AbstractClass); /*0x7b5708*/
+    strcpy( (char *)(v8), (const char *)this->AbstractClass); /*0x7b5708*/
     *((unsigned char *)this->AbstractClass + a3) = v11; /*0x7b571c*/
     v13 = a2; /*0x7b5723*/
-    strcat( v8, (const char *)(&v13)); /*0x7b5743*/
-    strcat(v8, (const char *)this->AbstractClass + a3); /*0x7b5771*/
+    strcat( (char *)(v8), (const char *)(&v13)); /*0x7b5743*/
+    strcat( (char *)(v8), (const char *)this->AbstractClass + a3); /*0x7b5771*/
     __3_YAXPAX_Z(this->AbstractClass); /*0x7b577e*/
     this->AbstractClass = v10; /*0x7b5786*/
     return 1; /*0x7b5789*/
@@ -2654,13 +2654,13 @@ char ** E4Recv_7B5CA0::sub_7B5CA0(char ** a2)
   char v5; // al
   char *v6; // edx
 
-  v3 = 0; /*0x7b5ca6*/
+  v3 = (char *)(0); /*0x7b5ca6*/
   if ( this->AbstractClass ) /*0x7b5ca8*/
   {
     v3 = (char *)__2_YAPAXI_Z(strlen((const char *)this->AbstractClass) + 1); /*0x7b5cbf*/
-    strcpy(v3, (const char *)this->AbstractClass); /*0x7b5cd8*/
+    strcpy( (char *)(v3), (const char *)this->AbstractClass); /*0x7b5cd8*/
   }
-  for ( i = 0; v3 && i < strlen(v3); ++i ) /*0x7b5ce1*/
+  for ( i = 0; v3 && i < strlen( (const char *)(v3)); ++i ) /*0x7b5ce1*/
   {
     v5 = v3[i]; /*0x7b5cf7*/
     if ( v5 >= 97 && v5 <= 122 ) /*0x7b5d00*/
@@ -2669,9 +2669,9 @@ char ** E4Recv_7B5CA0::sub_7B5CA0(char ** a2)
   *a2 = 0; /*0x7b5d1a*/
   if ( v3 ) /*0x7b5d21*/
   {
-    v6 = (char *)__2_YAPAXI_Z(strlen(v3) + 1); /*0x7b5d34*/
+    v6 = (char *)__2_YAPAXI_Z(strlen( (const char *)(v3)) + 1); /*0x7b5d34*/
     *a2 = v6; /*0x7b5d3d*/
-    strcpy(v6, v3); /*0x7b5d50*/
+    strcpy( (char *)(v6), (const char *)(v3)); /*0x7b5d50*/
     __3_YAXPAX_Z(v3); /*0x7b5d59*/
   }
   return a2; /*0x7b5d61*/
@@ -2700,14 +2700,14 @@ char ** FromStringInt(IUnknown * aP0, int a2)
   sprintf(Buffer, "%d", a2); /*0x7b62a2*/
   *aP0 = 0; /*0x7b62b0*/
   if ( Buffer ) /*0x7b62b6*/
-    v3 = strlen(Buffer) + 1; /*0x7b62c1*/
+    v3 = strlen( (const char *)(Buffer)) + 1; /*0x7b62c1*/
   else
     v3 = 1; /*0x7b62c7*/
   v4 = (char *)RA2_OPNEW(v3); /*0x7b62cd*/
   *aP0 = v4; /*0x7b62d9*/
   *v4 = 0; /*0x7b62db*/
   if ( Buffer ) /*0x7b62e0*/
-    strcpy(*aP0, Buffer); /*0x7b62fb*/
+    strcpy( *aP0, (const char *)(Buffer)); /*0x7b62fb*/
   return aP0; /*0x7b6307*/
 }
 } // namespace gamemd
@@ -2724,14 +2724,14 @@ char ** FormatStringInt(INIClass * aP0, MPCooperative * aP1, ObjectClass * aP2)
   sprintf(Buffer, Buffer, aP1); /*0x7b6349*/
   *aP0 = 0; /*0x7b6357*/
   if ( Buffer ) /*0x7b635d*/
-    v5 = strlen(Buffer) + 1; /*0x7b6368*/
+    v5 = strlen( (const char *)(Buffer)) + 1; /*0x7b6368*/
   else
     v5 = 1; /*0x7b636e*/
   v6 = (char *)RA2_OPNEW(v5); /*0x7b6374*/
   *aP0 = v6; /*0x7b6380*/
   *v6 = 0; /*0x7b6382*/
   if ( Buffer ) /*0x7b6387*/
-    strcpy(*aP0, Buffer); /*0x7b63a1*/
+    strcpy( *aP0, (const char *)(Buffer)); /*0x7b63a1*/
   return aP0; /*0x7b63aa*/
 }
 } // namespace gamemd
@@ -2765,7 +2765,7 @@ char E4Recv_7B69F0::sub_7B69F0(size_t Count, wchar_t * Source)
   v6 = (unsigned short *)__2_YAPAXI_Z(4 * v4); /*0x7b6a16*/
   this->AbstractClass = v6; /*0x7b6a1e*/
   if ( vtable0 ) /*0x7b6a22*/
-    wcscpy(v6, vtable0); /*0x7b6a26*/
+    wcscpy( (wchar_t *)(v6), (const wchar_t *)(vtable0)); /*0x7b6a26*/
   else
     *v6 = 0; /*0x7b6a30*/
   if ( Source ) /*0x7b6a3b*/
@@ -2797,7 +2797,7 @@ char E4Recv_7B6A60::sub_7B6A60(ObjectClass * aP1)
     v6 = (unsigned short *)__2_YAPAXI_Z(4 * v5); /*0x7b6a9e*/
     this->AbstractClass = v6; /*0x7b6aa6*/
     if ( vtable0 ) /*0x7b6aab*/
-      wcscpy(v6, vtable0); /*0x7b6aaf*/
+      wcscpy( (wchar_t *)(v6), (const wchar_t *)(vtable0)); /*0x7b6aaf*/
     else
       *v6 = 0; /*0x7b6ab9*/
     wcscat((wchar_t *)this->AbstractClass, v2); /*0x7b6ac2*/
@@ -2834,7 +2834,7 @@ short E4Recv_7B6EE0::sub_7B6EE0(const wchar_t ** a2)
       break; /*0x7b6f1b*/
   }
   if ( i ) /*0x7b6f22*/
-    LOWORD(vtable0) = WideString::Erase( (int)((WideString *)this), 0, i); /*0x7b6f29*/
+    LOWORD(vtable0) = WideString::Erase( (int)((WideString *)this), 0, (void *)(i)); /*0x7b6f29*/
   return (int16_t)vtable0; /*0x7b6f2e*/
 
 }
@@ -2852,7 +2852,7 @@ size_t E4Recv_7B70B0::sub_7B70B0(ObjectClass * aP1, size_t Count)
   wchar_t *v8; // edi
   int i; // ecx
 
-  wcsncpy(aP1, (const wchar_t *)this->AbstractClass, Count); /*0x7b70c2*/
+  wcsncpy( (wchar_t *)(aP1), (const wchar_t *)this->AbstractClass, Count); /*0x7b70c2*/
   result = wcslen((const wchar_t *)this->AbstractClass); /*0x7b70ca*/
   if ( result < Count ) /*0x7b70d4*/
   {
@@ -2890,7 +2890,7 @@ CampaignScore * FormatWideString(wchar_t ** a1, const wchar_t * a2)
   *a1 = v4; /*0x7b7e1b*/
   *v4 = 0; /*0x7b7e1d*/
   if ( String ) /*0x7b7e24*/
-    wcscpy(*a1, String); /*0x7b7e2e*/
+    wcscpy( *a1, (const wchar_t *)(String)); /*0x7b7e2e*/
   return a1; /*0x7b7e38*/
 }
 } // namespace gamemd
@@ -2916,7 +2916,7 @@ wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1)
   v6 = (char *)*a1; /*0x7b7efa*/
   if ( !*a1 ) /*0x7b7efa*/
     v6 = &g_INI_DefaultBuffer; /*0x7b7f03*/
-  BulkCharToWide(v5, (uint8_t *)v6, v4); /*0x7b7f0d*/
+  BulkCharToWide( (unsigned short *)(v5), (uint8_t *)v6, v4); /*0x7b7f0d*/
   if ( v5 ) /*0x7b7f14*/
     v7 = wcslen(v5) + 1; /*0x7b7f1f*/
   else
@@ -2925,7 +2925,7 @@ wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1)
   v9 = v8; /*0x7b7f30*/
   *v8 = 0; /*0x7b7f37*/
   if ( v5 ) /*0x7b7f3c*/
-    wcscpy(v8, v5); /*0x7b7f40*/
+    wcscpy( (wchar_t *)(v8), (const wchar_t *)(v5)); /*0x7b7f40*/
   RA2_OPDEL(v5); /*0x7b7f49*/
   *aP0 = 0; /*0x7b7f51*/
   if ( v9 ) /*0x7b7f5a*/
@@ -2933,7 +2933,7 @@ wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1)
     v10 = wcslen(v9); /*0x7b7f5d*/
     v11 = (wchar_t *)RA2_OPNEW(2 * v10 + 2); /*0x7b7f67*/
     *aP0 = v11; /*0x7b7f6e*/
-    wcscpy(v11, v9); /*0x7b7f71*/
+    wcscpy( (wchar_t *)(v11), (const wchar_t *)(v9)); /*0x7b7f71*/
     RA2_OPDEL(v9); /*0x7b7f77*/
   }
   return aP0; /*0x7b7f7f*/
@@ -2961,25 +2961,25 @@ char ** sub_7B7F90(char ** a1, const wchar_t ** a2)
   v6 = (wchar_t *)*a2; /*0x7b7fbd*/
   if ( !*a2 ) /*0x7b7fbd*/
     v6 = &g_TypeClass_DefaultString; /*0x7b7fc6*/
-  CopyWideToChar(v5, (char *)v6, v4); /*0x7b7fd0*/
+  CopyWideToChar( (unsigned char *)(v5), (char *)v6, v4); /*0x7b7fd0*/
   if ( v5 ) /*0x7b7fd7*/
-    v7 = strlen(v5) + 1; /*0x7b7fe0*/
+    v7 = strlen( (const char *)(v5)) + 1; /*0x7b7fe0*/
   else
     v7 = 1; /*0x7b7fe6*/
   v8 = (char *)RA2_OPNEW(v7); /*0x7b7ff1*/
   *v8 = 0; /*0x7b7ff8*/
   if ( v5 ) /*0x7b7ffb*/
   {
-    strcpy(v8, v5); /*0x7b8013*/
+    strcpy( (char *)(v8), (const char *)(v5)); /*0x7b8013*/
     v3 = a1; /*0x7b801c*/
   }
   RA2_OPDEL(v5); /*0x7b8021*/
   *v3 = 0; /*0x7b8029*/
   if ( !v8 ) /*0x7b8032*/
     return v3; /*0x7b807a*/
-  v9 = (char *)RA2_OPNEW(strlen(v8) + 1); /*0x7b8045*/
+  v9 = (char *)RA2_OPNEW(strlen( (const char *)(v8)) + 1); /*0x7b8045*/
   *v3 = v9; /*0x7b804e*/
-  strcpy(v9, v8); /*0x7b8060*/
+  strcpy( (char *)(v9), (const char *)(v8)); /*0x7b8060*/
   RA2_OPDEL(v8); /*0x7b8069*/
   return a1; /*0x7b8075*/
 }
@@ -3007,13 +3007,13 @@ wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar
   v7 = v6; /*0x7b80b5*/
   *v6 = 0; /*0x7b80bc*/
   if ( a1 ) /*0x7b80c1*/
-    wcscpy(v6, a1); /*0x7b80c5*/
-  String = 0; /*0x7b80cf*/
+    wcscpy( (wchar_t *)(v6), (const wchar_t *)(a1)); /*0x7b80c5*/
+  String = (wchar_t *)(0); /*0x7b80cf*/
   if ( v7 ) /*0x7b80d7*/
   {
     v8 = wcslen(v7); /*0x7b80da*/
     String = (unsigned int)(wchar_t *)RA2_OPNEW(2 * v8 + 2); /*0x7b80eb*/
-    wcscpy(String, v7); /*0x7b80ef*/
+    wcscpy( (wchar_t *)(String), (const wchar_t *)(v7)); /*0x7b80ef*/
   }
   v9 = *a2; /*0x7b80fb*/
   if ( !*a2 ) /*0x7b80fb*/
@@ -3026,7 +3026,7 @@ wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar
     v11 = (wchar_t *)RA2_OPNEW(2 * v10 + 2); /*0x7b8129*/
     v12 = String; /*0x7b812e*/
     *aP0 = v11; /*0x7b8132*/
-    wcscpy(v11, v12); /*0x7b8136*/
+    wcscpy( (wchar_t *)(v11), (const wchar_t *)(v12)); /*0x7b8136*/
     if ( String ) /*0x7b8144*/
       RA2_OPDEL(String); /*0x7b8147*/
   }
@@ -3050,13 +3050,13 @@ wchar_t ** ConcatWString(GameSetup * aP0, const wchar_t ** a1, const wchar_t ** 
   size_t v11; // eax
   wchar_t *v12; // eax
 
-  v4 = aP0; /*0x7b8176*/
-  v5 = 0; /*0x7b8178*/
+  v4 = (wchar_t **)(aP0); /*0x7b8176*/
+  v5 = (wchar_t *)(0); /*0x7b8178*/
   if ( *a1 ) /*0x7b817a*/
   {
     v6 = wcslen(*a1); /*0x7b8185*/
     v5 = (wchar_t *)RA2_OPNEW(2 * v6 + 2); /*0x7b8196*/
-    wcscpy(v5, *a1); /*0x7b819a*/
+    wcscpy( (wchar_t *)(v5), *a1); /*0x7b819a*/
   }
   v7 = *a2; /*0x7b81a7*/
   if ( *a2 || (v7 = &g_TypeClass_DefaultString) != 0 ) /*0x7b81b4*/
@@ -3068,13 +3068,13 @@ wchar_t ** ConcatWString(GameSetup * aP0, const wchar_t ** a1, const wchar_t ** 
     v10 = (wchar_t *)RA2_OPNEW(4 * v9); /*0x7b81db*/
     v5 = v10; /*0x7b81e3*/
     if ( v8 ) /*0x7b81e7*/
-      wcscpy(v10, v8); /*0x7b81eb*/
+      wcscpy( (wchar_t *)(v10), (const wchar_t *)(v8)); /*0x7b81eb*/
     else
       *v10 = 0; /*0x7b81f5*/
     wcscat(v5, v7); /*0x7b81fc*/
     if ( v8 ) /*0x7b8206*/
       RA2_OPDEL(v8); /*0x7b8209*/
-    v4 = aP0; /*0x7b8211*/
+    v4 = (wchar_t **)(aP0); /*0x7b8211*/
   }
   *v4 = 0; /*0x7b8217*/
   if ( v5 ) /*0x7b821e*/
@@ -3082,7 +3082,7 @@ wchar_t ** ConcatWString(GameSetup * aP0, const wchar_t ** a1, const wchar_t ** 
     v11 = wcslen(v5); /*0x7b8221*/
     v12 = (wchar_t *)RA2_OPNEW(2 * v11 + 2); /*0x7b822b*/
     *v4 = v12; /*0x7b8232*/
-    wcscpy(v12, v5); /*0x7b8234*/
+    wcscpy( (wchar_t *)(v12), (const wchar_t *)(v5)); /*0x7b8234*/
     RA2_OPDEL(v5); /*0x7b823a*/
   }
   return v4; /*0x7b8242*/
@@ -3158,7 +3158,7 @@ int E4Recv_7B9DF0::sub_7B9DF0(LONG * a2, LONG * a3)
   y = Point.y; /*0x7b9e09*/
   *a2 = Point.x; /*0x7b9e0d*/
   *a3 = y; /*0x7b9e15*/
-  return (*((int (**)(ObjectClass *, LONG *, LONG *))this->vtable1 + 17))(this, a2, a3); /*0x7b9e1e*/
+  return (*((int (**)(ObjectClass *, LONG *, LONG *))this->vtable1 + 17))( this, (LONG *)(a2), (LONG *)(a3)); /*0x7b9e1e*/
 
 }
 } // namespace gamemd
@@ -3192,9 +3192,9 @@ char sub_7BBFF0(int a1, int a2, int * a4, int arg4, unsigned char * a6, int * a7
   unsigned char v12[20]; // [esp+Ch] [ebp-20h] BYREF
   int v13[3]; // [esp+20h] [ebp-Ch] BYREF
 
-  v11 = (int *)(*(int (**)(int *, unsigned char *, int))(*arg4 + 120))( (int *)(arg4), v12, arg4); /*0x7bc022*/
+  v11 = (int *)(*(int (**)(int *, unsigned char *, int))(*arg4 + 120))( (int *)&arg4, (unsigned char *)(v12), arg4); /*0x7bc022*/
   v9 = (*(int (**)(int))(*(unsigned int *)a1 + 120))(a1); /*0x7bc02a*/
-  return CalcSurfaceBlitRects(a1, v9, v13, a2, arg4, v11, a8, a8, a8); /*0x7bc036*/
+  return CalcSurfaceBlitRects( a1, (int *)&v9, (IUnknown *)(v13), a2, (int *)&arg4, (IUnknown *)(v11), (unsigned char *)(a8), (int *)(a8), (int *)(a8)); /*0x7bc036*/
 }
 } // namespace gamemd
 
@@ -3412,7 +3412,7 @@ short sub_7BC890(unsigned short * a1, short * a2, int a3, int a4, int a5, int a6
       result = *a2++; /*0x7bc8a3*/
       if ( result ) /*0x7bc8ac*/
         *(unsigned short *)a1->__pad_0 = result; /*0x7bc8ae*/
-      a1 = (_BlitTrans_G *)((char *)a1 + 2); /*0x7bc8b1*/
+      a1 = (unsigned short *)((_BlitTrans_G *)((char *)a1 + 2)); /*0x7bc8b1*/
       --v11; /*0x7bc8b4*/
     }
     while ( v11 ); /*0x7bc8b5*/
@@ -3555,7 +3555,7 @@ char * sub_7BCAF0(char * a1, int a2, unsigned short a3)
     v3 = a1 + 2; /*0x7bcb0b*/
     v4 = a2 - 1; /*0x7bcb0e*/
   }
-  result = 0; /*0x7bcb11*/
+  result = (char *)(0); /*0x7bcb11*/
   v6 = v4 >> 1; /*0x7bcb16*/
   if ( v4 >> 1 ) /*0x7bcb16*/
   {
@@ -3625,7 +3625,7 @@ char sub_7BE940(int a1, int * a2)
 {
   int v4; // eax
   unsigned int *v5; // ebx
-  int (__cdecl *v6)(int, int, unsigned int, unsigned int); // eax
+  int (__cdecl *)(int, int, unsigned int, unsigned int); // eax
   int v7; // ecx
   int v8; // edx
   int v9; // edi
@@ -3705,10 +3705,10 @@ int E4Recv_7BF0B0::sub_7BF0B0()
 {
 
   int *v2; // edi
-  void (__cdecl *v3)(TechnoClass *, int, int, int); // eax
+  void (__cdecl *)(TechnoClass *, int, int, int); // eax
   int v4; // eax
-  void (__cdecl *v5)(TechnoClass *, int, char *, int); // eax
-  int (__cdecl *v6)(TechnoClass *, int); // eax
+  void (__cdecl *)(TechnoClass *, int, char *, int); // eax
+  int (__cdecl *)(TechnoClass *, int); // eax
 
   v2 = (int *)*((unsigned int *)this + 439); /*0x7bf0b4*/
   if ( (v2[5] & 4) != 0 || (this->ironTintTimer[2] & 1) != 0 ) /*0x7bf0c9*/
@@ -3756,7 +3756,7 @@ int E4Recv_7BF140::sub_7BF140()
     sub_7BEFE0((int)this); /*0x7bf150*/
     v3 = (int *)this->ironTintTimer[1]; /*0x7bf155*/
     sub_7BE940((int)this, v3); /*0x7bf15f*/
-    *((unsigned int *)this + 439) = v3; /*0x7bf164*/
+    *((unsigned int *)this + 439) = (unsigned int)v3; /*0x7bf164*/
     if ( (this->ironTintTimer[2] & 8) == 0 ) /*0x7bf172*/
       this->ironTintTimer[1] = v3[3]; /*0x7bf177*/
     return -1; /*0x7bf17d*/
@@ -3772,10 +3772,10 @@ int E4Recv_7BF190::sub_7BF190()
 {
 
   unsigned int *v2; // edi
-  void (__cdecl *v3)(TechnoClass *, int, unsigned int, unsigned int); // eax
+  void (__cdecl *)(TechnoClass *, int, unsigned int, unsigned int); // eax
   int v4; // eax
-  void (__cdecl *v5)(TechnoClass *, int, char *, int); // eax
-  int (__cdecl *v6)(TechnoClass *, unsigned int); // eax
+  void (__cdecl *)(TechnoClass *, int, char *, int); // eax
+  int (__cdecl *)(TechnoClass *, unsigned int); // eax
 
   v2 = (unsigned int *)*((unsigned int *)this + 439); /*0x7bf194*/
   if ( (v2[5] & 4) != 0 || (this->ironTintTimer[2] & 1) != 0 ) /*0x7bf1a9*/
@@ -3865,7 +3865,7 @@ int sub_7BF240(int a1, int a2, char * DstBuf, int MaxCharCount)
         result = _lseek(v5, MaxCharCount, (int)DstBuf) == -1; /*0x7bf317*/
         if ( !result ) /*0x7bf31b*/
         {
-          result = _read(v5, &MaxCharCount, 1u) != 1; /*0x7bf332*/
+          result = _read( v5, (void *)(&MaxCharCount), 1u) != 1; /*0x7bf332*/
           if ( !result ) /*0x7bf334*/
           {
             v7 = _lseek(v5, -1, 1); /*0x7bf33b*/
@@ -3877,7 +3877,7 @@ int sub_7BF240(int a1, int a2, char * DstBuf, int MaxCharCount)
       {
         result = _lseek(v5, MaxCharCount - 1, (int)DstBuf) == -1; /*0x7bf2dc*/
         if ( !result ) /*0x7bf2e0*/
-          return _read(v5, &MaxCharCount, 1u) != 1; /*0x7bf2fc*/
+          return _read( v5, (void *)(&MaxCharCount), 1u) != 1; /*0x7bf2fc*/
       }
       return result;
     case 9: /*0x7bf25c*/

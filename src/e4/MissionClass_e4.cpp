@@ -35,7 +35,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v3 =(unsigned int)g_Str__none_; /*0x5b3776*/
   else
     v3 = off_816CAC[(int)this->ObjectClass]; /*0x5b377d*/
-  if ( !((INIClass *)(gamemd::INIClass *)((int)a2))->BinarySearchSection( (uint8_t *)v3) ) /*0x5b3787*/
+  if ( !((INIClass *)((int)a2))->BinarySearchSection( (uint8_t *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
   if ( this->ObjectClass == (void *)-1 ) /*0x5b379e*/
     v4 =(unsigned int)g_Str__none_; /*0x5b37a0*/
@@ -100,7 +100,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     (uint8_t *)v10,
     (uint8_t *)g_INI_Key_Rate,
     *(double *)&((unsigned int *)this)[0]);
-  vtable0 = (char *)(this->ObjectClass);
+  vtable0 = (void *)((char *)(this->ObjectClass));
   __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
   *(double *)&((unsigned int *)this)[0] = _RT1; /*0x5b38bb*/
   if ( vtable0 == (void *)-1 ) /*0x5b38c1*/

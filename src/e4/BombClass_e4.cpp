@@ -68,10 +68,10 @@ void * BombClass::GetCurrentFrame()
   if ( (&this->audioController)[0] == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
   v2 = 2 /*0x438a4c*/
-     * ((*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - (&this->audioController)[1])
+     * ((*(unsigned int *)((char *)&stru_A8EB00 + 416) - (&this->audioController)[1])
       / (*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048)
        / 6));
-  if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
+  if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
     return (void *)(__0Iostream_init_QAE_XZ_1((Iostream_init *)v2)); /*0x438a59*/
@@ -106,7 +106,7 @@ int BombClass::Stat(int * a2)
   int BombClass_field_2C; // eax
   int v9; // eax
 
-  ((AbstractClass *)(gamemd::AbstractClass *)this)->ProcessPower(); /*0x438a99*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x438a99*/
   BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
@@ -186,7 +186,7 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
   {
     if ( aP0 ) /*0x438b59*/
     {
-      ((AbstractClass *)(gamemd::AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x438b62*/
+      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x438b62*/
       aP0->vtable1 = &vt_BombClass; /*0x438b67*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b6d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b74*/
@@ -240,7 +240,7 @@ BombClass * BombClass::CopyTo(char a2)
   ((AbstractClass*)((gamemd::AbstractClass *)this))->DTOR(); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
     __3_YAXPAX_Z(this); /*0x43946f*/
-  return this; /*0x439479*/
+  return (BombClass *)this; /*0x439479*/
 
 }
 } // namespace gamemd

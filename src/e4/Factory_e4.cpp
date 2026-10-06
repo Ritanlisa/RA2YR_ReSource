@@ -200,7 +200,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
           {
             v15 = *(unsigned int *)aP0->__pad_0; /*0x718d13*/
             v70 = (int)aP0->field_4 / 256; /*0x718d28*/
-            if ( *(unsigned int *)(*(int (**)(unsigned int, unsigned int *))(**(unsigned int **)v71 + 440))(*(unsigned int *)v71, v73) == IDA___PAIR32__(v70, v15 / 256) ) /*0x718d3c*/
+            if ( *(unsigned int *)(*(int (**)(unsigned int, unsigned int *))(**(unsigned int **)v71 + 440))( *(unsigned int *)v71, (unsigned int *)(v73)) == IDA___PAIR32__(v70, v15 / 256) ) /*0x718d3c*/
               IDA_LOBYTE(a5) = 1; /*0x718d49*/
           }
         }
@@ -213,7 +213,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
             v17 = *(unsigned int *)aP0->__pad_0; /*0x718d78*/
             v18 = **(unsigned int **)v71; /*0x718d86*/
             v70 = (int)aP0->field_4 / 256; /*0x718d8b*/
-            if ( *(unsigned int *)(*(int (**)(unsigned int *))(v18 + 440))(v73) == IDA___PAIR32__(v70, v17 / 256) ) /*0x718da1*/
+            if ( *(unsigned int *)(*(int (**)(unsigned int *))(v18 + 440))( (unsigned int *)(v73)) == IDA___PAIR32__(v70, v17 / 256) ) /*0x718da1*/
               IDA_LOBYTE(a5) = 1; /*0x718dae*/
           }
         }
@@ -231,7 +231,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
       }
       v77 = (int *)((gamemd::CellClass *)((*v8)));
       v78 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v6[11])));
-      a5 = (gamemd::CellClass *)(a5);
+      a5 = (void *)((gamemd::CellClass *)(a5));
       v79 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v6[12])));
       v22 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v74));
       v23 = ObjectPlacement::CalcPosition((ObjectPlacement *)v22, &v80, &v74, a5, v67[0], 0); /*0x718e25*/
@@ -243,15 +243,15 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
       IDA_HIWORD(v68) = v6[11] / 256; /*0x718e69*/
       *(unsigned int *)v71 = v68; /*0x718e76*/
       v25 = *v24; /*0x718e7a*/
-      v26 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v71); /*0x718e82*/
-      if ( (*(int (**)(unsigned int, void *, int, int, unsigned int))(v25 + 428))(v6[3], v26, -1, -1, 0) ) /*0x718e8b*/
+      v26 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v71)); /*0x718e82*/
+      if ( (*(int (**)(unsigned int, void *, int, int, unsigned int))(v25 + 428))( v6[3], (void *)(v26), -1, -1, 0) ) /*0x718e8b*/
       {
         *v8 = (int)(((char *)&g_BuildingLoadQueue_Array)); /*0x718e9d*/
         v6[11] = g_BuildingLoadQueue_Array.q004; /*0x718ea4*/
         v6[12] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718ead*/
       }
       v27 = (gamemd::CellClass *)(((Coord *)((Coord *)&((unsigned int *)(stru_87F5F0.__pad_58))[416]))->To_Cell(&v76));
-      (*(void (**)(CellClass *, int *))((&v27->mapCoords)[0] + 72))(v27, (int *)&v79); /*0x718ec8*/
+      (*(void (**)(CellClass *, int *))((&v27->mapCoords)[0] + 72))( (CellClass *)(v27), (int *)&v79); /*0x718ec8*/
       if ( *v8 == g_BuildingLoadQueue_Array.q008 /*0x718ef5*/
         && v6[11] == g_BuildingLoadQueue_Array.q008
         && v6[12] == g_BuildingLoadQueue_Array.q008 )
@@ -262,8 +262,8 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         {
           if ( (v29[20] & 2) != 0 ) /*0x718f10*/
           {
-            v30 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(*(unsigned int *)((*(int (**)(unsigned int *))(*v28 + 132))(v28) + 1460))));
-            v31 = (unsigned int *)((gamemd::CellClass *)((*(int (**)(unsigned char *, int *, unsigned int))(*(unsigned int *)v29 + 76))(v29, (int *)&v78, 0)));
+            v30 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(*(unsigned int *)((*(int (**)(unsigned int *))(*v28 + 132))( (unsigned int *)(v28)) + 1460))));
+            v31 = (unsigned int *)((gamemd::CellClass *)((*(int (**)(unsigned char *, int *, unsigned int))(*(unsigned int *)v29 + 76))( (unsigned char *)(v29), (int *)&v78, 0)));
             *(unsigned short *)v67 = *v31 / 256; /*0x718f45*/
             v32 = v6[3]; /*0x718f54*/
             *(unsigned short *)&v67[2] = v31[1] / 256; /*0x718f5c*/
@@ -273,7 +273,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
             v35 = v6[3]; /*0x718f7e*/
             *(unsigned int *)v71 = (unsigned int)(v34); /*0x718f81*/
             v69 = (*(int (**)(int, unsigned int))(*(unsigned int *)v35 + 188))(v35, 0); /*0x718f8e*/
-            memset(v67, 0, sizeof(v67)); /*0x718fae*/
+            memset( (void *)(v67), 0, sizeof(v67)); /*0x718fae*/
             v36 = v6[3]; /*0x718fb8*/
             v59 = IDA_BYTE1(*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v68) + 80)) /*0x718fdd*/
                 & 1;
@@ -303,10 +303,10 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
                                 0);
             if ( *(unsigned int *)v66 != ((char *)&g_BuildingLoadQueue_Array) ) /*0x71901f*/
             {
-              v38 = (int *)(((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v66));
+              v38 = (void *)((int *)(((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v66))));
               v61 = (char)aP0; /*0x71904f*/
-              v60 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v38 + 72))(v38, (int *)&v78); /*0x71905a*/
-              v39 = (ObjectPlacement *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v66); /*0x71906a*/
+              v60 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v38 + 72))( (void *)(v38), (int *)&v78); /*0x71905a*/
+              v39 = (ObjectPlacement *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v66)); /*0x71906a*/
               v40 = ObjectPlacement::CalcPosition(v39, v81, v60, v61, v65, 0); /*0x719071*/
               *v8 = *v40; /*0x71907a*/
               v6[11] = v40[1]; /*0x71907f*/
@@ -321,11 +321,11 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
       v41 = (unsigned char *)v6[3]; /*0x71908d*/
       if ( v41[636] ) /*0x719090*/
       {
-        (*(void (**)(unsigned char *, unsigned int *))(*(unsigned int *)v41 + 240))(v41, v6 + 10); /*0x71909d*/
+        (*(void (**)(unsigned char *, unsigned int *))(*(unsigned int *)v41 + 240))( (unsigned char *)(v41), v6 + 10); /*0x71909d*/
       }
       else
       {
-        v42 = *(unsigned int *)((*(int (**)(unsigned char *))(*(unsigned int *)v41 + 132))(v41) + 1460); /*0x7190b0*/
+        v42 = *(unsigned int *)((*(int (**)(unsigned char *))(*(unsigned int *)v41 + 132))( (unsigned char *)(v41)) + 1460); /*0x7190b0*/
         v43 = *(unsigned int *)aP0->__pad_0 / 256; /*0x7190cf*/
         v44 = (int)aP0->field_4 / 256; /*0x7190d2*/
         IDA_LOWORD(aP0) = v43; /*0x7190dc*/
@@ -334,7 +334,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         {
           v45 = *(unsigned int *)v6[3]; /*0x719106*/
           v46 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0); /*0x719114*/
-          if ( (*(int (**)(unsigned int, void *, int, int, unsigned int, int))(v45 + 428))(v6[3], v46, -1, -1, 0, 1) ) /*0x71911d*/
+          if ( (*(int (**)(unsigned int, void *, int, int, unsigned int, int))(v45 + 428))( v6[3], (void *)(v46), -1, -1, 0, 1) ) /*0x71911d*/
           {
             v47 = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex((int16_t *)&aP0, v42, v65); /*0x719137*/
             v48 = v6[3]; /*0x71913e*/
@@ -365,7 +365,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         {
           (*(void (**)(unsigned int, unsigned int *))(*(unsigned int *)v6[3] + 244))(v6[3], v6 + 10); /*0x7191b5*/
           v50 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&aP0); /*0x7191c5*/
-          v51 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v50 + 72))(v50, v81); /*0x7191d6*/
+          v51 = (unsigned int *)(*(int (**)(void *, int *))(*(unsigned int *)v50 + 72))( (void *)(v50), (int *)(v81)); /*0x7191d6*/
           v52 = (int16_t)(v51[1] / 256) << 8; /*0x71920c*/
           *v8 = ((int16_t)(*v51 / 256) << 8) + 128; /*0x71920f*/
           v6[11] = v52 + 128; /*0x71921b*/
@@ -386,7 +386,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
     v75 = v56[39]; /*0x719295*/
     v76 = v56[40]; /*0x71929c*/
     v77 = v56[41]; /*0x7192a3*/
-    (*(void (**)(unsigned int *, int *))(*v56 + 240))( v56, (int *)(&v75)); /*0x7192ae*/
+    (*(void (**)(unsigned int *, int *))(*v56 + 240))( (unsigned int *)(v56), (int *)(&v75)); /*0x7192ae*/
     return 0; /*0x7192b5*/
   }
   else

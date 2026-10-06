@@ -50,9 +50,9 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
             v8 = v17; /*0x409e5d*/
           if ( !v8 ) /*0x409e61*/
             goto LABEL_25; /*0x409e61*/
-          v9 = a4; /*0x409e78*/
+          v9 = (const void *)(a4); /*0x409e78*/
           a4 += v8; /*0x409e7a*/
-          qmemcpy((void *)(*(unsigned int *)(a1 + 124) + *(unsigned int *)(a1 + 128) - v7), v9, v8); /*0x409e7f*/
+          qmemcpy( (void *)(*(unsigned int *)(a1 + 124) + *(unsigned int *)(a1 + 128) - v7), (const void *)(v9), v8); /*0x409e7f*/
           v20 += v8; /*0x409e9c*/
           v17 -= v8; /*0x409ea0*/
           *(unsigned int *)(a1 + 132) -= v8; /*0x409ea4*/

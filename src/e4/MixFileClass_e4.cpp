@@ -72,7 +72,7 @@ void MixFileClass::CleanupCache()
       v5 = (unsigned char *)((char *)dword_B077B4 + 16);
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e29b*/
       {
-        v6 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
+        v6 = (void *)((unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3)));
         v7 = (unsigned int *)((char *)dword_B077B4 + 12);
         if ( v6 ) /*0x69e2ae*/
           ((MixFileClass *)v6)->CacheNode_Dtor( 1); /*0x69e2b2*/

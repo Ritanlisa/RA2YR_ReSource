@@ -398,7 +398,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     v4 = *(void **)(g_MissionQueueFrame.briefing[339] + 4 * i); /*0x5a1cc0*/
     if ( v4 ) /*0x5a1cc5*/
     {
-      TileNode::Cleanup(*(TileNode **)(g_MissionQueueFrame.briefing[339] + 4 * i)); /*0x5a1cc9*/
+      TileNode::Cleanup( (void *)(*(TileNode **)(g_MissionQueueFrame.briefing[339] + 4 * i))); /*0x5a1cc9*/
       delete v4; /*0x5a1ccf*/
     }
   }
@@ -410,7 +410,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     do /*0x5a1d4f*/
     {
       *(unsigned int *)v16 = *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163]); /*0x5a1d08*/
-      v7 = (RandomMap *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v16); /*0x5a1d11*/
+      v7 = (RandomMap *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v16)); /*0x5a1d11*/
       if ( *(unsigned int *)(v5 + g_MissionQueueFrame.localVariables[163] + 56) == -1 /*0x5a1d3b*/
         && (*(unsigned short *)(v5 + g_MissionQueueFrame.localVariables[163])
          || *(unsigned short *)(v5 + g_MissionQueueFrame.localVariables[163] + 2))
@@ -617,8 +617,8 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   }
   else
   {
-    v40 = 0; /*0x5a461c*/
-    v5 = 0; /*0x5a4624*/
+    v40 = (float *)(0); /*0x5a461c*/
+    v5 = (float *)(0); /*0x5a4624*/
   }
   v6 = (int *)RA2_OPNEW(0x14u); /*0x5a462a*/
   v7 = v6; /*0x5a462f*/
@@ -644,7 +644,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   }
   else
   {
-    v7 = 0; /*0x5a4680*/
+    v7 = (int *)(0); /*0x5a4680*/
   }
   for ( i = 0; i <= *v7; *(unsigned int *)(v7[2] + 4 * i - 4) = 0 ) /*0x5a4688*/
     ++i; /*0x5a468d*/
@@ -677,7 +677,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
       v5 = v40; /*0x5a471b*/
       v3 = 25 * a2; /*0x5a471f*/
     }
-    *(unsigned int *)(v7[2] + 4 * v12) = v5; /*0x5a4726*/
+    *(unsigned int *)(v7[2] + 4 * v12) = (unsigned int)v5; /*0x5a4726*/
     v16 = v7[3]; /*0x5a472b*/
     ++*v7; /*0x5a4731*/
     if ( (unsigned int)v5 > v16 ) /*0x5a4733*/
@@ -698,15 +698,15 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
   }
   else
   {
-    v17 = 0; /*0x5a4746*/
-    v39 = 0; /*0x5a4748*/
+    v17 = (int16_t *)(0); /*0x5a4746*/
+    v39 = (int16_t *)(0); /*0x5a4748*/
   }
   v42 = 0; /*0x5a4783*/
   if ( a2 > 0 ) /*0x5a478d*/
   {
     while ( v17 && v41 < v3 ) /*0x5a479f*/
     {
-      v20 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj(v17)); /*0x5a47ba*/
+      v20 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj( (int16_t *)(v17))); /*0x5a47ba*/
       if ( ((Cell*)v20)->IsEmpty() && !v20[57] && v20[17] == -1 && v20[59] != 3 ) /*0x5a47ec*/
       {
         v50 = (unsigned int)((Random *)(&unk_ABE890))->State(); /*0x5a47fc*/
@@ -794,7 +794,7 @@ int ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
       }
       else
       {
-        v39 = 0; /*0x5a4a6d*/
+        v39 = (int16_t *)(0); /*0x5a4a6d*/
       }
       v5 = v40; /*0x5a4aa4*/
       if ( v42 >= a2 ) /*0x5a4aaa*/
@@ -1201,7 +1201,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
         v39[2] = 0; /*0x5a681d*/
         v39[0] = ((int16_t)v19 << 8) + 128; /*0x5a6828*/
         v39[1] = (IDA_SHIWORD(v19) << 8) + 128; /*0x5a6836*/
-        if ( (*(uint8_t (**)(int, unsigned int *, unsigned int))(v22 + 216))(v16, v39, 0) ) /*0x5a683d*/
+        if ( (*(uint8_t (**)(int, unsigned int *, unsigned int))(v22 + 216))( v16, (unsigned int *)(v39), 0) ) /*0x5a683d*/
         {
           v23 = *(unsigned int *)v16; /*0x5a684d*/
           v24 = *(unsigned int *)(*(unsigned int *)(v16 + 1312) + 160); /*0x5a6852*/
@@ -1312,7 +1312,7 @@ int PlaceRandomNeutralUnits(int a1)
         if ( !v9 ) /*0x5a6a0b*/
         {
   LABEL_13:
-          v8 = 0; /*0x5a6a2f*/
+          v8 = (unsigned int *)(0); /*0x5a6a2f*/
           goto LABEL_14; /*0x5a6a2f*/
         }
         Index = ((BuildingTypeClass *)(*(&off_82B180 + v5)))->FindIndex(); /*0x5a6a14*/
@@ -1354,12 +1354,12 @@ int PlaceRandomNeutralUnits(int a1)
           v15 = *v8; /*0x5a6b10*/
           v28[1] = (IDA_SHIWORD(v18) << 8) + 128; /*0x5a6b16*/
           v28[2] = 0; /*0x5a6b1d*/
-          if ( (*(uint8_t (**)(unsigned int *, unsigned int *, unsigned int))(v15 + 216))(v8, v28, 32 * v14) ) /*0x5a6b21*/
+          if ( (*(uint8_t (**)(unsigned int *, unsigned int *, unsigned int))(v15 + 216))( (unsigned int *)(v8), (unsigned int *)(v28), 32 * v14) ) /*0x5a6b21*/
           {
-            v16 = *(unsigned int *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 160); /*0x5a6b35*/
+            v16 = *(unsigned int *)((*(int (**)(unsigned int *))(*v8 + 132))( (unsigned int *)(v8)) + 160); /*0x5a6b35*/
             v8[27] = v16; /*0x5a6b3d*/
             v8[28] = v16; /*0x5a6b40*/
-            (*(void (**)(unsigned int *, int))(*v8 + 292))(v8, 2); /*0x5a6b47*/
+            (*(void (**)(unsigned int *, int))(*v8 + 292))( (unsigned int *)(v8), 2); /*0x5a6b47*/
             v17 = 1; /*0x5a6b51*/
             IDA_LODWORD(v21) = v21 + 1; /*0x5a6b57*/
           }
@@ -1369,7 +1369,7 @@ int PlaceRandomNeutralUnits(int a1)
           goto LABEL_27; /*0x5a6b62*/
       }
       if ( v8 ) /*0x5a6b72*/
-        (*(void (**)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x5a6b7a*/
+        (*(void (**)(unsigned int *, int))(*v8 + 32))( (unsigned int *)(v8), 1); /*0x5a6b7a*/
   LABEL_27:
       result = v20; /*0x5a6b7d*/
       ++v19; /*0x5a6b8c*/
@@ -1419,7 +1419,7 @@ LABEL_6:
   {
     v10[0] = v4; /*0x5a6bd2*/
     v10[1] = v7; /*0x5a6bd7*/
-    v8 = (CellLand *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v10); /*0x5a6bdc*/
+    v8 = (CellLand *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v10)); /*0x5a6bdc*/
     if ( (uint8_t)CellLand::IsBuildable(v8) ) /*0x5a6be3*/
       return 0; /*0x5a6bfa*/
     if ( ++v7 >= v6 ) /*0x5a6bef*/
@@ -1455,7 +1455,7 @@ int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4)
 
   v19 = (unsigned short *)(aP1); /*0x5a6c1a*/
   v4 = (unsigned int *)*((unsigned int *)dword_A8ED2C + aP0); /*0x5a6c1e*/
-  result = (*(int (**)(unsigned int *))(*v4 + 156))(v4); /*0x5a6c26*/
+  result = (*(int (**)(unsigned int *))(*v4 + 156))( (unsigned int *)(v4)); /*0x5a6c26*/
   v20 = result; /*0x5a6c2e*/
   if ( result ) /*0x5a6c32*/
   {
@@ -2023,9 +2023,9 @@ void int PlaceMapSeedBuildingsStrategic(int a1)
       v24 = (int16_t)v11; /*0x5a7a16*/
       v26 = 0; /*0x5a7a1c*/
       v27 = 0; /*0x5a7a20*/
-      v13 = v38; /*0x5a7a24*/
+      v13 = (int *)(v38); /*0x5a7a24*/
       v25 = v12; /*0x5a7a28*/
-      v23 = v38; /*0x5a7a2c*/
+      v23 = (int *)(v38); /*0x5a7a2c*/
       while ( v9 < 5 ) /*0x5a7a39*/
       {
         v14 = *(v13 - 1); /*0x5a7a3b*/
@@ -2058,7 +2058,7 @@ void int PlaceMapSeedBuildingsStrategic(int a1)
                 {
                   v28[1] = v25 + 2 * v17; /*0x5a7ad7*/
                   v28[0] = v24 + 2 * v20; /*0x5a7ae2*/
-                  PlaceMapSeedClassBuildings(v18, v28, -1, -1); /*0x5a7ae7*/
+                  PlaceMapSeedClassBuildings( v18, (ObjectClass *)(v28), -1, -1); /*0x5a7ae7*/
                   v19 = v26; /*0x5a7aec*/
                   ++v20; /*0x5a7af0*/
                 }
@@ -2105,7 +2105,7 @@ int IsoTile_Draw(int a1, unsigned short * a2, char a3)
   v3 = a2; /*0x5a7faa*/
   v4 = (unsigned int *)*((unsigned int *)dword_A8ED2C + a1); /*0x5a7fac*/
   v14 = v4; /*0x5a7fb5*/
-  result = (*(int (**)(unsigned int *))(*v4 + 156))(v4); /*0x5a7fbb*/
+  result = (*(int (**)(unsigned int *))(*v4 + 156))( (unsigned int *)(v4)); /*0x5a7fbb*/
   v16 = result; /*0x5a7fc3*/
   if ( result ) /*0x5a7fc7*/
   {
@@ -2220,7 +2220,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
         if ( !v9 ) /*0x5a880b*/
         {
   LABEL_13:
-          v8 = 0; /*0x5a882f*/
+          v8 = (unsigned int *)(0); /*0x5a882f*/
           goto LABEL_14; /*0x5a882f*/
         }
         IndexBuildingTypeClass = ((BuildingTypeClass *)(*(&off_82B240 + v5)))->FindIndex(); /*0x5a8814*/
@@ -2276,12 +2276,12 @@ void PlaceNeutralCreeps(unsigned short * a1)
           v18 = *v8; /*0x5a8935*/
           v31[0] = ((int16_t)v21 << 8) + 128; /*0x5a893b*/
           v31[2] = 0; /*0x5a8942*/
-          if ( (*(uint8_t (**)(unsigned int *, unsigned int *, unsigned int))(v18 + 216))(v8, v31, 32 * v17) ) /*0x5a8946*/
+          if ( (*(uint8_t (**)(unsigned int *, unsigned int *, unsigned int))(v18 + 216))( (unsigned int *)(v8), (unsigned int *)(v31), 32 * v17) ) /*0x5a8946*/
           {
-            v19 = *(unsigned int *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 160); /*0x5a895a*/
+            v19 = *(unsigned int *)((*(int (**)(unsigned int *))(*v8 + 132))( (unsigned int *)(v8)) + 160); /*0x5a895a*/
             v8[27] = v19; /*0x5a8962*/
             v8[28] = v19; /*0x5a8965*/
-            (*(void (**)(unsigned int *, int))(*v8 + 292))(v8, 2); /*0x5a896c*/
+            (*(void (**)(unsigned int *, int))(*v8 + 292))( (unsigned int *)(v8), 2); /*0x5a896c*/
             v20 = 1; /*0x5a8976*/
             ++v24; /*0x5a897c*/
           }
@@ -2291,7 +2291,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
           goto LABEL_27; /*0x5a8987*/
       }
       if ( v8 ) /*0x5a8997*/
-        (*(void (**)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x5a899f*/
+        (*(void (**)(unsigned int *, int))(*v8 + 32))( (unsigned int *)(v8), 1); /*0x5a899f*/
   LABEL_27:
       result = v23; /*0x5a89a2*/
       ++v22; /*0x5a89b1*/
@@ -2397,7 +2397,7 @@ int MapSeed_ScheduleBuildings(int * a1)
   v39[3] = v7; /*0x5a8a7f*/
   v39[2] = 0xFFFF; /*0x5a8a87*/
   v39[4] = -1; /*0x5a8a94*/
-  qmemcpy(&v55[5 * v54], v39, 0x14u); /*0x5a8ab2*/
+  qmemcpy( (void *)(&v55[5 * v54]), (const void *)(v39), 0x14u); /*0x5a8ab2*/
   v55[v54 + 5120] = timeGetTime(); /*0x5a8abe*/
   v54 = ((unsigned short)v54 + 1) & 0x3FF; /*0x5a8ad5*/
   v8 = ++v52; /*0x5a8ad4*/
@@ -2416,7 +2416,7 @@ int MapSeed_ScheduleBuildings(int * a1)
     v39[4] = v10[4]; /*0x5a8b22*/
     v12 = 0; /*0x5a8b29*/
     v41 = 0; /*0x5a8b2d*/
-    Block = 0; /*0x5a8b31*/
+    Block = (void *)(0); /*0x5a8b31*/
     if ( v9 == 0xFFFF ) /*0x5a8b35*/
       goto LABEL_48; /*0x5a8b35*/
     if ( v11 != 0xFFFF ) /*0x5a8b41*/
@@ -2444,7 +2444,7 @@ int MapSeed_ScheduleBuildings(int * a1)
     if ( v15 > 1 ) /*0x5a8baf*/
     {
       v17 = v15 - (v39[4] != -1); /*0x5a8bc3*/
-      v18 = RA2_OPNEW(20 * v17); /*0x5a8bd1*/
+      v18 = (unsigned int *)RA2_OPNEW(20 * v17); /*0x5a8bd1*/
       if ( v18 ) /*0x5a8bd8*/
       {
         v19 = v17 - 1; /*0x5a8bde*/
@@ -2468,7 +2468,7 @@ int MapSeed_ScheduleBuildings(int * a1)
         }
         v23 = 0; /*0x5a8c2f*/
         v24 = *v16 <= 0; /*0x5a8c31*/
-        Block = v18; /*0x5a8c33*/
+        Block = (void *)(v18); /*0x5a8c33*/
         v44 = 0; /*0x5a8c37*/
         if ( !v24 ) /*0x5a8c3b*/
         {
@@ -2515,7 +2515,7 @@ int MapSeed_ScheduleBuildings(int * a1)
       }
       else
       {
-        Block = 0; /*0x5a8cfa*/
+        Block = (void *)(0); /*0x5a8cfa*/
       }
       v9 = v39[0]; /*0x5a8d02*/
     }
@@ -2562,7 +2562,7 @@ int MapSeed_ScheduleBuildings(int * a1)
         {
           if ( v52 < 1024 ) /*0x5a8d34*/
           {
-            qmemcpy(&v55[5 * v29], v28, 0x14u); /*0x5a8d44*/
+            qmemcpy( (void *)(&v55[5 * v29]), (const void *)(v28), 0x14u); /*0x5a8d44*/
             v55[v54 + 5120] = timeGetTime(); /*0x5a8d50*/
             v29 = ((unsigned short)v54 + 1) & 0x3FF; /*0x5a8d60*/
             v54 = v29; /*0x5a8d66*/
@@ -2654,7 +2654,7 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
   do /*0x5a8fab*/
   {
     do /*0x5a8fa0*/
-      v7 = Random::Gaussian( (void)((double *)&byte_ABDFB8)) * v27 + v25; /*0x5a8f91*/
+      v7 = Random::Gaussian(  (double *)&byte_ABDFB8) * v27 + v25; /*0x5a8f91*/
     while ( v7 < 2.0 ); /*0x5a8fa0*/
   }
   while ( v7 > v23 ); /*0x5a8fab*/
@@ -2890,9 +2890,9 @@ unsigned int * InitializePathData()
   dword_ABE374 = (unsigned int)(TechnoTypeClass *)v2;
   *(unsigned int *)v2 = 0;
   *(unsigned int *)(v2 + 4) = 0;
-  *(unsigned int *)&dword_ABE374->vtable1[8] = v118;
+  *(unsigned int *)&dword_ABE374->vtable1[8] = (unsigned int)v118;
   *(unsigned int *)&dword_ABE374->vtable1[12] = 1;
-  v118 = 0;
+  v118 = (rc_ptr_base *)(0);
   dword_ABE384 = 0;
   dword_ABE37C = 2;
   v3 = operator new(0x10u);
@@ -2900,14 +2900,14 @@ unsigned int * InitializePathData()
   if ( v3 )
   {
     ((Array *)v3)->ForEach( 8, 2, (int (*)(int))Cell::Clear);
-    v5 = v4;
+    v5 = (rc_ptr_base *)(v4);
   }
   else
   {
-    v5 = 0;
+    v5 = (rc_ptr_base *)(0);
   }
   dword_ABE380 = (unsigned int)(TechnoTypeClass *)v5;
-  *(unsigned int *)v5 = v118;
+  *(unsigned int *)v5 = (unsigned int)v118;
   v5->u32_4 = 0;
   *(unsigned int *)&dword_ABE380->vtable1[8] = 1;
   IDA_LOWORD(v120) = 1;
@@ -2924,14 +2924,14 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v7 = 0;
+    v7 = (rc_ptr_base *)(0);
   }
   dword_ABE38C = (unsigned int)(TechnoTypeClass *)v7;
   v7->vfptr = 0;
   v7[1].vfptr = 0;
-  *(unsigned int *)&dword_ABE38C->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE38C->vtable1[8] = (unsigned int)v120;
   *(unsigned int *)&dword_ABE38C->vtable1[12] = 3;
-  v118 = 0;
+  v118 = (rc_ptr_base *)(0);
   dword_ABE39C = 0;
   dword_ABE394 = 2;
   v8 = (rc_ptr_base *)new rc_ptr_base;
@@ -2943,14 +2943,14 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v9 = 0;
+    v9 = (rc_ptr_base *)(0);
   }
   dword_ABE398 = (unsigned int)(TechnoTypeClass *)v9;
   v9->vfptr = v118;
   v9[1].vfptr = 0;
   *(unsigned int *)&dword_ABE398->vtable1[8] = 1;
   *(unsigned int *)&dword_ABE398->vtable1[12] = 5;
-  v118 = 0;
+  v118 = (rc_ptr_base *)(0);
   dword_ABE3A8 = 0;
   dword_ABE3A0 = 2;
   v10 = (rc_ptr_base *)new rc_ptr_base;
@@ -2962,7 +2962,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v11 = 0;
+    v11 = (rc_ptr_base *)(0);
   }
   dword_ABE3A4 = (unsigned int)(TechnoTypeClass *)v11;
   v11->vfptr = v118;
@@ -2981,7 +2981,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v13 = 0;
+    v13 = (rc_ptr_base *)(0);
   }
   dword_ABE3B0 = (unsigned int)(TechnoTypeClass *)v13;
   v13->vfptr = v118;
@@ -3000,7 +3000,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v15 = 0;
+    v15 = (rc_ptr_base *)(0);
   }
   dword_ABE3BC = (unsigned int)(TechnoTypeClass *)v15;
   v15->vfptr = v118;
@@ -3019,7 +3019,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v17 = 0;
+    v17 = (rc_ptr_base *)(0);
   }
   dword_ABE3C8 = (unsigned int)(TechnoTypeClass *)v17;
   v17->vfptr = v118;
@@ -3038,7 +3038,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v19 = 0;
+    v19 = (rc_ptr_base *)(0);
   }
   dword_ABE3D4 = (unsigned int)(TechnoTypeClass *)v19;
   v19->vfptr = v118;
@@ -3057,7 +3057,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v21 = 0;
+    v21 = (rc_ptr_base *)(0);
   }
   dword_ABE3E0 = (unsigned int)(TechnoTypeClass *)v21;
   v21->vfptr = v118;
@@ -3076,7 +3076,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v23 = 0;
+    v23 = (rc_ptr_base *)(0);
   }
   dword_ABE3EC = (unsigned int)(TechnoTypeClass *)v23;
   v23->vfptr = v118;
@@ -3095,7 +3095,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v25 = 0;
+    v25 = (rc_ptr_base *)(0);
   }
   dword_ABE3F8 = (unsigned int)(TechnoTypeClass *)v25;
   v25->vfptr = v118;
@@ -3114,7 +3114,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v27 = 0;
+    v27 = (rc_ptr_base *)(0);
   }
   dword_ABE404 = (unsigned int)(TechnoTypeClass *)v27;
   v27->vfptr = v118;
@@ -3133,7 +3133,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v29 = 0;
+    v29 = (rc_ptr_base *)(0);
   }
   dword_ABE410 = (unsigned int)(TechnoTypeClass *)v29;
   v29->vfptr = v118;
@@ -3152,7 +3152,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v31 = 0;
+    v31 = (rc_ptr_base *)(0);
   }
   dword_ABE41C = (unsigned int)(TechnoTypeClass *)v31;
   v31->vfptr = v118;
@@ -3171,7 +3171,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v33 = 0;
+    v33 = (rc_ptr_base *)(0);
   }
   dword_ABE428 = (unsigned int)(TechnoTypeClass *)v33;
   v33->vfptr = v118;
@@ -3190,7 +3190,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v35 = 0;
+    v35 = (rc_ptr_base *)(0);
   }
   dword_ABE434 = (unsigned int)(TechnoTypeClass *)v35;
   v35->vfptr = v118;
@@ -3209,7 +3209,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v37 = 0;
+    v37 = (rc_ptr_base *)(0);
   }
   dword_ABE440 = (unsigned int)(TechnoTypeClass *)v37;
   v37->vfptr = v118;
@@ -3228,7 +3228,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v39 = 0;
+    v39 = (rc_ptr_base *)(0);
   }
   dword_ABE44C = (unsigned int)(TechnoTypeClass *)v39;
   v39->vfptr = v118;
@@ -3247,7 +3247,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v41 = 0;
+    v41 = (rc_ptr_base *)(0);
   }
   dword_ABE458 = (unsigned int)(TechnoTypeClass *)v41;
   v41->vfptr = v118;
@@ -3266,7 +3266,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v43 = 0;
+    v43 = (rc_ptr_base *)(0);
   }
   dword_ABE464 = (unsigned int)(TechnoTypeClass *)v43;
   v43->vfptr = v118;
@@ -3285,7 +3285,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v45 = 0;
+    v45 = (rc_ptr_base *)(0);
   }
   dword_ABE470 = (unsigned int)(TechnoTypeClass *)v45;
   v45->vfptr = v118;
@@ -3304,7 +3304,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v47 = 0;
+    v47 = (rc_ptr_base *)(0);
   }
   dword_ABE47C = (unsigned int)(TechnoTypeClass *)v47;
   v47->vfptr = v118;
@@ -3323,7 +3323,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v49 = 0;
+    v49 = (rc_ptr_base *)(0);
   }
   dword_ABE488 = (unsigned int)(TechnoTypeClass *)v49;
   v49->vfptr = v118;
@@ -3332,7 +3332,7 @@ unsigned int * InitializePathData()
   IDA_LOWORD(aP2.vfptr) = 0;
   *(unsigned int *)&dword_ABE488->vtable1[12] = 7;
   IDA_HIWORD(aP2.vfptr) = 1;
-  v118 = 0;
+  v118 = (rc_ptr_base *)(0);
   dword_ABE498 = 0;
   dword_ABE490 = 3;
   v50 = (rc_ptr_base *)new rc_ptr_base;
@@ -3344,7 +3344,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v51 = 0;
+    v51 = (rc_ptr_base *)(0);
   }
   dword_ABE494 = (unsigned int)(TechnoTypeClass *)v51;
   v51->vfptr = v118;
@@ -3367,18 +3367,18 @@ unsigned int * InitializePathData()
   }
   else
   {
-    vfptr = 0;
+    vfptr = (TechnoTypeClass *)(0);
   }
-  dword_ABE4A0 = vfptr;
-  *(unsigned int *)vfptr->vtable1 = v120;
+  dword_ABE4A0 = (unsigned int)vfptr;
+  *(unsigned int *)vfptr->vtable1 = (unsigned int)v120;
   *(unsigned int *)&vfptr->vtable1[4] = 2;
-  *(unsigned int *)&dword_ABE4A0->vtable1[8] = v118;
+  *(unsigned int *)&dword_ABE4A0->vtable1[8] = (unsigned int)v118;
   IDA_LOWORD(v118) = 0;
   *(unsigned int *)&dword_ABE4A0->vtable1[12] = 4;
   dword_ABE4A0->uniqueId = 0;
   dword_ABE4A0->abstractFlags = 6;
   IDA_HIWORD(v118) = 1;
-  v120 = 0;
+  v120 = (rc_ptr_base *)(0);
   dword_ABE4B0 = 0;
   dword_ABE4A8 = 3;
   v54 = (void *)operator new(0x18u);
@@ -3390,18 +3390,18 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v55 = 0;
+    v55 = (TechnoTypeClass *)(0);
   }
-  dword_ABE4AC = v55;
-  *(unsigned int *)v55->vtable1 = v120;
+  dword_ABE4AC = (unsigned int)v55;
+  *(unsigned int *)v55->vtable1 = (unsigned int)v120;
   *(unsigned int *)&v55->vtable1[4] = 0;
-  *(unsigned int *)&dword_ABE4AC->vtable1[8] = v118;
+  *(unsigned int *)&dword_ABE4AC->vtable1[8] = (unsigned int)v118;
   IDA_LOWORD(v118) = 1;
   *(unsigned int *)&dword_ABE4AC->vtable1[12] = 4;
   dword_ABE4AC->uniqueId = 0;
   dword_ABE4AC->abstractFlags = 6;
   IDA_HIWORD(v118) = 0;
-  v120 = 0;
+  v120 = (rc_ptr_base *)(0);
   dword_ABE4BC = 0;
   dword_ABE4B4 = 3;
   v56 = (void *)operator new(0x18u);
@@ -3413,19 +3413,19 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v57 = 0;
+    v57 = (TechnoTypeClass *)(0);
   }
-  dword_ABE4B8 = v57;
-  *(unsigned int *)v57->vtable1 = v120;
+  dword_ABE4B8 = (unsigned int)v57;
+  *(unsigned int *)v57->vtable1 = (unsigned int)v120;
   *(unsigned int *)&v57->vtable1[4] = 0;
-  *(unsigned int *)&dword_ABE4B8->vtable1[8] = v118;
+  *(unsigned int *)&dword_ABE4B8->vtable1[8] = (unsigned int)v118;
   IDA_LOWORD(aP1.vfptr) = 0;
   *(unsigned int *)&dword_ABE4B8->vtable1[12] = 2;
   IDA_HIWORD(aP1.vfptr) = 0;
   dword_ABE4B8->uniqueId = 0;
   dword_ABE4B8->abstractFlags = 6;
   v118 = (rc_ptr_base *)1;
-  v120 = 0;
+  v120 = (rc_ptr_base *)(0);
   dword_ABE4C8 = 0;
   dword_ABE4C0 = 4;
   v58 = (void *)operator new(0x20u);
@@ -3437,12 +3437,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v59 = 0;
+    v59 = (TechnoTypeClass *)(0);
   }
-  dword_ABE4C4 = v59;
-  *(unsigned int *)v59->vtable1 = v120;
+  dword_ABE4C4 = (unsigned int)v59;
+  *(unsigned int *)v59->vtable1 = (unsigned int)v120;
   *(unsigned int *)&v59->vtable1[4] = 0;
-  *(unsigned int *)&dword_ABE4C4->vtable1[8] = v118;
+  *(unsigned int *)&dword_ABE4C4->vtable1[8] = (unsigned int)v118;
   IDA_LOWORD(v118) = 1;
   *(unsigned int *)&dword_ABE4C4->vtable1[12] = 2;
   IDA_HIWORD(v118) = 1;
@@ -3465,12 +3465,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v61 = 0;
+    v61 = (TechnoTypeClass *)(0);
   }
-  dword_ABE4D0 = v61;
+  dword_ABE4D0 = (unsigned int)v61;
   *(rc_ptr_base *)v61->vtable1 = aP2;
   *(unsigned int *)&v61->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE4D0->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE4D0->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE4D0->vtable1[12] = 3;
   v62 = v118;
@@ -3491,12 +3491,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v64 = 0;
+    v64 = (TechnoTypeClass *)(0);
   }
-  dword_ABE4DC = v64;
+  dword_ABE4DC = (unsigned int)v64;
   *(rc_ptr_base *)v64->vtable1 = aP2;
   *(unsigned int *)&v64->vtable1[4] = 7;
-  *(unsigned int *)&dword_ABE4DC->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE4DC->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE4DC->vtable1[12] = 5;
   v65 = v118;
@@ -3517,12 +3517,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v67 = 0;
+    v67 = (TechnoTypeClass *)(0);
   }
-  dword_ABE4E8 = v67;
+  dword_ABE4E8 = (unsigned int)v67;
   *(rc_ptr_base *)v67->vtable1 = aP2;
   *(unsigned int *)&v67->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE4E8->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE4E8->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 2;
   *(unsigned int *)&dword_ABE4E8->vtable1[12] = 7;
   v68 = v118;
@@ -3543,12 +3543,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v70 = 0;
+    v70 = (TechnoTypeClass *)(0);
   }
-  dword_ABE4F4 = v70;
+  dword_ABE4F4 = (unsigned int)v70;
   *(rc_ptr_base *)v70->vtable1 = aP2;
   *(unsigned int *)&v70->vtable1[4] = 7;
-  *(unsigned int *)&dword_ABE4F4->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE4F4->vtable1[8] = (unsigned int)v120;
   *(unsigned int *)&dword_ABE4F4->vtable1[12] = 1;
   dword_ABE4F4->uniqueId = (int)v118;
   IDA_LOWORD(v118) = 2;
@@ -3567,12 +3567,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v72 = 0;
+    v72 = (TechnoTypeClass *)(0);
   }
-  dword_ABE500 = v72;
+  dword_ABE500 = (unsigned int)v72;
   *(rc_ptr_base *)v72->vtable1 = aP2;
   *(unsigned int *)&v72->vtable1[4] = 7;
-  *(unsigned int *)&dword_ABE500->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE500->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 3;
   *(unsigned int *)&dword_ABE500->vtable1[12] = 5;
   v73 = v118;
@@ -3596,12 +3596,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v75 = 0;
+    v75 = (TechnoTypeClass *)(0);
   }
-  dword_ABE50C = v75;
+  dword_ABE50C = (unsigned int)v75;
   *(rc_ptr_base *)v75->vtable1 = aP2;
   *(unsigned int *)&v75->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE50C->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE50C->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE50C->vtable1[12] = 2;
   IDA_HIWORD(v120) = 2;
@@ -3620,12 +3620,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v77 = 0;
+    v77 = (TechnoTypeClass *)(0);
   }
-  dword_ABE518 = v77;
+  dword_ABE518 = (unsigned int)v77;
   *(rc_ptr_base *)v77->vtable1 = aP2;
   *(unsigned int *)&v77->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE518->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE518->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE518->vtable1[12] = 5;
   IDA_HIWORD(v120) = 2;
@@ -3641,12 +3641,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v79 = 0;
+    v79 = (TechnoTypeClass *)(0);
   }
-  dword_ABE524 = v79;
+  dword_ABE524 = (unsigned int)v79;
   *(rc_ptr_base *)v79->vtable1 = aP2;
   *(unsigned int *)&v79->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE524->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE524->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE524->vtable1[12] = 5;
   IDA_HIWORD(v120) = 2;
@@ -3662,12 +3662,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v81 = 0;
+    v81 = (TechnoTypeClass *)(0);
   }
-  dword_ABE530 = v81;
+  dword_ABE530 = (unsigned int)v81;
   *(rc_ptr_base *)v81->vtable1 = aP2;
   *(unsigned int *)&v81->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE530->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE530->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE530->vtable1[12] = 5;
   IDA_HIWORD(v120) = 2;
@@ -3683,12 +3683,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v83 = 0;
+    v83 = (TechnoTypeClass *)(0);
   }
-  dword_ABE53C = v83;
+  dword_ABE53C = (unsigned int)v83;
   *(rc_ptr_base *)v83->vtable1 = aP2;
   *(unsigned int *)&v83->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE53C->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE53C->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE53C->vtable1[12] = 5;
   IDA_HIWORD(v120) = 1;
@@ -3704,12 +3704,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v85 = 0;
+    v85 = (TechnoTypeClass *)(0);
   }
-  dword_ABE548 = v85;
+  dword_ABE548 = (unsigned int)v85;
   *(rc_ptr_base *)v85->vtable1 = aP2;
   *(unsigned int *)&v85->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE548->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE548->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE548->vtable1[12] = 5;
   IDA_HIWORD(v120) = 0;
@@ -3725,12 +3725,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v87 = 0;
+    v87 = (TechnoTypeClass *)(0);
   }
-  dword_ABE554 = v87;
+  dword_ABE554 = (unsigned int)v87;
   *(rc_ptr_base *)v87->vtable1 = aP2;
   *(unsigned int *)&v87->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE554->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE554->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE554->vtable1[12] = 5;
   IDA_HIWORD(v120) = 0;
@@ -3746,12 +3746,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v89 = 0;
+    v89 = (TechnoTypeClass *)(0);
   }
-  dword_ABE560 = v89;
+  dword_ABE560 = (unsigned int)v89;
   *(rc_ptr_base *)v89->vtable1 = aP2;
   *(unsigned int *)&v89->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE560->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE560->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(aP2.vfptr) = 1;
   *(unsigned int *)&dword_ABE560->vtable1[12] = 5;
   IDA_HIWORD(aP2.vfptr) = 2;
@@ -3766,7 +3766,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v91 = 0;
+    v91 = (rc_ptr_base *)(0);
   }
   dword_ABE56C = (int)v91;
   v91->vfptr = aP2.vfptr;
@@ -3783,7 +3783,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v93 = 0;
+    v93 = (rc_ptr_base *)(0);
   }
   dword_ABE578 = (int)v93;
   v93->vfptr = aP2.vfptr;
@@ -3800,7 +3800,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v95 = 0;
+    v95 = (rc_ptr_base *)(0);
   }
   dword_ABE584 = (int)v95;
   v95->vfptr = aP2.vfptr;
@@ -3817,7 +3817,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v97 = 0;
+    v97 = (rc_ptr_base *)(0);
   }
   dword_ABE590 = (int)v97;
   v97->vfptr = aP2.vfptr;
@@ -3834,7 +3834,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v99 = 0;
+    v99 = (rc_ptr_base *)(0);
   }
   dword_ABE59C = (int)v99;
   v99->vfptr = aP2.vfptr;
@@ -3851,7 +3851,7 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v101 = 0;
+    v101 = (rc_ptr_base *)(0);
   }
   dword_ABE5A8 = (int)v101;
   v101->vfptr = aP2.vfptr;
@@ -3869,12 +3869,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v103 = 0;
+    v103 = (TechnoTypeClass *)(0);
   }
-  dword_ABE5B4 = v103;
+  dword_ABE5B4 = (unsigned int)v103;
   *(rc_ptr_base *)v103->vtable1 = aP2;
   *(unsigned int *)&v103->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE5B4->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE5B4->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 1;
   *(unsigned int *)&dword_ABE5B4->vtable1[12] = 5;
   IDA_HIWORD(v120) = 3;
@@ -3891,12 +3891,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v105 = 0;
+    v105 = (TechnoTypeClass *)(0);
   }
-  dword_ABE5C0 = v105;
+  dword_ABE5C0 = (unsigned int)v105;
   *(rc_ptr_base *)v105->vtable1 = aP2;
   *(unsigned int *)&v105->vtable1[4] = 1;
-  *(unsigned int *)&dword_ABE5C0->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE5C0->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 3;
   *(unsigned int *)&dword_ABE5C0->vtable1[12] = v119;
   dword_ABE5C8 = 0;
@@ -3914,12 +3914,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v107 = 0;
+    v107 = (TechnoTypeClass *)(0);
   }
-  dword_ABE5D8 = v107;
+  dword_ABE5D8 = (unsigned int)v107;
   *(rc_ptr_base *)v107->vtable1 = aP2;
   *(unsigned int *)&v107->vtable1[4] = 6;
-  *(unsigned int *)&dword_ABE5D8->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE5D8->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 3;
   *(unsigned int *)&dword_ABE5D8->vtable1[12] = 2;
   IDA_HIWORD(v120) = 0;
@@ -3935,12 +3935,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v109 = 0;
+    v109 = (TechnoTypeClass *)(0);
   }
-  dword_ABE5E4 = v109;
+  dword_ABE5E4 = (unsigned int)v109;
   *(rc_ptr_base *)v109->vtable1 = aP2;
   *(unsigned int *)&v109->vtable1[4] = 6;
-  *(unsigned int *)&dword_ABE5E4->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE5E4->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 3;
   *(unsigned int *)&dword_ABE5E4->vtable1[12] = 2;
   IDA_HIWORD(v120) = 0;
@@ -3956,12 +3956,12 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v111 = 0;
+    v111 = (TechnoTypeClass *)(0);
   }
-  dword_ABE5F0 = v111;
+  dword_ABE5F0 = (unsigned int)v111;
   *(rc_ptr_base *)v111->vtable1 = aP2;
   *(unsigned int *)&v111->vtable1[4] = 6;
-  *(unsigned int *)&dword_ABE5F0->vtable1[8] = v120;
+  *(unsigned int *)&dword_ABE5F0->vtable1[8] = (unsigned int)v120;
   IDA_LOWORD(v120) = 3;
   *(unsigned int *)&dword_ABE5F0->vtable1[12] = 2;
   IDA_HIWORD(v120) = 0;
@@ -3977,13 +3977,13 @@ unsigned int * InitializePathData()
   }
   else
   {
-    v113 = 0;
+    v113 = (rc_ptr_base *)(0);
   }
   dword_ABE5FC = (int)v113;
   v113->vfptr = aP2.vfptr;
   v113[1].vfptr = (void *)6;
   IDA_LOWORD(aP1.vfptr) = 2;
-  *(unsigned int *)(dword_ABE5FC + 8) = v120;
+  *(unsigned int *)(dword_ABE5FC + 8) = (unsigned int)v120;
   IDA_HIWORD(aP1.vfptr) = 0;
   *(unsigned int *)(dword_ABE5FC + 12) = 2;
   v114 = (rc_ptr_base *)aP1.vfptr;
@@ -4342,7 +4342,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   _ESI->owningHouseIndex = 1065353216; /*0x5af655*/
   _ESI->fallRate = 0; /*0x5af658*/
   __asm { fld dword ptr [edi] } /*0x5af65b*/
-  v36 = 0; /*0x5af65d*/
+  v36 = (float *)(0); /*0x5af65d*/
   __asm { fst dword ptr [esi+0Ch] } /*0x5af669*/
   *(float *)&((unsigned int *)_ESI)[0] = _ET1; /*0x5af669*/
   __asm { fld ds:flt_7E1748 } /*0x5af66c*/
@@ -4371,7 +4371,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
     fld [esp+28h+arg_4]
     fadd [esp+28h+var_18]
   }
-  v37 = 0; /*0x5af6a6*/
+  v37 = (float *)(0); /*0x5af6a6*/
   __asm /*0x5af6ae*/
   {
     fst [esp+28h+var_18]
@@ -4438,7 +4438,7 @@ float * MultiplyMatrix3x4(ObjectClass * aP0, float *a1, float *a2)
   float v25[12]; // [esp+40h] [ebp-30h] BYREF
   float v26; // [esp+74h] [ebp+4h]
 
-  result = aP0; /*0x5af983*/
+  result = (float *)(aP0); /*0x5af983*/
   v14 = a1[4]; /*0x5af98a*/
   v13 = a1[5]; /*0x5af991*/
   v4 = *a1; /*0x5af998*/
@@ -4472,7 +4472,7 @@ float * MultiplyMatrix3x4(ObjectClass * aP0, float *a1, float *a2)
   v25[3] = v23 * v6 + v11 * v5 + v24 * v4 + a1[3]; /*0x5afb22*/
   v25[7] = v23 * v12 + v11 * v13 + v24 * v14 + a1[7]; /*0x5afb4b*/
   v25[11] = v23 * v15 + v11 * v16 + v24 * v17 + a1[11]; /*0x5afb6e*/
-  qmemcpy(result, v25, 0x30u); /*0x5afb72*/
+  qmemcpy( (void *)(result), (const void *)(v25), 0x30u); /*0x5afb72*/
   return result; /*0x5afb74*/
 }
 // 0x5A1190
@@ -4629,8 +4629,8 @@ ObjectClass * E4Recv_5A9960::sub_5A9960(unsigned int * a1)
 {
 
   this->AbstractClass = (void *)*a1; /*0x5a9968*/
-  ((unsigned int *)this)[0] = (void *)a1[1]; /*0x5a996d*/
-  return this; /*0x5a9970*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)a1[1]; /*0x5a996d*/
+  return (ObjectClass *)this; /*0x5a9970*/
 
 }
 } // namespace gamemd
@@ -4645,7 +4645,7 @@ unsigned int * E4Recv_5A9980::sub_5A9980(int a2, unsigned int * a3, int a4, unsi
   *((unsigned int *)this + 2) = a4; /*0x5a9999*/
   *((unsigned int *)this + 3) = *a5; /*0x5a99a2*/
   *((unsigned int *)this + 4) = a6; /*0x5a99a5*/
-  return this; /*0x5a99a8*/
+  return (unsigned int *)this; /*0x5a99a8*/
 
 }
 } // namespace gamemd
@@ -4656,11 +4656,11 @@ unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
 {
 
   this->AbstractClass = (void *)*a2; /*0x5a99f8*/
-  ((unsigned int *)this)[0] = (void *)a2[1]; /*0x5a99fd*/
-  ((unsigned int *)this)[0] = (void *)a2[2]; /*0x5a9a03*/
-  ((unsigned int *)this)[0] = (void *)a2[3]; /*0x5a9a09*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)a2[1]; /*0x5a99fd*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)a2[2]; /*0x5a9a03*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)a2[3]; /*0x5a9a09*/
   ((unsigned int *)this)[0] = a2[4]; /*0x5a9a0f*/
-  return this; /*0x5a9a12*/
+  return (unsigned int *)this; /*0x5a9a12*/
 
 }
 } // namespace gamemd
@@ -4672,7 +4672,7 @@ Concurrency::details::_ReaderWriterLock * E4Recv_5A9BF0::__0_ReaderWriterLock_de
 
   *(unsigned int *)this = 0; /*0x5a9bf2*/
   this->vtable2 = 0; /*0x5a9bf8*/
-  return this; /*0x5a9bff*/
+  return (Concurrency::details::_ReaderWriterLock *)this; /*0x5a9bff*/
 
 }
 } // namespace gamemd
@@ -4866,7 +4866,7 @@ char E4Recv_5AE500::sub_5AE500(const char ** a2)
   {
     result = sub_5CF840((ObjectClass *)this->customSound_controller, (const char **)a2); /*0x5ae519*/
     if ( result ) /*0x5ae520*/
-      return (const char **)nullsub_24(v4); /*0x5ae524*/
+      return (const char **)nullsub_24(); /*0x5ae524*/
   }
   return result; /*0x5ae529*/
 
@@ -4883,12 +4883,12 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
   void *v5; // [esp+8h] [ebp-8h]
 
   v3 = this; /*0x5ae538*/
-  ((String *)((String *)this + 25))->Reassign(aP1); /*0x5ae541*/
+  ((String *)((String *)this + 25))->Reassign( (const char **)(aP1)); /*0x5ae541*/
   result = TimerGetTicks(); /*0x5ae54a*/
   v3 = (ObjectClass *)((char *)v3 + 204); /*0x5ae557*/
   v3->AbstractClass = (void *)result; /*0x5ae55d*/
-  ((unsigned int *)v3)[0] = v5; /*0x5ae55f*/
-  ((unsigned int *)v3)[0] = (void *)aP2; /*0x5ae562*/
+  ((unsigned int *)v3)[0] = (unsigned int)v5; /*0x5ae55f*/
+  ((unsigned int *)v3)[0] = (unsigned int)(void *)aP2; /*0x5ae562*/
   return result; /*0x5ae565*/
 
 }
@@ -5333,8 +5333,8 @@ double E4Recv_5AF2C0::sub_5AF2C0()
   float v2[3]; // [esp+0h] [ebp-24h] BYREF
   float v3[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  memset(v2, 0, sizeof(v2)); /*0x5af2ce*/
-  return *TransformMatrix3x4Point( v3, (IUnknown *)((float *)this), v2); /*0x5af303*/
+  memset( (void *)(v2), 0, sizeof(v2)); /*0x5af2ce*/
+  return *TransformMatrix3x4Point( (AbstractClass *)(v3), (IUnknown *)((float *)this), (IUnknown *)(v2)); /*0x5af303*/
 
 }
 } // namespace gamemd
@@ -5348,8 +5348,8 @@ double E4Recv_5AF310::sub_5AF310()
   float v3[4]; // [esp+0h] [ebp-24h] BYREF
   float v4[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  memset(v3, 0, 12); /*0x5af31e*/
-  v1 = TransformMatrix3x4Point( v4, (IUnknown *)((float *)this), v3); /*0x5af336*/
+  memset( (void *)(v3), 0, 12); /*0x5af31e*/
+  v1 = TransformMatrix3x4Point( (AbstractClass *)(v4), (IUnknown *)((float *)this), (IUnknown *)(v3)); /*0x5af336*/
   v3[3] = *v1; /*0x5af33d*/
   return v1[1]; /*0x5af353*/
 
@@ -5365,8 +5365,8 @@ double E4Recv_5AF360::sub_5AF360()
   float v3[5]; // [esp+0h] [ebp-24h] BYREF
   float v4[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  memset(v3, 0, 12); /*0x5af36e*/
-  v1 = TransformMatrix3x4Point( v4, (IUnknown *)((float *)this), v3); /*0x5af386*/
+  memset( (void *)(v3), 0, 12); /*0x5af36e*/
+  v1 = TransformMatrix3x4Point( (AbstractClass *)(v4), (IUnknown *)((float *)this), (IUnknown *)(v3)); /*0x5af386*/
   v3[3] = *v1; /*0x5af38d*/
   v3[4] = v1[1]; /*0x5af394*/
   return v1[2]; /*0x5af3a3*/
@@ -5386,7 +5386,7 @@ double E4Recv_5AF3B0::sub_5AF3B0()
   v2[0] = 0.0; /*0x5af3be*/
   v2[1] = 1.0; /*0x5af3c6*/
   v2[2] = 0.0; /*0x5af3ce*/
-  v1 = TransformMatrix3x4Point( v3, (IUnknown *)((float *)this), v2); /*0x5af3d6*/
+  v1 = TransformMatrix3x4Point( (AbstractClass *)(v3), (IUnknown *)((float *)this), (IUnknown *)(v2)); /*0x5af3d6*/
   ((Math *)v1[2])->CalcAngle( v1[1]); /*0x5af404*/
 
 }
@@ -5404,7 +5404,7 @@ int E4Recv_5AF470::sub_5AF470()
   v2[0] = 1.0; /*0x5af47e*/
   v2[1] = 0.0; /*0x5af486*/
   v2[2] = 0.0; /*0x5af48e*/
-  v1 = TransformMatrix3x4Point( v3, (IUnknown *)((float *)this), v2); /*0x5af496*/
+  v1 = TransformMatrix3x4Point( (AbstractClass *)(v3), (IUnknown *)((float *)this), (IUnknown *)(v2)); /*0x5af496*/
   ((Math *)v1[1])->CalcAngle( *v1); /*0x5af4c4*/
 
 }
@@ -5455,7 +5455,7 @@ float * Matrix3x3_InvertSigns(float * a1, float * a2)
   v7[3] = -(v5 + v6); /*0x5afc85*/
   v7[7] = -(v7[4] * a2[3] + v7[6] * a2[11] + v7[5] * a2[7]); /*0x5afcaa*/
   v7[11] = -(v7[8] * a2[3] + v7[10] * a2[11] + v7[9] * a2[7]); /*0x5afcc9*/
-  qmemcpy( (void *)(a1), v7, 0x30u); /*0x5afccd*/
+  qmemcpy( (void *)(a1), (const void *)(v7), 0x30u); /*0x5afccd*/
   return a1; /*0x5afccf*/
 }
 } // namespace gamemd
@@ -5604,7 +5604,7 @@ void E4Recv_5AFF50::sub_5AFF50()
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_MechLocomotionClass;
   *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_MechLocomotionClass;
-  ((LocomotionClass *)(LocomotionClass *)this)->Construct(); /*0x5aff5d*/
+  ((LocomotionClass *)this)->Construct(); /*0x5aff5d*/
 
 }
 } // namespace gamemd

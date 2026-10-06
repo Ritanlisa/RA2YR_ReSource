@@ -27,9 +27,9 @@ void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0,
   ((String *)((char **)this + 5))->AssignFromPtr((const char **)&a4); /*0x76784d*/
   ((String *)((char **)this + 6))->AssignFromPtr((const char **)&a2); /*0x76785a*/
   *(unsigned int *)this = (unsigned int)(&WorldDominationTour::vt_FlagGameOption); /*0x767863*/
-  j_DeleteAndZero(&a2); /*0x767869*/
-  j_DeleteAndZero(&a4); /*0x767872*/
-  return this; /*0x767879*/
+  j_DeleteAndZero( (void *)(&a2)); /*0x767869*/
+  j_DeleteAndZero( (void *)(&a4)); /*0x767872*/
+  return (void *)this; /*0x767879*/
 
 }
 } // namespace gamemd

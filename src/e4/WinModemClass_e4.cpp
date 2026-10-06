@@ -231,7 +231,7 @@ LABEL_2:
     }
     if ( !((unsigned int *)&stru_A8EB00)[412] ) /*0x774d7b*/
       return 0; /*0x774d7b*/
-    Bytes = ((WinModemClass*)v5)->ReadBytes(&Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
+    Bytes = ((WinModemClass*)v5)->ReadBytes( (unsigned char *)(&Str[v6]), a4 - v6 < 0 ? 0 : a4 - v6);
     if ( Bytes ) /*0x774da0*/
     {
       v6 += Bytes; /*0x774da6*/
@@ -284,7 +284,7 @@ LABEL_38:
               ++v15; /*0x774ec1*/
             if ( v15 != Str ) /*0x774ec6*/
             {
-              memcpy( (void *)(Str), v15, a4 - (v15 - Str)); /*0x774ed5*/
+              memcpy( (void *)(Str), (const void *)(v15), a4 - (v15 - Str)); /*0x774ed5*/
               v6 -= v15 - Str; /*0x774edd*/
               v7 = aP4; /*0x774edf*/
             }
@@ -322,23 +322,23 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten, void * aP)
   char Buffer[80]; // [esp+10h] [ebp-50h] BYREF
 
   Debug::Log("Creating dial string\n"); /*0x774f5e G57c1: IDA 0x774f5e push offset aCreatingDialSt*/
-  strcpy(Buffer,(const char *)(aAtd)); /*0x774f83*/
+  strcpy( (char *)(Buffer), (const char *)(aAtd)); /*0x774f83*/
   if ( this->u32_18 ) /*0x774f87*/
   {
     Debug::Log("Dial type is pulse\n"); /*0x774fd5 G57c1: IDA 0x774fd5 push offset aDialTypeIsPuls*/
-    strcat(Buffer, (const char *)aP); /*0x775002*/
+    strcat( (char *)(Buffer), (const char *)aP); /*0x775002*/
   }
   else
   {
-    strcat(Buffer,(const char *)(g_Str_T)); /*0x774fbd*/
+    strcat( (char *)(Buffer), (const char *)(g_Str_T)); /*0x774fbd*/
     Debug::Log("Dial type is tone\n"); /*0x774fc6 G57c1: IDA 0x774fc6 push offset aDialTypeIsTone*/
   }
   Debug::Log("Appending dial string\n"); /*0x775010 G57c1: IDA 0x775010 push offset aAppendingDialS*/
-  strcat( Buffer, (const char *)(NumberOfBytesWritten)); /*0x77503e*/
+  strcat( (char *)(Buffer), (const char *)(NumberOfBytesWritten)); /*0x77503e*/
   Debug::Log("Appending carriage return\n"); /*0x775047 G57c1: IDA 0x775047 push offset aAppendingCarri*/
-  strcat(Buffer, (const char *)&word_8327A0); /*0x775071*/
+  strcat( (char *)(Buffer), (const char *)&word_8327A0); /*0x775071*/
   Debug::Log("Send to modem: %s\n"); /*0x775084 G57c1: IDA 0x775084 push offset aSendToModemS*/
-  v3 = strlen(Buffer) + 1; /*0x775095*/
+  v3 = strlen( (const char *)(Buffer)) + 1; /*0x775095*/
   ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x77509e*/
   if ( !WriteFile(*((HANDLE *)&this->q0083), Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7750b6*/
   {
@@ -383,15 +383,15 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   unsigned char v32[80]; // [esp+C8h] [ebp-50h] BYREF
 
   LOWORD(i) = a3; /*0x77512a*/
-  strcpy( Buffer, (const char *)(a2)); /*0x77514b*/
-  strcat(Buffer, (const char *)&i); /*0x77517a*/
-  ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x77518d*/
+  strcpy( (char *)(Buffer), (const char *)(a2)); /*0x77514b*/
+  strcat( (char *)(Buffer), (const char *)&i); /*0x77517a*/
+  ((WinModemClass*)this)->ReadBytes( (unsigned char *)(v32), 80); /*0x77518d*/
   Sleep(0x64u); /*0x775194*/
-  ((WinModemClass*)this)->ReadBytes(v32, 80); /*0x7751a6*/
+  ((WinModemClass*)this)->ReadBytes( (unsigned char *)(v32), 80); /*0x7751a6*/
   for ( i = 0; i < a7; ++i ) /*0x7751bc*/
   {
     Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x7751d1*/
-    v9 = strlen(Buffer) + 1; /*0x7751de*/
+    v9 = strlen( (const char *)(Buffer)) + 1; /*0x7751de*/
     v27 = a6; /*0x7751ea*/
     ((gamemd::AsyncIO *)((int)this))->WaitCompletion(); /*0x7751f2*/
     if ( !WriteFile(*((HANDLE *)this + 23), Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x77520d*/
@@ -453,12 +453,12 @@ LABEL_16:
     }
 LABEL_21:
     memset( (void *)(Str), 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->__pad_0 + 20))( /*0x7752e6*/
-      this,
-      v11,
-      Str,
-      80,
-      a8);
+(*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->__pad_0 + 20))( /*0x7752e6*/ this, v11, (char *)(Str), 80, a8);
+
+
+
+
+
     if ( !strcmp(Str, (const char *)((char *)&stru_82BA00)) ) /*0x77531d*/
       return (gamemd::AbstractClass **)(3); /*0x775437*/
     if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
@@ -604,7 +604,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
     __3_YAXPAX_Z((void *)this->WinModemClass_field_0x24); /*0x775647*/
   if ( (a2 & 1) != 0 ) /*0x775654*/
     __3_YAXPAX_Z(this); /*0x775657*/
-  return this; /*0x775661*/
+  return (WinModemClass *)this; /*0x775661*/
 
 }
 } // namespace gamemd

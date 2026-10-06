@@ -78,9 +78,9 @@ LABEL_11:
       if ( result != dword_89E9B0 ) /*0x48d186*/
       {
         if ( ppv && !dword_B77DCC ) /*0x48d199*/
-          (*(void (**)(LPVOID))(*(unsigned int *)ppv + 12))(ppv); /*0x48d19e*/
+          (*(void (**)(LPVOID))(*(unsigned int *)ppv + 12))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x48d19e*/
         if ( g_UIPointerTable ) /*0x48d1a8*/
-          (*(void (**)(LPVOID))(*(unsigned int *)g_UIPointerTable + 28))(g_UIPointerTable); /*0x48d1ad*/
+          (*(void (**)(LPVOID))(*(unsigned int *)g_UIPointerTable + 28))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(g_UIPointerTable))))); /*0x48d1ad*/
         result = time(0); /*0x48d1b2*/
         dword_89E9B0 = result; /*0x48d1ba*/
       }
@@ -111,7 +111,7 @@ int sub_5E2FA0()
   }
   else if ( dword_A8B23C ) /*0x5e2ff8*/
   {
-    return (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 37))(dword_A8B23C); /*0x5e2ffc*/
+    return (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 37))( (ObjectClass *)(dword_A8B23C)); /*0x5e2ffc*/
   }
   return result; /*0x5e2fed*/
 }
@@ -206,14 +206,14 @@ int sub_796960()
     if ( !g_NetworkLobbyState && stru_B76AC4.ambientSoundController[4] ) /*0x796a00*/
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
-        qmemcpy(&v9[0].__pad_0[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
+        qmemcpy( (void *)(&v9[0].__pad_0[12]), g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
       *(unsigned int *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
       ((Network *)(v1))->SyncPlayerList(); /*0x796a29*/
       ((Event *)0)->Dispatch(); /*0x796a2e*/
       ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796a42*/
       ((Network *)(&stru_A8BB1C))->FormatAddress(0); /*0x796a4e*/
             Debug::Log("Poke_The_Host - Host address is %s\n") /*G57c1: IDA 0x796a59 push offset aPokeTheHostHos*/;
-      memset(v10, 0, sizeof(v10)); /*0x796a6f*/
+      memset( (void *)(v10), 0, sizeof(v10)); /*0x796a6f*/
       v11 = 0; /*0x796a79*/
       v12 = 0; /*0x796a7b*/
       v10[0] = 13; /*0x796a7c*/
@@ -225,7 +225,7 @@ int sub_796960()
         while ( 1 ) /*0x796aa7*/
         {
           if ( v5 >= 0 && v5 < g_WOL_UserList.owningHouseIndex ) /*0x796aad*/
-            qmemcpy(&g_WebBrowserConfig.occupant, nextObject, 0x6Cu); /*0x796abb*/
+            qmemcpy( (void *)(&g_WebBrowserConfig.occupant), (const void *)(nextObject), 0x6Cu); /*0x796abb*/
           if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x796ac3*/
             break; /*0x796ac3*/
           ++v5; /*0x796ac5*/
@@ -236,7 +236,7 @@ int sub_796960()
         if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x796ae4*/
         {
           v7 = CharToWideString( (unsigned char *)(&g_WebBrowserConfig.ambientSoundController[3])); /*0x796aeb*/
-          ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)v10, 455, (wchar_t *)(1), (void)((wchar_t *)v7)); /*0x796b04*/
+          ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v10, 455, (wchar_t *)(1), (wchar_t *)v7); /*0x796b04*/
         }
       }
   LABEL_24:
@@ -266,7 +266,7 @@ int sub_7A0F40()
   char Buffer[128]; // [esp+180h] [ebp-80h] BYREF
 
   v10 = dword_B77900; /*0x7a0f58*/
-  memset(v11, 0, sizeof(v11)); /*0x7a0f5c*/
+  memset( (void *)(v11), 0, sizeof(v11)); /*0x7a0f5c*/
   Source[0] = 80; /*0x7a0f60*/
   Source[2] = 0; /*0x7a0f67*/
   Source[1] = dword_B77900 + 48; /*0x7a0f6c*/
@@ -280,17 +280,17 @@ int sub_7A0F40()
       do /*0x7a102a*/
       {
         if ( v2 >= 0 && v1 < (int)dword_B77900 ) /*0x7a0f96*/
-          qmemcpy(v11, (char *)dword_B77908 + v2, sizeof(v11)); /*0x7a0faa*/
-        (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))( g_UIPointerTable, v11[6], (int *)(&v9)); /*0x7a0fbe*/
+          qmemcpy( (void *)(v11), (char *)dword_B77908 + v2, sizeof(v11)); /*0x7a0faa*/
+        (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(g_UIPointerTable)))), v11[6], (int *)(&v9)); /*0x7a0fbe*/
         sprintf(Buffer, ",%s,%d", (const char *)&v11[9], v9); /*0x7a0fd8*/
-        v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
+        v3 = strlen( (const char *)(Buffer)) + 1; /*0x7a0ffd*/
         v4 = &Source[strlen( (const char *)(Source))]; /*0x7a1006*/
-        qmemcpy(v4, Buffer, 4 * (v3 >> 2)); /*0x7a100a*/
+        qmemcpy( (void *)(v4), (const void *)(Buffer), 4 * (v3 >> 2)); /*0x7a100a*/
         v6 = &Buffer[4 * (v3 >> 2)]; /*0x7a100a*/
         v5 = &v4[4 * (v3 >> 2)]; /*0x7a100a*/
         v7 = v3; /*0x7a100c*/
         v8 = v9; /*0x7a100e*/
-        qmemcpy(v5, v6, v7 & 3); /*0x7a1015*/
+        qmemcpy( (void *)(v5), (const void *)(v6), v7 & 3); /*0x7a1015*/
         SetGameOptionsPing((const char *)&v11[9], v8); /*0x7a101b*/
         ++v1; /*0x7a1024*/
         v2 += 108; /*0x7a1025*/
@@ -330,15 +330,15 @@ int sub_786270()
   }
   dword_B77E50 = Data[0]; /*0x786328*/
   if ( ppv ) /*0x78632e*/
-    (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
+    (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), *(unsigned int *)Data); /*0x786334*/
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
     Debug::Log("Get_WDT_State_Silent: WDTHost is %s, port is %d\n") /*G57c1: IDA 0x786353 push offset aGetWdtStateSil*/;
-  (*(void (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
-    g_UIPointerTable,
-    &g_WindowManager.__pad_70[28],
-    stru_B76AC4.ambientSoundController[3],
-    3);
+(*(void (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/ g_UIPointerTable, (char *)(&g_WindowManager.__pad_70[28]), stru_B76AC4.ambientSoundController[3], 3);
+
+
+
+
   return 1; /*0x78631f*/
 }
 }

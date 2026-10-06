@@ -78,7 +78,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
           v14 = a2; /*0x76a022*/
           do /*0x76a039*/
           {
-            MSFrameAnim::drawFrame(v7); /*0x76a028*/
+            MSFrameAnim::drawFrame( (void *)(v7)); /*0x76a028*/
             v7 = (MSFrameAnim *)((char *)v7 + 8); /*0x76a031*/
             --v14; /*0x76a035*/
           }
@@ -87,7 +87,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       }
       else
       {
-        v6 = 0; /*0x76a03d*/
+        v6 = (ComPtr *)(0); /*0x76a03d*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x76a06f*/

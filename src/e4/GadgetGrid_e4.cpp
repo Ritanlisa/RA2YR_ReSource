@@ -28,7 +28,7 @@ int GadgetGrid::InsertItem(int a2)
   char v15[4]; // [esp+Ch] [ebp-4h] BYREF
   int v16; // [esp+14h] [ebp+4h]
 
-  v4 = (int *)(*(int (**)(int, char *))(*(unsigned int *)&a2->q_6E0))(a2, v15);  /*0x4134b3*/
+  v4 = (int *)(*(int (**)(int, char *))(*(unsigned int *)&a2->q_6E0))( a2, (char *)(v15));  /*0x4134b3*/
   v5 = *v4; /*0x4134b9*/
   v16 = *v4; /*0x4134c0*/
   (*(void (**)(int, int))(*(unsigned int *)&a2->q_BE0))(a2, *v4);  /*0x4134c4*/
@@ -53,7 +53,7 @@ int GadgetGrid::InsertItem(int a2)
   if ( *(unsigned int *)v12[2].__pad_0 < result /*0x413574*/
     || (BYTE1(v12[1].GadgetGrid_field_0x04) || !result)
     && (v13 = v12[2].GadgetGrid_field_0x04, v13 > 0)
-    && (result = (*(int (**)(GadgetGrid *, int, unsigned int))(*(unsigned int *)v12->__pad_0 + 8))(v12, result + v13, 0),
+    && (result = (*(int (**)(GadgetGrid *, int, unsigned int))(*(unsigned int *)v12->__pad_0 + 8))( (GadgetGrid *)(v12), result + v13, 0),
         (unsigned char)result) )
   {
     result = *(unsigned int *)v12[2].__pad_0; /*0x413576*/
@@ -83,17 +83,17 @@ int GadgetGrid::RemoveItem(int a2)
   GadgetGrid * v13;
   char v14[4]; // [esp+Ch] [ebp-4h] BYREF
 
-  v3 = (gamemd::GadgetGrid *)((int)((gamemd::GadgetGrid *)(*(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))(a2, v14))));
+  v3 = (gamemd::GadgetGrid *)((int)((gamemd::GadgetGrid *)(*(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))( a2, (char *)(v14)))));
   v13 = (gamemd::GadgetGrid *)((int16_t)((gamemd::GadgetGrid *)(HIWORD(v3))));
   (*(void (**)(int, int))(*(unsigned int *)&a2->q_BE0))(a2, dword_887850);  /*0x4135fb*/
   if ( ((unsigned int)(v3)& 0x8000u) == 0 ) /*0x413604*/
     v3 = (gamemd::GadgetGrid *)((int16_t)v3); /*0x41360a*/
   else
-    v3 = 0; /*0x413606*/
+    v3 = (GadgetGrid *)(0); /*0x413606*/
   if ( v13 >= 0 ) /*0x413616*/
     v4 = v13; /*0x41361c*/
   else
-    v4 = 0; /*0x413618*/
+    v4 = (GadgetGrid *)(0); /*0x413618*/
   v5 = v3 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x41363b*/
   v6 = 19; /*0x41363d*/
   if ( v5 <= 19 ) /*0x413645*/
@@ -103,7 +103,7 @@ int GadgetGrid::RemoveItem(int a2)
     v7 = 19; /*0x41366d*/
   v8 = *(unsigned int *)&this->__pad_0[480 * v7 + 24 * v6]; /*0x413680*/
   v9 = (gamemd::GadgetGrid *)((unsigned int *)this + 60 * v7 + 3 * v6); /*0x413683*/
-  result = (*(int (**)(GadgetGrid *, int *))(v8 + 16))( v9, (int *)(&a2)); /*0x413688*/
+  result = (*(int (**)(GadgetGrid *, int *))(v8 + 16))( (GadgetGrid *)(v9), (int *)(&a2)); /*0x413688*/
   if ( result != -1 ) /*0x41368e*/
   {
     v11 = *(unsigned int *)v9[2].__pad_0; /*0x413690*/

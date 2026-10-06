@@ -61,13 +61,13 @@ AbstractClass * * UnholyAlliance_GetResult()
                 v16[0] = (v9 << 8) + 128,
                 v16[1] = (v11 << 8) + 128,
                 v16[2] = 0,
-                !(*(uint8_t (**)(int *, unsigned int *, unsigned int))(v12 + 216))(v7, v16, 0)) )
+                !(*(uint8_t (**)(int *, unsigned int *, unsigned int))(v12 + 216))( (int *)(v7), (unsigned int *)(v16), 0)) )
           {
             v13 = (int16_t *)((HouseClass *)v4)->GetCurrentOption( &v15); /*0x5cb4fd*/
-            if ( !FindInfantryDeployPosition(v7,(gamemd::RadarClass *)(v13), 3) ) /*0x5cb506*/
+            if ( !FindInfantryDeployPosition( (int *)(v7), (gamemd::RadarClass *)(v13), 3) ) /*0x5cb506*/
             {
               v2 = 1; /*0x5cb515*/
-              (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5cb517*/
+              (*(void (**)(int *, int))(*v7 + 32))( (int *)(v7), 1); /*0x5cb517*/
             }
           }
         }

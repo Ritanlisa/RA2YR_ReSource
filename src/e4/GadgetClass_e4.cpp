@@ -52,7 +52,7 @@ ControlClass GadgetClass::Dtor()
     v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
     *(unsigned int *)this->Hovered = v2; /*0x4e13a7*/
-    v1 = 0; /*0x4e13aa*/
+    v1 = (ShpButtonClass *)(0); /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/
   }
   if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E88 ) /*0x4e13ba*/
@@ -77,7 +77,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   int v7; // eax
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
-  if ( !((GadgetClass*)((GadgetClass *)this))->ClearState(aP1) ) /*0x55792e*/
+  if ( !((GadgetClass*)((GadgetClass *)this))->ClearState( (int)(aP1)) ) /*0x55792e*/
     return 0; /*0x557a0b*/
   (*(void (**)(void *, int, int, int, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_80))(  /*0x557965*/
     stru_887598.lineTrailer,
@@ -92,7 +92,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   v9[2] = ListClass_field_0x14; /*0x557978*/
   v9[3] = ListClass_field_0x18; /*0x55797c*/
   v9[1] = ListClass_field_0x10; /*0x55798b*/
-  DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
+  DrawBuildingTilesSHP( (int *)(v9), 4, 1); /*0x55798f*/
   if ( *((unsigned int *)this + 17) ) /*0x557994*/
   {
     for ( i = 0; i < *((unsigned int *)this + 20); ++i ) /*0x5579a2*/
@@ -137,12 +137,12 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM)
   CHAR ClassName[128]; // [esp+20h] [ebp-80h] BYREF
 
   Parent = GetParent(hWnd); /*0x60aac7*/
-  v3 = 0; /*0x60aace*/
+  v3 = (unsigned int *)(0); /*0x60aace*/
   v14 = hWnd; /*0x60aad0*/
-  v15 = 0; /*0x60aad6*/
+  v15 = (unsigned int *)(0); /*0x60aad6*/
   if ( dword_AC1B04 ) /*0x60aada*/
   {
-    v4 = (HWND *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)(&v14) & ((1 << dword_AC1B0C) - 1))); /*0x60aafb*/
+    v4 = (HWND *)*((unsigned int *)dword_AC1B00 + ((*(unsigned int (*)(void *))&dword_AC1B18)( (void *)(&v14)) & ((1 << dword_AC1B0C) - 1))); /*0x60aafb*/
     if ( v4 ) /*0x60ab00*/
     {
       while ( *v4 != v14 ) /*0x60ab08*/
@@ -161,7 +161,7 @@ LABEL_7:
     v14 = Parent; /*0x60ab2e*/
     if ( !dword_AC1B04 ) /*0x60ab34*/
       goto LABEL_12; /*0x60ab34*/
-    v5 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash( (void)((unsigned int *)((int)&dword_AC1B00)), (int)&v14)); /*0x60ab4b*/
+    v5 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash(  (unsigned int *)((int)&dword_AC1B00), (int)&v14)); /*0x60ab4b*/
     if ( !v5 ) /*0x60ab50*/
       goto LABEL_12; /*0x60ab50*/
     while ( *v5 != v14 ) /*0x60ab58*/
@@ -223,7 +223,7 @@ LABEL_12:
     v18 = Parent; /*0x60ad12*/
     v15[55] = v8; /*0x60ad16*/
     v14 = 0; /*0x60ad26*/
-    HashTable::Get( (void)(&dword_AC1B00), (IUnknown *)(&v18), (IUnknown *)(&v14)); /*0x60ad2e*/
+    HashTable::Get( (void *)(&dword_AC1B00), (IUnknown *)(&v18), (IUnknown *)(&v14)); /*0x60ad2e*/
     if ( !v14 ) /*0x60ad39*/
       goto LABEL_86; /*0x60ad39*/
     v10 = *((unsigned int *)v14 + 27); /*0x60ad3f*/
@@ -254,7 +254,7 @@ LABEL_12:
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
     if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
-    if ( !strcmp(ClassName,(const char *)(g_INI_Key_ListBox)) && (v16 = 0, HashTable::Get( (void)(&dword_AC1B00), (IUnknown *)(&v17), (IUnknown *)(&v16))) ) /*0x60aeab*/
+    if ( !strcmp(ClassName,(const char *)(g_INI_Key_ListBox)) && (v16 = 0, HashTable::Get( (void *)(&dword_AC1B00), (IUnknown *)(&v17), (IUnknown *)(&v16))) ) /*0x60aeab*/
     {
       v11 = *(unsigned int *)(v16 + 104) == 1; /*0x60aebc*/
     }
@@ -300,7 +300,7 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
       v3 = (unsigned int)(wcslen((const wchar_t *)(String)));
       v4 = (wchar_t *)((unsigned int)((wchar_t *)new unsigned char[2 * v3 + 2]));
       this->u32_28 = (unsigned int)(v4); /*0x62359b*/
-      wcscpy(v4,(const wchar_t *)(String)); /*0x62359e*/
+      wcscpy( (wchar_t *)(v4), (const wchar_t *)(String)); /*0x62359e*/
     }
   }
 

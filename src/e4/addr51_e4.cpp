@@ -119,10 +119,10 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
     if ( !((unsigned int *)v6)[0] ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
-      if ( (*((int (**)(BuildingClass *, int, int))v6->vtable1 + 97))(v6, a2, a3) == -1 ) /*0x51ff71*/
+      if ( (*((int (**)(BuildingClass *, int, int))v6->vtable1 + 97))( (BuildingClass *)(v6), (int)(a2), (int)(a3)) == -1 ) /*0x51ff71*/
         queuedMission = (char *)((unsigned int *)v6)[0]; /*0x51ff79*/
       else
-        queuedMission = (char *)(*((int (**)(BuildingClass *))v6->vtable1 + 97))(v6); /*0x51ff89*/
+        queuedMission = (char *)(*((int (**)(BuildingClass *))v6->vtable1 + 97))( (BuildingClass *)(v6)); /*0x51ff89*/
       v7 = (unsigned int)(*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v6)[0]))->GetValue((unsigned int *)(&v27))); /*0x51ff9d*/
       owner = (gamemd::HouseClass *)(((unsigned int *)v6)[0]); /*0x51ffab*/
       v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
@@ -138,21 +138,21 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
       Field = ((FootClass*)((unsigned int *)v6)[0])->GetField(); /*0x52000b*/
       v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
       v12 = ((Input *)(&v24))->OffsetToDirection(); /*0x52001c*/
-      v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->vtable1 + 110))( /*0x52002b*/
-              v6,
-              Buffer,
-              v12,
-              v16,
-              (uint8_t)(((v7 >> 7) + 1) >> 1));
-      v15 = *(int16_t *)(*((int (**)(BuildingClass *, char *, unsigned int))v6->vtable1 + 110))( /*0x520048*/
-                          v6,
-                          Buffer,
-                          *(int16_t *)(v13 + 2));
+v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->vtable1 + 110))( /*0x52002b*/ v6, (char *)(Buffer), v12, (char *)(v16), (uint8_t)(((v7 >> 7) + 1) >> 1));
+
+
+
+
+
+v15 = *(int16_t *)(*((int (**)(BuildingClass *, char *, unsigned int))v6->vtable1 + 110))( /*0x520048*/ v6, (char *)(Buffer), *(int16_t *)(v13 + 2));
+
+
+
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
       v4 = v4 * 256.0; /*0x520050*/
       IDA_LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/
       sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &(&owner->plainName)[4], v9, v14, v15); /*0x520068*/
-      ((INIClass *)queuedMission)->SetString((uint8_t *)&g_INI_Key_Special.SidebarImage, Buffer, Source); /*0x520085*/
+      ((INIClass *)queuedMission)->SetString( (unsigned __int8 *)((uint8_t *)&g_INI_Key_Special.SidebarImage), (char *)(Buffer), (char *)(Source)); /*0x520085*/
       result = i; /*0x52008a*/
     }
     ++result; /*0x520094*/
@@ -645,20 +645,20 @@ int E4Recv_517110::sub_517110()
   unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-  if ( this->occupant != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1436) /*0x517138*/
-    || this->owningHouseIndex != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1440)
-    || this->fallRate != *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 1444) )
+  if ( this->occupant != *(unsigned int *)((char *)&stru_A8EB00 + 1436) /*0x517138*/
+    || this->owningHouseIndex != *(unsigned int *)((char *)&stru_A8EB00 + 1440)
+    || this->fallRate != *(unsigned int *)((char *)&stru_A8EB00 + 1444) )
   {
     v2 = this->occupant / 256; /*0x517161*/
     v3 = this->owningHouseIndex / 256; /*0x517164*/
-    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)((unsigned int *)this)[0] + 440))((void *)((unsigned int *)this)[0], v8); /*0x517167*/
+    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)((unsigned int *)this)[0] + 440))( (void *)((unsigned int *)this)[0], (unsigned char *)(v8)); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
   vtable3 = (void *)(((unsigned int *)this)[0]); /*0x51717f*/
   (&this->ambientSoundController)[3] = 0; /*0x517182*/
   (&this->ambientSoundController)[4] = 1072693248; /*0x517189*/
-  (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
+  (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))( (void *)(vtable3), 0, 1072693248); /*0x517199*/
   result = ((MovementAI *)((MovementAI *)this))->StepFootClass(0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
     return ((MovementAI *)((MovementAI *)this))->MainFootClass(1); /*0x5171b0*/
@@ -705,7 +705,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x51779f*/
-  strcpy(v13,(const char *)(g_Str_SOFTWARE_Westwood_WOLAPI_)); /*0x5177c0*/
+  strcpy( (char *)(v13), (const char *)(g_Str_SOFTWARE_Westwood_WOLAPI_)); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
   {

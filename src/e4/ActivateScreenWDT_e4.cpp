@@ -26,7 +26,7 @@ v5 = (void *)((int)(RA2_OPNEW(0x14u)));
     *(unsigned int *)((unsigned int)(v5)+ 4) = 0; /*0x76f48d*/
     *(unsigned int *)v5 = (unsigned int)((void*)&ReferenceCounted_vftable); /*0x76f494*/
     ((ComPtr *)((ComPtr *)((unsigned int)(v5)+ 8)))->Constructor(); /*0x76f49a*/
-    *(void **)v7 = (void*)&rc_ptr_WDTState_vftable; /*0x76f49f*/
+    *(void **)v7 = (unsigned int)(void*)&rc_ptr_WDTState_vftable; /*0x76f49f*/
     ((ComPtr *)((ComPtr *)((unsigned int)(v6)+ 8)))->Set(*(unsigned int *)(a2 + 4)); /*0x76f4ab*/
     v6->q010 = 0; /*0x76f4b0*/
     *(unsigned int *)v6 = (unsigned int)((void*)&WorldDominationTour_State_vftable); /*0x76f4b7*/
@@ -36,7 +36,7 @@ v5 = (void *)((int)(RA2_OPNEW(0x14u)));
   }
   else
   {
-    v6 = 0; /*0x76f4db*/
+    v6 = (void *)(0); /*0x76f4db*/
   }
   ((ComPtr *)(a1))->Constructor(); /*0x76f4df*/
   *(unsigned int *)a1->__pad_0 = (unsigned int)((void*)&rc_ptr_WorldDominationTour_State_vftable); /*0x76f4e6*/

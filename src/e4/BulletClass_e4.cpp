@@ -61,15 +61,15 @@ BulletClass::BulletClass()
   *(unsigned int *)this->__pad_144 = 0; /*0x46645c*/
   *(unsigned int *)&this->__pad_144[4] = 0; /*0x466462*/
   if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 356) /*0x46649b*/
-    || (*((unsigned int *)((char *)&stru_A8EB00 + 361)) || !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 356))
+    || (*((unsigned int *)((char *)&stru_A8EB00 + 361)) || !*(unsigned int *)((char *)&stru_A8EB00 + 356))
     && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 368) > 0
-    && (*(uint8_t (**)(unsigned char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 348) + 8))(
+    && (*(uint8_t (**)(unsigned char *, int, unsigned int))(*(unsigned int *)((char *)&stru_A8EB00 + 348) + 8))(
          (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 348),
-         *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 356) + *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 368),
+         *(unsigned int *)((char *)&stru_A8EB00 + 356) + *(unsigned int *)((char *)&stru_A8EB00 + 368),
          0) )
   {
-    v2 = (*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 364))++; /*0x4664a8*/
-    *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v2) = (unsigned int)(this); /*0x4664b7*/
+    v2 = (*(unsigned int *)((char *)&stru_A8EB00 + 364))++; /*0x4664a8*/
+    *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v2) = (unsigned int)(this); /*0x4664b7*/
   }
   return (int)this->__pad_0; /*0x4664bc*/
 
@@ -92,9 +92,9 @@ BulletClass * * BulletClass::Dtor(void *a1)
   if ( this->__pad_158[0] ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
-    v2 = (*(int (**)(int *, BulletClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x4665a4*/
-           (int *)((char *)(int *)&g_BuildingLoadQueue_Array),
-           &v5);
+v2 = (*(int (**)(int *, BulletClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x4665a4*/ (int *)((char *)(int *)&g_BuildingLoadQueue_Array), (BulletClass **)(&v5));
+
+
     if ( v2 != -1 && v2 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x4665b4*/
     {
       --((unsigned int *)&g_BuildingLoadQueue_Array)[1]; /*0x4665b9*/
@@ -116,10 +116,10 @@ BulletClass * * BulletClass::Dtor(void *a1)
   v3 = (*(int (**)(unsigned char *, BulletClass **))(*(unsigned int *)((char *)&stru_A8EB00 + 348) + 16))( (unsigned char *)((char *)&stru_A8EB00 + 348), (BulletClass **)(&v5)); /*0x46661b*/
   if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364) ) /*0x46662b*/
   {
-    --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 364); /*0x466630*/
+    --*(unsigned int *)((char *)&stru_A8EB00 + 364); /*0x466630*/
     for ( ; /*0x466636*/
           v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364);
-          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3) )
+          *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v3) )
     {
       ++v3; /*0x46663e*/
     }

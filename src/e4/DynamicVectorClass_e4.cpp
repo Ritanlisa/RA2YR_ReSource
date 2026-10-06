@@ -142,7 +142,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
       }
       else
       {
-        v5 = 0; /*0x5891dc*/
+        v5 = (char *)(0); /*0x5891dc*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x5891f7*/
@@ -259,7 +259,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
       }
       else
       {
-        v5 = 0; /*0x6284ed*/
+        v5 = (char *)(0); /*0x6284ed*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x62850c*/
@@ -366,7 +366,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
       }
       else
       {
-        v16 = 0; /*0x628c16*/
+        v16 = (char *)(0); /*0x628c16*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x628c46*/
@@ -1370,7 +1370,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
       return 0; /*0x5c55ba*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x5c5548*/
     {
-      m_8 = this->Capacity; /*0x5c554f*/
+      m_8 = (unsigned int)this->Capacity; /*0x5c554f*/
       if ( a2 < m_8 ) /*0x5c5554*/
         m_8 = a2; /*0x5c5556*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x5c555c*/
@@ -1389,7 +1389,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
   {
     (*(void (**)(void *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
   }
-  v7 = this->Capacity; /*0x5c55a1*/
+  v7 = (unsigned int)this->Capacity; /*0x5c55a1*/
   if ( v7 < this->Count ) /*0x5c55a9*/
     this->Count = v7; /*0x5c55ab*/
   return 1; /*0x5c55ae*/
@@ -1414,10 +1414,10 @@ namespace gamemd {
 unsigned int * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destructor_0(char a2)
 {
 
-  *(unsigned int *)this = &OwnerDraw::vt_DialogControl; /*0x6244c9*/
+  *(unsigned int *)this = (unsigned int)&OwnerDraw::vt_DialogControl; /*0x6244c9*/
   if ( (a2 & 1) != 0 ) /*0x6244cf*/
     __3_YAXPAX_Z(this); /*0x6244d2*/
-  return this; /*0x6244dc*/
+  return (unsigned int *)this; /*0x6244dc*/
 
 }
 } // namespace gamemd
@@ -1624,7 +1624,7 @@ int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Clear(int a2, int
   int v3; // esi
 
   v3 = *(unsigned int *)&this->m_1[3] + 260 * a3; /*0x628876*/
-  String::Copy( (char *)a2, (void)((const char *)v3)); /*0x62887a*/
+  String::Copy( (char *)a2,  (const char *)v3); /*0x62887a*/
   *(unsigned int *)(a2 + 256) = *(unsigned int *)(v3 + 256); /*0x628887*/
   return a2; /*0x62888d*/
 

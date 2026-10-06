@@ -70,12 +70,12 @@ _DWORD * GameClass::processFrame(int a2, int a3)
     if ( v5 ) /*0x4381e6*/
       result = sub_437F50(v5); /*0x4381ea*/
     else
-      result = 0; /*0x4381f1*/
+      result = (unsigned int *)(0); /*0x4381f1*/
     *(unsigned int *)&this->__pad_8[4] = (unsigned int)(result); /*0x4381f3*/
   }
   v6 = *(GameClass **)&this->__pad_8[4]; /*0x4381f6*/
   if ( v6 ) /*0x4381fc*/
-    return (unsigned int *)((GameClass *)(v6))->initGameMode(a2, a3); /*0x438208*/
+    return (_DWORD *)(unsigned int *)((GameClass *)(v6))->initGameMode(a2, a3); /*0x438208*/
   return result; /*0x4381f9*/
 
 }
@@ -96,7 +96,7 @@ unsigned int * GameClass::updateUI(int a2, int a3, void *a3_2)
     if ( v5 ) /*0x438316*/
       result = sub_437F50(v5); /*0x43831a*/
     else
-      result = 0; /*0x438321*/
+      result = (unsigned int *)(0); /*0x438321*/
     *(unsigned int *)&this->__pad_8[4] = (unsigned int)(result); /*0x438323*/
   }
   v6 = *(GameClass **)&this->__pad_8[4]; /*0x438326*/
@@ -149,13 +149,13 @@ int GameClass::loadScenarioFiles(int aP1)
         v4 = (gamemd::ObjectClass *)(aP1); /*0x5d22f3*/
         v8 += Rect.left; /*0x5d22f7*/
         v9 += Rect.top; /*0x5d2301*/
-        (*((void (**)(DSurface *, int *, int, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 + 2))( /*0x5d2309*/
-          g_DSurface_Primary,
-          &v8,
-          aP1,
-          v6,
-          0,
-          1);
+(*((void (**)(DSurface *, int *, int, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 + 2))( /*0x5d2309*/ g_DSurface_Primary, (int *)(&v8), aP1, (int *)(v6), 0, 1);
+
+
+
+
+
+
         ++v5; /*0x5d2313*/
         result = v7 + 16; /*0x5d2314*/
         v7 += 16; /*0x5d2319*/
@@ -164,10 +164,10 @@ int GameClass::loadScenarioFiles(int aP1)
     }
     this->GameClass_field_0x4[0] = 0; /*0x5d2320*/
     if ( stru_887598.lineTrailer ) /*0x5d2330*/
-      return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))(  /*0x5d2337*/
-               stru_887598.lineTrailer,
-               v4,
-               0);
+return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))( /*0x5d2337*/ stru_887598.lineTrailer, (int)(v4), 0);
+
+
+
   }
   return result; /*0x5d233a*/
 
@@ -211,7 +211,7 @@ int GameClass::FrameLoop(int a2)
             v4 = v11 - v3; /*0x5d248f*/
           v11 = v4; /*0x5d2495*/
         }
-        ((DDraw *)(DDraw *)this)->HandleSuspend(); /*0x5d249f*/
+        ((DDraw *)this)->HandleSuspend(); /*0x5d249f*/
         Ticks = TimerGetTicks(); /*0x5d24b3*/
       }
       Sleep(0); /*0x5d24b9*/
@@ -311,8 +311,8 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
       {
         v9 = (char *)((unsigned int)((char *)((int)((char *)(*((unsigned int *)this + 80))))));
         if ( v9 >= (unsigned int)(char *)(aP2) ) /*0x632e7e*/
-          v9 = aP2; /*0x632e80*/
-        memcpy( &this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24], (const void *)(Src), (size_t)(v9)); /*0x632e97*/
+          v9 = (char *)(aP2); /*0x632e80*/
+        memcpy( (void *)(&this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24]), (const void *)(Src), (size_t)(v9)); /*0x632e97*/
         v3 = &Src[v9]; /*0x632eb0*/
         v10 = *((unsigned int *)this + 80) == (unsigned int)(v9); /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
@@ -328,11 +328,11 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
       }
       else
       {
-        memset(v12, 0, sizeof(v12)); /*0x632e17*/
-        (*(void (**)(unsigned int, int *, int))(**(unsigned int **)&this->__pad_0[16] + 8))( /*0x632e21*/
-          *(unsigned int *)&this->__pad_0[16],
-          v12,
-          56);
+        memset( (void *)(v12), 0, sizeof(v12)); /*0x632e17*/
+(*(void (**)(unsigned int, int *, int))(**(unsigned int **)&this->__pad_0[16] + 8))( /*0x632e21*/ *(unsigned int *)&this->__pad_0[16], (int *)(v12), 56);
+
+
+
         v6 = (int)(*(unsigned int *)&this->__pad_24[20]);
         if ( v6 ) /*0x632e29*/
           v7 = (*(unsigned int *)(v6 + 512) - 1) / 8 * (55 / ((*(unsigned int *)(v6 + 512) - 1) / 8) + 1); /*0x632e4a*/
@@ -440,7 +440,7 @@ int GameClass::initPlayerData(const char **a2, void * aStandard_0)
 
   v3 = *(unsigned int *)&this->__pad_3D[375]; /*0x69ae15*/
   if ( !v3 ) /*0x69ae1d*/
-    return ((String *)((String *)a2))->Equals_Alt(aStandard_0); /*0x69ae28*/
+    return ((String *)((String *)a2))->Equals_Alt( (const char *)(aStandard_0)); /*0x69ae28*/
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
@@ -466,17 +466,17 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
   int v6; // edi
   Network *v7; // [esp+0h] [ebp-4h]
 
-  *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 500) = 1; /*0x6bec72*/
+  *(unsigned int *)((char *)&stru_A8EB00 + 500) = 1; /*0x6bec72*/
   PostMessageA((HWND)(g_hWnd), 2u, 0, 0); /*0x6bec78*/
   if ( g_hWnd ) /*0x6bec85*/
   {
     do /*0x6bec9b*/
       MessageLoop(); /*0x6bec87*/
-    while ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 500) == 1 && g_hWnd ); /*0x6bec9b*/
+    while ( *(unsigned int *)((char *)&stru_A8EB00 + 500) == 1 && g_hWnd ); /*0x6bec9b*/
   }
   if ( dwRegister != -1 ) /*0x6beca5*/
   {
-    RevokeActiveObject((void *)(dwRegister), 0); /*0x6becaa*/
+    RevokeActiveObject( (void *)((void *)(dwRegister)), 0); /*0x6becaa*/
     dwRegister = -1; /*0x6becb0*/
   }
   CoDisconnectObject(&punk, 0); /*0x6becc1*/
@@ -664,7 +664,7 @@ namespace gamemd {
 int * GameClass::initDisplay(char a2)
 {
 
-  ((Vector *)((int)((unsigned int *)this + 1)))->Clear(); /*0x4aeca6*/
+  ((Vector *)((int)((unsigned int *)this + 1)))->Clear((int)((Vector *)((int)((unsigned int *)this + 1)))); /*0x4aeca6*/
   ((Pipe *)(((Pipe *)this)))->Dtor(); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
     __3_YAXPAX_Z(this); /*0x4aecba*/

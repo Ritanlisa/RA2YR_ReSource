@@ -114,7 +114,7 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &WorldDominationTour::Voices::vt_Anim; /*0x771a33*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&WorldDominationTour::Voices::vt_Anim; /*0x771a33*/
   VtableStub::sub_5CB6C0(this); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     __3_YAXPAX_Z(this); /*0x771a46*/

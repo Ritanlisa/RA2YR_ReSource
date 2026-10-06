@@ -20,7 +20,7 @@ int BitTextClass::ParseFontData(char * Source, void *a2)
   struct tagRECT *v3; // ebp
   unsigned int *Font; // eax
 
-  v3 = (tagRECT *)((unsigned int)((struct tagRECT *)((char *)this + 48)));
+  v3 = (struct tagRECT *)((tagRECT *)((unsigned int)((struct tagRECT *)((char *)this + 48))));
   *(unsigned int *)this = (unsigned int)(&vt_BitFont); /*0x433895*/
   *((unsigned int *)this + 1) = 0; /*0x43389b*/
   *((unsigned short *)this + 18) = 0x7FFF; /*0x43389e*/
@@ -74,7 +74,7 @@ _DWORD * BitTextClass::LoadFont()
   v2 = (int)(__2_YAPAXI_Z(0x44u)); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {
-    g_FogOfWarState = (char *)(int)((Text *)BitTextClass::ParseFontData( (char *)(v2), (void)(aGameFnt)));
+    g_FogOfWarState = (unsigned int)(char *)(int)((Text *)BitTextClass::ParseFontData( (char *)(v2), (void *)(aGameFnt)));
     return &this->m_FontBitmap; /*0x434af8*/
   }
   else

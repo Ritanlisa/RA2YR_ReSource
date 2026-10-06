@@ -58,7 +58,7 @@ int CCFileClass::Destruct()
 
   *(unsigned int *)this->CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x535a76*/
   *((unsigned int *)this + 25) = 0; /*0x535a7c*/
-  ((Vector *)((int)(unsigned int *)this + 88))->Clear(); /*0x535a83*/
+  ((Vector *)((int)(unsigned int *)this + 88))->Clear((int)((Vector *)((int)(unsigned int *)this + 88))); /*0x535a83*/
   *(unsigned int *)this->CDFileClass = (unsigned int)(&off_7E1668); /*0x535a8a*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)this))->Dtor(); /*0x535a95*/
 
@@ -165,7 +165,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
       v7 = (unsigned char *)((char *)dword_B077B4 + 16);
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
+        v8 = (void *)((unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3)));
         v9 = (unsigned int *)((char *)dword_B077B4 + 12);
         if ( v8 ) /*0x69e3c5*/
           ((MixFileClass *)v8)->CacheNode_Dtor( 1); /*0x69e3c9*/

@@ -19,7 +19,7 @@ void sub_5DAF30(ObjectClass *self)
   int16_t v4; // [esp+1CCh] [ebp-4h]
   char v5; // [esp+1CEh] [ebp-2h]
 
-  memset(v3, 0, sizeof(v3)); /*0x5daf47*/
+  memset( (void *)(v3), 0, sizeof(v3)); /*0x5daf47*/
   v4 = 0; /*0x5daf49*/
   v5 = 0; /*0x5daf4b*/
   v3[0] = 22; /*0x5daf56*/

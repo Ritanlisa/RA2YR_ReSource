@@ -251,7 +251,7 @@ int IPXGlobalConnClass::Send()
         ((Waypoint*)&v10)->InitInvalid(); /*0x5402fd*/
         v6 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x54030e*/
         v8 = 12; /*0x54031c*/
-        ((PacketQueue*)v6)->ExtractEntry(&v10.__pad_0[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
+        ((PacketQueue*)v6)->ExtractEntry( (void *)(&v10.__pad_0[12]), (unsigned int *)(&v9), v3--, (void *)(&v10), (unsigned int *)(&v8), 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
       IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x54032b*/
@@ -295,7 +295,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
       ((Waypoint*)&v13)->InitInvalid(); /*0x540398*/
       v9 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x5403b3*/
       v11 = 12; /*0x5403b7*/
-      ((PacketQueue*)v9)->ExtractEntry(&v13.__pad_0[12], &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
+      ((PacketQueue*)v9)->ExtractEntry( (void *)(&v13.__pad_0[12]), (unsigned int *)(&v12), v6--, (void *)(&v13), (unsigned int *)(&v11), 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }
     IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x5403c6*/
@@ -311,7 +311,7 @@ namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
 
-  return ConnectionClass::sendAck( (gamemd::AnimClass *)((int)this), (gamemd::AnimClass *)(a1), (AnimClass *)(aP2), (gamemd::AnimClass *)(aP3), (void)((void *)(aP4))); /*0x540629*/
+  return ConnectionClass::sendAck( (gamemd::AnimClass *)((int)this), (gamemd::AnimClass *)(a1), (AnimClass *)(aP2), (gamemd::AnimClass *)(aP3),  (void *)(aP4)); /*0x540629*/
 
 }
 } // namespace gamemd
@@ -329,7 +329,7 @@ namespace gamemd {
 int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
 {
 
-  return ((ConnectionClass *)((ConnectionClass *)this))->processTileUpdate(a2, a3); /*0x54065f*/
+  return ((ConnectionClass *)((ConnectionClass *)this))->processTileUpdate( (void *)(a2), (signed int *)(a3)); /*0x54065f*/
 
 }
 } // namespace gamemd

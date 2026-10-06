@@ -69,11 +69,11 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   }
   else
   {
-    v9 = (unsigned int *)((float)v13);
+    v9 = (unsigned int)(unsigned int *)((float)v13);
     v11 = (unsigned int *)((int)((unsigned int *)(0)));
-    v10 = (unsigned int *)((float)v8);
-    v4 = (float *)((unsigned int *)(TransformMatrix3x4Point( v12, (IUnknown *)((unsigned int *)this + 889), (IUnknown *)(&v9))));
-    v9 = (unsigned int *)(*v4);
+    v10 = (unsigned int)(unsigned int *)((float)v8);
+    v4 = (float *)((unsigned int *)(TransformMatrix3x4Point( (AbstractClass *)(v12), (IUnknown *)((unsigned int *)this + 889), (IUnknown *)(&v9))));
+    v9 = (unsigned int)(unsigned int *)(*v4);
     v10 = v4[1]; /*0x6d23c2*/
     v11 = (unsigned int *)(*((unsigned int *)v4 + 2)); /*0x6d23c9*/
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/

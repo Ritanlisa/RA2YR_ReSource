@@ -125,7 +125,7 @@ LABEL_34:
       }
       else
       {
-        while ( (*(int (**)(int, unsigned int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, v22, 16, 0) >= 0 ) /*0x42eed0*/
+        while ( (*(int (**)(int, unsigned int *, int, unsigned int))(*(unsigned int *)v2 + 12))( v2, (unsigned int *)(v22), 16, 0) >= 0 ) /*0x42eed0*/
         {
           percentBuilt = aP0->percentBuilt; /*0x42eeda*/
           if ( aP0->cells24Count < percentBuilt /*0x42ef02*/

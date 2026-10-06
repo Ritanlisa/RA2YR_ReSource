@@ -23,7 +23,7 @@ int LinkClass::Destroy(void *a1)
 {
 
   (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
-  return LinkedList::RemoveNode( (void)((LinkClass *)this)); /*0x4e148f*/
+  return LinkedList::RemoveNode(  (LinkClass *)this); /*0x4e148f*/
 
 }
 } // namespace gamemd

@@ -120,11 +120,11 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
     *(unsigned short *)v88.__pad_0 = Math::RoundToInt(a3); /*0x5b216b*/
     v85.Movement_field_00 = *(unsigned int *)v88.__pad_0; /*0x5b217e*/
     LOWORD(v86) = 0x2000; /*0x5b2182*/
-    if ( ((Math*)((Math *)&v85))->Abs16Cmp(&v86, aP4) ) /*0x5b2189*/
+    if ( ((Math*)((Math *)&v85))->Abs16Cmp( (IUnknown *)(&v86), (IUnknown *)(aP4)) ) /*0x5b2189*/
     {
       LOWORD(v85.Movement_field_00) = v86; /*0x5b2197*/
     }
-    else if ( *(int16_t *)((Math*)((Math *)&v86))->Sub16(&v89, &v85) >= 0 ) /*0x5b21b5*/
+    else if ( *(int16_t *)((Math*)((Math *)&v86))->Sub16( (BuildingTypeClass *)(&v89), (IUnknown *)(&v85)) >= 0 ) /*0x5b21b5*/
     {
       LOWORD(v85.Movement_field_00) += *aP4; /*0x5b21c4*/
     }
@@ -132,7 +132,7 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
     {
       LOWORD(v85.Movement_field_00) -= *aP4; /*0x5b21ba*/
     }
-    *(unsigned int *)v88.__pad_0 = *(int16_t *)((Vector *)((int *)&v89))->ToFacingMath(v84) - 0x3FFF; /*0x5b21de*/
+    *(unsigned int *)v88.__pad_0 = *(int16_t *)((Vector *)((int *)&v89))->ToFacingMath( (unsigned short *)(v84)) - 0x3FFF; /*0x5b21de*/
     /* asm-debt:__asm */
     {
 //L-fix       fild dword ptr [esp+98h+var_64.__pad_0]
@@ -208,7 +208,7 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
     HIDWORD(v92) = v25; /*0x5b22dd*/
     LOWORD(v26) = Math::RoundToInt(a3); /*0x5b22e1*/
     v78 = __PAIR64__(v26 + a2->Vector3_field_0x08, HIDWORD(v92) + a2->Vector3_field_0x04); /*0x5b22f9*/
-    v27 = ((Coord *)((Coord *)&v92))->Subtract(*(unsigned int *)a2->__pad_0 + v24, v78, SHIDWORD(v78)); /*0x5b22ff*/
+    v27 = (unsigned int *)((Coord *)((Coord *)&v92))->Subtract(*(unsigned int *)a2->__pad_0 + v24, v78, SHIDWORD(v78)); /*0x5b22ff*/
     v28 = v27[1]; /*0x5b2308*/
     v29 = v27[2]; /*0x5b230b*/
     *(unsigned int *)a2->__pad_0 = *v27; /*0x5b230e*/
@@ -258,7 +258,7 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
   *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
   a2->Vector3_field_0x04 = v37; /*0x5b23be*/
   a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
-  v39 = ((Vector3 *)(a2))->Subtract((int *)&v90, aP3); /*0x5b23c7*/
+  v39 = ((Vector3 *)(a2))->Subtract( (int *)&v90, (unsigned int *)(aP3)); /*0x5b23c7*/
   v40 = ((Coord*)((Coord *)v39))->Length(); /*0x5b23ce*/
   v41 = (void *)(*aP3); /*0x5b23d3*/
   v42 = (void *)(aP3[1]); /*0x5b23d5*/
@@ -269,7 +269,7 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
   v88.field_8 = (unsigned int)(v42); /*0x5b23e5*/
   *(unsigned int *)v87 = v43; /*0x5b23e9*/
   *(unsigned int *)&v87[4] = Vector3_field_0x04; /*0x5b23f5*/
-  v45 = ((Coord2D *)((Coord2D *)v87))->Sub((int *)&v90, &v88.field_4); /*0x5b23ff*/
+  v45 = ((Coord2D *)((Coord2D *)v87))->Sub( (int *)&v90, (unsigned int *)(&v88.field_4)); /*0x5b23ff*/
   v46 = Vector::TwoDMagnitudeMath(v45); /*0x5b2406*/
   v47 = (unsigned int)aP3[2]; /*0x5b240b*/
   Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/
@@ -293,7 +293,7 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
 //L-fix     fstp [esp+98h+var_70]
   }
   *(double *)&v87[8] = v91; /*0x5b2489*/
-  qmemcpy(v94, v87, sizeof(v94)); /*0x5b248d*/
+  qmemcpy( (void *)(v94), (const void *)(v87), sizeof(v94)); /*0x5b248d*/
   _ESI = *(unsigned int *)v88.__pad_0; /*0x5b248f*/
   /* asm-debt:__asm { fld qword ptr [esi+8] } */
   /* asm-debt:__asm */
@@ -316,11 +316,11 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
   /* asm-debt:__asm { fsub ds:dbl_7E2820 } */
   /* asm-debt:__asm { fmul ds:dbl_7E2818 } */
   *(unsigned short *)v87 = Math::RoundToInt(v46); /*0x5b2510*/
-  if ( ((Math*)((Math *)&v86))->Abs16Cmp(v87, aP4) ) /*0x5b2515*/
+  if ( ((Math*)((Math *)&v86))->Abs16Cmp( (IUnknown *)(v87), (IUnknown *)(aP4)) ) /*0x5b2515*/
   {
     LOWORD(v86) = *(unsigned short *)v87; /*0x5b2523*/
   }
-  else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16(&v88, &v86) >= 0 ) /*0x5b2541*/
+  else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16( (BuildingTypeClass *)(&v88), (IUnknown *)(&v86)) >= 0 ) /*0x5b2541*/
   {
     LOWORD(v86) = *aP4 + v86; /*0x5b2550*/
   }
@@ -358,7 +358,7 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
 //L-fix     fstp qword ptr [esi+8]
   }
   *(double *)(_ESI + 8) = _RT1; /*0x5b25bd*/
-  Math::Hypotenuse2D( (void)((int *)_ESI)); /*0x5b25c0*/
+  Math::Hypotenuse2D(  (int *)_ESI); /*0x5b25c0*/
   /* asm-debt:__asm { fstp [esp+0A0h+var_A0]; double } */
   ((Math *)*(double *)(_ESI + 16))->CalcAngle( v82); /*0x5b25d3*/
   /* asm-debt:__asm { fsub ds:dbl_7E2820 } */
@@ -372,7 +372,7 @@ void Movement::CalcVelocity(IUnknown * a1, unsigned int * a2, double a3, IUnknow
     if ( !a9 ) /*0x5b28a1*/
     {
       LOWORD(v89) = 256; /*0x5b28b6*/
-      v68 = (Movement *)Movement::Check( (unsigned int *)(Movement *)aP4, (unsigned short *)(&v88), (void)(&v89)); /*0x5b28bd*/
+      v68 = (Movement *)Movement::Check( (unsigned int *)(Movement *)aP4, (unsigned short *)(&v88), (void *)(&v89)); /*0x5b28bd*/
       v69 = ((Movement*)v68)->DivideAndStoreScaled((int *)&v88.field_4, 2); /*0x5b28c4*/
       v70 = (int16_t *)((Vector *)((int *)v87))->ToFacingMath((unsigned short *)v69); /*0x5b28d6*/
       Movement::CompareAbsCoords(&v85, v70, v83); /*0x5b28e0*/
@@ -437,11 +437,11 @@ LABEL_34:
         *(unsigned short *)v88.__pad_0 = 18432; /*0x5b27ff*/
         LOWORD(v89) = *aP4 / 2; /*0x5b2812*/
         *(unsigned int *)v87 = LODWORD(v89); /*0x5b281f*/
-        if ( ((Math*)((Math *)&v85))->Abs16Cmp(&v88, (int16_t *)v87) ) /*0x5b2829*/
+        if ( ((Math*)((Math *)&v85))->Abs16Cmp( (IUnknown *)(&v88), (IUnknown *)((int16_t *)v87)) ) /*0x5b2829*/
         {
           LOWORD(v85.Movement_field_00) = *(unsigned short *)v88.__pad_0; /*0x5b2837*/
         }
-        else if ( *(int16_t *)((Math*)&v88)->Sub16(&v89, &v85) >= 0 ) /*0x5b2858*/
+        else if ( *(int16_t *)((Math*)&v88)->Sub16( (BuildingTypeClass *)(&v89), (IUnknown *)(&v85)) >= 0 ) /*0x5b2858*/
         {
           LOWORD(v85.Movement_field_00) += *(unsigned short *)v87; /*0x5b286b*/
         }
@@ -456,11 +456,11 @@ LABEL_34:
       *(unsigned short *)v87 = 0x2000; /*0x5b2778*/
       LOWORD(v89) = *aP4 / 2; /*0x5b278b*/
       *(unsigned int *)v88.__pad_0 = LODWORD(v89); /*0x5b2798*/
-      if ( ((Math*)((Math *)&v85))->Abs16Cmp(v87, (int16_t *)v88.__pad_0) ) /*0x5b27a2*/
+      if ( ((Math*)((Math *)&v85))->Abs16Cmp( (IUnknown *)(v87), (IUnknown *)((int16_t *)v88.__pad_0)) ) /*0x5b27a2*/
       {
         LOWORD(v85.Movement_field_00) = *(unsigned short *)v87; /*0x5b27b0*/
       }
-      else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16(&v89, &v85) >= 0 ) /*0x5b27d1*/
+      else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16( (BuildingTypeClass *)(&v89), (IUnknown *)(&v85)) >= 0 ) /*0x5b27d1*/
       {
         LOWORD(v85.Movement_field_00) += *(unsigned short *)v88.__pad_0; /*0x5b27e7*/
       }
@@ -476,7 +476,7 @@ LABEL_49:
     v93[0] = 0; /*0x5b28f8*/
   else
     v93[0] = (signed int)v93[0] / 4; /*0x5b290f*/
-  return ((Coord *)(Coord *)&v92)->Length(); /*0x5b2347*/
+  return ((Coord *)&v92)->Length(); /*0x5b2347*/
 
 }
 } // namespace gamemd

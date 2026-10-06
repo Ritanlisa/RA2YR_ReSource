@@ -73,7 +73,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       }
       else
       {
-        v5 = 0; /*0x47838d*/
+        v5 = (char *)(0); /*0x47838d*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x4783ac*/

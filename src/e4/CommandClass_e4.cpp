@@ -72,8 +72,8 @@ int CommandClass::BuildBar()
   v2 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0);
   do /*0x6d1224*/
   {
-    (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->__pad_0 + 32))(v2); /*0x6d1210*/
-    (*(void (**)(CommandClass *, ShapeButtonClass *))(*(unsigned int *)this + 48))(this, v2); /*0x6d1218*/
+    (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->__pad_0 + 32))( (ShapeButtonClass *)(v2)); /*0x6d1210*/
+    (*(void (**)(CommandClass *, ShapeButtonClass *))(*(unsigned int *)this + 48))( this, (ShapeButtonClass *)(v2)); /*0x6d1218*/
     (unsigned int)(v2)+= 8; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
@@ -96,7 +96,7 @@ int CommandClass::BuildBar()
       v42 = (char *)(aTipAttackmove); /*0x6d1287*/
       v40 = ShapeButtonClass_field_0x08; /*0x6d128f*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v6); /*0x6d1293*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d12a3*/
+      CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)&v37)); /*0x6d12a3*/
     }
   }
   v9 = (&g_ObjectTrackingPool)[dword_B0CB3C]; /*0x6d12ad*/
@@ -117,7 +117,7 @@ int CommandClass::BuildBar()
       v42 = (char *)(aTipBeacon); /*0x6d12fc*/
       v41 = v14; /*0x6d1304*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v12); /*0x6d1308*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1318*/
+      CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)&v37)); /*0x6d1318*/
     }
   }
   v15 = (&g_ObjectTrackingPool)[dword_B0C1B8]; /*0x6d1323*/
@@ -138,7 +138,7 @@ int CommandClass::BuildBar()
       v42 = (char *)(aTipCheer); /*0x6d1372*/
       v40 = v20; /*0x6d137a*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v18); /*0x6d137e*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d138e*/
+      CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)&v37)); /*0x6d138e*/
     }
   }
   v21 = (&g_ObjectTrackingPool)[dword_B0CB20]; /*0x6d1398*/
@@ -159,32 +159,32 @@ int CommandClass::BuildBar()
       v42 = (char *)(aTipDeploy); /*0x6d13e7*/
       v41 = v26; /*0x6d13ef*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v24); /*0x6d13f3*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1403*/
+      CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)&v37)); /*0x6d1403*/
     }
   }
   v27 = (gamemd::ShapeButtonClass *)((unsigned int)((gamemd::ShapeButtonClass *)(((unsigned int *)(g_ObjectTrackingPool))[dword_B0CB68])));
   if ( v27 > (gamemd::ShapeButtonClass *)(0x18) ) /*0x6d1419*/
-    v28 = 0; /*0x6d142e*/
+    v28 = (ShapeButtonClass *)(0); /*0x6d142e*/
   else
     v28 = &stru_B0C1C0 + 8 * v27; /*0x6d1426*/
-  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v28)), (int)aTipGuard); /*0x6d1435*/
+  PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(v28))), (int)aTipGuard); /*0x6d1435*/
   v29 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
-    v30 = 0; /*0x6d145e*/
+    v30 = (ShapeButtonClass *)(0); /*0x6d145e*/
   else
     v30 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v29); /*0x6d1456*/
-  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v30)), (int)aTipPlanningmod); /*0x6d1465*/
+  PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(v30))), (int)aTipPlanningmod); /*0x6d1465*/
   FontClassEntry = GetFontClassEntry(dword_B0CB6C); /*0x6d1470*/
-  PushCommandClass::Execute( (unsigned int)((unsigned int *)(FontClassEntry)), (int)aTipStop); /*0x6d147c*/
+  PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(FontClassEntry))), (int)aTipStop); /*0x6d147c*/
   v32 = GetFontClassEntry(dword_B0CC20); /*0x6d1487*/
-  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v32)), (int)aTipTeam01); /*0x6d1493*/
+  PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(v32))), (int)aTipTeam01); /*0x6d1493*/
   v33 = GetFontClassEntry(dword_B0CC28); /*0x6d149e*/
-  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v33)), (int)aTipTeam02); /*0x6d14aa*/
+  PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(v33))), (int)aTipTeam02); /*0x6d14aa*/
   v34 = GetFontClassEntry(dword_B0CD28); /*0x6d14b5*/
-  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v34)), (int)aTipTeam03); /*0x6d14c1*/
+  PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(v34))), (int)aTipTeam03); /*0x6d14c1*/
   v35 = GetFontClassEntry(dword_B0CB38); /*0x6d14cc*/
-  PushCommandClass::Execute( (unsigned int)((unsigned int *)(v35)), (int)aTipTypeselect); /*0x6d14d8*/
-  return PushCommandClass::Execute( (unsigned int)((unsigned int *)(&stru_B0CCB0)), (int)aTipThumbopen); /*0x6d14ec*/
+  PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(v35))), (int)aTipTypeselect); /*0x6d14d8*/
+  return PushCommandClass::Execute( (unsigned int *)((unsigned int)((unsigned int *)(&stru_B0CCB0))), (int)aTipThumbopen); /*0x6d14ec*/
 
 }
 } // namespace gamemd

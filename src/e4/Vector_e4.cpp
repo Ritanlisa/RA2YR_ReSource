@@ -233,7 +233,7 @@ int Vector::Find(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x4e0550*/
+  v2 = (unsigned int)this->q010; /*0x4e0550*/
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
@@ -277,10 +277,10 @@ char Vector::Grow()
     v4 = 10; /*0x7aeee9*/
   }
   v5 = (void *)__2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
-  memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
+  memset( (void *)(v5), 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->Vector_field_0x8 ) /*0x7aef13*/
   {
-    qmemcpy( v5, (const void *)(this->Vector_field_0x8), 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
+    qmemcpy( (void *)(v5), (const void *)(this->Vector_field_0x8), 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
   __3_YAXPAX_Z((void *)(this->Vector_field_0x8)); /*0x7aef39*/

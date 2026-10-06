@@ -39,7 +39,7 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
     result = (size_t *)((Array *)(v8))->GetClamped((int)self); /*0x488543*/
     if ( result )
     {
-      memset(&v22[1], 0, 198); /*0x488560*/
+      memset( (void *)(&v22[1]), 0, 198); /*0x488560*/
       v17 = *result; /*0x48856b*/
       v22[0] = *((unsigned char *)result + 4) != 0 ? 3 : 32;
       v22[1] = (int)(32);
@@ -58,10 +58,10 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
         v19[3] = v8[2].ListClass_field_0x0C; /*0x4885fb*/
         v19[1] = (unsigned int)(a4); /*0x488606*/
         v19[2] = (unsigned int)(a5); /*0x48860a*/
-        (*(void (**)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/
-          g_DSurface_Hidden_2,
-          v19,
-          v13);
+(*(void (**)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/ g_DSurface_Hidden_2, (unsigned int *)(v19), v13);
+
+
+
       }
       else if ( (ListClass_field_0x0C & 0x4000) == 0 ) /*0x488620*/
       {
@@ -72,10 +72,10 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
       v18 = (unsigned int)(ListClass_field_0x10);
       v20[1] = (unsigned int)(a4);
       v16 = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * Type); /*0x488659*/
-      v15 = (*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488662*/
-              g_DSurface_Hidden_2,
-              v21);
-            return FillRectangle((IUnknown *)(/*0x488675*/                v19),                (int)v22,                (int)g_DSurface_Hidden_2,                v15,                (int)v20,                v16,                0,                ListClass_field_0x0C,                a5,                v18);
+v15 = (*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488662*/ g_DSurface_Hidden_2, (unsigned char *)(v21));
+
+
+            return FillRectangle( (IUnknown *)(/*0x488675*/                v19), (IUnknown *)((int)v22), (int)g_DSurface_Hidden_2, v15, (int)v20, v16, 0, ListClass_field_0x0C, (int)(a5), v18);
     }
   }
   return (size_t)(result); /*0x48867d*/
@@ -101,7 +101,7 @@ int CheckListClass::ddtor(int a2)
     (*(void (**)(char *, int))(*((unsigned int *)this + 46) + 12))((char *)this + 184, a2); /*0x557e3c*/
     (*(void (**)(char *, int))(*((unsigned int *)this + 22) + 12))((char *)this + 88, a2); /*0x557e46*/
   }
-  return LinkedList::InsertAfter( (void)((LinkClass *)this), a2); /*0x557e51*/
+  return LinkedList::InsertAfter(  (LinkClass *)this, a2); /*0x557e51*/
 
 }
 }  // G42.18c ns repair

@@ -96,11 +96,11 @@ AnimClass * * Building::ComputePosition(int *aP1)
         {
           v35[0] = v9; /*0x425da0*/
           v35[1] = v13; /*0x425da5*/
-          if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea(v35, 1) ) /*0x425daa*/
+          if ( (uint8_t)((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->IsWithinUsableArea( (int16_t *)(v35), 1) ) /*0x425daa*/
           {
             v36[0] = v9; /*0x425dbb*/
             v36[1] = v13; /*0x425dc6*/
-            v14 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v36); /*0x425dcb*/
+            v14 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v36)); /*0x425dcb*/
             v15 = v14; /*0x425dd0*/
             if ( *(unsigned int *)&v14->__pad_E8[4] == 2 /*0x425e18*/
               && ((int)v14->Cell_field_0x140 & 0x100) == 0
@@ -177,7 +177,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
       v22 = v19 + HIWORD(v39); /*0x425f21*/
       v38[0] = v21; /*0x425f28*/
       v38[1] = v19 + HIWORD(v39); /*0x425f2d*/
-      if ( (uint8_t)((BuildingClass *)(BuildingClass *)this)->IsCellPlaceable( v38) ) /*0x425f3b*/
+      if ( (uint8_t)((BuildingClass *)this)->IsCellPlaceable( v38) ) /*0x425f3b*/
       {
         v23 = (gamemd::AnimClass **)((int)((gamemd::AnimClass **)((v21 << 8) + 128)));
         v24 = (gamemd::AnimClass **)(v22);
@@ -185,7 +185,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
       }
       v38[0] = (unsigned int)(v21);
       v38[1] = HIWORD(v39); /*0x425f62*/
-      if ( (uint8_t)((BuildingClass *)(BuildingClass *)this)->IsCellPlaceable( v38) ) /*0x425f78*/
+      if ( (uint8_t)((BuildingClass *)this)->IsCellPlaceable( v38) ) /*0x425f78*/
       {
         *(unsigned int *)aP1 = (unsigned int)((gamemd::AnimClass **)((v21 << 8) + 128));
         aP1[1] = (v31 << 8) + 128; /*0x425fa2*/
@@ -194,7 +194,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
       }
       v38[1] = (unsigned int)(v22);
       v38[0] = v39; /*0x425fbd*/
-      if ( (uint8_t)((BuildingClass *)(BuildingClass *)this)->IsCellPlaceable( v38) ) /*0x425fd3*/
+      if ( (uint8_t)((BuildingClass *)this)->IsCellPlaceable( v38) ) /*0x425fd3*/
       {
         *(unsigned int *)aP1 = (unsigned int)((gamemd::AnimClass **)((v8 << 8) + 128));
         aP1[1] = (v22 << 8) + 128; /*0x425ffa*/
@@ -220,7 +220,7 @@ LABEL_39: *aP1 = (gamemd::AnimClass **)(Map_InvalidCoord_X);
     v38[0] = v29; /*0x426066*/
     v38[1] = (int16_t)(v28); /*0x42606f*/
     *(unsigned int *)v34 = *(unsigned int *)v38; /*0x42607d*/
-    if ( (uint8_t)((BuildingClass *)(BuildingClass *)this)->IsCellPlaceable( v34) ) /*0x426081*/
+    if ( (uint8_t)((BuildingClass *)this)->IsCellPlaceable( v34) ) /*0x426081*/
       break; /*0x426081*/
     if ( ++v27 >= 8 ) /*0x42608e*/
       goto LABEL_39; /*0x42608e*/

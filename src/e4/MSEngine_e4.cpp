@@ -46,7 +46,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
       if ( v6 ) /*0x5acd5f*/
         v7 = (char *)v6; /*0x5acd64*/
       else
-        v7 = 0; /*0x5acd6c*/
+        v7 = (char *)(0); /*0x5acd6c*/
     }
     LOBYTE(this->m_C) = 1; /*0x5acd7b*/
     if ( v7 ) /*0x5acd7f*/
@@ -128,7 +128,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       if ( v6 ) /*0x5aceff*/
         v7 = (char *)v6; /*0x5acf04*/
       else
-        v7 = 0; /*0x5acf0c*/
+        v7 = (char *)(0); /*0x5acf0c*/
     }
     LOBYTE(this->m_C) = 1; /*0x5acf1b*/
     if ( !v7 ) /*0x5acf1f*/
@@ -205,7 +205,7 @@ CampaignClass * MSEngine::Destructor()
   }
   *((unsigned char *)this + 57) = 0; /*0x5ceeb2*/
   *((unsigned int *)this + 13) = 0; /*0x5ceeb5*/
-  j_DeleteAndZero((ObjectClass *)((unsigned int *)this + 2)); /*0x5ceeb8*/
+  j_DeleteAndZero( (void *)((ObjectClass *)((unsigned int *)this + 2))); /*0x5ceeb8*/
   MSEngine_field_0x4 = (void *)(this->MSEngine_field_0x4); /*0x5ceebd*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5ceec0*/
   if ( MSEngine_field_0x4 && BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/

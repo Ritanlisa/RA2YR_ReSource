@@ -68,7 +68,7 @@ unsigned int * CreateTeamCommand::performAction_148()
   v4[1] = v1; /*0x537386*/
   GroundHeight = 0; /*0x53738a*/
   GroundHeight = Cell::GetGroundHeight( (unsigned int *)(v4)); /*0x53739d*/
-  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x5373a6*/
+  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition( (int *)(v4)); /*0x5373a6*/
   result = (unsigned int *)dword_880990; /*0x5373ab*/
   if ( dword_880990 ) /*0x5373b2*/
     return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5373c3*/
@@ -92,7 +92,7 @@ unsigned int * CreateTeamCommand::performAction_153()
   v4[1] = v1; /*0x537476*/
   GroundHeight = 0; /*0x53747a*/
   GroundHeight = Cell::GetGroundHeight( (unsigned int *)(v4)); /*0x53748d*/
-  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537496*/
+  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition( (int *)(v4)); /*0x537496*/
   result = (unsigned int *)dword_880990; /*0x53749b*/
   if ( dword_880990 ) /*0x5374a2*/
     return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5374b3*/
@@ -116,7 +116,7 @@ unsigned int * CreateTeamCommand::performAction_158()
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
   GroundHeight = Cell::GetGroundHeight( (unsigned int *)(v4)); /*0x53757d*/
-  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition(v4); /*0x537586*/
+  ((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition( (int *)(v4)); /*0x537586*/
   result = (unsigned int *)dword_880990; /*0x53758b*/
   if ( dword_880990 ) /*0x537592*/
     return ((Tactical *)((Tactical *)&dword_87F7E8))->MouseMove((unsigned int *)(&v3),(unsigned int *)(&word_A8F2F8)); /*0x5375a3*/
@@ -226,7 +226,7 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
   int v6; // eax
   int v7; // eax
 
-  if ( !*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 424) ) /*0x6a6a09*/
+  if ( !*(unsigned int *)((char *)&stru_A8EB00 + 424) ) /*0x6a6a09*/
   {
     v3 = a3; /*0x6a6a0f*/
     if ( a3 == -1 ) /*0x6a6a16*/
@@ -345,7 +345,7 @@ wchar_t * CreateTeamCommand::Release(void *a1_1, void * aTxtCreateTeam)
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c45*/
   StringCSF = GetStringCSF( (wchar_t *)(aTxtCreateTeam), 0, (const char *)(g_Str_File_Init_CPP), 6165); /*0x535c55*/
-  swprintf((wchar_t *const)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535c60*/
+  swprintf((wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535c60*/
   return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535c6d*/
 
 }
@@ -371,7 +371,7 @@ wchar_t * CreateTeamCommand::Read(void *a1_1, void *a2_1, void * aTxtCreateTeamD
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c95*/
   StringCSF = GetStringCSF( (wchar_t *)(aTxtCreateTeamD), 0, (const char *)(g_Str_File_Init_CPP), 6169); /*0x535ca5*/
-  swprintf((wchar_t *const)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535cb0*/
+  swprintf((wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535cb0*/
   return (wchar_t *)(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535cbd*/
 
 }
@@ -471,7 +471,7 @@ char CreateTeamCommand::performAction_6()
     {
       v4 = (unsigned int *)_7342A0; /*0x535db5*/
       v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342A0 + 400))(_7342A0, 0, 0); /*0x535dbc*/
-      LOBYTE(_7342A0) = (unsigned char)(((BuildingPlacement *)dword_A83D4C)->Activate( v2, v4)); /*0x535dc9*/
+      LOBYTE(_7342A0) = (unsigned char)(((BuildingPlacement *)dword_A83D4C)->Activate( v2, (unsigned int *)(v4))); /*0x535dc9*/
     }
   }
   return _7342A0; /*0x535dce*/
@@ -537,7 +537,7 @@ char CreateTeamCommand::performAction_11()
     {
       v4 = (unsigned int *)_7342B0; /*0x535e75*/
       v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342B0 + 400))(_7342B0, 0, 0); /*0x535e7c*/
-      LOBYTE(_7342B0) = (unsigned char)(((BuildingPlacement *)dword_A83D4C)->Activate( v2, v4)); /*0x535e89*/
+      LOBYTE(_7342B0) = (unsigned char)(((BuildingPlacement *)dword_A83D4C)->Activate( v2, (unsigned int *)(v4))); /*0x535e89*/
     }
   }
   return _7342B0; /*0x535e8e*/
@@ -760,22 +760,22 @@ unsigned char * CreateTeamCommand::performAction_30()
   TacticalClass *v8; // [esp-4h] [ebp-4h]
 
   TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536617*/
-  ((TacticalClass *)(TacticalClass *)&dword_87F7E8)->SetDisplayMode( 0, 0); /*0x536625*/
+  ((TacticalClass *)&dword_87F7E8)->SetDisplayMode( 0, 0); /*0x536625*/
   ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower2(0); /*0x536631*/
   ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower(0); /*0x53663d*/
   if ( dword_A8ECC8 ) /*0x536649*/
     v4 = *(unsigned char **)dword_A8ECBC; /*0x536650*/
   else
-    v4 = 0; /*0x536654*/
+    v4 = (unsigned char *)(0); /*0x536654*/
   v7 = v3; /*0x536656*/
   result = (AnimClass *)sub_4AA2B0(v4); /*0x53665d*/
   v6 = result; /*0x536662*/
   if ( result ) /*0x536666*/
   {
     ((MapClass *)v7)->UnselectAll_ClearLimboLaunchers(); /*0x536668*/
-    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536671*/
+    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))( (AnimClass *)(v6)); /*0x536671*/
     ((TacticalClass *)v8)->InterpolateView(); /*0x53667c*/
-    return (AnimClass *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 1); /*0x536688*/
+    return (AnimClass *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&dword_87F7E8))), 1); /*0x536688*/
   }
   return result; /*0x53668e*/
 
@@ -1208,22 +1208,22 @@ unsigned char * CreateTeamCommand::performAction_69()
   TacticalClass *v8; // [esp-4h] [ebp-4h]
 
   TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536a87*/
-  ((TacticalClass *)(TacticalClass *)&dword_87F7E8)->SetDisplayMode( 0, 0); /*0x536a95*/
+  ((TacticalClass *)&dword_87F7E8)->SetDisplayMode( 0, 0); /*0x536a95*/
   ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower2(0); /*0x536aa1*/
   ((BuildingClass *)((BuildingClass *)&dword_87F7E8))->TogglePower(0); /*0x536aad*/
   if ( dword_A8ECC8 ) /*0x536ab9*/
     v4 = *(unsigned char **)dword_A8ECBC; /*0x536ac0*/
   else
-    v4 = 0; /*0x536ac4*/
+    v4 = (unsigned char *)(0); /*0x536ac4*/
   v7 = v3; /*0x536ac6*/
   result = (AnimClass *)sub_4AA380(v4); /*0x536acd*/
   v6 = result; /*0x536ad2*/
   if ( result ) /*0x536ad6*/
   {
     ((MapClass *)v7)->UnselectAll_ClearLimboLaunchers(); /*0x536ad8*/
-    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536ae1*/
+    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))( (AnimClass *)(v6)); /*0x536ae1*/
     ((TacticalClass *)v8)->InterpolateView(); /*0x536aec*/
-    return (AnimClass *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 1); /*0x536af8*/
+    return (AnimClass *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&dword_87F7E8))), 1); /*0x536af8*/
   }
   return result; /*0x536afe*/
 
@@ -1371,7 +1371,7 @@ wchar_t * CreateTeamCommand::performAction_83()
 namespace gamemd {
 int CreateTeamCommand_performAction_84()
 {
-  return ProcessSelectionExperience(); /*0x536c85*/
+  return (unsigned int)ProcessSelectionExperience(); /*0x536c85*/
 }
 } // namespace gamemd
 
@@ -1516,11 +1516,11 @@ wchar_t * CreateTeamCommand::performAction_99()
 
   wchar_t *result; // eax
 
-  result = g_SelectionManager; /*0x536e00*/
+  result = (wchar_t *)(g_SelectionManager); /*0x536e00*/
   if ( (int)g_SelectionManager > 0 ) /*0x536e07*/
   {
     TacticalClass::InterpolateView(); /*0x536e0e*/
-    return (wchar_t *)((MapClass *)((int)(&MapClass_Instance)))->MarkForRedraw( 1); /*0x536e1a*/
+    return (wchar_t *)((MapClass *)((int)(&MapClass_Instance)))->MarkForRedraw((int)((MapClass *)((int)(&MapClass_Instance))), 1); /*0x536e1a*/
   }
   return result; /*0x536e1f*/
 
@@ -1870,7 +1870,7 @@ namespace gamemd {
 char CreateTeamCommand::performAction_133()
 {
 
-  return ((CreateTeamCommand *)(CreateTeamCommand *)&dword_87F7E8)->performAction_245( 1, -1); /*0x5371be*/
+  return ((CreateTeamCommand *)&dword_87F7E8)->performAction_245( 1, -1); /*0x5371be*/
 
 }
 } // namespace gamemd
@@ -1920,7 +1920,7 @@ namespace gamemd {
 char CreateTeamCommand::performAction_138()
 {
 
-  return ((CreateTeamCommand *)(CreateTeamCommand *)&dword_87F7E8)->performAction_245( 0, -1); /*0x53724e*/
+  return ((CreateTeamCommand *)&dword_87F7E8)->performAction_245( 0, -1); /*0x53724e*/
 
 }
 } // namespace gamemd
@@ -2188,8 +2188,8 @@ void * CreateTeamCommand::performAction_167()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53771e*/
   v5[0] = *v1; /*0x537725*/
   v5[1] = v1[1]; /*0x53773c*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537745*/
-  result = dword_A8B230; /*0x537747*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell( (unsigned int *)(v4), (int *)(v5)); /*0x537745*/
+  result = (void *)(dword_A8B230); /*0x537747*/
   *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = v2; /*0x53774c*/
   return result; /*0x537752*/
 
@@ -2250,8 +2250,8 @@ void * CreateTeamCommand::performAction_172()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x5377de*/
   v5[0] = *v1; /*0x5377e5*/
   v5[1] = v1[1]; /*0x5377fc*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537805*/
-  result = dword_A8B230; /*0x537807*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell( (unsigned int *)(v4), (int *)(v5)); /*0x537805*/
+  result = (void *)(dword_A8B230); /*0x537807*/
   *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = v2; /*0x53780c*/
   return result; /*0x537812*/
 
@@ -2312,8 +2312,8 @@ void * CreateTeamCommand::performAction_177()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53789e*/
   v5[0] = *v1; /*0x5378a5*/
   v5[1] = v1[1]; /*0x5378bc*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x5378c5*/
-  result = dword_A8B230; /*0x5378c7*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell( (unsigned int *)(v4), (int *)(v5)); /*0x5378c5*/
+  result = (void *)(dword_A8B230); /*0x5378c7*/
   *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = v2; /*0x5378cc*/
   return result; /*0x5378d2*/
 
@@ -2374,8 +2374,8 @@ void * CreateTeamCommand::performAction_182()
   v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53795e*/
   v5[0] = *v1; /*0x537965*/
   v5[1] = v1[1]; /*0x53797c*/
-  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell(v4, v5); /*0x537985*/
-  result = dword_A8B230; /*0x537987*/
+  v2 = *((Tactical *)((Tactical *)g_TacticalClass_Instance))->PixelToCell( (unsigned int *)(v4), (int *)(v5)); /*0x537985*/
+  result = (void *)(dword_A8B230); /*0x537987*/
   *(int *)((char *)&dword_A8B230[374].vtable0 + 2) = v2; /*0x53798c*/
   return result; /*0x537992*/
 
@@ -2484,10 +2484,10 @@ int CreateTeamCommand::performAction_192()
 
   v1 = byte_B04880 != 0; /*0x537b07*/
   byte_B04880 = byte_B04880 == 0; /*0x537b09*/
-  v2 = aExtraSyncInfoO; /*0x537b10*/
+  v2 = (char *)(aExtraSyncInfoO); /*0x537b10*/
   if ( v1 ) /*0x537b15*/
-    v2 = aExtraSyncInfoO_0; /*0x537b17*/
-  v3 = CharToWideString(v2); /*0x537b1c*/
+    v2 = (char *)(aExtraSyncInfoO_0); /*0x537b17*/
+  v3 = CharToWideString( (unsigned char *)(v2)); /*0x537b1c*/
   return MessageListClass::AddMessage(&unk_A8BC60, 0, 0, (wchar_t *)v3, 3, 16454, 150, 0); /*0x537b30*/
 
 }

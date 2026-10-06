@@ -64,7 +64,7 @@ unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int *
   uint8_t v7; // bl
 
   *a2 = -1; /*0x52a9ec*/
-  result = 0; /*0x52a9f2*/
+  result = (unsigned char *)(0); /*0x52a9f2*/
   *a3 = -1; /*0x52a9f4*/
   *a4 = -1; /*0x52a9fa*/
   v5 = *a1; /*0x52aa01*/
@@ -171,7 +171,7 @@ int sub_6269A0()
       }
       else
       {
-        v5 = 0; /*0x6269fa*/
+        v5 = (StringVector *)(0); /*0x6269fa*/
       }
       *(unsigned int *)&v3[4] = (unsigned int)(v5); /*0x6269fe*/
       v6 = (VectorClass *)RA2_OPNEW(0x18u); /*0x626a01*/
@@ -185,7 +185,7 @@ int sub_6269A0()
       }
       else
       {
-        v7 = 0; /*0x626a30*/
+        v7 = (VectorClass *)(0); /*0x626a30*/
       }
       *(unsigned int *)&v3[8] = (unsigned int)(v7); /*0x626a34*/
       v8 = (DynamicVectorArray *)RA2_OPNEW(0x10u); /*0x626a37*/
@@ -197,7 +197,7 @@ int sub_6269A0()
     }
     else
     {
-      v1 = 0; /*0x626a63*/
+      v1 = (FileSystem *)(0); /*0x626a63*/
     }
     g_FileExtensionState = (int)(v1);
   }
@@ -254,13 +254,13 @@ char sub_626AB0(const char * a1, int a2)
       if ( v4 ) /*0x626af9*/
       {
         ((StringVector *)((int)(v4)))->Construct( 0, 0); /*0x626b01*/
-        *(void **)v5 = (void*)&DynamicVectorClass_char___vftable; /*0x626b06*/
+        *(void **)v5 = (unsigned int)(void*)&DynamicVectorClass_char___vftable; /*0x626b06*/
         v5[5] = 10; /*0x626b0c*/
         v5[4] = 0; /*0x626b0f*/
       }
       else
       {
-        v5 = 0; /*0x626b18*/
+        v5 = (unsigned int *)(0); /*0x626b18*/
       }
       v3[1] = (unsigned int)((unsigned int *)(v5));
       v6 = (unsigned int *)(RA2_OPNEW(0x18u));
@@ -268,13 +268,13 @@ char sub_626AB0(const char * a1, int a2)
       if ( v6 ) /*0x626b2b*/
       {
         ((VectorClass *)(v6))->ConstructHSV(0, 0); /*0x626b33*/
-        *(void **)v7 = (void*)&DynamicVectorClass_HSVClass_vftable; /*0x626b38*/
+        *(void **)v7 = (unsigned int)(void*)&DynamicVectorClass_HSVClass_vftable; /*0x626b38*/
         v7[5] = 10; /*0x626b3e*/
         v7[4] = 0; /*0x626b41*/
       }
       else
       {
-        v7 = 0; /*0x626b4a*/
+        v7 = (unsigned int *)(0); /*0x626b4a*/
       }
       v3[2] = (int)(v7);
       v8 = (int *)RA2_OPNEW(0x10u); /*0x626b51*/
@@ -290,7 +290,7 @@ char sub_626AB0(const char * a1, int a2)
     }
   }
   v9 = (char *)RA2_OPNEW(0x100u); /*0x626b9c*/
-  strcpy( v9, (const char *)(a1)); /*0x626bb5*/
+  strcpy( (char *)(v9), (const char *)(a1)); /*0x626bb5*/
   v10 = *((unsigned int *)g_FileExtensionState + 1); /*0x626bc4*/
   v11 = *(unsigned int *)(v10 + 8); /*0x626bc7*/
   if ( *(unsigned int *)(v10 + 16) < v11 /*0x626bec*/
@@ -338,9 +338,9 @@ int sub_7C8F46()
 }
 // 0x7A2EA0
 namespace gamemd {
-int sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *), int a2, int a3, int a4)
+int sub_7A2EA0(int (__stdcall ***)(unsigned int, void *, int *), int a2, int a3, int a4)
 {
-  int (__stdcall **v4)(unsigned int, void *, int *); // ecx
+  int (__stdcall **)(unsigned int, void *, int *); // ecx
   int v5; // esi
   int v7; // [esp+24h] [ebp-8h] BYREF
   int v8; // [esp+28h] [ebp-4h] BYREF
@@ -384,7 +384,7 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
   v7 = (unsigned int *)(dword_B054D4);
   while ( 1 ) /*0x68c9f6*/
   {
-    v8 = (gamemd::AbstractClass **)(_strcmpi((const char *)(aP0),(const char *)(*(const void **)(v7[v6] + 772))) == 0);
+    v8 = (unsigned int)(gamemd::AbstractClass **)(_strcmpi((const char *)(aP0),(const char *)(*(const void **)(v7[v6] + 772))) == 0);
     v7 = (unsigned int *)((gamemd::AbstractClass **)(dword_B054D4));
     if ( v8 && *(unsigned int *)(*((unsigned int *)dword_B054D4 + v6) + 784) == a5 ) /*0x68ca08*/
       return (gamemd::AbstractClass **)(v6); /*0x68ca40*/
@@ -440,7 +440,7 @@ char sub_63A0D0()
   {
     byte_AC4C08 = 1; /*0x63a0ea*/
     StringCSF = GetStringCSF((wchar_t *)(aMsgPlanningmod_12), 0,(const char *)(g_Str_File_PlanMgr_cpp), 3233); /*0x63a0f1*/
-    AddMessageListPlayerMessage(StringCSF, 480); /*0x63a0fd*/
+    AddMessageListPlayerMessage( (wchar_t *)(StringCSF), 480); /*0x63a0fd*/
     return PlayVocClass(((unsigned int *)dword_8871E0)[3], 0x2000, 1.0, 0); /*0x63a119*/
   }
   return result; /*0x63a11e*/
@@ -525,19 +525,19 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   v8 = (void *)RA2_OPNEW(0x18u); /*0x76688e*/
   if ( v8 ) /*0x766895*/
   {
-    *(unsigned int *)&v11.q4 = aP4; /*0x76689f*/
+    *(unsigned int *)&v11.q4 = (unsigned int)aP4; /*0x76689f*/
     *(unsigned int *)v11.__pad_0 = v7; /*0x7668a0*/
     ((String *)(&v11))->AssignFromPtr((const char **)&a4); /*0x7668a4*/
     inited = System_Init_766A10(v8, a2, a3, *(void **)v11.__pad_0, *(int *)&v11.q4); /*0x7668b6*/
   }
   else
   {
-    inited = 0; /*0x7668ba*/
+    inited = (void *)(0); /*0x7668ba*/
   }
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x7668be*/
-  *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x7668c5*/
+  *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x7668c5*/
   ((ComPtr *)((ComPtr *)a1))->Set((int)inited); /*0x7668cc*/
-  j_DeleteAndZero((ObjectClass *)&a4); /*0x7668d5*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&a4)); /*0x7668d5*/
   return a1; /*0x7668dc*/
 }
 } // namespace gamemd
@@ -554,7 +554,7 @@ rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
   {
     v4[2] = a2; /*0x767704*/
     v4[1] = 0; /*0x767707*/
-    *v4 = (void*)&WorldDominationTour_MapSizeGameOption_vftable; /*0x76770e*/
+    *v4 = (unsigned int)(void*)&WorldDominationTour_MapSizeGameOption_vftable; /*0x76770e*/
     v5 = (int)v4; /*0x767714*/
   }
   else
@@ -562,7 +562,7 @@ rc_ptr * System_Init_7676F0(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x767718*/
   }
   ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x76771c*/
-  *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_MapSizeGameOption_vftable; /*0x767723*/
+  *(unsigned int *)a1 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_MapSizeGameOption_vftable; /*0x767723*/
   ((ComPtr *)((ComPtr *)a1))->Set(v5); /*0x76772a*/
   return a1; /*0x767731*/
 }

@@ -23,7 +23,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_StaticButtonClass;
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
-  ((Vector *)((int)this + 36))->Clear(); /*0x6c689c*/
+  ((Vector *)((int)this + 36))->Clear((int)((Vector *)((int)this + 36))); /*0x6c689c*/
   ((GadgetClass *)((ShpButtonClass *)this))->Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     __3_YAXPAX_Z(this); /*0x6c68b0*/

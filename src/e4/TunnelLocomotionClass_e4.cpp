@@ -90,12 +90,12 @@ LABEL_11:
       }
       if ( (BYTE1(_EAX) & 0x41) == 0 ) /*0x728c84*/
       {
-        *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))((unsigned int *)a1)[0]->vtable1 + 110))( /*0x728c9e*/
-                                      ((unsigned int *)a1)[0],
-                                      v13);
+*(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))((unsigned int *)a1)[0]->vtable1 + 110))( /*0x728c9e*/ ((unsigned int *)a1)[0], (unsigned char *)(v13));
+
+
         v11[0] = 0; /*0x728cc4*/
         v11[1] = 0; /*0x728cc9*/
-        TileIndex = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex(v10, 0, 0); /*0x728cce*/
+        TileIndex = ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->GetTileIndex( (int16_t *)(v10), 0, 0); /*0x728cce*/
         v8 = *LayerClass::Pathfinding_Find( /*0x728cea*/
                 (Type *)&stru_87F5F0.__pad_58[416],
                 (int)&v14,
@@ -226,7 +226,7 @@ namespace gamemd {
 TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass*)this)->Construct(); /*0x72a213*/
+  ((gamemd::LocomotionClass*)this)->Construct(); /*0x72a213*/
   if ( (a2 & 1) != 0 ) /*0x72a21d*/
     __3_YAXPAX_Z(this); /*0x72a220*/
   return this->LocomotionClass; /*0x72a22a*/

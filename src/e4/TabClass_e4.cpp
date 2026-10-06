@@ -72,7 +72,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
   lParam[0] = 0; /*0x65835c*/
   if ( other && *(unsigned char *)(*((unsigned int *)other + 13) + 421) ) /*0x65836c*/
   {
-    wcscpy(lParam, (const wchar_t *)other + 45077); /*0x658386*/
+    wcscpy( (wchar_t *)(lParam), (const wchar_t *)other + 45077); /*0x658386*/
     if ( other == (void *)HouseClass_Observer ) /*0x658395*/
     {
       BuildingAnimByName = (Color *)FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_LightGrey), 1); /*0x6583a1*/
@@ -90,8 +90,8 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     v26 = *(unsigned char *)(v5 + 2); /*0x6583ee*/
     v6 = (uint8_t)v25 | ((HIBYTE(v25) | (v26 << 8)) << 8); /*0x65841f*/
     DlgItem = GetDlgItem((HWND)a1, v3); /*0x65842e*/
-    SendMessageA(DlgItem, 0x498u, 0, v6); /*0x658438*/
-    SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x658447*/
+    SendMessageA( (HWND)(DlgItem), 0x498u, 0, (LPARAM)((LPARAM)(v6))); /*0x658438*/
+    SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x658447*/
     ResourceIDHardcodedCSF = GetResourceIDHardcodedCSF(v29); /*0x658452*/
     v9 = GetDlgItem((HWND)a1, ResourceIDHardcodedCSF); /*0x658460*/
     v10 = *((unsigned int *)other + 13); /*0x658466*/
@@ -99,7 +99,7 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     Default = (HWND)((BuildingType*)*(BuildingType **)(v10 + 180))->FindDefault(); /*0x658473*/
     if ( other == (void *)HouseClass_Observer ) /*0x65847e*/
       Default = (HWND)((BuildingType*)(BuildingType *)0xFFFFFFFD)->FindDefault(); /*0x658485*/
-    CacheDialogInvalidate( (void *)(hWnd), (void *)(Default)); /*0x658490*/
+    CacheDialogInvalidate( (void *)((void *)(hWnd)), (void *)((void *)(Default))); /*0x658490*/
     if ( *(&dword_83923C + (unsigned int)v29) != -1 ) /*0x65849f*/
     {
       v12 = GetDlgItem((HWND)a1, *(&dword_83923C + (unsigned int)v29)); /*0x6584ae*/
@@ -116,10 +116,10 @@ int TabClass::DrawPower(void *a1, void * aGrey)
       else
       {
         LOBYTE(v25) = ((HouseClass *)((HouseClass *)dword_A83D4C))->IsAlliedWith(); /*0x6584f4*/
-        SendMessageA(hWnd, 0xF1u, (uint8_t)v25, 0); /*0x65850b*/
+        SendMessageA( (HWND)(hWnd), 0xF1u, (uint8_t)v25, 0); /*0x65850b*/
       }
       IsAlliedWith = ((HouseClass *)((HouseClass *)other))->IsAlliedWith(); /*0x658515*/
-      globalHelper_003DD0(hWnd, IsAlliedWith); /*0x658520*/
+      globalHelper_003DD0( (HWND)(hWnd), IsAlliedWith); /*0x658520*/
     }
     if ( *((unsigned char *)other + 584) ) /*0x658525*/
     {
@@ -129,10 +129,10 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     else if ( (&dword_A8B538)[0] ) /*0x658557*/
     {
       v15 = GetDlgItem((HWND)a1, *(&dword_83925C + (unsigned int)v29)); /*0x658571*/
-      SendMessageA(v15, 0xF1u, 1u, 0); /*0x65857b*/
+      SendMessageA( (HWND)(v15), 0xF1u, 1u, 0); /*0x65857b*/
       EnableWindow(v15, 0); /*0x658580*/
     }
-    v16 = 0; /*0x658586*/
+    v16 = (const wchar_t *)(0); /*0x658586*/
     v17 = (unsigned int *)((char *)other + 21476); /*0x658588*/
     v18 = 20; /*0x65858e*/
     do /*0x6585a0*/
@@ -145,15 +145,15 @@ int TabClass::DrawPower(void *a1, void * aGrey)
     while ( v18 ); /*0x6585a0*/
     swprintf(lParam, (const size_t)g_Str_Fmt_PctD, v16); /*0x6585ad*/
     v20 = GetDlgItem((HWND)a1, nIDDlgItem); /*0x6585c9*/
-    SendMessageA(v20, 0x498u, 0, v6); /*0x6585d3*/
-    return SendMessageA(v20, 0x4B2u, 0, (LPARAM)lParam); /*0x6585e2*/
+    SendMessageA( (HWND)(v20), 0x498u, 0, (LPARAM)((LPARAM)(v6))); /*0x6585d3*/
+    return SendMessageA( (HWND)(v20), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x6585e2*/
   }
   else
   {
     v22 = GetDlgItem((HWND)a1, v3); /*0x658600*/
-    SendMessageA(v22, 0x4B2u, 0, (LPARAM)lParam); /*0x658615*/
+    SendMessageA( (HWND)(v22), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x658615*/
     v23 = GetDlgItem((HWND)a1, v2); /*0x658619*/
-    return SendMessageA(v23, 0x4B2u, 0, (LPARAM)lParam); /*0x658628*/
+    return SendMessageA( (HWND)(v23), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x658628*/
   }
 
 }

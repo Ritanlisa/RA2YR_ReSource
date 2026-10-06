@@ -147,7 +147,7 @@ LABEL_22:
                 if ( v13 ) /*0x6e50a8*/
                   *(unsigned int *)(Owner + 636) = v13 - 1; /*0x6e50ab*/
                 v14 = (unsigned int *)(Owner + 664); /*0x6e50b7*/
-                *v14 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6e50c1*/
+                *v14 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6e50c1*/
                 v14[1] = v22[2]; /*0x6e50c7*/
                 v14[2] = 60; /*0x6e50ca*/
               }
@@ -174,7 +174,7 @@ LABEL_22:
       {
 LABEL_43:
         v17 = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5116*/
-        *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v17) = v15; /*0x6e5125*/
+        *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * v17) = (unsigned int)v15; /*0x6e5125*/
       }
       v16 = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e5128*/
 LABEL_45:
@@ -183,9 +183,9 @@ LABEL_45:
     while ( v15 ); /*0x6e50d9*/
   }
   v22[0] = (unsigned int)(a1);
-  v18 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5147*/
-          &g_BuildingLoadQueue_Array.LightVisibility,
-          v22);
+v18 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5147*/ &g_BuildingLoadQueue_Array.LightVisibility, (unsigned int *)(v22));
+
+
   if ( v18 != -1 && v18 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x6e5157*/
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e515c*/
@@ -198,9 +198,9 @@ LABEL_45:
     }
   }
   v22[0] = (unsigned int)(a1);
-  v19 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.ExitCoord[0] + 16))( /*0x6e5190*/
-          g_BuildingLoadQueue_Array.ExitCoord,
-          v22);
+v19 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.ExitCoord[0] + 16))( /*0x6e5190*/ g_BuildingLoadQueue_Array.ExitCoord, (unsigned int *)(v22));
+
+
   if ( v19 != -1 && v19 < g_BuildingLoadQueue_Array.unknown___2 ) /*0x6e51a0*/
   {
     --g_BuildingLoadQueue_Array.unknown___2; /*0x6e51a5*/
@@ -213,7 +213,7 @@ LABEL_45:
     }
   }
   v22[0] = (unsigned int)(a1);
-  v20 = (*(int (**)(int *, unsigned int *))(TagClass_Array + 16))( (int *)(&TagClass_Array), v22); /*0x6e51d9*/
+  v20 = (*(int (**)(int *, unsigned int *))(TagClass_Array + 16))( (int *)(&TagClass_Array), (unsigned int *)(v22)); /*0x6e51d9*/
   if ( v20 != -1 && v20 < g_GameObjectCleanup && v20 < --g_GameObjectCleanup ) /*0x6e51f4*/
   {
     do /*0x6e520c*/
@@ -224,7 +224,7 @@ LABEL_45:
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)a1, 1); /*0x6e5212*/
-  return AbstractClass::DTOR( (void)((AbstractClass *)a1)); /*0x6e521e*/
+  return AbstractClass::DTOR(  (AbstractClass *)a1); /*0x6e521e*/
 
 }
 }
@@ -280,7 +280,7 @@ int TagClass::Unlink()
   *((unsigned int *)this + 15) = 0; /*0x71ae34*/
   *((unsigned int *)this + 14) = 0; /*0x71ae37*/
   if ( buildingType ) /*0x71ae3a*/
-    return (*((int (**)(TagTypeClass *, unsigned int, int))buildingType->vtable1 + 289))(buildingType, 0, 1); /*0x71ae41*/
+    return (*((int (**)(TagTypeClass *, unsigned int, int))buildingType->vtable1 + 289))( (TagTypeClass *)(buildingType), 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
 
 }
@@ -306,11 +306,11 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
     if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5675*/
       || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
       && g_BuildingLoadQueue_Array.UnitExitSound > 0
-      && (result = (*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
-                     &g_BuildingLoadQueue_Array.ToTile,
-                     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
-                     0),
-          (unsigned char)result) )
+&& (result = (*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))( (int *)(&g_BuildingLoadQueue_Array.ToTile), *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound, 0), (unsigned char)result) )
+
+
+
+
     {
       result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e567d*/
       *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)this;
@@ -346,13 +346,13 @@ int TagClass::ProcessTag(int * a2)
   TriggerClass *firstTrigger; // eax
   int v5; // eax
 
-  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x6e56e9*/
-  v3 = (*((int (**)(void **))this->((unsigned int *)buildingType)[0] + 4))(&this->((unsigned int *)buildingType)[0]); /*0x6e56f7*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x6e56e9*/
+  v3 = (*((int (**)(void **))this->((unsigned int *)buildingType)[0] + 4))( (void **)(&this->((unsigned int *)buildingType)[0])); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-    v5 = (*((int (**)(void **))((unsigned int *)firstTrigger)[0] + 4))(&((unsigned int *)firstTrigger)[0]); /*0x6e5710*/
+    v5 = (*((int (**)(void **))((unsigned int *)firstTrigger)[0] + 4))( (void **)(&((unsigned int *)firstTrigger)[0])); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
@@ -373,7 +373,7 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x6e5746*/
     {
-      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x6e574f*/
+      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x6e574f*/
       aP0->vtable1 = &vt_TagClass; /*0x6e5754*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e575a*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TagClass); /*0x6e5761*/
@@ -431,7 +431,7 @@ TagClass * TagClass::ProcessTrigger(char a2)
   ((TagClass *)(this))->Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
     __3_YAXPAX_Z(this); /*0x6e58c0*/
-  return this; /*0x6e58ca*/
+  return (TagClass *)this; /*0x6e58ca*/
 
 }
 } // namespace gamemd

@@ -59,7 +59,7 @@ int KeyboardConfig::LoadINI()
     *(unsigned int *)&stru_87F5F0.__pad_58[72] = 0; /*0x533d97*/
     for ( i = 0; i < (int)(INIClass)::GetKeyCount(v9.INIClass, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( (gamemd::CCINIClass *)(v9.INIClass), (gamemd::CCINIClass *)(g_INI_Key_Hotkey), (void)((void *)(v1))); /*0x533dbf*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( (gamemd::CCINIClass *)(v9.INIClass), (gamemd::CCINIClass *)(g_INI_Key_Hotkey),  (void *)(v1)); /*0x533dbf*/
       v3 = 0; /*0x533dd1*/
       Int_Overwrite = ((INIClass *)((bool *)v9.INIClass))->ReadInt_Overwrite((uint8_t *)(g_INI_Key_Hotkey), StringByIndex, 0); /*0x533dd3*/
       if ( *(int *)&stru_87F5F0.__pad_58[32] > 0 ) /*0x533dde*/
@@ -82,7 +82,7 @@ int KeyboardConfig::LoadINI()
             goto LABEL_13; /*0x533e4f*/
           if ( !*(unsigned int *)&stru_87F5F0.__pad_58[64] ) /*0x533e53*/
             v5 = 10; /*0x533e55*/
-          if ( KeyboardConfig::ReleaseBuffer((int)&stru_87F5F0.__pad_58[56], v5) ) /*0x533e60*/
+          if ( KeyboardConfig::ReleaseBuffer( (int)&stru_87F5F0.__pad_58[56], (void *)(v5)) ) /*0x533e60*/
           {
 LABEL_13:
             *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[56] + 8 * *(unsigned int *)&stru_87F5F0.__pad_58[60]) = Int_Overwrite; /*0x533e74*/
@@ -97,7 +97,7 @@ LABEL_14:
     }
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
-    ((Vector *)((int)v11))->Clear(); /*0x533ecf*/
+    ((Vector *)((int)v11))->Clear((int)((Vector *)((int)v11))); /*0x533ecf*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533ed8*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
     ((HashTable *)((INIClass *)&v9))->DestroyHashTableINIClass(); /*0x533ee9*/
@@ -108,7 +108,7 @@ LABEL_14:
     Debug::Log("Unable to load KEYBOARDMD.INI\n"); /*0x533efe G57c1: IDA 0x533efe push offset aUnableToLoadKe*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x533f0d*/
     v12 = 0; /*0x533f15*/
-    ((Vector *)((int)v11))->Clear(); /*0x533f1c*/
+    ((Vector *)((int)v11))->Clear((int)((Vector *)((int)v11))); /*0x533f1c*/
     *(unsigned int *)v10.CDFileClass = (unsigned int)(&off_7E1668); /*0x533f25*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
     ((HashTable *)((INIClass *)&v9))->DestroyHashTableINIClass(); /*0x533f36*/

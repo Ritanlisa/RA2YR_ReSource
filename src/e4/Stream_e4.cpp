@@ -40,7 +40,7 @@ int Stream::FlushAndReset()
   Stream_field_04 = (int)(v1[1].Stream_field_04); /*0x43912d*/
   Stream_field_0C = v1[1].Stream_field_0C; /*0x439130*/
   v1 = (Stream *)((char *)v1 + 24); /*0x439133*/
-  (*(void (**)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
+  (*(void (**)(Stream *))(Stream_field_04 + 12))( (Stream *)(v1)); /*0x439138*/
   return ((int (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
 
 }
@@ -240,7 +240,7 @@ LABEL_14:
   *((unsigned char *)this + 1360) = 0; /*0x7594f4*/
   *((unsigned char *)this + 1361) = 0; /*0x7594fa*/
   *(unsigned int *)this = 0; /*0x759500*/
-  return this; /*0x7594b6*/
+  return (void *)this; /*0x7594b6*/
 
 }
 } // namespace gamemd

@@ -897,7 +897,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
   this->DynamicVectorClass = &vt_VectorClass; /*0x52560a*/
   if ( this != (TypeList *)aP1 ) /*0x525610*/
   {
-    DynamicVectorClass::Destroy_Alt( (void)((_VectorClass_PBVAnimTypeClass *)this)); /*0x525612*/
+    DynamicVectorClass::Destroy_Alt(  (_VectorClass_PBVAnimTypeClass *)this); /*0x525612*/
     v3 = ((int *)aP1)[2]; /*0x525618*/
     ((unsigned int *)this)[0] = v3; /*0x52561d*/
     if ( v3 ) /*0x525620*/
@@ -1062,7 +1062,7 @@ int *  TypeList_flat::CopyFull( VectorClass * aP1)
     if ( v3 ) /*0x67a0a9*/
     {
       v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x67a0b3*/
-      ((unsigned int *)this)[0] = v4; /*0x67a0bb*/
+      ((unsigned int *)this)[0] = (unsigned int)v4; /*0x67a0bb*/
       if ( v4 ) /*0x67a0c0*/
       {
         Capacity = ((unsigned int *)this)[0]; /*0x67a0c2*/
@@ -1980,7 +1980,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_0(unsigned int * Block, char a2,
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x67c103*/
-    *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c106*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c106*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x67c110*/
     {
       RA2_OPDEL(v3); /*0x67c118*/
@@ -2001,7 +2001,7 @@ VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(unsigned int * Bl
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x67c153*/
-    *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c156*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c156*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x67c160*/
     {
       RA2_OPDEL(v3); /*0x67c168*/
@@ -2022,7 +2022,7 @@ DynamicVector * TypeList_VoxelAnim::Constructor_1(unsigned int * Block, char a2)
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x67c1a3*/
-    *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c1a6*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c1a6*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x67c1b0*/
     {
       RA2_OPDEL(v3); /*0x67c1b8*/

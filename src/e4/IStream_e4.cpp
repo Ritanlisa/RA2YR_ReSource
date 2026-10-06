@@ -26,7 +26,7 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
   WriteCompressionBlock((gamemd::Pipe *)(pstm), (unsigned int)pv,(gamemd::CCINIClass *)(*(unsigned char **)(v3 + 28)), (int *)&v7, *(unsigned int *)(v3 + 32)); /*0x4a303e*/
   v5 = v7; /*0x4a3043*/
   v4[10] = 0x10000; /*0x4a304a*/
-  pv = 0; /*0x4a3051*/
+  pv = (void *)(0); /*0x4a3051*/
   v4[9] = (unsigned int)(v5); /*0x4a3059*/
   if ( !v4[2] ) /*0x4a305b*/
     WinAPI::Wrapper(-2147467261); /*0x4a3067*/
@@ -37,7 +37,7 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
     {
       if ( !v4[2] ) /*0x4a3093*/
         WinAPI::Wrapper(-2147467261); /*0x4a309f*/
-      result = (*(int (**)(unsigned int, unsigned int, void *, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4[7], v7, (void **)(&pv)); /*0x4a30b8*/
+      result = (*(int (**)(unsigned int, unsigned int, void *, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4[7], (void *)(v7), (void **)(&pv)); /*0x4a30b8*/
       if ( result >= 0 )
         return v7 != pv ? 0x80004005 : 0;
     }

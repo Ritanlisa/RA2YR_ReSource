@@ -91,7 +91,7 @@ namespace gamemd {
 int MPBattleClass::vt_entry_18()
 {
 
-  return ScenarioClass::createStartingForces( (void)((MultiplayerGameMode *)this));
+  return ScenarioClass::createStartingForces(  (MultiplayerGameMode *)this);
 
 }
 }

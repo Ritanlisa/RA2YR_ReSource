@@ -75,7 +75,7 @@ void * Multiplayer::FindStartPositions()
   v27 = 10; /*0x6883ad*/
   v26 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
-  v6 = (void **)((char *)&(&dword_A8B230)[44].vtable0 + 2); /*0x6883b7*/
+  v6 = (unsigned int *)((void **)((char *)&(&dword_A8B230)[44].vtable0 + 2)); /*0x6883b7*/
   do /*0x6883e9*/
   {
     if ( v5 < 0 ) /*0x6883c6*/
@@ -122,7 +122,7 @@ void * Multiplayer::FindStartPositions()
       goto LABEL_22; /*0x688481*/
     if ( !v25.IsAllocated && v25.Capacity || v4 <= 0 ) /*0x688491*/
       goto LABEL_24; /*0x688491*/
-    if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
+    if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))( (VectorClass *)(&v25), v4 + v25.Capacity, 0) ) /*0x6884a0*/
     {
 LABEL_22:
       v13 = v26++; /*0x6884ab*/
@@ -175,10 +175,10 @@ LABEL_24:
           if ( v26 < v25.Capacity /*0x688603*/
             || (v25.IsAllocated || !v25.Capacity)
             && v27 > 0
-            && (*((uint8_t (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(
-                 &v25,
-                 v27 + v25.Capacity,
-                 0) )
+&& (*((uint8_t (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))( (VectorClass *)(&v25), v27 + v25.Capacity, 0) )
+
+
+
           {
             v15 = v26++; /*0x688612*/
             *((unsigned int *)v25.Items + v15) = v19; /*0x68861d*/
@@ -295,7 +295,7 @@ void Multiplayer::ShowProgress(int a2)
       {
         case 1: /*0x69af3e*/
         case 2: /*0x69af3e*/
-          memset(v16, 0, 250); /*0x69b099*/
+          memset( (void *)(v16), 0, 250); /*0x69b099*/
           v16[0] = 108; /*0x69b0a2*/
           ((Progress *)((int)&stru_AC4B30.__pad_EC[828]))->GetWeighted(0); /*0x69b0aa*/
           __asm { fmul ds:dbl_7E2AC0 } /*0x69b0af*/
@@ -323,7 +323,7 @@ void Multiplayer::ShowProgress(int a2)
           break; /*0x69b146*/
         case 3: /*0x69af3e*/
         case 4: /*0x69af3e*/
-          memset(v16, 0, sizeof(v16)); /*0x69af52*/
+          memset( (void *)(v16), 0, sizeof(v16)); /*0x69af52*/
           v17 = 0; /*0x69af54*/
           v18 = 0; /*0x69af56*/
           v16[0] = 15; /*0x69af5c*/
@@ -347,7 +347,7 @@ void Multiplayer::ShowProgress(int a2)
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
             {
               Debug::Log(); /*0x69afe6*/
-              ((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)v16, 51, 1, (void)((wchar_t *)dword_A8DA78[i])); /*0x69b006*/
+              ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v16, 51, 1, (wchar_t *)dword_A8DA78[i]); /*0x69b006*/
             }
           }
           Event::Dispatch(); /*0x69b015*/

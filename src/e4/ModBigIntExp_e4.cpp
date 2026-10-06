@@ -40,9 +40,9 @@ int sub_5C7EC0(const void * a1, int a2)
   unsigned int v29; // ecx
   unsigned int v30; // eax
 
-  v2 = (int *)(a2);
-  v3 = (int *)(a2);
-  qmemcpy( &dword_ABF5B4, (const void *)(a1), (unsigned int)(v3)* 4); /*0x5c7eda*/
+  v2 = (int *)&a2;
+  v3 = (int *)&a2;
+  qmemcpy( (void *)(&dword_ABF5B4), (const void *)(a1), (unsigned int)(v3)* 4); /*0x5c7eda*/
   v4 = &((unsigned int *)(dword_ABF5B0))[v3]; /*0x5c7ee3*/
   v5 = v2; /*0x5c7ee9*/
   v6 = &((unsigned int *)(dword_ABF5B0))[v3]; /*0x5c7eeb*/

@@ -135,10 +135,10 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))( (unsigned char *)((char *)&stru_A8EB00 + 84), (WaveClass **)(&v6)); /*0x76323a*/
   if ( v3 != -1 && v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
   {
-    --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 100); /*0x76324f*/
+    --*(unsigned int *)((char *)&stru_A8EB00 + 100); /*0x76324f*/
     for ( ; /*0x763255*/
           v3 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 100);
-          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3) )
+          *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3) )
     {
       ++v3; /*0x76325d*/
     }
@@ -156,7 +156,7 @@ WaveClass * WaveClass::ddtor(char a2, int aP1, int a1, int a3)
   ((ObjectClass *)((ObjectClass *)this))->Dtor(); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     __3_YAXPAX_Z(this); /*0x7632c1*/
-  return this; /*0x7632cb*/
+  return (WaveClass *)this; /*0x7632cb*/
 
 }
 } // namespace gamemd
@@ -202,15 +202,15 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     {
       v10 = (unsigned int *)(this->Owner); /*0x75f3e9*/
       if ( v9 != v10 && *((unsigned char *)v9 + 144) && *((unsigned char *)v9 + 116) && !*((unsigned char *)v9 + 129) && (int)v9[27] > 0 ) /*0x75f413*/
-        (*(void (**)(unsigned int *, int *, unsigned int, int, unsigned int *, unsigned int, unsigned int, unsigned int))(*v9 + 364))( /*0x75f42c*/
-          v9,
-          &v18,
-          0,
-          v17,
-          v10,
-          0,
-          0,
-          0);
+(*(void (**)(unsigned int *, int *, unsigned int, int, unsigned int *, unsigned int, unsigned int, unsigned int))(*v9 + 364))( /*0x75f42c*/ v9, (int *)(&v18), 0, v17, (unsigned int *)(v10), 0, 0, 0);
+
+
+
+
+
+
+
+
     }
     v11 = *((unsigned int *)v6 + 17); /*0x75f439*/
     if ( v11 != -1 ) /*0x75f43f*/
@@ -219,7 +219,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       if ( *(unsigned char *)(v12 + 689) ) /*0x75f44a*/
       {
         aP1 = (gamemd::ObjectClass *)((unsigned int *)*((unsigned int *)v6 + 9)); /*0x75f45b*/
-        CellChainReact(v16); /*0x75f45f*/
+        CellChainReact( (void *)(v16)); /*0x75f45f*/
       }
       if ( *(unsigned char *)(v12 + 680) ) /*0x75f464*/
         ((BuildingClass *)(int)v6)->SellEffects( *(unsigned int *)(v8 + 152)); /*0x75f477*/

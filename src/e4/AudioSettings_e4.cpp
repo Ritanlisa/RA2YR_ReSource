@@ -109,19 +109,19 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
       {
         if ( hWnd == GetDlgItem(hDlg, 1327) ) /*0x6b664c*/
         {
-          v37 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b6674*/
+          v37 = (double)SendMessageA( (HWND)(hWnd), 0x400u, 0, 0) * 0.1; /*0x6b6674*/
           Audio::SetScoreVolume((float *)dword_A8EB60, v37, 1); /*0x6b6677*/
           return 0; /*0x6b6688*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1330) ) /*0x6b6695*/
         {
-          v38 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b66bd*/
+          v38 = (double)SendMessageA( (HWND)(hWnd), 0x400u, 0, 0) * 0.1; /*0x6b66bd*/
           Audio::SetSoundVolume((float *)dword_A8EB60, v38, 1); /*0x6b66c0*/
           return 0; /*0x6b66d1*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1334) ) /*0x6b66de*/
         {
-          v39 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b670a*/
+          v39 = (double)SendMessageA( (HWND)(hWnd), 0x400u, 0, 0) * 0.1; /*0x6b670a*/
           Audio::SetVoiceVolume((float *)dword_A8EB60, v39, 1); /*0x6b670d*/
           return 0; /*0x6b671e*/
         }
@@ -136,10 +136,10 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
       v7 = DlgItem; /*0x6b637c*/
       if ( DlgItem ) /*0x6b6380*/
       {
-        SendMessageA(DlgItem, 0x4AEu, 0, 0); /*0x6b638c*/
-        SendMessageA(v7, 0x406u, 1u, 655360); /*0x6b639b*/
+        SendMessageA( (HWND)(DlgItem), 0x4AEu, 0, 0); /*0x6b638c*/
+        SendMessageA( (HWND)(v7), 0x406u, 1u, 655360); /*0x6b639b*/
         v8 = Math::RoundToInt(flt_A8EBA0 * 10.0 + 0.5); /*0x6b63af*/
-        SendMessageA(v7, 0x405u, 1u, v8); /*0x6b63bd*/
+        SendMessageA( (HWND)(v7), 0x405u, 1u, (LPARAM)((LPARAM)(v8))); /*0x6b63bd*/
         v9 = (void (*)(HWND, BOOL))EnableWindow; /*0x6b63bf*/
         EnableWindow(v7, IsSoundEnabled); /*0x6b63c7*/
       }
@@ -151,20 +151,20 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
       v11 = v10; /*0x6b63e4*/
       if ( v10 ) /*0x6b63e8*/
       {
-        SendMessageA(v10, 0x4AEu, 0, 0); /*0x6b63f4*/
-        SendMessageA(v11, 0x406u, 1u, 655360); /*0x6b6403*/
+        SendMessageA( (HWND)(v10), 0x4AEu, 0, 0); /*0x6b63f4*/
+        SendMessageA( (HWND)(v11), 0x406u, 1u, 655360); /*0x6b6403*/
         v12 = Math::RoundToInt(flt_A8EB98 * 10.0 + 0.5); /*0x6b6417*/
-        SendMessageA(v11, 0x405u, 1u, v12); /*0x6b6425*/
+        SendMessageA( (HWND)(v11), 0x405u, 1u, (LPARAM)((LPARAM)(v12))); /*0x6b6425*/
         v9(v11, IsSoundEnabled); /*0x6b6429*/
       }
       v13 = GetDlgItem(hDlg, 1334); /*0x6b6438*/
       v14 = v13; /*0x6b643e*/
       if ( v13 ) /*0x6b6442*/
       {
-        SendMessageA(v13, 0x4AEu, 0, 0); /*0x6b644e*/
-        SendMessageA(v14, 0x406u, 1u, 655360); /*0x6b645d*/
+        SendMessageA( (HWND)(v13), 0x4AEu, 0, 0); /*0x6b644e*/
+        SendMessageA( (HWND)(v14), 0x406u, 1u, 655360); /*0x6b645d*/
         v15 = Math::RoundToInt(*(float *)&flt_A8EB9C * 10.0 + 0.5); /*0x6b6471*/
-        SendMessageA(v14, 0x405u, 1u, v15); /*0x6b647f*/
+        SendMessageA( (HWND)(v14), 0x405u, 1u, (LPARAM)((LPARAM)(v15))); /*0x6b647f*/
         v9(v14, IsSoundEnabled); /*0x6b6483*/
       }
       if ( byte_A8E9A0 ) /*0x6b648c*/
@@ -172,13 +172,13 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
         v16 = GetDlgItem(hDlg, 1331); /*0x6b64a5*/
         if ( v16 ) /*0x6b64a9*/
         {
-          SendMessageA(v16, 0xF1u, byte_A8EBA6 != 0, 0); /*0x6b64c1*/
+          SendMessageA( (HWND)(v16), 0xF1u, byte_A8EBA6 != 0, 0); /*0x6b64c1*/
           v9(v16, IsSoundEnabled); /*0x6b64c5*/
         }
         v17 = GetDlgItem(hDlg, 1332); /*0x6b64da*/
         if ( v17 ) /*0x6b64de*/
         {
-          SendMessageA(v17, 0xF1u, byte_A8EBA4 != 0, 0); /*0x6b64f5*/
+          SendMessageA( (HWND)(v17), 0xF1u, byte_A8EBA4 != 0, 0); /*0x6b64f5*/
           v9(v17, IsSoundEnabled); /*0x6b64f9*/
         }
         v18 = GetDlgItem(hDlg, 1328); /*0x6b6508*/
@@ -188,7 +188,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
           v20 = 0; /*0x6b6518*/
           Format = 1; /*0x6b651a*/
           v44 = 0; /*0x6b652a*/
-          SendMessageA(v18, 0x184u, 0, 0); /*0x6b652e*/
+          SendMessageA( (HWND)(v18), 0x184u, 0, 0); /*0x6b652e*/
           v21 = 0; /*0x6b6535*/
           if ( dword_A83D34 > 0 ) /*0x6b6539*/
           {
@@ -199,11 +199,11 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
                 v22 = AudioSettings::ComputeTransform(v21); /*0x6b6563*/
                 v46 = AudioSettings::Check(v21); /*0x6b656f*/
                 swprintf(lParam, (const size_t)a02dSD02d, (const wchar_t *const)Format++, v46, v22 / 60, v22 % 60); /*0x6b65a1*/
-                v23 = SendMessageA(v19, 0x4CDu, 0, (LPARAM)lParam); /*0x6b65bb*/
+                v23 = SendMessageA( (HWND)(v19), 0x4CDu, 0, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x6b65bb*/
                 v24 = v23; /*0x6b65bd*/
                 if ( v23 != -1 ) /*0x6b65c2*/
                 {
-                  SendMessageA(v19, 0x19Au, v23, v21); /*0x6b65cc*/
+                  SendMessageA( (HWND)(v19), 0x19Au, v23, (LPARAM)((LPARAM)(v21))); /*0x6b65cc*/
                   v25 = dword_A83D14; /*0x6b65ce*/
                   if ( dword_A83D14 == -1 ) /*0x6b65d6*/
                     v25 = dword_A83D18; /*0x6b65d8*/
@@ -216,8 +216,8 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
             while ( v21 < dword_A83D34 ); /*0x6b65ed*/
             v20 = v44; /*0x6b65f3*/
           }
-          SendMessageA(v19, 0x186u, v20, 0); /*0x6b6600*/
-          SendMessageA(v19, 0x197u, v20, 0); /*0x6b660b*/
+          SendMessageA( (HWND)(v19), 0x186u, v20, 0); /*0x6b6600*/
+          SendMessageA( (HWND)(v19), 0x197u, v20, 0); /*0x6b660b*/
           EnableWindow(v19, bEnable); /*0x6b6613*/
         }
       }
@@ -231,9 +231,9 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     switch ( (uint16_t)a3 ) /*0x6b6733*/
     {
       case 0x534u: /*0x6b6733*/
-        v32 = SendMessageA(hWnd, 0xF0u, 0, 0); /*0x6b684c*/
+        v32 = SendMessageA( (HWND)(hWnd), 0xF0u, 0, 0); /*0x6b684c*/
         AudioSettings::SetFlag68(v32 == 1); /*0x6b685a*/
-        if ( SendMessageA(hWnd, 0xF0u, 0, 0) == 1 ) /*0x6b686e*/
+        if ( SendMessageA( (HWND)(hWnd), 0xF0u, 0, 0) == 1 ) /*0x6b686e*/
         {
           SendDlgItemMessageA(hDlg, 1331, 0xF1u, 0, 0); /*0x6b6883*/
           AudioSettings::SetFlag70(0); /*0x6b6890*/
@@ -247,10 +247,10 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
           v28 = v27; /*0x6b67c6*/
           if ( v27 ) /*0x6b67ca*/
           {
-            v29 = SendMessageA(v27, 0x188u, 0, 0); /*0x6b67e0*/
+            v29 = SendMessageA( (HWND)(v27), 0x188u, 0, 0); /*0x6b67e0*/
             if ( v29 != -1 ) /*0x6b67e5*/
             {
-              v30 = SendMessageA(v28, 0x199u, v29, 0); /*0x6b67f6*/
+              v30 = SendMessageA( (HWND)(v28), 0x199u, v29, 0); /*0x6b67f6*/
               v31 = dword_A83D14; /*0x6b67f8*/
               byte_A8EBA5 = 1; /*0x6b6800*/
               if ( dword_A83D14 == -1 ) /*0x6b6807*/
@@ -266,9 +266,9 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
         }
         break;
       case 0x533u: /*0x6b6733*/
-        v26 = SendMessageA(hWnd, 0xF0u, 0, 0); /*0x6b6759*/
+        v26 = SendMessageA( (HWND)(hWnd), 0xF0u, 0, 0); /*0x6b6759*/
         AudioSettings::SetFlag70(v26 == 1); /*0x6b6767*/
-        if ( SendMessageA(hWnd, 0xF0u, 0, 0) == 1 ) /*0x6b677b*/
+        if ( SendMessageA( (HWND)(hWnd), 0xF0u, 0, 0) == 1 ) /*0x6b677b*/
         {
           SendDlgItemMessageA(hDlg, 1332, 0xF1u, 0, 0); /*0x6b6790*/
           AudioSettings::SetFlag68(0); /*0x6b679d*/
@@ -293,7 +293,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   v33 = GetDlgItem(hDlg, 1327); /*0x6b68cf*/
   if ( v33 ) /*0x6b68d9*/
   {
-    v40 = (double)SendMessageA(v33, 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
+    v40 = (double)SendMessageA( (HWND)(v33), 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
     Audio::SetScoreVolume((float *)dword_A8EB60, v40, 0); /*0x6b6900*/
     if ( flt_A8EBA0 == 0.0 ) /*0x6b6916*/
     {
@@ -307,13 +307,13 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   v35 = GetDlgItem(hDlg, 1330); /*0x6b6944*/
   if ( v35 ) /*0x6b6948*/
   {
-    v41 = (double)SendMessageA(v35, 0x400u, 0, 0) * 0.1; /*0x6b696c*/
+    v41 = (double)SendMessageA( (HWND)(v35), 0x400u, 0, 0) * 0.1; /*0x6b696c*/
     Audio::SetSoundVolume((float *)dword_A8EB60, v41, 0); /*0x6b696f*/
   }
   v36 = GetDlgItem(hDlg, 1334); /*0x6b697a*/
   if ( v36 ) /*0x6b697e*/
   {
-    v42 = (double)SendMessageA(v36, 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
+    v42 = (double)SendMessageA( (HWND)(v36), 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
     Audio::SetVoiceVolume((float *)dword_A8EB60, v42, 0); /*0x6b69a5*/
   }
   *(unsigned int *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/

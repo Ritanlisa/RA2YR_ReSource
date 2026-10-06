@@ -74,7 +74,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
     v5 = (void *)this->MSVQAnim_field_0x1C; /*0x5cecd3*/
     if ( v5 ) /*0x5cecd8*/
     {
-      BinkMovie::Cleanup( (void)((BinkMovie *)this->MSVQAnim_field_0x1C)); /*0x5cecdc*/
+      BinkMovie::Cleanup(  (BinkMovie *)this->MSVQAnim_field_0x1C); /*0x5cecdc*/
       __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }

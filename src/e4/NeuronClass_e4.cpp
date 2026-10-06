@@ -42,7 +42,7 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 9) = 0; /*0x43a358*/
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
-  *((unsigned int *)this + 12) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
+  *((unsigned int *)this + 12) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_NeuronClass); /*0x43a375*/
   this->vtable2 =(void *)(int)&vt_NeuronClass; /*0x43a37b*/
   this->vtable3 =(void *)(int)&vt_NeuronClass; /*0x43a382*/
@@ -50,7 +50,7 @@ NeuronClass::NeuronClass()
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < ((char *)&g_BuildingLoadQueue_Array) /*0x43a3c5*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 8))(
          (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          (int)((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)),
          0) )
@@ -61,13 +61,13 @@ NeuronClass::NeuronClass()
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x43a41b*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+
+
+
   {
     v3 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x43a428*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3) = this; /*0x43a437*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3) = (unsigned int)this;
   }
   return (int)this->__pad_0; /*0x43a43c*/
 
@@ -88,9 +88,9 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   this->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a9da*/
   this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a9e1*/
   v6 = this; /*0x43a9ef*/
-  v3 = (*(int (**)(int *, NeuronClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x43a9f3*/
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         &v6);
+v3 = (*(int (**)(int *, NeuronClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x43a9f3*/ &g_BuildingLoadQueue_Array.LightVisibility, (NeuronClass **)(&v6));
+
+
   if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x43aa03*/
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x43aa08*/
@@ -103,7 +103,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
     }
   }
   v6 = (unsigned int *)((unsigned int)(this));
-  v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x43aa3c*/
+  v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x43aa3c*/
          (char *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          (NeuronClass **)&v6);
   if ( v4 != -1 && v4 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x43aa4c*/

@@ -41,7 +41,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   int v5; // ecx
   OverlayTypeClass **v6; // edx
 
-  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x5fe259*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull( (char *)(aP1)); /*0x5fe259*/
   this->Strength = 1; /*0x5fe265*/
   *(unsigned int *)&this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
@@ -65,10 +65,10 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->__tail_2B5[2] = 0; /*0x5fe2e4*/
   *((unsigned char *)this + 696) = 0; /*0x5fe2ea*/
   this->vtable1 = &vt_OverlayTypeClass; /*0x5fe2f1*/
-  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fe2f7*/
-  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fe2fd*/
-  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fe304*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x5fe30b*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fe2f7*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fe2fd*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fe304*/
+  AbstractClass::GenerateUniqueID( (int)((AbstractClass *)&((unsigned int *)this)[0])); /*0x5fe30b*/
   ((unsigned int *)this)[0] = 1; /*0x5fe310*/
   ((unsigned int *)this)[0] = 0; /*0x5fe317*/
   ((unsigned int *)this)[0] = 1; /*0x5fe31d*/
@@ -77,15 +77,15 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   if ( *(int *)&stru_A83D50.__pad_3C[4] < (int)stru_A83D50.SuperClass_field_0x38 /*0x5fe368*/
     || (stru_A83D50.__pad_3C[1] || !stru_A83D50.SuperClass_field_0x38)
     && *(int *)&stru_A83D50.__pad_3C[8] > 0
-    && (v4 = (*((uint8_t (**)(void **, char *, unsigned int))stru_A83D50.SuperClass_field_0x30 + 2))(
-               &stru_A83D50.SuperClass_field_0x30,
-               (char *)stru_A83D50.SuperClass_field_0x38 + *(unsigned int *)&stru_A83D50.__pad_3C[8],
-               0) == 0,
-        v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4],
-        !v4) )
+&& (v4 = (*((uint8_t (**)(void **, char *, unsigned int))stru_A83D50.SuperClass_field_0x30 + 2))( (void **)(&stru_A83D50.SuperClass_field_0x30), (char *)stru_A83D50.SuperClass_field_0x38 + *(unsigned int *)&stru_A83D50.__pad_3C[8], 0) == 0, v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4], !v4) )
+
+
+
+
+
   {
     *(unsigned int *)&stru_A83D50.__pad_3C[4] = v3 + 1; /*0x5fe36d*/
-    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3) = this; /*0x5fe377*/
+    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3) = (unsigned int)this;
     v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
@@ -145,7 +145,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
 
   ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x5fe783*/
-  if ( !((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x5fe78b*/
+  if ( !((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI( (uint8_t ***)(aP1)) ) /*0x5fe78b*/
     return 0; /*0x5fea1f*/
   INIString = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
                                  (OverlayTypeClass *)aP1,
@@ -182,7 +182,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   if ( /*0x5fe88a*/
          ((INIClass*)((INIClass *)aP1))->GetString(/*0x5fe88a*/ (uint8_t *)((unsigned int *)this)[0], aCellanim, &g_INI_DefaultBuffer, Destination, 128) )
   {
-    v13 = AnimTypeClass::FindOrCreate(Destination); /*0x5fe897*/
+    v13 = (unsigned int *)AnimTypeClass::FindOrCreate(Destination); /*0x5fe897*/
   }
   else
   {
@@ -204,7 +204,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   if ( !((unsigned int *)this)[0] && !this->DrawFlat ) /*0x5fe8fb*/
   {
     _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x5fe917*/
-    ((unsigned int *)this)[0] = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x5fe92d*/
+    ((unsigned int *)this)[0] = (unsigned int)(SHPStruct *)SearchMIXFile( (char *)(Buffer), 1); /*0x5fe92d*/
   }
   Coord = INIClass::GetCoord( /*0x5fe947*/
             (INIClass *)aP1,
@@ -253,9 +253,9 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ((ObjectTypeClass*)((ObjectTypeClass *)a1))->Construct((int)v3); /*0x5feb1c*/
       a1->vtable1 = &vt_OverlayTypeClass; /*0x5feb21*/
-      ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb27*/
-      ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb2e*/
-      ((unsigned int *)a1)[0] = &vt_OverlayTypeClass; /*0x5feb35*/
+      ((unsigned int *)a1)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5feb27*/
+      ((unsigned int *)a1)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5feb2e*/
+      ((unsigned int *)a1)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5feb35*/
     }
     ((VoxelAnimType*)((char *)a1))->LoadAnim(); /*0x5feb3e*/
     ((ObjectTypeClass*)((char *)a1))->Load2DArt(); /*0x5feb45*/
@@ -272,7 +272,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
         TheaterObjectTypeClassSpecificID( (char *)(&v3[1]), (&dword_A8B230)[130].uniqueId); /*0x5febd7*/
       }
       if ( !((unsigned int *)a1)[0] ) /*0x5febdc*/
-        ((unsigned int *)a1)[0] = (SHPStruct *)SearchMIXFile( (char *)(&v3[1]), 1); /*0x5febf1*/
+        ((unsigned int *)a1)[0] = (unsigned int)(SHPStruct *)SearchMIXFile( (char *)(&v3[1]), 1); /*0x5febf1*/
     }
     return 0; /*0x5febf7*/
   }
@@ -303,16 +303,16 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     else if ( ((unsigned int *)this)[0] ) /*0x5fee59*/
     {
       _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], Ext); /*0x5fee78*/
-      TheaterObjectTypeClassSpecificID(Buffer, (&dword_A8B230)[130].uniqueId); /*0x5fee90*/
+      TheaterObjectTypeClassSpecificID( (char *)(Buffer), (&dword_A8B230)[130].uniqueId); /*0x5fee90*/
     }
-    ((CCFileClass*)&v4)->Construct(Buffer); /*0x5fee9f*/
+    ((CCFileClass*)&v4)->Construct( (char *)(Buffer)); /*0x5fee9f*/
     v3 = (SHPStruct *)((CCFileClass *)(&v4))->ReadEntireFile(); /*0x5feead*/
-    ((unsigned int *)this)[0] = v3; /*0x5feeb1*/
+    ((unsigned int *)this)[0] = (unsigned int)v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       ((unsigned int *)this)[0] = 1; /*0x5feeb9*/
     *(unsigned int *)v4.CDFileClass = (unsigned int)&vt_CCFileClass;
     v6 = 0; /*0x5feecc*/
-    ((Vector *)((int)v5))->Clear(); /*0x5feed4*/
+    ((Vector *)((int)v5))->Clear((int)((Vector *)((int)v5))); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = (unsigned int)&off_7E1668;
     ((BufferIOFileClass *)((BufferIOFileClass *)&v4))->Dtor(); /*0x5feee5*/
     return v3; /*0x5feeea*/
@@ -328,7 +328,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
 
   void *v3; // eax
 
-  ((ObjectTypeClass *)((int *)this))->ConstructFull(aP1); /*0x6440a9*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull( (char *)(aP1)); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
   *(unsigned int *)&this->RadarColor[2] = -1; /*0x6440b9*/
   *((unsigned int *)this + 174) = -1; /*0x6440bf*/
@@ -364,23 +364,23 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
   *((unsigned char *)this + 779) = 0; /*0x644190*/
   *((unsigned char *)this + 780) = 0; /*0x644196*/
   this->vtable1 = &vt_ParticleSystemTypeClass; /*0x64419c*/
-  ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441a2*/
-  ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441a8*/
-  ((unsigned int *)this)[0] = &vt_ParticleSystemTypeClass; /*0x6441af*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_ParticleSystemTypeClass; /*0x6441a2*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_ParticleSystemTypeClass; /*0x6441a8*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_ParticleSystemTypeClass; /*0x6441af*/
   AbstractClass::GenerateUniqueID( (int)((AbstractClass *)&((unsigned int *)this)[0])); /*0x6441b6*/
   if ( (int)stru_A83D50.SuperClass_field_0x28 < *(int *)&stru_A83D50.__pad_14[12] /*0x6441ef*/
     || (BYTE1(stru_A83D50.SuperClass_field_0x24) || !*(unsigned int *)&stru_A83D50.__pad_14[12])
     && (int)stru_A83D50.SuperClass_field_0x2C > 0
-    && (*(uint8_t (**)(char *, char *, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 8))(
-         &stru_A83D50.__pad_14[4],
-         (char *)stru_A83D50.SuperClass_field_0x2C + *(unsigned int *)&stru_A83D50.__pad_14[12],
-         0) )
+&& (*(uint8_t (**)(char *, char *, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 8))( (char *)(&stru_A83D50.__pad_14[4]), (char *)stru_A83D50.SuperClass_field_0x2C + *(unsigned int *)&stru_A83D50.__pad_14[12], 0) )
+
+
+
   {
     v3 = stru_A83D50.SuperClass_field_0x28++; /*0x6441fc*/
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = (unsigned int)this;
   }
   ((unsigned int *)this)[0] = 1; /*0x64420e*/
-  return this; /*0x644217*/
+  return (unsigned int *)this; /*0x644217*/
 
 }
 }  // G42.18c ns repair
@@ -394,7 +394,7 @@ int OverlayTypeClass::ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4)
 
   v5 = sub_48DFD0(a4); /*0x4754cd*/
   if ( ((INIClass*)((INIClass *)this))->GetString(a2, a3, v5, Destination, 128) ) /*0x4754e5*/
-    return ((OverlayTypeClass *)(OverlayTypeClass *)Destination)->LookupByName(); /*0x4754f2*/
+    return ((OverlayTypeClass *)Destination)->LookupByName(); /*0x4754f2*/
   else
     return a4; /*0x475502*/
 
@@ -449,7 +449,7 @@ bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
   Object *v4; // eax
 
   v4 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x5fe538*/
-  return v4 && ((Object *)(v4))->SpawnAtCell((int)this, aP2, -1); /*0x5fe559*/
+  return v4 && ((Object *)(v4))->SpawnAtCell( (int)this, (int16_t *)(aP2), -1); /*0x5fe559*/
 
 }
 }  // G42.18c ns repair
@@ -462,7 +462,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
 
   v3 = (Object *)__2_YAPAXI_Z(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
-    return ((Object *)(v3))->SpawnAtCell((int)this, &word_AC1608, -1); /*0x5fe58e*/
+    return ((Object *)(v3))->SpawnAtCell( (int)this, (int16_t *)(&word_AC1608), -1); /*0x5fe58e*/
   else
     return 0; /*0x5fe597*/
 
@@ -507,8 +507,8 @@ unsigned int * OverlayTypeClass::vt_entry_6C(unsigned int * a0, OverlayTypeClass
 {
 
   a0->ObjectTypeClass = (void *)*aP1; /*0x5fea3d*/
-  ((unsigned int *)a0)[0] = (void *)aP1[1]; /*0x5fea42*/
-  ((unsigned int *)a0)[0] = (void *)aP1[2]; /*0x5fea49*/
+  ((unsigned int *)a0)[0] = (unsigned int)(void *)aP1[1]; /*0x5fea42*/
+  ((unsigned int *)a0)[0] = (unsigned int)(void *)aP1[2]; /*0x5fea49*/
   return a0; /*0x5fea45*/
 
 }
@@ -524,7 +524,7 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   int v6; // ecx
   int v7; // edx
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x5fea59*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x5fea59*/
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
   Power::TimerProcess(this->Strength); /*0x5fea83*/

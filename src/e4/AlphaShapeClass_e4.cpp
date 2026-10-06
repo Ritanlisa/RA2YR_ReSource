@@ -26,7 +26,7 @@ namespace gamemd {
 int AlphaShapeClass::SD_vt13(int a2)
 {
 
-  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x420da9*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x420da9*/
   Power::TimerProcess((int)((*((unsigned int *)this + 10)))); 
   Power::TimerProcess((int)((*((unsigned int *)this + 11)))); 
   Power::TimerProcess((int)((*((unsigned int *)this + 12)))); 
@@ -85,9 +85,9 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
   v6 = (gamemd::AlphaShapeClass *)(this);
-  v4 = (*(int (**)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
-         &g_BuildingLoadQueue_Array.PowerBonus,
-         &v6);
+v4 = (*(int (**)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/ &g_BuildingLoadQueue_Array.PowerBonus, (AlphaShapeClass **)(&v6));
+
+
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4217bc*/
   {
     --g_BuildingLoadQueue_Array.Foundation[0]; /*0x4217c1*/

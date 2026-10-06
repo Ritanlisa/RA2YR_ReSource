@@ -109,7 +109,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     {
       damageParticles = (gamemd::ParticleSystemClass *)(((unsigned int *)a1)[0]); /*0x451491*/
       if ( damageParticles ) /*0x451499*/
-        (*((void (**)(ParticleSystemClass *))damageParticles->vtable1 + 62))(damageParticles); /*0x45149d*/
+        (*((void (**)(ParticleSystemClass *))damageParticles->vtable1 + 62))( (ParticleSystemClass *)(damageParticles)); /*0x45149d*/
     }
     v11 = 3; /*0x4514a3*/
     v12 = 51; /*0x4514a8*/
@@ -148,8 +148,8 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     unsigned int v21 = 0;  /* G37 hoist */
                 strcpy((char *)(a2), (const char *)(*(unsigned int *)(a1 + 1312) + 504));
         v18 = strlen((const char *)(asc_818D7C)) + 1; /*0x45158c*/
-        qmemcpy(&v26[strlen(v26)], (const void *)asc_818D7C, v18); /*0x451599*/
-        v19 = strlen(v26); /*0x4515b3*/
+        qmemcpy( (void *)(&v26[strlen( (const char *)(v26))]), (const void *)asc_818D7C, v18); /*0x451599*/
+        v19 = strlen( (const char *)(v26)); /*0x4515b3*/
         v26[v19] = v17 + 66; /*0x4515b6*/
         v26[v19 + 1] = 0; /*0x4515ba*/
         BuildingClass::PlayAnim(a1, v18, v26, 9, 0, 0, 0); /*0x4515c6*/
@@ -353,7 +353,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   }
   v12 = (double *)((int)((double *)(v10)));
   v36 = (double *)((unsigned int)(v10));
-  ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(&a1), &v40); /*0x4569f6*/
+  ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(&a1), (int *)(&v40)); /*0x4569f6*/
   v40 += DSurface_ViewBounds; /*0x456a11*/
   v41 += dword_886FA4; /*0x456a20*/
   v49[1] = v41 - (unsigned int)(v12)/ 2; /*0x456a2f*/
@@ -371,7 +371,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     v35 = 0; /*0x456aa6*/
     v38 = a6; /*0x456aab*/
     if ( aP1 ) /*0x456ab0*/
-      Color::Lerp( 50, (uint8_t)((uint8_t *)(&v34))); /*0x456abd*/
+      Color::Lerp( 50, (uint8_t *)((uint8_t)((uint8_t *)(&v34)))); /*0x456abd*/
     (*(void (**)(int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)g_DSurface_Hidden_2 + 32))( /*0x456b57*/
       g_DSurface_Hidden_2,
       v40,
@@ -518,7 +518,7 @@ int Map_InitCellOffsets()
   unk_89D37C = -65536;
   unk_89D384 = -65535;
   unk_89D388 = 2147450879;
-  memset(&unk_89D38C, 0, 0x54u);
+  memset( (void *)(&unk_89D38C), 0, 0x54u);
   unk_89D3E0 = 0x10000;
   unk_89D3E4 = 65537;
   unk_89D3E8 = 0x1FFFF;
@@ -530,7 +530,7 @@ int Map_InitCellOffsets()
   unk_89D404 = -65534;
   unk_89D400 = -1;
   unk_89D408 = 2147450879;
-  memset(&unk_89D40C, 0, 0x4Cu);
+  memset( (void *)(&unk_89D40C), 0, 0x4Cu);
   unk_89D458 = 0x20000;
   unk_89D45C = 131073;
   unk_89D460 = 196607;
@@ -542,7 +542,7 @@ int Map_InitCellOffsets()
   unk_89D474 = -65536;
   unk_89D47C = -65535;
   unk_89D480 = 2147450879;
-  memset(&unk_89D484, 0, 0x4Cu);
+  memset( (void *)(&unk_89D484), 0, 0x4Cu);
   unk_89D4D0 = 0x20000;
   unk_89D4D4 = 131073;
   unk_89D4D8 = 196607;
@@ -556,7 +556,7 @@ int Map_InitCellOffsets()
   unk_89D4F8 = -1;
   unk_89D4FC = -65534;
   unk_89D500 = 2147450879;
-  memset(&unk_89D504, 0, 0x44u);
+  memset( (void *)(&unk_89D504), 0, 0x44u);
   unk_89D548 = 196608;
   unk_89D54C = 196609;
   unk_89D550 = 0x3FFFF;
@@ -572,7 +572,7 @@ int Map_InitCellOffsets()
   unk_89D57C = -65534;
   unk_89D578 = -1;
   unk_89D580 = 2147450879;
-  memset(&unk_89D584, 0, 0x3Cu);
+  memset( (void *)(&unk_89D584), 0, 0x3Cu);
   unk_89D5C0 = 0x20000;
   unk_89D5C4 = 131073;
   unk_89D5C8 = 131074;
@@ -588,7 +588,7 @@ int Map_InitCellOffsets()
   unk_89D5F0 = -1;
   unk_89D5F4 = -65533;
   unk_89D5F8 = 2147450879;
-  memset(&unk_89D5FC, 0, 0x3Cu);
+  memset( (void *)(&unk_89D5FC), 0, 0x3Cu);
   unk_89D638 = 196608;
   unk_89D63C = 196609;
   unk_89D640 = 196610;
@@ -606,7 +606,7 @@ int Map_InitCellOffsets()
   unk_89D670 = -1;
   unk_89D674 = -65533;
   unk_89D678 = 2147450879;
-  memset(&unk_89D67C, 0, 0x34u);
+  memset( (void *)(&unk_89D67C), 0, 0x34u);
   unk_89D6B0 = -1;
   unk_89D6B4 = -65536;
   unk_89D6B8 = -65535;
@@ -628,7 +628,7 @@ int Map_InitCellOffsets()
   unk_89D6F8 = 327682;
   unk_89D6FC = 327683;
   unk_89D700 = 2147450879;
-  memset(&unk_89D704, 0, 0x24u);
+  memset( (void *)(&unk_89D704), 0, 0x24u);
   unk_89D728 = 0x20000;
   unk_89D72C = 131073;
   unk_89D730 = 131074;
@@ -646,10 +646,10 @@ int Map_InitCellOffsets()
   unk_89D760 = -1;
   unk_89D764 = -65532;
   unk_89D768 = 2147450879;
-  memset(&unk_89D76C, 0, 0x34u);
+  memset( (void *)(&unk_89D76C), 0, 0x34u);
   unk_89D7A0 = 0;
   unk_89D7A4 = 2147450879;
-  memset(&unk_89D7A8, 0, 0x70u);
+  memset( (void *)(&unk_89D7A8), 0, 0x70u);
   unk_89D818 = -1;
   unk_89D81C = -65536;
   unk_89D820 = -65535;
@@ -663,7 +663,7 @@ int Map_InitCellOffsets()
   unk_89D844 = 196609;
   unk_89D840 = 196608;
   unk_89D848 = 2147450879;
-  memset(&unk_89D84C, 0, 0x44u);
+  memset( (void *)(&unk_89D84C), 0, 0x44u);
   unk_89D890 = -1;
   unk_89D894 = -65536;
   unk_89D898 = -65535;
@@ -677,7 +677,7 @@ int Map_InitCellOffsets()
   unk_89D8B8 = 65538;
   unk_89D8BC = 65539;
   unk_89D8C0 = 2147450879;
-  memset(&unk_89D8C4, 0, 0x44u);
+  memset( (void *)(&unk_89D8C4), 0, 0x44u);
   unk_89D908 = 196608;
   unk_89D90C = 196609;
   unk_89D910 = 196610;
@@ -695,7 +695,7 @@ int Map_InitCellOffsets()
   unk_89D944 = -65533;
   unk_89D940 = -1;
   unk_89D948 = 2147450879;
-  memset(&unk_89D94C, 0, 0x34u);
+  memset( (void *)(&unk_89D94C), 0, 0x34u);
   unk_89D980 = -1;
   unk_89D984 = -65536;
   unk_89D988 = -65535;
@@ -711,7 +711,7 @@ int Map_InitCellOffsets()
   unk_89D9B4 = 262145;
   unk_89D9B0 = 0x40000;
   unk_89D9B8 = 2147450879;
-  memset(&unk_89D9BC, 0, 0x3Cu);
+  memset( (void *)(&unk_89D9BC), 0, 0x3Cu);
   unk_89D9F8 = -1;
   unk_89D9FC = -65536;
   unk_89DA00 = -65535;
@@ -729,7 +729,7 @@ int Map_InitCellOffsets()
   unk_89DA30 = 327680;
   unk_89DA34 = 327681;
   unk_89DA38 = 2147450879;
-  memset(&unk_89DA3C, 0, 0x34u);
+  memset( (void *)(&unk_89DA3C), 0, 0x34u);
   unk_89DA70 = -1;
   unk_89DA74 = -65536;
   unk_89DA78 = -65535;
@@ -749,7 +749,7 @@ int Map_InitCellOffsets()
   unk_89DAB4 = 393218;
   unk_89DAB0 = 393217;
   unk_89DAB8 = 2147450879;
-  memset(&unk_89DABC, 0, 0x2Cu);
+  memset( (void *)(&unk_89DABC), 0, 0x2Cu);
   unk_89DAE8 = -1;
   unk_89DAEC = -65536;
   unk_89DAF0 = -65535;
@@ -767,7 +767,7 @@ int Map_InitCellOffsets()
   unk_89DB24 = 327682;
   unk_89DB20 = 327681;
   unk_89DB28 = 2147450879;
-  memset(&unk_89DB2C, 0, 0x34u);
+  memset( (void *)(&unk_89DB2C), 0, 0x34u);
   unk_89DB60 = -1;
   unk_89DB64 = -65536;
   unk_89DB68 = -65535;
@@ -790,7 +790,7 @@ int Map_InitCellOffsets()
   unk_89DBA8 = *(unsigned int *)((CellStruct *)(&v1))->Set(4, 3);
   unk_89DBAC = *(unsigned int *)((CellStruct *)(&v1))->Set(5, 3);
   unk_89DBB0 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
-  memset(&stru_89DBB4, 0, 0x24u);
+  memset( (void *)(&stru_89DBB4), 0, 0x24u);
   ((Array *)((int)&stru_89DBB4))->ForEach( 4, 9, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DBD8 = *(unsigned int *)((CellStruct *)(&v1))->Set(-1, -1);
   unk_89DBDC = *(unsigned int *)((CellStruct *)(&v1))->Set(0, -1);
@@ -815,7 +815,7 @@ int Map_InitCellOffsets()
   unk_89DC28 = *(unsigned int *)((CellStruct *)(&v1))->Set(4, 3);
   unk_89DC2C = *(unsigned int *)((CellStruct *)(&v1))->Set(4, 4);
   unk_89DC30 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
-  memset(&stru_89DC34, 0, 0x1Cu);
+  memset( (void *)(&stru_89DC34), 0, 0x1Cu);
   ((Array *)((int)&stru_89DC34))->ForEach( 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   DataGlobal_0089DC50 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 4);
   DataGlobal_0089DC54 = *(unsigned int *)((CellStruct *)(&v1))->Set(1, 4);
@@ -834,14 +834,14 @@ int Map_InitCellOffsets()
   unk_89DC88 = *(unsigned int *)((CellStruct *)(&v1))->Set(-1, -1);
   unk_89DC8C = *(unsigned int *)((CellStruct *)(&v1))->Set(3, -1);
   unk_89DC90 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
-  memset(&stru_89DC94, 0, 0x34u);
+  memset( (void *)(&stru_89DC94), 0, 0x34u);
   ((Array *)((int)&stru_89DC94))->ForEach( 4, 13, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DCC8 = *(unsigned int *)((CellStruct *)(&v1))->Set(2, -1);
   unk_89DCCC = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
-  memset(&stru_89DCD0, 0, 0x70u);
+  memset( (void *)(&stru_89DCD0), 0, 0x70u);
   ((Array *)((int)&stru_89DCD0))->ForEach( 4, 28, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DD40 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
-  memset(&stru_89DD44, 0, 0x74u);
+  memset( (void *)(&stru_89DD44), 0, 0x74u);
   return ((Array *)((int)&stru_89DD44))->ForEach( 4, 29, (int (*)(int))__0Iostream_init_QAE_XZ_2);
 }
 } // namespace gamemd
@@ -918,7 +918,7 @@ int E4Recv_4517D0::sub_4517D0()
   unsigned int v16[3]; // [esp+20h] [ebp-18h] BYREF
   unsigned int v17[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))((char *)this->vtable1 + 172))((TechnoClass *)this, v16); /*0x4517e2*/
+  v2 = (int *)(*(int (**)(TechnoClass *, unsigned int *))((char *)this->vtable1 + 172))( (TechnoClass *)this, (unsigned int *)(v16)); /*0x4517e2*/
   v3 = 0; /*0x4517ea*/
   v13 = *v2; /*0x4517ec*/
   v14 = v2[1]; /*0x4517f3*/
@@ -942,7 +942,7 @@ int E4Recv_4517D0::sub_4517D0()
       v11 = *v6; /*0x45184e*/
       v16[2] = v15 + v10; /*0x451850*/
       v16[0] = v8; /*0x451858*/
-      result = (*(int (**)(int *, unsigned int *))(v11 + 436))(v6, v16); /*0x45185f*/
+      result = (*(int (**)(int *, unsigned int *))(v11 + 436))( (int *)(v6), (unsigned int *)(v16)); /*0x45185f*/
     }
     v3 += 68; /*0x451869*/
     ++v12; /*0x451875*/
@@ -1066,7 +1066,7 @@ unsigned int * sub_455DD0(int a1, unsigned int * a2)
 
   v2 = a1; /*0x455ddc*/
   v3 = a2; /*0x455de7*/
-  v12 = 0; /*0x455df5*/
+  v12 = (unsigned int *)(0); /*0x455df5*/
   v9 = 0x7FFFFFFF; /*0x455df9*/
   if ( (byte_89C828 & 1) == 0 ) /*0x455e01*/
   {
@@ -1081,7 +1081,7 @@ unsigned int * sub_455DD0(int a1, unsigned int * a2)
   while ( 1 ) /*0x455e47*/
   {
     v5 = *(unsigned int **)(*(unsigned int *)(v2 + 132) + 4 * v4); /*0x455e47*/
-    if ( (*(int (**)(unsigned int *, int, unsigned int *))(*v3 + 632))(v3, 15, v5) ) /*0x455e4f*/
+    if ( (*(int (**)(unsigned int *, int, unsigned int *))(*v3 + 632))( (unsigned int *)(v3), 15, (unsigned int *)(v5)) ) /*0x455e4f*/
     {
       v15 = v5[39] - v3[39]; /*0x455e7f*/
       v16 = v5[40] - v3[40]; /*0x455e88*/
@@ -1122,7 +1122,7 @@ char E4Recv_457A10::sub_457A10()
   int v5; // [esp+Ch] [ebp-8h]
   int16_t v6[2]; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))((char *)this->vtable1 + 440))((TechnoClass *)this, v6); /*0x457a2d*/
+  v2 = *(unsigned int *)(*(int (**)(TechnoClass *, int16_t *))((char *)this->vtable1 + 440))( (TechnoClass *)this, (int16_t *)(v6)); /*0x457a2d*/
   for ( i = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(**((unsigned int **)this + 328) + 144))( /*0x457a42*/
                        *((unsigned int *)this + 328),
                        0); *i != 0x7FFF || i[1] != 0x7FFF; i += 2 )
@@ -1130,7 +1130,7 @@ char E4Recv_457A10::sub_457A10()
     LOWORD(v5) = v2 + *i; /*0x457a59*/
     HIWORD(v5) = HIWORD(v2) + i[1]; /*0x457a66*/
     *(unsigned int *)v6 = v5; /*0x457a6f*/
-    if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v6) + 80) & 0x400000) == 0 ) /*0x457a87*/
+    if ( (*((unsigned int *)((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(v6)) + 80) & 0x400000) == 0 ) /*0x457a87*/
       return 0; /*0x457a96*/
   }
   return 1; /*0x457a8e*/
@@ -1332,7 +1332,7 @@ char sub_45E8F0()
   if ( !dword_89DDBC ) /*0x45e8fb*/
   {
     dword_89DDBC = (unsigned int)((void *)SearchMIXFile((char *)(aBuildngzSha), 0)); /*0x45e90d*/
-    Building::GetFoundationSize(v6, 0); /*0x45e917*/
+    Building::GetFoundationSize( (unsigned int *)(v6), 0); /*0x45e917*/
     SubFile = ((MixFileClass *)(char **)dword_89DDBC)->GetSubFile( 0); /*0x45e924*/
     v1 = *((int16_t *)dword_89DDBC + 1); /*0x45e92f*/
     if ( *((int16_t *)dword_89DDBC + 2) > 0 ) /*0x45e939*/

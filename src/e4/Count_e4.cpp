@@ -52,7 +52,7 @@ int Count::SetupAllCountriesLobby()
   int v10; // [esp+18h] [ebp-8h]
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
-  v1 = 0; /*0x46f6da*/
+  v1 = (ObjectClass *)(0); /*0x46f6da*/
   v2 = (int **)dword_A8DA90; /*0x46f6dc*/
   v10 = 0; /*0x46f6e2*/
   v8 = (int **)dword_A8DA90; /*0x46f6e6*/
@@ -66,7 +66,7 @@ int Count::SetupAllCountriesLobby()
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
       if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x46f730*/
-        v6 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))(dword_A8B23C); /*0x46f737*/
+        v6 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))( (ObjectClass *)(dword_A8B23C)); /*0x46f737*/
       if ( (uint8_t)((Player *)((Player *)v5))->IsObserver() ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
@@ -92,9 +92,9 @@ int Count::SetupAllCountriesLobby()
         PlayerSide = ((SessionClass *)(v5))->GetPlayerSide(); /*0x46f786*/
       }
       if ( dword_A8B23C /*0x46f795*/
-        && !(*((uint8_t (**)(ObjectClass *, int))dword_A8B23C->vtable1 + 7))(
-              dword_A8B23C,
-              PlayerSide) )
+&& !(*((uint8_t (**)(ObjectClass *, int))dword_A8B23C->vtable1 + 7))( (ObjectClass *)(dword_A8B23C), PlayerSide) )
+
+
       {
         PlayerSide = v6; /*0x46f79e*/
         if ( (uint8_t)((Player *)((Player *)v5))->IsObserver() ) /*0x46f7a0*/

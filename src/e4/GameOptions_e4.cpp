@@ -35,13 +35,13 @@ int sub_682780(int a1, int a2, wchar_t * String)
     ++v3; /*0x68279c*/
     if ( (int)v4 >= (int)g_INI_Key_GameType ) /*0x6827a2*/
     {
-      v5 = 0; /*0x6827a4*/
+      v5 = (void **)(0); /*0x6827a4*/
       goto LABEL_5; /*0x6827a4*/
     }
   }
   v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
-  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))( a1, v5, 18, 0, 0, (int *)(&v9)); /*0x6827a6*/
+  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))( a1, (void **)(v5), 18, 0, 0, (int *)(&v9)); /*0x6827a6*/
   if ( v6 >= 0 ) /*0x6827c4*/
   {
     if ( !v9 ) /*0x6827e6*/
@@ -105,7 +105,7 @@ int sub_6829A0(int * a1, int a2, int a3)
     v9 = a3; /*0x682a33*/
     if ( !v6 ) /*0x682a37*/
       WinAPI::Wrapper(-2147467261); /*0x682a3e*/
-    v4 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v6 + 16))(v6, 1, v7, v8, 2); /*0x682a5b*/
+    v4 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v6 + 16))( v6, 1, (unsigned int *)(v7), (int16_t *)(v8), 2); /*0x682a5b*/
     if ( v4 >= 0 ) /*0x682a63*/
     {
       if ( v6 ) /*0x682a7a*/

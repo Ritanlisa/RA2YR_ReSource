@@ -27,7 +27,7 @@ int sub_7781B0(short a1)
     MultiByteStr = a1; /*0x7781cc*/
     v4 = 0; /*0x7781d0*/
   }
-  v1 = MultiByteToWideChar(0, 0, &MultiByteStr, strlen( (const char *)(&MultiByteStr)), WideCharStr, 1); /*0x7781f3*/
+  v1 = MultiByteToWideChar( 0, 0, (LPCCH)(&MultiByteStr), strlen( (const char *)(&MultiByteStr)), (LPWSTR)(WideCharStr), 1); /*0x7781f3*/
   return v1 == 1 ? *(unsigned int *)WideCharStr : 0;
 }
 }

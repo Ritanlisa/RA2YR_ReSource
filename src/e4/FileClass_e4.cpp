@@ -42,7 +42,7 @@ const char* FileClass::SetFileName(char *aP1)
 {
 
   *((unsigned int *)this + 26) = 0; /*0x473fc4*/
-  return ((FileClass *)(CDFileClass *)this)->OpenWithCDSearch( aP1); /*0x473fd1*/
+  return ((FileClass *)(CDFileClass *)this)->OpenWithCDSearch( (char *)(aP1)); /*0x473fd1*/
 
 }
 } // namespace gamemd

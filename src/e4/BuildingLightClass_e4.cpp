@@ -64,9 +64,9 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
   *(unsigned int *)this->__pad_B4 = 0; /*0x436c06*/
   if ( aP1 == (unsigned int *)3 ) /*0x436c0c*/
   {
-    v5 = *(unsigned int *)(*((int (**)(BuildingLightClass *, Object **))this->vtable1 + 110))( /*0x436c21*/
-                      this,
-                      &nextArrayIndex);
+v5 = *(unsigned int *)(*((int (**)(BuildingLightClass *, Object **))this->vtable1 + 110))( /*0x436c21*/ this, (Object **)(&nextArrayIndex));
+
+
     FollowingObject = v4->FollowingObject; /*0x436c23*/
     v25 = v5; /*0x436c29*/
     v19 = &unk_98967F; /*0x436c2d*/
@@ -82,13 +82,13 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
       {
         HIWORD(v18) = v7 + HIWORD(v25); /*0x436c6c*/
         *(unsigned int *)v23 = v18; /*0x436c7b*/
-        v8 = (unsigned int *)*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v23) + 57); /*0x436c84*/
+        v8 = (unsigned int *)*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v23)) + 57); /*0x436c84*/
         if ( v8 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/
           {
-            if ( ((*(int (**)(unsigned int *))(*v8 + 44))(v8) == 15 /*0x436cb9*/
-               || (*(int (**)(unsigned int *))(*v8 + 44))(v8) == 1)
+            if ( ((*(int (**)(unsigned int *))(*v8 + 44))( (unsigned int *)(v8)) == 15 /*0x436cb9*/
+               || (*(int (**)(unsigned int *))(*v8 + 44))( (unsigned int *)(v8)) == 1)
               && !(uint8_t)((Object *)(nextArrayIndex))->IsAlliedWithObjectHouse((int)v8) )
             {
               v9 = *v8; /*0x436ccc*/
@@ -96,7 +96,7 @@ unsigned int * BuildingLightClass::FindTarget(unsigned int *a2, int aP1, int a1,
               v11 = ((unsigned int *)v4)[0]; /*0x436cd0*/
               v12 = location[1]; /*0x436cd2*/
               v29 = location[2]; /*0x436cdf*/
-              v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(v9 + 72))(v8, v30); /*0x436ce3*/
+              v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(v9 + 72))( (unsigned int *)(v8), (char *)(v30)); /*0x436ce3*/
               v14 = v13[1] - v12; /*0x436ced*/
               v26 = *v13 - v11; /*0x436cf3*/
               v15 = v13[2]; /*0x436cf7*/
@@ -161,7 +161,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2, int a1, int aP0, int aP
   ((ObjectClass *)(this))->Dtor(); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
     __3_YAXPAX_Z(this); /*0x43714b*/
-  return this; /*0x437155*/
+  return (BuildingLightClass *)this; /*0x437155*/
 
 }
 } // namespace gamemd
@@ -234,7 +234,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v16 = 1.0; /*0x513e00*/
   else
     v16 = 1.1; /*0x513e08*/
-  v17 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) + 2 * v15; /*0x513e20*/
+  v17 = *(unsigned int *)((char *)&stru_A8EB00 + 416) + 2 * v15; /*0x513e20*/
   v18 = v16 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1488) * 900.0; /*0x513e23*/
   LOWORD(v19) = Math::RoundToInt(v13); /*0x513e2b*/
   Math::SinCos((double)(v17 % v19) * 6.283185307179586 / v18); /*0x513e4f*/

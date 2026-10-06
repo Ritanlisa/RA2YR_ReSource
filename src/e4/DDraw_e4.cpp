@@ -90,7 +90,7 @@ int DDraw::CapabilityCheck()
   }
   v0 = aFailed_1; /*0x4a3ed7*/
 LABEL_7:
-  Debug::Log_0( (void)((void *)("%s\n")), (void)((void *)(v0))); /*0x4a3edc*/
+  Debug::Log_0(  (void *)("%s\n"),  (void *)(v0)); /*0x4a3edc*/
   ((Debug *)aCheckingOverla)->Log(); /*0x4a3eec*/
   byte_8205D5 = 1; /*0x4a3ef8*/
   ((XSurface *)v7)->Fill( 0); /*0x4a3f00*/
@@ -278,7 +278,7 @@ char DDraw::CheckCapabilities()
 
   if ( g_lpDirectDraw7 ) /*0x4a462e*/
   {
-    memset(v4, 0, sizeof(v4)); /*0x4a4645*/
+    memset( (void *)(v4), 0, sizeof(v4)); /*0x4a4645*/
     v4[0] = 316; /*0x4a464b*/
     v1 = g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v4, 0); /*0x4a4659*/
     if ( v1 ) /*0x4a465f*/

@@ -72,7 +72,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     v5 = (unsigned int)((int *)__2_YAPAXI_Z(8 * a2 + 4)); /*0x765867*/
     if ( !v5 ) /*0x765871*/
     {
-      v8 = 0; /*0x76589f*/
+      v8 = (ComPtr *)(0); /*0x76589f*/
       goto LABEL_14; /*0x7658a1*/
     }
     *(unsigned int *)(v5) = a2; /*0x765873*/
@@ -170,7 +170,7 @@ LONG Campaign::Screen(char a1)
     SetForegroundWindow((HWND)Dialog); /*0x60d3b1*/
     ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x60d3bd*/
     if ( a1 ) /*0x60d3c8*/
-      BINK::Background_Setup(Dialog); /*0x60d3cc*/
+      BINK::Background_Setup( (HWND)(Dialog)); /*0x60d3cc*/
     while ( !dwNewLong ) /*0x60d3d7*/
     {
       MessageLoop(); /*0x60d3d9*/
@@ -186,7 +186,7 @@ LONG Campaign::Screen(char a1)
         break; /*0x60d40e*/
       }
     }
-    ((Dialog *)(Dialog *)Dialog)->Destroy(); /*0x60d41f*/
+    ((Dialog *)Dialog)->Destroy(); /*0x60d41f*/
     return dwNewLong; /*0x60d426*/
   }
   return result; /*0x60d42a*/

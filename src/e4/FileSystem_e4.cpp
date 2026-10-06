@@ -81,14 +81,14 @@ int FileSystem::ProcessNextFileExtension()
       }
       else
       {
-        v4 = 0; /*0x626df8*/
+        v4 = (StringVector *)(0); /*0x626df8*/
       }
       *(unsigned int *)&v1[4] = (unsigned int)(v4); /*0x626dfc*/
       v5 = (FileExtension *)__2_YAPAXI_Z(0x18u); /*0x626dff*/
       if ( v5 ) /*0x626e09*/
-        v6 = ((FileExtension *)((int)(v5)))->Constructor( 0, 0); /*0x626e0f*/
+        v6 = ((FileExtension *)((int)(v5)))->Constructor((int)((FileExtension *)((int)(v5))), 0, 0); /*0x626e0f*/
       else
-        v6 = 0; /*0x626e16*/
+        v6 = (unsigned int *)(0); /*0x626e16*/
       *(unsigned int *)&v1[8] = (unsigned int)(v6); /*0x626e1a*/
       v7 = (DynamicVectorArray *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
       if ( v7 ) /*0x626e27*/
@@ -98,7 +98,7 @@ int FileSystem::ProcessNextFileExtension()
     }
     else
     {
-      v1 = 0; /*0x626e45*/
+      v1 = (FileSystem *)(0); /*0x626e45*/
     }
     g_FileExtensionState = (int)(v1);
   }
@@ -130,7 +130,7 @@ LABEL_19:
     if ( v12 ) /*0x626ec0*/
     {
       v15 = *(unsigned int *)&((unsigned int *)(g_FileExtensionState))[12]; /*0x626ece*/
-      v16 = *(unsigned int *)v15 + 24 * ((*(int (**)(Flag *))(v15 + 4))(v12) % *(unsigned int *)(v15 + 8)); /*0x626ee1*/
+      v16 = *(unsigned int *)v15 + 24 * ((*(int (**)(Flag *))(v15 + 4))( (Flag *)(v12)) % *(unsigned int *)(v15 + 8)); /*0x626ee1*/
       v17 = *(unsigned int *)(v16 + 16) - 1; /*0x626ee4*/
       v30 = v16; /*0x626ee5*/
       if ( v17 >= 0 ) /*0x626ee9*/
@@ -139,7 +139,7 @@ LABEL_19:
         for ( j = 260 * v17; ; v18 = j ) /*0x626ef9*/
         {
           v19 = (const char *)(*(unsigned int *)(v16 + 4) + v18); /*0x626f0b*/
-          if ( (uint8_t)((String *)v19)->Equals( v12->__pad_0) ) /*0x626f0f*/
+          if ( (uint8_t)((String *)v19)->Equals( (void *)(v12->__pad_0)) ) /*0x626f0f*/
             break; /*0x626f0f*/
           --v17; /*0x626f1c*/
           j -= 260; /*0x626f25*/
@@ -181,7 +181,7 @@ LABEL_36:
             }
             if ( !v25 ) /*0x626fc0*/
               break; /*0x626fc0*/
-            v26 = ((FileSystem *)*(FileSystem **)&(&g_FileExtensionState)[12])->openFile( v25->__pad_0); /*0x626fcb*/
+            v26 = ((FileSystem *)*(FileSystem **)&(&g_FileExtensionState)[12])->openFile( (const char *)(v25->__pad_0)); /*0x626fcb*/
             if ( !v26 ) /*0x626fd2*/
               break; /*0x626fd2*/
           }

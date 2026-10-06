@@ -75,7 +75,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       }
       else
       {
-        v5 = 0; /*0x658b5e*/
+        v5 = (char *)(0); /*0x658b5e*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x658b7d*/

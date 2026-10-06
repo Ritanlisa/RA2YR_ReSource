@@ -160,7 +160,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
       v17 = (char *)((unsigned int)(0));
     }
     *((unsigned int *)v3 + 1159) = (unsigned int)(v17); /*0x65479d*/
-    (*(void (**)(char *, unsigned int))(v17->nextArrayIndex))(v17, 0);  /*0x6547a8*/
+    (*(void (**)(char *, unsigned int))(v17->nextArrayIndex))( (char *)(v17), 0);  /*0x6547a8*/
     IDA_LOBYTE(result) = RadarClass::UpdateFoundationShapesCustom(v3); /*0x6547ad*/
   }
   return (int)(result); /*0x6547b3*/
@@ -203,7 +203,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   char v37; // [esp+28h] [ebp+Ch]
   char v38; // [esp+2Ch] [ebp+10h]
 
-  v33 = (int)(((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2));
+  v33 = (int)(((TechnoTypeClass *)(a1))->GetByTypeAndIndex((int)((TechnoTypeClass *)(a1)), a2));
   v7 = (int)(TechnoTypeClass::GetByTypeAndIndex(a3,(int)(aP3)));
   v34 = v7; /*0x6a8451*/
   if ( !a3 ) /*0x6a8455*/
@@ -351,7 +351,7 @@ LABEL_74:
   if ( v28 > v29 ) /*0x6a869e*/
     return 0; /*0x6a86a9*/
   v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, (void *)dword_A83D4C); /*0x6a86bf*/
-  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, (void *)dword_A83D4C); /*0x6a86c9*/
+  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))( (unsigned int *)(v25), (void *)dword_A83D4C); /*0x6a86c9*/
   if ( v30 < v31 ) /*0x6a86d1*/
     return 1; /*0x6a86dc*/
   if ( v30 > v31 ) /*0x6a86df*/

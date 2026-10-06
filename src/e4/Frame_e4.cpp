@@ -205,11 +205,11 @@ LABEL_51:
                 else
                   LODWORD(v42) = v45 + v47; /*0x4f4aa1*/
                 v32 = *(unsigned int *)g_DSurface_Primary; /*0x4f4ac1*/
-                v33 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4ac5*/
-                        g_DSurface_Primary,
-                        v38,
-                        &v42,
-                        0);
+v33 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4ac5*/ g_DSurface_Primary, (unsigned char *)(v38), (double *)(&v42), 0);
+
+
+
+
                 (*(void (**)(int, int))(v32 + 16))(g_DSurface_Primary, v33); /*0x4f4acf*/
                 v13 = dword_87F7F0; /*0x4f4ad2*/
               }
@@ -224,19 +224,19 @@ LABEL_51:
                 else
                   HIDWORD(v42) = v46 + v48; /*0x4f4b0f*/
                 v35 = *(unsigned int *)g_DSurface_Primary; /*0x4f4b2f*/
-                v36 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4b33*/
-                        g_DSurface_Primary,
-                        v38,
-                        &v42,
-                        0);
+v36 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4b33*/ g_DSurface_Primary, (unsigned char *)(v38), (double *)(&v42), 0);
+
+
+
+
                 (*(void (**)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
               }
               if ( v37 && dword_887640 ) /*0x4f4b50*/
                 (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))(dword_887640, (int)a1, 0); /*0x4f4b57*/
-              result = (*(int (**)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/
-                         g_DSurface_Primary,
-                         &v45,
-                         (int)a1);
+result = (*(int (**)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/ g_DSurface_Primary, (int *)(&v45), (int)a1);
+
+
+
               if ( v37 ) /*0x4f4b83*/
               {
                 result = dword_887640; /*0x4f4b85*/

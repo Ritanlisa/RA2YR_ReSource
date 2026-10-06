@@ -65,7 +65,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
   result = (int)dword_A83D4C; /*0x655c50*/
   if ( !dword_A83D4C ) /*0x655c62*/
     return (gamemd::MapClass **)(result); /*0x655c62*/
-  result = (*(int (**)(unsigned int, char *))(**(unsigned int **)&this->u32_121C + 120))(*((unsigned int *)this + 1159), v40); /*0x655c75*/
+  result = (*(int (**)(unsigned int, char *))(**(unsigned int **)&this->u32_121C + 120))( *((unsigned int *)this + 1159), (char *)(v40)); /*0x655c75*/
   v5 = (int)(*aP1); /*0x655c7e*/
   v41 = (int)(*aP1); /*0x655c82*/
   if ( v41 < *(unsigned int *)result ) /*0x655c86*/
@@ -261,11 +261,11 @@ int FogOfWar::RenderCell()
   v4 = v3 * (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2); /*0x65617b*/
   v5 = (char *)*((unsigned int *)this + 1181); /*0x65617f*/
   HIDWORD(v4) = (((BYTE4(v4) & 7) + (int)v4) >> 3) + 1; /*0x65618f*/
-  memset(v5, 0, 4 * (HIDWORD(v4) >> 2)); /*0x656194*/
+  memset( (void *)(v5), 0, 4 * (HIDWORD(v4) >> 2)); /*0x656194*/
   v6 = &v5[4 * (HIDWORD(v4) >> 2)]; /*0x656194*/
   v7 = BYTE4(v4) & 3; /*0x656198*/
   v8 = 0; /*0x65619b*/
-  memset(v6, 0, v7); /*0x65619d*/
+  memset( (void *)(v6), 0, v7); /*0x65619d*/
   v23 = 0; /*0x65619f*/
   do /*0x6562b5*/
   {
@@ -287,15 +287,15 @@ int FogOfWar::RenderCell()
         {
           *v16 |= v15; /*0x6561fb*/
           BuildingAnimByName = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(v13[135] + 90196)); /*0x656211*/
-          if ( (*(uint8_t (**)(unsigned int *))(*v13 + 196))(v13) ) /*0x656216*/
+          if ( (*(uint8_t (**)(unsigned int *))(*v13 + 196))( (unsigned int *)(v13)) ) /*0x656216*/
           {
-            if ( (*(int (**)(unsigned int *, unsigned int))(*v13 + 208))(v13, 0) ) /*0x656226*/
+            if ( (*(int (**)(unsigned int *, unsigned int))(*v13 + 208))( (unsigned int *)(v13), 0) ) /*0x656226*/
               BuildingAnimByName = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x656248*/
                                              + 4
-                                             * *(unsigned int *)((*(int (**)(unsigned int *, unsigned int))(*v13 + 208))(
-                                                             v13,
-                                                             0)
-                                                         + 90196));
+* *(unsigned int *)((*(int (**)(unsigned int *, unsigned int))(*v13 + 208))( (unsigned int *)(v13), 0) + 90196));
+
+
+
             else
               BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)(g_INI_Key_LightGrey), 1); /*0x65625c*/
           }
@@ -306,10 +306,10 @@ int FogOfWar::RenderCell()
             v21 = *(uint8_t *)(v20 + v18); /*0x65627a*/
           else
             v21 = *(uint16_t *)(v20 + 2 * v18); /*0x656281*/
-          (*(void (**)(unsigned int, unsigned int *, int))(**((unsigned int **)this + 1159) + 36))( /*0x65628f*/
-            *((unsigned int *)this + 1159),
-            v12,
-            v21);
+(*(void (**)(unsigned int, unsigned int *, int))(**((unsigned int **)this + 1159) + 36))( /*0x65628f*/ *((unsigned int *)this + 1159), (unsigned int *)(v12), v21);
+
+
+
         }
         v12 += 4; /*0x656296*/
         result = --v22; /*0x656299*/
@@ -410,12 +410,12 @@ int FogOfWar::Render()
   {
     v2 = (int *)*((unsigned int *)this + 1159); /*0x657cf2*/
     v3 = *v2; /*0x657d06*/
-    v4 = (*(int (**)(unsigned int, int *, unsigned int, int))(**((unsigned int **)this + 1160) + 120))( /*0x657d0d*/
-           *((unsigned int *)this + 1160),
-           v11,
-           0,
-           1);
-    v5 = (*(int (**)(int *, unsigned char *, unsigned int, int))(*v2 + 120))(v2, v12, *((unsigned int *)this + 1160), v4); /*0x657d21*/
+v4 = (*(int (**)(unsigned int, int *, unsigned int, int))(**((unsigned int **)this + 1160) + 120))( /*0x657d0d*/ *((unsigned int *)this + 1160), (int *)(v11), 0, 1);
+
+
+
+
+    v5 = (*(int (**)(int *, unsigned char *, unsigned int, int))(*v2 + 120))( (int *)(v2), (unsigned char *)(v12), *((unsigned int *)this + 1160), v4); /*0x657d21*/
     (*(void (**)(unsigned int, int))(v3 + 8))(*((unsigned int *)this + 1159), v5); /*0x657d2b*/
     return ((FogOfWar *)this)->RenderCell() ; /*0x657d30*/
   }

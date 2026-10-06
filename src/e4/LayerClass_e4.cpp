@@ -220,7 +220,7 @@ LABEL_23: v99[1] = (int)(v27);
             {
               if ( (!aP12 || (uint8_t)((Cell*)v30)->IsBuildableAdvanced()) /*0x56de9d*/
                 && (aP13 || ((int)v30->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v99, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree( (int *)(v99), -1)) )
               {
                 v32 = v87; /*0x56deaa*/
                 v33 = v76; /*0x56deae*/
@@ -278,7 +278,7 @@ LABEL_44: v98[1] = (int)(v36);
             {
               if ( (!aP12 || (uint8_t)((Cell*)v39)->IsBuildableAdvanced()) /*0x56e0b3*/
                 && (aP13 || ((int)v39->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v98, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree( (int *)(v98), -1)) )
               {
                 v41 = v87; /*0x56e0c0*/
                 v42 = v76; /*0x56e0c4*/
@@ -346,7 +346,7 @@ LABEL_67:
             {
               if ( (!aP12 || (uint8_t)((Cell*)v49)->IsBuildableAdvanced()) /*0x56e2f6*/
                 && (aP13 || ((int)v49->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v100, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree( (int *)(v100), -1)) )
               {
                 v51 = v76; /*0x56e303*/
                 v52 = v78; /*0x56e307*/
@@ -400,7 +400,7 @@ LABEL_86:
             {
               if ( (!aP12 || (uint8_t)((Cell*)v56)->IsBuildableAdvanced()) /*0x56e4f8*/
                 && (aP13 || ((int)v56->Cell_field_0x140 & 0x100) == 0)
-                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree(v97, -1)) )
+                && (!a17 || (uint8_t)((MapClass *)(v17))->IsAreaFree( (int *)(v97), -1)) )
               {
                 v58 = v76; /*0x56e501*/
                 v59 = v78; /*0x56e505*/
@@ -437,8 +437,8 @@ LABEL_125:
     *aP2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56e7aa*/
     return aP2; /*0x56e79a*/
   }
-  v81 = 0; /*0x56e5c5*/
-  v82 = 0; /*0x56e5c9*/
+  v81 = (Type *)(0); /*0x56e5c5*/
+  v82 = (Type *)(0); /*0x56e5c9*/
   v61 = v106; /*0x56e5da*/
   v62 = (uint16_t *)v104; /*0x56e5e1*/
   i = v105; /*0x56e5e8*/
@@ -474,9 +474,9 @@ LABEL_125:
     && aP14[1] == *(unsigned short *)&g_MissionQueueFrame.waypoints[2136] )
   {
     if ( v81 ) /*0x56e6b0*/
-      *(unsigned int *)aP2 = v105[*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v81]; /*0x56e6c6*/
+      *(unsigned int *)aP2 = v105[*(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v81]; /*0x56e6c6*/
     else
-      *(unsigned int *)aP2 = v106[*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v82]; /*0x56e6e5*/
+      *(unsigned int *)aP2 = v106[*(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v82]; /*0x56e6e5*/
     return aP2; /*0x56e6b4*/
   }
   else
@@ -591,9 +591,9 @@ LABEL_23:
       goto LABEL_24; /*0x577ee3*/
     }
 LABEL_25:
-    ((Radar *)(0))->UpdateReveal(0); /*0x577efc*/
+    ((Radar *)(0))->UpdateReveal((int)((Radar *)(0)), 0); /*0x577efc*/
     ((FogOfWar *)((FogOfWar *)&dword_87F7E8))->Render(); /*0x577f0d*/
-    return (void *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw( 2); /*0x577f19*/
+    return (void *)((MapClass *)((int)((GScreenClass *)&dword_87F7E8)))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&dword_87F7E8))), 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/
 

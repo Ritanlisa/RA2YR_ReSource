@@ -237,7 +237,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 
   m_8 = (void *)this->m_8; /*0x49a348*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransLucent25Alpha;
-  FractalNoise::Dtor(m_8); /*0x49a352*/
+  FractalNoise::Dtor( (void *)(m_8)); /*0x49a352*/
   this->m_8 = 0; /*0x49a35b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
@@ -267,7 +267,7 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
 
   m_8 = (void *)this->m_8; /*0x49a728*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransLucent25AlphaZReadWrite;
-  FractalNoise::Dtor(m_8); /*0x49a732*/
+  FractalNoise::Dtor( (void *)(m_8)); /*0x49a732*/
   this->m_8 = 0; /*0x49a73b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a74a*/

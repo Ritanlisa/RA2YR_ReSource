@@ -18,7 +18,7 @@ void * WOL::QueryInterface(char a2)
   SelectionInitializeWOL((int)this); /*0x76efe3*/
   if ( (a2 & 1) != 0 ) /*0x76efed*/
     __3_YAXPAX_Z(this); /*0x76eff0*/
-  return this; /*0x76effa*/
+  return (void *)this; /*0x76effa*/
 
 }
 } // namespace gamemd

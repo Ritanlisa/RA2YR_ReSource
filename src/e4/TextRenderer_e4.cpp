@@ -107,13 +107,13 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
   v29 = 0; /*0x4b982e*/
   BlitterDrawSHP((int *)g_DSurface_Hidden, _6C, aP2, &v30, &v28, v34, 0, a8, 0, 0, 1000, 0, 0); /*0x4b9832*/
   v20 = FindBuildingAnimByName((gamemd::AbstractClass *)aYellow, 1); /*0x4b9847*/
-  v21 = (unsigned int *)(*(int (**)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_1E0))(  /*0x4b985f*/
-                    g_DSurface_Hidden,
-                    v35,
-                    Format,
-                    v20,
-                    0,
-                    v27);
+v21 = (unsigned int *)(*(int (**)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_1E0))( /*0x4b985f*/ g_DSurface_Hidden, (char *)(v35), (wchar_t *)(Format), v20, 0, v27);
+
+
+
+
+
+
   return TextRenderer::DrawText(&v27, (size_t)&word_8A0870, g_DSurface_Hidden, v21, v23, v24, v25, v26); /*0x4b987c*/
 
 }
@@ -235,7 +235,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
       v6 = (*(int (**)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
     }
   }
-  Instance = (unsigned short *)(((TextRenderer *)this)->GetInstance());
+  Instance = (void *)((unsigned short *)(((TextRenderer *)this)->GetInstance()));
   v10 = (unsigned int)(v17);
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
@@ -301,7 +301,7 @@ TriggerTypeClass * TextRenderer::Destructor(char a2)
   ((TriggerClass *)((AbstractClass *)this))->ProcessEvents(); /*0x727cd3*/
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
     __3_YAXPAX_Z(this); /*0x727ce0*/
-  return this; /*0x727cea*/
+  return (TriggerTypeClass *)this; /*0x727cea*/
 
 }
 } // namespace gamemd

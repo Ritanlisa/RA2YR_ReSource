@@ -111,9 +111,9 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
       ++a2; /*0x494c06*/
       ++a3; /*0x494c0a*/
       if ( (unsigned int)a6 >= (unsigned int)(((unsigned int *)(v13))[1]).Stream_field_08 ) /*0x494c13*/
-        a6 = (uint16_t *)((char *)a6 - ((unsigned int *)(v13))[1].Stream_field_0C); /*0x494c15*/
+        a6 = (unsigned short *)((uint16_t *)((char *)a6 - ((unsigned int *)(v13))[1].Stream_field_0C)); /*0x494c15*/
       if ( (unsigned int)++a7 >= *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 28) ) /*0x494c23*/
-        a7 = (uint16_t *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32)); /*0x494c25*/
+        a7 = (unsigned short *)((uint16_t *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32))); /*0x494c25*/
       result = (int)v16 - 1; /*0x494c2c*/
       v16 = (uint16_t *)((char *)v16 - 1); /*0x494c2d*/
     }
@@ -155,9 +155,9 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
       ++a2; /*0x494ceb*/
       ++a3; /*0x494cef*/
       if ( (unsigned int)a6 >= (unsigned int)(((unsigned int *)(v14))[1]).Stream_field_08 ) /*0x494cf8*/
-        a6 = (uint16_t *)((char *)a6 - ((unsigned int *)(v14))[1].Stream_field_0C); /*0x494cfa*/
+        a6 = (unsigned short *)((uint16_t *)((char *)a6 - ((unsigned int *)(v14))[1].Stream_field_0C)); /*0x494cfa*/
       if ( (unsigned int)++a7 >= *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 28) ) /*0x494d08*/
-        a7 = (uint16_t *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32)); /*0x494d0a*/
+        a7 = (unsigned short *)((uint16_t *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32))); /*0x494d0a*/
       result = (int)v17 - 1; /*0x494d11*/
       v17 = (uint16_t *)((char *)v17 - 1); /*0x494d12*/
     }
@@ -423,7 +423,7 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
 
   m_8 = (void *)this->m_8; /*0x49a428*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlphaZRead;
-  FractalNoise::Dtor(m_8); /*0x49a432*/
+  FractalNoise::Dtor( (void *)(m_8)); /*0x49a432*/
   this->m_8 = 0; /*0x49a43b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
   if ( (a2 & 1) != 0 ) /*0x49a44a*/

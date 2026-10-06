@@ -95,12 +95,12 @@ char JumpjetLocomotionClass_Process(int a1)
   {
     movementDestination = ((unsigned int *)v1)[0]->movementDestination; /*0x4b066f*/
     if ( movementDestination /*0x4b06ad*/
-      && (*((int (**)(AbstractClass *))movementDestination->vtable1 + 11))(movementDestination) == 11
+      && (*((int (**)(AbstractClass *))movementDestination->vtable1 + 11))( (AbstractClass *)(movementDestination)) == 11
       && (v12 = ((unsigned int *)v1)[0],
           v13 =(gamemd::AbstractClass *)v12->movementDestination + 1,
-          v14 = (unsigned short *)(*((int (**)(FootClass *, DriveLocomotionClass **))v12->vtable1 + 110))(
-                           v12,
-                           &a1),
+v14 = (unsigned short *)(*((int (**)(FootClass *, DriveLocomotionClass **))v12->vtable1 + 110))( (FootClass *)(v12), (DriveLocomotionClass **)(&a1)),
+
+
           *v14 == IDA_LOWORD(v13->vtable1))
       && v14[1] == IDA_HIWORD(v13->vtable1) )
     {
@@ -158,16 +158,16 @@ char JumpjetLocomotionClass_Process(int a1)
               v24 =(gamemd::AbstractClass *)v23->movementDestination; /*0x4b0971*/
               if ( v24 ) /*0x4b0979*/
               {
-                v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v24->vtable1 + 19))( /*0x4b0987*/
-                                  v24,
-                                  &v30,
-                                  (gamemd::FootClass *)((unsigned int *)v1)[0]);
-                (*(void (**)(DriveLocomotionClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v1->LocomotionClass /*0x4b09a3*/
-                                                                                      + 68))(
-                  v1,
-                  *v25,
-                  v25[1],
-                  v25[2]);
+v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v24->vtable1 + 19))( /*0x4b0987*/ v24, (int *)(&v30), (gamemd::FootClass *)((unsigned int *)v1)[0]);
+
+
+
+(*(void (**)(DriveLocomotionClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v1->LocomotionClass /*0x4b09a3*/ + 68))( (DriveLocomotionClass *)(v1), *v25, v25[1], v25[2]);
+
+
+
+
+
               }
             }
             goto LABEL_39; /*0x4b096c*/
@@ -175,11 +175,11 @@ char JumpjetLocomotionClass_Process(int a1)
         }
         v26 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b09ab*/
         if ( ((unsigned int *)v26)[0] /*0x4b09e2*/
-          && (*((int (**)(FootClass *))v26->vtable1 + 97))(v26) != 7
+          && (*((int (**)(FootClass *))v26->vtable1 + 97))( (FootClass *)(v26)) != 7
           && (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1))
-          && !(*((uint8_t (**)(FootClass *, int *))((unsigned int *)v1)[0]->vtable1 + 179))(
-                ((unsigned int *)v1)[0],
-                &v1->SlopeTimer[3]) )
+&& !(*((uint8_t (**)(FootClass *, int *))((unsigned int *)v1)[0]->vtable1 + 179))( ((unsigned int *)v1)[0], (int *)(&v1->SlopeTimer[3])) )
+
+
         {
           if ( *((unsigned int *)v2 + 16) != g_DDraw_ClipRect || *(unsigned long long *)(v2 + 68) != qword_8A0794 ) /*0x4b0a03*/
           {
@@ -206,7 +206,7 @@ char JumpjetLocomotionClass_Process(int a1)
           goto LABEL_39; /*0x4b0a3f*/
         }
         IDA_LOBYTE(a1) = 0; /*0x4b0a75*/
-        JumpjetLocomotion::Update( (int)&((unsigned int *)(v1))[-1].Piggybackee, (int)(&a1), 1, 0); /*0x4b0a79*/
+        JumpjetLocomotion::Update( (unsigned char *)((int)&((unsigned int *)(v1))[-1].Piggybackee), (int)(&a1), 1, 0); /*0x4b0a79*/
         if ( (unsigned char)a1 ) /*0x4b0a82*/
           return 0; /*0x4b0a8d*/
         if ( !((unsigned int *)v1)[0] ) /*0x4b0a93*/
@@ -218,7 +218,7 @@ char JumpjetLocomotionClass_Process(int a1)
       if ( !*(unsigned int *)&v15->__pad_58C[12] ) /*0x4b073d*/
       {
   LABEL_27:
-        (*((void (**)(FootClass *, unsigned int, int))v15->vtable1 + 288))(v15, 0, 1); /*0x4b06be*/
+        (*((void (**)(FootClass *, unsigned int, int))v15->vtable1 + 288))( (FootClass *)(v15), 0, 1); /*0x4b06be*/
         return 0; /*0x4b06d2*/
       }
     }
@@ -235,18 +235,18 @@ char JumpjetLocomotionClass_Process(int a1)
   {
     v5 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b05d0*/
     IDA_LOBYTE(a1) = 0; /*0x4b05d3*/
-    if ( (*((int (**)(FootClass *))v5->vtable1 + 11))(v5) == 1 ) /*0x4b05df*/
+    if ( (*((int (**)(FootClass *))v5->vtable1 + 11))( (FootClass *)(v5)) == 1 ) /*0x4b05df*/
     {
       v6 = ((unsigned int *)v1)[0]->movementDestination; /*0x4b05e4*/
       if ( v6 ) /*0x4b05ec*/
       {
-        if ( (*((int (**)(AbstractClass *))v6->vtable1 + 11))(v6) == 15 ) /*0x4b05f6*/
+        if ( (*((int (**)(AbstractClass *))v6->vtable1 + 11))( (AbstractClass *)(v6)) == 15 ) /*0x4b05f6*/
         {
-          v7 = (int *)(*((int (**)(AbstractClass *, int *, FootClass *))((unsigned int *)v1)[0]->movementDestination->vtable1 /*0x4b060f*/
-                       + 19))(
-                        ((unsigned int *)v1)[0]->movementDestination,
-                        &v30,
-                        ((unsigned int *)v1)[0]);
+v7 = (int *)(*((int (**)(AbstractClass *, int *, FootClass *))((unsigned int *)v1)[0]->movementDestination->vtable1 /*0x4b060f*/ + 19))( ((unsigned int *)v1)[0]->movementDestination, (int *)(&v30), ((unsigned int *)v1)[0]);
+
+
+
+
           v8 = *v7; /*0x4b0611*/
           v9 = v7[1]; /*0x4b0615*/
           v10 = v7[2]; /*0x4b0618*/
@@ -259,12 +259,12 @@ char JumpjetLocomotionClass_Process(int a1)
         }
       }
     }
-    JumpjetLocomotion::Update( (int)&((unsigned int *)(v1))[-1].Piggybackee, (int)(&a1), 1, 0); /*0x4b0647*/
+    JumpjetLocomotion::Update( (unsigned char *)((int)&((unsigned int *)(v1))[-1].Piggybackee), (int)(&a1), 1, 0); /*0x4b0647*/
     if ( (unsigned char)a1 || !((unsigned int *)v1)[0] ) /*0x4b0659*/
       return 0; /*0x4b065f*/
     v29 = 1; /*0x4b0665*/
   LABEL_87:
-    JumpjetLocomotion::ProcessCollision((int)&((unsigned int *)(v1))[-1].Piggybackee, v29); /*0x4b0aa8*/
+    JumpjetLocomotion::ProcessCollision( (int)&((unsigned int *)(v1))[-1].Piggybackee, (void *)(v29)); /*0x4b0aa8*/
     v28 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b0aaf*/
     if ( !v28 || !((unsigned int *)v28)[0] ) /*0x4b0ab6*/
       return 0; /*0x4b0ac5*/
@@ -272,10 +272,10 @@ char JumpjetLocomotionClass_Process(int a1)
   LABEL_39:
   if ( (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))( (DriveLocomotionClass *)(v1)) ) /*0x4b078f*/
   {
-    if ( !(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
+    if ( !(*(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
     {
       v18 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b07ae*/
-      if ( !*(unsigned short *)&v18->animation && *(unsigned int *)((*((int (**)(FootClass *))v18->vtable1 + 111))(v18) + 236) == 2 ) /*0x4b07c8*/
+      if ( !*(unsigned short *)&v18->animation && *(unsigned int *)((*((int (**)(FootClass *))v18->vtable1 + 111))( (FootClass *)(v18)) + 236) == 2 ) /*0x4b07c8*/
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148) ) /*0x4b07cf*/
         {
@@ -300,7 +300,7 @@ char JumpjetLocomotionClass_Process(int a1)
   {
     v21 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b085d*/
     if ( v21->pathDirections[0] == -1 && *(double *)v21->currentSpeed_percentage > 0.0 ) /*0x4b087a*/
-      (*((void (**)(FootClass *, unsigned int, unsigned int))v21->vtable1 + 337))(v21, 0, 0); /*0x4b0880*/
+      (*((void (**)(FootClass *, unsigned int, unsigned int))v21->vtable1 + 337))( (FootClass *)(v21), 0, 0); /*0x4b0880*/
   }
   return (*(char (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1)); /*0x4b06cb*/
 }
@@ -490,15 +490,15 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v45[2] = 190; /*0x4b98be*/
   v45[3] = 80; /*0x4b98c2*/
   v7 = (*(int (**)(void *))(v6 + 128))( (void *)(a1)); /*0x4b98d2*/
-  v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
+  v8 = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)) - v7) / 2; /*0x4b98e7*/
   v9 = (*(int (**)(void *))(*a1 + 124))( (void *)(a1)); /*0x4b98f2*/
-  v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))(g_DSurface_Hidden); /*0x4b98f6*/
+  v10 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))( (ObjectClass *)(g_DSurface_Hidden)); /*0x4b98f6*/
   v44.Coord2D_field_0x04 = 300; /*0x4b9903*/
   v40 = (v10 - v9) / 2; /*0x4b9909*/
   *(unsigned int *)v44.__pad_0 = 450; /*0x4b9912*/
   v41 = v8; /*0x4b992b*/
   v11 = ((Coord2D *)(&v44))->Add((unsigned int *)(&v42),(unsigned int *)(&v40)); /*0x4b992f*/
-  v12 = ((Rect*)&v47)->Construct(v11, 190, 80); /*0x4b9939*/
+  v12 = (unsigned int *)((Rect*)&v47)->Construct( (unsigned int *)(v11), 190, 80); /*0x4b9939*/
   v46[0] = *v12; /*0x4b9942*/
   v46[1] = v12[1]; /*0x4b994b*/
   v46[2] = v12[2]; /*0x4b9958*/
@@ -512,7 +512,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     swprintf(Buffer, (const size_t)&stru_820320.MiddleFrameHeight, (const wchar_t *const)&((unsigned int *)a3)[0]); /*0x4b99b3*/
     if ( a4 ) /*0x4b99c4*/
     {
-      v15 = (const wchar_t *)(*((int (**)(TechnoClass *))a3->vtable1 + 43))(a3); /*0x4b99ca*/
+      v15 = (const wchar_t *)(*((int (**)(TechnoClass *))a3->vtable1 + 43))( (TechnoClass *)(a3)); /*0x4b99ca*/
       swprintf(v48, (const size_t)(unsigned int *)((char *)&stru_820320 + 17), v15); /*0x4b99db*/
     }
     else
@@ -522,7 +522,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     if ( *(unsigned int *)TechnoClass::GetAudioEntry(a3, 0) ) /*0x4b99ff*/
     {
       AudioEntry = TechnoClass::GetAudioEntry(a3, 0); /*0x4b9a06*/
-      swprintf(v49, (const size_t)(unsigned int *)((char *)&stru_820320 + 5), (const wchar_t *const)(*(unsigned int *)AudioEntry + 100)); /*0x4b9a1e*/
+      swprintf(v49, (const size_t)(unsigned int *)((char *)&stru_820320 + 5), (const wchar_t *)(*(unsigned int *)AudioEntry + 100)); /*0x4b9a1e*/
     }
     else
     {
@@ -535,46 +535,46 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
     BuildingAnimByName = FindBuildingAnimByName((gamemd::AbstractClass *)(v17), 1); /*0x4b9a87*/
     v39 = v41 + 300; /*0x4b9a97*/
     v38 = v40 + 450; /*0x4b9aa8*/
-    v19 = (unsigned int *)(*((int (**)(ObjectClass *, Rect *, int *, int, unsigned int))g_DSurface_Hidden->AbstractClass /*0x4b9ab3*/
-                     + 30))(
-                      g_DSurface_Hidden,
-                      &v47,
-                      &v38,
-                      BuildingAnimByName,
-                      0);
+v19 = (unsigned int *)(*((int (**)(ObjectClass *, Rect *, int *, int, unsigned int))g_DSurface_Hidden->AbstractClass /*0x4b9ab3*/ + 30))( (ObjectClass *)(g_DSurface_Hidden), (Rect *)(&v47), (int *)(&v38), BuildingAnimByName, 0);
+
+
+
+
+
+
     TextRenderer::DrawText(&v44.Coord2D_field_0x04, (size_t)v54, (int)g_DSurface_Hidden, v19, 70, (int)v32, v35, v37); /*0x4b9aca*/
     v42 = *(unsigned int *)v44.__pad_0 + 315; /*0x4b9ae0*/
     v41 = v43 + 450; /*0x4b9af8*/
-    v20 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass /*0x4b9b03*/
-                     + 30))(
-                      g_DSurface_Hidden,
-                      &v47.Height,
-                      &v41,
-                      BuildingAnimByName,
-                      0,
-                      70);
+v20 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass /*0x4b9b03*/ + 30))( (ObjectClass *)(g_DSurface_Hidden), (int *)(&v47.Height), (int *)(&v41), BuildingAnimByName, 0, 70);
+
+
+
+
+
+
+
     TextRenderer::DrawText((int *)v44.__pad_0, (size_t)v50, (int)g_DSurface_Hidden, v20, v26, v29, v33, v36); /*0x4b9b1a*/
     v41 = v43 + 330; /*0x4b9b30*/
     v40 = v42 + 450; /*0x4b9b48*/
-    v21 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass /*0x4b9b53*/
-                     + 30))(
-                      g_DSurface_Hidden,
-                      &v47.Width,
-                      &v40,
-                      BuildingAnimByName,
-                      0,
-                      70);
+v21 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass /*0x4b9b53*/ + 30))( (ObjectClass *)(g_DSurface_Hidden), (int *)(&v47.Width), (int *)(&v40), BuildingAnimByName, 0, 70);
+
+
+
+
+
+
+
     TextRenderer::DrawText(&v43, (size_t)v52, (int)g_DSurface_Hidden, v21, v24, v27, v30, v34); /*0x4b9b6a*/
     v40 = v42 + 345; /*0x4b9b87*/
     v39 = v41 + 450; /*0x4b9b98*/
-    v22 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass /*0x4b9ba3*/
-                     + 30))(
-                      g_DSurface_Hidden,
-                      &v47.Y,
-                      &v39,
-                      BuildingAnimByName,
-                      0,
-                      70);
+v22 = (unsigned int *)(*((int (**)(ObjectClass *, int *, int *, int, unsigned int, int))g_DSurface_Hidden->AbstractClass /*0x4b9ba3*/ + 30))( (ObjectClass *)(g_DSurface_Hidden), (int *)(&v47.Y), (int *)(&v39), BuildingAnimByName, 0, 70);
+
+
+
+
+
+
+
 // 0x4a61c0
     return TextRenderer::DrawText(&v42, (size_t)v48, (int)g_DSurface_Hidden, v22, v23, v25, v28, v31); /*0x4b9bb7*/
   }
@@ -670,7 +670,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int a
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
     vtable3 =(void *)((unsigned int *)this)[0]; /*0x4b0e7a*/
-    v7 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x4b0e81*/
+    v7 = (CellClass *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x4b0e81*/
     if ( (uint8_t)((CrateClass *)((CrateClass *)v7))->ProcessPickup((int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo((IUnknown *)(int)this, aP1, 1); /*0x4b0ea3*/
@@ -720,7 +720,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   LOBYTE(this->M72) = 0; /*0x4b4e62*/
   this->M76 = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((ShapeButtonClass *)&this->q050, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
-  ((ListClass *)((int)(unsigned int *)this + 176))->Construct(0,(int)(aP5), aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
+  ((ListClass *)((int)(unsigned int *)this + 176))->Construct( 0, (int)(aP5), aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, (int)(aP4), (int)(a10), a11); /*0x4b4ea3*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_DropListClass); /*0x4b4eac*/
   Instance = (int)(TextRenderer::GetInstance()); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/

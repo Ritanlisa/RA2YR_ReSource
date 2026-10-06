@@ -39,10 +39,10 @@ _DWORD * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
     || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
-         &g_MissionQueueFrame.random[129],
-         g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))( (int *)(&g_MissionQueueFrame.random[129]), g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134], 0) )
+
+
+
   {
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = (unsigned int)this;
@@ -77,10 +77,10 @@ int LightSourceClass::Constructor()
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
     || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
-         &g_MissionQueueFrame.random[129],
-         g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))( (int *)(&g_MissionQueueFrame.random[129]), g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134], 0) )
+
+
+
   {
     v3 = g_MissionQueueFrame.random[133]++; /*0x5548c3*/
     *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = (unsigned int)this;
@@ -94,7 +94,7 @@ namespace gamemd {
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
 
-  return ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x55507a*/
+  return ((AbstractClass *)this)->ProcessPower(); /*0x55507a*/
 
 }
 } // namespace gamemd
@@ -125,7 +125,7 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x5550d6*/
     {
-      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x5550df*/
+      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x5550df*/
       aP0->vtable1 = &vt_LightSourceClass; /*0x5550e4*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550ea*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5550f1*/
@@ -183,9 +183,9 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55516a*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x555171*/
   v5 = (gamemd::LightSourceClass *)(this); /*0x555186*/
-  v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
-         &g_MissionQueueFrame.random[129],
-         &v5);
+v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/ &g_MissionQueueFrame.random[129], (LightSourceClass **)(&v5));
+
+
   if ( v3 != -1 && v3 < g_MissionQueueFrame.random[133] ) /*0x55519a*/
   {
     --g_MissionQueueFrame.random[133]; /*0x55519f*/
@@ -205,7 +205,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
     __3_YAXPAX_Z(this); /*0x5551e2*/
-  return this; /*0x5551ec*/
+  return (LightSourceClass *)this; /*0x5551ec*/
 
 }
 } // namespace gamemd

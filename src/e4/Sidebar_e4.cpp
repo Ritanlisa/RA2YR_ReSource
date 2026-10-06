@@ -212,7 +212,7 @@ LABEL_55:
               *(unsigned int *)(v10 + 36) = v18; /*0x4fa68f*/
           }
           if ( dword_A83D4C == (Object *)this ) /*0x4fa698*/
-            Sidebar::FindProductionType( (FactoryClass *)((Sidebar *)&stru_87F5F0.__pad_58[416]), (MouseClass *)(v10), (int)a1, aP2); /*0x4fa6aa*/
+            Sidebar::FindProductionType( (FactoryClass *)((Sidebar *)&stru_87F5F0.__pad_58[416]), (MouseClass *)(v10), (int)a1, (void *)(aP2)); /*0x4fa6aa*/
           return 0; /*0x4fa6b2*/
         }
         else
@@ -378,15 +378,15 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     v4 = (Array *)*((unsigned int *)Block->Sidebar_field_0x8 + i); /*0x63632c*/
     Value = ((Array *)(v4))->FindValue(*(unsigned int *)Block->__pad_0); /*0x636334*/
     if ( Value == -1 ) /*0x63633c*/
-      v6 = 0; /*0x63633e*/
+      v6 = (void *)(0); /*0x63633e*/
     else
       v6 = (void *)*((unsigned int *)v4->Array_field_0x4 + Value); /*0x636345*/
-    Block = (int *)(v6); /*0x63634a*/
+    Block = (void *)((int *)(v6)); /*0x63634a*/
     if ( v6 ) /*0x63634e*/
     {
       ((FactoryClass*)(int *)v4->__pad_0)->FinishProduction((int)v6); /*0x636353*/
       __3_YAXPAX_Z(*((void **)Block + 1)); /*0x636360*/
-      v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))( v4, (void **)(&Block)); /*0x636371*/
+      v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))( (Array *)(v4), (void **)(&Block)); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/
         Vector4::EraseAt_Copy((Vector4 *)v4, v7); /*0x63637c*/
       __3_YAXPAX_Z(Block); /*0x636386*/
@@ -419,11 +419,11 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = Block; /*0x636437*/
     if ( !stru_AC4B30.__pad_EC[217] ) /*0x63643d*/
     {
-      v11 = (*(int (**)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/
-              &stru_AC4B30.__pad_EC[92],
-              &Block);
+v11 = (*(int (**)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/ &stru_AC4B30.__pad_EC[92], (void **)(&Block));
+
+
       if ( v11 != -1 ) /*0x636454*/
-        Sidebar::RemoveItem( (int)((Sidebar *)&stru_AC4B30.__pad_EC[92]), v11); /*0x63645c*/
+        Sidebar::RemoveItem( (int)((Sidebar *)&stru_AC4B30.__pad_EC[92]), (void *)(v11)); /*0x63645c*/
     }
     v12 = *(unsigned int *)Block->__pad_14; /*0x636461*/
     for ( j = 0; j < v12; ++j ) /*0x63646f*/
@@ -442,7 +442,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     *(unsigned int *)&Block->__pad_70[36] = -1; /*0x6364ca*/
     Block->__pad_70[41] = 0; /*0x6364d0*/
     Sidebar_field_0x8 = Block->Sidebar_field_0x8; /*0x6364d7*/
-    *Sidebar_field_0x4 = (int)&vt_VectorClass; /*0x6364de*/
+    *Sidebar_field_0x4 = (unsigned int)(int)&vt_VectorClass;
     if ( Sidebar_field_0x8 ) /*0x6364e4*/
     {
       if ( BYTE1(Block->Sidebar_field_0x10) ) /*0x6364e6*/
@@ -518,9 +518,9 @@ ObjectClass * * Sidebar::Render(char a2)
       v3 = 5; /*0x63fb69*/
     NeedsSaveOrLink = (int)(&dword_A8B230)[374].NeedsSaveOrLink; /*0x63fb78*/
     v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
-    v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/
-                  DSurface_Sidebar,
-                  &NeedsSaveOrLink);
+v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/ DSurface_Sidebar, (int *)(&NeedsSaveOrLink));
+
+
     v6 = this->field_1530; /*0x63fb91*/
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
@@ -697,7 +697,7 @@ int Sidebar::ActivateTab(int aP1)
   {
     *((unsigned char *)this + 21414) = 1; /*0x6a60b8*/
     *((unsigned char *)this + 3988 * aP1 + 5504) = 1; /*0x6a60c6*/
-    return (int)((MapClass *)&dword_87F7E8)->MarkForRedraw( 0, v2); /*0x6a60d2*/
+    return (int)((MapClass *)&dword_87F7E8)->MarkForRedraw( 0, (void *)(v2)); /*0x6a60d2*/
   }
   return result; /*0x6a60d8*/
 
@@ -743,10 +743,10 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
   {
 LABEL_13:
-    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))(  /*0x6a7241*/
-      stru_887598.lineTrailer,
-      DSurface_Sidebar,
-      1);
+(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))( /*0x6a7241*/ stru_887598.lineTrailer, (DSurface *)(DSurface_Sidebar), 1);
+
+
+
     if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1522] == dword_B07DC8
       && *(unsigned int *)&stru_87F5F0.__pad_E12[1526] == dword_B07DCC
       && *(unsigned int *)&stru_87F5F0.__pad_E12[1530] == dword_B07DD0
@@ -763,14 +763,14 @@ LABEL_13:
         v17 = 16; /*0x6a72ff*/
         v12 = dword_886F98; /*0x6a7303*/
         v13 = 16; /*0x6a7307*/
-        (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a7312*/
-         + 2))(
-          g_DSurface_Primary,
-          &v10,
-          DSurface_Sidebar,
-          &v14,
-          0,
-          1);
+(*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a7312*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v10), (DSurface *)(DSurface_Sidebar), (int *)(&v14), 0, 1);
+
+
+
+
+
+
+
         *((unsigned char *)this + 21416) = 0; /*0x6a7315*/
       }
       v3 = dword_886F98; /*0x6a7332*/
@@ -780,25 +780,25 @@ LABEL_13:
       v15 = g_DSurface_SidebarBounds; /*0x6a7357*/
       v16 = dword_886F98; /*0x6a735b*/
       v5 = (LOBYTE(stru_A8EB00.ObjectTypeClass[31]) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0) + Point.x;
-      v6 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar); /*0x6a7363*/
+      v6 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))( (DSurface *)(DSurface_Sidebar)); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
       v12 = v3; /*0x6a738e*/
       v13 = v6 - g_DSurface_SidebarBounds; /*0x6a7392*/
-      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a739d*/
-       + 2))(
-        g_DSurface_Primary,
-        &v10,
-        DSurface_Sidebar,
-        &v14,
-        0,
-        1);
+(*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a739d*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v10), (DSurface *)(DSurface_Sidebar), (int *)(&v14), 0, 1);
+
+
+
+
+
+
+
     }
     else if ( g_TooltipActive )
     {
-      v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6a73be*/
-             DSurface_Sidebar,
-             &v10);
+v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6a73be*/ DSurface_Sidebar, (int *)(&v10));
+
+
       v14 = 0; /*0x6a73dd*/
       v15 = 0; /*0x6a73e5*/
       v16 = *(unsigned int *)(v7 + 8); /*0x6a73ec*/
@@ -808,14 +808,14 @@ LABEL_13:
       v17 = v8; /*0x6a741b*/
       v12 = v16; /*0x6a741f*/
       v13 = v8; /*0x6a7423*/
-      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a742e*/
-       + 2))(
-        g_DSurface_Primary,
-        &v10,
-        DSurface_Sidebar,
-        &v14,
-        0,
-        1);
+(*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a742e*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v10), (DSurface *)(DSurface_Sidebar), (int *)(&v14), 0, 1);
+
+
+
+
+
+
+
     }
     else
     {
@@ -825,23 +825,23 @@ LABEL_13:
           + (LOBYTE(stru_A8EB00.ObjectTypeClass[31]) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0);
       v16 = *(unsigned int *)&stru_87F5F0.__pad_E12[1530]; /*0x6a746f*/
       v17 = *(unsigned int *)&stru_87F5F0.__pad_E12[1534]; /*0x6a7473*/
-      (*((void (**)(DSurface *, int *, DSurface *, char *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a747e*/
-       + 2))(
-        g_DSurface_Primary,
-        &v14,
-        DSurface_Sidebar,
-        &stru_87F5F0.__pad_E12[1522],
-        0,
-        1);
+(*((void (**)(DSurface *, int *, DSurface *, char *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a747e*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v14), (DSurface *)(DSurface_Sidebar), (char *)(&stru_87F5F0.__pad_E12[1522]), 0, 1);
+
+
+
+
+
+
+
     }
     goto LABEL_24; /*0x6a73a0*/
   }
   if ( *((unsigned char *)this + 21416) )
   {
-    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))(  /*0x6a71c7*/
-      stru_887598.lineTrailer,
-      DSurface_Sidebar,
-      1);
+(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))( /*0x6a71c7*/ stru_887598.lineTrailer, (DSurface *)(DSurface_Sidebar), 1);
+
+
+
     v15 = Point.y; /*0x6a71eb*/
     v14 = Point.x + (LOBYTE(stru_A8EB00.ObjectTypeClass[31]) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0);
     v10 = 0; /*0x6a720d*/
@@ -850,14 +850,14 @@ LABEL_13:
     v13 = 16; /*0x6a7219*/
     v16 = dword_886F98; /*0x6a721d*/
     v17 = 16; /*0x6a7221*/
-    (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a722c*/
-     + 2))(
-      g_DSurface_Primary,
-      &v14,
-      DSurface_Sidebar,
-      &v10,
-      0,
-      1);
+(*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a722c*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v14), (DSurface *)(DSurface_Sidebar), (int *)(&v10), 0, 1);
+
+
+
+
+
+
+
     *((unsigned char *)this + 21416) = 0; /*0x6a722f*/
 LABEL_24:
     byte_B0B519 = 1; /*0x6a7481*/
@@ -972,7 +972,7 @@ LABEL_13:
               char v78 = a3;
               int v13 = *(unsigned int *)(v84 + 68);
               ProductionState = 0;
-              aP2 = 0;
+              aP2 = (ConvertClass *)(0);
               v86 = 0;
               BufferCount = 0;
               int v14 = *(unsigned int *)(v84 + 32);
@@ -992,7 +992,7 @@ LABEL_13:
               }
               int v20 = *(unsigned int *)(v84 + 84);
               int * v80 = 0;
-              aP1 = 0;
+              aP1 = (IUnknown *)(0);
               if ( v90 >= v20 )
               {
                 IDA_LOBYTE(v73) = 0;
@@ -1010,7 +1010,7 @@ LABEL_13:
                   int v32 = *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[42472] + 4 * v31);
                   v80 = *(int **)(v32 + 96);
                   if ( v31 >= *(unsigned int *)&(&HouseClass_Player)[42484] )
-                    aP2 = 0;
+                    aP2 = (ConvertClass *)(0);
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
                   IDA_LOBYTE(v73) = 1;
@@ -1033,23 +1033,23 @@ LABEL_13:
   int v27; // ecx
                     v80 = (int *)((gamemd::TechnoTypeClass*)v23)->field_60;
                     char v77 = 0;
-                    if ( (*(int (**)(IUnknown *))(((gamemd::TechnoTypeClass*)v23)->field_0 + 44))(v23) == 7 && v79
-                      || !(*(int (**)(IUnknown *, int, int, int, int))(((gamemd::TechnoTypeClass*)v23)->field_0 + 148))(
-                            v23,
-                            1,
-                            1,
-                            1,
-                            HouseClass_Player.field_0)
+                    if ( (*(int (**)(IUnknown *))(((gamemd::TechnoTypeClass*)v23)->field_0 + 44))( (IUnknown *)(v23)) == 7 && v79
+|| !(*(int (**)(IUnknown *, int, int, int, int))(((gamemd::TechnoTypeClass*)v23)->field_0 + 148))( (IUnknown *)(v23), 1, 1, 1, HouseClass_Player.field_0)
+
+
+
+
+
                       || (v86 = TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22]),
   bool v74; // [esp+10h] [ebp-47Ah]
-                          v74 = ((HouseClass *)(((gamemd::TechnoTypeClass*)HouseClass_Player).field_0))->CanBuild((IUnknown *)v86, 0, 0) == -1,
+                          v74 = ((HouseClass *)(((gamemd::TechnoTypeClass*)HouseClass_Player).field_0))->CanBuild( (int)((IUnknown *)v86), 0, 0) == -1,
                           ShouldDisableCameo = ((HouseClass *)((gamemd::HouseClass*)HouseClass_Player).field_0)->ShouldDisableCameo( v86),
                           v74)
                       || ShouldDisableCameo )
                     {
                       v77 = 1;
                     }
-                    aP2 = (ConvertClass *)(*(int (**)(IUnknown *))(((gamemd::HouseClass*)v23)->field_0 + 152))(v23);
+                    aP2 = (ConvertClass *)(*(int (**)(IUnknown *))(((gamemd::HouseClass*)v23)->field_0 + 152))( (IUnknown *)(v23));
                     v86 = v87[25];
                     if ( !v86 )
                     {
@@ -1153,13 +1153,13 @@ LABEL_59:
                   IDA_BYTE2(v82) = (&stru_B05488)[42390];
                   int v33 = **(unsigned int **)&(&stru_87C374)[44940];
                   IDA_LOWORD(v82) = *(unsigned short *)&(&stru_B05488)[42388];
-                  (*(void (**)(unsigned int, char *, char *, int))(v33 + 84))(
-                    *(unsigned int *)&(&stru_87C374)[44940],
-                    &aP3[88],
-                    &aP3[152],
-                    ((uint8_t)(&stru_B05488)[42388] >> (&stru_89E138)[11420] << (&stru_89E138)[11416])
-                  | ((uint8_t)(&stru_B05488)[42389] >> (&stru_89E138)[11436] << (&stru_89E138)[11432])
-                  | ((uint8_t)(&stru_B05488)[42390] >> (&stru_89E138)[11428] << (&stru_89E138)[11424]));
+(*(void (**)(unsigned int, char *, char *, int))(v33 + 84))( *(unsigned int *)&(&stru_87C374)[44940], (char *)(&aP3[88]), (char *)(&aP3[152]), ((uint8_t)(&stru_B05488)[42388] >> (&stru_89E138)[11420] << (&stru_89E138)[11416]) | ((uint8_t)(&stru_B05488)[42389] >> (&stru_89E138)[11436] << (&stru_89E138)[11432]) | ((uint8_t)(&stru_B05488)[42390] >> (&stru_89E138)[11428] << (&stru_89E138)[11424]));
+
+
+
+
+
+
                 }
                 if ( v16 )
                 {
@@ -1222,11 +1222,11 @@ LABEL_59:
                 {
                   IDA_LOBYTE(v34) = aP1->__pad_BC0[270];
                   v69 = v34;
-                  int v36 = (*(int (**)(IUnknown *))(aP1->field_0 + 44))(aP1);
+                  int v36 = (*(int (**)(IUnknown *))(aP1->field_0 + 44))( (IUnknown *)(aP1));
                   BuildLimit = (int *)HouseClass::GetBuildLimit(HouseClass_Player.field_0, v36, v69, 0);
                   if ( BuildLimit )
                   {
-                    eax73 = ((FactoryClass *)BuildLimit)->CountType( aP1);
+                    eax73 = ((FactoryClass *)BuildLimit)->CountType( (IUnknown *)(aP1));
                     v37 = (CampaignScore *)eax73;
   int v39; // ecx
                     if ( eax73 > 1
@@ -1610,7 +1610,7 @@ LABEL_121:
             else
             {
               v64 = GetStringCSF( (wchar_t *)&stru_830620[62716], 0, (const char *)(&stru_830620[62628]), 3781);
-              wcscpy((wchar_t *)&aP3[216], v64);
+              wcscpy( (wchar_t *)&aP3[216], (const wchar_t *)(v64));
             }
             TextRenderer::DrawText(
               (int *)&aP3[208],
@@ -1717,10 +1717,10 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, v
     if ( ++v7 >= v9 ) /*0x6a61e4*/
       return 0; /*0x6a61e4*/
   }
-  *(unsigned int *)&v8[52 * v7 + 100] = aP1; /*0x6a61fa*/
+  *(unsigned int *)&v8[52 * v7 + 100] = (unsigned int)aP1; /*0x6a61fa*/
   v8[61] = 1; /*0x6a61fe*/
   v8[60] = 1; /*0x6a6202*/
-  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 0); /*0x6a620b*/
+  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 0); /*0x6a620b*/
   return 1; /*0x6a61e6*/
 
 }

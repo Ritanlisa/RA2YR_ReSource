@@ -102,13 +102,13 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
   dwNewLong = -1; /*0x561195*/
     Debug::Log("Testing display mode @ %dx%d\n") /*G57c1: IDA 0x56119d push offset aTestingDisplay*/;
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x5611ad*/
-  (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5611ba*/
-  Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v13), (void *)(v15), v17); /*0x5611c7*/
+  (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))( (ObjectClass *)(g_DSurface_Hidden), 0); /*0x5611ba*/
+  Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v13), (void *)(v15), (void *)(v17)); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
   if ( result ) /*0x5611d7*/
   {
-    (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))(g_DSurface_Hidden, 0); /*0x5611ea*/
-    Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v14), (void *)(v16), v18); /*0x5611f7*/
+    (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))( (ObjectClass *)(g_DSurface_Hidden), 0); /*0x5611ea*/
+    Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v14), (void *)(v16), (void *)(v18)); /*0x5611f7*/
     (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x561204*/
     Screen::Capture( 1, 0, (int)(a3), yBottom); /*0x56120b*/
     Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
@@ -341,11 +341,11 @@ Game * * E4Recv_634B20::sub_634B20()
     do /*0x634bf7*/
     {
       v3 = *(unsigned char **)(this->occupant + 4 * v2); /*0x634b48*/
-      qmemcpy(v18, v3, 0x6Cu); /*0x634b57*/
+      qmemcpy( (void *)(v18), (const void *)(v3), 0x6Cu); /*0x634b57*/
       v3 += 108; /*0x634b57*/
       v18[54] = *(unsigned short *)v3; /*0x634b59*/
       LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
-      GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634b60*/
+      GetScenarioClassActionCoords( (unsigned int *)(v17), (unsigned char *)(v18)); /*0x634b60*/
       Debug::Log("Branch [%d];  Member count[%d];  Origin event location[%d, %d, %d]\n"); /*0x634b7d G57c1: IDA 0x634b7d push offset aBranchDMemberC*/
       uniqueId = ((unsigned int *)this)[0]; /*0x634b82*/
       v5 = 0; /*0x634b88*/
@@ -357,7 +357,7 @@ Game * * E4Recv_634B20::sub_634B20()
         {
           v7 = *v6; /*0x634ba1*/
           (*(int (**)(unsigned int))(*(unsigned int *)*v6 + 136))(*v6); /*0x634ba7*/
-          v16[1] = *(unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v7 + 440))(v7, v16); /*0x634bc3*/
+          v16[1] = *(unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v7 + 440))( v7, (unsigned int *)(v16)); /*0x634bc3*/
           Debug::Log("  Member [%s];  Cell location[%d, %d]\n"); /*0x634bd7 G57c1: IDA 0x634bd7 push offset aMemberSCellLoc*/
           v5 = i; /*0x634bdc*/
           uniqueId = v14; /*0x634be0*/
@@ -370,8 +370,8 @@ Game * * E4Recv_634B20::sub_634B20()
   }
   if ( (int)this->lineTrailer > 0 ) /*0x634c05*/
   {
-    qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
-    GetScenarioClassActionCoords(v17,(unsigned char *)(v18)); /*0x634c24*/
+    qmemcpy( (void *)(v18), (const void *)(&this->attachedBomb), 0x6Fu); /*0x634c1b*/
+    GetScenarioClassActionCoords( (unsigned int *)(v17), (unsigned char *)(v18)); /*0x634c24*/
     Debug::Log("Loop Branch [%d];  Member count[%d];  Origin event location[%d, %d, %d]\n"); /*0x634c43 G57c1: IDA 0x634c43 push offset aLoopBranchDMem*/
     v8 = ((unsigned int *)this)[0]; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
@@ -382,7 +382,7 @@ Game * * E4Recv_634B20::sub_634B20()
       {
         v11 = *(unsigned int *)v10; /*0x634c65*/
         (*(int (**)(unsigned int))(**(unsigned int **)v10 + 136))(*(unsigned int *)v10); /*0x634c6b*/
-        (*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 440))(v11, v16); /*0x634c7f*/
+        (*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 440))( v11, (unsigned int *)(v16)); /*0x634c7f*/
         Debug::Log("  Member [%s];  Cell location[%d, %d]\n"); /*0x634c9b G57c1: IDA 0x634c9b push offset aMemberSCellLoc*/
         v8 = j; /*0x634ca0*/
       }
@@ -404,9 +404,9 @@ void ** E4Recv_637640::sub_637640()
   void *retaddr; // [esp+10h] [ebp+0h] BYREF
 
   v5 = (gamemd::ObjectClass *)(this);
-  v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x637655*/
-         &stru_AC4B30.__pad_EC[124],
-         &v5);
+v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x637655*/ &stru_AC4B30.__pad_EC[124], (ObjectClass **)(&v5));
+
+
   if ( v1 != -1 && v1 < *(int *)&stru_AC4B30.__pad_EC[140] ) /*0x637665*/
   {
     --*(unsigned int *)&stru_AC4B30.__pad_EC[140]; /*0x63766a*/
@@ -430,7 +430,7 @@ void ** E4Recv_637640::sub_637640()
     }
   }
   v5 = (ObjectClass *)&retaddr; /*0x6376d9*/
-  v3 = (*((int (**)(void **))stru_AC4B30.Array_field_0xE8 + 4))(&stru_AC4B30.Array_field_0xE8); /*0x6376df*/
+  v3 = (*((int (**)(void **))stru_AC4B30.Array_field_0xE8 + 4))( (void **)(&stru_AC4B30.Array_field_0xE8)); /*0x6376df*/
   if ( v3 != -1 && v3 < *(int *)&stru_AC4B30.__pad_EC[12] ) /*0x6376ef*/
   {
     --*(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x6376f4*/
@@ -486,7 +486,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
   v10 = ((BuildingLoadQueue *)(&a3))->Find(); /*0x638bd5*/
   if ( v10 ) /*0x638bdc*/
   {
-    v8 = *(unsigned int *)(*(int (**)(void *, int *))(v10->u32_1B8))( v10, (int *)(&v11));  /*0x638bed*/
+    v8 = *(unsigned int *)(*(int (**)(void *, int *))(v10->u32_1B8))( (void *)(v10), (int *)(&v11));  /*0x638bed*/
     goto LABEL_9; /*0x638bed*/
   }
   return (unsigned short)v6 == (unsigned short)v8 && IDA_HIWORD(v6) == IDA_HIWORD(v11); /*0x638b89*/
@@ -581,8 +581,8 @@ bool Team_Start_76ED10(void * a1, void * a2)
   State = ((FileClass*)(unsigned int *)(v13[19] + 8))->GetState(); /*0x76ed3f*/
   ((ScoreText *)(v13))->ShowAlt((const wchar_t **)(State + 20), 0); /*0x76ed4c*/
   StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_WDT_TerritorySelectToolTip), 0,(const char *)(g_Str_File_WDTSel_cpp), 1230)); /*0x76ed62*/
-  ((WideString *)((wchar_t **)&v9))->Assign(StringCSF); /*0x76ed6c*/
-  ScoreText::Show( v13, ((const wchar_t **)&v9)); /*0x76ed7a*/
+  ((WideString *)((wchar_t **)&v9))->Assign( (wchar_t *)(StringCSF)); /*0x76ed6c*/
+  ScoreText::Show( (void *)(v13), ((const wchar_t **)&v9)); /*0x76ed7a*/
   ((DeleteAndZero*)(void **)&v9)->Alt(); /*0x76ed83*/
   Team_Start_76E2F0((int)v13, a2); /*0x76ed8d*/
   ShowWDTTerritorySelection(v13, (int)&v11); /*0x76ed9b*/
@@ -610,11 +610,11 @@ bool Team_Start_76ED10(void * a1, void * a2)
       IDA_LOBYTE(g_abs_A8B264) = 0; /*0x76ee59*/
       g_abs_A8B263 = v8; /*0x76ee60*/
       g_abs_A8B274 = 0; /*0x76ee65*/
-      DataGlobal_A8B278 = 1; /*0x76ee6f*/
+      DataGlobal_A8B278 = (unsigned char *)(1); /*0x76ee6f*/
     }
     else
     {
-      v6 = (void **)(0);
+      v6 = (unsigned int)(void **)(0);
     }
     v9 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76ee7d*/
     ((ComPtr *)(&v9))->Release(); /*0x76ee85*/
@@ -638,15 +638,15 @@ int Team_Start_7AFAD0(void * a1, void * a2)
 
   v2 = (char **)(((StaticString *)(a1))->Factory());
   sprintf(Buffer, "TheaterChoice%sMenu", *v2); /*0x7afae9*/
-  ((String *)((char **)&v6))->Assign(Buffer); /*0x7afafa*/
+  ((String *)((char **)&v6))->Assign( (const char *)(Buffer)); /*0x7afafa*/
   ((String *)((char **)&v7))->Assign((const char *)(aWdtchoicemdIni)); /*0x7afb08*/
-  v3 = (char **)(sub_4F1B80( (char **)&v6, (char **)&v7, (void *)(a2))); /*0x7afb1e*/
-  j_DeleteAndZero(&v7); /*0x7afb20*/
-  j_DeleteAndZero(&v6); /*0x7afb29*/
+  v3 = (char **)(sub_4F1B80( (void *)((char **)&v6), (void *)((char **)&v7), (void *)((void *)(a2)))); /*0x7afb1e*/
+  j_DeleteAndZero( (void *)(&v7)); /*0x7afb20*/
+  j_DeleteAndZero( (void *)(&v6)); /*0x7afb29*/
   if ( !v3 ) /*0x7afb30*/
     return 0; /*0x7afb32*/
   v5 = ProcessGraphicMenu((int)v3); /*0x7afb44*/
-  (*(void (**)(char **, int))*v3)(v3, 1); /*0x7afb4c*/
+  (*(void (**)(char **, int))*v3)( (char **)(v3), 1); /*0x7afb4c*/
   switch ( v5 ) /*0x7afb52*/
   {
     case 1: /*0x7afb52*/

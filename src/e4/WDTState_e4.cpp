@@ -69,7 +69,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       }
       else
       {
-        v6 = 0; /*0x76bacd*/
+        v6 = (ComPtr *)(0); /*0x76bacd*/
       }
     }
     LOBYTE(this->m_C) = 1; /*0x76baff*/

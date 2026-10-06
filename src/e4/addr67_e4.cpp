@@ -61,7 +61,7 @@ int sub_679CC0()
     v1[2] = (void *)((unsigned int)((void *)((unsigned int)(0))));
     ((GenericList *)v2)->Constructor(); /*0x679ce2*/
     ((unsigned int *)(v2))[0] = (unsigned int)((void*)&List_INIClass_INISection___vftable); /*0x679ceb*/
-    memset(&((unsigned int *)(v2))[7], 0, 12); /*0x679cf8*/
+    memset( (void *)(&((unsigned int *)(v2))[7]), 0, 12); /*0x679cf8*/
     v3 = 0; /*0x679d04*/
     v4 = 0; /*0x679d08*/
     v5 = 0; /*0x679d0c*/
@@ -73,7 +73,7 @@ int sub_679CC0()
     byte_B053B8 = 1; /*0x679d4a*/
     v7[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679d51*/
     v9 = 0; /*0x679d59*/
-    ((Vector *)((int)v8))->Clear(); /*0x679d60*/
+    ((Vector *)((int)v8))->Clear((int)((Vector *)((int)v8))); /*0x679d60*/
     v7[0] = (unsigned int)&off_7E1668; /*0x679d69*/
     ((BufferIOFileClass *)(v7))->Dtor(); /*0x679d71*/
     ((HashTable *)(v1))->DestroyHashTableINIClass(); /*0x679d7a*/
@@ -115,10 +115,10 @@ int ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorC
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)
          && v19 > 0
-         && (*((uint8_t (**)(VectorClass *, int, unsigned int))v17.vtable0 + 2))(
-              &v17,
-              v19 + v17.Capacity,
-              0)) )
+&& (*((uint8_t (**)(VectorClass *, int, unsigned int))v17.vtable0 + 2))( (VectorClass *)(&v17), v19 + v17.Capacity, 0)) )
+
+
+
       {
         v8 = v18++; /*0x67b606*/
         *((unsigned int *)v17.Items + v8) = v7; /*0x67b611*/
@@ -220,10 +220,10 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
         && (v17.InfantryTypeVector_field_0x10 < v17.InfantryTypeVector_field_0x08
          || (IDA_BYTE1(v17.InfantryTypeVector_field_0x0C) || !v17.InfantryTypeVector_field_0x08)
          && v17.InfantryTypeVector_field_0x14 > 0
-         && (*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)v17.__pad_0 + 8))(
-              &v17,
-              v17.InfantryTypeVector_field_0x14 + v17.InfantryTypeVector_field_0x08,
-              0)) )
+&& (*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)v17.__pad_0 + 8))( (InfantryTypeVector *)(&v17), v17.InfantryTypeVector_field_0x14 + v17.InfantryTypeVector_field_0x08, 0)) )
+
+
+
       {
         v8 = v17.InfantryTypeVector_field_0x10++; /*0x67bbc6*/
         *(unsigned int *)(v17.InfantryTypeVector_field_0x04 + 4 * v8) = v7; /*0x67bbd1*/
@@ -301,9 +301,9 @@ int RulesClass::sub_674500()
   int result; // eax
   RulesClass *v2; // [esp+Ch] [ebp+4h]
 
-  ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674515*/
-  ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674527*/
-  result = ((INIClass *)(INIClass *)v2)->ReadDifficultyModifiers(); /*0x674539*/
+  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674515*/
+  ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674527*/
+  result = ((INIClass *)v2)->ReadDifficultyModifiers(); /*0x674539*/
   LOBYTE(result) = 1; /*0x67453f*/
   return result; /*0x67453e*/
 
@@ -338,7 +338,7 @@ int ArtINI_Load()
   ((CCINIClass *)((int)(&dword_887180)))->Load((int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679f16*/
   v3 = 0; /*0x679f1e*/
-  ((Vector *)((int)v2))->Clear(); /*0x679f26*/
+  ((Vector *)((int)v2))->Clear((int)((Vector *)((int)v2))); /*0x679f26*/
   v1[0] = (unsigned int)&off_7E1668; /*0x679f2f*/
 // 0x431b80
   return ((BufferIOFileClass *)(v1))->Dtor(); /*0x679f3c*/

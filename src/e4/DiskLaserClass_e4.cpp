@@ -38,7 +38,7 @@ DiskLaserClass::DiskLaserClass()
   int v2; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x4a7a33*/
-  *(unsigned int *)this->__pad_0 = &vt_DiskLaserClass; /*0x4a7a3a*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_DiskLaserClass;
   this->DiskLaserClass_field_0x04 = (int)&vt_DiskLaserClass; /*0x4a7a40*/
   this->DiskLaserClass_field_0x08 = (int)&vt_DiskLaserClass; /*0x4a7a47*/
   this->DiskLaserClass_field_0x0C = (int)&vt_DiskLaserClass; /*0x4a7a4e*/
@@ -52,13 +52,13 @@ DiskLaserClass::DiskLaserClass()
   if ( dword_8A0218 < dword_8A0210 /*0x4a7a9e*/
     || (byte_8A0215 || !dword_8A0210)
     && dword_8A021C > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(dword_8A0208 + 8))(
-         &dword_8A0208,
-         dword_8A0210 + dword_8A021C,
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_8A0208 + 8))( (int *)(&dword_8A0208), dword_8A0210 + dword_8A021C, 0) )
+
+
+
   {
     v2 = dword_8A0218++; /*0x4a7aab*/
-    *((unsigned int *)dword_8A020C + v2) = this; /*0x4a7aba*/
+    *((unsigned int *)dword_8A020C + v2) = (unsigned int)this;
   }
   return (int)this->__pad_0; /*0x4a7abf*/
 
@@ -106,7 +106,7 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x4a7ba9*/
     {
-      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x4a7bb2*/
+      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x4a7bb2*/
       *(unsigned int *)aP0->__pad_0 = (unsigned int)&vt_DiskLaserClass;
       aP0->DiskLaserClass_field_0x04 = (int)&vt_DiskLaserClass; /*0x4a7bbd*/
       aP0->DiskLaserClass_field_0x08 = (int)&vt_DiskLaserClass; /*0x4a7bc4*/

@@ -53,9 +53,9 @@ _DWORD * DialogControl::Constructor()
   *((unsigned int *)this + 25) = g_FogOfWarState; /*0x62335d*/
   v2 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x623360*/
   if ( v2 ) /*0x62336c*/
-    v3 = unknown_libname_74(v2); /*0x623370*/
+    v3 = (unsigned int *)unknown_libname_74( (void *)(v2)); /*0x623370*/
   else
-    v3 = 0; /*0x623377*/
+    v3 = (unsigned int *)(0); /*0x623377*/
   *((unsigned int *)this + 15) = (unsigned int)(v3); /*0x623379*/
   *((unsigned int *)this + 16) = 0; /*0x62337c*/
   *((unsigned int *)this + 23) = 0; /*0x62337f*/

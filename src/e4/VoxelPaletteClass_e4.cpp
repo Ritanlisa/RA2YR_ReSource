@@ -31,7 +31,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   v3 = 0; /*0x758a42*/
   if ( !(*(int (**)(int, int))(*(unsigned int *)&a2->q_70))(a2, 1) ) /*0x758a44*/
     goto LABEL_5; /*0x758a44*/
-  if ( (*(int (**)(int, unsigned int *, int))(*(unsigned int *)&a2->q_90))(a2, v9, 16) != 16 ) /*0x758a5c*/
+  if ( (*(int (**)(int, unsigned int *, int))(*(unsigned int *)&a2->q_90))( a2, (unsigned int *)(v9), 16) != 16 ) /*0x758a5c*/
     goto LABEL_5; /*0x758a5c*/
   v4 = v9[2]; /*0x758a62*/
   v5 = v9[1]; /*0x758a66*/

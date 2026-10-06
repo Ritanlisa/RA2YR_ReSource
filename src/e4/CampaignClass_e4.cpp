@@ -51,10 +51,10 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   if ( dword_A83D08 < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A83CF8 + 8))(
-         &dword_A83CF8,
-         dword_A83D00 + dword_A83D0C,
-         0) )
+&& (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A83CF8 + 8))( (unsigned int *)(&dword_A83CF8), dword_A83D00 + dword_A83D0C, 0) )
+
+
+
   {
     v3 = dword_A83D08++; /*0x46cbd9*/
     *((unsigned int *)dword_A83CFC + v3) = (unsigned int)(this); /*0x46cbe8*/
@@ -79,7 +79,7 @@ int CampaignClass::LoadFromINIList()
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = (int)(INIClass::GetKeyCount( (gamemd::INIClass *)(this->__pad_0), (void)((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2)))); /*0x46ce1c*/
+  result = (int)(INIClass::GetKeyCount( (gamemd::INIClass *)(this->__pad_0),  (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2))); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
@@ -102,7 +102,7 @@ LABEL_7:
       v6 = (int)(__2_YAPAXI_Z(0x3A0u)); /*0x46ce97*/
       if ( v6 ) /*0x46cea8*/
       {
-        ((AbstractTypeClass *)((int *)v6))->Constructor(Source); /*0x46ceb5*/
+        ((AbstractTypeClass *)((int *)v6))->Constructor( (char *)(Source)); /*0x46ceb5*/
         *(unsigned int *)(v6 + 152) = -1; /*0x46ceba*/
         *(unsigned int *)(v6 + 668) = -1; /*0x46cec0*/
         *(unsigned int *)v6 = (unsigned int)(&vt_CampaignClass); /*0x46cec6*/
@@ -112,10 +112,10 @@ LABEL_7:
         if ( dword_A83D08 < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
           && dword_A83D0C > 0
-          && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A83CF8 + 8))(
-               &dword_A83CF8,
-               dword_A83D00 + dword_A83D0C,
-               0) )
+&& (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A83CF8 + 8))( (unsigned int *)(&dword_A83CF8), dword_A83D00 + dword_A83D0C, 0) )
+
+
+
         {
           v7 = dword_A83D08++; /*0x46cf25*/
           *((unsigned int *)dword_A83CFC + v7) = v6; /*0x46cf34*/
@@ -281,7 +281,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aCampaigntype, (&this->scenario)[7], 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < *(char *)(v27 + 8);
-        ((INIClass *)v28.INIClass)->SetString((uint8_t *)Block, Buffer, *(char **)((&this->scenario)[5] + 4 * j++)) )
+        ((INIClass *)v28.INIClass)->SetString( (unsigned __int8 *)((uint8_t *)Block), (char *)(Buffer), *(char **)((&this->scenario)[5] + 4 * j++)) )
   {
     sprintf(Buffer, "Map%d", j + 1); /*0x49c87d*/
   }
@@ -324,13 +324,13 @@ LABEL_47:
   CCFileClass::Reset( &v30); /*0x49ca5d*/
   *(unsigned int *)v30.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49ca67*/
   v32 = 0; /*0x49ca77*/
-  ((Vector *)((int)v31))->Clear(); /*0x49ca7e*/
+  ((Vector *)((int)v31))->Clear((int)((Vector *)((int)v31))); /*0x49ca7e*/
   *(unsigned int *)v30.CDFileClass = (unsigned int)(&off_7E1668); /*0x49ca8f*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v30))->Dtor(); /*0x49ca96*/
   ((HashTable *)((INIClass *)&v28))->DestroyHashTableINIClass(); /*0x49ca9f*/
   *(unsigned int *)v33.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49caab*/
   v35 = 0; /*0x49cab2*/
-  ((Vector *)((int)v34))->Clear(); /*0x49cab9*/
+  ((Vector *)((int)v34))->Clear((int)((Vector *)((int)v34))); /*0x49cab9*/
   *(unsigned int *)v33.CDFileClass = (unsigned int)(&off_7E1668); /*0x49cac5*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v33))->Dtor(); /*0x49cacc*/
   LOBYTE((&this->scenario)[17]) = (gamemd::AbstractClass **)(1); /*0x49cad2*/

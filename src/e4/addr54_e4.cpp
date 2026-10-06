@@ -109,15 +109,15 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || ((Network *)((Network *)v15))->IsBroadcastAddr()) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
-  v13 = (*(int (**)(int, int, int, unsigned int *, int, int, unsigned int))(*(unsigned int *)(&this->ambientSoundController)[3] /*0x541225*/
-                                                                         + 44))(
-          (&this->ambientSoundController)[3],
-          a2,
-          a3,
-          v15,
-          v12,
-          v5,
-          0);
+v13 = (*(int (**)(int, int, int, unsigned int *, int, int, unsigned int))(*(unsigned int *)(&this->ambientSoundController)[3] /*0x541225*/ + 44))( (&this->ambientSoundController)[3], a2, a3, (unsigned int *)(v15), v12, v5, 0);
+
+
+
+
+
+
+
+
   if ( !v13 ) /*0x541229*/
   {
     ++(&this->location)[1]; /*0x541232*/
@@ -380,10 +380,10 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   ((GenericNode *)(v79))->Constructor();
   ((LinkedList_flat *)v78)->Prepend((int)v79);
   v77[3] = (uint8_t **)&vt_List_INIClass_INISection;
-  memset(&v79[3], 0, 12);
+  memset( (void *)(&v79[3]), 0, 12);
   var9A4 = 0;
   int v81 = 0;
-  v80 = 0;
+  v80 = (AbstractClass *)(0);
   var998 = 0;
   v77[0] = (uint8_t **)&CCINIClass_Vtable;
   Ticks = (INIClass *)((Timer *)0)->GetTicks();
@@ -391,7 +391,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80372] = 0;
   var978 = 0;
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80376] = 0;
-  v89 = 0;
+  v89 = (AbstractClass *)(0);
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80380] = 0;
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80384] = 0;
   int v158[22]; // [esp+33Ch] [ebp-6D4h] BYREF
@@ -442,7 +442,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   var904 = 112 * (unsigned int)a1;
   sprintf(Buffer, DataGlobal_00829600, (const char *)&off_7E1BC6 + 112 * (unsigned int)a1);
   int v149[22]; // [esp+214h] [ebp-7FCh] BYREF
-  ((CCFileClass *)(v149))->Construct(Buffer);
+  ((CCFileClass *)(v149))->Construct( (char *)(Buffer));
   v10 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80420] = (unsigned int)(operator new(v10));
   signed int v11 = CCFileClass::GetSize(v149);
@@ -474,7 +474,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   char v180[32]; // [esp+6B0h] [ebp-360h] BYREF
   sprintf(v180, DataGlobal_008295F4, (const char *)&off_7E1BC6 + v9);
   unsigned int v161[22]; // [esp+3A8h] [ebp-668h] BYREF
-  ((CCFileClass *)(v161))->Construct(v180);
+  ((CCFileClass *)(v161))->Construct( (char *)(v180));
   if ( ((CCFileClass *)((int)(v161)))->Open(0) )
   {
     ((CCFileClass *)(v161))->Read(&stru_ABBED0, 768);
@@ -491,13 +491,13 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   TheatreClass::InitView();
   char v157[20]; // [esp+328h] [ebp-6E8h] BYREF
   sprintf(v157,(const char *const )(stru_8295E8), &aTemperat[v9]);
-  ((CCFileClass *)(&aP1))->Construct(v157);
-  ((CCINIClass *)(v77))->Load(&aP1, 0, 0);
-  v20 = 0;
-  v21 = 0;
-  v90 = 0;
-  v70 = 0;
-  v72 = 0;
+  ((CCFileClass *)(&aP1))->Construct( (char *)(v157));
+  ((CCINIClass *)(v77))->Load( (int)(&aP1), 0, 0);
+  v20 = (INIClass *)(0);
+  v21 = (CCINIClass *)(0);
+  v90 = (AbstractClass *)(0);
+  v70 = (MapClass *)(0);
+  v72 = (CCINIClass *)(0);
   Int_Overwrite = (AbstractClass *)INIClass::ReadInt_Overwrite(
                                      (int)v77,
                                      (uint8_t *)&g_INI_Key_General,
@@ -851,7 +851,7 @@ LABEL_24:
     var978 = 4;
 LABEL_26:
     int v25 = dword_ABC558;
-    *(unsigned int *)&(&g_NetworkPlayerBuffer)[22428][4 * dword_ABC558 + 58216] = v21;
+    *(unsigned int *)&(&g_NetworkPlayerBuffer)[22428][4 * dword_ABC558 + 58216] = (unsigned int)v21;
     dword_ABC558 = v25 + 1;
     if ( v20 == (INIClass *)Int_Overwrite )
       g_CellTileLookup = (int)(v21);
@@ -1032,27 +1032,27 @@ LABEL_26:
     if ( v32 )
     {
       v33 = (INIClass *)v89;
-      *(unsigned int *)&((unsigned int **)&g_NetworkPlayerBuffer)[22428][4 * (unsigned int)v89 + 57940] = v70;
+      *(unsigned int *)&((unsigned int **)&g_NetworkPlayerBuffer)[22428][4 * (unsigned int)v89 + 57940] = (unsigned int)v70;
       v89 = (AbstractClass *)&v33->__pad_0[1];
     }
-    v88 = 0;
+    v88 = (AbstractClass *)(0);
     if ( v32 )
       v88 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                                (int)v77,
                                (uint8_t *)&aP2.q02C,
                                &DataGlobal_008291B8,
                                0);
-    int v34 = INIClass::BinarySearchSection( (gamemd::INIClass *)(int)v77, (void)(&aP4));
-    v69 = 0;
+    int v34 = INIClass::BinarySearchSection( (gamemd::INIClass *)(int)v77, (void *)(&aP4));
+    v69 = (MapClass *)(0);
     var9F4_1 = v34 != 0;
     if ( (int)v71 > 0 )
     {
       while ( 1 )
       {
   char v60; // [esp+11h] [ebp-9FFh]
-        v65 = 0;
-        v76 = 0;
-        var974 = 0;
+        v65 = (MapClass *)(0);
+        v76 = (MapClass *)(0);
+        var974 = (MapClass *)(0);
         v87 = (AbstractClass *)((char *)&v70[-1].field_16C0 + 3);
         do
         {
@@ -1077,11 +1077,11 @@ LABEL_26:
               v37 = v70;
               v70 = (MapClass *)((char *)v70 + 1);
               v87 = (AbstractClass *)((char *)v87 + 1);
-              v3 = ((TerrainTypeClass *)((int)(v36)))->Construct( (int)v37, 0xBFu, 0, (char)((MapClass *)Filename), 0);
+              v3 = ((TerrainTypeClass *)((int)(v36)))->Construct((int)((TerrainTypeClass *)((int)(v36))), (int)v37, 0xBFu, 0, (char)((MapClass *)Filename), 0);
             }
             else
             {
-              v3 = 0;
+              v3 = (unsigned int *)(0);
             }
             if ( Source )
             {
@@ -1123,10 +1123,10 @@ LABEL_26:
               sprintf(aP2[0], DataGlobal_00829194, v35);
               if ( ((INIClass*)v77)->GetString(&aP4, (uint8_t *)&aP2, (INIClass *)&DataGlobal_87F8E4[42624], &v184, 128) )
               {
-                v42 = AnimTypeClass::FindOrCreate((AbstractClass *)&v184);
+                v42 = (AnimTypeClass *)AnimTypeClass::FindOrCreate((AbstractClass *)&v184);
                 if ( v42 )
                 {
-                  v3[178] = (*(int (**)(AnimTypeClass *))(*(unsigned int *)v42->__pad_0 + 64))(v42);
+                  v3[178] = (*(int (**)(AnimTypeClass *))(*(unsigned int *)v42->__pad_0 + 64))( (AnimTypeClass *)(v42));
                   sprintf(aP2[0], DataGlobal_00829184, v35);
                   v3[179] = ((INIClass *)((int)v77))->ReadInt_Overwrite((uint8_t *)&aP4, &aP2, (INIClass *)v3[179]);
                   sprintf(aP2[0], DataGlobal_00829174, v35);
@@ -1144,19 +1144,19 @@ LABEL_26:
           int v43 = var904;
   char v182[512]; // [esp+750h] [ebp-2C0h] BYREF
           _makepath(v182, 0, 0, Filename, (const char *)&off_7E1BC6 + var904);
-          v44 = 0;
+          v44 = (uint8_t *)(0);
           v60 = 0;
           if ( a2 )
           {
   unsigned int v171[22]; // [esp+56Ch] [ebp-4A4h] BYREF
-            ((CCFileClass*)v171)->Construct(v182);
+            ((CCFileClass*)v171)->Construct( (char *)(v182));
             v60 = ((CCFileClass *)(v171))->Open(0);
             if ( v60 && !v65 )
-              strncpy((char *)v3 + 757, v182, 0xEu);
+              strncpy( (char *)v3 + 757, (const char *)(v182), 0xEu);
             v171[0] = (unsigned int)&vt_CCFileClass;
             int v173 = 0;
   char v172[12]; // [esp+5C4h] [ebp-44Ch] BYREF
-            ((Vector *)((int)v172))->Clear();
+            ((Vector *)((int)v172))->Clear((int)((Vector *)((int)v172)));
             v171[0] = (unsigned int)&off_7E1668;
             ((BufferIOFileClass *)(v171))->Dtor();
             if ( v60 )
@@ -1164,7 +1164,7 @@ LABEL_26:
           }
           else
           {
-            v44 = (uint8_t *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile( (char *)(v182), 0);
             if ( v44 )
               goto LABEL_189;
           }
@@ -1177,14 +1177,14 @@ LABEL_26:
           if ( a2 )
           {
   unsigned int v174[22]; // [esp+5D8h] [ebp-438h] BYREF
-            ((CCFileClass*)v174)->Construct(v182);
+            ((CCFileClass*)v174)->Construct( (char *)(v182));
             v60 = ((CCFileClass *)(v174))->Open(0);
             if ( v60 && !v65 )
-              strncpy((char *)v3 + 757, v182, 0xEu);
+              strncpy( (char *)v3 + 757, (const char *)(v182), 0xEu);
             v174[0] = (unsigned int)&vt_CCFileClass;
             int v176 = 0;
   char v175[12]; // [esp+630h] [ebp-3E0h] BYREF
-            ((Vector *)((int)v175))->Clear();
+            ((Vector *)((int)v175))->Clear((int)((Vector *)((int)v175)));
             v174[0] = (unsigned int)&off_7E1668;
             ((BufferIOFileClass *)(v174))->Dtor();
             if ( v60 )
@@ -1192,7 +1192,7 @@ LABEL_26:
           }
           else
           {
-            v44 = (uint8_t *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile( (char *)(v182), 0);
             if ( v44 )
               goto LABEL_189;
           }
@@ -1200,14 +1200,14 @@ LABEL_26:
           if ( a2 )
           {
   unsigned int v165[22]; // [esp+494h] [ebp-57Ch] BYREF
-            ((CCFileClass*)v165)->Construct(v182);
+            ((CCFileClass*)v165)->Construct( (char *)(v182));
             v60 = ((CCFileClass *)(v165))->Open(0);
             if ( v60 && !v65 )
-              strncpy((char *)v3 + 757, v182, 0xEu);
+              strncpy( (char *)v3 + 757, (const char *)(v182), 0xEu);
             v165[0] = (unsigned int)&vt_CCFileClass;
             int v167 = 0;
   char v166[12]; // [esp+4ECh] [ebp-524h] BYREF
-            ((Vector *)((int)v166))->Clear();
+            ((Vector *)((int)v166))->Clear((int)((Vector *)((int)v166)));
             v165[0] = (unsigned int)&off_7E1668;
             ((BufferIOFileClass *)(v165))->Dtor();
             if ( v60 )
@@ -1215,14 +1215,14 @@ LABEL_26:
           }
           else
           {
-            v44 = (uint8_t *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile( (char *)(v182), 0);
             if ( v44 )
               goto LABEL_189;
           }
           _makepath(v182, 0, 0, Filename, (const char *)aUrb);
           if ( !a2 )
           {
-            v44 = (uint8_t *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile( (char *)(v182), 0);
             if ( !v44 )
               goto LABEL_190;
 LABEL_189:
@@ -1230,14 +1230,14 @@ LABEL_189:
             goto LABEL_190;
           }
   unsigned int v177[22]; // [esp+644h] [ebp-3CCh] BYREF
-          ((CCFileClass*)v177)->Construct(v182);
+          ((CCFileClass*)v177)->Construct( (char *)(v182));
           v60 = ((CCFileClass *)(v177))->Open(0);
           if ( v60 && !v65 )
-            strncpy((char *)v3 + 757, v182, 0xEu);
+            strncpy( (char *)v3 + 757, (const char *)(v182), 0xEu);
           v177[0] = (unsigned int)&vt_CCFileClass;
           int v179 = 0;
   char v178[12]; // [esp+69Ch] [ebp-374h] BYREF
-          ((Vector *)((int)v178))->Clear();
+          ((Vector *)((int)v178))->Clear((int)((Vector *)((int)v178)));
           v177[0] = (unsigned int)&off_7E1668;
           ((BufferIOFileClass *)(v177))->Dtor();
 LABEL_190:
@@ -1247,12 +1247,12 @@ LABEL_190:
             break;
           eax193 = (unsigned int *)operator new(0x30Cu);
           if ( eax193 )
-            v3 = ((TerrainTypeClass *)eax193)->Construct( (int)v87, 0xBFu, 0, (char)((MapClass *)Filename), 1);
+            v3 = ((TerrainTypeClass *)eax193)->Construct((int)((TerrainTypeClass *)eax193), (int)v87, 0xBFu, 0, (char)((MapClass *)Filename), 1);
           else
-            v3 = 0;
+            v3 = (unsigned int *)(0);
           if ( Source )
           {
-            strncpy( v155, (const char *)(Source), 0x30u);
+            strncpy( (char *)(v155), (const char *)(Source), 0x30u);
             v156 = 0;
           }
           else
@@ -1261,7 +1261,7 @@ LABEL_190:
           }
           if ( v155 != (char *)(v3 + 25) )
           {
-            qmemcpy(v3 + 25, v155, 0x30u);
+            qmemcpy( v3 + 25, (const void *)(v155), 0x30u);
             *((unsigned char *)v3 + 148) = v156;
           }
           v46 = v75;
@@ -1275,7 +1275,7 @@ LABEL_190:
           if ( a2 )
           {
             *((unsigned char *)v3 + 756) = 1;
-            strncpy((char *)v3 + 757, v182, 0xEu);
+            strncpy( (char *)v3 + 757, (const char *)(v182), 0xEu);
           }
           if ( v63 && v88 )
             *((unsigned char *)v3 + 737) = v63;
@@ -1373,25 +1373,25 @@ LABEL_217:
   *(unsigned int *)(&aP1)[0] = (unsigned int)&vt_CCFileClass;
   int v170 = 0;
   char v169[12]; // [esp+558h] [ebp-4B8h] BYREF
-  ((Vector *)((int)v169))->Clear();
+  ((Vector *)((int)v169))->Clear((int)((Vector *)((int)v169)));
   *(unsigned int *)(&aP1)[0] = (unsigned int)&off_7E1668;
   ((BufferIOFileClass *)(&aP1))->Dtor();
   v161[0] = (unsigned int)&vt_CCFileClass;
   int v163 = 0;
   char v162[12]; // [esp+400h] [ebp-610h] BYREF
-  ((Vector *)((int)v162))->Clear();
+  ((Vector *)((int)v162))->Clear((int)((Vector *)((int)v162)));
   v161[0] = (unsigned int)&off_7E1668;
   ((BufferIOFileClass *)(v161))->Dtor();
   v149[0] = (int)&vt_CCFileClass;
   int v151 = 0;
   char v150[12]; // [esp+26Ch] [ebp-7A4h] BYREF
-  ((Vector *)((int)v150))->Clear();
+  ((Vector *)((int)v150))->Clear((int)((Vector *)((int)v150)));
   v149[0] = (int)&off_7E1668;
   ((BufferIOFileClass *)(v149))->Dtor();
   v158[0] = (int)&vt_CCFileClass;
   int v160 = 0;
   char v159[12]; // [esp+394h] [ebp-67Ch] BYREF
-  ((Vector *)((int)v159))->Clear();
+  ((Vector *)((int)v159))->Clear((int)((Vector *)((int)v159)));
   v158[0] = (int)&off_7E1668;
   ((BufferIOFileClass *)(v158))->Dtor();
   return HashTable_flat::DestroyHashTableINIClass((void **)v77);
@@ -1797,7 +1797,7 @@ int Map_InitCoordinateOffsets(int a1)
     a1 = v5; /*0x547c8f*/
   }
   v1 = *(unsigned int *)(a1 + 660); /*0x547c98*/
-  v2 = dword_AA102C; /*0x547c9e*/
+  v2 = (int *)(dword_AA102C); /*0x547c9e*/
   while ( 1 ) /*0x547ca7*/
   {
     v3 = v1 - *v2; /*0x547ca7*/
@@ -2054,7 +2054,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       __asm { fmul ds:dbl_7E2818 }
       LOWORD(v33) = Math::RoundToInt(result); /*0x54bc3f*/
       v32 = v33; /*0x54bc50*/
-      ((FacingClass *)(char *)(_ESI + 84))->Update( &v32); /*0x54bc54*/
+      ((FacingClass *)(char *)(_ESI + 84))->Update( (unsigned short *)(&v32)); /*0x54bc54*/
       Member = ((Team *)(*(Team **)(_ESI + 12)))->GetMember(0); /*0x54bc5e*/
       v22 = Member; /*0x54bc63*/
       if ( Member ) /*0x54bc67*/
@@ -2076,7 +2076,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
         v25 = *(unsigned char **)(_ESI + 12); /*0x54bd03*/
         *(unsigned int *)(_ESI + 128) = v24; /*0x54bd06*/
         v26 = v25[116]; /*0x54bd10*/
-        (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v25 + 292))(v25, 0); /*0x54bd13*/
+        (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v25 + 292))( (unsigned char *)(v25), 0); /*0x54bd13*/
         v27 = *(unsigned int *)(_ESI + 12); /*0x54bd19*/
         *(unsigned int *)(_ESI + 80) = 3; /*0x54bd1c*/
         *(unsigned char *)(v27 + 116) = v26; /*0x54bd23*/
@@ -2086,13 +2086,13 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   else if ( (uint8_t)ObjectClass::HasLinkedObject(*(unsigned int *)(_ESI + 12)) ) /*0x54baea*/
   {
     v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54bb08*/
-    v10 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v31); /*0x54bb14*/
+    v10 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v31)); /*0x54bb14*/
     v11 = **(unsigned int **)(_ESI + 12); /*0x54bb1f*/
-    NeighbourContent = ((Cell *)(v10))->GetNeighbourContent(v9); /*0x54bb23*/
-    (*(void (**)(unsigned int, void *, int))(v11 + 1152))(*(unsigned int *)(_ESI + 12), NeighbourContent, 1); /*0x54bb2c*/
+    NeighbourContent = (void *)((Cell *)(v10))->GetNeighbourContent(v9); /*0x54bb23*/
+    (*(void (**)(unsigned int, void *, int))(v11 + 1152))( *(unsigned int *)(_ESI + 12), (void *)(NeighbourContent), 1); /*0x54bb2c*/
     v13 = *(unsigned char **)(_ESI + 12); /*0x54bb32*/
     LOBYTE(v11) = v13[116]; /*0x54bb39*/
-    (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v13 + 292))(v13, 0); /*0x54bb3c*/
+    (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v13 + 292))( (unsigned char *)(v13), 0); /*0x54bb3c*/
     *(unsigned char *)(*(unsigned int *)(_ESI + 12) + 116) = v11; /*0x54bb46*/
     *(unsigned int *)(_ESI + 80) = 3; /*0x54bb49*/
   }
@@ -2102,7 +2102,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     ((CellClass *)v14)->AttachObject( v30); /*0x54bb64*/
     v15 = *(unsigned char **)(_ESI + 12); /*0x54bb69*/
     v16 = v15[116]; /*0x54bb70*/
-    (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v15 + 292))(v15, 0); /*0x54bb73*/
+    (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v15 + 292))( (unsigned char *)(v15), 0); /*0x54bb73*/
     *(unsigned char *)(*(unsigned int *)(_ESI + 12) + 116) = v16; /*0x54bb7d*/
     *(unsigned int *)(_ESI + 80) = 2; /*0x54bb80*/
   }
@@ -2262,11 +2262,11 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
     (**(void (***)(int, int))dword_887628)(dword_887628, 1); /*0x54090b*/
     dword_887628 = 0; /*0x54090d*/
   }
-  v8 = __2_YAPAXI_Z(0x3F310u); /*0x540918*/
+  v8 = (unsigned int *)__2_YAPAXI_Z(0x3F310u); /*0x540918*/
   if ( v8 ) /*0x540922*/
-    v9 = IPXInterfaceClass::Construct(v8); /*0x540926*/
+    v9 = (unsigned int *)IPXInterfaceClass::Construct(v8); /*0x540926*/
   else
-    v9 = 0; /*0x54092d*/
+    v9 = (unsigned int *)(0); /*0x54092d*/
   dword_887628 = (int)v9; /*0x540931*/
   if ( ((WinsockInterface *)(v9))->Init() ) /*0x540936*/
     *((unsigned char *)this + 4) = 1; /*0x54093f*/
@@ -2299,7 +2299,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   *((unsigned int *)this + 41) = 0; /*0x5409cb*/
   *((unsigned int *)this + 22) = 2; /*0x5409d1*/
   *((unsigned int *)this + 24) = 60; /*0x5409d8*/
-  return this; /*0x5409e1*/
+  return (char *)this; /*0x5409e1*/
 
 }
 } // namespace gamemd
@@ -2749,7 +2749,7 @@ int MIXFile_AccumulateIndex(int a1)
     v2 = 0; /*0x544e44*/
     if ( dword_AA1088 > 0 ) /*0x544e49*/
     {
-      v3 = dword_AA107C; /*0x544e4b*/
+      v3 = (unsigned int *)(dword_AA107C); /*0x544e4b*/
       do /*0x544e62*/
       {
         v4 = (unsigned int *)*v3; /*0x544e51*/
@@ -2990,7 +2990,7 @@ namespace gamemd {
 int sub_54ABD0()
 {
   dword_ABC588 = 0; /*0x54abd2*/
-  DataGlobal_ABC58A = 0; /*0x54abd8*/
+  DataGlobal_ABC58A = (unsigned char *)(0); /*0x54abd8*/
   return 0; /*0x54abde*/
 }
 } // namespace gamemd
@@ -3206,13 +3206,13 @@ unsigned int * E4Recv_54E360::sub_54E360()
   ((unsigned int *)this)[0] = 0; /*0x54e37b*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x54e37e*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x54e382*/
-  ((unsigned int *)this)[0] = &vt_DynamicVectorClass; /*0x54e385*/
-  ((unsigned int *)this)[0] = (void *)10; /*0x54e38c*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_DynamicVectorClass; /*0x54e385*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)10; /*0x54e38c*/
   ((unsigned int *)this)[0] = 0; /*0x54e393*/
   this->AbstractClass = *(void **)((char *)&stru_A8EB00 + 416); /*0x54e39e*/
-  ((unsigned int *)this)[0] = v2; /*0x54e3a4*/
-  ((unsigned int *)this)[0] = (void *)100; /*0x54e3a7*/
-  return this; /*0x54e3aa*/
+  ((unsigned int *)this)[0] = (unsigned int)v2; /*0x54e3a4*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)100; /*0x54e3a7*/
+  return (unsigned int *)this; /*0x54e3aa*/
 
 }
 } // namespace gamemd
@@ -3236,7 +3236,7 @@ void E4Recv_54E690::sub_54E690()
   v5 = &((unsigned int *)this)[0]; /*0x54e6b3*/
   abstractFlags = ((unsigned int *)this)[0]; /*0x54e6b5*/
   vtable3[3](v5); /*0x54e6b8*/
-  (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
+  (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))( (void **)(p_vtable3), abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
   *p_vtable3 = &vt_VectorClass; /*0x54e6c9*/
   if ( v7 && *((unsigned char *)p_vtable3 + 13) ) /*0x54e6d3*/

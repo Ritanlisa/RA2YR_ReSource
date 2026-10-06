@@ -172,7 +172,7 @@ void * sub_6D0F10()
   do /*0x6d0f5a*/
   {
     sprintf(Buffer, "Button%02d.SHP", v0); /*0x6d0f2f*/
-    result = LoadFileSHP((gamemd::ConvertClass *)(Buffer),(gamemd::ConvertClass *)(&v4)); /*0x6d0f3f*/
+    result = (void *)LoadFileSHP((gamemd::ConvertClass *)(Buffer),(gamemd::ConvertClass *)(&v4)); /*0x6d0f3f*/
     v3 = v4; /*0x6d0f44*/
     *(unsigned int *)(v1) = (int)result; /*0x6d0f48*/
     ((unsigned int *)(byte_B0CBDC))[v0] = v3; /*0x6d0f4a*/
@@ -206,7 +206,7 @@ char E4Recv_6D1570::sub_6D1570()
   int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
   char v3; // [esp+1Ch] [ebp-4h]
 
-  result = (*((int (**)(ObjectClass *, GadgetClass *))this->vtable1 + 12))((gamemd::ObjectClass *)this, &stru_B0CC40); /*0x6d157a*/
+  result = (*((int (**)(ObjectClass *, GadgetClass *))this->vtable1 + 12))( (gamemd::ObjectClass *)this, (GadgetClass *)(&stru_B0CC40)); /*0x6d157a*/
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
     v2[2] = stru_B0CC40.Height; /*0x6d1597*/
@@ -217,7 +217,7 @@ char E4Recv_6D1570::sub_6D1570()
     v2[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d15bf*/
     v2[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d15c7*/
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d15cb*/
-    return CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)v2); /*0x6d15db*/
+    return CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)v2)); /*0x6d15db*/
   }
   return result; /*0x6d15e0*/
 
@@ -532,12 +532,12 @@ long long sub_6D6A90(unsigned int * a1)
   int v2; // edx
   unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
 
-  v1 = ((Coord *)(&dword_87F7E8))->To_Cell(a1); /*0x6d6a9e*/
+  v1 = (void *)((Coord *)(&dword_87F7E8))->To_Cell(a1); /*0x6d6a9e*/
   v2 = a1[1]; /*0x6d6aa5*/
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/
 // 0x47b3a0
-  return ((Isometric*)(gamemd::IUnknown *)((int)v1))->InitTables(v4); /*0x6d6abc*/
+  return ((Isometric*)(gamemd::IUnknown *)((int)v1))->InitTables( (unsigned int *)(v4)); /*0x6d6abc*/
 }
 } // namespace gamemd
 
@@ -643,7 +643,7 @@ int sub_6D8C60(int a1, int a2)
   int v13; // [esp+24h] [ebp-10h]
   unsigned char v14[12]; // [esp+28h] [ebp-Ch] BYREF
 
-  v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a1 + 72))(a1, v14); /*0x6d8c77*/
+  v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a1 + 72))( a1, (unsigned char *)(v14)); /*0x6d8c77*/
   v10 = v3[1]; /*0x6d8c89*/
   v4 = (-60 * v10 / 2 + 60 * *v3 / 2) / 256; /*0x6d8cf7*/
   v5 = (30 * v10 / 2 + 30 * *v3 / 2) / 256; /*0x6d8cfa*/

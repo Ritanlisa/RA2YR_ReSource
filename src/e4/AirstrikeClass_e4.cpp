@@ -64,7 +64,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   {
     v5 = *((unsigned int *)this + 9); /*0x41d8b9*/
   }
-  v7 = (unsigned int *)((int)((*(int (**)(int *, unsigned int *))(*a2 + 72))( (int *)(a2), v18)));
+  v7 = (unsigned int *)((int)((*(int (**)(int *, unsigned int *))(*a2 + 72))( (int *)(a2), (unsigned int *)(v18))));
   LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v16 = v19; /*0x41d902*/
@@ -72,7 +72,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   v15 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
   v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)&this->owner + 60))(*((unsigned int *)this + 19)); /*0x41d91f*/
-  result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0,(int)(this)); /*0x41d926*/
+  result = PlaceAircraftOnMap( (unsigned int *)(v9), v4, v5, 1, v14, 0, v15, 0, (int)(this)); /*0x41d926*/
   *((unsigned int *)this + 11) = result; /*0x41d92d*/
   *((unsigned int *)this + 12) = result; /*0x41d930*/
   if ( result ) /*0x41d933*/
@@ -149,25 +149,25 @@ LABEL_6:
     if ( v6 )
       v7 = (*(int (**)(unsigned int))(*(unsigned int *)v6 + 44))(this->u32_50) == 6 ? (unsigned int *)v6 : 0;
     else
-      v7 = 0; /*0x41da56*/
+      v7 = (unsigned int *)(0); /*0x41da56*/
     if ( a2 )
       v9 = (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 6 ? (unsigned int *)a2 : 0;
     else
-      v9 = 0; /*0x41da84*/
+      v9 = (unsigned int *)(0); /*0x41da84*/
     if ( v7 ) /*0x41da9e*/
     {
       v10 = *v7; /*0x41daa0*/
       v7[165] = 0; /*0x41daa4*/
-      (*(void (**)(unsigned int *))(v10 + 344))(v7); /*0x41daae*/
-      (*(void (**)(unsigned int *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
+      (*(void (**)(unsigned int *))(v10 + 344))( (unsigned int *)(v7)); /*0x41daae*/
+      (*(void (**)(unsigned int *, int))(*v7 + 292))( (unsigned int *)(v7), 2); /*0x41daba*/
     }
     this->u32_50 = 0; /*0x41dac2*/
     if ( v9 ) /*0x41dac9*/
     {
       v11 = (unsigned int)(*v9);
       v9[165] = (unsigned int)(this);
-      (*(void (**)(unsigned int *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
-      (*(void (**)(unsigned int *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
+      (*(void (**)(unsigned int *, int))(v11 + 348))( (unsigned int *)(v9), 100000); /*0x41dada*/
+      (*(void (**)(unsigned int *, int))(*v9 + 292))( (unsigned int *)(v9), 2); /*0x41dae6*/
     }
     v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41daec*/
     v12 = *(int **)((char *)&this->AirstrikeClass_field_242); /*0x41daef*/
@@ -178,8 +178,8 @@ LABEL_6:
       {
         if ( v12[191] > 0 ) /*0x41db07*/
         {
-          (*(void (**)(int *, int))(*v12 + 968))(v12, a2); /*0x41db0e*/
-          (*(void (**)(int *, int, unsigned int))(*v12 + 488))(v12, 1, 0); /*0x41db1c*/
+          (*(void (**)(int *, int))(*v12 + 968))( (int *)(v12), a2); /*0x41db0e*/
+          (*(void (**)(int *, int, unsigned int))(*v12 + 488))( (int *)(v12), 1, 0); /*0x41db1c*/
           this->AirstrikeClass_field_3D = 1; /*0x41db22*/
         }
         v12 = (int *)v12[374]; /*0x41db26*/
@@ -269,7 +269,7 @@ void * AirstrikeClass::CopyTo(char a2, int aP1, int aP0, int a1, int aP2)
   ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
     __3_YAXPAX_Z(this); /*0x41ddc7*/
-  return this; /*0x41ddd1*/
+  return (void *)this; /*0x41ddd1*/
 
 }
 } // namespace ra2
@@ -403,7 +403,7 @@ namespace gamemd {
 int AirstrikeClass::Stat(AbstractClass * aP1)
 {
 
-  return ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x41d6ea*/
+  return ((AbstractClass *)this)->ProcessPower(); /*0x41d6ea*/
 
 }
 } // namespace gamemd
@@ -420,7 +420,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x41d709*/
     {
-      ((AbstractClass *)(AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x41d712*/
+      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x41d712*/
       aP0->vtable1 = &vt_AirstrikeClass; /*0x41d717*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/
@@ -474,7 +474,7 @@ char AirstrikeClass::StartMission(int * a2)
   if ( !*((unsigned char *)this + 60) ) /*0x41d830*/
     return AirstrikeClass::SpawnAircraft(a2) ; /*0x41d83c*/
   if ( a2 != *(int **)((char *)this + 80) ) /*0x41d847*/
-    return AirstrikeClass::ReassignTarget( a1, (void)((void *)((int)a2))); 
+    return AirstrikeClass::ReassignTarget( a1,  (void *)((int)a2)); 
   return result; /*0x41d841*/
 
 }

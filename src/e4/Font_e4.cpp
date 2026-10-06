@@ -120,7 +120,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     v51 = (unsigned short)(0); /*0x434d1b*/
     LOWORD(v16) = (unsigned short)(*aP2); /*0x434d1f*/
     v54 = 0; /*0x434d22*/
-    v52 = 0; /*0x434d29*/
+    v52 = (unsigned short *)(0); /*0x434d29*/
     v49 = 0; /*0x434d2d*/
     v53 = v16; /*0x434d31*/
     if ( (unsigned short)v16 ) /*0x434d35*/
@@ -135,7 +135,7 @@ LABEL_4:
         case 13: /*0x434d59*/
           if ( v13 == 13 ) /*0x434d64*/
             goto LABEL_23; /*0x434d64*/
-          v18 = 0; /*0x434d6e*/
+          v18 = (AbstractClass *)(0); /*0x434d6e*/
           if ( aP5 > (gamemd::AbstractClass *)(v11) ) /*0x434d72*/
           {
             if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434d7b*/
@@ -228,7 +228,7 @@ LABEL_26:
             v11 -= v27; /*0x434f6f*/
             --aP2; /*0x434f78*/
           }
-          v29 = 0; /*0x434f80*/
+          v29 = (AbstractClass *)(0); /*0x434f80*/
           if ( aP5 > (gamemd::AbstractClass *)(v11) ) /*0x434f84*/
           {
             if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434f8d*/
@@ -282,7 +282,7 @@ LABEL_26:
 LABEL_50:
           if ( aP2 == (gamemd::AbstractClass *)(v28) ) /*0x4350f9*/
           {
-            v52 = 0; /*0x4350fb*/
+            v52 = (unsigned short *)(0); /*0x4350fb*/
             ++v12; /*0x435103*/
           }
           v24 = (unsigned int *)aP0; /*0x435106*/
@@ -318,7 +318,7 @@ LABEL_55:
     else
     {
 LABEL_59:
-      v38 = 0; /*0x435167*/
+      v38 = (AbstractClass *)(0); /*0x435167*/
       if ( aP5 > (gamemd::AbstractClass *)(v11) ) /*0x43516f*/
       {
         if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x435178*/

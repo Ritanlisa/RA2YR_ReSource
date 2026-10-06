@@ -62,12 +62,12 @@ int MoveFeedback::ProcessCommand()
     {
       v3 = 0; /*0x732826*/
     }
-    v5 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x732828*/
+    v5 = *(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x732828*/
     if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) > 0 ) /*0x732830*/
     {
       do /*0x732887*/
       {
-        v6 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v4); /*0x73283b*/
+        v6 = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v4); /*0x73283b*/
         result = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
         if ( (unsigned char)result ) /*0x732847*/
         {

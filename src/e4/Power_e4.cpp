@@ -20,8 +20,8 @@ namespace gamemd {
 int Power::Update(int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
-  ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x43a5d9*/
-  return Power::TimerProcess(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - *((unsigned int *)this + 12)); /*0x43a5f0*/
+  ((AbstractClass *)this)->ProcessPower(); /*0x43a5d9*/
+  return Power::TimerProcess(*(unsigned int *)((char *)&stru_A8EB00 + 416) - *((unsigned int *)this + 12)); /*0x43a5f0*/
 
 }
 }
@@ -85,195 +85,195 @@ unsigned int * Power::UpdateAll()
   void *v55; // [esp+C8h] [ebp-4h]
 
   v53 = 0; /*0x67c6f2*/
-  v54 = 0; /*0x67c6fa*/
-  v55 = 0; /*0x67c702*/
-  Power::ComputeHousePowerChecksum( (unsigned int *)((int)dword_A8B230), (void)((unsigned int *)&v53)); /*0x67c70a*/
+  v54 = (void *)(0); /*0x67c6fa*/
+  v55 = (void *)(0); /*0x67c702*/
+  Power::ComputeHousePowerChecksum( (unsigned int *)((int)dword_A8B230),  (unsigned int *)&v53); /*0x67c70a*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x67c718*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C9C + i) + 52))( *((unsigned int *)dword_A83C9C + i), (int *)(&v53)); /*0x67c72a*/
   for ( j = 0; j < ((char *)&stru_A80220); ++j ) /*0x67c740*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)((char *)&stru_A80220) + j) + 52))( /*0x67c752*/
-      *((unsigned int *)((char *)&stru_A80220) + j),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)((char *)&stru_A80220) + j) + 52))( /*0x67c752*/ *((unsigned int *)((char *)&stru_A80220) + j), (int *)(&v53));
+
+
   for ( k = 0; k < dword_A83CF0; ++k ) /*0x67c768*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83CE4 + k) + 52))( *((unsigned int *)dword_A83CE4 + k), (int *)(&v53)); /*0x67c77a*/
   for ( m = 0; m < *((unsigned int *)((char *)&FootClass_Array + 2)); ++m ) /*0x67c790*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(((char *)&FootClass_Array) + 4 * m) + 52))( /*0x67c7a2*/
-      *(unsigned int *)(((char *)&FootClass_Array) + 4 * m),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(((char *)&FootClass_Array) + 4 * m) + 52))( /*0x67c7a2*/ *(unsigned int *)(((char *)&FootClass_Array) + 4 * m), (int *)(&v53));
+
+
   for ( n = 0; n < dword_A8E358; ++n ) /*0x67c7b8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E34C + n) + 52))( *((unsigned int *)dword_A8E34C + n), (int *)(&v53)); /*0x67c7ca*/
   for ( ii = 0; ii < *(int *)&stru_A83D50.__pad_80[40]; ++ii ) /*0x67c7e0*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * ii) + 52))( /*0x67c7f2*/
-      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * ii),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * ii) + 52))( /*0x67c7f2*/ *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * ii), (int *)(&v53));
+
+
   for ( jj = 0; jj < dword_A83C78; ++jj ) /*0x67c808*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C6C + jj) + 52))( /*0x67c81a*/
-      *((unsigned int *)dword_A83C6C + jj),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C6C + jj) + 52))( /*0x67c81a*/ *((unsigned int *)dword_A83C6C + jj), (int *)(&v53));
+
+
   for ( kk = 0; kk < stru_A8EB00.ObjectTypeClass[20]; ++kk ) /*0x67c830*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[17] + 4 * kk) + 52))( /*0x67c842*/
-      *(unsigned int *)(stru_A8EB00.ObjectTypeClass[17] + 4 * kk),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[17] + 4 * kk) + 52))( /*0x67c842*/ *(unsigned int *)(stru_A8EB00.ObjectTypeClass[17] + 4 * kk), (int *)(&v53));
+
+
   for ( mm = 0; mm < dword_A8B228; ++mm ) /*0x67c858*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8B21C + mm) + 52))( /*0x67c86a*/
-      *((unsigned int *)dword_A8B21C + mm),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8B21C + mm) + 52))( /*0x67c86a*/ *((unsigned int *)dword_A8B21C + mm), (int *)(&v53));
+
+
   for ( nn = 0; nn < dword_A8E3A0; ++nn ) /*0x67c880*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E394 + nn) + 52))( /*0x67c892*/
-      *((unsigned int *)dword_A8E394 + nn),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E394 + nn) + 52))( /*0x67c892*/ *((unsigned int *)dword_A8E394 + nn), (int *)(&v53));
+
+
   for ( i1 = 0; i1 < dword_A8B210; ++i1 ) /*0x67c8a8*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8B204 + i1) + 52))( /*0x67c8ba*/
-      *((unsigned int *)dword_A8B204 + i1),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8B204 + i1) + 52))( /*0x67c8ba*/ *((unsigned int *)dword_A8B204 + i1), (int *)(&v53));
+
+
   for ( i2 = 0; i2 < dword_A8E9B8; ++i2 ) /*0x67c8d0*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E9AC + i2) + 52))( /*0x67c8e2*/
-      *((unsigned int *)dword_A8E9AC + i2),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E9AC + i2) + 52))( /*0x67c8e2*/ *((unsigned int *)dword_A8E9AC + i2), (int *)(&v53));
+
+
   for ( i3 = 0; i3 < *((unsigned int *)((char *)&FootClass_Array + 0)); ++i3 ) /*0x67c8f8*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i3) + 52))( /*0x67c90a*/
-      *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i3),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i3) + 52))( /*0x67c90a*/ *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i3), (int *)(&v53));
+
+
   for ( i4 = 0; i4 < dword_A8E8E0; ++i4 ) /*0x67c920*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E8D4 + i4) + 52))( /*0x67c932*/
-      *((unsigned int *)dword_A8E8D4 + i4),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E8D4 + i4) + 52))( /*0x67c932*/ *((unsigned int *)dword_A8E8D4 + i4), (int *)(&v53));
+
+
   for ( i5 = 0; i5 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 204); ++i5 ) /*0x67c948*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5) + 52))( /*0x67c95a*/
-      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5) + 52))( /*0x67c95a*/ *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * i5), (int *)(&v53));
+
+
   for ( i6 = 0; i6 < (int)((char *)&FootClass_Array); ++i6 ) /*0x67c970*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)&((char *)&FootClass_Array)->ObjectClass + i6) + 52))( /*0x67c982*/
-      *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + i6),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)&((char *)&FootClass_Array)->ObjectClass + i6) + 52))( /*0x67c982*/ *((unsigned int *)&((char *)&FootClass_Array)->ObjectClass + i6), (int *)(&v53));
+
+
   for ( i7 = 0; i7 < *(int *)((char *)&FootClass_Array); ++i7 ) /*0x67c998*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7) + 52))( /*0x67c9aa*/
-      *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7) + 52))( /*0x67c9aa*/ *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 5)) + 4 * i7), (int *)(&v53));
+
+
   for ( i8 = 0; i8 < dword_8872C0; ++i8 ) /*0x67c9c0*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_8872B4 + i8) + 52))( /*0x67c9d2*/
-      *((unsigned int *)dword_8872B4 + i8),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_8872B4 + i8) + 52))( /*0x67c9d2*/ *((unsigned int *)dword_8872B4 + i8), (int *)(&v53));
+
+
   for ( i9 = 0; i9 < g_MultiplayerCleanup; ++i9 ) /*0x67c9e8*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B0E784 + i9) + 52))( /*0x67c9fa*/
-      *((unsigned int *)dword_B0E784 + i9),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B0E784 + i9) + 52))( /*0x67c9fa*/ *((unsigned int *)dword_B0E784 + i9), (int *)(&v53));
+
+
   for ( i10 = 0; i10 < g_GameObjectCleanup; ++i10 ) /*0x67ca10*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)g_TagClassCount + i10) + 52))( /*0x67ca22*/
-      *((unsigned int *)g_TagClassCount + i10),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)g_TagClassCount + i10) + 52))( /*0x67ca22*/ *((unsigned int *)g_TagClassCount + i10), (int *)(&v53));
+
+
   for ( i11 = 0; i11 < *(int *)((char *)&FootClass_Array); ++i11 ) /*0x67ca38*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i11) + 52))( /*0x67ca4a*/
-      *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i11),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i11) + 52))( /*0x67ca4a*/ *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i11), (int *)(&v53));
+
+
   for ( i12 = 0; i12 < dword_A8EAF8; ++i12 ) /*0x67ca60*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8EAEC + i12) + 52))( /*0x67ca72*/
-      *((unsigned int *)dword_A8EAEC + i12),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8EAEC + i12) + 52))( /*0x67ca72*/ *((unsigned int *)dword_A8EAEC + i12), (int *)(&v53));
+
+
   for ( i13 = 0; i13 < dword_B0E668; ++i13 ) /*0x67ca88*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B0E65C + i13) + 52))( /*0x67ca9a*/
-      *((unsigned int *)dword_B0E65C + i13),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B0E65C + i13) + 52))( /*0x67ca9a*/ *((unsigned int *)dword_B0E65C + i13), (int *)(&v53));
+
+
   for ( i14 = 0; i14 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)); ++i14 ) /*0x67cab0*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51)) + 4 * i14) + 52))( /*0x67cac2*/
-      *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51)) + 4 * i14),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51)) + 4 * i14) + 52))( /*0x67cac2*/ *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 51)) + 4 * i14), (int *)(&v53));
+
+
   for ( i15 = 0; i15 < *(int *)&stru_A83D50.__pad_C8[40]; ++i15 ) /*0x67cad8*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * i15) + 52))( /*0x67caea*/
-      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * i15),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * i15) + 52))( /*0x67caea*/ *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * i15), (int *)(&v53));
+
+
   for ( i16 = 0; i16 < stru_A8EB00.ObjectTypeClass[14]; ++i16 ) /*0x67cb00*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * i16) + 52))( /*0x67cb12*/
-      *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i16),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * i16) + 52))( /*0x67cb12*/ *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i16), (int *)(&v53));
+
+
   for ( i17 = 0; i17 < *(int *)&stru_88732C.__pad_1C[80]; ++i17 ) /*0x67cb28*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_88732C.__pad_1C[68] + 4 * i17) + 52))( /*0x67cb3a*/
-      *(unsigned int *)(*(unsigned int *)&stru_88732C.__pad_1C[68] + 4 * i17),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_88732C.__pad_1C[68] + 4 * i17) + 52))( /*0x67cb3a*/ *(unsigned int *)(*(unsigned int *)&stru_88732C.__pad_1C[68] + 4 * i17), (int *)(&v53));
+
+
   for ( i18 = 0; i18 < g_WarheadTypePool; ++i18 ) /*0x67cb50*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_8874C4 + i18) + 52))( /*0x67cb62*/
-      *((unsigned int *)dword_8874C4 + i18),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_8874C4 + i18) + 52))( /*0x67cb62*/ *((unsigned int *)dword_8874C4 + i18), (int *)(&v53));
+
+
   for ( i19 = 0; i19 < g_WeaponTypePool; ++i19 ) /*0x67cb78*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)g_WeaponTypeConfig + i19) + 52))( /*0x67cb8a*/
-      *((unsigned int *)g_WeaponTypeConfig + i19),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)g_WeaponTypeConfig + i19) + 52))( /*0x67cb8a*/ *((unsigned int *)g_WeaponTypeConfig + i19), (int *)(&v53));
+
+
   for ( i20 = 0; i20 < *(int *)&stru_A83D50.__pad_3C[28]; ++i20 ) /*0x67cba0*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i20) + 52))( /*0x67cbb2*/
-      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i20),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i20) + 52))( /*0x67cbb2*/ *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i20), (int *)(&v53));
+
+
   for ( i21 = 0; i21 < *(int *)&stru_A83D50.__pad_80[8]; ++i21 ) /*0x67cbc8*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)stru_A83D50.SuperClass_field_0x7C + i21) + 52))( /*0x67cbda*/
-      *((unsigned int *)stru_A83D50.SuperClass_field_0x7C + i21),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)stru_A83D50.SuperClass_field_0x7C + i21) + 52))( /*0x67cbda*/ *((unsigned int *)stru_A83D50.SuperClass_field_0x7C + i21), (int *)(&v53));
+
+
   for ( i22 = 0; i22 < g_GameCleanupState; ++i22 ) /*0x67cbf0*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8020C + i22) + 52))( /*0x67cc02*/
-      *((unsigned int *)dword_A8020C + i22),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8020C + i22) + 52))( /*0x67cc02*/ *((unsigned int *)dword_A8020C + i22), (int *)(&v53));
+
+
   for ( i23 = 0; i23 < (int)stru_A83D50.SuperClass_field_0x28; ++i23 ) /*0x67cc18*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i23) + 52))( /*0x67cc2a*/
-      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i23),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i23) + 52))( /*0x67cc2a*/ *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i23), (int *)(&v53));
+
+
   for ( i24 = 0; i24 < dword_A83C90; ++i24 ) /*0x67cc40*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C84 + i24) + 52))( /*0x67cc52*/
-      *((unsigned int *)dword_A83C84 + i24),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C84 + i24) + 52))( /*0x67cc52*/ *((unsigned int *)dword_A83C84 + i24), (int *)(&v53));
+
+
   for ( i25 = 0; i25 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 364); ++i25 ) /*0x67cc68*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25) + 52))( /*0x67cc7a*/
-      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25) + 52))( /*0x67cc7a*/ *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * i25), (int *)(&v53));
+
+
   for ( i26 = 0; i26 < dword_B72618; ++i26 ) /*0x67cc90*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B7260C + i26) + 52))( /*0x67cca2*/
-      *((unsigned int *)dword_B7260C + i26),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B7260C + i26) + 52))( /*0x67cca2*/ *((unsigned int *)dword_B7260C + i26), (int *)(&v53));
+
+
   for ( i27 = 0; i27 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68); ++i27 ) /*0x67ccb8*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27) + 52))( /*0x67ccca*/
-      *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27) + 52))( /*0x67ccca*/ *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i27), (int *)(&v53));
+
+
   for ( i28 = 0; i28 < *(int *)&stru_A83D50.__pad_3C[4]; ++i28 ) /*0x67cce0*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i28) + 52))( /*0x67ccf2*/
-      *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i28),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i28) + 52))( /*0x67ccf2*/ *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i28), (int *)(&v53));
+
+
   for ( i29 = 0; i29 < g_MissionQueueFrame.random[133]; ++i29 ) /*0x67cd08*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(g_MissionQueueFrame.random[130] + 4 * i29) + 52))( /*0x67cd1a*/
-      *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * i29),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(g_MissionQueueFrame.random[130] + 4 * i29) + 52))( /*0x67cd1a*/ *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * i29), (int *)(&v53));
+
+
   for ( i30 = 0; i30 < *((unsigned int *)((char *)&FootClass_Array + 2)); ++i30 ) /*0x67cd30*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)((char *)&FootClass_Array) + 4 * i30) + 52))( /*0x67cd42*/
-      *(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array) + 4 * i30),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*(unsigned int *)((char *)&FootClass_Array) + 4 * i30) + 52))( /*0x67cd42*/ *(unsigned int *)(*(unsigned int *)((char *)&FootClass_Array) + 4 * i30), (int *)(&v53));
+
+
   for ( i31 = 0; i31 < *((unsigned int *)((char *)&FootClass_Array + 0)); ++i31 ) /*0x67cd58*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i31) + 52))( /*0x67cd6a*/
-      *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i31),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i31) + 52))( /*0x67cd6a*/ *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * i31), (int *)(&v53));
+
+
   for ( i32 = 0; i32 < *((unsigned int *)((char *)&FootClass_Array + 0)); ++i32 ) /*0x67cd80*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i32) + 52))( /*0x67cd92*/
-      *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i32),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i32) + 52))( /*0x67cd92*/ *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * i32), (int *)(&v53));
+
+
   for ( i33 = 0; i33 < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); ++i33 ) /*0x67cda8*/
-    (*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * i33) + 52))( /*0x67cdba*/
-      *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * i33),
-      &v53);
+(*(void (**)(unsigned int, int *))(**(unsigned int **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * i33) + 52))( /*0x67cdba*/ *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * i33), (int *)(&v53));
+
+
   for ( i34 = 0; i34 < dword_8A3880; ++i34 ) /*0x67cdd0*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_8A3874 + i34) + 52))( /*0x67cde2*/
-      *((unsigned int *)dword_8A3874 + i34),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_8A3874 + i34) + 52))( /*0x67cde2*/ *((unsigned int *)dword_8A3874 + i34), (int *)(&v53));
+
+
   for ( i35 = 0; i35 < dword_A8E340; ++i35 ) /*0x67cdf8*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E334 + i35) + 52))( /*0x67ce0a*/
-      *((unsigned int *)dword_A8E334 + i35),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E334 + i35) + 52))( /*0x67ce0a*/ *((unsigned int *)dword_A8E334 + i35), (int *)(&v53));
+
+
   for ( i36 = 0; i36 < dword_A83CC8; ++i36 ) /*0x67ce20*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83CBC + i36) + 52))( /*0x67ce32*/
-      *((unsigned int *)dword_A83CBC + i36),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83CBC + i36) + 52))( /*0x67ce32*/ *((unsigned int *)dword_A83CBC + i36), (int *)(&v53));
+
+
   for ( i37 = 0; i37 < dword_A8E328; ++i37 ) /*0x67ce48*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E31C + i37) + 52))( /*0x67ce5a*/
-      *((unsigned int *)dword_A8E31C + i37),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E31C + i37) + 52))( /*0x67ce5a*/ *((unsigned int *)dword_A8E31C + i37), (int *)(&v53));
+
+
   for ( i38 = 0; i38 < dword_A8E998; ++i38 ) /*0x67ce70*/
-    (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E98C + i38) + 52))( /*0x67ce82*/
-      *((unsigned int *)dword_A8E98C + i38),
-      &v53);
+(*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8E98C + i38) + 52))( /*0x67ce82*/ *((unsigned int *)dword_A8E98C + i38), (int *)(&v53));
+
+
   if ( dword_A83D4C ) /*0x67ce96*/
     Power::TimerProcess((int)dword_A83D4C->Object_field_0x30); /*0x67cea0*/
   Power::TimerProcess(*(int *)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x67ceb0*/
@@ -325,7 +325,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
   Power::TimerProcess(*((unsigned int *)this + 1821)); /*0x68b9c2*/
   Power::TimerProcess(*((unsigned int *)this + 1825)); /*0x68b9d0*/
   Power::TimerProcess(*((unsigned int *)this + 1820)); /*0x68b9de*/
-  ((Checksummer *)(*((unsigned int *)this + 1822)))->Add_double( *((unsigned int *)this + 1823)); /*0x68b9f3*/
+  ((Checksummer *)(*((unsigned int *)this + 1822)))->Add_double((int)((Checksummer *)(*((unsigned int *)this + 1822))), *((unsigned int *)this + 1823)); /*0x68b9f3*/
   LOBYTE(v3) = *((unsigned char *)this + 13500); /*0x68b9f8*/
   ((Power *)((int *)a2))->FlagProcess(v3); /*0x68ba01*/
   LOBYTE(v4) = *((unsigned char *)this + 13485); /*0x68ba06*/

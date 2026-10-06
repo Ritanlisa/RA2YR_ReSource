@@ -60,12 +60,12 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 
   if ( Source ) /*0x5ba985*/
   {
-    memset(v8, 0, sizeof(v8)); /*0x5ba99a*/
+    memset( (void *)(v8), 0, sizeof(v8)); /*0x5ba99a*/
     v9 = 0; /*0x5ba99c*/
     v8[0] = 104; /*0x5ba9a8*/
     strcpy((char *)&v8[1],(const char *)(unk_A8B380)); /*0x5ba9c4*/
     LOBYTE(v8[6]) = dword_A8B394; /*0x5ba9d4*/
-    wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5ba9d8*/
+    wcscpy( (wchar_t *)((char *)&v8[6] + 1), (const wchar_t *)(Source)); /*0x5ba9d8*/
     ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v8, 250, 1); /*0x5ba9f1*/
     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5ba9fb*/
     v3 = (char *)(CharToWideString((unsigned char *)(unk_A8B380))); /*0x5baa05*/
@@ -79,7 +79,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
       else
         v6 = (int (*)(char, char))dword_8316A8[v4]; /*0x5baa32*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5baa54*/
-      DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5baa66*/
+      DrawDialogText( (LPARAM)((LPARAM)((LPARAM)v6)), (wchar_t *)(Buffer), (HWND)(DlgItem)); /*0x5baa66*/
     }
   }
 

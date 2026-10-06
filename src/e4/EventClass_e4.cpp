@@ -98,7 +98,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
     *((unsigned char *)this + 2) = -1; /*0x4c6631*/
     *(unsigned int *)this = 0; /*0x4c6635*/
     *(unsigned int *)&this->u32_3 = dword_A8ED84; /*0x4c663d*/
-    return this; /*0x4c6640*/
+    return (void *)this; /*0x4c6640*/
   }
   else
   {
@@ -107,7 +107,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
     *(unsigned int *)&this->q007 = a4; /*0x4c661c*/
     *((unsigned char *)this + 11) = a5; /*0x4c6620*/
     *(unsigned int *)&this->u32_3 = dword_A8ED84; /*0x4c6629*/
-    return this; /*0x4c661e*/
+    return (void *)this; /*0x4c661e*/
   }
 
 }
@@ -412,7 +412,7 @@ AbstractClass * * EventClass::validateEventType()
   {
     return (gamemd::AbstractClass **)(v1); /*0x664526*/
   }
-  v9 = 0; /*0x6644d4*/
+  v9 = (Network *)(0); /*0x6644d4*/
   v10 = 0; /*0x6644d6*/
   if ( dword_A8DA84 > 0 ) /*0x6644db*/
   {
@@ -428,7 +428,7 @@ AbstractClass * * EventClass::validateEventType()
   }
 LABEL_23:
   ((Network *)(v9))->CopyAddress((unsigned int *)(&v13), (int)v14); /*0x664500*/
-  LaunchMultiplayerHost((bool *)this, v14); /*0x664516*/
+  LaunchMultiplayerHost( (void *)((bool *)this), (void *)(v14)); /*0x664516*/
   return (gamemd::AbstractClass **)(v1); /*0x66451c*/
 
 }

@@ -80,7 +80,7 @@ int TaskForceClass::Construct(char *aP1)
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
   int v5; // ecx
 
-  ((AbstractTypeClass *)((int *)this->__pad_0))->Constructor(aP1); /*0x6e7e8a*/
+  ((AbstractTypeClass *)((int *)this->__pad_0))->Constructor( (char *)(aP1)); /*0x6e7e8a*/
   this->TaskForceClass_field_0x98 = (unsigned int)((AbstractClass *)-1); /*0x6e7e8f*/
   this->TaskForceClass_field_0x9C[0] = 0; /*0x6e7e99*/
   *(unsigned int *)this->__pad_A0 = 0; /*0x6e7ea3*/
@@ -91,10 +91,10 @@ int TaskForceClass::Construct(char *aP1)
   if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/
     || (byte_A8E8DD || !dword_A8E8D8)
     && dword_A8E8E4 > 0
-    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8E8D0 + 8))(
-         &dword_A8E8D0,
-         dword_A8E8D8 + dword_A8E8E4,
-         0) )
+&& (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8E8D0 + 8))( (unsigned int *)(&dword_A8E8D0), dword_A8E8D8 + dword_A8E8E4, 0) )
+
+
+
   {
     v3 = (unsigned int)(dword_A8E8E0++);
     *((unsigned int *)dword_A8E8D4 + v3) = (unsigned int)(this); /*0x6e7f21*/
@@ -129,7 +129,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   int v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
 
-  result = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
+  result = (int)(INIClass::GetKeyCount( a1->__pad_0, (void *)(g_INI_Key_TaskForces)));
   v5 = result; /*0x6e8235*/
   v6 = 0; /*0x6e8237*/
   v12 = result; /*0x6e823b*/
@@ -137,7 +137,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   {
     while ( 1 ) /*0x6e824d*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)(g_INI_Key_TaskForces), v6); /*0x6e824d*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)(g_INI_Key_TaskForces), (void *)(v6)); /*0x6e824d*/
       result = ((INIClass*)(gamemd::INIClass *)(a1))->GetString((unsigned char *)(g_INI_Key_TaskForces), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 24); /*0x6e8266*/
       if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
@@ -160,14 +160,14 @@ LABEL_13:
     }
 LABEL_8: v9 = (gamemd::TaskForceClass *)((unsigned int *)((TaskForceClass *)__2_YAPAXI_Z(0xD4u)));
     if ( v9 ) /*0x6e82e1*/
-      v10 = (unsigned int *)(((TaskForceClass *)(v9))->Construct(Source)); /*0x6e82ef*/
+      v10 = (unsigned int *)(((TaskForceClass *)(v9))->Construct( (char *)(Source))); /*0x6e82ef*/
     else
 LABEL_11:
-      v10 = 0; /*0x6e82fe*/
+      v10 = (unsigned int *)(0); /*0x6e82fe*/
 LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, v11, (int)v10); /*0x6e8310*/
-    result = (*(int (**)(unsigned int *, INIClass *))(*v10 + 100))(v10, (INIClass *)a1); /*0x6e831a*/
+    result = (*(int (**)(unsigned int *, INIClass *))(*v10 + 100))( (unsigned int *)(v10), (INIClass *)a1); /*0x6e831a*/
     v10[40] = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/
     goto LABEL_13; /*0x6e8323*/
@@ -230,7 +230,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   TaskForceClass v8; // [esp+8h] [ebp-A8h] BYREF
 
   ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6e8433*/
-  if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)this))->LoadFromINI(aP1) ) /*0x6e843b*/
+  if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)this))->LoadFromINI( (unsigned __int8 ***)(aP1)) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
   v3 = 0; /*0x6e844a*/
   this->TaskForceClass_field_0x9C[0] = 0; /*0x6e844f*/
@@ -271,7 +271,7 @@ char TaskForceClass::GetUnitType(char * a2)
   char *v5; // eax
   char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
 
-  if ( !((AbstractTypeClass *)((AbstractTypeClass *)this))->WriteINI(a2) ) /*0x6e851c*/
+  if ( !((AbstractTypeClass *)((AbstractTypeClass *)this))->WriteINI( (char *)(a2)) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
   v3 = 0; /*0x6e8527*/
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->TaskForceClass_field_0xA4); /*0x6e8529*/
@@ -285,7 +285,7 @@ char TaskForceClass::GetUnitType(char * a2)
     else
     {
       v5 = (char *)(((TaskForceClass *)((TaskForceClass *)p_TaskForceClass_field_0xA4))->Check()); /*0x6e854e*/
-      ((INIClass *)a2)->SetString( (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
+      ((INIClass *)a2)->SetString( (unsigned __int8 *)((uint8_t *)&this->TaskForceClass_field_0x24), (char *)(Buffer), (char *)(v5)); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
     p_TaskForceClass_field_0xA4 += 2; /*0x6e8577*/
@@ -374,7 +374,7 @@ namespace gamemd {
 int TaskForceClass::LoadTask(int * a2)
 {
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6e8759*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x6e8759*/
   Power::TimerProcess((int)this->TaskForceClass_field_0x98); /*0x6e8767*/
   return Power::TimerProcess(this->TaskForceClass_field_0x9C[0]); /*0x6e877a*/
 

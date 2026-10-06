@@ -53,7 +53,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   int v17; // [esp+18h] [ebp-4h] BYREF
 
   *(unsigned int *)v16 = (unsigned int)(aP0); /*0x4d1684*/
-  v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))((int *)&dword_8B3D10, v16); /*0x4d1688*/
+  v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))( (int *)&dword_8B3D10, (int16_t *)(v16)); /*0x4d1688*/
   if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/
   {
     do /*0x4d16bb*/
@@ -99,7 +99,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   }
   if ( aP0->q030 == 6 ) /*0x4d17d0*/
   {
-    v10 = ((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v17); /*0x4d17dc*/
+    v10 = (unsigned int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v17); /*0x4d17dc*/
     v11 = ((Cell *)(v10))->IsBridge(); /*0x4d17e3*/
     if ( v11 ) /*0x4d17ea*/
     {
@@ -166,15 +166,15 @@ int sub_4D2370()
                         **(unsigned int **)(v3 + 96),
                         0);
       else
-        v4 = 0; /*0x4d23d4*/
-      v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 96))(v3, v12); /*0x4d23e2*/
+        v4 = (unsigned short *)(0); /*0x4d23d4*/
+      v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 96))( v3, (unsigned char *)(v12)); /*0x4d23e2*/
       v11 = v5; /*0x4d23e4*/
       while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x4d23f9*/
       {
         IDA_LOWORD(v9) = v5 + *v4; /*0x4d2408*/
         IDA_HIWORD(v9) = IDA_HIWORD(v5) + v4[1]; /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
-        v6 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
+        v6 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/
         v6[80] |= 0x400000u; /*0x4d2439*/
       }
@@ -258,7 +258,7 @@ int E4Recv_4DB8A0::sub_4DB8A0()
     WinAPI::Wrapper(InstanceCOM); /*0x4db8dd*/
   if ( !ppv ) /*0x4db8e8*/
     WinAPI::Wrapper(-2147467261); /*0x4db8ef*/
-  (*(void (**)(LPVOID, TechnoClass *))(*(unsigned int *)ppv + 12))(ppv, (TechnoClass *)this); /*0x4db8fc*/
+  (*(void (**)(LPVOID, TechnoClass *))(*(unsigned int *)ppv + 12))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (TechnoClass *)this); /*0x4db8fc*/
   v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
@@ -281,7 +281,7 @@ LABEL_13:
     }
     if ( v5 ) /*0x4db970*/
     {
-      (*(void (**)(LPVOID))(*(unsigned int *)v5 + 8))(v5); /*0x4db975*/
+      (*(void (**)(LPVOID))(*(unsigned int *)v5 + 8))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(v5))))); /*0x4db975*/
       result = (int)ppv; /*0x4db978*/
     }
   }
@@ -686,18 +686,18 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
   v2 = 0; /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->vtable1 + 110))((gamemd::ObjectClass *)this, v11); /*0x4d4fd4*/
+    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->vtable1 + 110))( (gamemd::ObjectClass *)this, (char *)(v11)); /*0x4d4fd4*/
     LOWORD(v9) = LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
-    v4 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v10); /*0x4d5010*/
+    v4 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v10)); /*0x4d5010*/
     v5 = ((Cell *)(v4))->IsBridge(); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/
     {
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
-        v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
+        v7 = (*(int (**)(unsigned int *))(*v5 + 60))( (unsigned int *)(v5)); /*0x4d5039*/
         if ( v7 == (*((int (**)(void *))this->vtable1 + 15))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }
@@ -733,11 +733,11 @@ void E4Recv_4DF280::sub_4DF280()
   v2 = this->M1484; /*0x4df286*/
   if ( v2 ) /*0x4df28e*/
   {
-    v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v6); /*0x4df297*/
+    v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v2 + 72))( v2, (unsigned char *)(v6)); /*0x4df297*/
     LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
     HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
-    *(unsigned int *)v4 = v4; /*0x4df2d1*/
-    this->M1480 = (unsigned int)(((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v4)); /*0x4df2da*/
+    *(unsigned int *)v4 = (unsigned int)v4; /*0x4df2d1*/
+    this->M1480 = (unsigned int)(((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(v4))); /*0x4df2da*/
   }
   else
   {

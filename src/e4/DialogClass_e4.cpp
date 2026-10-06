@@ -38,7 +38,7 @@ int DialogClass::Reposition(int hWnd, int a2)
   GetWindowRect((HWND)(hWnd), &Rect); /*0x775bdd*/
   GetClassNameA((HWND)(hWnd), ClassName, 128); /*0x775bea*/
   if ( !strcmp(ClassName,(const char *)(g_INI_Key_ComboBox)) ) /*0x775c01*/
-    SendMessageA((HWND)(hWnd), 0x152u, 0, (LPARAM)&Rect); /*0x775c37*/
+    SendMessageA( (HWND)(hWnd), 0x152u, 0, (LPARAM)((LPARAM)((LPARAM)&Rect))); /*0x775c37*/
   if ( a2 ) /*0x775c46*/
   {
     WindowLongA = (HWND)GetWindowLongA((HWND)(hWnd), -8); /*0x775c4b*/
@@ -91,7 +91,7 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.lpfnWndProc = (WNDPROC)GameScreen::DlgProc; /*0x60d49e*/
     WndClass.cbClsExtra = 0; /*0x60d4a6*/
     WndClass.cbWndExtra = 0; /*0x60d4aa*/
-    memset(&WndClass.hIcon, 0, 12); /*0x60d4ae*/
+    memset( (void *)(&WndClass.hIcon), 0, 12); /*0x60d4ae*/
     WndClass.lpszMenuName = aCombodropwin; /*0x60d4ba*/
     WndClass.lpszClassName = aCombodropwin; /*0x60d4be*/
     RegisterClassA(&WndClass); /*0x60d4c2*/
@@ -100,7 +100,7 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.cbClsExtra = 0; /*0x60d4ec*/
     WndClass.cbWndExtra = 0; /*0x60d4f0*/
     WndClass.hInstance = g_hInstance; /*0x60d4f4*/
-    memset(&WndClass.hIcon, 0, 16); /*0x60d4f8*/
+    memset( (void *)(&WndClass.hIcon), 0, 16); /*0x60d4f8*/
     WndClass.lpszClassName = g_INI_Key_NewEdit; /*0x60d508*/
     LOWORD(result) = RegisterClassA(&WndClass); /*0x60d510*/
   }

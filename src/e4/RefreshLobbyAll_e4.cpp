@@ -152,7 +152,7 @@ void sub_7A0E50()
     if ( !v1 || !IsKnownPointer(v1) ) /*0x7a0e5d*/
       ((unsigned int *)(dword_B76440))[i] = -1; /*0x7a0e66*/
     v2 = ToWideStringChar((IUnknown *)(*(char **)((char *)&dword_A8DA90 + i * 4))); /*0x7a0e76*/
-    SetGameOptionsPing(v2, ((unsigned int *)(dword_B76440))[i]); /*0x7a0e83*/
+    SetGameOptionsPing( (const char *)(v2), ((unsigned int *)(dword_B76440))[i]); /*0x7a0e83*/
   }
 }
 } // namespace gamemd

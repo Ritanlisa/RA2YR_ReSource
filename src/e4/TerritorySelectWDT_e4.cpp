@@ -55,7 +55,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   if ( !dword_B72770 ) /*0x7665e4*/
     InitWDTGameOptions(); /*0x7665e6*/
   v3 = 6; /*0x7665ef*/
-  unknown_libname_74(&v11); /*0x7665f4*/
+  unknown_libname_74( (void *)(&v11)); /*0x7665f4*/
   v17 = (int *)(&stru_B72760); /*0x7665f9*/
   v18 = 0; /*0x766601*/
   v16 = (void **)(&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr); /*0x766605*/
@@ -70,14 +70,14 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766654*/
     {
       v5 = v12 + 8; /*0x76665c*/
-      if ( !(*(int (**)(unsigned int *, char *))(*v15 + 12))(v15, v12 + 8) ) /*0x766660*/
+      if ( !(*(int (**)(unsigned int *, char *))(*v15 + 12))( (unsigned int *)(v15), v12 + 8) ) /*0x766660*/
       {
-        v6 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x766678*/
-                                 v15,
-                                 &v13,
-                                 v5,
-                                 &v11);
-        ((WideString *)(&v11))->Reassign_Alt(v6); /*0x766680*/
+v6 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x766678*/ v15, (void **)(&v13), (char *)(v5), (void **)(&v11));
+
+
+
+
+        ((WideString *)(&v11))->Reassign_Alt( (const wchar_t **)(v6)); /*0x766680*/
         ((DeleteAndZero*)&v13)->Alt(); /*0x766689*/
         --v3; /*0x766692*/
         (unsigned int)(v2)|= v15[2]; /*0x766693*/
@@ -100,14 +100,14 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766708*/
     {
       v8 = v12 + 8; /*0x766710*/
-      if ( (*(int (**)(unsigned int *, char *))(*v15 + 12))(v15, v12 + 8) != 2 ) /*0x76671a*/
+      if ( (*(int (**)(unsigned int *, char *))(*v15 + 12))( (unsigned int *)(v15), v12 + 8) != 2 ) /*0x76671a*/
       {
-        v9 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x76672d*/
-                                 v15,
-                                 &v13,
-                                 v8,
-                                 &v11);
-        ((WideString *)(&v11))->Reassign_Alt(v9); /*0x766735*/
+v9 = (const wchar_t **)(*(int (**)(unsigned int *, void **, char *, void **))(*v15 + 16))( /*0x76672d*/ v15, (void **)(&v13), (char *)(v8), (void **)(&v11));
+
+
+
+
+        ((WideString *)(&v11))->Reassign_Alt( (const wchar_t **)(v9)); /*0x766735*/
         ((DeleteAndZero*)&v13)->Alt(); /*0x76673e*/
         --v3; /*0x766747*/
         (unsigned int)(v2)|= v15[2]; /*0x766748*/
@@ -164,7 +164,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
   }
   if ( !(&this->targetLaserTimer)[0] ) /*0x77150d*/
     LOBYTE(this->currentBurstIndex) = 1; /*0x771517*/
-  unknown_libname_73(&v17); /*0x771522*/
+  unknown_libname_73( (void *)(&v17)); /*0x771522*/
   vtable0 = (int)(this->vtable1); /*0x77152b*/
   ((DeleteAndZero*)&v17)->Alt2(); /*0x77153b*/
   v12 = (&this->primaryFacing)[6 * a2 + 1]; /*0x771540*/
@@ -196,7 +196,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
         ++(&this->targetLaserTimer)[0]; /*0x771601*/
     }
   }
-  j_DeleteAndZero((ObjectClass *)&v17); /*0x77160b*/
+  j_DeleteAndZero( (void *)((ObjectClass *)&v17)); /*0x77160b*/
 
 }
 }

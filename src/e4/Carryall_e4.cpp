@@ -79,16 +79,16 @@ LABEL_4:
         goto LABEL_18; /*0x416df7*/
       if ( (v6[20] & 1) != 0 ) /*0x416e0e*/
       {
-        v7 = (Object *)(*(int (**)(unsigned char *))(*(unsigned int *)v6 + 60))(v6); /*0x416e15*/
+        v7 = (Object *)(*(int (**)(unsigned char *))(*(unsigned int *)v6 + 60))( (unsigned char *)(v6)); /*0x416e15*/
         if ( !(uint8_t)((Object *)(v7))->IsAlliedWithObjectHouse((int)this) ) /*0x416e1a*/
           goto LABEL_18; /*0x416e1a*/
       }
-      if ( (*(int (**)(unsigned char *))(*(unsigned int *)v6 + 44))(v6) != 1 ) /*0x416e31*/
+      if ( (*(int (**)(unsigned char *))(*(unsigned int *)v6 + 44))( (unsigned char *)(v6)) != 1 ) /*0x416e31*/
         goto LABEL_18; /*0x416e31*/
       Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ - target != NULL\n"); /*0x416e3c G57c1: IDA 0x416e3c push offset aDoMissionMoveC_2*/
       if ( (unsigned char *)((Team *)((Team *)this))->GetMember(0) != v6 ) /*0x416e4f*/
         (*(void (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 3); /*0x416e57*/
-      if ( (*(int (**)(Carryall *, int, unsigned char *))(this->Carryall_field_00 + 632))(this, 2, v6) != 1 ) /*0x416e6d*/
+      if ( (*(int (**)(Carryall *, int, unsigned char *))(this->Carryall_field_00 + 632))( this, 2, (unsigned char *)(v6)) != 1 ) /*0x416e6d*/
       {
         (*(void (**)(Carryall *, unsigned int, int))(this->Carryall_field_00 + 1152))(this, 0, 1); /*0x416f1e*/
         goto LABEL_4; /*0x416f24*/
@@ -100,10 +100,10 @@ LABEL_4:
 LABEL_18:
         Carryall_field_00 = (int)(this->Carryall_field_00); /*0x416ec9*/
         NearbyCell = ((InfantryClass *)((InfantryClass *)this))->FindNearbyCell(*((unsigned int *)this + 361)); /*0x416ed6*/
-        (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))(this, NearbyCell, 1); /*0x416ede*/
+        (*(void (**)(Carryall *, void *, int))(Carryall_field_00 + 1152))( this, (void *)(NearbyCell), 1); /*0x416ede*/
         v10 = *((unsigned int *)this + 373); /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
-          TeamClass::SelectMember( (gamemd::AbstractClass *)(v10), (void)((void *)(*((unsigned int *)this + 361)))); /*0x416ef5*/
+          TeamClass::SelectMember( (gamemd::AbstractClass *)(v10),  (void *)(*((unsigned int *)this + 361))); /*0x416ef5*/
         *((unsigned int *)this + 47) = 1; /*0x416eff*/
         Debug::Log("Do_MISSION_MOVE_Carryall - VALIDATE_LZ - Status = TAKE_OFF\n"); /*0x416f09 G57c1: IDA 0x416f09 push offset aDoMissionMoveC_5*/
       }
@@ -120,7 +120,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClas
       v11 = *((unsigned int *)this + 361); /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
-        v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v11->q_120))(v11, v29);  /*0x416f54*/
+        v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v11->q_120))( v11, (unsigned char *)(v29));  /*0x416f54*/
         if ( !*((unsigned int *)this + 413) ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
         (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(**((unsigned int **)this + 413) + 68))( /*0x416f89*/
@@ -221,14 +221,14 @@ LABEL_44:
         v28[1] = *((unsigned int *)this + 40); /*0x41720c*/
         v28[2] = v22; /*0x417216*/
         v26 = BYTE1(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v27)->flags[0]) & 1; /*0x41722f*/
-        v23 = (unsigned char *)((gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v28))); /*0x417236*/
+        v23 = (CellClass *)((unsigned char *)((gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v28)))); /*0x417236*/
         Building = (unsigned char *)(((CellClass *)(v23))->FindBuilding(v26)); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (unsigned char *)((Team *)((Team *)this))->GetMember(0)
           && (Debug::Log("Do_MISSION_MOVE_Carryall - LAND - Got Cell_Unit\n") /*G57c1: IDA 0x417259 push offset aDoMissionMoveC_12*/, (*(int (**)(Carryall *, int))(this->Carryall_field_00 + 628))(this, 19) == 1) )
         {
           Debug::Log("Do_MISSION_MOVE_Carryall - LAND - RADIO_NEED_TO_MOVE got RADIO_ROGER\n"); /*0x417277 G57c1: IDA 0x417277 push offset aDoMissionMoveC_13*/
-          (*(void (**)(unsigned char *))(*(unsigned int *)Building + 212))(Building); /*0x417283*/
+          (*(void (**)(unsigned char *))(*(unsigned int *)Building + 212))( (unsigned char *)(Building)); /*0x417283*/
           Building[140] = 0; /*0x417290*/
           Building[1060] = 1; /*0x417297*/
           ((CellClass *)((CellClass *)((unsigned int *)this + 69)))->AddObject((unsigned int *)(Building)); /*0x41729e*/

@@ -67,7 +67,7 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
 LABEL_23:
     if ( v6 > 0 ) /*0x4a2dd4*/
     {
-      memcpy((void *)a1->CStreamClass_field_0x18, v4, v6); /*0x4a2ddc*/
+      memcpy( (void *)a1->CStreamClass_field_0x18, (const void *)(v4), v6); /*0x4a2ddc*/
       v5 = Size; /*0x4a2de1*/
       a1->CStreamClass_field_0x14 = v6; /*0x4a2de8*/
     }

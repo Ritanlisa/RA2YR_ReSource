@@ -348,11 +348,11 @@ char DynamicVector::GrowCapacity()
   if ( 2 * v2 < 10 ) /*0x62482b*/
     v4 = 10; /*0x62482d*/
   v5 = (void *)__2_YAPAXI_Z(24 * v4); /*0x62483f*/
-  memset(v5, 0, 4 * ((unsigned int)(24 * v4) >> 2)); /*0x62484a*/
+  memset( (void *)(v5), 0, 4 * ((unsigned int)(24 * v4) >> 2)); /*0x62484a*/
   v7 = (int)v5; /*0x624854*/
   DynamicVector_field_0x8 = (const void *)this->DynamicVector_field_0x8; /*0x62485a*/
   if ( DynamicVector_field_0x8 ) /*0x62485f*/
-    qmemcpy(v5, DynamicVector_field_0x8, 24 * *(unsigned int *)this->__pad_0); /*0x624870*/
+    qmemcpy( (void *)(v5), (const void *)(DynamicVector_field_0x8), 24 * *(unsigned int *)this->__pad_0); /*0x624870*/
   __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8); /*0x62487d*/
   *(unsigned int *)&(&this->DynamicVector_field_0x1)[3] = v4; /*0x624889*/
   this->DynamicVector_field_0x8 = v7; /*0x62488c*/
@@ -627,10 +627,10 @@ char DynamicVector::EnsureCapacity()
       v3 = 10; /*0x7af029*/
     }
     v4 = (void *)__2_YAPAXI_Z(4 * v3); /*0x7af03c*/
-    memset(v4, 0, 4 * ((unsigned int)(4 * v3) >> 2)); /*0x7af04a*/
+    memset( (void *)(v4), 0, 4 * ((unsigned int)(4 * v3) >> 2)); /*0x7af04a*/
     if ( this->DynamicVector_field_0x8 ) /*0x7af053*/
     {
-      qmemcpy(v4, (const void *)this->DynamicVector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7af068*/
+      qmemcpy( (void *)(v4), (const void *)this->DynamicVector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7af068*/
       v3 = v5; /*0x7af071*/
     }
     __3_YAXPAX_Z((void *)this->DynamicVector_field_0x8); /*0x7af079*/

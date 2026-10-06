@@ -32,7 +32,7 @@ void * E4Recv_779690::LoadAccountInfoWOL_Load(void* aP1, ObjectClass * aP2, void
   ((WideString *)((wchar_t **)this + 15))->AssignFromPtr((const wchar_t **)(aP14)); /*0x779703*/
   ((WideString *)((wchar_t **)this + 16))->AssignFromPtr((const wchar_t **)(aP13)); /*0x779710*/
   *(unsigned int *)this = (unsigned int)((ReferenceCounted)&vt_PlayerProfile); /*0x779715*/
-  return this; /*0x77971d*/
+  return (void *)this; /*0x77971d*/
 
 }
 } // namespace gamemd

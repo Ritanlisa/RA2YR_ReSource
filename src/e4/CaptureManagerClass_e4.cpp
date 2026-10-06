@@ -290,26 +290,26 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
   if ( !a3 ) /*0x471d4f*/
     return 0; /*0x471d54*/
   v5 = (*(unsigned char *)((unsigned int)(a3)+ 20) & 1) != 0 ? (unsigned int *)a3 : 0;
-  result = (char)(((CaptureManagerClass *)(a1))->CanCapture(v5));
+  result = (char)(((CaptureManagerClass *)(a1))->CanCapture( (unsigned int *)(v5)));
   if ( result )
   {
     if ( *(unsigned int *)((unsigned int)(a1)+ 60) == 1 ) /*0x471d85*/
     {
       for ( i = *(unsigned int *)((unsigned int)(a1)+ 52) - 1; i >= 0; --i ) /*0x471d8b*/
-        ((CaptureManagerClass *)(IUnknown *)(**(CaptureManagerClass ***)(*(unsigned int *)(a1 + 40) + 4 * i)))->FreeUnit( a1, a2, v29, v30, v31); /*0x471d98*/
+        ((CaptureManagerClass *)(IUnknown *)(**(CaptureManagerClass ***)(*(unsigned int *)(a1 + 40) + 4 * i)))->FreeUnit( a1, a2, (unsigned int *)(v29), v30, (unsigned int *)(v31)); /*0x471d98*/
     }
-    v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x471da4*/
+    v7 = (*(int (**)(unsigned int *))(*v5 + 60))( (unsigned int *)(v5)); /*0x471da4*/
     v8 = *v5; /*0x471daa*/
     v9 = v7; /*0x471dac*/
     v10 = (*(int (**)(unsigned int, int))(**(unsigned int **)((unsigned int)(a1)+ 72) + 60))(*(unsigned int *)((unsigned int)(a1)+ 72), 1); /*0x471db2*/
-    result = (*(int (**)(unsigned int *, int))(v8 + 980))(v5, v10); /*0x471db8*/
+    result = (*(int (**)(unsigned int *, int))(v8 + 980))( (unsigned int *)(v5), v10); /*0x471db8*/
     if ( result )
     {
       v11 = (int)(__2_YAPAXI_Z(0x14u)); /*0x471dce*/
-      v12 = 0; /*0x471dd3*/
+      v12 = (unsigned int *)(0); /*0x471dd3*/
       if ( v11 ) /*0x471dda*/
       {
-        v13 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471ddc*/
+        v13 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471ddc*/
         *(unsigned int *)(v11 + 16) = 0; /*0x471de2*/
         *(unsigned int *)(v11 + 8) = v13; /*0x471de5*/
         v12 = (unsigned int *, unsigned int a1)v11; /*0x471de8*/
@@ -330,17 +330,17 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       v18 = v12 + 2; /*0x471e31*/
       v5[176] = *(unsigned int *)((unsigned int)(a1)+ 72); /*0x471e34*/
       v19 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 784); /*0x471e45*/
-      *v18 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471e4b*/
+      *v18 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471e4b*/
       v18[1] = v33; /*0x471e52*/
       v18[2] = v19; /*0x471e57*/
       if ( !v5
-        || (*(int (**)(unsigned int *))(*v5 + 44))(v5) != 1
-        || !*(unsigned char *)(*((*(int (**)(unsigned int *))(*v5 + 44))(v5) == 1 ? v5 + 433 : (unsigned int *)1732) + 3603)
+        || (*(int (**)(unsigned int *))(*v5 + 44))( (unsigned int *)(v5)) != 1
+        || !*(unsigned char *)(*((*(int (**)(unsigned int *))(*v5 + 44))( (unsigned int *)(v5)) == 1 ? v5 + 433 : (unsigned int *)1732) + 3603)
         || v5[43] != 16 )
       {
         v20 = v5[43]; /*0x471e91*/
         if ( v20 != 19 && v20 != 18 ) /*0x471e9f*/
-          (*(void (**)(unsigned int *))(*v5 + 976))(v5); /*0x471ea5*/
+          (*(void (**)(unsigned int *))(*v5 + 976))( (unsigned int *)(v5)); /*0x471ea5*/
       }
       ((CaptureManagerClass *)((CaptureManagerClass *)a1))->DecideUnitFate((int)v5); /*0x471eae*/
       if ( (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
@@ -350,10 +350,10 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       }
       else
       {
-        v21 = 0; /*0x471eea*/
-        v22 = *(unsigned int *)((*(int (**)(unsigned int *))(*v5 + 132))(v5) + 1548); /*0x471ef2*/
+        v21 = (void *)(0); /*0x471eea*/
+        v22 = *(unsigned int *)((*(int (**)(unsigned int *))(*v5 + 132))( (unsigned int *)(v5)) + 1548); /*0x471ef2*/
       }
-      v23 = (int *)(*(int (**)(unsigned int *, int *))(*v5 + 72))(v5, v35); /*0x471ee1*/
+      v23 = (int *)(*(int (**)(unsigned int *, int *))(*v5 + 72))( (unsigned int *)(v5), (int *)(v35)); /*0x471ee1*/
       v24 = *v23; /*0x471f04*/
       v25 = v23[1]; /*0x471f06*/
       v26 = v22 + v23[2]; /*0x471f11*/
@@ -365,7 +365,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
         v28 = (BuildingClass *)((AnimClass*)/*0x471f4c*/
                                  v27)->ctor(/*0x471f4c*/ *(void **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 800), &v32, 0, 1, (void *)0x600, 0, 0);
       else
-        v28 = 0; /*0x471f53*/
+        v28 = (BuildingClass *)(0); /*0x471f53*/
       v5[178] = (unsigned int)(v28); /*0x471f57*/
       if ( v28 ) /*0x471f5d*/
       {
@@ -417,7 +417,7 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
         (*(void (**)(int))(*(unsigned int *)v11 + 248))(v11); /*0x472034*/
         *((unsigned int *)aP0 + 178) = 0; /*0x47203a*/
       }
-      if ( *(unsigned int *)((*((int (**)(CaptureManagerClass *, int, int))aP0->vtable1 + 33))(aP0, a3, a2) /*0x472059*/
+      if ( *(unsigned int *)((*((int (**)(CaptureManagerClass *, int, int))aP0->vtable1 + 33))( (CaptureManagerClass *)(aP0), a3, a2) /*0x472059*/
                      + 1456) == -1 )
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 612) != -1 ) /*0x4720a3*/
@@ -434,12 +434,12 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
         v20[1] = *((unsigned int *)aP0 + 40); /*0x472072*/
         v20[2] = *((unsigned int *)aP0 + 41); /*0x472079*/
         v13 = vtable0[33]((gamemd::CaptureManagerClass *)aP0); /*0x47207f*/
-        StartAudioControllerAt(*(unsigned int *)(v13 + 1456), v20, 0); /*0x47208d*/
+        StartAudioControllerAt( *(unsigned int *)(v13 + 1456), (unsigned int *)(v20), 0); /*0x47208d*/
         v10 = _34; /*0x472092*/
       }
       a2 =(int)(IUnknown *)(1); /*0x4720d5*/
       a3 = *(unsigned int *)(v10 + 4); /*0x4720d7*/
-      (*((void (**)(CaptureManagerClass *))aP0->vtable1 + 245))(aP0); /*0x4720da*/
+      (*((void (**)(CaptureManagerClass *))aP0->vtable1 + 245))( (CaptureManagerClass *)(aP0)); /*0x4720da*/
       ((CaptureManagerClass *)(v7))->DecideUnitFate((int)aP0); /*0x4720e3*/
       *((unsigned int *)aP0 + 176) = 0; /*0x4720e8*/
       controlNodeCount = v7->controlNodeCount; /*0x4720f2*/
@@ -508,7 +508,7 @@ int CaptureManagerClass::DrawLinks(int a1, ...)
       v9 = v6[2]; /*0x47219b*/
       if ( v9 == -1 ) /*0x4721a1*/
         goto LABEL_5; /*0x4721a1*/
-      if ( *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v9 < v8 ) /*0x4721ad*/
+      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v9 < v8 ) /*0x4721ad*/
         break; /*0x4721ad*/
 LABEL_7:
       if ( *(unsigned char *)(v7 + 131) ) /*0x4721b7*/
@@ -523,13 +523,13 @@ LABEL_7:
           {
             v10 = *(unsigned int *)(v7 + 156); /*0x4721ec*/
             v11 = *(unsigned int *)(v7 + 164); /*0x4721f9*/
-            v12 = (*(int (**)(int, int, int, void *, int, int))(*(unsigned int *)v7 + 132))( /*0x4721fe*/
-                    v7,
-                    v16,
-                    v17,
-                    v18,
-                    v19,
-                    v20);
+v12 = (*(int (**)(int, int, int, void *, int, int))(*(unsigned int *)v7 + 132))( /*0x4721fe*/ v7, v16, v17, (void *)(v18), v19, v20);
+
+
+
+
+
+
             v13 = *(unsigned int **)(v2 + 72); /*0x47220c*/
             HIBYTE(v20) = HIBYTE(v13); /*0x47220f*/
             LOWORD(v20) = *(unsigned short *)(v13[135] + 22265); /*0x472223*/
@@ -539,7 +539,7 @@ LABEL_7:
             v18 = retaddr; /*0x472240*/
             v19 = *(unsigned int *)(v12 + 988) + v11; /*0x472245*/
             v16 = 0; /*0x472251*/
-            v14 = (int *)(*(int (**)(unsigned int *))(*v13 + 176))(v13); /*0x472264*/
+            v14 = (int *)(*(int (**)(unsigned int *))(*v13 + 176))( (unsigned int *)(v13)); /*0x472264*/
             LOBYTE(v3) = (unsigned char)(DrawTacticalLaserLine(*v14,(void *)(v14[1]),(void *)(v14[2]),(void *)((int)va),(void *)(-1 - v21 % 5), 0, 0)); /*0x472282*/
           }
         }
@@ -547,7 +547,7 @@ LABEL_7:
       if ( --v4 < 0 ) /*0x47228c*/
         return v3; /*0x47228c*/
     }
-    v8 -= *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416) - v9; /*0x4721af*/
+    v8 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v9; /*0x4721af*/
 LABEL_5:
     if ( v8 > 0 ) /*0x4721b3*/
       v5 = 1; /*0x4721b5*/
@@ -603,7 +603,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
   {
     v5 = *(int **)(aP1 + 1492); /*0x4723d1*/
     if ( v5 ) /*0x4723d9*/
-      ((TeamClass *)(v5))->LiberateMember_Start(aP1, 0xFFFFFFFF, 0); /*0x4723df*/
+      ((TeamClass *)(v5))->LiberateMember_Start( (void *)(aP1), 0xFFFFFFFF, 0); /*0x4723df*/
   }
   v6 = *(FactoryClass **)(aP1 + 628); /*0x4723e4*/
   if ( v6 && (&v6->production)[1] ) /*0x4723ee*/
@@ -720,7 +720,7 @@ LABEL_34:
   {
     ++v24; /*0x47251e*/
     v23 = v3++; /*0x472524*/
-    v14 = (*(int (**)(unsigned int *, int))(*v9 + 24))(v9, v23); /*0x472526*/
+    v14 = (*(int (**)(unsigned int *, int))(*v9 + 24))( (unsigned int *)(v9), v23); /*0x472526*/
     v15 = v13 <= v14 + v27; /*0x47252f*/
     v27 += v14; /*0x472531*/
     if ( v15 ) /*0x472535*/
@@ -816,31 +816,31 @@ TechnoClass * * CaptureManagerClass::LoadFromStream(int a1, int * a2)
   int v19; // [esp+44h] [ebp-8h]
 
   v2 = a2; /*0x472724*/
-  v3 = a1; /*0x472729*/
-  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(a1), (int)a2); /*0x472731*/
-  v5 = 0; /*0x472736*/
+  v3 = (CaptureManagerClass *)(a1); /*0x472729*/
+  result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(a1), (AbstractClass *)((int)a2)); /*0x472731*/
+  v5 = (unsigned int *)(0); /*0x472736*/
   if ( result >= 0 ) /*0x47273a*/
   {
     if ( v3 ) /*0x472742*/
     {
-      ((AbstractClass *)(AbstractClass *)v3)->InitVtables( (int)&a2); /*0x47274b*/
-      ((CaptureManagerClass *)(CaptureManagerClass *)v3->controlNodes)->Constructor_473140( 0, 0); /*0x472757*/
+      ((AbstractClass *)v3)->InitVtables( (int)&a2); /*0x47274b*/
+      ((CaptureManagerClass *)v3->controlNodes)->Constructor_473140( 0, 0); /*0x472757*/
       v3->controlNodes[0] = (int)&vt_DynamicVectorClass; /*0x47275c*/
       *(unsigned int *)&v3->CaptureManagerClass_field_30 = 10; /*0x472762*/
       v3->originalOwner = 0; /*0x472769*/
       v3->vtable1 = &vt_CaptureManagerClass; /*0x47276c*/
-      ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x472773*/
-      ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x47277a*/
-      ((unsigned int *)v3)[0] = &vt_CaptureManagerClass; /*0x472781*/
+      ((unsigned int *)v3)[0] = (unsigned int)&vt_CaptureManagerClass; /*0x472773*/
+      ((unsigned int *)v3)[0] = (unsigned int)&vt_CaptureManagerClass; /*0x47277a*/
+      ((unsigned int *)v3)[0] = (unsigned int)&vt_CaptureManagerClass; /*0x472781*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v3->overloadCount); /*0x472791*/
     v6 = *v2; /*0x472796*/
     a1 = 0; /*0x4727a1*/
-    result = (*(int (**)(int *, CaptureManagerClass **, int, unsigned int))(v6 + 12))( v2, (CaptureManagerClass **)(&a1), 4, 0); /*0x4727a5*/
+    result = (*(int (**)(int *, CaptureManagerClass **, int, unsigned int))(v6 + 12))( (int *)(v2), (CaptureManagerClass **)(&a1), 4, 0); /*0x4727a5*/
     v18 = result; /*0x4727aa*/
     if ( result >= 0 ) /*0x4727ae*/
     {
-      v7 = a1; /*0x4727b4*/
+      v7 = (CaptureManagerClass *)(a1); /*0x4727b4*/
       v17 = 0; /*0x4727b8*/
       if ( (int)a1 <= 0 ) /*0x4727be*/
       {
@@ -874,12 +874,12 @@ LABEL_19:
             v5 = (unsigned int *)v8; /*0x4727e2*/
           }
           v10 = *v2; /*0x4727e4*/
-          a2 = 0; /*0x4727f1*/
+          a2 = (int *)(0); /*0x4727f1*/
           v16 = 0; /*0x4727f5*/
-          result = (*(int (**)(int *, int **, int, unsigned int))(v10 + 12))( v2, (int **)(&a2), 4, 0); /*0x4727f9*/
+          result = (*(int (**)(int *, int **, int, unsigned int))(v10 + 12))( (int *)(v2), (int **)(&a2), 4, 0); /*0x4727f9*/
           if ( result < 0 ) /*0x4727fe*/
             break; /*0x4727fe*/
-          result = (*(int (**)(int *, int *, int, unsigned int))(*v2 + 12))( v2, (int *)(&v16), 4, 0); /*0x47280f*/
+          result = (*(int (**)(int *, int *, int, unsigned int))(*v2 + 12))( (int *)(v2), (int *)(&v16), 4, 0); /*0x47280f*/
           v18 = result; /*0x472814*/
           if ( result < 0 ) /*0x472818*/
             break; /*0x472818*/
@@ -892,20 +892,20 @@ LABEL_19:
           if ( (int)v3->originalOwner < controlNodeCapacity /*0x472867*/
             || (BYTE1(v3->owner) || !controlNodeCapacity)
             && (v12 = *(unsigned int *)&v3->CaptureManagerClass_field_30, v12 > 0)
-            && (*(uint8_t (**)(int *, int, unsigned int))(v3->controlNodes[0] + 8))(
-                 v3->controlNodes,
-                 controlNodeCapacity + v12,
-                 0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(v3->controlNodes[0] + 8))( (int *)(v3->controlNodes), controlNodeCapacity + v12, 0) )
+
+
+
           {
             originalOwner = v3->originalOwner; /*0x47286e*/
             controlNodeCount = v3->controlNodeCount; /*0x472871*/
             v3->originalOwner = (HouseClass *)((char *)originalOwner + 1); /*0x472877*/
-            *(unsigned int *)(controlNodeCount + 4 * (unsigned int)originalOwner) = v5; /*0x47287a*/
+            *(unsigned int *)(controlNodeCount + 4 * (unsigned int)originalOwner) = (unsigned int)v5; /*0x47287a*/
           }
-          v7 = a1; /*0x472881*/
+          v7 = (CaptureManagerClass *)(a1); /*0x472881*/
           if ( ++v17 >= (int)a1 ) /*0x47288c*/
             goto LABEL_19; /*0x47288c*/
-          v5 = 0; /*0x4727c6*/
+          v5 = (unsigned int *)(0); /*0x4727c6*/
         }
       }
     }
@@ -1009,7 +1009,7 @@ int CaptureManagerClass::PowerDrainUpdate(int a2)
   int overloadCount; // esi
   int v5; // eax
 
-  result = ((AbstractClass *)(AbstractClass *)this)->ProcessPower(); /*0x4726f9*/
+  result = ((AbstractClass *)this)->ProcessPower(); /*0x4726f9*/
   overloadCount = this->overloadCount; /*0x4726fe*/
   if ( overloadCount ) /*0x472703*/
   {
@@ -1067,9 +1067,9 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   CaptureManagerClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   this->vtable1 = &vt_CaptureManagerClass; /*0x4729cd*/
-  ((unsigned int *)this)[0] = &vt_CaptureManagerClass; /*0x4729d3*/
-  ((unsigned int *)this)[0] = &vt_CaptureManagerClass; /*0x4729da*/
-  ((unsigned int *)this)[0] = &vt_CaptureManagerClass; /*0x4729e1*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_CaptureManagerClass; /*0x4729d3*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_CaptureManagerClass; /*0x4729da*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_CaptureManagerClass; /*0x4729e1*/
   v6 = this; /*0x4729ef*/
   v3 = (*(int (**)(int *, CaptureManagerClass **))(dword_89E0F0 + 16))( (int *)(&dword_89E0F0), (CaptureManagerClass **)(&v6)); /*0x4729f3*/
   if ( v3 != -1 && v3 < dword_89E100 && v3 < --dword_89E100 ) /*0x472a0e*/
@@ -1093,7 +1093,7 @@ CaptureManagerClass * CaptureManagerClass::ddtor(unsigned int * Block, char a2)
   ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
     __3_YAXPAX_Z(this); /*0x472a67*/
-  return this; /*0x472a71*/
+  return (CaptureManagerClass *)this; /*0x472a71*/
 
 }
 } // namespace gamemd
@@ -1174,7 +1174,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
           *(unsigned int *)&this->m_1[3] = 0; /*0x472bfe*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x472c07*/
+      *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x472c07*/
       this->m_8 = a2; /*0x472c0f*/
       BYTE1(this->m_C) = a3 == 0; /*0x472c12*/
       return 1; /*0x472c18*/
@@ -1280,7 +1280,7 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
         *(unsigned int *)&this->m_1[3] = 0; /*0x472d31*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x472d3a*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x472d3a*/
     this->m_8 = a2; /*0x472d42*/
     BYTE1(this->m_C) = a3 == 0; /*0x472d45*/
   }
@@ -1348,7 +1348,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 {
 
   ((unsigned int *)this)[0] = 0; /*0x47314b*/
-  ((unsigned int *)this)[0] = (void *)a2; /*0x47314e*/
+  ((unsigned int *)this)[0] = (unsigned int)(void *)a2; /*0x47314e*/
   LOBYTE(((unsigned int *)this)[0]) = 1; /*0x473151*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x473155*/
   this->vtable1 = &vt_VectorClass; /*0x473158*/
@@ -1356,13 +1356,13 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
   {
     if ( a3 ) /*0x473166*/
     {
-      ((unsigned int *)this)[0] = (void *)a3; /*0x473168*/
-      return this; /*0x47316e*/
+      ((unsigned int *)this)[0] = (unsigned int)(void *)a3; /*0x473168*/
+      return (unsigned int *)this; /*0x47316e*/
     }
-    ((unsigned int *)this)[0] = (void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
+    ((unsigned int *)this)[0] = (unsigned int)(void *)__2_YAPAXI_Z(4 * a2); /*0x47317d*/
     BYTE1(((unsigned int *)this)[0]) = 1; /*0x473180*/
   }
-  return this; /*0x47316d*/
+  return (unsigned int *)this; /*0x47316d*/
 
 }
 } // namespace gamemd
@@ -1372,7 +1372,7 @@ namespace gamemd {
 char CaptureManagerClass::AddMember(TechnoClass * aP1, void *a2, void *a3)
 {
 
-  return ((TeamClass *)((int *)this))->AddMember(aP1, 1); /*0x6ea4fc*/
+  return ((TeamClass *)((int *)this))->AddMember( (int)(aP1), 1); /*0x6ea4fc*/
 
 }
 } // namespace gamemd

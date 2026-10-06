@@ -31,7 +31,7 @@ int MapSeed::ValidateName(int a2)
 
   if ( a2 ) /*0x597736*/
     return (*(int (**)(int, char *))(*(unsigned int *)this + 8))(a2, (char *)(unsigned char *)this + 120); /*0x597740*/
-  LOBYTE(result) = ShowSaveLoadDialog((void *)((int)this), (unsigned char *)this + 120); /*0x597752*/
+  LOBYTE(result) = ShowSaveLoadDialog( (void *)((void *)((int)this)), (void *)((unsigned char *)this + 120)); /*0x597752*/
   return result; /*0x597744*/
 
 }
@@ -73,15 +73,15 @@ int MapSeed::CheckName()
   ((String *)(&v8))->AssignFromPtr((const char **)this); /*0x79c52b*/
   ((String *)(&v8))->ToLower(); /*0x79c534*/
   if ( !((String*)(String *)this)->Length() /*0x79c5aa*/
-    || (v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->ToLowerCopy(&v9),
+    || (v7 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->ToLowerCopy( (char **)(&v9)),
         v2 = ((String *)(&v8))->ToLowerCopy((char **)&v8.m_3[1]),
         v3 = ((String *)((String *)v2))->Compare((const char **)v7),
-        j_DeleteAndZero((ObjectClass *)&v8.m_3[1]),
-        j_DeleteAndZero((ObjectClass *)&v9),
+        j_DeleteAndZero( (void *)((ObjectClass *)&v8.m_3[1])),
+        j_DeleteAndZero( (void *)((ObjectClass *)&v9)),
         v3)
-    || (uint8_t)ValidateStringContains((const char **)this, v4,(char *)(asc_84BA18)) )
+    || (uint8_t)ValidateStringContains( (const char **)this, (const char *)(v4), (char *)(asc_84BA18)) )
   {
-    result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero((ObjectClass *)&v8))); /*0x79c5b7*/
+    result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero( (void *)((ObjectClass *)&v8)))); /*0x79c5b7*/
     LOBYTE(result) = 0; /*0x79c5bc*/
   }
   else
@@ -90,25 +90,25 @@ int MapSeed::CheckName()
     if ( *(int *)g_WindowManager.__pad_0 <= 0 ) /*0x79c5cc*/
     {
 LABEL_12:
-      result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero((ObjectClass *)&v8))); /*0x79c624*/
+      result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero( (void *)((ObjectClass *)&v8)))); /*0x79c624*/
       LOBYTE(result) = 1; /*0x79c62d*/
     }
     else
     {
       while ( 1 ) /*0x79c5d2*/
       {
-        unknown_libname_73(&v8.m_3[1]); /*0x79c5d2*/
+        unknown_libname_73( (void *)(&v8.m_3[1])); /*0x79c5d2*/
         if ( v6 >= 0 && v6 < *(int *)g_WindowManager.__pad_0 ) /*0x79c5e1*/
           ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v6)); /*0x79c5f1*/
         ((String *)((String *)&v8.m_3[1]))->ToLower(); /*0x79c5fa*/
         if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Compare((const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
-        j_DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
+        j_DeleteAndZero( (void *)((ObjectClass *)&v8.m_3[1])); /*0x79c615*/
         if ( ++v6 >= *(int *)g_WindowManager.__pad_0 ) /*0x79c622*/
           goto LABEL_12; /*0x79c622*/
       }
-      j_DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
-      result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero((ObjectClass *)&v8))); /*0x79c63d*/
+      j_DeleteAndZero( (void *)((ObjectClass *)&v8.m_3[1])); /*0x79c634*/
+      result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero( (void *)((ObjectClass *)&v8)))); /*0x79c63d*/
       LOBYTE(result) = 0; /*0x79c642*/
     }
   }
@@ -159,7 +159,7 @@ AbstractClass * * MapSeed::InsertName()
     v4 = (String *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3); /*0x79c6d8*/
     if ( v4 ) /*0x79c6dd*/
     {
-      ((String *)(v4))->AssignFromPtr(&v11); /*0x79c6e4*/
+      ((String *)(v4))->AssignFromPtr( (const char **)(&v11)); /*0x79c6e4*/
       v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6e9*/
     }
     *(unsigned int *)g_WindowManager.__pad_0 = v2 + 1; /*0x79c6ef*/
@@ -186,7 +186,7 @@ memcpy( /*0x79c74c*/ (void *)(&stru_B76900.parachute->AnimClass_field_0x4 + v6),
     v7 = (String *)(&stru_B76900.parachute->AnimClass_field_0x0 + v6); /*0x79c75f*/
     if ( v7 ) /*0x79c764*/
     {
-      ((String *)(v7))->AssignFromPtr(&v11); /*0x79c76b*/
+      ((String *)(v7))->AssignFromPtr( (const char **)(&v11)); /*0x79c76b*/
       v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c770*/
     }
     *(unsigned int *)&stru_B76900.needsRedraw = v5 + 1; /*0x79c776*/
@@ -213,7 +213,7 @@ memcpy( /*0x79c74c*/ (void *)(&stru_B76900.parachute->AnimClass_field_0x4 + v6),
     v10 = (String *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v9); /*0x79c7e6*/
     if ( v10 ) /*0x79c7eb*/
     {
-      ((String *)(v10))->AssignFromPtr(&v11); /*0x79c7f2*/
+      ((String *)(v10))->AssignFromPtr( (const char **)(&v11)); /*0x79c7f2*/
       v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7f7*/
     }
     *(unsigned int *)g_WOL_BuddyList.__pad_0 = v8 + 1; /*0x79c802*/
@@ -222,7 +222,7 @@ memcpy( /*0x79c74c*/ (void *)(&stru_B76900.parachute->AnimClass_field_0x4 + v6),
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x79c825*/
       {
 LABEL_33:
-        j_DeleteAndZero((ObjectClass *)&v11); /*0x79c8b7*/
+        j_DeleteAndZero( (void *)((ObjectClass *)&v11)); /*0x79c8b7*/
         return; /*0x79c8bb*/
       }
       ((DeleteAndZero*)(DeleteAndZero *)&g_WindowManager.__pad_14[16])->Alt2(); /*0x79c830*/
@@ -235,9 +235,9 @@ LABEL_33:
         ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x79c857*/
       }
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c864*/
-      memset(v12, 0, sizeof(v12)); /*0x79c874*/
+      memset( (void *)(v12), 0, sizeof(v12)); /*0x79c874*/
       strcpy( (char *)(&v12[36]), ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x79c8a1*/
-      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))((LPVOID)ppv, v12); /*0x79c8b3*/
+      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)((LPVOID)ppv)))), (char *)(v12)); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/
   }

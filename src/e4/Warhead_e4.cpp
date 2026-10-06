@@ -54,7 +54,7 @@ int Warhead::GetWarheadSound(int a2)
   if ( (uint8_t)Audio::IsLoud( (int *)((char *)this->q130 + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
-    v3 = this->q044; /*0x41d7fa*/
+    v3 = (unsigned int)this->q044; /*0x41d7fa*/
   return !this->u8_3C && v3 + this->q040 <= (int)dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
 
 }
@@ -92,7 +92,7 @@ int Warhead::RemoveFromDamageList(int a2)
   if ( *(unsigned int *)&v2[16] < v6 /*0x452887*/
     || ((LOBYTE(v7) = v2[13], (unsigned char)v7) || !v6)
     && (v7 = *(unsigned int *)&v2[20], v7 > 0)
-    && (LOBYTE(v7) = (*(int (**)(Warhead *, int, unsigned int))(*(unsigned int *)v2 + 8))(v2, v6 + v7, 0), (unsigned char)v7) )
+    && (LOBYTE(v7) = (*(int (**)(Warhead *, int, unsigned int))(*(unsigned int *)v2 + 8))( (Warhead *)(v2), v6 + v7, 0), (unsigned char)v7) )
   {
     v7 = *(unsigned int *)&v2[16]; /*0x452889*/
     v8 = *(unsigned int *)&v2[4]; /*0x45288c*/
@@ -252,10 +252,10 @@ int Warhead::ProcessDamageArea()
 
   v28 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b5a3*/
   v29 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b5a7*/
-  *((unsigned int *)this + 10) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5ab*/
+  *((unsigned int *)this + 10) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5ab*/
   *((unsigned int *)this + 11) = v32; /*0x65b5b3*/
   *((unsigned int *)this + 12) = v28; /*0x65b5b9*/
-  *((unsigned int *)this + 13) = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5c2*/
+  *((unsigned int *)this + 13) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5c2*/
   *((unsigned int *)this + 14) = v32; /*0x65b5c8*/
   *((unsigned int *)this + 15) = v29; /*0x65b5cb*/
   v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/
@@ -300,7 +300,7 @@ int Warhead::ProcessDamageArea()
   *((unsigned int *)this + 25) = v18; /*0x65b741*/
   *((unsigned int *)this + 26) = v8 / v18; /*0x65b749*/
   v19 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)this + 32); /*0x65b750*/
-  v20 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
+  v20 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v19 + 72))( (void *)(v19), (unsigned char *)(v35)); /*0x65b75e*/
   v31 = *v20; /*0x65b763*/
   v33 = v20[1]; /*0x65b76a*/
   v21 = *((unsigned int *)this + 9); /*0x65b76e*/
@@ -314,9 +314,9 @@ int Warhead::ProcessDamageArea()
   {
     v22 = (gamemd::LightSourceClass *)((unsigned int)((LightSourceClass *)__2_YAPAXI_Z(0x4Cu)));
     if ( v22 ) /*0x65b788*/
-      v23 = ((LightSourceClass*)v22)->Construct(v31, v33, v34, v30, v8, v26, v13, v17); /*0x65b7b2*/
+      v23 = (unsigned int *)((LightSourceClass*)v22)->Construct(v31, v33, v34, v30, v8, v26, v13, v17); /*0x65b7b2*/
     else
-      v23 = 0; /*0x65b7b9*/
+      v23 = (unsigned int *)(0); /*0x65b7b9*/
     *((unsigned int *)this + 9) = (unsigned int)(v23); /*0x65b7bb*/
     v23[13] = 0; /*0x65b7be*/
     ((Trigger *)(*((Trigger **)this + 9)))->EnableOnce(0); /*0x65b7ca*/

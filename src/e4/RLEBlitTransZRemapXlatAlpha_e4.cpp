@@ -27,7 +27,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   RLEBlitTransZRemapXlatAlpha_ushort * v23;
   uint8_t *v24; // [esp+1Ch] [ebp+8h]
 
-  result = a7; /*0x497a2c*/
+  result = (uint16_t *)(a7); /*0x497a2c*/
   v24 = *(uint8_t **)this->m_4; /*0x497a30*/
   v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
   if ( v14 > 254 ) /*0x497a51*/
@@ -166,7 +166,7 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 
   m_C = (void *)this->m_C; /*0x49aa48*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitTransZRemapXlatAlpha;
-  FractalNoise::Dtor(m_C); /*0x49aa52*/
+  FractalNoise::Dtor( (void *)(m_C)); /*0x49aa52*/
   this->m_C = 0; /*0x49aa5b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitter;
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/

@@ -37,7 +37,7 @@ char sub_786EF0(ObjectClass *self)
     || dword_B77DF8 == -2147221387
     || dword_B77DF8 == -2147221386 )
   {
-    if ( ShowDialogConfirm(&word_B77AD0,(void *)(4), (uint8_t (*)(void))GameLoop::Thunk, 0) == 6 ) /*0x786f60*/
+    if ( ShowDialogConfirm( (void *)(&word_B77AD0), (void *)((void *)(4)), (uint8_t (*)(void))GameLoop::Thunk, 0) == 6 ) /*0x786f60*/
     {
       switch ( dword_B77DF8 ) /*0x786f78*/
       {
@@ -72,7 +72,7 @@ char sub_786EF0(ObjectClass *self)
   }
   else
   {
-    ShowDialogConfirm(&word_B77AD0, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x786f36*/
+    ShowDialogConfirm( (void *)(&word_B77AD0), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x786f36*/
     return 0; /*0x786f3b*/
   }
 }

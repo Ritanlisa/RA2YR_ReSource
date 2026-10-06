@@ -101,7 +101,7 @@ int LoadGame::LoadTriggerEvents()
       }
       else
       {
-        _65FB80 = 0; /*0x66091b*/
+        _65FB80 = (unsigned int *)(0); /*0x66091b*/
       }
       if ( (*(int (__stdcall **)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x660929*/
              this,
@@ -270,7 +270,7 @@ int LoadGame::RestoreAudioState()
     {
       NextAlt = ((AudioQueue *)((AudioQueue *)Next))->GetNextAlt(); /*0x751737*/
       ((AudioController *)((AudioController *)(Next + 12)))->Stop(); /*0x751739*/
-      LinkedList::Init( (void)((LinkedList *)Next)); /*0x751740*/
+      LinkedList::Init(  (LinkedList *)Next); /*0x751740*/
       PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), Next); /*0x75174d*/
       Next = NextAlt; /*0x751758*/
       --dword_B1D3A8; /*0x75175d*/
@@ -278,7 +278,7 @@ int LoadGame::RestoreAudioState()
     while ( NextAlt ); /*0x751763*/
   }
   AudioMixer::Shutdown(); /*0x751765*/
-  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))( v1, (int *)(&v14), 4, 0); /*0x751776*/
+  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))( (LoadGame *)(v1), (int *)(&v14), 4, 0); /*0x751776*/
   if ( result >= 0 ) /*0x75177b*/
   {
     v13 = 0; /*0x751785*/
@@ -286,7 +286,7 @@ int LoadGame::RestoreAudioState()
     {
       while ( 1 ) /*0x7517a1*/
       {
-        result = (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))(v1, v18, 16, 0); /*0x7517a1*/
+        result = (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))( (LoadGame *)(v1), (unsigned int *)(v18), 16, 0); /*0x7517a1*/
         v16 = result; /*0x7517a6*/
         if ( result < 0 ) /*0x7517aa*/
           break; /*0x7517aa*/
@@ -303,7 +303,7 @@ int LoadGame::RestoreAudioState()
               v15 = v18[0]; /*0x751807*/
               if ( v18[0] >= 0 ) /*0x75180b*/
               {
-                v8 = LinkedList::Next( (void)((LinkedList *)dword_B1D3A4)); /*0x751813*/
+                v8 = LinkedList::Next(  (LinkedList *)dword_B1D3A4); /*0x751813*/
                 v9 = v8; /*0x751818*/
                 if ( v8 ) /*0x75181c*/
                 {
@@ -362,20 +362,20 @@ int LoadGame::LoadMagicAndAudio()
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        result = (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x75347c*/
-                   this,
-                   v4,
-                   12,
-                   0);
+result = (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x75347c*/ this, (unsigned int *)(v4), 12, 0);
+
+
+
+
         if ( result >= 0 ) /*0x753481*/
         {
           if ( g_InfantryDrawState && v4[0] >= 0 && v4[0] < g_InfantrySelectState ) /*0x75349a*/
             Audio_Load(*((unsigned int *)g_InfantryRenderPool + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x7534bf*/
-                     this,
-                     &v3,
-                     4,
-                     0);
+result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x7534bf*/ this, (int *)(&v3), 4, 0);
+
+
+
+
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/
         }
@@ -411,7 +411,7 @@ int LoadGame::LoadPointArray(int a2)
     while ( v13 < v11 ) /*0x54e7e7*/
     {
       v4 = (int *)__2_YAPAXI_Z(8u); /*0x54e7fa*/
-      v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030))(a2, v4, 8, 0);  /*0x54e805*/
+      v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)&a2->__pad_030))( a2, (int *)(v4), 8, 0);  /*0x54e805*/
       if ( v3 < 0 ) /*0x54e809*/
         break; /*0x54e809*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/

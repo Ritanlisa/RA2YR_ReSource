@@ -125,7 +125,7 @@ int House::AnnounceUpgrade(int aP1)
       v10 = *((unsigned int *)this + 14); /*0x47d333*/
       if ( v10 != 0xFFFF && v10 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d343*/
         *((unsigned char *)this + 284) = ((HouseClass*)/*0x47d35e*/
-                                   *(HouseClass **)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v10))->GetCameoTypeIndex(/*0x47d35e*/ *(uint8_t *)&this->u32_11A);
+                                   *(HouseClass **)(*(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v10))->GetCameoTypeIndex(/*0x47d35e*/ *(uint8_t *)&this->u32_11A);
       if ( *((unsigned char *)this + 284) && *(unsigned char *)(v8 + 681) ) /*0x47d36e*/
       {
         *((unsigned int *)this + 17) = -1; /*0x47d378*/
@@ -191,7 +191,7 @@ LABEL_19:
   v18 = *((unsigned int *)this + 14); /*0x47d590*/
   if ( v18 != 0xFFFF ) /*0x47d595*/
   {
-    v19 = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v18); /*0x47d5ab*/
+    v19 = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v18); /*0x47d5ab*/
     v54 = *(uint8_t *)&this->u32_11A; /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
     MapFileData = ((House *)((House *)v19))->LoadMapFileData(v54, 0); /*0x47d5b5*/
@@ -214,7 +214,7 @@ LABEL_40:
           }
           else
           {
-            *((unsigned int *)this + 59) = House::LookupObject( (int)((House *)v19), (void)((void *)(*(uint8_t *)&this->u32_11A))); /*0x47d843*/
+            *((unsigned int *)this + 59) = House::LookupObject( (int)((House *)v19),  (void *)(*(uint8_t *)&this->u32_11A)); /*0x47d843*/
             *((unsigned int *)this + 17) = -1; /*0x47d849*/
             *((unsigned char *)this + 286) = 0; /*0x47d850*/
           }
@@ -222,7 +222,7 @@ LABEL_40:
         }
         if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * *((unsigned int *)this + 17)) + 684) ) /*0x47d885*/
 LABEL_47:
-          *((unsigned int *)this + 59) = House::LookupObject( (int)((House *)v19), (void)((void *)(*(uint8_t *)&this->u32_11A))); /*0x47d8aa*/
+          *((unsigned int *)this + 59) = House::LookupObject( (int)((House *)v19),  (void *)(*(uint8_t *)&this->u32_11A)); /*0x47d8aa*/
 LABEL_48:
         if ( *((unsigned int *)this + 59) == 10 ) /*0x47d8b7*/
         {
@@ -256,7 +256,7 @@ LABEL_48:
           v34 = *v4; /*0x47d9d0*/
           v35 = *(int16_t *)&this->u16_26; /*0x47d9d3*/
           v61 = dword_89E7C0 * *((char *)this + 283); /*0x47d9e1*/
-          v36 = Matrix3x4::TransformCell( (AbstractClass *)((float *)g_TacticalClass_Instance), v62, (void)((int *)(*(unsigned int *)v55 + 716))); /*0x47da03*/
+          v36 = Matrix3x4::TransformCell( (AbstractClass *)((float *)g_TacticalClass_Instance), (AbstractClass *)(v62), (int *)(*(unsigned int *)v55 + 716)); /*0x47da03*/
           v37 = v36[1]; /*0x47da0a*/
           v38 = (v34 << 8) + 128 + *v36; /*0x47da10*/
           v39 = v61 + v36[2]; /*0x47da18*/
@@ -268,7 +268,7 @@ LABEL_48:
             v41 = ((AnimClass*)/*0x47da5f*/
                     v40)->ctor(/*0x47da5f*/ *(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * *(unsigned int *)(*(unsigned int *)v55 + 712)), v60, 0, -1, (void *)0x1600, 0, 0);
           else
-            v41 = 0; /*0x47da66*/
+            v41 = (void **)(0); /*0x47da66*/
           v19 = *(unsigned int *)v55; /*0x47da6c*/
           v42 = *(void **)(*(unsigned int *)v55 + 728); /*0x47da6e*/
           *((unsigned char *)v41 + 406) = 1; /*0x47da74*/
@@ -286,7 +286,7 @@ LABEL_48:
               LOWORD(aP1) = *v4 + *inited; /*0x47dae6*/
               HIWORD(aP1) = inited[1] + *((unsigned short *)this + 19); /*0x47daf3*/
               *(unsigned int *)v55 = (unsigned int)(aP1); /*0x47dafc*/
-              v44 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(v55); /*0x47db05*/
+              v44 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v55)); /*0x47db05*/
               inited += 2; /*0x47db1b*/
               v44[80] |= 0x10000u; /*0x47db1e*/
             }
@@ -456,7 +456,7 @@ unsigned int * House::GetStartCoords(unsigned int *aP1)
     goto LABEL_13; /*0x47fb9f*/
   v24 = (uint8_t)this->__pad_7C[162]; /*0x47fbb5*/
   v4 = *(unsigned char **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3); /*0x47fbb9*/
-  v23 = 0; /*0x47fbbc*/
+  v23 = (House *)(0); /*0x47fbbc*/
   if ( v4[681] ) /*0x47fbc0*/
   {
     BuildingByTiberiumType = (int)(FindBuildingByTiberiumType(v3));
@@ -483,13 +483,13 @@ unsigned int * House::GetStartCoords(unsigned int *aP1)
   }
   if ( !v4[692] ) /*0x47fc84*/
   {
-    v9 = (House *)(*(int (**)(unsigned char *))(*(unsigned int *)v4 + 156))(v4); /*0x47fca7*/
+    v9 = (House *)(*(int (**)(unsigned char *))(*(unsigned int *)v4 + 156))( (unsigned char *)(v4)); /*0x47fca7*/
 LABEL_11:
     v23 = v9; /*0x47fcad*/
     goto LABEL_12; /*0x47fcad*/
   }
   v10 = *(BuildingClass **)&this->__pad_2D[19]; /*0x47fc86*/
-  v23 = 0; /*0x47fc89*/
+  v23 = (House *)(0); /*0x47fc89*/
   if ( v10 ) /*0x47fc8f*/
     BuildingClass::GetPlacementCoords(v10, (int *)&v23, &v24); /*0x47fc9b*/
 LABEL_12:
@@ -498,8 +498,8 @@ LABEL_12:
   v27[2] = 0; /*0x47fce2*/
   v27[0] = (v11 / 256) << 8; /*0x47fd02*/
   v27[1] = (v12 / 256) << 8; /*0x47fd06*/
-  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen(v27, &v25); /*0x47fd0a*/
-  v13 = ((BuildingClass *)(BuildingClass *)this)->CalcDrawPos( v27); /*0x47fd16*/
+  ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v27), (int *)(&v25)); /*0x47fd0a*/
+  v13 = ((BuildingClass *)this)->CalcDrawPos( v27); /*0x47fd16*/
   v25 += *v13; /*0x47fd27*/
   v14 = v13[1] + v26; /*0x47fd31*/
   v25 -= 30; /*0x47fd33*/
@@ -518,7 +518,7 @@ LABEL_13:
     v24 = 0; /*0x47fd75*/
   v16 = v25 - *(int16_t *)v23->House_field_0x2 / 2; /*0x47fd93*/
   v17 = v26 - *(int16_t *)&v23->House_field_0x2[2] / 2; /*0x47fd9f*/
-  FoundationSize = Building::GetFoundationSize(v27, v24); /*0x47fda7*/
+  FoundationSize = Building::GetFoundationSize( (unsigned int *)(v27), v24); /*0x47fda7*/
   v19 = v16 + *FoundationSize; /*0x47fdb1*/
   v20 = v17 + FoundationSize[1]; /*0x47fdb7*/
   v21 = FoundationSize[2]; /*0x47fdb9*/
@@ -600,14 +600,14 @@ LABEL_4:
 LABEL_5:
   if ( *((unsigned int *)this + 5504) == -1 && *(unsigned int *)&dword_A8B238 && !*(unsigned char *)(*(unsigned int *)&this->__pad_2D[7] + 422) )
   {
-    v6 = (uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)((char *)this + 21652)), (void)(&dword_A8EF98))
+    v6 = (uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)((char *)this + 21652)), (void *)(&dword_A8EF98))
        ? *((unsigned int *)this + 5412)
        : *((unsigned int *)this + 5413);
     *(unsigned int *)v38 = v6; /*0x4fd58b*/
-    if ( !(uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)v38), (void)(&dword_A8EF98)) )
+    if ( !(uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)v38), (void *)(&dword_A8EF98)) )
     {
-      v7 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v38); /*0x4fd5a6*/
-      v8 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v7 + 72))( v7, (int *)(&v44)); /*0x4fd5b4*/
+      v7 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(v38)); /*0x4fd5a6*/
+      v8 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v7 + 72))( (void *)(v7), (int *)(&v44)); /*0x4fd5b4*/
       v41 = *v8; /*0x4fd5c3*/
       v9 = v8[1]; /*0x4fd5c7*/
       v42 = v9; /*0x4fd5ca*/
@@ -627,11 +627,11 @@ LABEL_5:
               v10 = *(unsigned int *)(v12 + 52); /*0x4fd616*/
               if ( !*(unsigned char *)(v10 + 422) && !*(unsigned char *)(v12 + 501) )
               {
-                v13 = (uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)((char *)this + 21652)), (void)(&dword_A8EF98))
+                v13 = (uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)((char *)this + 21652)), (void *)(&dword_A8EF98))
                     ? *((unsigned int *)this + 5412)
                     : *((unsigned int *)this + 5413);
                 *(unsigned int *)v39 = v13; /*0x4fd660*/
-                if ( (uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)v39), (void)(&dword_A8EF98)) ) /*0x4fd664*/
+                if ( (uint8_t)CellStruct::Equals( (unsigned short *)((CellStruct *)v39), (void *)(&dword_A8EF98)) ) /*0x4fd664*/
                 {
                   v14 = dword_A8EFF8; /*0x4fd66d*/
                   v15 = dword_A8EFFC; /*0x4fd672*/
@@ -639,8 +639,8 @@ LABEL_5:
                 }
                 else
                 {
-                  v17 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj(v39); /*0x4fd68a*/
-                  v18 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v17 + 72))(v17, v47); /*0x4fd69b*/
+                  v17 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(v39)); /*0x4fd68a*/
+                  v18 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v17 + 72))( (void *)(v17), (unsigned char *)(v47)); /*0x4fd69b*/
                   v14 = *v18; /*0x4fd69d*/
                   v15 = v18[1]; /*0x4fd69f*/
                   v16 = v18[2]; /*0x4fd6a2*/
@@ -681,7 +681,7 @@ LABEL_5:
           }
           while ( *(int *)v38 < dword_A80238 );
           if ( v3 ) /*0x4fd717*/
-            UpdateHouseClassAnger( (unsigned int)this, (HouseClass *)(v10), 1, v3); /*0x4fd71e*/
+            UpdateHouseClassAnger( (IUnknown *)((unsigned int)this), (HouseClass *)(v10), 1, v3); /*0x4fd71e*/
         }
       }
     }
@@ -706,14 +706,14 @@ LABEL_30:
             goto LABEL_38; /*0x4fd75f*/
         }
         v37 = -*(unsigned int *)(*((unsigned int *)this + 5506) + 8 * v24 + 4); /*0x4fd76a*/
-        UpdateHouseClassAnger( (unsigned int)this, (HouseClass *)(v37), v37, v22); /*0x4fd76d*/
+        UpdateHouseClassAnger( (IUnknown *)((unsigned int)this), (HouseClass *)(v37), v37, v22); /*0x4fd76d*/
       }
 LABEL_38:
       *((unsigned int *)this + 5504) = -1; /*0x4fd772*/
     }
   }
   if ( *(unsigned int *)&dword_A8B238 || *(unsigned int *)&this->__pad_1F0[92] >= *(unsigned int *)&dword_8871E0->__pad_13BC[124] ) /*0x4fd797*/
-    HouseClass::UpdateAITryFireSW( (void)((HouseClass *)this)); /*0x4fd79b*/
+    HouseClass::UpdateAITryFireSW(  (HouseClass *)this); /*0x4fd79b*/
   v26 = *(unsigned int *)&this->__pad_1F0[96]; /*0x4fd7a0*/
   if ( v26 == 4 ) /*0x4fd7ae*/
   {
@@ -819,7 +819,7 @@ void sub_501A20()
   int v1; // edi
   int v2; // esi
 
-  v0 = dword_A8ECC8; /*0x501a21*/
+  v0 = (wchar_t *)(dword_A8ECC8); /*0x501a21*/
   if ( dword_A8ECC8 ) /*0x501a2a*/
   {
     v1 = 0; /*0x501a2c*/
@@ -927,7 +927,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   v7 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50db31*/
   if ( aP1 && *(unsigned char *)(aP1 + 979) && *(unsigned int *)(*(unsigned int *)(aP1 + 1312) + 3768) == 7 ) /*0x50db4c*/
   {
-    v8 = (int *)(*(int (**)(unsigned int *))(*(unsigned int *)&aP1->q_120))(v39);  /*0x50db58*/
+    v8 = (int *)(*(int (**)(unsigned int *))(*(unsigned int *)&aP1->q_120))( (unsigned int *)(v39));  /*0x50db58*/
     v9 = *v8; /*0x50db5a*/
     v40 = *v8; /*0x50db5c*/
     v41 = v8[1]; /*0x50db63*/
@@ -969,7 +969,7 @@ LABEL_18:
     v5 = this; /*0x50db94*/
     v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50db98*/
   }
-  v12 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 72))(v11, v39); /*0x50dbce*/
+  v12 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 72))( v11, (unsigned int *)(v39)); /*0x50dbce*/
   v9 = *v12; /*0x50dbd0*/
   v40 = *v12; /*0x50dbd2*/
   v41 = v12[1]; /*0x50dbd9*/
@@ -996,7 +996,7 @@ LABEL_24:
       return 0; /*0x50dede*/
     }
   }
-  v15 = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v40); /*0x50dcb9*/
+  v15 = (CellClass *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v40); /*0x50dcb9*/
   smudgeTypeIndex_low = SLOWORD(v15->smudgeTypeIndex); /*0x50dcbe*/
   smudgeTypeIndex_high = SHIWORD(v15->smudgeTypeIndex); /*0x50dcc2*/
   v37 = *(unsigned int *)&stru_87F5F0.__pad_58[676] / 2; /*0x50dcd9*/
@@ -1157,12 +1157,12 @@ void House::Constructor()
     v2 = ((CCFileClass *)(&v3))->ReadEntireFile(); /*0x69e0b4*/
     if ( v2 ) /*0x69e0bb*/
     {
-      *(unsigned int *)this->__pad_C = v2; /*0x69e0bd*/
+      *(unsigned int *)this->__pad_C = (unsigned int)v2; /*0x69e0bd*/
       this->__pad_C[4] = 1; /*0x69e0c0*/
     }
     *(unsigned int *)v3.CDFileClass = (unsigned int)&vt_CCFileClass;
     v5 = 0; /*0x69e0d0*/
-    ((Vector *)((int)v4))->Clear(); /*0x69e0d8*/
+    ((Vector *)((int)v4))->Clear((int)((Vector *)((int)v4))); /*0x69e0d8*/
     *(unsigned int *)v3.CDFileClass = (unsigned int)&off_7E1668;
     ((BufferIOFileClass *)((BufferIOFileClass *)&v3))->Dtor(); /*0x69e0e9*/
   }
@@ -1208,7 +1208,7 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   int v34; // [esp-4h] [ebp-14h]
   Checksummer *v35; // [esp+14h] [ebp+4h]
 
-  ((RadioClass *)(RadioClass *)this)->PowerDrainUpdate( aP1); /*0x70c27b*/
+  ((RadioClass *)this)->PowerDrainUpdate( (AbstractClass *)(aP1)); /*0x70c27b*/
   Power::TimerProcess(this->controlGroup); /*0x70c289*/
   ((Checksummer *)((Checksummer *)aP1))->Add_double(this->armorMultiplier[0], this->armorMultiplier[1]); /*0x70c29e*/
   ((Checksummer *)((Checksummer *)aP1))->Add_double(this->firepowerMultiplier[0], this->firepowerMultiplier[1]); /*0x70c2b3*/
@@ -1376,12 +1376,12 @@ void House_Play_6D1660(int a2)
     v5 = &stru_B0C1C0; /*0x6d1675*/
     do /*0x6d168b*/
     {
-      (*(void (**)(unsigned char *, ShapeButtonClass *))(*(unsigned int *)&v3->q0D0))(v3, v5);  /*0x6d167f*/
+      (*(void (**)(unsigned char *, ShapeButtonClass *))(*(unsigned int *)&v3->q0D0))( (unsigned char *)(v3), (ShapeButtonClass *)(v5));  /*0x6d167f*/
       v5 += 8; /*0x6d1682*/
     }
     while ( (int)v5 < (int)&dword_B0CB20 ); /*0x6d168b*/
-    (*(void (**)(unsigned char *, GadgetClass *, int))(*(unsigned int *)&v3->q0D0))( v3, (GadgetClass *)(&stru_B0CCB0), a2);  /*0x6d1696*/
-    v6 = g_ObjectTrackingPool; /*0x6d1699*/
+    (*(void (**)(unsigned char *, GadgetClass *, int))(*(unsigned int *)&v3->q0D0))( (unsigned char *)(v3), (GadgetClass *)(&stru_B0CCB0), a2);  /*0x6d1696*/
+    v6 = (int *)(g_ObjectTrackingPool); /*0x6d1699*/
     do /*0x6d16d0*/
     {
       v7 = *v6; /*0x6d169e*/
@@ -1397,7 +1397,7 @@ void House_Play_6D1660(int a2)
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 240); /*0x6d16dd*/
     v9 = *(unsigned int *)v3; /*0x6d16e2*/
     v3[21828] = 0; /*0x6d16eb*/
-    (*(void (**)(unsigned char *, GadgetClass *))(v9 + 48))( v3, (GadgetClass *)(&stru_B0CC40)); /*0x6d16f2*/
+    (*(void (**)(unsigned char *, GadgetClass *))(v9 + 48))( (unsigned char *)(v3), (GadgetClass *)(&stru_B0CC40)); /*0x6d16f2*/
     if ( &stru_B0CC40 ) /*0x6d16fd*/
     {
       v12[1] = stru_B0CC40.Width; /*0x6d1710*/
@@ -1408,11 +1408,11 @@ void House_Play_6D1660(int a2)
       v12[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d1738*/
       v12[4] = stru_B0CC40.ID; /*0x6d1740*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d1744*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)v12); /*0x6d1754*/
+      CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)v12)); /*0x6d1754*/
     }
     v10 = *(unsigned int *)v3; /*0x6d1759*/
     v3[21829] = 1; /*0x6d175f*/
-    return (*(char (**)(unsigned char *, unsigned int))(v10 + 56))(v3, 0); /*0x6d1766*/
+    return (*(char (**)(unsigned char *, unsigned int))(v10 + 56))( (unsigned char *)(v3), 0); /*0x6d1766*/
   }
   return result; /*0x6d1769*/
 }
@@ -1432,7 +1432,7 @@ char sub_637A10()
   if ( byte_AC4CF4 ) /*0x637a1f*/
   {
     ((EventClass *)v3)->AddEvent( *((unsigned int *)dword_A83D4C + 12), 0x2Bu); /*0x637a30*/
-    qmemcpy(v1, v3, sizeof(v1)); /*0x637a43*/
+    qmemcpy( (void *)(v1), (const void *)(v3), sizeof(v1)); /*0x637a43*/
     IDA_LOWORD(v2) = v4; /*0x637a45*/
     IDA_BYTE2(v2) = v5; /*0x637a47*/
     Network::RecordEvent( /*0x637a48*/

@@ -46,14 +46,14 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   if ( this->field_C ) /*0x42ddce*/
   {
     v5 = (unsigned char *)((int)((unsigned char *)(4)));
-    pad_14 = (unsigned char *)((uint8_t *)this->__pad_14);
+    pad_14 = (uint8_t *)((unsigned char *)((uint8_t *)this->__pad_14));
     v6 = (unsigned char *)(&this->field_18);
     Srca = 3; /*0x42de07*/
   }
   else
   {
     v5 = (unsigned char *)((int)((unsigned char *)(3)));
-    pad_14 = (unsigned char *)((uint8_t *)&this->field_18);
+    pad_14 = (uint8_t *)((unsigned char *)((uint8_t *)&this->field_18));
     v6 = (unsigned char *)(this->__pad_14);
     Srca = 4; /*0x42ddee*/
   }
@@ -63,7 +63,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     Size = (unsigned char *)((int)(a3));
     if ( a3 >= (int)(v5) - v7 ) /*0x42de28*/
       Size = v5 - v7; /*0x42de2a*/
-    memcpy(&pad_14[this->field_10], v3,(size_t)(Size)); /*0x42de3e*/
+    memcpy( (void *)(&pad_14[this->field_10]), (const void *)(v3), (size_t)(Size)); /*0x42de3e*/
     v8 = Size + this->field_10; /*0x42de4e*/
     v3 += Size; /*0x42de55*/
     this->field_10 = (unsigned int)(v8); /*0x42de59*/
@@ -71,9 +71,9 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     if ( v8 == (unsigned char *)(int)(v5) ) /*0x42de60*/
     {
       if ( this->field_C ) /*0x42de62*/
-        v9 = DecodeBitmapRGB((gamemd::Pipe *)(pad_14),(int)(v5), v6, Srca); /*0x42de88*/
+        v9 = DecodeBitmapRGB( (gamemd::Pipe *)(pad_14), (int)(v5), (unsigned char *)(v6), Srca); /*0x42de88*/
       else
-        v9 = EncodeBitmapRGB((gamemd::Pipe *)((char *)pad_14),(int)(v5), v6, Srca); /*0x42de75*/
+        v9 = EncodeBitmapRGB( (gamemd::Pipe *)((char *)pad_14), (int)(v5), (unsigned char *)(v6), Srca); /*0x42de75*/
       v13 = ((Delegate*)((Pipe *)this))->Dispatch((int)v6, v9); /*0x42de96*/
       this->field_10 = 0; /*0x42de9a*/
     }
@@ -81,15 +81,15 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   for ( ; a3 >= (int)(v5); a3 -= v5 ) /*0x42dea5*/
   {
     if ( this->field_C ) /*0x42dea7*/
-      v10 = DecodeBitmapRGB((gamemd::Pipe *)((uint8_t *)v3),(int)(v5), v6, Srca); /*0x42dec9*/
+      v10 = DecodeBitmapRGB( (gamemd::Pipe *)((uint8_t *)v3), (int)(v5), (unsigned char *)(v6), Srca); /*0x42dec9*/
     else
-      v10 = EncodeBitmapRGB((gamemd::Pipe *)(v3),(int)(v5), v6, Srca); /*0x42deb8*/
+      v10 = EncodeBitmapRGB( (gamemd::Pipe *)(v3), (int)(v5), (unsigned char *)(v6), Srca); /*0x42deb8*/
     v3 += v5; /*0x42ded2*/
     v13 += ((Delegate*)((Pipe *)this))->Dispatch((int)v6, v10); /*0x42dee5*/
   }
   if ( a3 > 0 ) /*0x42def9*/
   {
-    memcpy(pad_14, v3, a3); /*0x42df02*/
+    memcpy( (void *)(pad_14), (const void *)(v3), a3); /*0x42df02*/
     this->field_10 = a3; /*0x42df0e*/
   }
   return v13; /*0x42df15*/
@@ -230,7 +230,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           {
             if ( v7 >= v6 ) /*0x4a27ad*/
               v7 = v6; /*0x4a27af*/
-            memcpy(v5, (const void *)(*(unsigned int *)&this->__pad_0[12] + *(unsigned int *)&this->__pad_14[4]), v7); /*0x4a27bc*/
+            memcpy( (void *)(v5), (const void *)(*(unsigned int *)&this->__pad_0[12] + *(unsigned int *)&this->__pad_14[4]), v7); /*0x4a27bc*/
             v8 = this->field_1C - v7; /*0x4a27cf*/
             v6 -= v7; /*0x4a27d4*/
             *(unsigned int *)&this->__pad_14[4] += v7; /*0x4a27d6*/
@@ -290,7 +290,7 @@ namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
 
-  ((Vector *)((int)&this->__pad_0[12]))->Clear(); /*0x52ae76*/
+  ((Vector *)((int)&this->__pad_0[12]))->Clear((int)((Vector *)((int)&this->__pad_0[12]))); /*0x52ae76*/
   ((Straw*)(Straw *)this)->Dtor(); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     __3_YAXPAX_Z(this); /*0x52ae8a*/

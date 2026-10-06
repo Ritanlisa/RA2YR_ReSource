@@ -69,13 +69,13 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   stru_87F5F0.__pad_E12[1434] = 0; /*0x4fb8a2*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1438] = -1; /*0x4fb8a9*/
   v6 = v5[328]; /*0x4fb8b3*/
-  *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = v5; /*0x4fb8b9*/
+  *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = (unsigned int)v5; /*0x4fb8b9*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = v6; /*0x4fb8bf*/
   *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = this->Object_field_0x30; /*0x4fb8c7*/
-  v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
-  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds(v7); /*0x4fb8df*/
+  v7 = (const void *)(*(int (**)(unsigned int *, int))(*v5 + 264))( (unsigned int *)(v5), 1); /*0x4fb8d3*/
+  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds( (const void *)(v7)); /*0x4fb8df*/
   v8 = (unsigned int *)((void *)((*(int (**)(int, int *))(*(unsigned int *)v4 + 440))( v4, (int *)(&a2)))); /*0x4fb8ed*/
-  ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove(&a3, v8); /*0x4fb8fe*/
+  ((Tactical *)((Tactical *)&stru_87F5F0.__pad_58[416]))->MouseMove( (unsigned int *)(&a3), (unsigned int *)(v8)); /*0x4fb8fe*/
   (*(void (**)(int, int))(*(unsigned int *)v4 + 292))(v4, 2); /*0x4fb909*/
   return (void *)(1); /*0x4fb90f*/
 
@@ -152,10 +152,10 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         v8 = (Cell *)(*(int (**)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
         v9 = *(unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
         NeighbourContent = (void *)(((Cell *)(v8))->GetNeighbourContent(v7)); /*0x54c5ea*/
-        (*(void (**)(int, void *, int))(v9 + 1152))(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
+        (*(void (**)(int, void *, int))(v9 + 1152))( this->BuildingPlacement_field_0x0C, (void *)(NeighbourContent), 1); /*0x54c5f3*/
         v11 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c5f9*/
         LOBYTE(v9) = v11[116]; /*0x54c600*/
-        (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v11 + 292))(v11, 0); /*0x54c603*/
+        (*(void (**)(unsigned char *, unsigned int))(*(unsigned int *)v11 + 292))( (unsigned char *)(v11), 0); /*0x54c603*/
         v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c609*/
         LOBYTE(v12->unknown74) = v9; /*0x54c60d*/
         *((unsigned int *)this + 20) = 3; /*0x54c610*/
@@ -166,7 +166,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         ((CellClass *)v13)->AttachObject( v45); /*0x54c62c*/
         v14 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c631*/
         v15 = v14[116]; /*0x54c638*/
-        LOBYTE(v12) = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)v14 + 292))(v14, 0); /*0x54c63b*/
+        LOBYTE(v12) = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)v14 + 292))( (unsigned char *)(v14), 0); /*0x54c63b*/
         *(unsigned char *)(this->BuildingPlacement_field_0x0C + 116) = v15; /*0x54c645*/
         v16 = *((unsigned int *)this + 11); /*0x54c648*/
         *((unsigned int *)this + 20) = (unsigned int)((gamemd::VectorClass_flat **)(2)); /*0x54c64b*/
@@ -174,14 +174,14 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       }
       return (gamemd::VectorClass_flat **)((char)v12); /*0x54c61d*/
     }
-    v47 = (*(int (**)(int, BuildingPlacement *, int, int, unsigned int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C /*0x54c675*/
-                                                                                 + 428))(
-            this->BuildingPlacement_field_0x0C,
-            v5,
-            -1,
-            -1,
-            0,
-            1);
+v47 = (*(int (**)(int, BuildingPlacement *, int, int, unsigned int, int))(*(unsigned int *)this->BuildingPlacement_field_0x0C /*0x54c675*/ + 428))( this->BuildingPlacement_field_0x0C, (BuildingPlacement *)(v5), -1, -1, 0, 1);
+
+
+
+
+
+
+
     v17 = ((Input *)((Input *)this + 16))->OffsetToDirection(); /*0x54c684*/
     if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, BYTE1(v5[8].BuildingPlacement_field_0x20) & 1) /*0x54c699*/
       || (v46 = 0, *((unsigned char *)this + 144)) )
@@ -194,7 +194,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       v46 = 1; /*0x54c6be*/
     }
     v18 = (unsigned int *)this->BuildingPlacement_field_0x0C; /*0x54c6c2*/
-    if ( v18[45] != 7 && (*(int (**)(unsigned int *))(*v18 + 388))(v18) != 7 ) /*0x54c6d9*/
+    if ( v18[45] != 7 && (*(int (**)(unsigned int *))(*v18 + 388))( (unsigned int *)(v18)) != 7 ) /*0x54c6d9*/
     {
       if ( !v46 /*0x54c70c*/
         || (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell((unsigned int *)this + 16)->flags[0] & 0x100) == 0
@@ -229,7 +229,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
             LOBYTE(v24) = 0; /*0x54c78d*/
             HIBYTE(v24) = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c793*/
             LOWORD(v47) = v24; /*0x54c799*/
-            ((FacingClass *)(unsigned short *)((char *)this + 84))->Update( &v47); /*0x54c79e*/
+            ((FacingClass *)(unsigned short *)((char *)this + 84))->Update( (unsigned short *)(&v47)); /*0x54c79e*/
           }
         }
       }
@@ -264,7 +264,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       0);
     v28 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c826*/
     if ( !v28[1709] ) /*0x54c829*/
-      (*(void (**)(unsigned char *, char *))(*(unsigned int *)v28 + 436))(v28, (char *)this + 64); /*0x54c836*/
+      (*(void (**)(unsigned char *, char *))(*(unsigned int *)v28 + 436))( (unsigned char *)(v28), (char *)this + 64); /*0x54c836*/
     v29 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c83f*/
     v48 = *v29; /*0x54c848*/
     v49 = v29[1]; /*0x54c84f*/
@@ -304,7 +304,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         LOBYTE(v12) = v33[141]; /*0x54c924*/
         if ( !(unsigned char)v12 )
         {
-          (*(void (**)(unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v33 + 1164))(v33, 0, 0, 0, 0); /*0x54c93c*/
+          (*(void (**)(unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v33 + 1164))( (unsigned char *)(v33), 0, 0, 0, 0); /*0x54c93c*/
           v34 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c942*/
           if ( v34[144] ) /*0x54c945*/
             (*(void (**)(unsigned char *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v34 + 1160))( /*0x54c95b*/
@@ -473,8 +473,8 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   }
   else
   {
-    v39 = 0; /*0x594ff9*/
-    v8 = 0; /*0x594ffd*/
+    v39 = (VectorClass *)(0); /*0x594ff9*/
+    v8 = (VectorClass *)(0); /*0x594ffd*/
   }
   v9 = *(unsigned int *)(a2 + 16); /*0x594fff*/
   v37 = 0; /*0x595002*/
@@ -551,11 +551,11 @@ LABEL_26:
       Items = (int)v8[1].Items; /*0x59516a*/
       if ( Items <= 0 ) /*0x59516f*/
         goto LABEL_38; /*0x59516f*/
-      if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))(v8, Capacity + Items, 0) ) /*0x59517a*/
+      if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))( (VectorClass *)(v8), Capacity + Items, 0) ) /*0x59517a*/
       {
 LABEL_36:
         vtable0 = v8[1].vtable0; /*0x595181*/
-        v19 = v8->Items; /*0x595184*/
+        v19 = (unsigned int *)(v8->Items); /*0x595184*/
         v8[1].vtable0 = (char *)vtable0 + 1; /*0x59518a*/
         v19[(unsigned int)vtable0] = *v15; /*0x59518f*/
       }
@@ -651,11 +651,11 @@ LABEL_39:
         v32 = (int)v8[1].Items; /*0x5953a8*/
         if ( v32 <= 0 ) /*0x5953ad*/
           goto LABEL_74; /*0x5953ad*/
-        if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))(v8, v31 + v32, 0) ) /*0x5953b8*/
+        if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))( (VectorClass *)(v8), v31 + v32, 0) ) /*0x5953b8*/
         {
 LABEL_72:
           v33 = v8[1].vtable0; /*0x5953bf*/
-          v34 = v8->Items; /*0x5953c2*/
+          v34 = (unsigned int *)(v8->Items); /*0x5953c2*/
           v8[1].vtable0 = (char *)v33 + 1; /*0x5953c8*/
           v34[(unsigned int)v33] = *v57; /*0x5953d1*/
         }
@@ -673,10 +673,10 @@ LABEL_74:
   if ( (int)v8[1].vtable0 < v21 /*0x595211*/
     || (v8->IsAllocated || !v21)
     && (v23 = (int)v8[1].Items, v23 > 0)
-    && (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))(v8, v21 + v23, 0) )
+    && (*((uint8_t (**)(VectorClass *, int, unsigned int))v8->vtable1 + 2))( (VectorClass *)(v8), v21 + v23, 0) )
   {
     v24 = v8[1].vtable0; /*0x59521c*/
-    v25 = v8->Items; /*0x59521f*/
+    v25 = (unsigned int *)(v8->Items); /*0x59521f*/
     v8[1].vtable0 = (char *)v24 + 1; /*0x595225*/
     v25[(unsigned int)v24] = *v22; /*0x59522a*/
     return &v8->vtable1; /*0x595235*/
@@ -706,8 +706,8 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
 
   v3 = a3; /*0x500205*/
   v5 = (*(int (**)(unsigned int *))(*a3 + 732))(a3); /*0x50021a*/
-  v6 = (*(int (**)(unsigned int *))(*v3 + 728))(v3) + v5; /*0x500222*/
-  if ( (*(int (**)(unsigned int *))(*v3 + 724))(v3) + v6 ) /*0x50022e*/
+  v6 = (*(int (**)(unsigned int *))(*v3 + 728))( (unsigned int *)(v3)) + v5; /*0x500222*/
+  if ( (*(int (**)(unsigned int *))(*v3 + 724))( (unsigned int *)(v3)) + v6 ) /*0x50022e*/
     v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 4); /*0x50024b*/
   else
     v7 = 0; /*0x500237*/

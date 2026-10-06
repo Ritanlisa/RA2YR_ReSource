@@ -20,7 +20,7 @@ int COMObject::FindNextActive(unsigned char * a1)
     return 0; /*0x4e1a16*/
   while ( !LOBYTE(a1->Image) ) /*0x4e1a09*/
   {
-    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))( (ShpButtonClass *)(a1)); /*0x4e1a10*/
+    a1 = (unsigned char *)((ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))( (ShpButtonClass *)(a1))); /*0x4e1a10*/
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }
@@ -57,7 +57,7 @@ namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
 
-  return *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))( (GScreenClass *)(aP0)); /*0x4f4408*/
+  return *(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))( (GScreenClass *)(aP0)); /*0x4f4408*/
 
 }
 } // namespace gamemd

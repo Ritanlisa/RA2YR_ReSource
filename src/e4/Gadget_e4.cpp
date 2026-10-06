@@ -11,8 +11,8 @@ namespace gamemd {
 unsigned int * Gadget::InitProperties()
 {
 
-  unknown_libname_74(&this->m_1[3]); /*0x600636*/
-  unknown_libname_74(&this->m_5[3]); /*0x60063e*/
+  unknown_libname_74( (void *)(&this->m_1[3])); /*0x600636*/
+  unknown_libname_74( (void *)(&this->m_5[3])); /*0x60063e*/
   *(unsigned int *)this->__pad_0 = 0; /*0x600646*/
   this->u32_C = -1; /*0x60064c*/
   this->u32_14 = -1; /*0x60064f*/

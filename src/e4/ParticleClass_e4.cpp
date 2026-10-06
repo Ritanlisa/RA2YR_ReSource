@@ -81,7 +81,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
           v28[0] = *(unsigned int *)&this->__pad_28[116]; /*0x62d036*/
           v28[1] = *(unsigned int *)&this->__pad_28[120]; /*0x62d048*/
           v28[2] = *(unsigned int *)&this->__pad_28[124]; /*0x62d054*/
-          ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen((unsigned int *)(v28), &v29); /*0x62d058*/
+          ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v28), (int *)(&v29)); /*0x62d058*/
           v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
           v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
           if ( v29 >= *a3 && v29 < *a3 + a3[2] ) /*0x62d086*/
@@ -125,12 +125,12 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     v26 = (v14 * v26) >> 7; /*0x62d22d*/
                     v27 = (v14 * v27) >> 7; /*0x62d230*/
                   }
-                  (*(void (**)(AudioStream *, int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 36))( /*0x62d288*/
-                    g_DSurface_Hidden_2,
-                    &v29,
-                    (uint16_t)(v24 >> g_BitShift_Green_0 << g_BitShift_Red)
-                  | (uint16_t)(v26 >> g_BitMask_Blue << g_BitMask_Green)
-                  | (uint16_t)(v27 >> g_BitMask_Red << g_BitShift_Blue));
+(*(void (**)(AudioStream *, int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 36))( /*0x62d288*/ g_DSurface_Hidden_2, (int *)(&v29), (uint16_t)(v24 >> g_BitShift_Green_0 << g_BitShift_Red) | (uint16_t)(v26 >> g_BitMask_Blue << g_BitMask_Green) | (uint16_t)(v27 >> g_BitMask_Red << g_BitShift_Blue));
+
+
+
+
+
                 }
               }
             }

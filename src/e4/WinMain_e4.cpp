@@ -167,7 +167,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     }
     else
     {
-      v5 = 0; /*0x5bc235*/
+      v5 = (unsigned char *)(0); /*0x5bc235*/
     }
     *(unsigned int *)(v3)++ = (int)v5; /*0x5bc23b*/
     ++v20; /*0x5bc247*/
@@ -237,7 +237,7 @@ int WinMain::Constructor_VectorClass_Wstring_()
     if ( v3 ) /*0x69a20d*/
     {
       *(unsigned int *)(v3 + 420) = (unsigned int)(&vt_VectorClass); /*0x69a215*/
-      VectorClass_Wstring::ddtor( (void)((_VectorClass_VWstring *)(v3 + 420))); /*0x69a21b*/
+      VectorClass_Wstring::ddtor(  (_VectorClass_VWstring *)(v3 + 420)); /*0x69a21b*/
       v4 = *(void **)(v3 + 396); /*0x69a220*/
       *(unsigned int *)(v3 + 392) = (unsigned int)(&vt_VectorClass); /*0x69a226*/
       if ( v4 && *(unsigned char *)(v3 + 405) ) /*0x69a234*/
@@ -352,7 +352,7 @@ char sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7e7b*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7e81*/
       IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7e87*/
-      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
+      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (unsigned int)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7e9a*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
@@ -365,7 +365,7 @@ char sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7ecf*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7ed5*/
       IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7edb*/
-      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
+      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (unsigned int)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7eee*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/

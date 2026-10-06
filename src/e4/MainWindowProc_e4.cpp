@@ -49,7 +49,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
       && ((DSurface *)(DSurface_Tile))->RestoreIfLost()
       && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
     {
-      (*((void (**)(DSurface *, unsigned int))DSurface_Tile->DSurface_field_0x0 + 6))(DSurface_Tile, 0); /*0x777504*/
+      (*((void (**)(DSurface *, unsigned int))DSurface_Tile->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Tile), 0); /*0x777504*/
     }
     if ( DSurface_Sidebar ) /*0x77750f*/
     {
@@ -57,7 +57,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
         if ( !((unsigned int *)&stru_A8EB00)[376] || *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > 16 ) /*0x777530*/
-          (*((void (**)(DSurface *, unsigned int))DSurface_Sidebar->DSurface_field_0x0 + 6))(DSurface_Sidebar, 0); /*0x77753c*/
+          (*((void (**)(DSurface *, unsigned int))DSurface_Sidebar->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Sidebar), 0); /*0x77753c*/
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
@@ -65,13 +65,13 @@ AbstractClass * * sub_777420(ObjectClass *self)
       && ((DSurface *)(g_DSurface_Primary))->RestoreIfLost()
       && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
     {
-      (*((void (**)(DSurface *, char *, unsigned int))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/
-        g_DSurface_Primary,
-        &DSurface_ViewBounds.__pad_8[8],
-        0);
+(*((void (**)(DSurface *, char *, unsigned int))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/ g_DSurface_Primary, (char *)(&DSurface_ViewBounds.__pad_8[8]), 0);
+
+
+
     }
   }
-  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw( 2); /*0x77757c*/
+  ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x77757c*/
   InvalidateRect((HWND)(g_hWnd), 0, 0); /*0x77758c*/
   IDA_LOBYTE(v2) = 0; /*0x777592*/
   ((AsyncIO *)(v2))->Read(); /*0x777594*/
@@ -134,7 +134,7 @@ char * E4Recv_724000::sub_724000(int a2)
   this->M604 = 0; /*0x724062*/
   v4 = *(unsigned int *)v3; /*0x724068*/
   *(unsigned int *)this = (unsigned int)(&vt_ToolTipManager); /*0x72406a*/
-  (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
+  (*(void (**)(char *))(v4 + 12))( (char *)(v3)); /*0x724070*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
   this->M588 = 0; /*0x724082*/
   this->M592 = 0; /*0x724088*/

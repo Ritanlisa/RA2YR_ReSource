@@ -128,7 +128,7 @@ return (gamemd::AbstractClass **)1; /*0x47939b*/
   if ( v8 ) /*0x4793aa*/
     v9 = ((MixFileClass *)(v8))->FromFile((char *)(aMainMix), (int)dword_886980); /*0x4793b8*/
   else
-    v9 = 0; /*0x4793bf*/
+    v9 = (unsigned int *)(0); /*0x4793bf*/
   dword_884E34 = (int)v9; /*0x4793c1*/
   Debug::Log("     Initialized %s\n"); /*0x4793cf G57c1: IDA 0x4793cf push offset aInitializedS*/
   v10 = (char *)aP0 + 1; /*0x4793d4*/
@@ -136,7 +136,7 @@ return (gamemd::AbstractClass **)1; /*0x47939b*/
   Debug::Log("     Initializing %s\n"); /*0x4793f6 G57c1: IDA 0x4793f6 push offset g_Str_Trace_Initializing__s*/
   v11 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/
   if ( v11 ) /*0x479407*/
-    g_MixFile_MAPSMDFirst = (int)((MixFileClass *)(v11))->FromFile(Buffer, (int)dword_886980); /*0x47941a*/
+    g_MixFile_MAPSMDFirst = (int)((MixFileClass *)(v11))->FromFile( (char *)(Buffer), (int)dword_886980); /*0x47941a*/
   else
     g_MixFile_MAPSMDFirst = 0; /*0x479421*/
   sprintf(Buffer, "MAPS%02d.MIX", v10); /*0x479432*/
@@ -149,7 +149,7 @@ LABEL_61:
     Debug::Log("     FAILED!\n"); /*0x479664 G57c1: IDA 0x479669 push offset g_Str_FAILED_*/
     return 0; /*0x47967c*/
   }
-  g_MixFile_MAPSFirst = (int)((MixFileClass *)(v12))->FromFile(Buffer, (int)dword_886980); /*0x479467*/
+  g_MixFile_MAPSFirst = (int)((MixFileClass *)(v12))->FromFile( (char *)(Buffer), (int)dword_886980); /*0x479467*/
   if ( !g_MixFile_MAPSFirst ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
   Debug::Log("     Initializing New Multi.Mix\n"); /*0x479496 G57c1: IDA 0x479496 push offset aInitializingNe*/
@@ -168,11 +168,11 @@ LABEL_61:
   MixFileClass_MULTI = (int)((MixFileClass *)(v14))->FromFile((char *)(aMultiMix), (int)dword_886980); /*0x4794f2*/
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
-  v15 = ((CCFileClass*)&v24)->Construct((char *)(void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
-  v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
+  v15 = (unsigned int *)((CCFileClass*)&v24)->Construct((char *)(void *)(g_Str_File_THEMEMD_MIX)); /*0x479526*/
+  v16 = (*(int (**)(unsigned int *, unsigned int, int))(*v15 + 20))( (unsigned int *)(v15), 0, a2); /*0x47953f*/
   ((unsigned int *)&v24)[0] = (int)&vt_CCFileClass; /*0x479541*/
   v28 = 0; /*0x479545*/
-  ((Vector *)((int)v26))->Clear(); /*0x47954c*/
+  ((Vector *)((int)v26))->Clear((int)((Vector *)((int)v26))); /*0x47954c*/
   ((unsigned int *)&v24)[0] = (int)&off_7E1668; /*0x47955a*/
   ((BufferIOFileClass *)((BufferIOFileClass *)((char *)&v24)))->Dtor(); /*0x47955e*/
   if ( v16 ) /*0x47956a*/
@@ -197,13 +197,13 @@ LABEL_61:
   }
   g_MixFile_THEME = 0; /*0x4795c2*/
 LABEL_58:
-  Audio::LoadWAVFiles( (void)((Audio *)&unk_A83D10)); /*0x4795c8*/
+  Audio::LoadWAVFiles(  (Audio *)&unk_A83D10); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
-  v19 = ((CCFileClass*)((CCFileClass *)((char *)&v24)))->Construct(Source); /*0x4795f5*/
-  v20 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0)); /*0x479609*/
+  v19 = (unsigned int *)((CCFileClass*)((CCFileClass *)((char *)&v24)))->Construct( (char *)(Source)); /*0x4795f5*/
+  v20 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v19 + 20))( (unsigned int *)(v19), 0)); /*0x479609*/
   *(unsigned int *)v24.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x47960b*/
   v27 = 0; /*0x47960f*/
-  ((Vector *)((int)&v25))->Clear(); /*0x479616*/
+  ((Vector *)((int)&v25))->Clear((int)((Vector *)((int)&v25))); /*0x479616*/
   *(unsigned int *)v24.CDFileClass = (unsigned int)(&off_7E1668); /*0x47961f*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v24))->Dtor(); /*0x479623*/
   if ( v20 ) /*0x47962b*/
@@ -222,7 +222,7 @@ LABEL_63:
   if ( !v21 ) /*0x4796b1*/
     goto LABEL_63; /*0x4796b1*/
 LABEL_60:
-  g_MixFile_MOVIES = (int)((MixFileClass *)(v21))->FromFile(Buffer, (int)dword_886980); /*0x47964a*/
+  g_MixFile_MOVIES = (int)((MixFileClass *)(v21))->FromFile( (char *)(Buffer), (int)dword_886980); /*0x47964a*/
   if ( !g_MixFile_MOVIES ) /*0x479662*/
     goto LABEL_61; /*0x479662*/
 return (gamemd::AbstractClass **)Map_Load_751C30(); /*0x479390*/
@@ -239,7 +239,7 @@ void * LinkedList_flat::MoveNode(void * a2)
     (*(void (**)(LinkedList *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x55660e*/
     (*(void (**)(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))( this, (void *)(a2)); /*0x556616*/
   }
-  return this; /*0x55661b*/
+  return (void *)this; /*0x55661b*/
 
 }
 } // namespace gamemd
@@ -330,10 +330,10 @@ int LinkedList_flat::RemoveNode()
 
   v2 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x55673e*/
   v3 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x556740*/
-  m_Prev = this->m_Prev; /*0x556743*/
+  m_Prev = (LinkClass *)(this->m_Prev); /*0x556743*/
   if ( m_Prev ) /*0x55674a*/
     m_Prev->m_Next = this->m_Next; /*0x55674f*/
-  m_Next = this->m_Next; /*0x556752*/
+  m_Next = (LinkClass *)(this->m_Next); /*0x556752*/
   if ( m_Next ) /*0x556757*/
     m_Next->m_Prev = this->m_Prev; /*0x55675c*/
   this->m_Prev = 0; /*0x556761*/
@@ -342,7 +342,7 @@ int LinkedList_flat::RemoveNode()
     return (int)v2->__pad_0; /*0x55677e*/
   if ( v3 == this ) /*0x55676b*/
     return 0; /*0x55676f*/
-  return (*(int (**)(LinkClass *))(*(unsigned int *)v3->__pad_0 + 24))(v3); /*0x55676d*/
+  return (*(int (**)(LinkClass *))(*(unsigned int *)v3->__pad_0 + 24))( (LinkClass *)(v3)); /*0x55676d*/
 
 }
 } // namespace gamemd
@@ -355,7 +355,7 @@ int LinkedList_flat::Remove(unsigned int * a2)
   unsigned int *v3; // edx
 
   result = this->u32_34; /*0x623460*/
-  v3 = 0; /*0x623463*/
+  v3 = (unsigned int *)(0); /*0x623463*/
   if ( result ) /*0x623468*/
   {
     while ( a2 != (unsigned int *)result ) /*0x623470*/

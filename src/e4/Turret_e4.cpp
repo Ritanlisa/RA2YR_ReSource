@@ -75,7 +75,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
       {
         sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8d30*/
         _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__VXL)); /*0x5f8d4c*/
-        ((CCFileClass*)&v26)->Construct(Source); /*0x5f8d63*/
+        ((CCFileClass*)&v26)->Construct( (char *)(Source)); /*0x5f8d63*/
         if ( (uint8_t)((CCFileClass *)((int)(&v26)))->Open(0) ) /*0x5f8d70*/
         {
           v3 = (void *)*((unsigned int *)this + 46); /*0x5f8d7d*/
@@ -88,13 +88,13 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           if ( v4 ) /*0x5f8da3*/
             FileVXL = ((File *)(v4))->LoadFileVXL((int)&v26, 0); /*0x5f8db0*/
           else
-            FileVXL = 0; /*0x5f8db7*/
+            FileVXL = (unsigned int *)(0); /*0x5f8db7*/
           *((unsigned int *)this + 46) = (unsigned int)(FileVXL); /*0x5f8dbb*/
           if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f8dc7*/
           {
             sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__HVA)); /*0x5f8df9*/
-            ((CCFileClass*)&v20)->Construct(Source); /*0x5f8e0d*/
+            ((CCFileClass*)&v20)->Construct( (char *)(Source)); /*0x5f8e0d*/
             v6 = (void *)*((unsigned int *)this + 47); /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {
@@ -105,21 +105,21 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             if ( v7 ) /*0x5f8e38*/
               FileHVA = ((File *)(v7))->LoadFileHVA((int)&v20); /*0x5f8e41*/
             else
-              FileHVA = 0; /*0x5f8e48*/
+              FileHVA = (unsigned int *)(0); /*0x5f8e48*/
             v9 = (VoxelSection *)*((unsigned int *)this + 46); /*0x5f8e4a*/
             *((unsigned int *)this + 47) = (unsigned int)(FileHVA); /*0x5f8e52*/
             Info = (unsigned int)(((VoxelSection *)(v9))->GetInfo(0, 0)); /*0x5f8e58*/
             ((Matrix *)(*((Matrix **)this + 47)))->Scale(*(float *)(Info + 12)); /*0x5f8e67*/
             *(unsigned int *)v20.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f8e70*/
             v22 = (unsigned int)(0); /*0x5f8e78*/
-            ((Vector *)((int)v21))->Clear(); /*0x5f8e7c*/
+            ((Vector *)((int)v21))->Clear((int)((Vector *)((int)v21))); /*0x5f8e7c*/
             *(unsigned int *)v20.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f8e85*/
             ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x5f8e8d*/
           }
         }
         sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8ea0*/
         _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__VXL)); /*0x5f8ebc*/
-        ((CCFileClass*)&v23)->Construct(Source); /*0x5f8ed0*/
+        ((CCFileClass*)&v23)->Construct( (char *)(Source)); /*0x5f8ed0*/
         if ( (uint8_t)((CCFileClass *)((int)(&v23)))->Open(0) ) /*0x5f8edd*/
         {
           v11 = (void *)*((unsigned int *)this + 48); /*0x5f8eea*/
@@ -132,13 +132,13 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
           if ( v12 ) /*0x5f8f10*/
             v13 = ((File *)(v12))->LoadFileVXL((int)&v23, 0); /*0x5f8f1a*/
           else
-            v13 = 0; /*0x5f8f21*/
+            v13 = (unsigned int *)(0); /*0x5f8f21*/
           *((unsigned int *)this + 48) = (unsigned int)(v13); /*0x5f8f25*/
           if ( v13 && !*(unsigned char *)v13 ) /*0x5f8f31*/
           {
             sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8f47*/
             _makepath(Source, 0, 0, Buffer,(const char *)(g_Str_File__HVA)); /*0x5f8f63*/
-            ((CCFileClass*)&v20)->Construct(Source); /*0x5f8f77*/
+            ((CCFileClass*)&v20)->Construct( (char *)(Source)); /*0x5f8f77*/
             v14 = (void *)*((unsigned int *)this + 49); /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
@@ -149,26 +149,26 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             if ( v15 ) /*0x5f8fa2*/
               v16 = ((File *)(v15))->LoadFileHVA((int)&v20); /*0x5f8fab*/
             else
-              v16 = 0; /*0x5f8fb2*/
+              v16 = (unsigned int *)(0); /*0x5f8fb2*/
             v17 = (VoxelSection *)*((unsigned int *)this + 48); /*0x5f8fb4*/
             *((unsigned int *)this + 49) = (unsigned int)(v16); /*0x5f8fbc*/
             v18 = (unsigned int)(((VoxelSection *)(v17))->GetInfo(0, 0)); /*0x5f8fc2*/
             ((Matrix *)(*((Matrix **)this + 49)))->Scale(*(float *)(v18 + 12)); /*0x5f8fd1*/
             *(unsigned int *)v20.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f8fda*/
             v22 = (unsigned int)(0); /*0x5f8fe2*/
-            ((Vector *)((int)v21))->Clear(); /*0x5f8fe6*/
+            ((Vector *)((int)v21))->Clear((int)((Vector *)((int)v21))); /*0x5f8fe6*/
             *(unsigned int *)v20.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f8fef*/
             ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x5f8ff7*/
           }
         }
         *(unsigned int *)v23.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f9008*/
         v25 = (unsigned int)(0); /*0x5f900c*/
-        ((Vector *)((int)v24))->Clear(); /*0x5f9013*/
+        ((Vector *)((int)v24))->Clear((int)((Vector *)((int)v24))); /*0x5f9013*/
         *(unsigned int *)v23.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f9021*/
         ((BufferIOFileClass *)((BufferIOFileClass *)&v23))->Dtor(); /*0x5f9025*/
         *(unsigned int *)v26.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5f9031*/
         v28 = (unsigned int)(0); /*0x5f9038*/
-        ((Vector *)((int)v27))->Clear(); /*0x5f903f*/
+        ((Vector *)((int)v27))->Clear((int)((Vector *)((int)v27))); /*0x5f903f*/
         *(unsigned int *)v26.CDFileClass = (unsigned int)(&off_7E1668); /*0x5f904b*/
         LOBYTE(v2) = ((BufferIOFileClass *)((BufferIOFileClass *)&v26))->Dtor(); /*0x5f9052*/
       }
@@ -204,7 +204,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
     *v4 |= ((unsigned int)((*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v3->Owner)[0]))->GetValue(&a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
   }
   result = a2; /*0x55a7b6*/
-  qmemcpy( (void *)(a2), &v8, 0x30u); /*0x55a7c5*/
+  qmemcpy( (void *)(a2), (const void *)(&v8), 0x30u); /*0x55a7c5*/
   return result; /*0x55a7c7*/
 
 }

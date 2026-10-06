@@ -48,10 +48,10 @@ int Session::RemoveTeam(int (***aP1)(unsigned int, int))
   if ( aP1 ) /*0x5d1d87*/
   {
     v3 = (void **)(&this->field_18); /*0x5d1d8c*/
-    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))(&this->field_18, &aP1); /*0x5d1d96*/
+    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))( (void **)(&this->field_18), (unsigned int)(&aP1)); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
-      result = (*((int (**)(void **, unsigned int))*v3 + 4))(v3, &aP1); /*0x5d1da7*/
+      result = (*((int (**)(void **, unsigned int))*v3 + 4))( (void **)(v3), (unsigned int)(&aP1)); /*0x5d1da7*/
       if ( result != -1 ) /*0x5d1dad*/
       {
         v4 = (int)v3[4]; /*0x5d1daf*/
@@ -196,12 +196,12 @@ LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
       return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
-      v13 = ((CCFileClass*)(CCFileClass *)Str)->Construct((char *)(void *)(byte_A8B8E0)); /*0x5e7845*/
-      v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
+      v13 = (unsigned int *)((CCFileClass*)(CCFileClass *)Str)->Construct((char *)(void *)(byte_A8B8E0)); /*0x5e7845*/
+      v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))( (unsigned int *)(v13), 0); /*0x5e7858*/
       *(unsigned int *)Str = (unsigned int)(&vt_CCFileClass); /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
-      ((Vector *)((int)&Str[88]))->Clear(); /*0x5e7876*/
+      ((Vector *)((int)&Str[88]))->Clear((int)((Vector *)((int)&Str[88]))); /*0x5e7876*/
       *(unsigned int *)Str = (unsigned int)(&off_7E1668); /*0x5e787f*/
       result =(void **)((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
@@ -212,14 +212,14 @@ LABEL_44:
           g_UIControlState = 0; /*0x5e78e4*/
           return (int)(result); /*0x5e78f4*/
         }
-        result = (int)unknown_libname_27((ObjectClass *)result); /*0x5e78a0*/
+        result = (int)unknown_libname_27( (void *)((ObjectClass *)result)); /*0x5e78a0*/
         g_UIControlState = (int)((Skirmish *)result); /*0x5e78a5*/
       }
       if ( g_UIControlState ) /*0x5e78b0*/
       {
         if ( (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5e78b7*/
         {
-          ScenarioClass::CopyStartPositions(v16); /*0x5e78f5*/
+          ScenarioClass::CopyStartPositions( (void *)(v16)); /*0x5e78f5*/
           return InvalidateRect((HWND)hWnd, 0, 0); /*0x5e78fa*/
         }
         else
@@ -242,7 +242,7 @@ LABEL_44:
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = (char *)(CharToWideString((unsigned char *)(Flagged + 36))); /*0x5e75b0*/
-      v3 = (int)(((Network *)((int)&unk_A8E9C0))->SendToPlayer( (int)Str, 47, (wchar_t *)(1), (void)((wchar_t *)v5))); /*0x5e75c4*/
+      v3 = (int)(((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)Str, 47, (wchar_t *)(1), (wchar_t *)v5)); /*0x5e75c4*/
     }
     if ( v3 ) /*0x5e75cb*/
     {
@@ -294,7 +294,7 @@ int Session::StartGame(HWND hWnd)
   Skirmish *v4; // eax
 
   if ( !(uint8_t)((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])))->Sed() ) /*0x5ed381*/
-    return Session::PrepareGame(hWnd); /*0x5ed3f1*/
+    return Session::PrepareGame( (HWND)(hWnd)); /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/
   {
@@ -303,13 +303,13 @@ int Session::StartGame(HWND hWnd)
   }
   v3 = (gamemd::ObjectClass *)((int)((ObjectClass *)__2_YAPAXI_Z(4u)));
   if ( v3 ) /*0x5ed3b2*/
-    v4 = (Skirmish *)unknown_libname_27(v3); /*0x5ed3b6*/
+    v4 = (Skirmish *)unknown_libname_27( (void *)(v3)); /*0x5ed3b6*/
   else
-    v4 = 0; /*0x5ed3bd*/
+    v4 = (Skirmish *)(0); /*0x5ed3bd*/
   g_UIControlState = (int)(v4); /*0x5ed3c6*/
   ((Surface *)((Surface *)v4))->LoadToSurfaceSHP((char *)(ExistingFileName)); /*0x5ed3cb*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
-    Session::PrepareGame(hWnd); /*0x5ed3dd*/
+    Session::PrepareGame( (HWND)(hWnd)); /*0x5ed3dd*/
   return InvalidateRect((HWND)hWnd, 0, 0); /*0x5ed3ed*/
 
 }

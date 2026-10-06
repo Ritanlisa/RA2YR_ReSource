@@ -220,7 +220,7 @@ float * Math::BuildRotationMatrix(float *a2, float a3, int aP1, int a1, int a4, 
   v14 = a2[2] * a2[2]; /*0x5ae835*/
   *((unsigned int *)this + 11) = 0.0; /*0x5ae83f*/
   *((unsigned int *)this + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
-  return this; /*0x5ae851*/
+  return (float *)this; /*0x5ae851*/
 
 }
 }
@@ -235,7 +235,7 @@ int Math::DistSq2D(TechnoClass * aP1)
   unsigned char v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (**)(Math *, unsigned char *))(*(unsigned int *)this->__pad_0 + 72))(this, v6); /*0x5f656e*/
+  v2 = (int *)(*(int (**)(Math *, unsigned char *))(*(unsigned int *)this->__pad_0 + 72))( this, (unsigned char *)(v6)); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/

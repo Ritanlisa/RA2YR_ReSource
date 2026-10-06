@@ -27,10 +27,10 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
   this->MovingDestination[1] = dword_B04E3C; /*0x661eda*/
   this->MovingDestination[2] = dword_B04E40; /*0x661ee3*/
-  this->MissionTimer[0] = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661eee*/
+  this->MissionTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661eee*/
   this->MissionTimer[2] = 0; /*0x661ef1*/
   this->MissionTimer[3] = 0; /*0x661ef4*/
-  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661ef7*/
+  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661ef7*/
   this->TrailerTimer[2] = 0; /*0x661efd*/
   this->TrailerTimer[0] = v2; /*0x661f00*/
   (&this->CurrentSpeed)[0] = 0; /*0x661f03*/
@@ -40,8 +40,8 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->CurrentPitch = 0.0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
-  *(unsigned int *)this->LocomotionClass = &vt_RocketLocomotionClass; /*0x661f19*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x661f1f*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_RocketLocomotionClass;
+  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_RocketLocomotionClass;
   return (int)this->LocomotionClass; /*0x661f28*/
 
 }
@@ -53,7 +53,7 @@ int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x6633d6*/
     return -2147467261; /*0x6633d8*/
-  *(IID *)a2 = g_CLSID_ShipLocomotion; /*0x6633e6*/
+  *(IID *)a2 = (unsigned int)g_CLSID_ShipLocomotion; /*0x6633e6*/
   a2[3] = unk_7E9ADC; /*0x663400*/
   return 0; /*0x6633dd*/
 
@@ -74,7 +74,7 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_LocomotionClass;
       *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_LocomotionClass;
-      v3 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x663435*/
+      v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x663435*/
       a1->TrailerTimer[2] = 0; /*0x66343b*/
       a1->TrailerTimer[0] = v3; /*0x663442*/
       *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_RocketLocomotionClass;
@@ -101,7 +101,7 @@ RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2, int a3)
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_RocketLocomotionClass;
   *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_RocketLocomotionClass;
-  ((gamemd::LocomotionClass*)(gamemd::LocomotionClass*)this)->Construct(); /*0x6635d0*/
+  ((gamemd::LocomotionClass*)this)->Construct(); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     __3_YAXPAX_Z(this); /*0x6635dd*/
   return this->LocomotionClass; /*0x6635e7*/

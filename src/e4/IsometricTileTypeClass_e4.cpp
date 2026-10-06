@@ -30,7 +30,7 @@ int IsometricTileTypeClass::ProcessPower(int * a2, void *a2_2)
   int v5; // edx
   int v6; // eax
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x549b79*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x549b79*/
   Power::TimerProcess(*((unsigned int *)this + 165)); /*0x549b87*/
   Power::TimerProcess(*((unsigned int *)this + 166)); /*0x549b95*/
   Power::TimerProcess(*((unsigned int *)this + 167)); /*0x549ba3*/
@@ -180,7 +180,7 @@ IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2, int a1, int a3, 
   IsometricTileTypeClass::CleanupMembers((int)this); /*0x54a173*/
   if ( (a2 & 1) != 0 ) /*0x54a17d*/
     __3_YAXPAX_Z(this); /*0x54a180*/
-  return this; /*0x54a18a*/
+  return (IsometricTileTypeClass *)this; /*0x54a18a*/
 
 }
 } // namespace gamemd

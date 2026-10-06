@@ -31,10 +31,10 @@ int sub_53EC40(unsigned char a1, char a2)
 namespace gamemd {
 size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
 {
-  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // ebx
+  LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // ebx
   int v5; // eax
   int v6; // eax
-  LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM); // eax
   size_t v8; // esi
   const wchar_t *v9; // ebx
   signed int v10; // ebp
@@ -57,7 +57,7 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   hWnda = hWnd; /*0x6149c7*/
   if ( dword_AC1B4C ) /*0x6149cb*/
   {
-    v5 = (*(unsigned int (*)(void *))&dword_AC1B60)(&hWnda); /*0x6149d1*/
+    v5 = (*(unsigned int (*)(void *))&dword_AC1B60)( (void *)(&hWnda)); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
     v6 = *((unsigned int *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
@@ -79,17 +79,17 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   CallWindowProcA(v4, hWnd, 0xDu, 0x400u, (LPARAM)lParam); /*0x614a2c*/
   if ( a4 ) /*0x614a37*/
     v8 = (unsigned int)CallWindowProcA(v4, hWnda, 0xB0u, (WPARAM)&wParam, (LPARAM)&v22) >> 16; /*0x614a52*/
-  v9 = lpWideCharStr; /*0x614a5c*/
+  v9 = (const wchar_t *)(lpWideCharStr); /*0x614a5c*/
   v19 = (gamemd::WCHAR *)(lpWideCharStr); /*0x614a61*/
   *lpWideCharStr = 0; /*0x614a6d*/
-  MultiByteToWideChar(0, 0, lParam, -1,(LPWSTR)(v19), cchWideChar); /*0x614a72*/
+  MultiByteToWideChar( 0, 0, (LPCCH)(lParam), -1, (LPWSTR)(v19), cchWideChar); /*0x614a72*/
   if ( a4 ) /*0x614a7a*/
     *a4 = _mbsnccnt((const uint8_t *)lParam, v8); /*0x614a8a*/
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
   v10 = wcslen(v9); /*0x614a9d*/
   v11 = RA2_OPNEW(2 * v10 + 6); /*0x614aab*/
-  memset(v11, 0, 2 * v10 + 6); /*0x614ab9*/
+  memset( (void *)(v11), 0, 2 * v10 + 6); /*0x614ab9*/
   v12 = 0; /*0x614abd*/
   if ( v10 > 0 ) /*0x614ac6*/
   {
@@ -112,8 +112,8 @@ size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
     if ( v10 != v12 ) /*0x614aee*/
       wcscat((wchar_t *)v11, L"\r\n"); /*0x614af6*/
   }
-  v17 = lpWideCharStr; /*0x614afe*/
-  wcscpy(lpWideCharStr, (const wchar_t *)v11); /*0x614b04*/
+  v17 = (const wchar_t *)(lpWideCharStr); /*0x614afe*/
+  wcscpy( (wchar_t *)(lpWideCharStr), (const wchar_t *)v11); /*0x614b04*/
   RA2_OPDEL(v11); /*0x614b0a*/
   return wcslen(v17); /*0x614b18*/
 }

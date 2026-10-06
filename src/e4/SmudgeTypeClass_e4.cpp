@@ -51,7 +51,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   int v5; // ecx
   void **v6; // edx
 
-  ((ObjectTypeClass *)((int)this))->ConstructFull(Source); /*0x6b5269*/
+  ((ObjectTypeClass *)((int)this))->ConstructFull( (char *)(Source)); /*0x6b5269*/
   *((unsigned int *)this + 165) = -1; /*0x6b5277*/
   *((unsigned int *)this + 166) = 1; /*0x6b5281*/
   *((unsigned int *)this + 167) = 1; /*0x6b5287*/
@@ -131,10 +131,10 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
       v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
       v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
-    v10 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj(a6); /*0x6b5674*/
+    v10 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(a6)); /*0x6b5674*/
     v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
-    DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10[13],(gamemd::ConvertClass *)(v7), 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
+    DrawToSurfaceSHP( (int)g_DSurface_Hidden_2, v10[13], (gamemd::ConvertClass *)(v7), 0, (ConvertClass *)(&v13), (ConvertClass *)(a3), 3584, 0, -1 - v11, 0, (ConvertClass *)(v12), 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 
 }
@@ -152,7 +152,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
   ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6b56e3*/
-  if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI(aP1) ) /*0x6b56eb*/
+  if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI( (uint8_t ***)(aP1)) ) /*0x6b56eb*/
   {
     Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aCrater, this->Crater); /*0x6b570b*/
     Burn = this->Burn; /*0x6b5710*/
@@ -174,7 +174,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
       _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x6b57b4*/
     else
       _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), (const char *)Ext); /*0x6b5784*/
-    result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
+    result = (int)SearchMIXFile( (char *)(Buffer), 0); /*0x6b57c2*/
     ((unsigned int *)this)[0] = (unsigned int)((SHPStruct *)result); /*0x6b57c7*/
     LOBYTE(result) = 1; /*0x6b57ce*/
   }
@@ -207,15 +207,15 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor(void * a2, char a3)
   }
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a3), 1); /*0x6b61a0*/
   v6 = (gamemd::SmudgeTypeClass *)(a3); /*0x6b61b5*/
-  v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
-         (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 52),
-         &v6);
+v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/ (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 52), (SmudgeTypeClass **)(&v6));
+
+
   if ( v4 != -1 && v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68) ) /*0x6b61c9*/
   {
-    --*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 68); /*0x6b61ce*/
+    --*(unsigned int *)((char *)&stru_A8EB00 + 68); /*0x6b61ce*/
     for ( ; /*0x6b61d4*/
           v4 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 68);
-          *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
+          *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
     {
       ++v4; /*0x6b61dc*/
     }
@@ -245,7 +245,7 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
     v5 = a2[1]; /*0x6b5578*/
     v7[0] = (*a2 << 8) + 128; /*0x6b5585*/
     v7[1] = (v5 << 8) + 128; /*0x6b559a*/
-    if ( ((UnitClass *)v4)->Create(this, v7, -1) ) /*0x6b559e*/
+    if ( ((UnitClass *)v4)->Create( this, (_DWORD *)(v7), -1) ) /*0x6b559e*/
       return 1; /*0x6b5565*/
   }
   return result; /*0x6b55a9*/
@@ -261,7 +261,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 
   v3 = (UnitClass *)__2_YAPAXI_Z(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
-return (gamemd::SmudgeClass *)((UnitClass *)v3)->Create(this, &dword_B0B7A8, -1); /*0x6b55de*/
+return (gamemd::SmudgeClass *)((UnitClass *)v3)->Create( this, (_DWORD *)(&dword_B0B7A8), -1); /*0x6b55de*/
   else
     return 0; /*0x6b55e7*/
 
@@ -275,7 +275,7 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   int v3; // ecx
   int v4; // edx
 
-  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x6b57f9*/
+  ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   LOBYTE(v3) = this->Crater; /*0x6b580c*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x6b5815*/

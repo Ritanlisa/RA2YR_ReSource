@@ -30,9 +30,9 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
     {
-      v4 =(char *)(void *)((int)(__2_YAPAXI_Z(0x40u)));
+      v4 = (void *)((char *)(void *)((int)(__2_YAPAXI_Z(0x40u))));
       if ( v4 ) /*0x5023d6*/
-        v5 = ((unsigned int)int)(((WaypointPathClass*)(int)v4)->Construct(v2)); /*0x5023db*/
+        v5 = ((unsigned int)int)(((WaypointPathClass*)(int)v4)->Construct( (unsigned int)(v2))); /*0x5023db*/
       else
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/

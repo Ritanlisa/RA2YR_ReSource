@@ -156,10 +156,10 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
           if ( ((unsigned int *)p_vtable1)[0] < (int)vtable2 /*0x763d42*/
             || (BYTE1(((unsigned int *)p_vtable1)[0]) || !vtable2)
             && (abstractFlags = ((unsigned int *)p_vtable1)[0], abstractFlags > 0)
-            && (*((uint8_t (**)(WaypointPathClass *, int, unsigned int))p_vtable1->vtable1 + 2))(
-                 p_vtable1,
-                 (int)vtable2 + abstractFlags,
-                 0) )
+&& (*((uint8_t (**)(WaypointPathClass *, int, unsigned int))p_vtable1->vtable1 + 2))( (WaypointPathClass *)(p_vtable1), (int)vtable2 + abstractFlags, 0) )
+
+
+
           {
             uniqueId = ((unsigned int *)p_vtable1)[0]; /*0x763d49*/
             v11 = uniqueId + 1; /*0x763d4c*/
@@ -227,7 +227,7 @@ _DWORD * WaypointPathClass::computePath(int a2, unsigned int *a3)
     }
     else
     {
-      v8 = 0; /*0x7647f5*/
+      v8 = (void *)(0); /*0x7647f5*/
     }
     ((unsigned int *)this)[0] = (unsigned int)(v8); /*0x7647f7*/
     BYTE1(((unsigned int *)this)[0]) = 1; /*0x7647fa*/
@@ -258,7 +258,7 @@ namespace gamemd {
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
 
-  ((gamemd::AbstractClass*)(gamemd::AbstractClass*)this)->ProcessPower(); /*0x763c09*/
+  ((gamemd::AbstractClass*)this)->ProcessPower(); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
   return Power::TimerProcess((&this->waypoints)[4]); /*0x763c24*/
 
@@ -379,7 +379,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
     __3_YAXPAX_Z(this); /*0x763ed9*/
-  return this; /*0x763ee3*/
+  return (WaypointPathClass *)this; /*0x763ee3*/
 
 }
 } // namespace gamemd

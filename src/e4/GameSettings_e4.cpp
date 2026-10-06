@@ -206,7 +206,7 @@ int GameSettings::Read()
         v1 = dbl_7E1718; /*0x5faa3a G57c4 x87c4: fstp st + fld*/
     *(float *)(_ESI.v + 60) = (float)v1; /*0x5faa42 G57c4 x87c4: fst dword [esi+3Ch]*/
     IDA_LOWORD(v16) = Math::RoundToInt(v1 * dbl_7EAA50); /*0x5faa45 G57c4 x87c4: fmul ds:dbl_7EAA50*/ /*0x5faa4b*/
-    ((ThemeClass *)v16)->GetField(); /*0x5faa52*/
+    ((ThemeClass *)v16)->GetField((int)((ThemeClass *)v16)); /*0x5faa52*/
     IDA_LOWORD(v17) = Math::RoundToInt(*(float *)(_ESI.v + 60) * flt_7EF38C); /*0x5faa57 G57c4 x87c4: fld+fmul [esi+3Ch]*flt_7EF38C*/ /*0x5faa60*/
     EndBufferMixer( (VolumeStruct*)((int *)g_MixerChannel_Voice), v17); /*0x5faa6d*/
     Debug::Log("VoiceVolume = %f\n", (double)*(float *)(_ESI.v + 60)); /*0x5faa80 G57c1: IDA 0x5faa7b push offset g_Str_Trace_VoiceVolume____f; G57c4 x87c4: fld/fstp vararg*/
@@ -256,7 +256,7 @@ int GameSettings::Read()
       0xC8u);
     if ( String[0] ) /*0x5fabcc*/
     {
-      v24 = String; /*0x5fabce*/
+      v24 = (wchar_t *)(String); /*0x5fabce*/
       do /*0x5fabe8*/
       {
         v25 = *v24 == 0xFFFFu; /*0x5fabd8*/
@@ -308,7 +308,7 @@ int GameSettings::Read()
       64);
     Debug::Log(); /*0x5face4*/
     IDA_LOBYTE(v31) = *(unsigned char *)(_ESI.v + 29); /*0x5face9*/
-    nullsub_36(v31); /*0x5facf5*/
+    nullsub_36(); /*0x5facf5*/
     SetGlobalFlag(*(unsigned char *)(_ESI.v + 30)); /*0x5facfd*/
     return (int)((GameSettings *)(const char *)_ESI)->ParseNetworkAddress(); /*0x5fad09*/
 }
@@ -333,19 +333,19 @@ void * GameSettings::ParseNetworkAddress()
     v2 = *((unsigned short *)this + 37); /*0x5fb057*/
     if ( v2 == 0xFFFF ) /*0x5fb05f*/
     {
-      Network::GetField(unk_A8E9C0, 34835); /*0x5fb066*/
+      Network::GetField( (HWND)(unk_A8E9C0), 34835); /*0x5fb066*/
     }
     else if ( v2 < 0x4000u ) /*0x5fb06c*/
     {
-      Network::GetField(unk_A8E9C0, v2 + 0x4000); /*0x5fb079*/
+      Network::GetField( (HWND)(unk_A8E9C0), v2 + 0x4000); /*0x5fb079*/
     }
     v3 = this + 88; /*0x5fb07e*/
-    result = 0; /*0x5fb086*/
-    v5 = strlen(v3) + 1; /*0x5fb088*/
+    result = (char *)(0); /*0x5fb086*/
+    v5 = strlen( (const char *)(v3)) + 1; /*0x5fb088*/
     if ( v5 != 1 ) /*0x5fb08d*/
     {
       v6 = (char *)RA2_OPNEW(v5); /*0x5fb09a*/
-      strcpy(v6, v3); /*0x5fb0b8*/
+      strcpy( (char *)(v6), (const char *)(v3)); /*0x5fb0b8*/
       v7 = 0; /*0x5fb0c1*/
       result = strtok(v6, asc_826598); /*0x5fb0c3*/
       if ( result ) /*0x5fb0cd*/
@@ -362,7 +362,7 @@ void * GameSettings::ParseNetworkAddress()
           v11 = -1; /*0x5fb11a*/
           v12 = -1; /*0x5fb126*/
           dword_A8D5FC = 1; /*0x5fb131*/
-          v8 = ((NetworkAddress *)v13)->Assign( &v10, (int)&v11, 0); /*0x5fb13b*/
+          v8 = ((NetworkAddress *)v13)->Assign( (unsigned int *)(&v10), (IUnknown *)((int)&v11), 0); /*0x5fb13b*/
           stru_A8D600 = *v8; /*0x5fb142*/
           dword_A8D604 = v8[1]; /*0x5fb14b*/
           result = (char *)v8[2]; /*0x5fb151*/
@@ -379,7 +379,7 @@ void GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
 {
     int result; // eax
 
-    result = a2; /*0x721290*/
+    result = (unsigned int)a2; /*0x721290*/
     if ( a2 >= 255 ) /*0x721299*/
       result = 255; /*0x72129b*/
     this->ObjectTypeClass[3] = result; /*0x7212a0*/
@@ -399,7 +399,7 @@ char * GameSettings::FindFlagged()
     for ( i = (char *)dword_B77908; ; i += 108 ) /*0x7931af*/
     {
       if ( v0 >= 0 && v0 < (int)dword_B77900 ) /*0x7931bb*/
-        qmemcpy(&byte_B777B0, i, 0x6Cu); /*0x7931c9*/
+        qmemcpy( (void *)(&byte_B777B0), (const void *)(i), 0x6Cu); /*0x7931c9*/
       if ( (byte_B777B0 & 1) != 0 ) /*0x7931d2*/
         break; /*0x7931d2*/
       if ( ++v0 >= (int)dword_B77900 ) /*0x7931da*/

@@ -45,7 +45,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   int v3; // eax
   int v4; // eax
 
-  ((ObjectTypeClass *)((int *)this))->ConstructFull(Source); /*0x74ad89*/
+  ((ObjectTypeClass *)((int *)this))->ConstructFull( (char *)(Source)); /*0x74ad89*/
   this->StartSound = -1; /*0x74ad93*/
   this->StopSound = -1; /*0x74ad99*/
   this->Normalized = 0; /*0x74ad9f*/
@@ -91,10 +91,10 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x74aeea*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+
+
+
   {
     v3 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x74aef7*/
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3) = (unsigned int)this;
@@ -102,15 +102,15 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
   if ( stru_A8EB00.ObjectTypeClass[14] < stru_A8EB00.ObjectTypeClass[12] /*0x74af3d*/
     || (BYTE1(stru_A8EB00.ObjectTypeClass[13]) || !stru_A8EB00.ObjectTypeClass[12])
     && stru_A8EB00.ObjectTypeClass[15] > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(stru_A8EB00.ObjectTypeClass[10] + 8))(
-         &stru_A8EB00.ObjectTypeClass[10],
-         stru_A8EB00.ObjectTypeClass[12] + stru_A8EB00.ObjectTypeClass[15],
-         0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(stru_A8EB00.ObjectTypeClass[10] + 8))( (int *)(&stru_A8EB00.ObjectTypeClass[10]), stru_A8EB00.ObjectTypeClass[12] + stru_A8EB00.ObjectTypeClass[15], 0) )
+
+
+
   {
     v4 = stru_A8EB00.ObjectTypeClass[14]++; /*0x74af4a*/
     *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v4) = (unsigned int)this;
   }
-  return this; /*0x74af5e*/
+  return (VoxelAnimTypeClass *)this; /*0x74af5e*/
 
 }
 }
@@ -353,7 +353,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned char *)(v4 + 662) = v37; /*0x74b4ad*/
   if ( v37 ) /*0x74b4b3*/
   {
-    TechnoType = (unsigned int *)((INIEntry *)((INIEntry *)a2))->GetTechnoType((uint8_t *)(v4 + 36),(uint8_t *)(aSharesource)); /*0x74b4c1*/
+    TechnoType = (unsigned int *)((INIEntry *)((INIEntry *)a2))->GetTechnoType( (unsigned __int8 *)((uint8_t *)(v4 + 36)), (unsigned __int8 *)((uint8_t *)(aSharesource))); /*0x74b4c1*/
     if ( !TechnoType ) /*0x74b4ca*/
     {
       *(unsigned int *)(v4 + 176) = 0; /*0x74b555*/
@@ -393,11 +393,11 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     if ( v41 ) /*0x74b5c3*/
       FileVXL = ((File *)(v41))->LoadFileVXL((int)&Destination, 0); /*0x74b5ce*/
     else
-      FileVXL = 0; /*0x74b5d5*/
+      FileVXL = (unsigned int *)(0); /*0x74b5d5*/
     *(unsigned int *)(v4 + 176) = (unsigned int)(FileVXL); /*0x74b5db*/
     Destination.Header[0] = (int)&vt_CCFileClass; /*0x74b5e1*/
     Destination.MaxFDelta = 0; /*0x74b5e9*/
-    ((Vector *)((int)&Destination.MinDelay))->Clear(); /*0x74b5f1*/
+    ((Vector *)((int)&Destination.MinDelay))->Clear((int)((Vector *)((int)&Destination.MinDelay))); /*0x74b5f1*/
     Destination.Header[0] = (int)&off_7E1668; /*0x74b5fa*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&Destination))->Dtor(); /*0x74b602*/
   }
@@ -416,7 +416,7 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   int v6; // edx
   int v7; // edx
 
-  v3 = ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower(a2); /*0x74b699*/
+  v3 = ((AbstractTypeClass *)((AbstractTypeClass *)this))->ProcessPower( (int *)(a2)); /*0x74b699*/
   LOBYTE(v3) = this->Normalized; /*0x74b69e*/
   ((Power *)((Power *)a2))->FlagProcess(v3); /*0x74b6a7*/
   LOBYTE(v4) = this->Translucent; /*0x74b6ac*/
@@ -458,9 +458,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(gamemd::AbstractClass *)(1)); /*0x74ba51*/
   v6 = (gamemd::VoxelAnimTypeClass *)(this); /*0x74ba66*/
-  v3 = (*(int (**)(int *, VoxelAnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x74ba6a*/
-         &g_BuildingLoadQueue_Array.LightVisibility,
-         &v6);
+v3 = (*(int (**)(int *, VoxelAnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x74ba6a*/ &g_BuildingLoadQueue_Array.LightVisibility, (VoxelAnimTypeClass **)(&v6));
+
+
   if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x74ba7a*/
   {
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x74ba7f*/
@@ -473,9 +473,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
     }
   }
   v6 = (gamemd::VoxelAnimTypeClass *)(this); /*0x74baaf*/
-  v4 = (*(int (**)(int *, VoxelAnimTypeClass **))(stru_A8EB00.ObjectTypeClass[10] + 16))( /*0x74bab3*/
-         &stru_A8EB00.ObjectTypeClass[10],
-         &v6);
+v4 = (*(int (**)(int *, VoxelAnimTypeClass **))(stru_A8EB00.ObjectTypeClass[10] + 16))( /*0x74bab3*/ &stru_A8EB00.ObjectTypeClass[10], (VoxelAnimTypeClass **)(&v6));
+
+
   if ( v4 != -1 && v4 < stru_A8EB00.ObjectTypeClass[14] ) /*0x74bac3*/
   {
     --stru_A8EB00.ObjectTypeClass[14]; /*0x74bac8*/
@@ -495,7 +495,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   ((ObjectTypeClass *)((int)this))->Destruct(); /*0x74bb02*/
   if ( (a2 & 1) != 0 ) /*0x74bb0c*/
     __3_YAXPAX_Z(this); /*0x74bb0f*/
-  return this; /*0x74bb19*/
+  return (VoxelAnimTypeClass *)this; /*0x74bb19*/
 
 }
 } // namespace gamemd
@@ -570,7 +570,7 @@ long long VoxelAnimTypeClass::GetData(ObjectTypeClass * aP1, int a3)
 
   int64_t result; // rax
 
-  result = aP1; /*0x74b8f0*/
+  result = (unsigned int)aP1; /*0x74b8f0*/
   if ( this->Warhead == (WarheadTypeClass *)aP1 ) /*0x74b8ff*/
     this->Warhead = 0; /*0x74b901*/
   if ( this->BounceAnim == (AnimTypeClass *)aP1 ) /*0x74b90d*/
