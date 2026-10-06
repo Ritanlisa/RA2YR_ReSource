@@ -297,7 +297,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &stru_A8B250.__pad_0[80]; /*0x49c909*/
+    v24 = &stru_A8B250[80]; /*0x49c909*/
     while ( *(unsigned int *)v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/

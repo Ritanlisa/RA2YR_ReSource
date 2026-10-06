@@ -176,7 +176,7 @@ LONG Campaign::Screen(char a1)
       MessageLoop(); /*0x60d3d9*/
       if ( !*(unsigned int *)&dword_A8B238 /*0x60d3fc*/
         || *(unsigned int *)&dword_A8B238 == 5
-        || BYTE2(stru_A8D600.Network_field_0xC)
+        || BYTE2(stru_A8D600.q00C)
         || dword_A8DAB4 )
       {
         Event::Dispatch(); /*0x60d412*/

@@ -353,9 +353,9 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           }
           if ( !byte_AC0268 ) /*0x5dee6f*/
           {
-            *(unsigned int *)&stru_A8B250.__pad_0[24] = 6 - SendDlgItemMessageA(hDlg, 1321, 0x400u, 0, 0); /*0x5dee9c*/
-            *(unsigned int *)&stru_A8B250.__pad_0[12] = SendDlgItemMessageA(hDlg, 1026, 0x400u, 0, 0); /*0x5deeb3*/
-            *(unsigned int *)&stru_A8B250.__pad_0[32] = SendDlgItemMessageA(hDlg, 1359, 0x400u, 0, 0); /*0x5deebc*/
+            *(unsigned int *)&stru_A8B250[24] = 6 - SendDlgItemMessageA(hDlg, 1321, 0x400u, 0, 0); /*0x5dee9c*/
+            *(unsigned int *)&stru_A8B250[12] = SendDlgItemMessageA(hDlg, 1026, 0x400u, 0, 0); /*0x5deeb3*/
+            *(unsigned int *)&stru_A8B250[32] = SendDlgItemMessageA(hDlg, 1359, 0x400u, 0, 0); /*0x5deebc*/
             return 0; /*0x5deecb*/
           }
           return 0; /*0x5dee6f*/
@@ -373,9 +373,9 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           SetupSkirmishDialogPlayerSlot( (HWND)(hDlg), (int)dword_A8DA8C); /*0x5dec81*/
           MapSkirmishDialogPlayerToControl( (HWND)(hDlg), (int)dword_A8DA8C); /*0x5dec8e*/
           _cfltcvt_init(); /*0x5dec93*/
-          memset32(&stru_A8B250.__pad_0[140], -2, 8u); /*0x5deca7*/
+          memset32(&stru_A8B250[140], -2, 8u); /*0x5deca7*/
           GDlg::LoadLetterStrings(); /*0x5deca9*/
-          memset32(&stru_A8B250.__pad_0[172], -2, 8u); /*0x5decc2*/
+          memset32(&stru_A8B250[172], -2, 8u); /*0x5decc2*/
           SetupMultiplayerLobbyPlayers( (HWND)(hDlg), (int)&unk_A8B440); /*0x5decc6*/
           ((Lobby*)(HWND)((Lobby *)hDlg))->InvalidatePlayerSlots(); /*0x5deccd*/
           RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5decd5*/
@@ -395,7 +395,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
             ((Lobby *)((Lobby *)hDlg))->FillPlayerFactions(); /*0x5ded58*/
           }
           SetupSkirmishPlayerSlots( (void *)((void *)(hDlg)), 0, (HWND)1); /*0x5ded63*/
-          SetupMultiplayerLobbyScreen( (SkirmishDialog *)(hDlg), (wchar_t *)((void *)0xFFFFFFFF), *(int *)&stru_A8B250.__pad_0[4]); /*0x5ded73*/
+          SetupMultiplayerLobbyScreen( (SkirmishDialog *)(hDlg), (wchar_t *)((void *)0xFFFFFFFF), *(int *)&stru_A8B250[4]); /*0x5ded73*/
           if ( !g_MPCooperativeState /*0x5ded8c*/
             && dword_A8B23C
             && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 47))( (ObjectClass *)(dword_A8B23C)) )
@@ -407,7 +407,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           SetDialogPlayerName( (HWND)(hDlg), (int)dword_A8B23C); /*0x5dedbe*/
           ((Dialog*)(Dialog *)hDlg)->ShowPlayerName(); /*0x5dedc5*/
           ((Session*)(HWND)((Session *)hDlg))->StartGame(); /*0x5dedcc*/
-          PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dede2*/
+          PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
             || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))( (ObjectClass *)(dword_A8B23C))
             || (vtable2 = (&dword_A8B230)[127].vtable2, (int)vtable2 > PlayerCountMap) )
@@ -571,7 +571,7 @@ LABEL_48:
     if ( byte_AC0268 ) /*0x5de8ff*/
       return 0; /*0x5de8ff*/
     v11 = (gamemd::ObjectClass *)(dword_A8B23C); /*0x5de905*/
-    v12 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5de90b*/
+    v12 = *(void **)&stru_A8B250[4]; /*0x5de90b*/
     if ( dword_A8B23C ) /*0x5de913*/
     {
       if ( !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 16))( (ObjectClass *)(dword_A8B23C)) ) /*0x5de917*/
@@ -586,7 +586,7 @@ LABEL_58:
         byte_8316D4 = 0; /*0x5de967*/
         if ( SkirmishDialog::Show(g_hWnd, lParam, (int)v12) == 2 ) /*0x5de976*/
         {
-          *(unsigned int *)&stru_A8B250.__pad_0[4] = (unsigned int)v12; /*0x5de97a*/
+          *(unsigned int *)&stru_A8B250[4] = (unsigned int)v12; /*0x5de97a*/
           LoadScenarioClassByIndex((int)v12); /*0x5de980*/
           ((Session*)(HWND)((Session *)hDlg))->PrepareGame(); /*0x5de987*/
           byte_8316D4 = 1; /*0x5de98f*/
@@ -596,15 +596,15 @@ LABEL_58:
           InvalidateRect(hDlg, 0, 0); /*0x5de9ad*/
           return 0; /*0x5de9bf*/
         }
-        if ( LoadScenarioClassByIndex(*(int *)&stru_A8B250.__pad_0[4]) ) /*0x5de9c8*/
-          SetupMultiplayerLobbyScreen( (SkirmishDialog *)(hDlg), (wchar_t *)(v12), *(int *)&stru_A8B250.__pad_0[4]); /*0x5de9e3*/
+        if ( LoadScenarioClassByIndex(*(int *)&stru_A8B250[4]) ) /*0x5de9c8*/
+          SetupMultiplayerLobbyScreen( (SkirmishDialog *)(hDlg), (wchar_t *)(v12), *(int *)&stru_A8B250[4]); /*0x5de9e3*/
         else
-          *(unsigned int *)&stru_A8B250.__pad_0[4] = (unsigned int)v12; /*0x5de9d1*/
+          *(unsigned int *)&stru_A8B250[4] = (unsigned int)v12; /*0x5de9d1*/
         byte_8316D4 = 1; /*0x5de9eb*/
         ShowWindow(hDlg, 5); /*0x5de9f2*/
         ((Dialog*)(Dialog *)hDlg)->ShowPlayerName(); /*0x5de9f6*/
         ((Session*)(HWND)((Session *)hDlg))->StartGame(); /*0x5de9fd*/
-        v13 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5dea13*/
+        v13 = ReadPlayerCountMap(*(int *)&stru_A8B250[4]); /*0x5dea13*/
         if ( !dword_A8B23C /*0x5dea2f*/
           || !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 1))( (ObjectClass *)(dword_A8B23C))
           || (v14 = (&dword_A8B230)[127].vtable2, (int)v14 > v13) )
@@ -636,7 +636,7 @@ LABEL_75:
           MultiplayerLobby::FillSlots((MultiplayerLobby *)hDlg); /*0x5dea9f*/
         if ( v35 && !v16 && ((NetworkLobby*)(HWND)((NetworkLobby *)hDlg))->SetupPlayerSlotControls() ) /*0x5deaba*/
         {
-          *(unsigned int *)&stru_A8B250.__pad_0[36] = 0; /*0x5dead2*/
+          *(unsigned int *)&stru_A8B250[36] = 0; /*0x5dead2*/
           memset( (void *)(v38), 0, sizeof(v38)); /*0x5deadc*/
           v39 = 0; /*0x5deade*/
           v40 = 0; /*0x5deae0*/
@@ -2219,7 +2219,7 @@ void * NetworkLobby::Dispatch()
       && v4 != (wchar_t *)g_Lobby_PlayerTeam
       && v4 != (wchar_t *)g_Lobby_PlayerSide
       && v4 != (wchar_t *)g_Lobby_PlayerColor
-      && !wcscmp(v4, (const wchar_t *)&stru_A8D600.Network_field_0x10) )
+      && !wcscmp(v4, (const wchar_t *)&stru_A8D600.q010) )
     {
       v6 = HashTable::Find( (void *)(&g_DialogHashTable), (const char *)off_8316CC, 0); /*0x5ea380*/
 LABEL_33:
@@ -2595,10 +2595,10 @@ char NetworkLobby::CheckPlayerNameValid()
     }
     if ( (int)++v2 >= (int)&dword_A8DAB0 ) /*0x5e96fe*/
     {
-      v4 = (NetworkLobby **)&stru_A8B250.__pad_0[108]; /*0x5e9700*/
+      v4 = (NetworkLobby **)&stru_A8B250[108]; /*0x5e9700*/
       while ( *v4 != this ) /*0x5e9707*/
       {
-        if ( (int)++v4 >= (int)&stru_A8B250.__pad_0[140] ) /*0x5e9711*/
+        if ( (int)++v4 >= (int)&stru_A8B250[140] ) /*0x5e9711*/
           return 0; /*0x5e9711*/
       }
       return 1; /*0x5e9707*/
@@ -2640,10 +2640,10 @@ char NetworkLobby::CheckPlayerNames()
     }
     if ( (int)++v2 >= (int)&dword_A8DAB0 ) /*0x5e977e*/
     {
-      v4 = (NetworkLobby **)&stru_A8B250.__pad_0[140]; /*0x5e9780*/
+      v4 = (NetworkLobby **)&stru_A8B250[140]; /*0x5e9780*/
       while ( *v4 != this ) /*0x5e9787*/
       {
-        if ( (int)++v4 >= (int)&stru_A8B250.__pad_0[172] ) /*0x5e9791*/
+        if ( (int)++v4 >= (int)&stru_A8B250[172] ) /*0x5e9791*/
           return 0; /*0x5e9791*/
       }
       return 1; /*0x5e9787*/

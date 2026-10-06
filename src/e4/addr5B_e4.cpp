@@ -506,29 +506,29 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   int v11; // esi
   ObjectClass *v13; // [esp+0h] [ebp-Ch]
 
-  if ( stru_A8B250.__pad_0[8] == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
+  if ( stru_A8B250[8] == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
   {
     v1 = aP0->wasFallingDown; /*0x5b680d*/
     if ( dword_A8B320 == ((v1 & 4) != 0) && byte_A8B31D == ((v1 & 2) != 0) ) /*0x5b6836*/
     {
       v2 = aP0->inOpenToppedTransport; /*0x5b683c*/
-      if ( stru_A8B250.__pad_0[16] == ((v2 & 2) != 0) /*0x5b6920*/
-        && stru_A8B250.__pad_0[17] == ((v2 & 4) != 0)
+      if ( stru_A8B250[16] == ((v2 & 2) != 0) /*0x5b6920*/
+        && stru_A8B250[17] == ((v2 & 4) != 0)
         && byte_A8B31F == ((v1 & 8) != 0)
-        && *(unsigned int *)&stru_A8B250.__pad_0[36] == aP0->onBridge
-        && *(unsigned int *)&stru_A8B250.__pad_0[40] == aP0->isFallingDown
+        && *(unsigned int *)&stru_A8B250[36] == aP0->onBridge
+        && *(unsigned int *)&stru_A8B250[40] == aP0->isFallingDown
         && g_RulesInitConfig == aP0->q08A
-        && *(unsigned int *)&stru_A8B250.__pad_0[12] == *(unsigned int *)(aP0 + 126)
-        && *(unsigned int *)&stru_A8B250.__pad_0[32] == aP0->q08B
+        && *(unsigned int *)&stru_A8B250[12] == *(unsigned int *)(aP0 + 126)
+        && *(unsigned int *)&stru_A8B250[32] == aP0->q08B
         && *(unsigned int *)((char *)&stru_A8EB00 + 432) == *(unsigned int *)(aP0 + 146)
         && ApplyGameOptions_Helper((ObjectClass *)dword_A8E960, (unsigned int *)(aP0 + 150))
-        && *(unsigned int *)&stru_A8B250.__pad_0[24] == aP0->u32_A2 )
+        && *(unsigned int *)&stru_A8B250[24] == aP0->u32_A2 )
       {
         v3 = aP0->wasFallingDown; /*0x5b6926*/
-        if ( stru_A8B250.__pad_0[18] == ((v3 & 0x10) != 0) /*0x5b69da*/
-          && stru_A8B250.__pad_0[19] == ((v3 & 0x20) != 0)
-          && stru_A8B250.__pad_0[20] == ((v3 & 0x40) != 0)
-          && stru_A8B250.__pad_0[28] == ((v3 & 0x80) != 0)
+        if ( stru_A8B250[18] == ((v3 & 0x10) != 0) /*0x5b69da*/
+          && stru_A8B250[19] == ((v3 & 0x20) != 0)
+          && stru_A8B250[20] == ((v3 & 0x40) != 0)
+          && stru_A8B250[28] == ((v3 & 0x80) != 0)
           && !_strcmpi((const char *)(byte_A8B8E0), (char *)(aP0 + 163))
           && !strcmp((const char *)(&byte_A8BAE2), (const char *)(aP0 + 176))
           && dword_A8BB04 == *(unsigned int *)(aP0 + 158) )
@@ -539,32 +539,32 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     }
   }
   Debug::Log("Decoding game options\n"); /*0x5b69e9 G57c1: IDA 0x5b69e9 push offset aDecodingGameOp*/
-  stru_A8B250.__pad_0[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
+  stru_A8B250[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
   dword_A8B320 = (aP0->wasFallingDown & 4) != 0; /*0x5b6a0c*/
   v5 = (&dword_A8E960)[0]; /*0x5b6a18*/
   IDA_BYTE1(v5) = IDA_BYTE1((&dword_A8E960)[0]) & 0x7F; /*0x5b6a22*/
-  stru_A8B250.__pad_0[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
+  stru_A8B250[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
   (&dword_A8E960)[0] = v5 | ((aP0->inOpenToppedTransport & 2) << 14); /*0x5b6a38*/
-  stru_A8B250.__pad_0[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
+  stru_A8B250[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
   byte_A8B31F = (aP0->wasFallingDown & 8) != 0; /*0x5b6a5c*/
   byte_A8B31D = (aP0->wasFallingDown & 2) != 0; /*0x5b6a6f*/
-  *(unsigned int *)&stru_A8B250.__pad_0[36] = aP0->onBridge; /*0x5b6a7b*/
-  *(unsigned int *)&stru_A8B250.__pad_0[40] = aP0->isFallingDown; /*0x5b6a88*/
+  *(unsigned int *)&stru_A8B250[36] = aP0->onBridge; /*0x5b6a7b*/
+  *(unsigned int *)&stru_A8B250[40] = aP0->isFallingDown; /*0x5b6a88*/
   g_RulesInitConfig = aP0->q08A; /*0x5b6a96*/
-  *(unsigned int *)&stru_A8B250.__pad_0[12] = *(unsigned int *)(aP0 + 126); /*0x5b6a9f*/
-  *(unsigned int *)&stru_A8B250.__pad_0[32] = aP0->q08B; /*0x5b6aaa*/
+  *(unsigned int *)&stru_A8B250[12] = *(unsigned int *)(aP0 + 126); /*0x5b6a9f*/
+  *(unsigned int *)&stru_A8B250[32] = aP0->q08B; /*0x5b6aaa*/
   *(unsigned int *)((char *)&stru_A8EB00 + 432) = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
   v6 = *(unsigned int *)(aP0 + 150); /*0x5b6abc*/
   (&dword_A8E960)[0] = v6; /*0x5b6ac4*/
   IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
-  *(unsigned int *)&stru_A8B250.__pad_0[24] = aP0->u32_A2; /*0x5b6ad1*/
-  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250.__pad_0[24]; /*0x5b6ad7*/
-  stru_A8B250.__pad_0[18] = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
-  stru_A8B250.__pad_0[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
-  stru_A8B250.__pad_0[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
+  *(unsigned int *)&stru_A8B250[24] = aP0->u32_A2; /*0x5b6ad1*/
+  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250[24]; /*0x5b6ad7*/
+  stru_A8B250[18] = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
+  stru_A8B250[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
+  stru_A8B250[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
   v7 = aP0->wasFallingDown >> 7; /*0x5b6b19*/
   (&dword_A8E960)[0] = v6; /*0x5b6b1c*/
-  stru_A8B250.__pad_0[28] = v7 & 1; /*0x5b6b29*/
+  stru_A8B250[28] = v7 & 1; /*0x5b6b29*/
   vtable0 = dword_A8B230->vtable1; /*0x5b6b2f*/
   IDA_BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable1 >> 8) & 0xFB; /*0x5b6b31*/
   dword_A8B230->vtable1 = vtable0; /*0x5b6b34*/

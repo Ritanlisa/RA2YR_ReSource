@@ -2153,7 +2153,9 @@ struct DamageArea;
 struct De;
 struct Deb;
 struct Debu;
+#ifndef GAMEMD_TREE_UNIVERSE  // G57w10: TU-level Math/Debug vocab carriers collide with this fwd (entity C2757 pattern)
 struct Debug;
+#endif // G57w10 Debug fwd gate
 struct Del;
 struct Dele;
 struct Deleg;
@@ -10329,7 +10331,9 @@ struct Map_WorldDominationTour_38;
 struct Map_WorldDominationTour_4;
 struct Map_WorldDominationTour_43;
 struct Mat;
+#ifndef GAMEMD_TREE_UNIVERSE  // G57w10: TU-level Math/Debug vocab carriers collide with this fwd (entity C2757 pattern)
 struct Math;
+#endif // G57w10 Math fwd gate
 struct Matr;
 struct Matri;
 struct Matrix;

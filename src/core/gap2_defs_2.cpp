@@ -579,7 +579,7 @@ void Player::RandomAssign() {
     Debug::Log(); /*0x69b9bd*/
   }
   v17 = 0; /*0x69b9ce*/
-  v7 = &stru_A8B250.__pad_0[76]; /*0x69b9d6*/
+  v7 = &stru_A8B250[76]; /*0x69b9d6*/
   do /*0x69baa0*/
   {
     if ( *(unsigned int *)v7 == -2 ) /*0x69b9e4*/
@@ -636,7 +636,7 @@ void Player::RandomAssign() {
     v7 += 4; /*0x69ba92*/
     ++v17; /*0x69ba9c*/
   }
-  while ( (int)v7 < (int)&stru_A8B250.__pad_0[108] ); /*0x69baa0*/
+  while ( (int)v7 < (int)&stru_A8B250[108] ); /*0x69baa0*/
 }
 }
 // 0x6ABAC0

@@ -27,6 +27,24 @@ namespace gamemd { using ra2::game::AbstractClass;
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/AirstrikeClass_e4.hpp"  // g57c5 W5d scope supply
+
+// G57w10: vtable externs (truth e4_globals_decls)
+extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
+extern unsigned char vt_DynamicVectorClass_FoggedObjectClass_DrawRecord[4];  // data: 0x7E8BA0  // G57w10 vftable residue fix
+extern unsigned char vt_DynamicVectorClass_int[4];  // data: 0x7E4E78  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_AbstractClass[4];  // data: 0x7E920C  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_AnimTypeClass_const[4];  // data: 0x7EB6F4  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_InfantryClass[4];  // data: 0x7E43E8  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_NodeNameType[4];  // data: 0x7EE390  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_RGBClass[4];  // data: 0x7E4E38  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_ScoutStruct[4];  // data: 0x7EA9A4  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_SlaveManagerClass_SlaveControl[4];  // data: 0x7F324C  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_SpawnManagerClass_SpawnControl[4];  // data: 0x7F36D4  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_TechnoClass[4];  // data: 0x7E180C  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_TechnoTypeClass_const[4];  // data: 0x7E8954  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_VoxelAnimTypeClass_const[4];  // data: 0x7F0D5C  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_char_const[4];  // data: 0x7EE0D4  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_int[4];  // data: 0x7E4DB8  // G57w10 vftable residue fix
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 { namespace game {
 int AbstractClass_Constructor(...);  // g57c5 W5 vocab
@@ -1826,7 +1844,7 @@ void* FootClass::QueryInterface(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x45aa63*/
-    *Block = &VectorClass<InfantryClass *>::`vftable'; /*0x45aa66*/
+    *Block = (void *)&vt_VectorClass_InfantryClass; /*0x45aa66*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x45aa70*/
     {
       RA2_OPDEL(v3); /*0x45aa78*/
@@ -2514,7 +2532,7 @@ void* AbstractClass::resetScriptState(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x4caba3*/
-    *Block = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4caba6*/
+    *Block = (void *)&vt_VectorClass_TechnoTypeClass_const; /*0x4caba6*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x4cabb0*/
     {
       RA2_OPDEL(v3); /*0x4cabb8*/
@@ -2553,7 +2571,7 @@ void* ObjectClass::Construct() {
     this->customSound = 0; /*0x4d08ec*/
     this->bombVisible = 1; /*0x4d08ef*/
     this->alignmentPadding69[0] = 0; /*0x4d08f2*/
-    this->customSound_controller[3] = (int)&DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d08f5*/
+    this->customSound_controller[3] = (int)(void *)&vt_DynamicVectorClass_FoggedObjectClass_DrawRecord; /*0x4d08f5*/
     this->estimatedHealth = 10; /*0x4d08fc*/
     this->health = 0; /*0x4d0903*/
     this->isOnMap = 1; /*0x4d0906*/
@@ -2645,14 +2663,14 @@ void* FootClass::Construct(int a1) {
     this->currentSpeed_multiplier[0] = 0; /*0x4d3292*/
     this->currentSpeed_multiplier[1] = 1072693248; /*0x4d329b*/
     AbstractClassVector::Construct((AbstractClassVector *)this->unknownAbstractArray588, 0, 0); /*0x4d32a5*/
-    this->unknownAbstractArray588[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4d32aa*/
+    this->unknownAbstractArray588[0] = (int)(void *)&vt_DynamicVectorClass_AbstractClass; /*0x4d32aa*/
     *(unsigned int *)&this->__pad_58C[16] = 10; /*0x4d32b0*/
     *(unsigned int *)&this->__pad_58C[12] = 0; /*0x4d32b7*/
     this->FootClass_field_5A0 = 0; /*0x4d32c0*/
     this->movementDestination = 0; /*0x4d32c7*/
     this->lastDestination = 0; /*0x4d32d0*/
     AbstractClassVector::Construct((AbstractClassVector *)this->FootClass_field_abstract_array_5AC, 0, 0); /*0x4d32d6*/
-    this->FootClass_field_abstract_array_5AC[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4d32e0*/
+    this->FootClass_field_abstract_array_5AC[0] = (int)(void *)&vt_DynamicVectorClass_AbstractClass; /*0x4d32e0*/
     *(unsigned int *)&this->__pad_5B0[16] = 10; /*0x4d32e6*/
     *(unsigned int *)&this->__pad_5B0[12] = 0; /*0x4d32e9*/
     this->FootClass_field_int_5C4 = -1; /*0x4d32ec*/
@@ -2815,7 +2833,7 @@ void* AbstractClass::processMissionQueue(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x4e0273*/
-    *Block = &VectorClass<AbstractClass *>::`vftable'; /*0x4e0276*/
+    *Block = (void *)&vt_VectorClass_AbstractClass; /*0x4e0276*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x4e0280*/
     {
       RA2_OPDEL(v3); /*0x4e0288*/
@@ -3214,7 +3232,7 @@ void* AbstractClass::updateThreatMap(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x510223*/
-    *Block = &VectorClass<ScoutStruct>::`vftable'; /*0x510226*/
+    *Block = (void *)&vt_VectorClass_ScoutStruct; /*0x510226*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x510230*/
     {
       RA2_OPDEL(v3); /*0x510238*/
@@ -4303,7 +4321,7 @@ void* AbstractClass::processDeathEvent(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x5c0d33*/
-    *Block = &VectorClass<char const *>::`vftable'; /*0x5c0d36*/
+    *Block = (void *)&vt_VectorClass_char_const; /*0x5c0d36*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c0d40*/
     {
       RA2_OPDEL(v3); /*0x5c0d48*/
@@ -4325,7 +4343,7 @@ void* AbstractClass::updateAnimationState(int aP1, int aP2) {
     this->vtable2 = (void *)a2; /*0x5c5a3e*/
     IDA_LOBYTE(this->vtable3) = 1; /*0x5c5a41*/
     IDA_BYTE1(this->vtable3) = 0; /*0x5c5a45*/
-    this->vtable1 = &VectorClass<NodeNameType *>::`vftable'; /*0x5c5a48*/
+    this->vtable1 = (void *)&vt_VectorClass_NodeNameType; /*0x5c5a48*/
     if ( a2 ) /*0x5c5a4e*/
     {
       if ( a3 ) /*0x5c5a56*/
@@ -5633,7 +5651,7 @@ void* AbstractClass::getTeamIndex(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x645b13*/
-    *Block = &VectorClass<RGBClass>::`vftable'; /*0x645b16*/
+    *Block = (void *)&vt_VectorClass_RGBClass; /*0x645b16*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x645b20*/
     {
       RA2_OPDEL(v3); /*0x645b28*/
@@ -5808,7 +5826,7 @@ void* RadioClass::ProcessEvent(int a1) {
     ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65aec0*/
     ((unsigned int *)this)[0] = &vt_RadioClass; /*0x65aec7*/
     v3 = (void *)this->radioLinks[1]; /*0x65aece*/
-    this->radioLinks[0] = (int)&VectorClass<TechnoClass *>::`vftable'; /*0x65aed4*/
+    this->radioLinks[0] = (int)(void *)&vt_VectorClass_TechnoClass; /*0x65aed4*/
     if ( v3 && IDA_BYTE1(this->radioLinks[3]) ) /*0x65aee2*/
     {
       RA2_OPDEL(v3); /*0x65aeed*/
@@ -6029,7 +6047,7 @@ void* AbstractClass::checkAIResources(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x6b1933*/
-    *Block = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b1936*/
+    *Block = (void *)&vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6b1936*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b1940*/
     {
       RA2_OPDEL(v3); /*0x6b1948*/
@@ -6137,7 +6155,7 @@ void* AbstractClass::validatePathMemory(int a2) {
     void *v3; // eax
 
     v3 = (void *)*(Block + 1); /*0x6b8743*/
-    *Block = &VectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b8746*/
+    *Block = (void *)&vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b8746*/
     if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b8750*/
     {
       RA2_OPDEL(v3); /*0x6b8758*/
@@ -6642,15 +6660,15 @@ void* TechnoClass::Constructor(int a1) {
     this->barrelRecoil[5] = 0; /*0x6f43bb*/
     this->barrelRecoil[6] = 0; /*0x6f43c1*/
     VectorClass::Construct((VectorClass *)this->currentTargetThreatValues, 0, 0); /*0x6f43c7*/
-    this->currentTargetThreatValues[0] = (int)&DynamicVectorClass<int>::`vftable'; /*0x6f43d1*/
+    this->currentTargetThreatValues[0] = (int)(void *)&vt_DynamicVectorClass_int; /*0x6f43d1*/
     this->currentTargetThreatValues[5] = 10; /*0x6f43d7*/
     this->currentTargetThreatValues[4] = 0; /*0x6f43da*/
     AbstractClassVector::Construct((AbstractClassVector *)this->currentTargets, 0, 0); /*0x6f43e7*/
-    this->currentTargets[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x6f43ec*/
+    this->currentTargets[0] = (int)(void *)&vt_DynamicVectorClass_AbstractClass; /*0x6f43ec*/
     this->currentTargets[5] = 10; /*0x6f43f2*/
     this->currentTargets[4] = 0; /*0x6f43f5*/
     AbstractClassVector::Construct((AbstractClassVector *)this->attackedTargets, 0, 0); /*0x6f4402*/
-    this->attackedTargets[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x6f4407*/
+    this->attackedTargets[0] = (int)(void *)&vt_DynamicVectorClass_AbstractClass; /*0x6f4407*/
     this->attackedTargets[5] = 10; /*0x6f440d*/
     this->attackedTargets[4] = 0; /*0x6f4410*/
     this = &vt_TechnoClass; /*0x6f4413*/
@@ -9848,7 +9866,7 @@ int AbstractClass::ProcessInit() {
       }
     }
     v4 = (void *)*((unsigned int *)this + 107); /*0x75d2e9*/
-    *((unsigned int *)this + 106) = &VectorClass<int>::`vftable'; /*0x75d2f3*/
+    *((unsigned int *)this + 106) = (void *)&vt_VectorClass_int; /*0x75d2f3*/
     if ( v4 && *((unsigned char *)this + 437) ) /*0x75d2ff*/
     {
       RA2_OPDEL(v4); /*0x75d308*/
@@ -9857,7 +9875,7 @@ int AbstractClass::ProcessInit() {
     *((unsigned char *)this + 437) = 0; /*0x75d316*/
     *((unsigned int *)this + 108) = 0; /*0x75d31c*/
     v5 = (void *)*((unsigned int *)this + 100); /*0x75d322*/
-    *((unsigned int *)this + 99) = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x75d328*/
+    *((unsigned int *)this + 99) = (void *)&vt_VectorClass_VoxelAnimTypeClass_const; /*0x75d328*/
     if ( v5 && *((unsigned char *)this + 409) ) /*0x75d336*/
     {
       RA2_OPDEL(v5); /*0x75d33f*/
@@ -9866,7 +9884,7 @@ int AbstractClass::ProcessInit() {
     *((unsigned char *)this + 409) = 0; /*0x75d34d*/
     *((unsigned int *)this + 101) = 0; /*0x75d353*/
     v6 = (void *)*((unsigned int *)this + 66); /*0x75d359*/
-    *((unsigned int *)this + 65) = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x75d35f*/
+    *((unsigned int *)this + 65) = (void *)&vt_VectorClass_AnimTypeClass_const; /*0x75d35f*/
     if ( v6 && *((unsigned char *)this + 273) ) /*0x75d36d*/
     {
       RA2_OPDEL(v6); /*0x75d376*/

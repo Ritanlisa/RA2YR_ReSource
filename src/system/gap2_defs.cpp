@@ -27593,7 +27593,7 @@ bool CD::CreateDialog() {
           MessageLoop(); /*0x623d44*/
         while ( (!*(unsigned int *)&dword_A8B238 /*0x623d81*/
               || *(unsigned int *)&dword_A8B238 == 5
-              || IDA_BYTE2(stru_A8D600.Network_field_0xC)
+              || IDA_BYTE2(stru_A8D600.q00C)
               || dword_A8DAB4
               || VtableStub::55CBF0()
               || !(unsigned __int8)GameFrameLoop(v6))
@@ -31041,7 +31041,7 @@ bool CD::CreateDialog() {
           MessageLoop(); /*0x623d44*/
         while ( (!*(unsigned int *)&dword_A8B238 /*0x623d81*/
               || *(unsigned int *)&dword_A8B238 == 5
-              || IDA_BYTE2(stru_A8D600.Network_field_0xC)
+              || IDA_BYTE2(stru_A8D600.q00C)
               || dword_A8DAB4
               || VtableStub::55CBF0()
               || !(unsigned __int8)GameFrameLoop(v6))
@@ -31821,7 +31821,7 @@ bool CD::CreateDialog() {
           MessageLoop(); /*0x623d44*/
         while ( (!*(unsigned int *)&dword_A8B238 /*0x623d81*/
               || *(unsigned int *)&dword_A8B238 == 5
-              || IDA_BYTE2(stru_A8D600.Network_field_0xC)
+              || IDA_BYTE2(stru_A8D600.q00C)
               || dword_A8DAB4
               || VtableStub::55CBF0()
               || !(unsigned __int8)GameFrameLoop(v6))
@@ -38217,12 +38217,12 @@ int ScenarioClass::SetupAlliances() {
     int v22; // [esp+Ch] [ebp-8h]
 
     v20 = v1; /*0x6868b2*/
-    if ( *(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 < *(unsigned int *)&dword_8871E0->__pad_13BC[276] && !byte_A8ED6B ) /*0x6868bc*/
+    if ( *(unsigned int *)&stru_A8B250[36] + dword_A8DA84 < *(unsigned int *)&dword_8871E0->__pad_13BC[276] && !byte_A8ED6B ) /*0x6868bc*/
     {
       for ( i = 0; i < dword_A80238; ++i ) /*0x6868c7*/
       {
         v4 = (HouseClass *)*(&dword_A8022C->vtable0 + i); /*0x6868ce*/
-        if ( !v4->currentPlayer[0] && !*(unsigned char *)(v4->relatedTagsCapacity + 422) && *(int *)&stru_A8B250.__pad_0[36] < 1 ) /*0x6868ef*/
+        if ( !v4->currentPlayer[0] && !*(unsigned char *)(v4->relatedTagsCapacity + 422) && *(int *)&stru_A8B250[36] < 1 ) /*0x6868ef*/
           HouseClass::SDDTORAllAndTriggers(v4); /*0x6868f1*/
       }
     }
@@ -38244,7 +38244,7 @@ int ScenarioClass::SetupAlliances() {
     }
     Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 93); /*0x686952*/
     Event::Dispatch(); /*0x686957*/
-    if ( stru_A8B250.__pad_0[17] ) /*0x686963*/
+    if ( stru_A8B250[17] ) /*0x686963*/
     {
       v6 = *(unsigned int *)&dword_8871E0->__pad_13BC[180]; /*0x686971*/
       if ( v6 <= dword_A8B54C ) /*0x686979*/

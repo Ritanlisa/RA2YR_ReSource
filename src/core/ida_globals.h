@@ -11266,7 +11266,7 @@ extern unsigned char stru_8A38E0;
 extern unsigned char stru_A80220;
 struct stru_A83D50_t { unsigned char __pad_34[4]; unsigned char __pad_C8[64]; };  // g57w9: +__pad_34[4] @0x34 (dword_A83D84 disasm-verified; array form for decay-deref usage)  // g57w8: til __pad_C8 vocab (raw stru_A83D50.__pad_C8[28] corpus form)
 extern struct stru_A83D50_t stru_A83D50;
-extern unsigned char stru_A8BB1C;
+extern struct Network stru_A8BB1C;  // G57w10: receiver retype (network_ext.hpp carrier)
 extern unsigned char stru_A8DA5C;
 extern unsigned char stru_A8DA74;
 extern unsigned char stru_A8DBA4;
@@ -11288,7 +11288,7 @@ extern unsigned char stru_B04910;
 extern unsigned char stru_B04978;
 extern unsigned char stru_B04A10;
 extern unsigned char stru_B04DA8;
-extern unsigned char stru_B052C0;
+extern unsigned char stru_B052C0[];  // G57w10: byte-array base
 extern unsigned char stru_B05488;
 extern unsigned char stru_B054D0;
 extern unsigned char stru_B07C48;

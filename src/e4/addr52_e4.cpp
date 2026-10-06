@@ -1622,22 +1622,22 @@ void InitRules()
   RulesClass::ReadMovies(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d121*/
   ((Rules *)*(Rules **)&DSurface_ViewBounds.__pad_FC[324])->ReadMiscINI(); /*0x52d132*/
   ((Dialog *)*(Dialog **)&DSurface_ViewBounds.__pad_FC[324])->ReadMultiplayerDialogSettings(); /*0x52d144*/
-  *(unsigned int *)&stru_A8B250.__pad_0[12] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5252); /*0x52d159*/
-  *(unsigned int *)&stru_A8B250.__pad_0[32] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5268); /*0x52d165*/
+  *(unsigned int *)&stru_A8B250[12] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5252); /*0x52d159*/
+  *(unsigned int *)&stru_A8B250[32] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5268); /*0x52d165*/
   g_RulesInitConfig = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5276); /*0x52d171*/
-  *(unsigned int *)&stru_A8B250.__pad_0[24] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5280); /*0x52d17d*/
-  *(unsigned int *)&stru_A8B250.__pad_0[40] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5284); /*0x52d189*/
-  *(unsigned int *)&stru_A8B250.__pad_0[36] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5288); /*0x52d195*/
-  stru_A8B250.__pad_0[16] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5292); /*0x52d1a1*/
-  stru_A8B250.__pad_0[8] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5295); /*0x52d1ad*/
-  stru_A8B250.__pad_0[17] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5297); /*0x52d1b9*/
+  *(unsigned int *)&stru_A8B250[24] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5280); /*0x52d17d*/
+  *(unsigned int *)&stru_A8B250[40] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5284); /*0x52d189*/
+  *(unsigned int *)&stru_A8B250[36] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5288); /*0x52d195*/
+  stru_A8B250[16] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5292); /*0x52d1a1*/
+  stru_A8B250[8] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5295); /*0x52d1ad*/
+  stru_A8B250[17] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5297); /*0x52d1b9*/
   byte_A8B31E = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5298); /*0x52d1c5*/
   byte_A8B31D = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5299); /*0x52d1d1*/
-  stru_A8B250.__pad_0[28] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5300); /*0x52d1dd*/
+  stru_A8B250[28] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5300); /*0x52d1dd*/
   byte_A8B31C = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5301); /*0x52d1e9*/
-  stru_A8B250.__pad_0[18] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5302); /*0x52d1f5*/
-  stru_A8B250.__pad_0[19] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5305); /*0x52d201*/
-  stru_A8B250.__pad_0[20] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5306); /*0x52d20d*/
+  stru_A8B250[18] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5302); /*0x52d1f5*/
+  stru_A8B250[19] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5305); /*0x52d201*/
+  stru_A8B250[20] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5306); /*0x52d20d*/
   byte_A8B31F = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5303); /*0x52d219*/
   dword_A8B320 = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5304); /*0x52d22c*/
   ((CCFileClass*)&v25)->Construct( (char *)(aLangruleIni)); /*0x52d231*/

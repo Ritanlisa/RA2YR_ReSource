@@ -3535,7 +3535,7 @@ int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
           }
         }
         v10 = *(unsigned int *)(this->q258 + 4 * i); /*0x50b298*/
-        if ( (!*(unsigned char *)(*(unsigned int *)(v10 + 40) + 231) || stru_A8B250.__pad_0[19]) && v17 ) /*0x50b2c1*/
+        if ( (!*(unsigned char *)(*(unsigned int *)(v10 + 40) + 231) || stru_A8B250[19]) && v17 ) /*0x50b2c1*/
         {
           v11 = this->u32_53A4; /*0x50b2c7*/
           v12 = this->u32_53A8; /*0x50b2cd*/

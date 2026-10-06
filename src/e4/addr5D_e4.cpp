@@ -1432,7 +1432,7 @@ void CheckNetworkGameTimeout()
   v2 = 1; /*0x5db72c*/
   for ( i = 1; i < dword_A8DA6C; ++i ) /*0x5db737*/
   {
-    if ( wcscmp(*(const wchar_t **)(dword_A8DA60 + 4 * i), (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5db74b*/
+    if ( wcscmp(*(const wchar_t **)(dword_A8DA60 + 4 * i), (const wchar_t *)&stru_A8D600.q010) ) /*0x5db74b*/
     {
       v4 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5db760*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db769*/
@@ -1539,7 +1539,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
     }
   }
   v6 = CharToWideString( (unsigned char *)(v3)); /*0x5dbe4e*/
-  if ( !wcscmp((const wchar_t *)v6, (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5dbe54*/
+  if ( !wcscmp((const wchar_t *)v6, (const wchar_t *)&stru_A8D600.q010) ) /*0x5dbe54*/
     v4 = 1; /*0x5dbe60*/
   v7 = 0; /*0x5dbe6a*/
   if ( dword_A8DA84 > 0 ) /*0x5dbe6e*/
@@ -1730,7 +1730,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
       }
     }
   }
-  *(unsigned int *)&stru_A8B250.__pad_0[4] = -1; /*0x5dda8c*/
+  *(unsigned int *)&stru_A8B250[4] = -1; /*0x5dda8c*/
   StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_netdlg2_cpp), 710); /*0x5ddaaa*/
   v7 = (int *)GetStringCSF( (wchar_t *)((char *)&stru_82BA00 + 2), 0, (const char *)(g_Str_File_netdlg2_cpp), 710); /*0x5ddab5*/
   ((Dialog *)v7)->ShowMessageBox( (unsigned short *)(StringCSF), 0, 0, 0, v1); /*0x5ddabf*/

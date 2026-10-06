@@ -199,7 +199,7 @@ int sub_5DB6F0()
   int result; // eax
 
   result = WinMainSetup_Setup_5DB6F0_Setup(); /*0x5db6f1*/
-  IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5db700*/
+  IDA_LOWORD(stru_A8D600.q010) = 0; /*0x5db700*/
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5db707*/
     result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5db70d*/
   *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5db70f*/

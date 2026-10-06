@@ -2764,7 +2764,7 @@ int UnitClass::CalcMoveTarget()
       ObjectVector::Construct(&v78, 0, 0); /*0x735e7c*/
       v51 = v78.ObjectVector_field_0x08; /*0x735e81*/
       ObjectVector_field_0x14 = 10; /*0x735e85*/
-      *(unsigned int *)v78.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x735e8c*/
+      *(unsigned int *)v78.__pad_0 = (void *)&vt_DynamicVectorClass_ObjectClass; /*0x735e8c*/
       v78.ObjectVector_field_0x14 = 10; /*0x735e94*/
       v78.ObjectVector_field_0x10 = 0; /*0x735e98*/
       while ( 1 ) /*0x735ea2*/
@@ -2796,7 +2796,7 @@ int UnitClass::CalcMoveTarget()
             }
           }
           (*((void (__thiscall **)(UnitClass *, unsigned int, unsigned int))this->vtable1 + 337))(this, 0, 0); /*0x735f6a*/
-          *(unsigned int *)v78.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x735f74*/
+          *(unsigned int *)v78.__pad_0 = (void *)&vt_VectorClass_ObjectClass; /*0x735f74*/
           if ( v78.ObjectVector_field_0x04 && IDA_BYTE1(v78.ObjectVector_field_0x0C) ) /*0x735f8a*/
             RA2_OPDEL((void *)v78.ObjectVector_field_0x04); /*0x735f91*/
           return; /*0x735fa0*/
@@ -7949,7 +7949,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
         a5 = v56; /*0x73842c*/
         if ( v56 != (int *)g_UnitSelectionState ) /*0x738430*/
         {
-          if ( stru_A8B250.__pad_0[17] ) /*0x738448*/
+          if ( stru_A8B250[17] ) /*0x738448*/
             BuildingClass::SearchPlacement((BuildingClass *)&dword_87F7E8, (int)v56, 20); /*0x738452*/
         }
       }
@@ -10850,6 +10850,10 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
+
+// G57w10: vtable externs (truth e4_globals_decls)
+extern unsigned char vt_DynamicVectorClass_ObjectClass[4];  // data: 0x7E4F64  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_ObjectClass[4];  // data: 0x7E192C  // G57w10 vftable residue fix
 
 namespace gamemd {
 

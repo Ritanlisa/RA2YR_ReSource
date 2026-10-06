@@ -150,7 +150,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
         v9 = *(unsigned int *)(((unsigned int *)(dword_A8DA78))[v10] + 111); /*0x540514*/
       }
 LABEL_13:
-      LinkedIndex = ((Factory *)((Factory *)&stru_B052C0.__pad_0[16]))->GetLinkedIndex(v9); /*0x540517*/
+      LinkedIndex = ((Factory *)((Factory *)&stru_B052C0[16]))->GetLinkedIndex(v9); /*0x540517*/
       if ( !LinkedIndex ) /*0x540524*/
         LinkedIndex = 1; /*0x540526*/
       v7 = v16; /*0x540528*/

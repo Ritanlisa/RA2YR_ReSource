@@ -8045,7 +8045,7 @@ AbstractClass * * RegenerateRandomMapPreview()
       RA2_OPDEL(v7); /*0x5b9e0e*/
       if ( LoadScenarioClassByIndex(v5) == 1 ) /*0x5b9e1f*/
       {
-        *(unsigned int *)&stru_A8B250.__pad_0[4] = v5; /*0x5b9e2f*/
+        *(unsigned int *)&stru_A8B250[4] = v5; /*0x5b9e2f*/
         v11 = (AbstractClass *)(dword_A8B230); /*0x5b9e3b*/
         strcpy( (char *)(byte_A8B8E0), (const char *)(&stru_82BA00.?)); /*0x5b9e51*/
         strcpy( (char *)&v11[130].abstractFlags, (const char *)(byte_A8B8E0)); /*0x5b9e79*/

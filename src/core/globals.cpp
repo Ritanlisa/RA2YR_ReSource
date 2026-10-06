@@ -852,7 +852,7 @@ IDA_LOWORD(DataGlobal_87F7E8[538506]) = 0;
 {
   int result; // eax
 
-  IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5da72b*/
+  IDA_LOWORD(stru_A8D600.q010) = 0; /*0x5da72b*/
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5da732*/
     result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
   *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/

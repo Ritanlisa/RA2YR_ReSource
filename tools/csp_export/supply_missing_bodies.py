@@ -42,6 +42,27 @@ TYPE_ID = re.compile(r'([ \s(\*&<>,]|^)#(\d+)')
 CC_KW = {'__thiscall', '__stdcall', '__cdecl', '__fastcall'}
 USER_CC_RE = re.compile(r'__(?:userpurge|usercall)(?:@<[^>]*>)?\s*')
 
+# G57w10: MSVC mangled vftable refs (``&Cls::`vftable'``) must not pass
+# through verbatim -- they are syntax errors in every consumer TU. Rewrite
+# to the project vtable-extern vocabulary vt_<Class>; truth table is
+# src/e4/e4_globals_decls.hpp.
+VT_BACKTICK = re.compile(r'&([\w:]+(?:<[^>;]*>)?)::`vftable\'')
+_VT_NAMES = {}
+
+
+def _vt_name(cls):
+    c = re.sub(r'\bconst\b|\*', '', cls)
+    c = re.sub(r'[<>,\s]+', '_', c).replace('::', '_')
+    c = re.sub(r'_+', '_', c).strip('_')
+    if not _VT_NAMES:
+        decl = SRC / 'e4' / 'e4_globals_decls.hpp'
+        if decl.exists():
+            for ln in decl.read_text(encoding='utf-8', errors='replace').splitlines():
+                m = re.match(r'extern (?:unsigned char vt_(\w+)\[4\]|void\* vt_(\w+));', ln)
+                if m:
+                    _VT_NAMES.setdefault(m.group(1) or m.group(2), True)
+    return c if c in _VT_NAMES else None
+
 
 def transform(code):
     code = DEC_NEWDEL.sub(
@@ -49,6 +70,11 @@ def transform(code):
                    else 'RA2_OPDEL('), code)
     code = IDA_VOCAB_RE.sub(lambda m: 'IDA_' + m.group(1) + '(', code)
     code = TYPE_ID.sub(lambda m: m.group(1) + 'void', code)
+
+    def _vt(m):
+        n = _vt_name(m.group(1))
+        return '(void *)&vt_' + n if n else '/* vftable-ref: no vt truth */ 0'
+    code = VT_BACKTICK.sub(_vt, code)
     return code
 
 
@@ -62,8 +88,19 @@ def body_from_pseudo(code):
     if end is None or end <= start:
         return None
     inner = lines[start + 1:end]
-    return '\n'.join(('  ' + ln if ln.strip() else '')
+    body = '\n'.join(('  ' + ln if ln.strip() else '')
                      for ln in inner)
+    # G57w10: reject unbalanced extractions -- truncated cache bodies caused
+    # missing-brace / missing-return residue in W0b landings (G57w8-g forensics)
+    depth = 0
+    for ch in body:
+        if ch == '{':
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+    if depth != 0:
+        return None
+    return body
 
 
 def def_head_from_cache(code, want_name):

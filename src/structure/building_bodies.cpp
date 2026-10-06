@@ -97,7 +97,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
           }
         }
         v10 = *(unsigned char **)(*(unsigned int *)(*((unsigned int *)this + 150) + 4 * i) + 40); /*0x50b078*/
-        if ( v10[231] && !stru_A8B250.__pad_0[19] ) /*0x50b099*/
+        if ( v10[231] && !stru_A8B250[19] ) /*0x50b099*/
           v15 = 0; /*0x50b09b*/
         v11 = *((unsigned int *)this + 5353); /*0x50b0a0*/
         v12 = *((unsigned int *)this + 5354); /*0x50b0a6*/

@@ -44,6 +44,11 @@ using ra2::game::AbstractClass;
 #include "network/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/Dialog_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+
+// G57w10: vtable externs (truth e4_globals_decls)
+extern unsigned char vt_VectorClass_MultiplayerGameMode[4];  // data: 0x7EED40  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_MultiplayerTeam[4];  // data: 0x7EEE54  // G57w10 vftable residue fix
+extern unsigned char vt_rc_ptr_PlayerProfile[4];  // data: 0x7F3F44  // G57w10 vftable residue fix
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int GameSetupDialogProc;  // 词表 (canon 无条目, int 兜底) L857
 extern int _NonReentrantLock;  // 词表 (canon 无条目, int 兜底) L749
@@ -1059,7 +1064,7 @@ void ModemGuest::InitDialog()
         1u,
         *(unsigned short *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5264)
       | (*(unsigned short *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5272) << 16));
-      SendMessageA(v24, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[32]); /*0x5b518d*/
+      SendMessageA(v24, 0x405u, 1u, *(LPARAM *)&stru_A8B250[32]); /*0x5b518d*/
     }
     Debug::Log(); /*0x5b519a*/
     v25 = v2(*v1, 1360); /*0x5b51ab*/
@@ -1079,7 +1084,7 @@ void ModemGuest::InitDialog()
         1u,
         *(unsigned short *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5248)
       | (*(unsigned short *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5256) << 16));
-      SendMessageA(v27, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[12]); /*0x5b522d*/
+      SendMessageA(v27, 0x405u, 1u, *(LPARAM *)&stru_A8B250[12]); /*0x5b522d*/
     }
     Debug::Log(); /*0x5b523a*/
     v28 = v2(*v1, 1362); /*0x5b524b*/
@@ -1087,7 +1092,7 @@ void ModemGuest::InitDialog()
     if ( v28 ) /*0x5b5251*/
     {
       SendMessageA(v28, 0x406u, 1u, 393216); /*0x5b5260*/
-      SendMessageA(v29, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[36]); /*0x5b5271*/
+      SendMessageA(v29, 0x405u, 1u, *(LPARAM *)&stru_A8B250[36]); /*0x5b5271*/
     }
     Debug::Log(); /*0x5b527e*/
     v30 = v2(*v1, 1321); /*0x5b528f*/
@@ -1095,7 +1100,7 @@ void ModemGuest::InitDialog()
     if ( v30 ) /*0x5b5295*/
     {
       SendMessageA(v30, 0x406u, 1u, 393216); /*0x5b52a4*/
-      SendMessageA(v31, 0x405u, 1u, 6 - *(unsigned int *)&stru_A8B250.__pad_0[24]); /*0x5b52bc*/
+      SendMessageA(v31, 0x405u, 1u, 6 - *(unsigned int *)&stru_A8B250[24]); /*0x5b52bc*/
     }
     Debug::Log(); /*0x5b52c9*/
     v32 = v2(*v1, 1363); /*0x5b52da*/
@@ -1103,7 +1108,7 @@ void ModemGuest::InitDialog()
     if ( v32 ) /*0x5b52e0*/
     {
       SendMessageA(v32, 0x406u, 1u, 0x20000); /*0x5b52ef*/
-      SendMessageA(v33, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[40]); /*0x5b5300*/
+      SendMessageA(v33, 0x405u, 1u, *(LPARAM *)&stru_A8B250[40]); /*0x5b5300*/
     }
     Debug::Log(); /*0x5b530d*/
     v34 = v2(*v1, 1643); /*0x5b531e*/
@@ -1112,27 +1117,27 @@ void ModemGuest::InitDialog()
     Debug::Log(); /*0x5b5356*/
     v35 = v2(*v1, 1642); /*0x5b5367*/
     if ( v35 ) /*0x5b536b*/
-      SendMessageA(v35, 0xF1u, stru_A8B250.__pad_0[8] == 1, 0); /*0x5b5384*/
+      SendMessageA(v35, 0xF1u, stru_A8B250[8] == 1, 0); /*0x5b5384*/
     Debug::Log(); /*0x5b539f*/
     v36 = v2(*v1, 1358); /*0x5b53b0*/
     if ( v36 ) /*0x5b53b4*/
-      SendMessageA(v36, 0xF1u, stru_A8B250.__pad_0[18] == 1, 0); /*0x5b53cd*/
+      SendMessageA(v36, 0xF1u, stru_A8B250[18] == 1, 0); /*0x5b53cd*/
     Debug::Log(); /*0x5b53e8*/
     v37 = v2(*v1, 1690); /*0x5b53f9*/
     if ( v37 ) /*0x5b53fd*/
-      SendMessageA(v37, 0xF1u, stru_A8B250.__pad_0[19] == 1, 0); /*0x5b5416*/
+      SendMessageA(v37, 0xF1u, stru_A8B250[19] == 1, 0); /*0x5b5416*/
     Debug::Log(); /*0x5b5431*/
     v38 = v2(*v1, 1693); /*0x5b5442*/
     if ( v38 ) /*0x5b5446*/
-      SendMessageA(v38, 0xF1u, stru_A8B250.__pad_0[20] == 1, 0); /*0x5b545f*/
+      SendMessageA(v38, 0xF1u, stru_A8B250[20] == 1, 0); /*0x5b545f*/
     Debug::Log(); /*0x5b547a*/
     v39 = v2(*v1, 1361); /*0x5b548b*/
     if ( v39 ) /*0x5b548f*/
-      SendMessageA(v39, 0xF1u, stru_A8B250.__pad_0[28] == 1, 0); /*0x5b54a8*/
+      SendMessageA(v39, 0xF1u, stru_A8B250[28] == 1, 0); /*0x5b54a8*/
     Debug::Log(); /*0x5b54c3*/
     v40 = v2(*v1, 1356); /*0x5b54d4*/
     if ( v40 ) /*0x5b54d8*/
-      SendMessageA(v40, 0xF1u, stru_A8B250.__pad_0[17] == 1, 0); /*0x5b54f1*/
+      SendMessageA(v40, 0xF1u, stru_A8B250[17] == 1, 0); /*0x5b54f1*/
     Debug::Log(); /*0x5b550c*/
     v41 = v2(*v1, 1357); /*0x5b551d*/
     if ( v41 ) /*0x5b5521*/
@@ -1140,7 +1145,7 @@ void ModemGuest::InitDialog()
     Debug::Log(); /*0x5b5555*/
     v42 = v2(*v1, 1572); /*0x5b5566*/
     if ( v42 ) /*0x5b556a*/
-      SendMessageA(v42, 0xF1u, stru_A8B250.__pad_0[16] == 1, 0); /*0x5b5583*/
+      SendMessageA(v42, 0xF1u, stru_A8B250[16] == 1, 0); /*0x5b5583*/
     Debug::Log(); /*0x5b559e*/
     v43 = v2(*v1, 1430); /*0x5b55af*/
     if ( v43 ) /*0x5b55b3*/
@@ -1171,7 +1176,7 @@ void ModemGuest::InitDialog()
     }
     byte_AC1288[0] = 0; /*0x5b56ac*/
     NullModemClass::Flush((NullModemClass *)&unk_A8EA70, 1); /*0x5b56b3*/
-    IDA_BYTE2(stru_A8D600.Network_field_0xC) = 1; /*0x5b56bd*/
+    IDA_BYTE2(stru_A8D600.q00C) = 1; /*0x5b56bd*/
     PtrVector::Destroy(&stru_A8DA74); /*0x5b56c4*/
     MEMORY[0xA8B322] = 0; /*0x5b56ce*/
     Debug::Log(); /*0x5b56d7*/
@@ -1773,19 +1778,19 @@ void ModemHost::InitDialog()
     {
       IDA_LOBYTE(stru_82BA00.BuildingAnim[7]) = 0; /*0x5b831f*/
       nullsub_38(v1); /*0x5b8326*/
-      *(unsigned int *)&stru_A8B250.__pad_0[12] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5252); /*0x5b8336*/
-      stru_A8B250.__pad_0[8] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5295); /*0x5b8342*/
-      stru_A8B250.__pad_0[16] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5292); /*0x5b834e*/
-      stru_A8B250.__pad_0[17] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5297); /*0x5b835a*/
-      *(unsigned int *)&stru_A8B250.__pad_0[36] = 0; /*0x5b8360*/
+      *(unsigned int *)&stru_A8B250[12] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5252); /*0x5b8336*/
+      stru_A8B250[8] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5295); /*0x5b8342*/
+      stru_A8B250[16] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5292); /*0x5b834e*/
+      stru_A8B250[17] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5297); /*0x5b835a*/
+      *(unsigned int *)&stru_A8B250[36] = 0; /*0x5b8360*/
       v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5268); /*0x5b836a*/
-      stru_A8B250.__pad_0[18] = 0; /*0x5b8370*/
-      *(unsigned int *)&stru_A8B250.__pad_0[32] = v3; /*0x5b8377*/
-      stru_A8B250.__pad_0[19] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5305); /*0x5b8389*/
+      stru_A8B250[18] = 0; /*0x5b8370*/
+      *(unsigned int *)&stru_A8B250[32] = v3; /*0x5b8377*/
+      stru_A8B250[19] = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5305); /*0x5b8389*/
       v4 = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5306); /*0x5b838f*/
-      *(unsigned int *)&stru_A8B250.__pad_0[24] = stru_A8EB00.ObjectTypeClass[24]; /*0x5b8395*/
-      stru_A8B250.__pad_0[20] = v4; /*0x5b839b*/
-      stru_A8B250.__pad_0[28] = 0; /*0x5b83a0*/
+      *(unsigned int *)&stru_A8B250[24] = stru_A8EB00.ObjectTypeClass[24]; /*0x5b8395*/
+      stru_A8B250[20] = v4; /*0x5b839b*/
+      stru_A8B250[28] = 0; /*0x5b83a0*/
     }
     v5 = GetDlgItem; /*0x5b83aa*/
     DlgItem = GetDlgItem(*v2, 1473); /*0x5b83b6*/
@@ -1850,7 +1855,7 @@ void ModemHost::InitDialog()
     v27 = v5(*v2, 1641); /*0x5b85fb*/
     if ( v27 ) /*0x5b85ff*/
     {
-      lParam = *(HWND **)&stru_A8B250.__pad_0[32]; /*0x5b860e*/
+      lParam = *(HWND **)&stru_A8B250[32]; /*0x5b860e*/
       SendMessageA( /*0x5b8630*/
         v27,
         0x406u,
@@ -1872,7 +1877,7 @@ void ModemHost::InitDialog()
     v30 = v5(*v2, 1026); /*0x5b86ac*/
     if ( v30 ) /*0x5b86b0*/
     {
-      v31 = *(unsigned int *)&stru_A8B250.__pad_0[12]; /*0x5b86bb*/
+      v31 = *(unsigned int *)&stru_A8B250[12]; /*0x5b86bb*/
       SendMessageA( /*0x5b86dd*/
         v30,
         0x406u,
@@ -1888,7 +1893,7 @@ void ModemHost::InitDialog()
     v33 = v32; /*0x5b871b*/
     if ( v32 ) /*0x5b871f*/
     {
-      lParam = *(HWND **)&stru_A8B250.__pad_0[36]; /*0x5b8734*/
+      lParam = *(HWND **)&stru_A8B250[36]; /*0x5b8734*/
       SendMessageA(v32, 0x406u, 1u, 393216); /*0x5b8738*/
       SendMessageA(v33, 0x405u, 1u, (LPARAM)lParam); /*0x5b8747*/
     }
@@ -1904,7 +1909,7 @@ void ModemHost::InitDialog()
     v36 = v5(*v2, 1363); /*0x5b87b4*/
     if ( v36 ) /*0x5b87b8*/
     {
-      lParam = *(HWND **)&stru_A8B250.__pad_0[40]; /*0x5b87cc*/
+      lParam = *(HWND **)&stru_A8B250[40]; /*0x5b87cc*/
       SendMessageA(v36, 0x406u, 1u, 0x20000); /*0x5b87d0*/
       SendMessageA(v36, 0x405u, 1u, (LPARAM)lParam); /*0x5b87df*/
     }
@@ -1915,11 +1920,11 @@ void ModemHost::InitDialog()
     Debug::Log(); /*0x5b8836*/
     v38 = v5(*v2, 1642); /*0x5b8847*/
     if ( v38 ) /*0x5b884b*/
-      SendMessageA(v38, 0xF1u, stru_A8B250.__pad_0[8] == 1, 0); /*0x5b8864*/
+      SendMessageA(v38, 0xF1u, stru_A8B250[8] == 1, 0); /*0x5b8864*/
     Debug::Log(); /*0x5b887f*/
     v39 = v5(*v2, 1356); /*0x5b8890*/
     if ( v39 ) /*0x5b8894*/
-      SendMessageA(v39, 0xF1u, stru_A8B250.__pad_0[17] == 1, 0); /*0x5b88ad*/
+      SendMessageA(v39, 0xF1u, stru_A8B250[17] == 1, 0); /*0x5b88ad*/
     Debug::Log(); /*0x5b88c8*/
     v40 = v5(*v2, 1357); /*0x5b88d9*/
     if ( v40 ) /*0x5b88dd*/
@@ -1927,7 +1932,7 @@ void ModemHost::InitDialog()
     Debug::Log(); /*0x5b8911*/
     v41 = v5(*v2, 1572); /*0x5b8922*/
     if ( v41 ) /*0x5b8926*/
-      SendMessageA(v41, 0xF1u, stru_A8B250.__pad_0[16] == 1, 0); /*0x5b893f*/
+      SendMessageA(v41, 0xF1u, stru_A8B250[16] == 1, 0); /*0x5b893f*/
     Debug::Log(); /*0x5b895a*/
     v42 = v5(*v2, 1430); /*0x5b896b*/
     if ( v42 ) /*0x5b896f*/
@@ -1935,19 +1940,19 @@ void ModemHost::InitDialog()
     Debug::Log(); /*0x5b89a3*/
     v43 = v5(*v2, 1358); /*0x5b89b4*/
     if ( v43 ) /*0x5b89b8*/
-      SendMessageA(v43, 0xF1u, stru_A8B250.__pad_0[18] == 1, 0); /*0x5b89d1*/
+      SendMessageA(v43, 0xF1u, stru_A8B250[18] == 1, 0); /*0x5b89d1*/
     Debug::Log(); /*0x5b89ec*/
     v44 = v5(*v2, 1690); /*0x5b89fd*/
     if ( v44 ) /*0x5b8a01*/
-      SendMessageA(v44, 0xF1u, stru_A8B250.__pad_0[19] == 1, 0); /*0x5b8a1a*/
+      SendMessageA(v44, 0xF1u, stru_A8B250[19] == 1, 0); /*0x5b8a1a*/
     Debug::Log(); /*0x5b8a35*/
     v45 = v5(*v2, 1693); /*0x5b8a46*/
     if ( v45 ) /*0x5b8a4a*/
-      SendMessageA(v45, 0xF1u, stru_A8B250.__pad_0[20] == 1, 0); /*0x5b8a63*/
+      SendMessageA(v45, 0xF1u, stru_A8B250[20] == 1, 0); /*0x5b8a63*/
     Debug::Log(); /*0x5b8a7e*/
     v46 = v5(*v2, 1361); /*0x5b8a8f*/
     if ( v46 ) /*0x5b8a93*/
-      SendMessageA(v46, 0xF1u, stru_A8B250.__pad_0[28] == 1, 0); /*0x5b8aac*/
+      SendMessageA(v46, 0xF1u, stru_A8B250[28] == 1, 0); /*0x5b8aac*/
     Debug::Log(); /*0x5b8ac7*/
     NetworkBuffer::GetField((NetworkBuffer * *)((char *)&stru_A8EB00 + 480)); /*0x5b8ad4*/
     v47 = Random::Range(&Randomizer_Global, 1, 0x7FFF); /*0x5b8ae5*/
@@ -1965,10 +1970,10 @@ void ModemHost::InitDialog()
     }
     PtrVector::Destroy(&stru_A8DA74); /*0x5b8b48*/
     LoadScenarioClassByIndex(0); /*0x5b8b4f*/
-    *(unsigned int *)&stru_A8B250.__pad_0[4] = 0; /*0x5b8b54*/
+    *(unsigned int *)&stru_A8B250[4] = 0; /*0x5b8b54*/
     v50 = v5(*v2, 1448); /*0x5b8b67*/
     SendMessageA(v50, 0x4B2u, 0, (LPARAM)MEMORY[0xA8B322]); /*0x5b8b76*/
-    IDA_BYTE2(stru_A8D600.Network_field_0xC) = 1; /*0x5b8b81*/
+    IDA_BYTE2(stru_A8D600.q00C) = 1; /*0x5b8b81*/
     v51 = CCFileClass::Construct((CCFileClass *)&((char *)&v59), byte_A8B8E0); /*0x5b8b88*/
     v52 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v51 + 20))(v51, 0); /*0x5b8b9a*/
     v61 = 0; /*0x5b8ba4*/
@@ -2042,7 +2047,7 @@ void NetworkGameSetup::ReadRulesBases()
     if ( result ) /*0x5b96c3*/
     {
       result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b96cf*/
-      *(unsigned int *)&stru_A8B250.__pad_0[12] = result; /*0x5b96d5*/
+      *(unsigned int *)&stru_A8B250[12] = result; /*0x5b96d5*/
       IDA_BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b96da*/
     }
     return result; /*0x5b96de*/
@@ -2059,7 +2064,7 @@ void NetworkGameSetup::ReadRulesAlliesAllowed()
     if ( result ) /*0x5b96f3*/
     {
       result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b96ff*/
-      *(unsigned int *)&stru_A8B250.__pad_0[36] = result; /*0x5b9705*/
+      *(unsigned int *)&stru_A8B250[36] = result; /*0x5b9705*/
       IDA_BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b970a*/
     }
     return result; /*0x5b970e*/
@@ -2076,7 +2081,7 @@ void NetworkGameSetup::ReadRulesEngineerCount()
     if ( result ) /*0x5b9723*/
     {
       result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b972f*/
-      *(unsigned int *)&stru_A8B250.__pad_0[24] = 6 - result; /*0x5b973c*/
+      *(unsigned int *)&stru_A8B250[24] = 6 - result; /*0x5b973c*/
       IDA_BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b9742*/
     }
     return result; /*0x5b9746*/
@@ -2348,10 +2353,10 @@ void ModemHost::StartGame()
     Debug::Log(); /*0x5bac97*/
     if ( a2 == 1 ) /*0x5baca2*/
       return 0; /*0x5bacb0*/
-    dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bacc5*/
+    dword_A8B230[130].vtable3 = *(void **)&stru_A8B250[4]; /*0x5bacc5*/
     strcpy( /*0x5bacfc*/
       (char *)&dword_A8B230[130].abstractFlags,
-      (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88));
+      (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88));
     dword_A8B230[43].vtable1 = (void *)1; /*0x5bad10*/
     dword_A8B230[43].vtable1 = (void *)1; /*0x5bad1c*/
     dword_A8B54C = 0; /*0x5bad22*/
@@ -2417,7 +2422,7 @@ void ModemHost::StartGame()
       *(int *)((char *)&v32[38] + 2) = v12; /*0x5baeb8*/
     }
     v13 = 5; /*0x5baec5*/
-    stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250.__pad_0[24]; /*0x5baeca*/
+    stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250[24]; /*0x5baeca*/
     dword_A8B554 = 5; /*0x5baed8*/
     dword_A8DB9C = 0; /*0x5baedd*/
     dword_A8B56C = 0; /*0x5baee3*/
@@ -2490,12 +2495,12 @@ void ModemHost::StartGame()
         if ( v16 ) /*0x5bb1aa*/
           Dialog::Destroy(v16); /*0x5bb1ae*/
         EventClass::CheckFlag((EventClass *)&unk_A8EA70); /*0x5bb1b8*/
-        IDA_BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5bb1c9*/
-        dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5bb1d0*/
+        IDA_BYTE2(stru_A8D600.q00C) = 0; /*0x5bb1c9*/
+        dword_A8B230[130].vtable3 = *(void **)&stru_A8B250[4]; /*0x5bb1d0*/
         dword_A8B54C = dword_A8DA84; /*0x5bb1f0*/
         v25 = dword_A8E960[0]; /*0x5bb1f5*/
         IDA_BYTE1(v25) = IDA_BYTE1(dword_A8E960[0]) & 0x77; /*0x5bb1fc*/
-        v26 = v25 | ((byte_A8B31D & 1 | (16 * (stru_A8B250.__pad_0[16] & 1))) << 11); /*0x5bb202*/
+        v26 = v25 | ((byte_A8B31D & 1 | (16 * (stru_A8B250[16] & 1))) << 11); /*0x5bb202*/
         IDA_LOBYTE(v26) = IDA_LOBYTE(dword_A8E960[0]) | 0xC0; /*0x5bb209*/
         *(unsigned int * *)((char *)&stru_A8EB00 + 644) = 0; /*0x5bb20c*/
         dword_A8B24C = 2; /*0x5bb212*/
@@ -2770,7 +2775,7 @@ void MultiplayerTeamVector::Destruct()
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x5d8863*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<MultiplayerTeam *>::`vftable'; /*0x5d8866*/
+    *(unsigned int *)this->__pad_0 = (void *)&vt_VectorClass_MultiplayerTeam; /*0x5d8866*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d8870*/
     {
       RA2_OPDEL(v3); /*0x5d8878*/
@@ -2791,7 +2796,7 @@ void MultiplayerModeVector::Destruct()
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x5d88b3*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d88b6*/
+    *(unsigned int *)this->__pad_0 = (void *)&vt_VectorClass_MultiplayerGameMode; /*0x5d88b6*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d88c0*/
     {
       RA2_OPDEL(v3); /*0x5d88c8*/
@@ -2812,7 +2817,7 @@ void MultiplayerModeVector2::Destruct()
     void *v3; // eax
 
     v3 = *(void **)&this->m_1[3]; /*0x5d8903*/
-    *(unsigned int *)this->__pad_0 = &VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d8906*/
+    *(unsigned int *)this->__pad_0 = (void *)&vt_VectorClass_MultiplayerGameMode; /*0x5d8906*/
     if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d8910*/
     {
       RA2_OPDEL(v3); /*0x5d8918*/
@@ -3077,7 +3082,7 @@ void NetworkSettings::DlgProc()
           if ( v7 >= 0 && byte_831274 ) /*0x5ddccc*/
           {
             g_NetworkSetupConfig = v7; /*0x5ddcd4*/
-            wcscpy((wchar_t *)&stru_A8D600.Network_field_0x10, *(const wchar_t **)(dword_A8DA60 + 4 * v7)); /*0x5ddce2*/
+            wcscpy((wchar_t *)&stru_A8D600.q010, *(const wchar_t **)(dword_A8DA60 + 4 * v7)); /*0x5ddce2*/
           }
           if ( IDA_HIWORD(v4) == 1 ) /*0x5ddcf3*/
           {
@@ -3253,13 +3258,13 @@ void MultiplayerLobby::FillSlots()
       }
     }
     v8 = dword_A8DA90[(unsigned int)g_MPCooperativeState]; /*0x5ec137*/
-    if ( *(unsigned int *)&stru_A8B250.__pad_0[4] == -1 ) /*0x5ec141*/
+    if ( *(unsigned int *)&stru_A8B250[4] == -1 ) /*0x5ec141*/
     {
       PlayerCountMap = 8; /*0x5ec143*/
     }
     else
     {
-      PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5ec155*/
+      PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250[4]); /*0x5ec155*/
       if ( dword_A8B23C ) /*0x5ec159*/
       {
         v10 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vtable1 + 38))(dword_A8B23C); /*0x5ec15d*/
@@ -6004,7 +6009,7 @@ void WOLGameList::PopulateLobbyLists()
                 FillPersonaInfoWOL(*(int *)&v51[16], v48, (char **)&dword_B73E40, 0); /*0x7a3a72*/
             }
           }
-          *(unsigned int *)&v51[12] = &rc_ptr<PlayerProfile>::`vftable'; /*0x7a3a7b*/
+          *(unsigned int *)&v51[12] = (void *)&vt_rc_ptr_PlayerProfile; /*0x7a3a7b*/
           ComPtr::Release((ComPtr *)&v51[12]); /*0x7a3a83*/
         }
         *(unsigned int *)&v51[8] = *(unsigned int *)(*(unsigned int *)&v51[8] + 60); /*0x7a3a93*/

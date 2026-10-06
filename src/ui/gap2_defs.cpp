@@ -904,7 +904,7 @@ int TauntCommandClass::Do(int a1) {
           v19 = 29; /*0x5363d1*/
           strcpy(v20, ToWideStringChar((char *)*dword_A8DA78)); /*0x5363fb*/
           v23 = dword_A8B394; /*0x53640a*/
-          v4 = WideString::Hash((wchar_t *)&stru_A8D600.Network_field_0x10); /*0x536413*/
+          v4 = WideString::Hash((wchar_t *)&stru_A8D600.q010); /*0x536413*/
           TauntCommandClass_field_00 = this->TauntCommandClass_field_00; /*0x53641e*/
           v24 = v4; /*0x536421*/
           IDA_LOBYTE(v6) = (16 * *(unsigned char *)(*dword_A8DA78 + 75)) /*0x536432*/
@@ -939,7 +939,7 @@ int TauntCommandClass::Do(int a1) {
                         PlayerByID = Network::FindPlayerByID((Network *)&unk_A8E9C0, ConnectionSpeed); /*0x5364d2*/
                         if ( byte_A8DBA0 ) /*0x5364df*/
                         {
-                          LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], ConnectionSpeed); /*0x5364e7*/
+                          LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0[16], ConnectionSpeed); /*0x5364e7*/
                           v21 |= LinkedIndex; /*0x5364ec*/
                         }
                         else

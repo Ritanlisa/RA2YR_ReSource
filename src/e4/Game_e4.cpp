@@ -789,12 +789,12 @@ LABEL_31:
   if ( v13 ) /*0x5b72c6*/
     ((Dialog *)v13)->Destroy(); /*0x5b72ca*/
   ((EventClass *)((EventClass *)&unk_A8EA70))->CheckFlag(); /*0x5b72d4*/
-  BYTE2(stru_A8D600.Network_field_0xC) = 0; /*0x5b72e4*/
-  (&dword_A8B230)[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x5b72eb*/
+  BYTE2(stru_A8D600.q00C) = 0; /*0x5b72e4*/
+  (&dword_A8B230)[130].vtable3 = *(void **)&stru_A8B250[4]; /*0x5b72eb*/
   dword_A8B54C = dword_A8DA84; /*0x5b730b*/
   v17 = (&dword_A8E960)[0]; /*0x5b7311*/
   BYTE1(v17) = BYTE1((&dword_A8E960)[0]) & 0x77; /*0x5b7319*/
-  v18 = v17 | ((byte_A8B31D & 1 | (16 * (stru_A8B250.__pad_0[16] & 1))) << 11); /*0x5b731f*/
+  v18 = v17 | ((byte_A8B31D & 1 | (16 * (stru_A8B250[16] & 1))) << 11); /*0x5b731f*/
   LOBYTE(v18) = LOBYTE((&dword_A8E960)[0]) | 0xC0; /*0x5b7326*/
   *(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x5b7329*/
   dword_A8B24C = 2; /*0x5b7333*/
@@ -841,33 +841,33 @@ AbstractClass * * Game::BuildGameSetupPacket()
   *(int *)((char *)&v11[36] + 2) = *(unsigned int *)((char *)&stru_A8EB00 + 432); /*0x5ba6f0*/
   *(int *)((char *)&v11[37] + 2) = (&dword_A8E960)[0]; /*0x5ba6fd*/
   *(int *)((char *)&v11[8] + 2) = Field3; /*0x5ba70a*/
-  BYTE2(v11[40]) = stru_A8B250.__pad_0[24]; /*0x5ba71b*/
+  BYTE2(v11[40]) = stru_A8B250[24]; /*0x5ba71b*/
   v7 = *(int *)((char *)&v11[35] + 2); /*0x5ba739*/
   LOBYTE(v7) = BYTE2(v11[35]) & 0xF; /*0x5ba744*/
   *(int *)((char *)&v11[35] + 2) = v7 /*0x5ba750*/
                                  | (16
-                                  * (stru_A8B250.__pad_0[18] & 1
+                                  * (stru_A8B250[18] & 1
                                    | (2
-                                    * (stru_A8B250.__pad_0[19] & 1
-                                     | (2 * (stru_A8B250.__pad_0[20] & 1 | (2 * (stru_A8B250.__pad_0[28] & 1))))))));
+                                    * (stru_A8B250[19] & 1
+                                     | (2 * (stru_A8B250[20] & 1 | (2 * (stru_A8B250[28] & 1))))))));
   LOBYTE(v11[6]) = dword_A8DB30; /*0x5ba75d*/
   v8 = dword_A8B394; /*0x5ba776*/
   strcpy((char *)&v11[1],(const char *)(unk_A8B380)); /*0x5ba77f*/
   BYTE1(v11[7]) = v8; /*0x5ba793*/
   *(int *)((char *)&v11[6] + 1) = dword_A8B3AC; /*0x5ba797*/
-  *(int *)((char *)&v11[31] + 2) = *(unsigned int *)&stru_A8B250.__pad_0[12]; /*0x5ba79b*/
-  v9 = *(int *)((char *)&v11[32] + 2) & 0xFFFFFFFE | stru_A8B250.__pad_0[8] & 1; /*0x5ba7bd*/
-  LOBYTE(v9) = BYTE2(v11[32]) & 0xF8 | stru_A8B250.__pad_0[8] & 1; /*0x5ba7cc*/
-  *(int *)((char *)&v11[32] + 2) = v9 | (2 * (stru_A8B250.__pad_0[16] & 1 | (2 * (stru_A8B250.__pad_0[17] & 1)))); /*0x5ba7f7*/
-  LOBYTE(v11[35]) = stru_A8B250.__pad_0[36]; /*0x5ba819*/
+  *(int *)((char *)&v11[31] + 2) = *(unsigned int *)&stru_A8B250[12]; /*0x5ba79b*/
+  v9 = *(int *)((char *)&v11[32] + 2) & 0xFFFFFFFE | stru_A8B250[8] & 1; /*0x5ba7bd*/
+  LOBYTE(v9) = BYTE2(v11[32]) & 0xF8 | stru_A8B250[8] & 1; /*0x5ba7cc*/
+  *(int *)((char *)&v11[32] + 2) = v9 | (2 * (stru_A8B250[16] & 1 | (2 * (stru_A8B250[17] & 1)))); /*0x5ba7f7*/
+  LOBYTE(v11[35]) = stru_A8B250[36]; /*0x5ba819*/
   *(int *)((char *)&v11[35] + 2) = *(int *)((char *)&v11[35] + 2) & 0xFFFFFFF1 /*0x5ba828*/
                                  | (4 * (dword_A8B320 & 1)) & 0xF5
                                  | (2 * (byte_A8B31D & 1 | (4 * (byte_A8B31F & 1))));
-  BYTE1(v11[35]) = stru_A8B250.__pad_0[40]; /*0x5ba835*/
+  BYTE1(v11[35]) = stru_A8B250[40]; /*0x5ba835*/
   BYTE2(v11[34]) = g_RulesInitConfig; /*0x5ba842*/
-  HIBYTE(v11[34]) = stru_A8B250.__pad_0[32]; /*0x5ba84e*/
+  HIBYTE(v11[34]) = stru_A8B250[32]; /*0x5ba84e*/
   wcscpy((wchar_t *)&v11[9] + 1, *(const wchar_t **)(dword_A8B8CC + 4 * *(unsigned int *)((unsigned char *)&stru_A8B250 + 4))); /*0x5ba85e*/
-  ((CCFileClass*)&v13)->Construct((*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88)); /*0x5ba87f*/
+  ((CCFileClass*)&v13)->Construct((*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88)); /*0x5ba87f*/
   *(int *)((char *)&v11[39] + 2) = CCFileClass::GetSize( &v13); /*0x5ba896*/
   strncpy( /*0x5ba8b3*/
     (char *)&v11[40] + 3,
@@ -879,7 +879,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
     0x20u);
   *(int *)((char *)&v11[32] + 2) = *(int *)((char *)&v11[32] + 2) & 0xFFFFFFEF /*0x5ba90c*/
                                  | (16
-                                  * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 380)
+                                  * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 380)
                                    & 1));
   ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v11, 250, 1); /*0x5ba91d*/
   *(unsigned int *)v13.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x5ba929*/
@@ -1691,13 +1691,13 @@ CellStruct * * Game::Game_DumpMultiplayerGameInfo()
   unsigned int n; // edi
   int v11[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = *(unsigned int *)&stru_A8B250.__pad_0[4]; /*0x698cb0*/
+  v2 = *(unsigned int *)&stru_A8B250[4]; /*0x698cb0*/
   v3 = (FILE *)(Stream); /*0x698cbc*/
-  if ( *(int *)&stru_A8B250.__pad_0[4] < 0 ) /*0x698cc3*/
+  if ( *(int *)&stru_A8B250[4] < 0 ) /*0x698cc3*/
   {
     fprintf(Stream, "BOGUS scenario index!?!\n"); /*0x698ccb*/
     v2 = 0; /*0x698cd3*/
-    *(unsigned int *)&stru_A8B250.__pad_0[4] = 0; /*0x698cd5*/
+    *(unsigned int *)&stru_A8B250[4] = 0; /*0x698cd5*/
   }
   fprintf(v3, "Scenario = %s\n", *(const char **)(dword_A8B8CC + 4 * v2)); /*0x698ceb*/
   fprintf(v3, "Handle = %s\n", (const char *)&this->Game_field_0x148); /*0x698cfd*/

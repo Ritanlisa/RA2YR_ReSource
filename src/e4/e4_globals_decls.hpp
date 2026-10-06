@@ -14789,7 +14789,7 @@ extern unsigned char vt_BlitTransLucent25Alpha[4];
 extern unsigned char vt_BlitTransLucent25AlphaZReadWrite[4];
 extern unsigned char vt_BlitTransXlatAlphaZRead[4];
 extern unsigned char vt_BlitTransXlatAlpha[4];
-extern unsigned int stru_A8D600;  // data: 0xA8D600
+extern struct Network stru_A8D600;  // data: 0xA8D600  (G57w10: receiver retype, Network carrier base)
 extern unsigned char vt_GameOption[4];
 extern unsigned char vt_FlagGameOption[4];
 extern unsigned int unk_7E989C;  // data: 0x7E989C
@@ -14806,7 +14806,7 @@ extern unsigned int unk_7E9ADC;  // data: 0x7E9ADC
 extern unsigned int stru_82BA00;  // data: 0x82BA00
 extern unsigned int off_7E1BC6;  // data: 0x7E1BC6
 extern unsigned char vt_VectorCursorMSSfxEntryDynamicVectorClass[4];
-extern unsigned int stru_A8B250;  // data: 0xA8B250
+extern unsigned char stru_A8B250[];  // data: 0xA8B250  (G57w10: byte-array base, direct subscript)
 extern unsigned char vt_INISection[4];
 extern unsigned char vt_ATLCComObject[4];
 extern unsigned char vt_VectorClassDiscreteDistributionClassDistributionObject[4];

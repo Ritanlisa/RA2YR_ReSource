@@ -103,9 +103,9 @@ void * Multiplayer::FindStartPositions()
     v4 = v27; /*0x68840d*/
     v2 = v21; /*0x688411*/
   }
-  if ( v1 <= *(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 - v7 ) /*0x688421*/
+  if ( v1 <= *(unsigned int *)&stru_A8B250[36] + dword_A8DA84 - v7 ) /*0x688421*/
   {
-    v20 = *(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 - v7; /*0x68842b*/
+    v20 = *(unsigned int *)&stru_A8B250[36] + dword_A8DA84 - v7; /*0x68842b*/
     v10 = v20; /*0x68842f*/
   }
   else

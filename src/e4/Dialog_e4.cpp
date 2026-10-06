@@ -89,49 +89,49 @@ int Dialog::InitializeGameSettings()
   Debug::Log("Settings change\n"); /*0x5b5bcb G57c1: IDA 0x5b5bcb push offset aSettingsChange*/
   DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1641); /*0x5b5be1*/
   if ( DlgItem ) /*0x5b5bf0*/
-    SendMessageA( (HWND)(DlgItem), 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[32]); /*0x5b5c00*/
+    SendMessageA( (HWND)(DlgItem), 0x405u, 1u, *(LPARAM *)&stru_A8B250[32]); /*0x5b5c00*/
   v3 = GetDlgItem(*(HWND *)this->__pad_0, 1360); /*0x5b5c0a*/
   if ( v3 ) /*0x5b5c0e*/
     SendMessageA( (HWND)(v3), 0x405u, 1u, (LPARAM)((LPARAM)(g_RulesInitConfig))); /*0x5b5c1e*/
   v4 = GetDlgItem(*(HWND *)this->__pad_0, 1026); /*0x5b5c28*/
   if ( v4 ) /*0x5b5c2c*/
-    SendMessageA( (HWND)(v4), 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[12]); /*0x5b5c3c*/
+    SendMessageA( (HWND)(v4), 0x405u, 1u, *(LPARAM *)&stru_A8B250[12]); /*0x5b5c3c*/
   v5 = GetDlgItem(*(HWND *)this->__pad_0, 1362); /*0x5b5c46*/
   if ( v5 ) /*0x5b5c4a*/
-    SendMessageA( (HWND)(v5), 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[36]); /*0x5b5c5a*/
+    SendMessageA( (HWND)(v5), 0x405u, 1u, *(LPARAM *)&stru_A8B250[36]); /*0x5b5c5a*/
   v6 = GetDlgItem(*(HWND *)this->__pad_0, 1321); /*0x5b5c64*/
   if ( v6 ) /*0x5b5c68*/
-    SendMessageA( (HWND)(v6), 0x405u, 1u, 6 - *(unsigned int *)&stru_A8B250.__pad_0[24]); /*0x5b5c7f*/
+    SendMessageA( (HWND)(v6), 0x405u, 1u, 6 - *(unsigned int *)&stru_A8B250[24]); /*0x5b5c7f*/
   v7 = GetDlgItem(*(HWND *)this->__pad_0, 1363); /*0x5b5c89*/
   if ( v7 ) /*0x5b5c8d*/
-    SendMessageA( (HWND)(v7), 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[40]); /*0x5b5c9d*/
+    SendMessageA( (HWND)(v7), 0x405u, 1u, *(LPARAM *)&stru_A8B250[40]); /*0x5b5c9d*/
   v8 = GetDlgItem(*(HWND *)this->__pad_0, 1643); /*0x5b5ca7*/
   if ( v8 ) /*0x5b5cab*/
     SendMessageA( (HWND)(v8), 0xF1u, dword_A8B320 == 1, 0); /*0x5b5cc3*/
   v9 = GetDlgItem(*(HWND *)this->__pad_0, 1642); /*0x5b5ccd*/
   if ( v9 ) /*0x5b5cd1*/
-    SendMessageA( (HWND)(v9), 0xF1u, stru_A8B250.__pad_0[8] == 1, 0); /*0x5b5ce9*/
+    SendMessageA( (HWND)(v9), 0xF1u, stru_A8B250[8] == 1, 0); /*0x5b5ce9*/
   v10 = GetDlgItem(*(HWND *)this->__pad_0, 1361); /*0x5b5cf3*/
   if ( v10 ) /*0x5b5cf7*/
-    SendMessageA( (HWND)(v10), 0xF1u, stru_A8B250.__pad_0[28] == 1, 0); /*0x5b5d0f*/
+    SendMessageA( (HWND)(v10), 0xF1u, stru_A8B250[28] == 1, 0); /*0x5b5d0f*/
   v11 = GetDlgItem(*(HWND *)this->__pad_0, 1358); /*0x5b5d19*/
   if ( v11 ) /*0x5b5d1d*/
-    SendMessageA( (HWND)(v11), 0xF1u, stru_A8B250.__pad_0[18] == 1, 0); /*0x5b5d35*/
+    SendMessageA( (HWND)(v11), 0xF1u, stru_A8B250[18] == 1, 0); /*0x5b5d35*/
   v12 = GetDlgItem(*(HWND *)this->__pad_0, 1690); /*0x5b5d3f*/
   if ( v12 ) /*0x5b5d43*/
-    SendMessageA( (HWND)(v12), 0xF1u, stru_A8B250.__pad_0[19] == 1, 0); /*0x5b5d5b*/
+    SendMessageA( (HWND)(v12), 0xF1u, stru_A8B250[19] == 1, 0); /*0x5b5d5b*/
   v13 = GetDlgItem(*(HWND *)this->__pad_0, 1693); /*0x5b5d65*/
   if ( v13 ) /*0x5b5d69*/
-    SendMessageA( (HWND)(v13), 0xF1u, stru_A8B250.__pad_0[20] == 1, 0); /*0x5b5d81*/
+    SendMessageA( (HWND)(v13), 0xF1u, stru_A8B250[20] == 1, 0); /*0x5b5d81*/
   v14 = GetDlgItem(*(HWND *)this->__pad_0, 1356); /*0x5b5d8b*/
   if ( v14 ) /*0x5b5d8f*/
-    SendMessageA( (HWND)(v14), 0xF1u, stru_A8B250.__pad_0[17] == 1, 0); /*0x5b5da7*/
+    SendMessageA( (HWND)(v14), 0xF1u, stru_A8B250[17] == 1, 0); /*0x5b5da7*/
   v15 = GetDlgItem(*(HWND *)this->__pad_0, 1357); /*0x5b5db1*/
   if ( v15 ) /*0x5b5db5*/
     SendMessageA( (HWND)(v15), 0xF1u, byte_A8B31F == 1, 0); /*0x5b5dcd*/
   v16 = GetDlgItem(*(HWND *)this->__pad_0, 1572); /*0x5b5dd7*/
   if ( v16 ) /*0x5b5ddb*/
-    SendMessageA( (HWND)(v16), 0xF1u, stru_A8B250.__pad_0[16] == 1, 0); /*0x5b5df3*/
+    SendMessageA( (HWND)(v16), 0xF1u, stru_A8B250[16] == 1, 0); /*0x5b5df3*/
   v17 = GetDlgItem(*(HWND *)this->__pad_0, 1430); /*0x5b5dfd*/
   if ( v17 ) /*0x5b5e01*/
     SendMessageA( (HWND)(v17), 0xF1u, byte_A8B31D == 1, 0); /*0x5b5e19*/
@@ -847,7 +847,7 @@ AbstractClass * * Dialog::IdleProcess(ObjectClass *a2)
     MessageLoop(); /*0x6081d8*/
     if ( *(unsigned int *)&dword_A8B238 ) /*0x6081e4*/
     {
-      if ( *(unsigned int *)&dword_A8B238 != 5 && !BYTE2(stru_A8D600.Network_field_0xC) && !dword_A8DAB4 ) /*0x6081fb*/
+      if ( *(unsigned int *)&dword_A8B238 != 5 && !BYTE2(stru_A8D600.q00C) && !dword_A8DAB4 ) /*0x6081fb*/
         break; /*0x6081fb*/
     }
     Event::Dispatch(); /*0x608211*/

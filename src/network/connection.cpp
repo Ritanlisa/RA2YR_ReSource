@@ -194,7 +194,7 @@ int IPXConnClass::receive(int a2, int a3, int * a4, int ** a5, int a6, int a7)
     v10 = a2; /*0x53f6c9*/
     if ( !*(unsigned char *)(a2 + 3) ) /*0x53f6cd*/
     {
-      LinkedIndex = ((Factory *)&stru_B052C0.__pad_0[16])->GetLinkedIndex(*((unsigned int *)this + 25)); /*0x53f6dd*/
+      LinkedIndex = ((Factory *)&stru_B052C0[16])->GetLinkedIndex(*((unsigned int *)this + 25)); /*0x53f6dd*/
       if ( !LinkedIndex ) /*0x53f6e4*/
         return 0; /*0x53f6ef*/
       *(unsigned char *)(a2 + 3) = LinkedIndex; /*0x53f6f2*/

@@ -520,7 +520,7 @@ char sub_55CF10()
       {
         if ( dword_A8EA0C ) /*0x55cf4c*/
         {
-          ((NetworkEventQueueClass *)((NetworkEventQueueClass *)&stru_B052C0.__pad_0[16]))->WaitForResponse(); /*0x55cf53*/
+          ((NetworkEventQueueClass *)((NetworkEventQueueClass *)&stru_B052C0[16]))->WaitForResponse(); /*0x55cf53*/
           v2 = 480; /*0x55cf61*/
                     Ticks = (gamemd::Network *)(((Timer *)0)->GetTicks());
           while ( 1 ) /*0x55cf74*/
@@ -535,7 +535,7 @@ char sub_55CF10()
             if ( !v2 ) /*0x55cf90*/
               break; /*0x55cf90*/
                         ((Event *)0)->Dispatch();
-            if ( ((Process *)((Process *)&stru_B052C0.__pad_0[16]))->WaitForExit(0xAu, 0) ) /*0x55cfa0*/
+            if ( ((Process *)((Process *)&stru_B052C0[16]))->WaitForExit(0xAu, 0) ) /*0x55cfa0*/
               break; /*0x55cfa0*/
             v2 = 480; /*0x55cf70*/
           }

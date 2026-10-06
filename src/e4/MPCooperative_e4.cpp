@@ -808,7 +808,7 @@ LABEL_30:
       ((Array*)v11)->GetElementAt( (unsigned int *)(&String2), 0); /*0x5c1bc9*/
       Debug::Log(); /*0x5c1be5*/
       if ( _strnicmp( /*0x5c1c0e*/
-             (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
+             (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88),
              String2,
              strlen( (const char *)(String2))) )
       {
@@ -820,7 +820,7 @@ LABEL_30:
           ((Array *)(int *)this->MPCooperative_field_0x40)->GetElementAt( (unsigned int *)(&String2), 0); /*0x5c1c45*/
         }
         while ( _strnicmp( /*0x5c1c6f*/
-                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
+                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88),
                   String2,
                   strlen( (const char *)(String2))) );
       }
@@ -839,13 +839,13 @@ LABEL_30:
           if ( ++v10 >= dword_A8B8D8 ) /*0x5c1b73*/
             goto LABEL_25; /*0x5c1b73*/
         }
-        *(unsigned int *)&stru_A8B250.__pad_0[4] = v10; /*0x5c1b79*/
+        *(unsigned int *)&stru_A8B250[4] = v10; /*0x5c1b79*/
         LoadScenarioClassByIndex(v10); /*0x5c1b7f*/
       }
 LABEL_25:
       if ( v10 == dword_A8B8D8 ) /*0x5c1b8a*/
       {
-        *(unsigned int *)&stru_A8B250.__pad_0[4] = 0; /*0x5c1b92*/
+        *(unsigned int *)&stru_A8B250[4] = 0; /*0x5c1b92*/
         LoadScenarioClassByIndex(0); /*0x5c1b9c*/
       }
     }
@@ -1776,8 +1776,8 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
         {
 LABEL_17:
           v12 = 0; /*0x5c2fd2*/
-          for ( j = &stru_A8B250.__pad_0[140]; /*0x5c2fd4*/
-                (*((unsigned int *)j - 16) == -1 || *(unsigned int *)j != -2) && (int)j < (int)&stru_A8B250.__pad_0[172];
+          for ( j = &stru_A8B250[140]; /*0x5c2fd4*/
+                (*((unsigned int *)j - 16) == -1 || *(unsigned int *)j != -2) && (int)j < (int)&stru_A8B250[172];
                 j += 4 )
           {
             ++v12; /*0x5c2feb*/
@@ -1820,11 +1820,11 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   signed int v10; // [esp+14h] [ebp-8h]
   int v11; // [esp+18h] [ebp-4h] BYREF
 
-  v2 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]) - (unsigned int)dword_A8B230[127].vtable2; /*0x5c30db*/
+  v2 = ReadPlayerCountMap(*(int *)&stru_A8B250[4]) - (unsigned int)dword_A8B230[127].vtable2; /*0x5c30db*/
   Debug::Log(); /*0x5c30e7*/
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
-  *(unsigned int *)&stru_A8B250.__pad_0[36] = v2; /*0x5c30ff*/
+  *(unsigned int *)&stru_A8B250[36] = v2; /*0x5c30ff*/
   MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c3105*/
   v10 = 0; /*0x5c310f*/
   v9 = 0; /*0x5c311a*/
@@ -1870,7 +1870,7 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
       ++v7; /*0x5c3201*/
       ++vtable2; /*0x5c3204*/
     }
-    while ( (int)v7 < (int)&stru_A8B250.__pad_0[76] ); /*0x5c320b*/
+    while ( (int)v7 < (int)&stru_A8B250[76] ); /*0x5c320b*/
   }
   return 1; /*0x5c30f5*/
 
@@ -2332,7 +2332,7 @@ void MPCooperative::SetGameMode()
         if ( !_strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * i) + 88), Buffer) ) /*0x5c4094*/
           break; /*0x5c409e*/
       }
-      *(unsigned int *)&stru_A8B250.__pad_0[4] = i; /*0x5c40ab*/
+      *(unsigned int *)&stru_A8B250[4] = i; /*0x5c40ab*/
       dword_A8B230[130].vtable3 = (void *)i; /*0x5c40b3*/
       LoadScenarioClassByIndex(i); /*0x5c40b9*/
     }
@@ -2989,10 +2989,10 @@ int sub_5C1980()
       ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( (CCINIClass *)(v2), (CCINIClass *)(&v5)); /*0x5c19a5*/
       for ( i = 0; i < 780; i += 260 ) /*0x5c19aa*/
       {
-        if ( *(unsigned int *)&stru_A8B250.__pad_0[4] ) /*0x5c19b3*/
+        if ( *(unsigned int *)&stru_A8B250[4] ) /*0x5c19b3*/
         {
           if ( !_strnicmp( /*0x5c19da*/
-                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
+                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88),
                   (const char *)(*(unsigned int *)(v5 + 12) + i),
                   strlen((const char *)(*(unsigned int *)(v5 + 12) + i))) )
             v4 = v2; /*0x5c19e6*/

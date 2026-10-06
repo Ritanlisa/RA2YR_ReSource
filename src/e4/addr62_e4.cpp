@@ -1869,7 +1869,7 @@ int Dialog_Run(unsigned short a1, INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPAR
         MessageLoop(); /*0x624243*/
         if ( !*(unsigned int *)&dword_A8B238 /*0x624266*/
           || *(unsigned int *)&dword_A8B238 == 5
-          || IDA_BYTE2(stru_A8D600.Network_field_0xC)
+          || IDA_BYTE2(stru_A8D600.q00C)
           || dword_A8DAB4 )
         {
           Event::Dispatch(); /*0x62427c*/

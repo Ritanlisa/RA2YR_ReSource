@@ -45,8 +45,12 @@ namespace gamemd { using ::ra2::game::DynamicVector; }
 namespace gamemd { using ::ra2::game::FootClass; }
 // G57w8: using ::ra2::game::HashTable removed -- utility_ext native gamemd::HashTable already in scope (C2874)
 namespace gamemd { class INIClass; }  // G57w8: native fwd (ini_class.hpp defines gamemd::INIClass later; ra2::game bridge double-declared C2888)
-namespace gamemd { using ::ra2::game::InfantryClass; }
-namespace gamemd { using ::ra2::game::MapClass; }
+namespace gamemd { class InfantryClass; }  // G57w10: fwd (using-bridge removed; native def elsewhere)
+namespace gamemd { class MapClass; }  // G57w10: fwd (using-bridge removed; native def elsewhere)
+namespace gamemd { class TechnoClass; }  // G57w10: fwd (using-bridge removed; native def elsewhere)
+namespace gamemd { class ObjectClass; }  // G57w10: fwd (using-bridge removed; native def elsewhere)
+// G57w10: using ::ra2::game::InfantryClass removed -- native gamemd::InfantryClass definition collides (C2874)
+// G57w10: using ::ra2::game::MapClass removed -- native gamemd::MapClass definition collides (C2874)
 namespace gamemd { using ::ra2::game::RadarClass; }
 // G57w8: using ::ra2::game::ReferenceCounted removed -- utility_ext native gamemd::ReferenceCounted already in scope (C2874)
 namespace gamemd { using ::ra2::game::ScoreScreen; }
@@ -55,12 +59,12 @@ namespace gamemd { using ::ra2::game::Selection_WorldDominationTour; }
 namespace gamemd { using ::ra2::game::SessionClass; }
 namespace gamemd { using ::ra2::game::Straw; }
 namespace gamemd { using ::ra2::game::Tactical; }
-namespace gamemd { using ::ra2::game::TechnoClass; }
+// G57w10: using ::ra2::game::TechnoClass removed -- native gamemd::TechnoClass definition collides (C2874)
 namespace gamemd { using ::ra2::game::WDTState; }
 
 namespace ra2 { namespace game { class ObjectClass; } }
 namespace ra2 { namespace game { class BuildingTypeClass; } }
-namespace gamemd { using ::ra2::game::ObjectClass; }
+// G57w10: using ::ra2::game::ObjectClass removed -- native gamemd::ObjectClass definition collides (C2874)
 namespace gamemd { using ::ra2::game::BuildingTypeClass; }
 
 struct RandomStruct;
@@ -2724,7 +2728,7 @@ namespace gamemd {
 
 // ---- genuine free functions ----
 namespace gamemd { int IsNonNullPtr(int* ptr); }  // 0x70e240
-namespace gamemd { int CreateInstanceCOM(void* ppv, void* rclsid, int pUnkOuter, int dwClsContext); }  // 0x41c250
+namespace gamemd { int CreateInstanceCOM(void* this_, void* rclsid, void* pUnkOuter, int dwClsContext); }  // 0x41c250 (G57w10 raw 4-slot thiscall form)
 namespace gamemd { int Release2COM(IUnknown** a1); }  // 0x45a160
 namespace gamemd { int COMStub_48DEB0(const char* a1); }  // 0x48deb0
 namespace gamemd { char InitializeDDraw(int a1, int a2, int a3, int a4); }  // 0x4a42f0

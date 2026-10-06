@@ -46,6 +46,11 @@
 #include "e4/classes/LayerClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/UnitTypeClass_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+
+// G57w10: vtable externs (truth e4_globals_decls)
+extern unsigned char vt_DynamicVectorClass_PlanningNodeClass[4];  // data: 0x7EFE44  // G57w10 vftable residue fix
+extern unsigned char vt_DynamicVectorClass_TechnoClass[4];  // data: 0x7E17AC  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_TechnoClass[4];  // data: 0x7E180C  // G57w10 vftable residue fix
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int IID_IFlyControl;  // 词表 (canon 无条目, int 兜底) L1038
 // ---- g57b5 W6 end ----
@@ -4081,7 +4086,7 @@ void BuildingClass::ProcessAttack()
     Anims = (int *)(*(int (__thiscall **)(BuildingClass *, unsigned int))((char *)this->vtable1 + 264))(this, 0); /*0x4422d2*/
     EventClass::resetEvent((EventClass *)&v67, 0, 0); /*0x4422d6*/
     v4 = this->radioLinks[2]; /*0x4422db*/
-    v67 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x4422e1*/
+    v67 = (void *)&vt_DynamicVectorClass_TechnoClass; /*0x4422e1*/
     v72 = 10; /*0x4422eb*/
     v71 = 0; /*0x4422f3*/
     if ( v4 > 0 ) /*0x4422f7*/
@@ -4105,7 +4110,7 @@ void BuildingClass::ProcessAttack()
     Type = (unsigned char *)this->Type; /*0x442358*/
     if ( Type[5823] && !(unsigned char)v89 ) /*0x442371*/
     {
-      v67 = &VectorClass<TechnoClass *>::`vftable'; /*0x442377*/
+      v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442377*/
       if ( Block && IDA_BYTE1(v70) ) /*0x442389*/
       {
         RA2_OPDEL(Block); /*0x44238c*/
@@ -4115,7 +4120,7 @@ void BuildingClass::ProcessAttack()
     }
     if ( Type[5814] && Type[563] ) /*0x4423ad*/
     {
-      v67 = &VectorClass<TechnoClass *>::`vftable'; /*0x4423bb*/
+      v67 = (void *)&vt_VectorClass_TechnoClass; /*0x4423bb*/
       if ( Block && IDA_BYTE1(v70) ) /*0x4423cd*/
         RA2_OPDEL(Block); /*0x4423d0*/
       return 0; /*0x4423e4*/
@@ -4128,7 +4133,7 @@ void BuildingClass::ProcessAttack()
       v74 = v11; /*0x442434*/
       if ( !(unsigned char)v10 ) /*0x442438*/
       {
-        v67 = &VectorClass<TechnoClass *>::`vftable'; /*0x44243e*/
+        v67 = (void *)&vt_VectorClass_TechnoClass; /*0x44243e*/
         if ( Block && IDA_BYTE1(v70) ) /*0x442450*/
           RA2_OPDEL(Block); /*0x442453*/
         return v11; /*0x442467*/
@@ -4315,7 +4320,7 @@ void BuildingClass::ProcessAttack()
           break; /*0x4426a7*/
         case 5: /*0x442476*/
           v12 = Block; /*0x44247d*/
-          v67 = &VectorClass<TechnoClass *>::`vftable'; /*0x442481*/
+          v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442481*/
           if ( Block && IDA_BYTE1(v70) ) /*0x442497*/
             goto LABEL_126; /*0x442497*/
           return v74; /*0x442497*/
@@ -4452,13 +4457,13 @@ void BuildingClass::ProcessAttack()
         }
       }
       v12 = Block; /*0x442be5*/
-      v67 = &VectorClass<TechnoClass *>::`vftable'; /*0x442be9*/
+      v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442be9*/
       if ( Block && IDA_BYTE1(v70) ) /*0x442bfb*/
   LABEL_126:
         RA2_OPDEL(v12); /*0x442bfd*/
       return v74; /*0x442bfe*/
     }
-    v67 = &VectorClass<TechnoClass *>::`vftable'; /*0x442913*/
+    v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442913*/
     if ( Block && IDA_BYTE1(v70) ) /*0x442925*/
       RA2_OPDEL(Block); /*0x442928*/
     return 4; /*0x442396*/
@@ -12714,7 +12719,7 @@ void BuildingClass::SetProduction(int type_index)
       {
         v7 = (unsigned int *)(v5 + 4); /*0x6395df*/
         Object_Set((VectorClass *)(v5 + 4), 0, 0); /*0x6395e8*/
-        *v7 = &DynamicVectorClass<PlanningNodeClass *>::`vftable'; /*0x6395ed*/
+        *v7 = (void *)&vt_DynamicVectorClass_PlanningNodeClass; /*0x6395ed*/
         *(unsigned int *)(v6 + 24) = 10; /*0x6395f3*/
         *(unsigned int *)(v6 + 20) = 0; /*0x6395fa*/
         *(unsigned char *)(v6 + 28) = 0; /*0x639601*/

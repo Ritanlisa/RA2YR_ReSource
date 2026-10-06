@@ -15552,7 +15552,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
             v58 = dword_A8DA84++; /*0x7a61f6*/
             dword_A8DA78[v58] = v52; /*0x7a6205*/
           }
-          IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x7a620d*/
+          IDA_LOWORD(stru_A8D600.q010) = 0; /*0x7a620d*/
           if ( dword_A8B244 != 3 && dword_A8B244 != 1 && dword_A8B244 != 2 ) /*0x7a6229*/
           {
             Screen::Capture(1, 0, 0, (int)v4); /*0x7a6233*/
@@ -16298,7 +16298,7 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
               if ( dword_A8DA84 == 1 ) /*0x7a762e*/
               {
                 v21 = CharToWideString((unsigned char *)a4 + 36); /*0x7a7632*/
-                wcscpy((wchar_t *)&stru_A8D600.Network_field_0x10, (const wchar_t *)v21); /*0x7a763d*/
+                wcscpy((wchar_t *)&stru_A8D600.q010, (const wchar_t *)v21); /*0x7a763d*/
               }
               v22 = RA2_OPNEW(0x85u); /*0x7a764a*/
               v23 = v22; /*0x7a764f*/
@@ -18524,7 +18524,7 @@ void Chat::ProcessMessages()
           *(unsigned int *)&stru_A8D600.__pad_34[4] = 12; /*0x55edc8*/
           strcpy(&stru_A8D600.__pad_34[8], ToWideStringChar((char *)*dword_A8DA78)); /*0x55edf7*/
           *(unsigned int *)&stru_A8D600.__pad_87[193] = dword_A8B394; /*0x55ee0a*/
-          *(unsigned int *)&stru_A8D600.__pad_87[197] = WideString::Hash((wchar_t *)&stru_A8D600.Network_field_0x10); /*0x55ee14*/
+          *(unsigned int *)&stru_A8D600.__pad_87[197] = WideString::Hash((wchar_t *)&stru_A8D600.q010); /*0x55ee14*/
           stru_A8D600.__pad_64[3] = 0; /*0x55ee20*/
           if ( v89 == 3 ) /*0x55ee27*/
           {
@@ -18604,7 +18604,7 @@ void Chat::ProcessMessages()
                       if ( byte_A8DBA0 ) /*0x55f000*/
                       {
                         stru_A8D600.__pad_64[3] |= Factory::GetLinkedIndex( /*0x55f00d*/
-                                                     (Factory *)&stru_B052C0.__pad_0[16],
+                                                     (Factory *)&stru_B052C0[16],
                                                      ConnectionSpeed);
                       }
                       else
@@ -19941,7 +19941,7 @@ void CrateClass::ProcessPickup(int aP1)
                 && !DynamicVector::GetOrGrow(
                       (DynamicVector *)(v14 + 21780),
                       *(unsigned int *)(*(unsigned int *)&v122.vtable4[20] + 3576))
-                && stru_A8B250.__pad_0[8] )
+                && stru_A8B250[8] )
               {
                 v11 = 1; /*0x481bf6*/
                 v121 = 1; /*0x481bfb*/
@@ -20061,7 +20061,7 @@ void CrateClass::ProcessPickup(int aP1)
             *(unsigned int *)&v122.vtable4[20] = *((unsigned int *)this + 9); /*0x481d93*/
             CellClass::CreateBuildingCrater((CellClass *)&stru_87F5F0.__pad_58[416], (__int16 *)&v122.vtable4[20]); /*0x481d97*/
             result = *(unsigned int *)&dword_A8B238; /*0x481d9c*/
-            if ( *(unsigned int *)&dword_A8B238 && stru_A8B250.__pad_0[17] ) /*0x481dac*/
+            if ( *(unsigned int *)&dword_A8B238 && stru_A8B250[17] ) /*0x481dac*/
               CrateClass::FindPlacement((CrateClass *)&stru_87F5F0.__pad_58[416]); /*0x481db3*/
             if ( v11 == 6 ) /*0x481dbb*/
             {
@@ -20145,7 +20145,7 @@ void CrateClass::ProcessPickup(int aP1)
                       result = House::IsCurrentPlayer(*(House **)(a2 + 540)); /*0x4821b8*/
                     }
                     while ( !v33[3597] ); /*0x4821c5*/
-                    if ( stru_A8B250.__pad_0[8] ) /*0x4821cf*/
+                    if ( stru_A8B250[8] ) /*0x4821cf*/
                       break; /*0x4821cf*/
                     if ( !v38 ) /*0x4821d3*/
                       goto LABEL_109; /*0x4821d3*/
@@ -20897,8 +20897,8 @@ void CrateClass::Update()
     IDA_LOBYTE(v1) = dword_A8B238; /*0x56bbe0*/
     if ( *(unsigned int *)&dword_A8B238 ) /*0x56bbea*/
     {
-      IDA_LOBYTE(v1) = stru_A8B250.__pad_0[17]; /*0x56bbec*/
-      if ( stru_A8B250.__pad_0[17] ) /*0x56bbf3*/
+      IDA_LOBYTE(v1) = stru_A8B250[17]; /*0x56bbec*/
+      if ( stru_A8B250[17] ) /*0x56bbf3*/
       {
         v3 = &this->__pad_144[20]; /*0x56bbf7*/
         for ( i = 256; i; --i ) /*0x56bbfd*/
@@ -24443,7 +24443,7 @@ void Lobby::SetupAllFactionSlots()
     int result; // eax
 
     v1 = 0; /*0x46fac9*/
-    v2 = (int *)&stru_A8B250.__pad_0[140]; /*0x46facb*/
+    v2 = (int *)&stru_A8B250[140]; /*0x46facb*/
     do /*0x46fb47*/
     {
       ResourceID3CSF = GetResourceID3CSF(v1); /*0x46fad2*/
@@ -24477,7 +24477,7 @@ void Lobby::SetupAllFactionSlots()
       ++v2; /*0x46fb3d*/
       v1 = (ObjectClass *)((char *)v1 + 1); /*0x46fb40*/
     }
-    while ( (int)v2 < (int)&stru_A8B250.__pad_0[172] ); /*0x46fb47*/
+    while ( (int)v2 < (int)&stru_A8B250[172] ); /*0x46fb47*/
     return result; /*0x46fb49*/
 }
 // 0x46fb50

@@ -1423,11 +1423,11 @@ int SessionClass::CreateConnections()
   this->unknown_2854[530] = 20; /*0x697ddf*/
   this->unknown_2854[528] = -1; /*0x697de9*/
   ((SessionClass *)&unk_A8E9C0)->initInternet(); /*0x697df3*/
-  ((SessionClass *)&stru_B052C0.__pad_0[16])->BuildLobbyPlayerList(); /*0x697dfd*/
+  ((SessionClass *)&stru_B052C0[16])->BuildLobbyPlayerList(); /*0x697dfd*/
   if ( ((SessionClass *)(int)&dword_A8B238)->IsValidHouse( 0) ) /*0x697e08*/
   {
-    if ( !LaunchMultiplayerHost( (void *)((int)&stru_B052C0.__pad_0[16]), 0) /*0x697e25*/
-      || !((Network *)&stru_B052C0.__pad_0[16])->SendMasterPlayerList() )
+    if ( !LaunchMultiplayerHost( (void *)((int)&stru_B052C0[16]), 0) /*0x697e25*/
+      || !((Network *)&stru_B052C0[16])->SendMasterPlayerList() )
     {
 LABEL_22:
       byte_A8DBA0 = 0; /*0x697e2e*/
@@ -2417,7 +2417,7 @@ Coord * * SessionClass::BuildLaunchString()
   String v25; // [esp+38h] [ebp-54h] BYREF
   char v26[80]; // [esp+3Ch] [ebp-50h] BYREF
 
-  inited = ((SessionClass *)*(SessionClass **)&stru_A8B250.__pad_0[4])->initPlayers(); /*0x78f009*/
+  inited = ((SessionClass *)*(SessionClass **)&stru_A8B250[4])->initPlayers(); /*0x78f009*/
   v2 = 1; /*0x78f014*/
   if ( g_MenuStateFlags == 1 ) /*0x78f01b*/
     ++inited; /*0x78f01d*/

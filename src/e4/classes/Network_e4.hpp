@@ -16,11 +16,15 @@ struct Network {
     void* q008;  // 0x8
     void* q00C;  // 0xC
     void* q010;  // 0x10
+    unsigned char __pad_14;  // 0x14 (G57w10 receiver vocab)
+    unsigned char Network_field_0x22;  // 0x22
     unsigned char q014;  // 0x14
     unsigned int q018;  // 0x18
     unsigned int q01C;  // 0x1C
     unsigned char q020;  // 0x20
     void* q024;  // 0x24
+    unsigned char __pad_34[8];  // 0x34
+    unsigned char __pad_64[8];  // 0x64
     unsigned int u32_28;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned int u32_30;  // 0x30
@@ -36,6 +40,8 @@ struct Network {
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
     void* q060;  // 0x60
+    unsigned char Network_field_0x6F;  // 0x6F
+    unsigned char __pad_73[1];  // 0x73
     unsigned char q064;  // 0x64
     unsigned int q068;  // 0x68
     unsigned int u32_6C;  // 0x6C
@@ -126,6 +132,7 @@ struct Network {
     unsigned int u32_1F6;  // 0x1F6
     unsigned int u32_1F7;  // 0x1F7
     void* q1F8;  // 0x1F8
+    unsigned char __pad_87[0x171];  // 0x87 (array base, max idx 214)
     unsigned int Network_field_0x0;
     unsigned int q0084;
     unsigned int Debug;

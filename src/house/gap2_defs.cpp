@@ -3934,7 +3934,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
               v9 = *(unsigned int *)(v5 + 3492); /*0x5055b8*/
               if ( v9 == -1 || ((1 << *(unsigned int *)(v6 + 184)) & v9) == 0 ) /*0x5055d2*/
               {
-                if ( stru_A8B250.__pad_0[19] ) /*0x5055df*/
+                if ( stru_A8B250[19] ) /*0x5055df*/
                   goto LABEL_18; /*0x5055df*/
                 v10 = *(unsigned int *)(v5 + 5872); /*0x5055e1*/
                 if ( v10 == -1 ) /*0x5055ea*/

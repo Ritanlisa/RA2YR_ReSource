@@ -25,7 +25,7 @@ char AI_CreateMCV(MultiplayerGameMode *self)
   int16_t *CurrentOption; // eax
   unsigned int v11[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  if ( !stru_A8B250.__pad_0[8] ) /*0x5d703c*/
+  if ( !stru_A8B250[8] ) /*0x5d703c*/
     return 1; /*0x5d7045*/
   v3 = (HouseClass *)self; /*0x5d704d*/
   v4 = ((BuildingClass *)self)->FindBySWType( *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2848); /*0x5d705e*/

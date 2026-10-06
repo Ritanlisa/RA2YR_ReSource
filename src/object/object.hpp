@@ -604,7 +604,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
 
 
-    int CreateInstanceCOM(LPVOID * ppv, IID * rclsid, gamemd::ILocomotion * aP2, DWORD dwClsContext);  // 0x41C250 (G42.39 supply)
+    int CreateInstanceCOM(IID * rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext);  // 0x41C250 (G57w10 raw truth: int thiscall(IID*, LPUNKNOWN, DWORD))
     int Release2COM();  // 0x45A160 (G42.39 supply)
 
     int COMStub_48DEB0();  // 0x48DEB0 (G42.39 supply)

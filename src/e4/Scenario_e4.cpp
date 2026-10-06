@@ -1356,7 +1356,7 @@ int Scenario_EndGameFlow()
   {
     v12 = (ObjectClass *)(dword_A8B23C); /*0x6858c6*/
   LABEL_36:
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x6858ce*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x6858ce*/
     if ( v12 ) /*0x6858d7*/
       (*((void (**)(ObjectClass *, int))v12->vtable1 + 41))( (ObjectClass *)(v12), 1); /*0x6858dd*/
     byte_A8E9A0 = 0; /*0x6858ea*/
@@ -1372,12 +1372,12 @@ int Scenario_EndGameFlow()
   v8 = 0; /*0x685849*/
   if ( !dword_A8B23C ) /*0x68584d*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685879*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x685879*/
     goto LABEL_28; /*0x685879*/
   }
   if ( v10 != 3 && v10 != 4 || !(*((uint8_t (**)(void))dword_A8B23C->vtable1 + 2))() ) /*0x68585a*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x68586c*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x68586c*/
   LABEL_28:
     ((Scenario *)((char *)&v29 + 3))->ResetDisplayArrays(); /*0x685884*/
     Map_Load_5C9720(0, -1, 3); /*0x68588b*/
@@ -1470,11 +1470,11 @@ int Scenario_EndGameFlow()
         *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x685b4a*/
     }
     ((WinsockInterface *)(*(WinsockInterface **)&stru_887598.isAliveFlag))->Init(); /*0x685b56*/
-    v20 = *(unsigned int *)&stru_A8B250.__pad_0[36]; /*0x685b69*/
+    v20 = *(unsigned int *)&stru_A8B250[36]; /*0x685b69*/
     qmemcpy( (void *)(v33), (const void *)(dword_A8DA90), sizeof(v33)); /*0x685b6f*/
-    qmemcpy( (void *)(v31), (const void *)(&stru_A8B250.__pad_0[108]), sizeof(v31)); /*0x685b7f*/
-    qmemcpy( (void *)(v30), (const void *)(&stru_A8B250.__pad_0[76]), sizeof(v30)); /*0x685b8f*/
-    qmemcpy( (void *)(v32), (const void *)(&stru_A8B250.__pad_0[44]), sizeof(v32)); /*0x685b9f*/
+    qmemcpy( (void *)(v31), (const void *)(&stru_A8B250[108]), sizeof(v31)); /*0x685b7f*/
+    qmemcpy( (void *)(v30), (const void *)(&stru_A8B250[76]), sizeof(v30)); /*0x685b8f*/
+    qmemcpy( (void *)(v32), (const void *)(&stru_A8B250[44]), sizeof(v32)); /*0x685b9f*/
     IDA_LOBYTE(result) = InitNetworkGameState(); /*0x685ba1*/
     if ( !(unsigned char)result ) /*0x685ba8*/
     {
@@ -1488,7 +1488,7 @@ int Scenario_EndGameFlow()
       byte_A8E9A0 = 0; /*0x685bc7*/
       return result; /*0x685bd5*/
     }
-    *(unsigned int *)&stru_A8B250.__pad_0[36] = v20; /*0x685bd6*/
+    *(unsigned int *)&stru_A8B250[36] = v20; /*0x685bd6*/
     for ( i = 0; i < 8; ++i ) /*0x685bdc*/
     {
       v22 = v30[i]; /*0x685be2*/
@@ -1641,7 +1641,7 @@ int Scenario_EndGame()
   {
     v13 = (ObjectClass *)(dword_A8B23C); /*0x686014*/
   LABEL_36:
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x68601a*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x68601a*/
     if ( v13 ) /*0x686023*/
       (*((void (**)(ObjectClass *, unsigned int))v13->vtable1 + 41))( (ObjectClass *)(v13), 0); /*0x686028*/
     byte_A8E9A0 = 0; /*0x686035*/
@@ -1657,12 +1657,12 @@ int Scenario_EndGame()
   }
   if ( !dword_A8B23C ) /*0x685f96*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685fc3*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x685fc3*/
     goto LABEL_28; /*0x685fc3*/
   }
   if ( v10 != 3 && v10 != 4 || !(*((uint8_t (**)(void))dword_A8B23C->vtable1 + 2))() ) /*0x685fa4*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685fb6*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x685fb6*/
   LABEL_28:
     ((Scenario *)((char *)v31 + 3))->ResetDisplayArrays(); /*0x685fce*/
     Map_Load_5C9720(0, -1, v8); /*0x685fd5*/
@@ -1724,15 +1724,15 @@ int Scenario_EndGame()
       *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x686195*/
   }
   ((WinsockInterface *)(*(WinsockInterface **)&stru_887598.isAliveFlag))->Init(); /*0x6861a1*/
-  v19 = *(unsigned int *)&stru_A8B250.__pad_0[36]; /*0x6861b4*/
+  v19 = *(unsigned int *)&stru_A8B250[36]; /*0x6861b4*/
   qmemcpy( (void *)(v35), (const void *)(dword_A8DA90), sizeof(v35)); /*0x6861ba*/
-  qmemcpy( (void *)(v33), (const void *)(&stru_A8B250.__pad_0[108]), sizeof(v33)); /*0x6861ca*/
-  qmemcpy( (void *)(v34), (const void *)(&stru_A8B250.__pad_0[76]), sizeof(v34)); /*0x6861da*/
-  qmemcpy( (void *)(v32), (const void *)(&stru_A8B250.__pad_0[44]), sizeof(v32)); /*0x6861ea*/
+  qmemcpy( (void *)(v33), (const void *)(&stru_A8B250[108]), sizeof(v33)); /*0x6861ca*/
+  qmemcpy( (void *)(v34), (const void *)(&stru_A8B250[76]), sizeof(v34)); /*0x6861da*/
+  qmemcpy( (void *)(v32), (const void *)(&stru_A8B250[44]), sizeof(v32)); /*0x6861ea*/
   IDA_LOBYTE(v15) = InitNetworkGameState(); /*0x6861ec*/
   if ( (unsigned char)v15 ) /*0x6861f3*/
   {
-    *(unsigned int *)&stru_A8B250.__pad_0[36] = v19; /*0x68623a*/
+    *(unsigned int *)&stru_A8B250[36] = v19; /*0x68623a*/
     for ( i = 0; i < 8; ++i ) /*0x686240*/
     {
       v21 = v34[i]; /*0x686246*/

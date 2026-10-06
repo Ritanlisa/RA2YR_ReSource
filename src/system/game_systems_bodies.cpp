@@ -308,7 +308,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  
         _cfltcvt_init(); /*0x5e1e6a*/
         Lobby_InvalidateFactionCombos((void *)this); /*0x5e1e71*/
         GDlg_LoadLetterStrings(); /*0x5e1e76*/
-        memset32(&stru_A8B250.__pad_0[172], -2, 8u); /*0x5e1e8a*/
+        memset32(&stru_A8B250[172], -2, 8u); /*0x5e1e8a*/
         Lobby_InvalidatePlayerSlots((void *)this); /*0x5e1e8e*/
         RefreshLobbyPlayerSlots(0xFFFFFFFF); /*0x5e1e96*/
         GameLobby_Setup((HWND)this, dword_A8DA8C); /*0x5e1ea3*/
@@ -444,7 +444,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  
     v32 = SetComboBoxSelection((HWND)v29, ResourceID3CSF, -1); /*0x5e21be*/
     ComboBoxSelectedRaw2 = GetComboBoxSelectedRaw2((HWND)v29, nIDDlgItem, -1); /*0x5e21c0*/
     sprintf(Buffer, "R%d,%d,%d,%d", v30, v31, v32, ComboBoxSelectedRaw2); /*0x5e21d3*/
-    v34 = ToWideStringChar((char *)&stru_A8D600.Network_field_0x10); /*0x5e21e4*/
+    v34 = ToWideStringChar((char *)&stru_A8D600.q010); /*0x5e21e4*/
     WOLobby_Play(v34, Buffer); /*0x5e21ed*/
     return 0; /*0x5e1d19*/
 }
@@ -580,7 +580,7 @@ char GameOptions::ReadSettings()
     int Buffer[128]; // [esp+3Ch] [ebp-200h] BYREF
 
     Debug_Log(); /*0x5b8cf1*/
-    Format = (wchar_t *)ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5b8d0a*/
+    Format = (wchar_t *)ReadPlayerCountMap(*(int *)&stru_A8B250[4]); /*0x5b8d0a*/
     v2 = 2; /*0x5b8d16*/
     DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1362); /*0x5b8d1b*/
     if ( DlgItem ) /*0x5b8d25*/
@@ -607,7 +607,7 @@ char GameOptions::ReadSettings()
       }
       v12 = GetDlgItem(*(HWND *)this->__pad_0, 1641); /*0x5b8e4a*/
       if ( v12 ) /*0x5b8e4e*/
-        *(unsigned int *)&stru_A8B250.__pad_0[32] = SendMessageA(v12, 0x400u, 0, 0); /*0x5b8e5c*/
+        *(unsigned int *)&stru_A8B250[32] = SendMessageA(v12, 0x400u, 0, 0); /*0x5b8e5c*/
       Debug_Log(); /*0x5b8e6c*/
       v13 = GetDlgItem(*(HWND *)this->__pad_0, 1360); /*0x5b8e7c*/
       if ( v13 ) /*0x5b8e80*/
@@ -615,19 +615,19 @@ char GameOptions::ReadSettings()
       Debug_Log(); /*0x5b8e9f*/
       v14 = GetDlgItem(*(HWND *)this->__pad_0, 1026); /*0x5b8eaf*/
       if ( v14 ) /*0x5b8eb3*/
-        *(unsigned int *)&stru_A8B250.__pad_0[12] = SendMessageA(v14, 0x400u, 0, 0); /*0x5b8ec1*/
+        *(unsigned int *)&stru_A8B250[12] = SendMessageA(v14, 0x400u, 0, 0); /*0x5b8ec1*/
       Debug_Log(); /*0x5b8ed2*/
       v15 = GetDlgItem(*(HWND *)this->__pad_0, 1362); /*0x5b8ee2*/
       if ( v15 ) /*0x5b8ee6*/
-        *(unsigned int *)&stru_A8B250.__pad_0[36] = SendMessageA(v15, 0x400u, 0, 0); /*0x5b8ef4*/
+        *(unsigned int *)&stru_A8B250[36] = SendMessageA(v15, 0x400u, 0, 0); /*0x5b8ef4*/
       Debug_Log(); /*0x5b8f04*/
       v16 = GetDlgItem(*(HWND *)this->__pad_0, 1321); /*0x5b8f14*/
       if ( v16 ) /*0x5b8f18*/
-        *(unsigned int *)&stru_A8B250.__pad_0[24] = 6 - SendMessageA(v16, 0x400u, 0, 0); /*0x5b8f2d*/
+        *(unsigned int *)&stru_A8B250[24] = 6 - SendMessageA(v16, 0x400u, 0, 0); /*0x5b8f2d*/
       Debug_Log(); /*0x5b8f41*/
       v17 = GetDlgItem(*(HWND *)this->__pad_0, 1363); /*0x5b8f51*/
       if ( v17 ) /*0x5b8f55*/
-        *(unsigned int *)&stru_A8B250.__pad_0[40] = SendMessageA(v17, 0x400u, 0, 0); /*0x5b8f63*/
+        *(unsigned int *)&stru_A8B250[40] = SendMessageA(v17, 0x400u, 0, 0); /*0x5b8f63*/
       Debug_Log(); /*0x5b8f73*/
       v18 = GetDlgItem(*(HWND *)this->__pad_0, 1643); /*0x5b8f83*/
       if ( v18 ) /*0x5b8f87*/
@@ -635,11 +635,11 @@ char GameOptions::ReadSettings()
       Debug_Log(); /*0x5b8fb8*/
       v19 = GetDlgItem(*(HWND *)this->__pad_0, 1642); /*0x5b8fc8*/
       if ( v19 ) /*0x5b8fcc*/
-        stru_A8B250.__pad_0[8] = SendMessageA(v19, 0xF0u, 0, 0) == 1; /*0x5b8fdd*/
+        stru_A8B250[8] = SendMessageA(v19, 0xF0u, 0, 0) == 1; /*0x5b8fdd*/
       Debug_Log(); /*0x5b8ffd*/
       v20 = GetDlgItem(*(HWND *)this->__pad_0, 1356); /*0x5b900d*/
       if ( v20 ) /*0x5b9011*/
-        stru_A8B250.__pad_0[17] = SendMessageA(v20, 0xF0u, 0, 0) == 1; /*0x5b9022*/
+        stru_A8B250[17] = SendMessageA(v20, 0xF0u, 0, 0) == 1; /*0x5b9022*/
       Debug_Log(); /*0x5b9042*/
       v21 = GetDlgItem(*(HWND *)this->__pad_0, 1357); /*0x5b9052*/
       if ( v21 ) /*0x5b9056*/
@@ -647,7 +647,7 @@ char GameOptions::ReadSettings()
       Debug_Log(); /*0x5b9087*/
       v22 = GetDlgItem(*(HWND *)this->__pad_0, 1572); /*0x5b9097*/
       if ( v22 ) /*0x5b909b*/
-        stru_A8B250.__pad_0[16] = SendMessageA(v22, 0xF0u, 0, 0) == 1; /*0x5b90ac*/
+        stru_A8B250[16] = SendMessageA(v22, 0xF0u, 0, 0) == 1; /*0x5b90ac*/
       Debug_Log(); /*0x5b90cc*/
       v23 = GetDlgItem(*(HWND *)this->__pad_0, 1430); /*0x5b90dc*/
       if ( v23 ) /*0x5b90e0*/
@@ -655,19 +655,19 @@ char GameOptions::ReadSettings()
       Debug_Log(); /*0x5b9111*/
       v24 = GetDlgItem(*(HWND *)this->__pad_0, 1358); /*0x5b9121*/
       if ( v24 ) /*0x5b9125*/
-        stru_A8B250.__pad_0[18] = SendMessageA(v24, 0xF0u, 0, 0) == 1; /*0x5b9136*/
+        stru_A8B250[18] = SendMessageA(v24, 0xF0u, 0, 0) == 1; /*0x5b9136*/
       Debug_Log(); /*0x5b9156*/
       v25 = GetDlgItem(*(HWND *)this->__pad_0, 1690); /*0x5b9166*/
       if ( v25 ) /*0x5b916a*/
-        stru_A8B250.__pad_0[19] = SendMessageA(v25, 0xF0u, 0, 0) == 1; /*0x5b917e*/
+        stru_A8B250[19] = SendMessageA(v25, 0xF0u, 0, 0) == 1; /*0x5b917e*/
       Debug_Log(); /*0x5b919c*/
       v26 = GetDlgItem(*(HWND *)this->__pad_0, 1693); /*0x5b91ac*/
       if ( v26 ) /*0x5b91b0*/
-        stru_A8B250.__pad_0[20] = SendMessageA(v26, 0xF0u, 0, 0) == 1; /*0x5b91c4*/
+        stru_A8B250[20] = SendMessageA(v26, 0xF0u, 0, 0) == 1; /*0x5b91c4*/
       Debug_Log(); /*0x5b91e3*/
       v27 = GetDlgItem(*(HWND *)this->__pad_0, 1361); /*0x5b91f3*/
       if ( v27 ) /*0x5b91f7*/
-        stru_A8B250.__pad_0[28] = SendMessageA(v27, 0xF0u, 0, 0) == 1; /*0x5b9208*/
+        stru_A8B250[28] = SendMessageA(v27, 0xF0u, 0, 0) == 1; /*0x5b9208*/
       Debug_Log(); /*0x5b9228*/
       Debug_Log(); /*0x5b9232*/
       return 1; /*0x5b923a*/
@@ -7254,17 +7254,17 @@ void SkirmishDialog::HandleGameStart()
     wchar_t Destination[130]; // [esp+94h] [ebp-104h] BYREF
 
     Debug_Log(); /*0x5b9a71*/
-    v2 = *(unsigned int *)&stru_A8B250.__pad_0[4]; /*0x5b9a8a*/
+    v2 = *(unsigned int *)&stru_A8B250[4]; /*0x5b9a8a*/
     strcpy(v10, byte_A8B8E0); /*0x5b9a9e*/
     wcscpy(Destination, MEMORY[0xA8B322]); /*0x5b9aaf*/
     ShowWindow(*(HWND *)this->__pad_0, 0); /*0x5b9ac2*/
     if ( SkirmishDialog::Show(g_hWnd, (int)this, v2) == 2 ) /*0x5b9ad2*/
     {
-      *(unsigned int *)&stru_A8B250.__pad_0[4] = v2; /*0x5b9ada*/
+      *(unsigned int *)&stru_A8B250[4] = v2; /*0x5b9ada*/
       LoadScenarioClassByIndex(v2); /*0x5b9ae0*/
       Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b9ae7*/
       ShowWindow(*(HWND *)this->__pad_0, 5); /*0x5b9af1*/
-      if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88), &stru_82BA00.?) ) /*0x5b9b0b*/
+      if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88), &stru_82BA00.?) ) /*0x5b9b0b*/
       {
         Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b9b8c*/
         InvalidateRect(*(HWND *)this->__pad_0, 0, 0); /*0x5b9b98*/
@@ -7293,11 +7293,11 @@ void SkirmishDialog::HandleGameStart()
     else
     {
       ShowWindow(*(HWND *)this->__pad_0, 5); /*0x5b9ba4*/
-      if ( LoadScenarioClassByIndex(*(int *)&stru_A8B250.__pad_0[4]) == 1 ) /*0x5b9bb3*/
+      if ( LoadScenarioClassByIndex(*(int *)&stru_A8B250[4]) == 1 ) /*0x5b9bb3*/
       {
         DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1448); /*0x5b9bc1*/
         SendMessageA(DlgItem, 0x4B2u, 0, 11055906); /*0x5b9bd4*/
-        if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88), &stru_82BA00.?) ) /*0x5b9bf1*/
+        if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88), &stru_82BA00.?) ) /*0x5b9bf1*/
         {
           Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b9c64*/
         }
@@ -7324,7 +7324,7 @@ void SkirmishDialog::HandleGameStart()
       }
       else
       {
-        *(unsigned int *)&stru_A8B250.__pad_0[4] = v2; /*0x5b9c6b*/
+        *(unsigned int *)&stru_A8B250[4] = v2; /*0x5b9c6b*/
       }
     }
     IDA_BYTE1(this->SkirmishDialog_field_0x08) = 1; /*0x5b9c76*/

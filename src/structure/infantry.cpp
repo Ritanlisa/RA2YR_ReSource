@@ -6698,7 +6698,7 @@ int InfantryClass::RepairBridge()
               v59 = *(unsigned char *)(v47->Type + 5490); /*0x519d96*/
             if ( *(unsigned int *)&dword_A8B238 ) /*0x519da3*/
             {
-              if ( stru_A8B250.__pad_0[28] ) /*0x519db0*/
+              if ( stru_A8B250[28] ) /*0x519db0*/
               {
                 BuildingClass::GetHealthRatio(v47); /*0x519db8*/
                 _EDX = dword_8871E0; /*0x519dbd*/

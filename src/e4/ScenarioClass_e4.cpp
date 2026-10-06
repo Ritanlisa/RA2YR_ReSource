@@ -487,9 +487,9 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
     Field = *(unsigned int *)(*((unsigned int *)dword_A83CFC + uniqueId) + 152); /*0x683b8f*/
     goto LABEL_13; /*0x683b95*/
   }
-  if ( *(unsigned int *)&stru_A8B250.__pad_0[4] != -1 ) /*0x683b9f*/
+  if ( *(unsigned int *)&stru_A8B250[4] != -1 ) /*0x683b9f*/
   {
-    v7 = *(GameOption **)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]); /*0x683ba7*/
+    v7 = *(GameOption **)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]); /*0x683ba7*/
     v8 = ((Game *)((Game *)0x3C))->CheckForGameCD(); /*0x683baf*/
     if ( !(uint8_t)((ScenarioClass *)v7)->CheckExists( v8) ) /*0x683bb7*/
     {

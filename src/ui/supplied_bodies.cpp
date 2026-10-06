@@ -785,7 +785,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
         return 0; /*0x46eb78*/
       }
       byte_89E0A2 = 0; /*0x46ebac*/
-      v67 = (char *)&stru_A8B250.__pad_0[76]; /*0x46ebb5*/
+      v67 = (char *)&stru_A8B250[76]; /*0x46ebb5*/
       if ( byte_89E05D ) /*0x46ebba*/
       {
         do /*0x46ebd0*/
@@ -794,7 +794,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           *(unsigned int *)v67 = -1; /*0x46ebc6*/
           v67 += 4; /*0x46ebc8*/
         }
-        while ( (int)v67 < (int)&stru_A8B250.__pad_0[108] ); /*0x46ebd0*/
+        while ( (int)v67 < (int)&stru_A8B250[108] ); /*0x46ebd0*/
         InitGameDropdownColors(v121); /*0x46ebd2*/
         ((Lobby *)hWnd)->FillPlayerFactions(); /*0x46ebd9*/
         v68 = (int **)dword_A8DA90; /*0x46ebde*/
@@ -875,7 +875,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
           *(unsigned int *)v67 = -1; /*0x46edba*/
           v67 += 4; /*0x46edbc*/
         }
-        while ( (int)v67 < (int)&stru_A8B250.__pad_0[108] ); /*0x46edc4*/
+        while ( (int)v67 < (int)&stru_A8B250[108] ); /*0x46edc4*/
         InitGameDropdownColors(v121); /*0x46edc6*/
         v78 = (int **)dword_A8DA90; /*0x46edcb*/
         do /*0x46edf7*/
@@ -1270,7 +1270,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
             strcpy((char *)&v131[1], (const char *)&unk_A8B380); /*0x46e201*/
             wcscpy((wchar_t *)&v131[12], lParam); /*0x46e213*/
             v131[68] = v125; /*0x46e224*/
-            v12 = WideString::Hash((void *)&stru_A8D600.Network_field_0x10); /*0x46e22b G42.35: static (void*) 形*/
+            v12 = WideString::Hash((void *)&stru_A8D600.q010); /*0x46e22b G42.35: static (void*) 形*/
             v13 = dword_A8DA84; /*0x46e230*/
             v14 = 1; /*0x46e236*/
             v131[69] = v12; /*0x46e23d*/

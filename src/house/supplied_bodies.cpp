@@ -773,7 +773,7 @@ void HouseClass::Update_TogglePower(double a2)
       && (int)dword_A8ED84 > 0
       && !*(unsigned char *)(v3->Object_field_0x34 + 422) )
     {
-      if ( stru_A8B250.__pad_0[18] ) /*0x4f8ec4*/
+      if ( stru_A8B250[18] ) /*0x4f8ec4*/
       {
         v73 = (unsigned int *)dword_8871E0->ReloadRate[0]; /*0x4f8ed2*/
         v74 = ((DynamicVector *)&v3[32].__pad_EC[40])->GetOrGrow(*(unsigned int *)(v73[1] + 3576)); /*0x4f8eec*/

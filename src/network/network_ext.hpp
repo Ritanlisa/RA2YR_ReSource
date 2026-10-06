@@ -11,6 +11,27 @@
 namespace gamemd
 {
 
+#ifndef GAMEMD_G2_NETWORK_FLAT_DEF  // G57w10: receiver-stru carrier (stru_A8D600/A8BB1C), twin-guarded vs e4 Network_e4.hpp
+#define GAMEMD_G2_NETWORK_FLAT_DEF 1
+namespace gamemd {
+struct Network {
+    unsigned int q000;   // 0x0
+    unsigned int q004;   // 0x4
+    unsigned int q008;   // 0x8
+    unsigned int q00C;   // 0xC
+    unsigned int q010;   // 0x10
+    unsigned char __pad_14;  // 0x14
+    unsigned char Network_field_0x22;  // 0x22
+    unsigned char __pad_34[8];  // 0x34
+    unsigned char __pad_64[8];  // 0x64
+    unsigned char Network_field_0x6F;  // 0x6F
+    unsigned char __pad_73[1];  // 0x73
+    unsigned char __pad_87[0x171];  // 0x87
+};
+} // namespace gamemd
+#endif  // GAMEMD_G2_NETWORK_FLAT_DEF
+
+
 class HouseClass;
 
 // ============================================================================

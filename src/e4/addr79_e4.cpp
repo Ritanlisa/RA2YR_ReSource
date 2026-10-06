@@ -1182,7 +1182,7 @@ AbstractClass * * WOL_StartGame()
       if ( *(unsigned int *)&dword_A8B238 != 4 || dword_A8B244 != 3 ) /*0x794f67*/
         dword_A8B3AC = 0; /*0x794f69*/
       dword_A8B554 = 5; /*0x794f74*/
-      switch ( *(unsigned int *)&stru_A8B250.__pad_0[24] ) /*0x794f91*/
+      switch ( *(unsigned int *)&stru_A8B250[24] ) /*0x794f91*/
       {
         case 0: /*0x794f91*/
           dword_A8B550 = (unsigned int)(wchar_t *)40; /*0x794f98*/
@@ -1326,13 +1326,13 @@ AbstractClass * * WOL_StartGame()
       dword_A8B568 = dword_A8B550; /*0x7951f0*/
       memset( (void *)(&unk_A8B574), 0, 0x340u); /*0x7951f9*/
       *(unsigned int *)&hostshort = 1234; /*0x795200*/
-      stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250.__pad_0[24]; /*0x79520a*/
+      stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250[24]; /*0x79520a*/
       *(unsigned int *)&dword_841F34 = 1235; /*0x795216*/
       *(unsigned int *)&dword_841F38 = 1236; /*0x795220*/
       *(unsigned int *)&dword_841F3C = 1237; /*0x79522a*/
       *(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x795234*/
       if ( byte_A8E2C8 ) /*0x79523e*/
-        ((Process *)((Process *)&stru_B052C0.__pad_0[16]))->WaitForExit(0x7D0u, 1); /*0x79524b*/
+        ((Process *)((Process *)&stru_B052C0[16]))->WaitForExit(0x7D0u, 1); /*0x79524b*/
       byte_B77A04 = 0; /*0x795255*/
       (&byte_B76568)[0] = 0; /*0x79525f*/
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x795266*/
@@ -2179,30 +2179,30 @@ AbstractClass * * NetworkGame_Init()
   dword_A8B3AC = 0; /*0x797271*/
   *(unsigned int *)((char *)&stru_A8EB00 + 432) = 1; /*0x797276*/
   g_RulesInitConfig = 10; /*0x79727c*/
-  *(unsigned int *)&stru_A8B250.__pad_0[32] = 10; /*0x797282*/
-  *(unsigned int *)&stru_A8B250.__pad_0[12] = 10000; /*0x797288*/
+  *(unsigned int *)&stru_A8B250[32] = 10; /*0x797282*/
+  *(unsigned int *)&stru_A8B250[12] = 10000; /*0x797288*/
   byte_A8B31F = 0; /*0x797292*/
-  stru_A8B250.__pad_0[16] = 1; /*0x797297*/
-  stru_A8B250.__pad_0[17] = 1; /*0x79729d*/
+  stru_A8B250[16] = 1; /*0x797297*/
+  stru_A8B250[17] = 1; /*0x79729d*/
   dword_A8B320 = 1; /*0x7972a3*/
   byte_A8B31C = 1; /*0x7972a9*/
   byte_A8B31D = 0; /*0x7972af*/
-  stru_A8B250.__pad_0[8] = 1; /*0x7972b4*/
+  stru_A8B250[8] = 1; /*0x7972b4*/
   byte_A8B31E = 0; /*0x7972ba*/
-  *(unsigned int *)&stru_A8B250.__pad_0[36] = 0; /*0x7972bf*/
-  *(unsigned int *)&stru_A8B250.__pad_0[40] = 0; /*0x7972c4*/
-  stru_A8B250.__pad_0[18] = 1; /*0x7972c9*/
-  stru_A8B250.__pad_0[19] = 1; /*0x7972cf*/
-  stru_A8B250.__pad_0[20] = 0; /*0x7972d5*/
-  stru_A8B250.__pad_0[28] = 1; /*0x7972da*/
-  *(unsigned int *)&stru_A8B250.__pad_0[4] = 1; /*0x7972e0*/
-  *(unsigned int *)&stru_A8B250.__pad_0[24] = 0; /*0x7972e6*/
+  *(unsigned int *)&stru_A8B250[36] = 0; /*0x7972bf*/
+  *(unsigned int *)&stru_A8B250[40] = 0; /*0x7972c4*/
+  stru_A8B250[18] = 1; /*0x7972c9*/
+  stru_A8B250[19] = 1; /*0x7972cf*/
+  stru_A8B250[20] = 0; /*0x7972d5*/
+  stru_A8B250[28] = 1; /*0x7972da*/
+  *(unsigned int *)&stru_A8B250[4] = 1; /*0x7972e0*/
+  *(unsigned int *)&stru_A8B250[24] = 0; /*0x7972e6*/
   LoadScenarioClassByIndex(1); /*0x7972eb*/
-  *(unsigned int *)&stru_A8B250.__pad_0[24] = 2; /*0x7972fb*/
+  *(unsigned int *)&stru_A8B250[24] = 2; /*0x7972fb*/
   stru_A8EB00.ObjectTypeClass[24] = 2; /*0x797301*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250.__pad_0[4]; /*0x797307*/
+  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250[4]; /*0x797307*/
   dword_A8B554 = 5; /*0x797315*/
-  switch ( *(unsigned int *)&stru_A8B250.__pad_0[24] ) /*0x797325*/
+  switch ( *(unsigned int *)&stru_A8B250[24] ) /*0x797325*/
   {
     case 0: /*0x797325*/
       dword_A8B550 = (unsigned int)(wchar_t *)40; /*0x79732c*/
@@ -2305,7 +2305,7 @@ AbstractClass * * NetworkGame_Init()
   dword_A8B568 = dword_A8B550; /*0x797543*/
   memset( (void *)(&unk_A8B574), 0, 0x340u); /*0x797556*/
   *(unsigned int *)&hostshort = 1234; /*0x79755e*/
-  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250.__pad_0[24]; /*0x797568*/
+  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250[24]; /*0x797568*/
   *(unsigned int *)&dword_841F34 = 1235; /*0x79756e*/
   *(unsigned int *)&dword_841F38 = 1236; /*0x797578*/
   *(unsigned int *)&dword_841F3C = 1237; /*0x797582*/

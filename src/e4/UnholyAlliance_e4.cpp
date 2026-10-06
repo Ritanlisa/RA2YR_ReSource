@@ -105,7 +105,7 @@ namespace gamemd {  // G42.18c ns repair
 char UnholyAlliance::Read(void *a1, void *a2)
 {
 
-  stru_A8B250.__pad_0[8] = 1; /*0x5cb3f2*/
+  stru_A8B250[8] = 1; /*0x5cb3f2*/
   return 1; /*0x5cb3f7*/
 
 }
@@ -115,7 +115,7 @@ namespace gamemd {  // G42.18c ns repair
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
 
-  return stru_A8B250.__pad_0[8] && ((gamemd::MPCooperative *)uint8_t)((ScenarioClass *)(&aP0->m_Enabled))->MissionStubReturnZero2(); /*0x5cb41c*/
+  return stru_A8B250[8] && ((gamemd::MPCooperative *)uint8_t)((ScenarioClass *)(&aP0->m_Enabled))->MissionStubReturnZero2(); /*0x5cb41c*/
 
 }
 }  // G42.18c ns repair
@@ -123,7 +123,7 @@ BOOL UnholyAlliance::Write(MPCooperative * aP0)
 char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
 {
 
-  stru_A8B250.__pad_0[8] = 1; /*0x5cb432*/
+  stru_A8B250[8] = 1; /*0x5cb432*/
   return 1; /*0x5cb437*/
 
 }

@@ -53,6 +53,14 @@
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+
+// G57w10: vtable externs (truth e4_globals_decls)
+extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
+extern unsigned char vt_DynamicVectorClass_ParticleSystemTypeClass_const[4];  // data: 0x7E4444  // G57w10 vftable residue fix
+extern unsigned char vt_DynamicVectorClass_PlanningNodeClass[4];  // data: 0x7EFE44  // G57w10 vftable residue fix
+extern unsigned char vt_DynamicVectorClass_TechnoClass[4];  // data: 0x7E17AC  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_ParticleSystemTypeClass_const[4];  // data: 0x7E4424  // G57w10 vftable residue fix
+extern unsigned char vt_VectorClass_TechnoClass[4];  // data: 0x7E180C  // G57w10 vftable residue fix
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int AudioMixer;  // 词表 (canon 无条目, int 兜底) L880
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 {
@@ -2495,7 +2503,7 @@ int BuildingClass::ProcessDemolish()
     }
     VectorClass::ConstructorWithVtable(&v75, 0, 0); /*0x441d6f*/
     v48 = (int (__thiscall **)(BuildingClass *))this->TechnoClass; /*0x441d74*/
-    v75.vtable1 = &DynamicVectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x441d78*/
+    v75.vtable1 = (void *)&vt_DynamicVectorClass_ParticleSystemTypeClass_const; /*0x441d78*/
     v77 = 10; /*0x441d80*/
     v76 = 0; /*0x441d88*/
     for ( i = *(unsigned int *)(v48[33](this) + 1956) - 1; i >= 0; --i ) /*0x441d9e*/
@@ -2556,7 +2564,7 @@ int BuildingClass::ProcessDemolish()
     BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x441f1b*/
     ((TechnoClass *)this)->CleanupAll(v78); /*0x441f27*/
     result = (int)v75.Items; /*0x441f2c*/
-    v75.vtable1 = &VectorClass<ParticleSystemTypeClass const *>::`vftable'; /*0x441f35*/
+    v75.vtable1 = (void *)&vt_VectorClass_ParticleSystemTypeClass_const; /*0x441f35*/
     if ( v75.Items && v75.IsAllocated ) /*0x441f46*/
       RA2_OPDEL(v75.Items); /*0x441f49*/
     return result; /*0x441f30*/
@@ -3337,7 +3345,7 @@ int TechnoClass::EvacuateFootprintCells()
     v23 = *v37 / 256; /*0x458aae*/
     v24 = v37[1] / 256; /*0x458ac6*/
     EventClass::resetEvent((EventClass *)&v31, 0, 0); /*0x458acb*/
-    v31 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x458ad0*/
+    v31 = (void *)&vt_DynamicVectorClass_TechnoClass; /*0x458ad0*/
     v36 = 10; /*0x458ad8*/
     v35 = 0; /*0x458ae0*/
     while ( *v3 != 0x7FFF || v3[1] != 0x7FFF ) /*0x458af8*/
@@ -3442,7 +3450,7 @@ int TechnoClass::EvacuateFootprintCells()
         (*(void (__thiscall **)(int *))(*v15 + 248))(v15); /*0x458d6f*/
     }
     result = (int)Block; /*0x458d7e*/
-    v31 = &VectorClass<TechnoClass *>::`vftable'; /*0x458d82*/
+    v31 = (void *)&vt_VectorClass_TechnoClass; /*0x458d82*/
     if ( Block && IDA_BYTE1(v34) ) /*0x458d92*/
       RA2_OPDEL(Block); /*0x458d95*/
     IDA_LOBYTE(result) = 1; /*0x458da0*/
@@ -4036,8 +4044,8 @@ namespace ra2::game {
 int FootClass::PostLoadInit()
 {
     TechnoClass::Constructor((TechnoClass *)this, a2); /*0x4d3548*/
-    this->unknownAbstractArray588[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4d3552*/
-    this->FootClass_field_abstract_array_5AC[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4d3558*/
+    this->unknownAbstractArray588[0] = (int)(void *)&vt_DynamicVectorClass_AbstractClass; /*0x4d3552*/
+    this->FootClass_field_abstract_array_5AC[0] = (int)(void *)&vt_DynamicVectorClass_AbstractClass; /*0x4d3558*/
     this->locomotor[0] = 0; /*0x4d355e*/
     this->TechnoClass = &vt_FootClass; /*0x4d3568*/
     ((unsigned int *)this)[0] = &vt_FootClass; /*0x4d356e*/
@@ -8575,7 +8583,7 @@ int TechnoClass::CreatePlanningNode()
       *(unsigned int *)(v2 + 12) = 0; /*0x638a9a*/
       *(unsigned char *)(v2 + 16) = 1; /*0x638a9d*/
       *(unsigned char *)(v2 + 17) = 0; /*0x638aa1*/
-      *(unsigned int *)(v2 + 4) = &DynamicVectorClass<PlanningNodeClass *>::`vftable'; /*0x638aa4*/
+      *(unsigned int *)(v2 + 4) = (void *)&vt_DynamicVectorClass_PlanningNodeClass; /*0x638aa4*/
       *(unsigned int *)(v2 + 24) = 10; /*0x638aab*/
       *(unsigned int *)(v2 + 20) = 0; /*0x638ab2*/
       *(unsigned char *)(v2 + 28) = 0; /*0x638ab5*/
@@ -9945,7 +9953,7 @@ int TechnoClass::PushNearbyUnits()
       if ( (unsigned char)result ) /*0x6f4f5f*/
       {
         EventClass::resetEvent((EventClass *)&v15, 0, 0); /*0x6f4f6e*/
-        v15 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x6f4f78*/
+        v15 = (void *)&vt_DynamicVectorClass_TechnoClass; /*0x6f4f78*/
         v20 = 10; /*0x6f4f80*/
         v19 = 0; /*0x6f4f88*/
         for ( i = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[164] - 1; i >= 0; --i ) /*0x6f4f95*/
@@ -9971,7 +9979,7 @@ int TechnoClass::PushNearbyUnits()
         for ( j = v19 - 1; j >= 0; --j ) /*0x6f504f*/
           (*(void (__thiscall **)(unsigned int, TechnoClass *))(**((unsigned int **)Block + j) + 968))(*((unsigned int *)Block + j), this); /*0x6f505b*/
         result = (int)Block; /*0x6f5064*/
-        v15 = &VectorClass<TechnoClass *>::`vftable'; /*0x6f5068*/
+        v15 = (void *)&vt_VectorClass_TechnoClass; /*0x6f5068*/
         if ( Block ) /*0x6f5072*/
         {
           if ( IDA_BYTE1(v18) ) /*0x6f507a*/
@@ -12728,7 +12736,7 @@ void FootClass::UpdateLocomotion()
                 v40 = 1; /*0x6fbb04*/
                 v27 = dword_A8EC88 - 1; /*0x6fbb09*/
                 v41 = 0; /*0x6fbb0c*/
-                v37 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x6fbb12*/
+                v37 = (void *)&vt_DynamicVectorClass_TechnoClass; /*0x6fbb12*/
                 v43 = 10; /*0x6fbb1a*/
                 for ( i = 0; v27 >= 0; --v27 ) /*0x6fbb26*/
                 {
@@ -12755,7 +12763,7 @@ void FootClass::UpdateLocomotion()
                   (*(void (__thiscall **)(unsigned int, TechnoClass *))(**((unsigned int **)Block + j) + 968))( /*0x6fbbe3*/
                     *((unsigned int *)Block + j),
                     this);
-                v37 = &VectorClass<TechnoClass *>::`vftable'; /*0x6fbbf0*/
+                v37 = (void *)&vt_VectorClass_TechnoClass; /*0x6fbbf0*/
                 if ( Block && v41 ) /*0x6fbc00*/
                   RA2_OPDEL(Block); /*0x6fbc03*/
               }

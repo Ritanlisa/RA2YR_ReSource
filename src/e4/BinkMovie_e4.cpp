@@ -478,9 +478,9 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
         if ( v13 ) /*0x432fbe*/
           v16 |= 0x80000000; /*0x432fc0*/
         BinkCopyToBuffer((void *)((*((unsigned int *)this + 1))),(void *)( v19), v14, v15, a3, a4, v16); /*0x432fdc*/
-        (*(v        ((*(void (**)(int))(*(unsigned int *)aP1 + 96)))(aP1); 
+        ((*(void (**)(int))(*(unsigned int *)aP1 + 96)))(aP1); 
       }
-      BinkMo      ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->BlitToTarget(aP1); 
+      ((BinkMovie *)((gamemd::DSurface *)((BinkMovie *)this)))->BlitToTarget(aP1); 
       v17 = *((unsigned int *)this + 1); /*0x432ff4*/
       *((unsigned int *)this + 12) = *(unsigned int *)(v17 + 12); /*0x432ff8*/
       BinkNextFrame((void *)(v17)); /*0x432ffb*/

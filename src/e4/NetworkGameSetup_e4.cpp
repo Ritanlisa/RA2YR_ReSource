@@ -34,7 +34,7 @@ int NetworkGameSetup::ReadRulesUnknown()
   if ( result ) /*0x5b9763*/
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/
-    *(unsigned int *)&stru_A8B250.__pad_0[40] = result; /*0x5b9775*/
+    *(unsigned int *)&stru_A8B250[40] = result; /*0x5b9775*/
     BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/

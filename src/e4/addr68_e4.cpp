@@ -1345,7 +1345,7 @@ AbstractClass * * SessionClass_AssignHouses()
       wcsncpy((wchar_t *)(v9 + 90154), (const wchar_t *)v7, 0x15u); /*0x68809c*/
       *(unsigned short *)(v9 + 90194) = 0; /*0x6880a4*/
       *(unsigned char *)(v9 + 492) = 1; /*0x6880ad*/
-      sub_4FCE00((ObjectClass *)v9, *(unsigned int *)(v7 + 83), *(unsigned int *)(v7 + 75), *(int *)&stru_A8B250.__pad_0[12]); /*0x6880c4*/
+      sub_4FCE00((ObjectClass *)v9, *(unsigned int *)(v7 + 83), *(unsigned int *)(v7 + 75), *(int *)&stru_A8B250[12]); /*0x6880c4*/
       *(unsigned int *)(v9 + 90196) = SessionClass::GetPlayerColorScheme(*(unsigned int *)(v7 + 83)); /*0x6880d9*/
       HouseClass::GetColor((char *)v9); /*0x6880df*/
       ComputeSessionColorVector((ObjectClass *)v9); /*0x6880e6*/
@@ -1366,8 +1366,8 @@ AbstractClass * * SessionClass_AssignHouses()
     while ( v30 ); /*0x688146*/
   }
   v11 = 0; /*0x688152*/
-  v30 = *(unsigned int *)&stru_A8B250.__pad_0[36]; /*0x688154*/
-  v12 = (int *)&stru_A8B250.__pad_0[76]; /*0x688158*/
+  v30 = *(unsigned int *)&stru_A8B250[36]; /*0x688154*/
+  v12 = (int *)&stru_A8B250[76]; /*0x688158*/
   do /*0x6882cb*/
   {
     if ( v11 < v30 ) /*0x688161*/
@@ -1385,7 +1385,7 @@ AbstractClass * * SessionClass_AssignHouses()
         v17 = g_RulesInitConfig; /*0x6881ab*/
         *(unsigned char *)(v16 + 492) = 0; /*0x6881b1*/
         *(unsigned int *)(v16 + 468) = v17; /*0x6881b8*/
-        sub_4FCE00((ObjectClass *)v16, v14, v13, *(int *)&stru_A8B250.__pad_0[12]); /*0x6881c8*/
+        sub_4FCE00((ObjectClass *)v16, v14, v13, *(int *)&stru_A8B250[12]); /*0x6881c8*/
         *(unsigned int *)(v16 + 90196) = SessionClass::GetPlayerColorScheme( (ObjectClass *)(v14)); /*0x6881da*/
         HouseClass::GetColor((char *)v16); /*0x6881e0*/
         ComputeSessionColorVector((ObjectClass *)v16); /*0x6881e7*/
@@ -1421,7 +1421,7 @@ AbstractClass * * SessionClass_AssignHouses()
     }
     ++v12; /*0x6882c2*/
   }
-  while ( (int)v12 < (int)&stru_A8B250.__pad_0[108] ); /*0x6882cb*/
+  while ( (int)v12 < (int)&stru_A8B250[108] ); /*0x6882cb*/
   v21 = (int *)RA2_OPNEW(0x160B8u); /*0x6882de*/
   if ( v21 ) /*0x6882e4*/
   {
