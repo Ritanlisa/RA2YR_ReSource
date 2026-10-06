@@ -428,7 +428,7 @@ int AircraftClass::Mission_Attack()
             AircraftClass_field_bool_6D5 = true;
             return 1;
         }
-        this->HasValidTarget(0, 1);
+        this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
         AircraftClass_field_bool_6D5 = true;
         return 1;
     }
@@ -513,14 +513,14 @@ int AircraftClass::Mission_Enter()
         }
         else
         {
-            this->HasValidTarget(0, 1);
+            this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
         }
         break;
 
     case 1:
         if (movementDestination == nullptr)
         {
-            this->HasValidTarget(0, 1);
+            this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
             return 1;
         }
         destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
@@ -593,7 +593,7 @@ int AircraftClass::Mission_Enter()
         if (loco == 0)
             WinAPI_Wrapper((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
-            this->HasValidTarget(0, 1);
+            this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
         return 1;
 
     case 4:
@@ -725,7 +725,7 @@ int AircraftClass::Mission_Transport()
                 if (*(int *)this->queuedMission == -1)
                 {
                     this->AssignDestination_SyncLog(0, 1);
-                    this->HasValidTarget(0, 1);
+                    this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
                     AircraftClass_field_bool_6D4 = true;
                     return 1;
                 }
@@ -773,7 +773,7 @@ int AircraftClass::Mission_Transport()
                 }
                 else
                 {
-                    this->HasValidTarget(0, 1);
+                    this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
                 }
                 return 1;
             }
@@ -805,7 +805,7 @@ int AircraftClass::Mission_Transport()
             return 1;
         }
     }
-    this->HasValidTarget(0, 1);
+    this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
     return 1;
 }
 // 0x4190b0
@@ -1282,12 +1282,12 @@ int AircraftClass::ProcessMissionTimeout()
             this->ProcessLanding(1, 0);
             return 1;
         }
-        this->HasValidTarget(0, 1);
+        this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
         return 1;
     }
     if (team != nullptr)
         ((gamemd::TeamClass *)team)->LiberateMember_Start(this, -1, 0);  // G42.42e: gamemd carrier (ra2::game fwd-only)
-    this->HasValidTarget(0, 1);
+    this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
     void *missionControl = GetMissionControl();
     int base = (int)Math::RoundToInt(*((double *)missionControl + 2) * 900.0);
     return base + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
@@ -1331,7 +1331,7 @@ int AircraftClass::GetMissionTimer()
             // slot holds ammo (or absent): guard requeue
             if (team == nullptr)
             {
-                this->HasValidTarget(0, 1);
+                this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
                 AircraftClass_field_bool_6D4 = true;
             }
             return 1;

@@ -13,8 +13,10 @@
 // G57w8: flat math carriers are the single truth in ALL e4 TUs (W7 removed
 // every GAMEMD_E4_MATH_ALIASES definer; gap2 headers pulled into e4 TUs via
 // bridges -- multiplayer/network_ext/etc -- expect these names to resolve).
+#ifndef GAMEMD_E4_MATH_ALIASES  // G57w9: alias TUs (gap2-chain TUs like Commands_e4) take math.hpp aliases instead
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#endif
 #ifndef GAMEMD_E4_HashTable
 #define GAMEMD_E4_HashTable 1
 #endif

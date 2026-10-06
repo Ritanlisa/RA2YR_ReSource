@@ -240,9 +240,11 @@ public:
     ~Commands();
 
     // IDA 0x48B2A0 area
-    int32_t AddRef();  // 0x537A50
-    wchar_t ddtor();  // 0x537A60
-    int32_t Release();  // 0x537A70
+    char * AddRef(void *a1);  // 0x537A50 (G57w9 raw-aligned)
+    const wchar_t * ddtor();  // 0x537A60 (G57w9 raw-aligned)
+    char ** Release(void *a1);  // 0x537A70 (G57w9 raw-aligned)
+    void ** StubReturn8550640();  // 0x537A80 (G57w9: body in e4/Commands_e4.cpp)
+    int32_t Execute(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7);  // 0x537A90 (G57w9)
     static void BuildBar();
      void AddAction(CommandClass* cmd);
 
