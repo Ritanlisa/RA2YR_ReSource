@@ -89,12 +89,12 @@ struct SessionClass {
     unsigned char q154;  // 0x154
     int unknown_160;  // 0x160 (G57W14E1 til supply)
     int unknown_16C;  // 0x16C (G57W14E1 til supply)
-    char idxSide[4];  // 0x174
-    char idxSide2[4];  // 0x178
-    char Color[4];  // 0x17C
-    char Color2[4];  // 0x180
-    char Side[4];  // 0x184
-    char Side2[4];  // 0x188
+    int idxSide;  // 0x174
+    int idxSide2;  // 0x178
+    int Color;  // 0x17C
+    int Color2;  // 0x180
+    int Side;  // 0x184
+    int Side2;  // 0x188
     char SkirmishPreferences[124];  // 0x18C
     unsigned int u32_19C;  // 0x19C
     unsigned int u32_1B8;  // 0x1B8

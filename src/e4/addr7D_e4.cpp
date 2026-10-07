@@ -2874,7 +2874,7 @@ void* setSBCS()
 }
 // 0x7D36D5
 namespace gamemd {
-ControlClass * * int setSBUpLow()
+unsigned int setSBUpLow(void *a1)
 {
   unsigned int i; // eax
   BYTE v2; // al
@@ -3902,7 +3902,7 @@ void * signal_7D482C(int Signal, void * Function)
 namespace gamemd {
 int raise(int Signal)
 {
-    void (__cdecl *)(unsigned int); // ebx
+    void (__cdecl *v2)(unsigned int); // ebx
     int *v3; // edi
     unsigned int *v4; // esi
     int v5; // edx
@@ -7458,7 +7458,7 @@ int _mbtowc_lk(LPWSTR lpWideCharStr, unsigned char * lpMultiByteStr, unsigned in
 namespace gamemd {
 void * sub_7D9FAC()
 {
-    LONG (__stdcall *)(struct _EXCEPTION_POINTERS *); // eax
+    LONG (__stdcall *result)(struct _EXCEPTION_POINTERS *); // eax
 
     result = SetUnhandledExceptionFilter(___CxxUnhandledExceptionFilter_YGJPAU_EXCEPTION_POINTERS___Z); /*0x7d9fb1*/
     lpfn = result; /*0x7d9fb7*/
@@ -11678,8 +11678,8 @@ int _ftbuf(int a1, int a2)
 namespace gamemd {
 unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
-    this->? = 0; /*0x7d2e70*/
-    this->? = 0; /*0x7d2e74*/
+    this->q004 = 0; /*0x7d2e70*/
+    this->q008 = 0; /*0x7d2e74*/
     this->AbstractClass = (void*)&exception_vftable; /*0x7d2e78*/
     return &this->AbstractClass; /*0x7d2e7e*/
 }
@@ -12530,7 +12530,7 @@ LONG _XcptFilter(ObjectClass * a1, struct _EXCEPTION_POINTERS * ExceptionInfo)
 {
     unsigned int *v2; // esi
     int *v3; // eax
-    void (__cdecl *)(int); // ebx
+    void (__cdecl *v4)(int); // ebx
     int v6; // ecx
     int v7; // edx
     int v8; // ecx
@@ -13412,20 +13412,20 @@ int _getbuf(MouseClass * aP0)
 
     ++dword_B781C0; /*0x7d7710*/
     v1 = malloc(0x1000u); /*0x7d771b*/
-    this->? = v1; /*0x7d7727*/
+    this->vtable3 = v1; /*0x7d7727*/
     if ( v1 ) /*0x7d772a*/
     {
-      this->? = (void *)((int)this->? | 8); /*0x7d772c*/
-      this->? = 4096; /*0x7d7730*/
+      this->vtable4 = (void *)((int)this->vtable4 | 8); /*0x7d772c*/
+      this->nextArrayIndex = 4096; /*0x7d7730*/
     }
     else
     {
-      this->? = (void *)((int)this->? | 4); /*0x7d7739*/
-      this->? = &this->?; /*0x7d7740*/
-      this->? = 2; /*0x7d7743*/
+      this->vtable4 = (void *)((int)this->vtable4 | 4); /*0x7d7739*/
+      this->vtable3 = &this->abstractFlags; /*0x7d7740*/
+      this->nextArrayIndex = 2; /*0x7d7743*/
     }
-    result = (int)this->?; /*0x7d774a*/
-    this->? = 0; /*0x7d774d*/
+    result = (int)this->vtable3; /*0x7d774a*/
+    this->vtable2 = 0; /*0x7d774d*/
     this->AbstractClass = (void *)result; /*0x7d7751*/
     return result; /*0x7d7753*/
 }

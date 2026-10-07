@@ -1937,7 +1937,7 @@ int ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, i
     }
     if ( v8 <= 1 ) /*0x5c8566*/
     {
-      if ( !*aP1 ) /*0x5c856c*/
+      if ( !*(unsigned int *)aP1 ) /*0x5c856c*/
       {
         v10 = (unsigned int *)(&aP1[v6 / 4u - 1]);
         if ( !*v10 ) /*0x5c8575*/
@@ -2534,7 +2534,7 @@ char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
     {
       v24 = (unsigned int *)(*aP0 + *(unsigned int *)((char *)v29 + v30)); /*0x5c8fc5*/
       v31 = (char *)v24 + v35; /*0x5c8fcd*/
-      v35 = (unsigned int)v24 < *aP0 || (IDA_LOBYTE(v24) = v35) != 0 && !v31; /*0x5c8ffa*/
+      v35 = (unsigned int)v24 < *(unsigned int *)aP0 || (IDA_LOBYTE(v24) = v35) != 0 && !v31; /*0x5c8ffa*/
       *v29 = (unsigned int)(v31); /*0x5c8fff*/
       ++aP0; /*0x5c9001*/
       ++v29; /*0x5c9004*/
@@ -3051,7 +3051,7 @@ LABEL_5:
     v17 = (size_t)v10++; /*0x5ce1c5*/
   }
   v12 = this->ambientSoundController[1]; /*0x5ce1e0*/
-  vtable2 = this->((unsigned int *)attachedTag)[0]; /*0x5ce1e3*/
+  vtable2 = ((unsigned int *)this->attachedTag)[0]; /*0x5ce1e3*/
   v19 = this->customSound_controller[0]; /*0x5ce1e6*/
   *a3 = this->attachedBomb; /*0x5ce1ee*/
   a3[1] = v19; /*0x5ce1f4*/
@@ -3068,7 +3068,7 @@ LABEL_5:
     {
       LOWORD(v14) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce228*/
       sub_406670(aBleep1, v14); /*0x5ce234*/
-      this->customSound_controller[0] += (int)this->((unsigned int *)attachedTag)[0]; /*0x5ce244*/
+      this->customSound_controller[0] += (int)((unsigned int *)this->attachedTag)[0]; /*0x5ce244*/
     }
   }
   else
@@ -4805,8 +4805,8 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
       if ( (uint16_t)((WideString *)(const wchar_t **)&((unsigned int *)this)[0])->GetChar( v9) == 10 ) /*0x5ce40f*/
       {
         vtable1 = (char *)((unsigned int *)this)[0]; /*0x5ce414*/
-        vtable2 = (int *)((char *)vtable2 + (unsigned int)this->((unsigned int *)attachedTag)[0]); /*0x5ce41e*/
-        v14 = this->((unsigned int *)attachedTag)[0]; /*0x5ce420*/
+        vtable2 = (int *)((char *)vtable2 + (unsigned int)((unsigned int *)this->attachedTag)[0]); /*0x5ce41e*/
+        v14 = ((unsigned int *)this->attachedTag)[0]; /*0x5ce420*/
         v18 = vtable2; /*0x5ce426*/
         result = (*(int (**)(int))(*(unsigned int *)&a2->q_200))(a2);  /*0x5ce42a*/
         if ( (int)v14 + (int)vtable2 >= result ) /*0x5ce438*/

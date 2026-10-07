@@ -1647,7 +1647,7 @@ int CellClass::GetTileData(IUnknown * aP0, IUnknown * aP1)
   unsigned int v2; // eax
   unsigned int *v3; // eax
 
-  v2 = *aP0 + (aP0[1] << 9); /*0x56bcde*/
+  v2 = *(short *)aP0 + (((short *)aP0)[1] << 9); /*0x56bcde*/
   if ( v2 >= 0x40000 || (v3 = *(unsigned int **)(dword_87F924 + 4 * v2)) == 0 ) /*0x56bcf4*/
   {
     dword_ABDC74 = *(unsigned int *)aP0; /*0x56bcf8*/
@@ -1672,8 +1672,8 @@ char CellClass::SetTileType13(IUnknown * aP0, int a2)
 
   v2 = a2 & 7; /*0x572b89*/
   v3 = (&dword_89F688)[v2]; /*0x572b8c*/
-  LOWORD(v2) = aP0[1] + HIWORD((&dword_89F688)[v2]); /*0x572ba2*/
-  LOWORD(a2) = *aP0 + v3; /*0x572ba6*/
+  LOWORD(v2) = ((short *)aP0)[1] + HIWORD((&dword_89F688)[v2]); /*0x572ba2*/
+  LOWORD(a2) = *(short *)aP0 + v3; /*0x572ba6*/
   HIWORD(a2) = v2; /*0x572bae*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x572bbd*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x572bd7*/
@@ -1728,8 +1728,8 @@ char CellClass::SetTileType14(IUnknown * aP0, int a2)
 
   v2 = a2 & 7; /*0x572c99*/
   v3 = (&dword_89F688)[v2]; /*0x572c9c*/
-  LOWORD(v2) = aP0[1] + HIWORD((&dword_89F688)[v2]); /*0x572cb2*/
-  LOWORD(a2) = *aP0 + v3; /*0x572cb6*/
+  LOWORD(v2) = ((short *)aP0)[1] + HIWORD((&dword_89F688)[v2]); /*0x572cb2*/
+  LOWORD(a2) = *(short *)aP0 + v3; /*0x572cb6*/
   HIWORD(a2) = v2; /*0x572cbe*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x572ccd*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x572ce7*/

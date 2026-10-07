@@ -1074,7 +1074,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                   v67 = v51[2]; /*0x516b30*/
                   if ( Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v65)->landType != 10 ) /*0x516b46*/
                   {
-                    (*(void (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))(( (int *)(unsigned int *) )&this->m_Target + 1); /*0x516b4f*/  // g57e2 W3
+                    (*(void (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))((unsigned int *)&this->m_Target + 1); /*0x516b4f*/  // g57e2 W3
                     return (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))( /*0x516b6a*/
                              this->m_State,
                              0,
@@ -1159,7 +1159,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
           v25[403] = v26 - 1; /*0x5167cd*/
         }
       }
-      if ( !(*(unsigned __int8 (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 16))(( (int *)(unsigned int *) )&this->m_Target + 1) ) /*0x516829*/  // g57e2 W3
+      if ( !(*(unsigned __int8 (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 16))((unsigned int *)&this->m_Target + 1) ) /*0x516829*/  // g57e2 W3
       {
         v27 = (unsigned int *)this->m_State; /*0x516830*/
         if ( v27[173] ) /*0x516833*/
@@ -1183,7 +1183,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
         *((unsigned int *)this + 10) = *(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x5168b5*/
         *((unsigned int *)this + 11) = *(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x5168bd*/
       }
-      return (*(int (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))(( (int *)(unsigned int *) )&this->m_Target + 1); /*0x5168c3*/  // g57e2 W3
+      return (*(int (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))((unsigned int *)&this->m_Target + 1); /*0x5168c3*/  // g57e2 W3
     }
     return result; /*0x5166dd*/
 }
@@ -1437,18 +1437,18 @@ int RulesClass::Addition() {
         WeaponTypeClass::Create(Destination); /*0x668cd1*/
     }
     RulesClass::ReadDataList(this); /*0x668cde*/
-    v13 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"OverlayTypes" /*w16g4 "OverlayTypes" /*w16g4 aOverlaytypes*/*/); /*0x668cf1*/
+    v13 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"OverlayTypes" /*w16g4 aOverlaytypes*/); /*0x668cf1*/
     for ( j = 0; j < v13; ++j ) /*0x668cf7*/
     {
-      v15 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"OverlayTypes" /*w16g4 "OverlayTypes" /*w16g4 aOverlaytypes*/*/, j); /*0x668d0e*/
-      if ( INIClass::GetString(v1, (unsigned __int8 *)"OverlayTypes" /*w16g4 "OverlayTypes" /*w16g4 aOverlaytypes*/*/, v15, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d1d*/
+      v15 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"OverlayTypes" /*w16g4 aOverlaytypes*/, j); /*0x668d0e*/
+      if ( INIClass::GetString(v1, (unsigned __int8 *)"OverlayTypes" /*w16g4 aOverlaytypes*/, v15, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d1d*/
         BuildingTypeClass::FindOrCreate2(Destination); /*0x668d2a*/
     }
-    v16 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 "SuperWeaponTypes" /*w16g4 aSuperweapontyp*/*/); /*0x668d42*/
+    v16 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 aSuperweapontyp*/); /*0x668d42*/
     for ( k = 0; k < v16; ++k ) /*0x668d48*/
     {
-      v18 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 "SuperWeaponTypes" /*w16g4 aSuperweapontyp*/*/, k); /*0x668d60*/
-      if ( INIClass::GetString(v1, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 "SuperWeaponTypes" /*w16g4 aSuperweapontyp*/*/, v18, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d6f*/
+      v18 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 aSuperweapontyp*/, k); /*0x668d60*/
+      if ( INIClass::GetString(v1, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 aSuperweapontyp*/, v18, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d6f*/
         WeaponTypeClass::Process(Destination); /*0x668d7c*/
     }
     v19 = INIClass_GetKeyCount(v1->__pad_0, g_INI_Key_Warheads); /*0x668d92*/
@@ -1458,11 +1458,11 @@ int RulesClass::Addition() {
       if ( INIClass::GetString(v1, g_INI_Key_Warheads, v21, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668dbb*/
         WarheadTypeClass::FindOrCreate(Destination); /*0x668dc8*/
     }
-    v22 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"SmudgeTypes" /*w16g4 "SmudgeTypes" /*w16g4 aSmudgetypes*/*/); /*0x668de0*/
+    v22 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"SmudgeTypes" /*w16g4 aSmudgetypes*/); /*0x668de0*/
     for ( n = 0; n < v22; ++n ) /*0x668de6*/
     {
-      v24 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"SmudgeTypes" /*w16g4 "SmudgeTypes" /*w16g4 aSmudgetypes*/*/, n); /*0x668dfd*/
-      if ( INIClass::GetString(v1, (unsigned __int8 *)"SmudgeTypes" /*w16g4 "SmudgeTypes" /*w16g4 aSmudgetypes*/*/, v24, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e0c*/
+      v24 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"SmudgeTypes" /*w16g4 aSmudgetypes*/, n); /*0x668dfd*/
+      if ( INIClass::GetString(v1, (unsigned __int8 *)"SmudgeTypes" /*w16g4 aSmudgetypes*/, v24, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e0c*/
         FactoryClass::FindOrCreate(Destination); /*0x668e19*/
     }
     v25 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"TerrainTypes" /*w16g4 aTerraintypes*/); /*0x668e31*/
@@ -6758,9 +6758,9 @@ int RulesClass::SaveLoad_Prefix_0(int a1) {
     (*(void (__thiscall **)(char *))(*(unsigned int *)&this->__pad_704[48] + 12))(&this->__pad_704[48]); /*0x675513*/
     (*(void (__thiscall **)(int *))(this->NodBaseDefenseCoefficient[1] + 12))(&this->NodBaseDefenseCoefficient[1]); /*0x67551e*/
     (*(void (__thiscall **)(int *))(this->PadAircraft[0] + 12))(this->PadAircraft); /*0x67552d*/
-    ((void (__thiscall *)(AnimTypeClass **))this->Parachute->?)(&this->Parachute); /*0x67553c*/
+    ((void (__thiscall *)(AnimTypeClass **))this->Parachute->AmmoCrateDamage)(&this->Parachute); /*0x67553c*/
     (*(void (__thiscall **)(int *))(this->ChronoReinfDelay + 12))(&this->ChronoReinfDelay); /*0x67554b*/
-    ((void (__thiscall *)(InfantryTypeClass **))this->ThirdDisguise->?)(&this->ThirdDisguise); /*0x67555a*/
+    ((void (__thiscall *)(InfantryTypeClass **))this->ThirdDisguise->AmmoCrateDamage)(&this->ThirdDisguise); /*0x67555a*/
     (*(void (__thiscall **)(int *))(this->ChronoHarvTooFarDistance + 12))(&this->ChronoHarvTooFarDistance); /*0x675569*/
     ((void (__thiscall *)(WarheadTypeClass **))this->MutateWarhead->WarheadTypeClass_field_0xC)(&this->MutateWarhead); /*0x675578*/
     ((void (__thiscall *)(WarheadTypeClass **))this->IonCannonWarhead->WarheadTypeClass_field_0xC)(&this->IonCannonWarhead); /*0x675587*/

@@ -731,7 +731,7 @@ unsigned int * DynamicVectorClass_flat::Copy(DynamicVector * aP1, void *a2)
         {
           do /*0x477a44*/
           {
-            *(unsigned int *)(*(unsigned int *)&((unsigned int *)this)[3] + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x477a3b*/
+            *(unsigned int *)(*(unsigned int *)&((unsigned int *)this)[3] + 4 * v6) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v6); /*0x477a3b*/
             ++v6; /*0x477a41*/
           }
           while ( v6 < *(unsigned int *)&((unsigned int *)this)[3] ); /*0x477a44*/

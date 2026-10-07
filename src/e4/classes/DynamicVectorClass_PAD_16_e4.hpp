@@ -23,7 +23,7 @@ struct DynamicVectorClass_PAD_16 {
     int GetSize(unsigned int * a2);  // 0x49EC70
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x49EFF0
     unsigned int GetCapacity(int a2);  // 0x49ECB0
-    unsigned char m_8[64];  // pad compile-supply (G41.47)
+    unsigned int m_8;  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

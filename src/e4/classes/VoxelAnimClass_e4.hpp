@@ -55,10 +55,10 @@ struct VoxelAnimClass {
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
     unsigned int q060;  // 0x60
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     bool bombVisible;  // 0x68
     unsigned int health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78

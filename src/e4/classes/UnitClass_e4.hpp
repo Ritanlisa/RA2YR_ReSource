@@ -55,10 +55,10 @@ struct UnitClass {
     unsigned int u32_58;  // 0x58
     unsigned int q05C;  // 0x5C
     char q060[4];  // 0x60
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     bool bombVisible;  // 0x68
     unsigned int health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned int spawnStatus;  // 0x78
     unsigned int q07B;  // 0x7B
@@ -83,8 +83,8 @@ struct UnitClass {
     char suspendedMission[4];  // 0xB0
     char queuedMission[4];  // 0xB4
     bool missionQueued;  // 0xB8
-    char missionStatus[4];  // 0xBC
-    char missionStartTime[4];  // 0xC0
+    int missionStatus;  // 0xBC
+    int missionStartTime;  // 0xC0
     char missionTimer[4];  // 0xC8
     unsigned int q0D0;  // 0xD0
     void* lastCommands;  // 0xD4
@@ -105,7 +105,7 @@ struct UnitClass {
     bool inAirFlag;  // 0x134
     char currentRank[4];  // 0x13C
     void* gattlingStage;  // 0x140
-    char gattlingValue[4];  // 0x144
+    unsigned int gattlingValue;  // 0x144
     unsigned int ammoReloadTimer;  // 0x148
     HouseClass* initialOwner;  // 0x14C
     char veterancy[4];  // 0x150
@@ -160,7 +160,7 @@ struct UnitClass {
     int isBerserk_duration_left;  // 0x2B0
     int q2B4;  // 0x2B4
     char barrelFacing[4];  // 0x2B8
-    char currentBurstIndex[4];  // 0x2C4
+    int currentBurstIndex;  // 0x2C4
     void * lastTarget;  // 0x2CC
     void * captureManager;  // 0x2D0
     bool isSinking;  // 0x2D9

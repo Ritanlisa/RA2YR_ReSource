@@ -1946,7 +1946,7 @@ char HandleWOLRematch()
       if ( v0 >= dword_B77900) /*0x79676f*/
         goto LABEL_13; /*0x79676f*/
     }
-    if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x79677a*/
+    if ( (void *)&g_WebBrowserConfig != (void *)-36 ) /*0x79677a*/
     {
       v2 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(); /*0x796781*/
       if ( !_strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v2) ) /*0x79678c*/
@@ -1992,7 +1992,7 @@ char HandleWOLRematch()
     if ( ++v5 >= dword_B77900) /*0x7968d7*/
       return 0; /*0x7968d7*/
   }
-  if ( &g_WebBrowserConfig == (ObjectClass *)-36 || _strcmpi(v12, (char *)&((ObjectClass *)&g_WebBrowserConfig)->ambientSoundController) ) /*0x7968fb*/
+  if ( (void *)&g_WebBrowserConfig == (void *)-36 || _strcmpi(v12, (char *)&((ObjectClass *)&g_WebBrowserConfig)->ambientSoundController) ) /*0x7968fb*/
     return 0; /*0x7968e4*/
   Debug::Log("Received NET_PREVIEW_MODE packet from host\n"); /*0x79690c G57w11: IDA push seq @ 0x79690c*/
   ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796924*/
@@ -5812,7 +5812,7 @@ Coord * * WOL_GameOptionsScreen()
   unsigned int j; // ebx
   ObjectClass *customSound; // esi
   ObjectClass *v11; // edi
-  DWORD (__stdcall *)(DWORD, const HANDLE *, BOOL, DWORD); // ebx
+  DWORD (__stdcall *v12)(DWORD, const HANDLE *, BOOL, DWORD); // ebx
   HANDLE *v13; // esi
   Dialog *Dialog; // edi
   DWORD m; // esi

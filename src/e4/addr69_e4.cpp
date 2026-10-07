@@ -204,11 +204,9 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
 
   v36 = 0; /*0x693b86*/
   ((Waypoint*)v39)->InitInvalid(); /*0x693b8a*/
-  Debug::Log("Getting file from host
-"); /*0x693b94 G57w5: IDA 0x693b8f push offset aGettingFileFro*/
+  Debug::Log("Getting file from host\n"); /*0x693b94 G57w5: IDA 0x693b8f push offset aGettingFileFro*/
     ((Timer *)0)->GetTicks();
-  Debug::Log("Requesting file download
-"); /*0x693bb2 G57w5: IDA push offset aRequestingFile*/
+  Debug::Log("Requesting file download\n"); /*0x693bb2 G57w5: IDA push offset aRequestingFile*/
     Ticks = ((Timer *)0)->GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693be4*/
   {
@@ -273,8 +271,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     if ( v11 >= 3600 ) /*0x693d55*/
     {
   LABEL_24:
-      Debug::Log("Timeout waiting for REQ_SCENARIO packet send
-"); /*0x693d5d G57w5: IDA 0x693d62*/
+      Debug::Log("Timeout waiting for REQ_SCENARIO packet send\n"); /*0x693d5d G57w5: IDA 0x693d62*/
       return 0; /*0x693d76*/
     }
     v10 = 3600 - v11; /*0x693d57*/
@@ -345,8 +342,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     if ( v21 >= 3600 ) /*0x693f4f*/
     {
   LABEL_54:
-      Debug::Log("Timeout waiting for host to respond to file info request
-"); /*0x693f57 G57w5: IDA 0x693f5c*/
+      Debug::Log("Timeout waiting for host to respond to file info request\n"); /*0x693f57 G57w5: IDA 0x693f5c*/
       return 0; /*0x693f70*/
     }
     v20 = 3600 - v21; /*0x693f51*/
@@ -418,8 +414,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     if ( v29 >= 3600 ) /*0x694139*/
     {
   LABEL_78:
-      Debug::Log("Timeout waiting for FILE_INFO_ACK send
-"); /*0x694141 G57w5: IDA 0x694146*/
+      Debug::Log("Timeout waiting for FILE_INFO_ACK send\n"); /*0x694141 G57w5: IDA 0x694146*/
       return 0; /*0x69415a*/
     }
     v28 = 3600 - v29; /*0x69413b*/
@@ -1160,7 +1155,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   HWND v8; // eax
   HWND v9; // eax
   HWND v10; // edi
-  void (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // ebp
+  void (__stdcall *v11)(HWND, UINT, WPARAM, LPARAM); // ebp
   const char *v12; // edi
   HWND v13; // eax
   HWND v14; // esi

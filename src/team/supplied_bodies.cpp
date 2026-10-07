@@ -1323,7 +1323,7 @@ int TriggerTypeClass::GetAction(int a2, int a3) {
     for ( i = this->firstAction; i; i = (TActionClass *)i->TActionClass_field_28 ) /*0x7270bb*/
       (*((void (__thiscall **)(TActionClass *, int, int))*(void ***)i + 10))(i, a2, 1); /*0x7270c4*/
     FirstAction = (unsigned int)(this->firstAction); /*0x7270ce*/
-    if ( FirstAction == (TActionClass *)a2 ) /*0x7270d6*/
+    if ( FirstAction == (TActionClass *)(unsigned int)a2 ) /*0x7270d6*/
       this->firstAction = (TActionClass *)FirstAction->TActionClass_field_28; /*0x7270db*/
     for ( j = this->firstEvent; j; j = (TEventClass *)j->TEventClass_field_28 ) /*0x7270e9*/
       (*((void (__thiscall **)(TEventClass *, int, int))*(void ***)j + 10))(j, a2, 1); /*0x7270f2*/

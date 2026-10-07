@@ -83,7 +83,7 @@ int sub_4116A0(unsigned int a1)
         Debug::Log("Ahandle: Paused %ld\n") /*G57c1: IDA 0x4116cf push offset aAhandlePausedL*/;
     return *(unsigned int *)(v3 + 32); /*0x4116df*/
   }
-    v5 = ((Time *)this->0)->GetElapsedMS() - *((unsigned int *)&g_abs_887794 + 47 * v2);
+    v5 = Time::GetElapsedMS() - *((unsigned int *)&g_abs_887794 + 47 * v2);
   v17 = *(unsigned int *)(v3 + 144); /*0x4116f4*/
   EnterCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x4116ff*/
   v6 = *(unsigned int *)(v3 + 140); /*0x41170b*/
@@ -418,15 +418,14 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     *(unsigned short *)(v3 + 122) = v9; /*0x411f4d*/
     *(unsigned int *)(v3 + 128) = v10 * v11; /*0x411f51*/
         DirectSoundAudio = ((Audio *)0)->GetDirectSound();
-    DirectSoundAudio->lpVtbl->CreateSoundBuffer( /*0x411f63*/
-      DirectSoundAudio,
+    DirectSoundAudio->CreateSoundBuffer( /*0x411f63*/
       (LPCDSBUFFERDESC)(v3 + 100),
       (LPDIRECTSOUNDBUFFER *)(v3 + 140),
       0);
     if ( *v7 ) /*0x411f66*/
     {
-      (*(unsigned int ((unsigned int)(*))(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f84*/
-      (*(unsigned int ((unsigned int)(*))(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f8b*/
+      (*(unsigned int (__cdecl *)(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f84*/
+      (*(unsigned int (__cdecl *)(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f8b*/
       v13 = *v7; /*0x411f91*/
       *(unsigned int *)(v3 + 68) = 0; /*0x411f96*/
       *(unsigned int *)(v3 + 156) = 0; /*0x411f99*/

@@ -1627,7 +1627,7 @@ LABEL_6:
       return OverlayTypeClass::OverlayTypeClass(v3, Source); /*0x5fece1*/
     return 0; /*0x5fecd5*/
   }
-  while ( _strcmpi((*(unsigned int *)(*( (const char *)(unsigned int *) )stru_A83D50.__pad_34 + 4 * v2) + 36), Source) ) /*0x5fecba*/
+  while ( _strcmpi((*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2) + 36), Source) ) /*0x5fecba*/
   {
     if ( ++v2 >= *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fecc4*/
       goto LABEL_6; /*0x5fecc4*/

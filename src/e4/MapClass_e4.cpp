@@ -2695,7 +2695,7 @@ MapClass * * MapClass::RemoveTriggerRef(AbstractClass * aP1, int a3)
       if ( v12 && v12->ambientSoundController[0] == v3 ) /*0x57798e*/
       {
         ((ObjectClass *)(v12))->SetTriggerTarget(0); /*0x577994*/
-        v13 = ((int (*)(ObjectClass **, int *))this->((unsigned int *)MapClass_field_0x115C)[0])( /*0x5779ab*/
+        v13 = ((int (*)(ObjectClass **, int *))((unsigned int *)this->MapClass_field_0x115C)[0])( /*0x5779ab*/
                 &this->MapClass_field_0x115C,
                 &v12->occupant);
         if ( v13 != -1 ) /*0x5779b1*/

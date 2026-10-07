@@ -904,7 +904,7 @@ void GameListRenderWOL(CampaignScore * a1)
   char *v30; // eax
   LRESULT v31; // eax
   HWND v32; // eax
-  int (__cdecl *)(const void *, const void *); // [esp-Ch] [ebp-2A8h]
+  int (__cdecl *v33)(const void *, const void *); // [esp-Ch] [ebp-2A8h]
   wchar_t *StringCSF; // [esp-Ch] [ebp-2A8h]
   wchar_t *v35; // [esp-Ch] [ebp-2A8h]
   wchar_t *v36; // [esp-Ch] [ebp-2A8h]
@@ -2444,11 +2444,11 @@ char WOL_HandleLogout()
 {
   Skirmish *v1; // esi
   HWND v2; // eax
-  int (__stdcall **)(LPVOID, void *, int *); // ecx
+  int (__stdcall **v3)(LPVOID, void *, int *); // ecx
   int v4; // esi
-  int (__stdcall **)(LPVOID, void *, int *); // ecx
+  int (__stdcall **v5)(LPVOID, void *, int *); // ecx
   int v6; // esi
-  int (__stdcall **)(LPVOID, void *, int *); // ecx
+  int (__stdcall **v7)(LPVOID, void *, int *); // ecx
   int v8; // esi
   HANDLE *v9; // esi
   int v11; // [esp+7Ch] [ebp-8h] BYREF

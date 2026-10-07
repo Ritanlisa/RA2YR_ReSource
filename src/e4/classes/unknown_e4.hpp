@@ -9,7 +9,7 @@ struct unknown {
 // --- flat members (BEGIN) ---
     void* m_Data;  // 0x0
     char m_Position[4];  // 0x4
-    char m_Size[4];  // 0x8
+    int m_Size;  // 0x8
     bool IsAllocated;  // 0xD
     unsigned int *m_1;
     unsigned int m_8;

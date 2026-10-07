@@ -3004,7 +3004,7 @@ void sub_753BF0(char a1, char a2, int a3, int a4, char a5, char a6, char a7, cha
     a4 = a3 | v11; /*0x753c3f*/
     *(v8 - 1) = a4; /*0x753c46*/
   }
-  while ( result < byte_B2FE79 ); /*0x753c4a*/
+  while ( result < byte_B2FE79[0] ); /*0x753c4a*/
   return result; /*0x753c4c*/
 }
 }

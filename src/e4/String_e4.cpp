@@ -565,7 +565,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
 }
 // 0x7CCA34
 namespace gamemd {
-exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
+unsigned int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
 {
   void *v5; // eax
   uint8_t *v6; // esi

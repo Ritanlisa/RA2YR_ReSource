@@ -161,7 +161,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       v14 = !*(unsigned char *)(this + 1092) || a5; /*0x76d635*/
       Map_Process_76FD40( /*0x76d64f*/
         *(unsigned int *)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
-        CellType(gamemd::ObjectClass *)(),
+        CellType,
         v13,
         v13,
         (int *)this,
@@ -218,7 +218,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         ((MSAnim *)(v21))->SetField(*(unsigned int *)(this + 1144) - 1); /*0x76d7c8*/
         ((MSAnim *)(v21))->GetField(0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL((ObjectClass *)v21, 0); /*0x76d7d8*/
-        Trigger::executeActions((int)( /*0x76d7f0*/)        Trigger::executeActions( /*0x76d7f0*/
+        Trigger::executeActions( /*0x76d7f0*/
           *(Trigger **)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
           (int)v21);
         if ( (int)(*(int *)&v28) < (*(int *)&v28) /*0x76d821*/
@@ -289,7 +289,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       ((PriorityQueue *)((PriorityQueue *)this))->Add(*(unsigned int *)(*((unsigned int *)((char *)&v28) + 1) + 4 * (int)((char *)&v28))); /*0x76da29*/
       (*((void (__thiscall **)(void **))((char *)&v28) + 2))((char *)&v28); /*0x76da36*/
     }
-    while ( (*((uint8_t ((void **)(**))(void **))((char *)&v28) + 1))((char *)&v28) ); /*0x76da41*/
+    while ( (*(unsigned __int8 (__thiscall **)(int *))(*(unsigned int *)&v28 + 4))((char *)&v28) ); /*0x76da41*/
   }
   ((ComPtr *)((ComPtr *)(this + 1160)))->Set(*(unsigned int *)(a3 + 4)); /*0x76da5d*/
   ((unsigned int *)&v28)[0] = (unsigned int)(&vt_VectorCursorMSAnimDynamicVectorClass); /*0x76da66*/

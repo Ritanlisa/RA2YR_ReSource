@@ -4595,7 +4595,7 @@ _onexit_t _onexit(_onexit_t Func)
   _onexit_t *v2; // ecx
   size_t v3; // eax
   char *v4; // eax
-  int (__cdecl *)(); // esi
+  int (__cdecl *v5)(); // esi
   int v6; // ecx
 
   _lockexit(); /*0x7c970d*/
@@ -14195,7 +14195,7 @@ int _local_unwind2(int a1, int a2)
   int v4; // esi
   int v5; // esi
   struct _EXCEPTION_REGISTRATION_RECORD *ExceptionList; // [esp-8h] [ebp-1Ch]
-  int (__cdecl *)(int, int, int, unsigned int *); // [esp-4h] [ebp-18h] (b24 sig sync _unwind_handler)
+  int (__cdecl *v7)(int, int, int, unsigned int *); // [esp-4h] [ebp-18h] (b24 sig sync _unwind_handler)
 
   v7 = _unwind_handler; /*0x7cc128*/
   ExceptionList = (struct _EXCEPTION_REGISTRATION_RECORD *)*(void **)NtCurrentTeb(); /*0x7cc12d G42.33 b24: TEB+0 ExceptionList (TEB opaque)*/

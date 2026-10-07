@@ -3004,8 +3004,8 @@ AbstractClass * * Network_ModemConnectionDialog()
   HWND Dialog_v; // ebx
   int v3; // eax
   LONG v4; // eax
-  void (__stdcall *)(HWND); // esi
-  void (__stdcall *)(HWND, int); // ebp
+  void (__stdcall *v5)(HWND); // esi
+  void (__stdcall *v6)(HWND, int); // ebp
   int v7; // edi
   TechnoTypeClass *v8; // ecx
   Modem *v9; // ebp

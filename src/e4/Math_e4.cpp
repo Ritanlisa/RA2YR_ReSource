@@ -53,7 +53,7 @@ int Math_Sqrt(void * a1)
   void * v7;
 
   v2 = (double)(a1);
-  v3 = (unsigned int)(void *)(a1 < 0.0);
+  v3 = (unsigned int)(a1 < 0.0);
   v4 = 0; /*0x4cac44*/
   v5 = a1 == 0.0; /*0x4cac44*/
   IDA_LOWORD(result) = v1; /*0x4cac4a*/
@@ -239,7 +239,7 @@ int Math::DistSq2D(TechnoClass * aP1)
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
-  return (v3 - *aP1) * (v3 - *aP1) + (v4 - aP1[1]) * (v4 - aP1[1]); /*0x5f658b*/
+  return (v3 - *(unsigned int *)aP1) * (v3 - *(unsigned int *)aP1) + (v4 - ((unsigned int *)aP1)[1]) * (v4 - ((unsigned int *)aP1)[1]); /*0x5f658b*/
 
 }
 }

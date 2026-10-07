@@ -607,9 +607,9 @@ char ClampCoordMap(AbstractClass * aP0)
     v5 = 1; /*0x6d86c2*/
     aP0[1] = v3; /*0x6d86c4*/
   }
-  if ( *aP0 >= v1 ) /*0x6d86d7*/
+  if ( *(int *)aP0 >= v1 ) /*0x6d86d7*/
   {
-    if ( *aP0 <= v2 ) /*0x6d86e7*/
+    if ( *(int *)aP0 <= v2 ) /*0x6d86e7*/
     {
       return v5; /*0x6d86f7*/
     }

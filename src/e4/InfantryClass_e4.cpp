@@ -166,7 +166,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
     (*((void (**)(FootClass *, unsigned int))a1->vtable1 + 335))( (FootClass *)(a1), 0); /*0x4d54e3*/
     goto LABEL_25; /*0x4d54e9*/
   }
-  v5 = (v3 == 15 ? a1 + 1 : (FootClass *)1728)->TechnoClass;
+  v5 = (v3 == 15 ? (FootClass *)(a1 + 1) : (FootClass *)1728)->TechnoClass;
   if ( v5[3779] && !v5[3778] && !(uint8_t)((TechnoTypeClass *)v4)->HasVoiceResponse( 14) ) /*0x4d53df*/
   {
 LABEL_14:

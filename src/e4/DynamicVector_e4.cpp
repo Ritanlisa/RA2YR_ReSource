@@ -46,7 +46,7 @@ LABEL_8:
     goto LABEL_8; /*0x5ac46d*/
   do /*0x5ac481*/
   {
-    *(unsigned int *)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3] + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x5ac478*/
+    *(unsigned int *)(*(unsigned int *)&(&this->DynamicVector_field_0x1)[3] + 4 * v6) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v6); /*0x5ac478*/
     ++v6; /*0x5ac47e*/
   }
   while ( v6 < this->DynamicVector_field_0x8 ); /*0x5ac481*/

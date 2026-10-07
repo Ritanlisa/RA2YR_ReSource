@@ -165,7 +165,7 @@ LABEL_26:
   if ( v18 == -1 ) /*0x655ffa*/
   {
 LABEL_37:
-    if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % (void *)(2) !=   (void *)((void *)((void *)(1) || *(void **)(v13 + 540) != dword_A83D4C ))) /*0x65603a*/
+    if ( v19 <= 0 || (v19 - 1) / *((unsigned int *)dword_8871E0 + 34) % 2 != 1 || *(void **)(v13 + 540) != dword_A83D4C ) /*0x65603a*/
       goto LABEL_41; /*0x65603a*/
     (*(void (**)(unsigned int, int *, int))(**(unsigned int **)&this->u32_121C + 36))(*((unsigned int *)this + 1159), (int *)aP1, ~v17); /*0x656048*/
   }

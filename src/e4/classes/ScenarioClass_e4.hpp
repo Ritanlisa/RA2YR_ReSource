@@ -113,16 +113,16 @@ struct ScenarioClass {
     char playerSideIndex[4];  // 0x34B8
     bool isRandom;  // 0x34BD
     char ScenarioClass_field_timer_34C0[12];  // 0x34C0
-    char campaignIndex[4];  // 0x34CC
+    int campaignIndex;  // 0x34CC
     TechnoTypeClass** allowableUnits;  // 0x34D4
     void* dropshipUnitCounts;  // 0x34E4
     unsigned int dropshipCountsCount;  // 0x34E8
     unsigned int ambientCurrent;  // 0x34F0
-    char blue[4];  // 0x3500
+    int blue;  // 0x3500
     unsigned int ground;  // 0x3504
     char level[4];  // 0x3508
     unsigned int ionAmbient;  // 0x350C
-    char ionGround[4];  // 0x351C
+    int ionGround;  // 0x351C
     unsigned int ionLevel;  // 0x3520
     char parTimeMedium[4];  // 0x35A8
     char parTimeDifficult[4];  // 0x35AC

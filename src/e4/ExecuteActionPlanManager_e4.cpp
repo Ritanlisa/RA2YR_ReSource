@@ -44,7 +44,7 @@ namespace gamemd {
 bool E4Recv_638C40::sub_638C40(int a2, char a3)
 {
 
-  if ( this != (gamemd::E4Recv_638C40 *)(ObjectClass *)1 && this != (ObjectClass *)11 ) /*0x638c48*/
+  if ( (unsigned int)this != 1 && (unsigned int)this != 11 ) /*0x638c48*/
     return 0; /*0x638c48*/
   if ( a3 == 11 ) /*0x638c50*/
     return 1; /*0x638c54*/

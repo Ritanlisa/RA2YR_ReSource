@@ -60,7 +60,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   unsigned int *vtable1; // edx
   unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)&aP1->suspendedMission))( (void *)(aP1)) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
+  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)&aP1->suspendedMission))( (void *)(aP1)) == 15 && aP2 && !((unsigned int *)aP2)[14] ) /*0x438ea3*/
   {
     v4 = (AbstractClass *)__2_YAPAXI_Z(0x5Cu); /*0x438eaf*/
     v5 = v4; /*0x438eb4*/
@@ -806,7 +806,7 @@ int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1,
   if ( result >= 0 ) /*0x41034d*/
   {
     v6 = *v3; /*0x410352*/
-    v7 = (*(int (**)(int *, unsigned int))(*aP0 + 48))( (int *)(aP0), 0); /*0x410358*/
+    v7 = (*(int (**)(int *, unsigned int))(*( unsigned int *)aP0 + 48))( (int *)(aP0), 0); /*0x410358*/
     result = (*(int (**)(int *, int *, int))(v6 + 16))( (int *)(v3), (int *)(aP0), v7); /*0x41035e*/
     if ( result >= 0 ) /*0x410364*/
     {
@@ -839,7 +839,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, (int)(aP1), (int)aP0); /*0x4103b7*/
     v4 = aP0[7]; /*0x4103be*/
     v5 = *v2; /*0x4103c1*/
-    v6 = (*(int (**)(unsigned int *, unsigned int))(*aP0 + 48))( (unsigned int *)(aP0), 0); /*0x4103c7*/
+    v6 = (*(int (**)(unsigned int *, unsigned int))(*( unsigned int *)aP0 + 48))( (unsigned int *)(aP0), 0); /*0x4103c7*/
     result = (*(int (**)(int *, unsigned int *, int))(v5 + 12))( (int *)(v2), (unsigned int *)(aP0), v6); /*0x4103cd*/
     aP0[7] = v4; /*0x4103d0*/
   }

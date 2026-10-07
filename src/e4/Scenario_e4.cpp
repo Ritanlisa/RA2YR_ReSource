@@ -1384,7 +1384,7 @@ int Scenario_EndGameFlow()
   dword_A8D57C = (unsigned int)(wchar_t *)((char *)dword_A8D57C + 1); /*0x685817*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x68581d*/
   {
-    StringCSF = GetStringCSF( "TXT_AWAY_SCORESCREEN" /*w16g4 "TXT_AWAY_SCORESCREEN" /*w16g4 aTxtAwayScoresc*/*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2024); /*0x685830*/
+    StringCSF = GetStringCSF( "TXT_AWAY_SCORESCREEN" /*w16g4 aTxtAwayScoresc*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2024); /*0x685830*/
     ChatMessageWOL( 1, (wchar_t *)(StringCSF)); /*0x685839*/
     v10 = *(unsigned int *)&dword_A8B238; /*0x68583e*/
   }
@@ -1670,7 +1670,7 @@ int Scenario_EndGame()
   dword_A8D57C = (unsigned int)(wchar_t *)((char *)dword_A8D57C + 1); /*0x685f62*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x685f68*/
   {
-    StringCSF = GetStringCSF( "TXT_AWAY_SCORESCREEN" /*w16g4 "TXT_AWAY_SCORESCREEN" /*w16g4 aTxtAwayScoresc*/*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2492); /*0x685f7b*/
+    StringCSF = GetStringCSF( "TXT_AWAY_SCORESCREEN" /*w16g4 aTxtAwayScoresc*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2492); /*0x685f7b*/
     ChatMessageWOL( 1, (wchar_t *)(StringCSF)); /*0x685f84*/
     v10 = *(unsigned int *)&dword_A8B238; /*0x685f89*/
   }
@@ -1710,7 +1710,7 @@ int Scenario_EndGame()
     || (v31[1] = (ObjectClass *)asc_82083C,
         v29 = GetStringCSF( (wchar_t *)(g_Str_TXT_NO), 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
         v28 = GetStringCSF( (wchar_t *)(g_Str_TXT_YES), 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
-        v16 = (int *)GetStringCSF( "TXT_TO_REPLAY" /*w16g4 "TXT_TO_REPLAY" /*w16g4 aTxtToReplay*/*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
+        v16 = (int *)GetStringCSF( "TXT_TO_REPLAY" /*w16g4 aTxtToReplay*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
         (v15 = ((Dialog *)v16)->ShowMessageBox( (unsigned short *)(v28), (unsigned short *)(v29), 0, 0, v30)) != 0) )
   {
     if ( !v11 ) /*0x6860f0*/

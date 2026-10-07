@@ -1332,7 +1332,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
       vtable2 =(int)this->vtable2; /*0x4e073f*/
       if ( a2 < vtable2 ) /*0x4e0744*/
         vtable2 = a2; /*0x4e0746*/
-      for ( i = 0; i < vtable2; v4[i - 1] = *(unsigned int *)(this->(char *)vtable1 + * i - 4) ) /*0x4e074c*/
+      for ( i = 0; i < vtable2; v4[i - 1] = *(unsigned int *)(this->vtable1 + 4 * i - 4) ) /*0x4e074c*/
         ++i; /*0x4e0751*/
       if ( BYTE1(this->vtable3) ) /*0x4e075e*/
       {

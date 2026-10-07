@@ -133,7 +133,7 @@ struct VoxelAnimTypeClass {
     VoxelAnimTypeClass* Spawns;  // 0x2D4
     unsigned int SpawnCount;  // 0x2D8
     unsigned int StartSound;  // 0x2DC
-    char StopSound[4];  // 0x2E0
+    int StopSound;  // 0x2E0
     AnimTypeClass* BounceAnim;  // 0x2E4
     AnimTypeClass* ExpireAnim;  // 0x2E8
     AnimTypeClass* TrailerAnim;  // 0x2EC

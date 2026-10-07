@@ -845,7 +845,7 @@ LABEL_32:
       (*(void (**)(int, char *, int))(*(unsigned int *)aP1 + 36))( (int)(aP1), v23 + 1, 1); /*0x755fea*/
       v23 += 3; /*0x755fed*/
     }
-    while ( v23 < byte_B2FE79 ); /*0x755ff6*/
+    while ( v23 < byte_B2FE79[0] ); /*0x755ff6*/
     if ( v114 > 1 ) /*0x756002*/
       (*(void (**)(int, unsigned int, int))(*(unsigned int *)aP1 + 40))( (int)(aP1), 768 * v114 - 768, 1); /*0x756016*/
     GenerateLightRemapTable(0, 0); /*0x756022*/

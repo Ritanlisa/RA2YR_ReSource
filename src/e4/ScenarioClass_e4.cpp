@@ -823,7 +823,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
             (CCINIClass *)g_ScenarioClass_Instance->name,
             0x2Du);
         IDA_LOWORD(g_ScenarioClass_Instance->briefing[0]) = 0;
-        if ( &stru_830620 == (IUnknown *)-37112 )
+        if ( (void *)&stru_830620 == (IUnknown *)-37112 )
           int v10 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v10 = HashTableSection::FindSection(
@@ -869,7 +869,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           }
         }
         g_ScenarioClass_Instance->lsLoadMessage[0] = 0;
-        if ( &stru_830620 == (IUnknown *)-54792 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54792 )
           int v15 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v15 = HashTableSection::FindSection(
@@ -879,7 +879,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
         if ( v15 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54792], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->lsLoadMessage, 31);
         g_ScenarioClass_Instance->lsBrief[0] = 0;
-        if ( &stru_830620 == (IUnknown *)-54776 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54776 )
           int v16 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v16 = HashTableSection::FindSection(
@@ -888,7 +888,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                   (CCINIClass *)&stru_830620[54776]);
         if ( v16 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54776], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->lsBrief, 31);
-        if ( &stru_830620 == (IUnknown *)-54760 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54760 )
           int v17 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v17 = HashTableSection::FindSection(
@@ -901,7 +901,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                                                (uint8_t *)g_ScenarioClass_Instance->fileName,
                                                (CCINIClass *)&stru_830620[54760],
                                                (INIClass *)g_ScenarioClass_Instance->ls640BriefLocX);
-        if ( &stru_830620 == (IUnknown *)-54744 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54744 )
           int v18 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v18 = HashTableSection::FindSection((uint8_t *)((int)var158),(uint8_t *)((CCINIClass *)g_ScenarioClass_Instance->fileName),
@@ -912,7 +912,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                                                (uint8_t *)g_ScenarioClass_Instance->fileName,
                                                (CCINIClass *)&stru_830620[54744],
                                                (INIClass *)g_ScenarioClass_Instance->ls640BriefLocY);
-        if ( &stru_830620 == (IUnknown *)-54728 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54728 )
           int v19 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v19 = HashTableSection::FindSection((uint8_t *)((int)var158),(uint8_t *)((CCINIClass *)g_ScenarioClass_Instance->fileName),
@@ -923,7 +923,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                                                (uint8_t *)g_ScenarioClass_Instance->fileName,
                                                (CCINIClass *)&stru_830620[54728],
                                                (INIClass *)g_ScenarioClass_Instance->ls800BriefLocX);
-        if ( &stru_830620 == (IUnknown *)-54712 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54712 )
           int v20 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v20 = HashTableSection::FindSection((uint8_t *)((int)var158),
@@ -936,7 +936,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
                                                (CCINIClass *)&stru_830620[54712],
                                                (INIClass *)g_ScenarioClass_Instance->ls800BriefLocY);
         IDA_LOBYTE(g_ScenarioClass_Instance->ls640BkgdName[0]) = 0;
-        if ( &stru_830620 == (IUnknown *)-54696 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54696 )
           int v21 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v21 = HashTableSection::FindSection(
@@ -946,7 +946,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
         if ( v21 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54696], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls640BkgdName, 64);
         IDA_LOBYTE(g_ScenarioClass_Instance->ls800BkgdName[0]) = 0;
-        if ( &stru_830620 == (IUnknown *)-54680 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54680 )
           int v22 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v22 = HashTableSection::FindSection(
@@ -956,7 +956,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
         if ( v22 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54680], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls800BkgdName, 64);
         IDA_LOBYTE(g_ScenarioClass_Instance->ls800BkgdPal[0]) = 0;
-        if ( &stru_830620 == (IUnknown *)-54664 )
+        if ( (void *)&stru_830620 == (IUnknown *)-54664 )
           int v23 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v23 = HashTableSection::FindSection(

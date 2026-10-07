@@ -353,7 +353,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // esi
   int v5; // eax
   HWND v6; // ecx
-  LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
   int v8; // eax
   AbstractClass ** v9;
   HDC v10; // esi
@@ -518,7 +518,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
 }
 }
 // 0x61ECA0
-AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   UINT v4; // edi
   LRESULT (__stdcall *v5)(HWND, UINT, WPARAM, LPARAM); // esi

@@ -748,7 +748,7 @@ int HouseClass::Construct(int a2)
         }
         ++v62; /*0x4f6192*/
       }
-      while ( v62 < ((char *)&stru_A80220) ); /*0x4f6196*/
+      while ( v62 < HouseClass_Count ); /*0x4f6196*/
     }
   }
   if ( ((char *)&stru_A80220) < ((char *)&stru_A80220) /*0x4f61d0*/

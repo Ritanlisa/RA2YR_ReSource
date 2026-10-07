@@ -1035,8 +1035,8 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   WNDCLASSA WndClass; // [esp+20h] [ebp-28h] BYREF
 
   InitCommonControls(); /*0x777c3b*/
-  g_hIcon = (int)LoadIconA((HINSTANCE)(aP0), (LPCSTR)0x5D); /*0x777c50*/
-  g_hCursor = (int)LoadCursorA((HINSTANCE)(g_hInstance), (LPCSTR)0x68); /*0x777c6c*/
+  *(unsigned int *)&g_hIcon = (int)LoadIconA((HINSTANCE)(aP0), (LPCSTR)0x5D); /*0x777c50*/
+  *(unsigned int *)&g_hCursor = (int)LoadCursorA((HINSTANCE)(g_hInstance), (LPCSTR)0x68); /*0x777c6c*/
   WndClass.style = 3; /*0x777c71*/
   WndClass.lpfnWndProc = MainWindowProc; /*0x777c79*/
   WndClass.cbClsExtra = 0; /*0x777c81*/
@@ -1067,7 +1067,7 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   dword_B7355C = (unsigned int)(ImmGetContext((HWND)(g_hWnd))); /*0x777d95*/
   ImmAssociateContext((HWND)(g_hWnd), 0); /*0x777d9c*/
   ShowWindow((HWND)(g_hWnd), 1); /*0x777da9*/
-  g_ScreenWidth = (unsigned char *)(a2); /*0x777db5*/
+  *(unsigned int *)&g_ScreenWidth = (unsigned int)(a2); /*0x777db5*/
   UpdateWindow((HWND)(g_hWnd)); /*0x777dbc*/
   SetFocus((HWND)(g_hWnd)); /*0x777dc9*/
   RegisterHotKey((HWND)(g_hWnd), 1, 7u, 0x4Du); /*0x777ddb*/
@@ -2480,13 +2480,13 @@ int OpenURLWOL(INIClass * a1, int a2)
           GetExitCodeProcess(hProcess, &ExitCode); /*0x77ddfb*/
           if ( ExitCode != 259 ) /*0x77de05*/
             v9 = 1; /*0x77de07*/
-          if ( byte_A8ED80 || GetTopWindow(0) == g_hWnd || GetForegroundWindow() == g_hWnd ) /*0x77de31*/
+          if ( byte_A8ED80 || GetTopWindow(0) == (HWND)g_hWnd || GetForegroundWindow() == (HWND)g_hWnd ) /*0x77de31*/
             v9 = 1; /*0x77de33*/
           Game::ProcessIdle(); /*0x77de38*/
         }
         while ( !v9 ); /*0x77de3f*/
         Game::ProcessIdle(); /*0x77de41*/
-        if ( GetTopWindow(0) != g_hWnd ) /*0x77de54*/
+        if ( GetTopWindow(0) != (HWND)g_hWnd ) /*0x77de54*/
         {
           Game::ProcessIdle(); /*0x77de56*/
           SetForegroundWindow((HWND)&g_hWnd); /*0x77de62*/
@@ -2896,8 +2896,7 @@ char RequestChannelListWOL()
       DlgItem = GetDlgItem(Current, 1344); /*0x77f255*/
       if ( DlgItem ) /*0x77f25d*/
         SetFocus(DlgItem); /*0x77f260*/
-      ((Debug *)"WaitForMultipleObjects() failed in Get_Channel_List
-" /*w16g4 aWaitformultipl*/)->Log("WaitForMultipleObjects() failed in Get_Channel_List\n"); /*0x77f26b G57w12: IDA push seq @ 0x77f26b*/
+      ((Debug *)"WaitForMultipleObjects() failed in Get_Channel_List\n" /*w16g4 aWaitformultipl*/)->Log("WaitForMultipleObjects() failed in Get_Channel_List\n"); /*0x77f26b G57w12: IDA push seq @ 0x77f26b*/
       return 0; /*0x77f27a*/
     }
     if ( (v2 & 0x80u) != 0 ) /*0x77f1b2*/

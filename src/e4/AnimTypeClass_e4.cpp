@@ -183,7 +183,7 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 4)) /*0x4277b0*/
     || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 5))) || !((unsigned int *)&FootClass_Array)[4])
     && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&FootClass_Array + 2)) + 8))( (int *)(&((int *)(unsigned int *))((char *)&FootClass_Array + 2)), *((unsigned int *)((char *)&FootClass_Array + 4)) + *((unsigned int *)((char *)&FootClass_Array + 1)), 0) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&FootClass_Array + 2)) + 8))( (int *)((char *)&FootClass_Array + 2), *((unsigned int *)((char *)&FootClass_Array + 4)) + *((unsigned int *)((char *)&FootClass_Array + 1)), 0) )
 
 
 

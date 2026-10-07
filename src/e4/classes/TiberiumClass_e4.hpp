@@ -20,7 +20,7 @@ struct TiberiumClass {
     ObjectClass* nextObject;  // 0x12
     bool IsAllocated;  // 0x13
     double abstractFlags;  // 0x14
-    char Growth[4];  // 0x16
+    int Growth;  // 0x16
     char nextArrayIndex[4];  // 0x18
     char referenceCount[4];  // 0x1C
     char NeedsSaveOrLink[4];  // 0x20
@@ -39,10 +39,10 @@ struct TiberiumClass {
     unsigned int UINameLabel;  // 0x3D
     unsigned int TiberiumClass_field_F4;  // 0x40
     unsigned int TiberiumClass_field_F8;  // 0x44
-    char TiberiumClass_field_FC[4];  // 0x48
+    int TiberiumClass_field_FC;  // 0x48
     char SpreadTimer[4];  // 0x4C
     char customSound_controller[20];  // 0x50
-    char NumImages[4];  // 0x52
+    int NumImages;  // 0x52
     unsigned int spawnStatus;  // 0x54
     unsigned int TiberiumClass_field_EC;  // 0x56
     unsigned int TiberiumClass_field_10C;  // 0x58
@@ -50,12 +50,12 @@ struct TiberiumClass {
     bool inLimbo;  // 0x5D
     bool inOpenToppedTransport;  // 0x5E
     unsigned int TiberiumClass_field_114;  // 0x60
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     char bombVisible[1];  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     bool wasFallingDown;  // 0x6A
     unsigned int health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int q078;  // 0x78

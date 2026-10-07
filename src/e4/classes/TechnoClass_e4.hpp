@@ -60,11 +60,11 @@ struct TechnoClass {
     unsigned int u32_54;  // 0x54
     void* q058;  // 0x58
     unsigned int q05C;  // 0x5C
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     void* bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     void* health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     void* spawnStatus;  // 0x78
@@ -93,8 +93,8 @@ struct TechnoClass {
     char suspendedMission[4];  // 0xB0
     void* queuedMission;  // 0xB4
     void* missionQueued;  // 0xB8
-    char missionStatus[4];  // 0xBC
-    char missionStartTime[4];  // 0xC0
+    int missionStatus;  // 0xBC
+    int missionStartTime;  // 0xC0
     char missionTimer[12];  // 0xC8
     unsigned int q0D0;  // 0xD0
     void* lastCommands;  // 0xD4
@@ -118,7 +118,7 @@ struct TechnoClass {
     char q13C[4];  // 0x13C
     unsigned int currentRank;  // 0x140
     unsigned int gattlingStage;  // 0x144
-    char gattlingValue[4];  // 0x148
+    unsigned int gattlingValue;  // 0x148
     unsigned int ammoReloadTimer;  // 0x14C
     HouseClass* initialOwner;  // 0x150
     char veterancy[4];  // 0x154
@@ -174,7 +174,7 @@ struct TechnoClass {
     TemporalClass* chronoDestCoords;  // 0x288
     unsigned int airstrike;  // 0x294
     unsigned int isBerserk;  // 0x298
-    char isBerserk_duration_left[4];  // 0x29C
+    unsigned int isBerserk_duration_left;  // 0x29C
     unsigned int sprayOffsetIndex;  // 0x2A0
     void* isUncrushable;  // 0x2A4
     AirstrikeClass* rockerLinkedUnit;  // 0x2A8
@@ -212,7 +212,7 @@ struct TechnoClass {
     float tiltSidewaysAngle;  // 0x33C
     char storedTiberium[16];  // 0x350
     char barrelFacing[24];  // 0x370
-    char currentBurstIndex[4];  // 0x37C
+    int currentBurstIndex;  // 0x37C
     char primaryFacing[24];  // 0x388
     bool isSinking;  // 0x391
     bool wasAlreadySinking;  // 0x392

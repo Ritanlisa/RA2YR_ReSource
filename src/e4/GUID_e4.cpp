@@ -39,7 +39,7 @@ LABEL_23:
     LOBYTE(result) = 0; /*0x53ef1a*/
     return result; /*0x53ef1b*/
   }
-  if ( (*this || *((unsigned char *)this + 1) || *((unsigned char *)this + 2) || *((unsigned char *)this + 3)) /*0x53eed8*/
+  if ( (*(unsigned int *)this || *((unsigned char *)this + 1) || *((unsigned char *)this + 2) || *((unsigned char *)this + 3)) /*0x53eed8*/
     && (*(unsigned char *)a2 || *(unsigned char *)(a2 + 1) || *(unsigned char *)(a2 + 2) || *(unsigned char *)(a2 + 3)) )
   {
     v7 = 3; /*0x53eef8*/

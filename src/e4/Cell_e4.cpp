@@ -1024,7 +1024,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
     result = (char)(Cell::CreateCrater((v21 - 128),( v22 - 128),( 256),(256), 0)); /*0x56ec53*/
     v12 = v8[14]; /*0x56ec58*/
     v10 = (int)(a2); /*0x56ec5b*/
-    if ( a2 == (IUnknown *)(v12) ) /*0x56ec61*/
+    if ( (unsigned int)a2 == v12 ) /*0x56ec61*/
       return (char)(result); /*0x56ec61*/
   }
   if ( v8[14] != v10 ) /*0x56ec70*/
@@ -1080,7 +1080,7 @@ char Cell::IsPassableAllied(int aP0, __int16 *aP1)
   v4 = v3[57]; /*0x578b03*/
   if ( !v4 ) /*0x578b0c*/
     return 1; /*0x578b58*/
-  while ( aP0 == (IUnknown *)(v4) /*0x578b30*/
+  while ( (unsigned int)aP0 == v4 /*0x578b30*/
        || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 6
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5815) )
   {

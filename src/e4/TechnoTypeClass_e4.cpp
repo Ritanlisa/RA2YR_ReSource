@@ -211,7 +211,7 @@ LABEL_11:
   else
   {
     v6 = *(TeamTypeClass ***)(unsigned int *)((char *)&stru_A8EB00 + 192); /*0x6f0877*/
-    while ( *v6 != this ) /*0x6f087f*/
+    while ( *v6 != (TechnoTypeClass *)this ) /*0x6f087f*/
     {
       ++v5; /*0x6f0881*/
       ++v6; /*0x6f0882*/

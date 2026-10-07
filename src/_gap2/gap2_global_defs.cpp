@@ -878,8 +878,8 @@ int ObjectClass::CreateInstanceCOM(IID * rclsid, LPUNKNOWN pUnkOuter, DWORD dwCl
     {
       v6 = OleRun(pUnkOuter); /*0x41c292*/
       if ( v6 >= 0 ) /*0x41c296*/
-        v6 = (*(int (__stdcall **)(LPUNKNOWN, IID *, ObjectClass *))pUnkOuter->field_0)(pUnkOuter, &gamemd::stru_817BB0, this); /*0x41c2a7*/
-      (*(void (__stdcall **)(LPUNKNOWN))(pUnkOuter->field_0 + 8))(pUnkOuter); /*0x41c2b0*/
+        v6 = (*(int (__stdcall **)(LPUNKNOWN, IID *, ObjectClass *))(*(void **)pUnkOuter))(pUnkOuter, &gamemd::stru_817BB0, this); /*0x41c2a7*/
+      pUnkOuter->Release(); /*0x41c2b0*/
       return v6; /*0x41c2b3*/
     }
     return result; /*0x41c2b5*/
@@ -1625,7 +1625,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
     Rect v34; // [esp+20h] [ebp-10h] BYREF
 
     (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30)(stru_887598.lineTrailer); /*0x42e1d1*/
-    nextArrayIndex = this->?; /*0x42e1d4*/
+    nextArrayIndex = this->AbstractClass; /*0x42e1d4*/
     if ( nextArrayIndex ) /*0x42e1d9*/
     {
       if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x42e1e5*/
@@ -1634,17 +1634,17 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
         v3 = *(unsigned __int16 *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 2 * nextArrayIndex); /*0x42e1fe*/
       v28 = v3; /*0x42e20a*/
       v4 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x42e20e*/
-      v5 = Rect::Set(&v34, (int)this->AbstractClass, (int)this->?, (int)this->?, (int)this->?); /*0x42e21d*/
+      v5 = Rect::Set(&v34, (int)this->AbstractClass, (int)this->q058, (int)this->q058, (int)this->q058); /*0x42e21d*/
       (*(void (__thiscall **)(AudioStream *, unsigned int *, int))(v4 + 88))((gamemd::AudioStream *)(g_DSurface_Hidden_2), v5, v28); /*0x42e229*/
     }
-    vtable2 = (char *)this->?; /*0x42e22f*/
+    vtable2 = (char *)this->nextObject; /*0x42e22f*/
     vtable3 = (char *)this->vtable4; /*0x42e237*/
-    vtable1 = (char *)this->?; /*0x42e23a*/
+    vtable1 = (char *)this->occupant; /*0x42e23a*/
     v8 = vtable2; /*0x42e23e*/
     vtable0 = (char *)this->AbstractClass; /*0x42e240*/
     v31 = (int)vtable2; /*0x42e246*/
     v9 = (int)vtable3; /*0x42e24a*/
-    if ( this->? ) /*0x42e232*/
+    if ( this->AbstractClass ) /*0x42e232*/
     {
       v8 = vtable2 - 2; /*0x42e254*/
       vtable0 = (char *)this->AbstractClass + 1; /*0x42e257*/
@@ -1655,7 +1655,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
     v32 = (int)v8; /*0x42e268*/
     if ( (int)vtable2 <= (int)vtable3 ) /*0x42e26c*/
       v32 = v9; /*0x42e26e*/
-    IDA_LOWORD(v10) = Math::RoundToInt((double)v32 * *(double *)&this->?); /*0x42e279*/
+    IDA_LOWORD(v10) = Math::RoundToInt((double)v32 * *(double *)&this->NeedsSaveOrLink); /*0x42e279*/
     v11 = v10; /*0x42e27e*/
     v33 = v10; /*0x42e282*/
     if ( v10 <= 0 ) /*0x42e286*/
@@ -1665,7 +1665,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
     else
     {
       v12 = (int)vtable2 <= (int)vtable3; /*0x42e291*/
-      uniqueId = this->?; /*0x42e293*/
+      uniqueId = this->owningHouseIndex; /*0x42e293*/
       v14 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4); /*0x42e296*/
       if ( v12 ) /*0x42e299*/
       {
@@ -1708,9 +1708,9 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
     }
     if ( v18 - v11 > 0 ) /*0x42e33d*/
     {
-      if ( (int)this->? <= (int)this->? ) /*0x42e34b*/
+      if ( (int)this->vtable3 <= (int)this->occupant ) /*0x42e34b*/
       {
-        abstractFlags = this->?; /*0x42e39e*/
+        abstractFlags = this->vtable1; /*0x42e39e*/
         if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x42e3a5*/
           v25 = *(unsigned __int8 *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + abstractFlags); /*0x42e3b2*/
         else
@@ -1723,7 +1723,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
       }
       else
       {
-        v21 = this->?; /*0x42e352*/
+        v21 = this->vtable1; /*0x42e352*/
         v22 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372); /*0x42e35b*/
         if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x42e361*/
           v23 = *(unsigned __int8 *)(v22 + v21); /*0x42e365*/
@@ -1737,7 +1737,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
       }
     }
     (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x42e3f4*/
-    result = (int)this->?; /*0x42e3f7*/
+    result = (int)this->NeedsSaveOrLink; /*0x42e3f7*/
     occupant = this->occupant; /*0x42e3fa*/
     this->owningHouseIndex = result; /*0x42e3fd*/
     this->fallRate = occupant; /*0x42e400*/
@@ -3314,9 +3314,9 @@ int Gap2Recv_471890::SmallFunc_471890()
     *(unsigned int *)&this->CaptureManagerClass_field_30 = 10; /*0x4718b2*/
     this->originalOwner = 0; /*0x4718b9*/
     this->AbstractClass = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718bc*/
-    this->? = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718c2*/
-    this->? = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718c9*/
-    this->? = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718d0*/
+    this->vtable2 = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718c2*/
+    this->vtable3 = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718c9*/
+    this->vtable4 = (unsigned int)(void *)&CaptureManagerClass_vftable; /*0x4718d0*/
     this->overloadCount = 0; /*0x4718d7*/
     *(unsigned int *)this->__pad_3C = 1; /*0x4718da*/
     this->CaptureManagerClass_field_40 = 0; /*0x4718dd*/
@@ -4237,9 +4237,9 @@ int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2)
                     {
                       BuildingClass::Deactivate(v17); /*0x4c570a*/
                       Type = v17->Type; /*0x4c5712*/
-                      v17->? = (int)this->nextObject; /*0x4c5718*/
+                      v17->u32_504 = (int)this->nextObject; /*0x4c5718*/
                       if ( Type->__pad_1624[128] ) /*0x4c571e*/
-                        IDA_BYTE1(v17->?->HouseClass_field_timer_B[2]) = 1; /*0x4c5732*/
+                        IDA_BYTE1(v17->q5778->HouseClass_field_timer_B[2]) = 1; /*0x4c5732*/
                     }
                   }
                   else
@@ -4525,7 +4525,7 @@ int Gap2Recv_4CE4B0::ProcessDataHelper(void* a2, int a3)
     int v10; // [esp+4h] [ebp-18h]
     double v12; // [esp+Ch] [ebp-10h]
 
-    v10 = (*((int (__stdcall **)(void **))this->? + 33))(&this->?); /*0x4ce4c1*/
+    v10 = (*((int (__stdcall **)(void **))this->vtable2 + 33))(&this->vtable2); /*0x4ce4c1*/
     if ( v10 <= 0 ) /*0x4ce4c5*/
       return 0; /*0x4ce594*/
     a3 = (__int16)a3 - 0x3FFF; /*0x4ce4d7*/

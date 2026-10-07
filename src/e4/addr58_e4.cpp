@@ -79,7 +79,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   IUnknown * v22;
   unsigned int v23; // [esp+20h] [ebp-4h]
 
-  v3 = *aP1 + (aP1[1] << 9); /*0x5835e1*/
+  v3 = *(short *)aP1 + (((short *)aP1)[1] << 9); /*0x5835e1*/
   if ( v3 < 0x40000 && (v4 = *(int **)(dword_87F924 + 4 * v3)) != 0 ) /*0x5835f7*/
   {
     v5 = v4; /*0x5835f9*/

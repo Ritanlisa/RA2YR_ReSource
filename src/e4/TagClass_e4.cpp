@@ -346,7 +346,7 @@ int TagClass::ProcessTag(int * a2)
   int v5; // eax
 
   ((AbstractClass *)this)->ProcessPower(); /*0x6e56e9*/
-  v3 = (*((int (**)(void **))this->((unsigned int *)buildingType)[0] + 4))( (void **)(&this->((unsigned int *)buildingType)[0])); /*0x6e56f7*/
+  v3 = (*((int (**)(void **))((unsigned int *)this->buildingType)[0] + 4))( (void **)(&((unsigned int *)this->buildingType)[0])); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/

@@ -62,7 +62,7 @@ namespace gamemd {
 
 // 0x4D9E70
 namespace gamemd {
-int ((TeamClass *)double a2)->CheckCohesion()
+char TeamClass_CheckCohesion(FootClass *a1, double a2)
 {
 
   ObjectClass *v2; // ecx
@@ -395,7 +395,7 @@ v15 = (*(int (__thiscall **)(char *, unsigned int **))(*(unsigned int *)&stru_AC
         *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x634226*/
       if ( *(unsigned int **)&stru_AC4B30.__pad_EC[28] == (unsigned int *)(aP1) ) /*0x634232*/
         *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x634234*/
-      if ( *(unsigned int **)&stru_AC4B30.__pad_70[80] == aP1 ) /*0x634240*/
+      if ( *(unsigned int **)&stru_AC4B30.__pad_70[80] == (unsigned int *)aP1 ) /*0x634240*/
         *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x634242*/
       ((unsigned int *)Block)[0] = (unsigned int)(&vt_VectorClass); /*0x63424b*/
       ((VectorClass *)((int)&((unsigned int *)Block)[0]))->Cleanup2(); /*0x634251*/
@@ -1291,7 +1291,7 @@ v8 = (*(int (**)(int *, TeamClass **))(dword_B0F6F0+ 16))( /*0x6e8ecf*/ &dword_B
   {
     --&dword_B0F700; /*0x6e8ee4*/
     for ( ; /*0x6e8eea*/
-          v8 < &dword_B0F700;
+          v8 < *(unsigned int *)&dword_B0F700;
           *(unsigned int *)(dword_B0F6F4+ 4 * v8 - 4) = *(unsigned int *)(dword_B0F6F4+ 4 * v8) )
     {
       ++v8; /*0x6e8ef2*/
@@ -1341,7 +1341,7 @@ v11 = (*(int (__thiscall **)(char *, TeamClass **))(*(unsigned int *)((char *)&g
     }
   }
   v15 = (TeamClass *)(a2); /*0x6e8fef*/
-  v12 = ((int ((gamemd::ParticleSystemClass **)(*))(ParticleSystemClass **, TeamClass **))((char *)&FootClass_Array))((char *)&FootClass_Array, &v15); /*0x6e8ff3*/
+  v12 = ((int (*)(ParticleSystemClass **, TeamClass **))((char *)&FootClass_Array))((char *)&FootClass_Array, &v15); /*0x6e8ff3*/
   if ( v12 != -1 && v12 < (int)((char *)&FootClass_Array) ) /*0x6e9003*/
   {
     --((char *)&FootClass_Array); /*0x6e9008*/
@@ -2549,9 +2549,9 @@ int TeamClass::PowerDrainUpdate(int * a2)
   int v25; // edx
 
   ((AbstractClass *)this)->ProcessPower(); /*0x6ec5a9*/
-  v3 = (*((int (**)(void **))this->((unsigned int *)buildingType)[0] + 4))( (void **)(&this->((unsigned int *)buildingType)[0])); /*0x6ec5b7*/
+  v3 = (*((int (**)(void **))((unsigned int *)this->buildingType)[0] + 4))( (void **)(&((unsigned int *)this->buildingType)[0])); /*0x6ec5b7*/
   Power::TimerProcess(v3); /*0x6ec5bd*/
-  v4 = (*((int (**)(void **))this->((unsigned int *)owner)[0] + 4))( (void **)(&this->((unsigned int *)owner)[0])); /*0x6ec5cb*/
+  v4 = (*((int (**)(void **))((unsigned int *)this->owner)[0] + 4))( (void **)(&((unsigned int *)this->owner)[0])); /*0x6ec5cb*/
   Power::TimerProcess(v4); /*0x6ec5d1*/
   unknown38 = this->unknown38; /*0x6ec5d6*/
   if ( unknown38 ) /*0x6ec5db*/
@@ -2707,7 +2707,7 @@ void TeamClass::MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2)
                 0);
       }
     }
-    if ( aP2 == *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) ) /*0x6ec95e*/
+    if ( aP2 == *(TeamClass **)(&g_BuildingLoadQueue_Array + 1) ) /*0x6ec95e*/
     {
       TeamClass::SelectMember( (AbstractClass *)((int)v3), 0); /*0x6ec984*/
     }
@@ -2875,7 +2875,7 @@ char TeamClass::SelectMember(AbstractClass * aP1, void *a2)
   bool v12; // [esp+10h] [ebp+4h]
 
   v4 = *((unsigned int *)this + 15); /*0x6e9059*/
-  if ( aP1 != v4 ) /*0x6e905e*/
+  if ( aP1 != (TeamClass *)v4 ) /*0x6e905e*/
   {
     v5 = *(unsigned int **)&this->firstUnit; /*0x6e9060*/
     if ( v4 ) /*0x6e9065*/

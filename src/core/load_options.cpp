@@ -340,7 +340,7 @@ int LoadOptions::FindItem(FileEntryClass* const* a2)
     result = 0; /*0x55a2e1*/
     if ( m_8 <= 0 ) /*0x55a2e5*/
       return -1; /*0x55a2fc*/
-    for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x55a2eb*/
+    for ( i = *(unsigned int **)&this->m_1[3]; *i != *(unsigned int *)a2; ++i ) /*0x55a2eb*/
     {
       if ( ++result >= m_8 ) /*0x55a2fa*/
         return -1; /*0x55a2fa*/
@@ -461,7 +461,7 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
     // Scan directory for save files
     char pattern[64];
     snprintf(pattern, sizeof(pattern), "*.%s",
-             opts->GetExtension() ? opts->GetExtension() : "SAV");
+             opts->GetExtension() ? opts->GetExtension() : (char *)"SAV");
 
     WIN32_FIND_DATAA fd;
     HANDLE hFind = FindFirstFileA(pattern, &fd);

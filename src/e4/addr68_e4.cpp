@@ -1619,9 +1619,7 @@ void GenerateScenarioUnits()
       goto LABEL_111; /*0x68883d*/
     v54[252] = v13 + 36; /*0x688846*/
     v54[251] = v11; /*0x688847*/
-    v54[250] = "Generating units for house %d (%s)
-" /*w16g4 "Generating units for house %d (%s)
-" /*w16g4 aGeneratingUnit*/*/; /*0x688848*/
+    v54[250] = "Generating units for house %d (%s)\n" /*w16g4 aGeneratingUnit*/; /*0x688848*/
     Debug::Log("Generating units for house %d (%s)\n"); /*0x68884d G57w11: IDA push seq @ 0x68884d +2 reg-vararg(s) omitted*/
     UnitTypeVector::Construct2(0, 0); /*0x68885b*/
     v67 = (void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x68886b*/
@@ -1839,9 +1837,7 @@ void GenerateScenarioUnits()
               v52 = (void *)ppv; /*0x688cef*/
               v54[252] = v47 + 36; /*0x688cf6*/
               v54[251] = *((unsigned int *)ppv + 13) + 36; /*0x688cfd*/
-              v54[250] = "House %s deployed object %s
-" /*w16g4 "House %s deployed object %s
-" /*w16g4 aHouseSDeployed*/*/; /*0x688cfe*/
+              v54[250] = "House %s deployed object %s\n" /*w16g4 aHouseSDeployed*/; /*0x688cfe*/
               Debug::Log("House %s deployed object %s\n"); /*0x688d03 G57w11: IDA push seq @ 0x688d03 +1 reg-vararg(s) omitted*/
               v46 += (*(int (**)(int))(v47->q02B))(v47);  /*0x688d19*/
               if ( v64 < v62 /*0x688d44*/
@@ -1902,9 +1898,7 @@ void GenerateScenarioUnits()
     }
   }
   v54[252] = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, 0xFFFF); /*0x688e48*/
-  v54[251] = "Finished unit generation. Random number is %d
-" /*w16g4 "Finished unit generation. Random number is %d
-" /*w16g4 aFinishedUnitGe*/*/; /*0x688e5f*/
+  v54[251] = "Finished unit generation. Random number is %d\n" /*w16g4 aFinishedUnitGe*/; /*0x688e5f*/
   Debug::Log("Finished unit generation. Random number is %d\n"); /*0x688e64 G57w11: IDA push seq @ 0x688e64 +1 reg-vararg(s) omitted*/
   v80 = (void*)&VectorClass_Cell_vftable; /*0x688e75*/
   if ( v81 && v83 ) /*0x688e88*/

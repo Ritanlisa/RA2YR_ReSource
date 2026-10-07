@@ -21,7 +21,7 @@ bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Cryp
   {
     v7 = (gamemd::Crypto *)((unsigned int)((gamemd::Crypto *)(*a1 + *a2)));
     v8 = (gamemd::Crypto *)((unsigned int)(v7)+ aP3);
-    result = (unsigned int)(gamemd::Crypto *)(v7 < *a1 || result && !v8);
+    result = (unsigned int)(v7 < *a1 || result && !v8);
     *a0 = (unsigned int)((gamemd::Crypto *)(v8));
     ++a2; /*0x5c6a77*/
     ++a1; /*0x5c6a7a*/

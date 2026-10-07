@@ -48,7 +48,7 @@ result = (*(int (**)(int *, DialogQueue **))(&dword_ABFC90 + 16))( /*0x5d4ee5*/ 
   {
     --&dword_ABFCA0; /*0x5d4efa*/
     for ( ; /*0x5d4f00*/
-          result < &dword_ABFCA0;
+          result < *(unsigned int *)&dword_ABFCA0;
           *(unsigned int *)(&dword_ABFC94 + 4 * result - 4) = *(unsigned int *)(&dword_ABFC94
                                                                                          + 4 * result) )
     {

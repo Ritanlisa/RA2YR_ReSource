@@ -26,7 +26,7 @@ struct E4Recv_4F9670 {
     int sub_4F9670();  // 0x4F9670
     // --- W16G3 supply (BEGIN) ---
     unsigned int spawnStatus;  // @0x4f9685 (W16G3 raw-usage vocab)
-    char health[4];  // @0x4f968f (elem arith) (W16G3 raw-usage vocab)
+    int health;  // @0x4f968f (elem arith) (W16G3 raw-usage vocab)
     // --- W16G3 supply (END) ---
 
 };

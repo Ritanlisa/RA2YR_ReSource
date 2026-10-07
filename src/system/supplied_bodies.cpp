@@ -371,7 +371,7 @@ unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
  v3 = (Text *)(g_FogOfWarState); /*0x43556a*/
     if ( g_FogOfWarState ) /*0x435572*/
       (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/
-    if ( v3 == g_FogOfWarState ) /*0x435582*/
+    if ( v3 == (int)g_FogOfWarState ) /*0x435582*/
       g_FogOfWarState = 0; /*0x435584*/
     if ( (a2 & 1) != 0 ) /*0x435593*/
       RA2_OPDEL(this); /*0x435596*/

@@ -51,7 +51,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   unsigned int *v8; // eax
   MapClass *v10; // [esp+0h] [ebp-Ch]
 
-  if ( this != dword_A83D4C ) /*0x4fb84c*/
+  if ( (unsigned int)this != dword_A83D4C ) /*0x4fb84c*/
     return 0; /*0x4fb84c*/
   if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1422] ) /*0x4fb859*/
     return 0; /*0x4fb859*/

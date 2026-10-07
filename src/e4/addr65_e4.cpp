@@ -956,7 +956,7 @@ int sub_6586D0(ObjectClass *a1)
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
     ((::gamemd::Dialog *)(Dialog))->Show(); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
-        while ( !a1->((::gamemd::Dialog *)0)->PumpMessages() )
+        while ( !((::gamemd::Dialog *)0)->PumpMessages() )
     {
       if ( dwNewLong ) /*0x658727*/
         goto LABEL_7; /*0x658727*/
@@ -2329,12 +2329,12 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
   int *v22; // eax
   char v23; // al
   LPVOID *v24; // ebp
-  int (__stdcall ***)(unsigned int, void *, int *); // eax
+  int (__stdcall ***Checked)(unsigned int, void *, int *); // eax
   int v26; // esi
   int v27; // ebx
   int v28; // eax
   int v29; // eax
-  int (__stdcall ***)(unsigned int, void *, int *); // eax
+  int (__stdcall ***v30)(unsigned int, void *, int *); // eax
   int v31; // esi
   int v33; // ecx
   LPVOID v35; // esi

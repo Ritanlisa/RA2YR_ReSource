@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Struct {
 // --- flat members (BEGIN) ---
-    char Struct_field_00[4];  // 0x0
+    int Struct_field_00;  // 0x0
     unsigned int LastPacketTime;
     unsigned int PacketsReceived;
     unsigned int PacketsSent;

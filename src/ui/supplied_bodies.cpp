@@ -21,6 +21,7 @@
 #define GAMEMD_E4_Lobby 1
 #include "e4/classes/Text_e4.hpp"
 #include "core/stream_ext.hpp"
+#include "e4/classes/Count_e4.hpp"  // G57w17h4: carrier-first (defines GAMEMD_E4_Count before utility_ext)
 #include "core/utility_ext.hpp"
 #include "misc/misc_ext.hpp"
 #include "network/network_ext.hpp"
@@ -51,7 +52,6 @@ using ra2::game::AbstractClass;
 #include "e4/classes/BitmapClass_e4.hpp"
 #include "e4/classes/CampaignScore_e4.hpp"
 #include "e4/classes/CampaignSelect_e4.hpp"
-#include "e4/classes/Count_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/FontClass_e4.hpp"
 #include "e4/classes/FontRenderer_e4.hpp"

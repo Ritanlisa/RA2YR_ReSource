@@ -252,7 +252,7 @@ struct BuildingTypeClass {
     char AltCameoFile;  // 0x1781
     bool PreventsPlacementOverlap;  // 0x1788
     unsigned int *__pad_1714;
-    unsigned int *__pad_F70;
+    unsigned char __pad_F70[4];  /* G57w17h1: til char[960]@0xF70; [4] keeps 4B layout, restores byte-index stride */
     unsigned int gap0;
     unsigned int ArrayIndex;
     unsigned int FreeUnit;

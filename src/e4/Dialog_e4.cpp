@@ -353,7 +353,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
 
   Debug::Log("Calling dial function\n"); /*0x5f2a2c G57c1: IDA 0x5f2a2c push offset aCallingDialFun*/
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 24))( (HWND)((HWND)((HWND)((HWND)(g_ClipboardBuffer)))), a2); /*0x5f2a44*/
-  (*(void (*  ((HWND)(*(void (**)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36)))(g_ClipboardBuffer, PumpEventLoop); 
+  (*(void (__thiscall **)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, PumpEventLoop); /*0x5f2a54*/
   g_NetworkTestFlag = 0; /*0x5f2a57*/
   v11 = *(unsigned int *)&this->__pad_10[20]; /*0x5f2a5e*/
   Debug::Log("Waiting for dial result\n"); /*0x5f2a66 G57c1: IDA 0x5f2a66 push offset aWaitingForDial*/
@@ -1721,16 +1721,16 @@ LABEL_22:
 namespace gamemd {
 AbstractClass * * Dialog_TabControlPaint()
 {
-  LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // edi
+  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // edi
   int v5; // eax
   HWND v6; // ecx
   int v7; // eax
   int v8; // eax
-  LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (__stdcall **v9)(HWND, UINT, WPARAM, LPARAM); // eax
   UINT v10; // esi
   int v12; // eax
   LPARAM v13; // eax
-  LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // ebx
+  LRESULT (__stdcall *v14)(HWND, UINT, WPARAM, LPARAM); // ebx
   int v15; // eax
   int v16; // eax
   int v18; // eax

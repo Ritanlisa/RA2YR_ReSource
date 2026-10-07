@@ -710,8 +710,8 @@ LABEL_166:
             || v84 == (AbstractClass *)&v77->__pad_0[3] )
           {
   int v86; // eax
-            if ( (((gamemd::Math*)v71)->field_140 & 0x100) == 0
-              || (v86 = SHIBYTE(v71->field_118),
+            if ( (*(unsigned int *)((char *)v71 + 0x140) & 0x100) == 0
+              || (v86 = SHIBYTE(*(unsigned int *)((char *)v71 + 0x118)),
                   v85 = (BuildingTypeClass *)aP2->Z,
                   (int)v85 <= *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v86 + 1))
               && (int)v85 > *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v86 - 2) )
@@ -749,11 +749,11 @@ LABEL_189:
               }
             }
           }
-          int v90 = v71->field_44;
+          int v90 = *(int *)((char *)v71 + 0x44);
           if ( v90 >= 74 && v90 <= 99 )
           {
   int v91; // eax
-            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
+            if ( (int)aP3 == *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
               || (v91 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (int)1, (int)(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952))),
                   v91 < (int)v120) )
             {
@@ -761,11 +761,11 @@ LABEL_189:
                 ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget((int)((AbstractClass *)((int)v71)));
             }
           }
-          int v92 = v71->field_44;
+          int v92 = *(int *)((char *)v71 + 0x44);
           if ( v92 >= 205 && v92 <= 230 )
           {
   int v93; // eax
-            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
+            if ( (int)aP3 == *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
               || (v93 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (int)1, (int)(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952))),
                   v93 < (int)v120) )
             {
@@ -777,8 +777,8 @@ LABEL_189:
         }
 LABEL_151:
   int v80; // eax
-        if ( (v71->field_140 & 0x100) == 0
-          || (v80 = SHIBYTE(v71->field_118),
+        if ( (*(unsigned int *)((char *)v71 + 0x140) & 0x100) == 0
+          || (v80 = SHIBYTE(*(unsigned int *)((char *)v71 + 0x118)),
               Z = aP2->Z,
               Z <= *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v80 + 1))
           && Z > *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v80 - 2) )
@@ -786,7 +786,7 @@ LABEL_151:
           if ( aP3[1].isInLogic )
           {
   int v82; // eax
-            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
+            if ( (int)aP3 == *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
               || (v82 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (int)1, (int)(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952))),
                   v82 < (int)v120) )
             {
@@ -824,7 +824,7 @@ LABEL_163:
     goto LABEL_151;
   }
 LABEL_203:
-  eax203 = v71->field_44;
+  eax203 = *(int *)((char *)v71 + 0x44);
   if ( eax203 == -1 || !*(unsigned char *)(*(unsigned int *)(HouseClass_Player.field_38 + 4 * eax203) + 688) )
   {
     v94 = aP2;
@@ -832,10 +832,10 @@ LABEL_203:
   else
   {
     ((BuildingClass *)((char *)v71))->CreatePlacementCrater();
-    v71->field_44 = -1;
+    *(int *)((char *)v71 + 0x44) = -1;
     ((House *)((int)v71))->AnnounceUpgrade( (int)((IUnknown *)0xFFFFFFFF));
-    ((Cell *)((int *)&((unsigned char *)&stru_87C374)[13428]))->SetRadar( (int16_t *)((IUnknown *)&v71->field_24));
-    Radar::Update((IUnknown *)&((unsigned char *)&stru_87C374)[13428], (IUnknown *)&v71->field_24);
+    ((Cell *)((int *)&((unsigned char *)&stru_87C374)[13428]))->SetRadar( (int16_t *)((IUnknown *)((char *)v71 + 0x24)));
+    Radar::Update((IUnknown *)&((unsigned char *)&stru_87C374)[13428], (IUnknown *)((char *)v71 + 0x24));
     ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget((int)((AbstractClass *)((int)v71)));
     v95 = (void **)((void *)operator new(0x1C8u));
     v94 = aP2;
@@ -1174,7 +1174,7 @@ AbstractClass * * Main_Game_Frame()
     {
       if ( dword_A83D4C->__pad_140[181] ) /*0x48c907*/
       {
-        g_GameLoopActive = (unsigned char *)(1); /*0x48c911*/
+        g_GameLoopActive[0] = 1; /*0x48c911*/
         goto LABEL_9; /*0x48c911*/
       }
   LABEL_15:
@@ -1223,7 +1223,7 @@ AbstractClass * * Main_Game_Frame()
                 ++dword_A802C8; /*0x48cc19*/
               }
               ((Network *)v9)->AddFrameEvent(); /*0x48cc1e*/
-              g_GameLoopActive = (unsigned char *)(0); /*0x48cc23*/
+              g_GameLoopActive[0] = 0; /*0x48cc23*/
             }
           }
           goto LABEL_44; /*0x48cb47*/
@@ -1241,7 +1241,7 @@ AbstractClass * * Main_Game_Frame()
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48ca96*/
                 ++dword_A802C8; /*0x48ca9c*/
               }
-              g_GameLoopActive = (unsigned char *)(0); /*0x48caa1*/
+              g_GameLoopActive[0] = 0; /*0x48caa1*/
               goto LABEL_34; /*0x48caa8*/
             case 4: /*0x48ca2d*/
               v6 = (char *)((EventClass *)v14)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 8u); /*0x48cac4*/
@@ -1252,7 +1252,7 @@ AbstractClass * * Main_Game_Frame()
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48cb17*/
                 ++dword_A802C8; /*0x48cb1d*/
               }
-              g_GameLoopActive = (unsigned char *)(0); /*0x48cb22*/
+              g_GameLoopActive[0] = 0; /*0x48cb22*/
               break; /*0x48cb29*/
             case 5: /*0x48ca2d*/
               IDA_LOBYTE(*((unsigned int *)((char *)&FootClass_Array + 2))) = 1; /*0x48cb2e*/
@@ -1340,11 +1340,11 @@ void MainGame()
       WideCharToMultiByte( 0, 0, (LPCWCH)(StringCSF), -1, (LPSTR)(MultiByteStr), 5120, 0, 0); /*0x48cd13*/
       v3 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(g_Str_File_Conquer_CPP), 567); /*0x48cd36*/
       WideCharToMultiByte( 0, 0, (LPCWCH)(v3), -1, (LPSTR)(v11), 2048, 0, 0); /*0x48cd3e*/
-      mbp.g_hInstance = g_hInstance; /*0x48cd4b*/
-      mbp.g_hWnd = g_hWnd; /*0x48cd4e*/
+      mbp.hInstance = (HINSTANCE)g_hInstance; /*0x48cd4b*/
+      mbp.hwndOwner = (HWND)g_hWnd; /*0x48cd4e*/
       mbp.cbSize = 40; /*0x48cd61*/
       mbp.lpszText = MultiByteStr; /*0x48cd68*/
-      mbp.v11 = v11; /*0x48cd6b*/
+      mbp.lpszCaption = (LPCSTR)v11; /*0x48cd6b*/
       mbp.dwStyle = 327696; /*0x48cd6e*/
       memset( (void *)(&mbp.lpszIcon), 0, 12); /*0x48cd75*/
       mbp.dwLanguageId = 1024; /*0x48cd7e*/

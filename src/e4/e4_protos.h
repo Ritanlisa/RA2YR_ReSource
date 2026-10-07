@@ -725,7 +725,10 @@ extern char Event_Process(ObjectClass * aP0, __int16 a2);  // G42.57w9 supply (r
 extern _DWORD * ExecuteActionPlanManager_Helper(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper@0x633ac0)
 extern int ExecuteActionPlanManager_Helper_636EB0(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper_636EB0@0x636eb0)
 extern bool ExecuteActionPlanManager_Helper_638C40(ObjectClass * aP0, int a2, char a3);  // G42.57w9 supply (raw ObjectClass::ExecuteActionPlanManager_Helper_638C40@0x638c40)
-extern _DWORD * ExecuteActionPlanManager_Helper_63DEC0(void * aP0, int a2, int a3);  // G42.57w9 supply (raw VectorClass::ExecuteActionPlanManager_Helper_63DEC0@0x63dec0)
+extern void __stdcall IPersistStream_Stub_709A30(void * a1, int a2);  // G57w17h4 supply (raw IPersistStream::Stub@0x709a30, retn 8, empty body)
+extern int InitGame(...);  // G57w17h4 supply (raw InitGame@0x52ba60; site 0x48cccf push 1 stack arg, eax result -- 0-arg site arg-fidelity deferred)
+extern char __fastcall MenuSelect(void *a1);  // G57w17h4 supply (raw MenuSelect@0x52d9a0 thiscall-in-ecx, char in al)
+extern void InitSkirmishSettings();  // G57w17h4 supply (raw InitSkirmishSettings@0x6c87f0 cdecl void)
 extern _DWORD * ExecuteActionPlanManager_Helper_63E1D0(void * aP0, int a2, int a3);  // G42.57w9 supply (raw VectorClass::ExecuteActionPlanManager_Helper_63E1D0@0x63e1d0)
 extern int FillBuddyListWOL(ObjectClass * aP0);  // G42.57w9 supply (raw ObjectClass::FillBuddyListWOL@0x79af10)
 // removed G42.57w9: FillPersonaInfoWOL -- clash in E4Recv_77A9F0_e4.hpp

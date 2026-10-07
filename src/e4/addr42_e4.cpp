@@ -227,7 +227,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v52 = (int *)(*(unsigned int *)(v5 + 48));
         v53 = (int *)(*(unsigned int *)(v5 + 52));
         v6 = (unsigned int)(int *)(v51 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0);
-        v50 = (int *)(DSurface_ViewBounds + v50 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0);
+        v50 = (int *)(*(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds + v50 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].__tail_0);
         v51 = (int *)(dword_886FA4 + v6);
         v7 = (int *)(ClipRectIntersection((RectangleStruct *)(v70),(const RectangleStruct *)((int *)&v50),(const RectangleStruct *)(v54), 0, 0));
         v68[0] = (int)((*v7));
@@ -398,10 +398,10 @@ RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown *
   if ( v8 <= 0 ) /*0x421b87*/
     goto LABEL_23; /*0x421b87*/
   v15 = ((int *)aP1)[3]; /*0x421b92*/
-  if ( v15 <= 0 || aP2[2] <= 0 || aP2[3] <= 0 ) /*0x421bac*/
+  if ( v15 <= 0 || ((int *)aP2)[2] <= 0 || ((int *)aP2)[3] <= 0 ) /*0x421bac*/
     goto LABEL_23; /*0x421bac*/
   v9 = *(int *)aP1; /*0x421bb2*/
-  if ( v6 < *aP1 ) /*0x421bb6*/
+  if ( v6 < *(int *)aP1 ) /*0x421bb6*/
   {
     v10 = (int)(v6 - v9 + v16);
     v6 = *(int *)aP1;
@@ -435,9 +435,9 @@ RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown *
   else
   {
     if ( aP3 ) /*0x421c31*/
-      *aP3 += *aP2 - v6; /*0x421c3c*/
+      *(unsigned int *)aP3 += *(int *)aP2 - v6; /*0x421c3c*/
     if ( a4 ) /*0x421c44*/
-      *a4 += aP2[1] - v7; /*0x421c4f*/
+      *(unsigned int *)a4 += ((int *)aP2)[1] - v7; /*0x421c4f*/
     *result = v6; /*0x421c53*/
     result[1] = v7; /*0x421c55*/
     result[2] = v13; /*0x421c59*/
@@ -912,7 +912,7 @@ int ConstructionPositionTracker(TechnoClass *self)
     }
   LABEL_47:
     v19 = *(__int16 *)((*(int (**)(TechnoClass *))(self->vtable0 + 108))( (TechnoClass *)(self)) + 6) / 2 - 1; /*0x425cdb*/
-    if ( self->currentMission >= v19 ) /*0x425cf4*/
+    if ( (int)self->currentMission >= v19 ) /*0x425cf4*/
       IDA_LOBYTE(v19) = (*(bool (**)(TechnoClass *))(self->vtable0 + 248))( (TechnoClass *)(self)); /*0x425cfa*/
     return v19; /*0x4258bb*/
 }
@@ -1361,48 +1361,48 @@ AbstractClass * * sub_42A900()
     int v10; // edi
     void *v11; // eax
 
-    abstractFlags = (void **)self->?; /*0x42a907*/
+    abstractFlags = (void **)self->abstractFlags; /*0x42a907*/
     if ( abstractFlags ) /*0x42a90c*/
     {
       RA2_OPDEL(abstractFlags[2]); /*0x42a912*/
       RA2_OPDEL(abstractFlags); /*0x42a918*/
     }
     v3 = *(void ***)&self->bombVisible; /*0x42a920*/
-    self->? = 0; /*0x42a923*/
+    self->abstractFlags = 0; /*0x42a923*/
     if ( v3 ) /*0x42a928*/
     {
       RA2_OPDEL(v3[2]); /*0x42a92e*/
       RA2_OPDEL(v3); /*0x42a934*/
     }
-    uniqueId = (void *)self->?; /*0x42a93c*/
+    uniqueId = (void *)self->uniqueId; /*0x42a93c*/
     *(unsigned int *)&self->bombVisible = 0; /*0x42a93f*/
     if ( uniqueId ) /*0x42a944*/
       RA2_OPDEL(uniqueId); /*0x42a947*/
-    vtable3 = self->?; /*0x42a94f*/
-    self->? = 0; /*0x42a952*/
+    vtable3 = self->vtable4; /*0x42a94f*/
+    self->uniqueId = 0; /*0x42a952*/
     if ( vtable3 ) /*0x42a957*/
       RA2_OPDEL(vtable3); /*0x42a95a*/
-    nextArrayIndex = (void *)self->?; /*0x42a962*/
-    self->? = 0; /*0x42a965*/
+    nextArrayIndex = (void *)self->nextArrayIndex; /*0x42a962*/
+    self->vtable4 = 0; /*0x42a965*/
     if ( nextArrayIndex ) /*0x42a96a*/
     {
       RA2_OPDEL(nextArrayIndex); /*0x42a96d*/
-      self->? = 0; /*0x42a975*/
+      self->nextArrayIndex = 0; /*0x42a975*/
     }
-    if ( self->? ) /*0x42a978*/
+    if ( self->referenceCount ) /*0x42a978*/
     {
-      RA2_OPDEL((void *)self->?); /*0x42a980*/
-      self->? = 0; /*0x42a988*/
+      RA2_OPDEL((void *)self->referenceCount); /*0x42a980*/
+      self->referenceCount = 0; /*0x42a988*/
     }
     if ( self->occupant ) /*0x42a98b*/
     {
       RA2_OPDEL((void *)self->occupant); /*0x42a993*/
       self->occupant = 0; /*0x42a99b*/
     }
-    if ( self->? ) /*0x42a99e*/
+    if ( self->NeedsSaveOrLink ) /*0x42a99e*/
     {
-      RA2_OPDEL(self->?); /*0x42a9a6*/
-      self->? = 0; /*0x42a9ae*/
+      RA2_OPDEL(self->NeedsSaveOrLink); /*0x42a9a6*/
+      self->NeedsSaveOrLink = 0; /*0x42a9ae*/
     }
     v7 = (void **)&self->ambientSoundController[4]; /*0x42a9b2*/
     v8 = 3; /*0x42a9b5*/
@@ -3935,12 +3935,12 @@ char sub_42D830(unsigned int * a2)
     int uniqueId; // eax
     unsigned int *vtable1; // edx
 
-    vtable2 = self->?; /*0x42d833*/
-    if ( self->? >= (int)vtable2 ) /*0x42d83b*/
+    vtable2 = self->vtable3; /*0x42d833*/
+    if ( self->vtable4 >= (int)vtable2 ) /*0x42d83b*/
     {
-      if ( !IDA_BYTE1(self->?) && vtable2 ) /*0x42d846*/
+      if ( !IDA_BYTE1(self->IsAllocated) && vtable2 ) /*0x42d846*/
         return 0; /*0x42d846*/
-      abstractFlags = self->?; /*0x42d848*/
+      abstractFlags = self->abstractFlags; /*0x42d848*/
       if ( abstractFlags <= 0 /*0x42d858*/
         || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))self->AbstractClass + 2))(
               self,
@@ -3950,9 +3950,9 @@ char sub_42D830(unsigned int * a2)
         return 0; /*0x42d85f*/
       }
     }
-    uniqueId = self->?; /*0x42d865*/
-    vtable1 = self->?; /*0x42d868*/
-    self->? = uniqueId + 1; /*0x42d86e*/
+    uniqueId = self->uniqueId; /*0x42d865*/
+    vtable1 = self->vtable2; /*0x42d868*/
+    self->uniqueId = uniqueId + 1; /*0x42d86e*/
     vtable1[uniqueId] = *a2; /*0x42d878*/
     return 1; /*0x42d861*/
 }
@@ -4138,12 +4138,12 @@ bool sub_42E990(unsigned int * a2)
     if ( a2[135] != *(unsigned int *)&self->isOnMap ) /*0x42e9a6*/
       return 0; /*0x42e9a6*/
     v4 = 0; /*0x42e9ab*/
-    if ( self->? <= 0 ) /*0x42e9af*/
+    if ( self->vtable3 <= 0 ) /*0x42e9af*/
       return 0; /*0x42e9af*/
     v5 = (unsigned int *)(0); /*0x42e9b1*/
     for ( i = 0; ; i += 4 ) /*0x42e9b3*/
     {
-      v6 = (char *)self->? + (unsigned int)v5; /*0x42e9c0*/
+      v6 = (char *)self->qDF8 + (unsigned int)v5; /*0x42e9c0*/
       if ( *(unsigned int *)(a2[328] + 3576) == *(unsigned int *)v6 ) /*0x42e9ca*/
       {
         v7 = (unsigned short *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 440))( (unsigned int *)(a2), (unsigned char *)(v9)); /*0x42e9d6*/
@@ -4152,10 +4152,10 @@ bool sub_42E990(unsigned int * a2)
       }
       ++v4; /*0x42e9f6*/
       v5 = i + 4; /*0x42e9f7*/
-      if ( v4 >= self->? ) /*0x42ea00*/
+      if ( v4 >= self->vtable3 ) /*0x42ea00*/
         return 0; /*0x42ea00*/
     }
-    return (char *)self->? + 16 * v4 != 0; /*0x42ea13*/
+    return (char *)self->vtable3 + 16 * v4 != 0; /*0x42ea13*/
 }
 } // namespace gamemd
 
@@ -4173,11 +4173,11 @@ int sub_42EA30(unsigned int * a2)
       return 0; /*0x42ea44*/
     v4 = 0; /*0x42ea49*/
     v9 = 0; /*0x42ea4d*/
-    if ( self->? <= 0 ) /*0x42ea51*/
+    if ( self->vtable3 <= 0 ) /*0x42ea51*/
       return 0; /*0x42eab7*/
     while ( 1 ) /*0x42ea62*/
     {
-      v5 = (char *)self->? + v4; /*0x42ea62*/
+      v5 = (char *)self->vtable3 + v4; /*0x42ea62*/
       if ( *(unsigned int *)(a2[328] + 3576) == *(unsigned int *)v5 ) /*0x42ea6a*/
       {
         v6 = (unsigned short *)(*(int (**)(unsigned int *, unsigned char *))(*a2 + 440))( (unsigned int *)(a2), (unsigned char *)(v8)); /*0x42ea75*/
@@ -4185,10 +4185,10 @@ int sub_42EA30(unsigned int * a2)
           break; /*0x42ea8c*/
       }
       v4 += 16; /*0x42ea96*/
-      if ( ++v9 >= self->? ) /*0x42ea9f*/
+      if ( ++v9 >= self->vtable3 ) /*0x42ea9f*/
         return 0; /*0x42ea9f*/
     }
-    return (int)self->? + 16 * v9; /*0x42eaaa*/
+    return (int)self->vtable3 + 16 * v9; /*0x42eaaa*/
 }
 } // namespace gamemd
 
@@ -4201,11 +4201,11 @@ int sub_42EAD0(unsigned short * a2)
     char *vtable2; // esi
     unsigned short *i; // ecx
 
-    abstractFlags = self->?; /*0x42ead0*/
+    abstractFlags = self->abstractFlags; /*0x42ead0*/
     v3 = 0; /*0x42ead5*/
     if ( abstractFlags <= 0 ) /*0x42eadb*/
       return 0; /*0x42eb0f*/
-    vtable2 = (char *)self->?; /*0x42eae1*/
+    vtable2 = (char *)self->vtable3; /*0x42eae1*/
     for ( i = vtable2 + 4; *a2 != *i || a2[1] != i[1]; i += 8 ) /*0x42eae7*/
     {
       if ( ++v3 >= abstractFlags ) /*0x42eaff*/

@@ -70,7 +70,7 @@ extern wchar_t aWolMatchunknow[];  // data: 0x84d3b4 truth(IDA G42.57w9)
 
 // 0x7A0430
 namespace gamemd {
-Coord * * int CollectWOLConnectionTokens()
+int CollectWOLConnectionTokens(void *a1)
 {
   signed int result; // eax
   int v2; // ebx
@@ -1624,7 +1624,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   DeleteAndZero v19; // [esp+10h] [ebp-12Ch] BYREF
   ObjectClass *v20; // [esp+1Ch] [ebp-120h]
   unsigned int *v21; // [esp+20h] [ebp-11Ch]
-  void (__stdcall ***)(int); // [esp+24h] [ebp-118h]
+  void (__stdcall ***v22)(int); // [esp+24h] [ebp-118h]
   ComPtr v23; // [esp+28h] [ebp-114h] BYREF
   int v24[3]; // [esp+88h] [ebp-B4h] BYREF
   int v25; // [esp+94h] [ebp-A8h]
@@ -1633,7 +1633,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   IDA_HIBYTE(v19.DeleteAndZero_field_0x04) = a1; /*0x7afba6*/
   if ( (int)g_DisplayWidth > 640 ) /*0x7afbaa*/
   {
-    StringCSF = GetStringCSF( "WOL:WDTResolutionQuery" /*w16g4 "WOL:WDTResolutionQuery" /*w16g4 aWolWdtresoluti*/*/, 0, (const char *)(g_Str_File_WorldDom_cpp), 385); /*0x7afbc1*/
+    StringCSF = GetStringCSF( "WOL:WDTResolutionQuery" /*w16g4 aWolWdtresoluti*/, 0, (const char *)(g_Str_File_WorldDom_cpp), 385); /*0x7afbc1*/
     ((WideString *)((wchar_t **)&v19))->Assign( (wchar_t *)(StringCSF)); /*0x7afbcb*/
     v4 = (wchar_t *)((WideString *)(wchar_t **)&v19)->GetOrEmpty(); /*0x7afbdb*/
     if ( ShowDialogConfirm((void *)(v4), (void *)(4), (uint8_t (*)(void))Game::ProcessIdle, (void *)(1)) != 6 /*0x7afc0e*/
@@ -1666,7 +1666,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
     else
       v22 = 0; /*0x7afcce*/
   }
-  v10 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("WDTVOX.MIX" /*w16g4 "WDTVOX.MIX" /*w16g4 aWdtvoxMix*/*/); /*0x7afcdb*/
+  v10 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("WDTVOX.MIX" /*w16g4 aWdtvoxMix*/); /*0x7afcdb*/
   v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))( (unsigned int *)(v10), 0); /*0x7afcef*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afcf1*/
   v25 = 0; /*0x7afcf5*/
@@ -1677,11 +1677,11 @@ int StartWDTCampaign(char a1, char a2, int a3)
   {
     v12 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x7afd18*/
     if ( v12 ) /*0x7afd22*/
-      v21 = ((MixFileClass *)(v12))->FromFile("WDTVOX.MIX" /*w16g4 "WDTVOX.MIX" /*w16g4 aWdtvoxMix*/*/, (int)dword_886980); /*0x7afd35*/
+      v21 = ((MixFileClass *)(v12))->FromFile("WDTVOX.MIX" /*w16g4 aWdtvoxMix*/, (int)dword_886980); /*0x7afd35*/
     else
       v21 = (unsigned int *)(0); /*0x7afd3b*/
   }
-  v13 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("Local.MIX" /*w16g4 "Local.MIX" /*w16g4 aLocalMix_1*/*/); /*0x7afd48*/
+  v13 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("Local.MIX" /*w16g4 aLocalMix_1*/); /*0x7afd48*/
   v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))( (unsigned int *)(v13), 0); /*0x7afd5c*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afd5e*/
   v25 = 0; /*0x7afd62*/
@@ -1692,7 +1692,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   {
     v15 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x7afd85*/
     if ( v15 ) /*0x7afd8f*/
-      *(unsigned int *)v19.__pad_0 = ((MixFileClass *)(v15))->FromFile("Local.MIX" /*w16g4 "Local.MIX" /*w16g4 aLocalMix_1*/*/, (int)dword_886980); /*0x7afda2*/
+      *(unsigned int *)v19.__pad_0 = ((MixFileClass *)(v15))->FromFile("Local.MIX" /*w16g4 aLocalMix_1*/, (int)dword_886980); /*0x7afda2*/
     else
       *(unsigned int *)v19.__pad_0 = 0; /*0x7afda8*/
     v6 = *(void (****)(unsigned int, int))v19.__pad_0; /*0x7afdac*/
@@ -1750,7 +1750,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
             *(unsigned int *)v23.__pad_0 = (unsigned int)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7aff7d*/
             ((ComPtr *)(&v23))->Release(); /*0x7aff81*/
           }
-          dword_A8B3AC = dword_B77F94 == (char *)3; /*0x7aff9a*/
+          dword_A8B3AC = (unsigned int)dword_B77F94 == 3; /*0x7aff9a*/
           if ( Team_Start_76ED10((int)&v19.DeleteAndZero_field_0x08, dword_B77F98) ) /*0x7affa4*/
           {
             dword_B77DC4= 0; /*0x7affb2*/

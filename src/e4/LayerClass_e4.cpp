@@ -161,7 +161,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   v84 = *((char *)v21 + 283); /*0x56dc99*/
   if ( aP7 ) /*0x56dca6*/
   {
-    v22 = *aP3 + (aP3[1] << 9); /*0x56dcb2*/
+    v22 = *(short *)aP3 + (((short *)aP3)[1] << 9); /*0x56dcb2*/
     if ( v22 >= 0x40000 || (v23 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v22)) == 0 ) /*0x56dcc2*/
     {
       v23 = &g_MissionQueueFrame.briefing[130]; /*0x56dcc6*/
@@ -170,7 +170,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
     if ( (v23[80] & 0x100) != 0 ) /*0x56dcda*/
       v84 += 4; /*0x56dcdc*/
   }
-  v24 = aP0[62].Type_field_00 + aP0[61].Type_field_00; /*0x56dced*/
+  v24 = *(unsigned int *)((char *)aP0 + 248) + *(unsigned int *)((char *)aP0 + 244); /*0x56dced*/
   if ( v24 > 32 ) /*0x56dcf2*/
     v24 = 32; /*0x56dcf4*/
   i = (unsigned int *)v24; /*0x56dcfb*/
@@ -492,8 +492,8 @@ LABEL_125:
       if ( !v81 ) /*0x56e71f*/
         v71 = &v106[v70]; /*0x56e721*/
       v72 = (unsigned int *)*v71; /*0x56e728*/
-      v73 = (int16_t)*v71 - *aP14; /*0x56e73c*/
-      v80 = v73 * v73 + (SHIWORD(v72) - aP14[1]) * (SHIWORD(v72) - aP14[1]); /*0x56e751*/
+      v73 = (int16_t)*v71 - *(short *)aP14; /*0x56e73c*/
+      v80 = v73 * v73 + (SHIWORD(v72) - ((short *)aP14)[1]) * (SHIWORD(v72) - ((short *)aP14)[1]); /*0x56e751*/
       __asm /*0x56e755*/
       {
         fild [esp+1F4h+var_1CC]

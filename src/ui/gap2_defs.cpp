@@ -2817,7 +2817,7 @@ int SidebarClass::ResetProductionState() {
     while ( v25 < v26 )
     {
       v2 = *(BuildingClass **)(*(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * result); /*0x637adc*/
-      owner = v2->?; /*0x637adf*/
+      owner = v2->q21C; /*0x637adf*/
       relatedTagsCount = (SidebarClass *)owner->relatedTagsCount; /*0x637ae5*/
       if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) && dword_A83D4C ) /*0x637af8*/
         relatedTagsCount = (SidebarClass *)dword_A83D4C->Object_field_0x30; /*0x637afa*/
@@ -3484,7 +3484,7 @@ int SidebarClass::Load(int a1) {
               RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x656957*/
               *(unsigned int *)&this->__pad_1264[8] = v8 + 1; /*0x65695d*/
               *((unsigned int *)&RadarClass_field_0x1260->AbstractClass + 2 * v8) = v22[0]; /*0x656964*/
-              *((unsigned int *)&RadarClass_field_0x1260->? + 2 * v8) = v22[1]; /*0x65696b*/
+              *((unsigned int *)&RadarClass_field_0x1260->q004 + 2 * v8) = v22[1]; /*0x65696b*/
             }
             if ( ++v19 >= a2 ) /*0x65697e*/
               goto LABEL_14; /*0x65697e*/

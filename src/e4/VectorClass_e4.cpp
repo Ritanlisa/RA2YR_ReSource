@@ -707,7 +707,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
         {
           do /*0x4a0c90*/
           {
-            *(unsigned int *)(*((unsigned int *)p_IsInitialized + 1) + 4 * v7) = *(unsigned int *)(aP1[1] + 4 * v7); /*0x4a0c87*/
+            *(unsigned int *)(*((unsigned int *)p_IsInitialized + 1) + 4 * v7) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v7); /*0x4a0c87*/
             ++v7; /*0x4a0c8d*/
           }
           while ( v7 < *((unsigned int *)p_IsInitialized + 2) ); /*0x4a0c90*/

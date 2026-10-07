@@ -44,7 +44,7 @@ struct SuperWeaponTypeClass {
     bool ShowTimer;  // 0x48
     bool ManualControl;  // 0x49
     float Range;  // 0x4C
-    char LineMultiplier[4];  // 0x50
+    int LineMultiplier;  // 0x50
     bool q054;  // 0x54
     void* q057;  // 0x57
     unsigned char q058;  // 0x58

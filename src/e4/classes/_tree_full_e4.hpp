@@ -696,7 +696,7 @@ struct ObjectClass {
     unsigned int owningHouseIndex;  // 0x28
     BufferIOFileClass* q02A;  // 0x2A
     bool q02B;  // 0x2B
-    char fallRate[4];  // 0x2C
+    int fallRate;  // 0x2C
     unsigned int u32_2D;  // 0x2D
     unsigned int u32_2E;  // 0x2E
     unsigned int u32_2F;  // 0x2F
@@ -729,13 +729,13 @@ struct ObjectClass {
     unsigned int u32_61;  // 0x61
     unsigned int u32_62;  // 0x62
     unsigned int u32_63;  // 0x63
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
+    int health;  // 0x6C
     AbstractClass* q06F;  // 0x6F
-    char estimatedHealth[4];  // 0x70
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int u32_77;  // 0x77
@@ -1018,7 +1018,7 @@ struct VectorClass {
 
     void* Items;  // 0x4
     int Capacity;  // 0x8
-    char IsInitialized[1];  // 0xC (G57W14E1 til supply)
+    bool IsInitialized;  // 0xC (G57W14E1 til supply)
     void* ClearAndFree2;  // 0x0 (no offset truth)
     void* vfptr;
     unsigned int tail_E;  // 0xE

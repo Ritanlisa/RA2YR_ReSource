@@ -1018,8 +1018,8 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
 
   v2 = a2 & 7; /*0x56ed49*/
   v3 = (&dword_89F688)[v2]; /*0x56ed4c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ed62*/
-  IDA_LOWORD(a2) = *aP0 + v3; /*0x56ed66*/
+  IDA_LOWORD(v2) = ((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ed62*/
+  IDA_LOWORD(a2) = *(short *)aP0 + v3; /*0x56ed66*/
   IDA_HIWORD(a2) = v2; /*0x56ed6e*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56ed7d*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56ed97*/
@@ -1069,8 +1069,8 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
 
   v2 = a2 & 7; /*0x56ee49*/
   v3 = (&dword_89F688)[v2]; /*0x56ee4c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ee62*/
-  IDA_LOWORD(a2) = *aP0 + v3; /*0x56ee66*/
+  IDA_LOWORD(v2) = ((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ee62*/
+  IDA_LOWORD(a2) = *(short *)aP0 + v3; /*0x56ee66*/
   IDA_HIWORD(a2) = v2; /*0x56ee6e*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56ee7d*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56ee97*/
@@ -1120,8 +1120,8 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
 
   v2 = aP1 & 7; /*0x56f699*/
   v3 = (&dword_89F688)[v2]; /*0x56f69c*/
-  IDA_LOWORD(v2) = aP0[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56f6b2*/
-  IDA_LOWORD(aP1) = *aP0 + v3; /*0x56f6b6*/
+  IDA_LOWORD(v2) = ((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56f6b2*/
+  IDA_LOWORD(aP1) = *(short *)aP0 + v3; /*0x56f6b6*/
   IDA_HIWORD(aP1) = v2; /*0x56f6be*/
   v4 = (int16_t)aP1 + ((int16_t)v2 << 9); /*0x56f6cd*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56f6e7*/

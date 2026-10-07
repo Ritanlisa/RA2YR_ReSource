@@ -110,7 +110,7 @@ int Mouse::SetCursor(int aP1, char aP2)
   {
     v5 = (gamemd::ObjectClass *)((char)(aP2));
   }
-  if ( byte_ABF2DD && (!dword_ABF294 || aP1 == *((unsigned int *)this + 5464) && v5 == *((unsigned char *)this + 21852)) ) /*0x5bdcd6*/
+  if ( byte_ABF2DD && (!dword_ABF294 || aP1 == *(void **)(&((unsigned int *)this)[5464]) && v5 == *((unsigned char *)this + 21852)) ) /*0x5bdcd6*/
   {
     LOBYTE(result) = 0; /*0x5bdcda*/
   }

@@ -1377,7 +1377,7 @@ int SessionClass::CreateConnections()
       }
       if ( !_wcsicmp(*(const wchar_t **)((&this->StartSpots)[1] + 4 * v3), (const wchar_t *)&(&this->unknown_2854)[499]) ) /*0x697c04*/
       {
-        (&this->unknown_2854)[520] = *(unsigned int *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v3) + 111); /*0x697c25*/
+        *((unsigned int *)this + 3101) = *(unsigned int *)(*(unsigned int *)(*((unsigned int **)this + 2576) + 4 * v3) + 111); /*0x697c25*/
         ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[v3] + 40)))->CopyAddress( (unsigned int *)(&v13), (int)v17); /*0x697c38*/
         ((NetworkID *)(&qword_A8DBA4))->Assign( (unsigned int *)(&v13), (int)v17, 0); /*0x697c4d*/
         ((Network *)&unk_A8E9C0)->SetPlayerCoords( (IPXManagerClass *)(&qword_A8DBA4)); /*0x697c5c*/
@@ -2510,9 +2510,9 @@ unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
   int result; // eax
 
   result = (unsigned int)aP0; /*0x69a310*/
-  if ( aP0 == -2 ) /*0x69a317*/
+  if ( (int)aP0 == -2 ) /*0x69a317*/
     return unk_83ED1C; /*0x69a31e*/
-  if ( aP0 < 9 ) /*0x69a32b*/
+  if ( (int)aP0 < 9 ) /*0x69a32b*/
     return ((unsigned char *)&byte_83ED14)[aP0]; /*0x69a32d*/
   return result; /*0x69a325*/
 

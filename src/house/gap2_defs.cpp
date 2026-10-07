@@ -3716,7 +3716,7 @@ int HouseClass::RegisterGain_0(void* a1, int a2) {
             ++this->q160; /*0x502b42*/
           PowerDrain = BuildingClass::GetPowerDrain(a1); /*0x502b4a*/
           HouseClass::NotifyPowerStateChange((HouseClass *)this, PowerDrain); /*0x502b52*/
-          this->totalStorage += a1->((unsigned int *)Type)[0]; /*0x502b78*/
+          this->totalStorage += ((unsigned int *)a1->Type)[0]; /*0x502b78*/
           IDA_LOBYTE(v4) = (uint8_t)HouseClass::AccumulateFloat4((float *)(&this->altAllies4), v21, (int)&((unsigned int *)a1)[0]); /*0x502b83*/
         }
       }

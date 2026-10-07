@@ -390,7 +390,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     *(unsigned int *)&v4[1].__pad_6B8[8] = *Point3D_Overwrite; /*0x747785*/
     *(unsigned int *)&v4[1].__pad_6B8[12] = Point3D_Overwrite[1]; /*0x74778a*/
     v15 = Point3D_Overwrite[2]; /*0x74778d*/
-    v4->?[4] = 15; /*0x747790*/
+    *(unsigned int *)&v4->isSpawned = 15; /*0x747790*/
     *(unsigned int *)&v4[1].__pad_6B8[16] = v15; /*0x74779a*/
     if ( v4[1].__pad_6B8[22] || v4[1].__pad_6B8[23] ) /*0x7477a7*/
       *(unsigned int *)&v4->isSpawned = 10; /*0x7477b1*/
@@ -504,19 +504,19 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     v33 = INIClass::ReadInt_Overwrite( /*0x747a63*/
             (bool *)&DSurface_ViewBounds.__pad_FC[228],
             (unsigned __int8 *)&v4->objectTypeFlags,
-            "StartFiringFrame" /*w16g4 "StartFiringFrame" /*w16g4 aStartfiringfra*/*/,
+            "StartFiringFrame" /*w16g4 aStartfiringfra*/,
             StorageFilledSlots);
     parent_gap = (int)*(unsigned int *)&v4[1].SecretProduction->vtable1; /*0x747a73*/
     v4[1].StorageFilledSlots = v33; /*0x747a7a*/
     v4[1].SecretProduction = (TechnoTypeClass *)INIClass::ReadInt_Overwrite( /*0x747a85*/
                                                   (bool *)&DSurface_ViewBounds.__pad_FC[228],
                                                   (unsigned __int8 *)&v4->objectTypeFlags,
-                                                  "StartDeathFrame" /*w16g4 "StartDeathFrame" /*w16g4 aStartdeathfram*/*/,
+                                                  "StartDeathFrame" /*w16g4 aStartdeathfram*/,
                                                   parent_gap);
     *(unsigned int *)v4[1].ColorAdd = INIClass::ReadInt_Overwrite( /*0x747aa8*/
                                   (bool *)&DSurface_ViewBounds.__pad_FC[228],
                                   (unsigned __int8 *)&v4->objectTypeFlags,
-                                  "MaxDeathCounter" /*w16g4 "MaxDeathCounter" /*w16g4 aMaxdeathcounte*/*/,
+                                  "MaxDeathCounter" /*w16g4 aMaxdeathcounte*/,
                                   *(unsigned int *)v4[1].ColorAdd);
     v82 = 0; /*0x747aae*/
     BuildingClass_field_short_700 = (int *)v4[1].BuildingClass_field_short_700; /*0x747ab6*/
@@ -639,7 +639,7 @@ int *  UnitTypeClass::GetDimensions(int * a2)
     int v2; // eax
     int v3; // ecx
 
-    v2 = this->? - this->? / 4; /*0x7475a3*/
+    v2 = *(int *)((char *)this + 492) - *(int *)((char *)this + 492) / 4; /*0x7475a3*/
     v3 = v2; /*0x7475a5*/
     if ( v2 >= 60 ) /*0x7475aa*/
     {
@@ -660,8 +660,8 @@ unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 
     v1 = (void *)(2 * dword_B1D138); /*0x7475dc*/
     this->vtable1 = (void *)256; /*0x7475e7*/
-    this->? = (void *)256; /*0x7475e9*/
-    this->? = v1; /*0x7475ec*/
+    this->vtable2 = (void *)256; /*0x7475e9*/
+    this->vtable3 = v1; /*0x7475ec*/
     return (unsigned int *)this; /*0x7475ef*/
 }
 }  // G42.18c ns repair
@@ -683,8 +683,8 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
     if ( v7 < GroundHeight ) /*0x747ee0*/
       v3 = (void *)Cell::GetGroundHeight((unsigned int *)(&v5)); /*0x747ef1*/
     this->vtable1 = v5; /*0x747efe*/
-    this->? = v6; /*0x747f04*/
-    this->? = v3; /*0x747f08*/
+    this->vtable2 = v6; /*0x747f04*/
+    this->vtable3 = v3; /*0x747f08*/
     return (unsigned int *)this; /*0x747f0b*/
 }
 }  // G42.18c ns repair

@@ -31,10 +31,10 @@ int sub_53EC40(unsigned char a1, char a2)
 namespace gamemd {
 size_t Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
 {
-  LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // ebx
+  LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // ebx
   int v5; // eax
   int v6; // eax
-  LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
   size_t v8; // esi
   const wchar_t *v9; // ebx
   signed int v10; // ebp
@@ -129,8 +129,8 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
   int v10; // [esp+24h] [ebp+8h]
   double v11; // [esp+28h] [ebp+Ch]
 
-  v8 = *a1 - *aP0; /*0x58c71d*/
-  v10 = a1[1] - aP0[1]; /*0x58c725*/
+  v8 = *(short *)a1 - *(short *)aP0; /*0x58c71d*/
+  v10 = ((short *)a1)[1] - ((short *)aP0)[1]; /*0x58c725*/
   v9 = Math::Sqrt((double)(v8 * v8 + v10 * v10)); /*0x58c735*/
   if ( v8 ) /*0x58c73e*/
   {

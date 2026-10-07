@@ -7284,8 +7284,8 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     v10 = __RTDynamicCast( /*0x4abad5*/
             (void **)this->DisplayClass_field_0x11A8,
             0,
-            &ObjectTypeClass `RTTI Type Descriptor',
-            &TechnoTypeClass `RTTI Type Descriptor',
+            (&MEMORY[0x817F78]) /*ObjectTypeClass `RTTI Type Descriptor'*/,
+            (&MEMORY[0x817F98]) /*TechnoTypeClass `RTTI Type Descriptor'*/,
             0);
     if ( !v10 || (v11 = v10[3278], LOBYTE(v56[0]) = 1, !v11) ) /*0x4abaee*/
       LOBYTE(v56[0]) = 0; /*0x4abaf0*/

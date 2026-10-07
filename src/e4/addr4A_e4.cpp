@@ -801,7 +801,7 @@ int Palette_Fade(const void * a1, signed int a2, void (*a3)(void))
 }
 // 0x4A4130
 namespace gamemd {
-INIClass * * int sub_4A4130()
+unsigned int sub_4A4130(void *a1)
 {
   LPDIRECTDRAW v1; // eax
   char v2; // bl
@@ -1898,7 +1898,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
   v6 = *aP3; /*0x4a8f35*/
   v7 = aP3[1]; /*0x4a8f38*/
   v8 = FoundationWidth; /*0x4a8f3c*/
-  v9 = aP0[941] + 1; /*0x4a8f48*/
+  v9 = ((unsigned int *)aP0)[941] + 1; /*0x4a8f48*/
   v20 = v8; /*0x4a8f4b*/
   v23 = v7; /*0x4a8f54*/
   v10 = v6 - v9 + v8 + 2 * v9; /*0x4a8f58*/

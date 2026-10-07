@@ -263,7 +263,7 @@ int BuildingClass::AssignDestination_SyncLog()
     {
       TechnoClass::SetFocus(((TechnoClass *)this), (int)v3); /*0x455d80*/
     }
-    IPersistStream::Stub( (BuildingTypeClass *)(v3), v4); /*0x455d8d*/
+    IPersistStream_Stub_709A30( (BuildingTypeClass *)(v3), v4); /*0x455d8d*/
   }
   return result; /*0x455d93*/
 
@@ -598,7 +598,7 @@ void* BuildingClass_ProcessSell(int * p_ComPtr_field_0x14, double a3, int a4, in
     unsigned int *v35; // eax
     int v36; // kr04_4
     __int64 v37; // rax
-    int (__stdcall ***)(unsigned int, void *, int *); // eax
+    int (__stdcall ***v38)(unsigned int, void *, int *); // eax
     int v39; // esi
     int v40; // eax
     int ComPtr_field_0x08; // edi

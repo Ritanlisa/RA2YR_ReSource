@@ -628,7 +628,7 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
 
             {
               v19 = v31++; /*0x7096f3*/
-              *(unsigned int *)(v30.(char *)Items + * v19) = *v18; /*0x7096fc*/
+              *(unsigned int *)(v30.Items + 4 * v19) = *v18; /*0x7096fc*/
             }
             break; /*0x7096fc*/
           }
@@ -642,10 +642,10 @@ AbstractClass * * SelectTargetByWeight(unsigned int * a1, int a2)
       v25 = 0; /*0x709767*/
       for ( k = 0; k < v37; ++k ) /*0x70976d*/
       {
-        if ( *(unsigned int *)(v30.(char *)Items + * k) > v24 ) /*0x70977c*/
+        if ( *(unsigned int *)(v30.Items + 4 * k) > v24 ) /*0x70977c*/
         {
           v25 = *((unsigned int *)v34 + k); /*0x70977e*/
-          v24 = *(unsigned int *)(v30.(char *)Items + * k); /*0x709782*/
+          v24 = *(unsigned int *)(v30.Items + 4 * k); /*0x709782*/
         }
       }
       (*(void (**)(unsigned int *, int))(*v3 + 968))( (unsigned int *)(v3), v25); /*0x709792*/

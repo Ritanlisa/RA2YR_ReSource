@@ -41,11 +41,11 @@ int HashTable_flat::Get(IUnknown * aP1, IUnknown * aP2)
   {
     result = *(unsigned int *)((unsigned int *)*(unsigned int *)this->__pad_0 /*0x62478a*/
                        + 4
-                       * (((int ((unsigned int *)(*))(unsigned int *))this->HashTable_field_0x18)(aP1)
+                       * (((int (__thiscall *)(unsigned int *))this->HashTable_field_0x18)(aP1)
                         & ((1 << this->HashTable_field_0x0C) - 1)));
     if ( result ) /*0x62478f*/
     {
-      while ( *(unsigned int *)result != *aP1 ) /*0x62479c*/
+      while ( *(unsigned int *)result != *(unsigned int *)aP1 ) /*0x62479c*/
       {
         result = *(unsigned int *)(result + 516); /*0x62479e*/
         if ( !result ) /*0x6247a6*/
@@ -1946,6 +1946,9 @@ LABEL_24:
 
 }
 } // namespace gamemd
+// 0x7AEC00
+namespace gamemd {
+int HashTable_flat::Shrink()
 {
 
   unsigned int HashTable_field_0x08; // esi

@@ -27,7 +27,7 @@ struct RadioClass {
     unsigned int objectTypeFlags;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
     bool q02B;  // 0x2B
-    char fallRate[4];  // 0x2C
+    int fallRate;  // 0x2C
     ObjectClass* nextObject;  // 0x30
     unsigned char q031;  // 0x31
     unsigned char needsSave;  // 0x32
@@ -44,11 +44,11 @@ struct RadioClass {
     unsigned int q058;  // 0x58
     unsigned int u32_5C;  // 0x5C
     char q060[4];  // 0x60
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     unsigned int health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78
@@ -79,8 +79,8 @@ struct RadioClass {
     char suspendedMission[4];  // 0xB0
     char queuedMission[4];  // 0xB4
     bool missionQueued;  // 0xB8
-    char missionStatus[4];  // 0xBC
-    char missionStartTime[4];  // 0xC0
+    int missionStatus;  // 0xBC
+    int missionStartTime;  // 0xC0
     char missionTimer[12];  // 0xC8
     unsigned int q0D0;  // 0xD0
     char lastCommands[12];  // 0xD4

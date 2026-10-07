@@ -94,6 +94,9 @@
 #ifndef GAMEMD_E4_LoadGame
 #define GAMEMD_E4_LoadGame 1
 #endif
+#ifndef GAMEMD_E4_Count  // G57w17h4: e4 flat carrier Count_e4.hpp is the single Count truth in e4 TUs
+#define GAMEMD_E4_Count 1
+#endif
 #ifndef GAMEMD_E4_Main
 #define GAMEMD_E4_Main 1
 #endif

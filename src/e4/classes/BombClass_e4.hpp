@@ -22,9 +22,9 @@ struct BombClass {
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
     int q024;  // 0x24
-    char BombClass_field_28[4];  // 0x28
+    int BombClass_field_28;  // 0x28
     bool q02B;  // 0x2B
-    char BombClass_field_2C[4];  // 0x2C
+    int BombClass_field_2C;  // 0x2C
     unsigned int audioController;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
@@ -37,7 +37,7 @@ struct BombClass {
     unsigned char __pad_48[13];  // 0x48
     unsigned int q04C;  // 0x4C
     unsigned int q050;  // 0x50
-    char BombClass_field_54[4];  // 0x54
+    int BombClass_field_54;  // 0x54
     bool BombClass_field_58;  // 0x58
     unsigned int *__pad_24;
     unsigned int DTOR;

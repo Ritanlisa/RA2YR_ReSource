@@ -274,8 +274,8 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* a2)
       {
         for ( i = 0; i < *(this + 166); ++i ) /*0x6b60ac*/
         {
-          IDA_LOWORD(v9) = i + *a2; /*0x6b60bd*/
-          IDA_HIWORD(v9) = v7 + a2[1]; /*0x6b60c6*/
+          IDA_LOWORD(v9) = i + *(short *)a2; /*0x6b60bd*/
+          IDA_HIWORD(v9) = v7 + ((short *)a2)[1]; /*0x6b60c6*/
           v8 = v9; /*0x6b60d5*/
           v6 = CellCoord::To_CellObj(&dword_87F7E8, (short *)&v8); /*0x6b60d9*/
           v6[18] = *(this + 165); /*0x6b60ea*/
@@ -565,7 +565,7 @@ int UnitClass::Deploy()
       {
  v7 = (FootClass *)(((unsigned int *)v2)[0]); /*0x719375*/
  v8 = (int *)((unsigned int *)&v2->MovingDestination + 2); /*0x719378*/  // g57e2 W3
-        if ( *(unsigned int *)&v7->vtable3 == ((unsigned int *)&v2->MovingDestination)[2] &&((char *)v7 + 8) == ((unsigned int *)&v2->LastCoords)[0] &&((char *)v7 + 8) == ((unsigned int *)&v2->LastCoords)[1] /*0x7193c1*/  // g57e2 W3
+        if ( *(unsigned int *)&v7->vtable3 == ((unsigned int *)&v2->MovingDestination)[2] &&*(unsigned int *)((char *)v7 + 8) == ((unsigned int *)&v2->LastCoords)[0] &&((char *)v7 + 8) == ((unsigned int *)&v2->LastCoords)[1] /*0x7193c1*/  // g57e2 W3
           || *v8 == ((char *)&g_BuildingLoadQueue_Array)
           && ((unsigned int *)&v2->LastCoords)[0] == ((unsigned int *)&g_BuildingLoadQueue_Array)[0]
           && ((unsigned int *)&v2->LastCoords)[1] == ((unsigned int *)&g_BuildingLoadQueue_Array)[0] )
@@ -628,7 +628,7 @@ int UnitClass::Deploy()
           v23 = ((unsigned int *)&v2->Timer)[1]; /*0x7194ff*/  // g57e2 W3
           if ( *p_State != -1 ) /*0x719505*/
           {
-            if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v22 >= v23 ) /*0x719511*/
+            if ( *(unsigned int *)((char *)&stru_A8EB00 + 644) - v22 >= v23 ) /*0x719511*/
               v23 = 0; /*0x719517*/
             else
               v23 -= *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v22; /*0x719513*/
@@ -762,7 +762,7 @@ int UnitClass::Deploy()
         ((unsigned int *)v2)[0] = 0; /*0x7198e4*/
         ((unsigned int *)v2)[0] = 0; /*0x7198ee*/
         ((unsigned int *)v2)[0] = 0; /*0x7198fa*/
-        PlacementPosition = ObjectClass::FindPlacementPosition( /*0x71991d*/
+        PlacementPosition = ::FindPlacementPosition( /*0x71991d*/
                               (ObjectClass *)&v2[-1].Piggybackee,
                               ((unsigned int *)v2)[0]->?[0],
                               ((unsigned int *)v2)[0]->?[1],
@@ -777,7 +777,7 @@ int UnitClass::Deploy()
         }
         return 0; /*0x71992d*/
       case 3: /*0x719806*/
-        if ( ObjectClass::FindPlacementPosition( /*0x719967*/
+        if ( ::FindPlacementPosition( /*0x719967*/
                (ObjectClass *)((char *)this - 4),
                ((unsigned int *)Owner)[0],
                ((unsigned int *)Owner)[1],
@@ -789,7 +789,7 @@ int UnitClass::Deploy()
         ((unsigned int *)v2)[0] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3052); /*0x719983*/
         return 0; /*0x719990*/
       case 4: /*0x719806*/
-        ObjectClass::FindPlacementPosition((ObjectClass *)((char *)this - 4), ((unsigned int *)Owner)[0], ((unsigned int *)Owner)[1], ((unsigned int *)Owner)[2], 1); /*0x7199b8*/
+        ::FindPlacementPosition((ObjectClass *)((char *)this - 4), ((unsigned int *)Owner)[0], ((unsigned int *)Owner)[1], ((unsigned int *)Owner)[2], 1); /*0x7199b8*/
         (*((void (__thiscall **)(FootClass *, int *))((unsigned int *)v2)[0]->vtable1 + 109))(((unsigned int *)v2)[0], &v2->MovingDestination[2]); /*0x7199c6*/
         (*((void (__thiscall **)(FootClass *, unsigned int))((unsigned int *)v2)[0]->vtable1 + 115))(((unsigned int *)v2)[0], 0); /*0x7199d2*/
         (*((void (__thiscall **)(FootClass *, int))((unsigned int *)v2)[0]->vtable1 + 73))(((unsigned int *)v2)[0], 1); /*0x7199df*/
@@ -902,7 +902,7 @@ int UnitClass::DeployToBuilding()
     unsigned char v32[4]; // [esp+24h] [ebp-10h] BYREF
     unsigned char v33[12]; // [esp+28h] [ebp-Ch] BYREF
 
-    if ( !this->((unsigned int *)Type)[0] ) /*0x738d41*/
+    if ( !((unsigned int *)this->Type)[0] ) /*0x738d41*/
       return 1; /*0x738d52*/
     (*((void (__thiscall **)(UnitClass *, unsigned int))this->vtable1 + 73))(this, 0); /*0x738d58*/
     v3 = 0; /*0x738d64*/
@@ -1109,7 +1109,7 @@ int UnitClass::SimpleDeployerDeploy()
           }
           else if ( !((unsigned int *)this)[0] ) /*0x739b7c*/
           {
-            if ( this->((unsigned int *)Type)[0] ) /*0x739b90*/
+            if ( ((unsigned int *)this->Type)[0] ) /*0x739b90*/
             {
               if ( !((unsigned int *)this)[0] ) /*0x739b9e*/
               {
@@ -1365,7 +1365,7 @@ int UnitClass::SimpleDeployerUndeploy()
           }
         }
       }
-      else if ( this->((unsigned int *)Type)[0] ) /*0x739d73*/
+      else if ( ((unsigned int *)this->Type)[0] ) /*0x739d73*/
       {
         if ( !((unsigned int *)this)[0] ) /*0x739d81*/
         {
@@ -6580,7 +6580,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
     {
       if ( (unsigned __int8)TimerClass::Active((int)((unsigned int *)this)[0]) ) /*0x736af2*/
       {
-        if ( !IDA_BYTE1(this->((unsigned int *)Type)[0]) ) /*0x736b01*/
+        if ( !IDA_BYTE1(((unsigned int *)this->Type)[0]) ) /*0x736b01*/
           ((unsigned int *)this)[0] = TimerClass::Active((int)((unsigned int *)this)[0]); /*0x736b16*/
       }
       else if ( !((unsigned int *)this)[0] ) /*0x736b21*/
@@ -6608,7 +6608,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
       }
     }
   LABEL_38:
-    IDA_LOBYTE(v11) = this->((unsigned int *)Type)[0]; /*0x736be2*/
+    IDA_LOBYTE(v11) = ((unsigned int *)this->Type)[0]; /*0x736be2*/
     if ( (unsigned char)v11 ) /*0x736bf1*/
     {
       v11 = (unsigned __int8)TimerClass::Active((int)((unsigned int *)this)[0]); /*0x736bfe*/
@@ -7193,7 +7193,7 @@ int UnitClass::CheckForNearbyEnemies()
     {
       if ( !*(unsigned int *)&this->Locomotor ) /*0x7468d7*/
         WinAPI::Wrapper(-2147467261); /*0x7468e6*/
-      if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) && IDA_BYTE2(this->((unsigned int *)Type)[0]) ) /*0x746901*/
+      if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) && IDA_BYTE2(((unsigned int *)this->Type)[0]) ) /*0x746901*/
         v17 = Team::GetMember((Team *)this, 0) == 0; /*0x746918*/
     }
     if ( !*(unsigned int *)&this->Locomotor ) /*0x74691d*/
@@ -9403,7 +9403,7 @@ int UnitClass::PowerDrainUpdate(int a2)
     FootClass::BeginPowerUpdate((FootClass *)this, a2); /*0x744649*/
     v3 = (*((int (__thiscall **)(UnitTypeClass *))this->Type->vtable1 + 11))(this->Type); /*0x744656*/
     Power::TimerProcess(v3); /*0x74465c*/
-    v4 = (*((int (__stdcall **)(void **))this->((unsigned int *)Type)[0] + 4))(&this->((unsigned int *)Type)[0]); /*0x74466d*/
+    v4 = (*((int (__stdcall **)(void **))((unsigned int *)this->Type)[0] + 4))(&((unsigned int *)this->Type)[0]); /*0x74466d*/
     Power::TimerProcess(v4); /*0x744673*/
     FollowerCar = this->FollowerCar; /*0x744678*/
     if ( FollowerCar ) /*0x744680*/

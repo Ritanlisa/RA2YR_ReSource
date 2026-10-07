@@ -130,7 +130,7 @@ HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**)
 
 // 0x53ED20
 namespace gamemd {
-int16_t (unsigned int *a2)->Assign(int a3, int16_t a4)
+int16_t NetworkID::Assign(unsigned int * a2, int a3, int16_t a4)
 {
     this->NetworkID_field_0x04 = *(unsigned int *)a3; /*0x53ed2a*/
     *((unsigned short *)this + 4) = *(unsigned short *)(a3 + 4); /*0x53ed31*/
@@ -468,7 +468,7 @@ int IPXManagerClass::ProcessQueue() {
       do /*0x54260c*/
       {
         v6 = (ObjectClass *)*((unsigned int *)stru_A80220 + *(unsigned int *)(v4->Socket + 100)); /*0x542546*/
-        if ( v6 && v6 != dword_A83D4C ) /*0x542557*/
+        if ( v6 && v6 != (unsigned int)dword_A83D4C ) /*0x542557*/
         {
           if ( !*((unsigned char *)v5 - 64) ) /*0x54255d*/
           {
@@ -526,7 +526,7 @@ int IPXManagerClass::ProcessQueue()
       do /*0x54260c*/
       {
         v6 = (ObjectClass *)*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(v4->Socket + 100)); /*0x542546*/
-        if ( v6 && v6 != dword_A83D4C ) /*0x542557*/
+        if ( v6 && v6 != (unsigned int)dword_A83D4C ) /*0x542557*/
         {
           if ( !*((unsigned char *)v5 - 64) ) /*0x54255d*/
           {
@@ -922,7 +922,7 @@ char ModemGuest::Dialog()
     LoadArtINI(); /*0x5b4a74*/
     *((unsigned int *)this + 21) = unknown_libname_29(); /*0x5b4a7e*/
     *((unsigned int *)this + 22) = unknown_libname_30(); /*0x5b4a86*/
-    while ( this->ModemGuest_field_0x04 < 0 ) /*0x5b4a8f*/
+    while ( *(int *)&this->ModemGuest_field_0x04 < 0 ) /*0x5b4a8f*/
     {
       if ( (unsigned __int8)Dialog_PumpMessages() == 1 ) /*0x5b4a98*/
         break; /*0x5b4a98*/

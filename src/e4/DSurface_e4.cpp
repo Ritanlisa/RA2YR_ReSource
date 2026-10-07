@@ -94,8 +94,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 8256; /*0x4ba63e*/
-    g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba653*/
-      g_lpDirectDraw7,
+    g_lpDirectDraw7->CreateSurface( /*0x4ba653*/
       (LPDDSURFACEDESC)*((unsigned int *)this + 8),
       (LPDIRECTDRAWSURFACE *)((unsigned char *)this + 28),
       0);
@@ -221,8 +220,7 @@ AbstractClass * * DSurface::CreatePrimary()
   }
   Debug::Log("DSurface::Create_Primary - Creating surface\n"); /*0x4ba887 G57c1: IDA 0x4ba887 push offset aDsurfaceCreate_0*/
   v6 = (int *)(v5 + 7); /*0x4ba897*/
-  v7 = g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba8a1*/
-         g_lpDirectDraw7,
+  v7 = g_lpDirectDraw7->CreateSurface( /*0x4ba8a1*/
          (LPDDSURFACEDESC)v5[8],
          (LPDIRECTDRAWSURFACE *)(v5 + 7),
          0);
@@ -257,7 +255,7 @@ AbstractClass * * DSurface::CreatePrimary()
     v14 = *v6; /*0x4ba964*/
     v5[2] = v13; /*0x4ba966*/
     g_DDraw_PrimarySurface = (LPDIRECTDRAWSURFACE7)(v14); /*0x4ba969*/
-    if ( !g_lpDirectDraw7->lpVtbl->CreateClipper(g_lpDirectDraw7, 0, (LPDIRECTDRAWCLIPPER *)&g_DDraw_Clipper, 0) ) /*0x4ba976*/
+    if ( !g_lpDirectDraw7->CreateClipper(0, (LPDIRECTDRAWCLIPPER *)&g_DDraw_Clipper, 0) ) /*0x4ba976*/
     {
       v15 = *(unsigned int *)g_DDraw_Clipper; /*0x4ba983*/
       ActiveWindow = GetActiveWindow(); /*0x4ba985*/

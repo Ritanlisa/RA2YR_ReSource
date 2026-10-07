@@ -605,24 +605,24 @@ bool Team_Start_76ED10(void * a1, void * a2)
     FindWDTTerritoryClass(&v9, *(int *)dword_A8B240); /*0x76edbf*/
     if ( v10 ) /*0x76edca*/
     {
-      g_abs_A8B270 = *(uint8_t *)(v10 + 14); /*0x76edd7*/
+      *(unsigned int *)&g_abs_A8B270 = *(uint8_t *)(v10 + 14); /*0x76edd7*/
       g_RulesInitConfig = *(uint8_t *)(v10 + 15); /*0x76ede2*/
-      g_abs_A8B25C = *(uint16_t *)(v10 + 16); /*0x76edec*/
+      *(unsigned int *)&g_abs_A8B25C = *(uint16_t *)(v10 + 16); /*0x76edec*/
       v7 = *(unsigned int *)(v10 + 56) >> 2; /*0x76edf5*/
       byte_A8B31D = 0; /*0x76edfd*/
       byte_A8B31C = v7 & 1; /*0x76ee06*/
-      g_abs_A8B258 = (*(unsigned int *)(v10 + 56) & 0x10) != 0; /*0x76ee14*/
+      g_abs_A8B258[0] = (*(unsigned int *)(v10 + 56) & 0x10) != 0; /*0x76ee14*/
       IDA_LOBYTE(v7) = (*(unsigned int *)(v10 + 56) & 0x20) != 0; /*0x76ee20*/
       byte_A8B31F = 0; /*0x76ee22*/
       IDA_LOBYTE(dword_A8B320) = v7; /*0x76ee29*/
-      g_abs_A8B260 = 1; /*0x76ee2f*/
-      g_abs_A8B261 = IDA_BYTE1(*(unsigned int *)(v10 + 56)) & 1; /*0x76ee3d*/
-      g_abs_A8B262 = (*(unsigned int *)(v10 + 56) & 0x400) != 0; /*0x76ee4b*/
+      g_abs_A8B260[0] = 1; /*0x76ee2f*/
+      g_abs_A8B261[0] = IDA_BYTE1(*(unsigned int *)(v10 + 56)) & 1; /*0x76ee3d*/
+      g_abs_A8B262[0] = (*(unsigned int *)(v10 + 56) & 0x400) != 0; /*0x76ee4b*/
       v8 = (*(unsigned int *)(v10 + 56) & 0x200) != 0; /*0x76ee57*/
       IDA_LOBYTE(g_abs_A8B264) = 0; /*0x76ee59*/
-      g_abs_A8B263 = v8; /*0x76ee60*/
-      g_abs_A8B274 = 0; /*0x76ee65*/
-      DataGlobal_A8B278 = (unsigned char *)(1); /*0x76ee6f*/
+      g_abs_A8B263[0] = v8; /*0x76ee60*/
+      *(unsigned int *)&g_abs_A8B274 = 0; /*0x76ee65*/
+      *(unsigned int *)&DataGlobal_A8B278 = 1; /*0x76ee6f*/
     }
     else
     {

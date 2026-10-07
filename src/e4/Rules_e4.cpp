@@ -450,7 +450,7 @@ LABEL_8:
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a5b8*/
+    *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * v6) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v6); /*0x67a5b8*/
     ++v6; /*0x67a5be*/
   }
   while ( v6 < *(unsigned int *)&this->m_5[3] ); /*0x67a5c1*/

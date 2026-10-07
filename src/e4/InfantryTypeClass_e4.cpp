@@ -369,7 +369,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
                                             (uint8_t ***)a2,
                                             inited,
                                             (uint8_t *)aVoicecomment,
-                                            *(void ***)v44.VectorClass,
+                                            *(void ***)&v44,
                                             *(void **)(unsigned int *)((char *)&v44 + 3),
                                             *(int *)(unsigned int *)((char *)&v44 + 3),
                                             ((char *)&v44),
@@ -380,7 +380,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v11 = INIClassIntList; /*0x5241bd*/
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
-  *(unsigned int *)(v4 + 3744) = *(unsigned int *)v11[1].VectorClass; /*0x5241d4*/
+  *(unsigned int *)(v4 + 3744) = *(unsigned int *)((char *)v11 + 24); /*0x5241d4*/
   *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5241d7*/
   ((VectorClass *)((HWND)((int)&v48)))->Destroy(); /*0x5241df*/
   if ( ((INIClass*)/*0x5241fb*/
@@ -613,7 +613,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
         ((DynamicVector *)((DynamicVector *)v5->VoiceComment))->Add_Alt( (unsigned int *)(&a3)); /*0x5249ff*/
         ++v6; /*0x524a04*/
       }
-      while ( v6   <   (int)(a2 ))); /*0x524a09*/
+      while ( v6   <   (int)(a2 )); /*0x524a09*/
     }
     if ( v5 != (InfantryTypeClass *)-3664 ) /*0x524a13*/
     {
@@ -621,7 +621,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
       (&v5->DeadBodies)[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524a20*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a2), 4, 0); /*0x524a33*/
-    for ( i = 0; i   <   (int)(a2)); ++i ) /*0x524a3e*/
+    for ( i = 0; i   <   (int)(a2); ++i ) /*0x524a3e*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a3), 4, 0); /*0x524a4c*/
       ((DynamicVector *)((DynamicVector *)v5->DeadBodies))->Add_Alt4( (unsigned int *)(&a3)); /*0x524a56*/

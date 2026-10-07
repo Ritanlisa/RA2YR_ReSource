@@ -399,7 +399,7 @@ LABEL_28:
           do /*0x5e6ffb*/
           {
             v44 = (SkirmishSetup *)SendDlgItemMessageA((HWND)v37, 1363, 0x199u, v43, 0); /*0x5e6fea*/
-            if ( v44 == aP0 ) /*0x5e6ff0*/
+            if ( v44 == (SkirmishDialog *)aP0 ) /*0x5e6ff0*/
               v42 = v43; /*0x5e6ff2*/
             ++v43; /*0x5e6ff8*/
           }

@@ -979,7 +979,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
                 v73 = v67; /*0x6b379c*/
               }
             }
-            v74 = v71 - DSurface_ViewBounds; /*0x6b37c4*/
+            v74 = v71 - *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds; /*0x6b37c4*/
             v75 = v70 - dword_886FA4; /*0x6b37c6*/
             if ( v66 > 0 && v73 > 0 ) /*0x6b37ce*/
               Cell::CreateCrater( (v74), (v75), (v66), (v73), 0); /*0x6b37e8*/
@@ -1390,7 +1390,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
   {
     v10 = (unsigned int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v6))));
     v29 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v6)));
-    if ( v6 < v9 ) /*0x6b3f0a*/
+    if ( (int)v6 < (int)v9 ) /*0x6b3f0a*/
       break; /*0x6b3f0a*/
   LABEL_27:
     v30 = ++v7; /*0x6b4023*/
@@ -1461,7 +1461,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
     ++v10; /*0x6b400b*/
     v24 *= 2; /*0x6b400c*/
     v29 = (gamemd::AbstractClass **)(v10); /*0x6b4012*/
-    if ( v10 >= (gamemd::AbstractClass **)(v6) + 2 ) /*0x6b4016*/
+    if ( (int)v10 >= (int)v6 + 8 ) /*0x6b4016*/
     {
       v8 = v28; /*0x6b401c*/
       goto LABEL_27; /*0x6b401c*/
@@ -1628,7 +1628,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
         goto LABEL_37; /*0x6b5baf*/
       }
     }
-    if ( (v14 != 1 || *(unsigned int *)(v13 + 668) != 1) && (aP1 <= 60 || a3 <= 50) ) /*0x6b5b2a*/
+    if ( (v14 != 1 || *(unsigned int *)(v13 + 668) != 1) && ((int)aP1 <= 60 || a3 <= 50) ) /*0x6b5b2a*/
       goto LABEL_35; /*0x6b5b2a*/
     if ( v28 >= v12 ) /*0x6b5b30*/
     {
@@ -1786,7 +1786,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
         goto LABEL_37; /*0x6b5e9f*/
       }
     }
-    if ( (v15 != 1 || *(unsigned int *)(v14 + 668) != 1) && (aP1 <= 60 || a3 <= 50) ) /*0x6b5e1a*/
+    if ( (v15 != 1 || *(unsigned int *)(v14 + 668) != 1) && ((int)aP1 <= 60 || a3 <= 50) ) /*0x6b5e1a*/
       goto LABEL_35; /*0x6b5e1a*/
     if ( v29 >= v13 ) /*0x6b5e20*/
     {
@@ -2429,7 +2429,7 @@ int sub_6BB390()
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(MultiByteStr), 39, 0, 0); /*0x6bb3ea*/
   StringFromGUID2(stru_7E9510, sz, 39); /*0x6bb3fb*/
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(String), 39, 0, 0); /*0x6bb419*/
-  lstrcpyA( (LPSTR)(String1), "CLSID\" /*w16g4 "CLSID\" /*w16g4 aClsid*/*/); /*0x6bb42b*/
+  lstrcpyA( (LPSTR)(String1), "CLSID\\" /*w16g4 aClsid*/); /*0x6bb42b*/
   lstrcatA(String1, MultiByteStr); /*0x6bb43d*/
   lstrcpyA( (LPSTR)(SubKey), (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb449*/
   if ( !RegCreateKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, 0) ) /*0x6bb472*/
@@ -2467,10 +2467,10 @@ int sub_6BB390()
     RegCloseKey(phkResult); /*0x6bb596*/
   }
   lstrcpyA( (LPSTR)(SubKey), (LPCSTR)(g_Str_WW_TiberianSun)); /*0x6bb5a6*/
-  if ( "CurVer" /*w16g4 "CurVer" /*w16g4 aCurver*/*/ ) /*0x6bb5b0*/
+  if ( "CurVer" /*w16g4 aCurver*/ ) /*0x6bb5b0*/
   {
     lstrcatA(SubKey, asc_815E74); /*0x6bb5bc*/
-    lstrcatA(SubKey, "CurVer" /*w16g4 "CurVer" /*w16g4 aCurver*/*/); /*0x6bb5c8*/
+    lstrcatA(SubKey, "CurVer" /*w16g4 aCurver*/); /*0x6bb5c8*/
   }
   if ( !RegCreateKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, 0) ) /*0x6bb5eb*/
   {
@@ -2497,15 +2497,15 @@ int sub_6BB390()
     RegCloseKey(phkResult); /*0x6bb6a6*/
   }
   WriteRegistryKeyCOM(String1, 0, (LPCSTR)Data); /*0x6bb6b7*/
-  WriteRegistryKeyCOM(String1, "ProgID" /*w16g4 "ProgID" /*w16g4 aProgid*/*/, (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb6ca*/
-  WriteRegistryKeyCOM(String1, "VersionIndependentProgID" /*w16g4 "VersionIndependentProgID" /*w16g4 aVersionindepen*/*/, g_Str_WW_TiberianSun); /*0x6bb6dd*/
-  WriteRegistryKeyCOM(String1, "NotInsertable" /*w16g4 "NotInsertable" /*w16g4 aNotinsertable*/*/, 0); /*0x6bb6ed*/
-  WriteRegistryKeyCOM(String1, "InprocServer32" /*w16g4 "InprocServer32" /*w16g4 aInprocserver32*/*/, Filename); /*0x6bb703*/
-  WriteRegistryKeyCOM(String1, "Typelib" /*w16g4 "Typelib" /*w16g4 aTypelib*/*/, String); /*0x6bb719*/
+  WriteRegistryKeyCOM(String1, "ProgID" /*w16g4 aProgid*/, (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb6ca*/
+  WriteRegistryKeyCOM(String1, "VersionIndependentProgID" /*w16g4 aVersionindepen*/, g_Str_WW_TiberianSun); /*0x6bb6dd*/
+  WriteRegistryKeyCOM(String1, "NotInsertable" /*w16g4 aNotinsertable*/, 0); /*0x6bb6ed*/
+  WriteRegistryKeyCOM(String1, "InprocServer32" /*w16g4 aInprocserver32*/, Filename); /*0x6bb703*/
+  WriteRegistryKeyCOM(String1, "Typelib" /*w16g4 aTypelib*/, String); /*0x6bb719*/
   pptlib = (ITypeLib *)(0); /*0x6bb722*/
   LoadTypeLib(&szFile, &pptlib); /*0x6bb730*/
   if ( pptlib ) /*0x6bb740*/
-    pptlib->lpVtbl->Release(pptlib); /*0x6bb745*/
+    pptlib->Release(); /*0x6bb745*/
   return 0; /*0x6bb73a*/
 }
 }
@@ -5623,22 +5623,22 @@ int sub_6BB760()
 
   StringFromGUID2(&rguid, sz, 39); /*0x6bb777*/
   WideCharToMultiByte( 0, 0x20u, (LPCWCH)(sz), -1, (LPSTR)(MultiByteStr), 39, 0, 0); /*0x6bb796*/
-  lstrcpyA( (LPSTR)(String1), "CLSID\" /*w16g4 "CLSID\" /*w16g4 aClsid*/*/); /*0x6bb7a6*/
+  lstrcpyA( (LPSTR)(String1), "CLSID\\" /*w16g4 aClsid*/); /*0x6bb7a6*/
   lstrcatA(String1, MultiByteStr); /*0x6bb7b6*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, aWwTiberiansunC); /*0x6bb7cc*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, aWwTiberiansunC_0); /*0x6bb7d8*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, g_Str_WW_TiberianSun); /*0x6bb7e4*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, aWwTiberiansun1_0); /*0x6bb7f0*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb7fc*/
-  wsprintfA(SubKey, "%s\\%s", String1, "ProgID" /*w16g4 "ProgID" /*w16g4 aProgid*/*/); /*0x6bb81b*/
+  wsprintfA(SubKey, "%s\\%s", String1, "ProgID" /*w16g4 aProgid*/); /*0x6bb81b*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb82a*/
-  wsprintfA(SubKey, "%s\\%s", String1, "VersionIndependentProgID" /*w16g4 "VersionIndependentProgID" /*w16g4 aVersionindepen*/*/); /*0x6bb840*/
+  wsprintfA(SubKey, "%s\\%s", String1, "VersionIndependentProgID" /*w16g4 aVersionindepen*/); /*0x6bb840*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb84f*/
-  wsprintfA(SubKey, "%s\\%s", String1, "NotInsertable" /*w16g4 "NotInsertable" /*w16g4 aNotinsertable*/*/); /*0x6bb865*/
+  wsprintfA(SubKey, "%s\\%s", String1, "NotInsertable" /*w16g4 aNotinsertable*/); /*0x6bb865*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb874*/
-  wsprintfA(SubKey, "%s\\%s", String1, "InprocServer32" /*w16g4 "InprocServer32" /*w16g4 aInprocserver32*/*/); /*0x6bb88d*/
+  wsprintfA(SubKey, "%s\\%s", String1, "InprocServer32" /*w16g4 aInprocserver32*/); /*0x6bb88d*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb89c*/
-  wsprintfA(SubKey, "%s\\%s", String1, "Typelib" /*w16g4 "Typelib" /*w16g4 aTypelib*/*/); /*0x6bb8b2*/
+  wsprintfA(SubKey, "%s\\%s", String1, "Typelib" /*w16g4 aTypelib*/); /*0x6bb8b2*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb8c1*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, String1); /*0x6bb8cd*/
   return 0; /*0x6bb8d1*/

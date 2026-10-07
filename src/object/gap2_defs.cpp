@@ -699,11 +699,11 @@ int ObjectClass::CleanupAirstrikeTarget(int a1, int a2) {  // g57b5 W4: raw çœŸå
         }
         *(unsigned int *)(this + 80) = 0; /*0x41d634*/
       }
-      else if ( v3 && *(unsigned int *)(v3 + 660) == this ) /*0x41d64a*/
+      else if ( v3 && *(unsigned int *)(v3 + 660) == (unsigned int)this ) /*0x41d64a*/
       {
         IDA_LOBYTE(v4) = AirstrikeClass::RemoveAircraft((int *)this, v3); /*0x41d64f*/
       }
-      else if ( v4 && *(unsigned int *)(v4 + 660) == this && (*(int *)(v4 + 108) <= 0 || !*(unsigned char *)(v4 + 144)) ) /*0x41d66e*/
+      else if ( v4 && *(unsigned int *)(v4 + 660) == (unsigned int)this && (*(int *)(v4 + 108) <= 0 || !*(unsigned char *)(v4 + 144)) ) /*0x41d66e*/
       {
         IDA_LOBYTE(v4) = WTFMode_ResetUnitFlags((void *)this); /*0x41d678*/
       }
@@ -716,7 +716,7 @@ int ObjectClass::CleanupAirstrikeTarget(int a1, int a2) {  // g57b5 W4: raw çœŸå
         for ( j = *(unsigned int *)(this + 92); j; j = *(unsigned int *)(j + 1496) ) /*0x41d696*/
           *(unsigned int *)(j + 660) = 0; /*0x41d698*/
       }
-      else if ( a2 && (*(unsigned char *)(a2 + 20) & 4) != 0 && *(unsigned int *)(a2 + 660) == this ) /*0x41d6c1*/
+      else if ( a2 && (*(unsigned char *)(a2 + 20) & 4) != 0 && *(unsigned int *)(a2 + 660) == (unsigned int)this ) /*0x41d6c1*/
       {
         IDA_LOBYTE(v4) = AirstrikeClass::RemoveAircraft((int *)this, a2); /*0x41d6c6*/
       }
@@ -931,11 +931,11 @@ int AbstractClass::Construct(_DWORD *a2) {
           v7->vtable1 = &vt_NeuronClass; /*0x43a85f*/
           v7->vtable2 = &vt_NeuronClass; /*0x43a866*/
           v7->vtable3 = &vt_NeuronClass; /*0x43a86d*/
-          if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[1] < ((char *)&g_BuildingLoadQueue_Array) /*0x43a8a5*/
+          if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[1] < *(unsigned int *)&g_BuildingLoadQueue_Array /*0x43a8a5*/
             || (IDA_BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[0]) || !((char *)&g_BuildingLoadQueue_Array))
             && ((unsigned int *)&g_BuildingLoadQueue_Array)[2] > 0
             && (*(unsigned __int8 (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 8))(
-                 &(( (char *)(unsigned int *) )&g_BuildingLoadQueue_Array)[2],
+                 &((unsigned int *)&g_BuildingLoadQueue_Array)[2],
                  ((char *)&g_BuildingLoadQueue_Array) + ((unsigned int *)&g_BuildingLoadQueue_Array)[2],
                  0) )
           {
@@ -1326,7 +1326,7 @@ int FootClass::DrawPlacementPreview() {
         v42 = ((unsigned int *)v40)[0]; /*0x43e016*/
         if ( v42 ) /*0x43e01e*/
           v106 = ((unsigned int *)this)[0] % *(unsigned int *)(v42 + 8); /*0x43e02a*/
-        v43 = this->((unsigned int *)Type)[2]; /*0x43e034*/
+        v43 = ((unsigned int *)this->Type)[2]; /*0x43e034*/
         if ( v43 ) /*0x43e03c*/
         {
           v41 = ((unsigned int *)this)[0] % *(unsigned int *)(v43 + 8); /*0x43e048*/
@@ -1343,7 +1343,7 @@ int FootClass::DrawPlacementPreview() {
                           - 8;
           v89 = (double)*(int *)v105 * -0.1963495408493621; /*0x43e0b6*/
           Matrix2D::Rotate(v124.m_Data, v89); /*0x43e0b9*/
-          *(unsigned int *)v105 = this->((unsigned int *)Type)[0] / 8; /*0x43e0d8*/
+          *(unsigned int *)v105 = ((unsigned int *)this->Type)[0] / 8; /*0x43e0d8*/
           v90 = (float)*(int *)v105; /*0x43e0e0*/
           Matrix3x4::Translate(v124.m_Data, v90); /*0x43e0e3*/
           *(float *)&v115 = -*(float *)&v124.m_Data[3]; /*0x43e109*/
@@ -1383,7 +1383,7 @@ int FootClass::DrawPlacementPreview() {
             || (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], v105) >> 13) + 1) >> 1) & 3) == 3 )
           {
             v101 = 0; /*0x43e27f*/
-            if ( this->((unsigned int *)Type)[1] && this->((unsigned int *)Type)[2] ) /*0x43e28e*/
+            if ( ((unsigned int *)this->Type)[1] && ((unsigned int *)this->Type)[2] ) /*0x43e28e*/
             {
               v48 = this->Type; /*0x43e299*/
               v49 = this->TechnoClass; /*0x43e29f*/
@@ -1420,10 +1420,10 @@ int FootClass::DrawPlacementPreview() {
           IDA_LOBYTE(result) = v101; /*0x43e375*/
           if ( v101 ) /*0x43e37b*/
           {
-            result = (int)&this->((unsigned int *)Type)[1]; /*0x43e387*/
+            result = (int)&((unsigned int *)this->Type)[1]; /*0x43e387*/
             if ( *(unsigned int *)result ) /*0x43e38c*/
             {
-              if ( this->((unsigned int *)Type)[2] ) /*0x43e395*/
+              if ( ((unsigned int *)this->Type)[2] ) /*0x43e395*/
               {
                 v56 = this->Type; /*0x43e3a4*/
                 v57 = this->TechnoClass; /*0x43e3aa*/

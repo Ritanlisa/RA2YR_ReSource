@@ -129,9 +129,9 @@ int SidebarClass::CalcBounds(char a1)
   else if ( byte_A8EB7C ) /*0x6a5144*/
   {
     g_DSurface_SidebarBounds = 158; /*0x6a515b*/
-    v1 = dword_886FA8 + DSurface_ViewBounds; /*0x6a5165*/
+    v1 = dword_886FA8 + *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds; /*0x6a5165*/
     dword_886F98 = 168; /*0x6a5173*/
-    DSurface_SidebarBounds = dword_886FA8 + DSurface_ViewBounds; /*0x6a5181*/
+    DSurface_SidebarBounds = dword_886FA8 + *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds; /*0x6a5181*/
     v2 = dword_886FAC + 32 + dword_886FA4 - 158; /*0x6a5187*/
     g_DSurface_ViewBounds = v2; /*0x6a518e*/
   }

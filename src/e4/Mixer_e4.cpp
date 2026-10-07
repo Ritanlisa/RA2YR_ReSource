@@ -25,7 +25,7 @@ int Mixer::ReleaseChannel()
   result = g_AudioConfigState; /*0x406060*/
   if ( !g_AudioConfigState ) /*0x40606e*/
     goto LABEL_14; /*0x40606e*/
-  if ( *((int **)this + 3) != &dword_87E294 ) /*0x406077*/
+  if ( *((int **)this + 3) != (int *)&dword_87E294 ) /*0x406077*/
     goto LABEL_14; /*0x406077*/
   Mixer_field_00 = this->Mixer_field_00; /*0x406079*/
   if ( !this->Mixer_field_00 ) /*0x406079*/

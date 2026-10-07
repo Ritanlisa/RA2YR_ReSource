@@ -1867,7 +1867,7 @@ LABEL_23:
   if ( a2 )
     v88 = 5;
   v23 = hWnd;
-  DataGlobal_AC1CAC = (unsigned char *)(0);
+  *(unsigned int *)&DataGlobal_AC1CAC = 0;
   EnumChildWindows(hWnd, EnumFunc, 0);
   int v24 = v70;
   int v74 = (int)(DataGlobal_AC1CAC);
@@ -1875,7 +1875,7 @@ LABEL_23:
   int v81 = v83;
   if ( v60 )
     v81 = v83 + v84;
-  DataGlobal_AC4894 = (unsigned char *)(0);
+  *(unsigned int *)&DataGlobal_AC4894 = 0;
   EnumChildWindows(v23, sub_60A250, 0);
   int v67; // [esp+50h] [ebp-174h]
   IDA_HIBYTE(v67) = DataGlobal_AC4894 >= 1;

@@ -672,7 +672,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
   int v13; // ebp
   int j; // edi
   int v17; // [esp+18h] [ebp-8h] BYREF
-  int (__fastcall *)(unsigned int, int); // [esp+1Ch] [ebp-4h]
+  int (__fastcall *v18)(unsigned int, int); // [esp+1Ch] [ebp-4h]
 
   v18 = a2; /*0x732ffc*/
   if ( byte_B0FE64 ) /*0x733008*/
@@ -1060,7 +1060,7 @@ LABEL_42:
 }
 // 0x7336C0
 namespace gamemd {
-int ((E4Recv_7336C0 *)char a1)->DrawUnitExperiencePopup()
+int DrawUnitExperiencePopup(char a1)
 {
 
   int result; // eax
@@ -1669,7 +1669,7 @@ int E4Recv_734F50::sub_734F50()
   WinMain *v3; // [esp+0h] [ebp-4h]
 
   result = dword_B1CF84; /*0x734f50*/
-  if ( (ObjectClass *)dword_B1CF84 != this ) /*0x734f5a*/
+  if ( (ObjectClass *)*(unsigned int *)&dword_B1CF84 != (ObjectClass *)this ) /*0x734f5a*/
   {
     WinMain::ShutdownCleanup(v3); /*0x734f5c*/
     dword_B1CF84 = (int)this; /*0x734f67*/
@@ -1688,7 +1688,7 @@ int E4Recv_734F80::sub_734F80()
   WinMain *v3; // [esp+0h] [ebp-4h]
 
   result = dword_B1CF60; /*0x734f80*/
-  if ( (ObjectClass *)dword_B1CF60 != this ) /*0x734f8a*/
+  if ( (ObjectClass *)*(unsigned int *)&dword_B1CF60 != (ObjectClass *)this ) /*0x734f8a*/
   {
     WinMain::ShutdownCleanup(v3); /*0x734f8c*/
     dword_B1CF60 = (int)this; /*0x734f97*/

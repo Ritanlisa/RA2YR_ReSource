@@ -1666,7 +1666,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
               PlayerProfile = LoadPlayerProfile( /*0x7aba38*/
                                 (ObjectClass *)&v14.ComPtr_field_0x20,
                                 (const char **)&g_WindowManager.__pad_EC[684]);
-              ComPtr::Set( (void *)(&v14), (int)PlayerProfile->?); /*0x7aba45*/
+              ComPtr::Set( (void *)(&v14), (int)PlayerProfile->vtable2); /*0x7aba45*/
               v14.ComPtr_field_0x20 = (int)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7aba4e*/
               ComPtr::Release(  (ComPtr *)&v14.ComPtr_field_0x20); /*0x7aba52*/
             }

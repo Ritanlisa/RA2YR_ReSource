@@ -77,7 +77,7 @@ int AnimClass::Destruct(AnimClass * a2, void *a2_2)
         v4 = (char *)dword_A8E9AC; /*0x422930*/
         do /*0x42294a*/
         {
-          if ( *(AnimClass **)v4 != a2 && *(unsigned char **)(*(unsigned int *)&v4->q_330 == AnimClass_field_0xCC ) /*0x422942*/
+          if ( *(AnimClass **)v4 != a2 && *(unsigned char **)(*(unsigned int *)v4 + 204) == AnimClass_field_0xCC ) /*0x422942*/
             break; /*0x422942*/
           ++v3; /*0x422944*/
           v4 += 4; /*0x422945*/

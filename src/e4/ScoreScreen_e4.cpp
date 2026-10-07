@@ -272,8 +272,8 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   v8 = (int *)(DecodeFrameSHP((int)&v38,(int)(a5), 0, 0)); /*0x778238*/
   if ( v8 ) /*0x77823c*/
   {
-    v28 = (*(int (**)(int *, int, int))(*(void *)((unsigned int)(void *))(a2) + 124))( (int *)(a2), (int)(a4), (int)(a3)); /*0x778251*/
-    v9 = (*(int (**)(int *))(*(void *)((unsigned int)(void *))(a2) + 128))( (int *)(a2)); /*0x77825b*/
+    v28 = (*(int (**)(int *, int, int))(*(unsigned int *)a2 + 124))( (int *)(a2), (int)(a4), (int)(a3)); /*0x778251*/
+    v9 = (*(int (**)(int *))(*(unsigned int *)a2 + 128))( (int *)(a2)); /*0x77825b*/
     v33 = (void *)(0); /*0x778261*/
     v34 = (void *)(0); /*0x778265*/
     v35 = v28; /*0x778269*/
@@ -294,14 +294,14 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v10 = (void *)(0); /*0x7782b5*/
     }
     Render_Draw((int)(v10),(int *)(&v33), 0); /*0x7782bf*/
-    (*(void (**)(int *, int, unsigned int, int))(*(void *)((unsigned int)(void *))(a2) + 4))( (int *)(a2), (int)(v10), 0, 1); /*0x7782cd*/
+    (*(void (**)(int *, int, unsigned int, int))(*(unsigned int *)a2 + 4))( (int *)(a2), (int)(v10), 0, 1); /*0x7782cd*/
     if ( v10 ) /*0x7782d2*/
       (**(void (**)(int, int))v10)((int)v10, 1); /*0x7782da*/
     v11 = 0; /*0x7782e0*/
     v12 = 0; /*0x7782e2*/
     v29 = (*(int (**)(int *))(*v8 + 124))( (int *)(v8)); /*0x7782eb*/
     v30[0] = (*(int (**)(int *))(*v8 + 128))( (int *)(v8)); /*0x7782f5*/
-    if ( (*(int (**)(int *))(*(void *)((unsigned int)(void *))(a2) + 124))( (int *)(a2)) > 1024 ) /*0x778306*/
+    if ( (*(int (**)(int *))(*(unsigned int *)a2 + 124))( (int *)(a2)) > 1024 ) /*0x778306*/
     {
       Viewport =(int *)((Display*)v37)->GetViewport(); /*0x77830c*/
       v31[0] = *Viewport; /*0x778319*/
@@ -328,7 +328,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v17 = (void *)((int)((void *)((*(int (**)(int *))(*v8 + 124))( (int *)(v8)))));
       v18 = (void *)((int)((void *)(*v8)));
       v31[0] = (int)((void *)(v17));
-      v19 = (unsigned int)(void *)((*(int (**)((unsigned int)(int)*))(v18 + 128))( ((unsigned int)(int)*)(v8)));
+      v19 = (unsigned int)(void *)((*(int (__thiscall **)(int *))(v18 + 128))((int *)(v8)));
       v20 = (void *)((int)((void *)(*v8)));
       v34 = (void *)((int)((void *)(v19)));
       v33 = (void *)((int)((void *)(v31[0])));

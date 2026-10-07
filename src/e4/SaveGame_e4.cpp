@@ -536,7 +536,7 @@ LABEL_11:
             while ( 1 )
             {
               v7 = (char *)**((unsigned int **)g_VocAudioConfig + v4); /*0x751692*/
-              v8 = (char *)(v7 ? ((VocClass *)v7)->GetSampleName() : g_Str_Invalid_Voc);
+              v8 = (char *)(v7 ? ((VocClass *)v7)->GetSampleName() : (char *)g_Str_Invalid_Voc);
               if ( !_strcmpi(SampleName, v8) ) /*0x7516a6*/
                 break; /*0x7516a6*/
               if ( ++v4 >= g_VocPlayState ) /*0x7516ba*/

@@ -906,7 +906,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
     }
     vtable3 = (void (**)(void **))((unsigned int *)this)[0]; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
-    vtable3[3](&(( (void **)(unsigned int *) )this)[0]); /*0x74be84*/
+    vtable3[3](&((unsigned int *)this)[0]); /*0x74be84*/
     return 1; /*0x74be89*/
   }
 
@@ -1448,13 +1448,13 @@ int sub_7473E0()
   {
     v3 = (ConvertClass *)RA2_OPNEW(0x188u); /*0x747450*/
     if ( v3 ) /*0x74745a*/
-      dword_B1D140 = (unsigned int)((BuildingClass *)ConvertClass::Construct( )/*0x747478*/
+      dword_B1D140 = (unsigned int)((BuildingClass *)ConvertClass::Construct( /*0x747478*/
                                         v3,
                                         (int)&FileSystem_TEMPERAT_PAL,
                                         (int)&FileSystem_TEMPERAT_PAL,
                                         dword_B1D13C,
                                         1,
-                                        0);
+                                        0));
     else
       dword_B1D140 = 0; /*0x74747f*/
   }
@@ -1838,7 +1838,7 @@ void E4Recv_74BF40::sub_74BF40(unsigned int a2)
   void *vtable2; // edx
 
   v3 = a2; /*0x74bf44*/
-  if ( (void *)a2 >= *(unsigned int *)&this->vfptr ) /*0x74bf4a*/
+  if ( (void *)a2 >= *(void **)&this->vfptr ) /*0x74bf4a*/
     v3 = -1; /*0x74bf4c*/
   vtable2 = (void *)(((unsigned int *)this)[0]); /*0x74bf4f*/
   if ( (void *)v3 != vtable2 ) /*0x74bf54*/

@@ -44,7 +44,7 @@ struct TeamClass {
     unsigned int unknown44;  // 0x44
     char totalObjects[4];  // 0x48
     char totalThreatValue[4];  // 0x4C
-    char creationFrame[4];  // 0x50
+    int creationFrame;  // 0x50
     FootClass* firstUnit;  // 0x54
     char guardAreaTimer[12];  // 0x58
     unsigned char q05C;  // 0x5C

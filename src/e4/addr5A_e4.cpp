@@ -516,7 +516,7 @@ int GenerateTerrainHeightMapInternal()
         IDA_HIWORD(v17) = (unsigned short)(IDA_HIWORD(v16) + v4); /*0x5a3455*/
         v16 = v17; /*0x5a345e*/
         v6 = IDA_SHIWORD(v17) + v5; /*0x5a3468*/
-        if ( v6 > (unsigned int *)(int)(v2) && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
+        if ( v6 > (unsigned int)(v2) && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
         {
           v7 = (unsigned int *)(((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v16));
           if ( ((Cell*)v7)->IsEmpty() ) /*0x5a3496*/
@@ -1049,7 +1049,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       v38 = (int16_t *)PriorityQueue::Pop(v9); /*0x5a4f53*/
       v7 = v41; /*0x5a4f58*/
       v40 = v38; /*0x5a4f5c*/
-      if ( v37 >= aP2 ) /*0x5a4f63*/
+      if ( v37 >= (unsigned int)aP2 ) /*0x5a4f63*/
         break; /*0x5a4f63*/
       v20 = v40; /*0x5a4cf5*/
     }
@@ -1578,7 +1578,7 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
   }
   while ( 1 ) /*0x5a6e05*/
   {
-    if ( (int16_t)v20 >= *aP2 + aP2[2] || IDA_SHIWORD(v20) >= aP2[1] + aP2[3] ) /*0x5a6e24*/
+    if ( (int16_t)v20 >= *(unsigned int *)aP2 + ((unsigned int *)aP2)[2] || IDA_SHIWORD(v20) >= ((unsigned int *)aP2)[1] + ((unsigned int *)aP2)[3] ) /*0x5a6e24*/
     {
       *a0 = 0; /*0x5a6e90*/
       return a0; /*0x5a6e96*/
@@ -1593,7 +1593,7 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
   v11 = v20; /*0x5a6e99*/
   while ( 1 ) /*0x5a6e9d*/
   {
-    if ( v11 >= *aP2 + aP2[2] || IDA_SHIWORD(v20) >= aP2[1] + aP2[3] ) /*0x5a6ebc*/
+    if ( v11 >= *(unsigned int *)aP2 + ((unsigned int *)aP2)[2] || IDA_SHIWORD(v20) >= ((unsigned int *)aP2)[1] + ((unsigned int *)aP2)[3] ) /*0x5a6ebc*/
     {
       *a0 = 0; /*0x5a6f4c*/
       return a0; /*0x5a6f52*/
@@ -1611,9 +1611,9 @@ unsigned int * FindClearPlacementCell(unsigned int *a0, MapSeedClass * aP1, MapS
     v20 = v30; /*0x5a6f2c*/
   }
   v13 = v20; /*0x5a6f67*/
-  v14 = (int16_t)v20 - *aP1; /*0x5a6f6e*/
-  if ( IDA_SHIWORD(v20) - aP1[1] > v14 ) /*0x5a6f72*/
-    v14 = IDA_SHIWORD(v20) - aP1[1]; /*0x5a6f74*/
+  v14 = (int16_t)v20 - *(short *)aP1; /*0x5a6f6e*/
+  if ( IDA_SHIWORD(v20) - ((short *)aP1)[1] > v14 ) /*0x5a6f72*/
+    v14 = IDA_SHIWORD(v20) - ((short *)aP1)[1]; /*0x5a6f74*/
   if ( v14 > 0 ) /*0x5a6f78*/
   {
     v24 = (unsigned int)(v14 + 1); /*0x5a6f89*/
@@ -1709,9 +1709,9 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, int16_t *a1, MapSeedClass
     v16 = -3; /*0x5a70de*/
     v18 = 6; /*0x5a70e6*/
   }
-  while ( (int16_t)v4 < aP2[2] + *aP2 + 1 ) /*0x5a70f2*/
+  while ( (int16_t)v4 < ((unsigned int *)aP2)[2] + *(unsigned int *)aP2 + 1 ) /*0x5a70f2*/
   {
-    if ( IDA_SHIWORD(v21) >= aP2[3] + aP2[1] + 1 ) /*0x5a7117*/
+    if ( IDA_SHIWORD(v21) >= ((unsigned int *)aP2)[3] + ((unsigned int *)aP2)[1] + 1 ) /*0x5a7117*/
       break; /*0x5a7117*/
     v23 = v16 + (int16_t)v4; /*0x5a711f*/
     v24 = v17 + IDA_SHIWORD(v21); /*0x5a712d*/
@@ -1795,7 +1795,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
     || v7 - (int16_t)v14 >= dword_ABED04
     || (int16_t)v14 - v7 >= dword_ABED04
     || v15 > dword_ABED08
-    || (v16 = aP0[3] + v14 - 1, v15 = (int16_t)v16 + (int16_t)result, v15 <= dword_ABED04)
+    || (v16 = ((int *)aP0)[3] + v14 - 1, v15 = (int16_t)v16 + (int16_t)result, v15 <= dword_ABED04)
     || (int16_t)result - (int16_t)v16 >= dword_ABED04
     || (int16_t)v16 - (int16_t)result >= dword_ABED04
     || v15 > dword_ABED08
@@ -1810,7 +1810,7 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
   else
   {
     v10 = v14; /*0x5a7384*/
-    if ( v14 < v14 + aP0[3] ) /*0x5a738a*/
+    if ( v14 < v14 + ((int *)aP0)[3] ) /*0x5a738a*/
     {
       do /*0x5a7418*/
       {
@@ -1842,11 +1842,11 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
             result = *(unsigned int *)aP0;
             ++v11; /*0x5a7405*/
           }
-          while ( v11 < v6 + *aP0 ); /*0x5a73a3*/
+          while ( v11 < v6 + *(int *)aP0 ); /*0x5a73a3*/
         }
         ++v10; /*0x5a740d*/
       }
-      while ( v10 < aP0[3] + aP0[1] ); /*0x5a7418*/
+      while ( v10 < ((int *)aP0)[3] + ((int *)aP0)[1] ); /*0x5a7418*/
     }
     IDA_LOBYTE(result) = 1; /*0x5a7421*/
   }

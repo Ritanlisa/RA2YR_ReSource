@@ -1366,7 +1366,7 @@ int TechnoClass::FindNearbyBuildCell(int a2, int16_t *a3)
       if ( (unsigned __int8)LayerClass_CoordinatesLegal((void *)&stru_87F5F0.__pad_58[416], a3) ) /*0x41961d*/
         break; /*0x41961d*/
   LABEL_7:
-      if ( (int)++v5 >= (int)&IFlyControl `RTTI Type Descriptor' ) /*0x419692*/
+      if ( (int)++v5 >= (int)(&MEMORY[0x817A98]) /*IFlyControl `RTTI Type Descriptor'*/ ) /*0x419692*/
         return 0; /*0x419692*/
     }
     v9 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)&a2->q_120)(a2, v15); /*0x419631*/
@@ -2316,7 +2316,7 @@ int BuildingClass::ProcessDemolish()
     }
     if ( this->Type->LaserFencePost ) /*0x4416ef*/
       BuildingClass::DemolishBridgeCheck(this, 1); /*0x4416fd*/
-    if ( this->((unsigned int *)Type)[0] && !(unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x441718*/
+    if ( ((unsigned int *)this->Type)[0] && !(unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x441718*/
       (*((void (__thiscall **)(BuildingClass *, unsigned int, unsigned int, int, Object *))this->vtable1 + 291))( /*0x44172f*/
         this,
         0,
@@ -2391,13 +2391,13 @@ int BuildingClass::ProcessDemolish()
         if ( v29 ) /*0x4419c8*/
         {
           v30 = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 3); /*0x4419f3*/
-          Explosion = this->((unsigned int *)Type)[0]; /*0x4419f5*/
+          Explosion = ((unsigned int *)this->Type)[0]; /*0x4419f5*/
           v32 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x4419fb*/
           AnimClass::ctor(v29, *(void **)(Explosion[1] + 4 * (v32 % Explosion[4])), &v66, v30, 1, (void *)0x600, 0, 0); /*0x441a1f*/
         }
       }
     }
-    if ( IDA_BYTE1(this->((unsigned int *)Type)[0]) ) /*0x441a31*/
+    if ( IDA_BYTE1(((unsigned int *)this->Type)[0]) ) /*0x441a31*/
     {
       v33 = (int *)&unk_818CB8; /*0x441a3f*/
       do /*0x441b28*/
@@ -2461,7 +2461,7 @@ int BuildingClass::ProcessDemolish()
            ((unsigned int *)this)[0])
        / *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1480) > 0 )
       nullsub_51(v62); /*0x441c34*/
-    if ( (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 97))(this) == 19 || IDA_BYTE1(this->((unsigned int *)Type)[0]) ) /*0x441c4e*/
+    if ( (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 97))(this) == 19 || IDA_BYTE1(((unsigned int *)this->Type)[0]) ) /*0x441c4e*/
     {
       this->C4Timer[0] = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x441c83*/
       this->C4Timer[1] = v74; /*0x441c89*/
@@ -2481,7 +2481,7 @@ int BuildingClass::ProcessDemolish()
     if ( this->*(unsigned int *)&Type->ThreatPosed > 0 ) /*0x441cb8*/
     {
       v43 = *(void **)(this->*(unsigned int *)&Type->ThreatPosed /*0x441ce3*/
-                     + 4 * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % this->((unsigned int *)Type)[4]));
+                     + 4 * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % ((unsigned int *)this->Type)[4]));
       if ( v43 ) /*0x441ce8*/
       {
         v44 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x441cf4*/
@@ -3106,7 +3106,7 @@ void FootClass::ScanCircleForUnits2()
     result = (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 212))(this); /*0x45582a*/
     if ( (unsigned char)result ) /*0x455832*/
     {
-      SensorsSight = this->((unsigned int *)Type)[0]; /*0x455844*/
+      SensorsSight = ((unsigned int *)this->Type)[0]; /*0x455844*/
       relatedTagsCount = ((unsigned int *)this)[0]->relatedTagsCount; /*0x455862*/
       if ( v17 == g_TerrainTypeTable ) /*0x455866*/
       {
@@ -18514,9 +18514,9 @@ int TechnoClass::EjectPassengers()
         if ( v5 > 0 ) /*0x70ff23*/
         {
           ((unsigned int *)v6)[0] = 1; /*0x70ff25*/
-          this->((unsigned int *)locomotorTarget)[0] = 1; /*0x70ff32*/
-          this->((unsigned int *)locomotorTarget)[0] = this; /*0x70ff3f*/
-          this->((unsigned int *)locomotorTarget)[0] = this->owner; /*0x70ff51*/
+          ((unsigned int *)this->locomotorTarget)[0] = 1; /*0x70ff32*/
+          ((unsigned int *)this->locomotorTarget)[0] = this; /*0x70ff3f*/
+          ((unsigned int *)this->locomotorTarget)[0] = this->owner; /*0x70ff51*/
           (*((void (__thiscall **)(FootClass *))this->locomotorTarget->vtable1 + 232))(this->locomotorTarget); /*0x70ff5f*/
           result = (*((int (__thiscall **)(FootClass *, unsigned int, int))this->locomotorTarget->vtable1 + 288))( /*0x70ff71*/
                      this->locomotorTarget,

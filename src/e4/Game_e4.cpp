@@ -1333,15 +1333,15 @@ LABEL_6:
   v9 = 0; /*0x67e54b*/
   if ( !v8 ) /*0x67e551*/
     WinAPI::Wrapper(-2147467261); /*0x67e558*/
-  if ( v8->lpVtbl->OpenStream(v8, (const OLECHAR *)&off_83D5A8, 0, 16, 0, (IStream **)&v9) >= 0 ) /*0x67e577*/
+  if ( v8->OpenStream((const OLECHAR *)&off_83D5A8, 0, 16, 0, (IStream **)&v9) >= 0 ) /*0x67e577*/
   {
     v7 = 0; /*0x67e5a6*/
     ((Game *)&v7)->readIniSettings(); /*0x67e5aa*/
     if ( CoCreateInstance(*(const IID *)&stru_7E9540, 0, 7u, *(const IID *)&riid, (LPVOID *)&ppstgOpen) >= 0 ) /*0x67e5c9*/
     {
       if ( OleRun((LPUNKNOWN)ppstgOpen) >= 0 ) /*0x67e5d8*/
-        ppstgOpen->lpVtbl->QueryInterface(ppstgOpen, &stru_83D598, (void **)&v7); /*0x67e5eb*/
-      ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67e5f4*/
+        ppstgOpen->QueryInterface(&stru_83D598, (void **)&v7); /*0x67e5eb*/
+      ppstgOpen->Release(); /*0x67e5f4*/
     }
     if ( !v7 ) /*0x67e5fd*/
       WinAPI::Wrapper(-2147467261); /*0x67e604*/
@@ -1372,13 +1372,13 @@ LABEL_6:
     LoadingScreen::FreeResources3(); /*0x67e6d5*/
     Debug::Log("LOADING GAME [%s] - Complete\n\n"); /*0x67e6e0 G57w11: IDA push seq @ 0x67e6e0 +1 reg-vararg(s) omitted*/
     if ( pStm ) /*0x67e6ee*/
-      pStm->q000->Release(pStm); /*0x67e6f3*/
+      pStm->Release(); /*0x67e6f3*/
     if ( v7 ) /*0x67e6fc*/
       (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x67e701*/
     if ( v9 ) /*0x67e70a*/
       (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67e70f*/
     if ( v8 ) /*0x67e718*/
-      v8->lpVtbl->Release(v8); /*0x67e71d*/
+      v8->Release(); /*0x67e71d*/
     return 1; /*0x67e722*/
   }
   else
@@ -1386,7 +1386,7 @@ LABEL_6:
     if ( v9 ) /*0x67e57f*/
       (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67e584*/
     if ( v8 ) /*0x67e58d*/
-      v8->lpVtbl->Release(v8); /*0x67e592*/
+      v8->Release(); /*0x67e592*/
     return 0; /*0x67e598*/
   }
 
@@ -1923,7 +1923,7 @@ LABEL_16:
   v13 = (int *)(*(int * *)&MEMORY[0xA8B2DC]); /*0x77e6fc*/
   do /*0x77e740*/
   {
-    sprintf((unsigned char *)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), "%d,%d,%d,%d,%d," /*w16g4 "%d,%d,%d,%d,%d," /*w16g4 aDDDDD_0*/*/, *(v13 - 24), *(v13 - 16), *(v13 - 8), *v13, v13[8]); /*0x77e72f*/
+    sprintf((unsigned char *)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), "%d,%d,%d,%d,%d," /*w16g4 aDDDDD_0*/, *(v13 - 24), *(v13 - 16), *(v13 - 8), *v13, v13[8]); /*0x77e72f*/
     ++v13; /*0x77e734*/
   }
   while ( (int)v13 < (int)MEMORY[0xA8B2FC] ); /*0x77e740*/
@@ -2695,7 +2695,7 @@ void * Game::shutdownGame()
   {
     if ( this == (Game *)1 ) /*0x72d86f*/
     {
-      if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72d87b*/
+      if ( (int)g_DisplayWidth == 640 ) /*0x72d87b*/
         result = (void *)LoadFileSHP( (char *)(off_844CA8), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d883*/
       else
         result = (void *)LoadFileSHP( (char *)(off_844CAC), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d894*/
@@ -2704,7 +2704,7 @@ void * Game::shutdownGame()
     else
     {
       v2 = off_844CB0[0]; /*0x72d89f*/
-      if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x72d8af*/
+      if ( (int)g_DisplayWidth != 640 ) /*0x72d8af*/
         v2 = (char *)(off_844CB4); /*0x72d8b1*/
       result = (void *)LoadFileSHP( (char *)(v2), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d8b7*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876] = (unsigned int)result; /*0x72d8bc*/
@@ -2712,7 +2712,7 @@ void * Game::shutdownGame()
   }
   else
   {
-    if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x72d843*/
+    if ( (int)g_DisplayWidth == 640 ) /*0x72d843*/
       result = (void *)LoadFileSHP( (char *)(off_844CA0), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d84b*/
     else
       result = (void *)LoadFileSHP( (char *)(off_844CA4), (bool *)((bool *)((char *)&g_BuildingLoadQueue_Array + 0xF70 + 1229))); /*0x72d85c*/

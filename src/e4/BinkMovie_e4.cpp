@@ -528,7 +528,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
     if ( a5 ) /*0x433237*/
       BinkMovie_field_0x8 |= 0x80000000; /*0x433239*/
     BinkCopyToBuffer((void *)(this->BinkMovie_field_0x4[0]),(void *)( v6), v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
-    (*(void     ((*(void (**)(int))(*(unsigned int *)aP1 + 96)))(aP1); 
+    (*(void (__thiscall **)(int))(*(unsigned int *)aP1 + 96))(aP1); /*0x43325b*/
   }
   return (gamemd::DSurface *)(int)((BinkMovie *)(this))->BlitToTarget(aP1)
 
@@ -1085,7 +1085,7 @@ AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
     ((Text *)((Text *)v5))->Layout( (unsigned short *)(v17), (int *)(&v15), (unsigned int *)(&v19), v6); /*0x6c9e11*/
     v14 = 0; /*0x6c9e1e*/
     v7 = aP1[4]; /*0x6c9e26*/
-    v8 = *(unsigned int *)&v5[7] * (aP1[3] - 1); /*0x6c9e29*/
+    v8 = *(unsigned int *)&v5[7] * (((unsigned int *)aP1)[3] - 1); /*0x6c9e29*/
     if ( v7 == 2 ) /*0x6c9e30*/
     {
       v9 = (v6 - v15) / 2; /*0x6c9e3d*/

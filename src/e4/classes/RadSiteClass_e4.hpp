@@ -37,7 +37,7 @@ struct RadSiteClass {
     unsigned int RadLevel;  // 0x4C
     unsigned int LevelSteps;  // 0x50
     unsigned int Intensity;  // 0x54
-    char IntensityDecrement[4];  // 0x5C
+    int IntensityDecrement;  // 0x5C
     char q060[4];  // 0x60
     int q064;  // 0x64
     void* q068;  // 0x68

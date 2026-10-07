@@ -520,8 +520,8 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
       if ( ((unsigned char *)&stru_A8B250)[16] == ((v2 & 2) != 0) /*0x5b6920*/
         &&((unsigned char *)&stru_A8B250)[17] == ((v2 & 4) != 0)
         && byte_A8B31F == ((v1 & 8) != 0)
-        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[36] == aP0->onBridge
-        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] == aP0->isFallingDown
+        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[36] == (unsigned int)aP0->onBridge
+        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] == (unsigned int)aP0->isFallingDown
         && g_RulesInitConfig == aP0->q08A
         && *(unsigned int *)&((unsigned char *)&stru_A8B250)[12] == *(unsigned int *)(aP0 + 126)
         && *(unsigned int *)&((unsigned char *)&stru_A8B250)[32] == aP0->q08B

@@ -25,7 +25,7 @@ struct VocClass {
     char Loop[4];  // 0x4C
     char Range[4];  // 0x50
     char MinDelay[4];  // 0x58
-    char MaxFDelta[4];  // 0x64
+    int MaxFDelta;  // 0x64
     char Name;  // 0x6C
     unsigned int u32_7C;  // 0x7C
     char q080[4];  // 0x80
@@ -41,7 +41,7 @@ struct VocClass {
     char q114[4];  // 0x114
     char q128[4];  // 0x128
     unsigned int q130;  // 0x130
-    char Attack[4];  // 0x138
+    int Attack;  // 0x138
 
 // --- flat members (END) ---
     char * GetSampleNameByIndex(int a1);

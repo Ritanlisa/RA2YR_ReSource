@@ -1870,7 +1870,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave(void * aScore_0)
   int v31; // [esp+130h] [ebp-28h]
   char Buffer[32]; // [esp+138h] [ebp-20h] BYREF
 
-  if ( !*this ) /*0x49c0dc*/
+  if ( !*(unsigned int *)this ) /*0x49c0dc*/
     return 0; /*0x49c0dc*/
   v2 = (char *)((unsigned char *)this + 28); /*0x49c0e9*/
   if ( !*((unsigned char *)this + 28) ) /*0x49c0e6*/
@@ -2315,7 +2315,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   char v25[100]; // [esp+F0h] [ebp-64h] BYREF
 
   v2 = (char *)(this); /*0x49d399*/
-  if ( !*this ) /*0x49d39d*/
+  if ( !*(unsigned int *)this ) /*0x49d39d*/
     return 0; /*0x49d39d*/
   v3 = (char *)((unsigned char *)this + 28); /*0x49d3a8*/
   if ( !*((unsigned char *)this + 28) ) /*0x49d3a5*/

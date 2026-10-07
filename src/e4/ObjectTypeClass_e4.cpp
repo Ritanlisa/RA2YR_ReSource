@@ -877,7 +877,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
     ((gamemd::ObjectTypeClass*)aP0)->Image = 0; /*0x5f9856*/
     ((gamemd::ObjectTypeClass*)aP0)->ImageAllocated = 0; /*0x5f985c*/
     ((gamemd::ObjectTypeClass*)aP0)->AlphaImage = 0; /*0x5f9862*/
-    if ( aP0 != (IUnknown *)-580 ) /*0x5f9868*/
+    if ( aP0 != (void *)-580 ) /*0x5f9868*/
     {
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[0] = 0; /*0x5f986a*/
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[1] = 0; /*0x5f986c*/
@@ -885,7 +885,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
       LOBYTE(((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[3]) = 0; /*0x5f9872*/
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[4] = 0; /*0x5f9875*/
     }
-    if ( aP0 != (IUnknown *)-600 ) /*0x5f9880*/
+    if ( aP0 != (void *)-600 ) /*0x5f9880*/
     {
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[5] = 0; /*0x5f9882*/
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[6] = 0; /*0x5f9884*/
@@ -893,7 +893,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
       LOBYTE(((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[8]) = 0; /*0x5f988a*/
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[9] = 0; /*0x5f988d*/
     }
-    if ( aP0 != (IUnknown *)-620 ) /*0x5f9898*/
+    if ( aP0 != (void *)-620 ) /*0x5f9898*/
     {
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[10] = 0; /*0x5f989a*/
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[11] = 0; /*0x5f989c*/
@@ -901,7 +901,7 @@ int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
       LOBYTE(((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[13]) = 0; /*0x5f98a2*/
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[14] = 0; /*0x5f98a5*/
     }
-    if ( aP0 != (IUnknown *)-640 ) /*0x5f98b0*/
+    if ( aP0 != (void *)-640 ) /*0x5f98b0*/
     {
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[15] = 0; /*0x5f98b2*/
       ((unsigned int *)&((gamemd::ObjectTypeClass*)aP0)->VoxelCaches)[16] = 0; /*0x5f98b4*/

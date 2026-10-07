@@ -689,7 +689,7 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
     int v7; // ecx
 
     v3 = a2; /*0x75e440*/
-    if ( (void *)a2 == *(unsigned int *)&this->q140 ) /*0x75e44c*/
+    if ( (void *)a2 == *(void **)&this->q140 ) /*0x75e44c*/
       this->q140 = 0; /*0x75e44e*/
     pad_104 = (char *)(this->__pad_104); /*0x75e459*/
     a2 = v3; /*0x75e463*/
@@ -891,52 +891,52 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     *(unsigned char *)(v4 + 308) = INIClass::ReadBool_Overwrite( /*0x772148*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "CellRangefinding" /*w16g4 "CellRangefinding" /*w16g4 aCellrangefindi*/*/,
+                             "CellRangefinding" /*w16g4 aCellrangefindi*/,
                              *(unsigned char *)(v4 + 308));
     *(unsigned char *)(v4 + 309) = INIClass::ReadBool_Overwrite( /*0x772162*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "FireOnce" /*w16g4 "FireOnce" /*w16g4 aFireonce*/*/,
+                             "FireOnce" /*w16g4 aFireonce*/,
                              *(unsigned char *)(v4 + 309));
     *(unsigned char *)(v4 + 310) = INIClass::ReadBool_Overwrite( /*0x77217c*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "NeverUse" /*w16g4 "NeverUse" /*w16g4 aNeveruse*/*/,
+                             "NeverUse" /*w16g4 aNeveruse*/,
                              *(unsigned char *)(v4 + 310));
     *(unsigned char *)(v4 + 311) = INIClass::ReadBool_Overwrite( /*0x772196*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "RevealOnFire" /*w16g4 "RevealOnFire" /*w16g4 aRevealonfire*/*/,
+                             "RevealOnFire" /*w16g4 aRevealonfire*/,
                              *(unsigned char *)(v4 + 311));
     *(unsigned char *)(v4 + 312) = INIClass::ReadBool_Overwrite( /*0x7721b0*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "TerrainFire" /*w16g4 "TerrainFire" /*w16g4 aTerrainfire*/*/,
+                             "TerrainFire" /*w16g4 aTerrainfire*/,
                              *(unsigned char *)(v4 + 312));
     *(unsigned char *)(v4 + 313) = INIClass::ReadBool_Overwrite( /*0x7721ca*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "SabotageCursor" /*w16g4 "SabotageCursor" /*w16g4 aSabotagecursor*/*/,
+                             "SabotageCursor" /*w16g4 aSabotagecursor*/,
                              *(unsigned char *)(v4 + 313));
     *(unsigned char *)(v4 + 314) = INIClass::ReadBool_Overwrite( /*0x7721e4*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "MigAttackCursor" /*w16g4 "MigAttackCursor" /*w16g4 aMigattackcurso*/*/,
+                             "MigAttackCursor" /*w16g4 aMigattackcurso*/,
                              *(unsigned char *)(v4 + 314));
     *(unsigned char *)(v4 + 315) = INIClass::ReadBool_Overwrite( /*0x7721fe*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "DisguiseFireOnly" /*w16g4 "DisguiseFireOnly" /*w16g4 aDisguisefireon*/*/,
+                             "DisguiseFireOnly" /*w16g4 aDisguisefireon*/,
                              *(unsigned char *)(v4 + 315));
     *(unsigned char *)(v4 + 320) = INIClass::ReadBool_Overwrite( /*0x772218*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "InfiniteMindControl" /*w16g4 "InfiniteMindControl" /*w16g4 aInfinitemindco*/*/,
+                             "InfiniteMindControl" /*w16g4 aInfinitemindco*/,
                              *(unsigned char *)(v4 + 320));
     *(unsigned char *)(v4 + 321) = INIClass::ReadBool_Overwrite( /*0x772232*/
                              &a1->vtable0,
                              (unsigned __int8 *)(v4 + 36),
-                             "FireWhileMoving" /*w16g4 "FireWhileMoving" /*w16g4 aFirewhilemovin*/*/,
+                             "FireWhileMoving" /*w16g4 aFirewhilemovin*/,
                              *(unsigned char *)(v4 + 321));
     *(unsigned char *)(v4 + 322) = INIClass::ReadBool_Overwrite( /*0x77224c*/
                              &a1->vtable0,

@@ -445,9 +445,9 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
         v23 = v40; /*0x456c83*/
   LABEL_20:
         v29 = *v16; /*0x456d78*/
-        v47[0] = v23 - DSurface_ViewBounds; /*0x456d88*/
+        v47[0] = v23 - *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds; /*0x456d88*/
         IDA_HIDWORD(v48) = v20 - dword_886FA4; /*0x456d91*/
-        IDA_LODWORD(v48) = v21 - DSurface_ViewBounds; /*0x456da3*/
+        IDA_LODWORD(v48) = v21 - *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds; /*0x456da3*/
         v31 = v29; /*0x456da7*/
         v47[1] = v22 - dword_886FA4; /*0x456dc9*/
         IDA_LOBYTE(v14) = (*(int (**)(int, int *, double *, unsigned int *, int *, int, int, unsigned int, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 60))( /*0x456dd8*/
@@ -857,7 +857,7 @@ void * E4Recv_45DD20::sub_45DD20()
 
   v1 = 0; /*0x45dd20*/
   v2 = (ObjectClass **)&stru_81926C.Name[8]; /*0x45dd22*/
-  while ( *v2 != this ) /*0x45dd29*/
+  while ( *v2 != (ObjectClass *)this ) /*0x45dd29*/
   {
     v2 += 2; /*0x45dd2b*/
     ++v1; /*0x45dd2e*/

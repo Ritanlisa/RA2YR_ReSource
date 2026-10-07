@@ -82,15 +82,15 @@ char PlaceCabhutMap(FootClass * aP0)
 
   aP0 = (gamemd::FootClass *)((int)(aP0));
   v2 = (int)(aP0[1]);
-  if ( v2 >= aP0[3] + v2 + 1 ) /*0x5904c7*/
+  if ( v2 >= ((int *)aP0)[3] + v2 + 1 ) /*0x5904c7*/
     return 0; /*0x59052b*/
   while ( 1 ) /*0x5904c9*/
   {
     v3 = (int)(*aP0);
-    if ( *aP0 < aP0[2] + *aP0 + 1 ) /*0x5904d5*/
+    if ( *(int *)aP0 < ((int *)aP0)[2] + *(int *)aP0 + 1 ) /*0x5904d5*/
       break; /*0x5904d5*/
   LABEL_7:
-    if ( ++v2 >= aP0[3] + aP0[1] + 1 ) /*0x590529*/
+    if ( ++v2 >= ((int *)aP0)[3] + ((int *)aP0)[1] + 1 ) /*0x590529*/
       return 0; /*0x590529*/
   }
   while ( 1 ) /*0x5904db*/
@@ -101,7 +101,7 @@ char PlaceCabhutMap(FootClass * aP0)
     v4 = v4; /*0x5904f0*/
     if ( v4[17] == -1 && ((Cell*)v4)->IsEmpty() && !v4[57] ) /*0x590503*/
       break; /*0x590503*/
-    if ( ++v3 >= aP0[2] + *aP0 + 1 ) /*0x59051a*/
+    if ( ++v3 >= ((int *)aP0)[2] + *(int *)aP0 + 1 ) /*0x59051a*/
       goto LABEL_7; /*0x59051a*/
   }
   v7 = (void *)((SuperWeaponTypeClass *)(aNeutral))->FindByName(); /*0x59053c*/

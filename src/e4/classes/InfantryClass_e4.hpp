@@ -58,7 +58,7 @@ struct InfantryClass {
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
     char q060[4];  // 0x60
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     bool bombVisible;  // 0x68
     unsigned int health;  // 0x6C
     unsigned int estimatedHealth;  // 0x70
@@ -88,8 +88,8 @@ struct InfantryClass {
     void* suspendedMission;  // 0xB0
     void* queuedMission;  // 0xB4
     bool missionQueued;  // 0xB8
-    char missionStatus[4];  // 0xBC
-    char missionStartTime[4];  // 0xC0
+    int missionStatus;  // 0xBC
+    int missionStartTime;  // 0xC0
     char missionTimer[4];  // 0xC8
     unsigned int q0D0;  // 0xD0
     unsigned int lastCommands;  // 0xD4
@@ -109,7 +109,7 @@ struct InfantryClass {
     bool inAirFlag;  // 0x134
     unsigned int currentRank;  // 0x13C
     void* gattlingStage;  // 0x140
-    char gattlingValue[4];  // 0x144
+    unsigned int gattlingValue;  // 0x144
     unsigned int ammoReloadTimer;  // 0x148
     HouseClass* initialOwner;  // 0x14C
     void* veterancy;  // 0x150

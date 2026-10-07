@@ -1269,14 +1269,14 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
   unsigned int v12; // ebx
   HWND v13; // eax
   LPARAM v15; // ebp
-  void (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // edi
+  void (__stdcall *v16)(HWND, UINT, WPARAM, LPARAM); // edi
   LRESULT v17; // eax
   const wchar_t *v18; // eax
   const wchar_t *v19; // eax
   char *v20; // eax
   int v21; // eax
   uint16_t v22; // bx
-  void (__stdcall *)(HWND, WNDENUMPROC, LPARAM); // edi
+  void (__stdcall *v23)(HWND, WNDENUMPROC, LPARAM); // edi
   wchar_t *v24; // [esp-4h] [ebp-44h]
   unsigned char v25[4]; // [esp+10h] [ebp-30h] BYREF
   LPARAM lParam; // [esp+14h] [ebp-2Ch] BYREF
@@ -1649,7 +1649,7 @@ CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * 
     v11 = &g_TypeClass_DefaultString; /*0x6238b1*/
   v14 = wcslen(v11); /*0x6238b7*/
   v15 = (unsigned int)aP3; /*0x6238bc*/
-  if ( aP3 < 0 || aP3 > v14 ) /*0x6238cc*/
+  if ( (int)aP3 < 0 || (int)aP3 > v14 ) /*0x6238cc*/
     v15 = 0; /*0x6238ce*/
   if ( a8 ) /*0x6238d9*/
   {
@@ -1737,7 +1737,7 @@ CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * 
     v58[0] = v30; /*0x623a97*/
     v32 = *aP0; /*0x623a9f*/
     v58[3] = v28; /*0x623aa4*/
-    aP0->vt_slot_20(v58, 0); /*0x623aa8*/
+    (*(void (__stdcall **)(void *, int))(*(unsigned int *)aP0 + 20))(v58, 0); /*0x623aa8*/
     v24 = v49; /*0x623aab*/
   }
   if ( v51 ) /*0x623ab5*/

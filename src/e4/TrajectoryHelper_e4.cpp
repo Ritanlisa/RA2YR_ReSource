@@ -61,9 +61,9 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   v8 = abs32(SHIWORD(v21) - SHIWORD(v18)); /*0x4cc1af*/
   if ( v7 <= v8 ) /*0x4cc1b3*/
     v7 = v8; /*0x4cc1b5*/
-  v9 = v6 - aP0[1]; /*0x4cc1bf*/
-  v10 = v5 - *aP0; /*0x4cc1c5*/
-  v11 = a1[2] - aP0[2]; /*0x4cc1ca*/
+  v9 = v6 - ((unsigned int *)aP0)[1]; /*0x4cc1bf*/
+  v10 = v5 - *(unsigned int *)aP0; /*0x4cc1c5*/
+  v11 = ((int *)a1)[2] - ((unsigned int *)aP0)[2]; /*0x4cc1ca*/
   if ( v7 ) /*0x4cc1ce*/
   {
     v30 = v10 / v7; /*0x4cc1f0*/
@@ -88,9 +88,9 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   v19 = 0; /*0x4cc243*/
   while ( 1 ) /*0x4cc254*/
   {
-    v14 = *aP0 + v19; /*0x4cc254*/
-    v15 = v20 + aP0[1]; /*0x4cc259*/
-    result = TrajectoryHelper::GetObstacle( (unsigned char *)(v28), (unsigned char *)(v27), (int)v13, v14, v15, aP0[2] + v22, arg0, (void *)(a3)); /*0x4cc281*/
+    v14 = *(unsigned int *)aP0 + v19; /*0x4cc254*/
+    v15 = v20 + ((unsigned int *)aP0)[1]; /*0x4cc259*/
+    result = TrajectoryHelper::GetObstacle( (unsigned char *)(v28), (unsigned char *)(v27), (int)v13, v14, v15, ((unsigned int *)aP0)[2] + v22, arg0, (void *)(a3)); /*0x4cc281*/
     if ( result ) /*0x4cc288*/
       break; /*0x4cc288*/
     LOWORD(v23) = v14 / 256; /*0x4cc2a2*/

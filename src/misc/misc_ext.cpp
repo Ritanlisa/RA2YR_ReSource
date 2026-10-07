@@ -1094,7 +1094,7 @@ int CSFClass::LoadFile()
 
     if ( dword_B1CF80 ) /*0x7346af*/
       return 1; /*0x7346be*/
-    if ( !this || !*this ) /*0x7346c7*/
+    if ( !this || !*(unsigned int *)this ) /*0x7346c7*/
       return 0; /*0x7346ca*/
     dword_B1CF68 = (int)this; /*0x7346d0*/
     dword_B1CF80 = 1; /*0x7346dd*/
@@ -14454,9 +14454,9 @@ void BlowStraw::Constructor_MixFileClass(void * Block, char a2)
         if ( v6 ) /*0x5b468a*/
         {
           *(unsigned int *)(v6 + 4) = Previous; /*0x5b468c*/
-          *(unsigned int *)this->?[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b4695*/
+          *(unsigned int *)&this->Blowfish = *(unsigned int *)&this->Blowfish; /*0x5b4695*/
           *(unsigned int *)&this->Blowfish = 0; /*0x5b4698*/
-          this->? = 0; /*0x5b469b*/
+          this->Previous = 0; /*0x5b469b*/
         }
       }
     }
@@ -14470,9 +14470,9 @@ void BlowStraw::Constructor_MixFileClass(void * Block, char a2)
         if ( v8 ) /*0x5b46b4*/
         {
           *(unsigned int *)(v8 + 4) = v7; /*0x5b46b6*/
-          *(unsigned int *)this->?[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b46bf*/
+          *(unsigned int *)&this->Blowfish = *(unsigned int *)&this->Blowfish; /*0x5b46bf*/
           *(unsigned int *)&this->Blowfish = 0; /*0x5b46c2*/
-          this->? = 0; /*0x5b46c5*/
+          this->Previous = 0; /*0x5b46c5*/
         }
       }
     }
@@ -16764,14 +16764,14 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
               v46.owningHouseIndex = 0; /*0x7a7916*/
               IDA_LOBYTE(v46.fallRate) = 0; /*0x7a791e*/
               ReadRegistryOptionsWOL((ObjectClass *)&v46.owningHouseIndex); /*0x7a7923*/
-              ComPtr::Constructor((ComPtr *)&v46.?); /*0x7a792c*/
-              v46.? = (int)(void *)&rc_ptr_PlayerProfile_vftable; /*0x7a793a*/
+              ComPtr::Constructor((ComPtr *)&v46.uniqueId); /*0x7a792c*/
+              v46.uniqueId = (int)(void *)&rc_ptr_PlayerProfile_vftable; /*0x7a793a*/
               if ( (unsigned __int8)Flag::IsNot2((Flag *)&v46.owningHouseIndex) ) /*0x7a793e*/
               {
-                PlayerProfile = LoadPlayerProfile((ObjectClass *)&v46.?, (const char **)&g_WindowManager.__pad_EC[684]); /*0x7a7950*/
-                ComPtr::Set((ComPtr *)&v46.?, (int)PlayerProfile->?); /*0x7a795d*/
-                v46.? = (unsigned int)(void *)&rc_ptr_PlayerProfile_vftable; /*0x7a7966*/
-                ComPtr::Release((ComPtr *)&v46.?); /*0x7a796a*/
+                PlayerProfile = LoadPlayerProfile((ObjectClass *)&v46.vtable2, (const char **)&g_WindowManager.__pad_EC[684]); /*0x7a7950*/
+                ComPtr::Set((ComPtr *)&v46.uniqueId, (int)PlayerProfile->vtable2); /*0x7a795d*/
+                v46.vtable2 = (unsigned int)(void *)&rc_ptr_PlayerProfile_vftable; /*0x7a7966*/
+                ComPtr::Release((ComPtr *)&v46.vtable2); /*0x7a796a*/
               }
               else
               {
@@ -42388,7 +42388,7 @@ void WorldDomination::SetupTerritoryNodes()
       v5 = *(ObjectClass **)(*(unsigned int *)(this + 192) + 4 * i); /*0x7680fa*/
       if ( v5 ) /*0x7680ff*/
       {
-        vtable1 = (void (__thiscall ***)(unsigned int, int))v5->?; /*0x768101*/
+        vtable1 = (void (__thiscall ***)(unsigned int, int))v5->q004; /*0x768101*/
         if ( vtable1 ) /*0x768106*/
           (**vtable1)(vtable1, 1); /*0x76810c*/
         DeleteAndZero(v5); /*0x768110*/

@@ -640,7 +640,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                   Object::SpawnAtCell( /*0x74a427*/
                     (void *)v94,
                     *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
-                              + 4 * ((int)v44->altObject + (unsigned int)v44->((unsigned int *)jumpjet)[0] + 2 * v43[284] + v45)
+                              + 4 * ((int)v44->altObject + (unsigned int)((unsigned int *)v44->jumpjet)[0] + 2 * v43[284] + v45)
                               - 8),
                     (int16_t *)&v93,
                     -1);
@@ -655,7 +655,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                   v46 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
                   Object::SpawnAtCell( /*0x74a477*/
                     (void *)v94,
-                    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v44->((unsigned int *)jumpjet)[0] + v46)),
+                    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)((unsigned int *)v44->jumpjet)[0] + v46)),
                     (int16_t *)&v95,
                     -1);
                 }
@@ -740,7 +740,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                   *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
                             + 4
                             * ((int)v56->altObject
-                             + (unsigned int)v56->((unsigned int *)jumpjet)[0]
+                             + (unsigned int)((unsigned int *)v56->jumpjet)[0]
                              + 2 * (uint8_t)v55->slopeIndex
                              + v58)
                             - 8),
@@ -757,7 +757,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 v60 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 11); /*0x74a6a8*/
                 Object::SpawnAtCell( /*0x74a6ce*/
                   v59,
-                  *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v56->((unsigned int *)jumpjet)[0] + v60)),
+                  *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)((unsigned int *)v56->jumpjet)[0] + v60)),
                   (int16_t *)&smudgeTypeIndex,
                   -1);
               }

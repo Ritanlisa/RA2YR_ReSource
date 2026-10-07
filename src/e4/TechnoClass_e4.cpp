@@ -920,14 +920,11 @@ LABEL_67:
   return (Coord * *)result; /*0x7030cc*/
 
 }
-  return result; /*0x7030cc*/
-
-}
 } // namespace ra2
 
 // 0x705860
 namespace gamemd {
-int TechnoClass::DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
+int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 
   int v6; // ebp
@@ -1365,8 +1362,8 @@ int TechnoClass_DrawVoxel(TechnoClass *ecx0, __int64 a2, int a3, int a4, int a5,
   int v10 = ecx0[433];
   if ( !(*(uint8_t (**)(unsigned int *, int))(*ecx0 + 1088))(ecx0, HouseClass_Player.field_0) )
     v10 = (*(int (**)(unsigned int *, int))(*ecx0 + 204))(ecx0, 1);
-  if ( *((unsigned char *)ecx0 + 1760) && *(unsigned int *)(ecx0[433] + 1720) )
-    v10 = *(unsigned int *)(ecx0[433] + 1720);
+  if ( *((unsigned char *)ecx0 + 1760) && *(unsigned int *)(((unsigned int *)ecx0)[433] + 1720) )
+    v10 = *(unsigned int *)(((unsigned int *)ecx0)[433] + 1720);
   int v11 = ecx0[334] % *(unsigned int *)(*(unsigned int *)(v10 + 180) + 8);
   v122 = 0;
   v125 = v11;
@@ -1395,7 +1392,7 @@ LABEL_10:
   *((unsigned char *)ecx0 + 1747) = 1;
   v133 = v14;
   aP3 = (TechnoClass *)((((unsigned char *)&stru_87C374)[45220] != 0) - 1);
-  if ( !ecx0[413] )
+  if ( !((unsigned int *)ecx0)[413] )
     WinAPI::Wrapper(-2147467261);
   int v15; // eax
 v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 36))( ecx0[413], (float *)(v145), (TechnoClass **)(&aP3));
@@ -1420,7 +1417,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
   aP6.Width = DWORD1(xmmword_B1CFA8);
   aP6.Height = DWORD2(xmmword_B1CFA8);
   aP6.LockCount = IDA_HIDWORD(xmmword_B1CFA8);
-  if ( !*(unsigned char *)(ecx0[433] + 488) || ((SpawnManagerClass *)(int *)ecx0[180])->CountDockedSpawns() )
+  if ( !*(unsigned char *)(((unsigned int *)ecx0)[433] + 488) || ((SpawnManagerClass *)(int *)((unsigned int *)ecx0)[180])->CountDockedSpawns() )
   {
     int v20 = *ecx0;
     v90 = started;
@@ -1513,7 +1510,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
     goto LABEL_81;
   }
   v117 = 0;
-  if ( !TechnoClass::OwnerHasPower(ecx0) || *(unsigned char *)(ecx0[433] + 3285) )
+  if ( !TechnoClass::OwnerHasPower(ecx0) || *(unsigned char *)(((unsigned int *)ecx0)[433] + 3285) )
   {
     if ( *(unsigned int *)(v10 + 192) && *(unsigned int *)(v10 + 196) )
     {

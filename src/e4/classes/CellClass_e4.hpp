@@ -61,11 +61,11 @@ struct CellClass {
     char level[1];  // 0x11B
     unsigned char slopeIndex;  // 0x11C
     unsigned char powerup;  // 0x11E
-    char shroudedness[1];  // 0x120
-    char foggedness[1];  // 0x121
+    char shroudedness;  // 0x120
+    char foggedness;  // 0x121
     unsigned int occupationFlags;  // 0x124
     unsigned int altOccupationFlags;  // 0x128
-    char copyFlags[4];  // 0x12C
+    int copyFlags;  // 0x12C
     char shroudCounter[4];  // 0x130
     unsigned int gapsCoveringThisCell;  // 0x134
     unsigned int CellClass_field_13C;  // 0x13C
@@ -76,7 +76,6 @@ struct CellClass {
     unsigned int u32_2F4;
     unsigned int u32_E4;
     unsigned int objectTypeFlags;
-    void* FindOpenNeighbor;  // 0x0 (no offset truth)
     void* RevealFogRect;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char UpdateTerrain(unsigned short *a1, int a2);  // G57w10-S raw 0x0056F8B0 IUnknown 占位清除

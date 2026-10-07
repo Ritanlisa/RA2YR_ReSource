@@ -46,7 +46,7 @@ char E4Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1)
       ++v3; /*0x74f707*/
       *((unsigned int *)((unsigned int *)this)[0] + v3 - 1) = *((unsigned int *)((unsigned int *)this)[0] + v3); /*0x74f70b*/
     }
-    while ( v3 < ((unsigned int *)this)[0] ); /*0x74f714*/
+    while ( (int)v3 < *(int **)this ); /*0x74f714*/
   }
   return 1; /*0x74f719*/
 

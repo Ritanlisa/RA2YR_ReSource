@@ -342,7 +342,7 @@ int sub_7C8F46()
 namespace gamemd {
 int sub_7A2EA0(int (__stdcall ***)(unsigned int, void *, int *), int a2, int a3, int a4)
 {
-  int (__stdcall **)(unsigned int, void *, int *); // ecx
+  int (__stdcall **v4)(unsigned int, void *, int *); // ecx
   int v5; // esi
   int v7; // [esp+24h] [ebp-8h] BYREF
   int v8; // [esp+28h] [ebp-4h] BYREF

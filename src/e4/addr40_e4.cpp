@@ -650,7 +650,7 @@ void sub_403FA0(ObjectClass * a1)
   if ( g_AudioConfigState ) /*0x403fac*/
   {
     v2 = *(unsigned int *)&g_AudioStreamObject; /*0x403fb2*/
-    if ( *(DListNode **)&g_AudioStreamObject!= &g_AudioStreamObject ) /*0x403fbe*/
+    if ( *(DListNode **)&g_AudioStreamObject!= (DListNode *)&g_AudioStreamObject ) /*0x403fbe*/
     {
       a1 = a1; /*0x403fc4*/
       do /*0x40405f*/
@@ -689,11 +689,11 @@ void sub_403FA0(ObjectClass * a1)
         v2 = (int)v3; /*0x404050*/
         --dword_87E28C; /*0x404059*/
       }
-      while ( v3 != g_AudioStreamObject ); /*0x40405f*/
+      while ( v3 != *(unsigned int *)&g_AudioStreamObject ); /*0x40405f*/
       v2 = *(unsigned int *)&g_AudioStreamObject; /*0x404065*/
       a1 = a1; /*0x40406b*/
     }
-    if ( g_AudioConfigState && (DListNode *)v2 != &g_AudioStreamObject ) /*0x40407a*/
+    if ( g_AudioConfigState && (DListNode *)v2 != (DListNode *)&g_AudioStreamObject ) /*0x40407a*/
     {
       do /*0x4040c3*/
       {
@@ -710,7 +710,7 @@ void sub_403FA0(ObjectClass * a1)
         }
         v2 = (int)v6; /*0x4040c1*/
       }
-      while ( v6 != g_AudioStreamObject ); /*0x4040c3*/
+      while ( v6 != *(unsigned int *)&g_AudioStreamObject ); /*0x4040c3*/
     }
   }
   for ( i = (LinkedList *)((AudioQueue *)((AudioQueue *)&stru_87E250))->GetNext(); /*0x4040d5*/
@@ -791,7 +791,7 @@ void Audio_Process()
   dword_87E2B4 = 1; /*0x404204*/
   ++dword_87E2AC; /*0x40420e*/
   v3 = *(DListNode **)&g_AudioStreamObject; /*0x404214*/
-  if ( *(DListNode **)&g_AudioStreamObject!= &g_AudioStreamObject ) /*0x404216*/
+  if ( *(DListNode **)&g_AudioStreamObject!= (DListNode *)&g_AudioStreamObject ) /*0x404216*/
   {
     do /*0x404349*/
     {
@@ -856,16 +856,16 @@ void Audio_Process()
       }
       v3 = *(DListNode **)v3->__pad_0; /*0x404340*/
     }
-    while ( v3 != g_AudioStreamObject ); /*0x404349*/
+    while ( v3 != *(unsigned int *)&g_AudioStreamObject ); /*0x404349*/
     v2 = *(unsigned int *)&g_AudioStreamObject; /*0x40434f*/
-    if ( *(DListNode **)&g_AudioStreamObject!= &g_AudioStreamObject ) /*0x40435b*/
+    if ( *(DListNode **)&g_AudioStreamObject!= (DListNode *)&g_AudioStreamObject ) /*0x40435b*/
     {
       do /*0x40436f*/
       {
         UpdateVoicePlayback((gamemd::TechnoClass *)((ObjectClass *)v2)); /*0x404362*/
         v2 = *(unsigned int *)v2; /*0x404367*/
       }
-      while ( (DListNode *)v2 != g_AudioStreamObject ); /*0x40436f*/
+      while ( (DListNode *)v2 != *(DListNode **)&g_AudioStreamObject ); /*0x40436f*/
       v2 = *(unsigned int *)&g_AudioStreamObject; /*0x404371*/
     }
   }
@@ -886,7 +886,7 @@ void Audio_Process()
   }
   while ( v15 ); /*0x40439c*/
   ++dword_87E2B0; /*0x4043ab*/
-  if ( (DListNode *)v2 == &g_AudioStreamObject ) /*0x4043b1*/
+  if ( (DListNode *)v2 == (DListNode *)&g_AudioStreamObject ) /*0x4043b1*/
   {
   LABEL_58:
     v31 = 0x4000; /*0x40457b*/
@@ -978,7 +978,7 @@ void Audio_Process()
   LABEL_55:
     v2 = (int)v40; /*0x404555*/
   }
-  while ( v40 != g_AudioStreamObject ); /*0x40455f*/
+  while ( v40 != *(unsigned int *)&g_AudioStreamObject ); /*0x40455f*/
   if ( v42 <= 100 ) /*0x40456c*/
     goto LABEL_58; /*0x40456c*/
   v31 = 0x190000u / v42; /*0x404577*/
@@ -986,7 +986,7 @@ void Audio_Process()
   RequestBufferMixer( (VolumeStruct*)((unsigned int *)&stru_87E1B8), v31); /*0x404580*/
   result = ((Audio *)(char *)&stru_87E1B8)->InitChannels(); /*0x40458f*/
   v32 = *(DListNode **)&g_AudioStreamObject; /*0x404594*/
-  if ( *(DListNode **)&g_AudioStreamObject== &g_AudioStreamObject ) /*0x4045a0*/
+  if ( *(DListNode **)&g_AudioStreamObject== (DListNode *)&g_AudioStreamObject ) /*0x4045a0*/
   {
     dword_87E2B4 = 0; /*0x4046e6*/
   }
@@ -1028,7 +1028,7 @@ void Audio_Process()
                 }
                 v36 = (VocClass *)v37; /*0x404643*/
               }
-              while ( v37 != g_AudioStreamObject ); /*0x404645*/
+              while ( v37 != *(unsigned int *)&g_AudioStreamObject ); /*0x404645*/
               if ( !v43 ) /*0x40464d*/
                 break; /*0x40464d*/
               v41 = *(DListNode **)v32->__pad_0; /*0x404651*/
@@ -1241,7 +1241,7 @@ unsigned int * E4Recv_405E80::sub_405E80()
   result = this; /*0x405e81*/
   if ( g_AudioConfigState ) /*0x405e94*/
   {
-    if ( ((unsigned int *)this)[0] == &dword_87E294 ) /*0x405ea1*/
+    if ( *(void **)this == (void *)&dword_87E294 ) /*0x405ea1*/
     {
       vtable0 = (char *)*(unsigned int *)&this->vfptr; /*0x405ea7*/
       if ( *(unsigned int *)&this->vfptr ) /*0x405ea7*/
@@ -1314,7 +1314,7 @@ int sub_406750()
 
 // 0x406760
 namespace gamemd {
-INIClass * * ((E4Recv_406760 *)void ()(char *) a1)->sub_406760()
+void * sub_406760(void *a1)
 {
 
   void *result; // eax
@@ -1324,7 +1324,7 @@ INIClass * * ((E4Recv_406760 *)void ()(char *) a1)->sub_406760()
   if ( dword_87E298 )
   {
     sprintf(Buffer, "AudioEvents : %05d - Max: %05d", dword_87E28C, dword_87E290);
-    ((void (*)(char *))this)(Buffer); /*0x406795*/
+    ((void (*)(char *))a1)(Buffer);
     sprintf(Buffer, "StaticSounds: %05d - Max: %05d", dword_B1D3A8, dword_B1D3AC);
     return ((void *(*)(char *))this)(Buffer); /*0x4067ba*/
   }
@@ -1389,7 +1389,7 @@ LABEL_11:
       goto LABEL_12; /*0x406cf6*/
     }
     g_MixerChannel_SFX = (unsigned int)(ObjectClass *)&g_Audio_Enabled->__pad_5C[12]; /*0x406c4c*/
-    v3 = (unsigned int *)((CCFileClass*)&v14)->Construct("AUDIOMD.MIX" /*w16g4 "AUDIOMD.MIX" /*w16g4 aAudiomdMix*/*/); /*0x406c51*/
+    v3 = (unsigned int *)((CCFileClass*)&v14)->Construct("AUDIOMD.MIX" /*w16g4 aAudiomdMix*/); /*0x406c51*/
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))( (unsigned int *)(v3), 0); /*0x406c65*/
     *(unsigned int *)v14.CDFileClass = (unsigned int)&vt_CCFileClass;
     v16 = 0; /*0x406c6f*/
@@ -1401,7 +1401,7 @@ LABEL_11:
       v5 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x406c93*/
       if ( v5 ) /*0x406c9d*/
       {
-        g_MixFile_AUDIO = (int)((MixFileClass *)(v5))->FromFile("AUDIOMD.MIX" /*w16g4 "AUDIOMD.MIX" /*w16g4 aAudiomdMix*/*/, (int)dword_886980); /*0x406cb0*/
+        g_MixFile_AUDIO = (int)((MixFileClass *)(v5))->FromFile("AUDIOMD.MIX" /*w16g4 aAudiomdMix*/, (int)dword_886980); /*0x406cb0*/
         goto LABEL_10; /*0x406cb5*/
       }
     }
@@ -1410,13 +1410,13 @@ LABEL_11:
       v6 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x406cb7*/
       if ( v6 ) /*0x406cc1*/
       {
-        g_MixFile_AUDIO = (int)((MixFileClass *)(v6))->FromFile("AUDIO.MIX" /*w16g4 "AUDIO.MIX" /*w16g4 aAudioMix*/*/, (int)dword_886980); /*0x406cd4*/
+        g_MixFile_AUDIO = (int)((MixFileClass *)(v6))->FromFile("AUDIO.MIX" /*w16g4 aAudioMix*/, (int)dword_886980); /*0x406cd4*/
         goto LABEL_10; /*0x406cd9*/
       }
     }
     g_MixFile_AUDIO = 0; /*0x406cdb*/
 LABEL_10:
-    g_AudioFileData = (unsigned int)(ObjectClass *)LoadAudioFile("audio" /*w16g4 "audio" /*w16g4 aAudio*/*/, 0); /*0x406ce1*/
+    g_AudioFileData = (unsigned int)(ObjectClass *)LoadAudioFile("audio" /*w16g4 aAudio*/, 0); /*0x406ce1*/
     if ( g_AudioFileData ) /*0x406cf4*/
       goto LABEL_12; /*0x406cf4*/
     goto LABEL_11; /*0x406cf4*/

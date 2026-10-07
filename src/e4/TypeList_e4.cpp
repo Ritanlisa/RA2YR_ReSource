@@ -861,7 +861,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
         {
           do /*0x5137a4*/
           {
-            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x51379b*/
+            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v6); /*0x51379b*/
             ++v6; /*0x5137a1*/
           }
           while ( v6 < ((unsigned int *)this)[0] ); /*0x5137a4*/
@@ -914,7 +914,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
         {
           do /*0x525654*/
           {
-            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x52564b*/
+            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v6); /*0x52564b*/
             ++v6; /*0x525651*/
           }
           while ( v6 < ((unsigned int *)this)[0] ); /*0x525654*/
@@ -1006,7 +1006,7 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
         {
           do /*0x5ad6c4*/
           {
-            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x5ad6bb*/
+            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v6); /*0x5ad6bb*/
             ++v6; /*0x5ad6c1*/
           }
           while ( v6 < ((unsigned int *)this)[0] ); /*0x5ad6c4*/
@@ -1073,7 +1073,7 @@ int *  TypeList_flat::CopyFull( VectorClass * aP1)
         {
           do /*0x67a0e1*/
           {
-            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a0d8*/
+            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(((int *)aP1)[1] + 4 * v6); /*0x67a0d8*/
             ++v6; /*0x67a0de*/
           }
           while ( v6 < ((unsigned int *)this)[0] ); /*0x67a0e1*/
@@ -1121,7 +1121,7 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
         {
           do /*0x67a161*/
           {
-            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a158*/
+            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(((int *)aP1)[1] + 4 * v6); /*0x67a158*/
             ++v6; /*0x67a15e*/
           }
           while ( v6 < ((unsigned int *)this)[0] ); /*0x67a161*/
@@ -1169,7 +1169,7 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
         {
           do /*0x67a2e1*/
           {
-            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a2d8*/
+            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(((int *)aP1)[1] + 4 * v6); /*0x67a2d8*/
             ++v6; /*0x67a2de*/
           }
           while ( v6 < ((unsigned int *)this)[0] ); /*0x67a2e1*/
@@ -2070,7 +2070,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
         {
           do /*0x67c254*/
           {
-            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67c24b*/
+            *((unsigned int *)((unsigned int *)this)[0] + v6) = *(unsigned int *)(((unsigned int *)aP1)[1] + 4 * v6); /*0x67c24b*/
             ++v6; /*0x67c251*/
           }
           while ( v6 < ((unsigned int *)this)[0] ); /*0x67c254*/

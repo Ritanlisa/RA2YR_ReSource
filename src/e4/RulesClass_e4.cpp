@@ -1045,7 +1045,7 @@ int  RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
   result = (int)LargeVisceroid; /*0x67a3e0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a3e8*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a3f8*/
+    (*(void (**)(int *, int, int, unsigned int))(*( unsigned int *)aP1 + 16))( (int *)(aP1), this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a3f8*/
     result = (int)LargeVisceroid; /*0x67a3fb*/
   }
   return result; /*0x67a404*/
@@ -1086,7 +1086,7 @@ int  RulesClass::readAnimations(TechnoTypeClass * aP1)
   result = (int)LargeVisceroid; /*0x67a7f0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a7f8*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a808*/
+    (*(void (**)(int *, int, int, unsigned int))(*( unsigned int *)aP1 + 16))( (int *)(aP1), this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a808*/
     result = (int)LargeVisceroid; /*0x67a80b*/
   }
   return result; /*0x67a814*/
@@ -1116,7 +1116,7 @@ int  RulesClass::readParticleSystems(TechnoTypeClass * a2)
   result = (int)LargeVisceroid; /*0x67a900*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a908*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a918*/
+    (*(void (**)(int *, int, int, unsigned int))(*( unsigned int *)a2 + 16))(a2, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a918*/
     result = (int)LargeVisceroid; /*0x67a91b*/
   }
   return result; /*0x67a924*/

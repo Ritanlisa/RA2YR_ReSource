@@ -589,7 +589,7 @@ void TacticalClass::DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int 
         v17 = v10 - *v16; /*0x5472ab*/
         if ( v17 < 0x28 ) /*0x5472ad*/
           break; /*0x5472ad*/
-        if ( v16 == &dword_AA103C ) /*0x5472ba*/
+        if ( v16 == (unsigned int *)&dword_AA103C ) /*0x5472ba*/
           return; /*0x5472ba*/
         ++v16; /*0x5472c0*/
       }
@@ -618,7 +618,7 @@ void TacticalClass::DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int 
         v14 = (&dword_ABC21C)[v12]; /*0x547289*/
         v15 = (&dword_ABC218)[v12] + 30; /*0x54728f*/
 LABEL_17:
-        a4 = DSurface_ViewBounds + v15 + a4 - aP5; /*0x5472f7*/
+        a4 = *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds + v15 + a4 - aP5; /*0x5472f7*/
         a5 = dword_886FA4 + v14 + 15 + a5 - a7; /*0x54732c*/
         DrawToSurfaceSHP( /*0x547362*/
           aP2,
@@ -900,9 +900,9 @@ LABEL_10:
   while ( v6 < this->visibleCellCount ); /*0x6d3734*/
 LABEL_11:
   v11 = 0; /*0x6d3750*/
-  if ( aP1[2] > 0 && aP1[3] > 0 && !a5 ) /*0x6d3766*/
+  if ( ((int *)aP1)[2] > 0 && ((int *)aP1)[3] > 0 && !a5 ) /*0x6d3766*/
     TacticalClass::CalcBuildingDrawPos(aP1, v18); /*0x6d376b*/
-  if ( aP2[2] > 0 && aP2[3] > 0 && !a5 ) /*0x6d3784*/
+  if ( ((int *)aP2)[2] > 0 && ((int *)aP2)[3] > 0 && !a5 ) /*0x6d3784*/
     TacticalClass::CalcBuildingDrawPos(aP2, v18); /*0x6d3789*/
   result = g_CraterCreationState; /*0x6d378e*/
   v26 = 0; /*0x6d3793*/
@@ -1012,7 +1012,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
   v3 = *(unsigned int *)aP1;
   v43 = 0; /*0x6d6d31*/
   v4 = this->visibleArea[0] + v3; /*0x6d6d45*/
-  v5 = aP1[1] + this->visibleArea[1]; /*0x6d6d4c*/
+  v5 = ((int *)aP1)[1] + this->visibleArea[1]; /*0x6d6d4c*/
   v35 = v4 - DSurface_ViewBounds.field_0; /*0x6d6d4e*/
   v36 = v5 - (unsigned int)DSurface_ViewBounds.field_4; /*0x6d6d58*/
   v41 = (float)(v4 - DSurface_ViewBounds.field_0); /*0x6d6d67*/

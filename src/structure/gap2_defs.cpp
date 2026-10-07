@@ -993,7 +993,7 @@ int BuildingClass::HandleFactoryCommand() {
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
       }
-      if ( this->((unsigned int *)Type)[0] ) /*0x4434ff*/
+      if ( ((unsigned int *)this->Type)[0] ) /*0x4434ff*/
         (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x443514*/
           this,
           16,
@@ -1153,7 +1153,7 @@ int BuildingClass::HandleFactoryCommand() {
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
       }
-      if ( this->((unsigned int *)Type)[0] ) /*0x4434ff*/
+      if ( ((unsigned int *)this->Type)[0] ) /*0x4434ff*/
         (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x443514*/
           this,
           16,
@@ -1304,7 +1304,7 @@ int BuildingClass::HandleFactoryCommand() {
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
       }
-      if ( this->((unsigned int *)Type)[0] ) /*0x4434ff*/
+      if ( ((unsigned int *)this->Type)[0] ) /*0x4434ff*/
         (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x443514*/
           this,
           16,
@@ -1421,7 +1421,7 @@ int BuildingClass::HandleFactoryCommand() {
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
       }
-      if ( this->((unsigned int *)Type)[0] ) /*0x4434ff*/
+      if ( ((unsigned int *)this->Type)[0] ) /*0x4434ff*/
         (*((void (**)(BuildingClass *, int, unsigned int *, unsigned int, unsigned int))this->vtable1 + 222))( /*0x443514*/
           this,
           16,
@@ -1617,7 +1617,7 @@ int BuildingClass::CreateUnits()
         {
           Float4::Sum((int *)&((unsigned int *)this)[0]); /*0x445ffc*/
           IDA_LOWORD(v7) = Math::RoundToInt(v2); /*0x446001*/
-          v6 = 4 * v7 / this->((unsigned int *)Type)[0]; /*0x446010*/
+          v6 = 4 * v7 / ((unsigned int *)this->Type)[0]; /*0x446010*/
         }
         this->StorageFilledSlots = v6; /*0x446019*/
         if ( v6 < 3 ) /*0x44601f*/
@@ -1825,7 +1825,7 @@ int BuildingClass::CreateUnits()
                 if ( !v72->TurretAnimIsVoxel ) /*0x4465bb*/
                 {
                   BuildingClass::ClearAnims(this, 9); /*0x4465cd*/
-                  strcpy(v132, this->((unsigned int *)Type)[0]); /*0x4465fa*/
+                  strcpy(v132, ((unsigned int *)this->Type)[0]); /*0x4465fa*/
                   v74 = strlen(asc_818D7C) + 1; /*0x44661b*/
                   qmemcpy(&v132[strlen(v132)], asc_818D7C, v74); /*0x446628*/
                   v75 = strlen(v132); /*0x446642*/
@@ -1888,7 +1888,7 @@ int BuildingClass::CreateUnits()
             BuildingClass::RepairPlacement(this, 0); /*0x446780*/
           if ( this->Type->SensorArray ) /*0x44678b*/
             (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 317))(this, g_TerrainTypeTable); /*0x4467a1*/
-          if ( IDA_BYTE1(this->((unsigned int *)Type)[0]) ) /*0x4467ad*/
+          if ( IDA_BYTE1(((unsigned int *)this->Type)[0]) ) /*0x4467ad*/
             (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 319))(this, g_TerrainTypeTable); /*0x4467c3*/
           this->BuildingClass_field_bool_6DD = 1; /*0x4467c9*/
           goto LABEL_130; /*0x4467c9*/
@@ -2010,7 +2010,7 @@ int BuildingClass::CreateUnits()
   LABEL_130:
     if ( this->Type->Powered ) /*0x4467d6*/
       BuildingClass::UpdateAnimationSlots(this); /*0x4467e2*/
-    if ( this->((unsigned int *)Type)[0] && !(unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x446801*/
+    if ( ((unsigned int *)this->Type)[0] && !(unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x446801*/
     {
       if ( !v133 ) /*0x446814*/
       {

@@ -698,7 +698,7 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
           if ( v10 > 0 ) /*0x6ba4ee*/
           {
             v14 = v19 + a4; /*0x6ba506*/
-            v15 = v20 + 2 * (*aP0 + v17 * (aP0[1] + v12)); /*0x6ba50d*/
+            v15 = v20 + 2 * (*aP0 + v17 * (((unsigned int *)aP0)[1] + v12)); /*0x6ba50d*/
             do /*0x6ba537*/
             {
               v15 += 2; /*0x6ba512*/
@@ -717,7 +717,7 @@ int  Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5
           v16 = v12; /*0x6ba550*/
           ++v27; /*0x6ba554*/
         }
-        while ( v12 < aP0[3] ); /*0x6ba558*/
+        while ( v12 < ((unsigned int *)aP0)[3] ); /*0x6ba558*/
       }
       (*(void (**)(int))(*(unsigned int *)v7 + 96))(v7); /*0x6ba562*/
       result = (*(int (**)(int))(*(unsigned int *)v5 + 96))(v5); /*0x6ba569*/
@@ -1194,8 +1194,8 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   }
   if ( (*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 44))(this) == 1 ) /*0x707557*/
   {
-    v16 = *aP2 + *a1; /*0x70756b*/
-    v17 = aP2[1] + a1[1]; /*0x707571*/
+    v16 = *(unsigned int *)aP2 + *(short *)a1; /*0x70756b*/
+    v17 = ((unsigned int *)aP2)[1] + ((short *)a1)[1]; /*0x707571*/
     v18 = (uint16_t)a1[3]; /*0x707575*/
     v19 = (uint16_t)a1[2]; /*0x70757b*/
     v33 = v17; /*0x70757f*/
@@ -1256,7 +1256,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v28 = 0; /*0x7076ad*/
     v29 = 0; /*0x7076b1*/
     v23 = aP2[1]; /*0x7076bb*/
-    v36[0] = *aP2 + v22; /*0x7076be*/
+    v36[0] = *(unsigned int *)aP2 + v22; /*0x7076be*/
     v24 = a1[2]; /*0x7076c8*/
     v36[1] = v23 + a1[1]; /*0x7076ce*/
     v36[2] = v24; /*0x7076d2*/

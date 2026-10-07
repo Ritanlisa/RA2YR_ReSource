@@ -891,7 +891,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
           1);
       }
       v53 = (char)(void *)(a5); /*0x4226bf*/
-      if ( a5 <= 1 ) /*0x4226c5*/
+      if ( (int)a5 <= 1 ) /*0x4226c5*/
         v53 = 1; /*0x4226c7*/
       v54 = v53 * *(unsigned char *)(this->AnimClass_field_0xC8 + 708); /*0x4226d8*/
       this->__pad_194[1] = v54; /*0x4226dc*/
@@ -954,9 +954,9 @@ int AnimClass::ClearTargetReferences(int a2, int a3)
       this->__pad_194[7] = 1; /*0x425196*/
       result = AnimClass_field_0x0[73](this, 0); /*0x42519d*/
     }
-    if ( this->AnimClass_field_0xC8 == (Coord *)a2 ) /*0x4251a9*/
+    if ( this->AnimClass_field_0xC8 == (unsigned int)(Coord *)a2 ) /*0x4251a9*/
       this->AnimClass_field_0xC8 = 0; /*0x4251ab*/
-    if ( this->AnimClass_field_0x17C == (AbstractClass *)a2 ) /*0x4251b7*/
+    if ( this->AnimClass_field_0x17C == (unsigned int)(AbstractClass *)a2 ) /*0x4251b7*/
     {
       v6 = (int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0; /*0x4251b9*/
       this->AnimClass_field_0x17C = 0; /*0x4251bd*/

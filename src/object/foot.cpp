@@ -241,7 +241,7 @@ bool FootClass::MovementAI()
       v9 = this->sightTimer[2]; /*0x4da6ce*/
       if ( v8 != -1 ) /*0x4da6d7*/
       {
-        if ( *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v8 >= v9 ) /*0x4da6e3*/
+        if ( *(unsigned int *)((char *)&stru_A8EB00 + 644) - v8 >= v9 ) /*0x4da6e3*/
         {
   LABEL_21:
           (*((void (__thiscall **)(FootClass *, unsigned int, unsigned int, unsigned int, unsigned int))this->vtable1 + 291))( /*0x4da6ef*/

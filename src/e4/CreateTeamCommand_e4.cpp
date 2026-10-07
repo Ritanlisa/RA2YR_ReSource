@@ -291,7 +291,7 @@ void CreateTeamCommand::performAction_246()
       v5 = *(unsigned int *)(v4 + 540); /*0x731083*/
       if ( (&dword_A8B238)[0] ? ((House*)(void *)v5)->IsHumanPlayer() : *(unsigned char *)(v5 + 493) )
       {
-        if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
+        if ( *(char **)(v4 + 532) == (char *)this - 4 ) /*0x7310a9*/
           *(unsigned int *)(v4 + 532) = (unsigned int)(-1); /*0x7310ab*/
         if ( *(unsigned char *)(v4 + 131) ) /*0x7310b5*/
           *(unsigned int *)(v4 + 532) = (unsigned int)(this - 1); /*0x7310bf*/

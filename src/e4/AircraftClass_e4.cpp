@@ -240,9 +240,9 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
     return (int)(result); /*0x417cdd*/
-  if ( result == 26 && this->Type[1].TechnoTypeClass[317] ) /*0x417cf4*/
+  if ( result == 26 && *((char *)this->Type + 0xE0D) ) /*0x417cf4*/
     v7 = 0; /*0x417cfe*/
-  if ( this->Type[1].TechnoTypeClass[300] && (uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x417d16*/
+  if ( *((char *)this->Type + 0xDFC) && (uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x417d16*/
   {
     if ( v7 != 7 && v7 ) /*0x417d26*/
       goto LABEL_18; /*0x417d26*/
@@ -290,10 +290,10 @@ LABEL_24:
       if ( *(unsigned char *)(v11 + 5801) ) /*0x417e1c*/
       {
         v12 = 0; /*0x417e2c*/
-        v13 = *(unsigned int *)&this->Type->TechnoTypeClass[1016]; /*0x417e33*/
+        v13 = *(unsigned int *)((char *)this->Type + 1016); /*0x417e33*/
         if ( v13 <= 0 ) /*0x417e38*/
           goto LABEL_36; /*0x417e38*/
-        v14 = *(unsigned int **)&this->Type->TechnoTypeClass[1004]; /*0x417e3a*/
+        v14 = *(unsigned int **)((char *)this->Type + 1004); /*0x417e3a*/
         while ( *v14 != v11 ) /*0x417e3f*/
         {
           ++v12; /*0x417e41*/
@@ -311,10 +311,10 @@ LABEL_36:
       }
     }
   }
-  if ( this->Type[1].TechnoTypeClass[300] && v7 == 17 ) /*0x417e90*/
+  if ( *((char *)this->Type + 0xDFC) && v7 == 17 ) /*0x417e90*/
   {
     a3 = (int *)(*(int **)(*(int (**)(int *, int **))(*v4 + 440))( (int *)(v4), (int **)(&aP1)));
-    if ( a3 != (IUnknown *)(int *)g_AircraftStatusFlag ) /*0x417eae*/
+    if ( a3 != (int *)g_AircraftStatusFlag ) /*0x417eae*/
     {
       v15 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x417ecc*/
       v16 = ((Cell *)(v15))->IsBridge(); /*0x417ed3*/
@@ -589,7 +589,7 @@ int AircraftClass::RevealSight(int a2, int a3)
   int v18; // [esp+10h] [ebp-8h]
   int v19; // [esp+14h] [ebp-4h]
 
-  v4 = *(unsigned int *)&this->Type->TechnoTypeClass[1512]; /*0x41ae00*/
+  v4 = *(unsigned int *)((char *)this->Type + 1512); /*0x41ae00*/
   if ( !(*((int (**)(AircraftClass *))this->vtable1 + 114))(this) ) /*0x41ae06*/
   {
     v4 = 1; /*0x41ae10*/
@@ -1010,7 +1010,7 @@ namespace gamemd {
 int AircraftClass::CheckMissionAbort()
 {
 
-  return *(unsigned int *)&this->Type->TechnoTypeClass[96]; /*0x41c1d9*/
+  return *(unsigned int *)((char *)this->Type + 96); /*0x41c1d9*/
 
 }
 } // namespace gamemd

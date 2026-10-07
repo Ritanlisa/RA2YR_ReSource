@@ -47,7 +47,7 @@ struct BulletClass {
     unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
     unsigned int q060;  // 0x60
-    char customSound[4];  // 0x64
+    int customSound;  // 0x64
     unsigned int u32_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
     unsigned int estimatedHealth;  // 0x70

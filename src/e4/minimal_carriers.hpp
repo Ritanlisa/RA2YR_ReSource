@@ -292,6 +292,16 @@ struct CoordBounds;  // G57c2 dedup: fwd only -- other def lives in classes.hpp;
 struct Next { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
+struct VectorClass_TagClass {  // G57w17h4: til VectorClass (ordinal 1500) layout, ?$VectorClass@PAVTagClass@@
+    void *vtable0;                // 0x0 (til vtable0)
+    unsigned int *Items;          // 0x4 (til int; raw reads as u32 item array)
+    unsigned int Capacity;        // 0x8 (til int)
+    unsigned char IsInitialized;  // 0xC (til char[1])
+    unsigned char IsAllocated;    // 0xD (til char[1])
+};
+} // namespace gamemd
+
+namespace gamemd {
 struct _VectorClass_PAVParticleClass {
 void* vfptr;
     char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)

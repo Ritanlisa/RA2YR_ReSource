@@ -115,7 +115,7 @@ int sub_785EA0()
           break; /*0x785f2d*/
         ((HashMap *)((HashMap *)&dword_B76680))->Shrink(); /*0x785f34*/
       }
-      while ( &dword_B76688 > (unsigned int)dword_B766B0 ); /*0x785f46*/
+      while ( *(unsigned int *)&dword_B76688 > (unsigned int)dword_B766B0 ); /*0x785f46*/
     }
   }
   result = (HANDLE *)((int)((HANDLE *)((int)ppv)));

@@ -10,7 +10,7 @@ struct StreamClass {
     unsigned char q000;  // 0x0
     void* m_Data;  // 0x4
     unsigned int u32_8;  // 0x8
-    char m_Size[4];  // 0xC
+    int m_Size;  // 0xC
     char StreamClass_field_0C[4];  // 0x10
     unsigned int *__pad_0;
     unsigned int q014;

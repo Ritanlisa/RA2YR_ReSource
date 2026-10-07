@@ -99,7 +99,7 @@ unsigned int sub_4E0A00(VectorClass *a1, int a2, unsigned int * a3)
 
     a1->Items = 0; /*0x4e0a0a*/
     a1->Capacity = (void *)(a2); /*0x4e0a11*/
-    a1->IsInitialized = (void *)(1); /*0x4e0a14*/
+    a1->IsInitialized = 1; /*0x4e0a14*/
     a1->IsAllocated = 0; /*0x4e0a18*/
     a1->vtable0 = (void*)&VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0a1c*/
     if ( a2 ) /*0x4e0a22*/
@@ -4893,31 +4893,31 @@ char sub_4E8220()
 }
 
 // 0x4E92F0
-void HouseClass_vt_03_free_()
+void HouseClass_vt_03_free_(gamemd::VectorClass_TagClass *a1)  // G57w17h4 receiver-first (raw this=VectorClass)
 {
-    if ( *(unsigned int *)(this + 4) && *(unsigned char *)(this + 13) ) /*0x4e92fd*/
+    if ( a1->Items && a1->IsAllocated ) /*0x4e92fd*/
     {
-      RA2_OPDEL(*(void **)(this + 4)); /*0x4e9303*/
-      *(unsigned int *)(this + 4) = 0; /*0x4e930b*/
+      RA2_OPDEL(a1->Items); /*0x4e9303*/
+      a1->Items = 0; /*0x4e930b*/
     }
-    *(unsigned char *)(this + 13) = 0; /*0x4e930e*/
-    *(unsigned int *)(this + 8) = 0; /*0x4e9311*/
+    a1->IsAllocated = 0; /*0x4e930e*/
+    a1->Capacity = 0; /*0x4e9311*/
 }
 
 // 0x4E9320
-int HouseClass_vt_04_free_(int * a2)
+int HouseClass_vt_04_free_(gamemd::VectorClass_TagClass *a1, int * a2)  // G57w17h4 receiver-first (raw this=VectorClass)
 {
     int result; // eax
     int v3; // edx
     unsigned int *i; // ecx
 
-    if ( !*(unsigned char *)(this + 12) ) /*0x4e9320*/
+    if ( !a1->IsInitialized ) /*0x4e9320*/
       return 0; /*0x4e9328*/
-    v3 = *(unsigned int *)(this + 8); /*0x4e932e*/
+    v3 = a1->Capacity; /*0x4e932e*/
     result = 0; /*0x4e9331*/
     if ( v3 <= 0 ) /*0x4e9335*/
       return -1; /*0x4e934c*/
-    for ( i = *(unsigned int **)(this + 4); *i != *a2; ++i ) /*0x4e933b*/
+    for ( i = a1->Items; *i != *a2; ++i ) /*0x4e933b*/
     {
       if ( ++result >= v3 ) /*0x4e934a*/
         return -1; /*0x4e934a*/
@@ -4926,28 +4926,28 @@ int HouseClass_vt_04_free_(int * a2)
 }
 
 // 0x4E9360
-unsigned int HouseClass_vt_05_free_(int a2)
+unsigned int HouseClass_vt_05_free_(gamemd::VectorClass_TagClass *a1, int a2)  // G57w17h4 receiver-first (raw this=VectorClass)
 {
-    if ( *(unsigned char *)(this + 12) ) /*0x4e9360*/
-      return (unsigned int)(a2 - *(unsigned int *)(this + 4)) >> 2; /*0x4e9375*/
+    if ( a1->IsInitialized ) /*0x4e9360*/
+      return (unsigned int)(a2 - (unsigned int)a1->Items) >> 2; /*0x4e9375*/
     else
       return 0; /*0x4e9367*/
 }
 
 // 0x4E9F00
-int ParticleSystemClass_vt_04_free_(int * a2)
+int ParticleSystemClass_vt_04_free_(gamemd::_VectorClass_PAVParticleClass *a1, int * a2)  // G57w17h4 receiver-first (raw this=_VectorClass_PAVParticleClass)
 {
     int result; // eax
     int m_8; // edx
     unsigned int *i; // ecx
 
-    if ( !IDA_LOBYTE(this->m_C) ) /*0x4e9f00*/
+    if ( !IDA_LOBYTE(a1->m_C) ) /*0x4e9f00*/
       return 0; /*0x4e9f08*/
-    m_8 = this->m_8; /*0x4e9f0e*/
+    m_8 = a1->m_8; /*0x4e9f0e*/
     result = 0; /*0x4e9f11*/
     if ( m_8 <= 0 ) /*0x4e9f15*/
       return -1; /*0x4e9f2c*/
-    for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e9f1b*/
+    for ( i = *(unsigned int **)&a1->m_1[3]; *i != *a2; ++i ) /*0x4e9f1b*/
     {
       if ( ++result >= m_8 ) /*0x4e9f2a*/
         return -1; /*0x4e9f2a*/
@@ -4956,17 +4956,17 @@ int ParticleSystemClass_vt_04_free_(int * a2)
 }
 
 // 0x4E9F40
-unsigned int ParticleSystemClass_vt_05_free_(int a2)
+unsigned int ParticleSystemClass_vt_05_free_(gamemd::_VectorClass_PAVParticleClass *a1, int a2)  // G57w17h4 receiver-first (raw this=_VectorClass_PAVParticleClass)
 {
-    if ( IDA_LOBYTE(this->m_C) ) /*0x4e9f40*/
-      return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e9f55*/
+    if ( IDA_LOBYTE(a1->m_C) ) /*0x4e9f40*/
+      return (unsigned int)(a2 - *(unsigned int *)&a1->m_1[3]) >> 2; /*0x4e9f55*/
     else
       return 0; /*0x4e9f47*/
 }
 
 // 0x4EF4E0
 namespace gamemd {
-VectorClass_flat * ((HouseClass *)unsigned int * Block)->vt_00_( char a2)
+unsigned int * HouseClass_vt_00(unsigned int *Block, char a2)
 {
 
   void *v3; // eax
@@ -4989,7 +4989,7 @@ VectorClass_flat * ((HouseClass *)unsigned int * Block)->vt_00_( char a2)
 
 // 0x4EF800
 namespace gamemd {
-VectorClass_flat * ((ParticleSystemClass *)unsigned int * Block)->vt_00_( char a2)
+unsigned int * ParticleSystemClass_vt_00(_VectorClass_PAVParticleClass *Block, char a2)
 {
 
   void *v3; // eax
@@ -5009,5 +5009,3 @@ VectorClass_flat * ((ParticleSystemClass *)unsigned int * Block)->vt_00_( char a
 
 }
 } // namespace gamemd
-
-} // namespace gamemd  // G42.35p: EOF close restored (depth was 1)

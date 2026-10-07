@@ -18,7 +18,7 @@ struct TemporalClass {
     int nextArrayIndex;  // 0x18
     int referenceCount;  // 0x1C
     void * NeedsSaveOrLink;  // 0x20
-    char creationFrame[4];  // 0x24
+    int creationFrame;  // 0x24
     int q028;  // 0x28
     bool q02B;  // 0x2B
     void* q02C;  // 0x2C

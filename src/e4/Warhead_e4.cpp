@@ -55,7 +55,7 @@ int Warhead::GetWarheadSound(int a2)
     v3 = this->q048; /*0x41d7f5*/
   else
     v3 = (unsigned int)this->q044; /*0x41d7fa*/
-  return !this->u8_3C && v3 + this->q040 <= (int)dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
+  return !this->u8_3C && v3 + (unsigned int)this->q040 <= (int)dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
 
 }
 } // namespace gamemd

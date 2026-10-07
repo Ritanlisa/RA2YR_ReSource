@@ -41,7 +41,7 @@ struct HouseTypeClass {
     double buildtimeMult;  // 0x50
     unsigned int u32_54;  // 0x54
     InfantryTypeClass** veteranInfantry;  // 0xA4
-    char veteranInfantryCount[4];  // 0xA8
+    int veteranInfantryCount;  // 0xA8
     UnitTypeClass** veteranUnits;  // 0xAC
     char veteranUnitsCount[4];  // 0xB0
     AircraftTypeClass** veteranAircraft;  // 0xB4

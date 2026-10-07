@@ -1888,7 +1888,7 @@ int RandomMap::AllocateArea()
           if ( (*(int *)(*(unsigned int *)(v13 + 4) + 16) > 1 || *(int *)(v13 + 12) > 50) && !*(unsigned char *)(v13 + 20) ) /*0x5906b7*/
           {
             v14 = (void *)v39[4]; /*0x5906c5*/
-            if ( *(void **)(v13 + 16) == (void *)((void *)(v14) && v14 == v1->RandomMap_field_0x10 )) /*0x5906cf*/
+            if ( *(void **)(v13 + 16) == (void *)v14 && v14 == (unsigned int)v1->RandomMap_field_0x10 ) /*0x5906cf*/
             {
               ((RandomMap *)v1)->PlaceBuildings( (int)v39, v13); /*0x5906d5*/
               v5 = g_MissionQueueFrame.briefing[339]; /*0x5906da*/
@@ -1936,7 +1936,7 @@ int RandomMap::AllocateArea()
             v22 = *(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v19); /*0x5907ee*/
           }
           v23 = this; /*0x590770*/
-          if ( *(unsigned int *)(v22 + 8) > (int)this->RandomMap_field_0x8 && *(void **)(v22 + 16) != this->RandomMap_field_0x10 ) /*0x590788*/
+          if ( *(unsigned int *)(v22 + 8) > *(unsigned int *)&this->RandomMap_field_0x8 && *(void **)(v22 + 16) != *(void **)&this->RandomMap_field_0x10 ) /*0x590788*/
           {
             v40 = 0; /*0x59078e*/
             do /*0x5907b6*/
@@ -2361,7 +2361,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int 
 
     IDA_LOWORD(v6) = Math::RoundToInt((15.0 - 5.0) * (1.0 - a5) + 5.0); /*0x590ff5*/
     v16 = v6; /*0x591000*/
-    v7 = a2[1] - 2; /*0x591010*/
+    v7 = ((unsigned char *)a2)[1] - 2; /*0x591010*/
     v8 = (unsigned short *)(__int16)(*a2 - 2); /*0x591014*/
     RandomMap_field_0x8 = a1->RandomMap_field_0x8; /*0x59101a*/
     v15 = v7; /*0x59101d*/
@@ -3556,7 +3556,7 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     int v20; // eax
     void *v21; // eax
     int n; // eax
-    void (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // esi
+    void (__stdcall *v23)(HWND, UINT, WPARAM, LPARAM); // esi
     int ii; // eax
     ObjectClass *v25; // edi
     int jj; // eax
@@ -4003,7 +4003,7 @@ AbstractClass * * SetupTheater(char a2)
     unsigned int *v19; // eax
     int v20; // ecx
     int uniqueId; // edi
-    void (__stdcall *)(); // eax
+    void (__stdcall *v22)(); // eax
     int v23; // esi
     int v24; // eax
     int v25; // edi
@@ -4027,7 +4027,7 @@ AbstractClass * * SetupTheater(char a2)
     RadarClass *v43; // eax
     int v44; // esi
     RandomMap *v45; // edi
-    void (__stdcall *)(); // eax
+    void (__stdcall *v46)(); // eax
     int v47; // esi
     int *v48; // eax
     int v49; // eax

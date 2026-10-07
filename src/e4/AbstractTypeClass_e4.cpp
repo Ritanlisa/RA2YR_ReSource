@@ -148,7 +148,7 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
     if ( Destination != Name ) /*0x410ad2*/
     {
       qmemcpy( (void *)(Name), (const void *)(Destination), 0x30u); /*0x410add*/
-      (&this->Name)[48] = v7; /*0x410adf*/
+      this->Name[48] = v7; /*0x410adf*/
     }
     UINameLabel = (char *)(this->UINameLabel);
     /*0x410afb*/

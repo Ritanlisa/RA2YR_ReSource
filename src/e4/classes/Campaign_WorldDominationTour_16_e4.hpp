@@ -28,7 +28,7 @@ struct Campaign_WorldDominationTour_16 {
     int Read(int a2, void *a2_2);  // 0x765990
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x765B60
     unsigned int Write(int a2);  // 0x7659D0
-    unsigned char m_8[64];  // pad compile-supply (G41.47)
+    unsigned int m_8;  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     rc_ptr * Constructor(char Block);
     rc_ptr * Constructor_0(char Block);

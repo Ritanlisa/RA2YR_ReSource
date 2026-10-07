@@ -1061,7 +1061,7 @@ int E4Recv_5F1F20::sub_5F1F20()
   int TileIndex; // eax
 
   v2 = 0; /*0x5f1f27*/
-  vtable1 = (int *)this->((unsigned int *)attachedBomb)[0]; /*0x5f1f2c*/
+  vtable1 = (int *)((unsigned int *)this->attachedBomb)[0]; /*0x5f1f2c*/
   if ( vtable1[10] <= 0 ) /*0x5f1f34*/
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
@@ -1073,7 +1073,7 @@ int E4Recv_5F1F20::sub_5F1F20()
         break; /*0x5f1f4d*/
     }
     ++v2; /*0x5f1f52*/
-    vtable1 = (int *)this->((unsigned int *)attachedBomb)[0]; /*0x5f1f53*/
+    vtable1 = (int *)((unsigned int *)this->attachedBomb)[0]; /*0x5f1f53*/
     if ( v2 >= vtable1[10] ) /*0x5f1f59*/
       return 0; /*0x5f1f59*/
   }

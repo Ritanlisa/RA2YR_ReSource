@@ -1,7 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/Count_e4.hpp"  // G57w17h4: carrier-first (sets GAMEMD_E4_Count before utility_ext)
 #include "e4/e4_globals.hpp"
-#include "e4/classes/Count_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
@@ -148,7 +148,7 @@ int32_t Count::Release(void *a1)
 {
 
   ++this->u32_8; /*0x76f162*/
-  return (int32_t)(this->__pad_0); /*0x76f165*/
+  return (int32_t)(this->m_RefCount); /*0x76f165*/
 
 }
 } // namespace gamemd
@@ -158,7 +158,7 @@ int32_t Count::ddtor()
 {
 
   --this->u32_8; /*0x76f172*/
-  return (int32_t)(this->__pad_0); /*0x76f175*/
+  return (int32_t)(this->m_RefCount); /*0x76f175*/
 
 }
 } // namespace gamemd

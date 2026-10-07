@@ -820,8 +820,8 @@ char Map_Helper_584030(IUnknown * aP0)
   }
   while ( 1 ) /*0x58405e*/
   {
-    IDA_HIWORD(v11) = v4 + aP0[1]; /*0x58405e*/
-    IDA_LOWORD(v11) = v5 + *aP0; /*0x584063*/
+    IDA_HIWORD(v11) = v4 + ((unsigned int *)aP0)[1]; /*0x58405e*/
+    IDA_LOWORD(v11) = v5 + *(unsigned int *)aP0; /*0x584063*/
     v6 = (unsigned int)((int16_t)v11 + (IDA_SHIWORD(v11) << 9)); /*0x584071*/
     if ( v6 >= 0x40000 || (v7 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v6))) == 0 ) /*0x584081*/
     {
@@ -1955,8 +1955,8 @@ double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * 
 
   if ( *aP2 == dword_ABE2F0 && aP2[1] == dword_ABE2F4 && aP2[2] == dword_ABE2F8 && aP2[3] == dword_ABE2FC ) /*0x59b979*/
   {
-    v18 = *aP0 - *a1; /*0x59ba7b*/
-    v19 = aP0[1] - a1[1]; /*0x59ba7d*/
+    v18 = *(short *)aP0 - *(short *)a1; /*0x59ba7b*/
+    v19 = ((short *)aP0)[1] - ((short *)a1)[1]; /*0x59ba7d*/
 // 0x4cac40
     return Math::Sqrt((double)(v18 * v18 + v19 * v19)); /*0x59ba94*/
   }

@@ -29,8 +29,8 @@ struct DynamicVectorClass_PAD {
     DynamicVector * Destructor(unsigned int * Block, char a2);  // 0x49F040
     unsigned int Get(int a2, void *a2_2);  // 0x49E980
     unsigned int GetCount(int a2);  // 0x49E9E0
-    unsigned char m_8[64];  // pad compile-supply (G41.47)
-    unsigned char m_10[64];  // pad compile-supply (G41.47)
+    unsigned int m_8;  // pad compile-supply (G41.47)
+    unsigned int m_10;  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
 } // namespace gamemd

@@ -235,7 +235,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
       return 0; /*0x5d2618*/
     v7 = (&this->ambientSoundController)[2]; /*0x5d261a*/
     if ( v7 <= 0 /*0x5d262a*/
-      || !((uint8_t (*)(ObjectClass **, char *, unsigned int))this->((unsigned int *)nextObject)[0])(
+      || !((uint8_t (*)(ObjectClass **, char *, unsigned int))((unsigned int *)this->nextObject)[0])(
             &this->nextObject,
             (char *)attachedBomb + v7,
             0) )
@@ -856,7 +856,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
 // 0x7b54b0
           && ((String *)(char *)&v19)->Length()
 // 0x7b54b0
-          && ((String *)((int)(char *))&v19)->Length() )
+          && ((String *)(char *)&v19)->Length() )
         {
           v15 = 0; /*0x5d79d3*/
 v19.occupant = (*(int (**)(int, int *, void **, void **, int *, int, int))(*(unsigned int *)v19.customSound /*0x5d79d5*/ + 4))(v19.customSound, (int *)((char *)&v19), (void **)((char *)&v19), (void **)((char *)&v19), (int *)((int)((int)((char *)&v19))), v19.ambientSoundController[2], v4);
@@ -1052,7 +1052,7 @@ int AbstractClass::sub_5D9060(int a2)
     while ( 1 ) /*0x5d907b*/
     {
       v5 = v2 + this->M16; /*0x5d907b*/
-      this->? = v5; /*0x5d907f*/
+      this->uniqueId = v5; /*0x5d907f*/
       v6 = v5; /*0x5d9087*/
       if ( v5 > 0xFFFF ) /*0x5d908a*/
         this->uniqueId = 2048; /*0x5d908c*/
@@ -1666,7 +1666,7 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
     FillComboBoxFactions(v11, v24); /*0x5dc111*/
     SetupSkirmishSpawnLocations( (HWND)(v11), v24, -2); /*0x5dc11c*/
   }
-  if ( ((SessionClass *)((SessionClass *)(&dword_A8DA90)[v5]))->GetPlayerColor() != aP2 ) /*0x5dc133*/
+  if ( ((SessionClass *)*(unsigned int *)(&dword_A8DA90 + v5))->GetPlayerColor() != aP2 ) /*0x5dc133*/
     ((SessionClass *)(v28))->SetPlayerColor( (int)(aP2)); /*0x5dc13a*/
   if ( (&dword_A8DA90)[v5] == *dword_A8DA78 ) /*0x5dc14e*/
     dword_A8B394 = (unsigned int)aP2; /*0x5dc150*/
@@ -1777,7 +1777,7 @@ void SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4
         {
           if ( a3 == 1690 ) /*0x5df395*/
           {
-            g_abs_A8B263 = SendDlgItemMessageA((HWND)(aP0), 1690, 0xF0u, 0, 0) == 1; /*0x5df3fb*/
+            g_abs_A8B263[0] = SendDlgItemMessageA((HWND)(aP0), 1690, 0xF0u, 0, 0) == 1; /*0x5df3fb*/
           }
           else if ( a3 == 1693 ) /*0x5df39a*/
           {
@@ -1794,10 +1794,10 @@ void SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4
           switch ( a3 ) /*0x5df268*/
           {
             case 0x624u: /*0x5df268*/
-              g_abs_A8B260 = 0; /*0x5df36d*/
+              g_abs_A8B260[0] = 0; /*0x5df36d*/
               if ( SendDlgItemMessageA((HWND)(aP0), 1572, 0xF0u, 0, 0) == 1 ) /*0x5df381*/
               {
-                g_abs_A8B260 = 1; /*0x5df384*/
+                g_abs_A8B260[0] = 1; /*0x5df384*/
                 return 0; /*0x5df38d*/
               }
               break;
@@ -1810,21 +1810,21 @@ void SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4
               }
               break;
             case 0x54Du: /*0x5df268*/
-              g_abs_A8B261 = 0; /*0x5df2f9*/
+              g_abs_A8B261[0] = 0; /*0x5df2f9*/
               if ( SendDlgItemMessageA((HWND)(aP0), 1357, 0xF0u, 0, 0) == 1 ) /*0x5df30d*/
               {
-                g_abs_A8B261 = 1; /*0x5df314*/
+                g_abs_A8B261[0] = 1; /*0x5df314*/
                 return 0; /*0x5df31d*/
               }
               break;
             case 0x54Eu: /*0x5df268*/
-              g_abs_A8B262 = 0; /*0x5df2a0*/
+              g_abs_A8B262[0] = 0; /*0x5df2a0*/
               if ( SendDlgItemMessageA((HWND)(aP0), 1358, 0xF0u, 0, 0) == 1 ) /*0x5df2b0*/
               {
-                g_abs_A8B262 = 1; /*0x5df2bb*/
+                g_abs_A8B262[0] = 1; /*0x5df2bb*/
                 if ( !g_abs_A8B258 ) /*0x5df2c3*/
                 {
-                  g_abs_A8B258 = 1; /*0x5df2d7*/
+                  g_abs_A8B258[0] = 1; /*0x5df2d7*/
                   SendDlgItemMessageA((HWND)(aP0), 1355, 0xF1u, 1u, 0); /*0x5df2dd*/
                   return 0; /*0x5df2e3*/
                 }
@@ -1835,12 +1835,12 @@ void SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4
         break;
       case 276: /*0x5df198*/
         if ( GetDlgItem((HWND)(aP0), 1321) == a4 ) /*0x5df1e3*/
-          g_abs_A8B268 = 6 - SendDlgItemMessageA((HWND)(aP0), 1321, 0x400u, 0, 0); /*0x5df1fd*/
+          *(unsigned int *)&g_abs_A8B268 = 6 - SendDlgItemMessageA((HWND)(aP0), 1321, 0x400u, 0, 0); /*0x5df1fd*/
         if ( GetDlgItem((HWND)(aP0), 1026) == a4 ) /*0x5df20d*/
-          g_abs_A8B25C = SendDlgItemMessageA((HWND)(aP0), 1026, 0x400u, 0, 0); /*0x5df220*/
+          *(unsigned int *)&g_abs_A8B25C = SendDlgItemMessageA((HWND)(aP0), 1026, 0x400u, 0, 0); /*0x5df220*/
         if ( GetDlgItem((HWND)(aP0), 1359) == a4 ) /*0x5df231*/
         {
-          g_abs_A8B270 = SendDlgItemMessageA((HWND)(aP0), 1359, 0x400u, 0, 0); /*0x5df248*/
+          *(unsigned int *)&g_abs_A8B270 = SendDlgItemMessageA((HWND)(aP0), 1359, 0x400u, 0, 0); /*0x5df248*/
           return 0; /*0x5df251*/
         }
         break;
@@ -1871,14 +1871,14 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
   v10 = a1; /*0x5df41f*/
   if ( a1 < 1 ) /*0x5df423*/
   {
-    String = (unsigned int)GetStringCSF( "TXT_MUST_SELECT_GAME" /*w16g4 "TXT_MUST_SELECT_GAME" /*w16g4 aTxtMustSelectG*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3712); /*0x5df436*/
+    String = (unsigned int)GetStringCSF( "TXT_MUST_SELECT_GAME" /*w16g4 aTxtMustSelectG*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3712); /*0x5df436*/
     Dialog::ShowMessage(-1, (size_t)String); /*0x5df442*/
     PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df462*/
     return 0; /*0x5df473*/
   }
   if ( dword_A8DA6C <= 1 || a1 > dword_A8DA6C ) /*0x5df484*/
   {
-    v5 = GetStringCSF( "TXT_NOTHING_TO_JOIN" /*w16g4 "TXT_NOTHING_TO_JOIN" /*w16g4 aTxtNothingToJo*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3719); /*0x5df87b*/
+    v5 = GetStringCSF( "TXT_NOTHING_TO_JOIN" /*w16g4 aTxtNothingToJo*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3719); /*0x5df87b*/
   }
   else if ( strlen( (const char *)(unk_A8B380)) ) /*0x5df48f*/
   {
@@ -1891,7 +1891,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       || !strcmp((const char *)(unk_A8B380), ToWideStringChar( (IUnknown *)((char *)dword_AC1194)))
       || (((String *)((char **)&v9))->Assign( (const char *)(unk_A8B380)), v6 = Network_Send(&v9), j_DeleteAndZero( (void *)(&v9)), v6) )
     {
-      v8 = GetStringCSF( "ERROR:NameIsReservedWord" /*w16g4 "ERROR:NameIsReservedWord" /*w16g4 aErrorNameisres*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3742); /*0x5df82c*/
+      v8 = GetStringCSF( "ERROR:NameIsReservedWord" /*w16g4 aErrorNameisres*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3742); /*0x5df82c*/
       Dialog::ShowMessage(-1, (size_t)v8); /*0x5df838*/
       PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df858*/
       return 0; /*0x5df869*/
@@ -1920,7 +1920,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       dword_AC0238 = 600; /*0x5df806*/
       return 1; /*0x5df81a*/
     }
-    v5 = GetStringCSF( (wchar_t *)"TXT_GAME_IS_CLOSED" /*w16g4 "TXT_GAME_IS_CLOSED" /*w16g4 aTxtGameIsClose*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3750); /*0x5df6f0*/
+    v5 = GetStringCSF( (wchar_t *)"TXT_GAME_IS_CLOSED" /*w16g4 aTxtGameIsClose*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3750); /*0x5df6f0*/
   }
   else
   {

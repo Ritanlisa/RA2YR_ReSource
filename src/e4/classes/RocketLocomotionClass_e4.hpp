@@ -29,7 +29,7 @@ struct RocketLocomotionClass {
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int u32_3C;  // 0x3C
-    char MissionState[4];  // 0x40
+    int MissionState;  // 0x40
     double CurrentSpeed;  // 0x48
     unsigned int u32_4C;  // 0x4C
     bool RocketLocomotionClass_field_bool_4C;  // 0x50

@@ -967,12 +967,12 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
   unsigned int v23[4]; // [esp+Ch] [ebp-10h] BYREF
 
   v5 = (int)(aP2[2]); /*0x7bbe2c*/
-  if ( aP0[2] == v5 && aP0[3] == aP2[3] ) /*0x7bbe40*/
+  if ( ((int *)aP0)[2] == v5 && ((int *)aP0)[3] == ((int *)aP2)[3] ) /*0x7bbe40*/
   {
-    if ( *aP0 < 0 ) /*0x7bbe4a*/
+    if ( *(int *)aP0 < 0 ) /*0x7bbe4a*/
     {
       *aP2 -= *aP0; /*0x7bbe50*/
-      aP2[2] = v5 + *aP0; /*0x7bbe56*/
+      ((int *)aP2)[2] = v5 + *(int *)aP0; /*0x7bbe56*/
       v6 = (int)(*aP0); /*0x7bbe59*/
       v7 = (int)(aP0[2]); /*0x7bbe5b*/
       *(unsigned int *)aP0 = 0; /*0x7bbe5e*/
@@ -983,25 +983,25 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
     {
       v9 = (int)(aP2[3]);
       aP2[1] -= v8; /*0x7bbe78*/
-      aP2[3] = aP0[1] + v9; /*0x7bbe80*/
+      ((int *)aP2)[3] = ((int *)aP0)[1] + v9; /*0x7bbe80*/
       v10 = (int)(aP0[1]); /*0x7bbe83*/
       v11 = (int)(aP0[3]); /*0x7bbe86*/
       aP0[1] = 0; /*0x7bbe89*/
       aP0[3] = v10 + v11; /*0x7bbe92*/
     }
-    v12 = aP0[2] + *aP0 - *(unsigned int *)(a2 + 8); /*0x7bbe9f*/
+    v12 = ((int *)aP0)[2] + *(int *)aP0 - *(unsigned int *)(a2 + 8); /*0x7bbe9f*/
     if ( v12 > 0 ) /*0x7bbea3*/
     {
       aP2[2] -= v12; /*0x7bbeaa*/
       aP0[2] -= v12; /*0x7bbeb2*/
     }
-    v13 = aP0[1] + aP0[3] - *(unsigned int *)(a2 + 12); /*0x7bbec0*/
+    v13 = ((int *)aP0)[1] + ((int *)aP0)[3] - *(unsigned int *)(a2 + 12); /*0x7bbec0*/
     if ( v13 > 0 ) /*0x7bbec4*/
     {
       aP2[3] -= v13; /*0x7bbecb*/
       aP0[3] -= v13; /*0x7bbed3*/
     }
-    if ( *aP2 < 0 ) /*0x7bbeda*/
+    if ( *(int *)aP2 < 0 ) /*0x7bbeda*/
     {
       *aP0 -= *aP2; /*0x7bbee0*/
       v14 = (int)(*aP2); /*0x7bbee2*/
@@ -1018,17 +1018,17 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
       aP0[3] += v16; /*0x7bbf19*/
       aP2[1] = 0; /*0x7bbf1c*/
     }
-    v17 = *aP2 + aP2[2] - *(unsigned int *)(a4 + 8); /*0x7bbf33*/
+    v17 = *(int *)aP2 + ((int *)aP2)[2] - *(unsigned int *)(a4 + 8); /*0x7bbf33*/
     if ( v17 > 0 ) /*0x7bbf37*/
     {
-      aP2[2] = *(unsigned int *)(a4 + 8) - *aP2; /*0x7bbf3b*/
+      ((int *)aP2)[2] = *(unsigned int *)(a4 + 8) - *(int *)aP2; /*0x7bbf3b*/
       aP0[2] -= v17; /*0x7bbf43*/
     }
     v18 = *(unsigned int *)(a4 + 12); /*0x7bbf49*/
-    v19 = aP2[3] + aP2[1] - v18; /*0x7bbf51*/
+    v19 = ((int *)aP2)[3] + ((int *)aP2)[1] - v18; /*0x7bbf51*/
     if ( v19 > 0 ) /*0x7bbf55*/
     {
-      aP2[3] = v18 - aP2[1]; /*0x7bbf59*/
+      ((int *)aP2)[3] = v18 - ((int *)aP2)[1]; /*0x7bbf59*/
       aP0[3] -= v19; /*0x7bbf61*/
     }
   }
@@ -1045,7 +1045,7 @@ int IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
     aP2[2] = v21[2]; /*0x7bbfb1*/
     aP2[3] = v21[3]; /*0x7bbfb7*/
   }
-  return aP0[2] > 0 && aP0[3] > 0 && aP2[2] > 0 && aP2[3] > 0; /*0x7bbfd6*/
+  return ((int *)aP0)[2] > 0 && ((int *)aP0)[3] > 0 && ((int *)aP2)[2] > 0 && ((int *)aP2)[3] > 0; /*0x7bbfd6*/
 }
 }
 // 0x7BC040
@@ -1384,8 +1384,8 @@ AbstractClass * * ObjectClass::sub_7BC580( ObjectClass * aP1, double a3)
   int v3; // edx
   void *vtable1; // [esp+8h] [ebp-4h]
 
-  if ( (double)((unsigned int)this->AbstractClass + (unsigned int)((unsigned int *)this)[0]) > aP1 ) /*0x7bc5a3*/
-    v3 = (double)(int)this->AbstractClass > aP1; /*0x7bc5bb*/
+  if ( (double)((unsigned int)this->AbstractClass + *(unsigned int **)this) > (double)aP1 ) /*0x7bc5a3*/
+    v3 = (double)(int)this->AbstractClass > (double)aP1; /*0x7bc5bb*/
   else
     v3 = 2; /*0x7bc5a5*/
   vtable1 = ((unsigned int *)this)[0]; /*0x7bc5c8*/
@@ -3626,7 +3626,7 @@ char sub_7BE940(int a1, int * a2)
 {
   int v4; // eax
   unsigned int *v5; // ebx
-  int (__cdecl *)(int, int, unsigned int, unsigned int); // eax
+  int (__cdecl *v6)(int, int, unsigned int, unsigned int); // eax
   int v7; // ecx
   int v8; // edx
   int v9; // edi
@@ -3706,9 +3706,9 @@ int E4Recv_7BF0B0::sub_7BF0B0()
 {
 
   int *v2; // edi
-  void (__cdecl *)(TechnoClass *, int, int, int); // eax
+  void (__cdecl *v3)(TechnoClass *, int, int, int); // eax
   int v4; // eax
-  void (__cdecl *)(TechnoClass *, int, char *, int); // eax
+  void (__cdecl *v5)(TechnoClass *, int, char *, int); // eax
   int (__cdecl *v6)(TechnoClass *, int); // eax
 
   v2 = (int *)*((unsigned int *)this + 439); /*0x7bf0b4*/
@@ -3773,7 +3773,7 @@ int E4Recv_7BF190::sub_7BF190()
 {
 
   unsigned int *v2; // edi
-  void (__cdecl *)(TechnoClass *, int, unsigned int, unsigned int); // eax
+  void (__cdecl *v3)(TechnoClass *, int, unsigned int, unsigned int); // eax
   int v4; // eax
   void (__cdecl *v5)(TechnoClass *, int, char *, int); // eax
   int (__cdecl *v6)(TechnoClass *, unsigned int); // eax

@@ -95,7 +95,7 @@ int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd, void * aP0)
         if ( v6 ) /*0x5e289c*/
         {
           v7 = (wint_t *)((int)((wint_t *)(v6 - v3 + 1)));
-          if ( v5 >= (unsigned int)(wint_t *)(v7) ) /*0x5e28a5*/
+          if ( v5 >= (unsigned int)v7 ) /*0x5e28a5*/
             v5 = v7; /*0x5e28a7*/
         }
       }
@@ -211,7 +211,7 @@ int ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)()
   DLGTEMPLATE *DialogIndirect; // esi
   HWND DlgItem; // ebx
   LONG WindowLongA; // eax
-  LONG (__stdcall *)(HWND, int); // ebp
+  LONG (__stdcall *v10)(HWND, int); // ebp
   HWND v11; // ebx
   LONG v12; // eax
   HWND v13; // eax
@@ -748,7 +748,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   CampaignScore *v140; // eax
   wchar_t **ebp366; // ebp
   HWND v141; // esi
-  HWND (__stdcall *)(HWND, int); // ebx
+  HWND (__stdcall *v142)(HWND, int); // ebx
   HWND v143; // ebx
   CampaignScore *v145; // eax
   HWND eax380; // eax

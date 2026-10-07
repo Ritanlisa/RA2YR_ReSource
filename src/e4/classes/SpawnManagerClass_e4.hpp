@@ -30,7 +30,7 @@ struct SpawnManagerClass {
     unsigned char q03A;  // 0x3A
     unsigned int spawnVectorCount;  // 0x3C
     unsigned int spawnVectorCapacity;  // 0x40
-    char creationFrame[4];  // 0x44
+    int creationFrame;  // 0x44
     unsigned char u8_45;  // 0x45
     void* q048;  // 0x48
     unsigned int q04C;  // 0x4C
@@ -39,7 +39,7 @@ struct SpawnManagerClass {
     unsigned int SpawnManagerClass_field_58;  // 0x58
     unsigned int SpawnManagerClass_field_5C;  // 0x5C
     unsigned int SpawnManagerClass_field_60;  // 0x60
-    char SpawnManagerClass_field_64[4];  // 0x64
+    int SpawnManagerClass_field_64;  // 0x64
     unsigned int SpawnManagerClass_field_68;  // 0x68
     unsigned int SpawnManagerClass_field_6C;  // 0x6C
     unsigned int SpawnManagerClass_field_70;  // 0x70

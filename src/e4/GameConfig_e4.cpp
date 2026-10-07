@@ -242,5 +242,3 @@ int  GameConfig::BuildChecksum(char * Buffer)
 
 }
 }  // G42.18c ns repair
-
-} // namespace gamemd

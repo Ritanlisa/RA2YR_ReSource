@@ -240,7 +240,7 @@ int DDraw::HandleSuspend()
 } // namespace gamemd
 // 0x4A3DD0
 namespace gamemd {
-void DDraw::LogError(uType, int a2)
+int DDraw_LogError(UINT uType, int a2)
 {
 
   int result; // eax
@@ -280,7 +280,7 @@ char DDraw::CheckCapabilities()
   {
     memset( (void *)(v4), 0, sizeof(v4)); /*0x4a4645*/
     v4[0] = 316; /*0x4a464b*/
-    v1 = g_lpDirectDraw7->lpVtbl->GetCaps(g_lpDirectDraw7, (LPDDCAPS)v4, 0); /*0x4a4659*/
+    v1 = g_lpDirectDraw7->GetCaps((LPDDCAPS)v4, 0); /*0x4a4659*/
     if ( v1 ) /*0x4a465f*/
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4669*/

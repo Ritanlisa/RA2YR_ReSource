@@ -2164,7 +2164,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                   v139 = *(unsigned int *)&v214[52]; /*0x60edcf*/
                   Y[0] = *(unsigned int *)&v214[40]; /*0x60edd6*/
                   v193 = *(unsigned int *)&v214[60]; /*0x60ede1*/
-                  if ( v214 != v138 + 4 ) /*0x60edf1*/
+                  if ( v214 != (int)v138 + 4 ) /*0x60edf1*/
                   {
                     qmemcpy(v214, v138 + 4, sizeof(v214)); /*0x60ee01*/
                     *(unsigned int *)&v214[52] = v139; /*0x60ee07*/

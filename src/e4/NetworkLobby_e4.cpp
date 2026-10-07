@@ -1138,7 +1138,7 @@ LABEL_79:
           Network_Handle();
         continue;
       case 7:
-        if ( *(&g_MatrixTransformState + 1301) != (CoordStruct *)2 )
+        if ( *(void **)(&g_MatrixTransformState + 1301) != (void *)2 )
         {
           char * v27 = CharToWideString( (unsigned char *)((unsigned char *)&HouseClass_Player + 39152));
           wcscpy((wchar_t *)&((unsigned char *)&HouseClass_Player)[39108], (const wchar_t *)v27);
@@ -1302,7 +1302,7 @@ LABEL_151:
                    (char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * i) + 40),
                    (int)&((unsigned char *)&HouseClass_Player)[39608]) )
             {
-              if ( (CoordStruct *)i == *(&g_MatrixTransformState + 1300) )
+              if ( (void *)i == *(void **)(&g_MatrixTransformState + 1300) )
               {
                 Game::ResetFlags();
                 GameClass::InitDifficultyButtons();
@@ -1310,7 +1310,7 @@ LABEL_151:
                 if ( Dialog::GetCurrentType() != 187 && Dialog::GetCurrentType() == 189 )
                   *(&g_MatrixTransformState + 1299) = (CoordStruct *)2;
               }
-              if ( (int)*(&g_MatrixTransformState + 1301) > 0 && (CoordStruct *)i == *(&g_MatrixTransformState + 1300) )
+              if ( *(int **)(&g_MatrixTransformState + 1301) > (void *)0 && (void *)i == *(void **)(&g_MatrixTransformState + 1300) )
                 *(&g_MatrixTransformState + 1301) = (CoordStruct *)-1;
               RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * i));
   int v61; // eax

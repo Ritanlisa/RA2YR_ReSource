@@ -1014,7 +1014,7 @@ LABEL_50:
   RemainingMs = ((gamemd::Timer*)(signed int *)&v101)->GetRemainingMs();
   if ( v29 )
     goto LABEL_54;
-  if ( (wchar_t *)(RemainingMs / 60) != dword_B04898 )
+  if ( (wchar_t *)(RemainingMs / 60) != (wchar_t *)dword_B04898 )
   {
     v29 = v94 == 0;
 LABEL_54:
@@ -1719,9 +1719,7 @@ int Network_SendFrameSync(int * a1, short a2)
   v6[13] = (unsigned char)dword_A8B550; /*0x64a084*/
   *(unsigned short *)&v6[11] = a2; /*0x64a08b*/
   (*(void (**)(int *, unsigned char *, int, unsigned int, int))(v4 + 8))( (int *)(a1), (unsigned char *)(v6), 14, 0, -1); /*0x64a090*/
-  ((void (*)(const char *, ...))Debug::Log)("Sent FrameSync only packet
-" /*w16g4 "Sent FrameSync only packet
-" /*w16g4 aSentFramesyncO*/*/); /*0x64a098*/
+  ((void (*)(const char *, ...))Debug::Log)("Sent FrameSync only packet\n" /*w16g4 aSentFramesyncO*/); /*0x64a098*/
   return ++dword_B0487C; /*0x64a0a6*/
 }
 }

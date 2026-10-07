@@ -412,7 +412,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log("Balance\t= %d\n"); /*0x4ca4a7 G57c1: IDA 0x4ca4a7 push offset aBalanceD*/
   Debug::Log("OriginalBalance = %d\n"); /*0x4ca4b5 G57c1: IDA 0x4ca4b5 push offset aOriginalbalanc*/
   Debug::Log("SpecialItem\t= %d\n"); /*0x4ca4c3 G57c1: IDA 0x4ca4c3 push offset aSpecialitemD*/
-  (*((void (**)(void **))this->((unsigned int *)owner)[0] + 4))( (void **)(&this->((unsigned int *)owner)[0])); /*0x4ca4d4*/
+  (*((void (**)(void **))((unsigned int *)this->owner)[0] + 4))( (void **)(&((unsigned int *)this->owner)[0])); /*0x4ca4d4*/
   Debug::Log("House->Fetch_ID()\t= %d\n"); /*0x4ca4dd G57c1: IDA 0x4ca4dd push offset aHouseFetchIdD*/
   (*((void (__stdcall **)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
   Debug::Log("ID\t= %d\n"); /*0x4ca4f5 G57c1: IDA 0x4ca4f5 push offset aIdD_0*/
@@ -430,7 +430,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
     Power::TimerProcess(v6); /*0x4ca549*/
   }
   Power::TimerProcess((int)(this->specialItem)); /*0x4ca554*/
-  v7 = (*((int (**)(void **))this->((unsigned int *)owner)[0] + 4))( (void **)(&this->((unsigned int *)owner)[0])); /*0x4ca563*/
+  v7 = (*((int (**)(void **))((unsigned int *)this->owner)[0] + 4))( (void **)(&((unsigned int *)this->owner)[0])); /*0x4ca563*/
   return (AbstractClass * *)Power::TimerProcess(v7); /*0x4ca56e*/
 
 }

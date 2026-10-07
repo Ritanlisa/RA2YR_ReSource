@@ -1099,7 +1099,7 @@ char ExecutePlanningQueue()
       goto LABEL_36; /*0x6372c2*/
     do /*0x6373d0*/
     {
-      v6 = *(Array **)(v4->(char *)vtable2 + * v5); /*0x6372cb*/
+      v6 = *(Array **)(v4->vtable2 + 4 * v5); /*0x6372cb*/
       Value = ((Array *)(v6))->FindValue((int)(v4->vtable1)); /*0x6372d4*/
       if ( Value == -1 ) /*0x6372dc*/
         v8 = 0; /*0x6372de*/
@@ -3719,13 +3719,13 @@ void sub_6336C0()
 namespace gamemd {
 int sub_633720()
 {
-  DataGlobal_AC4C44 = (unsigned char *)(0); /*0x633727*/
-  DataGlobal_AC4C48 = (unsigned char *)(0); /*0x63372c*/
-  DataGlobal_AC4C4C = (unsigned char *)(1); /*0x633731*/
-  DataGlobal_AC4C4D = (unsigned char *)(0); /*0x633738*/
+  *(unsigned int *)&DataGlobal_AC4C44 = 0; /*0x633727*/
+  *(unsigned int *)&DataGlobal_AC4C48 = 0; /*0x63372c*/
+  DataGlobal_AC4C4C[0] = 1; /*0x633731*/
+  DataGlobal_AC4C4D[0] = 0; /*0x633738*/
   stru_AC4C40 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x63373d*/
-  g_abs_AC4C54 = 10; /*0x633747*/
-  g_abs_AC4C50 = 0; /*0x633751*/
+  *(unsigned int *)&g_abs_AC4C54 = 10; /*0x633747*/
+  *(unsigned int *)&g_abs_AC4C50 = 0; /*0x633751*/
   return atexit((void (__cdecl *)(void))(sub_633760)); /*0x63375c*/
 }
 } // namespace gamemd
@@ -3743,11 +3743,11 @@ void sub_633760()
       if ( g_abs_AC4C4D ) /*0x633791*/
       {
         RA2_OPDEL(DataGlobal_AC4C44); /*0x633794*/
-        DataGlobal_AC4C44 = (unsigned char *)(0); /*0x63379c*/
+        *(unsigned int *)&DataGlobal_AC4C44 = 0; /*0x63379c*/
       }
     }
-    DataGlobal_AC4C4D = (unsigned char *)(0); /*0x6337a6*/
-    DataGlobal_AC4C48 = (unsigned char *)(0); /*0x6337ad*/
+    DataGlobal_AC4C4D[0] = 0; /*0x6337a6*/
+    *(unsigned int *)&DataGlobal_AC4C48 = 0; /*0x6337ad*/
   }
 }
 } // namespace gamemd
@@ -4905,7 +4905,7 @@ int * ActionScenarioClassCoordToScreen(BuildingClass * aP0, const void * a1, int
     v12[0] = v7; /*0x63d286*/
     v12[2] = v9; /*0x63d294*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v12), (int *)(v13)); /*0x63d298*/
-    v3 = DSurface_ViewBounds + v13[0]; /*0x63d2b1*/
+    v3 = *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds + v13[0]; /*0x63d2b1*/
     v5 = dword_886FA4 + v13[1]; /*0x63d2b4*/
   }
   *aP0 = v3; /*0x63d2b7*/

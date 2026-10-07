@@ -123,7 +123,7 @@ namespace gamemd {
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
 
-  return BYTE1(aP0->field_10) == 0; /*0x4b4c3e*/
+  return BYTE1(*(unsigned int *)((char *)aP0 + 0x10)) == 0; /*0x4b4c3e*/
 
 }
 } // namespace gamemd

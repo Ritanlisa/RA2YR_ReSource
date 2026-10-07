@@ -27,12 +27,12 @@ struct LightSourceClass {
     TintStruct* q030;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
-    char DetailLevel[4];  // 0x34
+    int DetailLevel;  // 0x34
     char Location[12];  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03C;  // 0x3C
     unsigned int q040;  // 0x40
-    char LightVisibility[4];  // 0x44
+    int LightVisibility;  // 0x44
     bool Activated;  // 0x48
 // --- flat members (END) ---
     LightSourceClass * CopyTo(char a2);

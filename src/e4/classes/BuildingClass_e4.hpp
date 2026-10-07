@@ -52,7 +52,7 @@ struct BuildingClass {
     void* objectTypeFlags;  // 0x24
     void* owningHouseIndex;  // 0x28
     bool q02B;  // 0x2B
-    char fallRate[4];  // 0x2C
+    int fallRate;  // 0x2C
     void* nextObject;  // 0x30
     unsigned char q031;  // 0x31
     unsigned char needsSave;  // 0x32
@@ -105,7 +105,7 @@ struct BuildingClass {
     char suspendedMission[4];  // 0xB0
     void* queuedMission;  // 0xB4
     void* missionQueued;  // 0xB8
-    char missionStatus[4];  // 0xBC
+    int missionStatus;  // 0xBC
     void* missionStartTime;  // 0xC0
     char missionTimer[12];  // 0xC8
     unsigned int q0D0;  // 0xD0
@@ -323,12 +323,12 @@ struct BuildingClass {
     unsigned int StorageFilledSlots;  // 0x6F0
     TechnoTypeClass* SecretProduction;  // 0x6F4
     char ColorAdd[3];  // 0x6F8
-    char BuildingClass_field_int_6FC[4];  // 0x6FC
+    int BuildingClass_field_int_6FC;  // 0x6FC
     char BuildingClass_field_short_700[2];  // 0x700
     unsigned char UpgradeLevel;  // 0x702
     char PrismTargetCoords[12];  // 0x708
     unsigned int u32_710;  // 0x710
-    char BunkerState[4];  // 0x718
+    int BunkerState;  // 0x718
     char ProductionTimer[4];  // 0x71C
     char ProductionFrame[4];  // 0x728
     unsigned int Audio8_2;

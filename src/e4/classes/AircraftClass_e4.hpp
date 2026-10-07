@@ -41,7 +41,7 @@ struct AircraftClass {
     unsigned int objectTypeFlags;  // 0x24
     unsigned int owningHouseIndex;  // 0x28
     bool q02B;  // 0x2B
-    char fallRate[4];  // 0x2C
+    int fallRate;  // 0x2C
     ObjectClass* nextObject;  // 0x30
     unsigned char q031;  // 0x31
     bool needsSave;  // 0x32
@@ -94,8 +94,8 @@ struct AircraftClass {
     void* suspendedMission;  // 0xB0
     char queuedMission[4];  // 0xB4
     bool missionQueued;  // 0xB8
-    char missionStatus[4];  // 0xBC
-    char missionStartTime[4];  // 0xC0
+    int missionStatus;  // 0xBC
+    int missionStartTime;  // 0xC0
     char missionTimer[12];  // 0xC8
     unsigned int q0D0;  // 0xD0
     unsigned char lastCommands;  // 0xD4

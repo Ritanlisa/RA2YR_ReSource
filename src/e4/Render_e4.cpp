@@ -1930,7 +1930,7 @@ int sub_6D9A50(int a1, int a2, int a3, int a4)
       if ( v5[128] ) /*0x6d9a88*/
       {
         v6 = (int *)(*(int (**)(unsigned char *, unsigned char *))(*(unsigned int *)v5 + 300))( (unsigned char *)(v5), (unsigned char *)(v10)); /*0x6d9a9f*/
-        v7 = DSurface_ViewBounds + *v6; /*0x6d9aaf*/
+        v7 = *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds + *v6; /*0x6d9aaf*/
         v8 = dword_886FA4 + v6[1]; /*0x6d9ac4*/
         if ( a1 < v6[2] + v7 && a2 < v6[3] + v8 && a1 + a3 > v7 && a4 + a2 > v8 ) /*0x6d9af2*/
         {

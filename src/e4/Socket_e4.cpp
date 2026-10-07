@@ -26,7 +26,7 @@ int Socket::ConfigureBuffers(SOCKET aP1)
   int result; // eax
 
   v2 =(::gamemd::AnimClass *)(unsigned int)(aP1);
-  if ( aP1 == (::gamemd::AnimClass *)(-1) ) /*0x7b2638*/
+  if ( aP1 == (::gamemd::AnimClass *)-1 ) /*0x7b2638*/
  v2 = (AnimClass *)(*((unsigned int *)this + 64539)); /*0x7b263a*/
   if ( setsockopt(v2, 0xFFFF, 4098, optval, 4) == -1 ) /*0x7b265a*/
     WSAGetLastError(); /*0x7b265c*/

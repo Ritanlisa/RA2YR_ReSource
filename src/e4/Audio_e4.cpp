@@ -786,7 +786,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
         while ( 1 )
         {
           v12 = (char *)**((unsigned int **)g_VocAudioConfig + v11); /*0x75130f*/
-          v13 = v12 ? ((VocClass*)v12)->GetSampleName() : g_Str_Invalid_Voc;
+          v13 = v12 ? ((VocClass*)v12)->GetSampleName() : (char *)g_Str_Invalid_Voc;
           if ( !_strcmpi(Destination, v13) ) /*0x751327*/
             break; /*0x751327*/
           if ( ++v11 >= g_VocPlayState ) /*0x75133b*/
@@ -912,8 +912,8 @@ void sub_752590(int a1, int a2, int a3)
   {
     InsertAfterDListNode((int)&stru_B1D3F0, v5); /*0x75261d*/
   }
-  else if ( (int *)dword_B1D3CC == &stru_B1D3C8 /*0x75264d*/
-         &(int *)&dword_B1D3F4 == &stru_B1D3F0
+  else if ( (int *)dword_B1D3CC == (int *)&stru_B1D3C8 /*0x75264d*/
+         && (int *)&dword_B1D3F4 == (int *)&stru_B1D3F0
          && (!dword_B1D4B8 || *((unsigned int *)dword_B1D4B8 + 5) < a3) )
   {
     dword_B1D4B8 = (unsigned int)(v5); /*0x75264f*/

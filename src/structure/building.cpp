@@ -10751,7 +10751,7 @@ void BuildingClass::AddToProductionQueue(int a2)  // g57w11 r4: 参数命名 (ra
     if ( !a2 ) /*0x4da0eb*/
       return; /*0x4da0eb*/
     v3 = *(unsigned int *)(this + 1468); /*0x4da0f1*/
-    if ( a2 != this ) /*0x4da0f9*/
+    if ( a2 != (BuildingClass *)this ) /*0x4da0f9*/
     {
       v4 = v3 == 0; /*0x4da108*/
       goto LABEL_6; /*0x4da108*/

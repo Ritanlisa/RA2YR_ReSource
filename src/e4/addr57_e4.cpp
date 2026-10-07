@@ -1277,7 +1277,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
   result = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj( (int16_t *)(aP0)) + 17); /*0x57dd6c*/
   if ( result >= 74 && result <= 101 ) /*0x57dd7b*/
   {
-    v3 = *aP0 + (aP0[1] << 9); /*0x57dd92*/
+    v3 = *(short *)aP0 + (((short *)aP0)[1] << 9); /*0x57dd92*/
     if ( v3 < 0x40000 && (v4 = *(unsigned int *)(dword_87F924 + 4 * v3)) != 0 ) /*0x57dda2*/
     {
       v5 = (CellClass *)v4; /*0x57dda4*/
@@ -1291,7 +1291,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       dword_ABDC74= v6; /*0x57ddbb*/
     }
     v46 = *(unsigned int *)aP0 - 0x10000; /*0x57ddcf*/
-    v7 = *aP0 + (IDA_SHIWORD(v46) << 9); /*0x57dddd*/
+    v7 = *(short *)aP0 + (IDA_SHIWORD(v46) << 9); /*0x57dddd*/
     if ( v7 < 0x40000 && (v8 = *(unsigned int *)(dword_87F924 + 4 * v7)) != 0 ) /*0x57dded*/
     {
       v51 = v8; /*0x57ddef*/
@@ -1301,7 +1301,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       v51 = (unsigned int)(int)&unk_ABDC50;
       dword_ABDC74= v46; /*0x57de01*/
     }
-    v9 = *aP0 + ((int16_t)((unsigned int)(*(unsigned int *)aP0 + 0x10000) >> 16) << 9); /*0x57de23*/
+    v9 = *(short *)aP0 + ((int16_t)((unsigned int)(*(unsigned int *)aP0 + 0x10000) >> 16) << 9); /*0x57de23*/
     if ( v9 < 0x40000 && (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) != 0 ) /*0x57de33*/
     {
       v47 = v10; /*0x57de35*/
@@ -1557,7 +1557,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   v2 = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj( (int16_t *)(aP0)) + 17); /*0x57e2bc*/
   if ( v2 >= 74 && v2 <= 101 ) /*0x57e2cb*/
   {
-    v3 = *aP0 + (aP0[1] << 9); /*0x57e2e6*/
+    v3 = *(short *)aP0 + (((short *)aP0)[1] << 9); /*0x57e2e6*/
     if ( v3 < 0x40000 && (v4 = *(CellClass **)(dword_87F924 + 4 * v3)) != 0 ) /*0x57e2f6*/
     {
       v5 = v4; /*0x57e2f8*/
@@ -1567,7 +1567,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v5 =(gamemd::CellClass *)&unk_ABDC50; /*0x57e2fe*/
       dword_ABDC74= *(unsigned int *)aP0; /*0x57e300*/
     }
-    v6 = *aP0 - 1; /*0x57e30c*/
+    v6 = *(short *)aP0 - 1; /*0x57e30c*/
     IDA_HIWORD(v50) = aP0[1]; /*0x57e30e*/
     IDA_LOWORD(v50) = v6; /*0x57e316*/
     v53 = (int)v5; /*0x57e31b*/
@@ -1581,7 +1581,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v52 = (unsigned int)(int)&unk_ABDC50;
       dword_ABDC74= v50; /*0x57e345*/
     }
-    v9 = *aP0 + 1; /*0x57e351*/
+    v9 = *(short *)aP0 + 1; /*0x57e351*/
     IDA_HIWORD(v50) = aP0[1]; /*0x57e353*/
     IDA_LOWORD(v50) = v9; /*0x57e35b*/
     v10 = v9 + (IDA_SHIWORD(v50) << 9); /*0x57e366*/
@@ -1749,7 +1749,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       {
         IDA_LOBYTE(v55) = 1; /*0x57e6e4*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)aP0); /*0x57e6e8*/
-        v40 = *aP0 + 1; /*0x57e6f4*/
+        v40 = *(short *)aP0 + 1; /*0x57e6f4*/
         IDA_HIWORD(right) = aP0[1]; /*0x57e6f6*/
         IDA_LOWORD(right) = v40; /*0x57e6fb*/
         v51[0] = right; /*0x57e708*/
@@ -1843,7 +1843,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
   result = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj( (int16_t *)(aP0)) + 17); /*0x57e7bc*/
   if ( result >= 205 && result <= 232 ) /*0x57e7cf*/
   {
-    v3 = *aP0 + (aP0[1] << 9); /*0x57e7e6*/
+    v3 = *(short *)aP0 + (((short *)aP0)[1] << 9); /*0x57e7e6*/
     if ( v3 < 0x40000 && (v4 = *(unsigned int *)(dword_87F924 + 4 * v3)) != 0 ) /*0x57e7f6*/
     {
       v5 = (CellClass *)v4; /*0x57e7f8*/
@@ -1857,7 +1857,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       dword_ABDC74= v6; /*0x57e80f*/
     }
     v46 = *(unsigned int *)aP0 - 0x10000; /*0x57e823*/
-    v7 = *aP0 + (IDA_SHIWORD(v46) << 9); /*0x57e831*/
+    v7 = *(short *)aP0 + (IDA_SHIWORD(v46) << 9); /*0x57e831*/
     if ( v7 < 0x40000 && (v8 = *(unsigned int *)(dword_87F924 + 4 * v7)) != 0 ) /*0x57e841*/
     {
       v51 = v8; /*0x57e843*/
@@ -1867,7 +1867,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       v51 = (unsigned int)(int)&unk_ABDC50;
       dword_ABDC74= v46; /*0x57e855*/
     }
-    v9 = *aP0 + ((int16_t)((unsigned int)(*(unsigned int *)aP0 + 0x10000) >> 16) << 9); /*0x57e877*/
+    v9 = *(short *)aP0 + ((int16_t)((unsigned int)(*(unsigned int *)aP0 + 0x10000) >> 16) << 9); /*0x57e877*/
     if ( v9 < 0x40000 && (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) != 0 ) /*0x57e887*/
     {
       v47 = v10; /*0x57e889*/
@@ -2124,7 +2124,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
   v2 = *((unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj( (int16_t *)(aP0)) + 17); /*0x57ed1c*/
   if ( v2 >= 205 && v2 <= 232 ) /*0x57ed2f*/
   {
-    v3 = *aP0 + (aP0[1] << 9); /*0x57ed4a*/
+    v3 = *(short *)aP0 + (((short *)aP0)[1] << 9); /*0x57ed4a*/
     if ( v3 < 0x40000 && (v4 = *(CellClass **)(dword_87F924 + 4 * v3)) != 0 ) /*0x57ed5a*/
     {
       v5 = v4; /*0x57ed5c*/
@@ -2134,7 +2134,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v5 = (gamemd::CellClass *)(&unk_ABDC50); /*0x57ed62*/
       dword_ABDC74= *(unsigned int *)aP0; /*0x57ed64*/
     }
-    v6 = *aP0 - 1; /*0x57ed70*/
+    v6 = *(short *)aP0 - 1; /*0x57ed70*/
     IDA_HIWORD(v50) = aP0[1]; /*0x57ed72*/
     IDA_LOWORD(v50) = v6; /*0x57ed7a*/
     v53 = (int)v5; /*0x57ed7f*/
@@ -2148,7 +2148,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v52 = (unsigned int)(int)&unk_ABDC50;
       dword_ABDC74= v50; /*0x57eda9*/
     }
-    v9 = *aP0 + 1; /*0x57edb5*/
+    v9 = *(short *)aP0 + 1; /*0x57edb5*/
     IDA_HIWORD(v50) = aP0[1]; /*0x57edb7*/
     IDA_LOWORD(v50) = v9; /*0x57edbf*/
     v10 = v9 + (IDA_SHIWORD(v50) << 9); /*0x57edca*/
@@ -2316,7 +2316,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       {
         IDA_LOBYTE(v55) = 1; /*0x57f151*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)aP0); /*0x57f155*/
-        v40 = *aP0 + 1; /*0x57f161*/
+        v40 = *(short *)aP0 + 1; /*0x57f161*/
         IDA_HIWORD(right) = aP0[1]; /*0x57f163*/
         IDA_LOWORD(right) = v40; /*0x57f168*/
         v51[0] = right; /*0x57f175*/
@@ -2403,8 +2403,8 @@ char globalHelper_072330(IUnknown * a1, int a2)
 
     v2 = a2 & 7; /*0x572339*/
     v3 = (&dword_89F688)[v2]; /*0x57233c*/
-    IDA_LOWORD(v2) = a1[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x572352*/
-    IDA_LOWORD(a2) = *a1 + v3; /*0x572356*/
+    IDA_LOWORD(v2) = ((short *)a1)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x572352*/
+    IDA_LOWORD(a2) = *(short *)a1 + v3; /*0x572356*/
     IDA_HIWORD(a2) = v2; /*0x57235e*/
     v4 = (__int16)a2 + ((__int16)v2 << 9); /*0x57236d*/
     if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x572387*/

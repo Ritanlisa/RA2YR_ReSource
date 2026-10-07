@@ -185,7 +185,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
-    && ((uint8_t ((gamemd::WeaponTypeClass **)(*))(WeaponTypeClass **, int, unsigned int))((unsigned int *)WeaponTypeClass_Array)[0])(
+    && ((uint8_t (*)(WeaponTypeClass **, int, unsigned int))((unsigned int *)WeaponTypeClass_Array)[0])(
          &WeaponTypeClass_Array,
          dword_887570 + dword_88757C,
          0) )
@@ -216,7 +216,7 @@ int WeaponTypeClass::Destructor(void *a1)
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
-  v2 = ((int ((gamemd::WeaponTypeClass **)(*))(WeaponTypeClass **, WeaponTypeClass **))((unsigned int *)WeaponTypeClass_Array)[0])( /*0x771f99*/
+  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))((unsigned int *)WeaponTypeClass_Array)[0])( /*0x771f99*/
          &WeaponTypeClass_Array,
          &v7);
   if ( v2 != -1 && v2 < g_WeaponTypePool && v2 < --g_WeaponTypePool ) /*0x771fb4*/
@@ -427,12 +427,12 @@ int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4
     v7 = (int)(*a2); /*0x772ed4*/
     a3 = (void *)((int *)a1->Anim[4]); /*0x772ee1*/
     (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))( (int *)(a2), (int **)(&a3), 4, 0, v5); /*0x772ee5*/
-    for ( i = 0; i   <   (int)(a4)); ++i ) /*0x772ef0*/
+    for ( i = 0; i   <   (int)(a4); ++i ) /*0x772ef0*/
       (*(void (**)(int *, int, int, unsigned int))(*(char *)a2 +6))( (int *)(a2), a1->Anim[1] + 4 * i, 4, 0); /*0x772f03*/
     v9 = (int)(*a2); /*0x772f13*/
     a4 = a1->Report[4]; /*0x772f1f*/
     (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))( (int *)(a2), (int *)(&a4), 4, 0); /*0x772f23*/
-    for ( j = 0; j   <   (int)(a4)); ++j ) /*0x772f2e*/
+    for ( j = 0; j   <   (int)(a4); ++j ) /*0x772f2e*/
       (*(void (**)(int *, int, int, unsigned int))(*(char *)a2 +6))( (int *)(a2), a1->Report[1] + 4 * j, 4, 0); /*0x772f41*/
     v11 = (int)(*a2); /*0x772f51*/
     a4 = a1->DownReport[4]; /*0x772f5d*/
@@ -466,7 +466,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
   v9 = v3; /*0x773135*/
-  v4 = ((int ((gamemd::WeaponTypeClass **)(*))(WeaponTypeClass **, AbstractClass **))((unsigned int *)WeaponTypeClass_Array)[0])(&WeaponTypeClass_Array, &v9); /*0x773139*/
+  v4 = ((int (*)(WeaponTypeClass **, AbstractClass **))((unsigned int *)WeaponTypeClass_Array)[0])(&WeaponTypeClass_Array, &v9); /*0x773139*/
   if ( v4 != -1 && v4 < g_WeaponTypePool && v4 < --g_WeaponTypePool ) /*0x773154*/
   {
     do /*0x77316c*/
@@ -541,7 +541,7 @@ char WeaponTypeClass::ReadTrajectoryData(uint8_t * Block, char * a3, int a4)
       {
         if ( Source[0] ) /*0x475bd2*/
           strcat( (char *)(Source), (char *)&::Delimiter); /*0x475bf9*/
-        strcat(Source, (const char *)(*(unsigned int *)&v6->q_90); /*0x475c27*/
+        strcat(Source, (const char *)(*(unsigned int *)&v6->q_90 + 36)); /*0x475c27*/
         v4 = v8; /*0x475c29*/
       }
       ++v5; /*0x475c34*/

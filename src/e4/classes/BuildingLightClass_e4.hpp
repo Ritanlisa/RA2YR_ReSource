@@ -111,7 +111,7 @@ struct BuildingLightClass {
     unsigned int q0D4;  // 0xD4
     bool BuildingLightClass_field_D8;  // 0xD8
     unsigned char q0D9;  // 0xD9
-    char BehaviourMode[4];  // 0xDC
+    int BehaviourMode;  // 0xDC
     unsigned int BuildingLightClass_field_E0;  // 0xE0
     ObjectClass* FollowingObject;  // 0xE4
     unsigned int GetCellCoords_Alt;

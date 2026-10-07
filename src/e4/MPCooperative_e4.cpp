@@ -337,7 +337,7 @@ int MPCooperative::ReadCoopSaveINI()
   char v23[100]; // [esp+D0h] [ebp-64h] BYREF
 
   v1 = (char *)(this);
-  if ( !*this ) /*0x49d12b*/
+  if ( !*(unsigned int *)this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
   v2 = (char *)((unsigned char *)this + 28); /*0x49d137*/
   if ( !*((unsigned char *)this + 28) ) /*0x49d134*/
@@ -525,7 +525,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     v18,
     0);
   ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&aP4)); /*0x5c15b3*/
-  for ( aP6 = 0; aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
+  for ( aP6 = 0; (int)aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
   {
     v19 = (gamemd::Init)((MissionClass *)__2_YAPAXI_Z(0x70u)); /*0x5c15c6*/
     if ( v19 ) /*0x5c15d0*/
@@ -1104,7 +1104,7 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
     DecodeCampaignPlayerName( /*0x5c20c2*/
       (int)this->MPCooperative_field_0x40,
       a2,
-      *(int *)v14.VectorClass,
+      *(int *)&v14,
       *(void **)&(unsigned int *)((char *)&v14 + 3),
       *(int *)&(unsigned int *)((char *)&v14 + 3),
       ((char *)&v14),
@@ -1671,7 +1671,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
         ++v8; /*0x5c2e25*/
       ++v9; /*0x5c2e2b*/
     }
-    while ( v9 < ((char *)&stru_A80220) ); /*0x5c2e2e*/
+    while ( v9 < HouseClass_Count ); /*0x5c2e2e*/
     v4 = a3; /*0x5c2e30*/
   }
   if ( v5 >= v8 ) /*0x5c2e37*/
@@ -1742,7 +1742,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
   do /*0x5c2f2a*/
     v16[v1++] = (Multiplayer)(*p_uniqueId++ != -1); /*0x5c2f17*/
   while ( v1 < 16 ); /*0x5c2f2a*/
-  for ( i = 0; i < ((char *)&stru_A80220); ++i ) /*0x5c2f36*/
+  for ( i = 0; i < HouseClass_Count; ++i ) /*0x5c2f36*/
   {
     v4 = 0; /*0x5c2f44*/
     v5 = -1; /*0x5c2f46*/
@@ -1924,7 +1924,7 @@ AbstractClass * * MPCooperative::GetMapData()
       {
         nextArrayIndex = (unsigned int)((char *)&stru_A80220); /*0x5c329d*/
         v11 = v1; /*0x5c32a2*/
-        if ( v1 < ((char *)&stru_A80220) ) /*0x5c32a8*/
+        if ( v1 < HouseClass_Count ) /*0x5c32a8*/
         {
           do /*0x5c3360*/
           {
@@ -1943,7 +1943,7 @@ AbstractClass * * MPCooperative::GetMapData()
             nextArrayIndex = (unsigned int)((char *)&stru_A80220); /*0x5c3354*/
             v11 = ++v1; /*0x5c335c*/
           }
-          while ( v1 < ((char *)&stru_A80220) ); /*0x5c3360*/
+          while ( v1 < HouseClass_Count ); /*0x5c3360*/
           v1 = v13; /*0x5c3366*/
         }
       }
@@ -1965,7 +1965,7 @@ AbstractClass * * MPCooperative::GetMapData()
         if ( !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422) && !*(unsigned char *)(v6 + 492) ) /*0x5c33dc*/
         {
           v14 = v5; /*0x5c33ef*/
-          if ( v5 < ((char *)&stru_A80220) ) /*0x5c33f5*/
+          if ( v5 < HouseClass_Count ) /*0x5c33f5*/
           {
             do /*0x5c34ac*/
             {
@@ -1983,7 +1983,7 @@ AbstractClass * * MPCooperative::GetMapData()
               }
               v14 = ++v5; /*0x5c34a8*/
             }
-            while ( v5 < ((char *)&stru_A80220) ); /*0x5c34ac*/
+            while ( v5 < HouseClass_Count ); /*0x5c34ac*/
             v5 = v12; /*0x5c34b2*/
           }
         }
@@ -1991,7 +1991,7 @@ AbstractClass * * MPCooperative::GetMapData()
         v10 += 4; /*0x5c34c4*/
         v12 = v5; /*0x5c34c8*/
       }
-      while ( v5 - 1 < ((char *)&stru_A80220) ); /*0x5c34d1*/
+      while ( v5 - 1 < HouseClass_Count ); /*0x5c34d1*/
     }
   }
   return 1; /*0x5c34d7*/

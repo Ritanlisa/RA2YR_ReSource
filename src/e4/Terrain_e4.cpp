@@ -965,7 +965,7 @@ LABEL_48:
 }
 // 0x56CB90
 namespace gamemd {
-int ((Terrain *)unsigned char * a1)->FloodFillConnectivity( IUnknown * aP2, AbstractClass * aP3, void *a4_1)
+int Terrain::FloodFillConnectivity(unsigned __int8 *a1, int aP2, unsigned int *aP3)
 {
 
   uint8_t *v4; // ebx

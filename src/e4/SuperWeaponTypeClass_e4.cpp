@@ -543,7 +543,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
       256);
     if ( &v45 == (VocClass *)-128 ) /*0x6cedbf*/
     {
-      (&Destination)[0] = (unsigned __int8)&((unsigned char *)&v45.Name)[5]; /*0x6cedc1*/
+      Destination[0] = (unsigned __int8)&v45.Name[5]; /*0x6cedc1*/
     }
     else
     {

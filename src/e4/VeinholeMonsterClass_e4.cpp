@@ -44,7 +44,7 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
     if ( v8 <= v7 ) /*0x5862eb*/
       break; /*0x5862eb*/
   LABEL_9:
-    if ( ++v5 > a2 + aP0[1] ) /*0x58633d*/
+    if ( ++v5 > a2 + ((short *)aP0)[1] ) /*0x58633d*/
       return 0; /*0x58633d*/
   }
   IDA_HIWORD(v12) = v5; /*0x5862f0*/
@@ -59,7 +59,7 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
     }
     if ( v10->firstObject ) /*0x586321*/
       return 1; /*0x58633f*/
-    if ( ++v8 > a2 + *aP0 ) /*0x586332*/
+    if ( ++v8 > a2 + *(short *)aP0 ) /*0x586332*/
       goto LABEL_9; /*0x586332*/
   }
 }

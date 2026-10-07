@@ -78,7 +78,7 @@ int RestartNetworkSession(void *self) {  // g57c5 W7: raw __thiscall receiver ma
   if ( (void *)DataGlobal_B1CF84 != self )
   {
     WinMain::ShutdownCleanup();
-    DataGlobal_B1CF84 = (int)self;
+    *(unsigned int *)&DataGlobal_B1CF84 = (int)self;
     return CSFClass::LoadFile((const char *)DataGlobal_B1CF68);
   }
   return result;

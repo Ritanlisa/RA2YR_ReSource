@@ -81,7 +81,7 @@ bool ObjectClass::Remove()
     {
       v4 = (IUnknown *)(IPersistStream *)this; /*0x5f44be*/
       v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int * *)((char *)&stru_A8EB00 + 440) + 16))((unsigned char *)((char *)&stru_A8EB00 + 440), &v4); /*0x5f44c2*/
-      if ( v3 != -1 && v3 < *(int * *)((char *)&stru_A8EB00 + 456) ) /*0x5f44d2*/
+      if ( v3 != -1 && v3 < *(int *)((char *)&stru_A8EB00 + 456) ) /*0x5f44d2*/
       {
         --*(unsigned int * *)((char *)&stru_A8EB00 + 456); /*0x5f44d7*/
         for ( ; /*0x5f44dd*/

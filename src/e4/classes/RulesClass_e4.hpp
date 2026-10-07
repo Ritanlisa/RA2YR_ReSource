@@ -24,18 +24,18 @@ struct RulesClass {
     unsigned int DetailMinFrameRateNormal;  // 0x0
     void *q4;  // 0x4
     unsigned int DetailBufferZoneWidth;  // 0x8
-    char AmmoCrateDamage[4];  // 0xC
+    int AmmoCrateDamage;  // 0xC
     UnitTypeClass* LargeVisceroid;  // 0x10
     UnitTypeClass* SmallVisceroid;  // 0x14
-    char AttackingAircraftSightRange[4];  // 0x18
+    int AttackingAircraftSightRange;  // 0x18
     unsigned int q01C;  // 0x1C
     double TunnelSpeed;  // 0x20
     unsigned int q024;  // 0x24
     double TiberiumHeal;  // 0x28
-    char SelfHealInfantryFrames[4];  // 0x30
-    char SelfHealInfantryAmount[4];  // 0x34
-    char SelfHealUnitFrames[4];  // 0x38
-    char SelfHealUnitAmount[4];  // 0x3C
+    int SelfHealInfantryFrames;  // 0x30
+    int SelfHealInfantryAmount;  // 0x34
+    int SelfHealUnitFrames;  // 0x38
+    int SelfHealUnitAmount;  // 0x3C
     bool FreeMCV;  // 0x40
     bool BerzerkAllowed;  // 0x41
     char PoseDir[4];  // 0x44

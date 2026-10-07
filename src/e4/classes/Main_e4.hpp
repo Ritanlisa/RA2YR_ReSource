@@ -46,7 +46,7 @@ namespace gamemd {
 
 struct Main {
 // --- flat members (BEGIN) ---
-    char Main_field_00[4];  // 0x0
+    int Main_field_00;  // 0x0
     unsigned int Debug;
 // --- flat members (END) ---
 int CreateDialog();

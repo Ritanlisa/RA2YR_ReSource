@@ -67,7 +67,7 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
       *(unsigned int *)(v5 - 8) = 0; /*0x4d2de5*/
       *(unsigned int *)(v5 - 4) = 0; /*0x4d2de8*/
       *(unsigned char *)v5 = 0; /*0x4d2deb*/
-      v5->u32_4 = 0; /*0x4d2ded*/
+      *(unsigned int *)((char *)v5 + 4) = 0; /*0x4d2ded*/
       v5 += 16; /*0x4d2df0*/
       --v6; /*0x4d2df3*/
     }

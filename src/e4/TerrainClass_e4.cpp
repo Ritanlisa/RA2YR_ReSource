@@ -364,13 +364,13 @@ LABEL_162:
     case 0x20:
       return globalHelper_0E2050( (int)aP1, (int)v9, (int)a5, (int16_t *)((IUnknown *)aP4));
     case 0x21:
-      ((SuperClass *)(*(unsigned int *)(aP1[16].(char *)nextArrayIndex + * *(unsigned int *)((char *)a1 +44))))->StartTimer( (int)((IUnknown *)1), 0, 0);
+      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44))))->StartTimer( (int)((IUnknown *)1), 0, 0);
       if ( (AbstractClass *)HouseClass_Player.field_0 == aP1 )
         goto LABEL_157;
       return 1;
     case 0x22:
-      ((SuperClass *)(*(unsigned int *)(aP1[16].(char *)nextArrayIndex + * *(unsigned int *)((char *)a1 +44))))->StartTimer(0, 0, 0);
-      *(unsigned char *)(*(unsigned int *)(aP1[16].(char *)nextArrayIndex + * *(unsigned int *)((char *)a1 +44)) + 96) = 0;
+      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44))))->StartTimer(0, 0, 0);
+      *(unsigned char *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44)) + 96) = 0;
       if ( (AbstractClass *)HouseClass_Player.field_0 != aP1 )
         return 1;
 LABEL_157:

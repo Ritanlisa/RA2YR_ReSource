@@ -649,7 +649,7 @@ public:
 class rc_ptr_base {
 public:
     char __pad_0[4];
-    char u32_4[4];  /* unsigned int */  // 0x4
+    unsigned int u32_4;  /* unsigned int */  // 0x4
     char __pad_8[4];
     char u16_C[2];  /* unsigned int */  // 0xC
     char u8_E[1];  /* unsigned char */  // 0xE

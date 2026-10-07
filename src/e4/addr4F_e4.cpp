@@ -161,7 +161,7 @@ long sub_4F1840()
     if ( Dialog ) /*0x4f185f*/
     {
       SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4f1869*/
-      ((Dialog *)Dialog)->Show(); /*0x4f1871*/
+      Dialog::Show(Dialog); /*0x4f1871*/
       if ( !dwNewLong ) /*0x4f187c*/
       {
         while ( Dialog::PumpMessages() != 1 ) /*0x4f1885*/
@@ -372,7 +372,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
         v14 = (MSVQAnim *)RA2_OPNEW(0x30u); /*0x4f1e25*/
         if ( v14 ) /*0x4f1e2f*/
         {
-          Config = MSVQAnim::ConstructMSVQAnimHidden((char **)( /*0x4f1e4e*/)          Config = MSVQAnim::ConstructMSVQAnimHidden( /*0x4f1e4e*/
+          Config = MSVQAnim::ConstructMSVQAnimHidden( /*0x4f1e4e*/
                      v14,
                      (char **)&v38.vtable1,
                      &DSurface_Alternate->DSurface_field_0x0,
@@ -502,7 +502,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
         }
         ++v29; /*0x4f210b*/
       }
-      while ( v29   <=   (int)(v38.referenceCount ))); /*0x4f210e*/
+      while ( v29   <=   (int)(v38.referenceCount )); /*0x4f210e*/
     }
     j_DeleteAndZero( (void *)((ObjectClass *)&v38.nextArrayIndex)); /*0x4f2118*/
     j_DeleteAndZero( (void *)((ObjectClass *)&v38.vtable2)); /*0x4f2121*/
@@ -1077,7 +1077,7 @@ namespace gamemd {
 int E4Recv_4F3AB0::sub_4F3AB0(int a2)
 {
     int result; // eax
-    int (__stdcall **)(int); // edx
+    int (__stdcall **vtable0)(int); // edx
 
     result = a2; /*0x4f3ab0*/
     if ( (unsigned char)a2 != IDA_BYTE1(this->vfptr) ) /*0x4f3ab9*/
@@ -1773,14 +1773,14 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
 
     v3 = this; /*0x4f3c49*/
     GraphicMenuItem::Constructor((GraphicMenuItem *)this, a2); /*0x4f3c50*/
-    p_uniqueId = &v3->?; /*0x4f3c55*/
-    v3->? = 0; /*0x4f3c5e*/
-    v3->? = 0; /*0x4f3c61*/
-    IDA_LOBYTE(v3->?) = 1; /*0x4f3c64*/
-    IDA_BYTE1(v3->?) = 0; /*0x4f3c68*/
-    v3->? = (int)(void*)&DynamicVectorClass_unsigned_int_vftable; /*0x4f3c6b*/
+    p_uniqueId = (int *)&v3->vtable2; /*0x4f3c55*/
+    v3->vtable2 = 0; /*0x4f3c5e*/
+    v3->vtable3 = 0; /*0x4f3c61*/
+    IDA_LOBYTE(v3->vtable4) = 1; /*0x4f3c64*/
+    IDA_BYTE1(v3->vtable4) = 0; /*0x4f3c68*/
+    v3->abstractFlags = (void *)&DynamicVectorClass_unsigned_int_vftable; /*0x4f3c6b*/
     v3->occupant = 10; /*0x4f3c71*/
-    v3->? = 0; /*0x4f3c78*/
+    v3->uniqueId = 0; /*0x4f3c78*/
     v3->AbstractClass = (void*)&GraphicMenuShortcutItem_vftable; /*0x4f3c7b*/
     unknown_libname_73( (void *)(&a2)); /*0x4f3c82*/
     v5 = ((String *)a3)->Tokenize( 0, (ObjectClass *)((char *)&::Delimiter), (ObjectClass *)((void **)&a2)); /*0x4f3c9f*/
@@ -2155,10 +2155,10 @@ namespace gamemd {
 unsigned int * E4Recv_4F7850::sub_4F7850()
 {
     *(unsigned int *)&this->vfptr = 0; /*0x4f7854*/
-    this->? = (void *)1; /*0x4f7856*/
-    this->? = 0; /*0x4f785d*/
-    this->? = 0; /*0x4f7860*/
-    this->? = -1; /*0x4f7863*/
+    this->M4 = 1; /*0x4f7856*/
+    this->M8 = 0; /*0x4f785d*/
+    this->M12 = 0; /*0x4f7860*/
+    this->M16 = -1; /*0x4f7863*/
     return &this->AbstractClass; /*0x4f786a*/
 }
 } // namespace gamemd

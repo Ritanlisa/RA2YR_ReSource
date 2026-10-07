@@ -338,7 +338,7 @@ LABEL_29:
       if ( this->fallRate ) /*0x528318*/
       {
         attachedBomb = (gamemd::BombClass *)(this->attachedBomb); /*0x52831f*/
-        if ( !attachedBomb || attachedBomb->AbstractClass != v16 ) /*0x528328*/
+        if ( !attachedBomb || attachedBomb->AbstractClass != (unsigned int)v16 ) /*0x528328*/
         {
           v18 = (BombClass *)((SortedArray *)((SortedArray *)&this->owningHouseIndex))->BinarySearch((int *)&a2); /*0x528331*/
           if ( !v18 ) /*0x528338*/

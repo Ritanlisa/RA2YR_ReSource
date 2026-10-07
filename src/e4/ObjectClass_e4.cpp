@@ -187,7 +187,7 @@ referenceCount = (*(int ((gamemd::TechnoClass *)(**))(TechnoClass *, int16_t *, 
     case 2: /*0x4d7de0*/
 LABEL_38:
       aP4 = (void **)*FindPlacementCell((gamemd::FootClass *)((ObjectClass *)&v42), referenceCount,(IUnknown **)( v7), 0, v38, v39); /*0x4d8065*/
-      if ( aP4 == (gamemd::FootClass *)(void **)g_FootClass_Pool ) /*0x4d8081*/
+      if ( aP4 == *(gamemd::FootClass **)&g_FootClass_Pool ) /*0x4d8081*/
         return 0; /*0x4d8081*/
       vtable0 = (unsigned int)this->vtable1; /*0x4d8099*/
       v37 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(aP3)); /*0x4d80a6*/
