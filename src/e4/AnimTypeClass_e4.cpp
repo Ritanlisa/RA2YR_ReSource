@@ -342,7 +342,36 @@ int AnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   int v48; // ebp
   AnimTypeClass *v49; // eax
   unsigned int *v50; // eax
- ... [22585 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): ... ...
+  // live body via get_context/0x427D00 — w15f4 regrafted decls only
+  unsigned int *v51; // ebp
+  int v52; // ebp
+  AnimTypeClass *v53; // eax
+  unsigned int *v54; // eax
+  int v55; // eax
+  int v56; // ebp
+  int v57; // eax
+  char v58; // al
+  char v59; // cl
+  char v60; // al
+  int *v61; // eax
+  int v62; // ecx
+  int v63; // edi
+  int v64; // eax
+  int v65; // eax
+  int v66; // eax
+  int v68; // [esp-Ch] [ebp-C4h]
+  int v69; // [esp-Ch] [ebp-C4h]
+  char v70; // [esp-Ch] [ebp-C4h]
+  int v71; // [esp-Ch] [ebp-C4h]
+  int v72; // [esp-Ch] [ebp-C4h]
+  char v73; // [esp-Ch] [ebp-C4h]
+  char v74; // [esp-Ch] [ebp-C4h]
+  int v75; // [esp+8h] [ebp-B0h] BYREF
+  int v76; // [esp+Ch] [ebp-ACh]
+  int v77[2]; // [esp+10h] [ebp-A8h] BYREF
+  char Source[128]; // [esp+18h] [ebp-A0h] BYREF
+  char Destination[32]; // [esp+98h] [ebp-20h] BYREF
 }
 }
 // 0x428800

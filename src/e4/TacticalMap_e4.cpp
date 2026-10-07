@@ -918,7 +918,7 @@ LABEL_54:
   }
   while ( v16 < 5 ); /*0x6d95a9*/
  p_count = (int *)(&dword_8A0364); /*0x6d95af*/
-  v85 = &dword_8A0364; /*0x6d95b4*/
+  v85 = dword_8A0364; /*0x6d95b4*/
   do /*0x6d97b5*/
   {
     result = 0; /*0x6d95bb*/

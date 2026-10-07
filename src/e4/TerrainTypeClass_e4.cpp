@@ -491,7 +491,7 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ((ObjectTypeClass*)((ObjectTypeClass *)aP0))->Construct((int)&aP1); /*0x71e1ef*/
-      aP0->vtable1 = (unsigned int)&vt_TerrainTypeClass; /*0x71e1f4*/
+      aP0->vtable1 = (void *)&vt_TerrainTypeClass; /*0x71e1f4*/
       ((unsigned int *)aP0)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e1fa*/
       ((unsigned int *)aP0)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e201*/
       ((unsigned int *)aP0)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e208*/

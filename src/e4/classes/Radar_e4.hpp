@@ -64,7 +64,7 @@ struct Radar {
     unsigned int *__pad_34;
 // --- flat members (END) ---
     int FindNearestRadarTarget(int a2, int a3, int a4);  // 0x431090
-    int UpdateReveal(char a1, int a2);  // G57w10-S raw 0x004ADCD0 IUnknown 占位清除
+    static int UpdateReveal(char a1, int a2);  // G57w10-S raw 0x004ADCD0 IUnknown 占位清除
     int IsRadarTargetEligible();  // 0x5090F0
     int ProcessSubzone(int a2, int a3, int a4, int *a5, __int16 *a6);  // G57w10-S raw 0x005824A0 IUnknown 占位清除
     AbstractClass * * Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1);  // 0x584550

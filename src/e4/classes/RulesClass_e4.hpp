@@ -128,7 +128,7 @@ struct RulesClass {
     INIClass * * ReadPowerupsSection();
     INIClass * * readDifficulty();
     RulesClass();
-    double GetFiringDistance();
+    static double GetFiringDistance();
     int DTOR(void *a1);
     int ReadColorAdd();
     int ReadColors();

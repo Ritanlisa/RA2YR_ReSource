@@ -755,7 +755,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect, int a2, int a
   if ( (int)*(&this->abstractFlags6) > 0 && !a4 ) /*0x6d30a2*/
   {
     v28 = 0; /*0x6d30aa*/
-    v5 = &this->visibleCells; /*0x6d30be*/
+    v5 = this->visibleCells; /*0x6d30be*/
     do /*0x6d31d6*/
     {
       Coord_Subtract( /*0x6d310e*/

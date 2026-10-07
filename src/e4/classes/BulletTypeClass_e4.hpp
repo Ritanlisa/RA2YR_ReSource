@@ -112,7 +112,7 @@ struct BulletTypeClass {
     bool flat;  // 0x2F7
     void* ObjectTypeClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    BuildingTypeClass * * ReadArmor();
+    static BuildingTypeClass * * ReadArmor();
     BuildingTypeClass * * ReadTrailerAnim();
     BulletTypeClass * ddtor(char a2, int a1, int aP0, int aP1, int aP2, int a3);
     WeaponTypeClass * * LoadFromINI(unsigned char *** a2, void *a2_2);

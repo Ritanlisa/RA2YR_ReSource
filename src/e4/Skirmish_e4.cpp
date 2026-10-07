@@ -235,28 +235,28 @@ int Skirmish::ReadSettings(HWND hDlg)
   v5 = SendMessageA( (HWND)(hDlga), 0x150u, v4, 0); /*0x596cb3*/
   *((unsigned int *)this + 15) = v5; /*0x596cb9*/
   if ( v18 != v5 ) /*0x596cbe*/
-    &byte_ABE2D8 = 1; /*0x596cc0*/
+    byte_ABE2D8 = 1; /*0x596cc0*/
   v19 = *((unsigned int *)this + 14); /*0x596cd0*/
   hDlgb = GetDlgItem(hDlg, 1031); /*0x596ce2*/
   v16 = SendMessageA( (HWND)(hDlgb), 0x147u, 0, 0); /*0x596ce8*/
   v6 = SendMessageA( (HWND)(hDlgb), 0x150u, v16, 0); /*0x596cf3*/
   *((unsigned int *)this + 14) = v6; /*0x596cf9*/
   if ( v19 != v6 ) /*0x596cfe*/
-    &byte_ABE2D8 = 1; /*0x596d00*/
+    byte_ABE2D8 = 1; /*0x596d00*/
   v20 = *((unsigned int *)this + 16); /*0x596d10*/
   hDlgc = GetDlgItem(hDlg, 1032); /*0x596d22*/
   v7 = SendMessageA( (HWND)(hDlgc), 0x147u, 0, 0); /*0x596d26*/
   v8 = SendMessageA( (HWND)(hDlgc), 0x150u, v7, 0); /*0x596d33*/
   *((unsigned int *)this + 16) = v8; /*0x596d39*/
   if ( v20 != v8 ) /*0x596d3e*/
-    &byte_ABE2D8 = 1; /*0x596d40*/
+    byte_ABE2D8 = 1; /*0x596d40*/
   v21 = *((unsigned int *)this + 18); /*0x596d50*/
   hDlgd = GetDlgItem(hDlg, 1002); /*0x596d62*/
   v9 = SendMessageA( (HWND)(hDlgd), 0x147u, 0, 0); /*0x596d66*/
   v10 = SendMessageA( (HWND)(hDlgd), 0x150u, v9, 0); /*0x596d73*/
   *((unsigned int *)this + 18) = v10; /*0x596d79*/
   if ( v21 != v10 ) /*0x596d7e*/
-    &byte_ABE2D8 = 1; /*0x596d80*/
+    byte_ABE2D8 = 1; /*0x596d80*/
   v22 = *((unsigned int *)this + 25); /*0x596d90*/
   hDlge = GetDlgItem(hDlg, 1030); /*0x596da2*/
   v17 = SendMessageA( (HWND)(hDlge), 0x147u, 0, 0); /*0x596da8*/
@@ -264,7 +264,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   *((unsigned int *)this + 25) = v11; /*0x596db9*/
   *((unsigned int *)this + 26) = v11; /*0x596dbe*/
   if ( v22 != v11 ) /*0x596dc1*/
-    &byte_ABE2D8 = 1; /*0x596dc3*/
+    byte_ABE2D8 = 1; /*0x596dc3*/
   hDlgf = (HWND)*((unsigned int *)this + 20); /*0x596dd3*/
   DlgItem = GetDlgItem(hDlg, 1003); /*0x596dd7*/
   v13 = SendMessageA( (HWND)(DlgItem), 0x400u, 0, 0); /*0x596de3*/
@@ -276,7 +276,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   }
   else
   {
-    &byte_ABE2D8 = 1; /*0x596df0*/
+    byte_ABE2D8 = 1; /*0x596df0*/
   }
   ((Skirmish *)(this))->RandomizeSettings(*((unsigned int *)this + 15)); /*0x596e08*/
   v14 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596e0d*/

@@ -84,7 +84,7 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block,
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4d2d13*/
-  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x4d2d16*/
+  *(unsigned int *)this->__pad_0 = vt_VectorClass; /*0x4d2d16*/
   if ( v3 && this->IsAllocated ) /*0x4d2d20*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d28*/

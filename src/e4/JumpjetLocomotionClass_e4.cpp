@@ -684,12 +684,12 @@ LABEL_51:
   if ( *(float *)&((unsigned int *)v18)[0] > 0.0 ) /*0x4b0113*/
     v50 = -v17; /*0x4b0117*/
   v43 = (float)v54; /*0x4b0124*/
-  Matrix3x3::ApplyCol1((void *)(v56.m_Data), v43); /*0x4b0127*/
+  Matrix3x3::ApplyCol1((void *)&v56.m_Data, v43); /*0x4b0127*/
   v44 = (float)v52; /*0x4b0138*/
-  ((Matrix3x4 *)(v57.m_Data))->Translate(v44); /*0x4b013b*/
+  ((Matrix3x4 *)&v57.m_Data)->Translate(v44); /*0x4b013b*/
   v45 = (float)v50; /*0x4b014c*/
-  Matrix3x3::ApplyCol0((void *)(v57.m_Data), v45); /*0x4b014f*/
-  ((Matrix3x3 *)(v57.m_Data))->RotateX(*(float *)&((unsigned int *)a1)[0]); /*0x4b0165*/
+  Matrix3x3::ApplyCol0((void *)&v57.m_Data, v45); /*0x4b014f*/
+  ((Matrix3x3 *)&v57.m_Data)->RotateX(*(float *)&((unsigned int *)a1)[0]); /*0x4b0165*/
   Matrix3D::RotateZ(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x4b017b*/
   if ( a3 ) /*0x4b0185*/
     *a3 = -1; /*0x4b0187*/

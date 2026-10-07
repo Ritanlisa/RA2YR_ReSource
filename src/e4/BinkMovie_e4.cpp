@@ -801,7 +801,54 @@ AbstractClass * * BinkMovie::WndProc(HWND hWnd, UINT Msg, int wParam, LPARAM lPa
   LONG WindowLongA; // eax
   char v41; // dl
   int v42; // ecx
-  int v43; //... [23858 chars total]
+  int v43; // ecx
+  signed int v44; // ecx
+  signed int v45; // eax
+  signed int v46; // eax
+  int v47; // ecx
+  void (__thiscall ***v48)(unsigned int, int); // ecx
+  HWND v49; // edi
+  void (__thiscall ***v50)(unsigned int, int); // ecx
+  int v51; // eax
+  char v52; // bl
+  int v53; // eax
+  UINT v54; // eax
+  void (__thiscall ***v55)(unsigned int, int); // ecx
+  int v56; // eax
+  int i; // eax
+  HWND v58; // eax
+  HWND v59; // edi
+  unsigned int *j; // eax
+  HWND Parent; // eax
+  UINT v62; // eax
+  LPARAM v63; // edi
+  LPARAM v64; // eax
+  int v65; // esi
+  HWND v66; // edi
+  void (__thiscall ***v67)(unsigned int, int); // ecx
+  int v68; // ebp
+  void (__thiscall ***v69)(unsigned int, int); // ecx
+  unsigned int *v70; // eax
+  void (__thiscall ***v71)(unsigned int, int); // ecx
+  void (__thiscall ***v72)(unsigned int, int); // ecx
+  int v73; // esi
+  int v74; // esi
+  int v75; // esi
+  LRESULT (__stdcall **v76)(HWND, UINT, WPARAM, LPARAM); // eax
+  bool v77; // [esp+34h] [ebp-7Ah]
+  bool v78; // [esp+35h] [ebp-79h]
+  bool v79; // [esp+35h] [ebp-79h]
+  HWND v80; // [esp+36h] [ebp-78h] BYREF
+  struct tagRECT v81; // [esp+3Ah] [ebp-74h] BYREF
+  int v82; // [esp+4Ah] [ebp-64h]
+  struct tagRECT v84; // [esp+5Eh] [ebp-50h] BYREF
+  struct tagRECT v85; // [esp+6Eh] [ebp-40h] BYREF
+  LONG left; // [esp+7Eh] [ebp-30h] BYREF
+  LONG top; // [esp+82h] [ebp-2Ch]
+  int v88; // [esp+86h] [ebp-28h]
+  int v89; // [esp+8Ah] [ebp-24h]
+  struct tagRECT X; // [esp+8Eh] [ebp-20h] BYREF
+  unsigned int v91[4]; // [esp+9Eh] [ebp-10h] BYREF
 }
 } // namespace gamemd
 

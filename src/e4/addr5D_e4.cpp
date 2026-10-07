@@ -660,7 +660,7 @@ AbstractClass * * E4Recv_5D4F20::sub_5D4F20()
       99);
     if ( !strcmp((const char *)&g_MissionQueueFrame.ls800BkgdName[7], (const char *)this) ) /*0x5d4f56*/
       break; /*0x5d4f56*/
-    if ( ++v1 >= &dword_ABFCA0 ) /*0x5d4f85*/
+    if ( ++v1 >= dword_ABFCA0 ) /*0x5d4f85*/
       return 0; /*0x5d4f85*/
   }
   return *(unsigned int *)(&dword_ABFC94 + 4 * v1); /*0x5d4f87*/

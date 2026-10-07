@@ -3675,7 +3675,37 @@ AbstractClass * * Network::QueueProcessingLoop()
   char *v44; // edi
   int v45; // eax
   char *v46; // edi
-  int v4... [21708 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): int v4... ...
+  // live body via get_context/0x6475F0 — w15f4 regrafted decls only
+  int v47; // eax
+  int v48; // esi
+  int v49; // eax
+  int v50; // esi
+  int *v51; // eax
+  int *v52; // eax
+  int *v53; // eax
+  int *v54; // eax
+  int v55; // edx
+  int v56; // eax
+  wchar_t *StringCSF; // [esp-10h] [ebp-ACh]
+  wchar_t *v58; // [esp-10h] [ebp-ACh]
+  wchar_t *v59; // [esp-10h] [ebp-ACh]
+  wchar_t *v60; // [esp-10h] [ebp-ACh]
+  wchar_t *v61; // [esp-10h] [ebp-ACh]
+  wchar_t *v62; // [esp-10h] [ebp-ACh]
+  wchar_t *v63; // [esp-10h] [ebp-ACh]
+  wchar_t *v64; // [esp-10h] [ebp-ACh]
+  TechnoClass *v65; // [esp+0h] [ebp-9Ch]
+  ObjectClass *v66; // [esp+0h] [ebp-9Ch]
+  int v67; // [esp+10h] [ebp-8Ch]
+  int v68; // [esp+14h] [ebp-88h]
+  Network *v69; // [esp+18h] [ebp-84h]
+  Performance *v70; // [esp+1Ch] [ebp-80h]
+  unsigned char v71; // [esp+20h] [ebp-7Ch]
+  int v72; // [esp+24h] [ebp-78h]
+  unsigned char v73[108]; // [esp+2Ch] [ebp-70h] BYREF
+  int16_t v74; // [esp+98h] [ebp-4h]
+  char v75; // [esp+9Ah] [ebp-2h]
 }
 } // namespace gamemd
 

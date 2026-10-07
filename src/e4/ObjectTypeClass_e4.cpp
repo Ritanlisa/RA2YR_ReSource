@@ -1017,7 +1017,371 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, void * _38C, unsigned char ***
   int v52; // eax
   uint8_t *v53; // eax
   int v54; // eax
-  uint8_t *v55;... [174146 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): uint8_t *v55;... ...
+  // live body via get_context/0x712170 — w15f4 regrafted decls only
+  int v31; // edx
+  char v33; // al
+  int v55; // eax
+  unsigned char *v56; // eax
+  int v57; // eax
+  unsigned char *v58; // eax
+  int v59; // eax
+  unsigned char *v60; // eax
+  int v61; // eax
+  int v62; // edi
+  int v64; // edi
+  int v65; // eax
+  int v66; // edi
+  int v67; // eax
+  int v68; // edi
+  int v69; // eax
+  int v70; // edi
+  int v71; // eax
+  int v72; // edi
+  int v73; // eax
+  int v74; // edi
+  int v75; // eax
+  int v76; // edi
+  int v77; // eax
+  int v78; // edi
+  int v79; // eax
+  int v80; // edi
+  int v81; // eax
+  int v82; // edi
+  int v83; // eax
+  int v84; // edi
+  int v85; // eax
+  int v86; // edi
+  int v87; // eax
+  int TypeMember_54749E0; // eax
+  char *k; // eax
+  int v90; // edx
+  int v91; // eax
+  int v92; // edi
+  int v93; // eax
+  int v94; // edi
+  int Alt; // eax
+  int v96; // edi
+  int v97; // eax
+  char v98; // al
+  char v99; // al
+  char v100; // cl
+  char v101; // al
+  int v102; // edi
+  int v103; // eax
+  int v104; // edi
+  int v105; // eax
+  int v106; // edi
+  int v107; // eax
+  unsigned char *v108; // eax
+  int v109; // eax
+  unsigned char *v110; // eax
+  int v111; // eax
+  int v112; // edx
+  void *Items; // eax
+  int v114; // edi
+  int v115; // eax
+  int v116; // edi
+  int v117; // eax
+  int v118; // edi
+  int v119; // eax
+  int v120; // edi
+  int v121; // eax
+  int v122; // edi
+  int v123; // eax
+  int v124; // edi
+  int v125; // eax
+  int v126; // edi
+  int v127; // eax
+  int v128; // edi
+  int v129; // eax
+  int v130; // edi
+  int v131; // eax
+  int v132; // edi
+  int v133; // eax
+  int v134; // edi
+  int v135; // eax
+  int v136; // edi
+  int v137; // eax
+  int v138; // edi
+  int v139; // eax
+  int v140; // edi
+  int v141; // eax
+  int v142; // edi
+  int v143; // eax
+  int v144; // edi
+  int v145; // eax
+  int v146; // edi
+  int v147; // eax
+  int v148; // edi
+  int v149; // eax
+  char *m; // eax
+  int v151; // ecx
+  int v152; // edx
+  void *v153; // eax
+  char *n; // eax
+  int v155; // ecx
+  int v156; // edx
+  void *v157; // eax
+  unsigned int *v158; // edi
+  unsigned int *v159; // eax
+  unsigned int *v160; // edi
+  unsigned int *v161; // eax
+  int *Coord2; // eax
+  int v163; // ecx
+  int v164; // edx
+  int v165; // eax
+  char *ii; // eax
+  int v167; // ecx
+  int v168; // edx
+  void *v169; // eax
+  char *jj; // eax
+  int v171; // ecx
+  int v172; // edx
+  void *v173; // eax
+  int *v174; // eax
+  int v175; // edx
+  char v176; // al
+  int *v177; // eax
+  int *v178; // eax
+  int *v179; // eax
+  int *v180; // eax
+  int *v181; // eax
+  int *v182; // edi
+  int v183; // ecx
+  unsigned char *v184; // eax
+  int v185; // eax
+  unsigned int *v186; // eax
+  unsigned char *v187; // eax
+  int v188; // eax
+  int v190; // edi
+  int v191; // eax
+  int v192; // eax
+  int v193; // eax
+  int v194; // edx
+  int v195; // edi
+  int v196; // eax
+  unsigned int *v197; // edi
+  unsigned int *v198; // eax
+  int v200; // eax
+  int v201; // ecx
+  unsigned char *v202; // eax
+  int v203; // edx
+  unsigned char *v204; // eax
+  int v205; // eax
+  unsigned char *v206; // eax
+  unsigned char *v207; // eax
+  unsigned char *v208; // eax
+  unsigned char *v209; // eax
+  unsigned char *v210; // eax
+  unsigned char *v212; // eax
+  int v213; // ecx
+  unsigned char *v214; // eax
+  int v215; // edx
+  unsigned char *v216; // eax
+  int v217; // eax
+  unsigned char *v218; // eax
+  int v219; // ecx
+  unsigned char *v220; // eax
+  int v221; // edx
+  unsigned char *v222; // eax
+  int v223; // eax
+  unsigned char *v224; // eax
+  int v225; // ecx
+  unsigned char *v226; // eax
+  int v227; // edx
+  unsigned char *v228; // eax
+  int v229; // eax
+  unsigned char *v230; // eax
+  int v231; // ecx
+  unsigned char *v232; // eax
+  int v233; // edx
+  unsigned char *v234; // eax
+  int v235; // eax
+  unsigned char *v236; // eax
+  int v237; // ecx
+  unsigned char *v238; // eax
+  int v239; // edx
+  unsigned char *v240; // eax
+  int v241; // eax
+  unsigned char *v242; // eax
+  int v243; // ecx
+  unsigned char *v244; // eax
+  unsigned char *v245; // eax
+  unsigned char *v246; // eax
+  unsigned char *v247; // eax
+  unsigned char *v248; // eax
+  unsigned char *v249; // eax
+  int v250; // ecx
+  unsigned char *v251; // eax
+  unsigned char *v252; // eax
+  unsigned char *v253; // eax
+  unsigned char *v254; // eax
+  unsigned char *v255; // eax
+  int v256; // eax
+  unsigned char *v257; // eax
+  int v258; // ecx
+  unsigned char *v259; // eax
+  int v260; // edx
+  unsigned char *v261; // eax
+  int v262; // eax
+  unsigned char *v263; // eax
+  int v264; // ecx
+  unsigned char *v265; // eax
+  int v266; // edx
+  unsigned char *v267; // eax
+  int v268; // eax
+  unsigned char *v269; // eax
+  int v270; // ecx
+  unsigned char *v271; // eax
+  int v272; // edx
+  unsigned char *v273; // eax
+  int v274; // eax
+  unsigned char *v275; // eax
+  unsigned char *v276; // eax
+  int v277; // edx
+  unsigned char *v278; // eax
+  unsigned char *v279; // eax
+  unsigned char *v280; // eax
+  unsigned char *v281; // eax
+  unsigned char *v282; // eax
+  unsigned char *v283; // eax
+  unsigned char *v284; // eax
+  unsigned char *v285; // eax
+  int Double_Overwrite; // eax
+  unsigned char *v287; // eax
+  unsigned char *v288; // eax
+  int v289; // edx
+  unsigned char *v290; // eax
+  int v291; // eax
+  unsigned char *v292; // eax
+  int v293; // ecx
+  unsigned char *v294; // eax
+  int v295; // edx
+  unsigned char *v296; // eax
+  int v297; // eax
+  unsigned char *v298; // eax
+  unsigned char *v299; // eax
+  int v300; // eax
+  unsigned char *v301; // eax
+  int v302; // eax
+  unsigned char *v303; // eax
+  int v304; // eax
+  unsigned char *v305; // eax
+  int v306; // eax
+  unsigned char *v307; // eax
+  int v308; // eax
+  unsigned char *v309; // eax
+  int v310; // eax
+  unsigned char *v311; // eax
+  int v312; // eax
+  unsigned char *v313; // eax
+  int v314; // eax
+  int v315; // ecx
+  unsigned char *v316; // eax
+  int v317; // edx
+  unsigned char *v318; // eax
+  unsigned char *v319; // eax
+  unsigned char *v320; // eax
+  unsigned char *v321; // eax
+  unsigned char *v322; // eax
+  int v323; // eax
+  unsigned char *v324; // eax
+  unsigned int *Abilities; // eax
+  unsigned char *v326; // eax
+  unsigned int *v327; // eax
+  int v329; // eax
+  unsigned char *v330; // eax
+  int v333; // ecx
+  unsigned char *v334; // eax
+  int v337; // edx
+  unsigned char *v338; // eax
+  int v341; // eax
+  unsigned char *v342; // eax
+  int v345; // ecx
+  unsigned char *v346; // eax
+  unsigned char *v348; // eax
+  int v349; // eax
+  unsigned char *v351; // eax
+  int v352; // ecx
+  unsigned char *v353; // eax
+  int v354; // eax
+  const char *v355; // eax
+  unsigned char *v356; // eax
+  unsigned char *v357; // eax
+  unsigned char *v358; // eax
+  int v359; // ecx
+  unsigned char *v360; // eax
+  int v361; // edx
+  unsigned char *v362; // eax
+  int v363; // eax
+  unsigned char *v364; // eax
+  unsigned char *v365; // eax
+  int v366; // edx
+  unsigned char *v367; // eax
+  int v368; // eax
+  unsigned char *v369; // eax
+  char v370; // al
+  unsigned char *v371; // eax
+  char *v372; // edx
+  const char *v373; // eax
+  unsigned char *v374; // eax
+  char *v375; // edx
+  const char *v376; // eax
+  int v377; // edi
+  unsigned char *v378; // eax
+  int *Point3D_Overwrite; // eax
+  unsigned char *v380; // eax
+  unsigned char *v381; // eax
+  double v382; // rax
+  unsigned char *v383; // eax
+  char v384; // al
+  unsigned char *v385; // eax
+  int *v386; // eax
+  unsigned char *v387; // eax
+  unsigned char *v388; // eax
+  double v389; // rax
+  unsigned char *v390; // eax
+  int v391; // ecx
+  unsigned char *v392; // eax
+  int *v393; // eax
+  unsigned char *v394; // eax
+  unsigned char *v395; // eax
+  unsigned char *v396; // eax
+  int *v397; // eax
+  unsigned char *v398; // eax
+  unsigned char *v399; // eax
+  int v400; // eax
+  unsigned char *v401; // eax
+  int *v402; // eax
+  unsigned char *v403; // eax
+  unsigned char *v404; // eax
+  unsigned char *v405; // eax
+  int *v406; // eax
+  unsigned char *v407; // eax
+  unsigned char *v408; // eax
+  int v409; // esi
+  unsigned char *v410; // eax
+  int *v411; // eax
+  int v412; // ecx
+  unsigned int *v413; // ecx
+  unsigned char *v414; // eax
+  char v415; // al
+  unsigned char *v416; // eax
+  int *v417; // eax
+  unsigned char *v418; // eax
+  ObjectTypeClass *v419; // ecx
+  int v420; // ecx
+  IntVector v423; // [esp-14h] [ebp-398h] BYREF
+  unsigned char *v424; // [esp-Ch] [ebp-390h]
+  unsigned char *v425; // [esp-8h] [ebp-38Ch]
+  unsigned char *v426; // [esp-4h] [ebp-388h]
+  double v427; // [esp+0h] [ebp-384h]
+  ObjectClass *v428; // [esp+8h] [ebp-37Ch]
+  unsigned char v429[8]; // [esp+18h] [ebp-36Ch] BYREF
+  int IntList; // [esp+24h] [ebp-360h] BYREF
+  char String[128]; // [esp+E4h] [ebp-2A0h] BYREF
+  char v434[32]; // [esp+164h] [ebp-220h] BYREF
 }
 } // namespace gamemd
 

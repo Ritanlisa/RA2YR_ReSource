@@ -56,6 +56,12 @@
 #include "classes/BuildingClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Delegate_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int OwnerHasPower(...); }
+namespace gamemd { int checkEMPState(...); }
+namespace gamemd { int applyEMPulseDamage(...); }
+namespace gamemd { int processIronCurtainExpiry(...); }
+namespace gamemd { int BinarySearch(...); }
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int BlitterCopySHP(...);  // raw 004373B0: char __fastcall SHP_Blitter_Copy( int *a1, _DWORD *a2, int *a3, int *a4, int a5, _DWORD *a
@@ -452,7 +458,7 @@ unsigned int * TechnoClass::Update(int a2)
         v31 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)) + 3424); /*0x6f3fd0*/
         v29 = *(unsigned int *)((*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)) + 3420); /*0x6f3fe1*/
         v7 = (*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)); /*0x6f3fe4*/
-        v8 = SpawnManagerClass::SpawnManagerClass(v6, (int)v3, *(unsigned int *)(v7 + 3416), v29, v31, v33); /*0x6f3ff4*/
+        SpawnManagerClass::SpawnManagerClass(v6, (int)v3, *(unsigned int *)(v7 + 3416), v29, v31, v33); v8 = v6; /*0x6f3ff4*/
       }
       else
       {
@@ -503,7 +509,7 @@ unsigned int * TechnoClass::Update(int a2)
     {
       v16 = (unsigned int)__2_YAPAXI_Z(0x58u); /*0x6f4136*/
       if ( v16 ) /*0x6f4140*/
-        v17 = ParasiteClass::ParasiteClass(v16, (int)v3); /*0x6f4145*/
+        ParasiteClass::ParasiteClass(v16, (int)v3); v17 = v16; /*0x6f4145*/
       else
         v17 = 0; /*0x6f414c*/
       v3[1].radarFlashTimer[2] = v17; /*0x6f414e*/
@@ -526,7 +532,7 @@ unsigned int * TechnoClass::Update(int a2)
     {
       v21 = (unsigned int)__2_YAPAXI_Z(0x60u); /*0x6f41d6*/
       if ( v21 ) /*0x6f41e0*/
-        v22 = AirstrikeClass::AirstrikeClass(v21, (int)v3); /*0x6f41e5*/
+        AirstrikeClass::AirstrikeClass(v21, (int)v3); v22 = v21; /*0x6f41e5*/
       else
         v22 = 0; /*0x6f41ec*/
       v3->airstrike = (unsigned int)((AirstrikeClass *)v22); /*0x6f41ee*/
@@ -1391,7 +1397,7 @@ LABEL_10:
   aP3 = (TechnoClass *)((((unsigned char *)&stru_87C374)[45220] != 0) - 1);
   if ( !ecx0[413] )
     WinAPI::Wrapper(-2147467261);
-  const void *v15; // eax
+  int v15; // eax
 v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 36))( ecx0[413], (float *)(v145), (TechnoClass **)(&aP3));
 
 

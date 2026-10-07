@@ -2450,11 +2450,11 @@ int OpenURLWOL(INIClass * a1, int a2)
   if ( (int)ExecutableA <= 32 ) /*0x77dd22*/
   {
     StringCSF = GetStringCSF( (wchar_t *)(aTxtNobrowser), 0, (const char *)(g_Str_File_wonline_cpp), 1466); /*0x77deb0*/
-    return ShowDialogConfirm( (void *)(StringCSF), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x77deb9*/
+    return ShowDialogConfirm( (void *)(StringCSF), 0, (uint8_t (*)(void))GameLoop_Thunk, 0); /*0x77deb9*/
   }
   else if ( a2 /*0x77dd57*/
          || (v6 = GetStringCSF( (wchar_t *)(aTxtLaunchbrows), 0, (const char *)(g_Str_File_wonline_cpp), 1398),
-             result = ShowDialogConfirm((void *)(v6), (void *)(4), (uint8_t (*)(void))GameLoop::Thunk, 0),
+             result = ShowDialogConfirm((void *)(v6), (void *)(4), (uint8_t (*)(void))GameLoop_Thunk, 0),
              result == 6) )
   {
     sprintf(CommandLine, "[open] %s", a1); /*0x77dd6b*/

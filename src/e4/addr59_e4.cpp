@@ -791,7 +791,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     ((ComPtr *)((ComPtr *)&v17.q008))->Release(); /*0x59600b*/
   }
   if ( v17.q004 ) /*0x596016*/
-    &dword_ABDBC0 = 4; /*0x596018*/
+    dword_ABDBC0 = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset( (void *)(Destination), 0, sizeof(Destination)); /*0x596033*/
   strncpy( (char *)(Destination), (const char *)(unsigned int *)((char *)&stru_82BA00 + 13), 0x80u); /*0x596047*/

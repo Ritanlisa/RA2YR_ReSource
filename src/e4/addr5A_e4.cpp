@@ -2966,7 +2966,7 @@ unsigned int * InitializePathData()
   v120 = v10;
   if ( v10 )
   {
-    ((Array *)((int)v10))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v10)),  8, 2, (int (*)(int))Cell::Clear);
     v11 = v120;
   }
   else
@@ -2985,7 +2985,7 @@ unsigned int * InitializePathData()
   v120 = v12;
   if ( v12 )
   {
-    ((Array *)((int)v12))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v12)),  8, 2, (int (*)(int))Cell::Clear);
     v13 = v120;
   }
   else
@@ -3004,7 +3004,7 @@ unsigned int * InitializePathData()
   v120 = v14;
   if ( v14 )
   {
-    ((Array *)((int)v14))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v14)),  8, 2, (int (*)(int))Cell::Clear);
     v15 = v120;
   }
   else
@@ -3023,7 +3023,7 @@ unsigned int * InitializePathData()
   v120 = v16;
   if ( v16 )
   {
-    ((Array *)((int)v16))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v16)),  8, 2, (int (*)(int))Cell::Clear);
     v17 = v120;
   }
   else
@@ -3042,7 +3042,7 @@ unsigned int * InitializePathData()
   v120 = v18;
   if ( v18 )
   {
-    ((Array *)((int)v18))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v18)),  8, 2, (int (*)(int))Cell::Clear);
     v19 = v120;
   }
   else
@@ -3061,7 +3061,7 @@ unsigned int * InitializePathData()
   v120 = v20;
   if ( v20 )
   {
-    ((Array *)((int)v20))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v20)),  8, 2, (int (*)(int))Cell::Clear);
     v21 = v120;
   }
   else
@@ -3080,7 +3080,7 @@ unsigned int * InitializePathData()
   v120 = v22;
   if ( v22 )
   {
-    ((Array *)((int)v22))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v22)),  8, 2, (int (*)(int))Cell::Clear);
     v23 = v120;
   }
   else
@@ -3099,7 +3099,7 @@ unsigned int * InitializePathData()
   v120 = v24;
   if ( v24 )
   {
-    ((Array *)((int)v24))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v24)),  8, 2, (int (*)(int))Cell::Clear);
     v25 = v120;
   }
   else
@@ -3118,7 +3118,7 @@ unsigned int * InitializePathData()
   v120 = v26;
   if ( v26 )
   {
-    ((Array *)((int)v26))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v26)),  8, 2, (int (*)(int))Cell::Clear);
     v27 = v120;
   }
   else
@@ -3137,7 +3137,7 @@ unsigned int * InitializePathData()
   v120 = v28;
   if ( v28 )
   {
-    ((Array *)((int)v28))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v28)),  8, 2, (int (*)(int))Cell::Clear);
     v29 = v120;
   }
   else
@@ -3156,7 +3156,7 @@ unsigned int * InitializePathData()
   v120 = v30;
   if ( v30 )
   {
-    ((Array *)((int)v30))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v30)),  8, 2, (int (*)(int))Cell::Clear);
     v31 = v120;
   }
   else
@@ -3175,7 +3175,7 @@ unsigned int * InitializePathData()
   v120 = v32;
   if ( v32 )
   {
-    ((Array *)((int)v32))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v32)),  8, 2, (int (*)(int))Cell::Clear);
     v33 = v120;
   }
   else
@@ -3194,7 +3194,7 @@ unsigned int * InitializePathData()
   v120 = v34;
   if ( v34 )
   {
-    ((Array *)((int)v34))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v34)),  8, 2, (int (*)(int))Cell::Clear);
     v35 = v120;
   }
   else
@@ -3213,7 +3213,7 @@ unsigned int * InitializePathData()
   v120 = v36;
   if ( v36 )
   {
-    ((Array *)((int)v36))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v36)),  8, 2, (int (*)(int))Cell::Clear);
     v37 = v120;
   }
   else
@@ -3232,7 +3232,7 @@ unsigned int * InitializePathData()
   v120 = v38;
   if ( v38 )
   {
-    ((Array *)((int)v38))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v38)),  8, 2, (int (*)(int))Cell::Clear);
     v39 = v120;
   }
   else
@@ -3251,7 +3251,7 @@ unsigned int * InitializePathData()
   v120 = v40;
   if ( v40 )
   {
-    ((Array *)((int)v40))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v40)),  8, 2, (int (*)(int))Cell::Clear);
     v41 = v120;
   }
   else
@@ -3270,7 +3270,7 @@ unsigned int * InitializePathData()
   v120 = v42;
   if ( v42 )
   {
-    ((Array *)((int)v42))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v42)),  8, 2, (int (*)(int))Cell::Clear);
     v43 = v120;
   }
   else
@@ -3289,7 +3289,7 @@ unsigned int * InitializePathData()
   v120 = v44;
   if ( v44 )
   {
-    ((Array *)((int)v44))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v44)),  8, 2, (int (*)(int))Cell::Clear);
     v45 = v120;
   }
   else
@@ -3308,7 +3308,7 @@ unsigned int * InitializePathData()
   v120 = v46;
   if ( v46 )
   {
-    ((Array *)((int)v46))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v46)),  8, 2, (int (*)(int))Cell::Clear);
     v47 = v120;
   }
   else
@@ -3327,7 +3327,7 @@ unsigned int * InitializePathData()
   v120 = v48;
   if ( v48 )
   {
-    ((Array *)((int)v48))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v48)),  8, 2, (int (*)(int))Cell::Clear);
     v49 = v120;
   }
   else
@@ -3348,7 +3348,7 @@ unsigned int * InitializePathData()
   v120 = v50;
   if ( v50 )
   {
-    ((Array *)((int)v50))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v50)),  8, 3, (int (*)(int))Cell::Clear);
     v51 = v120;
   }
   else
@@ -3371,7 +3371,7 @@ unsigned int * InitializePathData()
   aP2.vfptr = v52;
   if ( v52 )
   {
-    ((Array *)((int)v52))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v52)),  8, 3, (int (*)(int))Cell::Clear);
     vfptr = (TechnoTypeClass *)aP2.vfptr;
   }
   else
@@ -3394,7 +3394,7 @@ unsigned int * InitializePathData()
   aP2.vfptr = v54;
   if ( v54 )
   {
-    ((Array *)((int)v54))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v54)),  8, 3, (int (*)(int))Cell::Clear);
     v55 = (TechnoTypeClass *)aP2.vfptr;
   }
   else
@@ -3417,7 +3417,7 @@ unsigned int * InitializePathData()
   aP2.vfptr = v56;
   if ( v56 )
   {
-    ((Array *)((int)v56))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v56)),  8, 3, (int (*)(int))Cell::Clear);
     v57 = (TechnoTypeClass *)aP2.vfptr;
   }
   else
@@ -3441,7 +3441,7 @@ unsigned int * InitializePathData()
   aP2.vfptr = v58;
   if ( v58 )
   {
-    ((Array *)((int)v58))->ForEach( 8, 4, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v58)),  8, 4, (int (*)(int))Cell::Clear);
     v59 = (TechnoTypeClass *)aP2.vfptr;
   }
   else
@@ -3469,7 +3469,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v60;
   if ( v60 )
   {
-    ((Array *)((int)v60))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v60)),  8, 3, (int (*)(int))Cell::Clear);
     v61 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3495,7 +3495,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v63;
   if ( v63 )
   {
-    ((Array *)((int)v63))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v63)),  8, 3, (int (*)(int))Cell::Clear);
     v64 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3521,7 +3521,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v66;
   if ( v66 )
   {
-    ((Array *)((int)v66))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v66)),  8, 3, (int (*)(int))Cell::Clear);
     v67 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3547,7 +3547,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v69;
   if ( v69 )
   {
-    ((Array *)((int)v69))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v69)),  8, 3, (int (*)(int))Cell::Clear);
     v70 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3571,7 +3571,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v71;
   if ( v71 )
   {
-    ((Array *)((int)v71))->ForEach( 8, 4, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v71)),  8, 4, (int (*)(int))Cell::Clear);
     v72 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3600,7 +3600,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v74;
   if ( v74 )
   {
-    ((Array *)((int)v74))->ForEach( 8, 3, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v74)),  8, 3, (int (*)(int))Cell::Clear);
     v75 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3624,7 +3624,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v76;
   if ( v76 )
   {
-    ((Array *)((int)v76))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v76)),  8, 2, (int (*)(int))Cell::Clear);
     v77 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3645,7 +3645,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v78;
   if ( v78 )
   {
-    ((Array *)((int)v78))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v78)),  8, 2, (int (*)(int))Cell::Clear);
     v79 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3666,7 +3666,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v80;
   if ( v80 )
   {
-    ((Array *)((int)v80))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v80)),  8, 2, (int (*)(int))Cell::Clear);
     v81 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3687,7 +3687,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v82;
   if ( v82 )
   {
-    ((Array *)((int)v82))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v82)),  8, 2, (int (*)(int))Cell::Clear);
     v83 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3708,7 +3708,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v84;
   if ( v84 )
   {
-    ((Array *)((int)v84))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v84)),  8, 2, (int (*)(int))Cell::Clear);
     v85 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3729,7 +3729,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v86;
   if ( v86 )
   {
-    ((Array *)((int)v86))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v86)),  8, 2, (int (*)(int))Cell::Clear);
     v87 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3750,7 +3750,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v88;
   if ( v88 )
   {
-    ((Array *)((int)v88))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v88)),  8, 2, (int (*)(int))Cell::Clear);
     v89 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3770,7 +3770,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v90;
   if ( v90 )
   {
-    ((Array *)((int)v90))->ForEach( 8, 1, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v90)),  8, 1, (int (*)(int))Cell::Clear);
     v91 = (rc_ptr_base *)aP1.vfptr;
   }
   else
@@ -3787,7 +3787,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v92;
   if ( v92 )
   {
-    ((Array *)((int)v92))->ForEach( 8, 1, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v92)),  8, 1, (int (*)(int))Cell::Clear);
     v93 = (rc_ptr_base *)aP1.vfptr;
   }
   else
@@ -3804,7 +3804,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v94;
   if ( v94 )
   {
-    ((Array *)((int)v94))->ForEach( 8, 1, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v94)),  8, 1, (int (*)(int))Cell::Clear);
     v95 = (rc_ptr_base *)aP1.vfptr;
   }
   else
@@ -3821,7 +3821,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v96;
   if ( v96 )
   {
-    ((Array *)((int)v96))->ForEach( 8, 1, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v96)),  8, 1, (int (*)(int))Cell::Clear);
     v97 = (rc_ptr_base *)aP1.vfptr;
   }
   else
@@ -3838,7 +3838,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v98;
   if ( v98 )
   {
-    ((Array *)((int)v98))->ForEach( 8, 1, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v98)),  8, 1, (int (*)(int))Cell::Clear);
     v99 = (rc_ptr_base *)aP1.vfptr;
   }
   else
@@ -3855,7 +3855,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v100;
   if ( v100 )
   {
-    ((Array *)((int)v100))->ForEach( 8, 1, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v100)),  8, 1, (int (*)(int))Cell::Clear);
     v101 = (rc_ptr_base *)aP1.vfptr;
   }
   else
@@ -3873,7 +3873,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v102;
   if ( v102 )
   {
-    ((Array *)((int)v102))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v102)),  8, 2, (int (*)(int))Cell::Clear);
     v103 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3895,7 +3895,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v104;
   if ( v104 )
   {
-    ((Array *)((int)v104))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v104)),  8, 2, (int (*)(int))Cell::Clear);
     v105 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3918,7 +3918,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v106;
   if ( v106 )
   {
-    ((Array *)((int)v106))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v106)),  8, 2, (int (*)(int))Cell::Clear);
     v107 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3939,7 +3939,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v108;
   if ( v108 )
   {
-    ((Array *)((int)v108))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v108)),  8, 2, (int (*)(int))Cell::Clear);
     v109 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3960,7 +3960,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v110;
   if ( v110 )
   {
-    ((Array *)((int)v110))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v110)),  8, 2, (int (*)(int))Cell::Clear);
     v111 = (TechnoTypeClass *)aP1.vfptr;
   }
   else
@@ -3981,7 +3981,7 @@ unsigned int * InitializePathData()
   aP1.vfptr = v112;
   if ( v112 )
   {
-    ((Array *)((int)v112))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v112)),  8, 2, (int (*)(int))Cell::Clear);
     v113 = (rc_ptr_base *)aP1.vfptr;
   }
   else

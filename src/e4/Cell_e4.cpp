@@ -1469,12 +1469,12 @@ int Cell::GetTerrainMask(int *aP1, int a3)
 }
 // 0x5A9940
 namespace gamemd {
-void * Cell::Clear(void *a1_1)
+void * Cell::Clear(Cell *aP1)
 {
 
-  this->Cell_field_0x0 = 0; /*0x5a9942*/
-  this->q004 = (void *)-1; /*0x5a994d*/
-  return (void *)this; /*0x5a9954*/
+  aP1->Cell_field_0x0 = 0; /*0x5a9942*/
+  aP1->q004 = (void *)-1; /*0x5a994d*/
+  return (void *)aP1; /*0x5a9954*/
 
 }
 }

@@ -229,6 +229,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "D:\RA2YR_ReSource\src\e4\classes\addr49_carriers_e4.hpp"  // G42.42q minimal carriers
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/_tree_full_e4.hpp"
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int g_DDraw_Gray127;  // data: 0x8a0de8 truth(IDA G42.57w9)
 
@@ -1980,20 +1981,20 @@ LABEL_44:
                             (uint8_t *)v28,
                             (uint8_t *)aHouse1,
                             -2);
-  *((unsigned int *)this + 6) = INIClass::ReadInt_Overwrite(v28, aColor1, -2); /*0x49c349*/
+  *((unsigned int *)this + 6) = INIClass::ReadInt_Overwrite((INIClass *)(v24), (unsigned char *)(v28), (unsigned char *)(aColor1), -2); /*0x49c349*/
   *((unsigned int *)this + 12) = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
                              (uint8_t ***)v24,
                              (uint8_t *)v28,
                              (uint8_t *)aHouse2,
                              -2);
   *((unsigned int *)this + 13) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aColor2), (unsigned char *)("Kills1"), -2); /*0x49c388*/
-  *((unsigned int *)this + 18) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aKills1), 0); /*0x49c390*/
+  *((unsigned int *)this + 18) = INIClass::ReadInt_Overwrite((INIClass *)(v24), (unsigned char *)(v28), (unsigned char *)(aKills1), 0); /*0x49c390*/
   *((unsigned int *)this + 19) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aKills2), (unsigned char *)("Built1"), 0); /*0x49c3b6*/
   *((unsigned int *)this + 20) = INIClass::ReadInt_Overwrite((INIClass *)(v28),(unsigned char *)(aBuilt1), (unsigned char *)("Built2"), 0); /*0x49c3cd*/
-  *((unsigned int *)this + 21) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aBuilt2), 0); /*0x49c3d5*/
+  *((unsigned int *)this + 21) = INIClass::ReadInt_Overwrite((INIClass *)(v24), (unsigned char *)(v28), (unsigned char *)(aBuilt2), 0); /*0x49c3d5*/
   *((unsigned int *)this + 22) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aLost1), (unsigned char *)("Lost2"), 0); /*0x49c3fb*/
   *((unsigned int *)this + 23) = INIClass::ReadInt_Overwrite((INIClass *)(v28),(unsigned char *)(aLost2), (unsigned char *)("Score1"), 0); /*0x49c412*/
-  *((unsigned int *)this + 24) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore1), 0); /*0x49c41a*/
+  *((unsigned int *)this + 24) = INIClass::ReadInt_Overwrite((INIClass *)(v24), (unsigned char *)(v28), (unsigned char *)(aScore1), 0); /*0x49c41a*/
   *((unsigned int *)this + 25) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore2), (unsigned char *)("Time"), 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(v28),(unsigned char *)(g_INI_Key_Time), (unsigned char *)("Time"), 0); /*0x49c443*/
   v20 = *((unsigned int *)this + 17); /*0x49c448*/
@@ -2583,7 +2584,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
 }
 // 0x49E7C0
 namespace gamemd {
-AbstractClass * * ObjectClass::sub_49E7C0(char * Block, char a2)
+AbstractClass * sub_49E7C0(ObjectClass *a1, char * Block, char a2)
 {
 
   int v3; // eax
@@ -2600,14 +2601,14 @@ AbstractClass * * ObjectClass::sub_49E7C0(char * Block, char a2)
 
   if ( (a2 & 2) != 0 ) /*0x49e7cc*/
   {
-    v3 = *((unsigned int *)this - 1); /*0x49e7d2*/
-    v4 = (char *)this - 4; /*0x49e7d5*/
-    v14 = (char *)this - 4; /*0x49e7d8*/
+    v3 = *((unsigned int *)a1 - 1); /*0x49e7d2*/
+    v4 = (char *)a1 - 4; /*0x49e7d5*/
+    v14 = (char *)a1 - 4; /*0x49e7d8*/
     v5 = 19 * v3; /*0x49e7df*/
     v6 = v3 - 1; /*0x49e7e2*/
     if ( v6 >= 0 ) /*0x49e7e6*/
     {
-      v7 = &this->fallRate + v5; /*0x49e7e9*/
+      v7 = &a1->fallRate + v5; /*0x49e7e9*/
       v8 = v6 + 1; /*0x49e7ec*/
       do /*0x49e84a*/
       {
@@ -2643,29 +2644,29 @@ AbstractClass * * ObjectClass::sub_49E7C0(char * Block, char a2)
   }
   else
   {
-    j_DeleteAndZero( (void *)((ObjectClass *)&this->ambientSoundController[3])); /*0x49e86d*/
-    j_DeleteAndZero( (void *)((ObjectClass *)&this->ambientSoundController[2])); /*0x49e875*/
-    fallRate = (void *)this->fallRate; /*0x49e87a*/
-    this->owningHouseIndex = (int)&vt_VectorClassDynamicVectorClass; /*0x49e886*/
-    if ( fallRate && BYTE1(this->attachedTag) ) /*0x49e88b*/
+    j_DeleteAndZero( (void *)((ObjectClass *)&a1->ambientSoundController[3])); /*0x49e86d*/
+    j_DeleteAndZero( (void *)((ObjectClass *)&a1->ambientSoundController[2])); /*0x49e875*/
+    fallRate = (void *)a1->fallRate; /*0x49e87a*/
+    a1->owningHouseIndex = (int)&vt_VectorClassDynamicVectorClass; /*0x49e886*/
+    if ( fallRate && BYTE1(a1->attachedTag) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(fallRate); /*0x49e891*/
-      this->fallRate = 0; /*0x49e899*/
+      a1->fallRate = 0; /*0x49e899*/
     }
-    BYTE1(this->attachedTag) = 0; /*0x49e89c*/
-    this->nextObject = 0; /*0x49e89f*/
-    abstractFlags = (void *)((unsigned int *)this)[0]; /*0x49e8a2*/
-    ((unsigned int *)this)[0] = (unsigned int)(int)&vt_VectorClassDynamicVectorClass;
-    if ( abstractFlags && BYTE1(((unsigned int *)this)[0]) ) /*0x49e8ac*/
+    BYTE1(a1->attachedTag) = 0; /*0x49e89c*/
+    a1->nextObject = 0; /*0x49e89f*/
+    abstractFlags = (void *)((unsigned int *)a1)[0]; /*0x49e8a2*/
+    ((unsigned int *)a1)[0] = (unsigned int)(int)&vt_VectorClassDynamicVectorClass;
+    if ( abstractFlags && BYTE1(((unsigned int *)a1)[0]) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/
-      ((unsigned int *)this)[0] = 0; /*0x49e8ba*/
+      ((unsigned int *)a1)[0] = 0; /*0x49e8ba*/
     }
-    BYTE1(((unsigned int *)this)[0]) = 0; /*0x49e8c1*/
-    ((unsigned int *)this)[0] = 0; /*0x49e8c6*/
+    BYTE1(((unsigned int *)a1)[0]) = 0; /*0x49e8c1*/
+    ((unsigned int *)a1)[0] = 0; /*0x49e8c6*/
     if ( (a2 & 1) != 0 ) /*0x49e8c9*/
-      __3_YAXPAX_Z(this); /*0x49e8cc*/
-    return (gamemd::AbstractClass **)((char *)this); /*0x49e8d4*/
+      __3_YAXPAX_Z(a1); /*0x49e8cc*/
+    return (gamemd::AbstractClass **)((char *)a1); /*0x49e8d4*/
   }
 
 }

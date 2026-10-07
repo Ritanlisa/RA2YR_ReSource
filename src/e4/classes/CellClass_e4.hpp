@@ -84,7 +84,7 @@ struct CellClass {
     char UpdateVariant3(unsigned short *a1, int a2);  // G57w10-S raw 0x0056EF50 IUnknown 占位清除
     char UpdateVariant4(unsigned short *a1, int a2);  // G57w10-S raw 0x0056F2F0 IUnknown 占位清除
     char UpdateVariant5(unsigned short *a1, int a2);  // G57w10-S raw 0x00572DA0 IUnknown 占位清除
-    char UpdateVariant6(unsigned short *a1, int a2);  // G57w10-S raw 0x00573170 IUnknown 占位清除
+    static char UpdateVariant6(unsigned short *a1, int a2);  // G57w10-S raw 0x00573170 IUnknown 占位清除
     char UpdateVariant7(unsigned short *a1, int a2);  // G57w10-S raw 0x00572440 IUnknown 占位清除
     char UpdateVariant8(unsigned short *a1, int a2);  // G57w10-S raw 0x005727E0 IUnknown 占位清除
     char SetTileType13(unsigned short *a1, int a2);  // G57w10-S raw 0x00572B80 IUnknown 占位清除

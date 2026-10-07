@@ -207,7 +207,14 @@ char SaveGame::Start()
   int v52; // ebx
   int v53; // eax
   int v54; // ebx
-  in... [33906 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): in... ...
+  // live body via get_context/0x67D300 — w15f4 regrafted decls only
+  int v55; // ecx
+  int v56; // ecx
+  int v57; // ebx
+  int v58; // edx
+  LPPERSISTSTREAM pPStm; // [esp+35Ch] [ebp-8h] BYREF
+  LPPERSISTSTREAM SuperClass_field_0x10; // [esp+360h] [ebp-4h] BYREF
 }
 } // namespace gamemd
 

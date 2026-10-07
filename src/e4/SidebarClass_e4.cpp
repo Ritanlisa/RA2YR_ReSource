@@ -735,7 +735,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
     v25 = v7; /*0x6abfbe*/
   }
   while ( (int)v7 < (int)&dword_B0B300 ); /*0x6abfc2*/
-  result = &dword_887368; /*0x6abfc4*/
+  result = dword_887368; /*0x6abfc4*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x6abfcd*/
   {
     v33 = 0; /*0x6abfd3*/

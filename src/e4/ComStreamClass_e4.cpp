@@ -126,11 +126,11 @@ LABEL_16:
   if ( lParam ) /*0x7a3fed*/
   {
     BulkCharToWide( (unsigned short *)(&v22[0].nextArrayIndex), (uint8_t *)lParam, -1); /*0x7a3ff5*/
-    ShowDialogConfirm( (void *)((wchar_t *)&v22[0].nextArrayIndex), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4007*/
+    ShowDialogConfirm( (void *)((wchar_t *)&v22[0].nextArrayIndex), 0, (uint8_t (*)(void))GameLoop_Thunk, 0); /*0x7a4007*/
   }
   else
   {
-    ShowDialogConfirm( (void *)((void *)(aUnknownStatus)), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4017*/
+    ShowDialogConfirm( (void *)((void *)(aUnknownStatus)), 0, (uint8_t (*)(void))GameLoop_Thunk, 0); /*0x7a4017*/
   }
   v16 = (HWND)((Dialog*)(Dialog *)0xC4)->FindByHandle(); /*0x7a4021*/
   if ( v16 ) /*0x7a4028*/

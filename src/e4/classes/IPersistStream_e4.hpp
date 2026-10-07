@@ -10,7 +10,7 @@ struct IPersistStream {
     unsigned char q000;  // 0x0
 // --- flat members (END) ---
     char SetField(int a1);
-    int GetMaxSize();
+    static int GetMaxSize();
     int GetSizeMax(int a0, RadioClass * aP1, int a3);
     int IsDirty(int a1, int a2);
     int StubReturn450();

@@ -653,7 +653,7 @@ LABEL_20:
     switch ( v4 ) /*0x725ab1*/
     {
       case 12: /*0x725ab1*/
-        for ( n = 0; n < &dword_B0F650; ++n ) /*0x725b34*/
+        for ( n = 0; n < dword_B0F650; ++n ) /*0x725b34*/
 (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)&dword_B0F644/*0x725b42*/ + 4 * n) + 40))( *(unsigned int *)(*(unsigned int *)&dword_B0F644+ 4 * n), (AbstractClass *)(aP0), aP1);
 
 
@@ -692,7 +692,7 @@ LABEL_20:
         break; /*0x725afb*/
       case 47: /*0x725ab1*/
       case 48: /*0x725ab1*/
-        for ( mm = 0; mm < &dword_B0F668; ++mm ) /*0x725b6b*/
+        for ( mm = 0; mm < dword_B0F668; ++mm ) /*0x725b6b*/
 (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(&dword_B0F65C /*0x725b7d*/ + 4 * mm) + 40))( *(unsigned int *)(&dword_B0F65C + 4 * mm), (AbstractClass *)(aP0), aP1);
 
 
@@ -709,7 +709,7 @@ LABEL_20:
 
         break; /*0x725bb2*/
       case 60: /*0x725ab1*/
-        for ( i1 = 0; i1 < &dword_B0F700; ++i1 ) /*0x725bed*/
+        for ( i1 = 0; i1 < dword_B0F700; ++i1 ) /*0x725bed*/
 (*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(dword_B0F6F4/*0x725bfb*/ + 4 * i1) + 40))( *(unsigned int *)(dword_B0F6F4+ 4 * i1), (AbstractClass *)(aP0), aP1);
 
 

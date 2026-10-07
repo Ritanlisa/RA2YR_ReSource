@@ -47,6 +47,8 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int PropagateCellOccupancy(...);  // raw 00722440: void __thiscall PropagateCellOccupancy(ObjectClass *this)
@@ -490,7 +492,7 @@ int * * LoadingScreen_InitResources()
       (int *)&g_BuildingLoadQueue_Array.__pad_F70[1064],
       &g_BuildingLoadQueue_Array.__pad_F70[1068]);
     result = (uint8_t)SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e193*/
-    &byte_B0FBE0 = 1; /*0x72e198*/
+    byte_B0FBE0 = 1; /*0x72e198*/
   }
   return (int * *)result; /*0x72e19f*/
 }
@@ -610,7 +612,7 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
       (int *)&g_BuildingLoadQueue_Array.__pad_F70[1064],
       &g_BuildingLoadQueue_Array.__pad_F70[1068]);
     SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e4b7*/
-    &byte_B0FBE0 = 1; /*0x72e4bc*/
+    byte_B0FBE0 = 1; /*0x72e4bc*/
   }
   DrawScoreScreenStats(a1, (int)a2); /*0x72e4c9*/
   v5 = a2[1]; /*0x72e4d0*/
@@ -1542,44 +1544,44 @@ int sub_720420()
 
 // 0x720440
 namespace gamemd {
-unsigned int * TechnoClass::sub_720440()
+unsigned int sub_720440(TechnoClass *a1)
 {
 
-  this->owningHouseIndex0 = 0; /*0x720444*/
-  this->chronoLockRemaining = 0; /*0x72044a*/
-  LOBYTE(this->chronoDestCoords[0]) = 1; /*0x720450*/
-  BYTE1(this->chronoDestCoords[0]) = 0; /*0x720457*/
-  BYTE2(this->chronoDestCoords[0]) = 0; /*0x72045d*/
-  this->chronoDestCoords[1] = -1; /*0x720463*/
-  LOBYTE(this->vtable1) = 0; /*0x72046d*/
-  LOBYTE(this->animation[2]) = 0; /*0x72046f*/
-  LOWORD(this->reloadTimer[1]) = 0; /*0x720475*/
-  return &this->vtable1; /*0x72047c*/
+  a1->owningHouseIndex0 = 0; /*0x720444*/
+  a1->chronoLockRemaining = 0; /*0x72044a*/
+  LOBYTE(a1->chronoDestCoords[0]) = 1; /*0x720450*/
+  BYTE1(a1->chronoDestCoords[0]) = 0; /*0x720457*/
+  BYTE2(a1->chronoDestCoords[0]) = 0; /*0x72045d*/
+  a1->chronoDestCoords[1] = -1; /*0x720463*/
+  LOBYTE(a1->vtable1) = 0; /*0x72046d*/
+  LOBYTE(a1->animation[2]) = 0; /*0x72046f*/
+  LOWORD(a1->reloadTimer[1]) = 0; /*0x720475*/
+  return &a1->vtable1; /*0x72047c*/
 
 }
 } // namespace gamemd
 
 // 0x720960
 namespace gamemd {
-unsigned int * ObjectClass::sub_720960()
+unsigned int sub_720960(ObjectClass *a1)
 {
 
-  this->AbstractClass = (void *)-1; /*0x720965*/
-  ((unsigned int *)this)[0] = (unsigned int)(void *)-1; /*0x720967*/
-  ((unsigned int *)this)[0] = (unsigned int)(void *)-1; /*0x72096a*/
-  ((unsigned int *)this)[0] = (unsigned int)(void *)255; /*0x72096f*/
-  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x720976*/
-  BYTE1(((unsigned int *)this)[0]) = 0; /*0x720979*/
-  BYTE2(((unsigned int *)this)[0]) = 0; /*0x72097c*/
-  ((unsigned int *)this)[0] = 0; /*0x72097f*/
-  ((unsigned int *)this)[0] = 0; /*0x720982*/
-  LOBYTE(((unsigned int *)this)[0]) = 1; /*0x720985*/
-  BYTE1(((unsigned int *)this)[0]) = 0; /*0x720989*/
-  ((unsigned int *)this)[0] = (unsigned int)(int)&vt_DynamicVectorClass;
-  this->owningHouseIndex = 10; /*0x720993*/
-  this->occupant = 0; /*0x72099a*/
-  this->fallRate = 0; /*0x72099d*/
-  return (unsigned int *)this; /*0x7209a0*/
+  a1->AbstractClass = (void *)-1; /*0x720965*/
+  ((unsigned int *)a1)[0] = (unsigned int)(void *)-1; /*0x720967*/
+  ((unsigned int *)a1)[0] = (unsigned int)(void *)-1; /*0x72096a*/
+  ((unsigned int *)a1)[0] = (unsigned int)(void *)255; /*0x72096f*/
+  LOBYTE(((unsigned int *)a1)[0]) = 0; /*0x720976*/
+  BYTE1(((unsigned int *)a1)[0]) = 0; /*0x720979*/
+  BYTE2(((unsigned int *)a1)[0]) = 0; /*0x72097c*/
+  ((unsigned int *)a1)[0] = 0; /*0x72097f*/
+  ((unsigned int *)a1)[0] = 0; /*0x720982*/
+  LOBYTE(((unsigned int *)a1)[0]) = 1; /*0x720985*/
+  BYTE1(((unsigned int *)a1)[0]) = 0; /*0x720989*/
+  ((unsigned int *)a1)[0] = (unsigned int)(int)&vt_DynamicVectorClass;
+  a1->owningHouseIndex = 10; /*0x720993*/
+  a1->occupant = 0; /*0x72099a*/
+  a1->fallRate = 0; /*0x72099d*/
+  return (unsigned int *)a1; /*0x7209a0*/
 
 }
 } // namespace gamemd
@@ -1998,10 +2000,10 @@ int sub_723FE0()
 
 // 0x724550
 namespace gamemd {
-int TechnoClass::sub_724550()
+int sub_724550(TechnoClass *a1)
 {
 
-  return this->cloakProgress[3]; /*0x724556*/
+  return a1->cloakProgress[3]; /*0x724556*/
 
 }
 } // namespace gamemd
@@ -2019,17 +2021,17 @@ int E4Recv_724560::sub_724560(int a2)
 
 // 0x724570
 namespace gamemd {
-int TechnoClass::sub_724570()
+int sub_724570(TechnoClass *a1)
 {
 
-  return this->cloakDelayTimer[1]; /*0x724576*/
+  return a1->cloakDelayTimer[1]; /*0x724576*/
 
 }
 } // namespace gamemd
 
 // 0x724A30
 namespace gamemd {
-int TechnoClass::sub_724A30(int * a2)
+int sub_724A30(TechnoClass *a1, int * a2)
 {
 
   int v2; // ebp
@@ -2041,11 +2043,11 @@ int TechnoClass::sub_724A30(int * a2)
   int v8; // ecx
   int v10; // [esp+10h] [ebp-4h]
 
-  v2 = this->cloakDelayTimer[1]; /*0x724a33*/
+  v2 = a1->cloakDelayTimer[1]; /*0x724a33*/
   v3 = 0; /*0x724a39*/
   if ( v2 <= 0 ) /*0x724a3f*/
     return 0; /*0x724a86*/
-  v10 = this->cloakProgress[5]; /*0x724a4b*/
+  v10 = a1->cloakProgress[5]; /*0x724a4b*/
   v4 = v10; /*0x724a4f*/
   v5 = *a2; /*0x724a51*/
   while ( 1 ) /*0x724a55*/
@@ -2714,11 +2716,11 @@ int sub_725F80()
 
 // 0x7266C0
 namespace gamemd {
-unsigned int * ObjectClass::sub_7266C0(char a2)
+unsigned int sub_7266C0(ObjectClass *a1, char a2)
 {
 
-  this->ambientSoundController[1] |= 1 << a2; /*0x7266cd*/
-  return (unsigned int *)this; /*0x7266d0*/
+  a1->ambientSoundController[1] |= 1 << a2; /*0x7266cd*/
+  return (unsigned int *)a1; /*0x7266d0*/
 
 }
 } // namespace gamemd
@@ -4057,7 +4059,7 @@ int sub_72D9A0()
     dword_B0FB48 = (unsigned int)LoadFileSHP( (char *)(off_844CB8), (bool *)((bool *)&byte_B0FCC8)); /*0x72d9c7*/
     dword_B0FB10 = (unsigned int)LoadFileSHP( (char *)(off_844CC4), (bool *)((bool *)&byte_B0FCCA)); /*0x72d9dc*/
     FileSHP = (void *)LoadFileSHP( (char *)(off_844CC8), (bool *)((bool *)&byte_B0FCCB)); /*0x72d9e1*/
-    v1 = off_844CD0[0]; /*0x72d9e6*/
+    v1 = (char *)off_844CD0[0]; /*0x72d9e6*/
   }
   else
   {

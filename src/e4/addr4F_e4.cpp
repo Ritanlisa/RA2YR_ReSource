@@ -75,6 +75,18 @@
 #include "e4/classes/ThemeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GraphicMenuItem_e4.hpp"  // G57w10 D supply
+#include "e4/classes/_tree_full_e4.hpp"
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }
+namespace gamemd { int sub_4F2C00(...); }
+namespace gamemd { int Find(...); }
+namespace gamemd { int sub_4F2F10(...); }
+namespace gamemd { int sub_4F3460(...); }
+namespace gamemd { int sub_4F3C40(...); }
+namespace gamemd { int sub_7B5410(...); }
+namespace gamemd { int ClearAndFree3(...); }
+namespace gamemd { int sub_4F3AB0(...); }
+namespace gamemd { int sub_4F3D40(...); }
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aActiverect[];  // data: 0x824240 truth(IDA G42.57w9)
 extern char aAlt[];  // data: 0x82437c truth(IDA G42.57w9)
@@ -1623,24 +1635,24 @@ int ObjectClass::sub_4F2770(int a2)
 
 // 0x4F2C00
 namespace gamemd {
-unsigned int * VectorClass::sub_4F2C00(int a2, int a3)
+unsigned int sub_4F2C00(VectorClass *a1, int a2, int a3)
 {
-    this->Items = 0; /*0x4f2c0b*/
-    this->Capacity = a2; /*0x4f2c0e*/
-    this->IsInitialized = 1; /*0x4f2c11*/
-    this->IsAllocated = 0; /*0x4f2c15*/
-    this->vtable0 = (void*)&VectorClass_GraphicMenuItem___vftable; /*0x4f2c18*/
+    a1->Items = 0; /*0x4f2c0b*/
+    a1->Capacity = a2; /*0x4f2c0e*/
+    a1->IsInitialized = 1; /*0x4f2c11*/
+    a1->IsAllocated = 0; /*0x4f2c15*/
+    a1->vtable0 = (void*)&VectorClass_GraphicMenuItem___vftable; /*0x4f2c18*/
     if ( a2 ) /*0x4f2c1e*/
     {
       if ( a3 ) /*0x4f2c26*/
       {
-        this->Items = (void *)a3; /*0x4f2c28*/
-        return &this->vtable0; /*0x4f2c2e*/
+        a1->Items = (void *)a3; /*0x4f2c28*/
+        return &a1->vtable0; /*0x4f2c2e*/
       }
-      this->Items = (void *)RA2_OPNEW(4 * a2); /*0x4f2c3d*/
-      this->IsAllocated = 1; /*0x4f2c40*/
+      a1->Items = (void *)RA2_OPNEW(4 * a2); /*0x4f2c3d*/
+      a1->IsAllocated = 1; /*0x4f2c40*/
     }
-    return &this->vtable0; /*0x4f2c2d*/
+    return &a1->vtable0; /*0x4f2c2d*/
 }
 } // namespace gamemd
 

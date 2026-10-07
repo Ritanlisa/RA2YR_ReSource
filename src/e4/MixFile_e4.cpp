@@ -77,7 +77,41 @@ MixFileClass * * MixFile::LoadAll()
   MixFileClass *v40; // eax
   unsigned int *v41; // eax
   char v42; // bl
-  MixFil... [19161 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): MixFil... ...
+  // live body via get_context/0x530460 — w15f4 regrafted decls only
+  MixFileClass *v43; // eax
+  unsigned int *v44; // eax
+  char v45; // bl
+  unsigned int *v46; // eax
+  char v47; // bl
+  unsigned int *v48; // eax
+  char v49; // bl
+  unsigned int *v50; // eax
+  char v51; // bl
+  unsigned int *v52; // eax
+  char v53; // bl
+  unsigned int *v54; // eax
+  char v55; // bl
+  MixFileClass *v56; // eax
+  MixFileClass *v57; // eax
+  unsigned int *v58; // esi
+  int v59; // eax
+  MixFileClass *v60; // eax
+  MixFileClass *v61; // eax
+  unsigned int *v62; // esi
+  int v63; // eax
+  int v64; // esi
+  unsigned int *v65; // eax
+  char v66; // bl
+  MixFileClass *v67; // eax
+  unsigned int *v68; // eax
+  char v69; // bl
+  CCFileClass v70; // [esp+38h] [ebp-198h] BYREF
+  int v71[3]; // [esp+90h] [ebp-140h] BYREF
+  int v72; // [esp+9Ch] [ebp-134h]
+  int v73; // [esp+A4h] [ebp-12Ch]
+  RawFileClass v74; // [esp+A8h] [ebp-128h] BYREF
+  char Buffer[260]; // [esp+CCh] [ebp-104h] BYREF
 }
 }
 // 0x534FA0

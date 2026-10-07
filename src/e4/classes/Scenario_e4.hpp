@@ -141,7 +141,7 @@ struct Scenario {
     unsigned int * ComputeDialogPos(unsigned int * a2);  // 0x552BE0
     void Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1);  // 0x55AFB0
     char LoadOrReloadOptions(int a2);  // G57w10-S raw 0x00597A10 IUnknown 占位清除
-    int PreGameInit();  // 0x5E7460
+    static int PreGameInit();  // 0x5E7460
     void SetByte96();  // 0x642AD0
     static int ClearScreen(...);  // 0x684240
 char LoadWithProgress();  // 0x00684620 g57w12-r raw-sync (def-form)

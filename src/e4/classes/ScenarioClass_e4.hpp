@@ -156,7 +156,7 @@ struct ScenarioClass {
     char StubReturnFalse2();
     char StubReturnFalse3(int a1);
     char StubReturnFalse5(int a1, int a2, int a3);
-    char createStartingForces(void *a1);
+    static char createStartingForces(void *a1);
     char initTriggers();
     char initUnits();
     char initWaypoints();

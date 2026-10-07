@@ -893,7 +893,7 @@ LABEL_11:
          &dword_B0F660 + &dword_B0F66C,
          0) )
   {
-    v6 = &dword_B0F668++; /*0x71e793*/
+    v6 = dword_B0F668++; /*0x71e793*/
     *(unsigned int *)(&dword_B0F65C + 4 * v6) = (unsigned int)this;
   }
   if ( dword_B0F680< dword_B0F678/*0x71e7d9*/

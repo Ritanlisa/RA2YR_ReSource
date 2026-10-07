@@ -1476,21 +1476,21 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
 
 // 0x471500
 namespace gamemd {
-std::locale::facet * CampaignScore::Constructor_CampaignScoreClass(char a2) {
-    *(unsigned int *)this->__pad_0 = 0; /*0x471509*/
+std::locale::facet *Constructor_CampaignScoreClass(CampaignScore *a1, char a2) {
+    *(unsigned int *)a1->__pad_0 = 0; /*0x471509*/
     if ( (a2 & 1) != 0 ) /*0x47150f*/
-      RA2_OPDEL(this); /*0x471512*/
-    return (std::locale::facet *)this; /*0x47151c*/
+      RA2_OPDEL(a1); /*0x471512*/
+    return (std::locale::facet *)a1; /*0x47151c*/
 }
 } // namespace gamemd
 
 // 0x471520
 namespace gamemd {
-std::locale::facet * CampaignScore::Constructor_CampaignEndScoreClass(char a2) {
-    *(unsigned int *)this->__pad_0 = 0; /*0x471529*/
+std::locale::facet *Constructor_CampaignEndScoreClass(CampaignScore *a1, char a2) {
+    *(unsigned int *)a1->__pad_0 = 0; /*0x471529*/
     if ( (a2 & 1) != 0 ) /*0x47152f*/
-      RA2_OPDEL(this); /*0x471532*/
-    return (std::locale::facet *)this; /*0x47153c*/
+      RA2_OPDEL(a1); /*0x471532*/
+    return (std::locale::facet *)a1; /*0x47153c*/
 }
 } // namespace gamemd
 

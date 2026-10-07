@@ -57,6 +57,7 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/_tree_full_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int LookupWaypointName(...);  // raw 005B3910: int __thiscall LookupWaypointName(ObjectClass *this)
@@ -2070,22 +2071,22 @@ VectorClass_flat * _e4::QueryInterface(unsigned int * Block, char a2)
 
 // 0x74F730
 namespace gamemd {
-unsigned int * ObjectClass::sub_74F730()
+unsigned int sub_74F730(ObjectClass *a1)
 {
 
   int v2; // edx
 
-  v2 = this->ambientSoundController[2]; /*0x74f734*/
-  ((unsigned int *)this)[0] = 0; /*0x74f737*/
-  LOWORD(((unsigned int *)this)[0]) = 0; /*0x74f73d*/
-  HIWORD(((unsigned int *)this)[0]) = 0; /*0x74f741*/
-  this->ambientSoundController[0] = 0; /*0x74f745*/
-  this->ambientSoundController[1] = 0; /*0x74f748*/
-  this->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/
-  this->vtable1 = &vt_VersionClass; /*0x74f74e*/
-  BYTE2(this->owningHouseIndex) = 0; /*0x74f754*/
-  LOBYTE(((unsigned int *)this)[0]) = 0; /*0x74f757*/
-  return (unsigned int *)this; /*0x74f75a*/
+  v2 = a1->ambientSoundController[2]; /*0x74f734*/
+  ((unsigned int *)a1)[0] = 0; /*0x74f737*/
+  LOWORD(((unsigned int *)a1)[0]) = 0; /*0x74f73d*/
+  HIWORD(((unsigned int *)a1)[0]) = 0; /*0x74f741*/
+  a1->ambientSoundController[0] = 0; /*0x74f745*/
+  a1->ambientSoundController[1] = 0; /*0x74f748*/
+  a1->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/
+  a1->vtable1 = &vt_VersionClass; /*0x74f74e*/
+  BYTE2(a1->owningHouseIndex) = 0; /*0x74f754*/
+  LOBYTE(((unsigned int *)a1)[0]) = 0; /*0x74f757*/
+  return (unsigned int *)a1; /*0x74f75a*/
 
 }
 } // namespace gamemd

@@ -12,7 +12,7 @@ struct Mixer {
     unsigned int u32_8;
 // --- flat members (END) ---
     int ReleaseChannel();
-    int RequestAllBuffers();
+    static int RequestAllBuffers();
 };
 
 } // namespace gamemd

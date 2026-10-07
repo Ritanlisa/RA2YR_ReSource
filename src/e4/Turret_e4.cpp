@@ -196,7 +196,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
                             & 0x1F)
                            - 8);
   v6 = (double)(int)a1 * -0.1963495408493621; /*0x55a776*/
-  ((Matrix2D *)(v8.m_Data))->Rotate(v6); /*0x55a779*/
+  ((Matrix2D *)&v8.m_Data)->Rotate(v6); /*0x55a779*/
   v4 = a3; /*0x55a77e*/
   if ( a3 && *a3 != -1 ) /*0x55a78b*/
   {

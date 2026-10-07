@@ -27,14 +27,14 @@ struct LoadingScreen {
 // --- flat members (END) ---
     char * GetBackgroundImage(ScenarioClass * aP1);
     char * GetOverlayImage(ScenarioClass * aP1);
-    char FreeResources3();
+    static char FreeResources3();
     char Init();
     static char FreeResources(void *a1);
     int GetColorScheme();
     int ReleaseAnimObjects(char * Source);
-    void * * LoadSHPs();
+    static void * * LoadSHPs();
     static char CleanupObjects(void *a1);
-    void DestroyFileTrees();
+    static void DestroyFileTrees();
     void FreeResources2();
 };
 

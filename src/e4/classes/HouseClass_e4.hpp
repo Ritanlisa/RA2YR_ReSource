@@ -189,7 +189,7 @@ struct HouseClass {
     int IsCellOccupied(int a2, char a3);  // G57w10-S raw 0x004FBE40 IUnknown 占位清除
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);
-    int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
+    static int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
     int QueryInterface_Dispatch();
     int QueryInterface_Helper();
     static int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);

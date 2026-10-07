@@ -1236,7 +1236,149 @@ BuildingTypeClass * * AnimClass::drawFrame(void *a1)
   int v38; // eax
   int v39; // ecx
   BuildingTypeClass **v40; // edx
-  int v41; // eax... [39598 chars total]
+  int v41; // eax
+  int v42; // eax
+  int grindersCount; // ecx
+  int v44; // ecx
+  int v45; // edx
+  int v46; // eax
+  int cloningVatsCount; // ecx
+  int v48; // ecx
+  int v49; // edx
+  int v50; // eax
+  int psychicDetectionCount; // ecx
+  int v52; // ecx
+  BuildingTypeClass *v53; // eax
+  int v54; // eax
+  int v55; // eax
+  int countResourceDestinations; // ecx
+  int v57; // ecx
+  int infantrySelfHeal; // edx
+  int v59; // eax
+  int startingUnitsCapacity; // ecx
+  int v61; // ecx
+  BuildingTypeClass *v62; // eax
+  int v63; // eax
+  int v64; // eax
+  int v65; // ecx
+  int v66; // ecx
+  int v67; // edx
+  int v68; // eax
+  int v69; // ecx
+  int v70; // ecx
+  int v71; // edx
+  int v72; // eax
+  int v73; // ecx
+  int v74; // ecx
+  int iqLevel; // edx
+  int v76; // eax
+  int startingEdge; // ecx
+  int v78; // ecx
+  int v79; // edx
+  int v80; // eax
+  int v81; // ecx
+  int v82; // ecx
+  int v83; // eax
+  int v84; // eax
+  int v85; // ecx
+  int v86; // ecx
+  int InfantryGainSelfHeal; // ecx
+  HouseClass *v88; // eax
+  int UnitsGainSelfHeal; // ecx
+  HouseClass *v90; // eax
+  BuildingTypeClass *v91; // eax
+  BuildingTypeClass *v92; // eax
+  char CloakRadius; // cl
+  void (__thiscall **vtable0)(BuildingClass *, int); // edx
+  TechnoClass *v95; // edi
+  BuildingTypeClass *v96; // eax
+  char v97; // cl
+  HouseClass *v98; // eax
+  void (__thiscall **v99)(BuildingClass *, int); // edx
+  int v100; // eax
+  int v101; // ecx
+  int v102; // ebp
+  int v103; // eax
+  int v104; // edi
+  int v105; // eax
+  int v106; // ecx
+  BuildingTypeClass **v107; // edx
+  int v108; // ebp
+  int v109; // ecx
+  int v110; // eax
+  int v111; // eax
+  int v112; // edx
+  int v113; // ecx
+  int v114; // eax
+  int v115; // eax
+  int v116; // edx
+  BuildingTypeClass *v117; // eax
+  int v118; // ecx
+  int v119; // eax
+  int v120; // eax
+  int v121; // edx
+  int v122; // ecx
+  int v123; // eax
+  int v124; // eax
+  int v125; // edx
+  BuildingTypeClass *v126; // eax
+  int v127; // ecx
+  int v128; // eax
+  int v129; // eax
+  int v130; // edx
+  int v131; // ecx
+  int v132; // eax
+  int v133; // eax
+  int v134; // edx
+  int v135; // ecx
+  int v136; // eax
+  int v137; // eax
+  int v138; // edx
+  int v139; // ecx
+  int v140; // eax
+  int v141; // eax
+  int v142; // edx
+  int v143; // ecx
+  int v144; // eax
+  int v145; // eax
+  int v146; // edx
+  int v147; // ecx
+  int v148; // eax
+  int v149; // eax
+  int v150; // edx
+  int v151; // ecx
+  BuildingTypeClass *v152; // edx
+  int v153; // ecx
+  BuildingTypeClass *v154; // ecx
+  BuildingTypeClass *v155; // eax
+  int v156; // ecx
+  BuildingTypeClass *v157; // eax
+  int v158; // ecx
+  int v159; // edi
+  int v160; // eax
+  HouseClass *initialOwner; // eax
+  char i; // al
+  int v163; // ecx
+  int v164; // eax
+  int repairStationsCapacity; // ecx
+  int grindersCapacity; // eax
+  int v167; // eax
+  int repairStationsCount; // edx
+  int v169; // [esp+A4h] [ebp-60h]
+  int v170; // [esp+A8h] [ebp-5Ch]
+  int v171; // [esp+ACh] [ebp-58h]
+  char v172[8]; // [esp+B4h] [ebp-50h] BYREF
+  int v173; // [esp+BCh] [ebp-48h] BYREF
+  int v174; // [esp+C0h] [ebp-44h]
+  int v175; // [esp+C4h] [ebp-40h]
+  int v176[3]; // [esp+C8h] [ebp-3Ch] BYREF
+  int v177[3]; // [esp+D4h] [ebp-30h] BYREF
+  int v178[3]; // [esp+E0h] [ebp-24h] BYREF
+  VectorClass_ReestablishPtr v179; // [esp+ECh] [ebp-18h] BYREF
+  int v180; // [esp+100h] [ebp-4h]
+  HouseClass *v181; // [esp+108h] [ebp+4h]
+  int v182; // [esp+10Ch] [ebp+8h] BYREF
+  TechnoClass *v183; // [esp+110h] [ebp+Ch]
 }
 } // namespace gamemd
 

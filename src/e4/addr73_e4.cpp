@@ -578,7 +578,7 @@ int SelectAllOfType()
     if ( (int)v23 <= 0 ) /*0x732a83*/
     {
   LABEL_25:
-      &byte_B0FE64 = 1; /*0x732aad*/
+      byte_B0FE64 = 1; /*0x732aad*/
     }
     else
     {

@@ -48,10 +48,10 @@ int Session::RemoveTeam(int (***aP1)(unsigned int, int))
   if ( aP1 ) /*0x5d1d87*/
   {
     v3 = (void **)(&this->field_18); /*0x5d1d8c*/
-    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))( (void **)(&this->field_18), (unsigned int)(&aP1)); /*0x5d1d96*/
+    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))( (&this->field_18), (unsigned int)(&aP1)); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
-      result = (*((int (**)(void **, unsigned int))*v3 + 4))( (void **)(v3), (unsigned int)(&aP1)); /*0x5d1da7*/
+      result = (*((int (**)(void **, unsigned int))*v3 + 4))( (v3), (unsigned int)(&aP1)); /*0x5d1da7*/
       if ( result != -1 ) /*0x5d1dad*/
       {
         v4 = (int)v3[4]; /*0x5d1daf*/
@@ -79,7 +79,7 @@ int Session::PrepareGame(HWND hWnd)
   int v3; // eax
   char *Flagged; // eax
   char *v5; // eax
-  void ** result;
+  int result;
   char v7; // bl
   unsigned int v8;
   int v9; // esi
@@ -90,7 +90,7 @@ int Session::PrepareGame(HWND hWnd)
   char v14; // al
   bool v15; // bl
   ScenarioClass *v16; // [esp+0h] [ebp-208h]
-  void ** v17;
+  int v17;
   RawFileClass v18; // [esp+1Ch] [ebp-1ECh] BYREF
   unsigned char Str[452]; // [esp+40h] [ebp-1C8h] BYREF
   int16_t v20; // [esp+204h] [ebp-4h]
@@ -110,31 +110,31 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         goto LABEL_42; /*0x5e7753*/
       memset( (void *)(Str), 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
-      result = (void **)(((gamemd::Timer *)this)->GetTicks()); /*0x5e7774*/
+      result = (((gamemd::Timer *)this)->GetTicks()); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
       v17 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
-        if ( v17 != (void **)(-1) ) /*0x5e7793*/
+        if ( v17 != -1 ) /*0x5e7793*/
         {
           result = ((gamemd::Timer *)this)->GetTicks() - v17; /*0x5e779e*/
-          if ( result >= (void **)(1800) ) /*0x5e77a4*/
+          if ( result >= 1800 ) /*0x5e77a4*/
             return (int)(result); /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
         }
         if ( !v9 ) /*0x5e77ae*/
           return (int)(result); /*0x5e7812*/
         v10 = ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)Str, 250, 1); /*0x5e77cf*/
-        for ( result = (void **)(((Count *)((Count *)&unk_A8EA70))->GetCountQueue()); /*0x5e77d8*/
+        for ( result = (((Count *)((Count *)&unk_A8EA70))->GetCountQueue()); /*0x5e77d8*/
               result > 0;
-              result = (void **)(((Count *)((Count *)&unk_A8EA70))->GetCountQueue() ))
+              result = (((Count *)((Count *)&unk_A8EA70))->GetCountQueue() ))
         {
-          result = (void **)(v17);
+          result = (v17);
           v11 = 1800; /*0x5e77de*/
-          if ( v17 != (void **)(-1) ) /*0x5e77e4*/
+          if ( v17 != -1 ) /*0x5e77e4*/
           {
             result = ((gamemd::Timer *)this)->GetTicks() - v17; /*0x5e77ef*/
-            if ( result >= (void **)(1800) ) /*0x5e77f5*/
+            if ( result >= 1800 ) /*0x5e77f5*/
               break; /*0x5e77f5*/
             v11 = 1800 - result; /*0x5e77f7*/
           }
@@ -203,10 +203,10 @@ LABEL_44:
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
       ((Vector *)((int)&Str[88]))->Clear((int)((Vector *)((int)&Str[88]))); /*0x5e7876*/
       *(unsigned int *)Str = (unsigned int)(&off_7E1668); /*0x5e787f*/
-      result =(void **)((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
+      result =((BufferIOFileClass *)((BufferIOFileClass *)Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
-        result = (void **)(__2_YAPAXI_Z(4u)); /*0x5e7892*/
+        result = (__2_YAPAXI_Z(4u)); /*0x5e7892*/
         if ( !result ) /*0x5e789c*/
         {
           g_UIControlState = 0; /*0x5e78e4*/

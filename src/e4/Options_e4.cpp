@@ -171,7 +171,7 @@ LABEL_11:
             return 0; /*0x4f1356*/
           v12 = (void (*)(HWND, int))ShowWindow; /*0x4f135c*/
           ShowWindow(hDlg, 0); /*0x4f1364*/
-          v13 = LoadOptions::LoadOptions(v27); /*0x4f136a*/
+          LoadOptions::LoadOptions(v27); v13 = v27; /*0x4f136a*/
           Options_Run = (uint8_t)LoadOptions::Run((gamemd::LoadOptions *)(v13)); /*0x4f137a*/
           ((LoadOptions *)(v27))->Cleanup(); /*0x4f137c*/
           if ( (unsigned char)Options_Run ) /*0x4f1383*/
@@ -911,7 +911,374 @@ int Options::DialogProc(CCINIClass hWnd)
   int v41; // ecx
   WPARAM v42; // ebp
   int v43; // ecx
-  ... [101654 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): ... ...
+  // live body via get_context/0x618D40 — w15f4 regrafted decls only
+  int v44; // ecx
+  int v45; // esi
+  int v46; // eax
+  int v47; // edi
+  int v48; // eax
+  int v49; // edx
+  int v50; // esi
+  int v51; // esi
+  int v52; // edx
+  int v53; // edx
+  wchar_t *v54; // eax
+  HWND v55; // ecx
+  LRESULT (__stdcall *v56)(HWND, UINT, WPARAM, LPARAM); // esi
+  int v57; // eax
+  int v58; // eax
+  LRESULT (__stdcall **v59)(HWND, UINT, WPARAM, LPARAM); // eax
+  LRESULT v60; // eax
+  LONG v61; // eax
+  int v62; // ebx
+  int v63; // ebp
+  size_t v64; // esi
+  wchar_t *v65; // edi
+  size_t v66; // eax
+  int *v67; // eax
+  int v68; // esi
+  size_t v69; // eax
+  HWND v70; // eax
+  HWND v71; // eax
+  LRESULT v72; // esi
+  int v73; // ebp
+  int v74; // esi
+  int v75; // ecx
+  int v76; // eax
+  int v77; // ecx
+  int v78; // ebx
+  HWND v79; // eax
+  const void *v80; // esi
+  int v81; // ebp
+  int v82; // esi
+  int v83; // ecx
+  int v84; // eax
+  int v85; // ecx
+  int v86; // ebx
+  void *v87; // eax
+  const void *v88; // esi
+  int v89; // eax
+  char *v90; // ebp
+  int v91; // eax
+  int v92; // esi
+  int v93; // ebx
+  int v94; // esi
+  int v95; // ecx
+  int v96; // ebx
+  HWND v97; // eax
+  const void *v98; // esi
+  void **v99; // esi
+  void **v100; // esi
+  unsigned int *v101; // ecx
+  char *v102; // edx
+  HWND v103; // ebx
+  int v104; // eax
+  int v105; // edi
+  int v106; // ecx
+  int v107; // ebp
+  int v108; // ebx
+  int v109; // esi
+  int v110; // eax
+  int v111; // edi
+  int v112; // esi
+  int v113; // ebp
+  HWND v114; // esi
+  unsigned short v115; // ax
+  void *v116; // esi
+  int *v117; // ebp
+  int *v118; // eax
+  void (__stdcall *v119)(HWND, UINT, WPARAM, LPARAM); // edi
+  int v120; // eax
+  int v121; // edx
+  HWND v122; // ecx
+  int v123; // eax
+  int v124; // edx
+  void *v125; // ebx
+  const void *v126; // esi
+  int v127; // edx
+  int k; // ecx
+  unsigned int *v129; // eax
+  int v130; // eax
+  int v131; // edx
+  int v132; // esi
+  int v133; // ecx
+  int *v134; // ecx
+  int v135; // ecx
+  int v136; // eax
+  int *v137; // eax
+  HWND v138; // esi
+  unsigned short v139; // ax
+  LRESULT v140; // eax
+  int v141; // esi
+  LRESULT v142; // ebx
+  LRESULT v143; // eax
+  int v144; // eax
+  int *v145; // edi
+  int v146; // edx
+  int v147; // esi
+  int v149; // ebx
+  int *v150; // esi
+  int v151; // edx
+  int v152; // ecx
+  int *v153; // edi
+  int v154; // ebp
+  int *v155; // ecx
+  LRESULT v156; // esi
+  void (__stdcall *v157)(HWND, UINT, WPARAM, LPARAM); // edi
+  HWND v158; // esi
+  unsigned short WindowLongA; // ax
+  LRESULT v160; // ebx
+  LRESULT v161; // esi
+  int v162; // ecx
+  LONG right; // edx
+  int v164; // eax
+  LONG *v165; // ecx
+  int v166; // esi
+  LONG left; // eax
+  signed int v168; // ebx
+  int v169; // esi
+  LRESULT v170; // eax
+  int *v171; // ebp
+  int *v172; // eax
+  int v173; // ecx
+  float v174; // edx
+  int v175; // eax
+  float v176; // ecx
+  void *v177; // ebx
+  const void *v178; // esi
+  int v179; // edx
+  float m; // ecx
+  unsigned int *v181; // eax
+  int v182; // edx
+  int v183; // esi
+  float v184; // ecx
+  int v185; // eax
+  int *v186; // eax
+  HWND v187; // esi
+  unsigned short v188; // ax
+  unsigned short v189; // ax
+  LRESULT (__stdcall *v190)(HWND, UINT, WPARAM, LPARAM); // edi
+  LRESULT v191; // ebx
+  LRESULT v192; // eax
+  LRESULT v193; // esi
+  int16_t v194; // bx
+  WPARAM v195; // edi
+  HWND v196; // esi
+  unsigned short v197; // ax
+  int *v198; // ebp
+  int *v199; // eax
+  int v200; // ecx
+  HWND v201; // esi
+  int v202; // eax
+  int v203; // ecx
+  void *v204; // ebx
+  const void *v205; // esi
+  int v206; // edx
+  HWND jj; // ecx
+  unsigned int *v208; // eax
+  HWND v209; // ecx
+  int v210; // eax
+  LONG *v211; // eax
+  int *v212; // esi
+  int *v213; // eax
+  int v214; // edi
+  LONG v215; // ebp
+  wchar_t **v216; // eax
+  int v217; // ecx
+  int v218; // edx
+  int v219; // edi
+  LONG v220; // esi
+  int v221; // edi
+  LRESULT v222; // ecx
+  int v223; // esi
+  LPARAM v224; // ebp
+  int v225; // eax
+  int v226; // ebx
+  LPARAM v227; // ecx
+  int v228; // eax
+  int v229; // ebx
+  int v230; // eax
+  wchar_t *v231; // edi
+  wchar_t **v232; // esi
+  wchar_t *v233; // eax
+  wchar_t *v234; // eax
+  int *v235; // esi
+  int v236; // eax
+  wchar_t **v237; // ecx
+  int v238; // edi
+  int ii; // edx
+  int v240; // ebp
+  int v241; // edx
+  int *v242; // edx
+  unsigned int *v243; // ebp
+  int v244; // esi
+  LRESULT v245; // ebx
+  int v246; // eax
+  int v247; // edi
+  int v248; // ecx
+  HWND v249; // eax
+  int *v250; // ebp
+  int v251; // ecx
+  HWND v252; // esi
+  int v253; // eax
+  LRESULT v254; // ecx
+  int v255; // ebx
+  const void *v256; // esi
+  HWND v257; // edi
+  int v258; // esi
+  LRESULT v259; // ecx
+  LRESULT v260; // eax
+  int v261; // esi
+  int v262; // edi
+  const wchar_t *v263; // edi
+  LRESULT v264; // eax
+  LRESULT v265; // ebx
+  BOOL v266; // esi
+  WPARAM v267; // ebp
+  size_t v268; // eax
+  int v269; // eax
+  LRESULT v270; // eax
+  wchar_t *v271; // ebx
+  HWND v272; // edi
+  size_t v273; // eax
+  char *v274; // esi
+  WPARAM v275; // eax
+  LRESULT v276; // eax
+  int v277; // ebp
+  signed int v278; // eax
+  bool v279; // cc
+  signed int v280; // esi
+  signed int v281; // ecx
+  void *v282; // ebx
+  const void *v283; // esi
+  int v284; // edx
+  unsigned int *v285; // esi
+  int v286; // ebp
+  signed int v287; // eax
+  bool v288; // cc
+  signed int v289; // esi
+  signed int v290; // ecx
+  void *v291; // ebx
+  const void *v292; // esi
+  int v293; // edx
+  unsigned int *v294; // esi
+  int *v295; // esi
+  int v296; // eax
+  int v297; // ecx
+  char *v298; // ecx
+  char *v299; // eax
+  HWND v300; // ebx
+  unsigned int *v301; // ebp
+  int v302; // eax
+  int v303; // eax
+  int v304; // ecx
+  const void *v305; // esi
+  int v306; // eax
+  int *v307; // eax
+  unsigned int *v308; // ecx
+  wchar_t *v309; // ebx
+  LRESULT v310; // eax
+  signed int v311; // edi
+  const wchar_t **v312; // esi
+  LONG v313; // ebx
+  LRESULT v314; // esi
+  LRESULT v315; // ecx
+  HWND *v316; // esi
+  HWND v317; // ebx
+  LONG v318; // edi
+  LONG v319; // ebp
+  HWND *v320; // eax
+  int v321; // eax
+  LONG v322; // edx
+  LONG v323; // ecx
+  HWND v324; // eax
+  int v325; // esi
+  unsigned int *v326; // ecx
+  int v327; // edi
+  double v328; // st7
+  int *v329; // ebp
+  int v330; // esi
+  int *v331; // edi
+  int v332; // ebx
+  int v333; // esi
+  int v334; // eax
+  int v335; // edx
+  int v336; // eax
+  unsigned int *v337; // eax
+  void *v338; // eax
+  int v339; // eax
+  int v340; // esi
+  unsigned int *v341; // edi
+  unsigned int *v342; // edi
+  int v343; // ebp
+  double v344; // st7
+  unsigned int *v345; // esi
+  unsigned int *n; // eax
+  void *v347; // esi
+  int v348; // esi
+  unsigned int *v349; // ecx
+  int v350; // edi
+  double v351; // st7
+  HWND v352; // ebp
+  int v353; // esi
+  int *v354; // edi
+  int v355; // ebp
+  int v356; // esi
+  int v357; // eax
+  int v358; // edx
+  int v359; // eax
+  unsigned int *v360; // eax
+  void *v361; // eax
+  int v362; // edi
+  HWND v363; // esi
+  WPARAM v364; // ebx
+  void **v365; // esi
+  void **v366; // esi
+  HWND v367; // [esp-4h] [ebp-2D40h]
+  HWND v368; // [esp-4h] [ebp-2D40h]
+  HWND v369; // [esp-4h] [ebp-2D40h]
+  HWND v370; // [esp-4h] [ebp-2D40h]
+  HWND v371; // [esp-4h] [ebp-2D40h]
+  HWND v372; // [esp-4h] [ebp-2D40h]
+  char *v373; // [esp-4h] [ebp-2D40h]
+  char *v374; // [esp-4h] [ebp-2D40h]
+  unsigned int *v375; // [esp+10h] [ebp-2D2Ch]
+  int v376; // [esp+14h] [ebp-2D28h] BYREF
+  signed int v377; // [esp+18h] [ebp-2D24h]
+  char v378; // [esp+1Fh] [ebp-2D1Dh]
+  WPARAM v379; // [esp+20h] [ebp-2D1Ch]
+  WPARAM wParam; // [esp+24h] [ebp-2D18h] BYREF
+  HWND Parent; // [esp+28h] [ebp-2D14h]
+  float v382; // [esp+2Ch] [ebp-2D10h]
+  HWND v383; // [esp+30h] [ebp-2D0Ch] BYREF
+  int v384; // [esp+34h] [ebp-2D08h]
+  int *j; // [esp+38h] [ebp-2D04h]
+  LPARAM v386; // [esp+3Ch] [ebp-2D00h]
+  WNDPROC lpPrevWndFunc; // [esp+40h] [ebp-2CFCh]
+  int64_t v388; // [esp+44h] [ebp-2CF8h] BYREF
+  struct tagRECT Rect; // [esp+4Ch] [ebp-2CF0h] BYREF
+  struct tagRECT v390; // [esp+5Ch] [ebp-2CE0h] BYREF
+  int v391; // [esp+6Ch] [ebp-2CD0h]
+  LPARAM v392; // [esp+70h] [ebp-2CCCh] BYREF
+  int v393; // [esp+74h] [ebp-2CC8h]
+  int v394; // [esp+78h] [ebp-2CC4h]
+  int v395; // [esp+7Ch] [ebp-2CC0h]
+  int *v396; // [esp+80h] [ebp-2CBCh]
+  int nWidth; // [esp+84h] [ebp-2CB8h]
+  RECT v398; // [esp+88h] [ebp-2CB4h] BYREF
+  struct tagRECT v399; // [esp+98h] [ebp-2CA4h] BYREF
+  unsigned int *v400; // [esp+A8h] [ebp-2C94h]
+  int v401; // [esp+ACh] [ebp-2C90h]
+  struct tagRECT v402; // [esp+B0h] [ebp-2C8Ch] BYREF
+  struct tagTEXTMETRICA lParam; // [esp+C0h] [ebp-2C7Ch] BYREF
+  HWND v404; // [esp+F8h] [ebp-2C44h] BYREF
+  int v405[8]; // [esp+FCh] [ebp-2C40h] BYREF
+  unsigned int v406[4]; // [esp+11Ch] [ebp-2C20h] BYREF
+  int v407[4]; // [esp+12Ch] [ebp-2C10h] BYREF
+  wchar_t Destination[511]; // [esp+13Ch] [ebp-2C00h] BYREF
+  int16_t v409; // [esp+53Ah] [ebp-2802h]
+  unsigned short v410[5120]; // [esp+53Ch] [ebp-2800h] BYREF
 }
 } // namespace gamemd
 

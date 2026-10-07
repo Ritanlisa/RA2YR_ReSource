@@ -173,7 +173,7 @@ struct Voxel {
 // --- flat members (END) ---
     int BuildIndexTable();  // 0x748220
     AbstractClass * RenderFrame();  // 0x754510
-    int Projection_Setup();  // 0x754CB0
+    static int Projection_Setup();  // 0x754CB0
     AbstractClass * * SortDepth(ObjectClass * aP1, int a3, void *a3_2);  // 0x755DB0
     int ProcessColor(unsigned int *a2, float *a3);  // 0x756590
     char DrawHelper(unsigned int *a2);  // G57w10-S raw 0x0075C240 IUnknown 占位清除
@@ -191,7 +191,7 @@ struct Voxel {
     int FacePixelBuffer(int * a1);  // 0x7DF9C0
     int FacePixelBufferEx(int a1);  // 0x7DFAE0
     int FacePixelBuffer3(int * a1);  // 0x7DFC00
-    int SetProjectionAngle(float a1);  // 0x754C00
+    static int SetProjectionAngle(float a1);  // 0x754C00
     int InitDistanceTable();  // 0x75F020
 };
 } // namespace gamemd

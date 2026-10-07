@@ -1134,17 +1134,17 @@ int CSFClass::LoadFile()
     if ( !dword_B1CF6C ) /*0x73481d*/
       return 0; /*0x73481d*/
     v4 = RA2_OPNEW(40 * dword_B1CF6C); /*0x73482f*/
-    dword_B1CF74 = v4; /*0x734836*/
+    dword_B1CF74 = (unsigned int)v4; /*0x734836*/
     if ( !v4 ) /*0x73483c*/
       return 0; /*0x73483c*/
     memset(v4, 0, 40 * dword_B1CF6C); /*0x734854*/
     v5 = RA2_OPNEW(4 * dword_B1CF70); /*0x73486f*/
-    dword_B1CF78 = v5; /*0x734876*/
+    dword_B1CF78 = (unsigned int)v5; /*0x734876*/
     if ( !v5 ) /*0x73487c*/
       return 0; /*0x73487c*/
     memset(v5, 0, 4 * dword_B1CF70); /*0x73488a*/
     v6 = RA2_OPNEW(4 * dword_B1CF70); /*0x73489f*/
-    dword_B1CF7C = v6; /*0x7348a6*/
+    dword_B1CF7C = (unsigned int)v6; /*0x7348a6*/
     if ( !v6 ) /*0x7348ac*/
       return 0; /*0x7348ac*/
     memset(v6, 0, 4 * dword_B1CF70); /*0x7348ba*/

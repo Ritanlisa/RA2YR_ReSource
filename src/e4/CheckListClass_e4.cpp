@@ -13,28 +13,30 @@
 
 // 0x488520
 namespace gamemd {
-size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
+size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
   ListClass *v7; // ecx
   ListClass *v8; // esi
   size_t *result; // eax
   unsigned char v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
-  int (*ListClass_field_0x0C) (...) ;  wchar_t * Type;
+  int ListClass_field_0x0C;
+  int Type;
   int v12; // ecx
   int v13; // eax
-  int (*ListClass_field_0x10) (...) ;  int v15; // eax
+  int ListClass_field_0x10;
+  int v15; // eax
   int v16; // [esp-20h] [ebp-114h]
   size_t v17; // [esp-10h] [ebp-104h]
   int v18; // [esp-10h] [ebp-104h]
   unsigned int v19[4]; // [esp+4h] [ebp-F0h] BYREF
   unsigned int v20[2]; // [esp+14h] [ebp-E0h] BYREF
-  unsigned short v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
+  wchar_t v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
 
   v8 = v7; /*0x488527*/
   result = (size_t *)(*(int (**)(void))(*(unsigned int *)v7->__pad_0 + 148))(); /*0x48852b*/
-  if ( (int)self < (int)result )
+  if ( (int)a1 < (int)result )
   {
-    result = (size_t *)((Array *)(v8))->GetClamped((int)self); /*0x488543*/
+    result = (size_t *)((Array *)(v8))->GetClamped((int)a1); /*0x488543*/
     if ( result )
     {
       memset( (void *)(&v22[1]), 0, 198); /*0x488560*/
@@ -43,7 +45,7 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
       v22[1] = (int)(32);
       swprintf(&v22[2], v17, a2); /*0x488585*/
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
-            Type = (wchar_t *)((BuildingAnim *)0)->GetType();
+            Type = BuildingAnim::GetType();
       if ( a6 ) /*0x4885a7*/
       {
         ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/
@@ -76,7 +78,7 @@ v15 = (*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_H
             return FillRectangle( (IUnknown *)(/*0x488675*/                v19), (IUnknown *)((int)v22), (int)g_DSurface_Hidden_2, v15, (int)v20, v16, 0, ListClass_field_0x0C, (int)(a5), v18);
     }
   }
-  return (size_t)(result); /*0x48867d*/
+  return result; /*0x48867d*/
 }
 }
 // 0x4886B0

@@ -72,7 +72,44 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   char *v45; // eax
   HWND v46; // edi
   LRESULT v47; // eax
- ... [22198 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): ... ...
+  // live body via get_context/0x5FB320 — w15f4 regrafted decls only
+  HWND (__stdcall *v18)(HWND, int); // edi
+  HWND v48; // eax
+  int16_t v49; // ax
+  int v50; // edi
+  HWND v51; // edi
+  wchar_t *StringCSF; // eax
+  signed int v53; // edx
+  int v54; // esi
+  char v55; // al
+  HWND v56; // esi
+  int v57; // eax
+  int v58; // eax
+  int v59; // ecx
+  int j; // eax
+  unsigned int *v61; // eax
+  int v62; // eax
+  int v63; // eax
+  int v64; // ecx
+  int k; // eax
+  unsigned int *v66; // eax
+  int v67; // eax
+  HWND DlgItem; // edi
+  int v69; // esi
+  LPARAM v70; // eax
+  LPARAM v71; // eax
+  int v72; // [esp-8h] [ebp-134h]
+  KeyboardConfig *v73; // [esp+0h] [ebp-12Ch]
+  unsigned int *WindowLongA; // [esp+10h] [ebp-11Ch]
+  int v75; // [esp+10h] [ebp-11Ch]
+  int v76; // [esp+10h] [ebp-11Ch]
+  LRESULT v77; // [esp+10h] [ebp-11Ch]
+  int i; // [esp+10h] [ebp-11Ch]
+  HWND v79[2]; // [esp+14h] [ebp-118h] BYREF
+  int v81[3]; // [esp+74h] [ebp-B8h] BYREF
+  int v82; // [esp+80h] [ebp-ACh]
+  wchar_t lParam[64]; // [esp+ACh] [ebp-80h] BYREF
 }
 } // namespace gamemd
 

@@ -84,7 +84,62 @@ int DamageArea::ApplyScatter()
   int v45; // ebp
   int v46; // eax
   int v47; // eax
-  bool v48; //... [31505 chars total]
+  bool v48; // bl
+  int v49; // ebp
+  int v50; // eax
+  int v51; // eax
+  int v52; // eax
+  int v53; // ebx
+  int v54; // ebx
+  int v55; // eax
+  int v56; // ecx
+  int v57; // eax
+  int v58; // edx
+  int v59; // eax
+  int v60; // eax
+  int v61; // edi
+  int *v62; // ecx
+  int v63; // ecx
+  int v64; // kr44_4
+  unsigned int *v65; // eax
+  int v66; // edi
+  unsigned int v67; // ebp
+  unsigned int v68; // ebx
+  int v69; // eax
+  int v70; // eax
+  int v71; // ecx
+  int *v72; // ecx
+  int (__stdcall ***v73)(unsigned int, void *, double *); // eax
+  int v74; // edi
+  int v75; // eax
+  int *v86; // edi
+  int v87; // edx
+  int v89; // eax
+  int v91; // ecx
+  int v94; // ecx
+  int *v96; // ecx
+  int v97; // edi
+  int v98; // ebx
+  unsigned short *v99; // eax
+  int v101; // eax
+  int *v102; // ecx
+  double v108; // [esp+28h] [ebp-78h]
+  int64_t v109; // [esp+30h] [ebp-70h]
+  double v110; // [esp+30h] [ebp-70h]
+  double v111; // [esp+30h] [ebp-70h]
+  char v112; // [esp+4Bh] [ebp-55h]
+  int v113; // [esp+4Ch] [ebp-54h]
+  int16_t v114[4]; // [esp+50h] [ebp-50h] BYREF
+  int16_t v115[6]; // [esp+58h] [ebp-48h] BYREF
+  int16_t v116[2]; // [esp+64h] [ebp-3Ch] BYREF
+  double v117; // [esp+68h] [ebp-38h] BYREF
+  int v118; // [esp+70h] [ebp-30h]
+  double v119; // [esp+78h] [ebp-28h] BYREF
+  int v120; // [esp+80h] [ebp-20h]
+  unsigned char v121[12]; // [esp+88h] [ebp-18h] BYREF
+  int v122; // [esp+94h] [ebp-Ch] BYREF
+  int v123; // [esp+98h] [ebp-8h]
+  int v124; // [esp+9Ch] [ebp-4h]
 }
 } // namespace gamemd
 

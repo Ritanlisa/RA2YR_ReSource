@@ -439,7 +439,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
 
   BuildupLoaded = (unsigned int)a1->BuildupLoaded; /*0x45e587*/
-  a1->vtable1 = (unsigned int)&vt_BuildingTypeClass; /*0x45e58d*/
+  a1->vtable1 = (void *)&vt_BuildingTypeClass; /*0x45e58d*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e595*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e59c*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e5a3*/

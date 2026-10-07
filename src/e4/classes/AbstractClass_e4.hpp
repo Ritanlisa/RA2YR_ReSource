@@ -260,7 +260,7 @@ int DTOR(); // 0x4101F0
     int  reloadWeapon(int a2);  // 0x720200
     unsigned int *  checkAmmunition(char a2);  // 0x720210
     void processRadarEvent();  // 0x733160
-    void  updateBuildingState(signed int a2);  // 0x7598D0
+    static void  updateBuildingState(signed int a2);  // 0x7598D0
     char processConstruction();  // 0x759E10
     void checkBuildProgress();  // 0x759E50
     int finalizeConstruction();  // 0x759E80

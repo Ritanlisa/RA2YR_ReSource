@@ -437,7 +437,7 @@ int AircraftClass::Mission_Attack()
     }
     void *mc = GetMissionControl();
     return (int)Math::RoundToInt(*((double *)mc + 2) * 900.0)
-         + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
+         + ((Random *)((char *)&dword_A8B230 + 0x218))->Range(0, 2);
 }
 
 
@@ -630,7 +630,7 @@ int AircraftClass::Mission_Enter()
     }
     void *mc = GetMissionControl();
     int base = (int)Math::RoundToInt(*((double *)mc + 2) * 900.0);
-    return base + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
+    return base + ((Random *)((char *)&dword_A8B230 + 0x218))->Range(0, 2);
 } // G42.42d: pending full translation (offsets decoded; queue position 13)
 // 0x419c80
 // G42.42i FULL implementation (truth 0x419C80; overlay decoded): airborne
@@ -1290,7 +1290,7 @@ int AircraftClass::ProcessMissionTimeout()
     this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
     void *missionControl = GetMissionControl();
     int base = (int)Math::RoundToInt(*((double *)missionControl + 2) * 900.0);
-    return base + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
+    return base + ((Random *)((char *)&dword_A8B230 + 0x218))->Range(0, 2);
 }
 // 0x41a5c0
 // G42.42j FULL implementation (truth 0x41A5C0; disasm 41A5C0-41A92B):
@@ -1423,7 +1423,7 @@ int AircraftClass::GetMissionTimer()
         return FootClass::FindMovePosition();
     void *mc = GetMissionControl();
     return (int)Math::RoundToInt(*((double *)mc + 2) * 900.0)
-         + Random::Range((void *)((char *)&dword_A8B230 + 0x218), 0, 2);
+         + ((Random *)((char *)&dword_A8B230 + 0x218))->Range(0, 2);
 }
 // IDA: 0x41A940 (EvaluateTargetingState, 157B)
 int AircraftClass::EvaluateTargetingState()

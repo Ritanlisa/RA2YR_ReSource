@@ -210,7 +210,25 @@ char LoadGame::Start()
   int v51; // ebp
   int v52; // ebp
   int v53; // ebp
-  int v54; ... [31771 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): int v54; ... ...
+  // live body via get_context/0x67E730 — w15f4 regrafted decls only
+  int v54; // ebp
+  int v55; // edi
+  void *v56; // eax
+  int v57; // eax
+  int v58; // edi
+  int v59; // ebp
+  int v60; // edi
+  int v61; // eax
+  int v62; // eax
+  int v63; // edi
+  int v64; // [esp+330h] [ebp-4Ch] BYREF
+  LPVOID ppvObj; // [esp+334h] [ebp-48h] BYREF
+  LPVOID v66; // [esp+338h] [ebp-44h] BYREF
+  unsigned int v67[4]; // [esp+33Ch] [ebp-40h] BYREF
+  unsigned int v68[4]; // [esp+34Ch] [ebp-30h] BYREF
+  int v69[4]; // [esp+35Ch] [ebp-20h] BYREF
+  unsigned int v70[4]; // [esp+36Ch] [ebp-10h] BYREF
 }
 } // namespace gamemd
 

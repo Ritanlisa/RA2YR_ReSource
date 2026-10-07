@@ -93,7 +93,7 @@ struct Array {
     int CleanupArrayWOL();  // 0x7ACD30
     AbstractClass * * InsertElement(const void *a1, int aP2);  // 0x7AD790
     static int ForEach(Array * aP0, int a2, int a3, int (* a4)(int));  // G57w11: +static raw 0x004068F0 __stdcall receiver-first (align ForEachReverse)
-    int ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int));
+    static int ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int));
     int Cleanup();  // 0x49B720
     char GetElementAt(unsigned int * a2, int a3);  // 0x49D070
     static void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880

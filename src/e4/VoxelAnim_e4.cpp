@@ -162,6 +162,118 @@ int VoxelAnim::Draw(unsigned int * a2)
   unsigned int *v48; // esi
   int v49; // edx
   int v50; // eax
-  unsigned int *v5... [35635 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): unsigned int *v5... ...
+  // live body via get_context/0x75AEC0 — w15f4 regrafted decls only
+  unsigned int *v51; // ebx
+  int v52; // edi
+  int v53; // edx
+  int v54; // edi
+  int *v55; // ecx
+  int GroundHeight; // esi
+  int v57; // edi
+  int v58; // ecx
+  int *v59; // eax
+  unsigned int *v60; // ecx
+  int v61; // edi
+  int v62; // esi
+  unsigned int *v63; // eax
+  int v64; // ecx
+  int v65; // esi
+  void *v66; // eax
+  int v67; // esi
+  int v68; // ecx
+  unsigned int *v69; // esi
+  unsigned int *v70; // edx
+  unsigned int *v71; // eax
+  int v72; // ecx
+  int v73; // edx
+  int v74; // eax
+  int *v75; // ecx
+  int64_t v76; // rax
+  int v77; // edx
+  int *v78; // ecx
+  int64_t v79; // rax
+  int v80; // eax
+  unsigned int *v81; // edx
+  int v82; // ecx
+  int v83; // ecx
+  int v84; // esi
+  int v85; // edx
+  int v86; // eax
+  char v87; // bl
+  char v88; // al
+  wchar_t *v89; // edi
+  char v90; // bl
+  wchar_t *v91; // eax
+  wchar_t **v92; // edx
+  int v93; // ecx
+  int v94; // edi
+  unsigned int *v95; // edx
+  int v96; // edi
+  void *v97; // eax
+  void *v98; // eax
+  unsigned int *v99; // edx
+  unsigned char *v100; // ecx
+  int *v101; // eax
+  int v102; // ecx
+  double v103; // st7
+  int16_t v104; // ax
+  int v105; // ecx
+  double *v106; // ecx
+  int v107; // ecx
+  unsigned int *v108; // esi
+  int v109; // edi
+  int *v110; // eax
+  int v111; // ecx
+  double v112; // st7
+  int v113; // eax
+  int v114; // ecx
+  int v115; // eax
+  unsigned int *v116; // ecx
+  unsigned char *v117; // ecx
+  int v118; // esi
+  int v119; // edi
+  int64_t v120; // rax
+  int v121; // ecx
+  int v122; // eax
+  int v123; // ecx
+  int *v124; // eax
+  int v125; // ecx
+  double v126; // st7
+  int16_t v127; // ax
+  int v128; // ecx
+  int16_t v129; // si
+  unsigned int **v130; // eax
+  int *v131; // ecx
+  int v132; // edi
+  unsigned int v133; // ebx
+  double v134; // st7
+  int v135; // esi
+  double v136; // st7
+  unsigned int *v137; // esi
+  unsigned int *v138; // eax
+  int *v139; // ecx
+  void *v140; // eax
+  int v141; // eax
+  char v142; // bl
+  int v144; // [esp+18h] [ebp-58h]
+  int v145; // [esp+1Ch] [ebp-54h]
+  int v146; // [esp+20h] [ebp-50h]
+  int v147; // [esp+20h] [ebp-50h]
+  int v148; // [esp+20h] [ebp-50h]
+  char v149; // [esp+24h] [ebp-4Ch]
+  char v150; // [esp+24h] [ebp-4Ch]
+  int v151; // [esp+24h] [ebp-4Ch]
+  unsigned int *v152; // [esp+38h] [ebp-38h] BYREF
+  double v153; // [esp+3Ch] [ebp-34h] BYREF
+  double v154; // [esp+44h] [ebp-2Ch] BYREF
+  double v155; // [esp+4Ch] [ebp-24h] BYREF
+  int v156; // [esp+54h] [ebp-1Ch]
+  int v157; // [esp+58h] [ebp-18h] BYREF
+  int v158; // [esp+5Ch] [ebp-14h]
+  int v159; // [esp+60h] [ebp-10h]
+  int v160; // [esp+64h] [ebp-Ch] BYREF
+  int v161; // [esp+68h] [ebp-8h]
+  int v162; // [esp+6Ch] [ebp-4h]
 }
 } // namespace gamemd

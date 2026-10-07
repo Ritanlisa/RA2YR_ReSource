@@ -221,7 +221,7 @@ char TacticalClass::CompareVector(int a2) {
     unsigned int *v4; // eax
     int v5; // ecx
 
-    v2 = this->vtable3; /*0x5c0ad2*/
+    v2 = (int)this->vtable3; /*0x5c0ad2*/
     if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5c0add*/
     {
       v3 = 0; /*0x5c0adf*/

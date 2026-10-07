@@ -179,7 +179,7 @@ struct SessionClass {
     SessionClass * DtorWithDelete(void ** Block, char a2);
     SessionClass * * Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5);
     ObjectClass * * ParseGameInfo(wchar_t * Destination, char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8);
-    unsigned int GetPlayerColorScheme(ObjectClass * aP0);
+    static unsigned int GetPlayerColorScheme(ObjectClass * aP0);
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);
     VectorClass_flat * validateGame(unsigned int * Block, char a2);
     unsigned int q_307A;  // +0x307A flat supply (three-ban reform)

@@ -880,7 +880,125 @@ void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
   int v46; // eax
   int v47; // eax
   int v48; // edi
-  int v49; // ed... [58141 chars total]
+  int v49; // edi
+  void *v50; // eax
+  unsigned int *v51; // ebp
+  unsigned int *v52; // eax
+  int v53; // ecx
+  int v54; // edx
+  int v55; // edi
+  int v56; // ebx
+  void *v57; // eax
+  unsigned int *v58; // eax
+  int v59; // edi
+  int v60; // ecx
+  int v61; // eax
+  int v62; // edx
+  int Coord3D_field_0x04; // eax
+  int v64; // edx
+  int v65; // eax
+  unsigned short *m_Data; // eax
+  int16_t v67; // dx
+  void *v68; // eax
+  int v69; // eax
+  int v70; // eax
+  void *v71; // eax
+  unsigned int *v72; // eax
+  int v73; // eax
+  void *v74; // eax
+  int *v75; // eax
+  int v76; // edi
+  int v77; // esi
+  AnimClass *v78; // eax
+  int v79; // edx
+  int *v80; // edi
+  int16_t v81; // dx
+  int16_t v82; // ax
+  int v83; // esi
+  int16_t v84; // cx
+  int v85; // eax
+  void *v86; // eax
+  AnimClass *v87; // eax
+  int v88; // eax
+  int v89; // ecx
+  int v90; // eax
+  int v91; // ecx
+  int v92; // ecx
+  void *v93; // eax
+  int *v94; // edx
+  int v95; // ebp
+  int v96; // ecx
+  int v97; // edi
+  #375 **v98; // esi
+  unsigned int *v99; // eax
+  unsigned int *v100; // eax
+  int v101; // eax
+  int v102; // esi
+  int v103; // ebp
+  ScenarioClass *v104; // eax
+  ScenarioClass *v105; // edi
+  int v106; // eax
+  int v107; // ecx
+  int v108; // edi
+  int v109; // ecx
+  int v110; // ecx
+  int v111; // edi
+  int v112; // ecx
+  int i; // edi
+  int v114; // ecx
+  VocClass *v115; // ecx
+  int v116; // eax
+  int v117; // ebp
+  int v118; // edi
+  ScenarioClass *v119; // eax
+  ScenarioClass *v120; // esi
+  int v121; // ecx
+  int v122; // esi
+  int v123; // ecx
+  int v124; // esi
+  int v125; // edi
+  int v126; // ecx
+  int j; // ebp
+  void *v128; // esi
+  int *v129; // eax
+  void *v130; // ecx
+  unsigned int *v131; // eax
+  int16_t *v132; // esi
+  void *v133; // eax
+  AnimClass *v134; // eax
+  int v135; // edx
+  int *v136; // edi
+  int16_t v137; // dx
+  int16_t v138; // ax
+  unsigned int *v139; // esi
+  int16_t v140; // cx
+  unsigned int *v141; // ebp
+  int v142; // ecx
+  int v143; // eax
+  int *v144; // esi
+  CellClass *v145; // ebp
+  int *UIObjectCOM; // edi
+  int v147; // edx
+  int v148; // eax
+  int v149; // ecx
+  char *v150; // esi
+  int v151; // edx
+  unsigned int *v152; // esi
+  int v153; // eax
+  int v154; // eax
+  BuildingClass *v155; // [esp+48h] [ebp-1E4h]
+  int v156; // [esp+54h] [ebp-1D8h] BYREF
+  int16_t v158[2]; // [esp+64h] [ebp-1C8h] BYREF
+  int v159; // [esp+68h] [ebp-1C4h]
+  int v160; // [esp+6Ch] [ebp-1C0h]
+  int v162; // [esp+84h] [ebp-1A8h]
+  int v164; // [esp+9Ch] [ebp-190h]
+  Coord v165; // [esp+A0h] [ebp-18Ch] BYREF
+  char v166[8]; // [esp+1E4h] [ebp-48h] BYREF
+  char v167[16]; // [esp+1ECh] [ebp-40h] BYREF
+  char v168[12]; // [esp+1FCh] [ebp-30h] BYREF
+  char v169[12]; // [esp+208h] [ebp-24h] BYREF
+  int v171[3]; // [esp+220h] [ebp-Ch] BYREF
 }
 
 } // namespace gamemd

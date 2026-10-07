@@ -658,7 +658,7 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vtable1 = (unsigned int)&vt_OverlayTypeClass; /*0x5fef36*/
+  this->vtable1 = (void *)&vt_OverlayTypeClass; /*0x5fef36*/
   ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef3c*/
   ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef43*/
   ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef4a*/

@@ -141,8 +141,8 @@ struct Game {
     int CheckForGameCD();  // 0x4790A0
     int loadCampaignData(void *a1_1);  // 0x550000
     void processStartup();
-    char ResetFlags();  // 0x5E8B40
-    int ResetReadyStates();  // 0x5E9850
+    static char ResetFlags();  // 0x5E8B40
+    static int ResetReadyStates();  // 0x5E9850
     int readIniSettings();  // 0x67FDE0
     char InitializeToolTipColor();  // 0x72F440
     static int Stub3(int a1);  // 0x5865E0

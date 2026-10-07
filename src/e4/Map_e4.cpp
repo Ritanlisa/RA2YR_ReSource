@@ -517,7 +517,7 @@ char sub_55CF10()
   result = (char)dword_A8B238; /*0x55cf1d*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x55cf28*/
   {
-    result = &dword_887628; /*0x55cf2e*/
+    result = dword_887628; /*0x55cf2e*/
     if ( *(unsigned int *)&dword_887628) /*0x55cf35*/
     {
       result = byte_A8DBA0; /*0x55cf3b*/

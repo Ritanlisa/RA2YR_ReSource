@@ -52,7 +52,7 @@ struct FactoryClass {
     void* RemoveItemAt;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
-    char GetFlag();
+    static char GetFlag();
     char RemoveOneFromQueue(char a2);
     int CountType(int a2);  // G57w10-S raw 0x004CA670 IUnknown 占位清除
     int DemandProduction(int a2, void * a3, char a4);

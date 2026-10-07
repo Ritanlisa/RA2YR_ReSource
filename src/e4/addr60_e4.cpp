@@ -3838,7 +3838,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     SymbolTable::Insert((void *)((int)&v14), v17); /*0x60f6e2*/
     HashTable::Get( (void *)(&dword_AC1B00), (IUnknown *)(&v14), (IUnknown *)(&v15)); /*0x60f6f6*/
     ((GadgetClass *)v17)->SetTooltip( 0); /*0x60f700*/
-    for ( i = v17[13]; v17[13]; i = v17[13] ) /*0x60f70b*/
+    for ( i = (unsigned int *)v17[13]; v17[13]; i = v17[13] ) /*0x60f70b*/
       LinkedList::Remove( (void *)(v17), (unsigned int *)(i)); /*0x60f712*/
     if ( v17[15] ) /*0x60f725*/
       ((DeleteAndZero *)(void **)v17[15])->OrFree( 1); /*0x60f729*/

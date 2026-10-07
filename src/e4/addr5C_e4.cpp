@@ -78,7 +78,7 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
   int v11; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
-  result = &dbl_ABECE0; /*0x5c00e0*/
+  result = dbl_ABECE0; /*0x5c00e0*/
   if ( &dbl_ABECE0 ) /*0x5c00ea*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Alternate), 0); /*0x5c00fa*/

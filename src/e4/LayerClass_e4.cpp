@@ -758,6 +758,64 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
   int *v47; // eax
   int v48; // edx
   int *v49; // eax
-  i... [21605 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): i... ...
+  // live body via get_context/0x581140 — w15f4 regrafted decls only
+  int v50; // edx
+  int *v51; // ebx
+  unsigned int *v52; // ebp
+  int k; // edi
+  int v54; // eax
+  int v55; // esi
+  int v56; // eax
+  int v57; // ecx
+  unsigned int v58; // eax
+  unsigned int *v59; // eax
+  int m; // edi
+  int v61; // eax
+  int v62; // esi
+  int v63; // eax
+  int v64; // ecx
+  int n; // edi
+  int v66; // eax
+  int v67; // esi
+  unsigned int v68; // eax
+  unsigned int *v69; // eax
+  unsigned int v70; // eax
+  unsigned int *v71; // eax
+  int v72; // esi
+  int v73; // eax
+  bool v74; // sf
+  int v75; // eax
+  unsigned int *v76; // eax
+  int v77; // edx
+  int v78; // ebx
+  int v79; // eax
+  int v80; // eax
+  void **v81; // ebp
+  int v82; // edi
+  int v83; // eax
+  int v84; // edx
+  unsigned int v85; // esi
+  unsigned int *v86; // esi
+  int v87; // esi
+  void *v88; // eax
+  int v89; // [esp+28h] [ebp-44h]
+  int v90; // [esp+28h] [ebp-44h]
+  int v91; // [esp+28h] [ebp-44h]
+  int v92; // [esp+2Ch] [ebp-40h] BYREF
+  int v93; // [esp+30h] [ebp-3Ch] BYREF
+  int *v94; // [esp+34h] [ebp-38h]
+  int v95; // [esp+38h] [ebp-34h]
+  int v96; // [esp+3Ch] [ebp-30h]
+  int v97; // [esp+40h] [ebp-2Ch]
+  int v98; // [esp+44h] [ebp-28h]
+  int v99; // [esp+48h] [ebp-24h]
+  int v100; // [esp+50h] [ebp-1Ch] BYREF
+  int v101; // [esp+54h] [ebp-18h]
+  int v102; // [esp+58h] [ebp-14h] BYREF
+  int v103; // [esp+5Ch] [ebp-10h]
+  int v104; // [esp+60h] [ebp-Ch] BYREF
+  int v105; // [esp+64h] [ebp-8h]
+  int v106; // [esp+68h] [ebp-4h]
 }
 } // namespace gamemd

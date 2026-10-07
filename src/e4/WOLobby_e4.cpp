@@ -128,7 +128,129 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
   wchar_t *v41; // eax
   wchar_t *v42; // eax
   size_t v43; // esi
-  wchar_t *v... [59148 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): wchar_t *v... ...
+  // live body via get_context/0x78F7F0 — w15f4 regrafted decls only
+  wchar_t *v44; // edi
+  wchar_t *v45; // eax
+  wchar_t *v46; // eax
+  wchar_t *v47; // eax
+  wchar_t *v48; // edi
+  size_t v49; // eax
+  int v50; // eax
+  const wchar_t *k; // esi
+  char *v52; // eax
+  wchar_t *v53; // eax
+  wchar_t *v54; // eax
+  int v55; // esi
+  wchar_t *v56; // eax
+  HWND v57; // eax
+  int v58; // edx
+  int v59; // esi
+  unsigned int *v60; // eax
+  int v61; // ecx
+  wchar_t *v62; // eax
+  wchar_t *v63; // eax
+  int v64; // esi
+  char v65; // cl
+  wchar_t *v66; // eax
+  int v67; // ebx
+  LPARAM v69; // esi
+  wchar_t *v70; // eax
+  int v71; // ecx
+  int v72; // eax
+  int *ambientSoundController; // edx
+  wchar_t *v74; // eax
+  int v75; // edx
+  int v76; // esi
+  TagClass **p_attachedTag; // eax
+  int v78; // ebx
+  signed int inited; // esi
+  wchar_t *v80; // eax
+  ObjectClass *v81; // esi
+  wchar_t *v82; // eax
+  HWND Current; // eax
+  HWND v84; // eax
+  int v85; // ebp
+  LPARAM v86; // edi
+  char *v87; // eax
+  int v88; // eax
+  int v89; // edi
+  int v90; // eax
+  wchar_t *v91; // eax
+  wchar_t *v92; // eax
+  wchar_t *v93; // eax
+  int v94; // ebx
+  int v95; // eax
+  unsigned int *v96; // ebp
+  unsigned int *v97; // eax
+  int v98; // edx
+  void *j; // eax
+  HWND Dialog; // esi
+  int GameUI; // eax
+  unsigned char (*v102)(void); // edx
+  ObjectClass *v103; // ecx
+  char v104; // al
+  bool v105; // bl
+  HWND v106; // eax
+  ObjectClass *v107; // ecx
+  char v108; // bl
+  char v109; // al
+  unsigned int *v110; // eax
+  int v111; // esi
+  void *v112; // ecx
+  int v113; // ebp
+  int v114; // edi
+  int v115; // ebx
+  char *v117; // eax
+  LPARAM v118; // eax
+  LPARAM v119; // eax
+  ObjectClass *First; // ebx
+  int owningHouseIndex; // edx
+  char *v122; // eax
+  HWND v123; // eax
+  HWND v124; // eax
+  HWND v125; // eax
+  HWND v126; // ebx
+  HWND v127; // ebx
+  int v128; // ebx
+  int v129; // eax
+  int v130; // eax
+  int PlayerCountMap; // esi
+  void *vtable2; // ecx
+  HWND v133; // eax
+  int v134; // edi
+  int v135; // ebp
+  char *v137; // eax
+  HWND v138; // eax
+  void **v139; // ebx
+  gamemd::Dialog *DlgCtrlID; // esi
+  GameSetup *ComboBoxSelectedRaw; // eax
+  wchar_t *ColorTooltip; // eax
+  SideClass *ComboBoxSelected; // eax
+  wchar_t *Name; // eax
+  GameClass *ComboBoxSelectedDefault; // eax
+  wchar_t *DifficultyString; // eax
+  char *v147; // esi
+  wchar_t *v148; // eax
+  wchar_t *v149; // eax
+  wchar_t *v150; // eax
+  wchar_t *v151; // eax
+  DeleteAndZero *v152; // ecx
+  int v153; // esi
+  int v154; // eax
+  ObjectClass *v155; // eax
+  WOLobby *v156; // esi
+  wchar_t *v157; // eax
+  int v158; // [esp-8h] [ebp-264h]
+  DeleteAndZero v159; // [esp-4h] [ebp-260h]
+  int v160; // [esp-4h] [ebp-260h]
+  wchar_t *StringCSF; // [esp-4h] [ebp-260h]
+  wchar_t *v162; // [esp-4h] [ebp-260h]
+  ObjectClass *v163; // [esp+0h] [ebp-25Ch]
+  SessionClass *v164; // [esp+0h] [ebp-25Ch]
+  unsigned char v165[176]; // [esp+10h] [ebp-24Ch] BYREF
+  wchar_t Destination[66]; // [esp+D4h] [ebp-188h] BYREF
+  wchar_t String1[130]; // [esp+158h] [ebp-104h] BYREF
 }
 }  // G42.18c ns repair
 
@@ -176,7 +298,54 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
   const wchar_t *i; // esi
   char *v41; // eax
   wchar_t *v42; // eax
-  wchar_t *v43; // e... [27756 chars total]
+  int v44; // esi
+  wchar_t *v45; // eax
+  HWND Dialog; // esi
+  int GameUI; // eax
+  unsigned char (*v48)(void); // edx
+  HWND v49; // edi
+  HWND v50; // eax
+  ObjectClass *v51; // edi
+  int v52; // ebx
+  int v53; // eax
+  CountryCombo *ResourceID2CSF; // ebp
+  StartCombo *ResourceIDCSF; // ebx
+  gamemd::Dialog *ResourceID4CSF; // eax
+  int v57; // edi
+  int v58; // ebx
+  int v59; // ebp
+  int ComboBoxSelectedRaw2; // esi
+  char *v61; // eax
+  void **vtable1; // ebx
+  gamemd::Dialog *DlgCtrlID; // ebp
+  GameSetup *ComboBoxSelectedRaw; // eax
+  wchar_t *ColorTooltip; // eax
+  SideClass *ComboBoxSelected; // eax
+  wchar_t *Name; // eax
+  GameClass *ComboBoxSelectedDefault; // eax
+  wchar_t *DifficultyString; // eax
+  char *v70; // ebx
+  wchar_t *v71; // eax
+  wchar_t *v72; // eax
+  wchar_t *v73; // eax
+  wchar_t *v74; // eax
+  int v75; // edi
+  int v76; // eax
+  ObjectClass *v77; // eax
+  WOLobby *v78; // esi
+  wchar_t *v79; // eax
+  LPARAM v81; // eax
+  LPARAM v82; // eax
+  unsigned int *First; // edi
+  int v84; // edi
+  void *vtable2; // ebx
+  int PlayerCountMap; // ecx
+  DeleteAndZero v87; // [esp-4h] [ebp-168h]
+  wchar_t *StringCSF; // [esp-4h] [ebp-168h]
+  wchar_t *v89; // [esp-4h] [ebp-168h]
+  ObjectClass *v90; // [esp+0h] [ebp-164h]
+  ObjectClass v91; // [esp+10h] [ebp-154h] BYREF
+  wchar_t String[64]; // [esp+E4h] [ebp-80h] BYREF
 }
 }  // G42.18c ns repair
 

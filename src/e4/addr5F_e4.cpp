@@ -49,6 +49,7 @@
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/HotkeyOptions_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/_tree_full_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -1014,36 +1015,36 @@ int sub_5F15A0()
 
 // 0x5F15C0
 namespace gamemd {
-unsigned int * ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
+unsigned int sub_5F15C0(ObjectClass *a1, int a2, int a3, int a4, short a5)
 {
 
-  this->ambientSoundController[2] = a2; /*0x5f15cc*/
-  this->ambientSoundController[3] = a3; /*0x5f15d3*/
-  ((unsigned int *)this)[0] = (unsigned int)((void *)a4); /*0x5f15da*/
-  LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
-  this->fallRate = 60; /*0x5f15eb*/
-  this->customSound_controller[3] = 60; /*0x5f15ee*/
-  this->vtable1 = &vt_NullModemClass; /*0x5f15f1*/
-  this->ambientSoundController[1] = -1; /*0x5f15f7*/
-  this->attachedBomb = 0; /*0x5f15fa*/
-  this->customSound_controller[0] = 0; /*0x5f15fd*/
-  ((unsigned int *)this)[0] = 0; /*0x5f1600*/
-  ((unsigned int *)this)[0] = 500; /*0x5f1603*/
-  ((unsigned int *)this)[0] = 0; /*0x5f160a*/
-  ((unsigned int *)this)[0] = -1; /*0x5f160d*/
-  ((unsigned int *)this)[0] = 0; /*0x5f1610*/
-  ((unsigned int *)this)[0] = 0; /*0x5f1613*/
-  this->occupant = 3000; /*0x5f1616*/
-  this->owningHouseIndex = 1200; /*0x5f161d*/
-  LOBYTE(this->nextObject) = 43; /*0x5f1624*/
-  *(unsigned int *)&this->bombVisible = 0; /*0x5f1628*/
-  this->health = 0; /*0x5f162b*/
-  this->estimatedHealth = 0; /*0x5f162e*/
-  this->ambientSoundController[0] = 0; /*0x5f1631*/
-  this->customSound_controller[4] = -1; /*0x5f1634*/
-  this->customSound = 1200; /*0x5f1637*/
-  this->attachedTag = 0; /*0x5f163e*/
-  return (unsigned int *)this; /*0x5f1641*/
+  a1->ambientSoundController[2] = a2; /*0x5f15cc*/
+  a1->ambientSoundController[3] = a3; /*0x5f15d3*/
+  ((unsigned int *)a1)[0] = (unsigned int)((void *)a4); /*0x5f15da*/
+  LOWORD(a1->ambientSoundController[4]) = a5; /*0x5f15e2*/
+  a1->fallRate = 60; /*0x5f15eb*/
+  a1->customSound_controller[3] = 60; /*0x5f15ee*/
+  a1->vtable1 = &vt_NullModemClass; /*0x5f15f1*/
+  a1->ambientSoundController[1] = -1; /*0x5f15f7*/
+  a1->attachedBomb = 0; /*0x5f15fa*/
+  a1->customSound_controller[0] = 0; /*0x5f15fd*/
+  ((unsigned int *)a1)[0] = 0; /*0x5f1600*/
+  ((unsigned int *)a1)[0] = 500; /*0x5f1603*/
+  ((unsigned int *)a1)[0] = 0; /*0x5f160a*/
+  ((unsigned int *)a1)[0] = -1; /*0x5f160d*/
+  ((unsigned int *)a1)[0] = 0; /*0x5f1610*/
+  ((unsigned int *)a1)[0] = 0; /*0x5f1613*/
+  a1->occupant = 3000; /*0x5f1616*/
+  a1->owningHouseIndex = 1200; /*0x5f161d*/
+  LOBYTE(a1->nextObject) = 43; /*0x5f1624*/
+  *(unsigned int *)&a1->bombVisible = 0; /*0x5f1628*/
+  a1->health = 0; /*0x5f162b*/
+  a1->estimatedHealth = 0; /*0x5f162e*/
+  a1->ambientSoundController[0] = 0; /*0x5f1631*/
+  a1->customSound_controller[4] = -1; /*0x5f1634*/
+  a1->customSound = 1200; /*0x5f1637*/
+  a1->attachedTag = 0; /*0x5f163e*/
+  return (unsigned int *)a1; /*0x5f1641*/
 
 }
 } // namespace gamemd

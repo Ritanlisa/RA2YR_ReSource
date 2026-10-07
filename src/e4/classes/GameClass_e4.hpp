@@ -127,7 +127,7 @@ struct GameClass {
     int processNetworkPacket(void * Src, signed int Size);  // 0x7BA3C0
     unsigned int * saveGameState(char a2);  // 0x631F40
     int * initDisplay(char a2);  // 0x4AECA0
-    void InitDifficultyButtons();  // 0x5E8AE0
+    static void InitDifficultyButtons();  // 0x5E8AE0
     PKPipe * validateGameFile(unsigned int * Block, char a2);  // 0x632FF0
     PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // 0x633370
     wchar_t * GetDifficultyString();  // 0x5E99C0

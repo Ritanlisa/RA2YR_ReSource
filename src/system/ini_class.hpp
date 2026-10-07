@@ -136,7 +136,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadIntList2(void* a1, void* a2);  // 0x5271C0
     int SetInt(void* a1, void* a2, int a3, int a4);  // 0x5275C0
     int SetIntFormat(void* a1, void* a2, int a3, int a4);  // 0x527640
-    int ReadInt_Overwrite(void* a1, void* a2, int a3);  // 0x5276D0
+    static int ReadInt_Overwrite(void* aP1, void* a2, void* a3, int a4);  // 0x5276D0 G57w15f3: static receiver-first per raw __thiscall (INIClass* this, u8* section, u8* key, int def)
     int ReadGUID_Overwrite(int a1, void* a2, void* a3, int a4, int a5, int a6, int a7);  // 0x527920
     int ReadDouble(void* a1, void* a2, void* a3);  // 0x527B90
     int SetRect(void* a1, void* a2, void* a3);  // 0x527C10
@@ -159,7 +159,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetCSFString();  // 0x529350
     int SetBool(void* a1, void* a2, int a3);  // 0x529560
     int ReadBool3(void* a1, void* a2, int a3);  // 0x5295A0
-    int ReadBool_Overwrite(void* a1, void* a2, int a3);  // 0x5295F0
+    static int ReadBool_Overwrite(void* aP1, void* a2, void* a3, int a4);  // 0x5295F0 G57w15f3: static receiver-first per raw __thiscall (INIClass* this, u8* section, u8* key, def)
     void* ReadPoint2D_Overwrite(void* a1, void* a2, int a3, void* a4);  // 0x529880
     void* GetCoordPair(void* a1, void* a2, void* a3, void* a4);  // 0x529A30
     int ReadCoord3(void* a1, void* a2, void* a3);  // 0x529BF0
@@ -181,7 +181,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    int BinarySearchSection(int a1);  // 0x526810 -- INIClass::BinarySearchSection
+    static int BinarySearchSection(void* aP1, void* a2);  // 0x526810 G57w15f3: static receiver-first per raw __thiscall (INIClass* this, unsigned __int8 *a2)
     int GetKeyCount(int a1);  // 0x526960 -- INIClass::GetKeyCount
     int GetStringByIndex(int a1, int a2);  // 0x526cc0 -- INIClass::GetStringByIndex
     // === SYMBOL-ANCHOR (END) ===

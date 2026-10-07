@@ -172,15 +172,15 @@ struct Cell {
     int Exists(MouseClass * aP1);  // 0x5657E0
     int CoordToIndex(int16_t *aP1);
     int SetRadar(int16_t *aP1);
-    char UpdateTileType(__int16 *a1, int a2, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
-    char SetTileType(__int16 *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
+    static char UpdateTileType(__int16 *a1, int a2, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
+    static char SetTileType(__int16 *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
     char IsPassableAllied(int a1, __int16 *a2);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
     static HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
-    void * Clear(void *a1_1);  // 0x5A9940
+    static void * Clear(Cell * aP1);  // 0x5A9940 G57w15f3: static receiver-first per raw __thiscall (Cell *this); needed for legal fn-ptr cast at Array::ForEach call sites
     int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
     void* CreateCrater(void *a1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790 (G42.35m: IUnknown placeholder -> void*)
-    int GetAdjacentPassableMask(__int16 *a1, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
+    static int GetAdjacentPassableMask(__int16 *a1, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
     unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
     unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00
     BOOL IsPassableOffset(int aP1);  // 0x4870D0

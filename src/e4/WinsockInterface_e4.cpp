@@ -199,7 +199,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   do /*0x7702b6*/
   {
     unknown_libname_73( (void *)(v4)); /*0x770289*/
-    ((Array *)v5)->ForEach( 24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
+    Array::ForEach(((Array *)v5),  24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
     ((String *)(v4))->Assign_Alt((const char *)(&g_INI_DefaultBuffer)); /*0x7702a4*/
     v4 += 37; /*0x7702a9*/
     v5 += 148; /*0x7702af*/

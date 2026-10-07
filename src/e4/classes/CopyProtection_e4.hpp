@@ -7,7 +7,7 @@ struct CopyProtection {
     unsigned int Debug;
     void* vfptr;
     bool CheckLauncher();
-    char CheckProtectedData();
+    static char CheckProtectedData();
     char NotifyLauncher();
 };
 

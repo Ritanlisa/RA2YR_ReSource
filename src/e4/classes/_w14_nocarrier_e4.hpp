@@ -74,11 +74,16 @@ public:
 };
 
 // === CDTimerClass  size=12  extracted from csp_canon/classes.hpp (W14-E4) ===
+// W15F4: +TimeRemaining — signals.json 权威 0x426630=CDTimerClass::TimeRemaining
+// (int, thiscall, 无参); 体形态 = StartTime@0/TimeLeft@8 对全局帧的剩余算法
+// (IDA live 2026-10-07; live 标签 Locomotor::GetSpeed 为命名事故, signals 无此名);
+// gap2 先例 src/misc/locomotion.hpp:32. static 不改 sizeof.
 class CDTimerClass {
 public:
     char StartTime[4];  /* int32_t */  // 0x0
     char pad_04[4];  /* int32_t */  // 0x4
     char TimeLeft[4];  /* int32_t */  // 0x8
+    static int TimeRemaining(unsigned int aP1);  // raw 0x426630
 };
 
 // === CampaignCoop  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -140,9 +145,12 @@ public:
 };
 
 // === Compression  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
+// W15F4: +Read (raw 0x55C350 int __thiscall(int *this, int Src, signed int Size),
+// IDA live 2026-10-07; e4 使用点 static 3-实参形态). static 不改 sizeof.
 class Compression {
 public:
     char q000[4];  /* unsigned char */  // 0x0
+    static int Read(void *aP1, int Src, int Size);  // raw 0x55C350
 };
 
 // === CoordinateTables  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -722,6 +730,18 @@ struct TypeList_W4DiskID {
     char Release(int a2, unsigned int * a3);
     int Read(unsigned int * a2, void *a2_2);
     VectorClass_flat * validateGame(unsigned int * Block, char a2);
+};
+
+// === CDROM  size=8  extracted from csp_canon/classes.hpp (W15F4) ===
+// W15F4: E3 挂账补全 — 方法真值 = IDA live 2026-10-07 (两枚均为 __stdcall 自由形,
+// IDA 归名 CDROM::; static 成员不改 sizeof). 使用点: addr47_e4 0x47a0ba/0x47a0e5 等.
+class CDROM {
+public:
+    char q000[4];  /* unsigned char */  // 0x0
+    char q004[4];  /* unsigned char */  // 0x4 (was CDROM_field_0x04)
+    static int LockVolume(int a1, HANDLE hDevice, unsigned char a3,
+                          unsigned long BytesReturned, short a5);  // raw 0x47A6F0
+    static bool DeviceIoControl(HANDLE hDevice, int a2);  // raw 0x47A3F0
 };
 
 } // namespace gamemd

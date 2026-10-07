@@ -262,7 +262,55 @@ AbstractClass * * EventClass::ProcessEvent()
   void *v42; // eax
   int v43; // ebx
   void *v44; // eax
-  FootClass *v45; ... [37047 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): FootClass *v45; ... ...
+  // live body via get_context/0x4C6CB0 — w15f4 regrafted decls only
+  FootClass *v45; // esi
+  int currentMission; // eax
+  UnitClass *spawnManager; // ecx
+  int v48; // eax
+  FactoryClass *slaveManager; // esi
+  unsigned int *v50; // esi
+  int v51; // eax
+  Cell *v52; // eax
+  unsigned int *v53; // eax
+  unsigned int *v54; // esi
+  TechnoClass *v55; // ecx
+  unsigned char *v56; // esi
+  int v57; // edx
+  int16_t v58; // cx
+  int v59; // eax
+  int v60; // esi
+  wchar_t *StringCSF; // eax
+  size_t v62; // edi
+  int v63; // eax
+  int *v64; // eax
+  wchar_t *v65; // eax
+  char *Network_field_0x8; // esi
+  int v67; // eax
+  wchar_t *v68; // eax
+  int v69; // esi
+  void *EventClass_field_0x8; // edx
+  int v71; // eax
+  int EventClass_field_0x4_high; // esi
+  unsigned int *v73; // ecx
+  int *v74; // ecx
+  void *Object_field_0x30; // ebx
+  char *v76; // edi
+  int v77; // eax
+  int v78; // esi
+  int v79; // eax
+  Network *v80; // ecx
+  int v81; // eax
+  unsigned int *v82; // edx
+  wchar_t *v83; // eax
+  int v84; // eax
+  int v85; // eax
+  int v86; // eax
+  unsigned int *i; // ecx
+  wchar_t *v88; // [esp-Eh] [ebp-390h]
+  int v89; // [esp+2h] [ebp-380h]
+  int16_t v90[2]; // [esp+16h] [ebp-36Ch] BYREF
+  Network v91; // [esp+1Ah] [ebp-368h] BYREF
 }
 } // namespace gamemd
 

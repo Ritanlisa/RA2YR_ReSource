@@ -121,7 +121,7 @@ struct RadarClass {
     CampaignClass * Destruct();
     int GetBlip(int a1, int a2, int a3, ObjectClass * aP3);
     unsigned int * initRadarSurface();
-    void Destru_vt50();
+    static void Destru_vt50();
     static int Destru_vt05(RadarClass * aP1);  // G57w10-S raw 0x00652CF0 (was C2597 interim stub)
     static char UpdateFoundationShapesCustom(RadarClass * aP1);  // G57w10-S raw 0x006563B0 (was C2597 interim stub)
     char Destru_vt16(char a2);  // 0x653100

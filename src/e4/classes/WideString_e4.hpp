@@ -24,7 +24,7 @@ struct WideString {
 // --- flat members (END) ---
     int WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5);  // 0x5D4B20
     AbstractClass * * Replace(CampaignScore * aP1, wchar_t * String);  // 0x7B73F0
-    int Trim(wchar_t * Source);  // 0x727D60
+    static int Trim(wchar_t * Source);  // 0x727D60
     static wchar_t * Trim(void * aP0);  // 0x727D60 static-form sync (G42.33 b9; truth returns wchar_t*)
     int Assign(wchar_t *aP1);  // 0x7B66D0
     int AssignFromPtr(const wchar_t **a2);  // 0x7B6720
@@ -43,7 +43,7 @@ struct WideString {
     int Length();  // 0x7B71B0
     short Reassign(wchar_t * String, void *a2_1);  // 0x7B7600
     char IsASCII();  // 0x7B7D90
-    int Hash(wchar_t * Source);  // def-aligned
+    static int Hash(wchar_t * Source);  // def-aligned
     static int Hash(void *aP0);  // 0x5DAC00 G42.35 static-form sync (ui/supplied site 0x46E22B)
 };
 } // namespace gamemd

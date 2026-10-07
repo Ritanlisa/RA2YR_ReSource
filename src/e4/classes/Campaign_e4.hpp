@@ -16,7 +16,7 @@ struct Campaign {
     void* q128;  // 0x128
     unsigned int q33C;  // 0x33C
 // --- flat members (END) ---
-    LONG Screen(char a1);
+    static LONG Screen(char a1);
 };
 
 } // namespace gamemd

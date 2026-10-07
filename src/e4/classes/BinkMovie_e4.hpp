@@ -71,7 +71,7 @@ int Play(); // 0x432C70
     int CheckKeyframeTransition(unsigned int aP1);  // 0x6C9C60
     AbstractClass * * ProcessKeyframe(ObjectClass * aP1);  // 0x6C9D40
     unsigned int * VtableDispatch(int a2);  // 0x6C9EC0
-    int * CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
+    static int * CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
 int IsAtEnd(); // def-aligned
     int IsAtEnd(void *a1_1);
     void Play(void *a1_1);

@@ -217,6 +217,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
@@ -942,7 +943,7 @@ int ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
 }
 // 0x6586D0
 namespace gamemd {
-int sub_6586D0()
+int sub_6586D0(ObjectClass *a1)
 {
   Dialog *Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
@@ -955,7 +956,7 @@ int sub_6586D0()
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
     ((::gamemd::Dialog *)(Dialog))->Show(); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
-        while ( !this->((::gamemd::Dialog *)0)->PumpMessages() )
+        while ( !a1->((::gamemd::Dialog *)0)->PumpMessages() )
     {
       if ( dwNewLong ) /*0x658727*/
         goto LABEL_7; /*0x658727*/
@@ -1319,10 +1320,10 @@ void * RAMFileClass::nullsub_0_10(char a2)
 }
 // 0x65C630
 namespace gamemd {
-void unknown_libname_28(int a2)
+void unknown_libname_28(ObjectClass *a1, int a2)
 {
-  *this = a2; /*0x65c636*/
-  return this; /*0x65c638*/
+  *a1 = a2; /*0x65c636*/
+  return a1; /*0x65c638*/
 }
 }
 // 0x65C910

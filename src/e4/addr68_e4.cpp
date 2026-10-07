@@ -105,6 +105,7 @@
 #include "e4/classes/TeamTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/MiniMap_e4.hpp"  // G57w10 D supply
+#include "e4/classes/TechnoClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ReadAudioEventINI(...);  // raw 00727880: int __thiscall ReadAudioEventINI(INIClass *this)
@@ -2181,31 +2182,31 @@ char * E4Recv_681180::sub_681180()
 
 // 0x6811B0
 namespace gamemd {
-char * TechnoClass::sub_6811B0()
+char sub_6811B0(TechnoClass *a1)
 {
 
-  return (char *)&this->airstrike; /*0x6811b6*/
+  return (char *)&a1->airstrike; /*0x6811b6*/
 
 }
 } // namespace gamemd
 
 // 0x6811F0
 namespace gamemd {
-char * TechnoClass::sub_6811F0()
+char sub_6811F0(TechnoClass *a1)
 {
 
-  return (char *)&this->spawnOwner; /*0x6811f6*/
+  return (char *)&a1->spawnOwner; /*0x6811f6*/
 
 }
 } // namespace gamemd
 
 // 0x681220
 namespace gamemd {
-unsigned int * TechnoClass::sub_681220(unsigned int * a2)
+unsigned int sub_681220(TechnoClass *a1, unsigned int * a2)
 {
 
-  *a2 = this->turretRecoil[0]; /*0x68122a*/
-  a2[1] = this->turretRecoil[1]; /*0x681232*/
+  *a2 = a1->turretRecoil[0]; /*0x68122a*/
+  a2[1] = a1->turretRecoil[1]; /*0x681232*/
   return a2; /*0x681235*/
 
 }
@@ -2213,11 +2214,11 @@ unsigned int * TechnoClass::sub_681220(unsigned int * a2)
 
 // 0x681260
 namespace gamemd {
-unsigned int * TechnoClass::sub_681260(unsigned int * a2)
+unsigned int sub_681260(TechnoClass *a1, unsigned int * a2)
 {
 
-  *a2 = this->turretRecoil[2]; /*0x68126a*/
-  a2[1] = this->turretRecoil[3]; /*0x681272*/
+  *a2 = a1->turretRecoil[2]; /*0x68126a*/
+  a2[1] = a1->turretRecoil[3]; /*0x681272*/
   return a2; /*0x681275*/
 
 }

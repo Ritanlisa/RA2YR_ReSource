@@ -1283,7 +1283,7 @@ void TeamClass::Destructor(void * a2)
 v8 = (*(int (**)(int *, TeamClass **))(dword_B0F6F0+ 16))( /*0x6e8ecf*/ &dword_B0F6F0, (TeamClass **)((int *)((int *)((int *)(&v15)))));
 
 
-  if ( v8 != -1 && v8 < &dword_B0F700 ) /*0x6e8edf*/
+  if ( v8 != -1 && v8 < dword_B0F700 ) /*0x6e8edf*/
   {
     --&dword_B0F700; /*0x6e8ee4*/
     for ( ; /*0x6e8eea*/
@@ -1408,7 +1408,28 @@ void TeamClass::Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4)
   unsigned int *v45; // edi
   int v46; // eax
   unsigned int *v47; // edi
-  char v4... [26375 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): char v4... ...
+  // live body via get_context/0x6E9140 — w15f4 regrafted decls only
+  char v48; // al
+  unsigned int *v49; // ebp
+  unsigned int *v50; // edi
+  char v51; // al
+  unsigned int *v52; // ebp
+  unsigned int *v53; // edi
+  char v54; // al
+  unsigned int *v55; // ebp
+  unsigned int *v56; // edi
+  char v57; // al
+  unsigned int *v58; // ebp
+  unsigned int *v59; // edi
+  char v60; // al
+  unsigned int *v61; // ebp
+  char v62[4]; // [esp+10h] [ebp-28h] BYREF
+  unsigned int v63[2]; // [esp+14h] [ebp-24h] BYREF
+  int GroundHeight; // [esp+1Ch] [ebp-1Ch]
+  int v65; // [esp+20h] [ebp-18h] BYREF
+  HouseClass *v66; // [esp+24h] [ebp-14h]
+  unsigned char v67[12]; // [esp+2Ch] [ebp-Ch] BYREF
 }
 } // namespace gamemd
 

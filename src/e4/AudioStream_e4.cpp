@@ -296,7 +296,7 @@ void AudioStream::CleanupChannels()
   if ( g_AudioConfigState ) /*0x404e7c*/
   {
     v2 = *(unsigned int *)&g_AudioStreamObject; /*0x404e82*/
-    if ( *(DListNode **)&g_AudioStreamObject!= &g_AudioStreamObject ) /*0x404e8e*/
+    if ( *(DListNode **)&g_AudioStreamObject!= (DListNode *)&g_AudioStreamObject ) /*0x404e8e*/
     {
       v7 = v1; /*0x404e95*/
       do /*0x404fb6*/
@@ -349,7 +349,7 @@ void AudioStream::CleanupChannels()
         v2 = (int)v3; /*0x404fa7*/
         --dword_87E28C; /*0x404fb0*/
       }
-      while ( v3 != &g_AudioStreamObject ); /*0x404fb6*/
+      while ( v3 != (DListNode *)&g_AudioStreamObject ); /*0x404fb6*/
     }
   }
 
@@ -1249,7 +1249,7 @@ int AudioStream::ProcessStream()
           {
             if ( (v22 & 8) != 0 ) /*0x7becb5*/
             {
-              *(unsigned int *)(v2 + 40) = AudioCodec::Decode( /*0x7beccd*/
+              *(unsigned int *)(v2 + 40) = (unsigned int)AudioCodec::Decode( /*0x7beccd*/
                                        (uint8_t *)(*(unsigned int *)(v2 + 8) + *(unsigned int *)(v2 + 36)),
                                        *(char **)(v2 + 8),
                                        *(unsigned int *)(v1 + 1904));
@@ -1479,7 +1479,7 @@ int AudioStream::UpdateTimers()
         v1[86] = (char *)v1[86] + 1; /*0x405023*/
         v1 = (void **)*v1; /*0x405029*/
       }
-      while ( v1 != &g_AudioStreamObject ); /*0x405031*/
+      while ( v1 != (void **)&g_AudioStreamObject ); /*0x405031*/
     }
   }
   return v0; /*0x405034*/
@@ -1526,7 +1526,7 @@ int AudioStream::UpdateCountdowners()
         }
         v1 = (void **)*v1; /*0x4050b1*/
       }
-      while ( v1 != &g_AudioStreamObject ); /*0x4050b9*/
+      while ( v1 != (void **)&g_AudioStreamObject ); /*0x4050b9*/
     }
   }
   return v0; /*0x4050bc*/
@@ -1573,9 +1573,9 @@ char * AudioStream::Constructor(uint64_t, void * a2, void * aAudioStream)
   v6 = *(unsigned int *)(v4 + 20); /*0x407940*/
   if ( v6 /*0x407980*/
     && (*(unsigned int *)(v6 + 192) = v4,
-        *(unsigned int *)(*(unsigned int *)(v4 + 20) + 176) = AudioStream::ReadStreamAndSyncPosition,
-        *(unsigned int *)(*(unsigned int *)(v4 + 20) + 184) = AudioStream::SetPlaybackCallback,
-        *(unsigned int *)(*(unsigned int *)(v4 + 20) + 188) = AudioStream::ProcessCallback,
+        *(unsigned int *)(*(unsigned int *)(v4 + 20) + 176) = (unsigned int)AudioStream_ReadStreamAndSyncPosition,
+        *(unsigned int *)(*(unsigned int *)(v4 + 20) + 184) = (unsigned int)AudioStream_SetPlaybackCallback,
+        *(unsigned int *)(*(unsigned int *)(v4 + 20) + 188) = (unsigned int)AudioStream_ProcessCallback,
         v7 = (unsigned int *)(sub_4087F0()),
         (*(unsigned int *)(v4 + 48) = (unsigned int)(v7)) != 0) )
   {

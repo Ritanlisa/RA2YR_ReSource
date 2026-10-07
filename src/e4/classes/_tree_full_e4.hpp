@@ -834,7 +834,7 @@ struct ObjectClass {
     char _do_always_noconv_codecvt_base_std__MBE_NXZ_3();
     void sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, void * aP3);
     int CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5);
-    int LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm);
+    static int LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm);
     int SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2);
     void* * FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2, int a4, int a5, char a6);
     void ObjectClass_IsHeightAboveThreshold_0();

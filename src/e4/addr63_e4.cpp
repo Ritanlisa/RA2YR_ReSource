@@ -124,6 +124,7 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/PlanManager_e4.hpp"  // G57w10 D supply
+#include "e4/classes/_tree_full_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int RenderScenarioActionLines2(...);  // raw 0063CAE0: int __thiscall RenderScenarioActionLines2(ObjectClass *this)
@@ -779,9 +780,9 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
 }
 // 0x633AB0
 namespace gamemd {
-int sub_633AB0()
+int sub_633AB0(ObjectClass *a1)
 {
-    return *((unsigned int *)this + 48);
+    return *((unsigned int *)a1 + 48);
 }
 }
 // 0x633BC0
@@ -4189,17 +4190,17 @@ int ObjectClass::sub_6347A0(int a2)
 
 // 0x634800
 namespace gamemd {
-char * ObjectClass::sub_634800()
+char sub_634800(ObjectClass *a1)
 {
 
-  return (char *)&this->attachedBomb; /*0x634803*/
+  return (char *)&a1->attachedBomb; /*0x634803*/
 
 }
 } // namespace gamemd
 
 // 0x634810
 namespace gamemd {
-unsigned int * ObjectClass::sub_634810(unsigned int * a2, int a3)
+unsigned int sub_634810(ObjectClass *a1, unsigned int * a2, int a3)
 {
 
   int *ScenarioClassActionCoords; // eax
@@ -4208,7 +4209,7 @@ unsigned int * ObjectClass::sub_634810(unsigned int * a2, int a3)
   int v6; // esi
   unsigned int v8[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = (int *)GetScenarioClassActionCoords( (unsigned int *)(v8), *(unsigned char **)(this->occupant + 4 * a3)); /*0x634823*/
+  ScenarioClassActionCoords = (int *)GetScenarioClassActionCoords( (unsigned int *)(v8), *(unsigned char **)(a1->occupant + 4 * a3)); /*0x634823*/
   v4 = *ScenarioClassActionCoords; /*0x634828*/
   v5 = ScenarioClassActionCoords[1]; /*0x63482a*/
   v6 = ScenarioClassActionCoords[2]; /*0x63482d*/
@@ -4222,7 +4223,7 @@ unsigned int * ObjectClass::sub_634810(unsigned int * a2, int a3)
 
 // 0x634850
 namespace gamemd {
-unsigned int * ObjectClass::sub_634850(unsigned int * a2)
+unsigned int sub_634850(ObjectClass *a1, unsigned int * a2)
 {
 
   int *ScenarioClassActionCoords; // eax
@@ -4231,7 +4232,7 @@ unsigned int * ObjectClass::sub_634850(unsigned int * a2)
   int v5; // esi
   unsigned int v7[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = (int *)GetScenarioClassActionCoords( (unsigned int *)(v7), (unsigned char *)(&this->attachedBomb)); /*0x63485c*/
+  ScenarioClassActionCoords = (int *)GetScenarioClassActionCoords( (unsigned int *)(v7), (unsigned char *)(&a1->attachedBomb)); /*0x63485c*/
   v3 = *ScenarioClassActionCoords; /*0x634861*/
   v4 = ScenarioClassActionCoords[1]; /*0x634863*/
   v5 = ScenarioClassActionCoords[2]; /*0x634866*/
@@ -4245,7 +4246,7 @@ unsigned int * ObjectClass::sub_634850(unsigned int * a2)
 
 // 0x634880
 namespace gamemd {
-unsigned int * ObjectClass::sub_634880(unsigned int * a2, int a3)
+unsigned int sub_634880(ObjectClass *a1, unsigned int * a2, int a3)
 {
 
   unsigned int *ScenarioClassActionCoords; // eax
@@ -4254,7 +4255,7 @@ unsigned int * ObjectClass::sub_634880(unsigned int * a2, int a3)
   unsigned int v7[3]; // [esp+8h] [ebp-18h] BYREF
   unsigned int v8[3]; // [esp+14h] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = GetScenarioClassActionCoords( (unsigned int *)(v8), *(unsigned char **)(this->occupant + 4 * a3)); /*0x634891*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords( (unsigned int *)(v8), *(unsigned char **)(a1->occupant + 4 * a3)); /*0x634891*/
   v7[0] = *ScenarioClassActionCoords; /*0x634898*/
   v7[1] = ScenarioClassActionCoords[1]; /*0x63489f*/
   v7[2] = ScenarioClassActionCoords[2]; /*0x6348b6*/
@@ -4269,7 +4270,7 @@ unsigned int * ObjectClass::sub_634880(unsigned int * a2, int a3)
 
 // 0x6348F0
 namespace gamemd {
-unsigned int * ObjectClass::sub_6348F0(unsigned int * a2)
+unsigned int sub_6348F0(ObjectClass *a1, unsigned int * a2)
 {
 
   unsigned int *ScenarioClassActionCoords; // eax
@@ -4278,7 +4279,7 @@ unsigned int * ObjectClass::sub_6348F0(unsigned int * a2)
   unsigned int v6[3]; // [esp+8h] [ebp-18h] BYREF
   unsigned int v7[3]; // [esp+14h] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = GetScenarioClassActionCoords( (unsigned int *)(v7), (unsigned char *)(&this->attachedBomb)); /*0x6348fa*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords( (unsigned int *)(v7), (unsigned char *)(&a1->attachedBomb)); /*0x6348fa*/
   v6[0] = *ScenarioClassActionCoords; /*0x634901*/
   v6[1] = ScenarioClassActionCoords[1]; /*0x634913*/
   v6[2] = ScenarioClassActionCoords[2]; /*0x63491f*/

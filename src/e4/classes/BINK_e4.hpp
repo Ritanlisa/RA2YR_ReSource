@@ -8,7 +8,7 @@ namespace gamemd {
 struct BINK {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
-    HWND Background_Setup(HWND hDlg);  // 0x52B9B0 (G42.36: was mis-modeled as data member)
+    static HWND Background_Setup(HWND hDlg);  // 0x52B9B0 (G42.36: was mis-modeled as data member)
 };
 
 } // namespace gamemd

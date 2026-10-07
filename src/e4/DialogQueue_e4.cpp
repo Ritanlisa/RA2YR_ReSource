@@ -44,7 +44,7 @@ int DialogQueue::RemoveEntry()
 result = (*(int (**)(int *, DialogQueue **))(&dword_ABFC90 + 16))( /*0x5d4ee5*/ &g_MissionQueueFrame.ls640BkgdName[7], (DialogQueue **)(&v2));
 
 
-  if ( result != -1 && result < &dword_ABFCA0 ) /*0x5d4ef5*/
+  if ( result != -1 && result < dword_ABFCA0 ) /*0x5d4ef5*/
   {
     --&dword_ABFCA0; /*0x5d4efa*/
     for ( ; /*0x5d4f00*/

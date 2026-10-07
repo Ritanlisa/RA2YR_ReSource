@@ -705,7 +705,7 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     int v15; // edx
     void *v16; // eax
     unsigned int *v17; // eax
-    wchar_t *v18; // eax
+    uint8_t v18; // eax
     double v20; // [esp+20h] [ebp-20h] BYREF
     double v21; // [esp+28h] [ebp-18h] BYREF
     int v22; // [esp+30h] [ebp-10h]
@@ -1369,7 +1369,7 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
     int v60; // [esp+88h] [ebp-8h]
 
     v53 = this; /*0x42b7f6*/
-    v3 = a2; /*0x42b7fb*/
+    v3 = (unsigned int *)a2; /*0x42b7fb*/
     v4 = (unsigned int *)a2[3]; /*0x42b808*/
     v5 = *a2; /*0x42b80b*/
     v6 = a2[5]; /*0x42b80d*/
@@ -1504,7 +1504,7 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
             v35 = v49; /*0x42baa0*/
             ++v33; /*0x42baab*/
           }
-          v3 = a2; /*0x42bb55*/
+          v3 = (unsigned int *)a2; /*0x42bb55*/
           v7 = 0; /*0x42bb5c*/
         }
       }
@@ -1532,7 +1532,7 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
             *(unsigned int *)(v54 + 4 * v43),
             1);
         }
-        v3 = a2; /*0x42bc33*/
+        v3 = (unsigned int *)a2; /*0x42bc33*/
       }
     }
     v26 = v36; /*0x42bc3a*/
@@ -4580,7 +4580,7 @@ char Gap2Recv_4DC340::DrawFootTargetLine()
     int *v11; // eax
     int *v12; // eax
     int *v13; // eax
-    int *v14; // eax
+    int v14; // eax
     DWORD Time; // esi
     __int16 v16; // ax
     Color v18; // [esp+14h] [ebp-90h] BYREF

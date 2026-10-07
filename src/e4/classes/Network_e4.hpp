@@ -183,7 +183,7 @@ int GetSendCount();  // 0x00540f90 g57w12-r raw-sync (def-form)
     int syncGameState(void *a1_1);  // 0x64AC90
     AbstractClass * * ProcessEventList(int a1, int * a2, int a3);  // 0x64C380
     static AbstractClass * * RecordEvent(long long a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);  // 0x6521C0
-    int SendUnreachable();  // 0x6523A0
+    static int SendUnreachable();  // 0x6523A0
     void validatePacket();  // 0x663910
     int SendMasterPlayerList();  // 0x6639D0
     HashTable_flat * * ProcessAddressChange();  // 0x6640E0
@@ -202,7 +202,7 @@ int GetSendCount();  // 0x00540f90 g57w12-r raw-sync (def-form)
     bool sendGameEvent(unsigned int *aP0);  // 0x6956D0
     int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
     int SendOptionsGame(char * Source);  // 0x5E3720
-    int InitPlayerSlots();  // 0x5E8B60
+    static int InitPlayerSlots();  // 0x5E8B60
     HWND handleTimeout(HWND hDlg);  // 0x5EFF70
     __int16 handleDisconnect(void *a2);  // G57w10-S raw 0x00664390 IUnknown 占位清除
     int checkTimeout(int a2);  // 0x6643E0

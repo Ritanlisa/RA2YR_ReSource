@@ -90,6 +90,7 @@
 #include "e4/classes/WDTObject_e4.hpp"
 #include "classes/INIClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/_tree_full_e4.hpp"
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int ReadInt(...); }
 namespace gamemd { int SetIntFormat(...); }
@@ -616,12 +617,12 @@ void E4Recv_767EC0::sub_767EC0()
 }
 // 0x769480
 namespace gamemd {
-void unknown_libname_37()
+void unknown_libname_37(ObjectClass *a1)
 {
-    *this = 0;
-    *((unsigned int *)this + 4) = 0;
-    *((unsigned int *)this + 8) = 0;
-    return (unsigned int)(ObjectClass *)this;
+    *a1 = 0;
+    *((unsigned int *)a1 + 4) = 0;
+    *((unsigned int *)a1 + 8) = 0;
+    return (unsigned int)(ObjectClass *)a1;
 }
 }
 // 0x769550
@@ -706,7 +707,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   v4 = (int *)RA2_OPNEW(0x1E0u); /*0x769640*/
   v5 = v4; /*0x769645*/
   if ( v4 ) /*0x76964c*/
-    ((Array *)v4)->ForEach( 16, 30, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769657*/
+    Array::ForEach(((Array *)v4),  16, 30, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769657*/
   else
     v5 = (int *)(0); /*0x76965e*/
   *(unsigned int *)&v51.m_1[3] = (unsigned int)v5; /*0x769665*/
@@ -816,7 +817,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
             v21 = (int *)RA2_OPNEW(16 * v11); /*0x76984e*/
             v22 = v21; /*0x769853*/
             if ( v21 ) /*0x76985a*/
-              ((Array *)v21)->ForEach( 16, v11, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769865*/
+              Array::ForEach(((Array *)v21),  16, v11, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769865*/
             else
               v22 = (int *)(0); /*0x76986c*/
             IDA_LOBYTE(v51.m_C) = 1; /*0x769870*/

@@ -293,7 +293,84 @@ int NetworkLobby::CreateGame()
   int v42; // eax
   int v43; // esi
   char *v44; // eax
-  int v45... [37726 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): int v45... ...
+  // live body via get_context/0x5DC350 — w15f4 regrafted decls only
+  void (__stdcall *v2)(const MSG *); // edi
+  void (__stdcall *v3)(const MSG *); // ebx
+  int v45; // edx
+  int v46; // edi
+  int v47; // eax
+  Dialog *v48; // esi
+  int v49; // ebp
+  int v50; // edi
+  unsigned int *v51; // eax
+  int v52; // ecx
+  wchar_t *v53; // eax
+  HWND v54; // eax
+  HWND v55; // eax
+  void (__stdcall *v56)(HWND, BOOL); // ebx
+  int v57; // esi
+  char v58; // cl
+  wchar_t *v59; // eax
+  HWND v60; // eax
+  HWND v61; // eax
+  ObjectClass *v62; // esi
+  int PlayerCountMap; // eax
+  wchar_t *v64; // eax
+  HWND v65; // eax
+  HWND v66; // eax
+  wchar_t *v67; // eax
+  HWND v68; // eax
+  HWND v69; // eax
+  NetworkLobby *v70; // eax
+  int v71; // ebx
+  LPARAM v73; // esi
+  wchar_t *v74; // eax
+  HWND v75; // eax
+  HWND v76; // eax
+  int v77; // eax
+  unsigned int *v78; // ecx
+  wchar_t *v79; // eax
+  HWND v80; // eax
+  HWND v81; // eax
+  int v83; // esi
+  int v84; // esi
+  int *v85; // ecx
+  int v86; // ebx
+  int v87; // edi
+  int j; // esi
+  Skirmish *v89; // esi
+  int v90; // eax
+  int v91; // ebx
+  int v92; // esi
+  int v93; // esi
+  int v94; // eax
+  int v95; // edi
+  int k; // esi
+  int Network_field_0x0; // eax
+  int v98; // esi
+  int v99; // eax
+  int v100; // eax
+  WideString *v101; // ecx
+  int v102; // esi
+  int v103; // eax
+  int v104; // [esp-8h] [ebp-3F4h]
+  int v105; // [esp-4h] [ebp-3F0h]
+  GameSetup *v106; // [esp+0h] [ebp-3ECh]
+  NetworkLobby *v107; // [esp+0h] [ebp-3ECh]
+  ObjectClass *v108; // [esp+0h] [ebp-3ECh]
+  ObjectClass *v109; // [esp+0h] [ebp-3ECh]
+  int v110; // [esp+10h] [ebp-3DCh]
+  int v111; // [esp+10h] [ebp-3DCh]
+  int v112; // [esp+1Ch] [ebp-3D0h]
+  int Ticks; // [esp+1Ch] [ebp-3D0h]
+  WideString v114[40]; // [esp+28h] [ebp-3C4h] BYREF
+  int v115[113]; // [esp+5Ch] [ebp-390h] BYREF
+  int16_t v116; // [esp+220h] [ebp-1CCh]
+  char v117; // [esp+222h] [ebp-1CAh]
+  int v118[113]; // [esp+224h] [ebp-1C8h] BYREF
+  int16_t v119; // [esp+3E8h] [ebp-4h]
+  char v120; // [esp+3EAh] [ebp-2h]
 }
 } // namespace gamemd
 

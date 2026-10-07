@@ -1091,7 +1091,7 @@ AbstractClass * * WOL_StartGame()
       if ( v6 == 2 ) /*0x794d2b*/
       {
         StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_SCENARIOS_DO_NOT_MATCH), 0, (const char *)(g_Str_File_wonline_cpp), 20292); /*0x794d44*/
-        ShowDialogConfirm( (void *)(StringCSF), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x794d4d*/
+        ShowDialogConfirm( (void *)(StringCSF), 0, (uint8_t (*)(void))GameLoop_Thunk, 0); /*0x794d4d*/
       }
       v8 = (HWND)((Dialog*)(Dialog *)0x130)->FindByHandle(); /*0x794d57*/
       if ( v8 ) /*0x794d5e*/
@@ -1247,7 +1247,7 @@ AbstractClass * * WOL_StartGame()
         dword_A8B570 = 0; /*0x795094*/
       }
       v22 = 0; /*0x79509e*/
-      p_attachedTag = &dword_B7790C; /*0x7950a0*/
+      p_attachedTag = dword_B7790C; /*0x7950a0*/
       do /*0x7950b5*/
       {
         if ( (int)*p_attachedTag > v22 ) /*0x7950a9*/
@@ -1391,7 +1391,7 @@ AbstractClass * * WOL_StartGame()
  v39 = (TagClass **)(&dword_B76E58); /*0x795492*/
             v45 = dword_B77908; /*0x795497*/
             owningHouseIndex = dword_B77900; /*0x79549b*/
-            v48 = &dword_B76E58; /*0x7954a1*/
+            v48 = dword_B76E58; /*0x7954a1*/
             do /*0x795574*/
             {
               if ( (int)v39 >= (int)&dword_B76E58&& v38 < owningHouseIndex ) /*0x7954ae*/
@@ -2247,7 +2247,7 @@ AbstractClass * * NetworkGame_Init()
   v2 = 0; /*0x7973d1*/
   if ( dword_A8DA84 > 0 ) /*0x7973d5*/
   {
-    p_attachedTag = &dword_B7790C; /*0x7973d7*/
+    p_attachedTag = dword_B7790C; /*0x7973d7*/
     v4 = dword_A8DA84; /*0x7973dc*/
     do /*0x7973ea*/
     {
@@ -2386,7 +2386,7 @@ int sub_797640(int a1)
       if ( dword_B77DE8 >= -2147221396 || dword_B77DE8 >= -2147221401 && dword_B77DE8 <= -2147221398 ) /*0x79773b*/
       {
         String = (unsigned int)GetStringCSF( (wchar_t *)(g_Str_TXT_CANT_CONNECT), 0, (const char *)(g_Str_File_wonline_cpp), 24389); /*0x797776*/
-        ShowDialogConfirm( (void *)((void *)(String)), 0, (void *)((int)GameLoop::Thunk), 0); /*0x79777f*/
+        ShowDialogConfirm( (void *)((void *)(String)), 0, (void *)((int)GameLoop_Thunk), 0); /*0x79777f*/
   LABEL_19:
         v3 = 1; /*0x797784*/
         goto LABEL_22; /*0x797789*/
@@ -2458,7 +2458,7 @@ ObjectClass * * WOL_FetchData()
  v32 = (char *)((char *)(byte_B76A2C)); /*0x79780e*/
     StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_WDT_NET_ERR), 0, (const char *)(g_Str_File_wonline_cpp), 24435); /*0x797819*/
   LABEL_7:
-    ShowDialogConfirm( (void *)(StringCSF), 0, (uint8_t (*)(void))GameLoop::Thunk, (void *)((char)v32)); /*0x797894*/
+    ShowDialogConfirm( (void *)(StringCSF), 0, (uint8_t (*)(void))GameLoop_Thunk, (void *)((char)v32)); /*0x797894*/
     return 0; /*0x7978a4*/
   }
   v2 = &Handles; /*0x79781b*/
@@ -2500,7 +2500,7 @@ v3 = (*(int (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 
       }
   LABEL_25:
       v15 = GetStringCSF( (wchar_t *)(g_Str_TXT_WDT_NET_ERR), 0, (const char *)(g_Str_File_wonline_cpp), 24480); /*0x797a00*/
-      ShowDialogConfirm( (void *)(v15), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x797a20*/
+      ShowDialogConfirm( (void *)(v15), 0, (uint8_t (*)(void))GameLoop_Thunk, 0); /*0x797a20*/
       v16 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797a2a*/
       if ( v16 ) /*0x797a31*/
       {
@@ -2535,7 +2535,7 @@ v3 = (*(int (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 
         return 0; /*0x797981*/
       case 5u: /*0x797936*/
         v12 = GetStringCSF( (wchar_t *)(g_Str_TXT_WDT_NET_ERR), 0, (const char *)(g_Str_File_wonline_cpp), 24474); /*0x7979ad*/
-        ShowDialogConfirm( (void *)(v12), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7979b6*/
+        ShowDialogConfirm( (void *)(v12), 0, (uint8_t (*)(void))GameLoop_Thunk, 0); /*0x7979b6*/
         v13 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x7979c0*/
         if ( v13 ) /*0x7979c7*/
         {
@@ -2587,7 +2587,7 @@ v18 = (*(int (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable +
       if ( i == 5 ) /*0x797b1d*/
       {
         v25 = GetStringCSF( (wchar_t *)(g_Str_TXT_WDT_NET_ERR), 0, (const char *)(g_Str_File_wonline_cpp), 24507); /*0x797b82*/
-        ShowDialogConfirm( (void *)(v25), 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x797b8b*/
+        ShowDialogConfirm( (void *)(v25), 0, (uint8_t (*)(void))GameLoop_Thunk, 0); /*0x797b8b*/
         v26 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797b95*/
         if ( v26 ) /*0x797b9c*/
         {
@@ -2689,7 +2689,7 @@ AbstractClass * * WOL_InitVersionStrings()
     for ( *(unsigned int *)&g_WindowManager.__pad_EC[68] = 0; v5 < *(unsigned int *)&stru_B736F8; ++v5 ) /*0x797d89*/
       Object::DtorWithDelete((Object *)((char *)dword_B73700 + 4 * v5), 0); /*0x797d95*/
     v6 = 0; /*0x797da9*/
-    for ( stru_B736F8 = 0; v6 < &dword_B76B00; ++v6 ) /*0x797db3*/
+    for ( stru_B736F8 = 0; v6 < dword_B76B00; ++v6 ) /*0x797db3*/
       Object::DtorWithDelete((Object *)(&dword_B76B08 + 4 * v6), 0); /*0x797dbf*/
     v7 = 0; /*0x797dd3*/
     for ( &dword_B76B00 = 0; v7 < *(int *)&stru_B76510; ++v7 ) /*0x797ddd*/

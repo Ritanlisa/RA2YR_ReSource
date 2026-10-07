@@ -182,7 +182,7 @@ int Math_CalcAngle(void * a1, void * a2)
 }
 // 0x5AE750
 namespace gamemd {
-float * Math::BuildRotationMatrix(float *a2, float a3, int aP1, int a1, int a4, int aP2)
+float * Math::BuildRotationMatrix(float *aP1, float *a2, float a3)
 {
 
   double v3; // kr00_8
@@ -201,26 +201,26 @@ float * Math::BuildRotationMatrix(float *a2, float a3, int aP1, int a1, int a4, 
   v16 = Math::ArcTan2(a3); /*0x5ae76f*/
   v5 = Math::SinCos(v3); /*0x5ae775*/
   v7 = *a2 * *a2; /*0x5ae787*/
-  *(unsigned int *)this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
+  *(unsigned int *)aP1 = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
-  *((unsigned int *)this + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
+  *((unsigned int *)aP1 + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
   v10 = v5 * a2[1]; /*0x5ae7bf*/
-  *((unsigned int *)this + 3) = 0.0; /*0x5ae7c2*/
-  *((unsigned int *)this + 2) = v9 + v10; /*0x5ae7c7*/
-  *((unsigned int *)this + 4) = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
+  *((unsigned int *)aP1 + 3) = 0.0; /*0x5ae7c2*/
+  *((unsigned int *)aP1 + 2) = v9 + v10; /*0x5ae7c7*/
+  *((unsigned int *)aP1 + 4) = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
   v11 = a2[1] * a2[1]; /*0x5ae7e0*/
-  *((unsigned int *)this + 5) = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
+  *((unsigned int *)aP1 + 5) = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
   v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
   v13 = v5 * *a2; /*0x5ae7ff*/
-  *((unsigned int *)this + 7) = 0.0; /*0x5ae801*/
-  *((unsigned int *)this + 6) = v12 - v13; /*0x5ae806*/
-  *((unsigned int *)this + 8) = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
-  *((unsigned int *)this + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
+  *((unsigned int *)aP1 + 7) = 0.0; /*0x5ae801*/
+  *((unsigned int *)aP1 + 6) = v12 - v13; /*0x5ae806*/
+  *((unsigned int *)aP1 + 8) = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
+  *((unsigned int *)aP1 + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
   v14 = a2[2] * a2[2]; /*0x5ae835*/
-  *((unsigned int *)this + 11) = 0.0; /*0x5ae83f*/
-  *((unsigned int *)this + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
-  return (float *)this; /*0x5ae851*/
+  *((unsigned int *)aP1 + 11) = 0.0; /*0x5ae83f*/
+  *((unsigned int *)aP1 + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
+  return (float *)aP1; /*0x5ae851*/
 
 }
 }

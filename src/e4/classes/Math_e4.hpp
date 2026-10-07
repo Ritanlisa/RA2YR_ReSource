@@ -62,12 +62,12 @@ struct Math {
 // --- flat members (END) ---
     int Hypotenuse2D();  // 0x41C350
    static double Sin(double a1);  // G57w10-S raw 0x4CAD50 (was C2597 interim stub)
-    float * BuildRotationMatrix(float *a2, float a3, int aP1, int a1, int a4, int aP2);
+    static float * BuildRotationMatrix(float * aP1, float * a2, float a3);  // 0x5AE750 G57w15f3: static receiver-first per raw __thiscall (float* this, float* a2, float a3) — was 6-param garbage arity
     int DistSq2D(TechnoClass * aP1);  // 0x5F6560
     unsigned int * QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
    static double ArcTan(double a1);  // G57w10-S raw 0x4CADE0 (was C2597 interim stub)
     void InitArcTan();  // 0x473650
-    double ArcTan2_Table(double a1);  // G57w10-S raw 0x4CADB0 (was C2597 interim stub)
+    static double ArcTan2_Table(double a1);  // G57w10-S raw 0x4CADB0 (was C2597 interim stub)
     // G42.35a: IDA truth (0x5B2950/0x5B2990 decompiled heads) -- mechanical
     // supply had filled both params with IUnknown* placeholders.
     unsigned int * Sub16(unsigned int * aP1, unsigned short * aP2);  // 0x5B2950

@@ -17,7 +17,7 @@ struct VoxelAnim {
     unsigned int u32_2C;
     unsigned int u32_88;
 // --- flat members (END) ---
-    int ComputeTransform(float * a1, float * a2, float a3, int a4);
+    static int ComputeTransform(float * a1, float * a2, float a3, int a4);
     int Draw(unsigned int * a2);
 };
 

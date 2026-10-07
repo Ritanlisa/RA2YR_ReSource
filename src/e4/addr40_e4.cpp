@@ -89,6 +89,7 @@
 #include "e4/classes/VtableStub_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4011C0
 namespace gamemd {
@@ -682,7 +683,7 @@ void sub_403FA0(ObjectClass * a1)
         v2 = (int)v3; /*0x404050*/
         --dword_87E28C; /*0x404059*/
       }
-      while ( v3 != &g_AudioStreamObject ); /*0x40405f*/
+      while ( v3 != g_AudioStreamObject ); /*0x40405f*/
       v2 = *(unsigned int *)&g_AudioStreamObject; /*0x404065*/
       a1 = a1; /*0x40406b*/
     }
@@ -703,7 +704,7 @@ void sub_403FA0(ObjectClass * a1)
         }
         v2 = (int)v6; /*0x4040c1*/
       }
-      while ( v6 != &g_AudioStreamObject ); /*0x4040c3*/
+      while ( v6 != g_AudioStreamObject ); /*0x4040c3*/
     }
   }
   for ( i = (LinkedList *)((AudioQueue *)((AudioQueue *)&stru_87E250))->GetNext(); /*0x4040d5*/
@@ -849,7 +850,7 @@ void Audio_Process()
       }
       v3 = *(DListNode **)v3->__pad_0; /*0x404340*/
     }
-    while ( v3 != &g_AudioStreamObject ); /*0x404349*/
+    while ( v3 != g_AudioStreamObject ); /*0x404349*/
     v2 = *(unsigned int *)&g_AudioStreamObject; /*0x40434f*/
     if ( *(DListNode **)&g_AudioStreamObject!= &g_AudioStreamObject ) /*0x40435b*/
     {
@@ -858,7 +859,7 @@ void Audio_Process()
         UpdateVoicePlayback((gamemd::TechnoClass *)((ObjectClass *)v2)); /*0x404362*/
         v2 = *(unsigned int *)v2; /*0x404367*/
       }
-      while ( (DListNode *)v2 != &g_AudioStreamObject ); /*0x40436f*/
+      while ( (DListNode *)v2 != g_AudioStreamObject ); /*0x40436f*/
       v2 = *(unsigned int *)&g_AudioStreamObject; /*0x404371*/
     }
   }
@@ -971,7 +972,7 @@ void Audio_Process()
   LABEL_55:
     v2 = (int)v40; /*0x404555*/
   }
-  while ( v40 != &g_AudioStreamObject ); /*0x40455f*/
+  while ( v40 != g_AudioStreamObject ); /*0x40455f*/
   if ( v42 <= 100 ) /*0x40456c*/
     goto LABEL_58; /*0x40456c*/
   v31 = 0x190000u / v42; /*0x404577*/
@@ -1021,7 +1022,7 @@ void Audio_Process()
                 }
                 v36 = (VocClass *)v37; /*0x404643*/
               }
-              while ( v37 != &g_AudioStreamObject ); /*0x404645*/
+              while ( v37 != g_AudioStreamObject ); /*0x404645*/
               if ( !v43 ) /*0x40464d*/
                 break; /*0x40464d*/
               v41 = *(DListNode **)v32->__pad_0; /*0x404651*/
@@ -1050,7 +1051,7 @@ void Audio_Process()
       }
       v32 = v41; /*0x4046c6*/
     }
-    while ( v41 != &g_AudioStreamObject ); /*0x4046d0*/
+    while ( v41 != g_AudioStreamObject ); /*0x4046d0*/
     dword_87E2B4 = 0; /*0x4046d6*/
   }
   return result; /*0x4046e0*/
@@ -1058,7 +1059,7 @@ void Audio_Process()
 }
 // 0x404BB0
 namespace gamemd {
-TechnoTypeClass * * TechnoClass::sub_404BB0()
+TechnoTypeClass * sub_404BB0(TechnoClass *a1)
 {
 
   unsigned int *occupant; // edi
@@ -1081,28 +1082,28 @@ TechnoTypeClass * * TechnoClass::sub_404BB0()
   int v20; // eax
   int v21; // edi
 
-  occupant = (unsigned int *)this->occupant; /*0x404bb6*/
+  occupant = (unsigned int *)a1->occupant; /*0x404bb6*/
   v3 = occupant[4]; /*0x404bc5*/
   v4 = v3; /*0x404bca*/
-  if ( *(unsigned int *)this->gapSuperCharged == *(unsigned int *)this->isBeingWarpedOut ) /*0x404bcc*/
+  if ( *(unsigned int *)a1->gapSuperCharged == *(unsigned int *)a1->isBeingWarpedOut ) /*0x404bcc*/
   {
     v5 = 0; /*0x404bd2*/
     v6 = v3 & 1; /*0x404bd4*/
-    if ( !v6 && this->gapRadius == 1 ) /*0x404be0*/
+    if ( !v6 && a1->gapRadius == 1 ) /*0x404be0*/
       return -1; /*0x404be0*/
     if ( v6 ) /*0x404be4*/
     {
       v7 = occupant[19]; /*0x404be6*/
       if ( v7 ) /*0x404beb*/
       {
-        if ( this->gapRadius >= v7 ) /*0x404bf3*/
+        if ( a1->gapRadius >= v7 ) /*0x404bf3*/
           return -1; /*0x404bfc*/
       }
     }
     v9 = occupant[78]; /*0x404bfd*/
-    if ( v9 && (this->nextArrayIndex & 8) == 0 ) /*0x404c0b*/
+    if ( v9 && (a1->nextArrayIndex & 8) == 0 ) /*0x404c0b*/
     {
-      this->infantryBlinkTimer[2] = Random::Range((Random *)(&Randomizer_Global), 0, v9 - 1); /*0x404c1b*/
+      a1->infantryBlinkTimer[2] = Random::Range((Random *)(&Randomizer_Global), 0, v9 - 1); /*0x404c1b*/
       v5 = 1; /*0x404c21*/
     }
     v10 = occupant[4]; /*0x404c26*/
@@ -1111,7 +1112,7 @@ TechnoTypeClass * * TechnoClass::sub_404BB0()
       v11 = occupant[78]; /*0x404c39*/
       if ( v11 < occupant[77] - occupant[79] ) /*0x404c43*/
       {
-        v12 = &this->infantryBlinkTimer[v5 + 2]; /*0x404c45*/
+        v12 = &a1->infantryBlinkTimer[v5 + 2]; /*0x404c45*/
         do /*0x404c61*/
         {
           *v12 = v11; /*0x404c4c*/
@@ -1126,26 +1127,26 @@ TechnoTypeClass * * TechnoClass::sub_404BB0()
     {
       if ( (v10 & 2) != 0 ) /*0x404c67*/
       {
-        if ( this->gapRadius ) /*0x404c69*/
+        if ( a1->gapRadius ) /*0x404c69*/
         {
-          temporalUsing = this->temporalUsing; /*0x404c9c*/
+          temporalUsing = a1->temporalUsing; /*0x404c9c*/
         }
         else
         {
           temporalUsing = Random::Range((Random *)(&Randomizer_Global), occupant[78], occupant[77] - occupant[79] - 1); /*0x404c8f*/
-          this->temporalUsing = temporalUsing; /*0x404c94*/
+          a1->temporalUsing = temporalUsing; /*0x404c94*/
         }
       }
       else
       {
         temporalUsing = occupant[78]; /*0x404ca4*/
       }
-      this->infantryBlinkTimer[v5++ + 2] = temporalUsing; /*0x404caa*/
+      a1->infantryBlinkTimer[v5++ + 2] = temporalUsing; /*0x404caa*/
     }
-    gapRadius = this->gapRadius; /*0x404cb2*/
-    *(unsigned int *)this->gapSuperCharged = v5; /*0x404cb8*/
-    *(unsigned int *)this->isBeingWarpedOut = 0; /*0x404cbf*/
-    this->gapRadius = gapRadius + 1; /*0x404cc9*/
+    gapRadius = a1->gapRadius; /*0x404cb2*/
+    *(unsigned int *)a1->gapSuperCharged = v5; /*0x404cb8*/
+    *(unsigned int *)a1->isBeingWarpedOut = 0; /*0x404cbf*/
+    a1->gapRadius = gapRadius + 1; /*0x404cc9*/
   }
   if ( (v4 & 2) == 0 ) /*0x404cd2*/
     goto LABEL_34; /*0x404cd2*/
@@ -1155,33 +1156,33 @@ LABEL_29:
     v15 = 0; /*0x404d03*/
     goto LABEL_30; /*0x404d03*/
   }
-  if ( (this->nextArrayIndex & 8) == 0 && *(int *)this->isBeingWarpedOut <= 0 ) /*0x404cf0*/
+  if ( (a1->nextArrayIndex & 8) == 0 && *(int *)a1->isBeingWarpedOut <= 0 ) /*0x404cf0*/
   {
 LABEL_34:
-    v20 = *(unsigned int *)this->isBeingWarpedOut; /*0x404d5d*/
-    v21 = this->infantryBlinkTimer[v20 + 2]; /*0x404d63*/
-    *(unsigned int *)this->isBeingWarpedOut = v20 + 1; /*0x404d6b*/
+    v20 = *(unsigned int *)a1->isBeingWarpedOut; /*0x404d5d*/
+    v21 = a1->infantryBlinkTimer[v20 + 2]; /*0x404d63*/
+    *(unsigned int *)a1->isBeingWarpedOut = v20 + 1; /*0x404d6b*/
     return (TechnoTypeClass * *)v21; /*0x404d71*/
   }
-  if ( (this->nextArrayIndex & 8) != 0 ) /*0x404cfa*/
+  if ( (a1->nextArrayIndex & 8) != 0 ) /*0x404cfa*/
     goto LABEL_29; /*0x404cfa*/
   v15 = 1; /*0x404cfc*/
 LABEL_30:
-  v16 = Random::Range(&Randomizer_Global, v15, *(unsigned int *)this->gapSuperCharged - 1); /*0x404d05*/
-  v17 = this->infantryBlinkTimer[v16 + 2]; /*0x404d1e*/
+  v16 = Random::Range(&Randomizer_Global, v15, *(unsigned int *)a1->gapSuperCharged - 1); /*0x404d05*/
+  v17 = a1->infantryBlinkTimer[v16 + 2]; /*0x404d1e*/
   v18 = v16; /*0x404d2f*/
-  if ( v16 < *(unsigned int *)this->gapSuperCharged - 1 ) /*0x404d31*/
+  if ( v16 < *(unsigned int *)a1->gapSuperCharged - 1 ) /*0x404d31*/
   {
-    v19 = &this->infantryBlinkTimer[v16 + 2]; /*0x404d33*/
+    v19 = &a1->infantryBlinkTimer[v16 + 2]; /*0x404d33*/
     do /*0x404d47*/
     {
       ++v18; /*0x404d38*/
       *v19 = v19[1]; /*0x404d39*/
       ++v19; /*0x404d41*/
     }
-    while ( v18 < *(unsigned int *)this->gapSuperCharged - 1 ); /*0x404d47*/
+    while ( v18 < *(unsigned int *)a1->gapSuperCharged - 1 ); /*0x404d47*/
   }
-  --*(unsigned int *)this->gapSuperCharged; /*0x404d50*/
+  --*(unsigned int *)a1->gapSuperCharged; /*0x404d50*/
   return (TechnoTypeClass * *)v17; /*0x404bf5*/
 
 }

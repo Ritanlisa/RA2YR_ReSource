@@ -11,7 +11,7 @@ struct KeyboardConfig {
     unsigned int Debug;
     void* vfptr;
     AbstractClass * ReleaseBuffer(int a2, void *a2_2);
-    int LoadINI();
+    static int LoadINI();
 };
 
 } // namespace gamemd

@@ -65,6 +65,14 @@
 #include "e4/classes/SelectTeamCommand_e4.hpp"
 #include "e4/classes/TauntCommandClass_e4.hpp"
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int LoadTheaterClassMIX_Load(...); }
+namespace gamemd { int InitExtensionState(...); }
+namespace gamemd { int UpdateLighting(...); }
+namespace gamemd { int Strike2(...); }
+namespace gamemd { int AddMessage(...); }
+namespace gamemd { int Strike(...); }
+namespace gamemd { int Shutdown(...); }
 
 // 0x530000
 namespace gamemd {

@@ -486,7 +486,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   do /*0x5c151f*/
   {
     ((VectorClass *)(p_MPCooperative_field_0x264))->Construct(0, 0); /*0x5c1506*/
-    p_MPCooperative_field_0x264->vtable1 = (unsigned int)&vt_DynamicVectorClass; /*0x5c150b*/
+    p_MPCooperative_field_0x264->vtable1 = (void *)&vt_DynamicVectorClass; /*0x5c150b*/
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
     p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/
     p_MPCooperative_field_0x264 = (VectorClass *)((char *)p_MPCooperative_field_0x264 + 24); /*0x5c151b*/

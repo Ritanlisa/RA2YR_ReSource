@@ -24,7 +24,7 @@ struct FileSystem {
     const char * openFile(const char * a2);  // G42.41m: was misdeclared as data; truth 0x628110 = __thiscall method
 // --- flat members (END) ---
     int ProcessNextFileExtension();
-    void CleanupTrees();
+    static void CleanupTrees();
     static void InitPipShapes();
     static void FlushTempFiles(FileSystem * aP1);  // G57w10-S raw 0x006272A0 (was C2597 interim stub)
     int readFile();  // 0x628740

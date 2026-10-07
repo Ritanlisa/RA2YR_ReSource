@@ -44,33 +44,35 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/minimal_carriers.hpp"
+#include "e4/minimal_carriers.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x472A80
 namespace gamemd {
-void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
+void CaptureManagerClass__vt_03_(_DynamicVectorClass_PAUControlNode *a1)
 {
 
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x472a86*/
-  this->m_10 = 0; /*0x472a89*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x472a90*/
+  v2 = *(void **)&a1->m_1[3]; /*0x472a86*/
+  a1->m_10 = 0; /*0x472a89*/
+  if ( v2 && BYTE1(a1->m_C) ) /*0x472a90*/
   {
     __3_YAXPAX_Z(v2); /*0x472a96*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x472a9e*/
+    *(unsigned int *)&a1->m_1[3] = 0; /*0x472a9e*/
   }
-  BYTE1(this->m_C) = 0; /*0x472aa1*/
-  this->m_8 = 0; /*0x472aa4*/
+  BYTE1(a1->m_C) = 0; /*0x472aa1*/
+  a1->m_8 = 0; /*0x472aa4*/
 
 }
 }
 // 0x472AD0
 namespace gamemd {
-void _VectorClass_PAUControlNode::CaptureManagerClass__vt_06_(int a2)
+void CaptureManagerClass__vt_06_(_VectorClass_PAUControlNode *a1, int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x472ada*/
+  return *(unsigned int *)(*(unsigned int *)&a1->m_1[3] + 4 * a2); /*0x472ada*/
 
 }
 }

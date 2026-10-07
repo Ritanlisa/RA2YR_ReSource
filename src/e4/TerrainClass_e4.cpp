@@ -56,6 +56,10 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/LightningStorm_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TacticalClass_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int SetLocalToByID(...); }
+namespace gamemd { int AnnounceReady(...); }
+namespace gamemd { int PlayWaypointEffect(...); }
 
 // 0x6DD8B0
 namespace gamemd {
@@ -592,7 +596,7 @@ LABEL_157:
           {
             if ( !v35->inLimbo )
             {
-              attachedTag = v35->attachedTag;
+              attachedTag = (unsigned int *)v35->attachedTag;
               if ( attachedTag )
               {
                 if ( ((LinkedList_flat *)attachedTag)->Contains( (IUnknown *)(a5)) && v35->HasPower )
@@ -900,7 +904,7 @@ LABEL_60:
                                                                                     + 13477) == 0;
       return 1;
     case 0x62:
-      ((Array *)aP0)->ForEach( 4, (IUnknown *)0x64, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+      Array::ForEach(((Array *)aP0),  4, (IUnknown *)0x64, (int (*)(int))__0Iostream_init_QAE_XZ_2);
       int v65 = 0;
       int v66 = 0;
       v67 = aP0;

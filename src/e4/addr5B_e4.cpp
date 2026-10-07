@@ -92,6 +92,7 @@
 #include "e4/classes/TextBuffer_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
+#include "e4/classes/MixFileClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
@@ -2027,7 +2028,7 @@ char E4Recv_5B3E90::sub_5B3E90()
 
 // 0x5B3F50
 namespace gamemd {
-void MixFileClass::sub_5B3F50()
+void sub_5B3F50(MixFileClass *a1)
 {
 
   void *CountFiles; // eax
@@ -2037,50 +2038,50 @@ void MixFileClass::sub_5B3F50()
   GenericNode *v6; // ecx
   int v7; // eax
 
-  CountFiles = (void *)this->CountFiles; /*0x5b3f56*/
-  *(unsigned int *)this->Node = (unsigned int)&vt_MixFileClass;
+  CountFiles = (void *)a1->CountFiles; /*0x5b3f56*/
+  *(unsigned int *)a1->Node = (unsigned int)&vt_MixFileClass;
   if ( CountFiles ) /*0x5b3f61*/
     free( (void *)(CountFiles)); /*0x5b3f64*/
-  if ( this->MixFileClass_field_24 && BYTE2(this->FileSize) ) /*0x5b3f73*/
+  if ( a1->MixFileClass_field_24 && BYTE2(a1->FileSize) ) /*0x5b3f73*/
   {
-    __3_YAXPAX_Z((void *)this->MixFileClass_field_24); /*0x5b3f79*/
-    BYTE2(this->FileSize) = 0; /*0x5b3f81*/
+    __3_YAXPAX_Z((void *)a1->MixFileClass_field_24); /*0x5b3f79*/
+    BYTE2(a1->FileSize) = 0; /*0x5b3f81*/
   }
-  v3 = *(void **)&this->M32; /*0x5b3f84*/
-  this->MixFileClass_field_24 = 0; /*0x5b3f87*/
+  v3 = *(void **)&a1->M32; /*0x5b3f84*/
+  a1->MixFileClass_field_24 = 0; /*0x5b3f87*/
   if ( v3 ) /*0x5b3f8c*/
   {
     __3_YAXPAX_Z(v3); /*0x5b3f8f*/
-    *(unsigned int *)&this->M32 = 0; /*0x5b3f97*/
+    *(unsigned int *)&a1->M32 = 0; /*0x5b3f97*/
   }
-  if ( this ) /*0x5b3f9c*/
+  if ( a1 ) /*0x5b3f9c*/
   {
-    Previous = ((unsigned int *)this)[0]; /*0x5b3f9e*/
+    Previous = ((unsigned int *)a1)[0]; /*0x5b3f9e*/
     if ( Previous ) /*0x5b3fa3*/
     {
-      v5 = *(unsigned int *)&this->Blowfish; /*0x5b3fa5*/
+      v5 = *(unsigned int *)&a1->Blowfish; /*0x5b3fa5*/
       if ( v5 ) /*0x5b3faa*/
       {
         *(unsigned int *)(v5 + 4) = (unsigned int)Previous; /*0x5b3fac*/
-        *(unsigned int *)((unsigned int *)this)[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fb5*/
-        *(unsigned int *)&this->Blowfish = 0; /*0x5b3fb8*/
-        ((unsigned int *)this)[0] = 0; /*0x5b3fbb*/
+        *(unsigned int *)((unsigned int *)a1)[1].__pad_0 = *(unsigned int *)&a1->Blowfish; /*0x5b3fb5*/
+        *(unsigned int *)&a1->Blowfish = 0; /*0x5b3fb8*/
+        ((unsigned int *)a1)[0] = 0; /*0x5b3fbb*/
       }
     }
   }
-  *(unsigned int *)this->Node = (unsigned int)&vt_GenericNode;
-  if ( this ) /*0x5b3fc6*/
+  *(unsigned int *)a1->Node = (unsigned int)&vt_GenericNode;
+  if ( a1 ) /*0x5b3fc6*/
   {
-    v6 = ((unsigned int *)this)[0]; /*0x5b3fc8*/
+    v6 = ((unsigned int *)a1)[0]; /*0x5b3fc8*/
     if ( v6 ) /*0x5b3fcd*/
     {
-      v7 = *(unsigned int *)&this->Blowfish; /*0x5b3fcf*/
+      v7 = *(unsigned int *)&a1->Blowfish; /*0x5b3fcf*/
       if ( v7 ) /*0x5b3fd4*/
       {
         *(unsigned int *)(v7 + 4) = (unsigned int)v6; /*0x5b3fd6*/
-        *(unsigned int *)((unsigned int *)this)[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fdf*/
-        *(unsigned int *)&this->Blowfish = 0; /*0x5b3fe2*/
-        ((unsigned int *)this)[0] = 0; /*0x5b3fe5*/
+        *(unsigned int *)((unsigned int *)a1)[1].__pad_0 = *(unsigned int *)&a1->Blowfish; /*0x5b3fdf*/
+        *(unsigned int *)&a1->Blowfish = 0; /*0x5b3fe2*/
+        ((unsigned int *)a1)[0] = 0; /*0x5b3fe5*/
       }
     }
   }

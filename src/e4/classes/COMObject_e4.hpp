@@ -37,7 +37,7 @@ struct COMObject {
 // --- flat members (END) ---
     bool IsSameType(GScreenClass * aP0);
     int FindNextActive(unsigned char * a1);
-    int GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1);
+    static int GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1);
     int GetSpecialValue(int a1);
     int GetStringValue(int a1, unsigned int * a2);
     int QueryInterface(int a1, const void * a2, unsigned int * a3);

@@ -35,6 +35,11 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int ResizeEx(...); }
+namespace gamemd { int PlaceMapSeedCityBlockVariant2(...); }
+namespace gamemd { int PlaceMapSeedCityBlockDiagonal(...); }
+namespace gamemd { int FindByValue(...); }
 // [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
 // usage: *(unsigned int*)v.__pad_0 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
 namespace gamemd {

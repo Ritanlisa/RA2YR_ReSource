@@ -340,7 +340,7 @@ LABEL_5:
 
 // 0x6AF6C0
 namespace gamemd {
-TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
+TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, void * a3)
 {
   int v4; // ebx
   int result; // eax

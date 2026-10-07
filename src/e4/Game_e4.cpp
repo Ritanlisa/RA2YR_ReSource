@@ -212,6 +212,14 @@
 #include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GameState_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int ConvertWrapper(...); }
+namespace gamemd { int setOverlayType(...); }
+namespace gamemd { int ValidateName(...); }
+namespace gamemd { int ComputeCRC(...); }
+namespace gamemd { int SetDigest(...); }
+namespace gamemd { int DecrementAll(...); }
+namespace gamemd { int Pump(...); }
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int nullsub_158(...);  // raw 007236D0: void nullsub_158()
@@ -2650,13 +2658,13 @@ char Game::LoadMultiplayerScoreAssets()
   char result; // al
   char *v3; // ecx
 
-  result = &byte_B0FBB8; /*0x72d730*/
+  result = byte_B0FBB8; /*0x72d730*/
   if ( !&byte_B0FBB8 ) /*0x72d73a*/
   {
     ((Game *)this)->shutdownGame(); /*0x72d73c*/
     if ( this ) /*0x72d743*/
     {
-      v3 = off_844BD8[0]; /*0x72d74d*/
+      v3 = (char *)off_844BD8[0]; /*0x72d74d*/
       if ( this != (Game *)1 ) /*0x72d756*/
         v3 = (char *)(off_844BDC); /*0x72d758*/
     }

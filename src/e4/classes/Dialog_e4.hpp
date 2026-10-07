@@ -122,7 +122,7 @@ struct Dialog {
     static int FindByHandle(int a1);  // G42.33 b3 static-form sync (cache: Dialog::FindByHandle((Dialog*)x))
     static int FindByHandle(void *aP1);  // G42.33 b3 static-form sync (cache: Dialog::FindByHandle((Dialog*)x))
     static int GetCurrent();  // 0x775B10
-    int GetCurrentType();  // 0x775B20
+    static int GetCurrentType();  // 0x775B20
     BOOL GetField();  // 0x775BA0
     int SideIDToIndex();  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
@@ -145,11 +145,11 @@ struct Dialog {
     BOOL EnumAndCleanup();  // 0x60AAA0
     BOOL SubclassEditControl(HWND hWnd, LPARAM);  // 0x60F320
     HWND Show();  // 0x622800
-    char PumpMessages();  // 0x623120
+    static char PumpMessages();  // 0x623120
     int FindByPtr();  // 0x7759B0
     HWND RestoreParent();  // 0x777060
     char UpdateGameUI();  // 0x77D820
-    HWND CloseAll();  // 0x799D10
+    static HWND CloseAll();  // 0x799D10
     AbstractClass * * MapControlToAction(HWND hWnd, LPARAM, void * a2);
 };
 } // namespace gamemd

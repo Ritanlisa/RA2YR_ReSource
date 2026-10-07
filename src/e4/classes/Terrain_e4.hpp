@@ -80,7 +80,7 @@ struct Terrain {
     void ProcessCellModification(__int16 *a2);  // G57w10-S raw 0x00570050 IUnknown 占位清除
     void RecursiveModify(int a2);  // G57w10-S raw 0x00573540 IUnknown 占位清除
     int CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x576770
-    bool SelectTileType(int a1, int a2);  // G57w10-S raw 0x00579620 IUnknown 占位清除
+    static bool SelectTileType(int a1, int a2);  // G57w10-S raw 0x00579620 IUnknown 占位清除
     void PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4);  // 0x5A28C0
     unsigned int * ClimbCheck(AbstractClass * aP0, AbstractClass * aP1);  // 0x6D6410
     int LookupByName();  // 0x71DD80

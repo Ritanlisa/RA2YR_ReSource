@@ -93,6 +93,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Straw_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int DlgProcLoadGame_Load(...);  // raw 006967B0: int __thiscall DlgProcLoadGame_Load(ObjectClass *this)
@@ -1585,7 +1586,7 @@ void sub_69BCC0(ObjectClass * aP0)
 }
 // 0x69F0C0
 namespace gamemd {
-void * ObjectClass::sub_69F0C0(void * a2)
+void sub_69F0C0(ObjectClass *a1, void * a2)
 {
 
   ObjectClass *nextObject; // ebx
@@ -1601,11 +1602,11 @@ void * ObjectClass::sub_69F0C0(void * a2)
   char v14[48]; // [esp+4Ch] [ebp-30h] BYREF
 
   ((Matrix3x4*)&v13)->Identity(); /*0x69f0cc*/
-  nextObject = this->nextObject; /*0x69f0d1*/
+  nextObject = a1->nextObject; /*0x69f0d1*/
   if ( nextObject ) /*0x69f0da*/
   {
-    occupant = this->occupant; /*0x69f0e0*/
-    fallRate = this->fallRate; /*0x69f0e3*/
+    occupant = a1->occupant; /*0x69f0e0*/
+    fallRate = a1->fallRate; /*0x69f0e3*/
     if ( occupant != -1 ) /*0x69f0ef*/
     {
       if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant >= fallRate ) /*0x69f0f7*/
@@ -1613,13 +1614,13 @@ void * ObjectClass::sub_69F0C0(void * a2)
       else
         fallRate -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant; /*0x69f0f9*/
     }
-    if ( (double)((int)nextObject - fallRate) / (double)(int)this->nextObject < 1.0 ) /*0x69f118*/
+    if ( (double)((int)nextObject - fallRate) / (double)(int)a1->nextObject < 1.0 ) /*0x69f118*/
     {
-      v6 = this->nextObject; /*0x69f11a*/
+      v6 = a1->nextObject; /*0x69f11a*/
       if ( v6 ) /*0x69f123*/
       {
-        v8 = this->occupant; /*0x69f12d*/
-        v9 = this->fallRate; /*0x69f130*/
+        v8 = a1->occupant; /*0x69f12d*/
+        v9 = a1->fallRate; /*0x69f130*/
         if ( v8 != -1 ) /*0x69f136*/
         {
           if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v8 >= v9 ) /*0x69f13e*/
@@ -1627,17 +1628,17 @@ void * ObjectClass::sub_69F0C0(void * a2)
           else
             v9 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v8; /*0x69f140*/
         }
-        v7 = (double)((int)v6 - v9) / (double)(int)this->nextObject; /*0x69f150*/
+        v7 = (double)((int)v6 - v9) / (double)(int)a1->nextObject; /*0x69f150*/
       }
       else
       {
         v7 = 1.0; /*0x69f125*/
       }
-      v10 = InterpolateVoxelAnimPose(v14, (int)((unsigned int *)this)[0], ((unsigned int *)this)[0], v7); /*0x69f165*/
+      v10 = InterpolateVoxelAnimPose(v14, (int)((unsigned int *)a1)[0], ((unsigned int *)a1)[0], v7); /*0x69f165*/
       goto LABEL_17; /*0x69f16a*/
     }
   }
-  referenceCount = ((unsigned int *)this)[0]; /*0x69f16c*/
+  referenceCount = ((unsigned int *)a1)[0]; /*0x69f16c*/
   if ( referenceCount ) /*0x69f171*/
   {
     v10 = (const void *)CopyAudioData( (char *)(v14), referenceCount); /*0x69f177*/

@@ -94,7 +94,8 @@ RulesClass::RulesClass()
   this->SelfHealUnitAmount = 1; /*0x6656b0*/
   this->FreeMCV = 0; /*0x6656b3*/
   this->BerzerkAllowed = 0; /*0x6656b6*/
-  this->PoseDir = ... [67687 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): this->PoseDir = ... ...
+  // live body via get_context/0x665650 — w15f4 regrafted decls only
 }
 }  // G42.18c ns repair
 
@@ -142,7 +143,16 @@ int RulesClass::DTOR(void *a1)
   void *v38; // eax
   void *v39; // eax
   void *v40; // eax
-  vo... [28941 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): vo... ...
+  // live body via get_context/0x667A30 — w15f4 regrafted decls only
+  void *v41; // eax
+  void *v42; // eax
+  void *v43; // eax
+  void *CrateFireSound; // eax
+  void *DefaultChronoSound; // eax
+  void *IFVTransformSound; // eax
+  void *GUIMoveOutSound; // eax
+  int result; // eax
 }
 }  // G42.18c ns repair
 

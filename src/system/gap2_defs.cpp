@@ -895,14 +895,14 @@ int BufferIOFileClass::SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod) {
     {
       this->FileID = 0; /*0x4324d9*/
     }
-    MixFileIndex = this->MixFileIndex; /*0x4324dc*/
+    MixFileIndex = (int)this->MixFileIndex; /*0x4324dc*/
     v5 = lDistanceToMove; /*0x4324df*/
     if ( MixFileIndex && lDistanceToMove >= MixFileIndex ) /*0x4324e9*/
     {
       v5 = lDistanceToMove - MixFileIndex; /*0x4324eb*/
       v15 = 1; /*0x4324ed*/
     }
-    FileID = this->FileID; /*0x4324f2*/
+    FileID = (int)this->FileID; /*0x4324f2*/
     this->FileID = v5 + FileID; /*0x4324f7*/
     if ( v5 + FileID < 0 ) /*0x4324fa*/
       this->FileID = 0; /*0x4324fc*/
@@ -912,7 +912,7 @@ int BufferIOFileClass::SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod) {
     BufferReadSize = this->BufferReadSize; /*0x43250c*/
     if ( TotalBytesWritten > BufferReadSize ) /*0x432511*/
     {
-      v9 = this->FileID; /*0x43251b*/
+      v9 = (int)this->FileID; /*0x43251b*/
       BufferMaxSize = this->BufferMaxSize; /*0x43251e*/
       if ( v9 < BufferMaxSize || v9 >= BufferMaxSize + BufferReadSize ) /*0x432529*/
       {
@@ -920,7 +920,7 @@ int BufferIOFileClass::SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod) {
         if ( this->MixFileIndex ) /*0x432539*/
         {
           v11 = this->FileClass; /*0x432541*/
-          v14 = this->FileID; /*0x432544*/
+          v14 = (int)this->FileID; /*0x432544*/
           IDA_BYTE1(this->BufferSize) = 0; /*0x432547*/
           (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&v11 + 40))(this, v14, 0); /*0x43254a*/
           IDA_BYTE1(this->BufferSize) = 1; /*0x43254d*/
@@ -14006,7 +14006,7 @@ int INIClass::SetIntFormat(void* a1, void* aP2, int a4, int aP4) {
 
 // 0x5276D0
 namespace gamemd { 
-int INIClass::ReadInt_Overwrite(void* a1, void* a2, int a3) {
+int INIClass::ReadInt_Overwrite(void* aP1, void* a2, void* a3, int a4) {
     unsigned __int8 *v4; // ebp
     unsigned __int8 *v6; // edx
     int v7; // esi
@@ -14032,9 +14032,9 @@ int INIClass::ReadInt_Overwrite(void* a1, void* a2, int a3) {
       v6 = a3; /*0x5276e5*/
       if ( a3 ) /*0x5276eb*/
       {
-        if ( a2 == *((unsigned __int8 **)this + 1) ) /*0x5276f8*/
+        if ( a2 == *((unsigned __int8 **)aP1 + 1) ) /*0x5276f8*/
         {
-          v7 = *((unsigned int *)this + 2); /*0x5276fe*/
+          v7 = *((unsigned int *)aP1 + 2); /*0x5276fe*/
   LABEL_5:
           if ( v7 ) /*0x527703*/
           {
@@ -14100,33 +14100,33 @@ int INIClass::ReadInt_Overwrite(void* a1, void* a2, int a3) {
         memset(v23, 0, sizeof(v23)); /*0x52779c*/
         v16 = (unsigned __int8 *)Checksummer::Add_Buffer((Checksummer *)v23, a2, strlen((const char *)a2)); /*0x5277c2*/
         a2 = v16; /*0x5277c4*/
-        if ( *((unsigned int *)this + 11) ) /*0x5277c8*/
+        if ( *((unsigned int *)aP1 + 11) ) /*0x5277c8*/
         {
-          v17 = (unsigned __int8 **)*((unsigned int *)this + 14); /*0x5277cf*/
+          v17 = (unsigned __int8 **)*((unsigned int *)aP1 + 14); /*0x5277cf*/
           if ( !v17 || *v17 != v16 ) /*0x5277d8*/
           {
-            v18 = SortedArray::BinarySearch((SortedArray *)(this + 40), (int *)&a2); /*0x5277e1*/
+            v18 = SortedArray::BinarySearch((SortedArray *)(aP1 + 40), (int *)&a2); /*0x5277e1*/
             if ( !v18 ) /*0x5277e8*/
               goto LABEL_27; /*0x5277e8*/
-            *((unsigned int *)this + 14) = v18; /*0x5277ea*/
+            *((unsigned int *)aP1 + 14) = v18; /*0x5277ea*/
           }
           a2 = v16; /*0x5277f1*/
-          if ( (unsigned __int8)HashTable::BinarySearch((int *)this + 10, (int *)&a2) ) /*0x5277f8*/
-            v19 = (int *)(*((unsigned int *)this + 14) + 4); /*0x527804*/
+          if ( (unsigned __int8)HashTable::BinarySearch((int *)aP1 + 10, (int *)&a2) ) /*0x5277f8*/
+            v19 = (int *)(*((unsigned int *)aP1 + 14) + 4); /*0x527804*/
           else
             v19 = (int *)&unk_B7882C; /*0x527809*/
           v7 = *v19; /*0x52780e*/
           if ( v7 ) /*0x527812*/
           {
             v6 = a3; /*0x527814*/
-            *((unsigned int *)this + 2) = v7; /*0x527818*/
-            *((unsigned int *)this + 1) = v4; /*0x52781b*/
+            *((unsigned int *)aP1 + 2) = v7; /*0x527818*/
+            *((unsigned int *)aP1 + 1) = v4; /*0x52781b*/
             goto LABEL_5; /*0x527820*/
           }
         }
   LABEL_27:
-        *((unsigned int *)this + 1) = 0; /*0x527825*/
-        *((unsigned int *)this + 2) = 0; /*0x52782c*/
+        *((unsigned int *)aP1 + 1) = 0; /*0x527825*/
+        *((unsigned int *)aP1 + 2) = 0; /*0x52782c*/
         return a4; /*0x527838*/
       }
     }
@@ -15418,7 +15418,7 @@ int INIClass::ReadBool3(void* a1, void* a2, int a3) {
 
 // 0x5295F0
 namespace gamemd { 
-int INIClass::ReadBool_Overwrite(void* a1, void* a2, int a3) {
+int INIClass::ReadBool_Overwrite(void* aP1, void* a2, void* a3, int a4) {
     int result; // eax
     unsigned __int8 *v5; // ebp
     unsigned __int8 *v7; // edx
@@ -15445,45 +15445,45 @@ int INIClass::ReadBool_Overwrite(void* a1, void* a2, int a3) {
     v7 = a3; /*0x529607*/
     if ( !a3 ) /*0x52960d*/
       goto LABEL_28; /*0x52960d*/
-    if ( a2 != (unsigned __int8 *)*(this + 1) ) /*0x529616*/
+    if ( a2 != (unsigned __int8 *)*(aP1 + 1) ) /*0x529616*/
     {
       v20 = 0; /*0x5296ba*/
       v21 = 0; /*0x5296be*/
       v22 = 0; /*0x5296c2*/
       v14 = (unsigned __int8 *)Checksummer::Add_Buffer(&v20, a2, strlen((const char *)a2)); /*0x5296e0*/
       a2 = v14; /*0x5296e2*/
-      if ( *(this + 11) ) /*0x5296e6*/
+      if ( *(aP1 + 11) ) /*0x5296e6*/
       {
-        v15 = (unsigned __int8 **)*(this + 14); /*0x5296ed*/
+        v15 = (unsigned __int8 **)*(aP1 + 14); /*0x5296ed*/
         if ( !v15 || *v15 != v14 ) /*0x5296f6*/
         {
-          v16 = SortedArray::BinarySearch((char **)this + 10, (int *)&a2); /*0x5296ff*/
+          v16 = SortedArray::BinarySearch((char **)aP1 + 10, (int *)&a2); /*0x5296ff*/
           if ( !v16 ) /*0x529706*/
             goto LABEL_27; /*0x529706*/
-          *(this + 14) = v16; /*0x529708*/
+          *(aP1 + 14) = v16; /*0x529708*/
         }
         a2 = v14; /*0x52970f*/
-        if ( (unsigned __int8)HashTable::BinarySearch(this + 10, (int *)&a2) ) /*0x529716*/
-          v17 = (int *)(*(this + 14) + 4); /*0x529722*/
+        if ( (unsigned __int8)HashTable::BinarySearch(aP1 + 10, (int *)&a2) ) /*0x529716*/
+          v17 = (int *)(*(aP1 + 14) + 4); /*0x529722*/
         else
           v17 = (int *)&unk_B7882C; /*0x529727*/
         v8 = *v17; /*0x52972c*/
         if ( v8 ) /*0x529730*/
         {
           v7 = a3; /*0x529732*/
-          *(this + 2) = v8; /*0x529736*/
-          *(this + 1) = (int)v5; /*0x529739*/
+          *(aP1 + 2) = v8; /*0x529736*/
+          *(aP1 + 1) = (int)v5; /*0x529739*/
           result = 0; /*0x52973c*/
           goto LABEL_5; /*0x52973e*/
         }
       }
   LABEL_27:
       result = 0; /*0x529743*/
-      *(this + 1) = 0; /*0x529745*/
-      *(this + 2) = 0; /*0x529748*/
+      *(aP1 + 1) = 0; /*0x529745*/
+      *(aP1 + 2) = 0; /*0x529748*/
       goto LABEL_28; /*0x529748*/
     }
-    v8 = *(this + 2); /*0x52961c*/
+    v8 = *(aP1 + 2); /*0x52961c*/
   LABEL_5:
     if ( !v8 ) /*0x529621*/
       goto LABEL_28; /*0x529621*/

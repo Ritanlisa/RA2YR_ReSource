@@ -963,7 +963,7 @@ int AbstractClass::Construct(_DWORD *a2) {
                    0) )
             {
               abstractFlags = this->abstractFlags; /*0x43a958*/
-              vtable2 = this->vtable2; /*0x43a95b*/
+              vtable2 = (unsigned int *)this->vtable2; /*0x43a95b*/
               this->abstractFlags = abstractFlags + 1; /*0x43a961*/
               vtable2[abstractFlags] = v7; /*0x43a964*/
             }

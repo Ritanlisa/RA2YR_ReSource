@@ -1569,7 +1569,195 @@ Coord * * DSurface::DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned 
   int v49; // esi
   int v50; // ebx
   int v51; // eax
-  in... [41072 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): in... ...
+  // live body via get_context/0x4BC750 — w15f4 regrafted decls only
+  int v52; // ecx
+  int v53; // esi
+  int v54; // ebp
+  signed int v55; // eax
+  int v56; // ecx
+  int v57; // eax
+  Stream *v58; // ebx
+  int v59; // ebp
+  int v60; // eax
+  int v61; // esi
+  int v62; // eax
+  int v63; // edx
+  int v64; // ebx
+  int v65; // edi
+  int v66; // esi
+  int v67; // ecx
+  int v68; // eax
+  int v69; // edx
+  int v70; // edx
+  int v71; // esi
+  int v72; // eax
+  unsigned short *v73; // eax
+  unsigned short *v74; // edx
+  unsigned short *v75; // ecx
+  int v76; // ebp
+  unsigned short *v77; // edi
+  int v78; // esi
+  unsigned short *v79; // eax
+  unsigned short *v80; // eax
+  unsigned short *v81; // eax
+  int v82; // eax
+  Stream *v83; // edi
+  unsigned int *v84; // ebx
+  int v85; // eax
+  int v86; // esi
+  int v87; // eax
+  int v88; // ebp
+  int v89; // esi
+  int v90; // edi
+  int v91; // ebx
+  int v92; // edx
+  int v93; // ecx
+  int v94; // eax
+  int v95; // esi
+  int v96; // esi
+  int v97; // edx
+  int v98; // esi
+  int v99; // eax
+  unsigned int Stream_field_08; // ecx
+  unsigned short *v101; // eax
+  unsigned short *v102; // ecx
+  unsigned short *v103; // eax
+  unsigned short *v104; // ecx
+  unsigned short *v105; // edx
+  unsigned short *v106; // eax
+  bool v107; // zf
+  int v108; // eax
+  Stream *v109; // edi
+  unsigned int *v110; // ebx
+  int v111; // eax
+  int v112; // esi
+  int v113; // eax
+  int v114; // ebp
+  int v115; // esi
+  int v116; // edi
+  int v117; // ebx
+  int v118; // edx
+  int v119; // ecx
+  int v120; // eax
+  int v121; // esi
+  int v122; // esi
+  int v123; // edx
+  int v124; // esi
+  int v125; // eax
+  unsigned short *v126; // eax
+  unsigned short *v127; // edx
+  unsigned short *v128; // ecx
+  unsigned short *v129; // esi
+  unsigned short *v130; // eax
+  int v131; // eax
+  unsigned short *v132; // eax
+  unsigned short *v133; // eax
+  bool v134; // cc
+  int v135; // eax
+  Stream *v136; // ebx
+  int v137; // eax
+  int v138; // esi
+  int v139; // eax
+  int v140; // ebp
+  int v141; // esi
+  int v142; // edi
+  int v143; // ebx
+  int v144; // edx
+  int v145; // ecx
+  int v146; // eax
+  int v147; // esi
+  int v148; // esi
+  int v149; // edx
+  int v150; // esi
+  int v151; // eax
+  unsigned short *v152; // eax
+  unsigned short *v153; // edx
+  int v154; // ecx
+  int v155; // ebp
+  unsigned short *v156; // eax
+  unsigned short *v157; // ecx
+  unsigned short *v158; // edx
+  unsigned short *v159; // eax
+  int v160; // [esp+10h] [ebp-C4h]
+  int v161; // [esp+10h] [ebp-C4h]
+  int v162; // [esp+10h] [ebp-C4h]
+  int v163; // [esp+10h] [ebp-C4h]
+  int v164; // [esp+10h] [ebp-C4h]
+  int v165; // [esp+14h] [ebp-C0h]
+  int v166; // [esp+14h] [ebp-C0h]
+  int v167; // [esp+14h] [ebp-C0h]
+  int v168; // [esp+14h] [ebp-C0h]
+  unsigned short *SamplePosition; // [esp+18h] [ebp-BCh]
+  int v170; // [esp+1Ch] [ebp-B8h]
+  int v171; // [esp+1Ch] [ebp-B8h]
+  int v172; // [esp+20h] [ebp-B4h]
+  int v173; // [esp+20h] [ebp-B4h]
+  int v174; // [esp+20h] [ebp-B4h]
+  int v175; // [esp+20h] [ebp-B4h]
+  int v176; // [esp+20h] [ebp-B4h]
+  int v177; // [esp+24h] [ebp-B0h]
+  int v178; // [esp+24h] [ebp-B0h]
+  int v179; // [esp+24h] [ebp-B0h]
+  int v180; // [esp+28h] [ebp-ACh]
+  unsigned short *v181; // [esp+2Ch] [ebp-A8h]
+  int v182; // [esp+30h] [ebp-A4h]
+  int v183; // [esp+30h] [ebp-A4h]
+  int v184; // [esp+30h] [ebp-A4h]
+  int v185; // [esp+30h] [ebp-A4h]
+  int v186; // [esp+30h] [ebp-A4h]
+  int v187; // [esp+34h] [ebp-A0h]
+  int v188; // [esp+38h] [ebp-9Ch]
+  int v189; // [esp+3Ch] [ebp-98h]
+  int v190; // [esp+3Ch] [ebp-98h]
+  int v191; // [esp+3Ch] [ebp-98h]
+  int v192; // [esp+3Ch] [ebp-98h]
+  int v193; // [esp+40h] [ebp-94h]
+  int v194; // [esp+40h] [ebp-94h]
+  int v195; // [esp+40h] [ebp-94h]
+  int v196; // [esp+40h] [ebp-94h]
+  int v197; // [esp+44h] [ebp-90h]
+  int v198; // [esp+44h] [ebp-90h]
+  int v199; // [esp+48h] [ebp-8Ch]
+  int v200; // [esp+48h] [ebp-8Ch]
+  int v201; // [esp+48h] [ebp-8Ch]
+  int v202; // [esp+4Ch] [ebp-88h]
+  int v203; // [esp+4Ch] [ebp-88h]
+  int v204; // [esp+4Ch] [ebp-88h]
+  int v205; // [esp+4Ch] [ebp-88h]
+  int v206; // [esp+4Ch] [ebp-88h]
+  int v207; // [esp+50h] [ebp-84h]
+  int16_t v208; // [esp+50h] [ebp-84h]
+  int v209; // [esp+50h] [ebp-84h]
+  int v210; // [esp+50h] [ebp-84h]
+  int v211; // [esp+54h] [ebp-80h]
+  int v212[2]; // [esp+58h] [ebp-7Ch] BYREF
+  int v213; // [esp+60h] [ebp-74h]
+  int v214; // [esp+64h] [ebp-70h]
+  int v215; // [esp+6Ch] [ebp-68h] BYREF
+  int v216; // [esp+70h] [ebp-64h]
+  int v217; // [esp+74h] [ebp-60h]
+  int v218; // [esp+78h] [ebp-5Ch]
+  int v219; // [esp+7Ch] [ebp-58h] BYREF
+  int v220; // [esp+80h] [ebp-54h]
+  DSurface *v221; // [esp+84h] [ebp-50h]
+  int v222; // [esp+88h] [ebp-4Ch]
+  int v223; // [esp+8Ch] [ebp-48h]
+  int v224; // [esp+90h] [ebp-44h]
+  int v225; // [esp+94h] [ebp-40h] BYREF
+  int v226; // [esp+98h] [ebp-3Ch]
+  int v227; // [esp+9Ch] [ebp-38h] BYREF
+  int v228; // [esp+A0h] [ebp-34h]
+  int v229; // [esp+ACh] [ebp-28h]
+  int v230; // [esp+B0h] [ebp-24h]
+  int v231; // [esp+B4h] [ebp-20h] BYREF
+  int v232; // [esp+B8h] [ebp-1Ch]
+  int v233; // [esp+BCh] [ebp-18h]
+  int v234; // [esp+C0h] [ebp-14h]
+  int v235; // [esp+C4h] [ebp-10h] BYREF
+  int v236; // [esp+C8h] [ebp-Ch]
+  int v237; // [esp+CCh] [ebp-8h]
+  int v238; // [esp+D0h] [ebp-4h]
 }
 }  // G42.18c ns repair
 

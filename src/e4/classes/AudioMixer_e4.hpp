@@ -27,7 +27,7 @@ struct AudioMixer {
     static int PlayBuffer(unsigned int * a1, unsigned int a2);
     int PlaySample();
     int Pump();
-    int RequestOrEndBuffer(int a1, unsigned int a2);
+    static int RequestOrEndBuffer(int a1, unsigned int a2);
     int SetVolume();
     int Shutdown();
     unsigned int u32_80;  // 0x80

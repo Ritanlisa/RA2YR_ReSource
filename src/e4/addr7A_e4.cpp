@@ -797,7 +797,7 @@ ObjectClass * * HandleWOLMatchMessage(void * a2, void * aExit_0, void * aFail, v
     Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v7); /*0x7a17ef*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x7a17ff*/
     v8 = GetStringCSF( (wchar_t *)(g_Str_WOL_MatchFailExit), 0, (const char *)(g_Str_File_wonline_cpp), 28698); /*0x7a181a*/
-    ShowDialogConfirm( (void *)(v8), 0, (void *)((int)GameLoop::Thunk), 0); /*0x7a1823*/
+    ShowDialogConfirm( (void *)(v8), 0, (void *)((int)GameLoop_Thunk), 0); /*0x7a1823*/
     SetEvent( (void *)((void *)(Handles))); /*0x7a182f*/
   }
   else if ( !_strnicmp(String1, aWorking, 7u) ) /*0x7a1840*/
@@ -1325,7 +1325,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
   if ( DlgItem ) /*0x7a4c8a*/
     SetFocus(DlgItem); /*0x7a4c8d*/
   v9 = GetStringCSF( aTxtUpgraderequ, 0, (const char *)(g_Str_File_wonline_cpp), 5504); /*0x7a4cab*/
-  if ( ShowDialogConfirm( (void *)(v9),(void *)( 4), (void *)((int)GameLoop::Thunk), 0) == 7 ) /*0x7a4cbf*/
+  if ( ShowDialogConfirm( (void *)(v9),(void *)( 4), (void *)((int)GameLoop_Thunk), 0) == 7 ) /*0x7a4cbf*/
   {
   LABEL_16:
     SetEvent( (void *)((void *)(Handles))); /*0x7a4ea4*/
@@ -1359,7 +1359,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       v13 = GetDlgItem(v12, 1479); /*0x7a4dbf*/
       v14 = WideString::GetOrEmpty_Alt(  (wchar_t **)&v18); /*0x7a4dc1*/
       SendMessageA( (HWND)(v13), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v14))); /*0x7a4dcf*/
-      if ( MessageDialogLoopAlt(v12, (uint8_t (*)(void))GameLoop::Thunk, 0, 1, 1) == 2 ) /*0x7a4dea*/
+      if ( MessageDialogLoopAlt(v12, (uint8_t (*)(void))GameLoop_Thunk, 0, 1, 1) == 2 ) /*0x7a4dea*/
         break; /*0x7a4dea*/
       v4 = v4->vtable4; /*0x7a4dec*/
       v20[0] = (unsigned int)&off_7F7624; /*0x7a4df3*/
@@ -1368,7 +1368,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       if ( !v4 ) /*0x7a4e0b*/
       {
         v15 = GetStringCSF( (wchar_t *)(aTxtGameRestart), 0, (const char *)(g_Str_File_wonline_cpp), 5558); /*0x7a4e28*/
-        ShowDialogConfirm( (void *)(v15), 0, (void *)((int)GameLoop::Thunk), 0); /*0x7a4e31*/
+        ShowDialogConfirm( (void *)(v15), 0, (void *)((int)GameLoop_Thunk), 0); /*0x7a4e31*/
         SetEvent( (void *)((void *)(dword_B736A4))); /*0x7a4e3d*/
         SetCurrentDirectoryA(Buffer); /*0x7a4e48*/
         return 0; /*0x7a4e5a*/

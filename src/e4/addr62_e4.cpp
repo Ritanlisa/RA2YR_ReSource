@@ -63,6 +63,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/_tree_full_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int InitializeDialogControls(...);  // raw 0060F4B0: char __fastcall InitializeDialogControls(HWND a1, LPARAM a2)
@@ -1511,7 +1512,7 @@ void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
 }
 // 0x623730
 namespace gamemd {
-unsigned int * ObjectClass::sub_623730(unsigned int * a2)
+unsigned int sub_623730(ObjectClass *a1, unsigned int * a2)
 {
 
   TagClass *attachedTag; // edx
@@ -1527,28 +1528,28 @@ unsigned int * ObjectClass::sub_623730(unsigned int * a2)
   int v13; // eax
   int v14; // eax
 
-  attachedTag = this->attachedTag; /*0x623741*/
-  owningHouseIndex = (void *)this->owningHouseIndex; /*0x623744*/
-  v5 = this->ambientSoundController[0]; /*0x623747*/
-  qmemcpy( this, (const void *)(a2), 0x200u); /*0x62374a*/
-  this->ambientSoundController[0] = v5; /*0x623750*/
-  this->owningHouseIndex = (int)owningHouseIndex; /*0x623755*/
-  this->attachedTag = attachedTag; /*0x623758*/
+  attachedTag = a1->attachedTag; /*0x623741*/
+  owningHouseIndex = (void *)a1->owningHouseIndex; /*0x623744*/
+  v5 = a1->ambientSoundController[0]; /*0x623747*/
+  qmemcpy( a1, (const void *)(a2), 0x200u); /*0x62374a*/
+  a1->ambientSoundController[0] = v5; /*0x623750*/
+  a1->owningHouseIndex = (int)owningHouseIndex; /*0x623755*/
+  a1->attachedTag = attachedTag; /*0x623758*/
   v6 = (const wchar_t *)a2[10]; /*0x62375b*/
   if ( owningHouseIndex ) /*0x623760*/
   {
     __3_YAXPAX_Z(owningHouseIndex); /*0x623763*/
-    this->owningHouseIndex = 0; /*0x62376b*/
+    a1->owningHouseIndex = 0; /*0x62376b*/
   }
   if ( v6 && *v6 ) /*0x623772*/
   {
     v7 = wcslen(v6); /*0x623778*/
     v8 = (wchar_t *)__2_YAPAXI_Z(2 * v7 + 2); /*0x623782*/
-    this->owningHouseIndex = (int)v8; /*0x623789*/
+    a1->owningHouseIndex = (int)v8; /*0x623789*/
     wcscpy( (wchar_t *)(v8), (const wchar_t *)(v6)); /*0x62378c*/
   }
-  v9 = this->attachedTag; /*0x623794*/
-  for ( i = (int **)a2[13]; v9; v9 = this->attachedTag ) /*0x62379c*/
+  v9 = a1->attachedTag; /*0x623794*/
+  for ( i = (int **)a2[13]; v9; v9 = a1->attachedTag ) /*0x62379c*/
   {
     v11 = (TagClass **)v9; /*0x62379e*/
     v12 = (TagClass **)(0); /*0x6237a0*/
@@ -1562,7 +1563,7 @@ unsigned int * ObjectClass::sub_623730(unsigned int * a2)
     if ( v12 ) /*0x6237ba*/
       *v12 = *v11; /*0x6237be*/
     else
-      this->attachedTag = *v11; /*0x6237c4*/
+      a1->attachedTag = *v11; /*0x6237c4*/
     __3_YAXPAX_Z(v11); /*0x6237c8*/
 LABEL_15:
     ; /*0x6237d0*/
@@ -1574,15 +1575,15 @@ LABEL_15:
     if ( v14 ) /*0x6237f3*/
     {
       *(unsigned int *)(v14 + 8) = v14 + 16; /*0x6237f8*/
-      *(unsigned int *)v14 = this->attachedTag; /*0x6237fe*/
+      *(unsigned int *)v14 = a1->attachedTag; /*0x6237fe*/
       *(unsigned int *)(v14 + 4) = 0; /*0x623800*/
-      this->attachedTag = (TagClass *)v14; /*0x623803*/
+      a1->attachedTag = (TagClass *)v14; /*0x623803*/
     }
     *(unsigned int *)(v14 + 12) = i[3]; /*0x623809*/
     *(unsigned int *)(v14 + 4) = i[1]; /*0x62380f*/
     wcscpy(*(wchar_t **)(v14 + 8), (const wchar_t *)i[2]); /*0x62381a*/
   }
-  return (unsigned int *)this; /*0x623828*/
+  return (unsigned int *)a1; /*0x623828*/
 
 }
 }

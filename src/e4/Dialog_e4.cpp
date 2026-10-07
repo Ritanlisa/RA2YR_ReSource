@@ -71,7 +71,7 @@ void Dialog::MapDialogResource()
   if ( *(unsigned int *)&this->__pad_0[4] == 48879 ) /*0x49f74a*/
   {
     Debug::Log("COPYPROTECTION - Received message from launcher.\n"); /*0x49f751 G57c1: IDA 0x49f751 push offset aCopyprotection*/
-    &dword_89F75C = (int)MapViewOfFileEx((HANDLE)(this->Dialog_field_0xC), 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
+    dword_89F75C = (int)MapViewOfFileEx((HANDLE)(this->Dialog_field_0xC), 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
     Debug::Log("***** MapViewOfFileEx() Failed!"); /*0x49f77e G57c1: IDA 0x49f77e push offset aMapviewoffilee*/
   }
 
@@ -1586,7 +1586,7 @@ LABEL_54:
     }
 LABEL_71:
     ((GadgetClass *)v37)->SetTooltip( 0); /*0x61024a*/
-    for ( i = v37[13]; v37[13]; i = v37[13] ) /*0x610260*/
+    for ( i = (unsigned int *)v37[13]; v37[13]; i = v37[13] ) /*0x610260*/
       LinkedList::Remove( (void *)(v37), (unsigned int *)(i)); /*0x61026a*/
     if ( v37[15] ) /*0x610283*/
       ((DeleteAndZero *)(void **)v37[15])->OrFree( 1); /*0x610287*/

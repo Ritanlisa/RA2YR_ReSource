@@ -13,7 +13,7 @@ struct PsyDom {
     void* q324;  // 0x324
 // --- flat members (END) ---
     AnimClass * * Update(void *a1, void *a2, void *a3, void *a4);
-    bool IsActive();
+    static bool IsActive();
     void Fire();
 };
 

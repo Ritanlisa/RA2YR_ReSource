@@ -538,7 +538,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
 
     if ( *((unsigned int *)this + 17) ) /*0x4c3193*/
       return 0; /*0x4c319d*/
-    v6 = a2; /*0x4c31a1*/
+    v6 = (unsigned int)a2; /*0x4c31a1*/
     if ( (a2 & 1) != 0 ) /*0x4c31a9*/
     {
       v6 = a2 & 0xFFFFFFFE; /*0x4c31af*/
@@ -1015,7 +1015,7 @@ int CheckListClass::removeItem(int a2, void* a3) {
     {
       IDA_LOBYTE(this->q00C) = 0; /*0x5570a2*/
       if ( a3 ) /*0x5570a8*/
-        v4 = a3; /*0x5570be*/
+        v4 = (unsigned int *)a3; /*0x5570be*/
       else
         v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x5570ba*/
       IDA_LOBYTE(this->q00C) = 1; /*0x5570c2*/

@@ -260,7 +260,7 @@ void AudioController::Stop()
     result = this->AudioController_field_00; /*0x405d41*/
     if ( g_AudioConfigState ) /*0x405d53*/
     {
-      if ( this->AudioController_field_0C == &gamemd::dword_87E294 ) /*0x405d60*/
+      if ( this->AudioController_field_0C == gamemd::dword_87E294 ) /*0x405d60*/
       {
         v2 = (&this->AudioController_field_00)[0]; /*0x405d66*/
         if ( (&this->AudioController_field_00)[0] ) /*0x405d66*/

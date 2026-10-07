@@ -453,7 +453,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
         dword_B76E58= v10; /*0x7a57a8*/
         dword_B76E5C= 0; /*0x7a57ad*/
         dword_B76E54= (ObjectClass *)dword_A8B394; /*0x7a57b7*/
-        &dword_B76E60 = 1; /*0x7a57bd*/
+        dword_B76E60 = 1; /*0x7a57bd*/
       }
       else
       {
@@ -598,7 +598,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
       *(unsigned int *)&g_WOL_BuddyList.__pad_20[4] = (unsigned int)a5; /*0x7a7d14*/
       *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7a7d1e*/
       dword_B73814 = 8960; /*0x7a7d27*/
-      *(unsigned int *)&dword_B779C4= &dword_B76B24; /*0x7a7d31*/
+      *(unsigned int *)&dword_B779C4= dword_B76B24; /*0x7a7d31*/
       if ( *(unsigned int *)&dword_A8B238 == 4 && (dword_B76B30& 0x100) != 0 ) /*0x7a7d47*/
         *(unsigned int *)&dword_B779C4= 2; /*0x7a7d49*/
       v13 = ((String *)&g_WindowManager.__pad_EC[684])->GetOrEmpty(); /*0x7a7d59*/
@@ -1374,7 +1374,7 @@ int CComObject_CChatEventSink___ATL_DispatchStub_19(int a2, int a3)
         if ( Dialog::FindByHandle(  (Dialog *)0x113) ) /*0x7aa7e8*/
         {
           v8 = GetStringCSF( aTxtYoureDiscon, 0, (const char *)(g_Str_File_wonline_cpp), 8478); /*0x7aa809*/
-          ShowDialogConfirm( (void *)(v8), 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x7aa812*/
+          ShowDialogConfirm( (void *)(v8), 0, (unsigned __int8 (*)(void))GameLoop_Thunk, 0); /*0x7aa812*/
         }
         IDA_LOBYTE(byte_B77DC0) = 1; /*0x7aa820*/
         IDA_BYTE2(byte_B77DC0) = 1; /*0x7aa825*/
@@ -1591,7 +1591,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
       else
       {
         v12 = (wchar_t *)((WideString *)(wchar_t **)v24)->GetOrEmpty(); /*0x7ab7fd*/
-        ShowDialogConfirm( (void *)(v12), 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x7ab806*/
+        ShowDialogConfirm( (void *)(v12), 0, (unsigned __int8 (*)(void))GameLoop_Thunk, 0); /*0x7ab806*/
         ++dword_B77DD4; /*0x7ab815*/
         ((DeleteAndZero *)v24)->Alt(); /*0x7ab81a*/
       }

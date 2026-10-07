@@ -151,7 +151,7 @@ struct AudioStream {
     int ProcessStream();  // 0x7BEA80
     unsigned int GetPosition();  // 0x7C3960
     void Destructor(unsigned int * Block);  // 0x402550
-    int CheckFormatChanged(int a1, const void * a2);  // 0x402800
+    static int CheckFormatChanged(int a1, const void * a2);  // 0x402800
     int InitListAndCounters(void *a1_1);  // 0x4028B0
     int UpdateTimers();  // 0x404FD0
     int UpdateCountdowners();  // 0x405040

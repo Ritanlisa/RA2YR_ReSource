@@ -167,9 +167,9 @@ struct MapClass {
     int SetScrollMode(int a2, int aP1, int a1, int aP2, int a3);
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
-    int TriggerEVA(__int16 *a1);  // G57w10-S raw 0x0057B790 IUnknown 占位清除
+    static int TriggerEVA(__int16 *a1);  // G57w10-S raw 0x0057B790 IUnknown 占位清除
     static int UnselectAll_ClearLimboLaunchers();
-    int UpdateLightingPostProcess();
+    static int UpdateLightingPostProcess();
     int isCellShrouded(uint16_t a2);
     int isLocationShrouded(uint16_t a2);
     int updatePathfindingGrid(unsigned int * a2);

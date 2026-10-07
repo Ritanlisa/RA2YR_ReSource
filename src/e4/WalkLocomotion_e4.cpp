@@ -179,7 +179,178 @@ void WalkLocomotion::ProcessCollision(char a2, void *a2_2)
   int v49; // eax
   int v50; // edx
   int v51; // eax
-  int v52... [41340 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): int v52... ...
+  // live body via get_context/0x6A05F0 — w15f4 regrafted decls only
+  int v52; // ecx
+  int v53; // eax
+  unsigned int *v54; // eax
+  int v55; // esi
+  int *v56; // eax
+  int v57; // edi
+  int v58; // ecx
+  int v59; // kr28_4
+  int v60; // eax
+  int v61; // edi
+  unsigned int *v62; // esi
+  unsigned int *v63; // ebx
+  int v64; // ecx
+  int v65; // eax
+  int *v66; // edi
+  signed int v67; // esi
+  ObjectClass *v68; // eax
+  ObjectClass *v69; // esi
+  ObjectClass *nextObject; // ebx
+  void *vtable0; // edx
+  int v72; // edx
+  unsigned char *v73; // ecx
+  int v74; // eax
+  int v75; // esi
+  char v76; // bl
+  int v77; // eax
+  char v78; // bl
+  int16_t v79; // cx
+  int v80; // eax
+  unsigned int *v81; // ecx
+  int v82; // eax
+  int16_t v83; // dx
+  char *v84; // ebx
+  char v85; // al
+  ObjectClass *v86; // ecx
+  unsigned int *v87; // esi
+  int referenceCount; // eax
+  int v89; // edx
+  int v90; // eax
+  int v91; // edi
+  int v92; // edx
+  void *v93; // edi
+  void *v94; // eax
+  unsigned int v95; // eax
+  int v96; // eax
+  bool v97; // zf
+  int v98; // eax
+  int v99; // ecx
+  unsigned char *v100; // eax
+  int v101; // edx
+  int v102; // edx
+  int v103; // ecx
+  int v104; // edi
+  int v105; // edx
+  CellClass *v106; // eax
+  CellClass *v107; // eax
+  int v108; // edx
+  int *v109; // ecx
+  int v110; // edi
+  int level; // ecx
+  CellClass *v112; // eax
+  bool v113; // cc
+  int v114; // eax
+  unsigned char *v115; // eax
+  int v116; // eax
+  int v117; // edi
+  unsigned int *v118; // esi
+  int v119; // ecx
+  int v120; // edx
+  int v121; // eax
+  int v122; // ebx
+  int v123; // ecx
+  int v124; // ebx
+  int v125; // eax
+  int v126; // ecx
+  char v127; // al
+  int v128; // eax
+  int v129; // eax
+  int v130; // ecx
+  unsigned int *v131; // eax
+  int v132; // edi
+  int v133; // ebx
+  unsigned short *v134; // eax
+  int64_t v135; // rax
+  FootClass *v136; // ecx
+  int v137; // edx
+  int v138; // eax
+  int v139; // esi
+  int v140; // ecx
+  int v141; // eax
+  int *v142; // eax
+  int v143; // esi
+  int v144; // ebx
+  int *v145; // eax
+  int v146; // ecx
+  int v147; // eax
+  unsigned int *v148; // ebx
+  int v149; // ecx
+  int v150; // esi
+  int v151; // ebx
+  CellClass *v152; // esi
+  double v153; // st7
+  int *v154; // eax
+  int v155; // edx
+  CellClass *v156; // edi
+  CellClass *v157; // eax
+  unsigned int *v158; // ebx
+  unsigned int v159; // edx
+  int v160; // ebx
+  uint64_t v161; // kr30_8
+  CellClass *v162; // eax
+  int v163; // ecx
+  int v164; // eax
+  int v165; // edi
+  int v166; // edi
+  CellClass *v167; // ecx
+  CellClass *v168; // eax
+  char v169; // bl
+  int v170; // [esp+20h] [ebp-104h]
+  int LandHeight; // [esp+24h] [ebp-100h]
+  int v172; // [esp+2Ch] [ebp-F8h]
+  float v173; // [esp+2Ch] [ebp-F8h]
+  bool v174; // [esp+43h] [ebp-E1h]
+  char v175; // [esp+43h] [ebp-E1h]
+  char v176; // [esp+43h] [ebp-E1h]
+  char v177[4]; // [esp+44h] [ebp-E0h] BYREF
+  unsigned int v178[3]; // [esp+48h] [ebp-DCh] BYREF
+  double v179; // [esp+54h] [ebp-D0h] BYREF
+  int v180; // [esp+5Ch] [ebp-C8h]
+  int16_t v181[2]; // [esp+60h] [ebp-C4h] BYREF
+  int v182; // [esp+64h] [ebp-C0h]
+  int v183; // [esp+68h] [ebp-BCh]
+  unsigned int v184; // [esp+6Ch] [ebp-B8h] BYREF
+  int v185; // [esp+70h] [ebp-B4h]
+  int v186; // [esp+74h] [ebp-B0h] BYREF
+  int v187; // [esp+78h] [ebp-ACh] BYREF
+  int v188; // [esp+7Ch] [ebp-A8h]
+  int v189; // [esp+80h] [ebp-A4h]
+  int v190; // [esp+84h] [ebp-A0h]
+  CellClass *v191; // [esp+88h] [ebp-9Ch] BYREF
+  CellClass *v192; // [esp+8Ch] [ebp-98h]
+  int16_t v193[2]; // [esp+90h] [ebp-94h] BYREF
+  int v194; // [esp+94h] [ebp-90h] BYREF
+  int v196; // [esp+9Ch] [ebp-88h]
+  int v197; // [esp+A0h] [ebp-84h]
+  uint64_t v198; // [esp+A4h] [ebp-80h] BYREF
+  int v199; // [esp+ACh] [ebp-78h]
+  int v200; // [esp+B0h] [ebp-74h] BYREF
+  int v201; // [esp+B4h] [ebp-70h]
+  int v202; // [esp+B8h] [ebp-6Ch]
+  int16_t v203[2]; // [esp+BCh] [ebp-68h] BYREF
+  int v204; // [esp+C0h] [ebp-64h]
+  int v205; // [esp+C4h] [ebp-60h]
+  char *v206; // [esp+C8h] [ebp-5Ch]
+  int v207; // [esp+CCh] [ebp-58h] BYREF
+  int v208; // [esp+D0h] [ebp-54h]
+  int v209; // [esp+D4h] [ebp-50h]
+  unsigned int v210; // [esp+D8h] [ebp-4Ch]
+  int v211; // [esp+DCh] [ebp-48h] BYREF
+  int v212; // [esp+E0h] [ebp-44h]
+  int v213; // [esp+E4h] [ebp-40h]
+  uint64_t v214; // [esp+E8h] [ebp-3Ch] BYREF
+  int v215; // [esp+F0h] [ebp-34h]
+  unsigned int v216[3]; // [esp+F4h] [ebp-30h] BYREF
+  int v217; // [esp+100h] [ebp-24h] BYREF
+  int v218; // [esp+104h] [ebp-20h]
+  int v219; // [esp+108h] [ebp-1Ch]
+  unsigned int v220[4]; // [esp+10Ch] [ebp-18h] BYREF
+  int v221; // [esp+11Ch] [ebp-8h]
+  int v222; // [esp+120h] [ebp-4h]
 }
 } // namespace gamemd
 
@@ -231,7 +402,183 @@ int WalkLocomotion::Update(unsigned char * a2, int a3, int a4, void *a4_2)
   int ClosestObject; // eax
   unsigned int *v46; // eax
   unsigned int *v47; // eax
-  unsigned int *v48; //... [57624 chars total]
+  int64_t v52; // rax
+  unsigned int *v53; // ecx
+  int v54; // eax
+  int v55; // eax
+  unsigned int *v56; // ecx
+  unsigned int *v57; // eax
+  int v58; // kr10_4
+  int v59; // edx
+  int16_t v60; // cx
+  unsigned char *v61; // ecx
+  int v62; // esi
+  void *v63; // eax
+  int v64; // eax
+  int v65; // eax
+  unsigned int *v66; // esi
+  unsigned int *v67; // ecx
+  int v68; // edi
+  int v69; // eax
+  int v70; // eax
+  unsigned int *v71; // eax
+  unsigned int *v72; // eax
+  unsigned int *v73; // ecx
+  int64_t v74; // rax
+  unsigned int *v75; // ecx
+  unsigned int *v76; // ecx
+  int64_t v77; // rax
+  int *v78; // eax
+  int v79; // edx
+  int v80; // eax
+  char *v81; // eax
+  int v82; // ecx
+  int v83; // edi
+  unsigned int *v84; // eax
+  unsigned int *v85; // eax
+  int v86; // ecx
+  int v87; // edx
+  unsigned int *v88; // eax
+  int v89; // ecx
+  unsigned int *v90; // esi
+  int v91; // eax
+  int v92; // ecx
+  int v93; // eax
+  int v94; // edx
+  int v95; // esi
+  int v96; // edx
+  unsigned int *v97; // ebx
+  int v98; // eax
+  int v99; // eax
+  unsigned int *v100; // edx
+  int v101; // ecx
+  int v102; // ecx
+  int v103; // edi
+  int v104; // esi
+  int v105; // eax
+  int v106; // edx
+  int v107; // eax
+  char v108; // bl
+  unsigned int *v109; // ecx
+  unsigned int *v110; // edx
+  wchar_t *v111; // eax
+  unsigned int *v112; // eax
+  unsigned int *v113; // eax
+  int v114; // edx
+  int v115; // eax
+  double v116; // st7
+  unsigned int *v117; // ecx
+  int64_t v118; // rax
+  unsigned int *v119; // ecx
+  unsigned int *v120; // edx
+  int v121; // esi
+  int v122; // ecx
+  unsigned int *v123; // eax
+  unsigned int *v124; // eax
+  char v125; // al
+  int v126; // ecx
+  wchar_t *v127; // esi
+  wchar_t *v128; // eax
+  wchar_t *v129; // ecx
+  wchar_t **v130; // edx
+  unsigned int *v131; // eax
+  unsigned int *v132; // eax
+  int Object; // eax
+  int *v134; // ecx
+  int v135; // esi
+  unsigned int *v136; // eax
+  int v137; // eax
+  int v138; // esi
+  void *v139; // eax
+  unsigned int *v140; // eax
+  int v142; // esi
+  unsigned int *v143; // edx
+  int v144; // edi
+  bool v145; // cc
+  double v146; // st7
+  double v148; // st7
+  unsigned char v149; // c0
+  unsigned char v150; // c3
+  double *v151; // ecx
+  int v152; // ecx
+  unsigned int *v153; // ecx
+  unsigned int v154; // esi
+  unsigned int *v155; // eax
+  int v156; // edi
+  int v157; // ecx
+  int v158; // edx
+  int v159; // eax
+  int v160; // ecx
+  double v161; // st7
+  char v162; // dl
+  int v163; // ecx
+  int v164; // ecx
+  unsigned int *NeighbourContent; // eax
+  int v166; // eax
+  int v167; // eax
+  unsigned int v168; // eax
+  unsigned int *v169; // eax
+  int v170; // eax
+  int v171; // esi
+  int *v172; // edi
+  int v173; // eax
+  int v174; // ecx
+  int v175; // edi
+  void *v176; // eax
+  int v177; // ebx
+  unsigned int *v178; // ecx
+  unsigned int *v179; // eax
+  int v180; // edi
+  unsigned int *v181; // ecx
+  int v182; // edx
+  int v183; // eax
+  int v184; // eax
+  double v185; // st7
+  unsigned int *v186; // ecx
+  int64_t v187; // rax
+  unsigned int *v188; // ecx
+  unsigned int *v189; // ecx
+  unsigned int *v190; // edx
+  int v191; // edi
+  int64_t v192; // rax
+  unsigned int *v193; // eax
+  unsigned char *v194; // edx
+  int *v195; // esi
+  int v196; // edx
+  int v197; // eax
+  int v198; // ecx
+  int v199; // ecx
+  int v200; // edx
+  bool v201; // zf
+  int v202; // eax
+  unsigned int *v203; // eax
+  int v204; // ecx
+  int v205; // [esp+70h] [ebp-6Ch]
+  int LandHeight; // [esp+74h] [ebp-68h]
+  int v207; // [esp+74h] [ebp-68h]
+  unsigned char *v208; // [esp+74h] [ebp-68h]
+  int v209; // [esp+74h] [ebp-68h]
+  char v210; // [esp+7Ch] [ebp-60h]
+  int v211; // [esp+7Ch] [ebp-60h]
+  int v212; // [esp+7Ch] [ebp-60h]
+  int v213; // [esp+80h] [ebp-5Ch]
+  char v214; // [esp+93h] [ebp-49h]
+  int v215; // [esp+94h] [ebp-48h] BYREF
+  double v216; // [esp+98h] [ebp-44h] BYREF
+  int v217; // [esp+A0h] [ebp-3Ch]
+  int v218; // [esp+A4h] [ebp-38h] BYREF
+  int v219; // [esp+A8h] [ebp-34h] BYREF
+  unsigned int *v220; // [esp+ACh] [ebp-30h] BYREF
+  int v221; // [esp+B0h] [ebp-2Ch]
+  int v222; // [esp+B4h] [ebp-28h]
+  int v223; // [esp+B8h] [ebp-24h] BYREF
+  int v224; // [esp+BCh] [ebp-20h]
+  int v225; // [esp+C0h] [ebp-1Ch]
+  unsigned int *v226; // [esp+C4h] [ebp-18h] BYREF
+  wchar_t *v227; // [esp+C8h] [ebp-14h]
+  int v228; // [esp+CCh] [ebp-10h]
+  int v229; // [esp+D0h] [ebp-Ch] BYREF
+  wchar_t *v230; // [esp+D4h] [ebp-8h]
 }
 
 } // namespace gamemd

@@ -40,6 +40,9 @@
 #include "e4/classes/FacingClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GadgetGrid_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int initDropshipData(...); }
+namespace gamemd { int InitStatArray(...); }
 
 // 0x43B5E0
 namespace gamemd {
@@ -639,7 +642,7 @@ int HouseClass::Construct(int a2)
          &dword_B0F654 + g_BuildingLoadQueue_Array.BuildCat[0],
          0) )
   {
-    v13 = &dword_B0F650++; /*0x4f5ef9*/
+    v13 = dword_B0F650++; /*0x4f5ef9*/
     *(unsigned int *)(*(unsigned int *)&dword_B0F644+ 4 * v13) = (unsigned int)this;
   }
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 7)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 5)) /*0x4f5f3f*/
@@ -1276,7 +1279,102 @@ AbstractClass * * HouseClass::SaveLoad_Prefix(int a1, LPSTREAM pStm)
   int v40; // edx
   int v41; // eax
   int m; // ebp
-  int ... [68169 chars total]
+  // w15f4: v3-export truncated tail (RHS lost): int ... ...
+  // live body via get_context/0x503040 — w15f4 regrafted decls only
+  int v43; // eax
+  int v44; // eax
+  int repairStationsCapacity; // ecx
+  int grindersCapacity; // eax
+  int grindersCount; // eax
+  int repairStationsCount; // edx
+  int v49; // eax
+  int v50; // eax
+  int absorbersCapacity; // ecx
+  int bunkersCapacity; // eax
+  int bunkersCount; // eax
+  int absorbersCount; // edx
+  int v55; // eax
+  int v56; // eax
+  int occupiablesCapacity; // ecx
+  int cloningVatsCapacity; // eax
+  int cloningVatsCount; // eax
+  int occupiablesCount; // edx
+  int v61; // eax
+  int v62; // eax
+  int secretLabsCapacity; // ecx
+  int psychicDetectionCapacity; // eax
+  int psychicDetectionCount; // eax
+  int secretLabsCount; // edx
+  int v67; // eax
+  int v68; // eax
+  int productionFactory_plants_capacity; // ecx
+  int countWarfactories; // eax
+  int countResourceDestinations; // eax
+  int productionFactory_plants_count; // edx
+  int v73; // eax
+  int v74; // eax
+  int v75; // ecx
+  int aiDifficulty; // eax
+  int startingUnitsCapacity; // eax
+  int unitsSelfHeal; // edx
+  int v79; // eax
+  int v80; // eax
+  int v81; // ecx
+  int v82; // eax
+  int v83; // eax
+  int v84; // edx
+  int v85; // eax
+  int v86; // eax
+  int v87; // ecx
+  int v88; // eax
+  int v89; // eax
+  int v90; // edx
+  int v91; // eax
+  int v92; // eax
+  int v93; // ecx
+  int v94; // eax
+  int v95; // eax
+  int v96; // edx
+  int v97; // eax
+  int v98; // eax
+  int altAllies; // ecx
+  int v100; // eax
+  int startingEdge; // eax
+  int techLevel; // edx
+  int v103; // eax
+  int v104; // eax
+  int v105; // ecx
+  int v106; // eax
+  int v107; // eax
+  int v108; // edx
+  int v109; // eax
+  int v110; // ebp
+  int v111; // eax
+  int v112; // ecx
+  int v113; // eax
+  int v114; // eax
+  int v115; // edx
+  int n; // ebp
+  int ii; // ebp
+  int jj; // ebp
+  int kk; // ebp
+  int mm; // ebp
+  int nn; // ebp
+  int i1; // ebp
+  int i2; // ebp
+  int i3; // ebp
+  int i4; // ebp
+  int i5; // ebp
+  int i6; // ebp
+  int i7; // ebp
+  int i8; // ebp
+  int v130; // eax
+  int v131; // [esp+2A4h] [ebp-24h]
+  int v132; // [esp+2A4h] [ebp-24h]
+  int v133; // [esp+2B8h] [ebp-10h] BYREF
+  int v134; // [esp+2BCh] [ebp-Ch] BYREF
+  int v135; // [esp+2C0h] [ebp-8h]
+  int v136; // [esp+2C4h] [ebp-4h] BYREF
 }
 
 

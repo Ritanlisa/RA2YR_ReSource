@@ -93,7 +93,7 @@ int sub_785EA0()
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x785ec0*/
   {
     v1 = (unsigned int)(&dword_B76688); /*0x785ec6*/
-    for ( i = 0; i < &dword_B76688; v1 = &dword_B76688 ) /*0x785ecf*/
+    for ( i = 0; i < dword_B76688; v1 = &dword_B76688 ) /*0x785ecf*/
     {
       v3 = *(ObjectClass **)(dword_B76680+ 4 * i); /*0x785ed6*/
       while ( v3 ) /*0x785edb*/
