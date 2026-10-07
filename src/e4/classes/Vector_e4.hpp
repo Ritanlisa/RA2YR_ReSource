@@ -27,7 +27,8 @@ struct Vector {
     unsigned int u32_24;
     // dup-member: unsigned int HasCapacity;
     unsigned int Math_Vector2D_Magnitude;
-    void* Cl;  // 0x0 (no offset truth)
+    void* Cl_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon Vector::Cl is a method)
+    static unsigned int Cl(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     int Cleanup();  // 0x512D30
     int Destructor();  // 0x513100

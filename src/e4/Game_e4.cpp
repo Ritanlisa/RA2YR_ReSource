@@ -212,6 +212,11 @@
 #include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GameState_e4.hpp"  // G42.36 C2027 supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int Thunk(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int AllocateRenderSurface(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace BinkMovieClass { int AllocateRenderSurface(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int ConvertWrapper(...); }
 namespace gamemd { int setOverlayType(...); }
@@ -1524,7 +1529,7 @@ v12 = (*(int (**)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pa
 
 
 
-                                return (CellStruct * *)v12 >= 0 ? 0 : v12;
+                                return (CellStruct * *)(v12 >= 0 ? 0 : v12);
                               }
                             }
                           }

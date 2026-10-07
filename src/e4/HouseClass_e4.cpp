@@ -625,8 +625,8 @@ int HouseClass::Construct(int a2)
     *((char *)this + 22549) = *(unsigned int *)(v11 + 192); /*0x4f5e60*/
   if ( dword_B0F680< dword_B0F678/*0x4f5e99*/
     || (BYTE1(byte_B0F67C) || !dword_B0F678)
-    && &dword_B0F684 > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), &dword_B0F684 + dword_B0F678, 0) )
+    && (int)dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), (int)dword_B0F684 + dword_B0F678, 0) )
 
 
 
@@ -636,10 +636,10 @@ int HouseClass::Construct(int a2)
   }
   if ( &dword_B0F650 < g_BuildingLoadQueue_Array.BuildCat[0] /*0x4f5eec*/
     || (BYTE1(&byte_B0F64C) || !g_BuildingLoadQueue_Array.BuildCat[0])
-    && &dword_B0F654 > 0
+    && (int)dword_B0F654 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.Buildup[0] + 8))(
          dword_B0F640,
-         &dword_B0F654 + g_BuildingLoadQueue_Array.BuildCat[0],
+         (int)dword_B0F654 + g_BuildingLoadQueue_Array.BuildCat[0],
          0) )
   {
     v13 = dword_B0F650++; /*0x4f5ef9*/
@@ -682,7 +682,7 @@ int HouseClass::Construct(int a2)
   if ( a2 ) /*0x4f6013*/
   {
     v62 = 0; /*0x4f601e*/
-    if ( ((char *)&stru_A80220) > 0 ) /*0x4f6024*/
+    if ( (*(int *)&stru_A80220) > 0 ) /*0x4f6024*/
     {
       LOBYTE(v66) = 0; /*0x4f602a*/
       Destination[4] = 0; /*0x4f602e*/
@@ -752,15 +752,15 @@ int HouseClass::Construct(int a2)
     }
   }
   if ( ((char *)&stru_A80220) < ((char *)&stru_A80220) /*0x4f61d0*/
-    || (BYTE1(((char *)&stru_A80220)) || !((char *)&stru_A80220))
-    &(char *)&stru_A80220 > 0
-    && (*((uint8_t (**)(void **, int, unsigned int))((char *)&stru_A80220) + 2))(
+    || (*(unsigned char *)((char *)&stru_A80220 + 13) || !*(unsigned int *)((char *)&stru_A80220 + 8))
+    && *(unsigned int *)((char *)&stru_A80220 + 20) > 0
+    && (*((uint8_t (**)(void **, int, unsigned int))(*(unsigned int *)&stru_A80220 + 8))(
          (char *)&stru_A80220,
-         ((char *)&stru_A80220) + ((char *)&stru_A80220),
-         0) )
+         *(unsigned int *)((char *)&stru_A80220 + 20) + *(unsigned int *)((char *)&stru_A80220 + 8),
+         0) ) )
   {
-    v43 = ((char *)&stru_A80220)++; /*0x4f61dd*/
-    *((unsigned int *)((char *)&stru_A80220) + v43) = this; /*0x4f61ec*/
+    v43 = (*(unsigned int *)((char *)&stru_A80220 + 16))++; /*0x4f61dd*/
+    *(unsigned int *)(*(unsigned int *)((char *)&stru_A80220 + 4) + 4 * v43) = this; /*0x4f61ec*/
   }
   v63 = 0; /*0x4f61fc*/
   memset((char *)this + 5625, 0, 0x10810u); /*0x4f6200*/

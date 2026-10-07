@@ -16,7 +16,8 @@ struct LoadScreen {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned int u32_64;
-    void* Render;  // 0x0 (no offset truth)
+    void* Render_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon LoadScreen::Render is a method)
+    static unsigned int Render(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     int IsActive();
 };

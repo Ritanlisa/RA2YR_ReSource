@@ -248,7 +248,7 @@ CCINIClass::CCINIClass()
   result[15] = 0; /*0x535bb4*/
   *((unsigned char *)result + 64) = 0; /*0x535bb7*/
   *result = (unsigned int)(&CCINIClass_Vtable); /*0x535bba*/
-  return result; /*0x535ba3*/
+  return; /*0x535ba3*/
 
 }
 }

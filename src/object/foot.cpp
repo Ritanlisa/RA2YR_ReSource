@@ -8,6 +8,14 @@
 #include "e4/classes/House_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/MovementAI_e4.hpp"  // g57c5 W5d scope supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Begin(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int CheckAmbiguity(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Update_0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int State(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int House(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int MapClass(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int StartAudioController(...);  // raw 00750D40: VocClass *__fastcall StartAudioController(_DWORD *a1, AudioSource *a2)
@@ -191,7 +199,7 @@ bool FootClass::MovementAI()
     if ( !result ) /*0x4da548*/
       return result; /*0x4da548*/
     this->FootClass_field_bool_6B3 = 0; /*0x4da54e*/
-    if ( !(*(unsigned int * *)((char *)&stru_A8EB00 + 644) % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6152)) /*0x4da593*/
+    if ( !(*(unsigned int *)((char *)&stru_A8EB00 + 644) % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6152)) /*0x4da593*/
       && !*(unsigned char *)((*((int (__thiscall **)(FootClass *))this->vtable1 + 33))(this) + 3383)
       && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vtable1 + 21))(this)
       && !((unsigned int *)this)[0] )
@@ -278,19 +286,19 @@ bool FootClass::MovementAI()
           v14 = (*((int (__thiscall **)(FootClass *))this->vtable1 + 114))(this); /*0x4da784*/
           v15 = v47; /*0x4da78a*/
           ((unsigned int *)this)[0] = v14; /*0x4da78e*/
-          this->sightTimer[0] = *(unsigned int * *)((char *)&stru_A8EB00 + 644); /*0x4da79e*/
+          this->sightTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 644); /*0x4da79e*/
           this->sightTimer[1] = v15; /*0x4da7a4*/
           this->sightTimer[2] = 15; /*0x4da7aa*/
           goto LABEL_25; /*0x4da7aa*/
         }
-        v9 -= *(unsigned int * *)((char *)&stru_A8EB00 + 644) - v8; /*0x4da6e5*/
+        v9 -= *(unsigned int *)((char *)&stru_A8EB00 + 644) - v8; /*0x4da6e5*/
       }
       if ( v9 ) /*0x4da6e9*/
         goto LABEL_25; /*0x4da6e9*/
       goto LABEL_21; /*0x4da6e9*/
     }
   LABEL_25:
-    if ( !(*(unsigned int * *)((char *)&stru_A8EB00 + 644) % 16) /*0x4da7d8*/
+    if ( !(*(unsigned int *)((char *)&stru_A8EB00 + 644) % 16) /*0x4da7d8*/
       && (*((unsigned __int8 (__thiscall **)(FootClass *))this->vtable1 + 21))(this)
       && *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vtable1 + 111))(this) + 60) )
     {

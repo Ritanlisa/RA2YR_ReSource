@@ -10,6 +10,20 @@
 #include "e4/classes/Object_e4.hpp"  // w16g4 C3861 Object:: supply
 #include "e4/classes/Dialog_e4.hpp"  // w16g4 C3861 Dialog:: supply
 #include "e4/classes/GadgetClass_e4.hpp"  // w16g4 C3861 GadgetClass:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Hash_Compute(_DWORD *a1, int a2); }  // w18j2 raw 0x0064DE80
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Hash_Compute(_DWORD *a1, int a2); }  // w18j2 raw 0x0064DE80
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Hash_Compute(_DWORD *a1, int a2); }  // w18j2 raw 0x0064DE80
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Rebuild(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int OrFree(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Hash_Compute(_DWORD *a1, int a2); }  // w18j2 raw 0x0064DE80
+namespace gamemd { int Rebuild2(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Alt(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace HashTable { int Rebuild2(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace HashTable { int ComputeHash(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int DrawDialogGradient(...); }  // w16g4 raw call-form
 namespace gamemd { int PrintFontLayout(...); }  // w16g4 raw call-form
@@ -410,7 +424,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  
       {
         if ( dword_A8DA84 ) /*0x5e2035*/
         {
-          *(unsigned int *)(*dword_A8DA78 + 119) = 1; /*0x5e204d*/
+          *(unsigned int *)(*(unsigned int *)dword_A8DA78 + 119) = 1; /*0x5e204d*/
           sprintf(Buffer,(const char *const)(g_INI_Key_A1)); /*0x5e2054*/
           Network_SendOptionsGame(Buffer); /*0x5e2060*/
           EnablePlayerSlotControls((HWND)this, 0); /*0x5e206d*/
@@ -728,7 +742,7 @@ int GameOptions::SaveLoad(int a2)
     v2 = (int)a2; /*0x6812e4*/
     if ( !a2 ) /*0x6812ec*/
       return -2147467261; /*0x6812f7*/
-    v5 = (int (__stdcall **)(int, void *, int **))*a2; /*0x6812fa*/
+    v5 = (int (__stdcall **)(int, void *, int **))*(unsigned int *)a2; /*0x6812fa*/
     a2 = 0; /*0x681307*/
     if ( (*v5)( v2, &unk_7F7D00, (int **)(&a2) ) >= 0 ) /*0x681313*/
     {
@@ -792,7 +806,7 @@ int GameOptions::SaveLoad(int a2)
       if ( v7 < 0 ) /*0x6814d8*/
       {
         if ( a2 ) /*0x6814e0*/
-          (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x6814e5*/
+          (*(void (__stdcall **)(int *))(*(unsigned int *)a2 + 8))( (int *)(a2) ); /*0x6814e5*/
         return v7; /*0x6814ee*/
       }
       String = ReadStringCOM(a2, 8, (LPCCH)(this + 660)); /*0x681500*/
@@ -884,7 +898,7 @@ int GameOptions::SaveLoad(int a2)
     if ( v8 < 0 ) /*0x68175e*/
     {
       if ( a2 ) /*0x681766*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x68176b*/
+        (*(void (__stdcall **)(int *))(*(unsigned int *)a2 + 8))( (int *)(a2) ); /*0x68176b*/
       return v8; /*0x681774*/
     }
     String = WriteStringCOM(v2, 8, (LPCCH)(this + 660)); /*0x681782*/
@@ -900,7 +914,7 @@ int GameOptions::SaveLoad(int a2)
       if ( a2 ) /*0x6817bc*/
       {
   LABEL_77:
-        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x6817be*/
+        (*(void (__stdcall **)(int *))(*(unsigned int *)a2 + 8))( (int *)(a2) ); /*0x6817be*/
         return String; /*0x6817ca*/
       }
       return String; /*0x6817bc*/
@@ -909,20 +923,20 @@ int GameOptions::SaveLoad(int a2)
     if ( String < 0 ) /*0x6817e2*/
     {
       if ( a2 ) /*0x6817ea*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x6817ef*/
+        (*(void (__stdcall **)(int *))(*(unsigned int *)a2 + 8))( (int *)(a2) ); /*0x6817ef*/
       return String; /*0x6817f8*/
     }
     Bool = PropertyReadBoolCOM(v2, 102, *(unsigned int *)(this + 1008)); /*0x68180c*/
     if ( Bool >= 0 ) /*0x681814*/
     {
       if ( a2 ) /*0x68182b*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x681830*/
+        (*(void (__stdcall **)(int *))(*(unsigned int *)a2 + 8))( (int *)(a2) ); /*0x681830*/
       return 0; /*0x681836*/
     }
     else
     {
       if ( a2 ) /*0x681818*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x68181d*/
+        (*(void (__stdcall **)(int *))(*(unsigned int *)a2 + 8))( (int *)(a2) ); /*0x68181d*/
       return Bool; /*0x681820*/
     }
 }

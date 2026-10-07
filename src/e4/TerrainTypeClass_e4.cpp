@@ -99,8 +99,8 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   ((unsigned int *)this)[0] = (unsigned int)(&vt_IsometricTileTypeClass); /*0x5448dd*/
   if ( dword_B0F680< dword_B0F678/*0x544917*/
     || (BYTE1(byte_B0F67C) || !dword_B0F678)
-    && &dword_B0F684 > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
+    && (int)dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ (int)dword_B0F684, 0) )
 
 
 
@@ -216,7 +216,7 @@ LABEL_11:
   this->ArrayIndex = v5; /*0x71dba6*/
   ((unsigned int *)this)[0] = -1; /*0x71dbac*/
   ((unsigned int *)this)[0] = 6; /*0x71dbb6*/
-  return this; /*0x71dbc2*/
+  return; /*0x71dbc2*/
 
 }
 }  // G42.18c ns repair

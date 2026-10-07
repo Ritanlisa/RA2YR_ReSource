@@ -23,7 +23,8 @@ struct LoadOptions {
     unsigned int count;  // 0x1C
     unsigned int q024;  // 0x24
     unsigned char q02C;  // 0x2C
-    unsigned int GetFlag252;
+    unsigned int GetFlag252_ph;  // w18j3: filler renamed (no offset truth; canon LoadOptions::GetFlag252 is a method)
+    static unsigned int GetFlag252(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned int GetFlag98;
     unsigned int GetFlag99;
     unsigned int *__pad_0;

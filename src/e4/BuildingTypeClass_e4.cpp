@@ -1291,7 +1291,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
   int v14; // [esp+3Ch] [ebp+8h] BYREF
 
   v1 = v13; /*0x465016*/
-  if ( v13[1].Weapon[210] && v13[1].vtable2 ) /*0x465025*/
+  if ( ((unsigned int *)&v13[1].Weapon)[210] && *(unsigned int *)&v13[1].vtable2 ) /*0x465025*/
   {
     __3_YAXPAX_Z((void *)v13[1].vtable2); /*0x465030*/
     v1[1].vtable2 = 0; /*0x465038*/
@@ -1445,7 +1445,7 @@ LABEL_6:
 } // namespace gamemd
 // 0x465AF0
 namespace gamemd {
-void BuildingTypeClass::IsPowered()
+int BuildingTypeClass::BuildingTypeClass::IsPowered()
 {
 
   int result; // eax
@@ -1727,8 +1727,8 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   }
   if ( dword_B0F680< dword_B0F678/*0x644d96*/
     || (BYTE1(byte_B0F67C) || !dword_B0F678)
-    && &dword_B0F684 > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
+    && (int)dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ (int)dword_B0F684, 0) )
 
 
 

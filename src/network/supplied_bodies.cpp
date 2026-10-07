@@ -563,7 +563,7 @@ int IPXManagerClass::ProcessQueue()
 
 // 0x542EC0
 namespace gamemd {
-void IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
+int IPXManagerClass::IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
 {
     int v3; // edi
     IPXManagerClass *v4; // ebx
@@ -868,7 +868,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
           return 0; /*0x560722*/
         }
         if ( dword_887628 ) /*0x5605de*/
-          (*(void (__thiscall **)(unsigned int *, int))*dword_887628)( (unsigned int *)(dword_887628), 1 ); /*0x5605e4*/
+          (*(void (__thiscall **)(unsigned int *, int))*(unsigned int *)dword_887628)( (unsigned int *)(dword_887628), 1 ); /*0x5605e4*/
       }
       dword_887628 = 0; /*0x5605e6*/
       goto LABEL_20; /*0x5605e6*/

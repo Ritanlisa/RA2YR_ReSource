@@ -16,7 +16,7 @@ struct FogOfWar {
     void* ptr_1220;
 // --- flat members (END) ---
     void RevealCell(unsigned int *a2);  // G57w10-S raw 0x006562D0 IUnknown 占位清除
-    MapClass * * RevealArea(int *a2, int aP1, int a1);
+    MapClass * * RevealArea(int *a2, int *aP1, int a1);
     int RenderCell();
     int Render();  // 0x657ce0
 };

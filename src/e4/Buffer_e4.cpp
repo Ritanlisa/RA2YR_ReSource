@@ -178,7 +178,7 @@ result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)this->B
       v29 -= this->Buffer_field_20; /*0x7bcd36*/
     v30 = v29 - v28; /*0x7bcd3f*/
     this->Buffer_field_10 = v29 - v28; /*0x7bcd43*/
-    if ( aP2 >= 0 ) /*0x7bcd46*/
+    if ( (int)aP2 >= 0 ) /*0x7bcd46*/
     {
       v44 = *((unsigned int *)this + 11); /*0x7bce1d*/
       if ( v58 >= (gamemd::MouseClass *)(v44) ) /*0x7bce26*/
@@ -232,7 +232,7 @@ LABEL_55:
     }
     else
     {
-      if ( v27 >= 0 ) /*0x7bcd50*/
+      if ( (int)v27 >= 0 ) /*0x7bcd50*/
       {
         v39 = Buffer_field_10 - v30; /*0x7bcdd7*/
         v40 = (uint16_t *)v29; /*0x7bcdd9*/

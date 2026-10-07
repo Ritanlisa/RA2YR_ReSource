@@ -34,6 +34,28 @@
 #include "e4/classes/Color_e4.hpp"  // w16g4 C3861 Color:: supply
 #include "e4/classes/Char_e4.hpp"  // w16g4 C3861 Char:: supply
 #include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, _DWORD *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
+namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
+namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, _DWORD *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
+namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
+namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { char RenderBuildingTag(int int a2, int a3, int a4, int a5, int a6); }  // w18j2 raw 0x00430250
+namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, _DWORD *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
+namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
+namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, _DWORD *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
+namespace gamemd { int AddMessage(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
+namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { wchar_t * CSF_GetString(wchar_t *Format, _DWORD *a2, const char *a3, int a4); }  // w18j2 raw 0x00734E60
+namespace gamemd { int VocClass_Play(int a1, int a2, float a3, int a4); }  // w18j2 raw 0x00750920
+namespace gamemd { char * WideString_ToChar(char *a1); }  // w18j2 raw 0x007350C0
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int OleRun(...); }  // w16g4 raw call-form
 namespace gamemd { int ClipRectIntersection(...); }  // w16g4 raw call-form
@@ -1139,7 +1161,7 @@ double Gap2Recv_429830::ComputeMovementWeight(int *a2, _DWORD *a3, char a4, int 
         }
         else
         {
-          v11 = ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)(v9 + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x4298dc*/
+          v11 = ((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((unsigned short *)(v9 + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x4298dc*/
         }
         v12 = (unsigned short *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)v9 + 440))(v9, v27); /*0x4298e8*/
         v13 = v11 & 7; /*0x4298f1*/
@@ -1384,7 +1406,7 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
     v53 = this; /*0x42b7f6*/
     v3 = (unsigned int *)a2; /*0x42b7fb*/
     v4 = (unsigned int *)a2[3]; /*0x42b808*/
-    v5 = *a2; /*0x42b80b*/
+    v5 = *(unsigned int *)a2; /*0x42b80b*/
     v6 = a2[5]; /*0x42b80d*/
     v7 = 0; /*0x42b811*/
     v8 = 0; /*0x42b813*/
@@ -1634,11 +1656,11 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
         v3 = *(unsigned __int16 *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 2 * nextArrayIndex); /*0x42e1fe*/
       v28 = v3; /*0x42e20a*/
       v4 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x42e20e*/
-      v5 = Rect::Set(&v34, (int)this->AbstractClass, (int)this->q058, (int)this->q058, (int)this->q058); /*0x42e21d*/
+      v5 = v34.Set((int)this->AbstractClass_v, (int)this->fallRate, (int)this->nextObject, (int)this->q028); /*0x42e21d (G57w18j4: thiscall rect-in-ecx lea [esp+44h+var_10]; machine args [esi+0/4/8], arg4 stale-reg garbage - no 0x58 access exists)*/
       (*(void (__thiscall **)(AudioStream *, unsigned int *, int))(v4 + 88))((gamemd::AudioStream *)(g_DSurface_Hidden_2), v5, v28); /*0x42e229*/
     }
     vtable2 = (char *)this->nextObject; /*0x42e22f*/
-    vtable3 = (char *)this->vtable4; /*0x42e237*/
+    vtable3 = (char *)this->occupant; /*0x42e237 (G57w18j4: machine [esi+0Ch] = occupant)*/
     vtable1 = (char *)this->occupant; /*0x42e23a*/
     v8 = vtable2; /*0x42e23e*/
     vtable0 = (char *)this->AbstractClass; /*0x42e240*/
@@ -1708,7 +1730,7 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
     }
     if ( v18 - v11 > 0 ) /*0x42e33d*/
     {
-      if ( (int)this->vtable3 <= (int)this->occupant ) /*0x42e34b*/
+      if ( (int)this->nextObject <= (int)this->occupant ) /*0x42e34b (G57w18j4: machine [esi+8] vs [esi+0Ch])*/
       {
         abstractFlags = this->vtable1; /*0x42e39e*/
         if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x42e3a5*/
@@ -1737,11 +1759,11 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
       }
     }
     (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40)(stru_887598.lineTrailer); /*0x42e3f4*/
-    result = (int)this->NeedsSaveOrLink; /*0x42e3f7*/
-    occupant = this->occupant; /*0x42e3fa*/
-    this->owningHouseIndex = result; /*0x42e3fd*/
-    this->fallRate = occupant; /*0x42e400*/
-    IDA_LOBYTE(this->nextObject) = 1; /*0x42e403*/
+    result = IDA_LODWORD(this->NeedsSaveOrLink); /*0x42e3f7 (G57w18j4: machine mov eax,[esi+20h] low-dword load)*/
+    occupant = IDA_HIDWORD(this->NeedsSaveOrLink); /*0x42e3fa (machine mov ecx,[esi+24h] = high dword of qword @0x20)*/
+    this->q028 = result; /*0x42e3fd*/
+    this->q02C = occupant; /*0x42e400*/
+    this->q030 = 1; /*0x42e403*/
     return result; /*0x42e407*/
 }
 } // namespace gamemd
@@ -2008,7 +2030,7 @@ void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6)
         VoxClass::FindAndPlay((VoxClass *)&stru_818A68.YuriVoice[8], -1); /*0x430d78*/
         PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 460), 0x2000, 1.0, 0); /*0x430d94*/
         v24 = 32; /*0x430d9f*/
-        strcpy(v25, ToWideStringChar((char *)*dword_A8DA78)); /*0x430dcf*/
+        strcpy(v25, ToWideStringChar((char *)*(unsigned int *)dword_A8DA78)); /*0x430dcf*/
         v29 = a6; /*0x430de6*/
         v17 = 1; /*0x430def*/
         v26 = a3; /*0x430df6*/

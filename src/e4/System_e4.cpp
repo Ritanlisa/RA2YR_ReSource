@@ -340,7 +340,7 @@ int sub_7C8F46()
 }
 // 0x7A2EA0
 namespace gamemd {
-int sub_7A2EA0(int (__stdcall ***)(unsigned int, void *, int *), int a2, int a3, int a4)
+int sub_7A2EA0(int (__stdcall ***a1)(_DWORD, void *, int *), int a2, int a3, int a4)
 {
   int (__stdcall **v4)(unsigned int, void *, int *); // ecx
   int v5; // esi

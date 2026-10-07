@@ -448,7 +448,7 @@ XSurface * * XSurface::FillRectEx(unsigned int *a2, int *a3, int a4)
   v4 = (gamemd::XSurface *)((int *)(this));
   v5 = (int *)(a3[2]);
   v55 = (gamemd::XSurface *)((int *)(this));
-  if ( v5 <= 0 ) /*0x7bb066*/
+  if ( (int)v5 <= 0 ) /*0x7bb066*/
     return 0; /*0x7bb066*/
   if ( a3[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/

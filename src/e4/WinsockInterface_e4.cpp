@@ -180,6 +180,8 @@
 #include "e4/classes/WonlineStringDialogControl_28_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int sub_7719E0(...); }  // w18j2 raw call-form (variadic last resort)
 
 // 0x770270
 namespace gamemd {

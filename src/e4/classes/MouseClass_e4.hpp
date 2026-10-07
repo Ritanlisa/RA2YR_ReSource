@@ -122,7 +122,8 @@ struct MouseClass {
     unsigned int _ptr;
     unsigned int field_0;
     unsigned int *__pad_74;
-    void* HandleClick;  // 0x0 (no offset truth)
+    void* HandleClick_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon MouseClass::HandleClick is a method)
+    static unsigned int HandleClick(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     char LoadCursors();
     char ToggleContextGadget(int a1, int a2);

@@ -141,7 +141,8 @@ struct ScenarioClass {
     unsigned int __pad_628;
     unsigned int Timer;
 
-    void* LoadMap;  // 0x0 (no offset truth)
+    void* LoadMap_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ScenarioClass::LoadMap is a method)
+    static unsigned int LoadMap(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     static ScenarioClass * * CopyStartPositions(void *a1);
@@ -206,6 +207,8 @@ struct ScenarioClass {
     char * SetFileName(char *Source); // N_fix R5 supply (cache truth)
     int LoadScenarioAndStart(char *Source, char a2, double a3, int aP1, void * a4);
     MSAnim * checkWinningConditions(unsigned int * Block, char a2);
+
+    static int ReadWaypoints(...);  // w18j2 C3861 static supply
 };
 
 } // namespace gamemd

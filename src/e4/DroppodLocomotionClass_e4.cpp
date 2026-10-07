@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/DropPodLocomotionClass_e4.hpp"  // G57w18j4: carrier-first (full carrier wins GAMEMD_E4_FLAT guard before e4_globals pulls minimal twin)
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Function_e4.hpp"
 #include "e4/classes/DroppodLocomotionClass_e4.hpp"
@@ -37,7 +38,7 @@ extern const IID IID_ILocomotion;  // data: 0x7ed358 truth(IDA G42.57w9)
 
 // 0x4B5B70
 namespace gamemd {
-int DroppodLocomotionClass::ILoco_Process(int a1)
+int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
 {
 
   double v1; // st7
@@ -235,7 +236,9 @@ int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4b6206*/
     return -2147467261; /*0x4b6208*/
-  *(IID *)a2 = (unsigned int)g_CLSID_DriveLocomotion; /*0x4b6216*/
+  a2[0] = *(unsigned int *)&g_CLSID_DriveLocomotion[0]; /*0x4b6216*/
+  a2[1] = *(unsigned int *)&g_CLSID_DriveLocomotion[4]; /*0x4b621e*/
+  a2[2] = *(unsigned int *)&g_CLSID_DriveLocomotion[8]; /*0x4b6227*/
   a2[3] = unk_7E9A7C; /*0x4b6230*/
   return 0; /*0x4b620d*/
 
@@ -243,7 +246,7 @@ int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
 }  // G42.18c ns repair
 // 0x4B6240
 namespace gamemd {  // G42.18c ns repair
-HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
+HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pStm)
 {
 
   int *v2; // edi
@@ -258,8 +261,8 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4b625a*/
   {
     a1->Piggybackee = 0; /*0x4b625c*/
-    *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_DropPodLocomotionClass;
-    *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_DropPodLocomotionClass;
+    *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_DropPodLocomotionClass_3; /*0x4b6263*/
+    *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_DropPodLocomotionClass_2; /*0x4b6269*/
     *(unsigned int *)a1->__pad_18 = (unsigned int)&vt_DropPodLocomotionClass;
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( (int *)(v2), (int **)(&pStm), 1, 0); /*0x4b6283*/
@@ -276,7 +279,7 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
 }  // G42.18c ns repair
 // 0x4B62C0
 namespace gamemd {  // G42.18c ns repair
-HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
+HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int * pPStm, int a3)
 {
 
   IStream *v3; // esi
@@ -291,7 +294,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
 
   v3 = (IStream *)pPStm; /*0x4b62c5*/
   v4 = (gamemd::DropPodLocomotionClass *)(a1); /*0x4b62ca*/
-  result = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4b62d1*/
+  result = LoadIPersistStream((gamemd::LocomotionClass *)a1, pPStm, a3); /*0x4b62d1*/
   if ( result >= 0 ) /*0x4b62d8*/
   {
     if ( v4->Piggybackee ) /*0x4b62de*/
@@ -349,17 +352,17 @@ int DropPodLocomotionClass::StubReturn48()
 }  // G42.18c ns repair
 // 0x4B66F0
 namespace gamemd {
-void * DroppodLocomotionClass::ProcessMove(void ** Block, char a2)
+void * DropPodLocomotionClass::ProcessMove(char a2)
 {
     ILocomotion *Piggybackee; // eax
 
-    *(unsigned int *)this->LocomotionClass = (unsigned int)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f3*/
-    *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f9*/
+    *(unsigned int *)this->LocomotionClass = (unsigned int)(void*)&vt_DropPodLocomotionClass_3; /*0x4b66f3*/
+    *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)(void*)&vt_DropPodLocomotionClass_2; /*0x4b66f9*/
     *(unsigned int *)this->__pad_18 = (unsigned int)(void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
     Piggybackee = this->Piggybackee; /*0x4b6707*/
     if ( Piggybackee ) /*0x4b670c*/
       (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/
-    ((LocomotionClass *)this)->Construct(); /*0x4b6716*/
+    ((gamemd::LocomotionClass *)this)->Construct(); /*0x4b6716*/
     if ( (a2 & 1) != 0 ) /*0x4b6720*/
       RA2_OPDEL(this); /*0x4b6723*/
     return this->LocomotionClass; /*0x4b672d*/

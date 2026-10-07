@@ -39,6 +39,6 @@ struct E4Recv_4B0DF0 {
     unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     unsigned int customSound_controller[5];  // G57w16 G1: til truth (AudioController 20B)
 // --- flat members (END) ---
-    char sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11);
+    char sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11);
 };
 } // namespace gamemd

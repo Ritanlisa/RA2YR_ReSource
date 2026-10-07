@@ -61,7 +61,7 @@ struct Math {
     unsigned int u32_41;
 // --- flat members (END) ---
     int Hypotenuse2D();  // 0x41C350
-   static double Sin(double a1);  // G57w10-S raw 0x4CAD50 (was C2597 interim stub)
+   static int Sin(double a1);  // G57w10-S raw 0x4CAD50; G57w18j4 return int per raw int __cdecl (C2556 vs def)
     static float * BuildRotationMatrix(float * aP1, float * a2, float a3);  // 0x5AE750 G57w15f3: static receiver-first per raw __thiscall (float* this, float* a2, float a3) — was 6-param garbage arity
     int DistSq2D(TechnoClass * aP1);  // 0x5F6560
     unsigned int * QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590

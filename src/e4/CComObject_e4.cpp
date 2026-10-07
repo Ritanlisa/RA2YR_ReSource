@@ -36,6 +36,11 @@
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
+#include "e4/classes/GadgetClass_e4.hpp"  // w18j2 C3861 GadgetClass:: supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int DlgProc(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int TrackState(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -760,9 +765,9 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
             if ( &dword_B76B24 /*0x7a8165*/
               || (IDA_HIBYTE(v23.DeleteAndZero_field_0x08) = IDA_BYTE1(dword_B76B30) & 1, (dword_B76B30& 0x100) != 0) )
             {
-              if ( *(unsigned int *)(*dword_A8DA78 + 119) ) /*0x7a816f*/
+              if ( *(unsigned int *)(*(unsigned int *)dword_A8DA78 + 119) ) /*0x7a816f*/
               {
-                *(unsigned int *)(*dword_A8DA78 + 119) = 0; /*0x7a817b*/
+                *(unsigned int *)(*(unsigned int *)dword_A8DA78 + 119) = 0; /*0x7a817b*/
                 ((Network *)(aA0))->SendOptionsGame(); /*0x7a8182*/
                 DlgItem = GetDlgItem(Current, 1439); /*0x7a818f*/
                 EnableWindow(DlgItem, 0); /*0x7a8196*/
@@ -918,7 +923,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
 }
 // 0x7A8FC0
 namespace gamemd {
-AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_17(int a1, int a2, int a3)
+AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_17(int a1, int a2, const char *a3)
 {
     char *v5; // edi
     const char *v6; // esi

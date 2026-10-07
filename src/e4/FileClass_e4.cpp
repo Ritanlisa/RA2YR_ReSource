@@ -251,7 +251,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
       {
 LABEL_20: Handle = (void *)(this->Handle);
         result = (void *)(v8 - (unsigned int)Handle);
-        if ( result >= 0 ) /*0x65cfad*/
+        if ( (int)result >= 0 ) /*0x65cfad*/
           goto LABEL_27; /*0x65cfad*/
         if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65cfb3*/
         {

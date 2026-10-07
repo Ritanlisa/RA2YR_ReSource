@@ -332,7 +332,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
     LOBYTE(this->m_C) = 0; /*0x628bc9*/
     if ( a2 ) /*0x628bcf*/
     {
-      if ( aP1 - 1 >= 0 ) /*0x628c25*/
+      if ( (int)aP1 - 1 >= 0 ) /*0x628c25*/
       {
         v8 = (int)(aP1); /*0x628c27*/
         do /*0x628c38*/
@@ -351,7 +351,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
       if ( v6 ) /*0x628be8*/
       {
         v7 = (Byte *)v6; /*0x628bed*/
-        if ( aP1 - 1 >= 0 ) /*0x628bf1*/
+        if ( (int)aP1 - 1 >= 0 ) /*0x628bf1*/
         {
           v15 = (int)(aP1); /*0x628bf4*/
           do /*0x628c0e*/

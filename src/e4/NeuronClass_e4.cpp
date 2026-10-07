@@ -60,8 +60,8 @@ NeuronClass::NeuronClass()
   }
   if ( dword_B0F680< dword_B0F678/*0x43a41b*/
     || (BYTE1(byte_B0F67C) || !dword_B0F678)
-    && &dword_B0F684 > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
+    && (int)dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ (int)dword_B0F684, 0) )
 
 
 
@@ -69,7 +69,7 @@ NeuronClass::NeuronClass()
     v3 = dword_B0F680++; /*0x43a428*/
     *(unsigned int *)(dword_B0F674+ 4 * v3) = (unsigned int)this;
   }
-  return (int)this->__pad_0; /*0x43a43c*/
+  return; /*0x43a43c*/
 
 }
 }  // G42.18c ns repair

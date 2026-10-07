@@ -40,6 +40,14 @@
 #include "e4/classes/ListBox_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BinkMovie_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/Surface_e4.hpp"  // w18j2 C3861 Surface:: supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { BOOL DestroyDialogChildWindow(HWND hWnd, LPARAM a2); }  // w18j2 raw 0x00610570
+namespace gamemd { int DlgProc(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam); }  // w18j2 raw 0x0061ECA0
+namespace gamemd { int WndProc(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int TileBlit(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int CreateDialog(...); }
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -1719,7 +1727,7 @@ LABEL_22:
 }
 // 0x6137D0
 namespace gamemd {
-AbstractClass * * Dialog_TabControlPaint()
+AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // edi
   int v5; // eax

@@ -979,7 +979,7 @@ unsigned int * MapClass::InitAllCells()
 } // namespace gamemd
 // 0x5673A0
 namespace gamemd {
-int MapClass::RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, char a8, char a9, int aP1, int aP2, int aP3, int aP4, int aP5, int a1)
+int MapClass::RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, char a8, char a9, int *aP1, int aP2, int aP3, int aP4, int aP5, int a1)
 {
 
   double v9; // st7
@@ -1030,10 +1030,10 @@ int MapClass::RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, 
   int *v55; // [esp+60h] [ebp+4h]
   char v56; // [esp+6Ch] [ebp+10h]
 
-  v44 = (&aP1)[2] / g_MissionQueueFrame.briefing[272]; /*0x5673b7*/
+  v44 = aP1[2] / g_MissionQueueFrame.briefing[272]; /*0x5673b7*/
   v51 = (int)(*aP1); /*0x5673bf*/
-  v52 = (int)((&aP1)[1]); /*0x5673c6*/
-  v53 = (int)((&aP1)[2]); /*0x5673cd*/
+  v52 = (int)(aP1[1]); /*0x5673c6*/
+  v53 = (int)(aP1[2]); /*0x5673cd*/
   v11 = ZCoordToScreenY(v53); /*0x5673d1*/
   v51 += (((unsigned int)(((uint64_t)(2004318071LL * v11) >> 32) - v11) >> 31) /*0x5673f8*/
         + ((int)(((uint64_t)(2004318071LL * v11) >> 32) - v11) >> 4)) << 8;
@@ -1044,7 +1044,7 @@ int MapClass::RevealArea0(int *a2, int a3, void *a4, char a5, char a6, char a7, 
   v13 = v51 / 256; /*0x56745e*/
   v45 = v51 / 256; /*0x567467*/
   v46 = v52 / 256; /*0x56746c*/
-  v47[1] = (&aP1)[1] / 256; /*0x567475*/
+  v47[1] = aP1[1] / 256; /*0x567475*/
   v49 = v45 - v47[0] - 2; /*0x56749b*/
   v50 = v46 - v47[1] - 2; /*0x5674a7*/
   result = v46; /*0x5674af*/

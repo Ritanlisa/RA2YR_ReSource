@@ -257,7 +257,8 @@ struct InfantryClass {
     InfantryTypeClass* Type;  // 0x6C0
     char SequenceAnim[4];  // 0x6C4
     bool Crawling;  // 0x6DB
-    void* GetCursorOverObject;  // 0x0 (no offset truth)
+    void* GetCursorOverObject_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon InfantryClass::GetCursorOverObject is a method)
+    static unsigned int GetCursorOverObject(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     AbstractClass * * ProcessDeploy(void ** a1);
     static int ScanTarget(int * a1);

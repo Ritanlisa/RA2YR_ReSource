@@ -887,10 +887,10 @@ LABEL_11:
   this->idxArray = v4; /*0x71e74f*/
   if ( &dword_B0F668 < &dword_B0F660 /*0x71e786*/
     || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !&dword_B0F660)
-    && &dword_B0F66C > 0
+    && (int)dword_B0F66C > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(&dword_B0F658 + 8))(
          &dword_B0F658,
-         &dword_B0F660 + &dword_B0F66C,
+         dword_B0F660 + (int)dword_B0F66C,
          0) )
   {
     v6 = dword_B0F668++; /*0x71e793*/
@@ -898,8 +898,8 @@ LABEL_11:
   }
   if ( dword_B0F680< dword_B0F678/*0x71e7d9*/
     || (BYTE1(byte_B0F67C) || !dword_B0F678)
-    && &dword_B0F684 > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
+    && (int)dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ (int)dword_B0F684, 0) )
 
 
 
@@ -908,7 +908,7 @@ LABEL_11:
     *(unsigned int *)(dword_B0F674+ 4 * v7) = (unsigned int)this;
   }
   this->TActionClass_field_34 = 0; /*0x71e7f8*/
-  return (int)this; /*0x71e7fd*/
+  return; /*0x71e7fd*/
 
 }
 }

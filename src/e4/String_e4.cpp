@@ -17,6 +17,8 @@
 #include "e4/classes/Struct_e4.hpp"
 #include "e4/classes/E4Recv_7B6280_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int _expandtime(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 
 // 0x49B760
 namespace gamemd {
@@ -188,7 +190,7 @@ ControlClass * * String::To_Waypoint()
 }
 // 0x7B51D0
 namespace gamemd {
-int String::TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3, int a4, int a5)
+int String::TrimLeft(const char **a2, const char **aP1, int a1, int a3, int aP2, int aP3, int a4, int a5)
 {
 
   int result; // eax
@@ -209,8 +211,8 @@ int String::TrimLeft(const char **a2, int aP1, int a1, int a3, int aP2, int aP3,
     }
     if ( i >= v5 ) /*0x7b51f4*/
       break; /*0x7b51f4*/
-    v6 = (char *)*aP1; /*0x7b51f6*/
-    if ( !*aP1 ) /*0x7b51f6*/
+    v6 = (char *)*(const char **)aP1; /*0x7b51f6*/
+    if ( !*(const char **)aP1 ) /*0x7b51f6*/
       v6 = (char *)(&g_INI_DefaultBuffer); /*0x7b51fd*/
     result = (int)strchr(v6, *(char *)(*(unsigned int *)this->__pad_0 + i)); /*0x7b5208*/
     if ( !result ) /*0x7b5212*/
@@ -940,7 +942,7 @@ char ** String::Reassign(const char **aP1)
   if ( (*(unsigned int *)this->__pad_0 || *aP1) && (!v3 || !*aP1 || strcmp(*(const char **)this->__pad_0, *aP1)) ) /*0x7b496c*/
   {
     v4 = (char *)*aP1; /*0x7b4994*/
-    if ( !*aP1 ) /*0x7b4994*/
+    if ( !*(const char **)aP1 ) /*0x7b4994*/
       v4 = (char *)(&g_INI_DefaultBuffer); /*0x7b499a*/
     if ( v3 ) /*0x7b49a1*/
       __3_YAXPAX_Z(v3); /*0x7b49a4*/
@@ -1242,8 +1244,8 @@ void String::TrimRight(ObjectClass * aP1)
   {
     do /*0x7b527d*/
     {
-      v6 = (char *)*aP1; /*0x7b5258*/
-      if ( !*aP1 ) /*0x7b5258*/
+      v6 = (char *)*(const char **)aP1; /*0x7b5258*/
+      if ( !*(const char **)aP1 ) /*0x7b5258*/
         v6 = (char *)(&g_INI_DefaultBuffer); /*0x7b525e*/
       if ( !strchr(v6, *(char *)(*(unsigned int *)this->__pad_0 + v5)) ) /*0x7b526c*/
         break; /*0x7b5276*/

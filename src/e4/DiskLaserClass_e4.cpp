@@ -60,7 +60,7 @@ DiskLaserClass::DiskLaserClass()
     v2 = dword_8A0218++; /*0x4a7aab*/
     *((unsigned int *)dword_8A020C + v2) = (unsigned int)this;
   }
-  return (int)this->__pad_0; /*0x4a7abf*/
+  return; /*0x4a7abf*/
 
 }
 }  // G42.18c ns repair

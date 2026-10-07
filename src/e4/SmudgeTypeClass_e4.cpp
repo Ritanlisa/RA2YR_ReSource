@@ -87,7 +87,7 @@ SmudgeTypeClass::SmudgeTypeClass(char *Source, int a2, int a3, int a4, int a5, i
   {
 LABEL_11:
     *((unsigned int *)this + 165) = -1; /*0x6b5351*/
-    return this; /*0x6b535a*/
+    return; /*0x6b535a*/
   }
   else
   {
@@ -100,7 +100,7 @@ LABEL_11:
         goto LABEL_11; /*0x6b534f*/
     }
     *((unsigned int *)this + 165) = v5; /*0x6b5361*/
-    return this; /*0x6b5367*/
+    return; /*0x6b5367*/
   }
 
 }

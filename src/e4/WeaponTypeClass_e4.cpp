@@ -410,7 +410,7 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
 }
 // 0x772EB0
 namespace gamemd {
-int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4, void * a5)
+int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, unsigned int * a2, void * a3, void * a4, void * a5)
 {
   int v5; // ebx
   int result; // eax

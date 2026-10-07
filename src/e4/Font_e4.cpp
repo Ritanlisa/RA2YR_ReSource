@@ -140,7 +140,7 @@ LABEL_4:
           {
             if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434d7b*/
             {
-              v18 = (aP5 - v11) / 2; /*0x434d84*/
+              v18 = ((int)aP5 - v11) / 2; /*0x434d84*/
             }
             else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x434d8b*/
             {
@@ -233,7 +233,7 @@ LABEL_26:
           {
             if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434f8d*/
             {
-              v29 = (aP5 - v11) / 2; /*0x434f96*/
+              v29 = ((int)aP5 - v11) / 2; /*0x434f96*/
             }
             else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x434f9d*/
             {
@@ -323,7 +323,7 @@ LABEL_59:
       {
         if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x435178*/
         {
-          v38 = (aP5 - v11) / 2; /*0x435181*/
+          v38 = ((int)aP5 - v11) / 2; /*0x435181*/
         }
         else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x435188*/
         {

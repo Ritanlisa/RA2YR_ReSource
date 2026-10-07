@@ -107,7 +107,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
   }
   if ( (v8 & 0x7FF00000) != 0 || (unsigned int)self | (unsigned int)(a2)& 0xFFFFF ) /*0x7c9111*/
   {
-    if ( a2 >= 0 || (CIpow_Helper_Helper(v9), v5 = -v5, v19) ) /*0x7c918b*/
+    if ( (int)a2 >= 0 || (CIpow_Helper_Helper(v9), v5 = -v5, v19) ) /*0x7c918b*/
     {
       result = _twoToTOS(__FYL2X__(v5, v9)); /*0x7c9021*/
       if ( v12 == 1 ) /*0x7c9029*/
@@ -131,7 +131,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
   }
   CIpow_Helper_Helper(v9); /*0x7c9128*/
   v18 = IDA_HIBYTE(a2) >> 7; /*0x7c9131*/
-  if ( a4 < 0 ) /*0x7c913c*/
+  if ( (int)a4 < 0 ) /*0x7c913c*/
   {
     result = *(double *)&tbyte_87C4F0; /*0x7c913e*/
     if ( (v17 & v18) != 0 ) /*0x7c9146*/

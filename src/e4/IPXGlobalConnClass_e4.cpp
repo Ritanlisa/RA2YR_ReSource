@@ -159,8 +159,8 @@ LABEL_13:
     v18 = qword_A8DBA4; /*0x540540*/
     v12 = *(unsigned int *)&dword_841F3C; /*0x54054a*/
     v19 = dword_A8DBAC; /*0x540554*/
-    if ( (uint8_t)((GUID *)(&qword_A8DBB0))->Compare(*dword_A8DA78 + 40) /*0x54057b*/
-      && (uint8_t)((NetworkID *)((bool *)v18.__pad_0))->Compare(*dword_A8DA78 + 40) )
+    if ( (uint8_t)((GUID *)(&qword_A8DBB0))->Compare(*(unsigned int *)dword_A8DA78 + 40) /*0x54057b*/
+      && (uint8_t)((NetworkID *)((bool *)v18.__pad_0))->Compare(*(unsigned int *)dword_A8DA78 + 40) )
     {
       v13 = a2 + 8; /*0x540584*/
       *(unsigned short *)(a2 + 12) = 0; /*0x540587*/

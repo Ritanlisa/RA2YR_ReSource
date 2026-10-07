@@ -747,7 +747,7 @@ char CellClass::UpdateVariant7(unsigned short *aP0, int aP1)
   int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = (int)(aP1); /*0x572446*/
-  v3 = (int)(*CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * (aP1 & 7) + 9041544))); /*0x572467*/
+  v3 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * ((unsigned int)aP1 & 7) + 9041544))); /*0x572467*/
   aP1 = (IUnknown *)(v3); /*0x572469*/
   *(unsigned int *)v32 = v3; /*0x57246d*/
   v4 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x57247c*/
@@ -915,7 +915,7 @@ char CellClass::UpdateVariant8(unsigned short *aP0, int aP1)
   int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = (int)(aP1); /*0x5727e6*/
-  v3 = (int)(*CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * (aP1 & 7) + 9041544))); /*0x572807*/
+  v3 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * ((unsigned int)aP1 & 7) + 9041544))); /*0x572807*/
   aP1 = (gamemd::IUnknown *)(v3); /*0x572809*/
   *(unsigned int *)v32 = v3; /*0x57280d*/
   v4 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x57281c*/
@@ -1082,7 +1082,7 @@ char CellClass::UpdateVariant5(unsigned short *aP0, int aP1)
   int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = (int)(aP1); /*0x572da6*/
-  v3 = (int)(*CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * (aP1 & 7) + 9041544))); /*0x572dc7*/
+  v3 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * ((unsigned int)aP1 & 7) + 9041544))); /*0x572dc7*/
   aP1 = (gamemd::IUnknown *)(v3); /*0x572dc9*/
   *(unsigned int *)v31 = v3; /*0x572dcd*/
   v4 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x572ddc*/
@@ -1251,7 +1251,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = (int)(aP1); /*0x573176*/
-  v3 = (int)(*CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * (aP1 & 7) + 9041544))); /*0x573197*/
+  v3 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(aP0)), (unsigned int *)(&aP1), (unsigned short *)(4 * ((unsigned int)aP1 & 7) + 9041544))); /*0x573197*/
   aP1 = (gamemd::IUnknown *)(v3); /*0x573199*/
   *(unsigned int *)v31 = v3; /*0x57319d*/
   v4 = (int16_t)v3 + (SHIWORD(v3) << 9); /*0x5731ac*/
@@ -1465,7 +1465,7 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
       if ( v17 >= 74 && v17 <= 101 ) /*0x57bc91*/
       {
         aP0 = (IUnknown *)(1); /*0x57bcaf*/
-        *(unsigned int *)v18 = (unsigned int)(*((CellStruct *)((CellStruct *)v2))->Sub((unsigned int *)(&v19),(unsigned short *)(&aP0))); /*0x57bcc8*/
+        *(unsigned int *)v18 = (unsigned int)(*(unsigned int *)((CellStruct *)((CellStruct *)v2))->Sub((unsigned int *)(&v19),(unsigned short *)(&aP0))); /*0x57bcc8*/
         LOBYTE(result) = ((CellClass *)(v3))->ApplyTileModification2( (int16_t *)(v18)); /*0x57bccf*/
       }
       else
@@ -1570,7 +1570,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
       if ( v17 >= 205 && v17 <= 232 ) /*0x57cf05*/
       {
         aP0 = (IUnknown *)(1); /*0x57cf23*/
-        *(unsigned int *)v18 = (unsigned int)(*((CellStruct *)((CellStruct *)v2))->Sub((unsigned int *)(&v19),(unsigned short *)(&aP0))); /*0x57cf3c*/
+        *(unsigned int *)v18 = (unsigned int)(*(unsigned int *)((CellStruct *)((CellStruct *)v2))->Sub((unsigned int *)(&v19),(unsigned short *)(&aP0))); /*0x57cf3c*/
         LOBYTE(result) = ((CellClass *)(v3))->ApplyTileModification4( (int16_t *)(v18)); /*0x57cf43*/
       }
       else

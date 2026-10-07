@@ -318,7 +318,7 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
 } // namespace gamemd
 // 0x40C160
 namespace gamemd {
-void MoveFeedback::Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5)
+_DWORD * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, char a2, void *a3, void *a4, void *a5)
 {
 
   void *v3; // eax

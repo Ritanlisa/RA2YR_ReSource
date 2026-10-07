@@ -47,7 +47,6 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
     char *v3; // eax
     unsigned int v6 = 0;  /* G37 hoist */
-    double (*v6) (...) =    double (*v6) (...) =
   unsigned int v4; // edi
   HWND DlgItem; // esi
   int (*v6)(char, char); // edi

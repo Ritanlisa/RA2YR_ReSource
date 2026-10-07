@@ -63,7 +63,7 @@ namespace gamemd { int PlayWaypointEffect(...); }
 
 // 0x6DD8B0
 namespace gamemd {
-AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, void * a4, void * a5)
+AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, void * a4, void * a5, __int16 *a8)
 {
   char result; // al
   void **v9; // ecx
@@ -171,7 +171,7 @@ LABEL_162:
         return 0;
       return (AbstractClass * *)DeployScriptActionPlane(v78, -1);
     case 8:
-      return ((TActionClass *)(int *)a1)->executeRetreatAction( aP1, (int)v9, (int)a5, aP4);
+      return ((TActionClass *)(int *)a1)->executeRetreatAction( a5, (int)v9, (int)a5, a8);
     case 9:
       int v74 = ObjectClass_FindOwner((_DWORD *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v74 )
@@ -223,7 +223,7 @@ LABEL_162:
       *(unsigned char *)(v75 + 495) = 1;
       return 1;
     case 0xE:
-      return ((TActionClass *)(unsigned int *)a1)->executeEnterAction( (int)aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeEnterAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x10:
       if ( *(unsigned char *)(HouseClass_Player.field_0 + 576) )
         return 1;
@@ -238,9 +238,9 @@ LABEL_162:
       ((MapClass *)((int)(&((unsigned int *)(stru_87C374))[13428])))->MarkForRedraw((int)((MapClass *)((int)(&((unsigned int *)(stru_87C374))[13428]))), (void *)(1));
       return 1;
     case 0x11:
-      return ((TActionClass *)(int *)a1)->RevealWaypointArea( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->RevealWaypointArea( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x12:
-      return ((TActionClass *)(int *)a1)->RevealTileTypeAtWaypoint( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->RevealTileTypeAtWaypoint( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x13:
       PlayVocClass(*(unsigned int *)((unsigned int)(a1)+ 144), 0x2000, 1.0, 0);
       return 1;
@@ -339,22 +339,22 @@ LABEL_162:
     case 0x1E:
       if ( !*(unsigned char *)((unsigned int)(a1)+ 144) )
       {
-        IDA_HIBYTE(aP1[13].referenceCount) = 0;
+        IDA_HIBYTE(a5[13].referenceCount) = 0;
         return 1;
       }
-      IDA_HIBYTE(aP1[13].referenceCount) = 1;
-      if ( aP1[2].nextArrayIndex > 0 )
+      IDA_HIBYTE(a5[13].referenceCount) = 1;
+      if ( a5[2].nextArrayIndex > 0 )
       {
-        v50 = *(IUnknown **)(**(unsigned int **)&aP1[2].__pad_0[12] + 156);
-        int v53 = *(unsigned int *)(**(unsigned int **)&aP1[2].__pad_0[12] + 160);
-        v133 = *(unsigned int *)(**(unsigned int **)&aP1[2].__pad_0[12] + 164);
+        v50 = *(IUnknown **)(**(unsigned int **)&a5[2].__pad_0[12] + 156);
+        int v53 = *(unsigned int *)(**(unsigned int **)&a5[2].__pad_0[12] + 160);
+        v133 = *(unsigned int *)(**(unsigned int **)&a5[2].__pad_0[12] + 164);
         v52 = *(IUnknown **)((CellStruct *)(&v130))->Set((int)v50 / 256, v53 / 256);
-        ((HouseClass *)(aP1))->SetMapSeed( (int)(v52));
-        aP1[620].NeedsSaveOrLink = v52;
+        ((HouseClass *)(a5))->SetMapSeed( (int)(v52));
+        a5[620].NeedsSaveOrLink = v52;
       }
-      if ( !*(unsigned int *)&aP1[619].__pad_0[8] )
+      if ( !*(unsigned int *)&a5[619].__pad_0[8] )
       {
-        ((HouseClass *)((int)aP1))->SetPrimaryTechBuilding();
+        ((HouseClass *)((int)a5))->SetPrimaryTechBuilding();
         return 1;
       }
       return 1;
@@ -362,16 +362,16 @@ LABEL_162:
       ((MapClass *)(&(&stru_87C374)[13428]))->ProcessVisibilityFlags();
       return 1;
     case 0x20:
-      return globalHelper_0E2050( (int)aP1, (int)v9, (int)a5, (int16_t *)((IUnknown *)aP4));
+      return globalHelper_0E2050( (int)a5, (int)v9, (int)a5, (int16_t *)((IUnknown *)a8));
     case 0x21:
-      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44))))->StartTimer( (int)((IUnknown *)1), 0, 0);
-      if ( (AbstractClass *)HouseClass_Player.field_0 == aP1 )
+      ((SuperClass *)(*(unsigned int *)(a5[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44))))->StartTimer( (int)((IUnknown *)1), 0, 0);
+      if ( (AbstractClass *)HouseClass_Player.field_0 == a5 )
         goto LABEL_157;
       return 1;
     case 0x22:
-      ((SuperClass *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44))))->StartTimer(0, 0, 0);
-      *(unsigned char *)(*(unsigned int *)(aP1[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44)) + 96) = 0;
-      if ( (AbstractClass *)HouseClass_Player.field_0 != aP1 )
+      ((SuperClass *)(*(unsigned int *)(a5[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44))))->StartTimer(0, 0, 0);
+      *(unsigned char *)(*(unsigned int *)(a5[16].nextArrayIndex + 4 * *(unsigned int *)((char *)a1 +44)) + 96) = 0;
+      if ( (AbstractClass *)HouseClass_Player.field_0 != a5 )
         return 1;
 LABEL_157:
       ((SidebarClass *)((int *)&(&stru_87C374)[13428]))->AddCameo( 31, (int)(*(AnimClass **)((char *)a1 +44)));
@@ -379,40 +379,40 @@ LABEL_157:
       ((Sidebar *)((int)&(&stru_87C374)[13428]))->ActivateTab( (int)(Status));
       return 1;
     case 0x23:
-      if ( !aP1 )
+      if ( !a5 )
         return 1;
-      aP1[603].NeedsSaveOrLink = *(void **)((char *)a1 +44);
+      a5[603].NeedsSaveOrLink = *(void **)((char *)a1 +44);
       return 1;
     case 0x24:
-      return ((TActionClass *)(unsigned int *)a1)->ConvertHouseUnits( (int)aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->ConvertHouseUnits( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x25:
       v48 = (HouseClass *)((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)((char *)a1 +44));
       int v49 = (int)v48;
       if ( !v48 )
         return 0;
-      ((HouseClass *)((int)aP1))->HandleAlliance( (int)(v48), 0);
-      ((HouseClass *)(v49))->HandleAlliance( (int)((HouseClass *)aP1), 0);
+      ((HouseClass *)((int)a5))->HandleAlliance( (int)(v48), 0);
+      ((HouseClass *)(v49))->HandleAlliance( (int)((HouseClass *)a5), 0);
       return 1;
     case 0x26:
       eax105 = (IUnknown *)((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)((char *)a1 +44));
       int v51 = (int)eax105;
       if ( !eax105 )
         return 0;
-      ((HouseClass *)((int)aP1))->SetAlliance( (HouseClass *)(eax105), 0);
-      ((HouseClass *)(v51))->SetAlliance( (HouseClass *)((IUnknown *)aP1), 0);
+      ((HouseClass *)((int)a5))->SetAlliance( (HouseClass *)(eax105), 0);
+      ((HouseClass *)(v51))->SetAlliance( (HouseClass *)((IUnknown *)a5), 0);
       return 1;
     case 0x27:
     case 0x5C:
     case 0x5D:
       return 1;
     case 0x28:
-      return ((TActionClass *)(int *)a1)->executeFollowAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeFollowAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x29:
-      return ((TActionClass *)(int *)a1)->executeEscortAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeEscortAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x2A:
-      return ((TActionClass *)(int *)a1)->CreateWeaponImpactAtWaypoint( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->CreateWeaponImpactAtWaypoint( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x2B:
-      return ((TActionClass *)(int *)a1)->executeLoadAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeLoadAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x2C:
       if ( LightningStorm::IsActive() )
         return 0;
@@ -485,7 +485,7 @@ LABEL_157:
       ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
       return 1;
     case 0x33:
-      ((TActionClass *)&((unsigned char *)&stru_87C374)[13428])->executeRepairAction( (int)aP1);
+      ((TActionClass *)&((unsigned char *)&stru_87C374)[13428])->executeRepairAction( (int)a5);
       return 1;
     case 0x34:
       char v84 = 0;
@@ -527,7 +527,7 @@ LABEL_157:
       }
       return (AbstractClass * *)v84;
     case 0x35:
-      return ((TActionClass *)(unsigned int *)a1)->executeUnloadAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeUnloadAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x36:
       if ( !*(unsigned int *)(a1 + 80) )
         return 1;
@@ -555,7 +555,7 @@ LABEL_157:
       ScenarioClass::SetLocalToByID(*(unsigned char **)&((unsigned char *)&HouseClass_Player)[29924], *(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x3A:
-      return ((TActionClass *)(int *)a1)->SpawnMeteorShower( aP1, (int)v9, (int)a5, aP4);
+      return ((TActionClass *)(int *)a1)->SpawnMeteorShower( a5, (int)v9, (int)a5, a8);
     case 0x3B:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)(a1 + 144));
       MapClass::TriggerEVA((short *)((IUnknown *)&v112));
@@ -636,7 +636,7 @@ LABEL_157:
       }
       return (AbstractClass * *)bl85;
     case 0x3F:
-      return PlayWaypointEffect((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return PlayWaypointEffect((int *)a1, (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x40:
       int v25 = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4008);
       WorldCoords = (int *)((Cell *)(*(int16_t **)&((unsigned char *)&HouseClass_Player)[29924]))->GetWorldCoords( (unsigned int *)(&v131), *(unsigned int *)(a1 + 144));
@@ -714,24 +714,24 @@ LABEL_60:
       *(unsigned char *)(v100 + 498) = 0;
       return 1;
     case 0x4C:
-      if ( !aP1 )
+      if ( !a5 )
         return 1;
-      *(unsigned int *)&aP1[614].__pad_0[4] = *(unsigned int *)(a1 + 144);
+      *(unsigned int *)&a5[614].__pad_0[4] = *(unsigned int *)(a1 + 144);
       return 1;
     case 0x4D:
-      if ( !aP1 )
+      if ( !a5 )
         return 1;
-      *(unsigned int *)&aP1[614].__pad_0[8] = *(unsigned int *)(a1 + 144);
+      *(unsigned int *)&a5[614].__pad_0[8] = *(unsigned int *)(a1 + 144);
       return 1;
     case 0x4E:
-      if ( !aP1 )
+      if ( !a5 )
         return 1;
-      *(unsigned int *)&aP1[614].__pad_0[12] = *(unsigned int *)(a1 + 144);
+      *(unsigned int *)&a5[614].__pad_0[12] = *(unsigned int *)(a1 + 144);
       return 1;
     case 0x4F:
-      if ( !aP1 )
+      if ( !a5 )
         return 1;
-      aP1[614].uniqueId = *(unsigned int *)(a1 + 144);
+      a5[614].uniqueId = *(unsigned int *)(a1 + 144);
       return 1;
     case 0x50:
       int v79 = *(unsigned int *)(a1 + 48);
@@ -742,7 +742,7 @@ LABEL_60:
         return 0;
       return (AbstractClass * *)DeployScriptActionPlane(v79, v80);
     case 0x51:
-      return globalHelper_0E01C0((int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return globalHelper_0E01C0((int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x52:
       int v18 = 0;
       if ( *(int *)&((unsigned char *)&stru_89E138)[89240] <= 0 )
@@ -755,7 +755,7 @@ LABEL_60:
           && *(unsigned char *)(v19 + 144)
           && *(unsigned char *)(v19 + 116)
           && !*(unsigned char *)(v19 + 129)
-          && aP1 != *(AbstractClass **)(v19 + 540) )
+          && a5 != *(AbstractClass **)(v19 + 540) )
         {
           (*(void (**)(int, int, unsigned int))(*(unsigned int *)v19 + 488))(v19, 5, 0);
         }
@@ -775,7 +775,7 @@ LABEL_60:
           && *(unsigned char *)(v21 + 144)
           && *(unsigned char *)(v21 + 116)
           && !*(unsigned char *)(v21 + 129)
-          && *(AbstractClass **)(v21 + 540) == aP1 )
+          && *(AbstractClass **)(v21 + 540) == a5 )
         {
           (*(void (**)(int, int, unsigned int))(*(unsigned int *)v21 + 488))(v21, 5, 0);
         }
@@ -896,9 +896,9 @@ LABEL_60:
       ((ActionQueue *)(v12))->PushEntry((int)v113, (int)v128, (int)GroundHeight);
       return 1;
     case 0x5F:
-      return ((TActionClass *)(int *)a1)->CreateNukeEffect( aP1, (int)v9, (int)a5, aP4);
+      return ((TActionClass *)(int *)a1)->CreateNukeEffect( a5, (int)v9, (int)a5, a8);
     case 0x60:
-      return SuperWeaponClass::CreateChemLauncher((unsigned int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return SuperWeaponClass::CreateChemLauncher((unsigned int *)a1, (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x61:
       *(unsigned char *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 13477) = *(unsigned char *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924]
                                                                                     + 13477) == 0;
@@ -943,7 +943,7 @@ LABEL_60:
       EnqueueAsyncIOMovie(*(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x65:
-      return ((TActionClass *)(int *)a1)->executeScatterAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeScatterAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x66:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)(a1 + 68));
       ((Coord *)(&v131))->Subtract( (int)((IUnknown *)(((int16_t)v112 << 8) + 128)), (int)((IUnknown *)((IDA_SHIWORD(v112) << 8) + 128)), 0);
@@ -960,7 +960,7 @@ LABEL_60:
         *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 6044),
         *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 6036),
         v13,
-        (void *)aP1);
+        (void *)a5);
       return 1;
     case 0x67:
       char * v64 = *(unsigned char *)(a1 + 109) != 0 ? (char *)(a1 + 109) : 0;
@@ -1044,7 +1044,7 @@ LABEL_290:
       v114 = (IUnknown **)((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(v134), *(unsigned int *)(a1 + 68));
       return BuildingClass::SearchPlacement(&((unsigned char *)&stru_87C374)[13428], *v114, *(MouseClass **)(a1 + 144));
     case 0x6D:
-      return ((TActionClass *)(int *)a1)->executeParadropAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeParadropAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x6E:
       SetScenarioClassTimer(*(unsigned int *)(a1 + 144));
       return 1;
@@ -1078,73 +1078,73 @@ LABEL_290:
 // 0x6e4100
       return TActionClass::executePsychicDominatorAction(
                (unsigned int *)a1,
-               (int)aP1,
+               (int)a5,
                (int)v9,
                (int)a5,
-               (IUnknown *)aP4);
+               (IUnknown *)a8);
     case 0x73:
-      return ((TActionClass *)(int *)a1)->executeGeneticMutatorAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeGeneticMutatorAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x74:
-      return ((TActionClass *)(int *)a1)->executeGuardAreaAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeGuardAreaAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x75:
       EnqueueAsyncIOMovie(*(unsigned int *)(a1 + 144), 1);
       return 1;
     case 0x76:
-      return globalHelper_0E2C20((int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return globalHelper_0E2C20((int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x77:
-      return ((TActionClass *)(unsigned int *)a1)->executePlaceBeaconAction( (int)aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executePlaceBeaconAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x78:
-      return ((TActionClass *)(unsigned int *)a1)->executeJumpjetAction( (int)aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeJumpjetAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x79:
-      return ((TActionClass *)(unsigned int *)a1)->executeOpenGateAction( (int)aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeOpenGateAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x7A:
-      return ((TActionClass *)(unsigned int *)a1)->executeCloseGateAction( (int)aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeCloseGateAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x7B:
-      return ((TActionClass *)(unsigned int *)a1)->executeCaptureAction( aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeCaptureAction( a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x7C:
-      return ((TActionClass *)(unsigned int *)a1)->executeSabotageAction( aP1, (int)v9, (unsigned int *)(a5), (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeSabotageAction( a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
     case 0x7D:
-      return ((TActionClass *)(int *)a1)->executeForceShieldAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeForceShieldAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x7E:
   int v123; // [esp+0h] [ebp-250h]
   unsigned int *v124; // [esp+4h] [ebp-24Ch]
   int v125; // [esp+8h] [ebp-248h]
-      return CreateHouseClass((int)aP1, v9, a5, (IUnknown *)aP4, v123, v124, v125);
+      return CreateHouseClass((int)a5, v9, a5, (IUnknown *)a8, v123, v124, v125);
     case 0x7F:
       globalHelper_03B460(*(unsigned int *)(a1 + 144));
       return 1;
     case 0x80:
-      return ((TActionClass *)(int *)a1)->executePatrolAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executePatrolAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x81:
-      return ((TActionClass *)(int *)a1)->executeIronCurtainAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeIronCurtainAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x82:
-      return SmallFunc_6E3120((int)aP1, v9, a5, (IUnknown *)aP4, v123, v124, v125);
+      return SmallFunc_6E3120((int)a5, v9, a5, (IUnknown *)a8, v123, v124, v125);
     case 0x83:
-      return ((TActionClass *)a1)->executeEMPulseAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)a1)->executeEMPulseAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x84:
-      return ((TActionClass *)(int *)a1)->executeNukeAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeNukeAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x85:
-      return ((TActionClass *)(int *)a1)->executeSpyPlaneAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeSpyPlaneAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x86:
-      return ((TActionClass *)(int *)a1)->executeChronoSphereAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeChronoSphereAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x87:
-      return ((TActionClass *)(int *)a1)->executeWeatherStormAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeWeatherStormAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x88:
-      return globalHelper_0E4440(aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return globalHelper_0E4440(a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x89:
-      return ((TActionClass *)(int *)a1)->executeRevealAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeRevealAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x8A:
-      return globalHelper_0E4540(aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return globalHelper_0E4540(a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x8B:
-      return ((TActionClass *)(int *)a1)->executeLightningAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeLightningAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x8C:
-      return ((TActionClass *)(int *)a1)->executeDominatorAction( aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(int *)a1)->executeDominatorAction( a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x8D:
-      return globalHelper_0E44C0(aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return globalHelper_0E44C0(a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x8E:
-      return ((TActionClass *)(unsigned int *)a1)->executeSelfDestructAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeSelfDestructAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x8F:
-      return ((TActionClass *)(unsigned int *)a1)->executeExplodeAction( (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
+      return ((TActionClass *)(unsigned int *)a1)->executeExplodeAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     default:
       return (AbstractClass * *)result;
   }

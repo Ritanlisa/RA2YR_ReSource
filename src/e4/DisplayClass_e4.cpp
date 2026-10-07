@@ -33,6 +33,9 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/ControlClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_41(); }  // w18j2 raw 0x006D8630
+namespace gamemd { void nullsub_42(); }  // w18j2 raw 0x006DA350
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aShadowShp[];  // data: 0x820074 truth(IDA G42.57w9)
 
@@ -1007,7 +1010,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   if ( (a2 & 0x55) != 0 ) /*0x4aac34*/
   {
     v5 = (HWND)((&dword_87F770)[1]); /*0x4aac3d*/
-    v12 = (int)*dword_87F770; /*0x4aac40*/
+    v12 = (int)*(unsigned int *)dword_87F770; /*0x4aac40*/
     v13 = v5; /*0x4aac44*/
   }
   else
@@ -1020,7 +1023,7 @@ v6 = (int *)(*(int (**)(MouseClass *, unsigned int *))(dword_887640->MouseClass_
     v12 = *v6; /*0x4aac72*/
     v13 = (HWND)v6[1]; /*0x4aac79*/
   }
-  TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v11, &v12); /*0x4aac8d*/
+  ((TacticalClass *)g_TacticalClass_Instance)->TransformPixel(v11, &v12); /*0x4aac8d*/
   v12 -= DSurface_ViewBounds.field_0; /*0x4aaca3*/
   v13 = (HWND)((char *)v13 - dword_886FA4); /*0x4aacb1*/
   ((Tactical *)(&v12))->MouseOver( v9, v14, (MouseClass *)(&v10), (MouseClass *)(&v8[1]), (MouseClass *)(&a2)); /*0x4aacd4*/

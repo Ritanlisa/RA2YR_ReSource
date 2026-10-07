@@ -157,9 +157,9 @@ LABEL_37:
     }
   }
 LABEL_38:
-  if ( (&byte_ABCD94 & 1) == 0 ) /*0x55e343*/
+  if ( (byte_ABCD94 & 1) == 0 ) /*0x55e343*/
   {
-    &byte_ABCD94 |= 1u; /*0x55e34f*/
+    byte_ABCD94 |= 1u; /*0x55e34f*/
     *(unsigned int *)&g_MissionQueueFrame.waypoints[350] = ((gamemd::Timer *)this)->GetTicks(); /*0x55e35a*/
     *(unsigned int *)&g_MissionQueueFrame.waypoints[358] = 0; /*0x55e35f*/
     atexit(nullsub_23); /*0x55e36a*/

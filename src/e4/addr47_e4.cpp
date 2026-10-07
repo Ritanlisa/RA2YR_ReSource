@@ -47,6 +47,8 @@
 #include "e4/minimal_carriers.hpp"
 #include "e4/minimal_carriers.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_47A080(...); }  // w18j2 raw 0x0047A080 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 
 // 0x472A80
 namespace gamemd {

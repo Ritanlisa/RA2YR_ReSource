@@ -106,6 +106,12 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/MiniMap_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TechnoClass_e4.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_226(); }  // w18j2 raw 0x006832B0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int WriteINI(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_5CAF70(...); }  // w18j2 raw 0x005CAF70 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 namespace OverlayClass { int WriteINI(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_44FE60(...); }  // w16g4 raw call-form
@@ -603,7 +609,7 @@ ScenarioClass * * Mouse_Update()
   int result; // eax
 
   if ( IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) == 1 /*0x6842a6*/
-    && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0)(dword_887640) ))
+    && (*(int (*)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) )
   {
     do /*0x6842c0*/
       (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x6842b5*/
@@ -1469,7 +1475,7 @@ AbstractClass * * SessionClass_AssignHouses()
 }
 // 0x6886B0
 namespace gamemd {
-void GenerateScenarioUnits()
+void GenerateScenarioUnits(char a1)
 {
   int v1; // edi
   int v2; // ebp

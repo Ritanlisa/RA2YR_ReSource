@@ -44,7 +44,8 @@ struct RadSiteClass {
     void* RadDuration;  // 0x6C
     void* RadTimeLeft;  // 0x70
     unsigned int IntensitySteps;
-    void* Radiate;  // 0x0 (no offset truth)
+    void* Radiate_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon RadSiteClass::Radiate is a method)
+    static unsigned int Radiate(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);

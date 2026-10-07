@@ -93,6 +93,10 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MixFileClass_e4.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int sub_5BF360(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int CleanupOnDisconnect(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int Render_Load_759830(...); }  // w16g4 raw call-form
 namespace gamemd { int Render_Render_759880(...); }  // w16g4 raw call-form
@@ -502,7 +506,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
 namespace gamemd {
 AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 {
-  int (*v1) (...) ;  int (*v2) (...) ;  int (*v3) (...) ;  int v5; // edx
+  unsigned int v1; // esi  unsigned int v2; // eax  unsigned int v3; // eax  int v5; // edx
   int v6; // eax
   int v7; // edx
   void *vtable0; // ecx
@@ -511,12 +515,12 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   int v11; // esi
   ObjectClass *v13; // [esp+0h] [ebp-Ch]
 
-  if ( ((unsigned char *)&stru_A8B250)[8] == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
+  if ( ((unsigned char *)&stru_A8B250)[8] == ((*(unsigned int *)&aP0->inOpenToppedTransport) & 1) ) /*0x5b6807*/
   {
-    v1 = aP0->wasFallingDown; /*0x5b680d*/
+    v1 = (*(unsigned int *)&aP0->wasFallingDown); /*0x5b680d*/
     if ( dword_A8B320 == ((v1 & 4) != 0) && byte_A8B31D == ((v1 & 2) != 0) ) /*0x5b6836*/
     {
-      v2 = aP0->inOpenToppedTransport; /*0x5b683c*/
+      v2 = (*(unsigned int *)&aP0->inOpenToppedTransport); /*0x5b683c*/
       if ( ((unsigned char *)&stru_A8B250)[16] == ((v2 & 2) != 0) /*0x5b6920*/
         &&((unsigned char *)&stru_A8B250)[17] == ((v2 & 4) != 0)
         && byte_A8B31F == ((v1 & 8) != 0)
@@ -529,7 +533,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
         && ApplyGameOptions_Helper((ObjectClass *)dword_A8E960, (unsigned int *)(aP0 + 150))
         && *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] == aP0->u32_A2 )
       {
-        v3 = aP0->wasFallingDown; /*0x5b6926*/
+        v3 = (*(unsigned int *)&aP0->wasFallingDown); /*0x5b6926*/
         if ( ((unsigned char *)&stru_A8B250)[18] == ((v3 & 0x10) != 0) /*0x5b69da*/
           &&((unsigned char *)&stru_A8B250)[19] == ((v3 & 0x20) != 0)
           &&((unsigned char *)&stru_A8B250)[20] == ((v3 & 0x40) != 0)
@@ -544,15 +548,15 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     }
   }
   Debug::Log("Decoding game options\n"); /*0x5b69e9 G57c1: IDA 0x5b69e9 push offset aDecodingGameOp*/
-  ((unsigned char *)&stru_A8B250)[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
-  dword_A8B320 = (aP0->wasFallingDown & 4) != 0; /*0x5b6a0c*/
+  ((unsigned char *)&stru_A8B250)[8] = (*(unsigned int *)&aP0->inOpenToppedTransport) & 1; /*0x5b69fa*/
+  dword_A8B320 = ((*(unsigned int *)&aP0->wasFallingDown) & 4) != 0; /*0x5b6a0c*/
   v5 = (&dword_A8E960)[0]; /*0x5b6a18*/
   IDA_BYTE1(v5) = IDA_BYTE1((&dword_A8E960)[0]) & 0x7F; /*0x5b6a22*/
-  ((unsigned char *)&stru_A8B250)[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
-  (&dword_A8E960)[0] = v5 | ((aP0->inOpenToppedTransport & 2) << 14); /*0x5b6a38*/
-  ((unsigned char *)&stru_A8B250)[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
-  byte_A8B31F = (aP0->wasFallingDown & 8) != 0; /*0x5b6a5c*/
-  byte_A8B31D = (aP0->wasFallingDown & 2) != 0; /*0x5b6a6f*/
+  ((unsigned char *)&stru_A8B250)[16] = ((*(unsigned int *)&aP0->inOpenToppedTransport) & 2) != 0; /*0x5b6a25*/
+  (&dword_A8E960)[0] = v5 | (((*(unsigned int *)&aP0->inOpenToppedTransport) & 2) << 14); /*0x5b6a38*/
+  ((unsigned char *)&stru_A8B250)[17] = ((*(unsigned int *)&aP0->inOpenToppedTransport) & 4) != 0; /*0x5b6a49*/
+  byte_A8B31F = ((*(unsigned int *)&aP0->wasFallingDown) & 8) != 0; /*0x5b6a5c*/
+  byte_A8B31D = ((*(unsigned int *)&aP0->wasFallingDown) & 2) != 0; /*0x5b6a6f*/
   *(unsigned int *)&((unsigned char *)&stru_A8B250)[36] = aP0->onBridge; /*0x5b6a7b*/
   *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] = aP0->isFallingDown; /*0x5b6a88*/
   g_RulesInitConfig = aP0->q08A; /*0x5b6a96*/
@@ -564,10 +568,10 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
   *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] = aP0->u32_A2; /*0x5b6ad1*/
   stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&((unsigned char *)&stru_A8B250)[24]; /*0x5b6ad7*/
-  ((unsigned char *)&stru_A8B250)[18] = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
-  ((unsigned char *)&stru_A8B250)[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
-  ((unsigned char *)&stru_A8B250)[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
-  v7 = aP0->wasFallingDown >> 7; /*0x5b6b19*/
+  ((unsigned char *)&stru_A8B250)[18] = ((*(unsigned int *)&aP0->wasFallingDown) & 0x10) != 0; /*0x5b6ae9*/
+  ((unsigned char *)&stru_A8B250)[19] = ((*(unsigned int *)&aP0->wasFallingDown) & 0x20) != 0; /*0x5b6afb*/
+  ((unsigned char *)&stru_A8B250)[20] = ((*(unsigned int *)&aP0->wasFallingDown) & 0x40) != 0; /*0x5b6b0d*/
+  v7 = (*(unsigned int *)&aP0->wasFallingDown) >> 7; /*0x5b6b19*/
   (&dword_A8E960)[0] = v6; /*0x5b6b1c*/
   ((unsigned char *)&stru_A8B250)[28] = v7 & 1; /*0x5b6b29*/
   vtable0 = dword_A8B230->vtable1; /*0x5b6b2f*/
@@ -577,14 +581,14 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   nullsub_37(); /*0x5b6b42*/
   if ( _strcmpi((const char *)(byte_A8B8E0), (char *)(aP0 + 163)) /*0x5b6ba4*/
     || _strcmpi((const char *)(&byte_A8BAE2), (char *)(aP0 + 176))
-    || v9 != ((aP0->inOpenToppedTransport & 0x10) != 0)
+    || v9 != (((*(unsigned int *)&aP0->inOpenToppedTransport) & 0x10) != 0)
     || dword_A8BB04 != *(unsigned int *)(aP0 + 158)
     || !g_abs_A8B322[0] )
   {
     Debug::Log("Scenario has changed\n"); /*0x5b6baf G57w11: IDA push seq @ 0x5b6baf*/
     strcpy((char *)(byte_A8B8E0), (const char *)(aP0 + 163)); /*0x5b6bce*/
     strcpy((char *)(&byte_A8BAE2), (const char *)(aP0 + 176)); /*0x5b6bf4*/
-    v9 = (aP0->inOpenToppedTransport & 0x10) != 0; /*0x5b6c0b*/
+    v9 = ((*(unsigned int *)&aP0->inOpenToppedTransport) & 0x10) != 0; /*0x5b6c0b*/
     v9 = v9; /*0x5b6c12*/
     dword_A8BB04 = *(unsigned int *)(aP0 + 158); /*0x5b6c1d*/
     if ( !strcmp((const char *)(byte_A8B8E0), ((char *)&stru_82BA00)) && v9 || (v10 = 0, dword_A8B8D8 <= 0) ) /*0x5b6c5d*/
@@ -1089,6 +1093,7 @@ void * sub_5BDC00(int * a1, int a2)
 {
   int v2; // ebx
   int v3; // edi
+int v4;  // w18j2 raw-decl 0x005BDC00
   v4 = (&dword_82D03C)[7 * a2]; /*0x5bdc22*/
   int v5; // esi
 
@@ -1397,7 +1402,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v48 = v26; /*0x5bfd69*/
   v46 = 0; /*0x5bfd6d*/
   v49 = v44; /*0x5bfd7a*/
-  if ( a9 <= 0 || a10 <= 0 || v26 <= 0 || v44 <= 0 ) /*0x5bfd9d*/
+  if ( (int)a9 <= 0 || (int)a10 <= 0 || (int)v26 <= 0 || (int)v44 <= 0 ) /*0x5bfd9d*/
     goto LABEL_47; /*0x5bfd9d*/
   v29 = a7; /*0x5bfda3*/
   if ( a7 > 0 ) /*0x5bfdac*/

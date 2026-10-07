@@ -200,7 +200,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     *(unsigned char *)(this + 3479) = 0; /*0x74729e*/
     *(unsigned char *)(this + 3478) = 0; /*0x7472a4*/
     *(unsigned char *)(this + 3374) = 1; /*0x7472aa*/
-    return this; /*0x7472b1*/
+    return; /*0x7472b1*/
 }
 }  // G42.18c ns repair
 // 0x7474B0

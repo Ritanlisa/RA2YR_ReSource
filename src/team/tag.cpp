@@ -381,6 +381,9 @@ void TagTypeClass::SaveToINIList(CCINIClass* ini)
 } // namespace gamemd
 
 #include "e4/e4_globals_decls.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int g_GameObjectCleanup(...); }  // w18j2 raw call-form (variadic last resort)
+namespace gamemd { int g_TagClassCount(...); }  // w18j2 raw call-form (variadic last resort)
 extern int g_GameObjectCleanup;  // data: 0xB0E730 (e4_globals_decls.hpp:954)
 extern int g_TagClassCount;  // data: 0xB0E724 (e4_globals_decls.hpp:1775)
 

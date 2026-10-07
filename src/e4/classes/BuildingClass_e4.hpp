@@ -337,13 +337,18 @@ struct BuildingClass {
     unsigned int *__pad_6B8;
     unsigned int ctor;
 
-    void* CheckBuildability;  // 0x0 (no offset truth)
-    void* Deploy;  // 0x0 (no offset truth)
-    void* FreeUpgradeQueue;  // 0x0 (no offset truth)
-    void* FreeUpgradeQueue2;  // 0x0 (no offset truth)
+    void* CheckBuildability_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::CheckBuildability is a method)
+    static unsigned int CheckBuildability(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* Deploy_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::Deploy is a method)
+    static unsigned int Deploy(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* FreeUpgradeQueue_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::FreeUpgradeQueue is a method)
+    static unsigned int FreeUpgradeQueue(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* FreeUpgradeQueue2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::FreeUpgradeQueue2 is a method)
+    static unsigned int FreeUpgradeQueue2(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 
 
-    void* SetType;  // 0x0 (no offset truth)
+    void* SetType_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::SetType is a method)
+    static unsigned int SetType(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
     static int AllocAndCtor(BuildingClass * aP0, int aP2);  // [w16g2] static (def body this=0)

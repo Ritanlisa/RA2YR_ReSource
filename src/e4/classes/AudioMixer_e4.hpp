@@ -16,7 +16,8 @@ struct AudioMixer {
     unsigned int AudioMixer_field_10;  // 0x10
     unsigned int AudioMixer_field_14;  // 0x14
     unsigned int AudioMixer_field_08;
-    unsigned int ProcessAudioFrame;
+    unsigned int ProcessAudioFrame_ph;  // w18j3: filler renamed (no offset truth; canon AudioMixer::ProcessAudioFrame is a method)
+    static unsigned int ProcessAudioFrame(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned int u32_18;
     unsigned int u32_1C;
     unsigned int u32_4C;

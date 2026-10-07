@@ -548,6 +548,8 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
 
 #include "core/load_options.hpp"
 #include "e4/e4_globals_decls.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int MultiByteStr(...); }  // w18j2 raw call-form (variadic last resort)
 
 
 // --- LoadOptions ---

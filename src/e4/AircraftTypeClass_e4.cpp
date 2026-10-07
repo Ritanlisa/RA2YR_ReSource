@@ -109,7 +109,7 @@ LABEL_11:
   *((unsigned char *)this + 3387) = 0; /*0x41c9cf*/
   *((unsigned char *)this + 3479) = 0; /*0x41c9d5*/
   *((unsigned char *)this + 3374) = 0; /*0x41c9db*/
-  return this; /*0x41c9e3*/
+  return; /*0x41c9e3*/
 
 }
 }  // G42.18c ns repair

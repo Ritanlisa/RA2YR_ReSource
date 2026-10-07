@@ -50,7 +50,7 @@ int Array::FindValue(int aP1)
   v4 = 0; /*0x634298*/
   if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
   {
-    for ( i = (unsigned int **)this->Array_field_0x4; **(unsigned int)(i) != (unsigned int)(aP1); ++i ) /*0x63429f*/
+    for ( i = (unsigned int **)this->Array_field_0x4; **i != (unsigned int)(aP1); ++i ) /*0x63429f*/
     {
       if ( ++v4 >= (int)Array_field_0x10 ) /*0x6342b2*/
         return result; /*0x6342b2*/

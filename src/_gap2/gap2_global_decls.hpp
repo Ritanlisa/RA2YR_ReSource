@@ -172,6 +172,11 @@ public:  // g57c5 W4 supply slot
     int owningHouseIndex;  // G42.39a supply
     int vtable1;  // G42.39a supply
     int AbstractClass;  // G42.39a supply
+    int __pad_1C;  // G57w18j4 (hole before qword member, live disasm 0x42E1C0)
+    double NeedsSaveOrLink;  // 0x20 (fmul qword @0x42e276)
+    int q028;  // 0x28 (tail store @0x42e3fd)
+    int q02C;  // 0x2C (tail store @0x42e400)
+    char q030;  // 0x30 (byte store @0x42e403)
         int RenderTooltipBorder();  // G42.39 def-derived
     };
     struct Gap2Recv_430250 {

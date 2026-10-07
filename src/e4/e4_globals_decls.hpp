@@ -15416,6 +15416,9 @@ extern int dword_B77DC8;  // G42.42a supply
 extern int dword_B77DD0;  // G42.42a supply
 extern int dword_B77DD4;  // G42.42a supply (lobby id)
 extern unsigned int dword_A8ED84;  // G42.42f supply (MoveTo animation seed frame)
+extern unsigned int dword_B0EBF8;  // G57w18j4 supply (TeleportLocomotionClass ctor 0x718011, live disasm)
+extern unsigned int dword_B0EBFC;  // G57w18j4 supply (TeleportLocomotionClass ctor 0x71801a)
+extern unsigned int dword_B0EC00;  // G57w18j4 supply (TeleportLocomotionClass ctor 0x718026)
 extern unsigned int dword_A83D4C;  // G42.42h supply (rules dock array base, Mission_Enter)
 extern unsigned char byte_A8E9A0;  // G42.42k supply (Destruct init-phase guard)
 extern unsigned int dword_A8E390;  // G42.42k supply (aircraft index container)

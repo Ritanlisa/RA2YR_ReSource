@@ -311,7 +311,7 @@ int BinkMovie::IsAtEnd(void *a1_1)
 }
 // 0x432C70
 namespace gamemd {
-void BinkMovie::Play(void *a1_1)
+int BinkMovie::BinkMovie::Play(void *a1_1)
 {
 
   void (*v3)(HWND, LPPOINT); // ebp
@@ -1074,8 +1074,8 @@ AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
       ((int)(uint8_t)aP1[2] >> g_BitMask_Red << g_BitShift_Blue)
     | ((uint8_t)BYTE2(aP1[2]) >> g_BitShift_Green_0 << g_BitShift_Red)
     | ((uint8_t)BYTE1(aP1[2]) >> g_BitMask_Blue << g_BitMask_Green));
-    v6 = (*(int (**)(int))(*((unsigned int *)&this->BinkMovie_field_0x10)[0] + 124))((&this->BinkMovie_field_0x10)[0]); /*0x6c9dca*/
-    v16 = (*(int (**)(int))(*((unsigned int *)&this->BinkMovie_field_0x10)[0] + 128))((&this->BinkMovie_field_0x10)[0]); /*0x6c9dd6*/
+    v6 = (*(int (**)(int))(*(unsigned int *)((unsigned int *)&this->BinkMovie_field_0x10)[0] + 124))(((unsigned int *)&this->BinkMovie_field_0x10)[0]); /*0x6c9dca*/
+    v16 = (*(int (**)(int))(*(unsigned int *)((unsigned int *)&this->BinkMovie_field_0x10)[0] + 128))(((unsigned int *)&this->BinkMovie_field_0x10)[0]); /*0x6c9dd6*/
     v20[3] = v16; /*0x6c9ddc*/
     v20[0] = 0; /*0x6c9de4*/
     v20[1] = 0; /*0x6c9de8*/

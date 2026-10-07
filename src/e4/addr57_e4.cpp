@@ -252,7 +252,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
     if ( v4 ) /*0x578e97*/
     {
       v5 = v4; /*0x578e9c*/
-      if ( v3 - 1 >= 0 ) /*0x578ea0*/
+      if ( (int)v3 - 1 >= 0 ) /*0x578ea0*/
       {
         do /*0x578eb0*/
         {
@@ -1469,7 +1469,7 @@ return (gamemd::AbstractClass **)result; /*0x57dff0*/
         IDA_LOBYTE(v54) = 1; /*0x57e1e8*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v1); /*0x57e1ec*/
         right = 0x10000; /*0x57e1fd*/
-        v50[0] =(int)*CellStruct::Add(((CellStruct *)(v1)), (unsigned int *)(v52), (unsigned short *)(&right)); /*0x57e21a*/
+        v50[0] =(int)*(unsigned int *)CellStruct::Add(((CellStruct *)(v1)), (unsigned int *)(v52), (unsigned short *)(&right)); /*0x57e21a*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v50); /*0x57e21e*/
         v39 =(unsigned short *)((CellStruct *)(v52))->Set(0, 1); /*0x57e22a*/
         v50[0] =((unsigned int *)int)*((CellStruct *)(v1))->Sub( (unsigned int *)(&right), (unsigned short *)(v39)); /*0x57e248*/
@@ -1755,7 +1755,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
         v51[0] = right; /*0x57e708*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v51); /*0x57e712*/
         right = 1; /*0x57e723*/
-        v51[0] = (int)(*((CellStruct *)(aP0))->Sub( (unsigned int *)(v56), (unsigned short *)(&right))); /*0x57e73a*/
+        v51[0] = (int)(*(unsigned int *)((CellStruct *)(aP0))->Sub( (unsigned int *)(v56), (unsigned short *)(&right))); /*0x57e73a*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v51); /*0x57e744*/
       }
       ((House *)((int)v5))->AnnounceUpgrade(-1); /*0x57e74c*/
@@ -2035,10 +2035,10 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
         IDA_LOBYTE(v54) = 1; /*0x57ec45*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v1); /*0x57ec49*/
         right = 0x10000; /*0x57ec5a*/
-        v50[0] = (int)(*CellStruct::Add(((CellStruct *)(v1)), (unsigned int *)(v52), (unsigned short *)(&right))); /*0x57ec77*/
+        v50[0] = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(v1)), (unsigned int *)(v52), (unsigned short *)(&right))); /*0x57ec77*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v50); /*0x57ec7b*/
         v39 = (unsigned short *)((CellStruct *)(v52))->Set(0, 1); /*0x57ec87*/
-        v50[0] = (int)(*((CellStruct *)(v1))->Sub( (unsigned int *)(&right), (unsigned short *)(v39))); /*0x57eca5*/
+        v50[0] = (int)(*(unsigned int *)((CellStruct *)(v1))->Sub( (unsigned int *)(&right), (unsigned short *)(v39))); /*0x57eca5*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v50); /*0x57eca9*/
       }
       ((House *)(v24))->AnnounceUpgrade(-1); /*0x57ecb2*/
@@ -2322,7 +2322,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
         v51[0] = right; /*0x57f175*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v51); /*0x57f17f*/
         right = 1; /*0x57f190*/
-        v51[0] = (int)(*((CellStruct *)(aP0))->Sub( (unsigned int *)(v56), (unsigned short *)(&right))); /*0x57f1a7*/
+        v51[0] = (int)(*(unsigned int *)((CellStruct *)(aP0))->Sub( (unsigned int *)(v56), (unsigned short *)(&right))); /*0x57f1a7*/
         BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8,  (int)v51); /*0x57f1b1*/
       }
       ((House *)((int)v5))->AnnounceUpgrade(-1); /*0x57f1b9*/

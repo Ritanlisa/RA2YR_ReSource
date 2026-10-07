@@ -114,7 +114,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
     v4 = dword_AC4920++; /*0x62936d*/
     *((unsigned int *)dword_AC4914 + v4) = (unsigned int)(this); /*0x62937c*/
   }
-  return this; /*0x629381*/
+  return; /*0x629381*/
 
 }
 } // namespace ra2

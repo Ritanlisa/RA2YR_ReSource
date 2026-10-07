@@ -116,7 +116,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 
   if ( !*((unsigned char *)this + 96) ) /*0x49e3b3*/
     ((gamemd::CampaignClass *)(this))->LoadFromINI(); /*0x49e3ba*/
-  if ( aP1 < 0 || aP1 >= (gamemd::CCINIClass *)(*((unsigned int *)this + 23) )) /*0x49e3ca*/
+  if ( (int)aP1 < 0 || (unsigned int)aP1 >= *((unsigned int *)this + 23) ) /*0x49e3ca*/
   {
     *(unsigned int *)aP2 = 0; /*0x49e3e9*/
     return 0; /*0x49e3ef*/
@@ -292,7 +292,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
 {
   char v6; // bl
 
-  if ( a1 >= 0 && a1 < (void *)(dword_ABF3A0) ) /*0x5bf26a*/
+  if ( (int)a1 >= 0 && (unsigned int)a1 < dword_ABF3A0 ) /*0x5bf26a*/
   {
     v6 = byte_A8E378; /*0x5bf275*/
     byte_A8E378 = 0; /*0x5bf289*/

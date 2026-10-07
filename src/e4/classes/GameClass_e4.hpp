@@ -107,7 +107,8 @@ struct GameClass {
     unsigned int DDraw;
     unsigned int Timer;
     unsigned int Event;
-    unsigned int Network;
+    unsigned int Network_ph;  // w18j3: filler renamed (no offset truth; canon GameClass::Network is a method)
+    static unsigned int Network(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned char Pipe_field_0x04;  // 0x4
 // --- flat members (END) ---
     int initGameMode(int a2, int a3);  // 0x437FD0

@@ -40,6 +40,9 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Coord2D_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/FontClass_e4.hpp"  // w18j2 C3861 FontClass:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int RenderGlyph(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 
 // 0x431BC0
 namespace gamemd {
@@ -272,7 +275,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       if ( aP8->q014 ) /*0x437513*/
       {
         v18 = aP8->Width /*0x437545*/
-            * ((aP7
+            * (((unsigned int)aP7
               + (uint16_t)(*((unsigned short *)g_ZBufferDescriptor + 2)
                                  + *((unsigned short *)g_ZBufferDescriptor + 18)
                                  - v73
@@ -282,7 +285,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       else
       {
         v18 = v29 /*0x437585*/
-            * ((aP7
+            * (((unsigned int)aP7
               + (uint16_t)(*((unsigned short *)g_ZBufferDescriptor + 2)
                                  + *((unsigned short *)g_ZBufferDescriptor + 18)
                                  - v20
@@ -1325,8 +1328,8 @@ BOOL E4Recv_4349F0::sub_4349F0()
     this->M8 = 0; /*0x434a02*/
     this->occupant = 894795775; /*0x434a0f*/
     this->owningHouseIndex = 64; /*0x434a1b*/
-    IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x434a22*/
-    IDA_BYTE1(this->ambientSoundController[1]) = 1; /*0x434a25*/
+    this->ambientSoundController[0] = 1; /*0x434a22 (byte @0x40)*/
+    this->ambientSoundController[1] = 1; /*0x434a25 (byte @0x41)*/
     this->q018 = 1; /*0x434a28*/
     this->referenceCount = 1; /*0x434a2b*/
     result = SetRect((LPRECT)&this->nextObject, 0, 0, 0, 0); /*0x434a2e*/

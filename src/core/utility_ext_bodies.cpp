@@ -29,7 +29,7 @@ int AllocCallback::Dispatch(int a1, int a2, unsigned int Block, size_t Size)
         result = Block; /*0x7be60c*/
         break; /*0x7be60f*/
       case 6: /*0x7be5df*/
-        *Block = -1; /*0x7be614*/
+        *(unsigned int *)Block = -1; /*0x7be614*/
         goto LABEL_6; /*0x7be614*/
       default:
   LABEL_6:
@@ -57,7 +57,7 @@ int GraphicMenuImageItem::QueryInterface(char a2)
     return this; /*0x4f3882*/
 }
 // 0x49ef40
-void StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
+int StringVector::StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
 {
     int result; // eax
     int m_8; // edx
@@ -69,7 +69,7 @@ void StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
     result = 0; /*0x49ef51*/
     if ( m_8 <= 0 ) /*0x49ef55*/
       return -1; /*0x49ef6c*/
-    for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x49ef5b*/
+    for ( i = *(unsigned int **)&this->m_1[3]; *i != *(unsigned int *)a2; ++i ) /*0x49ef5b*/
     {
       if ( ++result >= m_8 ) /*0x49ef6a*/
         return -1; /*0x49ef6a*/

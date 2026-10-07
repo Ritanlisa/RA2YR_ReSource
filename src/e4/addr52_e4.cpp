@@ -1190,7 +1190,7 @@ LABEL_3:
   {
     Debug::Log();
     kk = (int)(void*)&CD_vftable;
-    if ( !(uint8_t)CD_vftable(-1) )
+    if ( !(uint8_t)(*(uint8_t (**)(void *))(*(unsigned int *)-1 + 0))(-1) )
     {
 LABEL_68:
       Debug::Log();
@@ -1224,7 +1224,7 @@ LABEL_68:
         break;
       if ( GameDirectoryCD == (unsigned char *)2 )
         goto LABEL_79;
-      if ( !(uint8_t)CD_vftable(dword_81C1D0) )
+      if ( !(uint8_t)(*(uint8_t (**)(void *))(*(unsigned int *)dword_81C1D0 + 0))(dword_81C1D0) )
         goto LABEL_68;
 LABEL_80:
       if ( !GameDirectoryCD )
@@ -1233,7 +1233,7 @@ LABEL_80:
         goto LABEL_82;
       }
     }
-    if ( !(uint8_t)CD_vftable(dword_81C1D0) )
+    if ( !(uint8_t)(*(uint8_t (**)(void *))(*(unsigned int *)dword_81C1D0 + 0))(dword_81C1D0) )
       goto LABEL_68;
 LABEL_79:
     FadePalette(&((unsigned char *)&stru_87C374)[37900], 0, 0);
@@ -1828,7 +1828,7 @@ void MenuSelect()
   char var110_2; // [esp+18h] [ebp-10Eh]
   LONG dwNewLong; // [esp+1Ah] [ebp-10Ch] BYREF
   CampaignScore *v58; // [esp+22h] [ebp-104h]
-  unsigned int (__stdcall **)(unsigned int); // [esp+26h] [ebp-100h]
+  void * v59; // [esp+26h] [ebp-100h] (G57w18j4: live til CD v59; CD carrier unsupplied, ptr-store semantics)
   LONG v62[23]; // [esp+6Ah] [ebp-BCh] BYREF
   LONG v63[24]; // [esp+C6h] [ebp-60h] BYREF
 

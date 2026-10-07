@@ -45,7 +45,7 @@ namespace gamemd {
 unsigned int VoxelAnimClass::ProcessFrame()
 {
 
-  unsigned int * v1;
+  unsigned int v1;
   unsigned int *v2; // edx
   int v3; // edi
   double v4; // st7
@@ -62,7 +62,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
   float v15; // [esp+8h] [ebp-4h]
   float v16; // [esp+8h] [ebp-4h]
 
-  v1 = (unsigned int *)((int)((unsigned int *)(0)));
+  v1 = (unsigned int)(0);
   v2 = (unsigned int *)(&unk_86D0BC);
   v3 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/

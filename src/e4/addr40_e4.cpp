@@ -96,6 +96,15 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TechnoClass_e4.hpp"
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_402EF0(...); }  // w18j2 raw 0x00402EF0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_401B00(...); }  // w18j2 raw 0x00401B00 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_4085B0(...); }  // w18j2 raw 0x004085B0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int ProcessAudioMixerFrame(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int ActivatePlay(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace AudioChannel { int ActivatePlay(); }  // w18j2 ns-supply raw 0x00402650
 
 // 0x4011C0
 namespace gamemd {
@@ -1107,7 +1116,7 @@ TechnoTypeClass * sub_404BB0(TechnoClass *a1)
       }
     }
     v9 = occupant[78]; /*0x404bfd*/
-    if ( v9 && (a1->nextArrayIndex & 8) == 0 ) /*0x404c0b*/
+    if ( v9 && ((*(unsigned int *)&a1->nextArrayIndex & 8)) == 0 ) /*0x404c0b*/
     {
       a1->infantryBlinkTimer[2] = Random::Range((Random *)(&Randomizer_Global), 0, v9 - 1); /*0x404c1b*/
       v5 = 1; /*0x404c21*/
@@ -1162,7 +1171,7 @@ LABEL_29:
     v15 = 0; /*0x404d03*/
     goto LABEL_30; /*0x404d03*/
   }
-  if ( (a1->nextArrayIndex & 8) == 0 && *(int *)a1->isBeingWarpedOut <= 0 ) /*0x404cf0*/
+  if ( ((*(unsigned int *)&a1->nextArrayIndex & 8)) == 0 && *(int *)a1->isBeingWarpedOut <= 0 ) /*0x404cf0*/
   {
 LABEL_34:
     v20 = *(unsigned int *)a1->isBeingWarpedOut; /*0x404d5d*/
@@ -1170,7 +1179,7 @@ LABEL_34:
     *(unsigned int *)a1->isBeingWarpedOut = v20 + 1; /*0x404d6b*/
     return (TechnoTypeClass * *)v21; /*0x404d71*/
   }
-  if ( (a1->nextArrayIndex & 8) != 0 ) /*0x404cfa*/
+  if ( ((*(unsigned int *)&a1->nextArrayIndex & 8)) != 0 ) /*0x404cfa*/
     goto LABEL_29; /*0x404cfa*/
   v15 = 1; /*0x404cfc*/
 LABEL_30:

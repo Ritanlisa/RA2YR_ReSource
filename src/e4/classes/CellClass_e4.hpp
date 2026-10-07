@@ -76,7 +76,8 @@ struct CellClass {
     unsigned int u32_2F4;
     unsigned int u32_E4;
     unsigned int objectTypeFlags;
-    void* RevealFogRect;  // 0x0 (no offset truth)
+    void* RevealFogRect_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon CellClass::RevealFogRect is a method)
+    static unsigned int RevealFogRect(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     char UpdateTerrain(unsigned short *a1, int a2);  // G57w10-S raw 0x0056F8B0 IUnknown 占位清除
     char UpdateTileVariant2(unsigned short *a1, int a2);  // G57w10-S raw 0x0056FC80 IUnknown 占位清除

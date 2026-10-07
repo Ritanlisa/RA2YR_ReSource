@@ -62,6 +62,12 @@
 #include "e4/classes/Node_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+#include "e4/classes/PreviewClass_e4.hpp"  // w18j2 C3861 PreviewClass:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int ReadWaypoints(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
+namespace gamemd { int LoadFromINI(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
+namespace gamemd { int ParseValue(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
+namespace gamemd { int RenderMapPreview(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_4072B0(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -479,7 +485,7 @@ LABEL_13:
   }
 LABEL_14:
   v9 = ++dword_A8DAB4; /*0x683bce*/
-  if ( !(uint8_t)vt_CD(dword_81C1D0) ) /*0x683bf6*/
+  if ( !(uint8_t)(*(uint8_t (**)(void *))(*(unsigned int *)dword_81C1D0 + 0))(dword_81C1D0) ) /*0x683bf6*/
   {
 LABEL_21:
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x683d3c*/
@@ -655,7 +661,7 @@ int ScenarioClass_Construct(void * a2)
   int v7[3]; // [esp+C0h] [ebp-14h] BYREF
   int v8; // [esp+CCh] [ebp-8h]
 
-  result = (unsigned int)(void*)&CD_vftable(dword_81C1D0); /*0x68674c*/
+  result = (unsigned int)(*(uint8_t (**)(void *))(*(unsigned int *)dword_81C1D0 + 0))(dword_81C1D0); /*0x68674c*/
   if ( result ) /*0x686754*/
   {
     *(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x686765*/

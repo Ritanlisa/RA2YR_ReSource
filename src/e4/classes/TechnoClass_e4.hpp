@@ -288,12 +288,16 @@ struct TechnoClass {
     unsigned int damageParticles_2;
     unsigned int master;
     unsigned int railgunParticles_2;
-    unsigned int Deploy;
+    unsigned int Deploy_ph;  // w18j3: filler renamed (no offset truth; canon TechnoClass::Deploy is a method)
+    static unsigned int Deploy(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned int queueUpToEnter;
     unsigned int *__pad_0;
-    unsigned int EvaluateTarget;
-    void* GetAudioEntry;  // 0x0 (no offset truth)
-    void* GatherAllBuildings;  // 0x0 (no offset truth)
+    unsigned int EvaluateTarget_ph;  // w18j3: filler renamed (no offset truth; canon TechnoClass::EvaluateTarget is a method)
+    static unsigned int EvaluateTarget(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* GetAudioEntry_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon TechnoClass::GetAudioEntry is a method)
+    static unsigned int GetAudioEntry(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* GatherAllBuildings_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon TechnoClass::GatherAllBuildings is a method)
+    static unsigned int GatherAllBuildings(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* IsCapturableByPlayer;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);

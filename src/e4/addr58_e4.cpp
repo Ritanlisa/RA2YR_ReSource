@@ -443,7 +443,7 @@ int MarkCliffEdgePassability(int a1)
         if ( *(unsigned short *)v3 == v4 )
         {
           v5 = (unsigned short *)((int)((unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544)));
-          for ( i = *(void *)CellStruct::Add(((CellStruct *)(unsigned short *)v3), (unsigned int *)(&v29), (unsigned short *)(v5)); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
+          for ( i = *(unsigned int *)CellStruct::Add(((CellStruct *)(unsigned short *)v3), (unsigned int *)(&v29), (unsigned short *)(v5)); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
           {
             v7 = (unsigned int)(IDA_SHIWORD(i) << 9);
             v8 = v7 + (int16_t)i; /*0x586c95*/
@@ -478,7 +478,7 @@ int MarkCliffEdgePassability(int a1)
         else
         {
           v13 = (unsigned short *)((int)((unsigned short *)(4 * ((*(unsigned short *)v3 >= v4 ? 6 : 2) & 7) + 9041544)));
-          for ( j = *(void *)CellStruct::Add(((CellStruct *)(unsigned short *)v3), (unsigned int *)(&v30), (unsigned short *)(v13)); ; j = v25 ) /*0x586d69*/
+          for ( j = *(unsigned int *)CellStruct::Add(((CellStruct *)(unsigned short *)v3), (unsigned int *)(&v30), (unsigned short *)(v13)); ; j = v25 ) /*0x586d69*/
           {
             v15 = (unsigned short)j == *(unsigned short *)(v3 + 4); /*0x586d6b*/
             v31 = j; /*0x586d6f*/

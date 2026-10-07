@@ -22,7 +22,7 @@ int Voice::Stop()
   (*(void (**)(int))(*(unsigned int *)(v1 + 212) + 44))(v1); /*0x4025d8*/
   result = *(unsigned int *)(v1 + 188); /*0x4025db*/
   if ( result ) /*0x4025e3*/
-    result = result(v1); /*0x4025e7*/
+    result = ((int (*)(int))result)(v1); /*0x4025e7*/
   *(unsigned int *)(v1 + 360) = 0; /*0x4025e9*/
   return result; /*0x4025f3*/
 

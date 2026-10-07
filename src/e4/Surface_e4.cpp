@@ -1179,7 +1179,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   ((Buffer*)((Buffer *)v40))->Init((int)v41, v8 * v9); /*0x7074d0*/
   v11 = *(unsigned int *)this->__pad_0; /*0x7074d9*/
   *(unsigned int *)v37.__pad_0 = (unsigned int)(&BSurface_Vtable); /*0x7074dd*/
-  v12 = aP4 & 0xFFFFFFEF; /*0x7074e5*/
+  v12 = (unsigned int)aP4 & 0xFFFFFFEF; /*0x7074e5*/
   if ( (*(int (**)(Surface *))(v11 + 44))(this) == 1 && *((unsigned char *)this + 1747) ) /*0x7074f0*/
     v13 = (LightConvertClass *)dword_B1D140; /*0x7074fa*/
   else

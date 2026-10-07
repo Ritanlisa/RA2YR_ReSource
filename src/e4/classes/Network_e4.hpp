@@ -138,7 +138,8 @@ struct Network {
     unsigned int q0084;
     unsigned int Debug;
     unsigned int Timer;
-    unsigned int UpdateLatencyDisplay;
+    unsigned int UpdateLatencyDisplay_ph;  // w18j3: filler renamed (no offset truth; canon Network::UpdateLatencyDisplay is a method)
+    static unsigned int UpdateLatencyDisplay(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned char Network_field_0x10;  // 0x10
     unsigned char *__pad_14;  // 0x14
 // --- flat members (END) ---

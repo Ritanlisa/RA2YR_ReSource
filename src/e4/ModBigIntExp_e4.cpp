@@ -98,7 +98,7 @@ int sub_5C7EC0(const void * a1, int a2)
     v19 = (int *)((&dword_ABF8C4)[v14]);
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
-    if ( v19 >= 0 ) /*0x5c7f9e*/
+    if ( (int)v19 >= 0 ) /*0x5c7f9e*/
     {
       do /*0x5c7fa5*/
       {
@@ -140,7 +140,7 @@ int sub_5C7EC0(const void * a1, int a2)
     v28 = ((unsigned int *)(dword_ABF5A0))[v24]; /*0x5c8048*/
     v29 = 0x80000000; /*0x5c804f*/
     v30 = 32 * v27; /*0x5c8054*/
-    if ( v28 >= 0 ) /*0x5c8059*/
+    if ( (int)v28 >= 0 ) /*0x5c8059*/
     {
       do /*0x5c8060*/
       {

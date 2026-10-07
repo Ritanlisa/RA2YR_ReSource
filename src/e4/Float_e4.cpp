@@ -39,7 +39,7 @@ int Float::SubtractClamped(float aP1, int aP2)
   if ( v4 >= (double)(aP1) ) /*0x6c96c0*/
     v9 = *((float *)(unsigned int)(this)+ aP2) - aP1; /*0x6c96d7*/
   else
-    v9 = *((float *)(unsigned int)(this)+ aP2) (unsigned int)(-)*((float *)this + aP2); /*0x6c96c8*/
+    v9 = *((float *)this + aP2) - *((float *)this + aP2); /*0x6c96c8*/
   *((float *)(unsigned int)(this)+ aP2) = v9; /*0x6c96ca*/
   return result; /*0x6c96cd*/
 

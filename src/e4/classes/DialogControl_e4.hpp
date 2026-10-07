@@ -22,7 +22,7 @@ struct DialogControl {
 // --- flat members (END) ---
     int Hide();
     int IsHidden();
-    void Show(void *a1, void *a2);
+    int Show(void *a1, void *a2);
     unsigned int * Constructor();
 };
 

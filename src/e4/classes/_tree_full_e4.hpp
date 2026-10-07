@@ -619,7 +619,8 @@ struct HashTable {
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct KeywordType {
     void* vfptr;
-    void* FindOrCreate2;  // 0x0 (no offset truth)
+    void* FindOrCreate2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon KeywordType::FindOrCreate2 is a method)
+    static unsigned int FindOrCreate2(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 };
 #endif  // GAMEMD_TREE_UNIVERSE (KeywordType)
 
@@ -770,8 +771,10 @@ struct ObjectClass {
     static int SaveToStream_Common(void *aP0, IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2);  // A_c2039 R5 static-form sync
     static int ProductionCompletionCallback(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
     static int LoadFromStream_Common(void *aP0, FootClass * aP1, LPSTREAM pStm);  // A_c2039 R5 static-form sync
-    void* IsCliffWall;  // 0x0 (no offset truth)
-    void* IsBelowScreen;  // 0x0 (no offset truth)
+    void* IsCliffWall_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ObjectClass::IsCliffWall is a method)
+    static unsigned int IsCliffWall(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* IsBelowScreen_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ObjectClass::IsBelowScreen is a method)
+    static unsigned int IsBelowScreen(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     static int HasLinkedObject(int aP0);  // A_c2039 R5 static-form sync
     int DrawPowerBarForPlayers(void *aP0, HWND hDlg);  // A_c2039 R5 static-form sync
     static int CreateUnitOnCompletion(void *aP0, void * aP1);  // A_c2039 R5 static-form sync
@@ -977,7 +980,8 @@ struct ShapeButtonClass {
     static int Destructor(void *aP1);  // 0x69DDC0 raw: int Destructor(int this)
     unsigned int ShapeButtonClass_field_0x04;  // 0x4
     unsigned int ShapeButtonClass_field_0x08;  // 0x8
-    void* Constructor;  // 0x0 (no offset truth)
+    void* Constructor_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon ShapeButtonClass::Constructor is a method)
+    static unsigned int Constructor(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 };
 #endif  // GAMEMD_TREE_UNIVERSE (ShapeButtonClass)
 
@@ -1019,7 +1023,8 @@ struct VectorClass {
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsInitialized;  // 0xC (G57W14E1 til supply)
-    void* ClearAndFree2;  // 0x0 (no offset truth)
+    void* ClearAndFree2_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon VectorClass::ClearAndFree2 is a method)
+    static unsigned int ClearAndFree2(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* vfptr;
     unsigned int tail_E;  // 0xE
     int Shrink();  // 0x7ae730

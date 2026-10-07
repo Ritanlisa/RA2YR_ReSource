@@ -42,7 +42,7 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_RocketLocomotionClass;
   *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_RocketLocomotionClass;
-  return (int)this->LocomotionClass; /*0x661f28*/
+  return; /*0x661f28*/
 
 }
 }  // G42.18c ns repair
@@ -360,7 +360,7 @@ int RocketLocomotionClass_17::Launch(unsigned int * a2)
 }
 // 0x664A70
 namespace gamemd {
-void RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2, void *a3_1)
+_DWORD * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
   void *v3; // eax

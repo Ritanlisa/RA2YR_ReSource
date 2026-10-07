@@ -146,8 +146,10 @@ struct HouseClass {
     char base[80];  // 0x56E8
     char HouseClass_field_timer_B[12];  // 0x5770
     unsigned int HouseClass_field_160B4;
-    unsigned int CheckWinCondition;
-    void* AccumulateScore;  // 0x0 (no offset truth)
+    unsigned int CheckWinCondition_ph;  // w18j3: filler renamed (no offset truth; canon HouseClass::CheckWinCondition is a method)
+    static unsigned int CheckWinCondition(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* AccumulateScore_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon HouseClass::AccumulateScore is a method)
+    static unsigned int AccumulateScore(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
@@ -248,7 +250,9 @@ struct HouseClass {
     static int ProcessPower(...);  // w16g4 C3861 static supply (raw 0x00425410)  // w16g4 C3861 static supply (raw 0x004FCBD0)  // 0x63CFC0
     // --- W16G3 supply (BEGIN) ---
     static int InitStatArray(void *aP1, unsigned int a2);  // W16G3 static-form (HouseClass_e4 0x4f639c x10)
-    static int initDropshipData(void *aP1);  // W16G3 static-form (0x4f5c0f)
+    static int initDropshipData(void *aP1);
+    static char ClearPrimaryFactory();
+    static char checkAutoProduction();  // w18j2 C3861 static supply (raw 0x00483460)  // w18j2 C3861 static supply (raw 0x00740E20)  // W16G3 static-form (0x4f5c0f)
     // --- W16G3 supply (END) ---
 
 };

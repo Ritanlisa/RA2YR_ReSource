@@ -34,7 +34,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
     v14 = 254; /*0x497a53*/
   v23 = (gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)(this->m_C + (v14 << 9)); /*0x497a60*/
   v15 = aP4; /*0x497a64*/
-  if ( aP4 <= 0 ) /*0x497a6a*/
+  if ( (int)aP4 <= 0 ) /*0x497a6a*/
   {
     v18 = a4; /*0x497aa5*/
   }
@@ -47,7 +47,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
       else
         v15 -= *a2++; /*0x497a79*/
     }
-    while ( v15 > 0 ); /*0x497a81*/
+    while ( (int)v15 > 0 ); /*0x497a81*/
     v17 = -v15; /*0x497a91*/
     v18 = a4 - v17; /*0x497a93*/
     arg0 += 2 * v17; /*0x497a95*/

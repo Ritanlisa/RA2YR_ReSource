@@ -19,7 +19,8 @@ struct MSOverlayAnim {
     unsigned int *__pad_0;
     unsigned int u32_1C;
     unsigned int u32_3C;
-    void* Init;  // 0x0 (no offset truth)
+    void* Init_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon MSOverlayAnim::Init is a method)
+    static unsigned int Init(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     MSShapeAnim * QueryInterface(unsigned int * Block, char a2);
     void StubReturnFalse(int a1);

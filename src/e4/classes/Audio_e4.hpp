@@ -100,7 +100,7 @@ struct Audio {
     unsigned int GetSamplePosition(int aP1, int aP2);  // 0x7BD130
     int InitChannels();  // 0x401080
     int FlushChannel(unsigned int ** Block);  // 0x404DD0
-    void Shutdown(void *a1_1);  // 0x406D40
+    int Shutdown(void *a1_1);  // 0x406D40
     static int IsSoundEnabled();  // 0x407000
     static void * GetEnabled();  // 0x407010
     int GetFlag();  // 0x407070

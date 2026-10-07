@@ -106,7 +106,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   *((unsigned int *)this + 19) = 0; /*0x71a58b*/
   *((unsigned int *)this + 14) = 0; /*0x71a58e*/
   *((unsigned int *)this + 15) = 0; /*0x71a591*/
-  return this; /*0x71a596*/
+  return; /*0x71a596*/
 
 }
 } // namespace ra2

@@ -125,6 +125,13 @@
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/PlanManager_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_tree_full_e4.hpp"
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int CalcFill(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int ComputeFill(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+int ComputeFill(...);  // w18j2 ns-supply raw 0x0063F960 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+int CalcFill(...);  // w18j2 ns-supply raw 0x0063F850 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int ExecuteActionPlanManager_Helper_63DEC0(...); }  // w18j2 raw 0x0063DEC0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int UI_Pop_631500(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -4162,8 +4169,8 @@ BOOL E4Recv_634470::sub_634470(int a2, int a3)
 namespace gamemd {
 unsigned int * ComputeBounds(AbstractClass * aP0, ObjectClass * aP1, int a3, int a4)
 {
-  *aP0 = aP1 / -2 + a3; /*0x634532*/
-  aP0[1] = aP1 / -2 + a4; /*0x634535*/
+  *aP0 = (int)aP1 / -2 + a3; /*0x634532*/
+  aP0[1] = (int)aP1 / -2 + a4; /*0x634535*/
   aP0[2] = aP1; /*0x634538*/
   aP0[3] = aP1; /*0x63453b*/
   return aP0; /*0x634534*/
@@ -4968,10 +4975,10 @@ char DrawTacticalFillScanline(AbstractClass * aP0, BuildingClass * aP1, int a3, 
   int v8; // edi
   int v9; // esi
 
-  v7 = aP0 - (aP0 >> 31); /*0x63d917*/
-  v8 = aP0 / 2; /*0x63d91c*/
-  v9 = aP0 / 2 - aP0 + 1; /*0x63d922*/
-  if ( v9 <= aP0 / 2 ) /*0x63d925*/
+  v7 = (int)aP0 - ((int)aP0 >> 31); /*0x63d917*/
+  v8 = (int)aP0 / 2; /*0x63d91c*/
+  v9 = (int)aP0 / 2 - (int)aP0 + 1; /*0x63d922*/
+  if ( v9 <= (int)aP0 / 2 ) /*0x63d925*/
   {
     do /*0x63d94a*/
       IDA_LOBYTE(v7) = DrawTacticalLine2D(v9++, aP1, a3, aP3, a5, a6, 0); /*0x63d942*/
@@ -5173,7 +5180,7 @@ long long E4Recv_63F8F0::sub_63F8F0()
   int v4; // kr00_4
   int v5; // [esp+0h] [ebp-8h]
 
-  v2 = PowerBar::CalcFill(); /*0x63f8f6*/
+  v2 = CalcFill(); /*0x63f8f6*/
   v5 = *((unsigned int *)this + 1355) + *((unsigned int *)this + 1356) + *((unsigned int *)this + 1357); /*0x63f917*/
   if ( v5 > v2 ) /*0x63f91c*/
     v5 = v2; /*0x63f91e*/
@@ -5197,7 +5204,7 @@ int E4Recv_63FDC0::sub_63FDC0()
   int v6; // [esp+8h] [ebp-8h] BYREF
   int v7; // [esp+Ch] [ebp-4h] BYREF
 
-  PowerBar::ComputeFill(&v5, &v7, &v6); /*0x63fdd7*/
+  ComputeFill(&v5, &v7, &v6); /*0x63fdd7*/
   v2 = *((unsigned int *)this + 1355); /*0x63fddc*/
   if ( v2 <= v5 ) /*0x63fde8*/
   {
@@ -5236,7 +5243,7 @@ int E4Recv_63FE30::sub_63FE30()
   int v6; // [esp+8h] [ebp-8h] BYREF
   int v7; // [esp+Ch] [ebp-4h] BYREF
 
-  PowerBar::ComputeFill(&v6, &v7, &v5); /*0x63fe47*/
+  ComputeFill(&v6, &v7, &v5); /*0x63fe47*/
   v2 = *((unsigned int *)this + 1357); /*0x63fe4c*/
   if ( v2 >= v5 ) /*0x63fe58*/
   {

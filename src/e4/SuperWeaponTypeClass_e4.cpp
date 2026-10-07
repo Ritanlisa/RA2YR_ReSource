@@ -774,7 +774,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
     }
     if ( this + 36 != this + 204 ) /*0x6ce6e8*/
       qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u); /*0x6ce6ef*/
-    return this; /*0x6ce6f2*/
+    return; /*0x6ce6f2*/
 }
 } // namespace gamemd
 

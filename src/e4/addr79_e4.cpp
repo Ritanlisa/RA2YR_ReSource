@@ -47,6 +47,16 @@
 #include "e4/classes/StringVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Config_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/OwnerDrawControl_e4.hpp"  // G42.36 C2027 supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **a4); }  // w18j2 raw 0x0077A9F0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **a4); }  // w18j2 raw 0x0077A9F0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **a4); }  // w18j2 raw 0x0077A9F0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **a4); }  // w18j2 raw 0x0077A9F0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { void WOL_FillPersonaInfo(int HWND hDlg, char **a3, wchar_t **a4); }  // w18j2 raw 0x0077A9F0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ExchangeMultiplayerGameInfo(...);  // raw 005E7920: void ExchangeMultiplayerGameInfo()
@@ -2654,7 +2664,7 @@ AbstractClass * * WOL_InitVersionStrings()
   result = byte_B77E10; /*0x797c20*/
   if ( !byte_B77E10 ) /*0x797c2a*/
   {
-    if ( (&byte_B76954 & 1) == 0 ) /*0x797c38*/
+    if ( (byte_B76954 & 1) == 0 ) /*0x797c38*/
     {
       IDA_LOBYTE(&byte_B76954) |= 1u; /*0x797c3d*/
       p_abstractFlags = (int *)((char *)&stru_B76900); /*0x797c42*/

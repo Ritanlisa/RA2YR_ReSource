@@ -112,7 +112,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
     v18 = dword_B0B890++; /*0x6b6e76*/
     *((unsigned int *)dword_B0B884 + v18) = (unsigned int)this;
   }
-  return this; /*0x6b6e8a*/
+  return; /*0x6b6e8a*/
 
 }
 } // namespace ra2

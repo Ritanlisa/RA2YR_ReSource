@@ -33,6 +33,9 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4); }  // w18j2 raw 0x007988C0
+namespace gamemd { int Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4); }  // w18j2 raw 0x007983E0
 
 // 0x77E110
 namespace gamemd {

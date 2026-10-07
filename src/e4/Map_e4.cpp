@@ -1119,7 +1119,7 @@ char sub_751C30()
   }
   else
   {
-    (void*)&CD_vftable(dword_81C1D0); /*0x751da4*/
+    (*(uint8_t (**)(void *))(*(unsigned int *)dword_81C1D0 + 0))(dword_81C1D0); /*0x751da4*/
   }
   return 1; /*0x751c51*/
 }

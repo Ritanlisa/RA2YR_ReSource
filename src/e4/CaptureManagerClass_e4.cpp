@@ -67,7 +67,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
     v5 = dword_89E100++; /*0x471875*/
     *((unsigned int *)dword_89E0F4 + v5) = (unsigned int)(this); /*0x471884*/
   }
-  return this; /*0x471889*/
+  return; /*0x471889*/
 
 }
 } // namespace ra2
@@ -383,7 +383,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
 
 // 0x471FF0
 namespace gamemd {
-char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0)
+char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0, int a5)
 {
 int v10; // ebp
 a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
@@ -435,7 +435,7 @@ a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
         v20[2] = *((unsigned int *)aP0 + 41); /*0x472079*/
         v13 = vtable0[33]((gamemd::CaptureManagerClass *)aP0); /*0x47207f*/
         StartAudioControllerAt( *(unsigned int *)(v13 + 1456), (unsigned int *)(v20), 0); /*0x47208d*/
-        v10 = _34; /*0x472092*/
+        v10 = a5; /*0x472092*/
       }
       a2 =(int)(IUnknown *)(1); /*0x4720d5*/
       a3 = *(unsigned int *)(v10 + 4); /*0x4720d7*/

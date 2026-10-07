@@ -94,6 +94,9 @@
 #include "e4/classes/Straw_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/DiskSpace_e4.hpp"  // w18j2 C3861 DiskSpace:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int CheckAvailable(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int DlgProcLoadGame_Load(...);  // raw 006967B0: int __thiscall DlgProcLoadGame_Load(ObjectClass *this)
@@ -717,7 +720,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     v60 = 17; /*0x69484f*/
     strcpy( (char *)(v63), (const char *)(Source)); /*0x69485d*/
     v62 = Size; /*0x69486c*/
-    strcpy( (char *)(v61), ToWideStringChar((gamemd::IUnknown *)((char *)*dword_A8DA78))); /*0x694897*/
+    strcpy( (char *)(v61), ToWideStringChar((gamemd::IUnknown *)((char *)*(unsigned int *)dword_A8DA78))); /*0x694897*/
     if ( a3 ) /*0x6948a9*/
     {
       v8 = 1; /*0x6948b0*/
@@ -979,7 +982,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
         *(unsigned short *)&v57.__pad_0[38] = v31; /*0x694df7*/
         if ( v31 >= 192 ) /*0x694dff*/
           *(unsigned short *)&v57.__pad_0[38] = 192; /*0x694e01*/
-        v34 = ToWideStringChar((IUnknown *)((char *)*dword_A8DA78)); /*0x694e17*/
+        v34 = ToWideStringChar((IUnknown *)((char *)*(unsigned int *)dword_A8DA78)); /*0x694e17*/
         v35 = v49; /*0x694e31*/
         strcpy( (char *)(&v57.__pad_0[16]), (const char *)(v34)); /*0x694e38*/
         v49 = v35 - *(uint16_t *)&v57.__pad_0[38]; /*0x694e5c*/
@@ -1094,7 +1097,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
       SetSoundWarning(v9); /*0x6952a5*/
     }
     ++dword_A8DAB4; /*0x6952bb*/
-    if ( !(uint8_t)(void*)&CD_vftable(dword_81C1D0) ) /*0x6952d5*/
+    if ( !(uint8_t)(*(uint8_t (**)(void *))(*(unsigned int *)dword_81C1D0 + 0))(dword_81C1D0) ) /*0x6952d5*/
     {
       --dword_A8DAB4; /*0x695418*/
       v18[0] = (int)&CCFileClass_vftable; /*0x69541d*/

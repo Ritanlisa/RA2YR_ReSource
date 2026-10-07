@@ -905,7 +905,7 @@ int BuildingClass::GetSellPriority()
 
 // 0x5F6500
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
-int BuildingClass::SquaredDistanceTo(ObjectClass* target, int a2) const  // g57b5 W4: raw 真值补参 (a2)
+int BuildingClass::SquaredDistanceTo(ObjectClass* target, int *a2) const  // g57b5 W4: raw 真值补参 (a2)
 {
     int *v3; // eax
     int v4; // esi
@@ -1161,7 +1161,7 @@ int UnitClass::Mission_Harvest()
               v14 = DB; /*0x415339*/
               if ( DB /*0x415360*/
                 && (v15 = *(unsigned int *)(DB + 1492)) != 0
-                && *TechnoClass_GetWaypointCoords(*(TechnoClass **)(v15 + 36), &v30) != g_AircraftStatusFlag )
+                && *(unsigned int *)TechnoClass_GetWaypointCoords(*(TechnoClass **)(v15 + 36), &v30) != g_AircraftStatusFlag )
               {
                 vtable0 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x415375*/  // g57e2 W2
                 WaypointCoords = (short *)TechnoClass_GetWaypointCoords( /*0x415381*/
@@ -1416,7 +1416,7 @@ bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 
 // 0x429A90
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
-void BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5, int a6, char a7)
+int * BuildingClass::BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5, int a6, char a7)
 {
     short *v7; // edi
     int v8; // ebp
@@ -1587,7 +1587,7 @@ void BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5
       v20 = (float *)dword_7E3774; /*0x429c8e*/
       do /*0x429d25*/
       {
-        v21 = (int)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v11 + 904), &a2) >> 12) + 1) >> 1) & 7) /*0x429cb0*/
+        v21 = (int)((((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(v11 + 904), &a2) >> 12) + 1) >> 1) & 7) /*0x429cb0*/
                   - v19);
         v22 = (IDA_HIDWORD(v21) ^ v21) - IDA_HIDWORD(v21); /*0x429cb3*/
         if ( v22 > 2 && v22 < 6 && v20 != *(float *)&flt_7E3794 ) /*0x429cc5*/
@@ -2131,7 +2131,7 @@ void BuildingClass::UpdatePowerAnim()
     v3 = a2; /*0x42ad06*/
     *(unsigned int *)v28 = *(unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)a2 + 440))(a2, &a2); /*0x42ad25*/
     v4 = (char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v28); /*0x42ad32*/
-    v5 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v3 + 904), &v34) >> 12) + 1) >> 1) & 7; /*0x42ad4d*/
+    v5 = ((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(v3 + 904), &v34) >> 12) + 1) >> 1) & 7; /*0x42ad4d*/
     v6 = IDA_LOWORD(g_DDrawSurfaceManager.scenario[v5 + 82]) + v28[0]; /*0x42ad50*/
     IDA_LOWORD(v5) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[v5 + 82]); /*0x42ad5f*/
     IDA_LOWORD(a2) = v6; /*0x42ad67*/
@@ -4495,7 +4495,7 @@ int BuildingClass::GetFacingToTarget()
 
     if ( (*((unsigned __int8 (__thiscall **)(BuildingClass *))this->vtable1 + 255))(this) || (target = ((unsigned int *)this)[0]) == 0 ) /*0x445e6a*/
     {
-      v7 = *ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v9); /*0x445eec*/
+      v7 = *(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v9); /*0x445eec*/
       *v12 = v7; /*0x445ef3*/
       return (int)v12; /*0x445eee*/
     }
@@ -6294,14 +6294,14 @@ int BuildingClass::GetTargetFacing()
       }
       else
       {
-        v5 = *ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v7); /*0x44d834*/
+        v5 = *(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v7); /*0x44d834*/
         *(unsigned short *)v8 = ((((v5 >> 10) + 1) >> 1) & 0x1F) << 11; /*0x44d847*/
         return (int)v8; /*0x44d836*/
       }
     }
     else
     {
-      v2 = *ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v7); /*0x44d7ee*/
+      v2 = *(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v7); /*0x44d7ee*/
       IDA_LOBYTE(v4) = 0; /*0x44d7fb*/
       IDA_HIBYTE(v4) = ((v2 >> 7) + 1) >> 1; /*0x44d7fd*/
       *(unsigned short *)v8 = v4; /*0x44d7ff*/
@@ -7971,7 +7971,7 @@ unsigned int * BuildingClass::DemolishBridgeCheck(int a2)
             {
               v12 = (*(int (__thiscall **)(unsigned int *))(*v10 + 56))(v10); /*0x452b32*/
               if ( (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 14))(this) == v12 /*0x452b5f*/
-                && (v4 & 3) == (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v11 + 226), &v17) >> 12) + 1) >> 1)
+                && (v4 & 3) == (((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(v11 + 226), &v17) >> 12) + 1) >> 1)
                               & 3) )
               {
                 this->LaserFenceFrame |= *v13; /*0x452b79*/
@@ -8068,7 +8068,7 @@ void BuildingClass::FindBridgeSegment()
         break; /*0x452cda*/
       v16 = (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 56))(v14); /*0x452ceb*/
       if ( (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 14))(this) != v16 /*0x452d15*/
-        || (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v14 + 904), &v21) >> 12) + 1) >> 1) & 3) != v8 )
+        || (((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(v14 + 904), &v21) >> 12) + 1) >> 1) & 3) != v8 )
       {
         break; /*0x452d15*/
       }
@@ -8332,7 +8332,7 @@ void BuildingClass::TraverseBridgeSegments()
         v2 = *(Cell **)&v2[1].__pad_250[48]; /*0x45326d*/
         if ( v2[8].__pad_144[123] ) /*0x453273*/
         {
-          v4 = *ProgressTimer::GetValue((ProgressTimer *)v3[1].__pad_E8, &v20); /*0x453291*/
+          v4 = *(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)v3[1].__pad_E8, &v20); /*0x453291*/
           vtable0 = this->TechnoClass; /*0x453293*/
           v6 = 0; /*0x453299*/
           v7 = (((v4 >> 12) + 1) >> 1) & 3; /*0x45329d*/
@@ -8471,7 +8471,7 @@ int BuildingClass::RepairPlacement(char a2)
           {
             v14 = (*(int (__thiscall **)(unsigned int *))(*v11 + 56))(v11); /*0x4534ee*/
             if ( (*((int (__thiscall **)(BuildingClass *))v2->vtable1 + 14))(v2) == v14 /*0x45351c*/
-              && (((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v12 + 226), &v43) >> 12) + 1) >> 1) & 3) == v13 )
+              && (((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(v12 + 226), &v43) >> 12) + 1) >> 1) & 3) == v13 )
             {
               v40 = v12; /*0x453526*/
               v39 = v12; /*0x45352c*/

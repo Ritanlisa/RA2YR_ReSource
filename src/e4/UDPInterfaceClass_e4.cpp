@@ -406,7 +406,7 @@ LABEL_25:
       v14 = hostshort; /*0x7b3c64*/
     *(unsigned short *)netshort.sa_data = htons( (void *)((void *)(v14))); /*0x7b3c75*/
     if ( *((unsigned int *)v13 + 1) == qword_A8DBB0.NetworkID_field_0x04 /*0x7b3c9a*/
-      && (!dword_A8DA84 || (uint8_t)((GUID *)(&qword_A8DBB0))->Compare(*dword_A8DA78 + 40)) )
+      && (!dword_A8DA84 || (uint8_t)((GUID *)(&qword_A8DBB0))->Compare(*(unsigned int *)dword_A8DA78 + 40)) )
     {
       *(unsigned int *)&netshort.sa_data[2] = htonl( (unsigned int)((void *)(0x7F000001u))); /*0x7b3cb4*/
       *(unsigned short *)netshort.sa_data = htons( (void *)((void *)(dword_841F3C))); /*0x7b3cbe*/

@@ -56,6 +56,7 @@
 #include "classes/BuildingClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Delegate_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/Matrix2D_e4.hpp"  // w18j2 C2065 Matrix2D:: supply
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int OwnerHasPower(...); }
 namespace gamemd { int checkEMPState(...); }
@@ -101,7 +102,7 @@ int TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, void
   {
         if ( !*(unsigned char *)((unsigned int)(a1)+ 1737) || *(unsigned int *)((unsigned int)(a1)+ 280) )
     {
-      v7 = *((ProgressTimer *)((ProgressTimer *)a1->secondaryFacing))->GetValue(&a5); /*0x41aa2e*/
+      v7 = *(unsigned int *)((ProgressTimer *)((ProgressTimer *)a1->secondaryFacing))->GetValue(&a5); /*0x41aa2e*/
       if ( (*(int (**)(char *))(*((unsigned int *)a1 + 432) + 28))((char *)a1 + 1728) /*0x41aa6a*/
         || abs16(v7 - *(unsigned short *)((ObjectClass *)((ObjectClass *)a1))->CalcTargetFacing((int *)&a5, (int)a3)) <= 0x800u )
       {
@@ -396,7 +397,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
   memset( (void *)(&this->fireParticles), 0, 0x20u); /*0x6f3247*/
   *(unsigned short *)this->unknown_short_3C8 = ((Random *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State(); /*0x6f3259*/
-  return this; /*0x6f3262*/
+  return; /*0x6f3262*/
 
 }
 } // namespace ra2
@@ -1384,7 +1385,7 @@ LABEL_10:
   v121 = 0x8000000080LL;
   aP3 = (TechnoClass *)(0);
   *(unsigned int *)&((unsigned char *)&stru_87C374)[44960] = dword_B1D13C;
-  int * v13 = (int *)(*(int (**)(unsigned int *, float *))(*dword_B1D13C + 120))( (unsigned int *)(dword_B1D13C), (float *)(&v136));
+  int * v13 = (int *)(*(int (**)(unsigned int *, float *))(*(unsigned int *)dword_B1D13C + 120))( (unsigned int *)(dword_B1D13C), (float *)(&v136));
   v130 = *v13;
   v131 = v13[1];
   v132 = v13[2];
@@ -1461,7 +1462,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
   if ( aP3 != (TechnoClass *)-1 )
   {
   unsigned int v23; // esi
-    v23 = ((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)&v116) >> 10) + 1) >> 1) & 0x1F
+    v23 = ((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)&v116) >> 10) + 1) >> 1) & 0x1F
         | (unsigned int)v22 & 0xFFFFFFE0;
     if ( !*(unsigned int *)((*(int (**)(unsigned int *))(*ecx0 + 132))(ecx0) + 1824) )
       v23 &= 0xFFFFFC1F;
@@ -1472,7 +1473,7 @@ v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
   {
     if ( *(unsigned int *)(v10 + 192) && *(unsigned int *)(v10 + 196) )
     {
-      v116 = (ObjectClass *)((((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 440))->GetValue((IUnknown *)&v117) >> 10)
+      v116 = (ObjectClass *)((((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 440))->GetValue((IUnknown *)&v117) >> 10)
                                             + 1) >> 1)
                             & 0x1F)
                            - 8);
@@ -1584,11 +1585,11 @@ LABEL_56:
   {
     aP1d = (double)*(int *)(v10 + 1824) * unk_B1D008;
     ((Matrix3x4 *)(v142))->Translate((ParticleSystemClass *)IDA_LODWORD(aP1d));
-    v116 = (ObjectClass *)((((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)a1) >> 10) + 1) >> 1)
+    v116 = (ObjectClass *)((((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)a1) >> 10) + 1) >> 1)
                           & 0x1F)
                          - 8);
     v123 = (double)(int)v116 * -0.1963495408493621;
-    v116 = (ObjectClass *)((((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 452))->GetValue((IUnknown *)&v118) >> 10) + 1) >> 1)
+    v116 = (ObjectClass *)((((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 452))->GetValue((IUnknown *)&v118) >> 10) + 1) >> 1)
                           & 0x1F)
                          - 8);
     aP1e = v123 - (double)(int)v116 * -0.1963495408493621;
@@ -1603,7 +1604,7 @@ LABEL_56:
     float v119 = -v142[11];
     float v124 = v119;
     ((Matrix3x3 *)(v145))->Multiply((float *)&v123);
-    v116 = (ObjectClass *)((((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 440))->GetValue((IUnknown *)&v118) >> 10) + 1) >> 1)
+    v116 = (ObjectClass *)((((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 440))->GetValue((IUnknown *)&v118) >> 10) + 1) >> 1)
                           & 0x1F)
                          - 8);
     aP1f = -((double)(int)v116 * -0.1963495408493621);
@@ -1618,8 +1619,8 @@ LABEL_56:
   if ( !TechnoClass::OwnerHasPower(ecx0) || *(unsigned char *)(ecx0[433] + 3285) )
   {
   char v107; // [esp+109h] [ebp-1B3h]
-    if ( (((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)&v118) >> 13) + 1) >> 1) & 3) == 0
-      || (((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)a1) >> 13) + 1) >> 1) & 3) == 3 )
+    if ( (((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)&v118) >> 13) + 1) >> 1) & 3) == 0
+      || (((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)a1) >> 13) + 1) >> 1) & 3) == 3 )
     {
       v107 = 0;
       if ( *(unsigned int *)(v10 + 192) && *(unsigned int *)(v10 + 196) )
@@ -1671,8 +1672,8 @@ LABEL_56:
   else
   {
   char v106; // [esp+109h] [ebp-1B3h]
-    if ( (((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)&v118) >> 13) + 1) >> 1) & 3) == 0
-      || (((unsigned int)((*((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)a1) >> 13) + 1) >> 1) & 3) == 3 )
+    if ( (((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)&v118) >> 13) + 1) >> 1) & 3) == 0
+      || (((unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)ecx0 + 464))->GetValue((IUnknown *)a1) >> 13) + 1) >> 1) & 3) == 3 )
     {
       v106 = 0;
       if ( v110 )

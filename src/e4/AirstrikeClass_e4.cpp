@@ -396,7 +396,7 @@ AirstrikeClass::AirstrikeClass(int a2)
   *((unsigned int *)this + 23) = 0; /*0x41d477*/
   *((unsigned int *)this + 22) = v14; /*0x41d47a*/
   *((unsigned int *)this + 20) = 0; /*0x41d47d*/
-  return this; /*0x41d482*/
+  return; /*0x41d482*/
 
 }
 } // namespace gamemd

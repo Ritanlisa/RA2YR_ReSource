@@ -1326,10 +1326,10 @@ int Movement::CompareAbsCoords(void* a2, void* a3) {
     __int16 v4; // di
     __int16 Movement_field_00; // si
 
-    v3 = *a3; /*0x5b29ca*/
-    v4 = *a2; /*0x5b29cf*/
+    v3 = *(short *)a3; /*0x5b29ca*/
+    v4 = *(short *)a2; /*0x5b29cf*/
     Movement_field_00 = this->Movement_field_00; /*0x5b29d2*/
-    if ( abs16(*a3) < (int)abs16(IDA_LOWORD(this->Movement_field_00) - *a2) ) /*0x5b29f3*/
+    if ( abs16(*(short *)a3) < (int)abs16(IDA_LOWORD(this->Movement_field_00) - *(short *)a2) ) /*0x5b29f3*/
     {
       if ( (__int16)(v4 - Movement_field_00) >= 0 ) /*0x5b2a06*/
         IDA_LOWORD(this->Movement_field_00) = Movement_field_00 + v3; /*0x5b2a19*/

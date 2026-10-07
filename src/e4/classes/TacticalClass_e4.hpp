@@ -121,7 +121,7 @@ struct TacticalClass {
     void DrawBuildingPlacement(unsigned int *a2, int *a3);  // G57w10-S raw 0x0047F510 IUnknown 占位清除
     void DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
     void DrawCellTerrainOverlay(int * a2, int * a3);
-    void InterpolateView();
+    int InterpolateView();
     void StubReturnTrue();
     void StubReturnTrue2();
     void StubReturnTrue3();

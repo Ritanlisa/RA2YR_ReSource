@@ -13,7 +13,7 @@
 
 // 0x7C8A10
 namespace gamemd {
-int ImageList_DragShowNolock()
+int ImageList_DragShowNolock(BOOL fShow)
 {
   return ImageList_DragShowNolock(fShow);
 }

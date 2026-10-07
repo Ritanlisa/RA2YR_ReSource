@@ -232,8 +232,8 @@ int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4, int a5
     v8 = a2; /*0x433f6c*/
     if ( !a2 ) /*0x433f72*/
       return 0; /*0x434092*/
-    v9 = *a2; /*0x433f7a*/
-    if ( *a2 ) /*0x433f7a*/
+    v9 = *(unsigned short *)a2; /*0x433f7a*/
+    if ( *(unsigned short *)a2 ) /*0x433f7a*/
     {
       while ( 1 ) /*0x433f99*/
       {
@@ -301,7 +301,7 @@ int CheckListClass::GetItem(int a1, void* a2, int a3) {
     if ( *((unsigned char *)this + 372) ) /*0x4884a3*/
       return 0; /*0x4884ad*/
     v6 = CellClass_DrawWithFlags((ListClass *)this, a2, a3, 0); /*0x4884cb*/
-    if ( (a2 & 1) != 0 ) /*0x4884cd*/
+    if ( ((unsigned int)a2 & 1) != 0 ) /*0x4884cd*/
     {
       Clamped = Array_GetClamped((ListClass *)this, *((unsigned int *)this + 91)); /*0x4884d8*/
       if ( Clamped ) /*0x4884df*/
@@ -541,29 +541,29 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
     if ( *((unsigned int *)this + 17) ) /*0x4c3193*/
       return 0; /*0x4c319d*/
     v6 = (unsigned int)a2; /*0x4c31a1*/
-    if ( (a2 & 1) != 0 ) /*0x4c31a9*/
+    if ( ((unsigned int)a2 & 1) != 0 ) /*0x4c31a9*/
     {
-      v6 = a2 & 0xFFFFFFFE; /*0x4c31af*/
+      v6 = (unsigned int)a2 & 0xFFFFFFFE; /*0x4c31af*/
       (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 80))(this); /*0x4c31b2*/
       (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))((gamemd::EditClass *)(this)); /*0x4c31b9*/
     }
     if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *))(*(unsigned int *)this + 88))(this) ) /*0x4c31cd*/
       return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c31d2*/
-    if ( *a3 == 27 ) /*0x4c31dd*/
+    if ( *(unsigned int *)a3 == 27 ) /*0x4c31dd*/
     {
       (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c31e3*/
       return ((CellClass *)(ControlClass *)this)->Draw(0, a3, 0);  // g57w10: instance form /*0x4c31f5*/
     }
-    v7 = (unsigned __int8)Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], *a3); /*0x4c3209*/
-    v8 = *a3; /*0x4c320b*/
-    if ( (*a3 & 0x1000) != 0 && v7 >= 48 && v7 <= 57 ) /*0x4c321f*/
+    v7 = (unsigned __int8)Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], *(unsigned int *)a3); /*0x4c3209*/
+    v8 = *(unsigned int *)a3; /*0x4c320b*/
+    if ( (*(unsigned int *)a3 & 0x1000) != 0 && v7 >= 48 && v7 <= 57 ) /*0x4c321f*/
     {
       IDA_BYTE1(v8) &= ~0x10u; /*0x4c3221*/
-      *a3 = v8; /*0x4c3227*/
+      *(unsigned int *)a3 = v8; /*0x4c3227*/
       if ( (v6 & 0x44) != 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *, int))(*(unsigned int *)this + 152))(this, v7) ) /*0x4c3230*/
         return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c3238*/
     }
-    else if ( (*a3 & 0x1000) == 0 && v7 >= 32 || v8 == 13 || v8 == 8 ) /*0x4c3255*/
+    else if ( (*(unsigned int *)a3 & 0x1000) == 0 && v7 >= 32 || v8 == 13 || v8 == 8 ) /*0x4c3255*/
     {
       if ( (v6 & 0x44) != 0 ) /*0x4c325a*/
         return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c325a*/
@@ -573,7 +573,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
         return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c327a*/
     }
     IDA_BYTE1(v6) &= ~1u; /*0x4c327c*/
-    *a3 = 0; /*0x4c327f*/
+    *(unsigned int *)a3 = 0; /*0x4c327f*/
     return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c319c*/
 }
 }
@@ -908,13 +908,13 @@ int TauntCommandClass::Do(int a1) {
         {
           dword_825C88 = Time; /*0x5363c6*/
           v19 = 29; /*0x5363d1*/
-          strcpy(v20,(const char *)(ToWideStringChar((char *)*dword_A8DA78))); /*0x5363fb*/
+          strcpy(v20,(const char *)(ToWideStringChar((char *)*(unsigned int *)dword_A8DA78))); /*0x5363fb*/
           v23 = dword_A8B394; /*0x53640a*/
           v4 = WideString::Hash((wchar_t *)&stru_A8D600.q010); /*0x536413*/
           TauntCommandClass_field_00 = this->TauntCommandClass_field_00; /*0x53641e*/
           v24 = v4; /*0x536421*/
-          IDA_LOBYTE(v6) = (16 * *(unsigned char *)(*dword_A8DA78 + 75)) /*0x536432*/
-                     ^ ((16 * *(unsigned char *)(*dword_A8DA78 + 75))
+          IDA_LOBYTE(v6) = (16 * *(unsigned char *)(*(unsigned int *)dword_A8DA78 + 75)) /*0x536432*/
+                     ^ ((16 * *(unsigned char *)(*(unsigned int *)dword_A8DA78 + 75))
                       ^ TauntCommandClass_field_00)
                      & 0xF;
           v22 = v6; /*0x536434*/
@@ -970,7 +970,7 @@ int TauntCommandClass::Do(int a1) {
             IDA_LOBYTE(Time) = v21; /*0x53653d*/
             if ( v21 ) /*0x536543*/
             {
-              Network::SendMessage(&unk_A8E9C0.Socket, (int)&v19, 455, 1, *dword_A8DA78 + 40, 0, 0); /*0x536566*/
+              Network::SendMessage(&unk_A8E9C0.Socket, (int)&v19, 455, 1, *(unsigned int *)dword_A8DA78 + 40, 0, 0); /*0x536566*/
               IDA_LOBYTE(Time) = Network::ReceiveLoop(&unk_A8E9C0); /*0x536570*/
             }
           }

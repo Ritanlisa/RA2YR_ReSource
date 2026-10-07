@@ -76,6 +76,14 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/GameSetup_e4.hpp"  // G57w10 D supply
 #include "e4/classes/NetworkManager_e4.hpp"  // G57w10 r5 supply
+// [w18j2] C2065 global supply (data addr evidence)
+extern unsigned char byte_A8D60C;  // w18j2 data: 0xA8D60C
+extern unsigned int dword_A8D5FC;  // w18j2 data: 0xA8D5FC
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_194(); }  // w18j2 raw 0x005DAF10
+namespace gamemd { void nullsub_25(); }  // w18j2 raw 0x005DFDD0
+namespace gamemd { void nullsub_26(); }  // w18j2 raw 0x005DFDE0
+namespace gamemd { void nullsub_27(); }  // w18j2 raw 0x005DFDF0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int HandleToolTipMessage(...);  // raw 00724200: void __thiscall HandleToolTipMessage(int this, int a2)
@@ -650,7 +658,7 @@ AbstractClass * * E4Recv_5D4F20::sub_5D4F20()
   int v1; // edi
 
   v1 = 0; /*0x5d4f29*/
-  if ( &dword_ABFCA0 <= 0 ) /*0x5d4f2f*/
+  if ( g_MissionQueueFrame.ls640BkgdName[11] <= 0 ) /*0x5d4f2f*/
     return 0; /*0x5d4f87*/
   while ( 1 ) /*0x5d4f47*/
   {
@@ -1668,7 +1676,7 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
   }
   if ( ((SessionClass *)*(unsigned int *)(&dword_A8DA90 + v5))->GetPlayerColor() != aP2 ) /*0x5dc133*/
     ((SessionClass *)(v28))->SetPlayerColor( (int)(aP2)); /*0x5dc13a*/
-  if ( (&dword_A8DA90)[v5] == *dword_A8DA78 ) /*0x5dc14e*/
+  if ( (&dword_A8DA90)[v5] == *(unsigned int *)dword_A8DA78 ) /*0x5dc14e*/
     dword_A8B394 = (unsigned int)aP2; /*0x5dc150*/
   GameSetup::DisplayPlayers(v25); /*0x5dc158*/
   return v26; /*0x5dbf99*/
@@ -2374,7 +2382,7 @@ void nullsub_192(int a1)
 namespace gamemd {
 int timeGetTime()
 {
-  return __imp_timeGetTime();
+  return timeGetTime();
 }
 } // namespace gamemd
 

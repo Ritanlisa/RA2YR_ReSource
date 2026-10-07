@@ -1303,7 +1303,7 @@ int FootClass::MissionMoveCarryallLand()
       v17[0] = v8; /*0x416c9a*/
       v17[1] = v9; /*0x416c9e*/
       MapClass_RevealArea2((MapClass *)&stru_87F5F0.__pad_58[416], v17, v10 - 3, v10 + 3, 0); /*0x416cb6*/
-      ppv = (LPVOID)*MapClass_FindPlacementCellsAlt((char *)this, &passengers, 0); /*0x416ccd*/
+      ppv = (LPVOID)*(unsigned int *)MapClass_FindPlacementCellsAlt((char *)this, &passengers, 0); /*0x416ccd*/
       if ( (unsigned int *)Team_GetMember((void *)this, 0) == v2 ) /*0x416cda*/
       {
         (*((void (__thiscall **)(FootClass *, int))this->vtable1 + 157))(this, 25); /*0x416ce2*/
@@ -17626,7 +17626,7 @@ int TechnoClass::PlaceAtCell()
     {
       if ( (((unsigned int *)queueUpToEnter)[0] & 1) != 0 && ((unsigned int *)queueUpToEnter)[0] ) /*0x70d906*/
       {
-        *(unsigned int *)v6 = *MapClass_FindPlacementCellsAlt((char *)this, &v7, (int)queueUpToEnter); /*0x70d926*/
+        *(unsigned int *)v6 = *(unsigned int *)MapClass_FindPlacementCellsAlt((char *)this, &v7, (int)queueUpToEnter); /*0x70d926*/
         if ( v6[0] != *(unsigned short * *)((char *)&g_BuildingLoadQueue_Array + 528) || v6[1] != *(unsigned short *)&((char *)&g_BuildingLoadQueue_Array) ) /*0x70d938*/
         {
           vtable0 = (void (__thiscall **)(TechnoClass *, void *, int))this; /*0x70d93b*/

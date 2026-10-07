@@ -144,7 +144,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
   {
     if ( aP2 ) /*0x658e08*/
     {
-      if ( aP1 - 1 >= 0 ) /*0x658e0f*/
+      if ( (int)aP1 - 1 >= 0 ) /*0x658e0f*/
       {
         v4 = (unsigned int *)(aP2 + 4); /*0x658e11*/
         v5 = (int)(aP1); /*0x658e14*/
@@ -165,7 +165,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2, void *
       v6 = (unsigned int)__2_YAPAXI_Z(16 * aP1); /*0x658e2e*/
       if ( v6 ) /*0x658e38*/
       {
-        if ( aP1 - 1 >= 0 ) /*0x658e3f*/
+        if ( (int)aP1 - 1 >= 0 ) /*0x658e3f*/
         {
           v7 = (unsigned int *)(v6 + 4); /*0x658e41*/
           v8 = (int)(aP1); /*0x658e44*/

@@ -205,7 +205,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
     v20[2] = (int)(v7); /*0x7b9454*/
     v20[3] = 0; /*0x7b9458*/
     v20[4] = 1; /*0x7b9468*/
-    ((Buffer*)((int)(Buffer *)v21))->Init(SubFile, v7 * v6); /*0x7b9470*/
+    ((Buffer*)((int)(Buffer *)v21))->Init(SubFile, ((int)v7 * v6)); /*0x7b9470*/
     v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/
     if ( aP1 == *(int **)((unsigned int)(v13)+ 36) ) /*0x7b9488*/
     {

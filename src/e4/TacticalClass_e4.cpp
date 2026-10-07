@@ -39,6 +39,9 @@
 #include "e4/classes/Frame_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Color_e4.hpp"  // G42.36 C2027 supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_43(); }  // w18j2 raw 0x006DC400
+namespace gamemd { void nullsub_44(); }  // w18j2 raw 0x006DC410
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int DrawTechnoDeployCircle(...);  // raw 00456980: char __fastcall sub_456980(char a1, char a2, int a3, int a4, int a5, int a6, float a7, cha
@@ -621,7 +624,7 @@ LABEL_17:
         a4 = *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds + v15 + a4 - aP5; /*0x5472f7*/
         a5 = dword_886FA4 + v14 + 15 + a5 - a7; /*0x54732c*/
         DrawToSurfaceSHP( /*0x547362*/
-          aP2,
+          a3,
           *(unsigned int *)dword_87F69C,
           (int)lpBuffer,
           v13 - 1,

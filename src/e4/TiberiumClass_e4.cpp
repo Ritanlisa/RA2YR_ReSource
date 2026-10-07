@@ -219,8 +219,8 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   (*(void (**)(int *))((&this->GrowthPercentage)[1] + 12))( (int *)(&(&this->GrowthPercentage)[1])); /*0x721821*/
   if ( dword_B0F680< dword_B0F678/*0x721857*/
     || (BYTE1(byte_B0F67C) || !dword_B0F678)
-    && &dword_B0F684 > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
+    && (int)dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ (int)dword_B0F684, 0) )
 
 
 
@@ -228,7 +228,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
     v5 = dword_B0F680++; /*0x721864*/
     *(unsigned int *)(dword_B0F674+ 4 * v5) = (unsigned int)this;
   }
-  return this; /*0x721878*/
+  return; /*0x721878*/
 
 }
 }
@@ -314,7 +314,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)(v5 + 216) = CapacityIncrement; /*0x721c1b*/
   *(unsigned int *)(v5 + 220) = unknown_18; /*0x721c1e*/
   v24.DynamicVectorClass = &vt_VectorClass; /*0x721c21*/
-  if ( Items &(char *)&v24 ) /*0x721c34*/
+  if ( Items && (char *)&v24 ) /*0x721c34*/
     __3_YAXPAX_Z(Items); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite((INIClass *)(/*0x721c55*/
              (bool *)aP1), (uint8_t *)(v5 + 36), (uint8_t *)g_INI_Key_Image, -1) )

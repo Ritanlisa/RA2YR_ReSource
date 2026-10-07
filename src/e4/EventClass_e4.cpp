@@ -94,7 +94,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c65fc*/
-  if ( aP1 < 0 ) /*0x4c660a*/
+  if ( (int)aP1 < 0 ) /*0x4c660a*/
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6631*/
     *(unsigned int *)this = 0; /*0x4c6635*/
@@ -192,7 +192,7 @@ int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigne
 {
 
   Debug::Log("Adding event %s\n"); /*0x4c6afc G57c1: IDA 0x4c6afc push offset g_Str_Trace_Adding_event__s*/
-  if ( aP1 < 0 ) /*0x4c6b0a*/
+  if ( (int)aP1 < 0 ) /*0x4c6b0a*/
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6b49*/
     *(unsigned int *)this = 0; /*0x4c6b4d*/

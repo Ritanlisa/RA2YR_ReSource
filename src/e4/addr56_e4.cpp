@@ -1118,7 +1118,7 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
   uint8_t v6; // dl
   int v7; // eax
 
-  v2 = aP1 & 7; /*0x56f699*/
+  v2 = (unsigned int)aP1 & 7; /*0x56f699*/
   v3 = (&dword_89F688)[v2]; /*0x56f69c*/
   IDA_LOWORD(v2) = ((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56f6b2*/
   IDA_LOWORD(aP1) = *(short *)aP0 + v3; /*0x56f6b6*/

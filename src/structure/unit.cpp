@@ -145,7 +145,7 @@ int UnitClass::Mission_Harvest()
               v14 = DB; /*0x415339*/
               if ( DB /*0x415360*/
                 && (v15 = *(unsigned int *)(DB + 1492)) != 0
-                && *TechnoClass_GetWaypointCoords(*(TechnoClass **)(v15 + 36), &v30) != g_AircraftStatusFlag )
+                && *(unsigned int *)TechnoClass_GetWaypointCoords(*(TechnoClass **)(v15 + 36), &v30) != g_AircraftStatusFlag )
               {
                 vtable0 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x415375*/  // g57e2 W2
                 WaypointCoords = (short *)TechnoClass_GetWaypointCoords( /*0x415381*/
@@ -314,7 +314,7 @@ int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int 
     *v6 = v3; /*0x54e3f3*/
     if ( v9 ) /*0x54e3f5*/
     {
-      v10 = ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)v3 + 452, &a2) >> 12) + 1) >> 1) & 7; /*0x54e414*/
+      v10 = ((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((unsigned short *)v3 + 452, &a2) >> 12) + 1) >> 1) & 7; /*0x54e414*/
       v11 = (unsigned int *)(*(int (__thiscall **)(unsigned int *))(*v3 + 444))(v3); /*0x54e417*/
       v8[1] = Cell_GetNeighbourContent(v11, v10); /*0x54e425*/
     }
@@ -683,7 +683,7 @@ int UnitClass::Deploy()
           *(unsigned int *)v55 = this; /*0x71966d*/
           v32 = (CrateClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v55); /*0x71967f*/
           (*((void (__thiscall **)(FootClass *, int *))((unsigned int *)v2)[0]->vtable1 + 109))(((unsigned int *)v2)[0], &v2->MovingDestination[2]); /*0x719684*/
-          ((unsigned int *)v2)[0] = (v32[26].CrateClass_field_0x08 & 0x100) != 0; /*0x719698*/
+          ((unsigned int *)v2)[0] = (*(unsigned int *)v32[26].CrateClass_field_0x08 & 0x100) != 0; /*0x719698*/
           (*((void (__thiscall **)(FootClass *, unsigned int))((unsigned int *)v2)[0]->vtable1 + 115))(((unsigned int *)v2)[0], 0); /*0x7196b2*/
           (*((void (__thiscall **)(FootClass *, int))((unsigned int *)v2)[0]->vtable1 + 73))(((unsigned int *)v2)[0], 1); /*0x7196bf*/
  v33 = (FootClass *)(((unsigned int *)v2)[0]); /*0x7196c5*/
@@ -6570,7 +6570,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
     v6 = this->Type; /*0x736a8e*/
     if ( IDA_BYTE1(((unsigned int *)v6)[0]) ) /*0x736a95*/
     {
-      IDA_LOWORD(v14) = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v15) >> 7) + 1) >> 1) /*0x736acb*/
+      IDA_LOWORD(v14) = ((unsigned __int8)((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v15) >> 7) + 1) >> 1) /*0x736acb*/
                    + 8) << 8;
       FacingClass::Update((char *)((unsigned int *)this)[0], &v14); /*0x736ad0*/
       goto LABEL_38; /*0x736ad0*/
@@ -7003,7 +7003,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
       && *(unsigned int *)(_ESI + 4) == dword_B1CFEC
       && *(unsigned int *)(_ESI + 8) == dword_B1CFF0 )
     {
-      v18 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(this + 904), &v39) >> 12) + 1) >> 1) & 7; /*0x743dfc*/
+      v18 = ((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(this + 904), &v39) >> 12) + 1) >> 1) & 7; /*0x743dfc*/
       v17 = Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2) + v18 - 1; /*0x743e04*/
     }
     else
@@ -8395,7 +8395,7 @@ int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
             {
               if ( v72 ) /*0x73f8da*/
               {
-                v45 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(this + 904), &v84) >> 12) + 1) >> 1) & 7; /*0x73f903*/
+                v45 = ((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(this + 904), &v84) >> 12) + 1) >> 1) & 7; /*0x73f903*/
                 v46 = *(unsigned short *)ProgressTimer::GetValue((ProgressTimer *)(v32 + 904), &v85) + 0x7FFF; /*0x73f914*/
                 v47 = *(unsigned int *)(v32 + 156); /*0x73f91c*/
                 IDA_LOWORD(v80) = v46; /*0x73f91e*/

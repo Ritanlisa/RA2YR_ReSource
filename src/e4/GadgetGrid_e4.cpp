@@ -90,7 +90,7 @@ int GadgetGrid::RemoveItem(int a2)
     v3 = (gamemd::GadgetGrid *)((int16_t)v3); /*0x41360a*/
   else
     v3 = (GadgetGrid *)(0); /*0x413606*/
-  if ( v13 >= 0 ) /*0x413616*/
+  if ( (int)v13 >= 0 ) /*0x413616*/
     v4 = v13; /*0x41361c*/
   else
     v4 = (GadgetGrid *)(0); /*0x413618*/

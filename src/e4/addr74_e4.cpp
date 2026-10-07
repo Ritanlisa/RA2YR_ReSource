@@ -1271,7 +1271,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 }
 // 0x74FF30
 namespace gamemd {
-void ObjectClass::unknown_libname_35()
+_DWORD * ObjectClass::ObjectClass::unknown_libname_35()
 {
 
   this->AbstractClass = 0; /*0x74ff32*/

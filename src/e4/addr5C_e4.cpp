@@ -58,6 +58,10 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Destructor(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { _DWORD * sub_5CD690(int int *a2); }  // w18j2 raw 0x005CD690
 namespace MultiplayerTeam { int Destructor(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_5D30C0(...); }  // w16g4 raw call-form

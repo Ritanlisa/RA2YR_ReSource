@@ -22,25 +22,24 @@ TeleportLocomotionClass::TeleportLocomotionClass()
 
   int v2; // ecx
 
-  LocomotionClass::Init((gamemd::LocomotionClass *)this); /*0x718003*/
-  this->MovingDestination[0] = ((char *)&g_BuildingLoadQueue_Array); /*0x718011*/
-  this->MovingDestination[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71801a*/
-  this->MovingDestination[2] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718026*/
-  this->LastCoords[0] = ((char *)&g_BuildingLoadQueue_Array); /*0x71802e*/
-  this->LastCoords[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718036*/
-  this->LastCoords[2] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71803e*/
+  ((gamemd::LocomotionClass *)this)->Init(); /*0x718003*/
+  this->MovingDestination[0] = dword_B0EBF8; /*0x718011*/
+  this->MovingDestination[1] = dword_B0EBFC; /*0x71801a*/
+  this->MovingDestination[2] = dword_B0EC00; /*0x718026*/
+  this->LastCoords[0] = dword_B0EBF8; /*0x71802e*/
+  this->LastCoords[1] = dword_B0EBFC; /*0x718036*/
+  this->LastCoords[2] = dword_B0EC00; /*0x71803e*/
   this->Moving = 0; /*0x718043*/
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/
   this->State = 0; /*0x71804c*/
-  v2 = *(unsigned int *)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71804f*/
+  v2 = dword_A8ED84; /*0x71804f*/
   this->Timer[2] = 0; /*0x718055*/
   this->Timer[0] = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
-  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_TeleportLocomotionClass; /*0x71805e*/
-  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_TeleportLocomotionClass; /*0x718064*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_TeleportLocomotionClass_3; /*0x71805e*/
+  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_TeleportLocomotionClass_2; /*0x718064*/
   *(unsigned int *)this->__pad_18 = (unsigned int)&vt_TeleportLocomotionClass; /*0x71806b*/
-  return (int)this->LocomotionClass; /*0x718074*/
 
 }
 }  // namespace gamemd  // g57w12-r nsfix

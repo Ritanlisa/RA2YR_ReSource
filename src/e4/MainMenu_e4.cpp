@@ -55,7 +55,7 @@ long MainMenu_Screen(void * a1, void * a2)
       else
         v4 = 0; /*0x531d43*/
       if ( DataGlobal_8A00A8 > (unsigned char [82112])(600) ) /*0x531d5d*/
-        v5 = (DataGlobal_8A00A8 - 600) / 2; /*0x531d6b*/
+        v5 = (*(unsigned int *)&DataGlobal_8A00A8 - 600) / 2; /*0x531d6b*/
       else
         v5 = 0; /*0x531d5f*/
       SetWindowPos(DlgItem, 0, v4, v5, -1, -1, 0xDu); /*0x531d78*/

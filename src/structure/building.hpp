@@ -353,7 +353,7 @@ int CanAcceptType(int,int);  // 0x452670
     bool IsHealthLow();  // 0x5F5CD0
 
     // Misc
-    int SquaredDistanceTo(ObjectClass* target, int a2) const;  // 0x5F6500
+    int SquaredDistanceTo(ObjectClass* target, int *a2) const;  // 0x5F6500
     void SaveLoad_Register();  // 0x5F5E80
     void CopyTypeDataForRender();  // 0x634310
     ra2::game::PlanningTokenClass* GetPlanningToken();  // 0x705D20 (accessor for TechnoClass::planningToken@+0x514, NOT Type)

@@ -1583,7 +1583,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             v30 = 0; /*0x4f7d76*/
             if ( ((unsigned int *)v17)[2] <= 0 ) /*0x4f7d7a*/
               goto LABEL_95; /*0x4f7d7a*/
-            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[0] + 4 * v30)) <= 0 ) /*0x4f7d95*/
+            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[0] + 4 * v30)) == nullptr /*g57w18j1: raw <=0 (int 语境) 等价 null 判*/ ) /*0x4f7d95*/
             {
               v17 = g_RulesClass_Instance; /*0x4f7d97*/
               if ( ++v30 >= ((unsigned int *)g_RulesClass_Instance)[2] ) /*0x4f7da3*/
@@ -1610,7 +1610,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             v28 = 0; /*0x4f7d31*/
             if ( ((unsigned int *)v17)[0] <= 0 ) /*0x4f7d35*/
               goto LABEL_116; /*0x4f7d35*/
-            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[0] + 4 * v28)) <= 0 ) /*0x4f7d54*/
+            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[0] + 4 * v28)) == nullptr /*g57w18j1: raw <=0 (int 语境) 等价 null 判*/ ) /*0x4f7d54*/
             {
               v17 = g_RulesClass_Instance; /*0x4f7d5a*/
               if ( ++v28 >= ((unsigned int *)g_RulesClass_Instance)[0] ) /*0x4f7d66*/
@@ -1621,7 +1621,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             v27 = 0; /*0x4f7cee*/
             if ( ((unsigned int *)v17)[0] <= 0 ) /*0x4f7cf2*/
               goto LABEL_116; /*0x4f7cf2*/
-            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[1] + 4 * v27)) <= 0 ) /*0x4f7d11*/
+            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[1] + 4 * v27)) == nullptr /*g57w18j1: raw <=0 (int 语境) 等价 null 判*/ ) /*0x4f7d11*/
             {
               v17 = g_RulesClass_Instance; /*0x4f7d17*/
               if ( ++v27 >= ((unsigned int *)g_RulesClass_Instance)[0] ) /*0x4f7d23*/
@@ -1632,7 +1632,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             v26 = 0; /*0x4f7cab*/
             if ( ((unsigned int *)v17)[1] <= 0 ) /*0x4f7caf*/
               goto LABEL_116; /*0x4f7caf*/
-            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(IDA_HIDWORD(((unsigned int *)v17)[0]) + 4 * v26)) <= 0 ) /*0x4f7cce*/
+            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(IDA_HIDWORD(((unsigned int *)v17)[0]) + 4 * v26)) == nullptr /*g57w18j1: raw <=0 (int 语境) 等价 null 判*/ ) /*0x4f7cce*/
             {
               v17 = g_RulesClass_Instance; /*0x4f7cd4*/
               if ( ++v26 >= ((unsigned int *)g_RulesClass_Instance)[1] ) /*0x4f7ce0*/
@@ -1643,7 +1643,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             v25 = 0; /*0x4f7c68*/
             if ( *(int *)((unsigned int *)v17)[0] <= 0 ) /*0x4f7c6c*/
               goto LABEL_116; /*0x4f7c6c*/
-            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(IDA_LODWORD(((unsigned int *)v17)[0]) + 4 * v25)) <= 0 ) /*0x4f7c8b*/
+            while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(IDA_LODWORD(((unsigned int *)v17)[0]) + 4 * v25)) == nullptr /*g57w18j1: raw <=0 (int 语境) 等价 null 判*/ ) /*0x4f7c8b*/
             {
               v17 = g_RulesClass_Instance; /*0x4f7c91*/
               if ( ++v25 >= *(unsigned int *)((unsigned int *)g_RulesClass_Instance)[0] ) /*0x4f7c9d*/
@@ -1656,7 +1656,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
               goto LABEL_116; /*0x4f7c29*/
             do /*0x4f7c5a*/
             {
-              if ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[0] + 4 * v24)) > 0 ) /*0x4f7c48*/
+              if ( (&this->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(((unsigned int *)v17)[0] + 4 * v24)) != nullptr /*g57w18j1: raw >0 (int 语境) 等价 non-null 判*/ ) /*0x4f7c48*/
                 goto LABEL_113; /*0x4f7c48*/
               v17 = g_RulesClass_Instance; /*0x4f7c4e*/
               ++v24; /*0x4f7c53*/
@@ -1811,7 +1811,7 @@ int HouseClass::NotifyUnderAttack(void* a1) {
 
   if ( a1 ) /*0x4f93ed*/
   {
-    result = (*(int (__thiscall **)(unsigned int *))(*a1 + 128))(a1); /*0x4f93f3*/
+    result = (*(int (__thiscall **)(unsigned int *))(*(unsigned int *)a1 + 128))(a1); /*0x4f93f3*/
     if ( (unsigned char)result ) /*0x4f93fb*/
       return result; /*0x4f93fb*/
   }

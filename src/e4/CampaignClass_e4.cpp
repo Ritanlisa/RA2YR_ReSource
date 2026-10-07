@@ -61,7 +61,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   }
   LOBYTE((&this->scenario)[29]) = 0; /*0x46cbf7*/
   wcscpy((wchar_t *)&this->description[29],(const wchar_t *)(&g_TypeClass_DefaultString)); /*0x46cbfe*/
-  return (int)this; /*0x46cc08*/
+  return; /*0x46cc08*/
 
 }
 }
@@ -288,9 +288,9 @@ AbstractClass * * CampaignClass::SaveProgress()
   v20 = dword_A8DA84; /*0x49c8ac*/
   if ( dword_A8DA84 ) /*0x49c8b4*/
   {
-    PlayerSide = (void *)((SessionClass *)((int *)*dword_A8DA78))->GetPlayerSide(); /*0x49c8be*/
+    PlayerSide = (void *)((SessionClass *)((int *)*(unsigned int *)dword_A8DA78))->GetPlayerSide(); /*0x49c8be*/
     INIClass::SetHouseName((gamemd::INIClass *)(v28.INIClass), (uint8_t *)Block, (char *)(aHouse1), PlayerSide); /*0x49c8d2*/
-    PlayerColor = ((SessionClass *)((SessionClass *)*dword_A8DA78))->GetPlayerColor(); /*0x49c8e1*/
+    PlayerColor = ((SessionClass *)((SessionClass *)*(unsigned int *)dword_A8DA78))->GetPlayerColor(); /*0x49c8e1*/
     INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aColor1), PlayerColor, 0); /*0x49c8f5*/
     v20 = dword_A8DA84; /*0x49c8fa*/
   }

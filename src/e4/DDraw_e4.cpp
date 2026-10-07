@@ -250,7 +250,7 @@ int DDraw_LogError(UINT uType, int a2)
   {
     if ( g_DDraw_ErrorCallback ) /*0x4a3dfd*/
     {
-      return g_DDraw_ErrorCallback(uType); /*0x4a3dff*/
+      return ((int (*)(unsigned int))g_DDraw_ErrorCallback)(uType); /*0x4a3dff*/
     }
     else
     {
@@ -285,7 +285,7 @@ char DDraw::CheckCapabilities()
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4669*/
       {
-        g_DDraw_ErrorCallback(v1); /*0x4a466d*/
+        ((int (*)(unsigned int))g_DDraw_ErrorCallback)(v1); /*0x4a466d*/
       }
       else
       {

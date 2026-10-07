@@ -109,7 +109,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
   v3 = (float *)((int *)((float *)v2));
   result = (int *)(v2[1321]);
   v5 = (int *)(v2 + 1319);
-  if ( result > 0 && (int)v2[1322] > 0 ) /*0x654671*/
+  if ( (int)result > 0 && (int)v2[1322] > 0 ) /*0x654671*/
   {
     v6 = (void (***)(unsigned int, int))v2[1160]; /*0x654677*/
     v3[1320] = 0.0; /*0x65467d*/

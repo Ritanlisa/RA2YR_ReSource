@@ -23,7 +23,7 @@ struct CComObject_CChatEventSink___ATL {
     Coord * * DispatchStub_22(int a1, int a2, int a3, int a4, char * Source);  // 0x7A7EA0
     int DispatchStub_16(int a1, int a2, int a3, const char * a4, char * String1);  // 0x7A8DA0
     AbstractClass * * DispatchStub_40(int a1, int a2, int a3, const char * a4, wchar_t * String);  // 0x7A8ED0
-    AbstractClass * * DispatchStub_17(int a1, int a2, int a3);  // 0x7A8FC0 (G42.35f supply: params dropped by generator)
+    AbstractClass * * DispatchStub_17(int a1, int a2, const char *a3);  // 0x7A8FC0 (G42.35f supply: params dropped by generator)
     AbstractClass * * DispatchStub_41(int a1, int a2, const char * a3, wchar_t * String);  // 0x7A9110
     CampaignScore * * DispatchStub_28(int a1, int a2, const char * a3, const char * a4);  // 0x7A9200
     AbstractClass * * DispatchStub_44(int a1, int a2, int a3, wchar_t * String);  // 0x7A9550

@@ -1258,7 +1258,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
 
 // 0x65BD00
 namespace gamemd {
-void RadSiteClass::DecreaseRadiation()
+int RadSiteClass::RadSiteClass::DecreaseRadiation()
 {
     int v1; // esi
     int v2; // edx

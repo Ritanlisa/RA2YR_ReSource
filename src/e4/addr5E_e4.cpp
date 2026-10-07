@@ -123,14 +123,14 @@ int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd, void * aP0)
           v5 -= 10; /*0x5e290a*/
         }
         v10 = (wint_t *)((int)((wint_t *)(v5 - 1)));
-        if ( v5 - 1 <= 0 ) /*0x5e291c*/
+        if ( (int)v5 - 1 <= 0 ) /*0x5e291c*/
           goto LABEL_18; /*0x5e291c*/
         v11 = &v3[v10]; /*0x5e291e*/
         while ( iswgraph(*v11) ) /*0x5e2930*/
         {
           --v10; /*0x5e2932*/
           --v11; /*0x5e2933*/
-          if ( v10 <= 0 ) /*0x5e2938*/
+          if ( (int)v10 <= 0 ) /*0x5e2938*/
           {
             v5 -= v14; /*0x5e293a*/
             goto LABEL_23; /*0x5e2940*/
@@ -718,7 +718,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
   HWND v77; // edi
   const wchar_t **v79; // ebp
   wchar_t *v80; // ebx
-  HWND (__stdcall *)(HWND, int); // ebx
+  void * v3_ebx; // ebx (G57w18j4: raw fn_5E.c void *v3 // ebx; renamed v3_ebx - cpp-local int v3 shadow clash C2040)
   HWND v84; // eax
   int ResourceID3CSF; // eax
   int ResourceID4CSF; // eax

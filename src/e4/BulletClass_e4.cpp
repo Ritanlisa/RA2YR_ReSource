@@ -71,7 +71,7 @@ BulletClass::BulletClass()
     v2 = (*(unsigned int *)((char *)&stru_A8EB00 + 364))++; /*0x4664a8*/
     *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 352) + 4 * v2) = (unsigned int)(this); /*0x4664b7*/
   }
-  return (int)this->__pad_0; /*0x4664bc*/
+  return; /*0x4664bc*/
 
 }
 }

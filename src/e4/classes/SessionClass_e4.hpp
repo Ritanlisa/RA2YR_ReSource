@@ -51,7 +51,7 @@ struct SessionClass {
     unsigned int u32_48;  // 0x48
     unsigned int u32_49;  // 0x49
     unsigned int u32_4B;  // 0x4B
-    char PlayerColor[4];  // 0x4C
+    int PlayerColor;  // 0x4C (G57w18j4: blob->scalar, member_lookup int@76; raw fn_5D scalar compare)
     unsigned int u32_4F;  // 0x4F
     unsigned int u32_50;  // 0x50
     void* ptr_53;  // 0x53

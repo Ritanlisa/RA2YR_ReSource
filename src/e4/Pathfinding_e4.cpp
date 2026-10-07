@@ -244,7 +244,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       LODWORD(v30) = (unsigned int)(&v4[2 * v76]); /*0x5a55c7*/
       do /*0x5a5789*/
       {
-        v80 = (int)(*CellStruct::Add(((CellStruct *)(v74)), (unsigned int *)(&v82), (unsigned short *)(4 * (v77 & 7) + 9041544))); /*0x5a55ef*/
+        v80 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(v74)), (unsigned int *)(&v82), (unsigned short *)(4 * (v77 & 7) + 9041544))); /*0x5a55ef*/
         v73 = v80; /*0x5a55f3*/
         v31 = SHIWORD(v80) + (int16_t)v80; /*0x5a55ff*/
         if ( v31 > dword_ABED04 /*0x5a5626*/
@@ -367,7 +367,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         a1 = (short *)(*(int16_t **)(v57 + 4 * v55)); /*0x5a5872*/
         do /*0x5a5910*/
         {
-          LODWORD(v81[0]) = (unsigned int)(*CellStruct::Add(((CellStruct *)(&a1)), (unsigned int *)(&v82), (unsigned short *)(4 * (v56 & 7) + 9041544))); /*0x5a5897*/
+          LODWORD(v81[0]) = (unsigned int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(&a1)), (unsigned int *)(&v82), (unsigned short *)(4 * (v56 & 7) + 9041544))); /*0x5a5897*/
           v80 = SLODWORD(v81[0]); /*0x5a589b*/
           v58 = SWORD1(v81[0]) + SLOWORD(v81[0]); /*0x5a58a7*/
           if ( v58 > dword_ABED04 /*0x5a58dd*/

@@ -173,7 +173,7 @@ int Scenario::ReadTeams()
   v3 = (INIClass *)(0); /*0x44f84f*/
   v71 = result; /*0x44f853*/
   v68 = 0; /*0x44f857*/
-  if ( result > 0 ) /*0x44f85b*/
+  if ( (int)result > 0 ) /*0x44f85b*/
   {
     while ( 1 ) /*0x44f874*/
     {
@@ -1112,7 +1112,7 @@ char Scenario::LoadWithProgress()
     v6 = 0; /*0x68477c*/
     if ( *(unsigned int *)&dword_A8B238 ) /*0x684780*/
     {
-      v8 = *(unsigned int *)(*dword_A8DA78 + 75); /*0x6847a4*/
+      v8 = *(unsigned int *)(*(unsigned int *)dword_A8DA78 + 75); /*0x6847a4*/
       if ( v8 == -3 ) /*0x6847aa*/
         v8 = 0; /*0x6847ac*/
       v6 = *(unsigned int *)(*((unsigned int *)dword_A83C9C + v8) + 188); /*0x6847b7*/
@@ -1146,7 +1146,7 @@ char Scenario::LoadWithProgress()
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8DA84 > 1 ) /*0x684865*/
       {
         Debug::Log("Setting addresses for UDP broadcast\n"); /*0x684870 G57c1: IDA 0x684870 push offset aSettingAddress*/
-        (*(void (**)(unsigned int *))(*dword_887628 + 48))( (unsigned int *)(dword_887628)); /*0x684880*/
+        (*(void (**)(unsigned int *))(*(unsigned int *)dword_887628 + 48))( (unsigned int *)(dword_887628)); /*0x684880*/
         strcpy( (char *)(Buffer), "xxx.xxx.xxx.xxx"); /*0x68489a*/
         v33 = 0; /*0x6848a3*/
         v34 = 0; /*0x6848b0*/
@@ -1162,7 +1162,7 @@ char Scenario::LoadWithProgress()
             sprintf(Buffer, "%d.%d.%d.%d", LOBYTE(v30[0]), BYTE1(v30[0]), BYTE2(v30[0]), HIBYTE(v30[0])); /*0x68491f*/
             v13 = Debug::Log("Adding broadcast address %s\n"); /*0x68492e G57w11: IDA push seq @ 0x68492e +1 reg-vararg(s) omitted*/
             LOWORD(v13) = *v12; /*0x684933*/
-            (*(void (**)(unsigned int *, char *, int))(*dword_887628 + 44))( (unsigned int *)(dword_887628), (char *)(Buffer), v13); /*0x684947*/
+            (*(void (**)(unsigned int *, char *, int))(*(unsigned int *)dword_887628 + 44))( (unsigned int *)(dword_887628), (char *)(Buffer), v13); /*0x684947*/
             ++v11; /*0x68494f*/
             ++v12; /*0x684950*/
           }

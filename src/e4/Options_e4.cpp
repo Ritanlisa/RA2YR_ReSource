@@ -275,7 +275,7 @@ LABEL_39:
 }
 // 0x558840
 namespace gamemd {
-void Options::PrepareSaveLoadDlg(const char ** dwNewLong)
+bool Options::Options::PrepareSaveLoadDlg(const char ** dwNewLong)
 {
 
   dwNewLong->field_4 = (void *)3; /*0x558840*/
@@ -800,7 +800,7 @@ HWND Options::InitDialogControls(HWND hDlg)
 
 // 0x5FA4A0
 namespace gamemd {
-void Options::SetScoreVolume(float volume, int pad, void *a3_1)
+int Options::(float volume, int pad, void *a3_1)
 {
 
   double v4; // st7
@@ -823,7 +823,7 @@ void Options::SetScoreVolume(float volume, int pad, void *a3_1)
 
 // 0x5FA510
 namespace gamemd {
-void Options::SetSoundVolume(float volume, int pad, void *a3_1)
+int Options::(float volume, int pad, void *a3_1)
 {
 
   double v3; // st7
@@ -845,7 +845,7 @@ void Options::SetSoundVolume(float volume, int pad, void *a3_1)
 
 // 0x5FA590
 namespace gamemd {
-void Options::SetVoiceVolume(float volume, int pad, void *a3_1)
+int Options::(float volume, int pad, void *a3_1)
 {
 
   double v4; // st7

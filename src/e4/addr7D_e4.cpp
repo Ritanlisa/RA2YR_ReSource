@@ -25,6 +25,8 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/E4Recv_7B9530_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int ctrlevent_capture_4(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 
 // MSVC6 CRT FILE layout (UCRT _iobuf opaque; W16G3, addr7C precedent)
 struct _iobuf_msvc6 { char *_ptr; int _cnt; char *_base; int _flag; int _file; int _charbuf; int _bufsiz; char *_tmpfname; };
@@ -1857,8 +1859,8 @@ return (AbstractClass **)v51; /*0x7d21ef*/
       if ( v5 < 0x20u || v5 > 0x78u ) /*0x7d2201*/
         v7 = 0; /*0x7d2211*/
       else
-        v7 = (&byte_7F97CC)[v5] & 0xF; /*0x7d220c*/
-      v42 = (&byte_7F97EC)[8 * v7 + v4] >> 4; /*0x7d2221*/
+        v7 = byte_7F97CC[v5] & 0xF; /*0x7d220c*/
+      v42 = byte_7F97EC[8 * v7 + v4] >> 4; /*0x7d2221*/
       switch ( v42 ) /*0x7d222c*/
       {
         case 0: /*0x7d222c*/

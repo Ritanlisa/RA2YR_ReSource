@@ -300,7 +300,7 @@ struct BuildingTypeClass {
     unsigned int * GetUpgradeOffset(unsigned int * a2);
     unsigned int * loadBuildingProperty_b_545E520(ObjectTypeClass * aP1);
     unsigned int * loadBuildingProperty_b_5478850(int a2, int a3);
-    void IsPowered();
+    int IsPowered();
     void LoadVoxel();
     void* LoadAnimations(int aP1);
     void* ProcessPower(int *aP1);

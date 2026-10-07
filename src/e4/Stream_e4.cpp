@@ -19,6 +19,8 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int j_Time_GetElapsedMS(...); }  // w18j2 raw call-form (variadic last resort)
 
 // 0x439110
 namespace gamemd {

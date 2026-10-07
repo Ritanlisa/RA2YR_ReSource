@@ -231,7 +231,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     {
       v7 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(v6)));
       v8 = (gamemd::ObjectClass *)(this);
-      if ( (&this->ambientSoundController)[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
+      if ( (&this->ambientSoundController)[2] + (int)v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
     }
     else

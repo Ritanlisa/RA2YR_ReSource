@@ -5458,7 +5458,7 @@ int BuildingClass::UpdateConstruction()
               if ( !(unsigned __int8)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) || this->Type->Hospital ) /*0x444d26*/
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x444d3c*/
-                *(unsigned int *)v193 = (unsigned int)(void *)(*BuildingPlacement::FindPosition(&v223, v244)); /*0x444d5f*/
+                *(unsigned int *)v193 = (unsigned int)(void *)(*(unsigned int *)BuildingPlacement::FindPosition(&v223, v244)); /*0x444d5f*/
                 if ( *(unsigned int *)v193 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x444d79*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x444db7*/
@@ -5581,7 +5581,7 @@ int BuildingClass::UpdateConstruction()
               if ( !(unsigned __int8)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) ) /*0x4448fe*/
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x44490f*/
-                *(unsigned int *)v196 = (unsigned int)(void *)(*BuildingPlacement::FindPosition(&v226, v244)); /*0x444932*/
+                *(unsigned int *)v196 = (unsigned int)(void *)(*(unsigned int *)BuildingPlacement::FindPosition(&v226, v244)); /*0x444932*/
                 if ( *(unsigned int *)v196 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x44494c*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x44496c*/
@@ -5933,7 +5933,7 @@ int BuildingClass::UpdateConstruction()
         {
           if ( *((unsigned char *)v208 + 3720) ) /*0x44509d*/
           {
-            v136 = *HouseClass_FindBestProductionBuilding(((unsigned int *)this)[0], v235, (int)v208); /*0x445103*/
+            v136 = *(unsigned int *)HouseClass_FindBestProductionBuilding(((unsigned int *)this)[0], v235, (int)v208); /*0x445103*/
             v218 = v136; /*0x44510c*/
             if ( v136 == g_TerrainTypeTable ) /*0x445115*/
             {

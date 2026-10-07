@@ -67,7 +67,7 @@ LABEL_17:
   v7 = v3[2]; /*0x7ad732*/
   if ( v7 != (char **)1 ) /*0x7ad738*/
   {
-    result = v7(a2, a3, v10, v3[1]); /*0x7ad745*/
+    result = ((int (*)(unsigned int *, char **, unsigned int *, char **))v7)(a2, a3, v10, v3[1]); /*0x7ad745*/
     if ( !result || !v6 && result < 0 ) /*0x7ad751*/
       return result; /*0x7ad751*/
     goto LABEL_17; /*0x7ad751*/

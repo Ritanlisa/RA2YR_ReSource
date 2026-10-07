@@ -358,7 +358,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   if ( v7[188] > 1 ) /*0x4803b5*/
   {
     if ( CellClass_GetTerrainFlag(v7, *(uint8_t *)(((unsigned char *)(this) + 0x0702))) ) /*0x4803ba*/
-      inited = (((unsigned char *)(this) + 0x140) >> 13) & 1; /*0x4803cc*/
+      inited = (*(unsigned int *)((char *)this + 0x140) >> 13) & 1; /*0x4803cc*/
     else
       inited = CellClass_InitRandomOffsets((int)(this), this->field38, v7[188]); /*0x4803dc*/
     goto LABEL_10; /*0x4803cf*/
@@ -449,7 +449,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
   result = PingPongBuffer_GetWriteOffset(); /*0x6d7847*/
   if ( (unsigned int)dword_ABCD44 >= result ) /*0x6d7852*/
   {
-    result = (*(int (**))(*(int *)(g_DSurface_Hidden_2) + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
+    result = (*(int (**)(void *))(*(int *)(g_DSurface_Hidden_2) + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
     if ( result == 2 ) /*0x6d7866*/
     {
       result = dword_A8EB78; /*0x6d786c*/
@@ -465,7 +465,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v32 = v6; /*0x6d78b1*/
           if ( v6 > 0x3E8 ) /*0x6d78b5*/
             v32 = 1000; /*0x6d78b7*/
-          v7 = (int)((*(int (**))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2)); /*0x6d78c9*/
+          v7 = (int)((*(int (**)(void *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2)); /*0x6d78c9*/
           v8 = (int)((const gamemd::RectangleStruct *)((int)(((unsigned char *)(this) + 0x0B0)))); /*0x6d78d0*/
           v7 = v7; /*0x6d78dc*/
           v9 = (int)(((unsigned char *)(this) + 0x02D)); /*0x6d78e2*/
@@ -570,7 +570,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
               v18 = v18; /*0x6d7bd9*/
             }
           }
-          return (*(int (**))(*g_DSurface_Hidden_2 + 96))(g_DSurface_Hidden_2); /*0x6d7bed*/
+          return (*(int (**)(void *))(*(unsigned int *)g_DSurface_Hidden_2 + 96))(g_DSurface_Hidden_2); /*0x6d7bed*/
         }
       }
     }
@@ -760,7 +760,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect, int a2, int a
     {
       Coord_Subtract( /*0x6d310e*/
         v18,
-        ((((int16_t)*(unsigned int *)(this->q174 << 8) + 128) / 256) << 8,
+        ((((int16_t)*(unsigned int *)(*(unsigned int *)&this->q174 << 8) + 128) / 256) << 8,
         ((((int16_t)IDA_HIWORD(*(unsigned int *)(this->q174) << 8) + 128) / 256) << 8,
         0);
       v19 = v18[0]; /*0x6d311f*/

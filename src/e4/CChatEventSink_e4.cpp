@@ -86,7 +86,7 @@ LABEL_103:
         memset( (void *)(&v33[32]), 0, 0x10Cu); /*0x7aa930*/
         referenceCount = (int)(((char *)&stru_B76AC4)); /*0x7aa932*/
         v4 = 0; /*0x7aa937*/
-        if ( ((char *)&stru_B76AC4) > 0 ) /*0x7aa93b*/
+        if ( (*(int *)&stru_B76AC4) > 0 ) /*0x7aa93b*/
         {
           v5 = 0; /*0x7aa93d*/
           do /*0x7aa985*/
@@ -124,7 +124,7 @@ LABEL_103:
               v7 = (int)(((char *)&stru_B76AC4)); /*0x7aa9d3*/
               v8 = 0; /*0x7aa9d8*/
               v9 = 0; /*0x7aa9da*/
-              if ( ((char *)&stru_B76AC4) > 0 ) /*0x7aa9de*/
+              if ( (*(int *)&stru_B76AC4) > 0 ) /*0x7aa9de*/
               {
                 occupant = dword_B76AE8; /*0x7aa9e4*/
                 while ( 1 ) /*0x7aa9ea*/
@@ -184,7 +184,7 @@ LABEL_43:
               unknown_libname_73( (void *)(&v33[24])); /*0x7aab4b*/
               abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aab50*/
               v17 = 0; /*0x7aab55*/
-              if ( ((char *)&g_WebBrowserConfig) <= 0 ) /*0x7aab59*/
+              if ( (*(int *)&g_WebBrowserConfig) <= 0 ) /*0x7aab59*/
               {
 LABEL_51:
                 v18 = 0; /*0x7aab96*/

@@ -21,6 +21,14 @@
 #include "e4/classes/PushCommandClass_e4.hpp"
 #include "e4/classes/Flag_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+// G57w18j3 S1: complete-type supply for gamemd::rc_ptr (C2079/C2100 cascade)
+// raw: rc_ptr<T> template flattened, 4B slot @ [ebp-10h] (raw_decomp 0x7B0220);
+// csp_canon/classes.hpp rc_ptr is a GLOBAL-scope twin (::rc_ptr), no collision.
+#ifndef GAMEMD_E4_TU_rc_ptr
+#define GAMEMD_E4_TU_rc_ptr 1
+namespace gamemd { struct rc_ptr { void* vfptr; }; }  // minimal E2 carrier (4B)
+#endif
+
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int FillPersonaInfoWOL(...);  // raw 0077A9F0: void __thiscall WOL_FillPersonaInfo(int this, HWND hDlg, char **a3, wchar_t **a4)
@@ -207,7 +215,7 @@ LABEL_17:
   v7 = v3[2]; /*0x7ac912*/
   if ( v7 != (char **)1 ) /*0x7ac918*/
   {
-    result = ((int (**)(unsigned int *, char **, unsigned int *, char **))v7)(a2, a3, v10, v3[1]); /*0x7ac925*/
+    result = ((int (*)(unsigned int *, char **, unsigned int *, char **))v7)(a2, a3, v10, v3[1]); /*0x7ac925*/
     if (!result || !v6 && result < 0, unsigned int a2) /*0x7ac931*/
       return result; /*0x7ac931*/
     goto LABEL_17; /*0x7ac931*/

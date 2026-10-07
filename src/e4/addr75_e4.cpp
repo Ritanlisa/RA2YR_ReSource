@@ -80,6 +80,11 @@
 #include "classes/Surface_e4.hpp"  // G42.57w9 method-carrier supply
 #include "classes/ThemeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/MovieClass_e4.hpp"  // w18j2 C3861 MovieClass:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { BOOL sub_75A120(int int a2, int *a3, int a4); }  // w18j2 raw 0x0075A120
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int RenderLoop(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int sub_405130(...); }
 namespace gamemd { int sub_405160(...); }
@@ -1111,7 +1116,7 @@ void RenderVoxels(void * a1, void * a2, void * a3, void * a4)
                   {
                     v23 = *v16; /*0x75724f*/
                     v17 = IDA_BYTE1(a3); /*0x757260*/
-                    v18 = v17 | a2 & 0xFF00; /*0x757263*/
+                    v18 = v17 | (unsigned int)a2 & 0xFF00; /*0x757263*/
                     v16 += 2; /*0x757276*/
                     if ( (uint16_t)((uint16_t)a4 >> 8) > (uint8_t)(&byte_B1D5E0)[v18] ) /*0x75727c*/
                     {
@@ -2471,7 +2476,7 @@ int PlayAudioAt2(IUnknown * aP0, unsigned int * a1, int a3)
   int *started; // edi
   int v8; // eax
 
-  if ( aP0 < 0 ) /*0x750e29*/
+  if ( (int)aP0 < 0 ) /*0x750e29*/
     return 0; /*0x750e2d*/
   result = LinkedList::Next(  (int **)dword_B1D3A4); /*0x750e39*/
   v6 = (int)result; /*0x750e3e*/

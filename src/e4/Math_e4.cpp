@@ -36,21 +36,21 @@ namespace gamemd {
 int Math::Hypotenuse2D()
 {
 
-  return Math::Sqrt(*(double *)this * *(double *)this + this->q008 * this->q008); /*0x41c36e*/
+  return Math::Sqrt(*(double *)this * *(double *)this + *((double *)this + 1) * *((double *)this + 1)); /*0x41c36e*/
 
 }
 }
 // 0x4CAC40
 namespace gamemd {
-int Math_Sqrt(void * a1)
+int Math_Sqrt(double a1)
 {
   int16_t v1; // fps
-  void * v2;
+  double v2;
   bool v3; // c0
   char v4; // c2
   bool v5; // c3
   int result; // eax
-  void * v7;
+  double v7;
 
   v2 = (double)(a1);
   v3 = (unsigned int)(a1 < 0.0);
@@ -69,7 +69,7 @@ int Math_Sqrt(void * a1)
 }
 // 0x4CACB0
 namespace gamemd {
-int Math_SinCos(void * a1)
+int Math_SinCos(double a1)
 {
   int v1; // eax
   char v2; // cl
@@ -90,7 +90,7 @@ int Math_SinCos(void * a1)
 }
 // 0x4CAD00
 namespace gamemd {
-int Math_ArcTan2(void * a1)
+int Math_ArcTan2(double a1)
 {
   int v1; // eax
   char v2; // cl
@@ -130,10 +130,10 @@ int Math::Sin(double a1)
 }
 // 0x4CAE30
 namespace gamemd {
-int Math_CalcAngle(void * a1, void * a2)
+int Math_CalcAngle(double a1, double a2)
 {
   int16_t v2; // fps
-  void * v3;
+  double v3;
   char v4; // c3
   bool v5; // c0
   char v6; // c2
@@ -148,8 +148,8 @@ int Math_CalcAngle(void * a1, void * a2)
   bool v15; // c0
   char v16; // c2
   bool v17; // c3
-  void * v18;
-  void * v19;
+  double v18;
+  double v19;
 
   v18 = (float)(a2);
   v19 = (double)(a1);

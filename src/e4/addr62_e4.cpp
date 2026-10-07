@@ -64,6 +64,13 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"  // w18j2 C3861 MessageListClass:: supply
+#include "e4/classes/VtableStub_e4.hpp"  // w18j2 C3861 VtableStub:: supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { BOOL RepositionDialogControls(HWND hWnd, HWND a2); }  // w18j2 raw 0x0060C0C0
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int CountCharsInWidth(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_55CBF0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -758,7 +765,7 @@ int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, 
   switch ( a6 ) /*0x621291*/
   {
     case 1: /*0x621291*/
-      v12 += (v20 - v18 + 1) / 2; /*0x6212a3*/
+      v12 += ((int)v20 - v18 + 1) / 2; /*0x6212a3*/
       break;
     case 2: /*0x621291*/
       v12 += (v18 + 1) / -2; /*0x6212ba*/
@@ -1857,7 +1864,7 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
 }
 // 0x6241F0
 namespace gamemd {
-int Dialog_Run(unsigned short a1, INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM), LPARAM)
+int Dialog_Run(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3)
 {
   HWND Dialog; // eax
   Dialog *v4; // edi

@@ -79,7 +79,7 @@ int CCFileClass::GetFileSize(void *a1, void *a2)
   result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(uint8_t (**))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**)(void *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = (DWORD)(GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0));
       if ( FileSize == -1 ) /*0x65d0f7*/

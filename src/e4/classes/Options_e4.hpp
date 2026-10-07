@@ -77,7 +77,7 @@ struct Options {
     // dup-member: unsigned int InitDialogControls;
 // --- flat members (END) ---
     int DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);  // 0x4F11B0
-    void PrepareSaveLoadDlg(const char ** dwNewLong);  // 0x558840
+    bool PrepareSaveLoadDlg(const char ** dwNewLong);  // 0x558840
     AbstractClass * * Screen_Save();  // 0x55FAA0
     char Screen_Dialog();  // 0x55FC80
     int DeleteAndZero();  // 0x6244E0
@@ -87,9 +87,9 @@ struct Options {
     AbstractClass * * DestroyComposite(void * Block, char a2);  // 0x625560
     void * RebuildDropdownList(ObjectClass * aP1);  // 0x6255F0
     int SaveOptionValue();  // 0x625A20
-    void SetScoreVolume(float volume, int pad, void *a3_1);  // 0x5FA4A0
-    void SetSoundVolume(float volume, int pad, void *a3_1);  // 0x5FA510
-    void SetVoiceVolume(float volume, int pad, void *a3_1);  // 0x5FA590
+    int SetScoreVolume(float volume, int pad, void *a3_1);  // 0x5FA4A0
+    int SetSoundVolume(float volume, int pad, void *a3_1);  // 0x5FA510
+    int SetVoiceVolume(float volume, int pad, void *a3_1);  // 0x5FA590
     HWND InitDialogControls(HWND hDlg);  // 0x4F1720
     int DialogProc(CCINIClass hWnd);  // 0x618D40
     void ClearComboBoxes();  // 0x624460

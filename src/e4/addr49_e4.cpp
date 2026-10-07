@@ -991,7 +991,7 @@ int E4Recv_4964D0::sub_4964D0(int a5, int a2, unsigned __int8 *a4, int a3, int a
 }
 // 0x4965B0
 namespace gamemd {
-int E4Recv_4965B0::sub_4965B0(unsigned short *a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char *a11, int a1, int aP2, int aP3)
+int E4Recv_4965B0::sub_4965B0(unsigned short *a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, char *a10, char *a11, int a1, unsigned __int8 *aP2, int aP3)
 {
 
   int result; // eax
@@ -1174,8 +1174,8 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v12 += 2; /*0x4969e7*/
       --v18; /*0x496a0a*/
       if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x4969d7*/
-        *(unsigned short *)(v12 - 2) = 3 * (this->m_8 & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496a0b*/
-                            + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 2));
+        *(unsigned short *)(v12 - 2) = 3 * (*(unsigned int *)this->m_8 & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496a0b*/
+                            + (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 2));
     }
     else
     {
@@ -1241,7 +1241,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v21 = a6 - *a10++; /*0x496b18*/
       --v18; /*0x496b51*/
       if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x496b27*/
-        *v14 = (this->m_8 & (*v14 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 1)); /*0x496b52*/
+        *v14 = (*(unsigned int *)this->m_8 & (*v14 >> 1)) + (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v19) >> 1)); /*0x496b52*/
       ++v14; /*0x496b59*/
     }
     else
@@ -1699,7 +1699,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
   v11 = (int)(aP4); /*0x497391*/
   v13 = a1; /*0x49739c*/
   result = (uint16_t *)(a6); /*0x4973a9*/
-  if ( aP4 <= 0 ) /*0x4973b1*/
+  if ( (int)aP4 <= 0 ) /*0x4973b1*/
   {
     v18 = a4; /*0x4973e6*/
   }
@@ -4381,7 +4381,7 @@ int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x492e38*/
       if ( argC < v14 && *a2 ) /*0x492e46*/
       {
-        *a1 = 3 * (this->m_8 & (*a1 >> 2)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x492e75*/
+        *a1 = 3 * (*(unsigned int *)this->m_8 & (*a1 >> 2)) + (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x492e75*/
         v12 = (Stream *)(g_ZBufferDescriptor); /*0x492e78*/
       }
       ++a2; /*0x492e81*/
@@ -4475,7 +4475,7 @@ unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * 
       v13 = *result++; /*0x492f58*/
       if ( argC < v13 && *a2 ) /*0x492f66*/
       {
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 1)); /*0x492f91*/
+        *a1 = (*(unsigned int *)this->m_8 & (*a1 >> 1)) + (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 1)); /*0x492f91*/
         v12 = (Stream *)(g_ZBufferDescriptor); /*0x492f94*/
       }
       ++a2; /*0x492f9d*/
@@ -4568,7 +4568,7 @@ int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x493078*/
       if ( argC < v14 && *a2 ) /*0x493086*/
       {
-        *a1 = (this->m_8 & (*a1 >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x4930b5*/
+        *a1 = (*(unsigned int *)this->m_8 & (*a1 >> 2)) + 3 * (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x4930b5*/
         v12 = (Stream *)(g_ZBufferDescriptor); /*0x4930b8*/
       }
       ++a2; /*0x4930c1*/
@@ -4662,7 +4662,7 @@ int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x49319c*/
       if ( argC < v14 && *a2 ) /*0x4931aa*/
       {
-        *a1 = 3 * (this->m_8 & (a1[a9] >> 2)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x4931de*/
+        *a1 = 3 * (*(unsigned int *)this->m_8 & (a1[a9] >> 2)) + (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x4931de*/
         v12 = (Stream *)(g_ZBufferDescriptor); /*0x4931e1*/
       }
       ++a2; /*0x4931ea*/
@@ -4756,7 +4756,7 @@ unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * 
       v13 = *result++; /*0x4932cc*/
       if ( argC < v13 && *a2 ) /*0x4932da*/
       {
-        *a1 = (this->m_8 & (a1[a9] >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 1)); /*0x49330a*/
+        *a1 = (*(unsigned int *)this->m_8 & (a1[a9] >> 1)) + (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 1)); /*0x49330a*/
         v12 = (Stream *)(g_ZBufferDescriptor); /*0x49330d*/
       }
       ++a2; /*0x493316*/
@@ -4849,7 +4849,7 @@ int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x4933fc*/
       if ( argC < v14 && *a2 ) /*0x49340a*/
       {
-        *a1 = (this->m_8 & (a1[a9] >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x49343e*/
+        *a1 = (*(unsigned int *)this->m_8 & (a1[a9] >> 2)) + 3 * (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2)); /*0x49343e*/
         v12 = (Stream *)(g_ZBufferDescriptor); /*0x493441*/
       }
       ++a2; /*0x49344a*/
@@ -5356,7 +5356,7 @@ unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * 
     if ( v17 ) /*0x496439*/
     {
       --v16; /*0x496478*/
-      *result = (this->m_8 & (*result >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v17) >> 1)); /*0x496479*/
+      *result = (*(unsigned int *)this->m_8 & (*result >> 1)) + (*(unsigned int *)this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v17) >> 1)); /*0x496479*/
       ++result; /*0x49647c*/
     }
     else

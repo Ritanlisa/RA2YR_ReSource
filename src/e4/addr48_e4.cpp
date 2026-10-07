@@ -58,6 +58,24 @@
 #include "e4/classes/CheckListClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ColorListClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ScenarioClass_e4.hpp"  // w18j2 C3861 ScenarioClass:: supply
+#include "e4/classes/WTFMode_e4.hpp"  // w18j2 C3861 WTFMode:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int RegisterInArray(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
+namespace gamemd { int ShowMissionBriefing(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Shutdown(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_77D840(); }  // w18j2 raw 0x0077D840
+namespace gamemd { int ShowDiplomacyDialog(...); }  // w18j2 raw 0x006586D0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int GameFrameCheck(...); }  // w18j2 raw 0x0055CFD0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int MainGameFrame(...); }  // w18j2 raw 0x0048C8B0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int ShowConfirmDialog(...); }  // w16g4 raw call-form
 namespace gamemd { int ShowGameDialog(...); }  // w16g4 raw call-form
@@ -509,7 +527,7 @@ LABEL_82:
        || !*(unsigned char *)((&v51->DieSound)[4] + 5889))
       && (!v114
        || v51
-       && (IDA_HIBYTE(v116) = v51->abstractFlags & 1) != 0
+       && (IDA_HIBYTE(v116) = *(unsigned int *)&*(unsigned int *)&v51->abstractFlags & 1) != 0
        && (*(uint8_t (**)(BuildingTypeClass *))((char *)v51->vtable1 + 352))( (BuildingTypeClass *)(v51))) )
     {
       if ( (*(int (**)(BuildingTypeClass *))(v51->vtable1 + 44))( (BuildingTypeClass *)(v51)) == 2
@@ -959,7 +977,7 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
       }
       else
       {
-        g_abs_14 |= a7; /*0x48a6f7*/
+        *(unsigned int *)g_abs_14 |= a7; /*0x48a6f7*/
         IDA_LOBYTE(v7) = 0; /*0x48a6f5*/
       }
     }

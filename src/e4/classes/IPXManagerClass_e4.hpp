@@ -11,7 +11,8 @@ struct IPXManagerClass {
     bool Initialized;  // 0x4
     bool Active;  // 0x5
     unsigned int Socket;
-    unsigned int processPacket;
+    unsigned int processPacket_ph;  // w18j3: filler renamed (no offset truth; canon IPXManagerClass::processPacket is a method)
+    static unsigned int processPacket(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned int q0080;
     unsigned int q010;
     unsigned int q014;

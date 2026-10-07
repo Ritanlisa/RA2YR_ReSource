@@ -64,6 +64,11 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int DlgProc(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { char * sub_4C68E0( char *int a2, int a3, char a4, char a5, int a6, char a7, int a8, char a9, int a10, int a11); }  // w18j2 raw 0x004C68E0
+namespace gamemd { int Network_Process_652540(...); }  // w18j2 raw 0x00652540 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ExitProgram(...);  // raw 006BEC50: void __thiscall __noreturn ExitProgram(ObjectClass *this)

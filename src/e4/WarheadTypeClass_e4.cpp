@@ -612,7 +612,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 } // namespace gamemd
 // 0x75E2C0
 namespace gamemd {
-int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * WarheadTypeClass_field_0x114)
+int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, unsigned int * a2, void * WarheadTypeClass_field_0x114)
 {
     int v5; // ebx
     int result; // eax
@@ -629,12 +629,12 @@ int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * 
       v7 = (int)(*a2); /*0x75e2e4*/
       WarheadTypeClass_field_0x114 = (int *)aP0->WarheadTypeClass_field_0x114; /*0x75e2f1*/
       (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0, v5); /*0x75e2f5*/
-      for ( i = 0; i   <   (int)(WarheadTypeClass_field_0x114)); ++i ) /*0x75e300*/
+      for ( i = 0; i < (int)(WarheadTypeClass_field_0x114); ++i ) /*0x75e300*/
         (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->WarheadTypeClass_field_0x108 + 4 * i, 4, 0); /*0x75e313*/
       v9 = (int)(*a2); /*0x75e323*/
       WarheadTypeClass_field_0x114 = aP0->unused_1CC[0]; /*0x75e32f*/
       (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0); /*0x75e333*/
-      for ( j = 0; j   <   (int)(WarheadTypeClass_field_0x114)); ++j ) /*0x75e33e*/
+      for ( j = 0; j < (int)(WarheadTypeClass_field_0x114); ++j ) /*0x75e33e*/
         (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))( /*0x75e351*/
           a2,
           aP0->WarheadTypeClass_field_0x190[0] + 4 * j,

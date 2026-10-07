@@ -34,6 +34,8 @@
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/SymbolTable_e4.hpp"  // G57w10 D supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int ReadPointerFromECX(...); }  // w18j2 raw call-form (variadic last resort)
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int sub_6B9450(...); }
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries

@@ -942,7 +942,7 @@ int v27; // ecx
       int v9 = *(unsigned int *)((char *)a1 +4);
       if ( v8 < v9 )
       {
-        unsigned int * v10 = (unsigned int *)((char *)a1 + * (v8 + 4 * (3 * v8 + 6) + 2));
+        unsigned int * v10 = (unsigned int *)((char *)a1 + *(unsigned int *)(v8 + 4 * (3 * v8 + 6) + 2));
         while ( *v10 != 1 && *v10 != 2 )
         {
           ++v8;

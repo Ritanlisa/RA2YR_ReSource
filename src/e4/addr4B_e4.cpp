@@ -42,6 +42,8 @@
 #include "e4/classes/ControlClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_4B6AB0(...); }  // w18j2 raw 0x004B6AB0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_4C2FC0(...); }  // w16g4 raw call-form
 namespace gamemd { int sub_557380(...); }  // w16g4 raw call-form
@@ -648,7 +650,7 @@ int Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
 }
 // 0x4B0DF0
 namespace gamemd {
-char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11)
+char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, unsigned int *aP1, int a4, int aP4, int aP5, int aP6, int aP7, int a9, int a10, int a11)
 {
 
   int v2; // eax
@@ -673,8 +675,8 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int a
   if ( *aP1 != v2 || *(unsigned long long *)(aP1 + 1) != qword_8A0794 ) /*0x4b0e50*/
   {
     *v4 = (int)(*aP1); /*0x4b0e65*/
-    ((unsigned int *)&this->ambientSoundController)[2] = (int)((&aP1)[1]); /*0x4b0e6a*/
-    v6 = (int)((&aP1)[2]); /*0x4b0e6d*/
+    ((unsigned int *)&this->ambientSoundController)[2] = (int)(aP1[1]); /*0x4b0e6a*/
+    v6 = (int)(aP1[2]); /*0x4b0e6d*/
     HIBYTE(this->customSound_controller[4]) = 1; /*0x4b0e70*/
     this->ambientSoundController[3] = v6; /*0x4b0e74*/
     vtable3 =(void *)((unsigned int *)this)[0]; /*0x4b0e7a*/

@@ -213,7 +213,7 @@ int GenerateTerrain(RandomMap *self)
           *(unsigned int *)(80 * ((__int16)v45 + g_MapCellWidth * IDA_SHIWORD(v45)) + g_MissionQueueFrame.localVariables[163] + 56) = v5; /*0x58c92d*/
         for ( i = (unsigned int)(0); i < 8; ++i ) /*0x58c931*/
         {
-          IDA_LODWORD(v52) = (unsigned int)(*CellStruct::Add(((CellStruct *)&v45), (unsigned int *)(&v53), (unsigned short *)(4 * (i & 7) + 9041544))); /*0x58c956*/
+          IDA_LODWORD(v52) = (unsigned int)(*(unsigned int *)CellStruct::Add(((CellStruct *)&v45), (unsigned int *)(&v53), (unsigned short *)(4 * (i & 7) + 9041544))); /*0x58c956*/
           *(unsigned int *)v46 = IDA_LODWORD(v52); /*0x58c95a*/
           v7 = g_MissionQueueFrame.localVariables[160]; /*0x58c968*/
           v8 = g_MissionQueueFrame.localVariables[163] + 80 * (SLOWORD(v52) + g_MapCellWidth * IDA_SWORD1(v52)); /*0x58c97d*/
@@ -337,7 +337,7 @@ int GenerateTerrain(RandomMap *self)
       *(unsigned int *)v47 = *(unsigned int *)(v17[1] + 4 * v19); /*0x58cb2a*/
       while ( 1 ) /*0x58cb51*/
       {
-        IDA_LODWORD(v52) = (unsigned int)(*CellStruct::Add(((CellStruct *)v47), (unsigned int *)(&v53), (unsigned short *)(4 * (v20 & 7) + 9041544))); /*0x58cb51*/
+        IDA_LODWORD(v52) = (unsigned int)(*(unsigned int *)CellStruct::Add(((CellStruct *)v47), (unsigned int *)(&v53), (unsigned short *)(4 * (v20 & 7) + 9041544))); /*0x58cb51*/
         *(unsigned int *)v49 = IDA_LODWORD(v52); /*0x58cb55*/
         v21 = IDA_SWORD1(v52) + SLOWORD(v52); /*0x58cb61*/
         if ( v21 > g_MissionQueueFrame.localVariables[160] ) /*0x58cb66*/
@@ -2402,7 +2402,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int 
     }
     else
     {
-      *a3 = 0; /*0x591052*/
+      *(unsigned char *)a3 = 0; /*0x591052*/
       return 0; /*0x591054*/
     }
 }

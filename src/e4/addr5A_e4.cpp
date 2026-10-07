@@ -73,6 +73,9 @@
 #include "e4/classes/Scalar_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Constructor(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic]
+namespace WaypointPath { int Constructor(...); }  // w18j2 ns-supply (no carrier hpp) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_4866D0(...); }  // w16g4 raw call-form
 namespace gamemd { int sub_4866F0(...); }  // w16g4 raw call-form
@@ -970,7 +973,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
     v20 = 0; /*0x5a4cb4*/
     v40 = 0; /*0x5a4cb6*/
   }
-  if ( aP2 > 0 ) /*0x5a4ced*/
+  if ( (int)aP2 > 0 ) /*0x5a4ced*/
   {
     while ( v20 ) /*0x5a4cfb*/
     {
@@ -982,7 +985,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       v26 = &v7[2 * v24]; /*0x5a4d1c*/
       do /*0x5a4f42*/
       {
-        v39 = (int)(*CellStruct::Add(((CellStruct *)(v40)), (unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
+        v39 = (int)(*(unsigned int *)CellStruct::Add(((CellStruct *)(v40)), (unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
         v43 = IDA_SHIWORD(v39) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/
           && (int16_t)v39 - IDA_SHIWORD(v39) < dword_ABED04

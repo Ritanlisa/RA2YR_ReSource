@@ -74,6 +74,10 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/WaypointClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"  // G42.36 C2027 supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_4A4E30(...); }  // w18j2 raw 0x004A4E30 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C2065 global supply (data addr evidence)
+extern unsigned char byte_885180;  // w18j2 data: 0x885180
 namespace VectorClass { int CleanupTyped(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
@@ -822,7 +826,7 @@ unsigned int sub_4A4130(void *a1)
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4168*/
       {
-        g_DDraw_ErrorCallback(v3); /*0x4a4170*/
+        ((int (*)(unsigned int))g_DDraw_ErrorCallback)(v3); /*0x4a4170*/
       }
       else
       {
@@ -865,7 +869,7 @@ unsigned int sub_4A4130(void *a1)
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4268*/
       {
-        g_DDraw_ErrorCallback(v6); /*0x4a426c*/
+        ((int (*)(unsigned int))g_DDraw_ErrorCallback)(v6); /*0x4a426c*/
       }
       else
       {
@@ -1285,15 +1289,15 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   v9 = (unsigned int *)(a4); /*0x4a5ebe*/
   v10 = (Char *)g_FogOfWarState; /*0x4a5ec8*/
   v11 = a4[1] + *(unsigned int *)((char *)a5 +); /*0x4a5ed3*/
-  v12 = (int)(*(unsigned int *)a5 + *a4); /*0x4a5ed8*/
+  v12 = (int)(*(unsigned int *)a5 + *(unsigned int *)a4); /*0x4a5ed8*/
   ((Text *)(g_FogOfWarState))->Layout( (unsigned short *)(a2), (int *)(&a5), (unsigned int *)(&a4), a4[2]); /*0x4a5eec*/
   v13 = IDA_BYTE1(a8); /*0x4a5ef1*/
-  if ( (a8 & 0x100) != 0 ) /*0x4a5efc*/
+  if ( ((unsigned int)a8 & 0x100) != 0 ) /*0x4a5efc*/
   {
-    v12 += a5 / -2; /*0x4a5f07*/
+    v12 += (int)a5 / -2; /*0x4a5f07*/
     v13 = IDA_BYTE1(a8); /*0x4a5f09*/
   }
-  else if ( (a8 & 0x200) != 0 ) /*0x4a5f12*/
+  else if ( ((unsigned int)a8 & 0x200) != 0 ) /*0x4a5f12*/
   {
     v12 -= a5; /*0x4a5f14*/
   }
@@ -1305,7 +1309,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
       v25 = (char *)a4 + 2; /*0x4a5f7a*/
       v23 = v11 - 1; /*0x4a5f82*/
       v22 = v12 - 1; /*0x4a5f86*/
-      (*(void (**)(int *, int *, unsigned int))(*a3 + 20))( (int *)(a3), (int *)(&v22), 0); /*0x4a5f93*/
+      (*(void (**)(int *, int *, unsigned int))(*(unsigned int *)a3 + 20))( (int *)(a3), (int *)(&v22), 0); /*0x4a5f93*/
     }
   }
   else
@@ -1314,7 +1318,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
     v23 = v11 - 1; /*0x4a5f2c*/
     v25 = (char *)a4 + 2; /*0x4a5f30*/
     v22 = v12 - 1; /*0x4a5f42*/
-    v14 = (int)(*a3); /*0x4a5f46*/
+    v14 = (int)(*(unsigned int *)a3); /*0x4a5f46*/
     IDA_LOWORD(a8) = 0; /*0x4a5f4c*/
     IDA_BYTE2(a8) = 0; /*0x4a5f57*/
     (*(void (**)(int *, int *, int *, int))(v14 + 28))( (int *)(a3), (int *)(&v22), (int *)(&a8), 60); /*0x4a5f5c*/
@@ -1331,7 +1335,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   ((TextGroup *)((TextGroup *)v10))->SetRect( (unsigned int *)(v26)); /*0x4a5fc5*/
   ((Property *)((Property *)v10))->Set((int16_t)(a6)); /*0x4a5fd1*/
   FontRenderer::DrawText(v10, a3, a2, v12, v11, 0, 0); /*0x4a5fed*/
-  *a1 = (void *)(v12); /*0x4a5ff7*/
+  *(void **)a1 = (void *)(v12); /*0x4a5ff7*/
   a1[1] = v11; /*0x4a5ff9*/
   return a1; /*0x4a5ff6*/
 }
@@ -1359,7 +1363,7 @@ void globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5, 
           a7,
           a8,
           a9);
-  *a1 = (void *)(*v12); /*0x4a60b9*/
+  *(void **)a1 = (void *)(*v12); /*0x4a60b9*/
   a1[1] = v12[1]; /*0x4a60bf*/
   return a1; /*0x4a60bb*/
 }
@@ -2594,7 +2598,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
           v48 = dword_8A0750; /*0x4aeffa*/
           v49 = dword_8A0754; /*0x4aeffe*/
         }
-        if ( (aP6 & 0x200) != 0 ) /*0x4af00c*/
+        if ( ((unsigned int)aP6 & 0x200) != 0 ) /*0x4af00c*/
         {
           v36 += v57 / -2; /*0x4af027*/
           v40 += v25 / -2; /*0x4af034*/
@@ -2628,7 +2632,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
           if ( aP7 ) /*0x4af10a*/
           {
             aP6 = aP6; /*0x4af10c*/
-            IDA_LOBYTE(aP6) = aP6 | 0x10; /*0x4af113*/
+            IDA_LOBYTE(aP6) = (unsigned int)aP6 | 0x10; /*0x4af113*/
             aP6 = aP6; /*0x4af115*/
           }
           if ( Helper_69E900((char **)v17, arg4) ) /*0x4af126*/
@@ -3433,7 +3437,7 @@ void sub_4A3FD0()
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4003*/
       {
-        g_DDraw_ErrorCallback(v1); /*0x4a4007*/
+        ((int (*)(unsigned int))g_DDraw_ErrorCallback)(v1); /*0x4a4007*/
         Debug::Log("DirectDrawCreate failed!\n"); /*0x4a400e G57w11: IDA push seq @ 0x4a400e*/
       }
       else
@@ -3454,7 +3458,7 @@ void sub_4A3FD0()
       {
         if ( g_DDraw_ErrorCallback ) /*0x4a4084*/
         {
-          g_DDraw_ErrorCallback(v3); /*0x4a4088*/
+          ((int (*)(unsigned int))g_DDraw_ErrorCallback)(v3); /*0x4a4088*/
         }
         else
         {
@@ -3482,7 +3486,7 @@ LPDIRECTDRAW sub_4A40C0()
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a40de*/
       {
-        result = g_DDraw_ErrorCallback(result); /*0x4a40e2*/
+        result = ((int (*)(unsigned int))g_DDraw_ErrorCallback)(result); /*0x4a40e2*/
         g_lpDirectDraw7 = 0; /*0x4a40e4*/
         return result; /*0x4a40f1*/
       }
@@ -3513,7 +3517,7 @@ int sub_4A44F0()
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a451c*/
       {
-        g_DDraw_ErrorCallback(v3); /*0x4a4520*/
+        ((int (*)(unsigned int))g_DDraw_ErrorCallback)(v3); /*0x4a4520*/
       }
       else
       {
@@ -3528,7 +3532,7 @@ int sub_4A44F0()
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4575*/
       {
-        result = (LPDIRECTDRAW)g_DDraw_ErrorCallback(result); /*0x4a4579*/
+        result = (LPDIRECTDRAW)((int (*)(unsigned int))g_DDraw_ErrorCallback)(result); /*0x4a4579*/
         g_lpDirectDraw7 = 0; /*0x4a457b*/
         return result; /*0x4a4586*/
       }
@@ -3578,7 +3582,7 @@ char sub_4A4700()
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4739*/
       {
-        IDA_LOBYTE(v1) = g_DDraw_ErrorCallback(v1); /*0x4a473d*/
+        IDA_LOBYTE(v1) = ((int (*)(unsigned int))g_DDraw_ErrorCallback)(v1); /*0x4a473d*/
       }
       else
       {

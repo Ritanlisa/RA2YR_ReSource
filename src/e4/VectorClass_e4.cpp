@@ -170,6 +170,8 @@
 #include "e4/classes/COMClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int nullsub_138(...); }  // w18j2 raw call-form (variadic last resort)
 namespace VectorClass { int CleanupTyped(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 
 // 0x4137A0
@@ -1132,7 +1134,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
     LOBYTE(this->IsInitialized) = 0; /*0x628909*/
     if ( a2 ) /*0x62890f*/
     {
-      if ( aP1 - 1 >= 0 ) /*0x628965*/
+      if ( (int)aP1 - 1 >= 0 ) /*0x628965*/
       {
         v8 = (unsigned int)aP1; /*0x628967*/
         do /*0x628978*/
@@ -1151,7 +1153,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
       if ( v6 ) /*0x628928*/
       {
         v7 = (Byte *)v6; /*0x62892d*/
-        if ( aP1 - 1 >= 0 ) /*0x628931*/
+        if ( (int)aP1 - 1 >= 0 ) /*0x628931*/
         {
           v14 = (unsigned int)aP1; /*0x628934*/
           do /*0x62894e*/
@@ -1308,7 +1310,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
   this->IsInitialized = 0; /*0x6dc867*/
   if ( a2 ) /*0x6dc86d*/
   {
-    if ( aP1 - 1 >= 0 ) /*0x6dc8ba*/
+    if ( (int)aP1 - 1 >= 0 ) /*0x6dc8ba*/
     {
       v8 = (unsigned int)aP1; /*0x6dc8bc*/
       do /*0x6dc8d6*/
@@ -1327,7 +1329,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
   v15 = v5; /*0x6dc882*/
   if ( v5 ) /*0x6dc886*/
   {
-    if ( aP1 - 1 >= 0 ) /*0x6dc88d*/
+    if ( (int)aP1 - 1 >= 0 ) /*0x6dc88d*/
     {
       v6 = (unsigned int)aP1; /*0x6dc88f*/
       do /*0x6dc8a9*/

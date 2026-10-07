@@ -24,7 +24,8 @@ struct MultiplayerGameMode {
     unsigned int q0104;
     unsigned int u32_38;
     void* vt_InitializerBase;  // 0x0 (no offset truth)
-    void* GetFirst;  // 0x0 (no offset truth)
+    void* GetFirst_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon MultiplayerGameMode::GetFirst is a method)
+    static unsigned int GetFirst(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     MultiplayerGameMode * QueryInterface(char * Block, char a2);
     unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3_2);

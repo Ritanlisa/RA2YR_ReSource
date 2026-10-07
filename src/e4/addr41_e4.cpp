@@ -46,6 +46,8 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int j_Time_GetElapsedMS(...); }  // w18j2 raw call-form (variadic last resort)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int LookupWaypointName(...);  // raw 005B3910: int __thiscall LookupWaypointName(ObjectClass *this)
@@ -681,7 +683,7 @@ if ( (*(int (**)(unsigned int, unsigned int *, unsigned char *))(**(unsigned int
   v11 = *(unsigned int *)(v6 + 156); /*0x412483*/
   if ( v16 < v11 || v16 >= *(unsigned int *)(v6 + 144) >> 1 && !v11 || v10 == 1 ) /*0x4124a4*/
   {
-    dword_887770(dwUser, *(unsigned int *)(v6 + 4 * *(unsigned int *)(v6 + 68) + 80)); /*0x4124af*/
+    ((int (*)(unsigned int, unsigned int))dword_887770)(dwUser, *(unsigned int *)(v6 + 4 * *(unsigned int *)(v6 + 68) + 80)); /*0x4124af*/
     v12 = *(unsigned int *)(v6 + 68); /*0x4124b5*/
     v13 = v12 + 1; /*0x4124c2*/
     ++*(unsigned int *)(v6 + 148); /*0x4124c5*/

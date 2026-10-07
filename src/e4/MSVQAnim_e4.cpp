@@ -24,10 +24,10 @@ void * MSVQAnim::GetFrameRect(int * a2)
   int MSVQAnim_field_0x1C; // eax
   int *p_parTimeMedium; // ecx
 
-  if ( (&byte_ABFB98 & 1) == 0 ) /*0x5cd2a0*/
+  if ( (byte_ABFB98 & 1) == 0 ) /*0x5cd2a0*/
   {
     dword_ABFBA0= 0; /*0x5cd2ab*/
-    &byte_ABFB98 |= 1u; /*0x5cd2b1*/
+    byte_ABFB98 |= 1u; /*0x5cd2b1*/
     dword_ABFBA4= 0; /*0x5cd2b7*/
     *(unsigned int *)&dword_ABFBA8= 0; /*0x5cd2bd*/
     *(unsigned int *)&g_MissionQueueFrame.underParTitle[4] = 0; /*0x5cd2c3*/

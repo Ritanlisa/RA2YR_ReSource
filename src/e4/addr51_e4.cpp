@@ -123,7 +123,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
         queuedMission = (char *)((unsigned int *)v6)[0]; /*0x51ff79*/
       else
         queuedMission = (char *)(*((int (**)(BuildingClass *))v6->vtable1 + 97))( (BuildingClass *)(v6)); /*0x51ff89*/
-      v7 = (unsigned int)(*((ProgressTimer *)((ProgressTimer *)((unsigned int *)v6)[0]))->GetValue((unsigned int *)(&v27))); /*0x51ff9d*/
+      v7 = (unsigned int)(*(unsigned int *)((ProgressTimer *)((ProgressTimer *)((unsigned int *)v6)[0]))->GetValue((unsigned int *)(&v27))); /*0x51ff9d*/
       owner = (gamemd::HouseClass *)(((unsigned int *)v6)[0]); /*0x51ffab*/
       v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
       v24.Input_field_00 = ((unsigned int *)v6)[0]; /*0x51ffb6*/

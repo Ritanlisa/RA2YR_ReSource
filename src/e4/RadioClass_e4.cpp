@@ -123,7 +123,7 @@ int RadioClass::LoadState(int aP1, int aP2)
       {
 LABEL_8:
         v9 = 0; /*0x65ac14*/
-        if ( v8 > 0 ) /*0x65ac18*/
+        if ( (int)v8 > 0 ) /*0x65ac18*/
         {
           do /*0x65ac33*/
             ObjectPtr::RegisterForTracking( /*0x65ac29*/

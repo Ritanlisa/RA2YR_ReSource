@@ -74,7 +74,7 @@ int Play(); // 0x432C70
     static int * CreateSurfaceTracker(char * FullPath);  // 0x6C99D0
 int IsAtEnd(); // def-aligned
     int IsAtEnd(void *a1_1);
-    void Play(void *a1_1);
+    int Play(void *a1_1);
     int RenderFrameToSurface(void *a1_1);
     int InitKeyframeTracking(char * Source, void * aSubtitlemdTxt);
     unsigned int q_20;  // +0x20 flat supply (CSP-fed)

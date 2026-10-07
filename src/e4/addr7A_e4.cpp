@@ -51,6 +51,24 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { _DWORD * sub_7B0490(_DWORD *this); }  // w18j2 raw 0x007B0490
+namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic]
+namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_7B0490(...); }  // w18j2 raw 0x007B0490 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Team_Start_7AF500(...); }  // w18j2 raw 0x007AF500 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { char * sub_765410(int char *a2); }  // w18j2 raw 0x00765410
+namespace gamemd { int Team_Start_764FA0(...); }  // w18j2 raw 0x00764FA0 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int Team_Start_597430(...); }  // w18j2 raw 0x00597430 [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
@@ -985,7 +1003,7 @@ AbstractClass * * WOL_MatchGame()
     memset( (void *)(&v28[16]), 0, 0x10Cu); /*0x7a1ec9*/
     v16 = (TechnoTypeClass *)(0); /*0x7a1ec9*/
     referenceCount = (unsigned int)((char *)&stru_B76AC4); /*0x7a1ecb*/
-    if ( ((char *)&stru_B76AC4) > 0 ) /*0x7a1ed2*/
+    if ( (*(int *)&stru_B76AC4) > 0 ) /*0x7a1ed2*/
       break; /*0x7a1ed2*/
   LABEL_25:
     ((Game *)v16)->ProcessIdle(); /*0x7a1f27*/

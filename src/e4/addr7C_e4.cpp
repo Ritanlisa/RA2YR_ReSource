@@ -12591,7 +12591,7 @@ int sprintf(char *const Buffer, const char *const Format, ...)  // G42.33 b23: t
   if ( v3 ) /*0x7c8f2a*/
     _flsbuf(0, (FILE *)&File); /*0x7c8f3a*/
   else
-    *File= 0; /*0x7c8f2f*/
+    *File._ptr = 0; /*0x7c8f2f*/
   return v4; /*0x7c8f43*/
 }
 } // namespace gamemd
@@ -13100,7 +13100,7 @@ int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *con
   if ( --File._cnt < 0 ) /*0x7ca5b7*/
     _flsbuf(0, (FILE *)&File); /*0x7ca5c7*/
   else
-    *File= 0; /*0x7ca5bc*/
+    *File._ptr = 0; /*0x7ca5bc*/
   return v5; /*0x7ca5d0*/
 }
 } // namespace gamemd
@@ -13296,7 +13296,7 @@ int vswprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *co
   if ( --File._cnt < 0 ) /*0x7ca8aa*/
     _flsbuf(0, (FILE *)&File); /*0x7ca8ba*/
   else
-    *File= 0; /*0x7ca8af*/
+    *File._ptr = 0; /*0x7ca8af*/
   return v6; /*0x7ca8c3*/
 }
 } // namespace gamemd
@@ -13762,7 +13762,7 @@ int vsprintf(char *const Buffer, const char *const Format, va_list ArgList)
   if ( v4 ) /*0x7cb7ef*/
     _flsbuf(0, (FILE *)&File); /*0x7cb7ff*/
   else
-    *File= 0; /*0x7cb7f4*/
+    *File._ptr = 0; /*0x7cb7f4*/
   return v5; /*0x7cb808*/
 }
 } // namespace gamemd
@@ -14017,7 +14017,7 @@ namespace gamemd {
 void _cinit()
 {
   if ( off_87BEB8 ) /*0x7cbdb6*/
-    off_87BEB8(); /*0x7cbdb8 G42.33 b25: fn-ptr call (void* global)*/
+    ((void (*)(void))off_87BEB8)(); /*0x7cbdb8 G42.33 b25: fn-ptr call (void* global)*/
   _initterm((_PVFV *)&First, (_PVFV *)&Last); /*0x7cbdc4*/
   _initterm((_PVFV *)&dword_812000, (_PVFV *)&dword_815DA4); /*0x7cbdd3*/
 }

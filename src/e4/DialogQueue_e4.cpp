@@ -18,8 +18,8 @@ int DialogQueue::PushEntry(void *a1)
   result = (unsigned int)(&dword_ABFC98); /*0x5d4e70*/
   if ( &dword_ABFCA0 < &dword_ABFC98 /*0x5d4eac*/
     || (BYTE1(&byte_ABFC9C) || !&dword_ABFC98)
-    && &dword_ABFCA4 > 0
-&& (result = (*(int (**)(int *, int, unsigned int))(&dword_ABFC90 + 8))( (int *)(&g_MissionQueueFrame.ls640BkgdName[7]), &dword_ABFC98 + &dword_ABFCA4, 0), (unsigned char)result) )
+    && (int)dword_ABFCA4 > 0
+&& (result = (*(int (**)(int *, int, unsigned int))(&dword_ABFC90 + 8))( (int *)(&g_MissionQueueFrame.ls640BkgdName[7]), dword_ABFC98 + (int)dword_ABFCA4, 0), (unsigned char)result) )
 
 
 

@@ -323,7 +323,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
     if ( v3 ) /*0x4ca290*/
     {
       AbstractClass::InitVtables(((AbstractClass *)v3), (int)&a2); /*0x4ca299*/
-      __4type_info_AAEAAV0_ABV0__Z(&v3((unsigned int *)&v3production)[2], (int)&a2); /*0x4ca2a6*/
+      __4type_info_AAEAAV0_ABV0__Z(&v3((unsigned int *)&production)[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)&v3->onHold, 0, 0); /*0x4ca2b2*/
       *(unsigned int *)&v3->onHold = (unsigned int)(&vt_DynamicVectorClass); /*0x4ca2b7*/
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/

@@ -300,12 +300,16 @@ struct FootClass {
     unsigned int team;
     unsigned int unknownAbstractArray588;
     unsigned int Capacity;
-    unsigned int FindAITarget;
+    unsigned int FindAITarget_ph;  // w18j3: filler renamed (no offset truth; canon FootClass::FindAITarget is a method)
+    static unsigned int FindAITarget(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned int *__pad_0;
     void* movementDestination;  // 0x0 (no offset truth)
-    void* HandleCursorWithCheck;  // 0x0 (no offset truth)
-    void* OverrideMission_SyncLog;  // 0x0 (no offset truth)
-    void* ValidateMove;  // 0x0 (no offset truth)
+    void* HandleCursorWithCheck_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FootClass::HandleCursorWithCheck is a method)
+    static unsigned int HandleCursorWithCheck(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* OverrideMission_SyncLog_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FootClass::OverrideMission_SyncLog is a method)
+    static unsigned int OverrideMission_SyncLog(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* ValidateMove_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FootClass::ValidateMove is a method)
+    static unsigned int ValidateMove(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* currentSpeed_percentage;  // 0x0 (no offset truth)
     void* unknown698;  // 0x0 (no offset truth)
 // --- flat members (END) ---
@@ -323,7 +327,9 @@ struct FootClass {
     static void MissionMoveCarryallLand(FootClass * aP1);  // G57w10-S raw 0x00416AF0 (was C2597 interim stub)
     int CreateWakes(int a2, int a3, int a4);  // 0x629e90
     int ClearPathIndex();  // 0x4df0d0
-    unsigned int * PostLoadInit(int a2);  // 0x4d3540
+    unsigned int * PostLoadInit(int a2);
+    static BOOL checkPassability();
+    static int CheckAccelLimit(...);  // w18j2 C3861 static supply  // w18j2 C3861 static supply (raw 0x0070FEB0)  // 0x4d3540
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

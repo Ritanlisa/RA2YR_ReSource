@@ -154,7 +154,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
       /* asm-debt:__asm { fdivr qword ptr [esi] } */
       v71 = COERCE_DOUBLE(__PAIR64__(v13, LODWORD(v89))); /*0x5b2222*/
       /* asm-debt:__asm { fstp qword ptr [esi] } */
-      *_ESI = _RT1; /*0x5b2223*/
+      *(double *)_ESI = _RT1; /*0x5b2223*/
       Math::ArcTan2(v71); /*0x5b2225*/
       /* asm-debt:__asm { fdivr qword ptr [esi+8] } */
       /* asm-debt:__asm { fstp qword ptr [esi+8] } */
@@ -171,7 +171,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     /* asm-debt:__asm { fmul qword ptr [esi] } */
     Movement_field_00_low = SLOWORD(v85.Movement_field_00); /*0x5b2259*/
     /* asm-debt:__asm { fstp qword ptr [esi] } */
-    *_ESI = _RT1; /*0x5b225e*/
+    *(double *)_ESI = _RT1; /*0x5b225e*/
     *(unsigned int *)v88.__pad_0 = Movement_field_00_low - 0x3FFF; /*0x5b2266*/
     /* asm-debt:__asm */
     {

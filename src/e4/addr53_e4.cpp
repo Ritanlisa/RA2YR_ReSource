@@ -71,6 +71,11 @@
 #include "e4/classes/SelectTeamCommand_e4.hpp"
 #include "e4/classes/TauntCommandClass_e4.hpp"
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
+#include "e4/classes/AudioFileClass_e4.hpp"  // w18j2 C3861 AudioFileClass:: supply
+#include "e4/classes/ChronoScreenEffect_e4.hpp"  // w18j2 C3861 ChronoScreenEffect:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Release(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int DecrementCounter(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int LoadTheaterClassMIX_Load(...); }
 namespace gamemd { int InitExtensionState(...); }

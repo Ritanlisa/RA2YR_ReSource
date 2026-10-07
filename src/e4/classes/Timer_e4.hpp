@@ -80,7 +80,8 @@ struct Timer {
     unsigned int *__pad_6;
     unsigned int m_18;
     // dup-member: unsigned int DisableHighPrecision;
-    unsigned int ReadTSC;
+    unsigned int ReadTSC_ph;  // w18j3: filler renamed (no offset truth; canon Timer::ReadTSC is a method)
+    static unsigned int ReadTSC(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     void * Start(int aP1);  // 0x46B640
     int StartDouble(double a2);  // 0x4A5240

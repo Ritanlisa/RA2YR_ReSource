@@ -49,6 +49,8 @@
 #include "e4/classes/Player_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GameConfig_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w18j2] C2065 global supply (data addr evidence)
+extern unsigned int dword_B780A0;  // w18j2 data: 0xB780A0
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int Network_Load(...);  // raw 005CF830: int __thiscall Network_Load(ObjectClass *this, char a2)
@@ -1334,7 +1336,7 @@ SessionClass::SessionClass()
   *((unsigned int *)this + 563) = 0; /*0x69779c*/
   *((unsigned char *)this + 2256) = 0; /*0x6977a2*/
   *((unsigned int *)this + 565) = 0; /*0x6977a9*/
-  return this; /*0x6977a8*/
+  return; /*0x6977a8*/
 
 }
 }  // G42.18c ns repair
@@ -2294,7 +2296,7 @@ LABEL_39:
     while ( 1 ) /*0x69c24e*/
     {
       v33 = *v32; /*0x69c24e*/
-      v34 = ToWideStringChar( (IUnknown *)((char *)*dword_A8DA78)); /*0x69c259*/
+      v34 = ToWideStringChar( (IUnknown *)((char *)*(unsigned int *)dword_A8DA78)); /*0x69c259*/
       v35 = ToWideStringChar( (IUnknown *)(v33)); /*0x69c25b*/
       if ( !_strcmpi(v34, v35) ) /*0x69c262*/
         break; /*0x69c262*/

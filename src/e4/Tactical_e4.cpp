@@ -125,7 +125,7 @@ void * Tactical::ConstructTacticalSurface()
     v7 = (void *)(v5[1]); /*0x42a76c*/
     v5[2] = (unsigned int)(v6); /*0x42a76f*/
     v8 = 0; /*0x42a775*/
-    if ( v7 >= 0 ) /*0x42a779*/
+    if ( (int)v7 >= 0 ) /*0x42a779*/
     {
       do /*0x42a788*/
       {
@@ -152,7 +152,7 @@ void * Tactical::ConstructTacticalSurface()
     v12 = (void *)(v10[1]); /*0x42a7be*/
     v10[2] = (unsigned int)(v11); /*0x42a7c1*/
     v13 = 0; /*0x42a7c7*/
-    if ( v12 >= 0 ) /*0x42a7cb*/
+    if ( (int)v12 >= 0 ) /*0x42a7cb*/
     {
       do /*0x42a7da*/
       {

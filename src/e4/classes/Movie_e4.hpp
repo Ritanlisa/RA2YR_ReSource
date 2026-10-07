@@ -72,7 +72,8 @@ struct Movie {
     unsigned int Audio;
     unsigned int CampaignClass;
     unsigned int Debug;
-    unsigned int PlayWrapper;
+    unsigned int PlayWrapper_ph;  // w18j3: filler renamed (no offset truth; canon Movie::PlayWrapper is a method)
+    static unsigned int PlayWrapper(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     AbstractClass * * SetupScreen(int aP1);
     struct CampaignClass * * GetSection(CCINIClass * aP1, CCINIClass * aP2);  // 0x49E3B0

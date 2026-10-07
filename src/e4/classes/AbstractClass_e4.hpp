@@ -404,7 +404,7 @@ int DTOR(); // 0x4101F0
     int AbstractClass_COMStub_133();
     int AbstractClass_COMStub_137();
     AbstractClass * * AnnounceExpiredPointer(AbstractClass *a1, int a2, int aP0, int aP1, int aP2);
-    void DTOR(void *a1_1);
+    int DTOR(void *a1_1);
     int COMStub_Return0_38(void *a1_1);
     unsigned int q_4B;  // +0x4B flat supply (final pass)
     unsigned int q_5C1C;  // +0x5C1C flat supply (final pass)

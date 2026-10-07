@@ -86,7 +86,7 @@ LABEL_9:
   }
   v10 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)aP1 + 11))));
   v11 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)aP1 + 10))));
-  if ( v10 <= 0 ) /*0x5268df*/
+  if ( (int)v10 <= 0 ) /*0x5268df*/
     return (gamemd::ObjectClass **)(unk_B7882C); /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
   {
@@ -96,7 +96,7 @@ LABEL_9:
       break; /*0x5268f6*/
     (unsigned int)(v10)/= 2; /*0x5268f8*/
 LABEL_19:
-    if ( v10 <= 0 ) /*0x52690a*/
+    if ( (int)v10 <= 0 ) /*0x52690a*/
       return (gamemd::ObjectClass **)(unk_B7882C); /*0x52690a*/
   }
   if ( v12 != (gamemd::ObjectClass **)(v16) ) /*0x5268fc*/
@@ -362,7 +362,7 @@ INIClass::INIClass()
   result[14] = 0; /*0x535b1f*/
   result[15] = 0; /*0x535b23*/
   *result = (unsigned int)(&vt_INIClass); /*0x535b27*/
-  return result; /*0x535b22*/
+  return; /*0x535b22*/
 
 }
 }

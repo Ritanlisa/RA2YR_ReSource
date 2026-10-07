@@ -18,7 +18,7 @@
 
 // 0x655C50
 namespace gamemd {
-MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
+MapClass * * FogOfWar::RevealArea(int *a2, int *aP1, int a1)
 {
 
   int result; // eax
@@ -72,7 +72,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
     return (gamemd::MapClass **)(result); /*0x655c86*/
   if ( v5 >= *(unsigned int *)result + *(unsigned int *)(result + 8) ) /*0x655c93*/
     return (gamemd::MapClass **)(result); /*0x655c93*/
-  v6 = (int)((&aP1)[1]); /*0x655c99*/
+  v6 = (int)(aP1[1]); /*0x655c99*/
   v7 = *(unsigned int *)(result + 4); /*0x655c9c*/
   if ( v6 < v7 ) /*0x655ca5*/
     return (gamemd::MapClass **)(result); /*0x655ca5*/
@@ -89,7 +89,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
   if ( !g_hWnd || (v34 = 1, !(uint8_t)FogOfWar_Get((gamemd::IUnknown *)(v37))) ) /*0x655d74*/
     v34 = 0; /*0x655d82*/
   v35 = 0; /*0x655d8a*/
-  v9 = **(unsigned int **)&this->ptr_1258 + 24 * (uint8_t)(*aP1 - 5 * (&aP1)[1]); /*0x655da7*/
+  v9 = **(unsigned int **)&this->ptr_1258 + 24 * (uint8_t)(*aP1 - 5 * aP1[1]); /*0x655da7*/
   v10 = *(unsigned int *)(v9 + 16); /*0x655daa*/
   v11 = *(unsigned int *)(v9 + 4); /*0x655dae*/
   v36 = v10; /*0x655db3*/
@@ -99,7 +99,7 @@ MapClass * * FogOfWar::RevealArea(int *a2, int aP1, int a1)
   while ( 1 ) /*0x655dc4*/
   {
     v13 = *(v12 - 1); /*0x655dc4*/
-    if ( *v12 != *aP1 || v12[1] != (&aP1)[1] ) /*0x655dd7*/
+    if ( *v12 != *aP1 || v12[1] != aP1[1] ) /*0x655dd7*/
       goto LABEL_25; /*0x655dd7*/
     if ( (!v42 || (uint8_t)((House*)*(void **)(v13 + 540))->IsHumanPlayer()) /*0x655e10*/
       && (!*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 559)
@@ -184,11 +184,11 @@ LABEL_45:
   v23 = *((unsigned int *)this + 1320); /*0x656095*/
   v24 = (int *)((char *)this + 4620); /*0x6560a0*/
   v25 = v22 + *aP1; /*0x6560a6*/
-  v26 = (&aP1)[1] + v23; /*0x6560a8*/
+  v26 = aP1[1] + v23; /*0x6560a8*/
   if ( v24[2] <= 0 || v24[3] <= 0 ) /*0x6560be*/
   {
     v27 = v22 + *aP1; /*0x656125*/
-    v29 = (&aP1)[1] + v23; /*0x656127*/
+    v29 = aP1[1] + v23; /*0x656127*/
     result = 1; /*0x656129*/
     v33 = 1; /*0x65612b*/
   }

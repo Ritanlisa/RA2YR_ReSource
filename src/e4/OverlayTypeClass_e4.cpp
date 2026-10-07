@@ -30,6 +30,8 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AbstractTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MixFileClass_e4.hpp"  // G42.36 C2027 supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_213(); }  // w18j2 raw 0x005FE520
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char aCellanim;  // data: 0x833544 truth(IDA G42.57w9)
 extern unsigned char aChainreaction;  // data: 0x8334f0 truth(IDA G42.57w9)
@@ -110,7 +112,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   {
 LABEL_11:
     this->LandType[0] = -1; /*0x5fe397*/
-    return this; /*0x5fe3a0*/
+    return; /*0x5fe3a0*/
   }
   else
   {
@@ -123,7 +125,7 @@ LABEL_11:
         goto LABEL_11; /*0x5fe395*/
     }
     this->LandType[0] = v5; /*0x5fe3a7*/
-    return this; /*0x5fe3ad*/
+    return; /*0x5fe3ad*/
   }
 
 }

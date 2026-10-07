@@ -48,7 +48,8 @@ struct INIClass {
 
 
 
-    void* LookupEnum;  // 0x0 (no offset truth)
+    void* LookupEnum_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon INIClass::LookupEnum is a method)
+    static unsigned int LookupEnum(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 
 // --- flat members (END) ---
     int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
@@ -131,6 +132,7 @@ static int WriteToString(INIClass * aP1, int a2);  // G57w10-S raw 0x00526470 (w
     HWND CloseAll();
     unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
     int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
+    static int ParseValue(...);  // w18j2 C3861 static supply
 };
 #endif  // GAMEMD_E4_INIClass
 

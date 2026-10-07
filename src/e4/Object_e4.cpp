@@ -43,6 +43,8 @@
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_167(); }  // w18j2 raw 0x0056C500
 
 // 0x47C3D0
 namespace gamemd {
@@ -735,7 +737,7 @@ LABEL_39:
   }
   if ( !((ParasiteClass*)(ParasiteClass *)this)->CanExistOnVictimCell() ) /*0x62ac5a*/
   {
-    v12 = ((unsigned int)((*((ProgressTimer *)((ProgressTimer *)(*(unsigned int *)&this->__pad_C[28] + 904)))->GetValue(&v26) >> 12) /*0x62ad3a*/
+    v12 = ((unsigned int)((*(unsigned int *)((ProgressTimer *)((ProgressTimer *)(*(unsigned int *)&this->__pad_C[28] + 904)))->GetValue(&v26) >> 12) /*0x62ad3a*/
                         + 1) >> 1)
         & 7;
     v13 = (Cell *)(*(int (**)(unsigned int))(**(unsigned int **)&this->__pad_C[28] + 444))(*(unsigned int *)&this->__pad_C[28]); /*0x62ad43*/
@@ -1812,7 +1814,7 @@ char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a
     IDA_LOWORD(v30) = a28; /*0x637df2*/
     IDA_BYTE2(v30) = IDA_BYTE2(a28); /*0x637df4*/
 // 0x6521c0
-    return (char)(Network::RecordEvent( /*0x637df5*/)
+    return (char)(Network::RecordEvent( /*0x637df5*/
              *(int64_t *)v29,
              *(int *)&v29[8],
              *(int *)&v29[12],

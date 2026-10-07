@@ -52,7 +52,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   v3 = this; /*0x41ec9b*/
   v4 = 0; /*0x41ec9d*/
   v11 = 0; /*0x41eca5*/
-  if ( ((char *)&stru_A80220) <= 0 ) /*0x41ecaa*/
+  if ( (*(int *)&stru_A80220) <= 0 ) /*0x41ecaa*/
     return v11; /*0x41ecaa*/
   while ( *(unsigned int *)(*(unsigned int *)(*((unsigned int *)((char *)&stru_A80220) + v4) + 52) + 188) != ((HouseTypeClass*)&g_INI_Key_Civilian)->Find() ) /*0x41eccc*/
   {

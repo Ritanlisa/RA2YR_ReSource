@@ -103,9 +103,12 @@ struct SidebarClass {
     unsigned int SidebarClass_field_0x5C;
     unsigned int SidebarClass_field_0x68;
     unsigned int *__pad_CD2;
-    unsigned int calcSidebarRect;
-    unsigned int InitButtons;
-    void* GetProductionState;  // 0x0 (no offset truth)
+    unsigned int calcSidebarRect_ph;  // w18j3: filler renamed (no offset truth; canon SidebarClass::calcSidebarRect is a method)
+    static unsigned int calcSidebarRect(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    unsigned int InitButtons_ph;  // w18j3: filler renamed (no offset truth; canon SidebarClass::InitButtons is a method)
+    static unsigned int InitButtons(...);  // w18j3 C2597 static-call supply (w16g4 convention)
+    void* GetProductionState_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon SidebarClass::GetProductionState is a method)
+    static unsigned int GetProductionState(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     static GadgetClass * LoadResources(void *a1);
     static int CalcBounds(char a1);

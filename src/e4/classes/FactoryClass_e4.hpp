@@ -49,7 +49,8 @@ struct FactoryClass {
     unsigned int queuedObjects;
     unsigned int Debug;
     unsigned int balance;
-    void* RemoveItemAt;  // 0x0 (no offset truth)
+    void* RemoveItemAt_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon FactoryClass::RemoveItemAt is a method)
+    static unsigned int RemoveItemAt(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
     static char GetFlag();
@@ -78,6 +79,7 @@ struct FactoryClass {
     unsigned int * CompleteItem();  // 0x71abc0
     int * RemoveFromArrays(char a2);  // 0x63d9c0
     void * CopyTo(void ** Block, char a2);
+    static int FindOrCreate(...);  // w18j2 C3861 static supply
 };
 
 } // namespace gamemd

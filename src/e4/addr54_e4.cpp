@@ -63,6 +63,8 @@
 #include "e4/classes/TerrainClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CellClass_e4.hpp"  // G42.36 C2027 supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_20(); }  // w18j2 raw 0x00547CE0
 
 // 0x540C50
 namespace gamemd {
@@ -1119,11 +1121,11 @@ LABEL_217:
     *(unsigned int *)&(&g_NetworkPlayerBuffer)[79852 ]= -1;
     g_TerrainBridgeIndex = -1;
   }
-  *(unsigned int *)(&aP1)[0] = (unsigned int)&vt_CCFileClass;
+  *(unsigned int *)&aP1 = (unsigned int)&vt_CCFileClass;
   int v170 = 0;
   char v169[12]; // [esp+558h] [ebp-4B8h] BYREF
   ((Vector *)((int)v169))->Clear((int)((Vector *)((int)v169)));
-  *(unsigned int *)(&aP1)[0] = (unsigned int)&off_7E1668;
+  *(unsigned int *)&aP1 = (unsigned int)&off_7E1668;
   ((BufferIOFileClass *)(&aP1))->Dtor();
   v161[0] = (unsigned int)&vt_CCFileClass;
   int v163 = 0;

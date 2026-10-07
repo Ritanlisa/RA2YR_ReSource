@@ -23,7 +23,7 @@ struct VectorClass_ptr_ConvertClass {
     void* q01C;  // 0x1C
 // --- flat members (END) ---
     void * Constructor_ConvertClass(void ** Block, char a2);  // 0x491210
-    void MarkDirty();  // 0x4E1960
+    int MarkDirty();  // 0x4E1960
     static void MarkDirty(void *aP0);  // 0x4E1960 G42.35 static-form sync (ui/supplied site 0x4E2540)
     int Destroy(void *a1_1);  // 0x491390
     unsigned int GetItemIndex(int a2);  // 0x4913C0

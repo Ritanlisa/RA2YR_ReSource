@@ -113,13 +113,13 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   Block = (char *)(0); /*0x6421d1*/
   DSurface::Lock((DSurface *)&v61, 0, 0); /*0x6421db*/
   v42 = 0; /*0x6421e4*/
-  if ( v61.Height > 0 ) /*0x6421ea*/
+  if ( (int)v61.Height > 0 ) /*0x6421ea*/
   {
     Width = (void *)((int)(v61.Width));
     do /*0x6422f7*/
     {
       v14 = 0; /*0x6421f4*/
-      if ( Width > 0 ) /*0x6421f8*/
+      if ( (int)Width > 0 ) /*0x6421f8*/
       {
         do /*0x6422de*/
         {
@@ -157,7 +157,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v22 = RA2_OPNEW(2 * a2); /*0x642311*/
   Blocka = (unsigned short *)v22; /*0x642319*/
   v45 = 0; /*0x64231f*/
-  if ( a2 > 0 ) /*0x642327*/
+  if ( (int)a2 > 0 ) /*0x642327*/
   {
     v43 = (unsigned short *)v22; /*0x642329*/
     do /*0x642370*/
@@ -190,14 +190,14 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v51 = v53; /*0x642388*/
   DSurface::Lock((DSurface *)&v61, 0, 0); /*0x642396*/
   v44 = 0; /*0x64239f*/
-  if ( v61.Height > 0 ) /*0x6423a9*/
+  if ( (int)v61.Height > 0 ) /*0x6423a9*/
   {
     v27 = (void *)((int)(v61.Width));
     while ( 1 ) /*0x6423b3*/
     {
       v28 = 0; /*0x6423b3*/
       v52 = 0; /*0x6423b7*/
-      if ( v27 > 0 ) /*0x6423bb*/
+      if ( (int)v27 > 0 ) /*0x6423bb*/
         break; /*0x6423bb*/
   LABEL_37:
       if ( ++v44 >= (int)(v61.Height) ) /*0x642529*/
@@ -214,7 +214,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       IDA_LOBYTE(v55) = (uint8_t)(v29 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x642408*/
       IDA_BYTE1(v55) = (uint8_t)(v29 >> g_BitMask_Green) << g_BitMask_Blue; /*0x642429*/
       IDA_BYTE2(v55) = (uint8_t)(v29 >> g_BitShift_Blue) << g_BitMask_Red; /*0x642431*/
-      if ( v21 > 0 ) /*0x642435*/
+      if ( (int)v21 > 0 ) /*0x642435*/
       {
         v31 = Blocka; /*0x642447*/
         v32 = (uint8_t)v55; /*0x642451*/

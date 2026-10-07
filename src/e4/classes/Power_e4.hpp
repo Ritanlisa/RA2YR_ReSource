@@ -70,7 +70,8 @@ struct Power {
     unsigned int q008;
     unsigned int Timer;
     unsigned char Power_field_0x8;  // 0x8
-    void* Fla;  // 0x0 (no offset truth)
+    void* Fla_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon Power::Fla is a method)
+    static unsigned int Fla(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* a2;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int Update(int * a2, void *a2_2, void *a3_1, void *a4_1);  // 0x43A5D0

@@ -43,6 +43,11 @@
 #include "e4/classes/Turret_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Transform_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AlphaShapeClass_e4.hpp"  // w18j2 C3861 AlphaShapeClass:: supply
+#include "e4/classes/MapClass_e4.hpp"  // w18j2 C3861 MapClass:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int CTOR(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int GetScrollMode(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] Matrix3D supply: verbatim struct from src/core/math.hpp (gamemd), cpp-local carrier
 namespace gamemd {
 struct Matrix3D
@@ -71,7 +76,7 @@ namespace gamemd {
 int ObjectClass::processPointerInvalid()
 {
 
-  return (this->customSound_controller >> 8) & 1; /*0x48361c*/
+  return (*(unsigned int *)this->customSound_controller >> 8) & 1; /*0x48361c*/
 
 }
 } // namespace gamemd

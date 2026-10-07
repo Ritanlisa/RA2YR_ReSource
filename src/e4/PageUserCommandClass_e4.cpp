@@ -27,7 +27,7 @@ PageUserCommandClass::PageUserCommandClass()
 {
 
   *(unsigned int *)this->CommandClass =(unsigned int)(&vt_PageUserCommandClass); /*0x537dd2*/
-  return this->CommandClass; /*0x537dd8*/
+  return; /*0x537dd8*/
 
 }
 }  // G42.18c ns repair

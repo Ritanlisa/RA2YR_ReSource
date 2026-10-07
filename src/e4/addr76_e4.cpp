@@ -91,6 +91,14 @@
 #include "classes/INIClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/_tree_full_e4.hpp"
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_76B7B0(...); }  // w18j2 raw 0x0076B7B0 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int Node(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_7667E0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int sub_7667F0(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int ConstructorWDTFlagOption_Create(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] type supply: _VectorClass_V_TRect_H (raw 0x769550 v51 offset evidence 0x0/0x4/0x8/0xC, VectorClass<TRect> flat)
 namespace gamemd {
 struct _VectorClass_V_TRect_H {
@@ -755,12 +763,12 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   }
   v9 = 0; /*0x76970b*/
   v50 = 0; /*0x76970f*/
-  if ( ((char *)&v55) > 0 ) /*0x769713*/
+  if ( (*(int *)&v55) > 0 ) /*0x769713*/
   {
     while ( 1 ) /*0x76971d*/
     {
       v49 = 0; /*0x76971d*/
-      if ( ((char *)&v55) > 0 ) /*0x769723*/
+      if ( (*(int *)&v55) > 0 ) /*0x769723*/
         break; /*0x769723*/
   LABEL_67:
       v50 = ++v9; /*0x769a2a*/

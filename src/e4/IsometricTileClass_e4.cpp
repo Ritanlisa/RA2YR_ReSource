@@ -42,7 +42,7 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
     v4 = (*(unsigned int *)&stru_87F5F0.__pad_58[280])++; /*0x543862*/
     *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[268] + 4 * v4) = this; /*0x543871*/
   }
-  return this; /*0x543876*/
+  return; /*0x543876*/
 
 }
 }  // namespace gamemd  // g57w12-r nsfix

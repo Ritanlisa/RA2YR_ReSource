@@ -54,6 +54,13 @@
 #include "e4/classes/ScriptClass_e4.hpp"  // w16g4 C3861 ScriptClass:: supply
 #include "e4/classes/Checksummer_e4.hpp"  // w16g4 C3861 Checksummer:: supply
 #include "e4/classes/IPersistStream_e4.hpp"  // w16g4 C3861 IPersistStream:: supply
+#include "e4/classes/ObjectPtr_e4.hpp"  // w18j2 C3861 ObjectPtr:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int GetNextAction(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int GetType(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int checkPassability(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int RegisterForTracking(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 namespace TeknoClass { int GetType(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
@@ -318,7 +325,7 @@ AbstractClass * * TeamClass::DestroyAllMembers(unsigned int *p_vtable0, int aP1,
     goto LABEL_7; /*0x6340c0*/
   vtable1 = (unsigned int ***)((unsigned int *)Block)[0]; /*0x6340c2*/
   v6 = vtable1; /*(unsigned int *)(0x6340c9)*/
-  while ( **(unsigned int *)(v6) != (unsigned int)(aP1) ) /*0x6340d0*/
+  while ( **v6 != (unsigned int)(aP1) ) /*0x6340d0*/
   {
     ++v3; /*0x6340d2*/
     ++v6; /*0x6340d3*/
@@ -2333,7 +2340,7 @@ AbstractClass * * TeamClass::UpdateMembers()
           v14 = ((ObjectClass *)((ObjectClass *)firstUnit))->DistanceTo((int)this->focus); /*0x6ebcd2*/
           if ( v14 <= v13 /*0x6ebcfc*/
             && ((*((int (**)(FootClass *))firstUnit->vtable1 + 114))( (FootClass *)(firstUnit)) >= 0
-             || *ScriptClass::GetNextAction(this->currentScript, v17) == 3) )
+             || *(unsigned int *)ScriptClass::GetNextAction(this->currentScript, v17) == 3) )
           {
             if ( (*((int (**)(FootClass *))firstUnit->vtable1 + 11))( (FootClass *)(firstUnit)) != 2 ) /*0x6ebd0c*/
               break; /*0x6ebd0c*/
@@ -2341,7 +2348,7 @@ AbstractClass * * TeamClass::UpdateMembers()
               break; /*0x6ebd1a*/
             v7 = (unsigned int *)(*((int (**)(FootClass *, unsigned char *))firstUnit->vtable1 + 18))( (FootClass *)(firstUnit), (unsigned char *)(v19)); /*0x6ebd25*/
             if ( ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v7) == (CellClass *)this->focus /*0x6ebd48*/
-              || *ScriptClass::GetNextAction(this->currentScript, v18) == 3 )
+              || *(unsigned int *)ScriptClass::GetNextAction(this->currentScript, v18) == 3 )
             {
               break; /*0x6ebd48*/
             }

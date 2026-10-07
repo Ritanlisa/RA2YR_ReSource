@@ -26,7 +26,7 @@ namespace gamemd {
 // --- Audio3D ---
 
 // 0x55a7d0
-void Audio3D::ComputeRotation(float *a2, unsigned int a3)  // g57b5 W4: raw 真值补参 (a2,a3)
+float * Audio3D::Audio3D::ComputeRotation(float *a2, unsigned int a3)  // g57b5 W4: raw 真值补参 (a2,a3)
 {
     unsigned int *v3; // eax
     int slopeIndex; // ebp
@@ -47,10 +47,10 @@ void Audio3D::ComputeRotation(float *a2, unsigned int a3)  // g57b5 W4: raw 真�
                      - 8)
        * -0.1963495408493621;
     Matrix2D::Rotate(v9, v6); /*0x55a85d*/
-    if ( a3 && *a3 != -1 ) /*0x55a872*/
+    if ( a3 && *(unsigned int *)a3 != -1 ) /*0x55a872*/
     {
-      *a3 = 32 * (slopeIndex + (*a3 << 6)); /*0x55a880*/
-      *a3 |= ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(this->field_8 + 904), &v7) >> 10) + 1) >> 1) /*0x55a8a0*/
+      *(unsigned int *)a3 = 32 * (slopeIndex + (*(unsigned int *)a3 << 6)); /*0x55a880*/
+      *(unsigned int *)a3 |= ((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)(this->field_8 + 904), &v7) >> 10) + 1) >> 1) /*0x55a8a0*/
            & 0x1F;
     }
     qmemcpy(a2, v9, 0x30u); /*0x55a8b4*/

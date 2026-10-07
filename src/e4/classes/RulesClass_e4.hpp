@@ -84,7 +84,7 @@ struct RulesClass {
     double AirstripRatio;  // 0x9C0
     double HelipadRatio;  // 0x9CC
     double TeslaRatio;  // 0x9D8
-    char DefenseLimit[4];  // 0x9F8
+    int DefenseLimit;  // 0x9F8 (G57w18j4: blob->scalar, member_lookup int size=4 g7-til-merge)
     double WarRatio;  // 0x9FC
     char InfantryBaseMult[4];  // 0xA2C
     char AutoCrush[4];  // 0xA7C
@@ -175,6 +175,8 @@ struct RulesClass {
     int ReadSidesList(void * aSuperweapontyp);
 
     int ResetRules();  // G42.39 supply
+
+    static int LoadFromINI();  // w18j2 C3861 static supply (raw 0x0066D530)
 };
 
 } // namespace gamemd

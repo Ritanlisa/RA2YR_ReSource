@@ -565,9 +565,9 @@ MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const cha
 
   v6 = __2_YAPAXI_Z(0x40u); /*0x5d8172*/
   if ( v6 ) /*0x5d817c*/
-    return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6); /*0x5d819e*/
+    return; /*0x5d819e*/
   else
-    return 0; /*0x5d81a6*/
+    return; /*0x5d81a6*/
 
 }
 }  // G42.18c ns repair

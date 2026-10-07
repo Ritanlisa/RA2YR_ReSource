@@ -11,7 +11,8 @@ struct LayerClass {
     unsigned int count;  // 0x4
     char capacity[4];  // 0x8
     char q00B[4];  // 0xB
-    void* Load;  // 0x0 (no offset truth)
+    void* Load_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon LayerClass::Load is a method)
+    static unsigned int Load(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* items;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int CellIteratorNext();

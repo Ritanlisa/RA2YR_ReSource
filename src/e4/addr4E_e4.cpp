@@ -47,6 +47,8 @@
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/minimal_carriers.hpp"
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int sub_4E6070(...); }  // w18j2 raw 0x004E6070 [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int sub_6616B0(...); }  // w16g4 raw call-form
 namespace gamemd { int sub_74F730(...); }  // w16g4 raw call-form
@@ -1075,7 +1077,7 @@ char FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
   int v4; // eax
   int v5; // eax
   int v6; // edx
-  unsigned int v7;
+  unsigned int *v7;
   LRESULT v8; // eax
   LRESULT v9; // eax
   int v10; // esi
@@ -1494,7 +1496,7 @@ char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
   int v4; // eax
   int v5; // eax
   int v6; // edx
-  unsigned int v7;
+  unsigned int *v7;
   LRESULT v8; // eax
   LRESULT v9; // eax
   int v10; // esi
@@ -1533,7 +1535,7 @@ char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
       break;
   }
   v6 = (int)((int *)(0));
-  v7 = dword_8B3F38; /*0x4e577f*/
+  v7 = (unsigned int *)dword_8B3F38; /*0x4e577f*/
   while ( *v7 != v4 ) /*0x4e5786*/
   {
     v7 += 3; /*0x4e5788*/

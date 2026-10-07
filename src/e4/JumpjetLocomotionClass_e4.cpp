@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include "e4/classes/DropPodLocomotionClass_e4.hpp"  // G57w18j4: carrier-first (full carrier wins GAMEMD_E4_FLAT guard before e4_globals pulls minimal twin)
 #include "e4/e4_globals.hpp"
 #include "e4/classes/JumpjetLocomotionClass_26_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"

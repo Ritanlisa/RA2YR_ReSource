@@ -30,6 +30,14 @@ namespace gamemd { using ra2::game::AbstractClass;
 #include "e4/classes/Game_e4.hpp"  // w16g4 C3861 Game:: supply
 #include "e4/classes/DDraw_e4.hpp"  // w16g4 C3861 DDraw:: supply
 #include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int Stub3(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int GetStatus(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+namespace gamemd { int QuickPassable(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic]
+// [w18j2] C2065 global supply (data addr evidence)
+extern unsigned int dword_A8B230;  // w18j2 data: 0xA8B230
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int Type(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int GetHealthRatio(...); }  // w16g4 raw call-form
 

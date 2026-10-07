@@ -60,7 +60,8 @@ struct NetworkLobby {
     unsigned int q688;  // 0x688
     void* q6AC;  // 0x6AC
     void* q6B0;  // 0x6B0
-    unsigned int MessageHandler;
+    unsigned int MessageHandler_ph;  // w18j3: filler renamed (no offset truth; canon NetworkLobby::MessageHandler is a method)
+    static unsigned int MessageHandler(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     unsigned int Debug;
     unsigned int Dialog;
     unsigned int Timer;

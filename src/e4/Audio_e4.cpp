@@ -2504,7 +2504,7 @@ int Audio::FlushChannel(unsigned int ** Block)
 
 // 0x406D40
 namespace gamemd {
-void Audio::Shutdown(void *a1_1)
+int Audio::Audio::Shutdown(void *a1_1)
 {
 
   ObjectClass *v1; // ebx

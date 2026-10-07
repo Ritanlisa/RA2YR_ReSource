@@ -43,7 +43,7 @@ struct CaptureManagerClass {
     unsigned int *__pad_3C;
 // --- flat members (END) ---
     void DecideUnitFate(int aP1);
-    char FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0);
+    char FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0, int a5);
     CaptureManagerClass(int a2, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
     DynamicVector * QueryInterface(char a2);

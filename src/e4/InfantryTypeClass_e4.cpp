@@ -35,6 +35,8 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { void nullsub_147(); }  // w18j2 raw 0x00523C80
 // [w16g4] C3861 supply (raw call-form evidence)
 namespace gamemd { int __0Iostream_init_QAE_XZ_4(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
@@ -605,7 +607,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
       (&v5->VoiceComment)[0] = (int)&TypeList_int_vftable; /*0x5249cc*/
     }
     (*(void (**)(int, InfantryTypeClass **, int, unsigned int, int))(*(unsigned int *)v7 + 12))( v7, (InfantryTypeClass **)(&aP0), 4, 0, v4); /*0x5249de*/
-    if ( a2 > 0 ) /*0x5249e7*/
+    if ( (int)a2 > 0 ) /*0x5249e7*/
     {
       do /*0x524a09*/
       {

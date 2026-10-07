@@ -219,6 +219,9 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ObjectPlacement_e4.hpp"  // w18j2 C3861 ObjectPlacement:: supply
+// [w18j2] C3861 supply (raw-evidenced)
+namespace gamemd { int CalcPosition(...); }  // w18j2 raw call-form (variadic last resort) [w18j2 repaired-variadic] [w18j2 repaired-variadic] [w18j2 repaired-variadic]
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ConstructTeamMembers(...);  // raw 0065DD30: _DWORD *__thiscall ConstructTeamMembers(ObjectClass *this)
@@ -329,7 +332,7 @@ int Trigger_AllocateLog(int a1)
       int v18 = *(unsigned int *)(v16 + 160);
       v86 = *(unsigned int *)(v16 + 164);
       *(unsigned int *)v15 = v17 / 10 + ((v18 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v16 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v16 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v16 + 388))(v16);
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v16 + 1728) + 3576);
       *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v16 + 1400) * 256.0);
@@ -396,8 +399,8 @@ int Trigger_AllocateLog(int a1)
         int v30 = *(unsigned int *)(v28 + 160);
         v86 = *(unsigned int *)(v28 + 164);
         *(unsigned int *)v15 = v29 / 10 + ((v30 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
-        *(unsigned char *)(v15 + 101) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v28 + 928)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v28 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 101) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v28 + 928)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v28 + 388))(v28);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v28 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v28 + 1400) * 256.0);
@@ -477,7 +480,7 @@ int Trigger_AllocateLog(int a1)
         int v42 = *(unsigned int *)(v40 + 160);
         v86 = *(unsigned int *)(v40 + 164);
         *(unsigned int *)v15 = v41 / 10 + ((v42 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v40 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v40 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v40 + 388))(v40);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v40 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v40 + 1400) * 256.0);
@@ -546,7 +549,7 @@ int Trigger_AllocateLog(int a1)
       int v55 = *(unsigned int *)(v53 + 160);
       v86 = *(unsigned int *)(v53 + 164);
       *(unsigned int *)v15 = v54 / 10 + ((v55 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*((ProgressTimer *)((unsigned short *)(v53 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v53 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v53 + 388))(v53);
       int v56 = 0;
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v53 + 1312) + 3576);
@@ -2108,7 +2111,7 @@ void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, in
       TransitionCount = *(int **)&a1->__pad_13C[164]; /*0x65e6c5*/
       if ( (unsigned int)TransitionCount >= 4 ) /*0x65e6cd*/
         TransitionCount = (int *)HouseClass::GetTransitionCount((void *)a1); /*0x65e6d6*/
-      v15 = *CellClass::FindOpenNeighbor( /*0x65e6fb*/
+      v15 = *(unsigned int *)CellClass::FindOpenNeighbor( /*0x65e6fb*/
                (CellClass *)&v27,
                a3,
                TransitionCount,
@@ -2204,7 +2207,7 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   v31 = v10; /*0x65e86f*/
   if ( (unsigned int)TransitionCount >= 4 ) /*0x65e873*/
     TransitionCount = (int *)HouseClass::GetTransitionCount((void *)a1); /*0x65e87c*/
-  v30 = *CellClass::FindOpenNeighbor( /*0x65e8a6*/
+  v30 = *(unsigned int *)CellClass::FindOpenNeighbor( /*0x65e8a6*/
            (CellClass *)&v29,
            a3,
            TransitionCount,
@@ -3730,7 +3733,7 @@ int globalHelper_05EAB0(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a
       TransitionCount = *(int **)&a1->__pad_13C[164]; /*0x65eb17*/
       if ( (unsigned int)TransitionCount >= 4 ) /*0x65eb1f*/
         TransitionCount = (int *)HouseClass::GetTransitionCount((void *)a1); /*0x65eb28*/
-      v12 = *CellClass::FindOpenNeighbor( /*0x65eb4d*/
+      v12 = *(unsigned int *)CellClass::FindOpenNeighbor( /*0x65eb4d*/
                (CellClass *)&v19,
                a3,
                TransitionCount,

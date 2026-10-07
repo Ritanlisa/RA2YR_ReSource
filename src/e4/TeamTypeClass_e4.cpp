@@ -43,6 +43,8 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
+// [w18j2] C2065 function supply (raw-evidenced)
+namespace gamemd { int nullsub_240(...); }  // w18j2 raw call-form (variadic last resort)
 
 // 0x4C98B0
 namespace gamemd {

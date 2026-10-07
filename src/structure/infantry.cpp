@@ -1078,7 +1078,7 @@ int InfantryClass::FireAtTargetPos(int a2, int a3, int a4)
 
   vtable0 = *(void **)this; /*0x52260d g57w10 r4: raw this->FootClass@0=vfptr*/
   Strength = ((unsigned int *)this->Type)[0]; /*0x52260f g57w10 r4: raw this->Type->? 生成器破损重组*/
-  return (int)((*(AnimClass (**)(InfantryClass *, int *, unsigned int, unsigned int, unsigned int, int, unsigned int, int))vtable0 + 91))( /*0x522639 g57w10 r4: 生成器 ")(" 破损重组*/
+  return (int)((*((AnimClass *(__thiscall **)(InfantryClass *, int *, unsigned int, unsigned int, unsigned int, int, unsigned int, int))vtable0 + 91))( /*0x522639 g57w10 r4: 生成器 ")(" 破损重组*/
            this,
            &Strength,
            0,
@@ -1220,14 +1220,14 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
  v8 = (int *)(weapon_idx); /*0x51c907*/
   if ( TechnoClass::GetValue((unsigned int *)this, -1) < 0 /*0x51c937*/
     && (!weapon_idx
-     || (*(int (**)(int *))(*weapon_idx + 44))( (int *)(weapon_idx) ) != 15
+     || (*(int (**)(int *))(*(unsigned int *)weapon_idx + 44))( (int *)(weapon_idx) ) != 15
      || BuildingClass::GetHealthRatio((gamemd::BuildingClass *)(weapon_idx)) >= *(double *)&g_RulesClass_Instance[1].ChronoBeam) )
   {
     return 5; /*0x51c944*/
   }
   if ( weapon_idx )
   {
-    if ( (*(int (**)(int *))(*weapon_idx + 44))( (int *)(weapon_idx) ) == 1 )
+    if ( (*(int (**)(int *))(*(unsigned int *)weapon_idx + 44))( (int *)(weapon_idx) ) == 1 )
     {
       if ( *(unsigned char *)(((int (__thiscall **)(int *)) *(unsigned int *)this)[33](this) + 1682) ) /*0x51c95b g57w10 r4: live asm [eax+84h] slot33 on [ebx]; attachedTag2=幻觉名证伪*/
       {
@@ -1276,12 +1276,12 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
       }
  v8 = (int *)(weapon_idx); /*0x51cacd*/
     }
-    v15 = *(unsigned int *)(*(int (**)(int, int))(*(unsigned int *)this) + 254)(this, a4); /*0x51cad5 g57w10 r4: live asm [edx+3F8h] slot254 on [ebx]; q1946=幻觉名证伪*/
+    v15 = *(unsigned int *)(*(int (**)(int, int))(*(unsigned int *)this + 254))(this, a4); /*0x51cad5 g57w10 r4: live asm [edx+3F8h] slot254 on [ebx]; q1946=幻觉名证伪*/
     if ( !v15 ) /*0x51cae4*/
       goto LABEL_64; /*0x51cae4*/
     if ( *(unsigned char *)(v15 + 297) && *(int *)((char *)this + 0x5A4) ) /*0x51caf0 g57w10 r4: live asm [ebx+5A4h] (ml Archive@0x5A4)*/
       return 7; /*0x51cb05*/
-    if ( *(unsigned char *)(v15 + 336) && v8 != (int *)(*(int (**)(int))(*(unsigned int *)this) + 111)(this) ) /*0x51cb16 g57w10 r4: live asm [edx+1BCh] slot111; suspendedMission4=幻觉名证伪*/
+    if ( *(unsigned char *)(v15 + 336) && v8 != (int *)(*(int (**)(int))(*(unsigned int *)this + 111))(this) ) /*0x51cb16 g57w10 r4: live asm [edx+1BCh] slot111; suspendedMission4=幻觉名证伪*/
       return 5; /*0x51cb2b*/
     v16 = *(unsigned int *)(v15 + 172); /*0x51cb2e*/
     if ( v16 && *(unsigned char *)(v16 + 343) && v8 && (v8[5] & 2) != 0 && v8[14] ) /*0x51cb4c*/
@@ -1440,7 +1440,7 @@ void InfantryClass::PlayIdleAnim(int idle_anim_number)
   {
     (*((void (**)(InfantryClass *, unsigned int, unsigned int, unsigned int))idle_anim_number->vtable1 + 342))(idle_anim_number, 0, 0, 0); /*0x51db40*/
   }
-  v3 = *ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)idle_anim_number)[0], &v10); /*0x51db58*/
+  v3 = *(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)idle_anim_number)[0], &v10); /*0x51db58*/
   vtable0 = (int (**)(InfantryClass *, CellClass *, unsigned int, int, unsigned int, int))idle_anim_number->FootClass; /*0x51db60*/
   v5 = ((unsigned int *)idle_anim_number)[0]; /*0x51db64*/
   v6 = ((unsigned int *)idle_anim_number)[2]; /*0x51db71*/
@@ -1923,13 +1923,13 @@ bool InfantryClass::CanMoveThroughCell()
   if ( v1 >= 0 && v1 < ((unsigned int *)&FootClass_Array)[0] && ((unsigned int *)this)[3] == 10 ) /*0x484d8a*/
     return 1; /*0x484d8e*/
   occupant = ((unsigned int *)this)[0]; /*0x484d9c*/
-  *(unsigned int *)v14 = *CellStruct::Add((CellStruct *)&occupant, v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484db6*/
+  *(unsigned int *)v14 = *(unsigned int *)CellStruct::Add((CellStruct *)&occupant, v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484db6*/
   v3 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v14); /*0x484dbf*/
   v4 = v3; /*0x484dc4*/
   if ( !v3 ) /*0x484dc8*/
     return 0; /*0x484dc8*/
   occupant = v3[9]; /*0x484dd5*/
-  *(unsigned int *)v15 = *CellStruct::Add((CellStruct *)&occupant, v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484def*/
+  *(unsigned int *)v15 = *(unsigned int *)CellStruct::Add((CellStruct *)&occupant, v16, &g_DDrawSurfaceManager.scenario[85]); /*0x484def*/
   v5 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v15); /*0x484df8*/
   if ( !v5 ) /*0x484dff*/
     return 0; /*0x484dff*/
@@ -1945,7 +1945,7 @@ bool InfantryClass::CanMoveThroughCell()
   *(unsigned int *)v15 = occupant; /*0x484e76*/
   v9 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v15); /*0x484e88*/
   occupant = v4[9]; /*0x484e97*/
-  *(unsigned int *)v16 = *CellStruct::Add((CellStruct *)&occupant, &v17, &g_DDrawSurfaceManager.scenario[84]); /*0x484eac*/
+  *(unsigned int *)v16 = *(unsigned int *)CellStruct::Add((CellStruct *)&occupant, &v17, &g_DDrawSurfaceManager.scenario[84]); /*0x484eac*/
   v10 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v16); /*0x484eb0*/
   if ( !v9 || !v10 ) /*0x484ebb*/
     return 0; /*0x484ebb*/

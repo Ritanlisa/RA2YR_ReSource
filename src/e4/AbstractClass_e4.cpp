@@ -738,7 +738,7 @@ int AbstractClass::initVtableBase()
 
 // 0x4101F0
 namespace gamemd {
-void AbstractClass::DTOR(void *a1_1)
+int AbstractClass::AbstractClass::DTOR(void *a1_1)
 {
 
   int result; // eax

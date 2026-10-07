@@ -832,7 +832,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
   if ( !HashTable_field_0x04 ) /*0x6bac50*/
     return 0; /*0x6bac55*/
   v37 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x6bac80*/
-  v7 = ((int (**)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6bac95*/
+  v7 = ((int (*)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6bac95*/
   v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x6bac97*/
   v36 = v8; /*0x6bac9c*/
   if ( !v8 ) /*0x6baca0*/
@@ -1400,7 +1400,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
   if ( !HashTable_field_0x04 ) /*0x7adce0*/
     return 0; /*0x7adce5*/
   v37 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x7add10*/
-  v7 = ((int (**)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7add25*/
+  v7 = ((int (*)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7add25*/
   v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7add27*/
   v36 = v8; /*0x7add2c*/
   if ( !v8 ) /*0x7add30*/
@@ -1575,7 +1575,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
   if ( !HashTable_field_0x04 ) /*0x7ae200*/
     return 0; /*0x7ae205*/
   v32 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x7ae230*/
-  v7 = ((int (**)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae244*/
+  v7 = ((int (*)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae244*/
   v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae246*/
   if ( !v8 ) /*0x7ae24b*/
     return 0; /*0x7ae250*/
