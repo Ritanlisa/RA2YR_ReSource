@@ -11,11 +11,11 @@
 #define GAMEMD_E4_Hash 1
 #define GAMEMD_E4_Queue 1
 #define GAMEMD_E4_SHA1 1
-#define GAMEMD_E4_StringTable 1
+// g57w11 r4 item1 G7: StringTable_e4.hpp 为 G42.55 吸收空壳, 宏抑制 utility_ext 真体 → C2027; 删宏使真体胜出
 #define GAMEMD_E4_StringVector 1
 #define GAMEMD_E4_Vector2 1
 #define GAMEMD_E4_Vector3 1
-#define GAMEMD_E4_Vector4 1
+// g57w11 r4 item1 G8: Vector4_e4.hpp 为 G42.55 吸收空壳 → C2027; 删宏使 utility_ext 真体胜出
 #define GAMEMD_E4_VectorCursor_uint_DynamicVectorClass_uint 1
 #include "e4/classes/Vector_e4.hpp"
 #include "core/stream_ext.hpp"
@@ -274,7 +274,7 @@ namespace gamemd {
 unsigned int * COMClass::releaseInterface() {
     ((ComPtr*)(ComPtr *)this)->Constructor(); /*0x765c73*/
     *(unsigned int *)this->__pad_0 = 0; /*0x765c78*/
-    return this->__pad_0; /*0x765c80*/
+    return (unsigned int *)this->__pad_0; /*0x765c80 g57w11 r4 G2: __pad_0 数组退化 cast 形 (raw 原文 return this->__pad_0)*/
 }
 } // namespace gamemd
 
@@ -285,7 +285,7 @@ unsigned int * COMClass::marshalInterface(char a2) {
     ((ComPtr*)(ComPtr *)this)->Release(); /*0x767c59*/
     if ( (a2 & 1) != 0 ) /*0x767c63*/
       RA2_OPDEL(this); /*0x767c66*/
-    return this->__pad_0; /*0x767c70*/
+    return (unsigned int *)this->__pad_0; /*0x767c70 g57w11 r4 G2: 数组退化 cast 形*/
 }
 } // namespace gamemd
 
@@ -1089,7 +1089,7 @@ int Text::Layout(uint16_t *a2, int *a3, unsigned int *a4, int a5) {
 // 0x434990
 namespace gamemd {
 int BufferIO::Cleanup(int a2) {
-    (*(void (__thiscall **)(int))(*(unsigned int *)&a2->q_180)(a2); /*0x434999*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)a2 + 96))(a2); /*0x434999 g57w11 r4 G5: raw fn_43 原文 *(_DWORD*)a2 + 96 槽形*/
     *((unsigned int *)this + 3) = 0; /*0x43499e*/
     *((unsigned int *)this + 4) = 0; /*0x4349a1*/
     return 0; /*0x4349a4*/
@@ -2152,7 +2152,7 @@ int CStreamClass::StreamRead(unsigned int *a2) {
 
     v2 = (char *)this - 4; /*0x4a2ab8*/
     if ( IDA_BYTE1(this->CStreamClass_field_0x0C) && *((int *)v2 + 5) > 0 && *((unsigned int *)v2 + 2) ) /*0x4a2ac6*/
-      (*(IStream **)&v2->q_18)->Read(*((void **)(char *)v2 + 20), (uint32_t)*((unsigned int *)((char *)v2 + 20)), (uint32_t *)v4); /*0x4a2ad2 G42.33 b4 C3 实例形*/
+      (*(IStream **)((int *)v2 + 6))->Read(*((void **)(char *)v2 + 20), (uint32_t)*((unsigned int *)((char *)v2 + 20)), (uint32_t *)v4); /*0x4a2ad2 g57w11 r4 item1b: raw fn_4A 原文 *((IStream**)v2 + 6) 槽形 (0x18)*/
     if ( !this->CStreamClass_field_0x04 ) /*0x4a2ad7*/
       return -2147467259; /*0x4a2ade*/
     if ( a2 ) /*0x4a2aee*/
@@ -2826,7 +2826,7 @@ BOOL GraphicMenuImageItem::Release(unsigned int *a2) {
       {
         v3 = a2[1]; /*0x4f3660*/
         v4 = this->u32_18; /*0x4f3663*/
-        if ( v3 >= v4 && v3 < v4 + this->vtable3 ) /*0x4f3671*/
+        if ( v3 >= v4 && v3 < v4 + this->q008 ) /*0x4f3671 g57w11 r4 G3: raw fn_4F 原文 this->q008 (载体词表已有)*/
           return 1; /*0x4f3646*/
       }
     }
@@ -2859,7 +2859,7 @@ int GraphicMenuImageItem::Load(char a2) {
     }
     v7 = *((unsigned int *)this + 11); /*0x4f36da*/
     if ( v7 ) /*0x4f36df*/
-      (*(void (__thiscall **)(int, bool))(*(unsigned int *)&v7->q_10)(v7, IDA_BYTE1(this->GraphicMenuImageItem_field_0x08) == 0); /*0x4f36ec*/
+      (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, IDA_BYTE1(this->GraphicMenuImageItem_field_0x08) == 0); /*0x4f36ec g57w11 r4 G4: raw 原文 *(_DWORD*)v7 + 4 槽形*/
     Team_ReleaseAll((void *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f36f6 G42.34 C5 自由形*/
     result = DSurface_Flip2(); /*0x4f36fe G42.34 C5 自由形*/
     if ( a2 ) /*0x4f3705*/
@@ -2894,7 +2894,7 @@ int GraphicMenuImageItem::Draw(char a2) {
     }
     v7 = *((unsigned int *)this + 11); /*0x4f376a*/
     if ( v7 ) /*0x4f376f*/
-      (*(void (__thiscall **)(int, bool))(*(unsigned int *)&v7->q_10)(v7, a2 == 0); /*0x4f3779*/
+      (*(void (__thiscall **)(int, bool))(*(unsigned int *)v7 + 4))(v7, a2 == 0); /*0x4f3779 g57w11 r4 G4: raw 原文 *(_DWORD*)v7 + 4 槽形*/
     Team_ReleaseAll((void *)this->GraphicMenuImageItem_field_0x10, (int)(this + 1)); /*0x4f3783 G42.35 C6 自由形*/
     return DSurface_Flip2(); /*0x4f3790 G42.35 C6 自由形*/
 }
@@ -4605,7 +4605,7 @@ unsigned int * COMClass::getInterface(char a2) {
     this->m_8 = 0; /*0x765c52*/
     if ( (a2 & 1) != 0 ) /*0x765c59*/
       RA2_OPDEL(this); /*0x765c5c*/
-    return this->__pad_0; /*0x765c66*/
+    return (unsigned int *)this->__pad_0; /*0x765c66 g57w11 r4 G2: 数组退化 cast 形*/
 }
 } // namespace gamemd
 
@@ -4696,7 +4696,7 @@ int HashMap::Shrink2() {
           {
             do /*0x7adffd*/
             {
-              v11 = (*(int (__thiscall **)(int))&this->q006)(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7adfe7 G42.35 C9 槽形*/
+              v11 = ((int (__thiscall *)(int))this->u32_18)(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7adfe7 g57w11 r4 G10: raw this+6=槽0x18, 对齐 ComputeIndex_2 u32_18 形态*/
               v12 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11); /*0x7adfeb*/
               *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11) = v10; /*0x7adff1*/
               v13 = *(unsigned int *)(v10 + 112); /*0x7adff3*/
@@ -4765,7 +4765,7 @@ int HashMap::Shrink() {
           {
             do /*0x7ae4ed*/
             {
-              v11 = (*(int (__thiscall **)(int))&this->q006)(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7ae4d7 G42.35 C9 槽形*/
+              v11 = ((int (__thiscall *)(int))this->u32_18)(v10) & ((1 << *(unsigned int *)&this->HashMap_field_0x0C) - 1); /*0x7ae4d7 g57w11 r4 G10: raw this+6=槽0x18, 对齐 ComputeIndex_2 u32_18 形态*/
               v12 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11); /*0x7ae4db*/
               *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11) = v10; /*0x7ae4e1*/
               v13 = *(unsigned int *)(v10 + 8); /*0x7ae4e3*/

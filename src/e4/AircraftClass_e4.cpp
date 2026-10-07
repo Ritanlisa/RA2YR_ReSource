@@ -247,7 +247,7 @@ int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
   result = (int)(InfantryClass::GetCursorOverObject((IUnknown *)((FootClass *)this),(IUnknown *)((int)aP1),(void *)((char)a3)));
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
-    return (int)((gamemd::AircraftTypeClass *)(result); /*0x417cdd*/);
+    return (int)(result); /*0x417cdd*/
   if ( result == 26 && this->Type[1].TechnoTypeClass[317] ) /*0x417cf4*/
     v7 = 0; /*0x417cfe*/
   if ( this->Type[1].TechnoTypeClass[300] && (uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x417d16*/
@@ -341,15 +341,15 @@ LABEL_36:
       {
         v17 = (*(int (**)(int *, int))(*v4 + 204))( (int *)(v4), 1); /*0x417f27*/
         if ( (*(int (**)(int))(*(unsigned int *)v17 + 44))(v17) == 21 ) /*0x417f37*/
-          return (int)((gamemd::AircraftTypeClass *)(1); /*0x417f47*/);
+          return (int)(1); /*0x417f47*/
       }
     }
   }
   else if ( v7 == 5 && *(unsigned char *)((*(int (**)(int *))(*v4 + 136))( (int *)(v4)) + 563) ) /*0x417f59*/
   {
-    return (int)((gamemd::AircraftTypeClass *)(2); /*0x417f63*/);
+    return (int)(2); /*0x417f63*/
   }
-  return (int)((gamemd::AircraftTypeClass *)(v7); /*0x417cdf*/);
+  return (int)(v7); /*0x417cdf*/
 
 }
 }

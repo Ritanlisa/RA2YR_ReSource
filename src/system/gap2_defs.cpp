@@ -25614,7 +25614,7 @@ void* MixFileClass::FromFile(void* a1, int a2) {
     int v24; // [esp+A0h] [ebp-14Ch]
     PKStraw v25; // [esp+A8h] [ebp-144h] BYREF
 
-    this->? = 0; /*0x5b3c31*/
+    this->Previous = 0; /*0x5b3c31*/
     *(unsigned int *)&this->Blowfish = 0; /*0x5b3c34*/
     this->CountFiles = 0; /*0x5b3c37*/
     IDA_LOBYTE(this->FileSize) = 0; /*0x5b3c3a*/
@@ -25678,7 +25678,7 @@ void* MixFileClass::FromFile(void* a1, int a2) {
       MixFileClass::LinkIntoPool(this); /*0x5b3de8*/
       v12 = *(GenericNode **)(v11 + 4); /*0x5b3ded*/
       *(unsigned int *)&this->Blowfish = v11; /*0x5b3df0*/
-      this->? = v12; /*0x5b3df3*/
+      this->Previous = v12; /*0x5b3df3*/
       v13 = *(unsigned int *)(v11 + 4); /*0x5b3df6*/
       if ( v13 ) /*0x5b3dfb*/
         *(unsigned int *)(v13 + 8) = this; /*0x5b3dfd*/
@@ -25719,16 +25719,16 @@ void MixFileClass::LinkIntoPool() {
 
     if ( this ) /*0x5b4592*/
     {
-      Previous = this->?; /*0x5b4594*/
+      Previous = this->Previous; /*0x5b4594*/
       if ( Previous ) /*0x5b4599*/
       {
         v2 = *(unsigned int *)&this->Blowfish; /*0x5b459b*/
         if ( v2 ) /*0x5b45a0*/
         {
           *(unsigned int *)(v2 + 4) = Previous; /*0x5b45a2*/
-          *(unsigned int *)this->?[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b45ab*/
+          *(unsigned int *)this->Previous[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b45ab*/
           *(unsigned int *)&this->Blowfish = 0; /*0x5b45ae*/
-          this->? = 0; /*0x5b45b5*/
+          this->Previous = 0; /*0x5b45b5*/
         }
       }
     }
@@ -26482,7 +26482,7 @@ int TacticalClass::processInput(int a1) {
       }
       while ( vtable0 ); /*0x5d4b01*/
     }
-    IDA_LOBYTE(field24) = IDA_BYTE1(this->?); /*0x5d4b03*/
+    IDA_LOBYTE(field24) = IDA_BYTE1(this->q019); /*0x5d4b03*/
     if ( (unsigned char)field24 ) /*0x5d4b08*/
     {
       field24 = this->field24; /*0x5d4b0a*/
@@ -27183,7 +27183,7 @@ int TacticalClass::processInput(int a1) {
       }
       while ( vtable0 ); /*0x5d4b01*/
     }
-    IDA_LOBYTE(field24) = IDA_BYTE1(this->?); /*0x5d4b03*/
+    IDA_LOBYTE(field24) = IDA_BYTE1(this->q019); /*0x5d4b03*/
     if ( (unsigned char)field24 ) /*0x5d4b08*/
     {
       field24 = this->field24; /*0x5d4b0a*/
@@ -27416,7 +27416,7 @@ void CCFileClass::WriteINIString() {
           &DSurface_ViewBounds.__pad_FC[36],
           (unsigned __int8 *)&stru_8263E0.Loop,
           g_INI_Key_FirewallDelta,
-          this->?,
+          this->FileSize,  /* G57w11: asm 5d901b mov edx,[esi+8] (esi=this CCFileClass); ml FileSize@0x8 */
           0);
         INIClass::WriteDigest((INIClass *)&DSurface_ViewBounds.__pad_FC[36], (int)&v3, 0); /*0x5d9041*/
         RawFileClass::Dtor(&v3); /*0x5d904a*/
@@ -28347,8 +28347,8 @@ int FactoryClass::ClearObjects() {
     v2 = this->queuedObjects[0]; /*0x635128*/
     for ( i = 0; i < v2; ++i ) /*0x63512f*/
       RA2_OPDEL(*(void **)(this->production[0] + 4 * i)); /*0x635138*/
-    (*((void (__thiscall **)(void **))this->? + 3))(&this->?); /*0x63514b*/
-    uniqueId = this->?; /*0x63514e*/
+    (*((void (__thiscall **)(void **))this->NeedsSaveOrLink + 3))(&this->NeedsSaveOrLink); /*0x63514b*/
+    uniqueId = this->uniqueId; /*0x63514e*/
     result = 0; /*0x635151*/
     if ( uniqueId <= 0 ) /*0x635155*/
     {
@@ -28359,7 +28359,7 @@ int FactoryClass::ClearObjects() {
     {
       do /*0x63516a*/
       {
-        v6 = *((unsigned int *)this->? + result++); /*0x635160*/
+        v6 = *((unsigned int *)this->vtable2 + result++); /*0x635160*/
         *(unsigned int *)(v6 + 8) = -1; /*0x635164*/
         *(unsigned char *)(v6 + 12) = 0; /*0x635167*/
       }
@@ -28476,10 +28476,10 @@ void FactoryClass::FindAvailable() {
         }
       }
     }
-    abstractFlags = this->?; /*0x635fe8*/
+    abstractFlags = this->abstractFlags; /*0x635fe8*/
     for ( i = 0; i < abstractFlags; ++i ) /*0x635ff6*/
     {
-      v6 = (Array *)*((unsigned int *)this->? + i); /*0x635ffb*/
+      v6 = (Array *)*((unsigned int *)this->vtable3 + i); /*0x635ffb*/
       Value = Array::FindValue(v6, (int)this->AbstractClass); /*0x636003*/
       if ( Value == -1 ) /*0x63600b*/
         v8 = 0; /*0x63600d*/
@@ -28685,7 +28685,7 @@ void* FactoryClass::RemoveFromArrays(int a1) {
     if ( *(FactoryClass **)&stru_AC4B30.__pad_70[80] == v9 ) /*0x63da61*/
       *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x63da63*/
     v6 = (void *)this->production[0]; /*0x63da69*/
-    this->? = (unsigned int)(void *)&VectorClass_PlanningBranchClass___vftable; /*0x63da6c*/
+    this->q020 = (unsigned int)(void *)&VectorClass_PlanningBranchClass___vftable; /*0x63da6c*/
     if ( v6 && IDA_BYTE1(this->production[2]) ) /*0x63da77*/
     {
       RA2_OPDEL(v6); /*0x63da7d*/
@@ -28693,15 +28693,15 @@ void* FactoryClass::RemoveFromArrays(int a1) {
     }
     IDA_BYTE1(this->production[2]) = 0; /*0x63da88*/
     this->production[1] = 0; /*0x63da8b*/
-    vtable1 = this->?; /*0x63da8e*/
+    vtable1 = this->Items; /*0x63da8e*/
     this->AbstractClass = (unsigned int)(void *)&VectorClass_PlanningMemberClass___vftable; /*0x63da91*/
-    if ( vtable1 && IDA_BYTE1(this->?) ) /*0x63da9b*/
+    if ( vtable1 && IDA_BYTE1(this->IsAllocated) ) /*0x63da9b*/
     {
       RA2_OPDEL(vtable1); /*0x63daa1*/
-      this->? = 0; /*0x63daa9*/
+      this->Items = 0; /*0x63daa9*/
     }
-    IDA_BYTE1(this->?) = 0; /*0x63dab0*/
-    this->? = 0; /*0x63dab3*/
+    IDA_BYTE1(this->IsAllocated) = 0; /*0x63dab0*/
+    this->Capacity = 0; /*0x63dab3*/
     if ( (a2 & 1) != 0 ) /*0x63dab9*/
       RA2_OPDEL(this); /*0x63dabc*/
     return (int *)this; /*0x63dac6*/
@@ -28716,14 +28716,14 @@ int FactoryClass::RemoveItemAt(int a1) {
     int v5; // ecx
 
     result = (*((int (__thiscall **)(FactoryClass *, int))this->AbstractClass + 4))(this, a2); /*0x63dfdc*/
-    if ( result == -1 || (uniqueId = this->?, result >= uniqueId) ) /*0x63dfe9*/
+    if ( result == -1 || (uniqueId = this->uniqueId, result >= uniqueId) ) /*0x63dfe9 G57w11: asm 63dfe4 mov ecx,[esi+10h]; ml FactoryClass@0x10=uniqueId*/
     {
       IDA_LOBYTE(result) = 0; /*0x63e00b*/
     }
     else
     {
       v5 = uniqueId - 1; /*0x63dfeb*/
-      for ( this->? = v5; result < this->?; *((unsigned int *)this->? + result - 1) = *((unsigned int *)this->? + result) ) /*0x63dff1*/
+      for ( this->uniqueId = v5; result < this->uniqueId; *((unsigned int *)this->vtable2 + result - 1) = *((unsigned int *)this->vtable2 + result) ) /*0x63dff1*/
         ++result; /*0x63dff6*/
       IDA_LOBYTE(result) = 1; /*0x63e005*/
     }
@@ -28743,7 +28743,7 @@ int FactoryClass::RemoveItem(int a1) {
     if ( a2 >= uniqueId ) /*0x63f009*/
       return 0; /*0x63f02c*/
     v4 = uniqueId - 1; /*0x63f00b*/
-    this->? = v4; /*0x63f00e*/
+    this->uniqueId = v4; /*0x63f00e*/
     if ( a2 < v4 ) /*0x63f011*/
     {
       do /*0x63f024*/
@@ -28751,7 +28751,7 @@ int FactoryClass::RemoveItem(int a1) {
         ++v3; /*0x63f017*/
         *((unsigned int *)this->? + v3 - 1) = *((unsigned int *)this->? + v3); /*0x63f01b*/
       }
-      while ( v3 < this->? ); /*0x63f024*/
+      while ( v3 < this->uniqueId ); /*0x63f024*/
     }
     return 1; /*0x63f029*/
 }
@@ -32576,8 +32576,8 @@ int FactoryClass::ClearObjects() {
     v2 = this->queuedObjects[0]; /*0x635128*/
     for ( i = 0; i < v2; ++i ) /*0x63512f*/
       RA2_OPDEL(*(void **)(this->production[0] + 4 * i)); /*0x635138*/
-    (*((void (__thiscall **)(void **))this->? + 3))(&this->?); /*0x63514b*/
-    uniqueId = this->?; /*0x63514e*/
+    (*((void (__thiscall **)(void **))this->NeedsSaveOrLink + 3))(&this->NeedsSaveOrLink); /*0x63514b*/
+    uniqueId = this->uniqueId; /*0x63514e*/
     result = 0; /*0x635151*/
     if ( uniqueId <= 0 ) /*0x635155*/
     {
@@ -32588,7 +32588,7 @@ int FactoryClass::ClearObjects() {
     {
       do /*0x63516a*/
       {
-        v6 = *((unsigned int *)this->? + result++); /*0x635160*/
+        v6 = *((unsigned int *)this->vtable2 + result++); /*0x635160*/
         *(unsigned int *)(v6 + 8) = -1; /*0x635164*/
         *(unsigned char *)(v6 + 12) = 0; /*0x635167*/
       }
@@ -32705,10 +32705,10 @@ void FactoryClass::FindAvailable() {
         }
       }
     }
-    abstractFlags = this->?; /*0x635fe8*/
+    abstractFlags = this->abstractFlags; /*0x635fe8*/
     for ( i = 0; i < abstractFlags; ++i ) /*0x635ff6*/
     {
-      v6 = (Array *)*((unsigned int *)this->? + i); /*0x635ffb*/
+      v6 = (Array *)*((unsigned int *)this->vtable3 + i); /*0x635ffb*/
       Value = Array::FindValue(v6, (int)this->AbstractClass); /*0x636003*/
       if ( Value == -1 ) /*0x63600b*/
         v8 = 0; /*0x63600d*/
@@ -32914,7 +32914,7 @@ void* FactoryClass::RemoveFromArrays(int a1) {
     if ( *(FactoryClass **)&stru_AC4B30.__pad_70[80] == v9 ) /*0x63da61*/
       *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x63da63*/
     v6 = (void *)this->production[0]; /*0x63da69*/
-    this->? = (unsigned int)(void *)&VectorClass_PlanningBranchClass___vftable; /*0x63da6c*/
+    this->q020 = (unsigned int)(void *)&VectorClass_PlanningBranchClass___vftable; /*0x63da6c*/
     if ( v6 && IDA_BYTE1(this->production[2]) ) /*0x63da77*/
     {
       RA2_OPDEL(v6); /*0x63da7d*/
@@ -32922,15 +32922,15 @@ void* FactoryClass::RemoveFromArrays(int a1) {
     }
     IDA_BYTE1(this->production[2]) = 0; /*0x63da88*/
     this->production[1] = 0; /*0x63da8b*/
-    vtable1 = this->?; /*0x63da8e*/
+    vtable1 = this->Items; /*0x63da8e*/
     this->AbstractClass = (unsigned int)(void *)&VectorClass_PlanningMemberClass___vftable; /*0x63da91*/
-    if ( vtable1 && IDA_BYTE1(this->?) ) /*0x63da9b*/
+    if ( vtable1 && IDA_BYTE1(this->IsAllocated) ) /*0x63da9b*/
     {
       RA2_OPDEL(vtable1); /*0x63daa1*/
-      this->? = 0; /*0x63daa9*/
+      this->Items = 0; /*0x63daa9*/
     }
-    IDA_BYTE1(this->?) = 0; /*0x63dab0*/
-    this->? = 0; /*0x63dab3*/
+    IDA_BYTE1(this->IsAllocated) = 0; /*0x63dab0*/
+    this->Capacity = 0; /*0x63dab3*/
     if ( (a2 & 1) != 0 ) /*0x63dab9*/
       RA2_OPDEL(this); /*0x63dabc*/
     return (int *)this; /*0x63dac6*/
@@ -32952,7 +32952,7 @@ int FactoryClass::RemoveItemAt(int a1) {
     else
     {
       v5 = uniqueId - 1; /*0x63dfeb*/
-      for ( this->? = v5; result < this->?; *((unsigned int *)this->? + result - 1) = *((unsigned int *)this->? + result) ) /*0x63dff1*/
+      for ( this->uniqueId = v5; result < this->uniqueId; *((unsigned int *)this->vtable2 + result - 1) = *((unsigned int *)this->vtable2 + result) ) /*0x63dff1*/
         ++result; /*0x63dff6*/
       IDA_LOBYTE(result) = 1; /*0x63e005*/
     }
@@ -32972,7 +32972,7 @@ int FactoryClass::RemoveItem(int a1) {
     if ( a2 >= uniqueId ) /*0x63f009*/
       return 0; /*0x63f02c*/
     v4 = uniqueId - 1; /*0x63f00b*/
-    this->? = v4; /*0x63f00e*/
+    this->uniqueId = v4; /*0x63f00e*/
     if ( a2 < v4 ) /*0x63f011*/
     {
       do /*0x63f024*/
@@ -32980,7 +32980,7 @@ int FactoryClass::RemoveItem(int a1) {
         ++v3; /*0x63f017*/
         *((unsigned int *)this->? + v3 - 1) = *((unsigned int *)this->? + v3); /*0x63f01b*/
       }
-      while ( v3 < this->? ); /*0x63f024*/
+      while ( v3 < this->uniqueId ); /*0x63f024*/
     }
     return 1; /*0x63f029*/
 }
@@ -35140,8 +35140,8 @@ int FactoryClass::ClearObjects() {
     v2 = this->queuedObjects[0]; /*0x635128*/
     for ( i = 0; i < v2; ++i ) /*0x63512f*/
       RA2_OPDEL(*(void **)(this->production[0] + 4 * i)); /*0x635138*/
-    (*((void (__thiscall **)(void **))this->? + 3))(&this->?); /*0x63514b*/
-    uniqueId = this->?; /*0x63514e*/
+    (*((void (__thiscall **)(void **))this->NeedsSaveOrLink + 3))(&this->NeedsSaveOrLink); /*0x63514b*/
+    uniqueId = this->uniqueId; /*0x63514e*/
     result = 0; /*0x635151*/
     if ( uniqueId <= 0 ) /*0x635155*/
     {
@@ -35152,7 +35152,7 @@ int FactoryClass::ClearObjects() {
     {
       do /*0x63516a*/
       {
-        v6 = *((unsigned int *)this->? + result++); /*0x635160*/
+        v6 = *((unsigned int *)this->vtable2 + result++); /*0x635160*/
         *(unsigned int *)(v6 + 8) = -1; /*0x635164*/
         *(unsigned char *)(v6 + 12) = 0; /*0x635167*/
       }
@@ -35269,10 +35269,10 @@ void FactoryClass::FindAvailable() {
         }
       }
     }
-    abstractFlags = this->?; /*0x635fe8*/
+    abstractFlags = this->abstractFlags; /*0x635fe8*/
     for ( i = 0; i < abstractFlags; ++i ) /*0x635ff6*/
     {
-      v6 = (Array *)*((unsigned int *)this->? + i); /*0x635ffb*/
+      v6 = (Array *)*((unsigned int *)this->vtable3 + i); /*0x635ffb*/
       Value = Array::FindValue(v6, (int)this->AbstractClass); /*0x636003*/
       if ( Value == -1 ) /*0x63600b*/
         v8 = 0; /*0x63600d*/
@@ -35478,7 +35478,7 @@ void* FactoryClass::RemoveFromArrays(int a1) {
     if ( *(FactoryClass **)&stru_AC4B30.__pad_70[80] == v9 ) /*0x63da61*/
       *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x63da63*/
     v6 = (void *)this->production[0]; /*0x63da69*/
-    this->? = (unsigned int)(void *)&VectorClass_PlanningBranchClass___vftable; /*0x63da6c*/
+    this->q020 = (unsigned int)(void *)&VectorClass_PlanningBranchClass___vftable; /*0x63da6c*/
     if ( v6 && IDA_BYTE1(this->production[2]) ) /*0x63da77*/
     {
       RA2_OPDEL(v6); /*0x63da7d*/
@@ -35486,15 +35486,15 @@ void* FactoryClass::RemoveFromArrays(int a1) {
     }
     IDA_BYTE1(this->production[2]) = 0; /*0x63da88*/
     this->production[1] = 0; /*0x63da8b*/
-    vtable1 = this->?; /*0x63da8e*/
+    vtable1 = this->Items; /*0x63da8e*/
     this->AbstractClass = (unsigned int)(void *)&VectorClass_PlanningMemberClass___vftable; /*0x63da91*/
-    if ( vtable1 && IDA_BYTE1(this->?) ) /*0x63da9b*/
+    if ( vtable1 && IDA_BYTE1(this->IsAllocated) ) /*0x63da9b*/
     {
       RA2_OPDEL(vtable1); /*0x63daa1*/
-      this->? = 0; /*0x63daa9*/
+      this->Items = 0; /*0x63daa9*/
     }
-    IDA_BYTE1(this->?) = 0; /*0x63dab0*/
-    this->? = 0; /*0x63dab3*/
+    IDA_BYTE1(this->IsAllocated) = 0; /*0x63dab0*/
+    this->Capacity = 0; /*0x63dab3*/
     if ( (a2 & 1) != 0 ) /*0x63dab9*/
       RA2_OPDEL(this); /*0x63dabc*/
     return (int *)this; /*0x63dac6*/
@@ -35516,7 +35516,7 @@ int FactoryClass::RemoveItemAt(int a1) {
     else
     {
       v5 = uniqueId - 1; /*0x63dfeb*/
-      for ( this->? = v5; result < this->?; *((unsigned int *)this->? + result - 1) = *((unsigned int *)this->? + result) ) /*0x63dff1*/
+      for ( this->uniqueId = v5; result < this->uniqueId; *((unsigned int *)this->vtable2 + result - 1) = *((unsigned int *)this->vtable2 + result) ) /*0x63dff1*/
         ++result; /*0x63dff6*/
       IDA_LOBYTE(result) = 1; /*0x63e005*/
     }
@@ -35536,7 +35536,7 @@ int FactoryClass::RemoveItem(int a1) {
     if ( a2 >= uniqueId ) /*0x63f009*/
       return 0; /*0x63f02c*/
     v4 = uniqueId - 1; /*0x63f00b*/
-    this->? = v4; /*0x63f00e*/
+    this->uniqueId = v4; /*0x63f00e*/
     if ( a2 < v4 ) /*0x63f011*/
     {
       do /*0x63f024*/
@@ -35544,7 +35544,7 @@ int FactoryClass::RemoveItem(int a1) {
         ++v3; /*0x63f017*/
         *((unsigned int *)this->? + v3 - 1) = *((unsigned int *)this->? + v3); /*0x63f01b*/
       }
-      while ( v3 < this->? ); /*0x63f024*/
+      while ( v3 < this->uniqueId ); /*0x63f024*/
     }
     return 1; /*0x63f029*/
 }
@@ -41524,20 +41524,20 @@ int TacticalClass::ResetView() {
 // 0x7343E0
 namespace gamemd { 
 void* TacticalClass::updateScroll(int a2, int a3) {
-    this->? = 0; /*0x7343eb*/
-    this->? = (void *)a2; /*0x7343ee*/
-    IDA_LOBYTE(this->?) = 1; /*0x7343f1*/
-    IDA_BYTE1(this->?) = 0; /*0x7343f5*/
+    this->Items = 0; /*0x7343eb*/
+    this->Capacity = (void *)a2; /*0x7343ee*/
+    IDA_LOBYTE(this->IsInitialized) = 1; /*0x7343f1*/
+    IDA_BYTE1(this->IsAllocated) = 0; /*0x7343f5*/
     this->AbstractClass = (unsigned int)(void *)&VectorClass_char_const___vftable; /*0x7343f8*/
     if ( a2 ) /*0x7343fe*/
     {
       if ( a3 ) /*0x734406*/
       {
-        this->? = (void *)a3; /*0x734408*/
+        this->Items = (void *)a3; /*0x734408*/
         return &this->AbstractClass; /*0x73440e*/
       }
-      this->? = (void *)RA2_OPNEW(4 * a2); /*0x73441d*/
-      IDA_BYTE1(this->?) = 1; /*0x734420*/
+      this->Items = (void *)RA2_OPNEW(4 * a2); /*0x73441d*/
+      IDA_BYTE1(this->IsAllocated) = 1; /*0x734420*/
     }
     return &this->AbstractClass; /*0x73440d*/
 }
@@ -42345,7 +42345,7 @@ void* TacticalClass::CalcInverseAlpha(int a2, float a3) {
     v6 = v5; /*0x75f5ea*/
     IDA_LOWORD(v7) = Math::RoundToInt(v3); /*0x75f5f7*/
     this->AbstractClass = v6; /*0x75f5fc*/
-    this->? = v7; /*0x75f5fe*/
+    this->Items = v7; /*0x75f5fe*/
     return &this->AbstractClass; /*0x75f609*/
 }
 }

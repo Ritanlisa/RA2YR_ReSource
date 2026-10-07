@@ -21,6 +21,8 @@ struct Text {
 
     unsigned int u32_2C;  // G42.39 data supply
 
+    unsigned int u32_2714;  // g57w11 r4 G9 体词汇 (raw 0x5bd3f2/3c *((_DWORD*)this + 2501) = 0x2714)
+
 };
 
 } // namespace gamemd

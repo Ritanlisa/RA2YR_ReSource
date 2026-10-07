@@ -492,7 +492,7 @@ char TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int *a3, int aP4)
     }
     while ( v14 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x6e0c89*/
   }
-  return (char)((gamemd::AbstractClass **)(v6); /*0x6e0ba6*/);
+  return (char)(v6); /*0x6e0ba6*/
 
 }
 }
@@ -563,7 +563,7 @@ char TActionClass::executeEscortAction(int a2, int a3, int a4, int aP4)
     + 408) = 1;
   else
     MEMORY[0x198] = 1; /*0x6e237b*/
-  return (char)((gamemd::AnimClass **)(1); /*0x6e2371*/);
+  return (char)(1); /*0x6e2371*/
 
 }
 }
@@ -611,7 +611,7 @@ char TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, int aP4)
   }
   CreateSmokeEffectAt(v8, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), v16, v17, GroundHeight, 0, 0); /*0x6e24ea*/
   PlaySoundEffectAt((gamemd::TechnoClass *)(&v16), v8, 0, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), 1, 0); /*0x6e250b*/
-  return (char)((gamemd::AbstractClass **)(1); /*0x6e2510*/);
+  return (char)(1); /*0x6e2510*/
 
 }
 }
@@ -781,7 +781,7 @@ LABEL_7:
     (TActionClass *)&stru_87F5F0.__pad_58[416],
     *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v5),
     *(unsigned int *)&(&this->pad_6E)[34]);
-  return (char)((gamemd::AbstractClass **)(1); /*0x6e41c3*/);
+  return (char)(1); /*0x6e41c3*/
 
 }
 }

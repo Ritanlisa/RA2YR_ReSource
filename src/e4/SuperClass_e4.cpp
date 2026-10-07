@@ -515,7 +515,7 @@ char SuperClass::StopPreclickAnim(int aP1)
   *((unsigned int *)this + 14) = v6; /*0x6cb8f1*/
   if ( *(unsigned char *)(*((unsigned int *)this + 10) + 229) ) /*0x6cb8f7*/
     *((unsigned int *)this + 31) = 0; /*0x6cb8ff*/
-  return (char)((gamemd::AbstractClass **)(1); /*0x6cb902*/);
+  return (char)(1); /*0x6cb902*/
 
 }
 }

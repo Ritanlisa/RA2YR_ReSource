@@ -1025,7 +1025,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
     v12 = v8[14]; /*0x56ec58*/
     v10 = (int)(aP1); /*0x56ec5b*/
     if ( aP1 == (IUnknown *)(v12) ) /*0x56ec61*/
-      return (char)((gamemd::ObjectClass **)(result); /*0x56ec61*/);
+      return (char)(result); /*0x56ec61*/
   }
   if ( v8[14] != v10 ) /*0x56ec70*/
   {
@@ -1058,7 +1058,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
     }
     while ( aP1 ); /*0x56ed23*/
   }
-  return (char)((gamemd::ObjectClass **)(result); /*0x56ed29*/);
+  return (char)(result); /*0x56ed29*/
 
 }
 }

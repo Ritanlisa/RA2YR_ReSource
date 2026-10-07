@@ -366,7 +366,7 @@ LABEL_36:
     ((CellClass *)(((int)v5)))->SpiralFindClosest((gamemd::MouseClass *)(aP2),(IUnknown *)(v39)); /*0x4a9c67*/
   if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4a9c88*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4a9c8c*/
-  return (char)((gamemd::Tactical **)(v30); /*0x4a9c91*/);
+  return (char)(v30); /*0x4a9c91*/
 
 }
 } // namespace gamemd
@@ -480,7 +480,7 @@ LABEL_13:
     ((CellClass *)(((int)v5)))->SpiralFindClosest((gamemd::MouseClass *)(aP2),(IUnknown *)(v28)); /*0x4aa011*/
   if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4aa032*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4aa036*/
-  return (char)((gamemd::VectorClass_flat **)(v29); /*0x4aa03b*/);
+  return (char)(v29); /*0x4aa03b*/
 
 }
 } // namespace gamemd

@@ -573,6 +573,9 @@ public:
 
     int32_t     m_StartFrame;   // 0x00
     int32_t     m_Duration;     // 0x04
+
+    unsigned int q18C;   // g57w11 r4 G6 词表 (raw 0x41bf40 this=TechnoClass ml:396 q18C; TU 载体 FrameTimer)
+    unsigned int q190;   // g57w11 r4 G6 词表 (raw 0x41bf46 ironCurtainTimer[1]@0x190)
 };
 #endif  // GAMEMD_G2_FrameTimer_DEF
 
@@ -820,27 +823,27 @@ public:
     virtual unsigned int setProperty(int a2); // 0x7656B0 (g57w10 r4: raw 原型 unsigned(int); canon this=WDT Conflict vector)
     // +17 more virtual methods
 
-    uint8_t COMClass_field_0x04[4];
-    uint8_t COMClass_field_0x08[4];
-    uint8_t COMClass_field_0x0C[4];
-    uint8_t COMClass_field_0x10[4];
-    uint8_t COMClass_field_0x14[4];
-    uint8_t COMClass_field_0x18[4];
-    uint8_t COMClass_field_0x1C[4];
-    uint8_t COMClass_field_0x20[4];
-    uint8_t COMClass_field_0x24[4];
-    uint8_t COMClass_field_0x28[4];
-    uint8_t COMClass_field_0x2C[4];
-    uint8_t COMClass_field_0x30[4];
-    uint8_t COMClass_field_0x34[4];
-    uint8_t COMClass_field_0x38[4];
-    uint8_t COMClass_field_0x3C[4];
-    uint8_t COMClass_field_0x40[4];
-    uint8_t COMClass_field_0x44[4];
-    uint8_t COMClass_field_0x48[4];
-    uint8_t COMClass_field_0x4C[4];
-    uint8_t COMClass_field_0x50[4];
-    unsigned char __pad_0;  // 0x0
+    unsigned int COMClass_field_0x04;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x08;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x0C;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x10;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x14;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x18;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x1C;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x20;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x24;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x28;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x2C;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x30;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x34;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x38;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x3C;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x40;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x44;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x48;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x4C;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned int COMClass_field_0x50;  // g57w11 r4 G1: raw fn_49 标量槽 (=0 赋值+函数指针派发), 数组形态 C3863
+    unsigned char __pad_0[24];  // 0x0 g57w11 r4 G2: 数组形态 (raw 0x76788e &this->__pad_0[20] 词汇)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* invokeMethod(int a1);  // 0x765790
     void* getTypeInfo(int a1);  // 0x7657C0
@@ -1891,10 +1894,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~StringTable() = default;
 
-    virtual int Lookup(); // 0x40DCE0
-    virtual void Find(); // 0x5CF6B0
+    virtual int Lookup(); // 0x40DCE0 (raw int __thiscall)
+    virtual int Find(const char **a2); // 0x5CF6B0 g57w11 r4 G7: raw 原型 int Find(const char **)
 
     uint8_t StringTable_field_0x04[4];
+    unsigned char __pad_0[64];  // g57w11 r4 G7 体词汇 (raw 0x40dcfa this->__pad_0 字符串基址)
 };
 #endif  // GAMEMD_E4_StringTable
 // 7 methods in IDA
