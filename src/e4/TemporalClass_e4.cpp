@@ -286,7 +286,7 @@ LABEL_10:
             }
             v33 = *(TechnoClass **)(*(unsigned int *)this->__pad_28 + 728); /*0x71aa1d*/
             if ( v33 ) /*0x71aa25*/
-              TechnoClass::MutateAll(v33, this->creationFrame, 0); /*0x71aa2c*/
+              TechnoClass::MutateAll(v33,(int)(this->creationFrame), 0); /*0x71aa2c*/
             (*(void (**)(unsigned int, int))(**(unsigned int **)this->__pad_28 + 952))( /*0x71aa3a*/
               *(unsigned int *)this->__pad_28,
               (int)this->creationFrame);
@@ -309,7 +309,7 @@ LABEL_10:
             }
             v37 = *(TechnoClass **)(*(unsigned int *)this->__pad_28 + 728); /*0x71aa98*/
             if ( v37 ) /*0x71aaa0*/
-              TechnoClass::MutateAll(v37, this->creationFrame, 0); /*0x71aaa7*/
+              TechnoClass::MutateAll(v37,(int)(this->creationFrame), 0); /*0x71aaa7*/
             (*(void (**)(unsigned int, int))(**(unsigned int **)this->__pad_28 + 952))( /*0x71aab5*/
               *(unsigned int *)this->__pad_28,
               (int)this->creationFrame);

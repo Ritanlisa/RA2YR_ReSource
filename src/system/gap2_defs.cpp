@@ -37,6 +37,7 @@ extern int FootClass_Array;
 extern int g_BuildingLoadQueue_Array;
 extern unsigned int stru_82BA00;
 extern unsigned int stru_A8EB00;
+extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 
 // 0x401980 (lnk)
 namespace gamemd {  // G42.41m: stray 'x401980' head marker cleaned
@@ -272,7 +273,7 @@ int CellClass::ClearOccupancyGrid() {
         *((unsigned int *)&this->attachedTag->? + k) = 0; /*0x42a617*/
       }
       v7 = &stru_87F5F0.__pad_58[456] - (char *)this; /*0x42a62a*/
-      p_CellClass_field_4C = &this->CellClass_field_4C; /*0x42a62d*/
+ p_CellClass_field_4C = (int *)(&this->CellClass_field_4C); /*0x42a62d*/
       v15 = 3; /*0x42a634*/
       do /*0x42a67d*/
       {
@@ -566,7 +567,7 @@ int BufferIOFileClass::Open(const CHAR *a2) {
 
 // 0x432050
 namespace gamemd { 
-int FileClass::BufferedWriter() {
+int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
     int result; // eax
     signed int v5; // ebx
     int BufferReadSize; // eax
@@ -734,7 +735,7 @@ int FileClass::BufferedWriter() {
 
 // 0x4322A0
 namespace gamemd { 
-int FileClass::BufferedReader() {
+int FileClass::BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead) {
     signed int v4; // ebx
     signed int v5; // edi
     signed int BufferReadSize; // ebp
@@ -865,7 +866,7 @@ int FileClass::BufferedReader() {
 
 // 0x4324B0
 namespace gamemd { 
-int BufferIOFileClass::SeekInternal() {
+int BufferIOFileClass::SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod) {
     int MixFileIndex; // eax
     LONG v5; // ecx
     int FileID; // eax
@@ -28517,7 +28518,7 @@ void FactoryClass::FindAvailable() {
     *((unsigned char *)this + 153) = 0; /*0x6360d2*/
     vtable2 = this->?; /*0x6360d9*/
     this->? = (unsigned int)(void *)&VectorClass_PlanningNodeClass___vftable; /*0x6360e0*/
-    if ( vtable2 && IDA_BYTE1(this->?) ) /*0x6360e8*/
+    if ( vtable2 && IDA_BYTE1(this->u8_D) ) /*0x6360e8*/
     {
       RA2_OPDEL(vtable2); /*0x6360f0*/
       this->? = 0; /*0x6360f8*/
@@ -28738,7 +28739,7 @@ int FactoryClass::RemoveItem(int a1) {
     int v3; // eax
     int v4; // edx
 
-    uniqueId = this->?; /*0x63f000*/
+    uniqueId = this->uniqueId; /*0x63f000*/
     v3 = a2; /*0x63f003*/
     if ( a2 >= uniqueId ) /*0x63f009*/
       return 0; /*0x63f02c*/
@@ -32746,7 +32747,7 @@ void FactoryClass::FindAvailable() {
     *((unsigned char *)this + 153) = 0; /*0x6360d2*/
     vtable2 = this->?; /*0x6360d9*/
     this->? = (unsigned int)(void *)&VectorClass_PlanningNodeClass___vftable; /*0x6360e0*/
-    if ( vtable2 && IDA_BYTE1(this->?) ) /*0x6360e8*/
+    if ( vtable2 && IDA_BYTE1(this->u8_D) ) /*0x6360e8*/
     {
       RA2_OPDEL(vtable2); /*0x6360f0*/
       this->? = 0; /*0x6360f8*/
@@ -32967,7 +32968,7 @@ int FactoryClass::RemoveItem(int a1) {
     int v3; // eax
     int v4; // edx
 
-    uniqueId = this->?; /*0x63f000*/
+    uniqueId = this->uniqueId; /*0x63f000*/
     v3 = a2; /*0x63f003*/
     if ( a2 >= uniqueId ) /*0x63f009*/
       return 0; /*0x63f02c*/
@@ -35310,7 +35311,7 @@ void FactoryClass::FindAvailable() {
     *((unsigned char *)this + 153) = 0; /*0x6360d2*/
     vtable2 = this->?; /*0x6360d9*/
     this->? = (unsigned int)(void *)&VectorClass_PlanningNodeClass___vftable; /*0x6360e0*/
-    if ( vtable2 && IDA_BYTE1(this->?) ) /*0x6360e8*/
+    if ( vtable2 && IDA_BYTE1(this->u8_D) ) /*0x6360e8*/
     {
       RA2_OPDEL(vtable2); /*0x6360f0*/
       this->? = 0; /*0x6360f8*/
@@ -35531,7 +35532,7 @@ int FactoryClass::RemoveItem(int a1) {
     int v3; // eax
     int v4; // edx
 
-    uniqueId = this->?; /*0x63f000*/
+    uniqueId = this->uniqueId; /*0x63f000*/
     v3 = a2; /*0x63f003*/
     if ( a2 >= uniqueId ) /*0x63f009*/
       return 0; /*0x63f02c*/

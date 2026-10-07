@@ -209,7 +209,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     goto LABEL_5; /*0x5b413e*/
   }
   if ( v4 ) /*0x5b419d*/
-    return (gamemd::AbstractClass **)((void *)((unsigned int *)(v4))[3]); /*0x5b41ac*/
+    return (::gamemd::AbstractClass **)((void *)((unsigned int *)(v4))[3]); /*0x5b41ac*/
   LABEL_9:
   ((CCFileClass *)((CCFileClass *)&v14.buffer))->Construct( (char *)(Source)); /*0x5b414d*/
   if ( (uint8_t)((CCFileClass *)((CCFileClass *)&v14.buffer))->Open(0) ) /*0x5b415c*/
@@ -232,9 +232,9 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     }
     if ( aP1 || strstr(Str, Ext) ) /*0x5b41f5*/
     {
-      v12 = (gamemd::ObjectClass *)((void *)((ObjectClass *)RA2_OPNEW(0x24u)));
+      v12 = (::gamemd::ObjectClass *)((void *)((ObjectClass *)RA2_OPNEW(0x24u)));
       if ( v12 ) /*0x5b421a*/
-        SHPFile = (gamemd::AbstractClass **)(LoadSHPFile( (int)(v12), (char*)(Source))); /*0x5b4224*/
+        SHPFile = (::gamemd::AbstractClass **)(LoadSHPFile( (int)(v12), (char*)(Source))); /*0x5b4224*/
       else
         SHPFile = (AbstractClass **)(0); /*0x5b4228*/
     }
@@ -242,8 +242,8 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
     {
       SHPFile = (unsigned int)((void *)(((CCFileClass *)((CCFileClass *)&v14.buffer))->ReadEntireFile()));
     }
-    v9[3] = (unsigned int)((gamemd::AbstractClass **)(SHPFile));
-    v14.buffer = (unsigned char)((gamemd::AbstractClass **)((int)&CCFileClass_vftable));
+    v9[3] = (unsigned int)((::gamemd::AbstractClass **)(SHPFile));
+    v14.buffer = (unsigned char)((::gamemd::AbstractClass **)((int)&CCFileClass_vftable));
     v16 = 0; /*0x5b4239*/
     ((Vector *)((int)v15))->Clear((int)((Vector *)((int)v15))); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
@@ -338,7 +338,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
     if ( a4 ) /*0x5b4563*/
       *a4 += v6[7]; /*0x5b456c*/
   }
-  return (gamemd::ObjectClass **)(1);
+  return (::gamemd::ObjectClass **)(1);
 }
 }
 // 0x5B4B10
@@ -363,7 +363,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
   int16_t v19; // [esp+130h] [ebp-204h]
   wchar_t lParam[256]; // [esp+134h] [ebp-200h] BYREF
 
-  result = (int)(BaseDialogProc((gamemd::SkirmishDialog *)(hWnd), a2, a3, a4));
+  result = (int)(BaseDialogProc((::gamemd::SkirmishDialog *)(hWnd), a2, a3, a4));
   if ( result ) /*0x5b4b3f*/
     return result; /*0x5b4b3f*/
   WindowLongA = GetWindowLongA(hWnd, 8); /*0x5b4b4f*/
@@ -495,10 +495,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
 namespace gamemd {
 AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 {
-  int (*)(...) v1;
-  int (*)(...) v2;
-  int (*)(...) v3;
-  int v5; // edx
+  int (*v1) (...) ;  int (*v2) (...) ;  int (*v3) (...) ;  int v5; // edx
   int v6; // eax
   int v7; // edx
   void *vtable0; // ecx
@@ -608,7 +605,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
       g_UIControlState = 0; /*0x5b6cb1*/
     }
   }
-  return (gamemd::AbstractClass **)(1); /*0x5b69dc*/
+  return (::gamemd::AbstractClass **)(1); /*0x5b69dc*/
 }
 }
 // 0x5BB290
@@ -1342,14 +1339,14 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
     v41 = v41; /*0x5bfb97*/
   }
   if ( a12 == 1 ) /*0x5bfba3*/
-    v43 = (char (__cdecl *)(gamemd::ObjectClass *,int,int))(sub_5BF950); /*0x5bfba5*/
+    v43 = (char (__cdecl *)(::gamemd::ObjectClass *,int,int))(sub_5BF950); /*0x5bfba5*/
   v19 = (char *)RA2_OPNEW(0x554u); /*0x5bfbb2*/
   if ( v19 ) /*0x5bfbbc*/
-    v20 = (char *)((Stream *)v19)->InitializeBinkAudio( (const char *)(Source), (IUnknown *)(v41), (int)sub_5BF850, (int)sub_5BF8B0, (IUnknown *)((int)v43), -1, -1); /*0x5bfbd9*/
+    v20 = (char *)((Stream *)v19)->InitializeBinkAudio( (const char *)(Source),(int)(v41), (int)sub_5BF850, (int)sub_5BF8B0,(int)((int)v43), -1, -1); /*0x5bfbd9*/
   else
     v20 = (char *)(0); /*0x5bfbe0*/
   *(unsigned int *)v15 = (unsigned int)v20; /*0x5bfbe4*/
-  if ( !v20 || (Render_Load_759830((ObjectClass *)v20, a11), !Render_Load_7597A0((gamemd::TechnoClass *)(*(ObjectClass **)v15))) ) /*0x5bfbf9*/
+  if ( !v20 || (Render_Load_759830((ObjectClass *)v20, a11), !Render_Load_7597A0((::gamemd::TechnoClass *)(*(ObjectClass **)v15))) ) /*0x5bfbf9*/
   {
     BinkMovie::Cleanup(  (BinkMovie *)v15); /*0x5bfc04*/
     RA2_OPDEL((void *)v15); /*0x5bfc0a*/
@@ -1357,7 +1354,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   }
   Width = MovieClass::GetWidth(*(MovieClass **)v15); /*0x5bfc2a*/
   Height = MovieClass::GetHeight(*(MovieClass **)v15); /*0x5bfc35*/
-  _759EA0 = Render_Load_759EA0((gamemd::TechnoClass *)(*(ObjectClass **)v15)); /*0x5bfc43*/
+  _759EA0 = Render_Load_759EA0((::gamemd::TechnoClass *)(*(ObjectClass **)v15)); /*0x5bfc43*/
   if ( _759EA0 == 4 ) /*0x5bfc47*/
     _759EA0 = 1; /*0x5bfc49*/
   if ( !a3 && !a4 && !a5 && !a6 ) /*0x5bfc73*/
@@ -1441,13 +1438,13 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   if ( v35 == 1 || v35 == 4 ) /*0x5bfe8a*/
   {
     Status = DDraw_GetStatus(); /*0x5bfe8c*/
-    Render_Load_759F20((gamemd::TechnoClass *)(*(ObjectClass **)v15), Status); /*0x5bfe94*/
+    Render_Load_759F20((::gamemd::TechnoClass *)(*(ObjectClass **)v15), Status); /*0x5bfe94*/
   }
   v15->vtable3 = a2; /*0x5bfe99*/
   v40 = (*(int (**)(int *))(*a2 + 128))( (int *)(a2)); /*0x5bfeac*/
   v37 = (*(int (**)(int *))(*a2 + 116))( (int *)(a2)); /*0x5bfeb6*/
   v38 = (*(int (**)(int *))(*a2 + 112))( (int *)(a2)); /*0x5bfeb8*/
-  Render_Load_759EB0((gamemd::TechnoClass *)(*(ObjectClass **)v15), 0, v37 / v38, v40, 0, 0); /*0x5bfec7*/
+  Render_Load_759EB0((::gamemd::TechnoClass *)(*(ObjectClass **)v15), 0, v37 / v38, v40, 0, 0); /*0x5bfec7*/
   SurfaceTracker = (unsigned int *)BinkMovie::CreateSurfaceTracker( (char *)(FullPath)); /*0x5bfed0*/
   v15->q048 = SurfaceTracker; /*0x5bfed7*/
   if ( SurfaceTracker ) /*0x5bfeda*/
@@ -1677,7 +1674,7 @@ double * E4Recv_5B1D90::sub_5B1D90()
   }
   else
   {
-    timeBeginPeriod(1u); /*0x5b1dc5*/
+    timeBeginPeriod((void *)(1u)); /*0x5b1dc5*/
     return (double *)this; /*0x5b1dcb*/
   }
 
@@ -2490,7 +2487,7 @@ HWND sub_5B6F30()
     MessageLoop(); /*0x5b7047*/
     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5b7051*/
   }
-  result = (HWND)gamemd::Network::CleanupOnDisconnect(); /*0x5b7069*/
+  result = (HWND)::gamemd::Network::CleanupOnDisconnect(); /*0x5b7069*/
   if ( v2 ) /*0x5b7070*/
 // 0x622720
     return ((Dialog *)v2)->Destroy(); /*0x5b7074*/
@@ -2860,7 +2857,7 @@ HWND sub_5BAB00()
     MessageLoop(); /*0x5bac17*/
     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5bac21*/
   }
-  result = (HWND)gamemd::Network::CleanupOnDisconnect(); /*0x5bac39*/
+  result = (HWND)::gamemd::Network::CleanupOnDisconnect(); /*0x5bac39*/
   if ( v2 ) /*0x5bac40*/
 // 0x622720
     return ((Dialog *)v2)->Destroy(); /*0x5bac44*/

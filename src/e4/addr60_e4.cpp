@@ -32,6 +32,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Control_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/SymbolTable_e4.hpp"  // G57w10 D supply
 
 // 0x600750

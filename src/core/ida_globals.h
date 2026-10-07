@@ -11264,7 +11264,59 @@ extern unsigned char stru_8A0390;
 extern unsigned char stru_8A06F8;
 extern unsigned char stru_8A38E0;
 extern unsigned char stru_A80220;
-struct stru_A83D50_t { unsigned char __pad_34[4]; unsigned char __pad_C8[64]; };  // g57w9: +__pad_34[4] @0x34 (dword_A83D84 disasm-verified; array form for decay-deref usage)  // g57w8: til __pad_C8 vocab (raw stru_A83D50.__pad_C8[28] corpus form)
+// W13A: full IDA til `SuperClass` layout (dumped live 2026-10-06; stru_A83D50 typed
+// SuperClass in IDB). sizeof=4076. Members verbatim from til; corpus refs all covered.
+struct stru_A83D50_t {
+    int SuperClass_field_0x0;      // 0x000
+    int SuperClass_field_0x4;      // 0x004
+    int SuperClass_field_0x8;      // 0x008
+    unsigned char __pad_C[4];      // 0x00C
+    int SuperClass_field_0x10;     // 0x010
+    unsigned char __pad_14[16];    // 0x014
+    int SuperClass_field_0x24;     // 0x024
+    int SuperClass_field_0x28;     // 0x028
+    int SuperClass_field_0x2C;     // 0x02C
+    int SuperClass_field_0x30;     // 0x030
+    unsigned char __pad_34[4];     // 0x034 (g57w9: dword_A83D84 disasm-verified)
+    int SuperClass_field_0x38;     // 0x038
+    unsigned char __pad_3C[36];    // 0x03C
+    int SuperClass_field_0x60;     // 0x060
+    unsigned char __pad_64[4];     // 0x064
+    int SuperClass_field_0x68;     // 0x068
+    int SuperClass_field_0x6C;     // 0x06C
+    int SuperClass_field_0x70;     // 0x070
+    int SuperClass_field_0x74;     // 0x074
+    int SuperClass_field_0x78;     // 0x078
+    int SuperClass_field_0x7C;     // 0x07C
+    unsigned char __pad_80[48];    // 0x080
+    int SuperClass_field_0xB0;     // 0x0B0
+    unsigned char __pad_B4[16];    // 0x0B4
+    int SuperClass_field_0xC4;     // 0x0C4
+    unsigned char __pad_C8[172];   // 0x0C8 (g57w8 corpus form __pad_C8[28])
+    int SuperClass_field_0x174;    // 0x174
+    unsigned char __pad_178[132];  // 0x178
+    int SuperClass_field_0x1FC;    // 0x1FC
+    unsigned char __pad_200[152];  // 0x200
+    int SuperClass_field_0x298;    // 0x298
+    unsigned char __pad_29C[140];  // 0x29C
+    int SuperClass_field_0x328;    // 0x328
+    unsigned char __pad_32C[4];    // 0x32C
+    int SuperClass_field_0x330;    // 0x330
+    unsigned char __pad_334[20];   // 0x334
+    int SuperClass_field_0x348;    // 0x348
+    int SuperClass_field_0x34C;    // 0x34C
+    unsigned char __pad_350[844];  // 0x350
+    int SuperClass_field_0x69C;    // 0x69C
+    unsigned char __pad_6A0[960];  // 0x6A0
+    unsigned char __pad_A60[492];  // 0xA60
+    int SuperClass_field_0xC4C;    // 0xC4C
+    unsigned char __pad_C50[24];   // 0xC50
+    int SuperClass_field_0xC68;    // 0xC68
+    unsigned char __pad_C6C[812];  // 0xC6C
+    int SuperClass_field_0xF98;    // 0xF98
+    unsigned char __pad_F9C[76];   // 0xF9C
+    int SuperClass_field_0xFE8;    // 0xFE8
+};
 extern struct stru_A83D50_t stru_A83D50;
 extern struct Network stru_A8BB1C;  // G57w10: receiver retype (network_ext.hpp carrier)
 extern unsigned char stru_A8DA5C;
@@ -11281,7 +11333,22 @@ extern unsigned char stru_AA0400;
 extern unsigned char stru_AA0418;
 extern unsigned char stru_ABBED0;
 extern unsigned char stru_AC1858;
-struct stru_AC4B30_t { unsigned char __pad_EC[66320]; };  // g57w8: til __pad_EC vocab (raw stru_AC4B30.__pad_EC[N] corpus-wide; size = DataGlobal_AC4B30 twin)
+// W13A: synthesized layout at corpus-referenced offsets (total stays 66320 =
+// DataGlobal_AC4B30 twin). Array_field_* types per full_export include/Array.hpp
+// (void*). No til entry exists for this DataGlobal; offsets only as referenced.
+struct stru_AC4B30_t {
+    unsigned char __pad_0[4];      // 0x000
+    void* Array_field_0x4;         // 0x004
+    unsigned char __pad_8[8];      // 0x008
+    void* Array_field_0x10;        // 0x010
+    unsigned char __pad_14[24];    // 0x014
+    void* Array_field_0x2C;        // 0x02C
+    unsigned char __pad_30[24];    // 0x030
+    unsigned char __pad_48[40];    // 0x048
+    unsigned char __pad_70[120];   // 0x070
+    void* Array_field_0xE8;        // 0x0E8
+    unsigned char __pad_EC[66084]; // 0x0EC (g57w8 corpus-wide tail)
+};
 extern struct stru_AC4B30_t stru_AC4B30;
 extern unsigned char stru_AC4C40;
 extern unsigned char stru_B04910;

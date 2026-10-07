@@ -8,6 +8,8 @@
 #include "e4/classes/House_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/MovementAI_e4.hpp"  // g57c5 W5d scope supply
+class Mixer;  // W13-C fwd (misc/audio_ext.hpp:115 载体; (Mixer*) cast 用法)
+extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 (e4_protos.h:492 同形)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace ra2 { namespace game {
 class Math;  // g57c5 W5 fwd
@@ -199,7 +201,7 @@ bool FootClass::MovementAI()
       if ( Traversability > 0 ) /*0x4da5f8*/
       {
         v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4da5fe*/
-        IDA_LOWORD(v6) = Math::RoundToInt((double)Traversability * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x4da60a*/
+        IDA_LOWORD(v6) = RoundToInt((double)Traversability * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x4da60a*/
                                                                          + 6168));
         Traversability = v6; /*0x4da610*/
         result = (*((int (__thiscall **)(FootClass *, int *, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int))this->TechnoClass /*0x4da629*/
@@ -510,11 +512,11 @@ bool FootClass::MovementAI()
         v36[93](this, &v46, 1, 0); /*0x4dae59*/
       }
       v37 = (int (__stdcall ***)(unsigned int, int *, __int16 *))this->locomotor[0]; /*0x4dae5f*/
-      locomotor = this->locomotor; /*0x4dae65*/
+ locomotor = (int *)(this->locomotor); /*0x4dae65*/
       v39 = 0; /*0x4dae6b*/
       if ( v37 )
       {
-        v40 = (**v37)(v37, &((unsigned int *)&stru_818E00)[17], v45); /*0x4dae7e*/
+        v40 = (**v37)(v37, &((unsigned int *)&gamemd::stru_818E00)[17], v45); /*0x4dae7e*/
         v39 = v40 < 0 ? 0 : *(unsigned int *)v45;
         if ( v40 < 0 && v40 != -2147467262 ) /*0x4dae99*/
           WinAPI_Wrapper(v40); /*0x4dae9c*/

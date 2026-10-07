@@ -787,7 +787,7 @@ int HouseClass::RegisterForSwizzleTracking() {
   result = ((unsigned int *)this)[0]; /*0x4b6bb6*/
   if ( result > 0 ) /*0x4b6bbb*/
   {
-    p_abstractFlags = &((unsigned int *)this)[0]; /*0x4b6bbe*/
+ p_abstractFlags = (int *)(&((unsigned int *)this)[0]); /*0x4b6bbe*/
     do /*0x4b6bd5*/
     {
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (unsigned int **)(void *)&p_abstractFlags); /*0x4b6bc7 g57w11 r4: TU-local 词汇*/
@@ -988,7 +988,7 @@ void HouseClass::processTargetSelection() {
 
   v2 = this + 88; /*0x4f21ae*/
   *(unsigned int *)this = (void *)&GraphicMenu_vftable; /*0x4f21b1*/
-  v6 = this + 88; /*0x4f21b7*/
+ v6 = (char *)(this + 88); /*0x4f21b7*/
   v7 = 0; /*0x4f21bb*/
   v5 = (void *)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f21bf*/
   if ( Map::CanScroll((void **)(void *)&v5) ) /*0x4f21c7 g57w11 r4: TU-local 词汇*/
@@ -997,7 +997,7 @@ void HouseClass::processTargetSelection() {
     {
       v3 = *(void (****)(unsigned int, int))(*((unsigned int *)v6 + 1) + 4 * v7); /*0x4f21dc*/
       if ( v3 ) /*0x4f21e1*/
-        (**v3)(v3, 1); /*0x4f21e7*/
+        (**v3)((unsigned int)(v3), 1); /*0x4f21e7*/
       ((void ((unsigned int)(*))(void ***))v5[2])(&v5); /*0x4f21f1*/
     }
     while ( ((uint8_t (*)(void ***))v5[1])(&v5) ); /*0x4f21fc*/
@@ -1212,7 +1212,7 @@ int HouseClass::Constructor(int a1, int a2) { /*g57w11 r4: raw fn_4F Constructor
   this->unkTimer3 = (void *)&DynamicVectorClass_ScoutStruct_vftable; /*0x4f53e8*/
   this->q5630 = 10; /*0x4f53ef*/
   this->q562C = 0; /*0x4f53f2*/
-  v3 = &this->u32_159C0; /*0x4f53f5*/
+  v3 = (unsigned int)(&this->u32_159C0)); /*0x4f53f5*/
   v5 = 3; /*0x4f53fb*/
   do /*0x4f5416*/
   {

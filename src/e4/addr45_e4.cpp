@@ -437,7 +437,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
         {
           v18 = (double)(-v42);
         }
-        v19 = Math::RoundToInt( v18); /*0x456c73*/
+        v19 = Math::RoundToInt((double)(v18)); /*0x456c73*/
         v20 = v41; /*0x456c78*/
         v21 = v40; /*0x456c7c*/
         v22 = v41 + v19; /*0x456c80*/

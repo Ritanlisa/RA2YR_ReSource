@@ -332,7 +332,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage(char *Source, int aP1,
       }
       return (gamemd::ParticleSystemTypeClass **)(-1); /*0x6446ca*/
     }
-    while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v2) + 36)) ) /*0x644677*/
+    while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&((SuperClass *)&stru_A83D50)->q024 + 4 * v2) + 36)) ) /*0x644677*/
     {
       if ( ++v2 >= (int)stru_A83D50.SuperClass_field_0x28 ) /*0x644681*/
         goto LABEL_6; /*0x644681*/
@@ -629,12 +629,12 @@ int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * 
       v7 = (int)(*a2); /*0x75e2e4*/
       WarheadTypeClass_field_0x114 = (int *)this->WarheadTypeClass_field_0x114; /*0x75e2f1*/
       (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0, v5); /*0x75e2f5*/
-      for ( i = 0; i   <   (int)((int)(a4)); ++i ) /*0x75e300*/
+      for ( i = 0; i   <   (int)(a4)); ++i ) /*0x75e300*/
         (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, this->WarheadTypeClass_field_0x108 + 4 * i, 4, 0); /*0x75e313*/
       v9 = (int)(*a2); /*0x75e323*/
       a4 = this->unused_1CC[0]; /*0x75e32f*/
       (*(void ((int *)(__stdcall **))(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x75e333*/
-      for ( j = 0; j   <   (int)((int)(a4)); ++j ) /*0x75e33e*/
+      for ( j = 0; j   <   (int)(a4)); ++j ) /*0x75e33e*/
         (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))( /*0x75e351*/
           a2,
           this->WarheadTypeClass_field_0x190[0] + 4 * j,
@@ -741,7 +741,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
       while ( v3 < g_WarheadTypePool ); /*0x75e57d*/
     }
     v9 = this; /*0x75e58f*/
-v4 = (*(int (**)(int *, WarheadTypeClass **))(dword_B0F670+ 16))( /*0x75e593*/ &dword_B0F670, (WarheadTypeClass **)(&v9));
+v4 = (*(int (**)(int *, WarheadTypeClass **))(dword_B0F670+ 16))( /*0x75e593*/ &dword_B0F670, (WarheadTypeClass **)((int *)((int *)((int *)(&v9)))));
 
 
     if ( v4 != -1 && v4 < dword_B0F680) /*0x75e5a3*/

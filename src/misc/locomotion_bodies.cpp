@@ -4,6 +4,7 @@
 #include "object/foot.hpp"  // full FootClass for locomotor member access
 #include "structure/globals_structure.hpp"  // g_CurrentFrame (Frame @ 0xA8ED84)
 #include "core/ida_vtables.h"  // gC_vftable3
+extern int g_OverlayTypeConfig;  // data: 0xB077F8 (e4_globals_decls.hpp:1335)
 
 namespace gamemd {
 // 0x55a9b0
@@ -15,7 +16,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& a2, void** a3)
     if ( !a3 ) /*0x55a9b6*/
       return -2147467261; /*0x55a9b8*/
     *a3 = 0; /*0x55a9d9*/
-    if ( !memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x55a9df*/
+    if ( !memcmp((const void *)(a2), &IID_IUnknown, 0x10u) ) /*0x55a9df*/
     {
       if ( this ) /*0x55a9e5*/
         v4 = &this->ILocomotion[4]; /*0x55a9e7*/
@@ -23,7 +24,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& a2, void** a3)
         v4 = 0; /*0x55a9ec*/
       *a3 = v4; /*0x55a9ee*/
     }
-    if ( !memcmp(a2, &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
+    if ( !memcmp((const void *)(a2), &IID_IPersistStream, 0x10u) ) /*0x55a9ff*/
       *a3 = this; /*0x55aa03*/
     if ( !memcmp(a2, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
     {
@@ -33,7 +34,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& a2, void** a3)
         v5 = 0; /*0x55aa21*/
       *a3 = v5; /*0x55aa23*/
     }
-    if ( !memcmp(a2, &IID_IPersist, 0x10u) ) /*0x55aa33*/
+    if ( !memcmp((const void *)(a2), &IID_IPersist, 0x10u) ) /*0x55aa33*/
       *a3 = this; /*0x55aa3a*/
     if ( !*a3 ) /*0x55aa3c*/
       return -2147467262; /*0x55aa41*/
@@ -144,7 +145,7 @@ bool LocomotionClass::Process()
     *((unsigned int *)this + 26) = 0; /*0x69eccf*/
     *(unsigned int *)this->ILocomotion = (unsigned int)(void *)&ShipLocomotionClass_vftable; /*0x69ecd2*/
     *(unsigned int *)&this->ILocomotion[4] = (unsigned int)(void *)&ShipLocomotionClass_vftable; /*0x69ecd8*/
-    *((unsigned int *)this + 6) = &off_7F2D68; /*0x69ecdf*/
+    *((unsigned int *)this + 6) = (unsigned int)&off_7F2D68; /*0x69ecdf*/
     return (int)this->ILocomotion; /*0x69ece8*/
 } // namespace gamemd
 }

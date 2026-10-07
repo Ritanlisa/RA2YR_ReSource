@@ -76,6 +76,7 @@
 #include "e4/classes/FileSystem_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/MapResourceClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -126,8 +127,8 @@ AbstractClass * * sub_539760()
     (**(void (***)(int, int))g_ChronoEffectState)(g_ChronoEffectState, 1); /*0x53986d*/
   ChronoScreenEffect_Duration = 0; /*0x539875*/
   g_ChronoEffectState = 0; /*0x53987b*/
-  ChronoScreenEffect_Status = (int)((gamemd::AbstractClass **)(0)); /*0x539881*/
-  return (gamemd::AbstractClass **)(UpdateSurfaceAnimations(-1, -1, -1, 0)); /*0x53988c*/
+  ChronoScreenEffect_Status = (int)((::gamemd::AbstractClass **)(0)); /*0x539881*/
+  return (::gamemd::AbstractClass **)(UpdateSurfaceAnimations(-1, -1, -1, 0)); /*0x53988c*/
 }
 }
 // 0x5558E0
@@ -522,7 +523,7 @@ char sub_55CF10()
         {
           ((NetworkEventQueueClass *)((NetworkEventQueueClass *)&stru_B052C0[16]))->WaitForResponse(); /*0x55cf53*/
           v2 = 480; /*0x55cf61*/
-                    Ticks = (gamemd::Network *)(((Timer *)0)->GetTicks());
+                    Ticks = (::gamemd::Network *)(((Timer *)0)->GetTicks());
           while ( 1 ) /*0x55cf74*/
           {
             if ( Ticks != (Network *)-1 ) /*0x55cf79*/
@@ -704,7 +705,7 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
         && dword_A8B23C
         && !a3 )
       {
-        return (gamemd::SkirmishDialog **)(1);
+        return (::gamemd::SkirmishDialog **)(1);
       }
     }
     if ( v5 >= v12 ) /*0x5ec966*/
@@ -723,16 +724,16 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
   }
   else
   {
-    v10 = (gamemd::SkirmishDialog **)((char)((gamemd::SkirmishDialog **)(1)));
+    v10 = (::gamemd::SkirmishDialog **)((char)((::gamemd::SkirmishDialog **)(1)));
     if ( ((SessionClass *)((int)v9))->GetPlayerSide() != -3 ) /*0x5ec998*/
-      return (gamemd::SkirmishDialog **)(1); /*0x5ec998*/
+      return (::gamemd::SkirmishDialog **)(1); /*0x5ec998*/
   }
   if ( !dword_A8B23C || a4 || !v10 || ((SessionClass *)((int)v9))->GetPlayerSide() != -3 ) /*0x5ec9b9*/
   {
     v4 = hDlg; /*0x5ec9bb*/
     goto LABEL_39; /*0x5ec9bb*/
   }
-  return (gamemd::SkirmishDialog **)(1);
+  return (::gamemd::SkirmishDialog **)(1);
 }
 }
 // 0x6ACCA0
@@ -909,7 +910,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
           break; /*0x5a7d53*/
   LABEL_17:
         if ( ++v7 >= v16[186] ) /*0x5a7e55*/
-          return (gamemd::AbstractClass **)(1); /*0x5a7e64*/
+          return (::gamemd::AbstractClass **)(1); /*0x5a7e64*/
       }
       while ( 1 ) /*0x5a7d5f*/
       {
@@ -943,7 +944,7 @@ AbstractClass * * sub_5A7D00(int a1, unsigned short * a2, char a3, char a4)
       }
     }
   }
-  return (gamemd::AbstractClass **)(1); /*0x5a7e5b*/
+  return (::gamemd::AbstractClass **)(1); /*0x5a7e5b*/
 }
 }
 // 0x6B4240
@@ -1225,7 +1226,7 @@ void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, in
     {
       MSAnim::Reset(*(unsigned int **)(a1 + 36), v8); /*0x76fd9c*/
       (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 36) + 4))(*(unsigned int *)(a1 + 36), 1); /*0x76fda8*/
-      Map_Process_5CC690((gamemd::ObjectClass *)(*(unsigned int **)(a1 + 36))); /*0x76fdae*/
+      Map_Process_5CC690((::gamemd::ObjectClass *)(*(unsigned int **)(a1 + 36))); /*0x76fdae*/
     }
     v12 = (unsigned int *)(*(int (**)(unsigned int, char *))(**(unsigned int **)(a1 + 36) + 24))( *(unsigned int *)(a1 + 36), (char *)(v27)); /*0x76fdcb*/
     v25[0] = *v12; /*0x76fdd2*/
@@ -1745,7 +1746,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
       *(unsigned int *)&this->m_1[3] = (unsigned int)v5; /*0x76a4c4*/
       this->m_8 = v3; /*0x76a4ca*/
       BYTE1(this->m_C) = a3 == 0; /*0x76a4cd*/
-      return (gamemd::AbstractClass **)(1); /*0x76a4d3*/
+      return (::gamemd::AbstractClass **)(1); /*0x76a4d3*/
     }
     else
     {
@@ -1755,7 +1756,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
   else
   {
     (*(void (**)(_VectorClass_VCentroid_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a4dd*/
-    return (gamemd::AbstractClass **)(1); /*0x76a4e3*/
+    return (::gamemd::AbstractClass **)(1); /*0x76a4e3*/
   }
 
 }
@@ -2091,7 +2092,7 @@ int sub_65FDD0()
   result = dword_B04DB8; /*0x65fdd0*/
   for ( i = 0; i < dword_B04DB8; ++i ) /*0x65fdda*/
   {
-    Map_Helper_65FE00((gamemd::ObjectClass *)(*((unsigned char **)dword_B04DAC + i))); /*0x65fde4*/
+    Map_Helper_65FE00((::gamemd::ObjectClass *)(*((unsigned char **)dword_B04DAC + i))); /*0x65fde4*/
     result = dword_B04DB8; /*0x65fde9*/
   }
   return result; /*0x65fdf3*/
@@ -2375,7 +2376,7 @@ void Map_Load_72E9F0(ConvertClass * a1, int * a2)
   v5 = 0; /*0x72ea16*/
   v4 = *(unsigned int *)dword_B0FC1C; /*0x72ea20*/
   v5 = *((unsigned int *)dword_B0FC1C + 1); /*0x72ea4a*/
-  DrawToSurfaceSHP( (int)a1, dword_B0FBA8, (ConvertClass *)((int)dword_B0FB34), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72ea57*/
+  DrawToSurfaceSHP( (int)a1, dword_B0FBA8, (ConvertClass *)((int)dword_B0FB34), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2),(::gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72ea57*/
 }
 } // namespace gamemd
 
@@ -2392,7 +2393,7 @@ void Map_Load_72EAD0(ConvertClass * a1, int * a2)
   v5 = 0; /*0x72eaf6*/
   v4 = *(unsigned int *)dword_B0FC1C; /*0x72eb00*/
   v5 = *((unsigned int *)dword_B0FC1C + 1); /*0x72eb2a*/
-  DrawToSurfaceSHP( (int)a1, dword_B0FBB4, (ConvertClass *)((int)dword_B0FB1C), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2),(gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72eb37*/
+  DrawToSurfaceSHP( (int)a1, dword_B0FBB4, (ConvertClass *)((int)dword_B0FB1C), 0, (ConvertClass *)(&v4), (ConvertClass *)(a2),(::gamemd::ConvertClass *)( 1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72eb37*/
 }
 } // namespace gamemd
 

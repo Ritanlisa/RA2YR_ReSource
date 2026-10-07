@@ -1974,7 +1974,7 @@ LABEL_44:
   }
   *((unsigned int *)this + 14) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)&g_INI_Key_CurrentMap, (unsigned char *)("Score"), 0); /*0x49c2fc*/
   INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore_0), (unsigned char *)("Score"), 0); /*0x49c2ff*/
-  *((unsigned int *)this + 17) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aCampaigntype, (unsigned char *)("House1"), -1); /*0x49c329*/
+  *((unsigned int *)this + 17) = INIClass::ReadInt_Overwrite((INIClass *)(v28),(unsigned char *)(aCampaigntype), (unsigned char *)("House1"), -1); /*0x49c329*/
   *((unsigned int *)this + 5) = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
                             (uint8_t ***)v24,
                             (uint8_t *)v28,
@@ -1989,13 +1989,13 @@ LABEL_44:
   *((unsigned int *)this + 13) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aColor2), (unsigned char *)("Kills1"), -2); /*0x49c388*/
   *((unsigned int *)this + 18) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aKills1), 0); /*0x49c390*/
   *((unsigned int *)this + 19) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aKills2), (unsigned char *)("Built1"), 0); /*0x49c3b6*/
-  *((unsigned int *)this + 20) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aBuilt1, (unsigned char *)("Built2"), 0); /*0x49c3cd*/
+  *((unsigned int *)this + 20) = INIClass::ReadInt_Overwrite((INIClass *)(v28),(unsigned char *)(aBuilt1), (unsigned char *)("Built2"), 0); /*0x49c3cd*/
   *((unsigned int *)this + 21) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aBuilt2), 0); /*0x49c3d5*/
   *((unsigned int *)this + 22) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aLost1), (unsigned char *)("Lost2"), 0); /*0x49c3fb*/
-  *((unsigned int *)this + 23) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aLost2, (unsigned char *)("Score1"), 0); /*0x49c412*/
+  *((unsigned int *)this + 23) = INIClass::ReadInt_Overwrite((INIClass *)(v28),(unsigned char *)(aLost2), (unsigned char *)("Score1"), 0); /*0x49c412*/
   *((unsigned int *)this + 24) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore1), 0); /*0x49c41a*/
   *((unsigned int *)this + 25) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore2), (unsigned char *)("Time"), 0); /*0x49c440*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(v28), g_INI_Key_Time, (unsigned char *)("Time"), 0); /*0x49c443*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(v28),(unsigned char *)(g_INI_Key_Time), (unsigned char *)("Time"), 0); /*0x49c443*/
   v20 = *((unsigned int *)this + 17); /*0x49c448*/
   *((unsigned int *)this + 26) = Int_Overwrite; /*0x49c44b*/
   if ( !byte_89F578 ) /*0x49c455*/
@@ -2017,7 +2017,7 @@ LABEL_44:
   }
   *((unsigned char *)this + 108) = 1; /*0x49c505*/
   ((HashTable *)(v24))->DestroyHashTableINIClass(); /*0x49c509*/
-  v29[0] = &vt_CCFileClass; /*0x49c515*/
+  v29[0] = (unsigned int)((unsigned int)&vt_CCFileClass)); /*0x49c515*/
   v31 = 0; /*0x49c520*/
   ((Vector *)((int)v30))->Clear((int)((Vector *)((int)v30))); /*0x49c527*/
   v29[0] = (unsigned int)(&off_7E1668); /*0x49c533*/
@@ -2332,7 +2332,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     CCFileClass::Reset((gamemd::CCFileClass *)(v17)); /*0x49d418*/
 LABEL_5:
     ((HashTable *)(v20))->DestroyHashTableINIClass(); /*0x49d41d*/
-    v17[0] = &vt_CCFileClass; /*0x49d42a*/
+    v17[0] = (unsigned int)((unsigned int)&vt_CCFileClass)); /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     ((Vector *)((int)v18))->Clear((int)((Vector *)((int)v18))); /*0x49d436*/
     v17[0] = (unsigned int)(&off_7E1668); /*0x49d43f*/
@@ -2407,7 +2407,7 @@ LABEL_5:
   if ( strcmp((const char *)(aP1),(const char *)( g_Str_undefined)) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   ((HashTable *)(v20))->DestroyHashTableINIClass(); /*0x49d644*/
-  v17[0] = &vt_CCFileClass; /*0x49d64d*/
+  v17[0] = (unsigned int)((unsigned int)&vt_CCFileClass)); /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   ((Vector *)((int)v18))->Clear((int)((Vector *)((int)v18))); /*0x49d659*/
   v17[0] = (unsigned int)(&off_7E1668); /*0x49d662*/

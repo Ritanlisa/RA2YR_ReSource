@@ -69,6 +69,8 @@
 #include "e4/classes/MSPCXAnim_e4.hpp"
 #include "e4/classes/Map_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/FileStraw_e4.hpp"
+#include "e4/classes/GenericNode_e4.hpp"
 #include "classes/DSurface_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/ThemeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -421,7 +423,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
           v19 = ((String *)&v38.referenceCount)->GetOrEmpty(); /*0x4f1f24*/
           ((String *)&v38.vtable2)->Assign( (const char *)(v19)); /*0x4f1f2e*/
           v20 = 1; /*0x4f1f33*/
-          Config = UI_Load(v18, (const char **)&v38.vtable2, v8 + 28, 1); /*0x4f1f49*/
+          Config = UI_Load(v18,(char **)((const char **)&v38.vtable2), v8 + 28, 1); /*0x4f1f49*/
         }
         else
         {
@@ -488,7 +490,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
         }
         ++v29; /*0x4f210b*/
       }
-      while ( v29   <=   (int)((int)(v38.referenceCount ))); /*0x4f210e*/
+      while ( v29   <=   (int)(v38.referenceCount ))); /*0x4f210e*/
     }
     j_DeleteAndZero( (void *)((ObjectClass *)&v38.nextArrayIndex)); /*0x4f2118*/
     j_DeleteAndZero( (void *)((ObjectClass *)&v38.vtable2)); /*0x4f2121*/
@@ -546,11 +548,11 @@ v6 = (*((int (**)(DSurface *, _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorCl
     DSurface::Flip2(); /*0x4f239b*/
     do /*0x4f25fd*/
     {
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x4f23a8*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))((void *)(dword_887640));  /*0x4f23a8*/
       ((DDraw *)(this + 4))->HandleSuspend(); /*0x4f23ad*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x4f23ba*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x4f23ba*/
       v7 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0C0))(dword_887640);  /*0x4f23ce*/
-      v18[0] = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q0B0))(dword_887640);  /*0x4f23db*/
+      v18[0] = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q0B0))((void *)(dword_887640));  /*0x4f23db*/
       v18[1] = v7; /*0x4f23df*/
       if ( ((EventQueue *)*(EventQueue **)&stru_87F5F0.__pad_58[296])->Process() ) /*0x4f23e3*/
       {
@@ -1524,7 +1526,7 @@ int sub_4F1B80(char ** a1, int a2)
       Vector::Clear((int)v8); /*0x4f1c7d*/
       *(unsigned int *)v7.CDFileClass = (unsigned int)&off_7E1668;
       ((BufferIOFileClass *)&v7)->Dtor(); /*0x4f1c8e*/
-      return (int)(v4; /*0x4f1c93*/);
+      return (int)(v4); /*0x4f1c93*/
     }
     else
     {

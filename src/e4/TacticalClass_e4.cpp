@@ -64,7 +64,7 @@ void TacticalClass::DrawBuildingPlacement(unsigned int *aP1, int *a2)
   v4 = (unsigned char *)((int *)(*(unsigned char **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * *((unsigned int *)this + 17))));
   v15 = (int *)(15 * *((char *)this + 283));
   v16 = (*(int (**)(unsigned char *))(*(unsigned int *)v4 + 156))( (unsigned char *)(v4)); /*0x47f544*/
-  v5 = ((BuildingClass *)this)->CalcDrawPos( &v19); /*0x47f54b*/
+ v5 = (int *)(((BuildingClass *)this)->CalcDrawPos( &v19)); /*0x47f54b*/
   v6 = *v5; /*0x47f554*/
   v7 = aP1[1] + v5[1]; /*0x47f55e*/
   v8 = a2; /*0x47f560*/
@@ -887,7 +887,7 @@ LABEL_10:
     v19[0] = *v9 - this->visibleArea[0] + DSurface_ViewBounds.field_0 - 30; /*0x6d36f4*/
     v19[1] = (int)DSurface_ViewBounds.field_4 + v10 - 15; /*0x6d3703*/
     if ( g_hWnd ) /*0x6d3707*/
-      ((TacticalClass *)*visibleCells)->RenderCellFogOfWar( (IUnknown *)((unsigned int *)v19), (Tactical *)(a3)); /*0x6d3716*/
+      ((TacticalClass *)*visibleCells)->RenderCellFogOfWar((unsigned int *)((unsigned int *)v19),(int *)((Tactical *)(a3))); /*0x6d3716*/
     UpdateSpotlightsFoo(v19, a3); /*0x6d3723*/
     ++v6; /*0x6d372e*/
     ++visibleCells; /*0x6d372f*/
@@ -1140,7 +1140,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
                   v45 = (((v32[1] << 8) + 128) / 256) << 8; /*0x6d717f*/
                   ((Coord *)((Coord *)this))->To_Screen( (unsigned int *)(&v44), (int *)(v39)); /*0x6d7183*/
                   v39[0] -= 30; /*0x6d719b*/
-                  ((TacticalClass *)v29)->DrawBuildingPlacement( (IUnknown *)(v39), (int *)(v51)); /*0x6d719f*/
+                  ((TacticalClass *)v29)->DrawBuildingPlacement((unsigned int *)(v39), (int *)(v51)); /*0x6d719f*/
                 }
               }
             }
@@ -1555,7 +1555,7 @@ LABEL_44:
     }
     else
     {
-      v50 = (int *)(0); /*0x6dc2d8*/
+      v50 = (unsigned int)((int *)(0))); /*0x6dc2d8*/
       if ( (double)*(int *)v52 * v51 >= 0.0 ) /*0x6dc2ef*/
       {
         *(float *)v52 = 0.0; /*0x6dc2f5*/

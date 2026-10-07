@@ -561,7 +561,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428eba*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428ec1*/
   v6 = (gamemd::AnimTypeClass *)(this); /*0x428ecf*/
-v3 = (*(int (**)(int *, AnimTypeClass **))(dword_B0F670+ 16))( /*0x428ed3*/ &dword_B0F670, (AnimTypeClass **)(&v6));
+v3 = (*(int (**)(int *, AnimTypeClass **))(dword_B0F670+ 16))( /*0x428ed3*/ &dword_B0F670, (AnimTypeClass **)((int *)((int *)((int *)(&v6)))));
 
 
   if ( v3 != -1 && v3 < dword_B0F680) /*0x428ee3*/

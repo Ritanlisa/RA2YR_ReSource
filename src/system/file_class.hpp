@@ -88,8 +88,8 @@ public:
 private:
     uint8_t padding_5[3] = {};
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    int BufferedWriter();  // 0x432050
-    int BufferedReader();  // 0x4322A0
+    int BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite);  // 0x432050
+    int BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead);  // 0x4322A0
     int Load(int a1);  // 0x473D10
     bool OpenFileBufferIO();  // 0x47AAB0
     int OpenWithCDSearch(void* a1);  // 0x47AE10

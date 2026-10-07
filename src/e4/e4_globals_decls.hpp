@@ -2378,7 +2378,7 @@ extern HWND (__stdcall * __imp_WindowFromPoint)(POINT Point);  // data: 0x7c877c
 extern BOOL (__stdcall * __imp_WinHelpA)(HWND hWndMain, LPCSTR lpszHelp, UINT uCommand, ULONG_PTR dwData);  // data: 0x7c87ca IAT slot fn-ptr truth (G42.33 b3)
 extern unsigned char __imp_WriteConsoleA[4];  // data: 0x7E1344
 extern BOOL (__stdcall * __imp_WriteFile)(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);  // data: 0x7c8482 IAT slot fn-ptr truth (G42.33 b3)
-extern void (__stdcall * __imp_WSAAsyncSelect)(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent);  // data: 0x7c89bc IAT slot fn-ptr truth (G42.33 b3)
+extern int (__stdcall * __imp_WSAAsyncSelect)(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent);  // W13-B: 返回 int（wsock32 导入真值，蹦床/原型三方统一）  // data: 0x7c89bc IAT slot fn-ptr truth (G42.33 b3)
 extern int (__stdcall * __imp_WSACleanup)(void);  // data: 0x7c89b6 IAT slot fn-ptr truth (G42.33 b3)
 extern int (__stdcall * __imp_WSAGetLastError)(void);  // data: 0x7c897a IAT slot fn-ptr truth (G42.33 b3)
 extern int (__stdcall * __imp_WSAStartup)(WORD wVersionRequested, void * lpWSAData);  // data: 0x7c89c8 IAT slot fn-ptr truth (G42.33 b3)

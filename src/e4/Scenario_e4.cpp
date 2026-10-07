@@ -52,6 +52,14 @@
 #include "e4/classes/SHPClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/CopyProtection_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
+#include "e4/classes/IPXInterfaceClass_e4.hpp"
+#include "e4/classes/Progress_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
 #include "classes/AudioMixer_e4.hpp"  // G42.57w9 method-carrier supply
 #include "classes/NukeFlash_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
@@ -664,16 +672,16 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       v3 = (TeamClass *)*((unsigned int *)(char *)&FootClass_Array->ObjectClass + v1); /*0x55afec*/
       if ( BYTE2(v2[375].vtable0) ) /*0x55afef*/
       {
-        if ( (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 50, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) ) /*0x55b00a*/
+        if ( (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 50, 0, *(int *)&((ScenarioClass *)&g_MissionQueueFrame)->waypoints[174], 0, 0) ) /*0x55b00a*/
           goto LABEL_22; /*0x55b011*/
         v2 = (gamemd::AbstractClass *)(dword_A8B230); /*0x55b017*/
       }
       if ( BYTE2(v2[374].uniqueId) ) /*0x55b01d*/
       {
-        if ( (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 27, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) /*0x55b090*/
-          || (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 28, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
-          || (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 36, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0)
-          || (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 37, 0, *(int *)&g_MissionQueueFrame.waypoints[174], 0, 0) )
+        if ( (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 27, 0, *(int *)&((ScenarioClass *)&g_MissionQueueFrame)->waypoints[174], 0, 0) /*0x55b090*/
+          || (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 28, 0, *(int *)&((ScenarioClass *)&g_MissionQueueFrame)->waypoints[174], 0, 0)
+          || (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 36, 0, *(int *)&((ScenarioClass *)&g_MissionQueueFrame)->waypoints[174], 0, 0)
+          || (uint8_t)TeamClass::Update_0(((TeamClass *)(v3)), 37, 0, *(int *)&((ScenarioClass *)&g_MissionQueueFrame)->waypoints[174], 0, 0) )
         {
           goto LABEL_22; /*0x55b097*/
         }
@@ -750,7 +758,7 @@ LABEL_24:
   v15 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b22e*/
   nextArrayIndex = ((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b234*/
   NeedsSaveOrLink = (char *)((AbstractClass *)dword_A8B230)[128].NeedsSaveOrLink; /*0x55b23a*/
-  p_nextArrayIndex = &((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b240*/
+ p_nextArrayIndex = (int *)(&((AbstractClass *)dword_A8B230)[128].nextArrayIndex); /*0x55b240*/
   if ( nextArrayIndex == -1 ) /*0x55b249*/
     goto LABEL_38; /*0x55b249*/
   if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex < (int)NeedsSaveOrLink ) /*0x55b251*/
@@ -838,7 +846,7 @@ LABEL_57:
         v34->vtable2 = v32; /*0x55b3fe*/
         goto LABEL_65; /*0x55b401*/
       }
-      v28 = ((AbstractClass *)dword_A8B230)[381].vtable0; /*0x55b3b8*/
+ v28 = (void *)(((AbstractClass *)dword_A8B230)[381].vtable0); /*0x55b3b8*/
       v29 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x55b3be*/
       ((AbstractClass *)dword_A8B230)[130].vtable0 = *(void **)((char *)&stru_A8EB00 + 416); /*0x55b3c4*/
       v30 = (void *)v65; /*0x55b3c6*/

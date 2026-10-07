@@ -9,6 +9,7 @@
 #include "e4/classes/Settings_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/GameSetup_e4.hpp"
+#include "e4/classes/ControlClass_e4.hpp"
 
 // 0x4E30A0
 namespace gamemd {

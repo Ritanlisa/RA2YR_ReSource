@@ -218,7 +218,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *p_houseTypes = &vt_TypeList; /*0x6a4819*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))((int)v3, (int *)&aP1, 4, 0); /*0x6a482a*/
-    for ( i = 0; i   <   (int)((int)(aP1)); ++i ) /*0x6a4833*/
+    for ( i = 0; i   <   (int)(aP1)); ++i ) /*0x6a4833*/
     {
       (*(void (**)(int, SideClass **, int, unsigned int))(*(unsigned int *)v3 + 12))((int)v3, (SideClass **)&a0, 4, 0); /*0x6a4840*/
       v7 = p_houseTypes[2]; /*0x6a4843*/

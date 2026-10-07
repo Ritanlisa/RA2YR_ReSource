@@ -183,6 +183,7 @@ struct SessionClass {
     unsigned int q_307E;  // +0x307E flat supply (three-ban reform)
     unsigned int q_3082;  // +0x3082 flat supply (three-ban reform)
     unsigned int q_3086;  // +0x3086 flat supply (three-ban reform)
+    char unknown_2854[2180];  // 0x2854 (W13A til SessionClass size 12508 tail; compile-stride carrier, appended at end)
 };
 
 } // namespace gamemd

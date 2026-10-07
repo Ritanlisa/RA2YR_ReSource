@@ -256,7 +256,7 @@ int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
   {
     v16 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(dword_8B3CC8)));
     if ( dword_8B3CC8 < 0 ) /*0x4d0e2f*/
-      return (int)((gamemd::AbstractClass *)((int)this); /*0x4d0e2f*/);
+      return (int)((gamemd::AbstractClass *)((int)this)); /*0x4d0e2f*/
   }
   else
   {
@@ -525,7 +525,7 @@ LABEL_47:
     --v46; /*0x4d1306*/
   }
   while ( !v43 ); /*0x4d130a*/
-  Cell::CreateCrater((void *)(*((unsigned int *)this + 16)),(void *)( *((unsigned int *)this + 17)),(void *)( *((unsigned int *)this + 18)), *((unsigned int *)this + 19), 0); /*0x4d1338*/
+  Cell::CreateCrater((void *)(*((unsigned int *)this + 16)),(void *)( *((unsigned int *)this + 17)),(void *)( *((unsigned int *)this + 18)),(void *)(*((unsigned int *)this + 19)), 0); /*0x4d1338*/
   *((unsigned int *)this + 16) += (&g_TacticalClass_Instance)[44].__tail_0; /*0x4d134d*/
   *((unsigned int *)this + 17) += (&g_TacticalClass_Instance)[45].__tail_0; /*0x4d135f*/
 return (gamemd::AbstractClass *)this; /*0x4d1364*/
@@ -1349,7 +1349,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
     (*(void (**)(FoggedObjectClass *))((char *)this->vtable1 + 12))((FoggedObjectClass *)this); /*0x4e078e*/
   }
   v7 =(int)this->vtable2; /*0x4e0791*/
-  if ( v7   <   (int)((int)(this->uniqueId ))) /*0x4e0799*/
+  if ( v7   <   (int)(this->uniqueId ))) /*0x4e0799*/
     this->uniqueId =(void *)v7; /*0x4e079b*/
   return 1; /*0x4e079e*/
 

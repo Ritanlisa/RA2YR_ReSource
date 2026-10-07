@@ -1240,7 +1240,7 @@ unsigned char * E4Recv_434700::sub_434700()
     unsigned int v9; // ecx
 
     result = malloc(*((unsigned int *)this->? + 1) * *((unsigned int *)this->? + 2) + 2); /*0x434713*/
-    vtable1 = this->?; /*0x434718*/
+    vtable1 = this->vtable2; /*0x434718*/
     this->? = result; /*0x434720*/
     if ( vtable1 ) /*0x434723*/
     {
@@ -1254,7 +1254,7 @@ unsigned char * E4Recv_434700::sub_434700()
           *result = *v5; /*0x434748*/
           v7 = this->?; /*0x43474a*/
           v8 = 0; /*0x434750*/
-          for ( result = (char *)this->? + 1; v8 < v7[2]; ++v8 ) /*0x434752*/
+          for ( result = (char *)this->vtable3 + 1; v8 < v7[2]; ++v8 ) /*0x434752*/
           {
             v9 = 0; /*0x43475e*/
             if ( v7[1] ) /*0x43475b*/
@@ -2133,7 +2133,7 @@ int E4Recv_43A670::sub_43A670()
     int v4; // ecx
 
     v2 = 0; /*0x43a675*/
-    abstractFlags = this->?; /*0x43a677*/
+    abstractFlags = this->abstractFlags; /*0x43a677*/
     if ( abstractFlags > 0 ) /*0x43a67c*/
     {
       do /*0x43a69d*/
@@ -2158,7 +2158,7 @@ int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
     int v6; // ecx
 
     v4 = 0; /*0x43a6b5*/
-    abstractFlags = this->?; /*0x43a6b7*/
+    abstractFlags = this->abstractFlags; /*0x43a6b7*/
     if ( abstractFlags > 0 ) /*0x43a6bc*/
     {
       do /*0x43a6dd*/
@@ -2193,7 +2193,7 @@ int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
     v3 = a2; /*0x43a773*/
     if ( !a2 ) /*0x43a77c*/
       return -2147467261; /*0x43a781*/
-    abstractFlags = (unsigned int *)this->?; /*0x43a78a*/
+    abstractFlags = (unsigned int *)this->abstractFlags; /*0x43a78a*/
     v7 = *a2; /*0x43a78d*/
     v10 = a2; /*0x43a798*/
     a2 = abstractFlags; /*0x43a799*/

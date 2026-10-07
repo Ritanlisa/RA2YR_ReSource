@@ -51,6 +51,8 @@
 #include "e4/classes/Settings_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GDlg_e4.hpp"  // G57w10 D supply
@@ -369,7 +371,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           v20 = Random::Range((Random *)(&Randomizer_Global), 1, 0x7FFF); /*0x5dec47*/
           srand(v20); /*0x5dec4d*/
           *(unsigned int *)((char *)&stru_A8EB00 + 432) = rand(); /*0x5dec5c*/
-          ((Dialog*)(Dialog *)hDlg)->RestoreParent(); /*0x5dec61*/
+          ((::gamemd::Dialog*)(::gamemd::Dialog *)hDlg)->RestoreParent(); /*0x5dec61*/
           SkirmishDialog::FillComboBoxes( (SkirmishDialog *)hDlg); /*0x5dec68*/
           InitGameDropdownColors( (void *)(v31)); /*0x5dec6d*/
           ((Lobby *)((Lobby *)hDlg))->FillPlayerFactions(); /*0x5dec74*/
@@ -408,7 +410,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           }
           ((NetworkLobby *)((NetworkLobby *)hDlg))->Dispatch(); /*0x5dedb1*/
           SetDialogPlayerName( (HWND)(hDlg), (int)dword_A8B23C); /*0x5dedbe*/
-          ((Dialog*)(Dialog *)hDlg)->ShowPlayerName(); /*0x5dedc5*/
+          ((::gamemd::Dialog*)(::gamemd::Dialog *)hDlg)->ShowPlayerName(); /*0x5dedc5*/
           ((Session*)(HWND)((Session *)hDlg))->StartGame(); /*0x5dedcc*/
           PlayerCountMap = ReadPlayerCountMap(*(int *)&((unsigned char *)&stru_A8B250)[4]); /*0x5dede2*/
           if ( !dword_A8B23C /*0x5dedfe*/
@@ -483,7 +485,7 @@ LABEL_132:
           ((Skirmish *)(g_UIControlState))->RenderPreview(hDlg); /*0x5de644*/
         if ( (uint8_t)((LoadScreen *)((LoadScreen *)&stru_AC4B30.__pad_EC[828]))->IsActive() ) /*0x5de64e*/
           LoadScreen::Render((int)&stru_AC4B30.__pad_EC[828], lParam, nIDDlgItem, NAN); /*0x5de664*/
-        ((Dialog*)(Dialog *)hDlg)->StopBink(); /*0x5de66b*/
+        ((::gamemd::Dialog*)(::gamemd::Dialog *)hDlg)->StopBink(); /*0x5de66b*/
         ValidateRect(hDlg, 0); /*0x5de673*/
         result = 0; /*0x5de67c*/
         break; /*0x5de685*/
@@ -605,7 +607,7 @@ LABEL_58:
           *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = (unsigned int)v12; /*0x5de9d1*/
         byte_8316D4 = 1; /*0x5de9eb*/
         ShowWindow(hDlg, 5); /*0x5de9f2*/
-        ((Dialog*)(Dialog *)hDlg)->ShowPlayerName(); /*0x5de9f6*/
+        ((::gamemd::Dialog*)(::gamemd::Dialog *)hDlg)->ShowPlayerName(); /*0x5de9f6*/
         ((Session*)(HWND)((Session *)hDlg))->StartGame(); /*0x5de9fd*/
         v13 = ReadPlayerCountMap(*(int *)&((unsigned char *)&stru_A8B250)[4]); /*0x5dea13*/
         if ( !dword_A8B23C /*0x5dea2f*/
@@ -1109,7 +1111,7 @@ LABEL_79:
           NetworkShare::GetField((HWND)(*(int *)&((unsigned char *)&HouseClass_Player)[39231]));
           LoadingScreen::Init();
           DialogIndirect = (DLGTEMPLATE *)CreateDialogIndirect(g_hInstance, (HWND)0xBD, g_hWnd, GameLobby::DlgProc, 0);
-          SetupDialog((HWND)DialogIndirect, 189);
+          SetupDialog((gamemd::Dialog *)((HWND)DialogIndirect), 189);
           ShowWindow((HWND)DialogIndirect, 1);
           v110 = 1;
           SendNetworkHeartbeat(1, 1, 1, 0);
@@ -1141,7 +1143,7 @@ SetupNetworkLobbyDialog( (char *)((VectorClass_flat *)&((unsigned char *)&HouseC
           }
           continue;
         case 0x18:
-          Block = _strdup((INIClass *)&((unsigned char *)&HouseClass_Player)[39196]);
+          Block = _strdup((const char *)((INIClass *)&((unsigned char *)&HouseClass_Player)[39196]));
           edi148 = 0;
           v44 = (SessionClass *)&((unsigned char *)&HouseClass_Player)[40260];
           while ( 1 )
@@ -1156,19 +1158,19 @@ SetupNetworkLobbyDialog( (char *)((VectorClass_flat *)&((unsigned char *)&HouseC
           }
           if ( edi148 != -1 && !*((unsigned char *)&g_MatrixTransformState + 5208) )
           {
-            char * v47 = strtok(Block, (ObjectClass *)&stru_817F40.nextObject);
+            char * v47 = strtok(Block,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
             v48 = (SkirmishDialog *)(0);
             if ( v47 )
               v48 = (SkirmishDialog *)atol(v47);
-            char * v49 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+            char * v49 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
             int v50 = 0;
             if ( v49 )
               v50 = atol(v49);
-            char * v51 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+            char * v51 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
             int v52 = 0;
             if ( v51 )
               v52 = atol(v51);
-            char * v53 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+            char * v53 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
             aP1 = (SessionClass *)(0);
             if ( v53 )
               aP1 = (SessionClass *)atol(v53);
@@ -1229,7 +1231,7 @@ LABEL_151:
                 *(&g_MatrixTransformState + 1301) = (CoordStruct *)-1;
               RA2_OPDEL(*(void **)(*(unsigned int *)&HouseClass_Player[40212] + 4 * i));
   int v61; // eax
-v61 = (*(int (**)(char *, int))(*(unsigned int *)&HouseClass_Player[40208] + 16))( (char *)(&HouseClass_Player[40208]), *(unsigned int *)&HouseClass_Player[40212] + 4 * i);
+v61 = (unsigned int)((*(int (**)(char *, int))(*(unsigned int *)&HouseClass_Player[40208] + 16))( (char *)(&HouseClass_Player[40208]), *(unsigned int *)&HouseClass_Player[40212] + 4 * i));
 
 
               if ( v61 != -1 && v61 < *(int *)&HouseClass_Player[40224] )

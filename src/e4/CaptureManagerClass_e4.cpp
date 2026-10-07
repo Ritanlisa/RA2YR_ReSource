@@ -633,7 +633,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
     {
       __asm { fild dword ptr [ebx+6Ch] } /*0x472497*/
       __asm { fstp [esp+20h+var_8] }
-      _EAX = (unsigned int *)((*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX)); /*0x4724a2*/
+      _EAX = (unsigned int *)((*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 132))((unsigned char *)(_EBX))); /*0x4724a2*/
       __asm { fild dword ptr [eax+0A0h] } /*0x4724a8*/
       _ESI = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4724ae*/
       __asm /*0x4724b4*/

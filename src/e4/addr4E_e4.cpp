@@ -38,6 +38,9 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/FileFind_e4.hpp"
 #include "e4/classes/Straw_e4.hpp"
+#include "e4/classes/IPXManagerClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/TabClass_e4.hpp"
 #include "classes/ObjectTypeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply

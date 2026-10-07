@@ -660,7 +660,7 @@ void * Object::DrawObject(void ** Block, char a2)
   int v3; // eax
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vtable1 = &vt_OverlayClass; /*0x5fdf76*/
+  this->vtable1 = (unsigned int)&vt_OverlayClass; /*0x5fdf76*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf7c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf83*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_OverlayClass); /*0x5fdf8a*/

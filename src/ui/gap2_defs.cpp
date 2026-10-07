@@ -386,7 +386,7 @@ int DropListClass::AddItem() {
 }
 // 0x4B50C0
 namespace gamemd { 
-int DropListClass::Open(int a1, void* a2, void* a3) {
+int DropListClass::Open(char a2, _DWORD *a3, char *a4) {
     int DropListClass_field_0x24; // eax
     int DropListClass_field_0x10; // edx
     int DropListClass_field_0x14; // eax
@@ -403,18 +403,18 @@ int DropListClass::Open(int a1, void* a2, void* a3) {
       if ( IDA_LOBYTE(this->DropListClass_field_0x48) ) /*0x4b50da*/
       {
         (*(void (__thiscall **)(char *))(*((unsigned int *)this + 44) + 36))((char *)this + 176); /*0x4b50ed*/
-        DropListClass_field_0x24 = this->DropListClass_field_0x24; /*0x4b50f0*/
+        DropListClass_field_0x24 = (unsigned int)(this->DropListClass_field_0x24)); /*0x4b50f0*/
         IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b50f3*/
         IDA_BYTE1(DropListClass_field_0x24) |= 0x80u; /*0x4b50f7*/
         *a3 = DropListClass_field_0x24; /*0x4b50fa*/
       }
       else
       {
-        DropListClass_field_0x10 = this->DropListClass_field_0x10; /*0x4b5101*/
-        DropListClass_field_0x14 = this->DropListClass_field_0x14; /*0x4b5104*/
+        DropListClass_field_0x10 = (unsigned int)(this->DropListClass_field_0x10)); /*0x4b5101*/
+        DropListClass_field_0x14 = (unsigned int)(this->DropListClass_field_0x14)); /*0x4b5104*/
         v8 = *((unsigned int *)this + 44); /*0x4b5108*/
         *((unsigned int *)this + 47) = this->DropListClass_field_0x0C; /*0x4b510e*/
-        DropListClass_field_0x4C = this->DropListClass_field_0x4C; /*0x4b5114*/
+        DropListClass_field_0x4C = (unsigned int)(this->DropListClass_field_0x4C)); /*0x4b5114*/
         *((unsigned int *)this + 48) = DropListClass_field_0x10 + 18; /*0x4b511b*/
         v10 = *(unsigned int *)this->__pad_0; /*0x4b5121*/
         *((unsigned int *)this + 50) = DropListClass_field_0x4C; /*0x4b5129*/
@@ -432,7 +432,7 @@ int DropListClass::Open(int a1, void* a2, void* a3) {
       v13 = (const wchar_t *)(*(int (__thiscall **)(char *))(*((unsigned int *)this + 44) + 156))((char *)this + 176); /*0x4b5161*/
       wcsncpy((wchar_t *)this->DropListClass_field_0x34, v13, DropListClass_field_0x38); /*0x4b516c*/
       (*(void (__thiscall **)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b5178*/
-      v12 = this->DropListClass_field_0x24; /*0x4b517b*/
+      v12 = (unsigned int)(this->DropListClass_field_0x24)); /*0x4b517b*/
       IDA_BYTE1(v12) |= 0x80u; /*0x4b517e*/
       *a3 = v12; /*0x4b5181*/
     }
@@ -539,7 +539,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
     {
       v6 = a2 & 0xFFFFFFFE; /*0x4c31af*/
       (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 80))(this); /*0x4c31b2*/
-      (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))(this); /*0x4c31b9*/
+      (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))((gamemd::EditClass *)(this)); /*0x4c31b9*/
     }
     if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *))(*(unsigned int *)this + 88))(this) ) /*0x4c31cd*/
       return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c31d2*/
@@ -662,7 +662,7 @@ void* DropListClass::GetItemText(void* a1) {
 
 // 0x4C3420
 namespace gamemd { 
-int DropListClass::SetItemText(int a1) {
+int DropListClass::SetItemText(int C) {
     int v3; // edi
     FontClass *Instance; // ebx
     int v5; // ebp
@@ -742,7 +742,7 @@ int DropListClass::Close() {
 
 // 0x5005B0
 namespace gamemd { 
-int SidebarClass::MarkTabForRebuild(int a1, int a2, int a3) {
+int SidebarClass::MarkTabForRebuild(int a2, char a3, int a4) {
     char result; // al
 
     result = a2 - 1; /*0x5005b5*/
@@ -781,7 +781,7 @@ int SidebarClass::MarkTabForRebuild(int a1, int a2, int a3) {
 
 // 0x500700
 namespace gamemd { 
-int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
+int SidebarClass::getTypeProductionCount(int a2, char a3, int a4) {
     char result; // al
 
     switch ( a2 ) /*0x500712*/
@@ -902,7 +902,7 @@ int TauntCommandClass::Do(int a1) {
         {
           dword_825C88 = Time; /*0x5363c6*/
           v19 = 29; /*0x5363d1*/
-          strcpy(v20, ToWideStringChar((char *)*dword_A8DA78)); /*0x5363fb*/
+          strcpy(v20,(const char *)(ToWideStringChar((char *)*dword_A8DA78))); /*0x5363fb*/
           v23 = dword_A8B394; /*0x53640a*/
           v4 = WideString::Hash((wchar_t *)&stru_A8D600.q010); /*0x536413*/
           TauntCommandClass_field_00 = this->TauntCommandClass_field_00; /*0x53641e*/

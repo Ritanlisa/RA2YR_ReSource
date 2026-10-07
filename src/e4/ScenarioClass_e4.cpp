@@ -57,6 +57,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Node_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
@@ -78,7 +79,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
   result = (void *)(dword_A8B230);
   if ( dword_A8B230 ) /*0x58bb38*/
   {
-    ((unsigned int *)(dword_A8B230))[122].abstractFlags = (gamemd::AbstractClass *)(g_MissionQueueFrame.localVariables[162]);
+    ((unsigned int *)(dword_A8B230))[122].abstractFlags = (::gamemd::AbstractClass *)(g_MissionQueueFrame.localVariables[162]);
     v2 = dword_A8B230; /*0x58bb4b*/
     v3 = 0; /*0x58bb52*/
     if ( ((unsigned int *)(dword_A8B230))[122].abstractFlags > 0 ) /*0x58bb5c*/
@@ -116,7 +117,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions(void *a1)
     result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bc0a*/
     ((unsigned int *)(dword_A8B230))[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bc0f*/
   }
-  return (gamemd::ScenarioClass **)(result);
+  return (::gamemd::ScenarioClass **)(result);
 
 }
 }
@@ -160,7 +161,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v6 = *(unsigned int *)(v4 + 24); /*0x5cc344*/
   if ( *(unsigned int *)(v4 + 16) != -1 ) /*0x5cc34a*/
   {
-        v6 = ((gamemd::Timer*)0)->GetTicks() - *(unsigned int *)((unsigned int)(a1)+ 16);
+        v6 = ((::gamemd::Timer*)0)->GetTicks() - *(unsigned int *)((unsigned int)(a1)+ 16);
     if ( v7 >= v6 ) /*0x5cc359*/
       goto LABEL_6; /*0x5cc359*/
     v6 -= v7; /*0x5cc35b*/
@@ -177,7 +178,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   }
   LABEL_6:
   v8 = *(unsigned int *)(v5 + 36); /*0x5cc365*/
-    *(unsigned int *)((unsigned int)(a1)+ 16) = ((gamemd::Timer*)0)->GetTicks();
+    *(unsigned int *)((unsigned int)(a1)+ 16) = ((::gamemd::Timer*)0)->GetTicks();
   *(unsigned int *)(v5 + 20) = v30; /*0x5cc378*/
   v9 = *(unsigned int *)(v5 + 64); /*0x5cc37b*/
   *(unsigned int *)(v5 + 24) = v8; /*0x5cc381*/
@@ -217,7 +218,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v31 = *(unsigned int *)(v5 + 8); /*0x5cc456*/
   v17 = (int *)(*(int (**)(void *))(v16 + 120))( (void *)(aP0)); /*0x5cc45a*/
   DrawToSurfaceSHP(/*0x5cc470*/
-    (int)aP0, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v17), (gamemd::ConvertClass *)((int)v33), (gamemd::ConvertClass *)(v27), 0, 0, 0, 1000, 0, 0, 0, 0);
+    (int)aP0, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v17), (::gamemd::ConvertClass *)((int)v33), (::gamemd::ConvertClass *)(v27), 0, 0, 0,(::gamemd::ConvertClass *)(1000), 0, 0, 0, 0);
   v18 = (void *)((int)((*(unsigned int *)(v5 + 68))));
   if ( v18 ) /*0x5cc47a*/
   {
@@ -245,9 +246,9 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
     v30 = *(unsigned int *)(v5 + 8); /*0x5cc4e8*/
     v24 = (int *)(*(int (**)(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))( (MSOverlayAnim *)(aP0), (int *)(&v32)); /*0x5cc4f5*/
     DrawToSurfaceSHP(/*0x5cc50f*/
-      (int)DSurface_Alternate, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v24), (gamemd::ConvertClass *)(v28), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+      (int)DSurface_Alternate, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v24), (::gamemd::ConvertClass *)(v28), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
   }
-  return (gamemd::CampaignClass **)(*(unsigned char *)(v5 + 72) == 0);
+  return (::gamemd::CampaignClass **)(*(unsigned char *)(v5 + 72) == 0);
 }
 }
 // 0x5D6430
@@ -316,9 +317,9 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   unsigned char *v11; // edi
 
   SeedInitRNG((ObjectClass *)&this->random[1], 0); /*0x6832cf*/
-  this->elapsedTimer[1] = ((gamemd::Timer *)this)->GetTicks(); /*0x6832e5*/
+  this->elapsedTimer[1] = ((::gamemd::Timer *)this)->GetTicks(); /*0x6832e5*/
   this->pauseTimer[0] = 0; /*0x6832eb*/
-  this->pauseTimer[1] = ((gamemd::Timer *)this)->GetTicks(); /*0x6832f6*/
+  this->pauseTimer[1] = ((::gamemd::Timer *)this)->GetTicks(); /*0x6832f6*/
   *(unsigned int *)this->__pad_628 = 0; /*0x6832fc*/
   v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683302*/
   this->missionTimer[2] = 0; /*0x683307*/
@@ -341,8 +342,8 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   this->ScenarioClass_field_timer_34C0[2] = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
-  this->dropshipCountsCount = (unsigned int)((gamemd::TechnoTypeClass *)(10)); /*0x68339a*/
-  this->allowableUnits[0] = (gamemd::TechnoTypeClass *)((int)&vt_TypeList); /*0x68339d*/
+  this->dropshipCountsCount = (unsigned int)((::gamemd::TechnoTypeClass *)(10)); /*0x68339a*/
+  this->allowableUnits[0] = (::gamemd::TechnoTypeClass *)((int)&vt_TypeList); /*0x68339d*/
   ((VectorClass *)((VectorClass *)&this->ambientCurrent))->Construct(0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/
   this->blue = 0; /*0x6833b5*/
@@ -436,7 +437,7 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
   int v22; // [esp+D8h] [ebp-24h]
   CHAR v23[28]; // [esp+E0h] [ebp-1Ch] BYREF
 
-  v4 = (char *)(Source); /*0x683ab8*/
+ v4 = (char *)((char *)(Source)); /*0x683ab8*/
   if ( (!Source || !strlen((const char *)(Source))) && a4  !=  (void *)(-1) ) /*0x683ade*/
   {
     if ( *((unsigned int *)((char *)&stru_A8EB00 + 377)) == 1 ) /*0x683ae7*/
@@ -479,7 +480,7 @@ LABEL_21:
     return 0; /*0x683d56*/
   }
   --dword_A8DAB4; /*0x683c03*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x683c11*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))((void *)(dword_887640));  /*0x683c11*/
   *((unsigned int *)((char *)&v19 + 0)) = 0; /*0x683c18*/
   *((unsigned int *)((char *)&v19 + 1)) = 0; /*0x683c1c*/
   ((GenericList *)((unsigned int *)((char *)&v19 + 2)))->Constructor(); /*0x683c20*/
@@ -515,7 +516,7 @@ LABEL_21:
   ((ThemeClass *)((ThemeClass *)&unk_A83D10))->Play(v11); /*0x683d1a*/
   if ( !((Scenario *)v4)->LoadWithProgress( a3) ) /*0x683d21*/
   {
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x683d32*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x683d32*/
     goto LABEL_21; /*0x683d32*/
   }
   referenceCount = ((AbstractClass *)dword_A8B230)[143].referenceCount; /*0x683d5e*/
@@ -566,7 +567,7 @@ int ScenarioClass::CleanupTemporary()
 
   sub_406F00(); /*0x683eb1*/
   dword_83D834 = sub_4072B0(g_MixerState); /*0x683ecc*/
-  EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerState), 0x4000); /*0x683ed1*/
+  EndBufferMixer((::gamemd::VolumeStruct *)((int *)g_MixerState), 0x4000); /*0x683ed1*/
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x683ee2*/
   {
     if ( ((AbstractClass *)dword_A8B230)[43].vtable2 != (void *)-1 ) /*0x683eff*/
@@ -589,8 +590,8 @@ int ScenarioClass::CleanupTemporary()
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x683f5d*/
     ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(0); /*0x683f61*/
   ((Mouse *)((ScrollClass *)&stru_87F5F0.__pad_58[416]))->ReleaseCapture(); /*0x683f6b*/
-  ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x683f79*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x683f86*/
+  ((Mouse *)((void *)((int)&stru_87F5F0.__pad_58[416])))->SetCursor(0, 0); /*0x683f79*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))((void *)(dword_887640));  /*0x683f86*/
   ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x683f90*/
   ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x683f9a*/
   return (*(int (**)(void *, ScenarioClass *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(
@@ -617,13 +618,13 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
       {
         if ( BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) == 1 ) /*0x6841bf*/
         {
-          while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) ) /*0x6841c9*/
-            (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x6841d8*/
+          while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))((void *)(dword_887640)) ) /*0x6841c9*/
+            (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x6841d8*/
           result = (unsigned char *)(dword_A8B230); /*0x6841ea*/
         }
         result[13730] = 0; /*0x6841ef*/
         *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 0; /*0x6841fc*/
-        ((gamemd::Timer*)(*(gamemd::Timer**)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x684203*/
+        ((::gamemd::Timer*)(*(::gamemd::Timer**)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x684203*/
         result = (unsigned char *)(dword_A8B230); /*0x684208*/
         dword_B07784 = 0; /*0x68420d*/
       }
@@ -663,7 +664,7 @@ int ScenarioClass_Construct(void * a2)
     Debug::Log("Read_Scenario_INI - Filename is %s\n"); /*0x6867aa G57c1: IDA 0x6867aa push offset aReadScenarioIn*/
     if ( ((CCINIClass *)(&v5))->Load((int)&v6, 1, 0) ) /*0x6867be*/
     {
-      strcpy((char *)&((AbstractClass *)dword_A8B230)[130].abstractFlags, Source); /*0x686836*/
+      strcpy((char *)&((AbstractClass *)dword_A8B230)[130].abstractFlags,(const char *)(Source)); /*0x686836*/
       Map = ScenarioClass::LoadMap(0, (bool *)v5.INIClass, a2); /*0x686851*/
       *(unsigned int *)v6.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x686853*/
       v8 = 0; /*0x68685b*/
@@ -766,7 +767,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
     char v53 = Bool_Overwrite;
     var158[2] = 0;
     ((GenericList *)(&v57))->Constructor();
-    v57 = &vt_List_INIClass_INISection;
+    v57 = (unsigned int)&vt_List_INIClass_INISection;
   unsigned int v58[6]; // [esp+44h] [ebp-130h] BYREF
     Node_flat::Init(v58);
     v58[5] = 0;
@@ -779,7 +780,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       {
         _splitpath((const char *)g_ScenarioClass_Instance->fileName, 0, 0, Filename[0], 0);
         strcat( Filename[0], (const char *)(&stru_830620[54836]));
-        ((gamemd::FileClass*)(aP1))->SetFileName((IUnknown *)&Filename);
+        ((::gamemd::FileClass*)(aP1))->SetFileName((IUnknown *)&Filename);
         if ( ((CCFileClass *)(aP1))->Open(0) )
         {
           ((CCINIClass *)(var158))->Load( (int)(aP1), 0, 0);
@@ -787,7 +788,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
         }
         CCFileClass::Reset(aP1);
       }
-      ((gamemd::FileClass*)(aP1))->SetFileName((IUnknown *)&stru_830620[37124]);
+      ((::gamemd::FileClass*)(aP1))->SetFileName((IUnknown *)&stru_830620[37124]);
       if ( ((CCFileClass *)(aP1))->Open(0) )
       {
         ((CCINIClass *)(var158))->Load( (int)(aP1), 0, 0);
@@ -842,7 +843,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
             v13 = GetStringCSF( (wchar_t *)g_ScenarioClass_Instance->uiName, 0, (const char *)(&stru_830620[53784]), 3179);
             wcsncpy( (wchar_t *)g_ScenarioClass_Instance->name, (const wchar_t *)(v13), 0x2Du);
             *(unsigned short *)&g_ScenarioClass_Instance->name[88] = 0;
-            sprintf((char *const)Buffer, &stru_830620[54828], g_ScenarioClass_Instance->uiName);
+            sprintf((char *const)Buffer,(const char *const)(&stru_830620[54828]), g_ScenarioClass_Instance->uiName);
             v14 = GetStringCSF( (wchar_t *)(Buffer), 0, (const char *)(&stru_830620[53784]), 3183);
             wcsncpy( (wchar_t *)g_ScenarioClass_Instance->uiNameLoaded, (const wchar_t *)(v14), 0x2Du);
             if ( !wcsncmp(
@@ -889,9 +890,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
         if ( &stru_830620 == (IUnknown *)-54744 )
           int v18 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
-          v18 = HashTableSection::FindSection(
-                  (int)var158,
-                  (CCINIClass *)g_ScenarioClass_Instance->fileName,
+          v18 = HashTableSection::FindSection((uint8_t *)((int)var158),(uint8_t *)((CCINIClass *)g_ScenarioClass_Instance->fileName),
                   (CCINIClass *)&stru_830620[54744]);
         if ( v18 )
           g_ScenarioClass_Instance->ls640BriefLocY = INIClass::ReadInt_Overwrite(
@@ -902,9 +901,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
         if ( &stru_830620 == (IUnknown *)-54728 )
           int v19 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
-          v19 = HashTableSection::FindSection(
-                  (int)var158,
-                  (CCINIClass *)g_ScenarioClass_Instance->fileName,
+          v19 = HashTableSection::FindSection((uint8_t *)((int)var158),(uint8_t *)((CCINIClass *)g_ScenarioClass_Instance->fileName),
                   (CCINIClass *)&stru_830620[54728]);
         if ( v19 )
           g_ScenarioClass_Instance->ls800BriefLocX = INIClass::ReadInt_Overwrite(
@@ -915,8 +912,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
         if ( &stru_830620 == (IUnknown *)-54712 )
           int v20 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
-          v20 = HashTableSection::FindSection(
-                  (int)var158,
+          v20 = HashTableSection::FindSection((uint8_t *)((int)var158),
                   (CCINIClass *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54712]);
         if ( v20 )
@@ -1203,7 +1199,7 @@ LABEL_124:
     if ( g_NetworkPlayerBuffer[5973] )
     {
       CCFileClass::Reset(aP1);
-      ((gamemd::FileClass*)(aP1))->SetFileName((IUnknown *)&stru_830620[54640]);
+      ((::gamemd::FileClass*)(aP1))->SetFileName((IUnknown *)&stru_830620[54640]);
       if ( ((CCFileClass *)(aP1))->Open(0) == 1 )
       {
         ((CCINIClass *)(var158))->Load( (int)(aP1), 0, 0);

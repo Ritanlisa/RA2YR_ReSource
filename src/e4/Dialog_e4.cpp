@@ -33,6 +33,7 @@
 #include "e4/classes/TimerPool_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Options_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ListBox_e4.hpp"  // G42.36 C2027 supply

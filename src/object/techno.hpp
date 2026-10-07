@@ -1103,7 +1103,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int processMoveState(int a1, void* a2, void* a3);  // 0x41C670
     int processHarvestState(int a1);  // 0x41C680
     int processDeployState(int a1);  // 0x41C690
-    int checkRange(int a1);  // 0x439080
+    int checkRange(int a2);  // 0x439080
     int updateHealthBar();  // 0x46B270
     int checkCloakState();  // 0x4A50F0
     void* GetWeaponType(void* a1);  // 0x4C9470

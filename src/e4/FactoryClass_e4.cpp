@@ -513,14 +513,14 @@ int FactoryClass::CountType(int aP1)
   v3 = 0; /*0x4ca679*/
   v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
-    v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4)   ==   (int)((int)(aP1)); /*0x4ca68e*/
+    v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4)   ==   (int)(aP1)); /*0x4ca68e*/
   v5 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca693*/
   if ( v5 > 0 ) /*0x4ca698*/
   {
     v6 = *(unsigned int **)&this->__pad_42[2]; /*0x4ca69a*/
     do /*0x4ca6a6*/
     {
-      if ( *v6   ==   (unsigned int)((unsigned int)(aP1 ))) /*0x4ca69f*/
+      if ( *v6   ==   (unsigned int)(aP1 ))) /*0x4ca69f*/
         ++v3; /*0x4ca6a1*/
       ++v6; /*0x4ca6a2*/
       --v5; /*0x4ca6a5*/
@@ -586,7 +586,7 @@ v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C
   if ( byte_A8E9A0 ) /*0x4ca7e6*/
     BuildingClass::AbandonProduction((gamemd::BuildingClass *)((int)this)); /*0x4ca7ea*/
   v7 = (gamemd::FactoryClass *)(this); /*0x4ca7ff*/
-v4 = (*(int (**)(int *, FactoryClass **))(dword_B0F720+ 16))( /*0x4ca803*/ &dword_B0F720, (FactoryClass **)(&v7));
+v4 = (*(int (**)(int *, FactoryClass **))(dword_B0F720+ 16))( /*0x4ca803*/ &dword_B0F720, (FactoryClass **)((int *)((int *)((int *)(&v7)))));
 
 
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4ca813*/

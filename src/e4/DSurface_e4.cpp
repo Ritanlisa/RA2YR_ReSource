@@ -90,7 +90,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = 7; /*0x4ba604*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 12) = (unsigned int)(aP1); /*0x4ba60e*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 8) = (unsigned int)(aP2); /*0x4ba618*/
-    if ( aP3  ==  (int)((int)(1) )) /*0x4ba621*/
+    if ( aP3  ==  (int)(1) )) /*0x4ba621*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 8256; /*0x4ba63e*/

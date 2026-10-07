@@ -82,14 +82,12 @@ namespace gamemd {
 void nullsub_234();  // def later in this TU (atexit target)
 void sub_6C6B60(void);  // def later in this TU (atexit target)
 // G42.33 b12 TU-local carriers 2 (fwd-only in _fwd_e4.hpp)
-namespace gamemd { struct LineTrail { unsigned char lineTrailer[4]; }; }  // minimal E2 (compile stride; layout via member_lookup pending)
-namespace gamemd { struct ShapeButtonClass { static void Init(void * aP0); static void Destructor(void * aP0); }; }  // minimal E2 static-form
+ struct LineTrail { unsigned char lineTrailer[4]; };   // minimal E2 (compile stride; layout via member_lookup pending)
+ namespace gamemd { struct ShapeButtonClass { static void Init(void * aP0); static void Destructor(void * aP0); }; }   // minimal E2 static-form
 // G42.33 b12 TU-local fwd decls 2 (use-before-def atexit targets)
-namespace gamemd {
 void sub_6CFBD0();
 void sub_6CFC20();
 void sub_6CFC60();
-}
 }
 #ifndef GAMEMD_E4_TU_rc_ptr_base
 #define GAMEMD_E4_TU_rc_ptr_base 1  // G57c6: suppress minimal_carriers.hpp twin (TU-local def below)

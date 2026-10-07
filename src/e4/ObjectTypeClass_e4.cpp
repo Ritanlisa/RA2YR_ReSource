@@ -790,7 +790,7 @@ int ObjectTypeClass::SetRTTI71()
 
   int result; // eax
 
-  BYTE1(this->AbstractTypeClass) = 71; /*0x5f9710*/
+  BYTE1(this->vtable1) = 71; /*0x5f9710*/
   return result; /*0x5f9714*/
 
 }
@@ -1390,7 +1390,7 @@ int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2
   {
     if ( _strcmpi(v4, (char *)g_INI_Key_Normal) ) /*0x4775fa*/
     {
-      v6 = _strcmpi(v4, aStrong) == 0; /*0x477624*/
+      v6 = _strcmpi(v4,(const char *)(aStrong)) == 0; /*0x477624*/
       result = 2; /*0x477626*/
       if ( !v6 ) /*0x47762b*/
         return (int)(aP3); /*0x47762d*/
@@ -1447,14 +1447,14 @@ void ObjectTypeClass::ReleaseWaveAndString(void *a1)
   void *vtable0; // edi
   String *vtable1; // edi
 
-  vtable0 = this->AbstractTypeClass; /*0x5f61a4*/
-  if ( this->AbstractTypeClass ) /*0x5f61a4*/
+  vtable0 = this->vtable1; /*0x5f61a4*/
+  if ( this->vtable1 ) /*0x5f61a4*/
   {
-    ((WaveClass *)(this->AbstractTypeClass))->Destroy(); /*0x5f61ac*/
+    ((WaveClass *)(this->vtable1))->Destroy(); /*0x5f61ac*/
     __3_YAXPAX_Z(vtable0); /*0x5f61b2*/
   }
   vtable1 = (String *)((unsigned int *)this)[0]; /*0x5f61ba*/
-  this->AbstractTypeClass = 0; /*0x5f61bd*/
+  this->vtable1 = 0; /*0x5f61bd*/
   if ( vtable1 ) /*0x5f61c5*/
   {
     ((String *)vtable1)->Release(); /*0x5f61c9*/
@@ -1544,8 +1544,8 @@ namespace gamemd {
 int ObjectTypeClass::FreeLoaderBuffer()
 {
 
-  __3_YAXPAX_Z(this->AbstractTypeClass); /*0x5f9b66*/
-  this->AbstractTypeClass = 0; /*0x5f9b70*/
+  __3_YAXPAX_Z(this->vtable1); /*0x5f9b66*/
+  this->vtable1 = 0; /*0x5f9b70*/
   ((unsigned int *)this)[0] = 0; /*0x5f9b72*/
   ((unsigned int *)this)[0] = 0; /*0x5f9b75*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x5f9b78*/
@@ -1586,13 +1586,13 @@ int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * 
 
   if ( this != (ObjectTypeClass *)aP2 ) /*0x7179d7*/
   {
-    this->AbstractTypeClass = (void *)*aP2; /*0x7179dd*/
+    this->vtable1 = (void *)*aP2; /*0x7179dd*/
     ((unsigned int *)this)[0] = (unsigned int)(void *)aP2[1]; /*0x7179e2*/
     ((unsigned int *)this)[0] = (unsigned int)(void *)aP2[2]; /*0x7179e8*/
     ((unsigned int *)this)[0] = (unsigned int)(void *)aP2[3]; /*0x7179ee*/
     LOWORD(((unsigned int *)this)[0]) = *((unsigned short *)aP2 + 8); /*0x7179f5*/
   }
-  *(unsigned int *)aP1 = this->AbstractTypeClass; /*0x717a01*/
+  *(unsigned int *)aP1 = this->vtable1; /*0x717a01*/
   *(unsigned int *)((char *)aP1 +) = ((unsigned int *)this)[0]; /*0x717a06*/
   *(unsigned int *)(aP1 + 8) = ((unsigned int *)this)[0]; /*0x717a0c*/
   *(unsigned int *)(aP1 + 12) = ((unsigned int *)this)[0]; /*0x717a12*/
@@ -1606,7 +1606,7 @@ namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A30(int a2)
 {
 
-  this->AbstractTypeClass = (void *)a2; /*0x717a34*/
+  this->vtable1 = (void *)a2; /*0x717a34*/
   return a2; /*0x717a36*/
 
 }
@@ -1688,7 +1688,7 @@ namespace gamemd {
 BOOL ObjectTypeClass::loadTypeMember_5717AE0()
 {
 
-  return LOBYTE(this->AbstractTypeClass) == 0; /*0x717ae9*/
+  return LOBYTE(this->vtable1) == 0; /*0x717ae9*/
 
 }
 } // namespace gamemd

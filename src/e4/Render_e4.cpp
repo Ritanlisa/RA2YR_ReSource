@@ -66,7 +66,7 @@ int Render_Load(void * a1, void * a2, void * a3)
   (*(void (**)(int, unsigned int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_60))(g_DSurface_Hidden, 0);  /*0x52ffa0*/
   int v8; // [esp+4h] [ebp-4h]
   int v7; // [esp+0h] [ebp-8h]
-  result = ScoreScreen::DrawSHPBackground((char *)&Source, (int *)g_DSurface_Hidden, (int)(a2), a3, (int)&DataGlobal_886080, v7, v8); /*0x52ffb0*/
+  result = ScoreScreen::DrawSHPBackground((char *)&Source, (int *)g_DSurface_Hidden, (int)(a2),(int)(a3), (int)&DataGlobal_886080, v7, v8); /*0x52ffb0*/
   if ( a2 ) /*0x52ffb9*/
   {
     IDA_LOBYTE(v6) = 1; /*0x52ffc3*/
@@ -1156,7 +1156,7 @@ char sub_731BF0()
 
   if ( byte_B0FE58 ) /*0x731bfa*/
     return 1; /*0x731c01*/
-  v1 = ((Mouse *)(dword_A8EC00))->IsButtonDown((int)((Mouse *)(dword_A8EC00))) || ((Mouse *)(dword_A8EC04))->IsButtonDown((int)ord_A8EC00))->IsButtonDown((int)((Mouse *)(dword_A8EC00))) || ((Mouse *)(dword_A8EC04))); /*0x731c31*/
+  v1 = ((Mouse *)(dword_A8EC00))->IsButtonDown((int)((Mouse *)(dword_A8EC00))) || ((Mouse *)(dword_A8EC04))->IsButtonDown((int)ord_A8EC00))->IsButtonDown((int)((Mouse *)(dword_A8EC00))) || ((Mouse *)(dword_A8EC04); /*0x731c31*/
   if ( ((Mouse *)(dword_A8EC08))->IsButtonDown((int)((Mouse *)(dword_A8EC08))) || (IsButtonDown = ((Mouse *)(dword_A8EC0C))->IsButtonDown((int)ButtonDown((int)((Mouse *)(dword_A8EC08))) || (IsButtonDown = ((Mouse *)(dword_A8EC0C)))) ) /*0x731c54*/
     IsButtonDown = 1; /*0x731c5d*/
   if ( v1 && IsButtonDown ) /*0x731c66*/
@@ -1927,7 +1927,7 @@ int sub_6D9A50(int a1, int a2, int a3, int a4)
         v8 = dword_886FA4 + v6[1]; /*0x6d9ac4*/
         if ( a1 < v6[2] + v7 && a2 < v6[3] + v8 && a1 + a3 > v7 && a4 + a2 > v8 ) /*0x6d9af2*/
         {
-          Cell::CreateCrater((void *)(*v6),(void *)( v6[1]),(void *)( v6[2]), v6[3], 0); /*0x6d9b15*/
+          Cell::CreateCrater((void *)(*v6),(void *)( v6[1]),(void *)( v6[2]),(void *)(v6[3]), 0); /*0x6d9b15*/
           v5[128] = 0; /*0x6d9b1a*/
         }
       }

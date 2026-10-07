@@ -19,6 +19,7 @@
 #include "e4/classes/ScoreScreen_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x52FEC0
 namespace gamemd {

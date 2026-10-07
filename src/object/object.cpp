@@ -110,7 +110,7 @@ int ObjectClass::Destroy()
       ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
     if ( this && (((unsigned int *)this)[0] & 1) != 0 ) /*0x5f6607*/
       ((TechnoClass *)this)->CleanupAll(0); /*0x5f660d*/
-    AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5f6616*/
+    AbstractClass::AnnounceExpiredPointer((int)(this), 1); /*0x5f6616*/
     (*((void (__thiscall **)(ObjectClass *))this->vtable1 + 53))(this); /*0x5f661f*/
     this->isAliveFlag = 0; /*0x5f6625*/
     result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
@@ -260,7 +260,7 @@ void AudioController::Stop()
     result = this->AudioController_field_00; /*0x405d41*/
     if ( g_AudioConfigState ) /*0x405d53*/
     {
-      if ( this->AudioController_field_0C == &dword_87E294 ) /*0x405d60*/
+      if ( this->AudioController_field_0C == &gamemd::dword_87E294 ) /*0x405d60*/
       {
         v2 = (&this->AudioController_field_00)[0]; /*0x405d66*/
         if ( (&this->AudioController_field_00)[0] ) /*0x405d66*/

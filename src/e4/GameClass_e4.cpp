@@ -164,7 +164,7 @@ int GameClass::loadScenarioFiles(int aP1)
     }
     this->GameClass_field_0x4[0] = 0; /*0x5d2320*/
     if ( dword_887640) /*0x5d2330*/
-return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x5d2337*/ dword_887640, (int)(v4), 0);
+return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x5d2337*/ dword_887640, (int)((void *)((void *)((void *)(v4)))), 0);
 
 
 
@@ -483,9 +483,9 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
   OleUninitialize(); /*0x6becc7*/
   if ( dword_887640) /*0x6becd5*/
   {
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x6becd9*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))((void *)(dword_887640));  /*0x6becd9*/
     if ( dword_887640) /*0x6bece4*/
-      (**(void (***)(void *, int))dword_887640)(dword_887640, 1); /*0x6bece9*/
+      (**(void (***)(void *, int))dword_887640)((void *)(dword_887640), 1); /*0x6bece9*/
   }
   dword_887640= 0; /*0x6becf0*/
   if ( byte_B0BCF4 ) /*0x6becfc*/

@@ -502,7 +502,7 @@ extern int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);
 extern int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned char * a3, int aP1, int a6);
 extern int UpdateMultiplayerLobbySlots(HWND a1 = 0, ObjectClass *a2 = 0, int a3 = 0);
 extern int UpdateSurfaceAnimations(int a1, int aP1, int a3, int a4);
-extern int WSAAsyncSelect();
+extern int __stdcall WSAAsyncSelect(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent);  // 0x7c89bc wsock32 导入 4 参真值 (IAT slot e4_globals_decls.hpp:2381 同形; disasm 0x7b1bdb/0x7b1c1f/0x7b3a55 各 4 push) W13-B g57w13b
 extern int WSACleanup();
 extern int WSAGetLastError();
 extern int WSAStartup(void *a1 = 0, void *a2 = 0);

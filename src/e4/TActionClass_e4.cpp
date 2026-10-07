@@ -43,6 +43,9 @@
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/Function_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/SuperWeaponClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -187,26 +190,26 @@ int sub_567F70(int * a1, int a2)
             IDA_HIWORD(v22) = v9 + v21; /*0x568045*/
             IDA_LOWORD(v22) = v10 + v20; /*0x56804a*/
             v15 = (unsigned int)(unsigned int *)(((int16_t)(v9 + v21) << 9) + (int16_t)(v10 + v20)); /*0x56805c*/
-            if ( v15  >=  (unsigned int)((unsigned int)(0x40000) || (v16 = (unsigned int)(*(unsigned int **)(v12 + 4 * v15))) == 0 )) /*0x56806e*/
+            if ( v15  >=  (unsigned int)(0x40000) || (v16 = (unsigned int)(*(unsigned int **)(v12 + 4 * v15))) == 0 )) /*0x56806e*/
             {
               dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
               v16 = unk_ABDC50; /*0x568076*/
             }
             if ( !((unsigned int *)(v16))[76] ) /*0x56807b*/
             {
-              if ( v15  >=  (unsigned int)((unsigned int)(0x40000) || (v17 = (unsigned int)(*(unsigned int **)(v12 + 4 * v15))) == 0 )) /*0x568098*/
+              if ( v15  >=  (unsigned int)(0x40000) || (v17 = (unsigned int)(*(unsigned int **)(v12 + 4 * v15))) == 0 )) /*0x568098*/
               {
                 dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
                 v17 = unk_ABDC50; /*0x5680a0*/
               }
               ((unsigned int *)(v17))[76] = (unsigned int)(1);
-              if ( v15  >=  (unsigned int)((unsigned int)(0x40000) || (v18 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v15))) == 0 )) /*0x5680c5*/
+              if ( v15  >=  (unsigned int)(0x40000) || (v18 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v15))) == 0 )) /*0x5680c5*/
               {
                 dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
                 v18 = unk_ABDC50; /*0x5680cd*/
               }
               ((unsigned int *)(v18))[75] &= ~8u; /*0x5680dd*/
-              if ( v15  >=  (unsigned int)((unsigned int)(0x40000) || (v19 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v15))) == 0 )) /*0x5680f7*/
+              if ( v15  >=  (unsigned int)(0x40000) || (v19 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v15))) == 0 )) /*0x5680f7*/
               {
                 dword_ABDC74 = (unsigned int)((unsigned int *)(v22));
                 v19 = unk_ABDC50; /*0x5680ff*/
@@ -1272,7 +1275,7 @@ char TActionClass::executePatrolAction(void *a1, int a3, int a4, int aP4)
   TActionClass *v7; // [esp+0h] [ebp-4h] BYREF
 
   v7 = this; /*0x6e1a40*/
-  Waypoint_Location = ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (int *)(&v7), (int)this->TActionClass_field_44); /*0x6e1a50*/
+ Waypoint_Location = (int *)(ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (int *)(&v7), (int)this->TActionClass_field_44)); /*0x6e1a50*/
   SelectSimilarBuildingTypes((ObjectClass *)a1, *Waypoint_Location); /*0x6e1a5c*/
   return 1; /*0x6e1a64*/
 
@@ -1397,7 +1400,7 @@ char TActionClass::executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4)
   do /*0x6e2b5e*/
   {
     v7 = (TActionClass *)*((unsigned int *)dword_A8EAEC + v6); /*0x6e2b0f*/
-    idxArray = (unsigned char *)v7->idxArray; /*0x6e2b12*/
+ idxArray = (unsigned char *)((unsigned char *)v7->idxArray); /*0x6e2b12*/
     if ( idxArray == this->TActionClass_field_50 ) /*0x6e2b17*/
     {
       vtable0 = ((AbstractClass *)dword_A8B230)[43].vtable0; /*0x6e2b1f*/

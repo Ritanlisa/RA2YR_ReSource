@@ -47,7 +47,7 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
   int v5; // ecx
   unsigned int *v6; // edx
 
-  ((TechnoTypeClass *)this)->ReadINI( aP1, 4); /*0x41c8bb*/
+  ((TechnoTypeClass *)this)->ReadINI((char *)(aP1), 4); /*0x41c8bb*/
   *((unsigned int *)this + 894) = -1; /*0x41c8c6*/
   *((unsigned char *)this + 3580) = 0; /*0x41c8d0*/
   *((unsigned char *)this + 3592) = 0; /*0x41c8d6*/
@@ -86,7 +86,7 @@ LABEL_11:
   else
   {
     v6 = (unsigned int *)(dword_A8B21C); /*0x41c97a*/
-    while ( *v6    !=    (unsigned int)((unsigned int)((unsigned int)(this )))) /*0x41c982*/
+    while ( *v6    !=    (unsigned int)(this )) /*0x41c982*/
     {
       ++v5; /*0x41c984*/
       ++v6; /*0x41c985*/
@@ -216,7 +216,7 @@ AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 
   v4 = (int)(__2_YAPAXI_Z(0x6D8u)); /*0x41cb28*/
   if ( v4 ) /*0x41cb32*/
-    return (AircraftClass *)((AircraftClass *)v4)->Construct( v2, (int)this, ppv); /*0x41cb3c*/
+    return (AircraftClass *)((AircraftClass *)v4)->Construct( v2, (int)this,(IUnknown *)(ppv)); /*0x41cb3c*/
   else
     return 0; /*0x41cb45*/
 

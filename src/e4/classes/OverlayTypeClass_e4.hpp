@@ -128,7 +128,8 @@ struct OverlayTypeClass {
     bool Wall;  // 0x2A4
     bool NoUseTileLandType;  // 0x2A8
     bool Explodes;  // 0x2AC
-    Color* q2B4;  // 0x2B4
+    unsigned char q2B4;  // 0x2B4 (W13A til byte view)
+    unsigned char __tail_2B5[3];  // 0x2B5 (W13A til; ctor zeros 3 bytes, ASM 0x5fe2d8)
 // --- flat members (END) ---
     AnimTypeClass * * GetCategory();
     AnimTypeClass * * LoadFromINI(unsigned char *** aP1, void *a2);

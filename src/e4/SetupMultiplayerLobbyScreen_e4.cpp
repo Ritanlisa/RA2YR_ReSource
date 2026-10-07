@@ -81,7 +81,7 @@ char SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
         || !v8
         || v8 == (wchar_t *)g_HouseClass_ObserverFlags
         || v8 == (wchar_t *)g_Lobby_PlayerCount
-        || v8 == (wchar_t *)((wchar_t *))g_Lobby_MaxPlayers
+        || v8 == (wchar_t *)(wchar_t *)g_Lobby_MaxPlayers
         || v8 == g_Lobby_PlayerReady )
       {
         if ( v3 != (char *)(g_MPCooperativeState) ) /*0x5ebfd9*/

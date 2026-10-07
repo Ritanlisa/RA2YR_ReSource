@@ -277,7 +277,7 @@ int ProcessAudioStreamPlayback(int a1, unsigned int aP1, int arg0, char a4, char
   }
   else
   {
-    v39 = (unsigned int)((unsigned int)(aP1)/ arg0);
+    v39 = (unsigned int)(aP1)/ arg0);
     v10 = (gamemd::DSurface *)(arg0 * ((unsigned int)(aP1)/ arg0));
     v41 = (gamemd::DSurface *)((unsigned int)(v10));
     if ( v10 >= (gamemd::DSurface *)(arg0) ) /*0x7c079f*/
@@ -12164,9 +12164,9 @@ int WSACleanup(void)  // G42.33 b3 head truth 0x7c89b6
 
 // 0x7C89BC
 namespace gamemd {
-void WSAAsyncSelect(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent)  // G42.33 b22: void (imp returns void)
+int __stdcall WSAAsyncSelect(unsigned int s, HWND hWnd, unsigned int wMsg, int lEvent)  // W13-B: int 返回（wsock32 真值；原 G42.33 b22 void 为伪）
 {
-  __imp_WSAAsyncSelect((unsigned int)s, (HWND)hWnd, (unsigned int)wMsg, lEvent);  // G42.33 b22
+  return __imp_WSAAsyncSelect((unsigned int)s, (HWND)hWnd, (unsigned int)wMsg, lEvent);  // W13-B: int 返回真值
 }
 } // namespace gamemd
 
@@ -12198,7 +12198,7 @@ int gethostname(char* name, int namelen)  // G42.33 b3 head truth 0x7c89ce
 namespace gamemd {
 int DirectDrawCreate(GUID* lpGUID, void* lplpDD, IUnknown* pUnkOuter)  // G42.33 b3 head truth 0x7c89d4
 {
-  return __imp_DirectDrawCreate( (GUID *)(lpGUID), lplpDD, pUnkOuter );
+  return __imp_DirectDrawCreate( (GUID *)((GUID *)((GUID *)((GUID *)(lpGUID)))), lplpDD, pUnkOuter );
 }
 } // namespace gamemd
 

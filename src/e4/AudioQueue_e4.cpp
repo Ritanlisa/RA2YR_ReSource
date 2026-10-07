@@ -195,7 +195,7 @@ LABEL_4:
     result = (int *)dword_B1D4B8; /*0x7526a2*/
     if ( !dword_B1D4B8 || *((AudioQueue **)dword_B1D4B8 + 3) != this ) /*0x7526ae*/
     {
-      v3 = (gamemd::AudioQueue *)(&stru_B1D474);
+      v3 = (::gamemd::AudioQueue *)(&stru_B1D474);
       while ( 1 ) /*0x7526b7*/
       {
         result = (int *)((AudioQueue *)(v3))->GetNext(); /*0x7526b7*/
@@ -251,14 +251,14 @@ LABEL_4:
       return; /*0x77164e*/
     goto LABEL_5; /*0x77164e*/
   }
-  v3 = ((gamemd::Timer *)this)->GetTicks() - *((unsigned int *)this + 235); /*0x771640*/
+  v3 = ((::gamemd::Timer *)this)->GetTicks() - *((unsigned int *)this + 235); /*0x771640*/
   if ( v3 < v2 ) /*0x771648*/
   {
     v2 -= v3; /*0x77164a*/
     goto LABEL_4; /*0x77164a*/
   }
 LABEL_5:
-  if ( *((int *)this + 244) > 0 && !(uint8_t)((gamemd::Audio *)this)->IsPlaying() ) /*0x771662*/
+  if ( *((int *)this + 244) > 0 && !(uint8_t)((::gamemd::Audio *)this)->IsPlaying() ) /*0x771662*/
   {
     if ( !*((unsigned char *)this + 952) ) /*0x77166f*/
     {
@@ -712,7 +712,7 @@ int AudioQueue::HaltVoices(Voice *a1)
     v2 = result; /*0x4081b4*/
     if ( result ) /*0x4081b8*/
     {
-      v3 = (gamemd::Voice *)(a1);
+      v3 = (::gamemd::Voice *)(a1);
       do /*0x4081fa*/
       {
         if ( !*(unsigned int *)(v2 + 136) ) /*0x4081c8*/
@@ -804,7 +804,7 @@ int AudioQueue::DrainAll()
   {
     do /*0x750fe8*/
     {
-      Next_Alt = (gamemd::Init)(((AudioQueue *)(v1))->GetNextAlt()); /*0x750fbc*/
+      Next_Alt = (::gamemd::Init)(((AudioQueue *)(v1))->GetNextAlt()); /*0x750fbc*/
       ((AudioController *)(v1 + 3))->Stop(); /*0x750fbe*/
       LinkedList::Init(  (unsigned int **)v1); /*0x750fc5*/
       result = PushFrontLinkedListAlt((unsigned int *)(dword_B1D3A4), (int)v1); /*0x750fd2*/

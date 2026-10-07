@@ -179,7 +179,7 @@ ControlClass * * String::To_Waypoint()
   int v2; // esi
 
   v2 = (int)(-1); /*0x763694*/
-  if ( isalpha(*this) && (v2 = toupper(*(int *)this) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
+  if ( isalpha((int)(*this)) && (v2 = toupper(*(int *)this) - 65, isalpha(*((unsigned char *)this + 1))) ) /*0x7636ba*/
     return (gamemd::ControlClass **)(toupper(*((unsigned char *)this + 1)) + 26 * v2 - 39); /*0x7636db*/
   else
     return (gamemd::ControlClass **)(v2); /*0x7636e0*/

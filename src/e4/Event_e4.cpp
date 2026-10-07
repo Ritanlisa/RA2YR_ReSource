@@ -197,7 +197,7 @@ int sub_796960()
     if ( ++v3 >= dword_B77900) /*0x7969b8*/
       goto LABEL_10; /*0x7969b8*/
   }
-  if ( &g_WebBrowserConfig == (int *)((ObjectClass *))-36 /*0x7969df*/
+  if ( &g_WebBrowserConfig == (int *)(ObjectClass *)-36 /*0x7969df*/
     || (v4 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(),
         (owningHouseIndex = _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4)) != 0) )
   {
@@ -221,7 +221,7 @@ int sub_796960()
       v5 = 0; /*0x796a9b*/
       if ( dword_B77900> 0 ) /*0x796a9f*/
       {
-        nextObject = dword_B77908; /*0x796aa1*/
+ nextObject = (ObjectClass *)(dword_B77908); /*0x796aa1*/
         while ( 1 ) /*0x796aa7*/
         {
           if ( v5 >= 0 && v5 < dword_B77900) /*0x796aad*/
@@ -233,7 +233,7 @@ int sub_796960()
           if ( v5 >= dword_B77900) /*0x796acb*/
             goto LABEL_24; /*0x796acb*/
         }
-        if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x796ae4*/
+        if ( &g_WebBrowserConfig != (int *)(ObjectClass *)-36 ) /*0x796ae4*/
         {
           v7 = CharToWideString( (unsigned char *)(&g_WebBrowserConfig.ambientSoundController[3])); /*0x796aeb*/
           ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v10, 455, (wchar_t *)(1), (wchar_t *)v7); /*0x796b04*/

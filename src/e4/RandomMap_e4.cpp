@@ -288,7 +288,7 @@ int GenerateTerrain(RandomMap *self)
                 *(unsigned char *)(v38 + 75) = 0; /*0x58cdc2*/
                 *(unsigned int *)(v36 + 56) = 0; /*0x58cdc6*/
                 *(unsigned char *)(v36 + 282) = 0; /*0x58cdc9*/
-                v39 = &dword_ABE2E4; /*0x58cdd0*/
+                v39 = (unsigned int)(&dword_ABE2E4)); /*0x58cdd0*/
                 if ( v35 != -1 ) /*0x58cdd9*/
                   v39 = v35; /*0x58cddb*/
                 *(unsigned char *)(v36 + 283) = v39; /*0x58cddd*/
@@ -346,7 +346,7 @@ int GenerateTerrain(RandomMap *self)
                     *(unsigned char *)(v26 + 75) = 0; /*0x58cc3c*/
                     *(unsigned int *)(j + 56) = 0; /*0x58cc40*/
                     *(unsigned char *)(j + 282) = 0; /*0x58cc43*/
-                    v27 = &dword_ABE2E4; /*0x58cc4a*/
+                    v27 = (unsigned int)(&dword_ABE2E4)); /*0x58cc4a*/
                     if ( v24 != -1 ) /*0x58cc52*/
                       v27 = v24; /*0x58cc54*/
                     *(unsigned char *)(j + 283) = v27; /*0x58cc56*/

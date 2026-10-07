@@ -53,7 +53,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   void *MultiplayerGameMode_field_0x0C; // eax
 
   v3 = 0; /*0x5d7f24*/
-  for ( *(unsigned int *)this->__pad_0 = &vt_MultiplayerGameMode; v3 < this->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
+  for ( *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MultiplayerGameMode; v3 < this->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
     if ( v4 ) /*0x5d7f3b*/

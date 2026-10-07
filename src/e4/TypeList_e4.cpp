@@ -1612,7 +1612,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->vfptr + 12))((_DynamicVectorClass_PBVVoxelAnimTypeClass *)this); /*0x67ad5e*/
   }
   v7 =(int)this->Capacity; /*0x67ad61*/
-  if ( v7   <   (int)((int)(this->Count ))) /*0x67ad69*/
+  if ( v7   <   (int)(this->Count ))) /*0x67ad69*/
     this->Count =(void *)v7; /*0x67ad6b*/
   return 1; /*0x67ad6e*/
 
@@ -1921,7 +1921,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
     (*(void (**)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b45e*/
   }
   v7 =(int)this->Capacity; /*0x67b461*/
-  if ( v7   <   (int)((int)(this->Count ))) /*0x67b469*/
+  if ( v7   <   (int)(this->Count ))) /*0x67b469*/
     this->Count =(void *)v7; /*0x67b46b*/
   return 1; /*0x67b46e*/
 
@@ -2051,7 +2051,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   ((unsigned int *)this)[0] = 0; /*0x67c200*/
   ((unsigned int *)this)[0] = 1; /*0x67c203*/
   ((unsigned int *)this)[0] = 0; /*0x67c207*/
-  this->DynamicVectorClass = &vt_VectorClass; /*0x67c20a*/
+  this->DynamicVectorClass = (void *)&vt_VectorClass; /*0x67c20a (W13A: raw fn_67.c vftable install)*/
   if ( (TypeList *)this != (TypeList *)aP1 ) /*0x67c210*/
   {
     ((Vector*)((_VectorClass_PBVVoxelAnimTypeClass *)this))->Cleanup2(); /*0x67c212*/
@@ -2085,7 +2085,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   }
   ((unsigned int *)this)[0] = aP1[4]; /*0x67c261*/
   ((unsigned int *)this)[0] = aP1[5]; /*0x67c267*/
-  this->DynamicVectorClass = &vt_TypeList; /*0x67c26a*/
+  this->DynamicVectorClass = (void *)&vt_TypeList; /*0x67c26a (W13A: raw fn_67.c vftable install)*/
 return (unsigned int *)&this->DynamicVectorClass; /*0x67c272*/
 
 }
@@ -2156,7 +2156,7 @@ char TypeList_PushBack_free(void * aP1, unsigned int * a2)
     {
       if ( !this->? && Capacity ) /*0x717ce6*/
         return 0; /*0x717ce6*/
-      CapacityIncrement = this->?; /*0x717ce8*/
+      CapacityIncrement = this->CapacityIncrement; /*0x717ce8*/
       if ( CapacityIncrement <= 0 /*0x717cf8*/
         || !(*((unsigned __int8 (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))(
               (TypeList *)this,

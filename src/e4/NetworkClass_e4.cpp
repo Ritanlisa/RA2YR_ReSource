@@ -81,7 +81,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   uint8_t v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ((ScriptAction *)v4)->GetWaypointCoords( this); /*0x6ffe0a*/
-  ((EventClass *)(gamemd::AbstractClass *)(v5))->Add( (AbstractClass *)((int)dword_A83D4C->Object_field_0x30), v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  ((EventClass *)(::gamemd::AbstractClass *)(v5))->Add( (AbstractClass *)((int)dword_A83D4C->Object_field_0x30), v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
   if ( (unsigned char)result ) /*0x6ffe40*/
   {
@@ -129,7 +129,7 @@ AnimClass * * NetworkClass::UnregisterAsync()
     if ( v2 ) /*0x7b1c87*/
       return (AnimClass * *)WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
   }
-  return (gamemd::AnimClass **)(result); /*0x7b1c7f*/
+  return (::gamemd::AnimClass **)(result); /*0x7b1c7f*/
 
 }
 }

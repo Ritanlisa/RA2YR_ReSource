@@ -39,6 +39,7 @@
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/Matrix3x3_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 #include "classes/TacticalMap_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Vector2_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
@@ -806,7 +807,7 @@ LABEL_25:
                 goto LABEL_54; /*0x6d92fe*/
               v41 = (int *)(*(int (**)(int *, unsigned char *))(*v18 + 72))( (int *)(v18), (unsigned char *)(v104)); /*0x6d9310*/
               v42 = (LPPERSISTSTREAM)(g_TacticalClass_Instance); /*0x6d9313*/
-              v43 = v41; /*0x6d9319*/
+ v43 = (int *)(v41); /*0x6d9319*/
               v44 = IsoCoord::ToPixel(&v97, *v41, v41[1]); /*0x6d932b*/
               v45 = *v44; /*0x6d932d*/
               v46 = v44[1]; /*0x6d932f*/
@@ -916,7 +917,7 @@ LABEL_54:
     v85 = (int *)++v16; /*0x6d95a5*/
   }
   while ( v16 < 5 ); /*0x6d95a9*/
-  p_count = &dword_8A0364; /*0x6d95af*/
+ p_count = (int *)(&dword_8A0364); /*0x6d95af*/
   v85 = &dword_8A0364; /*0x6d95b4*/
   do /*0x6d97b5*/
   {
@@ -1065,7 +1066,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
          a2,
          a3);
   (*(void (**)(int))(*(unsigned int *)v5->TacticalMap_field_14 + 96))(v5->TacticalMap_field_14); /*0x7bcfd4*/
-  result = v5->TacticalMap_field_1C; /*0x7bcfda*/
+  result = (unsigned int)(v5->TacticalMap_field_1C)); /*0x7bcfda*/
   v8 = v6 + v5->TacticalMap_field_10; /*0x7bcfdd*/
   if ( v8 >= result ) /*0x7bcfe1*/
     v8 -= v5->TacticalMap_field_20; /*0x7bcfe3*/
@@ -1134,7 +1135,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
         if ( v14 >> 1 ) /*0x7bd08d*/
         {
           memset((void *)LODWORD(m_TintFactor), 0xFFu, 4 * v17); /*0x7bd098*/
-          v16 = (unsigned short *)(LODWORD(v24) + 4 * v17); /*0x7bd09e*/
+          v16 = (unsigned int)((unsigned short *)(LODWORD(v24) + 4 * v17)); /*0x7bd09e*/
           LOBYTE(v14) = v25; /*0x7bd0a1*/
         }
         if ( (v14 & 1) != 0 && v16 ) /*0x7bd0ab*/

@@ -251,7 +251,7 @@ LABEL_40:
           v29[0] = 0; /*0x48c2b0*/
         Debug::Log("Sending ACK for packet %d to be forwarded to %02x\n"); /*0x48c2c6 G57c1: IDA 0x48c2c6 push offset aSendingAckForP*/
         v26 = dword_A8EA0C; /*0x48c2cb*/
-        LOBYTE(v26) = this == (gamemd::ConnectionClass *)((ModemConnectionClass *))dword_A8EA0C; /*0x48c2d7*/
+        LOBYTE(v26) = this == (gamemd::ConnectionClass *)(ModemConnectionClass *)dword_A8EA0C; /*0x48c2d7*/
 (*(void (**)(ModemConnectionClass *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 36))( /*0x48c2ea*/ (ModemConnectionClass *)this, (int16_t *)(&v27), 14, 0, 0, v26, 0);
 
 
@@ -454,7 +454,7 @@ int ConnectionClass::serviceSendQueue()
       {
         v11 = dword_A8EA0C; /*0x48c4bd*/
         LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
-        LOBYTE(v11) = this == (gamemd::ConnectionClass *)((ModemConnectionClass *))dword_A8EA0C; /*0x48c4cb*/
+        LOBYTE(v11) = this == (gamemd::ConnectionClass *)(ModemConnectionClass *)dword_A8EA0C; /*0x48c4cb*/
         (*(void (**)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->__pad_0 /*0x48c4e2*/
                                                                                                  + 36))(
           (ModemConnectionClass *)this,

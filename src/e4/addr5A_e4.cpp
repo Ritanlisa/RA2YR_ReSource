@@ -69,6 +69,8 @@
 #include "e4/classes/PriorityQueue_e4.hpp"
 #include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 #include "e4/classes/Type_e4.hpp"
+#include "e4/classes/Heap_e4.hpp"
+#include "e4/classes/Scalar_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
 
 // 0x5A1350

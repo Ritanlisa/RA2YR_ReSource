@@ -155,7 +155,7 @@ v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&stru_88732C.__pad
   AudioFileClass::Release( (AudioFileClass *)&this->VoxelAnimClass_field_0x114); /*0x749aa9*/
   AudioFileClass::Release( (AudioFileClass *)&this->VoxelAnimClass_field_0x128); /*0x749ab0*/
   v6 = this; /*0x749ac5*/
-v4 = (*(int (**)(int *, VoxelAnimClass **))(dword_B0F670+ 16))( /*0x749ac9*/ &dword_B0F670, (VoxelAnimClass **)(&v6));
+v4 = (*(int (**)(int *, VoxelAnimClass **))(dword_B0F670+ 16))( /*0x749ac9*/ &dword_B0F670, (VoxelAnimClass **)((int *)((int *)((int *)(&v6)))));
 
 
   if ( v4 != -1 && v4 < dword_B0F680) /*0x749adb*/
@@ -258,8 +258,7 @@ LABEL_6:
         qmemcpy( (void *)(v40), VoxelAnimClass::QuaternionToMatrix( (float *)&this->__pad_98[24], (void *)(v41)), sizeof(v40)); /*0x749cbc*/
         Viewport::Clear( (void *)(v3)); /*0x749cbe*/
         globalHelper_053F90( /*0x749ce8*/
-          v7,
-          *((unsigned int *)this->VoxelAnimClass_field_0x104 + 166),
+          v7,(gamemd::ObjectClass *)(*((unsigned int *)this->VoxelAnimClass_field_0x104 + 166)),
           0,
           (float *)&stru_887430,
           v40,
@@ -986,7 +985,7 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   *(unsigned int *)&this->q200 = 0; /*0x75eca4*/
   this->VoxelAnimClass_field_0x0 = (unsigned int)(&vt_WaveClass); /*0x75ecaa*/
   this->VoxelAnimClass_field_0x4[0] = (int)&vt_WaveClass; /*0x75ecb0*/
-  this->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
+  this->VoxelAnimClass_field_0x8 = (unsigned int)&vt_WaveClass; /*0x75ecb7*/
   *(unsigned int *)this->__pad_C = (unsigned int)&off_7F6BC8;
   if ( *(int *)((char *)&stru_A8EB00 + 100) < *(int *)((char *)&stru_A8EB00 + 92) /*0x75ecfb*/
     || (*((unsigned int *)((char *)&stru_A8EB00 + 97)) || !*(unsigned int *)((char *)&stru_A8EB00 + 92))

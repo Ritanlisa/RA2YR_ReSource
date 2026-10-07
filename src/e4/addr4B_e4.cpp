@@ -39,6 +39,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/ListClass_e4.hpp"
+#include "e4/classes/ControlClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int g_DDraw_Gray127;  // data: 0x8a0de8 truth(IDA G42.57w9)
@@ -676,7 +677,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(unsigned int *a2, int aP1, int a4, int aP4, int a
     v7 = (CellClass *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(aP1); /*0x4b0e81*/
     if ( (uint8_t)((CrateClass *)((CrateClass *)v7))->ProcessPickup((int)vtable3) && !*((unsigned char *)((unsigned int *)this)[0] + 129) ) /*0x4b0e94*/
     {
-      JumpjetLocomotion::MoveTo((int)((IUnknown *)(int)this), (unsigned int *)(aP1), (void *)( 1)); /*0x4b0ea3*/
+      JumpjetLocomotion::MoveTo((int)((IUnknown *)(int)this), (unsigned int *)(aP1),(int)((void *)( 1))); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
     }
     if ( *((unsigned char *)((unsigned int *)this)[0] + 144) ) /*0x4b0eb3*/

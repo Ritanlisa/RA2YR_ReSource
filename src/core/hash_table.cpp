@@ -1,6 +1,7 @@
 #include "core/hash_table.hpp"
 #include <cstring>
 #include "e4/e4_globals_decls.hpp"
+extern int * ProcessBlock(void *a1, const void **a2, int *a3);  // W13-C raw 0x69D8C0 SHA1::ProcessBlock thiscall 自由形
 
 namespace gamemd {
 
@@ -15,7 +16,7 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
     // Original uses SHA1 class, returns 32-bit hash
     static SHA1 sha1;
     sha1.Init();
-    sha1.Process(data, size);
+    sha1.Process((int)(data), size);
     uint8_t digest[20];
     sha1.Compute(digest);
     // Return first 4 bytes as uint32_t hash
@@ -119,7 +120,7 @@ int SHA1::Compute(char *a2, int a1)
     v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
     SHA1::Transform(v13, v12); /*0x69dac3*/
     qmemcpy(&this->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
-    p_SHA1_field_0x04 = &this->SHA1_field_0x04; /*0x69dad8*/
+ p_SHA1_field_0x04 = (int *)(&this->SHA1_field_0x04); /*0x69dad8*/
     v9 = 5; /*0x69dada*/
     do /*0x69db0b*/
     {
@@ -340,7 +341,7 @@ static const uint32_t crc32_table[256] = {
 
 // IDA 0x69E000: Compute
 // 0x4a1fb0
-uint32_t CRC32::Compute(const void* data, uint32_t size, int a3)
+uint32_t CRC32::Compute(unsigned __int8 *a1, int a2, int a3)
 {
     int v4; // edx
     unsigned int v5; // eax

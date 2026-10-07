@@ -23,7 +23,7 @@ RocketLocomotionClass::RocketLocomotionClass()
 
   int v2; // ecx
 
-  ((LocomotionClass*)(LocomotionClass *)this)->Init(); /*0x661ec3*/
+  ((::gamemd::LocomotionClass*)(::gamemd::LocomotionClass *)this)->Init(); /*0x661ec3*/
   this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
   this->MovingDestination[1] = dword_B04E3C; /*0x661eda*/
   this->MovingDestination[2] = dword_B04E40; /*0x661ee3*/

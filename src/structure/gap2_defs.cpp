@@ -27,6 +27,7 @@ using ra2::game::ObjectClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "misc/misc_ext.hpp"// 0x517CC0
+extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 Coord * CalculateShading();  // g57c5 W5 vocab (csp)
@@ -52,7 +53,7 @@ int InfantryClass::PerFrameUpdate(int a2)
   TechnoClass *v14; // [esp+0h] [ebp-8h]
 
   v2 = v2; /*0x517cc2*/
-  result = TechnoClass::Update(v14, a2); /*0x517cc4*/
+  result = TechnoClass::Update((int)(v14), a2); /*0x517cc4*/
   v5 = *(BuildingClass **)(v2 + 540); /*0x517cc9*/
   if ( v5 ) /*0x517cd1*/
     result = (unsigned int *)BuildingClass::PowerUpdate(v5, (unsigned char *)v2); /*0x517cd4*/
@@ -132,7 +133,7 @@ int AircraftClass::Construct(int a1, void* a2) {
     v6 = (const IID *)((int)((const IID *)(v4 + 844))); /*0x413dc1*/
     v7 = (int)(this->locomotor); /*0x413dc7*/
     if ( v7 ) /*0x413dcb*/
-      (*(void (**)(unsigned int))(*(unsigned int *)v7 + 8))(this->locomotor); /*0x413dd0*/
+      (*(void (**)(unsigned int))(*(unsigned int *)v7 + 8))((unsigned int)(this->locomotor)); /*0x413dd0*/
     if ( CoCreateInstance((const IID &)(v6), 0, 7u,(const IID &)(&riid), (LPVOID *)&a2) >= 0 ) /*0x413dea*/
     {
       if ( OleRun(a2) >= 0 ) /*0x413df9*/
@@ -308,13 +309,13 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
   float v93[4]; // [esp+B4h] [ebp-40h] BYREF
   Matrix3x4 v94; // [esp+C4h] [ebp-30h] BYREF
 
-  BehaviourMode = this->BehaviourMode; /*0x435bec*/
+  BehaviourMode = (unsigned int)(this->BehaviourMode)); /*0x435bec*/
   if ( BehaviourMode )
   {
     FollowingObject = this->FollowingObject; /*0x435bfa*/
     if ( FollowingObject )
     {
-      BehaviourMode = (*((int (**)(ObjectClass *))FollowingObject->vtable1 + 11))(FollowingObject); /*0x435c0a*/
+      BehaviourMode = (unsigned int)((*((int (**)(ObjectClass *))FollowingObject->vtable1 + 11))(FollowingObject)); /*0x435c0a*/
       if ( BehaviourMode == 6 )
       {
         v8 = this->FollowingObject; /*0x435c16*/
@@ -400,7 +401,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                   }
                   else
                   {
-                    v21 = Block; /*0x435dd9*/
+                    v21 = (BuildingLightQueue *)(Block); /*0x435dd9*/
                     Block[3] = (BuildingLightQueue)80; /*0x435ddb*/
                   }
                   BuildingLight::CalculateShading(v61, v4); /*0x435de4*/
@@ -409,7 +410,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                     BuildingLightQueue::RemoveEntry(v21); /*0x435def*/
                     RA2_OPDEL(v21); /*0x435df5*/
                   }
-                  location = ((unsigned int *)this)[0]; /*0x435dfd*/
+ location = (int *)(((unsigned int *)this)[0]); /*0x435dfd*/
                   v23 = ((unsigned int *)this)[0]; /*0x435e05*/
                   v79 = ((unsigned int *)this)[1]; /*0x435e0a*/
                   v24 = this->FollowingObject; /*0x435e0e*/

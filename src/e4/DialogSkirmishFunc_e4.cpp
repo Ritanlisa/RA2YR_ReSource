@@ -135,9 +135,9 @@ LABEL_151:
           v60 = *(CCINIClass **)&((unsigned int *)(HouseClass_Player))[29960];
           strcpy((char *)Destination,(const char *)(&((unsigned int *)(HouseClass_Player))[31636]));
           wcscpy( (wchar_t *)(Destination), (const wchar_t *)&((unsigned int *)(HouseClass_Player))[30166]);
-          Dialog::IdleProcess( (ObjectClass)(hWnd));
+          Dialog::IdleProcess((gamemd::ObjectClass *)((ObjectClass)(hWnd)));
           ShowWindow((HWND)hWnd, 0);
-          if ( SkirmishDialog::Show((HWND)&g_hWnd, (int)v60, (int)hWnd) == (double)((SkirmishDialog *))2 )
+          if ( SkirmishDialog::Show((HWND)&g_hWnd, (int)v60, (int)hWnd) == (double)(SkirmishDialog *)2 )
           {
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = (unsigned int)(Formatc);
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = (unsigned int)(v60);
@@ -180,7 +180,7 @@ LABEL_151:
               v65 = PlayerCountMap;
             }
             ResetLobbyFactionTable(v65);
-            Lobby::InvalidateFactionCombos((HWND)hWnd);
+            Lobby::InvalidateFactionCombos((gamemd::Lobby *)((HWND)hWnd));
             ((Lobby*)(HWND)hWnd)->InvalidatePlayerSlots();
             Skirmish_Setup_6ADDF0((HWND)hWnd, (int)v60, *(int *)&((unsigned int *)(HouseClass_Player))[29960]);
             ShowWindow((HWND)hWnd, 5);

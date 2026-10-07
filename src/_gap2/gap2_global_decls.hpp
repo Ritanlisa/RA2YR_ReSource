@@ -156,7 +156,7 @@ public:  // g57c5 W4 supply slot
     struct Gap2Recv_429830 {
     int Items;  // G42.39a supply
     int u32_3C;  // G42.39a supply
-        double ComputeMovementWeight(int * a1, unsigned int * a2, void * aP3, int a5, int a6);  // G42.39 def-derived
+        double ComputeMovementWeight(int *a2, _DWORD *a3, char a4, int a5, int a6);  // W13-C raw-sync 0x429830 (raw: int* / _DWORD* / char / int / int)
 };
     struct Gap2Recv_42B210 {
         char ParsePathDirections(int a2, void* a3);  // G42.39 def-derived

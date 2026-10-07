@@ -44,6 +44,11 @@
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/IPXInterfaceClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/NetworkEventQueueClass_e4.hpp"
+#include "e4/classes/NetworkManager_e4.hpp"
+#include "e4/classes/Tooltip_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MessageListClass_e4.hpp"  // G42.36 C2027 supply
@@ -1567,8 +1572,8 @@ LABEL_33:
                                 ((Network *)(v47))->FormatAddress(0); /*0x541c49*/
                                 ((Network *)((Network *)(*((unsigned int *)this + 20) + 76)))->FormatAddress(0); /*0x541c57*/
                                 Debug::Log("Frame %d, Router apparently changed address from %s to %s\n"); /*0x541c69 G57w11: IDA push seq @ 0x541c69 +2 reg-vararg(s) omitted*/
-                                v23 = (int *)(*((unsigned int *)this + 20) + 76); /*0x541c75*/
-                                *v23 = *(unsigned int *)&v47[0].q000; /*0x541c7b*/
+ v23 = (int *)((int *)(*((unsigned int *)this + 20) + 76)); /*0x541c75*/
+ *v23 = (int *)(*(unsigned int *)&v47[0].q000); /*0x541c7b*/
                                 v23[1] = (int)*(unsigned int *)&v47[0].q004; /*0x541c81*/
                                 v23[2] = (int)*(unsigned int *)&v47[0].q008; /*0x541c88*/
                                 ((Network *)((Network *)(*((unsigned int *)this + 20) + 76)))->SetPort(v46[0]); /*0x541c96*/
@@ -1759,7 +1764,7 @@ LABEL_75:
                 v33[1] = (int)*(unsigned int *)&v47[0].q004; /*0x54208e*/
                 v33[2] = (int)*(unsigned int *)&v47[0].q008; /*0x542095*/
                 v34 = (int *)(*((unsigned int *)this + 20) + 76); /*0x54209f*/
-                *v34 = *(unsigned int *)&v47[0].q000; /*0x5420a2*/
+ *v34 = (int *)(*(unsigned int *)&v47[0].q000); /*0x5420a2*/
                 v34[1] = (int)*(unsigned int *)&v47[0].q004; /*0x5420a8*/
                 v34[2] = (int)*(unsigned int *)&v47[0].q008; /*0x5420af*/
                 stru_A8BB1C.q000 = *(unsigned int *)&v47[0].q000; /*0x5420be*/

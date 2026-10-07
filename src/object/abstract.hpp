@@ -204,8 +204,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int COMStub_8();  // 0x4105A0
     void* processCleanup(int a1);  // 0x41C490
     void* Create();  // 0x41D300
-    int processDetection(int a1);  // 0x439150
-    int Construct(void* a1);  // 0x43A7E0
+    int processDetection(int a2);  // 0x439150
+    int Construct(_DWORD *a2);  // 0x43A7E0
     int clearRefCount(void* a1, int a2);  // 0x45E800
     int addRefCount(int a1);  // 0x45E880
     void* checkPointer(void* a1);  // 0x45EBD0

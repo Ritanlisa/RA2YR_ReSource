@@ -31,6 +31,7 @@
 #include "e4/classes/Straw_e4.hpp"
 #include "e4/classes/COMObject_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/ControlClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aShadowShp[];  // data: 0x820074 truth(IDA G42.57w9)
@@ -659,8 +660,8 @@ void * DisplayClass::Draw(int a2)
     return 0; /*0x4ae513*/
   }
   v3 = (int)((void *)(DSurface_ViewBounds.field_0)); /*0x4ae524*/
-  v4 = (void *)(DSurface_ViewBounds.field_4); /*0x4ae531*/
-v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_D0))( /*0x4ae538*/ dword_887640, (unsigned char *)(v18));
+  v4 = (void *)((void *)(DSurface_ViewBounds.field_4)); /*0x4ae531*/
+v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_D0))( /*0x4ae538*/ dword_887640, (unsigned char *)((void *)((void *)(v18))));
 
 
   v6 = v5[1]; /*0x4ae54a*/
@@ -979,7 +980,7 @@ int DisplayClass::SetCoordVisible(DisplayClass *aP0, unsigned int *aP1, char a3)
     LOBYTE(result) = 0; /*0x4a9852*/
     return result; /*0x4a9854*/
   }
-  result = ((DisplayClass*)(DisplayClass *)g_TacticalClass_Instance)->ScrollTacticalView( (IUnknown *)((int)aP0), *aP1); /*0x4a9884*/
+  result = ((DisplayClass*)(DisplayClass *)g_TacticalClass_Instance)->ScrollTacticalView((int)((int)aP0), *aP1); /*0x4a9884*/
   LOBYTE(result) = 1; /*0x4a9889*/
   return result; /*0x4a9854*/
 

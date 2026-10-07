@@ -47,13 +47,13 @@ bool * FactoryClass::AbandonProduction()
     v3 = (*(int (__thiscall **)(int))(*(unsigned int *)v2 + 136))(v2); /*0x4ca007*/
     Debug::Log("Abandoning production of %s\n", (const char *)(v3 + 100)); /*0x4ca016*/
     v4 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(this + 88) + 136))(*(unsigned int *)(this + 88)); /*0x4ca023*/
-    v5 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v4 + 132))(v4, *(unsigned int *)(*(unsigned int *)(this + 88) + 540)); /*0x4ca037*/
+    v5 = (unsigned int)((*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v4 + 132))(v4, *(unsigned int *)(*(unsigned int *)(this + 88) + 540)))); /*0x4ca037*/
     HouseClass::AddPower(*(unsigned int **)(this + 108), v5 - *(unsigned int *)(this + 96)); /*0x4ca046*/
     v6 = *(unsigned int *)(this + 104); /*0x4ca04b*/
     *(unsigned int *)(this + 96) = 0; /*0x4ca053*/
     if ( v6 ) /*0x4ca056*/
       *(unsigned int *)(this + 104) = -1; /*0x4ca058*/
-    v7 = dword_A8ED84; /*0x4ca05b*/
+ v7 = (wchar_t *)(dword_A8ED84); /*0x4ca05b*/
     *(unsigned int *)(this + 56) = 0; /*0x4ca065*/
     *(unsigned int *)(this + 44) = v7; /*0x4ca068*/
     *(unsigned int *)(this + 48) = v11; /*0x4ca06e*/

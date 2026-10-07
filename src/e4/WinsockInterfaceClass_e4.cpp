@@ -120,7 +120,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
     *((unsigned char *)this + 258152) = 0; /*0x7b27a8*/
   }
   v4 = (void *)*((unsigned int *)this + 15); /*0x7b27ae*/
-  *((unsigned int *)this + 14) = &vt_VectorClass; /*0x7b27b1*/
+  *((unsigned int *)this + 14) = (unsigned int)&vt_VectorClass; /*0x7b27b1*/
   if ( v4 && *((unsigned char *)this + 69) ) /*0x7b27bc*/
   {
     __3_YAXPAX_Z(v4); /*0x7b27c2*/
@@ -129,7 +129,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   *((unsigned char *)this + 69) = 0; /*0x7b27cd*/
   *((unsigned int *)this + 16) = 0; /*0x7b27d0*/
   v5 = (void *)*((unsigned int *)this + 9); /*0x7b27d3*/
-  *((unsigned int *)this + 8) = &vt_VectorClass; /*0x7b27d6*/
+  *((unsigned int *)this + 8) = (unsigned int)&vt_VectorClass; /*0x7b27d6*/
   if ( v5 && *((unsigned char *)this + 45) ) /*0x7b27e1*/
   {
     __3_YAXPAX_Z(v5); /*0x7b27e7*/

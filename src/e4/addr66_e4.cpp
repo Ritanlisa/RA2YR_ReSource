@@ -478,7 +478,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         int v53 = *v52 - v50;
         v57 = (BuildingTypeClass *)(v52[1] - ebx82);
         desiredFacing_4 = COERCE_DOUBLE(IDA___PAIR64__((unsigned int)v57, v53));
-        double v55 = Math::Sqrt( (AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v57 * (double)(int)v57 + (double)v53 * (double)v53));
+        double v55 = Math::Sqrt((double)((AbstractClass *)COERCE_UNSIGNED_INT64((double)(int)v57 * (double)(int)v57 + (double)v53 * (double)v53)));
         *(unsigned int *)(a1 + 84) = Math::RoundToInt(v55);
       }
       goto LABEL_111;
@@ -525,7 +525,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         var84_4 = v65;
         var74_4 = 1.0 - v65;
         IDA_LODWORD(desiredFacing_4) = v69 * v69 + v68 * v68;
-        double v70 = Math::Sqrt( (AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
+        double v70 = Math::Sqrt((double)((AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4))));
         if ( v70 <= 0.0 )
           double v71 = -1.570796326794897;
         else
@@ -617,21 +617,21 @@ LABEL_119:
         v103 = *(ObjectClass **)(v99 + 8);
         IDA_HIDWORD(var84_4) = v101;
         v121 = (IUnknown *)v103;
-        st7_120a = Math::ArcTan2( (IUnknown *)IDA_LODWORD(aP0));
+        st7_120a = Math::ArcTan2((double)((IUnknown *)IDA_LODWORD(aP0)));
         IDA_LODWORD(var64_4) = Math::RoundToInt(st7_120a * desiredFacing_4);
         desiredFacing = (ObjectClass *)(*(int16_t *)((ProgressTimer*)(unsigned short *)(*(unsigned int *)(a1 - 4 + 12) + 904))->GetValue((IUnknown *)v128)
                                       - 0x3FFF);
         *(double *)&v128[1] = (double)(int)desiredFacing * -0.00009587672516830327;
         var64_4 = (double)IDA_SLODWORD(var64_4);
         var74_4 = (double)IDA_SHIDWORD(var84_4);
-        double v104 = Math::SinCos(v128[1]);
+        double v104 = Math::SinCos((double)(v128[1]));
         desiredFacing = (ObjectClass *)Math::RoundToInt(var74_4 - v104 * var64_4);
-        double v105 = Math::ArcTan2(v128[1]);
+        double v105 = Math::ArcTan2((double)(v128[1]));
         int v106 = Math::RoundToInt(v105 * var64_4 + (double)IDA_SLODWORD(var84_4));
         aP0_4 = *(float *)(a1 - 4 + 84);
         v129.Y = (int)desiredFacing;
         v129.Z = (int)v121;
-        double v107 = Math::SinCos( (IUnknown *)IDA_LODWORD(aP0_4));
+        double v107 = Math::SinCos((double)((IUnknown *)IDA_LODWORD(aP0_4)));
         v124.Z = Math::RoundToInt(v107 * desiredFacing_4 + (double)(int)v121);
         v124.X = v106;
         v124.Y = v129.Y;
@@ -668,7 +668,7 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
       ecx102 = v86[7] - *(unsigned int *)(v86[3] + 160);
       v127 = v86[8] - *(unsigned int *)(v86[3] + 164);
       IDA_LODWORD(desiredFacing_4) = (unsigned int)v88 * (unsigned int)v88 + ecx102 * ecx102;
-      double v89 = Math::Sqrt( (AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
+      double v89 = Math::Sqrt((double)((AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4))));
       if ( v89 <= 0.0 )
         double v90 = -1.570796326794897;
       else

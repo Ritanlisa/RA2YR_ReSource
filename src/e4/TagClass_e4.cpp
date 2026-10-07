@@ -183,7 +183,7 @@ LABEL_45:
     while ( v15 ); /*0x6e50d9*/
   }
   v22[0] = (unsigned int)(a1);
-v18 = (*(int (**)(int *, unsigned int *))(dword_B0F670+ 16))( /*0x6e5147*/ &dword_B0F670, (unsigned int *)(v22));
+v18 = (*(int (**)(int *, unsigned int *))(dword_B0F670+ 16))( /*0x6e5147*/ &dword_B0F670, (unsigned int *)((int *)((int *)((int *)(v22)))));
 
 
   if ( v18 != -1 && v18 < dword_B0F680) /*0x6e5157*/
@@ -197,7 +197,7 @@ v18 = (*(int (**)(int *, unsigned int *))(dword_B0F670+ 16))( /*0x6e5147*/ &dwor
     }
   }
   v22[0] = (unsigned int)(a1);
-v19 = (*(int (**)(int *, unsigned int *))(&dword_B0F708 + 16))( /*0x6e5190*/ &dword_B0F708, (unsigned int *)(v22));
+v19 = (*(int (**)(int *, unsigned int *))(&dword_B0F708 + 16))( /*0x6e5190*/ &dword_B0F708, (unsigned int *)((int *)((int *)((int *)(v22)))));
 
 
   if ( v19 != -1 && v19 < dword_B0F718) /*0x6e51a0*/

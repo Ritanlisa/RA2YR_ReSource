@@ -148,7 +148,7 @@ int sub_622610()
   if ( v2 && dword_887640) /*0x62262b*/
   {
     if ( !(*(uint8_t (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))(dword_887640) ) /*0x62262f*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_60))(dword_887640);  /*0x62263e*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_60))((void *)(dword_887640));  /*0x62263e*/
     return dword_AC48EC; /*0x622641*/
   }
   return result; /*0x622646*/
@@ -820,7 +820,7 @@ int sub_6D0FD0()
     ++v1; /*0x6d10a2*/
   }
   while ( v1 < 25 ); /*0x6d10a6*/
-  v7 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d10b5*/
+  v7 = (unsigned int)((&g_ObjectTrackingPool)[dword_B0CC1C])); /*0x6d10b5*/
   if ( v7 <= 0x18 ) /*0x6d10be*/
   {
     v8 = (char *)&stru_B0C1C0 + 96 * v7; /*0x6d10cb*/
@@ -1141,7 +1141,7 @@ char sub_6379C0()
   if ( !byte_AC4CF4 ) /*0x6379c7*/
   {
     byte_AC4CF4 = 1; /*0x6379ce*/
-    result = PlayVocClass(g_RulesClass_Instance->BombTickingSound, 0x2000, 1.0, 0); /*0x6379e7*/
+    result = PlayVocClass((int)(g_RulesClass_Instance->BombTickingSound), 0x2000, 1.0, 0); /*0x6379e7*/
     if ( dword_AC4B80 ) /*0x6379f4*/
       return (**(int (***)(int, int, unsigned int))dword_AC4B80)(dword_AC4B80, 4551, 0); /*0x6379ff*/
   }
@@ -1880,9 +1880,9 @@ unsigned short sub_734120()
   int v7; // [esp+14h] [ebp-4h]
 
   if ( timeGetTime() - dword_845558 >= 0x640 ) /*0x734138*/
-    v0 = UI_Create_734120_Create(&v4); /*0x734149*/
+    v0 = UI_Create_734120_Create((gamemd::ObjectClass *)(&v4)); /*0x734149*/
   else
-    v0 = UI_Create_734120_Create_660BE0(&v4); /*0x73413e*/
+    v0 = UI_Create_734120_Create_660BE0((gamemd::ObjectClass *)(&v4)); /*0x73413e*/
   v4 = *v0; /*0x734150*/
   v1 = v4; /*0x73414e*/
   dword_845558 = timeGetTime(); /*0x73415d*/
@@ -1969,7 +1969,7 @@ ObjectClass * UI_Setup_793A10(void * a1, short a2)
   v5 = (char **)&dword_A8DA90; /*0x793a30*/
   while ( 1 ) /*0x793a38*/
   {
-    v6 = ToWideStringChar(*v5); /*0x793a38*/
+    v6 = ToWideStringChar((IUnknown *)(*v5)); /*0x793a38*/
     result = _strcmpi(v6,(const char *)( a1)); /*0x793a3e*/
     if ( !result ) /*0x793a48*/
       break; /*0x793a48*/

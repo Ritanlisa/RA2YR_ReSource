@@ -213,7 +213,7 @@ int TagClass::AddTrigger(TriggerClass* a2)
 {
     *(unsigned int *)(a2 + 40) = *(this + 10); /*0x6e55c7*/
     *(this + 10) = a2; /*0x6e55ca*/
-    return (int)(a2; /*0x6e55cd*/);
+    return (int)(a2); /*0x6e55cd*/
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)
 {
@@ -381,6 +381,8 @@ void TagTypeClass::SaveToINIList(CCINIClass* ini)
 } // namespace gamemd
 
 #include "e4/e4_globals_decls.hpp"
+extern int g_GameObjectCleanup;  // data: 0xB0E730 (e4_globals_decls.hpp:954)
+extern int g_TagClassCount;  // data: 0xB0E724 (e4_globals_decls.hpp:1775)
 
 namespace gamemd {
 

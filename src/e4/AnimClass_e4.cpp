@@ -689,8 +689,7 @@ LABEL_99:
       (gamemd::ConvertClass *)AnimClass_field_0x190,
       0,
       v80,
-      0,
-      (gamemd::ConvertClass *)v82,
+      0,(int)((gamemd::ConvertClass *)v82),
       (gamemd::ConvertClass *)SLODWORD(v41),
       0,
       0,
@@ -708,7 +707,7 @@ LABEL_99:
     v77 = AnimClass_field_0x190; /*0x423801*/
     BYTE1(v77) = BYTE1(AnimClass_field_0x190) | 0x20; /*0x423806*/
     DrawToSurfaceSHP(/*0x423827*/
-      (int)g_DSurface_Hidden_2, v105[0], (gamemd::ConvertClass *)v103, v104, (gamemd::ConvertClass *)(int *)v101, aP5, (gamemd::ConvertClass *)v77, 0, v76 - 2, (ConvertClass *)(2), (gamemd::ConvertClass *)v83, (gamemd::ConvertClass *)SLODWORD(v41), 0, 0, 0, 0);
+      (int)g_DSurface_Hidden_2, v105[0], (gamemd::ConvertClass *)v103, v104, (gamemd::ConvertClass *)(int *)v101, aP5, (gamemd::ConvertClass *)v77, 0, v76 - 2, (ConvertClass *)(2),(int)((gamemd::ConvertClass *)v83), (gamemd::ConvertClass *)SLODWORD(v41), 0, 0, 0, 0);
     if ( this->AnimClass_field_0xC8[2].__pad_C[230] ) /*0x423832*/
     {
       v78 = *(int16_t *)(v103 + 6); /*0x423845*/
@@ -724,8 +723,7 @@ LABEL_99:
         (gamemd::ConvertClass *)(AnimClass_field_0x190 & 0xFFFFF9F8 | 0x601),
         0,
         v81,
-        0,
-        (gamemd::ConvertClass *)1000,
+        0,(int)((gamemd::ConvertClass *)1000),
         0,
         0,
         0,

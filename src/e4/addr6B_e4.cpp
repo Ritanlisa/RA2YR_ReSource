@@ -49,6 +49,9 @@
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/AudioSettings_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/minimal_carriers.hpp"
 
 // 0x6B2430
 namespace gamemd {
@@ -899,7 +902,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   LABEL_110:
   RA2_OPDEL(v10); /*0x6b362b*/
   g_SlaveManagerPool = 0; /*0x6b3649*/
-  Cell::CreateCrater( (void *)(v90), v7 - dword_886FA4, (void *)(k), (void *)(v93), 0); /*0x6b366a*/
+  Cell::CreateCrater( (void *)(v90),(void *)(v7 - dword_886FA4), (void *)(k), (void *)(v93), 0); /*0x6b366a*/
   v61 = v79 - 1; /*0x6b3679*/
   v62 = v81 + 1; /*0x6b367a*/
   v82 = v61; /*0x6b367d*/
@@ -2312,7 +2315,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
       v33 = 0; /*0x6b9f47*/
       v34 = v31 * v50; /*0x6b9f49*/
       for ( i = v32; v33 < v34; *(unsigned char *)(i + v33 - 1) = v59[2 * v36 + v36] ) /*0x6b9f50*/
-        v36 = *(uint8_t *)(i + v33++); /*0x6b9f54*/
+        v36 = (unsigned int)(*(uint8_t *)(i + v33++))); /*0x6b9f54*/
       (*(void (**)(unsigned int *))(*v10 + 96))( (unsigned int *)(v10)); /*0x6b9f71*/
     }
     v60[0] = v10; /*0x6b9f80*/
@@ -2412,9 +2415,9 @@ int sub_6BB390()
   CHAR Filename[260]; // [esp+1ECh] [ebp-104h] BYREF
 
   GetModuleFileNameA(g_hInstance, Filename, 0x104u); /*0x6bb3ae*/
-  StringFromGUID2(&rguid, sz, 39); /*0x6bb3c9*/
+  StringFromGUID2(*(rguid), sz, 39); /*0x6bb3c9*/
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(MultiByteStr), 39, 0, 0); /*0x6bb3ea*/
-  StringFromGUID2(&stru_7E9510, sz, 39); /*0x6bb3fb*/
+  StringFromGUID2(stru_7E9510, sz, 39); /*0x6bb3fb*/
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(String), 39, 0, 0); /*0x6bb419*/
   lstrcpyA( (LPSTR)(String1), aClsid); /*0x6bb42b*/
   lstrcatA(String1, MultiByteStr); /*0x6bb43d*/

@@ -248,7 +248,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
   v26 = v6 - (unsigned int)DSurface_ViewBounds.field_4; /*0x6d75a8*/
   *(float *)&v22 = (float)(v5 - DSurface_ViewBounds.field_0); /*0x6d75b7*/
   v23 = (float)(v6 - (unsigned int)DSurface_ViewBounds.field_4); /*0x6d75c3*/
-  v7 = TransformMatrix3x4Point(v37, (float *)(&this->u32_58C6), (float *)&v22); /*0x6d75c7*/
+ v7 = (float *)(TransformMatrix3x4Point(v37, (float *)(&this->u32_58C6), (float *)&v22)); /*0x6d75c7*/
   v22 = *(int *)v7; /*0x6d75ce*/
   v23 = v7[1]; /*0x6d75d9*/
   v24 = *((unsigned int *)v7 + 2); /*0x6d75e0*/
@@ -472,7 +472,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v39 = (float)(v10 - DSurface_ViewBounds); /*0x6d790a*/
           v41 = 0; /*0x6d791c*/
           v40 = (float)v43; /*0x6d7924*/
-          v12 = TransformMatrix3x4Point((float *)&v42, (float *)(&this->u32_58C6), &v39); /*0x6d7928*/
+ v12 = (float *)(TransformMatrix3x4Point((float *)&v42, (float *)(&this->u32_58C6), &v39)); /*0x6d7928*/
           v39 = *v12; /*0x6d792f*/
           v40 = v12[1]; /*0x6d793a*/
           v41 = *((unsigned int *)v12 + 2); /*0x6d7941*/
@@ -623,7 +623,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a3, int a4)
   *(float *)&v33 = (float)v6; /*0x6d7c41*/
   *(float *)&v31 = (float)v38; /*0x6d7c4d*/
   Triple_Set(&v41, v31, v33, 0); /*0x6d7c50*/
-  v7 = TransformMatrix3x4Point(v47, (float *)&this->TacticalClass_field_DE4, (float *)&v41); /*0x6d7c66*/
+ v7 = (float *)(TransformMatrix3x4Point(v47, (float *)&this->TacticalClass_field_DE4, (float *)&v41)); /*0x6d7c66*/
   v41 = *(Triple *)v7; /*0x6d7c6d*/
   v42 = v7[1]; /*0x6d7c78*/
   v43 = *((unsigned int *)v7 + 2); /*0x6d7c7f*/
@@ -643,7 +643,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a3, int a4)
   *(float *)&v34 = (float)v14; /*0x6d7d15*/
   *(float *)&v32 = (float)v38; /*0x6d7d21*/
   Triple_Set(&v41, v32, v34, 0); /*0x6d7d24*/
-  v15 = TransformMatrix3x4Point(v47, (float *)&this->TacticalClass_field_DE4, (float *)&v41); /*0x6d7d34*/
+ v15 = (float *)(TransformMatrix3x4Point(v47, (float *)&this->TacticalClass_field_DE4, (float *)&v41)); /*0x6d7d34*/
   v41 = *(Triple *)v15; /*0x6d7d3b*/
   v42 = v15[1]; /*0x6d7d46*/
   v43 = *((unsigned int *)v15 + 2); /*0x6d7d4d*/
@@ -762,7 +762,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect, int a2, int a
       v19 = v18[0]; /*0x6d311f*/
       v20 = v18[1]; /*0x6d3123*/
       v21 = v18[2]; /*0x6d3133*/
-      v6 = Coord_To_ScreenRaw(&v17, &v19); /*0x6d3137*/
+ v6 = (int *)(Coord_To_ScreenRaw(&v17, &v19)); /*0x6d3137*/
       v7 = *(&this->uniqueId5); /*0x6d3144*/
       v8 = *v6 - *(&this->uniqueId4); /*0x6d314a*/
       v9 = v6[1]; /*0x6d314c*/
@@ -770,7 +770,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect, int a2, int a
       v23[3] = 30; /*0x6d315b*/
       v23[1] = v9 - v7 + g_Map_VisibleRect; /*0x6d3175*/
       v23[2] = 60; /*0x6d3183*/
-      v10 = ClipRectIntersection(v27, &DSurface_ViewBounds, v23, 0, 0); /*0x6d3187*/
+ v10 = (int *)(ClipRectIntersection(v27, &DSurface_ViewBounds, v23, 0, 0)); /*0x6d3187*/
       v24[0] = *v10; /*0x6d3190*/
       v24[1] = v10[1]; /*0x6d3197*/
       v25 = v10[2]; /*0x6d319e*/
@@ -798,7 +798,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect, int a2, int a
         v21 = *(unsigned int *)((char *)g_CraterPool + v14 + 8); /*0x6d3219*/
         v22 = *(unsigned int *)((char *)g_CraterPool + v14 + 12); /*0x6d322c*/
         v20 += g_Map_VisibleRect; /*0x6d323a*/
-        v15 = ClipRectIntersection(v27, &DSurface_ViewBounds, &v19, 0, 0); /*0x6d3243*/
+ v15 = (int *)(ClipRectIntersection(v27, &DSurface_ViewBounds, &v19, 0, 0)); /*0x6d3243*/
         v19 = *v15; /*0x6d3247*/
         v20 = v15[1]; /*0x6d324e*/
         result = v15[2]; /*0x6d3252*/
@@ -877,7 +877,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
   *(float *)&v26 = (float)v29; /*0x6d7228*/
   *(float *)&v25 = (float)v4; /*0x6d7234*/
   Triple_Set(&v35, v25, v26, 0); /*0x6d7237*/
-  v5 = TransformMatrix3x4Point(v43, (float *)(v3 + 3556), &v35); /*0x6d724b*/
+ v5 = (float *)(TransformMatrix3x4Point(v43, (float *)(v3 + 3556), &v35)); /*0x6d724b*/
   v35 = *v5; /*0x6d7252*/
   v36 = v5[1]; /*0x6d725d*/
   v37 = *((unsigned int *)v5 + 2); /*0x6d7264*/
@@ -889,7 +889,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
     v42 = 0; /*0x6d728a*/
   if ( v41 < 0 ) /*0x6d7292*/
     v41 = 0; /*0x6d7294*/
-  v9 = Coord::To_Cell(&dword_87F7E8, &v41); /*0x6d72a2*/
+ v9 = (CellClass *)(Coord::To_Cell(&dword_87F7E8, &v41)); /*0x6d72a2*/
   v10 = *(out + 3); /*0x6d72aa*/
   smudgeTypeIndex = v9->smudgeTypeIndex; /*0x6d72b2*/
   v11 = (uint64_t)(2290649225LL * v10) >> 32; /*0x6d72b8*/
@@ -926,7 +926,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
               v43[0] = *(float *)v46; /*0x6d73dd*/
               v43[1] = *(float *)&v46[1]; /*0x6d73e1*/
               v43[2] = *(float *)&v46[2]; /*0x6d73ed*/
-              v17 = Coord_To_ScreenRaw((int *)&v35, v43); /*0x6d73f5*/
+ v17 = (int *)(Coord_To_ScreenRaw((int *)&v35, v43)); /*0x6d73f5*/
               v28 = *v17; /*0x6d73fc*/
               v18 = *(unsigned int *)(v3 + 180); /*0x6d7400*/
               v19 = v17[1]; /*0x6d7406*/
@@ -940,12 +940,12 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
               v51[1] = dword_886FA4 + v29; /*0x6d744b*/
               v51[2] = 60; /*0x6d7460*/
               v51[3] = 30; /*0x6d7467*/
-              v21 = ClipRectIntersection(v52, v51, out, 0, 0); /*0x6d7472*/
+ v21 = (int *)(ClipRectIntersection(v52, v51, out, 0, 0)); /*0x6d7472*/
               v47[0] = *v21; /*0x6d747b*/
               v47[1] = v21[1]; /*0x6d7487*/
               v47[2] = v21[2]; /*0x6d7499*/
               v47[3] = v21[3]; /*0x6d74af*/
-              v22 = ClipRectIntersection(v53, &DSurface_ViewBounds, v47, 0, 0); /*0x6d74b6*/
+ v22 = (int *)(ClipRectIntersection(v53, &DSurface_ViewBounds, v47, 0, 0)); /*0x6d74b6*/
               v48[0] = *v22; /*0x6d74bf*/
               v48[1] = v22[1]; /*0x6d74c9*/
               v49 = v22[2]; /*0x6d74d3*/
@@ -1091,7 +1091,7 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
     {
       if ( !byte_8B3CCC ) /*0x4d18c4*/
       {
-        qsort(g_MissionPool, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0D2ED0); /*0x4d18d4*/
+        qsort((void *)(g_MissionPool), result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0D2ED0); /*0x4d18d4*/
         dword_8B3CD0 = 0; /*0x4d18dc*/
         byte_8B3CCC = 1; /*0x4d18e6*/
       }
@@ -1105,7 +1105,7 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
         v93 -= *(unsigned int *)&(&g_TacticalClass_Instance)[44]; /*0x4d193e*/
         v94 = (char *)DSurface_ViewBounds.field_4 + (unsigned int)&v94[-*(unsigned int *)&(&g_TacticalClass_Instance)[45]]; /*0x4d195d*/
         v93 += DSurface_ViewBounds.field_0; /*0x4d1964*/
-        v5 = ClipRectIntersection(v112, (int *)viewRect, &v93, 0, 0); /*0x4d197c*/
+ v5 = (int *)(ClipRectIntersection(v112, (int *)viewRect, &v93, 0, 0)); /*0x4d197c*/
         v84 = *v5; /*0x4d1985*/
         v85 = v5[1]; /*0x4d198c*/
         if ( v5[2] > 0 && v5[3] > 0 ) /*0x4d19a0*/
@@ -1227,7 +1227,7 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
                   v57 = (BuildingTypeClass::GetFoundationHeight((int *)v18, 0) << 8) - 256; /*0x4d1de6*/
                   v97[0] = (BuildingTypeClass::GetFoundationWidth((BuildingTypeClass *)v18) << 8) - 256; /*0x4d1dfe*/
                   v97[1] = v57; /*0x4d1e18*/
-                  v26 = TacticalClass::AdjustForZShapeMove(v111, v97); /*0x4d1e1f*/
+                  v26 = TacticalClass::AdjustForZShapeMove((gamemd::Point2D *)(v111),(gamemd::Point2D *)(v97)); /*0x4d1e1f*/
                   v74 = v73 - *v26; /*0x4d1e2e*/
                   v27 = *v19; /*0x4d1e3b*/
                   v76 = v75 - v26[1]; /*0x4d1e3d*/

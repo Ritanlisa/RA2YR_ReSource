@@ -732,7 +732,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   this->ParticleTypeClass_field_0xC =(unsigned int)(&vt_ParticleTypeClass); /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&this->ArrayIndex, 1); /*0x645971*/
   v7 = (gamemd::ParticleTypeClass *)(this); /*0x645986*/
-v3 = (*(int (**)(int *, ParticleTypeClass **))(dword_B0F670+ 16))( /*0x64598a*/ &dword_B0F670, (ParticleTypeClass **)(&v7));
+v3 = (*(int (**)(int *, ParticleTypeClass **))(dword_B0F670+ 16))( /*0x64598a*/ &dword_B0F670, (ParticleTypeClass **)((int *)((int *)((int *)(&v7)))));
 
 
   if ( v3 != -1 && v3 < dword_B0F680) /*0x64599a*/
@@ -746,7 +746,7 @@ v3 = (*(int (**)(int *, ParticleTypeClass **))(dword_B0F670+ 16))( /*0x64598a*/ 
     }
   }
   v7 = (gamemd::ParticleTypeClass *)(this); /*0x6459cf*/
-v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 16))( /*0x6459d3*/ &stru_A83D50.__pad_3C[12], (ParticleTypeClass **)(&v7));
+v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 16))( /*0x6459d3*/ &stru_A83D50.__pad_3C[12], (ParticleTypeClass **)((char *)((char *)(&v7))));
 
 
   if ( v4 != -1 && v4 < *(int *)&stru_A83D50.__pad_3C[28] ) /*0x6459e3*/

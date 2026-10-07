@@ -88,7 +88,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   this->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a9da*/
   this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a9e1*/
   v6 = (unsigned int *)(this); /*0x43a9ef*/
-v3 = (*(int (**)(int *, NeuronClass **))(dword_B0F670+ 16))( /*0x43a9f3*/ &dword_B0F670, (NeuronClass **)(&v6));
+v3 = (*(int (**)(int *, NeuronClass **))(dword_B0F670+ 16))( /*0x43a9f3*/ &dword_B0F670, (NeuronClass **)((int *)((int *)((int *)(&v6)))));
 
 
   if ( v3 != -1 && v3 < dword_B0F680) /*0x43aa03*/

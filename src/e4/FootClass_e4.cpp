@@ -285,7 +285,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))((int)v28.m_Data, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
-        if ( *v10   !=   (int)((int)(a1 ))) /*0x7102e3*/
+        if ( *v10   !=   (int)(a1 ))) /*0x7102e3*/
         {
           *v10 = (int)(a1); /*0x7102e7*/
           ((SuperClass *)((SuperClass *)(v6 + 413)))->SetFieldX(); /*0x7102e9*/

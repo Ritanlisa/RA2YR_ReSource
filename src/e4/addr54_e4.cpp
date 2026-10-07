@@ -432,7 +432,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   while ( (int)v8 < (int)&((unsigned int *)(g_NetworkPlayerBuffer))[80436] );
   int v9 = 112 * (unsigned int)a1;
   var904 = 112 * (unsigned int)a1;
-  sprintf(Buffer, DataGlobal_00829600, (const char *)&off_7E1BC6 + 112 * (unsigned int)a1);
+  sprintf(Buffer,(const char *const)(DataGlobal_00829600), (const char *)&off_7E1BC6 + 112 * (unsigned int)a1);
   int v149[22]; // [esp+214h] [ebp-7FCh] BYREF
   ((CCFileClass *)(v149))->Construct( (char *)(Buffer));
   v10 = (void *)((unsigned int)(CCFileClass::GetSize((CCFileClass *)(v149))));
@@ -464,7 +464,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
         1);
   }
   char v180[32]; // [esp+6B0h] [ebp-360h] BYREF
-  sprintf(v180, DataGlobal_008295F4, (const char *)&off_7E1BC6 + v9);
+  sprintf(v180,(const char *const)(DataGlobal_008295F4), (const char *)&off_7E1BC6 + v9);
   unsigned int v161[22]; // [esp+3A8h] [ebp-668h] BYREF
   ((CCFileClass *)(v161))->Construct( (char *)(v180));
   if ( ((CCFileClass *)((int)(v161)))->Open(0) )
@@ -496,7 +496,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   v94 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295B8, (int)0xFFFFFFFF);
   v115 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295AC, (int)0xFFFFFFFF);
   v96 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295A0, (int)0xFFFFFFFF);
-  v116 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829594, (INIClass *)0xFFFFFFFF);
+  v116 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829594,(int)((INIClass *)0xFFFFFFFF));
   v98 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829588, (int)0xFFFFFFFF);
   v118 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829578, (int)0xFFFFFFFF);
   v100 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829568, (int)0xFFFFFFFF);
@@ -589,7 +589,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[79868] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082931C), (int)0xFFFFFFFF);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[81676] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082930C), (int)0xFFFFFFFF);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[78084] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292FC), (int)0xFFFFFFFF);
-  dword_ABC1D0 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292E8), (INIClass *)0xFFFFFFFF);
+  dword_ABC1D0 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292E8),(int)((INIClass *)0xFFFFFFFF));
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[81668] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292D4), (int)0xFFFFFFFF);
   g_TerrainSoundTable2 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292C4), (int)0xFFFFFFFF);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[80364] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292B4), (int)0xFFFFFFFF);
@@ -713,7 +713,7 @@ LABEL_26:
       dword_ABB10C = (unsigned int)(v21);
     if ( v20 == (INIClass *)v107 )
       *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] =(unsigned int)v21;
-    sprintf((char *const)&aP2.q02C, stru_8292A8, v20);
+    sprintf((char *const)&aP2.q02C,(const char *const)(stru_8292A8), v20);
     INIClass::ResetSection(((INIClass*)v77));
     v71 = (ObjectClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_82929C, (int)0xFFFFFFFF);
     if ( v71 == (ObjectClass *)-1 )
@@ -749,7 +749,7 @@ LABEL_26:
     ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
     ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
     v75 = (CCINIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829258, (int)0xFFFF);
-    v86 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829244, (INIClass *)0xFFFF);
+    v86 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829244,(int)((INIClass *)0xFFFF));
     Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829238, 0);
     char v64 = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829228, 1);
     char v66 = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829218, 1);
@@ -815,7 +815,7 @@ LABEL_26:
           strcat(aP2[32], (const char *)&var9F4_2);
           strcpy( (char *)(Filename), v183[0]);
           strcat( (char *)(Filename), aP2[32]);
-          sprintf(Source, DataGlobal_008291A4, aP4[0], v35);
+          sprintf(Source,(const char *const)(DataGlobal_008291A4), aP4[0], v35);
           if ( !v65 )
           {
   char v154; // [esp+2F0h] [ebp-720h]
@@ -882,7 +882,7 @@ LABEL_26:
                   sprintf(aP2[0], DataGlobal_00829160, v35);
                   v3[181] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (int)((INIClass *)v3[181]));
                   sprintf(aP2[0], stru_829150, v35);
-                  v3[182] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (INIClass *)v3[182]);
+                  v3[182] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2),(int)((INIClass *)v3[182]));
                 }
               }
             }

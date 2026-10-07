@@ -55,6 +55,15 @@
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/FileSystem_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/AddTeamCommand_e4.hpp"
+#include "e4/classes/CenterTeamCommand_e4.hpp"
+#include "e4/classes/CursorPositionCommandClass_e4.hpp"
+#include "e4/classes/DeleteCommandClass_e4.hpp"
+#include "e4/classes/KeyboardConfig_e4.hpp"
+#include "e4/classes/PageUserCommandClass_e4.hpp"
+#include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
+#include "e4/classes/SelectTeamCommand_e4.hpp"
+#include "e4/classes/TauntCommandClass_e4.hpp"
 #include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
 
 // 0x530000

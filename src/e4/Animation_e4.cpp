@@ -122,7 +122,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
           if ( v13 ) /*0x454af1*/
           {
             if ( LOBYTE(v13->ObjectTypeClass) ) /*0x454af3*/
-              BuildingClass::PlayAnim((BuildingClass *)this, _EDX, v13, v8, v12, 0, 0); /*0x454b01*/
+              BuildingClass::PlayAnim((BuildingClass *)this, (int)_EDX.v, v13, v8, v12, 0, 0); /*0x454b01 W13A: IdaRegVar.v int-view (raw fn_45.c:4379 reg arg)*/
           }
         }
         ++v8; /*0x454b09*/

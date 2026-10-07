@@ -21,6 +21,7 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/AssetClass_e4.hpp"
+#include "e4/classes/ControlClass_e4.hpp"
 
 // 0x6D1770
 namespace gamemd {
@@ -37,7 +38,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
     v2 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d1780*/
     if ( v2 <= 0x18 ) /*0x6d1789*/
     {
-      v3 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v2);
+      v3 = (unsigned int)((gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v2));
       if ( v3 ) /*0x6d179e*/
       {
         if ( !BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
@@ -51,7 +52,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
     v5 = (&g_ObjectTrackingPool)[dword_B0CC1C]; /*0x6d17be*/
     if ( v5 <= 0x18 ) /*0x6d17c7*/
     {
-      v6 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v5);
+      v6 = (unsigned int)((gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v5));
       if ( v6 ) /*0x6d17dc*/
       {
         if ( BYTE1(v6[3].ShapeButtonClass_field_0x08) ) /*0x6d17de*/

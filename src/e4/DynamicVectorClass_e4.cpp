@@ -1390,7 +1390,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
     (*(void (**)(void *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
   }
   v7 = (unsigned int)this->Capacity; /*0x5c55a1*/
-  if ( v7   <   (int)((int)(this->Count ))) /*0x5c55a9*/
+  if ( v7   <   (int)(this->Count ))) /*0x5c55a9*/
     this->Count = (void *)(v7); /*0x5c55ab*/
   return 1; /*0x5c55ae*/
 

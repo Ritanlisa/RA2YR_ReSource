@@ -158,7 +158,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
   v6 = (char *)FullPath; /*0x4327ba*/
-  v7 = ((RawFileClass *)(FullPath))->Construct(); /*0x4327c3*/
+  v7 = (unsigned int)(((RawFileClass *)(FullPath))->Construct())); /*0x4327c3*/
   v8 = (*(uint8_t (**)(int, unsigned int))(*(unsigned int *)v7 + 20))(v7, 0) == 1; /*0x4327d6*/
   ((RawFileClass *)(v32))->Dtor(); /*0x4327d9*/
   if ( v8 ) /*0x4327e0*/
@@ -337,7 +337,7 @@ void BinkMovie::Play(void *a1_1)
       if ( GameLoopMessagePump( (MSG*)(&Msg), 0, 0, 0, 0) ) /*0x432ceb*/
       {
         if ( !IsMessageDialog( (void *)(&Msg), 0, 0, 0) ) /*0x432d05*/
-          return (unsigned int)((Timer*)(Timer *)dword_87F770)->PumpMessages(); /*0x432d05*/
+          return (unsigned int)((::gamemd::Timer*)(::gamemd::Timer *)dword_87F770)->PumpMessages(); /*0x432d05*/
         TranslateMessage(&Msg); /*0x432d10*/
         DispatchMessageA(&Msg); /*0x432d1b*/
       }

@@ -89,6 +89,11 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/InfantryTypeVector_e4.hpp"
+#include "e4/classes/SuperWeaponTypeClass_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/UnitTypeVector_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Render_e4.hpp"  // G42.36 C2027 supply
@@ -589,8 +594,8 @@ ScenarioClass * * Mouse_Update()
     && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0)(dword_887640) ))
   {
     do /*0x6842c0*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x6842b5*/
-    while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) );  /*0x6842c0*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x6842b5*/
+    while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))((void *)(dword_887640)) );  /*0x6842c0*/
   }
   IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (unsigned int)((gamemd::ScenarioClass **)(0)); /*0x6842d9*/
@@ -636,7 +641,7 @@ char WaitForMultiplayerLoadSync()
       && g_ClipboardBuffer
       && (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))( (HWND)((HWND)((HWND)((HWND)(g_ClipboardBuffer))))) >= 0 )
     {
-            Debug::Log();
+Debug::Log("Carrier Detect is false. Aborting load wait\n");  /* G57w13b: IDA 0x00684524 push 0x0083d984 */
       return 0; /*0x684535*/
     }
     v1 = v14; /*0x684422*/
@@ -684,7 +689,7 @@ char WaitForMultiplayerLoadSync()
       v10 = *(char **)(Game_PlayerInfoArray + 4 * i); /*0x684562*/
       ToWideStringChar((IUnknown *)(v10)); /*0x684567*/
       ToWideStringChar((IUnknown *)(v10)); /*0x684570*/
-            Debug::Log();
+Debug::Log("Player %s failed to make it into the game. Dropping %s\n");  /* G57w13b: IDA 0x0068457c push 0x0083d94c */
       v11 = *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 111); /*0x684591*/
       HandleNetworkPlayerDisconnect((wchar_t *)(v11), 1); /*0x684596*/
       if ( ((SessionClass *)(void *)((int)g_GameMode_Current))->IsValidHouse( *(void **)&HouseClass_Array->gap0[4 * v11]) ) /*0x6845aa*/
@@ -789,7 +794,7 @@ void PostLoadInitScenario()
     }
     if ( (((Debug*)(Debug *)v7)->AccumFlags() & 0x10) != 0 ) /*0x684dd1*/
     {
-      v10 = (int)(((TeamClass *)(v7))->FindOrCreate()); /*0x684de0*/
+      v10 = (int)(((TeamClass *)((gamemd::ParticleSystemClass **)(v7)))->FindOrCreate()); /*0x684de0*/
       if ( (int)((char *)&FootClass_Array) < (int)((char *)&FootClass_Array) /*0x684e13*/
         || (IDA_BYTE1(((char *)&FootClass_Array)) || !((char *)&FootClass_Array))
         && *((unsigned int *)((char *)&FootClass_Array + 0)) > 0
@@ -877,9 +882,9 @@ void PostLoadInitScenario()
   {
     ((House *)(m))->AnnounceUpgrade(-1); /*0x684faf*/
   }
-  ((MapClass*)(MapClass *)&stru_87F5F0.__pad_58[416])->ProcessRegion(); /*0x684fc7*/
+  ((::gamemd::MapClass*)(::gamemd::MapClass *)&stru_87F5F0.__pad_58[416])->ProcessRegion(); /*0x684fc7*/
   Terrain::ConnectivityGraph(  (Terrain *)&stru_87F5F0.__pad_58[416]); /*0x684fd1*/
-  ((MapClass*)(MapClass *)&stru_87F5F0.__pad_58[416])->BuildSubzones(); /*0x684fdb*/
+  ((::gamemd::MapClass*)(::gamemd::MapClass *)&stru_87F5F0.__pad_58[416])->BuildSubzones(); /*0x684fdb*/
   MarkCliffEdgePassability((int)&stru_87F5F0.__pad_58[416]); /*0x684fe5*/
   if ( !*(unsigned int *)((char *)&stru_A8EB00 + 404) ) /*0x684ff0*/
   {
@@ -966,7 +971,7 @@ int ScenarioClass_Reset()
   EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerState), 0x4000); /*0x68521f*/
   AudioQueue::DrainAll(); /*0x685224*/
   HouseClass_Player = 0; /*0x685231*/
-  ScenarioClass::InitTimer((int)g_ScenarioClass_Instance); /*0x685237*/
+  ScenarioClass::InitTimer((gamemd::ScenarioClass *)((int)g_ScenarioClass_Instance)); /*0x685237*/
   LightningStorm::End(); /*0x68523c*/
   for ( i = g_AbstractTypePool - 1; i >= 0; --i ) /*0x68524c*/
   {
@@ -1814,7 +1819,7 @@ void GenerateScenarioUnits()
               v47 = *((unsigned int *)v68 + v48); /*0x688c86*/
             }
             v50 = (void *)(*(int (**)(int, LPVOID))(v47->q08C))( v47, (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))));  /*0x688cbd*/
-            v51 = AbstractClass::IsTechnoType(v50); /*0x688cce*/
+            v51 = AbstractClass::IsTechnoType((gamemd::AbstractClass *)(v50)); /*0x688cce*/
             if ( FindInfantryDeployPosition( (int *)v50, (RadarClass *)((int16_t *)&v58), 4) ) /*0x688cd0*/
             {
               v52 = (void *)ppv; /*0x688cef*/

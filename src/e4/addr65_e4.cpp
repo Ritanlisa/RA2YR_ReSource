@@ -260,7 +260,7 @@ int Trigger_AllocateLog(int a1)
           int v7 = *(unsigned int *)(Game_PlayerInfoArray + 4 * i);
           if ( *(unsigned int *)(v7 + 111) == v4 )
           {
-            char * v8 = ToWideStringChar((gamemd::IUnknown *)((char *)v7));
+            char * v8 = ToWideStringChar((::gamemd::IUnknown *)((char *)v7));
             strncpy( (char *)v5, (const char *)(v8), 0x14u);
           }
         }
@@ -756,7 +756,7 @@ v6 = (int *)(*((int (**)(DSurface *, int *, unsigned int))DSurface_Sidebar->DSur
 
 
 
-    DrawToSurfaceSHP( (int)DSurface_Sidebar, v5, (gamemd::ConvertClass *)(dword_B04A38), 0x20u, (gamemd::ConvertClass *)(&v43), (gamemd::ConvertClass *)(v6), 0, 0, 0,(gamemd::ConvertClass *)( 1000), 0, 0, 0, 0, 0, (ConvertClass *)(v41)); /*0x65400b*/
+    DrawToSurfaceSHP( (int)DSurface_Sidebar, v5, (::gamemd::ConvertClass *)(dword_B04A38), 0x20u, (::gamemd::ConvertClass *)(&v43), (::gamemd::ConvertClass *)(v6), 0, 0, 0,(::gamemd::ConvertClass *)( 1000), 0, 0, 0, 0, 0, (ConvertClass *)(v41)); /*0x65400b*/
     v7 = v4[1149] + 2; /*0x65401c*/
     v43 = v4[1148]; /*0x65401f*/
     v44 = v7; /*0x654031*/
@@ -820,7 +820,7 @@ v31 = (unsigned int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface
         Buffer[0] = 0; /*0x6541d3*/
         swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *)(v17 + 90154)); /*0x6541da*/
         if ( !wcslen(Buffer) ) /*0x6541e4*/
-          wcscpy( (wchar_t *)(Buffer), (const wchar_t *)&stru_8392C0.VocClass_field_94); /*0x6541fa*/
+          wcscpy( (wchar_t *)(Buffer), (const wchar_t *)&((VocClass *)&stru_8392C0)->VocClass_field_94); /*0x6541fa*/
         if ( (unsigned int)wcslen(Buffer) > 0x12 ) /*0x654212*/
           wcscpy( (wchar_t *)(v53), L"."); /*0x654214*/
         v48[0] = v4[1148]; /*0x654229*/
@@ -946,9 +946,9 @@ int sub_6586D0()
   if ( Dialog ) /*0x6586f9*/
   {
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
-    ((gamemd::Dialog *)(Dialog))->Show(); /*0x65870b*/
+    ((::gamemd::Dialog *)(Dialog))->Show(); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
-        while ( !this->((gamemd::Dialog *)0)->PumpMessages() )
+        while ( !this->((::gamemd::Dialog *)0)->PumpMessages() )
     {
       if ( dwNewLong ) /*0x658727*/
         goto LABEL_7; /*0x658727*/
@@ -1250,10 +1250,10 @@ AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
   {
     return *((unsigned int *)this + 5); /*0x65c494*/
   }
-  RAMFileClass_field_0x10 = (gamemd::AbstractClass *)(this->RAMFileClass_field_0x10); /*0x65c436*/
+  RAMFileClass_field_0x10 = (::gamemd::AbstractClass *)(this->RAMFileClass_field_0x10); /*0x65c436*/
   RAMFileClass_field_0xC = RAMFileClass_field_0x10; /*0x65c43b*/
   if ( (*((unsigned char *)this + 24) & 2) != 0 ) /*0x65c43d*/
-    RAMFileClass_field_0xC = (gamemd::AbstractClass *)(this->RAMFileClass_field_0xC); /*0x65c43f*/
+    RAMFileClass_field_0xC = (::gamemd::AbstractClass *)(this->RAMFileClass_field_0xC); /*0x65c43f*/
   switch ( a3 ) /*0x65c449*/
   {
     case 0: /*0x65c449*/
@@ -1346,10 +1346,10 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
 
   result = (int)(aP1); /*0x65c913*/
   v5 = a3; /*0x65c919*/
-  v6 = (int)((gamemd::ObjectClass *)(aP1)); /*0x65c91e*/
-  v7 = (int)(aP1 == (gamemd::ObjectClass *)(a3)); /*0x65c920*/
-  v8 = aP1 <= (gamemd::ObjectClass *)(a3); /*0x65c920*/
-  v19 = (gamemd::ObjectClass *)(this); /*0x65c922*/
+  v6 = (int)((::gamemd::ObjectClass *)(aP1)); /*0x65c91e*/
+  v7 = (int)(aP1 == (::gamemd::ObjectClass *)(a3)); /*0x65c920*/
+  v8 = aP1 <= (::gamemd::ObjectClass *)(a3); /*0x65c920*/
+  v19 = (::gamemd::ObjectClass *)(this); /*0x65c922*/
   v23 = (int)(aP1); /*0x65c926*/
   if ( !v7 ) /*0x65c92a*/
   {
@@ -1400,7 +1400,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
         v12 = v20 & v18; /*0x65c9df*/
         if ( (v20 & v18) <= v21 ) /*0x65c9e3*/
           break; /*0x65c9e3*/
-        this = (gamemd::E4Recv_65C910 *)(v19); /*0x65c97c*/
+        this = (::gamemd::E4Recv_65C910 *)(v19); /*0x65c97c*/
       }
       v6 = v23; /*0x65c9e5*/
     }
@@ -1581,7 +1581,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   v12 = a2  !=  (void *)(-1); /*0x65d9ac*/
   v12 = v12; /*0x65d9b1*/
   if ( v12 ) /*0x65d9b5*/
-    Waypoint_Location = ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (int *)(v48), *(int *)v48); /*0x65d9c7*/
+ Waypoint_Location = (int *)(ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (int *)(v48), *(int *)v48)); /*0x65d9c7*/
   else
     Waypoint_Location = (int *)(((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords((unsigned int *)(v48))); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
@@ -1607,7 +1607,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
         NeighbourContent = (Cell *)((Cell *)(v17))->GetNeighbourContent(v18); /*0x65da48*/
       v20 = (ObjectClass *)((Cell *)(NeighbourContent))->IsBridge(); /*0x65da4f*/
       v20 = v20; /*0x65da54*/
-      if ( v20 && v20->health > 0 && ProcessDataCellClass((gamemd::TechnoClass *)(v20)) ) /*0x65da63*/
+      if ( v20 && v20->health > 0 && ProcessDataCellClass((::gamemd::TechnoClass *)(v20)) ) /*0x65da63*/
         v16 = v20; /*0x65da6c*/
       ++v18; /*0x65da6e*/
     }
@@ -2091,7 +2091,7 @@ void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, in
     while ( 1 ) /*0x65e699*/
     {
       ++dword_A8E7AC; /*0x65e699*/
-      v12 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v10 + 140))(v10, a1); /*0x65e6a1*/
+      v12 = (*(int (**)(int, HouseClass *))(*(unsigned int *)v10 + 140))(v10,(::gamemd::HouseClass *)(a1)); /*0x65e6a1*/
       v13 = v12; /*0x65e6ad*/
       --dword_A8E7AC; /*0x65e6b2*/
       if ( !v12 ) /*0x65e6b8*/

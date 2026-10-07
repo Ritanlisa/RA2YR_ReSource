@@ -39,6 +39,9 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/Campaign_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/MovieClass_e4.hpp"
+#include "e4/classes/Multiplayer_e4.hpp"
 
 // 0x49B660
 namespace gamemd {
@@ -186,7 +189,7 @@ int MPCooperative::WriteCoopSaveINI()
   ((CCFileClass*)&v19)->Construct( (char *)((void *)(g_Str_File_coopsave_ini))); /*0x49be70*/
   *((unsigned int *)((char *)&v15 + 0)) = 0; /*0x49be79*/
   *((unsigned int *)((char *)&v15 + 1)) = 0; /*0x49be7d*/
-  ((INISectionList*)(INISectionList *)(unsigned int *)((char *)&v15 + 2))->Constructor(); /*0x49be81*/
+  ((::gamemd::INISectionList*)(::gamemd::INISectionList *)(unsigned int *)((char *)&v15 + 2))->Constructor(); /*0x49be81*/
   Node::Init((Node *)&(unsigned int *)((char *)&v15 + 8)); /*0x49be8a*/
   ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
@@ -476,7 +479,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   do /*0x5c151f*/
   {
     ((VectorClass *)(p_MPCooperative_field_0x264))->Construct(0, 0); /*0x5c1506*/
-    p_MPCooperative_field_0x264->vtable1 = &vt_DynamicVectorClass; /*0x5c150b*/
+    p_MPCooperative_field_0x264->vtable1 = (unsigned int)&vt_DynamicVectorClass; /*0x5c150b*/
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
     p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/
     p_MPCooperative_field_0x264 = (VectorClass *)((char *)p_MPCooperative_field_0x264 + 24); /*0x5c151b*/

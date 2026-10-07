@@ -338,11 +338,11 @@ void *** BufferIOFileClass::Constructor_BitFont(char a2) {
     void *FileSize; // eax
     void **FilePointer; // esi
 
-    FileSize = (void *)this->?; /*0x434a43*/
+    FileSize = (void *)this->q008; /*0x434a43*/
     *(unsigned int *)this->RawFileClass = (unsigned int)(void *)&BitFont_vftable; /*0x434a46*/
     if ( FileSize ) /*0x434a4e*/
       free(FileSize); /*0x434a51*/
-    FilePointer = (void **)this->?; /*0x434a5a*/
+    FilePointer = (void **)this->q004; /*0x434a5a*/
     if ( FilePointer ) /*0x434a5f*/
     {
       if ( FilePointer[6] ) /*0x434a61*/
@@ -368,7 +368,7 @@ unsigned int * BufferIOFileClass::Constructor_BitText(char a2) {
     Text *v3; // esi
 
     *(unsigned int *)this->RawFileClass = (unsigned int)(void *)&BitText_vftable; /*0x435564*/
-    v3 = g_FogOfWarState; /*0x43556a*/
+ v3 = (Text *)(g_FogOfWarState); /*0x43556a*/
     if ( g_FogOfWarState ) /*0x435572*/
       (*(void (__thiscall **)(Text *, int))g_FogOfWarState->Text_field_00)(g_FogOfWarState, 1); /*0x43557a*/
     if ( v3 == g_FogOfWarState ) /*0x435582*/

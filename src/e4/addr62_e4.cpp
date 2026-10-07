@@ -61,6 +61,8 @@
 #include "e4/classes/Control_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/DialogQueue_e4.hpp"
 
 // 0x620050
 namespace gamemd {
@@ -950,13 +952,13 @@ int SetupDialogRenderBuffer(int *a1, HWND a2, uint8_t a3)
       (*(void (**)(unsigned int *))(*v7 + 96))( (unsigned int *)(v7)); /*0x62178c*/
     }
   }
-  v20 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v3[1])));
-  v21 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*v3)));
-  v35[2] = (unsigned int)((gamemd::AbstractClass **)(v3[2]));
-  v35[3] = (unsigned int)((gamemd::AbstractClass **)(v3[3]));
-  v35[1] = (unsigned int)((gamemd::AbstractClass **)(v20 - v28.top));
-  v35[0] = (int)((unsigned int)((gamemd::AbstractClass **)(v21 - v28.left)));
-  return (int)((gamemd::AbstractClass **)((*(int (**)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/ DSurface_Alternate, (int *)(v3), (unsigned int *)(v7), (unsigned int *)(v35), 0, 1)));
+  v20 = (::gamemd::AbstractClass **)((int)((::gamemd::AbstractClass **)(v3[1])));
+  v21 = (::gamemd::AbstractClass **)((int)((::gamemd::AbstractClass **)(*v3)));
+  v35[2] = (unsigned int)((::gamemd::AbstractClass **)(v3[2]));
+  v35[3] = (unsigned int)((::gamemd::AbstractClass **)(v3[3]));
+  v35[1] = (unsigned int)((::gamemd::AbstractClass **)(v20 - v28.top));
+  v35[0] = (int)((unsigned int)((::gamemd::AbstractClass **)(v21 - v28.left)));
+  return (int)((::gamemd::AbstractClass **)((*(int (**)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/ DSurface_Alternate, (int *)(v3), (unsigned int *)(v7), (unsigned int *)(v35), 0, 1)));
 }
 }
 // 0x6223C0
@@ -969,8 +971,8 @@ unsigned int * E4Recv_6223C0::DestroyDialog(void *a1_1)
   void (***v3)(unsigned int, int); // ecx
   ObjectClass *v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = (unsigned int *)((gamemd::ObjectClass *)(*(unsigned int **)&g_DialogPool.__pad_208[60]));
-  v4 = (gamemd::ObjectClass *)(this);
+  result = (unsigned int *)((::gamemd::ObjectClass *)(*(unsigned int **)&g_DialogPool.__pad_208[60]));
+  v4 = (::gamemd::ObjectClass *)(this);
   if ( *(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x6223cd*/
   {
     result = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x6223ee*/
@@ -1315,10 +1317,10 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       UI_Helper_60D2C0(aP0, v22); /*0x622f56*/
       if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x622f60*/
         Control::CreateControlDialog(aP0); /*0x622f6b*/
-      UI_Helper_60CAF0((gamemd::ObjectClass *)(aP0)); /*0x622f72*/
-      UI_Helper_60C930((gamemd::ObjectClass *)(aP0)); /*0x622f79*/
-      UI_Helper_60CCC0((gamemd::ObjectClass *)(aP0)); /*0x622f80*/
-      UI_Helper_60CDB0((gamemd::ObjectClass *)(aP0)); /*0x622f87*/
+      UI_Helper_60CAF0((::gamemd::ObjectClass *)(aP0)); /*0x622f72*/
+      UI_Helper_60C930((::gamemd::ObjectClass *)(aP0)); /*0x622f79*/
+      UI_Helper_60CCC0((::gamemd::ObjectClass *)(aP0)); /*0x622f80*/
+      UI_Helper_60CDB0((::gamemd::ObjectClass *)(aP0)); /*0x622f87*/
       EnumChildWindows((HWND)(aP0), GadgetClass::FindByWindow, 0); /*0x622f93*/
       if ( (uint8_t)((Control *)aP0)->CheckControlTypeDialog() ) /*0x622f97*/
       {
@@ -1345,16 +1347,16 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
         aP2->health = 0; /*0x622ffc*/
       if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x623004*/
         Control::CreateControlDialog(aP0); /*0x62300f*/
-      UI_Helper_60CAF0((gamemd::ObjectClass *)(aP0)); /*0x623016*/
-      UI_Helper_60C930((gamemd::ObjectClass *)(aP0)); /*0x62301d*/
-      UI_Helper_60CCC0((gamemd::ObjectClass *)(aP0)); /*0x623024*/
-      UI_Helper_60CDB0((gamemd::ObjectClass *)(aP0)); /*0x62302b*/
+      UI_Helper_60CAF0((::gamemd::ObjectClass *)(aP0)); /*0x623016*/
+      UI_Helper_60C930((::gamemd::ObjectClass *)(aP0)); /*0x62301d*/
+      UI_Helper_60CCC0((::gamemd::ObjectClass *)(aP0)); /*0x623024*/
+      UI_Helper_60CDB0((::gamemd::ObjectClass *)(aP0)); /*0x62302b*/
       v23 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x623030*/
       EnumChildWindows((HWND)(aP0), GadgetClass::FindByWindow, 0); /*0x62303d*/
       if ( (uint8_t)((Control *)aP0)->CheckControlTypeDialog() ) /*0x623041*/
         goto LABEL_41; /*0x623048*/
     }
-    UI_Helper_60C7D0((gamemd::ObjectClass *)(aP0)); /*0x62306c*/
+    UI_Helper_60C7D0((::gamemd::ObjectClass *)(aP0)); /*0x62306c*/
     goto LABEL_48; /*0x62306c*/
   }
   if ( a2 != 132 ) /*0x622b65*/
@@ -1435,7 +1437,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     v16 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622d45*/
     v17 = SendMessageA( (HWND)(v13), 0x4E8u, 0, (LPARAM)((LPARAM)(v15))); /*0x622d54*/
     UI_Assign(&lParam, aP0, v13, v17); /*0x622d5e*/
-    WideString::AssignFromPtr( (const wchar_t)(&lParam)); /*0x622d6c*/
+    WideString::AssignFromPtr((const wchar_t **)((const wchar_t)(&lParam))); /*0x622d6c*/
     ((DeleteAndZero*)&lParam)->Alt(); /*0x622d75*/
     WideString::Reassign_Alt( (const wchar_t **)(v29)); /*0x622d83*/
     ((DeleteAndZero*)v29)->Alt(); /*0x622d8c*/
@@ -1451,17 +1453,17 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       WideString::Reassign_Alt( (const wchar_t **)(v30)); /*0x622df4*/
       ((DeleteAndZero*)v30)->Alt(); /*0x622dfd*/
       v19 = (const wchar_t *)((WideString *)&aP2)->GetOrEmpty(); /*0x622e0b*/
-      if ( !wcscmp(v19, &g_TypeClass_DefaultString) ) /*0x622e11*/
+      if ( !wcscmp(v19,(const wchar_t *)(&g_TypeClass_DefaultString)) ) /*0x622e11*/
       {
         v20 = (char *)DlgSkirmishMenuProc( (HWND)(aP0), (HWND)(v13)); /*0x622e21*/
         if ( v20 ) /*0x622e28*/
         {
-          v24 = (wchar_t *)GetStringCSF((wchar_t *)v20, (int)g_Str_File_ownrdraw_cpp, 1957); /*0x622e3d*/
+          v24 = (wchar_t *)GetStringCSF((wchar_t *)v20,(unsigned int *)((int)g_Str_File_ownrdraw_cpp),(const char *)(1957)); /*0x622e3d*/
           WideString::Assign( (wchar_t *)(v24)); /*0x622e3e*/
         }
         else
         {
-          WideString::Assign( (wchar_t)(&g_TypeClass_DefaultString)); /*0x622e49*/
+          WideString::Assign((wchar_t *)((wchar_t)(&g_TypeClass_DefaultString))); /*0x622e49*/
         }
         WideString::Reassign_Alt( (const wchar_t **)(v25)); /*0x622e57*/
         ((DeleteAndZero*)v25)->Alt(); /*0x622e60*/

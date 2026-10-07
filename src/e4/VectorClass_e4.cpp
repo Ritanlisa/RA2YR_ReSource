@@ -4660,7 +4660,6 @@ namespace gamemd {
 namespace gamemd {
 struct _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass;  // G42.38d fwd: flattened template receiver (def 0x4E0990)
 // 0x4E0990
-namespace gamemd {
 void _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize( unsigned int * a2)
 {
 
@@ -4682,124 +4681,82 @@ void _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VC
   return result; /*0x4e099b*/
 
 }
-}
 // 0x4E09E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E0AB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E0AF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E0CA0
-namespace gamemd {
-}
 // 0x4E0D80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E0E20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8340
-namespace gamemd {
 int VectorClass_Building::Count(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e834a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8350
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8380
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E83A0
-namespace gamemd {
 int VectorClass_ptr_SuperClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e83aa*/
 
 }
-} // namespace gamemd
 
 // 0x4E83B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E83E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8400
-namespace gamemd {
 int VectorClass_ptr_AITriggerTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e840a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8440
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8460
-namespace gamemd {
 int VectorClass_ptr_BuildingLightClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e846a*/
 
 }
-} // namespace gamemd
 
 // 0x4E84D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8500
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8520
-namespace gamemd {
 int VectorClass_ptr_TeamClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e852a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8530
-namespace gamemd {
 int VectorClass_ptr_ThemeControl::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e853a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8540
-namespace gamemd {
 void VectorClass_ptr_AITriggerTypeClass::Destroy_0()
 {
 
@@ -4816,10 +4773,8 @@ void VectorClass_ptr_AITriggerTypeClass::Destroy_0()
   this->m_8 = 0; /*0x4e8564*/
 
 }
-} // namespace gamemd
 
 // 0x4E8570
-namespace gamemd {
 unsigned int VectorClass_ptr_AITriggerTypeClass::GetItemIndex_0(int a2)
 {
 
@@ -4829,20 +4784,16 @@ unsigned int VectorClass_ptr_AITriggerTypeClass::GetItemIndex_0(int a2)
     return 0; /*0x4e8577*/
 
 }
-} // namespace gamemd
 
 // 0x4E8590
-namespace gamemd {
 int VectorClass_ptr_TriggerClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e859a*/
 
 }
-} // namespace gamemd
 
 // 0x4E85A0
-namespace gamemd {
 void VectorClass_ptr_AITriggerTypeClass::Destroy_1()
 {
 
@@ -4859,10 +4810,8 @@ void VectorClass_ptr_AITriggerTypeClass::Destroy_1()
   this->m_8 = 0; /*0x4e85c4*/
 
 }
-} // namespace gamemd
 
 // 0x4E85D0
-namespace gamemd {
 unsigned int VectorClass_ptr_AITriggerTypeClass::GetItemIndex_1(int a2)
 {
 
@@ -4872,56 +4821,40 @@ unsigned int VectorClass_ptr_AITriggerTypeClass::GetItemIndex_1(int a2)
     return 0; /*0x4e85d7*/
 
 }
-} // namespace gamemd
 
 // 0x4E85F0
-namespace gamemd {
 int VectorClass_ptr_TriggerTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e85fa*/
 
 }
-} // namespace gamemd
 
 // 0x4E8600
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8630
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8650
-namespace gamemd {
 int VectorClass_ptr_TubeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e865a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8660
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8690
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E86B0
-namespace gamemd {
 int VectorClass_ptr_ParticleSystemClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e86ba*/
 
 }
-} // namespace gamemd
 
 // 0x4E86C0
-namespace gamemd {
 void VectorClass_ptr_TubeClass::Destroy_0()
 {
 
@@ -4938,10 +4871,8 @@ void VectorClass_ptr_TubeClass::Destroy_0()
   this->m_8 = 0; /*0x4e86e4*/
 
 }
-} // namespace gamemd
 
 // 0x4E86F0
-namespace gamemd {
 unsigned int VectorClass_ptr_TubeClass::GetItemIndex_0(int a2)
 {
 
@@ -4951,20 +4882,16 @@ unsigned int VectorClass_ptr_TubeClass::GetItemIndex_0(int a2)
     return 0; /*0x4e86f7*/
 
 }
-} // namespace gamemd
 
 // 0x4E8710
-namespace gamemd {
 int VectorClass_ptr_WaveClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e871a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8720
-namespace gamemd {
 void VectorClass_ptr_TubeClass::Destroy_1()
 {
 
@@ -4981,10 +4908,8 @@ void VectorClass_ptr_TubeClass::Destroy_1()
   this->m_8 = 0; /*0x4e8744*/
 
 }
-} // namespace gamemd
 
 // 0x4E8750
-namespace gamemd {
 unsigned int VectorClass_ptr_TubeClass::GetItemIndex_1(int a2)
 {
 
@@ -4994,488 +4919,328 @@ unsigned int VectorClass_ptr_TubeClass::GetItemIndex_1(int a2)
     return 0; /*0x4e8757*/
 
 }
-} // namespace gamemd
 
 // 0x4E8770
-namespace gamemd {
 int VectorClass_ptr_OverlayClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e877a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8890
-namespace gamemd {
 int VectorClass_ptr_AircraftClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e889a*/
 
 }
-} // namespace gamemd
 
 // 0x4E88A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E88D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E88F0
-namespace gamemd {
 int VectorClass_ptr_UnitClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e88fa*/
 
 }
-} // namespace gamemd
 
 // 0x4E8900
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8930
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8950
-namespace gamemd {
 int VectorClass_ptr_HouseClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e895a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8960
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8990
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E89B0
-namespace gamemd {
 int VectorClass_ptr_AnimClass::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e89ba*/
 
 }
-} // namespace gamemd
 
 // 0x4E89C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E89F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8A10
-namespace gamemd {
 int VectorClass_ptr_FactoryClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8a1a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8A20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8A50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8A70
-namespace gamemd {
 int VectorClass_ptr_CampaignClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8a7a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8A80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8AB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8AD0
-namespace gamemd {
 int VectorClass_ptr_SideClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8ada*/
 
 }
-} // namespace gamemd
 
 // 0x4E8AE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8B10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8B30
-namespace gamemd {
 int VectorClass_ptr_HouseTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8b3a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8B40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8B70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8B90
-namespace gamemd {
 int VectorClass_ptr_TaskForceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8b9a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8BA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8BD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8BF0
-namespace gamemd {
 int VectorClass_ptr_TeamTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8bfa*/
 
 }
-} // namespace gamemd
 
 // 0x4E8C00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8C30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8C50
-namespace gamemd {
 int VectorClass_ptr_ScriptTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8c5a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8C60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8C90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8CB0
-namespace gamemd {
 int VectorClass_ptr_OverlayTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8cba*/
 
 }
-} // namespace gamemd
 
 // 0x4E8CC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8CF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8D10
-namespace gamemd {
 int VectorClass_ptr_SmudgeTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8d1a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8D20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8D50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8D70
-namespace gamemd {
 int VectorClass_ptr_TerrainTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8d7a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8D80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8DB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8DD0
-namespace gamemd {
 int VectorClass_ptr_BuildingTypeClass::SaveToINI(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8dda*/
 
 }
-} // namespace gamemd
 
 // 0x4E8DE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8E10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8E30
-namespace gamemd {
 int VectorClass_ptr_AircraftTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8e3a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8E40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8E70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8E90
-namespace gamemd {
 int VectorClass_ptr_UnitTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8e9a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8EA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8ED0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8EF0
-namespace gamemd {
 int VectorClass_ptr_AnimTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8efa*/
 
 }
-} // namespace gamemd
 
 // 0x4E8F00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8F30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8F50
-namespace gamemd {
 int VectorClass_ptr_InfantryTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8f5a*/
 
 }
-} // namespace gamemd
 
 // 0x4E8F60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8F90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8FB0
-namespace gamemd {
 int VectorClass_ptr_BulletTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e8fba*/
 
 }
-} // namespace gamemd
 
 // 0x4E8FC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E8FF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9010
-namespace gamemd {
 int VectorClass_ptr_VoxelAnimTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e901a*/
 
 }
-} // namespace gamemd
 
 // 0x4E9020
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9050
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9070
-namespace gamemd {
 int VectorClass_ptr_IsometricTileTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e907a*/
 
 }
-} // namespace gamemd
 
 // 0x4E9080
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E90B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E90D0
-namespace gamemd {
 int VectorClass_ptr_ParticleTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e90da*/
 
 }
-} // namespace gamemd
 
 // 0x4E90E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9130
-namespace gamemd {
 int VectorClass_ptr_ParticleSystemTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e913a*/
 
 }
-} // namespace gamemd
 
 // 0x4E9140
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9170
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9190
-namespace gamemd {
 int VectorClass_ptr_SuperWeaponTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e919a*/
 
 }
-} // namespace gamemd
 
 // 0x4E91A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E91D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E91F0
-namespace gamemd {
 int VectorClass_ptr_AbstractTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4e91fa*/
 
 }
-} // namespace gamemd
 
 // 0x4E9460
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E94A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9550
-namespace gamemd {
 void VectorClass_Building::Set(void *a1_1, void *a2_1, void *a3_1)
 {
 
@@ -5488,134 +5253,70 @@ void VectorClass_Building::Set(void *a1_1, void *a2_1, void *a3_1)
   this->m_8 = 0; /*0x4e9571*/
 
 }
-} // namespace gamemd
 
 // 0x4E9580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E95C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E96C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9700
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E97B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E97E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E98F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9920
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9960
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9A10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9A40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9A80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9AA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9B50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9B80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9BC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9C70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9CA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9CE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9D00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4E9DB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA040
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA080
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA130
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA160
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA1A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA1C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA270
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA2A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA2E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA390
-namespace gamemd {
 void VectorClass_ptr_ThemeControl::ddtor(void *a1_1)
 {
 
@@ -5628,66 +5329,36 @@ void VectorClass_ptr_ThemeControl::ddtor(void *a1_1)
   this->m_8 = 0; /*0x4ea3b1*/
 
 }
-} // namespace gamemd
 
 // 0x4EA3C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA400
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA420
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA460
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA510
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA540
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA5A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA650
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA680
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA6C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA770
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA7A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA7E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA800
-namespace gamemd {
 char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3)
 {
 
@@ -5733,10 +5404,8 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
   return 1; /*0x4ea89e*/
 
 }
-} // namespace gamemd
 
 // 0x4EA8B0
-namespace gamemd {
 int VectorClass_ptr_AITriggerTypeClass::FindItemIndex_1(unsigned int * a2)
 {
 
@@ -5756,86 +5425,46 @@ int VectorClass_ptr_AITriggerTypeClass::FindItemIndex_1(unsigned int * a2)
   return result; /*0x4ea8d2*/
 
 }
-} // namespace gamemd
 
 // 0x4EA8E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA920
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EA9D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAA00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAA40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAA60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAB10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAB40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAB80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAC30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAC60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EACA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EACC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAD70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EADA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EADE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAE90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAEC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAF00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EAF20
-namespace gamemd {
 char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
 {
 
@@ -5881,10 +5510,8 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
   return 1; /*0x4eafbe*/
 
 }
-} // namespace gamemd
 
 // 0x4EAFD0
-namespace gamemd {
 int VectorClass_ptr_TubeClass::FindItemIndex_0(unsigned int * a2)
 {
 
@@ -5904,30 +5531,18 @@ int VectorClass_ptr_TubeClass::FindItemIndex_0(unsigned int * a2)
   return result; /*0x4eaff2*/
 
 }
-} // namespace gamemd
 
 // 0x4EB000
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB040
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB0F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB120
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB160
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB180
-namespace gamemd {
 char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
 {
 
@@ -5973,10 +5588,8 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
   return 1; /*0x4eb21e*/
 
 }
-} // namespace gamemd
 
 // 0x4EB230
-namespace gamemd {
 int VectorClass_ptr_TubeClass::FindItemIndex_1(unsigned int * a2)
 {
 
@@ -5996,102 +5609,54 @@ int VectorClass_ptr_TubeClass::FindItemIndex_1(unsigned int * a2)
   return result; /*0x4eb252*/
 
 }
-} // namespace gamemd
 
 // 0x4EB720
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB760
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB810
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB840
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB880
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB980
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EB9C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBA70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBAA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBAE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBB00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBBB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBBE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBC20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBCD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBD00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBD40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBD60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBE10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBE40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBE80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBF30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBF60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EBFA0
-namespace gamemd {  // G42.18c ns repair
 unsigned int VectorClass_flat::GetIndex(int a2)
 {
 
@@ -6101,305 +5666,155 @@ unsigned int VectorClass_flat::GetIndex(int a2)
     return 0; /*0x4ebfa7*/
 
 }
-}  // G42.18c ns repair
 // 0x4EBFC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC070
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC0A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC0E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC190
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC1C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC200
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC220
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC2D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC300
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC340
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC3F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC420
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC460
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC480
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC530
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC560
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC5A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC650
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC680
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC6C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC6E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC790
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC7C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC800
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC8B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC8E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC920
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC940
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EC9F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECA20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECA60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECB10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECB40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECB80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECBA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECC50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECC80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECCC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECD70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECDA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECDE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECE00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECEB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECEE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECF20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ECFD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED000
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED040
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED060
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED140
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED180
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED230
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED260
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED2A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED2C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED370
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED3A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED3E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED490
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED4C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED500
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED520
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED5D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED600
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED640
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED6F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED720
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED760
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED780
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED830
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED860
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED8A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED950
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup4()
 {
 
@@ -6412,13 +5827,9 @@ void VectorClass_flat::Cleanup4()
   *((unsigned int *)this + 2) = 0; /*0x4ed971*/
 
 }
-}  // G42.18c ns repair
 // 0x4ED980
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4ED9C0
-namespace gamemd {
 unsigned int VectorClass_ptr_BuildingTypeClass::Remove(int a2)
 {
 
@@ -6428,334 +5839,170 @@ unsigned int VectorClass_ptr_BuildingTypeClass::Remove(int a2)
     return 0; /*0x4ed9c7*/
 
 }
-} // namespace gamemd
 
 // 0x4ED9E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDA90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDAC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDB00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDBB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDBE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDC20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDC40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDCF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDD20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDD60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDE10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDE40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDE80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDEA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDF50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDF80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EDFC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE070
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE0A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE0E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE100
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE1B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE1E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE220
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE2D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE300
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE340
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE360
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE440
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE480
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE530
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE560
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE5A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE5C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE670
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE6A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE6E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE790
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE7C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE800
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE8D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE900
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE940
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EE9F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEA20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEA60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEA80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEB30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEB60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEBA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEC50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEC80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EECC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EECE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EED90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEDC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEE00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEEB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEEE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEF20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEF40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EEFF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF020
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF060
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF140
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF180
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF1A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF250
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF280
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF2C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF370
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF3A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF3E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF400
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF4B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF620
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF670
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_SuperClass___(unsigned int * Block, char a2)
 {
 
@@ -6775,14 +6022,10 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_SuperClass__
   return this->__pad_0; /*0x4ef6b5*/
 
 }
-} // namespace gamemd
 
 // 0x4EF6C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF710
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -6802,14 +6045,10 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
   return this->__pad_0; /*0x4ef755*/
 
 }
-} // namespace gamemd
 
 // 0x4EF760
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF7B0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_BuildingLightClass___(unsigned int * Block, char a2)
 {
 
@@ -6829,14 +6068,10 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
   return this->__pad_0; /*0x4ef7f5*/
 
 }
-} // namespace gamemd
 
 // 0x4EF8A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF8F0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(unsigned int * Block, char a2)
 {
 
@@ -6856,18 +6091,12 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(
   return this->__pad_0; /*0x4ef935*/
 
 }
-} // namespace gamemd
 
 // 0x4EF940
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF990
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EF9E0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerClass___(unsigned int * Block, char a2)
 {
 
@@ -6887,14 +6116,10 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   return this->__pad_0; /*0x4efa25*/
 
 }
-} // namespace gamemd
 
 // 0x4EFA30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EFA80
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -6914,14 +6139,10 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   return this->__pad_0; /*0x4efac5*/
 
 }
-} // namespace gamemd
 
 // 0x4EFAD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EFB20
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_TubeClass___(unsigned int * Block, char a2)
 {
 
@@ -6941,14 +6162,10 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_TubeClass___(
   return this->__pad_0; /*0x4efb65*/
 
 }
-} // namespace gamemd
 
 // 0x4EFB70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EFBC0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_ParticleSystemClass___(unsigned int * Block, char a2)
 {
 
@@ -6968,14 +6185,10 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
   return this->__pad_0; /*0x4efc05*/
 
 }
-} // namespace gamemd
 
 // 0x4EFC10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EFC60
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_WaveClass___(unsigned int * Block, char a2)
 {
 
@@ -6995,14 +6208,10 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_WaveClass___(
   return this->__pad_0; /*0x4efca5*/
 
 }
-} // namespace gamemd
 
 // 0x4EFCB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EFD00
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_OverlayClass___(unsigned int * Block, char a2)
 {
 
@@ -7022,18 +6231,12 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_OverlayClass_
   return this->__pad_0; /*0x4efd45*/
 
 }
-} // namespace gamemd
 
 // 0x4EFE90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EFF30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4EFF80
-namespace gamemd {
 DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_UnitClass___(unsigned int * Block, char a2)
 {
 
@@ -7053,14 +6256,10 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_UnitClass___(
   return this->__pad_0; /*0x4effc5*/
 
 }
-} // namespace gamemd
 
 // 0x4EFFD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0020
-namespace gamemd {
 DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_HouseClass___(unsigned int * Block, char a2)
 {
 
@@ -7080,14 +6279,10 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_HouseClass___
   return this->__pad_0; /*0x4f0065*/
 
 }
-} // namespace gamemd
 
 // 0x4F0070
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F00C0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_AnimClass___(unsigned int * Block, char a2)
 {
 
@@ -7107,14 +6302,10 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_AnimClass___(
   return this->__pad_0; /*0x4f0105*/
 
 }
-} // namespace gamemd
 
 // 0x4F0110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0160
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_FactoryClass___(unsigned int * Block, char a2)
 {
 
@@ -7134,14 +6325,10 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_FactoryClass_
   return this->__pad_0; /*0x4f01a5*/
 
 }
-} // namespace gamemd
 
 // 0x4F01B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0200
-namespace gamemd {
 DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignClass___(unsigned int * Block, char a2)
 {
 
@@ -7161,14 +6348,10 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
   return this->__pad_0; /*0x4f0245*/
 
 }
-} // namespace gamemd
 
 // 0x4F0250
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F02A0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass___(unsigned int * Block, char a2)
 {
 
@@ -7188,14 +6371,10 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass
   return this->__pad_0; /*0x4f02e5*/
 
 }
-} // namespace gamemd
 
 // 0x4F02F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0340
-namespace gamemd {
 DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7215,14 +6394,10 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
   return this->__pad_0; /*0x4f0385*/
 
 }
-} // namespace gamemd
 
 // 0x4F0390
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F03E0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForceClass___(unsigned int * Block, char a2)
 {
 
@@ -7242,14 +6417,10 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
   return this->__pad_0; /*0x4f0425*/
 
 }
-} // namespace gamemd
 
 // 0x4F0430
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0480
-namespace gamemd {
 DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7269,14 +6440,10 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
   return this->__pad_0; /*0x4f04c5*/
 
 }
-} // namespace gamemd
 
 // 0x4F04D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0520
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7296,14 +6463,10 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
   return this->__pad_0; /*0x4f0565*/
 
 }
-} // namespace gamemd
 
 // 0x4F0570
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F05C0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_OverlayTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7323,14 +6486,10 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
   return this->__pad_0; /*0x4f0605*/
 
 }
-} // namespace gamemd
 
 // 0x4F0610
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0660
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7350,14 +6509,10 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
   return this->__pad_0; /*0x4f06a5*/
 
 }
-} // namespace gamemd
 
 // 0x4F06B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0700
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_TerrainTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7377,14 +6532,10 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
   return this->__pad_0; /*0x4f0745*/
 
 }
-} // namespace gamemd
 
 // 0x4F0750
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F07A0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_BuildingTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7404,14 +6555,10 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
   return this->__pad_0; /*0x4f07e5*/
 
 }
-} // namespace gamemd
 
 // 0x4F07F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0840
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_AircraftTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7431,14 +6578,10 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
   return this->__pad_0; /*0x4f0885*/
 
 }
-} // namespace gamemd
 
 // 0x4F0890
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F08E0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7458,14 +6601,10 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
   return this->__pad_0; /*0x4f0925*/
 
 }
-} // namespace gamemd
 
 // 0x4F0930
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0980
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7485,14 +6624,10 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
   return this->__pad_0; /*0x4f09c5*/
 
 }
-} // namespace gamemd
 
 // 0x4F09D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0A20
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7512,14 +6647,10 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
   return this->__pad_0; /*0x4f0a65*/
 
 }
-} // namespace gamemd
 
 // 0x4F0A70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0AC0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7539,14 +6670,10 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
   return this->__pad_0; /*0x4f0b05*/
 
 }
-} // namespace gamemd
 
 // 0x4F0B10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0B60
-namespace gamemd {
 DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_VoxelAnimTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7566,14 +6693,10 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
   return this->__pad_0; /*0x4f0ba5*/
 
 }
-} // namespace gamemd
 
 // 0x4F0BB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0C00
-namespace gamemd {
 DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7593,14 +6716,10 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
   return this->__pad_0; /*0x4f0c45*/
 
 }
-} // namespace gamemd
 
 // 0x4F0C50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0CA0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_ParticleTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7620,14 +6739,10 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   return this->__pad_0; /*0x4f0ce5*/
 
 }
-} // namespace gamemd
 
 // 0x4F0CF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0D40
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_ParticleSystemTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7647,14 +6762,10 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   return this->__pad_0; /*0x4f0d85*/
 
 }
-} // namespace gamemd
 
 // 0x4F0D90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0DE0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_SuperWeaponTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7674,14 +6785,10 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
   return this->__pad_0; /*0x4f0e25*/
 
 }
-} // namespace gamemd
 
 // 0x4F0E30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F0E80
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -7701,10 +6808,8 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
   return this->__pad_0; /*0x4f0ec5*/
 
 }
-} // namespace gamemd
 
 // 0x4F6910
-namespace gamemd {
 bool VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex(int a1)
 {
 
@@ -7713,46 +6818,32 @@ bool VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItemIndex(int a1)
   return *(unsigned int *)(v2 + 21372) >= *(unsigned int *)(v2 + 21376); /*0x4f6925*/
 
 }
-} // namespace gamemd
 
 // 0x4F6930
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F6950
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F6990
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F69D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x4F6A00
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem(HouseClass * a1)
 {
 
   return a1->numWarFactories; /*0x4f6a0a*/
 
 }
-} // namespace gamemd
 
 // 0x4F6A10
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_0(HouseClass * a1)
 {
 
   return a1->numConYards; /*0x4f6a1a*/
 
 }
-} // namespace gamemd
 
 // 0x4F6E60
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1(int a1)
 {
 
@@ -7761,10 +6852,8 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1(int a1)
   return *(unsigned int *)(v2 + 12); /*0x4f6e67*/
 
 }
-} // namespace gamemd
 
 // 0x5013A0
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor(unsigned int * a1)
 {
 
@@ -7784,10 +6873,8 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::ScalarDeletingDestructor(uns
   return 0; /*0x5013e8*/
 
 }
-} // namespace gamemd
 
 // 0x5024F0
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer(int a1, unsigned int * a2)
 {
 
@@ -7809,10 +6896,8 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer(int a1
   return 0; /*0x5024fa*/
 
 }
-} // namespace gamemd
 
 // 0x502550
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3)
 {
 
@@ -7840,140 +6925,88 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer_0(int 
   return 0; /*0x50255f*/
 
 }
-} // namespace gamemd
 
 // 0x50E4A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E4D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E4F0
-namespace gamemd {
 int VectorClass_BuildingType::Count(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x50e4fa*/
 
 }
-} // namespace gamemd
 
 // 0x50E500
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E530
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E550
-namespace gamemd {
 int VectorClass_UAngerStruct___16::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x50e55a*/
 
 }
-} // namespace gamemd
 
 // 0x50E560
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E590
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E5B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E620
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E640
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E670
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E690
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x50e69a*/
 
 }
-} // namespace gamemd
 
 // 0x50E6A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E6D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E6F0
-namespace gamemd {
 int VectorClass_BuildingType::GetElement(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x50e6fa*/
 
 }
-} // namespace gamemd
 
 // 0x50E700
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E730
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E750
-namespace gamemd {
 char VectorClass__N::Clear(int a2)
 {
 
   return *(unsigned char *)(*(unsigned int *)&this->m_1[3] + a2); /*0x50e75a*/
 
 }
-} // namespace gamemd
 
 // 0x50E760
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E7A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E7C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E7E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E8C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E910
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50E950
-namespace gamemd {
 char VectorClass_BuildingType::Set(int a2, unsigned int * a3, void *a3_2)
 {
 
@@ -8021,22 +7054,14 @@ char VectorClass_BuildingType::Set(int a2, unsigned int * a3, void *a3_2)
   }
 
 }
-} // namespace gamemd
 
 // 0x50EA30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EA70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EB40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EB70
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
 {
 
@@ -8075,17 +7100,11 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
   return 1; /*0x50eba1*/
 
 }
-}  // G42.18c ns repair
 // 0x50EC20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EC60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50ED10
-namespace gamemd {
 void VectorClass_UAngerStruct___16::ddtor(void *a1_1)
 {
 
@@ -8098,94 +7117,50 @@ void VectorClass_UAngerStruct___16::ddtor(void *a1_1)
   this->m_8 = 0; /*0x50ed31*/
 
 }
-} // namespace gamemd
 
 // 0x50ED40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50ED80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EDA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EE50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EE80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EEE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50EFD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F000
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F050
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F070
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F170
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F1B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F210
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F300
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F330
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F380
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F4E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F5D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F600
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F640
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F710
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F740
-namespace gamemd {
 char VectorClass_BuildingType::CompareVectors(int a2)
 {
 
@@ -8213,14 +7188,10 @@ char VectorClass_BuildingType::CompareVectors(int a2)
   return 0; /*0x50f76e*/
 
 }
-} // namespace gamemd
 
 // 0x50F780
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F830
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ClearAndFree3()
 {
 
@@ -8233,78 +7204,42 @@ void VectorClass_flat::ClearAndFree3()
   *((unsigned int *)this + 2) = 0; /*0x50f851*/
 
 }
-}  // G42.18c ns repair
 // 0x50F860
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F8A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F8C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F970
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F9A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50F9E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FA90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FAC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FB00
-namespace gamemd {
-} // namespace gamemd
 
 
 // 0x50FBD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FC00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FC60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FD70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FDB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FE00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FE20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FFB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x50FFF0
-namespace gamemd {
 VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
 {
 
@@ -8324,26 +7259,16 @@ VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
   return this->__pad_0; /*0x510035*/
 
 }
-} // namespace gamemd
 
 // 0x510040
-namespace gamemd {
-} // namespace gamemd
 
 // 0x510090
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5100E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x510130
-namespace gamemd {
-} // namespace gamemd
 
 // 0x510180
-namespace gamemd {
 DynamicVector * VectorClass_UAngerStruct::Constructor_VectorClass_AngerStruct_(unsigned int * Block, char a2)
 {
 
@@ -8363,18 +7288,12 @@ DynamicVector * VectorClass_UAngerStruct::Constructor_VectorClass_AngerStruct_(u
   return this->__pad_0; /*0x5101c5*/
 
 }
-} // namespace gamemd
 
 // 0x5101D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x510270
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5102C0
-namespace gamemd {
 unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(unsigned int * Block, char a2)
 {
 
@@ -8394,10 +7313,8 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(unsign
   return Block; /*0x510305*/
 
 }
-} // namespace gamemd
 
 // 0x510310
-namespace gamemd {
 VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
@@ -8417,14 +7334,10 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
   return this->__pad_0; /*0x510355*/
 
 }
-} // namespace gamemd
 
 // 0x510360
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5103B0
-namespace gamemd {
 DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Block, char a2)
 {
 
@@ -8444,18 +7357,12 @@ DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Blo
   return this->__pad_0; /*0x5103f5*/
 
 }
-} // namespace gamemd
 
 // 0x510400
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5104A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x510550
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
 {
 
@@ -8477,9 +7384,7 @@ unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
   return &this->vtable1; /*0x51057d*/
 
 }
-}  // G42.18c ns repair
 // 0x5105A0
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP1, TechnoTypeClass * aP2)
 {
 
@@ -8501,119 +7406,95 @@ unsigned int * VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP1, 
   return &this->vtable1; /*0x5105cd*/
 
 }
-}  // G42.18c ns repair
 // 0x510A50
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_2(int a1, const void * a2, unsigned int * a3)
 {
 
   return HouseClass::QueryInterface( a1 - 36, (const void *)(a2), (unsigned int *)(a3));
 
 }
-} // namespace gamemd
 
 // 0x510A60
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_3(int a1)
 {
 
   return ((HouseClass *)(a1 - 36))->COMStub_Ret1_1((int)((HouseClass *)(a1 - 36)));
 
 }
-} // namespace gamemd
 
 // 0x510A70
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_4(int a1)
 {
 
   return ((HouseClass *)(a1 - 36))->COMStub_Ret1_2((int)((HouseClass *)(a1 - 36)));
 
 }
-} // namespace gamemd
 
 // 0x510A80
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_5(int a1, const void * a2, unsigned int * a3)
 {
 
   return HouseClass::QueryInterface( a1 - 40, (const void *)(a2), (unsigned int *)(a3));
 
 }
-} // namespace gamemd
 
 // 0x510A90
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_6(int a1)
 {
 
   return ((HouseClass *)(a1 - 40))->COMStub_Ret1_1((int)((HouseClass *)(a1 - 40)));
 
 }
-} // namespace gamemd
 
 // 0x510AA0
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_7(int a1)
 {
 
   return ((HouseClass *)(a1 - 40))->COMStub_Ret1_2((int)((HouseClass *)(a1 - 40)));
 
 }
-} // namespace gamemd
 
 // 0x510AB0
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_8(int a1)
 {
 
   return VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_1(a1 - 4);
 
 }
-} // namespace gamemd
 
 // 0x510AC0
-namespace gamemd {
 BSTR VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_9(int a1)
 {
 
   return VectorClass_ptr_BuildChoiceClass_int_ouseClass::FindItemIndex(a1 - 4);
 
 }
-} // namespace gamemd
 
 // 0x510AD0
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_10(int a1, const void * a2, unsigned int * a3)
 {
 
   return HouseClass::QueryInterface( a1 - 44, (const void *)(a2), (unsigned int *)(a3));
 
 }
-} // namespace gamemd
 
 // 0x510AE0
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_11(int a1)
 {
 
   return ((HouseClass *)(a1 - 44))->COMStub_Ret1_1((int)((HouseClass *)(a1 - 44)));
 
 }
-} // namespace gamemd
 
 // 0x510AF0
-namespace gamemd {
 int VectorClass_ptr_BuildChoiceClass_int_ouseClass::GetItem_12(int a1)
 {
 
   return ((HouseClass *)(a1 - 44))->COMStub_Ret1_2((int)((HouseClass *)(a1 - 44)));
 
 }
-} // namespace gamemd
 
 // 0x512FA0
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
 {
 
@@ -8651,9 +7532,7 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
   return &this->vtable1; /*0x512ff5*/
 
 }
-}  // G42.18c ns repair
 // 0x5132F0
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::PushBack(VectorClass_flat * aP1)
 {
 
@@ -8684,9 +7563,7 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
   return 1; /*0x513321*/
 
 }
-}  // G42.18c ns repair
 // 0x5134D0
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ClearAndFree4()
 {
 
@@ -8699,9 +7576,7 @@ void VectorClass_flat::ClearAndFree4()
   *((unsigned int *)this + 2) = 0; /*0x5134f1*/
 
 }
-}  // G42.18c ns repair
 // 0x525060
-namespace gamemd {  // G42.18c ns repair
 unsigned int *  VectorClass_flat::CopyDefault(VectorClass * aP1)
 {
 
@@ -8739,93 +7614,55 @@ unsigned int *  VectorClass_flat::CopyDefault(VectorClass * aP1)
   return &this->vtable1; /*0x5250b5*/
 
 }
-}  // G42.18c ns repair
 // 0x538510
-namespace gamemd {
 int VectorClass_ptr_CCINIClass::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x53851a*/
 
 }
-} // namespace gamemd
 
 // 0x538520
-namespace gamemd {
-} // namespace gamemd
 
 // 0x538560
-namespace gamemd {
-} // namespace gamemd
 
 // 0x538610
-namespace gamemd {
-} // namespace gamemd
 
 // 0x538640
-namespace gamemd {
-} // namespace gamemd
 
 // 0x538680
-namespace gamemd {
-} // namespace gamemd
 
 // 0x538A90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DA40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DA70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DA90
-namespace gamemd {
 int VectorClass_ptr_IonBlastClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x53da9a*/
 
 }
-} // namespace gamemd
 
 // 0x53DAA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DAE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DB90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DBC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DC00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DC20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DCD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DD00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x53DD50
-namespace gamemd {
 DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastClass___(unsigned int * Block, char a2)
 {
 
@@ -8845,74 +7682,46 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
   return this->__pad_0; /*0x53dd95*/
 
 }
-} // namespace gamemd
 
 // 0x54A1E0
-namespace gamemd {
 int VectorClass_PAG::Count(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x54a1ea*/
 
 }
-} // namespace gamemd
 
 // 0x54A1F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A220
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A240
-namespace gamemd {
 int VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x54a24a*/
 
 }
-} // namespace gamemd
 
 // 0x54A250
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A290
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A340
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A370
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A3B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A4B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A4F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A5A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A5D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A610
-namespace gamemd {
 unsigned int VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::LoadTypeData(int a2)
 {
 
@@ -8922,80 +7731,46 @@ unsigned int VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::LoadType
     return 0; /*0x54a617*/
 
 }
-} // namespace gamemd
 
 // 0x54A630
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A6E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A710
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A7B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x54A800
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5512D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551300
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551320
-namespace gamemd {
 int VectorClass_ptr_LaserDrawClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x55132a*/
 
 }
-} // namespace gamemd
 
 // 0x551330
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551370
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551420
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551450
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551490
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5514B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551560
-namespace gamemd {
-} // namespace gamemd
 
 // 0x551590
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5515E0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDrawClass___(unsigned int * Block, char a2)
 {
 
@@ -9015,106 +7790,62 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
   return this->__pad_0; /*0x551625*/
 
 }
-} // namespace gamemd
 
 // 0x555200
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555230
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555250
-namespace gamemd {
 int VectorClass_ptr_LightSourceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x55525a*/
 
 }
-} // namespace gamemd
 
 // 0x555260
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555290
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5552B0
-namespace gamemd {
 int VectorClass_ptr_PendingCellClass_LightSourceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5552ba*/
 
 }
-} // namespace gamemd
 
 // 0x5552C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555300
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5553B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5553E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555420
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555440
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5554F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555520
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555560
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555610
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555640
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555680
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5556A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555750
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555780
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5557D0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightSourceClass___(unsigned int * Block, char a2)
 {
 
@@ -9134,86 +7865,52 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
   return this->__pad_0; /*0x555815*/
 
 }
-} // namespace gamemd
 
 // 0x555820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x555870
-namespace gamemd {
-} // namespace gamemd
 
 // 0x556F00
-namespace gamemd {
 int VectorClass_ptr_LineTrail::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x556f0a*/
 
 }
-} // namespace gamemd
 
 // 0x556F10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x556F50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x557000
-namespace gamemd {
-} // namespace gamemd
 
 // 0x557030
-namespace gamemd {
-} // namespace gamemd
 
 // 0x557070
-namespace gamemd {
-} // namespace gamemd
 
 // 0x557170
-namespace gamemd {
-} // namespace gamemd
 
 // 0x558230
-namespace gamemd {
 int VectorClass_PBG::Count(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x55823a*/
 
 }
-} // namespace gamemd
 
 // 0x558240
-namespace gamemd {
-} // namespace gamemd
 
 // 0x558280
-namespace gamemd {
-} // namespace gamemd
 
 // 0x558330
-namespace gamemd {
-} // namespace gamemd
 
 // 0x558360
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5583A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5584A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x55BAE0
-namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::RemoveItem(ObjectClass * aP1, void *a2)
 {
 
@@ -9242,9 +7939,7 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1, void *a2)
   return result; /*0x55bb2e*/
 
 }
-}  // G42.18c ns repair
 // 0x588C90
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::CleanupSubzone()
 {
 
@@ -9261,119 +7956,65 @@ void VectorClass_flat::CleanupSubzone()
   *((unsigned int *)this + 2) = 0; /*0x588cb4*/
 
 }
-}  // G42.18c ns repair
 // 0x588E10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x588F00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x588F30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x588F50
-namespace gamemd {
 int VectorClass_W4PassabilityType::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x588f5a*/
 
 }
-} // namespace gamemd
 
 // 0x588F60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x588F90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x588FB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x588FD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589000
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589030
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5896F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589740
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589960
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5899E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589A30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589EB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589EF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589FA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x589FD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A010
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A030
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A0E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A150
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A230
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A260
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A2A0
-namespace gamemd {
 char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
 {
 
@@ -9480,38 +8121,22 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
   return 1; /*0x58a385*/
 
 }
-} // namespace gamemd
 
 // 0x58A3A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A470
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A630
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A6E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A7B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A7E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A840
-namespace gamemd {
 char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a2, void *a3_1)
 {
 
@@ -9571,30 +8196,18 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
   }
 
 }
-} // namespace gamemd
 
 // 0x58A8F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58A9F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58AA20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58AA60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58AA90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58AAE0
-namespace gamemd {
 DynamicVector * VectorClass_W4PassabilityType::Constructor_1(unsigned int * Block, char a2)
 {
 
@@ -9614,18 +8227,12 @@ DynamicVector * VectorClass_W4PassabilityType::Constructor_1(unsigned int * Bloc
   return this->__pad_0; /*0x58ab25*/
 
 }
-} // namespace gamemd
 
 // 0x58AB30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58AB80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x58AC70
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
 {
 
@@ -9689,109 +8296,63 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
   return &this->vtable1; /*0x58acb4*/
 
 }
-}  // G42.18c ns repair
 // 0x58AD10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC3A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC3D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC3F0
-namespace gamemd {
 int VectorClass_ptr_MapRegionClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5ac3fa*/
 
 }
-} // namespace gamemd
 
 // 0x5AC5F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC620
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC640
-namespace gamemd {
 double VectorClass_N::Clear(int a2)
 {
 
   return *(double *)(*(unsigned int *)&this->m_1[3] + 8 * a2); /*0x5ac64a*/
 
 }
-} // namespace gamemd
 
 // 0x5AC6A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC6E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC790
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC7C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC800
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AC8D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD0F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD130
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD1F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD220
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD270
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD290
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD350
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD390
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD3E0
-namespace gamemd {
 unsigned int * VectorClass_ptr_MapRegionClass::loc_5AD3E0(unsigned int * Block, char a2)
 {
 
@@ -9811,14 +8372,10 @@ unsigned int * VectorClass_ptr_MapRegionClass::loc_5AD3E0(unsigned int * Block, 
   return Block; /*0x5ad425*/
 
 }
-} // namespace gamemd
 
 // 0x5AD5C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5AD610
-namespace gamemd {
 DynamicVector * VectorClass_N::Constructor_VectorClass_double_(unsigned int * Block, char a2)
 {
 
@@ -9838,10 +8395,8 @@ DynamicVector * VectorClass_N::Constructor_VectorClass_double_(unsigned int * Bl
   return this->__pad_0; /*0x5ad655*/
 
 }
-} // namespace gamemd
 
 // 0x5D05F0
-namespace gamemd {
 unsigned int * VectorClass_Point2D::Count(unsigned int * a2, int a3)
 {
 
@@ -9853,48 +8408,36 @@ unsigned int * VectorClass_Point2D::Count(unsigned int * a2, int a3)
   return a2; /*0x5d0601*/
 
 }
-} // namespace gamemd
 
 // 0x5D0660
-namespace gamemd {
 int VectorClass_ptr_MSTextEntry::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d066a*/
 
 }
-} // namespace gamemd
 
 // 0x5D06C0
-namespace gamemd {
 int VectorClass_ptr_MapSelection::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d06ca*/
 
 }
-} // namespace gamemd
 
 // 0x5D07E0
-namespace gamemd {
 int VectorClass_ptr_MSSfxEntry::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d07ea*/
 
 }
-} // namespace gamemd
 
 // 0x5D07F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0850
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0920
-namespace gamemd {
 void VectorClass_Point2D::Set(void *a1_1, void *a2_1, void *a3_1)
 {
 
@@ -9907,168 +8450,90 @@ void VectorClass_Point2D::Set(void *a1_1, void *a2_1, void *a3_1)
   this->m_8 = 0; /*0x5d0941*/
 
 }
-} // namespace gamemd
 
 // 0x5D0950
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D09A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0AE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0B20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0BD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0C00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0C40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0D40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0D80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0E30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0E60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D0EA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D1460
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D14A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D1550
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D1580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D15C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D16C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D1760
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D1800
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D19E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2720
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2750
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2780
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D27B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D27D0
-namespace gamemd {
 int VectorClass_ptr_MSSfx::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d27da*/
 
 }
-} // namespace gamemd
 
 // 0x5D27E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D28D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2960
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2A10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2A40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2A80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2B30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2B60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2BA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2BC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2C70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2CF0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_MSSfx::Constructor_VectorClass_MSAnim___(unsigned int * Block, char a2)
 {
 
@@ -10088,14 +8553,10 @@ DynamicVector * VectorClass_ptr_MSSfx::Constructor_VectorClass_MSAnim___(unsigne
   return this->__pad_0; /*0x5d2d35*/
 
 }
-} // namespace gamemd
 
 // 0x5D2D40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D2D90
-namespace gamemd {
 DynamicVector * VectorClass_Point2D::Constructor_VectorClass_MSSfx___(unsigned int * Block, char a2)
 {
 
@@ -10115,97 +8576,57 @@ DynamicVector * VectorClass_Point2D::Constructor_VectorClass_MSSfx___(unsigned i
   return this->__pad_0; /*0x5d2dd5*/
 
 }
-} // namespace gamemd
 
 // 0x5D5130
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D53B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D5410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D5500
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D5530
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D5580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D5780
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D8100
-namespace gamemd {
 int VectorClass_ptr_MultiplayerTeam::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d810a*/
 
 }
-} // namespace gamemd
 
 // 0x5D82F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D8330
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D83E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D8410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D8450
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5D8640
-namespace gamemd {  // G42.18c ns repair
-}  // G42.18c ns repair
 // 0x5D8810
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EEBB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EEBE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EEC00
-namespace gamemd {
 int VectorClass_cptr_MultiMission::Capacity(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5eec0a*/
 
 }
-} // namespace gamemd
 
 // 0x5EEC10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EEC50
-namespace gamemd {
 char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
 {
 
@@ -10253,10 +8674,8 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
   }
 
 }
-} // namespace gamemd
 
 // 0x5EED00
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup3()
 {
 
@@ -10269,25 +8688,15 @@ void VectorClass_flat::Cleanup3()
   *((unsigned int *)this + 2) = 0; /*0x5eed21*/
 
 }
-}  // G42.18c ns repair
 // 0x5EED30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EED70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EED90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EEE90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EEEC0
-namespace gamemd {
 VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, char a2)
 {
 
@@ -10307,14 +8716,10 @@ VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, ch
   return this->__pad_0; /*0x5eef05*/
 
 }
-} // namespace gamemd
 
 // 0x5EEF10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5EF190
-namespace gamemd {
 int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int a4, int a5, int a6, int a7)
 {
 
@@ -10350,10 +8755,8 @@ int VectorClass_cptr_MultiMission::j_vt09(unsigned char * a1, signed int a3, int
   return 1; /*0x5ef19b*/
 
 }
-} // namespace gamemd
 
 // 0x5EF290
-namespace gamemd {
 unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
 {
 
@@ -10368,60 +8771,36 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
   return this->__pad_0; /*0x5ef2be*/
 
 }
-} // namespace gamemd
 
 // 0x5F9B00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9B30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9B50
-namespace gamemd {
 int VectorClass_ptr_ObjectTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5f9b5a*/
 
 }
-} // namespace gamemd
 
 // 0x5F9B80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9BC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9C70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9CA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9CE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9D00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9DB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9DE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x5F9E30
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -10441,10 +8820,8 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
   return this->__pad_0; /*0x5f9e75*/
 
 }
-} // namespace gamemd
 
 // 0x5FFFC0
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Destructor()
 {
 
@@ -10461,49 +8838,27 @@ void VectorClass_flat::Destructor()
   *((unsigned int *)this + 2) = 0; /*0x5fffe4*/
 
 }
-}  // G42.18c ns repair
 // 0x5FFFF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600010
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600020
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600060
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600140
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600180
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6001A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600250
-namespace gamemd {
-} // namespace gamemd
 
 // 0x600280
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6002D0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLightClass___(unsigned int * Block, char a2)
 {
 
@@ -10523,54 +8878,30 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
   return this->__pad_0; /*0x600315*/
 
 }
-} // namespace gamemd
 
 // 0x627D70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x627E10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x627E50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x627F00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x627F30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x627F70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6282E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6283E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x628410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x628470
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6285F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x628760
-namespace gamemd {
 VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor_VectorClass_HSVClass_(unsigned int * Block, char a2)
 {
 
@@ -10590,22 +8921,14 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor_VectorClass_HSVClass
   return this->__pad_0; /*0x6287a5*/
 
 }
-} // namespace gamemd
 
 // 0x628A40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x628A70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x628AD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x628DF0
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
 {
 
@@ -10667,57 +8990,31 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
   return &this->vtable1; /*0x628e38*/
 
 }
-}  // G42.18c ns repair
 // 0x628E80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B070
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B0A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B0C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B0D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B1C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B1F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B230
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B250
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B300
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B330
-namespace gamemd {
-} // namespace gamemd
 
 // 0x62B380
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteClass___(unsigned int * Block, char a2)
 {
 
@@ -10737,10 +9034,8 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
   return this->__pad_0; /*0x62b3c5*/
 
 }
-} // namespace gamemd
 
 // 0x630250
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
 {
 
@@ -10772,69 +9067,37 @@ char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
   return result; /*0x630281*/
 
 }
-}  // G42.18c ns repair
 // 0x63DB60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DB90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DBB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DBC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DBF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DC10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DD30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DD40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DD80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DE30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DE60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DEA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63DF20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E020
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E050
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E140
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Cleanup2()
 {
 
@@ -10851,25 +9114,15 @@ void VectorClass_flat::Cleanup2()
   return result; /*0x63e164*/
 
 }
-}  // G42.18c ns repair
 // 0x63E170
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E1B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E230
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E2E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E540
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::Append(VectorClass_flat * aP1, void *a2)
 {
 
@@ -10901,9 +9154,7 @@ char VectorClass_flat::Append(VectorClass_flat * aP1, void *a2)
   return result; /*0x63e571*/
 
 }
-}  // G42.18c ns repair
 // 0x63E900
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::EraseAt(IUnknown * aP1)
 {
 
@@ -10930,33 +9181,19 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   return result; /*0x63e937*/
 
 }
-}  // G42.18c ns repair
 // 0x63E950
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63E990
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63EA40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63EA70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63EAB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63EC50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63ECA0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_PlanningMemberClass___(unsigned int * Block, char a2)
 {
 
@@ -10976,14 +9213,10 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   return this->__pad_0; /*0x63ece5*/
 
 }
-} // namespace gamemd
 
 // 0x63ECF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x63ED40
-namespace gamemd {
 DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_PlanningBranchClass___(unsigned int * Block, char a2)
 {
 
@@ -11003,14 +9236,10 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   return this->__pad_0; /*0x63ed85*/
 
 }
-} // namespace gamemd
 
 // 0x63EED0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x658D60
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2)
 {
 
@@ -11041,53 +9270,29 @@ unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2
   return &this->vtable1; /*0x658d96*/
 
 }
-}  // G42.18c ns repair
 // 0x65A1E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A210
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A230
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A240
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A280
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A330
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A360
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A3A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A3C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A470
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A4A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65A4F0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsigned int * Block, char a2)
 {
 
@@ -11107,54 +9312,30 @@ DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsi
   return this->__pad_0; /*0x65a535*/
 
 }
-} // namespace gamemd
 
 // 0x65BEF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65BF20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65BF40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65BF50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65BF90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65C040
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65C070
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65C0B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65C0D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65C180
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65C1B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x65C200
-namespace gamemd {
 DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteClass___(unsigned int * Block, char a2)
 {
 
@@ -11174,54 +9355,30 @@ DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteCla
   return this->__pad_0; /*0x65c245*/
 
 }
-} // namespace gamemd
 
 // 0x660C80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660CB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660CD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660CE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660D20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660DD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660E00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660E40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660E60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660F50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660F80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x660FD0
-namespace gamemd {
 unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block, char a2)
 {
 
@@ -11241,10 +9398,8 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
   return Block; /*0x661015*/
 
 }
-} // namespace gamemd
 
 // 0x679F70
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::Dtor()
 {
 
@@ -11261,9 +9416,7 @@ void VectorClass_flat::Dtor()
   this->Capacity = 0; /*0x679f97*/
 
 }
-}  // G42.18c ns repair
 // 0x67A630
-namespace gamemd {  // G42.18c ns repair
 int  VectorClass_flat::LoadStream(TechnoTypeClass * aP1)
 {
 
@@ -11284,9 +9437,7 @@ int  VectorClass_flat::LoadStream(TechnoTypeClass * aP1)
   return result; /*0x67a674*/
 
 }
-}  // G42.18c ns repair
 // 0x67A850
-namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::SaveLoad(TechnoTypeClass * aP1)
 {
 
@@ -11307,9 +9458,7 @@ int VectorClass_flat::SaveLoad(TechnoTypeClass * aP1)
   return result; /*0x67a894*/
 
 }
-}  // G42.18c ns repair
 // 0x67AA80
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
 {
 
@@ -11347,9 +9496,7 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
   return &this->vtable1; /*0x67aad5*/
 
 }
-}  // G42.18c ns repair
 // 0x67AE00
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
 {
 
@@ -11387,9 +9534,7 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
   return &this->vtable1; /*0x67ae55*/
 
 }
-}  // G42.18c ns repair
 // 0x67AF60
-namespace gamemd {  // G42.18c ns repair
 void VectorClass_flat::ClearAndFree()
 {
 
@@ -11402,9 +9547,7 @@ void VectorClass_flat::ClearAndFree()
   *((unsigned int *)this + 2) = 0; /*0x67af81*/
 
 }
-}  // G42.18c ns repair
 // 0x67B180
-namespace gamemd {  // G42.18c ns repair
 unsigned int *  VectorClass_flat::CopyBuilding(VectorClass * aP1)
 {
 
@@ -11442,9 +9585,7 @@ unsigned int *  VectorClass_flat::CopyBuilding(VectorClass * aP1)
   return &this->vtable1; /*0x67b1d5*/
 
 }
-}  // G42.18c ns repair
 // 0x691160
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::PushBack2(unsigned int * a2)
 {
 
@@ -11475,9 +9616,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
   return 1; /*0x691191*/
 
 }
-}  // G42.18c ns repair
 // 0x69C580
-namespace gamemd {
 char **  VectorClass_Wstring::Clear(char ** a2, int a3)
 {
 
@@ -11485,58 +9624,32 @@ char **  VectorClass_Wstring::Clear(char ** a2, int a3)
   return a2; /*0x69c599*/
 
 }
-} // namespace gamemd
 
 // 0x69C5A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C5D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C5F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C600
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C630
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C650
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C660
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C690
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C6B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C970
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69C9C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CB00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CB50
-namespace gamemd {
 int VectorClass_Wstring::GetSize(const char ** a2)
 {
 
@@ -11555,106 +9668,56 @@ int VectorClass_Wstring::GetSize(const char ** a2)
   return v4; /*0x69cb5c*/
 
 }
-} // namespace gamemd
 
 // 0x69CBA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CD40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CD80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CE30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CE60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CEA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CEC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CF70
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CFA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69CFE0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D090
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D0C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D100
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D120
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D1D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D200
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D240
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D2F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D320
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D360
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D380
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D430
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D4B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D590
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D5E0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiMission___(unsigned int * Block, char a2)
 {
 
@@ -11674,14 +9737,10 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
   return this->__pad_0; /*0x69d625*/
 
 }
-} // namespace gamemd
 
 // 0x69D630
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D680
-namespace gamemd {
 DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_GlobalPacketType___(unsigned int * Block, char a2)
 {
 
@@ -11701,14 +9760,10 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
   return this->__pad_0; /*0x69d6c5*/
 
 }
-} // namespace gamemd
 
 // 0x69D6D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x69D720
-namespace gamemd {
 unsigned int * VectorClass_ptr_GlobalPacketType::loc_69D720(unsigned int * Block, char a2)
 {
 
@@ -11728,10 +9783,8 @@ unsigned int * VectorClass_ptr_GlobalPacketType::loc_69D720(unsigned int * Block
   return Block; /*0x69d765*/
 
 }
-} // namespace gamemd
 
 // 0x69D7C0
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
 {
 
@@ -11793,9 +9846,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
   return &this->vtable1; /*0x69d811*/
 
 }
-}  // G42.18c ns repair
 // 0x69E9B0
-namespace gamemd {  // G42.18c ns repair
 int VectorClass_flat::Check(Pipe * aP1, int aP2, void *a3)
 {
 
@@ -11803,59 +9854,35 @@ int VectorClass_flat::Check(Pipe * aP1, int aP2, void *a3)
   return ((Delegate *)(Pipe *)this)->Dispatch( (int)(aP1), aP2); /*0x69e9d0*/
 
 }
-}  // G42.18c ns repair
 // 0x6B1410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B1440
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B1460
-namespace gamemd {
 int VectorClass_ptr_SlaveManagerClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6b146a*/
 
 }
-} // namespace gamemd
 
 // 0x6B16D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B1710
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B17C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B17F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B1830
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B1850
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B1900
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B19D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B1A20
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_SlaveManagerClass___(unsigned int * Block, char a2)
 {
 
@@ -11875,46 +9902,26 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
   return this->__pad_0; /*0x6b1a65*/
 
 }
-} // namespace gamemd
 
 // 0x6B43B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B43E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B4410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B4440
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B45A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B45D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B4620
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B4760
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B47A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B47F0
-namespace gamemd {
 DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStruct_(unsigned int * Block, char a2)
 {
 
@@ -11934,60 +9941,36 @@ DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStr
   return this->__pad_0; /*0x6b4835*/
 
 }
-} // namespace gamemd
 
 // 0x6B81C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B81F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B8210
-namespace gamemd {
 int VectorClass_ptr_SpawnManagerClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6b821a*/
 
 }
-} // namespace gamemd
 
 // 0x6B84E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B8520
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B85D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B8600
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B8640
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B8660
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B8710
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B87E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6B8830
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___(unsigned int * Block, char a2)
 {
 
@@ -12007,28 +9990,20 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
   return this->__pad_0; /*0x6b8875*/
 
 }
-} // namespace gamemd
 
 // 0x6BED50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BED80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BEDA0
-namespace gamemd {
 int VectorClass_K::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6bedaa*/
 
 }
-} // namespace gamemd
 
 // 0x6BEE50
-namespace gamemd {
 int VectorClass_K_8::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
 
@@ -12045,10 +10020,8 @@ int VectorClass_K_8::QueryInterface(int a1, const void * a2, unsigned int * a3)
   return 0; /*0x6bee5e*/
 
 }
-} // namespace gamemd
 
 // 0x6BEEC0
-namespace gamemd {
 LONG VectorClass_K_8::AddRef(int a1)
 {
 
@@ -12057,10 +10030,8 @@ LONG VectorClass_K_8::AddRef(int a1)
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6beece*/
 
 }
-} // namespace gamemd
 
 // 0x6BEEE0
-namespace gamemd {
 LONG VectorClass_K_8::Release(volatile LONG * Block)
 {
 
@@ -12073,10 +10044,8 @@ LONG VectorClass_K_8::Release(volatile LONG * Block)
   return v1; /*0x6bef01*/
 
 }
-} // namespace gamemd
 
 // 0x6BEF10
-namespace gamemd {
 int VectorClass_K_8::ddtor(int a1, int a2, int a3, unsigned int * a4)
 {
 
@@ -12104,10 +10073,8 @@ int VectorClass_K_8::ddtor(int a1, int a2, int a3, unsigned int * a4)
   return v8; /*0x6bef1a*/
 
 }
-} // namespace gamemd
 
 // 0x6BEF90
-namespace gamemd {
 int VectorClass_K_8::GetSize(int a1, int a2)
 {
 
@@ -12124,14 +10091,10 @@ int VectorClass_K_8::GetSize(int a1, int a2)
   return 0; /*0x6befa5*/
 
 }
-} // namespace gamemd
 
 // 0x6BEFD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF040
-namespace gamemd {
 LONG VectorClass_K_14::AddRef(int a1)
 {
 
@@ -12140,26 +10103,16 @@ LONG VectorClass_K_14::AddRef(int a1)
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bf04e*/
 
 }
-} // namespace gamemd
 
 // 0x6BF060
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF090
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF110
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF150
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF1C0
-namespace gamemd {
 LONG VectorClass_K_20::AddRef(int a1)
 {
 
@@ -12168,26 +10121,16 @@ LONG VectorClass_K_20::AddRef(int a1)
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bf1ce*/
 
 }
-} // namespace gamemd
 
 // 0x6BF1E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF210
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF290
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF2D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF340
-namespace gamemd {
 LONG VectorClass_K_26::AddRef(int a1)
 {
 
@@ -12196,26 +10139,16 @@ LONG VectorClass_K_26::AddRef(int a1)
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bf34e*/
 
 }
-} // namespace gamemd
 
 // 0x6BF360
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF390
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF450
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF4C0
-namespace gamemd {
 LONG VectorClass_K_32::AddRef(int a1)
 {
 
@@ -12224,26 +10157,16 @@ LONG VectorClass_K_32::AddRef(int a1)
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bf4ce*/
 
 }
-} // namespace gamemd
 
 // 0x6BF4E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF510
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF590
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF5D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF640
-namespace gamemd {
 LONG VectorClass_K_38::AddRef(int a1)
 {
 
@@ -12252,26 +10175,16 @@ LONG VectorClass_K_38::AddRef(int a1)
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bf64e*/
 
 }
-} // namespace gamemd
 
 // 0x6BF660
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF690
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF710
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF750
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF7C0
-namespace gamemd {
 LONG VectorClass_K_44::AddRef(int a1)
 {
 
@@ -12280,88 +10193,50 @@ LONG VectorClass_K_44::AddRef(int a1)
   return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bf7ce*/
 
 }
-} // namespace gamemd
 
 // 0x6BF7E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF810
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6BF890
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C61D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C6210
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C62C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C62F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C6330
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C6350
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C6450
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C6480
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6C64D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CA7C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CA7F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CA810
-namespace gamemd {
 int VectorClass_ptr_SubTitle::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6ca81a*/
 
 }
-} // namespace gamemd
 
 // 0x6CA820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CA860
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CA910
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CA9C0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___(unsigned int * Block, char a2)
 {
 
@@ -12381,30 +10256,18 @@ DynamicVector * VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___(un
   return this->__pad_0; /*0x6caa05*/
 
 }
-} // namespace gamemd
 
 // 0x6CAA10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CAAC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CAAF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CAB30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CAB50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6CE2D0
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::RemoveAt(int a2, void *a2_2)
 {
 
@@ -12431,51 +10294,31 @@ char VectorClass_flat::RemoveAt(int a2, void *a2_2)
   return result; /*0x6ce307*/
 
 }
-}  // G42.18c ns repair
 // 0x6DC4E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC510
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC540
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC5B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC5D0
-namespace gamemd {
 int VectorClass_UDirtyAreaStruct___16::Clear(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6dc5da*/
 
 }
-} // namespace gamemd
 
 // 0x6DC5E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC660
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC780
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC7B0
-namespace gamemd {
 int VectorClass_UDirtyAreaStruct::GetSize(int a2)
 {
 
@@ -12503,14 +10346,10 @@ int VectorClass_UDirtyAreaStruct::GetSize(int a2)
   return v4; /*0x6dc7bb*/
 
 }
-} // namespace gamemd
 
 // 0x6DC820
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DC970
-namespace gamemd {
 int VectorClass_UDirtyAreaStruct::FindItemIndex(int a2)
 {
 
@@ -12536,42 +10375,24 @@ int VectorClass_UDirtyAreaStruct::FindItemIndex(int a2)
   return v3; /*0x6dc9be*/
 
 }
-} // namespace gamemd
 
 // 0x6DC9D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCA10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCAC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCAF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCB30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCB50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCC00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCC30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCC80
-namespace gamemd {
 unsigned int * VectorClass_UDirtyAreaStruct::loc_6DCC80(unsigned int * Block, char a2)
 {
 
@@ -12591,14 +10412,10 @@ unsigned int * VectorClass_UDirtyAreaStruct::loc_6DCC80(unsigned int * Block, ch
   return Block; /*0x6dccc5*/
 
 }
-} // namespace gamemd
 
 // 0x6DCCD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6DCD20
-namespace gamemd {
 DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowControlClass___(unsigned int * Block, char a2)
 {
 
@@ -12618,60 +10435,36 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
   return this->__pad_0; /*0x6dcd65*/
 
 }
-} // namespace gamemd
 
 // 0x6E64E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E6510
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E6530
-namespace gamemd {
 int VectorClass_ptr_TagTypeClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6e653a*/
 
 }
-} // namespace gamemd
 
 // 0x6E6540
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E6580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E6630
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E6660
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E66A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E66C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E6770
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E67A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x6E67F0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeClass___(unsigned int * Block, char a2)
 {
 
@@ -12691,10 +10484,8 @@ DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeCla
   return this->__pad_0; /*0x6e6835*/
 
 }
-} // namespace gamemd
 
 // 0x717D20
-namespace gamemd {  // G42.18c ns repair
 unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
 {
 
@@ -12745,59 +10536,35 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
   return &this->vtable1; /*0x717da2*/
 
 }
-}  // G42.18c ns repair
 // 0x71B240
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B270
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B290
-namespace gamemd {
 int VectorClass_ptr_TemporalClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x71b29a*/
 
 }
-} // namespace gamemd
 
 // 0x71B2A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B2E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B390
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B3C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B400
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B420
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B4D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B500
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71B550
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalClass___(unsigned int * Block, char a2)
 {
 
@@ -12817,60 +10584,36 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
   return this->__pad_0; /*0x71b595*/
 
 }
-} // namespace gamemd
 
 // 0x71FBA0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FBD0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FBF0
-namespace gamemd {
 int VectorClass_ptr_TEventClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x71fbfa*/
 
 }
-} // namespace gamemd
 
 // 0x71FC00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FC40
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FCF0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FD20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FD60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FD80
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FE30
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FE60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x71FEB0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass___(unsigned int * Block, char a2)
 {
 
@@ -12890,26 +10633,16 @@ DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass
   return this->__pad_0; /*0x71fef5*/
 
 }
-} // namespace gamemd
 
 // 0x7212B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7212E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x721300
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7213B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7213E0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeControl___(unsigned int * Block, char a2)
 {
 
@@ -12929,60 +10662,36 @@ DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeContr
   return this->__pad_0; /*0x721425*/
 
 }
-} // namespace gamemd
 
 // 0x723730
-namespace gamemd {
-} // namespace gamemd
 
 // 0x723760
-namespace gamemd {
-} // namespace gamemd
 
 // 0x723780
-namespace gamemd {
 int VectorClass_ptr_TiberiumClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x72378a*/
 
 }
-} // namespace gamemd
 
 // 0x723790
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7237D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x723880
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7238B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7238F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x723910
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7239C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7239F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x723A40
-namespace gamemd {
 DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumClass___(unsigned int * Block, char a2)
 {
 
@@ -13002,20 +10711,16 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
   return this->__pad_0; /*0x723a85*/
 
 }
-} // namespace gamemd
 
 // 0x74BF90
-namespace gamemd {
 char VectorClass_E::Clear(int a2)
 {
 
   return *(unsigned char *)(*(unsigned int *)&this->m_1[3] + a2); /*0x74bf9a*/
 
 }
-} // namespace gamemd
 
 // 0x74BFA0
-namespace gamemd {
 VectorClass_flat * VectorClass_E::QueryInterface(unsigned int * Block, char a2)
 {
 
@@ -13035,10 +10740,8 @@ VectorClass_flat * VectorClass_E::QueryInterface(unsigned int * Block, char a2)
   return this->__pad_0; /*0x74bfe5*/
 
 }
-} // namespace gamemd
 
 // 0x74BFF0
-namespace gamemd {
 char VectorClass_E::AddRef(int a2)
 {
 
@@ -13060,10 +10763,8 @@ char VectorClass_E::AddRef(int a2)
   return 0; /*0x74c01c*/
 
 }
-} // namespace gamemd
 
 // 0x74C030
-namespace gamemd {
 char VectorClass_E::Release(signed int Size, char * a3)
 {
 
@@ -13111,10 +10812,8 @@ char VectorClass_E::Release(signed int Size, char * a3)
   }
 
 }
-} // namespace gamemd
 
 // 0x74C0E0
-namespace gamemd {
 void VectorClass_E::ddtor(void *a1_1)
 {
 
@@ -13127,10 +10826,8 @@ void VectorClass_E::ddtor(void *a1_1)
   this->m_8 = 0; /*0x74c101*/
 
 }
-} // namespace gamemd
 
 // 0x74C110
-namespace gamemd {
 int VectorClass_E::GetSize(unsigned char * a2)
 {
 
@@ -13153,10 +10850,8 @@ int VectorClass_E::GetSize(unsigned char * a2)
   return result; /*0x74c118*/
 
 }
-} // namespace gamemd
 
 // 0x74C150
-namespace gamemd {
 int VectorClass_E::GetCapacity(int a2)
 {
 
@@ -13166,60 +10861,36 @@ int VectorClass_E::GetCapacity(int a2)
     return 0; /*0x74c157*/
 
 }
-} // namespace gamemd
 
 // 0x7518D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751900
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751920
-namespace gamemd {
 int VectorClass_ptr_VocClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x75192a*/
 
 }
-} // namespace gamemd
 
 // 0x751930
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751970
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751A20
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751A50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751A90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751AB0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751B60
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751B90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x751BE0
-namespace gamemd {
 DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(unsigned int * Block, char a2)
 {
 
@@ -13239,94 +10910,56 @@ DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(un
   return this->__pad_0; /*0x751c25*/
 
 }
-} // namespace gamemd
 
 // 0x7536A0
-namespace gamemd {
 int VectorClass_ptr_VoxClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x7536aa*/
 
 }
-} // namespace gamemd
 
 // 0x7536B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7536F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7537A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7537D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x753810
-namespace gamemd {
-} // namespace gamemd
 
 // 0x753910
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A430
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A460
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A480
-namespace gamemd {
 int VectorClass_ptr_MovieHandle::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x75a48a*/
 
 }
-} // namespace gamemd
 
 // 0x75A490
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A4D0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A5B0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A5F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A610
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A6C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A6F0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x75A740
-namespace gamemd {
 DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle___(unsigned int * Block, char a2)
 {
 
@@ -13346,60 +10979,36 @@ DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle
   return this->__pad_0; /*0x75a785*/
 
 }
-} // namespace gamemd
 
 // 0x763F90
-namespace gamemd {
-} // namespace gamemd
 
 // 0x763FC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x763FE0
-namespace gamemd {
 int VectorClass_ptr_WaypointPathClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x763fea*/
 
 }
-} // namespace gamemd
 
 // 0x764460
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7644A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x764550
-namespace gamemd {
-} // namespace gamemd
 
 // 0x764580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7645C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7645E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x764690
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7646C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x764710
-namespace gamemd {
 DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_WaypointPathClass___(unsigned int * Block, char a2)
 {
 
@@ -13419,10 +11028,8 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
   return this->__pad_0; /*0x764755*/
 
 }
-} // namespace gamemd
 
 // 0x76B6C0
-namespace gamemd {
 unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(WDTState * aP1, int a3)
 {
 
@@ -13743,10 +11350,8 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(WDTState * aP1, int a
   return 0; /*0x76b197*/
 
 }
-} // namespace gamemd
 
 // 0x76B760
-namespace gamemd {
 unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
 {
 
@@ -13759,30 +11364,18 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::Clear(unsigned int * a2, int a3)
   return a2; /*0x76b78a*/
 
 }
-} // namespace gamemd
 
 // 0x76B870
-namespace gamemd {
-} // namespace gamemd
 
 // 0x76B9E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x76BA10
-namespace gamemd {
-} // namespace gamemd
 
 // 0x76BA50
-namespace gamemd {
-} // namespace gamemd
 
 // 0x76BBC0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7AE730
-namespace gamemd {  // G42.18c ns repair
 char VectorClass_flat::Shrink()
 {
 
@@ -13827,77 +11420,47 @@ char VectorClass_flat::Shrink()
   return result; /*0x7ae742*/
 
 }
-}  // G42.18c ns repair
 // 0x7B2890
-namespace gamemd {
 int VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Get(int a2, void *a2_2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x7b289a*/
 
 }
-} // namespace gamemd
 
 // 0x7B28A0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B28E0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B2990
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B29C0
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B2A00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B2B00
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B4310
-namespace gamemd {
 int VectorClass_PAE::Count(int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x7b431a*/
 
 }
-} // namespace gamemd
 
 // 0x7B4320
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B4360
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B4410
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B4440
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B4480
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B4580
-namespace gamemd {
-} // namespace gamemd
 
 // 0x7B4860
-namespace gamemd {
 bool VectorClass_Wstring::SetCapacity(const char ** a2)
 {
 
@@ -13925,4 +11488,3 @@ bool VectorClass_Wstring::SetCapacity(const char ** a2)
   return v3; /*0x7b4872*/
 
 }
-} // namespace gamemd

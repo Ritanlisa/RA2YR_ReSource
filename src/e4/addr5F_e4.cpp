@@ -470,7 +470,7 @@ int FindBuildingByTiberiumType(int aP0)
   int v6; // esi
   const char *v8[17]; // [esp-34h] [ebp-48h] BYREF
 
-  if ( aP0  ==  (int)((int)(-1) )) /*0x5fdd28*/
+  if ( aP0  ==  (int)(-1) )) /*0x5fdd28*/
     return -1; /*0x5fdd28*/
   v1 = *((unsigned int *)(unsigned int)(g_BuildingTypeClass_Array)+ aP0); /*0x5fdd33*/
   v1 = v1; /*0x5fdd36*/
@@ -491,7 +491,7 @@ int FindBuildingByTiberiumType(int aP0)
     {
       v4 = *(unsigned int **)v3; /*0x5fdd5a*/
       v5 = *(unsigned int *)(*(unsigned int *))(v3->q0E0 + 660);  /*0x5fdd62*/
-      if ( aP0   >=   (int)((int)((IUnknown *)(v5) &(int)(&aP0)  <   (int)((IUnknown *)(v5) + v4[58] )))) /*0x5fdd76*/
+      if ( aP0   >=   (int)((IUnknown *)(v5) &(int)(&aP0)  <   (int)((IUnknown *)(v5) + v4[58] )))) /*0x5fdd76*/
         break; /*0x5fdd76*/
       v6 = v4[58]; /*0x5fdd78*/
       if ( aP0 >= (IUnknown *)(v6) + (IUnknown *)(v5) &(int)(&aP0)  <   (int)((IUnknown *)(v5) + v6 + v4[59] )) /*0x5fdd91*/

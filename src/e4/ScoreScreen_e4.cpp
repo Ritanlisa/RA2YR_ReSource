@@ -286,7 +286,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       *(unsigned int *)((unsigned int)(v10)+ 12) = 0; /*0x778294*/
       *(unsigned int *)v10 = (unsigned int)(&XSurface_Vtable); /*0x77829b*/
       *(unsigned int *)((unsigned int)(v10)+ 16) = 2; /*0x7782a1*/
-      ((Buffer*)(Buffer *)((unsigned int)(v10)+ 20))->Init(0, 2 * v28 * v9); /*0x7782a8*/
+      ((::gamemd::Buffer*)(::gamemd::Buffer *)((unsigned int)(v10)+ 20))->Init(0, 2 * v28 * v9); /*0x7782a8*/
       *(unsigned int *)v10 = (unsigned int)(&BSurface_Vtable); /*0x7782ad*/
     }
     else

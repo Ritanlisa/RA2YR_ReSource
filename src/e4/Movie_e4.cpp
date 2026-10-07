@@ -33,6 +33,7 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {
@@ -52,7 +53,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
   if ( !byte_89F578 ) /*0x49cafc*/
     ((gamemd::CampaignClass *)(&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49cb03*/
   v3 =(gamemd::CCINIClass *)aP1; /*0x49cb08*/
-  if ( aP1 < 0 || aP1  >=  (int)((int)(dword_89F574) )) /*0x49cb1c*/
+  if ( aP1 < 0 || aP1  >=  (int)(dword_89F574) )) /*0x49cb1c*/
     return 0; /*0x49cc46*/
   v4 = dword_89F570; /*0x49cb29*/
   *((unsigned char *)this + 108) = 1; /*0x49cb2f*/
@@ -245,7 +246,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
         Frame::Present( (void *)(int)g_DSurface_Hidden, 0, (void *)a2, (void *)a3, 0, (void *)((int)v17), (void *)(v20), (void *)(v21)); /*0x5bedde*/
       }
       ((BinkMovie *)(&v23))->Close( (char *)(Str)); /*0x5bedec*/
-      if ( a8  ==  (int)((int)(1) )) /*0x5bedf9*/
+      if ( a8  ==  (int)(1) )) /*0x5bedf9*/
         ((unsigned int *)(v23.__pad_0))[0] = 1; /*0x5bedfb*/
       if ( !LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bee06*/
       {

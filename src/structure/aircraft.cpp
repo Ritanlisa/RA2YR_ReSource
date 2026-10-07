@@ -144,7 +144,7 @@ int AircraftClass::Mission_Attack()
         if (v15 >= 512)
         {
             int *destC = ((ObjectClass *)movementDestination)->GetCoords(buf1);
-            int *myC = this->GetCostMultiplier(buf2, 0, 0, 0, 0);
+            int *myC = this->GetCostMultiplier((int)(buf2), 0, 0, 0, 0);
             short v102;
             if (myC[0] == destC[0] && myC[1] == destC[1])
                 v102 = 0;
@@ -198,7 +198,7 @@ int AircraftClass::Mission_Attack()
             loc[0] = this->location.X;
             loc[1] = this->location.Y;
             loc[2] = this->location.Z;
-            int *v32 = ((ObjectClass *)target)->GetCoords(buf2, loc);
+            int *v32 = ((ObjectClass *)target)->GetCoords(buf2,(int)(loc));
             void *v33 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v32);
             Cell_ApplyDamage(v33, 1, 0, 0, (int)outInts);
             if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)weaponCtl + 24))(weaponCtl) != 0)
@@ -351,7 +351,7 @@ int AircraftClass::Mission_Attack()
         loc[0] = this->location.X;
         loc[1] = this->location.Y;
         loc[2] = this->location.Z;
-        int *v53 = ((ObjectClass *)target)->GetCoords(buf1, loc, 1, 0, 0);
+        int *v53 = ((ObjectClass *)target)->GetCoords(buf1,(int)(loc), 1, 0, 0);
         void *v54 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v53);
         Cell_ApplyDamage(v54, (int)target, v96, (int)outInts, (int)buf2);
         this->AssignDestination_SyncLog((int)target, 1);
@@ -382,7 +382,7 @@ int AircraftClass::Mission_Attack()
         loc[0] = this->location.X;
         loc[1] = this->location.Y;
         loc[2] = this->location.Z;
-        int *v75 = ((ObjectClass *)target)->GetCoords(buf2, loc, 1, 0, 0);
+        int *v75 = ((ObjectClass *)target)->GetCoords(buf2,(int)(loc), 1, 0, 0);
         void *v76 = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)v75);
         Cell_ApplyDamage(v76, (int)target, v94, (int)target, (int)outInts);
         missionStatus = 3;
@@ -420,7 +420,7 @@ int AircraftClass::Mission_Attack()
             (int)&g_AircraftStatusFlag, (int)&g_AircraftStatusFlag,
             4, 1, 0);
         void *v84 = CellCoord::To_CellObj((void *)&dword_87F7E8, (void *)openCell);
-        this->AssignDestination_SyncLog(v84, 1);
+        this->AssignDestination_SyncLog((int)(v84), 1);
         AircraftClass_field_bool_6D5 = false;
         if (airstrike != nullptr && ammo > 0)
         {
@@ -508,7 +508,7 @@ int AircraftClass::Mission_Enter()
         if (movementDestination != nullptr)
         {
             void *nearbyCell = AircraftClass_FindNearbyCell((void *)movementDestination);
-            this->AssignDestination_SyncLog(nearbyCell, 1);
+            this->AssignDestination_SyncLog((int)(nearbyCell), 1);
             missionStatus = 1;
         }
         else
@@ -523,7 +523,7 @@ int AircraftClass::Mission_Enter()
             this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
             return 1;
         }
-        destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
+        destCoords = ((FootClass *)movementDestination)->GetDeployCoords((int *)((void *)movementDestination),(int)(destCell));
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
             WinAPI_Wrapper((int)0x80004003);
@@ -537,7 +537,7 @@ int AircraftClass::Mission_Enter()
             bool needValidate = false;
             if (movementDestination != nullptr)
             {
-                destCoords = ((ObjectClass *)movementDestination)->GetCoords((void *)movementDestination, destCell);
+                destCoords = ((ObjectClass *)movementDestination)->GetCoords((void *)movementDestination,(int)(destCell));
                 ((Coord *)rel)->Subtract(this->location.X - destCoords[0],
                                          this->location.Y - destCoords[1], 0);
                 if (((Coord *)rel)->Length() < 256)
@@ -565,8 +565,8 @@ int AircraftClass::Mission_Enter()
         }
         if (movementDestination != nullptr)
         {
-            destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
-            myCell = (__int16 *)this->GetCellCoords_Alt(myCellBuf);
+            destCoords = ((FootClass *)movementDestination)->GetDeployCoords((int *)((void *)movementDestination),(int)(destCell));
+            myCell = (__int16 *)this->GetCellCoords_Alt((int)(myCellBuf));
             if (destCoords[0] / 256 == myCell[0] && destCoords[1] / 256 == myCell[1])
             {
                 missionStatus = 3;
@@ -575,7 +575,7 @@ int AircraftClass::Mission_Enter()
         }
         if (movementDestination != nullptr)
         {
-            destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
+            destCoords = ((FootClass *)movementDestination)->GetDeployCoords((int *)((void *)movementDestination),(int)(destCell));
             __int16 targetCell[2];
             targetCell[0] = (__int16)(destCoords[0] / 256);
             targetCell[1] = (__int16)(destCoords[1] / 256);
@@ -603,7 +603,7 @@ int AircraftClass::Mission_Enter()
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0
          || movementDestination != nullptr
             && (destCoords = ((FootClass *)movementDestination)->GetDeployCoords(destCell, 0),
-                myCell = (__int16 *)this->GetCellCoords_Alt(myCellBuf),
+                myCell = (__int16 *)this->GetCellCoords_Alt((int)(myCellBuf)),
                 destCoords[0] / 256 == myCell[0] && destCoords[1] / 256 == myCell[1]))
         {
             missionStatus = 3;
@@ -612,7 +612,7 @@ int AircraftClass::Mission_Enter()
         {
             if (movementDestination != nullptr)
             {
-                destCoords = ((FootClass *)movementDestination)->GetDeployCoords((void *)movementDestination, destCell);
+                destCoords = ((FootClass *)movementDestination)->GetDeployCoords((int *)((void *)movementDestination),(int)(destCell));
                 __int16 targetCell[2];
                 targetCell[0] = (__int16)(destCoords[0] / 256);
                 targetCell[1] = (__int16)(destCoords[1] / 256);
@@ -869,7 +869,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
             ((FootClass *)member)->vt_entry_540();
             return 1;
         }
-        this->ThunkTo636(3, a2);
+        this->ThunkTo636(3,(int)(a2));
         return 1;
     }
 
@@ -890,7 +890,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
         if (*a4 != nullptr && ((ObjectClass *)v8)->whatAmI() == (AbstractType)6)
         {
             int v10 = AbstractClass_IsTechnoType(v8);
-            if (this->ThunkTo636(15, (void *)v10) != 1)
+            if (this->ThunkTo636(15,(int)((void *)v10)) != 1)
                 return 10;
             this->ProcessLanding(7, 0);
         }
@@ -899,7 +899,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
             this->ProcessLanding(2, 0);
         }
         (void)baseResult;
-        this->AssignDestination_SyncLog(v8, 1);
+        this->AssignDestination_SyncLog((int)(v8), 1);
         this->ProcessPassengerEjection();
         return 1;
     }
@@ -950,7 +950,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
     {
         this->ProcessLanding(2, 0);
         void *cpc = TechnoClass_FindClosestPlacementCell((int)this);
-        this->AssignDestination_SyncLog(cpc, 1);
+        this->AssignDestination_SyncLog((int)(cpc), 1);
         this->ThunkTo159x4(3);
         return FootClass::MissionDispatch(a2, a3, a4);
     }
@@ -985,7 +985,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
 int AircraftClass::MoveTo(int* a2, int a3)
 {
     int coord[3];
-    coord[0] = a2[0];
+    coord[0] = (unsigned int)(a2[0]));
     coord[1] = a2[1];
     coord[2] = a2[2];
     if (*(unsigned char *)((char *)Type + 3432) == 0)
@@ -1129,7 +1129,7 @@ int AircraftClass::ProcessReturnToBase()
          || foundCell[1] != *((__int16 *)&g_AircraftStatusFlag + 1))
         {
             void *cellObj = CellCoord::To_CellObj((void *)&dword_87F7E8, (void *)foundCell);  // G42.42e: static 2-arg (core/cellcoord.hpp)
-            this->AssignDestination_SyncLog(cellObj, 1);
+            this->AssignDestination_SyncLog((int)(cellObj), 1);
         }
     }
     return 3;
@@ -1263,7 +1263,7 @@ int AircraftClass::ProcessMissionTimeout()
                 coord[0] = this->location.X;
                 coord[1] = this->location.Y;
                 coord[2] = this->location.Z;
-                int r = this->SelectAutoTarget_Cloaked(64, coord, 0);
+                int r = this->SelectAutoTarget_Cloaked(64,(int)(coord), 0);
                 this->AssignTarget_SyncLog(r);
             }
             partnerLive = *(void **)this->q2B4 != nullptr;
@@ -1273,7 +1273,7 @@ int AircraftClass::ProcessMissionTimeout()
                 coord[0] = this->location.X;
                 coord[1] = this->location.Y;
                 coord[2] = this->location.Z;
-                int r = this->SelectAutoTarget_Cloaked(0, coord, 0);
+                int r = this->SelectAutoTarget_Cloaked(0,(int)(coord), 0);
                 this->AssignTarget_SyncLog(r);
             }
         }
@@ -1341,7 +1341,7 @@ int AircraftClass::GetMissionTimer()
         coords[1] = this->location.Y;
         coords[2] = this->location.Z;
         void *cell = ((Coord *)&dword_87F7E8)->To_Cell((unsigned int *)coords);
-        this->AssignDestination_SyncLog(cell, 1);
+        this->AssignDestination_SyncLog((int)(cell), 1);
         this->ProcessLanding(2, 0);
         return 1;
     }
@@ -1389,7 +1389,7 @@ int AircraftClass::GetMissionTimer()
             if (found != nullptr)
             {
                 this->ProcessLanding(7, 0);
-                this->AssignDestination_SyncLog(found, 1);
+                this->AssignDestination_SyncLog((int)(found), 1);
                 this->AssignTarget_SyncLog(0);
                 return 1;
             }
@@ -1414,7 +1414,7 @@ int AircraftClass::GetMissionTimer()
         void *occ = ((CellClass *)&dword_87F7E8)->ScanOccupiers((void *)coords);
         if (occ != nullptr)
         {
-            this->AssignTarget_SyncLog(occ);
+            this->AssignTarget_SyncLog((int)(occ));
             this->ProcessLanding(1, 0);
         }
     }

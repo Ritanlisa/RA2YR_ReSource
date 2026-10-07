@@ -291,7 +291,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
               v21 = v18 & 0x3F; /*0x63059e*/
               v59 = *(unsigned int *)(v19); /*0x6305ab*/
               v48 = (uint8_t *)(v19 + 1); /*0x6305af*/
-              if ( v19 + (unsigned int)(1) >= (unsigned int)((char *))&retaddr ) /*0x6305b3*/
+              if ( v19 + (unsigned int)(1) >= (unsigned int)(char *)&retaddr ) /*0x6305b3*/
               {
                 (*(void (**)(int, unsigned char *, int))(a1->q024))( a1, (unsigned char *)(v73), 2048);  /*0x6305c6*/
                 v20 = v59; /*0x6305d0*/
@@ -520,7 +520,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
         }
         else if ( (uint16_t)a3 == 1633 && !IDA_HIWORD(a3) ) /*0x630e6d*/
         {
-          UI_Pop(WindowLongA); /*0x630e74*/
+          UI_Pop((gamemd::ObjectClass *)(WindowLongA)); /*0x630e74*/
           return 0; /*0x630e7f*/
         }
       }
@@ -550,7 +550,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
             }
             break;
           case 1u: /*0x630cc4*/
-            if ( !IDA_HIWORD(a3) && (uint8_t)UI_Get_630EA0(WindowLongA) == 1 ) /*0x630dbe*/
+            if ( !IDA_HIWORD(a3) && (uint8_t)UI_Get_630EA0((gamemd::ObjectClass *)(WindowLongA)) == 1 ) /*0x630dbe*/
             {
               *(unsigned int *)(WindowLongA + 4) = 1; /*0x630dc4*/
               return 0; /*0x630dd1*/
@@ -2735,7 +2735,7 @@ result = (*(int (**)(AudioStream *, int *, int *, int))(*(unsigned int *)DSurfac
     v27[1] = v12[1]; /*0x63b44c*/
     v27[2] = v12[2]; /*0x63b453*/
     v27[3] = v12[3]; /*0x63b461*/
-    v13 = Render_Render_6345A0(v11, v28); /*0x63b465*/
+ v13 = (int *)(Render_Render_6345A0(v11,(_DWORD *)(v28))); /*0x63b465*/
     v15 = *v13; /*0x63b46c*/
     v16 = v13[1]; /*0x63b473*/
     v17 = v13[2]; /*0x63b47a*/
@@ -3643,7 +3643,7 @@ int sub_6335E0()
   dword_AC4B48 = (int)&DynamicVectorClass_EventClass___vftable; /*0x6335fd*/
   dword_AC4B5C = 10; /*0x633607*/
   dword_AC4B58 = 0; /*0x633611*/
-  return atexit(sub_633620); /*0x63361c*/
+  return atexit((void (__cdecl *)(void))(sub_633620)); /*0x63361c*/
 }
 } // namespace gamemd
 
@@ -3680,7 +3680,7 @@ int sub_633680()
   dword_AC4C98 = (int)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x63369d*/
   dword_AC4CAC = 10; /*0x6336a7*/
   dword_AC4CA8 = 0; /*0x6336b1*/
-  return atexit(sub_6336C0); /*0x6336bc*/
+  return atexit((void (__cdecl *)(void))(sub_6336C0)); /*0x6336bc*/
 }
 } // namespace gamemd
 
@@ -3717,7 +3717,7 @@ int sub_633720()
   stru_AC4C40 = (int)&DynamicVectorClass_TechnoClass___vftable; /*0x63373d*/
   g_abs_AC4C54 = 10; /*0x633747*/
   g_abs_AC4C50 = 0; /*0x633751*/
-  return atexit(sub_633760); /*0x63375c*/
+  return atexit((void (__cdecl *)(void))(sub_633760)); /*0x63375c*/
 }
 } // namespace gamemd
 
@@ -3754,7 +3754,7 @@ int sub_6337C0()
   stru_AC4B30 = (int)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x6337dd*/
   dword_AC4B44 = 10; /*0x6337e7*/
   dword_AC4B40 = 0; /*0x6337f1*/
-  return atexit(sub_633800); /*0x6337fc*/
+  return atexit((void (__cdecl *)(void))(sub_633800)); /*0x6337fc*/
 }
 } // namespace gamemd
 
@@ -3791,7 +3791,7 @@ int sub_633860()
   dword_AC4C18 = (int)&DynamicVectorClass_PlanningNodeClass___vftable; /*0x63387d*/
   dword_AC4C2C = 10; /*0x633887*/
   dword_AC4C28 = 0; /*0x633891*/
-  return atexit(sub_6338A0); /*0x63389c*/
+  return atexit((void (__cdecl *)(void))(sub_6338A0)); /*0x63389c*/
 }
 } // namespace gamemd
 
@@ -3828,7 +3828,7 @@ int sub_633900()
   dword_AC4C78 = (int)&DynamicVectorClass_PlanningTokenClass___vftable; /*0x63391d*/
   dword_AC4C8C = 10; /*0x633927*/
   dword_AC4C88 = 0; /*0x633931*/
-  return atexit(sub_633940); /*0x63393c*/
+  return atexit((void (__cdecl *)(void))(sub_633940)); /*0x63393c*/
 }
 } // namespace gamemd
 

@@ -480,7 +480,7 @@ LABEL_42:
       v2 = Size; /*0x734a38*/
       if ( Size ) /*0x734a3e*/
       {
-        ((CCFileClass *)(&v23))->Read( byte_B1BF38, Size); /*0x734a4a*/
+        ((CCFileClass *)(&v23))->Read((void *)(byte_B1BF38), Size); /*0x734a4a*/
         v2 = Size; /*0x734a4f*/
       }
       v3 = (char *)dword_B1CF74; /*0x734a53*/
@@ -505,7 +505,7 @@ LABEL_42:
           v7 = Size; /*0x734b00*/
           if ( Size ) /*0x734b06*/
           {
-            ((CCFileClass *)(&v23))->Read( dword_B17F24, 2 * Size); /*0x734b15*/
+            ((CCFileClass *)(&v23))->Read((void *)(dword_B17F24), 2 * Size); /*0x734b15*/
             v7 = Size; /*0x734b1a*/
           }
           (&dword_B17F24)[v7] = 0; /*0x734b1e*/
@@ -569,7 +569,7 @@ LABEL_31:
             v15 = Size; /*0x734c06*/
             if ( Size ) /*0x734c0c*/
             {
-              ((CCFileClass *)(&v23))->Read( byte_B1BF38, Size); /*0x734c18*/
+              ((CCFileClass *)(&v23))->Read((void *)(byte_B1BF38), Size); /*0x734c18*/
               v15 = Size; /*0x734c1d*/
             }
             (&byte_B1BF38)[v15] = 0; /*0x734c23*/

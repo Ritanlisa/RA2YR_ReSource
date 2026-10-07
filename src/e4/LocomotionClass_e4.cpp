@@ -96,7 +96,7 @@ int LocomotionClass::CheckBridgeBlock()
   unsigned int *v5; // eax
 
   if ( (*((int (**)(FootClass *))this->LinkedTo->vtable1 + 97))( (FootClass *)(this->LinkedTo)) == 7 /*0x4cfa8e*/
-    || (LOBYTE(vtable1) = BuildingClass::GetType_Thunk( &this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
+    || (LOBYTE(vtable1) = BuildingClass::GetType_Thunk( (TechnoClass *)this->LinkedTo), !(unsigned char)vtable1) )
   {
     vtable1 = (*((int (**)(FootClass *))this->LinkedTo->vtable1 + 11))( (FootClass *)(this->LinkedTo)); /*0x4cfa95*/
     if ( vtable1 == 2 /*0x4cfacc*/

@@ -346,7 +346,7 @@ LABEL_35:
   v21 = 1; /*0x43a061*/
 LABEL_43:
   v48 = QuaternionMathMultiply( (ObjectClass *)((float *)v86), (float *)v2 + 12, (float *)v2 + 16); /*0x43a066*/
-  ((Float4 *)((float *)v2 + 12))->Copy(&v84, v48); /*0x43a080*/
+  ((Float4 *)((float *)v2 + 12))->Copy((unsigned int *)(&v84), v48); /*0x43a080*/
   v49 = ((JumpjetLocomotionClass *)((JumpjetLocomotionClass *)v2))->ComputeVectorLengthMetric(); /*0x43a087*/
   result = 2; /*0x43a098*/
   if ( v49 >= 2.5 ) /*0x43a09d*/
@@ -665,11 +665,11 @@ LABEL_51:
   if ( *(float *)&((unsigned int *)v18)[0] > 0.0 ) /*0x4b0113*/
     v50 = -v17; /*0x4b0117*/
   v43 = (float)v54; /*0x4b0124*/
-  Matrix3x3::ApplyCol1(v56.m_Data, v43); /*0x4b0127*/
+  Matrix3x3::ApplyCol1((void *)(v56.m_Data), v43); /*0x4b0127*/
   v44 = (float)v52; /*0x4b0138*/
   ((Matrix3x4 *)(v57.m_Data))->Translate(v44); /*0x4b013b*/
   v45 = (float)v50; /*0x4b014c*/
-  Matrix3x3::ApplyCol0(v57.m_Data, v45); /*0x4b014f*/
+  Matrix3x3::ApplyCol0((void *)(v57.m_Data), v45); /*0x4b014f*/
   ((Matrix3x3 *)(v57.m_Data))->RotateX(*(float *)&((unsigned int *)a1)[0]); /*0x4b0165*/
   Matrix3D::RotateZ(v57.m_Data, *(float *)&((unsigned int *)a1)[0]); /*0x4b017b*/
   if ( a3 ) /*0x4b0185*/
@@ -779,7 +779,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       }
       else
       {
-        JumpjetLocomotion::MoveTo((int)((IUnknown *)((int)a1 - 4)), (unsigned int *)((int)(&v12)), (void *)( 1)); /*0x4b0d3a*/
+        JumpjetLocomotion::MoveTo((int)((IUnknown *)((int)a1 - 4)), (unsigned int *)((int)(&v12)),(int)((void *)( 1))); /*0x4b0d3a*/
         LOBYTE(v4) = (unsigned char)a1 + 48; /*0x4b0d3f*/
         a1->SlopeTimer[3] = a3; /*0x4b0d4a*/
         *(unsigned long long *)a1->Dest = a4; /*0x4b0d4c*/

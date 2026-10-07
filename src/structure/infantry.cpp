@@ -1217,11 +1217,11 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
   {
     return 6; /*0x51c8fb*/
   }
-  v8 = weapon_idx; /*0x51c907*/
+ v8 = (int *)(weapon_idx); /*0x51c907*/
   if ( TechnoClass::GetValue((unsigned int *)this, -1) < 0 /*0x51c937*/
     && (!weapon_idx
      || (*(int (**)(int *))(*weapon_idx + 44))( (int *)(weapon_idx) ) != 15
-     || BuildingClass::GetHealthRatio(weapon_idx) >= *(double *)&g_RulesClass_Instance[1].ChronoBeam) )
+     || BuildingClass::GetHealthRatio((gamemd::BuildingClass *)(weapon_idx)) >= *(double *)&g_RulesClass_Instance[1].ChronoBeam) )
   {
     return 5; /*0x51c944*/
   }
@@ -1229,12 +1229,12 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
   {
     if ( (*(int (**)(int *))(*weapon_idx + 44))( (int *)(weapon_idx) ) == 1 )
     {
-      if ( *(unsigned char *)(((int (**)(int)) *(unsigned int *)this)[33](this) + 1682) ) /*0x51c95b g57w10 r4: live asm [eax+84h] slot33 on [ebx]; attachedTag2=幻觉名证伪*/
+      if ( *(unsigned char *)(((int (**)((int)(int))) *(unsigned int *)this)[33](this) + 1682) ) /*0x51c95b g57w10 r4: live asm [eax+84h] slot33 on [ebx]; attachedTag2=幻觉名证伪*/
       {
         v9 = weapon_idx[170]; /*0x51c96b*/
         if ( v9 )
         {
-          v10 = this ? ((this->abstractFlags & 1) != 0 ? this : 0) : 0;
+          v10 = (unsigned int)(this ? ((this->abstractFlags & 1) != 0 ? this : 0) : 0));
           if ( v9 != v10 ) /*0x51c98a*/
             return 5; /*0x51c997*/
         }
@@ -1271,10 +1271,10 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
       {
         if ( !this->Locomotor ) /*0x51ca98*/
           WinAPI::Wrapper(-2147467261); /*0x51caa7*/
-        if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)(&this->Locomotor) + 128))(this->Locomotor) ) /*0x51cab5 g57w10 r4: 同 0x51ca24*/
+        if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)(&this->Locomotor) + 128))((unsigned int)(this->Locomotor)) ) /*0x51cab5 g57w10 r4: 同 0x51ca24*/
           return 7; /*0x51caca*/
       }
-      v8 = weapon_idx; /*0x51cacd*/
+ v8 = (int *)(weapon_idx); /*0x51cacd*/
     }
     v15 = *(unsigned int *)(*(int (**)(int, int))(*(unsigned int *)this) + 254)(this, a4); /*0x51cad5 g57w10 r4: live asm [edx+3F8h] slot254 on [ebx]; q1946=幻觉名证伪*/
     if ( !v15 ) /*0x51cae4*/
@@ -1293,7 +1293,7 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
   LABEL_64:
       if ( !this->Locomotor ) /*0x51cb61*/
         WinAPI::Wrapper(-2147467261); /*0x51cb70*/
-      result = (*(int (**)(unsigned int))(**(unsigned int **)(&this->Locomotor) + 140))(this->Locomotor); /*0x51cb7e g57w10 r4: 同 0x51ca24*/
+      result = (*(int (**)(unsigned int))(**(unsigned int **)(&this->Locomotor) + 140))((unsigned int)(this->Locomotor)); /*0x51cb7e g57w10 r4: 同 0x51ca24*/
       if ( !result ) /*0x51cb86*/
         return 0; /*0x51cb88*/
     }
@@ -1448,7 +1448,7 @@ void InfantryClass::PlayIdleAnim(int idle_anim_number)
   v11[0] = v5; /*0x51db7d*/
   v11[2] = v6; /*0x51db81*/
   LandHeight = ObjectClass::GetLandHeight((ObjectClass *)idle_anim_number); /*0x51db8a*/
-  v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v11); /*0x51db96*/
+ v7 = (CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v11)); /*0x51db96*/
   if ( vtable0[107](idle_anim_number, v7, (((v3 >> 12) + 1) >> 1) & 7, LandHeight, 0, 1) ) /*0x51db9e*/
     idle_anim_number->InfantryClass_field_bool_6DC = 1; /*0x51dbbe*/
   else
@@ -1511,7 +1511,7 @@ int InfantryClass::ProcessIdleAction()
           result = (int)this->Type; /*0x51cf73*/
           if ( result->u32_E98 <= 0 ) /*0x51cf81*/
             goto LABEL_22; /*0x51cf81*/
-          result = Random::Range(&Randomizer_Global, 0, 2); /*0x51cf90*/
+          result = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, 2); /*0x51cf90*/
           if ( result ) /*0x51cf97*/
             goto LABEL_22; /*0x51cf97*/
           v16 = ((unsigned int *)this)[0]; /*0x51cfa7*/
@@ -1601,7 +1601,7 @@ int InfantryTypeClass::DTOR()
   ((unsigned int *)this)[0] = (unsigned int)&InfantryTypeClass_vftable; /*0x5239dd*/
   ((unsigned int *)this)[0] = (unsigned int)&InfantryTypeClass_vftable; /*0x5239e4*/
   ((unsigned int *)this)[0] = (unsigned int)&InfantryTypeClass_vftable; /*0x5239eb*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5239f2*/
+  AbstractClass::AnnounceExpiredPointer((int)(this), 1); /*0x5239f2*/
   v7 = (InfantryClass *)this; /*0x523a07 g57w10 r4: raw v7=this 还原*/
   v2 = (*(int (**)(unsigned int *, InfantryClass **))(dword_A8E348 + 16))(&dword_A8E348, &v7); /*0x523a0b*/
   if ( v2 != -1 && v2 < dword_A8E358 && v2 < --dword_A8E358 ) /*0x523a26*/
@@ -1760,7 +1760,7 @@ int InfantryClass::GetIdleTimer()
               1,
               1) )
       {
-        (*((void (**)(InfantryClass *, AbstractClass *, int))this->vtable1 + 243))(this, ((unsigned int *)this)[0], 1); /*0x52143d*/
+        (*((void (**)(InfantryClass *, AbstractClass *, int))this->vtable1 + 243))(this,(ra2::game::AbstractClass *)(((unsigned int *)this)[0]), 1); /*0x52143d*/
         (*((void (**)(InfantryClass *, unsigned int))this->vtable1 + 242))(this, 0); /*0x521449*/
         (*((void (**)(InfantryClass *, int, unsigned int, unsigned int))this->vtable1 + 342))(this, 29, 0, 0); /*0x521459*/
         return *(unsigned int *)(this->Type->Sequence[0] + 1048); /*0x521477*/
@@ -1972,7 +1972,7 @@ int InfantryClass::MoveToCell(int* a2, int a3)
   int v16[3]; // [esp+18h] [ebp-Ch] BYREF
 
   a2 = a2; /*0x51dff5*/
-  GroundHeight = Cell::GetGroundHeight(a2); /*0x51e007*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(a2)); /*0x51e007*/
   v13 = *a2; /*0x51e00d*/
   v14 = a2[1]; /*0x51e014*/
   v15 = a2[2]; /*0x51e01d*/
@@ -1987,7 +1987,7 @@ int InfantryClass::MoveToCell(int* a2, int a3)
         v6 = 0; /*0x51e02e*/
     }
     v6 = v6; /*0x51e081*/
-    v7 = Coord::To_Cell((Coord *)&dword_87F7E8, a2); /*0x51e08e*/
+ v7 = (CellClass *)(Coord::To_Cell((Coord *)&dword_87F7E8, a2)); /*0x51e08e*/
     v8 = ObjectPlacement::CalcPosition((ObjectPlacement *)v7, v16, a2, v6, 0, 0); /*0x51e0a0*/
     result = *v8; /*0x51e0a2*/
     v13 = result; /*0x51e0a4*/
@@ -2141,11 +2141,11 @@ int InfantryClass::CalcMoveTarget()
   if ( *(unsigned int *)(*(unsigned int *)(((unsigned int *)&FootClass_Array)[3] + 4 * ((unsigned int *)this)[0]) + 4 * ((unsigned int *)this)[0] + 48) != -1 ) /*0x51b383*/
   {
     v3 = (Vector3 *)(*((int (**)(InfantryClass *))this->vtable1 + 18))(this); /*0x51b392*/
-    unknownCoords568 = ((unsigned int *)this)[0]; /*0x51b395*/
+ unknownCoords568 = (int *)(((unsigned int *)this)[0]); /*0x51b395*/
     v5 = Vector3::Subtract(v3, &v79, ((unsigned int *)this)[0]); /*0x51b3a3*/
     ((Coord *)v5)->Length(); /*0x51b3aa*/
     v6 = *(unsigned int **)(((unsigned int *)&FootClass_Array)[3] + 4 * ((unsigned int *)this)[0]); /*0x51b3c2*/
-    v7 = (int *)(*((int (**)(InfantryClass *, int *, int *))this->vtable1 + 18))(this, &v82, ((unsigned int *)this)[0]); /*0x51b3cc*/
+    v7 = (int *)(*((int (**)(InfantryClass *, int *, int *))this->vtable1 + 18))(this, &v82,(int *)(((unsigned int *)this)[0])); /*0x51b3cc*/
     Height = (int *)Cell::GetHeight((Cell *)&v74[1], v7, &v83); /*0x51b3d4*/
     Type = this->Type; /*0x51b3d9*/
     v74[1] = *Height; /*0x51b3e1*/
@@ -2162,8 +2162,8 @@ int InfantryClass::CalcMoveTarget()
     v12 = v6[112]; /*0x51b444*/
     v81 = (IDA_SHIWORD(v70) << 8) + 128; /*0x51b456*/
     v71 = v12; /*0x51b45a*/
-    GroundHeight = Cell::GetGroundHeight(&v80); /*0x51b46d*/
-    v14 = (Cell::GetGroundHeight(&v77) - GroundHeight) / v71; /*0x51b47f*/
+    GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v80)); /*0x51b46d*/
+    v14 = (Cell::GetGroundHeight((unsigned int *)(&v77)) - GroundHeight) / v71; /*0x51b47f*/
     if ( v67 > Speed ) /*0x51b48b*/
     {
       v37 = v6[((unsigned int *)this)[0] + 12]; /*0x51b6a8*/

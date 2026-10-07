@@ -42,7 +42,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     bool Read();  // 0x431F30
     BOOL Write(int a2, const CHAR *a3);
     int Open(const CHAR *a2);
-    int SeekInternal();  // 0x4324B0
+    int SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod);  // 0x4324B0
     int SetSize();  // 0x4325A0
     unsigned int * QueryInterface(char a1);  // 0x432610
     void *** Constructor_BitFont(char a1);  // 0x434A40

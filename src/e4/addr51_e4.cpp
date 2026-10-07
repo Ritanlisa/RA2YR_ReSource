@@ -111,7 +111,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
   char Buffer[12]; // [esp+30h] [ebp-8Ch] BYREF
   char Source[128]; // [esp+3Ch] [ebp-80h] BYREF
 
-  INIClass::ClearSection(v3, (int)&g_INI_Key_Special.SidebarImage, 0); /*0x51ff02*/
+  INIClass::ClearSection(v3, (int)&((SuperWeaponTypeClass *)&g_INI_Key_Special)->q0B8, 0); /*0x51ff02*/
   result = 0; /*0x51ff0d*/
   for ( i = 0; result < *(int *)&stru_A83D50.__pad_80[40]; i = result ) /*0x51ff15*/
   {
@@ -151,7 +151,7 @@ v15 = *(int16_t *)(*((int (**)(BuildingClass *, char *, unsigned int))v6->vtable
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
       v4 = v4 * 256.0; /*0x520050*/
       IDA_LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/
-      sprintf(Source,(const char *const )((const char *const)stru_825538.Type), &(&owner->plainName)[4], v9, v14, v15); /*0x520068*/
+      sprintf(Source,(const char *const)((const char *const )((const char *const)stru_825538.Type)), &(&owner->plainName)[4], v9, v14, v15); /*0x520068*/
       ((INIClass *)queuedMission)->SetString( (unsigned __int8 *)((uint8_t *)&g_INI_Key_Special.SidebarImage), (char *)(Buffer), (char *)(Source)); /*0x520085*/
       result = i; /*0x52008a*/
     }

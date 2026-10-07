@@ -150,7 +150,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   {
     v10 = (CampaignClass *)__2_YAPAXI_Z(0x100u); /*0x48e95a*/
     this->ConvertClass_field_0x178 = (unsigned int)(v10); /*0x48e95f*/
-    LOBYTE(v10->AbstractClass) = 0; /*0x48e968*/
+    LOBYTE(v10->vtable1) = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
       v11 = ComputeColorSaturation(a2 + 2 * (v8 % 256) + v8 % 256, a2 + 2 * (v8 % 256), (int)&a5); /*0x48e98b*/
@@ -171,7 +171,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
     *(unsigned int *)this->__pad_174 = (unsigned int)((char *)v15 + 256 * ((v16 - 1) >> 1)); /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
-      LOBYTE(v15->AbstractClass) = 0; /*0x48ea18*/
+      LOBYTE(v15->vtable1) = 0; /*0x48ea18*/
       v17 = (unsigned char *)((char *)v15 + 1); /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
         *v17++ = ((Palette *)((int)((char *)a3)))->FindClosestColor((gamemd::Palette *)(a2 + 2 * (i % 256) + i % 256)); /*0x48ea40*/
@@ -183,7 +183,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
       {
         do /*0x48eb0a*/
         {
-          LOBYTE(v15->AbstractClass) = 0; /*0x48ea5d*/
+          LOBYTE(v15->vtable1) = 0; /*0x48ea5d*/
           v15 = (CampaignClass *)((char *)v15 + 1); /*0x48ea5f*/
           for ( j = 1; j < 256; ++j ) /*0x48ea60*/
           {
@@ -196,7 +196,7 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
             v22 = ((Color *)((int)(&v29)))->ConvertToRGB((int)&v28); /*0x48eac6*/
             LOWORD(a4) = *(unsigned short *)v22; /*0x48eace*/
             BYTE2(a4) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
-            LOBYTE(v15->AbstractClass) = ((Palette *)((int)((char *)a3)))->FindClosestColor((gamemd::Palette *)((int)&a4)); /*0x48eae8*/
+            LOBYTE(v15->vtable1) = ((Palette *)((int)((char *)a3)))->FindClosestColor((gamemd::Palette *)((int)&a4)); /*0x48eae8*/
             v15 = (CampaignClass *)((char *)v15 + 1); /*0x48eaea*/
           }
           v23 = *(unsigned int *)&this->__pad_6[358] - 1; /*0x48eb03*/

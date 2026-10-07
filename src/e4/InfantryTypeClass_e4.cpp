@@ -30,6 +30,7 @@
 #include "e4/classes/VocClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
@@ -74,7 +75,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(char *aP1)
   unsigned int *v6; // edx
   int i; // eax
 
-  ((TechnoTypeClass *)this)->ReadINI((int)(aP1), 0); /*0x5236ae*/
+  ((TechnoTypeClass *)this)->ReadINI((char *)((int)(aP1)), 0); /*0x5236ae*/
   *((unsigned int *)this + 894) = -1; /*0x5236b3*/
   *((unsigned int *)this + 895) = 1; /*0x5236bd*/
   *((unsigned int *)this + 896) = 7; /*0x5236c7*/
@@ -149,7 +150,7 @@ LABEL_11:
   else
   {
     v6 = (unsigned int *)(dword_A8E34C);
-    while ( *(unsigned int *)(unsigned int)(v6)   !=   (unsigned int)((unsigned int)(this ))) /*0x52386a*/
+    while ( *(unsigned int *)(unsigned int)(v6)   !=   (unsigned int)(this ))) /*0x52386a*/
     {
       ++v5; /*0x52386c*/
       ++v6; /*0x52386d*/
@@ -234,7 +235,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   v5 = (int)(__2_YAPAXI_Z(0x6F0u)); /*0x523b4b*/
   if ( v5 ) /*0x523b55*/
   {
-    v6 = ((InfantryClass *)v5)->Construct( v3, (int)this, ppv); /*0x523b68*/
+    v6 = ((InfantryClass *)v5)->Construct( v3, (int)this,(IUnknown *)(ppv)); /*0x523b68*/
     if ( v6 ) /*0x523b6c*/
     {
       v7 = a2[1] << 8; /*0x523b85*/
@@ -609,7 +610,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
         ((DynamicVector *)((DynamicVector *)v5->VoiceComment))->Add_Alt( (unsigned int *)(&a3)); /*0x5249ff*/
         ++v6; /*0x524a04*/
       }
-      while ( v6   <   (int)((int)(a2 ))); /*0x524a09*/
+      while ( v6   <   (int)(a2 ))); /*0x524a09*/
     }
     if ( v5 != (InfantryTypeClass *)-3664 ) /*0x524a13*/
     {
@@ -617,7 +618,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0, void 
       (&v5->DeadBodies)[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524a20*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a2), 4, 0); /*0x524a33*/
-    for ( i = 0; i   <   (int)((int)(a2)); ++i ) /*0x524a3e*/
+    for ( i = 0; i   <   (int)(a2)); ++i ) /*0x524a3e*/
     {
       (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))( v7, (int *)(&a3), 4, 0); /*0x524a4c*/
       ((DynamicVector *)((DynamicVector *)v5->DeadBodies))->Add_Alt4( (unsigned int *)(&a3)); /*0x524a56*/
@@ -834,7 +835,7 @@ InfantryClass *  InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 
   v4 = (unsigned int)__2_YAPAXI_Z(0x6F0u); /*0x523b18*/
   if ( v4 ) /*0x523b22*/
-    return (InfantryClass *)((InfantryClass *)v4)->Construct( v2, (int)this, ppv); /*0x523b2c*/
+    return (InfantryClass *)((InfantryClass *)v4)->Construct( v2, (int)this,(IUnknown *)(ppv)); /*0x523b2c*/
   else
     return 0; /*0x523b35*/
 

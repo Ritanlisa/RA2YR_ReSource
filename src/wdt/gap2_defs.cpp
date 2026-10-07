@@ -26,6 +26,7 @@ using ra2::game::ObjectClass;
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
 #include "ui/ui_ext.hpp"// 0x4104C0
+extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 void DisableCampaignSlots(...);  // g57c5 W5 vocab
@@ -108,7 +109,7 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
         v9 = (int *)v5[16]; /*0x5c2554*/
         if ( v9 ) /*0x5c2559*/
         {
-          if ( (uint8_t)((Movie*)v9)->GetState(&v13) ) /*0x5c2560*/
+          if ( (uint8_t)((Movie*)v9)->GetState((unsigned int *)(&v13)) ) /*0x5c2560*/
           {
             result = v13; /*0x5c2579*/
           }

@@ -222,7 +222,7 @@ int AbstractTypeClass::Init(int aP1)
   char v3; // al
 
   AbstractClass::InitVtables(((gamemd::AbstractClass*)(unsigned int *)this), aP1); /*0x410968*/
-  v3 = this->UINameLabel; /*0x41096d*/
+  v3 = (unsigned int)(this->UINameLabel)); /*0x41096d*/
   *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
   this->vtable2 = (void *)(&vt_AbstractTypeClass);
   this->vtable3 = (void *)(&vt_AbstractTypeClass);

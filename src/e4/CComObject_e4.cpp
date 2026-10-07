@@ -218,7 +218,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
             v8 = dword_B77900- 1; /*0x7a503b*/
           memcpy( /*0x7a5061*/
             (char *)dword_B77908 + 108 * v8,
-            &g_WOL_UserList.nextObject->alignmentPadding69[108 * v8 + 3],
+            &((ObjectClass *)&g_WOL_UserList)->nextObject->alignmentPadding69[108 * v8 + 3],
             108 *dword_B77900 - 36 * (3 * v8 + 3));
           --dword_B77900; /*0x7a5075*/
           if ( 3 * dword_B77900<= dword_B77904) /*0x7a507f*/
@@ -229,7 +229,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
             if ( v9 < dword_B77904) /*0x7a5096*/
             {
               v10 = (ObjectClass *)RA2_OPNEW(108 * v9); /*0x7a50a2*/
-              nextObject = dword_B77908; /*0x7a50a7*/
+ nextObject = (ObjectClass *)(dword_B77908); /*0x7a50a7*/
               v12 = v10; /*0x7a50b2*/
               if ( dword_B77908) /*0x7a50b4*/
               {
@@ -237,7 +237,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
                 v14 = (unsigned int)(108 * dword_B77900) >> 2; /*0x7a50c8*/
                 qmemcpy( (void *)(v10), dword_B77908, 4 * v14); /*0x7a50cb*/
                 qmemcpy( (void *)(&v10->AbstractClass + v14), (const void *)(&nextObject->AbstractClass + v14), v13 & 3); /*0x7a50d2*/
-                nextObject = dword_B77908; /*0x7a50d4*/
+ nextObject = (ObjectClass *)(dword_B77908); /*0x7a50d4*/
               }
               RA2_OPDEL(nextObject); /*0x7a50db*/
               dword_B77908= v12; /*0x7a50e0*/
@@ -599,7 +599,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
       v14 = dword_B77900; /*0x7a7d66*/
       strcpy( (char *)&g_WebBrowserConfig.location[2], (const char *)(v13)); /*0x7a7d77*/
       if ( v14 > 0 && dword_B77908) /*0x7a7d8b*/
-        strcpy( (char *)(byte_B779E0), (const char *)&g_WOL_UserList.nextObject->occupant); /*0x7a7da7*/
+        strcpy( (char *)(byte_B779E0), (const char *)&((ObjectClass *)&g_WOL_UserList)->nextObject->occupant); /*0x7a7da7*/
       *(unsigned int *)dword_B77788 = time(0); /*0x7a7dbc*/
       Debug::Log("OnGameStart\n"); /*0x7a7dc1 G57c1: IDA 0x7a7dc1 push offset aOngamestart*/
       if ( a3 ) /*0x7a7dd2*/
@@ -612,7 +612,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
       v15 = 0; /*0x7a7e1d*/
       if ( dword_B77900> 0 ) /*0x7a7e21*/
       {
-        nextObject = dword_B77908; /*0x7a7e23*/
+ nextObject = (ObjectClass *)(dword_B77908); /*0x7a7e23*/
         while ( 1 ) /*0x7a7e29*/
         {
           if ( v15 >= 0 && v15 < dword_B77900) /*0x7a7e2f*/
@@ -625,7 +625,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
             goto LABEL_41; /*0x7a7e4e*/
         }
         if ( &g_WebBrowserConfig != (int *)-36 ) /*0x7a7e59*/
-          BulkCharToWide( (unsigned short *)(word_A8E258), (uint8_t *)((unsigned __int8 *)&g_WebBrowserConfig.ambientSoundController[3]), -1); /*0x7a7e67*/
+          BulkCharToWide( (unsigned short *)(word_A8E258), (uint8_t *)((unsigned __int8 *)&((ObjectClass *)&g_WebBrowserConfig)->q048), -1); /*0x7a7e67*/
       }
   LABEL_41:
       dword_A8E2AC = -1; /*0x7a7e6c*/
@@ -884,7 +884,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_40(int a1, int a
       if ( (*a4 & 1) != 0 || gamemd::Dialog::FindByHandle(  (gamemd::Dialog*)0xC2) || gamemd::Dialog::FindByHandle(  (gamemd::Dialog*)0xC9) ) /*0x7a8f1c*/
         goto LABEL_21; /*0x7a8f1c*/
       v7 = (unsigned __int8)((WideString *)(const wchar_t **)&a2)->IsASCII() == 0; /*0x7a8f2e*/
-      DynamicVector_field_0x10 = dword_B779C0; /*0x7a8f30*/
+ DynamicVector_field_0x10 = (void *)(dword_B779C0); /*0x7a8f30*/
       if ( v7 ) /*0x7a8f35*/
         DynamicVector_field_0x10 = (void *)dword_B779DC; /*0x7a8f37*/
       if ( DynamicVector_field_0x10 ) /*0x7a8f43*/
@@ -997,7 +997,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_41(int a1, int a
       if ( (*a3 & 1) != 0 || gamemd::Dialog::FindByHandle(  (gamemd::Dialog*)0xC2) || gamemd::Dialog::FindByHandle(  (gamemd::Dialog*)0xC9) ) /*0x7a915c*/
         goto LABEL_21; /*0x7a915c*/
       v6 = (unsigned __int8)((WideString *)(const wchar_t **)&a2)->IsASCII() == 0; /*0x7a916e*/
-      DynamicVector_field_0x10 = dword_B779C0; /*0x7a9170*/
+ DynamicVector_field_0x10 = (void *)(dword_B779C0); /*0x7a9170*/
       if ( v6 ) /*0x7a9175*/
         DynamicVector_field_0x10 = (void *)dword_B779DC; /*0x7a9177*/
       if ( DynamicVector_field_0x10 ) /*0x7a9183*/
@@ -1060,7 +1060,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
     if ( (*a3 & 1) == 0 && !gamemd::Dialog::FindByHandle(  (gamemd::Dialog*)0xC2) && !gamemd::Dialog::FindByHandle(  (gamemd::Dialog*)0xC9) ) /*0x7a9266*/
     {
       v5 = (unsigned __int8)((WideString *)(const wchar_t **)&v26)->IsASCII() == 0; /*0x7a9278*/
-      DynamicVector_field_0x10 = dword_B779C0; /*0x7a927a*/
+ DynamicVector_field_0x10 = (void *)(dword_B779C0); /*0x7a927a*/
       if ( v5 ) /*0x7a927f*/
         DynamicVector_field_0x10 = (void *)dword_B779DC; /*0x7a9281*/
       if ( !DynamicVector_field_0x10 ) /*0x7a928d*/
@@ -1187,7 +1187,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
       else
       {
         v7 = (unsigned __int8)((WideString *)(const wchar_t **)v18)->IsASCII() == 0; /*0x7a95c5*/
-        DynamicVector_field_0x10 = dword_B779C0; /*0x7a95c7*/
+ DynamicVector_field_0x10 = (void *)(dword_B779C0); /*0x7a95c7*/
         if ( v7 ) /*0x7a95cc*/
           DynamicVector_field_0x10 = (void *)dword_B779DC; /*0x7a95ce*/
         v6 = DynamicVector_field_0x10 != 0; /*0x7a95d5*/
@@ -1428,7 +1428,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void 
             v8 = dword_B77900- 1; /*0x7ab4ef*/
           memcpy( /*0x7ab51b*/
             (char *)dword_B77908 + 108 * v8,
-            &g_WOL_UserList.nextObject->alignmentPadding69[108 * v8 + 3],
+            &((ObjectClass *)&g_WOL_UserList)->nextObject->alignmentPadding69[108 * v8 + 3],
             108 *dword_B77900 - 36 * (3 * v8 + 3));
           --dword_B77900; /*0x7ab52f*/
           if ( 3 * dword_B77900<= dword_B77904) /*0x7ab539*/
@@ -1439,7 +1439,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void 
             if ( v9 < dword_B77904) /*0x7ab550*/
             {
               v10 = (ObjectClass *)RA2_OPNEW(108 * v9); /*0x7ab55c*/
-              nextObject = dword_B77908; /*0x7ab561*/
+ nextObject = (ObjectClass *)(dword_B77908); /*0x7ab561*/
               v12 = v10; /*0x7ab56c*/
               if ( dword_B77908) /*0x7ab56e*/
               {
@@ -1447,7 +1447,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void 
                 v14 = (unsigned int)(108 * dword_B77900) >> 2; /*0x7ab582*/
                 qmemcpy( (void *)(v10), dword_B77908, 4 * v14); /*0x7ab585*/
                 qmemcpy( (void *)(&v10->AbstractClass + v14), (const void *)(&nextObject->AbstractClass + v14), v13 & 3); /*0x7ab58c*/
-                nextObject = dword_B77908; /*0x7ab58e*/
+ nextObject = (ObjectClass *)(dword_B77908); /*0x7ab58e*/
               }
               RA2_OPDEL(nextObject); /*0x7ab595*/
               dword_B77908= v12; /*0x7ab59a*/
@@ -1535,13 +1535,13 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
       v9 = v8 / 8; /*0x7ab6fd*/
       v10 = v8 % 8; /*0x7ab70c*/
       if ( v9 ) /*0x7ab70f*/
-        sprintf(byte_B785C0, "%s %d", *(const char **)&g_WindowManager.__pad_EC[4 * v10 + 648], v9 + 1); /*0x7ab72f*/
+        sprintf((char *const)(byte_B785C0), "%s %d", *(const char **)&g_WindowManager.__pad_EC[4 * v10 + 648], v9 + 1); /*0x7ab72f*/
       else
-        sprintf(byte_B785C0, "%s", *(const char **)&g_WindowManager.__pad_EC[4 * v10 + 648]); /*0x7ab719*/
+        sprintf((char *const)(byte_B785C0), "%s", *(const char **)&g_WindowManager.__pad_EC[4 * v10 + 648]); /*0x7ab719*/
     }
     else
     {
-      sprintf(byte_B785C0, "%s", v7); /*0x7ab744*/
+      sprintf((char *const)(byte_B785C0), "%s", v7); /*0x7ab744*/
     }
     if ( (IDA_BYTE1(*(unsigned int *)a4) & 0x80u) == 0 ) /*0x7ab758*/
     {

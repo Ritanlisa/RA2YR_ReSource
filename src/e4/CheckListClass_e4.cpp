@@ -18,12 +18,10 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
   ListClass *v7; // ecx
   ListClass *v8; // esi
   size_t *result; // eax
-  int (*)(...) ListClass_field_0x0C;
-  wchar_t * Type;
+  int (*ListClass_field_0x0C) (...) ;  wchar_t * Type;
   int v12; // ecx
   int v13; // eax
-  int (*)(...) ListClass_field_0x10;
-  int v15; // eax
+  int (*ListClass_field_0x10) (...) ;  int v15; // eax
   int v16; // [esp-20h] [ebp-114h]
   size_t v17; // [esp-10h] [ebp-104h]
   int v18; // [esp-10h] [ebp-104h]

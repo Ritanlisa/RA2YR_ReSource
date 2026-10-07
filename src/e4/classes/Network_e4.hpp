@@ -8,6 +8,8 @@ namespace gamemd {
 struct WinModemClass;  // fix_fwd_type_supply
 struct IPXConnClass;  // fix_fwd_type_supply
 struct HashTable_flat;  // fix_fwd_type_supply
+#ifndef GAMMD_G2_NETWORK_FLAT_DEF  // W13A: shared twin guard w/ network_ext.hpp (was one-sided; nesting accident silently deduped)
+#define GAMMD_G2_NETWORK_FLAT_DEF 1
 struct Network {
 // --- flat members (BEGIN) ---
     WinModemClass* q000;  // 0x0
@@ -210,4 +212,5 @@ int GetSendCount();  // 0x00540f90 g57w12-r raw-sync (def-form)
     void Network_resetConnectionState();
     void Network_UpdateLatencyDisplay(ProgressScreenClass * aP1, ProgressScreenClass * aP2, ProgressScreenClass * aP3);
 };
+#endif  // GAMMD_G2_NETWORK_FLAT_DEF
 } // namespace gamemd

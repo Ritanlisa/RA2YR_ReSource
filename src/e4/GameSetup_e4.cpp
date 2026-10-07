@@ -63,7 +63,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_GameMode), *(unsigned int *)this, 0); /*0x698fae*/
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(aScenindex), (int)(this->q004), 0); /*0x698fc1*/
-  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_GameSpeed), this->ptr_8, 0); /*0x698fd4*/
+  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_GameSpeed),(int)(this->ptr_8), 0); /*0x698fd4*/
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_Credits), this->q00C, 0); /*0x698fe7*/
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_UnitCount), this->q010, 0); /*0x698ffa*/
   INIClass::SetBool((INIClass *)(aP1), Block, (char *)(g_INI_Key_ShortGame), this->q014); /*0x69900b*/

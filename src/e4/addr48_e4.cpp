@@ -51,6 +51,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/PingPongBuffer_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CampaignClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CheckListClass_e4.hpp"  // G42.36 C2027 supply
@@ -250,7 +251,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
     return 1;
   }
   v134 = Math::RoundToInt(*(float *)&aP3[1].spawnStatus * 256.0);
-  bool v106 = aP3   ==   (int)((int)(*(ObjectClass **)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 4012)));
+  bool v106 = aP3   ==   (int)(*(ObjectClass **)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 4012)));
   int v108; // [esp+50h] [ebp-D0h]
   IDA_LOWORD(v108) = *(unsigned int *)aP0->__pad_0 / 256;
   IDA_HIWORD(v108) = *(unsigned int *)&aP0->__pad_0[4] / 256;
@@ -488,7 +489,7 @@ LABEL_67:
       v137 = v45;
       v42 = (double)(int)v45;
     }
-    double v47 = Math::Sqrt( (AbstractClass *)COERCE_UNSIGNED_INT64(v42 * v42 + v41 * v41 + st7_63 * st7_63));
+    double v47 = Math::Sqrt((double)((AbstractClass *)COERCE_UNSIGNED_INT64(v42 * v42 + v41 * v41 + st7_63 * st7_63)));
     v36 = Math::RoundToInt(v47);
     goto LABEL_66;
   }
@@ -589,7 +590,7 @@ LABEL_82:
             {
               do
               {
-                int * v63 = (int *)AbstractClass::IsTechnoType(v60);
+                int * v63 = (int *)AbstractClass::IsTechnoType((gamemd::AbstractClass *)(v60));
                 if ( v63 )
                 {
                   if ( IDA___PAIR32__((uint16_t)ebx112, v112) == v115 && a2 )
@@ -714,7 +715,7 @@ LABEL_166:
               if ( (&aP3)[1].isInLogic )
               {
   int v88; // eax
-                if ( aP3   ==   (int)((int)(*(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080)))
+                if ( aP3   ==   (int)(*(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080)))
                   || (v88 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (int)1, (int)(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952))),
                       v88 < (int)v120) )
                 {

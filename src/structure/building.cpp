@@ -6014,7 +6014,7 @@ int BuildingClass::UpdateConstruction()
         v200 = (int)v138; /*0x445204*/
         v199 = (int)&v222; /*0x445205*/
         v140 = (BulletTypeClass *)(*(int (__thiscall **)(char *))(v139 + 136))(v244); /*0x445208*/
-        v141 = (int)(void *)(((gamemd::BuildingClass *)(void *)(v140))->ApplyFoundationDamage(&v222, (void *)v200)); /*0x445210*/
+        v141 = (int)(void *)(((gamemd::BuildingClass *)(void *)(v140))->ApplyFoundationDamage((unsigned short *)(&v222), (void *)v200)); /*0x445210*/
         if ( v141 ) /*0x445218*/
         {
           v142 = v141 - 1; /*0x44521e*/
@@ -6096,7 +6096,7 @@ int BuildingClass::UpdateConstruction()
                 IDA_HIWORD(v207) = v211 / 256; /*0x4453ee*/
                 v197 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x4453fd*/
                 v220 = v207; /*0x445404*/
-                ScanBuildingPlacementCells(&v220, (int)v197, v198); /*0x445408*/
+                ScanBuildingPlacementCells(&v220, (int)v197,(int)(v198)); /*0x445408*/
               }
             }
           }
@@ -6660,7 +6660,7 @@ int BuildingClass::Mission_Repair()
       ((gamemd::BuildingClass *)(void *)((BuildingClass *)this))->GetHealthRatio(); /*0x701450*/
       globalHelper_051EE0((int)this, v5, v1 <= *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5888)); /*0x701473*/
       v6 = (unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned char *))this->vtable1 + 18))(this, v7); /*0x701483*/
-      return (int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 452), v6, 0); /*0x701494*/
+      return (int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 452),(int)(v6), 0); /*0x701494*/
     }
     return result; /*0x701499*/
 }
@@ -6895,7 +6895,7 @@ void BuildingClass::ProcessRepair()
               v152 = ((unsigned int *)this)[0]; /*0x44b981*/
               v153 = ((unsigned int *)this)[1]; /*0x44b98e*/
               v154 = ((unsigned int *)this)[2]; /*0x44b999*/
-              StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1816), &v152, 0); /*0x44b9a3*/
+              StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1816),(int)(&v152), 0); /*0x44b9a3*/
             }
           }
           v20 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44b9ad*/
@@ -7793,7 +7793,7 @@ int BuildingClass::ToggleRepairMode(int aP1) {
       v6[0] = *location; /*0x4470e2*/
       v6[1] = location[1]; /*0x4470eb*/
       v6[2] = location[2]; /*0x4470f6*/
-      return (int)StartAudioControllerAt(v3, v6, 0); /*0x4470fa*/
+      return (int)StartAudioControllerAt(v3,(int)(v6), 0); /*0x4470fa*/
     }
     return result; /*0x4470ff*/
 }
@@ -9979,7 +9979,7 @@ void BuildingClass::ProductionDisplayUpdate()
           {
             v34 = (void *)RA2_OPNEW(0xB0u); /*0x43f5fe*/
             if ( v34 ) /*0x43f608*/
-              ObjectClass::SpawnAtCell(v34, v1->Type->ToOverlay[0], v92, *(unsigned int *)(((unsigned int *)v1)[0]->relatedTagsCapacity + 184)); /*0x43f62e*/
+              ObjectClass::SpawnAtCell((int)(v34),(int)(v1->Type->ToOverlay[0]), v92, *(unsigned int *)(((unsigned int *)v1)[0]->relatedTagsCapacity + 184)); /*0x43f62e*/
             (*((void (__thiscall **)(BuildingClass *, int))v1->vtable1 + 160))(v1, 3); /*0x43f639*/
             result = (*((int (__thiscall **)(BuildingClass *))v1->vtable1 + 62))(v1); /*0x43f643*/
             IDA_LOBYTE(result) = 1; /*0x43f64c*/
@@ -10777,7 +10777,7 @@ void BuildingClass::AddToProductionQueue(int a2)  // g57w11 r4: 参数命名 (ra
     }
     *(unsigned char *)(this + 1713) = 1; /*0x4da0ff*/
   LABEL_14:
-    if ( !*(unsigned int *)(this + 1444) && (*(int (__thiscall **)(int))(*(unsigned int *)this + 388))(this) == 5 ) /*0x4da171*/
+    if ( !*(unsigned int *)(this + 1444) && (*(int (__thiscall **)(int))(*(unsigned int *)this + 388))((int)(this)) == 5 ) /*0x4da171*/
     {
       Member = Team::GetMember((Team *)this, 0); /*0x4da177*/
       v10 = Member; /*0x4da17c*/
@@ -10785,7 +10785,7 @@ void BuildingClass::AddToProductionQueue(int a2)  // g57w11 r4: 参数命名 (ra
         || (*(int (__thiscall **)(int))(*(unsigned int *)Member + 44))(Member) != 6
         || !*(unsigned char *)(*(unsigned int *)(v10 + 1312) + 5821) )
       {
-        (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this + 1156))(this, 0, 1); /*0x4da1a6*/
+        (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this + 1156))((int)(this), 0, 1); /*0x4da1a6*/
       }
     }
 }
@@ -11746,7 +11746,7 @@ int BuildingClass::CleanupOccupation() {
           while ( v9 ); /*0x454e70*/
           if ( v1->Translucency == 15 ) /*0x454e79*/
           {
-            ambientParticles = ((unsigned int *)v1)[0]; /*0x454e7f*/
+ ambientParticles = (ParticleSystemClass *)(((unsigned int *)v1)[0]); /*0x454e7f*/
             ((unsigned int *)v1)[0] = 2; /*0x454e85*/
             if ( ambientParticles ) /*0x454e91*/
             {
@@ -11783,11 +11783,11 @@ int BuildingClass::CleanupOccupation() {
           while ( v15 ); /*0x454f19*/
           if ( !v1->Translucency ) /*0x454f1b*/
           {
-            v16 = ((unsigned int *)v1)[0]; /*0x454f29*/
+ v16 = (ParticleSystemClass *)(((unsigned int *)v1)[0]); /*0x454f29*/
             ((unsigned int *)v1)[0] = 0; /*0x454f2f*/
             if ( !v16 ) /*0x454f37*/
             {
-              NaturalParticleSystemLocation = ((unsigned int *)v1->Type)[0]; /*0x454f49*/
+ NaturalParticleSystemLocation = (int *)(((unsigned int *)v1->Type)[0]); /*0x454f49*/
               if ( *NaturalParticleSystemLocation != g_BuildingClassPool /*0x454f6c*/
                 || ((unsigned int *)v1->Type)[1] != dword_89C84C
                 || ((unsigned int *)v1->Type)[2] != dword_89C850 )
@@ -11808,7 +11808,7 @@ int BuildingClass::CleanupOccupation() {
                   v65[2] = v70 + v22; /*0x454fd5*/
                   v67[1] = v23; /*0x454fd9*/
                   v68 = v24; /*0x454fdd*/
-                  v25 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v67); /*0x454fe1*/
+                  v25 = (unsigned int)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v67)); /*0x454fe1*/
                   v26 = ParticleSystemClass::Constructor(v20, this->*(unsigned int *)&Type->q764, v65, (int)v25, 0, &g_BuildingClassPool, 0); /*0x454fff*/
                   v1 = this; /*0x455004*/
                 }

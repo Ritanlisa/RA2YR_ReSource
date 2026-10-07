@@ -89,6 +89,9 @@
 #include "e4/classes/ListBox_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/INISectionList_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Straw_e4.hpp"
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aBasic_0[];  // data: 0x83f488 truth(IDA G42.57w9)
 extern char aDigest_0[];  // data: 0x83f440 truth(IDA G42.57w9)
@@ -1399,7 +1402,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
       if ( v10 ) /*0x6995a9*/
       {
         v12 = (char *)(strstr(v10 + 5, asc_83F484)); /*0x6995b4*/
-        v19 = v12; /*0x6995be*/
+ v19 = (char *)(v12); /*0x6995be*/
         if ( v12 > v11 ) /*0x6995c2*/
         {
           v12[1] = 0; /*0x6995e1*/

@@ -31,6 +31,12 @@ namespace gamemd {
 
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern unsigned int stru_A8EB00;
+extern int FileSystem_TEMPERAT_PAL;  // data: 0x885780 (e4_globals_decls.hpp:782)
+extern int g_DSurface_Primary;  // data: 0x887308 (e4_globals_decls.hpp:921)
+extern void* XSurface_Vtable[];  // W13-C vtable 词表 (ida_vtables.h 未载)
+extern void* BSurface_Vtable[];  // W13-C vtable 词表
+struct DSurface_ViewBounds_flat { unsigned int field_0; unsigned int field_4; unsigned char __pad_8[0x34 - 0x8]; unsigned char __pad_34[0xFC - 0x34]; unsigned char __pad_FC[0x240 - 0xFC]; };  // W13-C: e4_globals_decls.hpp:755 同形
+extern DSurface_ViewBounds_flat DSurface_ViewBounds;  // data: 0x886FA0 (e4_globals_decls.hpp:762 同形)
 
 namespace gamemd {
 // 0x6d1800
@@ -151,7 +157,7 @@ char ScreenCapture::Frame()
               *(unsigned int *)v23.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x55ceb8*/
               v25 = 0; /*0x55cebf*/
               Vector::Clear((int)v24); /*0x55cec6*/
-              *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x55ced2*/
+              *(unsigned int *)v23.CDFileClass = (unsigned int)&off_7E1668; /*0x55ced2*/
               BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x55ced9*/
             }
             *(unsigned int *)&g_MissionQueueFrame.waypoints[486] = 0; /*0x55cef0*/
@@ -171,10 +177,10 @@ char ScreenCapture::Frame()
               *(unsigned int *)(v7 + 4) = v13; /*0x55cd9e*/
               *(unsigned int *)(v7 + 8) = v9; /*0x55cda6*/
               *(unsigned int *)(v7 + 12) = 0; /*0x55cdae*/
-              *(unsigned int *)v7 = &XSurface_Vtable; /*0x55cdb1*/
+              *(unsigned int *)v7 = (unsigned int)&XSurface_Vtable; /*0x55cdb1*/
               *(unsigned int *)(v7 + 16) = 2; /*0x55cdb7*/
               Buffer::Init((Buffer *)(v7 + 20), 0, 2 * v9 * v8); /*0x55cdbe*/
-              *(unsigned int *)v7 = &BSurface_Vtable; /*0x55cdc3*/
+              *(unsigned int *)v7 = (unsigned int)&BSurface_Vtable; /*0x55cdc3*/
             }
             else
             {

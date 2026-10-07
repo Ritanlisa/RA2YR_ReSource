@@ -51,6 +51,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/BuildingLightClass_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/LightningStorm_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TacticalClass_e4.hpp"  // G42.36 C2027 supply
 
@@ -192,7 +194,7 @@ LABEL_162:
         return 1;
       int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 5312) * 900.0);
       StringCSF = (wchar_t *)(GetStringCSF( (wchar_t *)(v44), 0, (const char *)(&((unsigned int *)(stru_830620))[75224]), 1766));
-      MessageListClass::AddMessage((gamemd::MessageListClass *)(&((unsigned int *)(HouseClass_Player))[32532]), 0, 0, (wchar_t *)((CellStruct *)StringCSF), PlayerColorScheme, (IUnknown *)0x4046, v121, 0);
+      MessageListClass::AddMessage((gamemd::MessageListClass *)(&((unsigned int *)(HouseClass_Player))[32532]), 0, 0, (wchar_t *)((CellStruct *)StringCSF), PlayerColorScheme,(int)((IUnknown *)0x4046), v121, 0);
       return 1;
     case 0xC:
       if ( !*(unsigned int *)((unsigned int)(a1)+ 80) )

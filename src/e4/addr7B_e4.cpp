@@ -377,9 +377,9 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   }
   while ( 1 ) /*0x7b0807*/
   {
-    v52 = (uint16_t *)((gamemd::AbstractClass **)((uint16_t *)((gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))( (int *)(a2), 0, v50)))));
+    v52 = (uint16_t *)((::gamemd::AbstractClass **)((uint16_t *)((::gamemd::AbstractClass **)((uint16_t *)(*(int (**)(int *, unsigned int, int))(*a2 + 92))( (int *)(a2), 0, v50)))));
     if ( !v52 ) /*0x7b080b*/
-      return (gamemd::AbstractClass **)(1); /*0x7b0960*/
+      return (::gamemd::AbstractClass **)(1); /*0x7b0960*/
     v26 = *a2; /*0x7b0811*/
     v48 = 0; /*0x7b0815*/
     if ( (*(int (**)(int *))(v26 + 124))( (int *)(a2)) > 0 ) /*0x7b0822*/
@@ -539,7 +539,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
       }
     }
   }
-  ((gamemd::UDPInterfaceClass*)this)->connect(); /*0x7b2f04*/
+  ((::gamemd::UDPInterfaceClass*)this)->connect(); /*0x7b2f04*/
   v8 = (void *)*((unsigned int *)this + 64853); /*0x7b2f09*/
   *((unsigned int *)this + 64852) = (unsigned int)(&vt_VectorClass); /*0x7b2f0f*/
   if ( v8 && *((unsigned char *)this + 259421) ) /*0x7b2f1d*/
@@ -597,9 +597,9 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   if ( this->AbstractClass ) /*0x7b60ea*/
     v6 = strlen((const char *)this->AbstractClass); /*0x7b60ff*/
   else
-    v6 = (int)((gamemd::AbstractClass **)(0)); /*0x7b60f2*/
+    v6 = (int)((::gamemd::AbstractClass **)(0)); /*0x7b60f2*/
   if ( a2 >= v6 ) /*0x7b6102*/
-    return (gamemd::AbstractClass **)(-1); /*0x7b6107*/
+    return (::gamemd::AbstractClass **)(-1); /*0x7b6107*/
   while ( 1 )
   {
     v8 = this->AbstractClass ? strlen((const char *)this->AbstractClass) : 0;
@@ -651,7 +651,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     strcpy( (char *)*a3, (const char *)(v17)); /*0x7b6253*/
   if ( v16 ) /*0x7b625e*/
     __3_YAXPAX_Z(v16); /*0x7b6261*/
-  return (gamemd::AbstractClass **)((unsigned int)(v20)+ 1); /*0x7b6104*/
+  return (::gamemd::AbstractClass **)((unsigned int)(v20)+ 1); /*0x7b6104*/
 
 }
 }
@@ -798,9 +798,9 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   v5 = (void *)((int)((void *)(a2)));
   vtable0 = (void *)(this->AbstractClass);
   if ( this->AbstractClass ) /*0x7b7c0b*/
-    vtable0 = (void *)((gamemd::AbstractClass **)((void *)wcslen((const wchar_t *)this->AbstractClass))); /*0x7b7c12*/
+    vtable0 = (void *)((::gamemd::AbstractClass **)((void *)wcslen((const wchar_t *)this->AbstractClass))); /*0x7b7c12*/
   if ( a2 >= (int)vtable0 ) /*0x7b7c1c*/
-    return (gamemd::AbstractClass **)(-1); /*0x7b7c20*/
+    return (::gamemd::AbstractClass **)(-1); /*0x7b7c20*/
   while ( 1 ) /*0x7b7c27*/
   {
     v8 = (void *)(this->AbstractClass);
@@ -858,7 +858,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     wcscpy( (wchar_t *)*a3, (const wchar_t *)(v18)); /*0x7b7d53*/
   if ( v17 ) /*0x7b7d5d*/
     __3_YAXPAX_Z(v17); /*0x7b7d60*/
-  return (gamemd::AbstractClass **)((unsigned int)(v21)+ 1); /*0x7b7c1e*/
+  return (::gamemd::AbstractClass **)((unsigned int)(v21)+ 1); /*0x7b7c1e*/
 
 }
 }
@@ -912,10 +912,10 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       ReleaseMutex((HANDLE)(hMutex)); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
-    v12 = (int)((gamemd::ObjectClass *)(v2 + this->fallRate));
+    v12 = (int)((::gamemd::ObjectClass *)(v2 + this->fallRate));
     (&this->ambientSoundController)[3] = v2; /*0x7b9610*/
     v18[0] = v12; /*0x7b9616*/
-    nextObject = (gamemd::ObjectClass *)(this->nextObject); /*0x7b961a*/
+    nextObject = (::gamemd::ObjectClass *)(this->nextObject); /*0x7b961a*/
     (&this->ambientSoundController)[4] = v3; /*0x7b961d*/
     v14 = (char *)nextObject + v3; /*0x7b9620*/
     v15 = (&this->ambientSoundController)[2]; /*0x7b9622*/
@@ -938,7 +938,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
 
   }
   ((Mouse *)((Mouse *)this))->DrawCursor((int *)this->occupant, 0, 0); /*0x7b966a*/
-  return (gamemd::AbstractClass **)(ReleaseMutex((HANDLE)(hMutex))); /*0x7b967c*/
+  return (::gamemd::AbstractClass **)(ReleaseMutex((HANDLE)(hMutex))); /*0x7b967c*/
 
 }
 }
@@ -1071,37 +1071,37 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   unsigned int v27[2]; // [esp+20h] [ebp-8h] BYREF
 
   v9 = ecx0; /*0x7bc049*/
-  v10 = (gamemd::CellStruct *)(a1); /*0x7bc04f*/
+  v10 = (::gamemd::CellStruct *)(a1); /*0x7bc04f*/
   *a6 = 0; /*0x7bc05a*/
   *a7 = 0; /*0x7bc05d*/
   *a8 = 0; /*0x7bc063*/
-  v11 = *(unsigned int *)&((gamemd::Building*)aP2)->q008; /*0x7bc069*/
+  v11 = *(unsigned int *)&((::gamemd::Building*)aP2)->q008; /*0x7bc069*/
   v26[0] = (unsigned int)(a1); /*0x7bc06f*/
   v25[0] = ecx0; /*0x7bc073*/
   if ( v11 <= 0 /*0x7bc0d8*/
-    || *(int *)&((gamemd::Building*)aP2)->q00C <= 0
-    || *(int *)&((gamemd::Building*)a1)->q008 <= 0
-    || *(int *)&((gamemd::Building*)a1)->q00C <= 0
-    || *(int *)&((gamemd::Building*)aP5)->q008 <= 0
-    || *(int *)&((gamemd::Building*)aP5)->q00C <= 0
-    || *(int *)&((gamemd::Building*)a4)->q008 <= 0
-    || *(int *)&((gamemd::Building*)a4)->q00C <= 0
-    || !(uint8_t)IntersectSurfaceRects( (IUnknown *)(&((gamemd::Building*)aP2)->q000), (int)a1, (XSurface *)aP5, (int)a4) )
+    || *(int *)&((::gamemd::Building*)aP2)->q00C <= 0
+    || *(int *)&((::gamemd::Building*)a1)->q008 <= 0
+    || *(int *)&((::gamemd::Building*)a1)->q00C <= 0
+    || *(int *)&((::gamemd::Building*)aP5)->q008 <= 0
+    || *(int *)&((::gamemd::Building*)aP5)->q00C <= 0
+    || *(int *)&((::gamemd::Building*)a4)->q008 <= 0
+    || *(int *)&((::gamemd::Building*)a4)->q00C <= 0
+    || !(uint8_t)IntersectSurfaceRects( (IUnknown *)(&((::gamemd::Building*)aP2)->q000), (int)a1, (XSurface *)aP5, (int)a4) )
   {
     return 0; /*0x7bc0d8*/
   }
   *a6 = 0; /*0x7bc0e9*/
   if ( arg4 == v9 ) /*0x7bc0f2*/
   {
-    v12 = *(unsigned int *)&((gamemd::Building*)aP2)->q000; /*0x7bc0f4*/
-    v13 = *(unsigned int *)&((gamemd::Building*)aP5)->q000; /*0x7bc0f9*/
-    if ( *(unsigned int *)&((gamemd::Building*)aP5)->q000 < *(unsigned int *)aP2 + *(unsigned int *)&((gamemd::Building*)aP2)->q008 ) /*0x7bc0ff*/
+    v12 = *(unsigned int *)&((::gamemd::Building*)aP2)->q000; /*0x7bc0f4*/
+    v13 = *(unsigned int *)&((::gamemd::Building*)aP5)->q000; /*0x7bc0f9*/
+    if ( *(unsigned int *)&((::gamemd::Building*)aP5)->q000 < *(unsigned int *)aP2 + *(unsigned int *)&((::gamemd::Building*)aP2)->q008 ) /*0x7bc0ff*/
     {
-      v14 = (int)((gamemd::Building*)aP2)->q004; /*0x7bc101*/
-      v15 = (int)((gamemd::Building*)aP5)->q004; /*0x7bc107*/
-      if ( v15 < v14 + *(unsigned int *)&((gamemd::Building*)aP2)->q00C /*0x7bc12a*/
-        && *(unsigned int *)&((gamemd::Building*)aP5)->q008 + v13 > v12
-        && *(unsigned int *)&((gamemd::Building*)aP5)->q00C + v15 > v14
+      v14 = (int)((::gamemd::Building*)aP2)->q004; /*0x7bc101*/
+      v15 = (int)((::gamemd::Building*)aP5)->q004; /*0x7bc107*/
+      if ( v15 < v14 + *(unsigned int *)&((::gamemd::Building*)aP2)->q00C /*0x7bc12a*/
+        && *(unsigned int *)&((::gamemd::Building*)aP5)->q008 + v13 > v12
+        && *(unsigned int *)&((::gamemd::Building*)aP5)->q00C + v15 > v14
         && (v15 < v14 || v15 == v14 && v13 < v12) )
       {
         *a6 = 1; /*0x7bc130*/

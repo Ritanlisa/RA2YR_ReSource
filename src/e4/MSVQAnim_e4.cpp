@@ -36,7 +36,7 @@ void * MSVQAnim::GetFrameRect(int * a2)
   MSVQAnim_field_0x1C = this->MSVQAnim_field_0x1C; /*0x5cd2d1*/
   p_parTimeMedium = (int *)(MSVQAnim_field_0x1C + 52); /*0x5cd2d6*/
   if ( !MSVQAnim_field_0x1C ) /*0x5cd2d9*/
-    p_parTimeMedium = &dword_ABFBA0; /*0x5cd2db*/
+ p_parTimeMedium = (int *)(&dword_ABFBA0); /*0x5cd2db*/
   *a2 = *p_parTimeMedium; /*0x5cd2e9*/
   a2[1] = p_parTimeMedium[1]; /*0x5cd2ee*/
   a2[2] = p_parTimeMedium[2]; /*0x5cd2f4*/

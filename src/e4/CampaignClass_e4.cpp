@@ -87,7 +87,7 @@ int CampaignClass::LoadFromINIList()
                                          this->__pad_0,
                                          (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),
                                          v3);
-    ((INIClass*)(gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
+    ((::gamemd::INIClass*)(::gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/
@@ -180,7 +180,7 @@ AbstractClass * * CampaignClass::SaveProgress()
 
   if ( !LOBYTE((&this->scenario)[17]) ) /*0x49c5ac*/
     return 0; /*0x49c5ac*/
-  if ( !LOBYTE(this->AbstractClass) ) /*0x49c5b7*/
+  if ( !LOBYTE(this->vtable1) ) /*0x49c5b7*/
     return 0; /*0x49c5b7*/
   p_referenceCount = (int *)(&((unsigned int *)this)[0]); /*0x49c5c4*/
   if ( !LOBYTE(((unsigned int *)this)[0]) ) /*0x49c5c1*/
@@ -196,7 +196,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   ((CCFileClass*)&v33)->Construct((char *)(void *)(g_Str_File_coopsave_ini)); /*0x49c631*/
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
-  ((INISectionList*)(INISectionList *)(unsigned int *)((char *)&v28 + 2))->Constructor(); /*0x49c642*/
+  ((::gamemd::INISectionList*)(::gamemd::INISectionList *)(unsigned int *)((char *)&v28 + 2))->Constructor(); /*0x49c642*/
   Node::Init((Node *)&(unsigned int *)((char *)&v28 + 8)); /*0x49c64b*/
   ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
@@ -205,7 +205,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   CCFileClass::Reset( &v33); /*0x49c67b*/
   v5 = 0; /*0x49c683*/
   v6 = (char *)this; /*0x49c687*/
-  if ( LOBYTE(this->AbstractClass) )
+  if ( LOBYTE(this->vtable1) )
   {
     do
     {
@@ -297,7 +297,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = (unsigned char *)&stru_A8B250 + 80; /*0x49c909*/
+ v24 = (char *)((unsigned char *)&stru_A8B250 + 80); /*0x49c909*/
     while ( *(unsigned int *)v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/

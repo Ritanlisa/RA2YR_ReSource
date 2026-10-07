@@ -73,6 +73,8 @@
 #include "e4/classes/AudioPool_e4.hpp"
 #include "e4/classes/AudioSource_e4.hpp"
 #include "e4/classes/WDTClass_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/DListNode_e4.hpp"
 #include "classes/AudioMixer_e4.hpp"  // G42.57w9 method-carrier supply
 #include "classes/INIClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "classes/Surface_e4.hpp"  // G42.57w9 method-carrier supply
@@ -2489,7 +2491,7 @@ int VocClass_Update()
   int v2; // ebx
   int v3; // eax
 
-  result = ((AudioQueue *)(&dword_B1D320))->GetNext(); /*0x750ec6*/
+  result = (unsigned int)(((AudioQueue *)(&dword_B1D320))->GetNext())); /*0x750ec6*/
   v1 = result; /*0x750ecb*/
   if ( result ) /*0x750ecf*/
   {
@@ -2497,7 +2499,7 @@ int VocClass_Update()
     {
       v2 = ((AudioQueue *)(v1))->GetNextAlt(); /*0x750eda*/
             if ( !*(unsigned int *)(v1 + 48) )
-        StartAudioController(v1 + 32, v1 + 12); /*0x750ee9*/
+        StartAudioController((gamemd::AudioMixer *)(v1 + 32),(gamemd::AudioSource *)(v1 + 12)); /*0x750ee9*/
       result = ((AudioSource *)(v1 + 12))->Get(); /*0x750ef3*/
       if ( !result ) /*0x750efa*/
       {
@@ -2777,7 +2779,7 @@ int sub_752210()
   dword_B1D4A0 = (int)&DynamicVectorClass_VoxClass___vftable; /*0x75222d*/
   dword_B1D4B4 = 10; /*0x752237*/
   g_InfantrySelectState = 0; /*0x752241*/
-  return atexit(sub_752250); /*0x75224c*/
+  return atexit((void (__cdecl *)(void))(sub_752250)); /*0x75224c*/
 }
 } // namespace gamemd
 
@@ -2873,7 +2875,7 @@ int sub_7539D0()
   dword_B2D938 = 1; /*0x753a02*/
   ((Buffer*)stru_B2D93C)->Init((int)g_VoxelRenderBuffer, 0x10000); /*0x753a0c*/
   dword_B2D928 = (int)&BSurface_Vtable; /*0x753a16*/
-  return atexit(sub_753A30); /*0x753a26*/
+  return atexit((void (__cdecl *)(void))(sub_753A30)); /*0x753a26*/
 }
 } // namespace gamemd
 
@@ -2897,7 +2899,7 @@ int sub_753A50()
   dword_B2D800 = 1; /*0x753a82*/
   ((Buffer*)stru_B2D804)->Init((int)byte_B1D5E0, 0x10000); /*0x753a8c*/
   dword_B2D7F0 = (int)&BSurface_Vtable; /*0x753a96*/
-  return atexit(sub_753AB0); /*0x753aa6*/
+  return atexit((void (__cdecl *)(void))(sub_753AB0)); /*0x753aa6*/
 }
 } // namespace gamemd
 

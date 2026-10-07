@@ -485,7 +485,7 @@ int ZCoordToScreenY(int aP0)
 {
   int result; // eax
 
-  IDA_LOWORD(result) = Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0  >=  (int)((int)(728))) + 0.5); /*0x6d2113*/
+  IDA_LOWORD(result) = Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0  >=  (int)(728))) + 0.5); /*0x6d2113*/
   return result; /*0x6d2118*/
 }
 } // namespace gamemd

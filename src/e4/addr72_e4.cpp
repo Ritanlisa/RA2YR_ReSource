@@ -177,7 +177,7 @@ AbstractClass * * sub_725C70()
     {
       while ( 1 ) /*0x725caa*/
       {
-v3 = (*(int (**)(int *, unsigned int **))(stru_B0F698+ 16))( /*0x725caa*/ &stru_B0F698, (unsigned int **)(&v8));
+v3 = (*(int (**)(int *, unsigned int **))(stru_B0F698+ 16))( /*0x725caa*/ &stru_B0F698, (unsigned int **)((int *)((int *)((int *)(&v8)))));
 
 
         if ( v3 == -1 || v3 >= *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] ) /*0x725cba*/
@@ -2220,7 +2220,7 @@ int sub_7252D0()
   dword_B0F720 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x7252ed*/
   dword_B0F734 = 10; /*0x7252f7*/
   dword_B0F730 = 0; /*0x725301*/
-  return atexit(sub_725310); /*0x72530c*/
+  return atexit((void (__cdecl *)(void))(sub_725310)); /*0x72530c*/
 }
 } // namespace gamemd
 
@@ -2250,7 +2250,7 @@ int sub_725350()
   dword_B0F670 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x72536d*/
   dword_B0F684 = 10; /*0x725377*/
   dword_B0F680 = 0; /*0x725381*/
-  return atexit(sub_725390); /*0x72538c*/
+  return atexit((void (__cdecl *)(void))(sub_725390)); /*0x72538c*/
 }
 } // namespace gamemd
 
@@ -2280,7 +2280,7 @@ int sub_7253D0()
   dword_B0F618 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x7253ed*/
   dword_B0F62C = 10; /*0x7253f7*/
   dword_B0F628 = 0; /*0x725401*/
-  return atexit(sub_725410); /*0x72540c*/
+  return atexit((void (__cdecl *)(void))(sub_725410)); /*0x72540c*/
 }
 } // namespace gamemd
 
@@ -2310,7 +2310,7 @@ int sub_725450()
   dword_B0F708 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x72546d*/
   dword_B0F71C = 10; /*0x725477*/
   dword_B0F718 = 0; /*0x725481*/
-  return atexit(sub_725490); /*0x72548c*/
+  return atexit((void (__cdecl *)(void))(sub_725490)); /*0x72548c*/
 }
 } // namespace gamemd
 
@@ -2340,7 +2340,7 @@ int sub_7254D0()
   stru_B0F5B8 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x7254ed*/
   DataGlobal_B0F5CC = (unsigned char *)(10); /*0x7254f7*/
   g_BuildingTypeInstanceCount = 0; /*0x725501*/
-  return atexit(sub_725510); /*0x72550c*/
+  return atexit((void (__cdecl *)(void))(sub_725510)); /*0x72550c*/
 }
 } // namespace gamemd
 
@@ -2370,7 +2370,7 @@ int sub_725550()
   dword_B0F640 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x72556d*/
   dword_B0F654 = 10; /*0x725577*/
   dword_B0F650 = 0; /*0x725581*/
-  return atexit(sub_725590); /*0x72558c*/
+  return atexit((void (__cdecl *)(void))(sub_725590)); /*0x72558c*/
 }
 } // namespace gamemd
 
@@ -2400,7 +2400,7 @@ int sub_7255D0()
   dword_B0F658 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x7255ed*/
   dword_B0F66C = 10; /*0x7255f7*/
   dword_B0F668 = 0; /*0x725601*/
-  return atexit(sub_725610); /*0x72560c*/
+  return atexit((void (__cdecl *)(void))(sub_725610)); /*0x72560c*/
 }
 } // namespace gamemd
 
@@ -2430,7 +2430,7 @@ int sub_725650()
   dword_B0F5F0 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x72566d*/
   dword_B0F604 = 10; /*0x725677*/
   dword_B0F600 = 0; /*0x725681*/
-  return atexit(sub_725690); /*0x72568c*/
+  return atexit((void (__cdecl *)(void))(sub_725690)); /*0x72568c*/
 }
 } // namespace gamemd
 
@@ -2460,7 +2460,7 @@ int sub_7256D0()
   dword_B0F5D8 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x7256ed*/
   dword_B0F5EC = 10; /*0x7256f7*/
   dword_B0F5E8 = 0; /*0x725701*/
-  return atexit(sub_725710); /*0x72570c*/
+  return atexit((void (__cdecl *)(void))(sub_725710)); /*0x72570c*/
 }
 } // namespace gamemd
 
@@ -2490,7 +2490,7 @@ int sub_725750()
   dword_B0F6C8 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x72576d*/
   dword_B0F6DC = 10; /*0x725777*/
   dword_B0F6D8 = 0; /*0x725781*/
-  return atexit(sub_725790); /*0x72578c*/
+  return atexit((void (__cdecl *)(void))(sub_725790)); /*0x72578c*/
 }
 } // namespace gamemd
 
@@ -2520,7 +2520,7 @@ int sub_7257D0()
   dword_B0F6F0 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x7257ed*/
   dword_B0F704 = 10; /*0x7257f7*/
   dword_B0F700 = 0; /*0x725801*/
-  return atexit(sub_725810); /*0x72580c*/
+  return atexit((void (__cdecl *)(void))(sub_725810)); /*0x72580c*/
 }
 } // namespace gamemd
 
@@ -2550,7 +2550,7 @@ int sub_725850()
   stru_B0F698 = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x72586d*/
   DataGlobal_B0F6AC = (unsigned char *)(10); /*0x725877*/
   DataGlobal_B0F6A8 = (unsigned char *)(0); /*0x725881*/
-  return atexit(sub_725890); /*0x72588c*/
+  return atexit((void (__cdecl *)(void))(sub_725890)); /*0x72588c*/
 }
 } // namespace gamemd
 

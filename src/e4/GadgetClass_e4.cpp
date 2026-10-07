@@ -11,6 +11,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ControlClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x4E12F0
 namespace gamemd {
@@ -47,7 +49,7 @@ ControlClass GadgetClass::Dtor()
 
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_GadgetClass); /*0x4e1390*/
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
-  if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E90 ) /*0x4e139f*/
+  if ( this == (gamemd::GadgetClass *)(ShpButtonClass *)dword_8B3E90 ) /*0x4e139f*/
   {
     v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
     BYTE1(v2) &= ~1u; /*0x4e13a4*/
@@ -55,9 +57,9 @@ ControlClass GadgetClass::Dtor()
     v1 = (ShpButtonClass *)(0); /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/
   }
-  if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E88 ) /*0x4e13ba*/
+  if ( this == (gamemd::GadgetClass *)(ShpButtonClass *)dword_8B3E88 ) /*0x4e13ba*/
     dword_8B3E88 = 0; /*0x4e13bc*/
-  if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E8C ) /*0x4e13cb*/
+  if ( this == (gamemd::GadgetClass *)(ShpButtonClass *)dword_8B3E8C ) /*0x4e13cb*/
     dword_8B3E8C = 0; /*0x4e13cd*/
   if ( this == (gamemd::GadgetClass *)(v1) ) /*0x4e13d5*/
     dword_8B3E90 = 0; /*0x4e13d7*/

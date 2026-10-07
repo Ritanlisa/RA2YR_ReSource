@@ -201,7 +201,7 @@ int CanAcceptType(int,int);  // 0x452670
     void EnableStuff();  // 0x452410
     void ProcessPowerPlantEffect();  // 0x44E440
     void ProcessActiveUpdate();  // 0x44ACF0
-    void UpdatePowerAnimation();  // 0x429A90
+    void UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5, int a6, char a7);  // 0x429A90
     void UpdatePowerAnim();  // 0x42ACF0
     int GetPowerFrame();  // 0x4566B0
 

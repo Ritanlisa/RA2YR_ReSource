@@ -51,6 +51,8 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/Render_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/MapResourceClass_e4.hpp"
+#include "e4/classes/MiniMap_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TileSystem_e4.hpp"  // G57w10 D supply
@@ -433,7 +435,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
         i;
         i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext() )
   {
-    if ( (uint8_t)((MapSeed*)(MapSeed *)(i + 36))->IsCellInBounds() /*0x594c2b*/
+    if ( (uint8_t)((::gamemd::MapSeed*)(::gamemd::MapSeed *)(i + 36))->IsCellInBounds() /*0x594c2b*/
       && *(unsigned int *)(80 * (*(int16_t *)(i + 36) + g_MapCellWidth * *(int16_t *)(i + 38))
                    + g_MissionQueueFrame.localVariables[163]
                    + 56) == -1

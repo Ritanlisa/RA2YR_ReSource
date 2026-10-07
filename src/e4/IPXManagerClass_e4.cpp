@@ -46,13 +46,13 @@ int IPXManagerClass::send(int a2)
   IPXManagerClass * result;
   IPXManagerClass *i; // ecx
 
-  v2 = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(*((unsigned int *)this + 17))));
-  result = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(0)));
+  v2 = (::gamemd::IPXManagerClass *)((int)((::gamemd::IPXManagerClass *)(*((unsigned int *)this + 17))));
+  result = (::gamemd::IPXManagerClass *)((int)((::gamemd::IPXManagerClass *)(0)));
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
-  for ( i = (unsigned int *)this + 5; *(gamemd::IPXManagerClass *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
+  for ( i = (unsigned int *)this + 5; *(::gamemd::IPXManagerClass *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
   {
-    if ( ++result >= (gamemd::IPXManagerClass *)(int)(v2) ) /*0x54105f*/
+    if ( ++result >= (::gamemd::IPXManagerClass *)(int)(v2) ) /*0x54105f*/
       return -1; /*0x54105f*/
   }
   return (int)(result);
@@ -88,7 +88,7 @@ LABEL_5:
   }
   else
   {
-    v4 = (gamemd::IPXManagerClass *)((unsigned int *)this + 5);
+    v4 = (::gamemd::IPXManagerClass *)((unsigned int *)this + 5);
     while ( v4->Socket != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/
@@ -165,7 +165,7 @@ IPXManagerClass * IPXManagerClass::QueryInterface(char * Block, char a2)
   IPXManagerClass::processPacket((char *)this); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
     __3_YAXPAX_Z(this); /*0x5430f0*/
-  return (gamemd::IPXManagerClass *)((char *)this); /*0x5430fa*/
+  return (::gamemd::IPXManagerClass *)((char *)this); /*0x5430fa*/
 
 }
 } // namespace gamemd

@@ -85,7 +85,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
   v6 = (gamemd::AlphaShapeClass *)(this);
-v4 = (*(int (**)(int *, AlphaShapeClass **))(dword_B0F720+ 16))( /*0x4217ac*/ &dword_B0F720, (AlphaShapeClass **)(&v6));
+v4 = (*(int (**)(int *, AlphaShapeClass **))(dword_B0F720+ 16))( /*0x4217ac*/ &dword_B0F720, (AlphaShapeClass **)((int *)((int *)((int *)(&v6)))));
 
 
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4217bc*/

@@ -30,6 +30,9 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/AnimTypeVector_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/FileExtension_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 
@@ -76,19 +79,19 @@ double TechnoTypeClass::Dispatch(unsigned int * aP1)
   switch ( (*(int (**)(unsigned int *))(*aP1 + 44))( (unsigned int *)(aP1)) ) /*0x50be0f*/
   {
     case 3: /*0x50be0f*/
-      result = *(float *)(this->ObjectTypeClass[13] + 284); /*0x50be37*/
+      result = *(float *)(((unsigned int *)this)[13] + 284); /*0x50be37*/
       break; /*0x50be3d*/
     case 7: /*0x50be0f*/
       if ( aP1[898] == 5 ) /*0x50be47*/
-        result = *(float *)(this->ObjectTypeClass[13] + 292); /*0x50be4e*/
+        result = *(float *)(((unsigned int *)this)[13] + 292); /*0x50be4e*/
       else
-        result = *(float *)(this->ObjectTypeClass[13] + 288); /*0x50be5c*/
+        result = *(float *)(((unsigned int *)this)[13] + 288); /*0x50be5c*/
       break; /*0x50be54*/
     case 16: /*0x50be0f*/
-      result = *(float *)(this->ObjectTypeClass[13] + 276); /*0x50be1b*/
+      result = *(float *)(((unsigned int *)this)[13] + 276); /*0x50be1b*/
       break; /*0x50be21*/
     case 40: /*0x50be0f*/
-      result = *(float *)(this->ObjectTypeClass[13] + 280); /*0x50be29*/
+      result = *(float *)(((unsigned int *)this)[13] + 280); /*0x50be29*/
       break; /*0x50be2f*/
     default:
       result = 1.0; /*0x50be65*/
@@ -863,7 +866,7 @@ LABEL_5:
     return this; /*0x711acb*/
   }
   v5 = (unsigned int *)(dword_A8EB04); /*0x711a72*/
-  while ( *v5   !=   (unsigned int)((unsigned int)(this ))) /*0x711a7a*/
+  while ( *v5   !=   (unsigned int)(this ))) /*0x711a7a*/
   {
     ++v4; /*0x711a7c*/
     ++v5; /*0x711a7d*/
@@ -1052,10 +1055,10 @@ int TechnoTypeClass::ComputeValueSimple(float * a2)
   TechnoTypeClass *v6; // [esp+14h] [ebp+4h]
 
   if ( !a2 ) /*0x711f0d*/
-    return (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711f52*/
+    return (*(int (**)(TechnoTypeClass *))(((unsigned int *)this)[0] + 172))(this); /*0x711f52*/
   v5 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, (unsigned int *)this); /*0x711f17*/
   ThreatMultiplier = ((TechnoTypeClass *)(float *)a2)->GetThreatMultiplier( this); /*0x711f27*/
-  v6 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711f31*/
+  v6 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(((unsigned int *)this)[0] + 172))(this); /*0x711f31*/
   LOWORD(result) = Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5); /*0x711f41*/
   return result; /*0x711f46*/
 
@@ -1090,7 +1093,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
     }
     else
     {
-      v11 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711fd7*/
+      v11 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(((unsigned int *)this)[0] + 172))(this); /*0x711fd7*/
       LOWORD(v6) = Math::RoundToInt((double)(int)v11 * ThreatMultiplier * v12); /*0x711fe7*/
       v7 = v6; /*0x711fec*/
       v13 = v6; /*0x711ff0*/
@@ -1104,7 +1107,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
   }
   else
   {
-    v14 = (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x712020*/
+    v14 = (*(int (**)(TechnoTypeClass *))(((unsigned int *)this)[0] + 172))(this); /*0x712020*/
     LOWORD(result) = Math::RoundToInt((double)v14 * v9); /*0x71202c*/
   }
   return result; /*0x711fc5*/
@@ -1390,7 +1393,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
         ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716cd4*/ (uint8_t *)aP0[9], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_Key_TRUCKA.__pad_1714[80], Filename, 256);
     _makepath( Buffer, 0, 0, Filename, (const char *)(Ext) ); /*0x716ced*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = 0; /*0x716cfe*/
-    v35 = (void *)SearchMIXFile( (char *)(Buffer), 0); /*0x716d04*/
+    v35 = (unsigned int)((void *)SearchMIXFile( (char *)(Buffer), 0))); /*0x716d04*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = (unsigned int)v35; /*0x716d0b*/
     if ( !v35 ) /*0x716d11*/
       *(unsigned int *)&((unsigned int *)aP0)[1548] = SearchMIXFile( (char *)(&(unsigned int *)((char *)&stru_820320 + 143)), 0); /*0x716d1f*/
@@ -1557,13 +1560,13 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TechnoTypeClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5)
 {
 
-  this->ObjectTypeClass[1] = 0; /*0x717af4*/
-  this->ObjectTypeClass[2] = 0; /*0x717af7*/
-  LOBYTE(this->ObjectTypeClass[3]) = 1; /*0x717afa*/
-  BYTE1(this->ObjectTypeClass[3]) = 0; /*0x717afe*/
-  this->ObjectTypeClass[5] = 10; /*0x717b01*/
-  this->ObjectTypeClass[4] = 0; /*0x717b08*/
-  this->ObjectTypeClass[0] = (int)&vt_TypeList; /*0x717b0b*/
+  ((unsigned int *)this)[1] = 0; /*0x717af4*/
+  ((unsigned int *)this)[2] = 0; /*0x717af7*/
+  LOBYTE(((unsigned int *)this)[3]) = 1; /*0x717afa*/
+  BYTE1(((unsigned int *)this)[3]) = 0; /*0x717afe*/
+  ((unsigned int *)this)[5] = 10; /*0x717b01*/
+  ((unsigned int *)this)[4] = 0; /*0x717b08*/
+  ((unsigned int *)this)[0] = (int)&vt_TypeList; /*0x717b0b*/
   return this->ObjectTypeClass; /*0x717b11*/
 
 }
@@ -1579,12 +1582,12 @@ int  TechnoTypeClass::SaveLoadDataArray(TechnoTypeClass * aP1)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *(unsigned int *)aP1;
-  v6 = this->ObjectTypeClass[4]; /*0x717b39*/
+  v6 = ((unsigned int *)this)[4]; /*0x717b39*/
   (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))( (int *)(aP1), (int *)(&v6), 4, 0); /*0x717b3d*/
   result = v6; /*0x717b40*/
   for ( i = 0; i < v6; ++i ) /*0x717b48*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), this->ObjectTypeClass[1] + 4 * i, 4, 0); /*0x717b58*/
+    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))( (int *)(aP1), ((unsigned int *)this)[1] + 4 * i, 4, 0); /*0x717b58*/
     result = v6; /*0x717b5b*/
   }
   return result; /*0x717b64*/
@@ -1596,7 +1599,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3)
 {
 
-  this->ObjectTypeClass[0] = (int)&vt_DynamicVectorClass; /*0x717bc2*/
+  ((unsigned int *)this)[0] = (int)&vt_DynamicVectorClass; /*0x717bc2*/
   return this->ObjectTypeClass; /*0x717bc8*/
 
 }
@@ -1606,7 +1609,7 @@ namespace gamemd {  // G42.18c ns repair
 VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 {
 
-  this->ObjectTypeClass[0] = (int)&vt_DynamicVectorClass; /*0x717be2*/
+  ((unsigned int *)this)[0] = (int)&vt_DynamicVectorClass; /*0x717be2*/
   return this->ObjectTypeClass; /*0x717be8*/
 
 }
@@ -1620,20 +1623,20 @@ char TechnoTypeClass::RemoveItem(int a2, void *a2_2)
   int v3; // eax
   int v4; // edx
 
-  v2 = this->ObjectTypeClass[4]; /*0x717db0*/
+  v2 = ((unsigned int *)this)[4]; /*0x717db0*/
   v3 = a2; /*0x717db3*/
   if ( a2 >= v2 ) /*0x717db9*/
     return 0; /*0x717ddc*/
   v4 = v2 - 1; /*0x717dbb*/
-  this->ObjectTypeClass[4] = v4; /*0x717dbe*/
+  ((unsigned int *)this)[4] = v4; /*0x717dbe*/
   if ( a2 < v4 ) /*0x717dc1*/
   {
     do /*0x717dd4*/
     {
       ++v3; /*0x717dc7*/
-      *(unsigned int *)(this->ObjectTypeClass[1] + 4 * v3 - 4) = *(unsigned int *)(this->ObjectTypeClass[1] + 4 * v3); /*0x717dcb*/
+      *(unsigned int *)(((unsigned int *)this)[1] + 4 * v3 - 4) = *(unsigned int *)(((unsigned int *)this)[1] + 4 * v3); /*0x717dcb*/
     }
-    while ( v3 < this->ObjectTypeClass[4] ); /*0x717dd4*/
+    while ( v3 < ((unsigned int *)this)[4] ); /*0x717dd4*/
   }
   return 1; /*0x717dd9*/
 

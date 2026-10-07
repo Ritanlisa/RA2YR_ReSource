@@ -131,7 +131,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
                                                       + 8 * v25.q008));
     v9 = (int (***)(unsigned int, int))((WDTObject *)(v8))->GetAndClearFlag(); /*0x76d519*/
     if ( v9 ) /*0x76d520*/
-      ((Session *)((Session *)this))->RemoveTeam((int (__thiscall ***)(unsigned int,int))(v9)); /*0x76d525*/
+      ((Session *)((Session *)this))->RemoveTeam((int (__cdecl ***)(unsigned int,int))((int (__thiscall ***)(unsigned int,int))(v9))); /*0x76d525*/
     (*(void (**)(VectorCursor *))(*(unsigned int *)v25.__pad_0 + 8))( (VectorCursor *)(&v25)); /*0x76d532*/
   }
   v24 = (gamemd::ObjectClass *)(a2);
@@ -152,7 +152,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     v13 = ((WDTClass *)(*(WDTClass **)(a3 + 4)))->GetCellType(v11); /*0x76d5d7*/
     if ( v13 != CellType ) /*0x76d5db*/
     {
-      ((DDraw*)(DDraw *)this)->HandleSuspend(); /*0x76d5df*/
+      ((::gamemd::DDraw*)(::gamemd::DDraw *)this)->HandleSuspend(); /*0x76d5df*/
       while ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process() ) /*0x76d5ea*/
       {
         if ( ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Read() == 27 ) /*0x76d603*/

@@ -160,8 +160,8 @@ protected:
     unsigned int u32_53A7;  // 0x53A7
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* SetFlashEntry(int a1, int a2, int a3, void* a4);  // 0x4C6B60
-    int MarkTabForRebuild(int a1, int a2, int a3);  // 0x5005B0
-    int getTypeProductionCount(int a1, int a2, int a3);  // 0x500700
+    int MarkTabForRebuild(int a2, char a3, int a4);  // 0x5005B0
+    int getTypeProductionCount(int a2, char a3, int a4);  // 0x500700
     int ResetProductionState();  // 0x637AB0
     int addToList(void* a1);  // 0x63E880
     int Load(int a1);  // 0x6568A0

@@ -5,7 +5,7 @@ namespace gamemd {
 // --- BlitPlainXlatAlpha_ushort ---
 
 // 0x493cc0
-void BlitPlainXlatAlpha_ushort::AddRef()
+void BlitPlainXlatAlpha_ushort::AddRef(int a2, unsigned __int8 *a3, int a4, int a5, int a6, unsigned __int16 *a7, int a8, int a9)
 {
     int v10; // eax
     int v11; // ebp

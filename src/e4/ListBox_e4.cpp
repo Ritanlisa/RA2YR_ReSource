@@ -232,10 +232,8 @@ LABEL_70:
         v44.right = v42.right - v42.left + 1; /*0x614720*/
         v44.bottom = v42.bottom - v42.top + 1; /*0x614724*/
         v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
-        DrawTextRendererMultiline( /*0x614760*/
-          (unsigned int *)DSurface_Alternate,
-          &v44.left,
-          &unk_AC1E04,
+        DrawTextRendererMultiline((IUnknown *)(/*0x614760*/
+          (unsigned int *)DSurface_Alternate),(int *)(&v44.left),(wchar_t *)(&unk_AC1E04),
           v41,
           (unsigned int *)v8[25],
           dword_AC18A4,

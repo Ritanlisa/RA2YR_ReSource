@@ -61,6 +61,8 @@
 #include "e4/classes/SyncDelayClass_e4.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -431,7 +433,7 @@ AbstractClass * * ProcessNetworkEvents()
             v4 += 108; /*0x647540*/
             v5 += 108; /*0x647540*/
             *(unsigned short *)v5 = *(unsigned short *)v4; /*0x647542*/
-            v5[2] = v4[2]; /*0x647544*/
+ v5[2] = (char *)(v4[2]); /*0x647544*/
             (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x64754d*/
             dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x64755f*/
             ++dword_8B41F8; /*0x64756a*/
@@ -516,7 +518,7 @@ void RunNetworkGameLoop()
     v22 = ((Timer *)0)->GetTicks();
   v25 = 600; /*0x6483ee*/
     v18 = ((Timer *)0)->GetTicks();
-    ((Debug *)0)->Log();
+Debug::Log("Entering wait loop\n");  /* G57w13b: IDA 0x00648404 push 0x008375c0 */
   while ( 2 ) /*0x64840c*/
   {
     ((EventQueue *)(*(EventQueue **)&stru_87F5F0.__pad_58[296]))->Process(); /*0x64840c*/
@@ -551,7 +553,7 @@ void RunNetworkGameLoop()
       if ( v7 >= v6 ) /*0x6484a5*/
       {
   LABEL_33:
-                ((Debug *)0)->Log();
+Debug::Log("Waiting for player %d on frame %d\n");  /* G57w13b: IDA 0x0064863e push 0x00837584 */
         return; /*0x648678*/
       }
       v6 -= v7; /*0x6484ab*/
@@ -630,7 +632,7 @@ if ( !(*(int (**)(IPXManagerClass *, void *, unsigned int *, int *))(v3->Socket 
     break;
   }
     ((Debug *)0)->Log("Timed out waiting for end game!\n"); /*0x64864a G57w12: IDA push seq @ 0x64864a*/
-    ((Debug *)0)->Log();
+Debug::Log("Timed out waiting for end game!\n");  /* G57w13b: IDA 0x00648654 push 0x00837560 */
   SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x64869f*/
   SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x6486b2*/
   SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x6486c5*/
@@ -1075,12 +1077,12 @@ LABEL_54:
           {
             v46 = GetStringCSF( (wchar_t *)&(&stru_830620)[28876], 0, (const char *)(&(&stru_830620)[28288]), 3928);
             wcscpy( (wchar_t *)(lParam), (const wchar_t *)(v46));
-            wcscat(lParam, &stru_82083C);
+            wcscat(lParam,(const wchar_t *)(&stru_82083C)t *)(&stru_82083C)t *)(&stru_82083C));
             v47 = GetStringCSF( (wchar_t *)&(&stru_830620)[28852], 0, (const char *)(&(&stru_830620)[28288]), 3930);
-            wcscat(lParam, (CampaignScore *)v47);
-            wcscat(lParam, &stru_82083C);
+            wcscat(lParam,(const wchar_t *)((CampaignScore *)v47));
+            wcscat(lParam,(const wchar_t *)(&stru_82083C));
             v48 = GetStringCSF( (wchar_t *)&(&stru_830620)[28828], 0, (const char *)(&(&stru_830620)[28288]), 3932);
-            wcscat(lParam, (CampaignScore *)v48);
+            wcscat(lParam,(const wchar_t *)((CampaignScore *)v48));
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)(lParam), (HWND)v38);
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&(&stru_87C374)[46016]), (HWND)v38);
             v44 = *(CellStruct **)&((unsigned int *)HouseClass_Player)[29932];
@@ -1092,7 +1094,7 @@ LABEL_54:
 LABEL_75:
             v49 = GetStringCSF( (wchar_t *)&(&stru_830620)[28808], 0, (const char *)(&(&stru_830620)[28288]), 3939);
             wcscpy( (wchar_t *)(lParam), (const wchar_t *)(v49));
-            wcscat(lParam, &stru_82083C);
+            wcscat(lParam,(const wchar_t *)(&stru_82083C));
             if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
             {
 v90 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28784], 0, (const char *)(&(&stru_830620)[28288]), 3943);
@@ -1100,7 +1102,7 @@ v90 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28784], 0, (const cha
 
 
 
-              wcscat(lParam, (CampaignScore *)v90);
+              wcscat(lParam,(const wchar_t *)((CampaignScore *)v90));
             }
             else if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 3 )
             {
@@ -1109,7 +1111,7 @@ v91 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28764], 0, (const cha
 
 
 
-              wcscat(lParam, (CampaignScore *)v91);
+              wcscat(lParam,(const wchar_t *)((CampaignScore *)v91));
             }
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)(lParam), (HWND)v38);
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&((unsigned char *)&stru_87C374)[46016]), (HWND)v38);
@@ -1617,13 +1619,13 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
           byte_A802D5[111 * dword_A802CC] &= ~1u; /*0x649e3a*/
           if ( dword_8B41F8 >= 0x4000 ) /*0x649e4b*/
             break; /*0x649e4b*/
-          v13 = (unsigned char *)&byte_A802D4 + 111 * dword_A802CC; /*0x649e61*/
+ v13 = (char *)((unsigned char *)&byte_A802D4 + 111 * dword_A802CC); /*0x649e61*/
           v14 = &byte_8B4204[111 * dword_8B4200]; /*0x649e73*/
           qmemcpy( (void *)(v14), (const void *)(v13), 0x6Cu); /*0x649e7a*/
           v13 += 108; /*0x649e7a*/
           v14 += 108; /*0x649e7a*/
           *(unsigned short *)v14 = *(unsigned short *)v13; /*0x649e7c*/
-          v14[2] = v13[2]; /*0x649e7e*/
+ v14[2] = (char *)(v13[2]); /*0x649e7e*/
           dword_A70204[dword_8B4200] = timeGetTime(); /*0x649e8e*/
           ++dword_8B41F8; /*0x649eae*/
           dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x649eb7*/

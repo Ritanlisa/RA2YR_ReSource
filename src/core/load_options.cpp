@@ -336,7 +336,7 @@ int LoadOptions::FindItem(FileEntryClass* const* a2)
 
     if ( !IDA_LOBYTE(this->m_C) ) /*0x55a2d0*/
       return 0; /*0x55a2d8*/
-    m_8 = this->m_8; /*0x55a2de*/
+    m_8 = (unsigned int)(this->m_8)); /*0x55a2de*/
     result = 0; /*0x55a2e1*/
     if ( m_8 <= 0 ) /*0x55a2e5*/
       return -1; /*0x55a2fc*/

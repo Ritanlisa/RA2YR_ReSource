@@ -46,6 +46,10 @@
 #include "e4/classes/LayerClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/UnitTypeClass_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+extern int CellToTileIndexMap(void *a1, __int16 *a2);  // W13-C raw 0x56D3F0 ObjectClass::CellToTileIndexMap thiscall 自由形
+extern int * globalHelper_02AA90(int a1, int a2);  // W13-C raw 0x42AA90 sub_42AA90
+extern char ParsePathDirections(void *a1, int a2, void *a3);  // W13-C raw 0x42B210 ObjectClass::ParsePathDirections thiscall 自由形
+extern void * SimplifyPathFilter(void *a1, void *a2, int a3);  // W13-C raw 0x42B7F0 ObjectClass::SimplifyPathFilter thiscall 自由形
 
 // G57w10: vtable externs (truth e4_globals_decls)
 extern unsigned char vt_DynamicVectorClass_PlanningNodeClass[4];  // data: 0x7EFE44  // G57w10 vftable residue fix
@@ -259,7 +263,7 @@ int BuildingClass::GetFactoryPosition() const
       && ((unsigned int *)&Type->ExitCoord)[1] == dword_89C84C
       && ((unsigned int *)&Type->ExitCoord)[2] == dword_89C850 )
     {
-      v9 = (int *)(*((int (__thiscall **)(BuildingClass *, char *))this->vtable1 + 18))(this, v10); /*0x44f6bf*/
+      v9 = (int *)(*((int (__thiscall **)(BuildingClass *, char *))this->vtable1 + 18))((gamemd::BuildingClass *)(this), v10); /*0x44f6bf*/
       *v11 = *v9; /*0x44f6c9*/
       v11[1] = v9[1]; /*0x44f6ce*/
       v11[2] = v9[2]; /*0x44f6d5*/
@@ -267,7 +271,7 @@ int BuildingClass::GetFactoryPosition() const
     }
     else
     {
-      location = ((unsigned int *)this)[0]; /*0x44f678*/
+ location = (int *)(((unsigned int *)this)[0]); /*0x44f678*/
       v3 = location[1]; /*0x44f681*/
       v4 = location[2]; /*0x44f684*/
       v5 = *location + ((unsigned int *)&Type->ExitCoord)[0]; /*0x44f68d*/
@@ -322,7 +326,7 @@ int BuildingClass::SetConnectedBuildingMission(int a2)
     v3 = a2; /*0x45217b*/
     if ( a2 == 15 && (*((int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))this->vtable1 + 26))(this, 0, 0) == 5 ) /*0x45218b*/
       v3 = 16; /*0x45218d*/
-    Anims = this->Anims; /*0x452192*/
+ Anims = (int *)(this->Anims); /*0x452192*/
     v5 = 21; /*0x452198*/
     do /*0x4521ad*/
     {
@@ -832,7 +836,7 @@ UnitClass* UnitClass::updateHarvesting()
       *(unsigned int *)(result + 1756) = 0; /*0x4c2c19*/
       ((unsigned int *)this)[0] = 0; /*0x4c2c1f*/
     }
-    return (gamemd::UnitClass *)(result; /*0x4c2c22*/);
+    return (gamemd::UnitClass *)(result); /*0x4c2c22*/
 }
 } // namespace gamemd
 
@@ -908,7 +912,7 @@ int BuildingClass::SquaredDistanceTo(ObjectClass* target, int a2) const  // g57b
 
     if ( !a2 ) /*0x5f650a*/
       return 0; /*0x5f650c*/
-    v3 = (int *)(*((int (__thiscall **)(BuildingClass *, unsigned int *))this->vtable1 + 18))(this, v8); /*0x5f651e*/
+    v3 = (int *)(*((int (__thiscall **)(BuildingClass *, unsigned int *))this->vtable1 + 18))((gamemd::BuildingClass *)(this), v8); /*0x5f651e*/
     v4 = *v3; /*0x5f6521*/
     v5 = *a2; /*0x5f6523*/
     v6 = v3[1]; /*0x5f6527*/
@@ -1045,14 +1049,14 @@ bool BuildingClass::IsBeingRepairedOrCaptured()
 
 // 0x414290
 namespace gamemd {
-HRESULT __stdcall AircraftClass::QueryInterface(const IID& iid, void** ppvObject, void * ppv)
+HRESULT __stdcall AircraftClass::QueryInterface(AbstractClass *a2, void *iid, void **ppv)
 {
     int result; // eax
 
     result = AbstractClass_QueryInterface((void *)this); /*0x4142a2*/
     if ( result < 0 ) /*0x4142a9*/
     {
-      if ( !memcmp(iid, &IID_IFlyControl, 0x10u) ) /*0x4142b8*/
+      if ( !memcmp((const void *)(iid), &IID_IFlyControl, 0x10u) ) /*0x4142b8*/
       {
         if ( a2 ) /*0x4142bf*/
         {
@@ -1124,7 +1128,7 @@ int UnitClass::Mission_Harvest()
     switch ( ((unsigned int *)this)[0] )
     {
       case 0:
-        if ( !(*((int (__thiscall **)(AircraftClass *))this->vtable1 + 114))(this)
+        if ( !(*((int (__thiscall **)(AircraftClass *))this->vtable1 + 114))((gamemd::AircraftClass *)(this))
           && ((unsigned int *)this)[0] == 0.0
           && ((movementDestination = ((unsigned int *)this)[0]) == 0
            || (v3 = ((unsigned int *)this)[0],
@@ -1141,7 +1145,7 @@ int UnitClass::Mission_Harvest()
         }
         else if ( ((unsigned int *)this)[0]
                || !this->Type->TechnoTypeClass[3221]
-               || (*((int (__thiscall **)(AircraftClass *))this->vtable1 + 114))(this) <= 0 )
+               || (*((int (__thiscall **)(AircraftClass *))this->vtable1 + 114))((gamemd::AircraftClass *)(this)) <= 0 )
         {
           if ( ((unsigned int *)this)[0] )
           {
@@ -1160,7 +1164,7 @@ int UnitClass::Mission_Harvest()
                                               *(TechnoClass **)(*(unsigned int *)(v14 + 1492) + 36),
                                               &v31);
                 v18 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], WaypointCoords); /*0x41538c*/
-                NearbyCell = InfantryClass_FindNearbyCell((void *)this, (int)v18); /*0x415394*/
+ NearbyCell = (void *)(InfantryClass_FindNearbyCell((void *)this, (int)v18)); /*0x415394*/
                 vtable0[288](this, NearbyCell, 1); /*0x41539c*/
               }
               else
@@ -1168,17 +1172,17 @@ int UnitClass::Mission_Harvest()
                 v20 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x4153ad*/  // g57e2 W2
                 Waypoint_Location = (short *)ScenarioClass_Get_Waypoint_Location((char *)dword_A8B230, &v32, 700); /*0x4153bb*/
                 v22 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], Waypoint_Location); /*0x4153c6*/
-                v23 = InfantryClass_FindNearbyCell((void *)this, (int)v22); /*0x4153ce*/
+ v23 = (void *)(InfantryClass_FindNearbyCell((void *)this, (int)v22)); /*0x4153ce*/
                 v20[288](this, v23, 1); /*0x4153d6*/
-                team = ((unsigned int *)this)[0]; /*0x4153dc*/
+ team = (TeamClass *)(((unsigned int *)this)[0]); /*0x4153dc*/
                 if ( team ) /*0x4153e4*/
                   TeamClass_SelectMember((int)team, (int)((unsigned int *)this)[0]); /*0x4153f1*/
               }
             }
             else
             {
-              v25 = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int *)this->Type + 188))(this->Type); /*0x41540d*/
-              ((unsigned int *)this)[0] = v25 != (*((int (__thiscall **)(AircraftClass *))this->vtable1 + 114))(this) ? 4 : 1;
+              v25 = (*(int (__thiscall **)(AircraftTypeClass *))(*(unsigned int *)this->Type + 188))((gamemd::AircraftTypeClass *)(this->Type)); /*0x41540d*/
+              ((unsigned int *)this)[0] = v25 != (*((int (__thiscall **)(AircraftClass *))this->vtable1 + 114))((gamemd::AircraftClass *)(this)) ? 4 : 1;
             }
           }
           else
@@ -1195,12 +1199,12 @@ int UnitClass::Mission_Harvest()
                   0);
           if ( v10 ) /*0x4152d5*/
           {
-            (*((void (__thiscall **)(AircraftClass *, int, int))this->vtable1 + 288))(this, v10, 1); /*0x4152de*/
+            (*((void (__thiscall **)(AircraftClass *, int, int))this->vtable1 + 288))((gamemd::AircraftClass *)(this), v10, 1); /*0x4152de*/
           }
           else
           {
             v11 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x4152e9*/  // g57e2 W2
-            ClosestPlacementCell = TechnoClass_FindClosestPlacementCell((void *)this); /*0x4152ef*/
+ ClosestPlacementCell = (void *)(TechnoClass_FindClosestPlacementCell((void *)this)); /*0x4152ef*/
             v11[288](this, ClosestPlacementCell, 1); /*0x4152f7*/
           }
         }
@@ -1226,9 +1230,9 @@ int UnitClass::Mission_Harvest()
           {
             if ( this->Type[1].TechnoTypeClass[300] ) /*0x4154dd*/
             {
-              (*((void (__thiscall **)(AircraftClass *, unsigned int))this->vtable1 + 73))(this, 0); /*0x4154ed*/
+              (*((void (__thiscall **)(AircraftClass *, unsigned int))this->vtable1 + 73))((gamemd::AircraftClass *)(this), 0); /*0x4154ed*/
               FootClass_MissionMoveCarryallLand((void *)this); /*0x4154f5*/
-              (*((void (__thiscall **)(AircraftClass *, int))this->vtable1 + 73))(this, 1); /*0x415500*/
+              (*((void (__thiscall **)(AircraftClass *, int))this->vtable1 + 73))((gamemd::AircraftClass *)(this), 1); /*0x415500*/
             }
             else
             {
@@ -1238,19 +1242,19 @@ int UnitClass::Mission_Harvest()
                                v33,
                                this);
               MapClass::ApplyOverlayReveal((MapClass *)&stru_87F5F0.__pad_58[416], v27, v29); /*0x41552e*/
-              if ( (*((int (__thiscall **)(AircraftClass *, int))this->vtable1 + 64))(this, v26) ) /*0x41553e*/
+              if ( (*((int (__thiscall **)(AircraftClass *, int))this->vtable1 + 64))((gamemd::AircraftClass *)(this), v26) ) /*0x41553e*/
                 *(unsigned char *)(v26 + 1060) = 0; /*0x415548*/
-              v28 = (unsigned short *)(*((int (__thiscall **)(AircraftClass *, unsigned char *))this->vtable1 + 110))(this, v34); /*0x415559*/
+              v28 = (unsigned short *)(*((int (__thiscall **)(AircraftClass *, unsigned char *))this->vtable1 + 110))((gamemd::AircraftClass *)(this), v34); /*0x415559*/
               MapClass::FillRevealBuffer((MapClass *)&stru_87F5F0.__pad_58[416], v28, this); /*0x415565*/
               if ( !*(unsigned char *)(v26 + 1060) && *(unsigned int *)(v26 + 1492) ) /*0x415574*/
                 TeamClass_AddMember((int *)((unsigned int *)this)[0], v26, 0); /*0x415587*/
               if ( !*(unsigned int *)&this->q118 ) /*0x41558c*/
-                (*((void (__thiscall **)(AircraftClass *, unsigned int, int))this->vtable1 + 289))(this, 0, 1); /*0x4155a2*/
+                (*((void (__thiscall **)(AircraftClass *, unsigned int, int))this->vtable1 + 289))((gamemd::AircraftClass *)(this), 0, 1); /*0x4155a2*/
             }
           }
           else
           {
-            (*((void (__thiscall **)(AircraftClass *, unsigned int, int))this->vtable1 + 289))(this, 0, 1); /*0x4155b5*/
+            (*((void (__thiscall **)(AircraftClass *, unsigned int, int))this->vtable1 + 289))((gamemd::AircraftClass *)(this), 0, 1); /*0x4155b5*/
           }
         }
         goto LABEL_9; /*0x415506*/
@@ -1259,7 +1263,7 @@ int UnitClass::Mission_Harvest()
         return 1; /*0x4155cd*/
       default:
   LABEL_9:
-        MissionControl = MissionClass_GetMissionControl((void *)this); /*0x41525a*/
+ MissionControl = (char *)(MissionClass_GetMissionControl((void *)this)); /*0x41525a*/
         IDA_LOWORD(v8) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41526a*/
         return v8 + Random_Range((void *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2);
     }
@@ -1344,7 +1348,7 @@ int BuildingClass::AimTurret(_BYTE a2)
       RemoveTarget((int)this); /*0x424c2b*/
       a2[132] = 1; /*0x424c30*/
       ((unsigned int *)this)[1] = (int)a2; /*0x424c37*/
-      v14 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned char *))(*(unsigned int *)a2 + 72))(a2, v23); /*0x424c46*/
+      v14 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned char *))(*(unsigned int *)a2 + 72))((unsigned char *)(a2), v23); /*0x424c46*/
       v15 = v12 - *v14; /*0x424c51*/
       v16 = (void (__thiscall **)(BuildingClass *, unsigned int *))this->TechnoClass; /*0x424c5d*/
       v17 = v13 - v14[1]; /*0x424c5f*/
@@ -1408,7 +1412,7 @@ bool BuildingClass::IsCellPlaceable(int cell_x, int cell_y) const
 
 // 0x429A90
 namespace gamemd {  // G42.35a: was gamemd::Math (generator namespace-chain bug)
-void BuildingClass::UpdatePowerAnimation()
+void BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5, int a6, char a7)
 {
     short *v7; // edi
     int v8; // ebp

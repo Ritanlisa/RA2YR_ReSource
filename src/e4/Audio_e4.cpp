@@ -2636,7 +2636,7 @@ int sub_752290()
         result = (int)((AudioStream *)(Enabled))->Constructor(0xBB8u),
         (g_InfantryDrawState = (int)((void *)result)) != 0) )
   {
-    SetAudioFileName(result, aEvaStream); /*0x752311*/
+    SetAudioFileName(result,(const char *)(aEvaStream)); /*0x752311*/
     ((AudioQueue *)((int)g_InfantryDrawState))->IsEmpty((int)((AudioQueue *)((int)g_InfantryDrawState)), g_MixerChannel_Voice); /*0x752322*/
     ((AudioQueue *)((int)g_InfantryDrawState))->IsNotEmpty((int)((AudioQueue *)((int)g_InfantryDrawState)), g_MixerChannel_Ambient); /*0x752333*/
     return 1; /*0x752338*/
@@ -2700,7 +2700,7 @@ int sub_752AD0()
         result = (int)((AudioStream *)(Enabled))->Constructor(0xBB8u),
         (dword_B1D4D8 = (unsigned int)((void *)result)) != 0) )
   {
-    SetAudioFileName(result, aTauntStream); /*0x752afc*/
+    SetAudioFileName(result,(const char *)(aTauntStream)); /*0x752afc*/
     ((AudioQueue *)((int)g_InfantryDrawState))->IsEmpty((int)((AudioQueue *)((int)g_InfantryDrawState)), g_MixerChannel_Voice); /*0x752b0d*/
     ((AudioQueue *)((int)g_InfantryDrawState))->IsNotEmpty((int)((AudioQueue *)((int)g_InfantryDrawState)), g_MixerChannel_Ambient); /*0x752b1e*/
     unk_B1D480 = 0; /*0x752b23*/
@@ -2770,7 +2770,7 @@ rc_ptr * Audio_Create(rc_ptr_base * a1, const char ** a2, int a3)
   {
     v6 = (char *)RA2_OPNEW(0x4Cu); /*0x764b57*/
     if ( v6 ) /*0x764b61*/
-      v7 = CampaignConstructorWDT(v6, a2, a3); /*0x764b6c*/
+      v7 = CampaignConstructorWDT(v6,(char **)(a2), a3); /*0x764b6c*/
     else
       v7 = (char *)(0); /*0x764b70*/
     ((ComPtr *)((ComPtr *)a1))->Constructor(); /*0x764b74*/

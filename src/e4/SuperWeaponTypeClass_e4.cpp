@@ -232,7 +232,7 @@ int SuperWeaponTypeClass::Construct(char *aP1)
     SuperWeaponTypeClass **v7; // edx
     SuperWeaponTypeClass **v8; // ecx
 
-    ((gamemd::AbstractTypeClass*)(int *)this)->Constructor( Source); /*0x5113fa*/
+    ((gamemd::AbstractTypeClass*)(int *)this)->Constructor((char *)(Source)); /*0x5113fa*/
     v3 = (BuildingTypeClass *)(0); /*0x5113ff*/
     IDA_LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
     this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
@@ -874,10 +874,10 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
     ((gamemd::AbstractTypeClass*)this)->ProcessPower( a2); /*0x6ce919*/
     Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
     Power::TimerProcess(this->ActionValue[0]); /*0x6ce935*/
-    Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/
-    Power::TimerProcess(this->ChargingVoice); /*0x6ce951*/
-    Power::TimerProcess(this->ImpatientVoice); /*0x6ce95f*/
-    v3 = Power::TimerProcess(this->SuspendVoice); /*0x6ce96d*/
+    Power::TimerProcess((int)(this->RechargeVoice)); /*0x6ce943*/
+    Power::TimerProcess((int)(this->ChargingVoice)); /*0x6ce951*/
+    Power::TimerProcess((int)(this->ImpatientVoice)); /*0x6ce95f*/
+    v3 = Power::TimerProcess((int)(this->SuspendVoice)); /*0x6ce96d*/
     IDA_LOBYTE(v3) = this->IsPowered; /*0x6ce972*/
     Power::FlagProcess((Power *)a2, v3); /*0x6ce97b*/
     IDA_LOBYTE(v4) = this->DisableableFromShell; /*0x6ce980*/
@@ -889,7 +889,7 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
     Power::TimerProcess(this->PreDependent); /*0x6ce9b3*/
     IDA_LOBYTE(v7) = this->ShowTimer; /*0x6ce9b8*/
     Power::FlagProcess((Power *)a2, v7); /*0x6ce9c1*/
-    Power::TimerProcess(this->RechargeTime); /*0x6ce9cf*/
+    Power::TimerProcess((int)(this->RechargeTime)); /*0x6ce9cf*/
     Power::TimerProcess((int)this->Type); /*0x6ce9dd*/
     IDA_LOBYTE(v8) = this->UseChargeDrain; /*0x6ce9e2*/
     v9 = Power::FlagProcess((Power *)a2, v8); /*0x6ce9eb*/

@@ -36,7 +36,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
 
-  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
+  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1,(const wchar_t **)(aP2), a3,(const char **)(aP4), aP5,(int)(aP6)); /*0x5c0df3*/
   *(unsigned int *)this->MPGameModeClass = (unsigned int)(&vt_MultiplayerBattle); /*0x5c0df8*/
   return (unsigned int *)(this->MPGameModeClass); /*0x5c0e00*/
 
@@ -47,7 +47,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
 
-  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
+  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1,(const wchar_t **)(aP2), a3,(const char **)(aP4), aP5,(int)(aP6)); /*0x5c5d03*/
   *(unsigned int *)this->MPGameModeClass = (unsigned int)(&vt_FreeForAll); /*0x5c5d08*/
   return (unsigned int *)(this->MPGameModeClass); /*0x5c5d10*/
 
@@ -58,7 +58,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6, void *a7)
 {
 
-  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c6173*/
+  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1,(const wchar_t **)(aP2), a3,(const char **)(aP4), aP5,(int)(aP6)); /*0x5c6173*/
   *(unsigned int *)this->MPGameModeClass = (unsigned int)(&vt_MultiplayerManBattle); /*0x5c6178*/
   return (unsigned int *)(this->MPGameModeClass); /*0x5c6180*/
 
@@ -69,7 +69,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
 
-  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
+  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1, a2, a3,(const char **)(aP4), aP5, aP6); /*0x5c9403*/
   *(unsigned int *)this->MPGameModeClass = (unsigned int)(&vt_Megawealth); /*0x5c9408*/
   return (unsigned int *)(this->MPGameModeClass); /*0x5c9410*/
 
@@ -80,7 +80,7 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
 
-  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
+  ((MultiplayerGameMode *)((MultiplayerGameMode *)this))->Construct(a1,(const wchar_t **)(aP2), a3,(const char **)(aP4), aP5,(int)(aP6)); /*0x5ca653*/
   *(unsigned int *)this->MPGameModeClass = (unsigned int)(&vt_MultiplayerSiege); /*0x5ca658*/
   return (unsigned int *)(this->MPGameModeClass); /*0x5ca660*/
 
@@ -307,7 +307,7 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
 
-  ((MultiplayerGameMode *)this)->Construct( a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
+  ((MultiplayerGameMode *)this)->Construct( a1,(const wchar_t **)(aP2), a3,(const char **)(aP4), aP5,(int)(aP6)); /*0x5cb3c3*/
   *(unsigned int *)this->MPGameModeClass = (unsigned int)&vt_UnholyAlliance;
   return (unsigned int *)(this->MPGameModeClass); /*0x5cb3d0*/
 

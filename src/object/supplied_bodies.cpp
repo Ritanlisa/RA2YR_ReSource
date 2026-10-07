@@ -53,6 +53,7 @@
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+struct AudioMixer;  // W13-C fwd (e4/classes/AudioMixer_e4.hpp 载体; (AudioMixer*) cast 用法)
 
 // G57w10: vtable externs (truth e4_globals_decls)
 extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
@@ -1046,7 +1047,7 @@ int TechnoClass::ApplyIronCurtain()
           v19 = *(unsigned int *)&this->vtable3; /*0x4156de*/
           v18 = v8; /*0x4156e7*/
           v20 = v9; /*0x4156eb*/
-          StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 640), &v18, 0); /*0x4156fb*/
+          StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 640),(unsigned int *)(&v18), 0); /*0x4156fb*/
         }
       }
       else
@@ -1152,7 +1153,7 @@ int TechnoClass::ReturnToBaseAndReload()
 {
     int target; // eax
 
-    target = this->target; /*0x4158e3*/
+    target = (unsigned int)(this->target)); /*0x4158e3*/
     if ( target ) /*0x4158eb*/
     {
       if ( *((unsigned int *)this + 361) ) /*0x41590e*/
@@ -1187,7 +1188,7 @@ int TechnoClass::ScatterFromThreat()
     char v3; // al
     unsigned int v5[3]; // [esp+4h] [ebp-Ch] BYREF
 
-    target = this->target; /*0x415966*/
+    target = (unsigned int)(this->target)); /*0x415966*/
     *((unsigned char *)this + 1746) = 1; /*0x41596c*/
     if ( !target || !((unsigned int *)&this->passengers)[1] ) /*0x41597b*/  // g57e2 W3
     {
@@ -1351,8 +1352,8 @@ int TechnoClass::FindNearbyBuildCell(int a2, int16_t *a3)
 
     *(unsigned int *)a3 = g_AircraftStatusFlag; /*0x4195b0*/
     v4 = (unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned char *))this->vtable1 + 18))(this, v15); /*0x4195b9*/
-    v5 = dword_817A78; /*0x4195be*/
-    v6 = *v4 / 256; /*0x4195de*/
+ v5 = (int *)(dword_817A78); /*0x4195be*/
+    v6 = (unsigned int)(*v4 / 256)); /*0x4195de*/
     v7 = v4[1] / 256; /*0x4195e1*/
     v14 = v7; /*0x4195e4*/
     while ( 1 ) /*0x4195ec*/
@@ -1587,7 +1588,7 @@ void * TechnoClass::FindClosestPlacementCell()
       if ( v30 != -1 ) /*0x41a51a*/
         return CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v34); /*0x41a532*/
     }
-    location = ((unsigned int *)this)[0]; /*0x41a533*/
+ location = (int *)(((unsigned int *)this)[0]); /*0x41a533*/
     v40 = *location; /*0x41a53b*/
     v41 = location[1]; /*0x41a547*/
     v42 = location[2]; /*0x41a553*/

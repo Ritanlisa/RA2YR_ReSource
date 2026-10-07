@@ -510,7 +510,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
                 }
                 else if ( v37 ) /*0x5cf52c*/
                 {
-                  PlayerColor = uniqueId->PlayerColor; /*0x5cf52e*/
+                  PlayerColor = (unsigned int)(uniqueId->PlayerColor)); /*0x5cf52e*/
                   if ( *(unsigned int *)&uniqueId->__pad_50[4] < PlayerColor /*0x5cf556*/
                     || (((unsigned char *)&uniqueId->__pad_50)[1] || !PlayerColor)
                     && (v39 = *(unsigned int *)&((unsigned char *)&uniqueId->__pad_50)[8], v39 > 0)
@@ -2005,7 +2005,7 @@ LABEL_15:
     this->Color = a2; /*0x69b880*/
     this->Color2 = -1; /*0x69b886*/
   }
-  Color2 = this->Color2; /*0x69b896*/
+  Color2 = (unsigned int)(this->Color2)); /*0x69b896*/
   *(unsigned int *)&this->__pad_50[268] = this->Color; /*0x69b89c*/
   this->unknown_160[0] = Color2; /*0x69b8a2*/
   return result; /*0x69b8a8*/
@@ -2207,12 +2207,12 @@ LABEL_26:
             && !*((unsigned char *)&v58 + v17)
             && (uint8_t)((NetworkID *)(v63))->Compare(*((unsigned int *)Block + v17) + 40) )
           {
-            v54 = (void *)ToWideStringChar(*((char **)Block + v17)); /*0x69c011*/
+            v54 = (void *)ToWideStringChar((IUnknown *)(*((char **)Block + v17))); /*0x69c011*/
             v19 = (char *)(0); /*0x69c015*/
             v20 = (char **)dword_A8DA90; /*0x69c017*/
             while ( 1 ) /*0x69c01e*/
             {
-              v21 = ToWideStringChar(*v20); /*0x69c01e*/
+              v21 = ToWideStringChar((IUnknown *)(*v20)); /*0x69c01e*/
               if ( !_strcmpi((char *)v54, v21) ) /*0x69c029*/
                 break; /*0x69c029*/
               ++v20; /*0x69c039*/
@@ -2225,12 +2225,12 @@ LABEL_26:
             }
             v54 = (void *)(v19); /*0x69c0f6*/
 LABEL_39:
-            v56 = (void *)ToWideStringChar(*((char **)Block + v50)); /*0x69c04d*/
+            v56 = (void *)ToWideStringChar((IUnknown *)(*((char **)Block + v50))); /*0x69c04d*/
             v22 = 0; /*0x69c061*/
             v23 = (char **)dword_A8DA90; /*0x69c063*/
             while ( 1 ) /*0x69c06a*/
             {
-              v24 = ToWideStringChar(*v23); /*0x69c06a*/
+              v24 = ToWideStringChar((IUnknown *)(*v23)); /*0x69c06a*/
               if ( !_strcmpi((char *)v56, v24) ) /*0x69c075*/
                 break; /*0x69c075*/
               ++v23; /*0x69c081*/
@@ -2247,10 +2247,10 @@ LABEL_39:
               ((Network *)((Network *)(*((unsigned int *)Block + v17) + 40)))->SetPort(v48); /*0x69c0c8*/
               v25 = (char **)Block; /*0x69c0cd*/
               *((unsigned char *)&v58 + v17) = 1; /*0x69c0d1*/
-              ToWideStringChar(v25[v17]); /*0x69c0d9*/
+              ToWideStringChar((IUnknown *)(v25[v17])); /*0x69c0d9*/
             }
             Debug::Log("Adjusted port number to %d for player %s\n"); /*0x69c0ec G57w11: IDA push seq @ 0x69c0ec +1 reg-vararg(s) omitted*/
-            v26 = ToWideStringChar(*((char **)Block + v50)); /*0x69c121*/
+            v26 = ToWideStringChar((IUnknown *)(*((char **)Block + v50))); /*0x69c121*/
             v27 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x69c123*/
             if ( !_strcmpi(v26, v27) ) /*0x69c12a*/
             {
@@ -2260,7 +2260,7 @@ LABEL_39:
               v53[0] += 36; /*0x69c151*/
               strcpy((char *)v56, ToWideStringChar( (IUnknown *)(v28))); /*0x69c172*/
             }
-            v29 = ToWideStringChar(*((char **)Block + v17)); /*0x69c18c*/
+            v29 = ToWideStringChar((IUnknown *)(*((char **)Block + v17))); /*0x69c18c*/
             v30 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x69c18e*/
             if ( !_strcmpi(v29, v30) ) /*0x69c195*/
             {

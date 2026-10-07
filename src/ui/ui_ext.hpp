@@ -687,7 +687,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int KillFocus();  // 0x4B4FF0
     int GetItemData();  // 0x4B5010
     int AddItem();  // 0x4B50A0
-    int Open(int a1, void* a2, void* a3);  // 0x4B50C0
+    int Open(char a2, _DWORD *a3, char *a4);  // 0x4B50C0
     int RemoveItem(int a1, int a2);  // 0x4B54E0
     void OnKeyDown(void* a1);  // 0x4B5530
     int ScrollUp();  // 0x4B55B0
@@ -700,7 +700,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int GetCount(int a1, void* a2, int a3);  // 0x4C3190
     int GetSelected();  // 0x4C32A0
     void* GetItemText(void* a1);  // 0x4C32E0
-    int SetItemText(int a1);  // 0x4C3420
+    int SetItemText(int C);  // 0x4C3420
     int Close();  // 0x4C3570
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move

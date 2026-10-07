@@ -26,6 +26,9 @@
 #include "e4/classes/TeamClass_e4.hpp"  // G42.39a body supply
 #include "e4/classes/ProgressTimer_e4.hpp"  // G42.39a body supply
 #include "core/ida_vtables.h"  // gC_vftable3
+extern void * To_CellObj(void *a1, __int16 *a2);  // W13-C raw 0x5657A0 CellCoord::To_CellObj thiscall 自由形
+extern int GeneratePathWaypoints(void *a1, int *a2, int a3, int a4, int a5, int **a6);  // W13-C raw 0x42B420
+extern char WalkLineOfSight(void *a1, int a2, void *a3, __int16 *a4, void *a5, int a6, char a7);  // W13-C raw 0x42BE20
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int ContextBase;  // 词表 (canon 无条目, int 兜底) L253
 extern char aAudioDeviceDum[];  // G57w8: raw 0x403A96 a2(aAudioDeviceDum) 传参形态 (char*)
@@ -349,8 +352,8 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
               LODWORD(v2) = sub_405B50(occupant[16] + alignmentPadding154, 0),
               (this->suspendedMission = v2) != 0) )
         {
-          this->initialOwner = Random::Range(&Randomizer_Global, occupant[24], occupant[25]) + 100; /*0x405691*/
-          v5 = Random::Range(&Randomizer_Global, 0, occupant[26]); /*0x40569c*/
+          this->initialOwner = Random::Range((gamemd::Random *)(&Randomizer_Global), occupant[24], occupant[25]) + 100; /*0x405691*/
+          v5 = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, occupant[26]); /*0x40569c*/
           suspendedMission = (ObjectClass *)this->suspendedMission; /*0x4056a1*/
           this->veterancy = v5; /*0x4056a7*/
           sub_4026C0(suspendedMission); /*0x4056ad*/
@@ -369,7 +372,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
             v8 = 33; /*0x405736*/
             if ( v7 ) /*0x40573b*/
               v8 = occupant[22]; /*0x40573d*/
-            LODWORD(v2) = Random::Range(&Randomizer_Global, v8, occupant[23]); /*0x40574a*/
+            LODWORD(v2) = Random::Range((gamemd::Random *)(&Randomizer_Global), v8, occupant[23]); /*0x40574a*/
             if ( (int)v2 >= 33 ) /*0x405752*/
             {
               v9 = (int)v2; /*0x40575b*/
@@ -424,7 +427,7 @@ int Gap2Recv_4055C0::UpdateVoicePlayback() {
             goto LABEL_35; /*0x405804*/
           if ( g_AudioConfigState && *(int **)(v2 + 12) == (int *)&dword_87E294 ) /*0x405815*/  // G57w8 int* 桥
           {
-            v11 = *(TechnoClass **)v2; /*0x405817*/
+ v11 = (Gap2Recv_4055C0 *)(*(TechnoClass **)v2); /*0x405817*/
             if ( *(unsigned int *)v2 /*0x405832*/
               && (*(unsigned int *)(v2 + 8) != v11->occupant || *(unsigned int *)(v2 + 4) != v11->currentWeaponSlot) )
             {
@@ -820,7 +823,7 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
     return 0; /*0x4197d7*/
   if ( (*(int (**)(char *))(*((unsigned int *)this + 432) + 24))((char *)this + 1728) ) /*0x4197ea*/
     return (void *)aP1; /*0x4197f9*/
-  v5 = (*(int (**)(TechnoClass *, unsigned int))(this->vtable0 + 360))(this, 0); /*0x41980c*/
+  v5 = (*(int (**)(TechnoClass *, unsigned int))(this->vtable0 + 360))((gamemd::TechnoClass *)(this), 0); /*0x41980c*/
   v6 = (*(int (**)(int, int *))(*(unsigned int *)&aP1->q_120)(aP1, &v40); /*0x419813*/
   v38 = *(double *)v6; /*0x419818*/
   v7 = *(unsigned int *)(v6 + 8); /*0x419829*/
@@ -856,13 +859,13 @@ int ObjectClass::CreateInstanceCOM(IID * rclsid, LPUNKNOWN pUnkOuter, DWORD dwCl
     if ( this->AbstractClass ) /*0x41c254*/
       (*(void (__stdcall **)(void *))(*(unsigned int *)this->AbstractClass + 8))(this->AbstractClass); /*0x41c25d*/
     if ( (dwClsContext & 0x14) == 0 ) /*0x41c266*/
-      return CoCreateInstance(rclsid, pUnkOuter, dwClsContext, &stru_817BB0, &this->AbstractClass); /*0x41c2cb*/
-    result = CoCreateInstance(rclsid, pUnkOuter, dwClsContext, &riid, (LPVOID *)&pUnkOuter); /*0x41c27d*/
+      return CoCreateInstance(rclsid, pUnkOuter, dwClsContext, &gamemd::stru_817BB0, &this->AbstractClass); /*0x41c2cb*/
+    result = CoCreateInstance(*(rclsid), pUnkOuter, dwClsContext,riid, (LPVOID *)&pUnkOuter); /*0x41c27d*/
     if ( result >= 0 ) /*0x41c285*/
     {
       v6 = OleRun(pUnkOuter); /*0x41c292*/
       if ( v6 >= 0 ) /*0x41c296*/
-        v6 = (*(int (__stdcall **)(LPUNKNOWN, IID *, ObjectClass *))pUnkOuter->field_0)(pUnkOuter, &stru_817BB0, this); /*0x41c2a7*/
+        v6 = (*(int (__stdcall **)(LPUNKNOWN, IID *, ObjectClass *))pUnkOuter->field_0)(pUnkOuter, &gamemd::stru_817BB0, this); /*0x41c2a7*/
       (*(void (__stdcall **)(LPUNKNOWN))(pUnkOuter->field_0 + 8))(pUnkOuter); /*0x41c2b0*/
       return v6; /*0x41c2b3*/
     }
@@ -1071,7 +1074,7 @@ int Gap2Recv_421350::RenderAlphaShapes()
 }
 } // namespace gamemd
 namespace gamemd {
-double Gap2Recv_429830::ComputeMovementWeight(int * a1, unsigned int * a2, void * aP3, int a5, int a6)
+double Gap2Recv_429830::ComputeMovementWeight(int *a2, _DWORD *a3, char a4, int a5, int a6)
 {
     unsigned int *v6; // esi
     int v7; // ebx
@@ -1130,7 +1133,7 @@ double Gap2Recv_429830::ComputeMovementWeight(int * a1, unsigned int * a2, void 
         IDA_LOWORD(v22) = IDA_LOWORD((&dword_89F688)[v13]) + *v12; /*0x42990b*/
         IDA_HIWORD(v22) = v12[1] + IDA_HIWORD((&dword_89F688)[v13]); /*0x429919*/
         v24 = v22; /*0x429927*/
-        v14 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v24); /*0x429930*/
+        v14 = To_CellObj(&dword_87F7E8, (__int16 *)&v24); /*0x429930*/
         if ( (v14[80] & 0x100) != 0 /*0x429964*/
           && (*(unsigned char *)(v9 + 140)
            || *(char *)((*(int (__thiscall **)(int))(*(unsigned int *)v9 + 444))(v9) + 283) - *((char *)v14 + 283) > 2) )
@@ -1217,7 +1220,7 @@ char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3)
     v8 = 0; /*0x42b22e*/
     v9 = 0; /*0x42b230*/
     v10 = *(unsigned int *)(a2 + 8) == 1; /*0x42b232*/
-    v26 = *(unsigned int *)(a2 + 8) - 1; /*0x42b234*/
+    v26 = (unsigned int)(*(unsigned int *)(a2 + 8) - 1)); /*0x42b234*/
     v6 = v26; /*0x42b22a*/
     v24 = -1; /*0x42b238*/
     v27 = v3; /*0x42b23c*/
@@ -1257,7 +1260,7 @@ char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3)
         }
         if ( v11 == 8 ) /*0x42b2da*/
         {
-          v13 = *((__int16 *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v18) + 139); /*0x42b2eb*/
+          v13 = *((__int16 *)To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v18) + 139); /*0x42b2eb*/
           if ( v13 == -1 ) /*0x42b2f5*/
           {
             v22 = 0; /*0x42b30e*/
@@ -1619,10 +1622,10 @@ int Gap2Recv_42E1C0::RenderTooltipBorder()
       v28 = v3; /*0x42e20a*/
       v4 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x42e20e*/
       v5 = Rect::Set(&v34, (int)this->AbstractClass, (int)this->?, (int)this->?, (int)this->?); /*0x42e21d*/
-      (*(void (__thiscall **)(AudioStream *, unsigned int *, int))(v4 + 88))(g_DSurface_Hidden_2, v5, v28); /*0x42e229*/
+      (*(void (__thiscall **)(AudioStream *, unsigned int *, int))(v4 + 88))((gamemd::AudioStream *)(g_DSurface_Hidden_2), v5, v28); /*0x42e229*/
     }
     vtable2 = (char *)this->?; /*0x42e22f*/
-    vtable3 = (char *)this->?; /*0x42e237*/
+    vtable3 = (char *)this->vtable4; /*0x42e237*/
     vtable1 = (char *)this->?; /*0x42e23a*/
     v8 = vtable2; /*0x42e23e*/
     vtable0 = (char *)this->AbstractClass; /*0x42e240*/
@@ -2029,7 +2032,7 @@ int Gap2Recv_432C10::COMStub_432C10(int a2)
     AbstractClass *NeedsSaveOrLink; // ecx
     int result; // eax
 
-    NeedsSaveOrLink = (AbstractClass *)this->?; /*0x432c10*/
+    NeedsSaveOrLink = (AbstractClass *)this->NeedsSaveOrLink; /*0x432c10*/
     if ( NeedsSaveOrLink ) /*0x432c15*/
       return AbstractClass::getTotalValue(NeedsSaveOrLink, a2); /*0x432c1c*/
     return result; /*0x432c21*/

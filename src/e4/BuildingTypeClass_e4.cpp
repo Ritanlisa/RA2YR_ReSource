@@ -66,7 +66,7 @@ int BuildingTypeClass::ConstructFull(char * Source, void *a2)
   int v19; // ecx
   unsigned int *v20; // edi
 
-  ((TechnoTypeClass *)this)->ReadINI((int)(Source), 0); /*0x45dda1*/
+  ((TechnoTypeClass *)this)->ReadINI((char *)((int)(Source)), 0); /*0x45dda1*/
   *((unsigned int *)this + 894) = -1; /*0x45ddaf*/
   *((unsigned int *)this + 895) = 0; /*0x45ddb5*/
   *((unsigned int *)this + 896) = 0; /*0x45ddbb*/
@@ -294,7 +294,7 @@ LABEL_11:
   else
   {
     v7 = (unsigned int *)(dword_A83C6C);
-    while ( *(unsigned int *)(unsigned int)(v7)    !=    (unsigned int)((unsigned int)((unsigned int)(this )))) /*0x45e350*/
+    while ( *(unsigned int *)(unsigned int)(v7)    !=    (unsigned int)(this )) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
       ++v7; /*0x45e353*/
@@ -438,7 +438,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
 
   BuildupLoaded = (unsigned int)a1->BuildupLoaded; /*0x45e587*/
-  a1->vtable1 = &vt_BuildingTypeClass; /*0x45e58d*/
+  a1->vtable1 = (unsigned int)&vt_BuildingTypeClass; /*0x45e58d*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e595*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e59c*/
   ((unsigned int *)a1)[0] = (unsigned int)(&vt_BuildingTypeClass); /*0x45e5a3*/
@@ -1654,7 +1654,7 @@ LABEL_6:
       return (gamemd::ParticleSystemTypeClass **)(((OverlayTypeClass *)v3)->Construct( (char *)(Source))); /*0x644901*/
     return 0; /*0x6448f5*/
   }
-  while ( _strcmpi((*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v2) + 36), Source) ) /*0x6448da*/
+  while ( _strcmpi((const char *)((*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v2) + 36)),(const char *)(Source)) ) /*0x6448da*/
   {
     if ( ++v2 >= (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6448e4*/
       goto LABEL_6; /*0x6448e4*/
@@ -1774,7 +1774,7 @@ LABEL_5:
     }
     return (gamemd::ParticleTypeClass **)(-1); /*0x6454b9*/
   }
-  while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v2) + 36)) ) /*0x645468*/
+  while ( _strcmpi(Source, (char *)(*(unsigned int *)(*(unsigned int *)&((SuperClass *)&stru_A83D50)->q07C + 4 * v2) + 36)) ) /*0x645468*/
   {
     if ( ++v2 >= *(int *)&stru_A83D50.__pad_3C[28] ) /*0x645472*/
       goto LABEL_5; /*0x645472*/

@@ -77,8 +77,8 @@ int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const
     else
     {
       v22[0].vtable3 = SendMessageA((HWND)(DlgItem), 0x4BCu, (WPARAM)(0), (LPARAM)((LPARAM)((LPARAM)lParama))); /*0x7a3eb5*/
-      SendMessageA((HWND)(DlgItem), 0x151u, (WPARAM)(v22[0].vtable3), v22[0].vtable0); /*0x7a3ec1*/
-      SendMessageA( (HWND)(DlgItem), 0x14Eu, v22[0].vtable3, 0); /*0x7a3ed0*/
+      SendMessageA((HWND)(DlgItem), 0x151u, (WPARAM)(v22[0].vtable3),(LPARAM)(v22[0].vtable0)); /*0x7a3ec1*/
+      SendMessageA( (HWND)(DlgItem), 0x14Eu,(WPARAM)(v22[0].vtable3), 0); /*0x7a3ed0*/
     }
     if ( v21 ) /*0x7a3ed8*/
     {

@@ -79,6 +79,7 @@ extern int dword_889FC8;  // 词表 (canon 无条目, int 兜底) L577
 extern int dword_889FCC;  // 词表 (canon 无条目, int 兜底) L571
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int dword_A8B230;  // 词表 (canon 无条目, int 兜底) L361
 extern int stru_817BD0;  // 词表 (canon 无条目, int 兜底) L369
+extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57b5 W6 end ----
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
@@ -416,7 +417,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
               *((unsigned char *)v3 + 1736) = 0; /*0x415077*/
               v3[191] = v22 - 1; /*0x41507f*/
             }
-            BuildingClass::GetHealthRatio((BuildingClass *)v3); /*0x415087*/
+            GetHealthRatio((BuildingClass *)v3); /*0x415087*/
             if ( a2 < *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5896)
               && (*(int (__thiscall **)(int *))(*v3 + 456))(v3) > 0 )
             {
@@ -809,7 +810,7 @@ int ObjectClass::CleanupAudioAndRefs() {
 
 // 0x439080
 namespace ra2 { namespace game { 
-int TechnoClass::checkRange(int a1) {
+int TechnoClass::checkRange(int a2) {
     int owningHouseIndex; // eax
     int *p_nextArrayIndex; // esi
     void *NeedsSaveOrLink; // ecx
@@ -817,8 +818,8 @@ int TechnoClass::checkRange(int a1) {
     int v6; // edx
 
     owningHouseIndex = ((unsigned int *)this)[0]; /*0x439080*/
-    p_nextArrayIndex = &((unsigned int *)this)[0]; /*0x439084*/
-    NeedsSaveOrLink = ((unsigned int *)this)[0]; /*0x439087*/
+ p_nextArrayIndex = (int *)(&((unsigned int *)this)[0]); /*0x439084*/
+ NeedsSaveOrLink = (void *)(((unsigned int *)this)[0]); /*0x439087*/
     if ( owningHouseIndex < (int)NeedsSaveOrLink /*0x4390ae*/
       || ((IDA_LOBYTE(v5) = *((unsigned char *)p_nextArrayIndex + 13), (unsigned char)v5) || !NeedsSaveOrLink)
       && (v5 = p_nextArrayIndex[5], v5 > 0)
@@ -840,7 +841,7 @@ int TechnoClass::checkRange(int a1) {
 
 // 0x439150
 namespace ra2 { namespace game { 
-int AbstractClass::processDetection(int aP1) {
+int AbstractClass::processDetection(int a2) {
     int v3; // edi
     int v4; // eax
     int uniqueId; // ecx
@@ -880,7 +881,7 @@ int AbstractClass::processDetection(int aP1) {
 
 // 0x43A7E0
 namespace ra2 { namespace game { 
-int AbstractClass::Construct(void* a1) {
+int AbstractClass::Construct(_DWORD *a2) {
     unsigned int *v2; // edi
     int result; // eax
     int v5; // eax
@@ -933,7 +934,7 @@ int AbstractClass::Construct(void* a1) {
                  ((char *)&g_BuildingLoadQueue_Array) + ((unsigned int *)&g_BuildingLoadQueue_Array)[2],
                  0) )
           {
-            v8 = ((unsigned int *)&g_BuildingLoadQueue_Array)[1]++; /*0x43a8b2*/
+            v8 = (unsigned int)(((unsigned int *)&g_BuildingLoadQueue_Array)[1]++)); /*0x43a8b2*/
             *(unsigned int *)(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 4 * v8) = v7; /*0x43a8c1*/
           }
           if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x43a8f8*/
@@ -1160,7 +1161,7 @@ int FootClass::DrawPlacementPreview() {
         }
       }
     }
-    airstrike = ((unsigned int *)this)[0]; /*0x43dc1c*/
+ airstrike = (AirstrikeClass *)(((unsigned int *)this)[0]); /*0x43dc1c*/
     v13 = 0; /*0x43dc22*/
     v107 = 0; /*0x43dc26*/
     if ( airstrike ) /*0x43dc2a*/
@@ -1259,7 +1260,7 @@ int FootClass::DrawPlacementPreview() {
             v30 = DoorStages - 1; /*0x43dea1*/
           if ( v30 < 0 ) /*0x43dea6*/
             v30 = 0; /*0x43dea8*/
-          BuildingClass::GetHealthRatio(this); /*0x43deac*/
+          GetHealthRatio(this); /*0x43deac*/
           if ( v1 <= *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5888) ) /*0x43dec1*/
           {
             Type = this->Type; /*0x43dec3*/

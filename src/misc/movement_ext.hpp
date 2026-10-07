@@ -98,7 +98,7 @@ public:
     int32_t     Movement_field_00;       // 0x00
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CompareAbsCoords(void* a1, void* a2);  // 0x5B29C0
-    void UpdateLocomotion(void* a1);  // 0x5B2A30
+    void UpdateLocomotion(__int16 *a2);  // 0x5B2A30
     // --- gap2 auto-generated stub declarations (END) ---
 };
 
@@ -181,7 +181,7 @@ public:
     uint8_t Pathfinding_field_0x14[4];
     uint8_t Pathfinding_field_0x18[4];
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* CheckCliff(void* a1, void* a2, int a3, int a4); // 0x583820
+    void* CheckCliff(_DWORD *a2, __int16 *a3, int a4, int a5); // 0x583820
     // --- gap2 auto-generated stub declarations (END) ---
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===

@@ -427,12 +427,12 @@ int WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4
     v7 = (int)(*a2); /*0x772ed4*/
     a3 = (void *)((int *)a1->Anim[4]); /*0x772ee1*/
     (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))( (int *)(a2), (int **)(&a3), 4, 0, v5); /*0x772ee5*/
-    for ( i = 0; i   <   (int)((int)(a4)); ++i ) /*0x772ef0*/
+    for ( i = 0; i   <   (int)(a4)); ++i ) /*0x772ef0*/
       (*(void (**)(int *, int, int, unsigned int))(*(char *)a2 +6))( (int *)(a2), a1->Anim[1] + 4 * i, 4, 0); /*0x772f03*/
     v9 = (int)(*a2); /*0x772f13*/
     a4 = a1->Report[4]; /*0x772f1f*/
     (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))( (int *)(a2), (int *)(&a4), 4, 0); /*0x772f23*/
-    for ( j = 0; j   <   (int)((int)(a4)); ++j ) /*0x772f2e*/
+    for ( j = 0; j   <   (int)(a4)); ++j ) /*0x772f2e*/
       (*(void (**)(int *, int, int, unsigned int))(*(char *)a2 +6))( (int *)(a2), a1->Report[1] + 4 * j, 4, 0); /*0x772f41*/
     v11 = (int)(*a2); /*0x772f51*/
     a4 = a1->DownReport[4]; /*0x772f5d*/

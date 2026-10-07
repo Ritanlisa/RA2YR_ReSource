@@ -186,7 +186,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
           {
             continue; /*0x568fbf*/
           }
-          Cell::SetTileType((short *)((IUnknown *)(v77)), (int)((IUnknown *)(v7 + g_Cell_BuildabilityLUT - 1)), (int)((IUnknown *)(-1)), (IUnknown *)( -1), 0); /*0x568fdd*/
+          Cell::SetTileType((short *)((IUnknown *)(v77)), (int)((IUnknown *)(v7 + g_Cell_BuildabilityLUT - 1)), (int)((IUnknown *)(-1)),(int)(-1), 0); /*0x568fdd*/
           v14 = InvalidateTileRegionMap((ObjectClass *)this, v77); /*0x568fe9*/
           v7 = g_TerrainSoundTable2; /*0x568fee*/
           v63 |= v14; /*0x568ffd*/
@@ -199,7 +199,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
             v16 = &g_MissionQueueFrame.briefing[130]; /*0x569036*/
           }
           *((unsigned char *)v16 + 283) += 4; /*0x569049*/
-          v17 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v72), (unsigned short *)(&g_DDrawSurfaceManager.scenario[82]))); /*0x56905d*/
+          v17 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v72), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->scenario[82]))); /*0x56905d*/
           *(unsigned int *)v71 = v17; /*0x56905f*/
           v18 = (int16_t)v17 + (SHIWORD(v17) << 9); /*0x56906e*/
           if ( v18 >= 0x40000 || (v19 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v18)) == 0 ) /*0x569084*/
@@ -208,7 +208,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
             v19 = &g_MissionQueueFrame.briefing[130]; /*0x56908c*/
           }
           *((unsigned char *)v19 + 283) += 4; /*0x56909f*/
-          v20 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v73), (unsigned short *)(&g_DDrawSurfaceManager.scenario[86]))); /*0x5690b3*/
+          v20 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v73), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->scenario[86]))); /*0x5690b3*/
           *(unsigned int *)v71 = v20; /*0x5690b5*/
           v21 = (int16_t)v20 + (SHIWORD(v20) << 9); /*0x5690c4*/
           if ( v21 >= 0x40000 || (v22 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v21)) == 0 ) /*0x5690da*/
@@ -249,14 +249,14 @@ LABEL_41:
           }
         }
         Cell::UpdateTileType((short *)((IUnknown *)(v77)), 0, 0); /*0x5693de*/
-        *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&g_DDrawSurfaceManager.scenario[88]))); /*0x5693fc*/
+        *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->q1628))); /*0x5693fc*/
         v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569401*/
 LABEL_86:
         v63 |= v40; /*0x569468*/
         break; /*0x569468*/
       }
       Cell::UpdateTileType((short *)((IUnknown *)(v77)), 0, 0); /*0x5693ac*/
-      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&g_DDrawSurfaceManager.scenario[88]))); /*0x5693ca*/
+      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->q1628))); /*0x5693ca*/
 LABEL_85:
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569460*/
       goto LABEL_86; /*0x569463*/
@@ -266,19 +266,19 @@ LABEL_85:
     if ( v13 == dword_ABC1D0 && *((unsigned char *)v64 + 282) == 2 ) /*0x5691a5*/
     {
       Cell::UpdateTileType((short *)((IUnknown *)(v77)), 0, 0); /*0x56940e*/
-      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&g_DDrawSurfaceManager.scenario[82]))); /*0x56942c*/
+      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->scenario[82]))); /*0x56942c*/
       v40 = InvalidateTileRegionMap((ObjectClass *)this, v71); /*0x569431*/
       goto LABEL_86; /*0x569431*/
     }
     if ( v13 == dword_AA1540 && *((unsigned char *)v64 + 282) == 2 ) /*0x5691ba*/
     {
       Cell::UpdateTileType((short *)((IUnknown *)(v77)), 0, 0); /*0x56943e*/
-      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&g_DDrawSurfaceManager.scenario[82]))); /*0x56945c*/
+      *(unsigned int *)v71 = (unsigned int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->scenario[82]))); /*0x56945c*/
       goto LABEL_85; /*0x56945c*/
     }
     if ( v13 != v8 && v13 != v8 + 3 && v13 != v8 + 4 && v13 != v8 + 2 && v13 != v8 + 1 || *((unsigned char *)v64 + 282) != 2 ) /*0x5691e7*/
       continue; /*0x5691e7*/
-    Cell::SetTileType((short *)((IUnknown *)(v77)), (int)((IUnknown *)(g_Cell_BuildabilityLUT + v8 - 1)), (int)((IUnknown *)(-1)), (IUnknown *)( -1), 0); /*0x569200*/
+    Cell::SetTileType((short *)((IUnknown *)(v77)), (int)((IUnknown *)(g_Cell_BuildabilityLUT + v8 - 1)), (int)((IUnknown *)(-1)),(int)(-1), 0); /*0x569200*/
     v27 = InvalidateTileRegionMap((ObjectClass *)this, v77); /*0x56920c*/
     v8 = g_TerrainSoundConfig; /*0x569215*/
     v63 |= v27; /*0x56921d*/
@@ -294,7 +294,7 @@ LABEL_85:
       v29 = &g_MissionQueueFrame.briefing[130]; /*0x569259*/
     }
     *((unsigned char *)v29 + 283) += 4; /*0x56926c*/
-    v30 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v74), (unsigned short *)(&g_DDrawSurfaceManager.scenario[84]))); /*0x569280*/
+    v30 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v74), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->q1528))); /*0x569280*/
     *(unsigned int *)v71 = v30; /*0x569282*/
     v31 = (int16_t)v30 + (SHIWORD(v30) << 9); /*0x569291*/
     if ( v31 >= 0x40000 || (v32 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v31)) == 0 ) /*0x5692a7*/
@@ -303,7 +303,7 @@ LABEL_85:
       v32 = &g_MissionQueueFrame.briefing[130]; /*0x5692af*/
     }
     *((unsigned char *)v32 + 283) += 4; /*0x5692c2*/
-    v33 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&g_DDrawSurfaceManager.scenario[88]))); /*0x5692d6*/
+    v33 = (int)(*CellStruct::Add(((CellStruct *)((CellStruct *)v77)), (unsigned int *)(&v75), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->q1628))); /*0x5692d6*/
     *(unsigned int *)v71 = v33; /*0x5692d8*/
     v34 = (int16_t)v33 + (SHIWORD(v33) << 9); /*0x5692e7*/
     if ( v34 >= 0x40000 || (v35 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v34)) == 0 ) /*0x5692fd*/
@@ -1613,8 +1613,8 @@ LABEL_109:
           goto LABEL_133; /*0x5709e9*/
         }
         v58 = this; /*0x57083a*/
-        Cell::SetTileType((short *)((IUnknown *)(v81)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex - 1)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0); /*0x570850*/
-        v59 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v81)), (unsigned int *)(&aP1), (unsigned short *)(&g_DDrawSurfaceManager.scenario[82])); /*0x570868*/
+        Cell::SetTileType((short *)((IUnknown *)(v81)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex - 1)), (int)((IUnknown *)( -1)),(int)(-1), 0); /*0x570850*/
+        v59 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v81)), (unsigned int *)(&aP1), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->scenario[82])); /*0x570868*/
         aP1 = (short *)(v59); /*0x57086a*/
         *(unsigned int *)v79 = (unsigned int)(v59); /*0x57086e*/
         v60 = (int16_t)v59 + (SHIWORD(v59) << 9); /*0x57087d*/
@@ -1624,7 +1624,7 @@ LABEL_109:
           v61 = &g_MissionQueueFrame.briefing[130]; /*0x57089b*/
         }
         *((unsigned char *)v61 + 283) += 4; /*0x5708ae*/
-        v62 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&g_DDrawSurfaceManager.scenario[84])); /*0x5708c2*/
+        v62 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->q1528)); /*0x5708c2*/
         aP1 = (short *)(v62); /*0x5708c4*/
         v63 = (int16_t)v62 + (SHIWORD(v62) << 9); /*0x5708d3*/
         if ( v63 >= 0x40000 || (v64 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v63)) == 0 ) /*0x5708e9*/
@@ -1633,7 +1633,7 @@ LABEL_109:
           v64 = &g_MissionQueueFrame.briefing[130]; /*0x5708f1*/
         }
         *((unsigned char *)v64 + 283) += 4; /*0x570904*/
-        v65 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&g_DDrawSurfaceManager.scenario[88])); /*0x570918*/
+        v65 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->q1628)); /*0x570918*/
         aP1 = (short *)(v65); /*0x57091a*/
         v66 = (int16_t)v65 + (SHIWORD(v65) << 9); /*0x570929*/
         if ( v66 >= 0x40000 || (v67 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v66)) == 0 ) /*0x57093f*/
@@ -1677,7 +1677,7 @@ LABEL_133:
             v76[0] = v32; /*0x5709ed*/
             v76[1] = v81[1] - 2; /*0x5709fd*/
             *(unsigned int *)v77 = *(unsigned int *)v76; /*0x570a06*/
-            ((Terrain*)v58)->ProcessCellModification( (IUnknown *)(v77)); /*0x570a0d*/
+            ((Terrain*)v58)->ProcessCellModification((short *)(v77)); /*0x570a0d*/
             v72 = v81[0] + (v81[1] << 9); /*0x570a21*/
             if ( v72 >= 0x40000 || (v73 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v72)) == 0 ) /*0x570a37*/
             {
@@ -1709,8 +1709,8 @@ LABEL_74:
     }
     if ( v37 != g_TerrainSoundTable2 + 4 ) /*0x570559*/
       goto LABEL_101; /*0x570559*/
-    Cell::SetTileType((short *)((IUnknown *)(v81)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex - 1)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0); /*0x570573*/
-    v40 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v81)), (unsigned int *)(&aP1), (unsigned short *)(&g_DDrawSurfaceManager.scenario[88])); /*0x57058b*/
+    Cell::SetTileType((short *)((IUnknown *)(v81)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex - 1)), (int)((IUnknown *)( -1)),(int)(-1), 0); /*0x570573*/
+    v40 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v81)), (unsigned int *)(&aP1), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->q1628)); /*0x57058b*/
     aP1 = (short *)(v40); /*0x57058d*/
     *(unsigned int *)v79 = (unsigned int)v40; /*0x570591*/
     v41 = (int16_t)v40 + (SHIWORD(v40) << 9); /*0x5705a0*/
@@ -1720,7 +1720,7 @@ LABEL_74:
       v42 = &g_MissionQueueFrame.briefing[130]; /*0x5705be*/
     }
     *((unsigned char *)v42 + 283) += 4; /*0x5705d2*/
-    v43 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&g_DDrawSurfaceManager.scenario[82])); /*0x5705e6*/
+    v43 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->scenario[82])); /*0x5705e6*/
     aP1 = (short *)(v43); /*0x5705e8*/
     v44 = (int16_t)v43 + (SHIWORD(v43) << 9); /*0x5705f7*/
     if ( v44 >= 0x40000 || (v45 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v44)) == 0 ) /*0x57060d*/
@@ -1729,7 +1729,7 @@ LABEL_74:
       v45 = &g_MissionQueueFrame.briefing[130]; /*0x570615*/
     }
     *((unsigned char *)v45 + 283) += 4; /*0x570627*/
-    v46 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&g_DDrawSurfaceManager.scenario[86])); /*0x57063b*/
+    v46 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v79)), (unsigned int *)(&v80), (unsigned short *)(&((CampaignClass *)&g_DDrawSurfaceManager)->scenario[86])); /*0x57063b*/
     aP1 = (IUnknown *)(v46); /*0x57063d*/
     v47 = (int16_t)v46 + (SHIWORD(v46) << 9); /*0x57064c*/
     if ( v47 >= 0x40000 || (v48 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v47)) == 0 ) /*0x570662*/
@@ -1769,7 +1769,7 @@ LABEL_101:
           v76[1] = v81[1]; /*0x570717*/
           v76[0] = v32 - 2; /*0x57071c*/
           *(unsigned int *)v77 = *(unsigned int *)v76; /*0x570729*/
-          ((Terrain *)this)->ProcessCellModification( (IUnknown *)(v77)); /*0x570730*/
+          ((Terrain *)this)->ProcessCellModification((short *)(v77)); /*0x570730*/
           v54 = v81[0] + (v81[1] << 9); /*0x570744*/
           if ( v54 >= 0x40000 || (v55 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v54)) == 0 ) /*0x57075a*/
           {

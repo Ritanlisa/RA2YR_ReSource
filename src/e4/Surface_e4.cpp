@@ -1179,7 +1179,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v13 = (LightConvertClass *)dword_B1D140; /*0x7074fa*/
   else
     v13 = (LightConvertClass *)(*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 484))(this); /*0x707505*/
-  v43 = (int *)((LightConvertClass *)v13)->SelectRLEBlitter( (IUnknown *)(v12)); /*0x707516*/
+  v43 = (int *)((LightConvertClass *)v13)->SelectRLEBlitter((int)(v12)); /*0x707516*/
   v42 = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/
   {
@@ -2194,7 +2194,7 @@ LPDIRECTDRAW Surface::CreateSurfacePalette(AbstractClass * Src)
       {
         if ( !byte_8A0098 ) /*0x4a47f9*/
         {
-          (*(void (**)(int, int))(*(unsigned int *)v3 + 124))(v3, g_DDraw_Palette); /*0x4a47ff*/
+          (*(void (**)(int, int))(*(unsigned int *)v3 + 124))(v3,(int)(g_DDraw_Palette)); /*0x4a47ff*/
           result = (int)(g_DDraw_Palette); /*0x4a4802*/
           byte_8A0098 = 1; /*0x4a4807*/
         }

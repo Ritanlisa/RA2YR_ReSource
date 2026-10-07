@@ -91,7 +91,7 @@ int sub_785EA0()
   IDA_LOBYTE(byte_B77DC0) = 1; /*0x785eac*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x785ec0*/
   {
-    v1 = &dword_B76688; /*0x785ec6*/
+    v1 = (unsigned int)(&dword_B76688)); /*0x785ec6*/
     for ( i = 0; i < &dword_B76688; v1 = &dword_B76688 ) /*0x785ecf*/
     {
       v3 = *(ObjectClass **)(dword_B76680+ 4 * i); /*0x785ed6*/
@@ -146,10 +146,10 @@ int sub_785EA0()
           break; /*0x78600e*/
       }
     }
-    v12 = (HWND)((Dialog*)(Dialog *)0x11E)->FindByHandle(); /*0x78601c*/
+    v12 = (HWND)((::gamemd::Dialog*)(::gamemd::Dialog *)0x11E)->FindByHandle(); /*0x78601c*/
     if ( v12 ) /*0x786023*/
       CloseDialog( (HWND)(v12), 0); /*0x786029*/
-    v13 = (HWND)((Dialog*)(Dialog *)0xC4)->FindByHandle(); /*0x786033*/
+    v13 = (HWND)((::gamemd::Dialog*)(::gamemd::Dialog *)0xC4)->FindByHandle(); /*0x786033*/
     if ( v13 ) /*0x78603a*/
     {
       dword_B77DC8&= ~0x20u; /*0x786045*/

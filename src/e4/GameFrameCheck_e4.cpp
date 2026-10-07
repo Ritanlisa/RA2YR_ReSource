@@ -76,7 +76,7 @@ int sub_6863E0(void * a1, void * a2)
   Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6864d8*/
   ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6864e3*/
   ScenarioClass::LoadScenarioAndStart((char *)&((unsigned int *)(dword_A8B230))[130].abstractFlags, 0, a2, ((AbstractClass *)dword_A8B230)[375].uniqueId); /*0x6864fc*/
-  ((GameResult*)(GameResult *)&stru_8A38E0)->CalcScore(); /*0x686506*/
+  ((::gamemd::GameResult*)(::gamemd::GameResult *)&stru_8A38E0)->CalcScore(); /*0x686506*/
   while ( 1 ) /*0x68650f*/
   {
     v6 = 60; /*0x68650f*/
@@ -126,11 +126,11 @@ AbstractClass * * sub_686570()
   ((unsigned int *)(dword_A8B230))[130].vtable3 = (void *)1; /*0x6865b0*/
   ((AsyncIO *)(v9))->Shutdown(); /*0x6865ba*/
   ((gamemd::Timer*)(*(gamemd::Timer**)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6865c5*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x6865d9*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x6865d9*/ dword_887640, (ObjectClass *)((void *)((void *)((void *)(g_DSurface_Hidden)))), 0);
 
 
 
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x6865e4*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))((void *)(dword_887640));  /*0x6865e4*/
   Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6865ee*/
   ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x6865fa*/
   ((Audio*)(Audio *)g_MixerState)->GetFlag(); /*0x686605*/

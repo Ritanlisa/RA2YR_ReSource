@@ -49,6 +49,7 @@
 #include "e4/classes/DisplayClass_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
 #include "e4/classes/Rect_Point_e4.hpp"
+#include "e4/classes/ControlClass_e4.hpp"
 #include "classes/FogOfWar_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 
@@ -739,7 +740,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   {
     v33 = 0; /*0x6abfd3*/
     v12 = 203; /*0x6abfd7*/
-    v13 = (int *)&unk_B07C58; /*0x6abfdc*/
+    v13 = (int *)&unk_B07C58; /*0x6abfdc (W13A: raw fn_6A.c form, drop spurious (unsigned int))*/
     do /*0x6ac02d*/
     {
       v14 = *v13; /*0x6abfe4*/

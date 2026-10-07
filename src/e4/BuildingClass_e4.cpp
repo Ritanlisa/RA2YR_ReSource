@@ -699,7 +699,7 @@ v110.ComPtr_field_0x0C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned in
           v98 = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v97); /*0x73b010*/
           if ( *(unsigned char *)(v98 + 557) || *(unsigned char *)(v98 + 680) && *(unsigned int *)(*(unsigned int *)(_EBP + 1732) + 1460) == 12 ) /*0x73b034*/
           {
-            v99 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)_EBP + 72))( _EBP, (int *)(&v110.ComPtr_field_0x20)); /*0x73b042*/
+            v99 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)_EBP + 72))( _EBP, (int *)((int)(&v110.ComPtr_field_0x20))); /*0x73b042*/
             StartAudioControllerAt( *(unsigned int *)(v98 + 496), (unsigned int *)(v99), 0); /*0x73b04d*/
             ((BuildingClass *)(int)v96)->SellEffects( -1); /*0x73b056*/
             __asm /*0x73b05b*/

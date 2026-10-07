@@ -92,7 +92,7 @@ public:
     CRC32();
 
     // IDA 0x69E000
-    static uint32_t Compute(const void* data, uint32_t size, int a3); // 0x4A1FB0
+    static uint32_t Compute(unsigned __int8 *a1, int a2, int a3); // 0x4A1FB0
 
     uint32_t    m_CRC;          // 0x00
     uint32_t    m_Count;        // 0x04

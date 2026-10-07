@@ -49,6 +49,10 @@
 #include "e4/classes/SpawnManagerClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
+#include "e4/classes/AudioConfig_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Transform_e4.hpp"
+#include "e4/minimal_carriers.hpp"
 #include "classes/BuildingClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Delegate_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
@@ -407,7 +411,7 @@ unsigned int * TechnoClass::Update(int a2)
   v3 = (TechnoClass *)v2; /*0x6f3f41*/
   v4 = *(Object **)(v2 + 540); /*0x6f3f43*/
   if ( v4 ) /*0x6f3f4b*/
-    *(unsigned char *)(v2 + 1050) = dword_A83D4C   ==   (unsigned int)((unsigned int)(v4)); /*0x6f3f55*/
+    *(unsigned char *)(v2 + 1050) = dword_A83D4C   ==   (unsigned int)(v4)); /*0x6f3f55*/
   result = (unsigned int *)(*(int (**)(void))(*(unsigned int *)v2 + 132))(); /*0x6f3f69*/
   if ( result ) /*0x6f3f71*/
   {
@@ -602,7 +606,7 @@ int TechnoClass::DTOR()
     *((unsigned int *)this + 157) = 0; /*0x6f459e*/
   }
   v8 = *(unsigned int **)&this->airstrike; /*0x6f45a4*/
-  if ( v8 && v8[19]   ==   (unsigned int)((unsigned int)(this ))) /*0x6f45b1*/
+  if ( v8 && v8[19]   ==   (unsigned int)(this ))) /*0x6f45b1*/
   {
     (*(void (**)(unsigned int *, int))(*v8 + 32))( (unsigned int *)(v8), 1); /*0x6f45bb*/
     *((unsigned int *)this + 165) = 0; /*0x6f45be*/
@@ -617,11 +621,11 @@ int TechnoClass::DTOR()
   *((unsigned int *)this + 135) = 0; /*0x6f4610*/
   *((unsigned char *)this + 1050) = 0; /*0x6f4616*/
   v18 = (unsigned int)this;
-  v9 = (*(int (**)(unsigned char *, int *))(*(unsigned int *)((char *)&stru_A8EB00 + 148) + 16))( (unsigned char *)(((char *)&stru_A8EB00 + 148)), (int *)(&v18)); /*0x6f462c*/
+  v9 = (*(int (**)(unsigned char *, int *))(*(unsigned int *)((char *)&stru_A8EB00 + 148) + 16))( (unsigned char *)(((char *)&stru_A8EB00 + 148)), (int *)((char *)(&v18))); /*0x6f462c*/
   if ( v9 != -1 ) /*0x6f4633*/
     FactoryClass::RemoveItem((FactoryClass *)((char *)&stru_A8EB00 + 148), v9); /*0x6f463b*/
   v18 = (unsigned int)this;
-v10 = (*(int (**)(char *, int *))(*(unsigned int *)&dword_B0F6C8+ 16))( /*0x6f4654*/ &dword_B0F6C8, (int *)(&v18));
+v10 = (*(int (**)(char *, int *))(*(unsigned int *)&dword_B0F6C8+ 16))( /*0x6f4654*/ &dword_B0F6C8, (int *)((char *)((char *)(&v18))));
 
 
   if ( v10 != -1 ) /*0x6f465a*/

@@ -1846,7 +1846,7 @@ char * sub_473960(unsigned int a1)
   if ( a1 >= 0xB ) /*0x473963*/
     return (char *)(g_Str__none_); /*0x47396d*/
   else
-    return (char *)(off_81B7CC[2 * a1]; /*0x473965*/);
+    return (char *)(off_81B7CC[2 * a1]); /*0x473965*/
 }
 } // namespace gamemd
 

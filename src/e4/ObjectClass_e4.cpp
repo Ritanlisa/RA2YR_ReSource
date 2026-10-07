@@ -36,6 +36,7 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/AudioFile_e4.hpp"
 #include "classes/Targeting_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/PowerClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Matrix3x3_e4.hpp"  // G42.36 C2027 supply
@@ -167,7 +168,7 @@ referenceCount = (*(int ((gamemd::TechnoClass *)(**))(TechnoClass *, int16_t *, 
     case 2: /*0x4d7de0*/
 LABEL_38:
       aP4 = (void **)*FindPlacementCell((gamemd::FootClass *)((ObjectClass *)&v42), referenceCount,(IUnknown **)( v7), 0, v38, v39); /*0x4d8065*/
-      if ( aP4 == (gamemd::FootClass *)((void **))g_FootClass_Pool ) /*0x4d8081*/
+      if ( aP4 == (gamemd::FootClass *)(void **)g_FootClass_Pool ) /*0x4d8081*/
         return 0; /*0x4d8081*/
       vtable0 = (unsigned int)this->vtable1; /*0x4d8099*/
       v37 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(aP3)); /*0x4d80a6*/
@@ -425,7 +426,7 @@ LABEL_28:
             *(unsigned int *)(aP0 + 1652) = 0; /*0x4db550*/
             ((ObjectClass *)((int *)(aP0 + 1652)))->updateStateFlags(); /*0x4db55a*/
             *(unsigned int *)(aP0 + 1652) = 0; /*0x4db566*/
-            OleLoadFromStream((void *)(v4), &IID_ILocomotion, (LPVOID *)(aP0 + 1652)); /*0x4db568*/
+            OleLoadFromStream((void *)(v4),(void *)(&IID_ILocomotion), (LPVOID *)(aP0 + 1652)); /*0x4db568*/
             *(unsigned int *)(aP0 + 1440) = 0; /*0x4db574*/
             ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
             ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1496)); /*0x4db591*/
@@ -877,11 +878,11 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     if ( *(float *)(v21 + 808) > 0.0 ) /*0x5141cd*/
       v30 = -v20; /*0x5141d1*/
     v26 = (float)v34; /*0x5141e1*/
-    Matrix3x3::ApplyCol1(v39.m_Data, v26); /*0x5141e4*/
+    Matrix3x3::ApplyCol1((void *)(v39.m_Data), v26); /*0x5141e4*/
     v27 = (float)v32; /*0x5141f2*/
     ((Matrix3x4 *)(v37.m_Data))->Translate(v27); /*0x5141f5*/
     v28 = (float)v30; /*0x514203*/
-    Matrix3x3::ApplyCol0(v37.m_Data, v28); /*0x514206*/
+    Matrix3x3::ApplyCol0((void *)(v37.m_Data), v28); /*0x514206*/
     ((Matrix3x3 *)(v37.m_Data))->RotateX(*(float *)(a1->vtable2 + 808)); /*0x514219*/
     Matrix3D::RotateZ(v37.m_Data, *(float *)(a1->vtable2 + 812)); /*0x51422c*/
     Transform = ((Turret *)((signed int)((LocomotionClass *)a1)))->GetTransform( (int)((Turret *)((signed int)((LocomotionClass *)a1))), (float *)(v40), (unsigned int *)(a3)); /*0x51423b*/

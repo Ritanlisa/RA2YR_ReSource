@@ -177,7 +177,7 @@ LABEL_10:
     *((unsigned int *)this + 11) = (unsigned int)(result); /*0x720732*/
     if ( result ) /*0x720735*/
     {
-      SetAudioFileName((int)result, aMusicStream); /*0x72073e*/
+      SetAudioFileName((int)result,(const char *)(aMusicStream)); /*0x72073e*/
       ((AudioQueue *)(*((unsigned int *)this + 11)))->IsEmpty((int)((AudioQueue *)(*((unsigned int *)this + 11))), g_MixerChannel_Theme); /*0x72074c*/
       return (void *)((AudioQueue *)(*((unsigned int *)this + 11)))->IsNotEmpty((int)((AudioQueue *)(*((unsigned int *)this + 11))), g_MixerChannel_Stream); /*0x72075a*/
     }

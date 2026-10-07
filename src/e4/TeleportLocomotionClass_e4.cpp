@@ -37,9 +37,9 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   this->Timer[2] = 0; /*0x718055*/
   this->Timer[0] = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
-  *(unsigned int *)this->LocomotionClass = &vt_TeleportLocomotionClass; /*0x71805e*/
-  *(unsigned int *)&this->LocomotionClass[4] = &vt_TeleportLocomotionClass; /*0x718064*/
-  *(unsigned int *)this->__pad_18 = &vt_TeleportLocomotionClass; /*0x71806b*/
+  *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_TeleportLocomotionClass; /*0x71805e*/
+  *(unsigned int *)&this->LocomotionClass[4] = (unsigned int)&vt_TeleportLocomotionClass; /*0x718064*/
+  *(unsigned int *)this->__pad_18 = (unsigned int)&vt_TeleportLocomotionClass; /*0x71806b*/
   return (int)this->LocomotionClass; /*0x718074*/
 
 }

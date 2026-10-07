@@ -334,7 +334,7 @@ LABEL_6:
       return TerrainTypeClass::TerrainTypeClass(v3, Source); /*0x71e311*/
     return 0; /*0x71e305*/
   }
-  while ( _strcmpi((*((unsigned int *)dword_A8E31C + v2) + 36), Source) ) /*0x71e2ea*/
+  while ( _strcmpi((const char *)((*((unsigned int *)dword_A8E31C + v2) + 36)), Source) ) /*0x71e2ea*/
   {
     if ( ++v2 >= dword_A8E328 ) /*0x71e2f4*/
       goto LABEL_6; /*0x71e2f4*/
@@ -350,19 +350,19 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
   int v4; // eax
   TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Image = ((unsigned int *)a3)[0]; /*0x71e364*/
-  a3->vtable1 = &vt_TerrainTypeClass; /*0x71e36a*/
-  ((unsigned int *)a3)[0] = &vt_TerrainTypeClass; /*0x71e372*/
-  ((unsigned int *)a3)[0] = &vt_TerrainTypeClass; /*0x71e379*/
-  ((unsigned int *)a3)[0] = &vt_TerrainTypeClass; /*0x71e380*/
+  Image = (SHPStruct *)((unsigned int)((gamemd::SHPStruct *)(((unsigned int *)a3)[0]))); /*0x71e364*/
+  a3->vtable1 = (unsigned int)&vt_TerrainTypeClass; /*0x71e36a*/
+  ((unsigned int *)a3)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e372*/
+  ((unsigned int *)a3)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e379*/
+  ((unsigned int *)a3)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e380*/
   if ( Image ) /*0x71e387*/
   {
     __3_YAXPAX_Z(Image); /*0x71e38a*/
     ((unsigned int *)a3)[0] = 0; /*0x71e392*/
   }
   AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x71e3a0*/
-  v6 = a3; /*0x71e3b5*/
-  v4 = (*(int (**)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6); /*0x71e3b9*/
+ v6 = (TerrainTypeClass *)(a3); /*0x71e3b5*/
+  v4 = (unsigned int)((*(int (**)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6))); /*0x71e3b9*/
   if ( v4 != -1 && v4 < dword_A8E328 && v4 < --dword_A8E328 ) /*0x71e3d4*/
   {
     do /*0x71e3ec*/
@@ -374,7 +374,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
   }
   ((ObjectTypeClass *)((int)a3))->Destruct(); /*0x71e3f0*/
   if ( (a3 & 1) != 0 ) /*0x71e3fa*/
-    __3_YAXPAX_Z(a3); /*0x71e3fd*/
+    __3_YAXPAX_Z((void *)(a3)); /*0x71e3fd*/
   return a3; /*0x71e407*/
 
 }
@@ -416,7 +416,7 @@ bool  TerrainTypeClass::GetHeight(TerrainClass * a2, int a3)
   TerrainClass *v4; // eax
 
   v4 = (TerrainClass *)__2_YAPAXI_Z(0xE0u); /*0x71ddd8*/
-  return v4 && ((TerrainClass *)(v4))->Construct(this, this); /*0x71ddf7*/
+  return v4 && ((TerrainClass *)(v4))->Construct(this,(int16_t *)(this)); /*0x71ddf7*/
 
 }
 // 0x71DE10
@@ -445,10 +445,10 @@ unsigned int *  TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
   v5 = (void *)*a2; /*0x71e0d9*/
   v6 = (void *)a2[1]; /*0x71e0ea*/
   v7 = a2[2]; /*0x71e0f1*/
-  GroundHeight = Cell::GetGroundHeight(&v5); /*0x71e0f5*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v5)); /*0x71e0f5*/
   v3 = (void *)v7; /*0x71e0fa*/
   if ( v7 < GroundHeight ) /*0x71e100*/
-    v3 = (void *)Cell::GetGroundHeight(&v5); /*0x71e111*/
+    v3 = (void *)Cell::GetGroundHeight((unsigned int *)(&v5)); /*0x71e111*/
   a1->ObjectTypeClass = v5; /*0x71e11e*/
   ((unsigned int *)a1)[0] = (unsigned int)(v6); /*0x71e124*/
   ((unsigned int *)a1)[0] = (unsigned int)(v3); /*0x71e128*/
@@ -485,16 +485,16 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x71e1db*/
+  result = (unsigned int)(ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1)); /*0x71e1db*/
   if ( result >= 0 ) /*0x71e1e2*/
   {
     if ( aP0 ) /*0x71e1e6*/
     {
       ((ObjectTypeClass*)((ObjectTypeClass *)aP0))->Construct((int)&aP1); /*0x71e1ef*/
-      aP0->vtable1 = &vt_TerrainTypeClass; /*0x71e1f4*/
-      ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e1fa*/
-      ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e201*/
-      ((unsigned int *)aP0)[0] = &vt_TerrainTypeClass; /*0x71e208*/
+      aP0->vtable1 = (unsigned int)&vt_TerrainTypeClass; /*0x71e1f4*/
+      ((unsigned int *)aP0)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e1fa*/
+      ((unsigned int *)aP0)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e201*/
+      ((unsigned int *)aP0)[0] = (unsigned int)&vt_TerrainTypeClass; /*0x71e208*/
     }
     ((VoxelAnimType*)((char *)aP0))->LoadAnim(); /*0x71e211*/
     ((ObjectTypeClass*)((char *)aP0))->Load2DArt(); /*0x71e218*/
@@ -510,7 +510,7 @@ int TerrainTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass *
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x71e24f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((gamemd::TechnoTypeClass *)((AbstractClass *)aP0), aP1,(gamemd::TechnoTypeClass *)(aP2)); /*0x71e24f*/
   if ( result >= 0 ) /*0x71e256*/
     return 0; /*0x71e258*/
   return result; /*0x71e25a*/

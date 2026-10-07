@@ -254,7 +254,7 @@ char CampaignClass::GetMapData(uint8_t ***a2) {
 // 0x46CFC0
 namespace gamemd {
 int CampaignClass::Stat(int *a2) {
-    ((AbstractTypeClass *)(AbstractTypeClass *)this)->ProcessPower((int)a2); /*0x46cfc9*/
+    ((::gamemd::AbstractTypeClass*)(::gamemd::AbstractTypeClass *)this)->ProcessPower((int)a2); /*0x46cfc9*/
     Power::TimerProcess(this->scenario[28]); /*0x46cfd7*/
     ((Checksum *)a2)->AddString((uint8_t *)&this->scenario[29]); /*0x46cfe5*/
     return Power::TimerProcess(this->description[28]); /*0x46cff8*/
@@ -270,7 +270,7 @@ int CampaignClass::GetValue(unsigned int *result) {
     result = this->q05C; /*0x49e503*/
     *result = result; /*0x49e506*/
     IDA_LOBYTE(result) = this->q060; /*0x49e508*/
-    return (int)(result; /*0x49e50b*/);
+    return (int)(result); /*0x49e50b*/
 }
 } // namespace gamemd
 
@@ -1314,13 +1314,15 @@ int TriggerClass::ProcessEvents() {
 namespace gamemd {
 int TriggerTypeClass::GetAction(int a2, int a3) {
     TriggerTypeClass *NextTrigger; // eax
+    TActionClass *i;
+    int result;
 
     NextTrigger = this->nextTrigger; /*0x727098*/
     if ( NextTrigger && NextTrigger == (TriggerTypeClass *)a2 ) /*0x7270a4*/
       this->nextTrigger = NextTrigger->nextTrigger; /*0x7270ac*/
     for ( i = this->firstAction; i; i = (TActionClass *)i->TActionClass_field_28 ) /*0x7270bb*/
       (*((void (__thiscall **)(TActionClass *, int, int))*(void ***)i + 10))(i, a2, 1); /*0x7270c4*/
-    FirstAction = this->firstAction; /*0x7270ce*/
+    FirstAction = (unsigned int)(this->firstAction); /*0x7270ce*/
     if ( FirstAction == (TActionClass *)a2 ) /*0x7270d6*/
       this->firstAction = (TActionClass *)FirstAction->TActionClass_field_28; /*0x7270db*/
     for ( j = this->firstEvent; j; j = (TEventClass *)j->TEventClass_field_28 ) /*0x7270e9*/

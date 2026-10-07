@@ -5,6 +5,9 @@
 #include <mmsystem.h>
 #include <dsound.h>
 #include <cstring>
+extern int g_VocPlayState;  // data: 0xB1D388 (globals_core.hpp:1028)
+extern int g_VocAudioConfig;  // data: 0xB1D37C (e4_globals_decls.hpp:1826 int 形; 41 行 use-cast 兼容)
+extern char g_Str_Invalid_Voc[];  // data: 0x846574 raw char* 真值 (globals_core.hpp:581 同址)
 
 namespace gamemd
 {

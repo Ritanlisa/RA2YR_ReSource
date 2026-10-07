@@ -46,6 +46,7 @@
 #include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/PtrVector_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
+#include "e4/classes/MapPreview_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GDlg_e4.hpp"  // G57w10 D supply
 #include "e4/classes/StartCombo_e4.hpp"  // G57w10 D supply
@@ -414,7 +415,7 @@ int Skirmish::RenderPreview(HWND aP1)
 
 
     DSurface_field_0x0 = (void (**)(DSurface *, int *, unsigned int, int))DSurface_Alternate->DSurface_field_0x0; /*0x64086c*/
-    v13 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int))(**(unsigned int * *)&this->infantryBlinkTimer))( *(unsigned int *)this, (int *)(v27), 0, 0); /*0x640875*/
+    v13 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int))(**(unsigned int * *)&this->infantryBlinkTimer))( *(unsigned int *)this, (int *)((gamemd::DSurface *)(v27)), 0, 0); /*0x640875*/
     DSurface_field_0x0[2](DSurface_Alternate, &v34, *(unsigned int *)this, v13); /*0x640887*/
     HIBYTE(v23) = 0; /*0x640896*/
     if ( (stru_AC4B30.__pad_EC[628] & 1) == 0 ) /*0x64089b*/

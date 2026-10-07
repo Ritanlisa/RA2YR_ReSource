@@ -504,7 +504,7 @@ int AnimClass::setLoopCount()
     if ( !missionStatus ) /*0x449a60*/
     {
       BuildingClass_StartProduction(this, 0); /*0x449b36*/
-      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 11); /*0x449b41*/
+      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))((gamemd::BuildingClass *)(this), 11); /*0x449b41*/
       UnitExitSound = this->Type->UnitExitSound; /*0x449b4d*/
       if ( UnitExitSound != -1 /*0x449b67*/
         || (UnitExitSound = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1736), UnitExitSound != -1) )
@@ -524,15 +524,15 @@ int AnimClass::setLoopCount()
     v8[0] = *(unsigned int *)&this->vtable2; /*0x449a82*/
     v8[1] = *(unsigned int *)&this->vtable2; /*0x449a8d*/
     v8[2] = *(unsigned int *)&this->vtable3; /*0x449a96*/
-    StartAudioController(v8, (int **)&((BuildingClass *)this)->WasOnline); /*0x449a9a*/
+    StartAudioController((int)(v8), (int **)&((BuildingClass *)this)->WasOnline); /*0x449a9a*/
     if ( !this->BuildingClass_field_bool_6DD ) /*0x449a9f*/
       return 1; /*0x449ba9*/
-    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 12); /*0x449ab3*/
-    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x449abf*/
+    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))((gamemd::BuildingClass *)(this), 12); /*0x449ab3*/
+    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))((gamemd::BuildingClass *)(this), 3); /*0x449abf*/
     BuildingClass_StartProduction(this, 1); /*0x449ac9*/
-    (*((void (__thiscall **)(BuildingClass *, unsigned int))this->vtable1 + 311))(this, 0); /*0x449ad4*/
-    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x449ae2*/
-    Type = this->Type; /*0x449ae8*/
+    (*((void (__thiscall **)(BuildingClass *, unsigned int))this->vtable1 + 311))((gamemd::BuildingClass *)(this), 0); /*0x449ad4*/
+    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))((gamemd::BuildingClass *)(this), 5, 0); /*0x449ae2*/
+ Type = (BuildingTypeClass *)(this->Type); /*0x449ae8*/
     if ( !Type->LaserFence ) /*0x449aee*/
     {
       IDA_LOBYTE(v4) = 0; /*0x449af8*/
@@ -689,7 +689,7 @@ int* AnimClass::ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, i
     this->AnimClass_field_0x8 = (int)&vt_AnimClass; /*0x422028*/
     *(unsigned int *)&this->__pad_C = (unsigned int)&off_7E3328;  /*g57w10 r4: raw fn_42:2007 原文 this->__pad_C*/ /*0x422030*/
     (&this->__pad_D8)[4] = 0; /*0x422037*/
-    AbstractClass::GenerateUniqueID((AbstractClass *)&this->AnimClass_field_0x4); /*0x42203d*/
+    AbstractClass::GenerateUniqueID((int)((AbstractClass *)&this->AnimClass_field_0x4)); /*0x42203d*/
     ((AudioController *)&this->AnimClass_field_0x1A0)->Init(); /*0x422048*/
     ((AudioController *)&this->AnimClass_field_0x1B4)->Init(); /*0x422053*/
     if ( dword_A8E9B8 < dword_A8E9B0 /*0x42208b*/

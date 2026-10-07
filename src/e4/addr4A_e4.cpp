@@ -70,6 +70,9 @@
 #include "e4/classes/TextGroup_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/WaypointClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"  // G42.36 C2027 supply
 
 // 0x4A0190
@@ -393,7 +396,7 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
   if ( (unsigned char)this || (result = *(unsigned char *)(v3 + 8)) != 0 ) /*0x4a2383*/
   {
     v7 = (*((int (**)(DSurface *, int))DSurface_Sidebar->DSurface_field_0x0 + 31))( (DSurface *)(DSurface_Sidebar), (int)(a2)); /*0x4a239f*/
-    if ( dword_A83D4C == (unsigned int)((gamemd::Object *))HouseClass_Observer ) /*0x4a23aa*/
+    if ( dword_A83D4C == (unsigned int)(gamemd::Object *)HouseClass_Observer ) /*0x4a23aa*/
     {
       UI_Draw_6D0E60(v4); /*0x4a23b5*/
       v19 = v7 / 2; /*0x4a23c2*/
@@ -2294,7 +2297,7 @@ AbstractClass * * DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4)
       *(unsigned char *)(v8 + 1072) = 0; /*0x4ae7fa*/
       v4 = (unsigned int **)dword_A8ECBC; /*0x4ae800*/
     }
-    v6 = (wchar_t *)(dword_A8ECC8); /*0x4ae805*/
+ v6 = (wchar_t *)((wchar_t *)(dword_A8ECC8)); /*0x4ae805*/
   }
   v9 = a1; /*0x4ae810*/
   if ( a1 ) /*0x4ae816*/

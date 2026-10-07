@@ -927,7 +927,7 @@ bool DSurface::Blit(int *a2, int *a3, unsigned int *a4, int *a5, int *a6, int a7
     v66 = v41; /*0x4bb4f7*/
     v64 = v35; /*0x4bb513*/
     v67 = v39; /*0x4bb51a*/
-    if ( (unsigned __int8)IntersectSurfaceRects(&v49, (int)&v64, &v56, (int)&v60) ) /*0x4bb521*/
+    if ( (unsigned __int8)IntersectSurfaceRects(&v49,(int *)((int)&v64), &v56,(int *)((int)&v60)) ) /*0x4bb521*/
     {
       v53[0] = v64 + v49; /*0x4bb544*/
       v53[1] = v65 + v50; /*0x4bb552*/

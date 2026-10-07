@@ -1526,7 +1526,7 @@ namespace gamemd {
 int CheckListClass::ScrollUp(int a2) {
     int *Clamped; // eax
 
-    Clamped = (int *)(long)((gamemd::Array *)(ListClass *)this)->GetClamped(a2); /*0x488365*/
+    Clamped = (int *)(long)((::gamemd::Array *)(ListClass *)this)->GetClamped(a2); /*0x488365*/
     if ( Clamped ) /*0x48836c*/
       return *Clamped; /*0x48836e*/
     else
@@ -1546,7 +1546,7 @@ void CheckListClass::GetSelected(wchar_t *String2) {
     {
       while ( 1 ) /*0x48839b*/
       {
-        Clamped = (const wchar_t **)(long)((gamemd::Array *)(ListClass *)this)->GetClamped(v3); /*0x48839b*/
+        Clamped = (const wchar_t **)(long)((::gamemd::Array *)(ListClass *)this)->GetClamped(v3); /*0x48839b*/
         v5 = Clamped; /*0x4883a0*/
         if ( Clamped ) /*0x4883a4*/
         {
@@ -1575,7 +1575,7 @@ int CheckListClass::SetItemData(wchar_t *String2) {
     {
       while ( 1 ) /*0x48840a*/
       {
-        Clamped = (const wchar_t **)(long)((gamemd::Array *)(ListClass *)this)->GetClamped(v3); /*0x48840a*/
+        Clamped = (const wchar_t **)(long)((::gamemd::Array *)(ListClass *)this)->GetClamped(v3); /*0x48840a*/
         if ( Clamped ) /*0x488411*/
         {
           if ( !_wcsicmp(*Clamped, String2) ) /*0x488417*/

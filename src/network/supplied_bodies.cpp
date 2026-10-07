@@ -109,11 +109,11 @@ HRESULT __stdcall ConnectionClass::QueryInterface(const IID&, void**)
     void (__thiscall ***PlayerIndex)(unsigned int, int); // ecx
 
     v3 = (void *)*((unsigned int *)this + 8); /*0x48c653*/
-    *(unsigned int *)this->__pad_0 = &vt_ConnectionClass; /*0x48c656*/
+    *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ConnectionClass; /*0x48c656*/
     RA2_OPDEL(v3); /*0x48c65d*/
     PlayerIndex = (void (__thiscall ***)(unsigned int, int))this->PlayerIndex; /*0x48c662*/
     if ( PlayerIndex ) /*0x48c66a*/
-      (**PlayerIndex)(PlayerIndex, 1); /*0x48c670*/
+      (**PlayerIndex)((unsigned int)(PlayerIndex), 1); /*0x48c670*/
     if ( (a2 & 1) != 0 ) /*0x48c677*/
       RA2_OPDEL(this); /*0x48c67a*/
     return this->__pad_0; /*0x48c684*/
@@ -151,7 +151,7 @@ int NetworkID::Compare(int a2) {
 namespace gamemd {
 unsigned int * IPXConnClass::QueryInterface(char,int,int,int)
 {
-    *(unsigned int *)this = &vt_IPXConnClass; /*0x53f853*/  // g57e2 W2
+    *(unsigned int *)this = (unsigned int)&vt_IPXConnClass; /*0x53f853*/  // g57e2 W2
     ConnectionClass_dtor((void *)this); /*0x53f859*/
     if ( (a2 & 1) != 0 ) /*0x53f863*/
       RA2_OPDEL(this); /*0x53f866*/
@@ -237,7 +237,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       }
       v17 = *((unsigned int *)a2 + 1); /*0x53fe8e*/
       v18 = *((unsigned short *)this + 92); /*0x53fe91*/
-      IPXGlobalConnClass_field_0x24 = this->IPXGlobalConnClass_field_0x24; /*0x53fe98*/
+      IPXGlobalConnClass_field_0x24 = (unsigned int)(this->IPXGlobalConnClass_field_0x24)); /*0x53fe98*/
       v24 = 2; /*0x53fe9f*/
       v26 = v17; /*0x53feaa*/
       v27 = v18; /*0x53feb4*/
@@ -273,7 +273,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
     }
     if ( *((unsigned char *)a2 + 2) != 2 ) /*0x53fce3*/
       return 1; /*0x53fce3*/
-    IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x53fce9*/
+    IPXGlobalConnClass_field_0x04 = (unsigned int)(this->IPXGlobalConnClass_field_0x04)); /*0x53fce9*/
     v8 = 0; /*0x53fcec*/
     if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x53fcf3*/
       return 1; /*0x53fefb*/
@@ -283,7 +283,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       v10 = TileIndex[5]; /*0x53fcff*/
       if ( *((unsigned int *)a2 + 1) == *(unsigned int *)(v10 + 4) && !*(unsigned char *)(v10 + 2) ) /*0x53fd0a*/
         break; /*0x53fd0a*/
-      IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x53fd11*/
+      IPXGlobalConnClass_field_0x04 = (unsigned int)(this->IPXGlobalConnClass_field_0x04)); /*0x53fd11*/
       if ( ++v8 >= *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ) /*0x53fd18*/
         return 1; /*0x53fd26*/
     }
@@ -686,8 +686,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
               if ( strlen((const char *)v46) > 5 || (unsigned __int16)v17 > 0x3FFFu ) /*0x560807*/
               {
                 v46[5] = (LPARAM)asc_82083C; /*0x560820*/
-                StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_MainOpt_cpp, 983); /*0x56082d*/
-                v18 = (int *)GetStringCSF(aTxtInvalidSock, 0, g_Str_File_MainOpt_cpp, 983); /*0x56083f*/
+ StringCSF = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 983)); /*0x56082d*/
+                v18 = (int *)GetStringCSF((const char *)(aTxtInvalidSock), 0, g_Str_File_MainOpt_cpp, 983); /*0x56083f*/
                 Dialog_ShowMessageBox(v18, StringCSF, 0, 0, 0, v37); /*0x560849*/
                 return 0; /*0x56085a*/
               }
@@ -729,8 +729,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
                 || (unsigned __int8)v23 != v23 )
               {
                 v46[6] = (LPARAM)asc_82083C; /*0x56095b*/
-                v33 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_MainOpt_cpp, 1017); /*0x560968*/
-                v25 = (int *)GetStringCSF(aTxtDestnetAddr, 0, g_Str_File_MainOpt_cpp, 1017); /*0x56097a*/
+ v33 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1017)); /*0x560968*/
+                v25 = (int *)GetStringCSF((const char *)(aTxtDestnetAddr), 0, g_Str_File_MainOpt_cpp, 1017); /*0x56097a*/
                 Dialog_ShowMessageBox(v25, v33, 0, 0, 0, v37); /*0x560984*/
                 return 0; /*0x560995*/
               }
@@ -747,8 +747,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
             if ( v28 > 0xFFFF ) /*0x560a43*/
             {
               v46[4] = (LPARAM)asc_82083C; /*0x560a5c*/
-              v34 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_MainOpt_cpp, 1058); /*0x560a69*/
-              v29 = (int *)GetStringCSF(aTxtPortNumberE, 0, g_Str_File_MainOpt_cpp, 1058); /*0x560a7b*/
+ v34 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1058)); /*0x560a69*/
+              v29 = (int *)GetStringCSF((const char *)(aTxtPortNumberE), 0, g_Str_File_MainOpt_cpp, 1058); /*0x560a7b*/
               Dialog_ShowMessageBox(v29, v34, 0, 0, 0, v37); /*0x560a85*/
               return 0; /*0x560a96*/
             }
@@ -757,8 +757,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
               if ( !byte_A8E180 ) /*0x560abf*/
               {
                 v46[8] = (LPARAM)asc_82083C; /*0x560ad8*/
-                v35 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_MainOpt_cpp, 1067); /*0x560ae1*/
-                v30 = (int *)GetStringCSF(aTxtFirewallSet, 0, g_Str_File_MainOpt_cpp, 1067); /*0x560af3*/
+ v35 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1067)); /*0x560ae1*/
+                v30 = (int *)GetStringCSF((const char *)(aTxtFirewallSet), 0, g_Str_File_MainOpt_cpp, 1067); /*0x560af3*/
                 Dialog_ShowMessageBox(v30, v35, 0, 0, 0, v37); /*0x560afd*/
               }
               byte_A8E180 = 1; /*0x560b02*/
@@ -770,8 +770,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
             if ( v28 > 0 && !dword_A8E254 ) /*0x560b1d*/
             {
               v46[7] = (LPARAM)asc_82083C; /*0x560b36*/
-              v36 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_MainOpt_cpp, 1078); /*0x560b3f*/
-              v31 = (int *)GetStringCSF(aTxtFirewallSet_0, 0, g_Str_File_MainOpt_cpp, 1078); /*0x560b51*/
+ v36 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1078)); /*0x560b3f*/
+              v31 = (int *)GetStringCSF((const char *)(aTxtFirewallSet_0), 0, g_Str_File_MainOpt_cpp, 1078); /*0x560b51*/
               Dialog_ShowMessageBox(v31, v36, 0, 0, 0, v37); /*0x560b5b*/
             }
             dword_A8E254 = v28; /*0x560b65*/
@@ -829,7 +829,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
   LABEL_20:
           if ( !SendMessageA(v5, 0x146u, 0, 0) ) /*0x5605fa*/
           {
-            v9 = GetStringCSF(aTxtNoBoundNetC, 0, g_Str_File_MainOpt_cpp, 894); /*0x560611*/
+ v9 = (wchar_t *)(GetStringCSF((const char *)(aTxtNoBoundNetC), 0, g_Str_File_MainOpt_cpp, 894)); /*0x560611*/
             SendMessageA(v5, 0x4C2u, 0, (LPARAM)v9); /*0x56061f*/
           }
           v10 = dword_A8EBB4; /*0x560621*/
@@ -927,7 +927,7 @@ char ModemGuest::Dialog()
     Dialog::Destroy(*(Dialog **)this->__pad_0); /*0x5b4abb*/
     if ( IDA_LOBYTE(this->ModemGuest_field_0x08) == 1 ) /*0x5b4ac4*/
       SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x5b4acb*/
-    ModemGuest_field_0x04 = this->ModemGuest_field_0x04; /*0x5b4ad0*/
+    ModemGuest_field_0x04 = (unsigned int)(this->ModemGuest_field_0x04)); /*0x5b4ad0*/
     if ( ModemGuest_field_0x04 != 1 ) /*0x5b4ad6*/
     {
       if ( ModemGuest_field_0x04 == 2 ) /*0x5b4ae4*/
@@ -1010,24 +1010,24 @@ void ModemGuest::InitDialog()
     if ( v6 ) /*0x5b4f5c*/
     {
       SendMessageA(v6, 0x14Bu, 0, 0); /*0x5b4f6c*/
-      StringCSF = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[37], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 280); /*0x5b4f7f*/
+ StringCSF = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[37]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 280)); /*0x5b4f7f*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)StringCSF); /*0x5b4f8d*/
-      v9 = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[35], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 281); /*0x5b4fa0*/
+ v9 = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[35]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 281)); /*0x5b4fa0*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v9); /*0x5b4fae*/
-      v10 = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[32], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 282); /*0x5b4fc1*/
+ v10 = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[32]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 282)); /*0x5b4fc1*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v10); /*0x5b4fcf*/
-      v11 = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[29], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 283); /*0x5b4fe2*/
+ v11 = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[29]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 283)); /*0x5b4fe2*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v11); /*0x5b4ff0*/
-      v12 = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[26], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 284); /*0x5b5003*/
+ v12 = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[26]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 284)); /*0x5b5003*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v12); /*0x5b5011*/
-      v13 = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[22], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 285); /*0x5b5024*/
+ v13 = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[22]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 285)); /*0x5b5024*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v13); /*0x5b5032*/
-      v14 = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[19], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 286); /*0x5b5045*/
+ v14 = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[19]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 286)); /*0x5b5045*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v14); /*0x5b5053*/
-      v15 = GetStringCSF((wchar_t *)&((unsigned int *)&stru_82BA00)[16], 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 287); /*0x5b5066*/
+ v15 = (wchar_t *)(GetStringCSF((const char *)((wchar_t *)&((unsigned int *)&stru_82BA00)[16]), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 287)); /*0x5b5066*/
       SendMessageA(v7, 0x4C1u, 0xFFFFFFFF, (LPARAM)v15); /*0x5b5074*/
       v16 = 0; /*0x5b5076*/
-      v17 = dword_8316A8; /*0x5b5078*/
+ v17 = (LPARAM *)(dword_8316A8); /*0x5b5078*/
       do /*0x5b5094*/
         SendMessageA(v7, 0x498u, v16++, *v17++); /*0x5b5088*/
       while ( (int)v17 < (int)&off_8316C8 ); /*0x5b5094*/

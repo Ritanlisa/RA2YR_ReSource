@@ -352,7 +352,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( ((INIClass*)(INIClass *)a0)->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bade*/
+  if ( ((::gamemd::INIClass*)(::gamemd::INIClass *)a0)->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bade*/
 // 0x524cb0
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else

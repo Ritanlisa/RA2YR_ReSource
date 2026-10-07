@@ -113,14 +113,14 @@ namespace gamemd {
 CHAR * Waypoint::To_String(int aP0)
 {
 
-  if ( aP0  ==  (int)((int)(-1) )) /*0x763613*/
+  if ( aP0  ==  (int)(-1) )) /*0x763613*/
   {
     byte_B72654 = 0; /*0x763615*/
     return (gamemd::CHAR *)(&byte_B72654); /*0x76361c*/
   }
   else
   {
-    if ( aP0  >=  (int)((int)(26) )) /*0x763625*/
+    if ( aP0  >=  (int)(26) )) /*0x763625*/
       wsprintfA((LPSTR)(&byte_B72654), "%c%c", (unsigned int)(aP0)/ 26 + 64, aP0 % 26 + 65); /*0x763671*/
     else
       wsprintfA((LPSTR)(&byte_B72654), "%c", aP0 + 65); /*0x763635*/

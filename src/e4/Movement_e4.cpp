@@ -120,11 +120,11 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     *(unsigned short *)v88.__pad_0 = Math::RoundToInt(a3); /*0x5b216b*/
     v85.Movement_field_00 = *(unsigned int *)v88.__pad_0; /*0x5b217e*/
     LOWORD(v86) = 0x2000; /*0x5b2182*/
-    if ( ((Math*)((Math *)&v85))->Abs16Cmp( (IUnknown *)(&v86), (IUnknown *)(a5)) ) /*0x5b2189*/
+    if ( ((Math*)((Math *)&v85))->Abs16Cmp((unsigned short *)(&v86),(short *)(a5)) ) /*0x5b2189*/
     {
       LOWORD(v85.Movement_field_00) = v86; /*0x5b2197*/
     }
-    else if ( *(int16_t *)((Math*)((Math *)&v86))->Sub16( (BuildingTypeClass *)(&v89), (IUnknown *)(&v85)) >= 0 ) /*0x5b21b5*/
+    else if ( *(int16_t *)((Math*)((Math *)&v86))->Sub16((unsigned int *)((BuildingTypeClass *)(&v89)),(unsigned short *)(&v85)) >= 0 ) /*0x5b21b5*/
     {
       LOWORD(v85.Movement_field_00) += *a5; /*0x5b21c4*/
     }
@@ -316,11 +316,11 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   /* asm-debt:__asm { fsub ds:dbl_7E2820 } */
   /* asm-debt:__asm { fmul ds:dbl_7E2818 } */
   *(unsigned short *)v87 = Math::RoundToInt(v46); /*0x5b2510*/
-  if ( ((Math*)((Math *)&v86))->Abs16Cmp( (IUnknown *)(v87), (IUnknown *)(a5)) ) /*0x5b2515*/
+  if ( ((Math*)((Math *)&v86))->Abs16Cmp((unsigned short *)(v87),(short *)(a5)) ) /*0x5b2515*/
   {
     LOWORD(v86) = *(unsigned short *)v87; /*0x5b2523*/
   }
-  else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16( (BuildingTypeClass *)(&v88), (IUnknown *)(&v86)) >= 0 ) /*0x5b2541*/
+  else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16((unsigned int *)((BuildingTypeClass *)(&v88)),(unsigned short *)(&v86)) >= 0 ) /*0x5b2541*/
   {
     LOWORD(v86) = *a5 + v86; /*0x5b2550*/
   }
@@ -437,11 +437,11 @@ LABEL_34:
         *(unsigned short *)v88.__pad_0 = 18432; /*0x5b27ff*/
         LOWORD(v89) = *a5 / 2; /*0x5b2812*/
         *(unsigned int *)v87 = LODWORD(v89); /*0x5b281f*/
-        if ( ((Math*)((Math *)&v85))->Abs16Cmp( (IUnknown *)(&v88), (IUnknown *)((int16_t *)v87)) ) /*0x5b2829*/
+        if ( ((Math*)((Math *)&v85))->Abs16Cmp((unsigned short *)(&v88),(short *)((int16_t *)v87)) ) /*0x5b2829*/
         {
           LOWORD(v85.Movement_field_00) = *(unsigned short *)v88.__pad_0; /*0x5b2837*/
         }
-        else if ( *(int16_t *)((Math*)&v88)->Sub16( (BuildingTypeClass *)(&v89), (IUnknown *)(&v85)) >= 0 ) /*0x5b2858*/
+        else if ( *(int16_t *)((Math*)&v88)->Sub16((unsigned int *)((BuildingTypeClass *)(&v89)),(unsigned short *)(&v85)) >= 0 ) /*0x5b2858*/
         {
           LOWORD(v85.Movement_field_00) += *(unsigned short *)v87; /*0x5b286b*/
         }
@@ -456,11 +456,11 @@ LABEL_34:
       *(unsigned short *)v87 = 0x2000; /*0x5b2778*/
       LOWORD(v89) = *a5 / 2; /*0x5b278b*/
       *(unsigned int *)v88.__pad_0 = LODWORD(v89); /*0x5b2798*/
-      if ( ((Math*)((Math *)&v85))->Abs16Cmp( (IUnknown *)(v87), (IUnknown *)((int16_t *)v88.__pad_0)) ) /*0x5b27a2*/
+      if ( ((Math*)((Math *)&v85))->Abs16Cmp((unsigned short *)(v87),(short *)((int16_t *)v88.__pad_0)) ) /*0x5b27a2*/
       {
         LOWORD(v85.Movement_field_00) = *(unsigned short *)v87; /*0x5b27b0*/
       }
-      else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16( (BuildingTypeClass *)(&v89), (IUnknown *)(&v85)) >= 0 ) /*0x5b27d1*/
+      else if ( *(int16_t *)((Math*)((Math *)v87))->Sub16((unsigned int *)((BuildingTypeClass *)(&v89)),(unsigned short *)(&v85)) >= 0 ) /*0x5b27d1*/
       {
         LOWORD(v85.Movement_field_00) += *(unsigned short *)v88.__pad_0; /*0x5b27e7*/
       }

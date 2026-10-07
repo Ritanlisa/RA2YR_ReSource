@@ -89,7 +89,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   BitMask_Green = GetBitMask_Green(); /*0x560c39*/
   BitMask_Red = GetBitMask_Red(); /*0x560c42*/
   BitShift_Blue = GetBitShift_Blue(); /*0x560c51*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x560c57*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))((void *)(dword_887640));  /*0x560c57*/
   ((DDraw *)v18)->WaitForIdle(); /*0x560c5a*/
   if ( g_DDraw_Initialized == 1 ) /*0x560c66*/
   {
@@ -192,7 +192,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       {
         BitShift_Red = 0; /*0x56109f*/
         v26 = 0; /*0x5610aa*/
-(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x5610b5*/ dword_887640, (int *)(&BitShift_Red), v14, 0);
+(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x5610b5*/ dword_887640, (int *)((void *)((void *)((void *)(&BitShift_Red)))), v14, 0);
 
 
 
@@ -200,7 +200,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       }
       Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x5610bf*/
       ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x5610cb*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x5610d8*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x5610d8*/
     }
     TacticalClass::SetViewDimensions( (DisplayClass *)v31); /*0x5610ec*/
     ChangeVideoMode_Setup((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x5610fd*/
@@ -213,7 +213,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       DestroyDialog( (void *)((ObjectClass *)i)); /*0x56113b*/
       ResizeDialogAndEnum( (HWND)i, (void *)((void *)((LPARAM)&lParam))); /*0x561146*/
     }
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x561160*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x561160*/
         Debug::Log("Mode change complete.\n") /*G57c1: IDA 0x561168 push offset aModeChangeComp*/;
     return 1; /*0x561170*/
   }
@@ -221,7 +221,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   {
         Debug::Log("Removing mouse handler\n") /*G57c1: IDA 0x560cb3 push offset aRemovingMouseH*/;
     if ( dword_887640) /*0x560cc3*/
-      (**(void (***)(void *, int))dword_887640)(dword_887640, 1); /*0x560cc9*/
+      (**(void (***)(void *, int))dword_887640)((void *)(dword_887640), 1); /*0x560cc9*/
     dword_887640= 0; /*0x560ccb*/
   }
   if ( g_DSurface_Primary ) /*0x560cd7*/
@@ -254,7 +254,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   {
     BitShift_Red = 0; /*0x560d88*/
     v26 = 0; /*0x560d94*/
-(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x560d9f*/ dword_887640, (int *)(&BitShift_Red), v5, 0);
+(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x560d9f*/ dword_887640, (int *)((void *)((void *)((void *)(&BitShift_Red)))), v5, 0);
 
 
 
@@ -262,7 +262,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   }
   Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x560da9*/
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x560db5*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x560dc2*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x560dc2*/
   return 0; /*0x560dc7*/
 }
 }
@@ -1045,11 +1045,11 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56edf3*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundTable2)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56ee03*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundTable2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ee03*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 2 ) /*0x56ee13*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56ee25*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ee25*/
   }
   return v7; /*0x56ee08*/
 }
@@ -1096,11 +1096,11 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56eef3*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56ef05*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ef05*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 1 ) /*0x56ef15*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56ef27*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ef27*/
   }
   return v7; /*0x56ef0a*/
 }
@@ -1150,11 +1150,11 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f748*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundConfig)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56f758*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundConfig)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f758*/
   }
   else if ( v7 == g_TerrainSoundConfig + 2 ) /*0x56f768*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56f77a*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f77a*/
   }
   return v7; /*0x56f75d*/
 }
@@ -1204,11 +1204,11 @@ char sub_56F7A0(unsigned short * a1, int a2)
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f858*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56f86a*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f86a*/
   }
   else if ( v7 == g_TerrainSoundConfig + 1 ) /*0x56f87a*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0)); /*0x56f88c*/
+    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f88c*/
   }
   return v7; /*0x56f86f*/
 }

@@ -435,7 +435,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   {
     v19 = a9; /*0x70706b*/
   }
-  if ( (uint8_t)((House*)(House *)a1[135])->IsHumanPlayer() /*0x707086*/
+  if ( (uint8_t)((::gamemd::House*)(::gamemd::House *)a1[135])->IsHumanPlayer() /*0x707086*/
     && (*(uint8_t (**)(int *))(*a1 + 196))( (int *)(a1)) )
   {
     v19 = (*(int (**)(int *, int))(*a1 + 1084))( (int *)(a1), v19); /*0x70709c*/
@@ -445,7 +445,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v44 = a7[1]; /*0x7070b5*/
   v45 = a7[2]; /*0x7070bc*/
   v46 = a7[3]; /*0x7070c9*/
-  if ( g_DSurface_Hidden_2 != (int)((AudioStream *))dword_B1D13C ) /*0x7070d4*/
+  if ( g_DSurface_Hidden_2 != (int)(AudioStream *)dword_B1D13C ) /*0x7070d4*/
   {
     v21 = *((unsigned short *)a1 + 485); /*0x7070da*/
     if ( v21 <= 0 ) /*0x7070e6*/

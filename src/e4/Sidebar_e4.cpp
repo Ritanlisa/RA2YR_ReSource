@@ -401,7 +401,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = *(void **)Block->__pad_0; /*0x6363b1*/
     v8 = *((unsigned int *)Block + 135); /*0x6363b5*/
     Object_field_0x30 = *(void **)(v8 + 48); /*0x6363bb*/
-    if ( (uint8_t)((House*)(House *)v8)->IsHumanPlayer() && dword_A83D4C ) /*0x6363ce*/
+    if ( (uint8_t)((::gamemd::House*)(::gamemd::House *)v8)->IsHumanPlayer() && dword_A83D4C ) /*0x6363ce*/
       Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x6363d0*/
     DecFactoryClassCounter((unsigned int)Object_field_0x30); /*0x6363d5*/
     ((VectorClass *)((VectorClass *)&stru_AC4B30.__pad_EC[36]))->EraseAt((int)&Block); /*0x6363e4*/
@@ -922,7 +922,7 @@ int Sidebar_UpdateProductionDisplay(void * a1, void * a3)
     {
   int v86; // [esp+2Ah] [ebp-460h]
   int v82; // [esp+1Ah] [ebp-470h] BYREF
-      v70 = a2;
+ v70 = (CampaignScore *)(a2);
       *(unsigned char *)((char *)a1 +0) = 0;
       (&stru_B05488)[24720] = 1;
       *(unsigned int *)aP3[0] = 0;

@@ -68,6 +68,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/ScoreText_e4.hpp"
 #include "e4/classes/StaticString_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
 
 // 0x561180

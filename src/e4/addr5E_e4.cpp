@@ -88,7 +88,7 @@ int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd, void * aP0)
         if ( v6 ) /*0x5e289c*/
         {
           v7 = (wint_t *)((int)((wint_t *)(v6 - v3 + 1)));
-          if ( v5 >= (unsigned int)((wint_t *))(v7) ) /*0x5e28a5*/
+          if ( v5 >= (unsigned int)(wint_t *)(v7) ) /*0x5e28a5*/
             v5 = v7; /*0x5e28a7*/
         }
       }
@@ -853,33 +853,33 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
       *(unsigned int *)&v198[32] = 0;
       *(unsigned int *)&v198[36] = 0;
       *(unsigned int *)&v198[24] = 0;
-      char * v16 = strtok(v5 + 1, (ObjectClass *)&stru_817F40.nextObject);
+      char * v16 = strtok(v5 + 1,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
       if ( v16 )
         *(unsigned int *)&v198[32] = atol(v16);
-      char * v17 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+      char * v17 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
       if ( v17 )
         *(unsigned int *)&v198[36] = atol(v17);
-      char * v18 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+      char * v18 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
       if ( v18 )
         *(unsigned int *)&v198[24] = atol(v18);
-      char * v19 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+      char * v19 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
       if ( v19 )
         v3 = atol(v19);
-      char * v20 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+      char * v20 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
       if ( v20 )
         v15 = atol(v20);
       for ( i = 0; i < 32; i += 4 )
       {
-        char * v22 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+        char * v22 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
         if ( v22 )
           *(unsigned int *)&aP0_160[0][i] = atol(v22);
-        char * v23 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+        char * v23 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
         if ( v23 )
           *(unsigned int *)&v198[i + 56] = atol(v23);
-        char * v24 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+        char * v24 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
         if ( v24 )
           *(unsigned int *)&v198[i + 108] = atol(v24);
-        v25 = (CCINIClass *)strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+        v25 = (CCINIClass *)strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
         v26 = v25;
         if ( v25 )
           *(unsigned int *)&aP0_160[32][i] = atol((const char *)(v25->__pad_0));
@@ -1319,11 +1319,11 @@ LABEL_171:
         {
           if ( v5[1] == 49 )
           {
-            ValidateNetworkLobbyHostMap((char *)a2, 1);
+            ValidateNetworkLobbyHostMap((char *)a2,(void *)(1));
           }
           else if ( v5[1] == 50 )
           {
-            ValidateNetworkLobbyHostMap((char *)a2, 2);
+            ValidateNetworkLobbyHostMap((char *)a2,(void *)(2));
           }
           else
           {
@@ -1394,37 +1394,37 @@ LABEL_171:
     *(unsigned int *)v198 = (unsigned int)Source;
     v197 = (ObjectClass *)&stru_830620[4764];
     Debug::Log();
-    char * v110 = strtok(v5, (ObjectClass *)&stru_817F40.nextObject);
+    char * v110 = strtok(v5,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v110 )
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[45128] = atol(v110);
-    char * v111 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v111 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v111 )
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44564] = atol(v111);
-    char * v112 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v112 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v112 )
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29980] = atol(v112);
-    char * v113 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v113 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v113 )
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29968] = atol(v113);
-    char * v114 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v114 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v114 )
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29988] = atol(v114);
-    char * v115 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v115 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v115 )
       ((unsigned char *)&HouseClass_Player)[29974] = atol(v115) != 0;
-    char * v116 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v116 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v116 )
       ((unsigned char *)&HouseClass_Player)[29975] = atol(v116) != 0;
-    char * v117 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v117 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v117 )
       HouseClass_Player[29976] = atol(v117) != 0;
-    char * v118 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v118 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v118 )
       HouseClass_Player[30164] = atoi(v118) != 0;
-    char * v119 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v119 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v119 )
       HouseClass_Player[29973] = atoi(v119) != 0;
-    char * v120 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
+    char * v120 = strtok(0,(const char *)((ObjectClass *)&((ObjectClass *)&stru_817F40)->nextObject));
     if ( v120 )
       *(unsigned int *)&HouseClass_Player[29956] = atol(v120);
     char * v121 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);

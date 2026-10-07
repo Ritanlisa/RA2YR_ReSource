@@ -16,7 +16,7 @@ char sub_6DA770()
   bool v2; // zf
   void *v3; // eax
 
-  if ( dword_A8ECC8 != (unsigned int)((wchar_t *))1 ) /*0x6da779*/
+  if ( dword_A8ECC8 != (unsigned int)(wchar_t *)1 ) /*0x6da779*/
     return 0; /*0x6da779*/
   v0 = *(int **)dword_A8ECBC; /*0x6da780*/
   if ( !(*(int (**)(unsigned int))(**(unsigned int **)dword_A8ECBC + 60))(*(unsigned int *)dword_A8ECBC) ) /*0x6da786*/

@@ -70,6 +70,9 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/GameOptions_e4.hpp"
+#include "e4/classes/IsRandMap_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/GameSetup_e4.hpp"  // G57w10 D supply
 #include "e4/classes/NetworkManager_e4.hpp"  // G57w10 r5 supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
@@ -848,10 +851,10 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
 // 0x7b54b0
           && ((String *)(char *)&v19)->Length()
 // 0x7b54b0
-          && ((String *)(char *)&v19)->Length() )
+          && ((String *)((int)(char *))&v19)->Length() )
         {
           v15 = 0; /*0x5d79d3*/
-v19.occupant = (*(int (**)(int, int *, void **, void **, int *, int, int))(*(unsigned int *)v19.customSound /*0x5d79d5*/ + 4))(v19.customSound, (int *)((char *)&v19), (void **)((char *)&v19), (void **)((char *)&v19), (int *)((char *)&v19), v19.ambientSoundController[2], v4);
+v19.occupant = (*(int (**)(int, int *, void **, void **, int *, int, int))(*(unsigned int *)v19.customSound /*0x5d79d5*/ + 4))(v19.customSound, (int *)((char *)&v19), (void **)((char *)&v19), (void **)((char *)&v19), (int *)((int)((int)((char *)&v19))), v19.ambientSoundController[2], v4);
 
 
 
@@ -1047,7 +1050,7 @@ int E4Recv_5D9060::sub_5D9060(int a2)
       this->? = v5; /*0x5d907f*/
       v6 = v5; /*0x5d9087*/
       if ( v5 > 0xFFFF ) /*0x5d908a*/
-        this->? = 2048; /*0x5d908c*/
+        this->uniqueId = 2048; /*0x5d908c*/
       if ( !*(unsigned int *)&dword_887628|| *(unsigned int *)&dword_A8B238 != 4 ) /*0x5d90a4*/
         break; /*0x5d90a4*/
       if ( (*(unsigned __int8 (__stdcall **)(unsigned short))(**(unsigned int **)&dword_887628+ 104))(v5) ) /*0x5d90a9*/
@@ -1261,12 +1264,12 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   String[0] = 0; /*0x5da7a0*/
   if ( a2 == 1 ) /*0x5da7a7*/
   {
-    v19 = GetStringCSF( (wchar_t *)(aTxtConnectionL), 0, aDRa2mdpostNetd, 464); /*0x5da7c6*/
+    v19 = GetStringCSF( (wchar_t *)(aTxtConnectionL), 0,(const char *)(aDRa2mdpostNetd), 464); /*0x5da7c6*/
     swprintf(String, (const size_t)v19, (const wchar_t *)(v4 + 90154)); /*0x5da7cc*/
   }
   else if ( !a2 ) /*0x5da7d0*/
   {
-    v20 = GetStringCSF( (wchar_t *)(aTxtLeftGame), 0, aDRa2mdpostNetd, 466); /*0x5da7f3*/
+    v20 = GetStringCSF( (wchar_t *)(aTxtLeftGame), 0,(const char *)(aDRa2mdpostNetd), 466); /*0x5da7f3*/
     swprintf(String, (const size_t)v20, (const wchar_t *)(v4 + 90154)); /*0x5da7f5*/
   }
   if ( wcslen(String) ) /*0x5da802*/
@@ -1592,7 +1595,7 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
   v8 = (char **)dword_A8DA90; /*0x5dbf62*/
   while ( 1 ) /*0x5dbf69*/
   {
-    v9 = ToWideStringChar(*v8); /*0x5dbf69*/
+    v9 = ToWideStringChar((IUnknown *)(*v8)); /*0x5dbf69*/
     if ( !_strcmpi(v9,(const char *)( aP0)) ) /*0x5dbf70*/
       break; /*0x5dbf70*/
     ++v8; /*0x5dbf7c*/
@@ -1880,7 +1883,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       || !strcmp((const char *)(unk_A8B380), ToWideStringChar( (IUnknown *)((char *)dword_AC1188)))
       || !strcmp((const char *)(unk_A8B380), ToWideStringChar( (IUnknown *)((char *)dword_AC118C)))
       || !strcmp((const char *)(unk_A8B380), ToWideStringChar( (IUnknown *)((char *)dword_AC1190)))
-      || !strcmp(unk_A8B380, ToWideStringChar( (IUnknown *)((char *)dword_AC1194)))
+      || !strcmp((const char *)(unk_A8B380), ToWideStringChar( (IUnknown *)((char *)dword_AC1194)))
       || (((String *)((char **)&v9))->Assign( (const char *)(unk_A8B380)), v6 = Network_Send(&v9), j_DeleteAndZero( (void *)(&v9)), v6) )
     {
       v8 = GetStringCSF( aErrorNameisres, 0, (const char *)(g_Str_File_netdlg2_cpp), 3742); /*0x5df82c*/

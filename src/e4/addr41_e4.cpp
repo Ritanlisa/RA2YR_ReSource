@@ -2122,7 +2122,7 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
     if ( a2 ) /*0x41fefa*/
     {
       a2 = (unsigned int *)*HouseClass::GetCurrentOption(((HouseClass *)a1), &a1); /*0x41ff14*/
-      CurrentOption = HouseClass::GetCurrentOption(((HouseClass *)v4), &a1); /*0x41ff1b*/
+ CurrentOption = (int *)(HouseClass::GetCurrentOption(((HouseClass *)v4), &a1)); /*0x41ff1b*/
       v6 = *(unsigned int *)(v3 + 236); /*0x41ff22*/
       aP0 = (IUnknown *)(*CurrentOption); /*0x41ff28*/
       if ( !*(unsigned char *)(v3 + 241) ) /*0x41ff37*/

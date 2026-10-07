@@ -3,6 +3,12 @@
 #include "game_systems.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+extern int PropertyReadBoolCOM(int a1, int a2, char a3);  // W13-C raw 0x682A90 COM_Property_ReadBool
+extern int WriteIntCOM(int a1, int a2, int a3);  // W13-C raw 0x682E10 COM_WriteInt
+extern int WriteStringCOM(int a1, int a2, const char *lpMultiByteStr);  // W13-C raw 0x682640 COM_WriteString
+extern int GameOptions_Load(int a1, int a2, wchar_t *String);  // W13-C raw 0x682780
+extern int ScreenDialogToClient(void *hWnd, void *lpRect);  // W13-C raw 0x775690 (HWND, LPRECT)
+extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 Math::RoundToInt (e4_protos.h:492 同形)
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----extern int InitDegToRad;  // 词表 (canon 无条目, int 兜底) L315
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
@@ -113,6 +119,16 @@ extern unsigned int stru_A8D600;  // g57c5 W5f (e4_globals_decls.hpp data 0xA8D6
 extern unsigned int stru_A8B250;  // g57c5 W5f (e4_globals_decls.hpp data 0xA8B250)
 extern unsigned int stru_82BA00;  // g57c5 W5f (e4_globals_decls.hpp data 0x82BA00)
 extern unsigned int stru_87F5F0;  // g57c5 W5f (e4_globals_decls.hpp data 0x87F5F0)
+struct DialogPool_208_c { unsigned char __pad_208[0x400]; };  // W13-C: G42.35 C8 host pattern (core/supplied_bodies.cpp:151) 0xAC18C0 宿主
+extern DialogPool_208_c g_DialogPool;  // 0xAC18C0 (G42.35 C8 同形 W13-C 供给)
+extern char* off_832C20[];  // W13-C raw fn_5F/60 词表 0x832C20 (char* 数组)
+extern char* off_832C24[];  // W13-C raw 词表 0x832C24
+extern char* off_832C30[];  // W13-C raw fn_5F:5fbfc0 词表 0x832C30 ("A01_F00e" 表)
+extern char* off_832CA0[];  // W13-C raw 词表 0x832CA0
+extern int g_Str_File_Options_CPP;  // data: 0x833370 (e4_globals_decls.hpp:1476 同形)
+extern HWND g_GameScreenManager;  // data: 0xAC48D0 (globals_core.hpp:1016 GetParent 用法适配)
+extern void* dword_AC48C0;  // data: 0xAC48C0 (=(HWND)this 写入)
+extern int dword_AC48C4;  // data: 0xAC48C4
 
 namespace gamemd {
 // 0x5d86d0
@@ -378,7 +394,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  
         if ( dword_A8DA84 ) /*0x5e2035*/
         {
           *(unsigned int *)(*dword_A8DA78 + 119) = 1; /*0x5e204d*/
-          sprintf(Buffer, g_INI_Key_A1); /*0x5e2054*/
+          sprintf(Buffer,(const char *const)(g_INI_Key_A1)); /*0x5e2054*/
           Network_SendOptionsGame(Buffer); /*0x5e2060*/
           EnablePlayerSlotControls((HWND)this, 0); /*0x5e206d*/
           v19 = GetDlgItem((HWND)this, 1439); /*0x5e207e*/
@@ -481,7 +497,7 @@ void GameOptions_GameSpeedChanged()
       {
         if ( byte_A8E9A0 == 1 && *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x4e1e41*/
         {
-          v5 = EventClass_Add2(v15, (int)dword_A83D4C->Object_field_0x30, 0xDu, v4); /*0x4e1e54*/
+ v5 = (char *)(EventClass_Add2(v15, (int)dword_A83D4C->Object_field_0x30, 0xDu, v4)); /*0x4e1e54*/
           if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4e1e63*/
           {
             qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v5, 0x6Fu); /*0x4e1e7f*/
@@ -674,7 +690,7 @@ char GameOptions::ReadSettings()
     }
     else
     {
-      StringCSF = GetStringCSF((wchar_t *)&stru_82BA00.__pad_F70[140], 0, &stru_82BA00.__pad_F70[52], 759); /*0x5b8d52*/
+      StringCSF = GetStringCSF((wchar_t *)&((BuildingTypeClass *)&stru_82BA00)->q5110, 0, &stru_82BA00.__pad_F70[52], 759); /*0x5b8d52*/
       swprintf((wchar_t *const)Buffer, (const size_t)StringCSF, Format); /*0x5b8d5d*/
       v5 = GetStringCSF(g_Str_TXT_OK, 0, &stru_82BA00.__pad_F70[52], 760); /*0x5b8d84*/
       Dialog_ShowMessageBox(Buffer, v5, 0, 0, 0, v28); /*0x5b8d93*/
@@ -985,7 +1001,7 @@ int GameOptionsClass::PopulateMovieList(HWND hWnd)
           SendMessageA(hWnd, 0x19Au, v4, (LPARAM)off_832C20); /*0x5fc055*/
       }
     }
-    GameOptionsClass_field_0x04 = v2[9].GameOptionsClass_field_0x04; /*0x5fc057*/
+    GameOptionsClass_field_0x04 = (unsigned int)(v2[9].GameOptionsClass_field_0x04)); /*0x5fc057*/
     if ( GameOptionsClass_field_0x04 >= 0 ) /*0x5fc05c*/
     {
       v6 = GameOptionsClass_field_0x04 + 1; /*0x5fc05e*/

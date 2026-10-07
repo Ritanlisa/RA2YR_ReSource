@@ -328,7 +328,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
       this->ScriptAction_field_0x10[0] = v9 + 1; /*0x634034*/
       *(unsigned int *)(v10 + 4 * v9) = v5; /*0x634037*/
     }
-    Type = BuildingClass::GetType((BuildingClass *)a2); /*0x634043*/
+    Type = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2))); /*0x634043*/
     v12 = *(unsigned int *)(Type + 12); /*0x634045*/
     if ( *(unsigned int *)(Type + 20) < v12 /*0x63406d*/
       || (*(unsigned char *)(Type + 17) || !v12)
@@ -468,7 +468,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
     char v33; // [esp+10Eh] [ebp-2h]
 
     v24 = this; /*0x634cd5*/
-    Type = BuildingClass::GetType((BuildingClass *)a2); /*0x634cde*/
+    Type = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2))); /*0x634cde*/
     v4 = *(unsigned int *)(Type + 4); /*0x634ce0*/
     ScriptAction_field_0x30 = this; /*0x634ce7*/
     v5 = (*(int (__thiscall **)(int, void **))(v4 + 16))(Type + 4, &ScriptAction_field_0x30); /*0x634cef*/
@@ -491,7 +491,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
         v6 = (ScriptAction *)ArrayClass::GetAt_Wrap((ArrayClass *)Type, v8); /*0x634d15*/
       }
     }
-    v9 = BuildingClass::GetType((BuildingClass *)a2); /*0x634d19*/
+    v9 = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2))); /*0x634d19*/
     v10 = *(unsigned int *)(v9 + 20) - 1; /*0x634d21*/
     if ( v10 >= 0 ) /*0x634d22*/
       v11 = *(ScriptAction **)(*(unsigned int *)(v9 + 8) + 4 * v10); /*0x634d2b*/
@@ -506,7 +506,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
       v14 += 108; /*0x634d59*/
       v29 = *(unsigned short *)v14; /*0x634d5b*/
       v30 = v14[2]; /*0x634d5d*/
-      ScriptAction_field_0x30 = this->ScriptAction_field_0x30; /*0x634d63*/
+ ScriptAction_field_0x30 = (void *)(this->ScriptAction_field_0x30); /*0x634d63*/
       v15 = (int)ScriptAction_field_0x30; /*0x634d5e*/
       if ( ScriptAction_field_0x30 ) /*0x634d67*/
       {
@@ -735,7 +735,7 @@ char ScriptAction::HitTest(int a1, int a2)
         while ( 1 ) /*0x63a936*/
         {
           v6 = (ScriptAction *)*((unsigned int *)stru_AC4B30.Array_field_0x4 + v4); /*0x63a936*/
-          ScreenPos = ScriptAction::GetScreenPos(v6, &v14); /*0x63a93b*/
+ ScreenPos = (int *)(ScriptAction::GetScreenPos(v6, &v14)); /*0x63a93b*/
           v8 = ComputeBounds(v22, 8, *ScreenPos, ScreenPos[1]); /*0x63a950*/
           v18 = *v8; /*0x63a957*/
           v19 = v8[1]; /*0x63a95e*/
@@ -872,7 +872,7 @@ char ScriptAction::ProcessIdleAction()
     v6 = (BuildingClass *)v5; /*0x63b60e*/
   LABEL_7:
     if ( Type ) /*0x63b612*/
-      v7 = Type->field_14; /*0x63b618*/
+ v7 = (void *)(Type->field_14); /*0x63b618*/
     else
       v7 = 0; /*0x63b614*/
     v53 = (int)v7 > 0; /*0x63b622*/
@@ -882,7 +882,7 @@ char ScriptAction::ProcessIdleAction()
     v57 = 4; /*0x63b657*/
     if ( Type && (*(unsigned int *)(*(unsigned int *)Type->__pad_0 + 172) == 28 || *(unsigned int *)(*(unsigned int *)Type->__pad_0 + 180) == 28) ) /*0x63b67a*/
     {
-      v9 = &Type->__pad_18[5]; /*0x63b680*/
+ v9 = (char *)(&Type->__pad_18[5]); /*0x63b680*/
       qmemcpy(v75, v9, 0x6Cu); /*0x63b696*/
       v9 += 108; /*0x63b696*/
       v75[54] = *(unsigned short *)v9; /*0x63b698*/
@@ -956,7 +956,7 @@ char ScriptAction::ProcessIdleAction()
         v70 = v14; /*0x63b813*/
         v71 = v13; /*0x63b817*/
         v60.Coord3D_field_0x04 = v62; /*0x63b81b*/
-        v19 = Coord2D::Sub((Coord2D *)&v60, (int *)v55.__pad_0, &v70); /*0x63b81f*/
+        v19 = Coord2D::Sub((int *)((Coord2D *)&v60), (int *)v55.__pad_0, &v70); /*0x63b81f*/
         Vector::TwoDMagnitudeMath(v19); /*0x63b826*/
         if ( v20 >= 37 ) /*0x63b82e*/
         {

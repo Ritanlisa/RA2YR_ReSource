@@ -66,7 +66,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
 
   if ( a2 ) /*0x7b331c*/
   {
-    v3 = (int)((gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716))); /*0x7b3322*/
+    v3 = (int)((::gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716))); /*0x7b3322*/
     v4 = 0; /*0x7b3328*/
     if ( v3 > 0 ) /*0x7b332c*/
     {
@@ -77,7 +77,7 @@ void UDPInterfaceClass::CheckStatus(short a2)
       }
       v6 = (SOCKET *)this + v4 + 64704; /*0x7b3352*/
       Debug::Log("Closing spare socket %d\n"); /*0x7b335f G57c1: IDA 0x7b335f push offset aClosingSpareSo*/
-      closesocket((*v6)); /*0x7b336a*/
+      closesocket((void *)((*v6))); /*0x7b336a*/
       if ( *v6 == *((unsigned int *)this + 64717) ) /*0x7b3379*/
         *((unsigned int *)this + 64717) = -1; /*0x7b337b*/
       v7 = v4; /*0x7b338b*/
@@ -117,7 +117,7 @@ LABEL_7:
   }
   else
   {
-    v4 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 32356); /*0x7b33f8*/
+    v4 = (::gamemd::UDPInterfaceClass *)((unsigned int *)this + 32356); /*0x7b33f8*/
     while ( LOWORD(v4->Socket) != a2 ) /*0x7b3401*/
     {
       ++v3; /*0x7b3403*/
@@ -155,7 +155,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
     do /*0x7b3a6e*/
     {
       Debug::Log("Closing spare socket %d\n"); /*0x7b3a3f G57c1: IDA 0x7b3a3f push offset aClosingSpareSo*/
-      WSAAsyncSelect(*v5, (SOCKET)g_hWnd, 0, 0, v6); /*0x7b3a55*/
+      WSAAsyncSelect((unsigned int)(*v5), (HWND)g_hWnd, 0, 0); /*0x7b3a55*/
       closesocket( (void *)((void *)((SOCKET)*v5))); /*0x7b3a5d*/
       result = *((unsigned int *)this + 64716); /*0x7b3a62*/
       ++v3; /*0x7b3a68*/
@@ -165,7 +165,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
     *((unsigned int *)this + 64716) = 0; /*0x7b3a70*/
     *((unsigned int *)this + 64717) = -1; /*0x7b3a7a*/
   }
-  return (gamemd::AbstractClass **)(result); /*0x7b3a85*/
+  return (::gamemd::AbstractClass **)(result); /*0x7b3a85*/
 
 }
 } // namespace gamemd
@@ -221,11 +221,11 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, void * s, int a4, u
     sa = (void *)(v6); /*0x7b3ac5*/
     if ( a4 != v6 ) /*0x7b3ac9*/
     {
-      v7 = (int)((gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716))); /*0x7b3acb*/
+      v7 = (int)((::gamemd::UDPInterfaceClass *)(*((unsigned int *)this + 64716))); /*0x7b3acb*/
       v8 = 0; /*0x7b3ad1*/
       if ( v7 > 0 ) /*0x7b3ad5*/
       {
-        v9 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 32352); /*0x7b3ad7*/
+        v9 = (::gamemd::UDPInterfaceClass *)((unsigned int *)this + 32352); /*0x7b3ad7*/
         while ( v9->Socket != a4 ) /*0x7b3adf*/
         {
           ++v8; /*0x7b3ae1*/
@@ -241,7 +241,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, void * s, int a4, u
   else
   {
     if ( s  !=  (void *)(1141) ) /*0x7b3afd*/
-      return (gamemd::AbstractClass **)(1); /*0x7b40dd*/
+      return (::gamemd::AbstractClass **)(1); /*0x7b40dd*/
     v6 = *((unsigned int *)this + 64540); /*0x7b3b03*/
     v39 = 1; /*0x7b3b09*/
     sa = (void *)(v6); /*0x7b3b0e*/
@@ -324,11 +324,11 @@ LABEL_60:
       else
       {
         *((unsigned short *)v13 + 13) = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
-        *((unsigned int *)v13 + 1) = (unsigned int)(gamemd::UDPInterfaceClass *)(*(unsigned int *)&netshort.sa_data[2]); /*0x7b408c*/
+        *((unsigned int *)v13 + 1) = (unsigned int)(::gamemd::UDPInterfaceClass *)(*(unsigned int *)&netshort.sa_data[2]); /*0x7b408c*/
       }
       v33 = *((unsigned int *)this + 4); /*0x7b408f*/
       v34 = *((unsigned int *)this + 6); /*0x7b4092*/
-      v35 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 1); /*0x7b4095*/
+      v35 = (::gamemd::UDPInterfaceClass *)((unsigned int *)this + 1); /*0x7b4095*/
       if ( v34 < v33 /*0x7b40b8*/
         || (v35[1].__pad_5[0] || !v33)
         && (v36 = *(unsigned int *)&v35[2].Initialized, v36 > 0)
@@ -349,7 +349,7 @@ LABEL_60:
     v11 = 0; /*0x7b3b42*/
     if ( *((int *)this + 64716) > 0 ) /*0x7b3b46*/
     {
-      v12 = (gamemd::UDPInterfaceClass *)((unsigned int *)this + 32352); /*0x7b3b48*/
+      v12 = (::gamemd::UDPInterfaceClass *)((unsigned int *)this + 32352); /*0x7b3b48*/
       do /*0x7b3b76*/
       {
         if ( v12->Socket == *((unsigned int *)this + 64717) ) /*0x7b3b58*/
@@ -575,7 +575,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5
   WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b4299*/
   if ( (a2 & 1) != 0 ) /*0x7b42a3*/
     __3_YAXPAX_Z(this); /*0x7b42a6*/
-return (gamemd::CampaignClass **)(void ***)this; /*0x7b42b0*/
+return (::gamemd::CampaignClass **)(void ***)this; /*0x7b42b0*/
 
 }
 } // namespace gamemd
@@ -654,7 +654,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   v7 = this->m_8; /*0x7b4531*/
   if ( v7 < this->m_10 ) /*0x7b4539*/
     this->m_10 = v7; /*0x7b453b*/
-  return (gamemd::AbstractClass **)(1); /*0x7b453e*/
+  return (::gamemd::AbstractClass **)(1); /*0x7b453e*/
 
 }
 } // namespace gamemd
@@ -787,11 +787,11 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
         setsockopt(v15, 0xFFFF, 128, optval, 4); /*0x7b3693*/
         ((Socket *)((WinsockInterfaceClass *)this))->ConfigureBuffers(*((unsigned int *)this + 64540)); /*0x7b36a1*/
         Debug::Log("Alternate UDP Socket init complete\n"); /*0x7b36ab G57c1: IDA 0x7b36ab push offset aAlternateUdpSo*/
-        return (gamemd::AbstractClass **)(1); /*0x7b36b3*/
+        return (::gamemd::AbstractClass **)(1); /*0x7b36b3*/
       }
     }
   }
-  return (gamemd::AbstractClass **)(result); /*0x7b346d*/
+  return (::gamemd::AbstractClass **)(result); /*0x7b346d*/
 
 }
 } // namespace gamemd
@@ -915,7 +915,7 @@ int UDPInterfaceClass_Destru::Receive()
     while ( 1 ) /*0x7b38b8*/
     {
       v4 = (HWND)(*(int (**)(UDPInterfaceClass *, int))(this->Socket + 56))((UDPInterfaceClass *)this, -1); /*0x7b38b8*/
-      if ( WSAAsyncSelect(*v3, (SOCKET)g_hWnd, v4, 3u, v6)  ==  (int)((int))-1 ) /*0x7b38ce*/
+      if ( WSAAsyncSelect((unsigned int)(*v3), (HWND)g_hWnd, (unsigned int)(v4), 3u)  ==  (int)((int))-1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/
       ++v3; /*0x7b38d7*/

@@ -73,6 +73,9 @@
 #include "e4/classes/AsyncIO_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/classes/FileStraw_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/NetworkAddress_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
@@ -98,13 +101,13 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
 
   ((String *)((String *)&v6))->Assign((const char *)(off_83E188)); /*0x770e80*/
   v5 = (unsigned int)(aP3); /*0x770e85*/
-  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1), aP2, aP3, 0, &v6); /*0x770e9d*/
+  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1),(char **)(aP2), aP3, 0, &v6); /*0x770e9d*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v6)); /*0x770ea6*/
   ((String *)((String *)&aP3))->Assign((const char *)(g_INI_Key_Lose)); /*0x770eb4*/
-  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1), aP2, v5, 1, (char **)&aP3); /*0x770ec5*/
+  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1),(char **)(aP2),(void *)(v5), 1, (char **)&aP3); /*0x770ec5*/
   j_DeleteAndZero( (void *)((ObjectClass *)&aP3)); /*0x770ece*/
   ((String *)((String *)&aP3))->Assign((const char *)(aDraw)); /*0x770edc*/
-  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1), aP2, v5, 2, (char **)&aP3); /*0x770eed*/
+  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1),(char **)(aP2),(void *)(v5), 2, (char **)&aP3); /*0x770eed*/
   j_DeleteAndZero( (void *)((ObjectClass *)&aP3)); /*0x770ef6*/
 
 }
@@ -691,7 +694,7 @@ void E4Recv_776570::sub_776570()
   struct tagPOINT Point; // [esp+4h] [ebp-18h] BYREF
   struct tagRECT Rect; // [esp+Ch] [ebp-10h] BYREF
 
-  if ( this == (gamemd::E4Recv_776570 *)((ObjectClass *))1 && byte_B7309C )
+  if ( this == (gamemd::E4Recv_776570 *)(ObjectClass *)1 && byte_B7309C )
   {
     GetCursorPos(&Point); /*0x77658f*/
     GetWindowRect((HWND)(qword_B730A0), &Rect); /*0x7765a1*/
@@ -933,7 +936,7 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
             {
               byte_B73560 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))(dword_887640);  /*0x7778fd*/
               Debug::Log("Focus_Loss(): _MouseCaptured = %s\n"); /*0x777916 G57c1: IDA 0x777916 push offset aFocusLossMouse*/
-              (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x777926*/
+              (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))((void *)(dword_887640));  /*0x777926*/
             }
           }
           Debug::Log("Focus gained\n"); /*0x77793a G57c1: IDA 0x77793a push offset aFocusGained*/
@@ -1563,8 +1566,8 @@ int RunWOLMainLoop(char a1)
   void *v19; // [esp+14h] [ebp-Ch] BYREF
   int64_t v20; // [esp+18h] [ebp-8h] BYREF
 
-  while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) < 0 ) /*0x77b2b6*/
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x77b2c0*/
+  while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))((void *)(dword_887640)) < 0 ) /*0x77b2b6*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x77b2c0*/
   RunWOLMainLoop_Helper(); /*0x77b2d2*/
   v2 = dword_A83D14; /*0x77b2d7*/
   if ( dword_A83D14 == -1 ) /*0x77b2e0*/
@@ -2433,7 +2436,7 @@ int OpenURLWOL(INIClass * a1, int a2)
 
   tmpnam(File); /*0x77dca3*/
   strcat( (char *)(File), (const char *)(aHtml)); /*0x77dcd2*/
-  v4 = fopen(File, aW); /*0x77dce5*/
+  v4 = fopen(File,(const char *)(aW)); /*0x77dce5*/
   fprintf(v4, "<title>Hi there.</title>"); /*0x77dced*/
   fclose(v4); /*0x77dcf3*/
   ExecutableA = FindExecutableA( (void *)((void *)(File)), 0, (void *)(Result)); /*0x77dd10*/

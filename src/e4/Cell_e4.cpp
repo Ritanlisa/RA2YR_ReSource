@@ -90,7 +90,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
       if ( *(void **)&v10[2].__pad_3C[40] == v14 ) /*0x419c52*/
         break; /*0x419c52*/
     }
-    if ( ++v9   >=   (int)((int)((*(int *)&FootClass_Array) ))) /*0x419c5c*/
+    if ( ++v9   >=   (int)(*(int *)&FootClass_Array) ) /*0x419c5c*/
       return (gamemd::TechnoClass **)(1); /*0x419c5c*/
   }
   return 0; /*0x419c60*/
@@ -317,20 +317,20 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
   result = a2; /*0x4834a0*/
   if ( a2 == 4 ) /*0x4834ad*/
     goto LABEL_39; /*0x4834ad*/
-  if ( aP4   !=   (int)((int)((int)(-1) ))) /*0x4834c2*/
+  if ( aP4   !=   (int)(-1) ) /*0x4834c2*/
   {
     result = ((MapClass *)((MapClass *)&dword_87F7E8))->GetTileIndex((int16_t *)this + 18, aP5, aP7); /*0x4834cf*/
-    if ( aP4   !=   (int)((int)((int)(result) ))) /*0x4834d6*/
+    if ( aP4   !=   (int)(result) ) /*0x4834d6*/
     {
       LOBYTE(result) = 0; /*0x4834db*/
       return result; /*0x4834de*/
     }
   }
   result = (int)(aP6);
-  if ( aP6   !=   (int)((int)((int)(-1) ))) /*0x4834ed*/
+  if ( aP6   !=   (int)(-1) ) /*0x4834ed*/
   {
     v10 = *((unsigned int *)this + 283); /*0x4834ef*/
-    if ( aP6   ==   (int)((int)((int)(v10) ))) /*0x4834f8*/
+    if ( aP6   ==   (int)(v10) ) /*0x4834f8*/
     {
       if ( (*((unsigned int *)this + 80) & 0x100) != 0 && !aP7 ) /*0x48351c*/
       {
@@ -338,14 +338,14 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
         return result; /*0x483524*/
       }
     }
-    else if ( (*((unsigned int *)this + 80) & 0x100) == 0 || aP6   !=   (int)((int)((int)(v10) + 4 ))) /*0x483507*/
+    else if ( (*((unsigned int *)this + 80) & 0x100) == 0 || aP6   !=   (int)(v10) + 4 ) /*0x483507*/
     {
       LOBYTE(result) = 0; /*0x48350c*/
       return result; /*0x48350f*/
     }
   }
   v11 = 0; /*0x483527*/
-  if ( (aP6   ==   (int)((int)((int)(-1) || aP6 == *((unsigned int *)this + 283) + 4))) && (*((unsigned int *)this + 80) & 0x100) != 0 ) /*0x483542*/
+  if ( (aP6 == (int)(-1) || aP6 == *((unsigned int *)this + 283) + 4) && (*((unsigned int *)this + 80) & 0x100) != 0 ) /*0x483542*/
   {
     v11 = 1; /*0x483546*/
     result = *((unsigned int *)this + 296); /*0x483548*/
@@ -372,7 +372,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, int aP4, int aP5, int aP6, char 
     {
       if ( *(unsigned char *)(v13 + 680) ) /*0x483598*/
       {
-        if ( aP5      !=      (int)((int)((int)((int)((int)((IUnknown *)(2) && (IUnknown *)(aP5) != (IUnknown *)(3) && aP5 != 8 && (aP5 != (IUnknown *)(1) && aP5 != 4 || !*(unsigned char *)(v13 + 557)) && aP5 != 12 )))))) /*0x4835c8*/
+        if ( aP5 != 2 && aP5 != 3 && aP5 != 8 && (aP5 != 1 && aP5 != 4 || !*(unsigned char *)(v13 + 557)) && aP5 != 12 ) /*0x4835c8*/
         {
           LOBYTE(result) = 0; /*0x4835cd*/
           return result; /*0x4835d0*/
@@ -918,19 +918,19 @@ char Cell::UpdateTileType(__int16 *aP0, int aP1, int a3)
   {
     v7 = (unsigned int *)v6[14]; /*0x56e9dd*/
     if ( v7 == (unsigned int *)0xFFFF ) /*0x56e9e5*/
-      return (char)((gamemd::AbstractClass **)((char)v7); /*0x56e9e5*/);
+      return (char)((gamemd::AbstractClass **)((char)v7)); /*0x56e9e5*/
     if ( v7 == (unsigned int *)255 ) /*0x56e9f0*/
-      return (char)((gamemd::AbstractClass **)((char)v7); /*0x56e9f0*/);
+      return (char)((gamemd::AbstractClass **)((char)v7)); /*0x56e9f0*/
     LOBYTE(v7) = ((CellClass *)(*((uint8_t *)v6 + 282)))->GetTerrainFlag((int)((CellClass *)(*((uint8_t *)v6 + 282)))); /*0x56ea0a*/
     if ( !(unsigned char)v7 ) /*0x56ea11*/
-      return (char)((gamemd::AbstractClass **)((char)v7); /*0x56ea11*/);
+      return (char)((gamemd::AbstractClass **)((char)v7)); /*0x56ea11*/
     v8 = aP0[1] << 8; /*0x56ea2a*/
     v22[0] = (*aP0 << 8) + 128; /*0x56ea2d*/
     v22[1] = v8 + 128; /*0x56ea3b*/
     v22[2] = 0; /*0x56ea47*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v22), (int *)(&v20)); /*0x56ea4f*/
     v21 -= 15 * *((char *)v6 + 283); /*0x56ea78*/
-    Cell::CreateCrater((void *)(v20 - 128),(void *)( v21 - 128),(void *)( 256), 256, 0); /*0x56ea98*/
+    Cell::CreateCrater((void *)(v20 - 128),(void *)( v21 - 128),(void *)( 256),(void *)(256), 0); /*0x56ea98*/
   }
   v9 = (int)(aP1); /*0x56eaa3*/
   LOBYTE(v7) = (v6[80] & 0x2000) != 0; /*0x56eaaa*/
@@ -967,7 +967,7 @@ char Cell::UpdateTileType(__int16 *aP0, int aP1, int a3)
     }
     while ( v13 ); /*0x56eb67*/
   }
-  return (char)((gamemd::AbstractClass **)((char)v7); /*0x56eb69*/);
+  return (char)((gamemd::AbstractClass **)((char)v7)); /*0x56eb69*/
 
 }
 }
@@ -1021,7 +1021,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
     v23[2] = 0; /*0x56ec02*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v23), (int *)(&v21)); /*0x56ec0a*/
     v22 -= 15 * *((char *)v8 + 283); /*0x56ec33*/
-    result = (char)(Cell::CreateCrater((void *)(v21 - 128),(void *)( v22 - 128),(void *)( 256), 256, 0)); /*0x56ec53*/
+    result = (char)(Cell::CreateCrater((void *)(v21 - 128),(void *)( v22 - 128),(void *)( 256),(void *)(256), 0)); /*0x56ec53*/
     v12 = v8[14]; /*0x56ec58*/
     v10 = (int)(aP1); /*0x56ec5b*/
     if ( aP1 == (IUnknown *)(v12) ) /*0x56ec61*/
@@ -1032,7 +1032,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
     v20 = (int)(aP3); /*0x56ec7c*/
     v8[14] = v10; /*0x56ec7d*/
     ((House *)((int)v8))->AnnounceUpgrade(v20); /*0x56ec80*/
-    BuildingClass::AddUpgrade(v8 + 9); /*0x56ec8e*/
+    BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8, v8 + 9); /*0x56ec8e*/
     v13 = 0; /*0x56ec93*/
     aP1 = (IUnknown *)(8); /*0x56ec95*/
     do /*0x56ed23*/
@@ -1636,7 +1636,7 @@ void* Cell::CreateCrater(int a1, void *a2, void *a3, void *a4, void *a5)
         v11 = v35 + v37 - aP2; /*0x6d2854*/
         v9 = aP2; /*0x6d2856*/
       }
-      if ( v36    >    (int)((int)((int)(a2 )))) /*0x6d285e*/
+      if ( v36    >    (int)(a2 )) /*0x6d285e*/
       {
         v10 = v36 - a2 + v38; /*0x6d2862*/
         v8 = (unsigned int)a2; /*0x6d2864*/
@@ -1652,7 +1652,7 @@ void* Cell::CreateCrater(int a1, void *a2, void *a3, void *a4, void *a5)
     }
     if ( v33 > 0 && v34 > 0 ) /*0x6d28ea*/
     {
-      if ( v31      ==      (int)((int)((int)((int)((int)(aP2 && v32 == a2 && v33 == a3 && v34 == a4 )))))) /*0x6d291e*/
+      if ( v31 == (int)(aP2) && v32 == (int)(a2) && v33 == (int)(a3) && v34 == (int)(a4) ) /*0x6d291e*/
       {
         LOBYTE(v12) = (unsigned char)(a5); /*0x6d2920*/
         if ( !a5 ) /*0x6d2926*/

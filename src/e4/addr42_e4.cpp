@@ -258,11 +258,11 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v66 = (int *)(FoundationSize[1]);
           v21 = (int *)(FoundationSize[2]);
           v67 = (int *)(FoundationSize[3]);
-          if ( v13   <=   (int)((int)((int)(v58) + v66 ))) /*0x4210dd*/
+          if ( v13   <=   (int)(v58) + v66 ) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
           v60 = (int *)(v41 - v58 - v66); /*0x4210fd*/
           v37 = (int *)(v57 + v13); /*0x421118*/
-          if ( v57 + v13   >=   (int)((int)((int)(v66) + v67 + v58 ))) /*0x42111c*/
+          if ( v57 + v13   >=   (int)(v66) + v67 + v58 ) /*0x42111c*/
             v37 = (unsigned int)(v66)+ v67 + v58; /*0x42111e*/
           v40 = (int *)&v55; /*0x42112b*/
           if ( v55 <= (int)((unsigned int)(v17)+ v20) ) /*0x42112f*/
@@ -324,7 +324,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
             v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))))))))))))));
             do /*0x4212ad*/
             {
-              if ( v29  <  (unsigned int)((unsigned int)(int)(v42) )) /*0x421239*/
+              if ( v29  <  (unsigned int)(int)(v42) )) /*0x421239*/
               {
                 v30 = (int *)((int)(v42 - v29));
                 do /*0x421281*/
@@ -515,7 +515,7 @@ void * ProductionCompletionCallback(ObjectClass *self)
             v13[53] = *(void **)(*((unsigned int *)dword_B054D4 + v6[48]) + 780); /*0x424e88*/
             v13[63] = (void *)*(__int16 *)v5->CellClass_field_10A; /*0x424e95*/
           }
-          location = self->location; /*0x424e9b*/
+ location = (int *)(self->location); /*0x424e9b*/
           v18 = *location; /*0x424ea7*/
           v19 = location[1]; /*0x424eae*/
           v20 = location[2]; /*0x424eba*/
@@ -753,7 +753,7 @@ int ConstructionPositionTracker(ObjectClass *self)
     }
     else
     {
-      location = self->location; /*0x4256e2*/
+ location = (int *)(self->location); /*0x4256e2*/
       v6 = self->location[0]; /*0x4256ee*/
       v7 = self->location[1]; /*0x4256f0*/
       v56 = self->location[2]; /*0x4256f6*/

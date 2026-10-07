@@ -105,7 +105,7 @@ int WebBrowser::ShowDialog()
   v1 = (const char *)(this);
   v9 = (const char *)(this);
   if ( !this || !strlen((const char *)(this)) ) /*0x773eaa*/
-    return (int)((HWND)((gamemd::Debug*)aDowebpagedialo)->Log()); /*0x774060*/
+return (int)Debug::Log((const char *)aDowebpagedialo);  /* G57w13b: raw 0x774060 Debug::Log(aDowebpagedialo) */ /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
   result = (HWND)CreateDialog(0x131u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_773E30, 0); /*0x773ecf*/
   v3 = result; /*0x773ed4*/
@@ -134,7 +134,7 @@ int WebBrowser::ShowDialog()
       ((Debug *)g_Str_Instantiating_embedded_WebBrow)->Log("Instantiating embedded WebBrowser\n"); /*0x773f9b G57w12: IDA push seq @ 0x773f9b*/
       *(unsigned int *)(v6 + 1040) = (unsigned int)(v3); /*0x773fa3*/
       ((Debug *)g_Str_Creating_WOLBrowser_component_)->Log("Creating WOLBrowser component.\n"); /*0x773fae G57w12: IDA push seq @ 0x773fae*/
-      if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
+      if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u,stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
       {
         ((Debug *)g_Str_Starting_up_WOLBrowser)->Log("Starting up WOLBrowser\n"); /*0x773fd4 G57w12: IDA push seq @ 0x773fd4*/
         (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v6); /*0x773fe3*/

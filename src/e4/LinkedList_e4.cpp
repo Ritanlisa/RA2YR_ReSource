@@ -329,7 +329,7 @@ int LinkedList_flat::RemoveNode()
   LinkClass *m_Next; // edx
 
   v2 = (LinkClass *)(*(int ((gamemd::LinkClass *)(**))(LinkClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x55673e*/
-  v3 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x556740*/
+  v3 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))((gamemd::LinkClass *)(this)); /*0x556740*/
   m_Prev = (LinkClass *)(this->m_Prev); /*0x556743*/
   if ( m_Prev ) /*0x55674a*/
     m_Prev->m_Next = (gamemd::LinkClass *)(this->m_Next); /*0x55674f*/
@@ -416,7 +416,7 @@ int LinkedList_flat::Contains(IUnknown * aP1)
   result = *((unsigned int *)this + 10); /*0x6e5380*/
   if ( result ) /*0x6e5385*/
   {
-    while ( result   !=   (int)((int)(aP1 ))) /*0x6e538d*/
+    while ( result   !=   (int)(aP1 ))) /*0x6e538d*/
     {
       result = *(unsigned int *)(result + 40); /*0x6e538f*/
       if ( !result ) /*0x6e5394*/

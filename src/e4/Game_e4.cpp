@@ -199,6 +199,11 @@
 #include "e4/classes/SuperWeapon_e4.hpp"
 #include "e4/classes/SwizzleManager_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/DynamicArray_e4.hpp"
+#include "e4/classes/FogOfWar_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/VtableStub_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Mixer_e4.hpp"  // G42.36 C2027 supply
@@ -897,7 +902,7 @@ int Game::GetMultiplayerScoreScreenBar()
 
   void *NeedsSaveOrLink; // eax
 
-  NeedsSaveOrLink = ((AbstractClass *)dword_A8B230)[374].NeedsSaveOrLink; /*0x5ca115*/
+ NeedsSaveOrLink = (void *)(((AbstractClass *)dword_A8B230)[374].NeedsSaveOrLink); /*0x5ca115*/
   if ( NeedsSaveOrLink ) /*0x5ca11d*/
   {
     if ( NeedsSaveOrLink == (void *)1 ) /*0x5ca21f*/

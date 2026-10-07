@@ -49,6 +49,10 @@
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/SaveLoadDialog_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/ControlClass_e4.hpp"
+#include "e4/classes/InputManager_ProcessEvents_e4.hpp"
+#include "e4/classes/SyncDelay_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CopyProtection_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Tooltip_e4.hpp"  // G42.36 C2027 supply
@@ -283,7 +287,7 @@ int PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   int v76; // [esp+CCh] [ebp-C4h]
   unsigned int v77[24]; // [esp+D0h] [ebp-C0h] BYREF
   unsigned int v78[24]; // [esp+130h] [ebp-60h] BYREF
-v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)((unsigned int)(a1))));
+v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass *)((unsigned int)(a1))));
   IDA_LODWORD(v72) = (unsigned int)(a1); /*0x550a03*/
   if ( (byte_ABC7C8 & 1) == 0 ) /*0x550a07*/
   {
@@ -397,9 +401,9 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
     {
       if ( v17 ) /*0x550d33*/
       {
-        v18 = (gamemd::BuildingTypeClass *)((int)((gamemd::BuildingTypeClass *)(4 * v16)));
-        v19 = (gamemd::BuildingTypeClass *)((&dword_ABC7F8)[4 * v16]);
-        v20 = (int)((gamemd::BuildingTypeClass *)((&dword_ABC7FC)[4 * v16]));
+        v18 = (::gamemd::BuildingTypeClass *)((int)((::gamemd::BuildingTypeClass *)(4 * v16)));
+        v19 = (::gamemd::BuildingTypeClass *)((&dword_ABC7F8)[4 * v16]);
+        v20 = (int)((::gamemd::BuildingTypeClass *)((&dword_ABC7FC)[4 * v16]));
         v68 += v19; /*0x550d52*/
         v69 += v20; /*0x550d5a*/
         v21 = (&dword_ABC800)[4 * v16]; /*0x550d5e*/
@@ -411,7 +415,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
         v24 = v21 + v67; /*0x550d92*/
         v16 = v59; /*0x550d94*/
         IDA_HIDWORD(v62) = v23; /*0x550d9a*/
-        v1 = (gamemd::BuildingTypeClass *)((int *)v72); /*0x550d9e*/
+        v1 = (::gamemd::BuildingTypeClass *)((int *)v72); /*0x550d9e*/
         IDA_LODWORD(v67) = v24; /*0x550da2*/
         IDA_HIDWORD(v67) += v22; /*0x550da6*/
       }
@@ -504,7 +508,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
             v5 = v66; /*0x550fd1*/
             break; /*0x550fd1*/
           }
-          v1 = (gamemd::BuildingTypeClass *)((int *)v72);
+          v1 = (::gamemd::BuildingTypeClass *)((int *)v72);
           v16 = v59; /*0x550fad*/
           IDA_LOBYTE(v54) = (uint8_t)v54 >> 1; /*0x550fb1*/
           IDA_HIBYTE(v54) >>= 1; /*0x550fb5*/
@@ -1103,7 +1107,7 @@ ObjectClass * * E4Recv_554400::sub_554400(int a2, int a3)
       v3,
       0,
       1);
-  return (gamemd::ObjectClass **)(1); /*0x554425*/
+  return (::gamemd::ObjectClass **)(1); /*0x554425*/
 
 }
 }
@@ -1162,7 +1166,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         else
         {
           v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
-          Tactical::CreateTacticalLightSurface((gamemd::Tactical *)((int *)((int)v6)), (int *)(&v24), (unsigned int *)((gamemd::IUnknown *)(&v25)), (int *)(&v26), (int *)(&v27), (IUnknown *)((int)&v28), (void *)((int)&v29)); /*0x554e2e*/
+          Tactical::CreateTacticalLightSurface((::gamemd::Tactical *)((int *)((int)v6)), (int *)(&v24), (unsigned int *)((::gamemd::IUnknown *)(&v25)), (int *)(&v26), (int *)(&v27), (IUnknown *)((int)&v28), (void *)((int)&v29)); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
           *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
@@ -1196,7 +1200,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         v18 = *((unsigned int *)v10 + 1); /*0x554f62*/
         v17 = *(unsigned int *)v10; /*0x554f66*/
         v11 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v10 + 8); /*0x554f6d*/
-        TacticalClass::SetView((gamemd::TacticalClass *)((int)v11), v17, v18, v19, v20, v21, v22); /*0x554f74*/
+        TacticalClass::SetView((::gamemd::TacticalClass *)((int)v11), v17, v18, v19, v20, v21, v22); /*0x554f74*/
         RA2_OPDEL(v10); /*0x554f7a*/
       }
       dword_ABCA50 = 0; /*0x554f91*/
@@ -1326,9 +1330,9 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
   {
     v6 = *(unsigned int *)this->__pad_0; /*0x557b53*/
     v7 = (*(int (**)(char *))(*((unsigned int *)this + 70) + 144))((char *)this + 280); /*0x557b55*/
-    return (gamemd::ControlClass **)((*(char (**)(ListClass *, int))(v6 + 192))(this, v7)); /*0x557b5e*/
+    return (::gamemd::ControlClass **)((*(char (**)(ListClass *, int))(v6 + 192))(this, v7)); /*0x557b5e*/
   }
-  return (gamemd::ControlClass **)(result); /*0x557b64*/
+  return (::gamemd::ControlClass **)(result); /*0x557b64*/
 
 }
 // 0x558810
@@ -1376,7 +1380,7 @@ int E4Recv_55B720::sub_55B720()
   v3 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b751*/
   nextArrayIndex = ((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b757*/
   p_nextArrayIndex = &((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b75d*/
-  NeedsSaveOrLink = (char *)((AbstractClass *)dword_A8B230)[128].NeedsSaveOrLink; /*0x55b766*/
+ NeedsSaveOrLink = (char *)((char *)((AbstractClass *)dword_A8B230)[128].NeedsSaveOrLink); /*0x55b766*/
   if ( nextArrayIndex != -1 ) /*0x55b769*/
   {
     if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
@@ -1401,7 +1405,7 @@ LABEL_9:
   {
     vtable0 = ((AbstractClass *)dword_A8B230)[129].vtable0; /*0x55b7cc*/
     vtable2 = (char *)((AbstractClass *)dword_A8B230)[129].vtable2; /*0x55b7d2*/
-    v10 = (gamemd::AbstractClass *)(dword_A8B230 + 129); /*0x55b7d8*/
+    v10 = (::gamemd::AbstractClass *)(dword_A8B230 + 129); /*0x55b7d8*/
     if ( vtable0 != (unsigned char *)-1 ) /*0x55b7e1*/
     {
       if ( (unsigned char *)v3 - vtable0 >= (int)vtable2 ) /*0x55b7e9*/
@@ -2084,7 +2088,7 @@ AbstractClass * * Game_Frame_Check()
           ((Tooltip *)(v4))->Enable(byte_A8EB80); /*0x55d16d*/
   LABEL_52:
           --dword_A8DAB4; /*0x55d341*/
-          return (gamemd::AbstractClass **)(byte_A8E9A0 == 0); /*0x55d341*/
+          return (::gamemd::AbstractClass **)(byte_A8E9A0 == 0); /*0x55d341*/
         }
       }
     }
@@ -2138,13 +2142,13 @@ AbstractClass * * Game_Frame_Check()
         if ( !dword_A8B23C /*0x55d335*/
           || !(*(uint8_t (**)(ObjectClass *))(dword_A8B23C->vtable1 + 8))( (ObjectClass *)(dword_A8B23C)) )
         {
-          ((gamemd::Network*)v10)->SendUnreachable(); /*0x55d33c*/
+          ((::gamemd::Network*)v10)->SendUnreachable(); /*0x55d33c*/
         }
       }
     }
     goto LABEL_52; /*0x55d24b*/
   }
-  return (gamemd::AbstractClass **)(byte_A8E9A0 == 0); /*0x55d351*/
+  return (::gamemd::AbstractClass **)(byte_A8E9A0 == 0); /*0x55d351*/
 }
 }
 // 0x55D360
@@ -4373,7 +4377,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     vtable2 = (const char *)((unsigned int *)this)[0]; /*0x559607*/
     v3 = rand(); /*0x559608*/
     sprintf(Buffer, "SAVE%04lX.%3s", v3, vtable2); /*0x559614*/
-    ((gamemd::FileClass*)(&v6))->SetFileName(Buffer); /*0x559621*/
+    ((::gamemd::FileClass*)(&v6))->SetFileName(Buffer); /*0x559621*/
   }
   while ( (uint8_t)((CCFileClass *)(&v6))->Open(0) == 1 ); /*0x559633*/
   *(unsigned int *)v6.CDFileClass = (unsigned int)&vt_CCFileClass;

@@ -21,9 +21,9 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
   ((ObjectClass *)((ObjectClass *)this))->ctor(); /*0x543786*/
   *((unsigned int *)this + 43) = *(IsometricTileClass *)(*(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * aP1); /*0x54379c*/
   *this = (IsometricTileClass)&vt_IsometricTileClass; /*0x5437a2*/
-  *((unsigned int *)this + 1) = &vt_IsometricTileClass; /*0x5437a8*/
-  *((unsigned int *)this + 2) = &vt_IsometricTileClass; /*0x5437af*/
-  *((unsigned int *)this + 3) = &vt_IsometricTileClass; /*0x5437b6*/
+  *((unsigned int *)this + 1) = (unsigned int)&vt_IsometricTileClass; /*0x5437a8*/
+  *((unsigned int *)this + 2) = (unsigned int)&vt_IsometricTileClass; /*0x5437af*/
+  *((unsigned int *)this + 3) = (unsigned int)&vt_IsometricTileClass; /*0x5437b6*/
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
     *((unsigned char *)this + 129) = 0; /*0x543805*/

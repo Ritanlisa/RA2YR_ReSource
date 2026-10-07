@@ -34,6 +34,7 @@
 #include "e4/classes/PushCommandClass_e4.hpp"
 #include "e4/classes/CountdownTimer_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x6D0680
 namespace gamemd {
@@ -116,7 +117,7 @@ LABEL_6:
           (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))((TabClass *)this, (GadgetClass *)&stru_B0CC40); /*0x6d0932*/
           HashTable::Remove(  (HashTable *)dword_887368, 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
-          ((CommandClass*)(gamemd::CommandClass *)this)->BuildBar(); /*0x6d094d*/
+          ((::gamemd::CommandClass*)(::gamemd::CommandClass *)this)->BuildBar(); /*0x6d094d*/
           v18 = this->TabClass_field_0x0; /*0x6d0952*/
           *((unsigned char *)this + 21829) = 1; /*0x6d0958*/
           (*(void (**)(TabClass *, unsigned int))(v18 + 56))((TabClass *)this, 0); /*0x6d095e*/
@@ -182,7 +183,7 @@ LABEL_6:
       if ( SidebarCountAvailableUnits(v13) ) /*0x6d07f3*/
       {
         if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/
-          TacticalClass::ResetView(v13); /*0x6d0813*/
+          TacticalClass::ResetView((gamemd::TacticalClass *)(v13)); /*0x6d0813*/
         else
           ((TacticalClass *)v13)->SetObserverView(); /*0x6d081d*/
       }

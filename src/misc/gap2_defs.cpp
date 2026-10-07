@@ -92,6 +92,7 @@ extern unsigned int stru_82BA00;
 extern unsigned int stru_A8EB00;
 
 extern char *aNoEvents; // "No events" string (IDA global; def pending globals round)
+extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 
 // 0x405170
 namespace gamemd { 
@@ -409,7 +410,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         v19 = (unsigned int *)this->m_State; /*0x5151e7*/
         v110 = Coords[2]; /*0x5151ea*/
         v20 = v17 - v14; /*0x5151ee*/
-        v21 = v19 + 39; /*0x5151f0*/
+ v21 = (int *)(v19 + 39); /*0x5151f0*/
         v19 += 346; /*0x5151f6*/
         v22 = v21; /*0x5151fc*/
         v102 = *v21; /*0x515200*/
@@ -457,7 +458,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
     if ( v104 >= v36 + 2 * *(unsigned int *)((char *)&stru_A8EB00 + 1500) + *(unsigned int *)((char *)&stru_A8EB00 + 1500) ) /*0x5153cb*/
       *((unsigned int *)this + 11) = *(unsigned int *)((char *)&stru_A8EB00 + 1488) + v36; /*0x5153d5*/
     v93 = this->m_State; /*0x5153e0*/
-    v38 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 9); /*0x5153e2*/
+ v38 = (CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 9)); /*0x5153e2*/
     if ( !(unsigned __int8)CrateClass::ProcessPickup((CrateClass *)v38, v93) ) /*0x5153e9*/
     {
       v39 = this->m_State; /*0x5153f6*/
@@ -491,7 +492,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
     v102 = *v41; /*0x5154d7*/
     v103 = v41[1]; /*0x5154e3*/
     v104 = v41[2]; /*0x5154ef*/
-    v42 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v102); /*0x5154f3*/
+ v42 = (CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v102)); /*0x5154f3*/
     v43 = this->m_State; /*0x5154fe*/
     if ( *(unsigned char *)(v43 + 140) != (((unsigned int)v42->flags[0] >> 8) & 1) ) /*0x51550f*/
       *(unsigned char *)(v43 + 1675) = 1; /*0x515513*/
@@ -522,7 +523,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
         return *(unsigned int *)v96; /*0x515ac4*/
       case 1: /*0x515583*/
       case 7: /*0x515583*/
-        v47 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 9); /*0x515590*/
+ v47 = (CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 9)); /*0x515590*/
         CellClass_DamageAllObjects(v47); /*0x515597*/
         if ( a2 ) /*0x5155a1*/
         {
@@ -761,7 +762,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
             v97[0] = 0; /*0x51595d*/
           }
           v94 = v97[0]; /*0x51596b*/
-          v63 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 9); /*0x515976*/
+ v63 = (CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)this + 9)); /*0x515976*/
           Cell::ApplyDamage((Cell *)v63, (int)((char *)&stru_A8EB00 + 1436), 1, 1, v94); /*0x51597d*/
           v3->m_Target.X = *(unsigned int *)((char *)&stru_A8EB00 + 1436); /*0x51598a*/
           *((unsigned int *)this + 10) = *(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x515992*/
@@ -1189,7 +1190,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
 
 // 0x583820
 namespace gamemd { 
-int* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
+int* Pathfinding::CheckCliff(_DWORD *a2, __int16 *a3, int a4, int a5) {
     unsigned int v5; // eax
     int *v6; // eax
     int *v7; // ecx
@@ -1345,7 +1346,7 @@ int Movement::CompareAbsCoords(void* a2, void* a3) {
 
 // 0x5B2A30
 namespace gamemd { 
-void Movement::UpdateLocomotion(void* a1) {
+void Movement::UpdateLocomotion(__int16 *a2) {
     double v3; // st7
     double v4; // st7
     double v5; // [esp+18h] [ebp-10h]

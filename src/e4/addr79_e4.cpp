@@ -42,6 +42,7 @@
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/classes/GameSettings_e4.hpp"
 #include "e4/classes/IsRandMap_e4.hpp"
+#include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/StringVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Config_e4.hpp"  // G42.36 C2027 supply
@@ -245,7 +246,7 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
         while ( 1 ) /*0x793509*/
         {
           v5 = ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v4])); /*0x793509*/
-          if ( !_strcmpi(v5, (char *)&g_WebBrowserConfig.ambientSoundController[3]) ) /*0x79350f*/
+          if ( !_strcmpi(v5, (char *)&((ObjectClass *)&g_WebBrowserConfig)->q048) ) /*0x79350f*/
             break; /*0x79350f*/
           if ( ++v4 >= dword_A8DA84 ) /*0x793523*/
             goto LABEL_15; /*0x793523*/
@@ -876,7 +877,7 @@ char NetworkLobby_WaitForPlayers()
     Debug::Log("Everyones happy\n"); /*0x794b38 G57c1: IDA 0x794b3d push offset aEveryonesHappy*/
     return 1; /*0x794b4e*/
   }
-  v3 = (int *)(dword_A8DE4C); /*0x794874*/
+ v3 = (int *)((int *)(dword_A8DE4C)); /*0x794874*/
   for ( i = dword_A8DE4C; ; v3 = i ) /*0x794879*/
   {
     v4 = *(v3 - 128); /*0x794883*/
@@ -1164,7 +1165,7 @@ AbstractClass * * WOL_StartGame()
             while ( 1 ) /*0x794ef6*/
             {
               v17 = ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v16])); /*0x794ef6*/
-              if ( !_strcmpi(v17, (char *)&g_WebBrowserConfig.ambientSoundController[3]) ) /*0x794efc*/
+              if ( !_strcmpi(v17, (char *)&((ObjectClass *)&g_WebBrowserConfig)->q048) ) /*0x794efc*/
                 break; /*0x794efc*/
               if ( ++v16 >= dword_A8DA84 ) /*0x794f10*/
                 goto LABEL_52; /*0x794f10*/
@@ -1382,7 +1383,7 @@ AbstractClass * * WOL_StartGame()
           v38 = 0; /*0x795482*/
           if ( dword_B77900> 0 ) /*0x795486*/
           {
-            v39 = &dword_B76E58; /*0x795492*/
+ v39 = (TagClass **)(&dword_B76E58); /*0x795492*/
             v45 = dword_B77908; /*0x795497*/
             owningHouseIndex = dword_B77900; /*0x79549b*/
             v48 = &dword_B76E58; /*0x7954a1*/
@@ -1986,7 +1987,7 @@ char HandleWOLRematch()
     if ( ++v5 >= dword_B77900) /*0x7968d7*/
       return 0; /*0x7968d7*/
   }
-  if ( &g_WebBrowserConfig == (ObjectClass *)-36 || _strcmpi(v12, (char *)&g_WebBrowserConfig.ambientSoundController[3]) ) /*0x7968fb*/
+  if ( &g_WebBrowserConfig == (ObjectClass *)-36 || _strcmpi(v12, (char *)&((ObjectClass *)&g_WebBrowserConfig)->q048) ) /*0x7968fb*/
     return 0; /*0x7968e4*/
   Debug::Log("Received NET_PREVIEW_MODE packet from host\n"); /*0x79690c G57w11: IDA push seq @ 0x79690c*/
   ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796924*/
@@ -2132,7 +2133,7 @@ AbstractClass * * NetworkGame_Init()
   *(unsigned int *)&g_WOL_BuddyList.__pad_20[4] = 0; /*0x7970e6*/
   *(unsigned int *)dword_B77D6C = g_NetworkRematchState; /*0x7970ec*/
   *(unsigned int *)&dword_B779C4= 0; /*0x7970f1*/
-  strcpy((char *)&g_WebBrowserConfig.location[2], ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty()); /*0x797115*/
+  strcpy((char *)&((ObjectClass *)&g_WebBrowserConfig)->q0A4, ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty()); /*0x797115*/
   PtrVector::Destroy( (void *)(&stru_A8DA74)); /*0x797123*/
   nSize = 1015; /*0x797132*/
   GetComputerNameA(Buffer, &nSize); /*0x79713a*/
@@ -2449,7 +2450,7 @@ ObjectClass * * WOL_FetchData()
 
   if ( !byte_B76A2C ) /*0x79780c*/
   {
-    v32 = (char *)(byte_B76A2C); /*0x79780e*/
+ v32 = (char *)((char *)(byte_B76A2C)); /*0x79780e*/
     StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_WDT_NET_ERR), 0, (const char *)(g_Str_File_wonline_cpp), 24435); /*0x797819*/
   LABEL_7:
     ShowDialogConfirm( (void *)(StringCSF), 0, (uint8_t (*)(void))GameLoop::Thunk, (void *)((char)v32)); /*0x797894*/

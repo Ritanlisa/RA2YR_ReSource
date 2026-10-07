@@ -255,7 +255,7 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     while ( v6 < dword_A83CC8 ); /*0x6cb23d*/
   }
   v9 = (int)(this); /*0x6cb24f*/
-v7 = (*(int (**)(int *, int *))(dword_B0F670+ 16))( /*0x6cb253*/ &dword_B0F670, (int *)(&v9));
+v7 = (*(int (**)(int *, int *))(dword_B0F670+ 16))( /*0x6cb253*/ &dword_B0F670, (int *)((int *)((int *)((int *)(&v9)))));
 
 
   if ( v7 != -1 && v7 < dword_B0F680) /*0x6cb263*/
@@ -269,7 +269,7 @@ v7 = (*(int (**)(int *, int *))(dword_B0F670+ 16))( /*0x6cb253*/ &dword_B0F670, 
     }
   }
   v9 = (int)(this); /*0x6cb298*/
-v8 = (*(int (**)(char *, int *))(*(unsigned int *)&dword_B0F6C8+ 16))( /*0x6cb29c*/ &dword_B0F6C8, (int *)(&v9));
+v8 = (*(int (**)(char *, int *))(*(unsigned int *)&dword_B0F6C8+ 16))( /*0x6cb29c*/ &dword_B0F6C8, (int *)((char *)((char *)((char *)(&v9)))));
 
 
   if ( v8 != -1 && v8 < *(int *)&g_BuildingLoadQueue_Array.__pad_E88[16] ) /*0x6cb2ac*/

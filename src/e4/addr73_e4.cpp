@@ -45,6 +45,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/FileTree_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FootClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
@@ -1637,7 +1638,7 @@ wchar_t * GetStringCSF(wchar_t *Format, unsigned int *a2, const char *aP3, int a
   if ( a2 ) /*0x734e68*/
     *a2 = 0; /*0x734e6a*/
   if ( !dword_B1CF74 ) /*0x734e77*/
-    return (wchar_t *)(aFatalStringMan; /*0x734e7a*/);
+    return (wchar_t *)(aFatalStringMan); /*0x734e7a*/
   v7 = (unsigned int *)(bsearch(Format,(const void *)( dword_B1CF74), dword_B1CF6C, 0x28u, _strcmpi)); /*0x734e93*/
   if ( v7 ) /*0x734e9d*/
   {
@@ -2490,7 +2491,7 @@ char E4Recv_736C10::sub_736C10()
   v4[0] = this->location[0]; /*0x736c2f*/
   v4[1] = this->location[1]; /*0x736c3b*/
   v4[2] = this->location[2]; /*0x736c42*/
-  if ( (uint8_t)((Tactical *)&dword_87F7E8)->IsCellVisible( (IUnknown *)(v4)) || !this->isInPlayfield[0] ) /*0x736c54*/
+  if ( (uint8_t)((Tactical *)&dword_87F7E8)->IsCellVisible((unsigned int *)(v4)) || !this->isInPlayfield[0] ) /*0x736c54*/
     return 0; /*0x736c8a*/
   v2 = *((unsigned int *)this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/

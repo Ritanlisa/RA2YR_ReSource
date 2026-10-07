@@ -403,7 +403,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
   int v11; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
-  result = &dbl_ABECE0; /*0x5c03d0*/
+  result = (unsigned int)(&dbl_ABECE0)); /*0x5c03d0*/
   if ( &dbl_ABECE0 ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Alternate), 0); /*0x5c03ea*/
@@ -577,7 +577,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
   switch ( v4 ) /*0x725911*/
   {
     case 24: /*0x725911*/
-      if ( aP0     ==     (int)((int)((int)((int)(*(AbstractClass **)(unsigned int *)((char *)&stru_A8EB00 + 404) ))))) /*0x72591d*/
+      if ( aP0     ==     (int)(*(AbstractClass **)(unsigned int *)((char *)&stru_A8EB00 + 404) )) /*0x72591d*/
         *(unsigned int *)((char *)&stru_A8EB00 + 404) = 0; /*0x72591f*/
       break;
     case 13: /*0x725911*/

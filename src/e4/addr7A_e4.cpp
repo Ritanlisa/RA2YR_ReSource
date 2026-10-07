@@ -45,6 +45,9 @@
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/OwnerDrawControl_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====

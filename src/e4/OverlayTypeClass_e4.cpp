@@ -184,7 +184,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   ImageLoaded = this->ImageLoaded; /*0x5fe821*/
   this->IsVeins = v8; /*0x5fe828*/
   this->ImageLoaded = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aCratetrigger), ImageLoaded); /*0x5fe833*/
-  v9 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aExplodes, this->IsRubble); /*0x5fe848*/
+  v9 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0],(unsigned char *)(aExplodes), this->IsRubble); /*0x5fe848*/
   v10 = this->RadarColor[0]; /*0x5fe84d*/
   this->IsRubble = v9; /*0x5fe853*/
   v11 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aOverrides), v10); /*0x5fe862*/
@@ -230,7 +230,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   Overrides = this->Overrides; /*0x5fe98f*/
   this->ChainReaction = v18; /*0x5fe996*/
   this->Overrides = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aIsveins), Overrides); /*0x5fe9a1*/
-  v19 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aChainreaction, this->IsARock); /*0x5fe9b6*/
+  v19 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0],(unsigned char *)(aChainreaction), this->IsARock); /*0x5fe9b6*/
   v20 = this->RadarColor[1]; /*0x5fe9bb*/
   this->IsARock = v19; /*0x5fe9c1*/
   v21 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aDrawflat), v20); /*0x5fe9d0*/
@@ -238,7 +238,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   this->RadarColor[1] = v21; /*0x5fe9e4*/
   this->__tail_2B5[0] = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aIsarock), v27); /*0x5fe9ef*/
   this->RadarColor[2] = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5fea0a*/
-                          (int *)aP1), (uint8_t *)((unsigned int *)this)[0], aIsrubble, this->RadarColor[2]);
+                          (int *)aP1), (uint8_t *)((unsigned int *)this)[0],(unsigned char *)(aIsrubble), this->RadarColor[2]);
   return (gamemd::AnimTypeClass **)(1); /*0x5fea11*/
 
 }
@@ -658,10 +658,10 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vtable1 = &vt_OverlayTypeClass; /*0x5fef36*/
-  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fef3c*/
-  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fef43*/
-  ((unsigned int *)this)[0] = &vt_OverlayTypeClass; /*0x5fef4a*/
+  this->vtable1 = (unsigned int)&vt_OverlayTypeClass; /*0x5fef36*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef3c*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef43*/
+  ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
   v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
