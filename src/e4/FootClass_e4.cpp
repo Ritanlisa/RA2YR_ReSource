@@ -35,6 +35,7 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/COMObject_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x4D3590
@@ -285,7 +286,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))((int)v28.m_Data, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
-        if ( *v10   !=   (int)(a1 ))) /*0x7102e3*/
+        if ( *v10   !=   (int)(a1 )) /*0x7102e3*/
         {
           *v10 = (int)(a1); /*0x7102e7*/
           ((SuperClass *)((SuperClass *)(v6 + 413)))->SetFieldX(); /*0x7102e9*/

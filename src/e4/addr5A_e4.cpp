@@ -71,7 +71,13 @@
 #include "e4/classes/Type_e4.hpp"
 #include "e4/classes/Heap_e4.hpp"
 #include "e4/classes/Scalar_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int DrawIsoTile(...);  // raw 005A7FA0: int __fastcall IsoTile_Draw(int a1, _WORD *a2, char a3)
+    int Object_Helper_5A99B0(...);  // raw 005A99B0: _DWORD *__thiscall Object_Helper_5A99B0(ObjectClass *this)
+} // namespace gamemd
 
 // 0x5A1350
 namespace gamemd {

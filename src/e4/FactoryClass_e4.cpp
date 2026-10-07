@@ -414,7 +414,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log("SpecialItem\t= %d\n"); /*0x4ca4c3 G57c1: IDA 0x4ca4c3 push offset aSpecialitemD*/
   (*((void (**)(void **))this->((unsigned int *)owner)[0] + 4))( (void **)(&this->((unsigned int *)owner)[0])); /*0x4ca4d4*/
   Debug::Log("House->Fetch_ID()\t= %d\n"); /*0x4ca4dd G57c1: IDA 0x4ca4dd push offset aHouseFetchIdD*/
-  (*((void ((void **)(**))(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
+  (*((void (__stdcall **)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
   Debug::Log("ID\t= %d\n"); /*0x4ca4f5 G57c1: IDA 0x4ca4f5 push offset aIdD_0*/
   v3 = ((AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
@@ -513,14 +513,14 @@ int FactoryClass::CountType(int aP1)
   v3 = 0; /*0x4ca679*/
   v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
-    v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4)   ==   (int)(aP1)); /*0x4ca68e*/
+    v3 = (*(int (**)(int))(*(unsigned int *)v4 + 132))(v4)   ==   (int)(aP1); /*0x4ca68e*/
   v5 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca693*/
   if ( v5 > 0 ) /*0x4ca698*/
   {
     v6 = *(unsigned int **)&this->__pad_42[2]; /*0x4ca69a*/
     do /*0x4ca6a6*/
     {
-      if ( *v6   ==   (unsigned int)(aP1 ))) /*0x4ca69f*/
+      if ( *v6   ==   (unsigned int)(aP1 )) /*0x4ca69f*/
         ++v3; /*0x4ca6a1*/
       ++v6; /*0x4ca6a2*/
       --v5; /*0x4ca6a5*/

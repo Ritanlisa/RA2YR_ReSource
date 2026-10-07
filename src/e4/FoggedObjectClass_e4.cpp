@@ -717,7 +717,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
 LABEL_14:
     v17 = *(unsigned int *)(*((int (**)(FoggedObjectClass *, int *))v3->vtable1 + 24))( (FoggedObjectClass *)(v3), (int *)(&v17)); /*0x4d2665*/
     v12 = 74 * (SHIWORD(v17) - (((int16_t)v17 + SHIWORD(v17)) << 9) - (int16_t)v17) /*0x4d26a1*/
-        - (unsigned int)v3[1].AbstractClass
+        - (unsigned int)*(unsigned int *)&v3[1].vtable1
         + 0x7FFFFFFF;
     if ( (int)(g_MissionState + 1) <= dword_8B3CC8 ) /*0x4d26aa*/
     {
@@ -779,7 +779,7 @@ LABEL_22:
       vtable3 = (void *)(v3[2]); /*0x4d260c*/
       v10 = v18; /*0x4d260f*/
       v3[2] = (char *)vtable3 + 1; /*0x4d2616*/
-      v11 = (unsigned int *)((char *)v3[2].AbstractClass + 16 * (unsigned int)vtable3); /*0x4d261f*/
+      v11 = (unsigned int *)((char *)*(unsigned int *)&v3[2].vtable1 + 16 * (unsigned int)vtable3); /*0x4d261f*/
       *v11 = v10; /*0x4d2621*/
       v11[1] = v19; /*0x4d2627*/
       v11[2] = v20; /*0x4d262e*/
@@ -787,7 +787,7 @@ LABEL_22:
     }
     ObjectPtr_RegisterForTracking( /*0x4d264b*/
       (int)&SwizzleManagerClass_Instance,
-      (int *)v3[2].AbstractClass + 4 * (int)v3[2] - 4);
+      (int *)*(unsigned int *)&v3[2].vtable1 + 4 * (int)v3[2] - 4);
     if ( ++v17 >= (int)a1 ) /*0x4d265f*/
       goto LABEL_14; /*0x4d265f*/
   }
@@ -1349,7 +1349,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
     (*(void (**)(FoggedObjectClass *))((char *)this->vtable1 + 12))((FoggedObjectClass *)this); /*0x4e078e*/
   }
   v7 =(int)this->vtable2; /*0x4e0791*/
-  if ( v7   <   (int)(this->uniqueId ))) /*0x4e0799*/
+  if ( v7   <   (int)(this->uniqueId )) /*0x4e0799*/
     this->uniqueId =(void *)v7; /*0x4e079b*/
   return 1; /*0x4e079e*/
 

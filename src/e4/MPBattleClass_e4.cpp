@@ -99,11 +99,11 @@ int MPBattleClass::vt_entry_18()
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::isValidMap()
 {
+int64_t result; // rax
 dword_ABFAF8 = result; /*0x5cad1b*/
 dword_ABFAF8 = result; /*0x5cad1b*/
 
   double v0; // st7
-  int64_t result; // rax
 
   v0 = Math::Sin(dbl_ABFA80 - dbl_ABFAA8); /*0x5cad02*/
   result = Math::RoundToInt(v0 * dbl_ABFAA0 * 0.5); /*0x5cad16*/
@@ -138,10 +138,10 @@ dbl_ABFAC8 = Math::ArcTan((double)(2 * dword_ABFAF8) / dbl_ABFAA0); /*0x5cad82*/
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::startGame()
 {
+int64_t result; // rax
 dword_ABFAEC = result; /*0x5cadb0*/
 dword_ABFAEC = result; /*0x5cadb0*/
 
-  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABFAF8) + 0.5); /*0x5cadab*/
   dword_ABFAEC = result; /*0x5cadb0*/
@@ -204,10 +204,10 @@ dword_ABFAE4 = 128; /*0x5cae04*/
 namespace gamemd {  // G42.18c ns repair
 void MPBattleClass::onPlayerConnect()
 {
+long double v0; // st7
 dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
 dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
 
-  long double v0; // st7
 
   v0 = pow(256.0, 2.0); /*0x5cb19c*/
   dbl_ABFB28 = Math::Sqrt(v0 + v0); /*0x5cb1ae*/
@@ -262,11 +262,11 @@ dbl_ABFB30 = 0.0174532925199433 * 60.0; /*0x5cb22c*/
 namespace gamemd {  // G42.18c ns repair
 long long MPBattleClass::canAllyWith()
 {
+int64_t result; // rax
 dword_ABFB80 = result; /*0x5cb28b*/
 dword_ABFB80 = result; /*0x5cb28b*/
 
   double v0; // st7
-  int64_t result; // rax
 
   v0 = Math::Sin(dbl_ABFB08 - dbl_ABFB30); /*0x5cb272*/
   result = Math::RoundToInt(v0 * dbl_ABFB28 * 0.5); /*0x5cb286*/

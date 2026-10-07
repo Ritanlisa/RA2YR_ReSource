@@ -338,11 +338,11 @@ void *** BufferIOFileClass::Constructor_BitFont(char a2) {
     void *FileSize; // eax
     void **FilePointer; // esi
 
-    FileSize = (void *)this->q008; /*0x434a43*/
+    FileSize = (void *)this->FileSize; /*0x434a43*/
     *(unsigned int *)this->RawFileClass = (unsigned int)(void *)&BitFont_vftable; /*0x434a46*/
     if ( FileSize ) /*0x434a4e*/
       free(FileSize); /*0x434a51*/
-    FilePointer = (void **)this->q004; /*0x434a5a*/
+    FilePointer = (void **)this->FilePointer; /*0x434a5a*/
     if ( FilePointer ) /*0x434a5f*/
     {
       if ( FilePointer[6] ) /*0x434a61*/

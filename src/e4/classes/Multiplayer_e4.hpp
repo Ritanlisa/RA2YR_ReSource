@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_Multiplayer_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_Multiplayer_DEF 1
 struct Multiplayer {
 // --- flat members (BEGIN) ---
     unsigned int u32_8;  // 0x8
@@ -22,5 +24,6 @@ struct Multiplayer {
     void * FindStartPositions();
     void ShowProgress(int a2);
 };
+#endif  // GAMEMD_G2_Multiplayer_DEF
 
 } // namespace gamemd

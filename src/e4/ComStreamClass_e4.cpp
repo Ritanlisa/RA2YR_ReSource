@@ -21,6 +21,10 @@
 #include "e4/classes/PushCommandClass_e4.hpp"
 #include "e4/classes/Flag_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int FillPersonaInfoWOL(...);  // raw 0077A9F0: void __thiscall WOL_FillPersonaInfo(int this, HWND hDlg, char **a3, wchar_t **a4)
+} // namespace gamemd
 
 // 0x7A3D90
 namespace gamemd {

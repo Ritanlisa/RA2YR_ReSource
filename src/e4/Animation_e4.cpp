@@ -121,7 +121,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
           }
           if ( v13 ) /*0x454af1*/
           {
-            if ( LOBYTE(v13->ObjectTypeClass) ) /*0x454af3*/
+            if ( LOBYTE(*(unsigned int *)&v13->vtable1) ) /*0x454af3*/
               BuildingClass::PlayAnim((BuildingClass *)this, (int)_EDX.v, v13, v8, v12, 0, 0); /*0x454b01 W13A: IdaRegVar.v int-view (raw fn_45.c:4379 reg arg)*/
           }
         }
@@ -198,7 +198,7 @@ LABEL_52:
         v25 = 0; /*0x454c8b*/
         v26 = (AnimTypeClass *)(*((unsigned int *)this + 328) + 5208); /*0x454c8d*/
       }
-      if ( v26 && LOBYTE(v26->ObjectTypeClass) ) /*0x454c96*/
+      if ( v26 && LOBYTE(*(unsigned int *)&v26->vtable1) ) /*0x454c96*/
         BuildingClass::PlayAnim((BuildingClass *)this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v26, 19, v25, 0, 0); /*0x454ca5*/
       v27 = 0; /*0x454caa*/
       for ( j = 0; j < 1428; j += 68 ) /*0x454cac*/

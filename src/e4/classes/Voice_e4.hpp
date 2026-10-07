@@ -7,6 +7,8 @@
 namespace gamemd {
 struct BufferIOFileClass;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_G2_Voice_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_Voice_DEF 1
 struct Voice {
 // --- flat members (BEGIN) ---
     unsigned int u32_C;  // 0xC
@@ -27,5 +29,6 @@ struct Voice {
     int DetachChannel();
     int Stop();
 };
+#endif  // GAMEMD_G2_Voice_DEF
 
 } // namespace gamemd

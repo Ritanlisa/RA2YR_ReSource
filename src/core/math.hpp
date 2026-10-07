@@ -165,6 +165,8 @@ struct RectangleStruct
 // design: likely inlined by compiler (no standalone symbol), no callgraph/git history reference
 std::ostream& operator<<(std::ostream& os, const RectangleStruct& r);
 
+#ifndef GAMEMD_G2_ColorStruct_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_ColorStruct_DEF 1
 struct ColorStruct
 {
     std::uint8_t R = 0;
@@ -180,6 +182,7 @@ struct ColorStruct
     // unmatched: no callgraph reference and no git history record
     bool operator!=(const ColorStruct& rhs) const;
 };
+#endif  // GAMEMD_G2_ColorStruct_DEF
 
 struct TimerStruct
 {

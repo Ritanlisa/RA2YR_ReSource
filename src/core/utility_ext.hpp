@@ -39,6 +39,8 @@ class UnitClass;
 // COM class: IUnknown-based, vtable at this+0
 // ============================================================================
 #ifndef GAMEMD_E4_MoveFeedback  // G42.33 b3: e4 flat carrier wins in opt-in TUs
+#ifndef GAMEMD_G2_MoveFeedback_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_MoveFeedback_DEF 1
 class MoveFeedback
 {
 public:
@@ -87,6 +89,7 @@ public:
     int32_t     MoveFeedback_field_28;               // 0x28
     int32_t     MoveFeedback_field_2C;               // 0x2C
 };
+#endif  // GAMEMD_G2_MoveFeedback_DEF
 #endif  // GAMEMD_E4_MoveFeedback
 
 // ============================================================================
@@ -381,6 +384,8 @@ public:
 // ============================================================================
 // CSP: RefCount matched via T1
 #ifndef GAMEMD_E4_RefCount  // G57c1: e4 flat carrier wins in e4 TUs (C2011 vs RefCount_e4.hpp)
+#ifndef GAMEMD_G2_RefCount_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_RefCount_DEF 1
 class RefCount
 {
 public:
@@ -392,6 +397,7 @@ public:
     int32_t     m_RefCount;     // 0x00
     int32_t     RefCount_field_04;       // 0x04
 };
+#endif  // GAMEMD_G2_RefCount_DEF
 #endif  // GAMEMD_E4_RefCount
 
 

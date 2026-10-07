@@ -871,8 +871,8 @@ int SidebarClass::select()
 
   SidebarClass::updateStripVisibility(*(SidebarClass **)&stru_88732C.__pad_1C[32]); /*0x6ab99a*/
   SidebarClass::initializeStrip(*(SidebarClass **)&stru_88732C.__pad_1C[32], 0); /*0x6ab9a7*/
-  v2 = *(unsigned int *)&this->__pad_4[40]; /*0x6ab9ac*/
-  LOBYTE(this->field_34) = 1; /*0x6ab9b1*/
+  v2 = *(unsigned int *)&this->u32_2C; /*0x6ab9ac*/
+  LOBYTE(this->q034) = 1; /*0x6ab9b1*/
   *(unsigned char *)(v2 + 60) = 1; /*0x6ab9bb*/
   result = ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 0); /*0x6ab9be*/
   g_CameoRenderFlag = 1; /*0x6ab9c3*/
@@ -888,8 +888,8 @@ int SidebarClass::deselect()
   int result; // eax
 
   SidebarClass::updateStripPosition(*(SidebarClass **)&stru_88732C.__pad_1C[32]); /*0x6ab9e9*/
-  v2 = *(unsigned int *)&this->__pad_4[40]; /*0x6ab9ee*/
-  LOBYTE(this->field_34) = 0; /*0x6ab9f1*/
+  v2 = *(unsigned int *)&this->u32_2C; /*0x6ab9ee*/
+  LOBYTE(this->q034) = 0; /*0x6ab9f1*/
   *(unsigned char *)(v2 + 60) = 1; /*0x6ab9fc*/
   result = ((MapClass *)(&stru_87F5F0.__pad_58[416]))->MarkForRedraw( 0); /*0x6aba00*/
   g_CameoRenderFlag = 1; /*0x6aba05*/

@@ -46,6 +46,10 @@
 #include "e4/classes/LayerClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/UnitTypeClass_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ComputeMovementWeight(...);  // raw 00429830: double __thiscall ComputeMovementWeight(int this, int *a2, _DWORD *a3, char a4, int a5, in
+} // namespace gamemd
 extern int CellToTileIndexMap(void *a1, __int16 *a2);  // W13-C raw 0x56D3F0 ObjectClass::CellToTileIndexMap thiscall 自由形
 extern int * globalHelper_02AA90(int a1, int a2);  // W13-C raw 0x42AA90 sub_42AA90
 extern char ParsePathDirections(void *a1, int a2, void *a3);  // W13-C raw 0x42B210 ObjectClass::ParsePathDirections thiscall 自由形

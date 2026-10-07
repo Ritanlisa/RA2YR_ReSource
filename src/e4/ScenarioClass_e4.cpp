@@ -58,9 +58,14 @@
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Node_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int SeedInitRNG(...);  // raw 0065C6D0: _DWORD *__thiscall SeedInitRNG(ObjectClass *this, int a2)
+} // namespace gamemd
 
 // 0x58BB30
 namespace gamemd {
@@ -656,7 +661,7 @@ int ScenarioClass_Construct(void * a2)
     *((unsigned int *)((char *)&v5 + 1)) = 0; /*0x68676f*/
     ((GenericList *)((unsigned int *)((char *)&v5 + 2)))->Constructor(); /*0x686773*/
     *((unsigned int *)((char *)&v5 + 2)) = (int)&List_INIClass_INISection___vftable; /*0x68677c*/
-    Node::Init((Node *)((char *)&v5 + 8)); /*0x686784*/
+    Node_flat::Init((Node_flat *)((char *)&v5 + 8)); /*0x686784*/
     ((unsigned int *)&v5)[0] = 0; /*0x68678d*/
     v5.ownsFile = 0; /*0x686792*/
     *(unsigned int *)v5.INIClass = (unsigned int)&CCINIClass_Vtable; /*0x686797*/
@@ -722,6 +727,13 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
   INIClass Filename; // [esp+100h] [ebp-74h] BYREF
   unsigned char var34[16]; // [esp+140h] [ebp-34h] BYREF
   wchar_t Buffer[18]; // [esp+150h] [ebp-24h] BYREF
+  wchar_t *v20;
+  unsigned int v19;
+  int v18;
+  unsigned int v16;
+  int v15;
+  unsigned int v10;
+  wchar_t *v21;
 
   bool v51 = g_GameMode_Current == 0;
   v3 = (CCINIClass *)(a2);
@@ -1293,7 +1305,817 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   char v38; // cl
   char v39; // al
   int Int_Overwrite; // eax
-  int v41; // ... [36518 chars total]
+  int v40; // ecx
+  int v41; // ecx
+  int v42; // eax
+  int v43; // eax
+  int v44; // edx
+  int v45; // ecx
+  int v46; // eax
+  int v47; // ecx
+  int v48; // eax
+  int v49; // eax
+  int v50; // edx
+  int v51; // ecx
+  int TimeString; // eax
+  CCINIClass *v53; // ecx
+  int v54; // eax
+  double v55; // st7
+  int v56; // eax
+  double v57; // st7
+  double v58; // st7
+  int v59; // eax
+  double v60; // st7
+  double v61; // st7
+  int v62; // eax
+  double v63; // st7
+  double v64; // st7
+  int v65; // eax
+  double v66; // st7
+  double v67; // st7
+  int v68; // eax
+  double v69; // st7
+  double v70; // st7
+  int v71; // eax
+  double v72; // st7
+  double v73; // st7
+  int v74; // eax
+  double v75; // st7
+  double v76; // st7
+  int v77; // eax
+  double v78; // st7
+  double v79; // st7
+  int v80; // eax
+  double v81; // st7
+  double v82; // st7
+  int v83; // eax
+  double v84; // st7
+  double v85; // st7
+  int v86; // eax
+  double v87; // st7
+  double v88; // st7
+  int v89; // eax
+  double v90; // st7
+  double v91; // st7
+  int v92; // eax
+  double v93; // st7
+  double v94; // st7
+  int v95; // eax
+  double v96; // st7
+  double v97; // st7
+  int v98; // eax
+  double v99; // st7
+  double v100; // st7
+  int v101; // eax
+  double v102; // st7
+  double v103; // st7
+  int v104; // eax
+  double v105; // st7
+  double v106; // st7
+  int v107; // eax
+  double v108; // st7
+  double v109; // st7
+  int v110; // eax
+  double v111; // st7
+  double v112; // st7
+  int v113; // eax
+  int v114; // eax
+  void **v116; // [esp-4h] [ebp-5Ch] BYREF
+  unsigned int *var58; // [esp+0h] [ebp-58h]
+  RandomStruct *v115; // [esp+4h] [ebp-54h]
+  int v119; // [esp+8h] [ebp-50h]
+  INIClass *v117; // [esp+Ch] [ebp-4Ch]
+  INIClass *aP3[2]; // [esp+10h] [ebp-48h]
+  void ***v122; // [esp+24h] [ebp-34h]
+  RandomStruct v123; // [esp+28h] [ebp-30h] BYREF
+  char Buffer[12]; // [esp+30h] [ebp-28h] BYREF
+  char Destination[4]; // [esp+3Ch] [ebp-1Ch] BYREF
+  void *Block; // [esp+40h] [ebp-18h]
+  char v127; // [esp+49h] [ebp-Fh]
+
+  INIClass::ResetSection(aP1);
+  GameMode::ReadFlagsFromINI((int *)this, aP1);
+  *((unsigned int *)this + 1099) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&stru_830620.__pad_579C[32940],
+                               (CCINIClass *)&stru_830620.__pad_579C[32948],
+                               *(INIClass **)((char *)this + 4396));
+  *((unsigned int *)this + 1100) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&stru_830620.__pad_579C[32940],
+                               (CCINIClass *)&stru_830620.__pad_579C[32932],
+                               *(INIClass **)((char *)this + 4400));
+  *((unsigned int *)this + 1101) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&stru_830620.__pad_579C[32940],
+                               (CCINIClass *)&stru_82BBD0.sectionHead[1],
+                               *(INIClass **)((char *)this + 4404));
+  *((unsigned int *)this + 1102) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&stru_830620.__pad_579C[32940],
+                               &g_INI_Key_Height,
+                               *(INIClass **)((char *)this + 4408));
+  *((unsigned int *)this + 1103) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&stru_830620.__pad_579C[32940],
+                               (CCINIClass *)&stru_830620.__pad_579C[32908],
+                               *(INIClass **)((char *)this + 4412));
+  *((unsigned int *)this + 1145) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&stru_830620.__pad_579C[32940],
+                               (CCINIClass *)&stru_830620.__pad_579C[32884],
+                               *(INIClass **)((char *)this + 4580));
+  v4 = 0;
+  if ( *((int *)this + 1103) > 0 )
+  {
+    v5 = (RandomStruct *)((char *)this + 4416);
+    do
+    {
+      v122 = (void ***)((char *)v4 + 1);
+      sprintf(Buffer, &stru_830620.__pad_579C[32872], (char *)v4 + 1);
+      v6 = INIClass::ReadPoint2D_Overwrite(
+             aP1,
+             &v123,
+             (INIClass *)&stru_830620.__pad_579C[32940],
+             (CCINIClass *)Buffer,
+             v5);
+      v7 = *v6;
+      v8 = v6[1];
+      v5->Min = v7;
+      v5->Max = v8;
+      v4 = v122;
+      ++v5;
+    }
+    while ( (int)v122 < *((unsigned int *)this + 1103) );
+  }
+  INIClass::GetString(
+    (uint8_t ***)aP1,
+    (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+    (uint8_t *)&stru_830620.__pad_579C[33760],
+    (INIClass *)((char *)this + 4),
+    (INIClass *)((char *)this + 4),
+    260);
+  INIClass::GetString(
+    (uint8_t ***)aP1,
+    (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+    (uint8_t *)&stru_830620.__pad_579C[33744],
+    (INIClass *)((char *)this + 264),
+    (INIClass *)((char *)this + 264),
+    260);
+  *((unsigned int *)this + 1293) = INIClass::GetBool(
+                               (uint8_t ***)aP1,
+                               (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&g_INI_Key_Intro,
+                               *((unsigned int *)this + 1293));
+  *((unsigned int *)this + 1294) = INIClass::GetBool(
+                               (uint8_t ***)aP1,
+                               (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&stru_830620.__pad_579C[31468],
+                               *((unsigned int *)this + 1294));
+  *((unsigned int *)this + 1295) = INIClass::GetBool(
+                               (uint8_t ***)aP1,
+                               (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&stru_830620.__pad_579C[33740],
+                               *((unsigned int *)this + 1295));
+  *((unsigned int *)this + 1296) = INIClass::GetBool(
+                               (uint8_t ***)aP1,
+                               (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&stru_830620.__pad_579C[33732],
+                               *((unsigned int *)this + 1296));
+  *((unsigned int *)this + 1297) = INIClass::GetBool(
+                               (uint8_t ***)aP1,
+                               (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&stru_817244.INIClass_field_2C,
+                               *((unsigned int *)this + 1297));
+  *((unsigned int *)this + 1298) = INIClass::GetBool(
+                               (uint8_t ***)aP1,
+                               (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&stru_830620.__pad_579C[33720],
+                               *((unsigned int *)this + 1298));
+  *((unsigned int *)this + 1299) = INIClass::GetBool(
+                               (uint8_t ***)aP1,
+                               (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&stru_830620.__pad_579C[33704],
+                               *((unsigned int *)this + 1299));
+  *((unsigned char *)this + 13500) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33688],
+                               *((unsigned char *)this + 13500));
+  *((unsigned char *)this + 13485) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33672],
+                               *((unsigned char *)this + 13485));
+  *((unsigned char *)this + 13484) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33660],
+                               *((unsigned char *)this + 13484));
+  BuildingTypeByName = Scenario::FindBuildingTypeByName(
+                         (uint8_t ***)aP1,
+                         (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                         (uint8_t *)g_INI_Key_Theme,
+                         *(CCINIClass **)((char *)this + 7280));
+  aP3[1] = 0;
+  aP3[0] = (INIClass *)&stru_830620.__pad_579C[33644];
+  v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
+  *((unsigned int *)this + 1820) = BuildingTypeByName;
+  *(unsigned int *)&g_abs_A8D63C = INIClass::ReadInt_Overwrite(
+                                                   (int)aP1,
+                                                   (uint8_t *)v117,
+                                                   (CCINIClass *)aP3[0],
+                                                   aP3[1]);
+  v10 = *(INIClass **)((char *)this + 7288);
+  aP3[1] = *(INIClass **)((char *)this + 7292);
+  Double_Overwrite = INIClass::ReadDouble_Overwrite(
+                       (int)aP1,
+                       (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                       (uint8_t *)&stru_830620.__pad_579C[33628],
+                       v10);
+  *(double *)((char *)this + 7288) = Double_Overwrite;
+  if ( Double_Overwrite >= 1.0 )
+    Double_Overwrite = 1.0;
+  *(double *)((char *)this + 7288) = Double_Overwrite;
+  *((unsigned int *)this + 1824) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33612],
+                               *(INIClass **)((char *)this + 7296));
+  *((unsigned char *)this + 13486) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33600],
+                               *((unsigned char *)this + 13486));
+  *((unsigned char *)this + 13487) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33588],
+                               *((unsigned char *)this + 13487));
+  *((unsigned char *)this + 13488) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33572],
+                               *((unsigned char *)this + 13488));
+  *((unsigned char *)this + 13489) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33560],
+                               *((unsigned char *)this + 13489));
+  *((unsigned char *)this + 13477) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33548],
+                               *((unsigned char *)this + 13477));
+  *((unsigned char *)this + 13490) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33536],
+                               *((unsigned char *)this + 13490));
+  *((unsigned char *)this + 13492) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33512],
+                               *((unsigned char *)this + 13492));
+  *((unsigned int *)this + 1825) = INIClass::ReadInt_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33504],
+                               *(INIClass **)((char *)this + 7300));
+  *((unsigned int *)this + 3380) = INIClass::ReadInt_Overwrite(
+                                (int)aP1,
+                                (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                                (CCINIClass *)&stru_830620.__pad_579C[33484],
+                                *(INIClass **)((char *)this + 13520));
+  var58 = 0;
+  v115 = 0;
+  IDA_LOWORD(v119) = 1;
+  v116 = &vt_VectorClass_TechnoTypeClass;
+  if ( &v116 != (void ***)((char *)this + 13524) )
+  {
+    TypeList_TechnoType::ddtor((int)&v116);
+    v115 = *(RandomStruct **)((char *)this + 13532);
+    if ( v115 )
+    {
+      var58 = (unsigned int *)RA2_OPNEW(4 * (unsigned int)v115);
+      if ( var58 )
+      {
+        v12 = 0;
+        for ( IDA_BYTE1(v119) = 1; v12 < (int)v115; ++v12 )
+          var58[v12] = *(unsigned int *)(*((unsigned int *)this + 3382) + 4 * v12);
+      }
+    }
+    else
+    {
+      var58 = 0;
+      IDA_BYTE1(v119) = 0;
+    }
+  }
+  TechnoTypeList = (void ***)INIClass::ReadTechnoTypeList(
+                               (uint8_t ***)aP1,
+                               (CCINIClass *)Destination,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (uint8_t *)&stru_830620.__pad_579C[33468],
+                               &vt_TypeList_TechnoTypeClass,
+                               var58,
+                               (int)v115,
+                               v119,
+                               *((unsigned int *)this + 3385),
+                               *((unsigned int *)this + 3386),
+                               (int)aP3[1]->__pad_0);
+  v122 = TechnoTypeList;
+  if ( (void ***)((char *)this + 13524) != TechnoTypeList )
+  {
+    (*(void (**)(int))(*((unsigned int *)this + 3381) + 12))((char *)this + 13524);
+    v14 = v122[2];
+    *((unsigned int *)this + 3383) = v14;
+    if ( v14 )
+    {
+      v15 = RA2_OPNEW(4 * (unsigned int)v14);
+      *((unsigned int *)this + 3382) = v15;
+      if ( v15 )
+      {
+        v16 = *((unsigned int *)this + 3383);
+        eax16 = 0;
+        *((unsigned char *)this + 13537) = 1;
+        if ( v16 > 0 )
+        {
+          do
+          {
+            ++eax16;
+            *(unsigned int *)(*((unsigned int *)this + 3382) + 4 * eax16 - 4) = v122[1][eax16 - 1];
+          }
+          while ( eax16 < *((unsigned int *)this + 3383) );
+        }
+      }
+    }
+    else
+    {
+      *((unsigned int *)this + 3382) = 0;
+      *((unsigned char *)this + 13537) = 0;
+    }
+    TechnoTypeList = v122;
+  }
+  *((unsigned int *)this + 3385) = TechnoTypeList[4];
+  *((unsigned int *)this + 3386) = TechnoTypeList[5];
+  v18 = TechnoTypeList[6];
+  v17 = (CCINIClass *)Block;
+  *((unsigned int *)this + 3387) = v18;
+  *(unsigned int *)Destination = &vt_VectorClass_TechnoTypeClass;
+  if ( v17 && v127 )
+    RA2_OPDEL(v17);
+  v20 = (void ***)((char *)this + 13552);
+  v21 = &v116;
+  v122 = &v116;
+  var58 = 0;
+  v115 = 0;
+  IDA_LOWORD(v119) = 1;
+  v116 = &vt_VectorClass_int;
+  if ( &v116 != (void ***)((char *)this + 13552) )
+  {
+    VectorClass::Destroy((int)&v116);
+    v22 = *(void ***)((char *)this + 13560);
+    v23 = v122;
+    v122[2] = v22;
+    if ( v22 )
+    {
+      v24 = RA2_OPNEW(4 * (unsigned int)v22);
+      v25 = v122;
+      v122[1] = (void **)v24;
+      if ( v24 )
+      {
+        v26 = (int)v25[2];
+        v27 = 0;
+        *((unsigned char *)v25 + 13) = 1;
+        if ( v26 > 0 )
+        {
+          do
+          {
+            v122[1][v27] = *(void **)(*((unsigned int *)this + 3389) + 4 * v27);
+            ++v27;
+          }
+          while ( v27 < (int)v122[2] );
+        }
+      }
+    }
+    else
+    {
+      v23[1] = 0;
+      *((unsigned char *)v23 + 13) = 0;
+    }
+    v21 = v122;
+  }
+  v21[4] = *(void ***)((char *)this + 13568);
+  v21[5] = *(void ***)((char *)this + 13572);
+  *v21 = &vt_TypeList_int;
+  IntList = (void ***)INIClass::ReadIntList(
+                        (uint8_t ***)aP1,
+                        (int)Destination,
+                        (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+                        (uint8_t *)&stru_830620.__pad_579C[33444],
+                        v116,
+                        var58,
+                        (int)v115,
+                        v119,
+                        (int)v117,
+                        (int)aP3[0]->__pad_0,
+                        (int)aP3[1]->__pad_0);
+  v122 = IntList;
+  if ( v20 != IntList )
+  {
+    ((void (*)(int))(*v20)[3])((char *)this + 13552);
+    v29 = v122[2];
+    *((unsigned int *)this + 3390) = v29;
+    if ( v29 )
+    {
+      v30 = RA2_OPNEW(4 * (unsigned int)v29);
+      *((unsigned int *)this + 3389) = v30;
+      if ( v30 )
+      {
+        v31 = *((unsigned int *)this + 3390);
+        eax35 = 0;
+        *((unsigned char *)this + 13565) = 1;
+        if ( v31 > 0 )
+        {
+          do
+          {
+            ++eax35;
+            *(unsigned int *)(*((unsigned int *)this + 3389) + 4 * eax35 - 4) = v122[1][eax35 - 1];
+          }
+          while ( eax35 < *((unsigned int *)this + 3390) );
+        }
+      }
+    }
+    else
+    {
+      *((unsigned int *)this + 3389) = 0;
+      *((unsigned char *)this + 13565) = 0;
+    }
+    IntList = v122;
+  }
+  *((unsigned int *)this + 3392) = IntList[4];
+  *((unsigned int *)this + 3393) = IntList[5];
+  v33 = IntList[6];
+  v32 = (CCINIClass *)Block;
+  *((unsigned int *)this + 3394) = v33;
+  *(unsigned int *)Destination = &vt_VectorClass_int;
+  if ( v32 && v127 )
+    RA2_OPDEL(v32);
+  *((unsigned char *)this + 13478) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                               (CCINIClass *)&stru_830620.__pad_579C[33420],
+                               *((unsigned char *)this + 13478));
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(
+                     (int)aP1,
+                     (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                     (CCINIClass *)&stru_830620.__pad_579C[33400],
+                     *((unsigned char *)this + 13479));
+  IDA_LOBYTE(aP3[1]) = *((unsigned char *)this + 13480);
+  aP3[0] = (INIClass *)&stru_830620.__pad_579C[33380];
+  v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
+  *((unsigned char *)this + 13479) = Bool_Overwrite;
+  *((unsigned char *)this + 13480) = INIClass::ReadBool_Overwrite(
+                               (int)aP1,
+                               (uint8_t *)v117,
+                               (CCINIClass *)aP3[0],
+                               (char)aP3[1]);
+  v36 = INIClass::ReadBool_Overwrite(
+          (int)aP1,
+          (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+          (CCINIClass *)&stru_830620.__pad_579C[33352],
+          *((unsigned char *)this + 13491));
+  v37 = *((unsigned char *)this + 13476);
+  *((unsigned char *)this + 13491) = v36;
+  v38 = INIClass::ReadBool_Overwrite(
+          (int)aP1,
+          (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+          (CCINIClass *)&stru_830620.__pad_579C[33340],
+          v37);
+  aP3[1] = *(INIClass **)((char *)this + 524);
+  aP3[0] = (INIClass *)&stru_830620.__pad_579C[33328];
+  v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
+  *((unsigned char *)this + 13476) = v38;
+  *((unsigned int *)this + 131) = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)v117, (CCINIClass *)aP3[0], aP3[1]);
+  Int_Overwrite = INIClass::ReadInt_Overwrite(
+                    (int)aP1,
+                    (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
+                    (CCINIClass *)&stru_830620.__pad_579C[33316],
+                    *(INIClass **)((char *)this + 528));
+  IDA_LOBYTE(aP3[1]) = 0;
+  aP3[0] = (INIClass *)&stru_830620.__pad_579C[33308];
+  v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
+  *((unsigned int *)this + 132) = Int_Overwrite;
+  INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)v117, (CCINIClass *)aP3[0], (char)aP3[1]);
+  v40 = *((unsigned int *)this + 3385) - *((unsigned int *)this + 3392);
+  v122 = 0;
+  if ( v40 > 0 )
+  {
+    do
+    {
+      v41 = *((unsigned int *)this + 3390);
+      if ( *((unsigned int *)this + 3392) < v41
+        || (*((unsigned char *)this + 13565) || !v41)
+        && (v42 = *((unsigned int *)this + 3393), v42 > 0)
+        && ((uint8_t (*)(int, int, unsigned int))(*v20)[2])((char *)this + 13552, v41 + v42, 0) )
+      {
+        v43 = *((unsigned int *)this + 3392);
+        v44 = *((unsigned int *)this + 3389);
+        *((unsigned int *)this + 3392) = v43 + 1;
+        *(unsigned int *)(v44 + 4 * v43) = -1;
+      }
+      v45 = *((unsigned int *)this + 3385) - *((unsigned int *)this + 3392);
+      v122 = (void ***)((char *)v122 + 1);
+    }
+    while ( (int)v122 < v45 );
+  }
+  v46 = *((unsigned int *)this + 3392);
+  v122 = 0;
+  if ( v46 > 0 )
+  {
+    do
+    {
+      v47 = *((unsigned int *)this + 3397);
+      if ( *((unsigned int *)this + 3399) < v47
+        || (*((unsigned char *)this + 13593) || !v47)
+        && (v48 = *((unsigned int *)this + 3400), v48 > 0)
+        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 3395) + 8))(
+             (char *)this + 13580,
+             v47 + v48,
+             0) )
+      {
+        v49 = *((unsigned int *)this + 3399);
+        v50 = *((unsigned int *)this + 3396);
+        *((unsigned int *)this + 3399) = v49 + 1;
+        *(unsigned int *)(v50 + 4 * v49) = 0;
+      }
+      v51 = *((unsigned int *)this + 3392);
+      v122 = (void ***)((char *)v122 + 1);
+    }
+    while ( (int)v122 < v51 );
+  }
+  ScenarioClass::ReadLocalVariables((char *)this, aP1);
+  Event::Dispatch();
+  TimeString = INIClass::ReadTimeString(
+                 (int)aP1,
+                 (uint8_t *)&stru_830620.__pad_579C[33288],
+                 (uint8_t *)&stru_830620.__pad_579C[33296],
+                 *(CCINIClass **)((char *)this + 13732));
+  v53 = *(CCINIClass **)((char *)this + 13736);
+  *((unsigned int *)this + 3433) = TimeString;
+  v54 = INIClass::ReadTimeString(
+          (int)aP1,
+          (uint8_t *)&stru_830620.__pad_579C[33288],
+          (uint8_t *)&stru_830620.__pad_579C[33272],
+          v53);
+  aP3[1] = *(INIClass **)((char *)this + 13740);
+  aP3[0] = (INIClass *)&stru_830620.__pad_579C[33260];
+  v117 = (INIClass *)&stru_830620.__pad_579C[33288];
+  *((unsigned int *)this + 3434) = v54;
+  *((unsigned int *)this + 3435) = INIClass::ReadTimeString(
+                                (int)aP1,
+                                (uint8_t *)v117,
+                                (uint8_t *)aP3[0],
+                                (CCINIClass *)aP3[1]);
+  INIClass::GetString(
+    (uint8_t ***)aP1,
+    (INIClass *)&stru_830620.__pad_579C[33288],
+    (uint8_t *)&stru_830620.__pad_579C[33224],
+    (INIClass *)&stru_830620.__pad_579C[33240],
+    (INIClass *)((char *)this + 13744),
+    31);
+  INIClass::GetString(
+    (uint8_t ***)aP1,
+    (INIClass *)&stru_830620.__pad_579C[33288],
+    (uint8_t *)&stru_830620.__pad_579C[33184],
+    (INIClass *)&stru_830620.__pad_579C[33200],
+    (INIClass *)((char *)this + 13775),
+    31);
+  INIClass::GetString(
+    (uint8_t ***)aP1,
+    (INIClass *)&stru_830620.__pad_579C[33288],
+    (uint8_t *)&stru_830620.__pad_579C[33148],
+    (INIClass *)&stru_830620.__pad_579C[33164],
+    (INIClass *)((char *)this + 13806),
+    31);
+  INIClass::GetString(
+    (uint8_t ***)aP1,
+    (INIClass *)&stru_830620.__pad_579C[33288],
+    (uint8_t *)&stru_830620.__pad_579C[33108],
+    (INIClass *)&stru_830620.__pad_579C[33124],
+    (INIClass *)((char *)this + 13837),
+    31);
+  *(double *)aP3 = (double)*((int *)this + 3402) * 0.01;
+  v55 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)&g_INI_Key_Lighting.headNode[2],
+          aP3[0]);
+  v56 = Math::RoundToInt(v55 * 100.0 + 0.01);
+  v57 = (double)*((int *)this + 3405);
+  *((unsigned int *)this + 3402) = v56;
+  *((unsigned int *)this + 3403) = v56;
+  *((unsigned int *)this + 3404) = v56;
+  *(double *)aP3 = v57 * 0.01;
+  v58 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_abs_820538,
+          aP3[0]);
+  v59 = Math::RoundToInt(v58 * 100.0 + 0.01);
+  v60 = (double)*((int *)this + 3406);
+  *((unsigned int *)this + 3405) = v59;
+  *(double *)aP3 = v60 * 0.01;
+  v61 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_abs_82053C,
+          aP3[0]);
+  v62 = Math::RoundToInt(v61 * 100.0 + 0.01);
+  v63 = (double)*((int *)this + 3407);
+  *((unsigned int *)this + 3406) = v62;
+  *(double *)aP3 = v63 * 0.01;
+  v64 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_Blue,
+          aP3[0]);
+  v65 = Math::RoundToInt(v64 * 100.0 + 0.01);
+  v66 = (double)*((int *)this + 3408);
+  *((unsigned int *)this + 3407) = v65;
+  *(double *)aP3 = v66 * 0.001;
+  v67 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_Ground,
+          aP3[0]);
+  v68 = Math::RoundToInt(v67 * 1000.0 + 0.01);
+  v69 = (double)*((int *)this + 3409);
+  *((unsigned int *)this + 3408) = v68;
+  *(double *)aP3 = v69 * 0.001;
+  v70 = INIClass::ReadDouble_Overwrite((int)aP1, (INIClass *)&g_INI_Key_Lighting, (uint8_t *)&aLevel, aP3[0]);
+  v71 = Math::RoundToInt(v70 * 1000.0 + 0.01);
+  v72 = (double)*((int *)this + 3410);
+  *((unsigned int *)this + 3409) = v71;
+  *(double *)aP3 = v72 * 0.01;
+  v73 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_IonAmbient,
+          aP3[0]);
+  v74 = Math::RoundToInt(v73 * 100.0 + 0.01);
+  v75 = (double)*((int *)this + 3411);
+  *((unsigned int *)this + 3410) = v74;
+  *(double *)aP3 = v75 * 0.01;
+  v76 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_IonRed,
+          aP3[0]);
+  v77 = Math::RoundToInt(v76 * 100.0 + 0.01);
+  v78 = (double)*((int *)this + 3412);
+  *((unsigned int *)this + 3411) = v77;
+  *(double *)aP3 = v78 * 0.01;
+  v79 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_IonGreen,
+          aP3[0]);
+  v80 = Math::RoundToInt(v79 * 100.0 + 0.01);
+  v81 = (double)*((int *)this + 3413);
+  *((unsigned int *)this + 3412) = v80;
+  *(double *)aP3 = v81 * 0.01;
+  v82 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_IonBlue,
+          aP3[0]);
+  v83 = Math::RoundToInt(v82 * 100.0 + 0.01);
+  v84 = (double)*((int *)this + 3414);
+  *((unsigned int *)this + 3413) = v83;
+  *(double *)aP3 = v84 * 0.001;
+  v85 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_IonGround,
+          aP3[0]);
+  v86 = Math::RoundToInt(v85 * 1000.0 + 0.01);
+  v87 = (double)*((int *)this + 3415);
+  *((unsigned int *)this + 3414) = v86;
+  *(double *)aP3 = v87 * 0.001;
+  v88 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)g_INI_Key_IonLevel,
+          aP3[0]);
+  v89 = Math::RoundToInt(v88 * 1000.0 + 0.01);
+  v90 = (double)*((int *)this + 3422);
+  *((unsigned int *)this + 3415) = v89;
+  *(double *)aP3 = v90;
+  v91 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)&stru_830620.__pad_579C[33084],
+          (INIClass *)IDA_LODWORD(v90));
+  v92 = Math::RoundToInt(v91);
+  v93 = (double)*((int *)this + 3423);
+  *((unsigned int *)this + 3422) = v92;
+  *(double *)aP3 = v93 * 0.01;
+  v94 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)&stru_830620.__pad_579C[33064],
+          aP3[0]);
+  v95 = Math::RoundToInt(v94 * 100.0 + 0.01);
+  v96 = (double)*((int *)this + 3424);
+  *((unsigned int *)this + 3423) = v95;
+  *(double *)aP3 = v96 * 0.01;
+  v97 = INIClass::ReadDouble_Overwrite(
+          (int)aP1,
+          (INIClass *)&g_INI_Key_Lighting,
+          (uint8_t *)&stru_830620.__pad_579C[33048],
+          aP3[0]);
+  v98 = Math::RoundToInt(v97 * 100.0 + 0.01);
+  v99 = (double)*((int *)this + 3425);
+  *((unsigned int *)this + 3424) = v98;
+  *(double *)aP3 = v99 * 0.01;
+  v100 = INIClass::ReadDouble_Overwrite(
+           (int)aP1,
+           (INIClass *)&g_INI_Key_Lighting,
+           (uint8_t *)&stru_830620.__pad_579C[33032],
+           aP3[0]);
+  v101 = Math::RoundToInt(v100 * 100.0 + 0.01);
+  v102 = (double)*((int *)this + 3426);
+  *((unsigned int *)this + 3425) = v101;
+  *(double *)aP3 = v102 * 0.01;
+  v103 = INIClass::ReadDouble_Overwrite(
+           (int)aP1,
+           (INIClass *)&g_INI_Key_Lighting,
+           (uint8_t *)&stru_830620.__pad_579C[33016],
+           aP3[0]);
+  v104 = Math::RoundToInt(v103 * 100.0 + 0.01);
+  v105 = (double)*((int *)this + 3427);
+  *((unsigned int *)this + 3426) = v104;
+  *(double *)aP3 = v105 * 0.001;
+  v106 = INIClass::ReadDouble_Overwrite(
+           (int)aP1,
+           (INIClass *)&g_INI_Key_Lighting,
+           (uint8_t *)&stru_830620.__pad_579C[33000],
+           aP3[0]);
+  v107 = Math::RoundToInt(v106 * 1000.0 + 0.01);
+  v108 = (double)*((int *)this + 3428);
+  *((unsigned int *)this + 3427) = v107;
+  *(double *)aP3 = v108 * 0.001;
+  v109 = INIClass::ReadDouble_Overwrite(
+           (int)aP1,
+           (INIClass *)&g_INI_Key_Lighting,
+           (uint8_t *)&stru_830620.__pad_579C[32984],
+           aP3[0]);
+  v110 = Math::RoundToInt(v109 * 1000.0 + 0.01);
+  v111 = (double)*((int *)this + 3429);
+  *((unsigned int *)this + 3428) = v110;
+  *(double *)aP3 = v111 * 0.001;
+  v112 = INIClass::ReadDouble_Overwrite(
+           (int)aP1,
+           (INIClass *)&g_INI_Key_Lighting,
+           (uint8_t *)&stru_830620.__pad_579C[32956],
+           aP3[0]);
+  v113 = Math::RoundToInt(v112 * 1000.0 + 0.01);
+  aP3[1] = (INIClass *)55;
+  *((unsigned int *)this + 3429) = v113;
+  Multiplayer::ShowProgress(&g_abs_A8B238, (int)aP3[1]->__pad_0);
+  Event::Dispatch();
+  if ( g_abs_A8B238 )
+  {
+    AssignSessionHouses();
+  }
+  else
+  {
+    INIClass::GetString(
+      (uint8_t ***)aP1,
+      (INIClass *)&g_INI_Key_Lighting.sectionHead[1],
+      (uint8_t *)&g_INI_Key_Lighting.sectionCount,
+      (INIClass *)&g_abs_87F8E4,
+      (INIClass *)Destination,
+      20);
+    v114 = HouseClass::FindByName(Destination);
+    if ( v114 == -1 )
+      v114 = 0;
+    HouseClass_Player = *(IUnknown **)&HouseClass_Array->__pad_0[4 * v114];
+    *((unsigned int *)this + 1821) = *(unsigned int *)(HouseClass_Player->field_34 + 184);
+  }
+  aP3[1] = (INIClass *)58;
+  HouseClass_Player->__pad_1D8[20] = 1;
+  HouseClass_Player->__pad_1D8[21] = 1;
+  *(unsigned int *)&HouseClass_Player->__pad_566C[136] = 0;
+  Multiplayer::ShowProgress(&g_abs_A8B238, (int)aP3[1]->__pad_0);
+  Event::Dispatch();
+  if ( g_abs_A8D63C )
+    TheatreClass::InitView();
+  Multiplayer::ShowProgress(&g_abs_A8B238, 60);
+  Event::Dispatch();
+  return 1;
+
 }
 } // namespace gamemd
 

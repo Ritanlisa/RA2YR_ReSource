@@ -14,6 +14,8 @@ using ra2::game::CellStruct;
 
 class HouseClass;
 
+#ifndef GAMEMD_G2_BaseNodeClass_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_BaseNodeClass_DEF 1
 // IDA: inline struct in house.hpp — base building planner node
 // CSP: BaseNodeClass matched via T1
 struct BaseNodeClass
@@ -26,8 +28,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Vector_Constructor(int a1, int a2);  // 0x42FC40
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_G2_BaseNodeClass_DEF
 
 // IDA: inline struct in house.hpp — AI base construction manager
+#ifndef GAMEMD_G2_BaseClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_BaseClass_DEF 1
 struct BaseClass
 {
     BaseNodeClass*  baseNodes;        // +0x00
@@ -74,5 +79,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (END) ===
     int ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int a4, int a5, int a6);
 };
+#endif  // GAMEMD_G2_BaseClass_DEF
 
 } // namespace gamemd

@@ -34,11 +34,25 @@
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Options_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ListBox_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BinkMovie_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int CtlDialogColorHandler(...);  // raw 006015E0: int __fastcall Dialog_CtlColorHandler(int a1, HWND a2)
+    int DispatchDialogControlAction(...);  // raw 006035F0: int __fastcall DispatchDialogControlAction(int a1, HWND a2)
+    int FilterDialogButtonAction(...);  // raw 00609E20: char __fastcall FilterDialogButtonAction(int a1, HWND a2)
+    int GetDialogControlSHP(...);  // raw 00603870: void *__fastcall GetDialogControlSHP(int a1, HWND a2, bool *a3)
+    int IsValidActionDialog(...);  // raw 00602490: bool __fastcall sub_602490(int a1, HWND a2)
+    int UpdateObserveButtonWOL(...);  // raw 005EE200: void __thiscall UpdateObserveButtonWOL(ObjectClass *this)
+    int ValidateDialogControl(...);  // raw 00601D20: int __fastcall Dialog_ValidateControl(int a1, HWND a2)
+    int ValidateDialogEvent(...);  // raw 00600CA0: int __fastcall Dialog_ValidateEvent(int a1, HWND a2)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aButton[];  // data: 0x835814 truth(IDA G42.57w9)
 extern char aMsctlsHotkey32[];  // data: 0x835804 truth(IDA G42.57w9)
@@ -140,7 +154,7 @@ int Dialog::InitializeGameSettings()
   if ( v18 ) /*0x5b5e27*/
     SendMessageA( (HWND)(v18), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)&MEMORY[0xA8B322]))); /*0x5b5e36*/
   if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
-    ((Session*)(HWND)(*(Session **)this->__pad_0))->PrepareGame(); /*0x5b5e48*/
+    ((Session*)(HWND)(*(Session **)this->__pad_0))->PrepareGame((HWND)(*(Session **)this->__pad_0)); /*0x5b5e48*/
   v19 = GetDlgItem(*(HWND *)this->__pad_0, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/
@@ -230,7 +244,7 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
     else
     {
       while ( (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) ) /*0x5d3607*/
-        (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x5d3616*/
+        (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x5d3616*/
       while ( dwNewLong < 0 ) /*0x5d362e*/
       {
         if ( (uint8_t)Dialog::PumpMessages() ) /*0x5d3630*/
@@ -246,7 +260,7 @@ int Dialog::ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned sho
     v8 = v24; /*0x5d3662*/
   }
   while ( v8 < (*(int (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) ) /*0x5d3673*/
-    (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x5d367d*/
+    (*(void (**)(int))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x5d367d*/
   return dwNewLong; /*0x5d3693*/
 
 }
@@ -331,7 +345,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   Debug::Log("Setting modem dial type\n"); /*0x5f29e9 G57c1: IDA 0x5f29e9 push offset aSettingModemDi*/
   (*(void (**)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 8))( (HWND)((HWND)((HWND)((HWND)(g_ClipboardBuffer)))), a3); /*0x5f2a01*/
   Debug::Log("Clearing results buffer\n"); /*0x5f2a09 G57c1: IDA 0x5f2a09 push offset aClearingResult*/
-(*(void ((HWND)(**))(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2a24*/ g_ClipboardBuffer, 60, (char *)(Source), 81, -1);
+(*(void (__thiscall **)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2a24*/ g_ClipboardBuffer, 60, (char *)(Source), 81, -1);
 
 
 
@@ -363,7 +377,7 @@ LABEL_35:
     LOBYTE(v12) = (gamemd::Process)(0); /*0x5f2a88*/
     Process(v12, v15); /*0x5f2a8a*/
     memset( (void *)(Source), 0, sizeof(Source)); /*0x5f2a9c*/
-v11 = (*(int ((HWND)(**))(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2ab1*/ g_ClipboardBuffer, v11, (char *)(Source), 81, 15);
+v11 = (*(int (__thiscall **)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2ab1*/ g_ClipboardBuffer, v11, (char *)(Source), 81, 15);
 
 
 

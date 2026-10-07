@@ -31,9 +31,14 @@
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/COMObject_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileExtension_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ObjectTypeClass_Read(...);  // raw 006CEE60: int __thiscall ObjectTypeClass_Read(ObjectClass *this)
+} // namespace gamemd
 
 // 0x46C790
 namespace gamemd {

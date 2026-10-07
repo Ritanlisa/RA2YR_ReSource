@@ -45,6 +45,11 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int LookupWaypointName(...);  // raw 005B3910: int __thiscall LookupWaypointName(ObjectClass *this)
+} // namespace gamemd
 
 // 0x4116A0
 namespace gamemd {

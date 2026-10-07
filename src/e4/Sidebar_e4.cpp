@@ -34,6 +34,7 @@
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/CreateTeamCommand_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Vector4_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -421,7 +422,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = Block; /*0x636437*/
     if ( !stru_AC4B30.__pad_EC[217] ) /*0x63643d*/
     {
-v11 = (*(int ((char *)(**))(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/ &stru_AC4B30.__pad_EC[92], (void **)(&Block));
+v11 = (*(int (__thiscall **)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/ &stru_AC4B30.__pad_EC[92], (void **)(&Block));
 
 
       if ( v11 != -1 ) /*0x636454*/
@@ -745,7 +746,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
   {
 LABEL_13:
-(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x6a7241*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
+(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))( /*0x6a7241*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
 
 
 
@@ -840,7 +841,7 @@ v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))
   }
   if ( *((unsigned char *)this + 21416) )
   {
-(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x6a71c7*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
+(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))( /*0x6a71c7*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
 
 
 
@@ -913,6 +914,8 @@ int Sidebar_UpdateProductionDisplay(void * a1, void * a3)
   wchar_t Format[20]; // [esp+23Ah] [ebp-250h] BYREF
   wchar_t v101[20]; // [esp+262h] [ebp-228h] BYREF
   CampaignScore Buffer[14]; // [esp+28Ah] [ebp-200h] BYREF
+  char v16;
+int v27; // ecx
 
   int v84 = a1;
   result = *(unsigned char *)((char *)a1 +8);
@@ -1032,11 +1035,10 @@ LABEL_13:
                   aP1 = v23;
                   if ( v23 )
                   {
-  int v27; // ecx
-                    v80 = (int *)((gamemd::TechnoTypeClass*)v23)->field_60;
+                    v80 = (int *)((gamemd::TechnoTypeClass*)v23)->UIName;
                     char v77 = 0;
-                    if ( (*(int (**)(IUnknown *))(((gamemd::TechnoTypeClass*)v23)->field_0 + 44))( (IUnknown *)(v23)) == 7 && v79
-|| !(*(int (**)(IUnknown *, int, int, int, int))(((gamemd::TechnoTypeClass*)v23)->field_0 + 148))( (IUnknown *)(v23), 1, 1, 1, HouseClass_Player.field_0)
+                    if ( (*(int (**)(IUnknown *))*(unsigned int *)&(((gamemd::TechnoTypeClass*)v23)->vtable1 + 44))( (IUnknown *)(v23)) == 7 && v79
+|| !(*(int (**)(IUnknown *, int, int, int, int))*(unsigned int *)&(((gamemd::TechnoTypeClass*)v23)->vtable1 + 148))( (IUnknown *)(v23), 1, 1, 1, HouseClass_Player.field_0)
 
 
 
@@ -1044,14 +1046,14 @@ LABEL_13:
 
                       || (v86 = (int)(TechnoTypeClass::GetByTypeAndIndex(v87[23], v87[22])),
   bool v74; // [esp+10h] [ebp-47Ah]
-                          v74 = ((HouseClass *)(((gamemd::TechnoTypeClass*)HouseClass_Player).field_0))->CanBuild( (int)((IUnknown *)v86), 0, 0) == -1,
-                          ShouldDisableCameo = ((HouseClass *)((gamemd::HouseClass*)HouseClass_Player).field_0)->ShouldDisableCameo( v86),
+                          v74 = ((HouseClass *)*(unsigned int *)&(((gamemd::TechnoTypeClass*)HouseClass_Player).vtable1))->CanBuild( (int)((IUnknown *)v86), 0, 0) == -1,
+                          ShouldDisableCameo = ((HouseClass *)*(unsigned int *)&((gamemd::HouseClass*)HouseClass_Player).vtable1)->ShouldDisableCameo( v86),
                           v74)
                       || ShouldDisableCameo )
                     {
                       v77 = 1;
                     }
-                    aP2 = (ConvertClass *)(*(int (**)(IUnknown *))(((gamemd::HouseClass*)v23)->field_0 + 152))( (IUnknown *)(v23));
+                    aP2 = (ConvertClass *)(*(int (**)(IUnknown *))*(unsigned int *)&(((gamemd::HouseClass*)v23)->vtable1 + 152))( (IUnknown *)(v23));
                     v86 = v87[25];
                     if ( !v86 )
                     {

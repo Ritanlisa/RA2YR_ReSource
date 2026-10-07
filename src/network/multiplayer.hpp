@@ -14,6 +14,8 @@ class HouseClass;
 class CCINIClass;
 class MPTeam;
 
+#ifndef GAMEMD_G2_MPGameModeClass_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_MPGameModeClass_DEF 1
 class MPGameModeClass
 {
 public:
@@ -96,6 +98,7 @@ public:
 protected:
     MPGameModeClass() noexcept; // 0x5D8170 (MPBattleClass ctor area)
 };
+#endif  // GAMEMD_G2_MPGameModeClass_DEF
 
 // CSP: MPBattleClass matched via T1
 class MPBattleClass : public MPGameModeClass

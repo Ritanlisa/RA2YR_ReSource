@@ -3348,7 +3348,7 @@ int Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMa
 namespace gamemd {
 void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg)
 {
-  void (__stdcall *)(LPCRITICAL_SECTION); // edi
+  void (__stdcall *v6)(LPCRITICAL_SECTION); // edi
   UINT message; // eax
   unsigned int SampleSize; // eax
   signed int v9; // eax

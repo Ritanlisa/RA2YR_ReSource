@@ -11,7 +11,7 @@ struct DeleteCommandClass {
     void* CommandClass;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     char * AddRef(void *a1);
-    unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
+    static unsigned int * Constructor(void *aP1);  // G42.57w14 R2 raw 0x537F10 _DWORD *__thiscall DeleteCommandClass::Constructor(DeleteCommandClass *this)
     wchar_t * Read(void *a1, void *a2);
     wchar_t * Release(void *a1);
     wchar_t * ddtor(void *a1);

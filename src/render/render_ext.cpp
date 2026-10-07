@@ -28,7 +28,7 @@ void BlitPlainXlatAlpha_ushort::AddRef(int a2, unsigned __int8 *a3, int a4, int 
         v15 = *a7++; /*0x493d17*/
         ++a3; /*0x493d1d*/
         a2 += 2; /*0x493d1e*/
-        *(unsigned short *)(a2 - 2) = *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * (v17 | *(unsigned __int16 *)(v11 + 2 * v15))); /*0x493d38*/
+        *(unsigned short *)(a2 - 2) = *(unsigned short *)(*(unsigned int *)&this->BlitPlainXlatAlpha_ushort_field_0x04 + 2 * (v17 | *(unsigned __int16 *)(v11 + 2 * v15))); /*0x493d38*/
         if ( (unsigned int)a7 >= *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 28) ) /*0x493d45*/
           a7 = (unsigned __int16 *)((char *)a7 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32)); /*0x493d47*/
         result = (int)v16 - 1; /*0x493d4e*/

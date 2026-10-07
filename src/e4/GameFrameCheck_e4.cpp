@@ -62,7 +62,7 @@ int sub_6863E0(void * a1, void * a2)
         Ticks = ((Timer *)0)->GetTicks();
     v4 = (char *)p_vtable2[2]; /*0x686465*/
     v5 = Ticks - (unsigned int)*p_vtable2; /*0x686468*/
-    *p_vtable2 = (void *, unsigned int a1, unsigned int a2)-1; /*0x68646a*/
+    *p_vtable2 = (void *)-1; /*0x68646a*/
     p_vtable2[2] = &v4[v5]; /*0x686472*/
   }
   ((AsyncIO *)a1)->Shutdown(); /*0x686475*/

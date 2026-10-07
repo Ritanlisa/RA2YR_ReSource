@@ -180,6 +180,12 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/ScriptAction_e4.hpp"
 #include "e4/e4_globals.hpp"  // G42.32 S R5: DSurface_ViewBounds flat + g_TacticalClass_Instance
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int DrawTacticalFillScanline(...);  // raw 0063D910: char __fastcall DrawTacticalFillScanline(int a1, int a2, int a3, int a4, int a5, int a6)
+    int DrawTacticalLine2D(...);  // raw 0063D810: char __fastcall Tactical_DrawLine2D(int a1, int a2, int a3, int a4, int a5, int a6, char a
+    int PackRGBFromBytes(...);  // raw 0063DAD0: int __thiscall PackRGBFromBytes(ObjectClass *this)
+} // namespace gamemd
 
 // 0x637DB0
 namespace gamemd {
@@ -328,7 +334,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
       this->ScriptAction_field_0x10[0] = v9 + 1; /*0x634034*/
       *(unsigned int *)(v10 + 4 * v9) = v5; /*0x634037*/
     }
-    Type = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2))); /*0x634043*/
+    Type = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2)); /*0x634043*/
     v12 = *(unsigned int *)(Type + 12); /*0x634045*/
     if ( *(unsigned int *)(Type + 20) < v12 /*0x63406d*/
       || (*(unsigned char *)(Type + 17) || !v12)
@@ -468,7 +474,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
     char v33; // [esp+10Eh] [ebp-2h]
 
     v24 = this; /*0x634cd5*/
-    Type = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2))); /*0x634cde*/
+    Type = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2)); /*0x634cde*/
     v4 = *(unsigned int *)(Type + 4); /*0x634ce0*/
     ScriptAction_field_0x30 = this; /*0x634ce7*/
     v5 = (*(int (__thiscall **)(int, void **))(v4 + 16))(Type + 4, &ScriptAction_field_0x30); /*0x634cef*/
@@ -491,7 +497,7 @@ int ScriptAction::FindBuildingMatch(unsigned int *a2)
         v6 = (ScriptAction *)ArrayClass::GetAt_Wrap((ArrayClass *)Type, v8); /*0x634d15*/
       }
     }
-    v9 = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2))); /*0x634d19*/
+    v9 = (unsigned int)(BuildingClass::GetType((BuildingClass *)a2)); /*0x634d19*/
     v10 = *(unsigned int *)(v9 + 20) - 1; /*0x634d21*/
     if ( v10 >= 0 ) /*0x634d22*/
       v11 = *(ScriptAction **)(*(unsigned int *)(v9 + 8) + 4 * v10); /*0x634d2b*/
@@ -569,7 +575,7 @@ unsigned int * ScriptAction::Constructor(int a2)
     *(unsigned int *)this->__pad_90 = -1; /*0x635f61*/
     this->ScriptAction_field_0x94 = (void *)-1; /*0x635f67*/
     *(unsigned int *)this->__pad_0 = a2; /*0x635f6d*/
-    return (unsigned int *)(this->__pad_0; /*0x635f6f*/);
+    return (unsigned int *)(this->__pad_0) /*0x635f6f*/;
 }
 } // namespace gamemd
 
@@ -908,7 +914,7 @@ char ScriptAction::ProcessIdleAction()
       v58 += (int)DSurface_ViewBounds.field_4; /*0x63b741*/
       Viewport = (Coord3D *)Display::GetViewport(&v72.X); /*0x63b745*/
       v55 = *Viewport; /*0x63b74c*/
-      v56 = *(unsigned int *)Viewport[1].__pad_0; /*0x63b76f*/
+      v56 = *(unsigned int *)&Viewport[1].__pad_0; /*0x63b76f*/
       v16 = ComputeBounds(&v72, 6, v61, v62); /*0x63b778*/
       v63 = *v16; /*0x63b77f*/
       v64 = v16[1]; /*0x63b787*/
@@ -935,7 +941,7 @@ char ScriptAction::ProcessIdleAction()
   LABEL_32:
           v24 = (Coord3D *)Display::GetViewport(&v72.X); /*0x63b8ac*/
           v55 = *v24; /*0x63b8b7*/
-          v56 = *(unsigned int *)v24[1].__pad_0; /*0x63b8d5*/
+          v56 = *(unsigned int *)&v24[1].__pad_0; /*0x63b8d5*/
           v25 = ComputeBounds(&v72, 6, (int)v14, (int)v13); /*0x63b8de*/
           v63 = *v25; /*0x63b8e5*/
           v64 = v25[1]; /*0x63b8ed*/
@@ -1008,7 +1014,7 @@ char ScriptAction::ProcessIdleAction()
       Coord2D_field_0x04 = v33[1].Coord2D_field_0x04; /*0x63b9d6*/
       v34 = (Coord3D *)ComputeBounds(&v72, 6, v31, (int)v32); /*0x63b9da*/
       v55 = *v34; /*0x63b9e1*/
-      v56 = *(unsigned int *)v34[1].__pad_0; /*0x63b9fd*/
+      v56 = *(unsigned int *)&v34[1].__pad_0; /*0x63b9fd*/
       IDA_LOBYTE(updated) = (*(char (__thiscall **)(AudioStream *, Coord2D *, Coord3D *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 + 84))( /*0x63ba0d*/
                           DSurface_Composite,
                           &v67,
@@ -1022,7 +1028,7 @@ char ScriptAction::ProcessIdleAction()
     Coord2D_field_0x04 = v35[1].Coord2D_field_0x04; /*0x63ba44*/
     v36 = (Coord3D *)ComputeBounds(&v72, 6, v61, v62); /*0x63ba55*/
     v55 = *v36; /*0x63ba5c*/
-    v56 = *(unsigned int *)v36[1].__pad_0; /*0x63ba78*/
+    v56 = *(unsigned int *)&v36[1].__pad_0; /*0x63ba78*/
     (*(void (__thiscall **)(AudioStream *, Coord2D *, Coord3D *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63ba88*/
                                                                                  + 84))(
       DSurface_Composite,
@@ -1072,7 +1078,7 @@ char ScriptAction::ProcessIdleAction()
     v43 = (Coord3D *)Display::GetViewport(&v72.X); /*0x63bbc2*/
     v44 = v58; /*0x63bbcd*/
     v55 = *v43; /*0x63bbd1*/
-    v56 = *(unsigned int *)v43[1].__pad_0; /*0x63bbef*/
+    v56 = *(unsigned int *)&v43[1].__pad_0; /*0x63bbef*/
     v73 = *(Rect *)ComputeBounds(&v72, 6, v31, v58); /*0x63bbff*/
     (*(void (__thiscall **)(AudioStream *, Coord3D *, Rect *, BuildingClass *))(*(unsigned int *)DSurface_Composite->__pad_0 + 84))( /*0x63bc3a*/
       DSurface_Composite,

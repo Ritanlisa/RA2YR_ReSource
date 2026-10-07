@@ -600,8 +600,8 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
     CloseHandle(*((HANDLE *)this + 23)); /*0x775632*/
     *((unsigned int *)this + 23) = -1; /*0x775638*/
   }
-  if ( this->WinModemClass_field_0x24 ) /*0x77563f*/
-    __3_YAXPAX_Z((void *)this->WinModemClass_field_0x24); /*0x775647*/
+  if ( this->q024 ) /*0x77563f*/
+    __3_YAXPAX_Z((void *)this->q024); /*0x775647*/
   if ( (a2 & 1) != 0 ) /*0x775654*/
     __3_YAXPAX_Z(this); /*0x775657*/
   return (WinModemClass *)this; /*0x775661*/

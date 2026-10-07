@@ -229,7 +229,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
           v11 = dword_A80238; /*0x4f19a2*/
           do /*0x4f19bd*/
           {
-            if ( *(unsigned char *)(*(unsigned int *)v10->AbstractClass + 492) && !*(unsigned char *)(*(unsigned int *)v10->AbstractClass + 501) ) /*0x4f19af*/
+            if ( *(unsigned char *)(*(unsigned int *)*(unsigned int *)&v10->vtable1 + 492) && !*(unsigned char *)(*(unsigned int *)*(unsigned int *)&v10->vtable1 + 501) ) /*0x4f19af*/
               ++v8; /*0x4f19b8*/
             v10 = (HouseClass *)((char *)v10 + 4); /*0x4f19b9*/
             --v11; /*0x4f19bc*/
@@ -646,7 +646,7 @@ v6 = (*((int (**)(DSurface *, _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorCl
     }
     while ( !v17 ); /*0x4f25fd*/
     if ( v4 ) /*0x4f2605*/
-      (*(void (**)(State *, int))(*(unsigned int *)v4->__pad_0 + 12))( (State *)(v4), this + 4); /*0x4f260c*/
+      (*(void (**)(State *, int))(*(unsigned int *)&v4->vtable1 + 12))( (State *)(v4), this + 4); /*0x4f260c*/
     UI_Process(v16); /*0x4f260f*/
     ((Theme *)(int)&unk_A83D10)->QueueSong( -3); /*0x4f261b*/
     if ( v4 ) /*0x4f2622*/
@@ -664,16 +664,16 @@ int E4Recv_4F2640::sub_4F2640(int (***a2)(unsigned int, int))
 
     v3 = (int (***)(unsigned int, int))this->customSound_controller[1]; /*0x4f2648*/
     if ( v3 ) /*0x4f264e*/
-      result = UI_Load_5D1C90((ObjectClass *)&this->?, v3, this); /*0x4f2654*/
+      result = UI_Load_5D1C90((ObjectClass *)&this->ptr_4, v3, this); /*0x4f2654*/
     else
-      result = ((PriorityQueue *)&this->?)->Add( (int)this); /*0x4f2664*/
+      result = ((PriorityQueue *)&this->ptr_4)->Add( (int)this); /*0x4f2664*/
     this->customSound_controller[1] = (int)this; /*0x4f2659*/
     return result; /*0x4f265c*/
 }
 }
 // 0x4F2C70
 namespace gamemd {
-int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void * aOrigin)
+int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * a3, void * aOrigin)
 {
     int Int; // ebx
     int *v8; // ebp
@@ -738,7 +738,7 @@ int ParseINIAnimGadgetDefinition(void * a2, void * a4, void * aActiverect, void 
         v23 += v14; /*0x4f2e0d*/
         v26 = 0; /*0x4f2e11*/
         v27 = 0; /*0x4f2e15*/
-        ((String *)&a4)->Assign( (const char *)(aActiverect)); /*0x4f2e19*/
+        ((String *)&a4)->Assign( (const char *)(a3)); /*0x4f2e19*/
         Rect = (int *)((INIClass *)a2)->GetRect( (_DWORD *)(&v20), (char **)(Source), (char **)&a4, (int *)(&v24)); /*0x4f2e30*/
         v24 = *Rect; /*0x4f2e37*/
         v25 = Rect[1]; /*0x4f2e3e*/
@@ -1068,10 +1068,10 @@ int E4Recv_4F3AB0::sub_4F3AB0(int a2)
     int (__stdcall **)(int); // edx
 
     result = a2; /*0x4f3ab0*/
-    if ( (unsigned char)a2 != IDA_BYTE1(this->?) ) /*0x4f3ab9*/
+    if ( (unsigned char)a2 != IDA_BYTE1(this->vfptr) ) /*0x4f3ab9*/
     {
-      vtable0 = (int (__stdcall **)(int))this->AbstractClass; /*0x4f3abb*/
-      IDA_BYTE1(this->?) = a2; /*0x4f3abe*/
+      vtable0 = (int (__stdcall **)(int))*(unsigned int *)&this->vfptr; /*0x4f3abb*/
+      IDA_BYTE1(this->M9) = a2; /*0x4f3abe*/
       return vtable0[5](a2); /*0x4f3ac1*/
     }
     return result; /*0x4f3ac4*/
@@ -1542,7 +1542,7 @@ int sub_4F1B80(char ** a1, int a2)
 
 // 0x4F2280
 namespace gamemd {
-int E4Recv_4F2280::sub_4F2280(int a2, int a3)
+int ObjectClass::sub_4F2280(int a2, int a3)
 {
     int result; // eax
     _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem v4; // [esp+0h] [ebp-Ch] BYREF
@@ -1565,7 +1565,7 @@ int E4Recv_4F2280::sub_4F2280(int a2, int a3)
 
 // 0x4F26E0
 namespace gamemd {
-int E4Recv_4F26E0::sub_4F26E0(int a2)
+int ObjectClass::sub_4F26E0(int a2)
 {
     int v2; // ecx
     _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem v4; // [esp+4h] [ebp-Ch] BYREF
@@ -1594,7 +1594,7 @@ int E4Recv_4F26E0::sub_4F26E0(int a2)
 
 // 0x4F2770
 namespace gamemd {
-int E4Recv_4F2770::sub_4F2770(int a2)
+int ObjectClass::sub_4F2770(int a2)
 {
     int v2; // ecx
     _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem v4; // [esp+4h] [ebp-Ch] BYREF
@@ -1623,7 +1623,7 @@ int E4Recv_4F2770::sub_4F2770(int a2)
 
 // 0x4F2C00
 namespace gamemd {
-unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
+unsigned int * VectorClass::sub_4F2C00(int a2, int a3)
 {
     this->Items = 0; /*0x4f2c0b*/
     this->Capacity = a2; /*0x4f2c0e*/
@@ -1669,14 +1669,14 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
     int v17; // [esp+E4h] [ebp-8h]
 
     GraphicMenuItem::Constructor((GraphicMenuItem *)this, a2); /*0x4f2f21*/
-    this->GraphicMenuAnimItem_field_0x10 = *a5; /*0x4f2f3c*/
-    this->GraphicMenuAnimItem_field_0x14 = a5[1]; /*0x4f2f41*/
+    this->M16 = *a5; /*0x4f2f3c*/
+    this->M20 = a5[1]; /*0x4f2f41*/
     *((unsigned int *)this + 6) = a5[2]; /*0x4f2f47*/
     v10 = a5[3]; /*0x4f2f4a*/
     *((unsigned int *)this + 8) = 0; /*0x4f2f4d*/
     *((unsigned int *)this + 7) = v10; /*0x4f2f50*/
     *((unsigned int *)this + 9) = 0; /*0x4f2f5a*/
-    *(unsigned int *)this->__pad_0 = (unsigned int)(void*)&GraphicMenuAnimItem_vftable; /*0x4f2f5d*/
+    *(unsigned int *)&this->vfptr = (unsigned int)(void*)&GraphicMenuAnimItem_vftable; /*0x4f2f5d*/
     ((CCFileClass *)&v15.estimatedHealth)->Construct2( (char **)(a6)); /*0x4f2f63*/
     ((CCFileClass *)&v15.?)->Construct2( (char **)(a7)); /*0x4f2f74*/
     if ( (unsigned __int8)((CCFileClass *)&v15.estimatedHealth)->Open( 0) ) /*0x4f2f81*/
@@ -1706,7 +1706,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
     Vector::Clear((int)v16); /*0x4f3045*/
     v15.estimatedHealth = (int)&off_7E1668; /*0x4f3051*/
     ((BufferIOFileClass *)&v15.estimatedHealth)->Dtor(); /*0x4f3058*/
-    return (int *)this->__pad_0; /*0x4f305f*/
+    return (int *)this->vfptr; /*0x4f305f*/
 }
 } // namespace gamemd
 
@@ -2142,7 +2142,7 @@ void nullsub_15()
 namespace gamemd {
 unsigned int * E4Recv_4F7850::sub_4F7850()
 {
-    this->AbstractClass = 0; /*0x4f7854*/
+    *(unsigned int *)&this->vfptr = 0; /*0x4f7854*/
     this->? = (void *)1; /*0x4f7856*/
     this->? = 0; /*0x4f785d*/
     this->? = 0; /*0x4f7860*/

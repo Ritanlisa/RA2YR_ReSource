@@ -163,9 +163,11 @@ struct UnitTypeClass {
     unsigned int Palette;  // 0xDAC
     void* ArrayIndex;  // 0xDF8
     bool Passive;  // 0xE0C
+    char unknown_E10[1];  // 0xE10 (G57W14E1 til supply)
     bool IsTilter;  // 0xE14
     bool SmallVisceroid;  // 0xE18
     SHPStruct* AltImage;  // 0xE58
+    char __tail_E5E[26];  // 0xE5E (G57W14E1 til supply)
     unsigned int UnitTypeClass_CreateUnit;
 // --- flat members (END) ---
     char CreateUnit(short *a2, void *ppv);  // 0x7474B0 (G42.35f supply -- data member UnitTypeClass_CreateUnit is a different symbol)

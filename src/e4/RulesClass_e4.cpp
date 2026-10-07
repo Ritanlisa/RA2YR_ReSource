@@ -205,7 +205,7 @@ INIClass * * RulesClass::ReadPowerupsSection(void * aPowerups)
   char String[128]; // [esp+0h] [ebp-80h] BYREF
   uint8_t ***v13; // [esp+84h] [ebp+4h]
 
-  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v13), (uint8_t *)aPowerups))); /*0x673e90*/
+  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v13), (uint8_t *)aPowerups)); /*0x673e90*/
   if ( result ) /*0x673e9c*/
   {
     v2 = 0; /*0x673ea5*/
@@ -295,7 +295,7 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
   double v15; // [esp-8h] [ebp-10h]
   bool *v16; // [esp+Ch] [ebp+4h]
 
-  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v16), (uint8_t *)aJumpjetcontrol))); /*0x6743e0*/
+  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v16), (uint8_t *)aJumpjetcontrol)); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
     *(unsigned int *)&this->__pad_240[460] = INIClass::ReadInt_Overwrite((INIClass *)(/*0x67440c*/
@@ -350,7 +350,7 @@ INIClass * * RulesClass::ReadMovies(void * aMovies)
   char Source[32]; // [esp+4h] [ebp-20h] BYREF
   INIClass *v7; // [esp+28h] [ebp+4h]
 
-  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v7), (uint8_t *)aMovies))); /*0x674560*/
+  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v7), (uint8_t *)aMovies)); /*0x674560*/
   if ( result ) /*0x67456c*/
   {
     result = INIClass::GetKeyCount( (INIClass *)(v7->__pad_0), (uint8_t *)aMovies); /*0x67457d*/
@@ -823,7 +823,7 @@ int RulesClass::readSpecialWeapons(void * aAlliedwalltran, void * aWallmodel, vo
   double v6; // [esp-8h] [ebp-10h]
   int *v7; // [esp+Ch] [ebp+4h]
 
-  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v7), (uint8_t *)aWallmodel))); /*0x66d200*/
+  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v7), (uint8_t *)aWallmodel)); /*0x66d200*/
   if ( result ) /*0x66d20c*/
   {
     Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)(/*0x66d223*/
@@ -861,7 +861,7 @@ int RulesClass::ReadColors(void * aColors)
   INIEntry *v9; // [esp+10h] [ebp+4h] BYREF
 
   v1 = (char *)v9; /*0x66d3a9*/
-  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v9), (uint8_t *)aColors))); /*0x66d3b0*/
+  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v9), (uint8_t *)aColors)); /*0x66d3b0*/
   if ( result ) /*0x66d3bc*/
   {
     result = INIClass::GetKeyCount( (INIClass *)(v1), (uint8_t *)aColors); /*0x66d3cd*/
@@ -908,7 +908,7 @@ int RulesClass::ReadColorAdd(void * aColoradd)
   INIClass *v13; // [esp+18h] [ebp+4h] BYREF
 
   v1 = v13; /*0x66d48b*/
-  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v13), (uint8_t *)aColoradd))); /*0x66d494*/
+  result = (unsigned int)(INIClass::BinarySearchSection( (INIClass *)((int)v13), (uint8_t *)aColoradd)); /*0x66d494*/
   if ( result ) /*0x66d4a2*/
   {
     result = INIClass::GetKeyCount( (INIClass *)(v1->__pad_0), (uint8_t *)aColoradd); /*0x66d4ae*/
@@ -1100,13 +1100,13 @@ int  RulesClass::readParticleSystems(TechnoTypeClass * a2)
   int i; // esi
   UnitTypeClass *LargeVisceroid; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a8ec*/
+  v3 = *a2; /*0x67a8ec*/
   LargeVisceroid = this->LargeVisceroid; /*0x67a8f9*/
-  (*(void (**)(int *, UnitTypeClass **, int, unsigned int))(v3 + 16))(aP1, &LargeVisceroid, 4, 0); /*0x67a8fd*/
+  (*(void (**)(int *, UnitTypeClass **, int, unsigned int))(v3 + 16))(a2, &LargeVisceroid, 4, 0); /*0x67a8fd*/
   result = (int)LargeVisceroid; /*0x67a900*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a908*/
   {
-    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a918*/
+    (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, this->DetailMinFrameRateMovie + 4 * i, 4, 0); /*0x67a918*/
     result = (int)LargeVisceroid; /*0x67a91b*/
   }
   return result; /*0x67a924*/

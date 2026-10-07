@@ -7,6 +7,8 @@
 namespace gamemd {
 struct HashTable_flat;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_G2_IPXGlobalConnClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_IPXGlobalConnClass_DEF 1
 struct IPXGlobalConnClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -44,5 +46,6 @@ struct IPXGlobalConnClass {
     int ddtor(int a2, int a3);
     void ReceivePacket(int a2);
 };
+#endif  // GAMEMD_G2_IPXGlobalConnClass_DEF
 
 } // namespace gamemd

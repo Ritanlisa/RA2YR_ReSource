@@ -47,6 +47,11 @@
 #include "e4/classes/StringVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Config_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/OwnerDrawControl_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ExchangeMultiplayerGameInfo(...);  // raw 005E7920: void ExchangeMultiplayerGameInfo()
+    int StartGameWOL_Start_7ACB90(...);  // raw 007ACB90: char __thiscall StartGameWOL_Start_7ACB90(ObjectClass *this, void *a2, int a3)
+} // namespace gamemd
 
 // 0x792CF0
 namespace gamemd {
@@ -246,7 +251,7 @@ AbstractClass * * HandleWOLForwardingError(ObjectClass *self)
         while ( 1 ) /*0x793509*/
         {
           v5 = ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v4])); /*0x793509*/
-          if ( !_strcmpi(v5, (char *)&((ObjectClass *)&g_WebBrowserConfig)->q048) ) /*0x79350f*/
+          if ( !_strcmpi(v5, (char *)&((ObjectClass *)&g_WebBrowserConfig)->ambientSoundController) ) /*0x79350f*/
             break; /*0x79350f*/
           if ( ++v4 >= dword_A8DA84 ) /*0x793523*/
             goto LABEL_15; /*0x793523*/
@@ -1165,7 +1170,7 @@ AbstractClass * * WOL_StartGame()
             while ( 1 ) /*0x794ef6*/
             {
               v17 = ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v16])); /*0x794ef6*/
-              if ( !_strcmpi(v17, (char *)&((ObjectClass *)&g_WebBrowserConfig)->q048) ) /*0x794efc*/
+              if ( !_strcmpi(v17, (char *)&((ObjectClass *)&g_WebBrowserConfig)->ambientSoundController) ) /*0x794efc*/
                 break; /*0x794efc*/
               if ( ++v16 >= dword_A8DA84 ) /*0x794f10*/
                 goto LABEL_52; /*0x794f10*/
@@ -1987,7 +1992,7 @@ char HandleWOLRematch()
     if ( ++v5 >= dword_B77900) /*0x7968d7*/
       return 0; /*0x7968d7*/
   }
-  if ( &g_WebBrowserConfig == (ObjectClass *)-36 || _strcmpi(v12, (char *)&((ObjectClass *)&g_WebBrowserConfig)->q048) ) /*0x7968fb*/
+  if ( &g_WebBrowserConfig == (ObjectClass *)-36 || _strcmpi(v12, (char *)&((ObjectClass *)&g_WebBrowserConfig)->ambientSoundController) ) /*0x7968fb*/
     return 0; /*0x7968e4*/
   Debug::Log("Received NET_PREVIEW_MODE packet from host\n"); /*0x79690c G57w11: IDA push seq @ 0x79690c*/
   ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796924*/

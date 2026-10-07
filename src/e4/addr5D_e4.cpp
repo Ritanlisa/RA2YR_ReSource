@@ -73,8 +73,13 @@
 #include "e4/classes/GameOptions_e4.hpp"
 #include "e4/classes/IsRandMap_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/GameSetup_e4.hpp"  // G57w10 D supply
 #include "e4/classes/NetworkManager_e4.hpp"  // G57w10 r5 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int HandleToolTipMessage(...);  // raw 00724200: void __thiscall HandleToolTipMessage(int this, int a2)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aBattle[];  // data: 0x830c00 truth(IDA G42.57w9)
 extern char aCooperative[];  // data: 0x830bcc truth(IDA G42.57w9)
@@ -186,7 +191,7 @@ int sub_5D2350(int a1, int * a2)
       GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d237b*/
       ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d238c*/
       if ( dword_887640 ) /*0x5d239e*/
-        (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))(dword_887640, a1, 0);  /*0x5d23a5*/
+        (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))(dword_887640, a1, 0);  /*0x5d23a5*/
       v3 = *a2; /*0x5d23af*/
       v4 = a2[1]; /*0x5d23b3*/
       v5[2] = a2[2]; /*0x5d23b9*/
@@ -1033,7 +1038,7 @@ int GameInit_Complete()
 }
 // 0x5D9060
 namespace gamemd {
-int E4Recv_5D9060::sub_5D9060(int a2)
+int AbstractClass::sub_5D9060(int a2)
 {
     int v2; // ebx
     int v4; // ebp
@@ -1046,7 +1051,7 @@ int E4Recv_5D9060::sub_5D9060(int a2)
     v4 = 255; /*0x5d9073*/
     while ( 1 ) /*0x5d907b*/
     {
-      v5 = v2 + this->?; /*0x5d907b*/
+      v5 = v2 + this->M16; /*0x5d907b*/
       this->? = v5; /*0x5d907f*/
       v6 = v5; /*0x5d9087*/
       if ( v5 > 0xFFFF ) /*0x5d908a*/

@@ -25,6 +25,38 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/E4Recv_7B9530_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int _sopen(...); }
+namespace gamemd { int _lock_file2(...); }
+namespace gamemd { int _flswbuf(...); }
+namespace gamemd { int _lock_fhandle(...); }
+namespace gamemd { int _get_osfhandle(...); }
+namespace gamemd { int _unlock_fhandle(...); }
+namespace gamemd { int _amsg_exit(...); }
+namespace gamemd { int getSystemCP(...); }
+namespace gamemd { int setSBCS(...); }
+namespace gamemd { int setSBUpLow(...); }
+namespace gamemd { int CPtoLCID(...); }
+namespace gamemd { int __crtGetStringTypeW(...); }
+namespace gamemd { int _whiteout_0(...); }
+namespace gamemd { int _un_inc_0(...); }
+// [w14e3] CRT/SEH vocab supply (g57b5-W5 variadic convention; raw call-form arities cited)
+// CPPEH_RECORD: IDA SEH pseudo-struct, usage-shaped (sibling def: addr7C_e4.cpp; fields used here:
+// ms_exc.old_esp / ms_exc.registration.TryLevel per 0x7D11C4-0x7D1280)
+struct CPPEH_RECORD { void *old_esp; struct { int TryLevel; } registration; };
+namespace gamemd {
+int __sbh_find_block(...);   // raw 0x7C93E8 call form __sbh_find_block(Block)
+int __sbh_alloc_block(...);  // raw 0x7C946E call form __sbh_alloc_block(a1)
+int __sbh_resize_block(...); // raw 0x7D0FA5 call form __sbh_resize_block(v5, aP0, v3)
+int write_char_0(...);       // raw 0x7D2368 call form write_char_0(v5, File, &v51)
+int get_int64_arg_0(...);    // raw 0x7D26AD call form get_int64_arg_0(&a3)
+int write_multi_char_0(...); // raw 0x7D281A call form write_multi_char_0(0x20u, n, File, p)
+int write_string_0(...);     // raw 0x7D2830 call form write_string_0(&v48, n, File, p)
+int _flsbuf(...);            // raw 0x7C8EF4 call form _flsbuf(0, &File)
+int _unlock_file2(...);      // raw 0x7CB12E call form _unlock_file2(1, &File)
+int gethostname(...);        // ws2_32 import, raw call form gethostname(name, len)
+} // namespace gamemd
+
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
 
@@ -238,7 +270,7 @@ int __sbh_heap_check()
 namespace gamemd {
 int _set_new_handler_shape(int (__cdecl *)(unsigned int), unsigned int a2)
 {
-    int (__cdecl *)(unsigned int); // esi
+    int (__cdecl *v1)(unsigned int); // esi
 
     _lock(9); /*0x7d06c1*/
     v1 = dword_B782C8; /*0x7d06ca*/
@@ -3792,7 +3824,7 @@ void * signal_7D482C(int Signal, void * Function)
     unsigned int *v2; // esi
     void *v3; // eax
     unsigned int v4; // eax
-    void (__cdecl *)(int); // edi
+    void (__cdecl *v5)(int); // edi
     DWORD LastError; // esi
 
     if ( Function == (_crt_signal_t)4 || Function == (_crt_signal_t)3 ) /*0x7d4841*/
@@ -12202,7 +12234,7 @@ char * _ui64toa(unsigned long long Value, char * Buffer, int Radix)
 namespace gamemd {
 bool ctrlevent_capture_4(DWORD CtrlType)
 {
-    void (__cdecl *)(int); // esi
+    void (__cdecl *v1)(int); // esi
     int *v2; // eax
     int v3; // edi
     int v5; // [esp-4h] [ebp-10h]

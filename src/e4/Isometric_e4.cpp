@@ -211,7 +211,7 @@ AbstractClass * Isometric::InitTables(unsigned int *aP1)
       v6 = 0.0; /*0x47bb2c*/
     if ( v6 > *(double *)&(&qword_81C918)[5 * *(uint8_t *)&this->u8_11C - 5] ) /*0x47bb3d*/
       v6 = *(double *)&(&qword_81C918)[5 * *(uint8_t *)&this->u8_11C - 5]; /*0x47bb41*/
-    return (gamemd::AbstractClass *)(Math::RoundToInt(v6); /*0x47bb4d*/);
+    return (gamemd::AbstractClass *)(Math::RoundToInt(v6)) /*0x47bb4d*/;
   }
   return (gamemd::AbstractClass *)(result);
 

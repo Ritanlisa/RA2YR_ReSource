@@ -235,7 +235,7 @@ LABEL_5:
             SkirmishSetup_Setup_5E70D0((HWND)v9, *(unsigned int *)(dword_A8B8CC + 4 * v10)); /*0x5e6aff*/
           LoadScenarioClassByIndex(v10); /*0x5e6b06*/
           if ( !*(unsigned int *)g_UIControlState ) /*0x5e6b10*/
-            ((Session*)(HWND)(v9))->PrepareGame(); /*0x5e6b17*/
+            ((Session*)(HWND)((v9)))->PrepareGame((HWND)((v9)));; /*0x5e6b17*/
           *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = dword_AC10E0; /*0x5e6b22*/
           LoadScenarioClassByIndex(dword_AC10E0); /*0x5e6b28*/
           LOBYTE(v10) = HandleMultiplayerMapSelection((ObjectClass *)v9); /*0x5e6b38*/

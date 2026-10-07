@@ -31,6 +31,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/classes/Checksummer_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
@@ -150,7 +151,7 @@ LABEL_11:
   else
   {
     v6 = (unsigned int *)(dword_A8E34C);
-    while ( *(unsigned int *)(unsigned int)(v6)   !=   (unsigned int)(this ))) /*0x52386a*/
+    while ( *(unsigned int *)(unsigned int)(v6)   !=   (unsigned int)(this )) /*0x52386a*/
     {
       ++v5; /*0x52386c*/
       ++v6; /*0x52386d*/

@@ -3,6 +3,15 @@
 #include "game_systems.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/e4_globals_decls.hpp"  // [w14e3] DSurface_Alternate/g_BitShift_* extern battery
+#include "core/globals_core.hpp"  // [w14e3] g_GameScreen*/g_ScreenSaverState/g_CreditsScreenState externs
+#include "e4/classes/ScenarioClass_e4.hpp"  // [w14e3] ScenarioClass::SetGlobalToByID carrier
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention)
+namespace gamemd {
+int Tooltip_Enable(...);  // [w14e3] raw 0x4E1FA9 Tooltip::Enable (flattened name)
+int AddPower(...);  // [w14e3] raw 0x4F9950 HouseClass::AddPower (unqualified call form)
+int SetCombatPower(...);  // [w14e3] raw 0x4F6EC0 HouseClass::SetCombatPower (unqualified call form)
+}
 extern int PropertyReadBoolCOM(int a1, int a2, char a3);  // W13-C raw 0x682A90 COM_Property_ReadBool
 extern int WriteIntCOM(int a1, int a2, int a3);  // W13-C raw 0x682E10 COM_WriteInt
 extern int WriteStringCOM(int a1, int a2, const char *lpMultiByteStr);  // W13-C raw 0x682640 COM_WriteString
@@ -1001,7 +1010,7 @@ int GameOptionsClass::PopulateMovieList(HWND hWnd)
           SendMessageA(hWnd, 0x19Au, v4, (LPARAM)off_832C20); /*0x5fc055*/
       }
     }
-    GameOptionsClass_field_0x04 = (unsigned int)(v2[9].GameOptionsClass_field_0x04)); /*0x5fc057*/
+    GameOptionsClass_field_0x04 = (unsigned int)(v2[9].GameOptionsClass_field_0x04); /*0x5fc057*/
     if ( GameOptionsClass_field_0x04 >= 0 ) /*0x5fc05c*/
     {
       v6 = GameOptionsClass_field_0x04 + 1; /*0x5fc05e*/
@@ -1111,7 +1120,7 @@ int GameResult::CalcScore()
 }
 
 // 0x60d540
-void GameScreen::DlgProc()
+void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wParam, unsigned int a8)
 {
     HWND Parent; // eax
     int v9; // edx

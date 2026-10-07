@@ -75,6 +75,8 @@ public:
 // Multiplayer — multiplayer lobby/management (4 methods)
 // IDA: Screen, FindStartPositions, sub_68C2B0
 // ============================================================================
+#ifndef GAMEMD_G2_Multiplayer_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_Multiplayer_DEF 1
 class Multiplayer
 {
 public:
@@ -95,6 +97,7 @@ public:
     void ShowProgress(int a1);  // 0x69ae90 -- Multiplayer::ShowProgress
     // === SYMBOL-ANCHOR (END) ===
 };
+#endif  // GAMEMD_G2_Multiplayer_DEF
 
 // ============================================================================
 // WOL — Westwood Online (1 method)
@@ -113,6 +116,8 @@ public:
 // NetworkAddress — network address management (1 method)
 // IDA: Assign
 // ============================================================================
+#ifndef GAMEMD_G2_NetworkAddress_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_NetworkAddress_DEF 1
 class NetworkAddress
 {
 public:
@@ -123,6 +128,7 @@ public:
     uint16_t    m_Port;         // 0x04
     uint16_t    _pad_06;        // 0x06
 };
+#endif  // GAMEMD_G2_NetworkAddress_DEF
 
 // ============================================================================
 // Socket — network socket (1 method)
@@ -156,6 +162,8 @@ public:
 // === Batch-generated MISSING class stubs ===
 
 // 14 methods in IDA
+#ifndef GAMEMD_G2_IPXGlobalConnClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_IPXGlobalConnClass_DEF 1
 class IPXGlobalConnClass
 {
 public:
@@ -193,6 +201,7 @@ virtual unsigned int * Disconnect(int, int, int a2);  // 0x540030
     void* QueryInterface(int a1);  // 0x540670 -- IPXGlobalConnClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
 };
+#endif  // GAMEMD_G2_IPXGlobalConnClass_DEF
 // 4 methods in IDA
 class Modem
 {
@@ -283,6 +292,8 @@ public:
     virtual void Cleanup(); // 0x5D5B20
 
 };
+#ifndef GAMEMD_G2_MultiplayerLobby_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_MultiplayerLobby_DEF 1
 // 1 methods in IDA
 class MultiplayerLobby
 {
@@ -293,6 +304,7 @@ public:
     virtual void FillSlots(); // 0x5EC030
 
 };
+#endif  // GAMEMD_G2_MultiplayerLobby_DEF
 // 1 methods in IDA
 class MultiplayerModeVector
 {
@@ -379,6 +391,8 @@ public:
     virtual void QueryInterface(); // 0x5D8D50
 
 };
+#ifndef GAMEMD_G2_NetworkBuffer_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_NetworkBuffer_DEF 1
 // 4 methods in IDA
 class NetworkBuffer
 {
@@ -395,6 +409,7 @@ public:
     uint8_t NetworkBuffer_field_0x08[4];
     uint8_t NetworkBuffer_field_0x0C[4];
 };
+#endif  // GAMEMD_G2_NetworkBuffer_DEF
 // 3 methods in IDA
 // CSP: NetworkDialog matched via T1
 class NetworkDialog
@@ -431,6 +446,8 @@ public:
 
 };
 // 8 methods in IDA
+#ifndef GAMEMD_G2_NetworkGameSetup_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_NetworkGameSetup_DEF 1
 class NetworkGameSetup
 {
 public:
@@ -458,6 +475,7 @@ public:
     void* DeleteComPtr(int a1);  // 0x5bb560 -- NetworkGameSetup::DeleteComPtr
     // === SYMBOL-ANCHOR (END) ===
 };
+#endif  // GAMEMD_G2_NetworkGameSetup_DEF
 // 2 methods in IDA
 // CSP: NetworkManager matched via T1
 class NetworkManager
@@ -484,6 +502,8 @@ public:
 
     uint8_t NetworkOptions_field_0x04[4];
 };
+#ifndef GAMEMD_G2_NetworkScore_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_NetworkScore_DEF 1
 // 1 methods in IDA
 class NetworkScore
 {
@@ -494,6 +514,9 @@ public:
     virtual void DlgProc(); // 0x64AE50
 
 };
+#endif  // GAMEMD_G2_NetworkScore_DEF
+#ifndef GAMEMD_G2_NetworkSession_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_NetworkSession_DEF 1
 // 2 methods in IDA
 class NetworkSession
 {
@@ -507,6 +530,7 @@ public:
     uint8_t NetworkSession_field_0x04[4];
     unsigned int __pad_0; // 0x0  gB member supply
 };
+#endif  // GAMEMD_G2_NetworkSession_DEF
 // 1 methods in IDA
 class NetworkSettings
 {
@@ -517,6 +541,8 @@ public:
     virtual void DlgProc(); // 0x5DDBD0
 
 };
+#ifndef GAMEMD_G2_NetworkShare_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_NetworkShare_DEF 1
 // 1 methods in IDA
 class NetworkShare
 {
@@ -527,6 +553,7 @@ public:
     bool GetField(); // 0x5E8DA0
 
 };
+#endif  // GAMEMD_G2_NetworkShare_DEF
 // 14 methods in IDA
 #ifndef GAMEMD_E4_FLAT_UDPInterfaceClass_Destru  // G57w8: three-way interlock (e4 full carrier / minimal_carriers / network_ext)
 #define GAMEMD_E4_FLAT_UDPInterfaceClass_Destru 1

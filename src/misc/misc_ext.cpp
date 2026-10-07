@@ -617,7 +617,7 @@ char AnimFile::AddRef(void * a1, void * a2)
     *(unsigned int *)(v3 + 132) = this; /*0x426759*/
     if ( !this ) /*0x42675f*/
       return 0; /*0x426789*/
-    if ( !(*(unsigned __int8 (__thiscall **)(AnimFile *))(*(unsigned int *)this->__pad_0 + 24))(this) ) /*0x426763*/
+    if ( !(*(unsigned __int8 (__thiscall **)(AnimFile *))(*(unsigned int *)&this->vtable1 + 24))(this) ) /*0x426763*/
     {
       (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)(v4 + 132) + 28))(*(unsigned int *)(v4 + 132), 1); /*0x426774*/
       *(unsigned char *)(v4 + 137) = 1; /*0x426777*/
@@ -1352,7 +1352,7 @@ long long CoordBounds::Constructor(int a2, int a3)
     *((unsigned int *)this + 1) = a3; /*0x40387d*/
     *((unsigned int *)this + 2) = a2; /*0x403880*/
     *((unsigned int *)this + 3) = a3; /*0x403883*/
-    result = 10LL * *(unsigned __int64 *)this->__tail_0; /*0x403891*/
+    result = 10LL * *(unsigned __int64 *)this->q000; /*0x403891*/
     *((unsigned __int64 *)this + 4) = result; /*0x403896*/
     return result; /*0x40389c*/
 }

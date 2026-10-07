@@ -12,7 +12,7 @@
 
 // 0x4A3020
 namespace gamemd {
-int IStream::Read(void * pv, ULONG cb)
+int IStream::Read(void * pstm, ULONG cb)
 {
 
   int v3; // ecx
@@ -22,24 +22,24 @@ int IStream::Read(void * pv, ULONG cb)
   void *v7; // [esp+20h] [ebp-4h] BYREF
 
   v4 = (unsigned int *)v3; /*0x4a3026*/
-  v7 = pv; /*0x4a302d*/
-  WriteCompressionBlock((gamemd::Pipe *)(pstm), (unsigned int)pv,(gamemd::CCINIClass *)(*(unsigned char **)(v3 + 28)), (int *)&v7, *(unsigned int *)(v3 + 32)); /*0x4a303e*/
+  v7 = pstm; /*0x4a302d*/
+  WriteCompressionBlock((gamemd::Pipe *)(pstm), (unsigned int)pstm,(gamemd::CCINIClass *)(*(unsigned char **)(v3 + 28)), (int *)&v7, *(unsigned int *)(v3 + 32)); /*0x4a303e*/
   v5 = v7; /*0x4a3043*/
   v4[10] = 0x10000; /*0x4a304a*/
-  pv = (void *)(0); /*0x4a3051*/
+  pstm = (void *)(0); /*0x4a3051*/
   v4[9] = (unsigned int)(v5); /*0x4a3059*/
   if ( !v4[2] ) /*0x4a305b*/
     WinAPI::Wrapper(-2147467261); /*0x4a3067*/
-  result = (*(int (**)(unsigned int, unsigned int *, int, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4 + 9, 8, (void **)(&pv)); /*0x4a307a*/
+  result = (*(int (**)(unsigned int, unsigned int *, int, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4 + 9, 8, (void **)(&pstm)); /*0x4a307a*/
   if ( result >= 0 )
   {
-    if ( pv == (void *)8 )
+    if ( pstm == (void *)8 )
     {
       if ( !v4[2] ) /*0x4a3093*/
         WinAPI::Wrapper(-2147467261); /*0x4a309f*/
-      result = (*(int (**)(unsigned int, unsigned int, void *, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4[7], (void *)(v7), (void **)(&pv)); /*0x4a30b8*/
+      result = (*(int (**)(unsigned int, unsigned int, void *, void **))(*(unsigned int *)v4[2] + 16))( v4[2], v4[7], (void *)(v7), (void **)(&pstm)); /*0x4a30b8*/
       if ( result >= 0 )
-        return v7 != pv ? 0x80004005 : 0;
+        return v7 != pstm ? 0x80004005 : 0;
     }
     else
     {

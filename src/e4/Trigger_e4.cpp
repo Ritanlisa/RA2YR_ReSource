@@ -287,7 +287,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         (*(void (**)(int *))(v25.q018 + 8))( (int *)(&v25.q018)); /*0x76da15*/
       }
       ((PriorityQueue *)((PriorityQueue *)this))->Add(*(unsigned int *)(*((unsigned int *)((char *)&v28) + 1) + 4 * (int)((char *)&v28))); /*0x76da29*/
-      (*((void ((void **)(**))(void **))((char *)&v28) + 2))((char *)&v28); /*0x76da36*/
+      (*((void (__thiscall **)(void **))((char *)&v28) + 2))((char *)&v28); /*0x76da36*/
     }
     while ( (*((uint8_t ((void **)(**))(void **))((char *)&v28) + 1))((char *)&v28) ); /*0x76da41*/
   }

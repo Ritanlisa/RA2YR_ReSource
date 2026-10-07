@@ -63,6 +63,11 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ExitProgram(...);  // raw 006BEC50: void __thiscall __noreturn ExitProgram(ObjectClass *this)
+} // namespace gamemd
 
 // 0x6406E0
 namespace gamemd {
@@ -641,7 +646,7 @@ Debug::Log("Timed out waiting for end game!\n");  /* G57w13b: IDA 0x00648654 pus
 }
 // 0x648710
 namespace gamemd {
-AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
+AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int a3, int arg4, ScenarioClass * a4, int a6, short arg10, int * a7)
 {
   MSVQAnim *v9; // esi
   ObjectClass *v10; // ebp
@@ -768,7 +773,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
   v165 = arg4 / 2;
   v107 = (ObjectClass *)(0);
   Ticks = (ObjectClass *)TimerGetTicks();
-  v100 = (MSVQAnim *)arg0;
+  v100 = (MSVQAnim *)a3;
   v106 = TimerGetTicks();
   v105 = v116;
   v108 = (MSVQAnim *)arg4;
@@ -797,7 +802,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
 LABEL_4:
     v10 = (ObjectClass *)arg4;
   }
-  v13 = (ObjectClass *)arg0;
+  v13 = (ObjectClass *)a3;
   ((EventQueue *)(*(unsigned int **)&(&stru_87C374)[13308]))->Process();
   v14 = (ObjectClass *)v100;
   if ( Ticks == (ObjectClass *)-1 )
@@ -816,8 +821,8 @@ LABEL_8:
 LABEL_9:
   v151 = (ObjectClass *)TimerGetTicks();
   Ticks = v151;
-  v152 = (ObjectClass *)arg0;
-  v100 = (MSVQAnim *)arg0;
+  v152 = (ObjectClass *)a3;
+  v100 = (MSVQAnim *)a3;
   SendNetworkFrameSync( (int *)(v8), arg10);
   if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 && ((unsigned int *)HouseClass_Player)[40532] )
   {
@@ -863,7 +868,7 @@ LABEL_9:
       while ( v18 < *(int *)&((unsigned int *)HouseClass_Player)[40248] );
     }
     Event::Dispatch();
-    v13 = (ObjectClass *)arg0;
+    v13 = (ObjectClass *)a3;
   }
 LABEL_17:
   int v122 = v122;
@@ -1172,7 +1177,7 @@ v55 = (*(int (**)(int *, unsigned int))(*v8 + 24))( (int *)(v8), *(unsigned int 
     v53 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248];
   }
   v10 = (ObjectClass *)arg4;
-  v13 = (ObjectClass *)arg0;
+  v13 = (ObjectClass *)a3;
   v94 = (ObjectClass *)1;
 LABEL_93:
   v58 = v103;

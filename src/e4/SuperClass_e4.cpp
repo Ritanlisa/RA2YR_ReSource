@@ -908,7 +908,7 @@ AbstractClass * * SuperClass::Reset(void *a1, void *a2)
     SuperClass_field_0x68[405] = 0; /*0x6ce0bd*/
     this->SuperClass_field_0x68 = 0; /*0x6ce0c4*/
     v12[0] = (unsigned int)(this); /*0x6ce0db*/
-v3 = (*(int ((int *)(**))(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce0df*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
+v3 = (*(int (__thiscall **)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce0df*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
 
 
     if ( v3 != -1 ) /*0x6ce0e5*/
@@ -917,7 +917,7 @@ v3 = (*(int ((int *)(**))(int *, unsigned int *))(*((unsigned int *)((char *)&g_
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6ce0f2*/
   {
     v12[0] = (unsigned int)(this); /*0x6ce109*/
-v4 = (*(int ((int *)(**))(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce10d*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
+v4 = (*(int (__thiscall **)(int *, unsigned int *))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6ce10d*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (unsigned int *)(v12));
 
 
     if ( v4 != -1 ) /*0x6ce113*/
@@ -976,7 +976,7 @@ void ** SuperClass::CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int 
     SuperClass_field_0x68[405] = 0; /*0x6cb3ad*/
     this->SuperClass_field_0x68 = 0; /*0x6cb3b4*/
     v9 = this; /*0x6cb3cb*/
-v6 = (*(int ((int *)(**))(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3cf*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
+v6 = (*(int (__thiscall **)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3cf*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
 
 
     if ( v6 != -1 ) /*0x6cb3d5*/
@@ -985,7 +985,7 @@ v6 = (*(int ((int *)(**))(int *, SuperClass **))(*((unsigned int *)((char *)&g_B
   if ( LOBYTE(this->SuperClass_field_0x6C) ) /*0x6cb3e2*/
   {
     v9 = this; /*0x6cb3f9*/
-v7 = (*(int ((int *)(**))(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3fd*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
+v7 = (*(int (__thiscall **)(int *, SuperClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 16))( /*0x6cb3fd*/ ((char *)(int *)&g_BuildingLoadQueue_Array), (SuperClass **)(&v9));
 
 
     if ( v7 != -1 ) /*0x6cb403*/

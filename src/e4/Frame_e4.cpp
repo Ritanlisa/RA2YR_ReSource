@@ -233,7 +233,7 @@ v36 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int 
                 (*(void (**)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
               }
               if ( v37 && dword_887640 ) /*0x4f4b50*/
-                (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))(dword_887640, (int)a1, 0); /*0x4f4b57*/
+                (*(void (**)(int, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))(dword_887640, (int)a1, 0); /*0x4f4b57*/
 result = (*(int (**)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/ g_DSurface_Primary, (int *)(&v45), (int)a1);
 
 

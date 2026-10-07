@@ -8,6 +8,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_RawFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_RawFileClass_DEF 1
 struct RawFileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -26,5 +28,6 @@ struct RawFileClass {
      unsigned int * Construct(int a2);  // G57w10-S raw 0x0065CA80 (was C2597 interim stub)
     int Write(); // N_fix R5 supply (cache truth)
 };
+#endif  // GAMEMD_G2_RawFileClass_DEF
 
 } // namespace gamemd

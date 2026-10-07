@@ -119,7 +119,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       else
       {
         v7 = (BombClass *)vtable0[10](this, 0); /*0x431cbe*/
-        if ( this->? == -1 ) /*0x431cc5*/
+        if ( this->M20 == -1 ) /*0x431cc5*/
           this->customSound_controller[0] = (int)v7; /*0x431cd6*/
         else
           this->customSound_controller[0] = ((FileClass *)(RawFileClass *)this)->Seek( 0, 1u); /*0x431cd1*/
@@ -776,8 +776,8 @@ unsigned int * E4Recv_437F50::sub_437F50()
     HRESULT v2; // esi
     LPVOID ppv; // [esp+Ch] [ebp-4h] BYREF
 
-    this->AbstractClass = 0; /*0x437f68*/
-    v2 = CoCreateInstance(*(const IID *)&stru_7E9500, 0, 7u, *(const IID *)&riid, &ppv)); /*0x437f74*/
+    *(unsigned int *)&this->vfptr = 0; /*0x437f68*/
+    v2 = CoCreateInstance(*(const IID *)&stru_7E9500, 0, 7u, *(const IID *)&riid, &ppv); /*0x437f74*/
     if ( v2 < 0 ) /*0x437f78*/
       goto LABEL_5; /*0x437f78*/
     v2 = OleRun((LPUNKNOWN)ppv); /*0x437f85*/
@@ -790,7 +790,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
       if ( v2 != -2147467262 ) /*0x437fb0*/
         WinAPI::Wrapper(v2); /*0x437fb3*/
     }
-    return &this->AbstractClass; /*0x437fba*/
+    return &*(unsigned int *)&this->vfptr; /*0x437fba*/
 }
 }
 // 0x43A600
@@ -1098,9 +1098,9 @@ int sub_4318D0()
 namespace gamemd {
 int E4Recv_431920::sub_431920()
 {
-    this->? = 0; /*0x431922*/
-    this->? = 0; /*0x431925*/
-    this->? = 0; /*0x431928*/
+    this->M8 = 0; /*0x431922*/
+    this->M12 = 0; /*0x431925*/
+    this->M16 = 0; /*0x431928*/
     return 0; /*0x43192b*/
 }
 } // namespace gamemd
@@ -1115,13 +1115,13 @@ int E4Recv_431930::sub_431930(int a2)
 
     if ( (unsigned char)a2 ) /*0x43193c*/
     {
-      this->? = 0; /*0x43193e*/
-      this->? = 0; /*0x431941*/
-      this->? = 0; /*0x431944*/
+      this->M8 = 0; /*0x43193e*/
+      this->M12 = 0; /*0x431941*/
+      this->M16 = 0; /*0x431944*/
     }
     v3 = Timer::ReadTSC(&a2); /*0x43194c*/
     result = (a2 << 28) | (v3 >> 4); /*0x431962*/
-    this->AbstractClass = (void *)result; /*0x431964*/
+    *(unsigned int *)&this->vfptr = (void *)result; /*0x431964*/
     this->? = v5; /*0x431966*/
     return result; /*0x431969*/
 }

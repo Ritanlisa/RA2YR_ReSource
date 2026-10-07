@@ -99,6 +99,13 @@ LightConvertClass::LightConvertClass(
 #include "core/ddraw_init.hpp"
 #include "e4/e4_globals_decls.hpp"
 #include "core/ddraw_init.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ConvertRGB24to556(...);  // raw 007DE200: unsigned int __cdecl __spoils<ecx> ConvertRGB24to556(int a1, _WORD *a2, __m64 a3, __m64 a4
+    int ConvertRGB24to565(...);  // raw 007DEBBA: unsigned int __cdecl __spoils<ecx> ConvertRGB24to565(int a1, _WORD *a2, __m64 a3, __m64 a4
+    int ConvertRGB24to655(...);  // raw 007DE87A: unsigned int __cdecl __spoils<ecx> ConvertRGB24to655(int a1, _WORD *a2, __m64 a3, __m64 a4
+    int ConvertRGB24toRGB565(...);  // raw 007DE53A: unsigned int __cdecl __spoils<ecx> ConvertRGB24toRGB565(int a1, _WORD *a2, __m64 a3, __m64
+} // namespace gamemd
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
 namespace gamemd {
     int Math_RoundToInt(double a1);                    // raw fn_49 Math::RoundToInt 家族 (16 处跨 TU);

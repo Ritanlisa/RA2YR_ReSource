@@ -312,7 +312,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
         v13 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471ddc*/
         *(unsigned int *)(v11 + 16) = 0; /*0x471de2*/
         *(unsigned int *)(v11 + 8) = v13; /*0x471de5*/
-        v12 = (unsigned int *, unsigned int a1)v11; /*0x471de8*/
+        v12 = (unsigned int *)v11; /*0x471de8*/
       }
       v12[1] = (unsigned int)(v9);
       *v12 = (unsigned int)(v5);
@@ -385,13 +385,13 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
 namespace gamemd {
 char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, unsigned int *aP0)
 {
+int v10; // ebp
 a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
 a3 = *(_DWORD *)(v10 + 4); /*0x4720d7*/
 
   CaptureManagerClass *v6; // ecx
   CaptureManagerClass *v7; // edi
   int i; // ebx
-  int v10; // ebp
   int v11; // ecx
   int (**vtable0)(CaptureManagerClass *); // edx
   int v13; // eax

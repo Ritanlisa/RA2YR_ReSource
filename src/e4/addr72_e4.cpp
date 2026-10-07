@@ -46,6 +46,12 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int PropagateCellOccupancy(...);  // raw 00722440: void __thiscall PropagateCellOccupancy(ObjectClass *this)
+    int RebuildBuildingOccupancy(...);  // raw 00722F00: void __thiscall RebuildBuildingOccupancy(ObjectClass *this)
+} // namespace gamemd
 
 // 0x7221B0
 namespace gamemd {
@@ -1536,7 +1542,7 @@ int sub_720420()
 
 // 0x720440
 namespace gamemd {
-unsigned int * E4Recv_720440::sub_720440()
+unsigned int * TechnoClass::sub_720440()
 {
 
   this->owningHouseIndex0 = 0; /*0x720444*/
@@ -1555,7 +1561,7 @@ unsigned int * E4Recv_720440::sub_720440()
 
 // 0x720960
 namespace gamemd {
-unsigned int * E4Recv_720960::sub_720960()
+unsigned int * ObjectClass::sub_720960()
 {
 
   this->AbstractClass = (void *)-1; /*0x720965*/
@@ -1992,7 +1998,7 @@ int sub_723FE0()
 
 // 0x724550
 namespace gamemd {
-int E4Recv_724550::sub_724550()
+int TechnoClass::sub_724550()
 {
 
   return this->cloakProgress[3]; /*0x724556*/
@@ -2013,7 +2019,7 @@ int E4Recv_724560::sub_724560(int a2)
 
 // 0x724570
 namespace gamemd {
-int E4Recv_724570::sub_724570()
+int TechnoClass::sub_724570()
 {
 
   return this->cloakDelayTimer[1]; /*0x724576*/
@@ -2023,7 +2029,7 @@ int E4Recv_724570::sub_724570()
 
 // 0x724A30
 namespace gamemd {
-int E4Recv_724A30::sub_724A30(int * a2)
+int TechnoClass::sub_724A30(int * a2)
 {
 
   int v2; // ebp
@@ -2708,7 +2714,7 @@ int sub_725F80()
 
 // 0x7266C0
 namespace gamemd {
-unsigned int * E4Recv_7266C0::sub_7266C0(char a2)
+unsigned int * ObjectClass::sub_7266C0(char a2)
 {
 
   this->ambientSoundController[1] |= 1 << a2; /*0x7266cd*/
@@ -2719,7 +2725,7 @@ unsigned int * E4Recv_7266C0::sub_7266C0(char a2)
 
 // 0x726780
 namespace gamemd {
-char E4Recv_726780::sub_726780()
+char ObjectClass::sub_726780()
 {
 
   return (char)this->nextObject; /*0x726783*/
@@ -3054,7 +3060,7 @@ int sub_727FB0()
 
 // 0x728540
 namespace gamemd {
-char E4Recv_728540::sub_728540(int a2)
+char ObjectClass::sub_728540(int a2)
 {
 
   int occupant; // esi

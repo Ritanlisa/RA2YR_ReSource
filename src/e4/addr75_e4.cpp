@@ -80,6 +80,19 @@
 #include "classes/Surface_e4.hpp"  // G42.57w9 method-carrier supply
 #include "classes/ThemeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int sub_405130(...); }
+namespace gamemd { int sub_405160(...); }
+namespace gamemd { int sub_405140(...); }
+namespace gamemd { int sub_4052E0(...); }
+namespace gamemd { int GetStringByIndex(...); }
+namespace gamemd { int _do_always_noconv_codecvt_base_std__MBE_NXZ_21(...); }
+namespace gamemd { int sub_4053E0(...); }
+namespace gamemd { int sub_405430(...); }
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int InitializeTileAudioOcclusion(...);  // raw 00756860: int __thiscall InitializeTileAudioOcclusion(ObjectClass *this, int a2, float *a3)
+} // namespace gamemd
 
 // 0x750920
 namespace gamemd {
@@ -1960,7 +1973,7 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
     goto LABEL_5; /*0x758ae4*/
   vtable2 = (void *)(((unsigned int *)this)[0]); /*0x758aed*/
   vtable1 = (void *)(((unsigned int *)this)[0]); /*0x758af0*/
-  v9[0] = this->AbstractClass; /*0x758af3*/
+  v9[0] = *(unsigned int *)&this->vfptr; /*0x758af3*/
   vtable3 = (void *)(((unsigned int *)this)[0]); /*0x758af7*/
   v9[2] = (unsigned int)(vtable2); /*0x758afa*/
   v9[1] = (unsigned int)(vtable1); /*0x758afe*/
@@ -2491,7 +2504,7 @@ int VocClass_Update()
   int v2; // ebx
   int v3; // eax
 
-  result = (unsigned int)(((AudioQueue *)(&dword_B1D320))->GetNext())); /*0x750ec6*/
+  result = (unsigned int)(((AudioQueue *)(&dword_B1D320))->GetNext()); /*0x750ec6*/
   v1 = result; /*0x750ecb*/
   if ( result ) /*0x750ecf*/
   {
@@ -3443,7 +3456,7 @@ namespace gamemd {
 unsigned int * E4Recv_755CB0::sub_755CB0()
 {
 
-  LOBYTE(this->AbstractClass) = 0; /*0x755cb4*/
+  LOBYTE(*(unsigned int *)&this->vfptr) = 0; /*0x755cb4*/
   ((unsigned int *)this)[0] = 0; /*0x755cb6*/
   ((unsigned int *)this)[0] = 0; /*0x755cb9*/
   ((unsigned int *)this)[0] = 0; /*0x755cbc*/

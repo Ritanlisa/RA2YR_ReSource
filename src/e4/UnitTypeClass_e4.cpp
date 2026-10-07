@@ -178,7 +178,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
     else
     {
       v6 = (unsigned int *)(dword_A83CE4); /*0x747243*/
-      while ( *v6   !=   (unsigned int)(this ))) /*0x74724b*/
+      while ( *v6   !=   (unsigned int)(this )) /*0x74724b*/
       {
         ++v5; /*0x74724d*/
         ++v6; /*0x74724e*/
@@ -506,7 +506,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
             (unsigned __int8 *)&v4->BarrelVoxel,
             aStartfiringfra,
             StorageFilledSlots);
-    parent_gap = (int)v4[1].SecretProduction->ObjectTypeClass; /*0x747a73*/
+    parent_gap = (int)*(unsigned int *)&v4[1].SecretProduction->vtable1; /*0x747a73*/
     v4[1].StorageFilledSlots = v33; /*0x747a7a*/
     v4[1].SecretProduction = (TechnoTypeClass *)INIClass::ReadInt_Overwrite( /*0x747a85*/
                                                   (bool *)&DSurface_ViewBounds.__pad_FC[228],

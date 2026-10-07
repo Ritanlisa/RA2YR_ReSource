@@ -31,6 +31,11 @@
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/IPXInterfaceClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int gethostbyname(...);  // raw 007C8980: // attributes: thunk struct hostent *__stdcall gethostbyname(const char *name)
+    int gethostname(...);  // raw 007C89CE: // attributes: thunk int __stdcall gethostname(char *name, int namelen)
+} // namespace gamemd
 
 // 0x7B1B50
 namespace gamemd {

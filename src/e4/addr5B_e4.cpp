@@ -80,6 +80,7 @@
 #include "e4/classes/Palette_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/VocClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Count_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
@@ -2026,7 +2027,7 @@ char E4Recv_5B3E90::sub_5B3E90()
 
 // 0x5B3F50
 namespace gamemd {
-void E4Recv_5B3F50::sub_5B3F50()
+void MixFileClass::sub_5B3F50()
 {
 
   void *CountFiles; // eax
@@ -2045,12 +2046,12 @@ void E4Recv_5B3F50::sub_5B3F50()
     __3_YAXPAX_Z((void *)this->MixFileClass_field_24); /*0x5b3f79*/
     BYTE2(this->FileSize) = 0; /*0x5b3f81*/
   }
-  v3 = *(void **)&this->__pad_1C[4]; /*0x5b3f84*/
+  v3 = *(void **)&this->M32; /*0x5b3f84*/
   this->MixFileClass_field_24 = 0; /*0x5b3f87*/
   if ( v3 ) /*0x5b3f8c*/
   {
     __3_YAXPAX_Z(v3); /*0x5b3f8f*/
-    *(unsigned int *)&this->__pad_1C[4] = 0; /*0x5b3f97*/
+    *(unsigned int *)&this->M32 = 0; /*0x5b3f97*/
   }
   if ( this ) /*0x5b3f9c*/
   {
@@ -2299,7 +2300,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   wchar_t lParam[256]; // [esp+110h] [ebp-400h] BYREF
   wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
 
-  result = (int)GetDlgItem((HWND)this->AbstractClass, 1344); /*0x5b57ea*/
+  result = (int)GetDlgItem((HWND)*(unsigned int *)&this->vfptr, 1344); /*0x5b57ea*/
   v3 = (HWND)result; /*0x5b57ec*/
   if ( result ) /*0x5b57f0*/
   {
@@ -2324,7 +2325,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
           ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5b58d9*/
           v4 = CharToWideString( (unsigned char *)(unk_A8B380)); /*0x5b58e3*/
           v5 = dword_A8B394; /*0x5b58ea*/
-          vtable0 = (HWND)this->AbstractClass; /*0x5b58f5*/
+          vtable0 = (HWND)*(unsigned int *)&this->vfptr; /*0x5b58f5*/
           Format = (unsigned int)(wchar_t *)v4; /*0x5b58f6*/
           result = (int)GetDlgItem(vtable0, 1343); /*0x5b58fa*/
           v6 = (HWND)result; /*0x5b58fc*/
@@ -2354,7 +2355,7 @@ char E4Recv_5B5960::sub_5B5960()
   HWND DlgItem; // eax
   HWND v3; // edi
 
-  DlgItem = GetDlgItem((HWND)this->AbstractClass, 1639); /*0x5b596d*/
+  DlgItem = GetDlgItem((HWND)*(unsigned int *)&this->vfptr, 1639); /*0x5b596d*/
   v3 = DlgItem; /*0x5b5973*/
   if ( DlgItem ) /*0x5b5977*/
   {
@@ -2381,7 +2382,7 @@ char E4Recv_5B5A50::sub_5B5A50(char a2)
   HWND v4; // esi
   wchar_t lParam[22]; // [esp+8h] [ebp-2Ch] BYREF
 
-  DlgItem = GetDlgItem((HWND)this->AbstractClass, 1473); /*0x5b5a5f*/
+  DlgItem = GetDlgItem((HWND)*(unsigned int *)&this->vfptr, 1473); /*0x5b5a5f*/
   v4 = DlgItem; /*0x5b5a65*/
   if ( DlgItem ) /*0x5b5a69*/
   {
@@ -2426,7 +2427,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     v3 = CharToWideString( (unsigned char *)(unk_A8B380)); /*0x5b6e35*/
     v4 = dword_A8B394; /*0x5b6e3d*/
     Format = (unsigned int)(wchar_t *)v3; /*0x5b6e49*/
-    DlgItem = GetDlgItem((HWND)this->AbstractClass, 1343); /*0x5b6e53*/
+    DlgItem = GetDlgItem((HWND)*(unsigned int *)&this->vfptr, 1343); /*0x5b6e53*/
     if ( DlgItem ) /*0x5b6e57*/
     {
       if ( v4 >= 8 ) /*0x5b6e5b*/

@@ -216,7 +216,14 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ConstructTeamMembers(...);  // raw 0065DD30: _DWORD *__thiscall ConstructTeamMembers(ObjectClass *this)
+    int Release2COM(...);  // raw 0045A160: int __thiscall Release2COM(ObjectClass *this)
+    int RenderProjectileTrail(...);  // raw 00659650: bool __thiscall RenderProjectileTrail(ObjectClass *this)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
 extern unsigned int a3;  // data: 0x822bbc truth(IDA G42.57w9)
@@ -2060,7 +2067,7 @@ v32 = (*(int (**)(unsigned int *, int *, unsigned int))(v33 + 216))( /*0x65e434*
 }
 // 0x65E660
 namespace gamemd {
-void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8)
+void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v10; // ecx
   int v11; // ebp

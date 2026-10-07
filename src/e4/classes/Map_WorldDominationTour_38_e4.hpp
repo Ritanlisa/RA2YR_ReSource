@@ -12,5 +12,6 @@ struct Map_WorldDominationTour_38 {
     int AddRef(void *a1_1);  // 0x769D60
     unsigned int * Release(void *a1_1);  // 0x76A5A0
     unsigned int * ddtor(void *a1_1);  // 0x76A5B0
+    char __pad_0[4];  // 0x0 (G57W14E1 til supply)
 };
 } // namespace gamemd

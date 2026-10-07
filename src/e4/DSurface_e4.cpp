@@ -90,7 +90,7 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = 7; /*0x4ba604*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 12) = (unsigned int)(aP1); /*0x4ba60e*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 8) = (unsigned int)(aP2); /*0x4ba618*/
-    if ( aP3  ==  (int)(1) )) /*0x4ba621*/
+    if ( aP3  ==  (int)(1) ) /*0x4ba621*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 8256; /*0x4ba63e*/
@@ -132,7 +132,7 @@ AbstractClass * * DSurface::Destroy()
       if ( g_DDraw_Clipper ) /*0x4ba6d0*/
       {
         (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 112))(v3, 0); /*0x4ba6d6*/
-        (*(void ((int)(**))(int))(*(unsigned int *)g_DDraw_Clipper + 8))(g_DDraw_Clipper); /*0x4ba6e1*/
+        (*(void (__stdcall **)(int))(*(unsigned int *)g_DDraw_Clipper + 8))(g_DDraw_Clipper); /*0x4ba6e1*/
         g_DDraw_Clipper = 0; /*0x4ba6e4*/
       }
     }
@@ -261,7 +261,7 @@ AbstractClass * * DSurface::CreatePrimary()
     {
       v15 = *(unsigned int *)g_DDraw_Clipper; /*0x4ba983*/
       ActiveWindow = GetActiveWindow(); /*0x4ba985*/
-      if ( !(*(int ((int)(**))(int, unsigned int, HWND))(v15 + 32))(g_DDraw_Clipper, 0, ActiveWindow) ) /*0x4ba994*/
+      if ( !(*(int (__stdcall **)(int, unsigned int, HWND))(v15 + 32))(g_DDraw_Clipper, 0, ActiveWindow) ) /*0x4ba994*/
         (*(void (**)(int, int))(*(unsigned int *)*v6 + 112))(*v6, g_DDraw_Clipper); /*0x4ba9a7*/
     }
     qmemcpy( (void *)(&g_DDraw_PixelFormatDesc), (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/

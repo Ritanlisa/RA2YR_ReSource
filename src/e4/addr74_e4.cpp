@@ -57,6 +57,10 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int LookupWaypointName(...);  // raw 005B3910: int __thiscall LookupWaypointName(ObjectClass *this)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aViscLrgShp[];  // data: 0x84599c truth(IDA G42.57w9)
 extern char aViscSmlShp[];  // data: 0x8459ac truth(IDA G42.57w9)
@@ -1057,13 +1061,13 @@ char _e4::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x74f3c2*/
+  m_8 = *(unsigned int *)&this->Capacity; /*0x74f3c2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x74f3cd*/
   {
     v3 = 0; /*0x74f3cf*/
     if ( m_8 <= 0 ) /*0x74f3d3*/
       return 1; /*0x74f3f3*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x74f3d5*/
+    v4 = *(unsigned int **)&this->Items; /*0x74f3d5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x74f3db*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x74f3e4*/
     {
@@ -1088,30 +1092,30 @@ char _e4::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x74f40c*/
   {
-    LOBYTE(this->m_C) = 0; /*0x74f416*/
+    LOBYTE(this->IsInitialized) = 0; /*0x74f416*/
     if ( a3 ) /*0x74f41c*/
       v4 = a3; /*0x74f432*/
     else
       v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x74f42e*/
-    LOBYTE(this->m_C) = 1; /*0x74f436*/
+    LOBYTE(this->IsInitialized) = 1; /*0x74f436*/
     if ( v4 ) /*0x74f43a*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x74f445*/
+      if ( *(unsigned int *)&this->Items ) /*0x74f445*/
       {
-        m_8 = this->m_8; /*0x74f44c*/
+        m_8 = *(unsigned int *)&this->Capacity; /*0x74f44c*/
         if ( a2 < m_8 ) /*0x74f451*/
           m_8 = a2; /*0x74f453*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x74f459*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->Items + 4 * i - 4) ) /*0x74f459*/
           ++i; /*0x74f45e*/
-        if ( BYTE1(this->m_C) ) /*0x74f46b*/
+        if ( this->IsAllocated ) /*0x74f46b*/
         {
-          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x74f476*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x74f47e*/
+          __3_YAXPAX_Z(*(void **)&this->Items); /*0x74f476*/
+          *(unsigned int *)&this->Items = 0; /*0x74f47e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = (unsigned int)v4; /*0x74f487*/
-      this->m_8 = a2; /*0x74f48f*/
-      BYTE1(this->m_C) = a3 == 0; /*0x74f492*/
+      *(unsigned int *)&this->Items = (unsigned int)v4; /*0x74f487*/
+      this->Capacity = a2; /*0x74f48f*/
+      this->IsAllocated = a3 == 0; /*0x74f492*/
       return (char)((gamemd::AbstractClass **)(1)); /*0x74f498*/
     }
     else
@@ -1121,7 +1125,7 @@ char _e4::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x74f4a2*/
+    (*(void (**)(void *))(*(unsigned int *)&this->vfptr + 12))(this); /*0x74f4a2*/
     return (char)((gamemd::AbstractClass **)(1)); /*0x74f4a8*/
   }
 
@@ -1132,13 +1136,13 @@ namespace gamemd {
 wchar_t * _e4::ddtor()
 {
 
-  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x74f4bd*/
+  if ( *(unsigned int *)&this->Items && this->IsAllocated ) /*0x74f4bd*/
   {
-    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x74f4c3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x74f4cb*/
+    __3_YAXPAX_Z(*(void **)&this->Items); /*0x74f4c3*/
+    *(unsigned int *)&this->Items = 0; /*0x74f4cb*/
   }
-  BYTE1(this->m_C) = 0; /*0x74f4ce*/
-  this->m_8 = 0; /*0x74f4d1*/
+  this->IsAllocated = 0; /*0x74f4ce*/
+  this->Capacity = 0; /*0x74f4d1*/
 
 }
 } // namespace gamemd
@@ -1833,7 +1837,7 @@ void E4Recv_74BF40::sub_74BF40(unsigned int a2)
   void *vtable2; // edx
 
   v3 = a2; /*0x74bf44*/
-  if ( (void *)a2 >= this->AbstractClass ) /*0x74bf4a*/
+  if ( (void *)a2 >= *(unsigned int *)&this->vfptr ) /*0x74bf4a*/
     v3 = -1; /*0x74bf4c*/
   vtable2 = (void *)(((unsigned int *)this)[0]); /*0x74bf4f*/
   if ( (void *)v3 != vtable2 ) /*0x74bf54*/
@@ -2066,7 +2070,7 @@ VectorClass_flat * _e4::QueryInterface(unsigned int * Block, char a2)
 
 // 0x74F730
 namespace gamemd {
-unsigned int * E4Recv_74F730::sub_74F730()
+unsigned int * ObjectClass::sub_74F730()
 {
 
   int v2; // edx

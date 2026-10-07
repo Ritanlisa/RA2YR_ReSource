@@ -23,6 +23,10 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int GenerateImageThumbnail(...);  // raw 006547C0: int *__thiscall GenerateImageThumbnail(float *this, int *a2, int *a3, int *a4, char a5)
+} // namespace gamemd
 
 // 0x652C00
 namespace gamemd {

@@ -39,6 +39,8 @@ public:
 };
 
 // CSP: CCFileClass matched via T3
+#ifndef GAMEMD_G2_CCFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_CCFileClass_DEF 1
 class CCFileClass : public CDFileClass
 {
 public:
@@ -85,5 +87,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void ProcessStream(int a1);  // 0x69e320
     // === FUNCS-MOVE (END) ===
 };
+#endif  // GAMEMD_G2_CCFileClass_DEF
 
 } // namespace gamemd

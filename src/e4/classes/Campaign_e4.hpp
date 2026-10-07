@@ -6,6 +6,7 @@
 namespace gamemd {
 
 struct Campaign {
+    static int SetupMovie(void *a1, void *a2);  // [w14e3] raw 0x5C2500 int __thiscall Campaign::SetupMovie(Campaign*, HWND)
 // --- flat members (BEGIN) ---
     void* q004;  // 0x4
     void* q014;  // 0x14

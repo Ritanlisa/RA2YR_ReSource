@@ -9,6 +9,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/DialogControl_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aCombodropwin[];  // data: 0x8357a0 truth(IDA G42.57w9)

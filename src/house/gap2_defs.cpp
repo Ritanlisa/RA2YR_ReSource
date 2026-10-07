@@ -31,6 +31,10 @@ using ra2::game::ObjectClass;
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/INIClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int UpdateHouseClassAnger(...);  // raw 00504790: int __fastcall UpdateHouseClassAnger(unsigned int a1, int a2, int a3, int a4)
+} // namespace gamemd
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 class INIClass;  // g57c5 W5 fwd
@@ -998,7 +1002,7 @@ void HouseClass::processTargetSelection() {
       v3 = *(void (****)(unsigned int, int))(*((unsigned int *)v6 + 1) + 4 * v7); /*0x4f21dc*/
       if ( v3 ) /*0x4f21e1*/
         (**v3)((unsigned int)(v3), 1); /*0x4f21e7*/
-      ((void ((unsigned int)(*))(void ***))v5[2])(&v5); /*0x4f21f1*/
+      ((void (__thiscall *)(void ***))v5[2])(&v5); /*0x4f21f1*/
     }
     while ( ((uint8_t (*)(void ***))v5[1])(&v5) ); /*0x4f21fc*/
   }
@@ -1212,7 +1216,7 @@ int HouseClass::Constructor(int a1, int a2) { /*g57w11 r4: raw fn_4F Constructor
   this->unkTimer3 = (void *)&DynamicVectorClass_ScoutStruct_vftable; /*0x4f53e8*/
   this->q5630 = 10; /*0x4f53ef*/
   this->q562C = 0; /*0x4f53f2*/
-  v3 = (unsigned int)(&this->u32_159C0)); /*0x4f53f5*/
+  v3 = (unsigned int)(&this->u32_159C0); /*0x4f53f5*/
   v5 = 3; /*0x4f53fb*/
   do /*0x4f5416*/
   {
@@ -1804,7 +1808,7 @@ int HouseClass::NotifyUnderAttack(void* a1) {
 
   if ( a1 ) /*0x4f93ed*/
   {
-    result = (*(int ((unsigned int *)(**))(unsigned int *))(*a1 + 128))(a1); /*0x4f93f3*/
+    result = (*(int (__thiscall **)(unsigned int *))(*a1 + 128))(a1); /*0x4f93f3*/
     if ( (unsigned char)result ) /*0x4f93fb*/
       return result; /*0x4f93fb*/
   }
@@ -1851,11 +1855,11 @@ int HouseClass::HandleAlliance(int a1, int a2) {
     HouseClass::ResetObjectOrders(0, 0); /*0x4f9b9a*/
     this->ptr_5788 |= 1 << *(unsigned int *)(a1 + 48); /*0x4f9bb3*/
     HouseClass::UpdateFogVisibility((HouseClass *)this); /*0x4f9bb9*/
-    v6 = this->u32_5614; /*0x4f9bbe*/
+    v6 = this->scoutNodesCount; /*0x4f9bbe*/
     v7 = 0; /*0x4f9bc4*/
     if ( v6 > 0 ) /*0x4f9bc8*/
     {
-      v8 = (unsigned int *)this->u32_5608; /*0x4f9bd0*/
+      v8 = (unsigned int *)this->angerNodesCount; /*0x4f9bd0*/
       while ( *v8 != a1 ) /*0x4f9bd4*/
       {
         ++v7; /*0x4f9bd6*/
@@ -1863,19 +1867,19 @@ int HouseClass::HandleAlliance(int a1, int a2) {
         if ( v7 >= v6 ) /*0x4f9bdc*/
           goto LABEL_8; /*0x4f9bdc*/
       }
-      UpdateHouseClassAnger((unsigned int)this, (int)v8, -*(unsigned int *)(this->u32_5608 + 8 * v7 + 4), a1); /*0x4f9bea*/
+      UpdateHouseClassAnger((unsigned int)this, (int)v8, -*(unsigned int *)(this->angerNodesCount + 8 * v7 + 4), a1); /*0x4f9bea*/
     }
   LABEL_8:
-    if ( this->u32_5600 == *(unsigned int *)(a1 + 48) ) /*0x4f9bfa*/
-      this->u32_5600 = -1; /*0x4f9bfc*/
+    if ( this->enemyHouseIndex == *(unsigned int *)(a1 + 48) ) /*0x4f9bfa*/
+      this->enemyHouseIndex = -1; /*0x4f9bfc*/
     if ( dword_A8E7AC ) /*0x4f9c0d*/
-      *(&this->u32_2C8) |= 1 << *(unsigned int *)(a1 + 48); /*0x4f9c19*/
+      *(&this->unitAltOwner) |= 1 << *(unsigned int *)(a1 + 48); /*0x4f9c19*/
     if ( *(unsigned int *)&unk_A8B238 != 4 && dword_A8E7AC ) /*0x4f9c31*/
 // 0x4adcd0
       return Radar::UpdateReveal(0, 0); /*0x4f9c31*/
-    v9 = this->u32_1EC; /*0x4f9c37*/
+    v9 = this->currentPlayer; /*0x4f9c37*/
     if ( !*(unsigned int *)&unk_A8B238 ) /*0x4f9c3f*/
-      v9 = v9 || this->u32_1ED; /*0x4f9c53*/
+      v9 = v9 || this->playerControl; /*0x4f9c53*/
     if ( v9 /*0x4f9c78*/
       && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6112)
       && !*(unsigned char *)(*(unsigned int *)(a1 + 52) + 422)

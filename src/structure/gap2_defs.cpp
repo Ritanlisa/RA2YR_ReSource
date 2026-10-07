@@ -27,6 +27,10 @@ using ra2::game::ObjectClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "misc/misc_ext.hpp"// 0x517CC0
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int OleRun(...);  // raw 007C88CC: // attributes: thunk HRESULT __stdcall OleRun(LPUNKNOWN pUnknown)
+} // namespace gamemd
 extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
@@ -309,7 +313,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
   float v93[4]; // [esp+B4h] [ebp-40h] BYREF
   Matrix3x4 v94; // [esp+C4h] [ebp-30h] BYREF
 
-  BehaviourMode = (unsigned int)(this->BehaviourMode)); /*0x435bec*/
+  BehaviourMode = (unsigned int)(this->BehaviourMode); /*0x435bec*/
   if ( BehaviourMode )
   {
     FollowingObject = this->FollowingObject; /*0x435bfa*/

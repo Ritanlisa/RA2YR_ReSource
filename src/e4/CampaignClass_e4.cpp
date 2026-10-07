@@ -197,7 +197,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   *((unsigned int *)((char *)&v28 + 0)) = 0; /*0x49c63a*/
   *((unsigned int *)((char *)&v28 + 1)) = 0; /*0x49c63e*/
   ((::gamemd::INISectionList*)(::gamemd::INISectionList *)(unsigned int *)((char *)&v28 + 2))->Constructor(); /*0x49c642*/
-  Node::Init((Node *)&(unsigned int *)((char *)&v28 + 8)); /*0x49c64b*/
+  Node_flat::Init((Node_flat *)&(unsigned int *)((char *)&v28 + 8)); /*0x49c64b*/
   ((unsigned int *)&v28)[0] = 0; /*0x49c65e*/
   v28.ownsFile = 0; /*0x49c662*/
   *(unsigned int *)v28.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49c667*/

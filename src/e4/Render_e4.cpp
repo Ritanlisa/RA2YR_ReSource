@@ -55,7 +55,12 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/Coord2D_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int RenderGradientTrapezoid(...);  // raw 00660050: char __thiscall RenderGradientTrapezoid(float *this)
+} // namespace gamemd
 
 // 0x52FF90
 namespace gamemd {
@@ -1628,7 +1633,7 @@ void sub_6603B0()
 }
 // 0x7760B0
 namespace gamemd {
-void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5, void * a3)
+void * Render_Render_7760B0(HDC hdc, const char * a2, a4, a4, char a5, void * a3)
 {
   HFONT v7; // eax
   HFONT v8; // esi
@@ -1643,7 +1648,7 @@ void * Render_Render_7760B0(HDC hdc, const char * a2, LONG, LONG, char a5, void 
   ModifyWorldTransform(hdc, 0, 1u); /*0x7760d1*/
   SetViewportOrgEx(hdc, 0, 0, 0); /*0x7760db*/
   SetWindowOrgEx(hdc, 0, 0, 0); /*0x7760e5*/
-  pt.x = (LONG)(a3); /*0x776101*/
+  pt.x = (a4)(a3); /*0x776101*/
   pt.y = a4; /*0x776105*/
   DPtoLP(hdc, &pt, 1); /*0x776109*/
   memset( (void *)(&lf.lfWidth), 0, 12); /*0x77610f*/

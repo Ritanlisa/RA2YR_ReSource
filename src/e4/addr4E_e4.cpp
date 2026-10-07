@@ -41,6 +41,7 @@
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/TabClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/ObjectTypeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
@@ -78,7 +79,7 @@ extern unsigned short word_A8EAE5;  // data: 0xa8eae5 truth(IDA G42.57w9)
 
 // 0x4E0A00
 namespace gamemd {
-unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
+unsigned int * VectorClass::sub_4E0A00(int a2, unsigned int * a3)
 {
     unsigned int *v4; // eax
     int v5; // ecx

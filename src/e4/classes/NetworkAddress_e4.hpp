@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_NetworkAddress_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_NetworkAddress_DEF 1
 struct NetworkAddress {
     static int Assign(void *aP0, void *aP1, int aP2, int aP3);  // 0x53ECE0 G42.33 b10 static-form sync
 // --- flat members (BEGIN) ---
@@ -14,5 +16,6 @@ struct NetworkAddress {
 // --- flat members (END) ---
     unsigned int * Assign(unsigned int *a2, int a3, __int16 a4);  // G57w10-S raw 0x0053ECE0 IUnknown 占位清除
 };
+#endif  // GAMEMD_G2_NetworkAddress_DEF
 
 } // namespace gamemd

@@ -1152,7 +1152,7 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   int v4; // eax
   int v5; // ecx
 
-  AnimClass_field_0xD4 = *(IUnknown **)&aP0->AnimClass_field_0xD4; /*0x4253b6*/
+  AnimClass_field_0xD4 = *(IUnknown **)&aP0->u32_D4; /*0x4253b6*/
   if ( AnimClass_field_0xD4 && (v4 = *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1, *(unsigned int *)((char *)&stru_B054D0 + 0x10) - 1 >= 0) ) /*0x4253c8*/
   {
     v5 = *(unsigned int *)((char *)&stru_B054D0 + 0x4) + 4 * v4; /*0x4253d0*/

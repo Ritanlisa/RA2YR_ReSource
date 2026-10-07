@@ -347,6 +347,9 @@ struct TechnoClass {
     int __thiscall DrawPips(void *a1);
     unsigned int q_120;  // +0x120 flat supply (CSP-fed)
     unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)
+    int sub_724550();  // 0x724550
+    int sub_724570();  // 0x724570
+    int sub_724A30(int * a2);  // 0x724A30
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

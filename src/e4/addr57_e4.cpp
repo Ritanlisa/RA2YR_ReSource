@@ -867,7 +867,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   if ( v17 <= 0 ) /*0x57b5e0*/
     goto LABEL_18; /*0x57b5e0*/
   v18 = (int)(aP3); /*0x57b5e2*/
-  if ( v17   ==   (int)(aP3 ))) /*0x57b5e8*/
+  if ( v17   ==   (int)(aP3 )) /*0x57b5e8*/
     goto LABEL_20; /*0x57b5e8*/
   if ( aP3  !=  (gamemd::MouseClass *)(-1) ) /*0x57b5ed*/
   {
@@ -912,7 +912,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   }
   MapClass::SetObstruction((int16_t *)(&v31),(gamemd::MapClass *)(v18)); /*0x57b6cc*/
   LABEL_32:
-  if ( ((Cell*)v14)->IsEmpty() || (v25 = v14[14], v25   >=   (int)(aP0))) &(int)(&v25)  <=   (int)(aP1 )) /*0x57b64a*/
+  if ( ((Cell*)v14)->IsEmpty() || (v25 = v14[14], v25 >= (int)(aP0)) && v25 <= (int)(aP1) ) /*0x57b64a*/
   {
     v14[14] = *(unsigned int *)(v29 + 660); /*0x57b65e*/
     *((unsigned char *)v14 + 282) = v15; /*0x57b661*/

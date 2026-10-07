@@ -1,5 +1,9 @@
 #include "misc/audio_ext.hpp"
 #include "e4/classes/Matrix2D_e4.hpp"  // g57c5 W5d scope supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int CopyAudioData(...);  // raw 007559B0: char *__fastcall AudioData_Copy(char *a1, int a2)
+} // namespace gamemd
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 class Matrix2D;  // g57c5 W5 fwd

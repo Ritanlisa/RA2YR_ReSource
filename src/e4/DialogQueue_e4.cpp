@@ -15,7 +15,7 @@ int DialogQueue::PushEntry(void *a1)
 
   int result; // eax
 
-  result = (unsigned int)(&dword_ABFC98)); /*0x5d4e70*/
+  result = (unsigned int)(&dword_ABFC98); /*0x5d4e70*/
   if ( &dword_ABFCA0 < &dword_ABFC98 /*0x5d4eac*/
     || (BYTE1(&byte_ABFC9C) || !&dword_ABFC98)
     && &dword_ABFCA4 > 0
@@ -25,7 +25,7 @@ int DialogQueue::PushEntry(void *a1)
 
 
   {
-    result = (unsigned int)(&dword_ABFCA0++)); /*0x5d4eb4*/
+    result = (unsigned int)(&dword_ABFCA0++); /*0x5d4eb4*/
     *(unsigned int *)(&dword_ABFC94 + 4 * result) = (unsigned int)this;
   }
   return result; /*0x5d4ec6*/

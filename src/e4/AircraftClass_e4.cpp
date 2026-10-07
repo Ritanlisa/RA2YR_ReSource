@@ -103,7 +103,7 @@ LABEL_9:
   }
   v16 = (::gamemd::BuildingClass *)((::gamemd::AircraftTypeClass *)((BuildingClass *)v3[135]));
   if ( v16 ) /*0x414065*/
-    return (::gamemd::AircraftTypeClass *)((unsigned int *)((BuildingClass *)v16)->PowerUpdate( v3); /*0x414068*/);
+    return (::gamemd::AircraftTypeClass *)((unsigned int *)((BuildingClass *)v16)->PowerUpdate( v3)) /*0x414068*/;
   return (::gamemd::AircraftTypeClass *)(result); /*0x41406d*/
 
 }

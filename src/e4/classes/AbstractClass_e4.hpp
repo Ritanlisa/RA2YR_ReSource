@@ -94,6 +94,7 @@ struct GScreenClass {
     int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0, ObjectTypeClass * aP1, TechnoTypeClass * aP2);
     int checkTeamObjective();
     FileClass * processAITrigger(unsigned int * Block, char a2);
+    void* vfptr;  // 0x0 (G57W14E1 til supply)
 };
 #endif  // G57w8 GScreenClass tree guard
   // G42.37 class-body supply (defs in AbstractClass_e4.cpp)
@@ -407,6 +408,8 @@ int DTOR(); // 0x4101F0
     int COMStub_Return0_38(void *a1_1);
     unsigned int q_4B;  // +0x4B flat supply (final pass)
     unsigned int q_5C1C;  // +0x5C1C flat supply (final pass)
+    int sub_5D9060(int a2);  // 0x5D9060
+    BOOL sub_7325C0();  // 0x7325C0
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

@@ -60,6 +60,7 @@
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/AudioMixer_e4.hpp"  // G42.57w9 method-carrier supply
 #include "classes/NukeFlash_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
@@ -68,6 +69,12 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/CellSystem_e4.hpp"  // G57w10 D supply
 #include "e4/classes/LoadProgressMgr_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ParseAndApplyAlliances(...);  // raw 0069B170: void __thiscall ParseAndApplyAlliances(ObjectClass *this)
+    int UpdateDeferredLightSurfaces(...);  // raw 00554D50: void __fastcall UpdateDeferredLightSurfaces(int a1, char a2)
+    int WaitForMultiplayerLoadSync(...);  // raw 00684370: char WaitForMultiplayerLoadSync(ObjectClass *this)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aSed;  // data: 0x83da88 truth(IDA G42.57w9)
 extern unsigned int aSpldbrShp;  // data: 0x83da40 truth(IDA G42.57w9)
@@ -930,7 +937,7 @@ LABEL_82:
   ((LocomotionClass *)v60)->UpdateAll(); /*0x55b5f6*/
   for ( m = 0; m < (int)this->Scenario_field_0x10; ++m ) /*0x55b606*/
   {
-    v49 = *((unsigned int *)this->Scenario_field_0x4 + m); /*0x55b60b*/
+    v49 = *((unsigned int *)*(unsigned int *)&this->q004 + m); /*0x55b60b*/
     (*(void (**)(int))(*(unsigned int *)v49 + 92))(v49); /*0x55b610*/
   }
   if ( *(unsigned int *)&dword_A8B238 ) /*0x55b622*/
@@ -976,7 +983,7 @@ char Scenario::LoadOrReloadOptions(int aP1)
 {
 
   if ( aP1 ) /*0x597a16*/
-    return (*(char (**)(Scenario *, int))(this->Scenario_field_0x0 + 4))( this, (int)(aP1)); /*0x597a1b*/
+    return (*(char (**)(Scenario *, int))(*(unsigned int *)&this->q000 + 4))( this, (int)(aP1)); /*0x597a1b*/
   else
     return (uint8_t)LoadOptions::Run( (LoadOptions *)this) != 0; /*0x597a28*/
 
@@ -1010,7 +1017,7 @@ namespace gamemd {
 void Scenario::SetByte96()
 {
 
-  LOBYTE(this->Scenario_field_0x60) = 0; /*0x642ad0*/
+  LOBYTE(this->q060) = 0; /*0x642ad0*/
 
 }
 }
@@ -1023,7 +1030,7 @@ int Scenario::ClearScreen(void *a1_1)
 
   ((Mouse *)((ScrollClass *)&stru_87F5F0.__pad_58[416]))->ReleaseCapture(); /*0x684245*/
   if ( !(*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) ) /*0x684252*/
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x684261*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x684261*/
   BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) = 1; /*0x68426c*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 1; /*0x684278*/
   result = ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x68427d*/
@@ -1325,13 +1332,13 @@ int Scenario_EndGameFlow()
     p_vtable2[2] = &v6[v7]; /*0x6856d0*/
   }
   ((AsyncIO *)v2)->Shutdown(); /*0x6856d3*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x6856e8*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q100))( /*0x6856e8*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x6856f3*/
   Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6856ff*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x68570c*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x68570c*/
   ((Audio *)g_MixerState)->GetFlag(); /*0x685715*/
   ((Audio *)g_MixerState)->WaitForCallback(); /*0x685720*/
   v8 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68572a*/
@@ -1427,7 +1434,7 @@ int Scenario_EndGameFlow()
   if ( !CopyProtection::CheckProtectedData() || (v17 = dword_A8B230, IDA_HIBYTE(((AbstractClass *)dword_A8B230)[374].abstractFlags)) ) /*0x6859b1*/
   {
     byte_A8E9A0 = 0; /*0x685b33*/
-    return (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x685b49*/
+    return (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x685b49*/
   }
   if ( IDA_LOBYTE(((AbstractClass *)dword_A8B230)[374].abstractFlags) ) /*0x6859bf*/
   {
@@ -1436,7 +1443,7 @@ int Scenario_EndGameFlow()
       Movie::PlayWrapper(*(unsigned int *)(*((unsigned int *)dword_A83CFC + uniqueId) + 668), -1, 3, 1, 1, 1); /*0x6859e9*/
     CreditsPower::Display(v28, 3, v8); /*0x6859ee*/
     byte_A8E9A0 = 0; /*0x6859f9*/
-    return (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x685a0f*/
+    return (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x685a0f*/
   }
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 || !dword_A8B23C ) /*0x685a25*/
     goto LABEL_58; /*0x685a25*/
@@ -1453,14 +1460,14 @@ int Scenario_EndGameFlow()
     }
     else
     {
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x685a6b*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x685a6b*/
       Map_Delete((ObjectClass *)dword_A8B230); /*0x685a74*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x685a81*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x685a81*/
     }
   }
   ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x685a84*/
   LABEL_64:
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x685a8f*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x685a8f*/
   ((Scenario *)&stru_8A38E0)->CopyLocalScenarioData(); /*0x685a9f*/
   ++((AbstractClass *)dword_A8B230)[130].vtable3; /*0x685ab0*/
   if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x685ada*/
@@ -1513,7 +1520,7 @@ int Scenario_EndGameFlow()
   }
   byte_A8E9A0 = CopyProtection::CheckProtectedData(); /*0x685c23*/
   if ( !byte_A8E9A0 ) /*0x685c28*/
-    return (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x685c32*/
+    return (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x685c32*/
   while ( !ScenarioClass::LoadScenarioAndStart( /*0x685c54*/
              (char *)&((AbstractClass *)dword_A8B230)[130].abstractFlags,
              1,
@@ -1610,13 +1617,13 @@ int Scenario_EndGame()
     p_vtable2[2] = &v5[v6]; /*0x685e20*/
   }
   ((AsyncIO *)v1)->Shutdown(); /*0x685e23*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x685e38*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q100))( /*0x685e38*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x685e43*/
   Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x685e4f*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x685e5c*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x685e5c*/
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[35] /*0x685e7b*/
     && *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] )
   {

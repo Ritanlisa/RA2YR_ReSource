@@ -7,6 +7,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_NetworkGameSetup_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_NetworkGameSetup_DEF 1
 struct NetworkGameSetup {
 // --- flat members (BEGIN) ---
     ObjectClass* q000;  // 0x0
@@ -24,5 +26,6 @@ struct NetworkGameSetup {
     unsigned int * DeleteComPtr(unsigned int * Block, char a2);
     void SendGameSetupPacket(wchar_t * Source);
 };
+#endif  // GAMEMD_G2_NetworkGameSetup_DEF
 
 } // namespace gamemd

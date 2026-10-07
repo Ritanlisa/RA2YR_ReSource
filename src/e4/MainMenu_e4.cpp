@@ -187,7 +187,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         break;
       case 1175: /*0x531fa1*/
         v6 = GetDlgItem(hWnd, 1821); /*0x531fcc*/
-        v7 = (unsigned int)(GetModuleInternalVersion(&dword_A8ECE0))); /*0x531fce*/
+        v7 = (unsigned int)(GetModuleInternalVersion(&dword_A8ECE0)); /*0x531fce*/
         v10 = (int)(CharToWideString((unsigned char *)(v7))); /*0x531fda*/
         v8 = (const wchar_t *)GetStringCSF((wchar_t *)(aGuiVersion),(unsigned int *)((int)g_Str_File_Init_CPP),(const char *)(5975)); /*0x531fec*/
         swprintf(lParam, (const size_t)&off_826960, v8, v10); /*0x531ffc*/

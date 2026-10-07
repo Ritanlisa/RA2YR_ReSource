@@ -31,6 +31,10 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/EventQueue_e4.hpp"  // G42.40f-c supply (Process call @0x7b25d4)
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int gethostname(...);  // raw 007C89CE: // attributes: thunk int __stdcall gethostname(char *name, int namelen)
+} // namespace gamemd
 
 // 0x7B0D90
 namespace gamemd {
@@ -601,7 +605,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
                                                                                              + 12))(this);
   }
   v7 = this->LocalNetwork; /*0x7b2ab1*/
-  if ( v7   <   (int)(this->Count ))) /*0x7b2ab9*/
+  if ( v7   <   (int)(this->Count )) /*0x7b2ab9*/
     this->Count =(void *)v7; /*0x7b2abb*/
   return (::gamemd::AbstractClass **)(1); /*0x7b2abe*/
 

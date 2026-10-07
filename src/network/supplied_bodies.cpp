@@ -44,6 +44,13 @@ using ra2::game::AbstractClass;
 #include "network/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/Dialog_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int BulkCharToWide(...);  // raw 00735060: unsigned __int8 __fastcall CharToWide_Bulk(_WORD *a1, unsigned __int8 *a2, int a3)
+    int CharToWideString(...);  // raw 00735120: char *__fastcall CharToWideString(_BYTE *a1)
+    int DrawDialogText(...);  // raw 005E2820: int __fastcall DrawDialogText(LPARAM a1, wchar_t *a2, HWND hWnd)
+    int FindListBoxItem(...);  // raw 00776E10: int __fastcall ListBox_FindItem(HWND hWnd, signed int wParam, int a3)
+} // namespace gamemd
 
 // G57w10: vtable externs (truth e4_globals_decls)
 extern unsigned char vt_VectorClass_MultiplayerGameMode[4];  // data: 0x7EED40  // G57w10 vftable residue fix
@@ -237,7 +244,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       }
       v17 = *((unsigned int *)a2 + 1); /*0x53fe8e*/
       v18 = *((unsigned short *)this + 92); /*0x53fe91*/
-      IPXGlobalConnClass_field_0x24 = (unsigned int)(this->IPXGlobalConnClass_field_0x24)); /*0x53fe98*/
+      IPXGlobalConnClass_field_0x24 = (unsigned int)(this->IPXGlobalConnClass_field_0x24); /*0x53fe98*/
       v24 = 2; /*0x53fe9f*/
       v26 = v17; /*0x53feaa*/
       v27 = v18; /*0x53feb4*/
@@ -245,7 +252,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       Debug::Log("Sending global ack packet to port %d\n"); /*0x53febe G57c1: IDA 0x53febe push offset aSendingGlobalA*/
       v19 = dword_A8EA0C; /*0x53fec3*/
       IDA_LOBYTE(v19) = this == (IPXGlobalConnClass *)dword_A8EA0C; /*0x53fed3*/
-      if ( (*(int (__thiscall **)(IPXGlobalConnClass *, short *, int, int *, int, int, int))(*(unsigned int *)this->__pad_0 /*0x53fee4*/
+      if ( (*(int (__thiscall **)(IPXGlobalConnClass *, short *, int, int *, int, int, int))(*(unsigned int *)&this->vtable1 /*0x53fee4*/
                                                                                              + 36))(
              this,
              &IPXGlobalConnClass_field_0x24,
@@ -273,7 +280,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
     }
     if ( *((unsigned char *)a2 + 2) != 2 ) /*0x53fce3*/
       return 1; /*0x53fce3*/
-    IPXGlobalConnClass_field_0x04 = (unsigned int)(this->IPXGlobalConnClass_field_0x04)); /*0x53fce9*/
+    IPXGlobalConnClass_field_0x04 = (unsigned int)(this->IPXGlobalConnClass_field_0x04); /*0x53fce9*/
     v8 = 0; /*0x53fcec*/
     if ( *(int *)(IPXGlobalConnClass_field_0x04 + 40) <= 0 ) /*0x53fcf3*/
       return 1; /*0x53fefb*/
@@ -283,7 +290,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       v10 = TileIndex[5]; /*0x53fcff*/
       if ( *((unsigned int *)a2 + 1) == *(unsigned int *)(v10 + 4) && !*(unsigned char *)(v10 + 2) ) /*0x53fd0a*/
         break; /*0x53fd0a*/
-      IPXGlobalConnClass_field_0x04 = (unsigned int)(this->IPXGlobalConnClass_field_0x04)); /*0x53fd11*/
+      IPXGlobalConnClass_field_0x04 = (unsigned int)(this->IPXGlobalConnClass_field_0x04); /*0x53fd11*/
       if ( ++v8 >= *(unsigned int *)(IPXGlobalConnClass_field_0x04 + 40) ) /*0x53fd18*/
         return 1; /*0x53fd26*/
     }
@@ -592,10 +599,10 @@ void IPXManagerClass::Flush(char a2)  // g57b5 W4: raw 真值补参 (a2)
 namespace gamemd {
 int32_t IPXManagerClass::getPlayerName(char a2)
 {
-    this->m_0 = (int)&vt_ConnManClass; /*0x543109*/
+    this->vtable1 = (int)&vt_ConnManClass; /*0x543109*/
     if ( (a2 & 1) != 0 ) /*0x54310f*/
       RA2_OPDEL(this); /*0x543112*/
-    return &this->m_0; /*0x54311c*/
+    return &this->vtable1; /*0x54311c*/
 }
 } // namespace gamemd
 
@@ -610,7 +617,7 @@ unsigned int * NetworkSession::ResetState()
     *((unsigned int *)this + 197) = 0; /*0x54ee78*/
     *((unsigned int *)this + 198) = 0; /*0x54ee7e*/
     memset((char *)this + 20, 0, 0x100u); /*0x54ee84*/
-    return (unsigned int *)(this->__pad_0; /*0x54ee88*/);
+    return (unsigned int *)(this->__pad_0) /*0x54ee88*/;
 }
 } // namespace gamemd
 
@@ -927,7 +934,7 @@ char ModemGuest::Dialog()
     Dialog::Destroy(*(Dialog **)this->__pad_0); /*0x5b4abb*/
     if ( IDA_LOBYTE(this->ModemGuest_field_0x08) == 1 ) /*0x5b4ac4*/
       SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x5b4acb*/
-    ModemGuest_field_0x04 = (unsigned int)(this->ModemGuest_field_0x04)); /*0x5b4ad0*/
+    ModemGuest_field_0x04 = (unsigned int)(this->ModemGuest_field_0x04); /*0x5b4ad0*/
     if ( ModemGuest_field_0x04 != 1 ) /*0x5b4ad6*/
     {
       if ( ModemGuest_field_0x04 == 2 ) /*0x5b4ae4*/

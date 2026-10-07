@@ -204,6 +204,7 @@
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/VtableStub_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Mixer_e4.hpp"  // G42.36 C2027 supply
@@ -211,6 +212,10 @@
 #include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GameState_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int nullsub_158(...);  // raw 007236D0: void nullsub_158()
+} // namespace gamemd
 
 // 0x430980
 namespace gamemd {
@@ -650,7 +655,7 @@ int Game::MakeScreenshot(int a1)
         v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537c7c*/
         if ( v12 >= v3 ) /*0x537c86*/
           v12 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537c96*/
-        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x537ca4*/
+        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x537ca4*/
         v4 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537cb8*/
         v5 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537cbc*/
         v15[0] = 0; /*0x537cd8*/
@@ -665,7 +670,7 @@ int Game::MakeScreenshot(int a1)
 
 
 
-        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x537cfb*/
+        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x537cfb*/
         v6 = -1; /*0x537cfe*/
         do /*0x537d6d*/
         {
@@ -1359,7 +1364,7 @@ LABEL_6:
     LoadingScreen::FreeResources3(); /*0x67e6d5*/
     Debug::Log("LOADING GAME [%s] - Complete\n\n"); /*0x67e6e0 G57w11: IDA push seq @ 0x67e6e0 +1 reg-vararg(s) omitted*/
     if ( pStm ) /*0x67e6ee*/
-      pStm->__pad_0->Release(pStm); /*0x67e6f3*/
+      pStm->q000->Release(pStm); /*0x67e6f3*/
     if ( v7 ) /*0x67e6fc*/
       (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x67e701*/
     if ( v9 ) /*0x67e70a*/
@@ -1705,8 +1710,8 @@ CellStruct * * Game::Game_DumpMultiplayerGameInfo()
     *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = 0; /*0x698cd5*/
   }
   fprintf(v3, "Scenario = %s\n", *(const char **)(dword_A8B8CC + 4 * v2)); /*0x698ceb*/
-  fprintf(v3, "Handle = %s\n", (const char *)&this->Game_field_0x148); /*0x698cfd*/
-  for ( i = 0; i < (int)this->Game_field_0x314; ++i ) /*0x698d0f*/
+  fprintf(v3, "Handle = %s\n", (const char *)&this->q148); /*0x698cfd*/
+  for ( i = 0; i < (int)*(unsigned int *)&this->q314; ++i ) /*0x698d0f*/
   {
     ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[i] + 40)))->CopyAddress( (unsigned int *)(&Stream), (int)v11); /*0x698d2a*/
     fprintf(v3, "Player Addr[%d] = ", i); /*0x698d36*/
@@ -1726,21 +1731,21 @@ CellStruct * * Game::Game_DumpMultiplayerGameInfo()
   for ( n = 0; n < 6; ++n ) /*0x698dff*/
     fprintf(v3, "%02X", *((uint8_t *)v11 + n)); /*0x698e0e*/
   fprintf(v3, "\n\n"); /*0x698e22*/
-  fprintf(v3, "MaxAhead = %d\n", this->Game_field_0x318); /*0x698e34*/
-  fprintf(v3, "LoadGame = %d\n", this->Game_field_0x680); /*0x698e46*/
-  fprintf(v3, "PrefColor = %d\n", this->Game_field_0x17C); /*0x698e58*/
-  fprintf(v3, "ColorIdx = %d\n", this->Game_field_0x15C); /*0x698e6a*/
-  fprintf(v3, "House = %d\n", this->Game_field_0x174); /*0x698e7c*/
-  fprintf(v3, "NumPlayers = %d\n", this->Game_field_0x314); /*0x698e91*/
-  fprintf(v3, "Options.Bases = %d\n", (uint8_t)this->__pad_8[24]); /*0x698ea2*/
-  fprintf(v3, "Options.Credits = %d\n", this->Game_field_0x24[0]); /*0x698eb1*/
-  fprintf(v3, "Options.BridgeDestruction = %d\n", (uint8_t)this->__pad_28[0]); /*0x698ec2*/
-  fprintf(v3, "Options.Goodies = %d\n", (uint8_t)this->__pad_28[1]); /*0x698ed3*/
-  fprintf(v3, "Options.Ghosts = %d\n", (uint8_t)this->__pad_28[13]); /*0x698ee4*/
-  fprintf(v3, "Options.UnitCount = %d\n", this->Game_field_0x38); /*0x698ef6*/
-  fprintf(v3, "Options.AIPlayers = %d\n", this->Game_field_0x3C); /*0x698f05*/
-  fprintf(v3, "Options.AIDifficulty = %d\n", this->Game_field_0x40); /*0x698f14*/
-  fprintf(v3, "ObiWan = %d\n", this->Game_field_0x300); /*0x698f26*/
+  fprintf(v3, "MaxAhead = %d\n", *(unsigned int *)&this->q318); /*0x698e34*/
+  fprintf(v3, "LoadGame = %d\n", *(unsigned int *)&this->q680); /*0x698e46*/
+  fprintf(v3, "PrefColor = %d\n", *(unsigned int *)&this->q17C); /*0x698e58*/
+  fprintf(v3, "ColorIdx = %d\n", *(unsigned int *)&this->q15C); /*0x698e6a*/
+  fprintf(v3, "House = %d\n", *(unsigned int *)&this->q174); /*0x698e7c*/
+  fprintf(v3, "NumPlayers = %d\n", *(unsigned int *)&this->q314); /*0x698e91*/
+  fprintf(v3, "Options.Bases = %d\n", *(uint8_t *)&this->q020); /*0x698ea2*/
+  fprintf(v3, "Options.Credits = %d\n", *((char *)&this->u32_24)); /*0x698eb1*/
+  fprintf(v3, "Options.BridgeDestruction = %d\n", *(uint8_t *)&this->q028); /*0x698ec2*/
+  fprintf(v3, "Options.Goodies = %d\n", *(uint8_t *)&this->u32_29); /*0x698ed3*/
+  fprintf(v3, "Options.Ghosts = %d\n", *(uint8_t *)&this->u32_35); /*0x698ee4*/
+  fprintf(v3, "Options.UnitCount = %d\n", *(unsigned int *)&this->q038); /*0x698ef6*/
+  fprintf(v3, "Options.AIPlayers = %d\n", *(unsigned int *)&this->q03C); /*0x698f05*/
+  fprintf(v3, "Options.AIDifficulty = %d\n", *(unsigned int *)&this->q040); /*0x698f14*/
+  fprintf(v3, "ObiWan = %d\n", *(unsigned int *)&this->q300); /*0x698f26*/
   if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x698f36*/
   {
     fprintf(v3, "Type = IPX\n"); /*0x698f3e*/

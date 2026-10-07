@@ -11,6 +11,7 @@ struct TechnoTypeClass;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
 
 struct ScenarioClass {
+    static char SetGlobalToByID(void *a1, unsigned int a2, char a3);  // [w14e3] raw 0x689670
     static void * ProcessAmbientEffects(void *aP1, int a2, int a3);  // 0x55BB40 raw: _DWORD* __thiscall ScenarioClass::ProcessAmbientEffects(ScenarioClass*, int, int)  // G57w10 r5 D-classbody supply (raw-anchored)
     static int SetupAlliances(void *aP1);  // 0x686890 raw: int __thiscall ScenarioClass::SetupAlliances(ScenarioClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
     static int UpdateScriptActions(void *aP1);  // 0x54E4D0 raw: int __thiscall ScenarioClass::UpdateScriptActions(ScenarioClass*)  // G57w10 r5 D-classbody supply (raw-anchored)

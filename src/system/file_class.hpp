@@ -20,6 +20,8 @@ enum class FileSeekMode : unsigned int
     End     = 2
 };
 
+#ifndef GAMEMD_G2_FileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_FileClass_DEF 1
 class FileClass
 {
 public:
@@ -122,6 +124,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ParseAudioFileRIFF();  // 0x7c12b0 -- File::ParseAudioFileRIFF
     // === SYMBOL-ANCHOR (END) ===
 };
+#endif  // GAMEMD_G2_FileClass_DEF
 
 #ifndef GAMEMD_G2_RawFileClass_DEF  // g57a5 W2d: twin-definition guard (file_class RawFileClass)
 #define GAMEMD_G2_RawFileClass_DEF 1

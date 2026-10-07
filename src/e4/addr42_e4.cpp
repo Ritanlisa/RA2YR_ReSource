@@ -55,6 +55,10 @@
 #include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int CreateFireAtSW(...);  // raw 0062E430: int __thiscall CreateFireAtSW(ObjectClass *this, int a2, int a3)
+} // namespace gamemd
 
 // 0x420140
 namespace gamemd {
@@ -324,7 +328,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
             v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))))))))))))));
             do /*0x4212ad*/
             {
-              if ( v29  <  (unsigned int)(int)(v42) )) /*0x421239*/
+              if ( v29  <  (unsigned int)(int)(v42) ) /*0x421239*/
               {
                 v30 = (int *)((int)(v42 - v29));
                 do /*0x421281*/
@@ -2107,7 +2111,7 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
     unsigned int *v14; // eax
     int v15; // eax
     int v16; // ecx
-    int (__stdcall ***)(unsigned int, void *, int *); // eax
+    int (__stdcall ***v17)(unsigned int, void *, int *); // eax
     int v18; // ebx
     int v19; // eax
     int v20; // ebx

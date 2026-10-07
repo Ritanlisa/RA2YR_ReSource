@@ -7,6 +7,10 @@
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Vector_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/XSurface_e4.hpp"  // g57c5 W5d scope supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int CompressScreenshot(...);  // raw 007B05C0: char __fastcall Screenshot_Compress(int *a1, int *a2, void *Src)
+} // namespace gamemd
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
 class BufferIOFileClass;  // g57c5 W5 fwd

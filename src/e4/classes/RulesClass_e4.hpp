@@ -114,6 +114,7 @@ struct RulesClass {
     double IRepairRate;  // 0x16C8
     float EngineerCaptureLevel;  // 0x17A4
     float TalkBubbleTime;  // 0x17A8
+    int ElevationIncrement;  // 0x17E0 (G57W14E1 til supply)
     char ColorAdd[48];  // 0x1814
     char LaserTargetColor[4];  // 0x1844
     char IronCurtainColor[4];  // 0x1848

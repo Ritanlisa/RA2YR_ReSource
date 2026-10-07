@@ -39,6 +39,10 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int Team_Helper_6F2780(...);  // raw 006F2780: _DWORD *__thiscall Team_Helper_6F2780(ObjectClass *this, _DWORD *a2)
+} // namespace gamemd
 
 // 0x6F0AB0
 namespace gamemd {

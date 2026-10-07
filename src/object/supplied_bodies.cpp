@@ -419,7 +419,7 @@ int AudioController::CleanupStream()
     IDA_LOBYTE(v2) = v2 & 0xFA; /*0x402403*/
     *((unsigned int *)this + 41) = v2; /*0x402405*/
     *((unsigned int *)this + 42) = 0; /*0x40240b*/
-    AudioMixer_Init((AudioMixer *)this->__tail_10); /*0x402418*/
+    AudioMixer_Init((AudioMixer *)this->q010); /*0x402418*/
     v3 = (int (__thiscall *)(AudioController *))*((unsigned int *)this + 46); /*0x40241d*/
     if ( v3 ) /*0x402425*/
       return v3(this); /*0x40242a*/
@@ -1153,7 +1153,7 @@ int TechnoClass::ReturnToBaseAndReload()
 {
     int target; // eax
 
-    target = (unsigned int)(this->target)); /*0x4158e3*/
+    target = (unsigned int)(this->target); /*0x4158e3*/
     if ( target ) /*0x4158eb*/
     {
       if ( *((unsigned int *)this + 361) ) /*0x41590e*/
@@ -1188,7 +1188,7 @@ int TechnoClass::ScatterFromThreat()
     char v3; // al
     unsigned int v5[3]; // [esp+4h] [ebp-Ch] BYREF
 
-    target = (unsigned int)(this->target)); /*0x415966*/
+    target = (unsigned int)(this->target); /*0x415966*/
     *((unsigned char *)this + 1746) = 1; /*0x41596c*/
     if ( !target || !((unsigned int *)&this->passengers)[1] ) /*0x41597b*/  // g57e2 W3
     {
@@ -1353,7 +1353,7 @@ int TechnoClass::FindNearbyBuildCell(int a2, int16_t *a3)
     *(unsigned int *)a3 = g_AircraftStatusFlag; /*0x4195b0*/
     v4 = (unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned char *))this->vtable1 + 18))(this, v15); /*0x4195b9*/
  v5 = (int *)(dword_817A78); /*0x4195be*/
-    v6 = (unsigned int)(*v4 / 256)); /*0x4195de*/
+    v6 = (unsigned int)(*v4 / 256); /*0x4195de*/
     v7 = v4[1] / 256; /*0x4195e1*/
     v14 = v7; /*0x4195e4*/
     while ( 1 ) /*0x4195ec*/

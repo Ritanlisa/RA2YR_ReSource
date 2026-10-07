@@ -33,6 +33,10 @@ using ra2::game::FootClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int PlayTauntClass(...);  // raw 00752B70: int __fastcall TauntClass_Play(int a1)
+} // namespace gamemd
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 // g57b5 W6audit: int 兜底移除 (member-access 用法会放大为 C2109 群; 还原为 C2065 债): extern int C;  // 词表 (canon 无条目, int 兜底) L716
 extern int String1;  // 词表 (canon 无条目, int 兜底) L458
@@ -403,18 +407,18 @@ int DropListClass::Open(char a2, _DWORD *a3, char *a4) {
       if ( IDA_LOBYTE(this->DropListClass_field_0x48) ) /*0x4b50da*/
       {
         (*(void (__thiscall **)(char *))(*((unsigned int *)this + 44) + 36))((char *)this + 176); /*0x4b50ed*/
-        DropListClass_field_0x24 = (unsigned int)(this->DropListClass_field_0x24)); /*0x4b50f0*/
+        DropListClass_field_0x24 = (unsigned int)(this->DropListClass_field_0x24); /*0x4b50f0*/
         IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b50f3*/
         IDA_BYTE1(DropListClass_field_0x24) |= 0x80u; /*0x4b50f7*/
         *a3 = DropListClass_field_0x24; /*0x4b50fa*/
       }
       else
       {
-        DropListClass_field_0x10 = (unsigned int)(this->DropListClass_field_0x10)); /*0x4b5101*/
-        DropListClass_field_0x14 = (unsigned int)(this->DropListClass_field_0x14)); /*0x4b5104*/
+        DropListClass_field_0x10 = (unsigned int)(this->DropListClass_field_0x10); /*0x4b5101*/
+        DropListClass_field_0x14 = (unsigned int)(this->DropListClass_field_0x14); /*0x4b5104*/
         v8 = *((unsigned int *)this + 44); /*0x4b5108*/
         *((unsigned int *)this + 47) = this->DropListClass_field_0x0C; /*0x4b510e*/
-        DropListClass_field_0x4C = (unsigned int)(this->DropListClass_field_0x4C)); /*0x4b5114*/
+        DropListClass_field_0x4C = (unsigned int)(this->DropListClass_field_0x4C); /*0x4b5114*/
         *((unsigned int *)this + 48) = DropListClass_field_0x10 + 18; /*0x4b511b*/
         v10 = *(unsigned int *)this->__pad_0; /*0x4b5121*/
         *((unsigned int *)this + 50) = DropListClass_field_0x4C; /*0x4b5129*/
@@ -432,7 +436,7 @@ int DropListClass::Open(char a2, _DWORD *a3, char *a4) {
       v13 = (const wchar_t *)(*(int (__thiscall **)(char *))(*((unsigned int *)this + 44) + 156))((char *)this + 176); /*0x4b5161*/
       wcsncpy((wchar_t *)this->DropListClass_field_0x34, v13, DropListClass_field_0x38); /*0x4b516c*/
       (*(void (__thiscall **)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b5178*/
-      v12 = (unsigned int)(this->DropListClass_field_0x24)); /*0x4b517b*/
+      v12 = (unsigned int)(this->DropListClass_field_0x24); /*0x4b517b*/
       IDA_BYTE1(v12) |= 0x80u; /*0x4b517e*/
       *a3 = v12; /*0x4b5181*/
     }
@@ -652,7 +656,7 @@ void* DropListClass::GetItemText(void* a1) {
           v14 = (*(int (__thiscall **)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x4c33f4*/
                   g_DSurface_Hidden_2,
                   v24);
-          return (void *)(FillRectangle(v23, (int)asc_82076C, (int)g_DSurface_Hidden_2, v14, (int)&v21, v15, 0, v17, -1, 0); /*0x4c3407*/);
+          return (void *)(FillRectangle(v23, (int)asc_82076C, (int)g_DSurface_Hidden_2, v14, (int)&v21, v15, 0, v17, -1, 0)) /*0x4c3407*/;
         }
       }
     }
@@ -980,15 +984,15 @@ namespace gamemd {
 void CheckListClass::initList() {
     void *v2; // eax
 
-    v2 = *(void **)&this->m_1[3]; /*0x556eb6*/
-    this->m_10 = 0; /*0x556eb9*/
-    if ( v2 && IDA_BYTE1(this->m_C) ) /*0x556ec0*/
+    v2 = *(void **)&this->q004; /*0x556eb6*/
+    this->q010 = 0; /*0x556eb9*/
+    if ( v2 && IDA_BYTE1(this->q00C) ) /*0x556ec0*/
     {
       RA2_OPDEL(v2); /*0x556ec6*/
-      *(unsigned int *)&this->m_1[3] = 0; /*0x556ece*/
+      *(unsigned int *)&this->q004 = 0; /*0x556ece*/
     }
-    IDA_BYTE1(this->m_C) = 0; /*0x556ed1*/
-    this->m_8 = 0; /*0x556ed4*/
+    IDA_BYTE1(this->q00C) = 0; /*0x556ed1*/
+    this->q008 = 0; /*0x556ed4*/
 }
 }
 
@@ -1009,36 +1013,36 @@ int CheckListClass::removeItem(int a2, void* a3) {
 
     if ( a2 ) /*0x55709c*/
     {
-      IDA_LOBYTE(this->m_C) = 0; /*0x5570a2*/
+      IDA_LOBYTE(this->q00C) = 0; /*0x5570a2*/
       if ( a3 ) /*0x5570a8*/
         v4 = a3; /*0x5570be*/
       else
         v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x5570ba*/
-      IDA_LOBYTE(this->m_C) = 1; /*0x5570c2*/
+      IDA_LOBYTE(this->q00C) = 1; /*0x5570c2*/
       if ( !v4 ) /*0x5570c6*/
         return 0; /*0x55713a*/
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x5570c8*/
+      if ( *(unsigned int *)&this->q004 ) /*0x5570c8*/
       {
-        m_8 = this->m_8; /*0x5570cf*/
+        m_8 = this->q008; /*0x5570cf*/
         if ( a2 < m_8 ) /*0x5570d4*/
           m_8 = a2; /*0x5570d6*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x5570dc*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x5570dc*/
           ++i; /*0x5570e1*/
-        if ( IDA_BYTE1(this->m_C) ) /*0x5570ee*/
+        if ( IDA_BYTE1(this->q00C) ) /*0x5570ee*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5570f9*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x557101*/
+          RA2_OPDEL(*(void **)&this->q004); /*0x5570f9*/
+          *(unsigned int *)&this->q004 = 0; /*0x557101*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x55710a*/
-      this->m_8 = a2; /*0x557112*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x557115*/
+      *(unsigned int *)&this->CheckListClass_field_0x04 = v4; /*0x55710a*/
+      this->CheckListClass_field_0x08 = a2; /*0x557112*/
+      IDA_BYTE1(this->CheckListClass_field_0x0C) = a3 == 0; /*0x557115*/
     }
     else
     {
       (*(void (__thiscall **)(_DynamicVectorClass_PAVLineTrail *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55711e*/
     }
-    v7 = this->m_8; /*0x557121*/
+    v7 = this->CheckListClass_field_0x08; /*0x557121*/
     if ( v7 < this->m_10 ) /*0x557129*/
       this->m_10 = v7; /*0x55712b*/
     return 1; /*0x55712e*/
@@ -1056,7 +1060,7 @@ int CheckListClass::checkItem(void* a1) {
     result = 0; /*0x557143*/
     if ( m_10 <= 0 ) /*0x557148*/
       return -1; /*0x55715f*/
-    for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x55714e*/
+    for ( i = *(unsigned int **)&this->CheckListClass_field_0x04; *i != *a2; ++i ) /*0x55714e*/
     {
       if ( ++result >= m_10 ) /*0x55715d*/
         return -1; /*0x55715d*/

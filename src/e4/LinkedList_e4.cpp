@@ -416,7 +416,7 @@ int LinkedList_flat::Contains(IUnknown * aP1)
   result = *((unsigned int *)this + 10); /*0x6e5380*/
   if ( result ) /*0x6e5385*/
   {
-    while ( result   !=   (int)(aP1 ))) /*0x6e538d*/
+    while ( result   !=   (int)(aP1 )) /*0x6e538d*/
     {
       result = *(unsigned int *)(result + 40); /*0x6e538f*/
       if ( !result ) /*0x6e5394*/

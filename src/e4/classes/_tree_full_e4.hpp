@@ -250,6 +250,8 @@ struct WinAPI;
 struct WorldDominationTour;
 struct _;
 
+#ifndef GAMEMD_G2_AudioChannel_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_AudioChannel_DEF 1
 struct AudioChannel {
     void* vfptr;
     unsigned char q000;  // 0x0
@@ -258,6 +260,7 @@ struct AudioChannel {
     int DeactivatePlay();  // 0x402600
     unsigned char __pad_0;  // 0x0
 };
+#endif  // GAMEMD_G2_AudioChannel_DEF
 
 struct CampaignScore {
     static int LoadCampaignScoreAssetsGame(void *aP1);  // 0x72D300 raw: int __thiscall CampaignScore::LoadCampaignScoreAssetsGame(CampaignScore*)  // G57w10 r5 D-classbody supply (raw-anchored)
@@ -932,6 +935,24 @@ struct ObjectClass {
     unsigned int q_610;  // +0x610 flat supply (CSP-fed)
     unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)
     unsigned int q_1200;  // +0x1200 flat supply (CSP-fed)
+    int sub_4F2280(int a2, int a3);  // 0x4F2280
+    int sub_4F26E0(int a2);  // 0x4F26E0
+    int sub_4F2770(int a2);  // 0x4F2770
+    int sub_5CE0C0(int a2, unsigned int * a3);  // 0x5CE0C0
+    int sub_632D60(int a2);  // 0x632D60
+    void sub_633B20();  // 0x633B20
+    int sub_633B30();  // 0x633B30
+    int sub_633B40();  // 0x633B40
+    int sub_633B70();  // 0x633B70
+    int sub_633B80();  // 0x633B80
+    int sub_634700();  // 0x634700
+    int sub_6347A0(int a2);  // 0x6347A0
+    int sub_635210();  // 0x635210
+    int sub_69B690();  // 0x69B690
+    char sub_726780();  // 0x726780
+    char sub_728540(int a2);  // 0x728540
+    char sub_736C10();  // 0x736C10
+    int sub_77D3F0();  // 0x77D3F0
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
@@ -979,6 +1000,7 @@ struct State {
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass {
+    static void Cleanup3(int a1);  // [w14e3] raw 0x5EED00 void __thiscall VectorClass_Cleanup3
     static void * CopyConstructor(void *aP1, void *a2);  // 0x512FA0 raw: _DWORD* __thiscall VectorClass::CopyConstructor(VectorClass*, _DWORD*)  // G57w10 r5 D-classbody supply (raw-anchored)
     static char PushBack(void *aP1, void *a2);  // 0x5132F0 raw: char __thiscall VectorClass::PushBack(DynamicVectorClass*, _DWORD*)  // G57w10 r5 D-classbody supply (raw-anchored)
 
@@ -987,6 +1009,7 @@ struct VectorClass {
 
     void* Items;  // 0x4
     int Capacity;  // 0x8
+    char IsInitialized[1];  // 0xC (G57W14E1 til supply)
     void* ClearAndFree2;  // 0x0 (no offset truth)
     void* vfptr;
     unsigned int tail_E;  // 0xE

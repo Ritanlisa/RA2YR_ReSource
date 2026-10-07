@@ -51,7 +51,17 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/AudioSettings_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int LoadTypeLib(...);  // raw 007C8932: // attributes: thunk HRESULT __stdcall LoadTypeLib(LPCOLESTR szFile, ITypeLib **pptlib)
+    int Object_Create(...);  // raw 00588960: int __thiscall Object_Create(ObjectClass *this, int a2)
+    int Render_Load_6BAFA0(...);  // raw 006BAFA0: void __thiscall Render_Load_6BAFA0(ObjectClass *this)
+    int System_Init_6B2520(...);  // raw 006B2520: char __thiscall System_Init_6B2520(TechnoClass *this)
+} // namespace gamemd
 
 // 0x6B2430
 namespace gamemd {
@@ -2315,7 +2325,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
       v33 = 0; /*0x6b9f47*/
       v34 = v31 * v50; /*0x6b9f49*/
       for ( i = v32; v33 < v34; *(unsigned char *)(i + v33 - 1) = v59[2 * v36 + v36] ) /*0x6b9f50*/
-        v36 = (unsigned int)(*(uint8_t *)(i + v33++))); /*0x6b9f54*/
+        v36 = (unsigned int)(*(uint8_t *)(i + v33++)); /*0x6b9f54*/
       (*(void (**)(unsigned int *))(*v10 + 96))( (unsigned int *)(v10)); /*0x6b9f71*/
     }
     v60[0] = v10; /*0x6b9f80*/

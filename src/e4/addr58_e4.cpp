@@ -49,6 +49,10 @@
 #include "e4/classes/MapResourceClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TileSystem_e4.hpp"  // G57w10 D supply (BuildNodes 0x58D620)
 #include "e4/classes/IsoCoord_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int SeedInitRNG(...);  // raw 0065C6D0: _DWORD *__thiscall SeedInitRNG(ObjectClass *this, int a2)
+} // namespace gamemd
 
 // 0x5835D0
 namespace gamemd {

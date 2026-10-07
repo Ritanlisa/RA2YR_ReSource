@@ -40,7 +40,7 @@ char Winsock::VerifyCRC(int a1)
     v6 = *(unsigned int *)&v1[1].Initialized & 3; /*0x7b2099*/
     if ( v6 ) /*0x7b209c*/
       ComputeHash((unsigned int *)(&a1), *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/
-    if ( a1   ==   (int)(*(WinsockInterfaceClass **)&v1[2].Initialized ))) /*0x7b20c5*/
+    if ( a1   ==   (int)(*(WinsockInterfaceClass **)&v1[2].Initialized )) /*0x7b20c5*/
       return 1; /*0x7b20ca*/
     Debug::Log("Error in Winsock packet CRC\n"); /*0x7b20d2 G57c1: IDA 0x7b20d2 push offset aErrorInWinsock*/
   }

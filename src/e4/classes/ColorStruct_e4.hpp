@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_ColorStruct_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_ColorStruct_DEF 1
 struct ColorStruct {
 // --- flat members (BEGIN) ---
     void* q010;  // 0x10
@@ -29,5 +31,6 @@ struct ColorStruct {
     void* field_14;  // 0x14
     void* field_10;  // 0x10
 };
+#endif  // GAMEMD_G2_ColorStruct_DEF
 
 } // namespace gamemd

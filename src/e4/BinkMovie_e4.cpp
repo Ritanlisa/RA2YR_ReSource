@@ -33,6 +33,11 @@
 #include "e4/classes/TextGroup_e4.hpp"
 #include "e4/classes/Text_e4.hpp"
 #include "D:\RA2YR_ReSource\src\e4\minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ParseMovieSubtitles(...);  // raw 006C9F10: int __thiscall ParseMovieSubtitles(char *this, char *Source)
+    int nullsub_40(...);  // raw 006C9F00: void nullsub_40(ObjectClass *this)
+} // namespace gamemd
 
 // 0x432690
 namespace gamemd {
@@ -158,7 +163,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
   v6 = (char *)FullPath; /*0x4327ba*/
-  v7 = (unsigned int)(((RawFileClass *)(FullPath))->Construct())); /*0x4327c3*/
+  v7 = (unsigned int)(((RawFileClass *)(FullPath))->Construct()); /*0x4327c3*/
   v8 = (*(uint8_t (**)(int, unsigned int))(*(unsigned int *)v7 + 20))(v7, 0) == 1; /*0x4327d6*/
   ((RawFileClass *)(v32))->Dtor(); /*0x4327d9*/
   if ( v8 ) /*0x4327e0*/
@@ -525,7 +530,7 @@ unsigned int * BinkMovie::RenderSingleFrame(int aP1, int a3, int a4, char a5)
     BinkCopyToBuffer((void *)(this->BinkMovie_field_0x4[0]),(void *)( v6), v7, v8, a3, a4, BinkMovie_field_0x8); /*0x433251*/
     (*(void     ((*(void (**)(int))(*(unsigned int *)aP1 + 96)))(aP1); 
   }
-  return (in  return (gamemd::DSurface *)(int)((BinkMovie *)(this))->BlitToTarget(aP1); 
+  return (gamemd::DSurface *)(int)((BinkMovie *)(this))->BlitToTarget(aP1)
 
 }
 }

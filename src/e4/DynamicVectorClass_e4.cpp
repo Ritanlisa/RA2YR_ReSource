@@ -1131,12 +1131,12 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
 
   v3 = *(void **)&this->m_1[3]; /*0x49eff3*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassDynamicVectorClass;
-  if ( v3 && BYTE1(this->m_C) ) /*0x49f000*/
+  if ( v3 && this->IsAllocated ) /*0x49f000*/
   {
     __3_YAXPAX_Z(v3); /*0x49f008*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x49f010*/
   }
-  BYTE1(this->m_C) = 0; /*0x49f01b*/
+  this->IsAllocated = 0; /*0x49f01b*/
   this->m_8 = 0; /*0x49f021*/
   if ( (a2 & 1) != 0 ) /*0x49f028*/
     __3_YAXPAX_Z(this); /*0x49f02b*/
@@ -1154,12 +1154,12 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
 
   v3 = *(void **)&this->m_1[3]; /*0x49f043*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassDynamicVectorClass;
-  if ( v3 && BYTE1(this->m_C) ) /*0x49f050*/
+  if ( v3 && this->IsAllocated ) /*0x49f050*/
   {
     __3_YAXPAX_Z(v3); /*0x49f058*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x49f060*/
   }
-  BYTE1(this->m_C) = 0; /*0x49f06b*/
+  this->IsAllocated = 0; /*0x49f06b*/
   this->m_8 = 0; /*0x49f071*/
   if ( (a2 & 1) != 0 ) /*0x49f078*/
     __3_YAXPAX_Z(this); /*0x49f07b*/
@@ -1390,7 +1390,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
     (*(void (**)(void *))(*(unsigned int *)this->vfptr + 12))(this); /*0x5c559e*/
   }
   v7 = (unsigned int)this->Capacity; /*0x5c55a1*/
-  if ( v7   <   (int)(this->Count ))) /*0x5c55a9*/
+  if ( v7   <   (int)(this->Count )) /*0x5c55a9*/
     this->Count = (void *)(v7); /*0x5c55ab*/
   return 1; /*0x5c55ae*/
 

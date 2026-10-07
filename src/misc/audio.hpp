@@ -57,6 +57,8 @@ int RequestBufferMixer(VolumeStruct* volume, int rate);
 int j_Mixer_RequestBuffer(VolumeStruct* volume, int rate);
 
 // CSP: VocClass matched via T1
+#ifndef GAMEMD_G2_VocClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_VocClass_DEF 1
 class VocClass
 {
 public:
@@ -129,6 +131,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* GetSampleNameByIndex(int a1);  // 0x751590
     // === FUNCS-MOVE (END) ===
 };
+#endif  // GAMEMD_G2_VocClass_DEF
 
 class VoxClass
 {

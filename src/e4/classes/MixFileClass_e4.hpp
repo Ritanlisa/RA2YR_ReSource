@@ -29,6 +29,7 @@ struct MixFileClass {
     static int GetSubFile(MixFileClass * aP1, unsigned int a2);  // G57w10-S raw 0x0069E740 (was C2597 interim stub)
     static char ** LoadSubFile(MixFileClass * aP1);  // G57w10-S raw 0x0069E580 (was C2597 interim stub)
 // G57c4 stray-statement sweep: dropped 'if ( ! Bootstrap());' (pseudocode line leaked into class body)
+    void sub_5B3F50();  // 0x5B3F50
 };
 
 } // namespace gamemd

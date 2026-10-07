@@ -53,6 +53,7 @@
 #include "e4/classes/InputManager_ProcessEvents_e4.hpp"
 #include "e4/classes/SyncDelay_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CopyProtection_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Tooltip_e4.hpp"  // G42.36 C2027 supply

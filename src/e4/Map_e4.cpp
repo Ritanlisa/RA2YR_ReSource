@@ -80,6 +80,10 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int DrawScoreScreenStats(...);  // raw 0072E2D0: int __fastcall ScoreScreen_DrawStats(int *a1, int a2)
+} // namespace gamemd
 
 // 0x539760
 namespace gamemd {
@@ -1744,8 +1748,8 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
         }
       }
       *(unsigned int *)&this->m_1[3] = (unsigned int)v5; /*0x76a4c4*/
-      this->m_8 = v3; /*0x76a4ca*/
-      BYTE1(this->m_C) = a3 == 0; /*0x76a4cd*/
+      this->q008 = v3; /*0x76a4ca*/
+      this->IsAllocated = a3 == 0; /*0x76a4cd*/
       return (::gamemd::AbstractClass **)(1); /*0x76a4d3*/
     }
     else
@@ -2465,7 +2469,7 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3, void 
 
   int v3; // edi
 
-  v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x769cad*/
+  v3 = *(unsigned int *)&this->q004 + 8 * a3; /*0x769cad*/
   ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x769cb2*/
   *a2 = (unsigned int)&vt_rc_ptr;
   ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x769cc3*/
@@ -2479,7 +2483,7 @@ namespace gamemd {
 int Map_WorldDominationTour_28::Seek(int a2, void *a2_2, void *a3_1)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x769d2a*/
+  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x769d2a*/
 
 }
 }
@@ -2491,7 +2495,7 @@ namespace gamemd {
 int Map_WorldDominationTour_38::AddRef(void *a1_1)
 {
 
-  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8); /*0x769d6d*/
+  return *((unsigned int *)this + 2) < *(unsigned int *)(*(unsigned int *)&this->u32_4 + 8); /*0x769d6d*/
 
 }
 }
@@ -2511,10 +2515,10 @@ namespace gamemd {
 VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorCursorTRectVectorClassTRect;
+  *(unsigned int *)&this->q000 = (unsigned int)&vt_VectorCursorTRectVectorClassTRect;
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
     __3_YAXPAX_Z(this); /*0x769dd2*/
-  return this->__pad_0; /*0x769ddc*/
+  return this->q000; /*0x769ddc*/
 
 }
 } // namespace gamemd
@@ -2529,7 +2533,7 @@ char Map_WorldDominationTour_20::AddRef(int a2)
   unsigned int *v4; // ecx
   unsigned int *i; // eax
 
-  m_8 = this->m_8; /*0x769de6*/
+  m_8 = this->q008; /*0x769de6*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x769def*/
   {
     v3 = 0; /*0x769df1*/
@@ -2558,13 +2562,13 @@ int Map_WorldDominationTour_20::ddtor(void *a1_1)
   int result; // eax
 
   v2 = *(int (****)(unsigned int, int))&this->m_1[3]; /*0x769f56*/
-  if ( v2 && BYTE1(this->m_C) ) /*0x769f5d*/
+  if ( v2 && this->IsAllocated ) /*0x769f5d*/
   {
     result = (**v2)((unsigned int)(v2), 3); /*0x769f6a*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x769f6c*/
   }
-  BYTE1(this->m_C) = 0; /*0x769f6f*/
-  this->m_8 = 0; /*0x769f72*/
+  this->IsAllocated = 0; /*0x769f6f*/
+  this->q008 = 0; /*0x769f72*/
   return result; /*0x769f75*/
 
 }
@@ -2579,9 +2583,9 @@ int Map_WorldDominationTour_20::Read(int a2, void *a2_2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x769f80*/
+  if ( !LOBYTE(this->q00C) ) /*0x769f80*/
     return 0; /*0x769f88*/
-  m_8 = this->m_8; /*0x769f8e*/
+  m_8 = this->q008; /*0x769f8e*/
   result = 0; /*0x769f91*/
   if ( m_8 <= 0 ) /*0x769f95*/
     return -1; /*0x769fb0*/
@@ -2599,8 +2603,8 @@ namespace gamemd {
 unsigned int Map_WorldDominationTour_20::Write(int a2)
 {
 
-  if ( LOBYTE(this->m_C) ) /*0x769fc0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x769fd5*/
+  if ( LOBYTE(this->q00C) ) /*0x769fc0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x769fd5*/
   else
     return 0; /*0x769fc7*/
 
@@ -2628,13 +2632,13 @@ int Map_WorldDominationTour_28::Read(unsigned int * a2, void *a2_2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !LOBYTE(this->m_C) ) /*0x76a250*/
+  if ( !this->q00C ) /*0x76a250*/
     return 0; /*0x76a258*/
-  m_8 = this->m_8; /*0x76a25e*/
+  m_8 = this->q008; /*0x76a25e*/
   result = 0; /*0x76a261*/
   if ( m_8 <= 0 ) /*0x76a265*/
     return -1; /*0x76a27c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x76a26b*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x76a26b*/
   {
     if ( ++result >= m_8 ) /*0x76a27a*/
       return -1; /*0x76a27a*/
@@ -2670,7 +2674,7 @@ unsigned int * Map_WorldDominationTour_38::Release(void *a1_1)
 {
 
   ++*((unsigned int *)this + 2); /*0x76a5a2*/
-  return this->__pad_0; /*0x76a5a5*/
+  return (unsigned int *)this; /*0x76a5a5*/
 
 }
 }
@@ -2680,7 +2684,7 @@ unsigned int * Map_WorldDominationTour_38::ddtor(void *a1_1)
 {
 
   --*((unsigned int *)this + 2); /*0x76a5b2*/
-  return this->__pad_0; /*0x76a5b5*/
+  return (unsigned int *)this; /*0x76a5b5*/
 
 }
 }
@@ -2692,17 +2696,17 @@ VectorClass_flat * Map_WorldDominationTour_20::QueryInterface(unsigned int * Blo
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76a5c3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
-  if ( v3 && BYTE1(this->m_C) ) /*0x76a5d0*/
+  *(unsigned int *)&this->q000 = (unsigned int)&vt_VectorClassrc_ptr;
+  if ( v3 && this->IsAllocated ) /*0x76a5d0*/
   {
     (**v3)(v3, 3); /*0x76a5df*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x76a5e1*/
   }
-  BYTE1(this->m_C) = 0; /*0x76a5ec*/
-  this->m_8 = 0; /*0x76a5f2*/
+  this->IsAllocated = 0; /*0x76a5ec*/
+  this->q008 = 0; /*0x76a5f2*/
   if ( (a2 & 1) != 0 ) /*0x76a5f9*/
     __3_YAXPAX_Z(this); /*0x76a5fc*/
-  return this->__pad_0; /*0x76a606*/
+  return this->q000; /*0x76a606*/
 
 }
 } // namespace gamemd

@@ -311,7 +311,7 @@ int WeaponTypeClass::ProcessPower(int * a2, void *a2_2)
   Warhead = (gamemd::WarheadTypeClass *)(this->Warhead); /*0x772b96*/
   if ( Warhead ) /*0x772b9e*/
   {
-    v12 = (*((int ((void **)(**))(void **))Warhead->WarheadTypeClass_field_0x4 + 4))(&Warhead->WarheadTypeClass_field_0x4); /*0x772ba7*/
+    v12 = (*((int (__stdcall **)(void **))Warhead->WarheadTypeClass_field_0x4 + 4))(&Warhead->WarheadTypeClass_field_0x4); /*0x772ba7*/
     Power::TimerProcess(v12); /*0x772bad*/
   }
   Power::TimerProcess(this->ROF); /*0x772bbb*/

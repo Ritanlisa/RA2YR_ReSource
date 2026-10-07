@@ -30,6 +30,18 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int InvalidateTileRegionMap(...);  // raw 0056DB70: int __thiscall InvalidateTileRegionMap(ObjectClass *this, __int16 *a2)
+} // namespace gamemd
+// [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
+// usage: *(unsigned int*)v.__pad_0 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
+namespace gamemd {
+struct _VectorClass_VCell {
+    char __pad_0[4];  // 0x0 vfptr carrier
+};
+} // namespace gamemd
+
 
 // 0x48B720
 namespace gamemd {

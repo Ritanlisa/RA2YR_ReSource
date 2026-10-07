@@ -34,7 +34,13 @@
 #include "e4/classes/BuildingAnim_e4.hpp"
 #include "e4/classes/MessageListClass_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int GameListRenderWOL(...);  // raw 00781480: void GameListRenderWOL(ObjectClass *this)
+    int LeaveChannelWOL(...);  // raw 00785740: void __thiscall LeaveChannelWOL(const char *this)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern wchar_t aTxtPagefailed[];  // data: 0x84b034 truth(IDA G42.57w9)
 extern wchar_t aTxtWolConnlost[];  // data: 0x84b190 truth(IDA G42.57w9)
@@ -385,7 +391,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a2, const char *a3, i
     }
     if ( !dword_B77EA4 ) /*0x7a5442*/
     {
-      (*(void ((LPVOID)(__stdcall **))(LPVOID, int *))(*(unsigned int *)ppv + 132))(ppv, &a2); /*0x7a5457*/
+      (*(void (__stdcall **)(LPVOID, int *))(*(unsigned int *)ppv + 132))(ppv, &a2); /*0x7a5457*/
       v6 = (char *)RA2_OPNEW(strlen((const char *)a2) + 32); /*0x7a5477*/
       strcpy( (char *)(v6), (const char *)a2); /*0x7a5493*/
       strcat( (char *)(v6), (const char *)(a1018)); /*0x7a54bb*/
@@ -464,7 +470,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
         memset( (void *)(Buffer), 0, sizeof(Buffer)); /*0x7a5813*/
         ((GameConfig *)Buffer)->BuildChecksum(); /*0x7a5819*/
         Buffer[40] = 0; /*0x7a5827*/
-        (*(void ((LPVOID)(__stdcall **))(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
+        (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
       }
       v11 = (HWND)Dialog::FindByHandle(  (Dialog *)0xC4); /*0x7a583b*/
       if ( v11 ) /*0x7a5845*/
@@ -625,7 +631,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
             goto LABEL_41; /*0x7a7e4e*/
         }
         if ( &g_WebBrowserConfig != (int *)-36 ) /*0x7a7e59*/
-          BulkCharToWide( (unsigned short *)(word_A8E258), (uint8_t *)((unsigned __int8 *)&((ObjectClass *)&g_WebBrowserConfig)->q048), -1); /*0x7a7e67*/
+          BulkCharToWide( (unsigned short *)(word_A8E258), (uint8_t *)((unsigned __int8 *)&((ObjectClass *)&g_WebBrowserConfig)->ambientSoundController), -1); /*0x7a7e67*/
       }
   LABEL_41:
       dword_A8E2AC = -1; /*0x7a7e6c*/
@@ -705,7 +711,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         && *Source <= 57
         && dword_B77900== 2 )
       {
-        (*(void ((LPVOID)(__stdcall **))(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, g_INI_Key_A1); /*0x7a7ffc*/
+        (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, g_INI_Key_A1); /*0x7a7ffc*/
       }
       ((DeleteAndZero *)&v23)->Alt(); /*0x7a8003*/
       return 0; /*0x7a8014*/
@@ -777,7 +783,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
         sprintf((char *const)Buffer, "P%s", byte_A8B8E0); /*0x7a81cf*/
         if ( dword_B77900> 0 ) /*0x7a81de*/
           qmemcpy( (void *)(v25), dword_B77908, sizeof(v25)); /*0x7a81ef*/
-        (*(void ((LPVOID)(__stdcall **))(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))(ppv, v25, Buffer); /*0x7a8203*/
+        (*(void (__stdcall **)(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))(ppv, v25, Buffer); /*0x7a8203*/
         Debug::Log("Sent private game option packet requesting a preview download\n"); /*0x7a820b G57c1: IDA 0x7a820b push offset aSentPrivateGam*/
         Event_Play(v5); /*0x7a8213*/
       }
@@ -1133,7 +1139,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
       {
         v23 = *(unsigned int *)ppv; /*0x7a9500*/
         v24 = (wchar_t *)((WideString *)(wchar_t **)&stru_B7622C.?)->GetOrEmpty(); /*0x7a9502*/
-        (*(void ((LPVOID)(__stdcall **))(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
+        (*(void (__stdcall **)(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
       }
       PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a952d*/
       ((DeleteAndZero *)&v26)->Alt(); /*0x7a9536*/
@@ -1259,7 +1265,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     {
       v16 = *(unsigned int *)ppv; /*0x7a97ab*/
       v17 = (wchar_t *)((WideString *)(wchar_t **)&stru_B7622C.?)->GetOrEmpty(); /*0x7a97b2*/
-      (*(void ((LPVOID)(__stdcall **))(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
+      (*(void (__stdcall **)(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
     }
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a97dd*/
     return 0; /*0x7a9561*/

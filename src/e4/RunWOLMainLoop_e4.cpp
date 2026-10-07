@@ -31,6 +31,7 @@
 #include "e4/classes/MapSeed_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x77E110
@@ -91,7 +92,7 @@ int sub_785EA0()
   IDA_LOBYTE(byte_B77DC0) = 1; /*0x785eac*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x785ec0*/
   {
-    v1 = (unsigned int)(&dword_B76688)); /*0x785ec6*/
+    v1 = (unsigned int)(&dword_B76688); /*0x785ec6*/
     for ( i = 0; i < &dword_B76688; v1 = &dword_B76688 ) /*0x785ecf*/
     {
       v3 = *(ObjectClass **)(dword_B76680+ 4 * i); /*0x785ed6*/

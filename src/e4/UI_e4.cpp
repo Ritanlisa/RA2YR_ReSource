@@ -60,8 +60,13 @@
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/SafeDelete_e4.hpp"
 #include "e4/classes/TextGroup_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int SendMultiplayerStartSignal_Start(...);  // raw 005DBEC0: int __thiscall sub_5DBEC0(char *this)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_10;  // data: 0x836cb4 truth(IDA G42.57w9)
 extern unsigned int aMsgPlanningmod_9;  // data: 0x836cd0 truth(IDA G42.57w9)
@@ -820,7 +825,7 @@ int sub_6D0FD0()
     ++v1; /*0x6d10a2*/
   }
   while ( v1 < 25 ); /*0x6d10a6*/
-  v7 = (unsigned int)((&g_ObjectTrackingPool)[dword_B0CC1C])); /*0x6d10b5*/
+  v7 = (unsigned int)((&g_ObjectTrackingPool)[dword_B0CC1C]); /*0x6d10b5*/
   if ( v7 <= 0x18 ) /*0x6d10be*/
   {
     v8 = (char *)&stru_B0C1C0 + 96 * v7; /*0x6d10cb*/

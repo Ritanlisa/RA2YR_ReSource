@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_BufferIOFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_BufferIOFileClass_DEF 1
 struct BufferIOFileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -25,5 +27,6 @@ struct BufferIOFileClass {
      unsigned __int8 * Constructor();  // G57w10-S raw 0x00431B20 (was C2597 interim stub)
 int Dtor();
 };
+#endif  // GAMEMD_G2_BufferIOFileClass_DEF
 
 } // namespace gamemd

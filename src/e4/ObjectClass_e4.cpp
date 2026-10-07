@@ -43,6 +43,25 @@
 #include "e4/classes/Turret_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Transform_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] Matrix3D supply: verbatim struct from src/core/math.hpp (gamemd), cpp-local carrier
+namespace gamemd {
+struct Matrix3D
+{
+    float Data[12] = {};  // data: 0x840b4c
+    unsigned char __pad_0;  // 0x0
+    unsigned int q080;  // 0x80
+    unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
+    unsigned int u32_8;   // 0x8 (raw fld [esi+8])
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_28;  // 0x28
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor(float a1, float a2);  // 0x5AE6F0
+    void RotateZ(float a1);  // 0x5AF080
+    // --- gap2 auto-generated stub declarations (END) ---
+};
+} // namespace gamemd
+
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern const IID IID_ILocomotion;  // data: 0x7ed358 truth(IDA G42.57w9)
 
@@ -703,7 +722,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   IsPassable = Cell::IsPassable( (unsigned int *)((unsigned int)((IUnknown *)(v40)))); /*0x4de3b5*/
   if ( (unsigned char)a4 && v35 == 2 ) /*0x4de3cb*/
   {
-    if ( !*(unsigned char *)((*(int ((unsigned int *)(**))(unsigned int *))(*v7 + 132))( (unsigned int *)(v7)) + 3372) /*0x4de3f7*/
+    if ( !*(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*v7 + 132))( (unsigned int *)(v7)) + 3372) /*0x4de3f7*/
       || (v22 = (*(int (**)(unsigned int *))(*v7 + 456))( (IUnknown **)(v7)), a2 = (unsigned int *)1, v22 >= 0) )
     {
       a2 = (IUnknown **)(0); /*0x4de3f9*/
@@ -777,11 +796,11 @@ LABEL_32:
 LABEL_34:
   if ( __PAIR32__(v34[1], (uint16_t)v27) != g_FootClass_Pool ) /*0x4de541*/
   {
-    aP0->AbstractClass = v27; /*0x4de558*/
+    *(unsigned int *)&aP0->vtable1 = v27; /*0x4de558*/
     return (void **)(aP0); /*0x4de55f*/
   }
 LABEL_36:
-  aP0->AbstractClass = (void *)g_FootClass_Pool; /*0x4de562*/
+  *(unsigned int *)&aP0->vtable1 = (void *)g_FootClass_Pool; /*0x4de562*/
   return (void **)(aP0); /*0x4de555*/
 
 }
@@ -1090,18 +1109,18 @@ int ObjectClass::DropAsBomb_Track()
   int v4; // eax
   unsigned int v5[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  v2 = this->field_0; /*0x5f4168*/
-  this->__pad_8C[1] = 1; /*0x5f416a*/
-  this->__pad_8C[3] = 1; /*0x5f4171*/
+  v2 = this->__pad_0; /*0x5f4168*/
+  *((char *)&this->isFallingDown) = 1; /*0x5f416a*/
+  *((char *)&this->isBomb) = 1; /*0x5f4171*/
   (*(void (**)(unsigned int))(v2 + 292))(0); /*0x5f4178*/
   RemoveTarget((int)this); /*0x5f4184*/
-  this->__pad_8C[0] = 0; /*0x5f418f*/
+  *((char *)&this->onBridge) = 0; /*0x5f418f*/
   Targeting::Readd((unsigned int *)(this)); /*0x5f4196*/
-  result = (*(int (**)(IUnknown *, int))(this->field_0 + 292))(this, 1); /*0x5f41a1*/
+  result = (*(int (**)(IUnknown *, int))(this->__pad_0 + 292))(this, 1); /*0x5f41a1*/
   if ( this ) /*0x5f41a9*/
   {
-    LOBYTE(result) = (this->__pad_14[0] & 4) != 0; /*0x5f41b5*/
-    if ( (this->__pad_14[0] & 4) != 0 ) /*0x5f41bb*/
+    LOBYTE(result) = (*((char *)&this->abstractFlags) & 4) != 0; /*0x5f41b5*/
+    if ( (*((char *)&this->abstractFlags) & 4) != 0 ) /*0x5f41bb*/
     {
       if ( !*(unsigned int *)&this->__pad_524[336] ) /*0x5f41bd*/
         WinAPI::Wrapper(-2147467261); /*0x5f41cc*/
@@ -1115,10 +1134,10 @@ int ObjectClass::DropAsBomb_Track()
       }
       else
       {
-        v5[0] = this->field_9C; /*0x5f41ed*/
-        v4 = this->field_0; /*0x5f41f1*/
-        v5[1] = *(unsigned int *)this->__pad_A0; /*0x5f41f6*/
-        v5[2] = this->field_A4; /*0x5f4204*/
+        v5[0] = this->location; /*0x5f41ed*/
+        v4 = this->__pad_0; /*0x5f41f1*/
+        v5[1] = *(unsigned int *)&this->q0A0; /*0x5f41f6*/
+        v5[2] = *(unsigned int *)&this->q0A4; /*0x5f4204*/
         return (*(int (**)(IUnknown *, unsigned int *))(v4 + 244))((IUnknown *)(this), (unsigned int *)( (IUnknown *)(v5) )); /*0x5f4208*/
       }
     }
@@ -1170,9 +1189,9 @@ int ObjectClass::GetBoundsRect()
   unsigned int v38[4]; // [esp+3Ch] [ebp-10h] BYREF
   unsigned int *v39; // [esp+50h] [ebp+4h]
 
-  v2 = (unsigned int *)(*(int (**)(int *))(this->field_0 + 172))( (int *)(&v32)); /*0x5f4887*/
+  v2 = (unsigned int *)(*(int (**)(int *))(this->__pad_0 + 172))( (int *)(&v32)); /*0x5f4887*/
   ((Coord *)((Coord *)g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v2), (int *)(v31)); /*0x5f4894*/
-  v3 = (*(int (**)(IUnknown *))(this->field_0 + 136))(this); /*0x5f489d*/
+  v3 = (*(int (**)(IUnknown *))(this->__pad_0 + 136))(this); /*0x5f489d*/
   v4 = (int16_t *)(*(int (**)(int))(*(unsigned int *)v3 + 156))(v3); /*0x5f48ad*/
   if ( !v4 ) /*0x5f48b1*/
   {
@@ -1183,7 +1202,7 @@ int ObjectClass::GetBoundsRect()
     return (int)v39; /*0x5f48e1*/
   }
   v6 = 0; /*0x5f48ea*/
-  if ( (*(int (**)(IUnknown *))(this->field_0 + 44))(this) == 6 && *(unsigned char *)(this->field_520 + 5824) ) /*0x5f48fa*/
+  if ( (*(int (**)(IUnknown *))(this->__pad_0 + 44))(this) == 6 && *(unsigned char *)(this->field_520 + 5824) ) /*0x5f48fa*/
     v6 = 15; /*0x5f4904*/
   FoundationSize = (int *)Building::GetFoundationSize( (unsigned int *)(&v32), v6); /*0x5f4911*/
   v8 = *FoundationSize; /*0x5f4916*/
@@ -1238,7 +1257,7 @@ int ObjectClass::GetBoundsRect()
   }
   v34 = v9; /*0x5f49f7*/
   v35 = v17; /*0x5f49fb*/
-  if ( (*(int (**)(IUnknown *))(this->field_0 + 44))(this) != 6 || !*(unsigned int *)(this->field_520 + 5400) ) /*0x5f4a17*/
+  if ( (*(int (**)(IUnknown *))(this->__pad_0 + 44))(this) != 6 || !*(unsigned int *)(this->field_520 + 5400) ) /*0x5f4a17*/
   {
     v9 = v34; /*0x5f4ac5*/
     v26 = v35; /*0x5f4ac9*/

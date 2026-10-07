@@ -17,6 +17,10 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ConstructWDTSelection_Create_767FB0_Create(...);  // raw 00768000: void *__thiscall ConstructWDTSelection_Create_767FB0_Create(ReferenceCounted *this, int a2
+} // namespace gamemd
 
 // 0x767FB0
 namespace gamemd {

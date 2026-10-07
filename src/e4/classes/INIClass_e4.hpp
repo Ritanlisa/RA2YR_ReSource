@@ -9,7 +9,10 @@
 namespace gamemd {
 struct VoxelStruct;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_E4_INIClass  // G42.57w14 twin-guard (shared w/ system/ini_class.hpp; first-include wins)
+#define GAMEMD_E4_INIClass 1
 struct INIClass {
+    static char SetIntFormat(char *a1, char **a2, char **a3, int a4, int a5);  // [w14e3] raw 0x527640
     static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);  // 0x528F00 raw: int ParseValue_Wide(INIClass*, unsigned __int8*, unsigned __int8*, wchar_t*, wchar_t*, size_t)
 
 // --- flat members (BEGIN) ---
@@ -129,5 +132,6 @@ static int WriteToString(INIClass * aP1, int a2);  // G57w10-S raw 0x00526470 (w
     unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
     int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
 };
+#endif  // GAMEMD_E4_INIClass
 
 } // namespace gamemd

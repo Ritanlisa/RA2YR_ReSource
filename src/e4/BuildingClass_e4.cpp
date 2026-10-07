@@ -78,7 +78,7 @@ void* BuildingClass::LoadFromStream()
 
   v1 = v33; /*0x453e25*/
   p_vtable1 = (void **)(&((unsigned int *)v33)[0]); /*0x453e2c*/
-  v33 = (BuildingClass *)(*((int ((void **)(**))(void **))((unsigned int *)v33)[0] + 4))(&((unsigned int *)v33)[0]); /*0x453e3d*/
+  v33 = (BuildingClass *)(*((int (__stdcall **)(void **))((unsigned int *)v33)[0] + 4))(&((unsigned int *)v33)[0]); /*0x453e3d*/
   v3 = ((BuildingTypeClass *)(&g_BuildingLoadQueue_Array))->Dequeue((int *)&v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/

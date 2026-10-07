@@ -118,11 +118,17 @@
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/PlanManager_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int RenderScenarioActionLines2(...);  // raw 0063CAE0: int __thiscall RenderScenarioActionLines2(ObjectClass *this)
+    int Team_Helper_6342E0(...);  // raw 006342E0: int __thiscall Team_Helper_6342E0(ObjectClass *this, int a2, int a3)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_4;  // data: 0x836d60 truth(IDA G42.57w9)
 extern unsigned int aMsgPostloop;  // data: 0x836bf0 truth(IDA G42.57w9)
@@ -2092,7 +2098,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
         {
           do /*0x639952*/
           {
-            vtable0 = (int)v8->AbstractClass; /*0x639902*/
+            vtable0 = (int)*(unsigned int *)&v8->vtable1; /*0x639902*/
             v32 = (ScriptAction *)*((unsigned int *)((unsigned int *)v8)[0] + (unsigned int)v33); /*0x639903*/
             v18 = (unsigned char *)((ScriptAction *)v32)->FindItemByValue( vtable0)[1]; /*0x63990c*/
             qmemcpy( (void *)(v39), (const void *)(v18), sizeof(v39)); /*0x639918*/
@@ -2782,7 +2788,7 @@ result = (*(int (**)(AudioStream *, int *, int *, int))(*(unsigned int *)DSurfac
 }
 // 0x63CF10
 namespace gamemd {
-int E4Recv_63CF10::sub_63CF10()
+int HouseClass::sub_63CF10()
 {
 
   int v1; // ecx
@@ -2806,7 +2812,7 @@ int E4Recv_63CF10::sub_63CF10()
 }
 // 0x63CFC0
 namespace gamemd {
-int E4Recv_63CFC0::sub_63CFC0()
+int HouseClass::sub_63CFC0()
 {
 
   int v1; // ecx
@@ -3466,7 +3472,7 @@ void * E4Recv_632B20::sub_632B20(void * a2, short a3)
 
 // 0x632D60
 namespace gamemd {
-int E4Recv_632D60::sub_632D60(int a2)
+int ObjectClass::sub_632D60(int a2)
 {
 
   int result; // eax
@@ -3874,7 +3880,7 @@ namespace gamemd {
 unsigned int * E4Recv_633A20::sub_633A20()
 {
 
-  this->AbstractClass = 0; /*0x633a24*/
+  *(unsigned int *)&this->vfptr = 0; /*0x633a24*/
   ((unsigned int *)this)[0] = 0; /*0x633a26*/
   ((unsigned int *)this)[0] = (unsigned int)(void *)-1; /*0x633a29*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x633a30*/
@@ -3981,7 +3987,7 @@ int E4Recv_633B10::sub_633B10(int a2)
 
 // 0x633B20
 namespace gamemd {
-void E4Recv_633B20::sub_633B20()
+void ObjectClass::sub_633B20()
 {
 
   this->estimatedHealth = 0; /*0x633b20*/
@@ -3991,7 +3997,7 @@ void E4Recv_633B20::sub_633B20()
 
 // 0x633B30
 namespace gamemd {
-int E4Recv_633B30::sub_633B30()
+int ObjectClass::sub_633B30()
 {
 
   int result; // eax
@@ -4005,7 +4011,7 @@ int E4Recv_633B30::sub_633B30()
 
 // 0x633B40
 namespace gamemd {
-int E4Recv_633B40::sub_633B40()
+int ObjectClass::sub_633B40()
 {
 
   int result; // eax
@@ -4019,7 +4025,7 @@ int E4Recv_633B40::sub_633B40()
 
 // 0x633B70
 namespace gamemd {
-int E4Recv_633B70::sub_633B70()
+int ObjectClass::sub_633B70()
 {
 
   return this->estimatedHealth; /*0x633b73*/
@@ -4029,7 +4035,7 @@ int E4Recv_633B70::sub_633B70()
 
 // 0x633B80
 namespace gamemd {
-int E4Recv_633B80::sub_633B80()
+int ObjectClass::sub_633B80()
 {
 
   return *(unsigned int *)&this->isOnMap; /*0x633b83*/
@@ -4163,7 +4169,7 @@ unsigned int * ComputeBounds(AbstractClass * aP0, ObjectClass * aP1, int a3, int
 
 // 0x634700
 namespace gamemd {
-int E4Recv_634700::sub_634700()
+int ObjectClass::sub_634700()
 {
 
   return (int)this->nextObject; /*0x634703*/
@@ -4173,7 +4179,7 @@ int E4Recv_634700::sub_634700()
 
 // 0x6347A0
 namespace gamemd {
-int E4Recv_6347A0::sub_6347A0(int a2)
+int ObjectClass::sub_6347A0(int a2)
 {
 
   return *(unsigned int *)(this->occupant + 4 * a2); /*0x6347aa*/
@@ -4183,7 +4189,7 @@ int E4Recv_6347A0::sub_6347A0(int a2)
 
 // 0x634800
 namespace gamemd {
-char * E4Recv_634800::sub_634800()
+char * ObjectClass::sub_634800()
 {
 
   return (char *)&this->attachedBomb; /*0x634803*/
@@ -4193,7 +4199,7 @@ char * E4Recv_634800::sub_634800()
 
 // 0x634810
 namespace gamemd {
-unsigned int * E4Recv_634810::sub_634810(unsigned int * a2, int a3)
+unsigned int * ObjectClass::sub_634810(unsigned int * a2, int a3)
 {
 
   int *ScenarioClassActionCoords; // eax
@@ -4216,7 +4222,7 @@ unsigned int * E4Recv_634810::sub_634810(unsigned int * a2, int a3)
 
 // 0x634850
 namespace gamemd {
-unsigned int * E4Recv_634850::sub_634850(unsigned int * a2)
+unsigned int * ObjectClass::sub_634850(unsigned int * a2)
 {
 
   int *ScenarioClassActionCoords; // eax
@@ -4239,7 +4245,7 @@ unsigned int * E4Recv_634850::sub_634850(unsigned int * a2)
 
 // 0x634880
 namespace gamemd {
-unsigned int * E4Recv_634880::sub_634880(unsigned int * a2, int a3)
+unsigned int * ObjectClass::sub_634880(unsigned int * a2, int a3)
 {
 
   unsigned int *ScenarioClassActionCoords; // eax
@@ -4263,7 +4269,7 @@ unsigned int * E4Recv_634880::sub_634880(unsigned int * a2, int a3)
 
 // 0x6348F0
 namespace gamemd {
-unsigned int * E4Recv_6348F0::sub_6348F0(unsigned int * a2)
+unsigned int * ObjectClass::sub_6348F0(unsigned int * a2)
 {
 
   unsigned int *ScenarioClassActionCoords; // eax
@@ -4307,7 +4313,7 @@ char E4Recv_634960::sub_634960()
 
 // 0x635210
 namespace gamemd {
-int E4Recv_635210::sub_635210()
+int ObjectClass::sub_635210()
 {
 
   int result; // eax
@@ -4527,7 +4533,7 @@ namespace gamemd {
 ObjectClass * E4Recv_636110::ReadPointerFromECX2()
 {
 
-  return (int)this->AbstractClass; /*0x636112*/
+  return (int)*(unsigned int *)&this->vfptr; /*0x636112*/
 
 }
 } // namespace gamemd

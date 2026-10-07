@@ -134,6 +134,8 @@ struct OwnedTiberiumStruct
     float amount4;
 };
 
+#ifndef GAMEMD_G2_HouseClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_HouseClass_DEF 1
 class HouseClass : public AbstractClass
 {
     int getMovementSpeed(int, ...); // vtable slot +32
@@ -831,6 +833,7 @@ void Update_TogglePower(double);  // 0x4F8440
     // === FUNCS-MOVE (END) ===
     unsigned int u32_1E0;  // +0x1E0 (ml flat supply)
 };
+#endif  // GAMEMD_G2_HouseClass_DEF
 
 
 } // namespace gamemd

@@ -102,6 +102,9 @@ struct ParticleTypeClass {
     void* q2B4;  // 0x2B4
     void* q2E4;  // 0x2E4
     unsigned int ParticleTypeClass_field_0x2B4;  // 0x2B4
+    int ParticleTypeClass_field_0x2B8;  // 0x2B8 (G57W14E1 til supply)
+    int ParticleTypeClass_field_0x2BC;  // 0x2BC (G57W14E1 til supply)
+    char __pad_2C0[8];  // 0x2C0 (G57W14E1 til supply)
     bool q300;  // 0x300
     bool Translucent;  // 0x302
     Color * q308;  // 0x308

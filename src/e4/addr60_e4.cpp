@@ -34,6 +34,18 @@
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/SymbolTable_e4.hpp"  // G57w10 D supply
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int sub_6B9450(...); }
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int UI_Get_60B350(...);  // raw 0060B350: BOOL __thiscall UI_Get_60B350(ObjectClass *this)
+    int UI_Get_60B420(...);  // raw 0060B420: BOOL __thiscall UI_Get_60B420(ObjectClass *this)
+    int UI_Get_60B550(...);  // raw 0060B550: BOOL __thiscall UI_Get_60B550(ObjectClass *this)
+    int UI_Get_60B610(...);  // raw 0060B610: BOOL __thiscall UI_Get_60B610(ObjectClass *this)
+    int UI_Get_60B7A0(...);  // raw 0060B7A0: char __thiscall UI_Get_60B7A0(ObjectClass *this)
+    int VtableStub_72D450(...);  // raw 0072D450: int VtableStub_72D450()
+    int VtableStub_72E280(...);  // raw 0072E280: int VtableStub_72E280()
+} // namespace gamemd
 
 // 0x600750
 namespace gamemd {
@@ -1362,11 +1374,11 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
   {
     if ( DlgCtrlID == 1770 ) /*0x603791*/
     {
-      return (gamemd::AbstractClass **)(UI_Helper_72DAC0(); /*0x603793*/);
+      return (gamemd::AbstractClass **)(UI_Helper_72DAC0()) /*0x603793*/;
     }
     else if ( DlgCtrlID == 1772 ) /*0x6037bd*/
     {
-      return (gamemd::AbstractClass **)(UI_Helper_72DAD0(); /*0x6037bf*/);
+      return (gamemd::AbstractClass **)(UI_Helper_72DAD0()) /*0x6037bf*/;
     }
   }
   else if ( v4 == 259 || v4 == 3015 ) /*0x6037d6*/
@@ -1376,7 +1388,7 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
   }
   else if ( v4 == 196 && DlgCtrlID == 1961 ) /*0x6037f7*/
   {
-    return (gamemd::AbstractClass **)(UI_Helper_72CC80(); /*0x6037f9*/);
+    return (gamemd::AbstractClass **)(UI_Helper_72CC80()) /*0x6037f9*/;
   }
   return (gamemd::AbstractClass **)(result);
 }
@@ -3708,7 +3720,7 @@ int RepositionDialogControls(HWND hWnd, HWND a2)
 }
 // 0x60C4A0
 namespace gamemd {  // G42.18c ns repair
-int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *a2)
+int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *lParam)
 {
 
   MoveWindow((HWND)(hWndParent), 0, 0, g_DisplayWidth, *(&g_DisplayWidth + 1), 0); /*0x60c4ba*/
@@ -3994,7 +4006,7 @@ namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
 
-  return (int)this->AbstractClass; /*0x600662*/
+  return (int)*(unsigned int *)&this->vfptr; /*0x600662*/
 
 }
 } // namespace gamemd

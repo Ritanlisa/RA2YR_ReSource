@@ -47,9 +47,16 @@
 #include "e4/classes/PtrVector_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/MapPreview_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GDlg_e4.hpp"  // G57w10 D supply
 #include "e4/classes/StartCombo_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int HideSkirmishSpawnLocations(...);  // raw 006AE080: void __fastcall HideSkirmishSpawnLocations(HWND hDlg, int a2)
+    int SetupSkirmishSpawnLocationEntry(...);  // raw 006ADC20: int __fastcall SetupSkirmishSpawnLocationEntry(HWND hDlg, int nIDDlgItem)
+    int VtableStub_72E280(...);  // raw 0072E280: int VtableStub_72E280()
+} // namespace gamemd
 
 // 0x46F600
 namespace gamemd {
@@ -1047,7 +1054,7 @@ LABEL_44:
   ((Surface *)((Surface *)v49))->LoadToSurfaceSHP( (char *)(ExistingFileName)); /*0x6aeee0*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x6aeeeb*/
 LABEL_92:
-    ((Session*)(HWND)((Session *)hWnd))->PrepareGame(); /*0x6aeef2*/
+    ((Session*)(HWND)((Session *)hWnd))->PrepareGame((HWND)((Session *)hWnd)); /*0x6aeef2*/
   return 0; /*0x6aeef7*/
 
 }

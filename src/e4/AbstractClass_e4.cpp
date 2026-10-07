@@ -40,6 +40,9 @@
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/MPBattleClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fwd decl: nullsub_3 def at addr41_e4.cpp (void nullsub_3(AbstractClass * aP0)); raw 0x7259aa
+namespace gamemd { void nullsub_3(AbstractClass * aP0); }
+
 struct Type;  // fix_tu_missing_types
 
 // 0x438E70
@@ -57,7 +60,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   unsigned int *vtable1; // edx
   unsigned int v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)&aP1->u32_B0))( (void *)(aP1)) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
+  if ( aP1 && (*(int (**)(void *))(*(unsigned int *)&aP1->suspendedMission))( (void *)(aP1)) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
   {
     v4 = (AbstractClass *)__2_YAPAXI_Z(0x5Cu); /*0x438eaf*/
     v5 = v4; /*0x438eb4*/
@@ -166,11 +169,11 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 
 // 0x4FB9B0
 namespace gamemd {
-VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, void * a3, void * a4, void * a5)
+VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, void * p_vtable0, void * a4, void * a5)
 {
+  AbstractClass *v6; // ebp
   p_vtable0 = &v6->vtable1; /*0x4fba45*/
   int v5; // ecx
-  AbstractClass *v6; // ebp
   int v7; // esi
   int v8; // eax
   int v9; // ecx
@@ -403,7 +406,7 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
   int v11; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
-  result = (unsigned int)(&dbl_ABECE0)); /*0x5c03d0*/
+  result = (unsigned int)(&dbl_ABECE0); /*0x5c03d0*/
   if ( &dbl_ABECE0 ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Alternate), 0); /*0x5c03ea*/
@@ -618,10 +621,10 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
     for ( k = dword_8A0218 - 1; k >= 0; --k ) /*0x725981*/
       ((DiskLaserClass *)(*((DiskLaserClass **)dword_8A020C + k)))->PointerGotInvalid((int)aP0); /*0x72598d*/
     if ( v4 == 15 || v4 == 1 || v4 == 2 ) /*0x7259a2*/
-      nullsub_3((int)aP0); /*0x7259aa*/
+      nullsub_3(aP0); /*0x7259aa*/
     ((AbstractClass *)(aP0))->processRadarEvent(); /*0x7259b1*/
     if ( g_TacticalClass_Instance ) /*0x7259be*/
-(*(void ((LPPERSISTSTREAM)(**))(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0))( /*0x7259c5*/ g_TacticalClass_Instance, (AbstractClass *)(aP0), 1);
+(*(void (__thiscall **)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0))( /*0x7259c5*/ g_TacticalClass_Instance, (AbstractClass *)(aP0), 1);
 
 
 
@@ -2099,7 +2102,7 @@ namespace gamemd {
 int AbstractClass::checkTeamObjective()
 {
 
-  return (int)this->RAMFileClass_field_0x10; /*0x65c4a3*/
+  return (int)this->uniqueId; /*0x65c4a3*/
 
 }
 } // namespace gamemd

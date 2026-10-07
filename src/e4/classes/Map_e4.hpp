@@ -6,6 +6,7 @@
 namespace gamemd {
 
 struct Map {
+    static int CanScroll(void *a1);  // [w14e3] raw 0x4F28B0 BOOL __thiscall Map::CanScroll
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     int Width;  // 0x4

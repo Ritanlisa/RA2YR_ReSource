@@ -63,6 +63,10 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int InitializeDialogControls(...);  // raw 0060F4B0: char __fastcall InitializeDialogControls(HWND a1, LPARAM a2)
+} // namespace gamemd
 
 // 0x620050
 namespace gamemd {
@@ -1304,7 +1308,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     {
       v22 = *(unsigned short *)aP2; /*0x622efb*/
       DialogClass::RegisterWinClasses(); /*0x622efe*/
-      v23 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x622f03*/
+      v22 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x622f03*/
       dword_AC48A8 = (int)aP0; /*0x622f09*/
       EnumChildWindows((HWND)(aP0), Dialog::InitWindow, 1); /*0x622f17*/
       Dialog::InitWindow((int)(aP0), 1); /*0x622f1c*/
@@ -1329,8 +1333,8 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
         hWnda[1] = (HWND)480; /*0x622fb4*/
         ResizeDialogAndEnum( (void *)((void *)(aP0)), (void *)((LPARAM)hWnda)); /*0x622fbe*/
   LABEL_48:
-        v23(aP0, Dialog::HandleTabKey, 0); /*0x623071*/
-        v23(aP0, Dialog::DispatchEvent, 0); /*0x623081*/
+        v22(aP0, Dialog::HandleTabKey, 0); /*0x623071*/
+        v22(aP0, Dialog::DispatchEvent, 0); /*0x623081*/
         ((Dialog *)aP0)->RestoreParent(); /*0x623085*/
         SetFocus((HWND)(aP0)); /*0x62308b*/
         return 0; /*0x62309a*/
@@ -1351,7 +1355,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       UI_Helper_60C930((::gamemd::ObjectClass *)(aP0)); /*0x62301d*/
       UI_Helper_60CCC0((::gamemd::ObjectClass *)(aP0)); /*0x623024*/
       UI_Helper_60CDB0((::gamemd::ObjectClass *)(aP0)); /*0x62302b*/
-      v23 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x623030*/
+      v22 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x623030*/
       EnumChildWindows((HWND)(aP0), GadgetClass::FindByWindow, 0); /*0x62303d*/
       if ( (uint8_t)((Control *)aP0)->CheckControlTypeDialog() ) /*0x623041*/
         goto LABEL_41; /*0x623048*/
@@ -1434,7 +1438,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
   if ( v13 ) /*0x622d2e*/
   {
     v15 = (uint16_t)v10 | ((uint16_t)v11 << 16); /*0x622d43*/
-    v16 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622d45*/
+    v15 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622d45*/
     v17 = SendMessageA( (HWND)(v13), 0x4E8u, 0, (LPARAM)((LPARAM)(v15))); /*0x622d54*/
     UI_Assign(&lParam, aP0, v13, v17); /*0x622d5e*/
     WideString::AssignFromPtr((const wchar_t **)((const wchar_t)(&lParam))); /*0x622d6c*/
@@ -1472,10 +1476,10 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
   }
   else
   {
-    v16 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622e67*/
+    v15 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622e67*/
   }
   v21 = WideString::GetOrEmpty_Alt( (void *)(&aP2)); /*0x622e71*/
-  v16(hWnda[0], 0x4B2u, 0, v21); /*0x622e83*/
+  v15(hWnda[0], 0x4B2u, 0, v21); /*0x622e83*/
   ((DeleteAndZero*)&aP2)->Alt(); /*0x622e89*/
   return 0; /*0x622ba9*/
 }
@@ -1507,7 +1511,7 @@ void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
 }
 // 0x623730
 namespace gamemd {
-unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
+unsigned int * ObjectClass::sub_623730(unsigned int * a2)
 {
 
   TagClass *attachedTag; // edx

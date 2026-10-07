@@ -922,7 +922,7 @@ long long SlaveManagerClass::Calc2DDistance()
   int vtable0_high; // [esp+8h] [ebp-4h]
   int vtable0_low; // [esp+8h] [ebp-4h]
 
-  vtable0_high = SHIWORD(this->AbstractClass); /*0x6b1a78*/
+  vtable0_high = SHIWORD(*(unsigned int *)&this->vtable1); /*0x6b1a78*/
   __asm { fild [esp+0Ch+var_4] } /*0x6b1a7f*/
   vtable0_low = SLOWORD(this->AbstractClass); /*0x6b1a83*/
   __asm /*0x6b1a87*/

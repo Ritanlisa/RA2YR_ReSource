@@ -7,6 +7,8 @@
 namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_G2_Buffer_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_Buffer_DEF 1
 struct Buffer {
 // --- flat members (BEGIN) ---
     void *q0;  // 0x0
@@ -70,5 +72,6 @@ struct Buffer {
 
     unsigned int u32_748;  // G42.39 data supply
 };
+#endif  // GAMEMD_G2_Buffer_DEF
 
 } // namespace gamemd

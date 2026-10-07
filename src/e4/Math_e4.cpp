@@ -399,7 +399,7 @@ unsigned int * Math::Sub16(unsigned int *aP1, unsigned short *aP2)
 
   LOWORD(aP2) = *(unsigned short *)this->__pad_0 - *aP2; /*0x5b295a*/
   *aP1 = aP2; /*0x5b2967*/
-  return (unsigned int *)((IUnknown *)(aP1); /*0x5b2969*/);
+  return (unsigned int *)((IUnknown *)(aP1)) /*0x5b2969*/;
 
 }
 } // namespace gamemd

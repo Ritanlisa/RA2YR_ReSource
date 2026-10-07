@@ -56,7 +56,12 @@
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ComputeModularInverse(...);  // raw 005C80A0: int __thiscall ComputeModularInverse(ObjectClass *this, _WORD *a2, int a3)
+} // namespace gamemd
 
 // 0x5C00E0
 namespace gamemd {
@@ -2963,7 +2968,7 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
 }
 // 0x5CE0C0
 namespace gamemd {
-int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
+int ObjectClass::sub_5CE0C0(int a2, unsigned int * a3)
 {
 
   int nextArrayIndex; // edi
@@ -3107,7 +3112,7 @@ namespace gamemd {
 void E4Recv_5C0630::sub_5C0630()
 {
 
-  *this = (MovieHandle)&vt_MovieHandle; /*0x5c0630*/
+  *this = (unsigned int)&vt_MovieHandle; /*0x5c0630*/
 
 }
 } // namespace gamemd
@@ -3967,7 +3972,7 @@ unsigned int E4Recv_5C8470::sub_5C8470()
   unsigned int result; // eax
 
   result = (((((LOWORD(g_MissionQueueFrame.localVariables[711]) /*0x5c84f0*/
-              * (unsigned int)(uint16_t)~LOWORD(this->AbstractClass)) >> 1)
+              * (unsigned int)(uint16_t)~LOWORD(*(unsigned int *)&this->vfptr)) >> 1)
             + ((((LOWORD(&dword_ABED90)
                 * ((unsigned int)(uint16_t)~*((unsigned short *)this - 2) + 1)) >> 1)
               + (((uint16_t)~*((unsigned short *)this - 1)
@@ -3976,7 +3981,7 @@ unsigned int E4Recv_5C8470::sub_5C8470()
               + 1) >> 16)
             + (((uint16_t)~*((unsigned short *)this - 1) * (unsigned int)LOWORD(&dword_ABED90)) >> 1)
             + 1) >> 14)
-          + 2 * LOWORD(&dword_ABED90) * (uint16_t)~LOWORD(this->AbstractClass)) >> SLOBYTE(&dword_ABEE14);
+          + 2 * LOWORD(&dword_ABED90) * (uint16_t)~LOWORD(*(unsigned int *)&this->vfptr)) >> SLOBYTE(&dword_ABEE14);
   if ( result >= 0xFFFF ) /*0x5c84f7*/
     return 0xFFFF; /*0x5c84f9*/
   return result; /*0x5c84ea*/
@@ -4543,11 +4548,11 @@ DWORD E4Recv_5CAF70::sub_5CAF70()
   if ( QueryPerformanceFrequency(&Frequency) ) /*0x5caf7b*/
   {
     result = Frequency.LowPart; /*0x5caf89*/
-    this->AbstractClass = (void *)Frequency.HighPart; /*0x5caf8d*/
+    *(unsigned int *)&this->vfptr = (void *)Frequency.HighPart; /*0x5caf8d*/
   }
   else
   {
-    this->AbstractClass = 0; /*0x5caf94*/
+    *(unsigned int *)&this->vfptr = 0; /*0x5caf94*/
     return 0; /*0x5caf9a*/
   }
   return result; /*0x5caf8f*/

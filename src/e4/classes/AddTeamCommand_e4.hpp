@@ -13,7 +13,7 @@ struct AddTeamCommand {
     unsigned int *m_1;
     unsigned int AddTeamCommand_field_00;
 // --- flat members (END) ---
-    _DWORD * Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
+    static _DWORD * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x5360B0 _DWORD *__thiscall AddTeamCommand::Construct(AddTeamCommand *this, int a2)
     char * AddRef();
     wchar_t * Release();
     wchar_t * ddtor();

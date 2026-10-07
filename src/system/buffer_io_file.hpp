@@ -5,6 +5,8 @@
 namespace gamemd
 {
 
+#ifndef GAMEMD_G2_BufferIOFileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_BufferIOFileClass_DEF 1
 class BufferIOFileClass : public RawFileClass
 {
 public:
@@ -50,5 +52,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Seek();  // 0x473BA0
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_G2_BufferIOFileClass_DEF
 
 } // namespace gamemd

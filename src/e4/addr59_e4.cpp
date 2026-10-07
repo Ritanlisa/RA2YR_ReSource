@@ -53,10 +53,16 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/MapResourceClass_e4.hpp"
 #include "e4/classes/MiniMap_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TileSystem_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MapPreview_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int PlaceNeutralBuilding(...);  // raw 00595400: char __thiscall PlaceNeutralBuilding(TechnoClass *this)
+    int PlaceRandomWaypoints(...);  // raw 00594870: void __thiscall PlaceRandomWaypoints(ObjectClass *this, int a2)
+} // namespace gamemd
 
 // 0x5904B0
 namespace gamemd {

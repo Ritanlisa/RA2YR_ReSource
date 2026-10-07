@@ -282,6 +282,7 @@ struct FootClass {
     char audioController7[20];  // 0x544
     AbstractClass* q5B0;  // 0x5B0
     unsigned char q5B8;  // 0x5B8
+    int nextTeamMember;  // 0x5D8 (G57W14E1 til supply)
     char pathDirections[96];  // 0x5E0
     bool gapSuperCharged;  // 0x616
     ILocomotion* Locomotor;  // 0x674

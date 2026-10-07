@@ -48,6 +48,25 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] Matrix3D supply: verbatim struct from src/core/math.hpp (gamemd), cpp-local carrier
+namespace gamemd {
+struct Matrix3D
+{
+    float Data[12] = {};  // data: 0x840b4c
+    unsigned char __pad_0;  // 0x0
+    unsigned int q080;  // 0x80
+    unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
+    unsigned int u32_8;   // 0x8 (raw fld [esi+8])
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_28;  // 0x28
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor(float a1, float a2);  // 0x5AE6F0
+    void RotateZ(float a1);  // 0x5AF080
+    // --- gap2 auto-generated stub declarations (END) ---
+};
+} // namespace gamemd
+
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int algn_7E7B29;  // data: 0x7e7b29 truth(IDA G42.57w9)
 

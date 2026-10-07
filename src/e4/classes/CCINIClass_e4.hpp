@@ -11,6 +11,8 @@ namespace gamemd {
 struct AITriggerTypeClass;  // fix_fwd_type_supply
 struct MultiplayerGameMode;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_E4_CCINIClass  // G42.57w14 twin-guard (decoupled from INIClass macro; first-include wins)
+#define GAMEMD_E4_CCINIClass 1
 struct CCINIClass {
     static int LoadAndVerifyDigest(void *aP1, int a2, char a3, char a4);  // 0x474320 raw: int LoadAndVerifyDigest(int*, int, char, char)
 
@@ -57,5 +59,6 @@ CCINIClass();
     void Constructor();
     int BuildChecksum(char * Buffer);
 };
+#endif  // GAMEMD_E4_CCINIClass
 
 } // namespace gamemd

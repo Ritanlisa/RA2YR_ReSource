@@ -33,7 +33,7 @@ struct DeployCommandClass {
     void performAction_246();
     char Stub(int a1);
     char Do(int a1);
-    unsigned int * Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1);
+    static unsigned int * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x535C00 _DWORD *__thiscall CreateTeamCommand::Construct(CreateTeamCommand *this, int a2)
     ObjectClass * AddRef(void *a1_1);
     wchar_t * Release(void *a1_1);
     wchar_t * ddtor();
@@ -224,7 +224,7 @@ struct CreateTeamCommand {
     void * performAction_243(rc_ptr_base * Block, char a2);  // 0x538A20
     int performAction_245(char a2, int a3);  // 0x6A6A00
     void performAction_246();  // 0x731060
-    unsigned int * Construct(int a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1);  // 0x535C00
+    static unsigned int * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x535C00 _DWORD *__thiscall CreateTeamCommand::Construct(CreateTeamCommand *this, int a2)  // 0x535C00
     ObjectClass * AddRef(void *a1_1);  // 0x535C20
     CreateTeamCommand * performAction_0(char a2);  // 0x535CD0
     CommandClass * performAction_1(char a2);  // 0x535D00

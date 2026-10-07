@@ -32,6 +32,10 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 #include "core/ida_vtables.h"  // gC_vftable3
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int SearchMIXFile(...);  // raw 005B40B0: void *__fastcall SearchMIXFile(char *Source, char a2)
+} // namespace gamemd
 // gC supply: extern declarations from src/e4/e4_globals_decls.hpp
 extern int FootClass_Array;
 extern int g_BuildingLoadQueue_Array;

@@ -542,7 +542,7 @@ void CellClass::SetWallOwner(int a1, int a5, int a6)
           if ( v6 < i ) /*0x47d282*/
           {
             i = v6; /*0x47d284*/
-            v2 = (*(int (__thiscall **)(int))(v5->q038)(v5); /*0x47d28d*/
+            v2 = (*(int (__thiscall **)(int))(v5->q038))(v5); /*0x47d28d*/
           }
         }
         result = g_BuildingProductionState; /*0x47d28f*/

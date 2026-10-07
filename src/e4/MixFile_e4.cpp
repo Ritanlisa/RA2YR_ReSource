@@ -299,7 +299,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
   v3 = *(unsigned int *)this->__pad_0; /*0x6275a0*/
   if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x6275a6*/
     return 0; /*0x6275ab*/
-  strcpy( (char *)(String), (const char *)(aP1)); /*0x6275d6*/
+  strcpy( (char *)(String), (const char *)(a2)); /*0x6275d6*/
   strcat( (char *)(String), (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
   strcat( (char *)(String), (const char *)(asc_826598)); /*0x62763d*/
   strcat( (char *)(String), (const char *)off_836464); /*0x62766a*/

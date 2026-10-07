@@ -163,7 +163,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 }
 // 0x4A0630
 namespace gamemd {  // G42.18c ns repair
-int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int, int *), int * updated)
+int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int, int *), int * a3)
 {
 
   int v4; // ecx
@@ -171,11 +171,11 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int
   int v6; // eax
   int ConnectionPointClass_field_0x20; // edx
   int v8; // [esp+14h] [ebp-8h] BYREF
-  int updated; // [esp+18h] [ebp-4h]
+  int a3; // [esp+18h] [ebp-4h]
 
   if ( !a2 || !a3 ) /*0x4a0648*/
     return -2147467261; /*0x4a06ec*/
-  updated = (int *)(((AbstractClass *)dword_A8B230)->updateAITimer()); /*0x4a0661*/
+  a3 = (int *)(((AbstractClass *)dword_A8B230)->updateAITimer()); /*0x4a0661*/
   if ( (**a2)(a2, (int)&a1->ConnectionPointClass_field_0x04, &v8) < 0 ) /*0x4a0671*/
     return -2147220990; /*0x4a0675*/
   v4 = *((unsigned int *)a1 + 9); /*0x4a0681*/
@@ -197,8 +197,8 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***)(unsigned int, int
   ConnectionPointClass_field_0x20 = a1->ConnectionPointClass_field_0x20; /*0x4a06b3*/
   *((unsigned int *)a1 + 11) = v6 + 1; /*0x4a06ba*/
   *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6) = v8; /*0x4a06c1*/
-  *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6 + 4) = (unsigned int)(updated); /*0x4a06c9*/
-  *a3 = updated; /*0x4a06d1*/
+  *(unsigned int *)(ConnectionPointClass_field_0x20 + 8 * v6 + 4) = (unsigned int)(a3); /*0x4a06c9*/
+  *a3 = a3; /*0x4a06d1*/
   return 0; /*0x4a0673*/
 
 }

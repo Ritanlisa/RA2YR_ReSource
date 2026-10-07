@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_FileClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_FileClass_DEF 1
 struct FileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -36,5 +38,6 @@ struct FileClass {
     int CloseHandle();  // 0x65cca0
     int OpenWithCDSearch(char *Source); // N_fix R5 supply (cache truth)
 };
+#endif  // GAMEMD_G2_FileClass_DEF
 
 } // namespace gamemd

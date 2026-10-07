@@ -309,7 +309,7 @@ int BuildingQueue::IsCellSuitable(int a2)
       IDA_LOBYTE(result) = 1; /*0x42e793*/
       return result; /*0x42e796*/
     }
-    v4 = (unsigned int)(16 * a2 + this->BuildingQueue_field_0x08)); /*0x42e79f*/
+    v4 = (unsigned int)(16 * a2 + this->BuildingQueue_field_0x08); /*0x42e79f*/
     result = *(unsigned int *)v4; /*0x42e7a2*/
     if ( *(int *)v4 < 0 ) /*0x42e7a7*/
       goto LABEL_9; /*0x42e7a7*/
@@ -1374,7 +1374,7 @@ unsigned short * FrameSnapshot::Init()
 
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91c4*/
     IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91c7*/
-    v2 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644))); /*0x4c91cb*/
+    v2 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644)); /*0x4c91cb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91d1*/
     *((unsigned int *)this + 2) = v2; /*0x4c91d4*/
     *((unsigned short *)this + 10) = 0; /*0x4c91d7*/
@@ -1394,7 +1394,7 @@ unsigned short * FrameSnapshot::InitMax(int a2)
     result = this; /*0x4c91e0*/
     *(unsigned short *)this->__pad_0 = 0; /*0x4c91e4*/
     IDA_LOWORD(this->FrameSnapshot_field_0x04) = 0; /*0x4c91e7*/
-    v3 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644))); /*0x4c91eb*/
+    v3 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644)); /*0x4c91eb*/
     *((unsigned int *)this + 4) = 0; /*0x4c91f1*/
     *((unsigned int *)this + 2) = v3; /*0x4c91f4*/
     *((unsigned short *)this + 10) = 0; /*0x4c91f7*/
@@ -1633,7 +1633,7 @@ int BuildingPlacementClass::Draw(int a2)
 
     if ( !BuildingPlacement::HandleClick((GaugeClass *)this, a2) ) /*0x4e2b5e*/
       return 0; /*0x4e3097*/
-    (*(void (__thiscall **)(void *, int, int, unsigned int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_80)( /*0x4e2b95*/
+    (*(void (__thiscall **)(void *, int, int, unsigned int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_80))( /*0x4e2b95*/
       stru_887598.lineTrailer,
       FoggedObject_DrawVector_field_0x0C,
       this->m_10,
@@ -1861,7 +1861,7 @@ int BuildingPlacementClass::Draw(int a2)
     }
     if ( this->m_2D[0] ) /*0x4e3069*/
       (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 156))((gamemd::TriColorGaugeClass *)(this)); /*0x4e3074*/
-    (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q090)(stru_887598.lineTrailer); /*0x4e3082*/
+    (*(void (__thiscall **)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q090))(stru_887598.lineTrailer); /*0x4e3082*/
     return 1; /*0x4e308a*/
 }
 } // namespace gamemd
@@ -2272,7 +2272,7 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
       *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x67c34d*/
       *((unsigned char *)this + 13) = 1; /*0x67c350*/
     }
-    return (unsigned int *)(this; /*0x67c33d*/);
+    return (unsigned int *)(this) /*0x67c33d*/;
 }
 } // namespace gamemd
 
@@ -2487,7 +2487,6 @@ int TacticalMapClass::ProcessCell(int16_t *a2, int a3)
 
 } // namespace gamemd
 
-}
 // 0x72B530
 namespace gamemd {
 int PaletteManager::Load(int a2)
@@ -2786,7 +2785,7 @@ int VoxelTypeClass::ReadINI(double a2)
       {
         case 0: /*0x73e6ea*/
           if ( !*(unsigned char *)(v9 + 3599) /*0x73e711*/
-            && ((double (__thiscall *)(Class_7F5C70 *))*(unsigned int *)(*(unsigned int *)this + 696)(this) >= 1.0 )
+            && ((double (__thiscall *)(Class_7F5C70 *))*(unsigned int *)(*(unsigned int *)this + 696)))(this) >= 1.0 )
           {
             *((unsigned int *)this + 47) = 2; /*0x73e714*/
             return 1; /*0x73e729*/
@@ -2881,7 +2880,7 @@ int VoxelTypeClass::ReadINI(double a2)
             return 1; /*0x73e97b*/
           if ( UnitClass::ProcessResourceHarvesting((UnitClass *)this) ) /*0x73e987*/
             return 1; /*0x73ee99*/
-          v24 = (unsigned int)(*((unsigned int *)this + 433))); /*0x73e994*/
+          v24 = (unsigned int)(*((unsigned int *)this + 433)); /*0x73e994*/
           *((unsigned char *)this + 1746) = 0; /*0x73e99a*/
           if ( *(unsigned char *)(v24 + 3598) /*0x73e9c4*/
             && ((double (__thiscall *)(Class_7F5C70 *))*(unsigned int *)(*(unsigned int *)this + 696)(this) == 1.0 )

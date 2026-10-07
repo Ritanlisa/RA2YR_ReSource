@@ -208,7 +208,7 @@ void ParasiteClass::DeploySquad()
 
   _ESI = this; /*0x6297fc*/
   v3 = (unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
-  v4 = *(int **)((ParasiteClass*)_ESI)->; /*0x62980d*/
+  v4 = *(int **)((ParasiteClass*)_ESI)->__pad_28 ; /*0x62980d*/
   v48[1] = *v3; /*0x629812*/
   v5 = *(unsigned int *)(v48[1] + 172); /*0x629816*/
   v48[0] = v5; /*0x629822*/
@@ -220,14 +220,14 @@ void ParasiteClass::DeploySquad()
   if ( !v6 || (uint8_t)((Cell*)v6)->IsValidHeight() ) /*0x629854*/
   {
     v10 = *(unsigned int *)(v5 + 368); /*0x629898*/
-    v11 = (unsigned int *)(*(unsigned int *)((ParasiteClass*)_ESI)-> + 1696); /*0x62989e*/
+    v11 = (unsigned int *)(*(unsigned int *)((ParasiteClass*)_ESI)->__pad_28 + 1696); /*0x62989e*/
     *v11 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6298a4*/
     v11[1] = v59; /*0x6298aa*/
     v11[2] = v10; /*0x6298ad*/
     switch ( (unsigned int)*(unsigned char *)(_ESI.v + 1) ) /*0x6298bc*/
     {
       case 0u: /*0x6298bc*/
-        *(unsigned int *)(*(unsigned int *)((ParasiteClass*)_ESI)-> + 808) = 0; /*0x6298c6*/
+        *(unsigned int *)(*(unsigned int *)((ParasiteClass*)_ESI)->__pad_28 + 808) = 0; /*0x6298c6*/
         Index = ((AnimTypeClass *)(&stru_83665C))->FindIndex(); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
@@ -269,7 +269,7 @@ void ParasiteClass::DeploySquad()
           *(unsigned char *)(_ESI.v + 1) = (unsigned int)(gamemd::BuildingClass *)((void *)(3 - (v17 != 0))); /*0x6299ba*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x6299bd*/
           ((BuildingClass *)((BuildingClass *)_ESI))->AnimController(); /*0x6299c0*/
-          ((FootClass *)(*(FootClass **)((Random*)_ESI)->))->CreateWakes(v55, v56, v57); /*0x6299e1*/
+          ((FootClass *)(*(FootClass **)((Random*)_ESI)->__pad_28 ))->CreateWakes(v55, v56, v57); /*0x6299e1*/
         }
         goto LABEL_47; /*0x6299e6*/
       case 2u: /*0x6298bc*/
@@ -293,14 +293,14 @@ LABEL_20:
         }
         Math::SinCos(*(double *)&v48[1]); /*0x629a35*/
         __asm { fmul ds:flt_7EF8F8 } /*0x629a3a*/
-        v18 = *(unsigned int *)((Math*)_ESI)->; /*0x629a40*/
+        v18 = *(unsigned int *)((Math*)_ESI)->__pad_28 ; /*0x629a40*/
         __asm { fstp dword ptr [ecx+328h] } /*0x629a46*/
         *(float *)(v18 + 808) = _ET1; /*0x629a46*/
         goto LABEL_47; /*0x629a4c*/
       case 4u: /*0x6298bc*/
-        *(unsigned int *)(*(unsigned int *)((Math*)_ESI)-> + 808) = 0; /*0x629a59*/
+        *(unsigned int *)(*(unsigned int *)((Math*)_ESI)->__pad_28 + 808) = 0; /*0x629a59*/
         v20 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3024); /*0x629a67*/
-        v45 = *(int16_t *)((ProgressTimer *)((ProgressTimer *)(*(unsigned int *)((Math*)_ESI)-> + 904)))->GetValue(&v50) - 0x3FFF; /*0x629a81*/
+        v45 = *(int16_t *)((ProgressTimer *)((ProgressTimer *)(*(unsigned int *)((Math*)_ESI)->__pad_28 + 904)))->GetValue(&v50) - 0x3FFF; /*0x629a81*/
         __asm /*0x629a85*/
         {
           fild dword ptr [esp+68h+var_5C+4]

@@ -113,7 +113,7 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
       }
       break; /*0x75a06e*/
     case 9: /*0x759fc6*/
-      *a3 = (*(int ((int)(**))(int))(*((unsigned int *)this + 1) + 44))((char *)this + 4); /*0x75a0c1*/
+      *a3 = (*(int (__thiscall **)(int))(*((unsigned int *)this + 1) + 44))((char *)this + 4); /*0x75a0c1*/
 LABEL_13:
       result = 0; /*0x75a0c3*/
       break; /*0x75a0c3*/

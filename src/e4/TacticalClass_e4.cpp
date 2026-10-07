@@ -34,10 +34,15 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/LightningStorm_e4.hpp"
 #include "e4/classes/PsyDom_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/StructTable_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Frame_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Color_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int DrawTechnoDeployCircle(...);  // raw 00456980: char __fastcall sub_456980(char a1, char a2, int a3, int a4, int a5, int a6, float a7, cha
+} // namespace gamemd
 
 // 0x47F510
 namespace gamemd {
@@ -328,7 +333,7 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
       {
         if ( updated == -1 && (!a3 || *(unsigned int *)&dword_A83D4C->__pad_140[204] == -1) ) /*0x4ac786*/
         {
-          vtable0 = (int (**)(TacticalClass *))this->AbstractClass; /*0x4ac788*/
+          vtable0 = (int (**)(TacticalClass *))*(unsigned int *)&this->q000; /*0x4ac788*/
           *((unsigned char *)this + 4531) = 0; /*0x4ac78c*/
           result = (unsigned int *)vtable0[20](this); /*0x4ac793*/
           *((unsigned int *)this + 1135) = 0; /*0x4ac796*/
@@ -343,7 +348,7 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
       }
       else
       {
-        v9 = (void (**)(TacticalClass *))this->AbstractClass; /*0x4ac7c6*/
+        v9 = (void (**)(TacticalClass *))*(unsigned int *)&this->q000; /*0x4ac7c6*/
         *((unsigned char *)this + 4531) = 0; /*0x4ac7ca*/
         v9[20](this); /*0x4ac7d1*/
         result = (unsigned int *)*((unsigned int *)this + 1135); /*0x4ac7d4*/

@@ -38,6 +38,7 @@
 #include "e4/classes/Checksummer_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/Checksum_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/OverlayTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AbstractTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -1631,7 +1632,7 @@ LABEL_6:
     if ( ++v2 >= *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fecc4*/
       goto LABEL_6; /*0x5fecc4*/
   }
-  return (gamemd::OverlayTypeClass **)(*(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2); /*0x5fecdf*/);
+  return (gamemd::OverlayTypeClass **)(*(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2)) /*0x5fecdf*/;
 
 }
 } // namespace gamemd

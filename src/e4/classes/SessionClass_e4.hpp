@@ -87,6 +87,8 @@ struct SessionClass {
     unsigned int q144;  // 0x144
     unsigned int q150;  // 0x150
     unsigned char q154;  // 0x154
+    int unknown_160;  // 0x160 (G57W14E1 til supply)
+    int unknown_16C;  // 0x16C (G57W14E1 til supply)
     char idxSide[4];  // 0x174
     char idxSide2[4];  // 0x178
     char Color[4];  // 0x17C
@@ -107,6 +109,7 @@ struct SessionClass {
     unsigned char q340;  // 0x340
     char q520[4];  // 0x520
     unsigned int u32_690;  // 0x690
+    char unknown_8AA[8034];  // 0x8AA (G57W14E1 til supply)
     unsigned int StartSpots;  // 0x2828
     bool CurrentlyInGame;  // 0x30D8
     unsigned int *__pad_50;

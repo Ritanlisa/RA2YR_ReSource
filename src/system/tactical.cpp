@@ -23,6 +23,10 @@
 #include "render/render_ext.hpp"
 #include "e4/classes/Math_e4.hpp"  // G42.36 C2027 supply
 #include "system/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int DrawToSurfaceSHP(...);  // raw 004AED70: int __fastcall DrawToSurfaceSHP( int a1, int a2, int a3, unsigned int a4, int *a5, int *a6
+} // namespace gamemd
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int globalHelper_0D2ED0;  // 词表 (canon 无条目, int 兜底) L1087
 // ---- g57b5 W6 end ----
@@ -751,7 +755,7 @@ int TacticalClass::DrawTerrainPartial(const RectangleStruct& rect, int a2, int a
   if ( (int)*(&this->abstractFlags6) > 0 && !a4 ) /*0x6d30a2*/
   {
     v28 = 0; /*0x6d30aa*/
-    v5 = &this->q0E4; /*0x6d30be*/
+    v5 = &this->visibleCells; /*0x6d30be*/
     do /*0x6d31d6*/
     {
       Coord_Subtract( /*0x6d310e*/

@@ -34,6 +34,8 @@ struct CellStruct;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorCursor;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_G2_HouseClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_HouseClass_DEF 1
 struct HouseClass {
     static int ClearLowPowerTargets(void *aP1);  // 0x4FC6D0 raw: int __thiscall HouseClass::ClearLowPowerTargets(HouseClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
     static void * ClampToUsableCell(void *aP1, void *a2);  // 0x586E50 raw 3-param (HouseClass*, _DWORD*, __int16*) site 2-arg form  // G57w10 r5 D-classbody supply (raw-anchored)
@@ -102,6 +104,7 @@ struct HouseClass {
     void* q280;  // 0x280
     unsigned int q2A0;  // 0x2A0
     char radarBlackoutTimer[12];  // 0x2B0
+    int unitAltOwner;  // 0x2C8 (G57W14E1 til supply)
     unsigned int aircraftAltOwner;  // 0x2CC
     char poweredUnitCenters[4];  // 0x2D8
     int q300;  // 0x300
@@ -136,6 +139,8 @@ struct HouseClass {
     char preferredDefensiveCell2[4];  // 0x54F8
     char preferredDefensiveCellStartTime[4];  // 0x54FC
     char enemyHouseIndex[4];  // 0x5600
+    int angerNodesCount;  // 0x5608 (G57W14E1 til supply)
+    int scoutNodesCount;  // 0x5614 (G57W14E1 til supply)
     char dropshipData[132];  // 0x5658
     char color[3];  // 0x56E1
     char base[80];  // 0x56E8
@@ -237,6 +242,9 @@ struct HouseClass {
     int HandleAlliance(int a2, char a3);  // 0x4f9b70
     unsigned int * ClearStatArray();  // 0x748fd0
     int SaveToINI(char *a2); // N_fix R5 supply (cache truth)
+    int sub_63CF10();  // 0x63CF10
+    int sub_63CFC0();  // 0x63CFC0
 };
+#endif  // GAMEMD_G2_HouseClass_DEF
 
 } // namespace gamemd

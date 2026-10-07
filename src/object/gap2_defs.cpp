@@ -196,7 +196,7 @@ int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
     *v4 = *v1; /*0x410508*/
     v4[1] = v1[1]; /*0x41050d*/
     v4[2] = v1[2]; /*0x410514*/
-    return (int *)((int)v4; /*0x410510*/);
+    return (int *)((int)v4) /*0x410510*/;
 }
 }
 }
@@ -496,7 +496,7 @@ int ObjectClass::GetCoordsThunk1() {
     unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
     unsigned int *v4; // [esp+14h] [ebp+4h]
 
-    v1 = (unsigned int *)(*(int (__thiscall **)(IUnknown *, unsigned char *))(this->field_0 + 72))(this, v3); /*0x41bdde*/
+    v1 = (unsigned int *)(*(int (__thiscall **)(IUnknown *, unsigned char *))(this->__pad_0 + 72))(this, v3); /*0x41bdde*/
     *v4 = *v1; /*0x41bde8*/
     v4[1] = v1[1]; /*0x41bded*/
     v4[2] = v1[2]; /*0x41bdf4*/
@@ -512,7 +512,7 @@ int ObjectClass::GetCoordsThunk3() {
     unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
     unsigned int *v4; // [esp+14h] [ebp+4h]
 
-    v1 = (unsigned int *)(*(int (__thiscall **)(IUnknown *, unsigned char *))(this->field_0 + 72))(this, v3); /*0x41be3e*/
+    v1 = (unsigned int *)(*(int (__thiscall **)(IUnknown *, unsigned char *))(this->__pad_0 + 72))(this, v3); /*0x41be3e*/
     *v4 = *v1; /*0x41be48*/
     v4[1] = v1[1]; /*0x41be4d*/
     v4[2] = v1[2]; /*0x41be54*/
@@ -934,7 +934,7 @@ int AbstractClass::Construct(_DWORD *a2) {
                  ((char *)&g_BuildingLoadQueue_Array) + ((unsigned int *)&g_BuildingLoadQueue_Array)[2],
                  0) )
           {
-            v8 = (unsigned int)(((unsigned int *)&g_BuildingLoadQueue_Array)[1]++)); /*0x43a8b2*/
+            v8 = (unsigned int)(((unsigned int *)&g_BuildingLoadQueue_Array)[1]++); /*0x43a8b2*/
             *(unsigned int *)(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 4 * v8) = v7; /*0x43a8c1*/
           }
           if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x43a8f8*/

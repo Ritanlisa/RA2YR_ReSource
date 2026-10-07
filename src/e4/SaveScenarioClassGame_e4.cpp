@@ -24,6 +24,10 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/GameOptions_e4.hpp"
 #include "e4/classes/GameState_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int Map_Save_6812C0(...);  // raw 006812C0: int __thiscall Map_Save_6812C0(TechnoClass *this, int a2)
+} // namespace gamemd
 
 // 0x67CEF0
 namespace gamemd {

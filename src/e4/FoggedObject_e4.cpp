@@ -85,12 +85,12 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block,
 
   v3 = *(void **)&this->m_1[3]; /*0x4d2d13*/
   *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x4d2d16*/
-  if ( v3 && BYTE1(this->m_C) ) /*0x4d2d20*/
+  if ( v3 && this->IsAllocated ) /*0x4d2d20*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d28*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4d2d30*/
   }
-  BYTE1(this->m_C) = 0; /*0x4d2d3b*/
+  this->IsAllocated = 0; /*0x4d2d3b*/
   this->m_8 = 0; /*0x4d2d41*/
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
     __3_YAXPAX_Z(this); /*0x4d2d4b*/

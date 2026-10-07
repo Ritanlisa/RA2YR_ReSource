@@ -9,6 +9,10 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/E4Recv_76C6E0_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int SelectionInitializeWOL(...);  // raw 0076C6E0: int __thiscall SelectionInitializeWOL(int this)
+} // namespace gamemd
 
 // 0x76EFE0
 namespace gamemd {

@@ -1575,7 +1575,7 @@ int AudioStream_FillBuffer(int a1, int a2)
   int v10; // eax
   unsigned int *v11; // ecx
   int v12; // edi
-  int (__cdecl *)(int, int, int, int); // eax
+  int (__cdecl *v13)(int, int, int, int); // eax
   int result; // eax
   int v15; // eax
   int v16; // eax
@@ -3708,7 +3708,7 @@ int E4Recv_7BF0B0::sub_7BF0B0()
   void (__cdecl *)(TechnoClass *, int, int, int); // eax
   int v4; // eax
   void (__cdecl *)(TechnoClass *, int, char *, int); // eax
-  int (__cdecl *)(TechnoClass *, int); // eax
+  int (__cdecl *v6)(TechnoClass *, int); // eax
 
   v2 = (int *)*((unsigned int *)this + 439); /*0x7bf0b4*/
   if ( (v2[5] & 4) != 0 || (this->ironTintTimer[2] & 1) != 0 ) /*0x7bf0c9*/
@@ -3774,8 +3774,8 @@ int E4Recv_7BF190::sub_7BF190()
   unsigned int *v2; // edi
   void (__cdecl *)(TechnoClass *, int, unsigned int, unsigned int); // eax
   int v4; // eax
-  void (__cdecl *)(TechnoClass *, int, char *, int); // eax
-  int (__cdecl *)(TechnoClass *, unsigned int); // eax
+  void (__cdecl *v5)(TechnoClass *, int, char *, int); // eax
+  int (__cdecl *v6)(TechnoClass *, unsigned int); // eax
 
   v2 = (unsigned int *)*((unsigned int *)this + 439); /*0x7bf194*/
   if ( (v2[5] & 4) != 0 || (this->ironTintTimer[2] & 1) != 0 ) /*0x7bf1a9*/

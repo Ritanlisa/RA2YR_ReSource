@@ -34,6 +34,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x48B390
@@ -205,8 +206,8 @@ int EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigne
     *(unsigned int *)this = a3; /*0x4c6b22*/
     *(unsigned int *)&this->q007 = a4; /*0x4c6b24*/
     *(unsigned int *)&this->u32_F = arg10; /*0x4c6b27*/
-    *(unsigned short *)&this->q013 = *a6; /*0x4c6b2d*/
-    *(unsigned short *)&this->q015 = a6[1]; /*0x4c6b35*/
+    *(unsigned short *)&this->__pad_0 = *a6; /*0x4c6b2d*/
+    *(unsigned short *)&this->__pad_0 = a6[1]; /*0x4c6b35*/
     *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c6b3f*/
     return (int)(this); /*0x4c6b42*/
   }

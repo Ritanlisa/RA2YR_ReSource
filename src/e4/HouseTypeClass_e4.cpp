@@ -606,34 +606,34 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * a2)
       return &this->vtable1; /*0x51337a*/
     (*((void (**)(HouseTypeClass *))this->vtable1 + 3))(this); /*0x51337e*/
     v3 = (void *)a2[2]; /*0x513381*/
-    this->? = v3; /*0x513386*/
+    this->vtable3 = v3; /*0x513386*/
     if ( !v3 ) /*0x513389*/
     {
-      this->? = 0; /*0x5133ca*/
-      IDA_BYTE1(this->?) = 0; /*0x5133d1*/
+      this->vtable2 = 0; /*0x5133ca*/
+      IDA_BYTE1(this->vtable4) = 0; /*0x5133d1*/
       return &this->vtable1; /*0x5133d5*/
     }
     v4 = (void *)RA2_OPNEW(4 * (unsigned int)v3); /*0x513393*/
-    this->? = v4; /*0x51339b*/
+    this->vtable2 = v4; /*0x51339b*/
     if ( !v4 ) /*0x5133a0*/
       return &this->vtable1; /*0x5133a0*/
-    vtable2 = this->u32_8; /*0x5133a2*/
+    vtable2 = *(unsigned int *)&this->vtable3; /*0x5133a2*/
     v6 = 0; /*0x5133a5*/
-    IDA_BYTE1(this->?) = 1; /*0x5133a9*/
+    IDA_BYTE1(this->vtable4) = 1; /*0x5133a9*/
     if ( (int)vtable2 <= 0 ) /*0x5133ad*/
       return &this->vtable1; /*0x5133ad*/
     do /*0x5133c1*/
     {
-      *((unsigned int *)this->? + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x5133b8*/
+      *((unsigned int *)this->vtable3 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x5133b8*/
       ++v6; /*0x5133be*/
     }
-    while ( v6 < (int)this->? ); /*0x5133c1*/
+    while ( v6 < (int)this->vtable3 ); /*0x5133c1*/
     return &this->vtable1; /*0x5133c5*/
 }
 }
 // 0x67B8F0
 namespace gamemd {
-void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5)
+void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass * a3, unsigned char * a4, unsigned int * a5)
 {
     char *i; // eax
     int v7; // edi
@@ -653,7 +653,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     int v22; // [esp+20h] [ebp-88h]
     char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-    if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, String, 128) ) /*0x67b91c*/
+    if ( INIClass::GetString((INIClass *)a4, a3, a4, &g_INI_DefaultBuffer, String, 128) ) /*0x67b91c*/
     {
       ((AircraftTypeVector *)((int)(&v17)))->Constructor((int)((AircraftTypeVector *)((int)(&v17))), 0, 0); /*0x67b931*/
       v22 = 10; /*0x67b93a*/

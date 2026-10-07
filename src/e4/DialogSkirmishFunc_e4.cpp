@@ -25,6 +25,10 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int SetupSkirmishSpawnLocationEntry(...);  // raw 006ADC20: int __fastcall SetupSkirmishSpawnLocationEntry(HWND hDlg, int nIDDlgItem)
+} // namespace gamemd
 
 // 0x6ACEE0
 namespace gamemd {
@@ -142,7 +146,7 @@ LABEL_151:
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = (unsigned int)(Formatc);
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = (unsigned int)(v60);
             LoadScenarioClassByIndex((int)v60);
-            ((Session*)(HWND)hWnd)->PrepareGame();
+            ((Session*)(HWND)hWnd)->PrepareGame((HWND)hWnd);
             ShowWindow((HWND)hWnd, 5);
             if ( ((IsRandMap*)*(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[31616]
                                           + 4 * *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960]))->Sed() )
@@ -160,13 +164,13 @@ LABEL_151:
               *(&g_MatrixTransformState + 2257) = (int)((CoordStruct *)v63);
               ((Surface *)((char **)v63))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
               if ( !(*(&g_MatrixTransformState + 2257))->X )
-                ((Session*)(HWND)hWnd)->PrepareGame();
+                ((Session*)(HWND)hWnd)->PrepareGame((HWND)hWnd);
               InvalidateRect((HWND)hWnd, 0, 0);
               InvalidateRect((HWND)hWnd, 0, 0);
             }
             else
             {
-              ((Session*)(HWND)hWnd)->PrepareGame();
+              ((Session*)(HWND)hWnd)->PrepareGame((HWND)hWnd);
               InvalidateRect((HWND)hWnd, 0, 0);
             }
           }
@@ -207,12 +211,12 @@ LABEL_151:
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
                 if ( !*(unsigned int *)v67->__pad_0 )
-                  ((Session*)(HWND)hWnd)->PrepareGame();
+                  ((Session*)(HWND)hWnd)->PrepareGame((HWND)hWnd);
                 InvalidateRect((HWND)hWnd, 0, 0);
               }
               else
               {
-                ((Session*)(HWND)hWnd)->PrepareGame();
+                ((Session*)(HWND)hWnd)->PrepareGame((HWND)hWnd);
               }
             }
             else

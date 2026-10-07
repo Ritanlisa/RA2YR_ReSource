@@ -13,7 +13,7 @@ struct CenterTeamCommand {
     unsigned int *m_1;
     unsigned int CenterTeamCommand_field_00;
 // --- flat members (END) ---
-    _DWORD * Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
+    static _DWORD * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x5361A0 _DWORD *__thiscall CenterTeamCommand::Construct(CenterTeamCommand *this, int a2)
     char * AddRef();
     wchar_t * Release();
 };

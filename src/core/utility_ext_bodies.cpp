@@ -42,7 +42,7 @@ int GraphicMenuImageItem::QueryInterface(char a2)
     ObjectClass *v3; // edi
 
     v3 = (ObjectClass *)*((unsigned int *)this + 12); /*0x4f3844*/
-    *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&GraphicMenuImageItem_vftable; /*0x4f3847*/
+    *(unsigned int *)&this->vtable1 = (unsigned int)(void *)&GraphicMenuImageItem_vftable; /*0x4f3847*/
     if ( v3 ) /*0x4f384f*/
     {
       j_DeleteAndZero(v3); /*0x4f3853*/
@@ -61,9 +61,9 @@ void StringVector::Add(unsigned int a2)  // g57b5 W4: raw 真值补参 (a2)
     int m_8; // edx
     unsigned int *i; // ecx
 
-    if ( !IDA_LOBYTE(this->m_C) ) /*0x49ef40*/
+    if ( !IDA_LOBYTE(this->StringVector_field_0x0C) ) /*0x49ef40*/
       return 0; /*0x49ef48*/
-    m_8 = this->m_8; /*0x49ef4e*/
+    m_8 = this->StringVector_field_0x08; /*0x49ef4e*/
     result = 0; /*0x49ef51*/
     if ( m_8 <= 0 ) /*0x49ef55*/
       return -1; /*0x49ef6c*/

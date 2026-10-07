@@ -92,6 +92,11 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Straw_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int DlgProcLoadGame_Load(...);  // raw 006967B0: int __thiscall DlgProcLoadGame_Load(ObjectClass *this)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aBasic_0[];  // data: 0x83f488 truth(IDA G42.57w9)
 extern char aDigest_0[];  // data: 0x83f440 truth(IDA G42.57w9)
@@ -124,7 +129,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( dword_887640) /*0x69046f*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x69047c*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))( /*0x69047c*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
@@ -535,7 +540,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v34 = v40; /*0x69459b*/
     v35 = 1800; /*0x69459f*/
     v41 = 1800; /*0x6945ad*/
-    ((gamemd::Debug *)this->this)->Log("Received file chunk %d\n"); /*0x6945b1 G57w12: IDA push seq @ 0x6945b1 +1 reg-vararg omitted*/
+    ((gamemd::Debug *)this)->Log("Received file chunk %d\n"); /*0x6945b1 G57w12: IDA push seq @ 0x6945b1 +1 reg-vararg omitted*/
     qmemcpy((char *)lpBuffer + 192 * *((uint16_t *)v6 + 12), v6 + 28, *((uint16_t *)v6 + 13)); /*0x6945dd*/
     if ( a4 ) /*0x6945eb*/
     {
@@ -557,7 +562,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v19 = v35; /*0x694629*/
     if ( Ticks != -1 ) /*0x694634*/
     {
-      v20 = ((gamemd::Timer *)this->this)->GetTicks() - Ticks; /*0x69463f*/
+      v20 = ((gamemd::Timer *)this)->GetTicks() - Ticks; /*0x69463f*/
       if ( v20 >= v19 ) /*0x694645*/
         goto LABEL_53; /*0x694645*/
       v19 -= v20; /*0x694647*/
@@ -566,7 +571,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
       goto LABEL_53; /*0x69464b*/
   }
   MessageLoop(); /*0x6943a3*/
-  ((gamemd::Event *)this->this)->Dispatch(); /*0x6943a8*/
+  ((gamemd::Event *)this)->Dispatch(); /*0x6943a8*/
   v29 = 487; /*0x6943c2*/
   if ( !((Network *)((Network *)&unk_A8E9C0))->Send((int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/
@@ -1427,7 +1432,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v27.headNode[0] = 0; /*0x6996a2*/
               v27.headNode[1] = 0; /*0x6996a9*/
               ((INISectionList *)(&v27.headNode[2]))->Constructor(); /*0x6996b0*/
-              Node::Init((Node *)&v27.__pad_20[8]); /*0x6996bc*/
+              Node_flat::Init((Node_flat *)&v27.__pad_20[8]); /*0x6996bc*/
               v27.INIClass_field_3C = 0; /*0x6996d5*/
               v28 = 0; /*0x6996dc*/
               *(unsigned int *)v27.__pad_0 = (unsigned int)&CCINIClass_Vtable; /*0x6996e3*/
@@ -1441,7 +1446,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v29.headNode[0] = 0; /*0x699737*/
               v29.headNode[1] = 0; /*0x69973e*/
               ((INISectionList *)(&v29.headNode[2]))->Constructor(); /*0x699745*/
-              Node::Init((Node *)&v29.__pad_20[8]); /*0x699751*/
+              Node_flat::Init((Node_flat *)&v29.__pad_20[8]); /*0x699751*/
               *(unsigned int *)v29.__pad_0 = (unsigned int)&CCINIClass_Vtable; /*0x699756*/
               v29.INIClass_field_3C = 0; /*0x699764*/
               v30 = 0; /*0x69976b*/
@@ -1504,7 +1509,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
 }
 // 0x69B690
 namespace gamemd {
-int E4Recv_69B690::sub_69B690()
+int ObjectClass::sub_69B690()
 {
 
   int result; // eax
@@ -1580,7 +1585,7 @@ void sub_69BCC0(ObjectClass * aP0)
 }
 // 0x69F0C0
 namespace gamemd {
-void * E4Recv_69F0C0::sub_69F0C0(void * a2)
+void * ObjectClass::sub_69F0C0(void * a2)
 {
 
   ObjectClass *nextObject; // ebx

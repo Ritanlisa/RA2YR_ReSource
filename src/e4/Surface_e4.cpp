@@ -36,6 +36,11 @@
 #include "e4/classes/Property_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/TextGroup_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int BlitterRLEBlitSHP(...);  // raw 00437A10: char __fastcall BlitterRLEBlitSHP( int a1, CellStruct *a2, int *a3, int a4, _DWORD *a5, in
+    int GenerateImageThumbnail(...);  // raw 006547C0: int *__thiscall GenerateImageThumbnail(float *this, int *a2, int *a3, int *a4, char a5)
+} // namespace gamemd
 
 // 0x411580
 namespace gamemd {

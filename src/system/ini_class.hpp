@@ -48,6 +48,8 @@ struct INILinkNode {
 
 // Generic list base
 // CSP: GenericList matched via T1
+#ifndef GAMEMD_G2_GenericList_DEF  // G42.57w14 twin-guard (shared w/ e4 GenericList carrier; first-include wins)
+#define GAMEMD_G2_GenericList_DEF 1
 struct GenericList {
     void* vtable;
     unsigned int u32_4;   // g57w10 C2039 supply (ml offset 4)
@@ -60,6 +62,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int * Constructor();  // 0x52ACE0  G42.34: ret sync to cache truth (_DWORD* __thiscall)
     // --- gap2 auto-generated stub declarations (END) ---
 };
+#endif  // GAMEMD_G2_GenericList_DEF
 
 // IDA: INIClass @ 0x535AA0 -- size ~0x40 (64 bytes)
 // vtable at 0x7EA5F4
@@ -194,7 +197,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
 // vtable at 0x7E1AF4 (CCINIClass_Vtable)
 // Extends INIClass with CCFileClass integration
-#ifndef GAMEMD_E4_INIClass  // G57w8: e4 flat carrier wins in opt-in TUs (C2011 vs INIClass_e4.hpp; CCINIClass 依赖基类一并让位)
+#if !defined(GAMEMD_E4_INIClass) && !defined(GAMEMD_E4_CCINIClass)  // G42.57w14: decoupled CCINIClass guard
 class CCINIClass : public INIClass {
 public:
     static constexpr size_t kSize = 0x58;

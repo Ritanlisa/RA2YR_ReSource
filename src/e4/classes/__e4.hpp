@@ -7,7 +7,12 @@
 namespace gamemd {
 // G58a2: dedup guard removed - carrier renamed _e4, no longer collides with tree-owned `struct _`
 struct _e4 {
-    void* vfptr;  // minimal E2 declaration
+    void* vfptr;  // 0x0 minimal E2 declaration
+    void* Items;  // 0x4 (G57W14E1 til vector supply)
+    void* Capacity;  // 0x8 (G57W14E1 til vector supply)
+    void* IsInitialized;  // 0xC (G57W14E1 til vector supply)
+    unsigned char IsAllocated;  // 0xD (G57W14E1 til vector supply)
+    void* Count;  // 0x10 (G57W14E1 til vector supply)
     char  AddRef(int a2);  // 0x74F3C0
     char  Release(int a2, unsigned int * a3);  // 0x74F400
     wchar_t * ddtor();  // 0x74F4B0

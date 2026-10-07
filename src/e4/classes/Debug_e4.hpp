@@ -20,8 +20,10 @@ struct Debug {
     char ScrollText(const char *aP1);  // 0x5BD0D0
     int AccumFlags();  // 0x6E61F0
     char Printf();  // 0x5BD1F0
-    static int Log(const char *fmt, ...);  // 0x4068E0 (G57w4: 27+ call sites pass fmt)
+    static int Log();  // 0x4068E0 raw int 无参真身（cdecl stub；0 参调用形态 + Debug_e4.cpp:102 定义匹配）
+    static int Log(const char *fmt, ...);  // 0x4068E0 变参调用形态（G57w4: 100+ call sites pass fmt）
     static void Log_0();  // 0x4A4AC0
-    void Log_0(void *a1_1, void *a2_1);
+    static void Log_0(void *aP1);  // 0x4A4AC0 1参形态（DDraw 0x4a3f8a/0x4a3fac）
+    static void Log_0(void *aP1, void *aP2);  // 0x4A4AC0 2参（DDraw 0x4a3edc static 式；Debug_e4.cpp:114 类外定义匹配）
 };
 } // namespace gamemd

@@ -94,6 +94,7 @@
 #include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Render_e4.hpp"  // G42.36 C2027 supply
@@ -104,6 +105,12 @@
 #include "e4/classes/TeamTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/MiniMap_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ReadAudioEventINI(...);  // raw 00727880: int __thiscall ReadAudioEventINI(INIClass *this)
+    int SaveTriggerTagsToINI(...);  // raw 006E5FE0: int __thiscall SaveTriggerTagsToINI(INIClass *this)
+    int nullsub_34(...);  // raw 00691B30: void nullsub_34()
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aGascloudsys[];  // data: 0x83da90 truth(IDA G42.57w9)
 extern char aHumanPlayer[];  // data: 0x83dc8c truth(IDA G42.57w9)
@@ -1452,7 +1459,7 @@ AbstractClass * * SessionClass_AssignHouses()
   }
   *(unsigned int *)(v26 + 90196) = Network_Assign(g_INI_Key_LightGrey, 53); /*0x68836d*/
 // 0x50b840
-  return (gamemd::AbstractClass **)(HouseClass::GetColor((char *)v26); /*0x688378*/);
+  return (gamemd::AbstractClass **)(HouseClass::GetColor((char *)v26)) /*0x688378*/;
 }
 }
 // 0x6886B0
@@ -2147,7 +2154,7 @@ namespace gamemd {
 int E4Recv_681090::ReadPointerFromECX3()
 {
 
-  return (int)this->AbstractClass; /*0x681092*/
+  return (int)*(unsigned int *)&this->vfptr; /*0x681092*/
 
 }
 } // namespace gamemd
@@ -2174,7 +2181,7 @@ char * E4Recv_681180::sub_681180()
 
 // 0x6811B0
 namespace gamemd {
-char * E4Recv_6811B0::sub_6811B0()
+char * TechnoClass::sub_6811B0()
 {
 
   return (char *)&this->airstrike; /*0x6811b6*/
@@ -2184,7 +2191,7 @@ char * E4Recv_6811B0::sub_6811B0()
 
 // 0x6811F0
 namespace gamemd {
-char * E4Recv_6811F0::sub_6811F0()
+char * TechnoClass::sub_6811F0()
 {
 
   return (char *)&this->spawnOwner; /*0x6811f6*/
@@ -2194,7 +2201,7 @@ char * E4Recv_6811F0::sub_6811F0()
 
 // 0x681220
 namespace gamemd {
-unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
+unsigned int * TechnoClass::sub_681220(unsigned int * a2)
 {
 
   *a2 = this->turretRecoil[0]; /*0x68122a*/
@@ -2206,7 +2213,7 @@ unsigned int * E4Recv_681220::sub_681220(unsigned int * a2)
 
 // 0x681260
 namespace gamemd {
-unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
+unsigned int * TechnoClass::sub_681260(unsigned int * a2)
 {
 
   *a2 = this->turretRecoil[2]; /*0x68126a*/
@@ -2218,7 +2225,7 @@ unsigned int * E4Recv_681260::sub_681260(unsigned int * a2)
 
 // 0x6812A0
 namespace gamemd {
-unsigned int * E4Recv_6812A0::sub_6812A0(unsigned int * a2)
+unsigned int * TechnoClass::sub_6812A0(unsigned int * a2)
 {
 
   *a2 = this->turretRecoil[4]; /*0x6812aa*/

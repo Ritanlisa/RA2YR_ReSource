@@ -259,7 +259,7 @@ void * TextRenderer::MeasureBuilding2(unsigned int *a1, int *a2, int a3, char a4
   *(unsigned int *)(a1) += 10; /*0x642fd1*/
   v14 = (void *)(*(unsigned int *)(a2) + 4); /*0x642fd5*/
   *(unsigned int *)(a2) = (unsigned int)(v14); /*0x642fdb*/
-  if ( a3  >  (int)(1) )) /*0x642fe3*/
+  if ( a3  >  (int)(1) ) /*0x642fe3*/
     *(unsigned int *)(a2) = (unsigned int)(a3)* v14; /*0x642fe8*/
   return result; /*0x642fdf*/
 

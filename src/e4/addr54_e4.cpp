@@ -56,6 +56,7 @@
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/GenericNode_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
@@ -874,7 +875,7 @@ LABEL_26:
                 v42 = (AnimTypeClass *)AnimTypeClass::FindOrCreate((AbstractClass *)&v184);
                 if ( v42 )
                 {
-                  v3[178] = (*(int (**)(AnimTypeClass *))(*(unsigned int *)v42->__pad_0 + 64))( (AnimTypeClass *)(v42));
+                  v3[178] = (*(int (**)(AnimTypeClass *))(*(unsigned int *)&v42->vtable1 + 64))( (AnimTypeClass *)(v42));
                   sprintf(aP2[0], DataGlobal_00829184, v35);
                   v3[179] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (int)((INIClass *)v3[179]));
                   sprintf(aP2[0], DataGlobal_00829174, v35);

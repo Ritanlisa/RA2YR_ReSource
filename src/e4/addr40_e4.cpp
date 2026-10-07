@@ -1058,7 +1058,7 @@ void Audio_Process()
 }
 // 0x404BB0
 namespace gamemd {
-TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
+TechnoTypeClass * * TechnoClass::sub_404BB0()
 {
 
   unsigned int *occupant; // edi
@@ -1236,8 +1236,8 @@ unsigned int * E4Recv_405E80::sub_405E80()
   {
     if ( ((unsigned int *)this)[0] == &dword_87E294 ) /*0x405ea1*/
     {
-      vtable0 = (char *)this->AbstractClass; /*0x405ea7*/
-      if ( this->AbstractClass ) /*0x405ea7*/
+      vtable0 = (char *)*(unsigned int *)&this->vfptr; /*0x405ea7*/
+      if ( *(unsigned int *)&this->vfptr ) /*0x405ea7*/
       {
         v3 = *((unsigned int *)vtable0 + 9); /*0x405eb1*/
         if ( result[2] != v3 || result[1] != *((unsigned int *)vtable0 + 78) ) /*0x405eca*/

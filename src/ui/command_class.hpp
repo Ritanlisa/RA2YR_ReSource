@@ -31,6 +31,8 @@ class CellClass;
 // Static data: Array @ 0x87F658, Hotkeys @ 0x87F680
 // Key methods: BuildBar @ 0x6D1200, AddAction @ 0x724580
 // ============================================================================
+#ifndef GAMEMD_G2_CommandClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_CommandClass_DEF 1
 class CommandClass
 {
 public:
@@ -71,6 +73,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
     unsigned int u32_10;  // G42.39 data supply
 };
+#endif  // GAMEMD_G2_CommandClass_DEF
 
 // ============================================================================
 // 18 Command subclasses

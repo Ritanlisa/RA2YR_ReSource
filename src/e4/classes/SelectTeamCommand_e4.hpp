@@ -12,7 +12,7 @@ struct SelectTeamCommand {
     unsigned int *m_1;
     unsigned int SelectTeamCommand_field_00;
 // --- flat members (END) ---
-    _DWORD * Construct(int a2, void *a2_2, void *a3, void *a4, void *a5, void *a6);
+    static _DWORD * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x535FC0 _DWORD *__thiscall SelectTeamCommand::Construct(SelectTeamCommand *this, int a2)
     char * AddRef();
     wchar_t * Release();
     wchar_t * ddtor();

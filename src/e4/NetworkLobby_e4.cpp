@@ -53,11 +53,17 @@
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/GDlg_e4.hpp"  // G57w10 D supply
 #include "e4/classes/StartCombo_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MapPreview_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ExchangeMultiplayerGameInfo(...);  // raw 005E7920: void ExchangeMultiplayerGameInfo()
+    int SaveMultiplayerLobbySettings(...);  // raw 005ED400: char __fastcall SaveMultiplayerLobbySettings(HWND hDlg, int a2)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char a1;  // data: 0x831898 truth(IDA G42.57w9)
 
@@ -593,7 +599,7 @@ LABEL_58:
         {
           *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = (unsigned int)v12; /*0x5de97a*/
           LoadScenarioClassByIndex((int)v12); /*0x5de980*/
-          ((Session*)(HWND)((Session *)hDlg))->PrepareGame(); /*0x5de987*/
+          ((Session*)(HWND)((Session *)hDlg))->PrepareGame((HWND)((Session *)hDlg)); /*0x5de987*/
           byte_8316D4 = 1; /*0x5de98f*/
           ShowWindow(hDlg, 5); /*0x5de996*/
           ((Session*)(HWND)((Session *)hDlg))->StartGame(); /*0x5de99a*/

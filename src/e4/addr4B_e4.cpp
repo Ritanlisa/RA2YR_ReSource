@@ -40,6 +40,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/ListClass_e4.hpp"
 #include "e4/classes/ControlClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int g_DDraw_Gray127;  // data: 0x8a0de8 truth(IDA G42.57w9)
@@ -746,37 +747,37 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   int v3; // eax
 
   ((ControlClass *)((ControlClass *)this))->CtorFromData(a2); /*0x4b53eb*/
-  *((unsigned int *)this + 11) = *(EditClass *)(a2 + 44); /*0x4b53f6*/
-  *((unsigned int *)this + 12) = *(EditClass *)(a2 + 48); /*0x4b53fc*/
-  *((unsigned int *)this + 13) = *(EditClass *)(a2 + 52); /*0x4b5402*/
-  *((unsigned int *)this + 14) = *(EditClass *)(a2 + 56); /*0x4b5408*/
-  *((unsigned int *)this + 15) = *(EditClass *)(a2 + 60); /*0x4b540e*/
-  *((unsigned int *)this + 16) = *(EditClass *)(a2 + 64); /*0x4b5414*/
-  *((unsigned int *)this + 17) = *(EditClass *)(a2 + 68); /*0x4b541a*/
-  *this = (EditClass)&vt_EditClass; /*0x4b541d*/
+  *((unsigned int *)this + 11) = *(unsigned int *)(a2 + 44); /*0x4b53f6*/
+  *((unsigned int *)this + 12) = *(unsigned int *)(a2 + 48); /*0x4b53fc*/
+  *((unsigned int *)this + 13) = *(unsigned int *)(a2 + 52); /*0x4b5402*/
+  *((unsigned int *)this + 14) = *(unsigned int *)(a2 + 56); /*0x4b5408*/
+  *((unsigned int *)this + 15) = *(unsigned int *)(a2 + 60); /*0x4b540e*/
+  *((unsigned int *)this + 16) = *(unsigned int *)(a2 + 64); /*0x4b5414*/
+  *((unsigned int *)this + 17) = *(unsigned int *)(a2 + 68); /*0x4b541a*/
+  *this = (unsigned int)&vt_EditClass; /*0x4b541d*/
   *((unsigned char *)this + 72) = *(unsigned char *)(a2 + 72); /*0x4b5429*/
-  *((unsigned int *)this + 19) = *(EditClass *)(a2 + 76); /*0x4b5432*/
+  *((unsigned int *)this + 19) = *(unsigned int *)(a2 + 76); /*0x4b5432*/
   ((ControlClass *)((ControlClass *)this + 5))->CtorFromData(a2 + 80); /*0x4b5435*/
   *((unsigned char *)this + 124) = *(unsigned char *)(a2 + 124); /*0x4b5443*/
   *((unsigned char *)this + 125) = *(unsigned char *)(a2 + 125); /*0x4b5449*/
-  *((unsigned int *)this + 32) = *(EditClass *)(a2 + 128); /*0x4b544f*/
+  *((unsigned int *)this + 32) = *(unsigned int *)(a2 + 128); /*0x4b544f*/
   *((unsigned int *)this + 20) = (unsigned int)(&vt_ToggleClass); /*0x4b5452*/
   *((unsigned char *)this + 132) = *(unsigned char *)(a2 + 132); /*0x4b545c*/
-  *((unsigned int *)this + 34) = *(EditClass *)(a2 + 136); /*0x4b5462*/
-  *((unsigned int *)this + 35) = *(EditClass *)(a2 + 140); /*0x4b5468*/
+  *((unsigned int *)this + 34) = *(unsigned int *)(a2 + 136); /*0x4b5462*/
+  *((unsigned int *)this + 35) = *(unsigned int *)(a2 + 140); /*0x4b5468*/
   *((unsigned char *)this + 144) = *(unsigned char *)(a2 + 144); /*0x4b546e*/
-  *((unsigned int *)this + 37) = *(EditClass *)(a2 + 148); /*0x4b5474*/
-  *((unsigned int *)this + 38) = *(EditClass *)(a2 + 152); /*0x4b547a*/
+  *((unsigned int *)this + 37) = *(unsigned int *)(a2 + 148); /*0x4b5474*/
+  *((unsigned int *)this + 38) = *(unsigned int *)(a2 + 152); /*0x4b547a*/
   *((unsigned char *)this + 156) = *(unsigned char *)(a2 + 156); /*0x4b5480*/
-  *((unsigned int *)this + 40) = *(EditClass *)(a2 + 160); /*0x4b5486*/
+  *((unsigned int *)this + 40) = *(unsigned int *)(a2 + 160); /*0x4b5486*/
   *((unsigned char *)this + 164) = *(unsigned char *)(a2 + 164); /*0x4b548c*/
   *((unsigned char *)this + 165) = *(unsigned char *)(a2 + 165); /*0x4b5492*/
-  *((unsigned int *)this + 42) = *(EditClass *)(a2 + 168); /*0x4b5498*/
+  *((unsigned int *)this + 42) = *(unsigned int *)(a2 + 168); /*0x4b5498*/
   *((unsigned char *)this + 172) = *(unsigned char *)(a2 + 172); /*0x4b54a4*/
   *((unsigned int *)this + 20) = (unsigned int)(&vt_ShapeButtonClass); /*0x4b54a9*/
   sub_557380((int)((unsigned int *)this + 44), a2 + 176); /*0x4b54af*/
   v3 = *((unsigned int *)this + 44); /*0x4b54b4*/
-  *this = (EditClass)&vt_DropListClass; /*0x4b54b9*/
+  *this = (unsigned int)&vt_DropListClass; /*0x4b54b9*/
   (*(void (**)(EditClass *, EditClass *))(v3 + 132))((EditClass *)(unsigned int *)this + 44, (EditClass *)this); /*0x4b54bf*/
   (*(void (**)(EditClass *, EditClass *))(*((unsigned int *)this + 20) + 132))((EditClass *)(unsigned int *)this + 20, (EditClass *)this); /*0x4b54ca*/
   return (int)this; /*0x4b54d3*/

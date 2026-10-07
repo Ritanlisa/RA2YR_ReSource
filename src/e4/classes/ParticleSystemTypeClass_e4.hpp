@@ -115,9 +115,13 @@ struct ParticleSystemTypeClass {
     int StartScale;  // 0x2C0
     int ParticleSystemTypeClass_field_2C8;  // 0x2C4
     bool Beam;  // 0x2C8
+    int ParticleSystemTypeClass_field_0x2D0;  // 0x2D0 (G57W14E1 til supply)
     void* q2E4;  // 0x2E4
+    int ParticleSystemTypeClass_field_0x2E8;  // 0x2E8 (G57W14E1 til supply)
     unsigned int u32_2F4;  // 0x2F4
     Color* q300;  // 0x300
+    char __pad_304[4];  // 0x304 (G57W14E1 til supply)
+    int ParticleSystemTypeClass_field_0x308;  // 0x308 (G57W14E1 til supply)
     unsigned int ParticleSystemTypeClass_field_0x0;
     unsigned int ParticleSystemTypeClass_field_0x294;
     unsigned int ParticleSystemTypeClass_field_0x29C;

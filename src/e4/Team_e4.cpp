@@ -69,7 +69,18 @@
 #include "e4/classes/ScoreText_e4.hpp"
 #include "e4/classes/StaticString_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Game_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ConstructWDTSelection(...);  // raw 0076C290: int __thiscall ConstructWDTSelection(int this, int a2, int a3)
+    int Network_Process_6E7C20(...);  // raw 006E7C20: void *__thiscall Network_Process_6E7C20(ObjectClass *this)
+    int ProcessGraphicMenu(...);  // raw 004F2300: int __thiscall ProcessGraphicMenu(int this)
+    int SelectionInitializeWOL(...);  // raw 0076C6E0: int __thiscall SelectionInitializeWOL(int this)
+    int ShowWDTTerritorySelection(...);  // raw 0076CDA0: _DWORD *__thiscall ShowWDTTerritorySelection(TechnoClass *this, _DWORD *a2)
+    int Team_Start_76E2F0(...);  // raw 0076E2F0: char *__userpurge Team_Start_76E2F0@<eax>(int this@<ecx>, DeleteAndZero a2)
+    int Team_Start_76E750(...);  // raw 0076E750: _DWORD *__thiscall Team_Start_76E750(int this, int a2)
+} // namespace gamemd
 
 // 0x561180
 namespace gamemd {
@@ -622,7 +633,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
   }
   v11 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ee8e*/
   ((ComPtr *)(&v11))->Release(); /*0x76ee96*/
-  SelectionInitializeWOL((int, unsigned int a1, unsigned int a2)v13); /*0x76ee9f*/
+  SelectionInitializeWOL((int)v13); /*0x76ee9f*/
   return v6; /*0x76ed22*/
 }
 }

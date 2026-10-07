@@ -76,12 +76,18 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/NetworkAddress_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int LoadAccountInfoWOL_Load(...);  // raw 00779690: void *__thiscall LoadAccountInfoWOL_Load( ReferenceCounted *this, const char **a2, int a3,
+    int StartWDTCampaign(...);  // raw 007AFB90: BOOL __usercall StartWDTCampaign@<eax>(char a1@<cl>, char a2@<bl>, int a3@<edi>)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aDisconnects[];  // data: 0x849fa8 truth(IDA G42.57w9)
 extern char aLocaleverified[];  // data: 0x849fcc truth(IDA G42.57w9)
@@ -229,7 +235,7 @@ int ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 #undef CreateDialogIndirect  // G42.41h: truth-name wrapper collides with winuser.h macro
 // 0x775700
 namespace gamemd {
-const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5, void * a1, void * a3, void * a4)
+const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * hInstance, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5, void * a1, void * a3, void * a4)
 {
   int v5; // eax
   HWND *v6; // edi
@@ -2359,7 +2365,7 @@ void sub_77CCD0()
 }
 // 0x77D3F0
 namespace gamemd {
-int E4Recv_77D3F0::sub_77D3F0()
+int ObjectClass::sub_77D3F0()
 {
 
   int v2; // ebx

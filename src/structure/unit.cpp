@@ -637,7 +637,7 @@ int UnitClass::Deploy()
           if ( v23 <= v24 ) /*0x719521*/
           {
             v58 = v24; /*0x71952d*/
-            v56 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644))); /*0x719531*/
+            v56 = (unsigned int)(*(unsigned int * *)((char *)&stru_A8EB00 + 644)); /*0x719531*/
             v25 = &v56; /*0x719535*/
           }
           else
@@ -672,7 +672,7 @@ int UnitClass::Deploy()
           if ( v30 != -1 || (v30 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 540), v30 != -1) ) /*0x719608*/
           {
  v31 = (int *)(((unsigned int *)v29)[0]); /*0x71960a*/
-            v56 = (unsigned int)(*v31)); /*0x719614*/
+            v56 = (unsigned int)(*v31); /*0x719614*/
             v57 = v31[1]; /*0x71961b*/
             v58 = v31[2]; /*0x719624*/
             StartAudioControllerAt(v30, &v56, 0); /*0x71962c*/
@@ -10852,6 +10852,10 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int ProcessUnitDeploymentAtCell(...);  // raw 007187A0: char __thiscall ProcessUnitDeploymentAtCell(TechnoClass *this, int a2, int a3, int a4)
+} // namespace gamemd
 
 // G57w10: vtable externs (truth e4_globals_decls)
 extern unsigned char vt_DynamicVectorClass_ObjectClass[4];  // data: 0x7E4F64  // G57w10 vftable residue fix

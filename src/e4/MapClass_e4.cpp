@@ -49,6 +49,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/SubzoneHashVector_e4.hpp"  // G57w10 D supply
 #include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
@@ -194,7 +195,7 @@ v5 = (*(int (**)(char *, char *))(*(unsigned int *)&stru_87F5F0.__pad_E12[1346] 
       }
     }
   }
-  if ( this->MapClass_field_0x2C   ==   (unsigned int)(v3 ))) /*0x485194*/
+  if ( this->MapClass_field_0x2C   ==   (unsigned int)(v3 )) /*0x485194*/
     this->MapClass_field_0x2C = 0; /*0x485196*/
   if ( *(void **)this->__pad_30 == v3 ) /*0x4851a0*/
     *(unsigned int *)this->__pad_30 = 0; /*0x4851a2*/
@@ -958,7 +959,7 @@ unsigned int * MapClass::InitAllCells()
     v4 = 512; /*0x565bd0*/
     do /*0x565bf4*/
     {
-      if ( v2   <   (int)(this->q140 ))) /*0x565bdb*/
+      if ( v2   <   (int)(this->q140 )) /*0x565bdb*/
       {
         result = (unsigned int *)(this->MapClass_field_0x13C); /*0x565bdd*/
         v6 = (CellClass *)result[v3]; /*0x565be3*/

@@ -431,8 +431,8 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
     *(unsigned int *)(this + 8) = (unsigned int)(void*)&WarheadTypeClass_vftable; /*0x75d0c7*/
     *(unsigned int *)(this + 12) = (unsigned int)(void*)&WarheadTypeClass_vftable; /*0x75d0ce*/
     AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x75d0d5*/
-    (*(void ((int)(**))(int))(*(unsigned int *)(this + 396) + 12))(this + 396); /*0x75d0de*/
-    (*(void ((int)(**))(int))(*(unsigned int *)(this + 424) + 12))(this + 424); /*0x75d0e5*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)(this + 396) + 12))(this + 396); /*0x75d0de*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)(this + 424) + 12))(this + 424); /*0x75d0e5*/
     if ( g_WarheadTypePool < dword_8874C8 /*0x75d11c*/
       || (byte_8874CD || !dword_8874C8)
       && dword_8874D4 > 0
@@ -604,7 +604,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
         ObjectPtr::RegisterForTracking( /*0x75e28b*/
           (int)&SwizzleManagerClass_Instance,
           (int *)(v2->WarheadTypeClass_field_0x190[0] + 4 * n));
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v2->WarheadTypeClass_field_0x140); /*0x75e2a7*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v2->q140); /*0x75e2a7*/
       return 0; /*0x75e2ac*/
     }
     return result; /*0x75e2ae*/
@@ -612,7 +612,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
 } // namespace gamemd
 // 0x75E2C0
 namespace gamemd {
-int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * a4)
+int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * WarheadTypeClass_field_0x114)
 {
     int v5; // ebx
     int result; // eax
@@ -629,20 +629,20 @@ int WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0, void * a2, void * 
       v7 = (int)(*a2); /*0x75e2e4*/
       WarheadTypeClass_field_0x114 = (int *)this->WarheadTypeClass_field_0x114; /*0x75e2f1*/
       (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0, v5); /*0x75e2f5*/
-      for ( i = 0; i   <   (int)(a4)); ++i ) /*0x75e300*/
+      for ( i = 0; i   <   (int)(WarheadTypeClass_field_0x114)); ++i ) /*0x75e300*/
         (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, this->WarheadTypeClass_field_0x108 + 4 * i, 4, 0); /*0x75e313*/
       v9 = (int)(*a2); /*0x75e323*/
-      a4 = this->unused_1CC[0]; /*0x75e32f*/
-      (*(void ((int *)(__stdcall **))(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x75e333*/
-      for ( j = 0; j   <   (int)(a4)); ++j ) /*0x75e33e*/
+      WarheadTypeClass_field_0x114 = this->unused_1CC[0]; /*0x75e32f*/
+      (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0); /*0x75e333*/
+      for ( j = 0; j   <   (int)(WarheadTypeClass_field_0x114)); ++j ) /*0x75e33e*/
         (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))( /*0x75e351*/
           a2,
           this->WarheadTypeClass_field_0x190[0] + 4 * j,
           4,
           0);
       v11 = (int)(*a2); /*0x75e361*/
-      a4 = *(unsigned int *)&this->__pad_1B0[8]; /*0x75e36d*/
-      (*(void ((int *)(__stdcall **))(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x75e371*/
+      WarheadTypeClass_field_0x114 = *(unsigned int *)&this->__pad_1B0[8]; /*0x75e36d*/
+      (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &WarheadTypeClass_field_0x114, 4); /*0x75e371*/
       for ( k = 0; k < (int)WarheadTypeClass_field_0x114; ++k ) /*0x75e37c*/
         (*(void (__stdcall **)(int *, char *, int, unsigned int))(*a2 + 16))( /*0x75e38f*/
           a2,
@@ -689,8 +689,8 @@ int WarheadTypeClass::GetDamage(int a2, int a3)
     int v7; // ecx
 
     v3 = a2; /*0x75e440*/
-    if ( (void *)a2 == this->WarheadTypeClass_field_0x140 ) /*0x75e44c*/
-      this->WarheadTypeClass_field_0x140 = 0; /*0x75e44e*/
+    if ( (void *)a2 == *(unsigned int *)&this->q140 ) /*0x75e44c*/
+      this->q140 = 0; /*0x75e44e*/
     pad_104 = (char *)(this->__pad_104); /*0x75e459*/
     a2 = v3; /*0x75e463*/
     result = (*(int (**)(char *, int *))(*(unsigned int *)this->__pad_104 + 16))( (char *)(this->__pad_104), (int *)(&a2)); /*0x75e46c*/
@@ -754,12 +754,12 @@ v4 = (*(int (**)(int *, WarheadTypeClass **))(dword_B0F670+ 16))( /*0x75e593*/ &
         ++v4; /*0x75e5b6*/
       }
     }
-    WarheadTypeClass_field_0x1AC = this->WarheadTypeClass_field_0x1AC; /*0x75e5c8*/
+    WarheadTypeClass_field_0x1AC = *(unsigned int *)&this->q1AC; /*0x75e5c8*/
     *(unsigned int *)&((unsigned char *)&this->__pad_1A0)[8] = (unsigned int)(void*)&VectorClass_int_vftable; /*0x75e5d1*/
     if ( WarheadTypeClass_field_0x1AC && this->__pad_1B0[5] ) /*0x75e5df*/
     {
       RA2_OPDEL(WarheadTypeClass_field_0x1AC); /*0x75e5e8*/
-      this->WarheadTypeClass_field_0x1AC = 0; /*0x75e5f0*/
+      this->q1AC = 0; /*0x75e5f0*/
     }
     this->__pad_1B0[5] = 0; /*0x75e5f6*/
     *(unsigned int *)this->__pad_1B0 = 0; /*0x75e5fc*/
@@ -780,7 +780,7 @@ v4 = (*(int (**)(int *, WarheadTypeClass **))(dword_B0F670+ 16))( /*0x75e593*/ &
       this->WarheadTypeClass_field_0x108 = 0; /*0x75e65e*/
     }
     this->__pad_10C[5] = 0; /*0x75e666*/
-    *(unsigned int *)this->__pad_10C = 0; /*0x75e66c*/
+    *(unsigned int *)&this->q10C = 0; /*0x75e66c*/
     ((AbstractTypeClass *)this)->Dtor(); /*0x75e672*/
     if ( (a2 & 1) != 0 ) /*0x75e67e*/
       RA2_OPDEL(this); /*0x75e681*/

@@ -44,12 +44,17 @@
 #include "e4/classes/AITriggerTypeClass_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Vector4_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CellClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ScriptQueue_e4.hpp"  // G57w10 D supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int Team_Destroy(...);  // raw 0063E5D0: char __thiscall Team_Destroy(ObjectClass *this, int a2)
+} // namespace gamemd
 
 // 0x4D9E70
 namespace gamemd {
@@ -375,7 +380,7 @@ LABEL_9:
     {
       ((FactoryClass *)((FactoryClass *)Block))->ClearObjects(); /*0x6341ce*/
       aP1 = (unsigned int)(gamemd::TechnoClass *)(Block); /*0x6341e3*/
-v15 = (*(int ((char *)(**))(char *, unsigned int **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x6341e7*/ &stru_AC4B30.__pad_EC[124], (unsigned int **)(&aP1));
+v15 = (*(int (__thiscall **)(char *, unsigned int **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x6341e7*/ &stru_AC4B30.__pad_EC[124], (unsigned int **)(&aP1));
 
 
       if ( v15 != -1 ) /*0x6341ed*/
@@ -434,7 +439,7 @@ int TeamClass::FindByMemberType(int a2)
   TeamClass *v21; // [esp+14h] [ebp-Ch] BYREF
   Color v22[2]; // [esp+18h] [ebp-8h] BYREF
 
-  v20 = *((unsigned int *)&this->buildingType->AbstractClass + a2); /*0x635a53*/
+  v20 = *((unsigned int *)&*(unsigned int *)&this->buildingType->vtable1 + a2); /*0x635a53*/
   result = *(unsigned int *)(v20 + 116); /*0x635a57*/
   if ( result == -1 ) /*0x635a5d*/
   {
@@ -637,7 +642,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   for ( i = 0; i < (int)vtable0; ++i ) /*0x63613d*/
   {
     v4 = *((unsigned int *)((unsigned int *)this)[0] + v3); /*0x636148*/
-    Value = ((Array *)((int)((IUnknown *)((Array *)v4))))->FindValue((int)this->AbstractClass); /*0x636150*/
+    Value = ((Array *)((int)((IUnknown *)((Array *)v4))))->FindValue((int)*(unsigned int *)&this->vtable1); /*0x636150*/
     if ( Value == -1 ) /*0x636158*/
       v6 = 0; /*0x63615a*/
     else
@@ -679,7 +684,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   }
   if ( !v15 ) /*0x636244*/
   {
-    vtable0 = this->AbstractClass; /*0x63624c*/
+    vtable0 = *(unsigned int *)&this->vtable1; /*0x63624c*/
     v11 = vtable0[135]; /*0x636250*/
     Object_field_0x30 = *(unsigned int *)(v11 + 48); /*0x636256*/
     if ( (uint8_t)((::gamemd::House*)(::gamemd::House *)v11)->IsHumanPlayer() && dword_A83D4C ) /*0x636269*/
@@ -690,7 +695,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
                                                                    & ((*(unsigned int *)&stru_AC4B30.__pad_48[4 * Object_field_0x30 + 12]
                                                                      - 1 < 0)
                                                                     - 1);
-v13 = (*(int ((char *)(**))(char *, unsigned int **))(*(unsigned int *)&stru_AC4B30.__pad_EC[36] + 16))( /*0x6362a1*/ &stru_AC4B30.__pad_EC[36], (unsigned int **)(&vtable0));
+v13 = (*(int (__thiscall **)(char *, unsigned int **))(*(unsigned int *)&stru_AC4B30.__pad_EC[36] + 16))( /*0x6362a1*/ &stru_AC4B30.__pad_EC[36], (unsigned int **)(&vtable0));
 
 
     if ( v13 != -1 && v13 < *(int *)&stru_AC4B30.__pad_EC[52] ) /*0x6362b3*/
@@ -760,7 +765,7 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
       while ( 1 ) /*0x6367fa*/
       {
         vtable2 = (unsigned int *)(((unsigned int *)v4)[0]); /*0x6367fa*/
-        vtable0 = v4->AbstractClass; /*0x636801*/
+        vtable0 = *(unsigned int *)&v4->vtable1; /*0x636801*/
         v8 = vtable2[v27]; /*0x636803*/
         v9 = 0; /*0x636806*/
         v10 = *(unsigned int *)(v8 + 16); /*0x636808*/
@@ -1034,7 +1039,7 @@ LABEL_4:
     }
   }
   v8 = *((unsigned int *)((unsigned int *)this)[0] + v3); /*0x636bc6*/
-  Value = ((Array *)((Array *)v8))->FindValue((int)this->AbstractClass); /*0x636bce*/
+  Value = ((Array *)((Array *)v8))->FindValue((int)*(unsigned int *)&this->vtable1); /*0x636bce*/
   if ( Value != -1 ) /*0x636bd6*/
     v5 = *(unsigned int *)(*(unsigned int *)(v8 + 4) + 4 * Value); /*0x636bdb*/
   Block = (void *)((unsigned int)(void *)v5); /*0x636be0*/
@@ -1317,7 +1322,7 @@ v10 = (*(int (**)(int *, TeamClass **))(dword_B0F670+ 16))( /*0x6e8f61*/ &dword_
     }
   }
   v15 = (gamemd::TeamClass *)(a2); /*0x6e8fa6*/
-v11 = (*(int ((char *)(**))(char *, TeamClass **))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16) + 16))( /*0x6e8faa*/ (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16), (TeamClass **)(&v15));
+v11 = (*(int (__thiscall **)(char *, TeamClass **))(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16) + 16))( /*0x6e8faa*/ (unsigned int *)((char *)&g_BuildingLoadQueue_Array + 16), (TeamClass **)(&v15));
 
 
   if ( v11 != -1 && v11 < *(int *)(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32) ) /*0x6e8fba*/
@@ -1421,7 +1426,7 @@ int TeamClass::UpdateReadinessState()
 
   TeamClass_field_7A = this->TeamClass_field_7A; /*0x6ea3ec*/
   v2 = TeamClass::SumMemberCounts(*(TeamClass **)&this->buildingType[1].TeamTypeClass_field_70); /*0x6ea3f6*/
-  totalObjects = (unsigned int)(this->totalObjects)); /*0x6ea3fb*/
+  totalObjects = (unsigned int)(this->totalObjects); /*0x6ea3fb*/
   if ( totalObjects > 0 ) /*0x6ea404*/
   {
     this->unknown79 = totalObjects == v2; /*0x6ea40d*/
@@ -2203,7 +2208,7 @@ LABEL_69:
     else
     {
 LABEL_67:
-      p_vtable0 = &v1->buildingType->AbstractClass; /*0x6eb830*/
+      p_vtable0 = &*(unsigned int *)&v1->buildingType->vtable1; /*0x6eb830*/
       if ( *((unsigned char *)p_vtable0 + 176) ) /*0x6eb833*/
       {
         LOBYTE(p_vtable0) = ((unsigned int *)v12)[0]; /*0x6eb83d*/

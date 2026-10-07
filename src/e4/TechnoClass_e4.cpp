@@ -56,6 +56,32 @@
 #include "classes/BuildingClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/Delegate_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FrameSnapshot_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int BlitterCopySHP(...);  // raw 004373B0: char __fastcall SHP_Blitter_Copy( int *a1, _DWORD *a2, int *a3, int *a4, int a5, _DWORD *a
+} // namespace gamemd
+// [w14e3] fwd decl: nullsub_69 (raw 0x74FF40: void nullsub_69(ObjectClass *this))
+namespace gamemd { void nullsub_69(ObjectClass * a1); }
+
+// [w14e3] Matrix3D supply: verbatim struct from src/core/math.hpp (gamemd), cpp-local carrier
+namespace gamemd {
+struct Matrix3D
+{
+    float Data[12] = {};  // data: 0x840b4c
+    unsigned char __pad_0;  // 0x0
+    unsigned int q080;  // 0x80
+    unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
+    unsigned int u32_8;   // 0x8 (raw fld [esi+8])
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_28;  // 0x28
+public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    void* Constructor(float a1, float a2);  // 0x5AE6F0
+    void RotateZ(float a1);  // 0x5AF080
+    // --- gap2 auto-generated stub declarations (END) ---
+};
+} // namespace gamemd
+
 
 // 0x41A9E0
 namespace gamemd {
@@ -606,7 +632,7 @@ int TechnoClass::DTOR()
     *((unsigned int *)this + 157) = 0; /*0x6f459e*/
   }
   v8 = *(unsigned int **)&this->airstrike; /*0x6f45a4*/
-  if ( v8 && v8[19]   ==   (unsigned int)(this ))) /*0x6f45b1*/
+  if ( v8 && v8[19]   ==   (unsigned int)(this )) /*0x6f45b1*/
   {
     (*(void (**)(unsigned int *, int))(*v8 + 32))( (unsigned int *)(v8), 1); /*0x6f45bb*/
     *((unsigned int *)this + 165) = 0; /*0x6f45be*/
@@ -662,7 +688,7 @@ v10 = (*(int (**)(char *, int *))(*(unsigned int *)&dword_B0F6C8+ 16))( /*0x6f46
   }
   *((unsigned char *)this + 1101) = 0; /*0x6f4710*/
   *((unsigned int *)this + 274) = 0; /*0x6f4716*/
-  nullsub_69(); /*0x6f471c*/
+  nullsub_69(v17); /*0x6f471c*/
   *(unsigned int *)this = (unsigned int)&vt_RadioClass;
   *((unsigned int *)this + 1) = (unsigned int)&vt_RadioClass;
   *((unsigned int *)this + 2) = (unsigned int)&vt_RadioClass;
@@ -863,7 +889,7 @@ LABEL_67:
         if ( !*(unsigned char *)(result + 562) ) /*0x70303f*/
         {
           if ( *((unsigned int *)this + 335) != -1 ) /*0x703054*/
-            ++*(unsigned int *)this->owner->__pad_5488; /*0x70305c*/
+            ++*(unsigned int *)&this->owner->q5488; /*0x70305c*/
           if ( v28 && !*(unsigned char *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 3231) ) /*0x703070*/
           {
             HouseClass::IncrementStat( /*0x703093*/
@@ -1250,7 +1276,7 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
 
 // 0x73B470
 namespace gamemd {
-int TechnoClass_DrawVoxel()
+int TechnoClass_DrawVoxel(TechnoClass *ecx0, __int64 a2, int a3, int a4, int a5, int a6, int started, int a9)
 {
   ObjectClass *v16; // eax
   float *inited; // eax

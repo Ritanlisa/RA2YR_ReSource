@@ -41,6 +41,7 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/Pipe_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
@@ -1819,7 +1820,7 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
   *((unsigned short *)this + 11) = 0; /*0x473767*/
   *((unsigned int *)this + 6) = 0; /*0x47376d*/
   *((unsigned int *)this + 7) = -1; /*0x473770*/
-  *this = (CarryoverClass)&vt_CarryoverClass; /*0x473777*/
+  *this = (unsigned int)&vt_CarryoverClass; /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
     v4 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 44))( (CarryoverClass *)(v3)); /*0x473783*/
@@ -1830,9 +1831,9 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
       v7 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 132))( (CarryoverClass *)(v3)); /*0x4737a6*/
       *((unsigned int *)this + 4) = (*(int (**)(int))(*(unsigned int *)v7 + 64))(v7); /*0x4737b3*/
     }
-    *((unsigned int *)this + 7) = *(CarryoverClass *)(*(unsigned int *)(*(unsigned int *)&v3[135] + 52) + 184); /*0x4737c7*/
+    *((unsigned int *)this + 7) = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&v3[135] + 52) + 184); /*0x4737c7*/
     *((unsigned int *)this + 6) = v3[27]; /*0x4737cd*/
-    *((unsigned int *)this + 5) = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))( (CarryoverClass *)(v3), (unsigned int **)(&a2)); /*0x4737df*/
+    *((unsigned int *)this + 5) = *(unsigned int *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))( (CarryoverClass *)(v3), (unsigned int **)(&a2)); /*0x4737df*/
   }
   return (unsigned int *)(this); /*0x4737e4*/
 

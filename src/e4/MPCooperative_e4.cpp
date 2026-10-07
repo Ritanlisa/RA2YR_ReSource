@@ -42,6 +42,13 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
 #include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int DecodeCampaignPlayerName(...);  // raw 0049CCF0: char __thiscall sub_49CCF0( int this, int a2, int a3, void *Block, int a5, __int16 a6, int
+    int LoadCampaignCoopSave(...);  // raw 0049C0D0: char __thiscall CampaignClass_LoadCoopSave(char *this)
+    int SerializeCampaignOptions(...);  // raw 0049D680: char __thiscall SerializeCampaignOptions(char *this)
+} // namespace gamemd
 
 // 0x49B660
 namespace gamemd {
@@ -190,7 +197,7 @@ int MPCooperative::WriteCoopSaveINI()
   *((unsigned int *)((char *)&v15 + 0)) = 0; /*0x49be79*/
   *((unsigned int *)((char *)&v15 + 1)) = 0; /*0x49be7d*/
   ((::gamemd::INISectionList*)(::gamemd::INISectionList *)(unsigned int *)((char *)&v15 + 2))->Constructor(); /*0x49be81*/
-  Node::Init((Node *)&(unsigned int *)((char *)&v15 + 8)); /*0x49be8a*/
+  Node_flat::Init((Node_flat *)&(unsigned int *)((char *)&v15 + 8)); /*0x49be8a*/
   ((unsigned int *)&v15)[0] = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
   *(unsigned int *)v15.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x49bea5*/
@@ -339,7 +346,7 @@ int MPCooperative::ReadCoopSaveINI()
   v19[1] = 0; /*0x49d159*/
   v19[2] = 0; /*0x49d15d*/
   ((INISectionList*)v20)->Constructor(); /*0x49d164*/
-  Node::Init(v21); /*0x49d170*/
+  Node_flat::Init(v21); /*0x49d170*/
   v21[5] = 0; /*0x49d183*/
   v22 = 0; /*0x49d18a*/
   v19[0] = &CCINIClass_Vtable; /*0x49d192*/
@@ -590,7 +597,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
       RA2_OPDEL(v7); /*0x5c1686*/
     }
   }
-  (*(void ((int *)(**))(int *, int))(v3[28].MultiplayerGameMode_field_0x14 + 12))( /*0x5c169f*/
+  (*(void (__thiscall **)(int *, int))(v3[28].MultiplayerGameMode_field_0x14 + 12))( /*0x5c169f*/
     &v3[28].MultiplayerGameMode_field_0x14,
     a2);
   for ( j = v3[3].MultiplayerGameMode_field_0x14 - 1; j >= 0; --j ) /*0x5c16a6*/
@@ -691,7 +698,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
   v5 = *(unsigned int *)&this->__pad_328[4]; /*0x5c18d5*/
   p_MPCooperative_field_0x324 = &this->q324; /*0x5c18db*/
   (*(void (**)(int *))(this->q324 + 12))( (int *)(&this->q324)); /*0x5c18e3*/
-  (*(void ((int *)(**))(int *, int, unsigned int))(this->q324 + 8))( /*0x5c18ed*/
+  (*(void (__thiscall **)(int *, int, unsigned int))(this->q324 + 8))( /*0x5c18ed*/
     &this->q324,
     v5,
     0);
@@ -1106,7 +1113,7 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
       v15,
       v16);
     v13 = Block; /*0x5c20c7*/
-    this->MPCooperative_field_0x33C = (CampaignClass *)a2; /*0x5c20cb*/
+    this->q33C = (CampaignClass *)a2; /*0x5c20cb*/
     a3 = &vt_VectorClass; /*0x5c20d3*/
     if ( v13 && HIBYTE(a6) ) /*0x5c20e3*/
       __3_YAXPAX_Z(v13); /*0x5c20e6*/
@@ -1227,7 +1234,7 @@ int MPCooperative::ProcessTurn()
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c2683*/
   if ( !MPCooperative_field_0x40 ) /*0x5c2688*/
     return 0; /*0x5c268a*/
-  ((Movie *)(MPCooperative_field_0x40))->GetSectionID( (unsigned int *)(&this->MPCooperative_field_0x33C)); /*0x5c2695*/
+  ((Movie *)(MPCooperative_field_0x40))->GetSectionID( (unsigned int *)(&this->q33C)); /*0x5c2695*/
   GameUI = (HWND)Dialog::FindGameUI(); /*0x5c269a*/
   if ( GameUI ) /*0x5c26a1*/
   {
@@ -1284,11 +1291,11 @@ int MPCooperative::SyncState()
   char v38[16]; // [esp+34h] [ebp-1A0h] BYREF
   char Buffer[400]; // [esp+44h] [ebp-190h] BYREF
 
-  MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c2727*/
+  MPCooperative_field_0x33C = *(unsigned int *)&this->q33C; /*0x5c2727*/
   v36 = this; /*0x5c272d*/
   ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( (CCINIClass *)((int)MPCooperative_field_0x33C), (CCINIClass *)(&v35)); /*0x5c2731*/
   sprintf(Buffer, "C1,%d", *(char *)(v35 + 8)); /*0x5c2749*/
-  MPCooperative_field_0x1A4 = this->MPCooperative_field_0x1A4; /*0x5c2751*/
+  MPCooperative_field_0x1A4 = this->u32_1A4; /*0x5c2751*/
   v3 = 8; /*0x5c2757*/
   do /*0x5c2795*/
   {
@@ -1323,7 +1330,7 @@ int MPCooperative::SyncState()
     v8 = v36; /*0x5c27ee*/
     v34 = 0; /*0x5c27f2*/
     v9 = &g_MissionQueueFrame.localVariables[631]; /*0x5c27fa*/
-    v10 = &v36->__pad_1A8[4]; /*0x5c27ff*/
+    v10 = &v36->u32_1AC; /*0x5c27ff*/
     while ( 1 ) /*0x5c2815*/
     {
       if ( v34 >= v37 ) /*0x5c2815*/
@@ -1828,7 +1835,7 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
   *(unsigned int *)&stru_A8B250[36] = v2; /*0x5c30ff*/
-  MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c3105*/
+  MPCooperative_field_0x33C = *(unsigned int *)&this->q33C; /*0x5c3105*/
   v10 = 0; /*0x5c310f*/
   v9 = 0; /*0x5c311a*/
   ((Movie *)(int)&g_DDrawSurfaceManager)->GetSection( (CCINIClass *)((int)MPCooperative_field_0x33C), (CCINIClass *)(&v11)); /*0x5c311e*/
@@ -2345,7 +2352,7 @@ void MPCooperative::SetGameMode()
     {
       SetDialogPlayerName( (HWND)(GameUI), (int)this); /*0x5c40cd*/
       Dialog::ShowPlayerName( (void *)(v10)); /*0x5c40d4*/
-      Session::PrepareGame( (HWND)((Session *)v10)); /*0x5c40db*/
+      ((Session*)(HWND)((Session *)v10))->PrepareGame((HWND)((Session *)v10)); /*0x5c40db*/
     }
     CheckGameSettingsChanged(1, 1); /*0x5c40e4*/
 LABEL_21:

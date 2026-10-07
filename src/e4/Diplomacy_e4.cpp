@@ -18,6 +18,7 @@
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x657DA0

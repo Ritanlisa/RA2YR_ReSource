@@ -217,7 +217,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   if ( !MessageBox ) /*0x5f2d6d*/
     return (gamemd::AbstractClass **)(3); /*0x5f3155*/
   ((Dialog *)(MessageBox))->Show(); /*0x5f2d76*/
-(*(void ((HWND)(**))(HWND, int (*)(), int))(*(unsigned int *)g_ClipboardBuffer + 36))( /*0x5f2d88*/ g_ClipboardBuffer, PumpEventLoop, (int)(a2));
+(*(void (__thiscall **)(HWND, int (*)(), int))(*(unsigned int *)g_ClipboardBuffer + 36))( /*0x5f2d88*/ g_ClipboardBuffer, PumpEventLoop, (int)(a2));
 
 
 
@@ -470,7 +470,7 @@ int FindBuildingByTiberiumType(int aP0)
   int v6; // esi
   const char *v8[17]; // [esp-34h] [ebp-48h] BYREF
 
-  if ( aP0  ==  (int)(-1) )) /*0x5fdd28*/
+  if ( aP0  ==  (int)(-1) ) /*0x5fdd28*/
     return -1; /*0x5fdd28*/
   v1 = *((unsigned int *)(unsigned int)(g_BuildingTypeClass_Array)+ aP0); /*0x5fdd33*/
   v1 = v1; /*0x5fdd36*/
@@ -491,10 +491,10 @@ int FindBuildingByTiberiumType(int aP0)
     {
       v4 = *(unsigned int **)v3; /*0x5fdd5a*/
       v5 = *(unsigned int *)(*(unsigned int *))(v3->q0E0 + 660);  /*0x5fdd62*/
-      if ( aP0   >=   (int)((IUnknown *)(v5) &(int)(&aP0)  <   (int)((IUnknown *)(v5) + v4[58] )))) /*0x5fdd76*/
+      if ( aP0 >= (int)((IUnknown *)(v5)) && aP0 < (int)((IUnknown *)(v5) + v4[58]) ) /*0x5fdd76*/
         break; /*0x5fdd76*/
       v6 = v4[58]; /*0x5fdd78*/
-      if ( aP0 >= (IUnknown *)(v6) + (IUnknown *)(v5) &(int)(&aP0)  <   (int)((IUnknown *)(v5) + v6 + v4[59] )) /*0x5fdd91*/
+      if ( aP0 >= (IUnknown *)(v6) + (IUnknown *)(v5) && aP0  <   (int)((IUnknown *)(v5) + v6 + v4[59] )) /*0x5fdd91*/
         break; /*0x5fdd91*/
       ++v2; /*0x5fdd98*/
       v3 += 4; /*0x5fdd99*/
@@ -1014,7 +1014,7 @@ int sub_5F15A0()
 
 // 0x5F15C0
 namespace gamemd {
-unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
+unsigned int * ObjectClass::sub_5F15C0(int a2, int a3, int a4, short a5)
 {
 
   this->ambientSoundController[2] = a2; /*0x5f15cc*/

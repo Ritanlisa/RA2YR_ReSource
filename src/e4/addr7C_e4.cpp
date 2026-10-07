@@ -36,6 +36,8 @@
 #include "e4/classes/E4Recv_7BE4A0_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/classes/AllocCallback_e4.hpp"
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int _wcstombs_lk(...); }
 extern double dbl_7F98B4;  // data: 0x7F98B4
 extern double dbl_7F98BC;  // data: 0x7F98BC
 extern double dbl_7F98C4;  // data: 0x7F98C4
@@ -523,7 +525,7 @@ int ProcessAudioStreamPlayback(int a1, unsigned int aP1, int arg0, char a4, char
 namespace gamemd {
 int RenderAudioVideoFrame(const char * a0, unsigned int * a1, unsigned short ** aP2)
 {
-  int (__cdecl *)(unsigned int, int, unsigned int, int); // eax
+  int (__cdecl *v5)(unsigned int, int, unsigned int, int); // eax
   unsigned int *v6; // eax
   unsigned short *v7; // ebx
   int v8; // eax
@@ -830,7 +832,7 @@ int AudioStream_Process(int a1, int a2, char a3)
 {
   int v5; // edi
   int v6; // eax
-  int (__cdecl *)(int); // eax
+  int (__cdecl *v7)(int); // eax
   int v8; // eax
   int v9; // edx
   int v10; // eax
@@ -9816,9 +9818,9 @@ namespace gamemd {
 int E4Recv_7C3670::sub_7C3670()
 {
 
-  this->u32_710 = -1; /*0x7c3673*/
-  this->u32_708 = -1; /*0x7c3679*/
-  this->u32_70C = -1; /*0x7c367f*/
+  this->M1808 = -1; /*0x7c3673*/
+  this->M1800 = -1; /*0x7c3679*/
+  this->M1804 = -1; /*0x7c367f*/
   return -1; /*0x7c3685*/
 
 }
@@ -12406,7 +12408,7 @@ void E4Recv_7C8A8E::__1type_info_UAE_XZ()
 
   *(unsigned int *)this = (unsigned int)&off_7F9594; /*0x7c8a93 G42.33 b23*/
   _lock(27); /*0x7c8a99*/
-  v2 = (void *)this->q004; /*0x7c8a9e*/
+  v2 = (void *)this->M4; /*0x7c8a9e*/
   if ( v2 ) /*0x7c8aa4*/
     free( (void *)(v2)); /*0x7c8aa7*/
   _unlock(27); /*0x7c8aaf*/

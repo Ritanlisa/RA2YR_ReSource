@@ -67,6 +67,7 @@
 #include "e4/classes/BombClass_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/VoxelPaletteClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TextBuffer_e4.hpp"  // G42.36 C2027 supply
@@ -75,6 +76,11 @@
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int InitializeAudioSubsystem(...);  // raw 00406B10: int __thiscall InitializeAudioSubsystem(ObjectClass *this)
+    int LoadExpansionMixFiles(...);  // raw 00530000: char LoadExpansionMixFiles(ObjectClass *this)
+} // namespace gamemd
 
 // 0x522100
 namespace gamemd {

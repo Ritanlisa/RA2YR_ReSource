@@ -135,7 +135,7 @@ char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a
 
   CCFileClass::Construct3((gamemd::CCFileClass *)((int)((unsigned char *)this + 4))); /*0x75926a*/
   Stream::CopyFromTemplate((gamemd::Stream *)((unsigned char *)this + 376)); /*0x759275*/
-  *((unsigned int *)this + 331) = (unsigned int)(aP2); /*0x759282*/
+  *((unsigned int *)this + 331) = (unsigned int)(a3); /*0x759282*/
   *((unsigned int *)this + 121) = (unsigned int)(this); /*0x759288*/
   *((unsigned int *)this + 101) = (unsigned int)(&v19); /*0x75928e*/
   *((unsigned int *)this + 110) = 0; /*0x75929b*/
@@ -225,7 +225,7 @@ LABEL_14:
   *((unsigned int *)this + 321) = 0; /*0x759477*/
   *((unsigned int *)this + 339) = 0; /*0x75947d*/
   *((unsigned int *)this + 322) = 0; /*0x759483*/
-  strcpy( (char *)((unsigned char *)this + 113), (const char *)(a1)); /*0x75949f*/
+  strcpy( (char *)((unsigned char *)this + 113), (const char *)(a2)); /*0x75949f*/
   *((unsigned int *)this + 338) = (unsigned int)(aP5); /*0x7594b0*/
   *((unsigned int *)this + 326) = 0; /*0x7594b7*/
   *((unsigned int *)this + 327) = 0; /*0x7594bd*/
@@ -240,7 +240,7 @@ LABEL_14:
   *((unsigned char *)this + 1360) = 0; /*0x7594f4*/
   *((unsigned char *)this + 1361) = 0; /*0x7594fa*/
   *(unsigned int *)this = 0; /*0x759500*/
-  return (char *)((void *)this; /*0x7594b6*/);
+  return (char *)((void *)this) /*0x7594b6*/;
 
 }
 } // namespace gamemd

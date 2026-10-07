@@ -1286,7 +1286,7 @@ int DlgProcScoreScreen(HWND hWnd, UINT a2, WPARAM wParam, LPARAM a4)
   wchar_t *String; // edi
   wchar_t *v17; // esi
   HWND v18; // eax
-  void (__stdcall *)(HWND, UINT, WPARAM, LPARAM); // edi
+  void (__stdcall *v19)(HWND, UINT, WPARAM, LPARAM); // edi
   HWND v20; // eax
   int v21; // eax
   const wchar_t *v22; // esi

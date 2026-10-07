@@ -52,6 +52,7 @@
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/PingPongBuffer_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CampaignClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CheckListClass_e4.hpp"  // G42.36 C2027 supply
@@ -81,7 +82,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 
   if ( !((Control *)((ControlClass *)this))->DispatchClick(a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x488110*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x488110*/
   uniqueId = ((unsigned int *)this)[0]; /*0x488116*/
   abstractFlags = ((unsigned int *)this)[0]; /*0x488119*/
   vtable3 = (void *)(((unsigned int *)this)[0]); /*0x48811c*/
@@ -123,7 +124,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 
 
   }
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x4881f5*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x4881f5*/
   return (gamemd::ConvertClass **)(1); /*0x4881fd*/
 
 }
@@ -285,8 +286,8 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
               int v14 = *(unsigned int *)(v12 + 160);
               v140 = *(BuildingTypeClass **)(v12 + 164);
               v15 = (IUnknown *)(((Coord *)(&v135))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14)),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140))));
-              v143 = *(unsigned long long *)&((gamemd::VectorClass_flat*)v15)->field_0;
-              v144 = *(float *)&((gamemd::VectorClass_flat*)v15)->field_8;
+              v143 = *(unsigned long long *)&((gamemd::VectorClass_flat*)v15)->vtable1;
+              v144 = *(float *)&((gamemd::VectorClass_flat*)v15)->u32_8;
               ((Coord*)(int *)&v143)->Length();
   int v16; // eax
               if ( v16 <= v134 )
@@ -301,14 +302,14 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
                 int * v109 = (int *)operator new(8u);
                 *v109 = v12;
                 v17 = (IUnknown *)(((Coord *)(&v130))->Subtract((int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160))),(int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164)))));
-                v132 = *(unsigned long long *)&((gamemd::VectorClass_flat*)v17)->field_0;
-                v133 = *(float *)&((gamemd::VectorClass_flat*)v17)->field_8;
+                v132 = *(unsigned long long *)&((gamemd::VectorClass_flat*)v17)->vtable1;
+                v133 = *(float *)&((gamemd::VectorClass_flat*)v17)->u32_8;
                 ((Coord*)(int *)&v132)->Length();
                 int v18 = v18;
                 if ( (int)v121 < v126
                   || (IDA_BYTE1(v127) || !v126)
                   && var94 > 0
-                  && ((uint8_t (*)(IUnknown **, int, unsigned int))((gamemd::VectorClass_flat*)v117)->field_8)(&v117, var94 + v126, 0) )
+                  && ((uint8_t (*)(IUnknown **, int, unsigned int))((gamemd::VectorClass_flat*)v117)->u32_8)(&v117, var94 + v126, 0) )
                 {
                   v19 = (IUnknown *)((int *)((IUnknown *)(v121)));
                   v121 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1))))))))))))));
@@ -424,9 +425,9 @@ LABEL_58:
         eax61a = (unsigned int *)(*((int (**)(VectorClass_flat *, int64_t *))aP1a->vtable1 + 18))( (VectorClass_flat *)(aP1a), (int64_t *)(&v130));
         int v148[3];  /* hoisted from cast (G57b) */
         v32 = (IUnknown *)(((Coord *)&v148)->Subtract( (int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax61a)), (int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax61a[1])), (int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax61a[2]))));
-        IDA_LODWORD(v132) = ((gamemd::BuildingClass*)v32)->field_0;
-        v34 = (BuildingTypeClass *)((gamemd::BuildingClass*)v32)->field_8;
-        IDA_HIDWORD(v132) = ((gamemd::BuildingClass*)v32)->field_4;
+        IDA_LODWORD(v132) = *(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable1;
+        v34 = (BuildingTypeClass *)*(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable3;
+        IDA_HIDWORD(v132) = *(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable2;
         v133 = *(float *)&v34;
   double v35; // st7
         v35 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
@@ -453,7 +454,7 @@ LABEL_67:
         if ( (int)v121 < v126
           || (IDA_BYTE1(v127) || !v126)
           && var94 > 0
-          && ((uint8_t (*)(IUnknown **, int, unsigned int))((gamemd::Math*)v117)->field_8)(&v117, var94 + v126, 0) )
+          && ((uint8_t (*)(IUnknown **, int, unsigned int))*(unsigned int *)&((gamemd::Math*)v117)->vtable3)(&v117, var94 + v126, 0) )
         {
     unsigned int v145 = 0;  /* G37 hoist */
           v48 = (IUnknown *)(v121);
@@ -466,10 +467,10 @@ LABEL_67:
       eax63 = (unsigned int *)(*((int (**)(VectorClass_flat *, char *))aP1a->vtable1 + 18))( (VectorClass_flat *)(aP1a), (char *)(v149));
       int v145[3];  /* hoisted from cast (G57b) */
       v37 = (IUnknown *)(((Coord *)&v145)->Subtract( (int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax63)), (int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax63[1])), (int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax63[2]))));
-      IDA_LODWORD(v139) = ((gamemd::Math*)v37)->field_0;
+      IDA_LODWORD(v139) = ((gamemd::Math*)v37)->q000;
       st7_63 = (double)(int)v139;
-      v39 = (BuildingTypeClass *)((gamemd::Math*)v37)->field_8;
-      IDA_HIDWORD(v139) = ((gamemd::Math*)v37)->field_4;
+      v39 = (BuildingTypeClass *)*(unsigned int *)&((gamemd::Math*)v37)->q008;
+      IDA_HIDWORD(v139) = *(unsigned int *)&((gamemd::Math*)v37)->q004;
       v41 = (double)IDA_SHIDWORD(v139);
       v140 = v39;
       v42 = (double)(int)v39;
@@ -480,10 +481,10 @@ LABEL_67:
       eax64 = (unsigned int *)((IUnknown *)((*(int (**)(int, char *))(*(unsigned int *)v26 + 164))( v26, (char *)(v146))));
       int v147[3]; // [esp+FCh] [ebp-24h] BYREF
       v43 = (IUnknown *)((Coord*)&v147)->Subtract( (int)((IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax64)), (int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax64[1])), (int)((IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax64[2])));
-      v135 = ((gamemd::Coord*)v43)->field_0;
-      v44 = (BuildingTypeClass *)((gamemd::Coord*)v43)->field_4;
+      v135 = ((gamemd::Coord*)v43)->q000;
+      v44 = (BuildingTypeClass *)*(unsigned int *)&((gamemd::Coord*)v43)->q004;
       st7_63 = (double)v135;
-      v45 = (BuildingTypeClass *)((gamemd::Coord*)v43)->field_8;
+      v45 = (BuildingTypeClass *)*(unsigned int *)&((gamemd::Coord*)v43)->q008;
       v129 = (IUnknown *)v44;
       v41 = (double)(int)v44;
       v137 = v45;
@@ -539,7 +540,7 @@ LABEL_82:
     while ( v54 < (int)v121 );
   }
   int v55 = v126;
-  ((void (*)(IUnknown **))((gamemd::Math*)v117)->field_C)(&v117);
+  ((void (*)(IUnknown **))*(unsigned int *)&((gamemd::Math*)v117)->q00C)(&v117);
   ((void (*)(IUnknown **, int, unsigned int))((gamemd::Math*)v117)->field_8)(&v117, v55, 0);
   if ( v114 )
   {
@@ -673,10 +674,10 @@ LABEL_82:
   if ( (IDA_BYTE1(**(unsigned int **)&((unsigned int *)HouseClass_Player)[29924]) & 0x80u) != 0 && v58[1].isInLogic )
   {
     v72 = (ParticleSystemClass *)((gamemd::Math*)v71)->field_140;
-    int v75 = ((gamemd::Math*)v71)->field_38 - unk_AA0E28 + 1;
+    int v75 = ((gamemd::Math*)v71)->u32_38 - unk_AA0E28 + 1;
     unsigned int * v113 = 0;
     if ( (IDA_BYTE1(v72) & 1) != 0
-      && ((char)v72 >= 0 ? (v122[0] = *(unsigned int *)(*(unsigned int *)&((gamemd::Math*)v71)->__pad_28[4] + 36)) : (v122[0] = ((gamemd::Math*)v71)->field_24),
+      && ((char)v72 >= 0 ? (v122[0] = *(unsigned int *)(*(unsigned int *)&((gamemd::Math*)v71)->u32_2C + 36)) : (v122[0] = ((gamemd::Math*)v71)->u32_24),
           (eax137 = ((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)v122), (v113 = eax137) != 0)
        && ((eax138 = eax137[17], eax138 == 24) || eax138 == 25)) )
     {
@@ -694,7 +695,7 @@ LABEL_82:
         if ( v75 != unk_AA1028 && v75 != unk_AA1028 + 1 && v75 != unk_AA1028 + 2 && v75 != unk_AA1028 + 3 )
         {
 LABEL_166:
-          v84 = (AbstractClass *)(((gamemd::Math*)v71)->field_38 - g_TerrainBridgeIndex + 1);
+          v84 = (AbstractClass *)(((gamemd::Math*)v71)->u32_38 - g_TerrainBridgeIndex + 1);
           if ( v113 && ((ecx167 = v113[17], ecx167 == 237) || ecx167 == 238)
             || v84 == v76
             || v84 == (AbstractClass *)&v76->__pad_0[1]
@@ -1021,46 +1022,46 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
   int v8; // ebx
   int v9; // edi
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_CommBufferClass;
-  *(unsigned int *)&this->__pad_0[4] = a2; /*0x48b103*/
-  this->CommBufferClass_field_0x8 = a3; /*0x48b106*/
-  *(unsigned int *)this->__pad_C = Size; /*0x48b109*/
-  this->CommBufferClass_field_0x10 = (AbstractClass *)a5; /*0x48b10c*/
-  this->CommBufferClass_field_0x24 = __2_YAPAXI_Z(36 * a2); /*0x48b117*/
+  *(unsigned int *)&this->vtable1 = (unsigned int)&vt_CommBufferClass;
+  *(unsigned int *)&this->q004 = a2; /*0x48b103*/
+  this->q008 = a3; /*0x48b106*/
+  *(unsigned int *)&this->q00C = Size; /*0x48b109*/
+  this->q010 = (AbstractClass *)a5; /*0x48b10c*/
+  this->q024 = __2_YAPAXI_Z(36 * a2); /*0x48b117*/
   this->CommBufferClass_field_0x34 = __2_YAPAXI_Z(24 * a3); /*0x48b123*/
   *(unsigned int *)&this->__pad_28[8] = __2_YAPAXI_Z(4 * a2); /*0x48b13a*/
   *((unsigned int *)this + 16) = __2_YAPAXI_Z(4 * a3); /*0x48b143*/
   v6 = 0; /*0x48b14c*/
-  if ( *(int *)&this->__pad_0[4] > 0 ) /*0x48b150*/
+  if ( *(int *)&this->q004 > 0 ) /*0x48b150*/
   {
     v7 = 0; /*0x48b152*/
     do /*0x48b191*/
     {
-      *(unsigned int *)(this->CommBufferClass_field_0x24 + v7 + 20) = __2_YAPAXI_Z(Size); /*0x48b160*/
-      if ( (int)this->CommBufferClass_field_0x10 <= 0 ) /*0x48b169*/
-        *(unsigned int *)(this->CommBufferClass_field_0x24 + v7 + 28) = 0; /*0x48b180*/
+      *(unsigned int *)(*(unsigned int *)&this->q024 + v7 + 20) = __2_YAPAXI_Z(Size); /*0x48b160*/
+      if ( (int)*(unsigned int *)&this->q010 <= 0 ) /*0x48b169*/
+        *(unsigned int *)(*(unsigned int *)&this->q024 + v7 + 28) = 0; /*0x48b180*/
       else
-        *(unsigned int *)(this->CommBufferClass_field_0x24 + v7 + 28) = __2_YAPAXI_Z((size_t)this->CommBufferClass_field_0x10); /*0x48b177*/
+        *(unsigned int *)(*(unsigned int *)&this->q024 + v7 + 28) = __2_YAPAXI_Z((size_t)*(unsigned int *)&this->q010); /*0x48b177*/
       ++v6; /*0x48b18b*/
       v7 += 36; /*0x48b18c*/
     }
-    while ( v6 < *(unsigned int *)&this->__pad_0[4] ); /*0x48b191*/
+    while ( v6 < *(unsigned int *)&this->q004 ); /*0x48b191*/
   }
   v8 = 0; /*0x48b196*/
-  if ( this->CommBufferClass_field_0x8 > 0 ) /*0x48b19a*/
+  if ( *(unsigned int *)&this->q008 > 0 ) /*0x48b19a*/
   {
     v9 = 0; /*0x48b19c*/
     do /*0x48b1db*/
     {
       *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 12) = __2_YAPAXI_Z(Size); /*0x48b1aa*/
-      if ( (int)this->CommBufferClass_field_0x10 <= 0 ) /*0x48b1b3*/
+      if ( (int)*(unsigned int *)&this->q010 <= 0 ) /*0x48b1b3*/
         *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 20) = 0; /*0x48b1ca*/
       else
-        *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 20) = __2_YAPAXI_Z((size_t)this->CommBufferClass_field_0x10); /*0x48b1c1*/
+        *(unsigned int *)(v9 + this->CommBufferClass_field_0x34 + 20) = __2_YAPAXI_Z((size_t)*(unsigned int *)&this->q010); /*0x48b1c1*/
       ++v8; /*0x48b1d5*/
       v9 += 24; /*0x48b1d6*/
     }
-    while ( v8 < this->CommBufferClass_field_0x8 ); /*0x48b1db*/
+    while ( v8 < *(unsigned int *)&this->q008 ); /*0x48b1db*/
   }
   ((Struct *)((Struct *)this))->ClearAllMemberFlags(); /*0x48b1df*/
   return this->__pad_0; /*0x48b1e6*/

@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_VocClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_VocClass_DEF 1
 struct VocClass {
 // --- flat members (BEGIN) ---
     char Header[12];  // 0x0
@@ -51,5 +53,6 @@ struct VocClass {
 
     char LoadFromINI(CCINIClass * aP1);  // G42.39 supply
 };
+#endif  // GAMEMD_G2_VocClass_DEF
 
 } // namespace gamemd

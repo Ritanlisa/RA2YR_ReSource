@@ -6,6 +6,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_ThemeClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_ThemeClass_DEF 1
 struct ThemeClass {
 // --- flat members (BEGIN) ---
     AbstractClass * ptr_4;  // 0x4
@@ -29,5 +31,6 @@ struct ThemeClass {
     int Play(int a2);  // 0x720bb0
     int ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, void * aSide, void * aSound);
 };
+#endif  // GAMEMD_G2_ThemeClass_DEF
 
 } // namespace gamemd

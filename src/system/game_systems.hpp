@@ -311,7 +311,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~GameScreen() = default;
 
-    virtual void DlgProc(); // 0x60D540
+    virtual void DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wParam, unsigned int a8); // 0x60D540  // [w14e3] raw param restore
 
 };
 // 7 methods in IDA

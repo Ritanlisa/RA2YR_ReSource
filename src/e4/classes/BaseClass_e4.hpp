@@ -8,6 +8,8 @@
 namespace gamemd {
 struct HouseClass;  // fix_fwd_type_supply
 
+#ifndef GAMEMD_G2_BaseClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_BaseClass_DEF 1
 struct BaseClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -46,5 +48,6 @@ struct BaseClass {
     unsigned char m_10[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
 };
+#endif  // GAMEMD_G2_BaseClass_DEF
 
 } // namespace gamemd

@@ -33,6 +33,7 @@
 #include "e4/classes/FileExtension_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 
@@ -866,7 +867,7 @@ LABEL_5:
     return this; /*0x711acb*/
   }
   v5 = (unsigned int *)(dword_A8EB04); /*0x711a72*/
-  while ( *v5   !=   (unsigned int)(this ))) /*0x711a7a*/
+  while ( *v5   !=   (unsigned int)(this )) /*0x711a7a*/
   {
     ++v4; /*0x711a7c*/
     ++v5; /*0x711a7d*/
@@ -1393,7 +1394,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
         ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716cd4*/ (uint8_t *)aP0[9], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_Key_TRUCKA.__pad_1714[80], Filename, 256);
     _makepath( Buffer, 0, 0, Filename, (const char *)(Ext) ); /*0x716ced*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = 0; /*0x716cfe*/
-    v35 = (unsigned int)((void *)SearchMIXFile( (char *)(Buffer), 0))); /*0x716d04*/
+    v35 = (unsigned int)((void *)SearchMIXFile( (char *)(Buffer), 0)); /*0x716d04*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = (unsigned int)v35; /*0x716d0b*/
     if ( !v35 ) /*0x716d11*/
       *(unsigned int *)&((unsigned int *)aP0)[1548] = SearchMIXFile( (char *)(&(unsigned int *)((char *)&stru_820320 + 143)), 0); /*0x716d1f*/
@@ -1567,7 +1568,7 @@ unsigned int * TechnoTypeClass::Constructor(void *a1, void *a2, void *a3, void *
   ((unsigned int *)this)[5] = 10; /*0x717b01*/
   ((unsigned int *)this)[4] = 0; /*0x717b08*/
   ((unsigned int *)this)[0] = (int)&vt_TypeList; /*0x717b0b*/
-  return this->ObjectTypeClass; /*0x717b11*/
+  return *(unsigned int *)&this->vtable1; /*0x717b11*/
 
 }
 }  // G42.18c ns repair
@@ -1600,7 +1601,7 @@ unsigned int * TechnoTypeClass::Constructor_0(ObjectTypeClass * aP1, void *a2, v
 {
 
   ((unsigned int *)this)[0] = (int)&vt_DynamicVectorClass; /*0x717bc2*/
-  return this->ObjectTypeClass; /*0x717bc8*/
+  return *(unsigned int *)&this->vtable1; /*0x717bc8*/
 
 }
 }  // G42.18c ns repair
@@ -1610,7 +1611,7 @@ VectorClass_flat * TechnoTypeClass::Constructor_1(ObjectTypeClass * aP1)
 {
 
   ((unsigned int *)this)[0] = (int)&vt_DynamicVectorClass; /*0x717be2*/
-  return this->ObjectTypeClass; /*0x717be8*/
+  return *(unsigned int *)&this->vtable1; /*0x717be8*/
 
 }
 }  // G42.18c ns repair

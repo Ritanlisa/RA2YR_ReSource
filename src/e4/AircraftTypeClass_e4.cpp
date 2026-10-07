@@ -36,6 +36,9 @@ struct Power;  // fix_tu_missing_types
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fwd decl: nullsub_85 def at addr41_e4.cpp (void nullsub_85())
+namespace gamemd { void nullsub_85(); }
+
 
 // 0x41C8B0
 namespace gamemd {  // G42.18c ns repair

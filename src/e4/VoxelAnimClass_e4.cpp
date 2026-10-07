@@ -38,6 +38,7 @@
 #include "e4/classes/JumpjetLocomotionClass_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {

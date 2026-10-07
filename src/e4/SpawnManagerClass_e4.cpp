@@ -12,6 +12,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SpawnControlVector_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
 
@@ -746,7 +747,7 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char 
   this->q008 = 0; /*0x6b87c1*/
   if ( (a2 & 1) != 0 ) /*0x6b87c8*/
     __3_YAXPAX_Z(this); /*0x6b87cb*/
-  return (gamemd::DynamicVector *)((VectorClass_flat *)this; /*0x6b87d5*/);
+  return (gamemd::DynamicVector *)((VectorClass_flat *)this) /*0x6b87d5*/;
 
 }
 } // namespace gamemd

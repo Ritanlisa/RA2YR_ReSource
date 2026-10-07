@@ -115,6 +115,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.33 批 3: utility_ext 版树宇宙抑制 (Pathfinding 不受影响)
+#ifndef GAMEMD_G2_MoveFeedback_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_MoveFeedback_DEF 1
 class MoveFeedback
 {
 public:
@@ -142,6 +144,7 @@ public:
     uint8_t MoveFeedback_field_0x30[4];
     uint8_t MoveFeedback_field_0x34[4];
 };
+#endif  // GAMEMD_G2_MoveFeedback_DEF
 #endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
 #endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)
 #endif  // GAMEMD_TREE_UNIVERSE (MoveFeedback)

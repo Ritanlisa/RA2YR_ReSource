@@ -41,6 +41,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/NetworkID_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MapFile_e4.hpp"  // G42.36 C2027 supply
@@ -48,6 +49,10 @@
 #include "e4/classes/Player_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GameConfig_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int Network_Load(...);  // raw 005CF830: int __thiscall Network_Load(ObjectClass *this, char a2)
+} // namespace gamemd
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aMissionsmdPkt[];  // data: 0x83f520 truth(IDA G42.57w9)
 extern char aNoFileName[];  // data: 0x83f658 truth(IDA G42.57w9)
@@ -510,7 +515,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
                 }
                 else if ( v37 ) /*0x5cf52c*/
                 {
-                  PlayerColor = (unsigned int)(uniqueId->PlayerColor)); /*0x5cf52e*/
+                  PlayerColor = (unsigned int)(uniqueId->PlayerColor); /*0x5cf52e*/
                   if ( *(unsigned int *)&uniqueId->__pad_50[4] < PlayerColor /*0x5cf556*/
                     || (((unsigned char *)&uniqueId->__pad_50)[1] || !PlayerColor)
                     && (v39 = *(unsigned int *)&((unsigned char *)&uniqueId->__pad_50)[8], v39 > 0)
@@ -720,7 +725,7 @@ unsigned int * SessionClass::saveSettings()
   this->WOLPreferences[15] = 0; /*0x5d3a16*/
   this->WOLPreferences[16] = 0; /*0x5d3a1c*/
   LOWORD(this->Config[4]) = 0; /*0x5d3a22*/
-  LOWORD(this->unknown_16C[0]) = 0; /*0x5d3a26*/
+  LOWORD(*((char *)&this->unknown_16C)) = 0; /*0x5d3a26*/
   memset32(&this->unknown_8AA[3030], 65537, 7u); /*0x5d3a38*/
   return this->GameMode; /*0x5d3a3c*/
 
@@ -881,8 +886,8 @@ int SessionClass::GetPlayerSide()
   int result; // eax
 
   result = -2; /*0x696f13*/
-  if ( *(int *)((char *)&this->u32_1C9) != -2 ) /*0x696f1a*/
-    return *(int *)((char *)&this->u32_1C5); /*0x696f1c*/
+  if ( *(int *)((char *)&this->SkirmishPreferences) != -2 ) /*0x696f1a*/
+    return *(int *)((char *)&this->SkirmishPreferences); /*0x696f1c*/
   return result; /*0x696f1f*/
 
 }
@@ -1466,7 +1471,7 @@ LABEL_9:
     return 0; /*0x697efd*/
   for ( i = dword_A8022C; ; i = (HouseClass *)((char *)i + 4) ) /*0x697ed9*/
   {
-    v7 = *(void **)i->AbstractClass; /*0x697edf*/
+    v7 = *(void **)*(unsigned int *)&i->vtable1; /*0x697edf*/
     if ( *(unsigned char *)(*(unsigned int *)i->vtable1 + 492) ) /*0x697ee1*/
     {
       if ( !*((unsigned char *)v7 + 501) ) /*0x697eeb*/
@@ -2005,9 +2010,9 @@ LABEL_15:
     this->Color = a2; /*0x69b880*/
     this->Color2 = -1; /*0x69b886*/
   }
-  Color2 = (unsigned int)(this->Color2)); /*0x69b896*/
+  Color2 = (unsigned int)(this->Color2); /*0x69b896*/
   *(unsigned int *)&this->__pad_50[268] = this->Color; /*0x69b89c*/
-  this->unknown_160[0] = Color2; /*0x69b8a2*/
+  *((char *)&this->unknown_160) = Color2; /*0x69b8a2*/
   return result; /*0x69b8a8*/
 
 }
@@ -2563,7 +2568,7 @@ char SessionClass::GetGameSpeed()
 }  // G42.18c ns repair
 // 0x69C4A0
 namespace gamemd {  // G42.18c ns repair
-void SessionClass::ddtor(void *a1)
+void TypeList_W4DiskID::ddtor(void *a1)
 {
 
   void *v2; // eax
@@ -2582,7 +2587,7 @@ void SessionClass::ddtor(void *a1)
 }  // G42.18c ns repair
 // 0x69C4D0
 namespace gamemd {  // G42.18c ns repair
-unsigned int SessionClass::Write(int a2)
+unsigned int TypeList_W4DiskID::Write(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x69c4d0*/
@@ -2594,7 +2599,7 @@ unsigned int SessionClass::Write(int a2)
 }  // G42.18c ns repair
 // 0x69C4F0
 namespace gamemd {  // G42.18c ns repair
-int SessionClass::Seek(int a2, void *a2_2, void *a3)
+int TypeList_W4DiskID::Seek(int a2, void *a2_2, void *a3)
 {
 
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x69c4fa*/
@@ -2603,7 +2608,7 @@ int SessionClass::Seek(int a2, void *a2_2, void *a3)
 }  // G42.18c ns repair
 // 0x69C6C0
 namespace gamemd {  // G42.18c ns repair
-TypeList_flat * SessionClass::QueryInterface(unsigned int * Block, char a2)
+TypeList_flat * TypeList_W4DiskID::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -2625,7 +2630,7 @@ TypeList_flat * SessionClass::QueryInterface(unsigned int * Block, char a2)
 }  // G42.18c ns repair
 // 0x69C710
 namespace gamemd {  // G42.18c ns repair
-char SessionClass::AddRef(int a2)
+char TypeList_W4DiskID::AddRef(int a2)
 {
 
   int m_8; // esi
@@ -2655,7 +2660,7 @@ char SessionClass::AddRef(int a2)
 }  // G42.18c ns repair
 // 0x69C750
 namespace gamemd {  // G42.18c ns repair
-char SessionClass::addPlayer(int a2, unsigned int * a3)
+char TypeList_W4DiskID::addPlayer(int a2, unsigned int * a3)
 {
 
   unsigned int *v4; // edi
@@ -2705,7 +2710,7 @@ char SessionClass::addPlayer(int a2, unsigned int * a3)
 }  // G42.18c ns repair
 // 0x69C800
 namespace gamemd {  // G42.18c ns repair
-void SessionClass::removePlayer()
+void TypeList_W4DiskID::removePlayer()
 {
 
   if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x69c80d*/
@@ -2720,7 +2725,7 @@ void SessionClass::removePlayer()
 }  // G42.18c ns repair
 // 0x69C830
 namespace gamemd {  // G42.18c ns repair
-int  SessionClass::findPlayer(unsigned int * a2)
+int  TypeList_W4DiskID::findPlayer(unsigned int * a2)
 {
 
   int result; // eax
@@ -2744,7 +2749,7 @@ int  SessionClass::findPlayer(unsigned int * a2)
 }  // G42.18c ns repair
 // 0x69C870
 namespace gamemd {  // G42.18c ns repair
-unsigned int SessionClass::updatePlayer(int a2)
+unsigned int TypeList_W4DiskID::updatePlayer(int a2)
 {
 
   if ( LOBYTE(this->m_C) ) /*0x69c870*/
@@ -2756,7 +2761,7 @@ unsigned int SessionClass::updatePlayer(int a2)
 }  // G42.18c ns repair
 // 0x69C890
 namespace gamemd {  // G42.18c ns repair
-char SessionClass::Release(int a2, unsigned int * a3)
+char TypeList_W4DiskID::Release(int a2, unsigned int * a3)
 {
 
   unsigned int *v4; // edi
@@ -2804,7 +2809,7 @@ char SessionClass::Release(int a2, unsigned int * a3)
 }  // G42.18c ns repair
 // 0x69C940
 namespace gamemd {  // G42.18c ns repair
-int SessionClass::Read(unsigned int * a2, void *a2_2)
+int TypeList_W4DiskID::Read(unsigned int * a2, void *a2_2)
 {
 
   int m_10; // edx
@@ -2826,7 +2831,7 @@ int SessionClass::Read(unsigned int * a2, void *a2_2)
 }  // G42.18c ns repair
 // 0x69D460
 namespace gamemd {  // G42.18c ns repair
-VectorClass_flat * SessionClass::validateGame(unsigned int * Block, char a2)
+VectorClass_flat * TypeList_W4DiskID::validateGame(unsigned int * Block, char a2)
 {
 
   void *v3; // eax

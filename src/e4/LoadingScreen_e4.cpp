@@ -277,7 +277,7 @@ char LoadingScreen::FreeResources3()
   LoadingScreen *v1; // [esp+0h] [ebp-4h]
   ObjectClass *v2; // [esp+0h] [ebp-4h]
 
-  result = (unsigned int)(&byte_B0FBE0)); /*0x72def0*/
+  result = (unsigned int)(&byte_B0FBE0); /*0x72def0*/
   if ( &byte_B0FBE0 ) /*0x72defa*/
   {
     &byte_B0FBE0 = 0; /*0x72df00*/

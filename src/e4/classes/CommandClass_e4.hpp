@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_CommandClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_CommandClass_DEF 1
 struct CommandClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -15,5 +17,6 @@ struct CommandClass {
     static int BinarySearchAction(CommandClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00724FC0 (was C2597 interim stub)
     static bool executeAction(CommandClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00724FA0 (was C2597 interim stub)
 };
+#endif  // GAMEMD_G2_CommandClass_DEF
 
 } // namespace gamemd

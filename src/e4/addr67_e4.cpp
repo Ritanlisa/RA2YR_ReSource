@@ -368,7 +368,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
 
   if ( ((INIClass*)((INIClass *)a0))->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x67bd4e*/
 // 0x41cef0
-    return (gamemd::AircraftTypeClass *)(KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/);
+    return (gamemd::AircraftTypeClass *)(KeywordClass::FindOrCreate(Destination)) /*0x67bd5b*/;
   else
     return (gamemd::AircraftTypeClass *)(a4); /*0x67bd69*/
 }

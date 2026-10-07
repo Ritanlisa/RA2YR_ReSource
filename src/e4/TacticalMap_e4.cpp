@@ -184,7 +184,7 @@ int TacticalMap::Redraw()
       0);
   if ( byte_A8B8B4 ) /*0x4f457a*/
     DrawHUD( (void *)(v5)); /*0x4f457e*/
-(*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x4f4593*/ dword_887640, (AudioStream *)(DSurface_Composite), 0);
+(*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))( /*0x4f4593*/ dword_887640, (AudioStream *)(DSurface_Composite), 0);
 
 
 
@@ -1066,7 +1066,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
          a2,
          a3);
   (*(void (**)(int))(*(unsigned int *)v5->TacticalMap_field_14 + 96))(v5->TacticalMap_field_14); /*0x7bcfd4*/
-  result = (unsigned int)(v5->TacticalMap_field_1C)); /*0x7bcfda*/
+  result = (unsigned int)(v5->TacticalMap_field_1C); /*0x7bcfda*/
   v8 = v6 + v5->TacticalMap_field_10; /*0x7bcfdd*/
   if ( v8 >= result ) /*0x7bcfe1*/
     v8 -= v5->TacticalMap_field_20; /*0x7bcfe3*/
@@ -1075,16 +1075,16 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
     v26 = a5; /*0x7bcff4*/
     do /*0x7bd0cf*/
     {
-      v9 = aP3; /*0x7bcff8*/
-      if ( v8 + 2 * aP3 < result ) /*0x7bd001*/
+      v9 = a4; /*0x7bcff8*/
+      if ( v8 + 2 * a4 < result ) /*0x7bd001*/
       {
-        v18 = aP3; /*0x7bd0e2*/
+        v18 = a4; /*0x7bd0e2*/
         v19 = (char *)v8; /*0x7bd0e4*/
-        if ( (v8 & 2) != 0 && aP3 ) /*0x7bd0ea*/
+        if ( (v8 & 2) != 0 && a4 ) /*0x7bd0ea*/
         {
           *(unsigned short *)v8 = -1; /*0x7bd0ec*/
           v19 = (char *)(v8 + 2); /*0x7bd0f1*/
-          v18 = aP3 - 1; /*0x7bd0f4*/
+          v18 = a4 - 1; /*0x7bd0f4*/
         }
         v20 = 0; /*0x7bd0f9*/
         v21 = v18 >> 1; /*0x7bd0fe*/
@@ -1113,7 +1113,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
         if ( v23 >> 1 ) /*0x7bd034*/
         {
           memset(v10, 0xFFu, 4 * v13); /*0x7bd03f*/
-          v9 = aP3; /*0x7bd041*/
+          v9 = a4; /*0x7bd041*/
           v12 = &v10[4 * v13]; /*0x7bd045*/
         }
         if ( (v23 & 1) != 0 && v12 ) /*0x7bd052*/

@@ -88,8 +88,8 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
     v33 = *((unsigned int *)this + 86) > 0; /*0x4f656c*/
     v37 = *((unsigned int *)this + 88) > 0; /*0x4f6573*/
     v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2848; /*0x4f657d*/
-    v32 = (int)this->? > 0; /*0x4f6583*/
-    v3 = ((SuperWeaponTypeClass *)(this->? + 152))->FindByName(); /*0x4f6598*/
+    v32 = (int)this->SidebarImage > 0; /*0x4f6583*/
+    v3 = ((SuperWeaponTypeClass *)(this->SidebarImage + 152))->FindByName(); /*0x4f6598*/
     v4 = *(unsigned int *)(v2 + 16); /*0x4f659a*/
     v5 = 1 << v3; /*0x4f659d*/
     v6 = 0; /*0x4f659f*/
@@ -115,14 +115,14 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       v32 = 1; /*0x4f65d5*/
     if ( v36 && v33 ) /*0x4f65e8*/
       return (gamemd::AbstractClass **)(1); /*0x4f65f3*/
-    v11 = (*(int (__stdcall **)(int *))(*(unsigned int *)&this->nextArrayIndex + 24))(this->?); /*0x4f6603*/
+    v11 = (*(int (__stdcall **)(int *))(*(unsigned int *)&this->nextArrayIndex + 24))(this->ActionValue); /*0x4f6603*/
     v38 = v11; /*0x4f6612*/
     BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                            (HouseClass *)this,
                            *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2276);
     v13 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2876; /*0x4f6623*/
     v34 = BuildableFromArray != 0; /*0x4f662c*/
-    v14 = ((SuperWeaponTypeClass *)(this->? + 152))->FindByName(); /*0x4f6641*/
+    v14 = ((SuperWeaponTypeClass *)(this->SidebarImage + 152))->FindByName(); /*0x4f6641*/
     v15 = *(unsigned int *)(v13 + 16); /*0x4f6643*/
     v16 = 1 << v14; /*0x4f6646*/
     v17 = 0; /*0x4f6648*/
@@ -152,7 +152,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
     if ( v20 ) /*0x4f6677*/
     {
       v21 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2876; /*0x4f668c*/
-      v22 = 1 << ((SuperWeaponTypeClass *)(this->? + 152))->FindByName(); /*0x4f669e*/
+      v22 = 1 << ((SuperWeaponTypeClass *)(this->SidebarImage + 152))->FindByName(); /*0x4f669e*/
       v23 = *(unsigned int *)(v21 + 16); /*0x4f66a0*/
       v24 = 0; /*0x4f66a3*/
       if ( v23 <= 0 ) /*0x4f66a7*/
@@ -290,7 +290,7 @@ int SuperWeaponTypeClass::Construct(char *aP1)
     ((void **)this)[1] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
     ((void **)this)[2] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
     ((void **)this)[3] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
-    AbstractClass::GenerateUniqueID( (int)((AbstractClass *)&this->?)); /*0x51158d*/
+    AbstractClass::GenerateUniqueID( (int)((AbstractClass *)&this->vtable4)); /*0x51158d*/
     *((unsigned char *)this + 416) = 0; /*0x511592*/
     v4 = dword_A83CA8; /*0x511598*/
     if ( dword_A83CA8 < dword_A83CA0 /*0x5115d6*/
@@ -828,7 +828,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 
 // 0x6CE8D0
 namespace gamemd {
-int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
+int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a2, int a3)
 {
     int result; // eax
 

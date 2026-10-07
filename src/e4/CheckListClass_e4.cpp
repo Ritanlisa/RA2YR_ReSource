@@ -18,6 +18,7 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
   ListClass *v7; // ecx
   ListClass *v8; // esi
   size_t *result; // eax
+  unsigned char v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
   int (*ListClass_field_0x0C) (...) ;  wchar_t * Type;
   int v12; // ecx
   int v13; // eax
@@ -27,7 +28,6 @@ size_t CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void *
   int v18; // [esp-10h] [ebp-104h]
   unsigned int v19[4]; // [esp+4h] [ebp-F0h] BYREF
   unsigned int v20[2]; // [esp+14h] [ebp-E0h] BYREF
-  unsigned char v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
   unsigned short v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
 
   v8 = v7; /*0x488527*/

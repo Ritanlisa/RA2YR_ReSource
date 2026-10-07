@@ -294,7 +294,7 @@ int Session::StartGame(HWND hWnd)
   Skirmish *v4; // eax
 
   if ( !(uint8_t)((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4])))->Sed() ) /*0x5ed381*/
-    return Session::PrepareGame( (HWND)(hWnd)); /*0x5ed3f1*/
+    return ((Session*)(HWND)((hWnd)))->PrepareGame((HWND)((hWnd)));; /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/
   {
@@ -309,7 +309,7 @@ int Session::StartGame(HWND hWnd)
   g_UIControlState = (int)(v4); /*0x5ed3c6*/
   ((Surface *)((Surface *)v4))->LoadToSurfaceSHP((char *)(ExistingFileName)); /*0x5ed3cb*/
   if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
-    Session::PrepareGame( (HWND)(hWnd)); /*0x5ed3dd*/
+    ((Session*)(HWND)((hWnd)))->PrepareGame((HWND)((hWnd)));; /*0x5ed3dd*/
   return InvalidateRect((HWND)hWnd, 0, 0); /*0x5ed3ed*/
 
 }

@@ -90,14 +90,27 @@
 #include "e4/classes/WDTObject_e4.hpp"
 #include "classes/INIClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] vocab extender (raw call-form evidence)
+namespace gamemd { int ReadInt(...); }
+namespace gamemd { int SetIntFormat(...); }
+namespace gamemd { int ddtor(...); }
+namespace gamemd { int System_Init_766900(...); }
+namespace gamemd { int System_Init_766910(...); }
+namespace gamemd { int sub_47AA00(...); }
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int GetRegionStringWOL(...);  // raw 007AF3D0: char **__thiscall GetRegionStringWOL(ObjectClass *this)
+    int System_Init_766EE0(...);  // raw 00766EE0: char __thiscall System_Init_766EE0(ObjectClass *this, int a2)
+    int System_Init_766F70(...);  // raw 00766F70: _DWORD *__thiscall System_Init_766F70(rc_ptr *this, int a2)
+} // namespace gamemd
 
 // 0x7636F0
 namespace gamemd {
 void unknown_libname_36(ObjectClass *self)
 {
   self->AbstractClass = 0; /*0x7636f4*/
-  self->q004 = 0; /*0x7636f6*/
-  self->q008 = 0; /*0x7636f9*/
+  self->ShapeButtonClass_field_0x04 = 0; /*0x7636f6*/
+  self->ShapeButtonClass_field_0x08 = 0; /*0x7636f9*/
   return self; /*0x7636fc*/
 }
 }
@@ -722,7 +735,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
       v8[1] = 0; /*0x7696e8*/
       v8[2] = 0; /*0x7696eb*/
       v8[3] = 0; /*0x7696ee*/
-      (*((void ((void **)(**))(void **))((char *)&v55) + 2))((char *)&v55); /*0x7696f5*/
+      (*((void (__thiscall **)(void **))((char *)&v55) + 2))((char *)&v55); /*0x7696f5*/
     }
     while ( (*((uint8_t ((void **)(**))(void **))((char *)&v55) + 1))((char *)&v55) ); /*0x769700*/
   }

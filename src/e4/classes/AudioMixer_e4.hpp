@@ -5,6 +5,8 @@
 
 namespace gamemd {
 
+#ifndef GAMEMD_G2_AudioMixer_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_AudioMixer_DEF 1
 struct AudioMixer {
 // --- flat members (BEGIN) ---
     unsigned int AudioMixer_field_00;  // 0x0
@@ -30,5 +32,6 @@ struct AudioMixer {
     int Shutdown();
     unsigned int u32_80;  // 0x80
 };
+#endif  // GAMEMD_G2_AudioMixer_DEF
 
 } // namespace gamemd

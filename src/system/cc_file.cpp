@@ -8,6 +8,10 @@
 #include <cstring>
 #include "core/reverse_marker.hpp"
 #include "e4/classes/File_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int LookupFileInfoCache(...);  // raw 005B4430: char __fastcall FileInfoCache_Lookup(const char *a1, _DWORD *a2, _DWORD *a3, _DWORD *a4, _
+} // namespace gamemd
 
 namespace gamemd
 {

@@ -74,6 +74,10 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/WaypointClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"  // G42.36 C2027 supply
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int Render_Helper(...);  // raw 00626120: unsigned int __thiscall Render_Helper(ObjectClass *this, unsigned __int8 a2, int a3)
+} // namespace gamemd
 
 // 0x4A0190
 namespace gamemd {
@@ -1568,7 +1572,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   int abstractFlags; // eax
   void *vtable3; // ecx
 
-  LOBYTE(this->AbstractClass) = 0; /*0x4a6855*/
+  LOBYTE(*(unsigned int *)&this->vfptr) = 0; /*0x4a6855*/
   ((unsigned int *)this)[0] = 0; /*0x4a6857*/
   ((unsigned int *)this)[0] = 0; /*0x4a685a*/
   ((unsigned int *)this)[0] = 0; /*0x4a685d*/
@@ -1644,7 +1648,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   ((unsigned int *)this)[0] = (unsigned int)v15; /*0x4a69dd*/
   if ( !v15 ) /*0x4a69e0*/
 LABEL_12:
-    LOBYTE(this->AbstractClass) = 1; /*0x4a69e2*/
+    LOBYTE(*(unsigned int *)&this->vfptr) = 1; /*0x4a69e2*/
   return (gamemd::AbstractClass **)((char *)this); /*0x4a69e7*/
 
 }
@@ -2280,7 +2284,7 @@ AbstractClass * * DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4)
   v27 = -1; /*0x4ae761*/
   IDA_LOBYTE(v26) = 0; /*0x4ae765*/
   if ( byte_A8ED6B ) /*0x4ae769*/
-    return (gamemd::AbstractClass **)((char)v4; /*0x4ae769*/);
+    return (gamemd::AbstractClass **)((char)v4) /*0x4ae769*/;
   a2 = *(unsigned int *)HouseClass::ClampToUsableCell(&v28, &a2); /*0x4ae78f*/
   v5 = ((Waypoint *)(char *)dword_A83D4C)->FindByCell( (IUnknown *)(&a2)); /*0x4ae794*/
   if ( v5 ) /*0x4ae79b*/

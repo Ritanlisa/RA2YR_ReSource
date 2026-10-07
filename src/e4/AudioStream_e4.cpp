@@ -687,7 +687,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, unsi
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
   v8 = (int *)(*(int (**)(AudioStream *, int *))(*(unsigned int *)this->__pad_0 + 120))( this, (int *)(&v78)); /*0x4beae2*/
-  v9 = (int *)(ClipRectIntersection( (RectangleStruct *)(&v76), (const RectangleStruct *)(aP1), (const RectangleStruct*)(v8), 0, 0)); /*0x4beaf5*/
+  v9 = (int *)(ClipRectIntersection( (RectangleStruct *)(&v76), (const RectangleStruct *)(a2), (const RectangleStruct*)(v8), 0, 0)); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v84 = *v9; /*0x4beafe*/
   v11 = v9[1]; /*0x4beb02*/
@@ -697,12 +697,12 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, unsi
   v87 = v12; /*0x4beb15*/
   if ( !v86 && !v12 ) /*0x4beb1d*/
     return 0; /*0x4beb1d*/
-  v13 = v10 + *aP2; /*0x4beb3c*/
-  v14 = v10 + *aP3; /*0x4beb3e*/
+  v13 = v10 + *a3; /*0x4beb3c*/
+  v14 = v10 + *a4; /*0x4beb3e*/
   v15 = a8; /*0x4beb40*/
-  v16 = v11 + aP2[1]; /*0x4beb47*/
+  v16 = v11 + a3[1]; /*0x4beb47*/
   v17 = v13; /*0x4beb49*/
-  v18 = v11 + aP3[1]; /*0x4beb4b*/
+  v18 = v11 + a4[1]; /*0x4beb4b*/
   v19 = a7; /*0x4beb4d*/
   v80 = v13; /*0x4beb56*/
   v81 = v16; /*0x4beb5a*/
@@ -776,9 +776,9 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, unsi
   if ( !v101 ) /*0x4bedb3*/
     return 0; /*0x4bf63e*/
   v35 = 256 - a6; /*0x4bedd0*/
-  v70 = (a6 * *aP4) >> 8; /*0x4bedd8*/
-  v69 = (a6 * aP4[1]) >> 8; /*0x4bede7*/
-  v68 = (a6 * aP4[2]) >> 8; /*0x4bedfa*/
+  v70 = (a6 * *a5) >> 8; /*0x4bedd8*/
+  v69 = (a6 * a5[1]) >> 8; /*0x4bede7*/
+  v68 = (a6 * a5[2]) >> 8; /*0x4bedfa*/
   v36 = v82 - v80; /*0x4bee06*/
   v72 = v82 - v80; /*0x4bee0c*/
   v97 = v83 - v81; /*0x4bee19*/
@@ -1166,11 +1166,11 @@ int AudioStream::ProcessStream()
   int v22; // eax
   int v23; // eax
   int v24; // eax
-  void (__cdecl *)(int, int, unsigned int, unsigned int); // eax
+  void (__cdecl *v25)(int, int, unsigned int, unsigned int); // eax
   int v26; // eax
   int v27; // eax
   int v28; // eax
-  int (__cdecl *)(unsigned int, unsigned int); // eax
+  int (__cdecl *v29)(unsigned int, unsigned int); // eax
   int v30; // edx
   char v31; // al
   int v32; // eax
@@ -1244,7 +1244,7 @@ int AudioStream::ProcessStream()
           }
           if ( v19 > v33 ) /*0x7beca6*/
             break; /*0x7beca6*/
-          v22 = (unsigned int)(*(unsigned int *)(v2 + 20))); /*0x7becac*/
+          v22 = (unsigned int)(*(unsigned int *)(v2 + 20)); /*0x7becac*/
           if ( (v22 & 4) != 0 ) /*0x7becb1*/
           {
             if ( (v22 & 8) != 0 ) /*0x7becb5*/
@@ -1391,7 +1391,7 @@ void AudioStream::Destructor(unsigned int * Block)
   if ( (this->__pad_9C[8] & 5) != 0 ) /*0x402563*/
     (*(void (**)(AudioStream *))(this->AudioStream_field_0xD4[0] + 16))(this); /*0x40256d*/
   (*(void (**)(AudioStream *))(this->AudioStream_field_0xD4[0] + 44))(this); /*0x402578*/
-  v2 = (void (*)(AudioStream *))this->AudioStream_field_0xBC[0]; /*0x40257b*/
+  v2 = *(void (*)(AudioStream *) *)&this->u32_BC; /*0x40257b*/
   if ( v2 ) /*0x402583*/
     v2(this); /*0x402587*/
   *(unsigned int *)&this->__pad_D8[144] = 0; /*0x40258b*/

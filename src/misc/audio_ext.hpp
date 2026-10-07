@@ -20,6 +20,8 @@ using ::ra2::game::AudioController;
 // AudioMixer — DirectSound mixer (9 methods)
 // IDA: Init 0x407150, PlayBuffer 0x4071C0
 // ============================================================================
+#ifndef GAMEMD_G2_AudioMixer_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_AudioMixer_DEF 1
 class AudioMixer
 {
 public:
@@ -62,6 +64,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Shutdown();  // 0x406e80
     // === FUNCS-MOVE (END) ===
 };
+#endif  // GAMEMD_G2_AudioMixer_DEF
 
 // ============================================================================
 // AudioSettings — audio settings dialog (5 methods)
@@ -97,6 +100,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // Voice — voice channel management (2 methods)
 // IDA: Stop, DetachChannel
 // ============================================================================
+#ifndef GAMEMD_G2_Voice_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_Voice_DEF 1
 class Voice
 {
 public:
@@ -107,6 +112,7 @@ int Stop(void);  // 0x4025B0
 
     static int32_t  s_ActiveChannels; // 0x00
 };
+#endif  // GAMEMD_G2_Voice_DEF
 
 // ============================================================================
 // Mixer — audio buffer mixer (2 methods)
@@ -128,6 +134,8 @@ public:
 // IDA: RequestBuffer, GetValue, ReadThemeEntry
 // ============================================================================
 // CSP: ThemeClass matched via T1+T3
+#ifndef GAMEMD_G2_ThemeClass_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_ThemeClass_DEF 1
 class ThemeClass
 {
 public:
@@ -166,6 +174,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     static bool GetField(int a1);  // 0x752ab0
     // === FUNCS-MOVE (END) ===
 };
+#endif  // GAMEMD_G2_ThemeClass_DEF
 
 // ============================================================================
 // Theme — theme playback (3 methods)
@@ -226,6 +235,8 @@ public:
 };
 // 3 methods in IDA
 // CSP: AudioChannel matched via T1
+#ifndef GAMEMD_G2_AudioChannel_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_AudioChannel_DEF 1
 class AudioChannel
 {
 public:
@@ -243,6 +254,7 @@ public:
     unsigned int u32_A4;
     unsigned int u32_D4;
 };
+#endif  // GAMEMD_G2_AudioChannel_DEF
 // 1 methods in IDA
 // CSP: AudioCodec matched via T1
 class AudioCodec
@@ -279,6 +291,8 @@ public:
 };
 // 2 methods in IDA
 // CSP: AudioFile matched via T1
+#ifndef GAMEMD_G2_AudioFile_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_AudioFile_DEF 1
 class AudioFile
 {
 public:
@@ -290,6 +304,7 @@ public:
 
     uint8_t AudioFile_field_0x04[4];
 };
+#endif  // GAMEMD_G2_AudioFile_DEF
 // 1 methods in IDA
 class AudioFileClass
 {
@@ -313,6 +328,8 @@ public:
     uint8_t AudioFrame_field_0x04[4];
 };
 // 1 methods in IDA
+#ifndef GAMEMD_G2_AudioIndex_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_AudioIndex_DEF 1
 class AudioIndex
 {
 public:
@@ -322,6 +339,7 @@ public:
     virtual unsigned int * GetSampleInformation(unsigned int *a1, int a2, unsigned int *a3); // 0x401640 (G42.33 批 3: 真值对齐)
 
 };
+#endif  // GAMEMD_G2_AudioIndex_DEF
 // 1 methods in IDA
 // CSP: AudioList matched via T1
 class AudioList
@@ -334,6 +352,8 @@ public:
 
 };
 // 1 methods in IDA
+#ifndef GAMEMD_G2_AudioNode_DEF  // G42.57w14 twin-guard (shared; first-include wins)
+#define GAMEMD_G2_AudioNode_DEF 1
 class AudioNode
 {
 public:
@@ -343,6 +363,7 @@ public:
     virtual int Release(); // 0x408600
 
 };
+#endif  // GAMEMD_G2_AudioNode_DEF
 // 1 methods in IDA
 class AudioOcclusion
 {
@@ -353,6 +374,8 @@ public:
     virtual void ComputeBoundingVertices(); // 0x756BB0
 
 };
+#ifndef GAMEMD_G2_AudioOptionsClass_DEF  // G42.57w14 carrier twin-guard (shared w/ _w14_nocarrier_e4.hpp)
+#define GAMEMD_G2_AudioOptionsClass_DEF 1
 // 1 methods in IDA
 class AudioOptionsClass
 {
@@ -363,6 +386,7 @@ public:
     virtual void ApplySettings(); // 0x5FB160
 
 };
+#endif  // GAMEMD_G2_AudioOptionsClass_DEF
 // 1 methods in IDA
 class AudioPool
 {

@@ -824,7 +824,7 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(ObjectClass * aP1) {
   if ( (*(int (**)(char *))(*((unsigned int *)this + 432) + 24))((char *)this + 1728) ) /*0x4197ea*/
     return (void *)aP1; /*0x4197f9*/
   v5 = (*(int (**)(TechnoClass *, unsigned int))(this->vtable0 + 360))((gamemd::TechnoClass *)(this), 0); /*0x41980c*/
-  v6 = (*(int (**)(int, int *))(*(unsigned int *)&aP1->q_120)(aP1, &v40); /*0x419813*/
+  v6 = (*(int (**)(int, int *))(*(unsigned int *)&aP1->q_120))(aP1, &v40); /*0x419813*/
   v38 = *(double *)v6; /*0x419818*/
   v7 = *(unsigned int *)(v6 + 8); /*0x419829*/
   *(unsigned int *)v26 = g_AircraftStatusFlag; /*0x419831*/
@@ -1220,7 +1220,7 @@ char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3)
     v8 = 0; /*0x42b22e*/
     v9 = 0; /*0x42b230*/
     v10 = *(unsigned int *)(a2 + 8) == 1; /*0x42b232*/
-    v26 = (unsigned int)(*(unsigned int *)(a2 + 8) - 1)); /*0x42b234*/
+    v26 = (unsigned int)(*(unsigned int *)(a2 + 8) - 1); /*0x42b234*/
     v6 = v26; /*0x42b22a*/
     v24 = -1; /*0x42b238*/
     v27 = v3; /*0x42b23c*/

@@ -44,6 +44,7 @@
 #include "e4/classes/ParticleSystemClass_e4.hpp"
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x451400
@@ -145,7 +146,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       ((BuildingClass *)a1)->ClearAnims( 9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
-    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int UpgradeLevel = 0;  /* G37 hoist */
                 strcpy((char *)(a2), (const char *)(*(unsigned int *)(a1 + 1312) + 504));
         v18 = strlen((const char *)(asc_818D7C)) + 1; /*0x45158c*/
         qmemcpy( (void *)(&v26[strlen( (const char *)(v26))]), (const void *)asc_818D7C, v18); /*0x451599*/
@@ -161,14 +162,14 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
   }
   else
   {
-        v21 = *(unsigned char *)(a1 + 1794);
+        UpgradeLevel = *(unsigned char *)(a1 + 1794);
     if ( UpgradeLevel == *(unsigned int *)&v15->__pad_F70[1392] ) /*0x4515fa*/
     {
       return 0; /*0x4515ff*/
     }
     else
     {
-            *(unsigned char *)(a1 + 1794) = v21 + 1;
+            *(unsigned char *)(a1 + 1794) = UpgradeLevel + 1;
       BuildingClass::GetHealthRatio((gamemd::BuildingClass *)(a1)); /*0x451610*/
       _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x451615*/
       __asm /*0x45161a*/

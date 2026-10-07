@@ -35,6 +35,14 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+// [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
+// usage: *(unsigned int*)v.__pad_0 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
+namespace gamemd {
+struct _VectorClass_VCell {
+    char __pad_0[4];  // 0x0 vfptr carrier
+};
+} // namespace gamemd
+
 
 // 0x486790
 namespace gamemd {
@@ -288,7 +296,7 @@ int GenerateTerrain(RandomMap *self)
                 *(unsigned char *)(v38 + 75) = 0; /*0x58cdc2*/
                 *(unsigned int *)(v36 + 56) = 0; /*0x58cdc6*/
                 *(unsigned char *)(v36 + 282) = 0; /*0x58cdc9*/
-                v39 = (unsigned int)(&dword_ABE2E4)); /*0x58cdd0*/
+                v39 = (unsigned int)(&dword_ABE2E4); /*0x58cdd0*/
                 if ( v35 != -1 ) /*0x58cdd9*/
                   v39 = v35; /*0x58cddb*/
                 *(unsigned char *)(v36 + 283) = v39; /*0x58cddd*/
@@ -346,7 +354,7 @@ int GenerateTerrain(RandomMap *self)
                     *(unsigned char *)(v26 + 75) = 0; /*0x58cc3c*/
                     *(unsigned int *)(j + 56) = 0; /*0x58cc40*/
                     *(unsigned char *)(j + 282) = 0; /*0x58cc43*/
-                    v27 = (unsigned int)(&dword_ABE2E4)); /*0x58cc4a*/
+                    v27 = (unsigned int)(&dword_ABE2E4); /*0x58cc4a*/
                     if ( v24 != -1 ) /*0x58cc52*/
                       v27 = v24; /*0x58cc54*/
                     *(unsigned char *)(j + 283) = v27; /*0x58cc56*/
@@ -2015,7 +2023,7 @@ int AllocateArea()
 }
 // 0x590970
 namespace gamemd {
-char CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
+char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
 {
     __int16 *v4; // esi
     void *v5; // edi
@@ -2320,7 +2328,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
 }
 // 0x590FD0
 namespace gamemd {
-int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int a4, DynamicVector * aP4)
+int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int a3, DynamicVector * aP4, float a5)
 {
     int v6; // eax
     __int16 v7; // cx
@@ -2350,7 +2358,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int
     v20 = 5; /*0x59102e*/
     v21 = v8; /*0x59103b*/
     v17 = v8; /*0x59103f*/
-    if ( Map_Check((__int16 *)&v17, (int)RandomMap_field_0x8, a4, v6) ) /*0x591043*/
+    if ( Map_Check((__int16 *)&v17, (int)RandomMap_field_0x8, a3, v6) ) /*0x591043*/
     {
       v11 = 0; /*0x59105d*/
       v22 = 0; /*0x591060*/
@@ -2367,7 +2375,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * aP2, int
             v19 = 5; /*0x591094*/
             v20 = 5; /*0x591098*/
             v18 = v11 + v15 + 4 * v11 - 5; /*0x5910a0*/
-            if ( Map_Check((__int16 *)&v17, (int)v14, a4, v16) ) /*0x5910a9*/
+            if ( Map_Check((__int16 *)&v17, (int)v14, a3, v16) ) /*0x5910a9*/
               v22 |= *(unsigned int *)&stru_82ADA8.?[8 * v11 + 35 + 4 * v12 + 4 * v11]; /*0x5910c6*/
           }
           ++v12; /*0x5910ca*/

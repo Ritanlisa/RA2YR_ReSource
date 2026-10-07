@@ -2098,7 +2098,7 @@ char sub_7321D0(int a1, unsigned char (__fastcall *)(unsigned int, int), int a3)
 
 // 0x7325C0
 namespace gamemd {
-BOOL E4Recv_7325C0::sub_7325C0()
+BOOL AbstractClass::sub_7325C0()
 {
 
   return (*((int (**)(ObjectClass *))this->vtable1 + 11))(this) != 6 /*0x7325f4*/
@@ -2480,7 +2480,7 @@ int sub_735350()
 
 // 0x736C10
 namespace gamemd {
-char E4Recv_736C10::sub_736C10()
+char ObjectClass::sub_736C10()
 {
 
   int v2; // eax

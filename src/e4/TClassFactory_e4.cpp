@@ -45,7 +45,7 @@ int TClassFactory_MechLocomotionClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
   if ( !v1 ) /*0x6c4d74*/
-    __3_YAXPAX_Z((void *, unsigned int a3, unsigned int a4)Block); /*0x6c4d77*/
+    __3_YAXPAX_Z((void *)Block); /*0x6c4d77*/
   return v1; /*0x6c4d81*/
 
 }

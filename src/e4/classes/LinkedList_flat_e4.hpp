@@ -68,6 +68,7 @@ struct LinkedList {
     static unsigned int * FindNext(void *aP0);  // 2
     static int PushFront(void *aP0, int aP1);  // 4
     static AbstractClass * * LoadScenarioMixFiles(void *aP0, int aP1, int aP2, int aP3, int aP4);  // 2
+    char __pad_0[4];  // 0x0 (G57W14E1 til supply)
 };
 
 } // namespace gamemd

@@ -16,6 +16,10 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+// [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
+namespace gamemd {
+    int GameListRenderWOL(...);  // raw 00781480: void GameListRenderWOL(ObjectClass *this)
+} // namespace gamemd
 
 // 0x7AA870
 namespace gamemd {
@@ -137,7 +141,7 @@ LABEL_103:
                   v7 = (int)(((char *)&stru_B76AC4)); /*0x7aaa32*/
                   ++v9; /*0x7aaa37*/
                   occupant += 268; /*0x7aaa38*/
-                  if ( v9   >=   (int)((*(int *)&stru_B76AC4) ))) /*0x7aaa40*/
+                  if ( v9   >=   (int)((*(int *)&stru_B76AC4) )) /*0x7aaa40*/
                     goto LABEL_88; /*0x7aaa40*/
                 }
                 Debug::Log("Setting ping %d for %s\n"); /*0x7aaa54 G57c1: IDA 0x7aaa54 push offset aSettingPingDFo*/
@@ -186,12 +190,12 @@ LABEL_51:
                 v18 = 0; /*0x7aab96*/
                 if ( abstractFlags < 0 ) /*0x7aab9a*/
                   v18 = abstractFlags; /*0x7aab9c*/
-                if ( v18   >=   (int)((*(int *)&g_WebBrowserConfig) ))) /*0x7aaba4*/
+                if ( v18   >=   (int)((*(int *)&g_WebBrowserConfig) )) /*0x7aaba4*/
                 {
                   ((DynamicVector *)((DynamicVector *)((char *)&g_WebBrowserConfig)))->EnsureCapacity(); /*0x7aabab*/
                   abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aabb0*/
                 }
-                if ( abstractFlags   >=   (int)((*(int *)&g_WebBrowserConfig) ))) /*0x7aabbb*/
+                if ( abstractFlags   >=   (int)((*(int *)&g_WebBrowserConfig) )) /*0x7aabbb*/
                 {
                   ((DynamicVector *)((DynamicVector *)((char *)&g_WebBrowserConfig)))->EnsureCapacity(); /*0x7aabc2*/
                   abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aabc7*/
@@ -221,7 +225,7 @@ LABEL_51:
                   if ( (uint8_t)((String *)((String *)&v33[24]))->Compare((const char **)v33) ) /*0x7aab7f*/
                     break; /*0x7aab7f*/
                   abstractFlags = (int)(((char *)&g_WebBrowserConfig)); /*0x7aab8c*/
-                  if ( ++v17   >=   (int)((*(int *)&g_WebBrowserConfig) ))) /*0x7aab94*/
+                  if ( ++v17   >=   (int)((*(int *)&g_WebBrowserConfig) )) /*0x7aab94*/
                     goto LABEL_51; /*0x7aab94*/
                 }
               }
@@ -250,12 +254,12 @@ LABEL_72:
                 v23 = 0; /*0x7aacb3*/
                 if ( (int)vtable3 < 0 ) /*0x7aacb7*/
                   v23 = (int)vtable3; /*0x7aacb9*/
-                if ( v23   >=   (int)((*(int *)&stru_B765EC) ))) /*0x7aacc1*/
+                if ( v23   >=   (int)((*(int *)&stru_B765EC) )) /*0x7aacc1*/
                 {
                   ((DynamicVector *)((DynamicVector *)((char *)&stru_B765EC)))->EnsureCapacity(); /*0x7aacc8*/
                   vtable3 = (char *)((char *)&stru_B765EC); /*0x7aaccd*/
                 }
-                if ( (int)vtable3   >=   (int)((*(int *)&stru_B765EC) ))) /*0x7aacd8*/
+                if ( (int)vtable3   >=   (int)((*(int *)&stru_B765EC) )) /*0x7aacd8*/
                 {
                   ((DynamicVector *)((DynamicVector *)((char *)&stru_B765EC)))->EnsureCapacity(); /*0x7aacdf*/
                   vtable3 = (char *)((char *)&stru_B765EC); /*0x7aace4*/

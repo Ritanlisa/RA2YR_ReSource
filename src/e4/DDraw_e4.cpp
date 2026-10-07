@@ -129,7 +129,7 @@ int DDraw::WaitForIdle()
   int result; // eax
 
   do /*0x4a4846*/
-    result = (*(int ((int)(**))(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
+    result = (*(int (__stdcall **)(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
 
@@ -240,7 +240,7 @@ int DDraw::HandleSuspend()
 } // namespace gamemd
 // 0x4A3DD0
 namespace gamemd {
-void DDraw::LogError(UINT, int a2)
+void DDraw::LogError(uType, int a2)
 {
 
   int result; // eax

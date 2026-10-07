@@ -41,6 +41,7 @@
 #include "e4/classes/Straw_e4.hpp"
 #include "e4/classes/COMObject_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 
 // 0x437FD0
@@ -129,7 +130,7 @@ int GameClass::loadScenarioFiles(int aP1)
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d228f*/
     v4 = (gamemd::ObjectClass *)(aP1); /*0x5d229b*/
     if ( dword_887640) /*0x5d22a1*/
-      (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))(  /*0x5d22a8*/
+      (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))(  /*0x5d22a8*/
         dword_887640,
         aP1,
         0);
@@ -751,7 +752,7 @@ PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
   COMObject *v3; // ebx
   Pipe *v4; // esi
 
-  v3 = (COMObject *)this->field_20; /*0x632ff5*/
+  v3 = (COMObject *)*(unsigned int *)&this->ptr_20; /*0x632ff5*/
   v4 = (Pipe *)&this->field_14; /*0x632ff8*/
   this->field_14 = (int)&vt_BlowPipe; /*0x632ffd*/
   if ( v3 ) /*0x633003*/
@@ -787,7 +788,7 @@ PKStrawClass * GameClass::applyGameSettings(unsigned int * Block, char a2)
   COMObject *v3; // ebx
   Straw *p_m_14; // esi
 
-  v3 = *(COMObject **)&this->__pad_18[8]; /*0x633375*/
+  v3 = *(COMObject **)&this->ptr_20; /*0x633375*/
   p_m_14 = (Straw *)&this->m_14; /*0x633378*/
   this->m_14 = (int)&vt_BlowStraw; /*0x63337d*/
   if ( v3 ) /*0x633383*/

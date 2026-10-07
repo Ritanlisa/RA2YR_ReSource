@@ -183,7 +183,7 @@ int AudioSample::ResetState() {
       *((unsigned int *)this + 46) = 0; /*0x4024eb*/
       *((unsigned int *)this + 47) = 0; /*0x4024f1*/
       *((unsigned int *)this + 48) = 0; /*0x4024f7*/
-      *(unsigned int *)&this->q00C = 1; /*0x4024fd +0xC*/
+      *(unsigned int *)&this->AudioSample_field_0x0C = 1; /*0x4024fd +0xC*/
       *((unsigned int *)this + 42) = 0; /*0x402504*/
       *((unsigned int *)this + 41) = 0; /*0x40250a*/
       *((unsigned int *)this + 40) = 0; /*0x402510*/

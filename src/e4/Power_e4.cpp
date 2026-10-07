@@ -510,7 +510,7 @@ int Power::FlagProcess(int Power_field_0x8, int a2, int a1)
 
 // 0x4A1D50
 namespace gamemd {
-int ((Power *)this)->TimerProcess( int a2)
+int Power::TimerProcess(int a1)
 {
 
   return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/

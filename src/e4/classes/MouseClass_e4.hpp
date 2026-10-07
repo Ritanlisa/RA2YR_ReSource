@@ -57,6 +57,7 @@ struct MouseClass {
     unsigned int q064;  // 0x64
     unsigned int q068;  // 0x68
     unsigned int q06C;  // 0x6C
+    int MouseClass_field_0x70;  // 0x70 (G57W14E1 til supply)
     unsigned int q078;  // 0x78
     unsigned int q07C;  // 0x7C
     unsigned int q080;  // 0x80
