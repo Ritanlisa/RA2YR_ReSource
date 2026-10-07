@@ -410,50 +410,50 @@ int Voxel::Projection_Setup()
   qmemcpy( (void *)(&unk_B43FA0), Matrix3D::Constructor(&v66, 0.785375, v11), 0x30u); /*0x754f76*/
   qmemcpy( (void *)(&unk_B43FD0), Matrix3D::Constructor(&v66, 5.4976249, v11), 0x30u); /*0x754f93*/
   v12 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v73), v11); /*0x754fa0*/
-  Float4::Copy(flt_B44358, v57, v12); /*0x754fb0*/
+  ((Float4 *)(flt_B44358))->Copy(v57, v12); /*0x754fb0*/
   v13 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v67), v11); /*0x754fbe*/
-  Float4::Copy(flt_B44368, v57, v13); /*0x754fce*/
+  ((Float4 *)(flt_B44368))->Copy(v57, v13); /*0x754fce*/
   v14 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v70), v11); /*0x754fdf*/
-  Float4::Copy(flt_B44378, v57, v14); /*0x754fef*/
+  ((Float4 *)(flt_B44378))->Copy(v57, v14); /*0x754fef*/
   v15 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v71), v11); /*0x755000*/
-  Float4::Copy(flt_B44388, v57, v15); /*0x755010*/
+  ((Float4 *)(flt_B44388))->Copy(v57, v15); /*0x755010*/
   v16 = v75; /*0x755019*/
   qmemcpy( (void *)(&unk_B44000), Matrix3D::Constructor(&v66, 3.1415, v75), 0x30u); /*0x755038*/
   qmemcpy( (void *)(&unk_B44030), Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x755055*/
   qmemcpy( (void *)(&unk_B44060), Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x75506f*/
   qmemcpy( (void *)(&unk_B44090), Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x75508c*/
   v17 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v68), v16); /*0x755099*/
-  Float4::Copy(flt_B44398, v57, v17); /*0x7550a9*/
+  ((Float4 *)(flt_B44398))->Copy(v57, v17); /*0x7550a9*/
   v18 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v72), v16); /*0x7550ba*/
-  Float4::Copy(flt_B443A8, v57, v18); /*0x7550ca*/
+  ((Float4 *)(flt_B443A8))->Copy(v57, v18); /*0x7550ca*/
   v19 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v74), v16); /*0x7550db*/
-  Float4::Copy(flt_B443B8, v57, v19); /*0x7550eb*/
+  ((Float4 *)(flt_B443B8))->Copy(v57, v19); /*0x7550eb*/
   v20 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v69), v16); /*0x7550fc*/
-  Float4::Copy(flt_B443C8, v57, v20); /*0x75510c*/
+  ((Float4 *)(flt_B443C8))->Copy(v57, v20); /*0x75510c*/
   qmemcpy( (void *)(&unk_B440C0), Matrix3D::Constructor(&v66, 3.1415, v16), 0x30u); /*0x75512d*/
   qmemcpy( (void *)(&unk_B440F0), Matrix3D::Constructor(&v66, 1.57075, v16), 0x30u); /*0x75514a*/
   qmemcpy( (void *)(&unk_B44120), Matrix3D::Constructor(&v66, 0.0, v16), 0x30u); /*0x755164*/
   qmemcpy( (void *)(&unk_B44150), Matrix3D::Constructor(&v66, 4.7122502, v16), 0x30u); /*0x755181*/
   v21 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v68), v16); /*0x75518e*/
-  Float4::Copy(flt_B443D8, v57, v21); /*0x75519e*/
+  ((Float4 *)(flt_B443D8))->Copy(v57, v21); /*0x75519e*/
   v22 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v72), v16); /*0x7551af*/
-  Float4::Copy(flt_B443E8, v57, v22); /*0x7551bf*/
+  ((Float4 *)(flt_B443E8))->Copy(v57, v22); /*0x7551bf*/
   v23 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v74), v16); /*0x7551d0*/
-  Float4::Copy(flt_B443F8, v57, v23); /*0x7551e0*/
+  ((Float4 *)(flt_B443F8))->Copy(v57, v23); /*0x7551e0*/
   v24 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v69), v16); /*0x7551f1*/
-  Float4::Copy(flt_B44408, v57, v24); /*0x755201*/
+  ((Float4 *)(flt_B44408))->Copy(v57, v24); /*0x755201*/
   qmemcpy( (void *)(&unk_B44180), Matrix3D::Constructor(&v66, 3.1415, v11), 0x30u); /*0x755221*/
   qmemcpy( (void *)(&unk_B441B0), Matrix3D::Constructor(&v66, 1.57075, v11), 0x30u); /*0x75523f*/
   qmemcpy( (void *)(&unk_B441E0), Matrix3D::Constructor(&v66, 0.0, v11), 0x30u); /*0x755259*/
   qmemcpy( (void *)(&unk_B44210), Matrix3D::Constructor(&v66, 4.7122502, v11), 0x30u); /*0x755276*/
   v25 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v68), v11); /*0x755283*/
-  Float4::Copy(flt_B44418, v57, v25); /*0x755293*/
+  ((Float4 *)(flt_B44418))->Copy(v57, v25); /*0x755293*/
   v26 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v72), v11); /*0x7552a4*/
-  Float4::Copy(flt_B44428, v57, v26); /*0x7552b4*/
+  ((Float4 *)(flt_B44428))->Copy(v57, v26); /*0x7552b4*/
   v27 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v74), v11); /*0x7552c5*/
-  Float4::Copy(flt_B44438, v57, v27); /*0x7552d5*/
+  ((Float4 *)(flt_B44438))->Copy(v57, v27); /*0x7552d5*/
   v28 = FromQuaternionAxisAngle( (float *)(v58), (float *)(v69), v11); /*0x7552e6*/
-  Float4::Copy(flt_B44448, v57, v28); /*0x7552f6*/
+  ((Float4 *)(flt_B44448))->Copy(v57, v28); /*0x7552f6*/
   ((Matrix3x4*)&stru_B44240)->Identity(); /*0x755300*/
   ((Matrix3x4*)&stru_B44270)->Identity(); /*0x75530a*/
   ((Matrix3x4*)&stru_B442A0)->Identity(); /*0x755314*/

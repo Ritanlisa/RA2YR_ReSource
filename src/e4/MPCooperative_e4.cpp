@@ -256,7 +256,7 @@ int MPCooperative::WriteCoopSaveINI()
   CCFileClass::Construct3((int)&v16); /*0x49c006*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v16.CDFileClass + 8))( (CCFileClass *)(&v16), (char *)(g_Str_File_coopsave_ini)); /*0x49c018*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v16.CDFileClass + 28))( (CCFileClass *)(&v16), 2); /*0x49c025*/
-  INIClass::ClearSection((int *)v15.INIClass, (int)v22, 0); /*0x49c035*/
+  INIClass::ClearSection((INIClass *)((int *)v15.INIClass), (int)v22, 0); /*0x49c035*/
   INIClass::WriteDigest((INIClass *)&v15, (int)&v16, 0); /*0x49c044*/
   CCFileClass::Reset( &v16); /*0x49c04d*/
   *(unsigned int *)v16.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49c05e*/
@@ -412,7 +412,7 @@ int MPCooperative::ReadCoopSaveINI()
   }
   ((unsigned int *)(g_IsWindowed))[v10] = 0; /*0x49d30c*/
   strcat( (char *)(v23), (const char *)(g_IsWindowed)); /*0x49d331*/
-  v15 = ((INIClass *)((int)v19))->BinarySearchSection( (uint8_t *)v23) != 0; /*0x49d354*/
+  v15 = INIClass::BinarySearchSection(((INIClass *)((int)v19)), (uint8_t *)v23) != 0; /*0x49d354*/
   ((HashTable *)(v19))->DestroyHashTableINIClass(); /*0x49d357*/
   v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d360*/
   v18 = 0; /*0x49d368*/
@@ -597,7 +597,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   v9 = (void (***)(unsigned int, int))v3[2].MultiplayerGameMode_field_0x18; /*0x5c16d1*/
   if ( v9 ) /*0x5c16d6*/
   {
-    (**v9)(v9, 1); /*0x5c16dc*/
+    (**v9)((unsigned int)(v9), 1); /*0x5c16dc*/
     v3[2].MultiplayerGameMode_field_0x18 = 0; /*0x5c16de*/
   }
   IDA_LOBYTE(v3->MultiplayerGameMode_field_0x04) = 0; /*0x5c16e1*/
@@ -747,7 +747,7 @@ CampaignClass * * MPCooperative::CopyTo()
   int v16; // [esp+18h] [ebp-4h] BYREF
 
   g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5c1a13*/
-  Debug::Log(); /*0x5c1a28*/
+  Debug::Log("Sending observer slot of 8"); /*0x5c1a28 G57w11: IDA push seq @ 0x5c1a28 +4 reg-vararg(s) omitted*/
   ((Network *)(aO8))->SendOptionsGame(); /*0x5c1a35*/
   if ( ((Dialog*)(Dialog *)0xC2)->FindByHandle() || ((Dialog*)(Dialog *)0xBC)->FindByHandle() ) /*0x5c1a4d*/
   {
@@ -771,7 +771,7 @@ CampaignClass * * MPCooperative::CopyTo()
     if ( v5 ) /*0x5c1aab*/
     {
       if ( dword_A8DA84 == 2 ) /*0x5c1ab4*/
-        ((String *)(v5))->AssignWideToChar((char *)((gamemd::CampaignScore *)((char *)*dword_A8DA78)), (char *)(&dword_A8DA78)[1]); /*0x5c1ac2*/
+        ((String *)(v5))->AssignWideToChar((char *)((gamemd::CampaignScore *)((char *)*dword_A8DA78)), (char *)((unsigned int *)dword_A8DA78)[1]); /*0x5c1ac2*/
       else
         ((String *)(v5))->AssignWideToChar((char *)&g_TypeClass_DefaultString, (char *)&g_TypeClass_DefaultString); /*0x5c1ace*/
     }
@@ -806,9 +806,9 @@ LABEL_30:
       v11 = (int *)this->MPCooperative_field_0x40; /*0x5c1bc2*/
       String2 = (char *)(0); /*0x5c1bc5*/
       ((Array*)v11)->GetElementAt( (unsigned int *)(&String2), 0); /*0x5c1bc9*/
-      Debug::Log(); /*0x5c1be5*/
+      Debug::Log("@@@ Looking for %s"); /*0x5c1be5 G57w11: IDA push seq @ 0x5c1be5 +1 reg-vararg(s) omitted*/
       if ( _strnicmp( /*0x5c1c0e*/
-             (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88),
+             (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]) + 88),
              String2,
              strlen( (const char *)(String2))) )
       {
@@ -820,7 +820,7 @@ LABEL_30:
           ((Array *)(int *)this->MPCooperative_field_0x40)->GetElementAt( (unsigned int *)(&String2), 0); /*0x5c1c45*/
         }
         while ( _strnicmp( /*0x5c1c6f*/
-                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88),
+                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]) + 88),
                   String2,
                   strlen( (const char *)(String2))) );
       }
@@ -839,13 +839,13 @@ LABEL_30:
           if ( ++v10 >= dword_A8B8D8 ) /*0x5c1b73*/
             goto LABEL_25; /*0x5c1b73*/
         }
-        *(unsigned int *)&stru_A8B250[4] = v10; /*0x5c1b79*/
+        *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = v10; /*0x5c1b79*/
         LoadScenarioClassByIndex(v10); /*0x5c1b7f*/
       }
 LABEL_25:
       if ( v10 == dword_A8B8D8 ) /*0x5c1b8a*/
       {
-        *(unsigned int *)&stru_A8B250[4] = 0; /*0x5c1b92*/
+        *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = 0; /*0x5c1b92*/
         LoadScenarioClassByIndex(0); /*0x5c1b9c*/
       }
     }
@@ -955,12 +955,12 @@ CampaignClass * * MPCooperative::Seek(void *a1_1, void *a2_1, void *a3_1)
       ((Movie*)*(unsigned int *)(*(unsigned int *)this->__pad_328 + 4 * v3))->SetupScreen(v3); /*0x5c1e85*/
       this->MPCooperative_field_0x4C = (unsigned int)((void *)v3); /*0x5c1e8a*/
       if ( dword_A8DA84 == 2 ) /*0x5c1e95*/
-        ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)(&dword_A8DA78)[1]); /*0x5c1ea6*/
+        ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)((unsigned int *)dword_A8DA78)[1]); /*0x5c1ea6*/
     }
     goto LABEL_16; /*0x5c1ea6*/
   }
   if ( dword_A8DA84 == 2 ) /*0x5c1dfd*/
-    ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)(&dword_A8DA78)[1]); /*0x5c1e0e*/
+    ((String *)((char *)this->MPCooperative_field_0x40))->AssignWideToChar((char *)*dword_A8DA78, (char *)((unsigned int *)dword_A8DA78)[1]); /*0x5c1e0e*/
   result = LoadCampaignCoopSave((char *)this->MPCooperative_field_0x40); /*0x5c1e16*/
   if ( result ) /*0x5c1e1d*/
   {
@@ -992,17 +992,17 @@ LABEL_16:
           for ( i = 0; i < dword_A8DA84; ++i ) /*0x5c1f3b*/
           {
             MPCooperative_field_0x0 = (uint8_t (**)(MPCooperative *, int))this->MPCooperative_field_0x0; /*0x5c1f43*/
-            PlayerSide = ((SessionClass *)((int *)(&dword_A8DA78)[i]))->GetPlayerSide(); /*0x5c1f48*/
+            PlayerSide = ((SessionClass *)((int *)((unsigned int *)dword_A8DA78)[i]))->GetPlayerSide(); /*0x5c1f48*/
             if ( !MPCooperative_field_0x0[7](this, PlayerSide) ) /*0x5c1f50*/
             {
               if ( v10 <= 1 ) /*0x5c1f5a*/
               {
                 v16 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(*(unsigned int *)(v18 + 20) + 4 * v17) + 4)); /*0x5c1f78*/
-                ((SessionClass *)((int *)(&dword_A8DA78)[i]))->SetPlayerOption(v16); /*0x5c1f82*/
+                ((SessionClass *)((int *)((unsigned int *)dword_A8DA78)[i]))->SetPlayerOption(v16); /*0x5c1f82*/
               }
               else
               {
-                ((SessionClass *)((int *)(&dword_A8DA78)[i]))->SetPlayerOption(-2); /*0x5c1f5e*/
+                ((SessionClass *)((int *)((unsigned int *)dword_A8DA78)[i]))->SetPlayerOption(-2); /*0x5c1f5e*/
               }
             }
           }
@@ -1312,7 +1312,7 @@ int MPCooperative::SyncState()
     {
       do /*0x5c27ec*/
       {
-        g_MissionQueueFrame.localVariables[v6 + 631] = ((MPCooperative *)dword_A8DA78[v6])->finalizeSession(); /*0x5c27e2*/
+        (&g_MissionQueueFrame.localVariables)[v6 + 631] = ((MPCooperative *)((unsigned int *)dword_A8DA78)[v6])->finalizeSession(); /*0x5c27e2*/
         ++v6; /*0x5c27e9*/
       }
       while ( v6 < v7 ); /*0x5c27ec*/
@@ -1339,7 +1339,7 @@ int MPCooperative::SyncState()
         }
         while ( 1 ) /*0x5c2921*/
         {
-          v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x5c2921*/
+          v25 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7); /*0x5c2921*/
           if ( v25 == -2 ) /*0x5c2926*/
             break; /*0x5c2926*/
           v26 = &g_MissionQueueFrame.localVariables[631]; /*0x5c2928*/
@@ -1405,9 +1405,9 @@ LABEL_31:
       v8 = v36; /*0x5c2807*/
     }
   }
-  Debug::Log(); /*0x5c2a26*/
+  Debug::Log("@@@@ Sending campaign game AI settings: %s\n"); /*0x5c2a26 G57w11: IDA push seq @ 0x5c2a26 +1 reg-vararg(s) omitted*/
   ((Network *)Buffer)->SendOptionsGame(); /*0x5c2a32*/
-  Debug::Log(); /*0x5c2a3c*/
+  Debug::Log("@@@@ Sent\n"); /*0x5c2a3c G57w11: IDA push seq @ 0x5c2a3c*/
   return 1; /*0x5c2a46*/
 
 }
@@ -1759,7 +1759,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
       }
       else
       {
-        Debug::Log(); /*0x5c2f92*/
+        Debug::Log("Assigning Starting Points for house %d (%s)\n"); /*0x5c2f92 G57w11: IDA push seq @ 0x5c2f92 +2 reg-vararg(s) omitted*/
         v9 = MPCooperative_Play(i, (int)v17, (int)v16); /*0x5c2fae*/
         v10 = 0; /*0x5c2fb5*/
         if ( dword_A8DA84 <= 0 ) /*0x5c2fb9*/
@@ -1793,7 +1793,7 @@ LABEL_17:
           ((SessionClass *)(*v14))->GetOption2(); /*0x5c301b*/
           ((SessionClass *)((*v14)->GameMode))->GetOption(); /*0x5c3023*/
         }
-        Debug::Log(); /*0x5c3053*/
+        Debug::Log("AI Playernum %d:Starting position is %d, team is %d\n", 0x1); /*0x5c3053 G57w11: IDA push seq @ 0x5c3053 +2 reg-vararg(s) omitted*/
         ((HouseClass *)(thisa))->SetMapSeed(*((unsigned int *)Block + v9)); /*0x5c3067*/
       }
     }
@@ -1821,7 +1821,7 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   int v11; // [esp+18h] [ebp-4h] BYREF
 
   v2 = ReadPlayerCountMap(*(int *)&stru_A8B250[4]) - (unsigned int)dword_A8B230[127].vtable2; /*0x5c30db*/
-  Debug::Log(); /*0x5c30e7*/
+  Debug::Log("@@@@ Adding %d AI players\n"); /*0x5c30e7 G57w11: IDA push seq @ 0x5c30e7 +1 reg-vararg(s) omitted*/
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
   *(unsigned int *)&stru_A8B250[36] = v2; /*0x5c30ff*/
@@ -1854,12 +1854,12 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
       }
       else
       {
-        Debug::Log(); /*0x5c31a0*/
+        Debug::Log("@@@@ Setting slot %d for AI\n"); /*0x5c31a0 G57w11: IDA push seq @ 0x5c31a0 +1 reg-vararg(s) omitted*/
         if ( stru_A8EB00.ObjectTypeClass[26] ) /*0x5c31af*/
           *v7 = stru_A8EB00.ObjectTypeClass[26] == 1; /*0x5c31c1*/
         else
           *v7 = 2; /*0x5c31b1*/
-        Debug::Log(); /*0x5c31cb*/
+        Debug::Log("@@@@     AI difficulty: %d\n"); /*0x5c31cb G57w11: IDA push seq @ 0x5c31cb +1 reg-vararg(s) omitted*/
         v8 = v10; /*0x5c31d0*/
         v7[8] = -2; /*0x5c31d7*/
         v7[16] = -2; /*0x5c31da*/
@@ -1895,7 +1895,7 @@ AbstractClass * * MPCooperative::GetMapData()
   int v13; // [esp+18h] [ebp-4h]
   int v14; // [esp+18h] [ebp-4h]
 
-  Debug::Log(); /*0x5c322c*/
+  Debug::Log("@@@@ Making Alliances\n"); /*0x5c322c G57w11: IDA push seq @ 0x5c322c +4 reg-vararg(s) omitted*/
   if ( ((char *)&stru_A80220) > 0 ) /*0x5c323b*/
   {
     v1 = 1; /*0x5c3241*/
@@ -1905,7 +1905,7 @@ AbstractClass * * MPCooperative::GetMapData()
     {
       v2 = *(unsigned int *)((char *)((char *)&stru_A80220) + v9); /*0x5c325b*/
       ToWideStringChar( (IUnknown *)((char *)(v2 + 90154))); /*0x5c3264*/
-      Debug::Log(); /*0x5c3276*/
+      Debug::Log("@@@@     House1 = %s, team is %d\n"); /*0x5c3276 G57w11: IDA push seq @ 0x5c3276 +2 reg-vararg(s) omitted*/
       if ( *(unsigned char *)(*(unsigned int *)(v2 + 52) + 422) || !*(unsigned char *)(v2 + 492) ) /*0x5c328f*/
       {
         nextArrayIndex = (unsigned int)((char *)&stru_A80220); /*0x5c34e1*/
@@ -1920,12 +1920,12 @@ AbstractClass * * MPCooperative::GetMapData()
           {
             v4 = *((unsigned int *)((char *)&stru_A80220) + v1); /*0x5c32b4*/
             ToWideStringChar( (IUnknown *)((char *)(v4 + 90154))); /*0x5c32bf*/
-            Debug::Log(); /*0x5c32ca*/
+            Debug::Log("@@@@         House2 = %s\n"); /*0x5c32ca G57w11: IDA push seq @ 0x5c32ca +1 reg-vararg(s) omitted*/
             if ( !*(unsigned char *)(*(unsigned int *)(v4 + 52) + 422) && *(unsigned char *)(v4 + 492) ) /*0x5c32df*/
             {
               ToWideStringChar( (IUnknown *)((char *)(v4 + 90154))); /*0x5c32eb*/
               ToWideStringChar( (IUnknown *)((char *)(v2 + 90154))); /*0x5c32f8*/
-              Debug::Log(); /*0x5c3334*/
+              Debug::Log("@@@@ Making Allies of %s(%d/%d/%d) and %s(%d/%d/%d)\n"); /*0x5c3334 G57w11: IDA push seq @ 0x5c3334 +8 reg-vararg(s) omitted*/
               ((HouseClass *)((int *)v2))->HandleAlliance(v4, 0); /*0x5c3341*/
               ((HouseClass *)((int *)v4))->HandleAlliance(v2, 0); /*0x5c334b*/
               v1 = v11; /*0x5c3350*/
@@ -1951,7 +1951,7 @@ AbstractClass * * MPCooperative::GetMapData()
       {
         v6 = *(unsigned int *)((char *)((char *)&stru_A80220) + v10); /*0x5c33a8*/
         ToWideStringChar( (IUnknown *)((char *)(v6 + 90154))); /*0x5c33b1*/
-        Debug::Log(); /*0x5c33c3*/
+        Debug::Log("@@@@     House1 = %s, team is %d\n"); /*0x5c33c3 G57w11: IDA push seq @ 0x5c33c3 +2 reg-vararg(s) omitted*/
         if ( !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422) && !*(unsigned char *)(v6 + 492) ) /*0x5c33dc*/
         {
           v14 = v5; /*0x5c33ef*/
@@ -1961,12 +1961,12 @@ AbstractClass * * MPCooperative::GetMapData()
             {
               v7 = *((unsigned int *)((char *)&stru_A80220) + v5); /*0x5c3400*/
               ToWideStringChar( (IUnknown *)((char *)(v7 + 90154))); /*0x5c340b*/
-              Debug::Log(); /*0x5c3416*/
+              Debug::Log("@@@@         House2 = %s\n"); /*0x5c3416 G57w11: IDA push seq @ 0x5c3416 +1 reg-vararg(s) omitted*/
               if ( !*(unsigned char *)(*(unsigned int *)(v7 + 52) + 422) && !*(unsigned char *)(v7 + 492) ) /*0x5c342b*/
               {
                 ToWideStringChar( (IUnknown *)((char *)(v7 + 90154))); /*0x5c3437*/
                 ToWideStringChar( (IUnknown *)((char *)(v6 + 90154))); /*0x5c3444*/
-                Debug::Log(); /*0x5c3480*/
+                Debug::Log("@@@@ Making Allies of %s(%d/%d/%d) and %s(%d/%d/%d)\n"); /*0x5c3480 G57w11: IDA push seq @ 0x5c3480 +8 reg-vararg(s) omitted*/
                 ((HouseClass *)((int *)v6))->HandleAlliance(v7, 0); /*0x5c348d*/
                 ((HouseClass *)((int *)v7))->HandleAlliance(v6, 0); /*0x5c3497*/
                 v5 = v14; /*0x5c349c*/
@@ -2039,7 +2039,7 @@ int MPCooperative::ReceiveMessage()
   }
   while ( !v4 ); /*0x5c35c2*/
   ToWideStringChar( (IUnknown *)(*(char **)(*((unsigned int *)dword_A83C9C + v8) + 96))); /*0x5c35d0*/
-  Debug::Log(); /*0x5c35dc*/
+  Debug::Log("@@@@ Choosing a random player house: %d(%s)\n"); /*0x5c35dc G57w11: IDA push seq @ 0x5c35dc +2 reg-vararg(s) omitted*/
   return v8; /*0x5c3532*/
 
 }
@@ -2095,7 +2095,7 @@ int MPCooperative::HandleEvent()
   }
   while ( !v4 ); /*0x5c36c2*/
   ToWideStringChar( (IUnknown *)(*(char **)(*((unsigned int *)dword_A83C9C + v8) + 96))); /*0x5c36d0*/
-  Debug::Log(); /*0x5c36dc*/
+  Debug::Log("@@@@ Choosing a random AI house: %d(%s)\n"); /*0x5c36dc G57w11: IDA push seq @ 0x5c36dc +2 reg-vararg(s) omitted*/
   return v8; /*0x5c3632*/
 
 }
@@ -3152,7 +3152,7 @@ int MPCooperative::checkVictory()
   {
     ((Movie *)((int *)this->MPCooperative_field_0x40))->GetSectionID( (unsigned int *)(&v7)); /*0x5c46b3*/
     v2 = 1 << v7; /*0x5c46c1*/
-    Debug::Log(); /*0x5c46ca*/
+    Debug::Log("Woohoo!, I just finished cooperative campaign %d.  I get persistant accomplishment code 0x%032x\n"); /*0x5c46ca G57w11: IDA push seq @ 0x5c46ca +2 reg-vararg(s) omitted*/
   }
   return v2; /*0x5c4680*/
 

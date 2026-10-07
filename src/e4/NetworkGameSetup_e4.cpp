@@ -34,7 +34,7 @@ int NetworkGameSetup::ReadRulesUnknown()
   if ( result ) /*0x5b9763*/
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/
-    *(unsigned int *)&stru_A8B250[40] = result; /*0x5b9775*/
+    *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] = result; /*0x5b9775*/
     BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/
@@ -77,7 +77,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
       if ( v4 >= 8 ) /*0x5baa2b*/
         v6 = Math::InitDegToRad; /*0x5baa3b*/
       else
-        v6 = (int (*)(char, char))dword_8316A8[v4]; /*0x5baa32*/
+        v6 = (int (*)(char, char))(&dword_8316A8)[v4]; /*0x5baa32*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5baa54*/
       DrawDialogText( (LPARAM)((LPARAM)((LPARAM)v6)), (wchar_t *)(Buffer), (HWND)(DlgItem)); /*0x5baa66*/
     }

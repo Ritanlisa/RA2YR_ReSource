@@ -643,7 +643,7 @@ LABEL_20:
 
 
 
-    InitInterfaceStubsCOM(*(ObjectClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x725a92*/
+    InitInterfaceStubsCOM((TechnoClass *)(*(ObjectClass **)&DSurface_ViewBounds.__pad_FC[324])); /*0x725a92*/
   }
   else
   {
@@ -1339,7 +1339,7 @@ int AbstractClass_queryInterface(AbstractClass *aP0, unsigned int * a2, int * a3
   v6 = *a2; /*0x464a7a*/
   v7 = (void *)a2[1]; /*0x464a8b*/
   v8 = a2[2]; /*0x464a92*/
-  GroundHeight = (void *)Cell::GetGroundHeight( &v6); /*0x464a96*/
+  GroundHeight = (void *)Cell::GetGroundHeight((unsigned int *)(&v6)); /*0x464a96*/
   aP0->vtable1 = v3; /*0x464aa5*/
   aP0->vtable1 = v7; /*0x464aab*/
   aP0->vtable2 = GroundHeight; /*0x464aaf*/

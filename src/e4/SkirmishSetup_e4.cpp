@@ -235,7 +235,7 @@ LABEL_5:
           LoadScenarioClassByIndex(v10); /*0x5e6b06*/
           if ( !*(unsigned int *)g_UIControlState ) /*0x5e6b10*/
             ((Session*)(HWND)(v9))->PrepareGame(); /*0x5e6b17*/
-          *(unsigned int *)&stru_A8B250[4] = dword_AC10E0; /*0x5e6b22*/
+          *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = dword_AC10E0; /*0x5e6b22*/
           LoadScenarioClassByIndex(dword_AC10E0); /*0x5e6b28*/
           LOBYTE(v10) = HandleMultiplayerMapSelection((ObjectClass *)v9); /*0x5e6b38*/
           Screen::Capture(1, 0, v10, a2); /*0x5e6b3a*/
@@ -384,10 +384,10 @@ LABEL_28:
     LOBYTE(aP0) = (*(int (**)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/
     v40 = GetDlgItem((HWND)v37, 1411); /*0x5e6f80*/
     EnableWindow(v40, (uint8_t)aP0); /*0x5e6f8e*/
-    v41 = *(unsigned int *)&stru_A8B250[4]; /*0x5e6f94*/
-    if ( *(unsigned int *)&stru_A8B250[4] != -1 && *(int *)&stru_A8B250[4] < dword_A8B8D8 ) /*0x5e6fa8*/
+    v41 = *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]; /*0x5e6f94*/
+    if ( *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] != -1 && *(int *)&((unsigned char *)&stru_A8B250)[4] < dword_A8B8D8 ) /*0x5e6fa8*/
     {
-      aP0 = (SkirmishDialog *)(*(SkirmishSetup **)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4])); /*0x5e6fb5*/
+      aP0 = (SkirmishDialog *)(*(SkirmishSetup **)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4])); /*0x5e6fb5*/
       if ( aP0 ) /*0x5e6fb9*/
       {
         v42 = 0; /*0x5e6fc1*/
@@ -406,7 +406,7 @@ LABEL_28:
         }
         SendDlgItemMessageA((HWND)v37, 1363, 0x186u, v42, 0); /*0x5e700b*/
         SendDlgItemMessageA((HWND)v37, 1363, 0x197u, v42, 0); /*0x5e701b*/
-        v41 = *(unsigned int *)&stru_A8B250[4]; /*0x5e701d*/
+        v41 = *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]; /*0x5e701d*/
       }
     }
     dword_AC10E0 = v41; /*0x5e7022*/

@@ -61,7 +61,7 @@ int KeyboardConfig::LoadINI()
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex( (gamemd::CCINIClass *)(v9.INIClass), (gamemd::CCINIClass *)(g_INI_Key_Hotkey),  (void *)(v1)); /*0x533dbf*/
       v3 = 0; /*0x533dd1*/
-      Int_Overwrite = ((INIClass *)((bool *)v9.INIClass))->ReadInt_Overwrite((uint8_t *)(g_INI_Key_Hotkey), StringByIndex, 0); /*0x533dd3*/
+      Int_Overwrite = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)v9.INIClass)), (uint8_t *)(g_INI_Key_Hotkey), StringByIndex, 0); /*0x533dd3*/
       if ( *(int *)&stru_87F5F0.__pad_58[32] > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/

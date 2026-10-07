@@ -893,8 +893,8 @@ int TauntCommandClass::Do(int a1) {
     IDA_LOBYTE(Time) = dword_A8B238; /*0x536350*/
     if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x536366*/
     {
-      IDA_LOBYTE(Time) = dword_A8B538[0]; /*0x53636c*/
-      if ( !dword_A8B538[0] ) /*0x536373*/
+      IDA_LOBYTE(Time) = (&dword_A8B538)[0]; /*0x53636c*/
+      if ( !(&dword_A8B538)[0] ) /*0x536373*/
       {
         Time = timeGetTime(); /*0x536379*/
         if ( (dword_825C88 == -1 || (int)(Time - dword_825C88) > 5000) /*0x5363c0*/

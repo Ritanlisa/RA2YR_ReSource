@@ -250,7 +250,7 @@ LABEL_6:
       return 0; /*0x7b1605*/
   }
   v17 = Network_Process_7B2730(); /*0x7b1610*/
-  if ( v17 > 0 && Random::Range(&Randomizer_Global, 0, 99) <= v17 ) /*0x7b1626*/
+  if ( v17 > 0 && Random::Range((Random *)(&Randomizer_Global), 0, 99) <= v17 ) /*0x7b1626*/
     return 0; /*0x7b1717*/
   v18 = (NetworkID *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
   *(unsigned int *)v18[2].__pad_0 = v26 - 4; /*0x7b1646*/

@@ -469,7 +469,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
 
           if ( v81 == dword_B0B5B8 )
           {
-            ((TechnoClass *)v8)->SetFocus( 0); /*0x6af7c5*/
+            TechnoClass::SetFocus(((TechnoClass *)v8), 0); /*0x6af7c5*/
             v11 = a1[9]; /*0x6af7ca*/
             if ( v11 && (*(int (**)(int))(v11->fallRate))(v11) == 6 )
             {
@@ -486,7 +486,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
               v16 = a1[9]; /*0x6af81f*/
               v76 = (unsigned short *)((CellStruct *)(v100))->Set(v79 - 1, FoundationHeight / 2); /*0x6af839*/
               v17 = (unsigned short *)(*(int (**)(int, char *))(v16->airstrikeTintTimer))( v16, (char *)(v89));  /*0x6af849*/
-              v18 = (int *)((CellStruct *)(v17))->Add( (unsigned int *)(&v99), (unsigned short *)(v76)); /*0x6af851*/
+              v18 = (int *)CellStruct::Add(((CellStruct *)(v17)), (unsigned int *)(&v99), (unsigned short *)(v76)); /*0x6af851*/
             }
             else
             {
@@ -526,7 +526,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
           if ( (uint8_t)((SlaveManagerClass *)v8)->CheckIsOne() ) /*0x6af8e6*/
           {
             v21 = (*(int (**)(int *, int *, int))(*v8 + 444))( (int *)(v8), (int *)(a2), (int)(a3)); /*0x6af8f7*/
-            ((TechnoClass *)v8)->SetFocus( v21); /*0x6af900*/
+            TechnoClass::SetFocus(((TechnoClass *)v8), v21); /*0x6af900*/
             v22 = a1[9]; /*0x6af905*/
             if ( v22 && (*(int (**)(int))(v22->fallRate))(v22) == 6 ) /*0x6af914*/
             {
@@ -538,7 +538,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
               v27 = a1[9]; /*0x6af93f*/
               v84[1] = v26 / 2; /*0x6af946*/
               v28 = (unsigned short *)(*(int (**)(int, unsigned short *))(v27->airstrikeTintTimer))( v27, (unsigned short *)(v87));  /*0x6af95c*/
-              v82 = (int)(*((CellStruct *)(v28))->Add( (unsigned int *)(&v91), (unsigned short *)(v84))); /*0x6af96b*/
+              v82 = (int)(*CellStruct::Add(((CellStruct *)(v28)), (unsigned int *)(&v91), (unsigned short *)(v84))); /*0x6af96b*/
             }
             else
             {
@@ -582,7 +582,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
               v37 = a1[9]; /*0x6afa4c*/
               v72 = (unsigned short *)((CellStruct *)(v97))->Set(v77 - 1, v36 / 2); /*0x6afa67*/
               v38 = (unsigned short *)(*(int (**)(int, int *, unsigned char *))(v37->airstrikeTintTimer))( v37, (int *)(&v99), (unsigned char *)(v93));  /*0x6afa75*/
-              v39 = (int *)((CellStruct *)(v38))->Add( (unsigned int *)(v72), (unsigned short *)(a2)); /*0x6afa7d*/
+              v39 = (int *)CellStruct::Add(((CellStruct *)(v38)), (unsigned int *)(v72), (unsigned short *)(a2)); /*0x6afa7d*/
             }
             else
             {
@@ -611,7 +611,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
             v48 = a1[9]; /*0x6afb5a*/
             v73 = (unsigned short *)((CellStruct *)(v87))->Set(v77 - 1, v47 / 2); /*0x6afb71*/
             v49 = (unsigned short *)(*(int (**)(int, char *, char *))(v48->airstrikeTintTimer))( v48, (char *)(v90), (char *)(v88));  /*0x6afb7e*/
-            v50 = (int *)((CellStruct *)(v49))->Add( (unsigned int *)(v73), (unsigned short *)(a2)); /*0x6afb86*/
+            v50 = (int *)CellStruct::Add(((CellStruct *)(v49)), (unsigned int *)(v73), (unsigned short *)(a2)); /*0x6afb86*/
           }
           else
           {
@@ -660,7 +660,7 @@ v63 = (unsigned short *)(*(int (**)(int, char *, char *, unsigned short *))(v62-
 
 
 
-            v64 = (int *)((CellStruct *)(v63))->Add( (unsigned int *)(&v94), (unsigned short *)a3); /*0x6afc7a*/
+            v64 = (int *)CellStruct::Add(((CellStruct *)(v63)), (unsigned int *)(&v94), (unsigned short *)a3); /*0x6afc7a*/
           }
           else
           {
@@ -827,9 +827,9 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
   {
     if ( v3 ) /*0x6b1192*/
     {
-      ((AbstractClass *)v3)->InitVtables( (int)&a1); /*0x6b119b*/
+      AbstractClass::InitVtables(((AbstractClass *)v3), (int)&a1); /*0x6b119b*/
       ((SlaveControlVector *)((int)((SlaveControlVector *)v3->slaves)))->Constructor((int)((SlaveControlVector *)((int)((SlaveControlVector *)v3->slaves))), 0, 0); /*0x6b11a7*/
-      v3->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6b11b0*/
+      ((unsigned char *)&v3->slaves)[0] = (int)&vt_DynamicVectorClass; /*0x6b11b0*/
       *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b11b6*/
       *(unsigned int *)v3->__pad_48 = 0; /*0x6b11bd*/
       ((Timer *)((Timer *)&v3->__pad_48[8]))->Start(0); /*0x6b11c0*/

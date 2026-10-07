@@ -359,7 +359,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   LOBYTE(((unsigned int *)this)[0]) |= 1u; /*0x6f3237*/
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
   memset( (void *)(&this->fireParticles), 0, 0x20u); /*0x6f3247*/
-  *(unsigned short *)this->unknown_short_3C8 = ((Random *)((Random *)&dword_A8B230[14].NeedsSaveOrLink))->State(); /*0x6f3259*/
+  *(unsigned short *)this->unknown_short_3C8 = ((Random *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State(); /*0x6f3259*/
   return this; /*0x6f3262*/
 
 }
@@ -530,10 +530,10 @@ unsigned int * TechnoClass::Update(int a2)
     v27 = (*((int (**)(TechnoClass *))v3->vtable1 + 33))( (TechnoClass *)(v3)); /*0x6f42b1*/
     v28 = *(unsigned int *)(v27 + 3256); /*0x6f42b7*/
     result = (unsigned int *)(v27 + 3256); /*0x6f42bd*/
-    v3->barrelRecoil[0] = v28; /*0x6f42c2*/
-    v3->barrelRecoil[1] = result[1]; /*0x6f42cb*/
-    v3->barrelRecoil[2] = result[2]; /*0x6f42d4*/
-    v3->barrelRecoil[3] = result[3]; /*0x6f42dd*/
+    (&v3->barrelRecoil)[0] = v28; /*0x6f42c2*/
+    (&v3->barrelRecoil)[1] = result[1]; /*0x6f42cb*/
+    (&v3->barrelRecoil)[2] = result[2]; /*0x6f42d4*/
+    (&v3->barrelRecoil)[3] = result[3]; /*0x6f42dd*/
     v3->isTurretRotateSoundPlaying = 1; /*0x6f42e3*/
     v3->turretIsRotating = 0; /*0x6f42ed*/
   }
@@ -723,29 +723,29 @@ Coord * * TechnoClass::RegisterKill()
     if ( attachedTag ) /*0x702d7c*/
     {
       if ( v28 ) /*0x702d80*/
-        ((TeamClass *)(attachedTag))->Update_0(6, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702d90*/
+        TeamClass::Update_0(((TeamClass *)(attachedTag)), 6, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702d90*/
     }
   }
   if ( ((unsigned int *)this)[0] ) /*0x702d95*/
   {
     v5 = (TeamClass *)((unsigned int *)this)[0]; /*0x702da3*/
     if ( v5 && v28 ) /*0x702dac*/
-      ((TeamClass *)(v5))->Update_0(4, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702dbb*/
+      TeamClass::Update_0(((TeamClass *)(v5)), 4, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702dbb*/
     if ( ((unsigned int *)this)[0] && (*((int (**)(TechnoClass *))this->vtable1 + 11))(this) != 1 && ((unsigned int *)this)[0] ) /*0x702dd6*/
     {
       v6 = (TeamClass *)((unsigned int *)this)[0]; /*0x702de0*/
       if ( v6 && v28 ) /*0x702de9*/
-        ((TeamClass *)(v6))->Update_0(7, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702df8*/
+        TeamClass::Update_0(((TeamClass *)(v6)), 7, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702df8*/
       if ( ((unsigned int *)this)[0] ) /*0x702dfd*/
       {
         v7 = (TeamClass *)((unsigned int *)this)[0]; /*0x702e07*/
         if ( v7 ) /*0x702e0c*/
-          ((TeamClass *)(v7))->Update_0(48, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702e1c*/
+          TeamClass::Update_0(((TeamClass *)(v7)), 48, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702e1c*/
         if ( ((unsigned int *)this)[0] ) /*0x702e21*/
         {
           v8 = (TeamClass *)((unsigned int *)this)[0]; /*0x702e2b*/
           if ( v8 ) /*0x702e30*/
-            ((TeamClass *)(v8))->Update_0(29, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702e3f*/
+            TeamClass::Update_0(((TeamClass *)(v8)), 29, (int)this, *(int *)((char *)&g_BuildingLoadQueue_Array + 24), 0, 0); /*0x702e3f*/
         }
       }
     }
@@ -1345,12 +1345,12 @@ int TechnoClass_DrawVoxel()
 LABEL_10:
   v131 = a4;
   v130 = a3;
-  v141 = *(AbstractClass **)&stru_87C374[44960];
+  v141 = *(AbstractClass **)&((unsigned char *)&stru_87C374)[44960];
   v132 = a5;
   v133 = a6;
   v121 = 0x8000000080LL;
   aP3 = (TechnoClass *)(0);
-  *(unsigned int *)&stru_87C374[44960] = dword_B1D13C;
+  *(unsigned int *)&((unsigned char *)&stru_87C374)[44960] = dword_B1D13C;
   int * v13 = (int *)(*(int (**)(unsigned int *, float *))(*dword_B1D13C + 120))( (unsigned int *)(dword_B1D13C), (float *)(&v136));
   v130 = *v13;
   v131 = v13[1];
@@ -1358,7 +1358,7 @@ LABEL_10:
   int v14 = v13[3];
   *((unsigned char *)ecx0 + 1747) = 1;
   v133 = v14;
-  aP3 = (TechnoClass *)((stru_87C374[45220] != 0) - 1);
+  aP3 = (TechnoClass *)((((unsigned char *)&stru_87C374)[45220] != 0) - 1);
   if ( !ecx0[413] )
     WinAPI::Wrapper(-2147467261);
   const void *v15; // eax

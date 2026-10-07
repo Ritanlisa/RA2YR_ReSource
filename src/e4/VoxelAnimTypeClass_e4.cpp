@@ -167,27 +167,24 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   VocClass Destination; // [esp+18h] [ebp-280h] BYREF
 
   v4 = v3; /*0x74b061*/
-  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x74b066*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)a2))); /*0x74b066*/
   if ( !((ObjectTypeClass *)((ObjectTypeClass *)v4))->LoadFromINI((uint8_t ***)a2) ) /*0x74b06e*/
     return 0; /*0x74b614*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74b08d*/
-                     (int *)a2,
-                     (uint8_t *)(v4 + 36),
-                     g_INI_Key_Normalized,
-                     *(unsigned char *)(v4 + 660));
+  Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)(/*0x74b08d*/
+                     (int *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(g_INI_Key_Normalized), *(unsigned char *)(v4 + 660));
   v6 = *(unsigned char *)(v4 + 661); /*0x74b092*/
   *(unsigned char *)(v4 + 660) = Bool_Overwrite; /*0x74b098*/
-  v7 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aTranslucent, v6); /*0x74b0a7*/
+  v7 = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aTranslucent), v6); /*0x74b0a7*/
   v45 = *(unsigned char *)(v4 + 768); /*0x74b0b4*/
   *(unsigned char *)(v4 + 661) = v7; /*0x74b0bb*/
-  *(unsigned char *)(v4 + 768) = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aIstiberium, v45); /*0x74b0c6*/
-  v8 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aIsmeteor, *(unsigned char *)(v4 + 720)); /*0x74b0db*/
+  *(unsigned char *)(v4 + 768) = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aIstiberium), v45); /*0x74b0c6*/
+  v8 = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aIsmeteor), *(unsigned char *)(v4 + 720)); /*0x74b0db*/
   v43 = *(double *)(v4 + 672); /*0x74b0ed*/
   *(unsigned char *)(v4 + 720) = v8; /*0x74b0f6*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)(v4 + 36), g_INI_Key_Elasticity, v43); /*0x74b0fc*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(g_INI_Key_Elasticity), v43); /*0x74b0fc*/
   __asm { fstp qword ptr [esi+2A0h] } /*0x74b101*/
   *(double *)(v4 + 672) = _RT1; /*0x74b101*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)(v4 + 36), aMinangularvelo, -1.0); /*0x74b116*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aMinangularvelo), -1.0); /*0x74b116*/
   __asm /*0x74b11b*/
   {
     fcom ds:dbl_7E2800
@@ -206,7 +203,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     }
     *(double *)(v4 + 680) = _RT1; /*0x74b12e*/
   }
-  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)(v4 + 36), aMaxangularvelo, -1.0); /*0x74b147*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aMaxangularvelo), -1.0); /*0x74b147*/
   __asm /*0x74b14c*/
   {
     fcom ds:dbl_7E2800
@@ -225,27 +222,21 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     }
     *(double *)(v4 + 688) = _RT1; /*0x74b15f*/
   }
-  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74b178*/
-                    (bool *)a2,
-                    (uint8_t *)(v4 + 36),
-                    aDuration,
-                    *(unsigned int *)(v4 + 668));
+  Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(/*0x74b178*/
+                    (bool *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aDuration), *(unsigned int *)(v4 + 668));
   v44 = *(double *)(v4 + 696); /*0x74b18a*/
   *(unsigned int *)(v4 + 668) = Int_Overwrite; /*0x74b193*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)(v4 + 36), aMinzvel, v44); /*0x74b199*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aMinzvel), v44); /*0x74b199*/
   v15 = *(unsigned int *)(v4 + 708); /*0x74b19e*/
   v16 = *(unsigned int *)(v4 + 704); /*0x74b1a4*/
   __asm { fstp qword ptr [esi+2B8h] } /*0x74b1aa*/
   *(double *)(v4 + 696) = _RT1; /*0x74b1aa*/
-  INIClass::ReadDouble_Overwrite( /*0x74b1ba*/
-    (double *)a2,
-    (uint8_t *)(v4 + 36),
-    aMaxzvel,
-    COERCE_DOUBLE(__PAIR64__(v15, v16)));
+  INIClass::ReadDouble_Overwrite((INIClass *)(/*0x74b1ba*/
+    (double *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aMaxzvel), COERCE_DOUBLE(__PAIR64__(v15, v16)));
   v18 = *(double *)(v4 + 712); /*0x74b1c5*/
   __asm { fstp qword ptr [esi+2C0h] } /*0x74b1cb*/
   *(double *)(v4 + 704) = _RT1; /*0x74b1cb*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)(v4 + 36), aMaxxyvel, v18); /*0x74b1db*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aMaxxyvel), v18); /*0x74b1db*/
   v20 = *(unsigned int **)(v4 + 724); /*0x74b1e0*/
   __asm { fstp qword ptr [esi+2C8h] } /*0x74b1ea*/
   *(double *)(v4 + 712) = _RT1; /*0x74b1ea*/
@@ -260,14 +251,11 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     v22 = (unsigned int *)((unsigned int)(v46));
   }
   *(unsigned int *)(v4 + 724) = (unsigned int)(v22); /*0x74b224*/
-  *(unsigned int *)(v4 + 728) = INIClass::ReadInt_Overwrite( /*0x74b248*/
-                            (bool *)a2,
-                            (uint8_t *)(v4 + 36),
-                            aSpawncount,
-                            *(unsigned int *)(v4 + 728));
-  v56 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aSharebodydata, 0); /*0x74b25d*/
-  v55 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aShareturretdat, 0); /*0x74b270*/
-  v54 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)(v4 + 36), aSharebarreldat, 0); /*0x74b27f*/
+  *(unsigned int *)(v4 + 728) = INIClass::ReadInt_Overwrite((INIClass *)(/*0x74b248*/
+                            (bool *)a2), (uint8_t *)(v4 + 36), aSpawncount, *(unsigned int *)(v4 + 728));
+  v56 = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aSharebodydata), 0); /*0x74b25d*/
+  v55 = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aShareturretdat), 0); /*0x74b270*/
+  v54 = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)(v4 + 36), (unsigned char *)(aSharebarreldat), 0); /*0x74b27f*/
   v23 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36),(uint8_t *)(aVoxelindex), *(unsigned int *)(v4 + 664)); /*0x74b28c*/
   v24 = *(unsigned int *)(v4 + 732); /*0x74b291*/
   *(unsigned int *)(v4 + 664) = v23; /*0x74b297*/
@@ -324,7 +312,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v31 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36),(uint8_t *)(g_INI_Key_Damage), *(unsigned int *)(v4 + 752)); /*0x74b3e7*/
   v32 = *(unsigned int *)(v4 + 756); /*0x74b3ec*/
   *(unsigned int *)(v4 + 752) = v31; /*0x74b3f2*/
-  v33 = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)(v4 + 36),(uint8_t *)(aDamageradius), v32); /*0x74b401*/
+  v33 = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)a2)), (uint8_t *)(v4 + 36), (uint8_t *)(aDamageradius), v32); /*0x74b401*/
   v34 = *(unsigned int *)(v4 + 760); /*0x74b406*/
   *(unsigned int *)(v4 + 756) = v33; /*0x74b40c*/
   v52 = v34; /*0x74b429*/
@@ -381,8 +369,8 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   }
   else
   {
-    _makepath((char *)(unsigned int *)&Destination.Name[5], 0, 0, (const char *)(v4 + 504), g_Str_File__VXL); /*0x74b584*/
-    ((CCFileClass*)((CCFileClass *)&Destination))->Construct((char *)(unsigned int *)&Destination.Name[5]); /*0x74b598*/
+    _makepath((char *)(unsigned int *)&((unsigned char *)&Destination.Name)[5], 0, 0, (const char *)(v4 + 504), g_Str_File__VXL); /*0x74b584*/
+    ((CCFileClass*)((CCFileClass *)&Destination))->Construct((char *)(unsigned int *)&((unsigned char *)&Destination.Name)[5]); /*0x74b598*/
     v40 = *(void **)(v4 + 176); /*0x74b59d*/
     if ( v40 ) /*0x74b5a5*/
     {

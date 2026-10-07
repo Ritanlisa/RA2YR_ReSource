@@ -59,7 +59,7 @@ int INIClass::sub_44FE60()
   int i; // esi
   int v4; // ecx
 
-  INIClass::ClearSection((int)this, (int)aStructures, 0); /*0x44fe6c*/
+  INIClass::ClearSection((INIClass *)((int)this), (int)aStructures, 0); /*0x44fe6c*/
   result = dword_A8EB50; /*0x44fe71*/
   for ( i = 0; i < dword_A8EB50; ++i ) /*0x44fe7a*/
   {

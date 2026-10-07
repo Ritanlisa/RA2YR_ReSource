@@ -492,7 +492,7 @@ void * ProductionCompletionCallback(ObjectClass *self)
         {
           v6 = (unsigned int *)*(&dword_B0F4EC->vtable0 + v3); /*0x424db3*/
           ((CellClass *)&v5->mapCoords)->ReduceTiberium( ((unsigned int *)&(unsigned __int8)v5->powerup)[0] + 1); /*0x424dc0*/
-          if ( (int)v6[53] > 0 && !((int)abs32(Random::State(  (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink)) % 3) ) /*0x424def*/
+          if ( (int)v6[53] > 0 && !((int)abs32(Random::State(  (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink)) % 3) ) /*0x424def*/
           {
             v7 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x424e04*/
             if ( v7 ) /*0x424e0b*/
@@ -505,7 +505,7 @@ void * ProductionCompletionCallback(ObjectClass *self)
               v20 = v11 + 10; /*0x424e2e*/
               v17 = v6[53] - 1; /*0x424e3f*/
               v19 = v10; /*0x424e42*/
-              v12 = Random::Range( (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v17); /*0x424e46*/
+              v12 = Random::Range( (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, v17); /*0x424e46*/
               v13 = ((AnimClass *)v7)->ctor( *(void **)(v6[50] + 4 * v12), (int *)(&v18), 0, 1, (void *)0x600, 0, 0); /*0x424e69*/
             }
             else
@@ -600,7 +600,7 @@ unsigned int * CreateUnitOnCompletion_addr42(ObjectClass *self)
       v12 = self->missionTimer[0]; /*0x425060*/
       if ( !*(unsigned char *)(v12 + 875) /*0x4250ab*/
         || *(unsigned char *)(v12 + 877)
-        && (v20 = Random::Range( (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2147483646),
+        && (v20 = Random::Range( (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2147483646),
             (double)v20 * 4.656612877414201e-10 >= 0.5) )
       {
         IDA_LOBYTE(v11) = *(unsigned char *)(self->missionTimer[0] + 877); /*0x4250d7*/
@@ -643,8 +643,8 @@ int sub_4251F0(int a1, short * a2)
     v5[0] = v3; /*0x42520d*/
     v5[1] = (v2 << 8) + 128; /*0x42521e*/
     PlaySoundEffectAt( (TechnoClass *)(v5), (&dword_8871E0)[1].GUIMoveInSound[1], 0, dword_8871E0->?, 0, 0); /*0x425237*/
-    result = (&dword_A8B238)[0; /*0x42523c*/
-    if ( !(&dword_A8B238)[0 ) /*0x425243*/
+    result = (&dword_A8B238)[0]; /*0x42523c*/
+    if ( !(&dword_A8B238)[0 ]) /*0x425243*/
       return FadePalette(&FileSystem_TEMPERAT_PAL, 30, (void (*)(void))Event::Dispatch); /*0x425254*/
     return result; /*0x425259*/
 }
@@ -720,11 +720,11 @@ int ConstructionPositionTracker(ObjectClass *self)
     if ( self->animation[4] == Map_InvalidCoord_X /*0x4256d4*/
       && self->animation[5] == Map_InvalidCoord_Y
       && self->animation[6] == Map_InvalidCoord_Z
-      || IDA_BYTE2(self->ironCurtainTimer[2]) )
+      || IDA_BYTE2((&self->ironCurtainTimer)[2]) )
     {
-      if ( !self->isFallingDown[0] ) /*0x425b53*/
+      if ( !(&self->isFallingDown)[0] ) /*0x425b53*/
       {
-        if ( IDA_BYTE2(self->ironCurtainTimer[2]) ) /*0x425b61*/
+        if ( IDA_BYTE2((&self->ironCurtainTimer)[2]) ) /*0x425b61*/
           goto LABEL_47; /*0x425b69*/
         v37 = (int *)((Building *)self)->ComputePosition( (int *)(&v54)); /*0x425b7b*/
         v38 = v37[1]; /*0x425b7f*/
@@ -786,17 +786,17 @@ int ConstructionPositionTracker(ObjectClass *self)
         v51 = v25; /*0x42599d*/
         v52 = IDA_LODWORD(v48); /*0x4259a5*/
         v53 = v56; /*0x4259af*/
-        if ( v21 > (int)(Cell::GetGroundHeight( &v51) + 2 * Map_CellHeight) ) /*0x4259c3*/
-          GroundHeight = Map_MaxHeight + Cell::GetGroundHeight( &v51); /*0x4259e5*/
+        if ( v21 > (int)(Cell::GetGroundHeight((unsigned int *)(&v51)) + 2 * Map_CellHeight) ) /*0x4259c3*/
+          GroundHeight = Map_MaxHeight + Cell::GetGroundHeight((unsigned int *)(&v51)); /*0x4259e5*/
         else
-          GroundHeight = Cell::GetGroundHeight( &v51); /*0x4259cf*/
+          GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v51)); /*0x4259cf*/
         v27 = (int)(self->vtable0); /*0x4259eb*/
         v53 = GroundHeight; /*0x4259ed*/
         (*(void (**)(TechnoClass *, int *))(v27 + 436))( (TechnoClass *)(self), (int *)(&v51)); /*0x4259f8*/
       }
       else
       {
-        if ( self->isFallingDown[0] ) /*0x425743*/
+        if ( (&self->isFallingDown)[0] ) /*0x425743*/
           goto LABEL_41; /*0x42574b*/
         v9 = (int *)((Building *)self)->ComputePosition( (int *)(&v54)); /*0x425758*/
         v10 = *v9; /*0x42575d*/
@@ -1725,7 +1725,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
         goto LABEL_20; /*0x42b504*/
       }
     }
-    v15 = (int *)((CellStruct *)(&v50))->Add( (unsigned int *)(&v57), (unsigned short *)(4 * *v12 + 9041544)); /*0x42b4ef*/
+    v15 = (int *)CellStruct::Add(((CellStruct *)(&v50)), (unsigned int *)(&v57), (unsigned short *)(4 * *v12 + 9041544)); /*0x42b4ef*/
     goto LABEL_16; /*0x42b4ef*/
   }
   LABEL_20:
@@ -1787,7 +1787,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
           if ( !v41 ) /*0x42b793*/
             goto LABEL_53; /*0x42b793*/
         }
-        v43 = (int **)((CellStruct *)(&a6))->Add( (unsigned int *)(&a4), (unsigned short *)(4 * *v40 + 9041544)); /*0x42b784*/
+        v43 = (int **)CellStruct::Add(((CellStruct *)(&a6)), (unsigned int *)(&a4), (unsigned short *)(4 * *v40 + 9041544)); /*0x42b784*/
         goto LABEL_51; /*0x42b784*/
       }
       v26 = 1; /*0x42b5f5*/
@@ -2191,7 +2191,7 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
     {
       if ( (unsigned char)a8 && !Pathfinding::AStar((Pathfinding *)self, v29, v28, a7, (int)a4) ) /*0x42cb58*/
       {
-        Debug::Log(); /*0x42cb7e*/
+        Debug::Log("Hierarchical findpath failure: (%d,%d) to (%d, %d)\n"); /*0x42cb7e G57w11: IDA push seq @ 0x42cb7e +2 reg-vararg(s) omitted*/
         IDA_LOBYTE(a8) = 0; /*0x42cb86*/
       }
     }
@@ -2206,7 +2206,7 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
     while ( 1 ) /*0x42cba5*/
     {
       if ( !(unsigned char)a8 && (v29[0] != v28[0] || v29[1] != v28[1]) ) /*0x42cbc7*/
-        Debug::Log(); /*0x42cbde*/
+        Debug::Log("Warning.  A* without HS: (%d,%d) to (%d, %d)\n"); /*0x42cbde G57w11: IDA push seq @ 0x42cbde +4 reg-vararg(s) omitted*/
       result = BuildingClass::UpdatePowerAnimation(self, (int)a2, a3, a4, a5, a6, a8); /*0x42cc02*/
       v30 = (void *)(result); /*0x42cc09*/
       if ( result || !(unsigned char)a8 ) /*0x42cc19*/
@@ -2217,7 +2217,7 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
       if ( v26 <= v24 ) /*0x42cc3f*/
         v26 = v24; /*0x42cc41*/
       if ( v26 > 1 ) /*0x42cc46*/
-        Debug::Log(); /*0x42cc65*/
+        Debug::Log("Regular findpath failure: (%d,%d) to (%d, %d)\n"); /*0x42cc65 G57w11: IDA push seq @ 0x42cc65 +2 reg-vararg(s) omitted*/
       ++v34; /*0x42cc75*/
       sub_42CCD0(self, (int)a4); /*0x42cc79*/
       CellClass::ClearOccupancyGrid((CellClass *)self); /*0x42cc80*/

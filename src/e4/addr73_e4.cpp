@@ -1197,7 +1197,7 @@ LABEL_42:
     FillUnitTooltipUI(Destination, StringCSF); /*0x7338b9*/
     v16 = 3; /*0x7338c4*/
     if ( dword_A83D4C ) /*0x7338ce*/
-      v16 = *(unsigned int *)&(&dword_A83D4C)[((unsigned int *)&134.__pad_90)[4]; /*0x7338d0*/
+      v16 = *(unsigned int *)&(&dword_A83D4C)[((unsigned int *)&134.__pad_90)[4]]; /*0x7338d0*/
     MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Destination, v16, 16454, 240, 1); /*0x7338f1*/
     dword_845564 = v18; /*0x733900*/
     result = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] + 16); /*0x733906*/
@@ -2238,9 +2238,9 @@ int sub_7345D0()
 namespace gamemd {
 int sub_7345E0()
 {
-  *(unsigned int *)&byte_B13EB0[104] = 0; /*0x7345e2*/
-  *(unsigned int *)&byte_B13EB0[108] = 0; /*0x7345e7*/
-  *(unsigned int *)&byte_B13EB0[112] = 0; /*0x7345ec*/
+  *(unsigned int *)&((unsigned char *)&byte_B13EB0)[104] = 0; /*0x7345e2*/
+  *(unsigned int *)&((unsigned char *)&byte_B13EB0)[108] = 0; /*0x7345e7*/
+  *(unsigned int *)&((unsigned char *)&byte_B13EB0)[112] = 0; /*0x7345ec*/
   return 0; /*0x7345f1*/
 }
 } // namespace gamemd

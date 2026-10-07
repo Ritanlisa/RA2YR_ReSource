@@ -89,7 +89,7 @@ AbstractClass * * Movie::SetupScreen(int aP1)
       v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
-        v10 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 2); /*0x49cbde*/
+        v10 = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, 2); /*0x49cbde*/
         *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v9) = (unsigned int)(__2_YAPAXI_Z(0x104u)); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(*((unsigned int *)this + 15) + 4 * v9++),
@@ -369,7 +369,7 @@ unsigned int Movie::SelectNextBuildableType(int aP1)
     v4 = 0; /*0x720ab0*/
     while ( 1 ) /*0x720abe*/
     {
-      v5 = Random::Range(&Randomizer_Global, 0, *((unsigned int *)this + 9) - 1); /*0x720abe*/
+      v5 = Random::Range((Random *)(&Randomizer_Global), 0, *((unsigned int *)this + 9) - 1); /*0x720abe*/
       ++v4; /*0x720ac3*/
       v6 = v5; /*0x720ac4*/
       v7 = v4 == 1000; /*0x720ac6*/

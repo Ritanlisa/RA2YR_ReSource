@@ -1382,7 +1382,7 @@ LABEL_32:
         ((unsigned int *)&v1[1].AltCameoFile)[19] = 0; /*0x4652c6*/
         *(unsigned int *)&((unsigned int *)&v1[1].AltCameoFile)[23] = 0; /*0x4652cc*/
         LOBYTE(v1[1].AltCameo) = 0; /*0x4652d2*/
-        ((BuildingTypeClass *)((int)v1))->LoadAnimations((&dword_A8B230)[130].uniqueId); /*0x4652e6*/
+        ((BuildingTypeClass *)((int)v1))->LoadAnimations(((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x4652e6*/
         return 0; /*0x4652eb*/
       }
       else

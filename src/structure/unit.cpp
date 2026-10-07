@@ -251,7 +251,7 @@ int UnitClass::Mission_Harvest()
   LABEL_9:
         MissionControl = MissionClass_GetMissionControl((void *)this); /*0x41525a*/
         IDA_LOWORD(v8) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41526a*/
-        return v8 + Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
+        return v8 + Random_Range((void *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2);
     }
 }
 // 0x6b6080

@@ -334,7 +334,7 @@ int ArtINI_Load()
   unsigned char v2[12]; // [esp+58h] [ebp-14h] BYREF
   int v3; // [esp+64h] [ebp-8h]
 
-  INIClass::ClearSection((int)&dword_887180, 0, 0); /*0x679eec*/
+  INIClass::ClearSection((INIClass *)((int)&dword_887180), 0, 0); /*0x679eec*/
   ((CCFileClass *)(v1))->Construct((char *)aArtmdIni); /*0x679efa*/
   ((CCINIClass *)((int)(&dword_887180)))->Load((int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (unsigned int)((void*)&CCFileClass_vftable); /*0x679f16*/

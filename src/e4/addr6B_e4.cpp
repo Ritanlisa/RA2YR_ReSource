@@ -741,7 +741,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
       }
     }
     v97 = v12[9]; /*0x6b332a*/
-    ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)&v97); /*0x6b3333*/
+    BuildingClass::AddUpgrade(((BuildingClass *)(int)&dword_87F7E8), (int)&v97); /*0x6b3333*/
     if ( (int16_t)v97 < v78 ) /*0x6b3341*/
       v78 = v97; /*0x6b3343*/
     if ( (int16_t)v97 > v80 ) /*0x6b334d*/
@@ -786,7 +786,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     v12[14] = v47; /*0x6b3402*/
     ((House *)((int)v12))->AnnounceUpgrade(-1); /*0x6b3409*/
     v77 = v12[9]; /*0x6b341b*/
-    ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)&v77); /*0x6b341f*/
+    BuildingClass::AddUpgrade(((BuildingClass *)(int)&dword_87F7E8), (int)&v77); /*0x6b341f*/
     v48 = ((CellClass *)((int)v12))->GetScreenRect( (int *)(v113)); /*0x6b342e*/
     v49 = v87; /*0x6b3433*/
     if ( v87 <= 0 || v88 <= 0 ) /*0x6b3445*/
@@ -1637,7 +1637,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
       v18 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b5bfe*/
       if ( v18 ) /*0x6b5c05*/
       {
-        v19 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, i - 1); /*0x6b5c1a*/
+        v19 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, i - 1); /*0x6b5c1a*/
         ((UnitClass *)v18)->Create( *((void **)v31 + v19), (_DWORD *)(v4), -1); /*0x6b5c2c*/
       }
     }
@@ -1647,7 +1647,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
     v16 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b5bc3*/
     if ( v16 ) /*0x6b5bca*/
     {
-      v17 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v28 - 1); /*0x6b5bde*/
+      v17 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, v28 - 1); /*0x6b5bde*/
       ((UnitClass *)v16)->Create( *((void **)Block + v17), (_DWORD *)(v4), -1); /*0x6b5bee*/
     }
   }
@@ -1795,7 +1795,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
       v19 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b5eee*/
       if ( v19 ) /*0x6b5ef5*/
       {
-        v20 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, i - 1); /*0x6b5f0a*/
+        v20 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, i - 1); /*0x6b5f0a*/
         ((UnitClass *)v19)->Create( *((void **)v32 + v20), (_DWORD *)(v4), -1); /*0x6b5f1c*/
       }
     }
@@ -1805,7 +1805,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
     v17 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b5eb3*/
     if ( v17 ) /*0x6b5eba*/
     {
-      v18 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v29 - 1); /*0x6b5ece*/
+      v18 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, v29 - 1); /*0x6b5ece*/
       ((UnitClass *)v17)->Create( *((void **)Block + v18), (_DWORD *)(v4), -1); /*0x6b5ede*/
     }
   }
@@ -1838,7 +1838,7 @@ void sub_6B6230()
   LONG dwNewLong; // [esp+0h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x6b624f*/
-  Debug::Log(); /*0x6b6253*/
+  Debug::Log("SoundControls: GameSpeed = %d, ScrollRate = %d, Detail = %d\n"); /*0x6b6253 G57w11: IDA push seq @ 0x6b6253 +1 reg-vararg(s) omitted*/
   byte_B0B800 = 0; /*0x6b6262*/
   v0 = 214; /*0x6b6270*/
   if ( byte_A8E9A0 ) /*0x6b6275*/
@@ -1860,7 +1860,7 @@ void sub_6B6230()
     }
     ((Dialog *)Dialog_v)->Destroy(); /*0x6b62cb*/
   }
-  Debug::Log(); /*0x6b62e9*/
+  Debug::Log("SoundControls: GameSpeed = %d, ScrollRate = %d, Detail = %d\n"); /*0x6b62e9 G57w11: IDA push seq @ 0x6b62e9 +3 reg-vararg(s) omitted*/
 }
 }
 // 0x6B8F00
@@ -1930,7 +1930,7 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
   v6 = a5; /*0x6b8f3e*/
   v44 = 0; /*0x6b8f41*/
   v41 = 0; /*0x6b8f45*/
-  v7 = dword_84066C[v6]; /*0x6b8f49*/
+  v7 = (&dword_84066C)[v6]; /*0x6b8f49*/
   v8 = (a4 * *a2) >> 1; /*0x6b8f55*/
   v56 = dword_84026C[v6]; /*0x6b8f59*/
   v9 = (a4 * a2[1]) >> 1; /*0x6b8f62*/
@@ -2342,7 +2342,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
         v58[0] = 0; /*0x6ba011*/
         HashTable::RemoveHashTableEntry( (void *)(&v48), (int)(v58)); /*0x6ba01c*/
         if ( v38 ) /*0x6ba023*/
-          (**v38)(v38, 1); /*0x6ba02b*/
+          (**v38)((unsigned int)(v38), 1); /*0x6ba02b*/
       }
     }
   LABEL_31:

@@ -129,7 +129,7 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
   char v7; // [esp+3Ch] [ebp-404h]
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
-  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x410a74*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)aP1))); /*0x410a74*/
   result = (unsigned int)(gamemd::INIClass *)(int)(INIClass::BinarySearchSection( (INIClass *)((int)aP1), (uint8_t *)this->__pad_24)); 
   if ( result ) /*0x410a86*/
   {
@@ -221,7 +221,7 @@ int AbstractTypeClass::Init(int aP1)
 
   char v3; // al
 
-  ((gamemd::AbstractClass*)(unsigned int *)this)->InitVtables( aP1); /*0x410968*/
+  AbstractClass::InitVtables(((gamemd::AbstractClass*)(unsigned int *)this), aP1); /*0x410968*/
   v3 = this->UINameLabel; /*0x41096d*/
   *(unsigned int *)this = (unsigned int)(&vt_AbstractTypeClass); /*0x410975*/
   this->vtable2 = (void *)(&vt_AbstractTypeClass);
@@ -252,7 +252,7 @@ char AbstractTypeClass::WriteINI(char *aP1)
   uint8_t *pad_24; // edi
 
   pad_24 = (uint8_t *)this->__pad_24; /*0x410b9b*/
-  INIClass::ClearSection((int *)aP1, (int)this->__pad_24, 0); /*0x410ba1*/
+  INIClass::ClearSection((INIClass *)((int *)aP1), (int)this->__pad_24, 0); /*0x410ba1*/
   ((INIClass *)aP1)->SetString( (unsigned __int8 *)(pad_24), (char *)g_INI_Key_Name, (char *)(&this->Name)); /*0x410bb2*/
   if ( (&this->UINameLabel)[0] ) /*0x410bb7*/
     ((INIClass *)aP1)->SetString( (unsigned __int8 *)(pad_24), (char *)g_INI_Key_UIName, (char *)(&this->UINameLabel)); /*0x410bca*/

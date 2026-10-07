@@ -118,7 +118,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
   {
     if ( v2 ) /*0x763c92*/
     {
-      ((gamemd::AbstractClass*)v2)->InitVtables( (int)&a2); /*0x763c9b*/
+      AbstractClass::InitVtables(((gamemd::AbstractClass*)v2), (int)&a2); /*0x763c9b*/
       v2[1].vtable1 = &vt_DynamicVectorClass; /*0x763ca0*/
       v2->vtable1 = &vt_WaypointPathClass; /*0x763ca7*/
       v2->vtable1 = &vt_WaypointPathClass; /*0x763cad*/

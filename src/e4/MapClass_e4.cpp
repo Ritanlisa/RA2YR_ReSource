@@ -353,12 +353,12 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
   v3 = 0; /*0x4ad7ef*/
   v4 = (CellCoord *)this; /*0x4ad7f2*/
   v16 = this; /*0x4ad7f8*/
-  INIClass::ClearSection((int *)a2, (int)&off_81FFF0, 0); /*0x4ad7fc*/
-  ((MapClass *)(gamemd::INIClass *)(a2))->loadTheaterINI( (INIClass *)((char *)(&off_81FFF0)), (char *)(g_INI_Key_Theater), (&dword_A8B230)[130].uniqueId); /*0x4ad81b*/
+  INIClass::ClearSection((INIClass *)((int *)a2), (int)&off_81FFF0, 0); /*0x4ad7fc*/
+  ((MapClass *)(gamemd::INIClass *)(a2))->loadTheaterINI( (INIClass *)((char *)(&off_81FFF0)), (char *)(g_INI_Key_Theater), ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x4ad81b*/
   INIClass::SetRect(a2, &off_81FFF0, (char *)g_Str_EVA_CannotDeployHere.Type, &v4[59]); /*0x4ad835*/
   INIClass::SetRect(a2, &off_81FFF0, &g_Str_EVA_CannotDeployHere.RussianVoice[3], &v4[63]); /*0x4ad84f*/
   ((ScenarioClass *)((ScenarioClass *)dword_A8B230))->Write_Waypoints( (char *)(a2)); /*0x4ad85b*/
-  INIClass::ClearSection((int *)a2, (int)g_INI_Key_CellTags, 0); /*0x4ad86a*/
+  INIClass::ClearSection((INIClass *)((int *)a2), (int)g_INI_Key_CellTags, 0); /*0x4ad86a*/
   for ( i = 0; (int)i < 512000; i += 1000 ) /*0x4ad86f*/
   {
     for ( j = 0; j < 512; ++j ) /*0x4ad873*/
@@ -394,11 +394,11 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
   v19 = 0; /*0x4ad96f*/
   *(unsigned int *)v18.__pad_0 = (unsigned int)(&vt_BufferPipe); /*0x4ad979*/
   v11 = (int)(MapClass::DecompressCellData( (MouseClass *)((MapClass *)&stru_87F5F0.__pad_58[416]), (void *)((int)&v18))); /*0x4ad990*/
-  INIClass::ClearSection((int *)a2, (int)aIsomappack, 0); /*0x4ad992*/
-  INIClass::ClearSection((int *)a2, (int)aIsomappack2, 0); /*0x4ad9a0*/
-  INIClass::ClearSection((int *)a2, (int)aIsomappack3, 0); /*0x4ad9af*/
-  INIClass::ClearSection((int *)a2, (int)aIsomappack4, 0); /*0x4ad9be*/
-  INIClass::ClearSection((int *)a2, (int)aIsomappack5, 0); /*0x4ad9cc*/
+  INIClass::ClearSection((INIClass *)((int *)a2), (int)aIsomappack, 0); /*0x4ad992*/
+  INIClass::ClearSection((INIClass *)((int *)a2), (int)aIsomappack2, 0); /*0x4ad9a0*/
+  INIClass::ClearSection((INIClass *)((int *)a2), (int)aIsomappack3, 0); /*0x4ad9af*/
+  INIClass::ClearSection((INIClass *)((int *)a2), (int)aIsomappack4, 0); /*0x4ad9be*/
+  INIClass::ClearSection((INIClass *)((int *)a2), (int)aIsomappack5, 0); /*0x4ad9cc*/
   if ( v11 > 0 ) /*0x4ad9d3*/
   {
     v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 23))( /*0x4ad9e2*/
@@ -2763,7 +2763,7 @@ void * MapClass::ClearShroud(HouseClass * aP1)
   {
     return result; /*0x577f59*/
   }
-  Debug::Log(); /*0x577f6a*/
+  Debug::Log("We tried to clear the shroud without an owner"); /*0x577f6a G57w11: IDA push seq @ 0x577f6a*/
 LABEL_8:
   v4 = (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x577f94*/
     && dword_A8B23C
@@ -3874,7 +3874,7 @@ int MapClass::ProcessTile()
   }
   g_MissionQueueFrame.localVariables[164] = 0; /*0x59960f*/
   MapClass::PostProcessReveal((MapClass *)&stru_87F5F0.__pad_58[416], 1); /*0x599615*/
-  Debug::Log(); /*0x59961f*/
+  Debug::Log("RMG: Compute Radar Image\n"); /*0x59961f G57w11: IDA push seq @ 0x59961f*/
   Shroud::ProcessCellVisibility((RadarClass *)&stru_87F5F0.__pad_58[416], (int *)&stru_87F5F0.__pad_58[668]); /*0x599631*/
   return RadarClass::RecreateSurface(v6, 0); /*0x599640*/
 

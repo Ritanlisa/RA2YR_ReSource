@@ -94,7 +94,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x65b3e9*/
     {
-      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x65b3f2*/
+      AbstractClass::InitVtables(((AbstractClass *)aP0), (int)&aP1); /*0x65b3f2*/
       v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b3f7*/
       (&aP0->RadLevelTimer)[2] = 0; /*0x65b3fd*/
       (&aP0->RadLevelTimer)[0] = v3; /*0x65b404*/

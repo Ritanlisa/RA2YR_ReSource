@@ -264,7 +264,7 @@ void ParasiteClass::DeploySquad()
       case 1u: /*0x6298bc*/
         if ( ((BuildingClass *)((BuildingClass *)_ESI))->AnimController() ) /*0x62998d*/
         {
-          v17 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
+          v17 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x6299a9*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x6299b7*/
           *(unsigned char *)(_ESI.v + 1) = (unsigned int)(gamemd::BuildingClass *)((void *)(3 - (v17 != 0))); /*0x6299ba*/
           *(unsigned char *)(_ESI.v + 1) = 0; /*0x6299bd*/
@@ -322,7 +322,7 @@ LABEL_20:
             fsub ds:dbl_7E2808
             fstp [esp+70h+var_34+4]
           }
-          if ( Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1) ) /*0x629aee*/
+          if ( Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 1) ) /*0x629aee*/
             __asm { fld ds:dbl_7EF8F0 } /*0x629af7*/
           else
             __asm { fld qword ptr [esp+68h+var_3C+4] } /*0x629aff*/

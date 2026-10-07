@@ -722,7 +722,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
         while ( 1 ) /*0x6948c0*/
         {
           Event::Dispatch(); /*0x6948c0*/
-          if ( ((gamemd::Network*)((int)&unk_A8E9C0))->SendToPlayer( (int)&v60, 455, (wchar_t *)(1),  (wchar_t *)(&dword_A8DA78)[v8]) ) /*0x6948e3*/
+          if ( ((gamemd::Network*)((int)&unk_A8E9C0))->SendToPlayer( (int)&v60, 455, (wchar_t *)(1),  (wchar_t *)((unsigned int *)dword_A8DA78)[v8]) ) /*0x6948e3*/
             goto LABEL_12; /*0x6948ea*/
           v9 = 3600; /*0x6948f0*/
           if ( Ticks == -1 ) /*0x6948f6*/
@@ -991,7 +991,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
             {
               do /*0x694ef6*/
               {
-                v38 = (int)(((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)&v57.__pad_0[12], 220, (wchar_t *)(1), (wchar_t *)(&dword_A8DA78)[i])); /*0x694eed*/
+                v38 = (int)(((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)&v57.__pad_0[12], 220, (wchar_t *)(1), (wchar_t *)((unsigned int *)dword_A8DA78)[i])); /*0x694eed*/
                 Event::Dispatch(); /*0x694eef*/
               }
               while ( !v38 ); /*0x694ef6*/
@@ -1102,7 +1102,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
     }
     --dword_A8DAB4; /*0x6952dc*/
   }
-  if ( !((CCFileClass *)(v18))->Open(0) || CCFileClass::GetSize(v18) != edx0 ) /*0x695300*/
+  if ( !((CCFileClass *)(v18))->Open(0) || CCFileClass::GetSize((CCFileClass *)(v18)) != edx0 ) /*0x695300*/
   {
   LABEL_16:
     v18[0] = (int)&CCFileClass_vftable; /*0x6953c3*/
@@ -1403,7 +1403,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
         if ( v12 > v11 ) /*0x6995c2*/
         {
           v12[1] = 0; /*0x6995e1*/
-          Debug::Log(); /*0x6995e4*/
+          Debug::Log("Read first %d%% of file looking for [Basic] section\n"); /*0x6995e4 G57w11: IDA push seq @ 0x6995e4 +1 reg-vararg(s) omitted*/
           v13 = 0; /*0x6995ec*/
           v14 = (void *)(0); /*0x6995ee*/
           while ( 1 ) /*0x6995f5*/
@@ -1420,7 +1420,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
             *((unsigned char *)v14 + v15) = 0; /*0x699654*/
             if ( strstr((const char *)v14, aDigest_0) ) /*0x69965d*/
             {
-              Debug::Log(); /*0x699693*/
+              Debug::Log("Read last  %d%% of file looking for [Digest] section\n"); /*0x699693 G57w11: IDA push seq @ 0x699693 +1 reg-vararg(s) omitted*/
               v27.headNode[0] = 0; /*0x6996a2*/
               v27.headNode[1] = 0; /*0x6996a9*/
               ((INISectionList *)(&v27.headNode[2]))->Constructor(); /*0x6996b0*/
@@ -1449,29 +1449,20 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               v25.Buffer_field_0C = 0; /*0x6997ae*/
               *(unsigned int *)v23.__pad_0 = (unsigned int)(void*)&BufferStraw_vftable; /*0x6997b5*/
               CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
-              *a5 = gamemd::INIClass::ReadInt_Overwrite( /*0x6997e5*/
-                      (bool *)v27.__pad_0,
-                      (uint8_t *)(char *)&stru_82BA00,
-                      aMinplayers,
-                      *a5);
-              *a6 = gamemd::INIClass::ReadInt_Overwrite( /*0x69981b*/
-                      (bool *)v27.__pad_0,
-                      (uint8_t *)(char *)&stru_82BA00,
-                      aMaxplayers,
-                      *a6);
+              *a5 = gamemd::INIClass::ReadInt_Overwrite((INIClass *)(/*0x6997e5*/
+                      (bool *)v27.__pad_0), (uint8_t *)(char *)&stru_82BA00, aMinplayers, *a5);
+              *a6 = gamemd::INIClass::ReadInt_Overwrite((INIClass *)(/*0x69981b*/
+                      (bool *)v27.__pad_0), (uint8_t *)(char *)&stru_82BA00, aMaxplayers, *a6);
               /*0x699833*/
                 ((gamemd::INIClass*)&v27)->GetString(/*0x699833*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_GameMode, &g_INI_DefaultBuffer, aP3, 256);
               /*0x699858*/
                 ((gamemd::INIClass*)&v27)->GetString(/*0x699858*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v31, 64);
               BulkCharToWide( (unsigned short *)(a1), (uint8_t *)v31, -1); /*0x69986a*/
               ((gamemd::INIClass*)&v29)->GetString((uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
-              *a4 = gamemd::INIClass::ReadBool_Overwrite( /*0x6998ba*/
-                      (int *)v27.__pad_0,
-                      (uint8_t *)(char *)&stru_82BA00,
-                      (uint8_t *)g_INI_Key_Official,
-                      0);
-              Debug::Log(); /*0x6998d9*/
-              Debug::Log(); /*0x6998eb*/
+              *a4 = gamemd::INIClass::ReadBool_Overwrite((INIClass *)(/*0x6998ba*/
+                      (int *)v27.__pad_0), (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Official, 0);
+              Debug::Log("MPR %s (%d/%d): official: %d, desc: %s\n"); /*0x6998d9 G57w11: IDA push seq @ 0x6998d9 +4 reg-vararg(s) omitted*/
+              Debug::Log("\t\tGameModes: %s\n"); /*0x6998eb G57w11: IDA push seq @ 0x6998eb +1 reg-vararg(s) omitted*/
               RA2_OPDEL(v8); /*0x6998f1*/
               RA2_OPDEL(v14); /*0x6998f7*/
               ((Vector *)((int)&v25))->Clear((int)((Vector *)((int)&v25))); /*0x699906*/

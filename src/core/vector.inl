@@ -346,6 +346,21 @@ int DynamicVectorClass<T>::GetSize() const
 }
 
 template <typename T>
+T DynamicVectorClass<T>::GetOrGrow(int index)
+{
+    // 0x49FAE0 — g57w11 r4: raw fn_49 真值 (index<Count → Items[index];
+    // 否则 SetCapacity(index+10,nullptr) + 新槽清零 + Items[index]; 失败 → T{})
+    int oldCount = Count;
+    if (index < oldCount)
+        return this->Items[index];
+    if (!this->SetCapacity(index + 10, nullptr))
+        return T{};
+    for (int i = oldCount; i < this->Capacity; ++i)
+        this->Items[i] = T{};
+    return this->Items[index];
+}
+
+template <typename T>
 bool DynamicVectorClass<T>::AddItem(T item)
 {
     if (Count >= this->Capacity)

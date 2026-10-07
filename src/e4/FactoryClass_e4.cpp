@@ -208,7 +208,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
-      && (*(uint8_t ((**))(int, int, unsigned int))(*(unsigned int *)v7 + 8))(v7, v5 + v8, 0) )
+      && (*(uint8_t ((**))(int, int, unsigned int))(*(unsigned int *)v7 + 8))((int)(v7), v5 + v8, 0) )
     {
       v9 = *(unsigned int *)(v7 + 16); /*0x4c9d22*/
       v10 = *(unsigned int *)(v7 + 4); /*0x4c9d25*/
@@ -233,11 +233,11 @@ int FactoryClass::SetObject(int a2)
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = (unsigned int)(v3); /*0x4c9e30*/
-  this->production[2] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9e38*/
+  (&this->production)[2] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9e38*/
   this->queuedCapacity = 0; /*0x4c9e3e*/
-  this->queuedObjects[0] = v5; /*0x4c9e41*/
+  (&this->queuedObjects)[0] = v5; /*0x4c9e41*/
   this->queuedCount = 0; /*0x4c9e46*/
-  this->production[0] = 54; /*0x4c9e49*/
+  (&this->production)[0] = 54; /*0x4c9e49*/
   this->__pad_42[27] = 1; /*0x4c9e50*/
   this->isSuspended = 1; /*0x4c9e53*/
   return 1; /*0x4c9e56*/
@@ -322,7 +322,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
   {
     if ( v3 ) /*0x4ca290*/
     {
-      ((AbstractClass *)v3)->InitVtables( (int)&a2); /*0x4ca299*/
+      AbstractClass::InitVtables(((AbstractClass *)v3), (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3((unsigned int *)&v3production)[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)&v3->onHold, 0, 0); /*0x4ca2b2*/
       *(unsigned int *)&v3->onHold = (unsigned int)(&vt_DynamicVectorClass); /*0x4ca2b7*/
@@ -569,7 +569,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x4ca791*/
   v7 = (gamemd::FactoryClass *)(this); /*0x4ca7a6*/
-v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/ &stru_A83D50.__pad_C8[24], (FactoryClass **)(&v7));
+v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))((char *)(/*0x4ca7aa*/ &stru_A83D50.__pad_C8[24]), (FactoryClass **)(&v7));
 
 
   if ( v3 != -1 && v3 < *(int *)&stru_A83D50.__pad_C8[40] ) /*0x4ca7ba*/
@@ -851,7 +851,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVTechnoTypeClass *))(*(unsigned int *)&this->q000 + 12))(this); /*0x4ca9d2*/
+    (*(void (**)(_VectorClass_PBVTechnoTypeClass *))(*(unsigned int *)&this->q000 + 12))((_VectorClass_PBVTechnoTypeClass *)(this)); /*0x4ca9d2*/
     return 1; /*0x4ca9d8*/
   }
 

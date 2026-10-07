@@ -958,7 +958,7 @@ int sub_6586D0()
     ((Dialog*)Dialog)->Destroy(); /*0x658733*/
   }
   ((Timer*)(*(Timer **)&((unsigned int *)(stru_87F5F0.__pad_58))[296]))->PumpMessages(); /*0x658740*/
-  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2((&dword_A8B230)[381].vtable3); /*0x658758*/
+  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3); /*0x658758*/
   return ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x658763*/
 }
 }
@@ -1043,7 +1043,7 @@ AbstractClass * * UpdateProjectileTrails()
       {
         if ( *(unsigned char *)(v10 + 9) ) /*0x6592d6*/
         {
-          v14 = Random::Range(&Randomizer_Global, 0, 99); /*0x6592e8*/
+          v14 = Random::Range((Random *)(&Randomizer_Global), 0, 99); /*0x6592e8*/
           IDA_LOWORD(v15) = Math::RoundToInt(v24 * 100.0); /*0x6592f4*/
           if ( v14 < v15 ) /*0x6592fb*/
             *((unsigned char *)Block + 9) = 0; /*0x659301*/
@@ -1581,7 +1581,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   v12 = a2  !=  (void *)(-1); /*0x65d9ac*/
   v12 = v12; /*0x65d9b1*/
   if ( v12 ) /*0x65d9b5*/
-    Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (int *)(v48), *(int *)v48); /*0x65d9c7*/
+    Waypoint_Location = ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (int *)(v48), *(int *)v48); /*0x65d9c7*/
   else
     Waypoint_Location = (int *)(((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords((unsigned int *)(v48))); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
@@ -1962,7 +1962,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
       if ( IDA_HIBYTE(v48) ) /*0x65e2d9*/
       {
         v22 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e2ee*/
-        Coords = ((CellClass *)v22)->GetCoords( v61); /*0x65e2f5*/
+        Coords = CellClass::GetCoords(((CellClass *)v22), v61); /*0x65e2f5*/
         v24 = *Coords; /*0x65e2fa*/
         v25 = Coords[1]; /*0x65e2fc*/
         v26 = Coords[2]; /*0x65e2ff*/
@@ -2000,7 +2000,7 @@ IDA_LOBYTE(a2) = (*(int (**)(unsigned int *, unsigned int *, unsigned int))(v27 
       {
         v33 = *v5; /*0x65e40a*/
         v34 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e425*/
-        v35 = ((CellClass *)v34)->GetCoords( v62); /*0x65e42c*/
+        v35 = CellClass::GetCoords(((CellClass *)v34), v62); /*0x65e42c*/
 v32 = (*(int (**)(unsigned int *, int *, unsigned int))(v33 + 216))( /*0x65e434*/ v5, (int *)(v35), (uint8_t)(((v17 >> 7) + 1) >> 1));
 
 

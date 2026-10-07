@@ -174,13 +174,13 @@ LABEL_26:
     v34 = 0; /*0x5eb13d*/
     if ( v36 == (gamemd::ObjectClass *)(g_MPCooperativeState) ) /*0x5eb142*/
     {
-      if ( *(unsigned int *)&stru_A8B250[4] == -1 ) /*0x5eb151*/
+      if ( *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] == -1 ) /*0x5eb151*/
       {
         PlayerCountMap = 8; /*0x5eb153*/
       }
       else
       {
-        PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250[4]); /*0x5eb165*/
+        PlayerCountMap = ReadPlayerCountMap(*(int *)&((unsigned char *)&stru_A8B250)[4]); /*0x5eb165*/
         if ( dword_A8B23C ) /*0x5eb169*/
         {
           v4 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))( (ObjectClass *)(dword_A8B23C)); /*0x5eb16d*/
@@ -317,13 +317,13 @@ LABEL_79:
         {
           if ( !v34 || v36 != (gamemd::ObjectClass *)(g_MPCooperativeState) ) /*0x5eb44d*/
             goto LABEL_111; /*0x5eb44d*/
-          if ( *(unsigned int *)&stru_A8B250[4] == -1 ) /*0x5eb458*/
+          if ( *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] == -1 ) /*0x5eb458*/
           {
             v17 = 8; /*0x5eb45a*/
           }
           else
           {
-            v17 = ReadPlayerCountMap(*(int *)&stru_A8B250[4]); /*0x5eb46c*/
+            v17 = ReadPlayerCountMap(*(int *)&((unsigned char *)&stru_A8B250)[4]); /*0x5eb46c*/
             if ( dword_A8B23C ) /*0x5eb470*/
             {
               v18 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 38))( (ObjectClass *)(dword_A8B23C)); /*0x5eb474*/

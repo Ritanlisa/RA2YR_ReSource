@@ -576,23 +576,8 @@ LABEL_20:
       if ( DamageLevels ) /*0x5fdac5*/
         v18 = (*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels); /*0x5fdac9*/
     }
-    DrawToSurfaceSHP( /*0x5fdb03*/
-      (int)g_DSurface_Hidden_2,
-      *(unsigned int *)(v16 + 780),
-      v18,
-      0,
-      &v30,
-      a3,
-      3584,
-      0,
-      -2 - v29,
-      0,
-      1000,
-      0,
-      0,
-      0,
-      0,
-      0);
+    DrawToSurfaceSHP(/*0x5fdb03*/
+      (int)g_DSurface_Hidden_2, *(unsigned int *)(v16 + 780), (ConvertClass *)(v18), 0, (ConvertClass *)(&v30), (ConvertClass *)(a3), 3584, 0, -2 - v29, 0, 1000, 0, 0, 0, 0, 0);
   }
   else if ( Type->Overrides ) /*0x5fdb08*/
   {
@@ -652,23 +637,8 @@ LABEL_20:
         v25 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a2); /*0x5fdc6a*/
       }
     }
-    DrawToSurfaceSHP( /*0x5fdcaa*/
-      (int)g_DSurface_Hidden_2,
-      v25[13],
-      v5,
-      0,
-      &v30,
-      a3,
-      3584,
-      0,
-      -2 - v29,
-      0,
-      *((int16_t *)v25 + 134),
-      0,
-      0,
-      0,
-      0,
-      0);
+    DrawToSurfaceSHP(/*0x5fdcaa*/
+      (int)g_DSurface_Hidden_2, v25[13], (ConvertClass *)(v5), 0, (ConvertClass *)(&v30), (ConvertClass *)(a3), 3584, 0, -2 - v29, 0, *((int16_t *)v25 + 134), 0, 0, 0, 0, 0);
   }
 
 }

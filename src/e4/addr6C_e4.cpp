@@ -1519,7 +1519,7 @@ LABEL_10:
         WideString::Trim( (void *)(v10)); /*0x6ca2c9*/
         if ( !_wcsicmp(v11, Dest) ) /*0x6ca2d4*/
         {
-          Debug::Log(); /*0x6ca2ee*/
+          Debug::Log("Found movie entry %s\n"); /*0x6ca2ee G57w11: IDA push seq @ 0x6ca2ee +1 reg-vararg(s) omitted*/
           return 1; /*0x6ca2ff*/
         }
       }
@@ -2026,7 +2026,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   vtable2[2] = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
   vtable2[3] = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
   *((unsigned int *)vtable2 + 2) = ((unsigned int *)this)[0]; /*0x6c8b70*/
-  v8 = ((CellStruct *)a3)->Copy( &v13); /*0x6c8b73*/
+  v8 = CellStruct::Copy(((CellStruct *)a3), &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
   v14 = (unsigned char *)(*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&a2->q_170))(a2, *v8, v8[1]);  /*0x6c8b92*/
   v15 = 0; /*0x6c8b9b*/

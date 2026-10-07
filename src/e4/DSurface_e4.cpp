@@ -909,7 +909,7 @@ int DSurface_FillRectWithFlags(DSurface *aP0, int a2, int a3, unsigned char * a4
   v12 = 0xFFu >> g_BitMask_Blue << g_BitMask_Green; /*0x4bb8f5*/
   v30 = v12; /*0x4bb908*/
   v34 = 0xFFu >> g_BitMask_Red << g_BitShift_Blue; /*0x4bb917*/
-  v13 = ((CellStruct *)v39)->Copy( v38); /*0x4bb91b*/
+  v13 = CellStruct::Copy(((CellStruct *)v39), v38); /*0x4bb91b*/
   v35 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)&v6->q_170))(v6, *v13, v13[1]);  /*0x4bb938*/
   if ( !v35 ) /*0x4bb93c*/
     return 0; /*0x4bb93e*/
@@ -1176,9 +1176,9 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
         v92[1] = v24 - v98[1]; /*0x4bbdb7*/
         v93 = v23 - v95[1]; /*0x4bbdc7*/
         v94 = v24 - v95[2]; /*0x4bbdcb*/
-        Vector::TwoDMagnitudeMath( &v93); /*0x4bbdd3*/
+        Vector::TwoDMagnitudeMath((Vector *)(&v93)); /*0x4bbdd3*/
         v103 = v25; /*0x4bbddc*/
-        v9 = Vector::TwoDMagnitudeMath(v92); /*0x4bbde0*/
+        v9 = Vector::TwoDMagnitudeMath((Vector *)(v92)); /*0x4bbde0*/
         v112 = v26; /*0x4bbde5*/
         __asm { fild [esp+78h+arg_14] } /*0x4bbdee*/
         v113 = v22 - v18; /*0x4bbdf7*/

@@ -172,12 +172,12 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
           v13 = v11[2]; /*0x471b7a*/
           v28 = *v11; /*0x471b88*/
           v30 = v13; /*0x471b8c*/
-          v14 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, -200, 200); /*0x471b98*/
+          v14 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, -200, 200); /*0x471b98*/
           v15 = (int *)(this->overloadCount + 156); /*0x471b9a*/
           v24 = *v15; /*0x471bac*/
           v25 = v15[1]; /*0x471bb8*/
           v26 = v15[2]; /*0x471bc5*/
-          v16 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, -200, 200); /*0x471bc9*/
+          v16 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, -200, 200); /*0x471bc9*/
           v27[0] = v24 + v16; /*0x471bde*/
           v27[1] = v14 + v12; /*0x471be2*/
           v27[2] = v13 + 100; /*0x471be6*/
@@ -194,7 +194,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
           v21 = 0.015; /*0x471c41*/
           if ( v2 != 1 ) /*0x471c49*/
             v21 = 0.029999999; /*0x471c4b*/
-          v2 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 100); /*0x471c62*/
+          v2 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 100); /*0x471c62*/
           v18 = v21; /*0x471c67*/
           if ( v2 < 50 ) /*0x471c6e*/
             v18 = -v18; /*0x471c70*/
@@ -659,7 +659,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
 LABEL_22:
     v16 = v24; /*0x472537*/
     (*(int (**)(unsigned char *))(*(unsigned int *)_EBX + 132))(_EBX); /*0x47253b*/
-    Debug::Log(); /*0x472563*/
+    Debug::Log("AICapture: I think (%s) so I roll a %d and decide (%s) with a %s.\n"); /*0x472563 G57w11: IDA push seq @ 0x472563 +4 reg-vararg(s) omitted*/
     overloadCount = this->overloadCount; /*0x47256f*/
     if ( overloadCount ) /*0x472574*/
     {
@@ -672,7 +672,7 @@ LABEL_22:
           if ( *(unsigned int *)(v19 + 192) ) /*0x472589*/
           {
             v25 = *(unsigned int *)(v19 + 192); /*0x47259a*/
-            Debug::Log(); /*0x4725a4*/
+            Debug::Log("AICapture: Capturer's Team overrides with (%s).\n"); /*0x4725a4 G57w11: IDA push seq @ 0x4725a4 +1 reg-vararg(s) omitted*/
             v16 = v25; /*0x4725a9*/
           }
         }

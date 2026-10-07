@@ -714,7 +714,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
             if ( v96 != 41 ) /*0x794476*/
               goto LABEL_89; /*0x794476*/
             Debug::Log("Got NET_PORT_PROBE packet\n"); /*0x794481 G57c1: IDA 0x794481 push offset aGotNetPortProb_0*/
-            if ( (uint8_t)((NetworkID *)((bool *)((&dword_A8DA78)[v62] + 40)))->Compare((int)&v91) ) /*0x7944a1*/
+            if ( (uint8_t)((NetworkID *)((bool *)(((unsigned int *)dword_A8DA78)[v62] + 40)))->Compare((int)&v91) ) /*0x7944a1*/
             {
               v45 = (char *)(ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3]))); /*0x7944bd*/
               if ( !_strcmpi(v45, v97) ) /*0x7944c3*/
@@ -1081,7 +1081,7 @@ AbstractClass * * WOL_StartGame()
     v6 = NegotiateScenarioWOL(v3); /*0x794d11*/
     if ( v6 ) /*0x794d15*/
     {
-      Debug::Log(); /*0x794d20*/
+      Debug::Log("Negotiate_Scenario_Transfer failed\n"); /*0x794d20 G57w11: IDA push seq @ 0x794d20*/
       if ( v6 == 2 ) /*0x794d2b*/
       {
         StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_SCENARIOS_DO_NOT_MATCH), 0, (const char *)(g_Str_File_wonline_cpp), 20292); /*0x794d44*/
@@ -1104,9 +1104,9 @@ AbstractClass * * WOL_StartGame()
       byte_B77E27 = 0; /*0x794dbc*/
       byte_B77E26 = 0; /*0x794dc3*/
       IDA_BYTE1(stru_B77D80.HashTable_field_0x40) = 1; /*0x794dcf*/
-      Debug::Log(); /*0x794dd6*/
+      Debug::Log("setting EV_EXIT\n"); /*0x794dd6 G57w11: IDA push seq @ 0x794dd6*/
       SetEvent( (void *)((void *)(dword_B7369C))); /*0x794de5*/
-      Debug::Log(); /*0x794df0*/
+      Debug::Log("Request channel leave in game start after scenario mismatch\n"); /*0x794df0 G57w11: IDA push seq @ 0x794df0*/
       (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x794e00*/
       if ( dword_A8B244 == 1 || dword_A8B244 == 2 || dword_A8B244 == 3 ) /*0x794e15*/
       {
@@ -1122,7 +1122,7 @@ AbstractClass * * WOL_StartGame()
     }
     else
     {
-      Debug::Log(); /*0x794e6a*/
+      Debug::Log("Negotiate_Scenario_Transfer succeeded\n"); /*0x794e6a G57w11: IDA push seq @ 0x794e6a*/
       v10 = dword_A8DA84; /*0x794e6f*/
       v11 = 0; /*0x794e78*/
       if ( dword_A8DA84 > 0 ) /*0x794e7c*/
@@ -1163,7 +1163,7 @@ AbstractClass * * WOL_StartGame()
           {
             while ( 1 ) /*0x794ef6*/
             {
-              v17 = ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA78)[v16])); /*0x794ef6*/
+              v17 = ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v16])); /*0x794ef6*/
               if ( !_strcmpi(v17, (char *)&g_WebBrowserConfig.ambientSoundController[3]) ) /*0x794efc*/
                 break; /*0x794efc*/
               if ( ++v16 >= dword_A8DA84 ) /*0x794f10*/
@@ -1178,11 +1178,11 @@ AbstractClass * * WOL_StartGame()
       v18 = (HWND)((Dialog*)(Dialog *)0x130)->FindByHandle(); /*0x794f35*/
       if ( v18 ) /*0x794f3e*/
         CloseDialog( (HWND)(v18), 0); /*0x794f44*/
-      Debug::Log(); /*0x794f4e*/
+      Debug::Log("Closed Verify Connections Dialog\n"); /*0x794f4e G57w11: IDA push seq @ 0x794f4e*/
       if ( *(unsigned int *)&dword_A8B238 != 4 || dword_A8B244 != 3 ) /*0x794f67*/
         dword_A8B3AC = 0; /*0x794f69*/
       dword_A8B554 = 5; /*0x794f74*/
-      switch ( *(unsigned int *)&stru_A8B250[24] ) /*0x794f91*/
+      switch ( *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] ) /*0x794f91*/
       {
         case 0: /*0x794f91*/
           dword_A8B550 = (unsigned int)(wchar_t *)40; /*0x794f98*/
@@ -1254,14 +1254,14 @@ AbstractClass * * WOL_StartGame()
       dword_A8DB9C = (unsigned int)(wchar_t *)1; /*0x7950c9*/
       if ( !v22 || v22 == 1000 ) /*0x7950db*/
       {
-        Debug::Log(); /*0x7953c0*/
+        Debug::Log("Ping times not available - Using defaults\n"); /*0x7953c0 G57w11: IDA push seq @ 0x7953c0*/
         dword_A8B56C = 10 * ((unsigned int)dword_A8B550 / 0xA); /*0x7953de*/
         if ( 10 * ((unsigned int)dword_A8B550 / 0xA) <= 0xA ) /*0x7953e3*/
           dword_A8B56C = 10; /*0x7953ee*/
       }
       else
       {
-        Debug::Log(); /*0x7950e7*/
+        Debug::Log("Max ping is %d ms\n"); /*0x7950e7 G57w11: IDA push seq @ 0x7950e7 +1 reg-vararg(s) omitted*/
         if ( v22 <= 1000 ) /*0x7950f5*/
         {
           if ( v22 < 600 ) /*0x795109*/
@@ -1320,13 +1320,13 @@ AbstractClass * * WOL_StartGame()
       }
   LABEL_97:
       Debug::Log(); /*0x7951a1*/
-      Debug::Log(); /*0x7951b8*/
-      Debug::Log(); /*0x7951c8*/
-      Debug::Log(); /*0x7951d9*/
+      Debug::Log("PrecalcDesiredFrameRate is %d\n"); /*0x7951b8 G57w11: IDA push seq @ 0x7951b8 +1 reg-vararg(s) omitted*/
+      Debug::Log("LatencyFudge is %d\n"); /*0x7951c8 G57w11: IDA push seq @ 0x7951c8 +1 reg-vararg(s) omitted*/
+      Debug::Log("FrameSendRate is %d\n"); /*0x7951d9 G57w11: IDA push seq @ 0x7951d9 +1 reg-vararg(s) omitted*/
       dword_A8B568 = dword_A8B550; /*0x7951f0*/
       memset( (void *)(&unk_A8B574), 0, 0x340u); /*0x7951f9*/
       *(unsigned int *)&hostshort = 1234; /*0x795200*/
-      stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250[24]; /*0x79520a*/
+      stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&((unsigned char *)&stru_A8B250)[24]; /*0x79520a*/
       *(unsigned int *)&dword_841F34 = 1235; /*0x795216*/
       *(unsigned int *)&dword_841F38 = 1236; /*0x795220*/
       *(unsigned int *)&dword_841F3C = 1237; /*0x79522a*/
@@ -1361,7 +1361,7 @@ AbstractClass * * WOL_StartGame()
               {
                 strcat( (char *)(byte_B76568), (const char *)&v27->occupant); /*0x7952fb*/
                 v30 = strlen((char *)&::Delimiter) + 1; /*0x795314*/
-                v31 = &byte_B76568[strlen( (const char *)(byte_B76568))]; /*0x795322*/
+                v31 = (unsigned char *)&byte_B76568 + strlen( (const char *)(byte_B76568)); /*0x795322*/
                 qmemcpy( (void *)(v31), (char *)&::Delimiter, 4 * (v30 >> 2)); /*0x795326*/
                 v33 = (char *)&::(&Delimiter)[4 * (v30 >> 2)]; /*0x795326*/
                 v32 = &v31[4 * (v30 >> 2)]; /*0x795326*/
@@ -1413,7 +1413,7 @@ AbstractClass * * WOL_StartGame()
           }
         }
       }
-      Debug::Log(); /*0x79557f*/
+      Debug::Log("setting EV_STARTGAME\n"); /*0x79557f G57w11: IDA push seq @ 0x79557f*/
       SetEvent( (void *)((void *)(dword_B736A0))); /*0x79558e*/
       if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7955a6*/
       {
@@ -1423,12 +1423,12 @@ AbstractClass * * WOL_StartGame()
         g_WOL_GameListPool = time(0); /*0x7955d0*/
       }
       IDA_BYTE1(stru_B77D80.HashTable_field_0x40) = 1; /*0x7955da*/
-      Debug::Log(); /*0x7955e1*/
+      Debug::Log("Request channel leave in game start\n"); /*0x7955e1 G57w11: IDA push seq @ 0x7955e1*/
       (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x7955f1*/
       Scenario::PreGameInit(); /*0x7955f4*/
       byte_B77E27 = 0; /*0x7955f9*/
       byte_B77E26 = 0; /*0x795600*/
-      Debug::Log(); /*0x79560c*/
+      Debug::Log("Leaving Start_Game_Now\n"); /*0x79560c G57w11: IDA push seq @ 0x79560c*/
     }
   }
   else
@@ -1652,7 +1652,7 @@ int WOL_NegotiateScenario(char a1)
       {
         if ( word_A8D810 == -22012 ) /*0x796548*/
         {
-          Debug::Log(); /*0x79654f*/
+          Debug::Log("Packet is YR packet\n"); /*0x79654f G57w11: IDA push seq @ 0x79654f*/
           v28 = 0; /*0x79655d*/
           if ( (int)dword_B77900 > 0 ) /*0x796561*/
           {
@@ -1671,7 +1671,7 @@ int WOL_NegotiateScenario(char a1)
             {
               if ( dword_A8D638 == 11 ) /*0x7965b9*/
               {
-                Debug::Log(); /*0x7965f6*/
+                Debug::Log("Got NET_GO from host\n"); /*0x7965f6 G57w11: IDA push seq @ 0x7965f6*/
                 goto LABEL_147; /*0x7965fe*/
               }
               if ( dword_A8D638 == 42 ) /*0x7965be*/
@@ -1691,7 +1691,7 @@ int WOL_NegotiateScenario(char a1)
       if ( !v30 ) /*0x7965e6*/
         goto LABEL_142; /*0x7965e6*/
     }
-    Debug::Log(); /*0x796608*/
+    Debug::Log("Got NET_DONT_GO from host\n"); /*0x796608 G57w11: IDA push seq @ 0x796608*/
     v32 = 0; /*0x796615*/
     v40 = 1; /*0x796617*/
     if ( dword_A8DA84 > 0 ) /*0x79661e*/
@@ -1704,8 +1704,8 @@ int WOL_NegotiateScenario(char a1)
         if ( ++v32 >= dword_A8DA84 ) /*0x796648*/
           goto LABEL_142; /*0x796648*/
       }
-      if ( v32 < dword_A8DA84 && dword_B73BB4[v32] < dword_84A1E0[v32] ) /*0x79666b*/
-        dword_B73BB4[v32] = 3; /*0x79666d*/
+      if ( v32 < dword_A8DA84 &&(&dword_B73BB4)[v32] < dword_84A1E0[v32] ) /*0x79666b*/
+        (&dword_B73BB4)[v32] = 3; /*0x79666d*/
     }
   LABEL_142:
     v34 = v51; /*0x796673*/
@@ -1746,7 +1746,7 @@ int WOL_NegotiateScenario(char a1)
     {
       if ( word_A8D810 == -22012 ) /*0x795df0*/
       {
-        Debug::Log(); /*0x795dfb*/
+        Debug::Log("Packet is YR packet\n"); /*0x795dfb G57w11: IDA push seq @ 0x795dfb*/
         v6 = 1; /*0x795e05*/
         if ( dword_A8DA84 > 1 ) /*0x795e0f*/
         {
@@ -1761,7 +1761,7 @@ int WOL_NegotiateScenario(char a1)
                 v9 = dword_A8D638; /*0x795e66*/
                 if ( dword_A8D638 == 16 ) /*0x795e6e*/
                 {
-                  Debug::Log(); /*0x795e75*/
+                  Debug::Log("Packet type is NET_REQ_SCENARIO\n"); /*0x795e75 G57w11: IDA push seq @ 0x795e75*/
                   v9 = dword_A8D638; /*0x795e7a*/
                   v52[v7 + 5] = dword_A8D638; /*0x795e82*/
                   v5 = 1; /*0x795e86*/
@@ -1769,25 +1769,25 @@ int WOL_NegotiateScenario(char a1)
                 }
                 if ( v9 == 19 ) /*0x795e8c*/
                 {
-                  Debug::Log(); /*0x795e93*/
+                  Debug::Log("Packet type is NET_READY_TO_GO\n"); /*0x795e93 G57w11: IDA push seq @ 0x795e93*/
                   v9 = dword_A8D638; /*0x795e98*/
                   v52[v7 + 5] = dword_A8D638; /*0x795ea0*/
                   ++v4; /*0x795ea4*/
                 }
                 if ( v9 == 42 ) /*0x795ea8*/
                 {
-                  Debug::Log(); /*0x795eaf*/
+                  Debug::Log("Packet type is NET_DONT_GO\n"); /*0x795eaf G57w11: IDA push seq @ 0x795eaf*/
                   v9 = dword_A8D638; /*0x795eba*/
                   ++v4; /*0x795ec2*/
                   v10 = v6 < dword_A8DA84; /*0x795ec3*/
                   v52[v7 + 5] = dword_A8D638; /*0x795ec5*/
                   v40 = 1; /*0x795ec9*/
-                  if ( v10 && dword_B73BB8[v7] < dword_84A1E4[v7] ) /*0x795ede*/
-                    dword_B73BB8[v7] = 0; /*0x795ee0*/
+                  if ( v10 &&(&dword_B73BB8)[v7] < dword_84A1E4[v7] ) /*0x795ede*/
+                    (&dword_B73BB8)[v7] = 0; /*0x795ee0*/
                 }
                 if ( v9 == 20 ) /*0x795eed*/
                 {
-                  Debug::Log(); /*0x795ef4*/
+                  Debug::Log("Packet type is NET_NO_SCENARIO\n"); /*0x795ef4 G57w11: IDA push seq @ 0x795ef4*/
                   v52[v7 + 5] = dword_A8D638; /*0x795f01*/
                   v42 = 2; /*0x795f05*/
                   v40 = 1; /*0x795f0d*/
@@ -1988,7 +1988,7 @@ char HandleWOLRematch()
   }
   if ( &g_WebBrowserConfig == (ObjectClass *)-36 || _strcmpi(v12, (char *)&g_WebBrowserConfig.ambientSoundController[3]) ) /*0x7968fb*/
     return 0; /*0x7968e4*/
-  Debug::Log(); /*0x79690c*/
+  Debug::Log("Received NET_PREVIEW_MODE packet from host\n"); /*0x79690c G57w11: IDA push seq @ 0x79690c*/
   ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796924*/
   byte_B77E2C = 1; /*0x796929*/
   ExchangeMultiplayerGameInfo(); /*0x796930*/
@@ -2088,7 +2088,7 @@ CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
     {
       FormatLocaleStringWOL((wchar_t **)&a2, i); /*0x796cb6*/
       ((WideString *)(wchar_t **)&a2)->GetOrEmpty(); /*0x796cbf*/
-      Debug::Log(); /*0x796cca*/
+      Debug::Log("Adding country: %hs\n"); /*0x796cca G57w11: IDA push seq @ 0x796cca +1 reg-vararg(s) omitted*/
       v17 = (wchar_t *)((WideString *)(wchar_t **)&a2)->GetOrEmpty(); /*0x796ce0*/
       if ( i >= 2 ) /*0x796cd9*/
         v12 = SendMessageA( (HWND)(v10), 0x4CDu, 0, (LPARAM)((LPARAM)((LPARAM)v17))); /*0x796cf8*/
@@ -2166,43 +2166,43 @@ AbstractClass * * NetworkGame_Init()
   v19 = 0; /*0x7971ec*/
   for ( i = 1; i < dword_A8DA84; ++i ) /*0x7971f7*/
   {
-    ((Network *)((Network *)(dword_A8DA78[i] + 40)))->CopyAddress( (unsigned int *)(&v20), (int)v21); /*0x79720e*/
+    ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[i] + 40)))->CopyAddress( (unsigned int *)(&v20), (int)v21); /*0x79720e*/
 (*(void (**)(unsigned int, char *, unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 44))( /*0x797221*/ *(unsigned int *)&stru_887598.isAliveFlag, (char *)(v15), 0);
 
 
 
   }
   g_NetworkLobbyState = 2; /*0x79723f*/
-  Debug::Log(); /*0x797245*/
+  Debug::Log("Starting a %d player game.\n"); /*0x797245 G57w11: IDA push seq @ 0x797245 +1 reg-vararg(s) omitted*/
   BulkCharToWide( (unsigned short *)(word_A8E258), (uint8_t *)aPotatotoo, -1); /*0x797259*/
   dword_A8E2AC = -1; /*0x797267*/
   dword_A8B3AC = 0; /*0x797271*/
   *(unsigned int *)((char *)&stru_A8EB00 + 432) = 1; /*0x797276*/
   g_RulesInitConfig = 10; /*0x79727c*/
-  *(unsigned int *)&stru_A8B250[32] = 10; /*0x797282*/
-  *(unsigned int *)&stru_A8B250[12] = 10000; /*0x797288*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[32] = 10; /*0x797282*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[12] = 10000; /*0x797288*/
   byte_A8B31F = 0; /*0x797292*/
-  stru_A8B250[16] = 1; /*0x797297*/
-  stru_A8B250[17] = 1; /*0x79729d*/
+  ((unsigned char *)&stru_A8B250)[16] = 1; /*0x797297*/
+  ((unsigned char *)&stru_A8B250)[17] = 1; /*0x79729d*/
   dword_A8B320 = 1; /*0x7972a3*/
   byte_A8B31C = 1; /*0x7972a9*/
   byte_A8B31D = 0; /*0x7972af*/
-  stru_A8B250[8] = 1; /*0x7972b4*/
+  ((unsigned char *)&stru_A8B250)[8] = 1; /*0x7972b4*/
   byte_A8B31E = 0; /*0x7972ba*/
-  *(unsigned int *)&stru_A8B250[36] = 0; /*0x7972bf*/
-  *(unsigned int *)&stru_A8B250[40] = 0; /*0x7972c4*/
-  stru_A8B250[18] = 1; /*0x7972c9*/
-  stru_A8B250[19] = 1; /*0x7972cf*/
-  stru_A8B250[20] = 0; /*0x7972d5*/
-  stru_A8B250[28] = 1; /*0x7972da*/
-  *(unsigned int *)&stru_A8B250[4] = 1; /*0x7972e0*/
-  *(unsigned int *)&stru_A8B250[24] = 0; /*0x7972e6*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[36] = 0; /*0x7972bf*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] = 0; /*0x7972c4*/
+  ((unsigned char *)&stru_A8B250)[18] = 1; /*0x7972c9*/
+  ((unsigned char *)&stru_A8B250)[19] = 1; /*0x7972cf*/
+  ((unsigned char *)&stru_A8B250)[20] = 0; /*0x7972d5*/
+  ((unsigned char *)&stru_A8B250)[28] = 1; /*0x7972da*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = 1; /*0x7972e0*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] = 0; /*0x7972e6*/
   LoadScenarioClassByIndex(1); /*0x7972eb*/
-  *(unsigned int *)&stru_A8B250[24] = 2; /*0x7972fb*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] = 2; /*0x7972fb*/
   stru_A8EB00.ObjectTypeClass[24] = 2; /*0x797301*/
-  dword_A8B230[130].vtable3 = *(void **)&stru_A8B250[4]; /*0x797307*/
+  ((AbstractClass *)dword_A8B230)[130].vtable3 = *(void **)&((unsigned char *)&stru_A8B250)[4]; /*0x797307*/
   dword_A8B554 = 5; /*0x797315*/
-  switch ( *(unsigned int *)&stru_A8B250[24] ) /*0x797325*/
+  switch ( *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] ) /*0x797325*/
   {
     case 0: /*0x797325*/
       dword_A8B550 = (unsigned int)(wchar_t *)40; /*0x79732c*/
@@ -2256,11 +2256,11 @@ AbstractClass * * NetworkGame_Init()
   if ( !v2 || v2 == 1000 ) /*0x797400*/
   {
     dword_A8B570 = 0; /*0x7974ea*/
-    Debug::Log(); /*0x7974f0*/
+    Debug::Log("Ping times not available\n"); /*0x7974f0 G57w11: IDA push seq @ 0x7974f0*/
   }
   else
   {
-    Debug::Log(); /*0x79740c*/
+    Debug::Log("Max ping is %d ms\n"); /*0x79740c G57w11: IDA push seq @ 0x79740c +1 reg-vararg(s) omitted*/
     if ( v2 <= 1000 ) /*0x79741a*/
     {
       if ( v2 < 600 ) /*0x79742a*/
@@ -2298,20 +2298,20 @@ AbstractClass * * NetworkGame_Init()
       dword_A8B56C = 10 * (v5 / 0xA); /*0x7974dd*/
     }
   }
-  Debug::Log(); /*0x797504*/
-  Debug::Log(); /*0x797515*/
-  Debug::Log(); /*0x797526*/
-  Debug::Log(); /*0x797536*/
+  Debug::Log("PrecalcMaxAhead is %d\n"); /*0x797504 G57w11: IDA push seq @ 0x797504 +1 reg-vararg(s) omitted*/
+  Debug::Log("PrecalcDesiredFrameRate is %d\n"); /*0x797515 G57w11: IDA push seq @ 0x797515 +1 reg-vararg(s) omitted*/
+  Debug::Log("LatencyFudge is %d\n"); /*0x797526 G57w11: IDA push seq @ 0x797526 +1 reg-vararg(s) omitted*/
+  Debug::Log("FrameSendRate is %d\n"); /*0x797536 G57w11: IDA push seq @ 0x797536 +1 reg-vararg(s) omitted*/
   dword_A8B568 = dword_A8B550; /*0x797543*/
   memset( (void *)(&unk_A8B574), 0, 0x340u); /*0x797556*/
   *(unsigned int *)&hostshort = 1234; /*0x79755e*/
-  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250[24]; /*0x797568*/
+  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&((unsigned char *)&stru_A8B250)[24]; /*0x797568*/
   *(unsigned int *)&dword_841F34 = 1235; /*0x79756e*/
   *(unsigned int *)&dword_841F38 = 1236; /*0x797578*/
   *(unsigned int *)&dword_841F3C = 1237; /*0x797582*/
   *(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x79758c*/
   byte_B77A04 = 0; /*0x797591*/
-  byte_B76568[0] = 0; /*0x797596*/
+  ((unsigned char *)&byte_B76568)[0] = 0; /*0x797596*/
 // 0x5e7460
   return (AbstractClass * *)Scenario::PreGameInit(); /*0x7975a0*/
 }
@@ -2464,8 +2464,8 @@ v3 = (*(int (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 
 
 
 
-  Debug::Log(); /*0x797860*/
-  Debug::Log(); /*0x79786a*/
+  Debug::Log("WDTHost is %s, port is %d\n", 0xb73b34); /*0x797860 G57w11: IDA push seq @ 0x797860 +1 reg-vararg(s) omitted*/
+  Debug::Log("Requesting current WDT cycle\n"); /*0x79786a G57w11: IDA push seq @ 0x79786a*/
   if ( v3 ) /*0x797876*/
   {
     IDA_LOBYTE(v32) = 0; /*0x797878*/
@@ -2551,7 +2551,7 @@ v18 = (*(int (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable +
 
 
 
-  Debug::Log(); /*0x797a8a*/
+  Debug::Log("Requesting Previous Cycle\n"); /*0x797a8a G57w11: IDA push seq @ 0x797a8a*/
   if ( v18 ) /*0x797a94*/
   {
     v19 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x797a9b*/
@@ -5867,7 +5867,7 @@ Coord * * WOL_GameOptionsScreen()
   }
   if ( stru_B77D80.HashTable_field_0x50 ) /*0x79f1c2*/
   {
-    Debug::Log(); /*0x79f1d9*/
+    Debug::Log("Leave_Channel, channel %s type %d\n", 0xb76b44); /*0x79f1d9 G57w11: IDA push seq @ 0x79f1d9 +1 reg-vararg(s) omitted*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x79f1e9*/
     StringCSF = GetStringCSF( (wchar_t *)(g_Str_WOL_LeavingChannel), 0, (const char *)(g_Str_File_wonline_cpp), 10704); /*0x79f1fd*/
     ((WideString *)((wchar_t **)v51))->Assign( (wchar_t *)(StringCSF)); /*0x79f207*/
@@ -5967,7 +5967,7 @@ Coord * * WOL_GameOptionsScreen()
               break; /*0x79f488*/
             if ( v20 == 15 ) /*0x79f48d*/
             {
-              Debug::Log(); /*0x79f986*/
+              Debug::Log("Skirmish from Buddy List\n"); /*0x79f986 G57w11: IDA push seq @ 0x79f986*/
               byte_B77DEC = 0; /*0x79f992*/
               word_B77AD0 = 0; /*0x79f999*/
               IDA_BYTE1(stru_B77D80.HashTable_field_0x40) = 0; /*0x79f9a0*/
@@ -5977,7 +5977,7 @@ Coord * * WOL_GameOptionsScreen()
             }
             if ( v20 == 7 ) /*0x79f496*/
             {
-              Debug::Log(); /*0x79f9c9*/
+              Debug::Log("Start Game from Buddy List Host\n"); /*0x79f9c9 G57w11: IDA push seq @ 0x79f9c9*/
               byte_B77DEC = 0; /*0x79f9d6*/
               (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x79f9e0*/
               word_B77AD0 = 0; /*0x79f9e7*/
@@ -5990,7 +5990,7 @@ Coord * * WOL_GameOptionsScreen()
             if ( g_WOL_ChannelLeaveState ) /*0x79f4a2*/
               goto LABEL_48; /*0x79f4a2*/
           }
-          Debug::Log(); /*0x79f4b2*/
+          Debug::Log("EV_EXIT from Buddy List Host\n"); /*0x79f4b2 G57w11: IDA push seq @ 0x79f4b2*/
           g_WOL_ChannelLeaveState = 1; /*0x79f4ba*/
   LABEL_48:
           Debug::Log(); /*0x79f4c4*/
@@ -5998,7 +5998,7 @@ Coord * * WOL_GameOptionsScreen()
         }
         else
         {
-          Debug::Log(); /*0x79f441*/
+          Debug::Log("Buddy List Host Create Game failed\n"); /*0x79f441 G57w11: IDA push seq @ 0x79f441*/
         }
         v21 = (HWND)((Dialog*)((Dialog *)0xC4))->FindByHandle(); /*0x79f4dc*/
         if ( v21 ) /*0x79f4e3*/
@@ -6150,7 +6150,7 @@ Coord * * WOL_GameOptionsScreen()
   LABEL_98:
         if ( !ValidateJoinWOL(v48, (int)&v51[4], (int)v12, v27) ) /*0x79f78e*/
         {
-          Debug::Log(); /*0x79f79c*/
+          Debug::Log("Buddy List Guest Join_Game failed\n"); /*0x79f79c G57w11: IDA push seq @ 0x79f79c*/
           v12 = WaitForMultipleObjects; /*0x79f7a1*/
           goto LABEL_116; /*0x79f7aa*/
         }
@@ -6174,12 +6174,12 @@ Coord * * WOL_GameOptionsScreen()
       ResetEvent(*(&Handles + k)); /*0x79f810*/
       if ( !k || k == 6 || k == 5 || k == 10 ) /*0x79f838*/
       {
-        Debug::Log(); /*0x79f83f*/
+        Debug::Log("EV_CHAN_JOIN_FAIL from Buddy List Guest\n"); /*0x79f83f G57w11: IDA push seq @ 0x79f83f*/
         g_WOL_ChannelLeaveState = 1; /*0x79f847*/
       }
       else if ( k == 7 ) /*0x79f856*/
       {
-        Debug::Log(); /*0x79fa1d*/
+        Debug::Log("EV_STARTGAME from Buddy List Guest\n"); /*0x79fa1d G57w11: IDA push seq @ 0x79fa1d*/
         byte_B77DEC = 0; /*0x79fa2a*/
         (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x79fa34*/
         word_B77AD0 = 0; /*0x79fa3b*/
@@ -6195,11 +6195,11 @@ Coord * * WOL_GameOptionsScreen()
       if ( g_WOL_ChannelLeaveState ) /*0x79f871*/
         goto LABEL_114; /*0x79f871*/
     }
-    Debug::Log(); /*0x79f87d*/
+    Debug::Log("Timeout from Buddy List Guest\n"); /*0x79f87d G57w11: IDA push seq @ 0x79f87d*/
   LABEL_114:
     g_WOL_ChannelLeaveState = 0; /*0x79f885*/
   LABEL_115:
-    Debug::Log(); /*0x79f890*/
+    Debug::Log("Exit from BuddyList Guest\n"); /*0x79f890 G57w11: IDA push seq @ 0x79f890*/
   LABEL_116:
     j_DeleteAndZero( (void *)((ObjectClass *)v51)); /*0x79f898*/
   LABEL_117:
@@ -6449,7 +6449,7 @@ Coord * * WOL_JoinLobby()
           if ( stru_B77D80.HashTable_field_0x50 ) /*0x7a0154*/
           {
             v33 = (wchar_t *)stru_B76AC4.ambientSoundController[4]; /*0x7a0160*/
-            Debug::Log(); /*0x7a016b*/
+            Debug::Log("Leave_Channel, channel %s type %d\n", 0xb76b44); /*0x7a016b G57w11: IDA push seq @ 0x7a016b +1 reg-vararg(s) omitted*/
             (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x7a017b*/
             v18 = GetStringCSF( (wchar_t *)(g_Str_WOL_LeavingChannel), 0, (const char *)(g_Str_File_wonline_cpp), 10704); /*0x7a018f*/
             ((WideString *)((wchar_t **)String2))->Assign( (wchar_t *)(v18)); /*0x7a0199*/
@@ -6525,7 +6525,7 @@ Coord * * WOL_JoinLobby()
   if ( stru_B77D80.HashTable_field_0x50 ) /*0x7a032c*/
   {
     v33 = (wchar_t *)stru_B76AC4.ambientSoundController[4]; /*0x7a0338*/
-    Debug::Log(); /*0x7a0343*/
+    Debug::Log("Leave_Channel, channel %s type %d\n", 0xb76b44); /*0x7a0343 G57w11: IDA push seq @ 0x7a0343 +1 reg-vararg(s) omitted*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x7a0353*/
     v26 = GetStringCSF( (wchar_t *)(g_Str_WOL_LeavingChannel), 0, (const char *)(g_Str_File_wonline_cpp), 10704); /*0x7a0367*/
     ((WideString *)((wchar_t **)String2))->Assign( (wchar_t *)(v26)); /*0x7a0371*/
@@ -6666,7 +6666,7 @@ short sub_793710(int a1, int a2, int a3, int a4)
       v4 = a4 * (a1 / 2) + a2 + a1 % 2; /*0x79374d*/
     }
   }
-  Debug::Log(); /*0x79378b*/
+  Debug::Log("Get_Port_Blitz_Port_Number - send port = %d, mangled_port = %d, port_spread = %d, port = %d\n"); /*0x79378b G57w11: IDA push seq @ 0x79378b +4 reg-vararg(s) omitted*/
   if ( (uint16_t)v4 >= 0x400u ) /*0x793798*/
     return v4; /*0x7937a5*/
   else
@@ -6700,7 +6700,7 @@ int sub_793A70(void * a1, unsigned short a2)
       {
         qmemcpy( (void *)(v9), "Z4", sizeof(v9)); /*0x793ac8*/
         sprintf(Buffer, "%d", a2); /*0x793ad9*/
-        Debug::Log(); /*0x793ae9*/
+        Debug::Log("Sending string %s to user %s\n"); /*0x793ae9 G57w11: IDA push seq @ 0x793ae9 +2 reg-vararg(s) omitted*/
         (*(void (**)(LPVOID, char *, char *))(*(unsigned int *)ppv + 56))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (char *)(v3), (char *)(v9)); /*0x793aff*/
       }
       result = dword_B77900; /*0x793b06*/

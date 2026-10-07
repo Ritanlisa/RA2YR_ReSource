@@ -315,8 +315,8 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
       while ( 1 ) /*0x594598*/
       {
         v19 = v18 & 7; /*0x594598*/
-        IDA_LOWORD(v28) = v13 + IDA_LOWORD(dword_89F688[v19]); /*0x5945ba*/
-        IDA_HIWORD(v28) = IDA_HIWORD(v26) + IDA_HIWORD(dword_89F688[v19]); /*0x5945c3*/
+        IDA_LOWORD(v28) = v13 + IDA_LOWORD((&dword_89F688)[v19]); /*0x5945ba*/
+        IDA_HIWORD(v28) = IDA_HIWORD(v26) + IDA_HIWORD((&dword_89F688)[v19]); /*0x5945c3*/
         v30 = v28; /*0x5945d2*/
         v20 = (int16_t *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v30); /*0x5945d6*/
         v21 = v20[18]; /*0x5945db*/
@@ -828,7 +828,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   *(unsigned int *)((char *)&stru_82ADA8 + 31) = (unsigned int)(a2); /*0x596154*/
   g_MissionQueueFrame.briefing[361] = (int)a2; /*0x59615d*/
   if ( g_MissionQueueFrame.briefing[385] == -1 ) /*0x596163*/
-    g_MissionQueueFrame.briefing[385] = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x596175*/
+    g_MissionQueueFrame.briefing[385] = Random::Range((Random *)(&Randomizer_Global), 0, 0xFFFF); /*0x596175*/
   ((RandomMap*)(RandomMap *)&g_MissionQueueFrame.briefing[356])->Generate( 1, (HWND)(hDlg)); /*0x596182*/
   MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x59618d*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x5961a2*/

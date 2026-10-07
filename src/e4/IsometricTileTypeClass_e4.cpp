@@ -75,7 +75,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       (**v3)((unsigned int)v3, 1); /*0x549c9c*/
     ++i; /*0x549ca3*/
   }
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1),(gamemd::ObjectTypeClass *)(a2)); /*0x549cbf*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (gamemd::ObjectTypeClass *)(a2)); /*0x549cbf*/
   if ( result >= 0 ) /*0x549cc6*/
   {
     if ( a1 ) /*0x549cce*/

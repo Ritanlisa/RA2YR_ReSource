@@ -4228,7 +4228,7 @@ int RandomStraw::AdvanceState() {
     do /*0x65c907*/
     {
       v4 = result; /*0x65c8c7*/
-      v5 = result ^ (&dword_839644)[v3++]; /*0x65c8c9 G42.35 C9 &取址形*/
+      v5 = result ^ (&dword_839644)[v3++]; /*0x65c8c9 g57w11 r4 终验: raw fn_65 原文 dword_839644[v3++]; dword 声明为标量 → & 取址步进形*/
       v6 = v5; /*0x65c8ce*/
       v5 >>= 16; /*0x65c8d0*/
       result = v2 ^ (v6 * v5 + ((&dword_839690)[v3] ^ (((v6 * v6 + ~(v5 * v5)) << 16) | ((v6 * v6 + ~(v5 * v5)) >> 16)))); /*0x65c903*/
@@ -4613,7 +4613,7 @@ unsigned int * COMClass::getInterface(char a2) {
 namespace gamemd {
 void ** COMClass::coUninitialize(char a2) {
     j_DeleteAndZero((ObjectClass *)&this->field_18); /*0x767886 G42.35 C8 j_ 形*/
-    j_DeleteAndZero((ObjectClass *)&this->__pad_0[20]); /*0x76788e G42.35 C8 j_ 形*/
+    j_DeleteAndZero((ObjectClass *)&((unsigned char *)&this->__pad_0)[20]); /*0x76788e G42.35 C8 j_ 形*/
     *(unsigned int *)this->__pad_0 = 0; /*0x767895*/
     ((ReferenceCounted *)this)->Constructor(); /*0x76789b G42.35 C9 实例形*/
     if ( (a2 & 1) != 0 ) /*0x7678a5*/

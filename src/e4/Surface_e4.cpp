@@ -329,7 +329,7 @@ int sub_626C60()
       {
         v9 = v8 + 1; /*0x626d2f*/
         *v8 = 31; /*0x626d37*/
-        ((Array *)((int)(v8 + 1)))->ForEach( 24, 31, (int (*)(int))FileSystem::readFile); /*0x626d3d*/
+        Array::ForEach(((Array *)((int)(v8 + 1))), 24, 31, (int (*)(int))FileSystem::readFile); /*0x626d3d*/
       }
       else
       {

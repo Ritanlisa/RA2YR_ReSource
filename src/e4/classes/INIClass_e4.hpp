@@ -49,7 +49,7 @@ struct INIClass {
 
 // --- flat members (END) ---
     int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
-    ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);
+    static ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);  // G57w11: +static raw 0x00526810 __thiscall receiver-first (sibling G57w10-S form)
     VoxelStruct * * GetKeyCount(INIClass * aP1, void *a2);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(uint8_t *aP1, uint8_t *a2, int a4);

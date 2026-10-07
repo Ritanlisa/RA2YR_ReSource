@@ -103,7 +103,7 @@ void sub_40D1B0()
   do /*0x40d1f0*/
   {
     v0 -= 997; /*0x40d1d0*/
-    ((Array *)(v0 + 20))->ForEachReverse( 52, 75, (int (*)(int))nullsub_56); /*0x40d1e3*/
+    Array::ForEachReverse((ObjectClass *)(((Array *)(v0 + 20))), 52, 75, (int (*)(int))nullsub_56); /*0x40d1e3*/
     nullsub_57(); /*0x40d1ea*/
     --v1; /*0x40d1ef*/
   }

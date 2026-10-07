@@ -107,7 +107,7 @@ LABEL_14:
     {
       v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x765913*/
       if ( v12 ) /*0x765918*/
-        (**v12)(v12, 3); /*0x76591e*/
+        (**v12)((unsigned int)(v12), 3); /*0x76591e*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x765920*/
     }
     m_8 = a2; /*0x765927*/
@@ -291,7 +291,7 @@ int Campaign_WorldDominationTour_16::ddtor()
   v2 = *(int (****)(unsigned int, int))&this->m_1[3]; /*0x765966*/
   if ( v2 && BYTE1(this->m_C) ) /*0x76596d*/
   {
-    result = (**v2)(v2, 3); /*0x76597a*/
+    result = (**v2)((unsigned int)(v2), 3); /*0x76597a*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x76597c*/
   }
   BYTE1(this->m_C) = 0; /*0x76597f*/
@@ -349,7 +349,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
   if ( v3 && BYTE1(this->m_C) ) /*0x765b70*/
   {
-    (**v3)(v3, 3); /*0x765b7f*/
+    (**v3)((unsigned int)(v3), 3); /*0x765b7f*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x765b81*/
   }
   BYTE1(this->m_C) = 0; /*0x765b8c*/

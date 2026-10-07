@@ -73,7 +73,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a13*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FoggedObjectClass); /*0x4d0a1a*/
   v5 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(a2)); /*0x4d0a2a*/
-  PlacementRect = ((BuildingClass *)v5)->GetPlacementRect( v25); /*0x4d0a3b*/
+  PlacementRect = BuildingClass::GetPlacementRect(((BuildingClass *)v5), v25); /*0x4d0a3b*/
   StartCoords = (int *)(((gamemd::House *)((gamemd::House*)v5))->GetStartCoords(v26)); /*0x4d0a3d*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x4d0a4e*/
   {
@@ -694,7 +694,7 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
     return result; /*0x4d252a*/
   if ( v3 ) /*0x4d2532*/
   {
-    ((AbstractClass *)v3)->InitVtables( (int)&a2); /*0x4d253b*/
+    AbstractClass::InitVtables(((AbstractClass *)v3), (int)&a2); /*0x4d253b*/
     ((FoggedObject *)((FoggedObject *)v3[1].Cell))->DrawVector_Constructor(0, 0); /*0x4d2547*/
     v3[1].Cell[0] = (int)&vt_DynamicVectorClass; /*0x4d254c*/
     v3[2] = 10; /*0x4d2552*/

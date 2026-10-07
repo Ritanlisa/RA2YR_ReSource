@@ -837,16 +837,16 @@ INIClass * * int sub_4A4130()
     if ( !v1->lpVtbl->GetCaps(v1, (LPDDCAPS)v10, 0) ) /*0x4a419a*/
     {
       v5 = v10[15]; /*0x4a41af*/
-      Debug::Log(); /*0x4a41bb*/
+      Debug::Log("DDraw returnded actual VRAM of %d bytes (%dMb)\n"); /*0x4a41bb G57w11: IDA push seq @ 0x4a41bb +2 reg-vararg(s) omitted*/
       memset( (void *)(v8), 0, sizeof(v8)); /*0x4a41ce*/
       v8[0] = 108; /*0x4a41d9*/
       if ( !g_lpDirectDraw7->lpVtbl->GetDisplayMode(g_lpDirectDraw7, (LPDDSURFACEDESC)v8) ) /*0x4a41e5*/
       {
-        Debug::Log(); /*0x4a4206*/
+        Debug::Log("Current display size is %dx%dx%d. Pitch is %d\n"); /*0x4a4206 G57w11: IDA push seq @ 0x4a4206 +4 reg-vararg(s) omitted*/
         v5 += v8[2] * v8[3] * (v8[21] >> 3); /*0x4a421f*/
       }
       v4 = (v5 + 0x20000) & 0xFFF00000; /*0x4a4227*/
-      Debug::Log(); /*0x4a4239*/
+      Debug::Log("Adjusted VRAM size is %d bytes (%dMb)\n"); /*0x4a4239 G57w11: IDA push seq @ 0x4a4239 +2 reg-vararg(s) omitted*/
     }
     v1 = g_lpDirectDraw7; /*0x4a4241*/
   }
@@ -1925,7 +1925,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
               if ( *(unsigned int *)(v17 + 48) == a2 && *(unsigned char *)(v15[328] + 5455) ) /*0x4a8fec*/
                 v25 = 1; /*0x4a8ff5*/
               if ( (unsigned char)g_abs_A8B264 /*0x4a900e*/
-                && (uint8_t)(((HouseClass *)((void *)v17))->IsAlliedWith( (HouseClass *)(*(void **)dword_A8022C[4 * a2]))) )
+                && (uint8_t)(((HouseClass *)((void *)v17))->IsAlliedWith( (HouseClass *)(*(void **)((unsigned int *)dword_A8022C)[4 * a2]))) )
               {
                 if ( *(unsigned char *)(v16[328] + 5456) ) /*0x4a901d*/
                   v25 = 1; /*0x4a9027*/
@@ -2032,7 +2032,7 @@ int RemoveTarget(int aP0)
     {
       v3 = 3 * result; /*0x4a978d*/
       v4 = 8 * v3 + 9044832; /*0x4a979b*/
-      result = (*(int (**)(int, int *))(stru_8A0360[2 * v3] + 16))( v4, (int *)(&aP0)); /*0x4a97a9*/
+      result = (*(int (**)(int, int *))((&stru_8A0360)[2 * v3] + 16))( v4, (int *)(&aP0)); /*0x4a97a9*/
       if ( result != -1 ) /*0x4a97af*/
       {
         v5 = *(unsigned int *)(v4 + 16); /*0x4a97b1*/
@@ -2093,7 +2093,7 @@ unsigned char * sub_4AA2B0(unsigned char * a1)
   {
     v2 = 0; /*0x4aa2d8*/
     v3 = 6 * *v1; /*0x4aa2dd*/
-    if ( dword_8A0370[v3] > 0 ) /*0x4aa2e8*/
+    if ( (&dword_8A0370)[v3] > 0 ) /*0x4aa2e8*/
       break; /*0x4aa2e8*/
   LABEL_12:
     if ( (int)++v1 >= (int)dword_82003C ) /*0x4aa35b*/
@@ -2101,7 +2101,7 @@ unsigned char * sub_4AA2B0(unsigned char * a1)
   }
   while ( 1 )
   {
-    v4 = dword_8A0364[v3]; /*0x4aa2ea*/
+    v4 = (&dword_8A0364)[v3]; /*0x4aa2ea*/
     v5 = *(unsigned char **)(v4 + 4 * v2); /*0x4aa2f0*/
     if ( !v5 ) /*0x4aa2f5*/
       goto LABEL_11; /*0x4aa2f5*/
@@ -2120,7 +2120,7 @@ unsigned char * sub_4AA2B0(unsigned char * a1)
   LABEL_11:
     ++v2; /*0x4aa341*/
     v3 = 6 * *v1; /*0x4aa347*/
-    if ( v2 >= dword_8A0370[v3] ) /*0x4aa350*/
+    if ( v2 >= (&dword_8A0370)[v3] ) /*0x4aa350*/
       goto LABEL_12; /*0x4aa350*/
   }
 }
@@ -2140,7 +2140,7 @@ unsigned char * sub_4AA380(unsigned char * a1)
   v1 = &dword_82003C; /*0x4aa3a1*/
   while ( 1 ) /*0x4aa3b2*/
   {
-    v2 = dword_8A0370[6 * *v1] - 1; /*0x4aa3b2*/
+    v2 = (&dword_8A0370)[6 * *v1] - 1; /*0x4aa3b2*/
     if ( v2 >= 0 ) /*0x4aa3b3*/
       break; /*0x4aa3b3*/
   LABEL_12:
@@ -2149,7 +2149,7 @@ unsigned char * sub_4AA380(unsigned char * a1)
   }
   while ( 1 )
   {
-    v3 = *(unsigned char **)(dword_8A0364[6 * *v1] + 4 * v2); /*0x4aa3c1*/
+    v3 = *(unsigned char **)((&dword_8A0364)[6 * *v1] + 4 * v2); /*0x4aa3c1*/
     if ( !v3 ) /*0x4aa3c6*/
       goto LABEL_11; /*0x4aa3c6*/
     v4 = (v3[20] & 1) != 0 ? v3 : 0;
@@ -2227,18 +2227,18 @@ ScenarioClass * * sub_4AC4F0()
   }
   else
   {
-    v11 = *((HouseClass *)dword_A83D4C)->GetStartCoords( v14); /*0x4ac5aa*/
-    v7 = ((HouseClass *)dword_A83D4C)->GetStartCoords( v14)[1]; /*0x4ac5ba*/
+    v11 = *HouseClass::GetStartCoords(((HouseClass *)dword_A83D4C), v14); /*0x4ac5aa*/
+    v7 = HouseClass::GetStartCoords(((HouseClass *)dword_A83D4C), v14)[1]; /*0x4ac5ba*/
     v12 = v7; /*0x4ac5bd*/
   }
   IDA_LOWORD(v10) = v11 / 256; /*0x4ac5d3*/
   IDA_HIWORD(v10) = v7 / 256; /*0x4ac5e6*/
-  *(int *)((char *)&dword_A8B230[374].vtable0 + 2) = v10; /*0x4ac5f4*/
-  *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = *(int *)((char *)&dword_A8B230[374].vtable0 + 2); /*0x4ac605*/
-  *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2); /*0x4ac616*/
-  *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = *(int *)((char *)&dword_A8B230[373].referenceCount + 2); /*0x4ac627*/
+  *(int *)((char *)&((AbstractClass *)dword_A8B230)[374].vtable0 + 2) = v10; /*0x4ac5f4*/
+  *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].NeedsSaveOrLink + 2) = *(int *)((char *)&((AbstractClass *)dword_A8B230)[374].vtable0 + 2); /*0x4ac605*/
+  *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].referenceCount + 2) = *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].NeedsSaveOrLink + 2); /*0x4ac616*/
+  *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].nextArrayIndex + 2) = *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].referenceCount + 2); /*0x4ac627*/
   result = (void *)(dword_A8B230); /*0x4ac62d*/
-  dword_A8B230[14].nextArrayIndex = dword_A8B230[14].abstractFlags; /*0x4ac638*/
+  ((AbstractClass *)dword_A8B230)[14].nextArrayIndex = ((AbstractClass *)dword_A8B230)[14].abstractFlags; /*0x4ac638*/
   if ( g_TacticalClass_Instance ) /*0x4ac646*/
     return (gamemd::ScenarioClass **)((void *)((Tactical *)((TacticalClass *)g_TacticalClass_Instance))->SetTacticalPosition( (int *)(&v11))); /*0x4ac64d*/
   return (gamemd::ScenarioClass **)(result); /*0x4ac5c5*/
@@ -3417,7 +3417,7 @@ void sub_4A3FD0()
   int v3; // eax
   CHAR Text[80]; // [esp+Ch] [ebp-50h] BYREF
 
-  Debug::Log(); /*0x4a3fd8*/
+  Debug::Log("Prep direct draw.\n"); /*0x4a3fd8 G57w11: IDA push seq @ 0x4a3fd8*/
   if ( !g_lpDirectDraw7 ) /*0x4a3fe7*/
   {
     v1 = DirectDrawCreate(0, &g_lpDirectDraw7, 0); /*0x4a3ff2*/
@@ -3426,13 +3426,13 @@ void sub_4A3FD0()
       if ( g_DDraw_ErrorCallback ) /*0x4a4003*/
       {
         g_DDraw_ErrorCallback(v1); /*0x4a4007*/
-        Debug::Log(); /*0x4a400e*/
+        Debug::Log("DirectDrawCreate failed!\n"); /*0x4a400e G57w11: IDA push seq @ 0x4a400e*/
       }
       else
       {
         sprintf(Text, "DDRAW.DLL Error code = %08X", v1); /*0x4a4025*/
         MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u); /*0x4a4040*/
-        Debug::Log(); /*0x4a404b*/
+        Debug::Log("DirectDrawCreate failed!\n"); /*0x4a404b G57w11: IDA push seq @ 0x4a404b*/
       }
     }
     else

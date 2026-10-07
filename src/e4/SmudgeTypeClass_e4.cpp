@@ -151,27 +151,21 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   int Width; // [esp-8h] [ebp-210h]
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6b56e3*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)aP1))); /*0x6b56e3*/
   if ( ((ObjectTypeClass *)((ObjectTypeClass *)this))->LoadFromINI( (uint8_t ***)(aP1)) ) /*0x6b56eb*/
   {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aCrater, this->Crater); /*0x6b570b*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aCrater), this->Crater); /*0x6b570b*/
     Burn = this->Burn; /*0x6b5710*/
     this->Crater = Bool_Overwrite; /*0x6b5716*/
-    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aBurn, Burn); /*0x6b5725*/
+    v6 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aBurn), Burn); /*0x6b5725*/
     Width = this->Width; /*0x6b5732*/
     this->Burn = v6; /*0x6b5739*/
-    this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
-                    (bool *)aP1,
-                    (uint8_t *)((unsigned int *)this)[0],
-                    (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 151),
-                    Width);
-    this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
-                     (bool *)aP1,
-                     (uint8_t *)((unsigned int *)this)[0],
-                     (uint8_t *)g_INI_Key_Height,
-                     this->Height);
+    this->Width = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6b5744*/
+                    (bool *)aP1), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 151), Width);
+    this->Height = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6b575e*/
+                     (bool *)aP1), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)g_INI_Key_Height, this->Height);
     if ( ((unsigned int *)this)[0] ) /*0x6b5764*/
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x6b57b4*/
+      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x6b57b4*/
     else
       _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), (const char *)Ext); /*0x6b5784*/
     result = (int)SearchMIXFile( (char *)(Buffer), 0); /*0x6b57c2*/
@@ -293,7 +287,7 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)aP0), (gamemd::ObjectTypeClass *)aP1); /*0x6b585b*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)aP0)), (gamemd::ObjectTypeClass *)aP1); /*0x6b585b*/
   if ( result >= 0 ) /*0x6b5862*/
   {
     if ( aP0 ) /*0x6b5866*/

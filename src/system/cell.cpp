@@ -261,7 +261,7 @@ int CellClass::RegisterForRedraw(__int16 *a2, int a1, int a5, int a6)
     if ( *(unsigned int *)a1->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
       ((BuildingClass*)(BuildingClass *)a1)->RebuildOccupancy2(); /*0x7235e2*/
     *(unsigned int *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
-    *(float *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C + 4) = (float)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] + (int)abs32(((Random*)(Random *)&(&dword_A8B230)[14].NeedsSaveOrLink)->State()) % 50); /*0x723632*/
+    *(float *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C + 4) = (float)(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] + (int)abs32(((Random*)(Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink)->State()) % 50); /*0x723632*/
     v4 = *(unsigned int *)a1->CellClass_field_10C; /*0x723636*/
     v5 = *(unsigned int **)a1->unknown110; /*0x723642*/
     v6 = *(unsigned int *)&a1->unknown118 + 8 * v4; /*0x723648*/

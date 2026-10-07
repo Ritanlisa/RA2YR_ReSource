@@ -16,7 +16,6 @@ struct Network {
     void* q008;  // 0x8
     void* q00C;  // 0xC
     void* q010;  // 0x10
-    unsigned char __pad_14;  // 0x14 (G57w10 receiver vocab)
     unsigned char Network_field_0x22;  // 0x22
     unsigned char q014;  // 0x14
     unsigned int q018;  // 0x18

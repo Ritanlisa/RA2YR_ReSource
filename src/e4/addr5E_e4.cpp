@@ -799,7 +799,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
     Debug::Log("Decoding public OPTION_NAT\n") /*G57c1: IDA 0x5e3d49 push offset aDecodingPublic*/;
     if ( v5[1] == 49 )
     {
-      v12 = (SessionClass *)&(&HouseClass_Player)[40260];
+      v12 = (SessionClass *)&((unsigned int *)HouseClass_Player)[40260];
       do
       {
         char * v14 = ToWideStringChar((IUnknown *)v12->GameMode[0]);
@@ -811,7 +811,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
         }
         v12 = (SessionClass *)((char *)v12 + 4);
       }
-      while ( (int)v12 < (int)&(&HouseClass_Player)[40292] );
+      while ( (int)v12 < (int)&((unsigned int *)HouseClass_Player)[40292] );
     }
     else
     {
@@ -841,7 +841,7 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
     }
     goto LABEL_13;
   }
-  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 && (g_NetworkLobby_Init || g_NetworkLobbyState) )
+  if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 && (g_NetworkLobby_Init || g_NetworkLobbyState) )
     goto LABEL_101;
   switch ( v6 )
   {
@@ -886,24 +886,24 @@ void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
       }
       if ( v26 )
       {
-        if ( *(unsigned int *)&(&HouseClass_Player)[29924] )
+        if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] )
         {
-          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4404) = *(unsigned int *)&v198[32];
-          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4408) = *(unsigned int *)&v198[36];
-          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4396) = *(unsigned int *)&v198[24];
-          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4400) = v3;
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4404) = *(unsigned int *)&v198[32];
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4408) = *(unsigned int *)&v198[36];
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4396) = *(unsigned int *)&v198[24];
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4400) = v3;
           unsigned int v27 = 0;
-          *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 4412) = v15;
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4412) = v15;
           for ( j = 4416; j < 4480; j += 8 )
           {
             int v29 = *(unsigned int *)&aP0_160[0][v27];
             int v30 = *(unsigned int *)&v198[v27 + 56];
             v27 += 4;
-            *(unsigned int *)(j + *(unsigned int *)&(&HouseClass_Player)[29924]) = v29;
-            *(unsigned int *)(j + *(unsigned int *)&(&HouseClass_Player)[29924] + 4) = v30;
+            *(unsigned int *)(j + *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924]) = v29;
+            *(unsigned int *)(j + *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4) = v30;
             *(unsigned short *)&v198[24] = *(unsigned short *)&v198[v27 + 104];
             *(unsigned short *)&v198[26] = aP0_160.sectionHead[v27 / 4 + 3];
-            *(unsigned int *)(v27 + *(unsigned int *)&(&HouseClass_Player)[29924] + 4540) = *(unsigned int *)&v198[24];
+            *(unsigned int *)(v27 + *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 4540) = *(unsigned int *)&v198[24];
           }
           eax42 = (HWND)((Dialog*)((void *)0xC9))->FindByHandle();
           if ( eax42 || (eax42 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle()) != 0 )
@@ -993,7 +993,7 @@ LABEL_102:
           {
   int v44; // eax
             v41 = *(INIClass **)&(&stru_830620)[4228];
-            *(unsigned int *)&(&HouseClass_Player)[21864[4 * *(unsigned int *)&stru_830620[4228] + 18396] = (unsigned int)v37;
+            *(unsigned int *)&(&HouseClass_Player)[21864[4 * *(unsigned int *)&((unsigned char *)&stru_830620)[4228] + 18396] ]= (unsigned int)v37;
             int v43 = GetResourceID2CSF( (int)(v41));
             SetupComboBoxObserver((HWND)v31, v43);
             if ( *(unsigned int *)&(&stru_830620)[4228] )
@@ -1034,11 +1034,11 @@ LABEL_102:
             *(unsigned int *)v198 = 8;
           }
           SetupSkirmishSpawnLocations((HWND)v31, ResourceIDCSF, *(int *)v198);
-          v35 = *(unsigned int *)&stru_830620[4228];
+          v35 = *(unsigned int *)&((unsigned char *)&stru_830620)[4228];
           v5 = (char *)((unsigned int)*(char **)&v198[40]);
-          *(unsigned int *)&(&HouseClass_Player)[21864[4 * *(unsigned int *)&stru_830620[4228] + 18396] = (unsigned int)v37;
+          *(unsigned int *)&(&HouseClass_Player)[21864[4 * *(unsigned int *)&((unsigned char *)&stru_830620)[4228] + 18396] ]= (unsigned int)v37;
 LABEL_98:
-          if ( v35 >= 0 && v35 != *(unsigned int *)&(&HouseClass_Player)[40256 )
+          if ( v35 >= 0 && v35 != *(unsigned int *)&((unsigned int *)HouseClass_Player)[40256])
             SetupSkirmishPlayerSlots( (HWND)v31, (void *)((void *)v35), 0);
         }
       }
@@ -1073,21 +1073,21 @@ LABEL_101:
         v77 = (HWND)((gamemd::Dialog*)((void *)0xC9))->FindByHandle();
         if ( v77 )
         {
-          if ( !*(unsigned int *)&(&HouseClass_Player)[40248 )
+          if ( !*(unsigned int *)&((unsigned int *)HouseClass_Player)[40248])
             goto LABEL_171;
           void * v78 = 0;
-          v79 = (const wchar_t **)&(&HouseClass_Player)[40260;
-          v80 = **(wchar_t ***)&(&HouseClass_Player)[40236;
+          v79 = (const wchar_t **)&((unsigned int *)HouseClass_Player)[40260];
+          v80 = **(wchar_t ***)&((unsigned int *)HouseClass_Player)[40236];
           while ( !*v79 || _wcsicmp(v80, *v79) )
           {
             ++v79;
             v78 = (void *)((char *)v78 + 1);
-            if ( (int)v79 >= (int)&(&HouseClass_Player)[40292 )
+            if ( (int)v79 >= (int)&((unsigned int *)HouseClass_Player)[40292])
               goto LABEL_171;
           }
           if ( v78 != (void *)-1 )
           {
-            if ( v78 != *(void **)&(&HouseClass_Player)[40256 )
+            if ( v78 != *(void **)&((unsigned int *)HouseClass_Player)[40256])
             {
   int v100; // eax
               int v81 = GetResourceID2CSF( (int)(v78));
@@ -1146,7 +1146,7 @@ LABEL_101:
   int v89; // eax
                 int v88 = GetResourceID2CSF( (int)(v78));
                 if ( *(unsigned int *)&(&HouseClass_Player)[29936
-                  && !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&(&HouseClass_Player)[29936 + 4))(*(unsigned int *)&(&HouseClass_Player)[29936) )
+                  && !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&((unsigned int *)HouseClass_Player)[29936 + 4]))(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29936]) )
                 {
                   FillComboBoxRandomOnly(v77, v88);
                 }
@@ -1196,16 +1196,16 @@ LABEL_101:
                 int v93 = GetResourceID4CSF( (int)(v78));
                 FillLobbyPlayerSlot( (HWND)(v77), v93);
               }
-              if ( *(unsigned int *)&(&HouseClass_Player)[40248 )
+              if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[40248])
               {
                 ebp212 = 0;
-                v94 = (SessionClass *)&(&HouseClass_Player)[40260;
-                v96 = **(wchar_t ***)&(&HouseClass_Player)[40236;
+                v94 = (SessionClass *)&((unsigned int *)HouseClass_Player)[40260];
+                v96 = **(wchar_t ***)&((unsigned int *)HouseClass_Player)[40236];
                 while ( !v94->GameMode[0] || _wcsicmp(v96, (const wchar_t *)v94->GameMode[0]) )
                 {
                   v94 = (SessionClass *)((char *)v94 + 4);
                   ++ebp212;
-                  if ( (int)v94 >= (int)&(&HouseClass_Player)[40292 )
+                  if ( (int)v94 >= (int)&((unsigned int *)HouseClass_Player)[40292])
                   {
                     ebp212 = -1;
                     break;
@@ -1217,7 +1217,7 @@ LABEL_101:
               {
                 ebp212 = -1;
               }
-              *(unsigned int *)&(&HouseClass_Player)[40256 = ebp212;
+              *(unsigned int *)&((unsigned int *)HouseClass_Player)[40256]= ebp212;
               for ( k = 0; k < 8; ++k )
               {
   int v98; // eax
@@ -1290,10 +1290,10 @@ LABEL_101:
               v101 = v83(v77, v100);
               EnableWindow(v101, 1);
               SetupSkirmishPlayerSlots( (void *)((void *)(v77)), (void *)((void *)ebp212), (HWND)1);
-              SetupSkirmishDialogPlayerSlot( (HWND)(v77), *(int *)&(&HouseClass_Player)[40256);
-              MapSkirmishDialogPlayerToControl( (HWND)(v77), *(int *)&(&HouseClass_Player)[40256);
-              FillLobbyFactionComboBox(v77, *(int *)&(&HouseClass_Player)[40256);
-              SetupLobbyPlayerSlotDialog(v77, *(int *)&(&HouseClass_Player)[40256);
+              SetupSkirmishDialogPlayerSlot( (HWND)(v77), *(int *)&((unsigned int *)HouseClass_Player)[40256]);
+              MapSkirmishDialogPlayerToControl( (HWND)(v77), *(int *)&((unsigned int *)HouseClass_Player)[40256]);
+              FillLobbyFactionComboBox(v77, *(int *)&((unsigned int *)HouseClass_Player)[40256]);
+              SetupLobbyPlayerSlotDialog(v77, *(int *)&((unsigned int *)HouseClass_Player)[40256]);
             }
           }
           else
@@ -1308,7 +1308,7 @@ LABEL_171:
       case 'G':
         if ( ((gamemd::Dialog*)((void *)0xC9))->FindByHandle() )
         {
-          (&HouseClass_Player)[40292] = 1;
+          ((unsigned int *)HouseClass_Player)[40292] = 1;
           if ( *(&g_MatrixTransformState + 2263) )
             UI_Setup_7A2750();
           else
@@ -1337,7 +1337,7 @@ LABEL_171:
         v197 = (ObjectClass *)&stru_830620[4792];
         Debug::Log();
         char * v102 = v5 + 3;
-        if ( *(unsigned int *)&(&HouseClass_Player)[29932 == 4 )
+        if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932]== 4 )
         {
           for ( m = *v102; *v102; m = *v102 )
           {
@@ -1397,25 +1397,25 @@ LABEL_171:
     Debug::Log();
     char * v110 = strtok(v5, (ObjectClass *)&stru_817F40.nextObject);
     if ( v110 )
-      *(unsigned int *)&HouseClass_Player[45128] = atol(v110);
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[45128] = atol(v110);
     char * v111 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
     if ( v111 )
-      *(unsigned int *)&HouseClass_Player[44564] = atol(v111);
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44564] = atol(v111);
     char * v112 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
     if ( v112 )
-      *(unsigned int *)&HouseClass_Player[29980] = atol(v112);
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29980] = atol(v112);
     char * v113 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
     if ( v113 )
-      *(unsigned int *)&HouseClass_Player[29968] = atol(v113);
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29968] = atol(v113);
     char * v114 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
     if ( v114 )
-      *(unsigned int *)&HouseClass_Player[29988] = atol(v114);
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29988] = atol(v114);
     char * v115 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
     if ( v115 )
-      HouseClass_Player[29974] = atol(v115) != 0;
+      ((unsigned char *)&HouseClass_Player)[29974] = atol(v115) != 0;
     char * v116 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
     if ( v116 )
-      HouseClass_Player[29975] = atol(v116) != 0;
+      ((unsigned char *)&HouseClass_Player)[29975] = atol(v116) != 0;
     char * v117 = strtok(0, (ObjectClass *)&stru_817F40.nextObject);
     if ( v117 )
       HouseClass_Player[29976] = atol(v117) != 0;
@@ -2793,7 +2793,7 @@ void ExchangeMultiplayerGameInfo()
   char v18[256]; // [esp+238h] [ebp-100h] BYREF
 
   ((Network *)(unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x5e7938*/
-  Debug::Log(); /*0x5e7942*/
+  Debug::Log("Starting map preview download\n"); /*0x5e7942 G57w11: IDA push seq @ 0x5e7942*/
   memset( (void *)(v15), 0, sizeof(v15)); /*0x5e7957*/
   v16 = 0; /*0x5e7959*/
   v17 = 0; /*0x5e795b*/
@@ -2819,20 +2819,20 @@ void ExchangeMultiplayerGameInfo()
   }
   while ( ((gamemd::Network*)((int)unk_A8E9C0))->GetQueueCount() ) /*0x5e79d5*/
     Event::Dispatch(); /*0x5e79de*/
-  Debug::Log(); /*0x5e79f6*/
+  Debug::Log("Preview mode acks sent\n"); /*0x5e79f6 G57w11: IDA push seq @ 0x5e79f6*/
   dword_A8D804 = stru_A8BB1C; /*0x5e7a11*/
   dword_A8D808 = dword_A8BB20; /*0x5e7a17*/
   dword_A8D80C = dword_A8BB24; /*0x5e7a1c*/
-  Debug::Log(); /*0x5e7a22*/
+  Debug::Log("Calling Get_File_From_Host to receive the file download\n"); /*0x5e7a22 G57w11: IDA push seq @ 0x5e7a22*/
   if ( RequestNetworkFile(v18, 3, 0) ) /*0x5e7a35*/
   {
-    Debug::Log(); /*0x5e7a6f*/
+    Debug::Log("Loading the compressed preview image\n"); /*0x5e7a6f G57w11: IDA push seq @ 0x5e7a6f +1 reg-vararg(s) omitted*/
     ((RawFileClass*)v13)->Construct((int)v18); /*0x5e7a83*/
     FileSize = CCFileClass::GetFileSize(v13); /*0x5e7a91*/
     v4 = (char *)RA2_OPNEW(FileSize); /*0x5e7a9c*/
     ((FileClass *)(v13))->Read( (char *)(v4), FileSize); /*0x5e7aa4*/
     v5 = *(unsigned int *)v4; /*0x5e7aa9*/
-    Debug::Log(); /*0x5e7ab0*/
+    Debug::Log("Decompressing the preview image\n"); /*0x5e7ab0 G57w11: IDA push seq @ 0x5e7ab0*/
     v11[1] = 0; /*0x5e7abf*/
     v11[2] = 0; /*0x5e7ac9*/
     ((Buffer*)v12)->Init((int)(v4 + 4), FileSize); /*0x5e7ad9*/
@@ -2842,7 +2842,7 @@ void ExchangeMultiplayerGameInfo()
     ((Delegate *)v14)->Set( (int)v11); /*0x5e7b07*/
     v6 = (char *)RA2_OPNEW(2 * v5); /*0x5e7b18*/
     LCW::Decompress((int)v14, v6, v5); /*0x5e7b20*/
-    Debug::Log(); /*0x5e7b2a*/
+    Debug::Log("Creating the new preview surface\n"); /*0x5e7b2a G57w11: IDA push seq @ 0x5e7b2a*/
     if ( g_UIControlState ) /*0x5e7b39*/
     {
       v7 = (void *)(g_UIControlState); /*0x5e7b3b*/
@@ -2858,7 +2858,7 @@ void ExchangeMultiplayerGameInfo()
     ModemGame::RenderPaletteImage(v6); /*0x5e7b73*/
     CurrentDialog = Dialog::GetCurrent(); /*0x5e7b7c*/
     InvalidateRect(CurrentDialog, 0, 0); /*0x5e7b82*/
-    Debug::Log(); /*0x5e7b8d*/
+    Debug::Log("Cleaning up the temporary decompression buffers\n"); /*0x5e7b8d G57w11: IDA push seq @ 0x5e7b8d*/
     RA2_OPDEL(v6); /*0x5e7b93*/
     RA2_OPDEL(v4); /*0x5e7b99*/
     ((Network *)(unk_A8E9C0))->SetConnectionParams(30, -1, 600, 1); /*0x5e7bb1*/
@@ -2869,7 +2869,7 @@ void ExchangeMultiplayerGameInfo()
   }
   else
   {
-    Debug::Log(); /*0x5e7a43*/
+    Debug::Log("got_file is false. Download failed\n"); /*0x5e7a43 G57w11: IDA push seq @ 0x5e7a43*/
     ((Network *)(unk_A8E9C0))->SetConnectionParams(30, -1, 600, 1); /*0x5e7a5b*/
   }
 }
@@ -4203,7 +4203,7 @@ void SetupMultiplayerLobbyScreen(SkirmishDialog * hDlg, wchar_t * a2, int a3)
       {
         g_MPCooperativeState = (unsigned int)(ObjectClass *)7; /*0x5ec6ff*/
         MultiplayerLobby::FillSlots(hDlg); /*0x5ec709*/
-        Debug::Log(); /*0x5ec713*/
+        Debug::Log("Sending observer slot of 7\n"); /*0x5ec713 G57w11: IDA push seq @ 0x5ec713*/
         v19 = (wchar_t *)dword_A8DA90[(unsigned int)g_MPCooperativeState]; /*0x5ec724*/
         unknown_libname_74((char *)&v24); /*0x5ec72b*/
         if ( !v19 /*0x5ec76a*/

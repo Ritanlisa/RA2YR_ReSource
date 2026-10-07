@@ -817,7 +817,7 @@ void sub_4CB4C0()
       if ( !VirtualProtect(BaseAddress, RegionSize, 0x10u, &flOldProtect) ) /*0x4cb549*/
       {
         GetLastError(); /*0x4cb550*/
-        Debug::Log(); /*0x4cb55c*/
+        Debug::Log("VirtualProtect failed with error code %d - %s\n"); /*0x4cb55c G57w11: IDA push seq @ 0x4cb55c +1 reg-vararg(s) omitted*/
       }
       CurrentProcess = GetCurrentProcess(); /*0x4cb568*/
       FlushInstructionCache(CurrentProcess, 0, 0); /*0x4cb56f*/
@@ -825,7 +825,7 @@ void sub_4CB4C0()
     else
     {
       GetLastError(); /*0x4cb51d*/
-      Debug::Log(); /*0x4cb529*/
+      Debug::Log("VirtualProtect failed with error code %d - %s\n"); /*0x4cb529 G57w11: IDA push seq @ 0x4cb529 +1 reg-vararg(s) omitted*/
     }
   }
 }
@@ -2499,7 +2499,7 @@ namespace gamemd {
 char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11)
 {
 
-  Debug::Log(); /*0x4c68e8*/
+  Debug::Log("Adding event MEGAMISSION_F\n"); /*0x4c68e8 G57w11: IDA push seq @ 0x4c68e8 +1 reg-vararg(s) omitted*/
   if ( a2 < 0 ) /*0x4c68f6*/
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6952*/
@@ -2532,7 +2532,7 @@ namespace gamemd {
 char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
 {
 
-  Debug::Log(); /*0x4c69fc*/
+  Debug::Log("Adding event %s\n"); /*0x4c69fc G57w11: IDA push seq @ 0x4c69fc +1 reg-vararg(s) omitted*/
   if ( a2 < 0 ) /*0x4c6a0a*/
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6a48*/
@@ -2561,7 +2561,7 @@ namespace gamemd {
 char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short * a6)
 {
 
-  Debug::Log(); /*0x4c6a7c*/
+  Debug::Log("Adding event %s\n"); /*0x4c6a7c G57w11: IDA push seq @ 0x4c6a7c +1 reg-vararg(s) omitted*/
   if ( a2 < 0 ) /*0x4c6a8a*/
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6ac8*/
@@ -2590,7 +2590,7 @@ namespace gamemd {
 char * E4Recv_4C6BE0::sub_4C6BE0(int a2, char a3, int a4, int a5)
 {
 
-  Debug::Log(); /*0x4c6bfc*/
+  Debug::Log("Adding event %s\n"); /*0x4c6bfc G57w11: IDA push seq @ 0x4c6bfc +1 reg-vararg(s) omitted*/
   if ( a2 < 0 ) /*0x4c6c0a*/
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6c2f*/
@@ -2774,7 +2774,7 @@ int sub_4C84E0()
   }
   ShowCursor(1); /*0x4c8509*/
   Resource = (const DLGTEMPLATE *)FindResource(0xF7u, (const CHAR *)5); /*0x4c851a*/
-  Debug::Log(); /*0x4c8525*/
+  Debug::Log("Resource found\n"); /*0x4c8525 G57w11: IDA push seq @ 0x4c8525*/
   if ( Resource ) /*0x4c851e*/
     v1 = DialogBoxIndirectParamA(g_hInstance, Resource, g_hWnd, DialogFunc, 0); /*0x4c8548*/
   else

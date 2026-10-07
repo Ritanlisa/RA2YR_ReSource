@@ -295,7 +295,7 @@ int SuperWeaponTypeClass::Construct(char *aP1)
     v4 = dword_A83CA8; /*0x511598*/
     if ( dword_A83CA8 < dword_A83CA0 /*0x5115d6*/
       || (byte_A83CA5 || !dword_A83CA0)
-      && (&dword_A83CAC)[0 > 0
+      && (&dword_A83CAC)[0 ]> 0
 && (v5 = (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(dword_A83C98 + 8))( (unsigned int *)(&dword_A83C98), dword_A83CA0 + (&dword_A83CAC)[0], 0) == 0, v4 = dword_A83CA8, !v5) )
 
 
@@ -418,29 +418,23 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
                      v8);
     v35 = *(unsigned char *)(_EBP + 230); /*0x6ceaa8*/
     *(unsigned int *)(_EBP + 188) = SWProperties; /*0x6ceaaf*/
-    *(unsigned char *)(_EBP + 230) = INIClass::ReadBool_Overwrite((int *)this, (unsigned __int8 *)(_EBP + 36), aIspowered, v35); /*0x6ceaba*/
-    Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6ceacf*/
-                       (int *)this,
-                       (unsigned __int8 *)(_EBP + 36),
-                       aDisableablefro,
-                       *(unsigned char *)(_EBP + 231));
+    *(unsigned char *)(_EBP + 230) = INIClass::ReadBool_Overwrite((INIClass *)((int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aIspowered), v35); /*0x6ceaba*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)(/*0x6ceacf*/
+                       (int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aDisableablefro), *(unsigned char *)(_EBP + 231));
     v11 = *(unsigned int *)(_EBP + 232); /*0x6cead4*/
     *(unsigned char *)(_EBP + 231) = Bool_Overwrite; /*0x6ceada*/
-    Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)this, (unsigned __int8 *)(_EBP + 36), aFlashsidebarta, v11); /*0x6ceae9*/
+    Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)((bool *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aFlashsidebarta), v11); /*0x6ceae9*/
     v36 = *(unsigned char *)(_EBP + 236); /*0x6ceaf6*/
     *(unsigned int *)(_EBP + 232) = Int_Overwrite; /*0x6ceafd*/
-    *(unsigned char *)(_EBP + 236) = INIClass::ReadBool_Overwrite( /*0x6ceb08*/
-                               (int *)this,
-                               (unsigned __int8 *)(_EBP + 36),
-                               aAidefendagains,
-                               v36);
-    v13 = INIClass::ReadBool_Overwrite((int *)this, (unsigned __int8 *)(_EBP + 36), aPreclick, *(unsigned char *)(_EBP + 237)); /*0x6ceb1d*/
+    *(unsigned char *)(_EBP + 236) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x6ceb08*/
+                               (int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aAidefendagains), v36);
+    v13 = INIClass::ReadBool_Overwrite((INIClass *)((int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aPreclick), *(unsigned char *)(_EBP + 237)); /*0x6ceb1d*/
     v14 = *(unsigned char *)(_EBP + 238); /*0x6ceb22*/
     *(unsigned char *)(_EBP + 237) = v13; /*0x6ceb28*/
-    v15 = INIClass::ReadBool_Overwrite((int *)this, (unsigned __int8 *)(_EBP + 36), aPostclick, v14); /*0x6ceb37*/
+    v15 = INIClass::ReadBool_Overwrite((INIClass *)((int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aPostclick), v14); /*0x6ceb37*/
     v37 = *(unsigned char *)(_EBP + 244); /*0x6ceb44*/
     *(unsigned char *)(_EBP + 238) = v15; /*0x6ceb4b*/
-    v16 = INIClass::ReadBool_Overwrite((int *)this, (unsigned __int8 *)(_EBP + 36), aShowtimer, v37); /*0x6ceb51*/
+    v16 = INIClass::ReadBool_Overwrite((INIClass *)((int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aShowtimer), v37); /*0x6ceb51*/
     v17 = *(unsigned int *)(_EBP + 192); /*0x6ceb56*/
     *(unsigned char *)(_EBP + 244) = v16; /*0x6ceb5c*/
     if ( !INIClass::GetString( /*0x6ceb94*/
@@ -469,13 +463,10 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     }
     v34 = (double)*(float *)(_EBP + 248); /*0x6cebda G57c4 x87c4: fld dword [ebp+0F8h] + fstp var_408@0x6cebeb*/
     *(unsigned int *)(_EBP + 196) = v20; /*0x6cebe5*/
-    *(float *)(_EBP + 248) = (float)INIClass::ReadDouble_Overwrite((double *)this, (unsigned __int8 *)(_EBP + 36), g_INI_Key_Range, v34); /*0x6cebf4 G57c4 x87c4: merged fstp dword [ebp+0F8h]@0x6cec01*/
+    *(float *)(_EBP + 248) = (float)INIClass::ReadDouble_Overwrite((INIClass *)((double *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(g_INI_Key_Range), v34); /*0x6cebf4 G57c4 x87c4: merged fstp dword [ebp+0F8h]@0x6cec01*/
     v21 = *(unsigned int *)(_EBP + 252); /*0x6cebf9*/
-    *(unsigned int *)(_EBP + 252) = INIClass::ReadInt_Overwrite( /*0x6cec13*/
-                                (bool *)this,
-                                (unsigned __int8 *)(_EBP + 36),
-                                aLinemultiplier,
-                                v21);
+    *(unsigned int *)(_EBP + 252) = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6cec13*/
+                                (bool *)this), (unsigned __int8 *)(_EBP + 36), aLinemultiplier, v21);
     INIClass::GetString( /*0x6cec2d*/
       (INIClass *)this,
       (unsigned __int8 *)(_EBP + 36),
@@ -531,15 +522,12 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     }
     v27 = *(unsigned char *)(_EBP + 229); /*0x6ced28*/
     *(unsigned int *)(_EBP + 200) = v26; /*0x6ced2e*/
-    v28 = INIClass::ReadBool_Overwrite((int *)this, (unsigned __int8 *)(_EBP + 36), aUsechargedrain, v27); /*0x6ced3d*/
+    v28 = INIClass::ReadBool_Overwrite((INIClass *)((int *)this), (unsigned __int8 *)(_EBP + 36), aUsechargedrain, v27); /*0x6ced3d*/
     v38 = *(unsigned char *)(_EBP + 245); /*0x6ced4a*/
     *(unsigned char *)(_EBP + 229) = v28; /*0x6ced51*/
-    *(unsigned char *)(_EBP + 245) = INIClass::ReadBool_Overwrite( /*0x6ced68*/
-                               (int *)this,
-                               (unsigned __int8 *)(_EBP + 36),
-                               aManualcontrol,
-                               v38);
-    v34 = INIClass::ReadDouble_Overwrite((double *)this, (unsigned __int8 *)(_EBP + 36), aRechargetime, 0.0); /*0x6ced6e*/
+    *(unsigned char *)(_EBP + 245) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x6ced68*/
+                               (int *)this), (unsigned __int8 *)(_EBP + 36), aManualcontrol, v38);
+    v34 = INIClass::ReadDouble_Overwrite((INIClass *)((double *)this), (unsigned __int8 *)(_EBP + 36), aRechargetime, 0.0); /*0x6ced6e*/
     if ( v34 != dbl_7E2800 ) /*0x6ced7e G57c4 x87c4: fcom/fnstsw@0x6CED73 C3!=0 -> st0==0.0 -> discard; else scale*/
     {
       IDA_LOWORD(v30) = Math::RoundToInt(v34 * flt_7F4100); /*0x6ced86 G57c4 x87c4: fmul ds:flt_7F4100@0x6ced80*/
@@ -551,15 +539,15 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
       (unsigned __int8 *)(_EBP + 36),
       aSidebarimage,
       (char *)(_EBP + 204),
-      (char *)&v45.Name[5],
+      (char *)&((unsigned char *)&v45.Name)[5],
       256);
     if ( &v45 == (VocClass *)-128 ) /*0x6cedbf*/
     {
-      (&Destination)[0] = (unsigned __int8)&v45.Name[5]; /*0x6cedc1*/
+      (&Destination)[0] = (unsigned __int8)&((unsigned char *)&v45.Name)[5]; /*0x6cedc1*/
     }
     else
     {
-      strncpy( (char *)(Destination), (const char *)&v45.Name[5], 0x18u); /*0x6cedd6*/
+      strncpy( (char *)(Destination), (const char *)&((unsigned char *)&v45.Name)[5], 0x18u); /*0x6cedd6*/
       v42 = 0; /*0x6cedde*/
     }
     if ( Destination != v31 ) /*0x6cede9*/

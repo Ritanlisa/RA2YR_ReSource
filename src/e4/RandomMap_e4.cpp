@@ -193,7 +193,7 @@ int GenerateTerrain(RandomMap *self)
           *(unsigned int *)(80 * ((__int16)v45 + g_MapCellWidth * IDA_SHIWORD(v45)) + g_MissionQueueFrame.localVariables[163] + 56) = v5; /*0x58c92d*/
         for ( i = (unsigned int)(0); i < 8; ++i ) /*0x58c931*/
         {
-          IDA_LODWORD(v52) = (unsigned int)(*((CellStruct *)&v45)->Add( (unsigned int *)(&v53), (unsigned short *)(4 * (i & 7) + 9041544))); /*0x58c956*/
+          IDA_LODWORD(v52) = (unsigned int)(*CellStruct::Add(((CellStruct *)&v45), (unsigned int *)(&v53), (unsigned short *)(4 * (i & 7) + 9041544))); /*0x58c956*/
           *(unsigned int *)v46 = IDA_LODWORD(v52); /*0x58c95a*/
           v7 = g_MissionQueueFrame.localVariables[160]; /*0x58c968*/
           v8 = g_MissionQueueFrame.localVariables[163] + 80 * (SLOWORD(v52) + g_MapCellWidth * IDA_SWORD1(v52)); /*0x58c97d*/
@@ -317,7 +317,7 @@ int GenerateTerrain(RandomMap *self)
       *(unsigned int *)v47 = *(unsigned int *)(v17[1] + 4 * v19); /*0x58cb2a*/
       while ( 1 ) /*0x58cb51*/
       {
-        IDA_LODWORD(v52) = (unsigned int)(*((CellStruct *)v47)->Add( (unsigned int *)(&v53), (unsigned short *)(4 * (v20 & 7) + 9041544))); /*0x58cb51*/
+        IDA_LODWORD(v52) = (unsigned int)(*CellStruct::Add(((CellStruct *)v47), (unsigned int *)(&v53), (unsigned short *)(4 * (v20 & 7) + 9041544))); /*0x58cb51*/
         *(unsigned int *)v49 = IDA_LODWORD(v52); /*0x58cb55*/
         v21 = IDA_SWORD1(v52) + SLOWORD(v52); /*0x58cb61*/
         if ( v21 > g_MissionQueueFrame.localVariables[160] ) /*0x58cb66*/
@@ -3582,7 +3582,7 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     }
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x598a59*/
       (*(void (__cdecl **)())&stru_82ADA8.?[31])(); /*0x598a5b*/
-    Debug::Log(); /*0x598a62*/
+    Debug::Log("RMG: Init random map\n"); /*0x598a62 G57w11: IDA push seq @ 0x598a62*/
     ((RandomMap *)this)->SetupTheater( a2); /*0x598a74*/
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x598a80*/
       (*(void (**)(void))&stru_82ADA8.?[31])(); /*0x598a82*/
@@ -3597,7 +3597,7 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     if ( *(unsigned int * *)((char *)&stru_82ADA8 + 60) ) /*0x598ad8*/
       (*(void (**)(void))( (char *)&stru_82ADA8 + 60))(); /*0x598ada*/
     ((RandomMap *)this)->LoadConfig(); /*0x598ade*/
-    Debug::Log(); /*0x598ae8*/
+    Debug::Log("RMG: Seeding water\n"); /*0x598ae8 G57w11: IDA push seq @ 0x598ae8*/
     v6 = this->RandomMap_field_0x3C[0]; /*0x598aed*/
     if ( v6 == 3 || v6 == 4 ) /*0x598afb*/
     {
@@ -3639,7 +3639,7 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     }
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x598c20*/
       (*(void (**)(void))&stru_82ADA8.?[31])(); /*0x598c22*/
-    Debug::Log(); /*0x598c29*/
+    Debug::Log("RMG: Init regions\n"); /*0x598c29 G57w11: IDA push seq @ 0x598c29*/
     if ( g_MissionQueueFrame.localVariables[163] ) /*0x598c38*/
     {
       v7 = (RandomMap *)(g_MapCellWidth * g_MapCellWidth); /*0x598c40*/
@@ -3684,7 +3684,7 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 65.0, NAN); /*0x598d34*/
     if ( *(unsigned int * *)((char *)&stru_82ADA8 + 60) ) /*0x598d40*/
       (*(void (**)(void))( (char *)&stru_82ADA8 + 60))(); /*0x598d42*/
-    Debug::Log(); /*0x598d49*/
+    Debug::Log("RMG: Making regions\n"); /*0x598d49 G57w11: IDA push seq @ 0x598d49*/
     v14 = v40->ambientSoundController[0]; /*0x598d55*/
     if ( v14 == 4 || v14 == 3 ) /*0x598d60*/
     {
@@ -3710,7 +3710,7 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x598e14*/
       (*(void (**)(void))&stru_82ADA8.?[31])(); /*0x598e16*/
     ((RandomMap *)v33)->PlaceShoreObjects(); /*0x598e1a*/
-    Debug::Log(); /*0x598e24*/
+    Debug::Log("RMG: Recalculating cell attributes\n"); /*0x598e24 G57w11: IDA push seq @ 0x598e24*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x598e31*/
     for ( k = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x598e42*/
           k;
@@ -3724,19 +3724,19 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 174); /*0x598e7e*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 75.0, NAN); /*0x598e99*/
-    Debug::Log(); /*0x598ea3*/
+    Debug::Log("RMG: Creating starting points\n"); /*0x598ea3 G57w11: IDA push seq @ 0x598ea3*/
     do /*0x598ebd*/
     {
       while ( !DistributeRandomMapTerrain(v35) ) /*0x598eb2*/
         ; /*0x598eab*/
     }
     while ( !SpreadMapSeedTerrainFromWaypoints(v40) ); /*0x598ebd*/
-    Debug::Log(); /*0x598ec4*/
+    Debug::Log("RMG: Adding tech buildings\n"); /*0x598ec4 G57w11: IDA push seq @ 0x598ec4*/
     if ( v40->ambientSoundController[0] ) /*0x598ec9*/
       PlaceRandomAIBuildings(v40); /*0x598ed5*/
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x598ee1*/
       (*(void (**)(void))&stru_82ADA8.?[31])(); /*0x598ee3*/
-    Debug::Log(); /*0x598eea*/
+    Debug::Log("RMG: Creating tiberium\n"); /*0x598eea G57w11: IDA push seq @ 0x598eea*/
     ((RandomMap *)v40)->PlaceRandomMapTiberium(); /*0x598ef4*/
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x598f00*/
       (*(void (**)(void))&stru_82ADA8.?[31])(); /*0x598f02*/
@@ -3785,7 +3785,7 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
       }
     }
     g_MissionQueueFrame.localVariables[164] = 0; /*0x598fbd*/
-    Debug::Log(); /*0x598fc3*/
+    Debug::Log("RMG: Recalculating cell attributes\n"); /*0x598fc3 G57w11: IDA push seq @ 0x598fc3*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x598fd0*/
     for ( n = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x598fe1*/
           n;
@@ -3828,7 +3828,7 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     }
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x599126*/
       (*(void (**)(void))&stru_82ADA8.?[31])(); /*0x599128*/
-    Debug::Log(); /*0x59912f*/
+    Debug::Log("RMG: Recalculating cell attributes\n"); /*0x59912f G57w11: IDA push seq @ 0x59912f*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x59913c*/
     for ( ii = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x59914d*/
           ii;
@@ -3838,7 +3838,7 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     }
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x59916d*/
       (*(void (**)(void))&stru_82ADA8.?[31])(); /*0x59916f*/
-    Debug::Log(); /*0x599176*/
+    Debug::Log("RMG: Creating hills\n"); /*0x599176 G57w11: IDA push seq @ 0x599176*/
     v25 = v40; /*0x59917b*/
     GenerateTerrainHeightMap(v40); /*0x599184*/
     if ( IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x59918f*/
@@ -3856,7 +3856,7 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     }
     if ( *(unsigned int * *)((char *)&stru_82ADA8 + 56) ) /*0x599211*/
       (*(void (**)(void))( (char *)&stru_82ADA8 + 56))(); /*0x599213*/
-    Debug::Log(); /*0x59921a*/
+    Debug::Log("RMG: Creating LATs, rocks etc\n"); /*0x59921a G57w11: IDA push seq @ 0x59921a*/
     if ( v25->attachedBomb ) /*0x59921f*/
     {
       ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x59923e*/
@@ -3896,7 +3896,7 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     --dword_A8E7AC; /*0x59934a*/
     if ( *(unsigned int *)&stru_82ADA8.?[31] ) /*0x599350*/
       (*(void (__stdcall **)())&stru_82ADA8.?[31])(); /*0x599352*/
-    Debug::Log(); /*0x599359*/
+    Debug::Log("RMG: Recalculating cell attributes\n"); /*0x599359 G57w11: IDA push seq @ 0x599359*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x599366*/
     for ( kk = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x599377*/
           kk;
@@ -3908,7 +3908,7 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
       (*(void (**)(void))( (char *)&stru_82ADA8 + 772))(); /*0x599399*/
     BuildingClass::ClearOccupancyData((BuildingClass *)v35); /*0x59939b*/
     BuildingClass::ClearFactoryData(v36); /*0x5993a0*/
-    Debug::Log(); /*0x5993aa*/
+    Debug::Log("RMG: Cleanup\n"); /*0x5993aa G57w11: IDA push seq @ 0x5993aa*/
     v25[4].customSound_controller[1] = 0; /*0x5993af*/
     v25[4].customSound_controller[2] = 0; /*0x5993b5*/
     if ( g_MissionQueueFrame.localVariables[163] ) /*0x5993c5*/
@@ -3939,14 +3939,14 @@ v31 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     }
     g_MissionQueueFrame.localVariables[164] = 0; /*0x599446*/
     ((MapClass *)&stru_87F5F0.__pad_58[416])->PostProcessReveal( 1); /*0x59944c*/
-    Debug::Log(); /*0x599456*/
+    Debug::Log("RMG: Compute Radar Image\n"); /*0x599456 G57w11: IDA push seq @ 0x599456*/
     ((Shroud *)(RadarClass *)&stru_87F5F0.__pad_58[416])->ProcessCellVisibility( (MouseClass *)((int *)&stru_87F5F0.__pad_58[668])); /*0x599468*/
     RadarClass::RecreateSurface(v37, 0); /*0x599472*/
     if ( IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x59947e*/
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 199); /*0x599490*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 100.0, NAN); /*0x5994ab*/
-    Debug::Log(); /*0x5994b5*/
+    Debug::Log("RMG: Done\n"); /*0x5994b5 G57w11: IDA push seq @ 0x5994b5*/
     if ( v38 ) /*0x5994c3*/
     {
       v32 = GetDlgItem(hDlg, 1592); /*0x5994d2*/
@@ -6369,7 +6369,7 @@ int SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, short * a4, c
       p_RandomMap_field_0x8 = (RandomMap *)((char *)Block + 8 * v91); /*0x5a0d86*/
       while ( 1 ) /*0x5a0df4*/
       {
-        IDA_LODWORD(v97) = *((CellStruct *)v42)->Add( (unsigned int *)(&v99), (unsigned short *)(4 * (v47 & 7) + 9041544)); /*0x5a0dad*/
+        IDA_LODWORD(v97) = *CellStruct::Add(((CellStruct *)v42), (unsigned int *)(&v99), (unsigned short *)(4 * (v47 & 7) + 9041544)); /*0x5a0dad*/
         *(unsigned int *)v90 = IDA_LODWORD(v97); /*0x5a0db1*/
         v48 = IDA_SWORD1(v97) + SLOWORD(v97); /*0x5a0dbd*/
         if ( v48 <= g_MissionQueueFrame.localVariables[160] /*0x5a0de6*/
@@ -7981,7 +7981,7 @@ AbstractClass * * RegenerateRandomMapPreview()
     int v18[3]; // [esp+60h] [ebp-14h] BYREF
     int v19; // [esp+6Ch] [ebp-8h]
 
-    Debug::Log(); /*0x5b9c9f*/
+    Debug::Log("ModemHost.SelectRandomMap(enter)\n"); /*0x5b9c9f G57w11: IDA push seq @ 0x5b9c9f +1 reg-vararg(s) omitted*/
     byte_8316D4 = 0; /*0x5b9cac*/
     if ( ((CCFileClass *)&loc_5BB260)->Load() == 1 ) /*0x5b9cbb*/
     {
@@ -8073,7 +8073,7 @@ AbstractClass * * RegenerateRandomMapPreview()
       IDA_BYTE1(this->RandomMap_field_0x8) = 1; /*0x5b9f07*/
     }
     byte_8316D4 = 1; /*0x5b9f10*/
-    Debug::Log(); /*0x5b9f17*/
+    Debug::Log("ModemHost.SelectMultiMap(exit)\n"); /*0x5b9f17 G57w11: IDA push seq @ 0x5b9f17*/
 }
 }
 // 0x6558D0
@@ -8305,7 +8305,7 @@ int RemoveMatching(IUnknown * aP1, int a2)
                 }
                 v4 = this; /*0x74f11d*/
               }
-              Debug::Log(); /*0x74f126*/
+              Debug::Log("Exiting Remove_Matching\n"); /*0x74f126 G57w11: IDA push seq @ 0x74f126*/
               v2 = a2; /*0x74f12b*/
             }
           }

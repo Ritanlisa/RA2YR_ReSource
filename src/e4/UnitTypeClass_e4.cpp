@@ -79,7 +79,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
 
     v1 = 0; /*0x6b4dde*/
     v9 = (char *)(this); /*0x6b4de3*/
-    INIClass::ClearSection((int)this, (int)unk_81732C, 0); /*0x6b4de7*/
+    INIClass::ClearSection((INIClass *)((int)this), (int)unk_81732C, 0); /*0x6b4de7*/
     v7 = 0; /*0x6b4dec*/
     do /*0x6b4e8e*/
     {
@@ -224,7 +224,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     if ( !v5 ) /*0x7474dc*/
       return 0; /*0x747554*/
     IDA_LOWORD(ppv) = 0; /*0x7474e4*/
-    v6 = Random::State(  (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink); /*0x7474f1*/
+    v6 = Random::State(  (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink); /*0x7474f1*/
     v7 = (unsigned int)ppv; /*0x7474f6*/
     IDA_LOBYTE(v8) = 0; /*0x7474fa*/
     IDA_HIBYTE(v8) = v6; /*0x7474fc*/
@@ -554,56 +554,56 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     v83[1].BunkerState = (int)SearchMIXFile( (char *)(v86), 0); /*0x747bc4*/
     if ( ((AbstractTypeClass *)(int)v83)->NameEquals( g_INI_Key_TRUCKA.?) ) /*0x747bca*/
     {
-      v36 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aNormalturretin, 0); /*0x747bf0*/
-      v37 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aNormalturretwe, -1); /*0x747bf2*/
+      v36 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aNormalturretin, 0); /*0x747bf0*/
+      v37 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aNormalturretwe, -1); /*0x747bf2*/
       ((BuildingClass *)v83)->SetSlot( v36, v37); /*0x747bfb*/
-      v38 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aRepairturretin, 1); /*0x747c19*/
-      v39 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aRepairturretwe, -1); /*0x747c1b*/
+      v38 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aRepairturretin, 1); /*0x747c19*/
+      v39 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aRepairturretwe, -1); /*0x747c1b*/
       ((BuildingClass *)v83)->SetSlot( v38, v39); /*0x747c24*/
-      v40 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aMachinegunturr, 2); /*0x747c42*/
-      v41 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aMachinegunturr_0, -1); /*0x747c44*/
+      v40 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aMachinegunturr, 2); /*0x747c42*/
+      v41 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aMachinegunturr_0, -1); /*0x747c44*/
       ((BuildingClass *)v83)->SetSlot( v40, v41); /*0x747c4d*/
-      v42 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aFlakturretinde, 3); /*0x747c6b*/
-      v43 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aFlakturretweap, -1); /*0x747c6d*/
+      v42 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aFlakturretinde, 3); /*0x747c6b*/
+      v43 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aFlakturretweap, -1); /*0x747c6d*/
       ((BuildingClass *)v83)->SetSlot( v42, v43); /*0x747c76*/
-      v44 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aPistolturretin, 0); /*0x747c94*/
-      v45 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aPistolturretwe, -1); /*0x747c96*/
+      v44 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aPistolturretin, 0); /*0x747c94*/
+      v45 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aPistolturretwe, -1); /*0x747c96*/
       ((BuildingClass *)v83)->SetSlot( v44, v45); /*0x747c9f*/
-      v46 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aSniperturretin, 0); /*0x747cb3*/
-      v47 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aSniperturretwe, -1); /*0x747cbf*/
+      v46 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aSniperturretin, 0); /*0x747cb3*/
+      v47 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aSniperturretwe, -1); /*0x747cbf*/
       ((BuildingClass *)v83)->SetSlot( v46, v47); /*0x747cc8*/
-      v48 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aShockturretind, 0); /*0x747ce6*/
-      v49 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aShockturretwea, -1); /*0x747ce8*/
+      v48 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aShockturretind, 0); /*0x747ce6*/
+      v49 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aShockturretwea, -1); /*0x747ce8*/
       ((BuildingClass *)v83)->SetSlot( v48, v49); /*0x747cf1*/
-      v50 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aExplodeturreti, 0); /*0x747d0f*/
-      v51 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aExplodeturretw, -1); /*0x747d11*/
+      v50 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aExplodeturreti, 0); /*0x747d0f*/
+      v51 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aExplodeturretw, -1); /*0x747d11*/
       ((BuildingClass *)v83)->SetSlot( v50, v51); /*0x747d1a*/
-      v52 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aBrainblastturr, 0); /*0x747d38*/
-      v53 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aBrainblastturr_0, -1); /*0x747d3a*/
+      v52 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aBrainblastturr, 0); /*0x747d38*/
+      v53 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aBrainblastturr_0, -1); /*0x747d3a*/
       ((BuildingClass *)v83)->SetSlot( v52, v53); /*0x747d43*/
-      v54 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aRadcannonturre, 0); /*0x747d61*/
-      v55 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aRadcannonturre_0, -1); /*0x747d63*/
+      v54 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aRadcannonturre, 0); /*0x747d61*/
+      v55 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aRadcannonturre_0, -1); /*0x747d63*/
       ((BuildingClass *)v83)->SetSlot( v54, v55); /*0x747d6c*/
-      v56 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aChronoturretin, 0); /*0x747d8a*/
-      v57 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aChronoturretwe, -1); /*0x747d8c*/
+      v56 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aChronoturretin, 0); /*0x747d8a*/
+      v57 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aChronoturretwe, -1); /*0x747d8c*/
       ((BuildingClass *)v83)->SetSlot( v56, v57); /*0x747d95*/
-      v58 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aTerroristexplo, 0); /*0x747db3*/
-      v59 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aTerroristexplo_0, -1); /*0x747db5*/
+      v58 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aTerroristexplo, 0); /*0x747db3*/
+      v59 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aTerroristexplo_0, -1); /*0x747db5*/
       ((BuildingClass *)v83)->SetSlot( v58, v59); /*0x747dbe*/
-      v60 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aCowturretindex, 0); /*0x747ddc*/
-      v61 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aCowturretweapo, -1); /*0x747dde*/
+      v60 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aCowturretindex, 0); /*0x747ddc*/
+      v61 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aCowturretweapo, -1); /*0x747dde*/
       ((BuildingClass *)v83)->SetSlot( v60, v61); /*0x747de7*/
-      v62 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aInitiateturret, 0); /*0x747e05*/
-      v63 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aInitiateturret_0, -1); /*0x747e07*/
+      v62 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aInitiateturret, 0); /*0x747e05*/
+      v63 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aInitiateturret_0, -1); /*0x747e07*/
       ((BuildingClass *)v83)->SetSlot( v62, v63); /*0x747e10*/
-      v64 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aVirusturretind, 0); /*0x747e2e*/
-      v65 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aVirusturretwea, -1); /*0x747e30*/
+      v64 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aVirusturretind, 0); /*0x747e2e*/
+      v65 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aVirusturretwea, -1); /*0x747e30*/
       ((BuildingClass *)v83)->SetSlot( v64, v65); /*0x747e39*/
-      v66 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aYuriprimeturre, 0); /*0x747e57*/
-      v67 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aYuriprimeturre_0, -1); /*0x747e59*/
+      v66 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aYuriprimeturre, 0); /*0x747e57*/
+      v67 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aYuriprimeturre_0, -1); /*0x747e59*/
       ((BuildingClass *)v83)->SetSlot( v66, v67); /*0x747e62*/
-      v68 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aGuardianturret, 0); /*0x747e80*/
-      v69 = INIClass::ReadInt_Overwrite((bool *)self, p_occupant, aGuardianturret_0, -1); /*0x747e82*/
+      v68 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aGuardianturret, 0); /*0x747e80*/
+      v69 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, aGuardianturret_0, -1); /*0x747e82*/
       ((BuildingClass *)v83)->SetSlot( v68, v69); /*0x747e8b*/
     }
     return 1; /*0x747e92*/
@@ -681,10 +681,10 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
     v5 = (void *)*a2; /*0x747eb9*/
     v6 = (void *)a2[1]; /*0x747eca*/
     v7 = a2[2]; /*0x747ed1*/
-    GroundHeight = Cell::GetGroundHeight( &v5); /*0x747ed5*/
+    GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v5)); /*0x747ed5*/
     v3 = (void *)v7; /*0x747eda*/
     if ( v7 < GroundHeight ) /*0x747ee0*/
-      v3 = (void *)Cell::GetGroundHeight( &v5); /*0x747ef1*/
+      v3 = (void *)Cell::GetGroundHeight((unsigned int *)(&v5)); /*0x747ef1*/
     this->TechnoTypeClass = v5; /*0x747efe*/
     this->? = v6; /*0x747f04*/
     this->? = v3; /*0x747f08*/

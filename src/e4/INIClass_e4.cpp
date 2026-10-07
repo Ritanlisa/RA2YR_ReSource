@@ -48,44 +48,44 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
   unsigned int v15[3]; // [esp+Ch] [ebp-Ch] BYREF
   int v16; // [esp+1Ch] [ebp+4h]
 
-  if ( !aP1 ) /*0x526820*/
+  if ( !a2 ) /*0x526820*/  // G57w11: raw 0x526820 判 a2
     return 0; /*0x526820*/
   memset( (void *)(v15), 0, sizeof(v15)); /*0x52682d*/
-  v3 = ((Checksummer*)v15)->Add_Buffer( (unsigned char)((uint8_t *)aP1), strlen((const char *)aP1)); /*0x526844*/
-  v4 = *((unsigned int *)this + 11); /*0x526849*/
+  v3 = ((Checksummer*)v15)->Add_Buffer( (unsigned char)((uint8_t *)a2), strlen((const char *)a2)); /*0x526844*/
+  v4 = *((unsigned int *)aP1 + 11); /*0x526849*/
   v5 = v3; /*0x52684c*/
   v16 = v3; /*0x526850*/
   if ( !v4 ) /*0x526854*/
     return 0; /*0x526854*/
-  v6 = *(unsigned int **)&this->unknown38; /*0x52685a*/
+  v6 = *(unsigned int **)&aP1->unknown38; /*0x52685a*/
   if ( v6 && *v6 == v5 ) /*0x526863*/
     goto LABEL_9; /*0x526863*/
-  if ( !*((unsigned char *)this + 52) ) /*0x526865*/
+  if ( !*((unsigned char *)aP1 + 52) ) /*0x526865*/
   {
-    qsort(*(void **)&this->q028, v4, 8u, CompareFunc4Int); /*0x526876*/
-    *((unsigned int *)this + 14) = 0; /*0x52687e*/
-    *((unsigned char *)this + 52) = 1; /*0x526881*/
+    qsort(*(void **)&aP1->q028, v4, 8u, CompareFunc4Int); /*0x526876*/
+    *((unsigned int *)aP1 + 14) = 0; /*0x52687e*/
+    *((unsigned char *)aP1 + 52) = 1; /*0x526881*/
   }
   v15[0] = (unsigned int)((gamemd::ObjectClass **)(v5));
   v7 = (int)((gamemd::ObjectClass **)(System_Search(v15)));
   if ( !v7 ) /*0x52689b*/
     return 0; /*0x526938*/
-  *((unsigned int *)this + 14) = v7; /*0x5268a1*/
+  *((unsigned int *)aP1 + 14) = v7; /*0x5268a1*/
 LABEL_9:
-  v8 = *((unsigned int *)this + 11); /*0x5268a4*/
+  v8 = *((unsigned int *)aP1 + 11); /*0x5268a4*/
   if ( !v8 ) /*0x5268aa*/
     return (gamemd::ObjectClass **)(unk_B7882C); /*0x5268aa*/
-  v9 = *(unsigned int **)&this->unknown38; /*0x5268ac*/
+  v9 = *(unsigned int **)&aP1->unknown38; /*0x5268ac*/
   if ( v9 && *v9 == v5 ) /*0x5268b5*/
-    return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)this + 14) + 4)); /*0x526933*/
-  if ( !*((unsigned char *)this + 52) ) /*0x5268b7*/
+    return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)aP1 + 14) + 4)); /*0x526933*/
+  if ( !*((unsigned char *)aP1 + 52) ) /*0x5268b7*/
   {
-    qsort(*(void **)&this->q028, v8, 8u, CompareFunc4Int); /*0x5268c8*/
-    *((unsigned int *)this + 14) = 0; /*0x5268d0*/
-    *((unsigned char *)this + 52) = 1; /*0x5268d3*/
+    qsort(*(void **)&aP1->q028, v8, 8u, CompareFunc4Int); /*0x5268c8*/
+    *((unsigned int *)aP1 + 14) = 0; /*0x5268d0*/
+    *((unsigned char *)aP1 + 52) = 1; /*0x5268d3*/
   }
-  v10 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11))));
-  v11 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10))));
+  v10 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)aP1 + 11))));
+  v11 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)aP1 + 10))));
   if ( v10 <= 0 ) /*0x5268df*/
     return (gamemd::ObjectClass **)(unk_B7882C); /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
@@ -107,8 +107,8 @@ LABEL_19:
   }
   if ( v13 ) /*0x52691f*/
   {
-    *((unsigned int *)this + 14) =(unsigned int)v13; /*0x526921*/
-    return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)this + 14) + 4)); /*0x526921*/
+    *((unsigned int *)aP1 + 14) =(unsigned int)v13; /*0x526921*/
+    return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)aP1 + 14) + 4)); /*0x526921*/
   }
   return (gamemd::ObjectClass **)(unk_B7882C);
 
@@ -373,7 +373,7 @@ int INIClass::ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __i
 
   int result; // eax
 
-  INIClass::ReadDouble_Overwrite(a1, aP2, a4, -1.0); /*0x474631*/
+  INIClass::ReadDouble_Overwrite((INIClass *)(a1), (unsigned char *)(aP2), a4, -1.0); /*0x474631*/
   if ( a2 == -1.0 ) /*0x474641*/
     return a5; /*0x474645*/
   LOWORD(result) = Math::RoundToInt(a2 * 256.0); /*0x474652*/
@@ -463,7 +463,7 @@ int INIClass::ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, 
 
   v7 = (uint8_t *)((String *)(aP2))->GetOrEmpty_Alt(); /*0x527905*/
   v5 = (uint8_t *)((String *)(aP1))->GetOrEmpty_Alt(); /*0x527906*/
-  return (( INIClass *)this)->ReadInt_Overwrite(v5, v7, aP3) ; /*0x527913*/
+  return INIClass::ReadInt_Overwrite((( INIClass *)this), v5, v7, aP3) ; /*0x527913*/
 
 }
 } // namespace gamemd

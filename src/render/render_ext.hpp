@@ -860,7 +860,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~BuildingPlacement() = default;
 
-    virtual void RenderBuildingPlacementShadow(); // 0x430650
+    virtual int RenderBuildingPlacementShadow(int a2, int a3, int a4, int a5, int a6, int a7); // 0x430650 g57w11 r4: raw 原型 int(this,int×6)
 virtual char RenderBuildingPlacementPreview(unsigned int *,int *,char);  // 0x47EC90
     virtual int ValidateType(int a2, int a3);
     virtual bool IsPlacementFlagSet(unsigned int a2, char a3);

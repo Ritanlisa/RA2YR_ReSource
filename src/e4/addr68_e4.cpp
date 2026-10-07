@@ -585,14 +585,14 @@ ScenarioClass * * Mouse_Update()
 {
   int result; // eax
 
-  if ( IDA_BYTE2((&dword_A8B230)[381].vtable3) == 1 /*0x6842a6*/
+  if ( IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) == 1 /*0x6842a6*/
     && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) ))
   {
     do /*0x6842c0*/
       (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x6842b5*/
     while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0))(stru_887598.lineTrailer) );  /*0x6842c0*/
   }
-  IDA_BYTE2((&dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
+  IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (unsigned int)((gamemd::ScenarioClass **)(0)); /*0x6842d9*/
   result = (int)(((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages()); /*0x6842e0*/
   dword_B07784 = 0; /*0x6842e5*/
@@ -753,18 +753,18 @@ void PostLoadInitScenario()
     if ( !*(unsigned int *)&dword_A8B238 ) /*0x684c94*/
     {
       if ( stru_8A38E0 ) /*0x684ca7*/
-        nextArrayIndex = (&dword_A8B230)[14].nextArrayIndex; /*0x684ca9*/
+        nextArrayIndex = ((AbstractClass *)dword_A8B230)[14].nextArrayIndex; /*0x684ca9*/
       else
-        nextArrayIndex = (&dword_A8B230)[14].abstractFlags; /*0x684cb1*/
-      v4 = *(void **)((char *)&(&dword_A8B230)[44].vtable0 + 4 * nextArrayIndex + 2); /*0x684cb7*/
-      *(void **)((char *)&(&dword_A8B230)[374].vtable0 + 2) = (unsigned int)v4; /*0x684cbe*/
-      *(void **)((char *)&(&dword_A8B230)[373].NeedsSaveOrLink + 2) = (unsigned int)*(void **)((char *)&(&dword_A8B230)[374].vtable0 + 2); /*0x684cd4*/
-      *(int *)((char *)&(&dword_A8B230)[373].referenceCount + 2) = *(int *)((char *)&(&dword_A8B230)[373].NeedsSaveOrLink + 2); /*0x684ce9*/
-      *(int *)((char *)&(&dword_A8B230)[373].nextArrayIndex + 2) = *(int *)((char *)&(&dword_A8B230)[373].referenceCount + 2); /*0x684d03*/
+        nextArrayIndex = ((AbstractClass *)dword_A8B230)[14].abstractFlags; /*0x684cb1*/
+      v4 = *(void **)((char *)&((AbstractClass *)dword_A8B230)[44].vtable0 + 4 * nextArrayIndex + 2); /*0x684cb7*/
+      *(void **)((char *)&((AbstractClass *)dword_A8B230)[374].vtable0 + 2) = (unsigned int)v4; /*0x684cbe*/
+      *(void **)((char *)&((AbstractClass *)dword_A8B230)[373].NeedsSaveOrLink + 2) = (unsigned int)*(void **)((char *)&((AbstractClass *)dword_A8B230)[374].vtable0 + 2); /*0x684cd4*/
+      *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].referenceCount + 2) = *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].NeedsSaveOrLink + 2); /*0x684ce9*/
+      *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].nextArrayIndex + 2) = *(int *)((char *)&((AbstractClass *)dword_A8B230)[373].referenceCount + 2); /*0x684d03*/
       v36 = ((int16_t)v4 << 8) + 128; /*0x684d09*/
       v37 = (IDA_SHIWORD(v4) << 8) + 128; /*0x684d21*/
       GroundHeight = 0; /*0x684d2b*/
-      GroundHeight = Cell::GetGroundHeight( &v36); /*0x684d3e*/
+      GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v36)); /*0x684d3e*/
       ((TacticalClass*)(gamemd::MouseClass *)((RadarClass *)&v36))->SetPositionThunk(); /*0x684d42*/
     }
   }
@@ -840,7 +840,7 @@ void PostLoadInitScenario()
     }
     while ( v19 < g_MultiplayerCleanup ); /*0x684efb*/
   }
-  if ( IDA_BYTE2((&dword_A8B230)[374].nextArrayIndex) ) /*0x684f02*/
+  if ( IDA_BYTE2(((AbstractClass *)dword_A8B230)[374].nextArrayIndex) ) /*0x684f02*/
   {
     v22 = 0; /*0x684f12*/
     for ( k = 0; v22  <  (int)((*(int *)&stru_A80220)); k = v22 ) /*0x684f1a*/
@@ -914,7 +914,7 @@ void PostLoadInitScenario()
       if ( ((Building *)(n))->GetNthOfType() ) /*0x68507a*/
       {
         if ( !Random::Range( /*0x68509e*/
-                (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink,
+                (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink,
                 0,
                 *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6252) - 1) )
         {
@@ -1268,7 +1268,7 @@ AbstractClass * * SessionClass_AssignHouses()
   v2 = 0; /*0x687f1b*/
   for ( v29.DeleteAndZero_field_0x08 = dword_A8DA84; v2 < DeleteAndZero_field_0x08; ++v2 ) /*0x687f23*/
   {
-    v3 = (int *)dword_A8DA78[v2]; /*0x687f2a*/
+    v3 = (int *)((unsigned int *)dword_A8DA78)[v2]; /*0x687f2a*/
     if ( *(int *)&v3->q_4B == -3 ) /*0x687f31*/
       ((SessionClass *)(v3))->SetPlayerOption(0); /*0x687f35*/
   }
@@ -1295,7 +1295,7 @@ AbstractClass * * SessionClass_AssignHouses()
         ++v6; /*0x687f90*/
       }
       while ( v5 < DeleteAndZero_field_0x08 ); /*0x687f95*/
-      v7 = dword_A8DA78[v28]; /*0x687fa0*/
+      v7 = ((unsigned int *)dword_A8DA78)[v28]; /*0x687fa0*/
       *((unsigned char *)v31 + v28) = 1; /*0x687fa3*/
       v8 = (int *)RA2_OPNEW(0x160B8u); /*0x687fa8*/
       if ( v8 ) /*0x687fb2*/
@@ -1346,7 +1346,7 @@ AbstractClass * * SessionClass_AssignHouses()
       wcsncpy((wchar_t *)(v9 + 90154), (const wchar_t *)v7, 0x15u); /*0x68809c*/
       *(unsigned short *)(v9 + 90194) = 0; /*0x6880a4*/
       *(unsigned char *)(v9 + 492) = 1; /*0x6880ad*/
-      sub_4FCE00((ObjectClass *)v9, *(unsigned int *)(v7 + 83), *(unsigned int *)(v7 + 75), *(int *)&stru_A8B250[12]); /*0x6880c4*/
+      sub_4FCE00((ObjectClass *)v9, *(unsigned int *)(v7 + 83), *(unsigned int *)(v7 + 75), *(int *)&((unsigned char *)&stru_A8B250)[12]); /*0x6880c4*/
       *(unsigned int *)(v9 + 90196) = SessionClass::GetPlayerColorScheme(*(unsigned int *)(v7 + 83)); /*0x6880d9*/
       HouseClass::GetColor((char *)v9); /*0x6880df*/
       ComputeSessionColorVector((ObjectClass *)v9); /*0x6880e6*/
@@ -1367,8 +1367,8 @@ AbstractClass * * SessionClass_AssignHouses()
     while ( v30 ); /*0x688146*/
   }
   v11 = 0; /*0x688152*/
-  v30 = *(unsigned int *)&stru_A8B250[36]; /*0x688154*/
-  v12 = (int *)&stru_A8B250[76]; /*0x688158*/
+  v30 = *(unsigned int *)&((unsigned char *)&stru_A8B250)[36]; /*0x688154*/
+  v12 = (int *)&((unsigned char *)&stru_A8B250)[76]; /*0x688158*/
   do /*0x6882cb*/
   {
     if ( v11 < v30 ) /*0x688161*/
@@ -1386,7 +1386,7 @@ AbstractClass * * SessionClass_AssignHouses()
         v17 = g_RulesInitConfig; /*0x6881ab*/
         *(unsigned char *)(v16 + 492) = 0; /*0x6881b1*/
         *(unsigned int *)(v16 + 468) = v17; /*0x6881b8*/
-        sub_4FCE00((ObjectClass *)v16, v14, v13, *(int *)&stru_A8B250[12]); /*0x6881c8*/
+        sub_4FCE00((ObjectClass *)v16, v14, v13, *(int *)&((unsigned char *)&stru_A8B250)[12]); /*0x6881c8*/
         *(unsigned int *)(v16 + 90196) = SessionClass::GetPlayerColorScheme( (ObjectClass *)(v14)); /*0x6881da*/
         HouseClass::GetColor((char *)v16); /*0x6881e0*/
         ComputeSessionColorVector((ObjectClass *)v16); /*0x6881e7*/
@@ -1394,7 +1394,7 @@ AbstractClass * * SessionClass_AssignHouses()
         v18 = v12[24]; /*0x6881f5*/
         *(unsigned int *)(v16 + 90204) = v18; /*0x6881fb*/
         if ( v18 != -1 ) /*0x688201*/
-          IDA_LOBYTE(dword_A8B230[127].vtable1) = 1; /*0x688209*/
+          IDA_LOBYTE(((AbstractClass *)dword_A8B230)[127].vtable1) = 1; /*0x688209*/
         if ( g_INI_Key_Computer ) /*0x688217*/
         {
           strncpy( (char *)(v34), (const char *)(g_INI_Key_Computer), 0x14u); /*0x68822b*/
@@ -1422,7 +1422,7 @@ AbstractClass * * SessionClass_AssignHouses()
     }
     ++v12; /*0x6882c2*/
   }
-  while ( (int)v12 < (int)&stru_A8B250[108] ); /*0x6882cb*/
+  while ( (int)v12 < (int)&((unsigned char *)&stru_A8B250)[108] ); /*0x6882cb*/
   v21 = (int *)RA2_OPNEW(0x160B8u); /*0x6882de*/
   if ( v21 ) /*0x6882e4*/
   {
@@ -1546,8 +1546,8 @@ void GenerateScenarioUnits()
   if ( g_abs_A8B258 ) /*0x6886f9*/
     ppv = (unsigned int)(char *)ppv - 1; /*0x6886fb*/
   qmemcpy( (void *)(v54), (char *)dword_A8B230 + 536, sizeof(v54)); /*0x68871d*/
-  Debug::Log(); /*0x688724*/
-  Debug::Log(); /*0x68873a*/
+  Debug::Log("Creating %d units - Random seed is %08x\n"); /*0x688724 G57w11: IDA push seq @ 0x688724*/
+  Debug::Log("UniqueID is %08x\n"); /*0x68873a G57w11: IDA push seq @ 0x68873a +1 reg-vararg(s) omitted*/
   v1 = 0; /*0x68874a*/
   v2 = 0; /*0x68874c*/
   for ( i = 0; i < dword_A83CF0; ++i ) /*0x688752*/
@@ -1595,7 +1595,7 @@ void GenerateScenarioUnits()
   if ( dword_A80238 > 0 ) /*0x68881f*/
   {
   LABEL_16:
-    v12 = *(unsigned int **)dword_A8022C[4 * v11]; /*0x688825*/
+    v12 = *(unsigned int **)((unsigned int *)dword_A8022C)[4 * v11]; /*0x688825*/
     ppv = (unsigned int)v12; /*0x68882e*/
     v13 = v12[13]; /*0x688832*/
     if ( *(unsigned char *)(v13 + 422) ) /*0x688835*/
@@ -1603,7 +1603,7 @@ void GenerateScenarioUnits()
     v54[252] = v13 + 36; /*0x688846*/
     v54[251] = v11; /*0x688847*/
     v54[250] = aGeneratingUnit; /*0x688848*/
-    Debug::Log(); /*0x68884d*/
+    Debug::Log("Generating units for house %d (%s)\n"); /*0x68884d G57w11: IDA push seq @ 0x68884d +2 reg-vararg(s) omitted*/
     UnitTypeVector::Construct2(0, 0); /*0x68885b*/
     v67 = (void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x68886b*/
     v72 = 10; /*0x688873*/
@@ -1739,7 +1739,7 @@ void GenerateScenarioUnits()
         }
         else
         {
-          v25 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, v84 - 1); /*0x688a08*/
+          v25 = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, v84 - 1); /*0x688a08*/
           *((unsigned char *)v85 + v25) = 1; /*0x688a0d*/
           v59 = 1; /*0x688a19*/
           v26 = *((unsigned int *)v81 + v25); /*0x688a21*/
@@ -1753,7 +1753,7 @@ void GenerateScenarioUnits()
           if ( v39 ) /*0x688b4a*/
           {
             v54[252] = ppv; /*0x688b5a*/
-            v41 = ((BuildingClass *)ppv)->FindBySWType( (int)&dword_8871E0->SovietSurvivorDivisor[1]); /*0x688b5e*/
+            v41 = BuildingClass::FindBySWType(((BuildingClass *)ppv), (int)&dword_8871E0->SovietSurvivorDivisor[1]); /*0x688b5e*/
             v42 = (int *)((UnitClass *)((int)v39))->Construct( v41, (LPVOID)v54[252]); /*0x688b6b*/
           }
           else
@@ -1804,13 +1804,13 @@ void GenerateScenarioUnits()
             {
               if ( v77 > 0 ) /*0x688c91*/
               {
-                v49 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, v77 - 1); /*0x688ca2*/
+                v49 = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, v77 - 1); /*0x688ca2*/
                 v47 = *((unsigned int *)v74 + v49); /*0x688cab*/
               }
             }
             else
             {
-              v48 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, v71 - 1); /*0x688c7d*/
+              v48 = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, v71 - 1); /*0x688c7d*/
               v47 = *((unsigned int *)v68 + v48); /*0x688c86*/
             }
             v50 = (void *)(*(int (**)(int, LPVOID))(v47->q08C))( v47, (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))));  /*0x688cbd*/
@@ -1821,7 +1821,7 @@ void GenerateScenarioUnits()
               v54[252] = v47 + 36; /*0x688cf6*/
               v54[251] = *((unsigned int *)ppv + 13) + 36; /*0x688cfd*/
               v54[250] = aHouseSDeployed; /*0x688cfe*/
-              Debug::Log(); /*0x688d03*/
+              Debug::Log("House %s deployed object %s\n"); /*0x688d03 G57w11: IDA push seq @ 0x688d03 +1 reg-vararg(s) omitted*/
               v46 += (*(int (**)(int))(v47->q02B))(v47);  /*0x688d19*/
               if ( v64 < v62 /*0x688d44*/
                 || (v63 || !v62)
@@ -1880,9 +1880,9 @@ void GenerateScenarioUnits()
       }
     }
   }
-  v54[252] = Random::Range((unsigned int *)dword_A8B230 + 134, 0, 0xFFFF); /*0x688e48*/
+  v54[252] = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, 0xFFFF); /*0x688e48*/
   v54[251] = aFinishedUnitGe; /*0x688e5f*/
-  Debug::Log(); /*0x688e64*/
+  Debug::Log("Finished unit generation. Random number is %d\n"); /*0x688e64 G57w11: IDA push seq @ 0x688e64 +1 reg-vararg(s) omitted*/
   v80 = (void*)&VectorClass_Cell_vftable; /*0x688e75*/
   if ( v81 && v83 ) /*0x688e88*/
   {

@@ -153,10 +153,10 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     {
       v14 = (void (***)(unsigned int, int))*((unsigned int *)v3 + 67); /*0x40150a*/
       if ( v14 ) /*0x401512*/
-        (**v14)(v14, 1); /*0x401518*/
+        (**v14)((unsigned int)(v14), 1); /*0x401518*/
       v15 = (void (***)(unsigned int, int))*((unsigned int *)v3 + 68); /*0x40151a*/
       if ( v15 ) /*0x401522*/
-        (**v15)(v15, 1); /*0x401528*/
+        (**v15)((unsigned int)(v15), 1); /*0x401528*/
       if ( *(unsigned int *)v3 ) /*0x40152a*/
         RA2_OPDEL(*(void **)v3); /*0x401532*/
       RA2_OPDEL(v3); /*0x40153b*/
@@ -1102,7 +1102,7 @@ TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
     v9 = occupant[78]; /*0x404bfd*/
     if ( v9 && (this->nextArrayIndex & 8) == 0 ) /*0x404c0b*/
     {
-      this->infantryBlinkTimer[2] = Random::Range(&Randomizer_Global, 0, v9 - 1); /*0x404c1b*/
+      this->infantryBlinkTimer[2] = Random::Range((Random *)(&Randomizer_Global), 0, v9 - 1); /*0x404c1b*/
       v5 = 1; /*0x404c21*/
     }
     v10 = occupant[4]; /*0x404c26*/
@@ -1132,7 +1132,7 @@ TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
         }
         else
         {
-          temporalUsing = Random::Range(&Randomizer_Global, occupant[78], occupant[77] - occupant[79] - 1); /*0x404c8f*/
+          temporalUsing = Random::Range((Random *)(&Randomizer_Global), occupant[78], occupant[77] - occupant[79] - 1); /*0x404c8f*/
           this->temporalUsing = temporalUsing; /*0x404c94*/
         }
       }
@@ -1971,7 +1971,7 @@ int AudioStream_AcquireBuffer(unsigned int * a1, int a2)
   v3 = 0; /*0x408c3f*/
   if ( a1[16 * a2 + 13] ) /*0x408c45*/
   {
-    Debug::Log(); /*0x408c63*/
+    Debug::Log("%s access to stream failed. Access already acquired.\n"); /*0x408c63 G57w11: IDA push seq @ 0x408c63 +1 reg-vararg(s) omitted*/
     return 0; /*0x408c6b*/
   }
   else
@@ -2551,7 +2551,7 @@ if ( (*(int (**)(int, int, int, char **, int *, int *, int *, unsigned int))(**(
       v28 = 1; /*0x409a0b*/
       if ( v25 || (v8 = v23, v26 != v23) || v24 ) /*0x409a35*/
       {
-        Debug::Log(); /*0x409bf9*/
+        Debug::Log("Buffer management out by %d bytes\n"); /*0x409bf9 G57w11: IDA push seq @ 0x409bf9 +1 reg-vararg(s) omitted*/
         goto LABEL_47; /*0x409c01*/
       }
       v9 = v27; /*0x409a3b*/
@@ -2675,7 +2675,7 @@ if ( (*(int (**)(int, int, int, char **, int *, int *, int *, unsigned int))(**(
       a1[54] = a1[3]; /*0x4099b0*/
       a1[53] = 0; /*0x4099b6*/
       a1[55] = a1[12]; /*0x4099be*/
-      Debug::Log(); /*0x4099c9*/
+      Debug::Log("Restored buffer\n"); /*0x4099c9 G57w11: IDA push seq @ 0x4099c9*/
       if ( !v4-- ) /*0x4099d1*/
         break; /*0x4099d6*/
 if ( !(*(int (**)(int, int, int, char **, int *, int *, int *, unsigned int))(**(unsigned int **)&a1[25] + 44))( /*0x4099fe*/ *(unsigned int *)&a1[25], v3, v23, (char **)(&v27), (int *)(&v26), (int *)(&v25), (int *)(&v24), 0) )
@@ -2689,7 +2689,7 @@ if ( !(*(int (**)(int, int, int, char **, int *, int *, int *, unsigned int))(**
 
         goto LABEL_12; /*0x409a03*/
     }
-    Debug::Log(); /*0x409bd8*/
+    Debug::Log("Failed to restore buffer\n"); /*0x409bd8 G57w11: IDA push seq @ 0x409bd8*/
   }
   if ( v28 ) /*0x409c0f*/
   LABEL_47:
@@ -2753,7 +2753,7 @@ AudioController * * E4Recv_40A090::sub_40A090()
   else
   {
     if ( (*(int (**)(int, int *))(*(unsigned int *)dword_87E8A0 + 56))( dword_87E8A0, (int *)(&v6)) ) /*0x40a196*/
-      Debug::Log(); /*0x40a1a2*/
+      Debug::Log("Unable to set the desired primary format\n"); /*0x40a1a2 G57w11: IDA push seq @ 0x40a1a2*/
     memset( (void *)(&v12[1]), 0, 0x5Cu); /*0x40a1b9*/
     v12[0] = 96; /*0x40a1c0*/
     dword_87E89C->lpVtbl->GetCaps(dword_87E89C, (LPDSCAPS)v12); /*0x40a1cc*/
@@ -3700,7 +3700,7 @@ int sub_403ED0(int a1, int a2)
   {
     dword_87E298 = sub_4019E0(dword_87E294, 0x100000, 200, 0x2000); /*0x403f47*/
     dword_87E2A8 = AllocLinkedListMemory(300, 640); /*0x403f51*/
-    Debug::Log(); /*0x403f60*/
+    Debug::Log("event mempool size = %d\n", 0x2ee00); /*0x403f60 G57w11: IDA push seq @ 0x403f60*/
     v4 = dword_87E294; /*0x403f65*/
   }
   if ( !dword_87E298 || !v4 || !dword_87E29C || !dword_87E2A8 ) /*0x403f88*/
@@ -4028,7 +4028,7 @@ int AbstractTypeClass::AddSampleVocClass(int a1, unsigned char * a2)
       *(unsigned int *)(a1 + 4 * (*(unsigned int *)(a1 + 308))++ + 180) = v5; /*0x4064e6*/
       return 1; /*0x406501*/
     }
-    Debug::Log(); /*0x406508*/
+    Debug::Log("Missing sample %s\n"); /*0x406508 G57w11: IDA push seq @ 0x406508 +1 reg-vararg(s) omitted*/
     *(unsigned int *)(a1 + 12) = 0; /*0x406510*/
   }
   return 1; /*0x4064af*/
@@ -4771,7 +4771,7 @@ int sub_407550()
   {
     LastError = GetLastError(); /*0x407642*/
     FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x40764f*/
-    Debug::Log(); /*0x40765f*/
+    Debug::Log("Unable to change the priority of the Streamer Thread - %s\n"); /*0x40765f G57w11: IDA push seq @ 0x40765f +1 reg-vararg(s) omitted*/
   }
   dword_87E820 = 1; /*0x40766d*/
   dword_87E81C = 1; /*0x407672*/
@@ -5434,7 +5434,7 @@ int E4Recv_409470::sub_409470()
     {
       LastError = GetLastError(); /*0x40955e*/
       FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x40956b*/
-      Debug::Log(); /*0x40957b*/
+      Debug::Log("Unable to change the priority of the Audio Thread - %s\n"); /*0x40957b G57w11: IDA push seq @ 0x40957b +1 reg-vararg(s) omitted*/
       return 0; /*0x40958d*/
     }
   }

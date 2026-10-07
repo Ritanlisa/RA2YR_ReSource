@@ -49,7 +49,7 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
     int Int_Overwrite; // eax
     int result; // eax
 
-    Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)this, a2, a3, -1); /*0x47481c*/
+    Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)((bool *)this), a2, a3, -1); /*0x47481c*/
     if ( Int_Overwrite == -1 ) /*0x474824*/
       return (void *)a4; /*0x474826*/
     if ( Int_Overwrite >= 100 ) /*0x474830*/
@@ -98,7 +98,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
     }
     else
     {
-      (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x52538e*/
+      (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))((_DynamicVectorClass_PBVAnimTypeClass *)(this)); /*0x52538e*/
     }
     v7 = this->m_8; /*0x525391*/
     if ( v7 < this->m_10 ) /*0x525399*/
@@ -552,7 +552,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
     v2 = this; /*0x75e0c4*/
     DebrisTypes = (int *)(this->DebrisTypes); /*0x75e0ce*/
     (*(void (**)(int *))((&this->DebrisTypes)[0] + 12))( (int *)(this->DebrisTypes)); /*0x75e0d6*/
-    (*(void (**)(char *))(*(unsigned int *)&v2->__pad_1A0[8] + 12))( (char *)(&v2->__pad_1A0[8])); /*0x75e0e7*/
+    (*(void (**)(char *))(*(unsigned int *)&((unsigned char *)&v2->__pad_1A0)[8] + 12))( (char *)((unsigned char *)&v2->__pad_1A0 + 8)); /*0x75e0e7*/
     v4 = a2; /*0x75e0ea*/
     result = AbstractClass::SaveLoad_Prefix_0( (AbstractClass *)(v2), (AbstractClass *)(a2)); /*0x75e0f0*/
     if ( result >= 0 ) /*0x75e0f7*/
@@ -563,7 +563,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
         ((DynamicVectorClass *)v2->__pad_104)->AnimTypeConstructor( 0, 0); /*0x75e117*/
         *(unsigned int *)v2->__pad_104 = (unsigned int)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x75e120*/
         ((WarheadTypeClass *)DebrisTypes)->checkImmunity( (int)&this); /*0x75e12d*/
-        ((WarheadTypeClass *)&v2->__pad_1A0[8])->calculateDamage( (int)&this); /*0x75e139*/
+        ((WarheadTypeClass *)&((unsigned char *)&v2->__pad_1A0)[8])->calculateDamage( (int)&this); /*0x75e139*/
         v2->Deform = (unsigned int)((void*)&WarheadTypeClass_vftable); /*0x75e13e*/
         v2->WarheadTypeClass_field_0x4 = (unsigned int)((void*)&WarheadTypeClass_vftable); /*0x75e144*/
         v2->WarheadTypeClass_field_0x8 = (unsigned int)((void*)&WarheadTypeClass_vftable); /*0x75e14b*/
@@ -589,18 +589,18 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
         ((DynamicVector *)DebrisTypes)->Add2( (unsigned int *)(&a2)); /*0x75e1ed*/
       }
       if ( v2 != (WarheadTypeClass *)-424 ) /*0x75e201*/
-        TypeList::Construct((TypeList *)&v2->__pad_1A0[8]); /*0x75e205*/
+        TypeList::Construct((TypeList *)&((unsigned char *)&v2->__pad_1A0)[8]); /*0x75e205*/
       (*(void (__stdcall **)(int, WarheadTypeClass **, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &this, 4, 0);  /*0x75e216*/
       for ( k = 0; k < (int)this; ++k ) /*0x75e221*/
       {
         (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)&v4->u32_30))(v4, &a2, 4, 0);  /*0x75e22f*/
-        ((DynamicVector *)&v2->__pad_1A0[8])->Add_Alt( (unsigned int *)(&a2)); /*0x75e239*/
+        ((DynamicVector *)&((unsigned char *)&v2->__pad_1A0)[8])->Add_Alt( (unsigned int *)(&a2)); /*0x75e239*/
       }
       for ( m = 0; m < v2->WarheadTypeClass_field_0x114; ++m ) /*0x75e24f*/
         ObjectPtr::RegisterForTracking( /*0x75e260*/
           (int)&SwizzleManagerClass_Instance,
           (int *)(v2->WarheadTypeClass_field_0x108 + 4 * m));
-      for ( n = 0; n < v2->unused_1CC[0]; ++n ) /*0x75e27a*/
+      for ( n = 0; n < (&v2->unused_1CC)[0]; ++n ) /*0x75e27a*/
         ObjectPtr::RegisterForTracking( /*0x75e28b*/
           (int)&SwizzleManagerClass_Instance,
           (int *)(v2->WarheadTypeClass_field_0x190[0] + 4 * n));
@@ -756,7 +756,7 @@ v4 = (*(int (**)(int *, WarheadTypeClass **))(g_BuildingLoadQueue_Array.LightVis
       }
     }
     WarheadTypeClass_field_0x1AC = this->WarheadTypeClass_field_0x1AC; /*0x75e5c8*/
-    *(unsigned int *)&this->__pad_1A0[8] = (unsigned int)(void*)&VectorClass_int_vftable; /*0x75e5d1*/
+    *(unsigned int *)&((unsigned char *)&this->__pad_1A0)[8] = (unsigned int)(void*)&VectorClass_int_vftable; /*0x75e5d1*/
     if ( WarheadTypeClass_field_0x1AC && this->__pad_1B0[5] ) /*0x75e5df*/
     {
       RA2_OPDEL(WarheadTypeClass_field_0x1AC); /*0x75e5e8*/
@@ -764,7 +764,7 @@ v4 = (*(int (**)(int *, WarheadTypeClass **))(g_BuildingLoadQueue_Array.LightVis
     }
     this->__pad_1B0[5] = 0; /*0x75e5f6*/
     *(unsigned int *)this->__pad_1B0 = 0; /*0x75e5fc*/
-    v6 = (void *)this->WarheadTypeClass_field_0x190[0]; /*0x75e602*/
+    v6 = (void *)(&this->WarheadTypeClass_field_0x190)[0]; /*0x75e602*/
     this->DebrisTypes[0] = (int)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e608*/
     if ( v6 && IDA_BYTE1(this->MinDebris) ) /*0x75e616*/
     {

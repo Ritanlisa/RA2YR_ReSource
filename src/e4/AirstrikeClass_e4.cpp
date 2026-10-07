@@ -423,7 +423,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x41d709*/
     {
-      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x41d712*/
+      AbstractClass::InitVtables(((AbstractClass *)aP0), (int)&aP1); /*0x41d712*/
       aP0->vtable1 = &vt_AirstrikeClass; /*0x41d717*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d71d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_AirstrikeClass); /*0x41d724*/

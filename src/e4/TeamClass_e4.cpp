@@ -220,7 +220,7 @@ LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(((Object *)((Obje
             ((TeamClass *)(v15))->AddMember(v14, 0); /*0x62a3bc*/
           if ( !(*(uint8_t (**)(int))(*(unsigned int *)this->creationFrame + 1196))(this->creationFrame) ) /*0x62a3c6*/
           {
-            ((TechnoClass *)this->creationFrame)->SetFocus( 0); /*0x62a3d4*/
+            TechnoClass::SetFocus(((TechnoClass *)this->creationFrame), 0); /*0x62a3d4*/
             (*(void (**)(int, unsigned int))(*(unsigned int *)this->creationFrame + 968))(this->creationFrame, 0); /*0x62a3df*/
             (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->creationFrame + 1152))( /*0x62a3ed*/
               this->creationFrame,
@@ -1123,7 +1123,7 @@ LABEL_5:
 }
 // 0x6E53A0
 namespace gamemd {
-int TeamClass::Update_0(int aP1, int aP2, int aP3, char aP4, int aP5)
+int TeamClass::Update_0(TeamClass *aP0, int aP1, int aP2, int aP3, char aP4, int aP5)  // G57w11: def 同步 hpp（raw 0x6E53A0）
 {
 
   int result; // eax
@@ -1138,21 +1138,21 @@ int TeamClass::Update_0(int aP1, int aP2, int aP3, char aP4, int aP5)
   v13 = 0; /*0x6e53ae*/
   v12 = 0; /*0x6e53b2*/
   if ( *((unsigned int *)((char *)&stru_A8EB00 + 391)) /*0x6e53d7*/
-    || BYTE1(this->spawnCell)
-    || LOBYTE(this->spawnCell)
-    || (result = (int)this->buildingType) == 0 )
+    || BYTE1(aP0->spawnCell)
+    || LOBYTE(aP0->spawnCell)
+    || (result = (int)aP0->buildingType) == 0 )
   {
     LOBYTE(result) = 0; /*0x6e5552*/
   }
   else
   {
-    currentScript = (TeamClass *)this->currentScript; /*0x6e53de*/
-    for ( BYTE1(this->spawnCell) = 1; currentScript; currentScript = (TeamClass *)currentScript->currentScript ) /*0x6e53ec*/
+    currentScript = (TeamClass *)aP0->currentScript; /*0x6e53de*/
+    for ( BYTE1(aP0->spawnCell) = 1; currentScript; currentScript = (TeamClass *)currentScript->currentScript ) /*0x6e53ec*/
     {
       if ( ((TriggerClass*)/*0x6e5414*/
-             (int)currentScript)->RegisterEvent(/*0x6e5414*/ aP1, aP2, aP4, *(unsigned int *)&this->buildingType[1].TeamTypeClass_field_28 == 2, aP5) )
+             (int)currentScript)->RegisterEvent(/*0x6e5414*/ aP1, aP2, aP4, *(unsigned int *)&aP0->buildingType[1].TeamTypeClass_field_28 == 2, aP5) )
       {
-        v10 = *(unsigned int *)&this->buildingType[1].TeamTypeClass_field_28; /*0x6e5420*/
+        v10 = *(unsigned int *)&aP0->buildingType[1].TeamTypeClass_field_28; /*0x6e5420*/
         if ( !v10 ) /*0x6e5429*/
         {
           ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e546d*/
@@ -1173,7 +1173,7 @@ LABEL_14:
           }
           continue; /*0x6e5440*/
         }
-        if ( this->owner != (HouseClass *)1 ) /*0x6e5446*/
+        if ( aP0->owner != (HouseClass *)1 ) /*0x6e5446*/
           goto LABEL_14; /*0x6e5446*/
         ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e5450*/
         result = TeamClass::AddToBuildQueue(currentScript); /*0x6e5457*/
@@ -1181,10 +1181,10 @@ LABEL_14:
         v7 = 1; /*0x6e5461*/
       }
     }
-    BYTE1(this->spawnCell) = 0; /*0x6e548f*/
+    BYTE1(aP0->spawnCell) = 0; /*0x6e548f*/
     if ( v12 ) /*0x6e5499*/
     {
-      if ( aP2 && *(TeamClass **)(aP2 + 52) == this ) /*0x6e54a2*/
+      if ( aP2 && *(TeamClass **)(aP2 + 52) == aP0 ) /*0x6e54a2*/
         ((ObjectClass *)((ObjectClass *)aP2))->SetReference(0); /*0x6e54a8*/
       BYTE1(result) = BYTE1(aP3); /*0x6e54ad*/
       if ( aP3 != dword_B0E700 ) /*0x6e54b9*/
@@ -1195,7 +1195,7 @@ LABEL_14:
     }
     if ( v13 ) /*0x6e54e9*/
     {
-      AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(this), 1); /*0x6e54ef*/
+      AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(aP0), 1); /*0x6e54ef*/
       result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e54f4*/
       if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e552f*/
         || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
@@ -1207,7 +1207,7 @@ LABEL_14:
 
       {
         result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5537*/
-        *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)this;
+        *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)aP0;
       }
     }
     LOBYTE(result) = v7; /*0x6e5549*/
@@ -2378,9 +2378,9 @@ LABEL_80:
             goto LABEL_87; /*0x6ebd61*/
           if ( ((ObjectClass *)((ObjectClass *)firstUnit))->DistanceTo((int)firstUnit->movementDestination) <= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x6ebd7f*/
           {
-            if ( !firstUnit->locomotor[0] ) /*0x6ebd85*/
+            if ( !(&firstUnit->locomotor)[0] ) /*0x6ebd85*/
               WinAPI::Wrapper(-2147467261); /*0x6ebd94*/
-            if ( !(*(uint8_t (**)(int))(*(unsigned int *)firstUnit->locomotor[0] + 16))(firstUnit->locomotor[0]) ) /*0x6ebda2*/
+            if ( !(*(uint8_t (**)(int))(*(unsigned int *)(&firstUnit->locomotor)[0] + 16))((&firstUnit->locomotor)[0]) ) /*0x6ebda2*/
             {
 LABEL_87:
               if ( !((unsigned int *)firstUnit)[0] ) /*0x6ebdad*/

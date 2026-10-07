@@ -265,7 +265,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   IDA_LODWORD(v143) = ((int16_t)v115 << 8) + 128;
   IDA_HIDWORD(v143) = (IDA_SHIWORD(v115) << 8) + 128;
   v144 = 0.0;
-  if ( Cell::GetGroundHeight( (unsigned int *)((IUnknown *)&v143)) < *(unsigned int *)&aP0->__pad_0[8] )
+  if ( Cell::GetGroundHeight( (unsigned int *)((IUnknown *)&v143)) < *(unsigned int *)&((unsigned char *)&aP0->__pad_0)[8] )
   {
     int v11 = Math::RoundToInt(*(float *)&aP3[1].spawnStatus);
     AircraftTrackerClass::FillCurrentVector((int)&(&stru_87C374)[46356], aP1a, v11);
@@ -669,7 +669,7 @@ LABEL_82:
   }
   bool v107 = v58 == *(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080);
   v71 = (IUnknown *)((CellCoord *)(&(&stru_87C374)[13428]))->To_CellObj((int16_t *)&v115);
-  if ( (IDA_BYTE1(**(unsigned int **)&(&HouseClass_Player)[29924]) & 0x80u) != 0 && v58[1].isInLogic )
+  if ( (IDA_BYTE1(**(unsigned int **)&((unsigned int *)HouseClass_Player)[29924]) & 0x80u) != 0 && v58[1].isInLogic )
   {
     v72 = (ParticleSystemClass *)((gamemd::Math*)v71)->field_140;
     int v75 = ((gamemd::Math*)v71)->field_38 - unk_AA0E28 + 1;
@@ -708,21 +708,18 @@ LABEL_166:
             if ( (((gamemd::Math*)v71)->field_140 & 0x100) == 0
               || (v86 = SHIBYTE(v71->field_118),
                   v85 = (BuildingTypeClass *)aP2->Z,
-                  (int)v85 <= *(unsigned int *)&stru_89E138[1836] + *(unsigned int *)&stru_89E138[1848] * (v86 + 1))
+                  (int)v85 <= *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v86 + 1))
               && (int)v85 > *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v86 - 2) )
             {
               if ( (&aP3)[1].isInLogic )
               {
   int v88; // eax
                 if ( aP3   ==   (int)((int)(*(ObjectClass **)(*(unsigned int *)&(&stru_87C374)[44652] + 4080)))
-                  || (v88 = Random::Range(
-                              (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
-                              (IUnknown *)1,
-                              *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
+                  || (v88 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (IUnknown *)1, *(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952)),
                       v88 < (int)v120) )
                 {
                   int v89 = 3;
-                  if ( ((CellClass *)&stru_87C374[13428])->SetTerrainType( (IUnknown *)&v115) )
+                  if ( ((CellClass *)&((unsigned char *)&stru_87C374)[13428])->SetTerrainType( (IUnknown *)&v115) )
                   {
 LABEL_189:
                     ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget((int)((AbstractClass *)((int)v71)));
@@ -751,11 +748,8 @@ LABEL_189:
           if ( v90 >= 74 && v90 <= 99 )
           {
   int v91; // eax
-            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080)
-              || (v91 = Random::Range(
-                          (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
-                          (IUnknown *)1,
-                          *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
+            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
+              || (v91 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (IUnknown *)1, *(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952)),
                   v91 < (int)v120) )
             {
               if ( ((CellClass *)(&v115))->CheckTilePassable2() )
@@ -766,11 +760,8 @@ LABEL_189:
           if ( v92 >= 205 && v92 <= 230 )
           {
   int v93; // eax
-            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080)
-              || (v93 = Random::Range(
-                          (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
-                          (IUnknown *)1,
-                          *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
+            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
+              || (v93 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (IUnknown *)1, *(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952)),
                   v93 < (int)v120) )
             {
               if ( ((CellClass *)(&v115))->CheckTilePassable() )
@@ -784,21 +775,18 @@ LABEL_151:
         if ( (v71->field_140 & 0x100) == 0
           || (v80 = SHIBYTE(v71->field_118),
               Z = aP2->Z,
-              Z <= *(unsigned int *)&stru_89E138[1836] + *(unsigned int *)&stru_89E138[1848] * (v80 + 1))
-          && Z > *(unsigned int *)&stru_89E138[1836] + *(unsigned int *)&stru_89E138[1848] * (v80 - 2) )
+              Z <= *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v80 + 1))
+          && Z > *(unsigned int *)&(&stru_89E138)[1836] + *(unsigned int *)&(&stru_89E138)[1848] * (v80 - 2) )
         {
           if ( aP3[1].isInLogic )
           {
   int v82; // eax
-            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4080)
-              || (v82 = Random::Range(
-                          (unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 536),
-                          (IUnknown *)1,
-                          *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 5952)),
+            if ( aP3 == *(ObjectClass **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4080)
+              || (v82 = Random::Range((Random *)((unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), (IUnknown *)1, *(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 5952)),
                   v82 < (int)v120) )
             {
               int v83 = 3;
-              if ( ((CellClass *)&stru_87C374[13428])->SetTerrainType( (IUnknown *)&v115) )
+              if ( ((CellClass *)&((unsigned char *)&stru_87C374)[13428])->SetTerrainType( (IUnknown *)&v115) )
               {
 LABEL_163:
                 ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget((int)((AbstractClass *)((int)v71)));
@@ -808,11 +796,11 @@ LABEL_163:
                 while ( v107 && v83 > 0 )
                 {
                   --v83;
-                  if ( ((CellClass *)&stru_87C374[13428])->SetTerrainType( (IUnknown *)&v115) )
+                  if ( ((CellClass *)&((unsigned char *)&stru_87C374)[13428])->SetTerrainType( (IUnknown *)&v115) )
                     goto LABEL_163;
                 }
               }
-              ((Coord *)(*(unsigned int **)&stru_87C374[44976]))->To_Screen( (unsigned int *)(aP2), (int *)((IUnknown *)&v141));
+              ((Coord *)(*(unsigned int **)&((unsigned char *)&stru_87C374)[44976]))->To_Screen( (unsigned int *)(aP2), (int *)((IUnknown *)&v141));
               ((void (*)(int, int, int, int, char))Cell::CreateCrater)(
                 IDA_LODWORD(v141) - 128,
                 IDA_HIDWORD(v141) - 128,
@@ -841,22 +829,22 @@ LABEL_203:
     ((BuildingClass *)((char *)v71))->CreatePlacementCrater();
     v71->field_44 = -1;
     ((House *)((int)v71))->AnnounceUpgrade( (int)((IUnknown *)0xFFFFFFFF));
-    ((Cell *)((int *)&stru_87C374[13428]))->SetRadar( (int16_t *)((IUnknown *)&v71->field_24));
-    Radar::Update((IUnknown *)&stru_87C374[13428], (IUnknown *)&v71->field_24);
+    ((Cell *)((int *)&((unsigned char *)&stru_87C374)[13428]))->SetRadar( (int16_t *)((IUnknown *)&v71->field_24));
+    Radar::Update((IUnknown *)&((unsigned char *)&stru_87C374)[13428], (IUnknown *)&v71->field_24);
     ((AbstractClass *)((int)v71))->ClearTargetToMeClearManagerTarget((int)((AbstractClass *)((int)v71)));
     v95 = (void **)((void *)operator new(0x1C8u));
     v94 = aP2;
     if ( v95 )
       AnimClass::ctor(
         v95,
-        *(CoordStruct **)(*(unsigned int *)&stru_87C374[44652] + 84)(int *)(),
+        *(CoordStruct **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 84)(int *)(),
         aP2,
         0,
         (CoordStruct *)1,
         (void *)0x600,
         0,
         0);
-PlaySoundEffectAt( (TechnoClass *)v94, (int)(*(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 12)), 0, (int)(*(ObjectClass **)(*(unsigned int *)&stru_87C374[44652] + 4008)), 1, aP6);
+PlaySoundEffectAt( (TechnoClass *)v94, (int)(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 12)), 0, (int)(*(ObjectClass **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 4008)), 1, aP6);
 
 
 
@@ -864,23 +852,23 @@ PlaySoundEffectAt( (TechnoClass *)v94, (int)(*(IUnknown **)(*(unsigned int *)&st
 
 
     int v97 = 0;
-    if ( *(int *)(*(unsigned int *)&stru_87C374[44652] + 104) > 0 )
+    if ( *(int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 104) > 0 )
     {
-      while ( Random::Range((*(unsigned int *)&(&HouseClass_Player)[29924] + 536), 0, (IUnknown *)0x63) >= 15 )
+      while ( Random::Range((Random *)((*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), 0, (IUnknown *)0x63) >= 15 )
       {
-        if ( ++v97 >= *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 104) )
+        if ( ++v97 >= *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 104) )
           goto LABEL_213;
       }
       void * v98 = (void *)operator new(0x148u);
       if ( v98 )
         DamageAnimClass::Constructor(
           v98,
-          *(VoxelAnimClass **)(*(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 92) + 4 * v97),
+          *(VoxelAnimClass **)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 92) + 4 * v97),
           (IUnknown *)v94,
           0);
     }
 LABEL_213:
-    if ( Random::Range((*(unsigned int *)&(&HouseClass_Player)[29924] + 536), 0, (IUnknown *)0x63) < 25 )
+    if ( Random::Range((Random *)((*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 536)), 0, (IUnknown *)0x63) < 25 )
     {
       int v99 = operator new(0x100u);
       if ( v99 )
@@ -1362,8 +1350,8 @@ void MainGame()
   g_ExceptionReturnStack = (int)&v9; /*0x48cd91*/
   g_ExceptionReturnFrame = (int)&savedregs; /*0x48cd97*/
   g_ExceptionReturnAddr = (int)&loc_48CDA8; /*0x48cda3*/
-  Debug::Log(); /*0x48cdb4*/
-  Debug::Log(); /*0x48cdc5*/
+  Debug::Log("ExceptionReturnStack = %08X\n"); /*0x48cdb4 G57w11: IDA push seq @ 0x48cdb4 +1 reg-vararg(s) omitted*/
+  Debug::Log("ExceptionReturnAddress = %08X\n"); /*0x48cdc5 G57w11: IDA push seq @ 0x48cdc5 +1 reg-vararg(s) omitted*/
   IDA_LOBYTE(inited) = MenuSelect(v9); /*0x48cdd3*/
   while ( (unsigned char)inited ) /*0x48cdda*/
   {
@@ -1402,7 +1390,7 @@ void MainGame()
     WTFMode::Shutdown( (void *)((&dword_A8B238))); /*0x48ceb4*/
     byte_A8ED5C = 0; /*0x48cebf*/
     byte_A8E378 = 0; /*0x48cec7*/
-    Debug::Log(); /*0x48cee2*/
+    Debug::Log("Game loop finished. Average FPS = %d\n"); /*0x48cee2 G57w11: IDA push seq @ 0x48cee2 +1 reg-vararg(s) omitted*/
     DumpNetworkStats(v9); /*0x48ceea*/
     if ( !g_Is16BitMode ) /*0x48cef5*/
       FadePalette(&word_884E80, 30, 0); /*0x48cf02*/

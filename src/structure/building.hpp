@@ -105,7 +105,8 @@ int Construct(int,int);  // 0x43B740
     void SetRallyPoint(CoordStruct* target);  // 0x443860
     void MarkExitPath();  // 0x4A9650
     bool CheckExitPath();  // 0x639CB0
-    void RenderExitPosition(); // 0x453840
+    unsigned int u32_118C;  // g57w11 r4 词表 (raw 0x4a9674 this+0x118C; 前名 airstrikeTintStage3 无 hand-tree 成员)
+    int RenderExitPosition(); // 0x453840 g57w11 r4: raw fn_45 int __thiscall (前 void 声明 C2556)
     // wrapper: delegates to BuildingClass::RenderExitPosition at 0x453840
     void ReassignFlagPosition();
     virtual bool TogglePrimaryFactory();  // 0x447E90
@@ -149,7 +150,7 @@ int CanAcceptType(int,int);  // 0x452670
 
     // Repair
     virtual int Mission_Repair() override;
-    void ProcessRepair();  // 0x44B780
+    int ProcessRepair();  // 0x44B780 g57w11 r4: raw int __thiscall (void 声明 C2562)
     bool CanRepair(TechnoClass* repairer);  // 0x457CE0
     int ToggleRepairMode(int aP1);  // 0x446FF0
     int CheckHealthForRepair();  // 0x452630
@@ -374,7 +375,7 @@ int CanAcceptType(int,int);  // 0x452670
     void UnloadUnits();  // 0x457DE0
     void AnimateUnloadUnits();  // 0x4585C0
     void SpawnParticles();  // 0x459900
-    void ApplyFoundationDamage();  // 0x45EE70
+    int ApplyFoundationDamage(unsigned short *a2, void *other);  // 0x45EE70 g57w11 r4: raw int(this,_WORD*,void*)
     int AssignTarget_SyncLog(int syncFlag) override;  // 0x443B90
     void AssignDestination_SyncLog();  // 0x455D50
     void DecrementTypeCounter();  // 0x4FF980
@@ -397,7 +398,7 @@ int CanAcceptType(int,int);  // 0x452670
     void UpdateTerrainEffect();  // 0x455A80
     bool IsTiberiumCollectorEligible();  // 0x483620
     bool IsTiberiumSiloEligible();  // 0x483690
-    void UpdateBunker();  // 0x458E50
+    char UpdateBunker(double a2);  // 0x458E50 g57w11 r4: raw char@<al>(this,double@<st0>)
     void EmptyBunker();  // 0x4595C0
     void MakeTraversable();  // 0x452540
     void RemoveLimpet();  // 0x4593A0

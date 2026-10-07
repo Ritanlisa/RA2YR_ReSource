@@ -278,7 +278,7 @@ int InfantryClass::ProcessDeployAction(int deploy_type, bool a3, bool a4)
     v20 = (unsigned int)this->Type->Sequence->Sequences[v4].CountFrames; /*0x51da61*/
     if ( v20 <= 1 ) /*0x51da68*/
       v20 = 1; /*0x51da6a*/
-    ((unsigned int *)this)[0] = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v20 - 1); /*0x51da84*/
+    ((unsigned int *)this)[0] = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, v20 - 1); /*0x51da84*/
   }
   else
   {
@@ -1481,7 +1481,7 @@ int InfantryClass::ProcessIdleAction()
   {
     v14 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5904) * 1800.0; /*0x51cdeb*/
     v15 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5904) * 450.0; /*0x51cdfb*/
-    v12 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x51ce0c*/
+    v12 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2147483646); /*0x51ce0c*/
     v3 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x51ce10*/
     IDA_LOWORD(v4) = Math::RoundToInt((v14 - v15) * ((double)(int)v12 * 4.656612877414201e-10) + v15); /*0x51ce26*/
     v17 = v17; /*0x51ce2b*/
@@ -1492,9 +1492,9 @@ int InfantryClass::ProcessIdleAction()
       || (uint8_t)House::IsCurrentPlayer((House *)((unsigned int *)this)[0])
       || this->PanicDurationLeft <= 50 )
     {
-      v6 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 10); /*0x51cea1*/
+      v6 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 10); /*0x51cea1*/
       v7 = ObjectClass::StepCleanup((ObjectClass *)this, &stru_825538.Name[5]); /*0x51cea8*/
-      if ( v7 && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 10) < 5 ) /*0x51cec6*/
+      if ( v7 && Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 10) < 5 ) /*0x51cec6*/
         v6 = 8; /*0x51cec8*/
       result = v6 - 1; /*0x51cecd*/
       switch ( v6 ) /*0x51ced9*/
@@ -1528,7 +1528,7 @@ int InfantryClass::ProcessIdleAction()
           IDA_LOBYTE(result) = 1; /*0x51cef2*/
           break; /*0x51cef8*/
         case 6: /*0x51ced9*/
-          IDA_LOWORD(v12) = (uint16_t)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51cf11*/
+          IDA_LOWORD(v12) = (uint16_t)Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51cf11*/
           IDA_LOBYTE(v8) = 0; /*0x51cf16*/
           IDA_HIBYTE(v8) = ((v12 >> 7) + 1) >> 1; /*0x51cf27*/
           IDA_LOWORD(v13) = v8; /*0x51cf2f*/
@@ -1536,7 +1536,7 @@ int InfantryClass::ProcessIdleAction()
           IDA_LOBYTE(result) = 1; /*0x51cf3b*/
           break; /*0x51cf41*/
         case 8: /*0x51ced9*/
-          IDA_LOWORD(v12) = (uint16_t)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51cff1*/
+          IDA_LOWORD(v12) = (uint16_t)Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51cff1*/
           IDA_LOBYTE(v10) = 0; /*0x51cff6*/
           IDA_HIBYTE(v10) = ((v12 >> 7) + 1) >> 1; /*0x51d007*/
           IDA_LOWORD(v14) = v10; /*0x51d009*/
@@ -1559,7 +1559,7 @@ int InfantryClass::ProcessIdleAction()
           break; /*0x51d057*/
         case 9: /*0x51ced9*/
         case 10: /*0x51ced9*/
-          IDA_LOWORD(v12) = (uint16_t)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51d06f*/
+          IDA_LOWORD(v12) = (uint16_t)Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7) << 13; /*0x51d06f*/
           IDA_LOBYTE(v11) = 0; /*0x51d074*/
           IDA_HIBYTE(v11) = ((v12 >> 7) + 1) >> 1; /*0x51d085*/
           IDA_LOWORD(v15) = v11; /*0x51d08d*/
@@ -1718,7 +1718,7 @@ int InfantryClass::GetIdleTimer()
                   this->ShouldDeploy = 1; /*0x52167c*/
                   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x521683*/
                   IDA_LOWORD(v25) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x521691*/
-                  return v25 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x5216ad*/
+                  return v25 + Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x5216ad*/
                 }
                 else
                 {
@@ -1769,14 +1769,14 @@ int InfantryClass::GetIdleTimer()
     }
     v12 = MissionClass::GetMissionControl((MissionClass *)this); /*0x521486*/
     IDA_LOWORD(v13) = Math::RoundToInt(*((double *)v12 + 2) * 900.0); /*0x521494*/
-    return v13 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 10, 20); /*0x5214b0*/
+    return v13 + Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 10, 20); /*0x5214b0*/
   }
   else
   {
     (*((void (**)(InfantryClass *))this->vtable1 + 266))(this); /*0x5214bd*/
     v14 = MissionClass::GetMissionControl((MissionClass *)this); /*0x5214c5*/
     IDA_LOWORD(v15) = Math::RoundToInt(*((double *)v14 + 2) * 900.0); /*0x5214d3*/
-    return v15 + Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x5214ee*/
+    return v15 + Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x5214ee*/
   }
 }
 // ============================================================

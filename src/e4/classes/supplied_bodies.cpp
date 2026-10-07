@@ -960,7 +960,7 @@ char ScriptAction::ProcessIdleAction()
         Vector::TwoDMagnitudeMath(v19); /*0x63b826*/
         if ( v20 >= 37 ) /*0x63b82e*/
         {
-          v21 = (int)&v70->__pad_0[*(unsigned int *)v60.__pad_0] / 2 - 10; /*0x63b857*/
+          v21 = (int)&((unsigned char *)&v70->__pad_0)[*(unsigned int *)v60.__pad_0] / 2 - 10; /*0x63b857*/
           v22 = (int)&v71[v60.Coord3D_field_0x04] / 2 - 10; /*0x63b85a*/
           v23 = Display::GetViewport(&v72.X); /*0x63b85d*/
           v63 = *v23; /*0x63b864*/

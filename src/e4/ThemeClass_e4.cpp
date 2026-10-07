@@ -55,19 +55,19 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
   int v6; // ecx
   char v8; // [esp-Ch] [ebp-14h]
 
-  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x72048a*/
-  if ( !((INIClass *)((int)a2))->BinarySearchSection( (uint8_t *)this) ) /*0x720492*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)a2))); /*0x72048a*/
+  if ( !INIClass::BinarySearchSection(((INIClass *)((int)a2)), (uint8_t *)this) ) /*0x720492*/
     return 0; /*0x720584*/
   v3 = (const char *)((char *)this + 256); /*0x7204a6*/
   ((INIClass*)(INIClass *)a2)->GetString((uint8_t *)this, aSound, &g_INI_DefaultBuffer, (char *)((char *)this + 256), 256); /*0x7204bf*/
   while ( *v3 == 36 || *v3 == 35 ) /*0x7204cc*/
     ++v3; /*0x7204ce*/
   strcpy( (char *)((char *)this + 256), (const char *)(v3)); /*0x7204e9*/
-  Int_Overwrite = ((INIClass *)((bool *)a2))->ReadInt_Overwrite((uint8_t *)this, aScenario, *((unsigned int *)this + 160)); /*0x720501*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)a2)), (uint8_t *)this, (unsigned char *)(aScenario), *((unsigned int *)this + 160)); /*0x720501*/
   v8 = *((unsigned char *)this + 648); /*0x72050e*/
   *((unsigned int *)this + 160) = Int_Overwrite; /*0x720515*/
-  *((unsigned char *)this + 648) = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this, g_INI_Key_Normal, v8); /*0x720520*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this, aRepeat, *((unsigned char *)this + 649)); /*0x720535*/
+  *((unsigned char *)this + 648) = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)this, (unsigned char *)(g_INI_Key_Normal), v8); /*0x720520*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((int *)a2), (uint8_t *)this, (unsigned char *)(aRepeat), *((unsigned char *)this + 649)); /*0x720535*/
   v6 = *((unsigned int *)this + 163); /*0x72053a*/
   *((unsigned char *)this + 649) = Bool_Overwrite; /*0x720540*/
   *((unsigned int *)this + 163) = HouseTypeClass::loadCountryData( /*0x720554*/

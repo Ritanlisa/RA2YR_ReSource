@@ -203,7 +203,7 @@ int ScoreScreen::RemoveItem(int a2, int a3, char aP3, char a5, int a6)
       v19 = *((unsigned int *)v13 + 12); /*0x77140c*/
       if ( v19 > 0 )
       {
-        v20 = v19 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v19 - 1);
+        v20 = v19 == 1 ? 0 : Random::Range((Random *)(&Randomizer_Global), 0, v19 - 1);
         if ( Map_Remove_770CE0(v18, *(unsigned int *)(*((unsigned int *)v13 + 9) + 4 * v20), (char **)&v25) ) /*0x77143b*/
         {
           v21 = *((unsigned int *)this + 242); /*0x771444*/

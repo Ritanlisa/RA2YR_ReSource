@@ -507,29 +507,29 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   int v11; // esi
   ObjectClass *v13; // [esp+0h] [ebp-Ch]
 
-  if ( stru_A8B250[8] == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
+  if ( ((unsigned char *)&stru_A8B250)[8] == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
   {
     v1 = aP0->wasFallingDown; /*0x5b680d*/
     if ( dword_A8B320 == ((v1 & 4) != 0) && byte_A8B31D == ((v1 & 2) != 0) ) /*0x5b6836*/
     {
       v2 = aP0->inOpenToppedTransport; /*0x5b683c*/
-      if ( stru_A8B250[16] == ((v2 & 2) != 0) /*0x5b6920*/
-        && stru_A8B250[17] == ((v2 & 4) != 0)
+      if ( ((unsigned char *)&stru_A8B250)[16] == ((v2 & 2) != 0) /*0x5b6920*/
+        &&((unsigned char *)&stru_A8B250)[17] == ((v2 & 4) != 0)
         && byte_A8B31F == ((v1 & 8) != 0)
-        && *(unsigned int *)&stru_A8B250[36] == aP0->onBridge
-        && *(unsigned int *)&stru_A8B250[40] == aP0->isFallingDown
+        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[36] == aP0->onBridge
+        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] == aP0->isFallingDown
         && g_RulesInitConfig == aP0->q08A
-        && *(unsigned int *)&stru_A8B250[12] == *(unsigned int *)(aP0 + 126)
-        && *(unsigned int *)&stru_A8B250[32] == aP0->q08B
+        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[12] == *(unsigned int *)(aP0 + 126)
+        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[32] == aP0->q08B
         && *(unsigned int *)((char *)&stru_A8EB00 + 432) == *(unsigned int *)(aP0 + 146)
         && ApplyGameOptions_Helper((ObjectClass *)dword_A8E960, (unsigned int *)(aP0 + 150))
-        && *(unsigned int *)&stru_A8B250[24] == aP0->u32_A2 )
+        && *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] == aP0->u32_A2 )
       {
         v3 = aP0->wasFallingDown; /*0x5b6926*/
-        if ( stru_A8B250[18] == ((v3 & 0x10) != 0) /*0x5b69da*/
-          && stru_A8B250[19] == ((v3 & 0x20) != 0)
-          && stru_A8B250[20] == ((v3 & 0x40) != 0)
-          && stru_A8B250[28] == ((v3 & 0x80) != 0)
+        if ( ((unsigned char *)&stru_A8B250)[18] == ((v3 & 0x10) != 0) /*0x5b69da*/
+          &&((unsigned char *)&stru_A8B250)[19] == ((v3 & 0x20) != 0)
+          &&((unsigned char *)&stru_A8B250)[20] == ((v3 & 0x40) != 0)
+          &&((unsigned char *)&stru_A8B250)[28] == ((v3 & 0x80) != 0)
           && !_strcmpi((const char *)(byte_A8B8E0), (char *)(aP0 + 163))
           && !strcmp((const char *)(&byte_A8BAE2), (const char *)(aP0 + 176))
           && dword_A8BB04 == *(unsigned int *)(aP0 + 158) )
@@ -540,32 +540,32 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     }
   }
   Debug::Log("Decoding game options\n"); /*0x5b69e9 G57c1: IDA 0x5b69e9 push offset aDecodingGameOp*/
-  stru_A8B250[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
+  ((unsigned char *)&stru_A8B250)[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
   dword_A8B320 = (aP0->wasFallingDown & 4) != 0; /*0x5b6a0c*/
   v5 = (&dword_A8E960)[0]; /*0x5b6a18*/
   IDA_BYTE1(v5) = IDA_BYTE1((&dword_A8E960)[0]) & 0x7F; /*0x5b6a22*/
-  stru_A8B250[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
+  ((unsigned char *)&stru_A8B250)[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
   (&dword_A8E960)[0] = v5 | ((aP0->inOpenToppedTransport & 2) << 14); /*0x5b6a38*/
-  stru_A8B250[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
+  ((unsigned char *)&stru_A8B250)[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
   byte_A8B31F = (aP0->wasFallingDown & 8) != 0; /*0x5b6a5c*/
   byte_A8B31D = (aP0->wasFallingDown & 2) != 0; /*0x5b6a6f*/
-  *(unsigned int *)&stru_A8B250[36] = aP0->onBridge; /*0x5b6a7b*/
-  *(unsigned int *)&stru_A8B250[40] = aP0->isFallingDown; /*0x5b6a88*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[36] = aP0->onBridge; /*0x5b6a7b*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] = aP0->isFallingDown; /*0x5b6a88*/
   g_RulesInitConfig = aP0->q08A; /*0x5b6a96*/
-  *(unsigned int *)&stru_A8B250[12] = *(unsigned int *)(aP0 + 126); /*0x5b6a9f*/
-  *(unsigned int *)&stru_A8B250[32] = aP0->q08B; /*0x5b6aaa*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[12] = *(unsigned int *)(aP0 + 126); /*0x5b6a9f*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[32] = aP0->q08B; /*0x5b6aaa*/
   *(unsigned int *)((char *)&stru_A8EB00 + 432) = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
   v6 = *(unsigned int *)(aP0 + 150); /*0x5b6abc*/
   (&dword_A8E960)[0] = v6; /*0x5b6ac4*/
   IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
-  *(unsigned int *)&stru_A8B250[24] = aP0->u32_A2; /*0x5b6ad1*/
-  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&stru_A8B250[24]; /*0x5b6ad7*/
-  stru_A8B250[18] = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
-  stru_A8B250[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
-  stru_A8B250[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] = aP0->u32_A2; /*0x5b6ad1*/
+  stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&((unsigned char *)&stru_A8B250)[24]; /*0x5b6ad7*/
+  ((unsigned char *)&stru_A8B250)[18] = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
+  ((unsigned char *)&stru_A8B250)[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
+  ((unsigned char *)&stru_A8B250)[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
   v7 = aP0->wasFallingDown >> 7; /*0x5b6b19*/
   (&dword_A8E960)[0] = v6; /*0x5b6b1c*/
-  stru_A8B250[28] = v7 & 1; /*0x5b6b29*/
+  ((unsigned char *)&stru_A8B250)[28] = v7 & 1; /*0x5b6b29*/
   vtable0 = dword_A8B230->vtable1; /*0x5b6b2f*/
   IDA_BYTE1(vtable0) = ((uint16_t)dword_A8B230->vtable1 >> 8) & 0xFB; /*0x5b6b31*/
   dword_A8B230->vtable1 = vtable0; /*0x5b6b34*/
@@ -577,7 +577,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     || dword_A8BB04 != *(unsigned int *)(aP0 + 158)
     || !g_abs_A8B322[0] )
   {
-    Debug::Log(); /*0x5b6baf*/
+    Debug::Log("Scenario has changed\n"); /*0x5b6baf G57w11: IDA push seq @ 0x5b6baf*/
     strcpy((char *)(byte_A8B8E0), (const char *)(aP0 + 163)); /*0x5b6bce*/
     strcpy((char *)(&byte_A8BAE2), (const char *)(aP0 + 176)); /*0x5b6bf4*/
     v9 = (aP0->inOpenToppedTransport & 0x10) != 0; /*0x5b6c0b*/
@@ -642,7 +642,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
   v13 = 0; /*0x5bb2b3*/
   if ( !_strcmpi((const char *)(byte_A8B8E0), aRandmapSed) ) /*0x5bb2b7*/
   {
-    Debug::Log(); /*0x5bb2cc*/
+    Debug::Log("Starting map preview upload\n"); /*0x5bb2cc G57w11: IDA push seq @ 0x5bb2cc*/
     memset( (void *)(v20), 0, sizeof(v20)); /*0x5bb2e2*/
     v21 = 0; /*0x5bb2e4*/
     v20[0] = 117; /*0x5bb2fa*/
@@ -689,7 +689,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     }
     Buffer_v = 0; /*0x5bb403*/
     v5 = Palette::Preview_Generate((Palette *)g_UIControlState, 64, (int)&Buffer_v, v9); /*0x5bb410*/
-    Debug::Log(); /*0x5bb418*/
+    Debug::Log("Preview size is %d bytes\n"); /*0x5bb418 G57w11: IDA push seq @ 0x5bb418 +1 reg-vararg(s) omitted*/
     v6 = (void *)RA2_OPNEW(4 * Buffer_v); /*0x5bb435*/
     v15.Pipe_field_0x04 = 0; /*0x5bb437*/
     v15.Pipe_field_0x08 = 0; /*0x5bb448*/
@@ -701,7 +701,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     ((Pipe *)(&v19))->SetDelegate((int)&v15); /*0x5bb47d*/
     v7 = Compression::Read((int *)v19.__pad_0, v5, Buffer_v); /*0x5bb499*/
     v8 = (*(int (**)(Pipe *))(*(unsigned int *)v19.__pad_0 + 4))( (Pipe *)(&v19)) + v7; /*0x5bb49e*/
-    Debug::Log(); /*0x5bb4a6*/
+    Debug::Log("Compressed preview image is %d bytes\n"); /*0x5bb4a6 G57w11: IDA push seq @ 0x5bb4a6 +1 reg-vararg(s) omitted*/
     ((RawFileClass*)((RawFileClass *)v18))->Construct((int)aPreviewBin); /*0x5bb4b7*/
     if ( (uint8_t)((FileClass *)((RawFileClass *)v18))->Open(0) ) /*0x5bb4c1*/
       ((FileClass *)((RawFileClass *)v18))->Delete(); /*0x5bb4ce*/
@@ -710,7 +710,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     ((FileClass *)((RawFileClass *)v18))->Write2( (LPCVOID)(v6), v8); /*0x5bb4f4*/
     ((FileClass *)((RawFileClass *)v18))->CloseHandle(); /*0x5bb4fd*/
     RA2_OPDEL(v6); /*0x5bb503*/
-    Debug::Log(); /*0x5bb50d*/
+    Debug::Log("Calling Send_Remote_File to send the preview\n"); /*0x5bb50d G57w11: IDA push seq @ 0x5bb50d*/
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
     ((RawFileClass *)((RawFileClass *)v18))->Dtor(); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v19); /*0x5bb533*/
@@ -775,7 +775,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
         v15 = *(unsigned int *)(dword_ABF23C + 10008) + 1; /*0x5bc9d1*/
         if ( *(unsigned int *)(dword_ABF23C + 10008) == 7 ) /*0x5bc9d5*/
           v15 = 0; /*0x5bc9d7*/
-        v16 = (unsigned char *)dword_ABF168[v15]; /*0x5bc9d9*/
+        v16 = (unsigned char *)(&dword_ABF168)[v15]; /*0x5bc9d9*/
         v17 = 0; /*0x5bc9e0*/
         dword_ABF23C = (int)v16; /*0x5bc9e2*/
         v18 = (unsigned int *)(v16 + 2000); /*0x5bc9e8*/
@@ -803,7 +803,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
         v22 = *(unsigned int *)(dword_ABF23C + 10008) - 1; /*0x5bca38*/
         if ( v22 < 0 ) /*0x5bca39*/
           v22 = 7; /*0x5bca3b*/
-        v16 = (unsigned char *)dword_ABF168[v22]; /*0x5bca40*/
+        v16 = (unsigned char *)(&dword_ABF168)[v22]; /*0x5bca40*/
         v23 = 0; /*0x5bca47*/
         dword_ABF23C = (int)v16; /*0x5bca49*/
         v24 = (unsigned int *)(v16 + 2000); /*0x5bca4f*/

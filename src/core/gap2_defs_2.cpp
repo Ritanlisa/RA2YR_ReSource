@@ -543,7 +543,7 @@ void Player::RandomAssign() {
   dword_A8DA84 = dword_A8DA84; /*0x69b8d5*/
   for ( i = 0; i < dword_A8DA84; ++i ) /*0x69b8e2*/
   {
-    v3 = (&dword_A8DA78)[i]; /*0x69b8f2*/
+    v3 = ((unsigned int *)dword_A8DA78)[i]; /*0x69b8f2*/
     v4 = v3->q04F; /*0x69b8f5*/
     if ( v4 == -3 || v3->q12C == -3 ) /*0x69b8ff*/
     {
@@ -561,14 +561,14 @@ void Player::RandomAssign() {
         if ( v5 ) /*0x69b915*/
           v3->q12C = (*(int (**)(int))(*(unsigned int *)v5 + 108))(v5); /*0x69b91c*/
         else
-          v3->q12C = ((Random*)(Random *)&(&dword_A8B230)[14].NeedsSaveOrLink)->Range(0, 9); /*0x69b935*/
+          v3->q12C = ((Random*)(Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink)->Range(0, 9); /*0x69b935*/
       }
       if ( v3->q15C == -2 ) /*0x69b941*/
       {
         v3->q15C = -1; /*0x69b943*/
         v3->q14C = -1; /*0x69b946*/
         do /*0x69b966*/
-          v6 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 7); /*0x69b95e*/
+          v6 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7); /*0x69b95e*/
         while ( NetworkSession::IsPlayerInGame((NetworkSession *)&dword_A8B238, v6) ); /*0x69b966*/
         v3->q14C = v6; /*0x69b96f*/
       }
@@ -588,14 +588,14 @@ void Player::RandomAssign() {
       if ( v8 ) /*0x69b9ef*/
         v9 = (*(int (**)(int))(*(unsigned int *)v8 + 112))(v8); /*0x69b9f3*/
       else
-        v9 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 9); /*0x69ba07*/
+        v9 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 9); /*0x69ba07*/
       *(unsigned int *)v7 = v9; /*0x69ba0c*/
     }
     if ( *((unsigned int *)v7 + 8) == -2 ) /*0x69ba11*/
     {
       while ( 1 ) /*0x69ba23*/
       {
-        v10 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 7); /*0x69ba23*/
+        v10 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7); /*0x69ba23*/
         if ( v10 == -2 ) /*0x69ba2a*/
           break; /*0x69ba2a*/
         v11 = 0; /*0x69ba32*/

@@ -145,7 +145,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(unsigned int *aP1, int *aP2)
   unsigned int v4; // eax
   unsigned int result; // eax
 
-  LOBYTE(v4) = (unsigned char)(Cell::GetAdjacentPassableMask((IUnknown *)((int16_t *)((char *)this + 36)), 0)); /*0x480202*/
+  LOBYTE(v4) = (unsigned char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)((int16_t *)((char *)this + 36))), 0)); /*0x480202*/
   *((unsigned char *)this + 288) = v4; /*0x480207*/
   v4 = (char)v4; /*0x48020d*/
   if ( (char)v4 == -2 ) /*0x480213*/
@@ -157,7 +157,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(unsigned int *aP1, int *aP2)
     v4 = 0; /*0x480221*/
   }
   RenderFogOfWar(aP1, aP2, v4); /*0x480230*/
-  result = (unsigned int)(Cell::GetAdjacentPassableMask((IUnknown *)((int16_t *)((char *)this + 36)), 1)); /*0x48023e*/
+  result = (unsigned int)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)((int16_t *)((char *)this + 36))), 1)); /*0x48023e*/
   *((unsigned char *)this + 289) = result; /*0x480243*/
   if ( (*(unsigned int *)dword_A8B230 & 0x1000) != 0 && !*((unsigned char *)dword_A83D4C + 501) ) /*0x48025c*/
   {
@@ -590,13 +590,13 @@ void TacticalClass::DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int 
       }
       while ( (int)v16 < (int)&dword_AA1040 ); /*0x5472c9*/
       v18 = 4 * v17; /*0x5472cf*/
-      if ( a2 == dword_ABC2D4[v18] ) /*0x5472d8*/
+      if ( a2 == (&dword_ABC2D4)[v18] ) /*0x5472d8*/
       {
-        v13 = dword_ABC2D0[v18]; /*0x5472de*/
+        v13 = (&dword_ABC2D0)[v18]; /*0x5472de*/
         if ( v13 ) /*0x5472e6*/
         {
-          v14 = dword_ABC2DC[v18]; /*0x5472ee*/
-          v15 = dword_ABC2D8[v18] + 30; /*0x5472f4*/
+          v14 = (&dword_ABC2DC)[v18]; /*0x5472ee*/
+          v15 = (&dword_ABC2D8)[v18] + 30; /*0x5472f4*/
           goto LABEL_17; /*0x5472f4*/
         }
       }
@@ -605,13 +605,13 @@ void TacticalClass::DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int 
   else
   {
     v12 = 4 * (v10 - v11); /*0x547266*/
-    if ( a2 == dword_ABC214[v12] ) /*0x54726f*/
+    if ( a2 == (&dword_ABC214)[v12] ) /*0x54726f*/
     {
-      v13 = dword_ABC210[v12]; /*0x547275*/
+      v13 = (&dword_ABC210)[v12]; /*0x547275*/
       if ( v13 ) /*0x54727d*/
       {
-        v14 = dword_ABC21C[v12]; /*0x547289*/
-        v15 = dword_ABC218[v12] + 30; /*0x54728f*/
+        v14 = (&dword_ABC21C)[v12]; /*0x547289*/
+        v15 = (&dword_ABC218)[v12] + 30; /*0x54728f*/
 LABEL_17:
         a4 = DSurface_ViewBounds + v15 + a4 - aP5; /*0x5472f7*/
         a5 = dword_886FA4 + v14 + 15 + a5 - a7; /*0x54732c*/
@@ -878,7 +878,7 @@ LABEL_10:
   visibleCells = (int *)(this->visibleCells); /*0x6d368d*/
   do /*0x6d3734*/
   {
-    Coords = ((CellClass *)*visibleCells)->GetCoords( v25); /*0x6d369b*/
+    Coords = CellClass::GetCoords(((CellClass *)*visibleCells), v25); /*0x6d369b*/
     v21 = *Coords; /*0x6d36a2*/
     v22 = Coords[1]; /*0x6d36ae*/
     v23 = 0; /*0x6d36c0*/
@@ -1125,7 +1125,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
               v29 = (int)v28; /*0x6d70ba*/
               if ( ((unsigned int *)v28)[2] != -1 ) /*0x6d70c0*/
               {
-                PlacementRect = ((BuildingClass *)v28)->GetPlacementRect( v60); /*0x6d70d0*/
+                PlacementRect = BuildingClass::GetPlacementRect(((BuildingClass *)v28), v60); /*0x6d70d0*/
                 v47 = *PlacementRect; /*0x6d70d9*/
                 v48 = PlacementRect[1]; /*0x6d70e2*/
                 v49 = PlacementRect[2]; /*0x6d70e9*/
@@ -1401,7 +1401,7 @@ void* TacticalClass::DrawPlacementCircles()
       {
         *(float *)v52 = *(float *)&stru_87F5F0.__pad_E12[1370]; /*0x6dbec0*/
         v5 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v52)); /*0x6dbecb*/
-        Coords = ((CellClass *)v5)->GetCoords( v56); /*0x6dbed2*/
+        Coords = CellClass::GetCoords(((CellClass *)v5), v56); /*0x6dbed2*/
         v7 = *Coords; /*0x6dbed7*/
         v8 = Coords[1]; /*0x6dbed9*/
         v9 = Coords[2]; /*0x6dbedc*/
@@ -1508,7 +1508,7 @@ void* TacticalClass::DrawPlacementCircles()
       return; /*0x6dc1db*/
     *(unsigned int *)v53 = *(unsigned int *)&stru_87F5F0.__pad_E12[1370]; /*0x6dc1f6*/
     v31 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v53)); /*0x6dc1fa*/
-    v32 = ((CellClass *)v31)->GetCoords( v56); /*0x6dc201*/
+    v32 = CellClass::GetCoords(((CellClass *)v31), v56); /*0x6dc201*/
     v33 = v32[1]; /*0x6dc20d*/
     v54 = *v32 - 126; /*0x6dc210*/
     v34 = v32[2]; /*0x6dc219*/
@@ -1915,10 +1915,10 @@ void TacticalClass::CleanupResources()
   v2 = (void **)dword_B0C148; /*0x6d0279*/
   do /*0x6d02aa*/
   {
-    if ( byte_B0CBDC[v1] ) /*0x6d027e*/
+    if ( ((unsigned char *)&byte_B0CBDC)[v1] ) /*0x6d027e*/
     {
       __3_YAXPAX_Z(*v2); /*0x6d028b*/
-      byte_B0CBDC[v1] = 0; /*0x6d0293*/
+      ((unsigned char *)&byte_B0CBDC)[v1] = 0; /*0x6d0293*/
     }
     *v2++ = 0; /*0x6d029a*/
     ++v1; /*0x6d02a3*/

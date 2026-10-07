@@ -115,7 +115,7 @@ LABEL_18:
       }
 LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClass *)this));
       LOWORD(v4) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dad*/
-      return (gamemd::FootClass **)(v4 + Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2));
+      return (gamemd::FootClass **)(v4 + Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2));
     case 1: /*0x416d64*/
       v11 = *((unsigned int *)this + 361); /*0x416f29*/
       if ( v11 ) /*0x416f31*/

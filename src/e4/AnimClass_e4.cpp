@@ -737,23 +737,8 @@ LABEL_99:
     v76 = this->AnimClass_field_0x100 + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] - ZCoordToScreenY(v75); /*0x4237ff*/
     v77 = AnimClass_field_0x190; /*0x423801*/
     BYTE1(v77) = BYTE1(AnimClass_field_0x190) | 0x20; /*0x423806*/
-    DrawToSurfaceSHP( /*0x423827*/
-      (int)g_DSurface_Hidden_2,
-      v105[0],
-      (gamemd::ConvertClass *)v103,
-      v104,
-      (gamemd::ConvertClass *)(int *)v101,
-      aP5,
-      (gamemd::ConvertClass *)v77,
-      0,
-      v76 - 2,
-      2,
-      (gamemd::ConvertClass *)v83,
-      (gamemd::ConvertClass *)SLODWORD(v41),
-      0,
-      0,
-      0,
-      0);
+    DrawToSurfaceSHP(/*0x423827*/
+      (int)g_DSurface_Hidden_2, v105[0], (gamemd::ConvertClass *)v103, v104, (gamemd::ConvertClass *)(int *)v101, aP5, (gamemd::ConvertClass *)v77, 0, v76 - 2, (ConvertClass *)(2), (gamemd::ConvertClass *)v83, (gamemd::ConvertClass *)SLODWORD(v41), 0, 0, 0, 0);
     if ( this->AnimClass_field_0xC8[2].__pad_C[230] ) /*0x423832*/
     {
       v78 = *(int16_t *)(v103 + 6); /*0x423845*/
@@ -1230,7 +1215,7 @@ void AnimClass::FreeRenderBuffer(void *a1)
   {
     if ( this->AnimClass_field_0x35D[2] ) /*0x428df7*/
     {
-      Debug::Log(); /*0x428e0a*/
+      Debug::Log("Freeing loaded image for %s\n"); /*0x428e0a G57w11: IDA push seq @ 0x428e0a +1 reg-vararg(s) omitted*/
       __3_YAXPAX_Z((void *)this->AnimClass_field_0xA4); /*0x428e16*/
       this->AnimClass_field_0xA4 = 0; /*0x428e1e*/
       this->__pad_A8[0] = 0; /*0x428e28*/
@@ -1312,7 +1297,7 @@ int AnimClass_GetAnimation(int *a1, int a2)  // a2 = edi reg param (IDA sub_7298
   v13 = *v3; /*0x729901*/
   v14 = v3[1]; /*0x72990d*/
   v15 = v3[2]; /*0x729919*/
-  GroundHeight = Cell::GetGroundHeight( &v13); /*0x729922*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v13)); /*0x729922*/
   if ( v15 >= GroundHeight ) /*0x72992a*/
   {
     (*(void (**)(unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1[3] + 288))(a1[3], 0, 0); /*0x729a43*/
@@ -1382,7 +1367,7 @@ int AnimClass::ProcessFrame()
   ((Voxel *)(int)this)->TransformMatrix(); /*0x761037*/
   for ( i = 0; i < *(unsigned int *)&this->__pad_1B8[72]; ++i ) /*0x761046*/
   {
-    Coords = ((CellClass *)*(CellClass **)(*(unsigned int *)&this->__pad_1B8[60] + 4 * i))->GetCoords( v6); /*0x761056*/
+    Coords = CellClass::GetCoords(((CellClass *)*(CellClass **)(*(unsigned int *)&this->__pad_1B8[60] + 4 * i)), v6); /*0x761056*/
     ((WaveClass *)this)->DamageArea((ObjectClass *)Coords); /*0x76105e*/
   }
   v4 = *(unsigned int *)&this->__pad_120[16] - 1; /*0x761074*/

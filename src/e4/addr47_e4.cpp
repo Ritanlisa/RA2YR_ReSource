@@ -2016,7 +2016,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
 
   if ( !a3 ) /*0x474552*/
     return (CCINIClass *)((INIClass *)this)->WriteToString( aP1); /*0x47455c*/
-  INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x474575*/
+  INIClass::ClearSection((INIClass *)((int *)this), (int)g_INI_Key_Digest, 0); /*0x474575*/
   memset( (void *)(&v6.SHA1_field_0x04), 0, 9); /*0x47457e*/
   v12 = 0; /*0x47458d*/
   v13 = 0; /*0x474591*/
@@ -2036,7 +2036,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
     (int)&this->ambientSoundController[1] + 1,
     20);
   v5 = ((INIClass *)this)->WriteToString( aP1); /*0x47460a*/
-  INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x47460c*/
+  INIClass::ClearSection((INIClass *)((int *)this), (int)g_INI_Key_Digest, 0); /*0x47460c*/
   return (gamemd::CCINIClass *)(v5); /*0x474561*/
 
 }

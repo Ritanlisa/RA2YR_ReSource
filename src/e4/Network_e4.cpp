@@ -169,7 +169,7 @@ v10 = (int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)&stru_87F5F0._
                 for ( v17[55] = v11; v12 < dword_A8DA84; ++v12 ) /*0x4313b1*/
                 {
                   Debug::Log("Sending beacon delete to %s\n"); /*0x4313c2 G57c1: IDA 0x4313c2 push offset aSendingBeaconD*/
-                  ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)&v16, 61, 1, (&dword_A8DA78)[v12] + 40, 0, 0); /*0x4313e9*/
+                  ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)&v16, 61, 1, ((unsigned int *)dword_A8DA78)[v12] + 40, 0, 0); /*0x4313e9*/
                   result = dword_A8DA84; /*0x4313ee*/
                 }
               }
@@ -294,7 +294,7 @@ LABEL_5:
           for ( i = 1; i < dword_A8DA84; ++i ) /*0x4315f3*/
           {
             Debug::Log("Sending beacon text to %s\n"); /*0x431608 G57c1: IDA 0x431608 push offset aSendingBeaconT*/
-            ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)&v20, 455, 1, (&dword_A8DA78)[i] + 40, 0, 0); /*0x431632*/
+            ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)&v20, 455, 1, ((unsigned int *)dword_A8DA78)[i] + 40, 0, 0); /*0x431632*/
             result = dword_A8DA84; /*0x431637*/
           }
         }
@@ -437,16 +437,16 @@ LABEL_10:
               v46 = v5; /*0x48d31e*/
               if ( !v7 ) /*0x48d322*/
               {
-                ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA78)[v6])); /*0x48d331*/
+                ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v6])); /*0x48d331*/
                 Debug::Log("Sending to %s\n"); /*0x48d33c G57c1: IDA 0x48d33c push offset aSendingToS*/
-                ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v51, 91, 0, (&dword_A8DA78)[v6] + 40, v46, 0); /*0x48d366*/
+                ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v51, 91, 0, ((unsigned int *)dword_A8DA78)[v6] + 40, v46, 0); /*0x48d366*/
                 MessageLoop(); /*0x48d36b*/
                 ((Network *)(&unk_A8E9C0))->ReceiveLoop(); /*0x48d375*/
                 v42 = 0; /*0x48d37a*/
                 v8 = (char **)dword_A8DA90; /*0x48d382*/
                 while ( 1 ) /*0x48d38d*/
                 {
-                  v9 = (char *)(&dword_A8DA78)[v6]; /*0x48d38d*/
+                  v9 = (char *)((unsigned int *)dword_A8DA78)[v6]; /*0x48d38d*/
                   v10 = ToWideStringChar((IUnknown *)(*v8)); /*0x48d399*/
                   v11 = ToWideStringChar((IUnknown *)(v9)); /*0x48d39b*/
                   if ( !_strcmpi(v10, v11) ) /*0x48d3a2*/
@@ -461,15 +461,15 @@ LABEL_10:
                   v12 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d3e7*/
                 if ( v12 - (&dword_A8E284)[v42] > 2400 ) /*0x48d3fa*/
                 {
-                  ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA78)[v6])); /*0x48d404*/
+                  ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v6])); /*0x48d404*/
                   Debug::Log("No PORT_PROBE from %s in the last 40 seconds\n"); /*0x48d40f G57c1: IDA 0x48d40f push offset aNoPortProbeFro*/
-                  v13 = (&dword_A8DA78)[v6]; /*0x48d41d*/
+                  v13 = ((unsigned int *)dword_A8DA78)[v6]; /*0x48d41d*/
                   v14 = *(unsigned short *)(v13 + 131); /*0x48d420*/
                   if ( v14 != (unsigned short)v46 && v14 >= 0x400u ) /*0x48d432*/
                   {
                     ToWideStringChar((IUnknown *)((char *)v13)); /*0x48d434*/
                     Debug::Log("Sending to %s on mangled port from pserver\n"); /*0x48d43f G57c1: IDA 0x48d43f push offset aSendingToSOnMa*/
-                    v15 = (&dword_A8DA78)[v6]; /*0x48d44d*/
+                    v15 = ((unsigned int *)dword_A8DA78)[v6]; /*0x48d44d*/
                     LOWORD(v16) = *(unsigned short *)(v15 + 131); /*0x48d456*/
                     ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v51, 91, 0, v15 + 40, v16, 0); /*0x48d46c*/
                   }
@@ -574,9 +574,9 @@ LABEL_25:
             {
               while ( 1 ) /*0x48da6e*/
               {
-                if ( (uint8_t)((NetworkID *)((bool *)((&dword_A8DA78)[v38] + 40)))->Compare((int)dword_A8D804) ) /*0x48da6e*/
+                if ( (uint8_t)((NetworkID *)((bool *)(((unsigned int *)dword_A8DA78)[v38] + 40)))->Compare((int)dword_A8D804) ) /*0x48da6e*/
                 {
-                  v39 = ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA78)[v38])); /*0x48da85*/
+                  v39 = ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v38])); /*0x48da85*/
                   if ( !_strcmpi(v39, &stru_A8D600.__pad_34[8]) ) /*0x48da8b*/
                     break; /*0x48da8b*/
                 }
@@ -659,16 +659,16 @@ LABEL_25:
               v43 = (uint16_t *)(&dword_A8E2B2); /*0x48d64c*/
               do /*0x48d788*/
               {
-                if ( (uint8_t)((NetworkID *)((bool *)((&dword_A8DA78)[v23] + 40)))->Compare((int)dword_A8D804) ) /*0x48d665*/
+                if ( (uint8_t)((NetworkID *)((bool *)(((unsigned int *)dword_A8DA78)[v23] + 40)))->Compare((int)dword_A8D804) ) /*0x48d665*/
                 {
-                  v24 = ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA78)[v23])); /*0x48d680*/
+                  v24 = ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v23])); /*0x48d680*/
                   if ( !_strcmpi(v24, &stru_A8D600.__pad_34[8]) ) /*0x48d686*/
                   {
                     v45 = 0; /*0x48d696*/
                     v25 = (char **)dword_A8DA90; /*0x48d69a*/
                     while ( 1 ) /*0x48d6a6*/
                     {
-                      v26 = (char *)(&dword_A8DA78)[v23]; /*0x48d6a6*/
+                      v26 = (char *)((unsigned int *)dword_A8DA78)[v23]; /*0x48d6a6*/
                       v27 = ToWideStringChar((IUnknown *)(*v25)); /*0x48d6b0*/
                       v28 = ToWideStringChar((IUnknown *)(v26)); /*0x48d6b2*/
                       if ( !_strcmpi(v27, v28) ) /*0x48d6b9*/
@@ -684,13 +684,13 @@ LABEL_25:
                     (&dword_A8E284)[v45] = v29; /*0x48d701*/
 LABEL_56:
                     v30 = *(unsigned short *)dword_A8D804; /*0x48d708*/
-                    if ( *(unsigned short *)dword_A8D804 != *(unsigned short *)((&dword_A8DA78)[v23] + 40) || *(unsigned short *)dword_A8D804 != *v43 ) /*0x48d724*/
+                    if ( *(unsigned short *)dword_A8D804 != *(unsigned short *)(((unsigned int *)dword_A8DA78)[v23] + 40) || *(unsigned short *)dword_A8D804 != *v43 ) /*0x48d724*/
                     {
                       Debug::Log("Strange port number in PORT_PROBE packet\n"); /*0x48d72b G57c1: IDA 0x48d72b push offset aStrangePortNum*/
                       if ( !v30 ) /*0x48d73f*/
                         v30 = 1234; /*0x48d741*/
                       *v43 = v30; /*0x48d746*/
-                      ((Network *)((Network *)((&dword_A8DA78)[v23] + 40)))->SetPort(v30); /*0x48d756*/
+                      ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[v23] + 40)))->SetPort(v30); /*0x48d756*/
                       Debug::Log("Adjusting port number for player %s from %d to %d\n"); /*0x48d76d G57c1: IDA 0x48d76d push offset aAdjustingPortN*/
                     }
                   }
@@ -1094,7 +1094,7 @@ int Network::sendData(AnimClass * aP1)
   }
   v7 = *(void (****)(unsigned int, int))((char *)this + 4 * v4 + 40); /*0x540f37*/
   if ( v7 ) /*0x540f41*/
-    (**v7)(v7, 1); /*0x540f47*/
+    (**v7)((unsigned int)(v7), 1); /*0x540f47*/
   v8 = v4; /*0x540f4c*/
   if ( v4 < *((unsigned int *)this + 17) - 1 ) /*0x540f51*/
   {
@@ -1465,7 +1465,7 @@ if ( (*(int (**)(unsigned int, char *, void *, Network *, unsigned int))(**((uns
 LABEL_14:
               if ( !v6 ) /*0x541980*/
               {
-                Debug::Log(); /*0x54198b*/
+                Debug::Log("NAT Alert - port number fiddling detected!\n"); /*0x54198b G57w11: IDA push seq @ 0x54198b*/
                 if ( (unsigned int)Network_field_0xC >= 0x10 /*0x5419ad*/
                   && *(unsigned int *)&v47[0].__pad_B6 != 2
                   && (unsigned int)Network_field_0xC >= 0x3F )
@@ -1486,49 +1486,49 @@ LABEL_14:
                     {
                       while ( 1 ) /*0x541a1b*/
                       {
-                        v11 = ToWideStringChar( (IUnknown *)((char *)dword_A8DA78[v10])); /*0x541a1b*/
+                        v11 = ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v10])); /*0x541a1b*/
                         if ( !_strcmpi(v11,(const char *)( &v47[0].q01C)) ) /*0x541a21*/
                           break; /*0x541a21*/
                         if ( ++v10 >= dword_A8DA84 ) /*0x541a35*/
                           goto LABEL_87; /*0x541a35*/
                       }
-                      if ( !(uint8_t)((NetworkID *)((bool *)(dword_A8DA78[v10] + 40)))->Compare((int)v47) /*0x541a67*/
-                        || *(unsigned short *)(dword_A8DA78[v10] + 40) != v46[0] )
+                      if ( !(uint8_t)((NetworkID *)((bool *)(((unsigned int *)dword_A8DA78)[v10] + 40)))->Compare((int)v47) /*0x541a67*/
+                        || *(unsigned short *)(((unsigned int *)dword_A8DA78)[v10] + 40) != v46[0] )
                       {
-                        Debug::Log(); /*0x541a7d*/
+                        Debug::Log("Player %s is having his port translated to %d\n"); /*0x541a7d G57w11: IDA push seq @ 0x541a7d +2 reg-vararg(s) omitted*/
                         v12 = v46[0]; /*0x541a82*/
                         v13 = *(&dword_A8E2B2 + v10); /*0x541a86*/
                         *(&dword_A8E2B2 + v10) = v46[0]; /*0x541a91*/
                         Network::reconnect( /*0x541aab*/
                           (Network *)&stru_B052C0[16],
-                          *(unsigned int *)(dword_A8DA78[v10] + 111),
+                          *(unsigned int *)(((unsigned int *)dword_A8DA78)[v10] + 111),
                           v12);
 (*(void (**)(unsigned int, Network *, int16_t))(**((unsigned int **)this + 18) + 64))( /*0x541abb*/ *((unsigned int *)this + 18), (Network *)(v47), v13);
 
 
 
-                        v14 = dword_A8DA78[v10]; /*0x541ac7*/
+                        v14 = ((unsigned int *)dword_A8DA78)[v10]; /*0x541ac7*/
                         LOWORD(v14) = *(unsigned short *)(v14 + 40); /*0x541acc*/
 (*(void (**)(unsigned int, Network *, int))(**((unsigned int **)this + 18) + 64))( /*0x541ad6*/ *((unsigned int *)this + 18), (Network *)(v47), v14);
 
 
 
-                        v15 = (int *)(dword_A8DA78[v10] + 40); /*0x541ae5*/
+                        v15 = (int *)(((unsigned int *)dword_A8DA78)[v10] + 40); /*0x541ae5*/
                         *v15 = *(unsigned int *)&v47[0].q000; /*0x541ae8*/
                         v15[1] = (int)*(unsigned int *)&v47[0].q004; /*0x541aee*/
                         v15[2] = (int)*(unsigned int *)&v47[0].q008; /*0x541af5*/
-                        ((Network *)((Network *)(dword_A8DA78[v10] + 40)))->SetPort(v46[0]); /*0x541b09*/
+                        ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[v10] + 40)))->SetPort(v46[0]); /*0x541b09*/
                         NetworkManager::SetPlayerAddress( /*0x541b24*/
                           (NetworkManager *)&stru_B052C0[16],
-                          *(unsigned int *)(dword_A8DA78[v10] + 111),
-                          (unsigned int *)(dword_A8DA78[v10] + 40));
-                        v16 = (int *)(dword_A8DA90[GameClass::FindPlayerName(v10)] + 40); /*0x541b3f*/
+                          *(unsigned int *)(((unsigned int *)dword_A8DA78)[v10] + 111),
+                          (unsigned int *)(((unsigned int *)dword_A8DA78)[v10] + 40));
+                        v16 = (int *)((&dword_A8DA90)[GameClass::FindPlayerName(v10)] + 40); /*0x541b3f*/
                         *v16 = *(unsigned int *)&v47[0].q000; /*0x541b42*/
                         v16[1] = (int)*(unsigned int *)&v47[0].q004; /*0x541b48*/
                         v16[2] = (int)*(unsigned int *)&v47[0].q008; /*0x541b4f*/
                         v43 = v46[0]; /*0x541b56*/
                         PlayerName = GameClass::FindPlayerName(v10); /*0x541b5d*/
-                        ((Network *)((Network *)(dword_A8DA90[PlayerName] + 40)))->SetPort(v43); /*0x541b6c*/
+                        ((Network *)((Network *)((&dword_A8DA90)[PlayerName] + 40)))->SetPort(v43); /*0x541b6c*/
                         v18 = 0; /*0x541b74*/
                         if ( *((int *)this + 17) > 0 ) /*0x541b78*/
                         {
@@ -1549,7 +1549,7 @@ LABEL_14:
                           v21[2] = (int)*(unsigned int *)&v47[0].q008; /*0x541bbe*/
                           ((Network *)((Network *)(*((unsigned int *)this + v18 + 10) + 76)))->SetPort(v46[0]); /*0x541bcd*/
                           ((Network *)((Network *)(*((unsigned int *)this + v18 + 10) + 76)))->FormatAddress(0); /*0x541bdb*/
-                          Debug::Log(); /*0x541be7*/
+                          Debug::Log("Set address for connection %d to %s\n"); /*0x541be7 G57w11: IDA push seq @ 0x541be7 +2 reg-vararg(s) omitted*/
 LABEL_33:
                           Network_field_0xC = v47[0].q00C; /*0x541bef*/
                         }
@@ -1557,7 +1557,7 @@ LABEL_33:
                         {
                           if ( *((unsigned int *)this + 17) ) /*0x541c00*/
                           {
-                            v22 = dword_A8DA78[v10]; /*0x541c16*/
+                            v22 = ((unsigned int *)dword_A8DA78)[v10]; /*0x541c16*/
                             if ( ((char *)&stru_A80220) > *(unsigned int *)(v22 + 111) ) /*0x541c1c*/
                             {
                               if ( SessionClass::IsValidHouse( /*0x541c36*/
@@ -1566,7 +1566,7 @@ LABEL_33:
                               {
                                 ((Network *)(v47))->FormatAddress(0); /*0x541c49*/
                                 ((Network *)((Network *)(*((unsigned int *)this + 20) + 76)))->FormatAddress(0); /*0x541c57*/
-                                Debug::Log(); /*0x541c69*/
+                                Debug::Log("Frame %d, Router apparently changed address from %s to %s\n"); /*0x541c69 G57w11: IDA push seq @ 0x541c69 +2 reg-vararg(s) omitted*/
                                 v23 = (int *)(*((unsigned int *)this + 20) + 76); /*0x541c75*/
                                 *v23 = *(unsigned int *)&v47[0].q000; /*0x541c7b*/
                                 v23[1] = (int)*(unsigned int *)&v47[0].q004; /*0x541c81*/
@@ -1593,7 +1593,7 @@ LABEL_33:
             else
             {
               v7 = &dword_A8E2B2; /*0x541943*/
-              while ( !(uint8_t)((NetworkID *)((bool *)(dword_A8DA78[v5] + 40)))->Compare((int)v47) || *v7 != v46[0] ) /*0x54196b*/
+              while ( !(uint8_t)((NetworkID *)((bool *)(((unsigned int *)dword_A8DA78)[v5] + 40)))->Compare((int)v47) || *v7 != v46[0] ) /*0x54196b*/
               {
                 ++v5; /*0x541976*/
                 ++v7; /*0x541977*/
@@ -1625,7 +1625,7 @@ LABEL_33:
         }
         ++*((unsigned int *)this + 41); /*0x542183*/
 LABEL_91:
-        Debug::Log(); /*0x54218f*/
+        Debug::Log("RouterChannel recive buffer overflow %d\n"); /*0x54218f G57w11: IDA push seq @ 0x54218f +1 reg-vararg(s) omitted*/
         goto LABEL_92; /*0x54218f*/
       }
       if ( *(unsigned short *)&v47[0].q0B4 != *((unsigned short *)this + 16) /*0x541d63*/
@@ -1651,7 +1651,7 @@ LABEL_91:
         else if ( *((int *)this + 17) > 0 ) /*0x541dad*/
         {
           ((Network *)(v47))->FormatAddress(0); /*0x541e46*/
-          Debug::Log(); /*0x541e59*/
+          Debug::Log("Adding DATA_ACK packet %d from %s ; %d to multicast queue\n"); /*0x541e59 G57w11: IDA push seq @ 0x541e59 +2 reg-vararg(s) omitted*/
 if ( !(*(int (**)(unsigned int, char *, void *))(**((unsigned int **)this + 10) + 12))( /*0x541e6f*/ *((unsigned int *)this + 10), (char *)(&v47[0].q0B4), (void *)(Network_field_0xC)) )
 
 
@@ -1688,7 +1688,7 @@ LABEL_60:
               if ( v29 >= dword_A8DA84 ) /*0x541f85*/
                 goto LABEL_86; /*0x541f85*/
             }
-            v35 = (int *)(dword_A8DA78[v29] + 40); /*0x542113*/
+            v35 = (int *)(((unsigned int *)dword_A8DA78)[v29] + 40); /*0x542113*/
             v44 = *(signed char *)&v47[0].q0C4; /*0x542116*/
             *v35 = *(unsigned int *)&v47[0].q000; /*0x542117*/
             v35[1] = (int)*(unsigned int *)&v47[0].q004; /*0x54211d*/
@@ -1696,7 +1696,7 @@ LABEL_60:
             if ( (*(int (**)(IPXManagerClass *, int))(*(unsigned int *)&this->q000 + 24))(this, v44) != -1 ) /*0x542131*/
             {
               v36 = (int *)(*((unsigned int *)this /*0x542143*/
-                            + (*(int (**)(IPXManagerClass *, int))(*(unsigned int *)&this->q000 + 24))(this, v30)
+                            + (*(int (**)(IPXManagerClass *, int))(*(unsigned int *)&this->q000 + 24))((IPXManagerClass *)(this), v30)
                             + 10)
                           + 76);
               *v36 = *(unsigned int *)&v47[0].q000; /*0x542146*/
@@ -1735,7 +1735,7 @@ if ( !(*(int (**)(unsigned int, char *, void *))(**((unsigned int **)this + v26 
         Network_field_0xC = (void *)(0); /*0x541fa8*/
         ++*((unsigned int *)this + 41); /*0x541fad*/
 LABEL_74:
-        Debug::Log(); /*0x541fb9*/
+        Debug::Log("Reecive buffer overflow %d\n"); /*0x541fb9 G57w11: IDA push seq @ 0x541fb9 +1 reg-vararg(s) omitted*/
       }
 LABEL_75:
       if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x541fc8*/
@@ -1746,15 +1746,15 @@ LABEL_75:
           {
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x541fff*/
             {
-              if ( (uint8_t)((NetworkID *)((bool *)(dword_A8DA78[i] + 40)))->Compare(*((unsigned int *)this + 20) + 76) /*0x54203e*/
+              if ( (uint8_t)((NetworkID *)((bool *)(((unsigned int *)dword_A8DA78)[i] + 40)))->Compare(*((unsigned int *)this + 20) + 76) /*0x54203e*/
                 && SessionClass::IsValidHouse(
                      (int)&dword_A8B238,
-                     *((void **)((char *)&stru_A80220) + *(unsigned int *)(dword_A8DA78[i] + 111))) )
+                     *((void **)((char *)&stru_A80220) + *(unsigned int *)(((unsigned int *)dword_A8DA78)[i] + 111))) )
               {
                 ((Network *)(v47))->FormatAddress(0); /*0x542051*/
                 ((Network *)((Network *)(*((unsigned int *)this + 20) + 76)))->FormatAddress(0); /*0x54205f*/
-                Debug::Log(); /*0x542071*/
-                v33 = (int *)(dword_A8DA78[i] + 40); /*0x542085*/
+                Debug::Log("Frame %d, Router apparently changed address from %s to %s\n"); /*0x542071 G57w11: IDA push seq @ 0x542071 +2 reg-vararg(s) omitted*/
+                v33 = (int *)(((unsigned int *)dword_A8DA78)[i] + 40); /*0x542085*/
                 *v33 = *(unsigned int *)&v47[0].q000; /*0x542088*/
                 v33[1] = (int)*(unsigned int *)&v47[0].q004; /*0x54208e*/
                 v33[2] = (int)*(unsigned int *)&v47[0].q008; /*0x542095*/
@@ -1769,7 +1769,7 @@ LABEL_75:
                 dword_A8DBAC = *(unsigned int *)&v47[0].q008; /*0x5420df*/
                 NetworkManager::SetPlayerAddress( /*0x5420f6*/
                   (NetworkManager *)&stru_B052C0[16],
-                  *(unsigned int *)(dword_A8DA78[i] + 111),
+                  *(unsigned int *)(((unsigned int *)dword_A8DA78)[i] + 111),
                   v47);
               }
             }
@@ -1811,7 +1811,7 @@ LABEL_92:
       {
         if ( !(*(int (**)(int))(*(unsigned int *)v40 + 20))(v40) ) /*0x542207*/
         {
-          Debug::Log(); /*0x542213*/
+          Debug::Log("Multicast channel has gone bad\n"); /*0x542213 G57w11: IDA push seq @ 0x542213*/
           v47[0].Network_field_0x10 = 0; /*0x54221b*/
         }
       }
@@ -1826,7 +1826,7 @@ LABEL_92:
       {
         v47[0].Network_field_0x10 = 0; /*0x54223a*/
         *((unsigned int *)this + 42) = *(unsigned int *)(v41->Socket + 100); /*0x542249*/
-        Debug::Log(); /*0x54224f*/
+        Debug::Log("Error - Connection %d has gone bad\n"); /*0x54224f G57w11: IDA push seq @ 0x54224f +1 reg-vararg(s) omitted*/
       }
       ++v38; /*0x54225a*/
       v41 = (IPXManagerClass *)((char *)v41 + 4); /*0x54225b*/
@@ -1974,7 +1974,7 @@ AbstractClass * * Network::SetupRematch()
   v21 = 0; /*0x5c47c2*/
   for ( i = 0; v5 < dword_A8DA84; ++v5 ) /*0x5c47d0*/
   {
-    ((Network *)((Network *)(dword_A8DA78[v5] + 40)))->GetAddress( (unsigned int *)(&v16), (int)v17, (unsigned short *)(&v15)); /*0x5c47ed*/
+    ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[v5] + 40)))->GetAddress( (unsigned int *)(&v16), (int)v17, (unsigned short *)(&v15)); /*0x5c47ed*/
     (*(void (**)(unsigned int *, char *, int))(*dword_887628 + 44))( (unsigned int *)(dword_887628), (char *)(v18), v15); /*0x5c4804*/
   }
   qmemcpy( (void *)(&unk_A8DBCC), (const void *)(&this->q0C4), 0x60u); /*0x5c4827*/
@@ -1988,28 +1988,28 @@ AbstractClass * * Network::SetupRematch()
   dword_A8E2AC = *(unsigned int *)&this->q190; /*0x5c488a*/
   dword_A8ED94 = this->u32_9C; /*0x5c4896*/
   InitRandomSeed(v14); /*0x5c489c*/
-  Debug::Log(); /*0x5c48ac*/
+  Debug::Log("Setup Rematch: Random Seed = %d\n"); /*0x5c48ac G57w11: IDA push seq @ 0x5c48ac +1 reg-vararg(s) omitted*/
   g_RulesInitConfig = this->q0A0; /*0x5c48ba*/
-  *(unsigned int *)&stru_A8B250[32] = this->u32_A4; /*0x5c48c6*/
-  *(unsigned int *)&stru_A8B250[12] = *(unsigned int *)&this->q0A8; /*0x5c48d2*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[32] = this->u32_A4; /*0x5c48c6*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[12] = *(unsigned int *)&this->q0A8; /*0x5c48d2*/
   byte_A8B31F = this->u8_AC; /*0x5c48dd*/
-  stru_A8B250[16] = this->u8_AD; /*0x5c48e9*/
-  stru_A8B250[17] = this->u8_AE; /*0x5c48f5*/
+  ((unsigned char *)&stru_A8B250)[16] = this->u8_AD; /*0x5c48e9*/
+  ((unsigned char *)&stru_A8B250)[17] = this->u8_AE; /*0x5c48f5*/
   LOBYTE(dword_A8B320) = this->u8_AF; /*0x5c4900*/
   byte_A8B31C = this->q0B0; /*0x5c490c*/
   byte_A8B31D = this->u8_B1; /*0x5c4918*/
-  stru_A8B250[8] = this->u8_B2; /*0x5c4923*/
+  ((unsigned char *)&stru_A8B250)[8] = this->u8_B2; /*0x5c4923*/
   byte_A8B31E = this->u8_B3; /*0x5c492f*/
-  *(unsigned int *)&stru_A8B250[40] = this->u32_B8; /*0x5c493b*/
-  stru_A8B250[18] = this->u8_BC; /*0x5c4946*/
-  stru_A8B250[19] = BYTE1(this->u8_BC); /*0x5c4952*/
-  stru_A8B250[20] = BYTE2(this->u8_BC); /*0x5c495e*/
-  stru_A8B250[28] = HIBYTE(this->u8_BC); /*0x5c4969*/
-  *(unsigned int *)&stru_A8B250[24] = *(unsigned int *)&this->q0C0; /*0x5c497b*/
-  LoadScenarioClassByIndex(*(int *)&stru_A8B250[4]); /*0x5c4981*/
-  dword_A8EB60 = *(AudioOptionsClass *)&stru_A8B250[24]; /*0x5c4997*/
-  dword_A8B230[130].vtable3 = *(unsigned int *)&stru_A8B250[4]; /*0x5c499c*/
-  switch ( *(unsigned int *)&stru_A8B250[24] ) /*0x5c49b0*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[40] = this->u32_B8; /*0x5c493b*/
+  ((unsigned char *)&stru_A8B250)[18] = this->u8_BC; /*0x5c4946*/
+  ((unsigned char *)&stru_A8B250)[19] = BYTE1(this->u8_BC); /*0x5c4952*/
+  ((unsigned char *)&stru_A8B250)[20] = BYTE2(this->u8_BC); /*0x5c495e*/
+  ((unsigned char *)&stru_A8B250)[28] = HIBYTE(this->u8_BC); /*0x5c4969*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] = *(unsigned int *)&this->q0C0; /*0x5c497b*/
+  LoadScenarioClassByIndex(*(int *)&((unsigned char *)&stru_A8B250)[4]); /*0x5c4981*/
+  dword_A8EB60 = *(AudioOptionsClass *)&((unsigned char *)&stru_A8B250)[24]; /*0x5c4997*/
+  ((AbstractClass *)dword_A8B230)[130].vtable3 = *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]; /*0x5c499c*/
+  switch ( *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] ) /*0x5c49b0*/
   {
     case 0: /*0x5c49b0*/
       dword_A8B550 = (unsigned int)(wchar_t *)40; /*0x5c49b7*/
@@ -2062,12 +2062,12 @@ LABEL_12:
       if ( !v7 || v7 == 1000 ) /*0x5c4a8c*/
       {
         dword_A8B570 = 0; /*0x5c4b73*/
-        Debug::Log(); /*0x5c4b79*/
+        Debug::Log("Ping times not available\n"); /*0x5c4b79 G57w11: IDA push seq @ 0x5c4b79*/
 LABEL_34:
         v10 = (wchar_t *)(dword_A8B550); /*0x5c4b81*/
         goto LABEL_35; /*0x5c4b81*/
       }
-      Debug::Log(); /*0x5c4a98*/
+      Debug::Log("Max ping is %d ms\n"); /*0x5c4a98 G57w11: IDA push seq @ 0x5c4a98 +1 reg-vararg(s) omitted*/
       if ( v7 <= 1000 ) /*0x5c4aa6*/
       {
         if ( v7 < 600 ) /*0x5c4aba*/
@@ -2110,8 +2110,8 @@ LABEL_35:
       dword_A8B568 = (int)v10; /*0x5c4b87*/
       memset( (void *)(&unk_A8B574), 0, 0x340u); /*0x5c4b99*/
       byte_B77A04 = 0; /*0x5c4ba1*/
-      dword_A8EB60 = *(AudioOptionsClass *)&stru_A8B250[24]; /*0x5c4ba7*/
-      byte_B76568[0] = 0; /*0x5c4bad*/
+      dword_A8EB60 = *(AudioOptionsClass *)&((unsigned char *)&stru_A8B250)[24]; /*0x5c4ba7*/
+      ((unsigned char *)&byte_B76568)[0] = 0; /*0x5c4bad*/
       Scenario::PreGameInit(); /*0x5c4bb3*/
       dword_8B41F8 = 0; /*0x5c4bbf*/
       dword_8B41FC = 0; /*0x5c4bc5*/
@@ -2120,7 +2120,7 @@ LABEL_35:
       dword_A802CC = 0; /*0x5c4bd7*/
       dword_A802D0 = 0; /*0x5c4bdd*/
       ((Tooltip *)(dword_887368))->Enable(0); /*0x5c4be3*/
-      Debug::Log(); /*0x5c4bf4*/
+      Debug::Log("@@@@ Before destroying connections players.count() = %d\n"); /*0x5c4bf4 G57w11: IDA push seq @ 0x5c4bf4 +1 reg-vararg(s) omitted*/
       while ( Network::GetSendCount( (void *)(&unk_A8E9C0)) ) /*0x5c4c01*/
       {
         ConnectionSpeed = ((Network *)(&unk_A8E9C0))->GetConnectionSpeed(0); /*0x5c4c10*/
@@ -2264,16 +2264,16 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
   if ( dword_A8E254 ) /*0x5d9469*/
   {
     v5 = 1; /*0x5d9471*/
-    Debug::Log(); /*0x5d9476*/
+    Debug::Log("Source port %d specified by user\n"); /*0x5d9476 G57w11: IDA push seq @ 0x5d9476 +1 reg-vararg(s) omitted*/
     if ( byte_A8E180 ) /*0x5d9485*/
     {
       v5 = 9; /*0x5d948c*/
-      Debug::Log(); /*0x5d9491*/
+      Debug::Log("Netgear bug specified by command line or SendDelay flag\n"); /*0x5d9491 G57w11: IDA push seq @ 0x5d9491*/
     }
     return (IPXConnClass * *)v5; /*0x5d94a5*/
   }
   Ticks = TimerGetTicks(); /*0x5d94bf*/
-  Debug::Log(); /*0x5d94cb*/
+  Debug::Log("About to call gethostbyname for the mangler address\n"); /*0x5d94cb G57w11: IDA push seq @ 0x5d94cb*/
   v7 = 0; /*0x5d94d3*/
   v86 = 0; /*0x5d94d5*/
   *(unsigned int *)v78 = dword_B76338; /*0x5d94d9*/
@@ -2286,7 +2286,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
     {
       v8 = (const char *)(v85); /*0x5d9507*/
       v75[0] = **(unsigned short **)v78; /*0x5d9513*/
-      Debug::Log(); /*0x5d9518*/
+      Debug::Log("Using mangler from servserv\n"); /*0x5d9518 G57w11: IDA push seq @ 0x5d9518*/
     }
     v84 += 32; /*0x5d953b*/
     v85 += 128; /*0x5d953f*/
@@ -2299,7 +2299,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
     if ( !v9 ) /*0x5d9591*/
     {
       WSAGetLastError(); /*0x5d9628*/
-      Debug::Log(); /*0x5d9633*/
+      Debug::Log("gethostbyname failed! Error code %d\n"); /*0x5d9633 G57w11: IDA push seq @ 0x5d9633 +1 reg-vararg(s) omitted*/
       break; /*0x5d9633*/
     }
     v10 = 0; /*0x5d9597*/
@@ -2310,7 +2310,7 @@ LABEL_16:
       v12 = (unsigned int *)((int *)((char *)&v81 + v7)); /*0x5d95c8*/
       v7 += 4; /*0x5d95cc*/
       *v12 = **(unsigned int **)v9->h_addr_list; /*0x5d95d1*/
-      Debug::Log(); /*0x5d95f2*/
+      Debug::Log("Found mangler address at %d.%d.%d.%d\n"); /*0x5d95f2 G57w11: IDA push seq @ 0x5d95f2 +2 reg-vararg(s) omitted*/
     }
     else
     {
@@ -2588,7 +2588,7 @@ LABEL_69:
       {
         if ( (v43 & 0x10) != 0 ) /*0x5d9a72*/
         {
-          Debug::Log(); /*0x5d9a7d*/
+          Debug::Log("Testing to see if the NAT mangles differently per destination port at the same IP\n"); /*0x5d9a7d G57w11: IDA push seq @ 0x5d9a7d*/
           v47 = 255; /*0x5d9a85*/
           while ( 1 ) /*0x5d9a8e*/
           {
@@ -2709,11 +2709,11 @@ LABEL_142:
 LABEL_150:
           if ( (void *)v61 == (char *)this->q008 + v55 ) /*0x5d9cfd*/
           {
-            Debug::Log(); /*0x5d9d5e*/
+            Debug::Log("NAT uses the same source port for different destination ports\n"); /*0x5d9d5e G57w11: IDA push seq @ 0x5d9d5e*/
           }
           else
           {
-            Debug::Log(); /*0x5d9d04*/
+            Debug::Log("NAT uses different source ports for different destination ports\n"); /*0x5d9d04 G57w11: IDA push seq @ 0x5d9d04*/
             v65 = v67; /*0x5d9d09*/
             LOBYTE(v65) = v67 | 0x40; /*0x5d9d10*/
             v67 = v65; /*0x5d9d12*/
@@ -2726,7 +2726,7 @@ LABEL_152:
           v43 |= 0x40u; /*0x5d9d68*/
         }
       }
-      Debug::Log(); /*0x5d9d1f*/
+      Debug::Log("Testing for Netgear bug\n"); /*0x5d9d1f G57w11: IDA push seq @ 0x5d9d1f*/
       if ( dword_B77E18 == 2 || byte_A8E180 ) /*0x5d9d38*/
       {
         v43 |= 8u; /*0x5d9d3f*/
@@ -2784,25 +2784,25 @@ unsigned short Network::ResolveNetworkAddress(uint16_t a2)
     strcpy( (char *)(&v22.__pad_0[24]), (const char *)(&g_WindowManager.__pad_EC[128 * dword_B77E20 + 688])); /*0x5da174*/
     Debug::Log(); /*0x5da17d*/
   }
-  Debug::Log(); /*0x5da18f*/
+  Debug::Log("Firewall helper - About to call gethostbyname for %s\n"); /*0x5da18f G57w11: IDA push seq @ 0x5da18f +1 reg-vararg(s) omitted*/
   v5 = gethostbyname(&v22.__pad_0[24]); /*0x5da19c*/
   if ( !v5 ) /*0x5da1a3*/
   {
     WSAGetLastError(); /*0x5da1a5*/
-    result = Debug::Log(); /*0x5da1b0*/
+    result = Debug::Log("gethostbyname failed! Error code %d\n"); /*0x5da1b0 G57w11: IDA push seq @ 0x5da1b0 +1 reg-vararg(s) omitted*/
     LOWORD(result) = a2; /*0x5da1b5*/
     return result; /*0x5da1ca*/
   }
   v19 = **(unsigned int **)v5->h_addr_list; /*0x5da1dd*/
-  Debug::Log(); /*0x5da20d*/
+  Debug::Log("Mangler address is %d.%d.%d.%d ; %d\n"); /*0x5da20d G57w11: IDA push seq @ 0x5da20d +2 reg-vararg(s) omitted*/
   ((Waypoint*)&v22)->InitInvalid(); /*0x5da219*/
   Struct::Copy6Bytes(v22.__pad_0, (int)&v19); /*0x5da227*/
   ((Network *)((Network *)&v22))->SetPort(v4); /*0x5da231*/
   ((Network *)((Network *)&v22))->FormatAddress(0); /*0x5da23c*/
-  Debug::Log(); /*0x5da247*/
+  Debug::Log("Mangler address is %s\n"); /*0x5da247 G57w11: IDA push seq @ 0x5da247 +1 reg-vararg(s) omitted*/
   v6 = 0; /*0x5da250*/
   v18 = 0; /*0x5da258*/
-  Debug::Log(); /*0x5da25c*/
+  Debug::Log("fw = %08x\n"); /*0x5da25c G57w11: IDA push seq @ 0x5da25c +1 reg-vararg(s) omitted*/
   v20 = Network_field_0x0 & 4; /*0x5da26b*/
   if ( (Network_field_0x0 & 4) != 0 ) /*0x5da26f*/
   {
@@ -2839,7 +2839,7 @@ LABEL_19:
     (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x5da2f8*/
   }
   v21 = (uint16_t)v6; /*0x5da308*/
-  Debug::Log(); /*0x5da30c*/
+  Debug::Log("FirewallHelper - Getting mangling for port %d\n"); /*0x5da30c G57w11: IDA push seq @ 0x5da30c +1 reg-vararg(s) omitted*/
   Ticks = TimerGetTicks(); /*0x5da31d*/
   v11 = 180; /*0x5da325*/
   v12 = 0; /*0x5da332*/
@@ -2856,7 +2856,7 @@ LABEL_19:
       break; /*0x5da355*/
     Network::QueryAddress( (IPXManagerClass *)((uint16_t *)&v22), v6, dword_830CA8, 0); /*0x5da368*/
     v12 = Network::WaitForPacket(dword_830CA8, 30); /*0x5da37c*/
-    Debug::Log(); /*0x5da38c*/
+    Debug::Log("FirewallHelper - Mangled port = %d\n"); /*0x5da38c G57w11: IDA push seq @ 0x5da38c +1 reg-vararg(s) omitted*/
     v11 = 180; /*0x5da391*/
   }
   ++dword_830CA8; /*0x5da39a*/
@@ -2884,18 +2884,18 @@ LABEL_19:
         v14 -= 0xFFFF; /*0x5da474*/
       if ( v14 < 1024 ) /*0x5da480*/
         LOWORD(v14) = v14 + 1024; /*0x5da482*/
-      result = Debug::Log(); /*0x5da48e*/
+      result = Debug::Log("FirewallHelper - Returning next mangled port as %d\n"); /*0x5da48e G57w11: IDA push seq @ 0x5da48e +1 reg-vararg(s) omitted*/
       LOWORD(result) = v14; /*0x5da496*/
     }
     else
     {
-      result = Debug::Log(); /*0x5da3f8*/
+      result = Debug::Log("FirewallHelper - Returning next mangled port as %d\n"); /*0x5da3f8 G57w11: IDA push seq @ 0x5da3f8 +1 reg-vararg(s) omitted*/
       LOWORD(result) = v12; /*0x5da400*/
     }
   }
   else
   {
-    result = Debug::Log(); /*0x5da3c6*/
+    result = Debug::Log("Couldn't find mangled port, returning source port\n"); /*0x5da3c6 G57w11: IDA push seq @ 0x5da3c6*/
     LOWORD(result) = a2; /*0x5da3cb*/
   }
   return result; /*0x5da0e4*/
@@ -3783,7 +3783,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
         v7 = *(int *)((char *)&dword_8B4207 + 111 * (((unsigned short)v5 + (unsigned short)dword_8B41FC) & 0x3FFF)); /*0x64c3c5*/
         if ( v7 > dword_A8B1F8 && v7 < v6 ) /*0x64c3d8*/
         {
-          Debug::Log(); /*0x64c3e1*/
+          Debug::Log("DoList: Moving event from frame %d to frame %d\n"); /*0x64c3e1 G57w11: IDA push seq @ 0x64c3e1 +2 reg-vararg(s) omitted*/
           v6 = dword_A8B1DC; /*0x64c3fb*/
           *(int *)((char *)&dword_8B4207 + 111 * (((unsigned short)v5 + (unsigned short)dword_8B41FC) & 0x3FFF)) = dword_A8B1DC; /*0x64c401*/
         }
@@ -3807,7 +3807,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
             v10 = *(int *)((char *)&dword_8B4207 + 111 * (((unsigned short)dword_8B41FC + (unsigned short)i) & 0x3FFF)); /*0x64c468*/
             if ( v10 > dword_A8E2D8 && v10 < v8 ) /*0x64c47b*/
             {
-              Debug::Log(); /*0x64c484*/
+              Debug::Log("DoList: Moving EXIT event from frame %d to frame %d\n"); /*0x64c484 G57w11: IDA push seq @ 0x64c484 +2 reg-vararg(s) omitted*/
               v8 = dword_A8E2DC; /*0x64c49e*/
               *(int *)((char *)&dword_8B4207 + 111 * (((unsigned short)i + (unsigned short)dword_8B41FC) & 0x3FFF)) = dword_A8E2DC; /*0x64c4a4*/
             }
@@ -3928,14 +3928,14 @@ LABEL_97:
     {
       break; /*0x64c5a9*/
     }
-    Debug::Log(); /*0x64c5b4*/
-    Debug::Log(); /*0x64c5be*/
-    Debug::Log(); /*0x64c5d4*/
-    Debug::Log(); /*0x64c5e2*/
-    Debug::Log(); /*0x64c5f1*/
-    Debug::Log(); /*0x64c602*/
-    Debug::Log(); /*0x64c613*/
-    Debug::Log(); /*0x64c623*/
+    Debug::Log("Packet received too late!\n"); /*0x64c5b4 G57w11: IDA push seq @ 0x64c5b4*/
+    Debug::Log("--------- Event data: -------------------\n"); /*0x64c5be G57w11: IDA push seq @ 0x64c5be*/
+    Debug::Log("Type:       %s\n"); /*0x64c5d4 G57w11: IDA push seq @ 0x64c5d4 +1 reg-vararg(s) omitted*/
+    Debug::Log("Frame:      %d\n"); /*0x64c5e2 G57w11: IDA push seq @ 0x64c5e2 +1 reg-vararg(s) omitted*/
+    Debug::Log("ID:         %d\n"); /*0x64c5f1 G57w11: IDA push seq @ 0x64c5f1 +1 reg-vararg(s) omitted*/
+    Debug::Log("MaxAhead=%d\n"); /*0x64c602 G57w11: IDA push seq @ 0x64c602 +1 reg-vararg(s) omitted*/
+    Debug::Log("Frame=%d\n"); /*0x64c613 G57w11: IDA push seq @ 0x64c613 +1 reg-vararg(s) omitted*/
+    Debug::Log("FrameSendRate=%d\n"); /*0x64c623 G57w11: IDA push seq @ 0x64c623 +1 reg-vararg(s) omitted*/
     (*(void (**)(int))(*(unsigned int *)v14 + 16))(v14); /*0x64c62f*/
     v11 = dword_A83ED4; /*0x64c632*/
 LABEL_96:
@@ -3978,7 +3978,7 @@ LABEL_66:
     }
     if ( *(unsigned int *)&dword_A8B238 == 4 && !byte_A8F900 && dword_A83D4C && dword_A83D4C == (Object *)v26 ) /*0x64c83a*/
     {
-      Debug::Log(); /*0x64c841*/
+      Debug::Log("Sending game results because I quit, but didn't see completion"); /*0x64c841 G57w11: IDA push seq @ 0x64c841*/
       ((void (__fastcall *)(char))ProcessGameResults)(0); /*0x64c84b*/
     }
     goto LABEL_66; /*0x64c84b*/
@@ -3987,13 +3987,13 @@ LABEL_66:
   {
 LABEL_68:
     if ( byte_A8ED74 && byte_8B4204[111 * (((unsigned short)v13 + (unsigned short)dword_8B41FC) & 0x3FFF)] == 19 ) /*0x64c885*/
-      Debug::Log(); /*0x64c8b3*/
+      Debug::Log("Exit Event: ID:%d (%s),  Event Frame:%d,  My Frame:%d\n"); /*0x64c8b3 G57w11: IDA push seq @ 0x64c8b3 +2 reg-vararg(s) omitted*/
     v27 = ((unsigned short)dword_8B41FC + (unsigned short)v13) & 0x3FFF; /*0x64c8cd*/
     if ( byte_8B4206[111 * v27] != dword_A83D4C->Object_field_0x30 ) /*0x64c8e2*/
     {
       if ( byte_8B4204[111 * v27] == 19 ) /*0x64c923*/
       {
-        Debug::Log(); /*0x64c935*/
+        Debug::Log("Processing EXIT event on frame %d\n"); /*0x64c935 G57w11: IDA push seq @ 0x64c935 +1 reg-vararg(s) omitted*/
         if ( *(unsigned int *)&dword_A8B238 == 1 || *(unsigned int *)&dword_A8B238 == 2 ) /*0x64c94a*/
         {
           HandlePlayerDisconnection(v46, 0); /*0x64c9be*/
@@ -4045,7 +4045,7 @@ LABEL_68:
           StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_COMPUTER), 0, (const char *)(g_Str_File_Queue_CPP), 5672); /*0x64ca6b*/
           wcsncpy( (wchar_t *)(v31 + 90154), (const wchar_t *)(StringCSF), 0x15u); /*0x64ca78*/
           *(unsigned short *)(v31 + 90194) = 0; /*0x64ca8c*/
-          Debug::Log(); /*0x64ca95*/
+          Debug::Log("Removing a player %s:%d\n", "D:\\ra2mdpost\\Queue.CPP", 0x162a); /*0x64ca95 G57w11: IDA push seq @ 0x64ca95*/
           --dword_A8B54C; /*0x64caa3*/
         }
       }
@@ -4175,7 +4175,7 @@ int Network::SendUnreachable()
   int16_t v13; // [esp+48h] [ebp-19Ch]
   char v14; // [esp+4Ah] [ebp-19Ah]
 
-  Debug::Log(); /*0x6523ab*/
+  Debug::Log("Sending NET_PORT_UNREACHABLE packets\n"); /*0x6523ab G57w11: IDA push seq @ 0x6523ab*/
   result = *(unsigned int *)&dword_A8B238; /*0x6523b0*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x6523bb*/
   {
@@ -4194,7 +4194,7 @@ int Network::SendUnreachable()
         v5 = ToWideStringChar( (IUnknown *)((char *)*dword_A8DA78)); /*0x65244d*/
         if ( _strcmpi((char *)v4, v5) ) /*0x652454*/
         {
-          Debug::Log(); /*0x652466*/
+          Debug::Log("Sending NET_PORT_UNREACHABLE to %s\n"); /*0x652466 G57w11: IDA push seq @ 0x652466 +1 reg-vararg(s) omitted*/
           v6 = (int *)((Network *)&stru_B052C0[16])->processAcknowledgment( (IUnknown *)(v4)); /*0x652474*/
           v11[0] = *v6; /*0x65247b*/
           v11[1] = v6[1]; /*0x652485*/
@@ -4278,7 +4278,7 @@ int Network::SendMasterPlayerList()
   v2 = 0; /*0x663a02*/
   if ( !this->__pad_14[4] ) /*0x6639ff*/
     return 0; /*0x663a0e*/
-  Debug::Log(); /*0x663a1d*/
+  Debug::Log("About to send master player list to router\n"); /*0x663a1d G57w11: IDA push seq @ 0x663a1d*/
   Network_field_0x10 = (int)v1->Network_field_0x10; /*0x663a22*/
   LOBYTE(v11[0]) = 1; /*0x663a2a*/
   BYTE1(v11[0]) = Network_field_0x10; /*0x663a2f*/
@@ -4292,7 +4292,7 @@ int Network::SendMasterPlayerList()
       if ( ((IPXManagerClass *)&unk_A8E9C0)->send( *(char *)Network_field_0x4[v2]) == -1 /*0x663a80*/
         && dword_A83D4C->Object_field_0x30 != (void *)**((char **)this->q004 + v2) )
       {
-        Debug::Log(); /*0x663a89*/
+        Debug::Log("Marking player %s as inactive\n"); /*0x663a89 G57w11: IDA push seq @ 0x663a89 +1 reg-vararg(s) omitted*/
         *v5 = 0; /*0x663a8e*/
         *(v5 - 2) = 0; /*0x663a94*/
       }
@@ -4304,7 +4304,7 @@ int Network::SendMasterPlayerList()
     }
   }
   ((Network *)&unk_A8E9C0.Socket)->SendPacket( (int)v11, 338, 1u); /*0x663ab7*/
-  Debug::Log(); /*0x663ac1*/
+  Debug::Log("Player list sent to router\n"); /*0x663ac1 G57w11: IDA push seq @ 0x663ac1*/
   Ticks = TimerGetTicks(); /*0x663ae4*/
   while ( HouseClass::GetUpgradeValue(&unk_A8E9C0) > 0 ) /*0x663af3*/
   {
@@ -4356,7 +4356,7 @@ HashTable_flat * * Network::ProcessAddressChange()
     {
       if ( (unsigned char)dword_B04E9C == 5 ) /*0x664132*/
       {
-        Debug::Log(); /*0x664151*/
+        Debug::Log("Received change of address notification.\n"); /*0x664151 G57w11: IDA push seq @ 0x664151*/
         v2 = BYTE1(dword_B04E9C); /*0x66415e*/
         *(unsigned int *)&v4[1] = *(int *)((char *)&dword_B04E9C + 2); /*0x664169*/
         v4[3] = 0; /*0x664174*/
@@ -4373,7 +4373,7 @@ HashTable_flat * * Network::ProcessAddressChange()
       }
       else
       {
-        Debug::Log(); /*0x66413f*/
+        Debug::Log("Got spurious message %d from the router\n"); /*0x66413f G57w11: IDA push seq @ 0x66413f +1 reg-vararg(s) omitted*/
       }
     }
   }
@@ -4538,14 +4538,14 @@ AbstractClass * * Network::SyncPlayerList()
   for ( i = 1; i < dword_A8DA84; ++i ) /*0x793039*/
   {
     ((Network *)((Network *)(dword_A8DA78[i] + 40)))->FormatAddress(0); /*0x793048*/
-    Debug::Log(); /*0x793053*/
+    Debug::Log("Adding broadcast address %s\n"); /*0x793053 G57w11: IDA push seq @ 0x793053 +1 reg-vararg(s) omitted*/
     (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 44))( /*0x793071*/
       *(unsigned int *)&stru_887598.isAliveFlag,
       dword_A8DA78[i] + 40,
       0);
   }
   ((Network *)(&stru_A8BB1C))->FormatAddress(0); /*0x793085*/
-  Debug::Log(); /*0x793090*/
+  Debug::Log("User_List_To_Session_Players: Session.HostAddress = %s\n"); /*0x793090 G57w11: IDA push seq @ 0x793090 +1 reg-vararg(s) omitted*/
 
 }
 }
@@ -4683,7 +4683,7 @@ int sub_793BB0()
         v8[0] = 13; /*0x793c12*/
         strcpy((char *)&v8[1], ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty()); /*0x793c39*/
         ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[*v3])); /*0x793c4b*/
-        Debug::Log(); /*0x793c56*/
+        Debug::Log("Sending keepalive NET_PING packet to %s\n"); /*0x793c56 G57w11: IDA push seq @ 0x793c56 +1 reg-vararg(s) omitted*/
         ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v8, 47, 0, (wchar_t *)dword_A8DA90[*v3]); /*0x793c76*/
         *v2 = TimerGetTicks(); /*0x793c8f*/
         v2[1] = v7; /*0x793c99*/
@@ -4857,7 +4857,7 @@ long sub_64AD10(int a1, int a2)
       if ( !Class ) /*0x64ad7c*/
         Class = (const wchar_t *)*dword_A8DA78; /*0x64ad84*/
       ((Network *)((Network *)&unk_A8E9C0))->GetClass(a2); /*0x64ad8c*/
-      Debug::Log(); /*0x64ad98*/
+      Debug::Log("Player %s votes to kick player %s from the game\n"); /*0x64ad98 G57w11: IDA push seq @ 0x64ad98 +2 reg-vararg(s) omitted*/
       v11 = ((Network *)((Network *)&unk_A8E9C0))->GetClass(a2); /*0x64adb2*/
       StringCSF = GetStringCSF( aTxtReconnectKi, 0, (const char *)(g_Str_File_Queue_CPP), 3485); /*0x64adbe*/
       swprintf(Buffer, (const size_t)StringCSF, Class, v11); /*0x64adc9*/
@@ -5005,7 +5005,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
     *(unsigned short *)(aP0 + 12) = (unsigned int)aP4; /*0x5416f2*/
     *(unsigned int *)(aP0 + 8) = *(unsigned int *)(a4 + 4); /*0x541701*/
     ((Network *)((uint16_t *)a4))->FormatAddress(0); /*0x541704*/
-    Debug::Log(); /*0x54170f*/
+    Debug::Log("Forwarding packet from %s ; %d to forwarder\n"); /*0x54170f G57w11: IDA push seq @ 0x54170f +1 reg-vararg(s) omitted*/
     IDA_LOWORD(v5) = dword_841F3C; /*0x541714*/
 (*(void (**)(int, int, int, void *, int, unsigned int, int, int))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_30))( /*0x54173c*/ dword_887628, (int)(aP1), a3, (void *)(&unk_AA06AC), 12, 0, 1, v5);
 
@@ -5024,7 +5024,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
   v7 = (int *)(aP0 + 8); /*0x541766*/
   if ( v9 == *(unsigned int *)(aP0 + 8) && (unsigned short)dword_A8E2B2 == *(unsigned short *)(aP0 + 12) ) /*0x54177e*/
   {
-    Debug::Log(); /*0x541785*/
+    Debug::Log("Packet is supposed to be forwarded to us - just adding it to our queue\n"); /*0x541785 G57w11: IDA push seq @ 0x541785*/
     return 0; /*0x541794*/
   }
   if ( !*v7 ) /*0x54179a*/
@@ -5037,7 +5037,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
   *(unsigned short *)(aP0 + 12) = 0; /*0x5417c8*/
   *v7 = 0; /*0x5417d4*/
   ((Network *)(v11))->FormatAddress(0); /*0x5417da*/
-  Debug::Log(); /*0x5417e5*/
+  Debug::Log("Forwarding packet from router to %s\n"); /*0x5417e5 G57w11: IDA push seq @ 0x5417e5 +1 reg-vararg(s) omitted*/
 (*(void (**)(int, int, int, uint16_t *, int, unsigned int, int, int16_t))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_30))( /*0x54180b*/ dword_887628, (int)(aP1), a3, (uint16_t *)(v11), 12, 0, 1, v8);
 
 
@@ -5174,7 +5174,7 @@ char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
   v13 = a4 == 1; /*0x5d9141*/
   QueueCount = ((Network *)((int)unk_A8E9C0))->GetQueueCount(); /*0x5d9155*/
   ((Network *)(aP0))->FormatAddress(0); /*0x5d9157*/
-  Debug::Log(); /*0x5d9169*/
+  Debug::Log("Sending from port %d to %s\n"); /*0x5d9169 G57w11: IDA push seq @ 0x5d9169 +2 reg-vararg(s) omitted*/
   LOWORD(v5) = *aP0; /*0x5d9175*/
   ((Network *)(int)unk_A8E9C0)->SendMessage( (int)&v10, 56, 0, (int)aP0, v5, a3); /*0x5d918c*/
   Ticks = TimerGetTicks(); /*0x5d919a*/

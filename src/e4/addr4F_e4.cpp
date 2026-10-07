@@ -219,7 +219,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         {
           if ( (&dword_A8B238)[0] == 5 ) /*0x4f197d*/
             goto LABEL_18; /*0x4f197d*/
-          if ( (&dword_A8B238)[0] != 3 && (&dword_A8B238)[0 != 4 ) /*0x4f198d*/
+          if ( (&dword_A8B238)[0] != 3 && (&dword_A8B238)[0 ]!= 4 ) /*0x4f198d*/
             goto LABEL_19; /*0x4f198d*/
           if ( dword_A80238 <= 0 ) /*0x4f199a*/
             goto LABEL_18; /*0x4f199a*/
@@ -1162,7 +1162,7 @@ int E4Recv_4F3D40::sub_4F3D40()
         }
         if ( v3 < 0 ) /*0x4f3e64*/
           goto LABEL_12; /*0x4f3e64*/
-        v7 = dword_824324[2 * v3]; /*0x4f3e66*/
+        v7 = (&dword_824324)[2 * v3]; /*0x4f3e66*/
       }
       if ( v7 ) /*0x4f3e82*/
       {

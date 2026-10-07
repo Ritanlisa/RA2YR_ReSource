@@ -51,16 +51,16 @@ public:
 
     void SetBaseCell(CellStruct* cell);  // 0x65B4C0
     int GetSpread() const;  // 0x65B4B0
-    void SetSpread(int a2); // 0x65B4D0
-    void SetRadLevel(int a2); // 0x65B4F0
+    int SetSpread(int a2); // 0x65B4D0
+    int SetRadLevel(int a2); // 0x65B4F0
     // 0x65B510 GetRadLevel
     int GetRadLevel() const;
-    void Add(int a2); // 0x65B530
+    int Add(int a2); // 0x65B530
     // 0x65B580 Activate
     void Activate();
-    int GetRadLevelAt(CellStruct* cell);  // 0x65B8F0
-    void Radiate();  // 0x65B9C0
-    void Deactivate();  // 0x65BB50
+    double GetRadLevelAt(short *a2);  // 0x65B8F0 g57w11 r4: raw double(this,__int16*a2)
+    int Radiate(int a1);  // 0x65B9C0 g57w11 r4: raw __fastcall(int) 折合
+    int Deactivate(unsigned int *a1);  // 0x65BB50 g57w11 r4: raw __fastcall(_DWORD*) 折合
     void DecreaseRadiation();  // 0x65BD00
     void DecreaseLight();  // 0x65BE90
 

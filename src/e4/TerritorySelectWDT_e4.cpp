@@ -170,7 +170,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
   v12 = (&this->primaryFacing)[6 * a2 + 1]; /*0x771540*/
   if ( v12 > 0 )
   {
-    v13 = v12 == 1 ? 0 : Random::Range(&Randomizer_Global, 0, v12 - 1);
+    v13 = v12 == 1 ? 0 : Random::Range((Random *)(&Randomizer_Global), 0, v12 - 1);
     if ( Map_Remove_770CE0(vtable0, *(unsigned int *)((&this->barrelFacing)[6 * a2 + 4] + 4 * v13), (char **)&v17) ) /*0x77156f*/
     {
       if ( !(uint8_t)gamemd::Audio::IsPlaying() ) /*0x77157c*/

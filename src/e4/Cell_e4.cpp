@@ -149,7 +149,7 @@ LABEL_6:
   v6 = *v5; /*0x43b531*/
   v7 = v5[1]; /*0x43b53c*/
   v8 = v5[2]; /*0x43b53f*/
-  Coords = ((CellClass *)a2)->GetCoords( (int *)v16); /*0x43b542*/
+  Coords = CellClass::GetCoords(((CellClass *)a2), (int *)v16); /*0x43b542*/
   v10 = Math::Sqrt( /*0x43b58b*/
           (double)(v6 - *Coords) * (double)(v6 - *Coords)
         + (double)(v7 - Coords[1]) * (double)(v7 - Coords[1])
@@ -941,7 +941,7 @@ char Cell::UpdateTileType(__int16 *aP0, int aP1, int a3)
     BYTE1(v10) &= ~0x20u; /*0x56eac5*/
     v6[80] = v10 | ((aP1 & 1) << 13); /*0x56eace*/
     v23 = v11; /*0x56ead9*/
-    ((BuildingClass *)(int)&dword_87F7E8)->AddUpgrade( (int)(v6 + 9)); /*0x56eadd*/
+    BuildingClass::AddUpgrade(((BuildingClass *)(int)&dword_87F7E8), (int)(v6 + 9)); /*0x56eadd*/
     v12 = 0; /*0x56eae2*/
     v13 = 8; /*0x56eae4*/
     do /*0x56eb67*/
@@ -961,7 +961,7 @@ char Cell::UpdateTileType(__int16 *aP0, int aP1, int a3)
         v7 = (unsigned int *)(&unk_ABDC50); /*0x56eb41*/
       }
       if ( v7[14] == v23 ) /*0x56eb4f*/
-        LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((IUnknown *)(&aP1),(IUnknown *)(v9), 1)); /*0x56eb5d*/
+        LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)(&aP1)), (IUnknown *)(v9), 1)); /*0x56eb5d*/
       v12 = (v12 + 1) & 7; /*0x56eb63*/
       --v13; /*0x56eb66*/
     }
@@ -1294,7 +1294,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     v29 |= 0x80u; /*0x579ea3*/
   }
   aP0 = (gamemd::MouseClass *)(-65535); /*0x579eba*/
-  v43 = (int)(*((CellStruct *)(v44))->Add( (unsigned int *)(&v42), (unsigned short *)(&aP0))); /*0x579ed7*/
+  v43 = (int)(*CellStruct::Add(((CellStruct *)(v44)), (unsigned int *)(&v42), (unsigned short *)(&aP0))); /*0x579ed7*/
   if ( ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&v43) /*0x579ef6*/
     && v36[283] == v28 + 4
     && !CellLand::IsBuildable((CellLand *)v36) )
@@ -1302,7 +1302,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     v29 |= 1u; /*0x579eff*/
   }
   aP0 = (gamemd::MouseClass *)(0xFFFF); /*0x579f10*/
-  v43 = (int)(*((CellStruct *)(v44))->Add( (unsigned int *)(&v42), (unsigned short *)(&aP0))); /*0x579f2d*/
+  v43 = (int)(*CellStruct::Add(((CellStruct *)(v44)), (unsigned int *)(&v42), (unsigned short *)(&aP0))); /*0x579f2d*/
   if ( ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&v43) /*0x579f4c*/
     && v37[283] == v28 + 4
     && !CellLand::IsBuildable((CellLand *)v37) )
@@ -1310,7 +1310,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     v29 |= 0x20u; /*0x579f55*/
   }
   v30 =(unsigned short *)((CellStruct *)(&v43))->Set(1, 0); /*0x579f60*/
-  aP0 =(gamemd::MouseClass *)*((CellStruct *)(v44))->Add( (unsigned int *)(&v42), (unsigned short *)(v30)); /*0x579f80*/
+  aP0 =(gamemd::MouseClass *)*CellStruct::Add(((CellStruct *)(v44)), (unsigned int *)(&v42), (unsigned short *)(v30)); /*0x579f80*/
   if ( (unsigned int *)((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&aP0) /*0x579f9f*/
     && v38[283] == v28 + 4
     && !CellLand::IsBuildable((CellLand *)v38) )
@@ -1318,7 +1318,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     v29 |= 2u; /*0x579fa8*/
   }
   v31 =(unsigned short *)((CellStruct *)(&v43))->Set(-1, 1); /*0x579fb2*/
-  aP0 =(gamemd::MouseClass *)*((CellStruct *)(v44))->Add( (unsigned int *)(&v42), (unsigned short *)(v31)); /*0x579fd2*/
+  aP0 =(gamemd::MouseClass *)*CellStruct::Add(((CellStruct *)(v44)), (unsigned int *)(&v42), (unsigned short *)(v31)); /*0x579fd2*/
   if ( (unsigned int *)((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&aP0) /*0x579ff1*/
     && v39[283] == v28 + 4
     && !CellLand::IsBuildable((CellLand *)v39) )
@@ -1326,7 +1326,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     v29 |= 0x10u; /*0x579ffa*/
   }
   v32 =(unsigned short *)((CellStruct *)(&v43))->Set(0, 1); /*0x57a005*/
-  aP0 =(gamemd::MouseClass *)*((CellStruct *)(v44))->Add( (unsigned int *)(&v42), (unsigned short *)(v32)); /*0x57a025*/
+  aP0 =(gamemd::MouseClass *)*CellStruct::Add(((CellStruct *)(v44)), (unsigned int *)(&v42), (unsigned short *)(v32)); /*0x57a025*/
   if ( (unsigned int *)((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&aP0) /*0x57a044*/
     && v40[283] == v28 + 4
     && !CellLand::IsBuildable((CellLand *)v40) )
@@ -1334,7 +1334,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
     v29 |= 8u; /*0x57a04d*/
   }
   v33 =(unsigned short *)((CellStruct *)(&v43))->Set(1, 1); /*0x57a058*/
-  aP0 =(gamemd::MouseClass *)*((CellStruct *)(v44))->Add( (unsigned int *)(&v42), (unsigned short *)(v33)); /*0x57a078*/
+  aP0 =(gamemd::MouseClass *)*CellStruct::Add(((CellStruct *)(v44)), (unsigned int *)(&v42), (unsigned short *)(v33)); /*0x57a078*/
   if ( (unsigned int *)((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&aP0) /*0x57a097*/
     && v41[283] == v28 + 4
     && !CellLand::IsBuildable((CellLand *)v41) )
@@ -1874,7 +1874,7 @@ int Cell::GetAdjacentPassableMask(__int16 *aP0, int a2)
 LABEL_38:
   if ( (v15 & (uint8_t)v6) == 0 ) /*0x6d8ac1*/
     v2 |= 4u; /*0x6d8ac3*/
-  return byte_7F4194[v2]; /*0x6d8acd*/
+  return ((unsigned char *)&byte_7F4194)[v2]; /*0x6d8acd*/
 
 }
 }

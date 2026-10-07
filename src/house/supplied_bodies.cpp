@@ -318,7 +318,7 @@ void HouseClass::Update_TogglePower(double a2)
     }
     if ( v3[33].__pad_B0[41] ) /*0x4f84f1*/
     {
-      if ( !dword_A8B538[0] ) /*0x4f8501*/
+      if ( !(&dword_A8B538)[0] ) /*0x4f8501*/
         HouseClass_CanTogglePower((void *)v3); /*0x4f8505*/
       HouseClass_ToggleGapGeneratorReveal((void *)v3); /*0x4f850c*/
     }
@@ -509,7 +509,7 @@ void HouseClass::Update_TogglePower(double a2)
         if ( v29 ) /*0x4f88e6*/
         {
           if ( *(unsigned int *)(v29 + 304) != 1 || (*(unsigned char *)(v29 + 300) & 0x18) != 0 ) /*0x4f88f8*/
-            Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4f8908*/
+            Random_Range((void *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x4f8908*/
         }
       }
     }

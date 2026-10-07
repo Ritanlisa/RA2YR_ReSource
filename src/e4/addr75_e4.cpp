@@ -1405,7 +1405,7 @@ void ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
                     a2 = IDA_BYTE1(a4); /*0x757ab3*/
                     v16 = a2 | a3 & 0xFF00; /*0x757ab6*/
                     v17 = IDA_BYTE1(a1); /*0x757ab8*/
-                    if ( v17 <= (uint8_t)byte_B1D5E0[v16] ) /*0x757ac7*/
+                    if ( v17 <= (uint8_t)((unsigned char *)&byte_B1D5E0)[v16] ) /*0x757ac7*/
                     {
                       v15 += 2; /*0x757b27*/
                     }
@@ -1416,8 +1416,8 @@ void ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
                       v20 = v18; /*0x757ad2*/
                       v24 = *v19; /*0x757ad6*/
                       v15 = v19 + 1; /*0x757ada*/
-                      byte_B1D5E0[v16] = v17; /*0x757adf*/
-                      byte_B1D5E1[v16] = v17; /*0x757aeb*/
+                      ((unsigned char *)&byte_B1D5E0)[v16] = v17; /*0x757adf*/
+                      ((unsigned char *)&byte_B1D5E1)[v16] = v17; /*0x757aeb*/
                       a2 = (uint8_t)(&g_VoxelShadeTable)[v24] << 8; /*0x757b05*/
                       IDA_LOBYTE(a2) = (&g_VoxelColorPalette)[a2 + v20]; /*0x757b0e*/
                       a3 = v26; /*0x757b15*/
@@ -1558,7 +1558,7 @@ void VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
                     v9 = IDA_BYTE1(a3); /*0x757ce7*/
                     v14 = v9 | a1 & 0xFF00; /*0x757cea*/
                     IDA_LOWORD(v9) = IDA_BYTE1(a2); /*0x757cef*/
-                    if ( (uint16_t)IDA_BYTE1(a2) <= (uint8_t)byte_B1D5E0[v14] ) /*0x757cfe*/
+                    if ( (uint16_t)IDA_BYTE1(a2) <= (uint8_t)((unsigned char *)&byte_B1D5E0)[v14] ) /*0x757cfe*/
                     {
                       v13 -= 2; /*0x757d5f*/
                     }
@@ -1568,8 +1568,8 @@ void VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
                       v13 -= 2; /*0x757d11*/
                       v15 = (uint8_t)(&g_VoxelShadeTable)[v24] << 8; /*0x757d31*/
                       v16 = v13[1]; /*0x757d34*/
-                      byte_B1D5E0[v14] = v9; /*0x757d3a*/
-                      byte_B1D5E1[v14] = v9; /*0x757d40*/
+                      ((unsigned char *)&byte_B1D5E0)[v14] = v9; /*0x757d3a*/
+                      ((unsigned char *)&byte_B1D5E1)[v14] = v9; /*0x757d40*/
                       IDA_LOBYTE(v15) = (&g_VoxelColorPalette)[v15 + v16]; /*0x757d46*/
                       (&g_VoxelRenderBuffer)[v14] = v15; /*0x757d4d*/
                       (&g_VoxelDepthBuffer)[v14] = v15; /*0x757d53*/
@@ -1739,12 +1739,12 @@ void ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
                     v17 = IDA_BYTE1(a3); /*0x758330*/
                     v18 = v17 | a2 & 0xFF00; /*0x758333*/
                     ++v16; /*0x758346*/
-                    if ( (uint16_t)((uint16_t)a4 >> 8) > (uint8_t)byte_B1D5E0[v18] ) /*0x75834a*/
+                    if ( (uint16_t)((uint16_t)a4 >> 8) > (uint8_t)((unsigned char *)&byte_B1D5E0)[v18] ) /*0x75834a*/
                     {
-                      byte_B1D5E0[v18] = IDA_BYTE1(a4); /*0x758350*/
-                      g_VoxelRenderBuffer[v18] = v23; /*0x758356*/
-                      g_VoxelDepthBuffer[v18] = v23; /*0x75835c*/
-                      byte_B1D5E1[v18] = IDA_BYTE1(a4); /*0x758362*/
+                      ((unsigned char *)&byte_B1D5E0)[v18] = IDA_BYTE1(a4); /*0x758350*/
+                      ((unsigned char *)&g_VoxelRenderBuffer)[v18] = v23; /*0x758356*/
+                      ((unsigned char *)&g_VoxelDepthBuffer)[v18] = v23; /*0x75835c*/
+                      ((unsigned char *)&byte_B1D5E1)[v18] = IDA_BYTE1(a4); /*0x758362*/
                     }
                     IDA_LOWORD(v18) = *((unsigned short *)v4 + 21); /*0x758368*/
                     IDA_LOWORD(v17) = *((unsigned short *)v4 + 22); /*0x75836c*/
@@ -1821,7 +1821,7 @@ void ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
   int v31; // [esp+3Ch] [ebp-4h]
 
   v4 = a4; /*0x758430*/
-  g_VoxelOffsetTable[0] = 0; /*0x758439*/
+  (&g_VoxelOffsetTable)[0] = 0; /*0x758439*/
   v5 = 1; /*0x758450*/
   if ( *(unsigned char *)(a4 + 50) > 1u ) /*0x758455*/
   {
@@ -1882,12 +1882,12 @@ void ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
                     v15 = IDA_BYTE1(a3); /*0x758532*/
                     v16 = v15 | a2 & 0xFF00; /*0x758535*/
                     --v14; /*0x758548*/
-                    if ( (uint16_t)IDA_BYTE1(a4) > (uint8_t)byte_B1D5E0[v16] ) /*0x75854c*/
+                    if ( (uint16_t)IDA_BYTE1(a4) > (uint8_t)((unsigned char *)&byte_B1D5E0)[v16] ) /*0x75854c*/
                     {
-                      byte_B1D5E0[v16] = IDA_BYTE1(a4); /*0x758552*/
-                      g_VoxelRenderBuffer[v16] = v20; /*0x758558*/
-                      g_VoxelDepthBuffer[v16] = v20; /*0x75855e*/
-                      byte_B1D5E1[v16] = IDA_BYTE1(a4); /*0x758564*/
+                      ((unsigned char *)&byte_B1D5E0)[v16] = IDA_BYTE1(a4); /*0x758552*/
+                      ((unsigned char *)&g_VoxelRenderBuffer)[v16] = v20; /*0x758558*/
+                      ((unsigned char *)&g_VoxelDepthBuffer)[v16] = v20; /*0x75855e*/
+                      ((unsigned char *)&byte_B1D5E1)[v16] = IDA_BYTE1(a4); /*0x758564*/
                     }
                     IDA_LOWORD(v16) = *(unsigned short *)(v4 + 42); /*0x75856a*/
                     IDA_LOWORD(v15) = *(unsigned short *)(v4 + 44); /*0x75856e*/
@@ -1905,9 +1905,9 @@ void ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
                 v12 = v14 - 2; /*0x758597*/
                 IDA_LOWORD(v10) = *(unsigned short *)(v4 + 46) * v21; /*0x7585a0*/
                 v11 = v21; /*0x7585a5*/
-                IDA_LOWORD(a1) = g_VoxelOffsetTable[v21]; /*0x7585aa*/
+                IDA_LOWORD(a1) = (&g_VoxelOffsetTable)[v21]; /*0x7585aa*/
                 a3 += a1; /*0x7585b2*/
-                IDA_LOWORD(a1) = IDA_HIWORD(g_VoxelOffsetTable[v21]); /*0x7585b4*/
+                IDA_LOWORD(a1) = IDA_HIWORD((&g_VoxelOffsetTable)[v21]); /*0x7585b4*/
                 a2 += a1; /*0x7585bc*/
                 a1 = v10 + a4; /*0x7585c2*/
                 v10 = v19 - v21; /*0x7585c8*/

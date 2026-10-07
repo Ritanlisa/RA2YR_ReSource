@@ -817,27 +817,27 @@ LABEL_9:
   v152 = (ObjectClass *)arg0;
   v100 = (MSVQAnim *)arg0;
   SendNetworkFrameSync( (int *)(v8), arg10);
-  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 && (&HouseClass_Player)[40532] )
+  if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 && ((unsigned int *)HouseClass_Player)[40532] )
   {
-    ((Network *)(&(&HouseClass_Player)[44148]))->Disconnect();
+    ((Network *)(&((unsigned int *)HouseClass_Player)[44148]))->Disconnect();
     Debug::Log();
     int v168 = 39;
-    char * v16 = ToWideStringChar(**(IUnknown ***)&(&HouseClass_Player)[40236]);
+    char * v16 = ToWideStringChar(**(IUnknown ***)&((unsigned int *)HouseClass_Player)[40236]);
     strncpy( (char *)(Destination), (const char *)(v16), (size_t)((IUnknown *)0x14));
-    IDA_HIWORD(v17) = *(unsigned short *)&(&HouseClass_Player)[40538];
+    IDA_HIWORD(v17) = *(unsigned short *)&((unsigned int *)HouseClass_Player)[40538];
     int v170 = *(unsigned int *)(HouseClass_Player.field_0 + 48);
-    var69C = *(unsigned int *)&(&HouseClass_Player)[40536];
-    IDA_LOWORD(v17) = *(unsigned short *)&(&HouseClass_Player)[40560];
-    v127 = *(ObjectClass **)&(&HouseClass_Player)[40544];
-    v126 = *(MouseClass **)&(&HouseClass_Player)[40540];
+    var69C = *(unsigned int *)&((unsigned int *)HouseClass_Player)[40536];
+    IDA_LOWORD(v17) = *(unsigned short *)&((unsigned int *)HouseClass_Player)[40560];
+    v127 = *(ObjectClass **)&((unsigned int *)HouseClass_Player)[40544];
+    v126 = *(MouseClass **)&((unsigned int *)HouseClass_Player)[40540];
     ((Network *)(&var69C))->SetPort((int16_t)(v17));
     int v18 = 1;
     int var69C = var69C;
     v126 = v126;
     v127 = v127;
-    if ( *(int *)&(&HouseClass_Player)[40248] > 1 )
+    if ( *(int *)&((unsigned int *)HouseClass_Player)[40248] > 1 )
     {
-      int v19 = *(unsigned int *)&(&HouseClass_Player)[40236];
+      int v19 = *(unsigned int *)&((unsigned int *)HouseClass_Player)[40236];
       unsigned short * v20 = (unsigned short *)(&HouseClass_Player + 42344);
       do
       {
@@ -846,19 +846,19 @@ LABEL_9:
         {
           IDA_LOWORD(v21) = *v20;
           Network::SendMessage(
-            (int)&(&HouseClass_Player)[44148],
+            (int)&((unsigned int *)HouseClass_Player)[44148],
             (int)&v168,
             91,
             0,
             *(unsigned int *)(v19 + 4 * v18) + 40,
             v21,
             0);
-          v19 = *(unsigned int *)&(&HouseClass_Player)[40236];
+          v19 = *(unsigned int *)&((unsigned int *)HouseClass_Player)[40236];
         }
         ++v18;
         ++v20;
       }
-      while ( v18 < *(int *)&(&HouseClass_Player)[40248] );
+      while ( v18 < *(int *)&((unsigned int *)HouseClass_Player)[40248] );
     }
     Event::Dispatch();
     v13 = (ObjectClass *)arg0;
@@ -900,14 +900,14 @@ LABEL_27:
     if ( v23 )
       goto LABEL_34;
   }
-  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 1
-    || *(unsigned int *)&(&HouseClass_Player)[29932] == 2
-    || (&HouseClass_Player)[40532] )
+  if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 1
+    || *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 2
+    || ((unsigned int *)HouseClass_Player)[40532] )
   {
     Debug::Log();
-    if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
-      ((Network *)(&(&HouseClass_Player)[44148]))->Disconnect();
-    ((Multiplayer*)&(&HouseClass_Player)[29932])->ShowProgress(*(unsigned char *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 13501) != 0 ? 200 : 100);
+    if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
+      ((Network *)(&((unsigned int *)HouseClass_Player)[44148]))->Disconnect();
+    ((Multiplayer*)&((unsigned int *)HouseClass_Player)[29932])->ShowProgress(*(unsigned char *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 13501) != 0 ? 200 : 100);
     v148 = (ObjectClass *)TimerGetTicks();
     var620 = 180;
     v109 = v148;
@@ -927,8 +927,8 @@ LABEL_34:
   if ( v25 )
     goto LABEL_93;
 LABEL_38:
-  if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
-    ((Network *)(&(&HouseClass_Player)[44148]))->Disconnect();
+  if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
+    ((Network *)(&((unsigned int *)HouseClass_Player)[44148]))->Disconnect();
   int v28 = *v8;
   BOOL v29 = v94 == 0;
   var690 = aP0 == 0;
@@ -952,8 +952,8 @@ LABEL_38:
   }
   if ( v29 )
   {
-    byte_B04894 = (&HouseClass_Player)[42540];
-    (&HouseClass_Player)[42540] = 0;
+    byte_B04894 = ((unsigned int *)HouseClass_Player)[42540];
+    ((unsigned int *)HouseClass_Player)[42540] = 0;
     dword_B04468 = -1;
     Indirect = (SkirmishDialog *)CreateDialogIndirect(g_hInstance, (HWND)0xEA, g_hWnd, NetworkScore::DlgProc, 0);
     *(&g_MatrixTransformState + 7698) = (int)((CoordStruct *)Indirect);
@@ -975,7 +975,7 @@ LABEL_50:
     CloseDialog((HWND)Indirect, 0);
     if ( byte_B04470 )
       (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 24))(*(unsigned int *)&(&stru_87C374)[45772]);
-    (&HouseClass_Player)[42540] = byte_B04894;
+    ((unsigned int *)HouseClass_Player)[42540] = byte_B04894;
     ((MapClass *)((int)(&(&stru_87C374)[13428])))->MarkForRedraw((int)((MapClass *)((int)(&(&stru_87C374)[13428]))), 2);
     if ( v94 )
     {
@@ -985,14 +985,14 @@ LABEL_50:
         if ( byte_B04470 )
           (*(void (**)(unsigned int))(**(unsigned int **)&(&stru_87C374)[45772] + 24))(*(unsigned int *)&(&stru_87C374)[45772]);
         CloseDialog((HWND)v76, 0);
-        (&HouseClass_Player)[42540] = byte_B04894;
+        ((unsigned int *)HouseClass_Player)[42540] = byte_B04894;
         ((MapClass *)((int)(&(&stru_87C374)[13428])))->MarkForRedraw((int)((MapClass *)((int)(&(&stru_87C374)[13428]))), 2);
-        if ( (&HouseClass_Player)[42540] )
+        if ( ((unsigned int *)HouseClass_Player)[42540] )
           ((TacticalMap*)&(&stru_87C374)[13428])->Redraw();
       }
     }
-    if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
-      ((Connection *)(&(&HouseClass_Player)[44148]))->Close();
+    if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
+      ((Connection *)(&((unsigned int *)HouseClass_Player)[44148]))->Close();
     if ( byte_B04878 )
     {
       Network::SendUnreachable();
@@ -1024,13 +1024,13 @@ LABEL_54:
       PostMessageA((HWND)*(&g_MatrixTransformState + 7698), 0xFu, 0, 0);
     if ( v29 )
     {
-      while ( *(unsigned int *)&(&HouseClass_Player)[32236] )
+      while ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[32236] )
       {
-        RA2_OPDEL(**(void ***)&(&HouseClass_Player)[32224]);
-        Network_Process_652560(&(&HouseClass_Player)[32220], 0);
+        RA2_OPDEL(**(void ***)&((unsigned int *)HouseClass_Player)[32224]);
+        Network_Process_652560(&((unsigned int *)HouseClass_Player)[32220], 0);
       }
-      memset( (void *)(&(&HouseClass_Player)[32244]), 0, 0x20u);
-      memset( (void *)(&(&HouseClass_Player)[32276]), 0xFFu, 0x100u);
+      memset( (void *)(&((unsigned int *)HouseClass_Player)[32244]), 0, 0x20u);
+      memset( (void *)(&((unsigned int *)HouseClass_Player)[32276]), 0xFFu, 0x100u);
       v38 = (ObjectClass *)GetDlgItem((HWND)*(&g_MatrixTransformState + 7698), 1617);
       if ( v38 )
       {
@@ -1054,24 +1054,24 @@ LABEL_54:
             }
             while ( (int)v41 < v30 );
           }
-          if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 3
-            || *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
+          if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 3
+            || *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
           {
-            ConnectionSpeed = ((Network *)(&(&HouseClass_Player)[44148]))->GetConnectionSpeed( (int)(v40));
-            Class = (MSVQAnim *)((Network *)((int *)&(&HouseClass_Player)[44148]))->GetClass(ConnectionSpeed);
+            ConnectionSpeed = ((Network *)(&((unsigned int *)HouseClass_Player)[44148]))->GetConnectionSpeed( (int)(v40));
+            Class = (MSVQAnim *)((Network *)((int *)&((unsigned int *)HouseClass_Player)[44148]))->GetClass(ConnectionSpeed);
             _FFFFFFFEa = GetStringCSF( (wchar_t *)&(&stru_830620)[28896], 0, (const char *)(&(&stru_830620)[28288]), 3908);
             swprintf(lParam, (const size_t)_FFFFFFFEa, (const wchar_t *const)Class, (CampaignScore *)v92);
           }
           else
           {
-            v88 = *(MSVQAnim **)(*(unsigned int *)&(&HouseClass_Player)[40236] + 4);
+            v88 = *(MSVQAnim **)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[40236] + 4);
             v86 = GetStringCSF( (wchar_t *)&(&stru_830620)[28896], 0, (const char *)(&(&stru_830620)[28288]), 3914);
             swprintf(lParam, (const size_t)v86, (const wchar_t *const)v88, (CampaignScore *)v92);
           }
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)(lParam), (HWND)v38);
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&(&stru_87C374)[46016]), (HWND)v38);
-          v44 = *(CellStruct **)&(&HouseClass_Player)[29932];
-          if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
+          v44 = *(CellStruct **)&((unsigned int *)HouseClass_Player)[29932];
+          if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
           {
             v46 = GetStringCSF( (wchar_t *)&(&stru_830620)[28876], 0, (const char *)(&(&stru_830620)[28288]), 3928);
             wcscpy( (wchar_t *)(lParam), (const wchar_t *)(v46));
@@ -1083,8 +1083,8 @@ LABEL_54:
             wcscat(lParam, (CampaignScore *)v48);
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)(lParam), (HWND)v38);
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&(&stru_87C374)[46016]), (HWND)v38);
-            v44 = *(CellStruct **)&(&HouseClass_Player)[29932];
-            if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
+            v44 = *(CellStruct **)&((unsigned int *)HouseClass_Player)[29932];
+            if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
               goto LABEL_75;
           }
           if ( v44 == (CellStruct *)3 )
@@ -1093,7 +1093,7 @@ LABEL_75:
             v49 = GetStringCSF( (wchar_t *)&(&stru_830620)[28808], 0, (const char *)(&(&stru_830620)[28288]), 3939);
             wcscpy( (wchar_t *)(lParam), (const wchar_t *)(v49));
             wcscat(lParam, &stru_82083C);
-            if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 4 )
+            if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 4 )
             {
 v90 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28784], 0, (const char *)(&(&stru_830620)[28288]), 3943);
 
@@ -1102,7 +1102,7 @@ v90 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28784], 0, (const cha
 
               wcscat(lParam, (CampaignScore *)v90);
             }
-            else if ( *(unsigned int *)&(&HouseClass_Player)[29932] == 3 )
+            else if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[29932] == 3 )
             {
 v91 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28764], 0, (const char *)(&(&stru_830620)[28288]), 3945);
 
@@ -1112,14 +1112,14 @@ v91 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28764], 0, (const cha
               wcscat(lParam, (CampaignScore *)v91);
             }
             DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)(lParam), (HWND)v38);
-            DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&stru_87C374[46016]), (HWND)v38);
+            DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&((unsigned char *)&stru_87C374)[46016]), (HWND)v38);
           }
-          DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&stru_87C374[46016]), (HWND)v38);
+          DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&((unsigned char *)&stru_87C374)[46016]), (HWND)v38);
           v50 = GetStringCSF( (wchar_t *)&stru_830620[28744], 0, (const char *)(&stru_830620[28288]), 3955);
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)(v50), (HWND)v38);
           v51 = GetStringCSF( (wchar_t *)&stru_830620[28724], 0, (const char *)(&stru_830620[28288]), 3960);
           DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)(v51), (HWND)v38);
-          DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&stru_87C374[46016]), (HWND)v38);
+          DrawDialogText( (LPARAM)((LPARAM)((LPARAM)((ObjectClass *)0xFFFFFFFF))), (wchar_t *)((const wchar_t *)&((unsigned char *)&stru_87C374)[46016]), (HWND)v38);
         }
         else
         {
@@ -1130,19 +1130,19 @@ v91 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28764], 0, (const cha
       }
     }
   }
-  if ( *(int *)&HouseClass_Player[32236] > 0 )
+  if ( *(int *)&((unsigned char *)&HouseClass_Player)[32236] > 0 )
   {
     Network_Process_64AD10(
-      *(unsigned int *)(**(unsigned int **)&HouseClass_Player[32224] + 51),
-      *(unsigned int *)(**(unsigned int **)&HouseClass_Player[32224] + 47));
-    RA2_OPDEL(**(void ***)&HouseClass_Player[32224]);
-    Network_Process_652560(&HouseClass_Player[32220], 0);
+      *(unsigned int *)(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[32224] + 51),
+      *(unsigned int *)(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[32224] + 47));
+    RA2_OPDEL(**(void ***)&((unsigned char *)&HouseClass_Player)[32224]);
+    Network_Process_652560((unsigned char *)&HouseClass_Player + 32220, 0);
   }
-  int v53 = *(unsigned int *)&HouseClass_Player[40248];
-  for ( i = 0; i < *(int *)&HouseClass_Player[40248]; ++i )
+  int v53 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248];
+  for ( i = 0; i < *(int *)&((unsigned char *)&HouseClass_Player)[40248]; ++i )
   {
-    if ( *(unsigned int *)&HouseClass_Player[21864][4
-                                                * *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236]
+    if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[21864][4
+                                                * *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236]
                                                                         + 4 * i)
                                                             + 111)
                                                 + 10380] >= v53 - 1 )
@@ -1151,10 +1151,10 @@ v91 = (MSVQAnim *)GetStringCSF( (wchar_t *)&(&stru_830620)[28764], 0, (const cha
       if ( !i )
       {
         Debug::Log();
-        for ( j = 1; j < *(int *)&HouseClass_Player[40248]; ++j )
+        for ( j = 1; j < *(int *)&((unsigned char *)&HouseClass_Player)[40248]; ++j )
         {
   int v57; // eax
-v57 = (*(int (**)(int *, unsigned int))(*v8 + 24))( (int *)(v8), *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * j) + 111));
+v57 = (*(int (**)(int *, unsigned int))(*v8 + 24))( (int *)(v8), *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * j) + 111));
 
 
           KickNetworkPlayerNow((int)v8, v57, (int)a7, 0);
@@ -1162,12 +1162,12 @@ v57 = (*(int (**)(int *, unsigned int))(*v8 + 24))( (int *)(v8), *(unsigned int 
         break;
       }
   int v55; // eax
-v55 = (*(int (**)(int *, unsigned int))(*v8 + 24))( (int *)(v8), *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * i) + 111));
+v55 = (*(int (**)(int *, unsigned int))(*v8 + 24))( (int *)(v8), *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * i) + 111));
 
 
       KickNetworkPlayerNow((int)v8, v55, (int)a7, 1u);
     }
-    v53 = *(unsigned int *)&HouseClass_Player[40248];
+    v53 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248];
   }
   v10 = (ObjectClass *)arg4;
   v13 = (ObjectClass *)arg0;
@@ -1189,8 +1189,8 @@ LABEL_100:
       {
         if ( !(*(int (**)(int *, int, unsigned int *, ObjectClass **))(*v8 + 12))( (int *)(v8), a6, (unsigned int *)(&var684), (ObjectClass **)(&v130)) )
           goto LABEL_120;
-        ((EventQueue *)(*(unsigned int **)&stru_87C374[13308]))->Process();
-        if ( *(unsigned int *)&HouseClass_Player[29932] == 1 || *(unsigned int *)&HouseClass_Player[29932] == 2 )
+        ((EventQueue *)(*(unsigned int **)&((unsigned char *)&stru_87C374)[13308]))->Process();
+        if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 1 || *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 2 )
         {
           int v61 = ProcessNetworkMessage(a6, (int)aP0);
           switch ( v61 )
@@ -1228,18 +1228,18 @@ LABEL_120:
                 {
 LABEL_162:
                   Event::Dispatch();
-                  if ( !aP0 && !*(unsigned int *)&HouseClass_Player[45140] && !v94 )
+                  if ( !aP0 && !*(unsigned int *)&((unsigned char *)&HouseClass_Player)[45140] && !v94 )
                   {
                     InputManager_ProcessEvents::Vtable(
-                      (int *)&stru_87C374[13428],
+                      (int *)&((unsigned char *)&stru_87C374)[13428],
                       (MouseClass *)v134,
   char v161; // [esp+14Eh] [ebp-5E8h] BYREF
                       (MouseClass *)&v161,
   int a3; // [esp+16Ah] [ebp-5CCh] BYREF
                       &a3);
                     ((SyncDelayClass *)v134)->ProcessNetworkSync();
-                    (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[44976] + 92))(*(unsigned int *)&stru_87C374[44976]);
-                    ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+                    (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[44976] + 92))(*(unsigned int *)&((unsigned char *)&stru_87C374)[44976]);
+                    ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
                   }
                   ++v118;
                   goto LABEL_4;
@@ -1251,12 +1251,12 @@ LABEL_223:
                   if ( esi224 )
                   {
                     if ( byte_B04470 )
-                      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                      (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 24))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
                     CloseDialog( (HWND)(esi224), 0);
-                    HouseClass_Player[42540] = byte_B04894;
-                    ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-                    if ( HouseClass_Player[42540] )
-                      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+                    ((unsigned char *)&HouseClass_Player)[42540] = byte_B04894;
+                    ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+                    if ( ((unsigned char *)&HouseClass_Player)[42540] )
+                      ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
                   }
                   if ( (*(int (**)(int *))(*a1 + 16))( (int *)(a1)) > 0 )
                   {
@@ -1264,7 +1264,7 @@ LABEL_223:
                     dword_B77CE0 = 0;
                   }
                 }
-                if ( v95 && HouseClass_Player[31592] && HouseClass_Player[31593] )
+                if ( v95 &&((unsigned char *)&HouseClass_Player)[31592] &&((unsigned char *)&HouseClass_Player)[31593] )
                 {
                   v84 = *var6E4;
                   v121 = (IPXManagerClass *)100;
@@ -1276,17 +1276,17 @@ LABEL_223:
                     &v121,
                     0);
                 }
-                if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-                  ((Connection *)(&HouseClass_Player[44148]))->Close();
+                if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
+                  ((Connection *)((unsigned char *)&HouseClass_Player + 44148))->Close();
                 return 0;
               }
               int v67 = -1;
-              v97 = *(ObjectClass **)&HouseClass_Player[30724];
-              if ( *(unsigned int *)&HouseClass_Player[30720] == 1 )
+              v97 = *(ObjectClass **)&((unsigned char *)&HouseClass_Player)[30724];
+              if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[30720] == 1 )
                 goto LABEL_223;
               int * v68 = a1;
               int v69 = 0;
-              int v70 = *(unsigned int *)&HouseClass_Player[45112] + 1000;
+              int v70 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[45112] + 1000;
               if ( (*(int (**)(int *))(*a1 + 16))( (int *)(a1)) > 0 )
               {
                 int * a7 = a7;
@@ -1307,7 +1307,7 @@ LABEL_223:
               if ( (*(int (**)(int *))(*v68 + 16))( (int *)(v68)) <= 0 )
               {
 LABEL_136:
-                if ( *(int *)&HouseClass_Player[45112] < (int)&v97->__pad_0[v70] )
+                if ( *(int *)&((unsigned char *)&HouseClass_Player)[45112] < (int)&((unsigned char *)&v97->__pad_0)[v70] )
                   goto LABEL_223;
                 v72 = -1;
               }
@@ -1322,10 +1322,10 @@ LABEL_136:
                     goto LABEL_136;
                 }
               }
-              if ( *(int *)&HouseClass_Player[45112] < (int)&v97->__pad_0[v70] )
+              if ( *(int *)&((unsigned char *)&HouseClass_Player)[45112] < (int)&((unsigned char *)&v97->__pad_0)[v70] )
                 v67 = -1;
-              if ( HouseClass_Player[31592]
-                && HouseClass_Player[31593]
+              if ( ((unsigned char *)&HouseClass_Player)[31592]
+                &&((unsigned char *)&HouseClass_Player)[31593]
                 && v118 > 0
                 && (!v95 || v67 != -1 || v72 != -1) )
               {
@@ -1341,7 +1341,7 @@ LABEL_148:
                 }
                 else
                 {
-                  if ( HouseClass_Player[31592] && HouseClass_Player[31593] )
+                  if ( ((unsigned char *)&HouseClass_Player)[31592] &&((unsigned char *)&HouseClass_Player)[31593] )
                   {
                     v73 = (ObjectClass *)var6E4;
   unsigned int v160[4]; // [esp+13Eh] [ebp-5F8h] BYREF
@@ -1353,33 +1353,33 @@ LABEL_148:
                     ((void (*)(CCINIClass **, unsigned int *, int))v75->sectionHead[1])(
                       var6E4,
                       v160,
-                      (255 >> stru_89E138[11420] << stru_89E138[11416])
-                    | (255 >> stru_89E138[11436] << stru_89E138[11432])
-                    | (40 >> stru_89E138[11428] << stru_89E138[11424]));
+                      (255 >> (&stru_89E138)[11420] << (&stru_89E138)[11416])
+                    | (255 >> (&stru_89E138)[11436] << (&stru_89E138)[11432])
+                    | (40 >> (&stru_89E138)[11428] << (&stru_89E138)[11424]));
                   }
                   else
                   {
                     v73 = (ObjectClass *)var6E4;
                   }
-                  ++*(unsigned int *)&HouseClass_Player[21864][104 * v67 + 8980];
+                  ++*(unsigned int *)&((unsigned char *)&HouseClass_Player)[21864][104 * v67 + 8980];
                 }
                 if ( v72 != -1 )
                 {
-                  if ( HouseClass_Player[31592] && HouseClass_Player[31593] )
+                  if ( ((unsigned char *)&HouseClass_Player)[31592] &&((unsigned char *)&HouseClass_Player)[31593] )
                   {
                     edx158 = *(unsigned int *)v73->__pad_0;
                     v124 = 400;
                     v125 = 40;
                     var6A0 = 3;
                     v121 = (IPXManagerClass *)(100 * v72 + 140);
-(*(void (**)(ObjectClass *, IPXManagerClass **, int))(edx158 + 20))( (ObjectClass *)(v73), (IPXManagerClass **)(&v121), (255 >> stru_89E138[11420] << stru_89E138[11416]) | (40 >> stru_89E138[11436] << stru_89E138[11432]) | (40 >> stru_89E138[11428] << stru_89E138[11424]));
+(*(void (**)(ObjectClass *, IPXManagerClass **, int))(edx158 + 20))( (ObjectClass *)(v73), (IPXManagerClass **)(&v121), (255 >> (&stru_89E138)[11420] << (&stru_89E138)[11416]) | (40 >> (&stru_89E138)[11436] << (&stru_89E138)[11432]) | (40 >> (&stru_89E138)[11428] << (&stru_89E138)[11424]));
 
 
 
 
 
                   }
-                  ++*(unsigned int *)&HouseClass_Player[21864][104 * v67 + 8984];
+                  ++*(unsigned int *)&((unsigned char *)&HouseClass_Player)[21864][104 * v67 + 8984];
                 }
                 v95 = 1;
               }
@@ -1394,21 +1394,21 @@ LABEL_148:
                   if ( v81 )
                   {
                     if ( byte_B04470 )
-                      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                      (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 24))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
                     CloseDialog( (HWND)(v81), 0);
-                    HouseClass_Player[42540] = byte_B04894;
-                    ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-                    if ( HouseClass_Player[42540] )
-                      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+                    ((unsigned char *)&HouseClass_Player)[42540] = byte_B04894;
+                    ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+                    if ( ((unsigned char *)&HouseClass_Player)[42540] )
+                      ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
                   }
                 }
-                if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-                  ((Connection *)(&HouseClass_Player[44148]))->Close();
+                if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
+                  ((Connection *)((unsigned char *)&HouseClass_Player + 44148))->Close();
                 Network::SendUnreachable();
                 return 7;
               }
-              ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-              ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+              ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+              ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
               v63 = (ObjectClass *)TimerGetTicks();
               v134[6] = (int)v13;
               v100 = (MSVQAnim *)v13;
@@ -1444,16 +1444,16 @@ LABEL_148:
               if ( v82 )
               {
                 if ( byte_B04470 )
-                  (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                  (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 24))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
                 CloseDialog( (HWND)(v82), 0);
-                HouseClass_Player[42540] = byte_B04894;
-                ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-                if ( HouseClass_Player[42540] )
-                  ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+                ((unsigned char *)&HouseClass_Player)[42540] = byte_B04894;
+                ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+                if ( ((unsigned char *)&HouseClass_Player)[42540] )
+                  ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
               }
             }
-            if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-              ((Connection *)(&HouseClass_Player[44148]))->Close();
+            if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
+              ((Connection *)((unsigned char *)&HouseClass_Player + 44148))->Close();
             return 2;
           case 3:
             if ( v94 )
@@ -1462,16 +1462,16 @@ LABEL_148:
               if ( v83 )
               {
                 if ( byte_B04470 )
-                  (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                  (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 24))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
                 CloseDialog( (HWND)(v83), 0);
-                HouseClass_Player[42540] = byte_B04894;
-                ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-                if ( HouseClass_Player[42540] )
-                  ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+                ((unsigned char *)&HouseClass_Player)[42540] = byte_B04894;
+                ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+                if ( ((unsigned char *)&HouseClass_Player)[42540] )
+                  ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
               }
             }
-            if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-              ((Connection *)(&HouseClass_Player[44148]))->Close();
+            if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
+              ((Connection *)((unsigned char *)&HouseClass_Player + 44148))->Close();
             Network::SendUnreachable();
             return 3;
         }
@@ -1492,12 +1492,12 @@ LABEL_116:
       if ( esi181 )
       {
         if ( byte_B04470 )
-          (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+          (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 24))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
         CloseDialog( (HWND)(esi181), 0);
-        HouseClass_Player[42540] = byte_B04894;
-        ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-        if ( HouseClass_Player[42540] )
-          ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+        ((unsigned char *)&HouseClass_Player)[42540] = byte_B04894;
+        ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+        if ( ((unsigned char *)&HouseClass_Player)[42540] )
+          ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
       }
     }
     Network::SendUnreachable();
@@ -1506,8 +1506,8 @@ LABEL_116:
   {
     if ( Network_Process_64B410((int)v8, a7) )
     {
-      ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-      ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+      ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+      ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
       v60 = (ObjectClass *)TimerGetTicks();
       v134[3] = (int)v13;
       v100 = (MSVQAnim *)v13;
@@ -1531,17 +1531,17 @@ LABEL_116:
       if ( v79 )
       {
         if ( byte_B04470 )
-          (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+          (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 24))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
         CloseDialog((HWND)v79, 0);
-        HouseClass_Player[42540] = byte_B04894;
-        ((MapClass *)((int)(&stru_87C374[13428])))->MarkForRedraw((int)((MapClass *)((int)(&stru_87C374[13428]))), 2);
-        if ( HouseClass_Player[42540] )
-          ((TacticalMap*)(&stru_87C374[13428]))->Redraw();
+        ((unsigned char *)&HouseClass_Player)[42540] = byte_B04894;
+        ((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428)))->MarkForRedraw((int)((MapClass *)((int)((unsigned char *)&stru_87C374 + 13428))), 2);
+        if ( ((unsigned char *)&HouseClass_Player)[42540] )
+          ((TacticalMap*)((unsigned char *)&stru_87C374 + 13428))->Redraw();
       }
     }
   }
-  if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-    ((Connection *)(&HouseClass_Player[44148]))->Close();
+  if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
+    ((Connection *)((unsigned char *)&HouseClass_Player + 44148))->Close();
   return 7;
 }
 } // namespace gamemd
@@ -1609,15 +1609,15 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
         while ( v23 < v22 )
         {
           v11 = 37 * v10; /*0x649dcf*/
-          v12 = byte_A802D4[3 * v11] == 31 ? *(int *)((char *)&dword_A802DF + 3 * v11) + 111 : 111;
+          v12 = ((unsigned char *)&byte_A802D4)[3 * v11] == 31 ? *(int *)((char *)&dword_A802DF + 3 * v11) + 111 : 111;
           if ( v9 + v12 > a3 ) /*0x649df5*/
             break; /*0x649df5*/
           *(int *)((char *)&dword_A802D7 + 3 * v11) = (int)dword_A8ED84 + v8; /*0x649e03*/
-          byte_A802D6[111 * dword_A802CC] = *((unsigned char *)dword_A83D4C + 48); /*0x649e1e*/
+          ((unsigned char *)&byte_A802D6)[111 * dword_A802CC] = *((unsigned char *)dword_A83D4C + 48); /*0x649e1e*/
           byte_A802D5[111 * dword_A802CC] &= ~1u; /*0x649e3a*/
           if ( dword_8B41F8 >= 0x4000 ) /*0x649e4b*/
             break; /*0x649e4b*/
-          v13 = &byte_A802D4[111 * dword_A802CC]; /*0x649e61*/
+          v13 = (unsigned char *)&byte_A802D4 + 111 * dword_A802CC; /*0x649e61*/
           v14 = &byte_8B4204[111 * dword_8B4200]; /*0x649e73*/
           qmemcpy( (void *)(v14), (const void *)(v13), 0x6Cu); /*0x649e7a*/
           v13 += 108; /*0x649e7a*/
@@ -1627,7 +1627,7 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
           dword_A70204[dword_8B4200] = timeGetTime(); /*0x649e8e*/
           ++dword_8B41F8; /*0x649eae*/
           dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x649eb7*/
-          v15 = &byte_A802D4[111 * dword_A802CC]; /*0x649ec5*/
+          v15 = (unsigned char *)&byte_A802D4 + 111 * dword_A802CC; /*0x649ec5*/
           v16 = *v15; /*0x649ecc*/
           qmemcpy( (void *)(a2 + v9), (const void *)(v15), 0x6Cu); /*0x649ed3*/
           v15 += 108; /*0x649ed3*/
@@ -1665,7 +1665,7 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
     v25 += v27; /*0x649f71*/
     if ( v27 ) /*0x649f75*/
     {
-      Debug::Log(); /*0x649f84*/
+      Debug::Log("Send_Packets - created packet with %d commands on frame %d\n"); /*0x649f84 G57w11: IDA push seq @ 0x649f84 +2 reg-vararg(s) omitted*/
       v24 = 1; /*0x649f8c*/
     }
     (*(void (**)(int, int, int, int, int))(*(unsigned int *)a1 + 8))(a1, a2, v9, v24, -1); /*0x649fa1*/
@@ -1681,7 +1681,7 @@ int BuildNetworkEventPacket(int a1, int a2, int a3, int a4, int16_t a5)
     }
   }
   if ( v20 ) /*0x649fda*/
-    Debug::Log(); /*0x649fe8*/
+    Debug::Log("Send_Packets - added total of %d commands on frame %d\n"); /*0x649fe8 G57w11: IDA push seq @ 0x649fe8 +2 reg-vararg(s) omitted*/
   return v20; /*0x649ff2*/
 }
 }
@@ -1769,11 +1769,11 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
       v42 = v10; /*0x64a10a*/
       v34 = 0; /*0x64a10e*/
       if ( v9 == 38 || v9 == 37 ) /*0x64a11d*/
-        Debug::Log(); /*0x64a124*/
+        Debug::Log("Received MEGAFRAMEINFO packet\n"); /*0x64a124 G57w11: IDA push seq @ 0x64a124*/
       v11 = v10 <= 0; /*0x64a12c*/
       if ( !v10 ) /*0x64a12e*/
       {
-        Debug::Log(); /*0x64a135*/
+        Debug::Log("MEGAFRAMEINFO is part of a pserver port blitz!\n"); /*0x64a135 G57w11: IDA push seq @ 0x64a135*/
         v11 = 1; /*0x64a13d*/
       }
       if ( !v11 ) /*0x64a13f*/
@@ -1796,7 +1796,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
                 {
                   Class = (char *)((Network *)(unk_A8E9C0))->GetClass(*(char *)(v13 + 11)); /*0x64a213*/
                   ToWideStringChar( (IUnknown *)(Class)); /*0x64a21a*/
-                  Debug::Log(); /*0x64a225*/
+                  Debug::Log("Got useless MEGAFRAMEINFO frame update from %s. frame = %d\n"); /*0x64a225 G57w11: IDA push seq @ 0x64a225 +1 reg-vararg(s) omitted*/
                 }
               }
               else
@@ -1807,13 +1807,13 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
                 {
                   v17 = (char *)((Network *)(unk_A8E9C0))->GetClass(*(char *)(v13 + 11)); /*0x64a1b9*/
                   ToWideStringChar( (IUnknown *)(v17)); /*0x64a1c0*/
-                  Debug::Log(); /*0x64a1cb*/
+                  Debug::Log("Got MEGAFRAMEINFO frame update from %s. New frame = %d\n"); /*0x64a1cb G57w11: IDA push seq @ 0x64a1cb +1 reg-vararg(s) omitted*/
                 }
                 v18 = *(uint16_t *)(v13 + 8); /*0x64a1d8*/
                 if ( v16[1] < (unsigned int)(uint16_t)v18 ) /*0x64a1de*/
                 {
                   v16[1] = v18; /*0x64a1e6*/
-                  Debug::Log(); /*0x64a1e9*/
+                  Debug::Log("Command count is %d\n"); /*0x64a1e9 G57w11: IDA push seq @ 0x64a1e9 +1 reg-vararg(s) omitted*/
                 }
               }
               if ( (*(unsigned char *)(v13 + 12) & 1) == 0 ) /*0x64a231*/
@@ -1823,7 +1823,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
           else if ( *v12 == *((unsigned int *)dword_A83D4C + 12) ) /*0x64a263*/
           {
             dword_A8E2D4 = *(unsigned int *)(v12 + 2); /*0x64a268*/
-            Debug::Log(); /*0x64a289*/
+            Debug::Log("My router response time = %d ms\n"); /*0x64a289 G57w11: IDA push seq @ 0x64a289 +1 reg-vararg(s) omitted*/
           }
           else
           {
@@ -1844,9 +1844,9 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
                     v22 = (char *)((EventClass*)v43)->Add2(*((unsigned int *)dword_A83D4C + 12), 0x28u, *v12); /*0x64a301*/
                     if ( dword_A802C8 < 128 ) /*0x64a310*/
                     {
-                      qmemcpy( (void *)(&byte_A802D4[111 * dword_A802D0]), (const void *)(v22), 0x6Fu); /*0x64a32c*/
+                      qmemcpy( (void *)((unsigned char *)&byte_A802D4 + 111 * dword_A802D0), (const void *)(v22), 0x6Fu); /*0x64a32c*/
                       v6 = a2; /*0x64a33d*/
-                      dword_A83A54[dword_A802D0] = timeGetTime(); /*0x64a341*/
+                      (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x64a341*/
                       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x64a358*/
                       ++dword_A802C8; /*0x64a35e*/
                     }
@@ -1878,7 +1878,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     if ( *v24 == -1 ) /*0x64a3cc*/
     {
       v41 = 1; /*0x64a3d3*/
-      Debug::Log(); /*0x64a3db*/
+      Debug::Log("Player ready\n"); /*0x64a3db G57w11: IDA push seq @ 0x64a3db*/
     }
     *v24 = *(unsigned int *)(v6 + 3) - *(uint8_t *)(v6 + 13); /*0x64a3ef*/
     Network_Process_652110(a5, v8); /*0x64a3f4*/
@@ -1888,10 +1888,10 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     v24[1] = v25; /*0x64a406*/
   if ( *(unsigned char *)v6 == 25 ) /*0x64a40c*/
   {
-    if ( dword_A8B238[0] == 4 || dword_A8B238[0] == 3 ) /*0x64a5b0*/
+    if ( (&dword_A8B238)[0] == 4 || (&dword_A8B238)[0] == 3 ) /*0x64a5b0*/
     {
       ((Network *)(unk_A8E9C0))->GetClass(a3); /*0x64a5ca*/
-      Debug::Log(); /*0x64a5d5*/
+      Debug::Log("Received FRAMESYNC packet from %s. Frame = %d\n"); /*0x64a5d5 G57w11: IDA push seq @ 0x64a5d5 +1 reg-vararg(s) omitted*/
     }
     if ( *(unsigned int *)(v6 + 7) != dword_A8E7A8 ) /*0x64a5e8*/
       return 2; /*0x64a5f9*/
@@ -1957,14 +1957,14 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   v33 = v27; /*0x64a53d*/
   if ( v27 == -1 ) /*0x64a542*/
   {
-    Debug::Log(); /*0x64a549*/
+    Debug::Log("***** Error DOLIST_FULL! ******\n"); /*0x64a549 G57w11: IDA push seq @ 0x64a549*/
     return 3; /*0x64a551*/
   }
   else
   {
     if ( *(unsigned char *)v6 == 28 && v27 > 0 ) /*0x64a56a*/
       v33 = v27 - 1; /*0x64a56c*/
-    Debug::Log(); /*0x64a57c*/
+    Debug::Log("Frame %d, Receive packet uncompressed into %d commmands\n"); /*0x64a57c G57w11: IDA push seq @ 0x64a57c +2 reg-vararg(s) omitted*/
     v24[2] += v33; /*0x64a590*/
     return (AbstractClass * *)v41; /*0x64a593*/
   }
@@ -2051,7 +2051,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
 
   if ( lParam >= 0 && lParam < dword_A8DA84 ) /*0x64aafb*/
   {
-    Debug::Log(); /*0x64ab16*/
+    Debug::Log("Propose_Kick_Player %d - %s. Local id is %d\n"); /*0x64ab16 G57w11: IDA push seq @ 0x64ab16 +3 reg-vararg(s) omitted*/
     DlgItem = GetDlgItem(hDlg, 1617); /*0x64ab24*/
     v6 = DlgItem; /*0x64ab2c*/
     if ( !lParam ) /*0x64ab2e*/
@@ -2087,7 +2087,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     v18 = *(unsigned int *)(*(unsigned int *)dword_A8DA78 + 111); /*0x64ac0d*/
     for ( i = *(unsigned int *)(*(unsigned int *)(dword_A8DA78 + 4 * lParam) + 111); v13 < dword_A8DA84; v12 = dword_A8DA78 ) /*0x64ac23*/
     {
-      Debug::Log(); /*0x64ac2e*/
+      Debug::Log("Sending kick proposal to %s\n"); /*0x64ac2e G57w11: IDA push seq @ 0x64ac2e +1 reg-vararg(s) omitted*/
       Network::SendMessage((int)unk_A8E9C0, (int)&v15, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * v13++) + 40, 0, 0); /*0x64ac58*/
     }
     return Network_Process_64AD10(*(unsigned int *)(*(unsigned int *)v12 + 111), *(unsigned int *)(*(unsigned int *)(v12 + 4 * lParam) + 111)); /*0x64ac77*/
@@ -2113,10 +2113,10 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
   v13 = time(0) - dword_B0489C < 60; /*0x64b270*/
   dword_B0489C = time(0); /*0x64b27e*/
   v6 = (*(int (**)(int, int))(*(unsigned int *)a1 + 20))(a1, a2); /*0x64b292*/
-  Debug::Log(); /*0x64b29f*/
+  Debug::Log("Kicking player %d from the game - Frame is %d\n"); /*0x64b29f G57w11: IDA push seq @ 0x64b29f +2 reg-vararg(s) omitted*/
   if ( v6 == -1 ) /*0x64b2aa*/
   {
-    Debug::Log(); /*0x64b2b1*/
+    Debug::Log("Kick_Player_Now bailing - bad house ID\n"); /*0x64b2b1 G57w11: IDA push seq @ 0x64b2b1*/
   }
   else
   {
@@ -2242,7 +2242,7 @@ int Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned ch
   LABEL_21:
     if ( v9 == -1 ) /*0x64b5dd*/
       v9 = 0; /*0x64b5df*/
-    Debug::Log(); /*0x64b5ee*/
+    Debug::Log("Compress: Saving new megamission list with %d units to slot %d\n"); /*0x64b5ee G57w11: IDA push seq @ 0x64b5ee +2 reg-vararg(s) omitted*/
     dword_AFA42C[v9] = (int)dword_A8ED84; /*0x64b600*/
     v14 = (char *)&unk_AC5230 + 640 * v9; /*0x64b60f*/
     *(unsigned int *)v14 = *(unsigned int *)a3; /*0x64b61d*/
@@ -2300,7 +2300,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
   v26 = (unsigned char *)(0); /*0x64b6a5*/
   v27 = (unsigned char *)(0); /*0x64b6a9*/
   if ( byte_A8ED74 ) /*0x64b6ad*/
-    Debug::Log(); /*0x64b6ba*/
+    Debug::Log("\nFrame %d: Building Send Packet\n"); /*0x64b6ba G57w11: IDA push seq @ 0x64b6ba +1 reg-vararg(s) omitted*/
   if ( dword_A802C8 ) /*0x64b6c8*/
   {
     v7 = dword_A802CC; /*0x64b6ce*/
@@ -2327,7 +2327,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
             if ( byte_A8ED74 ) /*0x64b7a5*/
             {
               FromNameIndex(v24); /*0x64b821*/
-              Debug::Log(); /*0x64b82d*/
+              Debug::Log("      adding Whom:%x Mission:%s Target:%x Dest:%x\n"); /*0x64b82d G57w11: IDA push seq @ 0x64b82d +2 reg-vararg(s) omitted*/
               v7 = dword_A802CC; /*0x64b832*/
             }
             v9 = 5; /*0x64b83f*/
@@ -2338,8 +2338,8 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
           else
           {
             if ( byte_A8ED74 ) /*0x64b85d*/
-              Debug::Log(); /*0x64b864*/
-            Debug::Log(); /*0x64b87c*/
+              Debug::Log("  New MEGAMISSION run:\n"); /*0x64b864 G57w11: IDA push seq @ 0x64b864*/
+            Debug::Log("Compress: New megamission run - checking for previous repeat of %d units\n"); /*0x64b87c G57w11: IDA push seq @ 0x64b87c +1 reg-vararg(s) omitted*/
             DictionaryCompressLookup((uint8_t *)&v23, &a4, v27, v26, 1); /*0x64b89b*/
             ++v10; /*0x64b8a0*/
             v22 = 0; /*0x64b8a9*/
@@ -2351,7 +2351,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
         }
         else
         {
-          Debug::Log(); /*0x64b8de*/
+          Debug::Log("Compress: Non-megamission event - checking for previous repeat of %d units\n"); /*0x64b8de G57w11: IDA push seq @ 0x64b8de +1 reg-vararg(s) omitted*/
           DictionaryCompressLookup((uint8_t *)&v23, &a4, v27, v26, 1); /*0x64b8fd*/
           v11 = v25; /*0x64b902*/
           v25 = (unsigned char *)(0); /*0x64b90a*/
@@ -2365,7 +2365,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
       {
         if ( byte_A8ED74 ) /*0x64b931*/
         {
-          Debug::Log(); /*0x64b938*/
+          Debug::Log("  New MEGAMISSION run:\n"); /*0x64b938 G57w11: IDA push seq @ 0x64b938*/
           v7 = dword_A802CC; /*0x64b93d*/
         }
         ++v10; /*0x64b94d*/
@@ -2379,7 +2379,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
         if ( (unsigned char)v29 == 4 && v22 ) /*0x64bd5d*/
         {
           IDA_LOBYTE(v23) = v23 - 1; /*0x64bd65*/
-          Debug::Log(); /*0x64bd79*/
+          Debug::Log("Compress: Out of buffer space at %d units\n"); /*0x64bd79 G57w11: IDA push seq @ 0x64bd79 +1 reg-vararg(s) omitted*/
           DictionaryCompressLookup((uint8_t *)&v23, &a4, v27, v26, 1); /*0x64bd98*/
           *v25 = v23; /*0x64bda5*/
         }
@@ -2416,13 +2416,13 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
             a4 += v9; /*0x64bc06*/
             if ( dword_A802C8 == 1 || v28 == a5 - 1 ) /*0x64bc1d*/
             {
-              Debug::Log(); /*0x64bc7d*/
+              Debug::Log("Compress: Ended megamission run at %d units - no more events\n"); /*0x64bc7d G57w11: IDA push seq @ 0x64bc7d +1 reg-vararg(s) omitted*/
               DictionaryCompressLookup((uint8_t *)&v23, &a4, v27, v26, 1); /*0x64bc9c*/
               *v25 = v23; /*0x64bca9*/
             }
             else if ( DictionaryCompressLookup((uint8_t *)&v23, &a4, v27, v26, 0) ) /*0x64bc36*/
             {
-              Debug::Log(); /*0x64bc52*/
+              Debug::Log("Compress: Found early repeat megamission - splitting after %d units\n"); /*0x64bc52 G57w11: IDA push seq @ 0x64bc52 +1 reg-vararg(s) omitted*/
               v24 = 1; /*0x64bc62*/
               *v25 = v23; /*0x64bc67*/
             }
@@ -2609,7 +2609,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
       v3 += v11 + 1; /*0x64bf41*/
       v34 += -1 - v11; /*0x64bf52*/
       v38 = 5; /*0x64bf56*/
-      Debug::Log(); /*0x64bf5e*/
+      Debug::Log("Decoding new MEGAMISSION\n"); /*0x64bf5e G57w11: IDA push seq @ 0x64bf5e*/
       v16 = IDA_HIBYTE(v45[2]); /*0x64bf70*/
       v17 = SBYTE1(v45[3]) + 8 * v40; /*0x64bf77*/
       v18 = (char *)&unk_AFA468 + 640 * v17; /*0x64bf84*/
@@ -2618,7 +2618,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
       v43 = 1; /*0x64bf93*/
       dword_AC50FC[v17] = 1; /*0x64bf97*/
       if ( !*(unsigned int *)((char *)v45 + 3) || !IDA_LOBYTE(v45[0]) ) /*0x64bfac*/
-        Debug::Log(); /*0x64bfba*/
+        Debug::Log("Frame %d:Empty megamission decoded\n"); /*0x64bfba G57w11: IDA push seq @ 0x64bfba +1 reg-vararg(s) omitted*/
       v36 = &a1[v3]; /*0x64bfe0*/
       v42 = (char *)&unk_AFA46D + 640 * v17; /*0x64bfe4*/
       while ( dword_8B41F8 < 0x4000 ) /*0x64bff2*/
@@ -2646,7 +2646,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
         if ( v21 == 1 ) /*0x64c098*/
         {
           v38 = 4; /*0x64c0d3*/
-          Debug::Log(); /*0x64c0db*/
+          Debug::Log("Got new unit list for player %d with %d units in slot %d\n"); /*0x64c0db G57w11: IDA push seq @ 0x64c0db +3 reg-vararg(s) omitted*/
           goto LABEL_39; /*0x64c0e3*/
         }
         v3 += 5; /*0x64c0a7*/
@@ -2664,7 +2664,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
   LABEL_40:
     if ( !*(unsigned int *)((char *)v45 + 3) || !IDA_LOBYTE(v45[0]) ) /*0x64c264*/
     {
-      Debug::Log(); /*0x64c271*/
+      Debug::Log("Frame %d: Empty event being added to queue\n"); /*0x64c271 G57w11: IDA push seq @ 0x64c271 +1 reg-vararg(s) omitted*/
       v6 = dword_8B4200; /*0x64c276*/
     }
     if ( dword_8B41F8 >= 0x4000 ) /*0x64c289*/
@@ -2709,7 +2709,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
   IDA_HIBYTE(v45[2]) = v23[4]; /*0x64c13f*/
   if ( !*(unsigned int *)((char *)v45 + 3) || !IDA_LOBYTE(v45[0]) ) /*0x64c151*/
   {
-    Debug::Log(); /*0x64c165*/
+    Debug::Log("Frame %d:Empty megamission decoded from slot %d. Player %d\n"); /*0x64c165 G57w11: IDA push seq @ 0x64c165 +3 reg-vararg(s) omitted*/
     v6 = dword_8B4200; /*0x64c16a*/
   }
   if ( !v33 ) /*0x64c179*/
@@ -2740,7 +2740,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     if ( v29 ) /*0x64c221*/
     {
       v38 = -1; /*0x64c231*/
-      Debug::Log(); /*0x64c248*/
+      Debug::Log("Used old unit list in slot %d - %d bytes saved\n"); /*0x64c248 G57w11: IDA push seq @ 0x64c248 +2 reg-vararg(s) omitted*/
       goto LABEL_39; /*0x64c248*/
     }
     if ( !v27 ) /*0x64c225*/

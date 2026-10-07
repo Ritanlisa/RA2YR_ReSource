@@ -114,9 +114,9 @@ public:
     unsigned int AnimClass_field_0xC0;  // 0xC0
     unsigned int AnimClass_field_0xC8;  // 0xC8
     unsigned int AnimClass_field_0xCC;  // 0xCC
-    unsigned char AnimClass_field_0xD0[1];  // 0xD0
+    unsigned int AnimClass_field_0xD0;  // 0xD0 g57w11 r4: raw 0x421ef4 写 4 字节 (-1); 前 [1] 数组形态 C3863
     unsigned int AnimClass_field_0xD4;  // 0xD4
-    unsigned char AnimClass_field_0xFC[1];  // 0xFC
+    unsigned int AnimClass_field_0xFC;  // 0xFC g57w11 r4: raw 0x421f06 写 1000 (4 字节); C3863
     unsigned char __pad_178[2];  // 0x178
     unsigned char __pad_18C;  // 0x18C
     unsigned char __pad_7C[21];  // 0x7C
@@ -126,7 +126,7 @@ public:
     unsigned char __pad_C4;  // 0xC4
     unsigned char __pad_D8;  // 0xD8
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7); // 0x421EA0  // g57e2 W5i: raw proto (void*,int*,void*,int,void*,void*,char)
+    int* ctor(void* a1, void* a2, void* a3, int a4, void* a5, void* a6, int a7); // 0x421EA0 g57w11 r4: raw void** 返回 (cpp def int* 同尺寸; C2556)  // g57e2 W5i: raw proto (void*,int*,void*,int,void*,void*,char)
     int SimpleCtor();  // 0x422720
     int SetAnimSpeed();  // 0x422BC0
     int * UpdateZAdjust(int * a1);  // 0x422BE0

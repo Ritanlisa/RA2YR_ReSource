@@ -352,7 +352,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1),(gamemd::ObjectTypeClass *)(a2)); 
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (gamemd::ObjectTypeClass *)(a2)); 
   if ( result >= 0 ) /*0x42881b*/
   {
     if ( a1 ) /*0x428823*/
@@ -376,12 +376,12 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       if ( ((unsigned int *)a1)[0] ) /*0x4288db*/
       {
-        _makepath(&v3[1], 0, 0, (const char *)((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x428910*/
+        _makepath(&v3[1], 0, 0, (const char *)((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x428910*/
         ((unsigned int *)a1)[0] = (unsigned int)((SHPStruct *)SearchMIXFile( (char *)(&v3[1]), 1)); /*0x428923*/
         return 0; /*0x428932*/
       }
       if ( ((unsigned int *)a1)[0] ) /*0x428935*/
-        (*((void (**)(AnimTypeClass *, int))a1->vtable1 + 40))( (AnimTypeClass *)(a1), (&dword_A8B230)[130].uniqueId); /*0x42894f*/
+        (*((void (**)(AnimTypeClass *, int))a1->vtable1 + 40))( (AnimTypeClass *)(a1), ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x42894f*/
     }
     return 0; /*0x428955*/
   }
@@ -507,11 +507,11 @@ int AnimTypeClass::GetDamage()
     _makepath(Buffer, 0, 0, ImageFile,(const char *)(Ext)); /*0x428c8b*/
     if ( ((unsigned int *)this)[0] ) /*0x428c90*/
     {
-      _makepath(Buffer, 0, 0, (const char *)((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * (&dword_A8B230)[130].uniqueId); /*0x428ccc*/
+      _makepath(Buffer, 0, 0, (const char *)((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x428ccc*/
     }
     else if ( ((unsigned int *)this)[0] ) /*0x428cd6*/
     {
-      TheaterObjectTypeClassSpecificID( (char *)(Buffer), (&dword_A8B230)[130].uniqueId); /*0x428cf3*/
+      TheaterObjectTypeClassSpecificID( (char *)(Buffer), ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x428cf3*/
     }
     ((CCFileClass*)&v7)->Construct( (char *)(Buffer)); /*0x428d04*/
     v4 = (SHPStruct *)((CCFileClass *)(&v7))->ReadEntireFile(); /*0x428d0d*/
@@ -534,7 +534,7 @@ int AnimTypeClass::GetDamage()
       *(unsigned int *)v10.CDFileClass = (unsigned int)&off_7E1668;
       ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x428d87*/
     }
-    (*((void (**)(AnimTypeClass *, int))this->vtable1 + 40))(this, (&dword_A8B230)[130].uniqueId); /*0x428d9c*/
+    (*((void (**)(AnimTypeClass *, int))this->vtable1 + 40))(this, ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x428d9c*/
     Image = (gamemd::SHPStruct *)(((unsigned int *)this)[0]); /*0x428da2*/
     *(unsigned int *)v7.CDFileClass = (unsigned int)&vt_CCFileClass;
     v9 = 0; /*0x428db4*/

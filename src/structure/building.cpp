@@ -54,6 +54,13 @@ int BuildingClass_CalcBarrelFlashPosition(...);   // g57b5 W5: raw 词表 (纯�
 int BuildingTypeClass_GetFoundationHeight(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int BuildingTypeClass_GetFoundationWidth(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int CellClass_GetCoords(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+void WinAPI_Wrapper(int aP1);   // g57w11 r4: misc_ext.hpp:53 同形 (TU 未载 misc_ext; raw 0x44c1ef 调用形)
+int PlayHealthDependentBuildingAnim(...);   // g57w11 r4: raw 词表 (纯变参兜底)
+int TransformCell(...);   // g57w11 r4: raw 词表
+int To_Cell(...);   // g57w11 r4: raw 词表
+int Subtract(...);   // g57w11 r4: raw 词表
+int StartInvulnerability(...);   // g57w11 r4: raw 词表
+int Set2(...);   // g57w11 r4: raw 词表
 int FacingClass_Set_SyncLog(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int HouseClass_UpdateBuildState(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int LayerClass_Pathfinding_Find(...);   // g57b5 W5: raw 词表 (纯变参兜底)
@@ -70,6 +77,17 @@ int IonSensitivesShouldBeOffline(void);  // g57b5 W6: 0 参调用修正   // g57
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) ----
 namespace gamemd {
     int *World_ToScreen(void *a1, ...);                // object/supplied_bodies:91 真形;
+    // ---- g57w11 r4 item3: raw IDA 渲染词汇壳 (调用形; 真实 this 链留证) ----
+    struct Team { static bool AllMembersValid(void *a1); static int GetMember(void *a1, int a2); };   // raw 0x444177/0x44bb1b
+    struct Locomotor { static int GetSpeed(void *a1); };            // raw 0x44b8ae
+    struct LinkedList { static void *Pop(void *a1); };              // raw 0x44b9f0/0x44bb4c
+    struct Power { unsigned int Power_field_0x0; static void ChangedHouse(void *a1, int a2); };  // raw 0x44bb30
+    struct Timer { static void SetFlag(void *a1, int a2); };        // raw 0x44bb37
+    struct VeinholeClass { static int GetState(float *a1); };       // raw 0x44bb23
+    int globalHelper_088570(int a1, int a2, int a3);                // raw 0x4453a9 调用形
+    struct Array { static bool ContainsValue(void *a1, int a2); };  // raw 0x443cf6 调用形
+    int ScanBuildingPlacementCells(void *a1, int a2, int a3);       // raw 0x445408 调用形
+    int CreateTriggerClassIfFarEnough(int a1, int a2, int a3);      // raw 0x44b960 调用形
 } // namespace gamemd
 // ---- g57b5 W3 end ----
 
@@ -137,6 +155,7 @@ struct Coord2D {
 };
 
 struct BuildingPlacement_site {   // g57a5 W2e: TU-local 站点壳改名（C2011 vs render_ext BuildingPlacement）
+    static void *FindPosition(void *a1, void *a2);  // g57w11 r4: raw 0x500200 (调用形实参 char* 适配)
     static int ValidateType(void* self, int type, int mode);
 };
 #define BuildingPlacement BuildingPlacement_site
@@ -3233,8 +3252,8 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF             (*(void (**)(int, int, unsigned int))(*(unsigned int *)Member + 488))(Member, 5, 0); /*0x44dd6b*/
 //DUPDEF             (*(void (**)(int))(*(unsigned int *)v42 + 492))(v42); /*0x44dd75*/
 //DUPDEF           }
-//DUPDEF           RateScaler::Init((RateScaler *)((unsigned int *)this)[0], *(double *)this->((unsigned int *)Type)[0]); /*0x44dd95*/
-//DUPDEF           v43 = this->((unsigned int *)Type)[1]; /*0x44dda2*/
+//DUPDEF           RateScaler::Init((RateScaler *)((unsigned int *)this)[0], *(double *)((unsigned int *)this->Type)[0]); /*0x44dd95*/
+//DUPDEF           v43 = ((unsigned int *)this->Type)[1]; /*0x44dda2*/
 //DUPDEF           ((unsigned int *)this)[0] = 1; /*0x44dda8*/
 //DUPDEF           ((unsigned int *)this)[0] = v43 != 0 ? 4 : 1;
 //DUPDEF           ((BuildingClass*)(this))->ClearAnims(18); /*0x44ddbf*/
@@ -3281,10 +3300,10 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF               goto LABEL_57; /*0x44de9a*/
 //DUPDEF             v52 = StreamClass::Set2((StreamClass *)&v84.StreamClass_field_0C, v51); /*0x44dea1*/
 //DUPDEF             if ( v52 < 0 && v52 != -2147467262 ) /*0x44deaf*/
-//DUPDEF               WinAPI::Wrapper(v52); /*0x44deb2*/
+//DUPDEF               WinAPI_Wrapper(v52); /*0x44deb2*/
 //DUPDEF             if ( !v84.StreamClass_field_0C ) /*0x44debd*/
 //DUPDEF   LABEL_57:
-//DUPDEF               WinAPI::Wrapper(-2147467261); /*0x44dec4*/
+//DUPDEF               WinAPI_Wrapper(-2147467261); /*0x44dec4*/
 //DUPDEF             (*(void (**)(int, int *))(*(unsigned int *)v84.StreamClass_field_0C + 12))( /*0x44ded5*/
 //DUPDEF               v84.StreamClass_field_0C,
 //DUPDEF               &v90);
@@ -3296,7 +3315,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF               {
 //DUPDEF                 v59 = StreamClass::Set(&v84, v51); /*0x44dfc0*/
 //DUPDEF                 if ( v59 < 0 && v59 != -2147467262 ) /*0x44dfce*/
-//DUPDEF                   WinAPI::Wrapper(v59); /*0x44dfd1*/
+//DUPDEF                   WinAPI_Wrapper(v59); /*0x44dfd1*/
 //DUPDEF                 if ( *(unsigned int *)v84.__pad_0 /*0x44dfe1*/
 //DUPDEF                   && (*(uint8_t (**)(unsigned int))(**(unsigned int **)v84.__pad_0 + 28))(*(unsigned int *)v84.__pad_0) )
 //DUPDEF                 {
@@ -3305,16 +3324,16 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF                   v60 = *(unsigned int *)v84.__pad_0; /*0x44dff4*/
 //DUPDEF                   *v51 = 0; /*0x44dff8*/
 //DUPDEF                   if ( !v60 ) /*0x44e000*/
-//DUPDEF                     WinAPI::Wrapper(-2147467261); /*0x44e007*/
+//DUPDEF                     WinAPI_Wrapper(-2147467261); /*0x44e007*/
 //DUPDEF                   (*(void (**)(int, int *))(*(unsigned int *)v60 + 16))(v60, v51); /*0x44e014*/
 //DUPDEF                 }
 //DUPDEF               }
 //DUPDEF               v84.m_Position = 0; /*0x44e024*/
 //DUPDEF               InstanceCOM = CreateInstanceCOM((ObjectClass *)&v84.m_Position, (IID *)&stru_7E9A30, 0, 7u); /*0x44e02c*/
 //DUPDEF               if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x44e03a*/
-//DUPDEF                 WinAPI::Wrapper(InstanceCOM); /*0x44e03d*/
+//DUPDEF                 WinAPI_Wrapper(InstanceCOM); /*0x44e03d*/
 //DUPDEF               if ( !v84.m_Position ) /*0x44e048*/
-//DUPDEF                 WinAPI::Wrapper(-2147467261); /*0x44e04f*/
+//DUPDEF                 WinAPI_Wrapper(-2147467261); /*0x44e04f*/
 //DUPDEF               m_Size = (unsigned int *)v84.m_Size; /*0x44e058*/
 //DUPDEF               (*(void (**)(int, int))(*(unsigned int *)v84.m_Position + 12))(v84.m_Position, v84.m_Size); /*0x44e060*/
 //DUPDEF               m_Data = 0; /*0x44e067*/
@@ -3338,7 +3357,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF                   v84.m_Data = 0; /*0x44e09a*/
 //DUPDEF                 }
 //DUPDEF                 if ( v64 < 0 && v64 != -2147467262 ) /*0x44e0c1*/
-//DUPDEF                   WinAPI::Wrapper(v64); /*0x44e0c4*/
+//DUPDEF                   WinAPI_Wrapper(v64); /*0x44e0c4*/
 //DUPDEF               }
 //DUPDEF               v66 = *(unsigned int *)v84.__pad_0; /*0x44e0cd*/
 //DUPDEF               if ( *(void **)v84.__pad_0 != m_Data ) /*0x44e0d3*/
@@ -3370,7 +3389,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF                     (*(void (**)(int))(*(unsigned int *)v68 + 8))(v68); /*0x44e12e*/
 //DUPDEF                 }
 //DUPDEF                 if ( !*v51 ) /*0x44e131*/
-//DUPDEF                   WinAPI::Wrapper(-2147467261); /*0x44e13b*/
+//DUPDEF                   WinAPI_Wrapper(-2147467261); /*0x44e13b*/
 //DUPDEF                 (*(void (**)(int, int, int, unsigned int, unsigned int))(*(unsigned int *)*v51 + 112))( /*0x44e160*/
 //DUPDEF                   *v51,
 //DUPDEF                   66,
@@ -3400,7 +3419,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF             else if ( !memcmp(&v90, &stru_7E9A30, 0x10u) ) /*0x44df1a*/
 //DUPDEF             {
 //DUPDEF               if ( !*v51 ) /*0x44df72*/
-//DUPDEF                 WinAPI::Wrapper(-2147467261); /*0x44df7c*/
+//DUPDEF                 WinAPI_Wrapper(-2147467261); /*0x44df7c*/
 //DUPDEF               (*(void (**)(int, int, int, unsigned int, unsigned int))(*(unsigned int *)*v51 + 112))( /*0x44dfa1*/
 //DUPDEF                 *v51,
 //DUPDEF                 66,
@@ -3432,12 +3451,12 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF           if ( !((unsigned int *)this)[0] ) /*0x44e202*/
 //DUPDEF           {
 //DUPDEF   LABEL_112:
-//DUPDEF             Timer::StartDouble((Timer *)((unsigned int *)this)[0], *(double *)this->((unsigned int *)Type)[0]); /*0x44e20c*/
+//DUPDEF             Timer::StartDouble((Timer *)((unsigned int *)this)[0], *(double *)((unsigned int *)this->Type)[0]); /*0x44e20c*/
 //DUPDEF             ((unsigned int *)this)[0] = 4; /*0x44e22b*/
 //DUPDEF           }
 //DUPDEF           break; /*0x44e231*/
 //DUPDEF         case 4:
-//DUPDEF           if ( (uint8_t)Flag::CheckNone((Flag *)((unsigned int *)this)[0]) || this->((unsigned int *)Type)[1] ) /*0x44e248*/
+//DUPDEF           if ( (uint8_t)Flag::CheckNone((Flag *)((unsigned int *)this)[0]) || ((unsigned int *)this->Type)[1] ) /*0x44e248*/
 //DUPDEF           {
 //DUPDEF             (*((void (**)(BuildingClass *, unsigned int, int))this->vtable1 + 289))(this, 0, 1); /*0x44e25a*/
 //DUPDEF             ((unsigned int *)this)[0] = 1; /*0x44e260*/
@@ -3470,7 +3489,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF       }
 //DUPDEF       (*((void (**)(BuildingClass *))this->vtable1 + 262))(this); /*0x44e2cd*/
 //DUPDEF       v74 = (uint8_t (**)(BuildingClass *))this->TechnoClass; /*0x44e2d9*/
-//DUPDEF       ((unsigned int *)this)[0] = this->((unsigned int *)Type)[0]; /*0x44e2e3*/
+//DUPDEF       ((unsigned int *)this)[0] = ((unsigned int *)this->Type)[0]; /*0x44e2e3*/
 //DUPDEF       if ( v74[212](this) ) /*0x44e2eb*/
 //DUPDEF       {
 //DUPDEF         (*((void (**)(BuildingClass *))this->vtable1 + 261))(this); /*0x44e2fa*/
@@ -3481,7 +3500,7 @@ bool BuildingClass::ValidateFoundation()  // raw body 0x44efb0 follows
 //DUPDEF         goto LABEL_125; /*0x44e36b*/
 //DUPDEF       }
 //DUPDEF       v75 = (void (**)(BuildingClass *))this->TechnoClass; /*0x44e31d*/
-//DUPDEF       ((unsigned int *)this)[0] = this->((unsigned int *)Type)[0]; /*0x44e320*/
+//DUPDEF       ((unsigned int *)this)[0] = ((unsigned int *)this->Type)[0]; /*0x44e320*/
 //DUPDEF       v75[261](this); /*0x44e326*/
 //DUPDEF     }
 //DUPDEF   LABEL_125:
@@ -4389,7 +4408,7 @@ void BuildingClass::MarkExitPath()
   IDA_LOWORD(result) = *a3; /*0x4a965a*/
   if ( *a3 != *(unsigned short *)&stru_8A0390_raw.bombVisible || a3[1] != *(unsigned short *)((char *)&stru_8A0390_raw.alignmentPadding69 + 1) ) /*0x4a9672 -- overlay members are scalars*/
   {
-    v6 = *(int16_t **)((unsigned int *)&this->airstrikeTintStage3); /*0x4a9674 -- truth this->u32_118C == +4492 (0x118C; no hand-tree member)*/
+    v6 = *(int16_t **)((unsigned int *)&this->u32_118C); /*0x4a9674 -- truth this->u32_118C == +4492 (0x118C; no hand-tree member)*/
     v7 = (char)a3; /*0x4a967a*/
     while ( *v6 != 0x7FFF || v6[1] != 0x7FFF ) /*0x4a968b*/
     {
@@ -4562,7 +4581,7 @@ int BuildingClass::RenderExitPosition()
       {
         if ( Type->BarrelAnimIsVoxel ) /*0x4539a1*/
         {
-          v24 = BuildingClass_CalcBarrelFlashPosition(this, v35, v37, 1); /*0x4539be*/
+          v24 = (unsigned int *)(void *)(BuildingClass_CalcBarrelFlashPosition(this, v35, v37, 1)); /*0x4539be*/
           *cell = *v24; /*0x4539c8*/
           cell[1] = v24[1]; /*0x4539cd*/
           cell[2] = v24[2]; /*0x4539d3*/
@@ -4570,7 +4589,7 @@ int BuildingClass::RenderExitPosition()
         }
         else
         {
-          v25 = TechnoClass_ComputeTransform((void *)this, v35, v37, 0, 0, 0); /*0x4539ff*/
+          v25 = (int *)(void *)(TechnoClass_ComputeTransform((void *)this, v35, v37, 0, 0, 0)); /*0x4539ff*/
           v26 = *v25; /*0x453a04*/
           v27 = this->Type; /*0x453a06*/
           v28 = v25[1]; /*0x453a0c*/
@@ -4592,13 +4611,13 @@ int BuildingClass::RenderExitPosition()
       }
       else
       {
-        PrimaryFirePixelOffset = Type->PrimaryFirePixelOffset; /*0x4538f2*/
+        PrimaryFirePixelOffset = (int *)(void *)(Type->PrimaryFirePixelOffset); /*0x4538f2*/
         if ( Type->__pad_1714[80] ) /*0x4538ec*/
         {
           v11 = (int *)World_ToScreen(v34, PrimaryFirePixelOffset, v33); /*0x453902*/
           v12 = *v11; /*0x453907*/
           v13 = v11[1]; /*0x453909*/
-          v14 = TechnoClass_ComputeTransform((void *)this, v35, v37, 0, 0, 0); /*0x45392c*/
+          v14 = (int *)(void *)(TechnoClass_ComputeTransform((void *)this, v35, v37, 0, 0, 0)); /*0x45392c*/
           v15 = *v14; /*0x453931*/
           v16 = v14[1]; /*0x453937*/
           v17 = v14[2]; /*0x45393a*/
@@ -5324,10 +5343,10 @@ int BuildingClass::UpdateConstruction()
             if ( ((unsigned int *)&v89->Factory)[0] == 16 && !v89->Cloning ) /*0x4449e7*/  // g57e2 W3
             {
               v90 = (int *)(*(int (__thiscall **)(char *))(*(unsigned int *)v244 + 132))(v244); /*0x4449fb*/
-              owner = ((unsigned int *)this)[0]; /*0x4449fd*/
+              owner = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x4449fd*/
               v92 = 0; /*0x444a03*/
               v215 = (int)v90; /*0x444a05*/
-              if ( owner->costMultiplier[0] > 0 ) /*0x444a11*/
+              if ( (&owner->costMultiplier)[0] > 0 ) /*0x444a11*/
               {
                 while ( 1 ) /*0x444a1f*/
                 {
@@ -5336,8 +5355,8 @@ int BuildingClass::UpdateConstruction()
                   v197 = (HouseClass *)v94[135]; /*0x444a2a*/
                   v95 = (*(int (__thiscall **)(int *))(v93 + 140))(v90); /*0x444a2b*/
                   (*(void (__thiscall **)(unsigned int *, int, int))(*v94 + 256))(v94, v95, g_TerrainTypeTable); /*0x444a3e*/
-                  owner = ((unsigned int *)this)[0]; /*0x444a44*/
-                  if ( ++v92 >= owner->costMultiplier[0] ) /*0x444a51*/
+                  owner = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x444a44*/
+                  if ( ++v92 >= (&owner->costMultiplier)[0] ) /*0x444a51*/
                     break; /*0x444a51*/
                   v90 = (int *)v212; /*0x444a15*/
                 }
@@ -5351,7 +5370,7 @@ int BuildingClass::UpdateConstruction()
             IDA_LOWORD(v211) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x444ac0*/
             v211 = (unsigned __int8)((((unsigned int)v211 >> 7) + 1) >> 1); /*0x444adf*/
             v97 = *(int (__thiscall ***)(BuildingClass *, char *))this; /*0x444ae3*/  // g57e2 W2
-            *(unsigned int *)v202 = v198; /*0x444ae8*/
+            *(unsigned int *)v202 = (unsigned int)(void *)(v198); /*0x444ae8*/
             v98 = *(unsigned int *)v97[110](this, v232); /*0x444af2*/
             v99 = this->Type; /*0x444af4*/
             v204 = v98; /*0x444afd*/
@@ -5439,7 +5458,7 @@ int BuildingClass::UpdateConstruction()
               if ( !(unsigned __int8)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) || this->Type->Hospital ) /*0x444d26*/
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x444d3c*/
-                *(unsigned int *)v193 = *BuildingPlacement::FindPosition(&v223, v244); /*0x444d5f*/
+                *(unsigned int *)v193 = (unsigned int)(void *)(*BuildingPlacement::FindPosition(&v223, v244)); /*0x444d5f*/
                 if ( *(unsigned int *)v193 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x444d79*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x444db7*/
@@ -5562,7 +5581,7 @@ int BuildingClass::UpdateConstruction()
               if ( !(unsigned __int8)House::IsCurrentPlayer((House *)((unsigned int *)this)[0]) ) /*0x4448fe*/
               {
                 (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v244 + 488))(v244, 11, 0); /*0x44490f*/
-                *(unsigned int *)v196 = *BuildingPlacement::FindPosition(&v226, v244); /*0x444932*/
+                *(unsigned int *)v196 = (unsigned int)(void *)(*BuildingPlacement::FindPosition(&v226, v244)); /*0x444932*/
                 if ( *(unsigned int *)v196 == g_TerrainTypeTable || !((unsigned int *)&this->Type->Factory)[0] ) /*0x44494c*/  // g57e2 W3
                 {
                   ((TechnoClass *)v244)->SetFocus(0); /*0x44496c*/
@@ -5635,7 +5654,7 @@ int BuildingClass::UpdateConstruction()
           (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 16, 0); /*0x444187*/
         v30 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 18))(this, &v213); /*0x444196*/
         v203[0] = *v30 / 256; /*0x4441a9*/
-        focus = ((unsigned int *)this)[0]; /*0x4441b2*/
+        focus = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x4441b2*/
         v203[1] = v30[1] / 256; /*0x4441c3*/
         v205 = *(unsigned int *)v203; /*0x4441ce*/
         if ( focus ) /*0x4441d2*/
@@ -5660,7 +5679,7 @@ int BuildingClass::UpdateConstruction()
               v41 = v203[1] + v40[1]; /*0x4442b4*/
               IDA_LOWORD(v201) = *v40 + v203[0]; /*0x4442b9*/
               IDA_HIWORD(v201) = v41; /*0x4442be*/
-              *(unsigned int *)v203 = v201; /*0x4442cb*/
+              *(unsigned int *)v203 = (unsigned int)(void *)(v201); /*0x4442cb*/
               v42 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v203); /*0x4442d5*/
             }
             while ( Cell::IsBridge(v42) == (unsigned int *)this ); /*0x4442e3*/
@@ -5669,7 +5688,7 @@ int BuildingClass::UpdateConstruction()
         if ( ((unsigned int *)this)[0] && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v203) + 59) == 2 ) /*0x444307*/
         {
           memset(v195, 0, sizeof(v195)); /*0x44430e*/
-          *(unsigned int *)&v194[2] = &v220; /*0x444313*/
+          *(unsigned int *)&v194[2] = (unsigned int)(void *)(&v220); /*0x444313*/
           v220 = 0; /*0x44431a*/
           v221[0] = 0; /*0x44431e*/
           CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v203); /*0x444322*/
@@ -5682,7 +5701,7 @@ int BuildingClass::UpdateConstruction()
         *(unsigned int *)&v194[2] = 0; /*0x44436e*/
         IDA_LOWORD(v200) = *v44 / 256; /*0x44437e*/
         v45 = v44[1]; /*0x44438d*/
-        *(unsigned int *)v194 = &v215; /*0x444393*/
+        *(unsigned int *)v194 = (unsigned int)(void *)(&v215); /*0x444393*/
         *(unsigned int *)&v193[2] = 1; /*0x444394*/
         *(unsigned int *)v193 = 0; /*0x444395*/
         IDA_HIWORD(v200) = v45 / 256; /*0x44439e*/
@@ -5712,7 +5731,7 @@ int BuildingClass::UpdateConstruction()
         v50 = (*(int (__thiscall **)(void *, unsigned char *, int))(*(unsigned int *)v48 + 72))(v48, v239, 64); /*0x444406*/
         if ( (*(unsigned __int8 (__thiscall **)(char *, int))(v49 + 216))(v244, v50) ) /*0x44440c*/
         {
-          v51 = ((unsigned int *)this)[0]; /*0x44441a*/
+          v51 = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x44441a*/
           if ( v51 ) /*0x444422*/
           {
             (*(void (__thiscall **)(char *, AbstractClass *, int))(*(unsigned int *)v244 + 1152))(v244, v51, 1); /*0x44442b*/
@@ -5721,7 +5740,7 @@ int BuildingClass::UpdateConstruction()
           (*(void (__thiscall **)(char *, unsigned int))(*(unsigned int *)v244 + 292))(v244, 0); /*0x444445*/
           v52 = *(unsigned int *)v244; /*0x44444b*/
           v53 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v195); /*0x44445f*/
-          Coords = CellClass_GetCoords(v53, v240); /*0x444466*/
+          Coords = (int *)(void *)(CellClass_GetCoords(v53, v240)); /*0x444466*/
           (*(void (__thiscall **)(char *, int *))(v52 + 436))(v244, Coords); /*0x44446e*/
           (*(void (__thiscall **)(char *, int))(*(unsigned int *)v244 + 292))(v244, 1); /*0x44447a*/
           return 2; /*0x44448f*/
@@ -5729,7 +5748,7 @@ int BuildingClass::UpdateConstruction()
         return 0; /*0x444414*/
       case 1: /*0x443cad*/
         HouseClass_UpdateBuildState((int)((unsigned int *)this)[0], 2); /*0x443cbc*/
-        v6 = ((unsigned int *)this)[0]; /*0x443cc1*/
+        v6 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x443cc1*/
         v200 = (int)v244; /*0x443cc7*/
         v6->pad_5658[0] = -1; /*0x443cca*/
         if ( (unsigned __int8)Array::ContainsValue((Array *)this, v200) /*0x443cf6*/
@@ -5773,7 +5792,7 @@ int BuildingClass::UpdateConstruction()
                       v4);
               v22[109](v4, v23); /*0x444047*/
               v4[10] = (int)this; /*0x44404d*/
-              v24 = ((unsigned int *)this)[0]; /*0x444053*/
+              v24 = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x444053*/
               if ( v24 && !*((unsigned char *)v4[10] + 3597) ) /*0x444067*/
               {
                 (*((void (__thiscall **)(ObjectClass *, AbstractClass *, int))v4->vtable1 + 288))(v4, v24, 1); /*0x44407d*/
@@ -5810,7 +5829,7 @@ int BuildingClass::UpdateConstruction()
             IDA_HIWORD(v205) = v7; /*0x443e3c*/
             v198 = 0; /*0x443e45*/
             v204 = v205; /*0x443e46*/
-            p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x443e4a*/
+            p_NeedsSaveOrLink = (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink; /*0x443e4a*/
           }
           else
           {
@@ -5821,11 +5840,11 @@ int BuildingClass::UpdateConstruction()
             IDA_LOWORD(v205) = *(unsigned short *)&stru_87F5F0.__pad_58[676] + v205 - 1; /*0x443e04*/
             IDA_HIWORD(v205) = v7 - *(unsigned short *)&stru_87F5F0.__pad_58[676]; /*0x443e09*/
             v204 = v205; /*0x443e18*/
-            p_NeedsSaveOrLink = (Random *)&dword_A8B230[14].NeedsSaveOrLink; /*0x443e21*/
+            p_NeedsSaveOrLink = (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink; /*0x443e21*/
             v199 = *(unsigned int *)&stru_87F5F0.__pad_58[680]; /*0x443e27*/
             v198 = 0; /*0x443e28*/
           }
-          v11 = Random::Range(p_NeedsSaveOrLink, (int)v198, v199); /*0x443e50*/
+          v11 = ((gamemd::Random *)(void *)(p_NeedsSaveOrLink))->Range((int)v198, v199); /*0x443e50*/
           IDA_LOWORD(v204) = v11 + v204; /*0x443e55*/
           IDA_HIWORD(v204) += v11; /*0x443e5a*/
           v199 = 0; /*0x443e6e*/
@@ -5836,7 +5855,7 @@ int BuildingClass::UpdateConstruction()
           v224[2] = 0; /*0x443e99*/
           if ( (*((unsigned __int8 (__thiscall **)(ObjectClass *, unsigned int *, unsigned int))v12 + 54))(v4, v224, 0) ) /*0x443ea0*/
           {
-            v13 = ((unsigned int *)this)[0]; /*0x443eae*/
+            v13 = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x443eae*/
             if ( v13 ) /*0x443eb6*/
             {
               (*((void (__thiscall **)(ObjectClass *, AbstractClass *, int))v4->vtable1 + 288))(v4, v13, 1); /*0x443ec0*/
@@ -5892,7 +5911,7 @@ int BuildingClass::UpdateConstruction()
           }
           else
           {
-            v124 = HouseClass_ScanBuildLocation(((unsigned int *)this)[0], &v234, (int)v208, globalHelper_005F80, -1); /*0x444fe1*/
+            v124 = (unsigned int *)(void *)(HouseClass_ScanBuildLocation(((unsigned int *)this)[0], &v234, (int)v208, globalHelper_005F80, -1)); /*0x444fe1*/
             v125 = *(__int16 *)v124; /*0x444fe6*/
             v126 = *((__int16 *)v124 + 1); /*0x444fe9*/
             v214 = 0; /*0x444ff5*/
@@ -5933,7 +5952,7 @@ int BuildingClass::UpdateConstruction()
           }
           else
           {
-            v134 = HouseClass_ScanBuildLocation(((unsigned int *)this)[0], &v233, (int)v208, globalHelper_005F80, -1); /*0x4450bd*/
+            v134 = (unsigned int *)(void *)(HouseClass_ScanBuildLocation(((unsigned int *)this)[0], &v233, (int)v208, globalHelper_005F80, -1)); /*0x4450bd*/
             v135 = (*((__int16 *)v134 + 1) << 8) + 128; /*0x4450d5*/
             v130 = (*(__int16 *)v134 << 8) + 128; /*0x4450dd*/
             v129 = v135; /*0x4450df*/
@@ -5957,7 +5976,7 @@ int BuildingClass::UpdateConstruction()
           {
             if ( (unsigned int *)BuildingQueue_AllocSlot((void *)&((unsigned int *)this)[0]->base[6], -1) == v131 ) /*0x445637*/
             {
-              FreeSlot = BuildingQueue::FindFreeSlot((BuildingQueue *)&((unsigned int *)this)[0]->base[6], -1); /*0x445647*/
+              FreeSlot = ((gamemd::BuildingQueue *)(void *)((BuildingQueue *)&((unsigned int *)this)[0]->base[6]))->FindFreeSlot(-1); /*0x445647*/
               v184 = &((unsigned int *)this)[0]->base[7]; /*0x445652*/
               v185 = v184[4]; /*0x445658*/
               if ( FreeSlot < v185 ) /*0x44565d*/
@@ -5995,13 +6014,13 @@ int BuildingClass::UpdateConstruction()
         v200 = (int)v138; /*0x445204*/
         v199 = (int)&v222; /*0x445205*/
         v140 = (BulletTypeClass *)(*(int (__thiscall **)(char *))(v139 + 136))(v244); /*0x445208*/
-        v141 = BuildingClass::ApplyFoundationDamage(v140, &v222, (void *)v200); /*0x445210*/
+        v141 = (int)(void *)(((gamemd::BuildingClass *)(void *)(v140))->ApplyFoundationDamage(&v222, (void *)v200)); /*0x445210*/
         if ( v141 ) /*0x445218*/
         {
           v142 = v141 - 1; /*0x44521e*/
           if ( !v142 ) /*0x44521f*/
           {
-            v143 = HouseClass::FailedToPlaceNode(v131); /*0x445244*/
+            v143 = ((gamemd::HouseClass *)(void *)(v131))->FailedToPlaceNode(); /*0x445244*/
             if ( *(unsigned int *)&dword_A8B238 ) /*0x445251*/
             {
               if ( v143 > *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3656) ) /*0x44525f*/
@@ -6046,10 +6065,10 @@ int BuildingClass::UpdateConstruction()
         {
           v153 = (BuildingClass *)*((unsigned int *)v244 + 182); /*0x4452f0*/
           if ( v153 ) /*0x4452f8*/
-            BuildingClass::RefreshOccupierCache(v153); /*0x4452fa*/
+            ((gamemd::BuildingClass *)(void *)(v153))->RefreshOccupierCache(); /*0x4452fa*/
           if ( v131 ) /*0x445301*/
           {
-            v154 = ((unsigned int *)this)[0]; /*0x445309*/
+            v154 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x445309*/
             if ( *(unsigned int *)(*((unsigned int *)v244 + 328) + 3576) == v154->ratioTeamInfantry ) /*0x44531d*/
               v154->ratioTeamInfantry = -1; /*0x44531f*/
           }
@@ -6063,7 +6082,7 @@ int BuildingClass::UpdateConstruction()
               v198 = (int *)*((unsigned int *)v244 + 328); /*0x445369*/
               IDA_LOWORD(v207) = v210 / 256; /*0x44537a*/
               IDA_HIWORD(v207) = v211 / 256; /*0x44538f*/
-              v197 = ((unsigned int *)this)[0]; /*0x44539e*/
+              v197 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x44539e*/
               v221[0] = v207; /*0x4453a5*/
               globalHelper_088570((int)v221, (int)v197, (int)v198); /*0x4453a9*/
             }
@@ -6075,7 +6094,7 @@ int BuildingClass::UpdateConstruction()
                 v198 = (int *)*((unsigned int *)v244 + 328); /*0x4453c8*/
                 IDA_LOWORD(v207) = v210 / 256; /*0x4453d9*/
                 IDA_HIWORD(v207) = v211 / 256; /*0x4453ee*/
-                v197 = ((unsigned int *)this)[0]; /*0x4453fd*/
+                v197 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x4453fd*/
                 v220 = v207; /*0x445404*/
                 ScanBuildingPlacementCells(&v220, (int)v197, v198); /*0x445408*/
               }
@@ -6084,7 +6103,7 @@ int BuildingClass::UpdateConstruction()
           if ( *((unsigned int *)v244 + 328) == *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2172) ) /*0x44541e*/
           {
             v157 = (*(int (__thiscall **)(int *, unsigned int *))(((unsigned int *)this)[0]->base[7] + 20))(&((unsigned int *)this)[0]->base[7], v131); /*0x445437*/
-            v158 = ((unsigned int *)this)[0]; /*0x44543a*/
+            v158 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x44543a*/
             v159 = v157 + 1; /*0x445442*/
             v160 = v158->base[11]; /*0x445443*/
             if ( v157 + 1 < v160 ) /*0x44544b*/
@@ -6100,7 +6119,7 @@ int BuildingClass::UpdateConstruction()
               v214 = *((unsigned int *)v244 + 41); /*0x4454a1*/
               IDA_LOWORD(v206) = v163 / 256; /*0x4454b1*/
               IDA_HIWORD(v206) = v164 / 256; /*0x4454c4*/
-              *(unsigned int *)(16 * v159 + v161 + 4) = v206; /*0x4454d0*/
+              *(unsigned int *)(16 * v159 + v161 + 4) = (unsigned int)(void *)(v206); /*0x4454d0*/
             }
           }
           return 2; /*0x4454e3*/
@@ -6111,7 +6130,7 @@ int BuildingClass::UpdateConstruction()
         v166 = *((unsigned int *)dword_A83C6C + *v131); /*0x44550e*/
         if ( !*(unsigned char *)(v166 + 5489) && !*(unsigned char *)(v166 + 5815) ) /*0x44551f*/
         {
-          v167 = ((unsigned int *)this)[0]; /*0x445531*/
+          v167 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x445531*/
           v168 = 0; /*0x445555*/
           v169 = v211 / 256; /*0x445557*/
           v170 = v212 / 256; /*0x44555a*/
@@ -6128,7 +6147,7 @@ int BuildingClass::UpdateConstruction()
               v208 = 0; /*0x445582*/
               *(unsigned int *)v174 = 0; /*0x445590*/
             }
-            v167 = ((unsigned int *)this)[0]; /*0x445592*/
+            v167 = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x445592*/
             ++v168; /*0x445598*/
             v171 += 16; /*0x445599*/
           }
@@ -6541,10 +6560,10 @@ bool BuildingClass::CanBeSoldCheck() { return CanBeSold(); }
 //DUPDEF     else
 //DUPDEF     {
 //DUPDEF       if ( !this->Type->ConstructionYard ) /*0x44f5e9*/
-//DUPDEF         return this->((unsigned int *)Type)[0] != 0; /*0x44f5e9*/
+//DUPDEF         return ((unsigned int *)this->Type)[0] != 0; /*0x44f5e9*/
 //DUPDEF       result = House::IsCurrentPlayer((House *)((unsigned int *)this)[0]); /*0x44f5f9*/
 //DUPDEF       if ( (unsigned char)result && (result = *(unsigned int *)&dword_A8B238) != 0 && dword_A8B320 && (result = (int)((unsigned int *)this)[0]) == 0 ) /*0x44f61c*/
-//DUPDEF         return this->((unsigned int *)Type)[0] != 0; /*0x44f633*/
+//DUPDEF         return ((unsigned int *)this->Type)[0] != 0; /*0x44f633*/
 //DUPDEF       else
 //DUPDEF         IDA_LOBYTE(result) = 0; /*0x44f61e*/
 //DUPDEF     }
@@ -6638,7 +6657,7 @@ int BuildingClass::Mission_Repair()
     if ( result == 6 ) /*0x701440*/
     {
       (*((void (__thiscall **)(TechnoClass *, unsigned int))this->vtable1 + 103))(this, 0); /*0x701448*/
-      BuildingClass::GetHealthRatio((BuildingClass *)this); /*0x701450*/
+      ((gamemd::BuildingClass *)(void *)((BuildingClass *)this))->GetHealthRatio(); /*0x701450*/
       globalHelper_051EE0((int)this, v5, v1 <= *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5888)); /*0x701473*/
       v6 = (unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned char *))this->vtable1 + 18))(this, v7); /*0x701483*/
       return (int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 452), v6, 0); /*0x701494*/
@@ -6778,7 +6797,7 @@ void BuildingClass::ProcessRepair()
     int v154; // [esp+50h] [ebp-8h]
 
     if ( this->Type->Bunker ) /*0x44b797*/
-      BuildingClass::UpdateBunker(v148, v1); /*0x44b7a3*/
+      ((gamemd::BuildingClass *)(void *)(v148))->UpdateBunker(v1); /*0x44b7a3*/
     Type = this->Type; /*0x44b7a8*/
     if ( Type->ConstructionYard ) /*0x44b7ae*/
     {
@@ -6788,14 +6807,14 @@ void BuildingClass::ProcessRepair()
         if ( missionStatus == 2 && !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44b7d1*/
         {
           (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44b7e6*/
-          BuildingClass::ClearAnims(this, 7); /*0x44b7f0*/
+          ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(7); /*0x44b7f0*/
           return 1; /*0x44b801*/
         }
       }
       else
       {
-        BuildingClass::StartProduction(this, 2); /*0x44b806*/
-        BuildingClass::GetHealthRatio(this); /*0x44b80d*/
+        ((gamemd::BuildingClass *)(void *)(this))->StartProduction(2); /*0x44b806*/
+        ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44b80d*/
         _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44b812*/
         __asm /*0x44b817*/
         {
@@ -6805,15 +6824,15 @@ void BuildingClass::ProcessRepair()
         if ( (_EAX & 0x4100) != 0 ) /*0x44b822*/
         {
           v8 = 1; /*0x44b82a*/
-          v9 = &this->Type->__pad_F70[456]; /*0x44b82f*/
+          v9 = (char *)(void *)(&this->Type->__pad_F70[456]); /*0x44b82f*/
         }
         else
         {
           v8 = 0; /*0x44b83c*/
-          v9 = &this->Type->__pad_F70[440]; /*0x44b83e*/
+          v9 = (char *)(void *)(&this->Type->__pad_F70[440]); /*0x44b83e*/
         }
         if ( v9 && *v9 ) /*0x44b847*/
-          BuildingClass::PlayAnim(this, v6, v9, 7, v8, 0, 0); /*0x44b854*/
+          ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v6, v9, 7, v8, 0, 0); /*0x44b854*/
         ((unsigned int *)this)[0] = 2; /*0x44b859*/
       }
       return 1; /*0x44b86f*/
@@ -6862,7 +6881,7 @@ void BuildingClass::ProcessRepair()
             {
               v22 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44b9e6*/
               v144 = g_TerrainTypeTable; /*0x44b9e9*/
-              v23 = LinkedList::Pop((LinkedList *)((unsigned int *)this)[0]); /*0x44b9f0*/
+              v23 = (int)(void *)(LinkedList::Pop((LinkedList *)((unsigned int *)this)[0])); /*0x44b9f0*/
               v22[64](this, v23, v144); /*0x44b9f8*/
               return 1; /*0x44ba0a*/
             }
@@ -6872,7 +6891,7 @@ void BuildingClass::ProcessRepair()
             {
               v19 = (int *)(*((int (__thiscall **)(BuildingClass *, void **))this->vtable1 + 110))(this, &v151.m_Data); /*0x44b952*/
               if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, *v19, *v19) ) /*0x44b960*/
-                VoxClass::FindAndPlay((VoxClass *)&((unsigned int *)&stru_818E00)[6], -1); /*0x44b973*/
+                ((gamemd::VoxClass *)(void *)((VoxClass *)&((unsigned int *)&stru_818E00)[6]))->FindAndPlay(-1); /*0x44b973*/
               v152 = ((unsigned int *)this)[0]; /*0x44b981*/
               v153 = ((unsigned int *)this)[1]; /*0x44b98e*/
               v154 = ((unsigned int *)this)[2]; /*0x44b999*/
@@ -6881,7 +6900,7 @@ void BuildingClass::ProcessRepair()
           }
           v20 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44b9ad*/
           v143 = g_TerrainTypeTable; /*0x44b9b0*/
-          v21 = LinkedList::Pop((LinkedList *)((unsigned int *)this)[0]); /*0x44b9b7*/
+          v21 = (int)(void *)(LinkedList::Pop((LinkedList *)((unsigned int *)this)[0])); /*0x44b9b7*/
           v20[64](this, v21, v143); /*0x44b9bf*/
           (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44b9cd*/
           return 1; /*0x44b9cd*/
@@ -6954,7 +6973,7 @@ void BuildingClass::ProcessRepair()
               Timer::SetFlag((Timer *)v32, 1); /*0x44bb37*/
             v33 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44bb42*/
             v145 = g_TerrainTypeTable; /*0x44bb45*/
-            v34 = LinkedList::Pop((LinkedList *)((unsigned int *)this)[0]); /*0x44bb4c*/
+            v34 = (int)(void *)(LinkedList::Pop((LinkedList *)((unsigned int *)this)[0])); /*0x44bb4c*/
             v33[64](this, v34, v145); /*0x44bb54*/
             (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44bb62*/
           }
@@ -7030,11 +7049,11 @@ void BuildingClass::ProcessRepair()
                     if ( isOwnedByCurrentPlayer /*0x44bfd9*/
                       && !(*(int (__stdcall **)(int *))(((unsigned int *)this)[0]->arrayIndex + 24))(&((unsigned int *)this)[0]->arrayIndex) )
                     {
-                      VoxClass::FindAndPlay((VoxClass *)((char *)&stru_818E00), -1); /*0x44bfea*/
+                      ((gamemd::VoxClass *)(void *)((VoxClass *)((char *)&stru_818E00)))->FindAndPlay(-1); /*0x44bfea*/
                     }
-                    BuildingClass::ClearAnims(this, 8); /*0x44bff3*/
-                    BuildingClass::ClearAnims(this, 11); /*0x44bffc*/
-                    BuildingClass::GetHealthRatio(this); /*0x44c003*/
+                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44bff3*/
+                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44bffc*/
+                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c003*/
                     _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c008*/
                     __asm /*0x44c00e*/
                     {
@@ -7044,16 +7063,16 @@ void BuildingClass::ProcessRepair()
                     if ( (_AX & 0x4100) != 0 ) /*0x44c019*/
                     {
                       v75 = 1; /*0x44c021*/
-                      v76 = &this->Type->__pad_F70[796]; /*0x44c023*/
+                      v76 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44c023*/
                     }
                     else
                     {
                       v75 = 0; /*0x44c030*/
-                      v76 = &this->Type->__pad_F70[780]; /*0x44c032*/
+                      v76 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44c032*/
                     }
                     if ( v76 && *v76 ) /*0x44c03b*/
-                      BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v76, 12, v75, 0, 0); /*0x44c048*/
-                    BuildingClass::GetHealthRatio(this); /*0x44c04f*/
+                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v76, 12, v75, 0, 0); /*0x44c048*/
+                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c04f*/
                     _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c054*/
                     __asm /*0x44c059*/
                     {
@@ -7063,15 +7082,15 @@ void BuildingClass::ProcessRepair()
                     if ( (_EAX & 0x4100) != 0 ) /*0x44c064*/
                     {
                       v79 = 1; /*0x44c06c*/
-                      v80 = &this->Type->__pad_F70[184]; /*0x44c06e*/
+                      v80 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44c06e*/
                     }
                     else
                     {
                       v79 = 0; /*0x44c07b*/
-                      v80 = &this->Type->__pad_F70[168]; /*0x44c07d*/
+                      v80 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44c07d*/
                     }
                     if ( v80 && *v80 ) /*0x44c086*/
-                      BuildingClass::PlayAnim(this, v77, v80, 3, v79, 0, 0); /*0x44c093*/
+                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v77, v80, 3, v79, 0, 0); /*0x44c093*/
                     ((unsigned int *)this)[0] = 1; /*0x44c098*/
                   }
                   else
@@ -7082,11 +7101,11 @@ void BuildingClass::ProcessRepair()
                               this,
                               &v151.m_Position);
                       if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, IDA_SHIDWORD(v56), *(unsigned int *)v56) ) /*0x44bdb2*/
-                        VoxClass::FindAndPlay((VoxClass *)&((unsigned int *)&stru_818E00)[6], -1); /*0x44bdc5*/
+                        ((gamemd::VoxClass *)(void *)((VoxClass *)&((unsigned int *)&stru_818E00)[6]))->FindAndPlay(-1); /*0x44bdc5*/
                     }
-                    BuildingClass::ClearAnims(this, 8); /*0x44bdce*/
-                    BuildingClass::ClearAnims(this, 11); /*0x44bdd7*/
-                    BuildingClass::GetHealthRatio(this); /*0x44bdde*/
+                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44bdce*/
+                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44bdd7*/
+                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44bdde*/
                     _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bde3*/
                     __asm /*0x44bde9*/
                     {
@@ -7096,16 +7115,16 @@ void BuildingClass::ProcessRepair()
                     if ( (_AX & 0x4100) != 0 ) /*0x44bdf4*/
                     {
                       v59 = 1; /*0x44bdfc*/
-                      v60 = &this->Type->__pad_F70[796]; /*0x44bdfe*/
+                      v60 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44bdfe*/
                     }
                     else
                     {
                       v59 = 0; /*0x44be0b*/
-                      v60 = &this->Type->__pad_F70[780]; /*0x44be0d*/
+                      v60 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44be0d*/
                     }
                     if ( v60 && *v60 ) /*0x44be16*/
-                      BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v60, 12, v59, 0, 0); /*0x44be23*/
-                    BuildingClass::GetHealthRatio(this); /*0x44be2a*/
+                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v60, 12, v59, 0, 0); /*0x44be23*/
+                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44be2a*/
                     _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44be2f*/
                     __asm /*0x44be34*/
                     {
@@ -7115,15 +7134,15 @@ void BuildingClass::ProcessRepair()
                     if ( (_EAX & 0x4100) != 0 ) /*0x44be3f*/
                     {
                       v63 = 1; /*0x44be47*/
-                      v64 = &this->Type->__pad_F70[184]; /*0x44be49*/
+                      v64 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44be49*/
                     }
                     else
                     {
                       v63 = 0; /*0x44be56*/
-                      v64 = &this->Type->__pad_F70[168]; /*0x44be58*/
+                      v64 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44be58*/
                     }
                     if ( v64 && *v64 ) /*0x44be61*/
-                      BuildingClass::PlayAnim(this, v61, v64, 3, v63, 0, 0); /*0x44be6e*/
+                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v61, v64, 3, v63, 0, 0); /*0x44be6e*/
                     ((unsigned int *)this)[0] = 1; /*0x44be76*/
                     Member = Team::GetMember((Team *)this, 0); /*0x44be7c*/
                     if ( Member )
@@ -7150,7 +7169,7 @@ void BuildingClass::ProcessRepair()
                                        &v151.m_Size,
                                        v67,
                                        v146);
-                    focus = ((unsigned int *)this)[0]; /*0x44bf19*/
+                    focus = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x44bf19*/
                     v70 = *v68; /*0x44bf1f*/
                     *(unsigned int *)v151.__pad_0 = v70; /*0x44bf23*/
                     if ( focus ) /*0x44bf27*/
@@ -7165,7 +7184,7 @@ void BuildingClass::ProcessRepair()
                     {
                       (*((void (__thiscall **)(TechnoClass *, int, unsigned int))v66->vtable1 + 122))(v66, 2, 0); /*0x44bf87*/
                       v71 = (void (__thiscall **)(TechnoClass *, void *, int))v66->RadioClass; /*0x44bf8d*/
-                      v72 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)v151.__pad_0); /*0x44bf9a*/
+                      v72 = ((gamemd::CellCoord *)(void *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((__int16 *)v151.__pad_0); /*0x44bf9a*/
                       v71[288](v66, v72, 1); /*0x44bfa2*/
                       (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44bfaf*/
                       v66->queueUpToEnter = 0; /*0x44bfb5*/
@@ -7178,9 +7197,9 @@ void BuildingClass::ProcessRepair()
             }
             else
             {
-              BuildingClass::ClearAnims(this, 8); /*0x44bc05*/
-              BuildingClass::ClearAnims(this, 11); /*0x44bc0e*/
-              BuildingClass::GetHealthRatio(this); /*0x44bc15*/
+              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44bc05*/
+              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44bc0e*/
+              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44bc15*/
               _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bc1a*/
               __asm /*0x44bc20*/
               {
@@ -7190,16 +7209,16 @@ void BuildingClass::ProcessRepair()
               if ( (_AX & 0x4100) != 0 ) /*0x44bc2b*/
               {
                 v41 = 1; /*0x44bc33*/
-                v42 = &this->Type->__pad_F70[796]; /*0x44bc38*/
+                v42 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44bc38*/
               }
               else
               {
                 v41 = 0; /*0x44bc45*/
-                v42 = &this->Type->__pad_F70[780]; /*0x44bc47*/
+                v42 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44bc47*/
               }
               if ( v42 && *v42 ) /*0x44bc50*/
-                BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v42, 12, v41, 0, 0); /*0x44bc5d*/
-              BuildingClass::GetHealthRatio(this); /*0x44bc64*/
+                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v42, 12, v41, 0, 0); /*0x44bc5d*/
+              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44bc64*/
               _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bc69*/
               __asm /*0x44bc6e*/
               {
@@ -7209,15 +7228,15 @@ void BuildingClass::ProcessRepair()
               if ( (_EAX & 0x4100) != 0 ) /*0x44bc79*/
               {
                 v45 = 1; /*0x44bc81*/
-                v46 = &this->Type->__pad_F70[184]; /*0x44bc86*/
+                v46 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44bc86*/
               }
               else
               {
                 v45 = 0; /*0x44bc93*/
-                v46 = &this->Type->__pad_F70[168]; /*0x44bc95*/
+                v46 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44bc95*/
               }
               if ( v46 && *v46 ) /*0x44bc9e*/
-                BuildingClass::PlayAnim(this, v43, v46, 3, v45, 0, 0); /*0x44bcab*/
+                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v43, v46, 3, v45, 0, 0); /*0x44bcab*/
               ((unsigned int *)this)[0] = 1; /*0x44bcb0*/
               return 1; /*0x44bcba*/
             }
@@ -7226,12 +7245,12 @@ void BuildingClass::ProcessRepair()
         else
         {
           v54 = (unsigned __int8)Team::AllMembersValid((Team *)this) == 0; /*0x44c0af*/
-          v81 = this->Anims[8]; /*0x44c0b1*/
+          v81 = (int)(void *)(this->Anims[8]); /*0x44c0b1*/
           if ( v54 ) /*0x44c0b7*/
           {
             if ( v81 || this->Anims[11] ) /*0x44c0c1*/
             {
-              BuildingClass::GetHealthRatio(this); /*0x44c0cf*/
+              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c0cf*/
               _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c0d4*/
               __asm /*0x44c0da*/
               {
@@ -7241,16 +7260,16 @@ void BuildingClass::ProcessRepair()
               if ( (_AX & 0x4100) != 0 ) /*0x44c0e5*/
               {
                 v85 = 1; /*0x44c0ed*/
-                v86 = &this->Type->__pad_F70[796]; /*0x44c0f2*/
+                v86 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44c0f2*/
               }
               else
               {
                 v85 = 0; /*0x44c0ff*/
-                v86 = &this->Type->__pad_F70[780]; /*0x44c101*/
+                v86 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44c101*/
               }
               if ( v86 && *v86 ) /*0x44c10a*/
-                BuildingClass::PlayAnim(this, v82, v86, 12, v85, 0, 0); /*0x44c117*/
-              BuildingClass::GetHealthRatio(this); /*0x44c11e*/
+                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v82, v86, 12, v85, 0, 0); /*0x44c117*/
+              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c11e*/
               _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c123*/
               __asm /*0x44c129*/
               {
@@ -7260,17 +7279,17 @@ void BuildingClass::ProcessRepair()
               if ( (_AX & 0x4100) != 0 ) /*0x44c134*/
               {
                 v89 = 1; /*0x44c13c*/
-                v90 = &this->Type->__pad_F70[184]; /*0x44c141*/
+                v90 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44c141*/
               }
               else
               {
                 v89 = 0; /*0x44c14e*/
-                v90 = &this->Type->__pad_F70[168]; /*0x44c150*/
+                v90 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44c150*/
               }
               if ( v90 && *v90 ) /*0x44c159*/
-                BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v90, 3, v89, 0, 0); /*0x44c166*/
-              BuildingClass::ClearAnims(this, 8); /*0x44c16f*/
-              BuildingClass::ClearAnims(this, 11); /*0x44c178*/
+                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v90, 3, v89, 0, 0); /*0x44c166*/
+              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44c16f*/
+              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44c178*/
             }
             if ( !this->Anims[12] ) /*0x44c17d*/
             {
@@ -7289,23 +7308,23 @@ void BuildingClass::ProcessRepair()
           if ( v93[310](this, v95) < 200 ) /*0x44c1dc*/
           {
             if ( !*(unsigned int *)(v94 + 1652) ) /*0x44c1e2*/
-              WinAPI::Wrapper(-2147467261); /*0x44c1ef*/
+              WinAPI_Wrapper(-2147467261); /*0x44c1ef*/
             v54 = (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 96))(*(unsigned int *)(v94 + 1652)) == 0; /*0x44c200*/
             v96 = *(unsigned int *)(v94 + 1652); /*0x44c202*/
             if ( !v54 ) /*0x44c208*/
             {
               if ( !v96 ) /*0x44c20c*/
-                WinAPI::Wrapper(-2147467261); /*0x44c213*/
+                WinAPI_Wrapper(-2147467261); /*0x44c213*/
               if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 16))(*(unsigned int *)(v94 + 1652)) ) /*0x44c221*/
               {
                 if ( !*(unsigned int *)(v94 + 1652) ) /*0x44c228*/
-                  WinAPI::Wrapper(-2147467261); /*0x44c235*/
+                  WinAPI_Wrapper(-2147467261); /*0x44c235*/
                 (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 92))(*(unsigned int *)(v94 + 1652)); /*0x44c243*/
               }
               return 1; /*0x44c252*/
             }
             if ( !v96 ) /*0x44c255*/
-              WinAPI::Wrapper(-2147467261); /*0x44c25c*/
+              WinAPI_Wrapper(-2147467261); /*0x44c25c*/
             if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 96))(*(unsigned int *)(v94 + 1652)) /*0x44c279*/
               && *(unsigned int *)(Team::GetMember((Team *)this, 0) + 1444) )
             {
@@ -7316,7 +7335,7 @@ void BuildingClass::ProcessRepair()
           if ( (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 19) == 1 )
           {
             v98 = Team::GetMember((Team *)this, 0); /*0x44c2ae*/
-            BuildingClass::GetHealthRatio((BuildingClass *)v98); /*0x44c2b2*/
+            ((gamemd::BuildingClass *)(void *)((BuildingClass *)v98))->GetHealthRatio(); /*0x44c2b2*/
             _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c2b7*/
             __asm /*0x44c2bc*/
             {
@@ -7333,9 +7352,9 @@ void BuildingClass::ProcessRepair()
               if ( !*(unsigned char *)(v98 + 976) || (unsigned __int8)House::IsCurrentPlayer(*(House **)(v98 + 540)) ) /*0x44c4cc*/
               {
                 if ( ((unsigned int *)this)[0] ) /*0x44c4f3*/
-                  VoxClass::FindAndPlay((VoxClass *)&((unsigned int *)&stru_818E00)[5], -1); /*0x44c507*/
+                  ((gamemd::VoxClass *)(void *)((VoxClass *)&((unsigned int *)&stru_818E00)[5]))->FindAndPlay(-1); /*0x44c507*/
                 ((unsigned int *)this)[0] = 2; /*0x44c50e*/
-                BuildingClass::GetHealthRatio(this); /*0x44c518*/
+                ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c518*/
                 _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c51d*/
                 __asm /*0x44c523*/
                 {
@@ -7345,17 +7364,17 @@ void BuildingClass::ProcessRepair()
                 if ( (_AX & 0x4100) != 0 ) /*0x44c52e*/
                 {
                   v117 = 1; /*0x44c536*/
-                  v118 = &this->Type->__pad_F70[660]; /*0x44c53b*/
+                  v118 = (char *)(void *)(&this->Type->__pad_F70[660]); /*0x44c53b*/
                 }
                 else
                 {
                   v117 = 0; /*0x44c548*/
-                  v118 = &this->Type->__pad_F70[644]; /*0x44c54a*/
+                  v118 = (char *)(void *)(&this->Type->__pad_F70[644]); /*0x44c54a*/
                 }
                 if ( v118 && *v118 ) /*0x44c553*/
-                  BuildingClass::PlayAnim(this, v114, v118, 10, v117, 0, 0); /*0x44c560*/
-                BuildingClass::ClearAnims(this, 3); /*0x44c569*/
-                BuildingClass::ClearAnims(this, 18); /*0x44c572*/
+                  ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v114, v118, 10, v117, 0, 0); /*0x44c560*/
+                ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(3); /*0x44c569*/
+                ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(18); /*0x44c572*/
                 this->BuildingClass_field_bool_6DD = 0; /*0x44c577*/
                 this->RepairProgress.Value = 0; /*0x44c57e*/
                 *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44c594*/
@@ -7373,7 +7392,7 @@ void BuildingClass::ProcessRepair()
             }
             else
             {
-              BuildingClass::GetHealthRatio((BuildingClass *)v98); /*0x44c31a*/
+              ((gamemd::BuildingClass *)(void *)((BuildingClass *)v98))->GetHealthRatio(); /*0x44c31a*/
               _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c31f*/
               __asm /*0x44c324*/
               {
@@ -7383,7 +7402,7 @@ void BuildingClass::ProcessRepair()
               if ( (_EAX & 0x4000) != 0 )
               {
                 if ( !*(unsigned int *)(v98 + 1652) ) /*0x44c335*/
-                  WinAPI::Wrapper(-2147467261); /*0x44c342*/
+                  WinAPI_Wrapper(-2147467261); /*0x44c342*/
                 if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v98 + 1652) + 96))(*(unsigned int *)(v98 + 1652)) )
                 {
                   v105 = Team::GetMember((Team *)this, 0); /*0x44c35e*/
@@ -7392,7 +7411,7 @@ void BuildingClass::ProcessRepair()
                   else
                     v106 = 0; /*0x44c367*/
                   if ( !v106[1].alignmentPadding154[0] ) /*0x44c379*/
-                    WinAPI::Wrapper(-2147467261); /*0x44c386*/
+                    WinAPI_Wrapper(-2147467261); /*0x44c386*/
                   (*(void (__stdcall **)(int))(*(unsigned int *)v106[1].alignmentPadding154[0] + 88))(v106[1].alignmentPadding154[0]); /*0x44c394*/
                   if ( !v106->focus || (unsigned __int8)House::IsCurrentPlayer((House *)v106->owner) ) /*0x44c3a5*/
                   {
@@ -7400,7 +7419,7 @@ void BuildingClass::ProcessRepair()
                     v147 = g_TerrainTypeTable; /*0x44c3f6*/
                     v108 = Team::GetMember((Team *)this, 0); /*0x44c3fa*/
                     v109 = (unsigned int **)v107[309](this, &v151.StreamClass_field_0C, v108, v147); /*0x44c407*/
-                    v110 = ((unsigned int *)this)[0]; /*0x44c40d*/
+                    v110 = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x44c40d*/
                     v111 = *v109; /*0x44c413*/
                     *(unsigned int *)v151.__pad_0 = v111; /*0x44c417*/
                     if ( v110 ) /*0x44c41b*/
@@ -7415,7 +7434,7 @@ void BuildingClass::ProcessRepair()
                     {
                       (*((void (__thiscall **)(TechnoClass *, int, unsigned int))v106->vtable1 + 122))(v106, 2, 0); /*0x44c47a*/
                       v112 = (void (__thiscall **)(TechnoClass *, void *, int))v106->RadioClass; /*0x44c480*/
-                      v113 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)v151.__pad_0); /*0x44c48e*/
+                      v113 = ((gamemd::CellCoord *)(void *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((__int16 *)v151.__pad_0); /*0x44c48e*/
                       v112[288](v106, v113, 1); /*0x44c496*/
                       TechnoClass::SetFocus(v106, 0); /*0x44c49f*/
                       (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44c4ab*/
@@ -7441,12 +7460,12 @@ void BuildingClass::ProcessRepair()
           {
             v120 = (unsigned int *)(Team::GetMember((Team *)this, 0) + 1652); /*0x44c5ce*/
             if ( !*v120 ) /*0x44c5c8*/
-              WinAPI::Wrapper(-2147467261); /*0x44c5dd*/
+              WinAPI_Wrapper(-2147467261); /*0x44c5dd*/
             if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*v120 + 96))(*v120) ) /*0x44c5e7*/
             {
               v121 = (unsigned int *)(Team::GetMember((Team *)this, 0) + 1652); /*0x44c602*/
               if ( !*v121 ) /*0x44c5fc*/
-                WinAPI::Wrapper(-2147467261); /*0x44c611*/
+                WinAPI_Wrapper(-2147467261); /*0x44c611*/
               (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v121 + 88))(*v121); /*0x44c61b*/
             }
           }
@@ -7456,9 +7475,9 @@ void BuildingClass::ProcessRepair()
       {
         if ( !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44c625*/
         {
-          BuildingClass::ClearAnims(this, 8); /*0x44c636*/
-          BuildingClass::ClearAnims(this, 11); /*0x44c63f*/
-          BuildingClass::GetHealthRatio(this); /*0x44c646*/
+          ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44c636*/
+          ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44c63f*/
+          ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c646*/
           _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c64b*/
           __asm /*0x44c650*/
           {
@@ -7468,16 +7487,16 @@ void BuildingClass::ProcessRepair()
           if ( (_EAX & 0x4100) != 0 ) /*0x44c65b*/
           {
             v124 = 1; /*0x44c663*/
-            v125 = &this->Type->__pad_F70[796]; /*0x44c668*/
+            v125 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44c668*/
           }
           else
           {
             v124 = 0; /*0x44c675*/
-            v125 = &this->Type->__pad_F70[780]; /*0x44c677*/
+            v125 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44c677*/
           }
           if ( v125 && *v125 ) /*0x44c680*/
-            BuildingClass::PlayAnim(this, v122, v125, 12, v124, 0, 0); /*0x44c68d*/
-          BuildingClass::GetHealthRatio(this); /*0x44c694*/
+            ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v122, v125, 12, v124, 0, 0); /*0x44c68d*/
+          ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c694*/
           _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c699*/
           __asm /*0x44c69f*/
           {
@@ -7487,15 +7506,15 @@ void BuildingClass::ProcessRepair()
           if ( (_AX & 0x4100) != 0 ) /*0x44c6aa*/
           {
             v129 = 1; /*0x44c6b2*/
-            v130 = &this->Type->__pad_F70[184]; /*0x44c6b7*/
+            v130 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44c6b7*/
           }
           else
           {
             v129 = 0; /*0x44c6c4*/
-            v130 = &this->Type->__pad_F70[168]; /*0x44c6c6*/
+            v130 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44c6c6*/
           }
           if ( v130 && *v130 ) /*0x44c6cf*/
-            BuildingClass::PlayAnim(this, v126, v130, 3, v129, 0, 0); /*0x44c6dc*/
+            ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v126, v130, 3, v129, 0, 0); /*0x44c6dc*/
           (*((void (__thiscall **)(BuildingClass *, int, int))this->vtable1 + 122))(this, 5, 1); /*0x44c6ea*/
           return 1; /*0x44c6fc*/
         }
@@ -7508,10 +7527,10 @@ void BuildingClass::ProcessRepair()
           goto LABEL_215; /*0x44c71e*/
         v133 = StreamClass::Set2(&v151, (unsigned int *)(v131 + 1652)); /*0x44c727*/
         if ( v133 < 0 && v133 != -2147467262 ) /*0x44c735*/
-          WinAPI::Wrapper(v133); /*0x44c738*/
+          WinAPI_Wrapper(v133); /*0x44c738*/
         if ( !*(unsigned int *)v151.__pad_0 ) /*0x44c743*/
   LABEL_215:
-          WinAPI::Wrapper(-2147467261); /*0x44c74a*/
+          WinAPI_Wrapper(-2147467261); /*0x44c74a*/
         (*(void (__stdcall **)(unsigned int, int *))(**(unsigned int **)v151.__pad_0 + 12))(*(unsigned int *)v151.__pad_0, &v152); /*0x44c75b*/
         if ( !memcmp(&v152, &stru_7E9A40, 0x10u) ) /*0x44c76e*/
           v151.m_Data = (void *)200; /*0x44c777*/
@@ -7534,7 +7553,7 @@ void BuildingClass::ProcessRepair()
         if ( !HouseClass::IonSensitivesShouldBeOffline() ) /*0x44c7eb*/
         {
           if ( !*v132 ) /*0x44c7f4*/
-            WinAPI::Wrapper(-2147467261); /*0x44c7fe*/
+            WinAPI_Wrapper(-2147467261); /*0x44c7fe*/
           (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v132 + 88))(*v132); /*0x44c808*/
         }
         if ( *(unsigned int *)v151.__pad_0 ) /*0x44c811*/
@@ -7748,7 +7767,7 @@ int BuildingClass::ToggleRepairMode(int aP1) {
     }
     if ( this->IsBeingRepaired ) /*0x447048*/
     {
-      if ( ((unsigned int *)this)[0] == this->((unsigned int *)Type)[0] ) /*0x447061*/
+      if ( ((unsigned int *)this)[0] == ((unsigned int *)this->Type)[0] ) /*0x447061*/
       {
         v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1792); /*0x447068*/
       }
@@ -7757,10 +7776,10 @@ int BuildingClass::ToggleRepairMode(int aP1) {
         v3 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1804); /*0x447076*/
         if ( (unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x447082*/
           (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 82))(this, 7); /*0x447091*/
-        owner = ((unsigned int *)this)[0]; /*0x447097*/
+        owner = (gamemd::HouseClass *)(void *)((unsigned int *)this)[0]; /*0x447097*/
         this->NeedsRepairs = 1; /*0x44709d*/
         if ( (unsigned __int8)House::IsHumanPlayer((House *)owner) ) /*0x4470a4*/
-          VoxClass::FindAndPlay((VoxClass *)&((unsigned int *)&stru_818E00)[5], -1); /*0x4470b7*/
+          ((gamemd::VoxClass *)(void *)((VoxClass *)&((unsigned int *)&stru_818E00)[5]))->FindAndPlay(-1); /*0x4470b7*/
       }
     }
     else
@@ -7770,7 +7789,7 @@ int BuildingClass::ToggleRepairMode(int aP1) {
     result = House::IsHumanPlayer((House *)((unsigned int *)this)[0]); /*0x4470cf*/
     if ( (unsigned char)result ) /*0x4470d6*/
     {
-      location = ((unsigned int *)this)[0]; /*0x4470d8*/
+      location = (int *)(void *)((unsigned int *)this)[0]; /*0x4470d8*/
       v6[0] = *location; /*0x4470e2*/
       v6[1] = location[1]; /*0x4470eb*/
       v6[2] = location[2]; /*0x4470f6*/
@@ -9795,7 +9814,7 @@ void BuildingClass::ProductionDisplayUpdate()
     int v113; // [esp+E0h] [ebp+4h]
 
     v1 = this; /*0x43f191*/
-    *(unsigned int *)v93 = this; /*0x43f194*/
+    *(unsigned int *)v93 = (unsigned int)(void *)(this); /*0x43f194*/
     result = TechnoClass::UpdateProdWithSound((TechnoClass *)this, v113); /*0x43f198*/
     if ( (unsigned char)result )
     {
@@ -9830,7 +9849,7 @@ void BuildingClass::ProductionDisplayUpdate()
               for ( j = 0; v11 < (int)v88; j = v11 ) /*0x43f263*/
               {
                 IDA_HIWORD(v100) = v10 + v92[1]; /*0x43f276*/
-                owner = ((unsigned int *)v1)[0]; /*0x43f27b*/
+                owner = (gamemd::HouseClass *)(void *)((unsigned int *)v1)[0]; /*0x43f27b*/
                 IDA_LOWORD(v100) = v11 + v92[0]; /*0x43f281*/
                 v13 = v1->Type; /*0x43f28a*/
                 *(unsigned int *)v87 = v100; /*0x43f290*/
@@ -9838,7 +9857,7 @@ void BuildingClass::ProductionDisplayUpdate()
                 v80 = (int)v13; /*0x43f29b*/
                 v79 = ((unsigned int *)v13)[0]; /*0x43f2a0*/
                 v14 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v87); /*0x43f2a7*/
-                if ( (unsigned __int8)CellClass::IsPassable(v14, v79, v80, v81) /*0x43f2fb*/
+                if ( (unsigned __int8)((gamemd::CellClass *)(void *)(v14))->IsPassable(v79, v80, v81) /*0x43f2fb*/
                   && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v87) + 14) != *(unsigned int *)(v1->Type->ToTile + 660)
                   && *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v87) + 59) != 1 )
                 {
@@ -9875,7 +9894,7 @@ void BuildingClass::ProductionDisplayUpdate()
                             IDA_LOWORD(k) = v25; /*0x43f3a8*/
                             *(unsigned int *)v102 = k; /*0x43f3bb*/
                             v26 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v102); /*0x43f3bf*/
-                            BuildingClass::CreateDestructionCrater(v26); /*0x43f3c6*/
+                            ((gamemd::BuildingClass *)(void *)(v26))->CreateDestructionCrater(); /*0x43f3c6*/
                             v18 = *(unsigned int *)(v17 + 664); /*0x43f3cb*/
                             ++v23; /*0x43f3d1*/
                           }
@@ -9936,7 +9955,7 @@ void BuildingClass::ProductionDisplayUpdate()
                     IDA_HIWORD(v83) = v32 + v92[1]; /*0x43f574*/
                     *(unsigned int *)v93 = v83; /*0x43f57d*/
                     v33 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v93); /*0x43f587*/
-                    BuildingClass::CreatePlacementCrater(v33); /*0x43f58e*/
+                    ((gamemd::BuildingClass *)(void *)(v33))->CreatePlacementCrater(); /*0x43f58e*/
                     ++v31; /*0x43f593*/
                   }
                   while ( v31 < v30 ); /*0x43f596*/
@@ -9987,7 +10006,7 @@ void BuildingClass::ProductionDisplayUpdate()
                     v108);
             v38[109](v1, v39); /*0x43f6e6*/
             v40 = (int *)(*((int (__thiscall **)(BuildingClass *, unsigned int *))v1->vtable1 + 43))(v1, v105); /*0x43f6f5*/
-            Anims = v1->Anims; /*0x43f6fd*/
+            Anims = (int *)(void *)(v1->Anims); /*0x43f6fd*/
             v94 = *v40; /*0x43f703*/
             v95 = v40[1]; /*0x43f70a*/
             v96 = v40[2]; /*0x43f711*/
@@ -10059,7 +10078,7 @@ void BuildingClass::ProductionDisplayUpdate()
                             IDA_LOWORD(v99) = v59; /*0x43f8ad*/
                             *(unsigned int *)v101 = v99; /*0x43f8c0*/
                             v60 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v101); /*0x43f8c4*/
-                            BuildingClass::CreateDestructionCrater(v60); /*0x43f8cb*/
+                            ((gamemd::BuildingClass *)(void *)(v60))->CreateDestructionCrater(); /*0x43f8cb*/
                             v54 = *(unsigned int *)(v53 + 664); /*0x43f8d0*/
                             ++v57; /*0x43f8d6*/
                           }
@@ -10098,7 +10117,7 @@ void BuildingClass::ProductionDisplayUpdate()
                   IDA_HIWORD(v85) = v62 - 1 + v92[1]; /*0x43f96a*/
                   *(unsigned int *)v93 = v85; /*0x43f979*/
                   v65 = (BuildingClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v93); /*0x43f97d*/
-                  BuildingClass::CreatePlacementCrater(v65); /*0x43f984*/
+                  ((gamemd::BuildingClass *)(void *)(v65))->CreatePlacementCrater(); /*0x43f984*/
                   ++v64; /*0x43f989*/
                 }
                 while ( v64 < v63 ); /*0x43f98c*/
@@ -10123,7 +10142,7 @@ void BuildingClass::ProductionDisplayUpdate()
           }
           *(unsigned short *)v1->BuildingClass_field_short_700 = v67; /*0x43fa19*/
           j = (unsigned __int16)v67; /*0x43fa26*/
-          v88 = v1->Anims; /*0x43fa30*/
+          v88 = (int *)(void *)(v1->Anims); /*0x43fa30*/
           v86 = 21; /*0x43fa34*/
           do /*0x43fabc*/
           {
@@ -10143,7 +10162,7 @@ void BuildingClass::ProductionDisplayUpdate()
               {
                 IDA_LOBYTE(Translucency) = 16; /*0x43fa8a*/
               }
-              v73 = v1->Anims; /*0x43fa8f*/
+              v73 = (int *)(void *)(v1->Anims); /*0x43fa8f*/
               v74 = 21; /*0x43fa91*/
               do /*0x43faa6*/
               {
@@ -10162,7 +10181,7 @@ void BuildingClass::ProductionDisplayUpdate()
           v76 = v1->Translucency; /*0x43fac2*/
           if ( v76 == 15 && (*((int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))v1->vtable1 + 26))(v1, 0, 0) == 5 ) /*0x43fadc*/
             IDA_LOBYTE(v76) = 16; /*0x43fade*/
-          v77 = v1->Anims; /*0x43fae3*/
+          v77 = (int *)(void *)(v1->Anims); /*0x43fae3*/
           v78 = 21; /*0x43fae5*/
           do /*0x43fafa*/
           {
@@ -10718,7 +10737,7 @@ void BuildingClass::ProductionDisplayUpdate()
 //DUPDEF     IDA_LOBYTE(result) = 0; /*0x43f5e0*/
 //DUPDEF   return result; /*0x43f1da*/
 // 0x4da0e0
-void BuildingClass::AddToProductionQueue(int)
+void BuildingClass::AddToProductionQueue(int a2)  // g57w11 r4: 参数命名 (raw 0x4DA0E0 体用 a2; C2065)
 {
     int v3; // eax
     bool v4; // zf
@@ -11196,18 +11215,18 @@ int BuildingClass::ProcessStructureAbandoned() {
     __int64 v9; // rax
     unsigned char v10[4]; // [esp+8h] [ebp-4h] BYREF
 
-    result = this->Type; /*0x458205*/
+    result = (int)(void *)(this->Type); /*0x458205*/
     if ( *(unsigned int *)(result + 1588) == -1 ) /*0x458212*/
     {
-      if ( (unsigned __int8)BuildingClass::IsHealthLow(this) ) /*0x45821a*/
-        BuildingClass::UnloadUnits(this, 0, 0); /*0x458229*/
+      if ( (unsigned __int8)((gamemd::BuildingClass *)(void *)(this))->IsHealthLow() ) /*0x45821a*/
+        ((gamemd::BuildingClass *)(void *)(this))->UnloadUnits(0, 0); /*0x458229*/
       v3 = dword_A80238; /*0x458230*/
       v4 = 0; /*0x45823b*/
-      v5 = HouseTypeClass::Find(&g_INI_Key_Civilian); /*0x45823d*/
+      v5 = (int)(void *)(HouseTypeClass::Find(&g_INI_Key_Civilian)); /*0x45823d*/
       v6 = 0; /*0x458242*/
       if ( v3 > 0 ) /*0x458246*/
       {
-        v7 = dword_A8022C; /*0x458248*/
+        v7 = (gamemd::HouseClass *)(void *)(dword_A8022C); /*0x458248*/
         while ( *(unsigned int *)(*(unsigned int *)(v7->vtable1 + 52) + 188) != v5 ) /*0x458259*/
         {
           ++v6; /*0x45825b*/
@@ -11228,7 +11247,7 @@ int BuildingClass::ProcessStructureAbandoned() {
             PlayVocClass(dword_8871E0->GeneticMutatorActivateSound, 0x2000, 1.0, 0); /*0x4582a9*/
             v9 = ((__int64 (__thiscall *)(BuildingClass *, unsigned char *))*(unsigned int *)((char *)this->vtable1 + 440))(this, v10); /*0x4582b7*/
             if ( (unsigned __int8)CreateTriggerClassIfFarEnough(15, IDA_SHIDWORD(v9), *(unsigned int *)v9) ) /*0x4582c5*/
-              VoxClass::FindAndPlay(&stru_81926C, -1); /*0x4582d8*/
+              ((gamemd::VoxClass *)(void *)(&stru_81926C))->FindAndPlay(-1); /*0x4582d8*/
           }
           PlayHealthDependentBuildingAnim(this); /*0x4582df*/
           (*(void (__thiscall **)(BuildingClass *, House *, unsigned int))((char *)this->vtable1 + 980))(this, v4, 0); /*0x4582eb*/
@@ -11715,7 +11734,7 @@ int BuildingClass::CleanupOccupation() {
           v7 = v6; /*0x454e3a*/
           if ( v6 == 15 && (*((int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))v1->vtable1 + 26))(v1, 0, 0) == 5 ) /*0x454e4e*/
             v7 = 16; /*0x454e50*/
-          Anims = v1->Anims; /*0x454e55*/
+          Anims = (int *)(void *)(v1->Anims); /*0x454e55*/
           v9 = 21; /*0x454e5b*/
           do /*0x454e70*/
           {
@@ -11752,7 +11771,7 @@ int BuildingClass::CleanupOccupation() {
           v13 = v12; /*0x454ee3*/
           if ( v12 == 15 && (*((int (__thiscall **)(BuildingClass *, unsigned int, unsigned int))v1->vtable1 + 26))(v1, 0, 0) == 5 ) /*0x454ef7*/
             v13 = 16; /*0x454ef9*/
-          v14 = v1->Anims; /*0x454efe*/
+          v14 = (int *)(void *)(v1->Anims); /*0x454efe*/
           v15 = 21; /*0x454f04*/
           do /*0x454f19*/
           {
@@ -11768,14 +11787,14 @@ int BuildingClass::CleanupOccupation() {
             ((unsigned int *)v1)[0] = 0; /*0x454f2f*/
             if ( !v16 ) /*0x454f37*/
             {
-              NaturalParticleSystemLocation = v1->((unsigned int *)Type)[0]; /*0x454f49*/
+              NaturalParticleSystemLocation = ((unsigned int *)v1->Type)[0]; /*0x454f49*/
               if ( *NaturalParticleSystemLocation != g_BuildingClassPool /*0x454f6c*/
-                || v1->((unsigned int *)Type)[1] != dword_89C84C
-                || v1->((unsigned int *)Type)[2] != dword_89C850 )
+                || ((unsigned int *)v1->Type)[1] != dword_89C84C
+                || ((unsigned int *)v1->Type)[2] != dword_89C850 )
               {
                 v18 = *NaturalParticleSystemLocation; /*0x454f75*/
-                v19 = v1->((unsigned int *)Type)[1]; /*0x454f77*/
-                v70 = v1->((unsigned int *)Type)[2]; /*0x454f7f*/
+                v19 = ((unsigned int *)v1->Type)[1]; /*0x454f77*/
+                v70 = ((unsigned int *)v1->Type)[2]; /*0x454f7f*/
                 v20 = (int *)RA2_OPNEW(0x100u); /*0x454f88*/
                 if ( v20 ) /*0x454f8f*/
                 {
@@ -17010,7 +17029,7 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF         if ( BunkerState == (char *)v3 ) /*0x458ec3*/
 //DUPDEF         {
 //DUPDEF           if ( !*((unsigned int *)bunkerLinkedUnit + 413) ) /*0x458ec9*/
-//DUPDEF             WinAPI::Wrapper(-2147467261); /*0x458ed6*/
+//DUPDEF             WinAPI_Wrapper(-2147467261); /*0x458ed6*/
 //DUPDEF           IDA_LOBYTE(BunkerState) = (*(int (**)(unsigned int))(**((unsigned int **)bunkerLinkedUnit + 413) + 16))(*((unsigned int *)bunkerLinkedUnit + 413)); /*0x458ee4*/
 //DUPDEF           if ( !(unsigned char)BunkerState ) /*0x458ee9*/
 //DUPDEF           {
@@ -17126,7 +17145,7 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF           v24 = *((unsigned int *)bunkerLinkedUnit + 413); /*0x459178*/
 //DUPDEF           v23 = v23; /*0x459180*/
 //DUPDEF           if ( !v24 ) /*0x459184*/
-//DUPDEF             WinAPI::Wrapper(-2147467261); /*0x45918b*/
+//DUPDEF             WinAPI_Wrapper(-2147467261); /*0x45918b*/
 //DUPDEF           (*(void (**)(unsigned int, int, int, int, int))(**((unsigned int **)bunkerLinkedUnit + 413) + 112))( /*0x4591af*/
 //DUPDEF             *((unsigned int *)bunkerLinkedUnit + 413),
 //DUPDEF             v42,
@@ -17146,7 +17165,7 @@ void BuildingClass::ProcessUpgradeTargeting()
 //DUPDEF         if ( BunkerState == (char *)v3 ) /*0x4591ea*/
 //DUPDEF         {
 //DUPDEF           if ( !*((unsigned int *)bunkerLinkedUnit + 413) ) /*0x4591f0*/
-//DUPDEF             WinAPI::Wrapper(-2147467261); /*0x4591fd*/
+//DUPDEF             WinAPI_Wrapper(-2147467261); /*0x4591fd*/
 //DUPDEF           IDA_LOBYTE(BunkerState) = (*(int (**)(unsigned int))(**((unsigned int **)bunkerLinkedUnit + 413) + 16))(*((unsigned int *)bunkerLinkedUnit + 413)); /*0x45920b*/
 //DUPDEF           if ( !(unsigned char)BunkerState ) /*0x459210*/
 //DUPDEF           {

@@ -689,7 +689,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   char Source[28]; // [esp+Ch] [ebp-1A0h] BYREF
   VocClass Destination; // [esp+28h] [ebp-184h] BYREF
 
-  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x5f92e3*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)aP1))); /*0x5f92e3*/
   if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)this))->LoadFromINI( (unsigned __int8 ***)(aP1)) ) /*0x5f92eb*/
     return 0; /*0x5f969e*/
   strcpy( (char *)(Source), (const char *)(this->ImageFile)); /*0x5f931c*/
@@ -715,44 +715,35 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   }
   Crushable = this->Crushable; /*0x5f93fd*/
   this->AmbientSound = v6; /*0x5f9403*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aCrushable, Crushable); /*0x5f9412*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aCrushable), Crushable); /*0x5f9412*/
   Bombable = this->Bombable; /*0x5f941f*/
   this->Crushable = Bool_Overwrite; /*0x5f9426*/
-  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aBombable, Bombable); /*0x5f9431*/
-  v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aNospawnalt, (&this->__pad_14D)[155]); /*0x5f9446*/
+  this->Bombable = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aBombable), Bombable); /*0x5f9431*/
+  v9 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aNospawnalt), (&this->__pad_14D)[155]); /*0x5f9446*/
   AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
   (&this->__pad_14D)[155] = v9; /*0x5f9451*/
-  v11 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
+  v11 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aAlternatearcti), AlternateArcticArt); /*0x5f9460*/
   RadarInvisible = this->RadarInvisible; /*0x5f946d*/
   this->AlternateArcticArt = v11; /*0x5f9474*/
-  this->RadarInvisible = INIClass::ReadBool_Overwrite( /*0x5f947f*/
-                           (int *)aP1,
-                           (uint8_t *)((unsigned int *)this)[0],
-                           aRadarinvisible,
-                           RadarInvisible);
-  v12 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aSelectable, this->Selectable); /*0x5f9494*/
+  this->RadarInvisible = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f947f*/
+                           (int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aRadarinvisible), RadarInvisible);
+  v12 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aSelectable), this->Selectable); /*0x5f9494*/
   LegalTarget = this->LegalTarget; /*0x5f9499*/
   this->Selectable = v12; /*0x5f949f*/
-  v14 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aLegaltarget, LegalTarget); /*0x5f94ae*/
+  v14 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aLegaltarget), LegalTarget); /*0x5f94ae*/
   v29 = this->Armor[0]; /*0x5f94bb*/
   this->LegalTarget = v14; /*0x5f94c2*/
   this->Armor[0] = ArmorType::FindIndex((ArmorType *)aP1, (uint8_t *)((unsigned int *)this)[0], g_INI_Key_Armor, v29); /*0x5f94cd*/
-  Int_Overwrite = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)((unsigned int *)this)[0],(uint8_t *)(aStrength), this->Strength); /*0x5f94e2*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)aP1)), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)(aStrength), this->Strength); /*0x5f94e2*/
   Immune = this->Immune; /*0x5f94e7*/
   this->Strength = Int_Overwrite; /*0x5f94ed*/
-  v17 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aImmune, Immune); /*0x5f94fc*/
+  v17 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aImmune), Immune); /*0x5f94fc*/
   Insignificant = this->Insignificant; /*0x5f9509*/
   this->Immune = v17; /*0x5f9510*/
-  this->Insignificant = INIClass::ReadBool_Overwrite( /*0x5f951b*/
-                          (int *)aP1,
-                          (uint8_t *)((unsigned int *)this)[0],
-                          aInsignificant,
-                          Insignificant);
-  this->HasRadialIndicator = INIClass::ReadBool_Overwrite( /*0x5f9549*/
-                               (int *)aP1,
-                               (uint8_t *)((unsigned int *)this)[0],
-                               aHasradialindic,
-                               this->HasRadialIndicator);
+  this->Insignificant = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f951b*/
+                          (int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aInsignificant), Insignificant);
+  this->HasRadialIndicator = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f9549*/
+                               (int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aHasradialindic), this->HasRadialIndicator);
   Coord = INIClass::GetCoord( /*0x5f954f*/
             (INIClass *)aP1,
             (int)&v34,
@@ -762,14 +753,11 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   IgnoresFirestorm = this->IgnoresFirestorm; /*0x5f9557*/
   *(unsigned short *)this->__pad_98 = *(unsigned short *)Coord; /*0x5f955d*/
   this->__pad_98[2] = *(unsigned char *)(Coord + 2); /*0x5f956c*/
-  v20 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)((unsigned int *)this)[0], aIgnoresfiresto, IgnoresFirestorm); /*0x5f956f*/
+  v20 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aIgnoresfiresto), IgnoresFirestorm); /*0x5f956f*/
   UseLineTrail = this->UseLineTrail; /*0x5f9580*/
   this->IgnoresFirestorm = v20; /*0x5f958c*/
-  this->UseLineTrail = INIClass::ReadBool_Overwrite( /*0x5f959d*/
-                         (int *)&DSurface_ViewBounds.__pad_FC[228],
-                         (uint8_t *)this->ImageFile,
-                         aUselinetrail,
-                         UseLineTrail);
+  this->UseLineTrail = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f959d*/
+                         (int *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)this->ImageFile, (unsigned char *)(aUselinetrail), UseLineTrail);
   v21 = INIClass::GetCoord( /*0x5f95b4*/
           (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
           (int)&v34,
@@ -779,30 +767,18 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   *(unsigned short *)this->LineTrailColor = *(unsigned short *)v21; /*0x5f95bc*/
   LineTrailColorDecrement = this->LineTrailColorDecrement; /*0x5f95cd*/
   this->LineTrailColor[2] = *(unsigned char *)(v21 + 2); /*0x5f95d4*/
-  v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
-          (bool *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)this->ImageFile,
-          aLinetrailcolor_0,
-          LineTrailColorDecrement);
+  v22 = INIClass::ReadInt_Overwrite((INIClass *)(/*0x5f95d7*/
+          (bool *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)this->ImageFile, (unsigned char *)(aLinetrailcolor_0), LineTrailColorDecrement);
   Theater = this->Theater; /*0x5f95dc*/
   this->LineTrailColorDecrement = v22; /*0x5f95e2*/
-  v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
-          (int *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)this->ImageFile,
-          (uint8_t *)g_INI_Key_Theater,
-          Theater);
+  v24 = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f95f4*/
+          (int *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)this->ImageFile, (uint8_t *)g_INI_Key_Theater, Theater);
   NewTheater = this->NewTheater; /*0x5f9604*/
   this->Theater = v24; /*0x5f960b*/
-  this->NewTheater = INIClass::ReadBool_Overwrite( /*0x5f9616*/
-                       (int *)&DSurface_ViewBounds.__pad_FC[228],
-                       (uint8_t *)this->ImageFile,
-                       aNewtheater,
-                       NewTheater);
-  v25 = INIClass::ReadBool_Overwrite( /*0x5f962e*/
-          (int *)&DSurface_ViewBounds.__pad_FC[228],
-          (uint8_t *)this->ImageFile,
-          aVoxel,
-          this->Voxel);
+  this->NewTheater = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f9616*/
+                       (int *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)this->ImageFile, (unsigned char *)(aNewtheater), NewTheater);
+  v25 = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f962e*/
+          (int *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)this->ImageFile, (unsigned char *)(aVoxel), this->Voxel);
   this->Voxel = v25; /*0x5f9634*/
   if ( !v25 && (*((int (**)(ObjectTypeClass *))this->vtable1 + 11))(this) != 5 ) /*0x5f9649*/
     ((ObjectTypeClass*)((char *)this))->Load2DArt(); /*0x5f964d*/
@@ -1003,7 +979,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 } // namespace gamemd
 // 0x712170
 namespace gamemd {
-int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
+int ObjectTypeClass::LoadExtras(CCINIClass * aP0, void * _38C, unsigned char *** a2)  // G57w11: def 同步 hpp（__userpurge st0 伪影，raw 调用侧传 ini 指针）
 {
 
   int v3; // ecx
@@ -1746,7 +1722,7 @@ int ObjectTypeClass::ReadDestroyAnim()
   unsigned char v6[4]; // [esp+Ch] [ebp-10h] BYREF
   char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  INIClass::ClearSection((int)this, (int)aTerrain, 0); /*0x71cb9f*/
+  INIClass::ClearSection((INIClass *)((int)this), (int)aTerrain, 0); /*0x71cb9f*/
   result = dword_A8E998; /*0x71cba4*/
   for ( i = 0; i < dword_A8E998; ++i ) /*0x71cbad*/
   {

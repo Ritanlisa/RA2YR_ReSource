@@ -80,7 +80,7 @@ int InfantryClass::ScanTarget(int * a1)
     (*((void (**)(FootClass *, unsigned int, int))a1->vtable1 + 289))( (FootClass *)(a1), 0, 1); /*0x4d4e7a*/
   v7 = *((double *)MissionClass::GetMissionControl( (MissionClass *)a1) + 2) * 900.0; /*0x4d4e8a*/
   LOWORD(v8) = Math::RoundToInt(v7); /*0x4d4e90*/
-  v9 = v8 + Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
+  v9 = v8 + Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x4d4eb3*/
   if ( !((unsigned int *)a1)[0]
     || (!a1
      || (*((int (**)(FootClass *))a1->vtable1 + 11))( (FootClass *)(a1)) != 15
@@ -145,7 +145,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
     else
     {
       *(unsigned int *)v13 = g_FootClass_Pool; /*0x4d5510*/
-      *(unsigned int *)v13 = *((HouseClass *)dword_A83D4C)->GetCurrentOption( &v14); /*0x4d5529*/
+      *(unsigned int *)v13 = *HouseClass::GetCurrentOption(((HouseClass *)dword_A83D4C), &v14); /*0x4d5529*/
       if ( *(unsigned int *)v13 != g_FootClass_Pool ) /*0x4d552d*/
       {
         slaveManager = (FactoryClass *)((unsigned int *)a1)[0]; /*0x4d553d*/
@@ -196,7 +196,7 @@ LABEL_12:
 LABEL_25:
   MissionControl = MissionClass::GetMissionControl( (MissionClass *)a1); /*0x4d5582*/
   LOWORD(v11) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d5592*/
-  return (gamemd::AbstractClass **)(v11 + Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 2)); /*0x4d55b0*/
+  return (gamemd::AbstractClass **)(v11 + Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2)); /*0x4d55b0*/
 
 }
 }

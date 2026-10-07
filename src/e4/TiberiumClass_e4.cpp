@@ -259,31 +259,28 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   DynamicVector v25; // [esp+28h] [ebp-9Ch] BYREF
 
   v5 = v4; /*0x721a5f*/
-  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x721a63*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)aP1))); /*0x721a63*/
   if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)v5))->LoadFromINI( (unsigned __int8 ***)((uint8_t ***)aP1)) ) /*0x721a6b*/
     return 0; /*0x721cea*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/
-                    (bool *)aP1,
-                    (uint8_t *)(v5 + 36),
-                    aSpread,
-                    *(unsigned int *)(v5 + 156));
+  Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(/*0x721a8b*/
+                    (bool *)aP1), (uint8_t *)(v5 + 36), (unsigned char *)(aSpread), *(unsigned int *)(v5 + 156));
   v20 = *(double *)(v5 + 160); /*0x721a9d*/
   *(unsigned int *)(v5 + 156) = Int_Overwrite; /*0x721aa6*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)(v5 + 36), aSpreadpercenta, v20); /*0x721aac*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)aP1), (uint8_t *)(v5 + 36), (unsigned char *)(aSpreadpercenta), v20); /*0x721aac*/
   v7 = *(unsigned int *)(v5 + 168); /*0x721ab1*/
   __asm { fstp qword ptr [esi+0A0h] } /*0x721ab9*/
   *(double *)(v5 + 160) = _RT1; /*0x721ab9*/
-  v9 = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)(v5 + 36),(uint8_t *)(aGrowth), v7); /*0x721ac6*/
+  v9 = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)aP1)), (uint8_t *)(v5 + 36), (uint8_t *)(aGrowth), v7); /*0x721ac6*/
   v21 = *(double *)(v5 + 176); /*0x721ad8*/
   *(unsigned int *)(v5 + 168) = v9; /*0x721ae1*/
-  INIClass::ReadDouble_Overwrite((double *)aP1, (uint8_t *)(v5 + 36), aGrowthpercenta, v21); /*0x721ae7*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)aP1), (uint8_t *)(v5 + 36), (unsigned char *)(aGrowthpercenta), v21); /*0x721ae7*/
   v10 = *(unsigned int *)(v5 + 184); /*0x721aec*/
   __asm { fstp qword ptr [esi+0B0h] } /*0x721af4*/
   *(double *)(v5 + 176) = _RT1; /*0x721af4*/
-  v12 = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)(v5 + 36),(uint8_t *)(aValue), v10); /*0x721b01*/
+  v12 = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)aP1)), (uint8_t *)(v5 + 36), (uint8_t *)(aValue), v10); /*0x721b01*/
   v13 = *(unsigned int *)(v5 + 188); /*0x721b06*/
   *(unsigned int *)(v5 + 184) = v12; /*0x721b0c*/
-  v14 = ((INIClass *)((bool *)aP1))->ReadInt_Overwrite((uint8_t *)(v5 + 36),(uint8_t *)(aPower_0), v13); /*0x721b1b*/
+  v14 = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)aP1)), (uint8_t *)(v5 + 36), (uint8_t *)(aPower_0), v13); /*0x721b1b*/
   v22 = *(unsigned int *)(v5 + 192); /*0x721b28*/
   *(unsigned int *)(v5 + 188) = v14; /*0x721b2f*/
   *(unsigned int *)(v5 + 192) = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
@@ -322,11 +319,8 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v24.DynamicVectorClass = &vt_VectorClass; /*0x721c21*/
   if ( Items &(char *)&v24 ) /*0x721c34*/
     __3_YAXPAX_Z(Items); /*0x721c37*/
-  switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
-             (bool *)aP1,
-             (uint8_t *)(v5 + 36),
-             (uint8_t *)g_INI_Key_Image,
-             -1) )
+  switch ( INIClass::ReadInt_Overwrite((INIClass *)(/*0x721c55*/
+             (bool *)aP1), (uint8_t *)(v5 + 36), (uint8_t *)g_INI_Key_Image, -1) )
   {
     case -1: /*0x721c55*/
       goto LABEL_19;

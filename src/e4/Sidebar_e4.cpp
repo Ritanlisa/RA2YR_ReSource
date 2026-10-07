@@ -515,11 +515,11 @@ ObjectClass * * Sidebar::Render(char a2)
   {
     LOBYTE(this->field_150C) = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
-    if ( (&dword_A8B230)[374].NeedsSaveOrLink ) /*0x63fb5d*/
+    if ( ((AbstractClass *)dword_A8B230)[374].NeedsSaveOrLink ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
     else
       v3 = 5; /*0x63fb69*/
-    NeedsSaveOrLink = (int)(&dword_A8B230)[374].NeedsSaveOrLink; /*0x63fb78*/
+    NeedsSaveOrLink = (int)((AbstractClass *)dword_A8B230)[374].NeedsSaveOrLink; /*0x63fb78*/
     v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
 v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/ DSurface_Sidebar, (int *)(&NeedsSaveOrLink));
 
@@ -952,7 +952,7 @@ int Sidebar_UpdateProductionDisplay(void * a1, void * a3)
       }
 LABEL_13:
       int v11 = 26;
-      if ( *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[29924] + 13496) )
+      if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924] + 13496) )
         v11 = 18;
       int v85 = 0;
   int v12; // eax
@@ -1002,7 +1002,7 @@ LABEL_13:
               }
               else
               {
-                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, (&HouseClass_Player)[45136]) )
+                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, ((unsigned int *)HouseClass_Player)[45136]) )
                   IDA_HIBYTE(v73) = 0;
                 int v21 = *(unsigned int *)(v84 + 52 * v90 + 92);
                 int * v22 = (int *)(v84 + 52 * v90);
@@ -1010,9 +1010,9 @@ LABEL_13:
                 if ( v21 == 31 )
                 {
                   unsigned int v31 = v22[22];
-                  int v32 = *(unsigned int *)(*(unsigned int *)&(&HouseClass_Player)[42472] + 4 * v31);
+                  int v32 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)HouseClass_Player)[42472] + 4 * v31);
                   v80 = *(int **)(v32 + 96);
-                  if ( v31 >= *(unsigned int *)&(&HouseClass_Player)[42484] )
+                  if ( v31 >= *(unsigned int *)&((unsigned int *)HouseClass_Player)[42484] )
                     aP2 = (ConvertClass *)(0);
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
@@ -1186,8 +1186,8 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( *(unsigned int *)(v84 + 52 * v90 + 136) > *(int *)&(&HouseClass_Player)[45112]
-                  && *(unsigned int *)&(&HouseClass_Player)[45112] % 16 > 8 )
+                if ( *(unsigned int *)(v84 + 52 * v90 + 136) > *(int *)&((unsigned int *)HouseClass_Player)[45112]
+                  && *(unsigned int *)&((unsigned int *)HouseClass_Player)[45112] % 16 > 8 )
                 {
                   *(unsigned int *)&aP3[120] = v15;
                   *(unsigned int *)&aP3[124] = v17;

@@ -362,7 +362,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
   int64_t v45; // [esp+14h] [ebp-26Ch] BYREF
   SuperWeaponTypeClass v46[2]; // [esp+1Ch] [ebp-264h] BYREF
 
-  ((INIClass*)((INIClass *)a2))->ResetSection(); /*0x41f595*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)a2))); /*0x41f595*/
   if ( !((INIClass*)/*0x41f5b9*/
           (INIClass *)a2)->GetString(/*0x41f5b9*/ (uint8_t *)aAitriggertypes, (uint8_t *)&this->AITriggerTypeClass_field_0x24, &g_INI_DefaultBuffer, ((unsigned int *)(v46))[0], 512) )
     return 0; /*0x41f5b9*/

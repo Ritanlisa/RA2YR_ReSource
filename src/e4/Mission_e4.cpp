@@ -66,7 +66,7 @@ int Mission_e4::ExecuteTechnoMissionAction()
           v4 = (AnimClass *)__2_YAPAXI_Z(0x1C8u); /*0x520bf9*/
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
-          v5 = (unsigned int)((Random *)((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink))->State() /*0x520c2d*/
+          v5 = (unsigned int)((Random *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State() /*0x520c2d*/
              % *(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3680);
           v6 = (char *)v19; /*0x520c37*/
           v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&this->__pad_5B8[264] + 3668) + 4 * v5); /*0x520c3b*/
@@ -80,7 +80,7 @@ int Mission_e4::ExecuteTechnoMissionAction()
           {
             v7 = *(void **)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 292) /*0x520c91*/
                           + 4
-                          * ((unsigned int)((Random *)((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink))->State()
+                          * ((unsigned int)((Random *)((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink))->State()
                            % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 304)));
             v8 = *(unsigned int *)this->__pad_0; /*0x520c94*/
             v6 = &v20; /*0x520c96*/
@@ -511,7 +511,7 @@ char Mission_e4::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
                       {
                         if ( v4 != 5 || (v3 = (*(int (**)(int *))(*i + 388))( (int *)(i)), v3 != 16) ) /*0x6eda45*/
                         {
-                          ((TechnoClass *)i)->SetFocus( 0); /*0x6eda4b*/
+                          TechnoClass::SetFocus(((TechnoClass *)i), 0); /*0x6eda4b*/
                           (*(void (**)(int *, int, unsigned int))(*i + 488))( (int *)(i), v4, 0); /*0x6eda57*/
                           (*(void (**)(int *, unsigned int))(*i + 968))( (int *)(i), 0); /*0x6eda63*/
                           LOBYTE(v3) = (*(int (**)(int *, unsigned int, int))(*i + 1152))( (int *)(i), 0, 1); /*0x6eda71*/
@@ -572,7 +572,7 @@ int Mission_e4::GetMissionDelay(void *a1_1)
     result = dword_A8E7AC; /*0x70f79e*/
     if ( !dword_A8E7AC ) /*0x70f7a5*/
     {
-      result = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
+      result = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 4, 8); /*0x70f7b6*/
       *p_Mission_field_0x180 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x70f7c1*/
       p_Mission_field_0x180[1] = v4; /*0x70f7c7*/
       p_Mission_field_0x180[2] = result; /*0x70f7ca*/

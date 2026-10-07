@@ -106,7 +106,7 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x4a7ba9*/
     {
-      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x4a7bb2*/
+      AbstractClass::InitVtables(((AbstractClass *)aP0), (int)&aP1); /*0x4a7bb2*/
       *(unsigned int *)aP0->__pad_0 = (unsigned int)&vt_DiskLaserClass;
       aP0->DiskLaserClass_field_0x04 = (int)&vt_DiskLaserClass; /*0x4a7bbd*/
       aP0->DiskLaserClass_field_0x08 = (int)&vt_DiskLaserClass; /*0x4a7bc4*/

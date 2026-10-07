@@ -159,28 +159,22 @@ void* RulesClass::readAudioVisual()
   double v9; // [esp-8h] [ebp-10h]
   bool *v10; // [esp+Ch] [ebp+4h]
 
-  result = (int)(((INIClass *)((int)v10))->BinarySearchSection( (uint8_t *)aElevationmodel)); /*0x66d160*/
+  result = (int)(INIClass::BinarySearchSection(((INIClass *)((int)v10)), (uint8_t *)aElevationmodel)); /*0x66d160*/
   if ( result ) /*0x66d16c*/
   {
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x66d183*/
-                      v10,
-                      (uint8_t *)aElevationmodel,
-                      aElevationincre,
-                      this->ColorAdd[9]);
+    Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(/*0x66d183*/
+                      v10), (uint8_t *)aElevationmodel, (unsigned char *)(aElevationincre), this->ColorAdd[9]);
     v4 = this->ColorAdd[11]; /*0x66d188*/
     this->ColorAdd[9] = Int_Overwrite; /*0x66d18e*/
     HIDWORD(v9) = (unsigned int)(this->LaserTargetColor); /*0x66d1a0*/
     LODWORD(v9) = v4; /*0x66d1a1*/
-    INIClass::ReadDouble_Overwrite((double *)v10, (uint8_t *)aElevationmodel, aElevationincre_0, v9); /*0x66d1aa*/
+    INIClass::ReadDouble_Overwrite((INIClass *)((double *)v10), (uint8_t *)aElevationmodel, (unsigned char *)(aElevationincre_0), v9); /*0x66d1aa*/
     BerserkColor = (int)(this->BerserkColor); /*0x66d1af*/
     IronCurtainColor = (int)(this->IronCurtainColor); /*0x66d1b5*/
     __asm { fstp qword ptr [esi+1840h] } /*0x66d1bb*/
     *(double *)&this->ColorAdd[11] = _RT1; /*0x66d1bb*/
-    result = INIClass::ReadDouble_Overwrite( /*0x66d1d1*/
-               (double *)v10,
-               (uint8_t *)aElevationmodel,
-               aElevationbonus,
-               COERCE_DOUBLE(__PAIR64__(BerserkColor, IronCurtainColor)));
+    result = INIClass::ReadDouble_Overwrite((INIClass *)(/*0x66d1d1*/
+               (double *)v10), (uint8_t *)aElevationmodel, (unsigned char *)(aElevationbonus), COERCE_DOUBLE(__PAIR64__(BerserkColor, IronCurtainColor)));
     __asm { fstp qword ptr [esi+1848h] } /*0x66d1d6*/
     *(double *)&this->IronCurtainColor = _RT1; /*0x66d1d6*/
     LOBYTE(result) = 1; /*0x66d1dd*/
@@ -304,46 +298,34 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
   result = INIClass::BinarySearchSection( (INIClass *)((int)v16), (uint8_t *)aJumpjetcontrol); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
-    *(unsigned int *)&this->__pad_240[460] = INIClass::ReadInt_Overwrite( /*0x67440c*/
-                                         v16,
-                                         (uint8_t *)aJumpjetcontrol,
-                                         aTurnrate,
-                                         *(unsigned int *)&this->__pad_240[460]);
-    Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x674427*/
-                      v16,
-                      (uint8_t *)aJumpjetcontrol,
-                      g_INI_Key_Speed,
-                      *(unsigned int *)&this->__pad_240[464]);
+    *(unsigned int *)&this->__pad_240[460] = INIClass::ReadInt_Overwrite((INIClass *)(/*0x67440c*/
+                                         v16), (uint8_t *)aJumpjetcontrol, (unsigned char *)(aTurnrate), *(unsigned int *)&this->__pad_240[460]);
+    Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(/*0x674427*/
+                      v16), (uint8_t *)aJumpjetcontrol, (unsigned char *)(g_INI_Key_Speed), *(unsigned int *)&this->__pad_240[464]);
     v4 = *(unsigned int *)&this->__pad_240[476]; /*0x67442c*/
     *(unsigned int *)&this->__pad_240[464] = Int_Overwrite; /*0x674432*/
     HIDWORD(v15) = v4; /*0x674444*/
     LODWORD(v15) = *(unsigned int *)&this->__pad_240[472]; /*0x674445*/
-    INIClass::ReadDouble_Overwrite((double *)v16, (uint8_t *)aJumpjetcontrol, aClimb, v15); /*0x67444e*/
+    INIClass::ReadDouble_Overwrite((INIClass *)((double *)v16), (uint8_t *)aJumpjetcontrol, (unsigned char *)(aClimb), v15); /*0x67444e*/
     v5 = *(unsigned int *)&this->__pad_240[480]; /*0x674453*/
     __asm { fstp qword ptr [esi+418h] } /*0x67445b*/
     *(double *)&this->__pad_240[472] = _RT1; /*0x67445b*/
-    v7 = ((INIClass *)(v16))->ReadInt_Overwrite((uint8_t *)aJumpjetcontrol, aCruiseheight, v5); /*0x67446d*/
+    v7 = INIClass::ReadInt_Overwrite(((INIClass *)(v16)), (uint8_t *)aJumpjetcontrol, aCruiseheight, v5); /*0x67446d*/
     v8 = *(unsigned int *)&this->__pad_240[492]; /*0x674472*/
     v9 = *(unsigned int *)&this->__pad_240[488]; /*0x674478*/
     *(unsigned int *)&this->__pad_240[480] = v7; /*0x67447e*/
-    INIClass::ReadDouble_Overwrite( /*0x674493*/
-      (double *)v16,
-      (uint8_t *)aJumpjetcontrol,
-      (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 103),
-      COERCE_DOUBLE(__PAIR64__(v8, v9)));
+    INIClass::ReadDouble_Overwrite((INIClass *)(/*0x674493*/
+      (double *)v16), (uint8_t *)aJumpjetcontrol, (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 103), COERCE_DOUBLE(__PAIR64__(v8, v9)));
     v10 = *(unsigned int *)&this->__pad_240[500]; /*0x674498*/
     v11 = *(unsigned int *)&this->__pad_240[496]; /*0x67449e*/
     __asm { fstp qword ptr [esi+428h] } /*0x6744a4*/
     *(double *)&this->__pad_240[488] = _RT1; /*0x6744a4*/
-    INIClass::ReadDouble_Overwrite( /*0x6744b9*/
-      (double *)v16,
-      (uint8_t *)aJumpjetcontrol,
-      aWobblesperseco,
-      COERCE_DOUBLE(__PAIR64__(v10, v11)));
+    INIClass::ReadDouble_Overwrite((INIClass *)(/*0x6744b9*/
+      (double *)v16), (uint8_t *)aJumpjetcontrol, (unsigned char *)(aWobblesperseco), COERCE_DOUBLE(__PAIR64__(v10, v11)));
     v13 = *(unsigned int *)&this->__pad_240[504]; /*0x6744be*/
     __asm { fstp qword ptr [esi+430h] } /*0x6744c4*/
     *(double *)&this->__pad_240[496] = _RT1; /*0x6744c4*/
-    result = ((INIClass *)(v16))->ReadInt_Overwrite((uint8_t *)aJumpjetcontrol, aWobbledeviatio, v13); /*0x6744d9*/
+    result = INIClass::ReadInt_Overwrite(((INIClass *)(v16)), (uint8_t *)aJumpjetcontrol, aWobbledeviatio, v13); /*0x6744d9*/
     *(unsigned int *)&this->__pad_240[504] = result; /*0x6744de*/
     LOBYTE(result) = 1; /*0x6744e5*/
   }
@@ -844,16 +826,13 @@ int RulesClass::readSpecialWeapons(void * aAlliedwalltran, void * aWallmodel, vo
   result = INIClass::BinarySearchSection( (INIClass *)((int)v7), (uint8_t *)aWallmodel); /*0x66d200*/
   if ( result ) /*0x66d20c*/
   {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x66d223*/
-                       v7,
-                       (uint8_t *)aWallmodel,
-                       aAlliedwalltran,
-                       this->ForceShieldColor);
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)(/*0x66d223*/
+                       v7), (uint8_t *)aWallmodel, (unsigned char *)(aAlliedwalltran), this->ForceShieldColor);
     FallBackCoefficient = this->FallBackCoefficient; /*0x66d228*/
     LOBYTE(this->ForceShieldColor) = Bool_Overwrite; /*0x66d22e*/
     HIDWORD(v6) = (unsigned int)(this->CrewCount); /*0x66d240*/
     *(float *)&v6 = FallBackCoefficient; /*0x66d241*/
-    result = INIClass::ReadDouble_Overwrite((double *)v7, (uint8_t *)aWallmodel, aWallpenetrator, v6); /*0x66d24a*/
+    result = INIClass::ReadDouble_Overwrite((INIClass *)((double *)v7), (uint8_t *)aWallmodel, (unsigned char *)(aWallpenetrator), v6); /*0x66d24a*/
     __asm { fstp qword ptr [esi+1858h] } /*0x66d24f*/
     *(double *)&this->FallBackCoefficient = _RT1; /*0x66d24f*/
     LOBYTE(result) = 1; /*0x66d256*/

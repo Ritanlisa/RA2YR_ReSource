@@ -734,7 +734,7 @@ v12 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)
   v59 = v19; /*0x54d278*/
   v62 = *(double *)v20; /*0x54d27e*/
   v63 = *(unsigned int *)(v20 + 8); /*0x54d291*/
-  GroundHeight = Cell::GetGroundHeight( &v62); /*0x54d29f*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v62)); /*0x54d29f*/
   v22 = *(unsigned int *)this->__pad_C + 156; /*0x54d2a4*/
   v62 = *(double *)v22; /*0x54d2ab*/
   v63 = *(unsigned int *)(v22 + 8); /*0x54d2c3*/
@@ -780,7 +780,7 @@ v12 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)
         v31 = v30[2]; /*0x54d3ce*/
         v62 = *(double *)v30; /*0x54d3d3*/
         v63 = v30[2]; /*0x54d3eb*/
-        if ( v31 >= dword_ABC5DC + Cell::GetGroundHeight( &v62) ) /*0x54d3ff*/
+        if ( v31 >= dword_ABC5DC + Cell::GetGroundHeight((unsigned int *)(&v62)) ) /*0x54d3ff*/
           v27 -= dword_ABC5DC; /*0x54d401*/
       }
     }

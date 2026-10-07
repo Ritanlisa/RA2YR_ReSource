@@ -346,7 +346,7 @@ LABEL_35:
   v21 = 1; /*0x43a061*/
 LABEL_43:
   v48 = QuaternionMathMultiply( (ObjectClass *)((float *)v86), (float *)v2 + 12, (float *)v2 + 16); /*0x43a066*/
-  Float4::Copy((float *)v2 + 12, &v84, v48); /*0x43a080*/
+  ((Float4 *)((float *)v2 + 12))->Copy(&v84, v48); /*0x43a080*/
   v49 = ((JumpjetLocomotionClass *)((JumpjetLocomotionClass *)v2))->ComputeVectorLengthMetric(); /*0x43a087*/
   result = 2; /*0x43a098*/
   if ( v49 >= 2.5 ) /*0x43a09d*/
@@ -833,17 +833,17 @@ v5 = (int *)(*(int (**)(DriveLocomotionClass *, unsigned int *))(*(unsigned int 
     return 0; /*0x4b4959*/
   if ( !LOBYTE(v4->TrackIndex) ) /*0x4b4967*/
   {
-    v9 = v4->MovementSpeed[1]; /*0x4b4972*/
+    v9 = ((unsigned int *)&v4->MovementSpeed)[1]; /*0x4b4972*/
     if ( v9 != -1 ) /*0x4b4978*/
     {
-      v10 = byte_7E7B28[12 * v9]; /*0x4b4981*/
+      v10 = ((unsigned char *)&byte_7E7B28)[12 * v9]; /*0x4b4981*/
       if ( v10 ) /*0x4b498b*/
       {
         v11 = 4 * v10; /*0x4b4991*/
-        v12 = dword_7E7A34[v11]; /*0x4b4994*/
+        v12 = (&dword_7E7A34)[v11]; /*0x4b4994*/
         if ( v12 > -1 ) /*0x4b49a3*/
         {
-          v13 = dword_7E7A28[v11] + 12 * v12; /*0x4b49ac*/
+          v13 = (&dword_7E7A28)[v11] + 12 * v12; /*0x4b49ac*/
           a1 = (unsigned int)*(DriveLocomotionClass **)(v13 + 8); /*0x4b49b2*/
           if ( v4->TrackNumber < v12 ) /*0x4b49bb*/
           {
@@ -894,25 +894,25 @@ int JumpjetLocomotionClass::StubReturnZero_2(unsigned int a1)
     return 0; /*0x4b4b1b*/
   v3 = 12 * a1->MovementSpeed[1] + 8289064; /*0x4b4b2c*/
   v4 = LOBYTE(a1->TrackIndex)
-     ? (char)algn_7E7B29[12 * a1->MovementSpeed[1]]
-     : byte_7E7B28[12 * a1->MovementSpeed[1]];
+     ? (char)((unsigned char *)&algn_7E7B29)[12 * ((unsigned int *)&a1->MovementSpeed)[1]]
+     : ((unsigned char *)&byte_7E7B28)[12 * ((unsigned int *)&a1->MovementSpeed)[1]];
   if ( v2 == 8 ) /*0x4b4b43*/
     return 0; /*0x4b4b43*/
   if ( v2 == -1 ) /*0x4b4b4c*/
     return 0; /*0x4b4b4c*/
   LOBYTE(v5) = 0; /*0x4b4b53*/
-  HIBYTE(v5) = algn_7E7B29[12 * a1->MovementSpeed[1] + 3]; /*0x4b4b55*/
+  HIBYTE(v5) = ((unsigned char *)&algn_7E7B29)[12 * ((unsigned int *)&a1->MovementSpeed)[1] + 3]; /*0x4b4b55*/
   LOWORD(a1) = v5; /*0x4b4b58*/
   if ( (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) == v2 ) /*0x4b4b78*/
     return 0; /*0x4b4b78*/
   TrackNumber = v1->TrackNumber; /*0x4b4b7a*/
-  if ( dword_7E7A2C[4 * v4] == TrackNumber /*0x4b4bc1*/
+  if ( (&dword_7E7A2C)[4 * v4] == TrackNumber /*0x4b4bc1*/
     && TrackNumber
     && (LOBYTE(v7) = 0,
         HIBYTE(v7) = *(unsigned char *)(v3 + 4),
         LOWORD(a1) = v7,
-        (v8 = byte_7E7B28[96 * (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) + 12 * v2]) != 0)
-    && dword_7E7A30[4 * v8] )
+        (v8 = ((unsigned char *)&byte_7E7B28)[96 * (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) + 12 * v2]) != 0)
+    &&(&dword_7E7A30)[4 * v8] )
   {
     return 1; /*0x4b4bcc*/
   }
@@ -957,7 +957,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
         p_IsOutOfMap = &a1->IsOutOfMap; /*0x4b608c*/
         *(double *)_ESI = VeteranCombat_low; /*0x4b608d*/
         *((unsigned int *)_ESI + 2) = v7; /*0x4b6097*/
-        v4->DestinationCoords[1] = Cell::GetGroundHeight(p_IsOutOfMap); /*0x4b609f*/
+        v4->DestinationCoords[1] = Cell::GetGroundHeight((unsigned int *)(p_IsOutOfMap)); /*0x4b609f*/
         v19[0] = *(unsigned int *)_ESI; /*0x4b60a6*/
         v19[1] = *((unsigned int *)_ESI + 1); /*0x4b60ad*/
         _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4b60b4*/

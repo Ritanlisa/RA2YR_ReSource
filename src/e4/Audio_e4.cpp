@@ -723,9 +723,9 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
   dword_B1D3AC = 0; /*0x75110a*/
   if ( INIClass::BinarySearchSection( (INIClass *)((int)v4), (void *)(g_INI_Key_Defaults)) ) /*0x751114*/
   {
-    INIClass::ReadDouble_Overwrite(v4, g_INI_Key_Defaults, g_INI_Key_Volume, flt_8464B4); /*0x75113e*/
+    INIClass::ReadDouble_Overwrite((INIClass *)(v4), (unsigned char *)(g_INI_Key_Defaults), (unsigned char *)(g_INI_Key_Volume), flt_8464B4); /*0x75113e*/
     flt_8464B4 = a2; /*0x751143*/
-    INIClass::ReadDouble_Overwrite(v4, g_INI_Key_Defaults, aMinvolume, flt_8464B8); /*0x751161*/
+    INIClass::ReadDouble_Overwrite((INIClass *)(v4), (unsigned char *)(g_INI_Key_Defaults), (unsigned char *)(aMinvolume), flt_8464B8); /*0x751161*/
     flt_8464B8 = a3; /*0x751166*/
     /*0x751187*/
       ((INIClass*)((INIClass *)v4))->GetString(/*0x751187*/ g_INI_Key_Defaults, (uint8_t *)aPriority, g_INI_Key_NORMAL, String, 2048);
@@ -755,8 +755,8 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
       }
       while ( v6 ); /*0x751256*/
     }
-    dword_8464C4 = ((INIClass *)((bool *)v4))->ReadInt_Overwrite(g_INI_Key_Defaults, aLimit, dword_8464C4); /*0x751270*/
-    dword_8464C0 = ((INIClass *)((bool *)v4))->ReadInt_Overwrite(g_INI_Key_Defaults, g_INI_Key_Range, dword_8464C0); /*0x75128c*/
+    dword_8464C4 = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)v4)), (unsigned char *)(g_INI_Key_Defaults), (unsigned char *)(aLimit), dword_8464C4); /*0x751270*/
+    dword_8464C0 = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)v4)), (unsigned char *)(g_INI_Key_Defaults), (unsigned char *)(g_INI_Key_Range), dword_8464C0); /*0x75128c*/
   }
   LOBYTE(KeyCount) = INIClass::BinarySearchSection( (INIClass *)((int)v4), (void *)(g_INI_Key_SoundList)) != 0; /*0x75129f*/
   if ( (unsigned char)KeyCount )

@@ -66,7 +66,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
       PsyDom_Anim = 0; /*0x53aef1*/
     v7 = (gamemd::AbstractClass *)(dword_A8B230 + 130); /*0x53af06*/
     PsyDom_Status = 1; /*0x53af0c*/
-    (&dword_A8B230)[130].vtable0 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53af1b*/
+    ((AbstractClass *)dword_A8B230)[130].vtable0 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53af1b*/
     v7->vtable1 = (void *)v9[1]; /*0x53af21*/
     v7->vtable2 = (void *)1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/
@@ -1213,7 +1213,7 @@ int SuperClass::LoadFromStream(AbstractClass * aP0, int aP1)
       && (*((unsigned int *)((unsigned int)&g_BuildingLoadQueue_Array + 1)) < (*(unsigned int *)&g_BuildingLoadQueue_Array)
        || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !((char *)&g_BuildingLoadQueue_Array))
        && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))( (int *)(((char *)(int *)&g_BuildingLoadQueue_Array)), ((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)), 0)) )
+&& (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) + 8))((int *)(((char *)(int *)&g_BuildingLoadQueue_Array)), (int)(((char *)&g_BuildingLoadQueue_Array) + *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2))), 0)) )
 
 
 

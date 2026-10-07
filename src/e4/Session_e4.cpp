@@ -293,7 +293,7 @@ int Session::StartGame(HWND hWnd)
   ObjectClass *v3; // eax
   Skirmish *v4; // eax
 
-  if ( !(uint8_t)((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4])))->Sed() ) /*0x5ed381*/
+  if ( !(uint8_t)((IsRandMap *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4])))->Sed() ) /*0x5ed381*/
     return Session::PrepareGame( (HWND)(hWnd)); /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/

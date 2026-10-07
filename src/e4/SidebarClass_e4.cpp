@@ -598,7 +598,7 @@ int SidebarClass::SwitchTab(int a2)
     v6 = (int)((char *)this + 3988 * *((unsigned int *)this + 5351) + 5444); /*0x6a762c*/
     *(unsigned char *)((char *)this + 3988 * *((unsigned int *)this + 5351) + 5472) = 1; /*0x6a7633*/
     v7 = 26; /*0x6a7645*/
-    if ( (&dword_A8B230)[374].NeedsSaveOrLink ) /*0x6a763d*/
+    if ( ((AbstractClass *)dword_A8B230)[374].NeedsSaveOrLink ) /*0x6a763d*/
       v7 = 18; /*0x6a764c*/
     v8 = 0; /*0x6a765f*/
     v9 = 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v7 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a767f*/
@@ -703,7 +703,7 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
   ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&g_SidebarFlag)->MarkDirty(); /*0x6abefc*/
   dword_B0B44C = -DSurface_SidebarBounds; /*0x6abf0f*/
   v6 = 26; /*0x6abf1d*/
-  if ( (&dword_A8B230)[374].NeedsSaveOrLink ) /*0x6abf15*/
+  if ( ((AbstractClass *)dword_A8B230)[374].NeedsSaveOrLink ) /*0x6abf15*/
     v6 = 18; /*0x6abf24*/
   v7 = (gamemd::LinkClass *)(&stru_B07E80); /*0x6abf44*/
   v25 = (gamemd::LinkClass *)(&stru_B07E80); /*0x6abf4d*/

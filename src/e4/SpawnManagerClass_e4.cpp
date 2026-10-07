@@ -387,7 +387,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
   {
     if ( v2 ) /*0x6b7f32*/
     {
-      ((AbstractClass *)v2)->InitVtables( (int)&aP1); /*0x6b7f3b*/
+      AbstractClass::InitVtables(((AbstractClass *)v2), (int)&aP1); /*0x6b7f3b*/
       ((SpawnManagerClass *)v2->spawns)->Constructor_6B83A0( 0, 0); /*0x6b7f45*/
       *(unsigned int *)&v2->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/

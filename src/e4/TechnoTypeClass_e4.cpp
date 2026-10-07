@@ -232,7 +232,7 @@ LABEL_11:
 } // namespace gamemd
 // 0x710AF0
 namespace gamemd {
-void * TechnoTypeClass::ReadINI(char * Source, int a3, void *a3_2)
+void * TechnoTypeClass::ReadINI(char * Source, int a3)  // G57w11: def 同步 hpp（raw 0x00710AF0 this+2 参）
 {
 
   unsigned int *v4; // eax
@@ -1174,7 +1174,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
   (*(void (**)(unsigned char *))(*(unsigned int *)&((unsigned int *)aP0)[1364] + 12))( (unsigned char *)(&((unsigned int *)aP0)[1364])); /*0x7163f2*/
   (*(void (**)(unsigned char *))(*(unsigned int *)&((unsigned int *)aP0)[1392] + 12))( (unsigned char *)(&((unsigned int *)aP0)[1392])); /*0x716401*/
   (*(void (**)(unsigned char *))(*(unsigned int *)&((unsigned int *)aP0)[588] + 12))( (unsigned char *)(&((unsigned int *)aP0)[588])); /*0x716410*/
-  result = ObjectTypeClass::LoadCleanup( (IUnknown *)((ObjectTypeClass *)aP0), (ObjectTypeClass *)(aP1)); /*0x71641c*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)aP0)), (ObjectTypeClass *)(aP1)); /*0x71641c*/
   if ( result >= 0 ) /*0x716423*/
   {
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((unsigned int *)aP0)[800]); /*0x716435*/

@@ -261,7 +261,7 @@ int BuildingClass::AssignDestination_SyncLog()
     if ( (*((uint8_t (**)(BuildingClass *))this->vtable1 + 161))(this) /*0x455d73*/
       || this->Type->ConstructionYard )
     {
-      ((TechnoClass *)this)->SetFocus( (int)v3); /*0x455d80*/
+      TechnoClass::SetFocus(((TechnoClass *)this), (int)v3); /*0x455d80*/
     }
     IPersistStream::Stub( (BuildingTypeClass *)(v3), v4); /*0x455d8d*/
   }
@@ -741,7 +741,7 @@ v110.ComPtr_field_0x0C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned in
       {
         v12 = *(TeamClass **)(v11 + 52); /*0x739fa2*/
         if ( v12 ) /*0x739fa7*/
-          ((TeamClass *)v12)->Update_0( 1, _EBP, g_UnitSelectionState, 0, 0); /*0x739fb7*/
+          TeamClass::Update_0(((TeamClass *)v12), 1, _EBP, g_UnitSelectionState, 0, 0); /*0x739fb7*/
         if ( *(int *)((*(int (**)(int))(*(unsigned int *)_EBP + 132))(_EBP) + 1228) > 0 /*0x739fdc*/
           && (unsigned __int8)((House *)*(House **)(_EBP + 540))->IsHumanPlayer() )
         {
@@ -811,7 +811,7 @@ v110.ComPtr_field_0x0C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned in
         }
         v27 = *(TeamClass **)(_EBP + 52); /*0x73a192*/
         if ( v27 ) /*0x73a197*/
-          ((TeamClass *)v27)->Update_0( 48, _EBP, g_UnitSelectionState, 0, 0); /*0x73a1a7*/
+          TeamClass::Update_0(((TeamClass *)v27), 48, _EBP, g_UnitSelectionState, 0, 0); /*0x73a1a7*/
         if ( *(unsigned char *)(*(unsigned int *)(v11 + 1312) + 5805) ) /*0x73a1b2*/
         {
           v28 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)_EBP + 72))( _EBP, (int *)(&v110.ComPtr_field_0x20)); /*0x73a1c8*/

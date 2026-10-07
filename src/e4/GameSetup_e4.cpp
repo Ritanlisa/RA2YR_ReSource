@@ -61,16 +61,16 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
-  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_GameMode), *(unsigned int *)this, 0); /*0x698fae*/
-  ((INIClass *)(aP1))->SetInt(Block,(char *)(aScenindex), this->q004, 0); /*0x698fc1*/
-  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_GameSpeed), this->ptr_8, 0); /*0x698fd4*/
-  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_Credits), this->q00C, 0); /*0x698fe7*/
-  ((INIClass *)(aP1))->SetInt(Block,(char *)(g_INI_Key_UnitCount), this->q010, 0); /*0x698ffa*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_ShortGame, this->q014); /*0x69900b*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_SuperWeaponsAllowed, this->u8_15); /*0x69901c*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, this->u8_16); /*0x69902d*/
-  INIClass::SetBool(aP1, Block, aMcvrepacks, this->u8_17); /*0x69903e*/
-  INIClass::SetBool(aP1, Block, aCratesappear, this->q018); /*0x69904f*/
+  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_GameMode), *(unsigned int *)this, 0); /*0x698fae*/
+  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(aScenindex), this->q004, 0); /*0x698fc1*/
+  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_GameSpeed), this->ptr_8, 0); /*0x698fd4*/
+  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_Credits), this->q00C, 0); /*0x698fe7*/
+  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_UnitCount), this->q010, 0); /*0x698ffa*/
+  INIClass::SetBool((INIClass *)(aP1), Block, (char *)(g_INI_Key_ShortGame), this->q014); /*0x69900b*/
+  INIClass::SetBool((INIClass *)(aP1), Block, (char *)(g_INI_Key_SuperWeaponsAllowed), this->u8_15); /*0x69901c*/
+  INIClass::SetBool((INIClass *)(aP1), Block, (char *)(g_INI_Key_BuildOffAlly), this->u8_16); /*0x69902d*/
+  INIClass::SetBool((INIClass *)(aP1), Block, (char *)(aMcvrepacks), this->u8_17); /*0x69903e*/
+  INIClass::SetBool((INIClass *)(aP1), Block, (char *)(aCratesappear), this->q018); /*0x69904f*/
   v4 = 1; /*0x699054*/
   v5 = (int *)((char *)&this->q0104); /*0x699059*/
   do /*0x69908e*/

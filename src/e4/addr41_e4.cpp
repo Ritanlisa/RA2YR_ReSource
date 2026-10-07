@@ -758,7 +758,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
   unsigned int v40[3]; // [esp+24h] [ebp-8Ch] BYREF
   char String[128]; // [esp+30h] [ebp-80h] BYREF
 
-  ((INIClass*)a1)->ResetSection(); /*0x41b119*/
+  INIClass::ResetSection(((INIClass*)a1)); /*0x41b119*/
   result = (gamemd::INIClass **)(INIClass::GetKeyCount( a1->__pad_0, (void *)(aAircraft))); /*0x41b126*/
   v4 = 0; /*0x41b12b*/
   v39 = result; /*0x41b12f*/
@@ -2121,8 +2121,8 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
     v4 = a2; /*0x41fef4*/
     if ( a2 ) /*0x41fefa*/
     {
-      a2 = (unsigned int *)*((HouseClass *)a1)->GetCurrentOption( &a1); /*0x41ff14*/
-      CurrentOption = ((HouseClass *)v4)->GetCurrentOption( &a1); /*0x41ff1b*/
+      a2 = (unsigned int *)*HouseClass::GetCurrentOption(((HouseClass *)a1), &a1); /*0x41ff14*/
+      CurrentOption = HouseClass::GetCurrentOption(((HouseClass *)v4), &a1); /*0x41ff1b*/
       v6 = *(unsigned int *)(v3 + 236); /*0x41ff22*/
       aP0 = (IUnknown *)(*CurrentOption); /*0x41ff28*/
       if ( !*(unsigned char *)(v3 + 241) ) /*0x41ff37*/

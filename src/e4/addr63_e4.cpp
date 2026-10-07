@@ -2192,8 +2192,8 @@ int FactoryClass_DecCounter(unsigned int a1)
 
   if ( a1 < 0x18 )
   {
-    result = dword_AC4B84[a1] - 1; /*0x639f95*/
-    dword_AC4B84[a1] = result < 0 ? 0 : result;
+    result = (&dword_AC4B84)[a1] - 1; /*0x639f95*/
+    (&dword_AC4B84)[a1] = result < 0 ? 0 : result;
   }
   return result; /*0x639fa3*/
 }
@@ -2907,23 +2907,8 @@ AbstractClass * * Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, 
     v16 = v13 - *((int16_t *)dword_ABF294 + 2) / 2; /*0x63d7b4*/
     a3 = v12 - *((int16_t *)dword_ABF294 + 1) / 2 - 1; /*0x63d7ed*/
     a4 = v16; /*0x63d7f4*/
-    DrawToSurfaceSHP( /*0x63d7fb*/
-      DSurface_Composite,
-      dword_87F6C8,
-      (int)dword_ABF294,
-      a7,
-      &a3,
-      v27,
-      1024,
-      0,
-      0,
-      0,
-      1000,
-      0,
-      0,
-      0,
-      0,
-      0);
+    DrawToSurfaceSHP(/*0x63d7fb*/
+      DSurface_Composite, dword_87F6C8, (ConvertClass *)((int)dword_ABF294), a7, (ConvertClass *)(&a3), (ConvertClass *)(v27), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
   }
 }
 }

@@ -323,7 +323,7 @@ int HouseClass::Construct(int a2)
   *((char *)this + 91) = (unsigned int)(int)&vt_DynamicVectorClass;
   *((char *)this + 96) = 10; /*0x4f5631*/
   *((char *)this + 95) = 0; /*0x4f5634*/
-  *((char *)this + 97) = (int)(&dword_A8B230)[43].vtable1; /*0x4f5648*/
+  *((char *)this + 97) = (int)((AbstractClass *)dword_A8B230)[43].vtable1; /*0x4f5648*/
   *((char *)this + 98) = 0; /*0x4f564e*/
   *((char *)this + 99) = 1072693248; /*0x4f5654*/
   *((char *)this + 100) = 0; /*0x4f565a*/
@@ -3092,12 +3092,12 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
       }
       else
       {
-        Debug::Log(); /*0x5eea73*/
+        Debug::Log("Assigning Starting Points for house %d (%s)\n"); /*0x5eea73 G57w11: IDA push seq @ 0x5eea73 +2 reg-vararg(s) omitted*/
         started = AssignRandomMapStartPositions(&v14, i, (int)v18, (int)v17, 1); /*0x5eea8d*/
         ((HouseClass *)(v5))->SetMapSeed(*started); /*0x5eea97*/
         ((HouseClass *)v5)->GetCurrentOption( &v15); /*0x5eeaa3*/
         ((HouseClass *)v5)->GetCurrentOption( &v16); /*0x5eeab4*/
-        Debug::Log(); /*0x5eeac2*/
+        Debug::Log("Starting point for house %d is x=%d y=%d\n"); /*0x5eeac2 G57w11: IDA push seq @ 0x5eeac2 +1 reg-vararg(s) omitted*/
       }
     }
     nextArrayIndex = (unsigned int)((char *)&stru_A80220); /*0x5eeadb*/
@@ -3110,12 +3110,12 @@ AbstractClass * * HouseClass::FindStartPositions(void *a1)
       v12 = (HouseClass *)*((unsigned int *)((char *)&stru_A80220) + v11); /*0x5eeafb*/
       if ( !*(unsigned char *)(v12->relatedTagsCapacity + 422) && !v12->currentPlayer ) /*0x5eeb0b*/
       {
-        Debug::Log(); /*0x5eeb1f*/
+        Debug::Log("Assigning Starting Points for house %d (%s)\n"); /*0x5eeb1f G57w11: IDA push seq @ 0x5eeb1f +2 reg-vararg(s) omitted*/
         v13 = AssignRandomMapStartPositions(&v16, v11, (int)v18, (int)v17, 0); /*0x5eeb39*/
         ((HouseClass *)(v12))->SetMapSeed(*v13); /*0x5eeb43*/
         ((HouseClass *)v12)->GetCurrentOption( &v15); /*0x5eeb4f*/
         ((HouseClass *)v12)->GetCurrentOption( &v14); /*0x5eeb60*/
-        Debug::Log(); /*0x5eeb6e*/
+        Debug::Log("Starting point for house %d is x=%d y=%d\n"); /*0x5eeb6e G57w11: IDA push seq @ 0x5eeb6e +1 reg-vararg(s) omitted*/
       }
       ++v11; /*0x5eeb7b*/
     }

@@ -19,7 +19,7 @@
 namespace gamemd {
 void PowerClass_Stub()
 {
-  RadarClass::Destru_vt05(); /*0x63f7b0*/
+  RadarClass::Destru_vt05(); /*0x63f7b0 G57w11: 留证——e4 桩函数无 receiver，raw 有 (RadarClass *)this*/
 }
 }
 // 0x63F7E0

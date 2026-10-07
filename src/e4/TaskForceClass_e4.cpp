@@ -229,7 +229,7 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   int v6; // eax
   TaskForceClass v8; // [esp+8h] [ebp-A8h] BYREF
 
-  ((INIClass*)((INIClass *)aP1))->ResetSection(); /*0x6e8433*/
+  INIClass::ResetSection(((INIClass*)((INIClass *)aP1))); /*0x6e8433*/
   if ( !(uint8_t)((AbstractTypeClass*)((AbstractTypeClass *)this))->LoadFromINI( (unsigned __int8 ***)(aP1)) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
   v3 = 0; /*0x6e844a*/
@@ -251,11 +251,8 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     ++v3; /*0x6e84c7*/
   }
   while ( v3 < 6 ); /*0x6e84cb*/
-  this->TaskForceClass_field_0x98 =(unsigned int)(AbstractClass *)INIClass::ReadInt_Overwrite( /*0x6e84e2*/
-                                                       (bool *)aP1,
-                                                       (uint8_t *)&this->TaskForceClass_field_0x24,
-                                                       (uint8_t *)g_INI_Key_Group,
-                                                       (int)this->TaskForceClass_field_0x98);
+  this->TaskForceClass_field_0x98 =(unsigned int)(AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)(/*0x6e84e2*/
+                                                       (bool *)aP1), (uint8_t *)&this->TaskForceClass_field_0x24, (uint8_t *)g_INI_Key_Group, (int)this->TaskForceClass_field_0x98);
   return 1; /*0x6e84e9*/
 
 }
@@ -280,7 +277,7 @@ char TaskForceClass::GetUnitType(char * a2)
     sprintf(Buffer, "%d", v3); /*0x6e853a*/
     if ( v3 >= this->TaskForceClass_field_0x9C[0] ) /*0x6e854a*/
     {
-      INIClass::ClearSection((int *)a2, (int)&this->TaskForceClass_field_0x24, (uint8_t *)Buffer); /*0x6e8571*/
+      INIClass::ClearSection((INIClass *)((int *)a2), (int)&this->TaskForceClass_field_0x24, (uint8_t *)Buffer); /*0x6e8571*/
     }
     else
     {
@@ -291,12 +288,8 @@ char TaskForceClass::GetUnitType(char * a2)
     p_TaskForceClass_field_0xA4 += 2; /*0x6e8577*/
   }
   while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt( /*0x6e8593*/
-    a2,
-    (uint8_t *)&this->TaskForceClass_field_0x24,
-    g_INI_Key_Group,
-    (int)this->TaskForceClass_field_0x98,
-    0);
+  INIClass::SetInt((INIClass *)(/*0x6e8593*/
+    a2), (uint8_t *)&this->TaskForceClass_field_0x24, (char *)(g_INI_Key_Group), (int)this->TaskForceClass_field_0x98, 0);
   return 1; /*0x6e859a*/
 
 }

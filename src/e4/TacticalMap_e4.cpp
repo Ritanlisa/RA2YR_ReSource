@@ -66,20 +66,20 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   int16_t v15; // ax
   int16_t v16; // ax
 
-  v2 = *((unsigned short *)this + 132) + (int16_t)(1000 * LOWORD((&dword_A8B230)[378].vtable1)) / 100; /*0x4846ab*/
+  v2 = *((unsigned short *)this + 132) + (int16_t)(1000 * LOWORD(((AbstractClass *)dword_A8B230)[378].vtable1)) / 100; /*0x4846ab*/
   *((unsigned short *)this + 133) = v2; /*0x4846b2*/
   *((unsigned short *)this + 135) = v2; /*0x4846b9*/
   if ( (uint8_t)((LightningStorm *)this)->IsActive() ) /*0x4846c0*/
   {
     v3 = *((char *)this + 283); /*0x4846cf*/
-    *((unsigned short *)this + 133) += v3 * LOWORD((&dword_A8B230)[379].uniqueId) - LOWORD((&dword_A8B230)[379].vtable3); /*0x4846ec*/
-    v4 = (v3 + 4) * LOWORD((&dword_A8B230)[379].uniqueId) - LOWORD((&dword_A8B230)[379].vtable3); /*0x484703*/
+    *((unsigned short *)this + 133) += v3 * LOWORD(((AbstractClass *)dword_A8B230)[379].uniqueId) - LOWORD(((AbstractClass *)dword_A8B230)[379].vtable3); /*0x4846ec*/
+    v4 = (v3 + 4) * LOWORD(((AbstractClass *)dword_A8B230)[379].uniqueId) - LOWORD(((AbstractClass *)dword_A8B230)[379].vtable3); /*0x484703*/
   }
   else if ( (uint8_t)((PsyDom *)this)->IsActive() ) /*0x48470f*/
   {
     v5 = *((char *)this + 283); /*0x48471e*/
-    *((unsigned short *)this + 133) += v5 * LOWORD((&dword_A8B230)[380].NeedsSaveOrLink) - LOWORD((&dword_A8B230)[380].referenceCount); /*0x48473b*/
-    v4 = (v5 + 4) * LOWORD((&dword_A8B230)[380].NeedsSaveOrLink) - LOWORD((&dword_A8B230)[380].referenceCount); /*0x484752*/
+    *((unsigned short *)this + 133) += v5 * LOWORD(((AbstractClass *)dword_A8B230)[380].NeedsSaveOrLink) - LOWORD(((AbstractClass *)dword_A8B230)[380].referenceCount); /*0x48473b*/
+    v4 = (v5 + 4) * LOWORD(((AbstractClass *)dword_A8B230)[380].NeedsSaveOrLink) - LOWORD(((AbstractClass *)dword_A8B230)[380].referenceCount); /*0x484752*/
   }
   else
   {
@@ -87,13 +87,13 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
     v7 = *((char *)this + 283); /*0x484768*/
     if ( v6 ) /*0x484770*/
     {
-      *((unsigned short *)this + 133) += v7 * LOWORD((&dword_A8B230)[378].referenceCount) - LOWORD((&dword_A8B230)[378].nextArrayIndex); /*0x4847bc*/
-      v4 = (v7 + 4) * LOWORD((&dword_A8B230)[378].referenceCount) - LOWORD((&dword_A8B230)[378].nextArrayIndex); /*0x4847d3*/
+      *((unsigned short *)this + 133) += v7 * LOWORD(((AbstractClass *)dword_A8B230)[378].referenceCount) - LOWORD(((AbstractClass *)dword_A8B230)[378].nextArrayIndex); /*0x4847bc*/
+      v4 = (v7 + 4) * LOWORD(((AbstractClass *)dword_A8B230)[378].referenceCount) - LOWORD(((AbstractClass *)dword_A8B230)[378].nextArrayIndex); /*0x4847d3*/
     }
     else
     {
-      *((unsigned short *)this + 133) += v7 * LOWORD((&dword_A8B230)[380].vtable1) - LOWORD((&dword_A8B230)[380].vtable0); /*0x484787*/
-      v4 = (v7 + 4) * LOWORD((&dword_A8B230)[380].vtable1) - LOWORD((&dword_A8B230)[380].vtable0); /*0x48479e*/
+      *((unsigned short *)this + 133) += v7 * LOWORD(((AbstractClass *)dword_A8B230)[380].vtable1) - LOWORD(((AbstractClass *)dword_A8B230)[380].vtable0); /*0x484787*/
+      v4 = (v7 + 4) * LOWORD(((AbstractClass *)dword_A8B230)[380].vtable1) - LOWORD(((AbstractClass *)dword_A8B230)[380].vtable0); /*0x48479e*/
     }
   }
   v8 = *((int16_t *)this + 133); /*0x4847da*/
@@ -187,7 +187,7 @@ int TacticalMap::Redraw()
 
 
 
-  result = (*(int (**)(GScreenClass *))(((unsigned int *)&this->vfptr)[0] + 68))(this); /*0x4f459a*/
+  result = (*(int (**)(GScreenClass *))(((unsigned int *)&this->vfptr)[0] + 68))((GScreenClass *)(this)); /*0x4f459a*/
   g_DSurface_Hidden_2 = (int)(v1); /*0x4f459d*/
   return result; /*0x4f45a3*/
 
@@ -451,7 +451,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
     v18 = (CellClass **)((char *)this + 228); /*0x6d2d27*/
     do /*0x6d2dc2*/
     {
-      Coords = ((CellClass *)*v18)->GetCoords( &v30); /*0x6d2d34*/
+      Coords = CellClass::GetCoords(((CellClass *)*v18), &v30); /*0x6d2d34*/
       v25 = *Coords; /*0x6d2d3b*/
       v26 = (void *)Coords[1]; /*0x6d2d47*/
       v27 = 0; /*0x6d2d59*/

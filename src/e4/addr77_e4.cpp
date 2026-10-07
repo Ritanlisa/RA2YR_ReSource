@@ -1167,7 +1167,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       Int = ((INIClass*)((bool *)(char *)&v17))->ReadInt((char **)(char *)&v17, (char **)&v17, 0); /*0x778c03*/
       j_DeleteAndZero( (void *)(&v17)); /*0x778c05*/
       v7 = (uint8_t *)((String *)((String *)(char *)&v17))->GetOrEmpty(); /*0x778c14*/
-      Bool_Overwrite = INIClass::ReadBool_Overwrite((char *)&v17, v7, (uint8_t *)aLocaleverified, 0); /*0x778c23*/
+      Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((char *)&v17), v7, (uint8_t *)aLocaleverified, 0); /*0x778c23*/
       IDA_LOBYTE(v17.customSound_controller[4]) = Bool_Overwrite; /*0x778c2e*/
       ((String *)((String *)&v17))->Assign( (const char *)(g_INI_Key_Country)); /*0x778c32*/
       v9 = ((INIClass*)((bool *)(char *)&v17))->ReadInt((char **)(char *)&v17, (char **)&v17, -2); /*0x778c50*/
@@ -1191,7 +1191,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       v17.customSound_controller[2] = ((INIClass*)((bool *)(char *)&v17))->ReadInt((char **)(char *)&v17, (char **)&v17, -1); /*0x778d6f*/
       j_DeleteAndZero( (void *)(&v17)); /*0x778d73*/
       v11 = (uint8_t *)((String *)((String *)(char *)&v17))->GetOrEmpty(); /*0x778d83*/
-      IDA_LOBYTE(v17.estimatedHealth) = INIClass::ReadBool_Overwrite((char *)&v17, v11, (uint8_t *)aMatchbyres, 1); /*0x778d96*/
+      IDA_LOBYTE(v17.estimatedHealth) = INIClass::ReadBool_Overwrite((INIClass *)((char *)&v17), v11, (uint8_t *)aMatchbyres, 1); /*0x778d96*/
       unknown_libname_73( (void *)((char *)&v17)); /*0x778d9d*/
       unknown_libname_74((char *)&v17); /*0x778da6*/
       ((String *)((String *)&v17))->Assign( (const char *)(g_INI_Key_UpdateTime)); /*0x778db4*/
@@ -2776,7 +2776,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
   int v13; // [esp+Ch] [ebp-8h]
 
   v3 = a2; /*0x77ef99*/
-  Debug::Log(); /*0x77efaa*/
+  Debug::Log("Requesting channel list type = %d, ping = %d\n"); /*0x77efaa G57w11: IDA push seq @ 0x77efaa +2 reg-vararg(s) omitted*/
   if ( (*(int (**)(LPVOID, int, int))(*(unsigned int *)ppv + 24))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), a1, v3) ) /*0x77efbc*/
     return 0; /*0x77efc4*/
   v5 = dword_B76520; /*0x77efcb*/
@@ -2965,7 +2965,7 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
     do /*0x77f364*/
       ResetEvent(*v6++); /*0x77f359*/
     while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x77f364*/
-    Debug::Log(); /*0x77f375*/
+    Debug::Log("Requesting channel list type = %d, ping = %d\n"); /*0x77f375 G57w11: IDA push seq @ 0x77f375 +2 reg-vararg(s) omitted*/
     if ( (*(int (**)(LPVOID, int, unsigned int))(*(unsigned int *)ppv + 24))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), v3, a2) ) /*0x77f387*/
     {
       SetEvent( (void *)((void *)(Handles))); /*0x77f4fd*/
@@ -3061,7 +3061,7 @@ char sub_77F520(char a1)
     do /*0x77f55a*/
       ResetEvent(*v2++); /*0x77f54f*/
     while ( (int)v2 < (int)g_WOL_RequestObject ); /*0x77f55a*/
-    Debug::Log(); /*0x77f565*/
+    Debug::Log("Requesting channel list type = %d, ping = %d\n", 0x0, 0x0); /*0x77f565 G57w11: IDA push seq @ 0x77f565*/
     if ( (*(int (**)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), 0, 0) ) /*0x77f579*/
     {
       SetEvent( (void *)((void *)(Handles))); /*0x77f6eb*/
@@ -3155,7 +3155,7 @@ char sub_77F710(unsigned char a1, char a2)
     do /*0x77f74e*/
       ResetEvent(*v4++); /*0x77f743*/
     while ( (int)v4 < (int)g_WOL_RequestObject ); /*0x77f74e*/
-    Debug::Log(); /*0x77f760*/
+    Debug::Log("Requesting channel list type = %d, ping = %d\n", 0x29); /*0x77f760 G57w11: IDA push seq @ 0x77f760 +1 reg-vararg(s) omitted*/
     if ( (*(int (**)(LPVOID, int, unsigned int))(*(unsigned int *)ppv + 24))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), 41, a1) ) /*0x77f773*/
     {
       SetEvent( (void *)((void *)(Handles))); /*0x77f8e4*/
@@ -4136,12 +4136,12 @@ unsigned int * sub_773450(int a1, int a2)
     *((unsigned char *)v4 + 1036) = 0; /*0x773482*/
     v4[260] = 0; /*0x773488*/
     *v4 = (unsigned int)(void*)&WebBrowser_vftable; /*0x77348e*/
-    Debug::Log(); /*0x773494*/
+    Debug::Log("Instantiating embedded WebBrowser\n"); /*0x773494 G57w11: IDA push seq @ 0x773494*/
     v4[260] = a1; /*0x77349c*/
-    Debug::Log(); /*0x7734a7*/
+    Debug::Log("Creating WOLBrowser component.\n"); /*0x7734a7 G57w11: IDA push seq @ 0x7734a7*/
     if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)v4 + 2) >= 0 ) /*0x7734c6*/
     {
-      Debug::Log(); /*0x7734cd*/
+      Debug::Log("Starting up WOLBrowser\n"); /*0x7734cd G57w11: IDA push seq @ 0x7734cd*/
       (*(void (**)(unsigned int, unsigned int *))(*(unsigned int *)*v6 + 20))( *v6, (unsigned int *)(v4)); /*0x7734db*/
       (*(void (**)(unsigned int, int, int))(*(unsigned int *)*v6 + 12))(*v6, a1, a2); /*0x7734e5*/
       (*(void (**)(unsigned int, int))(*(unsigned int *)*v6 + 60))(*v6, 1); /*0x7734ef*/
@@ -4160,11 +4160,11 @@ char AnimClass::sub_773590(int a2, int a3)
   unsigned int *v4; // esi
 
   *((unsigned int *)this + 260) = a2; /*0x77359e*/
-  Debug::Log(); /*0x7735a4*/
+  Debug::Log("Creating WOLBrowser component.\n"); /*0x7735a4 G57w11: IDA push seq @ 0x7735a4 +3 reg-vararg(s) omitted*/
   v4 = (unsigned int *)this + 2; /*0x7735ac*/
   if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)this + 2) >= 0 ) /*0x7735c6*/
   {
-    Debug::Log(); /*0x7735cd*/
+    Debug::Log("Starting up WOLBrowser\n"); /*0x7735cd G57w11: IDA push seq @ 0x7735cd*/
     (*(void (**)(unsigned int, unsigned int *))(*(unsigned int *)*v4 + 20))(*v4, this); /*0x7735db*/
     (*(void (**)(unsigned int, int, int))(*(unsigned int *)*v4 + 12))(*v4, a2, a3); /*0x7735e9*/
     (*(void (**)(unsigned int, int))(*(unsigned int *)*v4 + 60))(*v4, 1); /*0x7735f3*/

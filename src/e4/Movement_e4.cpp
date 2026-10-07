@@ -270,7 +270,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   *(unsigned int *)v87 = v43; /*0x5b23e9*/
   *(unsigned int *)&v87[4] = Vector3_field_0x04; /*0x5b23f5*/
   v45 = ((Coord2D *)((Coord2D *)v87))->Sub( (int *)&v90, (unsigned int *)(&v88.field_4)); /*0x5b23ff*/
-  v46 = Vector::TwoDMagnitudeMath(v45); /*0x5b2406*/
+  v46 = Vector::TwoDMagnitudeMath((Vector *)(v45)); /*0x5b2406*/
   v47 = (unsigned int)a4[2]; /*0x5b240b*/
   Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/
   v49 = (unsigned int)a4[1]; /*0x5b2411*/
@@ -396,7 +396,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
                     ((Coord*)((Coord *)v87))->Subtract(/*0x5b26b9*/ *(unsigned int *)a2->__pad_0 + *v61, a2->Vector3_field_0x04 + v61[1], a2->Vector3_field_0x08 + v61[2]);
   v90 = *v62; /*0x5b26c0*/
   LODWORD(v91) = *((unsigned int *)v62 + 2); /*0x5b26d8*/
-  GroundHeight = Cell::GetGroundHeight( &v90); /*0x5b26eb*/
+  GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v90)); /*0x5b26eb*/
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v90)->flags[0] & 0x100) != 0 ) /*0x5b26fb*/
     GroundHeight += g_MissionQueueFrame.localVariables[304]; /*0x5b26fd*/
   v64 = SLODWORD(v89) / 256; /*0x5b2713*/

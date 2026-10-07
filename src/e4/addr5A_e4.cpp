@@ -971,7 +971,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
       v26 = &v7[2 * v24]; /*0x5a4d1c*/
       do /*0x5a4f42*/
       {
-        v39 = (int)(*((CellStruct *)(v40))->Add((unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
+        v39 = (int)(*CellStruct::Add(((CellStruct *)(v40)), (unsigned int *)(&v48), (unsigned short *)(4 * (v25 & 7) + 9041544))); /*0x5a4d44*/
         v43 = IDA_SHIWORD(v39) + (int16_t)v39; /*0x5a4d55*/
         if ( v43 > dword_ABED04 /*0x5a4d81*/
           && (int16_t)v39 - IDA_SHIWORD(v39) < dword_ABED04
@@ -2439,7 +2439,7 @@ int MapSeed_ScheduleBuildings(int * a1)
       v13 = v39[0] - dword_ABC1D4; /*0x5a8b77*/
     }
     v14 = 3 * v13; /*0x5a8b97*/
-    v15 = dword_ABE370[3 * v13]; /*0x5a8b9a*/
+    v15 = (&dword_ABE370)[3 * v13]; /*0x5a8b9a*/
     v16 = (unsigned int *)(4 * v14 + 11264880); /*0x5a8ba4*/
     v47 = v16; /*0x5a8bab*/
     if ( v15 > 1 ) /*0x5a8baf*/
@@ -2481,8 +2481,8 @@ int MapSeed_ScheduleBuildings(int * a1)
               v26 = v16[1]; /*0x5a8c4e*/
               v49 = *(unsigned int *)(v26 + 8 * v23); /*0x5a8c62*/
               v50 = *(unsigned int *)(v26 + 8 * v23 + 4); /*0x5a8c6b*/
-              v27 = IDA_HIWORD(dword_89F688[v50 & 7]); /*0x5a8c90*/
-              IDA_LOWORD(v45) = IDA_LOWORD(v39[1]) + v49 + IDA_LOWORD(dword_89F688[v50 & 7]); /*0x5a8c94*/
+              v27 = IDA_HIWORD((&dword_89F688)[v50 & 7]); /*0x5a8c90*/
+              IDA_LOWORD(v45) = IDA_LOWORD(v39[1]) + v49 + IDA_LOWORD((&dword_89F688)[v50 & 7]); /*0x5a8c94*/
               IDA_HIWORD(v45) = IDA_HIWORD(v39[1]) + IDA_HIWORD(v49) + v27; /*0x5a8ca0*/
               v46 = v45; /*0x5a8cae*/
               v43 = 0; /*0x5a8cbb*/
@@ -2667,7 +2667,7 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
   LABEL_8:
     v8 = v6 + 4 * a1; /*0x5a8fc5*/
     v9 = (int)(&off_82B5B0)[v8]; /*0x5a8fd1*/
-    v26 = dword_82B530[v8]; /*0x5a8fd7*/
+    v26 = (&dword_82B530)[v8]; /*0x5a8fd7*/
     if ( v6 == 2 ) /*0x5a8fdb*/
     {
       v10 = 0; /*0x5a8fe7*/
@@ -2717,10 +2717,10 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
     v12 = 0; /*0x5a90a0*/
     v13 = *(unsigned int *)(v26 + 4 * ((int)(v10 + v20) % v9)); /*0x5a90ac*/
     v14 = 12 * v13 + 11264880; /*0x5a90b2*/
-    v15 = dword_ABE370[3 * v13]; /*0x5a90b9*/
+    v15 = (&dword_ABE370)[3 * v13]; /*0x5a90b9*/
     if ( v15 > 0 ) /*0x5a90c2*/
     {
-      v16 = (unsigned int *)(dword_ABE374[3 * v13] + 4); /*0x5a90c7*/
+      v16 = (unsigned int *)((&dword_ABE374)[3 * v13] + 4); /*0x5a90c7*/
       do /*0x5a90d8*/
       {
         if ( *v16 == a1 ) /*0x5a90d0*/
@@ -2876,12 +2876,12 @@ unsigned int * InitializePathData()
   int v125; // [esp+30h] [ebp-4h]
   v118 = (rc_ptr_base *)2;
   dword_ABE378 = 0;
-  dword_ABE370[0] = 2;
+  (&dword_ABE370)[0] = 2;
   int v0 = operator new(0x10u);
   int v1 = v0;
   if ( v0 )
   {
-    ((Array *)v0)->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)v0), 8, 2, (int (*)(int))Cell::Clear);
     v2 = v1;
   }
   else
@@ -2900,7 +2900,7 @@ unsigned int * InitializePathData()
   v4 = v3;
   if ( v3 )
   {
-    ((Array *)v3)->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)v3), 8, 2, (int (*)(int))Cell::Clear);
     v5 = (rc_ptr_base *)(v4);
   }
   else
@@ -2920,7 +2920,7 @@ unsigned int * InitializePathData()
   v118 = v6;
   if ( v6 )
   {
-    ((Array *)((int)v6))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v6)), 8, 2, (int (*)(int))Cell::Clear);
     v7 = v118;
   }
   else
@@ -2939,7 +2939,7 @@ unsigned int * InitializePathData()
   v120 = v8;
   if ( v8 )
   {
-    ((Array *)((int)v8))->ForEach( 8, 2, (int (*)(int))Cell::Clear);
+    Array::ForEach(((Array *)((int)v8)), 8, 2, (int (*)(int))Cell::Clear);
     v9 = v120;
   }
   else

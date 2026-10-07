@@ -276,9 +276,9 @@ AbstractClass * * CampaignClass::SaveProgress()
   CCFileClass::Construct3((int)&v30); /*0x49c7ef*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v30.CDFileClass + 8))( (CCFileClass *)(&v30), (char *)g_Str_File_coopsave_ini); /*0x49c807*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v30.CDFileClass + 28))( (CCFileClass *)(&v30), 2); /*0x49c81a*/
-  INIClass::ClearSection((int *)v28.INIClass, (int)Block, 0); /*0x49c828*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, g_INI_Key_CurrentMap, (&this->scenario)[4], 0); /*0x49c841*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aCampaigntype, (&this->scenario)[7], 0); /*0x49c85a*/
+  INIClass::ClearSection((INIClass *)((int *)v28.INIClass), (int)Block, 0); /*0x49c828*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(g_INI_Key_CurrentMap), (&this->scenario)[4], 0); /*0x49c841*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aCampaigntype), (&this->scenario)[7], 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < *(char *)(v27 + 8);
         ((INIClass *)v28.INIClass)->SetString( (unsigned __int8 *)((uint8_t *)Block), (char *)(Buffer), *(char **)((&this->scenario)[5] + 4 * j++)) )
@@ -291,13 +291,13 @@ AbstractClass * * CampaignClass::SaveProgress()
     PlayerSide = (void *)((SessionClass *)((int *)*dword_A8DA78))->GetPlayerSide(); /*0x49c8be*/
     INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse1, PlayerSide); /*0x49c8d2*/
     PlayerColor = ((SessionClass *)((SessionClass *)*dword_A8DA78))->GetPlayerColor(); /*0x49c8e1*/
-    ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block,(char *)(aColor1), PlayerColor, 0); /*0x49c8f5*/
+    INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aColor1), PlayerColor, 0); /*0x49c8f5*/
     v20 = dword_A8DA84; /*0x49c8fa*/
   }
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &stru_A8B250[80]; /*0x49c909*/
+    v24 = (unsigned char *)&stru_A8B250 + 80; /*0x49c909*/
     while ( *(unsigned int *)v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/
@@ -305,21 +305,21 @@ AbstractClass * * CampaignClass::SaveProgress()
       if ( v23 >= v20 ) /*0x49c919*/
         goto LABEL_47; /*0x49c919*/
     }
-    v25 = (void *)((SessionClass *)((int *)(&dword_A8DA78)[v23]))->GetPlayerSide(); /*0x49c925*/
+    v25 = (void *)((SessionClass *)((int *)((unsigned int *)dword_A8DA78)[v23]))->GetPlayerSide(); /*0x49c925*/
     INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse2, v25); /*0x49c939*/
-    v26 = ((SessionClass *)((SessionClass *)(&dword_A8DA78)[v23]))->GetPlayerColor(); /*0x49c949*/
-    ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block,(char *)(aColor2), v26, 0); /*0x49c95d*/
+    v26 = ((SessionClass *)((SessionClass *)((unsigned int *)dword_A8DA78)[v23]))->GetPlayerColor(); /*0x49c949*/
+    INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aColor2), v26, 0); /*0x49c95d*/
   }
 LABEL_47:
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, g_INI_Key_Time, (&this->scenario)[16], 0); /*0x49c962*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aKills1, (&this->scenario)[8], 0); /*0x49c98f*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aKills2, (&this->scenario)[9], 0); /*0x49c9a8*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aBuilt1, (&this->scenario)[10], 0); /*0x49c9c1*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aBuilt2, (&this->scenario)[11], 0); /*0x49c9da*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aLost1, (&this->scenario)[12], 0); /*0x49c9f3*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aLost2, (&this->scenario)[13], 0); /*0x49ca0c*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aScore1, (&this->scenario)[14], 0); /*0x49ca25*/
-  ((INIClass *)(v28.INIClass))->SetInt((uint8_t *)Block, aScore2, (&this->scenario)[15], 0); /*0x49ca3e*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(g_INI_Key_Time), (&this->scenario)[16], 0); /*0x49c962*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aKills1), (&this->scenario)[8], 0); /*0x49c98f*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aKills2), (&this->scenario)[9], 0); /*0x49c9a8*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aBuilt1), (&this->scenario)[10], 0); /*0x49c9c1*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aBuilt2), (&this->scenario)[11], 0); /*0x49c9da*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aLost1), (&this->scenario)[12], 0); /*0x49c9f3*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aLost2), (&this->scenario)[13], 0); /*0x49ca0c*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aScore1), (&this->scenario)[14], 0); /*0x49ca25*/
+  INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aScore2), (&this->scenario)[15], 0); /*0x49ca3e*/
   INIClass::WriteDigest((INIClass *)&v28, (int)&v30, 0); /*0x49ca51*/
   CCFileClass::Reset( &v30); /*0x49ca5d*/
   *(unsigned int *)v30.CDFileClass = (unsigned int)(&vt_CCFileClass); /*0x49ca67*/

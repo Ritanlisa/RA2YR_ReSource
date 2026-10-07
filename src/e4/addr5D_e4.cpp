@@ -851,7 +851,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
           && ((String *)(char *)&v19)->Length() )
         {
           v15 = 0; /*0x5d79d3*/
-v19.occupant = (*(int (**)(int, int *, void **, void **, int *, int, int))(*(unsigned int *)v19.customSound /*0x5d79d5*/ + 4))( v19.customSound, (int *)((char *)&v19), (char *)&v19, (char *)&v19, (int *)((char *)&v19), v19.ambientSoundController[2], v4);
+v19.occupant = (*(int (**)(int, int *, void **, void **, int *, int, int))(*(unsigned int *)v19.customSound /*0x5d79d5*/ + 4))(v19.customSound, (int *)((char *)&v19), (void **)((char *)&v19), (void **)((char *)&v19), (int *)((char *)&v19), v19.ambientSoundController[2], v4);
 
 
 
@@ -1002,7 +1002,7 @@ int GameInit_Complete()
       break; /*0x5d7d20*/
     v2 = *(void (****)(unsigned int, int))(System_Init()[1] + 4 * i); /*0x5d7d2a*/
     if ( v2 ) /*0x5d7d32*/
-      (**v2)(v2, 1); /*0x5d7d37*/
+      (**v2)((unsigned int)(v2), 1); /*0x5d7d37*/
   }
   *(void **)&v4.q4 = (void *)((unsigned int)(void*)&MultiplayerGameMode_Initializer_MultiplayerBattle_vftable); /*0x5d7d45*/
   ((String *)(&v4))->Assign(aBattle); /*0x5d7d4d*/
@@ -1254,7 +1254,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   char v25[112]; // [esp+BCh] [ebp-70h] BYREF
 
   v2 = (unsigned int)a1; /*0x5da75d*/
-  v4 = *(unsigned int *)(&dword_A8022C)[4 * a1; /*0x5da762*/
+  v4 = *(unsigned int *)((unsigned int *)dword_A8022C)[4 * a1]; /*0x5da762*/
   a1 = a1; /*0x5da76c*/
   if ( byte_A8ED74 ) /*0x5da770*/
     Debug::Log("Destroying connection for house %d (%ls)\n"); /*0x5da77f G57c1: IDA 0x5da77f push offset aDestroyingConn*/
@@ -1285,8 +1285,8 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
       v6 = (char *)((EventClass*)v25)->Add2(*((unsigned int *)dword_A83D4C + 12), 0x23u, v2); /*0x5da893*/
       if ( dword_A802C8 < 128 ) /*0x5da8a2*/
       {
-        qmemcpy(&(&byte_A802D4)[111 * dword_A802D0, v6, 0x6Fu); /*0x5da8c2*/
-        (&dword_A83A54)[dword_A802D0 = timeGetTime(); /*0x5da8d3*/
+        qmemcpy(&(&byte_A802D4)[111 * dword_A802D0], v6, 0x6Fu); /*0x5da8c2*/
+        (&dword_A83A54)[dword_A802D0 ]= timeGetTime(); /*0x5da8d3*/
         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x5da8ea*/
         ++dword_A802C8; /*0x5da8f0*/
       }
@@ -1296,7 +1296,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
       ((Network *)v4)->SendOffer(); /*0x5da875*/
     }
   LABEL_21:
-    if ( (&dword_A8B238)[0 == 4 ) /*0x5da940*/
+    if ( (&dword_A8B238)[0 ]== 4 ) /*0x5da940*/
     {
       if ( byte_A8DBA0 ) /*0x5da94d*/
       {
@@ -1307,8 +1307,8 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
           v7 = v7; /*0x5da977*/
           if ( v7 != -1 ) /*0x5da97c*/
           {
-            v9 = *(unsigned int *)(&dword_A8022C)[4 * v7; /*0x5da987*/
-            v22 = *(unsigned int *)(&dword_A8022C)[4 * v7; /*0x5da98c*/
+            v9 = *(unsigned int *)((unsigned int *)dword_A8022C)[4 * v7]; /*0x5da987*/
+            v22 = *(unsigned int *)((unsigned int *)dword_A8022C)[4 * v7]; /*0x5da98c*/
             if ( v9 ) /*0x5da990*/
             {
               if ( dword_A8DA84 > 2 ) /*0x5da99f*/
@@ -1333,13 +1333,13 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
                 ((Network *)(v10))->CopyAddress( (unsigned int *)(&a1), (int)v23); /*0x5da9e9*/
                 ((NetworkID *)(&qword_A8DBA4))->Assign( (unsigned int *)(&a1), (int)v23, 0); /*0x5da9ff*/
                 ((Network *)((uint16_t *)&qword_A8DBA4))->FormatAddress(0); /*0x5daa0b*/
-                Debug::Log(); /*0x5daa16*/
-                Debug::Log(); /*0x5daa2d*/
+                Debug::Log("Session.PacketRouterAddress = %s\n"); /*0x5daa16 G57w11: IDA push seq @ 0x5daa16 +1 reg-vararg(s) omitted*/
+                Debug::Log("Session.PacketRouterPort = %d\n"); /*0x5daa2d G57w11: IDA push seq @ 0x5daa2d +1 reg-vararg(s) omitted*/
                 ((void (*)(int *))Network::SetPlayerCoords)(&qword_A8DBA4); /*0x5daa3f*/
                 v9 = v22; /*0x5daa44*/
               }
               wcscpy( (wchar_t *)(word_A8E258), (const wchar_t *)(v9 + 90154)); /*0x5daa53*/
-              Debug::Log(); /*0x5daa62*/
+              Debug::Log("New game host is %ls\n", 0xa8e258); /*0x5daa62 G57w11: IDA push seq @ 0x5daa62*/
               dword_A8E2AC = v7; /*0x5daa6f*/
               if ( ((SessionClass *)(int)dword_A8B238)->IsValidHouse( 0) ) /*0x5daa77*/
                 ((Network *)(int)&unk_B052D0)->SendMasterPlayerList(); /*0x5daa85*/
@@ -1350,9 +1350,9 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
     }
     goto LABEL_37; /*0x5daa85*/
   }
-  if ( dword_A8B238[0] == 4 ) /*0x5da8fe*/
+  if ( (&dword_A8B238)[0] == 4 ) /*0x5da8fe*/
   {
-    if ( !*(unsigned int *)dword_B779C4 || (((Network *)v4)->SendOffer(), dword_A8B238[0] == 4) ) /*0x5da91b*/
+    if ( !*(unsigned int *)dword_B779C4 || (((Network *)v4)->SendOffer(), (&dword_A8B238)[0] == 4) ) /*0x5da91b*/
     {
       if ( byte_A8DBA0 ) /*0x5da928*/
       {
@@ -1398,7 +1398,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
       while ( v18 < dword_A8DA84 ); /*0x5dab36*/
     }
     Network_Disconnect_69BBF0(v13); /*0x5dab3e*/
-    if ( dword_A8B238[0] == 4 ) /*0x5dab4a*/
+    if ( (&dword_A8B238)[0] == 4 ) /*0x5dab4a*/
     {
       if ( byte_A8DBA0 ) /*0x5dab53*/
         ((void (*)(int))NetworkManager::RemovePlayer)(v2); /*0x5dab5b*/
@@ -1441,7 +1441,7 @@ void CheckNetworkGameTimeout()
         v4 += TimerGetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5db77b*/
       if ( (unsigned int)(v4 - *(unsigned int *)(*(unsigned int *)(dword_A8DA60 + 4 * i) + 53)) > 0x12C ) /*0x5db78f*/
       {
-        Debug::Log(); /*0x5db797*/
+        Debug::Log("Game '%ls' has timed out\n"); /*0x5db797 G57w11: IDA push seq @ 0x5db797 +1 reg-vararg(s) omitted*/
         RA2_OPDEL(*(void **)(dword_A8DA60 + 4 * i)); /*0x5db7a5*/
         v5 = (*(int (**)(void *, int))(stru_A8DA5C + 16))( (void *)(&stru_A8DA5C), dword_A8DA60 + 4 * i); /*0x5db7c1*/
         if ( v5 != -1 ) /*0x5db7c7*/
@@ -1548,7 +1548,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
   {
     while ( 1 ) /*0x5dbe79*/
     {
-      v8 = ToWideStringChar( (IUnknown *)((char *)dword_A8DA78[v7])); /*0x5dbe79*/
+      v8 = ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v7])); /*0x5dbe79*/
       if ( !_strcmpi(v8, v3) ) /*0x5dbe7f*/
         break; /*0x5dbe7f*/
       if ( ++v7 >= dword_A8DA84 ) /*0x5dbe93*/
@@ -1558,7 +1558,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
       }
     }
     if ( v7 != -1 ) /*0x5dbea3*/
-      *(unsigned int *)(dword_A8DA78[v7] + 119) = v4; /*0x5dbeae*/
+      *(unsigned int *)(((unsigned int *)dword_A8DA78)[v7] + 119) = v4; /*0x5dbeae*/
   }
   GameSetup::DisplayPlayers(); /*0x5dbeb6*/
 }
@@ -1610,19 +1610,19 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
   v11 = (HWND)((Dialog*)((Dialog *)0xBC))->FindByHandle(); /*0x5dbfaf*/
   if ( !v11 ) /*0x5dbfb3*/
     v11 = (HWND)((Dialog*)((Dialog *)0xBD))->FindByHandle(); /*0x5dbfbf*/
-  v12 = (int *)dword_A8DA90[v5]; /*0x5dbfc1*/
+  v12 = (int *)(&dword_A8DA90)[v5]; /*0x5dbfc1*/
   v28 = v12; /*0x5dbfca*/
   if ( ((SessionClass *)(v12))->GetPlayerSide()  !=  (int)(aP1 )) /*0x5dbfd9*/
   {
     v26 = 1; /*0x5dbfde*/
     ((SessionClass *)(v12))->SetPlayerOption( (int)(aP1)); /*0x5dbfe6*/
   }
-  if ( ((SessionClass *)((int *)dword_A8DA90[v5]))->GetOption() != a4 ) /*0x5dbffd*/
+  if ( ((SessionClass *)((int *)(&dword_A8DA90)[v5]))->GetOption() != a4 ) /*0x5dbffd*/
   {
     v26 = 1; /*0x5dc002*/
     ((SessionClass *)(v12))->SetOption(a4); /*0x5dc00a*/
   }
-  if ( ((SessionClass *)((SessionClass *)dword_A8DA90[v5]))->GetOption2() != a5 ) /*0x5dc021*/
+  if ( ((SessionClass *)((SessionClass *)(&dword_A8DA90)[v5]))->GetOption2() != a5 ) /*0x5dc021*/
   {
     v26 = 1; /*0x5dc026*/
     ((SessionClass *)(v12))->SetOption2(a5); /*0x5dc02e*/
@@ -1660,9 +1660,9 @@ int UpdateMultiplayerPlayerOptions(CCINIClass * aP0, CCINIClass * aP1, CCINIClas
     FillComboBoxFactions(v11, v24); /*0x5dc111*/
     SetupSkirmishSpawnLocations( (HWND)(v11), v24, -2); /*0x5dc11c*/
   }
-  if ( ((SessionClass *)((SessionClass *)dword_A8DA90[v5]))->GetPlayerColor() != aP2 ) /*0x5dc133*/
+  if ( ((SessionClass *)((SessionClass *)(&dword_A8DA90)[v5]))->GetPlayerColor() != aP2 ) /*0x5dc133*/
     ((SessionClass *)(v28))->SetPlayerColor( (int)(aP2)); /*0x5dc13a*/
-  if ( dword_A8DA90[v5] == *dword_A8DA78 ) /*0x5dc14e*/
+  if ( (&dword_A8DA90)[v5] == *dword_A8DA78 ) /*0x5dc14e*/
     dword_A8B394 = (unsigned int)aP2; /*0x5dc150*/
   GameSetup::DisplayPlayers(v25); /*0x5dc158*/
   return v26; /*0x5dbf99*/
@@ -1693,7 +1693,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
   IDA_LOBYTE(v3) = dword_A8BB08; /*0x5dd8e2*/
   if ( FindAndValidateMap( (ObjectClass *)(byte_A8B8E0), dword_A8BB04, (const char *)(&byte_A8BAE2), v3, 1) == 1 ) /*0x5dd906*/
   {
-    Debug::Log(); /*0x5dd911*/
+    Debug::Log("Found local scenario, file name is %d\n"); /*0x5dd911 G57w11: IDA push seq @ 0x5dd911*/
     memset( (void *)(v11), 0, sizeof(v11)); /*0x5dd924*/
     v12 = 0; /*0x5dd92a*/
     v13 = 0; /*0x5dd942*/
@@ -1707,7 +1707,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
     }
     goto LABEL_8; /*0x5dd97d*/
   }
-  Debug::Log(); /*0x5dda12*/
+  Debug::Log("Failed to find local scenario, file name is %d\n"); /*0x5dda12 G57w11: IDA push seq @ 0x5dda12*/
   if ( !dword_A8BB08 || (uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() ) /*0x5dda28*/
   {
     SynchronizeMultiplayerGameStart_Start(); /*0x5dda31*/
@@ -1716,11 +1716,11 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
       if ( !(uint8_t)((IsRandMap *)((IsRandMap *)&dword_A8B238))->Sed2() || RequestNetworkFile(v10, 3, 1) ) /*0x5dda68*/
       {
   LABEL_8:
-        strcpy( (char *)&dword_A8B230[130].abstractFlags, (const char *)(byte_A8B8E0)); /*0x5dd97f*/
+        strcpy( (char *)&((AbstractClass *)dword_A8B230)[130].abstractFlags, (const char *)(byte_A8B8E0)); /*0x5dd97f*/
         LobbyStatus = ((Network *)&unk_A8E9C0)->GetLobbyStatus(); /*0x5dd9b1*/
         if ( LobbyStatus < 20 ) /*0x5dd9b9*/
         {
-          Debug::Log(); /*0x5dd9c1*/
+          Debug::Log("IPX.Global_Response_Time() == %d. Adjusting to 20\n"); /*0x5dd9c1 G57w11: IDA push seq @ 0x5dd9c1 +1 reg-vararg(s) omitted*/
           LobbyStatus = 20; /*0x5dd9c9*/
         }
         v5 = 8 * LobbyStatus; /*0x5dd9ce*/
@@ -1732,7 +1732,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
       }
     }
   }
-  *(unsigned int *)&stru_A8B250[4] = -1; /*0x5dda8c*/
+  *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = -1; /*0x5dda8c*/
   StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_netdlg2_cpp), 710); /*0x5ddaaa*/
   v7 = (int *)GetStringCSF( (wchar_t *)((char *)&stru_82BA00 + 2), 0, (const char *)(g_Str_File_netdlg2_cpp), 710); /*0x5ddab5*/
   ((Dialog *)v7)->ShowMessageBox( (unsigned short *)(StringCSF), 0, 0, 0, v1); /*0x5ddabf*/

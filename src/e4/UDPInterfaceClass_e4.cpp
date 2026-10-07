@@ -285,7 +285,7 @@ LABEL_22:
       }
 LABEL_71:
       v31 = Network_Process_7B2730(); /*0x7b3f50*/
-      if ( v31 > 0 && Random::Range(&Randomizer_Global, 0, 99) <= v31 ) /*0x7b3f6b*/
+      if ( v31 > 0 && Random::Range((Random *)(&Randomizer_Global), 0, 99) <= v31 ) /*0x7b3f6b*/
         return 0; /*0x7b3f76*/
       v13 = IPXInterfaceClass::processPacket(  (IPXInterfaceClass *)this); /*0x7b3f80*/
       *((unsigned int *)v13 + 4) = v27 - 4; /*0x7b3f8f*/
@@ -979,7 +979,7 @@ void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)
       }
       while ( v6 < v4 ); /*0x7b3967*/
     }
-    Debug::Log(); /*0x7b398d*/
+    Debug::Log("Marking address %d.%d.%d.%d ; %d as unreachable\n"); /*0x7b398d G57w11: IDA push seq @ 0x7b398d +3 reg-vararg(s) omitted*/
     *((unsigned int *)this + this->u32_3F568 + 64859) = *a2; /*0x7b399d*/
     *((unsigned short *)this + (this->u32_3F568)++ + 129750) = v5; /*0x7b39aa*/
   }

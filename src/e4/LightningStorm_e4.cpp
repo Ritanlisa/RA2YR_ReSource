@@ -47,8 +47,8 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   {
     for ( ; !((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&a3); a3 = v12 ) /*0x539edd*/
     {
-      v7 = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_87F918); /*0x539f04*/
-      LOWORD(v12) = Random::Range((unsigned int *)dword_A8B230 + 134, 0, dword_87F914); /*0x539f1e*/
+      v7 = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, dword_87F918); /*0x539f04*/
+      LOWORD(v12) = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, dword_87F914); /*0x539f1e*/
       HIWORD(v12) = v7; /*0x539f23*/
     }
     result = a3; /*0x539f3e*/
@@ -73,9 +73,9 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       for ( LightningStorm_Active = 1; v8 < dword_A80238; ++v8 ) /*0x539fb0*/
       {
         if ( !LightningStorm_Owner /*0x539fc5*/
-          || !(uint8_t)(((HouseClass *)(LightningStorm_Owner))->IsAlliedWith( (HouseClass *)(*(void **)(&dword_A8022C)[4 * v8]))) )
+          || !(uint8_t)(((HouseClass *)(LightningStorm_Owner))->IsAlliedWith( (HouseClass *)(*(void **)((unsigned int *)dword_A8022C)[4 * v8]))) )
         {
-          v9 = *(unsigned int *)(&dword_A8022C)[4 * v8]; /*0x539fd3*/
+          v9 = *(unsigned int *)((unsigned int *)dword_A8022C)[4 * v8]; /*0x539fd3*/
           if ( !*(unsigned char *)(v9 + 501) && !dword_A8B538 ) /*0x539fe7*/
             ((HouseClass *)v9)->CreateRadarOutage( a1); /*0x539fea*/
         }
@@ -210,7 +210,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
   v3 = (unsigned int *)(((Coord *)(&dword_87F7E8))->To_Cell(&a1)); /*0x53a31a*/
-  Coords = ((CellClass *)v3)->GetCoords( &v29); /*0x53a31f*/
+  Coords = CellClass::GetCoords(((CellClass *)v3), &v29); /*0x53a31f*/
   v5 = Coords[1]; /*0x53a328*/
   v6 = Coords[2]; /*0x53a32b*/
   v34[0] = *Coords; /*0x53a32e*/
@@ -297,7 +297,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     {
       if ( (unsigned char)v11 ) /*0x53a61b*/
       {
-        v11 = (void **)Random::Range((unsigned int *)dword_A8B230 + 134, 2, 4); /*0x53a62c*/
+        v11 = (void **)Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 2, 4); /*0x53a62c*/
         if ( (int)v11 > 0 ) /*0x53a633*/
         {
           v21 = v11; /*0x53a635*/

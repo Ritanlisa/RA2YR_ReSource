@@ -404,7 +404,7 @@ void ** E4Recv_637640::sub_637640()
   void *retaddr; // [esp+10h] [ebp+0h] BYREF
 
   v5 = (gamemd::ObjectClass *)(this);
-v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x637655*/ &stru_AC4B30.__pad_EC[124], (ObjectClass **)(&v5));
+v1 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))((char *)(/*0x637655*/ &stru_AC4B30.__pad_EC[124]), (ObjectClass **)(&v5));
 
 
   if ( v1 != -1 && v1 < *(int *)&stru_AC4B30.__pad_EC[140] ) /*0x637665*/

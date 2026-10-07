@@ -760,7 +760,7 @@ void UpdateTimedStateMachine(int * a1)
         {
   LABEL_16:
           a1[112] = 3; /*0x70ea31*/
-          v7 = Random::Range((unsigned int *)dword_A8B230 + 134, -5, 5); /*0x70ea4b*/
+          v7 = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), -5, 5); /*0x70ea4b*/
           a1[109] = (int)dword_A8ED84; /*0x70ea59*/
           a1[110] = v21; /*0x70ea5f*/
           a1[111] = v7 + 20; /*0x70ea62*/

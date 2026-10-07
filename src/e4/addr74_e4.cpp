@@ -129,7 +129,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
 
   v2 = (gamemd::INIClass *)(a1);
   v57 = (gamemd::INIClass *)(a1);
-  ((INIClass*)a1)->ResetSection(); /*0x74327f*/
+  INIClass::ResetSection(((INIClass*)a1)); /*0x74327f*/
   Block = (void *)(0); /*0x74328e*/
   v49 = 1; /*0x743292*/
   v46 = (void*)&DynamicVectorClass_int_vftable; /*0x743297*/

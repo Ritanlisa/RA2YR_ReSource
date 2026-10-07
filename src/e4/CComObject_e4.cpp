@@ -1669,7 +1669,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
             GadgetClass::TrackState(v14.ComPtr_field_0x04, *(unsigned int *)(a3 + 100), 2); /*0x7aba77*/
             if ( (unsigned __int8)Flag::IsNot2(  (Flag *)&v14.ComPtr_field_0x08) ) /*0x7aba80*/
               SaveProfileWOL(v14.ComPtr_field_0x04, (const char **)&g_WindowManager.__pad_EC[684]); /*0x7aba92*/
-            Debug::Log(); /*0x7abaa0*/
+            Debug::Log("OnUserLocale callback - Locale is %d\n"); /*0x7abaa0 G57w11: IDA push seq @ 0x7abaa0 +1 reg-vararg(s) omitted*/
             v12 = 1; /*0x7abaac*/
             *(unsigned int *)v14.__pad_0 = (unsigned int)(void*)&rc_ptr_PlayerProfile_vftable; /*0x7abab1*/
             ComPtr::Release( (void *)(&v14)); /*0x7abab5*/
@@ -1685,7 +1685,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
     }
     else
     {
-      Debug::Log(); /*0x7ab8f7*/
+      Debug::Log("OnUserLocale callback failed!\n"); /*0x7ab8f7 G57w11: IDA push seq @ 0x7ab8f7*/
       return 0; /*0x7ab8ff*/
     }
 }
@@ -1810,7 +1810,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a
 
     if ( a2 < 0 ) /*0x7abd4c*/
     {
-      Debug::Log(); /*0x7abf8e*/
+      Debug::Log("OnUserTeam FAILED!\n"); /*0x7abf8e G57w11: IDA push seq @ 0x7abf8e*/
       return 0; /*0x7abf96*/
     }
     else
@@ -1921,7 +1921,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a
 
     if ( a2 ) /*0x7abfac*/
     {
-      Debug::Log(); /*0x7ac208*/
+      Debug::Log("OnSetTeam FAILED: %d\n"); /*0x7ac208 G57w11: IDA push seq @ 0x7ac208 +1 reg-vararg(s) omitted*/
       return 0; /*0x7ac210*/
     }
     v3 = a3; /*0x7abfb3*/
@@ -2316,7 +2316,7 @@ int CComObject_CChatEventSink___ATL::Disconnect(int a1, int a2, int a3, const ch
     if ( a2 >= 0 ) /*0x7a70e6*/
       LeaveChannelWOL(a4); /*0x7a70fe*/
     else
-      Debug::Log(); /*0x7a70ed*/
+      Debug::Log("OnChannelLeave with error!\n"); /*0x7a70ed G57w11: IDA push seq @ 0x7a70ed*/
     return 0; /*0x7a70f7*/
 }
 } // namespace gamemd

@@ -218,8 +218,8 @@ LABEL_52:
       return 1; /*0x4d81a6*/
     case 26: /*0x4d7de0*/
       if ( !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 156))(this) /*0x4d7e59*/
-        && !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 816))(this)
-        || !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 160))(this) )
+        && !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 816))((TechnoClass *)(this))
+        || !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 160))((TechnoClass *)(this)) )
       {
         return 0; /*0x4d7e61*/
       }
@@ -569,7 +569,7 @@ result = (*(int (**)(IStream *, struct IPersistStreamVtbl **, int, unsigned int)
     aP1 = (FootClass *)(0); /*0x4db757*/
     if ( v11 ) /*0x4db761*/
     {
-      v12 = (**v11)(v11, &unk_820270, &a0); /*0x4db772*/
+      v12 = (**v11)((unsigned int)(v11), &unk_820270, (ObjectClass **)(&a0)); /*0x4db772*/
       if ( v12 >= 0 ) /*0x4db776*/
       {
         v13 = (IPersistStream *)a0; /*0x4db794*/
@@ -1118,7 +1118,7 @@ int ObjectClass::DropAsBomb_Track()
         v4 = this->field_0; /*0x5f41f1*/
         v5[1] = *(unsigned int *)this->__pad_A0; /*0x5f41f6*/
         v5[2] = this->field_A4; /*0x5f4204*/
-        return (*(int (**)(IUnknown *, unsigned int *))(v4 + 244))( this, (unsigned int *)( (IUnknown *)(v5) )); /*0x5f4208*/
+        return (*(int (**)(IUnknown *, unsigned int *))(v4 + 244))((IUnknown *)(this), (unsigned int *)( (IUnknown *)(v5) )); /*0x5f4208*/
       }
     }
   }

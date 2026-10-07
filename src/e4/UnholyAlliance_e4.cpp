@@ -52,7 +52,7 @@ AbstractClass * * UnholyAlliance_GetResult()
         v6 = operator new(0x8E8u); /*0x5cb47e*/
         if ( v6 && (v7 = (int *)((UnitClass *)((int)v6))->Construct(v5, v4)) != 0 ) /*0x5cb497*/
         {
-          CurrentOption = (unsigned short *)(((HouseClass *)v4)->GetCurrentOption( &ppv));
+          CurrentOption = (unsigned short *)(HouseClass::GetCurrentOption(((HouseClass *)v4), &ppv));
           v9 = *CurrentOption + 3; /*0x5cb4b0*/
           v10 = CurrentOption[1] + 3; /*0x5cb4b4*/
           if ( v3 /*0x5cb4ea*/
@@ -63,7 +63,7 @@ AbstractClass * * UnholyAlliance_GetResult()
                 v16[2] = 0,
                 !(*(uint8_t (**)(int *, unsigned int *, unsigned int))(v12 + 216))( (int *)(v7), (unsigned int *)(v16), 0)) )
           {
-            v13 = (int16_t *)((HouseClass *)v4)->GetCurrentOption( &v15); /*0x5cb4fd*/
+            v13 = (int16_t *)HouseClass::GetCurrentOption(((HouseClass *)v4), &v15); /*0x5cb4fd*/
             if ( !FindInfantryDeployPosition( (int *)(v7), (gamemd::RadarClass *)(v13), 3) ) /*0x5cb506*/
             {
               v2 = 1; /*0x5cb515*/
@@ -105,7 +105,7 @@ namespace gamemd {  // G42.18c ns repair
 char UnholyAlliance::Read(void *a1, void *a2)
 {
 
-  stru_A8B250[8] = 1; /*0x5cb3f2*/
+  ((unsigned char *)&stru_A8B250)[8] = 1; /*0x5cb3f2*/
   return 1; /*0x5cb3f7*/
 
 }
@@ -115,7 +115,7 @@ namespace gamemd {  // G42.18c ns repair
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
 
-  return stru_A8B250[8] && ((gamemd::MPCooperative *)uint8_t)((ScenarioClass *)(&aP0->m_Enabled))->MissionStubReturnZero2(); /*0x5cb41c*/
+  return ((unsigned char *)&stru_A8B250)[8] && ((gamemd::MPCooperative *)uint8_t)((ScenarioClass *)(&aP0->m_Enabled))->MissionStubReturnZero2(); /*0x5cb41c*/
 
 }
 }  // G42.18c ns repair
@@ -123,7 +123,7 @@ BOOL UnholyAlliance::Write(MPCooperative * aP0)
 char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
 {
 
-  stru_A8B250[8] = 1; /*0x5cb432*/
+  ((unsigned char *)&stru_A8B250)[8] = 1; /*0x5cb432*/
   return 1; /*0x5cb437*/
 
 }

@@ -851,11 +851,11 @@ void InitGame()
   int v1 = 0;
   if ( !v0 )
   {
-    *(unsigned int *)&(&HouseClass_Player)[29924 = 0;
+    *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924]= 0;
     goto LABEL_3;
   }
-  *(unsigned int *)&(&HouseClass_Player)[29924 = (int)(ScenarioClass::Constructor(v0));
-  if ( !*(unsigned int *)&(&HouseClass_Player)[29924 )
+  *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924]= (int)(ScenarioClass::Constructor(v0));
+  if ( !*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924])
   {
 LABEL_3:
     Debug::Log("Failed to instantiate Scenario!\n") /*G57c1: IDA 0x52baa0 push offset aFailedToInstan*/;
@@ -864,20 +864,20 @@ LABEL_3:
   v3 = (RulesClass *)new RulesClass;
   if ( !v3 )
   {
-    *(unsigned int *)&(&stru_87C374)[44652 = 0;
+    *(unsigned int *)&(&stru_87C374)[44652 ]= 0;
     goto LABEL_3;
   }
-  *(unsigned int *)&(&stru_87C374)[44652 = RulesClass::RulesClass(v3);
-  if ( !*(unsigned int *)&(&stru_87C374)[44652 )
+  *(unsigned int *)&(&stru_87C374)[44652 ]= RulesClass::RulesClass(v3);
+  if ( !*(unsigned int *)&(&stru_87C374)[44652 ])
     goto LABEL_3;
   Debug::Log("Bootstrap.....") /*G57c1: IDA 0x52bb07 push offset aBootstrap*/;
   if ( !g_Is16BitMode )
-    FadePalette(&(&stru_87C374)[35596, 0, 0);
+    FadePalette(&(&stru_87C374)[35596], 0, 0);
   if ( (&stru_89E138)[616] == 1 )
     SetSoundWarning(-2);
   do
-    ((EventQueue *)(*(unsigned int **)&(&stru_87C374)[13308))->Process();
-  while ( !(&HouseClass_Player)[45108] );
+    ((EventQueue *)(*(unsigned int **)&(&stru_87C374)[13308]))->Process();
+  while ( !((unsigned int *)HouseClass_Player)[45108] );
   (&stru_89E138)[8040] = 0;
   TextBufferEntry = (unsigned char *)GetTextBufferEntry(4);
   ((TextBuffer *)TextBufferEntry)->Init();
@@ -895,10 +895,10 @@ LABEL_3:
   Init::StubPlaceholder();
   LoadMouseClassResources();
   InitializeAudioSubsystem(*(void **)&stru_830620[66640]);
-  ((Timer*)(*(HWND **)&(&stru_87C374)[13308))->PumpMessages();
+  ((Timer*)(*(HWND **)&(&stru_87C374)[13308]))->PumpMessages();
   IDA_LOBYTE(v6) = 0;
-  v7 = (AbstractClass *)SearchMIXFile( (char *)(&(&g_Str_File_MOUSE_SHA)[140), v6);
-  memcpy(&(&stru_87C374)[40972, v7, 0x300u);
+  v7 = (AbstractClass *)SearchMIXFile( (char *)(&(&g_Str_File_MOUSE_SHA)[140]), v6);
+  memcpy(&(&stru_87C374)[40972], v7, 0x300u);
   for ( i = 0; i < 256; ++i )
   {
     esi20 = (char *)(&((unsigned int **)&stru_87C374)[22428][3 * (i % 256) + 18544]);
@@ -909,11 +909,11 @@ LABEL_3:
                           4 * (&stru_87C374)[22428][3 * (i % 256) + 18545],
                           4 * (&stru_87C374)[22428][3 * (i % 256) + 18546]);
     *(unsigned short *)esi20 = *(unsigned short *)v9->__pad_0;
-    esi20[2] = v9->__pad_0[2];
+    esi20[2] = ((unsigned char *)&v9->__pad_0)[2];
   }
   IDA_LOBYTE(v11) = 0;
-  v12 = (AbstractClass *)SearchMIXFile( (char *)(&(&g_Str_File_MOUSE_SHA)[124), v11);
-  memcpy(&(&stru_87C374)[37900, v12, 0x300u);
+  v12 = (AbstractClass *)SearchMIXFile( (char *)(&(&g_Str_File_MOUSE_SHA)[124]), v11);
+  memcpy(&(&stru_87C374)[37900], v12, 0x300u);
   for ( j = 0; j < 256; ++j )
   {
     char * v14 = &((unsigned int **)&stru_87C374)[22428][3 * (j % 256) + 15472];
@@ -923,63 +923,63 @@ LABEL_3:
                            4 * (&stru_87C374)[22428][3 * (j % 256) + 15473],
                            4 * (&stru_87C374)[22428][3 * (j % 256) + 15474]);
     *(unsigned short *)v14 = *(unsigned short *)v13->__pad_0;
-    v14[2] = v13->__pad_0[2];
+    v14[2] = ((unsigned char *)&v13->__pad_0)[2];
   }
-  Block::Copy(&(&stru_87C374)[38668, &(&stru_87C374)[37900);
-  Block::Copy(&(&stru_87C374)[40204, &(&stru_87C374)[37900);
+  Block::Copy(&(&stru_87C374)[38668], &(&stru_87C374)[37900]);
+  Block::Copy(&(&stru_87C374)[40204], &(&stru_87C374)[37900]);
   (&stru_87C374)[39438] = (&stru_87C374)[35598];
   IDA_LOBYTE(v16) = 0;
-  *(unsigned short *)&(&stru_87C374)[39436 = *(unsigned short *)&(&stru_87C374)[35596;
+  *(unsigned short *)&(&stru_87C374)[39436 ]= *(unsigned short *)&(&stru_87C374)[35596];
   eax23 = (AbstractClass *)SearchMIXFile( (char *)(&(&g_Str_File_MOUSE_SHA)[108]),(char)( v16));
-  memcpy( (void *)(&stru_87C374[36364]), (const void *)(eax23), 0x300u);
+  memcpy( (void *)((unsigned char *)&stru_87C374 + 36364), (const void *)(eax23), 0x300u);
   for ( k = 0; k < 256; ++k )
   {
-    char * v19 = &stru_87C374[22428][3 * (k % 256) + 13936];
+    char * v19 = (unsigned char *)&stru_87C374 + 22428[3 * (k % 256) + 13936];
   unsigned char v87[4]; // [esp+2Ch] [ebp-2F14h] BYREF
     v17 = (ObjectClass *)Palette::SixBitTo16Bit(
                            v87,
                            4 * *v19,
-                           4 * stru_87C374[22428][3 * (k % 256) + 13937],
-                           4 * stru_87C374[22428][3 * (k % 256) + 13938]);
+                           4 * ((unsigned char *)&stru_87C374)[22428][3 * (k % 256) + 13937],
+                           4 * ((unsigned char *)&stru_87C374)[22428][3 * (k % 256) + 13938]);
     *(unsigned short *)v19 = *(unsigned short *)v17->__pad_0;
-    v19[2] = v17->__pad_0[2];
+    v19[2] = ((unsigned char *)&v17->__pad_0)[2];
   }
-  ((CCFileClass*)Buffer)->Construct( (char *)(&g_Str_File_MOUSE_SHA[96]));
+  ((CCFileClass*)Buffer)->Construct( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 96));
   ((VoxelPaletteClass *)Buffer)->LoadFromFile();
   int v21 = 0;
-  char * v22 = &stru_B1D188[76273];
+  char * v22 = (unsigned char *)&stru_B1D188 + 76273;
   do
   {
   unsigned char v85[4]; // [esp+24h] [ebp-2F1Ch] BYREF
     v20 = (ObjectClass *)((Palette *)(v85))->SixBitTo16Bit(*(v22 - 1), *v22, v22[1]);
-    ecx26 = &stru_87C374[22428][3 * (v21 % 256) + 19312];
+    ecx26 = (unsigned char *)&stru_87C374 + 22428[3 * (v21 % 256) + 19312];
     v22 += 3;
     ++v21;
     *(unsigned short *)ecx26 = *(unsigned short *)v20->__pad_0;
     ecx26[2] = v20->__pad_0[2];
   }
-  while ( (int)v22 < (int)&stru_B1D188[77041] );
-  *(float *)&stru_87C374[45224] = 0.95990276;
-  stru_87C374[45220] = 1;
-  ((Matrix3x4*)(&stru_87C374[45244]))->Identity();
+  while ( (int)v22 < (int)&((unsigned char *)&stru_B1D188)[77041] );
+  *(float *)&((unsigned char *)&stru_87C374)[45224] = 0.95990276;
+  ((unsigned char *)&stru_87C374)[45220] = 1;
+  ((Matrix3x4*)((unsigned char *)&stru_87C374 + 45244))->Identity();
   Voxel::SetProjectionAngle(0.785375);
   dword_B43184 = 1;
   dword_B43180 = 0;
   Voxel::Projection_Setup();
   unsigned int * v25 = (unsigned int *)operator new(0x188u);
   if ( v25 )
-    *(unsigned int *)&stru_87C374[13124] = ConvertClass::Construct(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13124] = ConvertClass::Construct(
                                                  v25,
-                                                 (ConvertClass *)&stru_87C374[37900],
-                                                 (int)&stru_87C374[37900],
-                                                 *(ConvertClass **)&stru_87C374[44948],
+                                                 (ConvertClass *)&((unsigned char *)&stru_87C374)[37900],
+                                                 (int)&((unsigned char *)&stru_87C374)[37900],
+                                                 *(ConvertClass **)&((unsigned char *)&stru_87C374)[44948],
                                                  (ObjectClass *)0x35,
                                                  0);
   else
-    *(unsigned int *)&stru_87C374[13124] = 0;
-  ((Array *)a0)->ForEach( 3, (IUnknown *)0x100, (int (*)(int))Struct::Zero3);
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13124] = 0;
+  Array::ForEach(((Array *)a0), 3, (IUnknown *)0x100, (int (*)(int))Struct::Zero3);
   IDA_LOBYTE(edx30) = 0;
-  v27 = (AbstractClass *)SearchMIXFile( (char *)(&g_Str_File_MOUSE_SHA[84]), edx30);
+  v27 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 84), edx30);
   memcpy( (void *)(a0), (const void *)(v27), sizeof(a0));
   for ( m = 0; m < 256; ++m )
   {
@@ -996,17 +996,17 @@ LABEL_3:
   }
   unsigned int * v32 = (unsigned int *)operator new(0x188u);
   if ( v32 )
-    *(unsigned int *)&stru_87C374[13132] = ConvertClass::Construct(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13132] = ConvertClass::Construct(
                                                  v32,
                                                  (ConvertClass *)a0,
-                                                 (int)&stru_87C374[37900],
-                                                 *(ConvertClass **)&stru_87C374[44948],
+                                                 (int)&((unsigned char *)&stru_87C374)[37900],
+                                                 *(ConvertClass **)&((unsigned char *)&stru_87C374)[44948],
                                                  (ObjectClass *)0x35,
                                                  0);
   else
-    *(unsigned int *)&stru_87C374[13132] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13132] = 0;
   IDA_LOBYTE(v33) = 0;
-  eax35 = (AbstractClass *)SearchMIXFile( (char *)(&g_Str_File_MOUSE_SHA[72]), v33);
+  eax35 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 72), v33);
   memcpy( (void *)(a0), (const void *)(eax35), sizeof(a0));
   for ( n = 0; n < 256; ++n )
   {
@@ -1023,17 +1023,17 @@ LABEL_3:
   }
   eax37 = (unsigned int *)operator new(0x188u);
   if ( eax37 )
-    *(unsigned int *)&stru_87C374[13136] = ConvertClass::Construct(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13136] = ConvertClass::Construct(
                                                  eax37,
                                                  (ConvertClass *)a0,
-                                                 (int)&stru_87C374[37900],
-                                                 *(ConvertClass **)&stru_87C374[44948],
+                                                 (int)&((unsigned char *)&stru_87C374)[37900],
+                                                 *(ConvertClass **)&((unsigned char *)&stru_87C374)[44948],
                                                  (ObjectClass *)0x35,
                                                  0);
   else
-    *(unsigned int *)&stru_87C374[13136] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13136] = 0;
   IDA_LOBYTE(v40) = 0;
-  eax40 = (AbstractClass *)SearchMIXFile( (char *)(&g_Str_File_MOUSE_SHA[140]), v40);
+  eax40 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 140), v40);
   memcpy( (void *)(a0), (const void *)(eax40), sizeof(a0));
   for ( ii = 0; ii < 256; ++ii )
   {
@@ -1050,15 +1050,15 @@ LABEL_3:
   }
   eax42 = (unsigned int *)operator new(0x188u);
   if ( eax42 )
-    *(unsigned int *)&stru_87C374[13120] = ConvertClass::Construct(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13120] = ConvertClass::Construct(
                                                  eax42,
                                                  (ConvertClass *)a0,
-                                                 (int)&stru_87C374[37900],
-                                                 *(ConvertClass **)&stru_87C374[44948],
+                                                 (int)&((unsigned char *)&stru_87C374)[37900],
+                                                 *(ConvertClass **)&((unsigned char *)&stru_87C374)[44948],
                                                  (ObjectClass *)0x35,
                                                  0);
   else
-    *(unsigned int *)&stru_87C374[13120] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13120] = 0;
   IDA_LOBYTE(v47) = 0;
   v48 = (AbstractClass *)SearchMIXFile( (char *)(aCameoPal), v47);
   memcpy( (void *)(a0), (const void *)(v48), sizeof(a0));
@@ -1077,17 +1077,17 @@ LABEL_3:
   }
   eax47 = (unsigned int *)operator new(0x188u);
   if ( eax47 )
-    *(unsigned int *)&stru_87C374[13116] = ConvertClass::Construct(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13116] = ConvertClass::Construct(
                                                  eax47,
                                                  (ConvertClass *)a0,
-                                                 (int)&stru_87C374[37900],
-                                                 *(ConvertClass **)&stru_87C374[44948],
+                                                 (int)&((unsigned char *)&stru_87C374)[37900],
+                                                 *(ConvertClass **)&((unsigned char *)&stru_87C374)[44948],
                                                  (ObjectClass *)0x35,
                                                  0);
   else
-    *(unsigned int *)&stru_87C374[13116] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13116] = 0;
   IDA_LOBYTE(v54) = 0;
-  v55 = (AbstractClass *)SearchMIXFile( (char *)(&g_Str_File_MOUSE_SHA[56]), v54);
+  v55 = (AbstractClass *)SearchMIXFile( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 56), v54);
   memcpy( (void *)(a0), (const void *)(v55), sizeof(a0));
   for ( kk = 0; kk < 256; ++kk )
   {
@@ -1104,24 +1104,24 @@ LABEL_3:
   }
   unsigned int * v60 = (unsigned int *)operator new(0x188u);
   if ( v60 )
-    *(unsigned int *)&stru_87C374[13140] = ConvertClass::Construct(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13140] = ConvertClass::Construct(
                                                  v60,
                                                  (ConvertClass *)a0,
-                                                 (int)&stru_87C374[37900],
-                                                 *(ConvertClass **)&stru_87C374[44948],
+                                                 (int)&((unsigned char *)&stru_87C374)[37900],
+                                                 *(ConvertClass **)&((unsigned char *)&stru_87C374)[44948],
                                                  (ObjectClass *)1,
                                                  0);
   else
-    *(unsigned int *)&stru_87C374[13140] = 0;
-  *(unsigned int *)&stru_87C374[13128] = *(unsigned int *)&stru_87C374[13120];
-  ((CCFileClass*)v103)->Construct( (char *)(&g_Str_File_MOUSE_SHA[44]));
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13140] = 0;
+  *(unsigned int *)&((unsigned char *)&stru_87C374)[13128] = *(unsigned int *)&((unsigned char *)&stru_87C374)[13120];
+  ((CCFileClass*)v103)->Construct( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 44));
   if ( ((CCFileClass *)(v103))->Open(0) )
   {
-    *(unsigned int *)&HouseClass_Player[47684] = ((CCFileClass *)(v103))->ReadEntireFile();
+    *(unsigned int *)&((unsigned char *)&HouseClass_Player)[47684] = ((CCFileClass *)(v103))->ReadEntireFile();
     CCFileClass::Reset(v103);
     for ( kk = 0; kk < 256; ++kk )
     {
-      GameDirectoryCD = (unsigned char *)(*(unsigned int *)&HouseClass_Player[47684] + 2 * (kk % 256) + kk % 256);
+      GameDirectoryCD = (unsigned char *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[47684] + 2 * (kk % 256) + kk % 256);
       v49 = (ObjectClass *)Palette::SixBitTo16Bit(
                              v81,
                              4 * *GameDirectoryCD,
@@ -1131,7 +1131,7 @@ LABEL_3:
       GameDirectoryCD[2] = v49->__pad_0[2];
     }
   }
-  if ( *(unsigned int *)&HouseClass_Player[47684] )
+  if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[47684] )
   {
     unsigned int * v62 = (unsigned int *)operator new(0x188u);
     if ( v62 )
@@ -1596,7 +1596,7 @@ void InitRules()
   ((CCFileClass*)&v22)->Construct( (char *)(aArtmdIni)); /*0x52d03f*/
   if ( !((CCINIClass *)((CCINIClass *)&DSurface_ViewBounds.__pad_FC[228]))->Load((int)&v22, 0, 0) ) /*0x52d053*/
   {
-    Debug::Log(); /*0x52d061*/
+    Debug::Log("Failed to load ARTMD.INI!\n"); /*0x52d061 G57w11: IDA push seq @ 0x52d061*/
     *(unsigned int *)v22.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x52d070*/
     v24 = 0; /*0x52d077*/
     ((Vector *)((int)v23))->Clear((int)((Vector *)((int)v23))); /*0x52d07e*/
@@ -2804,7 +2804,7 @@ Straw * * Random_Init()
   struct _SYSTEMTIME SystemTime; // [esp+8h] [ebp-408h] BYREF
   unsigned char v4[1012]; // [esp+1Ch] [ebp-3F4h] BYREF
 
-  Debug::Log(); /*0x52fc2d*/
+  Debug::Log("Init random number\n"); /*0x52fc2d G57w11: IDA push seq @ 0x52fc2d +2 reg-vararg(s) omitted*/
   if ( dword_A8B8B8 || (dword_A8D5F8 & 2) != 0 || UI_Update() ) /*0x52fc4f*/
   {
     SeedInitRNG((ObjectClass *)v4, dword_A8ED94); /*0x52fe66*/
@@ -2843,7 +2843,7 @@ Straw * * Random_Init()
       }
       dword_A8ED94 = TickCount; /*0x52fdf4*/
     }
-    Debug::Log(); /*0x52fe05*/
+    Debug::Log("Seed is %08x\n"); /*0x52fe05 G57w11: IDA push seq @ 0x52fe05 +1 reg-vararg(s) omitted*/
     SeedInitRNG((ObjectClass *)v4, dword_A8ED94); /*0x52fe17*/
     qmemcpy( (void *)(&dword_A8B230[14].NeedsSaveOrLink), (const void *)(v4), 0x3F4u); /*0x52fe31*/
     result = (int)SeedInitRNG((ObjectClass *)v4, dword_A8ED94); /*0x52fe3e*/

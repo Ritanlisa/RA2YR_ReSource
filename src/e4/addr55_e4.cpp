@@ -1297,9 +1297,9 @@ int E4Recv_557380::sub_557380(int a2)
   v3 = *((unsigned int *)this + 22); /*0x557538*/
   *((unsigned int *)this + 92) = *(unsigned int *)(a2 + 368); /*0x55753c*/
   *(unsigned int *)this = (unsigned int)(&vt_ListClass); /*0x557542*/
-  (*(void (**)(int, int))(v3 + 132))( (int)((char *)this + 88), this); /*0x557548*/
-  (*(void (**)(int, int))(*((unsigned int *)this + 46) + 132))( (int)((char *)this + 184), this); /*0x557553*/
-  (*(void (**)(int, int))(*((unsigned int *)this + 70) + 132))( (int)((char *)this + 280), this); /*0x55755f*/
+  (*(void (**)(int, int))(v3 + 132))((int)((char *)this + 88), (int)(this)); /*0x557548*/
+  (*(void (**)(int, int))(*((unsigned int *)this + 46) + 132))((int)((char *)this + 184), (int)(this)); /*0x557553*/
+  (*(void (**)(int, int))(*((unsigned int *)this + 70) + 132))((int)((char *)this + 280), (int)(this)); /*0x55755f*/
   return (int)(this); /*0x557566*/
 
 }
@@ -1341,7 +1341,7 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1, void *a2_1)
   p_referenceCount = (char *)(aP1); /*0x558810*/
   *((unsigned int *)this + 1) = 2; /*0x558814*/
   if ( !aP1 ) /*0x55881d*/
-    p_referenceCount = (char *)&(&dword_A8B230)[137].referenceCount; /*0x558824*/
+    p_referenceCount = (char *)&((AbstractClass *)dword_A8B230)[137].referenceCount; /*0x558824*/
   *((unsigned int *)this + 3) = (unsigned int)(p_referenceCount); /*0x558829*/
   return SaveLoadDialog::DlgProc( ((SaveLoadDialog *)this)); /*0x558831*/
 
@@ -1374,9 +1374,9 @@ int E4Recv_55B720::sub_55B720()
     goto LABEL_8; /*0x55b74a*/
   }
   v3 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b751*/
-  nextArrayIndex = (&dword_A8B230)[128].nextArrayIndex; /*0x55b757*/
-  p_nextArrayIndex = &(&dword_A8B230)[128].nextArrayIndex; /*0x55b75d*/
-  NeedsSaveOrLink = (char *)(&dword_A8B230)[128].NeedsSaveOrLink; /*0x55b766*/
+  nextArrayIndex = ((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b757*/
+  p_nextArrayIndex = &((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b75d*/
+  NeedsSaveOrLink = (char *)((AbstractClass *)dword_A8B230)[128].NeedsSaveOrLink; /*0x55b766*/
   if ( nextArrayIndex != -1 ) /*0x55b769*/
   {
     if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
@@ -1399,8 +1399,8 @@ LABEL_8:
 LABEL_9:
   if ( ((int)dword_A8B230->vtable1 & 0x1000) != 0 && *(double *)(v1 + 5704) != 0.0 ) /*0x55b7ca*/
   {
-    vtable0 = (&dword_A8B230)[129].vtable0; /*0x55b7cc*/
-    vtable2 = (char *)(&dword_A8B230)[129].vtable2; /*0x55b7d2*/
+    vtable0 = ((AbstractClass *)dword_A8B230)[129].vtable0; /*0x55b7cc*/
+    vtable2 = (char *)((AbstractClass *)dword_A8B230)[129].vtable2; /*0x55b7d2*/
     v10 = (gamemd::AbstractClass *)(dword_A8B230 + 129); /*0x55b7d8*/
     if ( vtable0 != (unsigned char *)-1 ) /*0x55b7e1*/
     {
@@ -2009,7 +2009,7 @@ AbstractClass * * Game_Frame_Check()
     v1 = (char *)((EventClass *)v12)->AddEvent( dword_A83D4C->Object_field_0x30, 8u); /*0x55cff9*/
     if ( *(int *)&dword_A802C8 < 128 ) /*0x55d008*/
     {
-      qmemcpy(&(&byte_A802D4)[111 * dword_A802D0, v1, 0x6Fu); /*0x55d025*/
+      qmemcpy(&(&byte_A802D4)[111 * dword_A802D0], v1, 0x6Fu); /*0x55d025*/
       (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x55d037*/
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x55d04e*/
       ++*(unsigned int *)&dword_A802C8; /*0x55d054*/
@@ -2389,17 +2389,17 @@ void GameFrameLoop()
   LABEL_62:
   if ( *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x55d7ce*/
     goto LABEL_72; /*0x55d7ce*/
-  if ( IDA_LOBYTE(dword_A8B230[44].vtable0) ) /*0x55d7da*/
+  if ( IDA_LOBYTE(((AbstractClass *)dword_A8B230)[44].vtable0) ) /*0x55d7da*/
   {
-    referenceCount = dword_A8B230[43].referenceCount; /*0x55d7ea*/
-    if ( dword_A8B230[43].abstractFlags != -1 ) /*0x55d7f9*/
+    referenceCount = ((AbstractClass *)dword_A8B230)[43].referenceCount; /*0x55d7ea*/
+    if ( ((AbstractClass *)dword_A8B230)[43].abstractFlags != -1 ) /*0x55d7f9*/
     {
-      p_abstractFlags = &dword_A8B230[43].abstractFlags; /*0x55d7f0*/
+      p_abstractFlags = &((AbstractClass *)dword_A8B230)[43].abstractFlags; /*0x55d7f0*/
       v20 = TimerGetTicks() - *p_abstractFlags; /*0x55d803*/
       if ( v20 >= referenceCount ) /*0x55d807*/
       {
   LABEL_69:
-        IDA_LOBYTE(dword_A8B230[44].vtable0) = 0; /*0x55d80f*/
+        IDA_LOBYTE(((AbstractClass *)dword_A8B230)[44].vtable0) = 0; /*0x55d80f*/
         ((ScenarioClass *)v43)->ProcessIntroTimer(); /*0x55d81c*/
         goto LABEL_70; /*0x55d81c*/
       }
@@ -2410,7 +2410,7 @@ void GameFrameLoop()
     goto LABEL_69; /*0x55d80d*/
   }
   LABEL_70:
-  if ( dword_A8B230[43].NeedsSaveOrLink ) /*0x55d826*/
+  if ( ((AbstractClass *)dword_A8B230)[43].NeedsSaveOrLink ) /*0x55d826*/
   {
     MessageLoop(); /*0x55d830*/
     Event::Dispatch(); /*0x55d835*/

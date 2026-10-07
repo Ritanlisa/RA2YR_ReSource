@@ -255,9 +255,9 @@ int BuildingClass::GetFactoryPosition() const
     int *v11; // [esp+14h] [ebp+4h]
 
     Type = this->Type; /*0x44f640*/
-    if ( Type->ExitCoord[0] == g_BuildingClassPool /*0x44f676*/
-      && Type->ExitCoord[1] == dword_89C84C
-      && Type->ExitCoord[2] == dword_89C850 )
+    if ( ((unsigned int *)&Type->ExitCoord)[0] == g_BuildingClassPool /*0x44f676*/
+      && ((unsigned int *)&Type->ExitCoord)[1] == dword_89C84C
+      && ((unsigned int *)&Type->ExitCoord)[2] == dword_89C850 )
     {
       v9 = (int *)(*((int (__thiscall **)(BuildingClass *, char *))this->vtable1 + 18))(this, v10); /*0x44f6bf*/
       *v11 = *v9; /*0x44f6c9*/
@@ -270,9 +270,9 @@ int BuildingClass::GetFactoryPosition() const
       location = ((unsigned int *)this)[0]; /*0x44f678*/
       v3 = location[1]; /*0x44f681*/
       v4 = location[2]; /*0x44f684*/
-      v5 = *location + Type->ExitCoord[0]; /*0x44f68d*/
-      v6 = v3 + Type->ExitCoord[1]; /*0x44f695*/
-      v7 = Type->ExitCoord[2]; /*0x44f697*/
+      v5 = *location + ((unsigned int *)&Type->ExitCoord)[0]; /*0x44f68d*/
+      v6 = v3 + ((unsigned int *)&Type->ExitCoord)[1]; /*0x44f695*/
+      v7 = ((unsigned int *)&Type->ExitCoord)[2]; /*0x44f697*/
       *v11 = v5; /*0x44f6a5*/
       v11[1] = v6; /*0x44f6a7*/
       v11[2] = v4 + v7; /*0x44f6aa*/
@@ -291,15 +291,15 @@ int BuildingClass::PlayUpgradeAnim(int a2, int a3, int a4, void *a5)
     if ( (unsigned char)a3 ) /*0x45175f*/
     {
       result = a2; /*0x451761*/
-      v6 = &this->Type->BuildingAnim[17 * a2 + 16]; /*0x451772*/
+      v6 = &this->((unsigned char *)&Type->BuildingAnim)[17 * a2 + 16]; /*0x451772*/
     }
     else
     {
       result = a2; /*0x45177b*/
       if ( (unsigned char)a4 ) /*0x451783*/
-        v6 = &this->Type->BuildingAnim[17 * a2 + 20]; /*0x451790*/
+        v6 = &this->((unsigned char *)&Type->BuildingAnim)[17 * a2 + 20]; /*0x451790*/
       else
-        v6 = &this->Type->BuildingAnim[17 * a2 + 12]; /*0x4517a4*/
+        v6 = &this->((unsigned char *)&Type->BuildingAnim)[17 * a2 + 12]; /*0x4517a4*/
     }
     if ( v6 ) /*0x4517ad*/
     {
@@ -749,7 +749,7 @@ bool BuildingClass::IsTiberiumCollectorEligible()
     int BuildingByTiberiumType; // eax
     int v4; // eax
 
-    if ( !IDA_BYTE2(dword_A8B230[374].vtable3) ) /*0x483628*/
+    if ( !IDA_BYTE2(((AbstractClass *)dword_A8B230)[374].vtable3) ) /*0x483628*/
       return 0; /*0x483632*/
     BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->q044); /*0x483639*/
     if ( BuildingByTiberiumType == -1 ) /*0x483641*/
@@ -1261,7 +1261,7 @@ int UnitClass::Mission_Harvest()
   LABEL_9:
         MissionControl = MissionClass_GetMissionControl((void *)this); /*0x41525a*/
         IDA_LOWORD(v8) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41526a*/
-        return v8 + Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2);
+        return v8 + Random_Range((void *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2);
     }
 }
 } // namespace gamemd

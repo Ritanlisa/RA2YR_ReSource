@@ -20,7 +20,7 @@ void Config::SaveObserverMode()
   int v0[9]; // [esp+0h] [ebp-24h] BYREF
 
   ((RawFileClass*)v0)->Construct((int)aRa2mdIni); /*0x5ee1bc*/
-  ((INIClass *)((char *)&dword_8870C0))->SetInt((uint8_t *)aMultiplayer,(char *)(aObservermode), g_MenuStateFlags, 0); /*0x5ee1d8*/
+  INIClass::SetInt(((INIClass *)((char *)&dword_8870C0)), (uint8_t *)aMultiplayer, (char *)(aObservermode), g_MenuStateFlags, 0); /*0x5ee1d8*/
   INIClass::WriteDigest(&dword_8870C0, (int)v0, 0); /*0x5ee1e9*/
   ((RawFileClass *)(v0))->Dtor(); /*0x5ee1f2*/
 

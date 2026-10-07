@@ -846,7 +846,7 @@ int BinkMovie::FreeSurfaceTracker(void *a1_1)
   }
   v6 = (int (***)(unsigned int, int))(&this->BinkMovie_field_0x10)[0]; /*0x6c9b24*/
   if ( v6 ) /*0x6c9b2a*/
-    return (**v6)(v6, 1); /*0x6c9b30*/
+    return (**v6)((unsigned int)(v6), 1); /*0x6c9b30*/
   return result; /*0x6c9b27*/
 
 }

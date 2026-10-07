@@ -156,6 +156,11 @@ public:
     // 0x413A70 (DynamicVector::AddItem) — append with capacity growth
     bool AddItem(T item);
 
+    // 0x49FAE0 (DynamicVector::GetOrGrow) — returns Items[index]; when
+    // index >= Count, grows via SetCapacity(index+10, nullptr) zero-filling
+    // the new slots [Count, index+10), then returns Items[index] (0 on fail).
+    T GetOrGrow(int index);
+
     // 0x45ADD0 (DynamicVector::RemoveItem) — remove by index, shift-down.
     // Guard is the signed test `index >= Count` (matches the binary; this is
     // NOT an unsigned ValidIndex check).

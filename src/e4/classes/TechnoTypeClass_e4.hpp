@@ -203,7 +203,7 @@ struct TechnoTypeClass {
     unsigned int * Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     unsigned int * Constructor_0(int a2);
     unsigned int * LoadBase(char *aP1);
-    void * ReadINI(char * Source, int a3, void *a3_2);
+    void * ReadINI(char * Source, int a3);  // G57w11: 去 a3_2（raw 0x00710AF0 __thiscall this+2 参）
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
     static int HasVoiceResponse(TechnoTypeClass * aP1, int a2);  // G57w10-S raw 0x0070D0D0 (was C2597 interim stub)

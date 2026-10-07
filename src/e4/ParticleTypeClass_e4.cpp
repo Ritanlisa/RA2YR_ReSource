@@ -638,7 +638,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 
   v2 = (int *)((gamemd::ParticleTypeClass *)((int *)a2));
   v3 = a1; /*0x645669*/
-  result = ObjectTypeClass::LoadCleanup((IUnknown *)((ObjectTypeClass *)a1),(gamemd::ObjectTypeClass *)(a2)); /*0x64566f*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (gamemd::ObjectTypeClass *)(a2)); /*0x64566f*/
   if ( result >= 0 ) /*0x645678*/
   {
     if ( v3 ) /*0x645680*/

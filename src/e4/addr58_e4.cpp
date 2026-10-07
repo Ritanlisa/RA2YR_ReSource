@@ -439,7 +439,7 @@ int MarkCliffEdgePassability(int a1)
         if ( *(unsigned short *)v3 == v4 )
         {
           v5 = (unsigned short *)((int)((unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544)));
-          for ( i = *(void *)((CellStruct *)(unsigned short *)v3)->Add( (unsigned int *)(&v29), (unsigned short *)(v5)); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
+          for ( i = *(void *)CellStruct::Add(((CellStruct *)(unsigned short *)v3), (unsigned int *)(&v29), (unsigned short *)(v5)); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
           {
             v7 = (unsigned int)(IDA_SHIWORD(i) << 9);
             v8 = v7 + (int16_t)i; /*0x586c95*/
@@ -474,7 +474,7 @@ int MarkCliffEdgePassability(int a1)
         else
         {
           v13 = (unsigned short *)((int)((unsigned short *)(4 * ((*(unsigned short *)v3 >= v4 ? 6 : 2) & 7) + 9041544)));
-          for ( j = *(void *)((CellStruct *)(unsigned short *)v3)->Add( (unsigned int *)(&v30), (unsigned short *)(v13)); ; j = v25 ) /*0x586d69*/
+          for ( j = *(void *)CellStruct::Add(((CellStruct *)(unsigned short *)v3), (unsigned int *)(&v30), (unsigned short *)(v13)); ; j = v25 ) /*0x586d69*/
           {
             v15 = (unsigned short)j == *(unsigned short *)(v3 + 4); /*0x586d6b*/
             v31 = j; /*0x586d6f*/
@@ -861,12 +861,12 @@ ScenarioClass * * ComputeMapCameraBounds()
     {
       if ( !(uint8_t)((ScenarioClass *)((char *)dword_A8B230))->Is_Waypoint_Valid(i) ) /*0x58b851*/
         break; /*0x58b858*/
-      Waypoint_Location = (int16_t *)((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (unsigned int *)(&k), i); /*0x58b86a*/
+      Waypoint_Location = (int16_t *)ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (unsigned int *)(&k), i); /*0x58b86a*/
       v5 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(Waypoint_Location)); /*0x58b87e*/
       v6 = (*(int (**)(void *))(*(unsigned int *)v5 + 72))( (void *)(v5)); /*0x58b88f*/
       v7 = (int *)(*(int (**)(void *, char *, unsigned int))(*(unsigned int *)v5 + 72))( (void *)(v5), (char *)(v30), *(unsigned int *)(v6 + 4)); /*0x58b89f*/
       IsoCoord::ToScreenOffset(*v7, (int)v29, &v25, &v26); /*0x58b8ab*/
-      v8 = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (unsigned int *)(v28), i); /*0x58b8bc*/
+      v8 = ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (unsigned int *)(v28), i); /*0x58b8bc*/
       v9 = g_MissionQueueFrame.localVariables[162]; /*0x58b8c1*/
       v25 = v25; /*0x58b8c9*/
       *(unsigned int *)&g_MissionQueueFrame.globalVariables[4 * g_MissionQueueFrame.localVariables[162] + 132] = *v8; /*0x58b8d2*/
@@ -910,9 +910,9 @@ v16 = (int *)(*(int (**)(int16_t *, char *, unsigned int))(j->u32_48))( /*0x58b9
     if ( dword_A8B230 ) /*0x58ba1a*/
     {
       v18 = 0; /*0x58ba26*/
-      (&dword_A8B230)[122].abstractFlags = (&g_MissionQueueFrame.localVariables)[162]; /*0x58ba28*/
+      ((AbstractClass *)dword_A8B230)[122].abstractFlags = (&g_MissionQueueFrame.localVariables)[162]; /*0x58ba28*/
       v19 = (gamemd::AbstractClass *)(dword_A8B230); /*0x58ba2e*/
-      if ( (&dword_A8B230)[122].abstractFlags > 0 ) /*0x58ba3c*/
+      if ( ((AbstractClass *)dword_A8B230)[122].abstractFlags > 0 ) /*0x58ba3c*/
       {
         v20 = 4416; /*0x58ba3e*/
         v21 = &g_MissionQueueFrame.waypoints[1470]; /*0x58ba48*/
@@ -936,15 +936,15 @@ v16 = (int *)(*(int (**)(int16_t *, char *, unsigned int))(j->u32_48))( /*0x58b9
           v20 += 8; /*0x58ba9b*/
           *(unsigned int *)((char *)dword_A8B230 + v22 - 4) = *(unsigned int *)&g_MissionQueueFrame.waypoints[v22 + 1302]; /*0x58ba9e*/
           v19 = (gamemd::AbstractClass *)(dword_A8B230); /*0x58baa2*/
-          if ( v18 >= (&dword_A8B230)[122].abstractFlags ) /*0x58baae*/
+          if ( v18 >= ((AbstractClass *)dword_A8B230)[122].abstractFlags ) /*0x58baae*/
             break; /*0x58baae*/
         }
       }
       v19[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bab5*/
-      (&dword_A8B230)[122].vtable2 = (void *)(&g_MissionQueueFrame.briefing)[354]; /*0x58bac7*/
-      (&dword_A8B230)[122].vtable3 = (void *)(&g_MissionQueueFrame.localVariables)[131]; /*0x58bad8*/
+      ((AbstractClass *)dword_A8B230)[122].vtable2 = (void *)(&g_MissionQueueFrame.briefing)[354]; /*0x58bac7*/
+      ((AbstractClass *)dword_A8B230)[122].vtable3 = (void *)(&g_MissionQueueFrame.localVariables)[131]; /*0x58bad8*/
       result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bae4*/
-      (&dword_A8B230)[122].uniqueId = (&g_MissionQueueFrame.localVariables)[147]; /*0x58bae9*/
+      ((AbstractClass *)dword_A8B230)[122].uniqueId = (&g_MissionQueueFrame.localVariables)[147]; /*0x58bae9*/
     }
   }
   return (gamemd::ScenarioClass **)(result); /*0x58baef*/
@@ -1264,7 +1264,7 @@ AbstractClass * * sub_58EF10()
       {
         v14 = *(void (****)(unsigned int, int))(*(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v13) + 4); /*0x58f088*/
         if ( v14 ) /*0x58f08d*/
-          (**v14)(v14, 1); /*0x58f093*/
+          (**v14)((unsigned int)(v14), 1); /*0x58f093*/
         ++v13; /*0x58f09b*/
         *(unsigned int *)(*(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v13 - 4) + 4) = 0; /*0x58f0a0*/
       }

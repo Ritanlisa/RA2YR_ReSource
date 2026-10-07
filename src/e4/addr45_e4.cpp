@@ -791,7 +791,7 @@ int Map_InitCellOffsets()
   unk_89DBAC = *(unsigned int *)((CellStruct *)(&v1))->Set(5, 3);
   unk_89DBB0 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset( (void *)(&stru_89DBB4), 0, 0x24u);
-  ((Array *)((int)&stru_89DBB4))->ForEach( 4, 9, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  Array::ForEach(((Array *)((int)&stru_89DBB4)), 4, 9, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DBD8 = *(unsigned int *)((CellStruct *)(&v1))->Set(-1, -1);
   unk_89DBDC = *(unsigned int *)((CellStruct *)(&v1))->Set(0, -1);
   unk_89DBE0 = *(unsigned int *)((CellStruct *)(&v1))->Set(1, -1);
@@ -816,7 +816,7 @@ int Map_InitCellOffsets()
   unk_89DC2C = *(unsigned int *)((CellStruct *)(&v1))->Set(4, 4);
   unk_89DC30 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset( (void *)(&stru_89DC34), 0, 0x1Cu);
-  ((Array *)((int)&stru_89DC34))->ForEach( 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  Array::ForEach(((Array *)((int)&stru_89DC34)), 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   DataGlobal_0089DC50 = *(unsigned int *)((CellStruct *)(&v1))->Set(0, 4);
   DataGlobal_0089DC54 = *(unsigned int *)((CellStruct *)(&v1))->Set(1, 4);
   unk_89DC58 = *(unsigned int *)((CellStruct *)(&v1))->Set(2, 4);
@@ -835,14 +835,14 @@ int Map_InitCellOffsets()
   unk_89DC8C = *(unsigned int *)((CellStruct *)(&v1))->Set(3, -1);
   unk_89DC90 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset( (void *)(&stru_89DC94), 0, 0x34u);
-  ((Array *)((int)&stru_89DC94))->ForEach( 4, 13, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  Array::ForEach(((Array *)((int)&stru_89DC94)), 4, 13, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DCC8 = *(unsigned int *)((CellStruct *)(&v1))->Set(2, -1);
   unk_89DCCC = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset( (void *)(&stru_89DCD0), 0, 0x70u);
-  ((Array *)((int)&stru_89DCD0))->ForEach( 4, 28, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  Array::ForEach(((Array *)((int)&stru_89DCD0)), 4, 28, (int (*)(int))__0Iostream_init_QAE_XZ_2);
   unk_89DD40 = *(unsigned int *)((CellStruct *)(&v1))->Set(0x7FFF, 0x7FFF);
   memset( (void *)(&stru_89DD44), 0, 0x74u);
-  return ((Array *)((int)&stru_89DD44))->ForEach( 4, 29, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+  return Array::ForEach(((Array *)((int)&stru_89DD44)), 4, 29, (int (*)(int))__0Iostream_init_QAE_XZ_2);
 }
 } // namespace gamemd
 

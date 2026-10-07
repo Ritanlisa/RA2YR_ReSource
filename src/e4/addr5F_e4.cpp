@@ -110,7 +110,7 @@ char HandlePlayerDisconnection(int a1, int a2)
   if ( dword_A8B54C != 1 ) /*0x5f018f*/
   {
     result = (char)dword_A8022C; /*0x5f0195*/
-    v3 = *(unsigned int *)(&dword_A8022C)[4 * a1]; /*0x5f019a*/
+    v3 = *(unsigned int *)((unsigned int *)dword_A8022C)[4 * a1]; /*0x5f019a*/
     if ( v3 ) /*0x5f019f*/
     {
       result = v3->currentPlayer; /*0x5f01a5*/

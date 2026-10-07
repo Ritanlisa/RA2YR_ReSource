@@ -56,7 +56,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
     if ( this->nextObject ) /*0x431bc8*/
       return !a2 && !a3; /*0x431bdb*/
     if ( (*((unsigned __int8 (**)(ObjectClass *, unsigned int))this->AbstractClass + 5))(this, 0) ) /*0x431bef*/
-      this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->AbstractClass + 11))(this); /*0x431bfd*/
+      this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->AbstractClass + 11))((ObjectClass *)(this)); /*0x431bfd*/
     else
       this->ambientSoundController[3] = 0; /*0x431c02*/
     v5 = a2; /*0x431c05*/
@@ -106,7 +106,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       attachedTag = (TagClass *)v6; /*0x431c9f*/
       if ( v6 > (int)this->attachedTag ) /*0x431ca3*/
         attachedTag = (TagClass *)(this->attachedTag); /*0x431ca5*/
-      v8 = (*((unsigned __int8 (**)(ObjectClass *))this->AbstractClass + 6))(this) == 0; /*0x431cb0*/
+      v8 = (*((unsigned __int8 (**)(ObjectClass *))this->AbstractClass + 6))((ObjectClass *)(this)) == 0; /*0x431cb0*/
       vtable0 = (int (**)(ObjectClass *, int))this->AbstractClass; /*0x431cb2*/
       if ( v8 ) /*0x431cb6*/
       {
@@ -143,7 +143,7 @@ if ( (TagClass *)(*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, ObjectClas
         (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
       if ( v11 ) /*0x431d41*/
       {
-        (*((void (**)(ObjectClass *))this->AbstractClass + 13))(this); /*0x431d47*/
+        (*((void (**)(ObjectClass *))this->AbstractClass + 13))((ObjectClass *)(this)); /*0x431d47*/
         IDA_HIBYTE(this->occupant) = 1; /*0x431d4a*/
         IDA_BYTE1(this->owningHouseIndex) = 1; /*0x431d4e*/
         return 1; /*0x431d58*/
@@ -605,8 +605,8 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     return (MouseClass * *)result; /*0x437ab8*/
   v71 = v62 - *a4; /*0x437ad6*/
   v48 = v63 - a4[1]; /*0x437ae7*/
-  v41 = ((CellStruct *)(&v58))->Copy( v53); /*0x437afd*/
-  v21 = (Coord2D *)((CellStruct *)(a1))->Copy( &v55); /*0x437b02*/
+  v41 = CellStruct::Copy(((CellStruct *)(&v58)), v53); /*0x437afd*/
+  v21 = (Coord2D *)CellStruct::Copy(((CellStruct *)(a1)), &v55); /*0x437b02*/
   v22 = ((Coord2D *)(v21))->Add( (unsigned int *)(v54), (unsigned int *)(v41)); /*0x437b09*/
   v68 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP0 + 92))((int)aP0, *v22, v22[1]); /*0x437b28*/
   if ( !v68 ) /*0x437b2f*/
@@ -782,7 +782,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
       goto LABEL_5; /*0x437f78*/
     v2 = OleRun((LPUNKNOWN)ppv); /*0x437f85*/
     if ( v2 >= 0 ) /*0x437f89*/
-      v2 = (**(int (__stdcall ***)(LPVOID, void *, ObjectClass *))ppv)(ppv, &unk_818C08, this); /*0x437f9a*/
+      v2 = (**(int (__stdcall ***)(LPVOID, void *, ObjectClass *))ppv)(ppv, &unk_818C08, (ObjectClass *)(this)); /*0x437f9a*/
     (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x437fa3*/
     if ( v2 < 0 ) /*0x437fa8*/
     {

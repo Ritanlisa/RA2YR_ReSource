@@ -991,7 +991,7 @@ unsigned int * E4Recv_6223C0::DestroyDialog(void *a1_1)
         v3 = (void (***)(unsigned int, int))result[5]; /*0x622415*/
         if ( v3 ) /*0x62241a*/
         {
-          (**v3)(v3, 1); /*0x622420*/
+          (**v3)((unsigned int)(v3), 1); /*0x622420*/
           v2[4] = 0; /*0x622422*/
           return (unsigned int *)--g_GameScreenState; /*0x62242e*/
         }

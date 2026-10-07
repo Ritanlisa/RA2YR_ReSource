@@ -103,7 +103,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       {
         v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76a0a7*/
         if ( v11 ) /*0x76a0ac*/
-          (**v11)(v11, 3); /*0x76a0b2*/
+          (**v11)((unsigned int)(v11), 3); /*0x76a0b2*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x76a0b4*/
       }
       m_8 = a2; /*0x76a0bb*/
@@ -203,7 +203,7 @@ int MSFrameAnim::initAnimation()
   this->m_10 = 0; /*0x769c59*/
   if ( v2 && BYTE1(this->m_C) ) /*0x769c60*/
   {
-    result = (**v2)(v2, 3); /*0x769c6d*/
+    result = (**v2)((unsigned int)(v2), 3); /*0x769c6d*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x769c6f*/
   }
   BYTE1(this->m_C) = 0; /*0x769c72*/
@@ -378,7 +378,7 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
   if ( v3 && BYTE1(this->m_C) ) /*0x76a690*/
   {
-    (**v3)(v3, 3); /*0x76a69f*/
+    (**v3)((unsigned int)(v3), 3); /*0x76a69f*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x76a6a1*/
   }
   BYTE1(this->m_C) = 0; /*0x76a6ac*/

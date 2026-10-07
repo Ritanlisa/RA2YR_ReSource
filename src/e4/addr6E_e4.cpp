@@ -95,7 +95,7 @@ namespace gamemd {
 int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
 
-  LOBYTE((&dword_A8B230)[374].uniqueId) = this->isAliveFlag; /*0x6e029c*/
+  LOBYTE(((AbstractClass *)dword_A8B230)[374].uniqueId) = this->isAliveFlag; /*0x6e029c*/
   return 1; /*0x6e02a4*/
 
 }
@@ -253,7 +253,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = (unsigned int)(unsigned int *)(*(unsigned int *)((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (unsigned int *)(&v7), *((char *)this + 17))); /*0x6e339b*/
+  v7 = (unsigned int)(unsigned int *)(*(unsigned int *)ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (unsigned int *)(&v7), *((char *)this + 17))); /*0x6e339b*/
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/

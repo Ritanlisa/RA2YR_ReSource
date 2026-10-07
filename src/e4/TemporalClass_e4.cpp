@@ -420,7 +420,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x71a679*/
     {
-      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x71a682*/
+      AbstractClass::InitVtables(((AbstractClass *)aP0), (int)&aP1); /*0x71a682*/
       aP0->vtable1 = (void *)((unsigned int)(&vt_TemporalClass)); /*0x71a687*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a68d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a694*/

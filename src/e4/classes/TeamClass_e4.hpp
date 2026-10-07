@@ -112,7 +112,7 @@ struct TeamClass {
     int StubReturn34();
     int UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoClass * aP3);
     int UpdateReadinessState();
-    int Update_0(int aP1, int aP2, int aP3, char aP4, int aP5);
+    static int Update_0(TeamClass *aP0, int aP1, int aP2, int aP3, char aP4, int aP5);  // G57w11: +static+receiver raw 0x6E53A0 __thiscall(this,+5)
     int ddtor(int a1, unsigned int * a2);
     unsigned int * FindScriptAction(unsigned int * a2);
     unsigned int * GetNextScriptAction(unsigned int * a2);

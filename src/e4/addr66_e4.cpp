@@ -696,14 +696,14 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
       bool v19 = objectTypeFlags && ((VeterancyStruct *)(float *)(objectTypeFlags + 336))->IsElite();
       v21 = (IUnknown *)(a1 + 48);
       *(unsigned char *)(a1 + 77) = v19;
-      v22 = *(IUnknown **)&(&HouseClass_Player)[45112];
+      v22 = *(IUnknown **)&((unsigned int *)HouseClass_Player)[45112];
       edx34 = *(unsigned int *)(a1 + 48);
       int v23 = *(unsigned int *)(a1 + 56);
       if ( edx34 == -1 )
         goto LABEL_37;
-      if ( *(unsigned int *)&(&HouseClass_Player)[45112] - edx34 >= v23 )
+      if ( *(unsigned int *)&((unsigned int *)HouseClass_Player)[45112] - edx34 >= v23 )
         goto LABEL_38;
-      v23 -= *(unsigned int *)&(&HouseClass_Player)[45112] - edx34;
+      v23 -= *(unsigned int *)&((unsigned int *)HouseClass_Player)[45112] - edx34;
 LABEL_37:
       if ( !v23 )
       {
@@ -715,10 +715,10 @@ LABEL_38:
           v27 = (AnimClass *)((AnimTypeClass *)(*(void **)&(&stru_830620)[37772]))->FindIndex();
           ((AnimClass*)(void **)v25)->ctor( *(CoordStruct **)(*(unsigned int *)&(&stru_89E138)[90140] + 4 * (unsigned int)v27), (int *)(&v131), (CoordStruct *)2, (int)((CoordStruct *)1), (void *)0x600, (void *)0xFFFFFFF6, 0);
         }
-        ((gamemd::VeterancyStruct*)v21)->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
+        ((gamemd::VeterancyStruct*)v21)->field_0 = *(unsigned int *)&((unsigned int *)HouseClass_Player)[45112];
         *(unsigned int *)(a1 + 52) = v126;
         *(unsigned int *)(a1 + 56) = 24;
-        v22 = *(IUnknown **)&(&HouseClass_Player)[45112];
+        v22 = *(IUnknown **)&((unsigned int *)HouseClass_Player)[45112];
       }
       int v26 = *(unsigned int *)(a1 + 8) + 156;
       IDA_LODWORD(var74_4) = *(unsigned int *)v26;
@@ -769,7 +769,7 @@ v32 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int 
           ((GadgetGrid *)(&(&stru_87C374)[46356]))->InsertItem( (int)(*(ObjectClass **)(a1 + 8)));
         }
         edx50 = v126;
-        ((gamemd::VeterancyStruct*)v21)->field_0 = *(unsigned int *)&(&HouseClass_Player)[45112];
+        ((gamemd::VeterancyStruct*)v21)->field_0 = *(unsigned int *)&((unsigned int *)HouseClass_Player)[45112];
         *(unsigned int *)(a1 + 52) = edx50;
         *(unsigned int *)(a1 + 56) = 0;
         *(unsigned int *)(a1 + 60) = 3;
@@ -812,7 +812,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   Ticks = TimerGetTicks(); /*0x663dc6*/
   v19 = 0; /*0x663dca*/
   ((Waypoint*)&v23)->InitInvalid(); /*0x663dd2*/
-  Debug::Log(); /*0x663ddc*/
+  Debug::Log("Starting packet router process\n"); /*0x663ddc G57w11: IDA push seq @ 0x663ddc*/
   GetStartupInfoA((LPSTARTUPINFOA)&v23.__pad_0[28]); /*0x663de9*/
   if ( !(*(int (**)(unsigned int *))(*dword_887628 + 72))( (unsigned int *)(dword_887628)) ) /*0x663df7*/
     return 0; /*0x663e07*/
@@ -852,7 +852,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     dword_A8DBBC = 0; /*0x663edc*/
 LABEL_10:
     ((Network *)((Network *)&qword_A8DBB0))->FormatAddress(0); /*0x663fad*/
-    Debug::Log(); /*0x663fbf*/
+    Debug::Log("Session.PacketRouterAddressTranslate = %s\n"); /*0x663fbf G57w11: IDA push seq @ 0x663fbf +1 reg-vararg(s) omitted*/
   }
 LABEL_11:
   if ( CreateProcessA( /*0x663fed*/
@@ -868,7 +868,7 @@ LABEL_11:
          (LPPROCESS_INFORMATION)&v23.__pad_0[12]) )
   {
     *((unsigned int *)this + 7) = *(unsigned int *)&v23.__pad_0[12]; /*0x664029*/
-    Debug::Log(); /*0x66402c*/
+    Debug::Log("hRouterProcess = %d\n"); /*0x66402c G57w11: IDA push seq @ 0x66402c +1 reg-vararg(s) omitted*/
     SetFocus(g_hWnd); /*0x66403b*/
     v9 = 1800; /*0x66404e*/
     Ticks = TimerGetTicks(); /*0x664053*/
@@ -890,7 +890,7 @@ LABEL_11:
       if ( ((gamemd::Network*)&unk_A8E9C0)->SendPacketThunk2( (int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
       {
         v10 = 1; /*0x6640be*/
-        Debug::Log(); /*0x6640c3*/
+        Debug::Log("Received TALK_HELLO from router\n"); /*0x6640c3 G57w11: IDA push seq @ 0x6640c3*/
         *((unsigned int *)this + 24) = 1; /*0x6640cb*/
         return v10 != 0; /*0x6640cb*/
       }
@@ -901,7 +901,7 @@ LABEL_11:
   else
   {
     GetLastError(); /*0x663ffa*/
-    Debug::Log(); /*0x664006*/
+    Debug::Log("CreateProcess failed with error %d, %s\n"); /*0x664006 G57w11: IDA push seq @ 0x664006 +1 reg-vararg(s) omitted*/
     return 0; /*0x664012*/
   }
 
@@ -918,7 +918,7 @@ LABEL_11:
   {
     v3[0] = 6; /*0x664780*/
     v3[1] = a2; /*0x664785*/
-    Debug::Log(); /*0x664789*/
+    Debug::Log("Sending TALK_PORT_BLITZ to router\n"); /*0x664789 G57w11: IDA push seq @ 0x664789*/
     return Network::SendPacket(&unk_A8E9C0.Socket, (int)v3, 338, 1u); /*0x6647a2*/
   }
   return result; /*0x66476f*/

@@ -448,7 +448,7 @@ AbstractClass * * sub_68C050()
       {
         while ( 1 ) /*0x68c12f*/
         {
-          v7 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, v17 - 1); /*0x68c12f*/
+          v7 = Random::Range((Random *)((unsigned int *)g_ScenarioClass_Instance + 134), 0, v17 - 1); /*0x68c12f*/
           if ( v7 < v17 ) /*0x68c13a*/
           {
             v8 = v7; /*0x68c13d*/
@@ -631,7 +631,7 @@ int sub_5C98A0()
       if ( !*(unsigned char *)(v2 + 501) ) /*0x5c99fb*/
       {
         v16 = ((unsigned int *)(dword_A8D25C))[v4]; /*0x5c9a05*/
-        ((unsigned int *)(dword_A8D25C))[v4] = v16 + v16 / 2 + Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, v16 / 2, v16); /*0x5c9a2a*/
+        ((unsigned int *)(dword_A8D25C))[v4] = v16 + v16 / 2 + Random::Range((Random *)((unsigned int *)g_ScenarioClass_Instance + 134), v16 / 2, v16); /*0x5c9a2a*/
       }
             Debug::Log("%hs: %s\n Scheme: %d\n Lost = %d\n Kills = %d\n Built = %d\n Score = %d\n") /*G57c1: IDA 0x5c9a6e push offset aHsSSchemeDLost*/;
       result = i; /*0x5c9a73*/
@@ -1591,7 +1591,7 @@ LABEL_14:
     {
       v12 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x769f03*/
       if ( v12 ) /*0x769f08*/
-        (**v12)(v12, 3); /*0x769f0e*/
+        (**v12)((unsigned int)(v12), 3); /*0x769f0e*/
       *(unsigned int *)&this->m_1[3] = 0; /*0x769f10*/
     }
     m_8 = a2; /*0x769f17*/
@@ -2560,7 +2560,7 @@ int Map_WorldDominationTour_20::ddtor(void *a1_1)
   v2 = *(int (****)(unsigned int, int))&this->m_1[3]; /*0x769f56*/
   if ( v2 && BYTE1(this->m_C) ) /*0x769f5d*/
   {
-    result = (**v2)(v2, 3); /*0x769f6a*/
+    result = (**v2)((unsigned int)(v2), 3); /*0x769f6a*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x769f6c*/
   }
   BYTE1(this->m_C) = 0; /*0x769f6f*/

@@ -391,7 +391,7 @@ int ComStreamClass::Seek(int a2, int a3, int a4, int a1, int a5)
   HWND DlgItem; // eax
   int v8; // [esp+10h] [ebp+10h]
 
-  Debug::Log(); /*0x7a4075*/
+  Debug::Log("OnAgeCheck\n"); /*0x7a4075 G57w11: IDA push seq @ 0x7a4075*/
   dword_B77DF4 = (unsigned int)(a3); /*0x7a4083*/
   if ( !a3 ) /*0x7a4088*/
   {
@@ -433,7 +433,7 @@ int ComStreamClass::ddtor(int a2, int a3, unsigned int a1, int a4, int a5)
       DisplayRankingsWOL(0); /*0x7a418e*/
     return 0; /*0x7a418e*/
   }
-  Debug::Log(); /*0x7a4146*/
+  Debug::Log("Received Ping\n"); /*0x7a4146 G57w11: IDA push seq @ 0x7a4146*/
   if ( ++dword_B736F4 < g_WOL_LoginPool ) /*0x7a4161*/
     return 0; /*0x7a4193*/
   if ( g_WOL_IdleHandler == 4 || g_WOL_IdleHandler == 5 ) /*0x7a4170*/

@@ -149,23 +149,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v64 = (void *)((unsigned int)(a3)- 14); /*0x73c756*/
     v24 = v15->nextArrayIndex; /*0x73c762*/
     v25 = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))((unsigned char *)a1, 0); /*0x73c772*/
-    DrawToSurfaceSHP( /*0x73c7a7*/
-      g_DSurface_Hidden_2,
-      g_FileSystem_THEATER_PAL,
-      (gamemd::ConvertClass *)v15,
-      v16 + v24 / 2,
-      &v64,
-      &a5,
-      11777,
-      0,
-      v25 - 2,
-      1000,
-      0,
-      0,
-      0,
-      0,
-      0,
-      v51);
+    DrawToSurfaceSHP(/*0x73c7a7*/
+      g_DSurface_Hidden_2, g_FileSystem_THEATER_PAL, (gamemd::ConvertClass *)v15, v16 + v24 / 2, (ConvertClass *)(&v64), (ConvertClass *)(&a5), (ConvertClass *)(11777), 0, v25 - 2, 1000, 0, 0, 0, 0, 0, v51);
     v61 = (void *)((unsigned int)((void *)((int)((void *)(g_DSurface_Hidden_2)))));
     g_DSurface_Hidden_2 = (int)((void *)(dword_B1D13C));
     v63 = (void *)(128);

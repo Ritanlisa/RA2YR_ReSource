@@ -75,7 +75,7 @@ int sub_6863E0(void * a1, void * a2)
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x6864ca*/
   Mission_e4::SetAndCall( (int)((MouseClass *)&stru_87F5F0.__pad_58[416]), 0, 0); /*0x6864d8*/
   ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6864e3*/
-  ScenarioClass::LoadScenarioAndStart((char *)&((unsigned int *)(dword_A8B230))[130].abstractFlags, 0, a2, (&dword_A8B230)[375].uniqueId); /*0x6864fc*/
+  ScenarioClass::LoadScenarioAndStart((char *)&((unsigned int *)(dword_A8B230))[130].abstractFlags, 0, a2, ((AbstractClass *)dword_A8B230)[375].uniqueId); /*0x6864fc*/
   ((GameResult*)(GameResult *)&stru_8A38E0)->CalcScore(); /*0x686506*/
   while ( 1 ) /*0x68650f*/
   {

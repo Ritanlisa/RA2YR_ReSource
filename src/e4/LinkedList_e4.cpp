@@ -236,7 +236,7 @@ void * LinkedList_flat::MoveNode(void * a2)
 
   if ( a2 != this ) /*0x55660a*/
   {
-    (*(void (**)(LinkedList *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x55660e*/
+    (*(void (**)(LinkedList *))(*(unsigned int *)this->__pad_0 + 36))((LinkedList *)(this)); /*0x55660e*/
     (*(void ((gamemd::LinkedList *)(**))(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))( this, (void *)(a2)); /*0x556616*/
   }
   return (void *)this; /*0x55661b*/
@@ -291,7 +291,7 @@ unsigned int * LinkedList_flat::Attach(int a2)
 
   LinkClass *v3; // eax
 
-  (*(void (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566d5*/
+  (*(void (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))((LinkClass *)(this)); /*0x5566d5*/
   v3 = (LinkClass *)(*(int (**)(int))(*(unsigned int *)&a2->q_60))(a2);  /*0x5566de*/
   v3->m_Prev = (gamemd::LinkClass *)(this); /*0x5566e1*/
   this->m_Next = (unsigned int)(v3); /*0x5566e4*/

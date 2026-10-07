@@ -40,10 +40,10 @@ void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
       v8 = *a1; /*0x7e0040*/
       a1 = (int *)((char *)a1 + 2); /*0x7e0042*/
       v9 = __ROR4__(v8, 8); /*0x7e004f*/
-      IDA_LOBYTE(v9) = byte_A8F91C[(uint16_t)v8]; /*0x7e0052*/
+      IDA_LOBYTE(v9) = ((unsigned char *)&byte_A8F91C)[(uint16_t)v8]; /*0x7e0052*/
       IDA_BYTE1(v9) = IDA_BYTE1(v8); /*0x7e0058*/
       v10 = __ROR4__(v9, 8); /*0x7e005f*/
-      IDA_BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
+      IDA_BYTE1(v10) = ((unsigned char *)&byte_A8F91C)[(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
       *v7++ = __ROR4__(v10, 16); /*0x7e006e*/
       --v6; /*0x7e0073*/
     }
@@ -52,7 +52,7 @@ void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
     *(unsigned char *)v7 = *(unsigned short *)a1; /*0x7e007b*/
     v12 = (unsigned char *)((char *)v7 + 1); /*0x7e007d*/
     a1 = (int *)((char *)a1 + 2); /*0x7e007e*/
-    *v12++ = byte_A8F91C[v11]; /*0x7e0087*/
+    *v12++ = ((unsigned char *)&byte_A8F91C)[v11]; /*0x7e0087*/
     *v12 = IDA_HIBYTE(v11); /*0x7e008a*/
     v12[1] = 0; /*0x7e008d*/
     a2 = (unsigned int *)((char *)a2 + a5); /*0x7e0093*/
@@ -88,10 +88,10 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
       v8 = *a1; /*0x7e00e0*/
       a1 = (int *)((char *)a1 + 2); /*0x7e00e2*/
       v9 = __ROR4__(v8, 8); /*0x7e00ef*/
-      IDA_LOBYTE(v9) = byte_A8F91C[(uint16_t)v8]; /*0x7e00f2*/
+      IDA_LOBYTE(v9) = ((unsigned char *)&byte_A8F91C)[(uint16_t)v8]; /*0x7e00f2*/
       IDA_BYTE1(v9) = IDA_BYTE1(v8); /*0x7e00f8*/
       v10 = __ROR4__(v9, 8); /*0x7e00ff*/
-      IDA_BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
+      IDA_BYTE1(v10) = ((unsigned char *)&byte_A8F91C)[(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
       v11 = __ROR4__(v10, 16); /*0x7e010b*/
       *v7 = v11; /*0x7e010e*/
       *v6 = v11; /*0x7e0110*/
@@ -105,7 +105,7 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
     *(unsigned char *)v6 = v12; /*0x7e0124*/
     v13 = (unsigned char *)((char *)v7 + 1); /*0x7e0126*/
     v14 = (unsigned char *)((char *)v6 + 1); /*0x7e0127*/
-    IDA_LOBYTE(v12) = byte_A8F91C[v12]; /*0x7e012b*/
+    IDA_LOBYTE(v12) = ((unsigned char *)&byte_A8F91C)[v12]; /*0x7e012b*/
     *v13 = v12; /*0x7e0131*/
     *v14 = v12; /*0x7e0133*/
     ++v13; /*0x7e0135*/
@@ -141,10 +141,10 @@ void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
     v6 = *a1; /*0x7e0182*/
     a1 = (int *)((char *)a1 + 2); /*0x7e0184*/
     v7 = __ROR4__(v6, 8); /*0x7e0191*/
-    IDA_LOBYTE(v7) = byte_A8F91C[(uint16_t)v6]; /*0x7e0194*/
+    IDA_LOBYTE(v7) = ((unsigned char *)&byte_A8F91C)[(uint16_t)v6]; /*0x7e0194*/
     IDA_BYTE1(v7) = IDA_BYTE1(v6); /*0x7e019a*/
     v8 = __ROR4__(v7, 8); /*0x7e01a1*/
-    IDA_BYTE1(v8) = byte_A8F91C[(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
+    IDA_BYTE1(v8) = ((unsigned char *)&byte_A8F91C)[(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
     *a2++ = __ROR4__(v8, 16); /*0x7e01b0*/
     --v3; /*0x7e01b5*/
   }
@@ -152,7 +152,7 @@ void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
   v9 = *(unsigned short *)a1; /*0x7e01ba*/
   *(unsigned char *)a2 = *(unsigned short *)a1; /*0x7e01bd*/
   v10 = (unsigned char *)((char *)a2 + 1); /*0x7e01bf*/
-  *v10++ = byte_A8F91C[v9]; /*0x7e01c6*/
+  *v10++ = ((unsigned char *)&byte_A8F91C)[v9]; /*0x7e01c6*/
   *v10 = IDA_HIBYTE(v9); /*0x7e01c9*/
   v10[1] = 0; /*0x7e01cc*/
 }
@@ -173,7 +173,7 @@ void  sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned char * a3, int
     IDA_BYTE1(v7) = *a2; /*0x7e01e8*/
     ++a1; /*0x7e01ea*/
     ++a2; /*0x7e01eb*/
-    *a3++ = byte_A8F91C[v7]; /*0x7e01f2*/
+    *a3++ = ((unsigned char *)&byte_A8F91C)[v7]; /*0x7e01f2*/
     --v8; /*0x7e01f5*/
   }
   while ( v8 ); /*0x7e01f6*/

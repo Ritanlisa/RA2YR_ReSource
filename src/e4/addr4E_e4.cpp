@@ -1596,7 +1596,7 @@ char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
     {
       v12 = 1699; /*0x4e5854*/
     }
-    if ( ((&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4) /*0x4e58dc*/
+    if ( (&dword_A8B238)[0] == 3 || (&dword_A8B238)[0] == 4) /*0x4e58dc*/
       && ((v13 = *(&dword_A8DA90 + i), v13 == g_Lobby_MaxPlayers) || *(unsigned int *)(v13 + 107) == -1) )
     {
       result = SetupComboBoxRandomAlliance( (HWND)(hDlg), v12); /*0x4e58e9*/
@@ -4486,10 +4486,10 @@ int sub_4E7D10()
 namespace gamemd {
 int unknown_libname_13()
 {
-  (&stru_A8E7B0)[0 = (int)((void*)&RandomStraw_vftable); /*0x66170d*/
-  (&stru_A8E7B0)[3 = 0; /*0x661713*/
-  (&stru_A8E7B0)[4 = 0; /*0x661716*/
-  memset(&(&stru_A8E7B0)[5, 0, 0x100u); /*0x661719*/
+  (&stru_A8E7B0)[0 ]= (int)((void*)&RandomStraw_vftable); /*0x66170d*/
+  (&stru_A8E7B0)[3 ]= 0; /*0x661713*/
+  (&stru_A8E7B0)[4 ]= 0; /*0x661716*/
+  memset(&(&stru_A8E7B0)[5], 0, 0x100u); /*0x661719*/
   ((Straw *)(stru_A8E7B0))->Dtor(); /*0x66171d*/
 }
 } // namespace gamemd
@@ -4567,7 +4567,7 @@ int unknown_libname_15()
   dword_A8EB64 = 1; /*0x5fa360*/
   *(unsigned int *)unk_A8EB6C = 0; /*0x5fa363*/
   dword_A8EB70 = 3; /*0x5fa366*/
-  unk_A8EB74[0] = 1; /*0x5fa36d*/
+  (&unk_A8EB74)[0] = 1; /*0x5fa36d*/
   dword_A8EB78 = 2; /*0x5fa370*/
   byte_A8EB7C = 1; /*0x5fa377*/
   unk_A8EB7D = 1; /*0x5fa37a*/
@@ -4599,7 +4599,7 @@ int unknown_libname_15()
   dword_A8EBB4 = 0; /*0x5fa40e*/
   unk_A8EC10 = 81; /*0x5fa411*/
   unk_A8EC14 = 81; /*0x5fa417*/
-  unk_A8EBB8[0] = 0; /*0x5fa41d*/
+  (&unk_A8EBB8)[0] = 0; /*0x5fa41d*/
   return dword_A8EB60; /*0x5fa421*/
 }
 } // namespace gamemd

@@ -85,7 +85,7 @@ Coord * * int CollectWOLConnectionTokens()
   unsigned char v17[108]; // [esp+18h] [ebp-6Ch] BYREF
 
   memset( (void *)(v17), 0, sizeof(v17)); /*0x7a0440*/
-  Debug::Log(); /*0x7a044d*/
+  Debug::Log("User list is %d long, adding to ping request queue\n"); /*0x7a044d G57w11: IDA push seq @ 0x7a044d +1 reg-vararg(s) omitted*/
   result = g_WOL_UserList.owningHouseIndex; /*0x7a0452*/
   v2 = 0; /*0x7a045a*/
   *(unsigned int *)&v15.m_3[1] = 0; /*0x7a045e*/
@@ -100,13 +100,13 @@ Coord * * int CollectWOLConnectionTokens()
       if ( (v17[0] & 1) != 0 /*0x7a04ba*/
         || (v4 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(), !_strcmpi(&v17[36], v4)) )
       {
-        Debug::Log(); /*0x7a049d*/
+        Debug::Log("%s is channel operator, no ping request\n"); /*0x7a049d G57w11: IDA push seq @ 0x7a049d +1 reg-vararg(s) omitted*/
       }
       else
       {
         ((String *)(&v15))->Assign( (const char *)(&v17[36])); /*0x7a04e6*/
         ((String *)(&v15))->GetOrEmpty(); /*0x7a04ef*/
-        Debug::Log(); /*0x7a04fa*/
+        Debug::Log("Adding %s to ping request queue\n"); /*0x7a04fa G57w11: IDA push seq @ 0x7a04fa +1 reg-vararg(s) omitted*/
         vtable3 = (int)((char *)&stru_B76AC4); /*0x7a04ff*/
         v6 = (int)((char *)&stru_B76AC4); /*0x7a0507*/
         v14 = (void *)(((char *)&stru_B76AC4)); /*0x7a050b*/
@@ -1590,7 +1590,7 @@ AbstractClass * * sub_7AF970(int a2)
   if ( v8 ) /*0x7afa91*/
     (*(void (**)(unsigned int *, int))*v8)( (unsigned int *)(v8), 1); /*0x7afa97*/
   if ( v9 ) /*0x7afa9f*/
-    (**v9)(v9, 1); /*0x7afaa5*/
+    (**v9)((unsigned int)(v9), 1); /*0x7afaa5*/
   if ( v10 ) /*0x7afaad*/
     (*(void (**)(unsigned int *, int))*v10)( (unsigned int *)(v10), 1); /*0x7afab3*/
   ((OwnerDrawControl *)(&v6))->InitVtable(); /*0x7afab9*/
@@ -1815,7 +1815,7 @@ int sub_7A0D10()
         }
         S_addr = v9[6].S_un.S_addr; /*0x7a0d6f*/
         ntoainet(v9[6]); /*0x7a0d71*/
-        Debug::Log(); /*0x7a0d81*/
+        Debug::Log("Requesting ping for %s at %s\n"); /*0x7a0d81 G57w11: IDA push seq @ 0x7a0d81 +2 reg-vararg(s) omitted*/
         v8 = *(unsigned int *)g_UIPointerTable; /*0x7a0d9c*/
         v5 = (char *)ntoainet((struct in_addr)S_addr); /*0x7a0da0*/
         result = (*(int (**)(LPVOID, char *, int, int *))(v8 + 24))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(g_UIPointerTable)))), (char *)(v5), 1000, (int *)(&v7)); /*0x7a0db1*/
@@ -1838,7 +1838,7 @@ void INIClass::SetGameOptionsPing(const char * a1, int a2)
   char *v5; // ecx
   HWND GameUI; // ecx
 
-  Debug::Log(); /*0x7a0eaf*/
+  Debug::Log("Got ping from gameoptions.  name = %s, ping = %d\n"); /*0x7a0eaf G57w11: IDA push seq @ 0x7a0eaf +6 reg-vararg(s) omitted*/
   for ( i = 0; i < 8; ++i ) /*0x7a0eb7*/
   {
     v5 = (char *)*(&dword_A8DA90 + i); /*0x7a0eb9*/

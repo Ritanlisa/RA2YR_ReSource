@@ -1110,15 +1110,15 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
     }
     v9 = v25[0]; /*0x7bc137*/
   }
-  v23 = ((CellStruct *)(aP2))->Copy( v26); /*0x7bc14f*/
-  v16 = (Coord2D *)((CellStruct *)v10)->Copy( v27); /*0x7bc154*/
+  v23 = CellStruct::Copy(((CellStruct *)(aP2)), v26); /*0x7bc14f*/
+  v16 = (Coord2D *)CellStruct::Copy(((CellStruct *)v10), v27); /*0x7bc154*/
   v17 = ((Coord2D *)(v16))->Add( (unsigned int *)(v25), (unsigned int *)(v23)); /*0x7bc15b*/
   v18 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v9 + 92))(v9, *v17, v17[1]); /*0x7bc173*/
   *a7 = v18; /*0x7bc17c*/
   if ( !v18 ) /*0x7bc17e*/
     return 0; /*0x7bc17e*/
-  v24 = ((CellStruct *)(aP5))->Copy( v27); /*0x7bc190*/
-  v19 = (Coord2D *)((CellStruct *)(a4))->Copy( v25); /*0x7bc19b*/
+  v24 = CellStruct::Copy(((CellStruct *)(aP5)), v27); /*0x7bc190*/
+  v19 = (Coord2D *)CellStruct::Copy(((CellStruct *)(a4)), v25); /*0x7bc19b*/
   v20 = ((Coord2D *)(v19))->Add( (unsigned int *)(v26), (unsigned int *)(v24)); /*0x7bc1a2*/
   v21 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)arg4 + 92))(arg4, *v20, v20[1]); /*0x7bc1bc*/
   *a8 = v21; /*0x7bc1c5*/
@@ -3132,7 +3132,7 @@ DWORD sub_7B8610(unsigned int * lpThreadParameter)
     do /*0x7b8695*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b8650*/
-        Debug::Log(); /*0x7b8661*/
+        Debug::Log("Warning: Probable deadlock occurred on MouseMutex. %s, line %d\n", "D:\\ra2mdpost\\wwmous.cpp", 0x4fd); /*0x7b8661 G57w11: IDA push seq @ 0x7b8661*/
       if ( dword_B78164 ) /*0x7b8671*/
         WWMouseClass::UpdateCursorMovement((LONG *)dword_B78164); /*0x7b8673*/
       ReleaseMutex(hMutex); /*0x7b867f*/

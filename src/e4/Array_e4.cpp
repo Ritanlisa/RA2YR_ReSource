@@ -296,7 +296,7 @@ AbstractClass * * Array::InsertElement(const void *a1, int aP2)
 }
 // 0x4068F0
 namespace gamemd {
-int Array::ForEach(int a1, int a2, int a3, int (* a4)(int))
+int Array::ForEach(Array *a1, int a2, int a3, int (* a4)(int))  // G57w11: def 同步 hpp static（raw 0x4068F0 receiver-first）
 {
 
   int result; // eax
@@ -309,7 +309,7 @@ int Array::ForEach(int a1, int a2, int a3, int (* a4)(int))
     do /*0x406911*/
     {
       result = (int)(a4((int)a1));
-      a1 = (int)((int *)((char *)a1 + a2)); /*0x40690e*/
+      a1 = (Array *)((int *)((char *)a1 + a2)); /*0x40690e*/
       --v6; /*0x406910*/
     }
     while ( v6 ); /*0x406911*/

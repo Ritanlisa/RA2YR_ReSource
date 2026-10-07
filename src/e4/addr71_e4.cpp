@@ -198,17 +198,17 @@ int InitializeCellSpreadTables()
   dword_B0EDC0 = 0; /*0x71d5a2*/
   dword_B0EDC4 = *(unsigned int *)((CellStruct *)(&v4))->Set(0x7FFF, 0x7FFF); /*0x71d5b3*/
   memset( (void *)(&unk_B0EDC8), 0, 0x20u); /*0x71d5c9*/
-  ((Array *)((int)&unk_B0EDC8))->ForEach( 4, 8, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d5d0*/
+  Array::ForEach(((Array *)((int)&unk_B0EDC8)), 4, 8, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d5d0*/
   dword_B0EDE8 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 0); /*0x71d5ec*/
   dword_B0EDEC = *(unsigned int *)((CellStruct *)(&v4))->Set(1, 0); /*0x71d607*/
   dword_B0EDF0 = *(unsigned int *)((CellStruct *)(&v4))->Set(0x7FFF, 0x7FFF); /*0x71d618*/
   memset( (void *)(&unk_B0EDF4), 0, 0x1Cu); /*0x71d62e*/
-  ((Array *)((int)&unk_B0EDF4))->ForEach( 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d635*/
+  Array::ForEach(((Array *)((int)&unk_B0EDF4)), 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d635*/
   dword_B0EE10 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 0); /*0x71d651*/
   dword_B0EE14 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 1); /*0x71d66c*/
   dword_B0EE18 = *(unsigned int *)((CellStruct *)(&v4))->Set(0x7FFF, 0x7FFF); /*0x71d67d*/
   memset( (void *)(&unk_B0EE1C), 0, 0x1Cu); /*0x71d693*/
-  ((Array *)((int)&unk_B0EE1C))->ForEach( 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d69a*/
+  Array::ForEach(((Array *)((int)&unk_B0EE1C)), 4, 7, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d69a*/
   dword_B0EE38 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 0); /*0x71d6b0*/
   dword_B0EE3C = *(unsigned int *)((CellStruct *)(&v4))->Set(1, 0); /*0x71d6cb*/
   dword_B0EE40 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 1); /*0x71d6d9*/
@@ -220,7 +220,7 @@ int InitializeCellSpreadTables()
   dword_B0EE58 = 0; /*0x71d724*/
   dword_B0EE48 = v0; /*0x71d72f*/
   dword_B0EE5C = 0; /*0x71d734*/
-  ((Array *)((int)&dword_B0EE4C))->ForEach( 4, 5, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d73a*/
+  Array::ForEach(((Array *)((int)&dword_B0EE4C)), 4, 5, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d73a*/
   dword_B0EE60 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 0); /*0x71d756*/
   dword_B0EE64 = *(unsigned int *)((CellStruct *)(&v4))->Set(1, 0); /*0x71d76b*/
   dword_B0EE68 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 1); /*0x71d779*/
@@ -232,7 +232,7 @@ int InitializeCellSpreadTables()
   dword_B0EE78 = v1; /*0x71d7d7*/
   dword_B0EE80 = 0; /*0x71d7dd*/
   dword_B0EE84 = 0; /*0x71d7e7*/
-  ((Array *)((int)&dword_B0EE7C))->ForEach( 4, 3, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d7f5*/
+  Array::ForEach(((Array *)((int)&dword_B0EE7C)), 4, 3, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d7f5*/
   dword_B0EE88 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 0); /*0x71d80b*/
   dword_B0EE8C = *(unsigned int *)((CellStruct *)(&v4))->Set(1, 0); /*0x71d826*/
   dword_B0EE90 = *(unsigned int *)((CellStruct *)(&v4))->Set(2, 0); /*0x71d83b*/
@@ -244,7 +244,7 @@ int InitializeCellSpreadTables()
   dword_B0EEA8 = 0; /*0x71d89a*/
   dword_B0EEA0 = v2; /*0x71d8a7*/
   dword_B0EEAC = 0; /*0x71d8ad*/
-  ((Array *)((int)&dword_B0EEA4))->ForEach( 4, 3, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d8b3*/
+  Array::ForEach(((Array *)((int)&dword_B0EEA4)), 4, 3, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71d8b3*/
   dword_B0EEB0 = *(unsigned int *)((CellStruct *)(&v4))->Set(0, 0); /*0x71d8cf*/
   dword_B0EEB4 = *(unsigned int *)((CellStruct *)(&v4))->Set(1, 0); /*0x71d8dd*/
   dword_B0EEB8 = *(unsigned int *)((CellStruct *)(&v4))->Set(2, 0); /*0x71d8f8*/
@@ -267,7 +267,7 @@ int InitializeCellSpreadTables()
   dword_B0EEFC = 0; /*0x71da62*/
   memset( (void *)(&unk_B0EF00), 0, 0x230u); /*0x71da73*/
 // 0x4068f0
-  return ((Array *)((int)&dword_B0EEFC))->ForEach( 4, 141, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71da7a*/
+  return Array::ForEach(((Array *)((int)&dword_B0EEFC)), 4, 141, (int (*)(int))__0Iostream_init_QAE_XZ_2); /*0x71da7a*/
 }
 }
 // 0x71DCA0

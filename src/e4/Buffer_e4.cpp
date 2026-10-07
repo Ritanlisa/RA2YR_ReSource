@@ -497,7 +497,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   *(unsigned short *)(Buffer_field_08 + 4) = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
   *(unsigned short *)(Buffer_field_08 + 6) = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
   *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
-  v7 = ((CellStruct *)(a3 + 8))->Copy( &v14); /*0x6c8a42*/
+  v7 = CellStruct::Copy(((CellStruct *)(a3 + 8)), &v14); /*0x6c8a42*/
   v8 = (int *)(aP1); /*0x6c8a49*/
   v16 = (unsigned char *)(*(int (**)(int *, unsigned int, unsigned int))(*aP1 + 92))( (int *)(aP1), *v7, v7[1]); /*0x6c8a61*/
   v9 = *(unsigned int *)(a3 + 20); /*0x6c8a65*/

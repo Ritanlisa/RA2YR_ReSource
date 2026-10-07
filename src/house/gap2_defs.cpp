@@ -43,6 +43,21 @@ namespace gamemd {
     int Power_TimerProcess(unsigned int a1);           // raw 0x425435 Power::TimerProcess;
     int Power_FlagProcess(void *a1, unsigned int a2);  // raw 0x4254ac Power::FlagProcess;
     void VectorClass_CellConstructor(void *a1, int a2, int a3);  // raw 0x42e71d;
+    void VectorClass_BuildingConstructor(void *a1, int a2, int a3);  // g57w11 r4: raw 0x510550 VectorClass::BuildingConstructor (自由函数形同 CellConstructor 先例);
+    // g57w11 r4 item2d: 调用侧词汇 (类型在本 TU 无完整定义; 静态形按 raw 调用形)
+    int HouseTypeClass_Find(void *a1);  // raw 0x472341 HouseTypeClass::Find 静态调用形 (g57w11 item2e: 参数适配)
+    struct ObjectPtr { static void RegisterForTracking(int a1, unsigned int **a2); };  // raw 0x4b6bc7 调用形
+    struct Map { static int CanScroll(void **a1); };  // raw 0x4f21c7 调用形
+    // g57w11 r4 item2e: raw 模板裸名渲染 → 自由函数词汇 (C2955)
+    void DynamicVectorClass_Copy(void *dst, unsigned int *src);   // raw 0x4f78a6 (TypeList<int>::Copy 实例)
+    void VectorClass_int_Destroy(int a1);                          // raw 0x4f791b (VectorClass<int>::Destroy 实例)
+    // g57w11 r4: 内嵌 vector 构造调用词汇 (raw fn_4F 0x4f51aa/0x4f52f9/0x4f5315/0x4f53c7/0x4f53e3;
+    // raw 渲染 this=0 (IDA 局部丢失), 编译形=静态 2 参; 真实 this=内嵌对象首址留证)
+    struct TagClassVector { static void Construct(int a1, int a2); };
+    struct StartingTechnoVector { static void Construct(int a1, int a2); };
+    struct SuperClassVector { static void Construct(int a1, int a2); };
+    struct AngerVector { static void Construct(int a1, int a2); };
+    struct ScoutVector { static void Construct(int a1, int a2); };
 } // namespace gamemd
 // ---- g57b5 W3 end ----
 
@@ -134,8 +149,8 @@ int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
   char Buffer[12]; // [esp+Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+18h] [ebp-80h] BYREF
 
-  INIClass::SetInt(a1, a2, aPercentbuilt, ((unsigned int *)this)[0], 0); /*0x42ed87*/
-  INIClass::SetInt(a1, a2, aNodecount, ((unsigned int *)this)[0], 0); /*0x42ed9a*/
+  INIClass::SetInt((INIClass *)a1, (unsigned char *)a2, (char *)aPercentbuilt, ((unsigned int *)this)[0], 0); /*0x42ed87 g57w11 r4 item2c: 静态形 (e4 载体 SetInt(INIClass*,uchar*,char*,int,int) 5 参)*/
+  INIClass::SetInt((INIClass *)a1, (unsigned char *)a2, (char *)aNodecount, ((unsigned int *)this)[0], 0); /*0x42ed9a g57w11 r4 item2c*/
   result = ((unsigned int *)this)[0]; /*0x42ed9f*/
   v5 = 0; /*0x42eda2*/
   if ( result > 0 ) /*0x42eda6*/
@@ -152,7 +167,7 @@ int HouseClass::SaveTriggerNodeData(void* a1, void* a2) {
         sprintf(Source, "%d,%d,%d", v8, v9, v10); /*0x42edf2*/
       else
         sprintf(Source, "%s,%d,%d", *((unsigned int *)dword_A83C6C + v8) + 36, v9, v10); /*0x42ede5*/
-      INIClass::SetString(a1, a2, Buffer, Source); /*0x42ee0c*/
+      ((INIClass *)a1)->SetString((unsigned char *)a2, Buffer, Source); /*0x42ee0c g57w11 r4 item2b: 实例形 (e4 载体 SetString(uchar*,char*,char*) 3 显式参; raw 0x528660)*/
       result = ((unsigned int *)this)[0]; /*0x42ee11*/
       ++v5; /*0x42ee14*/
       v6 += 16; /*0x42ee15*/
@@ -177,8 +192,8 @@ int BaseClass::ProcessPowerTimer(unsigned int *a2, int aP1, int a1, int a3, int 
     do /*0x42f1d7*/
     {
       Power_TimerProcess(*(unsigned int *)(this->baseNodeCapacity + v5)); /*0x42f1a9*/
-      Checksummer::Add_WORD((Checksummer *)aP1, *(unsigned short *)(this->baseNodeCapacity + v5 + 4)); /*0x42f1b9*/
-      Checksummer::Add_WORD((Checksummer *)aP1, *(unsigned short *)(this->baseNodeCapacity + v5 + 6)); /*0x42f1c9*/
+      ((Checksummer *)aP1)->Add_WORD(*(unsigned short *)(this->baseNodeCapacity + v5 + 4)); /*0x42f1b9 g57w11 r4: 实例形 (hpp Add_WORD(uint16_t) 1 参)*/
+      ((Checksummer *)aP1)->Add_WORD(*(unsigned short *)(this->baseNodeCapacity + v5 + 6)); /*0x42f1c9 g57w11 r4*/
       result = this->cells24Count; /*0x42f1ce*/
       ++v4; /*0x42f1d1*/
       v5 += 16; /*0x42f1d2*/
@@ -294,7 +309,7 @@ int BaseClass::Release(int a1, void* a2) {
         *(unsigned int *)&this->m_1[3] = 0; /*0x42f59a*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v7; /*0x42f5a3*/
+    *(unsigned int *)&this->m_1[3] = (unsigned int)(void *)v7; /*0x42f5a3 g57w11 r4: v7 指针值形*/
     this->baseNodeCapacity = v3; /*0x42f5ab*/
     IDA_BYTE1(this->percentBuilt) = v5 == 0; /*0x42f5ae*/
   }
@@ -307,7 +322,7 @@ int BaseClass::Read(int a2) {
   int result; // eax
   int i; // ecx
 
-  m_10 = this->cells24; /*0x42f5e0*/
+  m_10 = (int)this->cells24; /*0x42f5e0 g57w11 r4: cast (hpp cells24=CellStruct*)*/
   result = 0; /*0x42f5e4*/
   if ( m_10 <= 0 ) /*0x42f5ea*/
     return -1; /*0x42f615*/
@@ -328,7 +343,7 @@ void* BaseClass::QueryInterface(int a1) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x42f973*/
-  *(unsigned int *)this->__pad_0 = (void *)&VectorClass_BaseNodeClass_vftable; /*0x42f976*/
+  *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&VectorClass_BaseNodeClass_vftable; /*0x42f976 g57w11 r4: 指针值形*/
   if ( v3 && IDA_BYTE1(this->percentBuilt) ) /*0x42f980*/
   {
     RA2_OPDEL(v3); /*0x42f988*/
@@ -377,8 +392,8 @@ int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
   result = *(&this->vtable34); /*0x431700*/
   if ( result ) /*0x43170c*/
   {
-    result = dword_89C428 + 1; /*0x431720*/
-    if ( (int)g_CurrentFrame % *(&this->vtable41) < dword_89C428 + 1 ) /*0x431723*/
+    result = (int)dword_89C428 + 1; /*0x431720 g57w11 r4: 指针值形*/
+    if ( (int)g_CurrentFrame % this->bunkersCapacity < dword_89C428 + 1 ) /*0x431723 g57w11 r4: raw 原文 this->bunkersCapacity (ml @124)*/
     {
       result = (int)this; /*0x431731*/
       v10 = 8; /*0x431733*/
@@ -391,27 +406,25 @@ int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
           v8 = *v7; /*0x431745*/
           if ( *v7 /*0x431794*/
             && (*(unsigned char *)(v8 + 12) & 1) != 0
-}
-}
-}
-}
-}
-}
-// 0x4f9a10
             && ((HouseClass*)HouseClass_Player)->IsAllied(*(unsigned int *)(v8 + 272))
-            && (uint8_t)HouseClass::IsAlliedWith(
-                                  *(void **)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)],
-                                  HouseClass_Player)
+            && ((HouseClass *)*(void **)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)])->IsAlliedWith((const HouseClass *)HouseClass_Player)
             && !*(unsigned char *)(*(unsigned int *)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)] + 501) )
           {
-            BuildingPlacement::RenderBuildingPlacementShadow((int *)v8, a2, a3, a4, a5, a6, 0); /*0x4317bf*/
+            ((BuildingPlacement *)v8)->RenderBuildingPlacementShadow(a2, a3, a4, a5, a6, 0); /*0x4317bf g57w11 r4: 实例形 (raw 0x430650 6 显式参; hpp 签名同步见 render_ext)*/
           }
           ++v7; /*0x4317c8*/
           --v9; /*0x4317cc*/
+        }
         while ( v9 ); /*0x4317d0*/
         result = (int)v7; /*0x4317da*/
         --v10; /*0x4317dd*/
+      }
       while ( v10 ); /*0x4317e1*/
+    }
+  }
+  return result; /*0x4317e7 g57w11 r4: raw fn_43 原文尾部恢复*/
+}
+} // namespace gamemd
 // 0x431800
 namespace gamemd { 
 bool HouseClass::ProcessData() {
@@ -437,10 +450,8 @@ bool HouseClass::ProcessData() {
       if ( v3->AbstractClass ) /*0x431829*/
       {
         if ( (*((unsigned char *)vtable0 + 12) & 1) != 0 /*0x431878*/
-          && (uint8_t)HouseClass::IsAllied((HouseClass *)dword_A83D4C, *((unsigned int *)vtable0 + 68))
-          && (uint8_t)HouseClass::IsAlliedWith(
-                                *((void **)((char *)&stru_A80220) + *((unsigned int *)vtable0 + 68)),
-                                (void *)dword_A83D4C)
+          && ((HouseClass *)dword_A83D4C)->IsAllied(*((unsigned int *)vtable0 + 68))
+          && ((HouseClass *)*((void **)((char *)&stru_A80220) + *((unsigned int *)vtable0 + 68)))->IsAlliedWith((const HouseClass *)dword_A83D4C)
           && !*(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *((unsigned int *)vtable0 + 68)) + 501) )
         {
           break; /*0x431878*/
@@ -456,8 +467,10 @@ bool HouseClass::ProcessData() {
     v1 = (HouseClass *)((char *)v1 + 12); /*0x431892*/
     --v7; /*0x43189a*/
   }
-  }
-  }
+  while ( v7 ); /*0x43189e g57w11 r4: raw 原文 do-while 闭合*/
+  return v6 && *(unsigned int *)((char *)&stru_A8EB00 + 416) % this->bunkersCapacity < dword_89C428 + 1; /*0x4318c3 g57w11 r4: raw 原文 bunkersCapacity*/
+}
+} // namespace gamemd
 // 0x4575B0
 namespace gamemd { 
 int HouseClass::Add() {
@@ -469,13 +482,14 @@ int HouseClass::Add() {
   {
     v3 = *((unsigned int *)this + i + 378); /*0x4575c7*/
     v4 = (*(int (**)(int, unsigned int, int))(*(unsigned int *)v3 + 184))(v3, this->q21C, 1); /*0x4575d7*/
-    ((HouseClass*)*((unsigned int **)&this->relatedTagsCapacity5))->AddPower(v4); /*0x4575e4*/
-    BuildingClass::ClearSuperWeaponAnim((int)this); /*0x4575eb*/
+    ((HouseClass*)*(unsigned int **)&this->relatedTagsCapacity5)->AddPower(v4); /*0x4575e4 g57w11 r4: AddPower 实例形 (hpp 1 参)*/
+    ((BuildingClass *)this)->ClearSuperWeaponAnim(); /*0x4575eb g57w11 r4: 实例形 (hpp 0 参)*/
     this->q21C->q5778 = 1; /*0x4575f6*/
     this->q21C->u8_5779 = 1; /*0x457602*/
   }
-  }
-  }
+  return (*(int (__thiscall **)(HouseClass *, int))(*(unsigned int *)this + 104 * 4))(this, 1); /*0x45761d g57w11 r4: raw 原文尾部 (vtable 槽 104)*/
+}
+} // namespace gamemd
 // 0x458750
 namespace gamemd { 
 int HouseClass::Process() {
@@ -496,15 +510,14 @@ int HouseClass::Process() {
     {
       v4 = *(unsigned int *)(((unsigned int *)&this->builtInfantryTypes)[126] + 5468); /*0x4587a0*/  // g57e2 W3
       if ( v4 <= 0 ) /*0x4587a8*/
-}
-}
-}
-}
-// 0x4f9790
         return ((HouseClass*)(int *)this->planningPaths[3])->ProcessPowerDrain(-v4); /*0x4587c4*/
       else
-// 0x4f9950
-        return HouseClass::AddPower((HouseClass *)this->planningPaths[3], v4); /*0x4587b1*/
+        return ((HouseClass *)this->planningPaths[3])->AddPower(v4); /*0x4587b1 g57w11 r4: 实例形 (hpp AddPower(int) 1 参)*/
+    }
+  }
+  return result; /*0x4587b6 g57w11 r4: raw 原文尾部*/
+}
+} // namespace gamemd
 // 0x472330
 namespace gamemd { 
 int HouseClass::AssignCivilianToLowPowerTargets(int a2) {
@@ -516,8 +529,8 @@ int HouseClass::AssignCivilianToLowPowerTargets(int a2) {
   int j; // edx
   unsigned int *v10; // eax
 
-  nextArrayIndex = ((char *)&stru_A80220); /*0x472333*/
-  v4 = HouseTypeClass::Find(&g_INI_Key_Civilian); /*0x472341*/
+  nextArrayIndex = (int)((char *)&stru_A80220); /*0x472333 g57w11 r4: 指针值形 (raw stru_A80220.?)*/
+  v4 = HouseTypeClass_Find(&g_INI_Key_Civilian); /*0x472341 g57w11 r4: TU-local 静态词汇*/
   v5 = 0; /*0x472346*/
   if ( nextArrayIndex <= 0 ) /*0x47234a*/
     return 0; /*0x47234a*/
@@ -526,8 +539,18 @@ int HouseClass::AssignCivilianToLowPowerTargets(int a2) {
     if ( ++v5 >= nextArrayIndex ) /*0x472367*/
       return 0; /*0x47236f*/
   }
+  v8 = *((unsigned int *)&stru_A80220 + v5); /*0x472372 g57w11 r4: raw 原文中段恢复*/
+  if ( !v8 ) /*0x472377*/
+    return 0; /*0x47237c*/
+  for ( j = this->relatedTagsCapacity - 1; j >= 0; --j ) /*0x472386*/
+  {
+    v10 = (unsigned int *)*((unsigned int *)&this->buildingType->AbstractClass + j); /*0x47238f*/
+    if ( *v10 == a2 ) /*0x472394*/
+      v10[1] = v8; /*0x472396*/
   }
-  }
+  return 1; /*0x472369 g57w11 r4: raw 原文尾部*/
+}
+} // namespace gamemd
 // 0x473460
 namespace gamemd { 
 int HouseClass::SumPowerDrain() {
@@ -561,24 +584,24 @@ int HouseClass::SumPowerDrain() {
 // 0x474B20
 namespace gamemd { 
 int HouseClass::WriteBuildingTypeNameToINI(void* aP1, void* a2, int a4) {
+  return ((INIClass *)this)->SetString((unsigned char *)aP1, (char *)a2, (char *)*(void **) (*((unsigned int *)dword_B054D4 + a4) + 772)); /*0x474b43 g57w11 r4: raw fn_47 原文恢复; 0x528660=SetString 真身段头残迹清除*/
 }
-}
-// 0x528660
-  return INIClass::SetString(int a1,aP1,a2,*(char **) (*((unsigned int *)dword_B054D4 + a4) + 772)); /*0x474b43*/
+} // namespace gamemd
 // 0x475260
 namespace gamemd { 
 int HouseClass::ReadHouseNamesToBitmask(void* a1, void* a2, int a3) {
   char *i; // eax
   char String[128]; // [esp+4h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, String, 128) ) /*0x47528a*/
+  if ( ((INIClass *)this)->GetString((unsigned char *)a1, (unsigned char *)a2, (char *)&g_INI_DefaultBuffer, String, 128) ) /*0x47528a g57w11 r4 item2b: 实例形 (e4 载体 GetString 5 显式参; raw 0x528A10)*/
   {
     a3 = 0; /*0x47529d*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x4752a9*/
-      a3 |= 1 << HouseClass::FindByName(i); /*0x4752c2*/
+      a3 |= 1 << ((HouseClass *)(void *)i)->FindByName(); /*0x4752c2 g57w11 r4: raw 静态形→实例形 (hpp 0 参声明)*/
   }
-  }
-  }
+  return a3; /*0x4752d2 g57w11 r4: raw 原文尾部*/
+}
+} // namespace gamemd
 // 0x4752E0
 namespace gamemd { 
 int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
@@ -592,7 +615,7 @@ int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
   Source[0] = 0; /*0x4752f6*/
   if ( !a4 || dword_A80238 <= 0 ) /*0x475307*/
     return 1; /*0x475307*/
-  v5 = dword_A8022C; /*0x47530e*/
+  v5 = (HouseClass *)(void *)dword_A8022C; /*0x47530e g57w11 r4: 指针值形*/
   v8 = dword_A80238; /*0x475316*/
   do /*0x4753a3*/
   {
@@ -607,35 +630,41 @@ int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
     v5 = (HouseClass *)((char *)v5 + 4); /*0x47539b*/
     --v8; /*0x47539f*/
   }
+  while ( v8 ); /*0x4753a3 g57w11 r4: raw 原文 do-while 闭合*/
+  if ( v4 ) /*0x4753ae*/
+    return ((INIClass *)this)->SetString((unsigned char *)aP1, (char *)a2, Source); /*0x4753c9 g57w11 r4: raw 原文尾部*/
+  else
+    return 1; /*0x4753d8*/
 }
-}
+} // namespace gamemd
 // 0x475980
 namespace gamemd { 
 int HouseClass::ReadIntFromINI(void* a1, void* a2, int a3) {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4759a2*/
-}
-}
-// 0x48db80
-    return HouseClass::FindHouseIndexByName((HouseClass *)Destination); /*0x4759af*/
+  if ( ((INIClass *)this)->GetString((unsigned char *)a1, (unsigned char *)a2, (char *)&g_INI_DefaultBuffer, Destination, 128) ) /*0x4759a2 g57w11 r4 item2b: 实例形*/
+    return ((HouseClass *)Destination)->FindHouseIndexByName(); /*0x4759af g57w11 r4: raw 静态形→实例形 (hpp 0 参声明)*/
   else
     return a3; /*0x4759bd*/
-// 0x528660
-  return INIClass::SetString(int a1,a1,a2,(&off_7E1B60) [a3]); /*0x4759eb*/
 }
+} // namespace gamemd
+// 0x4759D0
+namespace gamemd {
+int HouseClass::updateBuildingProduction(void* aP1, void* a2, int a3) {
+  return ((INIClass *)this)->SetString((unsigned char *)aP1, (char *)a2, (char *)(&off_7E1B60) [a3]); /*0x4759eb g57w11 r4: raw fn_47 sub_4759D0 原文恢复; 参数3 cast*/
 }
+} // namespace gamemd
 // 0x483410
 namespace gamemd { 
 int HouseClass::MarkCellBuildable(int a1) {
   int v3; // eax
 
-  if ( (this->__pad_13C[4] & 0x10) != 0 || !(uint8_t)Cell::IsBuildable((bool *)this, 1, 0, 0, -1, 0, -1, 1) ) /*0x48342a*/
+  if ( (this->q140 & 0x10) != 0 || !(uint8_t)Cell::IsBuildable((bool *)this, 1, 0, 0, -1, 0, -1, 1) ) /*0x48342a*/
     return 0; /*0x48344e*/
-  v3 = *(unsigned int *)&this->__pad_13C[4]; /*0x483433*/
+  v3 = this->q140; /*0x483433 g57w11 r4: __pad_13C[4]=0x140 (ml q140)*/
   IDA_LOBYTE(v3) = v3 | 0x10; /*0x483439*/
-  *(unsigned int *)&this->__pad_13C[4] = v3; /*0x48343b*/
-  this->unitRepairStations[0] = a1; /*0x483445*/
+  this->q140 = v3; /*0x48343b g57w11 r4*/
+  this->unitRepairStations[0] = (BuildingClass *)a1; /*0x483445 g57w11 r4: cast (hpp BuildingClass**)*/
   return 1; /*0x48344a*/
 }
 }
@@ -644,18 +673,18 @@ namespace gamemd {
 int HouseClass::checkAutoProduction() {
   int v1; // eax
 
-  v1 = *(unsigned int *)&this->__pad_13C[4]; /*0x483460*/
+  v1 = this->q140; /*0x483460 g57w11 r4*/
   if ( (v1 & 0x10) == 0 ) /*0x483468*/
     return 0; /*0x48347c*/
   IDA_LOBYTE(v1) = v1 & 0xEF; /*0x48346a*/
-  this->unitRepairStations[0] = -1; /*0x48346c*/
-  *(unsigned int *)&this->__pad_13C[4] = v1; /*0x483473*/
+  this->unitRepairStations[0] = (BuildingClass *)-1; /*0x48346c g57w11 r4: cast (raw -1 哨值)*/
+  this->q140 = v1; /*0x483473 g57w11 r4*/
   return 1; /*0x48347b*/
 }
 }
 // 0x4870F0
 namespace gamemd { 
-bool HouseClass::HasType() {
+bool HouseClass::HasType(int a2) { /*g57w11 r4 item2b: hpp:602 bool 返回; raw int 折合 bool (返回 bool 需与 hpp 一致防 C2556)*/
   return *((unsigned short *)&this->psychicDetectionCapacity + a2) > 0; /*0x487101*/
 }
 }
@@ -676,17 +705,9 @@ int HouseClass::FindHouseIndexByName() {
     if ( (int)v3 >= (int)&dword_7E1B74 ) /*0x48dbaa*/
       return -1; /*0x48dbaa*/
   }
-  }
-  }
-// 0x4759D0
-namespace gamemd { 
-int HouseClass::updateBuildingProduction(void* a1, void* a2, int a3) {
+  return v2; /*0x48dbac g57w11 r4: raw fn_48 原文尾部*/
 }
-}
-// 0x48db80
-    return HouseClass::FindHouseIndexByName((HouseClass *)Destination); /*0x4759af*/
-  else
-    return a3; /*0x4759bd*/
+} // namespace gamemd
 // 0x49F9B0
 namespace gamemd { 
 void* CounterClass::Construct() {
@@ -694,7 +715,7 @@ void* CounterClass::Construct() {
   this->u32_8 = 0; /*0x49f9b7*/
   this->u32_C = 1; /*0x49f9ba*/
   this->u32_D = 0; /*0x49f9be*/
-  this->items = (void *)&CounterClass_vftable; /*0x49f9c1*/
+  this->items = (int32_t *)(void *)&CounterClass_vftable; /*0x49f9c1 g57w11 r4: cast (hpp items=int32_t*)*/
   this->count = 0; /*0x49f9c7*/
   return &this->items; /*0x49f9ca*/
 }
@@ -739,7 +760,7 @@ int CounterClass::Load(int a1) {
     this->u32_8 = 0; /*0x49fbef*/
     this->u32_C = 1; /*0x49fbf2*/
     this->u32_D = 0; /*0x49fbf6*/
-    this->items = (void *)&CounterClass_vftable; /*0x49fbf9*/
+    this->items = (int32_t *)(void *)&CounterClass_vftable; /*0x49fbf9 g57w11 r4: cast*/
     this->count = 0; /*0x49fbff*/
   }
 }
@@ -750,7 +771,7 @@ void* CounterClass::QueryInterface(int a2) {
   void *count; // eax
 
   count = (void *)this->count; /*0x49fce3*/
-  this->items = (void *)&VectorClass_int_vftable; /*0x49fce6*/
+  this->items = (int32_t *)(void *)&VectorClass_int_vftable; /*0x49fce6 g57w11 r4: cast*/
   if ( count && this->u32_D ) /*0x49fcf0*/
   {
     RA2_OPDEL(count); /*0x49fcf8*/
@@ -762,7 +783,7 @@ void* CounterClass::QueryInterface(int a2) {
 namespace gamemd { 
 void* HouseClass::initDropshipData() {
   this->AbstractClass = *(void **)&((unsigned int *)&stru_A8EB00)[416]; /*0x4b69b8*/
-  ((unsigned int *)this)[0] = (void *)0x7FFFFFFF; /*0x4b69bc*/
+  ((unsigned int *)this)[0] = 0x7FFFFFFF; /*0x4b69bc g57w11 r4: 去冗余 cast (void*→uint C2440)*/
   IDA_LOBYTE(((unsigned int *)this)[0]) = 0; /*0x4b69c3*/
   ((unsigned int *)this)[0] = 0; /*0x4b69c6*/
   this->buildingType = 0; /*0x4b69c9*/
@@ -783,7 +804,7 @@ int HouseClass::RegisterForSwizzleTracking() {
     p_abstractFlags = &((unsigned int *)this)[0]; /*0x4b6bbe*/
     do /*0x4b6bd5*/
     {
-      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, p_abstractFlags); /*0x4b6bc7*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (unsigned int **)(void *)&p_abstractFlags); /*0x4b6bc7 g57w11 r4: TU-local 词汇*/
       result = ((unsigned int *)this)[0]; /*0x4b6bcc*/
       ++v2; /*0x4b6bcf*/
       ++p_abstractFlags; /*0x4b6bd0*/
@@ -811,7 +832,7 @@ int HouseClass::UpdateTeamProductionSpeed() {
       v5 = *(HouseClass **)(v4 + 88); /*0x4ca6fd*/
       v6 = 0; /*0x4ca700*/
       if ( v5 ) /*0x4ca704*/
-        v6 = HouseClass::CalcProductionSpeed(v5); /*0x4ca70b*/
+        v6 = ((HouseClass *)v5)->CalcProductionSpeed(); /*0x4ca70b g57w11 r4: 实例形 (hpp 0 参)*/
       v7 = v6 / 54; /*0x4ca71c*/
       if ( v7 >= 1 ) /*0x4ca721*/
       {
@@ -923,7 +944,7 @@ int TagClassVectorHost::COMStub_2(int a1, void* a2) {  // g57w10 r4 (raw this=Dy
   }
   else
   {
-    (*(void (__thiscall **)(TagClassVectorHost *))(*(void **)this + 12))(this); /*0x4e940e g57w10 r4: vt+12=COMStub_3(Clear); vector.inl SetCapacity(0)->Clear() 同真值*/
+    (*(void (__thiscall **)(TagClassVectorHost *))(*(void ***)this + 3))(this); /*0x4e940e g57w11 r4: vt+12 字节偏移=槽3 (void* 算术 C2036 修复); COMStub_3(Clear) 同真值*/
   }
   if ( this->Capacity < this->q010 ) /*0x4e9419 g57w10 r4: Count clamp (raw 尾段+vector.inl 同构)*/
     this->q010 = this->Capacity; /*0x4e941b*/
@@ -984,7 +1005,7 @@ void HouseClass::processTargetSelection() {
   v6 = this + 88; /*0x4f21b7*/
   v7 = 0; /*0x4f21bb*/
   v5 = (void *)&VectorCursor_GraphicMenuItem___DynamicVectorClass_GraphicMenuItem___vftable; /*0x4f21bf*/
-  if ( Map::CanScroll(&v5) ) /*0x4f21c7*/
+  if ( Map::CanScroll((void **)(void *)&v5) ) /*0x4f21c7 g57w11 r4: TU-local 词汇*/
   {
     do /*0x4f21fc*/
     {
@@ -1000,7 +1021,7 @@ void HouseClass::processTargetSelection() {
 // 0x4F2810
 namespace gamemd { 
 void* HouseClass::vt_placeholder_03(int a2) {
-  HashTable::DestroyHashTableINIClass((INIClass *)this); /*0x4f2813*/
+  ((HashTable *)this)->DestroyHashTableINIClass(); /*0x4f2813 g57w11 r4: 实例形 (utility_ext 0 参虚函数)*/
   if ( (a2 & 1) != 0 ) /*0x4f281d*/
     RA2_OPDEL(this); /*0x4f2820*/
   return this; /*0x4f282a*/
@@ -1009,7 +1030,7 @@ void* HouseClass::vt_placeholder_03(int a2) {
 // 0x4F2830
 namespace gamemd { 
 void* HouseClass::vt_placeholder_04(int a2) {
-  HouseClass::processTargetSelection((char *)this); /*0x4f2833*/
+  this->processTargetSelection(); /*0x4f2833 g57w11 r4: 实例形 (hpp 0 参)*/
   if ( (a2 & 1) != 0 ) /*0x4f283d*/
     RA2_OPDEL(this); /*0x4f2840*/
   return (char *)this; /*0x4f284a*/
@@ -1075,7 +1096,7 @@ int GraphicMenuItemVectorHost::processWaypointPlanning(int a1, void* a2) {  // g
   }
   else
   {
-    (*(void (__thiscall **)(GraphicMenuItemVectorHost *))(*(void **)this + 12))(this); /*0x4f2aee g57w10 r4: vt+12=vt_placeholder_05(Clear); vector.inl SetCapacity(0)->Clear() 同真值*/
+    (*(void (__thiscall **)(GraphicMenuItemVectorHost *))(*(void ***)this + 3))(this); /*0x4f2aee g57w11 r4: vt+12=槽3 (void* 算术修复); vt_placeholder_05(Clear) 同真值*/
   }
   if ( this->Capacity < this->q010 ) /*0x4f2af9 g57w10 r4: Count clamp (raw 尾段+vector.inl 同构)*/
     this->q010 = this->Capacity; /*0x4f2afb*/
@@ -1122,83 +1143,83 @@ void* GraphicMenuItemVectorHost::vt_placeholder_11(int a2) {  // g57w10 r4 (raw 
 }
 // 0x4F5190
 namespace gamemd { 
-int HouseClass::Constructor(int a1) {
+int HouseClass::Constructor(int a1, int a2) { /*g57w11 r4: raw fn_4F Constructor(this,a2) 2 参*/
   int v3; // ebp
   int v5; // [esp+10h] [ebp-4h]
 
-  AbstractClass::InitVtables((unsigned int *)this, a1); /*0x4f519c*/
+  this->InitVtables(a1); /*0x4f519c g57w11 r4: 实例形 (hpp InitVtables(int) 1 参)*/
   TagClassVector::Construct(0, 0); /*0x4f51aa*/
-  this->conYards = (void *)&DynamicVectorClass_TagClass___vftable; /*0x4f51b4*/
+  this->conYards = (BuildingClass **)(void *)&DynamicVectorClass_TagClass___vftable; /*0x4f51b4 g57w11 r4: cast 形*/
   this->buildingsCapacity = 10; /*0x4f51bb*/
   this->buildingsCount = 0; /*0x4f51be*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->NeedsSaveOrLink0), 0, 0); /*0x4f51c8*/
-  this->unitRepairStations = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f51cd*/
+  VectorClass_BuildingConstructor((void *)&this->unitRepairStations, 0, 0); /*0x4f51c8 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f51c8 偏移真值)*/
+  this->unitRepairStations = (BuildingClass **)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f51cd g57w11 r4: cast 形*/
   this->grindersCapacity = 10; /*0x4f51d4*/
   this->grindersCount = 0; /*0x4f51d7*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->vtable64), 0, 0); /*0x4f51e1*/
-  this->absorbers = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f51e6*/
+  VectorClass_BuildingConstructor((void *)&this->absorbers, 0, 0); /*0x4f51e1 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f51e1 偏移真值)*/
+  this->absorbers = (BuildingClass **)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f51e6 g57w11 r4: cast 形*/
   this->bunkersCapacity = 10; /*0x4f51ed*/
   this->bunkersCount = 0; /*0x4f51f0*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->relatedTagsCount8), 0, 0); /*0x4f51fd*/
-  this->occupiables = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f5202*/
+  VectorClass_BuildingConstructor((void *)&this->occupiables, 0, 0); /*0x4f51fd g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f51fd 偏移真值)*/
+  this->occupiables = (BuildingClass **)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f5202 g57w11 r4: cast 形*/
   this->cloningVatsCapacity = 10; /*0x4f5209*/
   this->cloningVatsCount = 0; /*0x4f520c*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->conYardsCount2), 0, 0); /*0x4f5219*/
-  this->secretLabs = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f521e*/
+  VectorClass_BuildingConstructor((void *)&this->secretLabs, 0, 0); /*0x4f5219 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f5219 偏移真值)*/
+  this->secretLabs = (BuildingClass **)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f521e g57w11 r4: cast 形*/
   this->psychicDetectionCapacity = 10; /*0x4f5225*/
   this->psychicDetectionCount = 0; /*0x4f5228*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->buildings6), 0, 0); /*0x4f5235*/
-  this->productionFactory_plants = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f523a*/
+  VectorClass_BuildingConstructor((void *)&this->productionFactory_plants, 0, 0); /*0x4f5235 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f5235 偏移真值)*/
+  this->productionFactory_plants = (BuildingClass **)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f523a g57w11 r4: cast 形*/
   this->countWarfactories = 10; /*0x4f5241*/
   this->countResourceDestinations = 0; /*0x4f5244*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->unitRepairStations0), 0, 0); /*0x4f5251*/
-  this->infantrySelfHeal = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f5256*/
+  VectorClass_BuildingConstructor((void *)&this->infantrySelfHeal, 0, 0); /*0x4f5251 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f5251 偏移真值)*/
+  this->infantrySelfHeal = (int)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f5256 g57w11 r4: int cast (hpp int32; raw +200 vfptr 槽)*/
   this->aiDifficulty = 10; /*0x4f525d*/
   this->startingUnitsCapacity = 0; /*0x4f5260*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->repairStationsCapacity4), 0, 0); /*0x4f526d*/
-  this->firepowerMultiplier = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f5272*/
+  VectorClass_BuildingConstructor((void *)&this->firepowerMultiplier, 0, 0); /*0x4f526d g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f526d 偏移真值)*/
+  this->firepowerMultiplier = (double)(int)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f5272 g57w11 r4: double 位形 (hpp double 与 raw 4B vfptr 槽位错位=布局债留证; 编译形)*/
   this->q0F4 = 10; /*0x4f5279*/
   this->airspeedMultiplier = 0; /*0x4f527c*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->grindersCount8), 0, 0); /*0x4f5289*/
-  this->armorMultiplier = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f528e*/
+  VectorClass_BuildingConstructor((void *)&this->armorMultiplier, 0, 0); /*0x4f5289 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f5289 偏移真值)*/
+  this->armorMultiplier = (double)(int)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f528e g57w11 r4: double 位形 (hpp double 与 raw 4B vfptr 槽位错位=布局债留证; 编译形)*/
   this->q10C = 10; /*0x4f5295*/
   this->costMultiplier = 0; /*0x4f5298*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->absorbersCount2), 0, 0); /*0x4f52a5*/
-  this->buildTimeMultiplier = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f52aa*/
+  VectorClass_BuildingConstructor((void *)&this->buildTimeMultiplier, 0, 0); /*0x4f52a5 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f52a5 偏移真值)*/
+  this->buildTimeMultiplier = (double)(int)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f52aa g57w11 r4: double 位形 (hpp double 与 raw 4B vfptr 槽位错位=布局债留证; 编译形)*/
   this->q124 = 10; /*0x4f52b1*/
   this->buildDelay = 0; /*0x4f52b4*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->bunkers6), 0, 0); /*0x4f52c1*/
-  this->iqLevel = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f52c6*/
+  VectorClass_BuildingConstructor((void *)&this->iqLevel, 0, 0); /*0x4f52c1 g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f52c1 偏移真值)*/
+  this->iqLevel = (int)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f52c6 g57w11 r4: int cast*/
   this->q13C = 10; /*0x4f52cd*/
   this->startingEdge = 0; /*0x4f52d0*/
-  VectorClass::BuildingConstructor((unsigned int *)(&this->occupiables0), 0, 0); /*0x4f52dd*/
-  this->q140 = (void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f52e2*/
+  VectorClass_BuildingConstructor((void *)&this->q140, 0, 0); /*0x4f52dd g57w11 r4: 自由函数形 (先例 VectorClass_CellConstructor@42e71d); 实参=该行紧后 vfptr 安装目标 hpp 真名 (raw 0x4f52dd 偏移真值)*/
+  this->q140 = (int)(void *)&DynamicVectorClass_BuildingClass___vftable; /*0x4f52e2 g57w11 r4: int cast*/
   this->q154 = 10; /*0x4f52e9*/
   this->q150 = 0; /*0x4f52ec*/
   StartingTechnoVector::Construct(0, 0); /*0x4f52f9*/
-  this->q16C = (void *)&DynamicVectorClass_HouseClass_StartingTechnoStruct___vftable; /*0x4f52fe*/
+  this->q16C = (int)(void *)&DynamicVectorClass_HouseClass_StartingTechnoStruct___vftable; /*0x4f52fe g57w11 r4: int cast*/
   this->q180 = 10; /*0x4f5305*/
   this->q17C = 0; /*0x4f5308*/
   SuperClassVector::Construct(0, 0); /*0x4f5315*/
-  this->supers = (void *)&DynamicVectorClass_SuperClass___vftable; /*0x4f531a*/
+  this->supers = (SuperClass **)(void *)&DynamicVectorClass_SuperClass___vftable; /*0x4f531a g57w11 r4: cast 形*/
   this->lastBuiltAircraftType = 10; /*0x4f5321*/
   this->lastBuiltInfantryType = 0; /*0x4f5324*/
   this->q280 = dword_A8ED84; /*0x4f532d*/
   this->q288 = 0; /*0x4f5339*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22000)); /*0x4f533f*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22080)); /*0x4f534a*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22100)); /*0x4f5355*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22180)); /*0x4f5360*/
-  CounterClass::Construct((unsigned int *)(&this->q22200)); /*0x4f536b*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22280)); /*0x4f5376*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22300)); /*0x4f5381*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22380)); /*0x4f538c*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22400)); /*0x4f5397*/
-  CounterClass::Construct((unsigned int *)(&this->q22480)); /*0x4f53a2*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22500)); /*0x4f53ad*/
-  CounterClass::Construct((unsigned int *)(&this->u32_22580)); /*0x4f53b8*/
+  ((CounterClass *)&this->u32_22000)->Construct(); /*0x4f533f g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22080)->Construct(); /*0x4f534a g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22100)->Construct(); /*0x4f5355 g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22180)->Construct(); /*0x4f5360 g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->q22200)->Construct(); /*0x4f536b g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22280)->Construct(); /*0x4f5376 g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22300)->Construct(); /*0x4f5381 g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22380)->Construct(); /*0x4f538c g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22400)->Construct(); /*0x4f5397 g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->q22480)->Construct(); /*0x4f53a2 g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22500)->Construct(); /*0x4f53ad g57w11 r4: 实例形 (hpp Construct 0 参)*/
+  ((CounterClass *)&this->u32_22580)->Construct(); /*0x4f53b8 g57w11 r4: 实例形 (hpp Construct 0 参)*/
   AngerVector::Construct(0, 0); /*0x4f53c7*/
-  this->angerNodes = (void *)&DynamicVectorClass_AngerStruct_vftable; /*0x4f53cc*/
+  this->angerNodes = (AngerStruct *)(void *)&DynamicVectorClass_AngerStruct_vftable; /*0x4f53cc g57w11 r4: cast (hpp angerNodes=AngerStruct*)*/
   this->scoutNodesCapacity = 10; /*0x4f53d3*/
   this->scoutNodesCount = 0; /*0x4f53d6*/
   ScoutVector::Construct(0, 0); /*0x4f53e3*/
@@ -1209,12 +1230,29 @@ int HouseClass::Constructor(int a1) {
   v5 = 3; /*0x4f53fb*/
   do /*0x4f5416*/
   {
-    HouseClass::initDropshipData(v3); /*0x4f5405*/
+    ((HouseClass *)v3)->initDropshipData(); /*0x4f5405 g57w11 r4: 实例形 (hpp 0 参; raw this=v3=this+22128)*/
     v3 += 44; /*0x4f540e*/
     --v5; /*0x4f5412*/
   }
+  while ( v5 ); /*0x4f5416 g57w11 r4: raw 原文 do-while 闭合*/
+  BaseClass::Construct(a2); /*0x4f5423 g57w11 r4: raw 原文尾部恢复*/
+  *(unsigned int *)((char *)this + 90216) = 0; /*0x4f5428*/
+  *(unsigned int *)((char *)this + 90220) = 0; /*0x4f542e*/
+  *(unsigned char *)((char *)this + 90224) = 1; /*0x4f5434*/
+  *(unsigned char *)((char *)this + 90225) = 0; /*0x4f543b*/
+  *(unsigned int *)((char *)this + 90212) = (unsigned int)(void *)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4f5441*/
+  *(unsigned int *)((char *)this + 90232) = 10; /*0x4f544b*/
+  *(unsigned int *)((char *)this + 90228) = 0; /*0x4f5451*/
+  *(unsigned int *)((char *)this) = (unsigned int)(void *)&HouseClass_vftable; /*0x4f5457*/
+  *(unsigned int *)((char *)this + 4) = (unsigned int)(void *)&HouseClass_vftable; /*0x4f545d*/
+  *(unsigned int *)((char *)this + 8) = (unsigned int)(void *)&HouseClass_vftable; /*0x4f5464*/
+  *(unsigned int *)((char *)this + 12) = (unsigned int)(void *)&HouseClass_vftable; /*0x4f546b*/
+  *(unsigned int *)((char *)this + 36) = (unsigned int)(void *)&HouseClass_vftable; /*0x4f5472*/
+  *(unsigned int *)((char *)this + 40) = (unsigned int)(void *)&HouseClass_vftable; /*0x4f5479*/
+  *(unsigned int *)((char *)this + 44) = (unsigned int)(void *)&HouseClass_vftable; /*0x4f5480*/
+  return (int)(void *)this; /*0x4f5489 g57w11 r4: raw return this; 返回类型 int 折合指针值形*/
 }
-}
+} // namespace gamemd
 // 0x4F6EC0
 namespace gamemd { 
 int HouseClass::SetCombatPower(int a1) {
@@ -1233,9 +1271,9 @@ int HouseClass::SetCombatPower(int a1) {
   int v15; // [esp+10h] [ebp-10h]
   int v16; // [esp+18h] [ebp-8h]
 
-  v15 = this->u32_184; /*0x4f6ed4*/
-  this->u32_184 = a1; /*0x4f6ed8*/
-  if ( dword_A8B238[0] ) /*0x4f6ee6*/
+  v15 = this->q184; /*0x4f6ed4*/
+  this->q184 = a1; /*0x4f6ed8*/
+  if ( *(unsigned int *)&dword_A8B238 ) /*0x4f6ee6 g57w11 r4: 标量读形 (dword 声明非数组; 2345 行同型)*/
   {
     v2 = (double *)*(&this->vtable23); /*0x4f6ef1*/
     this->u32_188 = *(double *)&dword_8871E0->__pad_C3C[80 * a1 + 2300] * v2[25]; /*0x4f6f11*/
@@ -1313,7 +1351,7 @@ int HouseClass::Destruct() {
   do /*0x4f71a1*/
   {
     if ( *v2 ) /*0x4f718e*/
-      (*(void (**)(unsigned int, int))(*(unsigned int *)this->q230)(*v2, 1); /*0x4f7198*/
+      (*(void (__thiscall **)(unsigned int, int))(*(unsigned int *)*v2 + 32))(*v2, 1); /*0x4f7198 g57w11 r4: raw fn_4F 原文槽形 (vtable 槽 8)*/
     *v2++ = 0; /*0x4f719b*/
     --v3; /*0x4f71a0*/
   }
@@ -1399,12 +1437,12 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     v5 = a1; /*0x4f7889*/
     if ( *(unsigned char *)(a1 + 3224) ) /*0x4f788d*/
       return 0; /*0x4f7895*/
-    DynamicVectorClass::Copy(&v72, (unsigned int *)(a1 + 1620)); /*0x4f78a6*/
+    DynamicVectorClass_Copy((void *)&v72, (unsigned int *)(a1 + 1620)); /*0x4f78a6 g57w11 r4: 自由函数词汇*/
     v6 = 0; /*0x4f78b4*/
-    v72 = (void *)&(void*)(void*)&TypeList_int_vftable; /*0x4f78b6*/
+    v72 = (void **)(void *)&TypeList_int_vftable; /*0x4f78b6*/
     if ( v75 > 0 ) /*0x4f78bc*/
     {
-      while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*((unsigned int *)v73 + v6)) <= 0 ) /*0x4f78d5*/
+      while ( (&this->SuperWeaponsAvailable)->GetOrGrow(*((unsigned int *)v73 + v6)) == nullptr /*g57w11 r4: raw <=0 (int 语境) 等价 null 判*/ ) /*0x4f78d5*/
       {
         if ( ++v6 >= v75 ) /*0x4f78de*/
         {
@@ -1412,8 +1450,8 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
           goto LABEL_7; /*0x4f78e0*/
         }
       }
-      v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7913*/
-      VectorClass::Destroy((int)&v72); /*0x4f791b*/
+      v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7913*/
+      VectorClass_int_Destroy((int)&v72); /*0x4f791b*/
       goto LABEL_135; /*0x4f7920*/
     }
   LABEL_7:
@@ -1426,7 +1464,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
           goto LABEL_15; /*0x4f790b*/
       }
       v8 = v73; /*0x4f7925*/
-      v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7929*/
+      v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7929*/
       if ( !v73 || !v74 ) /*0x4f793f*/
         goto LABEL_135; /*0x4f793f*/
       goto LABEL_134; /*0x4f793f*/
@@ -1435,13 +1473,13 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     if ( *(unsigned int *)(v5 + 1588) == -1 ) /*0x4f7951*/
     {
       v9 = v73; /*0x4f7953*/
-      v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7957*/
+      v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7957*/
       v10 = v73 == 0; /*0x4f795f*/
       goto LABEL_125; /*0x4f7961*/
     }
     DynamicVectorClass::Copy(&v67, (unsigned int *)(v5 + 1592)); /*0x4f7971*/
     v11 = *(unsigned char *)(v5 + 3485); /*0x4f7976*/
-    v67 = (void *)&(void*)(void*)&TypeList_int_vftable; /*0x4f797c*/
+    v67 = (void **)(void *)&TypeList_int_vftable; /*0x4f797c*/
     v12 = this->q1D4; /*0x4f7980*/
     if ( v11 && !this->side0TechInfiltrated ) /*0x4f798a*/
       goto LABEL_19; /*0x4f798a*/
@@ -1478,7 +1516,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
   LABEL_47:
         if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(this->supersCount + 4 * v16) + 40) + 231) ) /*0x4f7b01*/
         {
-          v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7b16*/
+          v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7b16*/
           if ( Block && v70 ) /*0x4f7b22*/
           {
             RA2_OPDEL(Block); /*0x4f7b25*/
@@ -1505,7 +1543,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     {
   LABEL_19:
       v13 = Block; /*0x4f7994*/
-      v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f799d*/
+      v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f799d*/
   LABEL_20:
       if ( v13 && v70 ) /*0x4f79b1*/
       {
@@ -1517,7 +1555,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       v9 = v73; /*0x4f7f20*/
       v70 = 0; /*0x4f7f24*/
       v69 = 0; /*0x4f7f29*/
-      v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7f2d*/
+      v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7f2d*/
       v10 = v73 == 0; /*0x4f7f31*/
       goto LABEL_125; /*0x4f7f31*/
     }
@@ -1526,7 +1564,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       v21 = v21 || this->playerControl; /*0x4f7b90*/
     if ( !v21 ) /*0x4f7b94*/
     {
-      v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7ba1*/
+      v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7ba1*/
       if ( Block && v70 ) /*0x4f7bad*/
       {
         RA2_OPDEL(Block); /*0x4f7bb0*/
@@ -1534,7 +1572,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       }
       v70 = 0; /*0x4f7bc0*/
       v69 = 0; /*0x4f7bc7*/
-      v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7bcb*/
+      v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7bcb*/
       if ( v73 && v74 ) /*0x4f7bd7*/
         RA2_OPDEL(v73); /*0x4f7bda*/
       return 1; /*0x4f7bda*/
@@ -1571,7 +1609,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             if ( !v29 ) /*0x4f7ddb*/
             {
               v13 = Block; /*0x4f7e99*/
-              v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7ea2*/
+              v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7ea2*/
               goto LABEL_20; /*0x4f7ea6*/
             }
             goto LABEL_114; /*0x4f7ddb*/
@@ -1633,7 +1671,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             while ( v24 < ((unsigned int *)g_RulesClass_Instance)[0] ); /*0x4f7c5a*/
   LABEL_116:
             v13 = Block; /*0x4f7e85*/
-            v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7e8e*/
+            v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7e8e*/
             goto LABEL_20; /*0x4f7e94*/
           default:
             v32 = *((unsigned int *)g_TriggerTypeCount + v23); /*0x4f7deb*/
@@ -1643,7 +1681,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
               if ( v33 < 0 ) /*0x4f7dfc*/
               {
   LABEL_118:
-                v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7eab*/
+                v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7eab*/
                 if ( Block && v70 ) /*0x4f7ec6*/
                 {
                   RA2_OPDEL(Block); /*0x4f7ed1*/
@@ -1651,7 +1689,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
                   Block = 0; /*0x4f7edd*/
                   v70 = 0; /*0x4f7ee5*/
                   v69 = 0; /*0x4f7eea*/
-                  v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7ef2*/
+                  v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7ef2*/
                   v10 = v73 == 0; /*0x4f7ef6*/
                   goto LABEL_125; /*0x4f7ef8*/
                 }
@@ -1659,7 +1697,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
                 v9 = v73; /*0x4f7b35*/
                 v70 = 0; /*0x4f7b39*/
                 v69 = 0; /*0x4f7b3e*/
-                v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7b46*/
+                v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7b46*/
                 v10 = v73 == 0; /*0x4f7b4a*/
   LABEL_125:
                 if ( !v10 ) /*0x4f7f33*/
@@ -1696,7 +1734,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
             else if ( !(&this->SuperWeaponsAvailable)->GetOrGrow(*((unsigned int *)Block + v76)) ) /*0x4f7e5e*/
             {
               v13 = Block; /*0x4f7efa*/
-              v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7f05*/
+              v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7f05*/
               if ( Block && v70 ) /*0x4f7f11*/
                 goto LABEL_123; /*0x4f7f11*/
               goto LABEL_124; /*0x4f7f11*/
@@ -1711,7 +1749,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       }
     }
   LABEL_129:
-    v67 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7f52*/
+    v67 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7f52*/
     if ( Block && v70 ) /*0x4f7f69*/
     {
       RA2_OPDEL(Block); /*0x4f7f6c*/
@@ -1720,7 +1758,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
     v8 = v73; /*0x4f7f78*/
     v70 = 0; /*0x4f7f7c*/
     v69 = 0; /*0x4f7f83*/
-    v72 = (void *)&(void*)(void*)&VectorClass_int_vftable; /*0x4f7f87*/
+    v72 = (void **)(void *)&VectorClass_int_vftable; /*0x4f7f87*/
     if ( v73 && v74 ) /*0x4f7f93*/
   LABEL_134:
       RA2_OPDEL(v8); /*0x4f7f95*/
@@ -1787,7 +1825,7 @@ int HouseClass::NotifyUnderAttack(void* a1) {
 }
 }
 // 0x4f9950
-        return HouseClass::AddPower((HouseClass *)this->planningPaths[3], v4); /*0x4587b1*/
+        return ((HouseClass *)this->planningPaths[3])->AddPower(v4); /*0x4587b1 g57w11 r4: 实例形 (hpp AddPower(int) 1 参)*/
   return result; /*0x4587b6*/
 // 0x4f9a10
             && ((HouseClass*)HouseClass_Player)->IsAllied(*(unsigned int *)(v8 + 272))
@@ -1796,7 +1834,7 @@ int HouseClass::NotifyUnderAttack(void* a1) {
                                   HouseClass_Player)
             && !*(unsigned char *)(*(unsigned int *)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)] + 501) )
           {
-            BuildingPlacement::RenderBuildingPlacementShadow((int *)v8, a2, a3, a4, a5, a6, 0); /*0x4317bf*/
+            ((BuildingPlacement *)v8)->RenderBuildingPlacementShadow(a2, a3, a4, a5, a6, 0); /*0x4317bf g57w11 r4: 实例形 (raw 0x430650 6 显式参; hpp 签名同步见 render_ext)*/
           }
 // 0x4F9B70
 namespace gamemd { 
@@ -2749,7 +2787,7 @@ int HouseClass::AIUnitProduction() {
     v11 = *(unsigned int *)(v6 + 4 * v5); /*0x4feb1e*/
     if ( v11 ) /*0x4feb23*/
     {
-      v12 = *(unsigned int *)&v1->__pad_13C[28]; /*0x4feb30*/
+      v12 = v1->q158; /*0x4feb30 g57w11 r4: __pad_13C[28]=0x158 (ml q158)*/
       v13 = *(unsigned int *)&v1->__pad_13C[32] /*0x4feb47*/
           * *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4956)
                       + 4 * *(unsigned int *)&v1->__pad_13C[72]);
@@ -6562,195 +6600,195 @@ void* HouseClass::InitTypeVectors(int a1) {
 
   v3 = &this->repairStationsCapacity; /*0x664d26*/
   DynamicVector::Constructor_VoxelAnim(0, 0); /*0x664d2d*/
-  *v3 = (void *)&(void*)(void*)(void*)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x664d32*/
+  *v3 = (void *)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x664d32*/
   DynamicVectorClass::AnimTypeConstructor(&this->q104, 0, 0); /*0x664d44*/
-  *(&this->nextArrayIndex5) = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d49*/
+  *(&this->nextArrayIndex5) = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x664d49*/
   DynamicVectorClass::AnimTypeConstructor(&this->buildDelay, 0, 0); /*0x664d5b*/
-  *(&this->referenceCount2) = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d60*/
+  *(&this->referenceCount2) = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x664d60*/
   DynamicVectorClass::AnimTypeConstructor(&this->q13C, 0, 0); /*0x664d72*/
-  *(&this->referenceCount9) = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d77*/
+  *(&this->referenceCount9) = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x664d77*/
   DynamicVectorClass::AnimTypeConstructor(&this->q158, 0, 0); /*0x664d89*/
-  *(&this->NeedsSaveOrLink6) = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664d8e*/
+  *(&this->NeedsSaveOrLink6) = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x664d8e*/
   DynamicVectorClass::AnimTypeConstructor(&this->q2A0, 0, 0); /*0x664da0*/
-  *(&this->conYardsCapacity8) = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664da5*/
+  *(&this->conYardsCapacity8) = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x664da5*/
   DynamicVectorClass::AnimTypeConstructor(&this->side2TechInfiltrated, 0, 0); /*0x664db7*/
-  *(&this->q0445) = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664dbc*/
+  *(&this->q0445) = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x664dbc*/
   this->DynamicVectorClass_B6.AnimTypeConstructor(0, 0); /*0x664dce*/
-  *(&this->q0482) = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x664dd3*/
+  *(&this->q0482) = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x664dd3*/
   this->DynamicVectorClass_D6.Construct(0, 0); /*0x664de5*/
-  *(&this->q0544) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664dea*/
+  *(&this->q0544) = (void *)&TypeList_int_vftable; /*0x664dea*/
   this->DynamicVectorClass_DD.Construct(0, 0); /*0x664dfc*/
-  *(&this->q0581) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664e01*/
+  *(&this->q0581) = (void *)&TypeList_int_vftable; /*0x664e01*/
   this->q0E4.Construct(0, 0); /*0x664e13*/
-  *(&this->q0588) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664e18*/
+  *(&this->q0588) = (void *)&TypeList_int_vftable; /*0x664e18*/
   this->q0EB.Construct(0, 0); /*0x664e2a*/
-  *(&this->q05C5) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664e2f*/
+  *(&this->q05C5) = (void *)&TypeList_int_vftable; /*0x664e2f*/
   this->q0F2.Construct(0, 0); /*0x664e41*/
-  *(&this->q0602) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664e46*/
+  *(&this->q0602) = (void *)&TypeList_int_vftable; /*0x664e46*/
   this->q0F9.Construct(0, 0); /*0x664e58*/
-  *(&this->q0609) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664e5d*/
+  *(&this->q0609) = (void *)&TypeList_int_vftable; /*0x664e5d*/
   this->q10F.Construct(0, 0); /*0x664e6f*/
-  *(&this->health1) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664e74*/
+  *(&this->health1) = (void *)&TypeList_int_vftable; /*0x664e74*/
   this->q116.Construct(0, 0); /*0x664e86*/
-  *(&this->health8) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664e8b*/
+  *(&this->health8) = (void *)&TypeList_int_vftable; /*0x664e8b*/
   this->DynamicVectorClass_11D.Construct(0, 0); /*0x664e9d*/
-  *(&this->estimatedHealth5) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664ea2*/
+  *(&this->estimatedHealth5) = (void *)&TypeList_int_vftable; /*0x664ea2*/
   DynamicVector::Constructor_VoxelAnim(0, 0); /*0x664eb4*/
-  *(&this->isInLogic4) = (void *)&(void*)(void*)(void*)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x664eb9*/
+  *(&this->isInLogic4) = (void *)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x664eb9*/
   this->q192.Construct(0, 0); /*0x664ecb*/
-  *(&this->q0A02) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664ed0*/
+  *(&this->q0A02) = (void *)&TypeList_int_vftable; /*0x664ed0*/
   this->DynamicVectorClass_1B3.Construct(0, 0); /*0x664ee2*/
-  *(&this->q02B5) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664ee7*/
+  *(&this->q02B5) = (void *)&TypeList_int_vftable; /*0x664ee7*/
   this->DynamicVectorClass_1CD.Construct(0, 0); /*0x664ef9*/
-  this->u32_734 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x664efe*/
+  this->u32_734 = (void *)&TypeList_int_vftable; /*0x664efe*/
   this->SmudgeTypeVector_1F1.Construct(0, 0); /*0x664f10*/
-  *(&this->q0317) = (void *)&(void*)(void*)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f15*/
+  *(&this->q0317) = (void *)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f15*/
   this->u32_1F8.Construct(0, 0); /*0x664f27*/
-  *(&this->needsSave4) = (void *)&(void*)(void*)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f2c*/
+  *(&this->needsSave4) = (void *)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f2c*/
   this->SmudgeTypeVector_1FF.Construct(0, 0); /*0x664f3e*/
-  *(&this->pad211) = (void *)&(void*)(void*)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f43*/
+  *(&this->pad211) = (void *)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f43*/
   this->q206.Construct(0, 0); /*0x664f55*/
-  *(&this->pad218) = (void *)&(void*)(void*)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f5a*/
+  *(&this->pad218) = (void *)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f5a*/
   this->SmudgeTypeVector_20D.Construct(0, 0); /*0x664f6c*/
-  *(&this->attachedTag5) = (void *)&(void*)(void*)(void*)(void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f71*/
+  *(&this->attachedTag5) = (void *)&TypeList_SmudgeTypeClass_const___vftable; /*0x664f71*/
   this->q214.BuildingTypeConstructor(0, 0); /*0x664f83*/
-  this->u32_850 = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664f88*/
+  this->u32_850 = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x664f88*/
   this->q220.BuildingTypeConstructor(0, 0); /*0x664f9a*/
-  *(&this->occupant4) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664f9f*/
+  *(&this->occupant4) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x664f9f*/
   this->DynamicVectorClass_22B.BuildingTypeConstructor(0, 0); /*0x664fb1*/
-  this->u32_8AC = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fb6*/
+  this->u32_8AC = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x664fb6*/
   this->q232.BuildingTypeConstructor(0, 0); /*0x664fc8*/
-  *(&this->attachedBomb2) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fcd*/
+  *(&this->attachedBomb2) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x664fcd*/
   this->DynamicVectorClass_239.BuildingTypeConstructor(0, 0); /*0x664fdf*/
-  *(&this->attachedBomb9) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664fe4*/
+  *(&this->attachedBomb9) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x664fe4*/
   this->q240.BuildingTypeConstructor(0, 0); /*0x664ff6*/
-  this->u32_900 = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x664ffb*/
+  this->u32_900 = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x664ffb*/
   this->q247.BuildingTypeConstructor(0, 0); /*0x66500d*/
-  *(&this->q03A3) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665012*/
+  *(&this->q03A3) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665012*/
   this->DynamicVectorClass_24E.BuildingTypeConstructor(0, 0); /*0x665024*/
-  *(&this->q03B0) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665029*/
+  *(&this->q03B0) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665029*/
   this->DynamicVectorClass_255.BuildingTypeConstructor(0, 0); /*0x66503b*/
-  *(&this->q03B7) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665040*/
+  *(&this->q03B7) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665040*/
   DynamicVectorClass::BuildingTypeConstructor(&this->ptr_970, 0, 0); /*0x665052*/
-  *(&this->airspeedMultiplier4) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665057*/
+  *(&this->airspeedMultiplier4) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665057*/
   this->DynamicVectorClass_263.BuildingTypeConstructor(0, 0); /*0x665069*/
-  this->u32_98C = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66506e*/
+  this->u32_98C = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x66506e*/
   this->DynamicVectorClass_26A.Construct(0, 0); /*0x665080*/
-  *(&this->q0F48) = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665085*/
+  *(&this->q0F48) = (void *)&TypeList_int_vftable; /*0x665085*/
   DynamicVectorClass::BuildingTypeConstructor(&this->u32_9C4, 0, 0); /*0x665097*/
-  *(&this->armorMultiplier5) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66509c*/
+  *(&this->armorMultiplier5) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x66509c*/
   this->DynamicVectorClass_278.BuildingTypeConstructor(0, 0); /*0x6650ae*/
-  *(&this->q0FC2) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650b3*/
+  *(&this->q0FC2) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x6650b3*/
   this->DynamicVectorClass_27F.BuildingTypeConstructor(0, 0); /*0x6650c5*/
-  *(&this->q0FC9) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650ca*/
+  *(&this->q0FC9) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x6650ca*/
   this->DynamicVectorClass_286.BuildingTypeConstructor(0, 0); /*0x6650dc*/
-  *(&this->rofMultiplier6) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650e1*/
+  *(&this->rofMultiplier6) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x6650e1*/
   this->DynamicVectorClass_28D.BuildingTypeConstructor(0, 0); /*0x6650f3*/
-  *(&this->q1043) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x6650f8*/
+  *(&this->q1043) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x6650f8*/
   this->DynamicVectorClass_294.BuildingTypeConstructor(0, 0); /*0x66510a*/
-  *(&this->costMultiplier0) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66510f*/
+  *(&this->costMultiplier0) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x66510f*/
   DynamicVectorClass::BuildingTypeConstructor(&this->u32_A6C, 0, 0); /*0x665121*/
-  *(&this->costMultiplier7) = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665126*/
+  *(&this->costMultiplier7) = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665126*/
   this->DynamicVectorClass_2A2.BuildingTypeConstructor(0, 0); /*0x665138*/
-  this->u32_A88 = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66513d*/
+  this->u32_A88 = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x66513d*/
   this->DynamicVectorClass_2A9.BuildingTypeConstructor(0, 0); /*0x66514f*/
-  this->u32_AA4 = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665154*/
+  this->u32_AA4 = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665154*/
   this->DynamicVectorClass_2B0.BuildingTypeConstructor(0, 0); /*0x665166*/
-  this->u32_AC0 = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x66516b*/
+  this->u32_AC0 = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x66516b*/
   this->DynamicVectorClass_2B7.BuildingTypeConstructor(0, 0); /*0x66517d*/
-  this->u32_ADC = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665182*/
+  this->u32_ADC = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665182*/
   this->UnitTypeVector_2C8.Construct(0, 0); /*0x665194*/
-  this->u32_B20 = (void *)&(void*)(void*)(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x665199*/
+  this->u32_B20 = (void *)&TypeList_UnitTypeClass_const___vftable; /*0x665199*/
   this->UnitTypeVector_2CF.Construct(0, 0); /*0x6651ab*/
-  this->u32_B3C = (void *)&(void*)(void*)(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x6651b0*/
+  this->u32_B3C = (void *)&TypeList_UnitTypeClass_const___vftable; /*0x6651b0*/
   HouseTypeClass::readDefaultAlly(0, 0); /*0x6651c2*/
-  this->u32_B58 = (void *)&(void*)(void*)(void*)(void*)&TypeList_AircraftTypeClass_const___vftable; /*0x6651c7*/
+  this->u32_B58 = (void *)&TypeList_AircraftTypeClass_const___vftable; /*0x6651c7*/
   this->DynamicVectorClass_2DD.AnimTypeConstructor(0, 0); /*0x6651d9*/
-  this->u32_B74 = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x6651de*/
+  this->u32_B74 = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x6651de*/
   this->DynamicVectorClass_2E4.AnimTypeConstructor(0, 0); /*0x6651f0*/
-  this->u32_B90 = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x6651f5*/
+  this->u32_B90 = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x6651f5*/
   this->u32_2F0.AnimTypeConstructor(0, 0); /*0x665207*/
-  this->u32_BC0 = (void *)&(void*)(void*)(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x66520c*/
+  this->u32_BC0 = (void *)&TypeList_AnimTypeClass_const___vftable; /*0x66520c*/
   this->InfantryTypeVector_301.Construct(0, 0); /*0x66521e*/
-  this->u32_C04 = (void *)&(void*)(void*)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x665223*/
+  this->u32_C04 = (void *)&TypeList_InfantryTypeClass_const___vftable; /*0x665223*/
   this->DynamicVectorClass_308.Construct(0, 0); /*0x665235*/
-  this->u32_C20 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66523a*/
+  this->u32_C20 = (void *)&TypeList_int_vftable; /*0x66523a*/
   this->InfantryTypeVector_30F.Construct(0, 0); /*0x66524c*/
-  this->u32_C3C = (void *)&(void*)(void*)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x665251*/
+  this->u32_C3C = (void *)&TypeList_InfantryTypeClass_const___vftable; /*0x665251*/
   this->DynamicVectorClass_316.Construct(0, 0); /*0x665263*/
-  this->u32_C58 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665268*/
+  this->u32_C58 = (void *)&TypeList_int_vftable; /*0x665268*/
   this->InfantryTypeVector_31D.Construct(0, 0); /*0x66527a*/
-  this->u32_C74 = (void *)&(void*)(void*)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x66527f*/
+  this->u32_C74 = (void *)&TypeList_InfantryTypeClass_const___vftable; /*0x66527f*/
   this->DynamicVectorClass_324.Construct(0, 0); /*0x665291*/
-  this->u32_C90 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665296*/
+  this->u32_C90 = (void *)&TypeList_int_vftable; /*0x665296*/
   this->InfantryTypeVector_32B.Construct(0, 0); /*0x6652a8*/
-  this->u32_CAC = (void *)&(void*)(void*)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x6652ad*/
+  this->u32_CAC = (void *)&TypeList_InfantryTypeClass_const___vftable; /*0x6652ad*/
   this->DynamicVectorClass_332.Construct(0, 0); /*0x6652bf*/
-  this->u32_CC8 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6652c4*/
+  this->u32_CC8 = (void *)&TypeList_int_vftable; /*0x6652c4*/
   this->InfantryTypeVector_339.Construct(0, 0); /*0x6652d6*/
-  this->u32_CE4 = (void *)&(void*)(void*)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x6652db*/
+  this->u32_CE4 = (void *)&TypeList_InfantryTypeClass_const___vftable; /*0x6652db*/
   this->InfantryTypeVector_340.Construct(0, 0); /*0x6652ed*/
-  this->u32_D00 = (void *)&(void*)(void*)(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x6652f2*/
+  this->u32_D00 = (void *)&TypeList_InfantryTypeClass_const___vftable; /*0x6652f2*/
   this->UnitTypeVector_347.Construct(0, 0); /*0x665304*/
-  this->u32_D1C = (void *)&(void*)(void*)(void*)(void*)&TypeList_UnitTypeClass_const___vftable; /*0x665309*/
+  this->u32_D1C = (void *)&TypeList_UnitTypeClass_const___vftable; /*0x665309*/
   this->DynamicVectorClass_34E.BuildingTypeConstructor(0, 0); /*0x66531b*/
-  this->u32_D38 = (void *)&(void*)(void*)(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x665320*/
+  this->u32_D38 = (void *)&TypeList_BuildingTypeClass_const___vftable; /*0x665320*/
   this->DynamicVectorClass_360.Construct(0, 0); /*0x665332*/
-  this->u32_D80 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665337*/
+  this->u32_D80 = (void *)&TypeList_int_vftable; /*0x665337*/
   this->DynamicVectorClass_367.Construct(0, 0); /*0x665349*/
-  this->u32_D9C = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66534e*/
+  this->u32_D9C = (void *)&TypeList_int_vftable; /*0x66534e*/
   this->DynamicVectorClass_36E.Construct(0, 0); /*0x665360*/
-  this->u32_DB8 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665365*/
+  this->u32_DB8 = (void *)&TypeList_int_vftable; /*0x665365*/
   this->DynamicVectorClass_375.Construct(0, 0); /*0x665377*/
-  this->u32_DD4 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66537c*/
+  this->u32_DD4 = (void *)&TypeList_int_vftable; /*0x66537c*/
   this->DynamicVectorClass_384.Construct(0, 0); /*0x66538e*/
-  this->u32_E10 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665393*/
+  this->u32_E10 = (void *)&TypeList_int_vftable; /*0x665393*/
   this->DynamicVectorClass_38B.Construct(0, 0); /*0x6653a5*/
-  this->u32_E2C = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6653aa*/
+  this->u32_E2C = (void *)&TypeList_int_vftable; /*0x6653aa*/
   this->DynamicVectorClass_393.Construct(0, 0); /*0x6653bc*/
-  this->u32_E4C = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6653c1*/
+  this->u32_E4C = (void *)&TypeList_int_vftable; /*0x6653c1*/
   this->DynamicVectorClass_39A.Construct(0, 0); /*0x6653d3*/
-  this->u32_E68 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6653d8*/
+  this->u32_E68 = (void *)&TypeList_int_vftable; /*0x6653d8*/
   this->DynamicVectorClass_3A1.Construct(0, 0); /*0x6653ea*/
-  this->u32_E84 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6653ef*/
+  this->u32_E84 = (void *)&TypeList_int_vftable; /*0x6653ef*/
   this->DynamicVectorClass_3A8.Construct(0, 0); /*0x665401*/
-  this->u32_EA0 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665406*/
+  this->u32_EA0 = (void *)&TypeList_int_vftable; /*0x665406*/
   this->DynamicVectorClass_3B1.Construct(0, 0); /*0x665418*/
-  this->u32_EC4 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66541d*/
+  this->u32_EC4 = (void *)&TypeList_int_vftable; /*0x66541d*/
   this->DynamicVectorClass_3BA.Construct(0, 0); /*0x66542f*/
-  this->u32_EE8 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665434*/
+  this->u32_EE8 = (void *)&TypeList_int_vftable; /*0x665434*/
   this->DynamicVectorClass_3C1.Construct(0, 0); /*0x665446*/
-  this->u32_F04 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66544b*/
+  this->u32_F04 = (void *)&TypeList_int_vftable; /*0x66544b*/
   this->DynamicVectorClass_3C8.Construct(0, 0); /*0x66545d*/
-  this->u32_F20 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665462*/
+  this->u32_F20 = (void *)&TypeList_int_vftable; /*0x665462*/
   TerrainTypeVector::Construct(0, 0); /*0x665474*/
-  this->u32_FF8 = (void *)&(void*)(void*)(void*)(void*)&TypeList_TerrainTypeClass_const___vftable; /*0x665479*/
+  this->u32_FF8 = (void *)&TypeList_TerrainTypeClass_const___vftable; /*0x665479*/
   this->DynamicVectorClass_456.Construct(0, 0); /*0x66548b*/
-  this->u32_1158 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665490*/
+  this->u32_1158 = (void *)&TypeList_int_vftable; /*0x665490*/
   this->DynamicVectorClass_45D.Construct(0, 0); /*0x6654a2*/
-  this->u32_1174 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6654a7*/
+  this->u32_1174 = (void *)&TypeList_int_vftable; /*0x6654a7*/
   this->DynamicVectorClass_465.Construct(0, 0); /*0x6654b9*/
-  this->u32_1194 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6654be*/
+  this->u32_1194 = (void *)&TypeList_int_vftable; /*0x6654be*/
   this->DynamicVectorClass_46C.Construct(0, 0); /*0x6654d0*/
-  this->u32_11B0 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6654d5*/
+  this->u32_11B0 = (void *)&TypeList_int_vftable; /*0x6654d5*/
   this->DynamicVectorClass_473.Construct(0, 0); /*0x6654e7*/
-  this->u32_11CC = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6654ec*/
+  this->u32_11CC = (void *)&TypeList_int_vftable; /*0x6654ec*/
   this->DynamicVectorClass_47A.Construct(0, 0); /*0x6654fe*/
-  this->u32_11E8 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665503*/
+  this->u32_11E8 = (void *)&TypeList_int_vftable; /*0x665503*/
   this->DynamicVectorClass_481.Construct(0, 0); /*0x665515*/
-  this->u32_1204 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66551a*/
+  this->u32_1204 = (void *)&TypeList_int_vftable; /*0x66551a*/
   this->DynamicVectorClass_488.Construct(0, 0); /*0x66552c*/
-  this->u32_1220 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665531*/
+  this->u32_1220 = (void *)&TypeList_int_vftable; /*0x665531*/
   this->DynamicVectorClass_48F.Construct(0, 0); /*0x665543*/
-  this->u32_123C = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665548*/
+  this->u32_123C = (void *)&TypeList_int_vftable; /*0x665548*/
   this->DynamicVectorClass_496.Construct(0, 0); /*0x66555a*/
-  this->u32_1258 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66555f*/
+  this->u32_1258 = (void *)&TypeList_int_vftable; /*0x66555f*/
   this->DynamicVectorClass_49D.Construct(0, 0); /*0x665571*/
-  this->u32_1274 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x665576*/
+  this->u32_1274 = (void *)&TypeList_int_vftable; /*0x665576*/
   this->DynamicVectorClass_4A4.Construct(0, 0); /*0x665588*/
-  this->u32_1290 = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x66558d*/
+  this->u32_1290 = (void *)&TypeList_int_vftable; /*0x66558d*/
   this->DynamicVectorClass_4AB.Construct(0, 0); /*0x66559f*/
-  this->u32_12AC = (void *)&(void*)(void*)(void*)(void*)&TypeList_int_vftable; /*0x6655aa*/
+  this->u32_12AC = (void *)&TypeList_int_vftable; /*0x6655aa*/
   this->TypeList_4B2.Construct(); /*0x6655b0*/
   this->TypeList_4B9.Construct(); /*0x6655bb*/
   this->TypeList_4C1.Construct(); /*0x6655c6*/

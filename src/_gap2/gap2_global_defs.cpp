@@ -938,8 +938,8 @@ int Gap2Recv_421350::RenderAlphaShapes()
       v44 = (char *)v3[1]; /*0x42138b*/
       v45 = v3[2]; /*0x421392*/
       v46 = v3[3]; /*0x421399*/
-      v4 = &v44[-*(unsigned int *)&g_TacticalClass_Instance[45]]; /*0x4213af*/
-      v43 = DSurface_ViewBounds.field_0 + v43 - *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x4213c3*/
+      v4 = &v44[-*(unsigned int *)&(&g_TacticalClass_Instance)[45]]; /*0x4213af*/
+      v43 = DSurface_ViewBounds.field_0 + v43 - *(unsigned int *)&(&g_TacticalClass_Instance)[44]; /*0x4213c3*/
       v44 = (char *)DSurface_ViewBounds.field_4 + (unsigned int)v4; /*0x4213cb*/
       v39 = *v47; /*0x4213d1*/
       v40 = v47[1]; /*0x4213d8*/
@@ -1018,7 +1018,7 @@ int Gap2Recv_421350::RenderAlphaShapes()
                   v36 = *v20++; /*0x421653*/
                   ++v18; /*0x421662*/
                   --v25; /*0x421668*/
-                  *(v18 - 1) = (unsigned __int8)byte_88A118[256 * v36 + v26]; /*0x421672*/
+                  *(v18 - 1) = (unsigned __int8)((unsigned char *)&byte_88A118)[256 * v36 + v26]; /*0x421672*/
                 }
                 while ( v25 ); /*0x421676*/
                 v23 = v32; /*0x421678*/
@@ -1045,7 +1045,7 @@ int Gap2Recv_421350::RenderAlphaShapes()
               {
                 ++v18; /*0x4215cd*/
                 v35 = *v20++; /*0x4215d0*/
-                *(v18 - 1) = (unsigned __int8)byte_88A118[256 * v35 + *(v18 - 1)]; /*0x4215f1*/
+                *(v18 - 1) = (unsigned __int8)((unsigned char *)&byte_88A118)[256 * v35 + *(v18 - 1)]; /*0x4215f1*/
                 v19 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x4215f5*/
                 if ( (unsigned int)v18 >= *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 28) ) /*0x4215fe*/
                   v18 = (unsigned __int16 *)((char *)v18 - *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 32)); /*0x421600*/
@@ -1100,7 +1100,7 @@ double Gap2Recv_429830::ComputeMovementWeight(int * a1, unsigned int * a2, void 
     v7 = *a3; /*0x429843*/
     v8 = a5 == 2; /*0x429845*/
     v23 = this; /*0x429850*/
-    v28 = flt_81870C[a5]; /*0x429854*/
+    v28 = (&flt_81870C)[a5]; /*0x429854*/
     v25 = *a2; /*0x429858*/
     if ( v8 ) /*0x42985c*/
     {
@@ -1127,8 +1127,8 @@ double Gap2Recv_429830::ComputeMovementWeight(int * a1, unsigned int * a2, void 
         }
         v12 = (unsigned short *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)v9 + 440))(v9, v27); /*0x4298e8*/
         v13 = v11 & 7; /*0x4298f1*/
-        IDA_LOWORD(v22) = IDA_LOWORD(dword_89F688[v13]) + *v12; /*0x42990b*/
-        IDA_HIWORD(v22) = v12[1] + IDA_HIWORD(dword_89F688[v13]); /*0x429919*/
+        IDA_LOWORD(v22) = IDA_LOWORD((&dword_89F688)[v13]) + *v12; /*0x42990b*/
+        IDA_HIWORD(v22) = v12[1] + IDA_HIWORD((&dword_89F688)[v13]); /*0x429919*/
         v24 = v22; /*0x429927*/
         v14 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v24); /*0x429930*/
         if ( (v14[80] & 0x100) != 0 /*0x429964*/
@@ -1164,13 +1164,13 @@ double Gap2Recv_429830::ComputeMovementWeight(int * a1, unsigned int * a2, void 
                      + (__int16)(*(unsigned short *)(v7 + 36) - *(unsigned short *)(v25 + 36))];
     if ( (v16 & 0x800) != 0 ) /*0x429a0c*/
     {
-      v19 = v6[dword_7E3730[v18]]; /*0x429a1b*/
-      v20 = dword_7E3730[((unsigned char)v18 - 4) & 7]; /*0x429a1e*/
+      v19 = v6[(&dword_7E3730)[v18]]; /*0x429a1b*/
+      v20 = (&dword_7E3730)[((unsigned char)v18 - 4) & 7]; /*0x429a1e*/
     }
     else
     {
-      v19 = v6[dword_7E3710[v18]]; /*0x429a34*/
-      v20 = dword_7E3710[((unsigned char)v18 - 4) & 7]; /*0x429a37*/
+      v19 = v6[(&dword_7E3710)[v18]]; /*0x429a34*/
+      v20 = (&dword_7E3710)[((unsigned char)v18 - 4) & 7]; /*0x429a37*/
     }
     if ( (*(unsigned int *)(v19 + 320) & 0x100) == 0 ) /*0x429a4e*/
       return 10.0 * v28; /*0x429a58*/

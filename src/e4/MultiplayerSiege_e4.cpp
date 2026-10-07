@@ -364,10 +364,10 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   if ( !v7 ) /*0x5cab69*/
     return 0; /*0x5cab69*/
   v9 = *v7; /*0x5cab6b*/
-  StartCoords = ((HouseClass *)ppv)->GetStartCoords( v12); /*0x5cab76*/
+  StartCoords = HouseClass::GetStartCoords(((HouseClass *)ppv), v12); /*0x5cab76*/
   if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v9 + 216))( (int *)(v8), (unsigned int *)(StartCoords), 0) ) /*0x5cab7e*/
     return 1; /*0x5cab7e*/
-  CurrentOption = (int16_t *)((HouseClass *)ppv)->GetCurrentOption( &a2); /*0x5cab91*/
+  CurrentOption = (int16_t *)HouseClass::GetCurrentOption(((HouseClass *)ppv), &a2); /*0x5cab91*/
   if ( FindInfantryDeployPosition( (int *)(v8), (gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
   (*(void (**)(int *, int))(*v8 + 32))( (int *)(v8), 1); /*0x5caba9*/

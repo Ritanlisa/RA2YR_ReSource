@@ -75,7 +75,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5251b2*/
+    (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))((_VectorClass_PBVAnimTypeClass *)(this)); /*0x5251b2*/
     return (gamemd::AbstractClass **)(1); /*0x5251b8*/
   }
 

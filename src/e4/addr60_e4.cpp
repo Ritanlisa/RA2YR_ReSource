@@ -1950,23 +1950,7 @@ LABEL_23:
           int * v41 = (int *)(Copy8Bytes(&v117, &v97));
           v76 = *v41;
           v77 = v41[1];
-          DrawToSurfaceSHP(
-            DSurface_Alternate,
-            v32,
-            (gamemd::ConvertClass *)(int)v105,
-            v86 + v68 * v39,
-            &v76,
-            v72,
-            1024,
-            0,
-            0,
-            0,
-            1000,
-            0,
-            0,
-            0,
-            0,
-            0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, (gamemd::ConvertClass *)(int)v105, v86 + v68 * v39, (ConvertClass *)(&v76), (ConvertClass *)(v72), (ConvertClass *)(1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
       }
       if ( v60 )
@@ -1981,23 +1965,7 @@ LABEL_23:
         {
           v43 = -1;
 LABEL_68:
-          DrawToSurfaceSHP(
-            DSurface_Alternate,
-            v32,
-            (gamemd::ConvertClass *)(int)v73,
-            v89 + v68 * v43,
-            (gamemd::ConvertClass *)v103,
-            (gamemd::ConvertClass *)v72,
-            1024,
-            0,
-            0,
-            0,
-            1000,
-            0,
-            0,
-            0,
-            0,
-            0);
+          DrawToSurfaceSHP(DSurface_Alternate, v32, (gamemd::ConvertClass *)(int)v73, v89 + v68 * v43, (gamemd::ConvertClass *)v103, (gamemd::ConvertClass *)v72, (ConvertClass *)(1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
           goto LABEL_69;
         }
         if ( v43 < 6 )
@@ -2138,23 +2106,7 @@ LABEL_106:
       }
       if ( g_DDraw_Active >= 800 )
         v69[0] += 80;
-      DrawToSurfaceSHP(
-        DSurface_Alternate,
-        (int)v62,
-        (gamemd::ConvertClass *)(int)v80,
-        v88 + v68 * v56,
-        (gamemd::ConvertClass *)v69,
-        (gamemd::ConvertClass *)v72,
-        1024,
-        0,
-        0,
-        0,
-        1000,
-        0,
-        0,
-        0,
-        0,
-        0);
+      DrawToSurfaceSHP(DSurface_Alternate, (int)v62, (gamemd::ConvertClass *)(int)v80, v88 + v68 * v56, (gamemd::ConvertClass *)v69, (gamemd::ConvertClass *)v72, (ConvertClass *)(1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
 LABEL_116:
       (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0);
       (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0);

@@ -597,10 +597,10 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           v36 = v35[182]; /*0x74a290*/
           if ( v36 > 0 ) /*0x74a298*/
           {
-            v37 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v36); /*0x74a2b3*/
+            v37 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, v36); /*0x74a2b3*/
             v38 = v37 /*0x74a2cd*/
                 + Random::Range(
-                    (Random *)&(&dword_A8B230)[14].NeedsSaveOrLink,
+                    (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink,
                     0,
                     *((unsigned int *)v1->VoxelAnimClass_field_0x104 + 182));
             if ( v38 > 0 ) /*0x74a2d1*/
@@ -637,7 +637,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 if ( v94 ) /*0x74a3d0*/
                 {
                   v93 = *((unsigned int *)v43 + 9); /*0x74a3e8*/
-                  v45 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x74a3ec*/
+                  v45 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x74a3ec*/
                   Object::SpawnAtCell( /*0x74a427*/
                     (void *)v94,
                     *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
@@ -653,7 +653,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
                 if ( v94 ) /*0x74a437*/
                 {
                   v95 = *((unsigned int *)v43 + 9); /*0x74a44b*/
-                  v46 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
+                  v46 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 11); /*0x74a44f*/
                   Object::SpawnAtCell( /*0x74a477*/
                     (void *)v94,
                     *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v44->((unsigned int *)jumpjet)[0] + v46)),
@@ -735,7 +735,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
               if ( v57 ) /*0x74a62e*/
               {
                 smudgeTypeIndex = (VoxelAnimClass *)v55->smudgeTypeIndex; /*0x74a647*/
-                v58 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x74a64b*/
+                v58 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x74a64b*/
                 Object::SpawnAtCell( /*0x74a682*/
                   v57,
                   *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
@@ -755,7 +755,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
               if ( v59 ) /*0x74a690*/
               {
                 smudgeTypeIndex = (VoxelAnimClass *)v55->smudgeTypeIndex; /*0x74a6a4*/
-                v60 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, 11); /*0x74a6a8*/
+                v60 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 11); /*0x74a6a8*/
                 Object::SpawnAtCell( /*0x74a6ce*/
                   v59,
                   *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * ((int)v56->((unsigned int *)jumpjet)[0] + v60)),
@@ -1034,7 +1034,7 @@ char VoxelAnimClass::UpdateMatrix()
   int v8; // [esp+10h] [ebp-8h] BYREF
   int v9; // [esp+14h] [ebp-4h] BYREF
 
-  if ( *(unsigned int *)&this->q024 > Cell::GetGroundHeight(this->VoxelAnimClass_field_0x1C) + 120 ) /*0x4d02cc*/
+  if ( *(unsigned int *)&this->q024 > Cell::GetGroundHeight((unsigned int *)(this->VoxelAnimClass_field_0x1C)) + 120 ) /*0x4d02cc*/
     return 1; /*0x4d02d4*/
   v3 = *(unsigned int *)this->__pad_C; /*0x4d02d5*/
   if ( *(unsigned int *)(v3 + 692) && *(unsigned int *)(v3 + 764) ) /*0x4d02e2*/
@@ -1043,7 +1043,7 @@ char VoxelAnimClass::UpdateMatrix()
   v8 = 0; /*0x4d02f6*/
   if ( !v4 ) /*0x4d0300*/
     return 0; /*0x4d0300*/
-  v5 = (**v4)(v4, &unk_822410, &v9); /*0x4d0311*/
+  v5 = (**v4)((unsigned int)(v4), &unk_822410, &v9); /*0x4d0311*/
   if ( v5 >= 0 ) /*0x4d0315*/
   {
     v7 = v9; /*0x4d0329*/

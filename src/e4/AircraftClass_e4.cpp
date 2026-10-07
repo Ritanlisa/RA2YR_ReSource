@@ -185,16 +185,8 @@ int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void 
   int64_t v17; // [esp+4h] [ebp-10h]
   unsigned char v18[8]; // [esp+Ch] [ebp-8h] BYREF
 
-  v11 = FootClass::ProcessDeploy( /*0x4165f1*/
-          aP0,
-          a1,
-          COERCE_DOUBLE(IDA___PAIR64__((unsigned int)a3, a2)),
-          (int *)a4,
-          a5,
-          a6,
-          (void *)a7,
-          v16,
-          v17);
+  v11 = FootClass::ProcessDeploy((FootClass *)(/*0x4165f1*/
+          aP0), a1, COERCE_DOUBLE(IDA___PAIR64__((unsigned int)a3, a2)), (int *)a4, a5, a6, (void *)a7, v16, v17);
   if ( v11 == 4 ) /*0x4165f6*/
   {
     (*(void (**)(AircraftClass *, unsigned int))((char *)aP0->vtable1 + 952))( (AircraftClass *)(aP0), 0); /*0x416613*/
@@ -477,7 +469,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
         uniqueId = a3[36].uniqueId; /*0x41ac9c*/
         if ( !*(unsigned char *)(uniqueId + 5801) && !*(unsigned char *)(uniqueId + 5802) ) /*0x41acac*/
           goto LABEL_35; /*0x41acb4*/
-        ((TechnoClass *)a1)->SetFocus( (int)a3); /*0x41acb9*/
+        TechnoClass::SetFocus(((TechnoClass *)a1), (int)a3); /*0x41acb9*/
         goto LABEL_34; /*0x41acb9*/
       }
     }
@@ -485,7 +477,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
     {
       if ( !(uint8_t)((Array *)((Array *)a3))->ContainsValue((int)a1) ) /*0x41aaf8*/
       {
-        ((TechnoClass *)a1)->SetFocus( (int)a3); /*0x41ab09*/
+        TechnoClass::SetFocus(((TechnoClass *)a1), (int)a3); /*0x41ab09*/
         if ( *(unsigned char *)(a3[36].uniqueId + 5835) ) /*0x41ab1a*/
         {
 ClosestPlacementCell = (int *)(*((int (**)(FootClass *, int, unsigned int, unsigned int, int))a1->vtable1 + 330))( /*0x41ab4a*/ a1, (int)a1[1].vtable1 + 1000, 0, 0, (int)(a2));
@@ -557,7 +549,7 @@ ClosestPlacementCell = (int *)(*((int (**)(FootClass *, int, unsigned int, unsig
         v8 = a3[36].uniqueId; /*0x41abed*/
         if ( *(unsigned char *)(v8 + 5801) || *(unsigned char *)(v8 + 5802) ) /*0x41abfd*/
         {
-          ((TechnoClass *)a1)->SetFocus( (int)a3); /*0x41ac0a*/
+          TechnoClass::SetFocus(((TechnoClass *)a1), (int)a3); /*0x41ac0a*/
           ClosestPlacementCell = (int *)(0); /*0x41ac0f*/
         }
       }
@@ -565,11 +557,11 @@ ClosestPlacementCell = (int *)(*((int (**)(FootClass *, int, unsigned int, unsig
       if ( *(unsigned char *)(v9 + 5801) || *(unsigned char *)(v9 + 5802) ) /*0x41ac21*/
       {
         if ( a1->movementDestination ) /*0x41ac38*/
-          ((TechnoClass *)a1)->SetFocus( (int)a1->movementDestination); /*0x41ac45*/
+          TechnoClass::SetFocus(((TechnoClass *)a1), (int)a1->movementDestination); /*0x41ac45*/
         goto LABEL_35; /*0x41ac4a*/
       }
     }
-    ((TechnoClass *)a1)->SetFocus( (int)ClosestPlacementCell); /*0x41ac2e*/
+    TechnoClass::SetFocus(((TechnoClass *)a1), (int)ClosestPlacementCell); /*0x41ac2e*/
     goto LABEL_35; /*0x41ac33*/
   }
   IDA_LOBYTE(v6) = FootClass::AssignDestination(a1, 0, a4); /*0x41aaa6*/

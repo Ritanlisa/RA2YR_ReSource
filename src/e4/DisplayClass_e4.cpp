@@ -235,7 +235,7 @@ char DisplayClass::UpdateCellPassability(__int16 *a1, int aP2)
   copyFlags = (int)(v5->copyFlags); /*0x4a98e6*/
   LOBYTE(copyFlags) = copyFlags | 8; /*0x4a98ec*/
   v5->copyFlags = copyFlags; /*0x4a98f0*/
-  AdjacentPassableMask = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(a1), 0)); /*0x4a98fd*/
+  AdjacentPassableMask = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(a1)), 0)); /*0x4a98fd*/
   if ( AdjacentPassableMask != v5->shroudedness ) /*0x4a9908*/
   {
     v30 = 1; /*0x4a990a*/
@@ -247,7 +247,7 @@ char DisplayClass::UpdateCellPassability(__int16 *a1, int aP2)
     LOBYTE(v9) = v9 | 0x10; /*0x4a9924*/
     v5->copyFlags = v9; /*0x4a9926*/
   }
-  v10 = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(a1), 1)); /*0x4a9935*/
+  v10 = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(a1)), 1)); /*0x4a9935*/
   if ( v10 != v5->foggedness ) /*0x4a9940*/
   {
     v30 = 1; /*0x4a9942*/
@@ -272,7 +272,7 @@ char DisplayClass::UpdateCellPassability(__int16 *a1, int aP2)
     v14 = (unsigned int *)(((CellCoord *)((CellCoord *)this))->To_CellObj( (int16_t *)(v32))); /*0x4a99c5*/
     if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14[75] & 0x10) == 0 ) /*0x4a99e2*/
     {
-      v15 = (int)(Cell::GetAdjacentPassableMask((IUnknown *)(v32), 0)); /*0x4a99f5*/
+      v15 = (int)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v32)), 0)); /*0x4a99f5*/
       if ( v15 == -1 ) /*0x4a99fd*/
       {
         v16 = v14[75]; /*0x4a9a03*/
@@ -290,7 +290,7 @@ char DisplayClass::UpdateCellPassability(__int16 *a1, int aP2)
           HIWORD(v35) = (unsigned short)((unsigned char *)(v18)); /*0x4a9a67*/
           *(unsigned int *)v36 = (unsigned int)((unsigned char *)(v35)); /*0x4a9a73*/
           v20 = (unsigned char *)(((CellCoord *)((CellCoord *)this))->To_CellObj( (int16_t *)(v36))); /*0x4a9a89*/
-          v21 = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(v36), 0)); /*0x4a9a8b*/
+          v21 = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v36)), 0)); /*0x4a9a8b*/
           if ( v21 != v20[288] ) /*0x4a9a96*/
           {
             v20[288] = v21; /*0x4a9a98*/
@@ -318,7 +318,7 @@ LABEL_20:
 LABEL_31:
     if ( (v32[0] != *v3 || v32[1] != v3[1]) && (v14[80] & 1) == 0 ) /*0x4a9b1f*/
     {
-      v22 = (int)(Cell::GetAdjacentPassableMask((IUnknown *)(v32), 1)); /*0x4a9b32*/
+      v22 = (int)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v32)), 1)); /*0x4a9b32*/
       if ( v22 == -1 ) /*0x4a9b3a*/
       {
         v23 = v14[80]; /*0x4a9b40*/
@@ -336,7 +336,7 @@ LABEL_31:
           HIWORD(v37) = (unsigned short)((unsigned char *)(v25)); /*0x4a9ba4*/
           *(unsigned int *)v36 = (unsigned int)((unsigned char *)(v37)); /*0x4a9bb0*/
           v27 = (unsigned char *)(((CellCoord *)((CellCoord *)this))->To_CellObj( (int16_t *)(v36))); /*0x4a9bc6*/
-          v28 = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(v36), 1)); /*0x4a9bc8*/
+          v28 = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v36)), 1)); /*0x4a9bc8*/
           if ( v28 != v27[289] ) /*0x4a9bd3*/
           {
             v27[289] = v28; /*0x4a9bd5*/
@@ -409,7 +409,7 @@ char DisplayClass::ProcessCellReveal(__int16 *aP1, int aP2)
   v29 = v21; /*0x4a9e02*/
   LOBYTE(v28) = v21; /*0x4a9e06*/
   v5->flags[0] = v6; /*0x4a9e0a*/
-  AdjacentPassableMask = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(aP1), 1)); /*0x4a9e16*/
+  AdjacentPassableMask = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(aP1)), 1)); /*0x4a9e16*/
   if ( AdjacentPassableMask != v5->foggedness ) /*0x4a9e21*/
   {
     v29 = 1; /*0x4a9e23*/
@@ -433,7 +433,7 @@ char DisplayClass::ProcessCellReveal(__int16 *aP1, int aP2)
     v12 = (unsigned int *)(((CellCoord *)((CellCoord *)this))->To_CellObj( (int16_t *)(v22))); /*0x4a9eaa*/
     if ( (v22[0] != *aP1 || v22[1] != aP1[1]) && (v12[80] & 1) == 0 ) /*0x4a9ec7*/
     {
-      v13 = (int)(Cell::GetAdjacentPassableMask((IUnknown *)(v22), 1)); /*0x4a9eda*/
+      v13 = (int)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v22)), 1)); /*0x4a9eda*/
       if ( v13 == -1 ) /*0x4a9ee2*/
       {
         v14 = v12[80]; /*0x4a9ee8*/
@@ -451,7 +451,7 @@ char DisplayClass::ProcessCellReveal(__int16 *aP1, int aP2)
           HIWORD(v25) = (unsigned short)((unsigned char *)(v22[1] + v16)); /*0x4a9f54*/
           *(unsigned int *)v26 = (unsigned int)((unsigned char *)(v25)); /*0x4a9f5d*/
           v18 = (unsigned char *)(((CellCoord *)((CellCoord *)this))->To_CellObj( (int16_t *)(v26))); /*0x4a9f73*/
-          v19 = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(v26), 1)); /*0x4a9f75*/
+          v19 = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v26)), 1)); /*0x4a9f75*/
           if ( v19 != v18[289] ) /*0x4a9f80*/
           {
             v18[289] = v19; /*0x4a9f82*/
@@ -523,7 +523,7 @@ bool DisplayClass::RevealFogCell(__int16 *a1, int aP2)
   v8 = (v7 & 8) == 0; /*0x4aa07b*/
   v5[75] = v6; /*0x4aa07e*/
   LOBYTE(v27) = v8; /*0x4aa08a*/
-  AdjacentPassableMask = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(a1), 0)); /*0x4aa08e*/
+  AdjacentPassableMask = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(a1)), 0)); /*0x4aa08e*/
   if ( AdjacentPassableMask != *((unsigned char *)v5 + 288) ) /*0x4aa099*/
   {
     v8 = 1; /*0x4aa09b*/
@@ -547,7 +547,7 @@ bool DisplayClass::RevealFogCell(__int16 *a1, int aP2)
     v13 = (unsigned int *)(((CellCoord *)((CellCoord *)this))->To_CellObj( (int16_t *)(v22))); /*0x4aa11a*/
     if ( (v22[0] != *v3 || v22[1] != v3[1]) && (v13[75] & 0x10) == 0 ) /*0x4aa137*/
     {
-      v14 = (int)(Cell::GetAdjacentPassableMask((IUnknown *)(v22), 0)); /*0x4aa14a*/
+      v14 = (int)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v22)), 0)); /*0x4aa14a*/
       if ( v14 == -1 ) /*0x4aa152*/
       {
         v15 = v13[75]; /*0x4aa158*/
@@ -565,7 +565,7 @@ bool DisplayClass::RevealFogCell(__int16 *a1, int aP2)
           HIWORD(v25) = (unsigned short)((unsigned char *)(v17)); /*0x4aa1bd*/
           *(unsigned int *)v26 = (unsigned int)((unsigned char *)(v25)); /*0x4aa1c9*/
           v19 = (unsigned char *)(((CellCoord *)((CellCoord *)this))->To_CellObj( (int16_t *)(v26))); /*0x4aa1df*/
-          v20 = (char)(Cell::GetAdjacentPassableMask((IUnknown *)(v26), 0)); /*0x4aa1e1*/
+          v20 = (char)(Cell::GetAdjacentPassableMask((short *)((IUnknown *)(v26)), 0)); /*0x4aa1e1*/
           if ( v20 != v19[288] ) /*0x4aa1ec*/
           {
             v19[288] = v20; /*0x4aa1ee*/

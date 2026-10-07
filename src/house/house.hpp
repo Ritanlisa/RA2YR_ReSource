@@ -343,6 +343,8 @@ public:
     uint32_t                    altAllies;
     int32_t                     startingCredits;
     int32_t                     startingEdge;
+    int32_t                     q140;   // g57w11 r4 词表 (ml:320; raw 0x48342a __pad_13C[4] 读=0x140)
+    int32_t                     q158;   // g57w11 r4 词表 (ml:344; raw 0x4feb30 __pad_13C[28] 读=0x158)
     uint32_t                    HouseClass_field_1E4;
     int32_t                     sideIndex;
     bool                        currentPlayer;
@@ -524,7 +526,7 @@ public:
     ColorStruct                 color;
     ColorStruct                 laserColor;
     uint8_t                     colorPadding;
-    BaseClass                   base;
+    BaseClass                   baseObject;  // g57w11 r4: 改名让位 ml:22248 base int[20] (raw base[7]/[8]/[11] 数组用法)
     bool                        recheckPower;
     bool                        recheckRadar;
     bool                        spySatActive;
@@ -583,7 +585,61 @@ protected:
     void* vtable1;  // 0x0
     void* vtable34;  // 0x0 (no offset truth)
     void* vtable41;  // 0x0 (no offset truth)
+    // ---- g57w11 r4 词表 (raw fn_4F 0x4F5190 Constructor 体引用; ml 偏移对应; G42.39 data supply 同型) ----
+    int32_t                     q184;      // ml:388 (raw 0x4f6ed4 SetCombatPower u32_184 词汇)
+    int32_t                     q0F4;      // raw 0x4f5279 (count 槽)
+    int32_t                     q10C;      // raw 0x4f5295
+    int32_t                     q124;      // raw 0x4f52b1
+    int32_t                     q13C;      // raw 0x4f52cd
+    int32_t                     q150;      // raw 0x4f52ec
+    int32_t                     q154;      // raw 0x4f52e9
+    int32_t                     q16C;      // ml:364 (raw 0x4f52fe vfptr 槽)
+    int32_t                     q17C;      // ml:380 (raw 0x4f5308)
+    int32_t                     q180;      // ml:384 (raw 0x4f5305)
+    int32_t                     q280;      // raw 0x4f532d
+    int32_t                     q288;      // raw 0x4f5339
+    int32_t                     q22200;    // raw 0x4f536b (CounterClass 基址)
+    int32_t                     q22480;    // raw 0x4f53a2 (CounterClass 基址)
+    int32_t                     q562C;     // raw 0x4f53f2
+    int32_t                     q5630;     // raw 0x4f53ef
+    int32_t                     u32_159C0; // raw 0x4f53f5 (dropship 数据块基址)
+    int32_t                     u32_22000; // raw 0x4f533f (CounterClass 基址)
+    int32_t                     u32_22080; // raw 0x4f534a
+    int32_t                     u32_22100; // raw 0x4f5355
+    int32_t                     u32_22180; // raw 0x4f5360
+    int32_t                     u32_22280; // raw 0x4f5376
+    int32_t                     u32_22300; // raw 0x4f5381
+    int32_t                     u32_22380; // raw 0x4f538c
+    int32_t                     u32_22400; // raw 0x4f5397
+    int32_t                     u32_22500; // raw 0x4f53ad
+    int32_t                     u32_22580; // raw 0x4f53b8
+    // g57w11 r4 item2d 词表 (raw fn_4F 0x4F6EC0 SetCombatPower 体引用)
+    void*                       vtable23;  // raw 0x4f6ef1 (ml:8C vtable6 族; 载体词表)
+    double                      u32_188;   // raw 0x4f6f11 (double 乘积承接; ml 392)
+    double                      u32_190;   // raw 0x4f6f2b (double 乘积承接)
+    // g57w11 r4 item2e 词表续 (raw 0x4F6EC0 SetCombatPower 尾段 + 0x4F7140 Destruct 体引用)
+    double                      u32_198;   // raw 0x4f6f49 (double 乘积)
+    double                      u32_1A0;   // raw 0x4f6f61
+    double                      u32_1A8;   // raw 0x4f6f79
+    double                      u32_1B0;   // raw 0x4f6f91
+    int32_t                     u32_1C0;   // raw 0x4f6fa5
+    int32_t                     u32_1C4;   // raw 0x4f6fae
+    int32_t                     u32_1C8;   // raw 0x4f6fc2
+    int32_t                     u32_1CC;   // raw 0x4f6fcb
+    void*                       vtable4;   // raw 0x4f715d (vfptr 安装序列)
+    void*                       vtable5;   // raw 0x4f7164
+    void*                       vtable6;   // raw 0x4f716b
+    void*                       vtable7;   // raw 0x4f7172
+    void*                       startingUnits8;  // raw 0x4f7180 (vector 基址)
+    int32_t                     q230;      // raw 体引用
+    int32_t                     q114;      // raw 体引用
+    int32_t                     q1D4;      // raw 体引用
+    int32_t                     q5564;     // raw 体引用
+    // g57w11 r4 item3b 词表 (structure/building.cpp 体引用)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+    int32_t                     base[20];  // ml:22248 0x56E8 int[20] (raw 0x445437..0x445451 base[7]/[8]/[11]; public 供外部体)
+    unsigned char               pad_5658[8];  // g57w11 r4: raw 0x443cca pad_5658[0] (0x5658 词表; public 供外部体)
+    static bool IonSensitivesShouldBeOffline();  // g57w11 r4: raw fn_41 静态调用形
     int SaveTriggerNodeData(void* a1, void* a2);  // 0x42ED60
     int createStartingUnits(int a1);  // 0x431410
     int Render(int a1, int a2, int a3, int a4, int a5);  // 0x431700
@@ -613,7 +669,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // g57w10 r4: 0x4F2850/2880/2A60/2B10/2BB0 已归属修正 -- raw fn_4F 段头真
     // this=DynamicVector<GraphicMenuItem*> (前误挂 HouseClass), 载体 = gap2_defs.cpp
     // TU-local GraphicMenuItemVectorHost (0x4F2810/2830 raw this=HouseClass 真身保留)
-    int Constructor(int a1);  // 0x4F5190
+    int Constructor(int a1, int a2);  // 0x4F5190 g57w11 r4: raw fn_4F Constructor(this,a2) 2 参
     int Construct(int a1);  // 0x4F54A0
     int SetCombatPower(int a1);  // 0x4F6EC0
     int Destruct();  // 0x4F7140

@@ -255,7 +255,7 @@ int GameClass::FindOpenSlot()
     v4 = *(GameClass **)(dword_A8B8CC + 4 * v2); /*0x5d6387*/
     if ( (uint8_t)((IsRandMap *)((int)v4))->Sed() ) /*0x5d638c*/
     {
-      inited = (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 60))(this); /*0x5d6399*/
+      inited = (*(int (**)(MultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 60))((MultiplayerGameMode *)(this)); /*0x5d6399*/
     }
     else
     {

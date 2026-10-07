@@ -216,23 +216,8 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v27 = v15; /*0x5cc452*/
   v31 = *(unsigned int *)(v5 + 8); /*0x5cc456*/
   v17 = (int *)(*(int (**)(void *))(v16 + 120))( (void *)(aP0)); /*0x5cc45a*/
-  DrawToSurfaceSHP( /*0x5cc470*/
-    (int)aP0,
-    *(unsigned int *)(v5 + 32),
-    *(unsigned int *)(v5 + 28),
-    *(unsigned int *)(v5 + 40),
-    &v29,
-    v17,
-    (int)v33,
-    v27,
-    0,
-    0,
-    0,
-    1000,
-    0,
-    0,
-    0,
-    0);
+  DrawToSurfaceSHP(/*0x5cc470*/
+    (int)aP0, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v17), (int)v33, v27, 0, 0, 0, 1000, 0, 0, 0, 0);
   v18 = (void *)((int)((*(unsigned int *)(v5 + 68))));
   if ( v18 ) /*0x5cc47a*/
   {
@@ -259,23 +244,8 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
     v28 = v23; /*0x5cc4e7*/
     v30 = *(unsigned int *)(v5 + 8); /*0x5cc4e8*/
     v24 = (int *)(*(int (**)(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))( (MSOverlayAnim *)(aP0), (int *)(&v32)); /*0x5cc4f5*/
-    DrawToSurfaceSHP( /*0x5cc50f*/
-      (int)DSurface_Alternate,
-      *(unsigned int *)(v5 + 32),
-      *(unsigned int *)(v5 + 28),
-      *(unsigned int *)(v5 + 40),
-      &v29,
-      v24,
-      v28,
-      0,
-      0,
-      0,
-      1000,
-      0,
-      0,
-      0,
-      0,
-      0);
+    DrawToSurfaceSHP(/*0x5cc50f*/
+      (int)DSurface_Alternate, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v24), v28, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
   }
   return (gamemd::CampaignClass **)(*(unsigned char *)(v5 + 72) == 0);
 }
@@ -474,23 +444,23 @@ int ScenarioClass::LoadScenarioAndStart(char *Source, char a2, double a3, int aP
     else
       v4 = (char *)(*((unsigned int *)dword_A83CFC + a4) + 156); /*0x683af8*/
   }
-  (&dword_A8B230)[375].uniqueId = a4; /*0x683b0a*/
+  ((AbstractClass *)dword_A8B230)[375].uniqueId = a4; /*0x683b0a*/
   Debug::Log("\n----- Starting scnenario: %s -----\n"); /*0x683b10 G57c1: IDA 0x683b10 push offset aStartingScnena*/
   Debug::Log("Player Count: %d\n"); /*0x683b21 G57c1: IDA 0x683b21 push offset aPlayerCountD*/
-  strcpy( (char *)&(&dword_A8B230)[130].abstractFlags, (const char *)(v4)); /*0x683b47*/
-  _strupr((char *)&(&dword_A8B230)[130].abstractFlags); /*0x683b5d*/
+  strcpy( (char *)&((AbstractClass *)dword_A8B230)[130].abstractFlags, (const char *)(v4)); /*0x683b47*/
+  _strupr((char *)&((AbstractClass *)dword_A8B230)[130].abstractFlags); /*0x683b5d*/
   SetSoundWarning(-1); /*0x683b68*/
   if ( !*(unsigned int *)&dword_A8B238 ) /*0x683b73*/
   {
-    uniqueId = (&dword_A8B230)[375].uniqueId; /*0x683b7b*/
+    uniqueId = ((AbstractClass *)dword_A8B230)[375].uniqueId; /*0x683b7b*/
     if ( uniqueId == -1 ) /*0x683b84*/
       goto LABEL_14; /*0x683b84*/
     Field = *(unsigned int *)(*((unsigned int *)dword_A83CFC + uniqueId) + 152); /*0x683b8f*/
     goto LABEL_13; /*0x683b95*/
   }
-  if ( *(unsigned int *)&stru_A8B250[4] != -1 ) /*0x683b9f*/
+  if ( *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] != -1 ) /*0x683b9f*/
   {
-    v7 = *(GameOption **)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]); /*0x683ba7*/
+    v7 = *(GameOption **)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]); /*0x683ba7*/
     v8 = ((Game *)((Game *)0x3C))->CheckForGameCD(); /*0x683baf*/
     if ( !(uint8_t)((ScenarioClass *)v7)->CheckExists( v8) ) /*0x683bb7*/
     {
@@ -548,13 +518,13 @@ LABEL_21:
     (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x683d32*/
     goto LABEL_21; /*0x683d32*/
   }
-  referenceCount = (&dword_A8B230)[143].referenceCount; /*0x683d5e*/
+  referenceCount = ((AbstractClass *)dword_A8B230)[143].referenceCount; /*0x683d5e*/
   if ( referenceCount != -1 ) /*0x683d67*/
     wsprintfA(v23, "%s.VQA", *(const char **)(g_MissionQueueFrame.localVariables[580] + 4 * referenceCount)); /*0x683d80*/
-  if ( (&dword_A8B230)[375].abstractFlags > 0 ) /*0x683d95*/
+  if ( ((AbstractClass *)dword_A8B230)[375].abstractFlags > 0 ) /*0x683d95*/
     LoadScreen::RenderLoop(v15); /*0x683d97*/
   if ( a2 ) /*0x683da0*/
-    Movie::PlayWrapper((int)(&dword_A8B230)[144].vtable1, (int)v4, v9, 1, 1, 1); /*0x683db6*/
+    Movie::PlayWrapper((int)((AbstractClass *)dword_A8B230)[144].vtable1, (int)v4, v9, 1, 1, 1); /*0x683db6*/
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[33] /*0x683dd6*/
     || *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[34] )
   {
@@ -565,15 +535,15 @@ LABEL_21:
   AudioOptionsClass::ApplySettings((AudioOptionsClass *)&stru_A8EB00.ObjectTypeClass[24]); /*0x683e02*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))( (ObjectClass *)(g_DSurface_Hidden), 0); /*0x683e10*/
   Frame::Present( (void *)((int)g_DSurface_Hidden), 0, (void *)((int)v4), (void *)(v9), 0, (void *)((int)v15), (void *)(v16), (void *)(v17)); /*0x683e1c*/
-  if ( (&dword_A8B230)[43].vtable2 == (void *)-1 ) /*0x683e35*/
+  if ( ((AbstractClass *)dword_A8B230)[43].vtable2 == (void *)-1 ) /*0x683e35*/
   {
-    p_vtable2 = &(&dword_A8B230)[43].vtable2; /*0x683e26*/
+    p_vtable2 = &((AbstractClass *)dword_A8B230)[43].vtable2; /*0x683e26*/
     *p_vtable2 = TimerGetTicks(); /*0x683e3f*/
   }
-  if ( (&dword_A8B230)[202].vtable2 == (void *)-1 ) /*0x683e50*/
+  if ( ((AbstractClass *)dword_A8B230)[202].vtable2 == (void *)-1 ) /*0x683e50*/
     ((Theme *)((Theme *)&unk_A83D10))->Stop(1); /*0x683e66*/
   else
-    ((Theme*)((int)&unk_A83D10))->QueueSong((int)(&dword_A8B230)[202].vtable2); /*0x683e58*/
+    ((Theme*)((int)&unk_A83D10))->QueueSong((int)((AbstractClass *)dword_A8B230)[202].vtable2); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
   *((unsigned int *)((char *)&stru_A8EB00 + 376)) = 1; /*0x683e75*/
   byte_A8E378 = 1; /*0x683e7f*/
@@ -599,12 +569,12 @@ int ScenarioClass::CleanupTemporary()
   EndBufferMixer((gamemd::VolumeStruct *)((int *)g_MixerState), 0x4000); /*0x683ed1*/
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x683ee2*/
   {
-    if ( (&dword_A8B230)[43].vtable2 != (void *)-1 ) /*0x683eff*/
+    if ( ((AbstractClass *)dword_A8B230)[43].vtable2 != (void *)-1 ) /*0x683eff*/
       TimerGetTicks(); /*0x683f04*/
     Debug::Log("Paused ElapsedTimer = %ld\n"); /*0x683f13 G57c1: IDA 0x683f13 push offset aPausedElapsedt*/
     v1 = (AsyncIO *)dword_A8B230; /*0x683f18*/
-    p_vtable2 = &(&dword_A8B230)[43].vtable2; /*0x683f27*/
-    if ( (&dword_A8B230)[43].vtable2 != (void *)-1 ) /*0x683f31*/
+    p_vtable2 = &((AbstractClass *)dword_A8B230)[43].vtable2; /*0x683f27*/
+    if ( ((AbstractClass *)dword_A8B230)[43].vtable2 != (void *)-1 ) /*0x683f31*/
     {
       Ticks = TimerGetTicks(); /*0x683f36*/
       v4 = (char *)p_vtable2[2]; /*0x683f3d*/
@@ -636,16 +606,16 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
 
   unsigned char *result; // eax
 
-  result = (&dword_A8B230)[43].NeedsSaveOrLink; /*0x684186*/
+  result = ((AbstractClass *)dword_A8B230)[43].NeedsSaveOrLink; /*0x684186*/
   if ( result ) /*0x68418e*/
   {
-    (&dword_A8B230)[43].NeedsSaveOrLink = result - 1; /*0x684195*/
+    ((AbstractClass *)dword_A8B230)[43].NeedsSaveOrLink = result - 1; /*0x684195*/
     result = (unsigned char *)(dword_A8B230); /*0x68419b*/
-    if ( !(&dword_A8B230)[43].NeedsSaveOrLink ) /*0x6841a0*/
+    if ( !((AbstractClass *)dword_A8B230)[43].NeedsSaveOrLink ) /*0x6841a0*/
     {
       if ( !byte_B054CC ) /*0x6841b6*/
       {
-        if ( BYTE2((&dword_A8B230)[381].vtable3) == 1 ) /*0x6841bf*/
+        if ( BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) == 1 ) /*0x6841bf*/
         {
           while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0))(stru_887598.lineTrailer) ) /*0x6841c9*/
             (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x6841d8*/
@@ -693,7 +663,7 @@ int ScenarioClass_Construct(void * a2)
     Debug::Log("Read_Scenario_INI - Filename is %s\n"); /*0x6867aa G57c1: IDA 0x6867aa push offset aReadScenarioIn*/
     if ( ((CCINIClass *)(&v5))->Load((int)&v6, 1, 0) ) /*0x6867be*/
     {
-      strcpy((char *)&(&dword_A8B230)[130].abstractFlags, Source); /*0x686836*/
+      strcpy((char *)&((AbstractClass *)dword_A8B230)[130].abstractFlags, Source); /*0x686836*/
       Map = ScenarioClass::LoadMap(0, (bool *)v5.INIClass, a2); /*0x686851*/
       *(unsigned int *)v6.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x686853*/
       v8 = 0; /*0x68685b*/
@@ -769,18 +739,18 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       g_ScenarioClass_Instance->nextScenario[0] = v6 | (((uint8_t)FOW & 1) << 12);
       v7 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900];
       IDA_BYTE1(v7) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[4900 = (unsigned int)v7 | (((uint8_t)FOW & 1) << 12);
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[4900 ]= (unsigned int)v7 | (((uint8_t)FOW & 1) << 12);
     }
     else
     {
-      g_ScenarioClass_Instance->difficulty2 = *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416;
-      ((unsigned int *)&g_ScenarioClass_Instance->elapsedTimer)[0] = 2 - *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416;
+      g_ScenarioClass_Instance->difficulty2 = *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416];
+      ((unsigned int *)&g_ScenarioClass_Instance->elapsedTimer)[0] = 2 - *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416];
       int v4 = g_ScenarioClass_Instance->nextScenario[0];
       IDA_BYTE1(v4) = IDA_BYTE1(g_ScenarioClass_Instance->nextScenario[0]) & 0xEF;
       g_ScenarioClass_Instance->nextScenario[0] = v4;
-      v5 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900;
+      v5 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900];
       IDA_BYTE1(v5) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
-      *(unsigned int *)&(&g_NetworkPlayerBuffer)[4900 = (unsigned int)v5;
+      *(unsigned int *)&(&g_NetworkPlayerBuffer)[4900 ]= (unsigned int)v5;
     }
     *(unsigned int *)&g_ScenarioClass_Instance->__pad_3566[54] = INIClass::ReadInt_Overwrite(
                                                      (int)v3,

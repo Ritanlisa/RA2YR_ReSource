@@ -152,13 +152,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     if ( v11.ObjectVector_field_0x10 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
+    v7 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
     v8 = v11.ObjectVector_field_0x04; /*0x4d0111*/
     vtable0 = (void (**)(unsigned int))((unsigned int)((unsigned int *)a1))[0]->TechnoClass; /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((Random *)&(&dword_A8B230)[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
+    v7 = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
     v8 = v10.ObjectVector_field_0x04; /*0x4d00ea*/
     vtable0 = (void (**)(unsigned int))((unsigned int)((unsigned int *)a1))[0]->TechnoClass; /*0x4d00ee*/
   }

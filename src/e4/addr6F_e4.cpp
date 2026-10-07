@@ -108,8 +108,8 @@ v3 = (void ***)((int)((void ***)(0)));
   v56 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0ad4*/
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
-    v54 = *(unsigned int *)(&dword_A8022C)[4 * v5]; /*0x6f0aee*/
-  if ( Random::Range((unsigned int *)dword_A8B230 + 134, 1, 100) <= *(unsigned int *)(a2 + 22108) && *(unsigned char *)(a2 + 498) ) /*0x6f0b12*/
+    v54 = *(unsigned int *)((unsigned int *)dword_A8022C)[4 * v5]; /*0x6f0aee*/
+  if ( Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 1, 100) <= *(unsigned int *)(a2 + 22108) && *(unsigned char *)(a2 + 498) ) /*0x6f0b12*/
   {
     v6 = 0; /*0x6f0b26*/
     if ( dword_8B40F8 > 0 ) /*0x6f0b2a*/
@@ -210,7 +210,7 @@ v3 = (void ***)((int)((void ***)(0)));
         goto LABEL_58; /*0x6f0ccd*/
       if ( !v65 ) /*0x6f0cd9*/
         goto LABEL_58; /*0x6f0cd9*/
-      v22 = Random::Range((unsigned int *)dword_A8B230 + 134, 1, v67); /*0x6f0cee*/
+      v22 = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 1, v67); /*0x6f0cee*/
       v23 = 0; /*0x6f0cf3*/
       if ( v65 <= 0 ) /*0x6f0cfb*/
         goto LABEL_58; /*0x6f0cfb*/

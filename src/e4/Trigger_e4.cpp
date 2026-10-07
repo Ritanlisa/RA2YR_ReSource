@@ -224,7 +224,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         if ( (int)(*(int *)&v28) < (*(int *)&v28) /*0x76d821*/
           || (((unsigned char *)&v28)[1] || !((char *)&v28))
           && v28.occupant > 0
-          && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&v28) + 8))( (int *)((char *)&v28), v28.occupant + ((char *)&v28), 0) )
+          && (*(uint8_t (**)(int *, int, unsigned int))(((char *)&v28) + 8))((int *)((char *)&v28), (int)(v28.occupant + ((char *)&v28)), 0) )
         {
           v22 = ((char *)&v28)++; /*0x76d82c*/
           *(unsigned int *)(((char *)&v28) + 4 * (unsigned int)v22) = (unsigned int)(v21); /*0x76d837*/
@@ -259,7 +259,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         {
           v23 = *(void (****)(unsigned int, int))(p_owningHouseIndex[1] + 4 * v27); /*0x76d925*/
           if ( v23 ) /*0x76d92a*/
-            (**v23)(v23, 1); /*0x76d934*/
+            (**v23)((unsigned int)(v23), 1); /*0x76d934*/
         }
         else
         {

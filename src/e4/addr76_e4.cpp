@@ -705,7 +705,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   v6 = (int *)RA2_OPNEW(0x168u); /*0x769687*/
   v7 = v6; /*0x76968c*/
   if ( v6 ) /*0x769693*/
-    ((Array *)v6)->ForEach( 12, 30, (int (*)(int))unknown_libname_37); /*0x76969e*/
+    Array::ForEach(((Array *)v6), 12, 30, (int (*)(int))unknown_libname_37); /*0x76969e*/
   else
     v7 = (int *)(0); /*0x7696a5*/
   Block = (void *)(v7); /*0x7696ab*/
@@ -753,7 +753,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
           v12 = (int *)RA2_OPNEW(12 * v11); /*0x769773*/
           v13 = v12; /*0x769778*/
           if ( v12 ) /*0x76977f*/
-            ((Array *)v12)->ForEach( 12, abstractFlags + 1, (int (*)(int))unknown_libname_37); /*0x76978a*/
+            Array::ForEach(((Array *)v12), 12, abstractFlags + 1, (int (*)(int))unknown_libname_37); /*0x76978a*/
           else
             v13 = (int *)(0); /*0x769791*/
           IDA_LOBYTE(v54) = 1; /*0x769795*/

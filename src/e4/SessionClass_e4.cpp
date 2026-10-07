@@ -512,16 +512,16 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
                 {
                   PlayerColor = uniqueId->PlayerColor; /*0x5cf52e*/
                   if ( *(unsigned int *)&uniqueId->__pad_50[4] < PlayerColor /*0x5cf556*/
-                    || (uniqueId->__pad_50[1] || !PlayerColor)
-                    && (v39 = *(unsigned int *)&uniqueId->__pad_50[8], v39 > 0)
+                    || (((unsigned char *)&uniqueId->__pad_50)[1] || !PlayerColor)
+                    && (v39 = *(unsigned int *)&((unsigned char *)&uniqueId->__pad_50)[8], v39 > 0)
 && (*(uint8_t (**)(int *, int, unsigned int))(uniqueId->Handle[3] + 8))( (int *)(&uniqueId->Handle[3]), PlayerColor + v39, 0) )
 
 
 
                   {
-                    v40 = *(unsigned int *)&uniqueId->__pad_50[4]; /*0x5cf55d*/
+                    v40 = *(unsigned int *)&((unsigned char *)&uniqueId->__pad_50)[4]; /*0x5cf55d*/
                     v41 = uniqueId->Handle[4]; /*0x5cf560*/
-                    *(unsigned int *)&uniqueId->__pad_50[4] = v40 + 1; /*0x5cf566*/
+                    *(unsigned int *)&((unsigned char *)&uniqueId->__pad_50)[4] = v40 + 1; /*0x5cf566*/
                     *(unsigned int *)(v41 + 4 * v40) = (unsigned int)v37; /*0x5cf569*/
                   }
                 }
@@ -813,7 +813,7 @@ AbstractClass * * SessionClass::BuildLobbyPlayerList()
           if ( v9 >= dword_A8DA84 ) /*0x663c1a*/
             goto LABEL_15; /*0x663c1a*/
         }
-        ((Network *)((Network *)(dword_A8DA78[v9] + 40)))->CopyAddress( (unsigned int *)(&v16), (int)&v17); /*0x663c34*/
+        ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[v9] + 40)))->CopyAddress( (unsigned int *)(&v16), (int)&v17); /*0x663c34*/
         *(unsigned int *)(v7 + 33) = v17; /*0x663c3d*/
         *(unsigned short *)(v7 + 37) = *(&dword_A8E2B2 + v9); /*0x663c48*/
       }
@@ -1279,7 +1279,7 @@ SessionClass::SessionClass()
   *((unsigned int *)this + 417) = 0; /*0x697622*/
   *((unsigned short *)this + 3949) = 0; /*0x697628*/
   *((unsigned int *)this + 2031) = v13; /*0x69762f*/
-  (*(void (**)(char *, char *))(v14 + 8))( (char *)((unsigned char *)this + 9044), aRecordBin); /*0x697635*/
+  (*(void (**)(char *, char *))(v14 + 8))((char *)((unsigned char *)this + 9044), (char *)(aRecordBin)); /*0x697635*/
   *((unsigned int *)this + 2288) &= 0xFFFFFFF8; /*0x697648*/
   *((unsigned int *)this + 2289) = 0; /*0x697659*/
   *((unsigned char *)this + 9172) = 0; /*0x69765f*/
@@ -1354,7 +1354,7 @@ int SessionClass::CreateConnections()
   char v16; // [esp+1Dh] [ebp-Bh]
   int v17[2]; // [esp+20h] [ebp-8h] BYREF
 
-  Debug::Log(); /*0x697b7e*/
+  Debug::Log("Entering Create_Connections\n"); /*0x697b7e G57w11: IDA push seq @ 0x697b7e +4 reg-vararg(s) omitted*/
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 ) /*0x697b93*/
     return 0; /*0x697b9e*/
   v3 = 0; /*0x697ba7*/
@@ -1362,7 +1362,7 @@ int SessionClass::CreateConnections()
   {
     do /*0x697bc5*/
     {
-      Debug::Log(); /*0x697bc5*/
+      Debug::Log("Player %d, Name: %s, ID %d\n"); /*0x697bc5 G57w11: IDA push seq @ 0x697bc5 +3 reg-vararg(s) omitted*/
       if ( _wcsicmp( /*0x697be7*/
              *(const wchar_t **)((&this->StartSpots)[1] + 4 * v3),
              (const wchar_t *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v3) + 111))
@@ -1373,17 +1373,17 @@ int SessionClass::CreateConnections()
       if ( !_wcsicmp(*(const wchar_t **)((&this->StartSpots)[1] + 4 * v3), (const wchar_t *)&(&this->unknown_2854)[499]) ) /*0x697c04*/
       {
         (&this->unknown_2854)[520] = *(unsigned int *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v3) + 111); /*0x697c25*/
-        ((Network *)((Network *)(dword_A8DA78[v3] + 40)))->CopyAddress( (unsigned int *)(&v13), (int)v17); /*0x697c38*/
+        ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[v3] + 40)))->CopyAddress( (unsigned int *)(&v13), (int)v17); /*0x697c38*/
         ((NetworkID *)(&qword_A8DBA4))->Assign( (unsigned int *)(&v13), (int)v17, 0); /*0x697c4d*/
         ((Network *)&unk_A8E9C0)->SetPlayerCoords( (IPXManagerClass *)(&qword_A8DBA4)); /*0x697c5c*/
       }
       v4 = *(unsigned int *)((&this->StartSpots)[1] + 4 * v3); /*0x697c67*/
       *(unsigned int *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(v4 + 111)) + 516) = *(unsigned int *)(v4 + 123); /*0x697c7e*/
-      ((Network *)((Network *)(dword_A8DA78[v3] + 40)))->CopyAddress( (unsigned int *)(&v13), (int)v17); /*0x697c94*/
+      ((Network *)((Network *)(((unsigned int *)dword_A8DA78)[v3] + 40)))->CopyAddress( (unsigned int *)(&v13), (int)v17); /*0x697c94*/
       v5 = 0; /*0x697c99*/
       for ( i = 0; i < 4; ++i ) /*0x697c9b*/
         v5 = *((uint8_t *)v17 + i) | (v5 << 8); /*0x697ca8*/
-      Debug::Log(); /*0x697cc7*/
+      Debug::Log("House[%d] IP = %X  Clan=%d\n"); /*0x697cc7 G57w11: IDA push seq @ 0x697cc7 +3 reg-vararg(s) omitted*/
       *(unsigned int *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v3) + 111)) + 512) = v5; /*0x697ce5*/
       *(unsigned char *)(*((unsigned int *)((char *)&stru_A80220) + *(unsigned int *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v3) + 111)) + 520) = 0; /*0x697d00*/
       if ( v3 > 0 ) /*0x697d06*/
@@ -1433,8 +1433,8 @@ LABEL_22:
       byte_A8DBA0 = 0; /*0x697e2e*/
     }
   }
-  Debug::Log(); /*0x697e4f*/
-  Debug::Log(); /*0x697e59*/
+  Debug::Log("Session.ViaPacketRouter = %s\n"); /*0x697e4f G57w11: IDA push seq @ 0x697e4f +1 reg-vararg(s) omitted*/
+  Debug::Log("Leaving Create_Connections\n"); /*0x697e59 G57w11: IDA push seq @ 0x697e59*/
   return 1; /*0x697b95*/
 
 }
@@ -1453,7 +1453,7 @@ int  SessionClass::IsValidHouse(void * a2)
   v2 = a2; /*0x697e73*/
   if ( !a2 ) /*0x697e79*/
     v2 = (void *)(dword_A83D4C); /*0x697e7b*/
-  if ( dword_A8B238[0] != 4 || !v2 ) /*0x697e8c*/
+  if ( (&dword_A8B238)[0] != 4 || !v2 ) /*0x697e8c*/
     goto LABEL_9; /*0x697e8c*/
   v3 = *((unsigned int *)this + 3101); /*0x697e8e*/
   if ( v3 != -1 ) /*0x697e97*/
@@ -1602,7 +1602,7 @@ AbstractClass * * SessionClass::LoadMissionList()
       }
     }
   }
-  INIClass::ClearSection((int *)v60.__pad_0, 0, 0); /*0x699acb*/
+  INIClass::ClearSection((INIClass *)((int *)v60.__pad_0), 0, 0); /*0x699acb*/
   CCFileClass::Reset( &v63); /*0x699ad4*/
   FirstFileA = FindFirstFileA(aPkt, &FindFileData); /*0x699aec*/
   hFindFile = FirstFileA; /*0x699af1*/
@@ -1647,7 +1647,7 @@ AbstractClass * * SessionClass::LoadMissionList()
     while ( FindNextFileA(FirstFileA, &FindFileData) );
     FindClose(FirstFileA); /*0x699c34*/
   }
-  INIClass::ClearSection((int *)v60.__pad_0, 0, 0); /*0x699c42*/
+  INIClass::ClearSection((INIClass *)((int *)v60.__pad_0), 0, 0); /*0x699c42*/
   CCFileClass::Reset( &v63); /*0x699c4b*/
   v24 = FindFirstFileA(aYro, &FindFileData); /*0x699c69*/
   hFindFilea = v24; /*0x699c70*/
@@ -1742,11 +1742,11 @@ AbstractClass * * SessionClass::LoadMissionList()
                   }
                   v32 = j + 1; /*0x699f88*/
                 }
-                INIClass::ClearSection((int *)v60.__pad_0, 0, 0); /*0x699f9b*/
+                INIClass::ClearSection((INIClass *)((int *)v60.__pad_0), 0, 0); /*0x699f9b*/
               }
               else
               {
-                Debug::Log(); /*0x699fa7*/
+                Debug::Log("Can't see .pkt inside .yro!\n"); /*0x699fa7 G57w11: IDA push seq @ 0x699fa7*/
               }
               v24 = hFindFilea; /*0x699faf*/
             }
@@ -1759,7 +1759,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   SetSoundWarning(v61); /*0x699fd0*/
   if ( v24 != (HANDLE)-1 ) /*0x699fd8*/
     FindClose(v24); /*0x699fdb*/
-  INIClass::ClearSection((int *)v60.__pad_0, 0, 0); /*0x699fe7*/
+  INIClass::ClearSection((INIClass *)((int *)v60.__pad_0), 0, 0); /*0x699fe7*/
   CCFileClass::Reset( &v63); /*0x699ff0*/
   hFindFileb = FindFirstFileA(aYrm_0, &FindFileData); /*0x69a010*/
   v56[0] = 0; /*0x69a014*/
@@ -1776,11 +1776,8 @@ AbstractClass * * SessionClass::LoadMissionList()
           ((INIClass*)&v60)->GetString(/*0x69a073*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v66, 64);
         ((INIClass*)&v60)->GetString((uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, v67, 32); /*0x69a095*/
         BulkCharToWide( (unsigned short *)(v71), (uint8_t *)v66, -1); /*0x69a0aa*/
-        v56[0] = INIClass::ReadBool_Overwrite( /*0x69a0c8*/
-                   (int *)v60.__pad_0,
-                   (uint8_t *)(char *)&stru_82BA00,
-                   (uint8_t *)g_INI_Key_Official,
-                   0);
+        v56[0] = INIClass::ReadBool_Overwrite((INIClass *)(/*0x69a0c8*/
+                   (int *)v60.__pad_0), (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Official, 0);
         v59 = 2; /*0x69a0f0*/
         v58 = 4; /*0x69a0f8*/
         ParseMapFileHeader(v45, v71, v67, v73, v56, &v59, &v58); /*0x69a0fc*/
@@ -1956,10 +1953,10 @@ int SessionClass::AssignColor(int a2, char aP2)
     {
       while ( 1 ) /*0x69b80e*/
       {
-        result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x69b80e*/
+        result = Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7); /*0x69b80e*/
         if ( result == -2 ) /*0x69b815*/
           break; /*0x69b815*/
-        v5 = this->StartSpots[4]; /*0x69b817*/
+        v5 = (&this->StartSpots)[4]; /*0x69b817*/
         v6 = 0; /*0x69b81d*/
         if ( v5 <= 0 ) /*0x69b821*/
         {
@@ -1976,7 +1973,7 @@ LABEL_12:
         }
         else
         {
-          v7 = this->StartSpots[1]; /*0x69b823*/
+          v7 = (&this->StartSpots)[1]; /*0x69b823*/
           while ( 1 ) /*0x69b829*/
           {
             v8 = *(unsigned int *)v7; /*0x69b829*/
@@ -2097,8 +2094,8 @@ void SessionClass::SetupNetwork()
   v66 = &vt_DynamicVectorClass; /*0x69bd81*/
   v71 = 10; /*0x69bd89*/
   v70 = 0; /*0x69bd91*/
-  Debug::Log(); /*0x69bd95*/
-  if ( this->StartSpots[4] < 2 ) /*0x69bda6*/
+  Debug::Log("Allocating port numbers and local addresses\n"); /*0x69bd95 G57w11: IDA push seq @ 0x69bd95*/
+  if ( (&this->StartSpots)[4] < 2 ) /*0x69bda6*/
   {
     v66 = &vt_VectorClass; /*0x69bdac*/
     ((MPCooperative *)(int)&v66)->updateScoreBoard(); /*0x69bdb4*/
@@ -2107,7 +2104,7 @@ void SessionClass::SetupNetwork()
   v52 = 0; /*0x69bdce*/
   memset( (void *)(&this->unknown_2854[373]), 0, 0x120u); /*0x69bdd2*/
   LOBYTE(this->unknown_2854[497]) = 1; /*0x69bdd4*/
-  if ( this->StartSpots[4] > 0 ) /*0x69bde3*/
+  if ( (&this->StartSpots)[4] > 0 ) /*0x69bde3*/
   {
     do /*0x69be9c*/
     {
@@ -2116,7 +2113,7 @@ void SessionClass::SetupNetwork()
       while ( 1 ) /*0x69bdfb*/
       {
         v4 = *v3; /*0x69bdfb*/
-        v54 = (void *)ToWideStringChar( (IUnknown *)((char *)dword_A8DA78[v1])); /*0x69be07*/
+        v54 = (void *)ToWideStringChar( (IUnknown *)((char *)((unsigned int *)dword_A8DA78)[v1])); /*0x69be07*/
         v5 = ToWideStringChar( (IUnknown *)(v4)); /*0x69be0b*/
         if ( !_strcmpi((char *)v54, v5) ) /*0x69be16*/
           break; /*0x69be16*/
@@ -2132,16 +2129,16 @@ void SessionClass::SetupNetwork()
       if ( v53[0] >= 8u ) /*0x69be40*/
         goto LABEL_10; /*0x69be40*/
 LABEL_9:
-      ((Network *)((Network *)(*(unsigned int *)(this->StartSpots[1] + 4 * v1) + 40)))->SetPort(this->unknown_2854[v6 + 489]); /*0x69be47*/
-      ToWideStringChar( (IUnknown *)(*(char **)(this->StartSpots[1] + 4 * v1))); /*0x69be6a*/
-      ((Network *)((Network *)(*(unsigned int *)(this->StartSpots[1] + 4 * v1) + 40)))->FormatAddress(0); /*0x69be7f*/
-      Debug::Log(); /*0x69be8b*/
+      ((Network *)((Network *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v1) + 40)))->SetPort(((unsigned char *)&this->unknown_2854)[v6 + 489]); /*0x69be47*/
+      ToWideStringChar( (IUnknown *)(*(char **)((&this->StartSpots)[1] + 4 * v1))); /*0x69be6a*/
+      ((Network *)((Network *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v1) + 40)))->FormatAddress(0); /*0x69be7f*/
+      Debug::Log("Allocated port for player %s - %s\n"); /*0x69be8b G57w11: IDA push seq @ 0x69be8b +2 reg-vararg(s) omitted*/
 LABEL_10:
       ++v1; /*0x69be93*/
     }
-    while ( v1 < this->StartSpots[4] ); /*0x69be9c*/
+    while ( v1 < (&this->StartSpots)[4] ); /*0x69be9c*/
   }
-  v7 = this->StartSpots[4]; /*0x69bea2*/
+  v7 = (&this->StartSpots)[4]; /*0x69bea2*/
   v58 = 0; /*0x69beaa*/
   v59 = 0; /*0x69beb0*/
   v49 = 0; /*0x69beb4*/
@@ -2157,9 +2154,9 @@ LABEL_10:
         break; /*0x69becd*/
       do /*0x69bef2*/
       {
-        if ( !*((unsigned char *)&v58 + v10) && *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v10) + 83) < v11 ) /*0x69bee9*/
+        if ( !*((unsigned char *)&v58 + v10) && *(unsigned int *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v10) + 83) < v11 ) /*0x69bee9*/
         {
-          v11 = *(unsigned int *)(*(unsigned int *)(this->StartSpots[1] + 4 * v10) + 83); /*0x69beeb*/
+          v11 = *(unsigned int *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v10) + 83); /*0x69beeb*/
           v9 = v10; /*0x69beed*/
         }
         ++v10; /*0x69beef*/
@@ -2167,7 +2164,7 @@ LABEL_10:
       while ( v10 < v7 ); /*0x69bef2*/
       if ( v9 == 0x7FFFFFFF ) /*0x69befa*/
         break; /*0x69befa*/
-      v12 = this->StartSpots[1]; /*0x69befc*/
+      v12 = (&this->StartSpots)[1]; /*0x69befc*/
       *((unsigned char *)&v58 + v9) = 1; /*0x69bf02*/
       v13 = (unsigned int *)(v12 + 4 * v9); /*0x69bf07*/
       if ( v70 < v8 ) /*0x69bf10*/
@@ -2182,7 +2179,7 @@ LABEL_24:
       }
       v8 = v68; /*0x69bf50*/
 LABEL_26:
-      v7 = this->StartSpots[4]; /*0x69bf54*/
+      v7 = (&this->StartSpots)[4]; /*0x69bf54*/
       if ( v70 != v7 && ++v49 < v7 ) /*0x69bf6d*/
         continue; /*0x69bf6d*/
       break; /*0x69bf6d*/
@@ -2252,7 +2249,7 @@ LABEL_39:
               *((unsigned char *)&v58 + v17) = 1; /*0x69c0d1*/
               ToWideStringChar(v25[v17]); /*0x69c0d9*/
             }
-            Debug::Log(); /*0x69c0ec*/
+            Debug::Log("Adjusted port number to %d for player %s\n"); /*0x69c0ec G57w11: IDA push seq @ 0x69c0ec +1 reg-vararg(s) omitted*/
             v26 = ToWideStringChar(*((char **)Block + v50)); /*0x69c121*/
             v27 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(); /*0x69c123*/
             if ( !_strcmpi(v26, v27) ) /*0x69c12a*/
@@ -2285,8 +2282,8 @@ LABEL_39:
   }
   if ( this->unknown_2854[498] ) /*0x69c208*/
   {
-    Debug::Log(); /*0x69c21c*/
-    ((Network *)((Network *)(*(unsigned int *)this->StartSpots[1] + 40)))->SetPort(this->unknown_2854[498]); /*0x69c237*/
+    Debug::Log("Using %d for local port\n"); /*0x69c21c G57w11: IDA push seq @ 0x69c21c +1 reg-vararg(s) omitted*/
+    ((Network *)((Network *)(*(unsigned int *)(&this->StartSpots)[1] + 40)))->SetPort(((unsigned char *)&this->unknown_2854)[498]); /*0x69c237*/
     v54 = (void *)(0); /*0x69c23c*/
     v32 = (char **)dword_A8DA90; /*0x69c244*/
     while ( 1 ) /*0x69c24e*/
@@ -2309,51 +2306,51 @@ LABEL_58:
     ((Network *)((Network *)(this->unknown_2854[(unsigned int)v36 + 1] + 40)))->SetPort(this->unknown_2854[498]); /*0x69c288*/
   }
   v37 = 0; /*0x69c2a5*/
-  if ( this->StartSpots[4] > 0 ) /*0x69c2a9*/
+  if ( (&this->StartSpots)[4] > 0 ) /*0x69c2a9*/
   {
-    v38 = (unsigned short *)&this->unknown_2854[521] + 1; /*0x69c2ab*/
+    v38 = (unsigned short *)&((unsigned char *)&this->unknown_2854)[521] + 1; /*0x69c2ab*/
     do /*0x69c2d7*/
     {
-      v39 = *(unsigned short *)(*(unsigned int *)(this->StartSpots[1] + 4 * v37) + 40); /*0x69c2ba*/
+      v39 = *(unsigned short *)(*(unsigned int *)((&this->StartSpots)[1] + 4 * v37) + 40); /*0x69c2ba*/
       *v38 = v39; /*0x69c2c1*/
       if ( !v39 ) /*0x69c2c4*/
         *v38 = 1234; /*0x69c2c6*/
       ++v37; /*0x69c2d1*/
       ++v38; /*0x69c2d2*/
     }
-    while ( v37 < this->StartSpots[4] ); /*0x69c2d7*/
+    while ( v37 < (&this->StartSpots)[4] ); /*0x69c2d7*/
   }
-  v40 = (unsigned int *)(*(unsigned int *)this->StartSpots[1] + 40); /*0x69c2e1*/
+  v40 = (unsigned int *)(*(unsigned int *)(&this->StartSpots)[1] + 40); /*0x69c2e1*/
   *(unsigned int *)v60 = *v40; /*0x69c2e6*/
   v61 = v40[1]; /*0x69c2f2*/
   v62 = v40[2]; /*0x69c2fd*/
   ((Network *)(char *)v60)->CopyAddress_Small( (IPXManagerClass *)((int)&v57)); /*0x69c301*/
   v51 = 1; /*0x69c313*/
-  if ( this->StartSpots[4] > 1 ) /*0x69c317*/
+  if ( (&this->StartSpots)[4] > 1 ) /*0x69c317*/
   {
     v41 = 4; /*0x69c31d*/
     do /*0x69c430*/
     {
-      if ( (uint8_t)((NetworkID *)(v60))->Compare(*(unsigned int *)(v41 + this->StartSpots[1]) + 40) ) /*0x69c333*/
+      if ( (uint8_t)((NetworkID *)(v60))->Compare(*(unsigned int *)(v41 + (&this->StartSpots)[1]) + 40) ) /*0x69c333*/
       {
-        ToWideStringChar( (IUnknown *)(*(char **)(v41 + this->StartSpots[1]))); /*0x69c349*/
-        Debug::Log(); /*0x69c354*/
-        v42 = (char *)&this->unknown_2854[80]; /*0x69c362*/
+        ToWideStringChar( (IUnknown *)(*(char **)(v41 + (&this->StartSpots)[1]))); /*0x69c349*/
+        Debug::Log("%s has the same IP address as me\n"); /*0x69c354 G57w11: IDA push seq @ 0x69c354 +1 reg-vararg(s) omitted*/
+        v42 = (char *)&((unsigned char *)&this->unknown_2854)[80]; /*0x69c362*/
         v54 = &this->unknown_2854[1]; /*0x69c368*/
         v55 = 8; /*0x69c36c*/
         do /*0x69c416*/
         {
           v43 = *(char **)v54; /*0x69c381*/
-          v56 = (void *)ToWideStringChar( (IUnknown *)(*(char **)(v41 + this->StartSpots[1]))); /*0x69c38a*/
+          v56 = (void *)ToWideStringChar( (IUnknown *)(*(char **)(v41 + (&this->StartSpots)[1]))); /*0x69c38a*/
           v44 = ToWideStringChar( (IUnknown *)(v43)); /*0x69c38e*/
           if ( !_strcmpi((char *)v56, v44) ) /*0x69c399*/
           {
             ((Network *)v42)->CopyAddress_Small( (IPXManagerClass *)((int)v53)); /*0x69c3ac*/
-            v45 = (NetworkID *)(*(unsigned int *)(v41 + this->StartSpots[1]) + 40); /*0x69c3be*/
+            v45 = (NetworkID *)(*(unsigned int *)(v41 + (&this->StartSpots)[1]) + 40); /*0x69c3be*/
             ((NetworkID *)(v45))->Assign(0, (int)v53, *(unsigned short *)v45->__pad_0); /*0x69c3c8*/
-            ToWideStringChar( (IUnknown *)(*(char **)(v41 + this->StartSpots[1]))); /*0x69c3d6*/
+            ToWideStringChar( (IUnknown *)(*(char **)(v41 + (&this->StartSpots)[1]))); /*0x69c3d6*/
             ((Network *)((Network *)(*(unsigned int *)(v41 + this->StartSpots[1]) + 40)))->FormatAddress(0); /*0x69c3eb*/
-            Debug::Log(); /*0x69c3f7*/
+            Debug::Log("Talking to NAT player %s on IP address %s\n"); /*0x69c3f7 G57w11: IDA push seq @ 0x69c3f7 +2 reg-vararg(s) omitted*/
           }
           v42 += 12; /*0x69c40a*/
           v46 = v55 == 1; /*0x69c40d*/
