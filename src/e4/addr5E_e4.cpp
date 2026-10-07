@@ -1145,8 +1145,7 @@ LABEL_101:
               {
   int v89; // eax
                 int v88 = GetResourceID2CSF( (int)(v78));
-                if ( *(unsigned int *)&(&HouseClass_Player)[29936
-                  && !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&((unsigned int *)HouseClass_Player)[29936 + 4]))(*(unsigned int *)&((unsigned int *)HouseClass_Player)[29936]) )
+                if ( GetComboBoxSelected(v77, v88, -1) == -3 )  /* G57w12: raw 0x5e9076 truth (e4 body had truncated fold of HouseClass_Player reads) */
                 {
                   FillComboBoxRandomOnly(v77, v88);
                 }
