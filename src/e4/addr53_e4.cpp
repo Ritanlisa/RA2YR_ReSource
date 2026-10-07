@@ -185,7 +185,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   if ( (uint8_t)((CCFileClass *)(0))->Open((int)((CCFileClass *)(0))) ) /*0x5312cb*/
   {
     v4 = (char *)((CCFileClass *)(v39))->ReadEntireFile(); /*0x5312e5*/
-    CCFileClass::Reset(v39); /*0x5312e7*/
+    CCFileClass::Reset((gamemd::CCFileClass *)(v39)); /*0x5312e7*/
     for ( i = 0; i < 256; ++i ) /*0x5312ec*/
     {
       v6 = &v4[2 * (i % 256) + i % 256]; /*0x531302*/
@@ -1699,38 +1699,38 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   const char *v27; // eax
   bool v29; // [esp+29h] [ebp-1h]
 
-  ((gamemd::Debug*)aAllocatingNewS)->Log(); /*0x533fdd*/
+  ((gamemd::Debug*)aAllocatingNewS)->Log("Allocating new surfaces\n"); /*0x533fdd G57w12: IDA push seq @ 0x533fdd +4 reg-vararg omitted*/
   if ( DSurface_Alternate ) /*0x533fee*/
   {
-    ((gamemd::Debug*)aDeletingAltern)->Log(); /*0x533ff5*/
+    ((gamemd::Debug*)aDeletingAltern)->Log("Deleting AlternateSurface\n"); /*0x533ff5 G57w12: IDA push seq @ 0x533ff5*/
     if ( DSurface_Alternate ) /*0x534005*/
       (**(void (***)(int, int))DSurface_Alternate)(DSurface_Alternate, 1); /*0x53400b*/
     DSurface_Alternate = 0; /*0x53400d*/
   }
   if ( g_DSurface_Hidden ) /*0x534019*/
   {
-    ((gamemd::Debug*)aDeletingHidden)->Log(); /*0x534020*/
+    ((gamemd::Debug*)aDeletingHidden)->Log("Deleting HiddenSurface\n"); /*0x534020 G57w12: IDA push seq @ 0x534020*/
     if ( g_DSurface_Hidden ) /*0x534030*/
       (**(void (***)(int, int))g_DSurface_Hidden)(g_DSurface_Hidden, 1); /*0x534036*/
     g_DSurface_Hidden = 0; /*0x534038*/
   }
   if ( DSurface_Composite ) /*0x534044*/
   {
-    ((gamemd::Debug*)aDeletingCompos)->Log(); /*0x53404b*/
+    ((gamemd::Debug*)aDeletingCompos)->Log("Deleting CompositeSurface\n"); /*0x53404b G57w12: IDA push seq @ 0x53404b*/
     if ( DSurface_Composite ) /*0x53405b*/
       (**(void (***)(int, int))DSurface_Composite)(DSurface_Composite, 1); /*0x534061*/
     DSurface_Composite = 0; /*0x534063*/
   }
   if ( DSurface_Tile ) /*0x53406f*/
   {
-    ((gamemd::Debug*)aDeletingTilesu)->Log(); /*0x534076*/
+    ((gamemd::Debug*)aDeletingTilesu)->Log("Deleting TileSurface\n"); /*0x534076 G57w12: IDA push seq @ 0x534076*/
     if ( DSurface_Tile ) /*0x534086*/
       (**(void (***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x53408c*/
     DSurface_Tile = 0; /*0x53408e*/
   }
   if ( DSurface_Sidebar ) /*0x53409a*/
   {
-    ((gamemd::Debug*)aDeletingSideba)->Log(); /*0x5340a1*/
+    ((gamemd::Debug*)aDeletingSideba)->Log("Deleting SidebarSurface\n"); /*0x5340a1 G57w12: IDA push seq @ 0x5340a1*/
     if ( DSurface_Sidebar ) /*0x5340b1*/
       (**(void (***)(int, int))DSurface_Sidebar)(DSurface_Sidebar, 1); /*0x5340b7*/
     DSurface_Sidebar = 0; /*0x5340b9*/
@@ -1785,7 +1785,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
       (**(void (***)(int))DSurface_Composite)(1); /*0x53425c*/
     if ( DSurface_Tile ) /*0x534266*/
       (**(void (***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x53426c*/
-    ((Debug *)aMovingTilesurf)->Log(); /*0x534273*/
+    ((Debug *)aMovingTilesurf)->Log("Moving TileSurface and CompositeSurface into system memory\n"); /*0x534273 G57w12: IDA push seq @ 0x534273*/
     v17 = (char *)RA2_OPNEW(0x24u); /*0x53427a*/
     if ( v17 ) /*0x534286*/
       DSurface_Composite = (int)((DSurface*)v17)->Construct(aP1->vtable3, aP1->vtable4, 1, 1); /*0x53429b*/

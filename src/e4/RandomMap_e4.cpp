@@ -88,10 +88,10 @@ unsigned int * TerrainTileDataConstructor(void *a1, int a2)
     *(unsigned int *)self->__pad_4C = 0; /*0x58bff6*/
     self->RandomMap_field_0x3C[0] = 100000; /*0x58bff9*/
     ++g_MissionQueueFrame.localVariables[164]; /*0x58c014*/
-    if ( g_MissionQueueFrame.briefing[342] < g_MissionQueueFrame.briefing[340] /*0x58c041*/
-      || (IDA_BYTE1(g_MissionQueueFrame.briefing[341]) || !g_MissionQueueFrame.briefing[340])
+    if ( g_MissionQueueFrame.briefing[342] < &dword_ABDB9C /*0x58c041*/
+      || (IDA_BYTE1(g_MissionQueueFrame.briefing[341]) || !&dword_ABDB9C)
       && g_MissionQueueFrame.briefing[343] > 0
-&& (*(unsigned __int8 (**)(int *, int, unsigned int))(g_MissionQueueFrame.briefing[338] + 8))( (int *)(&g_MissionQueueFrame.briefing[338]), g_MissionQueueFrame.briefing[340] + g_MissionQueueFrame.briefing[343], 0) )
+&& (*(unsigned __int8 (**)(int *, int, unsigned int))(g_MissionQueueFrame.briefing[338] + 8))( (int *)(&g_MissionQueueFrame.briefing[338]), &dword_ABDB9C + g_MissionQueueFrame.briefing[343], 0) )
 
 
 
@@ -288,7 +288,7 @@ int GenerateTerrain(RandomMap *self)
                 *(unsigned char *)(v38 + 75) = 0; /*0x58cdc2*/
                 *(unsigned int *)(v36 + 56) = 0; /*0x58cdc6*/
                 *(unsigned char *)(v36 + 282) = 0; /*0x58cdc9*/
-                v39 = g_MissionQueueFrame.globalVariables[100]; /*0x58cdd0*/
+                v39 = &dword_ABE2E4; /*0x58cdd0*/
                 if ( v35 != -1 ) /*0x58cdd9*/
                   v39 = v35; /*0x58cddb*/
                 *(unsigned char *)(v36 + 283) = v39; /*0x58cddd*/
@@ -346,7 +346,7 @@ int GenerateTerrain(RandomMap *self)
                     *(unsigned char *)(v26 + 75) = 0; /*0x58cc3c*/
                     *(unsigned int *)(j + 56) = 0; /*0x58cc40*/
                     *(unsigned char *)(j + 282) = 0; /*0x58cc43*/
-                    v27 = g_MissionQueueFrame.globalVariables[100]; /*0x58cc4a*/
+                    v27 = &dword_ABE2E4; /*0x58cc4a*/
                     if ( v24 != -1 ) /*0x58cc52*/
                       v27 = v24; /*0x58cc54*/
                     *(unsigned char *)(j + 283) = v27; /*0x58cc56*/
@@ -2971,7 +2971,7 @@ int SetupDialog(HWND hDlg)
     for ( i = GetDlgItem(hDlg, 1002); SendMessageA( (HWND)(i), 0x146u, 0, 0) > 0; SendMessageA( (HWND)(i), 0x144u, 0, 0) ) /*0x596e76*/
       ; /*0x596e90*/
     v3 = 0; /*0x596ea2*/
-    p_LoopStart = &stru_82ADA8.LoopStart; /*0x596ea4*/
+    p_LoopStart = &off_82B060; /*0x596ea4*/
     do /*0x596edb*/
     {
       StringCSF = GetStringCSF( (wchar_t *)*p_LoopStart, 0, (const char *)(&stru_82BA00.?[11]), 4883); /*0x596eb7*/
@@ -2980,9 +2980,9 @@ int SetupDialog(HWND hDlg)
       ++p_LoopStart; /*0x596ed1*/
       ++v3; /*0x596ed4*/
     }
-    while ( (int)p_LoopStart < (int)&stru_82ADA8.Next ); /*0x596edb*/
+    while ( (int)p_LoopStart < (int)&off_82B070); /*0x596edb*/
     v7 = GetStringCSF( /*0x596ef7*/
-           *((wchar_t **)&stru_82ADA8.LoopStart + (int)this->RandomMap_field_0x48),
+           *((wchar_t **)&off_82B060+ (int)this->RandomMap_field_0x48),
            0,
            &stru_82BA00.?[11],
            4887);
@@ -2991,7 +2991,7 @@ int SetupDialog(HWND hDlg)
     for ( j = GetDlgItem(hDlg, 1030); SendMessageA( (HWND)(j), 0x146u, 0, 0) > 0; SendMessageA( (HWND)(j), 0x144u, 0, 0) ) /*0x596f24*/
       ; /*0x596f3e*/
     v10 = 0; /*0x596f50*/
-    p_Next = (wchar_t **)&stru_82ADA8.Next; /*0x596f52*/
+    p_Next = (wchar_t **)&off_82B070; /*0x596f52*/
     do /*0x596f89*/
     {
       v12 = GetStringCSF( *p_Next, 0, (const char *)(&stru_82BA00.?[11]), 4898); /*0x596f65*/
@@ -3000,8 +3000,8 @@ int SetupDialog(HWND hDlg)
       ++p_Next; /*0x596f7f*/
       ++v10; /*0x596f82*/
     }
-    while ( (int)p_Next < (int)&stru_82ADA8.TranslucencyDetailLevel ); /*0x596f89*/
-    v14 = GetStringCSF(*((wchar_t **)&stru_82ADA8.Next + *(unsigned int *)&this->__pad_4C[24]), 0, ((char *)&stru_82BA00 + 100), 4902); /*0x596fa5*/
+    while ( (int)p_Next < (int)&dword_82B080); /*0x596f89*/
+    v14 = GetStringCSF(*((wchar_t **)&off_82B070+ *(unsigned int *)&this->__pad_4C[24]), 0, ((char *)&stru_82BA00 + 100), 4902); /*0x596fa5*/
     v15 = SendMessageA( (HWND)(j), 0x4BEu, 0, (LPARAM)((LPARAM)((LPARAM)v14))); /*0x596fb3*/
     SendMessageA( (HWND)(j), 0x14Eu, v15, 0); /*0x596fbe*/
     for ( k = GetDlgItem(hDlg, 1029); SendMessageA( (HWND)(k), 0x146u, 0, 0) > 0; SendMessageA( (HWND)(k), 0x144u, 0, 0) ) /*0x596fd2*/
@@ -3016,7 +3016,7 @@ int SetupDialog(HWND hDlg)
       ++v18; /*0x597030*/
       ++v17; /*0x597033*/
     }
-    while ( (int)v18 < (int)stru_82ADA8.__pad_2A0 ); /*0x59703a*/
+    while ( (int)v18 < (int)&off_82B048); /*0x59703a*/
     v21 = GetStringCSF((wchar_t *)stru_82ADA8.?[this->RandomMap_field_0x3C[0] + 18], 0, ((char *)&stru_82BA00 + 60), 4918); /*0x597056*/
     v22 = SendMessageA( (HWND)(k), 0x4BEu, 0, (LPARAM)((LPARAM)((LPARAM)v21))); /*0x597064*/
     SendMessageA( (HWND)(k), 0x14Eu, v22, 0); /*0x59706f*/
@@ -3040,7 +3040,7 @@ int SetupDialog(HWND hDlg)
     for ( n = GetDlgItem(hDlg, 1032); SendMessageA( (HWND)(n), 0x146u, 0, 0) > 0; SendMessageA( (HWND)(n), 0x144u, 0, 0) ) /*0x59713c*/
       ; /*0x597156*/
     lParama = 0; /*0x597168*/
-    pad_2A0 = stru_82ADA8.__pad_2A0; /*0x597170*/
+    pad_2A0 = &off_82B048; /*0x597170*/
     do /*0x5971b3*/
     {
       v33 = GetStringCSF( *(wchar_t **)pad_2A0, 0, (const char *)(&stru_82BA00.?[11]), 4945); /*0x597183*/
@@ -3049,8 +3049,8 @@ int SetupDialog(HWND hDlg)
       pad_2A0 += 4; /*0x5971a5*/
       ++lParama; /*0x5971af*/
     }
-    while ( (int)pad_2A0 < (int)&stru_82ADA8.Rate ); /*0x5971b3*/
-    v35 = GetStringCSF( *(wchar_t **)&stru_82ADA8.__pad_2A0[4 * v28->RandomMap_field_0x40[0]], 0, (const char *)(&stru_82BA00.?[11]), 4949); /*0x5971cb*/
+    while ( (int)pad_2A0 < (int)&off_82B058); /*0x5971b3*/
+    v35 = GetStringCSF( *(wchar_t **)&off_82B048[4 * v28->RandomMap_field_0x40[0]], 0, (const char *)(&stru_82BA00.?[11]), 4949); /*0x5971cb*/
     v36 = SendMessageA( (HWND)(n), 0x4BEu, 0, (LPARAM)((LPARAM)((LPARAM)v35))); /*0x5971d9*/
     SendMessageA( (HWND)(n), 0x14Eu, v36, 0); /*0x5971e4*/
     DlgItem = GetDlgItem(hDlg, 1019); /*0x5971f9*/
@@ -8226,7 +8226,7 @@ int RemoveMatching(IUnknown * aP1, int a2)
           if ( v13 >= 0 && v13 < Object::ComputeAllocationSize() ) /*0x74efba*/
           {
             *(unsigned char *)(*(unsigned int *)&v4->__pad_4C[120] + v13) = 0; /*0x74efc2*/
-            *(unsigned char *)(stru_B1D290.customSound_controller[4] + v13) = 0; /*0x74efcc*/
+            *(unsigned char *)(&dword_B1D2F0 + v13) = 0; /*0x74efcc*/
           }
           if ( *((unsigned char *)&v40 + j / 2) == 1 && !v4->__pad_4C[180] ) /*0x74efe4*/
           {
@@ -8237,7 +8237,7 @@ int RemoveMatching(IUnknown * aP1, int a2)
             if ( *(unsigned int *)v14 < 1 ) /*0x74f007*/
             {
   LABEL_39:
-              Debug::Log(); /*0x74f138*/
+              Debug::Log("Exiting Remove_Matching\n"); /*0x74f138 G57w12: IDA push seq @ 0x74f138*/
             }
             else
             {
@@ -8324,7 +8324,7 @@ int RemoveMatching(IUnknown * aP1, int a2)
           if ( v26 == -1 ) /*0x74f188*/
           {
             *(unsigned char *)(*(unsigned int *)&v4->__pad_4C[120] + v27) = 0; /*0x74f190*/
-            *(unsigned char *)(stru_B1D290.customSound_controller[4] + v27) = 0; /*0x74f19a*/
+            *(unsigned char *)(&dword_B1D2F0 + v27) = 0; /*0x74f19a*/
           }
           else
           {
@@ -8371,7 +8371,7 @@ int RemoveMatching(IUnknown * aP1, int a2)
                 }
                 result = *(unsigned int *)&v4->__pad_4C[120]; /*0x74f2a9*/
                 *(unsigned char *)(result + v27) = 1; /*0x74f2af*/
-                *(unsigned char *)(stru_B1D290.customSound_controller[4] + v27) = 1; /*0x74f2b9*/
+                *(unsigned char *)(&dword_B1D2F0 + v27) = 1; /*0x74f2b9*/
               }
             }
           }

@@ -263,7 +263,7 @@ unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(unsigned int *aP0
   FirstObstacle = TrajectoryHelper::FindFirstObstacle( (IUnknown *)(aP0), (int *)(a1), *(unsigned int *)(arg0 + 160), (void *)(a3)); /*0x4cc322*/
   v5 = FirstObstacle; /*0x4cc327*/
   if ( FirstObstacle /*0x4cc342*/
-    && BuildingPlacement::ValidateType(FirstObstacle, -1, -1)
+    && BuildingPlacement::ValidateType((gamemd::BuildingPlacement *)(FirstObstacle), -1, -1)
     && *(unsigned char *)(*(unsigned int *)(arg0 + 172) + 324) )
   {
     return 0; /*0x4cc34d*/

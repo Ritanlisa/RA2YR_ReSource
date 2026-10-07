@@ -15,18 +15,18 @@ int DialogQueue::PushEntry(void *a1)
 
   int result; // eax
 
-  result = g_MissionQueueFrame.ls640BkgdName[9]; /*0x5d4e70*/
-  if ( g_MissionQueueFrame.ls640BkgdName[11] < g_MissionQueueFrame.ls640BkgdName[9] /*0x5d4eac*/
-    || (BYTE1(g_MissionQueueFrame.ls640BkgdName[10]) || !g_MissionQueueFrame.ls640BkgdName[9])
-    && g_MissionQueueFrame.ls640BkgdName[12] > 0
-&& (result = (*(int (**)(int *, int, unsigned int))(g_MissionQueueFrame.ls640BkgdName[7] + 8))( (int *)(&g_MissionQueueFrame.ls640BkgdName[7]), g_MissionQueueFrame.ls640BkgdName[9] + g_MissionQueueFrame.ls640BkgdName[12], 0), (unsigned char)result) )
+  result = &dword_ABFC98; /*0x5d4e70*/
+  if ( &dword_ABFCA0 < &dword_ABFC98 /*0x5d4eac*/
+    || (BYTE1(&byte_ABFC9C) || !&dword_ABFC98)
+    && &dword_ABFCA4 > 0
+&& (result = (*(int (**)(int *, int, unsigned int))(&dword_ABFC90 + 8))( (int *)(&g_MissionQueueFrame.ls640BkgdName[7]), &dword_ABFC98 + &dword_ABFCA4, 0), (unsigned char)result) )
 
 
 
 
   {
-    result = g_MissionQueueFrame.ls640BkgdName[11]++; /*0x5d4eb4*/
-    *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result) = (unsigned int)this;
+    result = &dword_ABFCA0++; /*0x5d4eb4*/
+    *(unsigned int *)(&dword_ABFC94 + 4 * result) = (unsigned int)this;
   }
   return result; /*0x5d4ec6*/
 
@@ -41,15 +41,15 @@ int DialogQueue::RemoveEntry()
   DialogQueue *v2; // [esp+0h] [ebp-4h] BYREF
 
   v2 = this; /*0x5d4ed7*/
-result = (*(int (**)(int *, DialogQueue **))(g_MissionQueueFrame.ls640BkgdName[7] + 16))( /*0x5d4ee5*/ &g_MissionQueueFrame.ls640BkgdName[7], (DialogQueue **)(&v2));
+result = (*(int (**)(int *, DialogQueue **))(&dword_ABFC90 + 16))( /*0x5d4ee5*/ &g_MissionQueueFrame.ls640BkgdName[7], (DialogQueue **)(&v2));
 
 
-  if ( result != -1 && result < g_MissionQueueFrame.ls640BkgdName[11] ) /*0x5d4ef5*/
+  if ( result != -1 && result < &dword_ABFCA0 ) /*0x5d4ef5*/
   {
-    --g_MissionQueueFrame.ls640BkgdName[11]; /*0x5d4efa*/
+    --&dword_ABFCA0; /*0x5d4efa*/
     for ( ; /*0x5d4f00*/
-          result < g_MissionQueueFrame.ls640BkgdName[11];
-          *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result - 4) = *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8]
+          result < &dword_ABFCA0;
+          *(unsigned int *)(&dword_ABFC94 + 4 * result - 4) = *(unsigned int *)(&dword_ABFC94
                                                                                          + 4 * result) )
     {
       ++result; /*0x5d4f08*/

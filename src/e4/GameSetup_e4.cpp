@@ -34,7 +34,7 @@ int GameSetup::LookupDialogHash()
   v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
                       + 4
                       * ((*(int (**)(GameSetup **))&g_DialogPool.__pad_208[80])( (GameSetup **)(&v4))
-                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                       & ((1 << &dword_AC1B0C) - 1)));
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/
@@ -62,7 +62,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_GameMode), *(unsigned int *)this, 0); /*0x698fae*/
-  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(aScenindex), this->q004, 0); /*0x698fc1*/
+  INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(aScenindex), (int)(this->q004), 0); /*0x698fc1*/
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_GameSpeed), this->ptr_8, 0); /*0x698fd4*/
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_Credits), this->q00C, 0); /*0x698fe7*/
   INIClass::SetInt(((INIClass *)(aP1)), Block, (char *)(g_INI_Key_UnitCount), this->q010, 0); /*0x698ffa*/

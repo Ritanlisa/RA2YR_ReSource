@@ -152,7 +152,7 @@ struct Network {
     int processPacket(TechnoTypeClass * aP1);  // 0x53EF60
     AbstractClass * * SetConnectionParams(int aP1, int a3, int a4, char aP4);  // 0x540C60
     int sendData(AnimClass * aP1);  // 0x540F00
-    int GetSendCount(void *a1_1);  // 0x540F90
+int GetSendCount();  // 0x00540f90 g57w12-r raw-sync (def-form)
     int GetConnectionSpeed(int aP1);  // 0x540FA0
     int GetClass(int a2);  // 0x540FC0
     int FindPlayerByID(int aP1);  // 0x541000

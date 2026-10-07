@@ -190,7 +190,7 @@ MixFileClass * SessionClass::Load(void *a1, void *a2, void *a3, void *a4)
           }
           else
           {
-            LoadPaletteSimple( off_844BB0[0], (int *)(&dword_B0FB84), (unsigned int *)(&dword_B0FB88)); /*0x72b41e*/
+            LoadPaletteSimple((char *)(off_844BB0[0]), (int *)(&dword_B0FB84), (unsigned int *)(&dword_B0FB88)); /*0x72b41e*/
           }
         }
         result = (unsigned int *)dword_B0FB90; /*0x72b440*/
@@ -323,7 +323,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char **a1)
 
   uniqueId = this; /*0x5ceef8*/
   ((unsigned int *)&v43)[0] = (int)this; /*0x5cef00*/
-  CCFileClass::Construct3((int)&v43.customSound_controller[2]); /*0x5cef04*/
+  CCFileClass::Construct3((gamemd::CCFileClass *)((int)&v43.customSound_controller[2])); /*0x5cef04*/
   v3 = (void *)(0); /*0x5cef09*/
   ((unsigned int *)&v43)[0] = 0; /*0x5cef0f*/
   ((unsigned int *)&v43)[0] = 0; /*0x5cef13*/
@@ -1125,7 +1125,7 @@ SessionClass::SessionClass()
   *((unsigned int *)this + 576) = 0; /*0x697250*/
   ((SessionClass *)((unsigned char *)this + 2600))->saveSettings(); /*0x697256*/
   ((Waypoint*)((unsigned char *)this + 7876))->InitInvalid(); /*0x697261*/
-  CCFileClass::Construct3((int)((unsigned char *)this + 9044)); /*0x69726c*/
+  CCFileClass::Construct3((gamemd::CCFileClass *)((int)((unsigned char *)this + 9044))); /*0x69726c*/
   ((Waypoint*)((unsigned char *)this + 9160))->InitInvalid(); /*0x697277*/
   ((Waypoint*)((unsigned char *)this + 9676))->InitInvalid(); /*0x697282*/
   *((unsigned int *)this + 2564) = 0; /*0x69728c*/
@@ -2364,14 +2364,14 @@ LABEL_58:
     }
     while ( v51 < this->StartSpots[4] ); /*0x69c430*/
   }
-  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x69c440*/
+  if ( *(unsigned int *)&dword_887628) /*0x69c440*/
   {
-    v47 = (*(int (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 112))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x69c444*/
+    v47 = (*(int (**)(unsigned int))(**(unsigned int **)&dword_887628+ 112))(*(unsigned int *)&dword_887628); /*0x69c444*/
     LOWORD(v47) = HIWORD(this->unknown_2854[521]); /*0x69c44d*/
-    (*(void (**)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 92))( /*0x69c457*/
-      *(unsigned int *)&stru_887598.isAliveFlag,
+    (*(void (**)(unsigned int, int))(**(unsigned int **)&dword_887628+ 92))( /*0x69c457*/
+      *(unsigned int *)&dword_887628,
       v47);
-    (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x69c462*/
+    (*(void (**)(unsigned int))(**(unsigned int **)&dword_887628+ 28))(*(unsigned int *)&dword_887628); /*0x69c462*/
   }
   v66 = &vt_VectorClass; /*0x69c469*/
   if ( Block ) /*0x69c473*/
@@ -2470,7 +2470,7 @@ LABEL_15:
     v18 = ((String *)(&v25))->Assign( (const char *)(String2)); /*0x78f0df*/
     v17 = FromStringInt( (IUnknown *)((char **)&v24.m_3[1]), (int)v8); /*0x78f0ec*/
     v16 = ((String *)(&v24))->Assign( (const char *)(asc_84BA48)); /*0x78f100*/
-    v15 = ((String *)((String *)&v23.m_3[1]))->Assign( (const char *)(&stru_B76AC4.needsRedraw)); /*0x78f118*/
+    v15 = ((String *)((String *)&v23.m_3[1]))->Assign( (const char *)(&byte_B76B44)); /*0x78f118*/
     v9 = ((String *)(&v23))->Assign( (const char *)(aMode_0)); /*0x78f11f*/
     v10 = ((String *)((String *)v9))->Concat( (char **)(&v22), (char **)(v15)); /*0x78f126*/
     v11 = ((String *)((String *)v10))->Concat( (char **)&v21.m_3[1], (char **)(v16)); /*0x78f12d*/

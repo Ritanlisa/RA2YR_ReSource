@@ -76,12 +76,8 @@ int ThemeClass::ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, 
                               (uint8_t *)aSide,
                               v6);
   if ( *((unsigned char *)this + 648) ) /*0x72055a*/
-    INIClass::GetStringEx( /*0x720577*/
-      (int)a2,
-      (uint8_t *)this,
-      (uint8_t *)g_INI_Key_Name,
-      (wchar_t *)((char *)this + 512),
-      0x40u);
+    INIClass::GetStringEx((gamemd::INIClass *)(/*0x720577*/
+      (int)a2), (uint8_t *)this, (uint8_t *)g_INI_Key_Name, (wchar_t *)((char *)this + 512), 0x40u);
   return 1; /*0x72057c*/
 
 }

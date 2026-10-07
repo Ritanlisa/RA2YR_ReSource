@@ -1972,8 +1972,8 @@ LABEL_44:
     ((BufferIOFileClass *)(v29))->Dtor(); /*0x49c58c*/
     return 0; /*0x49c594*/
   }
-  *((unsigned int *)this + 14) = INIClass::ReadInt_Overwrite((INIClass *)(v28), g_INI_Key_CurrentMap, (unsigned char *)("Score"), 0); /*0x49c2fc*/
-  INIClass::ReadInt_Overwrite((INIClass *)(v28), aScore_0, (unsigned char *)("Score"), 0); /*0x49c2ff*/
+  *((unsigned int *)this + 14) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)&g_INI_Key_CurrentMap, (unsigned char *)("Score"), 0); /*0x49c2fc*/
+  INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore_0), (unsigned char *)("Score"), 0); /*0x49c2ff*/
   *((unsigned int *)this + 17) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aCampaigntype, (unsigned char *)("House1"), -1); /*0x49c329*/
   *((unsigned int *)this + 5) = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
                             (uint8_t ***)v24,
@@ -1986,15 +1986,15 @@ LABEL_44:
                              (uint8_t *)v28,
                              (uint8_t *)aHouse2,
                              -2);
-  *((unsigned int *)this + 13) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aColor2, (unsigned char *)("Kills1"), -2); /*0x49c388*/
-  *((unsigned int *)this + 18) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aKills1, 0); /*0x49c390*/
-  *((unsigned int *)this + 19) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aKills2, (unsigned char *)("Built1"), 0); /*0x49c3b6*/
+  *((unsigned int *)this + 13) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aColor2), (unsigned char *)("Kills1"), -2); /*0x49c388*/
+  *((unsigned int *)this + 18) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aKills1), 0); /*0x49c390*/
+  *((unsigned int *)this + 19) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aKills2), (unsigned char *)("Built1"), 0); /*0x49c3b6*/
   *((unsigned int *)this + 20) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aBuilt1, (unsigned char *)("Built2"), 0); /*0x49c3cd*/
-  *((unsigned int *)this + 21) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aBuilt2, 0); /*0x49c3d5*/
-  *((unsigned int *)this + 22) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aLost1, (unsigned char *)("Lost2"), 0); /*0x49c3fb*/
+  *((unsigned int *)this + 21) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aBuilt2), 0); /*0x49c3d5*/
+  *((unsigned int *)this + 22) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aLost1), (unsigned char *)("Lost2"), 0); /*0x49c3fb*/
   *((unsigned int *)this + 23) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aLost2, (unsigned char *)("Score1"), 0); /*0x49c412*/
-  *((unsigned int *)this + 24) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aScore1, 0); /*0x49c41a*/
-  *((unsigned int *)this + 25) = INIClass::ReadInt_Overwrite((INIClass *)(v28), aScore2, (unsigned char *)("Time"), 0); /*0x49c440*/
+  *((unsigned int *)this + 24) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore1), 0); /*0x49c41a*/
+  *((unsigned int *)this + 25) = INIClass::ReadInt_Overwrite((INIClass *)(v28), (unsigned char *)(aScore2), (unsigned char *)("Time"), 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite((INIClass *)(v28), g_INI_Key_Time, (unsigned char *)("Time"), 0); /*0x49c443*/
   v20 = *((unsigned int *)this + 17); /*0x49c448*/
   *((unsigned int *)this + 26) = Int_Overwrite; /*0x49c44b*/
@@ -2329,7 +2329,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   v20[0] = &CCINIClass_Vtable; /*0x49d400*/
   if ( !((CCINIClass *)(v20))->Load((int)v17, 0, 0) ) /*0x49d40b*/
   {
-    CCFileClass::Reset(v17); /*0x49d418*/
+    CCFileClass::Reset((gamemd::CCFileClass *)(v17)); /*0x49d418*/
 LABEL_5:
     ((HashTable *)(v20))->DestroyHashTableINIClass(); /*0x49d41d*/
     v17[0] = &vt_CCFileClass; /*0x49d42a*/
@@ -2339,7 +2339,7 @@ LABEL_5:
     ((BufferIOFileClass *)(v17))->Dtor(); /*0x49d447*/
     return 0; /*0x49d457*/
   }
-  CCFileClass::Reset(v17); /*0x49d45f*/
+  CCFileClass::Reset((gamemd::CCFileClass *)(v17)); /*0x49d45f*/
   v5 = 0; /*0x49d466*/
   if ( *v2 )
   {
@@ -2400,7 +2400,7 @@ LABEL_5:
   }
   (&g_IsWindowed)[v11] = 0; /*0x49d57b*/
   strcat( (char *)(v25), (const char *)(g_IsWindowed)); /*0x49d59f*/
-  IntOverwriteINIClass = INIClass::ReadInt_Overwrite((INIClass *)(v25), g_INI_Key_CurrentMap, (unsigned char *)("CurrentMap"), 0); /*0x49d5bd*/
+  IntOverwriteINIClass = INIClass::ReadInt_Overwrite((INIClass *)(v25), (unsigned char *)&g_INI_Key_CurrentMap, (unsigned char *)("CurrentMap"), 0); /*0x49d5bd*/
   sprintf(Buffer, "Map%d", IntOverwriteINIClass + 1); /*0x49d5d1*/
   /*0x49d602*/
     ((INIClass*)((uint8_t ***)v20))->GetString(/*0x49d602*/ (uint8_t *)v25, (uint8_t *)Buffer, g_Str_undefined, aP1, 260);

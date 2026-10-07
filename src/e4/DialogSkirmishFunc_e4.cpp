@@ -137,7 +137,7 @@ LABEL_151:
           wcscpy( (wchar_t *)(Destination), (const wchar_t *)&((unsigned int *)(HouseClass_Player))[30166]);
           Dialog::IdleProcess( (ObjectClass)(hWnd));
           ShowWindow((HWND)hWnd, 0);
-          if ( SkirmishDialog::Show(g_hWnd, (int)v60, (int)hWnd) == (double)((SkirmishDialog *))2 )
+          if ( SkirmishDialog::Show((HWND)&g_hWnd, (int)v60, (int)hWnd) == (double)((SkirmishDialog *))2 )
           {
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = (unsigned int)(Formatc);
             *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = (unsigned int)(v60);

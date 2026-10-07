@@ -145,7 +145,7 @@ int GameSettings::Read()
     *(unsigned char *)(_ESI.v + 52) = (GameSettings)v9; /*0x5fa91f*/
     Debug::Log("StretchMovies is %s\n"); /*0x5fa936 G57c1: IDA 0x5fa936 push offset aStretchmoviesI*/
     *(unsigned char *)(_ESI.v + 53) = (GameSettings)INIClass::ReadBool_Overwrite((INIClass *)(/*0x5fa956*/
-                               (int *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)(g_INI_Key_Video), aAllowhiresmode, *(unsigned char *)(_ESI.v + 53));
+                               (int *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)(g_INI_Key_Video), (unsigned char *)(aAllowhiresmode), *(unsigned char *)(_ESI.v + 53));
     Debug::Log("AllowHiRes is %s\n"); /*0x5fa96d G57c1: IDA 0x5fa96d push offset aAllowhiresIsS*/
     *(unsigned int *)((char *)&stru_A8EB00 + 611) = INIClass::ReadBool_Overwrite( /*0x5fa990*/
                            (int *)&DSurface_ViewBounds.__pad_FC[36],
@@ -153,7 +153,7 @@ int GameSettings::Read()
                            aAllowmodetoggl,
                            stru_A8EB00.?[383]);
     v10 = (GameSettings)INIClass::ReadBool_Overwrite((INIClass *)(/*0x5fa9a8*/
-                          (int *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)(g_INI_Key_Video), aAllowvramsideb, *(unsigned char *)(_ESI.v + 54));
+                          (int *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)(g_INI_Key_Video), (unsigned char *)(aAllowvramsideb), *(unsigned char *)(_ESI.v + 54));
     v34 = (double)*(float *)(_ESI.v + 56); /*0x5fa9ad G57c4 x87c4: fld dword [esi+38h] + fstp var slot@0x5fa9bb*/
     *(unsigned char *)(_ESI.v + 54) = v10; /*0x5fa9b8*/
     v1 = INIClass::ReadDouble_Overwrite((INIClass *)(/*0x5fa9c8*/
@@ -200,13 +200,8 @@ int GameSettings::Read()
                                (int *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)(g_INI_Key_Audio), (unsigned __int8 *)aIngamemusic, *(unsigned char *)(_ESI.v + 69));
     *(unsigned int *)(_ESI.v + 76) = -1; /*0x5fabbb*/
     *(unsigned int *)(_ESI.v + 80) = -1; /*0x5fabbe*/
-    INIClass::ParseValue_Wide( /*0x5fabc1*/
-      (INIClass *)&DSurface_ViewBounds.__pad_FC[36],
-      g_INI_Key_Network,
-      (unsigned __int8 *)aNetid,
-      &g_TypeClass_DefaultString,
-      String,
-      0xC8u);
+    INIClass::ParseValue_Wide(/*0x5fabc1*/
+      (INIClass *)&DSurface_ViewBounds.__pad_FC[36], (void *)&g_INI_Key_Network, (unsigned __int8 *)aNetid, &g_TypeClass_DefaultString, String, 0xC8u);
     if ( String[0] ) /*0x5fabcc*/
     {
       v24 = (wchar_t *)(String); /*0x5fabce*/
@@ -235,14 +230,14 @@ int GameSettings::Read()
     if ( v29 < -1 || v29 >= 8 ) /*0x5fac4f*/
       *(unsigned int *)(_ESI.v + 80) = -1; /*0x5fac51*/
     *(unsigned short *)(_ESI.v + 72) = INIClass::ReadInt_Overwrite((INIClass *)(/*0x5fac6f*/
-                            (bool *)&DSurface_ViewBounds.__pad_FC[36]), g_INI_Key_Audio, (unsigned __int8 *)aSoundlatency, *(unsigned __int16 *)(_ESI.v + 72));
+                            (bool *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)&g_INI_Key_Audio, (unsigned __int8 *)aSoundlatency, *(unsigned __int16 *)(_ESI.v + 72));
     Debug::Log("Emulated sound card latency default = %d\n"); /*0x5fac7e G57w11: IDA push seq @ 0x5fac7e +1 reg-vararg(s) omitted*/
     v30 = INIClass::ReadInt_Overwrite((INIClass *)(/*0x5fac9c*/
-            (bool *)&DSurface_ViewBounds.__pad_FC[36]), g_INI_Key_Network, (unsigned __int8 *)g_INI_Key_Socket, *(unsigned __int16 *)(_ESI.v + 74));
+            (bool *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)&g_INI_Key_Network, (unsigned __int8 *)g_INI_Key_Socket, *(unsigned __int16 *)(_ESI.v + 74));
     v40 = *(unsigned int *)(_ESI.v + 84); /*0x5faca9*/
     *(unsigned short *)(_ESI.v + 74) = v30; /*0x5facb4*/
     *(unsigned int *)(_ESI.v + 84) = INIClass::ReadInt_Overwrite((INIClass *)(/*0x5facbd*/
-                             (bool *)&DSurface_ViewBounds.__pad_FC[36]), g_INI_Key_Network, (unsigned __int8 *)aNetcard, v40);
+                             (bool *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)&g_INI_Key_Network, (unsigned __int8 *)aNetcard, v40);
     INIClass::GetString( /*0x5facda*/
       (INIClass *)&DSurface_ViewBounds.__pad_FC[36],
       g_INI_Key_Network,

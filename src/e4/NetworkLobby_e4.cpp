@@ -587,7 +587,7 @@ LABEL_58:
         ((Dialog *)v31)->IdleProcess( (ObjectClass *)hDlg); /*0x5de951*/
         ShowWindow(hDlg, 0); /*0x5de95f*/
         byte_8316D4 = 0; /*0x5de967*/
-        if ( SkirmishDialog::Show(g_hWnd, lParam, (int)v12) == 2 ) /*0x5de976*/
+        if ( SkirmishDialog::Show((HWND)&g_hWnd, lParam, (int)v12) == 2 ) /*0x5de976*/
         {
           *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = (unsigned int)v12; /*0x5de97a*/
           LoadScenarioClassByIndex((int)v12); /*0x5de980*/
@@ -649,7 +649,7 @@ LABEL_75:
           v18 = dword_A8DA84; /*0x5deb18*/
           for ( i = 1; i < v18; ++i ) /*0x5deb25*/
           {
-            ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v38, 455, 1, ((unsigned int *)dword_A8DA78)[i] + 40, 0, 0); /*0x5deb49*/
+            ((Network *)&unk_A8E9C0)->SendMessage( (int)v38, 455, 1, ((unsigned int *)dword_A8DA78)[i] + 40, 0, 0); /*0x5deb49*/
             Event::Dispatch(); /*0x5deb4e*/
           }
           GameSetup::DisplayPlayers(v32); /*0x5deb5a*/
@@ -907,7 +907,7 @@ LABEL_45:
           while ( 1 )
           {
             char * v3 = ToWideStringChar(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * v2));
-            if ( !_strcmpi(v3, (unsigned char *)&HouseClass_Player + 39152) )
+            if ( !_strcmpi(v3, (const char *)((unsigned char *)&HouseClass_Player + 39152)) )
               break;
             if ( ++v2 >= *(int *)&((unsigned char *)&HouseClass_Player)[40224] )
               goto LABEL_16;
@@ -970,7 +970,7 @@ LABEL_55:
         {
           v18 = 1;
         }
-        if ( _strcmpi((unsigned char *)&HouseClass_Player + 30260, (unsigned char *)&HouseClass_Player + 39152) && !v18 )
+        if ( _strcmpi((const char *)((unsigned char *)&HouseClass_Player + 30260), (const char *)((unsigned char *)&HouseClass_Player + 39152)) && !v18 )
         {
           int v20 = operator new(0x85u);
           int v21 = v20;
@@ -1106,7 +1106,7 @@ LABEL_79:
           *(&g_MatrixTransformState + 1299) = 0;
           Game::ResetFlags();
           Network::InitPlayerSlots();
-          NetworkShare::GetField(*(int *)&((unsigned char *)&HouseClass_Player)[39231]);
+          NetworkShare::GetField((HWND)(*(int *)&((unsigned char *)&HouseClass_Player)[39231]));
           LoadingScreen::Init();
           DialogIndirect = (DLGTEMPLATE *)CreateDialogIndirect(g_hInstance, (HWND)0xBD, g_hWnd, GameLobby::DlgProc, 0);
           SetupDialog((HWND)DialogIndirect, 189);
@@ -1129,7 +1129,7 @@ LABEL_79:
             while ( 1 )
             {
               char * v43 = ToWideStringChar(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * v42));
-              if ( !_strcmpi(v43, (unsigned char *)&HouseClass_Player + 39152) )
+              if ( !_strcmpi(v43, (const char *)((unsigned char *)&HouseClass_Player + 39152)) )
                 break;
               if ( ++v42 >= *(int *)&((unsigned char *)&HouseClass_Player)[40248] )
                 goto LABEL_291;
@@ -1147,7 +1147,7 @@ SetupNetworkLobbyDialog( (char *)((VectorClass_flat *)&((unsigned char *)&HouseC
           while ( 1 )
           {
             char * v46 = ToWideStringChar((IUnknown *)v44->GameMode[0]);
-            if ( !_strcmpi(v46, (unsigned char *)&HouseClass_Player + 39152) )
+            if ( !_strcmpi(v46, (const char *)((unsigned char *)&HouseClass_Player + 39152)) )
               break;
             v44 = (SessionClass *)((char *)v44 + 4);
             ++edi148;
@@ -1211,7 +1211,7 @@ LABEL_151:
           for ( i = 1; i < *(int *)&((unsigned char *)&HouseClass_Player)[40224]; ++i )
           {
             char * v60 = ToWideStringChar(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * i));
-            if ( !_strcmpi(v60, (unsigned char *)&HouseClass_Player + 39152)
+            if ( !_strcmpi(v60, (const char *)((unsigned char *)&HouseClass_Player + 39152))
 // 0x53ee70
               && GUID::Compare(
                    (char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * i) + 40),

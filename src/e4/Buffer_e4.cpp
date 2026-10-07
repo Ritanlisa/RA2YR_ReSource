@@ -506,7 +506,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 ) /*0x6c8a8a*/
     {
-      v10 = Map_Append( (unsigned char *)(v16), (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
+      v10 = Map_Append( (unsigned char *)(v16), (int)&unk_B0BDD0, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
       v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + this->Buffer_field_00 /*0x6c8aa4*/
         || (this->Buffer_field_08 = (int)&v11[v10], !v11) )
@@ -514,7 +514,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         (*(void (**)(int *))(*v8 + 96))( (int *)(v8)); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
       }
-      qmemcpy( (void *)(v11), (const void *)(&g_SidebarButtonState.needsRedraw), v10); /*0x6c8ab0*/
+      qmemcpy( (void *)(v11), (const void *)(&unk_B0BDD0), v10); /*0x6c8ab0*/
       v13 = *(int *)aP1; /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(void *))(v13 + 116))( (void *)(aP1)); /*0x6c8ad6*/

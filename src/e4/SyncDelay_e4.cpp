@@ -48,13 +48,13 @@ signed int SyncDelay::Start(void *a1, void *a2)
   int v25; // [esp+10h] [ebp-14h] BYREF
   unsigned int v26[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v2 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e160*/
+  v2 = *(unsigned int *)&dword_887348; /*0x55e160*/
   v3 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e171*/
-  if ( *(unsigned int *)stru_88732C.__pad_1C != -1 ) /*0x55e179*/
+  if ( *(unsigned int *)&dword_887348!= -1 ) /*0x55e179*/
   {
     Ticks = ((gamemd::Timer *)this)->GetTicks(); /*0x55e180*/
-    v2 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e185*/
-    v5 = Ticks - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e18b*/
+    v2 = *(unsigned int *)&dword_887348; /*0x55e185*/
+    v5 = Ticks - *(unsigned int *)&dword_887348; /*0x55e18b*/
     if ( v5 >= v3 ) /*0x55e18f*/
       v3 = 0; /*0x55e195*/
     else
@@ -116,7 +116,7 @@ LABEL_19:
   v12 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e2b4*/
   if ( v2 != -1 ) /*0x55e2bc*/
   {
-    v13 = ((gamemd::Timer *)this)->GetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2c8*/
+    v13 = ((gamemd::Timer *)this)->GetTicks() - *(unsigned int *)&dword_887348; /*0x55e2c8*/
     if ( v13 >= v12 ) /*0x55e2d0*/
       goto LABEL_38; /*0x55e2d0*/
     v12 -= v13; /*0x55e2d2*/
@@ -128,13 +128,13 @@ LABEL_19:
     {
       while ( 1 ) /*0x55e2e3*/
       {
-        v14 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2e3*/
+        v14 = *(unsigned int *)&dword_887348; /*0x55e2e3*/
         v15 = *(unsigned int *)&stru_88732C.__pad_1C[8]; /*0x55e2e9*/
-        if ( *(unsigned int *)stru_88732C.__pad_1C != -1 ) /*0x55e2f1*/
+        if ( *(unsigned int *)&dword_887348!= -1 ) /*0x55e2f1*/
         {
           v16 = ((gamemd::Timer *)this)->GetTicks(); /*0x55e2f8*/
-          v14 = *(unsigned int *)stru_88732C.__pad_1C; /*0x55e2fd*/
-          v17 = v16 - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e303*/
+          v14 = *(unsigned int *)&dword_887348; /*0x55e2fd*/
+          v17 = v16 - *(unsigned int *)&dword_887348; /*0x55e303*/
           if ( v17 >= v15 ) /*0x55e307*/
             goto LABEL_38; /*0x55e307*/
           v15 -= v17; /*0x55e309*/
@@ -147,7 +147,7 @@ LABEL_19:
 LABEL_37:
         Sleep(v18); /*0x55e336*/
       }
-      v19 = ((gamemd::Timer *)this)->GetTicks() - *(unsigned int *)stru_88732C.__pad_1C; /*0x55e323*/
+      v19 = ((gamemd::Timer *)this)->GetTicks() - *(unsigned int *)&dword_887348; /*0x55e323*/
       if ( v19 >= v18 ) /*0x55e32b*/
       {
         v18 = 0; /*0x55e334*/
@@ -157,9 +157,9 @@ LABEL_37:
     }
   }
 LABEL_38:
-  if ( (g_MissionQueueFrame.waypoints[362] & 1) == 0 ) /*0x55e343*/
+  if ( (&byte_ABCD94 & 1) == 0 ) /*0x55e343*/
   {
-    g_MissionQueueFrame.waypoints[362] |= 1u; /*0x55e34f*/
+    &byte_ABCD94 |= 1u; /*0x55e34f*/
     *(unsigned int *)&g_MissionQueueFrame.waypoints[350] = ((gamemd::Timer *)this)->GetTicks(); /*0x55e35a*/
     *(unsigned int *)&g_MissionQueueFrame.waypoints[358] = 0; /*0x55e35f*/
     atexit(nullsub_23); /*0x55e36a*/

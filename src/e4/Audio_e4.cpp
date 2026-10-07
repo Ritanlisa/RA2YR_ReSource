@@ -858,7 +858,7 @@ void * Audio::LoadSoundINI()
   result = (void *)(dword_B1D3A4); /*0x751461*/
   if ( dword_B1D3A4 ) /*0x751468*/
   {
-    Next = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); /*0x751474*/
+    Next = ((AudioQueue *)((AudioQueue *)&unk_B1D320))->GetNext(); /*0x751474*/
     if ( Next ) /*0x751478*/
     {
       do /*0x7514b1*/
@@ -2298,7 +2298,7 @@ AbstractClass * * sub_6C6DE0()
       g_SidebarButtonState.AbstractClass = (void *)vtable0; /*0x6c6e82*/
       if ( 3 * vtable0 <= (int)((char *)&g_SidebarButtonState) ) /*0x6c6e8d*/
       {
-        Audio_Read_6C8870(&g_SidebarButtonState); /*0x6c6e94*/
+        Audio_Read_6C8870((gamemd::ObjectClass *)(&g_SidebarButtonState)); /*0x6c6e94*/
         vtable0 = (int)g_SidebarButtonState.AbstractClass; /*0x6c6e99*/
       }
       if ( !vtable0 ) /*0x6c6ea1*/

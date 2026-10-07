@@ -119,7 +119,7 @@ int SaveGame::SaveTriggerEvents()
   int LoadGame_field_0x10; // [esp+20h] [ebp-4h] BYREF
 
   v2 = *(unsigned int *)this->__pad_0; /*0x6607e0*/
-  LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x6607e6*/
+  LoadGame_field_0x10 = dword_B04DB8; /*0x6607e6*/
   if ( (*(int (**)(SaveGame *, int *, int, unsigned int))(v2 + 16))( this, (int *)(&LoadGame_field_0x10), 4, 0) < 0 ) /*0x6607ef*/
     return 0; /*0x6607f6*/
   v4 = 0; /*0x6607fb*/
@@ -127,7 +127,7 @@ int SaveGame::SaveTriggerEvents()
   {
     while ( (*(int (**)(SaveGame *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x660817*/
               this,
-              *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v4),
+              *(unsigned int *)(dword_B04DAC+ 4 * v4),
               64,
               0) >= 0 )
     {
@@ -430,7 +430,7 @@ int SaveGame::LoadVeinholeData()
   v15 = v4; /*0x74eda3*/
   if ( (*(int (**)(SaveGame *, int, int, unsigned int))(v5 + 16))( /*0x74edac*/
          this,
-         stru_B1D290.customSound_controller[4],
+         &dword_B1D2F0,
          v4,
          0) < 0 )
     return 0; /*0x74edac*/
@@ -503,11 +503,11 @@ int SaveGame::SaveAudioQueueItems()
   int v11; // [esp+10h] [ebp-14h] BYREF
   unsigned int v12[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v11 = SaveGame::CountLinkedList(  (SaveGame *)&stru_B1D290.isAliveFlag); /*0x751637*/
+  v11 = SaveGame::CountLinkedList(  (SaveGame *)&unk_B1D320); /*0x751637*/
   v2 = (*(int (**)(SaveGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( this, (int *)(&v11), 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
-    for ( i = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); i; i = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt() )
+    for ( i = ((AudioQueue *)((AudioQueue *)&unk_B1D320))->GetNext(); i; i = ((AudioQueue *)((AudioQueue *)i))->GetNextAlt() )
     {
       v4 = -1; /*0x751665*/
       v12[0] = -1; /*0x751668*/

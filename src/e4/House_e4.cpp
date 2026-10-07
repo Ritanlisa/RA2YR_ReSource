@@ -246,7 +246,7 @@ LABEL_48:
         }
         if ( aP1  !=  (int)((int)(-1) )) /*0x47d94c*/
           *((unsigned char *)this + 283) = (unsigned char)(aP1); /*0x47d94e*/
-        TechnoClass::GetTileAnimationData((TechnoClass *)v19, *(uint8_t *)&this->u32_11A, v59, &v58); /*0x47d969*/
+        TechnoClass::GetTileAnimationData((TechnoClass *)v19, *(uint8_t *)&this->u32_11A, (unsigned int *)(v59), (unsigned int *)(&v58)); /*0x47d969*/
         v33 = *((unsigned int *)this + 80); /*0x47d988*/
         *((unsigned char *)this + 285) = (v58 - 30) / 15; /*0x47d993*/
         if ( (v33 & 0x20000) == 0 /*0x47d9bc*/
@@ -1400,13 +1400,13 @@ void House_Play_6D1660(int a2)
     (*(void (**)(unsigned char *, GadgetClass *))(v9 + 48))( (unsigned char *)(v3), (GadgetClass *)(&stru_B0CC40)); /*0x6d16f2*/
     if ( &stru_B0CC40 ) /*0x6d16fd*/
     {
-      v12[1] = stru_B0CC40.Width; /*0x6d1710*/
-      v12[2] = stru_B0CC40.Height; /*0x6d171a*/
-      v12[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d1724*/
+      v12[1] = dword_B0CC4C; /*0x6d1710*/
+      v12[2] = dword_B0CC50; /*0x6d171a*/
+      v12[3] = *(unsigned int *)&dword_B0CC54; /*0x6d1724*/
       v13 = 0; /*0x6d172f*/
       v12[0] = dword_B0CC64; /*0x6d1734*/
       v12[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d1738*/
-      v12[4] = stru_B0CC40.ID; /*0x6d1740*/
+      v12[4] = dword_B0CC58; /*0x6d1740*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d1744*/
       CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)v12)); /*0x6d1754*/
     }

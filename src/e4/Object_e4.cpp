@@ -577,7 +577,7 @@ LABEL_20:
         v18 = (*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels); /*0x5fdac9*/
     }
     DrawToSurfaceSHP(/*0x5fdb03*/
-      (int)g_DSurface_Hidden_2, *(unsigned int *)(v16 + 780), (ConvertClass *)(v18), 0, (ConvertClass *)(&v30), (ConvertClass *)(a3), 3584, 0, -2 - v29, 0, 1000, 0, 0, 0, 0, 0);
+      (int)g_DSurface_Hidden_2, *(unsigned int *)(v16 + 780), (ConvertClass *)(v18), 0, (ConvertClass *)(&v30), (ConvertClass *)(a3), (gamemd::ConvertClass *)(3584), 0, -2 - v29, 0, 1000, 0, 0, 0, 0, 0);
   }
   else if ( Type->Overrides ) /*0x5fdb08*/
   {
@@ -638,7 +638,7 @@ LABEL_20:
       }
     }
     DrawToSurfaceSHP(/*0x5fdcaa*/
-      (int)g_DSurface_Hidden_2, v25[13], (ConvertClass *)(v5), 0, (ConvertClass *)(&v30), (ConvertClass *)(a3), 3584, 0, -2 - v29, 0, *((int16_t *)v25 + 134), 0, 0, 0, 0, 0);
+      (int)g_DSurface_Hidden_2, v25[13], (ConvertClass *)(v5), 0, (ConvertClass *)(&v30), (ConvertClass *)(a3), (gamemd::ConvertClass *)(3584), 0, -2 - v29, 0, *((int16_t *)v25 + 134), 0, 0, 0, 0, 0);
   }
 
 }
@@ -1644,12 +1644,12 @@ void ** Object::RemoveObjectArray()
   void **result; // eax
   int v2; // edx
 
-  result = (void **)stru_AA0398.AudioStream_field_0xB0; /*0x53e420*/
-  if ( stru_AA0398.AudioStream_field_0xB0 ) /*0x53e428*/
+  result = (void **)dword_AA0448; /*0x53e420*/
+  if ( dword_AA0448) /*0x53e428*/
   {
     if ( this ) /*0x53e42c*/
     {
-      result = *(void ***)stru_AA0398.__pad_B4; /*0x53e434*/
+      result = *(void ***)&dword_AA044C; /*0x53e434*/
       v2 = 1; /*0x53e439*/
       if ( dword_AA0374 > 1 ) /*0x53e440*/
       {

@@ -58,7 +58,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
   memset( (void *)(v34), 0, 513); /*0x7aa893*/
   *(unsigned int *)&v33[4] = 0; /*0x7aa89b*/
   memset( (void *)(&v33[12]), 0, 12); /*0x7aa8a1*/
-  if ( !BYTE1(stru_B77D80.HashTable_field_0x40) ) /*0x7aa8ad*/
+  if ( !BYTE1(byte_B77DC0) ) /*0x7aa8ad*/
   {
     *(unsigned int *)&v33[8] = 0; /*0x7aa8c0*/
     if ( a2 == 262459 ) /*0x7aa8ca*/
@@ -67,8 +67,8 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     }
     else
     {
-      if ( ((CChatEventSink*)((CChatEventSink *)&stru_B76510.StringVector_field_0x10))->Check( (_DWORD *)(&v33[8]), 0) ) /*0x7aa8e4*/
-        ((CChatEventSink *)&stru_B76510.StringVector_field_0x10)->EnsureCapacity( 0); /*0x7aa8f3*/
+      if ( ((CChatEventSink*)((CChatEventSink *)&dword_B76520))->Check( (_DWORD *)(&v33[8]), 0) ) /*0x7aa8e4*/
+        ((CChatEventSink *)&dword_B76520)->EnsureCapacity( 0); /*0x7aa8f3*/
       if ( a2 < 0 ) /*0x7aa8fa*/
       {
 LABEL_103:
@@ -88,7 +88,7 @@ LABEL_103:
           do /*0x7aa985*/
           {
             if ( v5 >= 0 && v4 < referenceCount ) /*0x7aa945*/
-              qmemcpy( (void *)(&v33[32]), (const void *)(stru_B76AC4.occupant + v5), 0x10Cu); /*0x7aa959*/
+              qmemcpy( (void *)(&v33[32]), (const void *)(dword_B76AE8+ v5), 0x10Cu); /*0x7aa959*/
             if ( *(unsigned int *)&v33[72] != -1 ) /*0x7aa962*/
             {
               ((Array *)((Array *)&v33[12]))->InsertElement( (const void *)(&v33[32]), *(int *)&v33[12]); /*0x7aa972*/
@@ -122,7 +122,7 @@ LABEL_103:
               v9 = 0; /*0x7aa9da*/
               if ( ((char *)&stru_B76AC4) > 0 ) /*0x7aa9de*/
               {
-                occupant = stru_B76AC4.occupant; /*0x7aa9e4*/
+                occupant = dword_B76AE8; /*0x7aa9e4*/
                 while ( 1 ) /*0x7aa9ea*/
                 {
                   if ( v9 >= 0 && v9 < v7 ) /*0x7aa9f0*/
@@ -227,8 +227,8 @@ LABEL_51:
               }
               j_DeleteAndZero( (void *)((char)((ObjectClass *)&v33[24]))); /*0x7aac1e*/
             }
-            v20 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 /*0x7aac42*/
-                            + 4 * ((*(unsigned int (*)(unsigned int))&dword_B76548)( (unsigned int)(v33)) & ((1 << SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
+            v20 = *(unsigned int *)(*(unsigned int *)&g_WOL_ConnectionPool/*0x7aac42*/
+                            + 4 * ((*(unsigned int (*)(unsigned int))&dword_B76548)( (unsigned int)(v33)) & ((1 << SLOBYTE(dword_B7653C)) - 1)));
             if ( v20 ) /*0x7aac47*/
             {
               while ( !(uint8_t)((String *)((String *)v20))->Compare((const char **)v33) ) /*0x7aac57*/

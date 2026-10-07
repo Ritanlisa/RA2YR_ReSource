@@ -346,10 +346,10 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
     *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v10) = (unsigned int)this;
   }
   if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E88[16] < *(int *)&g_BuildingLoadQueue_Array.__pad_E88[8] /*0x6f3209*/
-    || (g_BuildingLoadQueue_Array.__pad_E88[13] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[8])
+    || (&byte_B0F6D5 || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[8])
     && *(int *)&g_BuildingLoadQueue_Array.__pad_E88[20] > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E88 + 8))(
-         g_BuildingLoadQueue_Array.__pad_E88,
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&dword_B0F6C8+ 8))(
+         &dword_B0F6C8,
          *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[20] + *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[8],
          0) )
   {
@@ -621,11 +621,11 @@ int TechnoClass::DTOR()
   if ( v9 != -1 ) /*0x6f4633*/
     FactoryClass::RemoveItem((FactoryClass *)((char *)&stru_A8EB00 + 148), v9); /*0x6f463b*/
   v18 = (unsigned int)this;
-v10 = (*(int (**)(char *, int *))(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E88 + 16))( /*0x6f4654*/ g_BuildingLoadQueue_Array.__pad_E88, (int *)(&v18));
+v10 = (*(int (**)(char *, int *))(*(unsigned int *)&dword_B0F6C8+ 16))( /*0x6f4654*/ &dword_B0F6C8, (int *)(&v18));
 
 
   if ( v10 != -1 ) /*0x6f465a*/
-    ((DynamicVector *)((DynamicVector *)g_BuildingLoadQueue_Array.__pad_E88))->RemoveItem(v10); /*0x6f4662*/
+    ((DynamicVector *)((DynamicVector *)&dword_B0F6C8))->RemoveItem(v10); /*0x6f4662*/
   v11 = *((unsigned int *)this + 75); /*0x6f4667*/
   if ( v11 ) /*0x6f466f*/
   {
@@ -639,7 +639,7 @@ v10 = (*(int (**)(char *, int *))(*(unsigned int *)g_BuildingLoadQueue_Array.__p
     *((unsigned int *)this + 76) = 0; /*0x6f4691*/
   }
   *((unsigned int *)this + 284) = (unsigned int)&vt_VectorClass;
-  AbstractClassVector::ddtor( (char *)this + 1136); /*0x6f46a3*/
+  AbstractClassVector::ddtor((gamemd::AbstractClassVector *)((char *)this + 1136)); /*0x6f46a3*/
   v13 = *(void **)&this->attackedTargets; /*0x6f46a8*/
   *((unsigned int *)this + 278) = (unsigned int)&vt_VectorClass;
   if ( v13 && *((unsigned char *)this + 1125) ) /*0x6f46bc*/
@@ -763,7 +763,7 @@ Coord * * TechnoClass::RegisterKill()
       {
         v3 *= 2; /*0x702e8a*/
       }
-      else if ( (uint8_t)Audio::IsLoud(this->veterancy) ) /*0x702e90*/
+      else if ( (uint8_t)Audio::IsLoud((gamemd::Audio *)(this->veterancy)) ) /*0x702e90*/
       {
         v3 *= 3; /*0x702e99*/
       }
@@ -1061,7 +1061,7 @@ int TechnoClass::HasVoiceResponse(int weaponIndex)
   v3 = (int *)((char *)this + 84); /*0x70d0d5*/
   if ( !(uint8_t)Audio::IsMediumVolume((char *)this + 84) ) /*0x70d0dd*/
   {
-    result = Audio::IsLoud(v3); /*0x70d0e8*/
+    result = Audio::IsLoud((gamemd::Audio *)(v3)); /*0x70d0e8*/
     if ( !(unsigned char)result ) /*0x70d0ef*/
       goto LABEL_10; /*0x70d0ef*/
   }
@@ -1072,7 +1072,7 @@ int TechnoClass::HasVoiceResponse(int weaponIndex)
     LOBYTE(result) = 1; /*0x70d119*/
     return result; /*0x70d11c*/
   }
-  result = Audio::IsLoud(v3); /*0x70d121*/
+  result = Audio::IsLoud((gamemd::Audio *)(v3)); /*0x70d121*/
   if ( (unsigned char)result && (*(unsigned char *)(v5 + weaponIndex + 668) || *(unsigned char *)(v5 + weaponIndex + 686)) ) /*0x70d135*/
     LOBYTE(result) = 1; /*0x70d142*/
   else
@@ -2060,12 +2060,12 @@ char TechnoClass::ScanAdjacentCells()
   v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[82]); /*0x703d5c*/
   *(unsigned int *)v15 = *(unsigned int *)v13; /*0x703d69*/
   v4 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v15)); /*0x703d88*/
-  v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[84]); /*0x703d91*/
-  v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[84]); /*0x703d96*/
+  v13[1] = v12[1] + HIWORD(&dword_89F594); /*0x703d91*/
+  v13[0] = v12[0] + LOWORD(&dword_89F594); /*0x703d96*/
   *(unsigned int *)v16 = *(unsigned int *)v13; /*0x703da9*/
   v5 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v16)); /*0x703dbc*/
-  v13[0] = v12[0] + LOWORD(g_DDrawSurfaceManager.scenario[88]); /*0x703dcb*/
-  v13[1] = v12[1] + HIWORD(g_DDrawSurfaceManager.scenario[88]); /*0x703dd4*/
+  v13[0] = v12[0] + LOWORD(&word_89F598); /*0x703dcb*/
+  v13[1] = v12[1] + HIWORD(&word_89F598); /*0x703dd4*/
   v6 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v13)); /*0x703de7*/
   if ( (v2[80] & 0x400) != 0 ) /*0x703df5*/
     return 1; /*0x703df5*/

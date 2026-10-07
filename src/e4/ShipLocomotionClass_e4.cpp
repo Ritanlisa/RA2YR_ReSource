@@ -51,7 +51,7 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( Piggybackee ) /*0x69eee6*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))( (ILocomotion *)(Piggybackee)); /*0x69eeeb*/
   *p_Piggybackee = 0; /*0x69eef5*/
-  return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x69ef01*/
+  return OleLoadFromStream((LPSTREAM)v2, (void *)(&IID_ILocomotion), p_Piggybackee); /*0x69ef01*/
 
 }
 } // namespace gamemd

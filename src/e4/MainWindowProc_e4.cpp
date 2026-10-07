@@ -27,8 +27,8 @@ AbstractClass * * sub_777420(ObjectClass *self)
     Debug::Log("Focus_Restore()\n") /*G57c1: IDA 0x777425 push offset aFocusRestore*/;
   sub_407040(v1); /*0x77742d*/
     Debug::Log("Focus_Restore(): _MouseCaptured = %s\n") /*G57c1: IDA 0x77744b push offset aFocusRestoreMo*/;
-  if ( stru_887598.lineTrailer && byte_B73560 == 1 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x77746d*/
-    (*(void (**)(void))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60))();  /*0x777471*/
+  if ( dword_887640&& byte_B73560 == 1 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x77746d*/
+    (*(void (**)(void))(*(unsigned int *)&((MouseClass *)dword_887640)->q_60))();  /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
   {
     if ( DSurface_Alternate ) /*0x77748a*/

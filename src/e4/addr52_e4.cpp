@@ -751,9 +751,9 @@ ObjectClass * * E4Recv_52A610::sub_52A610(void * a2, void * aPrivatekey, void * 
   unsigned char v6[512]; // [esp+8h] [ebp-200h] BYREF
 
   v3 = sub_631FC0((ObjectClass *)a2, v6); /*0x52a628*/
-  INIClass::ReadBase64Data((char *)this, (uint8_t *)aPublickey, (int)v6, v3); /*0x52a63a*/
+  INIClass::ReadBase64Data((gamemd::INIClass *)((char *)this), (uint8_t *)aPublickey, (int)v6, v3); /*0x52a63a*/
   v4 = sub_631FE0((ObjectClass *)a2, v6); /*0x52a646*/
-  INIClass::ReadBase64Data((char *)this, (uint8_t *)aPrivatekey, (int)v6, v4); /*0x52a658*/
+  INIClass::ReadBase64Data((gamemd::INIClass *)((char *)this), (uint8_t *)aPrivatekey, (int)v6, v4); /*0x52a658*/
   return (gamemd::ObjectClass **)(1); /*0x52a65d*/
 
 }
@@ -1118,7 +1118,7 @@ LABEL_3:
   if ( ((CCFileClass *)(v103))->Open(0) )
   {
     *(unsigned int *)&((unsigned char *)&HouseClass_Player)[47684] = ((CCFileClass *)(v103))->ReadEntireFile();
-    CCFileClass::Reset(v103);
+    CCFileClass::Reset((gamemd::CCFileClass *)(v103));
     for ( kk = 0; kk < 256; ++kk )
     {
       GameDirectoryCD = (unsigned char *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[47684] + 2 * (kk % 256) + kk % 256);
@@ -2812,14 +2812,14 @@ Straw * * Random_Init()
     SeedInitRNG((ObjectClass *)v4, dword_A8ED94); /*0x52fe8d*/
     qmemcpy( (void *)(&Randomizer_Global), (const void *)(v4), 0x3F4u); /*0x52feab*/
 // 0x4068e0
-    return (Straw * *)Debug::Log(); /*0x52fead*/
+    return (Straw * *)Debug::Log("Seed is %08x\n"); /*0x52fead G57w12: IDA push seq @ 0x52fead +1 reg-vararg omitted*/
   }
   else
   {
     if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x52fc68*/
     {
       GetSystemTime(&SystemTime); /*0x52fc73*/
-      ((Random *)stru_A8E7B0.__pad_0)->AdvanceRandomBytes( SystemTime.wMilliseconds); /*0x52fc83*/
+      ((Random *)&stru_A8E7B0)->AdvanceRandomBytes( SystemTime.wMilliseconds); /*0x52fc83*/
       SHA1TickRNG((ObjectClass *)&stru_A8E7B0, SystemTime.wSecond); /*0x52fc98*/
       SHA1TickRNG((ObjectClass *)&stru_A8E7B0, SystemTime.wSecond >> 1); /*0x52fcae*/
       SHA1TickRNG((ObjectClass *)&stru_A8E7B0, SystemTime.wSecond >> 2); /*0x52fcc6*/

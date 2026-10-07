@@ -114,7 +114,7 @@ struct Sidebar {
     unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * StartSidebarProduction(HouseClass *a1, int aP2, char aP3, char a5);  // 0x4FA350
-    char Dispatch(Sidebar *aP1, int a2, char a3, int a4, char a5);  // G57w10-S raw 0x005007A0 IUnknown 占位清除
+int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);  // 0x005007a0 g57w12-r raw-sync (def-form)
     CreateTeamCommand * * ScrollSidebarSkipGame();  // 0x533F50
     TechnoClass * * CancelSidebarProductionQueue(int * Block);  // 0x636310
     char RemoveItem(int a2, void *a2_2);  // 0x63F040

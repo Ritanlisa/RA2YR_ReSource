@@ -215,11 +215,8 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       if ( v14 ) /*0x4b5d3e*/
       {
         v31 = (void *)Return::HRESULT_Fail((gamemd::BulletClass *)(v36), v37, v38); /*0x4b5d64*/
-        v15 = (void *)GetWarheadVersusMultiplier( /*0x4b5d8a*/
-                        100,
-                        *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
-                        0,
-                        &v36);
+        v15 = (void *)GetWarheadVersusMultiplier(/*0x4b5d8a*/
+                        100, *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008), 0, (gamemd::BulletClass *)(&v36));
         ((AnimClass *)(v14))->ctor( (void *)(v15), (int *)(&v36), 0, 1, (void *)0x2600, (void *)(v31), 0); /*0x4b5d92*/
         (*(void (**)(char *))(*(unsigned int *)v12 + 8))((char *)a1 - 4); /*0x4b5d9a*/
         return 1; /*0x4b5da6*/
@@ -273,7 +270,7 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( Piggybackee ) /*0x4b6296*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))( (ILocomotion *)(Piggybackee)); /*0x4b629b*/
   *p_Piggybackee = 0; /*0x4b62a5*/
-  return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x4b62b1*/
+  return OleLoadFromStream((LPSTREAM)v2, (void *)(&IID_ILocomotion), p_Piggybackee); /*0x4b62b1*/
 
 }
 }  // G42.18c ns repair

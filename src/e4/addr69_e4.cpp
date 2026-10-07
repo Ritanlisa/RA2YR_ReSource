@@ -120,8 +120,8 @@ AbstractClass * * E4Recv_690400::sub_690400()
   v6[1] = (unsigned int)(&vtable1[Rect.top]); /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
-  if ( stru_887598.lineTrailer ) /*0x69046f*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))( /*0x69047c*/ stru_887598.lineTrailer, (ObjectClass *)(g_DSurface_Hidden), 0);
+  if ( dword_887640) /*0x69046f*/
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x69047c*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
@@ -133,8 +133,8 @@ result = (*((int (**)(DSurface *, unsigned int *, ObjectClass *, unsigned int *,
 
 
 
-  if ( stru_887598.lineTrailer ) /*0x6904a7*/
-return (*(int (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))( /*0x6904b4*/ stru_887598.lineTrailer, (ObjectClass *)(g_DSurface_Hidden), 0);
+  if ( dword_887640) /*0x6904a7*/
+return (*(int (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x6904b4*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
@@ -491,7 +491,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     ((ProgressAnim *)((int)&dword_AC4F58))->Init( 0, 1079574528, 1, 0); /*0x69428f*/
     ((SHPClass *)((int)&dword_AC4F58))->Load((char *)(g_Str_File_PROGBARM_SHP), 0, 0); /*0x6942a2*/
     StringCSF = GetStringCSF( (wchar_t *)(aGuiMaptransfer), 0, (const char *)(aDRa2mdpostSend), 355); /*0x6942c2*/
-    ((TextRenderer *)((int *)dword_AC4F58.__pad_0))->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
+    ((TextRenderer *)((int *)&dword_AC4F58))->MeasureBuilding(-1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
     Render((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
     Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 0.0, NAN); /*0x694302*/
@@ -532,7 +532,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     v34 = v40; /*0x69459b*/
     v35 = 1800; /*0x69459f*/
     v41 = 1800; /*0x6945ad*/
-    ((gamemd::Debug *)this->this)->Log(); /*0x6945b1*/
+    ((gamemd::Debug *)this->this)->Log("Received file chunk %d\n"); /*0x6945b1 G57w12: IDA push seq @ 0x6945b1 +1 reg-vararg omitted*/
     qmemcpy((char *)lpBuffer + 192 * *((uint16_t *)v6 + 12), v6 + 28, *((uint16_t *)v6 + 13)); /*0x6945dd*/
     if ( a4 ) /*0x6945eb*/
     {
@@ -1068,7 +1068,7 @@ char FindAndValidateMap(ObjectClass * aP0, int edx0, const char *a2, int a4, cha
   char Destination[32]; // [esp+CCh] [ebp-20h] BYREF
 
   v5 = (const void *)(aP0); /*0x6951fa*/
-  if ( !_strcmpi((const char *)(aP0), aRandmapSed) ) /*0x69520a*/
+  if ( !_strcmpi((const char *)(aP0), (const char *)(aRandmapSed)) ) /*0x69520a*/
     return 0; /*0x69520a*/
   v6 = 0; /*0x695221*/
   if ( dword_A8B8D8 <= 0 ) /*0x695225*/
@@ -1450,9 +1450,9 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
               *(unsigned int *)v23.__pad_0 = (unsigned int)(void*)&BufferStraw_vftable; /*0x6997b5*/
               CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
               *a5 = gamemd::INIClass::ReadInt_Overwrite((INIClass *)(/*0x6997e5*/
-                      (bool *)v27.__pad_0), (uint8_t *)(char *)&stru_82BA00, aMinplayers, *a5);
+                      (bool *)v27.__pad_0), (uint8_t *)(char *)&stru_82BA00, (unsigned char *)(aMinplayers), *a5);
               *a6 = gamemd::INIClass::ReadInt_Overwrite((INIClass *)(/*0x69981b*/
-                      (bool *)v27.__pad_0), (uint8_t *)(char *)&stru_82BA00, aMaxplayers, *a6);
+                      (bool *)v27.__pad_0), (uint8_t *)(char *)&stru_82BA00, (unsigned char *)(aMaxplayers), *a6);
               /*0x699833*/
                 ((gamemd::INIClass*)&v27)->GetString(/*0x699833*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_GameMode, &g_INI_DefaultBuffer, aP3, 256);
               /*0x699858*/
@@ -1565,7 +1565,7 @@ void sub_69BCC0(ObjectClass * aP0)
   while ( 1 ) /*0x69bcd0*/
   {
     v3 = ToWideStringChar(*v2); /*0x69bcd0*/
-    if ( !_strcmpi(aP0, v3) ) /*0x69bcd7*/
+    if ( !_strcmpi((const char *)(aP0), v3) ) /*0x69bcd7*/
       break; /*0x69bcd7*/
     ++v2; /*0x69bce3*/
     ++v1; /*0x69bce6*/

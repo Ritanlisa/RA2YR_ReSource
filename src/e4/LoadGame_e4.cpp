@@ -263,7 +263,7 @@ int LoadGame::RestoreAudioState()
   unsigned int v18[4]; // [esp+40h] [ebp-10h] BYREF
 
   v1 = this; /*0x751717*/
-  Next = ((AudioQueue *)((AudioQueue *)&stru_B1D290.isAliveFlag))->GetNext(); /*0x751727*/
+  Next = ((AudioQueue *)((AudioQueue *)&unk_B1D320))->GetNext(); /*0x751727*/
   if ( Next ) /*0x75172b*/
   {
     do /*0x751763*/
@@ -316,7 +316,7 @@ int LoadGame::RestoreAudioState()
                   v9[9] = v7; /*0x751843*/
                   v9[10] = v10; /*0x751846*/
                   StartAudioControllerAt(v15,(unsigned int *)(v9 + 8), (int **)v9 + 3); /*0x75184d*/
-                  InsertAfterDListNode((int)&stru_B1D290.isAliveFlag, v9); /*0x751859*/
+                  InsertAfterDListNode((int)&unk_B1D320, v9); /*0x751859*/
                   v11 = ++dword_B1D3A8; /*0x751869*/
                   if ( dword_B1D3A8 > dword_B1D3AC ) /*0x751871*/
                     dword_B1D3AC = v11; /*0x751873*/
@@ -472,7 +472,7 @@ int sub_721040(int a1)
               dword_A83D18 = v3; /*0x7210bf*/
               if ( v3 != -1 && v3 != -2 && v3 != dword_A83D14 ) /*0x7210d2*/
               {
-                ((Debug *)this)->Log(); /*0x7210da*/
+                ((Debug *)this)->Log("Theme::QueueSong(%d)\n"); /*0x7210da G57w12: IDA push seq @ 0x7210da +1 reg-vararg omitted*/
                 if ( dword_A83D3C ) /*0x7210ea*/
                 {
                   if ( byte_A83D21 && !((AudioSample *)(dword_A83D3C))->IsBuffering() ) /*0x7210f5*/

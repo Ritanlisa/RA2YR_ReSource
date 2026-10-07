@@ -51,7 +51,7 @@ int Warhead::GetWarheadSound(int a2)
 
   int v3; // eax
 
-  if ( (uint8_t)Audio::IsLoud( (int *)((char *)this->q130 + 336)) ) /*0x41d7ec*/
+  if ( (uint8_t)Audio::IsLoud((gamemd::Audio *)((int *)((char *)this->q130 + 336))) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
     v3 = (unsigned int)this->q044; /*0x41d7fa*/

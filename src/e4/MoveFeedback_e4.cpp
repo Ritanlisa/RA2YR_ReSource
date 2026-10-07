@@ -46,7 +46,7 @@ int MoveFeedback::ProcessCommand()
   v1 = g_MoveFeedback; /*0x7327d9*/
   v15 = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
-  if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x7327f5*/
+  if ( &byte_B0FE64 ) /*0x7327f5*/
   {
     result = (int)(__2_YAPAXI_Z(0x18u)); /*0x7327fb*/
     v3 = result; /*0x732800*/

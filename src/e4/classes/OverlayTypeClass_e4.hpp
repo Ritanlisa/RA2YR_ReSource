@@ -133,7 +133,7 @@ struct OverlayTypeClass {
     AnimTypeClass * * GetCategory();
     AnimTypeClass * * LoadFromINI(unsigned char *** aP1, void *a2);
     OverlayClass * GetDamage(int a2);
-    OverlayTypeClass * ddtor(char a2);
+OverlayTypeClass * ddtor(void ** Block, char a2);  // 0x005fef30 g57w12-r raw-sync (def-form)
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
     bool GetType(__int16 *a2, int a3);  // G57w10-S raw 0x005FE530 IUnknown 占位清除
     int * GetTile(int a1);
@@ -147,7 +147,7 @@ struct OverlayTypeClass {
     int ReadINIString(uint8_t * a2, uint8_t * a3, unsigned int a4);
     int   SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     unsigned int *  Construct(char *aP1);
-    OverlayTypeClass(char * aP1);  // G42.41j truth 0x5FE250
+OverlayTypeClass(ObjectClass * aP1);  // 0x005fe250 g57w12-r raw-sync (def-form)
     unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);
 };

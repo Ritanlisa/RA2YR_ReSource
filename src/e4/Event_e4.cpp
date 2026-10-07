@@ -182,31 +182,31 @@ int sub_796960()
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x796970*/
     return owningHouseIndex; /*0x796970*/
   ((Waypoint*)v9)->InitInvalid(); /*0x79697a*/
-  owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79697f*/
-  if ( g_WOL_UserList.owningHouseIndex < 2 ) /*0x796987*/
+  owningHouseIndex = dword_B77900; /*0x79697f*/
+  if ( dword_B77900< 2 ) /*0x796987*/
     return owningHouseIndex; /*0x796987*/
   v3 = 0; /*0x79698d*/
-  if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x796996*/
+  if ( dword_B77900<= 0 ) /*0x796996*/
     goto LABEL_10; /*0x796996*/
   while ( 1 ) /*0x7969a3*/
   {
-    StartGameWOL_Start_7ACB90((ObjectClass *)&g_WOL_UserList.owningHouseIndex, &g_WebBrowserConfig.occupant, v3); /*0x7969a3*/
-    if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x7969ae*/
+    StartGameWOL_Start_7ACB90((ObjectClass *)&dword_B77900, &byte_B777B0, v3); /*0x7969a3*/
+    if ( (byte_B777B0& 1) != 0 ) /*0x7969ae*/
       break; /*0x7969ae*/
-    owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7969b0*/
-    if ( ++v3 >= g_WOL_UserList.owningHouseIndex ) /*0x7969b8*/
+    owningHouseIndex = dword_B77900; /*0x7969b0*/
+    if ( ++v3 >= dword_B77900) /*0x7969b8*/
       goto LABEL_10; /*0x7969b8*/
   }
   if ( &g_WebBrowserConfig == (int *)((ObjectClass *))-36 /*0x7969df*/
     || (v4 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty_Alt(),
         (owningHouseIndex = _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4)) != 0) )
   {
-    owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7969e5*/
+    owningHouseIndex = dword_B77900; /*0x7969e5*/
   LABEL_10:
-    if ( !g_NetworkLobbyState && stru_B76AC4.ambientSoundController[4] ) /*0x796a00*/
+    if ( !g_NetworkLobbyState && &dword_B76B10 ) /*0x796a00*/
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
-        qmemcpy( (void *)(&v9[0].__pad_0[12]), g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
+        qmemcpy( (void *)(&v9[0].__pad_0[12]), dword_B77908, 0x6Cu); /*0x796a1b*/
       *(unsigned int *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
       ((Network *)(v1))->SyncPlayerList(); /*0x796a29*/
       ((Event *)0)->Dispatch(); /*0x796a2e*/
@@ -219,18 +219,18 @@ int sub_796960()
       v10[0] = 13; /*0x796a7c*/
       CopyWideToChar((unsigned char *)(&v10[1]), (char *)*(unsigned int *)(dword_A8DA78), -1); /*0x796a90*/
       v5 = 0; /*0x796a9b*/
-      if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x796a9f*/
+      if ( dword_B77900> 0 ) /*0x796a9f*/
       {
-        nextObject = g_WOL_UserList.nextObject; /*0x796aa1*/
+        nextObject = dword_B77908; /*0x796aa1*/
         while ( 1 ) /*0x796aa7*/
         {
-          if ( v5 >= 0 && v5 < g_WOL_UserList.owningHouseIndex ) /*0x796aad*/
-            qmemcpy( (void *)(&g_WebBrowserConfig.occupant), (const void *)(nextObject), 0x6Cu); /*0x796abb*/
-          if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x796ac3*/
+          if ( v5 >= 0 && v5 < dword_B77900) /*0x796aad*/
+            qmemcpy( (void *)(&byte_B777B0), (const void *)(nextObject), 0x6Cu); /*0x796abb*/
+          if ( (byte_B777B0& 1) != 0 ) /*0x796ac3*/
             break; /*0x796ac3*/
           ++v5; /*0x796ac5*/
           nextObject = (ObjectClass *)((char *)nextObject + 108); /*0x796ac6*/
-          if ( v5 >= g_WOL_UserList.owningHouseIndex ) /*0x796acb*/
+          if ( v5 >= dword_B77900) /*0x796acb*/
             goto LABEL_24; /*0x796acb*/
         }
         if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x796ae4*/
@@ -334,7 +334,7 @@ int sub_786270()
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
     Debug::Log("Get_WDT_State_Silent: WDTHost is %s, port is %d\n") /*G57c1: IDA 0x786353 push offset aGetWdtStateSil*/;
-(*(void (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/ g_UIPointerTable, (char *)(&g_WindowManager.__pad_70[28]), stru_B76AC4.ambientSoundController[3], 3);
+(*(void (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/ g_UIPointerTable, (char *)(&g_WindowManager.__pad_70[28]), &dword_B76B0C, 3);
 
 
 

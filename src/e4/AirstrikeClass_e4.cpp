@@ -58,7 +58,7 @@ int AirstrikeClass::SpawnAircraft(int * a2, void *a2_2)
   *((unsigned int *)this + 13) = 0; /*0x41d874*/
   v4 = *(unsigned int *)(v3 + 3576); /*0x41d881*/
   v17 = *(unsigned int *)(*(unsigned int *)((unsigned int *)dword_8871E0)[0] + 3576); /*0x41d895*/
-  if ( Audio::IsLoud((*((unsigned int *)this + 19) + 336)) ) /*0x41d8a2*/
+  if ( Audio::IsLoud((gamemd::Audio *)((*((unsigned int *)this + 19) + 336))) ) /*0x41d8a2*/
   {
     v5 = *((unsigned int *)this + 10); /*0x41d8ae*/
     v4 = *(unsigned int *)(*((unsigned int *)this + 22) + 3576); /*0x41d8b1*/

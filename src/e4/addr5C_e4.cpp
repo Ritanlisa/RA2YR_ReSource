@@ -72,8 +72,8 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
   int v11; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
-  result = g_MissionQueueFrame.localVariables[604]; /*0x5c00e0*/
-  if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c00ea*/
+  result = &dbl_ABECE0; /*0x5c00e0*/
+  if ( &dbl_ABECE0 ) /*0x5c00ea*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Alternate), 0); /*0x5c00fa*/
     Frame::Present( (void *)((int)DSurface_Alternate), (void *)(v3), (void *)(a2), (void *)(a3), 0, (void *)(v8), (void *)(v9), (void *)(v10)); /*0x5c0107*/
@@ -82,14 +82,14 @@ ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
     {
       GetClientRect((HWND)(g_hWnd), &Rect); /*0x5c0129*/
       ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5c013b*/
-      v5 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5c0156*/
-      v6 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5c0159*/
-      v7 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5c015b*/
-      v10 = *(int **)(g_MissionQueueFrame.localVariables[604] + 60); /*0x5c015e*/
+      v5 = *(unsigned int *)(&dbl_ABECE0 + 64); /*0x5c0156*/
+      v6 = Rect.top + *(unsigned int *)(&dbl_ABECE0 + 56); /*0x5c0159*/
+      v7 = *(unsigned int *)(&dbl_ABECE0 + 52); /*0x5c015b*/
+      v10 = *(int **)(&dbl_ABECE0 + 60); /*0x5c015e*/
       v9 = v6; /*0x5c0164*/
       v8 = Rect.left + v7; /*0x5c016e*/
       v11 = v5; /*0x5c0172*/
-return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5c0187*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v8), *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8), g_MissionQueueFrame.localVariables[604] + 36, 0, 1);
+return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5c0187*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v8), *(unsigned int *)(&dbl_ABECE0 + 8), &dbl_ABECE0 + 36, 0, 1);
 
 
 
@@ -3967,15 +3967,15 @@ unsigned int E4Recv_5C8470::sub_5C8470()
 
   result = (((((LOWORD(g_MissionQueueFrame.localVariables[711]) /*0x5c84f0*/
               * (unsigned int)(uint16_t)~LOWORD(this->AbstractClass)) >> 1)
-            + ((((LOWORD(g_MissionQueueFrame.localVariables[780])
+            + ((((LOWORD(&dword_ABED90)
                 * ((unsigned int)(uint16_t)~*((unsigned short *)this - 2) + 1)) >> 1)
               + (((uint16_t)~*((unsigned short *)this - 1)
                 * (unsigned int)LOWORD(g_MissionQueueFrame.localVariables[711])
                 + 0x10000) >> 1)
               + 1) >> 16)
-            + (((uint16_t)~*((unsigned short *)this - 1) * (unsigned int)LOWORD(g_MissionQueueFrame.localVariables[780])) >> 1)
+            + (((uint16_t)~*((unsigned short *)this - 1) * (unsigned int)LOWORD(&dword_ABED90)) >> 1)
             + 1) >> 14)
-          + 2 * LOWORD(g_MissionQueueFrame.localVariables[780]) * (uint16_t)~LOWORD(this->AbstractClass)) >> SLOBYTE(g_MissionQueueFrame.localVariables[912]);
+          + 2 * LOWORD(&dword_ABED90) * (uint16_t)~LOWORD(this->AbstractClass)) >> SLOBYTE(&dword_ABEE14);
   if ( result >= 0xFFFF ) /*0x5c84f7*/
     return 0xFFFF; /*0x5c84f9*/
   return result; /*0x5c84ea*/

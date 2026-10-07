@@ -233,7 +233,7 @@ CellStruct * * sub_731AF0()
   if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 228) <= 0 ) /*0x731b54*/
   {
   LABEL_5:
-    IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b43*/
+    IDA_LOBYTE(&byte_B0FE58) = 1; /*0x731b43*/
     return (gamemd::CellStruct **)(result); /*0x731b4d*/
   }
   while ( 1 ) /*0x731b56*/
@@ -251,7 +251,7 @@ CellStruct * * sub_731AF0()
     }
     if ( ++v5 >= v4 ) /*0x731b7d*/
     {
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b80*/
+      IDA_LOBYTE(&byte_B0FE58) = 1; /*0x731b80*/
       return (gamemd::CellStruct **)(result); /*0x731b89*/
     }
   }

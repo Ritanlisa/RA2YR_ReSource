@@ -217,7 +217,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v31 = *(unsigned int *)(v5 + 8); /*0x5cc456*/
   v17 = (int *)(*(int (**)(void *))(v16 + 120))( (void *)(aP0)); /*0x5cc45a*/
   DrawToSurfaceSHP(/*0x5cc470*/
-    (int)aP0, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v17), (int)v33, v27, 0, 0, 0, 1000, 0, 0, 0, 0);
+    (int)aP0, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v17), (gamemd::ConvertClass *)((int)v33), (gamemd::ConvertClass *)(v27), 0, 0, 0, 1000, 0, 0, 0, 0);
   v18 = (void *)((int)((*(unsigned int *)(v5 + 68))));
   if ( v18 ) /*0x5cc47a*/
   {
@@ -245,7 +245,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
     v30 = *(unsigned int *)(v5 + 8); /*0x5cc4e8*/
     v24 = (int *)(*(int (**)(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))( (MSOverlayAnim *)(aP0), (int *)(&v32)); /*0x5cc4f5*/
     DrawToSurfaceSHP(/*0x5cc50f*/
-      (int)DSurface_Alternate, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v24), v28, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+      (int)DSurface_Alternate, *(unsigned int *)(v5 + 32), (ConvertClass *)(*(unsigned int *)(v5 + 28)), *(unsigned int *)(v5 + 40), (ConvertClass *)(&v29), (ConvertClass *)(v24), (gamemd::ConvertClass *)(v28), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
   }
   return (gamemd::CampaignClass **)(*(unsigned char *)(v5 + 72) == 0);
 }
@@ -479,7 +479,7 @@ LABEL_21:
     return 0; /*0x683d56*/
   }
   --dword_A8DAB4; /*0x683c03*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x683c11*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x683c11*/
   *((unsigned int *)((char *)&v19 + 0)) = 0; /*0x683c18*/
   *((unsigned int *)((char *)&v19 + 1)) = 0; /*0x683c1c*/
   ((GenericList *)((unsigned int *)((char *)&v19 + 2)))->Constructor(); /*0x683c20*/
@@ -515,7 +515,7 @@ LABEL_21:
   ((ThemeClass *)((ThemeClass *)&unk_A83D10))->Play(v11); /*0x683d1a*/
   if ( !((Scenario *)v4)->LoadWithProgress( a3) ) /*0x683d21*/
   {
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x683d32*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x683d32*/
     goto LABEL_21; /*0x683d32*/
   }
   referenceCount = ((AbstractClass *)dword_A8B230)[143].referenceCount; /*0x683d5e*/
@@ -590,11 +590,11 @@ int ScenarioClass::CleanupTemporary()
     ((Tooltip *)(*(Tooltip **)&stru_88732C.__pad_1C[32]))->Enable(0); /*0x683f61*/
   ((Mouse *)((ScrollClass *)&stru_87F5F0.__pad_58[416]))->ReleaseCapture(); /*0x683f6b*/
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetCursor(0, 0); /*0x683f79*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x683f86*/
+  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x683f86*/
   ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x683f90*/
   ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x683f9a*/
-  return (*(int (**)(void *, ScenarioClass *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(
-           stru_887598.lineTrailer,
+  return (*(int (**)(void *, ScenarioClass *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(
+           dword_887640,
            this);
 
 }
@@ -617,8 +617,8 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
       {
         if ( BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) == 1 ) /*0x6841bf*/
         {
-          while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0))(stru_887598.lineTrailer) ) /*0x6841c9*/
-            (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x6841d8*/
+          while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) ) /*0x6841c9*/
+            (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x6841d8*/
           result = (unsigned char *)(dword_A8B230); /*0x6841ea*/
         }
         result[13730] = 0; /*0x6841ef*/

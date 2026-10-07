@@ -282,7 +282,7 @@ LABEL_9:
       }
     }
   }
-  (*((void (**)(RadioClass *, int, unsigned int))this->vtable1 + 158))( /*0x65aa1f*/
+  (*((void ((gamemd::RadioClass *)(**))(RadioClass *, int, unsigned int))this->vtable1 + 158))( /*0x65aa1f*/
     this,
     3,
     *(unsigned int *)(&this->radioLinks)[1]);

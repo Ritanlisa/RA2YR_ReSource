@@ -66,7 +66,6 @@ wchar_t * PageUserCommandClass::Read(void *a1, void *a2)
   return GetStringCSF( (wchar_t *)(aTxtPageuserDes), 0, (const char *)(g_Str_File_Init_CPP), 7567); /*0x537e46*/
 
 }
-}  // G42.18c ns repair
 // 0x537E50
 char PageUserCommandClass::Do(int a1)
 {
@@ -78,3 +77,4 @@ char PageUserCommandClass::Do(int a1)
   return result; /*0x537e5e*/
 
 }
+}  // G42.18c ns repair

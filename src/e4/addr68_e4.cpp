@@ -586,11 +586,11 @@ ScenarioClass * * Mouse_Update()
   int result; // eax
 
   if ( IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) == 1 /*0x6842a6*/
-    && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0)(stru_887598.lineTrailer) ))
+    && (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0)(dword_887640) ))
   {
     do /*0x6842c0*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x6842b5*/
-    while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0))(stru_887598.lineTrailer) );  /*0x6842c0*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x6842b5*/
+    while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) );  /*0x6842c0*/
   }
   IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = (unsigned int)((gamemd::ScenarioClass **)(0)); /*0x6842d9*/
@@ -749,7 +749,7 @@ void PostLoadInitScenario()
   ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x684c6f*/
   if ( !((unsigned int *)&stru_A8EB00)[391] ) /*0x684c7b*/
   {
-    TacticalClass::BuildCommandBar((TabClass *)1, v1, (int)v34); /*0x684c88*/
+    TacticalClass::BuildCommandBar((gamemd::TacticalClass *)((TabClass *)1), v1, (int)v34); /*0x684c88*/
     if ( !*(unsigned int *)&dword_A8B238 ) /*0x684c94*/
     {
       if ( stru_8A38E0 ) /*0x684ca7*/
@@ -1219,7 +1219,7 @@ void SaveScenarioToINI(char * Source, char a2, int a3)
   ReadAudioEventINI((gamemd::INIClass*)&v10.vtable1); /*0x687ebc*/
   SaveTriggerTagsToINI((gamemd::INIClass*)&v10.vtable1); /*0x687ec5*/
   ((RawFileClass*)((BufferIOFileClass *)&v13))->Construct((int)Source); /*0x687ed2*/
-  INIClass::WriteDigest((CCINIClass *)&v10.vtable1, (int)&v13, 1); /*0x687ee5*/
+  INIClass::WriteDigest((gamemd::INIClass *)((CCINIClass *)&v10.vtable1), (int)&v13, 1); /*0x687ee5*/
   ((RawFileClass *)((BufferIOFileClass *)&v13))->Dtor(); /*0x687ef1*/
 // 0x5256f0
   return (unsigned int)((HashTable *)((INIClass *)&v10.vtable1))->DestroyHashTableINIClass(); /*0x687eff*/
@@ -1963,7 +1963,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
       v42 = (*v3 << 8) + 128; /*0x688f52*/
       v43 = v7 + 128; /*0x688f62*/
       v44 = 0; /*0x688f66*/
-      GroundHeight = Cell::GetGroundHeight( &v42); /*0x688f6a*/
+      GroundHeight = Cell::GetGroundHeight((unsigned int *)(&v42)); /*0x688f6a*/
       v9 = v3[1]; /*0x688f72*/
       v10 = (*v3 << 8) + 128; /*0x688f79*/
       v41 = GroundHeight; /*0x688f7f*/
@@ -2493,7 +2493,7 @@ char DisplayMode_Toggle(char a1)
       result = dword_A8EB90; /*0x684346*/
       if ( dword_886FBC != dword_A8EB90 ) /*0x68434d*/
       {
-        ((Debug *)g_Str_Toggle_display_mode_back_to_sh)->Log(); /*0x684354*/
+        ((Debug *)g_Str_Toggle_display_mode_back_to_sh)->Log("Toggle display mode back to shell res\n"); /*0x684354 G57w12: IDA push seq @ 0x684354*/
         return ChangeVideoMode(dword_A8EB8C, dword_A8EB90); /*0x684368*/
       }
     }

@@ -117,7 +117,7 @@ v7 = (*(int (**)(int *, unsigned int *))(g_MissionQueueFrame.random[27] + 16))( 
       --g_MissionQueueFrame.random[31]; /*0x550117*/
       for ( ; /*0x55011d*/
             v7 < g_MissionQueueFrame.random[31];
-            *(unsigned int *)(g_MissionQueueFrame.random[28] + 4 * v7 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[28]
+            *(unsigned int *)(&dword_ABC828 + 4 * v7 - 4) = *(unsigned int *)(&dword_ABC828
                                                                                  + 4 * v7) )
       {
         ++v7; /*0x550125*/
@@ -149,7 +149,7 @@ void sub_550150()
     v2 = v9[2]; /*0x550165*/
     do /*0x550170*/
     {
-      v3 = *(int **)(g_MissionQueueFrame.random[28] + 4 * v1); /*0x550170*/
+      v3 = *(int **)(&dword_ABC828 + 4 * v1); /*0x550170*/
       v4 = v3[2]; /*0x550173*/
       v5 = v3[4]; /*0x550176*/
       if ( v4 != -1 ) /*0x55017c*/
@@ -188,7 +188,7 @@ v8 = (*(int (**)(int *, unsigned int *))(g_MissionQueueFrame.random[27] + 16))( 
           --g_MissionQueueFrame.random[31]; /*0x5501ff*/
           for ( ; /*0x550205*/
                 v8 < g_MissionQueueFrame.random[31];
-                *(unsigned int *)(g_MissionQueueFrame.random[28] + 4 * v8 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[28]
+                *(unsigned int *)(&dword_ABC828 + 4 * v8 - 4) = *(unsigned int *)(&dword_ABC828
                                                                                      + 4 * v8) )
           {
             ++v8; /*0x55020d*/
@@ -1162,7 +1162,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         else
         {
           v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
-          Tactical::CreateTacticalLightSurface( (int *)((int)v6), (int *)(&v24), (gamemd::IUnknown *)(&v25), (int *)(&v26), (int *)(&v27), (IUnknown *)((int)&v28),  (void *)((int)&v29)); /*0x554e2e*/
+          Tactical::CreateTacticalLightSurface((gamemd::Tactical *)((int *)((int)v6)), (int *)(&v24), (unsigned int *)((gamemd::IUnknown *)(&v25)), (int *)(&v26), (int *)(&v27), (IUnknown *)((int)&v28), (void *)((int)&v29)); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
           *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
@@ -1196,7 +1196,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         v18 = *((unsigned int *)v10 + 1); /*0x554f62*/
         v17 = *(unsigned int *)v10; /*0x554f66*/
         v11 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v10 + 8); /*0x554f6d*/
-        TacticalClass::SetView((int)v11, v17, v18, v19, v20, v21, v22); /*0x554f74*/
+        TacticalClass::SetView((gamemd::TacticalClass *)((int)v11), v17, v18, v19, v20, v21, v22); /*0x554f74*/
         RA2_OPDEL(v10); /*0x554f7a*/
       }
       dword_ABCA50 = 0; /*0x554f91*/
@@ -2279,7 +2279,7 @@ void GameFrameLoop()
       ((Timer *)&v50)->EnableHighPrecision(); /*0x55d541*/
       g_TacticalState = (void*)(Time); /*0x55d54e*/
       *(unsigned int *)&v50.u32_4 = v4; /*0x55d554*/
-      *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d558*/
+      *(unsigned int *)&stru_88732C= *(unsigned int *)v50.__pad_0; /*0x55d558*/
       dword_887330 = v4; /*0x55d55e*/
     }
     else
@@ -2291,7 +2291,7 @@ void GameFrameLoop()
       ((Timer *)&v50)->EnableHighPrecision(); /*0x55d4ce*/
       g_TacticalState = (void*)(Time); /*0x55d4e0*/
       *(unsigned int *)&v50.u32_4 = 33; /*0x55d4e6*/
-      *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d4ea*/
+      *(unsigned int *)&stru_88732C= *(unsigned int *)v50.__pad_0; /*0x55d4ea*/
       dword_887330 = 33; /*0x55d4f0*/
     }
     Timer::DisableHighPrecision(); /*0x55d568*/
@@ -2340,7 +2340,7 @@ void GameFrameLoop()
             ((Timer *)&v50)->EnableHighPrecision(); /*0x55d643*/
             g_TacticalState = (void*)(Time); /*0x55d653*/
             *(unsigned int *)&v50.u32_4 = v11 + 10; /*0x55d65d*/
-            *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d661*/
+            *(unsigned int *)&stru_88732C= *(unsigned int *)v50.__pad_0; /*0x55d661*/
             dword_887330 = v11 + 10; /*0x55d667*/
             Timer::DisableHighPrecision(); /*0x55d66c*/
           }
@@ -2359,7 +2359,7 @@ void GameFrameLoop()
             ((Timer *)&v50)->EnableHighPrecision(); /*0x55d6bb*/
             g_TacticalState = (void*)(Time); /*0x55d6cb*/
             *(unsigned int *)&v50.u32_4 = v13 + 10; /*0x55d6d5*/
-            *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d6d9*/
+            *(unsigned int *)&stru_88732C= *(unsigned int *)v50.__pad_0; /*0x55d6d9*/
             dword_887330 = v13 + 10; /*0x55d6df*/
             Timer::DisableHighPrecision(); /*0x55d6e4*/
           }
@@ -2378,7 +2378,7 @@ void GameFrameLoop()
             ((Timer *)&v50)->EnableHighPrecision(); /*0x55d737*/
             g_TacticalState = (void*)(Time); /*0x55d747*/
             *(unsigned int *)&v50.u32_4 = v15 + 10; /*0x55d751*/
-            *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d755*/
+            *(unsigned int *)&stru_88732C= *(unsigned int *)v50.__pad_0; /*0x55d755*/
             dword_887330 = v15 + 10; /*0x55d75b*/
             Timer::DisableHighPrecision(); /*0x55d760*/
           }
@@ -2712,7 +2712,7 @@ BitFont * * DrawHUD()
     if ( *(unsigned int *)&dword_A8B238 > 2u ) /*0x55f293*/
     {
       v3 = (AudioStream *)(DSurface_Composite); /*0x55f2b1*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x55f2b9*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x55f2b9*/
       v4 = *(unsigned int *)v3->__pad_0; /*0x55f2bc*/
       *(unsigned int *)v57 = 0; /*0x55f2c6*/
       wcscpy( (wchar_t *)(v58), L"?"); /*0x55f2ca*/
@@ -2812,7 +2812,7 @@ v19 = (unsigned int *)(*(int (**)(AudioStream *, int *, wchar_t *, int, unsigned
         &v56,
         (const size_t)&off_82A1A0,
         (const wchar_t *const)g_TacticalState,
-        *(unsigned int *)stru_88732C.__pad_0,
+        *(unsigned int *)&stru_88732C,
         *(unsigned int *)&stru_88732C.m_2[2]);
       v46 = 0; /*0x55f5d4*/
       wcscpy( (wchar_t *)(Format), L"?"); /*0x55f5db*/
@@ -2837,9 +2837,9 @@ v23 = (unsigned int *)(*(int (**)(AudioStream *, int *, int *, int))(*(unsigned 
 
       TextRenderer::DrawText(&v46, (size_t)&v54, (int)v3, v23, v24, v26, v29, 0); /*0x55f65f*/
       ScoreBoard::Render((char *)&unk_A8E9C0); /*0x55f66c*/
-      return (*(int *(**)(void *, int, int, int, int, int, unsigned int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer /*0x55f679*/
+      return (*(int *(**)(void *, int, int, int, int, int, unsigned int, int, int, int))(*(unsigned int *)dword_887640/*0x55f679*/
                                                                                             + 16))(
-               stru_887598.lineTrailer,
+               dword_887640,
                25,
                25,
                v44,

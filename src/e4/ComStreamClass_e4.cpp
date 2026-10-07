@@ -46,7 +46,7 @@ int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const
   ObjectClass v22[59]; // [esp+Ch] [ebp-2818h] BYREF
   char *v23; // [esp+2838h] [ebp+14h]
 
-  ((gamemd::Debug*)this)->Log(); /*0x7a3da1*/
+  ((gamemd::Debug*)this)->Log("OnNewNick\n"); /*0x7a3da1 G57w12: IDA push seq @ 0x7a3da1 +2 reg-vararg omitted*/
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
@@ -76,8 +76,8 @@ int ComStreamClass::Write(int a2, unsigned __int8 *a3, const char *lParam, const
     }
     else
     {
-      v22[0].vtable3 = SendMessageA( (HWND)(DlgItem), 0x4BCu, 0, (LPARAM)((LPARAM)((LPARAM)lParama))); /*0x7a3eb5*/
-      SendMessageA( (HWND)(DlgItem), 0x151u, v22[0].vtable3, v22[0].vtable0); /*0x7a3ec1*/
+      v22[0].vtable3 = SendMessageA((HWND)(DlgItem), 0x4BCu, (WPARAM)(0), (LPARAM)((LPARAM)((LPARAM)lParama))); /*0x7a3eb5*/
+      SendMessageA((HWND)(DlgItem), 0x151u, (WPARAM)(v22[0].vtable3), v22[0].vtable0); /*0x7a3ec1*/
       SendMessageA( (HWND)(DlgItem), 0x14Eu, v22[0].vtable3, 0); /*0x7a3ed0*/
     }
     if ( v21 ) /*0x7a3ed8*/
@@ -349,7 +349,7 @@ unsigned int * ComStreamClass::seekToPosition()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ((ComPtr *)((ComPtr *)&stru_B77EB0.lineTrailer))->Set(this->ComStreamClass_field_0x04); /*0x7b022f*/
+  ((ComPtr *)((ComPtr *)&dword_B77F58))->Set(this->ComStreamClass_field_0x04); /*0x7b022f*/
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b0249*/
   ((ComPtr *)(&stru_B77F68))->Set(v3[1]); /*0x7b0257*/
@@ -370,10 +370,10 @@ unsigned int * ComStreamClass::getStreamSize()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ((ComPtr *)((ComPtr *)&stru_B77F68.ComPtr_field_0x08))->Set(this->ComStreamClass_field_0x04); /*0x7b02af*/
+  ((ComPtr *)((ComPtr *)&dword_B77F70))->Set(this->ComStreamClass_field_0x04); /*0x7b02af*/
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b02c9*/
-  ((ComPtr *)((ComPtr *)&stru_B77F68.ComPtr_field_0x10))->Set(v3[1]); /*0x7b02d7*/
+  ((ComPtr *)((ComPtr *)&dword_B77F78))->Set(v3[1]); /*0x7b02d7*/
   *(unsigned int *)v5 = (unsigned int)&vt_rc_ptr;
   ((ComPtr *)((ComPtr *)v5))->Release(); /*0x7b02e8*/
   *(unsigned int *)v6 = (unsigned int)&vt_rc_ptr;

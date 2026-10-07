@@ -98,13 +98,13 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass, 
 
   ((String *)((String *)&v6))->Assign((const char *)(off_83E188)); /*0x770e80*/
   v5 = (unsigned int)(aP3); /*0x770e85*/
-  INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, aP3, 0, &v6); /*0x770e9d*/
+  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1), aP2, aP3, 0, &v6); /*0x770e9d*/
   j_DeleteAndZero( (void *)((ObjectClass *)&v6)); /*0x770ea6*/
   ((String *)((String *)&aP3))->Assign((const char *)(g_INI_Key_Lose)); /*0x770eb4*/
-  INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, v5, 1, (char **)&aP3); /*0x770ec5*/
+  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1), aP2, v5, 1, (char **)&aP3); /*0x770ec5*/
   j_DeleteAndZero( (void *)((ObjectClass *)&aP3)); /*0x770ece*/
   ((String *)((String *)&aP3))->Assign((const char *)(aDraw)); /*0x770edc*/
-  INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, v5, 2, (char **)&aP3); /*0x770eed*/
+  INIClass::ReadTokenizedPair((INIClass *)this, (unsigned int *)(aP1), aP2, v5, 2, (char **)&aP3); /*0x770eed*/
   j_DeleteAndZero( (void *)((ObjectClass *)&aP3)); /*0x770ef6*/
 
 }
@@ -776,15 +776,15 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
   WCHAR WideCharStr[2]; // [esp+8h] [ebp-4h] BYREF
 
   *(unsigned int *)WideCharStr = a1; /*0x7775c0*/
-  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x7775ce*/
+  if ( *(unsigned int *)&dword_887628) /*0x7775ce*/
   {
-    v10 = (*(int (**)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 56))( /*0x7775d4*/
-            *(unsigned int *)&stru_887598.isAliveFlag,
+    v10 = (*(int (**)(unsigned int, int))(**(unsigned int **)&dword_887628+ 56))( /*0x7775d4*/
+            *(unsigned int *)&dword_887628,
             -1);
     if ( Msg == v10 || Msg == 1141 ) /*0x7775e5*/
     {
       v11 = hWnd; /*0x7775f9*/
-if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int **)&stru_887598.isAliveFlag + 64))( /*0x7775ff*/ *(unsigned int *)&stru_887598.isAliveFlag, (HWND)((HWND)((HWND)((HWND)(hWnd)))), Msg, wParam, (int *)(lParam)) )
+if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int **)&dword_887628+ 64))( /*0x7775ff*/ *(unsigned int *)&dword_887628, (HWND)((HWND)((HWND)((HWND)(hWnd)))), Msg, wParam, (int *)(lParam)) )
 
 
 
@@ -843,15 +843,14 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
           *(unsigned int *)((char *)&stru_A8EB00 + 500) = 2; /*0x777818*/
         return 0; /*0x777828*/
       case 3u: /*0x7776ae*/
-        if ( g_DDraw_Initialized != 1 || !stru_887598.lineTrailer ) /*0x7777e3*/
+        if ( g_DDraw_Initialized != 1 || !dword_887640) /*0x7777e3*/
           goto LABEL_70; /*0x7777e3*/
-        MouseClass::CalcConfiningRect( (MouseClass *)stru_887598.lineTrailer); /*0x7777e9*/
+        MouseClass::CalcConfiningRect( (MouseClass *)dword_887640); /*0x7777e9*/
         goto LABEL_69; /*0x7777ee*/
       case 0xFu: /*0x7776ae*/
         if ( *(unsigned int *)((char *)&stru_A8EB00 + 444) /*0x777700*/
           || *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1 && g_DDraw_Initialized != 1
-          || !stru_887598.lineTrailer
-          || !g_DSurface_Primary
+          || !dword_887640|| !g_DSurface_Primary
           || !g_DSurface_Hidden
           || !DSurface_Composite )
         {
@@ -860,7 +859,7 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
         if ( *((unsigned int *)((char *)&stru_A8EB00 + 376)) == 1 ) /*0x777709*/
         {
           v15 = (gamemd::AudioStream *)(DSurface_Composite); /*0x77770b*/
-          (*(void (**)(void))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70))();  /*0x777710*/
+          (*(void (**)(void))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))();  /*0x777710*/
           Frame::Present( (void *)((int)v15), 0, (void *)(a3), (void *)((int)v13), 0, (void *)((int)a4), (void *)(a5), (void *)(a2)); /*0x777717*/
           ((Sidebar *)((Sidebar *)&stru_87F5F0.__pad_58[416]))->FlushSidebarTooltip(1); /*0x777723*/
           ValidateRect(v13, 0); /*0x77772a*/
@@ -875,7 +874,7 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
           if ( !Render_Draw_774070() ) /*0x777750*/
           {
             v16 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x77775f*/
-            (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70))(stru_887598.lineTrailer);  /*0x777768*/
+            (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))(dword_887640);  /*0x777768*/
             Frame::Present( (void *)((int)v16), 0, (void *)(a3), (void *)((int)v13), 0, (void *)((int)a4), (void *)(a5), (void *)(a2)); /*0x77776f*/
           }
   LABEL_26:
@@ -930,11 +929,11 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
             IDA_LOBYTE(v19) = 1; /*0x7778e2*/
             ((AsyncIO *)(v19))->Read(); /*0x7778e4*/
             sub_407020(); /*0x7778e9*/
-            if ( stru_887598.lineTrailer ) /*0x7778f6*/
+            if ( dword_887640) /*0x7778f6*/
             {
-              byte_B73560 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70))(stru_887598.lineTrailer);  /*0x7778fd*/
+              byte_B73560 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))(dword_887640);  /*0x7778fd*/
               Debug::Log("Focus_Loss(): _MouseCaptured = %s\n"); /*0x777916 G57c1: IDA 0x777916 push offset aFocusLossMouse*/
-              (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50))(stru_887598.lineTrailer);  /*0x777926*/
+              (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x777926*/
             }
           }
           Debug::Log("Focus gained\n"); /*0x77793a G57c1: IDA 0x77793a push offset aFocusGained*/
@@ -1564,8 +1563,8 @@ int RunWOLMainLoop(char a1)
   void *v19; // [esp+14h] [ebp-Ch] BYREF
   int64_t v20; // [esp+18h] [ebp-8h] BYREF
 
-  while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_A0))(stru_887598.lineTrailer) < 0 ) /*0x77b2b6*/
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x77b2c0*/
+  while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) < 0 ) /*0x77b2b6*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x77b2c0*/
   RunWOLMainLoop_Helper(); /*0x77b2d2*/
   v2 = dword_A83D14; /*0x77b2d7*/
   if ( dword_A83D14 == -1 ) /*0x77b2e0*/
@@ -2367,7 +2366,7 @@ int E4Recv_77D3F0::sub_77D3F0()
 
   if ( !this ) /*0x77d3f9*/
     return 0; /*0x77d3f9*/
-  v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x77d3fb*/
+  v2 = *(unsigned int *)&g_WindowManager; /*0x77d3fb*/
   unknown_libname_73( (void *)(&v6)); /*0x77d405*/
   v3 = 0; /*0x77d40a*/
   if ( v2 <= 0 ) /*0x77d40e*/
@@ -2379,8 +2378,8 @@ LABEL_9:
   p_occupant = &this->occupant; /*0x77d410*/
   while ( 1 ) /*0x77d413*/
   {
-    if ( v3 >= 0 && v3 < *(int *)g_WindowManager.__pad_0 ) /*0x77d41d*/
-      ((String *)((String *)&v6))->Reassign((const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3)); /*0x77d42c*/
+    if ( v3 >= 0 && v3 < *(int *)&g_WindowManager) /*0x77d41d*/
+      ((String *)((String *)&v6))->Reassign((const char **)(*(unsigned int *)&dword_B73AB0+ 4 * v3)); /*0x77d42c*/
     if ( !strcmp(((String *)((String *)&v6))->GetOrEmpty(), (const char *)p_occupant) ) /*0x77d442*/
       break; /*0x77d442*/
     if ( ++v3 >= v2 ) /*0x77d46c*/
@@ -2446,7 +2445,7 @@ int OpenURLWOL(INIClass * a1, int a2)
   }
   else if ( a2 /*0x77dd57*/
          || (v6 = GetStringCSF( (wchar_t *)(aTxtLaunchbrows), 0, (const char *)(g_Str_File_wonline_cpp), 1398),
-             result = ShowDialogConfirm( (void *)(v6), 4, (uint8_t (*)(void))GameLoop::Thunk, 0),
+             result = ShowDialogConfirm((void *)(v6), (void *)(4), (uint8_t (*)(void))GameLoop::Thunk, 0),
              result == 6) )
   {
     sprintf(CommandLine, "[open] %s", a1); /*0x77dd6b*/
@@ -2478,8 +2477,8 @@ int OpenURLWOL(INIClass * a1, int a2)
         if ( GetTopWindow(0) != g_hWnd ) /*0x77de54*/
         {
           Game::ProcessIdle(); /*0x77de56*/
-          SetForegroundWindow(g_hWnd); /*0x77de62*/
-          ShowWindow(g_hWnd, 9); /*0x77de71*/
+          SetForegroundWindow((HWND)&g_hWnd); /*0x77de62*/
+          ShowWindow((HWND)&g_hWnd, 9); /*0x77de71*/
           Game::ProcessIdle(); /*0x77de77*/
         }
         v10 = 10; /*0x77de7c*/
@@ -2533,28 +2532,28 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     v6 = (HWND)((Dialog*)((Dialog *)0xC9))->FindByHandle(); /*0x77e943*/
     EnablePlayerSlotControls(v6, 1u); /*0x77e94c*/
   }
-  owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77e951*/
+  owningHouseIndex = dword_B77900; /*0x77e951*/
   v8 = (char *)(0); /*0x77e956*/
   v9 = 0; /*0x77e958*/
-  if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x77e95c*/
+  if ( dword_B77900> 0 ) /*0x77e95c*/
   {
     v10 = 0; /*0x77e95e*/
     while ( 1 ) /*0x77e960*/
     {
       if ( v10 >= 0 && v9 < owningHouseIndex ) /*0x77e966*/
-        v8 = (char *)g_WOL_UserList.nextObject + v10; /*0x77e96d*/
+        v8 = (char *)dword_B77908+ v10; /*0x77e96d*/
       v11 = ((String *)((String *)&v23.q4))->GetOrEmpty_Alt(); /*0x77e978*/
       if ( !_strcmpi(v11, v8 + 36) ) /*0x77e97e*/
         break; /*0x77e97e*/
-      owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77e98a*/
+      owningHouseIndex = dword_B77900; /*0x77e98a*/
       ++v9; /*0x77e98f*/
       v10 += 108; /*0x77e990*/
-      if ( v9 >= g_WOL_UserList.owningHouseIndex ) /*0x77e995*/
+      if ( v9 >= dword_B77900) /*0x77e995*/
         goto LABEL_16; /*0x77e995*/
     }
     if ( v9 != -1 ) /*0x77e99c*/
     {
-      g_WOL_LoginObject.ambientSoundController[37 * v9] = a2; /*0x77e9a8*/
+      &dword_B76E60[37 * v9] = a2; /*0x77e9a8*/
       DisplayRankingsWOL(0); /*0x77e9af*/
     }
   }
@@ -2586,8 +2585,8 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     *(unsigned int *)(dword_A8DA78[v12] + 119) = a2; /*0x77ea61*/
     if ( v22 && (dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2) && !byte_B77DEC && v12 == 1 ) /*0x77ea92*/
     {
-      v15 = g_WOL_UserList.owningHouseIndex; /*0x77ea98*/
-      if ( g_WOL_UserList.owningHouseIndex == 2 ) /*0x77eaa1*/
+      v15 = dword_B77900; /*0x77ea98*/
+      if ( dword_B77900== 2 ) /*0x77eaa1*/
       {
         v16 = 0; /*0x77eaac*/
         *(unsigned int *)v24.__pad_0 = 0; /*0x77eab2*/
@@ -2596,17 +2595,17 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
         for ( *(unsigned int *)v23.__pad_0 = 0; ; v16 = *(unsigned int *)v23.__pad_0 ) /*0x77eabe*/
         {
           if ( v16 >= 0 && v17 < v15 ) /*0x77eace*/
-            qmemcpy( (void *)(v25), (char *)g_WOL_UserList.nextObject + v16, sizeof(v25)); /*0x77eae2*/
+            qmemcpy( (void *)(v25), (char *)dword_B77908+ v16, sizeof(v25)); /*0x77eae2*/
           v18 = (unsigned int *)RA2_OPNEW(0x6Cu); /*0x77eaeb*/
           v19 = *(unsigned int *)v24.__pad_0; /*0x77eaed*/
           qmemcpy( (void *)(v18), (const void *)(v25), 0x6Cu); /*0x77eaff*/
           v20 = *(unsigned int *)v23.__pad_0; /*0x77eb01*/
           v18[8] = v19; /*0x77eb05*/
-          v15 = g_WOL_UserList.owningHouseIndex; /*0x77eb08*/
+          v15 = dword_B77900; /*0x77eb08*/
           ++v17; /*0x77eb0e*/
           *(unsigned int *)v24.__pad_0 = (unsigned int)v18; /*0x77eb14*/
           *(unsigned int *)v23.__pad_0 = v20 + 108; /*0x77eb18*/
-          if ( v17 >= g_WOL_UserList.owningHouseIndex ) /*0x77eb1c*/
+          if ( v17 >= dword_B77900) /*0x77eb1c*/
             break; /*0x77eb1c*/
         }
         g_WOL_GameListState = 0; /*0x77eb20*/
@@ -2885,7 +2884,7 @@ char RequestChannelListWOL()
       DlgItem = GetDlgItem(Current, 1344); /*0x77f255*/
       if ( DlgItem ) /*0x77f25d*/
         SetFocus(DlgItem); /*0x77f260*/
-      ((Debug *)aWaitformultipl)->Log(); /*0x77f26b*/
+      ((Debug *)aWaitformultipl)->Log("WaitForMultipleObjects() failed in Get_Channel_List\n"); /*0x77f26b G57w12: IDA push seq @ 0x77f26b*/
       return 0; /*0x77f27a*/
     }
     if ( (v2 & 0x80u) != 0 ) /*0x77f1b2*/
@@ -6556,20 +6555,20 @@ int E4Recv_77D240::sub_77D240()
   int i; // edi
   char *v6; // eax
 
-  owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77d240*/
+  owningHouseIndex = dword_B77900; /*0x77d240*/
   v2 = (char *)(0); /*0x77d248*/
   v3 = 0; /*0x77d24a*/
-  if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x77d251*/
+  if ( dword_B77900<= 0 ) /*0x77d251*/
     return -1; /*0x77d28a*/
   for ( i = 0; ; i += 108 ) /*0x77d253*/
   {
     if ( i >= 0 && v3 < owningHouseIndex ) /*0x77d25b*/
-      v2 = (char *)g_WOL_UserList.nextObject + i; /*0x77d262*/
+      v2 = (char *)dword_B77908+ i; /*0x77d262*/
     v6 = ((String *)((String *)this))->GetOrEmpty_Alt(); /*0x77d26b*/
     if ( !_strcmpi(v6, v2 + 36) ) /*0x77d271*/
       break; /*0x77d271*/
-    owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77d27d*/
-    if ( ++v3 >= g_WOL_UserList.owningHouseIndex ) /*0x77d288*/
+    owningHouseIndex = dword_B77900; /*0x77d27d*/
+    if ( ++v3 >= dword_B77900) /*0x77d288*/
       return -1; /*0x77d288*/
   }
   return v3; /*0x77d28a*/

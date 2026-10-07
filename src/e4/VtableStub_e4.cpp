@@ -19,11 +19,11 @@ void VtableStub::VtableStub_643E70()
   *((unsigned int *)this + 25) = 0; /*0x643e70*/
 
 }
-}
 // 0x65D690
 char VtableStub::RetZero_eax_35(int a1)
 {
 
   return 0; /*0x65d692*/
 
+}
 }

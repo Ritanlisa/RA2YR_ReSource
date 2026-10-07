@@ -101,16 +101,16 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_30 = v7; /*0x4c999f*/
   this->TeamTypeClass_field_34 = 0; /*0x4c99a2*/
   this->TeamTypeClass_field_24 = 0; /*0x4c99a5*/
-  if ( g_BuildingLoadQueue_Array.Foundation[0] < g_BuildingLoadQueue_Array.ExtraPowerBonus /*0x4c99dc*/
-    || (BYTE1(g_BuildingLoadQueue_Array.ExtraPowerDrain) || !g_BuildingLoadQueue_Array.ExtraPowerBonus)
-    && g_BuildingLoadQueue_Array.Height > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.PowerBonus + 8))( (int *)(&g_BuildingLoadQueue_Array.PowerBonus), g_BuildingLoadQueue_Array.ExtraPowerBonus + g_BuildingLoadQueue_Array.Height, 0) )
+  if ( g_BuildingLoadQueue_Array.Foundation[0] < dword_B0F728/*0x4c99dc*/
+    || (BYTE1(byte_B0F72C) || !dword_B0F728)
+    && dword_B0F734> 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F720+ 8))( (int *)(&dword_B0F720), dword_B0F728+ dword_B0F734, 0) )
 
 
 
   {
     v5 = g_BuildingLoadQueue_Array.Foundation[0]++; /*0x4c99e9*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v5) = (unsigned int)this;
+    *(unsigned int *)(dword_B0F724+ 4 * v5) = (unsigned int)this;
   }
   return (int)this; /*0x4c99fd*/
 
@@ -562,11 +562,11 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
   INIClass::SetBool((INIClass *)(/*0x6f1659*/
     aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)((char *)&g_INI_Key_TRUCKA), *((unsigned char *)this + 170));
   INIClass::SetBool((INIClass *)(/*0x6f166d*/
-    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (unsigned int *)((char *)&g_INI_Key_TRUCKA + 14), *((unsigned char *)this + 171));
+    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)((unsigned int *)((char *)&g_INI_Key_TRUCKA + 14)), *((unsigned char *)this + 171));
   INIClass::SetBool((INIClass *)(/*0x6f1681*/
-    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (unsigned int *)((char *)&g_INI_Key_TRUCKA + 6), *((unsigned char *)this + 176));
+    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)((unsigned int *)((char *)&g_INI_Key_TRUCKA + 6)), *((unsigned char *)this + 176));
   INIClass::SetBool((INIClass *)(/*0x6f1695*/
-    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (unsigned int *)((char *)&g_INI_Key_TRUCKA + 4), *((unsigned char *)this + 177));
+    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)((unsigned int *)((char *)&g_INI_Key_TRUCKA + 4)), *((unsigned char *)this + 177));
   INIClass::SetBool((INIClass *)(/*0x6f16a9*/
     aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 18), *((unsigned char *)this + 172));
   INIClass::SetBool((INIClass *)(/*0x6f16bd*/
@@ -575,20 +575,12 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1, void * aTaskforce
     aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 9), *((unsigned char *)this + 173));
   INIClass::SetBool((INIClass *)(/*0x6f16e5*/
     aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 16), *((unsigned char *)this + 175));
-  INIClass::SetInt( /*0x6f16fb*/
-    aP1,
-    (uint8_t *)&this->TeamTypeClass_field_24,
-    (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 3),
-    *((unsigned int *)this + 45),
-    0);
-  INIClass::SetInt( /*0x6f1711*/
-    aP1,
-    (uint8_t *)&this->TeamTypeClass_field_24,
-    (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 2),
-    *((unsigned int *)this + 46),
-    0);
-  ((INIClass *)(aP1))->SetInt((INIClass *)((uint8_t *)&this->TeamTypeClass_field_24), g_INI_Key_TechLevel, *((unsigned int *)this + 51), 0); /*0x6f1727*/
-  ((INIClass *)(aP1))->SetInt((INIClass *)((uint8_t *)&this->TeamTypeClass_field_24), g_INI_Key_Group, *((unsigned int *)this + 39), 0); /*0x6f173d*/
+  INIClass::SetInt((gamemd::INIClass *)(/*0x6f16fb*/
+    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 3), *((unsigned int *)this + 45), 0);
+  INIClass::SetInt((gamemd::INIClass *)(/*0x6f1711*/
+    aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 2), *((unsigned int *)this + 46), 0);
+  INIClass::SetInt((gamemd::INIClass *)(((INIClass *)(aP1))), (INIClass *)((uint8_t *)&this->TeamTypeClass_field_24), g_INI_Key_TechLevel, *((unsigned int *)this + 51), 0); /*0x6f1727*/
+  INIClass::SetInt(((INIClass *)(aP1)), (INIClass *)((uint8_t *)&this->TeamTypeClass_field_24), g_INI_Key_Group, *((unsigned int *)this + 39), 0); /*0x6f173d*/
   INIClass::SetBool((INIClass *)(/*0x6f1751*/
     aP1), (uint8_t *)&this->TeamTypeClass_field_24, (char *)(unsigned int *)((char *)&g_INI_Key_TRUCKA + 6), *((unsigned char *)this + 179));
   INIClass::SetBool((INIClass *)(/*0x6f1765*/

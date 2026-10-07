@@ -125,7 +125,7 @@ int sub_59B6D0()
   result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x59b6e0*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x59b6e9*/
   {
-    if ( CellClass::IsTerrainType(i) ) /*0x59b6ef*/
+    if ( CellClass::IsTerrainType((gamemd::CellClass *)(i)) ) /*0x59b6ef*/
     {
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
@@ -258,9 +258,9 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
   ((Mouse *)((int)&stru_87F5F0.__pad_58[416]))->SetBounds(0); /*0x6e267f*/
   ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower2(0); /*0x6e268a*/
   ((BuildingClass *)((BuildingClass *)&stru_87F5F0.__pad_58[416]))->TogglePower(0); /*0x6e2695*/
-  stru_87F5F0.__pad_E12[1432] = 0; /*0x6e269a*/
-  stru_87F5F0.__pad_E12[1433] = 0; /*0x6e26a0*/
-  stru_87F5F0.__pad_E12[1434] = 0; /*0x6e26a6*/
+  &byte_88099A = 0; /*0x6e269a*/
+  &byte_88099B = 0; /*0x6e26a0*/
+  &byte_88099C = 0; /*0x6e26a6*/
   Scenario::ClearScreen(v5); /*0x6e26ac*/
   return 1; /*0x6e26b3*/
 }
@@ -304,9 +304,9 @@ int E4Recv_728A00::sub_728A00()
 
   ((gamemd::LocomotionClass*)(gamemd::LocomotionClass *)this)->Init(); /*0x728a03*/
   (&this->CurrentState)[0] = 0; /*0x728a0d*/
-  (&this->CurrentState)[1] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[352]; /*0x728a16*/
-  (&this->CurrentState)[2] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[356]; /*0x728a1e*/
-  (&this->CurrentState)[3] = *(unsigned int *)&(&g_BuildingLoadQueue_Array.__pad_F70)[360]; /*0x728a27*/
+  (&this->CurrentState)[1] = *(unsigned int *)&(&dbl_B0F7B0)[352]; /*0x728a16*/
+  (&this->CurrentState)[2] = *(unsigned int *)&(&dbl_B0F7B0)[356]; /*0x728a1e*/
+  (&this->CurrentState)[3] = *(unsigned int *)&(&dbl_B0F7B0)[360]; /*0x728a27*/
   (&this->CurrentState)[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
   (&this->CurrentState)[6] = 0; /*0x728a33*/
   (&this->CurrentState)[7] = 0; /*0x728a36*/

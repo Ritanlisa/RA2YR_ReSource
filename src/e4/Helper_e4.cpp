@@ -88,7 +88,7 @@ char sub_550240()
 
   result = g_MissionQueueFrame.random[31]; /*0x550240*/
   for ( i = g_MissionQueueFrame.random[31] - 1; i >= 0; --i ) /*0x55024b*/
-    result = TacticalClass::RenderCells(*(TacticalClass **)(g_MissionQueueFrame.random[28] + 4 * i)); /*0x550256*/
+    result = TacticalClass::RenderCells(*(TacticalClass **)(&dword_ABC828 + 4 * i)); /*0x550256*/
   return result; /*0x55025e*/
 }
 } // namespace gamemd

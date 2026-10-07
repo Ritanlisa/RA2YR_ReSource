@@ -157,7 +157,7 @@ int FactoryClass::DemandProduction(int a2, void *a3, char a4)
   int v17; // [esp+Ch] [ebp-8h]
 
   if ( (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 7 ) /*0x4c9c85*/
-    BuildingClass::AbandonProduction(this); /*0x4c9c89*/
+    BuildingClass::AbandonProduction((gamemd::BuildingClass *)(this)); /*0x4c9c89*/
   if ( (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!*((unsigned int *)this + 14) || *((unsigned char *)this + 112))
     && *((int *)this + 20) <= 0
@@ -228,7 +228,7 @@ int FactoryClass::SetObject(int a2)
   HouseClass *v3; // eax
   int v5; // [esp+8h] [ebp-8h]
 
-  BuildingClass::AbandonProduction((int)this); /*0x4c9e16*/
+  BuildingClass::AbandonProduction((gamemd::BuildingClass *)((int)this)); /*0x4c9e16*/
   *(unsigned int *)&this->__pad_42[22] = a2; /*0x4c9e21*/
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
@@ -584,9 +584,9 @@ v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C
     }
   }
   if ( byte_A8E9A0 ) /*0x4ca7e6*/
-    BuildingClass::AbandonProduction((int)this); /*0x4ca7ea*/
+    BuildingClass::AbandonProduction((gamemd::BuildingClass *)((int)this)); /*0x4ca7ea*/
   v7 = (gamemd::FactoryClass *)(this); /*0x4ca7ff*/
-v4 = (*(int (**)(int *, FactoryClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4ca803*/ &g_BuildingLoadQueue_Array.PowerBonus, (FactoryClass **)(&v7));
+v4 = (*(int (**)(int *, FactoryClass **))(dword_B0F720+ 16))( /*0x4ca803*/ &dword_B0F720, (FactoryClass **)(&v7));
 
 
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4ca813*/
@@ -594,8 +594,7 @@ v4 = (*(int (**)(int *, FactoryClass **))(g_BuildingLoadQueue_Array.PowerBonus +
     --g_BuildingLoadQueue_Array.Foundation[0]; /*0x4ca818*/
     for ( ; /*0x4ca81e*/
           v4 < g_BuildingLoadQueue_Array.Foundation[0];
-          *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain
-                                                                                     + 4 * v4) )
+          *(unsigned int *)(dword_B0F724+ 4 * v4 - 4) = *(unsigned int *)(dword_B0F724+ 4 * v4) )
     {
       ++v4; /*0x4ca826*/
     }

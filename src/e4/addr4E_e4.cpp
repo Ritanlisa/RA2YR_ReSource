@@ -384,16 +384,16 @@ void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
   {
     if ( a3 == 1 ) /*0x4e3527*/
     {
-      result = (HWND *)HashTable::Find(  (void *)g_DialogHashTable, off_844B1C[0], 0); /*0x4e3532*/
+      result = (HWND *)HashTable::Find((void *)g_DialogHashTable, (const char *)(off_844B1C[0]), 0); /*0x4e3532*/
     }
     else if ( a3 == 2 ) /*0x4e3537*/
     {
-      result = (HWND *)HashTable::Find(  (void *)g_DialogHashTable, off_844B20[0], 0); /*0x4e3547*/
+      result = (HWND *)HashTable::Find((void *)g_DialogHashTable, (const char *)(off_844B20[0]), 0); /*0x4e3547*/
     }
   }
   else
   {
-    result = (HWND *)HashTable::Find(  (void *)g_DialogHashTable, off_844B18[0], 0); /*0x4e3522*/
+    result = (HWND *)HashTable::Find((void *)g_DialogHashTable, (const char *)(off_844B18[0]), 0); /*0x4e3522*/
   }
   if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x4e354f*/
     return CacheDialogInvalidate( (void *)((void *)(DlgItem)), (HWND)result); /*0x4e3555*/
@@ -2961,9 +2961,9 @@ int sub_4E6190()
     strncpy( (char *)(Destination), (const char *)Source, 0x40u); /*0x4e61b9*/
   if ( !v0 || !byte_84E864 ) /*0x4e61d0*/
     return -1; /*0x4e627c*/
-  if ( !_strcmpi(Destination, aAuthenticamd) ) /*0x4e61e0*/
+  if ( !_strcmpi(Destination, (const char *)(aAuthenticamd)) ) /*0x4e61e0*/
     return 7; /*0x4e61ec*/
-  if ( !_strcmpi(Destination, aCyrixinstead) ) /*0x4e6200*/
+  if ( !_strcmpi(Destination, (const char *)(aCyrixinstead)) ) /*0x4e6200*/
     return 8; /*0x4e620c*/
   if ( v0 == 4 ) /*0x4e621b*/
     return 0; /*0x4e6275*/
@@ -4469,7 +4469,7 @@ void sub_4E7CA0()
 namespace gamemd {
 void sub_4E7CE0()
 {
-    dword_A8E8C8.field_0 = (struct IUnknownVtbl *)(void*)&TiberianSunClassFactory_vftable; /*0x4e7ce0*/
+    dword_A8E8C8= (struct IUnknownVtbl *)(void*)&TiberianSunClassFactory_vftable; /*0x4e7ce0*/
 }
 } // namespace gamemd
 

@@ -131,7 +131,7 @@ int InGameUI_Open()
       ((Dialog *)v2)->Destroy(); /*0x4f1178*/
     }
     if ( dwNewLong == 1004 ) /*0x4f1189*/
-      ScenarioClass::ShowMissionBriefing(dword_A8B230); /*0x4f1191*/
+      ScenarioClass::ShowMissionBriefing((gamemd::ScenarioClass *)&dword_A8B230); /*0x4f1191*/
     return ((MapClass *)(2))->MarkForRedraw(); /*0x4f11a2*/
 }
 }
@@ -546,11 +546,11 @@ v6 = (*((int (**)(DSurface *, _VectorCursor_PAVGraphicMenuItem_V_DynamicVectorCl
     DSurface::Flip2(); /*0x4f239b*/
     do /*0x4f25fd*/
     {
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x4f23a8*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x4f23a8*/
       ((DDraw *)(this + 4))->HandleSuspend(); /*0x4f23ad*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x4f23ba*/
-      v7 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0C0))(stru_887598.lineTrailer);  /*0x4f23ce*/
-      v18[0] = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q0B0))(stru_887598.lineTrailer);  /*0x4f23db*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x4f23ba*/
+      v7 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0C0))(dword_887640);  /*0x4f23ce*/
+      v18[0] = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q0B0))(dword_887640);  /*0x4f23db*/
       v18[1] = v7; /*0x4f23df*/
       if ( ((EventQueue *)*(EventQueue **)&stru_87F5F0.__pad_58[296])->Process() ) /*0x4f23e3*/
       {
@@ -1517,7 +1517,7 @@ int sub_4F1B80(char ** a1, int a2)
       if ( ((FileStraw *)&v6)->Open( (int)&v7, 0) <= 0 ) /*0x4f1c4b*/
         v4 = (char **)(0); /*0x4f1c5c*/
       else
-        v4 = LoadFromINIGraphicMenu(v5, &v6, a2); /*0x4f1c58*/
+        v4 = LoadFromINIGraphicMenu(v5, &v6, (void *)(a2)); /*0x4f1c58*/
       ((HashTable *)&v6)->DestroyHashTableINIClass(); /*0x4f1c62*/
       *(unsigned int *)v7.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x4f1c6e*/
       v9 = 0; /*0x4f1c76*/

@@ -190,16 +190,16 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
     v3 = *((unsigned int *)((char *)&FootClass_Array + 0))++; /*0x4277bd*/
     *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * v3) = (unsigned int)(this); /*0x4277cc*/
   }
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x427803*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+  if ( dword_B0F680< dword_B0F678/*0x427803*/
+    || (BYTE1(byte_B0F67C) || !dword_B0F678)
+    && &dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
 
 
 
   {
-    v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x427810*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = (unsigned int)this;
+    v4 = dword_B0F680++; /*0x427810*/
+    *(unsigned int *)(dword_B0F674+ 4 * v4) = (unsigned int)this;
   }
   v5 = 0; /*0x427828*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) <= 0 ) /*0x42782c*/
@@ -352,7 +352,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (gamemd::ObjectTypeClass *)(a2)); 
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (int)((gamemd::ObjectTypeClass *)(a2))); 
   if ( result >= 0 ) /*0x42881b*/
   {
     if ( a1 ) /*0x428823*/
@@ -561,16 +561,15 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428eba*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428ec1*/
   v6 = (gamemd::AnimTypeClass *)(this); /*0x428ecf*/
-v3 = (*(int (**)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/ &g_BuildingLoadQueue_Array.LightVisibility, (AnimTypeClass **)(&v6));
+v3 = (*(int (**)(int *, AnimTypeClass **))(dword_B0F670+ 16))( /*0x428ed3*/ &dword_B0F670, (AnimTypeClass **)(&v6));
 
 
-  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x428ee3*/
+  if ( v3 != -1 && v3 < dword_B0F680) /*0x428ee3*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x428ee8*/
+    --dword_B0F680; /*0x428ee8*/
     for ( ; /*0x428eee*/
-          v3 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v3) )
+          v3 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v3 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v3) )
     {
       ++v3; /*0x428ef6*/
     }

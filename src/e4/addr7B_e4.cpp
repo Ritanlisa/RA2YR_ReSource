@@ -1866,7 +1866,7 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
 
   v3 = 0; /*0x7b03a2*/
   v7[3] = 0; /*0x7b03a6*/
-  FindWDTTerritoryClass_Find((char *)stru_B77F68.ComPtr_field_0x04, v7, a2); /*0x7b03aa*/
+  FindWDTTerritoryClass_Find((char *)dword_B77F6C, v7, a2); /*0x7b03aa*/
   if ( (*(uint8_t (**)(unsigned int *))(v7[0] + 4))( (unsigned int *)(v7)) ) /*0x7b03b7*/
   {
     v4 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)(v7[1] + 4) + 8 * v7[2] + 4) + 8); /*0x7b03d0*/

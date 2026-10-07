@@ -131,7 +131,6 @@ void CheckListClass::StubReturnVoid()
   ; /*0x4e1510*/
 
 }
-}  // G42.18c ns repair
 // 0x4E1520
 void CheckListClass::StubReturn()
 {
@@ -139,3 +138,4 @@ void CheckListClass::StubReturn()
   ; /*0x4e1520*/
 
 }
+}  // G42.18c ns repair

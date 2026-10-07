@@ -117,7 +117,7 @@ int DisplayClass::LoadTypeData()
   int v7[4]; // [esp+14h] [ebp-10h] BYREF
 
   ((gamemd::MapClass*)this)->Destru_vt05(); /*0x4a8856*/
-  stru_8A0390.health = SearchMIXFile((char *)(aPlaceShp), 0); /*0x4a886e*/
+  dword_8A03FC= SearchMIXFile((char *)(aPlaceShp), 0); /*0x4a886e*/
   dword_8A072C = (unsigned int)SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
   Viewport = (int *)(((Display *)v7)->GetViewport()); /*0x4a8881*/
   v6[0] = *Viewport; /*0x4a8888*/
@@ -660,7 +660,7 @@ void * DisplayClass::Draw(int a2)
   }
   v3 = (int)((void *)(DSurface_ViewBounds.field_0)); /*0x4ae524*/
   v4 = (void *)(DSurface_ViewBounds.field_4); /*0x4ae531*/
-v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0))( /*0x4ae538*/ stru_887598.lineTrailer, (unsigned char *)(v18));
+v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_D0))( /*0x4ae538*/ dword_887640, (unsigned char *)(v18));
 
 
   v6 = v5[1]; /*0x4ae54a*/

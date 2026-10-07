@@ -165,7 +165,7 @@ double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   v9 = aP0[1] / 256; /*0x750b4e*/
   IDA_LOWORD(a3) = v8; /*0x750b58*/
   IDA_HIWORD(a3) = v9; /*0x750b5d*/
-  if ( (unsigned short)v8 == *(unsigned short *)&stru_B1D290.needsRedraw && (unsigned short)v9 == *(unsigned short *)&stru_B1D290.inOpenToppedTransport ) /*0x750b73*/
+  if ( (unsigned short)v8 == *(unsigned short *)&word_B1D310&& (unsigned short)v9 == *(unsigned short *)&word_B1D312) /*0x750b73*/
     return 0.0; /*0x750b82*/
   if ( (*((unsigned char *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3) + 300) & 0x18) == 0 ) /*0x750b9b*/
     return 0.0; /*0x750b9d*/
@@ -769,9 +769,9 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
   Info = ((VoxelSection *)(a1))->GetInfo((int)a2, (int)aP2); /*0x754101*/
   v18 = 1176256512; /*0x75411b*/
   v19 = 1176256512; /*0x754123*/
-  v7 = (VoxelSection **)(136 * stru_B2D804.Buffer_field_1C + 11721048); /*0x75412b*/
+  v7 = (VoxelSection **)(136 * dword_B2D820+ 11721048); /*0x75412b*/
   v17 = -971227136; /*0x754136*/
-  v8 = (unsigned int *)(136 * stru_B2D804.Buffer_field_1C + 11721064); /*0x75413e*/
+  v8 = (unsigned int *)(136 * dword_B2D820+ 11721064); /*0x75413e*/
   v7[2] = aP2; /*0x754141*/
   v9 = 0; /*0x754144*/
   *v8 = 1176256512; /*0x754149*/
@@ -823,13 +823,13 @@ int TransformVoxelVertex(VoxelSection *a1, VoxelSection *a2, VoxelSection *aP2, 
     dword_B2D5E4 = (int)v7[5]; /*0x75426a*/
   if ( *((float *)v7 + 6) < (double)*(float *)&dword_B2D5E8 ) /*0x75427e*/
     dword_B2D5E8 = (int)v7[6]; /*0x754283*/
-  if ( *((float *)v7 + 7) > (double)*(float *)&stru_B2D93C.Buffer_field_0C ) /*0x754296*/
-    stru_B2D93C.Buffer_field_0C = (int)v7[7]; /*0x75429b*/
-  if ( *((float *)v7 + 8) > (double)*(float *)&stru_B2D93C.Buffer_field_10 ) /*0x7542af*/
-    stru_B2D93C.Buffer_field_10 = (int)v7[8]; /*0x7542b4*/
-  if ( *((float *)v7 + 9) > (double)*(float *)&stru_B2D93C.Buffer_field_14 ) /*0x7542c8*/
-    stru_B2D93C.Buffer_field_14 = (int)v7[9]; /*0x7542cd*/
-  return ++stru_B2D804.Buffer_field_1C; /*0x7542d7*/
+  if ( *((float *)v7 + 7) > (double)*(float *)&dword_B2D948) /*0x754296*/
+    dword_B2D948= (int)v7[7]; /*0x75429b*/
+  if ( *((float *)v7 + 8) > (double)*(float *)&dword_B2D94C) /*0x7542af*/
+    dword_B2D94C= (int)v7[8]; /*0x7542b4*/
+  if ( *((float *)v7 + 9) > (double)*(float *)&dword_B2D950) /*0x7542c8*/
+    dword_B2D950= (int)v7[9]; /*0x7542cd*/
+  return ++dword_B2D820; /*0x7542d7*/
 }
 }
 // 0x7542F0
@@ -2419,7 +2419,7 @@ int * StartAudioControllerAt(int aP0, unsigned int *a2, int **a1)
   }
   if ( v6 ) /*0x750a3a*/
   {
-    v9 = ComputeAudioPosition((gamemd::AudioMixer *)(a2), &a1, *(float *)&v6); /*0x750a43*/
+    v9 = ComputeAudioPosition((gamemd::AudioMixer *)(a2), (unsigned int *)(&a1), *(float *)&v6); /*0x750a43*/
     if ( v9 <= 0.0 ) /*0x750a53*/
     {
       if ( v5 ) /*0x750a9a*/
@@ -2613,9 +2613,9 @@ HANDLE sub_751EA0(const CHAR * a1, unsigned int * a2, unsigned int * a3, unsigne
     {
       if ( (FindFileData.dwFileAttributes & 0x10) != 0 ) /*0x751edf*/
       {
-        if ( _strcmpi(FindFileData.cFileName, asc_826598) ) /*0x751ef2*/
+        if ( _strcmpi(FindFileData.cFileName, (const char *)&asc_826598) ) /*0x751ef2*/
         {
-          if ( _strcmpi(FindFileData.cFileName, asc_846610) ) /*0x751f0f*/
+          if ( _strcmpi(FindFileData.cFileName, (const char *)&asc_846610) ) /*0x751f0f*/
           {
             ++*a2; /*0x751f29*/
             strcpy( (char *)(FileName), (const char *)(v4)); /*0x751f43*/
@@ -3075,10 +3075,10 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
       dword_B2D5E0 = *(unsigned int *)v14; /*0x754072*/
     if ( v14[1] < (double)*(float *)&dword_B2D5E4 ) /*0x754085*/
       dword_B2D5E4 = *((unsigned int *)v14 + 1); /*0x75408a*/
-    if ( *v14 > (double)*(float *)&stru_B2D93C.Buffer_field_0C ) /*0x75409d*/
-      stru_B2D93C.Buffer_field_0C = *(int *)v14; /*0x7540a1*/
-    if ( v14[1] > (double)*(float *)&stru_B2D93C.Buffer_field_10 ) /*0x7540b5*/
-      stru_B2D93C.Buffer_field_10 = (int)v14[1]; /*0x7540ba*/
+    if ( *v14 > (double)*(float *)&dword_B2D948) /*0x75409d*/
+      dword_B2D948= *(int *)v14; /*0x7540a1*/
+    if ( v14[1] > (double)*(float *)&dword_B2D94C) /*0x7540b5*/
+      dword_B2D94C= (int)v14[1]; /*0x7540ba*/
     v15 += 3; /*0x7540bf*/
     v14 += 3; /*0x7540c2*/
     --v12; /*0x7540c5*/

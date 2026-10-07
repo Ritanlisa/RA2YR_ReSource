@@ -348,29 +348,29 @@ char sub_5D7E50()
     result = g_MultiplayerMode; /*0x5d7e62*/
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d7e69*/
     {
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7e75*/
+      dword_ABFDA4= 0; /*0x5d7e75*/
       g_MultiplayerMode |= 1u; /*0x5d7e7b*/
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7e81*/
-      IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7e87*/
-      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (unsigned int)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7e9a*/
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7ea0*/
+      dword_ABFDA8= 0; /*0x5d7e81*/
+      IDA_LOWORD(byte_ABFDAC) = 1; /*0x5d7e87*/
+      *(unsigned int *)&g_MultiplayerModeConfig= (unsigned int)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
+      dword_ABFDB4= 10; /*0x5d7e9a*/
+      dword_ABFDB0= 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
     }
-    if ( i >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 ) /*0x5d7eb4*/
+    if ( i >= dword_ABFDB0) /*0x5d7eb4*/
       break; /*0x5d7eb4*/
     if ( (g_MultiplayerMode & 1) == 0 ) /*0x5d7ebd*/
     {
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7ec9*/
+      dword_ABFDA4= 0; /*0x5d7ec9*/
       g_MultiplayerMode |= 1u; /*0x5d7ecf*/
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7ed5*/
-      IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7edb*/
-      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (unsigned int)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7eee*/
-      g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7ef4*/
+      dword_ABFDA8= 0; /*0x5d7ed5*/
+      IDA_LOWORD(byte_ABFDAC) = 1; /*0x5d7edb*/
+      *(unsigned int *)&g_MultiplayerModeConfig= (unsigned int)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
+      dword_ABFDB4= 10; /*0x5d7eee*/
+      dword_ABFDB0= 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/
     }
-    v3 = *(void (****)(unsigned int, int))(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * i); /*0x5d7f07*/
+    v3 = *(void (****)(unsigned int, int))(dword_ABFDA4+ 4 * i); /*0x5d7f07*/
     if ( v3 ) /*0x5d7f0c*/
       (**v3)((unsigned int)v3, 1); /*0x5d7f12*/
   }
@@ -434,10 +434,10 @@ LSTATUS WinMain::CleanupResource()
 
   phkResult = (HKEY)this; /*0x49f8b0*/
   Debug::Log("COPYPROTECTION - Shutdown\n"); /*0x49f8b6 G57c1: IDA 0x49f8b6 push offset aCopyprotection_2*/
-  if ( g_DDrawSurfaceManager.description[6] ) /*0x49f8c5*/
+  if ( &dword_89F75C ) /*0x49f8c5*/
   {
-    UnmapViewOfFile((LPCVOID)g_DDrawSurfaceManager.description[6]); /*0x49f8c8*/
-    g_DDrawSurfaceManager.description[6] = 0; /*0x49f8ce*/
+    UnmapViewOfFile((LPCVOID)&dword_89F75C); /*0x49f8c8*/
+    &dword_89F75C = 0; /*0x49f8ce*/
   }
   result = RegOpenKeyExA(HKEY_CLASSES_ROOT,(LPCSTR)(SubKey), 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
   if ( !result ) /*0x49f8f6*/

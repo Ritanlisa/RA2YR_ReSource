@@ -155,16 +155,15 @@ v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&stru_88732C.__pad
   AudioFileClass::Release( (AudioFileClass *)&this->VoxelAnimClass_field_0x114); /*0x749aa9*/
   AudioFileClass::Release( (AudioFileClass *)&this->VoxelAnimClass_field_0x128); /*0x749ab0*/
   v6 = this; /*0x749ac5*/
-v4 = (*(int (**)(int *, VoxelAnimClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x749ac9*/ &g_BuildingLoadQueue_Array.LightVisibility, (VoxelAnimClass **)(&v6));
+v4 = (*(int (**)(int *, VoxelAnimClass **))(dword_B0F670+ 16))( /*0x749ac9*/ &dword_B0F670, (VoxelAnimClass **)(&v6));
 
 
-  if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x749adb*/
+  if ( v4 != -1 && v4 < dword_B0F680) /*0x749adb*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x749ae0*/
+    --dword_B0F680; /*0x749ae0*/
     for ( ; /*0x749ae6*/
-          v4 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v4) )
+          v4 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v4 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v4) )
     {
       ++v4; /*0x749aee*/
     }
@@ -262,7 +261,7 @@ LABEL_6:
           v7,
           *((unsigned int *)this->VoxelAnimClass_field_0x104 + 166),
           0,
-          (float *)stru_887430.m_Data,
+          (float *)&stru_887430,
           v40,
           (float *)&dword_887420,
           0,
@@ -289,9 +288,9 @@ LABEL_6:
           0,
           0);
         qmemcpy( (void *)(v40), VoxelAnimClass::QuaternionToMatrix( (float *)&this->__pad_98[24], (void *)(v41)), sizeof(v40)); /*0x749d95*/
-        globalHelper_053C80( (unsigned int *)(v7), 0, 0, (float *)(v40), (float *)&stru_887460.Buffer_field_10); /*0x749da3*/
+        globalHelper_053C80( (unsigned int *)(v7), 0, 0, (float *)(v40), (float *)&dword_887470); /*0x749da3*/
         Viewport::Clear( (void *)(v26)); /*0x749da8*/
-        v9 = MultiplyMatrix3x4( (ObjectClass *)(v41), (float *)stru_887430.m_Data, (float *)(v40)); /*0x749dbe*/
+        v9 = MultiplyMatrix3x4( (ObjectClass *)(v41), (float *)&stru_887430, (float *)(v40)); /*0x749dbe*/
         TransformVoxelVertex( (gamemd::VoxelSection *)(v7), (gamemd::VoxelSection *)(*((unsigned int *)this->VoxelAnimClass_field_0x104 + 166)), 0, (float *)(v9)); /*0x749dd4*/
         InitializeAudioOcclusion( (IUnknown *)(v39), (unsigned int *)(&v31), (unsigned int *)(&v30)); /*0x749de6*/
         v10 = 10240; /*0x749df1*/
@@ -515,12 +514,12 @@ int VoxelAnimClass::VoxelAnimClass_Update()
         v27 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1b4*/
         v28 = v27[188]; /*0x74a1c9*/
         v84 = v27[190]; /*0x74a1cf*/
-        Coords = (unsigned int *)((Coord *)(&v101))->GetCoords( 0); /*0x74a1d8*/
+        Coords = (unsigned int *)Coord::GetCoords(((Coord *)(&v101)), 0); /*0x74a1d8*/
         PlaySoundEffectAt( (gamemd::TechnoClass *)(Coords), v28, (unsigned int *)(v83), v84, 1, 0); /*0x74a1e1*/
         v30 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a1e6*/
         v90 = v30[190]; /*0x74a1f6*/
         v31 = v30[188]; /*0x74a1fa*/
-        v32 = (int *)((Coord *)(&v101))->GetCoords( 0); /*0x74a205*/
+        v32 = (int *)Coord::GetCoords(((Coord *)(&v101)), 0); /*0x74a205*/
         CreateSmokeEffectAt(v31, v90, *v32, v32[1], v32[2], v85, 0); /*0x74a225*/
       }
     }
@@ -587,7 +586,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       v110 = 0; /*0x74a24c*/
       if ( v33[720] ) /*0x74a250*/
       {
-        v34 = (int *)((Coord *)(&v101))->GetCoords( v86); /*0x74a269*/
+        v34 = (int *)Coord::GetCoords(((Coord *)(&v101)), v86); /*0x74a269*/
         v97 = (int)((*v34)); /*0x74a270*/
         v98 = v34[1]; /*0x74a277*/
         v99 = v34[2]; /*0x74a27e*/
@@ -724,7 +723,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
       {
         if ( !v87 ) /*0x74a5ca*/
         {
-          v54 = (unsigned int *)((Coord *)(&v101))->GetCoords( v86); /*0x74a5db*/
+          v54 = (unsigned int *)Coord::GetCoords(((Coord *)(&v101)), v86); /*0x74a5db*/
           v55 = (CellClass *)((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v54); /*0x74a5eb*/
           if ( (uint8_t)IsCoordValidMap((int)v55, 0) ) /*0x74a5f0*/
           {
@@ -825,13 +824,13 @@ int VoxelAnimClass::VoxelAnimClass_Update()
           ((AnimClass *)(v69))->ctor( *((void **)v1->VoxelAnimClass_field_0x104 + 185), (int *)(v100), 0, 1, (void *)0x600, 0, 0); /*0x74a87f*/
         }
       }
-      v72 = (unsigned int *)((Coord *)(&v105))->GetCoords( v86); /*0x74a88b*/
+      v72 = (unsigned int *)Coord::GetCoords(((Coord *)(&v105)), v86); /*0x74a88b*/
       for ( i = ((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v72)->firstObject; i; i = i->nextObject ) /*0x74a8a3*/
       {
         v74 = i->location[0]; /*0x74a8af*/
         v102 = i->location[1]; /*0x74a8b8*/
         v103 = i->location[2]; /*0x74a8ca*/
-        v75 = (unsigned int *)((Coord *)(&v108))->GetCoords( v86); /*0x74a8ce*/
+        v75 = (unsigned int *)Coord::GetCoords(((Coord *)(&v108)), v86); /*0x74a8ce*/
         v76 = abs32(*v75 - v74) + abs32(v75[1] - v102); /*0x74a8ee*/
         v77 = (unsigned int *)(v1->VoxelAnimClass_field_0x104); /*0x74a8f0*/
         if ( v76 <= v77[189] ) /*0x74a8fc*/

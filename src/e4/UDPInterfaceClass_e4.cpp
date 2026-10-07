@@ -384,7 +384,7 @@ LABEL_25:
   }
   v45 = (unsigned int)v13; /*0x7b3bff*/
   *(unsigned int *)&netshort.sa_data[2] = *((unsigned int *)v13 + 1); /*0x7b3c03*/
-  *(unsigned short *)netshort.sa_data = htons((*((unsigned short *)v13 + 13))); /*0x7b3c11*/
+  *(unsigned short *)netshort.sa_data = htons((void *)((*((unsigned short *)v13 + 13)))); /*0x7b3c11*/
   netshort.sa_family = 2; /*0x7b3c1c*/
   if ( v39 ) /*0x7b3c23*/
   {
@@ -401,7 +401,7 @@ LABEL_25:
       v14 = hostshort; /*0x7b3c64*/
     *(unsigned short *)netshort.sa_data = htons( (void *)((void *)(v14))); /*0x7b3c75*/
     if ( *((unsigned int *)v13 + 1) == qword_A8DBB0.NetworkID_field_0x04 /*0x7b3c9a*/
-      && (!dword_A8DA84 || (uint8_t)((GUID *)(qword_A8DBB0.__pad_0))->Compare(*dword_A8DA78 + 40)) )
+      && (!dword_A8DA84 || (uint8_t)((GUID *)(&qword_A8DBB0))->Compare(*dword_A8DA78 + 40)) )
     {
       *(unsigned int *)&netshort.sa_data[2] = htonl( (unsigned int)((void *)(0x7F000001u))); /*0x7b3cb4*/
       *(unsigned short *)netshort.sa_data = htons( (void *)((void *)(dword_841F3C))); /*0x7b3cbe*/
@@ -1015,7 +1015,6 @@ int UDPInterfaceClass_Destru::COMStub_Ret2()
   return 2; /*0x7b40f5*/
 
 }
-}  // G42.18c ns repair
 // 0x7B45D0
 DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, void *a3)
 {
@@ -1036,3 +1035,4 @@ DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, 
   return this->__pad_0; /*0x7b4615*/
 
 }
+}  // G42.18c ns repair

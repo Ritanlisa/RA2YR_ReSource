@@ -466,7 +466,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     *(float *)(_EBP + 248) = (float)INIClass::ReadDouble_Overwrite((INIClass *)((double *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(g_INI_Key_Range), v34); /*0x6cebf4 G57c4 x87c4: merged fstp dword [ebp+0F8h]@0x6cec01*/
     v21 = *(unsigned int *)(_EBP + 252); /*0x6cebf9*/
     *(unsigned int *)(_EBP + 252) = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6cec13*/
-                                (bool *)this), (unsigned __int8 *)(_EBP + 36), aLinemultiplier, v21);
+                                (bool *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aLinemultiplier), v21);
     INIClass::GetString( /*0x6cec2d*/
       (INIClass *)this,
       (unsigned __int8 *)(_EBP + 36),
@@ -522,12 +522,12 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     }
     v27 = *(unsigned char *)(_EBP + 229); /*0x6ced28*/
     *(unsigned int *)(_EBP + 200) = v26; /*0x6ced2e*/
-    v28 = INIClass::ReadBool_Overwrite((INIClass *)((int *)this), (unsigned __int8 *)(_EBP + 36), aUsechargedrain, v27); /*0x6ced3d*/
+    v28 = INIClass::ReadBool_Overwrite((INIClass *)((int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aUsechargedrain), v27); /*0x6ced3d*/
     v38 = *(unsigned char *)(_EBP + 245); /*0x6ced4a*/
     *(unsigned char *)(_EBP + 229) = v28; /*0x6ced51*/
     *(unsigned char *)(_EBP + 245) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x6ced68*/
-                               (int *)this), (unsigned __int8 *)(_EBP + 36), aManualcontrol, v38);
-    v34 = INIClass::ReadDouble_Overwrite((INIClass *)((double *)this), (unsigned __int8 *)(_EBP + 36), aRechargetime, 0.0); /*0x6ced6e*/
+                               (int *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aManualcontrol), v38);
+    v34 = INIClass::ReadDouble_Overwrite((INIClass *)((double *)this), (unsigned __int8 *)(_EBP + 36), (unsigned char *)(aRechargetime), 0.0); /*0x6ced6e*/
     if ( v34 != dbl_7E2800 ) /*0x6ced7e G57c4 x87c4: fcom/fnstsw@0x6CED73 C3!=0 -> st0==0.0 -> discard; else scale*/
     {
       IDA_LOWORD(v30) = Math::RoundToInt(v34 * flt_7F4100); /*0x6ced86 G57c4 x87c4: fmul ds:flt_7F4100@0x6ced80*/

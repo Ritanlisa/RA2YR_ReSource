@@ -1080,9 +1080,9 @@ AbstractClass * * BuildRandomMapTiles(ObjectClass *self)
     goto LABEL_18; /*0x58ecf8*/
   }
   LABEL_31:
-  v22 = ((double)g_MissionQueueFrame.briefing[384] * 0.005 + 0.05) /*0x58ed89*/
+  v22 = ((double)&dword_ABDBC8 * 0.005 + 0.05) /*0x58ed89*/
       * (double)g_MissionQueueFrame.briefing[453]
-      * (double)g_MissionQueueFrame.briefing[452];
+      * (double)&dword_ABDC0C;
   IDA_LOWORD(v23) = Math::RoundToInt(v22 + v22); /*0x58eda9*/
   v24 = v23; /*0x58edae*/
   LABEL_32:

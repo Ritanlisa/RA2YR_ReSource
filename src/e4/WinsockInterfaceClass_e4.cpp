@@ -101,7 +101,6 @@ int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
   return 1; /*0x7b2775*/
 
 }
-}  // G42.18c ns repair
 // 0x7B2780
 SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
 {
@@ -152,3 +151,4 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
   return (SOCKET *)this; /*0x7b2830*/
 
 }
+}  // G42.18c ns repair

@@ -433,7 +433,7 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *)(int, int)
     v3 = (unsigned int *)(0); /*0x731faf*/
   }
   v4 = 0; /*0x731fbc*/
-  Height = GetHeightMap(g_TacticalClass_Instance); /*0x731fc0*/
+  Height = GetHeightMap((gamemd::ObjectClass *)&g_TacticalClass_Instance); /*0x731fc0*/
   if ( Height <= 0 ) /*0x731fc4*/
     return v3; /*0x73203d*/
   do /*0x732031*/
@@ -514,9 +514,9 @@ int SelectAllOfType()
     return result; /*0x732961*/
   SelectAllOfType_Play(); /*0x73296d*/
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] != 2 ) /*0x732979*/
-    g_BuildingLoadQueue_Array.__pad_1624[0] = 0; /*0x73297b*/
+    &byte_B0FE64 = 0; /*0x73297b*/
   v24 = TacticalClass::CollectSelectedIDs(); /*0x732989*/
-  if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732996*/
+  if ( &byte_B0FE64 ) /*0x732996*/
   {
     v3 = (EventClass *)RA2_OPNEW(0x18u); /*0x732998*/
     v4 = v3; /*0x73299d*/
@@ -577,7 +577,7 @@ int SelectAllOfType()
     if ( (int)v23 <= 0 ) /*0x732a83*/
     {
   LABEL_25:
-      g_BuildingLoadQueue_Array.__pad_1624[0] = 1; /*0x732aad*/
+      &byte_B0FE64 = 1; /*0x732aad*/
     }
     else
     {
@@ -592,7 +592,7 @@ int SelectAllOfType()
         if ( ++v12 >= (int)v23 ) /*0x732aab*/
           goto LABEL_25; /*0x732aab*/
       }
-      if ( !g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732abd*/
+      if ( !&byte_B0FE64 ) /*0x732abd*/
         goto LABEL_36; /*0x732abd*/
     }
     if ( v8 ) /*0x732ac1*/
@@ -619,7 +619,7 @@ int SelectAllOfType()
   }
   if ( *(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x732b55*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x732b7c*/
+    if ( &byte_B0FE64 ) /*0x732b7c*/
       StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossMap), 0,(const char *)(g_Str_File_UICmnds_cpp), 1011); /*0x732b98*/
     else
       StringCSF = GetStringCSF((wchar_t *)(g_Str_MSG_SelAcrossScreen), 0,(const char *)(g_Str_File_UICmnds_cpp), 1013); /*0x732bb2*/
@@ -643,7 +643,7 @@ int SelectAllOfType()
              240,
              1);
   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = 2; /*0x732bf5*/
-  IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x732bff*/
+  IDA_LOBYTE(&byte_B0FE58) = 0; /*0x732bff*/
   if ( v24 ) /*0x732c0c*/
     result = (*(int (**)(unsigned int *, int))*v24)( (unsigned int *)(v24), 1); /*0x732c12*/
   if ( v6 ) /*0x732c16*/
@@ -729,7 +729,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     {
       v4 = (unsigned int *)(0); /*0x7330d4*/
     }
-    HeightMap = GetHeightMap(g_TacticalClass_Instance); /*0x7330dc*/
+    HeightMap = GetHeightMap((gamemd::ObjectClass *)&g_TacticalClass_Instance); /*0x7330dc*/
     v11 = HeightMap; /*0x7330e1*/
     for ( i = 0; i < v11; ++i ) /*0x7330e7*/
     {
@@ -1048,7 +1048,7 @@ LABEL_42:
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = 0; /*0x7335c1*/
     if ( result ) /*0x7335cb*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = 3; /*0x7335cd*/
-    LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x7335d7*/
+    LOBYTE(&byte_B0FE58) = 0; /*0x7335d7*/
   }
   return result; /*0x7335de*/
 
@@ -1204,7 +1204,7 @@ LABEL_42:
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = 0; /*0x73390b*/
     if ( result ) /*0x733915*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = 4; /*0x733917*/
-    LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x733921*/
+    LOBYTE(&byte_B0FE58) = 0; /*0x733921*/
   }
   return result; /*0x733928*/
 
@@ -1335,7 +1335,7 @@ int SelectUnitsByTheme(char a1)
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = 0; /*0x733c24*/
     if ( result ) /*0x733c30*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = 5; /*0x733c32*/
-    IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x733c3e*/
+    IDA_LOBYTE(&byte_B0FE58) = 0; /*0x733c3e*/
     if ( v10 ) /*0x733c45*/
       return (int)((void *)(**(int (***)(DynamicVector *, int))v10->__pad_0)(v10, 1)); /*0x733c4e*/
   }

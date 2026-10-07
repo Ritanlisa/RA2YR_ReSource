@@ -65,7 +65,7 @@ int Control::RepositionControlsDialog(HWND hWnd)
   v4 = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60b9d8*/
                   + 4
                   * ((*(int (**)(HWND *))&g_DialogPool.__pad_208[80])( (HWND *)(&v14))
-                   & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                   & ((1 << &dword_AC1B0C) - 1)));
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
@@ -349,7 +349,7 @@ int Control::CheckControlTypeDialog()
   result = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60c570*/
                      + 4
                      * ((*(int (**)(Control **))&g_DialogPool.__pad_208[80])( (Control **)(&v3))
-                      & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                      & ((1 << &dword_AC1B0C) - 1)));
   if ( !result ) /*0x60c575*/
     goto LABEL_7; /*0x60c575*/
   while ( *(Control **)result != v3 ) /*0x60c57d*/

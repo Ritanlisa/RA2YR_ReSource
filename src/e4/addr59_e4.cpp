@@ -418,7 +418,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v44[2] = 5; /*0x594b6e*/
   v44[3] = 0; /*0x594b76*/
   v44[4] = 0; /*0x594b7a*/
-  v1 = (double)g_MissionQueueFrame.briefing[453] * (double)g_MissionQueueFrame.briefing[452] * 0.03; /*0x594b7e*/
+  v1 = (double)g_MissionQueueFrame.briefing[453] * (double)&dword_ABDC0C * 0.03; /*0x594b7e*/
   if ( v1 < 400.0 ) /*0x594b91*/
     v1 = 400.0; /*0x594b95*/
   IDA_LOWORD(v2) = Math::RoundToInt(v1); /*0x594b9b*/
@@ -426,7 +426,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v3 = Terrain::ConnectivityGraph(  (Terrain *)&stru_87F5F0.__pad_58[416]); /*0x594ba9*/
   IDA_HIWORD(v5) = 0; /*0x594bb4*/
   v4 = v44[g_MissionQueueFrame.briefing[371]]; /*0x594bb6*/
-  IDA_LOWORD(v5) = *(unsigned short *)(*(unsigned int *)&stru_87F5F0.__pad_58[4 * v4 + 440] + 2 * v3); /*0x594bc1*/
+  IDA_LOWORD(v5) = *(unsigned short *)(*(unsigned int *)&dbl_87F648[4 * v4 + 440] + 2 * v3); /*0x594bc1*/
   Map_Helper_58CE90(v34); /*0x594bc5*/
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x594bcf*/
   for ( i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x594be2*/
@@ -536,7 +536,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v25 = 0; /*0x594df6*/
   v26 = 0; /*0x594df8*/
   v27 = 0; /*0x594dfa*/
-  for ( m = (unsigned int)g_MissionQueueFrame.briefing[376]; v27 < *(int *)v45.__tail_10; IDA_HIDWORD(m) = v26 ) /*0x594e06*/
+  for ( m = (unsigned int)&dword_ABDBC0; v27 < *(int *)v45.__tail_10; IDA_HIDWORD(m) = v26 ) /*0x594e06*/
   {
     v28 = *(unsigned int *)(*(unsigned int *)&v45.m_1[3] + 4 * v27); /*0x594e0c*/
     v25 += *(unsigned int *)(v28 + 12); /*0x594e12*/
@@ -783,7 +783,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     ((ComPtr *)((ComPtr *)&v17.q008))->Release(); /*0x59600b*/
   }
   if ( v17.q004 ) /*0x596016*/
-    g_MissionQueueFrame.briefing[376] = 4; /*0x596018*/
+    &dword_ABDBC0 = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset( (void *)(Destination), 0, sizeof(Destination)); /*0x596033*/
   strncpy( (char *)(Destination), (const char *)(unsigned int *)((char *)&stru_82BA00 + 13), 0x80u); /*0x596047*/

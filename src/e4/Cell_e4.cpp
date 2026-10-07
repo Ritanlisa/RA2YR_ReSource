@@ -198,7 +198,7 @@ void Cell::ApplyDamage(int aP1, int a3, int a4, char aP4)
       v7 = (int *)AbstractClass::IsTechnoType(Cell_field_0xE4); /*0x4816a3*/
       if ( v7 ) /*0x4816aa*/
       {
-        if ( (uint8_t)Audio::IsLoud(v7 + 84) ) /*0x4816b2*/
+        if ( (uint8_t)Audio::IsLoud((gamemd::Audio *)(v7 + 84)) ) /*0x4816b2*/
           break; /*0x4816b2*/
       }
       Cell_field_0xE4 = (AbstractClass *)Cell_field_0xE4[1].vtable3; /*0x4816bb*/
@@ -961,7 +961,7 @@ char Cell::UpdateTileType(__int16 *aP0, int aP1, int a3)
         v7 = (unsigned int *)(&unk_ABDC50); /*0x56eb41*/
       }
       if ( v7[14] == v23 ) /*0x56eb4f*/
-        LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)(&aP1)), (IUnknown *)(v9), 1)); /*0x56eb5d*/
+        LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)(&aP1)), (int)((IUnknown *)(v9)), 1)); /*0x56eb5d*/
       v12 = (v12 + 1) & 7; /*0x56eb63*/
       --v13; /*0x56eb66*/
     }

@@ -24,19 +24,19 @@ void * MSVQAnim::GetFrameRect(int * a2)
   int MSVQAnim_field_0x1C; // eax
   int *p_parTimeMedium; // ecx
 
-  if ( (g_MissionQueueFrame.__pad_3566[58] & 1) == 0 ) /*0x5cd2a0*/
+  if ( (&byte_ABFB98 & 1) == 0 ) /*0x5cd2a0*/
   {
-    g_MissionQueueFrame.parTimeMedium = 0; /*0x5cd2ab*/
-    g_MissionQueueFrame.__pad_3566[58] |= 1u; /*0x5cd2b1*/
-    g_MissionQueueFrame.parTimeDifficult = 0; /*0x5cd2b7*/
-    *(unsigned int *)g_MissionQueueFrame.underParTitle = 0; /*0x5cd2bd*/
+    dword_ABFBA0= 0; /*0x5cd2ab*/
+    &byte_ABFB98 |= 1u; /*0x5cd2b1*/
+    dword_ABFBA4= 0; /*0x5cd2b7*/
+    *(unsigned int *)&dword_ABFBA8= 0; /*0x5cd2bd*/
     *(unsigned int *)&g_MissionQueueFrame.underParTitle[4] = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
   MSVQAnim_field_0x1C = this->MSVQAnim_field_0x1C; /*0x5cd2d1*/
   p_parTimeMedium = (int *)(MSVQAnim_field_0x1C + 52); /*0x5cd2d6*/
   if ( !MSVQAnim_field_0x1C ) /*0x5cd2d9*/
-    p_parTimeMedium = &g_MissionQueueFrame.parTimeMedium; /*0x5cd2db*/
+    p_parTimeMedium = &dword_ABFBA0; /*0x5cd2db*/
   *a2 = *p_parTimeMedium; /*0x5cd2e9*/
   a2[1] = p_parTimeMedium[1]; /*0x5cd2ee*/
   a2[2] = p_parTimeMedium[2]; /*0x5cd2f4*/

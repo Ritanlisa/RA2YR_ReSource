@@ -471,9 +471,9 @@ void sub_72CA10()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1345] ) /*0x72ca1a*/
+  if ( &byte_B0FCF1 ) /*0x72ca1a*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1344] ) /*0x72ca22*/
+    if ( &byte_B0FCF0 ) /*0x72ca22*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[688]; /*0x72ca25*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[688] ) /*0x72ca2d*/
@@ -481,7 +481,7 @@ void sub_72CA10()
         ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[688]))->Destroy(); /*0x72ca31*/
         RA2_OPDEL(v1); /*0x72ca37*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1344] = 0; /*0x72ca3f*/
+      &byte_B0FCF0 = 0; /*0x72ca3f*/
     }
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[688] = 0; /*0x72ca4b*/
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1348] ) /*0x72ca53*/
@@ -497,7 +497,7 @@ void sub_72CA10()
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1352] = 0; /*0x72ca74*/
     }
   }
-  g_BuildingLoadQueue_Array.__pad_F70[1345] = 0; /*0x72ca7a*/
+  &byte_B0FCF1 = 0; /*0x72ca7a*/
 }
 } // namespace gamemd
 

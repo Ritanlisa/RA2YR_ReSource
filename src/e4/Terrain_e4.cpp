@@ -186,7 +186,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
           {
             continue; /*0x568fbf*/
           }
-          Cell::SetTileType((short *)((IUnknown *)(v77)), (IUnknown *)(v7 + g_Cell_BuildabilityLUT - 1), (IUnknown *)(-1), (IUnknown *)( -1), 0); /*0x568fdd*/
+          Cell::SetTileType((short *)((IUnknown *)(v77)), (int)((IUnknown *)(v7 + g_Cell_BuildabilityLUT - 1)), (int)((IUnknown *)(-1)), (IUnknown *)( -1), 0); /*0x568fdd*/
           v14 = InvalidateTileRegionMap((ObjectClass *)this, v77); /*0x568fe9*/
           v7 = g_TerrainSoundTable2; /*0x568fee*/
           v63 |= v14; /*0x568ffd*/
@@ -278,7 +278,7 @@ LABEL_85:
     }
     if ( v13 != v8 && v13 != v8 + 3 && v13 != v8 + 4 && v13 != v8 + 2 && v13 != v8 + 1 || *((unsigned char *)v64 + 282) != 2 ) /*0x5691e7*/
       continue; /*0x5691e7*/
-    Cell::SetTileType((short *)((IUnknown *)(v77)), (IUnknown *)(g_Cell_BuildabilityLUT + v8 - 1), (IUnknown *)(-1), (IUnknown *)( -1), 0); /*0x569200*/
+    Cell::SetTileType((short *)((IUnknown *)(v77)), (int)((IUnknown *)(g_Cell_BuildabilityLUT + v8 - 1)), (int)((IUnknown *)(-1)), (IUnknown *)( -1), 0); /*0x569200*/
     v27 = InvalidateTileRegionMap((ObjectClass *)this, v77); /*0x56920c*/
     v8 = g_TerrainSoundConfig; /*0x569215*/
     v63 |= v27; /*0x56921d*/
@@ -1574,7 +1574,7 @@ void Terrain::ProcessCellModification(__int16 *aP1)
           g_MissionQueueFrame.briefing[139] = *(unsigned int *)v81; /*0x57053d*/
           v39 = &g_MissionQueueFrame.briefing[130]; /*0x570543*/
         }
-        DestroyCliffMap((ObjectClass *)this, (int)v39, 2, &v82); /*0x57054f*/
+        DestroyCliffMap((gamemd::TechnoClass *)((ObjectClass *)this), (int)v39, 2, &v82); /*0x57054f*/
         goto LABEL_109; /*0x57054f*/
       }
       if ( (v37 == g_TerrainSoundTable2 /*0x570486*/
@@ -1595,7 +1595,7 @@ void Terrain::ProcessCellModification(__int16 *aP1)
           g_MissionQueueFrame.briefing[139] = *(unsigned int *)v81; /*0x5707e3*/
           v57 = &g_MissionQueueFrame.briefing[130]; /*0x5707e9*/
         }
-        DestroyCliffMap((ObjectClass *)this, (int)v57, 4, &v82); /*0x5707f8*/
+        DestroyCliffMap((gamemd::TechnoClass *)((ObjectClass *)this), (int)v57, 4, &v82); /*0x5707f8*/
 LABEL_109:
         Cell::CreateCrater( (void *)(v82), (void *)(v83), (void *)(v84), (void *)(v85), 0); /*0x5707fd*/
         goto LABEL_139; /*0x57082a*/
@@ -1613,7 +1613,7 @@ LABEL_109:
           goto LABEL_133; /*0x5709e9*/
         }
         v58 = this; /*0x57083a*/
-        Cell::SetTileType((short *)((IUnknown *)(v81)), (IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex - 1), (IUnknown *)( -1), (IUnknown *)( -1), 0); /*0x570850*/
+        Cell::SetTileType((short *)((IUnknown *)(v81)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex - 1)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0); /*0x570850*/
         v59 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v81)), (unsigned int *)(&aP1), (unsigned short *)(&g_DDrawSurfaceManager.scenario[82])); /*0x570868*/
         aP1 = (short *)(v59); /*0x57086a*/
         *(unsigned int *)v79 = (unsigned int)(v59); /*0x57086e*/
@@ -1684,7 +1684,7 @@ LABEL_133:
               g_MissionQueueFrame.briefing[139] = *(unsigned int *)v81; /*0x570a39*/
               v73 = &g_MissionQueueFrame.briefing[130]; /*0x570a3f*/
             }
-            DestroyCliffMap((ObjectClass *)v58, (int)v73, 4, &v82); /*0x570a4e*/
+            DestroyCliffMap((gamemd::TechnoClass *)((ObjectClass *)v58), (int)v73, 4, &v82); /*0x570a4e*/
             Cell::CreateCrater( (void *)(v82), (void *)(v83), (void *)(v84), (void *)(v85), 0); /*0x570a7b*/
             v53 = this; /*0x570a80*/
 LABEL_137:
@@ -1709,7 +1709,7 @@ LABEL_74:
     }
     if ( v37 != g_TerrainSoundTable2 + 4 ) /*0x570559*/
       goto LABEL_101; /*0x570559*/
-    Cell::SetTileType((short *)((IUnknown *)(v81)), (IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex - 1), (IUnknown *)( -1), (IUnknown *)( -1), 0); /*0x570573*/
+    Cell::SetTileType((short *)((IUnknown *)(v81)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex - 1)), (int)((IUnknown *)( -1)), (IUnknown *)( -1), 0); /*0x570573*/
     v40 = (int16_t *)*CellStruct::Add(((CellStruct *)((CellStruct *)v81)), (unsigned int *)(&aP1), (unsigned short *)(&g_DDrawSurfaceManager.scenario[88])); /*0x57058b*/
     aP1 = (short *)(v40); /*0x57058d*/
     *(unsigned int *)v79 = (unsigned int)v40; /*0x570591*/
@@ -1776,7 +1776,7 @@ LABEL_101:
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v81; /*0x57075c*/
             v55 = &g_MissionQueueFrame.briefing[130]; /*0x570762*/
           }
-          DestroyCliffMap((ObjectClass *)this, (int)v55, 2, &v82); /*0x570771*/
+          DestroyCliffMap((gamemd::TechnoClass *)((ObjectClass *)this), (int)v55, 2, &v82); /*0x570771*/
           Cell::CreateCrater( (void *)(v82), (void *)(v83), (void *)(v84), (void *)(v85), 0); /*0x57079e*/
           goto LABEL_137; /*0x5707a3*/
         }
@@ -2090,10 +2090,10 @@ LABEL_103:
           }
           v47 = this; /*0x573a74*/
           Cell::SetTileType( (IUnknown *)(v87), g_TerrainSoundTable2 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x573a8a*/
-          LOWORD(aP1) = v87[0] + LOWORD(g_DDrawSurfaceManager.scenario[88]); /*0x573aa7*/
-          v48 = (int16_t)(v87[0] + LOWORD(g_DDrawSurfaceManager.scenario[88])); /*0x573aac*/
-          HIWORD(aP1) = HIWORD(g_DDrawSurfaceManager.scenario[88]) + v87[1]; /*0x573aaf*/
-          v49 = (int16_t)(HIWORD(g_DDrawSurfaceManager.scenario[88]) + v87[1]) << 9; /*0x573abb*/
+          LOWORD(aP1) = v87[0] + LOWORD(&word_89F598); /*0x573aa7*/
+          v48 = (int16_t)(v87[0] + LOWORD(&word_89F598)); /*0x573aac*/
+          HIWORD(aP1) = HIWORD(&word_89F598) + v87[1]; /*0x573aaf*/
+          v49 = (int16_t)(HIWORD(&word_89F598) + v87[1]) << 9; /*0x573abb*/
           v28 = v48 + v49 < 0; /*0x573abe*/
           v50 = v48 + v49; /*0x573abe*/
           *(unsigned int *)v84 = (unsigned int)aP1; /*0x573ac0*/

@@ -185,7 +185,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
-    && ((uint8_t (*)(WeaponTypeClass **, int, unsigned int))((unsigned int *)WeaponTypeClass_Array)[0])(
+    && ((uint8_t ((gamemd::WeaponTypeClass **)(*))(WeaponTypeClass **, int, unsigned int))((unsigned int *)WeaponTypeClass_Array)[0])(
          &WeaponTypeClass_Array,
          dword_887570 + dword_88757C,
          0) )
@@ -216,7 +216,7 @@ int WeaponTypeClass::Destructor(void *a1)
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
-  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))((unsigned int *)WeaponTypeClass_Array)[0])( /*0x771f99*/
+  v2 = ((int ((gamemd::WeaponTypeClass **)(*))(WeaponTypeClass **, WeaponTypeClass **))((unsigned int *)WeaponTypeClass_Array)[0])( /*0x771f99*/
          &WeaponTypeClass_Array,
          &v7);
   if ( v2 != -1 && v2 < g_WeaponTypePool && v2 < --g_WeaponTypePool ) /*0x771fb4*/
@@ -652,7 +652,6 @@ int WeaponTypeClass::GetObjectSize()
   return 352; /*0x7730d5*/
 
 }
-}  // G42.18c ns repair
 // 0x7730E0
 int WeaponTypeClass::GetTypeIdentifier()
 {
@@ -660,3 +659,4 @@ int WeaponTypeClass::GetTypeIdentifier()
   return 49; /*0x7730e5*/
 
 }
+}  // G42.18c ns repair

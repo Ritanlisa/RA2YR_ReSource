@@ -277,10 +277,10 @@ char LoadingScreen::FreeResources3()
   LoadingScreen *v1; // [esp+0h] [ebp-4h]
   ObjectClass *v2; // [esp+0h] [ebp-4h]
 
-  result = g_BuildingLoadQueue_Array.__pad_F70[1072]; /*0x72def0*/
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72defa*/
+  result = &byte_B0FBE0; /*0x72def0*/
+  if ( &byte_B0FBE0 ) /*0x72defa*/
   {
-    g_BuildingLoadQueue_Array.__pad_F70[1072] = 0; /*0x72df00*/
+    &byte_B0FBE0 = 0; /*0x72df00*/
     LoadingScreen::DestroyFileTrees(); /*0x72df06*/
     LoadingScreen::CleanupObjects( (void *)(v1)); /*0x72df0b*/
     __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120]); /*0x72df16*/

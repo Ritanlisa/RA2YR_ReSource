@@ -9,7 +9,7 @@ struct IsometricTileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
 // --- flat members (END) ---
-IsometricTileClass(void * aP1, void * aP2);
+IsometricTileClass(int aP1, unsigned short *aP2);  // 0x00543780 g57w12-r raw-sync (def-form)
 };
 
 } // namespace gamemd

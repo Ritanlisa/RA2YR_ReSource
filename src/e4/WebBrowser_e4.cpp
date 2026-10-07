@@ -131,12 +131,12 @@ int WebBrowser::ShowDialog()
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
       *v5 = (unsigned int)(&vt_WebBrowser); /*0x773f95*/
-      ((Debug *)g_Str_Instantiating_embedded_WebBrow)->Log(); /*0x773f9b*/
+      ((Debug *)g_Str_Instantiating_embedded_WebBrow)->Log("Instantiating embedded WebBrowser\n"); /*0x773f9b G57w12: IDA push seq @ 0x773f9b*/
       *(unsigned int *)(v6 + 1040) = (unsigned int)(v3); /*0x773fa3*/
-      ((Debug *)g_Str_Creating_WOLBrowser_component_)->Log(); /*0x773fae*/
+      ((Debug *)g_Str_Creating_WOLBrowser_component_)->Log("Creating WOLBrowser component.\n"); /*0x773fae G57w12: IDA push seq @ 0x773fae*/
       if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
       {
-        ((Debug *)g_Str_Starting_up_WOLBrowser)->Log(); /*0x773fd4*/
+        ((Debug *)g_Str_Starting_up_WOLBrowser)->Log("Starting up WOLBrowser\n"); /*0x773fd4 G57w12: IDA push seq @ 0x773fd4*/
         (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v6); /*0x773fe3*/
         (*(void (**)(unsigned int, HWND, int *))(*(unsigned int *)*v7 + 12))( *v7, (HWND)((HWND)((HWND)((HWND)(v3)))), (int *)(&v11)); /*0x773ff2*/
         (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 60))(*v7, 1); /*0x773ffe*/

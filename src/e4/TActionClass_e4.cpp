@@ -881,27 +881,27 @@ LABEL_11:
     }
   }
   this->idxArray = v4; /*0x71e74f*/
-  if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-    || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
-    && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
-         g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
-         g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] + g_BuildingLoadQueue_Array.GateCloseDelay[1],
+  if ( &dword_B0F668 < &dword_B0F660 /*0x71e786*/
+    || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !&dword_B0F660)
+    && &dword_B0F66C > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(&dword_B0F658 + 8))(
+         &dword_B0F658,
+         &dword_B0F660 + &dword_B0F66C,
          0) )
   {
-    v6 = g_BuildingLoadQueue_Array.GateCloseDelay[0]++; /*0x71e793*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v6) = (unsigned int)this;
+    v6 = &dword_B0F668++; /*0x71e793*/
+    *(unsigned int *)(&dword_B0F65C + 4 * v6) = (unsigned int)this;
   }
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x71e7d9*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+  if ( dword_B0F680< dword_B0F678/*0x71e7d9*/
+    || (BYTE1(byte_B0F67C) || !dword_B0F678)
+    && &dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
 
 
 
   {
-    v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x71e7e6*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = (unsigned int)this;
+    v7 = dword_B0F680++; /*0x71e7e6*/
+    *(unsigned int *)(dword_B0F674+ 4 * v7) = (unsigned int)this;
   }
   this->TActionClass_field_34 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/

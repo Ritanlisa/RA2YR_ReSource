@@ -37,7 +37,7 @@ _DWORD * LightSourceClass::Construct(int a2, int a3, int a4, int a5, int a6, int
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5547ba*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x5547c1*/
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
-    || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
+    || (BYTE1(&dbl_ABC890) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
 && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))( (int *)(&g_MissionQueueFrame.random[129]), g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134], 0) )
 
@@ -75,7 +75,7 @@ int LightSourceClass::Constructor()
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x554876*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_LightSourceClass); /*0x55487d*/
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
-    || (BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
+    || (BYTE1(&dbl_ABC890) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
 && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))( (int *)(&g_MissionQueueFrame.random[129]), g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134], 0) )
 

@@ -137,13 +137,13 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath, void *a2_1)
   v4 = *(void **)&this->q020; /*0x43275b*/
   if ( v4 ) /*0x432760*/
   {
-    BinkMovie::FreeSurfaceTracker((*((unsigned int *)this + 8))); 
+    BinkMovie::FreeSurfaceTracker((void *)((*((unsigned int *)this + 8)))); 
     __3_YAXPAX_Z(v4); /*0x43276a*/
     *((unsigned int *)this + 8) = 0; /*0x432772*/
   }
   if ( *((unsigned int *)this + 1) ) /*0x432775*/
   {
-    BinkClose((*((unsigned int *)this + 1))); /*0x43277d*/
+    BinkClose((void *)((*((unsigned int *)this + 1)))); /*0x43277d*/
     *((unsigned int *)this + 1) = 0; /*0x432783*/
   }
   if ( *((unsigned int *)this + 10) != -1 ) /*0x43278c*/
@@ -459,7 +459,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
   {
     do /*0x43300d*/
     {
-      BinkDoFrame((*((unsigned int *)this + 1))); /*0x432f62*/
+      BinkDoFrame((void *)((*((unsigned int *)this + 1)))); /*0x432f62*/
       v12 = (BinkMovie *)*((unsigned int *)this + 8); /*0x432f68*/
       v13 = 0; /*0x432f6b*/
       *((unsigned int *)this + 45) = 0; /*0x432f6f*/

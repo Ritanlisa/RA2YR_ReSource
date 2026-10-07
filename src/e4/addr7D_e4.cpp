@@ -4121,10 +4121,10 @@ void* _tzset_lk()
     _unlock(12); /*0x7d4d66*/
     if ( GetTimeZoneInformation(&TimeZoneInformation) == -1 ) /*0x7d4d7b*/
       return; /*0x7d4d7b*/
-    dword_87CA60 = 60 * TimeZoneInformation.Bias; /*0x7d4d99*/
+    dword_87CA60 = 60 * TimeZoneInformation; /*0x7d4d99*/
     dword_B782F0 = 1; /*0x7d4d9e*/
     if ( TimeZoneInformation.StandardDate.wMonth ) /*0x7d4da4*/
-      dword_87CA60 = 60 * TimeZoneInformation.StandardBias + 60 * TimeZoneInformation.Bias; /*0x7d4dad*/
+      dword_87CA60 = 60 * TimeZoneInformation.StandardBias + 60 * TimeZoneInformation; /*0x7d4dad*/
     if ( TimeZoneInformation.DaylightDate.wMonth && TimeZoneInformation.DaylightBias ) /*0x7d4dc2*/
     {
       dword_87CA64 = 1; /*0x7d4dc6*/

@@ -27,7 +27,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   {
     do /*0x7653db*/
     {
-      if ( FindWDTTerritoryClass_Find_Find(*(unsigned int **)(*((unsigned int *)v6 + 1) + 8 * v7 + 4)) == a3 ) /*0x7653c6*/
+      if ( FindWDTTerritoryClass_Find_Find((gamemd::ObjectClass *)(*(unsigned int **)(*((unsigned int *)v6 + 1) + 8 * v7 + 4))) == a3 ) /*0x7653c6*/
         break; /*0x7653c6*/
       ((void (*)(void ***))v5[2])(&v5); /*0x7653d0*/
     }

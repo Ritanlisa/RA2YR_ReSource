@@ -1724,16 +1724,16 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
     v3 = (*(unsigned int *)&stru_A83D50.__pad_3C[28])++; /*0x644d50*/
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v3) = (unsigned int)this;
   }
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x644d96*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+  if ( dword_B0F680< dword_B0F678/*0x644d96*/
+    || (BYTE1(byte_B0F67C) || !dword_B0F678)
+    && &dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
 
 
 
   {
-    v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x644da3*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = (unsigned int)this;
+    v4 = dword_B0F680++; /*0x644da3*/
+    *(unsigned int *)(dword_B0F674+ 4 * v4) = (unsigned int)this;
   }
   ((unsigned int *)this)[0] = 0; /*0x644db5*/
   return (unsigned int *)this; /*0x644dbd*/
@@ -2206,7 +2206,7 @@ int BuildingTypeClass::GetMaxPips()
   int v2; // ecx
   int Storage; // ecx
 
-  result = 60 * stru_81926C.Type[this->Foundation[0]] / 8; /*0x45ed02*/
+  result = 60 * dword_8192B8[this->Foundation[0]] / 8; /*0x45ed02*/
   if ( ((unsigned int *)this)[0] == 2 ) /*0x45ed08*/
   {
     if ( this->Weeder ) /*0x45ed14*/
@@ -2257,7 +2257,7 @@ unsigned int * BuildingTypeClass::GetSizeInLeptons(unsigned int * a2)
   v2 = this->Foundation[0]; /*0x464af0*/
   v3 = dword_89DDB8 * this->Height; /*0x464afc*/
   v2 *= 4; /*0x464b03*/
-  v4 = *(int *)((char *)stru_81926C.Type + v2); /*0x464b0b*/
+  v4 = *(int *)((char *)dword_8192B8+ v2); /*0x464b0b*/
   v5 = *(int *)((char *)dword_819310 + v2); /*0x464b11*/
   *a2 = v4 << 8; /*0x464b1d*/
   a2[1] = v5 << 8; /*0x464b22*/
@@ -2386,7 +2386,7 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
   /*0x474aba*/
     ((INIClass*)((INIClass *)this))->GetString(/*0x474aba*/ aP1, a2, *(char **)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * aP3) + 772), Destination, 32);
   v4 = 0; /*0x474ac4*/
-  if ( *(int *)stru_B054D0.__tail_10 <= 0 ) /*0x474ac8*/
+  if ( *(int *)&dword_B054E0<= 0 ) /*0x474ac8*/
     return aP3; /*0x474b06*/
   v5 = *(unsigned int *)&stru_B054D0.m_1[3]; /*0x474aca*/
   while ( 1 ) /*0x474ae6*/
@@ -2395,7 +2395,7 @@ int BuildingTypeClass::FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTy
     v5 = *(unsigned int *)&stru_B054D0.m_1[3]; /*0x474ae8*/
     if ( v6 && *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * v4) + 784) != 1 ) /*0x474af9*/
       break; /*0x474af9*/
-    if ( ++v4 >= *(int *)stru_B054D0.__tail_10 ) /*0x474b04*/
+    if ( ++v4 >= *(int *)&dword_B054E0) /*0x474b04*/
       return aP3; /*0x474b04*/
   }
   return v4; /*0x474b08*/

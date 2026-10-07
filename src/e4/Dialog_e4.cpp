@@ -56,7 +56,7 @@ void Dialog::MapDialogResource()
   if ( *(unsigned int *)&this->__pad_0[4] == 48879 ) /*0x49f74a*/
   {
     Debug::Log("COPYPROTECTION - Received message from launcher.\n"); /*0x49f751 G57c1: IDA 0x49f751 push offset aCopyprotection*/
-    g_DDrawSurfaceManager.description[6] = (int)MapViewOfFileEx((HANDLE)(this->Dialog_field_0xC), 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
+    &dword_89F75C = (int)MapViewOfFileEx((HANDLE)(this->Dialog_field_0xC), 0xF001Fu, 0, 0, 0, 0); /*0x49f772*/
     Debug::Log("***** MapViewOfFileEx() Failed!"); /*0x49f77e G57c1: IDA 0x49f77e push offset aMapviewoffilee*/
   }
 
@@ -742,7 +742,7 @@ int Dialog::StopBink()
     result = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x608005*/
                        + 4
                        * ((*(int (**)(Dialog **))&g_DialogPool.__pad_208[80])( (Dialog **)(&v5))
-                        & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                        & ((1 << &dword_AC1B0C) - 1)));
     if ( result ) /*0x60800a*/
     {
       while ( *(Dialog **)result != v5 ) /*0x608012*/
@@ -798,7 +798,7 @@ AbstractClass * * Dialog::IdleProcess(ObjectClass *a2)
   v4 = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x6080b2*/
                   + 4
                   * ((*(int (**)(HWND *))&g_DialogPool.__pad_208[80])( (HWND *)(&v13))
-                   & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                   & ((1 << &dword_AC1B0C) - 1)));
   if ( !v4 ) /*0x6080b7*/
     return 0; /*0x6080b7*/
   while ( (HWND)*v4 != v13 ) /*0x6080bf*/
@@ -826,7 +826,7 @@ AbstractClass * * Dialog::IdleProcess(ObjectClass *a2)
   v9 = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x608180*/
                  + 4
                  * ((*(int (**)(HWND *))&g_DialogPool.__pad_208[80])( (HWND *)(&v13))
-                  & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                  & ((1 << &dword_AC1B0C) - 1)));
   if ( !v9 ) /*0x608185*/
     return 0; /*0x608185*/
   while ( *(HWND *)v9 != v13 ) /*0x608191*/
@@ -1657,16 +1657,16 @@ AbstractClass * * Dialog::DestroyDialogSystem()
     v14 = (unsigned int)(*(unsigned int *)&g_DialogPool.__pad_0[4] - 1); /*0x610456*/
     *(float *)&v14 = (double)v14 / (double)g_DialogPool.Dialog_field_0x8[0]; /*0x610472*/
     v6 = (*(int (**)(HWND *))&g_DialogPool.__pad_10[8])( (HWND *)(&hWnd)) /*0x61048a*/
-       & ((1 << SLOBYTE(g_DialogPool.Dialog_field_0xC)) - 1);
-    v7 = *(HWND **)(*(unsigned int *)g_DialogPool.__pad_0 + 4 * v6); /*0x610491*/
+       & ((1 << SLOBYTE(dword_AC18CC)) - 1);
+    v7 = *(HWND **)(*(unsigned int *)&g_DialogPool+ 4 * v6); /*0x610491*/
     if ( v7 ) /*0x610496*/
     {
       if ( *v7 == hWnd ) /*0x6104a4*/
       {
         v8 = v7[2]; /*0x6104a6*/
-        __3_YAXPAX_Z(*(void **)(*(unsigned int *)g_DialogPool.__pad_0 + 4 * v6)); /*0x6104aa*/
+        __3_YAXPAX_Z(*(void **)(*(unsigned int *)&g_DialogPool+ 4 * v6)); /*0x6104aa*/
         v9 = *(float *)&v14; /*0x6104b8*/
-        *(unsigned int *)(*(unsigned int *)g_DialogPool.__pad_0 + 4 * v6) = v8; /*0x6104bc*/
+        *(unsigned int *)(*(unsigned int *)&g_DialogPool+ 4 * v6) = v8; /*0x6104bc*/
         --*(unsigned int *)&g_DialogPool.__pad_0[4]; /*0x6104cb*/
         if ( v9 > *(double *)&g_DialogPool.__pad_10[16] ) /*0x6104d5*/
           goto LABEL_22; /*0x6104d5*/
@@ -2293,7 +2293,7 @@ LABEL_7:
             v11 = *(Dialog ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x62202f*/
                               + 4
                               * ((*(int (**)(Dialog **))&g_DialogPool.__pad_208[80])( (Dialog **)(&v29))
-                               & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                               & ((1 << &dword_AC1B0C) - 1)));
             if ( v11 ) /*0x622034*/
             {
               while ( *v11 != v29 ) /*0x62203c*/
@@ -2314,7 +2314,7 @@ LABEL_29:
           v13 = *(Dialog ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x622084*/
                             + 4
                             * ((*(int (**)(Dialog **))&g_DialogPool.__pad_208[80])( (Dialog **)(&v29))
-                             & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                             & ((1 << &dword_AC1B0C) - 1)));
           if ( !v13 ) /*0x622089*/
             goto LABEL_33; /*0x622089*/
           while ( *v13 != v29 ) /*0x622091*/
@@ -2335,7 +2335,7 @@ LABEL_33:
           v15 = *(Dialog ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x6220cf*/
                             + 4
                             * ((*(int (**)(Dialog **))&g_DialogPool.__pad_208[80])( (Dialog **)(&v29))
-                             & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                             & ((1 << &dword_AC1B0C) - 1)));
           if ( !v15 ) /*0x6220d4*/
             goto LABEL_43; /*0x6220d4*/
           while ( *v15 != v29 ) /*0x6220dc*/
@@ -2360,7 +2360,7 @@ LABEL_43:
             v19 = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x62217e*/
                              + 4
                              * ((*(int (**)(int *))&g_DialogPool.__pad_208[80])( (int *)(&v30))
-                              & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                              & ((1 << &dword_AC1B0C) - 1)));
             if ( v19 ) /*0x622183*/
             {
               while ( *v19 != v30 ) /*0x62218f*/

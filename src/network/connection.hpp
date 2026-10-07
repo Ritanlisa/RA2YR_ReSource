@@ -110,9 +110,9 @@ int release(int,int,int,int);  // 0x5414C0
     int GetAddress(int a2);  // 0x542350
     int SetAddress(int a2);                                     // 0x5423C0
     uint32_t GetQueueSize();                                          // 0x542450
-    int32_t CheckStatus();  // 0x5424A0
+int CheckStatus(int a2);  // 0x005424a0 g57w12-r raw-sync (def-form)
     int ProcessQueue();                                              // 0x542520
-    void Flush();                                                     // 0x542EC0
+void Flush(char a2);  // 0x00542ec0 g57w12-r raw-sync (def-form)
     int32_t getPlayerName(char a2); // 0x543100
 
     uint32_t  Socket;

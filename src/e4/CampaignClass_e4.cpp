@@ -273,7 +273,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   }
   (&g_IsWindowed)[v14] = 0; /*0x49c7bd*/
   strcat( (char *)(Block), (const char *)(g_IsWindowed)); /*0x49c7df*/
-  CCFileClass::Construct3((int)&v30); /*0x49c7ef*/
+  CCFileClass::Construct3((gamemd::CCFileClass *)((int)&v30)); /*0x49c7ef*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v30.CDFileClass + 8))( (CCFileClass *)(&v30), (char *)g_Str_File_coopsave_ini); /*0x49c807*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v30.CDFileClass + 28))( (CCFileClass *)(&v30), 2); /*0x49c81a*/
   INIClass::ClearSection((INIClass *)((int *)v28.INIClass), (int)Block, 0); /*0x49c828*/
@@ -289,7 +289,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   if ( dword_A8DA84 ) /*0x49c8b4*/
   {
     PlayerSide = (void *)((SessionClass *)((int *)*dword_A8DA78))->GetPlayerSide(); /*0x49c8be*/
-    INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse1, PlayerSide); /*0x49c8d2*/
+    INIClass::SetHouseName((gamemd::INIClass *)(v28.INIClass), (uint8_t *)Block, (char *)(aHouse1), PlayerSide); /*0x49c8d2*/
     PlayerColor = ((SessionClass *)((SessionClass *)*dword_A8DA78))->GetPlayerColor(); /*0x49c8e1*/
     INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aColor1), PlayerColor, 0); /*0x49c8f5*/
     v20 = dword_A8DA84; /*0x49c8fa*/
@@ -306,7 +306,7 @@ AbstractClass * * CampaignClass::SaveProgress()
         goto LABEL_47; /*0x49c919*/
     }
     v25 = (void *)((SessionClass *)((int *)((unsigned int *)dword_A8DA78)[v23]))->GetPlayerSide(); /*0x49c925*/
-    INIClass::SetHouseName(v28.INIClass, (uint8_t *)Block, aHouse2, v25); /*0x49c939*/
+    INIClass::SetHouseName((gamemd::INIClass *)(v28.INIClass), (uint8_t *)Block, (char *)(aHouse2), v25); /*0x49c939*/
     v26 = ((SessionClass *)((SessionClass *)((unsigned int *)dword_A8DA78)[v23]))->GetPlayerColor(); /*0x49c949*/
     INIClass::SetInt(((INIClass *)(v28.INIClass)), (uint8_t *)Block, (char *)(aColor2), v26, 0); /*0x49c95d*/
   }

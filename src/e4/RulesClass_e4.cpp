@@ -310,7 +310,7 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
     v5 = *(unsigned int *)&this->__pad_240[480]; /*0x674453*/
     __asm { fstp qword ptr [esi+418h] } /*0x67445b*/
     *(double *)&this->__pad_240[472] = _RT1; /*0x67445b*/
-    v7 = INIClass::ReadInt_Overwrite(((INIClass *)(v16)), (uint8_t *)aJumpjetcontrol, aCruiseheight, v5); /*0x67446d*/
+    v7 = INIClass::ReadInt_Overwrite(((INIClass *)(v16)), (uint8_t *)aJumpjetcontrol, (unsigned char *)(aCruiseheight), v5); /*0x67446d*/
     v8 = *(unsigned int *)&this->__pad_240[492]; /*0x674472*/
     v9 = *(unsigned int *)&this->__pad_240[488]; /*0x674478*/
     *(unsigned int *)&this->__pad_240[480] = v7; /*0x67447e*/
@@ -325,7 +325,7 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
     v13 = *(unsigned int *)&this->__pad_240[504]; /*0x6744be*/
     __asm { fstp qword ptr [esi+430h] } /*0x6744c4*/
     *(double *)&this->__pad_240[496] = _RT1; /*0x6744c4*/
-    result = INIClass::ReadInt_Overwrite(((INIClass *)(v16)), (uint8_t *)aJumpjetcontrol, aWobbledeviatio, v13); /*0x6744d9*/
+    result = INIClass::ReadInt_Overwrite(((INIClass *)(v16)), (uint8_t *)aJumpjetcontrol, (unsigned char *)(aWobbledeviatio), v13); /*0x6744d9*/
     *(unsigned int *)&this->__pad_240[504] = result; /*0x6744de*/
     LOBYTE(result) = 1; /*0x6744e5*/
   }
@@ -1091,7 +1091,6 @@ int RulesClass::readWarheads()
   return (int)this->LargeVisceroid; /*0x67a8a3*/
 
 }
-}  // G42.18c ns repair
 // 0x67A8E0
 int  RulesClass::readParticleSystems(TechnoTypeClass * a2)
 {
@@ -1113,3 +1112,4 @@ int  RulesClass::readParticleSystems(TechnoTypeClass * a2)
   return result; /*0x67a924*/
 
 }
+}  // G42.18c ns repair

@@ -2421,7 +2421,7 @@ void sub_42CF80(int a2, IUnknown * aP2)
           sub_42D830((ObjectClass *)(&self->isOnMap + 24 * v3), &a2); /*0x42d06d*/
         }
         v13 = 24 * v3; /*0x42d079*/
-        v14 = *(unsigned int *)&stru_87F5F0.__pad_58[24 * v3 + 560]; /*0x42d082*/
+        v14 = *(unsigned int *)&dbl_87F648[24 * v3 + 560]; /*0x42d082*/
         v15 = v14 + 36 * (unsigned __int16)v9; /*0x42d088*/
         v31 = v15; /*0x42d08e*/
         a2 = v14 + 36 * v27; /*0x42d092*/
@@ -3637,7 +3637,7 @@ int sub_4291E0()
 namespace gamemd {
 void sub_429200()
 {
-    punk.field_0 = (struct IUnknownVtbl *)&off_7E36D4; /*0x429200*/
+    punk= (struct IUnknownVtbl *)&off_7E36D4; /*0x429200*/
 }
 } // namespace gamemd
 

@@ -617,7 +617,7 @@ struct Tactical {
 // --- flat members (END) ---
     void * ConstructTacticalSurface();  // 0x42A6D0
     int CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a3, unsigned int *a4, int *a5, int a6, int a7);  // G57w10-S raw 0x00484050 IUnknown 占位清除
-    int CalculateTacticalLighting(Tactical *aP1, unsigned int *a2, unsigned int *a3, int *a4, int *a5, int *a6, int *a7, __int64 a8);  // G57w10-S raw 0x00484180 IUnknown 占位清除
+ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8, void *a8_2);  // 0x00484180 g57w12-r raw-sync (def-form)
     unsigned int * MouseMove(unsigned int *aP1, unsigned int *aP2);  // 0x4A91B0
     int IsCellVisible(unsigned int *a2);  // G57w10-S raw 0x00568350 IUnknown 占位清除
     void * GetCellData();  // 0x58C2A0

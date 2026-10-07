@@ -42,7 +42,7 @@ Coord * * sub_77E110()
 
   if ( ppv ) /*0x77e117*/
   {
-    (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 124))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), *(unsigned int *)g_WOL_BuddyList.__pad_C); /*0x77e123*/
+    (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 124))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), *(unsigned int *)&dword_B779BC); /*0x77e123*/
     (*(void (**)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), dword_B779F0, ((char *)&stru_B7622C)); /*0x77e13c*/
   }
   ((Dialog*)0)->RefreshDialogsGame((int)((Dialog*)0)); /*0x77e141*/
@@ -88,13 +88,13 @@ int sub_785EA0()
   HANDLE * Current;
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
-  IDA_LOBYTE(stru_B77D80.HashTable_field_0x40) = 1; /*0x785eac*/
+  IDA_LOBYTE(byte_B77DC0) = 1; /*0x785eac*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x785ec0*/
   {
-    v1 = stru_B765EC.location[0]; /*0x785ec6*/
-    for ( i = 0; i < stru_B765EC.location[0]; v1 = stru_B765EC.location[0] ) /*0x785ecf*/
+    v1 = &dword_B76688; /*0x785ec6*/
+    for ( i = 0; i < &dword_B76688; v1 = &dword_B76688 ) /*0x785ecf*/
     {
-      v3 = *(ObjectClass **)(stru_B765EC.lastLayer + 4 * i); /*0x785ed6*/
+      v3 = *(ObjectClass **)(dword_B76680+ 4 * i); /*0x785ed6*/
       while ( v3 ) /*0x785edb*/
       {
         v4 = v3; /*0x785edd*/
@@ -103,18 +103,18 @@ int sub_785EA0()
         RA2_OPDEL(v4); /*0x785eee*/
       }
       ++i; /*0x785f00*/
-      *(unsigned int *)(stru_B765EC.lastLayer + 4 * i - 4) = 0; /*0x785f01*/
+      *(unsigned int *)(dword_B76680+ 4 * i - 4) = 0; /*0x785f01*/
     }
-    *(unsigned int *)&stru_B765EC.isInLogic = 0; /*0x785f18*/
+    *(unsigned int *)&dword_B76684= 0; /*0x785f18*/
     if ( v1 > dword_B766B0 ) /*0x785f24*/
     {
       do /*0x785f46*/
       {
-        if ( IDA_LOBYTE(stru_B765EC.lineTrailer) ) /*0x785f2d*/
+        if ( IDA_LOBYTE(byte_B76694) ) /*0x785f2d*/
           break; /*0x785f2d*/
-        ((HashMap *)((HashMap *)&stru_B765EC.lastLayer))->Shrink(); /*0x785f34*/
+        ((HashMap *)((HashMap *)&dword_B76680))->Shrink(); /*0x785f34*/
       }
-      while ( stru_B765EC.location[0] > (unsigned int)dword_B766B0 ); /*0x785f46*/
+      while ( &dword_B76688 > (unsigned int)dword_B766B0 ); /*0x785f46*/
     }
   }
   result = (HANDLE *)((int)((HANDLE *)((int)ppv)));
@@ -152,8 +152,8 @@ int sub_785EA0()
     v13 = (HWND)((Dialog*)(Dialog *)0xC4)->FindByHandle(); /*0x786033*/
     if ( v13 ) /*0x78603a*/
     {
-      stru_B77D80.HashTable_field_0x48 &= ~0x20u; /*0x786045*/
-      if ( !stru_B77D80.HashTable_field_0x48 ) /*0x78604b*/
+      dword_B77DC8&= ~0x20u; /*0x786045*/
+      if ( !dword_B77DC8) /*0x78604b*/
         CloseDialog( (HWND)(v13), 0); /*0x786051*/
     }
     Current = (HANDLE *)((HWND)((HANDLE *)((HWND)((Dialog *)0)->GetCurrent())));
@@ -259,9 +259,9 @@ void sub_72C830()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1357] ) /*0x72c83a*/
+  if ( &byte_B0FCFD ) /*0x72c83a*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1356] ) /*0x72c842*/
+    if ( &byte_B0FCFC ) /*0x72c842*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[568]; /*0x72c845*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[568] ) /*0x72c84d*/
@@ -269,7 +269,7 @@ void sub_72C830()
         ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[568]))->Destroy(); /*0x72c851*/
         RA2_OPDEL(v1); /*0x72c857*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1356] = 0; /*0x72c85f*/
+      &byte_B0FCFC = 0; /*0x72c85f*/
     }
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[568] = 0; /*0x72c86b*/
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1360] ) /*0x72c873*/
@@ -285,7 +285,7 @@ void sub_72C830()
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1364] = 0; /*0x72c894*/
     }
   }
-  g_BuildingLoadQueue_Array.__pad_F70[1357] = 0; /*0x72c89a*/
+  &byte_B0FCFD = 0; /*0x72c89a*/
 }
 } // namespace gamemd
 

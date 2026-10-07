@@ -342,7 +342,7 @@ int ScriptAction::CreatePlacementAction(unsigned int *a2, const void *a3)
     }
     if ( *(unsigned int *)(Type + 140) == -1 ) /*0x63408d*/
       *(unsigned int *)(Type + 140) = *(unsigned int *)(Type + 20) - 1; /*0x634093*/
-    return ScriptAction::PlaceObject((int)this, v5); /*0x6340a1*/
+    return ScriptAction::PlaceObject((void *)((int)this), v5); /*0x6340a1*/
 }
 } // namespace gamemd
 

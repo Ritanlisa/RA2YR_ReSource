@@ -1200,7 +1200,7 @@ LABEL_14:
       if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e552f*/
         || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
         && g_BuildingLoadQueue_Array.UnitExitSound > 0
-&& (result = (*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))( (int *)(&g_BuildingLoadQueue_Array.ToTile), *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound, 0), (unsigned char)result) )
+&& (result = (*(int (**)(int *, int, unsigned int))(stru_B0F698+ 8))( (int *)(&stru_B0F698), *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound, 0), (unsigned char)result) )
 
 
 
@@ -1275,22 +1275,21 @@ void TeamClass::Destructor(void * a2)
   }
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a2), 1); /*0x6e8eb6*/
   v15 = (gamemd::TeamClass *)(a2); /*0x6e8ecb*/
-v8 = (*(int (**)(int *, TeamClass **))(g_BuildingLoadQueue_Array.unknown__ + 16))( /*0x6e8ecf*/ &g_BuildingLoadQueue_Array.unknown__, (TeamClass **)(&v15));
+v8 = (*(int (**)(int *, TeamClass **))(dword_B0F6F0+ 16))( /*0x6e8ecf*/ &dword_B0F6F0, (TeamClass **)(&v15));
 
 
-  if ( v8 != -1 && v8 < g_BuildingLoadQueue_Array.TargetCoordOffset[1] ) /*0x6e8edf*/
+  if ( v8 != -1 && v8 < &dword_B0F700 ) /*0x6e8edf*/
   {
-    --g_BuildingLoadQueue_Array.TargetCoordOffset[1]; /*0x6e8ee4*/
+    --&dword_B0F700; /*0x6e8ee4*/
     for ( ; /*0x6e8eea*/
-          v8 < g_BuildingLoadQueue_Array.TargetCoordOffset[1];
-          *(unsigned int *)(g_BuildingLoadQueue_Array.Adjacent + 4 * v8 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.Adjacent
-                                                                                   + 4 * v8) )
+          v8 < &dword_B0F700;
+          *(unsigned int *)(dword_B0F6F4+ 4 * v8 - 4) = *(unsigned int *)(dword_B0F6F4+ 4 * v8) )
     {
       ++v8; /*0x6e8ef2*/
     }
   }
   v15 = (gamemd::TeamClass *)(a2); /*0x6e8f14*/
-v9 = (*(int (**)(int *, TeamClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x6e8f18*/ &g_BuildingLoadQueue_Array.PowerBonus, (TeamClass **)(&v15));
+v9 = (*(int (**)(int *, TeamClass **))(dword_B0F720+ 16))( /*0x6e8f18*/ &dword_B0F720, (TeamClass **)(&v15));
 
 
   if ( v9 != -1 && v9 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x6e8f28*/
@@ -1298,23 +1297,21 @@ v9 = (*(int (**)(int *, TeamClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16
     --g_BuildingLoadQueue_Array.Foundation[0]; /*0x6e8f2d*/
     for ( ; /*0x6e8f33*/
           v9 < g_BuildingLoadQueue_Array.Foundation[0];
-          *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v9 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain
-                                                                                     + 4 * v9) )
+          *(unsigned int *)(dword_B0F724+ 4 * v9 - 4) = *(unsigned int *)(dword_B0F724+ 4 * v9) )
     {
       ++v9; /*0x6e8f3b*/
     }
   }
   v15 = (gamemd::TeamClass *)(a2); /*0x6e8f5d*/
-v10 = (*(int (**)(int *, TeamClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e8f61*/ &g_BuildingLoadQueue_Array.LightVisibility, (TeamClass **)(&v15));
+v10 = (*(int (**)(int *, TeamClass **))(dword_B0F670+ 16))( /*0x6e8f61*/ &dword_B0F670, (TeamClass **)(&v15));
 
 
-  if ( v10 != -1 && v10 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x6e8f71*/
+  if ( v10 != -1 && v10 < dword_B0F680) /*0x6e8f71*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e8f76*/
+    --dword_B0F680; /*0x6e8f76*/
     for ( ; /*0x6e8f7c*/
-          v10 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v10 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                          + 4 * v10) )
+          v10 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v10 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v10) )
     {
       ++v10; /*0x6e8f84*/
     }

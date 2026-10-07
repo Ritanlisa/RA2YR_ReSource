@@ -198,16 +198,16 @@ unsigned char * BulletTypeClass::Construct(char *aP1)
     v3 = (unsigned int)(dword_A83C90++);
     *((unsigned int *)dword_A83C84 + v3) = (unsigned int)(this); /*0x46bd81*/
   }
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x46bdb8*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+  if ( dword_B0F680< dword_B0F678/*0x46bdb8*/
+    || (BYTE1(byte_B0F67C) || !dword_B0F678)
+    && &dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
 
 
 
   {
-    v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x46bdc5*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = (unsigned int)this;
+    v4 = dword_B0F680++; /*0x46bdc5*/
+    *(unsigned int *)(dword_B0F674+ 4 * v4) = (unsigned int)this;
   }
   return this->ObjectTypeClass; /*0x46bdd9*/
 
@@ -600,16 +600,15 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2, int a1, int aP0, int aP1, int 
   *(unsigned int *)this[12] = (unsigned int)(&vt_BulletTypeClass); /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this), 1); /*0x46c8b1*/
   v6 = (gamemd::BulletTypeClass *)(this); /*0x46c8c6*/
-v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/ &g_BuildingLoadQueue_Array.LightVisibility, (BulletTypeClass **)(&v6));
+v3 = (*(int (**)(int *, BulletTypeClass **))(dword_B0F670+ 16))( /*0x46c8ca*/ &dword_B0F670, (BulletTypeClass **)(&v6));
 
 
-  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x46c8da*/
+  if ( v3 != -1 && v3 < dword_B0F680) /*0x46c8da*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x46c8df*/
+    --dword_B0F680; /*0x46c8df*/
     for ( ; /*0x46c8e5*/
-          v3 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v3) )
+          v3 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v3 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v3) )
     {
       ++v3; /*0x46c8ed*/
     }

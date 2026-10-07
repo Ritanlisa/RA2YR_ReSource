@@ -179,7 +179,6 @@ char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, in
   return 0; /*0x5c0fbb*/
 
 }
-}  // G42.18c ns repair
 // 0x731CE0
 int Memory::Alloc76()
 {
@@ -187,3 +186,4 @@ int Memory::Alloc76()
   return System_Handle(76, 0); /*0x731cee*/
 
 }
+}  // G42.18c ns repair

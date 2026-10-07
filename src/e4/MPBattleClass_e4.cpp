@@ -557,7 +557,6 @@ void MPBattleClass::onAIJoined()
   dbl_ABFD90 = 0.0174532925199433 * 45.0; /*0x5d592c*/
 
 }
-}  // G42.18c ns repair
 // 0x5D8170
 MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
@@ -571,3 +570,4 @@ MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const cha
     return 0; /*0x5d81a6*/
 
 }
+}  // G42.18c ns repair

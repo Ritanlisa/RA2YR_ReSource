@@ -292,7 +292,6 @@ LRESULT Diplomacy_Helper(HWND hWnd, unsigned char a2)
 {
   return SendMessageA( (HWND)(hWnd), 0x4E5u, 0, (LPARAM)((LPARAM)(a2))); /*0x603dc5*/
 }
-} // namespace gamemd
 
 // 0x656580
 char * Diplomacy::GetField(int a2)
@@ -301,3 +300,4 @@ char * Diplomacy::GetField(int a2)
   return (unsigned char *)this + 24 * *(unsigned int *)(this + 3824) + 4728; /*0x656595*/
 
 }
+} // namespace gamemd

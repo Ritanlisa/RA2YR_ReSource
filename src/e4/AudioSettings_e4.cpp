@@ -113,19 +113,19 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
         if ( hWnd == GetDlgItem(hDlg, 1327) ) /*0x6b664c*/
         {
           v37 = (double)SendMessageA( (HWND)(hWnd), 0x400u, 0, 0) * 0.1; /*0x6b6674*/
-          Audio::SetScoreVolume((float *)dword_A8EB60, v37, 1); /*0x6b6677*/
+          Audio::SetScoreVolume((gamemd::Audio *)((float *)dword_A8EB60), v37, 1); /*0x6b6677*/
           return 0; /*0x6b6688*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1330) ) /*0x6b6695*/
         {
           v38 = (double)SendMessageA( (HWND)(hWnd), 0x400u, 0, 0) * 0.1; /*0x6b66bd*/
-          Audio::SetSoundVolume((float *)dword_A8EB60, v38, 1); /*0x6b66c0*/
+          Audio::SetSoundVolume((gamemd::Audio *)((float *)dword_A8EB60), v38, 1); /*0x6b66c0*/
           return 0; /*0x6b66d1*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1334) ) /*0x6b66de*/
         {
           v39 = (double)SendMessageA( (HWND)(hWnd), 0x400u, 0, 0) * 0.1; /*0x6b670a*/
-          Audio::SetVoiceVolume((float *)dword_A8EB60, v39, 1); /*0x6b670d*/
+          Audio::SetVoiceVolume((gamemd::Audio *)((float *)dword_A8EB60), v39, 1); /*0x6b670d*/
           return 0; /*0x6b671e*/
         }
       }
@@ -297,7 +297,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   if ( v33 ) /*0x6b68d9*/
   {
     v40 = (double)SendMessageA( (HWND)(v33), 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
-    Audio::SetScoreVolume((float *)dword_A8EB60, v40, 0); /*0x6b6900*/
+    Audio::SetScoreVolume((gamemd::Audio *)((float *)dword_A8EB60), v40, 0); /*0x6b6900*/
     if ( flt_A8EBA0 == 0.0 ) /*0x6b6916*/
     {
       v34 = dword_A83D14; /*0x6b6918*/
@@ -311,13 +311,13 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   if ( v35 ) /*0x6b6948*/
   {
     v41 = (double)SendMessageA( (HWND)(v35), 0x400u, 0, 0) * 0.1; /*0x6b696c*/
-    Audio::SetSoundVolume((float *)dword_A8EB60, v41, 0); /*0x6b696f*/
+    Audio::SetSoundVolume((gamemd::Audio *)((float *)dword_A8EB60), v41, 0); /*0x6b696f*/
   }
   v36 = GetDlgItem(hDlg, 1334); /*0x6b697a*/
   if ( v36 ) /*0x6b697e*/
   {
     v42 = (double)SendMessageA( (HWND)(v36), 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
-    Audio::SetVoiceVolume((float *)dword_A8EB60, v42, 0); /*0x6b69a5*/
+    Audio::SetVoiceVolume((gamemd::Audio *)((float *)dword_A8EB60), v42, 0); /*0x6b69a5*/
   }
   *(unsigned int *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
   return 0; /*0x6b6619*/

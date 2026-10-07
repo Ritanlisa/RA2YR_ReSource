@@ -159,7 +159,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   this->ownsFile = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
-  Base64Data = gamemd::INIClass::GetBase64Data((gamemd::INIClass *)this, g_INI_Key_Digest, (int)v20, 0x14u); /*0x47425b*/
+  Base64Data = gamemd::INIClass::GetBase64Data((gamemd::INIClass *)this, (char *)&g_INI_Key_Digest, (int)v20, 0x14u); /*0x47425b*/
   if ( !Base64Data ) /*0x474262*/
   {
     v7 = 2; /*0x474264*/

@@ -138,7 +138,7 @@ int AITriggerTypeClass::SaveToINI(int *a2, int a3)
 {
     int result; // eax
 
-    result = AbstractClass::SaveLoad_Prefix((int *)this->__pad_0, a2, a3); /*0x41e5cf*/
+    result = AbstractClass::SaveLoad_Prefix((int)((int *)this->__pad_0), a2, a3); /*0x41e5cf*/
     if ( result >= 0 ) /*0x41e5d6*/
       return 0; /*0x41e5d8*/
     return result; /*0x41e5da*/

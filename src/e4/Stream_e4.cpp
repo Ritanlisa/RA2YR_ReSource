@@ -133,8 +133,8 @@ char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a
   char v17; // al
   char v19; // [esp+13h] [ebp-1h] BYREF
 
-  CCFileClass::Construct3((int)((unsigned char *)this + 4)); /*0x75926a*/
-  Stream::CopyFromTemplate( (unsigned char *)this + 376); /*0x759275*/
+  CCFileClass::Construct3((gamemd::CCFileClass *)((int)((unsigned char *)this + 4))); /*0x75926a*/
+  Stream::CopyFromTemplate((gamemd::Stream *)((unsigned char *)this + 376)); /*0x759275*/
   *((unsigned int *)this + 331) = (unsigned int)(aP2); /*0x759282*/
   *((unsigned int *)this + 121) = (unsigned int)(this); /*0x759288*/
   *((unsigned int *)this + 101) = (unsigned int)(&v19); /*0x75928e*/

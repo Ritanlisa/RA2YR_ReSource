@@ -722,30 +722,29 @@ void * TEventClass::Fire(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)&vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(this, 1); /*0x71faa1*/
   v7 = this; /*0x71fab6*/
-v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/ g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2, (TEventClass **)(&v7));
+v3 = (*(int (**)(int *, TEventClass **))(&dword_B0F658 + 16))( /*0x71faba*/ &dword_B0F658, (TEventClass **)(&v7));
 
 
-  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.GateCloseDelay[0] ) /*0x71faca*/
+  if ( v3 != -1 && v3 < &dword_B0F668 ) /*0x71faca*/
   {
-    --g_BuildingLoadQueue_Array.GateCloseDelay[0]; /*0x71facf*/
+    --&dword_B0F668; /*0x71facf*/
     for ( ; /*0x71fad5*/
-          v3 < g_BuildingLoadQueue_Array.GateCloseDelay[0];
-          *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3) )
+          v3 < &dword_B0F668;
+          *(unsigned int *)(&dword_B0F65C + 4 * v3 - 4) = *(unsigned int *)(&dword_B0F65C + 4 * v3) )
     {
       ++v3; /*0x71fadd*/
     }
   }
   v7 = this; /*0x71faff*/
-v4 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x71fb03*/ &g_BuildingLoadQueue_Array.LightVisibility, (TEventClass **)(&v7));
+v4 = (*(int (**)(int *, TEventClass **))(dword_B0F670+ 16))( /*0x71fb03*/ &dword_B0F670, (TEventClass **)(&v7));
 
 
-  if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x71fb13*/
+  if ( v4 != -1 && v4 < dword_B0F680) /*0x71fb13*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x71fb18*/
+    --dword_B0F680; /*0x71fb18*/
     for ( ; /*0x71fb1e*/
-          v4 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v4) )
+          v4 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v4 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v4) )
     {
       ++v4; /*0x71fb26*/
     }

@@ -145,10 +145,10 @@ int sub_622610()
     dword_AC48EC = result; /*0x62261a*/
     v2 = result == 0; /*0x62261f*/
   }
-  if ( v2 && stru_887598.lineTrailer ) /*0x62262b*/
+  if ( v2 && dword_887640) /*0x62262b*/
   {
-    if ( !(*(uint8_t (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->MouseClass_field_0x70))(stru_887598.lineTrailer) ) /*0x62262f*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_60))(stru_887598.lineTrailer);  /*0x62263e*/
+    if ( !(*(uint8_t (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))(dword_887640) ) /*0x62262f*/
+      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_60))(dword_887640);  /*0x62263e*/
     return dword_AC48EC; /*0x622641*/
   }
   return result; /*0x622646*/
@@ -168,11 +168,11 @@ char sub_647040()
   if ( dword_A83D4C->__pad_140[182] ) /*0x647060*/
     return 0; /*0x647060*/
   v1 = (char *)(((EventClass *)v3)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 0xCu)); /*0x647074*/
-  if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647083*/
+  if ( (int)dword_A802C8>= 128 ) /*0x647083*/
     return 0; /*0x6470dc*/
   qmemcpy( (char *)&byte_A802D4 + 111 * dword_A802D0, (const void *)(v1), 0x6Fu); /*0x6470a1*/
   (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6470b4*/
-  ++stru_A80220.lineTrailer; /*0x6470cb*/
+  ++dword_A802C8; /*0x6470cb*/
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6470d0*/
   return 1; /*0x6470d8*/
 }
@@ -191,11 +191,11 @@ char sub_6470F0()
   if ( dword_A83D4C->__pad_140[182] ) /*0x647110*/
     return 0; /*0x647110*/
   v1 = (char *)(((EventClass *)v3)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 0x22u)); /*0x647124*/
-  if ( (int)stru_A80220.lineTrailer >= 128 ) /*0x647133*/
+  if ( (int)dword_A802C8>= 128 ) /*0x647133*/
     return 0; /*0x64718c*/
   qmemcpy( (char *)&byte_A802D4 + 111 * dword_A802D0, (const void *)(v1), 0x6Fu); /*0x647151*/
   (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x647164*/
-  ++stru_A80220.lineTrailer; /*0x64717b*/
+  ++dword_A802C8; /*0x64717b*/
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x647180*/
   return 1; /*0x647188*/
 }
@@ -306,12 +306,12 @@ void * sub_730F30()
     if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1408) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x730f5a*/
     {
       v2 = (char *)(((EventClass *)v3)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 0x2Du)); /*0x730f6c*/
-      if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
+      if ( (int)dword_A802C8< 128 ) /*0x730f7b*/
       {
         qmemcpy( (char *)&byte_A802D4 + 111 * dword_A802D0, (const void *)(v2), 0x6Fu); /*0x730f99*/
         (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x730fac*/
         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x730fc3*/
-        ++stru_A80220.lineTrailer; /*0x730fc9*/
+        ++dword_A802C8; /*0x730fc9*/
       }
       dword_84555C = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730fd3*/
       return *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730fce*/
@@ -392,13 +392,13 @@ AbstractClass * * sub_7318F0()
               && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5307) )
             {
               result = (char *)(((EventClass*)v2)->Add2((int)dword_A83D4C->Object_field_0x30, 3u, (int)result));
-              if ( (int)stru_A80220.lineTrailer < 128 ) /*0x7319ab*/
+              if ( (int)dword_A802C8< 128 ) /*0x7319ab*/
               {
                 qmemcpy( (char *)&byte_A802D4 + 111 * dword_A802D0, (const void *)(result), 0x6Fu); /*0x7319c9*/
                 (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x7319dc*/
-                result = (char *)stru_A80220.lineTrailer + 1; /*0x7319f2*/
+                result = (char *)dword_A802C8+ 1; /*0x7319f2*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x7319f3*/
-                ++stru_A80220.lineTrailer; /*0x7319f9*/
+                ++dword_A802C8; /*0x7319f9*/
               }
             }
           }
@@ -1776,7 +1776,7 @@ char sub_731A10()
 
   v0 = (unsigned int **)UI_Delete_Delete_63AC60(); /*0x731a10*/
   if ( v0 ) /*0x731a17*/
-    return UI_Delete_Delete(v0); /*0x731a1b*/
+    return UI_Delete_Delete((gamemd::ObjectClass *)(v0)); /*0x731a1b*/
   else
 // 0x4311c0
     return ((Network *)(g_VisibilitySystem))->SendBeaconDelete(-1, -1); /*0x731a29*/
@@ -1996,7 +1996,7 @@ void sub_7A2750()
   Current = (HWND)(Dialog::GetCurrent()); /*0x7a2753*/
   DlgItem = GetDlgItem(Current, 1439); /*0x7a2768*/
   ((String *)((char **)&v4))->Assign(0); /*0x7a276c*/
-  v2 = SendMultiplayerStartSignal_Start_77EBA0((const char **)&v4) != 1; /*0x7a2781*/
+  v2 = SendMultiplayerStartSignal_Start_77EBA0((gamemd::ObjectClass *)((const char **)&v4)) != 1; /*0x7a2781*/
   j_DeleteAndZero( (void *)(&v4)); /*0x7a2784*/
   if ( v2 ) /*0x7a278b*/
   {

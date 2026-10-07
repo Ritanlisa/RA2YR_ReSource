@@ -255,22 +255,21 @@ SuperClass * * SuperClass::CleanupMembers(void *a1)
     while ( v6 < dword_A83CC8 ); /*0x6cb23d*/
   }
   v9 = (int)(this); /*0x6cb24f*/
-v7 = (*(int (**)(int *, int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6cb253*/ &g_BuildingLoadQueue_Array.LightVisibility, (int *)(&v9));
+v7 = (*(int (**)(int *, int *))(dword_B0F670+ 16))( /*0x6cb253*/ &dword_B0F670, (int *)(&v9));
 
 
-  if ( v7 != -1 && v7 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x6cb263*/
+  if ( v7 != -1 && v7 < dword_B0F680) /*0x6cb263*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6cb268*/
+    --dword_B0F680; /*0x6cb268*/
     for ( ; /*0x6cb26e*/
-          v7 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v7) )
+          v7 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v7 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v7) )
     {
       ++v7; /*0x6cb276*/
     }
   }
   v9 = (int)(this); /*0x6cb298*/
-v8 = (*(int (**)(char *, int *))(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E88 + 16))( /*0x6cb29c*/ g_BuildingLoadQueue_Array.__pad_E88, (int *)(&v9));
+v8 = (*(int (**)(char *, int *))(*(unsigned int *)&dword_B0F6C8+ 16))( /*0x6cb29c*/ &dword_B0F6C8, (int *)(&v9));
 
 
   if ( v8 != -1 && v8 < *(int *)&g_BuildingLoadQueue_Array.__pad_E88[16] ) /*0x6cb2ac*/

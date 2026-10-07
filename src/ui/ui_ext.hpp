@@ -185,7 +185,7 @@ class Diplomacy
 {
 public:
     // IDA 0x48B2A0 area
-    int32_t GetField(HouseClass* house) const;  // 0x656580
+char * GetField(int a2);  // 0x00656580 g57w12-r raw-sync (def-form)
     // IDA 0x48B2A0 area
     static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x657DA0
 

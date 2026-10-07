@@ -133,16 +133,15 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     while ( v4 < g_GameObjectCleanup ); /*0x6e5d2e*/
   }
   v10 = (gamemd::AbstractTypeClass *)(this);
-v7 = (*(int (**)(int *, AbstractTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5d44*/ &g_BuildingLoadQueue_Array.LightVisibility, (AbstractTypeClass **)(&v10));
+v7 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0F670+ 16))( /*0x6e5d44*/ &dword_B0F670, (AbstractTypeClass **)(&v10));
 
 
-  if ( v7 != -1 && v7 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x6e5d54*/
+  if ( v7 != -1 && v7 < dword_B0F680) /*0x6e5d54*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e5d59*/
+    --dword_B0F680; /*0x6e5d59*/
     for ( ; /*0x6e5d5f*/
-          v7 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v7) )
+          v7 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v7 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v7) )
     {
       ++v7; /*0x6e5d67*/
     }
@@ -230,11 +229,8 @@ int TagTypeClass::GetParameter(char * a2)
     wsprintfA(Source, "%d,%s,%s", *((unsigned int *)this + 39), (const char *)this + 100, (const char *)(v3 + 36)); /*0x6e61b4*/
   else
     wsprintfA(Source, "%s,<none>", (const char *)this + 100); /*0x6e6181*/
-  INIClass::SetString( /*0x6e6199*/
-    a2,
-    (uint8_t *)&stru_842C2C.SuperWeaponClass_field_0x10,
-    (char *)&this->arrayIndex,
-    Source);
+  INIClass::SetString((unsigned char *)(/*0x6e6199*/
+    a2), (uint8_t *)&stru_842C2C.SuperWeaponClass_field_0x10, (char *)&this->arrayIndex, Source);
   return 1; /*0x6e61db*/
 
 }
@@ -247,7 +243,7 @@ AbstractTypeClass * TagTypeClass::FindOrCreate(ObjectClass * Source)
   int v2; // esi
   char *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x6e632c*/
+  if ( !_strcmpi(g_Str__none_, (const char *)(Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x6e632c*/
     return 0; /*0x6e638f*/
   v2 = 0; /*0x6e633d*/
   if ( g_MultiplayerCleanup <= 0 ) /*0x6e6341*/

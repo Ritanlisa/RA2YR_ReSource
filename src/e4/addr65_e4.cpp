@@ -957,7 +957,7 @@ int sub_6586D0()
   LABEL_7:
     ((Dialog*)Dialog)->Destroy(); /*0x658733*/
   }
-  ((Timer*)(*(Timer **)&((unsigned int *)(stru_87F5F0.__pad_58))[296]))->PumpMessages(); /*0x658740*/
+  ((Timer*)(*(Timer **)&((unsigned int *)(&dbl_87F648))[296]))->PumpMessages(); /*0x658740*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3); /*0x658758*/
   return ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x658763*/
 }
@@ -1607,7 +1607,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
         NeighbourContent = (Cell *)((Cell *)(v17))->GetNeighbourContent(v18); /*0x65da48*/
       v20 = (ObjectClass *)((Cell *)(NeighbourContent))->IsBridge(); /*0x65da4f*/
       v20 = v20; /*0x65da54*/
-      if ( v20 && v20->health > 0 && ProcessDataCellClass(v20) ) /*0x65da63*/
+      if ( v20 && v20->health > 0 && ProcessDataCellClass((gamemd::TechnoClass *)(v20)) ) /*0x65da63*/
         v16 = v20; /*0x65da6c*/
       ++v18; /*0x65da6e*/
     }
@@ -2676,9 +2676,9 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
   int v12; // [esp+1Ch] [ebp-4h]
 
   v4 = aP0; /*0x65fa7c*/
-  if ( byte_7F09A4[16 * aP0] && (v5 = 0, stru_B04DA8.LoadGame_field_0x10 > 0) ) /*0x65faa1*/
+  if ( byte_7F09A4[16 * aP0] && (v5 = 0, dword_B04DB8> 0) ) /*0x65faa1*/
   {
-    LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x65faab*/
+    LoadGame_field_0x04 = dword_B04DAC; /*0x65faab*/
     while ( 1 ) /*0x65fab1*/
     {
       v7 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v5); /*0x65fab1*/
@@ -2701,12 +2701,12 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
         }
         Math::Sqrt(v9); /*0x65faf4*/
         IDA_LOWORD(result) = Math::RoundToInt(v3); /*0x65fafc*/
-        LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x65fb01*/
+        LoadGame_field_0x04 = dword_B04DAC; /*0x65fb01*/
         result = (int16_t)result; /*0x65fb07*/
-        if ( (int16_t)result < dword_7F0998[4 * **(unsigned int **)(stru_B04DA8.LoadGame_field_0x04 + 4 * v5)] ) /*0x65fb18*/
+        if ( (int16_t)result < dword_7F0998[4 * **(unsigned int **)(dword_B04DAC+ 4 * v5)] ) /*0x65fb18*/
           break; /*0x65fb18*/
       }
-      if ( ++v5 >= stru_B04DA8.LoadGame_field_0x10 ) /*0x65fb22*/
+      if ( ++v5 >= dword_B04DB8) /*0x65fb22*/
       {
         v4 = aP0; /*0x65fb24*/
         goto LABEL_8; /*0x65fb24*/

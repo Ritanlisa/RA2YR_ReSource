@@ -242,7 +242,7 @@ int MapClass::SetCellFlagsAlongPath(unsigned short *aP1, unsigned short *a2)
 
   v4 = (unsigned short *)(aP1); /*0x4a95a2*/
   LOWORD(result) = (unsigned short)(*aP1); /*0x4a95aa*/
-  if ( *aP1 != *(unsigned short *)&stru_8A0390.bombVisible || aP1[1] != *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a95c2*/
+  if ( *aP1 != *(unsigned short *)&dword_8A03F8|| aP1[1] != *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a95c2*/
   {
     v6 = *(int16_t **)&(&this->__pad_1170)[12]; /*0x4a95c4*/
     v7 = (char)a2; /*0x4a95ca*/
@@ -405,7 +405,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2, void * aIsomappack, void * a
             DSurface_Alternate,
             0,
             0);
-    INIClass::ReadBase64Data(a2, (uint8_t *)aIsomappack5, v12, v11); /*0x4ad9ee*/
+    INIClass::ReadBase64Data((gamemd::INIClass *)(a2), (uint8_t *)aIsomappack5, v12, v11); /*0x4ad9ee*/
     (*((void (**)(DSurface *))DSurface_Alternate->DSurface_field_0x0 + 24))( (DSurface *)(DSurface_Alternate)); /*0x4ad9fb*/
   }
   (*((void (**)(DSurface *))DSurface_Alternate->DSurface_field_0x0 + 24))( (DSurface *)(DSurface_Alternate)); /*0x4ada06*/
@@ -4361,7 +4361,7 @@ int MapClass::UnselectAll_ClearLimboLaunchers()
     (*(void (**)(unsigned int))(***(unsigned int ***)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 336))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x48dca2*/
   Selection::SetCurrent(0); /*0x48dcb3*/
   v4 = (int *)&g_VisibilitySystem; /*0x48dcb8*/
-  result = g_VisibilitySystem.customSound_controller[4]; /*0x431060*/
+  result = &dword_89C410; /*0x431060*/
   if ( result ) /*0x431065*/
   {
     v2 = 8; /*0x431069*/

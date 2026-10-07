@@ -128,9 +128,9 @@ int GameClass::loadScenarioFiles(int aP1)
     GetClientRect((HWND)(g_hWnd), &Rect); /*0x5d227e*/
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d228f*/
     v4 = (gamemd::ObjectClass *)(aP1); /*0x5d229b*/
-    if ( stru_887598.lineTrailer ) /*0x5d22a1*/
-      (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))(  /*0x5d22a8*/
-        stru_887598.lineTrailer,
+    if ( dword_887640) /*0x5d22a1*/
+      (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))(  /*0x5d22a8*/
+        dword_887640,
         aP1,
         0);
     result = this->GameClass_field_0x4[0]; /*0x5d22ab*/
@@ -163,8 +163,8 @@ int GameClass::loadScenarioFiles(int aP1)
       while ( v5 < this->GameClass_field_0x4[0] ); /*0x5d231d*/
     }
     this->GameClass_field_0x4[0] = 0; /*0x5d2320*/
-    if ( stru_887598.lineTrailer ) /*0x5d2330*/
-return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))( /*0x5d2337*/ stru_887598.lineTrailer, (int)(v4), 0);
+    if ( dword_887640) /*0x5d2330*/
+return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x5d2337*/ dword_887640, (int)(v4), 0);
 
 
 
@@ -481,13 +481,13 @@ ObjectClass * * GameClass::Shutdown(void *a1_1)
   }
   CoDisconnectObject((LPUNKNOWN)(&punk), 0); /*0x6becc1*/
   OleUninitialize(); /*0x6becc7*/
-  if ( stru_887598.lineTrailer ) /*0x6becd5*/
+  if ( dword_887640) /*0x6becd5*/
   {
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->u32_50))(stru_887598.lineTrailer);  /*0x6becd9*/
-    if ( stru_887598.lineTrailer ) /*0x6bece4*/
-      (**(void (***)(void *, int))stru_887598.lineTrailer)(stru_887598.lineTrailer, 1); /*0x6bece9*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x6becd9*/
+    if ( dword_887640) /*0x6bece4*/
+      (**(void (***)(void *, int))dword_887640)(dword_887640, 1); /*0x6bece9*/
   }
-  stru_887598.lineTrailer = 0; /*0x6becf0*/
+  dword_887640= 0; /*0x6becf0*/
   if ( byte_B0BCF4 ) /*0x6becfc*/
   {
     if ( dword_B0BCF0 ) /*0x6bed06*/

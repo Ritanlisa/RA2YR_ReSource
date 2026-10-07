@@ -498,11 +498,11 @@ unsigned int * Tactical::MouseMove(unsigned int *aP1, unsigned int *aP2)
   unsigned char v31[8]; // [esp+1Ch] [ebp-8h] BYREF
 
   v3 = (unsigned int *)*aP2; /*0x4a91ba*/
-  v4 = (uint16_t)*aP2 == *(unsigned short *)&stru_8A0390.bombVisible; /*0x4a91bd*/
+  v4 = (uint16_t)*aP2 == *(unsigned short *)&dword_8A03F8; /*0x4a91bd*/
   aP2 = (unsigned int *)*aP2; /*0x4a91c6*/
   if ( v4 && HIWORD(aP2) == *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a91dc*/
   {
-v6 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0))( /*0x4a91ef*/ stru_887598.lineTrailer, (int *)(&v29));
+v6 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_D0))( /*0x4a91ef*/ dword_887640, (int *)(&v29));
 
 
     v7 = DSurface_ViewBounds.field_0; /*0x4a91f2*/
@@ -515,7 +515,7 @@ v6 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)&((MouseClass *)stru_88
       || v11 < (int)DSurface_ViewBounds.field_4
       || v11 >= (int)DSurface_ViewBounds.field_4 + *(unsigned int *)&DSurface_ViewBounds.__pad_8[4] )
     {
-v14 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0))( /*0x4a9284*/ stru_887598.lineTrailer, (unsigned char *)(v31));
+v14 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_D0))( /*0x4a9284*/ dword_887640, (unsigned char *)(v31));
 
 
       v15 = v14[1]; /*0x4a9292*/
@@ -525,14 +525,14 @@ v14 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((
     }
     else
     {
-v12 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_D0))( /*0x4a9232*/ stru_887598.lineTrailer, (unsigned char *)(v31));
+v12 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_D0))( /*0x4a9232*/ dword_887640, (unsigned char *)(v31));
 
 
       v29 = *v12; /*0x4a9237*/
       v30 = v12[1]; /*0x4a924d*/
       v13 = (unsigned int *)*((TacticalClass *)(RadarClass *)&v28)->PixelToCellCheck( &v29); /*0x4a9256*/
       v28 = v13; /*0x4a925f*/
-      if ( v13 == *(unsigned int **)&stru_8A0390.bombVisible ) /*0x4a9263*/
+      if ( v13 == *(unsigned int **)&dword_8A03F8) /*0x4a9263*/
         goto LABEL_11; /*0x4a9263*/
       v3 = v13; /*0x4a9273*/
     }
@@ -566,15 +566,14 @@ LABEL_11:
       if ( *((unsigned int *)this + 1119) ) /*0x4a9371*/
       {
         if ( v3 != *((unsigned int **)this + 1117) /*0x4a93b0*/
-          && (*((unsigned short *)this + 2234) != *(unsigned short *)&stru_8A0390.bombVisible
-           || *((unsigned short *)this + 2235) != *(unsigned short *)&stru_8A0390.alignmentPadding69[1]) )
+          && (*((unsigned short *)this + 2234) != *(unsigned short *)&dword_8A03F8|| *((unsigned short *)this + 2235) != *(unsigned short *)&stru_8A0390.alignmentPadding69[1]) )
         {
           v23 = *((unsigned short *)this + 2235) + *((unsigned short *)this + 2237); /*0x4a93c7*/
           LOWORD(aP2) = *((unsigned short *)this + 2234) + *((unsigned short *)this + 2236); /*0x4a93d0*/
           HIWORD(aP2) = v23; /*0x4a93d5*/
           ((MapClass *)((MapClass *)this))->SetCellFlagsAlongPath( (unsigned short *)(&aP2), 0); /*0x4a93e9*/
         }
-        if ( v3 != *(unsigned int **)&stru_8A0390.bombVisible ) /*0x4a93f5*/
+        if ( v3 != *(unsigned int **)&dword_8A03F8) /*0x4a93f5*/
         {
           v24 = *((unsigned short *)this + 2236) + (unsigned short)v3; /*0x4a940a*/
           HIWORD(aP2) = HIWORD(v3) + *((unsigned short *)this + 2237); /*0x4a9414*/
@@ -1091,7 +1090,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
     {
       if ( g_TacticalClass_Instance ) /*0x6930dc*/
       {
-        if ( stru_887598.lineTrailer ) /*0x6930e8*/
+        if ( dword_887640) /*0x6930e8*/
         {
           LOBYTE(v5) = (unsigned char)a2; /*0x6930f5*/
           if ( !((unsigned int *)&stru_A8EB00)[440] || *a2 == 533 ) /*0x693101*/
@@ -1153,7 +1152,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
                       dword_884D38 = v12; /*0x69332d*/
                       dword_884D3C = v13; /*0x693339*/
                       byte_884D40 = 0; /*0x69333f*/
-                      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x693347*/
+                      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x693347*/
                     }
                     LOBYTE(v5) = (uint8_t)SetCapture(g_hWnd); /*0x693351*/
                     *((unsigned char *)this + 21850) = 1; /*0x693357*/

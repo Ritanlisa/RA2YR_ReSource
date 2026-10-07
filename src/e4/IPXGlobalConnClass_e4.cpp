@@ -159,7 +159,7 @@ LABEL_13:
     v18 = qword_A8DBA4; /*0x540540*/
     v12 = *(unsigned int *)&dword_841F3C; /*0x54054a*/
     v19 = dword_A8DBAC; /*0x540554*/
-    if ( (uint8_t)((GUID *)(qword_A8DBB0.__pad_0))->Compare(*dword_A8DA78 + 40) /*0x54057b*/
+    if ( (uint8_t)((GUID *)(&qword_A8DBB0))->Compare(*dword_A8DA78 + 40) /*0x54057b*/
       && (uint8_t)((NetworkID *)((bool *)v18.__pad_0))->Compare(*dword_A8DA78 + 40) )
     {
       v13 = a2 + 8; /*0x540584*/
@@ -181,12 +181,12 @@ LABEL_13:
     *(unsigned short *)(a2 + 12) = 0; /*0x5405bb*/
     *(unsigned int *)(a2 + 8) = 0; /*0x5405c1*/
   }
-  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5405cf*/
+  if ( *(unsigned int *)&dword_887628) /*0x5405cf*/
   {
     LOBYTE(v13) = LOBYTE(v7[3].IPXGlobalConnClass_field_0x20) == 0; /*0x5405da*/
-    (*(void (**)(unsigned int, int, int, NetworkID *, int, int, int, int))(**(unsigned int **)&stru_887598.isAliveFlag /*0x5405f2*/
+    (*(void (**)(unsigned int, int, int, NetworkID *, int, int, int, int))(**(unsigned int **)&dword_887628/*0x5405f2*/
                                                                               + 12))(
-      *(unsigned int *)&stru_887598.isAliveFlag,
+      *(unsigned int *)&dword_887628,
       v8,
       arg4,
       &v18,

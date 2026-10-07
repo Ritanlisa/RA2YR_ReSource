@@ -196,7 +196,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
           }
         }
                 Debug::Log("Calling timeKillEvent\n") /*G57c1: IDA 0x41191e push offset aCallingTimekil*/;
-        timeKillEvent((*(unsigned int *)(v6 + 96))); /*0x41192a*/
+        timeKillEvent((void *)((*(unsigned int *)(v6 + 96)))); /*0x41192a*/
         *(unsigned int *)(v6 + 96) = 0; /*0x411935*/
                 Debug::Log("Calling timeEndPeriod\n") /*G57c1: IDA 0x411938 push offset aCallingTimeend*/;
         timeEndPeriod( (void *)((void *)(0x10u))); /*0x411942*/

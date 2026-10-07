@@ -192,15 +192,7 @@ LABEL_162:
         return 1;
       int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 5312) * 900.0);
       StringCSF = (wchar_t *)(GetStringCSF( (wchar_t *)(v44), 0, (const char *)(&((unsigned int *)(stru_830620))[75224]), 1766));
-      MessageListClass::AddMessage(
-        &((unsigned int *)(HouseClass_Player))[32532],
-        0,
-        0,
-        (CellStruct *)StringCSF,
-        PlayerColorScheme,
-        (IUnknown *)0x4046,
-        v121,
-        0);
+      MessageListClass::AddMessage((gamemd::MessageListClass *)(&((unsigned int *)(HouseClass_Player))[32532]), 0, 0, (wchar_t *)((CellStruct *)StringCSF), PlayerColorScheme, (IUnknown *)0x4046, v121, 0);
       return 1;
     case 0xC:
       if ( !*(unsigned int *)((unsigned int)(a1)+ 80) )
@@ -559,7 +551,7 @@ LABEL_157:
       return ((TActionClass *)(int *)a1)->SpawnMeteorShower( aP1, (int)v9, (int)a5, aP4);
     case 0x3B:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)(a1 + 144));
-      MapClass::TriggerEVA((IUnknown *)&v112);
+      MapClass::TriggerEVA((short *)((IUnknown *)&v112));
       return 1;
     case 0x3C:
       char v31 = 0;
@@ -602,7 +594,7 @@ LABEL_157:
               {
                 if ( ((LinkedList_flat *)attachedTag)->Contains( (IUnknown *)(a5)) && v35->HasPower )
                 {
-                  BuildingClass::PowerOff((int)v35);
+                  BuildingClass::PowerOff((gamemd::BuildingClass *)((int)v35));
                   bl75 = 1;
                 }
               }

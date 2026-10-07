@@ -10,6 +10,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "classes/Array_e4.hpp"  // G42.57w9 method-carrier supply
+namespace gamemd {  // g57w12-r nsfix (orphan re-wrap)
 
 // 0x543780
 IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
@@ -30,7 +31,7 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
     (*(void (**)(IsometricTileClass *, int))(*(unsigned int *)this + 292))(this, 1); /*0x543818*/
   }
   if ( *(int *)&stru_87F5F0.__pad_58[280] < *(int *)&stru_87F5F0.__pad_58[272] /*0x543855*/
-    || (stru_87F5F0.__pad_58[277] || !*(unsigned int *)&stru_87F5F0.__pad_58[272])
+    || (&byte_87F75D || !*(unsigned int *)&stru_87F5F0.__pad_58[272])
     && *(int *)&stru_87F5F0.__pad_58[284] > 0
     && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_87F5F0.__pad_58[264] + 8))(
          &stru_87F5F0.__pad_58[264],
@@ -43,3 +44,4 @@ IsometricTileClass::IsometricTileClass(int aP1, unsigned short *aP2)
   return this; /*0x543876*/
 
 }
+}  // namespace gamemd  // g57w12-r nsfix

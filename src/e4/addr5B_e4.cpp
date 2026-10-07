@@ -640,7 +640,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
 
   Ticks = TimerGetTicks(); /*0x5bb2af*/
   v13 = 0; /*0x5bb2b3*/
-  if ( !_strcmpi((const char *)(byte_A8B8E0), aRandmapSed) ) /*0x5bb2b7*/
+  if ( !_strcmpi((const char *)(byte_A8B8E0), (const char *)(aRandmapSed)) ) /*0x5bb2b7*/
   {
     Debug::Log("Starting map preview upload\n"); /*0x5bb2cc G57w11: IDA push seq @ 0x5bb2cc*/
     memset( (void *)(v20), 0, sizeof(v20)); /*0x5bb2e2*/
@@ -683,7 +683,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
       if ( !v3 ) /*0x5bb3dc*/
       {
   LABEL_15:
-        Debug::Log(); /*0x5bb3de*/
+        Debug::Log("Failed to get SERIAL_PREVIEW_ACK\n"); /*0x5bb3de G57w12: IDA push seq @ 0x5bb3de*/
         return; /*0x5bb3f5*/
       }
     }
@@ -1158,14 +1158,14 @@ ObjectClass * * sub_5BF8C0()
   {
     GetClientRect((HWND)(g_hWnd), &Rect); /*0x5bf8e0*/
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5bf8f1*/
-    v2 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5bf90c*/
-    v3 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5bf90f*/
-    v4 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5bf911*/
-    v5[2] = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 60); /*0x5bf914*/
+    v2 = *(unsigned int *)(&dbl_ABECE0 + 64); /*0x5bf90c*/
+    v3 = Rect.top + *(unsigned int *)(&dbl_ABECE0 + 56); /*0x5bf90f*/
+    v4 = *(unsigned int *)(&dbl_ABECE0 + 52); /*0x5bf911*/
+    v5[2] = *(unsigned int *)(&dbl_ABECE0 + 60); /*0x5bf914*/
     v5[1] = v3; /*0x5bf91a*/
     v5[0] = Rect.left + v4; /*0x5bf924*/
     v5[3] = v2; /*0x5bf928*/
-return (*((int (**)(DSurface *, unsigned int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5bf93d*/ + 2))( (DSurface *)(g_DSurface_Primary), (unsigned int *)(v5), *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8), g_MissionQueueFrame.localVariables[604] + 36, 0, 1);
+return (*((int (**)(DSurface *, unsigned int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5bf93d*/ + 2))( (DSurface *)(g_DSurface_Primary), (unsigned int *)(v5), *(unsigned int *)(&dbl_ABECE0 + 8), &dbl_ABECE0 + 36, 0, 1);
 
 
 
@@ -1202,14 +1202,14 @@ AbstractClass * * sub_5BF950(int a2, int a3)
   {
     (*((void (**)(ObjectClass *, int, unsigned int, int, unsigned int, int, int, int))g_DSurface_Hidden->vtable1 + 2))( /*0x5bf983*/
       g_DSurface_Hidden,
-      g_MissionQueueFrame.localVariables[604] + 36,
-      *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8),
-      g_MissionQueueFrame.localVariables[604] + 36,
+      &dbl_ABECE0 + 36,
+      *(unsigned int *)(&dbl_ABECE0 + 8),
+      &dbl_ABECE0 + 36,
       0,
       1,
       a2,
       a3);
-    v4 = *(unsigned int **)(g_MissionQueueFrame.localVariables[604] + 72); /*0x5bf98c*/
+    v4 = *(unsigned int **)(&dbl_ABECE0 + 72); /*0x5bf98c*/
     if ( v4 ) /*0x5bf991*/
     {
       if ( *v4 ) /*0x5bf997*/
@@ -1237,10 +1237,10 @@ AbstractClass * * sub_5BF950(int a2, int a3)
     }
     GetClientRect((HWND)(g_hWnd), &Rect); /*0x5bfa30*/
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5bfa41*/
-    v8 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5bfa59*/
-    v9 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 60); /*0x5bfa5c*/
-    v10 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5bfa61*/
-    v15[1] = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5bfa6f*/
+    v8 = *(unsigned int *)(&dbl_ABECE0 + 64); /*0x5bfa59*/
+    v9 = *(unsigned int *)(&dbl_ABECE0 + 60); /*0x5bfa5c*/
+    v10 = *(unsigned int *)(&dbl_ABECE0 + 52); /*0x5bfa61*/
+    v15[1] = Rect.top + *(unsigned int *)(&dbl_ABECE0 + 56); /*0x5bfa6f*/
     v15[0] = Rect.left + v10; /*0x5bfa7c*/
     v15[2] = v9; /*0x5bfa80*/
     v15[3] = v8; /*0x5bfa84*/
@@ -1349,7 +1349,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   else
     v20 = (char *)(0); /*0x5bfbe0*/
   *(unsigned int *)v15 = (unsigned int)v20; /*0x5bfbe4*/
-  if ( !v20 || (Render_Load_759830((ObjectClass *)v20, a11), !Render_Load_7597A0(*(ObjectClass **)v15)) ) /*0x5bfbf9*/
+  if ( !v20 || (Render_Load_759830((ObjectClass *)v20, a11), !Render_Load_7597A0((gamemd::TechnoClass *)(*(ObjectClass **)v15))) ) /*0x5bfbf9*/
   {
     BinkMovie::Cleanup(  (BinkMovie *)v15); /*0x5bfc04*/
     RA2_OPDEL((void *)v15); /*0x5bfc0a*/
@@ -1357,7 +1357,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   }
   Width = MovieClass::GetWidth(*(MovieClass **)v15); /*0x5bfc2a*/
   Height = MovieClass::GetHeight(*(MovieClass **)v15); /*0x5bfc35*/
-  _759EA0 = Render_Load_759EA0(*(ObjectClass **)v15); /*0x5bfc43*/
+  _759EA0 = Render_Load_759EA0((gamemd::TechnoClass *)(*(ObjectClass **)v15)); /*0x5bfc43*/
   if ( _759EA0 == 4 ) /*0x5bfc47*/
     _759EA0 = 1; /*0x5bfc49*/
   if ( !a3 && !a4 && !a5 && !a6 ) /*0x5bfc73*/
@@ -1441,13 +1441,13 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   if ( v35 == 1 || v35 == 4 ) /*0x5bfe8a*/
   {
     Status = DDraw_GetStatus(); /*0x5bfe8c*/
-    Render_Load_759F20(*(ObjectClass **)v15, Status); /*0x5bfe94*/
+    Render_Load_759F20((gamemd::TechnoClass *)(*(ObjectClass **)v15), Status); /*0x5bfe94*/
   }
   v15->vtable3 = a2; /*0x5bfe99*/
   v40 = (*(int (**)(int *))(*a2 + 128))( (int *)(a2)); /*0x5bfeac*/
   v37 = (*(int (**)(int *))(*a2 + 116))( (int *)(a2)); /*0x5bfeb6*/
   v38 = (*(int (**)(int *))(*a2 + 112))( (int *)(a2)); /*0x5bfeb8*/
-  Render_Load_759EB0(*(ObjectClass **)v15, 0, v37 / v38, v40, 0, 0); /*0x5bfec7*/
+  Render_Load_759EB0((gamemd::TechnoClass *)(*(ObjectClass **)v15), 0, v37 / v38, v40, 0, 0); /*0x5bfec7*/
   SurfaceTracker = (unsigned int *)BinkMovie::CreateSurfaceTracker( (char *)(FullPath)); /*0x5bfed0*/
   v15->q048 = SurfaceTracker; /*0x5bfed7*/
   if ( SurfaceTracker ) /*0x5bfeda*/
@@ -1671,7 +1671,7 @@ double * E4Recv_5B1D90::sub_5B1D90()
   if ( v2 || v4 ) /*0x5b1dc1*/
   {
     v5 = (double)v4; /*0x5b1de8*/
-    Debug::Log(); /*0x5b1dec*/
+    Debug::Log("MillisecondTimerClass low = %d, high = %d\n"); /*0x5b1dec G57w12: IDA push seq @ 0x5b1dec*/
     *this = (v5 * 4294967296.0 + (double)v2) * 0.001; /*0x5b1e19*/
     return (double *)this; /*0x5b1e0e*/
   }
@@ -3164,7 +3164,7 @@ int sub_5BC530()
   Rect.left = 0; /*0x5bc62b*/
   Rect.top = 0; /*0x5bc62f*/
   Rect.right = 79 * dword_ABF1C8.tmMaxCharWidth + 20; /*0x5bc64b*/
-  Rect.bottom = 25 * (dword_ABF1C8.tmHeight + dword_ABF1C8.tmExternalLeading) + 20; /*0x5bc661*/
+  Rect.bottom = 25 * (dword_ABF1C8+ dword_ABF1C8.tmExternalLeading) + 20; /*0x5bc661*/
   AdjustWindowRect(&Rect, 0xC00000u, 0); /*0x5bc665*/
   GetWindowRect(dword_ABF234, &v5); /*0x5bc677*/
   MoveWindow(dword_ABF240, v5.right + 5, 0, Rect.right - Rect.left, Rect.bottom - Rect.top, 1); /*0x5bc6a4*/
@@ -3888,8 +3888,8 @@ int sub_5BF850()
 namespace gamemd {
 int sub_5BF8B0()
 {
-  return (*(int (**)(unsigned int, ObjectClass *))(**(unsigned int **)(g_MissionQueueFrame.localVariables[604] + 8) + 96))(
-           *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8),
+  return (*(int (**)(unsigned int, ObjectClass *))(**(unsigned int **)(&dbl_ABECE0 + 8) + 96))(
+           *(unsigned int *)(&dbl_ABECE0 + 8),
            this);
 }
 } // namespace gamemd

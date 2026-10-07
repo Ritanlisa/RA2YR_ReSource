@@ -89,7 +89,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
           if ( (BuildingTypeClass *)((char *)Type + v5 * 4) != (BuildingTypeClass *)-3916 ) /*0x451452*/
           {
             if ( IDA_LOBYTE((&Type->BuildingAnim)[v5 + 12]) ) /*0x451454*/
-              BuildingClass::PlayAnim(a1, edx0, &(&Type->BuildingAnim)[v5 + 12], v4, 0, 0, 0); /*0x451463*/
+              BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), edx0, (gamemd::AnimTypeClass *)(&(&Type->BuildingAnim)[v5 + 12]), v4, 0, 0, 0); /*0x451463*/
           }
         }
         v5 += 17; /*0x451468*/
@@ -98,7 +98,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       }
       while ( v5 < 357 ); /*0x451475*/
     }
-    BuildingClass::GetHealthRatio(a1); /*0x451479*/
+    BuildingClass::GetHealthRatio((gamemd::BuildingClass *)(a1)); /*0x451479*/
     _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x45147e*/
     __asm /*0x451484*/
     {
@@ -122,7 +122,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
         if ( (BuildingTypeClass *)((char *)v14 + v12 * 4) != (BuildingTypeClass *)-3916 ) /*0x4514c7*/
         {
           if ( IDA_LOBYTE((&v14->BuildingAnim)[v12 + 12]) ) /*0x4514c9*/
-            BuildingClass::PlayAnim(a1, _EDX, &(&v14->BuildingAnim)[v12 + 12], v11, 0, 0, 0); /*0x4514d8*/
+            BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), _EDX, &(&v14->BuildingAnim)[v12 + 12], v11, 0, 0, 0); /*0x4514d8*/
         }
       }
       v12 += 17; /*0x4514dd*/
@@ -152,7 +152,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
         v19 = strlen( (const char *)(v26)); /*0x4515b3*/
         v26[v19] = v17 + 66; /*0x4515b6*/
         v26[v19 + 1] = 0; /*0x4515ba*/
-        BuildingClass::PlayAnim(a1, v18, v26, 9, 0, 0, 0); /*0x4515c6*/
+        BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), v18, (gamemd::AnimTypeClass *)(v26), 9, 0, 0, 0); /*0x4515c6*/
                 *(unsigned int *)(a1 + 1532) = v17;
       }
     }
@@ -169,7 +169,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     else
     {
             *(unsigned char *)(a1 + 1794) = v21 + 1;
-      BuildingClass::GetHealthRatio(a1); /*0x451610*/
+      BuildingClass::GetHealthRatio((gamemd::BuildingClass *)(a1)); /*0x451610*/
       _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x451615*/
       __asm /*0x45161a*/
       {
@@ -183,7 +183,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       else
                 v24 = (unsigned char *)(*(unsigned int *)(a1 + 1312) + 68 * (unsigned int)v23 + 3916);
       if ( v25 && *(unsigned char *)v25 ) /*0x451668*/
-        BuildingClass::PlayAnim(a1, v23, v25, v24, v23, 0, 0); /*0x451676*/
+        BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), (int)(v23), v25, v24, v23, 0, 0); /*0x451676*/
       return 1; /*0x45167e*/
     }
   }
@@ -863,7 +863,7 @@ void * E4Recv_45DD20::sub_45DD20()
     if ( (int)v2 >= (int)&stru_81926C.voiceIndex ) /*0x45dd34*/
       return (char *)stru_81926C.Name[7]; /*0x45dd3b*/
   }
-  return (char *)stru_81926C.Name[2 * v1 + 7]; /*0x45dd3b*/
+  return (char *)&stru_81926C[2 * v1 + 7]; /*0x45dd3b*/
 
 }
 }
@@ -881,10 +881,10 @@ int E4Recv_45DD50::sub_45DD50()
   {
     v3 += 2; /*0x45dd6c*/
     ++v2; /*0x45dd6f*/
-    if ( (int)v3 >= (int)stru_81926C.Type ) /*0x45dd76*/
+    if ( (int)v3 >= (int)dword_8192B8) /*0x45dd76*/
       return 0; /*0x45dd7d*/
   }
-  return stru_81926C.Name[2 * v2 + 8]; /*0x45dd78*/
+  return &stru_81926C[2 * v2 + 8]; /*0x45dd78*/
 
 }
 }
@@ -987,7 +987,7 @@ void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
         {
           if ( *v8 ) /*0x451f2b*/
           {
-            BuildingClass::PlayAnim((unsigned int *)a1, a2, v8, v5, v4, 0, 0); /*0x451f39*/
+            BuildingClass::PlayAnim((gamemd::BuildingClass *)((unsigned int *)a1), a2, (gamemd::AnimTypeClass *)(v8), v5, v4, 0, 0); /*0x451f39*/
             v4 = (int)(aP4); /*0x451f3e*/
           }
         }

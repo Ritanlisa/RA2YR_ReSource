@@ -512,8 +512,8 @@ char sub_55CF10()
   result = (char)dword_A8B238; /*0x55cf1d*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x55cf28*/
   {
-    result = stru_887598.isAliveFlag; /*0x55cf2e*/
-    if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x55cf35*/
+    result = &dword_887628; /*0x55cf2e*/
+    if ( *(unsigned int *)&dword_887628) /*0x55cf35*/
     {
       result = byte_A8DBA0; /*0x55cf3b*/
       if ( byte_A8DBA0 ) /*0x55cf42*/
@@ -1225,7 +1225,7 @@ void Map_Process_76FD40(int a1, ObjectClass * aP1, int a3, int _54, int * a4, in
     {
       MSAnim::Reset(*(unsigned int **)(a1 + 36), v8); /*0x76fd9c*/
       (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 36) + 4))(*(unsigned int *)(a1 + 36), 1); /*0x76fda8*/
-      Map_Process_5CC690(*(unsigned int **)(a1 + 36)); /*0x76fdae*/
+      Map_Process_5CC690((gamemd::ObjectClass *)(*(unsigned int **)(a1 + 36))); /*0x76fdae*/
     }
     v12 = (unsigned int *)(*(int (**)(unsigned int, char *))(**(unsigned int **)(a1 + 36) + 24))( *(unsigned int *)(a1 + 36), (char *)(v27)); /*0x76fdcb*/
     v25[0] = *v12; /*0x76fdd2*/
@@ -2091,7 +2091,7 @@ int sub_65FDD0()
   result = dword_B04DB8; /*0x65fdd0*/
   for ( i = 0; i < dword_B04DB8; ++i ) /*0x65fdda*/
   {
-    Map_Helper_65FE00(*((unsigned char **)dword_B04DAC + i)); /*0x65fde4*/
+    Map_Helper_65FE00((gamemd::ObjectClass *)(*((unsigned char **)dword_B04DAC + i))); /*0x65fde4*/
     result = dword_B04DB8; /*0x65fde9*/
   }
   return result; /*0x65fdf3*/
@@ -2107,20 +2107,19 @@ void sub_660B00()
   int v3; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  for ( i = stru_B04DA8.LoadGame_field_0x10 - 1; i >= 0; --i ) /*0x660b0c*/
+  for ( i = dword_B04DB8- 1; i >= 0; --i ) /*0x660b0c*/
   {
-    v2 = *(void **)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x660b15*/
+    v2 = *(void **)(dword_B04DAC+ 4 * i); /*0x660b15*/
     if ( v2 ) /*0x660b1a*/
     {
-      v4 = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x660b2b*/
-      v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v4)); /*0x660b2f*/
-      if ( v3 != -1 && v3 < stru_B04DA8.LoadGame_field_0x10 ) /*0x660b3f*/
+      v4 = *(unsigned int *)(dword_B04DAC+ 4 * i); /*0x660b2b*/
+      v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)&stru_B04DA8+ 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v4)); /*0x660b2f*/
+      if ( v3 != -1 && v3 < dword_B04DB8) /*0x660b3f*/
       {
-        --stru_B04DA8.LoadGame_field_0x10; /*0x660b44*/
+        --dword_B04DB8; /*0x660b44*/
         for ( ; /*0x660b4a*/
-              v3 < stru_B04DA8.LoadGame_field_0x10;
-              *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v3 - 4) = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04
-                                                                                    + 4 * v3) )
+              v3 < dword_B04DB8;
+              *(unsigned int *)(dword_B04DAC+ 4 * v3 - 4) = *(unsigned int *)(dword_B04DAC+ 4 * v3) )
         {
           ++v3; /*0x660b52*/
         }
@@ -2333,10 +2332,10 @@ void sub_72D780()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1032] ) /*0x72d78a*/
+  if ( &byte_B0FBB8 ) /*0x72d78a*/
   {
-    g_BuildingLoadQueue_Array.__pad_F70[1032] = 0; /*0x72d791*/
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1229] ) /*0x72d799*/
+    &byte_B0FBB8 = 0; /*0x72d791*/
+    if ( &byte_B0FC7D ) /*0x72d799*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[876]; /*0x72d79c*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876] ) /*0x72d7a4*/
@@ -2344,7 +2343,7 @@ void sub_72D780()
         ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[876]))->Destroy(); /*0x72d7a8*/
         RA2_OPDEL(v1); /*0x72d7ae*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1229] = 0; /*0x72d7b6*/
+      &byte_B0FC7D = 0; /*0x72d7b6*/
     }
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[876] = 0; /*0x72d7c2*/
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1024] ) /*0x72d7ca*/

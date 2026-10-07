@@ -3768,7 +3768,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     v17[16] = 0; /*0x60f585*/
     v17[23] = 0; /*0x60f589*/
     v17[36] = (void *)-1; /*0x60f590*/
-    SymbolTable::Insert((int)&v14, v17); /*0x60f59b*/
+    SymbolTable::Insert((void *)((int)&v14), v17); /*0x60f59b*/
     if ( dword_AC1B04 ) /*0x60f5a6*/
     {
       v8 = (unsigned int *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash( (void *)((int)&dword_AC1B00), (int)&v14)); /*0x60f5bd*/
@@ -3822,7 +3822,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     v17[16] = 0; /*0x60f6cc*/
     v17[23] = 0; /*0x60f6d0*/
     v17[36] = (void *)-1; /*0x60f6d7*/
-    SymbolTable::Insert((int)&v14, v17); /*0x60f6e2*/
+    SymbolTable::Insert((void *)((int)&v14), v17); /*0x60f6e2*/
     HashTable::Get( (void *)(&dword_AC1B00), (IUnknown *)(&v14), (IUnknown *)(&v15)); /*0x60f6f6*/
     ((GadgetClass *)v17)->SetTooltip( 0); /*0x60f700*/
     for ( i = v17[13]; v17[13]; i = v17[13] ) /*0x60f70b*/

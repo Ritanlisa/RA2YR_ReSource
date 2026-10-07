@@ -152,7 +152,6 @@ int DiskLaserClass::StubReturn64()
   return 64; /*0x4a7c75*/
 
 }
-}  // G42.18c ns repair
 // 0x4A7C80
 int DiskLaserClass::StubReturn73()
 {
@@ -160,3 +159,4 @@ int DiskLaserClass::StubReturn73()
   return 73; /*0x4a7c85*/
 
 }
+}  // G42.18c ns repair

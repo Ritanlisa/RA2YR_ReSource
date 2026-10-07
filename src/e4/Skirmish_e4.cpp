@@ -227,28 +227,28 @@ int Skirmish::ReadSettings(HWND hDlg)
   v5 = SendMessageA( (HWND)(hDlga), 0x150u, v4, 0); /*0x596cb3*/
   *((unsigned int *)this + 15) = v5; /*0x596cb9*/
   if ( v18 != v5 ) /*0x596cbe*/
-    g_MissionQueueFrame.globalVariables[88] = 1; /*0x596cc0*/
+    &byte_ABE2D8 = 1; /*0x596cc0*/
   v19 = *((unsigned int *)this + 14); /*0x596cd0*/
   hDlgb = GetDlgItem(hDlg, 1031); /*0x596ce2*/
   v16 = SendMessageA( (HWND)(hDlgb), 0x147u, 0, 0); /*0x596ce8*/
   v6 = SendMessageA( (HWND)(hDlgb), 0x150u, v16, 0); /*0x596cf3*/
   *((unsigned int *)this + 14) = v6; /*0x596cf9*/
   if ( v19 != v6 ) /*0x596cfe*/
-    g_MissionQueueFrame.globalVariables[88] = 1; /*0x596d00*/
+    &byte_ABE2D8 = 1; /*0x596d00*/
   v20 = *((unsigned int *)this + 16); /*0x596d10*/
   hDlgc = GetDlgItem(hDlg, 1032); /*0x596d22*/
   v7 = SendMessageA( (HWND)(hDlgc), 0x147u, 0, 0); /*0x596d26*/
   v8 = SendMessageA( (HWND)(hDlgc), 0x150u, v7, 0); /*0x596d33*/
   *((unsigned int *)this + 16) = v8; /*0x596d39*/
   if ( v20 != v8 ) /*0x596d3e*/
-    g_MissionQueueFrame.globalVariables[88] = 1; /*0x596d40*/
+    &byte_ABE2D8 = 1; /*0x596d40*/
   v21 = *((unsigned int *)this + 18); /*0x596d50*/
   hDlgd = GetDlgItem(hDlg, 1002); /*0x596d62*/
   v9 = SendMessageA( (HWND)(hDlgd), 0x147u, 0, 0); /*0x596d66*/
   v10 = SendMessageA( (HWND)(hDlgd), 0x150u, v9, 0); /*0x596d73*/
   *((unsigned int *)this + 18) = v10; /*0x596d79*/
   if ( v21 != v10 ) /*0x596d7e*/
-    g_MissionQueueFrame.globalVariables[88] = 1; /*0x596d80*/
+    &byte_ABE2D8 = 1; /*0x596d80*/
   v22 = *((unsigned int *)this + 25); /*0x596d90*/
   hDlge = GetDlgItem(hDlg, 1030); /*0x596da2*/
   v17 = SendMessageA( (HWND)(hDlge), 0x147u, 0, 0); /*0x596da8*/
@@ -256,19 +256,19 @@ int Skirmish::ReadSettings(HWND hDlg)
   *((unsigned int *)this + 25) = v11; /*0x596db9*/
   *((unsigned int *)this + 26) = v11; /*0x596dbe*/
   if ( v22 != v11 ) /*0x596dc1*/
-    g_MissionQueueFrame.globalVariables[88] = 1; /*0x596dc3*/
+    &byte_ABE2D8 = 1; /*0x596dc3*/
   hDlgf = (HWND)*((unsigned int *)this + 20); /*0x596dd3*/
   DlgItem = GetDlgItem(hDlg, 1003); /*0x596dd7*/
   v13 = SendMessageA( (HWND)(DlgItem), 0x400u, 0, 0); /*0x596de3*/
   *((unsigned int *)this + 20) = v13; /*0x596de9*/
   if ( hDlgf == (HWND)v13 ) /*0x596dee*/
   {
-    if ( !g_MissionQueueFrame.globalVariables[88] ) /*0x596e00*/
+    if ( !&byte_ABE2D8 ) /*0x596e00*/
       return SettingsClass::ClampValues((SettingsClass *)this); /*0x596e00*/
   }
   else
   {
-    g_MissionQueueFrame.globalVariables[88] = 1; /*0x596df0*/
+    &byte_ABE2D8 = 1; /*0x596df0*/
   }
   ((Skirmish *)(this))->RandomizeSettings(*((unsigned int *)this + 15)); /*0x596e08*/
   v14 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596e0d*/
@@ -278,7 +278,7 @@ int Skirmish::ReadSettings(HWND hDlg)
     __3_YAXPAX_Z(v14); /*0x596e1f*/
   }
   g_MissionQueueFrame.briefing[451] = 0; /*0x596e27*/
-  g_MissionQueueFrame.globalVariables[88] = 0; /*0x596e31*/
+  &byte_ABE2D8 = 0; /*0x596e31*/
   return SettingsClass::ClampValues((SettingsClass *)this); /*0x596e3f*/
 
 }
@@ -294,25 +294,25 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
 
   *((unsigned int *)this + 19) = Random::Range( /*0x597282*/
                              &Randomizer_Global,
-                             *((unsigned int *)&stru_82ADA8.BounceAnim + aP1),
+                             *((unsigned int *)&dword_82B0A8 + aP1),
                              stru_82ADA8.Elasticity[aP1 + 1]);
-  *((unsigned int *)this + 17) = Random::Range(&Randomizer_Global, stru_82ADA8.Layer[aP1], (&dword_82B120)[aP1]); /*0x59729f*/
+  *((unsigned int *)this + 17) = Random::Range(&Randomizer_Global, dword_82B10C[aP1], (&dword_82B120)[aP1]); /*0x59729f*/
   *((unsigned int *)this + 24) = Random::Range( /*0x5972bc*/
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 175],
-                             *(&stru_82ADA8.RunningFrames + aP1));
+                             *(&dword_82B0F8+ aP1));
   *((unsigned int *)this + 27) = Random::Range( /*0x5972d9*/
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 165],
-                             stru_82ADA8.MaxXYVel[aP1]);
+                             &dword_82B0D0[aP1]);
   *((unsigned int *)this + 28) = Random::Range( /*0x5972f6*/
                              &Randomizer_Global,
-                             *(&stru_82ADA8.TranslucencyDetailLevel + aP1),
+                             *(&dword_82B080 + aP1),
                              stru_82ADA8.RandomRate[aP1 + 2]);
   *((unsigned int *)this + 21) = 20 * *((unsigned int *)this + 16); /*0x59730b*/
   *((unsigned int *)this + 22) = Random::Range((Random *)(&Randomizer_Global), 0, 100); /*0x597313*/
-  v3 = *(unsigned int *)(g_MissionQueueFrame.briefingCsf[6] + 4 * aP1); /*0x597322*/
-  v4 = *(unsigned int *)(g_MissionQueueFrame.percent + 4 * aP1); /*0x597325*/
+  v3 = *(unsigned int *)(&dword_ABE260 + 4 * aP1); /*0x597322*/
+  v4 = *(unsigned int *)(dword_ABE27C+ 4 * aP1); /*0x597325*/
   if ( v3 >= 0 ) /*0x59732a*/
   {
     if ( v3 > 100 ) /*0x597333*/
@@ -451,7 +451,7 @@ v21 = (int *)(*((int (**)(DSurface *, char *))DSurface_Alternate->DSurface_field
 
 
           DrawToSurfaceSHP(/*0x6409d2*/
-            (int)DSurface_Alternate, v25, (ConvertClass *)(*(int *)&stru_AC4B30.__pad_EC[612]), 0, (ConvertClass *)(v24), (ConvertClass *)(v21), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+            (int)DSurface_Alternate, v25, (ConvertClass *)(*(int *)&stru_AC4B30.__pad_EC[612]), 0, (ConvertClass *)(v24), (ConvertClass *)(v21), (gamemd::ConvertClass *)(1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
         }
         ++v17; /*0x6409e3*/
         v26[0] = v18 - 2; /*0x6409ef*/
@@ -625,7 +625,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
         }
         else if ( CountryCombo::IDToIndex(DlgCtrlID) == -1 ) /*0x6ae53b*/
         {
-          if ( StartCombo::IDToIndex(v7) != -1 ) /*0x6ae547*/
+          if ( StartCombo::IDToIndex((void *)(v7)) != -1 ) /*0x6ae547*/
           {
             v10 = (int)((gamemd::ReferenceCounted **)(GetComboBoxSelectedRaw( (HWND)(hDlg), v7, *(unsigned int *)(a4 + 4)))); /*0x6ae589*/
             v11 = (wchar_t *)((GameSetup *)(v10))->GetColorTooltip(); /*0x6ae590*/

@@ -491,7 +491,7 @@ int GenerateTerrainHeightMapInternal()
   result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x5a3403*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x5a340c*/
   {
-    if ( CellClass::IsTerrainType(i) ) /*0x5a3417*/
+    if ( CellClass::IsTerrainType((gamemd::CellClass *)(i)) ) /*0x5a3417*/
     {
       v2 = (unsigned int *)((int)((unsigned int *)(dword_ABED04)));
       v3 = (unsigned int *)(0);
@@ -980,7 +980,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
         {
           v27 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v39); /*0x5a4d96*/
           v43 = (int)v27; /*0x5a4d9a*/
-          if ( ((Cell*)v27)->IsEmpty() || a5 && (CellClass::InBounds(v27) || CellClass::InMapDataRange(v27)) ) /*0x5a4dbf*/
+          if ( ((Cell*)v27)->IsEmpty() || a5 && (CellClass::InBounds((gamemd::CellClass *)(v27)) || CellClass::InMapDataRange((gamemd::CellClass *)(v27))) ) /*0x5a4dbf*/
           {
             v28 = IDA_SHIWORD(v39); /*0x5a4dcc*/
             IDA_LODWORD(v46) = (int16_t)v39; /*0x5a4de4*/
@@ -1187,7 +1187,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
           IDA_HIWORD(v31) = IDA_HIWORD(v19) + v20[1]; /*0x5a6790*/
           IDA_LODWORD(v35[0]) = v31; /*0x5a6799*/
           v21 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)v35); /*0x5a67a7*/
-          if ( !CellClass::InBounds(v21) && !CellClass::InMapDataRange(v21) /*0x5a67da*/
+          if ( !CellClass::InBounds((gamemd::CellClass *)(v21)) && !CellClass::InMapDataRange((gamemd::CellClass *)(v21)) /*0x5a67da*/
             || v21[57]
             || v21[59] == 3
             || !((Type *)(&dword_87F7E8))->CheckAmbiguity((int)v21, 1) )
@@ -1821,9 +1821,9 @@ int IsAreaClearMap(MapClass * aP0, char a2, char a3)
               if ( !a3 ) /*0x5a73da*/
                 goto LABEL_31; /*0x5a73da*/
             }
-            else if ( !(uint8_t)((Cell*)v12)->IsEmpty() && !(uint8_t)CellClass::InMapDataRange(v12) ) /*0x5a73eb*/
+            else if ( !(uint8_t)((Cell*)v12)->IsEmpty() && !(uint8_t)CellClass::InMapDataRange((gamemd::CellClass *)(v12)) ) /*0x5a73eb*/
             {
-              result = CellClass::InBounds(v12); /*0x5a73f6*/
+              result = CellClass::InBounds((gamemd::CellClass *)(v12)); /*0x5a73f6*/
               if ( !(unsigned char)result ) /*0x5a73fd*/
                 goto LABEL_31; /*0x5a73fd*/
             }
@@ -1916,8 +1916,8 @@ int MapClass_IsAreaUniform(int * a1, char a2)
                 return 0; /*0x5a760d*/
             }
             else if ( !((Cell*)v11)->IsEmpty() /*0x5a7603*/
-                   && !(uint8_t)CellClass::InMapDataRange(v11)
-                   && !(uint8_t)CellClass::InBounds(v11) )
+                   && !(uint8_t)CellClass::InMapDataRange((gamemd::CellClass *)(v11))
+                   && !(uint8_t)CellClass::InBounds((gamemd::CellClass *)(v11)) )
             {
               return 0; /*0x5a7603*/
             }

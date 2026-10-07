@@ -12580,7 +12580,7 @@ int sprintf(char *const Buffer, const char *const Format, ...)  // G42.33 b23: t
 
   va_start(va, Format);
   File._base = Buffer; /*0x7c8efe*/
-  File._ptr = Buffer; /*0x7c8f01*/
+  File= Buffer; /*0x7c8f01*/
   File._flag = 66; /*0x7c8f07*/
   File._cnt = 0x7FFFFFFF; /*0x7c8f15*/
   v2 = _output((FILE *)&File, (char *)Format, (int)va); /*0x7c8f1d G42.33 b23*/
@@ -12589,7 +12589,7 @@ int sprintf(char *const Buffer, const char *const Format, ...)  // G42.33 b23: t
   if ( v3 ) /*0x7c8f2a*/
     _flsbuf(0, (FILE *)&File); /*0x7c8f3a*/
   else
-    *File._ptr = 0; /*0x7c8f2f*/
+    *File= 0; /*0x7c8f2f*/
   return v4; /*0x7c8f43*/
 }
 } // namespace gamemd
@@ -13085,7 +13085,7 @@ int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *con
   _iobuf_msvc6 File; // [esp+4h] [ebp-20h] BYREF (G42.33 b23: MSVC6 layout, was FILE)
 
   File._base = (char *)Buffer; /*0x7ca56e*/
-  File._ptr = (char *)Buffer; /*0x7ca571*/
+  File= (char *)Buffer; /*0x7ca571*/
   File._flag = 66; /*0x7ca577*/
   File._cnt = 0x7FFFFFFF; /*0x7ca585*/
   v3 = _woutput((FILE *)&File, BufferCount, (int)&Format); /*0x7ca58d G42.33 b23*/
@@ -13094,11 +13094,11 @@ int swprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *con
   if ( v4 ) /*0x7ca59a*/
     _flsbuf(0, (FILE *)&File); /*0x7ca5ad*/
   else
-    *File._ptr++ = 0; /*0x7ca59f*/
+    *File++ = 0; /*0x7ca59f*/
   if ( --File._cnt < 0 ) /*0x7ca5b7*/
     _flsbuf(0, (FILE *)&File); /*0x7ca5c7*/
   else
-    *File._ptr = 0; /*0x7ca5bc*/
+    *File= 0; /*0x7ca5bc*/
   return v5; /*0x7ca5d0*/
 }
 } // namespace gamemd
@@ -13281,7 +13281,7 @@ int vswprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *co
   _iobuf_msvc6 File; // [esp+4h] [ebp-20h] BYREF (G42.33 b23: MSVC6 layout, was FILE)
 
   File._base = (char *)Buffer; /*0x7ca865*/
-  File._ptr = (char *)Buffer; /*0x7ca868*/
+  File= (char *)Buffer; /*0x7ca868*/
   File._flag = 66; /*0x7ca871*/
   File._cnt = 0x7FFFFFFF; /*0x7ca878*/
   v4 = _woutput((FILE *)&File, BufferCount, (int)Format); /*0x7ca880 G42.33 b23: truth args*/
@@ -13290,11 +13290,11 @@ int vswprintf(wchar_t *const Buffer, const size_t BufferCount, const wchar_t *co
   if ( v5 ) /*0x7ca88d*/
     _flsbuf(0, (FILE *)&File); /*0x7ca8a0*/
   else
-    *File._ptr++ = 0; /*0x7ca892*/
+    *File++ = 0; /*0x7ca892*/
   if ( --File._cnt < 0 ) /*0x7ca8aa*/
     _flsbuf(0, (FILE *)&File); /*0x7ca8ba*/
   else
-    *File._ptr = 0; /*0x7ca8af*/
+    *File= 0; /*0x7ca8af*/
   return v6; /*0x7ca8c3*/
 }
 } // namespace gamemd
@@ -13751,7 +13751,7 @@ int vsprintf(char *const Buffer, const char *const Format, va_list ArgList)
   _iobuf_msvc6 File; // [esp+4h] [ebp-20h] BYREF (G42.33 b23: MSVC6 layout, was FILE)
 
   File._base = Buffer; /*0x7cb7c7*/
-  File._ptr = Buffer; /*0x7cb7ca*/
+  File= Buffer; /*0x7cb7ca*/
   File._flag = 66; /*0x7cb7d3*/
   File._cnt = 0x7FFFFFFF; /*0x7cb7da*/
   v3 = _output((FILE *)&File, (char *)Format, (int)ArgList); /*0x7cb7e2 G42.33 b23*/
@@ -13760,7 +13760,7 @@ int vsprintf(char *const Buffer, const char *const Format, va_list ArgList)
   if ( v4 ) /*0x7cb7ef*/
     _flsbuf(0, (FILE *)&File); /*0x7cb7ff*/
   else
-    *File._ptr = 0; /*0x7cb7f4*/
+    *File= 0; /*0x7cb7f4*/
   return v5; /*0x7cb808*/
 }
 } // namespace gamemd
@@ -13912,7 +13912,7 @@ int swscanf(const wchar_t *const Buffer, const wchar_t *const Format, ...)  // G
   va_start(va, Format);
   File._flag = 73; /*0x7cbbe4*/
   File._base = (char *)Buffer; /*0x7cbbec*/
-  File._ptr = (char *)Buffer; /*0x7cbbef*/
+  File= (char *)Buffer; /*0x7cbbef*/
   File._cnt = 2 * wcslen(Buffer); /*0x7cbbf9*/
   return _winput((FILE *)&File, (int)Format, (int)va); /*0x7cbc0f G42.33 b23*/
 }

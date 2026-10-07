@@ -708,7 +708,7 @@ int DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
   }
   if ( a2 != 272 ) /*0x4c83fc*/
     return 0; /*0x4c84c1*/
-  ((Debug *)aWmInitdialog)->Log(); /*0x4c8407*/
+  ((Debug *)aWmInitdialog)->Log("WM_INITDIALOG\n"); /*0x4c8407 G57w12: IDA push seq @ 0x4c8407*/
   SetDlgItemTextA(hDlg, 1156, Buffer); /*0x4c841e*/
   SetFocus(hDlg); /*0x4c8425*/
   if ( g_hWnd ) /*0x4c8433*/

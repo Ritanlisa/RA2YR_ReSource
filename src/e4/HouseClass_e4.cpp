@@ -619,27 +619,27 @@ int HouseClass::Construct(int a2)
   v11 = *((char *)this + 13); /*0x4f5e53*/
   if ( v11 ) /*0x4f5e58*/
     *((char *)this + 22549) = *(unsigned int *)(v11 + 192); /*0x4f5e60*/
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x4f5e99*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] + g_BuildingLoadQueue_Array.LightRedTint, 0) )
+  if ( dword_B0F680< dword_B0F678/*0x4f5e99*/
+    || (BYTE1(byte_B0F67C) || !dword_B0F678)
+    && &dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), &dword_B0F684 + dword_B0F678, 0) )
 
 
 
   {
-    v12 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x4f5ea6*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v12) = (unsigned int)this;
+    v12 = dword_B0F680++; /*0x4f5ea6*/
+    *(unsigned int *)(dword_B0F674+ 4 * v12) = (unsigned int)this;
   }
-  if ( g_BuildingLoadQueue_Array.HalfDamageSmokeLocation1[1] < g_BuildingLoadQueue_Array.BuildCat[0] /*0x4f5eec*/
-    || (BYTE1(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation1[0]) || !g_BuildingLoadQueue_Array.BuildCat[0])
-    && g_BuildingLoadQueue_Array.HalfDamageSmokeLocation1[2] > 0
+  if ( &dword_B0F650 < g_BuildingLoadQueue_Array.BuildCat[0] /*0x4f5eec*/
+    || (BYTE1(&byte_B0F64C) || !g_BuildingLoadQueue_Array.BuildCat[0])
+    && &dword_B0F654 > 0
     && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.Buildup[0] + 8))(
-         g_BuildingLoadQueue_Array.Buildup,
-         g_BuildingLoadQueue_Array.HalfDamageSmokeLocation1[2] + g_BuildingLoadQueue_Array.BuildCat[0],
+         dword_B0F640,
+         &dword_B0F654 + g_BuildingLoadQueue_Array.BuildCat[0],
          0) )
   {
-    v13 = g_BuildingLoadQueue_Array.HalfDamageSmokeLocation1[1]++; /*0x4f5ef9*/
-    *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.BuildupLoaded + 4 * v13) = (unsigned int)this;
+    v13 = &dword_B0F650++; /*0x4f5ef9*/
+    *(unsigned int *)(*(unsigned int *)&dword_B0F644+ 4 * v13) = (unsigned int)this;
   }
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 7)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 5)) /*0x4f5f3f*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 6))) || !((unsigned int *)&g_BuildingLoadQueue_Array)[5])
@@ -663,16 +663,16 @@ int HouseClass::Construct(int a2)
     v15 = (*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 32))++; /*0x4f5f9f*/
     *(unsigned int *)(*(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 20) + 4 * v15) = (unsigned int)this;
   }
-  if ( g_BuildingLoadQueue_Array.Foundation[0] < g_BuildingLoadQueue_Array.ExtraPowerBonus /*0x4f5fe5*/
-    || (BYTE1(g_BuildingLoadQueue_Array.ExtraPowerDrain) || !g_BuildingLoadQueue_Array.ExtraPowerBonus)
-    && g_BuildingLoadQueue_Array.Height > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.PowerBonus + 8))( (int *)(&g_BuildingLoadQueue_Array.PowerBonus), g_BuildingLoadQueue_Array.ExtraPowerBonus + g_BuildingLoadQueue_Array.Height, 0) )
+  if ( g_BuildingLoadQueue_Array.Foundation[0] < dword_B0F728/*0x4f5fe5*/
+    || (BYTE1(byte_B0F72C) || !dword_B0F728)
+    && dword_B0F734> 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F720+ 8))( (int *)(&dword_B0F720), dword_B0F728+ dword_B0F734, 0) )
 
 
 
   {
     v16 = g_BuildingLoadQueue_Array.Foundation[0]++; /*0x4f5ff2*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v16) = (unsigned int)this;
+    *(unsigned int *)(dword_B0F724+ 4 * v16) = (unsigned int)this;
   }
   *((char *)this + 12) = (unsigned int)((char *)&stru_A80220); /*0x4f6010*/
   if ( a2 ) /*0x4f6013*/
@@ -3181,7 +3181,7 @@ int HouseClass::QueryInterface_Dispatch(int a2, const IID * a3, void ** a4)
   {
     if ( !&punk ) /*0x4292d6*/
       return -2147024882; /*0x4292e1*/
-    v6 = (*(int (**)(IUnknown *, void **, unsigned int *))punk.field_0)( (IUnknown *)(&punk), (void **)(a4), (unsigned int *)(v7)); /*0x4292f3*/
+    v6 = (*(int (**)(IUnknown *, void **, unsigned int *))punk)( (IUnknown *)(&punk), (void **)(a4), (unsigned int *)(v7)); /*0x4292f3*/
     if ( v6 < 0 ) /*0x4292f7*/
       __3_YAXPAX_Z(&punk); /*0x4292fe*/
     v4 = v7; /*0x429306*/
@@ -3190,7 +3190,7 @@ int HouseClass::QueryInterface_Dispatch(int a2, const IID * a3, void ** a4)
   {
     if ( !&dword_87F7E8 ) /*0x429323*/
       return -2147024882; /*0x42932e*/
-    v6 = (*(int (**)(IUnknown *, void **, unsigned int *))dword_87F7E8.field_0)( (IUnknown *)(&dword_87F7E8), (void **)(a4), (unsigned int *)(v4)); /*0x429340*/
+    v6 = (*(int (**)(IUnknown *, void **, unsigned int *))dword_87F7E8)( (IUnknown *)(&dword_87F7E8), (void **)(a4), (unsigned int *)(v4)); /*0x429340*/
     if ( v6 < 0 ) /*0x429344*/
       __3_YAXPAX_Z(&dword_87F7E8); /*0x42934b*/
   }

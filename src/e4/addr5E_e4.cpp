@@ -551,7 +551,7 @@ int SendMultiplayerStartSignal()
   if ( ppv ) /*0x5e3abb*/
   {
     ((String *)((char **)&v12))->Assign(0); /*0x5e3ac3*/
-    v0 = SendMultiplayerStartSignal_Start_77EBA0(&v12); /*0x5e3ad5*/
+    v0 = SendMultiplayerStartSignal_Start_77EBA0((gamemd::ObjectClass *)(&v12)); /*0x5e3ad5*/
     j_DeleteAndZero( (void *)(&v12)); /*0x5e3ad7*/
   }
   else
@@ -1366,7 +1366,7 @@ LABEL_171:
               v198[v106++ + 56] = n;
             }
             v198[v106 + 56] = 0;
-            atol(&v198[56]);
+            atol((const char *)(&v198[56]));
             if ( *v102 )
               ++v102;
             SetGameOptionsPing(&aP0_160);
@@ -2797,7 +2797,7 @@ void ExchangeMultiplayerGameInfo()
   v16 = 0; /*0x5e7959*/
   v17 = 0; /*0x5e795b*/
   v15[0] = 26; /*0x5e795c*/
-  Debug::Log(); /*0x5e7964*/
+  Debug::Log("Sending preview mode acks\n"); /*0x5e7964 G57w12: IDA push seq @ 0x5e7964*/
   while ( 1 ) /*0x5e7977*/
   {
     if ( dword_A8B238[0] == 3 ) /*0x5e7977*/
@@ -5785,7 +5785,7 @@ char sub_5E35A0()
   v4 = dword_A8DA84; /*0x5e35e6*/
   for ( i = 1; i < v4; ++i ) /*0x5e35f3*/
   {
-    ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)v6, 455, 1, dword_A8DA78[i] + 40, 0, 0); /*0x5e3617*/
+    ((Network *)&unk_A8E9C0)->SendMessage( (int)v6, 455, 1, dword_A8DA78[i] + 40, 0, 0); /*0x5e3617*/
     result = Event::Dispatch(); /*0x5e361c*/
   }
   return result; /*0x5e3626*/

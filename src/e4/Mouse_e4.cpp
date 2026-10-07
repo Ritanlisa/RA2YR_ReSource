@@ -53,7 +53,7 @@ int Mouse::SetBounds(const void *aP1)
   }
   v5 = aP1; /*0x4a8c3d*/
   v6 = aP1 == 0; /*0x4a8c47*/
-  *((unsigned int *)this + 1118) = *(unsigned int *)&stru_8A0390.bombVisible; /*0x4a8c49*/
+  *((unsigned int *)this + 1118) = *(unsigned int *)&dword_8A03F8; /*0x4a8c49*/
   if ( v6 ) /*0x4a8c4f*/
   {
     *((unsigned int *)this + 1119) = 0; /*0x4a8d1f*/
@@ -65,9 +65,9 @@ int Mouse::SetBounds(const void *aP1)
       byte_8A0618 |= 1u; /*0x4a8c68*/
       atexit(nullsub_10); /*0x4a8c6e*/
     }
-    qmemcpy( (void *)(&stru_8A0390.onBridge), (const void *)(v5), 0x1E0u); /*0x4a8c85*/
-    *((unsigned int *)this + 1119) = (unsigned int)&stru_8A0390.onBridge; /*0x4a8c8f*/
-    v7 = *CoordList::GetBounds(&aP1, (int16_t *)&stru_8A0390.onBridge); /*0x4a8c9e*/
+    qmemcpy( (void *)(&unk_8A041C), (const void *)(v5), 0x1E0u); /*0x4a8c85*/
+    *((unsigned int *)this + 1119) = (unsigned int)&unk_8A041C; /*0x4a8c8f*/
+    v7 = *CoordList::GetBounds(&aP1, (int16_t *)&unk_8A041C); /*0x4a8c9e*/
     v9[0] = v7 - 1; /*0x4a8ca6*/
     v9[1] = HIWORD(v7) - 1; /*0x4a8cab*/
     LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
@@ -239,7 +239,7 @@ namespace gamemd {
 SHORT Mouse::GetKeyState(uint8_t vKey)
 {
 
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec97*/
+  if ( dword_AA0444) /*0x53ec97*/
     return (&word_AA0168)[(uint8_t)vKey]; /*0x53eca7*/
   else
     return GetAsyncKeyState((uint8_t)vKey); /*0x53ec9a*/

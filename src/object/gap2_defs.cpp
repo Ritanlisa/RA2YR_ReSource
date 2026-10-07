@@ -769,7 +769,7 @@ int ObjectClass::Set(void* a1) {
     this->vtable1 = (int)&vt_BufferIOFileClass; /*0x431a8a*/
     if ( ObjectClass::GetMember06((RawFileClass *)this) && IDA_BYTE1(this->owningHouseIndex) ) /*0x431a9a*/
     {
-      if ( !strcmp(Source, (const char *)(*(int (__thiscall **)(ObjectClass *))((char *)this->vtable1 + 4))( (const char *)(this) )) ) /*0x431ab7*/
+      if ( !strcmp((const char *)&Source, (const char *)(*(int ((ra2::game::ObjectClass *)(__thiscall **))(ObjectClass *))((char *)this->vtable1 + 4))( (const char *)(this) )) ) /*0x431ab7*/
       {
         (*(void (__thiscall **)(ObjectClass *))((char *)this->vtable1 + 4))(this); /*0x431ae6*/
         return (int)this; /*0x431aed*/
@@ -1113,7 +1113,7 @@ int FootClass::DrawPlacementPreview() {
     unsigned int *v129; // [esp+1CAh] [ebp+4h]
     float *v130; // [esp+1CEh] [ebp+8h]
 
-    v3 = *(unsigned int *)(*((int (__thiscall **)(BuildingClass *, __int16 *))this->vtable1 + 110))(this, v105); /*0x43da9c*/
+    v3 = *(unsigned int *)(*((int ((ra2::game::BuildingClass *)(__thiscall **))(BuildingClass *, __int16 *))this->vtable1 + 110))(this, v105); /*0x43da9c*/
     vtable0 = *(int (__thiscall ***)(BuildingClass *))this; /*0x43da9e*/  // g57e2 W2
     *(unsigned int *)v111 = v3; /*0x43daa3*/
     if ( vtable0[97](this) == 16 /*0x43dae6*/

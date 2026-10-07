@@ -485,7 +485,7 @@ LABEL_47:
     *(float *)v100 = v91; /*0x423241*/
     v31 = (int *)((CellCoord *)((gamemd::CellCoord *)((char *)&stru_87F5F0 + 0x1F8)))->To_CellObj((int16_t *)v100); /*0x423250*/
     if ( !v31[13] ) /*0x423252*/
-      TacticalClass::SetView(v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
+      TacticalClass::SetView((gamemd::TacticalClass *)(v31), 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = (gamemd::Coord *)(this->AnimClass_field_0xC8); /*0x42327b*/
     v105[0] = v31[13]; /*0x423281*/
     if ( !v32[2].__pad_C[209] ) /*0x423285*/
@@ -524,23 +524,8 @@ LABEL_78:
     *(unsigned int *)v101 = v35; /*0x4233a2*/
     v38 = AnimClass_field_0x0[116](this); /*0x4233a6*/
     v39 = ZCoordToScreenY((int)((gamemd::IUnknown *)(v38))); 
-    DrawToSurfaceSHP( /*0x4233e9*/
-      (int)g_DSurface_Hidden_2,
-      v105[0],
-      (gamemd::ConvertClass *)v103,
-      v104,
-      (gamemd::ConvertClass *)v101,
-      aP5,
-      (gamemd::ConvertClass *)9729,
-      0,
-      *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] - v39,
-      0,
-      (gamemd::ConvertClass *)1000,
-      0,
-      0,
-      0,
-      0,
-      0);
+    DrawToSurfaceSHP(/*0x4233e9*/
+      (int)g_DSurface_Hidden_2, v105[0], (gamemd::ConvertClass *)v103, v104, (gamemd::ConvertClass *)v101, aP5, (gamemd::ConvertClass *)9729, 0, *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] - v39, 0, (int)1000, 0, 0, 0, 0, 0);
   }
   v40 = this->__pad_118[0]; /*0x4233ee*/
   v41 = 0.0; /*0x4233f4*/
@@ -671,23 +656,8 @@ LABEL_99:
       v70 = v67 + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]; /*0x4236bb*/
       v105[0] = v108; /*0x4236bd*/
       v105[1] = v70; /*0x4236c1*/
-      DrawToSurfaceSHP( /*0x4236f7*/
-        (int)g_DSurface_Hidden_2,
-        *(int *)((char *)&stru_87F5F0 + 0xD0),
-        (gamemd::ConvertClass *)v103,
-        v104,
-        (gamemd::ConvertClass *)v105,
-        (gamemd::ConvertClass *)&DSurface_ViewBounds.field_0,
-        (gamemd::ConvertClass *)AnimClass_field_0x190,
-        0,
-        v69,
-        (gamemd::ConvertClass *)2,
-        (gamemd::ConvertClass *)v106,
-        (gamemd::ConvertClass *)(*(int *)v100),
-        0,
-        0,
-        0,
-        0);
+      DrawToSurfaceSHP(/*0x4236f7*/
+        (int)g_DSurface_Hidden_2, *(int *)((char *)&stru_87F5F0 + 0xD0), (gamemd::ConvertClass *)v103, v104, (gamemd::ConvertClass *)v105, (gamemd::ConvertClass *)&DSurface_ViewBounds.field_0, (gamemd::ConvertClass *)AnimClass_field_0x190, 0, v69, (gamemd::ConvertClass *)2, (int)((gamemd::ConvertClass *)v106), (gamemd::ConvertClass *)(*(int *)v100), 0, 0, 0, 0);
       if ( v67 < 0 ) /*0x4236fe*/
         v86 = 1; /*0x423700*/
       v67 -= *(unsigned int *)v101; /*0x42370d*/

@@ -912,7 +912,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~IsometricTileClass() = default;
 
-    IsometricTileClass(); // 0x543780 (constructor)
+IsometricTileClass(int aP1, unsigned short *aP2);  // 0x00543780 g57w12-r raw-sync (def-form)
 
 };
 // 20 methods in IDA

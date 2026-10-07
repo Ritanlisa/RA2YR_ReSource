@@ -167,11 +167,11 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   v17 = (gamemd::AnimTypeClass **)((int)((gamemd::AnimTypeClass **)(*(unsigned int *)(v4 + 3588))));
   *(unsigned int *)(v4 + 3584) = v10; /*0x41cd43*/
   *(unsigned int *)(v4 + 3588) = INIClass::ReadInt_Overwrite((INIClass *)(/*0x41cd4e*/
-                             (bool *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)(v4 + 504), (unsigned char *)(aSpawndelay), v17);
+                             (bool *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)(v4 + 504), (unsigned char *)(aSpawndelay), (int)(v17));
   v11 = (unsigned int)(gamemd::AnimTypeClass **)(INIClass::ReadBool_Overwrite((INIClass *)((int *)self), (uint8_t *)(v4 + 36), (unsigned char *)(aFlyby), *(unsigned char *)(v4 + 3595)));
   v12 = (gamemd::AnimTypeClass **)((char)((gamemd::AnimTypeClass **)(*(unsigned char *)(v4 + 3596))));
   *(unsigned char *)(v4 + 3595) = v11; /*0x41cd6e*/
-  *(unsigned char *)(v4 + 3596) = INIClass::ReadBool_Overwrite((INIClass *)((int *)self), (uint8_t *)(v4 + 36), (unsigned char *)(aFlyback), v12); /*0x41cd83*/
+  *(unsigned char *)(v4 + 3596) = INIClass::ReadBool_Overwrite((INIClass *)((int *)self), (uint8_t *)(v4 + 36), (unsigned char *)(aFlyback), (char)(v12)); /*0x41cd83*/
   return (gamemd::AnimTypeClass **)(1); /*0x41cd8a*/
 }
 }

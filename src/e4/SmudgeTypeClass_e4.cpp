@@ -165,7 +165,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
     this->Height = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6b575e*/
                      (bool *)aP1), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)g_INI_Key_Height, this->Height);
     if ( ((unsigned int *)this)[0] ) /*0x6b5764*/
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x6b57b4*/
+      _makepath(Buffer, 0, 0, (const char *)(((unsigned int *)this)[0]), (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x6b57b4*/
     else
       _makepath(Buffer, 0, 0,(const char *)(((unsigned int *)this)[0]), (const char *)Ext); /*0x6b5784*/
     result = (int)SearchMIXFile( (char *)(Buffer), 0); /*0x6b57c2*/
@@ -287,7 +287,7 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)aP0)), (gamemd::ObjectTypeClass *)aP1); /*0x6b585b*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)aP0)), (int)((gamemd::ObjectTypeClass *)aP1)); /*0x6b585b*/
   if ( result >= 0 ) /*0x6b5862*/
   {
     if ( aP0 ) /*0x6b5866*/
@@ -352,7 +352,6 @@ int SmudgeTypeClass::GetObjectSize()
   return 676; /*0x6b6145*/
 
 }
-}  // G42.18c ns repair
 // 0x6B6150
 int SmudgeTypeClass::GetAuxField()
 {
@@ -360,3 +359,4 @@ int SmudgeTypeClass::GetAuxField()
   return this->ArrayIndex; /*0x6b6156*/
 
 }
+}  // G42.18c ns repair

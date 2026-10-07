@@ -267,7 +267,7 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (*a5)(
   v9 = v35 + *a4; /*0x7babef*/
   v32 = v36 + a4[1]; /*0x7babf1*/
   v31 = v9; /*0x7bac02*/
-  result = ClipLine( (int)(&v29), (int)(&v31), (int)(&v35)); /*0x7bac06*/
+  result = ClipLine((int [])((int)(&v29)), (int [])((int)(&v31)), (int)(&v35)); /*0x7bac06*/
   if ( result ) /*0x7bac0d*/
   {
     v11 = v29; /*0x7bac16*/
@@ -1113,7 +1113,6 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
   return 1; /*0x7bae53*/
 
 }
-}  // G42.18c ns repair
 // 0x7BB340
 char XSurface::entry_1C_(int a1, int a2, int a3)
 {
@@ -1121,3 +1120,4 @@ char XSurface::entry_1C_(int a1, int a2, int a3)
   return 0; /*0x7bb342*/
 
 }
+}  // G42.18c ns repair

@@ -209,13 +209,13 @@ char E4Recv_6D1570::sub_6D1570()
   result = (*((int (**)(ObjectClass *, GadgetClass *))this->vtable1 + 12))( (gamemd::ObjectClass *)this, (GadgetClass *)(&stru_B0CC40)); /*0x6d157a*/
   if ( &stru_B0CC40 ) /*0x6d1584*/
   {
-    v2[2] = stru_B0CC40.Height; /*0x6d1597*/
-    v2[1] = stru_B0CC40.Width; /*0x6d15a1*/
-    v2[4] = stru_B0CC40.ID; /*0x6d15ab*/
+    v2[2] = dword_B0CC50; /*0x6d1597*/
+    v2[1] = dword_B0CC4C; /*0x6d15a1*/
+    v2[4] = dword_B0CC58; /*0x6d15ab*/
     v3 = 0; /*0x6d15b6*/
     v2[0] = dword_B0CC64; /*0x6d15bb*/
     v2[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d15bf*/
-    v2[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d15c7*/
+    v2[3] = *(unsigned int *)&dword_B0CC54; /*0x6d15c7*/
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d15cb*/
     return CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)v2)); /*0x6d15db*/
   }

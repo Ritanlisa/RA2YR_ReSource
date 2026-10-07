@@ -10,7 +10,7 @@ struct Diplomacy {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     CampaignScore * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);
-    char * GetField(BuildingTypeClass * aP1, void *a2);
+char * GetField(int a2);  // 0x00656580 g57w12-r raw-sync (def-form)
 };
 
 } // namespace gamemd

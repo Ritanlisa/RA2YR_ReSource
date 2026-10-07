@@ -14,6 +14,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
+namespace gamemd {  // g57w12-r nsfix (orphan re-wrap)
 
 // 0x718000
 TeleportLocomotionClass::TeleportLocomotionClass()
@@ -42,3 +43,4 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   return (int)this->LocomotionClass; /*0x718074*/
 
 }
+}  // namespace gamemd  // g57w12-r nsfix

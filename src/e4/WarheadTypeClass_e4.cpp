@@ -741,16 +741,15 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
       while ( v3 < g_WarheadTypePool ); /*0x75e57d*/
     }
     v9 = this; /*0x75e58f*/
-v4 = (*(int (**)(int *, WarheadTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x75e593*/ &g_BuildingLoadQueue_Array.LightVisibility, (WarheadTypeClass **)(&v9));
+v4 = (*(int (**)(int *, WarheadTypeClass **))(dword_B0F670+ 16))( /*0x75e593*/ &dword_B0F670, (WarheadTypeClass **)(&v9));
 
 
-    if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x75e5a3*/
+    if ( v4 != -1 && v4 < dword_B0F680) /*0x75e5a3*/
     {
-      --g_BuildingLoadQueue_Array.LightBlueTint; /*0x75e5a8*/
+      --dword_B0F680; /*0x75e5a8*/
       for ( ; /*0x75e5ae*/
-            v4 < g_BuildingLoadQueue_Array.LightBlueTint;
-            *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                           + 4 * v4) )
+            v4 < dword_B0F680;
+            *(unsigned int *)(dword_B0F674+ 4 * v4 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v4) )
       {
         ++v4; /*0x75e5b6*/
       }

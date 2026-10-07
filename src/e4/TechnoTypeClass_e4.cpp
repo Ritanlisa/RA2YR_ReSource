@@ -215,16 +215,16 @@ LABEL_11:
     }
   }
   *((unsigned int *)this + 38) = v5; /*0x6f088b*/
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x6f08c5*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+  if ( dword_B0F680< dword_B0F678/*0x6f08c5*/
+    || (BYTE1(byte_B0F67C) || !dword_B0F678)
+    && &dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
 
 
 
   {
-    v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x6f08d2*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = (unsigned int)this;
+    v7 = dword_B0F680++; /*0x6f08d2*/
+    *(unsigned int *)(dword_B0F674+ 4 * v7) = (unsigned int)this;
   }
   return (unsigned int *)(this); /*0x6f08e6*/
 
@@ -1174,7 +1174,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
   (*(void (**)(unsigned char *))(*(unsigned int *)&((unsigned int *)aP0)[1364] + 12))( (unsigned char *)(&((unsigned int *)aP0)[1364])); /*0x7163f2*/
   (*(void (**)(unsigned char *))(*(unsigned int *)&((unsigned int *)aP0)[1392] + 12))( (unsigned char *)(&((unsigned int *)aP0)[1392])); /*0x716401*/
   (*(void (**)(unsigned char *))(*(unsigned int *)&((unsigned int *)aP0)[588] + 12))( (unsigned char *)(&((unsigned int *)aP0)[588])); /*0x716410*/
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)aP0)), (ObjectTypeClass *)(aP1)); /*0x71641c*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)aP0)), (int)((ObjectTypeClass *)(aP1))); /*0x71641c*/
   if ( result >= 0 ) /*0x716423*/
   {
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((unsigned int *)aP0)[800]); /*0x716435*/
@@ -1381,7 +1381,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)&((unsigned int *)aP0)[1688] + 4 * i16)); /*0x716c15*/
     for ( i17 = 0; i17 < *(unsigned int *)&((unsigned int *)aP0)[1728]; ++i17 ) /*0x716c2f*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(unsigned int *)&((unsigned int *)aP0)[1716] + 4 * i17)); /*0x716c40*/
-    _makepath(Buffer, 0, 0,(const char *)( &((unsigned int *)aP0)[276]), Ext); /*0x716c66*/
+    _makepath(Buffer, 0, 0, (const char *)( &((unsigned int *)aP0)[276]), (const char *)&Ext); /*0x716c66*/
     aP0->ObjectTypeClass[41] = (int)SearchMIXFile( (char *)(Buffer), 0); /*0x716c96*/
     /*0x716c9c*/
       ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716c9c*/ &((unsigned int *)aP0)[276], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_Key_TRUCKA.__pad_1714[80], Filename, 256);

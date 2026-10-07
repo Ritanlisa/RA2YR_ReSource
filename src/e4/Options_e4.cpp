@@ -172,7 +172,7 @@ LABEL_11:
           v12 = (void (*)(HWND, int))ShowWindow; /*0x4f135c*/
           ShowWindow(hDlg, 0); /*0x4f1364*/
           v13 = LoadOptions::LoadOptions(v27); /*0x4f136a*/
-          Options_Run = (uint8_t)LoadOptions::Run(v13); /*0x4f137a*/
+          Options_Run = (uint8_t)LoadOptions::Run((gamemd::LoadOptions *)(v13)); /*0x4f137a*/
           ((LoadOptions *)(v27))->Cleanup(); /*0x4f137c*/
           if ( (unsigned char)Options_Run ) /*0x4f1383*/
           {

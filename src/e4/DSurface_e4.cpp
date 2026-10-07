@@ -186,7 +186,7 @@ AbstractClass * * DSurface::CreatePrimary()
   g_DDraw_AllowStretchBlits = (v1 & 0x40) != 0; /*0x4ba79b*/
   Debug::Log("DSurface::AllowStretchBlits = %s\n"); /*0x4ba7b4 G57c1: IDA 0x4ba7b4 push offset aDsurfaceAllows*/
   if ( (v1 & 0x10) == 0 ) /*0x4ba7bf*/
-    LOBYTE(stru_820320.Start) = 0; /*0x4ba7c1*/
+    LOBYTE(byte_8205D4) = 0; /*0x4ba7c1*/
   Debug::Log("DSurface::AllowHWFill = %s\n"); /*0x4ba7e3 G57c1: IDA 0x4ba7e3 push offset aDsurfaceAllowh*/
   v2 = (int)(__2_YAPAXI_Z(0x24u)); /*0x4ba7ea*/
   v3 = (unsigned int *)v2; /*0x4ba7ef*/
@@ -336,7 +336,7 @@ AbstractClass * * DSurface::CreatePrimary()
     }
     while ( v25 < 8 ); /*0x4baa71*/
     g_BitMask_Red = v25; /*0x4baa83*/
-    stru_820320.Rate = -1; /*0x4baa89*/
+    dword_8205D0= -1; /*0x4baa89*/
     LOWORD(g_DDraw_Gray127) = (127 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4baac1*/
                             | (127 >> v22 << g_BitMask_Green)
                             | (127 >> v25 << v24);
@@ -354,7 +354,7 @@ AbstractClass * * DSurface::CreatePrimary()
       {
         if ( v22 == 2 && g_BitShift_Red == 11 && g_BitShift_Green_0 == 3 ) /*0x4babd2*/
         {
-          stru_820320.Rate = (gamemd::AbstractClass **)(2);
+          dword_8205D0= (gamemd::AbstractClass **)(2);
           Debug::Log("DSurface::Create_Primary done\n"); /*0x4babdf G57c1: IDA 0x4babdf push offset aDsurfaceCreate_1*/
           return (gamemd::AbstractClass **)(v5); /*0x4babf0*/
         }
@@ -364,7 +364,7 @@ AbstractClass * * DSurface::CreatePrimary()
       {
         if ( g_BitShift_Green_0 == 3 ) /*0x4bab72*/
         {
-          stru_820320.Rate = (gamemd::AbstractClass **)(0);
+          dword_8205D0= (gamemd::AbstractClass **)(0);
           Debug::Log("DSurface::Create_Primary done\n"); /*0x4bab87 G57c1: IDA 0x4bab87 push offset aDsurfaceCreate_1*/
           return (gamemd::AbstractClass **)(v5); /*0x4bab98*/
         }
@@ -381,7 +381,7 @@ LABEL_60:
     {
       goto LABEL_60; /*0x4babba*/
     }
-    stru_820320.Rate = 1; /*0x4bac07*/
+    dword_8205D0= 1; /*0x4bac07*/
     goto LABEL_60; /*0x4bac07*/
   }
   ((DDraw *)v7)->LogError( (int)((void *)(1))); /*0x4bac2f*/
@@ -765,7 +765,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
 
   if ( this->DSurface_field_0x1C[0] && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
   {
-    if ( !LOBYTE(stru_820320.Start) /*0x4bb675*/
+    if ( !LOBYTE(byte_8205D4) /*0x4bb675*/
       || (*((uint8_t (**)(DSurface *))this->DSurface_field_0x0 + 27))(this)
       || (*(int (**)(int, int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 52))(
            this->DSurface_field_0x1C[0],
@@ -1166,7 +1166,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
     v23 = v20; /*0x4bbd60*/
     v24 = v97; /*0x4bbd62*/
     v95[2] = v98[1]; /*0x4bbd6e*/
-    if ( (uint8_t)ClipLine( (int)(&v96), v98, (int)(&v99)) ) /*0x4bbd72*/
+    if ( (uint8_t)ClipLine((int [])((int)(&v96)), v98, (int [])((int)(&v99))) ) /*0x4bbd72*/
     {
       v106 = (unsigned int *)v18; /*0x4bbd8d*/
       v110 = v22; /*0x4bbd94*/

@@ -328,7 +328,7 @@ int LinkedList_flat::RemoveNode()
   LinkClass *m_Prev; // edx
   LinkClass *m_Next; // edx
 
-  v2 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x55673e*/
+  v2 = (LinkClass *)(*(int ((gamemd::LinkClass *)(**))(LinkClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x55673e*/
   v3 = (LinkClass *)(*(int (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x556740*/
   m_Prev = (LinkClass *)(this->m_Prev); /*0x556743*/
   if ( m_Prev ) /*0x55674a*/

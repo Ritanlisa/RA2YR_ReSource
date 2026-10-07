@@ -210,16 +210,8 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
     if ( a3 + a2 + a1 < 2000 ) /*0x544f2b*/
       v6 = 27; /*0x544f2d*/
     if ( RA2_OPNEW(0x1B4u) ) /*0x544f37*/
-      v7 = LightConvertClass::Constructor( /*0x544f79*/
-             &unk_ABBED0,
-             &FileSystem_TEMPERAT_PAL,
-             g_DSurface_Primary,
-             a1,
-             a2,
-             a3,
-             dword_87F6A8 != 0,
-             0,
-             v6);
+      v7 = LightConvertClass::Constructor((int)(/*0x544f79*/
+             &unk_ABBED0), (int)(&FileSystem_TEMPERAT_PAL), g_DSurface_Primary, a1, a2, a3, dword_87F6A8 != 0, 0, v6);
     else
       v7 = 0; /*0x544f7d*/
     if ( dword_87F6A8 < dword_87F6A0 /*0x544fb6*/
@@ -498,52 +490,52 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   v90 = (AbstractClass *)(0);
   v70 = (MapClass *)(0);
   v72 = (CCINIClass *)(0);
-  Int_Overwrite = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295DC, (INIClass *)0xFFFFFFFF);
-  var8A0 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295D0, (INIClass *)0xFFFFFFFF);
-  v129 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295C4, (INIClass *)0xFFFFFFFF);
-  v94 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295B8, (INIClass *)0xFFFFFFFF);
-  v115 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295AC, (INIClass *)0xFFFFFFFF);
-  v96 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295A0, (INIClass *)0xFFFFFFFF);
+  Int_Overwrite = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295DC, (int)0xFFFFFFFF);
+  var8A0 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295D0, (int)0xFFFFFFFF);
+  v129 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295C4, (int)0xFFFFFFFF);
+  v94 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295B8, (int)0xFFFFFFFF);
+  v115 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295AC, (int)0xFFFFFFFF);
+  v96 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8295A0, (int)0xFFFFFFFF);
   v116 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829594, (INIClass *)0xFFFFFFFF);
-  v98 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829588, (INIClass *)0xFFFFFFFF);
-  v118 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829578, (INIClass *)0xFFFFFFFF);
-  v100 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829568, (INIClass *)0xFFFFFFFF);
-  v120 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829558, (INIClass *)0xFFFFFFFF);
-  var930 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829548, (INIClass *)0xFFFFFFFF);
-  v122 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829538, (INIClass *)0xFFFFFFFF);
-  v104 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_82952C, (INIClass *)0xFFFFFFFF);
-  v124 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829520, (INIClass *)0xFFFFFFFF);
-  v108 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829514, (INIClass *)0xFFFFFFFF);
-  v126 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829504, (INIClass *)0xFFFFFFFF);
-  var918 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294F8, (INIClass *)0xFFFFFFFF);
-  v128 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294EC, (INIClass *)0xFFFFFFFF);
-  v110 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294E0, (INIClass *)0xFFFFFFFF);
-  v130 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294D0, (INIClass *)0xFFFFFFFF);
-  v112 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294C0, (INIClass *)0xFFFFFFFF);
-  v132 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294B0, (INIClass *)0xFFFFFFFF);
-  v138 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294A8, (INIClass *)0xFFFFFFFF);
-  v117 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829498, (INIClass *)0xFFFFFFFF);
-  v114 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_82948C, (INIClass *)0xFFFFFFFF);
-  v92 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829478, (INIClass *)0xFFFFFFFF);
-  v141 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829468, (INIClass *)0xFFFFFFFF);
-  v119 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829458, (INIClass *)0xFFFFFFFF);
-  v131 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829448, (INIClass *)0xFFFFFFFF);
-  v121 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829438, (INIClass *)0xFFFFFFFF);
-  v139 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_82942C, (INIClass *)0xFFFFFFFF);
-  v123 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829420, (INIClass *)0xFFFFFFFF);
-  v133 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829410, (INIClass *)0xFFFFFFFF);
-  v125 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829408, (INIClass *)0xFFFFFFFF);
-  v145 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293FC, (INIClass *)0xFFFFFFFF);
-  var8CC = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293E8, (INIClass *)0xFFFFFFFF);
-  v137 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293D8, (INIClass *)0xFFFFFFFF);
-  v93 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293C4, (INIClass *)0xFFFFFFFF);
-  v95 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293B0, (INIClass *)0xFFFFFFFE);
-  v99 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293A4, (INIClass *)0xFFFFFFFF);
-  v97 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829398, (INIClass *)0xFFFFFFFF);
-  v101 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829388, (INIClass *)0xFFFFFFFF);
-  v103 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829378, (INIClass *)0xFFFFFFFF);
-  v105 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829370, (INIClass *)0xFFFFFFFF);
-  v22 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829364, (INIClass *)0xFFFFFFFF);
+  v98 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829588, (int)0xFFFFFFFF);
+  v118 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829578, (int)0xFFFFFFFF);
+  v100 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829568, (int)0xFFFFFFFF);
+  v120 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829558, (int)0xFFFFFFFF);
+  var930 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829548, (int)0xFFFFFFFF);
+  v122 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829538, (int)0xFFFFFFFF);
+  v104 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_82952C, (int)0xFFFFFFFF);
+  v124 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829520, (int)0xFFFFFFFF);
+  v108 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829514, (int)0xFFFFFFFF);
+  v126 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829504, (int)0xFFFFFFFF);
+  var918 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294F8, (int)0xFFFFFFFF);
+  v128 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294EC, (int)0xFFFFFFFF);
+  v110 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294E0, (int)0xFFFFFFFF);
+  v130 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294D0, (int)0xFFFFFFFF);
+  v112 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294C0, (int)0xFFFFFFFF);
+  v132 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294B0, (int)0xFFFFFFFF);
+  v138 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8294A8, (int)0xFFFFFFFF);
+  v117 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829498, (int)0xFFFFFFFF);
+  v114 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_82948C, (int)0xFFFFFFFF);
+  v92 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829478, (int)0xFFFFFFFF);
+  v141 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829468, (int)0xFFFFFFFF);
+  v119 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829458, (int)0xFFFFFFFF);
+  v131 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829448, (int)0xFFFFFFFF);
+  v121 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829438, (int)0xFFFFFFFF);
+  v139 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_82942C, (int)0xFFFFFFFF);
+  v123 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829420, (int)0xFFFFFFFF);
+  v133 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829410, (int)0xFFFFFFFF);
+  v125 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829408, (int)0xFFFFFFFF);
+  v145 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293FC, (int)0xFFFFFFFF);
+  var8CC = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293E8, (int)0xFFFFFFFF);
+  v137 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293D8, (int)0xFFFFFFFF);
+  v93 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293C4, (int)0xFFFFFFFF);
+  v95 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293B0, (int)0xFFFFFFFE);
+  v99 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_8293A4, (int)0xFFFFFFFF);
+  v97 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829398, (int)0xFFFFFFFF);
+  v101 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829388, (int)0xFFFFFFFF);
+  v103 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829378, (int)0xFFFFFFFF);
+  v105 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829370, (int)0xFFFFFFFF);
+  v22 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, &unk_829364, (int)0xFFFFFFFF);
   g_CellTileLookup = (int)((CCINIClass *)-1);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[80412] = -1;
   v107 = v22;
@@ -591,16 +583,16 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   dword_ABBEC0 = (unsigned int)((CCINIClass *)-1);
   dword_ABB10C = (unsigned int)((CCINIClass *)-1);
   *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] = -1;
-  dword_ABC2B4 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&unk_829354), (INIClass *)0xFFFFFFFF);
-  *(unsigned int *)&(&g_NetworkPlayerBuffer)[80628] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_00829344), (INIClass *)0xFFFFFFFF);
-  dword_ABC1E8 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_00829330), (INIClass *)0xFFFFFFFF);
-  *(unsigned int *)&(&g_NetworkPlayerBuffer)[79868] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082931C), (INIClass *)0xFFFFFFFF);
-  *(unsigned int *)&(&g_NetworkPlayerBuffer)[81676] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082930C), (INIClass *)0xFFFFFFFF);
-  *(unsigned int *)&(&g_NetworkPlayerBuffer)[78084] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292FC), (INIClass *)0xFFFFFFFF);
+  dword_ABC2B4 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&unk_829354), (int)0xFFFFFFFF);
+  *(unsigned int *)&(&g_NetworkPlayerBuffer)[80628] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_00829344), (int)0xFFFFFFFF);
+  dword_ABC1E8 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_00829330), (int)0xFFFFFFFF);
+  *(unsigned int *)&(&g_NetworkPlayerBuffer)[79868] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082931C), (int)0xFFFFFFFF);
+  *(unsigned int *)&(&g_NetworkPlayerBuffer)[81676] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_0082930C), (int)0xFFFFFFFF);
+  *(unsigned int *)&(&g_NetworkPlayerBuffer)[78084] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292FC), (int)0xFFFFFFFF);
   dword_ABC1D0 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292E8), (INIClass *)0xFFFFFFFF);
-  *(unsigned int *)&(&g_NetworkPlayerBuffer)[81668] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292D4), (INIClass *)0xFFFFFFFF);
-  g_TerrainSoundTable2 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292C4), (INIClass *)0xFFFFFFFF);
-  *(unsigned int *)&(&g_NetworkPlayerBuffer)[80364] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292B4), (INIClass *)0xFFFFFFFF);
+  *(unsigned int *)&(&g_NetworkPlayerBuffer)[81668] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292D4), (int)0xFFFFFFFF);
+  g_TerrainSoundTable2 = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292C4), (int)0xFFFFFFFF);
+  *(unsigned int *)&(&g_NetworkPlayerBuffer)[80364] = INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&g_INI_Key_General, (unsigned char *)(&DataGlobal_008292B4), (int)0xFFFFFFFF);
   dword_ABC558 = 0;
   Ticks = (INIClass *)TimerGetTicks();
   int v23 = 4;
@@ -723,10 +715,10 @@ LABEL_26:
       *(unsigned int *)&(&g_NetworkPlayerBuffer)[80468] =(unsigned int)v21;
     sprintf((char *const)&aP2.q02C, stru_8292A8, v20);
     INIClass::ResetSection(((INIClass*)v77));
-    v71 = (ObjectClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_82929C, (INIClass *)0xFFFFFFFF);
+    v71 = (ObjectClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_82929C, (int)0xFFFFFFFF);
     if ( v71 == (ObjectClass *)-1 )
       break;
-    v26 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_82928C, (INIClass *)0xFFFFFFFF);
+    v26 = (AbstractClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_82928C, (int)0xFFFFFFFF);
     v27 = v26;
     if ( v26 == (AbstractClass *)-1 || v26 == (AbstractClass *)v71 )
     {
@@ -756,7 +748,7 @@ LABEL_26:
     v72 = v31;
     ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_82927C, &unk_829284, &aP4, 64);
     ((unsigned char *)(INIClass*)v77)->GetString((INIClass *)&aP2.q02C, &unk_829268, &unk_829274, &v183, 64);
-    v75 = (CCINIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829258, (INIClass *)0xFFFF);
+    v75 = (CCINIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829258, (int)0xFFFF);
     v86 = (INIClass *)INIClass::ReadInt_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829244, (INIClass *)0xFFFF);
     Bool_Overwrite = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829238, 0);
     char v64 = INIClass::ReadBool_Overwrite((INIClass *)((int)v77), (uint8_t *)&aP2.q02C, &unk_829228, 1);
@@ -884,13 +876,13 @@ LABEL_26:
                 {
                   v3[178] = (*(int (**)(AnimTypeClass *))(*(unsigned int *)v42->__pad_0 + 64))( (AnimTypeClass *)(v42));
                   sprintf(aP2[0], DataGlobal_00829184, v35);
-                  v3[179] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (INIClass *)v3[179]);
+                  v3[179] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (int)((INIClass *)v3[179]));
                   sprintf(aP2[0], DataGlobal_00829174, v35);
-                  v3[180] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (INIClass *)v3[180]);
+                  v3[180] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (int)((INIClass *)v3[180]));
                   sprintf(aP2[0], DataGlobal_00829160, v35);
-                  v3[181] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (INIClass *)v3[181]);
+                  v3[181] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (int)((INIClass *)v3[181]));
                   sprintf(aP2[0], stru_829150, v35);
-                  v3[182] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, &aP2, (INIClass *)v3[182]);
+                  v3[182] = INIClass::ReadInt_Overwrite(((INIClass *)((int)v77)), (uint8_t *)&aP4, (unsigned char *)(&aP2), (INIClass *)v3[182]);
                 }
               }
             }
@@ -1273,7 +1265,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
     goto LABEL_24; /*0x546f1a*/
   }
   LABEL_39:
-  Debug::Log(); /*0x546ff8*/
+  Debug::Log("Loaded %d isometric tiles consuming %d Kb\n"); /*0x546ff8 G57w12: IDA push seq @ 0x546ff8 +2 reg-vararg omitted*/
 }
 }
 // 0x547110
@@ -2936,13 +2928,13 @@ int sub_54E260()
 {
   int v2; // [esp+4h] [ebp-8h]
 
-  g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e26d*/
+  &g_MissionQueueFrame = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e26d*/
   g_MissionQueueFrame.nextScenario[2] = 0; /*0x54e276*/
   sub_54EBF0((VectorClass *)&g_MissionQueueFrame.nextScenario[3], 0, 0); /*0x54e280*/
   g_MissionQueueFrame.nextScenario[3] = (int)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e298*/
   g_MissionQueueFrame.nextScenario[8] = 10; /*0x54e2a2*/
   g_MissionQueueFrame.nextScenario[7] = 0; /*0x54e2ac*/
-  g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e2b6*/
+  &g_MissionQueueFrame = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e2b6*/
   g_MissionQueueFrame.nextScenario[1] = v2; /*0x54e2bb*/
   g_MissionQueueFrame.nextScenario[2] = 100; /*0x54e2c1*/
   return atexit(loc_54E2D0); /*0x54e2cf*/

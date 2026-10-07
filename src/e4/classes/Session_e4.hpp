@@ -91,7 +91,7 @@ struct Session {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
-    int RemoveTeam(int (__thiscall ***aP1)(unsigned int, int));  // 0x5D1D80
+int RemoveTeam(int (***aP1)(unsigned int, int));  // 0x005d1d80 g57w12-r raw-sync (def-form)
     int PrepareGame(HWND hWnd);  // 0x5E74E0
     int GetPlayerOption();  // 0x69B700
     int AssignSide(int aP1, int aP2);  // G42.33 b10 member-form sync

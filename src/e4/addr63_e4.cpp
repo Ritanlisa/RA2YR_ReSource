@@ -1721,8 +1721,8 @@ AbstractClass * * sub_638E60()
 
   if ( !stru_AC4B30.__pad_EC[148] ) /*0x638e6b*/
   {
-    v1 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q0B0))(stru_887598.lineTrailer);  /*0x638e85*/
-    v2 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0C0))(stru_887598.lineTrailer);  /*0x638e8c*/
+    v1 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q0B0))(dword_887640);  /*0x638e85*/
+    v2 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0C0))(dword_887640);  /*0x638e8c*/
     v3 = 0; /*0x638e93*/
     v7 = *(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x638e95*/
     if ( *(int *)&stru_AC4B30.__pad_EC[12] <= 0 ) /*0x638e9b*/
@@ -1799,7 +1799,7 @@ int sub_639040(void * aMsgPlanningmod_2)
       if ( ++v2 >= (int)g_SelectionManager ) /*0x63908d*/
         return 0; /*0x639095*/
     }
-    Type = (int *)BuildingClass::GetType( (unsigned int *)v4); /*0x63909b*/
+    Type = (int *)BuildingClass::GetType((gamemd::BuildingClass *)((unsigned int *)v4)); /*0x63909b*/
     v6 = 0; /*0x63909d*/
     while ( 1 ) /*0x6390a4*/
     {
@@ -1808,7 +1808,7 @@ int sub_639040(void * aMsgPlanningmod_2)
         break; /*0x6390a9*/
       if ( (*(unsigned char *)(v7 + 20) & 1) == 0 ) /*0x6390b5*/
         break; /*0x6390b5*/
-      v8 = (unsigned int *)BuildingClass::GetType( (unsigned int *)v7); /*0x6390b7*/
+      v8 = (unsigned int *)BuildingClass::GetType((gamemd::BuildingClass *)((unsigned int *)v7)); /*0x6390b7*/
       if ( !Object_Read(Type, v8) ) /*0x6390c0*/
         break; /*0x6390c0*/
       if ( ++v6 >= (int)v1 ) /*0x6390cc*/
@@ -2071,7 +2071,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   v32 = (ScriptAction *)-1; /*0x639855*/
   v34 = -1; /*0x639859*/
   v33 = (ScriptAction *)(0); /*0x63985d*/
-  v9 = BuildingClass::GetType( a1); /*0x639865*/
+  v9 = BuildingClass::GetType((gamemd::BuildingClass *)(a1)); /*0x639865*/
   v10 = v8->countObjects[3]; /*0x63986a*/
   v11 = (unsigned int *)v9; /*0x639870*/
   v35 = (unsigned int *)v9; /*0x639874*/
@@ -2908,7 +2908,7 @@ AbstractClass * * Tactical_DrawWaypoint(int a1, int a2, int a3, int a4, int a5, 
     a3 = v12 - *((int16_t *)dword_ABF294 + 1) / 2 - 1; /*0x63d7ed*/
     a4 = v16; /*0x63d7f4*/
     DrawToSurfaceSHP(/*0x63d7fb*/
-      DSurface_Composite, dword_87F6C8, (ConvertClass *)((int)dword_ABF294), a7, (ConvertClass *)(&a3), (ConvertClass *)(v27), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
+      DSurface_Composite, dword_87F6C8, (ConvertClass *)((int)dword_ABF294), a7, (ConvertClass *)(&a3), (ConvertClass *)(v27), (gamemd::ConvertClass *)(1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0);
   }
 }
 }
@@ -2936,7 +2936,7 @@ void* DrawTacticalLine2D(int a1, ObjectClass * aP1, int aP0, int aP0_4, int aP0_
   aP0_8 += v9; /*0x63d897*/
   aP0_12 += v10; /*0x63d89b*/
   v14[3] = dword_886FAC; /*0x63d89f*/
-  result = ClipLine( (int)(&aP0), (int)(&aP0_8), v14); /*0x63d8a3*/
+  result = ClipLine((int [])((int)(&aP0)), (int [])((int)(&aP0_8)), v14); /*0x63d8a3*/
   if ( result ) /*0x63d8ae*/
   {
     if ( aP0_16 ) /*0x63d8b6*/

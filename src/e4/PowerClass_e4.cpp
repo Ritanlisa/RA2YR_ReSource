@@ -21,7 +21,6 @@ void PowerClass_Stub()
 {
   RadarClass::Destru_vt05(); /*0x63f7b0 G57w11: 留证——e4 桩函数无 receiver，raw 有 (RadarClass *)this*/
 }
-}
 // 0x63F7E0
 void PowerClass::checkLowPower()
 {
@@ -35,4 +34,5 @@ byte_AC4E78 = 0; /*0x63f7fc*/
     byte_AC4E78 = 0; /*0x63f7fc*/
   }
 
+}
 }

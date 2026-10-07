@@ -517,8 +517,8 @@ int Screen::TransitionLoop(int a2)
     v17[2] = 640; /*0x6901db*/
     v17[3] = 400; /*0x6901e3*/
     ((Rect *)(&v19))->Set(v3, v4, 640, 400); /*0x6901eb*/
-    if ( stru_887598.lineTrailer ) /*0x6901f8*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))( /*0x690205*/ stru_887598.lineTrailer, (ObjectClass *)(g_DSurface_Hidden), 0);
+    if ( dword_887640) /*0x6901f8*/
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x690205*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
@@ -530,8 +530,8 @@ int Screen::TransitionLoop(int a2)
 
 
 
-    if ( stru_887598.lineTrailer ) /*0x690230*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))( /*0x69023d*/ stru_887598.lineTrailer, (ObjectClass *)(g_DSurface_Hidden), 0);
+    if ( dword_887640) /*0x690230*/
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x69023d*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
@@ -584,7 +584,6 @@ int Screen::TransitionLoop(int a2)
   return result; /*0x690356*/
 
 }
-}  // G42.18c ns repair
 // 0x690360
 int Screen::CleanupTransitionObjects()
 {
@@ -637,3 +636,4 @@ byte_B05584 = 0; /*0x69036b*/
   return result; /*0x6903f6*/
 
 }
+}  // G42.18c ns repair

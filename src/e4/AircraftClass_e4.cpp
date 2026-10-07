@@ -186,7 +186,7 @@ int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void 
   unsigned char v18[8]; // [esp+Ch] [ebp-8h] BYREF
 
   v11 = FootClass::ProcessDeploy((FootClass *)(/*0x4165f1*/
-          aP0), a1, COERCE_DOUBLE(IDA___PAIR64__((unsigned int)a3, a2)), (int *)a4, a5, a6, (void *)a7, v16, v17);
+          aP0), (int)(a1), COERCE_DOUBLE(IDA___PAIR64__((unsigned int)a3, a2)), (int *)a4, (int)(a5), a6, (void *)a7, v16, v17);
   if ( v11 == 4 ) /*0x4165f6*/
   {
     (*(void (**)(AircraftClass *, unsigned int))((char *)aP0->vtable1 + 952))( (AircraftClass *)(aP0), 0); /*0x416613*/
@@ -442,7 +442,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
   if ( !a3 ) /*0x41aa8b*/
   {
   LABEL_53:
-    IDA_LOBYTE(v6, unsigned int a3) = FootClass::AssignDestination(a1, (int)ClosestPlacementCell, a4); /*0x41adac*/
+    IDA_LOBYTE(v6, unsigned int a3) = FootClass::AssignDestination((gamemd::FootClass *)(a1), (int)ClosestPlacementCell, (int)(a4)); /*0x41adac*/
     return (void *)(v6); /*0x41adb4*/
   }
   if ( !(*((uint8_t (**)(AbstractClass *))a3->vtable1 + 21))( (AbstractClass *)(a3)) ) /*0x41aa9a*/
@@ -564,7 +564,7 @@ ClosestPlacementCell = (int *)(*((int (**)(FootClass *, int, unsigned int, unsig
     TechnoClass::SetFocus(((TechnoClass *)a1), (int)ClosestPlacementCell); /*0x41ac2e*/
     goto LABEL_35; /*0x41ac33*/
   }
-  IDA_LOBYTE(v6) = FootClass::AssignDestination(a1, 0, a4); /*0x41aaa6*/
+  IDA_LOBYTE(v6) = FootClass::AssignDestination((gamemd::FootClass *)(a1), 0, (int)(a4)); /*0x41aaa6*/
   return (void *)(v6); /*0x41aaab*/
 }
 // 0x41ADF0

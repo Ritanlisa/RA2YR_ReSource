@@ -1962,7 +1962,7 @@ LABEL_103:
   {
     while ( 1 ) /*0x7bdb30*/
     {
-      v32 = (unsigned int *)(*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdb30*/
+      v32 = (unsigned int *)(*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdb30*/
                         this,
                         2,
                         0,
@@ -2093,7 +2093,7 @@ LABEL_103:
       *((unsigned int *)this + 12) += *((unsigned int *)this + 39); /*0x7bdeef*/
     }
   }
-  v47 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdf04*/
+  v47 = (*((int ((gamemd::BSurface *)(**))(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdf04*/
           this,
           2,
           0,

@@ -919,7 +919,7 @@ LABEL_11:
     v3[0] = 6; /*0x664780*/
     v3[1] = a2; /*0x664785*/
     Debug::Log("Sending TALK_PORT_BLITZ to router\n"); /*0x664789 G57w11: IDA push seq @ 0x664789*/
-    return Network::SendPacket(&unk_A8E9C0.Socket, (int)v3, 338, 1u); /*0x6647a2*/
+    return Network::SendPacket(&unk_A8E9C0, (int)v3, 338, 1u); /*0x6647a2*/
   }
   return result; /*0x66476f*/
 

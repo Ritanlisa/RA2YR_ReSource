@@ -73,30 +73,30 @@ struct TActionClass {
     char RevealTileTypeAtWaypoint(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E11C0 IUnknown 占位清除
     char RevealWaypointArea(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E0FE0 IUnknown 占位清除
     char executeCaptureAction(void *a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E0CA0 IUnknown 占位清除
-    char executeChronoSphereAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E43A0 IUnknown 占位清除
-    char executeChronoshiftAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2F00 IUnknown 占位清除
-    char executeCloseGateAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E32A0 IUnknown 占位清除
-    char executeDominatorAction(unsigned int *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4460 IUnknown 占位清除
-    char executeEMPulseAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4560 IUnknown 占位清除
+char executeChronoSphereAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e43a0 g57w12-r raw-sync (def-form)
+char executeChronoshiftAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e2f00 g57w12-r raw-sync (def-form)
+char executeCloseGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);  // 0x006e32a0 g57w12-r raw-sync (def-form)
+char executeDominatorAction(unsigned int * a1, int a3, int a4, IUnknown * aP4);  // 0x006e4460 g57w12-r raw-sync (def-form)
+char executeEMPulseAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e4560 g57w12-r raw-sync (def-form)
     char executeEnterAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E0AA0 IUnknown 占位清除
-    char executeExplodeAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2EB0 IUnknown 占位清除
+char executeExplodeAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e2eb0 g57w12-r raw-sync (def-form)
     char executeFollowAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E21E0 IUnknown 占位清除
-    char executeForceShieldAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4200 IUnknown 占位清除
+char executeForceShieldAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e4200 g57w12-r raw-sync (def-form)
     char executeGuardAreaAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E1980 IUnknown 占位清除
-    char executeJumpjetAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E31E0 IUnknown 占位清除
-    char executeLightningAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E3B40 IUnknown 占位清除
+char executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);  // 0x006e31e0 g57w12-r raw-sync (def-form)
+char executeLightningAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e3b40 g57w12-r raw-sync (def-form)
     char executeLoadAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2520 IUnknown 占位清除
-    char executeOpenGateAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E3240 IUnknown 占位清除
+char executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);  // 0x006e3240 g57w12-r raw-sync (def-form)
     char executePatrolAction(void *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E1A40 IUnknown 占位清除
-    char executePlaceBeaconAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E3180 IUnknown 占位清除
-    char executePsychicDominatorAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4100 IUnknown 占位清除
-    char executeRevealAction(unsigned int *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E44E0 IUnknown 占位清除
+char executePlaceBeaconAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);  // 0x006e3180 g57w12-r raw-sync (def-form)
+char executePsychicDominatorAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e4100 g57w12-r raw-sync (def-form)
+char executeRevealAction(unsigned int * a1, int a3, int a4, IUnknown * aP4);  // 0x006e44e0 g57w12-r raw-sync (def-form)
     char executeSabotageAction(unsigned int *a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E0D00 IUnknown 占位清除
     char executeScatterAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E1A70 IUnknown 占位清除
-    char executeSelfDestructAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2E60 IUnknown 占位清除
-    char executeSpyPlaneAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4360 IUnknown 占位清除
-    char executeUnloadAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2AF0 IUnknown 占位清除
-    char executeWeatherStormAction(unsigned int *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E43E0 IUnknown 占位清除
+char executeSelfDestructAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e2e60 g57w12-r raw-sync (def-form)
+char executeSpyPlaneAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e4360 g57w12-r raw-sync (def-form)
+char executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4);  // 0x006e2af0 g57w12-r raw-sync (def-form)
+char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4);  // 0x006e43e0 g57w12-r raw-sync (def-form)
     int ExecuteAction(int a2, int a3);
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);

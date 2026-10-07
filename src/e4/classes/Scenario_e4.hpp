@@ -144,7 +144,7 @@ struct Scenario {
     int PreGameInit();  // 0x5E7460
     void SetByte96();  // 0x642AD0
     static int ClearScreen(...);  // 0x684240
-    int LoadWithProgress(const char *aP0, double a2);  // 0x684620
+char LoadWithProgress();  // 0x00684620 g57w12-r raw-sync (def-form)
     int FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCINIClass * aP3);  // 0x4758F0
     void * ResetDisplayArrays();  // 0x5C9700
     int SetDword32(int a2);  // 0x642B10

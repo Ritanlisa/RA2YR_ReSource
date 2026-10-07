@@ -84,7 +84,7 @@ void TacticalClass::DrawBuildingPlacement(unsigned int *aP1, int *a2)
     }
   }
   if ( !*((unsigned int *)this + 13) ) /*0x47f5a8*/
-    TacticalClass::SetView((int *)this, 0, 0x10000, 0, 1000, 1000, 1000); /*0x47f5c9*/
+    TacticalClass::SetView((gamemd::TacticalClass *)((int *)this), 0, 0x10000, 0, 1000, 1000, 1000); /*0x47f5c9*/
   v13 = v4[682]; /*0x47f5ce*/
   LOBYTE(aP1) = *((unsigned char *)this + 286); /*0x47f5dc*/
   if ( v13 ) /*0x47f5e0*/
@@ -353,7 +353,7 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
           result[1] = *((unsigned int *)this + 1137); /*0x4ac7ef*/
           result[2] = *((unsigned int *)this + 1138); /*0x4ac7f5*/
           *((unsigned int *)this + 1135) = 0; /*0x4ac7f8*/
-          return (*(unsigned int *(**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x4ac80a*/
+          return (*(unsigned int *(**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x4ac80a*/
         }
       }
     }
@@ -675,13 +675,13 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
     (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)v6 + 48))( (CommandClass *)(v6), (GadgetClass *)(&stru_B0CC40)); /*0x6d0546*/
     if ( &stru_B0CC40 ) /*0x6d0550*/
     {
-      v17[1] = stru_B0CC40.Width; /*0x6d0567*/
-      v17[2] = stru_B0CC40.Height; /*0x6d0571*/
-      v17[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d057b*/
+      v17[1] = dword_B0CC4C; /*0x6d0567*/
+      v17[2] = dword_B0CC50; /*0x6d0571*/
+      v17[3] = *(unsigned int *)&dword_B0CC54; /*0x6d057b*/
       v18 = 0; /*0x6d0586*/
       v17[0] = dword_B0CC64; /*0x6d058b*/
       v17[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d058f*/
-      v17[4] = stru_B0CC40.ID; /*0x6d0597*/
+      v17[4] = dword_B0CC58; /*0x6d0597*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d059b*/
       CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)v17)); /*0x6d05ab*/
       result = (*(int (**)(CommandClass *, int))(*(unsigned int *)v6 + 56))( (CommandClass *)(v6), 2); /*0x6d05b6*/

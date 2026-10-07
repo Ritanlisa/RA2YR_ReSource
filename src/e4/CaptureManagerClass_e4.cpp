@@ -232,7 +232,7 @@ bool CaptureManagerClass::CanCapture(unsigned int *a2)
     if ( v4 != (*(int (**)(int))(*(unsigned int *)v3 + 60))(v3) /*0x471cfe*/
       && !*(unsigned char *)((*(int (**)(unsigned int *))(*a2 + 132))( (unsigned int *)(a2)) + 3381)
       && (!a2[185] || (*(int (**)(unsigned int *))(*a2 + 44))( (unsigned int *)(a2)) != 1)
-      && !BuildingClass::IsBeingRepairedOrCaptured((int)a2)
+      && !BuildingClass::IsBeingRepairedOrCaptured((gamemd::BuildingClass *)((int)a2))
       && !a2[179]
       && !(*(uint8_t (**)(unsigned int *))(*a2 + 352))( (unsigned int *)(a2)) )
     {
@@ -698,7 +698,7 @@ LABEL_22:
           }
         }
 LABEL_34:
-        Debug::Log(); /*0x4725e9*/
+        Debug::Log("AICapture: Naw, let's put him in hunt.\n"); /*0x4725e9 G57w12: IDA push seq @ 0x4725e9*/
         (*(void (**)(unsigned char *, int, unsigned int))(*(unsigned int *)_EBX + 488))(_EBX, 15, 0); /*0x4725fe*/
         return; /*0x4725fe*/
       case 2:

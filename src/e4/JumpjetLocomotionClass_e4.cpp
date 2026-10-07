@@ -779,7 +779,7 @@ int JumpjetLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, l
       }
       else
       {
-        JumpjetLocomotion::MoveTo( (IUnknown *)((int)a1 - 4), (int)(&v12),(void *)( 1)); /*0x4b0d3a*/
+        JumpjetLocomotion::MoveTo((int)((IUnknown *)((int)a1 - 4)), (unsigned int *)((int)(&v12)), (void *)( 1)); /*0x4b0d3a*/
         LOBYTE(v4) = (unsigned char)a1 + 48; /*0x4b0d3f*/
         a1->SlopeTimer[3] = a3; /*0x4b0d4a*/
         *(unsigned long long *)a1->Dest = a4; /*0x4b0d4c*/

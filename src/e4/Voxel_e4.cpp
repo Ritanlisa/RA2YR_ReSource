@@ -486,7 +486,7 @@ int Voxel::Projection_Setup()
     v60 = v34; /*0x755406*/
     v33[1] = v60; /*0x75540e*/
     *((unsigned int *)v33 + 2) = v61; /*0x755415*/
-    Math::BuildRotationMatrix((float *)v66.__pad_0, &(&flt_B444A0)[v29], *(float *)&stru_887460.Buffer_field_0C); /*0x755424*/
+    Math::BuildRotationMatrix((float *)v66.__pad_0, &(&flt_B444A0)[v29], *(float *)&dword_88746C); /*0x755424*/
     v35 = (float *)(TransformMatrix3x4Point( (AbstractClass *)(v58), (IUnknown *)((float *)v66.__pad_0), (IUnknown *)(&(&flt_B432D8)[v29]))); /*0x755432*/
     v29 += 3; /*0x755439*/
     *v30 = *v35; /*0x75543c*/
@@ -555,9 +555,9 @@ int Voxel::Projection_Setup()
   ((Int4 *)(&stru_B432C8))->Set2(0, 0, 0, 1065353216); /*0x7558c9*/
   ((Matrix3x4*)&stru_B44318)->Identity(); /*0x7558d3*/
   v55 = -dbl_B43F00; /*0x7558e6*/
-  ((Matrix3x3 *)(stru_B44318.m_Data))->RotateX(v55); /*0x7558e9*/
+  ((Matrix3x3 *)(&stru_B44318))->RotateX(v55); /*0x7558e9*/
   v56 = -dbl_B44498; /*0x7558f7*/
-  ((Matrix2D *)(stru_B44318.m_Data))->Rotate(v56); /*0x7558ff*/
+  ((Matrix2D *)(&stru_B44318))->Rotate(v56); /*0x7558ff*/
   v52 = &stru_B450B8; /*0x755904*/
   do /*0x755919*/
     result = ((Matrix3x4*)(v52++))->Identity(); /*0x75590b*/

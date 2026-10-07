@@ -241,7 +241,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
   DWORD Buffer[2]; // [esp+8h] [ebp-10h] BYREF
   CHAR FileName[8]; // [esp+10h] [ebp-8h] BYREF
 
-  if ( stru_887598.onBridge ) /*0x47974c*/
+  if ( &byte_887624) /*0x47974c*/
   {
     sub_47A080(this, BytesReturned); /*0x479753*/
     return; /*0x47975d*/
@@ -775,8 +775,8 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   if ( a3 == 6 ) /*0x47e404*/
   {
     a4 = *v35; /*0x47e40e*/
-    IDA_LOWORD(a3) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[84]) + a4; /*0x47e424*/
-    IDA_HIWORD(a3) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[84]) + IDA_HIWORD(a4); /*0x47e429*/
+    IDA_LOWORD(a3) = IDA_LOWORD(&dword_89F594) + a4; /*0x47e424*/
+    IDA_HIWORD(a3) = IDA_HIWORD(&dword_89F594) + IDA_HIWORD(a4); /*0x47e429*/
     result = (int)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x47e43c*/
     v37 = *(unsigned int *)(result + 320); /*0x47e441*/
     *(unsigned int *)(result + 44) = v47; /*0x47e447*/
@@ -987,8 +987,8 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   if ( a3 == 6 ) /*0x47e834*/
   {
     a4 = *v35; /*0x47e83e*/
-    IDA_LOWORD(a3) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[84]) + a4; /*0x47e854*/
-    IDA_HIWORD(a3) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[84]) + IDA_HIWORD(a4); /*0x47e859*/
+    IDA_LOWORD(a3) = IDA_LOWORD(&dword_89F594) + a4; /*0x47e854*/
+    IDA_HIWORD(a3) = IDA_HIWORD(&dword_89F594) + IDA_HIWORD(a4); /*0x47e859*/
     result = (int)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x47e86c*/
     v37 = *(unsigned int *)(result + 320); /*0x47e871*/
     *(unsigned int *)(result + 44) = v47; /*0x47e877*/
@@ -2030,11 +2030,8 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   ((SHA1 *)(&v6))->ComputeThunk((char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
   ((Pipe *)(((Pipe *)&v6)))->Dtor(); /*0x4745df*/
-  INIClass::ReadBase64Data( /*0x4745ee*/
-    (char *)this,
-    (uint8_t *)g_INI_Key_Digest,
-    (int)&this->ambientSoundController[1] + 1,
-    20);
+  INIClass::ReadBase64Data((gamemd::INIClass *)(/*0x4745ee*/
+    (char *)this), (uint8_t *)g_INI_Key_Digest, (int)&this->ambientSoundController[1] + 1, 20);
   v5 = ((INIClass *)this)->WriteToString( aP1); /*0x47460a*/
   INIClass::ClearSection((INIClass *)((int *)this), (int)g_INI_Key_Digest, 0); /*0x47460c*/
   return (gamemd::CCINIClass *)(v5); /*0x474561*/

@@ -538,14 +538,14 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
     if ( (a2 & 1) != 0 ) /*0x4c31a9*/
     {
       v6 = a2 & 0xFFFFFFFE; /*0x4c31af*/
-      (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 80))(this); /*0x4c31b2*/
+      (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 80))(this); /*0x4c31b2*/
       (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))(this); /*0x4c31b9*/
     }
     if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *))(*(unsigned int *)this + 88))(this) ) /*0x4c31cd*/
       return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c31d2*/
     if ( *a3 == 27 ) /*0x4c31dd*/
     {
-      (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c31e3*/
+      (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c31e3*/
       return ((CellClass *)(ControlClass *)this)->Draw(0, a3, 0);  // g57w10: instance form /*0x4c31f5*/
     }
     v7 = (unsigned __int8)Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], *a3); /*0x4c3209*/
@@ -618,7 +618,7 @@ void* DropListClass::GetItemText(void* a1) {
     unsigned char v24[4]; // [esp+20h] [ebp-10h] BYREF
     unsigned char v25[12]; // [esp+24h] [ebp-Ch] BYREF
 
-    v3 = (*(int (__thiscall **)(EditClass *))(*(unsigned int *)this + 88))(this); /*0x4c32ea*/
+    v3 = (*(int ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 88))(this); /*0x4c32ea*/
     v4 = *((unsigned int *)this + 4); /*0x4c32f0*/
     v22 = *((unsigned int *)this + 3) + 1; /*0x4c32ff*/
     v5 = *((unsigned int *)this + 5) - 2; /*0x4c3307*/
@@ -631,7 +631,7 @@ void* DropListClass::GetItemText(void* a1) {
     v7 = (*(int (__thiscall **)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x4c333a*/
     FillRectangle(v23, (int)String, (int)g_DSurface_Hidden_2, v7, (int)v25, (int)&v22, v16, 0, v18, v19); /*0x4c334f*/
     TextRenderer::GetInstance(); /*0x4c3357*/
-    result = (unsigned int *)(*(int (__thiscall **)(EditClass *))(*(unsigned int *)this + 88))(this); /*0x4c3362*/
+    result = (unsigned int *)(*(int ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 88))(this); /*0x4c3362*/
     if ( (unsigned char)result ) /*0x4c3367*/
     {
       result = (unsigned int *)wcslen(String); /*0x4c336e*/
@@ -685,13 +685,13 @@ int DropListClass::SetItemText(int a1) {
           v11 = v9 - 1; /*0x4c354a*/
           *((unsigned int *)this + 15) = v11; /*0x4c354b*/
           *(unsigned short *)(v10 + 2 * v11) = 0; /*0x4c354e*/
-          (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))(this); /*0x4c3558*/
+          (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 72))(this); /*0x4c3558*/
         }
         return 1; /*0x4c3558*/
       }
       if ( C == 13 ) /*0x4c3447*/
       {
-        (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c3535*/
+        (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c3535*/
         return 0; /*0x4c353d*/
       }
       v5 = Text_MeasureWidth(*((unsigned int *)this + 13), 0); /*0x4c345e*/
@@ -715,7 +715,7 @@ int DropListClass::SetItemText(int a1) {
               v7 = *((unsigned int *)this + 15) + 1; /*0x4c3518*/
               *((unsigned int *)this + 15) = v7; /*0x4c3519*/
               *(unsigned short *)(v6 + 2 * v7) = 0; /*0x4c351e*/
-              (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))(this); /*0x4c3526*/
+              (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 72))(this); /*0x4c3526*/
               return 1; /*0x4c352e*/
             }
             return 1; /*0x4c3506*/

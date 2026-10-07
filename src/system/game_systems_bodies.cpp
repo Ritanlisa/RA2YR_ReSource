@@ -898,7 +898,7 @@ int GameOptions::SaveLoad(int a2)
 void GameOptions::GetEntry() {}
 
 // 0x5fbf80
-int GameOptionsClass::UnlockMovieIfNeeded_MoviesList(void a2)
+char * GameOptionsClass::UnlockMovieIfNeeded_MoviesList(void *a2)
 {
     int v2; // edi
     char **v4; // esi

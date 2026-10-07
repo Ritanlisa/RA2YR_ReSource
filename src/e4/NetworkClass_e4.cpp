@@ -90,7 +90,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   }
   else
   {
-    if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ffe5f*/
+    if ( (int)dword_A802C8< 128 ) /*0x6ffe5f*/
     {
       v3 = (char *)&byte_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
       qmemcpy( (void *)(v3), (const void *)(v5), 0x6Cu); /*0x6ffe7c*/
@@ -99,7 +99,7 @@ AbstractClass * * NetworkClass::RecordEvent()
       v3[2] = v7; /*0x6ffe80*/
       (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
       dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
-      result = (int)++stru_A80220.lineTrailer; /*0x6ffea7*/
+      result = (int)++dword_A802C8; /*0x6ffea7*/
     }
     LOBYTE(result) = 1; /*0x6ffeae*/
   }

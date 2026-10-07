@@ -167,8 +167,8 @@ LABEL_22:
         goto LABEL_43; /*0x6e50df*/
       if ( !g_BuildingLoadQueue_Array.__pad_E5C[9] && v16 || g_BuildingLoadQueue_Array.UnitExitSound <= 0 ) /*0x6e50f7*/
         goto LABEL_45; /*0x6e50f7*/
-      if ( (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))( /*0x6e5109*/
-             &g_BuildingLoadQueue_Array.ToTile,
+      if ( (*(uint8_t (**)(int *, int, unsigned int))(stru_B0F698+ 8))( /*0x6e5109*/
+             &stru_B0F698,
              v16 + g_BuildingLoadQueue_Array.UnitExitSound,
              0) )
       {
@@ -183,30 +183,29 @@ LABEL_45:
     while ( v15 ); /*0x6e50d9*/
   }
   v22[0] = (unsigned int)(a1);
-v18 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x6e5147*/ &g_BuildingLoadQueue_Array.LightVisibility, (unsigned int *)(v22));
+v18 = (*(int (**)(int *, unsigned int *))(dword_B0F670+ 16))( /*0x6e5147*/ &dword_B0F670, (unsigned int *)(v22));
 
 
-  if ( v18 != -1 && v18 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x6e5157*/
+  if ( v18 != -1 && v18 < dword_B0F680) /*0x6e5157*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x6e515c*/
+    --dword_B0F680; /*0x6e515c*/
     for ( ; /*0x6e5162*/
-          v18 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v18 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                          + 4 * v18) )
+          v18 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v18 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v18) )
     {
       ++v18; /*0x6e516a*/
     }
   }
   v22[0] = (unsigned int)(a1);
-v19 = (*(int (**)(int *, unsigned int *))(g_BuildingLoadQueue_Array.ExitCoord[0] + 16))( /*0x6e5190*/ g_BuildingLoadQueue_Array.ExitCoord, (unsigned int *)(v22));
+v19 = (*(int (**)(int *, unsigned int *))(&dword_B0F708 + 16))( /*0x6e5190*/ &dword_B0F708, (unsigned int *)(v22));
 
 
-  if ( v19 != -1 && v19 < g_BuildingLoadQueue_Array.unknown___2 ) /*0x6e51a0*/
+  if ( v19 != -1 && v19 < dword_B0F718) /*0x6e51a0*/
   {
-    --g_BuildingLoadQueue_Array.unknown___2; /*0x6e51a5*/
+    --dword_B0F718; /*0x6e51a5*/
     for ( ; /*0x6e51ab*/
-          v19 < g_BuildingLoadQueue_Array.unknown___2;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * v19 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1]
+          v19 < dword_B0F718;
+          *(unsigned int *)(&dword_B0F70C + 4 * v19 - 4) = *(unsigned int *)(&dword_B0F70C
                                                                                         + 4 * v19) )
     {
       ++v19; /*0x6e51b3*/
@@ -306,7 +305,7 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
     if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5675*/
       || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
       && g_BuildingLoadQueue_Array.UnitExitSound > 0
-&& (result = (*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))( (int *)(&g_BuildingLoadQueue_Array.ToTile), *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound, 0), (unsigned char)result) )
+&& (result = (*(int (**)(int *, int, unsigned int))(stru_B0F698+ 8))( (int *)(&stru_B0F698), *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound, 0), (unsigned char)result) )
 
 
 

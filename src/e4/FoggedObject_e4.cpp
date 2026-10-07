@@ -77,7 +77,6 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
   return (int)(this->__pad_0); /*0x4d2dfb*/
 
 }
-}
 // 0x4D2D10
 VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block, char a2)
 {
@@ -97,4 +96,5 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block,
     __3_YAXPAX_Z(this); /*0x4d2d4b*/
   return this->__pad_0; /*0x4d2d55*/
 
+}
 }

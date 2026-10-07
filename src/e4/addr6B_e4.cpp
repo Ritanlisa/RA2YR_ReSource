@@ -703,7 +703,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     *((unsigned char *)v12 + 283) = v28; /*0x6b3248*/
     Object_Create(v28); /*0x6b3252*/
     if ( v27 != *((char *)v12 + 283) ) /*0x6b3260*/
-      CellClass::ClearCellContents(v12); /*0x6b3264*/
+      CellClass::ClearCellContents((gamemd::CellClass *)(v12)); /*0x6b3264*/
     ((House *)((int)v12))->AnnounceUpgrade(-1); /*0x6b326d*/
     v29 = v12[18]; /*0x6b3272*/
     if ( v29 != -1 ) /*0x6b3278*/
@@ -923,7 +923,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
           v110 = v64[1]; /*0x6b36f2*/
           v66 = v64[2]; /*0x6b36fb*/
           v67 = v64[3]; /*0x6b36fe*/
-          if ( CellClass::DetermineTileType((int)v63) ) /*0x6b3701*/
+          if ( CellClass::DetermineTileType((gamemd::CellClass *)((int)v63)) ) /*0x6b3701*/
           {
             v68 = (int *)(((CellClass *)((int)v63))->GetScreenRect( (int *)(v114)));
             if ( v66 <= 0 || v67 <= 0 ) /*0x6b3727*/
@@ -2424,7 +2424,7 @@ int sub_6BB390()
     if ( Data ) /*0x6bb486*/
     {
       v1 = lstrlenA((LPCSTR)Data); /*0x6bb48d*/
-      RegSetValueExA(phkResult, 0, 0, 1u, Data, v1 + 1); /*0x6bb4a5*/
+      RegSetValueExA(phkResult, 0, 0, 1u, (const BYTE *)&Data, v1 + 1); /*0x6bb4a5*/
     }
     RegCloseKey(phkResult); /*0x6bb4ac*/
   }
@@ -2449,7 +2449,7 @@ int sub_6BB390()
     if ( Data ) /*0x6bb570*/
     {
       v3 = lstrlenA((LPCSTR)Data); /*0x6bb577*/
-      RegSetValueExA(phkResult, 0, 0, 1u, Data, v3 + 1); /*0x6bb58f*/
+      RegSetValueExA(phkResult, 0, 0, 1u, (const BYTE *)&Data, v3 + 1); /*0x6bb58f*/
     }
     RegCloseKey(phkResult); /*0x6bb596*/
   }
@@ -2464,7 +2464,7 @@ int sub_6BB390()
     if ( g_Str_WW_TiberianSun_1 ) /*0x6bb5f9*/
     {
       v4 = lstrlenA((LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb600*/
-      RegSetValueExA(phkResult, 0, 0, 1u, g_Str_WW_TiberianSun_1, v4 + 1); /*0x6bb618*/
+      RegSetValueExA(phkResult, 0, 0, 1u, (const BYTE *)&g_Str_WW_TiberianSun_1, v4 + 1); /*0x6bb618*/
     }
     RegCloseKey(phkResult); /*0x6bb61f*/
   }

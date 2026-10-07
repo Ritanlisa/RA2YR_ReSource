@@ -117,7 +117,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Decrement(int a1);  // 0x49FA70
     int ddtor();  // 0x49FB40
     int Load(int a1);  // 0x49FBE0
-    void* QueryInterface(int a1);  // 0x49FCE0
+CounterClass * QueryInterface(unsigned int * Block, char a2);  // 0x0049fce0 g57w12-r raw-sync (def-form)
     // --- gap2 auto-generated stub declarations (END) ---
 };
 

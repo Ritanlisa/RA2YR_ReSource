@@ -275,7 +275,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   RA2_OPDEL(v53); /*0x6425ad*/
   RA2_OPDEL(v49); /*0x6425b7*/
   *(unsigned int *)a3 = v38; /*0x6425c9*/
-    ((Debug *)this)->Log();
+    ((Debug *)this)->Log("Created paletted preview of size %d bytes\n"); /*0x6425c9 G57w12: IDA push seq @ 0x6425c9 +1 reg-vararg omitted*/
   ((DSurface *)((DSurface *)&v61))->Destroy(); /*0x6425d7*/
   return (gamemd::AbstractClass **)((int)v39); /*0x64213f*/
 }
@@ -362,7 +362,6 @@ unsigned char * Palette::ConvertIndices(int a2)
   return (unsigned char *)(this); /*0x632c2b*/
 
 }
-}  // G42.18c ns repair
 // 0x72B820
 int Palette::LoadFile(char * Source)
 {
@@ -381,6 +380,7 @@ dword_B0FB9C = 0; /*0x72b84f*/
     __3_YAXPAX_Z( (void *)(dword_B0FB9C) ); /*0x72b847*/
     dword_B0FB9C = 0; /*0x72b84f*/
   }
-  return LoadPaletteSimple(Source, &dword_B0FB9C, &dword_B0FBA0); /*0x72b86a*/
+  return LoadPaletteSimple(Source, (int *)(&dword_B0FB9C), &dword_B0FBA0); /*0x72b86a*/
 
 }
+}  // G42.18c ns repair

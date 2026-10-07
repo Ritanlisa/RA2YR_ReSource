@@ -282,13 +282,13 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   {
     v6 = *(void **)this; /*0x770574*/
     String::    ((String *)((const char *)((String *)&aP2)))->Assign( (const char *)(off_83E188)); 
-    INIClass::ReadTokenizedPair(v5, v4, v3, v6, 0, (char **)&aP2); /*0x770590*/
+    INIClass::ReadTokenizedPair(v5, (unsigned int *)(v4), v3, v6, 0, (char **)&aP2); /*0x770590*/
     j_DeleteAndZero( (void *)((ObjectClass *)&aP2)); /*0x770599*/
     String::    ((String *)((const char *)((String *)&a1)))->Assign( (const char *)(g_INI_Key_Lose)); 
-    INIClass::ReadTokenizedPair(v5, v4, v3, v6, 1, (char **)&a1); /*0x7705b8*/
+    INIClass::ReadTokenizedPair(v5, (unsigned int *)(v4), v3, v6, 1, (char **)&a1); /*0x7705b8*/
     j_DeleteAndZero( (void *)((ObjectClass *)&a1)); /*0x7705c1*/
     String::    ((String *)((const char *)(&v23)))->Assign( (const char *)(aDraw)); 
-    INIClass::ReadTokenizedPair(v5, v4, v3, v6, 2, (char **)&v23); /*0x7705e0*/
+    INIClass::ReadTokenizedPair(v5, (unsigned int *)(v4), v3, v6, 2, (char **)&v23); /*0x7705e0*/
     j_DeleteAndZero( (void *)((ObjectClass *)&v23)); /*0x7705e9*/
     v5 = (INIClass *)((char *)v5 + 148); /*0x7705f2*/
     if ( !--*(unsigned int *)&((unsigned int *)(v23.m_3))[1] ) /*0x7705fd*/

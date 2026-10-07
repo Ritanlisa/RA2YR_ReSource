@@ -74,7 +74,7 @@ int IPXInterfaceClass::initSocket(int aP1, int aP2)
   }
   *(unsigned int *)optval = 1; /*0x7b0e44*/
   optlen = 4; /*0x7b0e4e*/
-  if ( stru_887598.onBridge && stru_887598.AbstractClass == (void *)4 && !((char *)&stru_887598) ) /*0x7b0e63*/
+  if ( &byte_887624&& stru_887598.AbstractClass == (void *)4 && !((char *)&stru_887598) ) /*0x7b0e63*/
   {
     Debug::Log("Skipping IPX_MAX_ADAPTER_NUM call due to bug in Win95\n"); /*0x7b0eae G57c1: IDA 0x7b0eae push offset aSkippingIpxMax*/
   }
@@ -554,7 +554,7 @@ __int16 IPXInterfaceClass::Connect(const void * a1, unsigned int a3, char aP3)  
   }
   v15 = (*(int (**)(WinsockInterfaceClass *, int))(this->Socket + 56))((WinsockInterfaceClass *)this, v10); /*0x7b25b9*/
   SendMessageA((HWND)(g_hWnd), v15, 0, 2); /*0x7b25c3*/
-  return ((EventQueue *)g_BinkMoviePlayer)->Process(); /*0x7b25d4*/  // G42.40f-c: stru_87F5F0.__pad_58[296] == 0x87F770 == g_BinkMoviePlayer
+  return ((EventQueue *)g_BinkMoviePlayer)->Process(); /*0x7b25d4*/  // G42.40f-c: &dword_87F770 == 0x87F770 == g_BinkMoviePlayer
 
 }
 } // namespace gamemd

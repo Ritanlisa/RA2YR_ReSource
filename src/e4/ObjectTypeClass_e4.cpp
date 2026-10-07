@@ -744,12 +744,8 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
                           (int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aInsignificant), Insignificant);
   this->HasRadialIndicator = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f9549*/
                                (int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aHasradialindic), this->HasRadialIndicator);
-  Coord = INIClass::GetCoord( /*0x5f954f*/
-            (INIClass *)aP1,
-            (int)&v34,
-            (uint8_t *)((unsigned int *)this)[0],
-            aRadialcolor,
-            (uint8_t *)this->__pad_98);
+  Coord = INIClass::GetCoord(/*0x5f954f*/
+            (INIClass *)aP1, (int)&v34, (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aRadialcolor), (uint8_t *)this->__pad_98);
   IgnoresFirestorm = this->IgnoresFirestorm; /*0x5f9557*/
   *(unsigned short *)this->__pad_98 = *(unsigned short *)Coord; /*0x5f955d*/
   this->__pad_98[2] = *(unsigned char *)(Coord + 2); /*0x5f956c*/
@@ -758,12 +754,8 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   this->IgnoresFirestorm = v20; /*0x5f958c*/
   this->UseLineTrail = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5f959d*/
                          (int *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)this->ImageFile, (unsigned char *)(aUselinetrail), UseLineTrail);
-  v21 = INIClass::GetCoord( /*0x5f95b4*/
-          (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
-          (int)&v34,
-          (uint8_t *)this->ImageFile,
-          aLinetrailcolor,
-          (uint8_t *)this->LineTrailColor);
+  v21 = INIClass::GetCoord(/*0x5f95b4*/
+          (INIClass *)&DSurface_ViewBounds.__pad_FC[228], (int)&v34, (uint8_t *)this->ImageFile, (unsigned char *)(aLinetrailcolor), (uint8_t *)this->LineTrailColor);
   *(unsigned short *)this->LineTrailColor = *(unsigned short *)v21; /*0x5f95bc*/
   LineTrailColorDecrement = this->LineTrailColorDecrement; /*0x5f95cd*/
   this->LineTrailColor[2] = *(unsigned char *)(v21 + 2); /*0x5f95d4*/

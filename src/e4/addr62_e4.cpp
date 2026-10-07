@@ -976,7 +976,7 @@ unsigned int * E4Recv_6223C0::DestroyDialog(void *a1_1)
     result = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x6223ee*/
                         + 4
                         * ((*(int (**)(ObjectClass **))&g_DialogPool.__pad_208[80])( (ObjectClass **)(&v4))
-                         & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                         & ((1 << &dword_AC1B0C) - 1)));
     if ( result ) /*0x6223f3*/
     {
       while ( (ObjectClass *)*result != v4 ) /*0x6223fb*/
@@ -1315,10 +1315,10 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       UI_Helper_60D2C0(aP0, v22); /*0x622f56*/
       if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x622f60*/
         Control::CreateControlDialog(aP0); /*0x622f6b*/
-      UI_Helper_60CAF0(aP0); /*0x622f72*/
-      UI_Helper_60C930(aP0); /*0x622f79*/
-      UI_Helper_60CCC0(aP0); /*0x622f80*/
-      UI_Helper_60CDB0(aP0); /*0x622f87*/
+      UI_Helper_60CAF0((gamemd::ObjectClass *)(aP0)); /*0x622f72*/
+      UI_Helper_60C930((gamemd::ObjectClass *)(aP0)); /*0x622f79*/
+      UI_Helper_60CCC0((gamemd::ObjectClass *)(aP0)); /*0x622f80*/
+      UI_Helper_60CDB0((gamemd::ObjectClass *)(aP0)); /*0x622f87*/
       EnumChildWindows((HWND)(aP0), GadgetClass::FindByWindow, 0); /*0x622f93*/
       if ( (uint8_t)((Control *)aP0)->CheckControlTypeDialog() ) /*0x622f97*/
       {
@@ -1345,16 +1345,16 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
         aP2->health = 0; /*0x622ffc*/
       if ( !(uint8_t)((SessionClass *)(&g_GameMode_Current))->GetGameSpeed() ) /*0x623004*/
         Control::CreateControlDialog(aP0); /*0x62300f*/
-      UI_Helper_60CAF0(aP0); /*0x623016*/
-      UI_Helper_60C930(aP0); /*0x62301d*/
-      UI_Helper_60CCC0(aP0); /*0x623024*/
-      UI_Helper_60CDB0(aP0); /*0x62302b*/
+      UI_Helper_60CAF0((gamemd::ObjectClass *)(aP0)); /*0x623016*/
+      UI_Helper_60C930((gamemd::ObjectClass *)(aP0)); /*0x62301d*/
+      UI_Helper_60CCC0((gamemd::ObjectClass *)(aP0)); /*0x623024*/
+      UI_Helper_60CDB0((gamemd::ObjectClass *)(aP0)); /*0x62302b*/
       v23 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x623030*/
       EnumChildWindows((HWND)(aP0), GadgetClass::FindByWindow, 0); /*0x62303d*/
       if ( (uint8_t)((Control *)aP0)->CheckControlTypeDialog() ) /*0x623041*/
         goto LABEL_41; /*0x623048*/
     }
-    UI_Helper_60C7D0(aP0); /*0x62306c*/
+    UI_Helper_60C7D0((gamemd::ObjectClass *)(aP0)); /*0x62306c*/
     goto LABEL_48; /*0x62306c*/
   }
   if ( a2 != 132 ) /*0x622b65*/
@@ -1393,7 +1393,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     {
       if ( *(unsigned char *)(v6 + 188) ) /*0x622c2b*/
       {
-        ValidateRect(aP0, 0); /*0x622c38*/
+        ValidateRect((HWND)(aP0), 0); /*0x622c38*/
         return 1; /*0x622c3e*/
       }
       else
@@ -1405,29 +1405,29 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
         aP2 = aP2; /*0x622c74*/
         if ( aP2 && aP2->u8_BE ) /*0x622c7c*/
         {
-          DlgItem = GetDlgItem(aP0, 1818); /*0x622c8c*/
+          DlgItem = GetDlgItem((HWND)(aP0), 1818); /*0x622c8c*/
           if ( DlgItem ) /*0x622c94*/
             SendMessageA( (HWND)(DlgItem), 0x4E2u, 0, 0); /*0x622ca0*/
           IDA_LOBYTE(v9) = 0; /*0x622ca6*/
           RenderGadgetClassAnimation( (HWND)(aP0), v9); /*0x622caa*/
           aP2->u8_BE = 0; /*0x622caf*/
         }
-        ValidateRect(aP0, 0); /*0x622cb9*/
+        ValidateRect((HWND)(aP0), 0); /*0x622cb9*/
         return 0; /*0x622cbf*/
       }
     }
     return 0; /*0x6230d1*/
   }
-  hWnda[0] = GetDlgItem(aP0, 1685); /*0x622cd9*/
+  hWnda[0] = GetDlgItem((HWND)(aP0), 1685); /*0x622cd9*/
   if ( !hWnda[0] ) /*0x622cdd*/
     return 0; /*0x622cdd*/
   v10 = (uint16_t)aP2; /*0x622cef*/
   v11 = IDA_HIWORD(aP2); /*0x622cf5*/
-  GetWindowRect(aP0, &Rect); /*0x622cf8*/
+  GetWindowRect((HWND)(aP0), &Rect); /*0x622cf8*/
   v12 = v10 - Rect.left; /*0x622d0c*/
   v27 = v11 - Rect.top; /*0x622d12*/
   unknown_libname_74( (void *)(&aP2)); /*0x622d16*/
-  v13 = ChildWindowFromPointEx(aP0, (POINT)IDA___PAIR64__(v27, v12), 1u); /*0x622d24*/
+  v13 = ChildWindowFromPointEx((HWND)(aP0), (POINT)IDA___PAIR64__(v27, v12), 1u); /*0x622d24*/
   v13 = v13; /*0x622d2a*/
   if ( v13 ) /*0x622d2e*/
   {
@@ -1440,7 +1440,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     WideString::Reassign_Alt( (const wchar_t **)(v29)); /*0x622d83*/
     ((DeleteAndZero*)v29)->Alt(); /*0x622d8c*/
     v18 = (const wchar_t *)((WideString *)&aP2)->GetOrEmpty(); /*0x622d9a*/
-    if ( !wcscmp(v18, &g_TypeClass_DefaultString) ) /*0x622da0*/
+    if ( !wcscmp(v18, (const wchar_t *)(&g_TypeClass_DefaultString)) ) /*0x622da0*/
     {
       unknown_libname_74( (void *)(v28)); /*0x622db4*/
       lParam = (LPARAM)v13; /*0x622dbd*/
@@ -1915,7 +1915,7 @@ int E4Recv_6242B0::sub_6242B0(HWND hWnd)
     && (v2 = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56]
                        + 4
                        * ((*(int (**)(HWND *))&g_DialogPool.__pad_208[80])( (HWND *)(&hWnd))
-                        & ((1 << g_DialogPool.__pad_208[68]) - 1)))) != 0 )
+                        & ((1 << &dword_AC1B0C) - 1)))) != 0 )
   {
     v3 = hWnd; /*0x6243c3*/
     while ( *(HWND *)v2 != hWnd ) /*0x6243c9*/

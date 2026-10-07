@@ -103,7 +103,7 @@ int ObjectClass::SpawnInfantry(int aP1, int16_t *aP2, int16_t *aP3, void **aP4)
 
   if ( this->isBerserk[0] ) /*0x4d7d58*/
     return 0; /*0x4d7d64*/
-  if ( this->rockerLinkedUnit && !*(unsigned char *)((*(int (**)(TechnoClass *))((char *)this->vtable1 + 132))(this) + 1682) ) /*0x4d7d81*/
+  if ( this->rockerLinkedUnit && !*(unsigned char *)((*(int ((gamemd::TechnoClass *)(**))(TechnoClass *))((char *)this->vtable1 + 132))(this) + 1682) ) /*0x4d7d81*/
     return 0; /*0x4d7d8d*/
   v7 = (int16_t *)(aP2); /*0x4d7d9a*/
 referenceCount = (*(int ((gamemd::TechnoClass *)(**))(TechnoClass *, int16_t *, unsigned int, void **))((char *)this->vtable1 + 112))( /*0x4d7db1*/ this, (int16_t *)(aP2), 0, (void **)(aP4));
@@ -178,7 +178,7 @@ LABEL_52:
       result = 1; /*0x4d8237*/
       break; /*0x4d8239*/
     case 3: /*0x4d7de0*/
-      if ( !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 160))(this) ) /*0x4d8155*/
+      if ( !(*(uint8_t ((gamemd::TechnoClass *)(**))(TechnoClass *))((char *)this->vtable1 + 160))(this) ) /*0x4d8155*/
         return 0; /*0x4d8155*/
       v27 = (unsigned int)this->vtable1; /*0x4d815b*/
       v28 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(v7)); /*0x4d8165*/
@@ -205,7 +205,7 @@ LABEL_52:
       (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, unsigned int))(v14 + 888))(this, 10, 0, v15, 0); /*0x4d7ea4*/
       return 1; /*0x4d7eb2*/
     case 9: /*0x4d7de0*/
-      if ( !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 160))(this) ) /*0x4d811c*/
+      if ( !(*(uint8_t ((gamemd::TechnoClass *)(**))(TechnoClass *))((char *)this->vtable1 + 160))(this) ) /*0x4d811c*/
         return 0; /*0x4d811c*/
       v25 = (unsigned int)this->vtable1; /*0x4d8122*/
       v26 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(v7)); /*0x4d812c*/
@@ -217,7 +217,7 @@ LABEL_52:
       (*(void ((gamemd::TechnoClass *)(**))(TechnoClass *, int, unsigned int, void *, unsigned int))(v29 + 888))(this, 17, 0, v30, 0); /*0x4d8198*/
       return 1; /*0x4d81a6*/
     case 26: /*0x4d7de0*/
-      if ( !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 156))(this) /*0x4d7e59*/
+      if ( !(*(uint8_t ((gamemd::TechnoClass *)(**))(TechnoClass *))((char *)this->vtable1 + 156))(this) /*0x4d7e59*/
         && !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 816))((TechnoClass *)(this))
         || !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 160))((TechnoClass *)(this)) )
       {
@@ -245,7 +245,7 @@ LABEL_52:
       v21 = ((CellCoord *)((CellCoord *)&dword_87F7E8))->To_CellObj( (int16_t *)(v40)); /*0x4d8225*/
       goto LABEL_51; /*0x4d8225*/
     case 51: /*0x4d7de0*/
-      if ( !(*(uint8_t (**)(TechnoClass *))((char *)this->vtable1 + 160))(this) ) /*0x4d7df3*/
+      if ( !(*(uint8_t ((gamemd::TechnoClass *)(**))(TechnoClass *))((char *)this->vtable1 + 160))(this) ) /*0x4d7df3*/
         return 0; /*0x4d7df3*/
       PlacementCell = (void ***)FindPlacementCell((gamemd::FootClass *)((ObjectClass *)&v41), referenceCount,(IUnknown **)( v7), 0, v38, v39); /*0x4d7dff*/
       v10 = (unsigned int)this->vtable1; /*0x4d7e06*/
@@ -425,7 +425,7 @@ LABEL_28:
             *(unsigned int *)(aP0 + 1652) = 0; /*0x4db550*/
             ((ObjectClass *)((int *)(aP0 + 1652)))->updateStateFlags(); /*0x4db55a*/
             *(unsigned int *)(aP0 + 1652) = 0; /*0x4db566*/
-            OleLoadFromStream(v4, &IID_ILocomotion, (LPVOID *)(aP0 + 1652)); /*0x4db568*/
+            OleLoadFromStream((void *)(v4), &IID_ILocomotion, (LPVOID *)(aP0 + 1652)); /*0x4db568*/
             *(unsigned int *)(aP0 + 1440) = 0; /*0x4db574*/
             ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1492)); /*0x4db580*/
             ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(aP0 + 1496)); /*0x4db591*/
@@ -702,7 +702,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   IsPassable = Cell::IsPassable( (unsigned int *)((unsigned int)((IUnknown *)(v40)))); /*0x4de3b5*/
   if ( (unsigned char)a4 && v35 == 2 ) /*0x4de3cb*/
   {
-    if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))( (unsigned int *)(v7)) + 3372) /*0x4de3f7*/
+    if ( !*(unsigned char *)((*(int ((unsigned int *)(**))(unsigned int *))(*v7 + 132))( (unsigned int *)(v7)) + 3372) /*0x4de3f7*/
       || (v22 = (*(int (**)(unsigned int *))(*v7 + 456))( (IUnknown **)(v7)), a2 = (unsigned int *)1, v22 >= 0) )
     {
       a2 = (IUnknown **)(0); /*0x4de3f9*/
@@ -1095,7 +1095,7 @@ int ObjectClass::DropAsBomb_Track()
   (*(void (**)(unsigned int))(v2 + 292))(0); /*0x5f4178*/
   RemoveTarget((int)this); /*0x5f4184*/
   this->__pad_8C[0] = 0; /*0x5f418f*/
-  Targeting::Readd(this); /*0x5f4196*/
+  Targeting::Readd((unsigned int *)(this)); /*0x5f4196*/
   result = (*(int (**)(IUnknown *, int))(this->field_0 + 292))(this, 1); /*0x5f41a1*/
   if ( this ) /*0x5f41a9*/
   {
@@ -2652,44 +2652,44 @@ LABEL_52:
       goto LABEL_53; /*0x7a2e4f*/
     }
     ((String *)((String *)v22))->AssignFromPtr((const char **)&stru_B76AC4); /*0x7a2be9*/
-    v10 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2bee*/
-    v11 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2bf3*/
-    if ( *(int *)g_WindowManager.__pad_0 >= (int)g_WindowManager.Array_field_0x4 ) /*0x7a2bff*/
+    v10 = *(unsigned int *)&g_WindowManager; /*0x7a2bee*/
+    v11 = *(unsigned int *)&g_WindowManager; /*0x7a2bf3*/
+    if ( *(int *)&g_WindowManager>= (int)dword_B73AAC) /*0x7a2bff*/
     {
       ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x7a2c06*/
-      v10 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2c0b*/
+      v10 = *(unsigned int *)&g_WindowManager; /*0x7a2c0b*/
     }
-    if ( v10 >= (int)g_WindowManager.Array_field_0x4 ) /*0x7a2c16*/
+    if ( v10 >= (int)dword_B73AAC) /*0x7a2c16*/
     {
       ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x7a2c1d*/
-      v10 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2c22*/
+      v10 = *(unsigned int *)&g_WindowManager; /*0x7a2c22*/
     }
     if ( v11 < v10 ) /*0x7a2c29*/
     {
       memcpy( /*0x7a2c46*/
-        (void *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v11 + 4),
-        (const void *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v11),
+        (void *)(*(unsigned int *)&dword_B73AB0+ 4 * v11 + 4),
+        (const void *)(*(unsigned int *)&dword_B73AB0+ 4 * v11),
         4 * (v10 + 0x3FFFFFFF * v11));
-      v10 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2c4b*/
+      v10 = *(unsigned int *)&g_WindowManager; /*0x7a2c4b*/
     }
-    v12 = (String *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v11); /*0x7a2c59*/
+    v12 = (String *)(*(unsigned int *)&dword_B73AB0+ 4 * v11); /*0x7a2c59*/
     if ( v12 ) /*0x7a2c5e*/
     {
       ((String *)(v12))->AssignFromPtr((const char **)v22); /*0x7a2c65*/
-      v10 = *(unsigned int *)g_WindowManager.__pad_0; /*0x7a2c6a*/
+      v10 = *(unsigned int *)&g_WindowManager; /*0x7a2c6a*/
     }
-    *(unsigned int *)g_WindowManager.__pad_0 = v10 + 1; /*0x7a2c70*/
-    v13 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2c75*/
-    v14 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2c7a*/
-    if ( *(int *)&stru_B76900.needsRedraw >= *(int *)&stru_B76900.hasParachute ) /*0x7a2c86*/
+    *(unsigned int *)&g_WindowManager= v10 + 1; /*0x7a2c70*/
+    v13 = *(unsigned int *)&dword_B76980; /*0x7a2c75*/
+    v14 = *(unsigned int *)&dword_B76980; /*0x7a2c7a*/
+    if ( *(int *)&dword_B76980>= *(int *)&dword_B76984) /*0x7a2c86*/
     {
-      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x7a2c8d*/
-      v13 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2c92*/
+      ((DynamicVector *)((DynamicVector *)&dword_B76980))->EnsureCapacity(); /*0x7a2c8d*/
+      v13 = *(unsigned int *)&dword_B76980; /*0x7a2c92*/
     }
-    if ( v13 >= *(int *)&stru_B76900.hasParachute ) /*0x7a2c9d*/
+    if ( v13 >= *(int *)&dword_B76984) /*0x7a2c9d*/
     {
-      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x7a2ca4*/
-      v13 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2ca9*/
+      ((DynamicVector *)((DynamicVector *)&dword_B76980))->EnsureCapacity(); /*0x7a2ca4*/
+      v13 = *(unsigned int *)&dword_B76980; /*0x7a2ca9*/
     }
     if ( v14 < v13 ) /*0x7a2cb0*/
     {
@@ -2697,42 +2697,42 @@ memcpy( /*0x7a2ccd*/ (void *)(&stru_B76900.parachute->AnimClass_field_0x4 + v14)
 
 
 
-      v13 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2cd2*/
+      v13 = *(unsigned int *)&dword_B76980; /*0x7a2cd2*/
     }
     v15 = (String *)(&stru_B76900.parachute->AnimClass_field_0x0 + v14); /*0x7a2ce0*/
     if ( v15 ) /*0x7a2ce5*/
     {
       ((String *)(v15))->AssignFromPtr((const char **)v22); /*0x7a2cec*/
-      v13 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x7a2cf1*/
+      v13 = *(unsigned int *)&dword_B76980; /*0x7a2cf1*/
     }
-    *(unsigned int *)&stru_B76900.needsRedraw = v13 + 1; /*0x7a2cf7*/
-    v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2cfc*/
-    v17 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d01*/
-    if ( *(int *)g_WOL_BuddyList.__pad_0 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x7a2d0d*/
+    *(unsigned int *)&dword_B76980= v13 + 1; /*0x7a2cf7*/
+    v16 = *(unsigned int *)&g_WOL_BuddyList; /*0x7a2cfc*/
+    v17 = *(unsigned int *)&g_WOL_BuddyList; /*0x7a2d01*/
+    if ( *(int *)&g_WOL_BuddyList>= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x7a2d0d*/
     {
       ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x7a2d14*/
-      v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d19*/
+      v16 = *(unsigned int *)&g_WOL_BuddyList; /*0x7a2d19*/
     }
     if ( v16 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x7a2d24*/
     {
       ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x7a2d2b*/
-      v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d30*/
+      v16 = *(unsigned int *)&g_WOL_BuddyList; /*0x7a2d30*/
     }
     if ( v17 < v16 ) /*0x7a2d37*/
     {
       memcpy( /*0x7a2d54*/
-        (void *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v17 + 4),
-        (const void *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v17),
+        (void *)(dword_B779B8+ 4 * v17 + 4),
+        (const void *)(dword_B779B8+ 4 * v17),
         4 * (v16 + 0x3FFFFFFF * v17));
-      v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d59*/
+      v16 = *(unsigned int *)&g_WOL_BuddyList; /*0x7a2d59*/
     }
-    v18 = (String *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v17); /*0x7a2d67*/
+    v18 = (String *)(dword_B779B8+ 4 * v17); /*0x7a2d67*/
     if ( v18 ) /*0x7a2d6c*/
     {
       ((String *)(v18))->AssignFromPtr((const char **)v22); /*0x7a2d73*/
-      v16 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x7a2d78*/
+      v16 = *(unsigned int *)&g_WOL_BuddyList; /*0x7a2d78*/
     }
-    *(unsigned int *)g_WOL_BuddyList.__pad_0 = v16 + 1; /*0x7a2d83*/
+    *(unsigned int *)&g_WOL_BuddyList= v16 + 1; /*0x7a2d83*/
     if ( ((String*)((String *)&g_WindowManager.__pad_14[16]))->Length() ) /*0x7a2d88*/
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x7a2da6*/
@@ -2743,13 +2743,13 @@ LABEL_51:
       }
       ((DeleteAndZero *)&g_WindowManager.__pad_14[16])->Alt2(); /*0x7a2db1*/
     }
-    if ( *(unsigned int *)&stru_B76900.needsRedraw ) /*0x7a2dbd*/
+    if ( *(unsigned int *)&dword_B76980) /*0x7a2dbd*/
     {
       if ( (uint8_t)DynamicStringArray::Get( /*0x7a2dcf*/
-                              (DynamicStringArray *)&stru_B76900.needsRedraw,
+                              (DynamicStringArray *)&dword_B76980,
                               (char **)&g_WindowManager.__pad_14[16],
                               0) )
-        ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x7a2ddf*/
+        ((DynamicArray *)((DynamicArray *)&dword_B76980))->Remove(0); /*0x7a2ddf*/
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x7a2deb*/
       memset( (void *)(&v22[116]), 0, 0x6Cu); /*0x7a2dfe*/
       strcpy( (char *)(&v22[152]), ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x7a2e31*/

@@ -134,7 +134,7 @@ class Socket
 {
 public:
     // IDA 0x48B2A0 area
-    void ConfigureBuffers(int32_t sendSize, int32_t recvSize);  // 0x7B2630
+int ConfigureBuffers(unsigned int aP1);  // 0x007b2630 g57w12-r raw-sync (def-form; SOCKET==unsigned int)
 
     int32_t     m_Socket;       // 0x00
     int32_t     m_SendBufSize;  // 0x04

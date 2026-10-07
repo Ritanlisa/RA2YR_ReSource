@@ -823,8 +823,8 @@ SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 
   int result; // eax
 
-  HIWORD(result) = HIWORD(stru_AA0398.AudioStream_field_0xAC); /*0x53ec70*/
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec77*/
+  HIWORD(result) = HIWORD(dword_AA0444); /*0x53ec70*/
+  if ( dword_AA0444) /*0x53ec77*/
     LOWORD(result) = (&word_AA0168)[(uint8_t)nVirtKey]; /*0x53ec87*/
   else
     LOWORD(result) = GetKeyState((uint8_t)nVirtKey); /*0x53ec7a*/

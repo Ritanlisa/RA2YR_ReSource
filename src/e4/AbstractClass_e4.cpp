@@ -403,8 +403,8 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
   int v11; // [esp+10h] [ebp-14h]
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
 
-  result = g_MissionQueueFrame.localVariables[604]; /*0x5c03d0*/
-  if ( g_MissionQueueFrame.localVariables[604] ) /*0x5c03da*/
+  result = &dbl_ABECE0; /*0x5c03d0*/
+  if ( &dbl_ABECE0 ) /*0x5c03da*/
   {
     (*((void (**)(DSurface *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Alternate), 0); /*0x5c03ea*/
     Frame::Present( (void *)((int)DSurface_Alternate), (void *)(v3), (void *)(a2), (void *)(a3), 0, (void *)(v8), (void *)(v9), (void *)(v10)); /*0x5c03f7*/
@@ -413,14 +413,14 @@ ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
     {
       GetClientRect((HWND)(g_hWnd), &Rect); 
       ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); 
-      v5 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 64); /*0x5c0446*/
-      v6 = Rect.top + *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 56); /*0x5c0449*/
-      v7 = *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 52); /*0x5c044b*/
-      v10 = *(int **)(g_MissionQueueFrame.localVariables[604] + 60); /*0x5c044e*/
+      v5 = *(unsigned int *)(&dbl_ABECE0 + 64); /*0x5c0446*/
+      v6 = Rect.top + *(unsigned int *)(&dbl_ABECE0 + 56); /*0x5c0449*/
+      v7 = *(unsigned int *)(&dbl_ABECE0 + 52); /*0x5c044b*/
+      v10 = *(int **)(&dbl_ABECE0 + 60); /*0x5c044e*/
       v9 = v6; /*0x5c0454*/
       v8 = Rect.left + v7; /*0x5c045e*/
       v11 = v5; /*0x5c0462*/
-return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5c0477*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v8), *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8), g_MissionQueueFrame.localVariables[604] + 36, 0, 1);
+return (*((int (**)(DSurface *, int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5c0477*/ + 2))( (DSurface *)(g_DSurface_Primary), (int *)(&v8), *(unsigned int *)(&dbl_ABECE0 + 8), &dbl_ABECE0 + 36, 0, 1);
 
 
 
@@ -603,7 +603,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
     {
       do /*0x72595f*/
       {
-(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.PowerDrain /*0x725954*/ + 4 * v5) + 40))( *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v5), (AbstractClass *)(aP0), aP1);
+(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(dword_B0F724/*0x725954*/ + 4 * v5) + 40))( *(unsigned int *)(dword_B0F724+ 4 * v5), (AbstractClass *)(aP0), aP1);
 
 
 
@@ -636,8 +636,8 @@ LABEL_20:
          0,
          0) )
   {
-    for ( m = 0; m < g_BuildingLoadQueue_Array.LightBlueTint; ++m ) /*0x725a6f*/
-(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.LightIntensity /*0x725a7d*/ + 4 * m) + 40))( *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * m), (AbstractClass *)(aP0), aP1);
+    for ( m = 0; m < dword_B0F680; ++m ) /*0x725a6f*/
+(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(dword_B0F674/*0x725a7d*/ + 4 * m) + 40))( *(unsigned int *)(dword_B0F674+ 4 * m), (AbstractClass *)(aP0), aP1);
 
 
 
@@ -650,8 +650,8 @@ LABEL_20:
     switch ( v4 ) /*0x725ab1*/
     {
       case 12: /*0x725ab1*/
-        for ( n = 0; n < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation1[1]; ++n ) /*0x725b34*/
-(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)&g_BuildingLoadQueue_Array.BuildupLoaded /*0x725b42*/ + 4 * n) + 40))( *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.BuildupLoaded + 4 * n), (AbstractClass *)(aP0), aP1);
+        for ( n = 0; n < &dword_B0F650; ++n ) /*0x725b34*/
+(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(*(unsigned int *)&dword_B0F644/*0x725b42*/ + 4 * n) + 40))( *(unsigned int *)(*(unsigned int *)&dword_B0F644+ 4 * n), (AbstractClass *)(aP0), aP1);
 
 
 
@@ -668,8 +668,8 @@ LABEL_20:
 
         break; /*0x725bdc*/
       case 38: /*0x725ab1*/
-        for ( jj = 0; jj < g_BuildingLoadQueue_Array.unknown___2; ++jj ) /*0x725b05*/
-(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.ExitCoord[1] /*0x725b18*/ + 4 * jj) + 40))( *(unsigned int *)(g_BuildingLoadQueue_Array.ExitCoord[1] + 4 * jj), (AbstractClass *)(aP0), aP1);
+        for ( jj = 0; jj < dword_B0F718; ++jj ) /*0x725b05*/
+(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(&dword_B0F70C /*0x725b18*/ + 4 * jj) + 40))( *(unsigned int *)(&dword_B0F70C + 4 * jj), (AbstractClass *)(aP0), aP1);
 
 
 
@@ -689,8 +689,8 @@ LABEL_20:
         break; /*0x725afb*/
       case 47: /*0x725ab1*/
       case 48: /*0x725ab1*/
-        for ( mm = 0; mm < g_BuildingLoadQueue_Array.GateCloseDelay[0]; ++mm ) /*0x725b6b*/
-(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] /*0x725b7d*/ + 4 * mm) + 40))( *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * mm), (AbstractClass *)(aP0), aP1);
+        for ( mm = 0; mm < &dword_B0F668; ++mm ) /*0x725b6b*/
+(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(&dword_B0F65C /*0x725b7d*/ + 4 * mm) + 40))( *(unsigned int *)(&dword_B0F65C + 4 * mm), (AbstractClass *)(aP0), aP1);
 
 
 
@@ -706,8 +706,8 @@ LABEL_20:
 
         break; /*0x725bb2*/
       case 60: /*0x725ab1*/
-        for ( i1 = 0; i1 < g_BuildingLoadQueue_Array.TargetCoordOffset[1]; ++i1 ) /*0x725bed*/
-(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(g_BuildingLoadQueue_Array.Adjacent /*0x725bfb*/ + 4 * i1) + 40))( *(unsigned int *)(g_BuildingLoadQueue_Array.Adjacent + 4 * i1), (AbstractClass *)(aP0), aP1);
+        for ( i1 = 0; i1 < &dword_B0F700; ++i1 ) /*0x725bed*/
+(*(void (**)(unsigned int, AbstractClass *, int))(**(unsigned int **)(dword_B0F6F4/*0x725bfb*/ + 4 * i1) + 40))( *(unsigned int *)(dword_B0F6F4+ 4 * i1), (AbstractClass *)(aP0), aP1);
 
 
 
@@ -833,7 +833,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
   result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)aP1 + 12))( (int)(aP1), (int *)&aP1, 4, 0); /*0x41039e*/
   if ( result >= 0 ) /*0x4103a3*/
   {
-    SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, aP1, (int)aP0); /*0x4103b7*/
+    SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, (int)(aP1), (int)aP0); /*0x4103b7*/
     v4 = aP0[7]; /*0x4103be*/
     v5 = *v2; /*0x4103c1*/
     v6 = (*(int (**)(unsigned int *, unsigned int))(*aP0 + 48))( (unsigned int *)(aP0), 0); /*0x4103c7*/

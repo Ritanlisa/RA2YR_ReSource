@@ -631,7 +631,7 @@ int FileClass::BufferedWriter() {
                 v9 = this->FileClass; /*0x432100*/
                 FileID = this->FileID; /*0x432104*/
                 IDA_BYTE1(this->BufferSize) = 0; /*0x432107*/
-                (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&v9 + 40))(this, FileID, 0); /*0x43210b*/
+                (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v9 + 40))(this, FileID, 0); /*0x43210b*/
                 (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x43211a*/
                   this,
                   this->FileBaseOffset,
@@ -691,7 +691,7 @@ int FileClass::BufferedWriter() {
                 {
                   v18 = this->FileClass; /*0x4321fb*/
                   IDA_BYTE1(this->BufferSize) = 0; /*0x432202*/
-                  (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&v18 + 40))(this, v17, 0); /*0x432206*/
+                  (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v18 + 40))(this, v17, 0); /*0x432206*/
                   (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x432215*/
                     this,
                     this->FileBaseOffset,
@@ -795,7 +795,7 @@ int FileClass::BufferedReader() {
           v7 = this->FileClass; /*0x432342*/
           FileID = this->FileID; /*0x432346*/
           IDA_BYTE1(this->BufferSize) = 0; /*0x432349*/
-          (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&v7 + 40))(this, FileID, 0); /*0x43234d*/
+          (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v7 + 40))(this, FileID, 0); /*0x43234d*/
           (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x43235c*/
             this,
             this->FileBaseOffset,
@@ -834,7 +834,7 @@ int FileClass::BufferedReader() {
           {
             v11 = this->FileClass; /*0x432410*/
             IDA_BYTE1(this->BufferSize) = 0; /*0x432417*/
-            (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&v11 + 40))(this, v10, 0); /*0x43241b*/
+            (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v11 + 40))(this, v10, 0); /*0x43241b*/
             (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x43242a*/
               this,
               this->FileBaseOffset,

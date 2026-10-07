@@ -39,7 +39,7 @@ int sub_53AE00()
   if ( dword_A83D4C ) /*0x53ae23*/
     v1 = *((unsigned int *)dword_A83D4C + 22549); /*0x53ae25*/
 // 0x5d3ba0
-  return MessageListClass::AddMessage(unk_A8BC60, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
+  return MessageListClass::AddMessage((gamemd::MessageListClass *)&unk_A8BC60, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
 }
 }
 // 0x659CA0

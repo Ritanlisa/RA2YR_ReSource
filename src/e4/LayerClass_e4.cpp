@@ -542,7 +542,7 @@ void * LayerClass::Reveal(int a2)
   {
     return result; /*0x577dc0*/
   }
-  ((Debug *)this)->Log(); /*0x577dd1*/
+  ((Debug *)this)->Log("We tried to clear the shroud without an owner"); /*0x577dd1 G57w12: IDA push seq @ 0x577dd1*/
 LABEL_8:
   if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x577df4*/
     || !dword_A8B23C

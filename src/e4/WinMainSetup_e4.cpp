@@ -200,9 +200,9 @@ int sub_5DB6F0()
 
   result = WinMainSetup_Setup_5DB6F0_Setup(); /*0x5db6f1*/
   IDA_LOWORD(stru_A8D600.q010) = 0; /*0x5db700*/
-  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5db707*/
-    result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5db70d*/
-  *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5db70f*/
+  if ( *(unsigned int *)&dword_887628) /*0x5db707*/
+    result = (***(int (****)(unsigned int, int))&dword_887628)(*(unsigned int *)&dword_887628, 1); /*0x5db70d*/
+  *(unsigned int *)&dword_887628= 0; /*0x5db70f*/
   return result; /*0x5db715*/
 }
 } // namespace gamemd
@@ -282,7 +282,7 @@ void sub_626FF0()
   v0 = g_FileExtensionState; /*0x626ff1*/
   if ( g_FileExtensionState ) /*0x626ff9*/
   {
-    FileSystem::FlushTempFiles(g_FileExtensionState); /*0x626ffd*/
+    FileSystem::FlushTempFiles((gamemd::FileSystem *)&g_FileExtensionState); /*0x626ffd*/
     RA2_OPDEL(v0); /*0x627003*/
     g_FileExtensionState = 0; /*0x62700b*/
   }
@@ -298,20 +298,19 @@ void sub_65FD50()
   int v3; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  for ( i = stru_B04DA8.LoadGame_field_0x10 - 1; i >= 0; --i ) /*0x65fd5c*/
+  for ( i = dword_B04DB8- 1; i >= 0; --i ) /*0x65fd5c*/
   {
-    v2 = *(void **)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd65*/
+    v2 = *(void **)(dword_B04DAC+ 4 * i); /*0x65fd65*/
     if ( v2 ) /*0x65fd6a*/
     {
-      v4 = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd7b*/
-      v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v4)); /*0x65fd7f*/
-      if ( v3 != -1 && v3 < stru_B04DA8.LoadGame_field_0x10 ) /*0x65fd8f*/
+      v4 = *(unsigned int *)(dword_B04DAC+ 4 * i); /*0x65fd7b*/
+      v3 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)&stru_B04DA8+ 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v4)); /*0x65fd7f*/
+      if ( v3 != -1 && v3 < dword_B04DB8) /*0x65fd8f*/
       {
-        --stru_B04DA8.LoadGame_field_0x10; /*0x65fd94*/
+        --dword_B04DB8; /*0x65fd94*/
         for ( ; /*0x65fd9a*/
-              v3 < stru_B04DA8.LoadGame_field_0x10;
-              *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v3 - 4) = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04
-                                                                                    + 4 * v3) )
+              v3 < dword_B04DB8;
+              *(unsigned int *)(dword_B04DAC+ 4 * v3 - 4) = *(unsigned int *)(dword_B04DAC+ 4 * v3) )
         {
           ++v3; /*0x65fda2*/
         }
@@ -332,9 +331,9 @@ void sub_72AC40()
 
   WinMainSetup_Setup_72AC40_Setup(); /*0x72ac41*/
   WinMainSetup_Setup_72AC40_Setup_72B230(v0); /*0x72ac46*/
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72ac54*/
+  if ( &byte_B0FBE0 ) /*0x72ac54*/
   {
-    g_BuildingLoadQueue_Array.__pad_F70[1072] = 0; /*0x72ac5a*/
+    &byte_B0FBE0 = 0; /*0x72ac5a*/
         ((LoadingScreen *)this)->DestroyFileTrees();
     LoadingScreen::CleanupObjects( (void *)(v1)); /*0x72ac65*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120]); /*0x72ac70*/
@@ -358,7 +357,7 @@ void sub_72AC40()
   FileTree::CleanupAll(); /*0x72acff*/
   LoadingScreen::FreeResources( (void *)(v1)); /*0x72ad04*/
     ((LoadingScreen *)this)->FreeResources2();
-  g_BuildingLoadQueue_Array.__pad_F70[1116] = 0; /*0x72ad0e*/
+  &byte_B0FC0C = 0; /*0x72ad0e*/
 }
 } // namespace gamemd
 

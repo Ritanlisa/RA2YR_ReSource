@@ -253,7 +253,7 @@ int MPCooperative::WriteCoopSaveINI()
   }
   ((unsigned int *)(g_IsWindowed))[v9] = (unsigned int)(0);
   strcat( (char *)(v22), (const char *)(g_IsWindowed)); /*0x49bff9*/
-  CCFileClass::Construct3((int)&v16); /*0x49c006*/
+  CCFileClass::Construct3((gamemd::CCFileClass *)((int)&v16)); /*0x49c006*/
   (*(void (**)(CCFileClass *, char *))(*(unsigned int *)v16.CDFileClass + 8))( (CCFileClass *)(&v16), (char *)(g_Str_File_coopsave_ini)); /*0x49c018*/
   (*(void (**)(CCFileClass *, int))(*(unsigned int *)v16.CDFileClass + 28))( (CCFileClass *)(&v16), 2); /*0x49c025*/
   INIClass::ClearSection((INIClass *)((int *)v15.INIClass), (int)v22, 0); /*0x49c035*/
@@ -342,7 +342,7 @@ int MPCooperative::ReadCoopSaveINI()
   v19[0] = &CCINIClass_Vtable; /*0x49d192*/
   if ( !((CCINIClass *)((int)(v19)))->Load((int)v16, 0, 0) ) /*0x49d19d*/
   {
-    CCFileClass::Reset(v16); /*0x49d1aa*/
+    CCFileClass::Reset((gamemd::CCFileClass *)(v16)); /*0x49d1aa*/
     ((HashTable *)(v19))->DestroyHashTableINIClass(); /*0x49d1b3*/
     v16[0] = (unsigned int)(&vt_CCFileClass); /*0x49d1bc*/
     v18 = 0; /*0x49d1c4*/
@@ -351,7 +351,7 @@ int MPCooperative::ReadCoopSaveINI()
     ((BufferIOFileClass *)(v16))->Dtor(); /*0x49d1d9*/
     return 0; /*0x49d1e9*/
   }
-  CCFileClass::Reset(v16); /*0x49d1ef*/
+  CCFileClass::Reset((gamemd::CCFileClass *)(v16)); /*0x49d1ef*/
   v4 = 0; /*0x49d1f6*/
   if ( *v1 )
   {
@@ -587,7 +587,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
       RA2_OPDEL(v7); /*0x5c1686*/
     }
   }
-  (*(void (**)(int *, int))(v3[28].MultiplayerGameMode_field_0x14 + 12))( /*0x5c169f*/
+  (*(void ((int *)(**))(int *, int))(v3[28].MultiplayerGameMode_field_0x14 + 12))( /*0x5c169f*/
     &v3[28].MultiplayerGameMode_field_0x14,
     a2);
   for ( j = v3[3].MultiplayerGameMode_field_0x14 - 1; j >= 0; --j ) /*0x5c16a6*/
@@ -688,7 +688,7 @@ int MPCooperative::Read(void *a1_1, void *a2_1)
   v5 = *(unsigned int *)&this->__pad_328[4]; /*0x5c18d5*/
   p_MPCooperative_field_0x324 = &this->q324; /*0x5c18db*/
   (*(void (**)(int *))(this->q324 + 12))( (int *)(&this->q324)); /*0x5c18e3*/
-  (*(void (**)(int *, int, unsigned int))(this->q324 + 8))( /*0x5c18ed*/
+  (*(void ((int *)(**))(int *, int, unsigned int))(this->q324 + 8))( /*0x5c18ed*/
     &this->q324,
     v5,
     0);
@@ -2222,7 +2222,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
         if ( v24 <= 0 ) /*0x5c3cdb*/
         {
 LABEL_34:
-          Debug::Log(); /*0x5c3d61*/
+          Debug::Log("@@@@ Could not find %s for %s\n"); /*0x5c3d61 G57w12: IDA push seq @ 0x5c3d61 +2 reg-vararg omitted*/
         }
         else
         {

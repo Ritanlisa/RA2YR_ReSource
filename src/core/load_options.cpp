@@ -203,60 +203,6 @@ char LoadOptions::Check()
     FindClose(FirstFileA); /*0x559d10*/
     return v2; /*0x559d17*/
 }
-// 0x559c20
-    char __thiscall LoadOptions::Check(const char **a1)
-{
-    char v2; // bl
-    const char *v3; // eax
-    HANDLE FirstFileA; // edi
-    CHAR FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
-    unsigned short v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
-    char v8; // [esp+14Ch] [ebp-1FCh]
-    int v9; // [esp+16Ch] [ebp-1DCh]
-    int v10; // [esp+170h] [ebp-1D8h]
-    __int16 v11; // [esp+174h] [ebp-1D4h]
-    int v12; // [esp+1F4h] [ebp-154h]
-    int v13; // [esp+1F8h] [ebp-150h]
-    int v14; // [esp+1FCh] [ebp-14Ch]
-    char v15; // [esp+200h] [ebp-148h]
-    char v16; // [esp+201h] [ebp-147h]
-    int v17; // [esp+204h] [ebp-144h]
-    struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
-
-    v2 = 0; /*0x559c2f*/
-    v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
-    v9 = 0; /*0x559c34*/
-    v10 = -1; /*0x559c42*/
-    v12 = -1; /*0x559c4d*/
-    v15 = 1; /*0x559c58*/
-    v16 = 0; /*0x559c60*/
-    v17 = 0; /*0x559c67*/
-    v7[0] = 0; /*0x559c6e*/
-    v8 = 0; /*0x559c73*/
-    v11 = 0; /*0x559c7a*/
-    v14 = 0; /*0x559c82*/
-    v13 = 0; /*0x559c89*/
-    sprintf(FileName, "*.%3s", v3); /*0x559c90*/
-    FirstFileA = FindFirstFileA(FileName, &FindFileData); /*0x559cab*/
-    if ( FirstFileA != (HANDLE)-1 ) /*0x559cb0*/
-    {
-      while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
-           || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-           || (*((unsigned __int8 (__thiscall **)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
-                this,
-                v7,
-                &FindFileData) != 1
-           || v16 )
-      {
-        if ( !FindNextFileA(FirstFileA, &FindFileData) ) /*0x559d0a*/
-          goto LABEL_9; /*0x559d0a*/
-      }
-      v2 = 1; /*0x559d0e*/
-    }
-  LABEL_9:
-    FindClose(FirstFileA); /*0x559d10*/
-    return v2; /*0x559d17*/
-}
 
 // IDA 0x559E40: SaveGame (Release/vt02)
 bool LoadOptions::SaveGame(const char* filename, const wchar_t* description) {

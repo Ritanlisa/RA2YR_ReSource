@@ -63,7 +63,7 @@ int DDraw::CapabilityCheck()
   int v7[9]; // [esp+28h] [ebp-24h] BYREF
 
   ((DSurface*)((char *)v7))->Construct(64, 64, 0, 0); /*0x4a3e51*/
-  ((gamemd::Debug*)aCheckingHardwa)->Log(); /*0x4a3e5b*/
+  ((gamemd::Debug*)aCheckingHardwa)->Log("Checking hardware region fill capability..."); /*0x4a3e5b G57w12: IDA push seq @ 0x4a3e5b*/
   byte_8205D4 = 1; /*0x4a3e67*/
   ((XSurface *)v7)->Fill( 0); /*0x4a3e6f*/
   v2 = 5; /*0x4a3e82*/
@@ -91,12 +91,12 @@ int DDraw::CapabilityCheck()
   v0 = aFailed_1; /*0x4a3ed7*/
 LABEL_7:
   Debug::Log_0(  (void *)("%s\n"),  (void *)(v0)); /*0x4a3edc*/
-  ((Debug *)aCheckingOverla)->Log(); /*0x4a3eec*/
+  ((Debug *)aCheckingOverla)->Log("Checking overlapped blit capability..."); /*0x4a3eec G57w12: IDA push seq @ 0x4a3eec*/
   byte_8205D5 = 1; /*0x4a3ef8*/
   ((XSurface *)v7)->Fill( 0); /*0x4a3f00*/
   v2 = 0; /*0x4a3f13*/
   v3 = 0; /*0x4a3f17*/
-  XSurface::SetPixel(v7, &v2, 255); /*0x4a3f1b*/
+  XSurface::SetPixel((gamemd::XSurface *)(v7), (unsigned int *)(&v2), 255); /*0x4a3f1b*/
   v5 = 63; /*0x4a3f29*/
   v6[3] = 63; /*0x4a3f2d*/
   v2 = 0; /*0x4a3f42*/

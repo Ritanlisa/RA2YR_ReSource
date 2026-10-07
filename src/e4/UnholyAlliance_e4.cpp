@@ -118,7 +118,6 @@ BOOL UnholyAlliance::Write(MPCooperative * aP0)
   return ((unsigned char *)&stru_A8B250)[8] && ((gamemd::MPCooperative *)uint8_t)((ScenarioClass *)(&aP0->m_Enabled))->MissionStubReturnZero2(); /*0x5cb41c*/
 
 }
-}  // G42.18c ns repair
 // 0x5CB430
 char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
 {
@@ -127,3 +126,4 @@ char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
   return 1; /*0x5cb437*/
 
 }
+}  // G42.18c ns repair

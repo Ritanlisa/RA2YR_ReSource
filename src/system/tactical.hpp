@@ -111,7 +111,7 @@ public:
 
     // Map drawing
     void DrawMap(const RectangleStruct& viewRect, RectangleStruct* bounds);  // 0x6D7840
-    void DrawTerrain(const RectangleStruct& viewRect);  // 0x6D7C00
+int DrawTerrain(int *a2, unsigned int *a3, int a4);  // 0x006d7c00 g57w12-r raw-sync (def-form)
     void DrawTerrainPartial(const RectangleStruct& rect, int a2, int a3, char a4);  // 0x6D3040
     void DrawCellTerrainOverlay(int cx, int cy, RectangleStruct* bounds);  // 0x4802A0
     void DrawCellOverlay(int cx, int cy, int flags);  // 0x547230

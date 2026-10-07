@@ -144,7 +144,6 @@ int Struct::ZeroInitAndSetup_0_0()
   return Struct::ZeroInitAndSetup(  (ConnectionClass *)this);
 
 }
-}
 // 0x5F75E0
 unsigned int * Struct::InitTriple256(unsigned int * a1)
 {
@@ -157,4 +156,5 @@ unsigned int * Struct::InitTriple256(unsigned int * a1)
   ((unsigned int *)a1)[0] = (unsigned int)(v1); /*0x5f75fc*/
   return a1; /*0x5f75ff*/
 
+}
 }

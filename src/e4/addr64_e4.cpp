@@ -540,7 +540,7 @@ void RunNetworkGameLoop()
     Ticks = v26; /*0x64845c*/
     v21 = v27; /*0x648460*/
     v22 = 15; /*0x648464*/
-        ((Debug *)0)->Log();
+        ((Debug *)0)->Log("Resending framesync\n"); /*0x648460 G57w12: IDA push seq @ 0x648460*/
     SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x64847e*/
   LABEL_11:
     (*(void (**)(IPXManagerClass *))(v3->Socket + 4))( (IPXManagerClass *)(v3)); /*0x648483*/
@@ -623,13 +623,13 @@ if ( !(*(int (**)(IPXManagerClass *, void *, unsigned int *, int *))(v3->Socket 
     }
     if ( v10 + dword_A8B554 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
     {
-            ((Debug *)0)->Log();
+            ((Debug *)0)->Log("Waiting for player %d on frame %d\n"); /*0x64862a G57w12: IDA push seq @ 0x64862a +2 reg-vararg omitted*/
       v2 = v13; /*0x648643*/
       continue; /*0x64864a*/
     }
     break;
   }
-    ((Debug *)0)->Log();
+    ((Debug *)0)->Log("Timed out waiting for end game!\n"); /*0x64864a G57w12: IDA push seq @ 0x64864a*/
     ((Debug *)0)->Log();
   SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x64869f*/
   SendNetworkFrameSync((int *)(&v3->Socket), dword_AFA400); /*0x6486b2*/

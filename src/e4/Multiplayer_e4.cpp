@@ -340,7 +340,7 @@ void Multiplayer::ShowProgress(int a2)
           }
           if ( (_AX & 0x100) != 0 ) /*0x69afb6*/
           {
-            ((gamemd::Network*)&unk_A8E9C0.Socket)->SendMessage( (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
+            ((gamemd::Network*)&unk_A8E9C0)->SendMessage( (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
           }
           else
           {

@@ -75,7 +75,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       (**v3)((unsigned int)v3, 1); /*0x549c9c*/
     ++i; /*0x549ca3*/
   }
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (gamemd::ObjectTypeClass *)(a2)); /*0x549cbf*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (int)((gamemd::ObjectTypeClass *)(a2))); /*0x549cbf*/
   if ( result >= 0 ) /*0x549cc6*/
   {
     if ( a1 ) /*0x549cce*/
@@ -177,7 +177,7 @@ namespace gamemd {
 IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2, int a1, int a3, int a4, int a5)
 {
 
-  IsometricTileTypeClass::CleanupMembers((int)this); /*0x54a173*/
+  IsometricTileTypeClass::CleanupMembers((gamemd::IsometricTileTypeClass *)((int)this)); /*0x54a173*/
   if ( (a2 & 1) != 0 ) /*0x54a17d*/
     __3_YAXPAX_Z(this); /*0x54a180*/
   return (IsometricTileTypeClass *)this; /*0x54a18a*/

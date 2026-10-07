@@ -20,7 +20,7 @@ namespace gamemd {
 _DWORD * RadioClass::Release(void *a1)
 {
 
-  RadioClass::Constructor((int)this); /*0x65a753*/
+  RadioClass::Constructor((gamemd::RadioClass *)((int)this)); /*0x65a753*/
   (&this->radioLinks)[1] = 0; /*0x65a75a*/
   (&this->radioLinks)[2] = 1; /*0x65a764*/
   LOBYTE((&this->radioLinks)[3]) = 1; /*0x65a76e*/

@@ -180,14 +180,14 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
                      (int *)aP1), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)g_INI_Key_Tiberium, this->IsVeinholeMonster);
   IsVeins = this->IsVeins; /*0x5fe7ff*/
   this->IsVeinholeMonster = Bool_Overwrite; /*0x5fe805*/
-  v8 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aCrate, IsVeins); /*0x5fe814*/
+  v8 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aCrate), IsVeins); /*0x5fe814*/
   ImageLoaded = this->ImageLoaded; /*0x5fe821*/
   this->IsVeins = v8; /*0x5fe828*/
-  this->ImageLoaded = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aCratetrigger, ImageLoaded); /*0x5fe833*/
+  this->ImageLoaded = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aCratetrigger), ImageLoaded); /*0x5fe833*/
   v9 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aExplodes, this->IsRubble); /*0x5fe848*/
   v10 = this->RadarColor[0]; /*0x5fe84d*/
   this->IsRubble = v9; /*0x5fe853*/
-  v11 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aOverrides, v10); /*0x5fe862*/
+  v11 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aOverrides), v10); /*0x5fe862*/
   DamageLevels = this->DamageLevels; /*0x5fe867*/
   this->RadarColor[0] = v11; /*0x5fe884*/
   if ( /*0x5fe88a*/
@@ -201,7 +201,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   this->DamageLevels = (int)v13; /*0x5fe8a0*/
   this->Strength = INIClass::ReadInt_Overwrite((INIClass *)(/*0x5fe8c3*/
-                     (bool *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)((unsigned int *)this)[0], aDamagelevels, this->Strength);
+                     (bool *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aDamagelevels), this->Strength);
   if ( this->IsVeinholeMonster ) /*0x5fe8c9*/
   {
     CellAnim = this->CellAnim; /*0x5fe8d3*/
@@ -223,20 +223,20 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   *(unsigned short *)&this->__tail_2B5[1] = *(unsigned short *)Coord; /*0x5fe94f*/
   Explodes = this->Explodes; /*0x5fe95e*/
   *((unsigned char *)this + 696) = *(unsigned char *)(Coord + 2); /*0x5fe965*/
-  v16 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aNousetilelandt, Explodes); /*0x5fe968*/
+  v16 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aNousetilelandt), Explodes); /*0x5fe968*/
   ChainReaction = this->ChainReaction; /*0x5fe96d*/
   this->Explodes = v16; /*0x5fe973*/
-  v18 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aIsveinholemons, ChainReaction); /*0x5fe982*/
+  v18 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aIsveinholemons), ChainReaction); /*0x5fe982*/
   Overrides = this->Overrides; /*0x5fe98f*/
   this->ChainReaction = v18; /*0x5fe996*/
-  this->Overrides = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aIsveins, Overrides); /*0x5fe9a1*/
+  this->Overrides = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aIsveins), Overrides); /*0x5fe9a1*/
   v19 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aChainreaction, this->IsARock); /*0x5fe9b6*/
   v20 = this->RadarColor[1]; /*0x5fe9bb*/
   this->IsARock = v19; /*0x5fe9c1*/
-  v21 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aDrawflat, v20); /*0x5fe9d0*/
+  v21 = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aDrawflat), v20); /*0x5fe9d0*/
   v27 = this->__tail_2B5[0]; /*0x5fe9dd*/
   this->RadarColor[1] = v21; /*0x5fe9e4*/
-  this->__tail_2B5[0] = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], aIsarock, v27); /*0x5fe9ef*/
+  this->__tail_2B5[0] = INIClass::ReadBool_Overwrite((INIClass *)((int *)aP1), (uint8_t *)((unsigned int *)this)[0], (unsigned char *)(aIsarock), v27); /*0x5fe9ef*/
   this->RadarColor[2] = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5fea0a*/
                           (int *)aP1), (uint8_t *)((unsigned int *)this)[0], aIsrubble, this->RadarColor[2]);
   return (gamemd::AnimTypeClass **)(1); /*0x5fea11*/
@@ -251,7 +251,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   int result; // eax
   char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (ObjectTypeClass *)(a2)); /*0x5feb04*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (int)((ObjectTypeClass *)(a2))); /*0x5feb04*/
   if ( result >= 0 ) /*0x5feb0b*/
   {
     if ( a1 ) /*0x5feb13*/
@@ -269,7 +269,7 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       if ( ((unsigned int *)a1)[0] ) /*0x5feb69*/
       {
-        _makepath(&v3[1], 0, 0, ((unsigned int *)a1)[0], (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x5feba1*/
+        _makepath(&v3[1], 0, 0, (const char *)(((unsigned int *)a1)[0]), (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x5feba1*/
       }
       else
       {
@@ -303,7 +303,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     Debug::Log("Demand loading image for %s\n"); /*0x5fee0e G57c1: IDA 0x5fee0e push offset aDemandLoadingI*/
     if ( ((unsigned int *)this)[0] ) /*0x5fee13*/
     {
-      _makepath(Buffer, 0, 0, ((unsigned int *)this)[0], (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x5fee4f*/
+      _makepath(Buffer, 0, 0, (const char *)(((unsigned int *)this)[0]), (const char *)&off_7E1BC6 + 112 * ((AbstractClass *)dword_A8B230)[130].uniqueId); /*0x5fee4f*/
     }
     else if ( ((unsigned int *)this)[0] ) /*0x5fee59*/
     {

@@ -53,7 +53,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   ((GameState*)v15)->Reset(); /*0x67cf6b*/
   Map_Save_681080(v15, dword_83D560); /*0x67cf7d*/
   Map_Save_6810A0(v15, Source); /*0x67cf8a*/
-  Map_Save(v15, 1); /*0x67cf98*/
+  Map_Save((gamemd::ObjectClass *)(v15), 1); /*0x67cf98*/
   Map_Save_6810D0(v15, *(wchar_t **)(*((unsigned int *)HouseClass_Player + 13) + 96)); /*0x67cfb1*/
   Map_Save_681110(v15, *((unsigned int *)g_ScenarioClass_Instance + 3379)); /*0x67cfca*/
   Map_Save_681130(v15, *((unsigned int *)g_ScenarioClass_Instance + 1173)); /*0x67cfe2*/
@@ -91,7 +91,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     WinAPI::Wrapper(-2147467261); /*0x67d120*/
   if ( (*(int (**)(int, int))(*(unsigned int *)v9 + 12))(v9, v10) < 0 ) /*0x67d136*/
   {
-        ((Debug *)this)->Log();
+        ((Debug *)this)->Log("\t***** FAILED!\n"); /*0x67d136 G57w12: IDA push seq @ 0x67d136*/
     if ( v9 ) /*0x67d14b*/
       (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d150*/
     if ( v10 ) /*0x67d159*/
@@ -140,7 +140,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
       ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d298*/
     return 0; /*0x67d2a7*/
   }
-    ((Debug *)this)->Log();
+    ((Debug *)this)->Log("SAVING GAME [%s] - Complete\n\n"); /*0x67d2a7 G57w12: IDA push seq @ 0x67d2a7 +2 reg-vararg omitted*/
   if ( pStm ) /*0x67d2bf*/
     ((gamemd::WinAPI*)pStm)->lpVtbl->Release(pStm); /*0x67d2c4*/
   if ( v9 ) /*0x67d2cd*/

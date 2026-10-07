@@ -87,7 +87,7 @@ int MapSeed::CheckName()
   else
   {
     v6 = 0; /*0x79c5c8*/
-    if ( *(int *)g_WindowManager.__pad_0 <= 0 ) /*0x79c5cc*/
+    if ( *(int *)&g_WindowManager<= 0 ) /*0x79c5cc*/
     {
 LABEL_12:
       result = (gamemd::DeleteAndZero)((int)(j_DeleteAndZero( (void *)((ObjectClass *)&v8)))); /*0x79c624*/
@@ -98,13 +98,13 @@ LABEL_12:
       while ( 1 ) /*0x79c5d2*/
       {
         unknown_libname_73( (void *)(&v8.m_3[1])); /*0x79c5d2*/
-        if ( v6 >= 0 && v6 < *(int *)g_WindowManager.__pad_0 ) /*0x79c5e1*/
-          ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v6)); /*0x79c5f1*/
+        if ( v6 >= 0 && v6 < *(int *)&g_WindowManager) /*0x79c5e1*/
+          ((String *)((String *)&v8.m_3[1]))->Reassign((const char **)(*(unsigned int *)&dword_B73AB0+ 4 * v6)); /*0x79c5f1*/
         ((String *)((String *)&v8.m_3[1]))->ToLower(); /*0x79c5fa*/
         if ( (uint8_t)((String *)((String *)&v8.m_3[1]))->Compare((const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
         j_DeleteAndZero( (void *)((ObjectClass *)&v8.m_3[1])); /*0x79c615*/
-        if ( ++v6 >= *(int *)g_WindowManager.__pad_0 ) /*0x79c622*/
+        if ( ++v6 >= *(int *)&g_WindowManager) /*0x79c622*/
           goto LABEL_12; /*0x79c622*/
       }
       j_DeleteAndZero( (void *)((ObjectClass *)&v8.m_3[1])); /*0x79c634*/
@@ -136,44 +136,44 @@ AbstractClass * * MapSeed::InsertName()
   if ( (uint8_t)((MapSeed*)this)->CheckName() ) /*0x79c656*/
   {
     ((String *)((String *)&v11))->AssignFromPtr((const char **)this); /*0x79c668*/
-    v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c66d*/
-    v3 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c672*/
-    if ( *(int *)g_WindowManager.__pad_0 >= (int)g_WindowManager.Array_field_0x4 ) /*0x79c67e*/
+    v2 = *(unsigned int *)&g_WindowManager; /*0x79c66d*/
+    v3 = *(unsigned int *)&g_WindowManager; /*0x79c672*/
+    if ( *(int *)&g_WindowManager>= (int)dword_B73AAC) /*0x79c67e*/
     {
       ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x79c685*/
-      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c68a*/
+      v2 = *(unsigned int *)&g_WindowManager; /*0x79c68a*/
     }
-    if ( v2 >= (int)g_WindowManager.Array_field_0x4 ) /*0x79c695*/
+    if ( v2 >= (int)dword_B73AAC) /*0x79c695*/
     {
       ((DynamicVector *)((DynamicVector *)&g_WindowManager))->EnsureCapacity(); /*0x79c69c*/
-      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6a1*/
+      v2 = *(unsigned int *)&g_WindowManager; /*0x79c6a1*/
     }
     if ( v3 < v2 ) /*0x79c6a8*/
     {
       memcpy( /*0x79c6c5*/
-        (void *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3 + 4),
-        (const void *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3),
+        (void *)(*(unsigned int *)&dword_B73AB0 + 4 * v3 + 4),
+        (const void *)(*(unsigned int *)&dword_B73AB0 + 4 * v3),
         4 * (v2 + 0x3FFFFFFF * v3));
-      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6ca*/
+      v2 = *(unsigned int *)&g_WindowManager; /*0x79c6ca*/
     }
-    v4 = (String *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v3); /*0x79c6d8*/
+    v4 = (String *)(*(unsigned int *)&dword_B73AB0+ 4 * v3); /*0x79c6d8*/
     if ( v4 ) /*0x79c6dd*/
     {
       ((String *)(v4))->AssignFromPtr( (const char **)(&v11)); /*0x79c6e4*/
-      v2 = *(unsigned int *)g_WindowManager.__pad_0; /*0x79c6e9*/
+      v2 = *(unsigned int *)&g_WindowManager; /*0x79c6e9*/
     }
-    *(unsigned int *)g_WindowManager.__pad_0 = v2 + 1; /*0x79c6ef*/
-    v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c6f4*/
-    v6 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c6f9*/
-    if ( *(int *)&stru_B76900.needsRedraw >= *(int *)&stru_B76900.hasParachute ) /*0x79c705*/
+    *(unsigned int *)&g_WindowManager= v2 + 1; /*0x79c6ef*/
+    v5 = *(unsigned int *)&dword_B76980; /*0x79c6f4*/
+    v6 = *(unsigned int *)&dword_B76980; /*0x79c6f9*/
+    if ( *(int *)&dword_B76980>= *(int *)&dword_B76984) /*0x79c705*/
     {
-      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x79c70c*/
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c711*/
+      ((DynamicVector *)((DynamicVector *)&dword_B76980))->EnsureCapacity(); /*0x79c70c*/
+      v5 = *(unsigned int *)&dword_B76980; /*0x79c711*/
     }
-    if ( v5 >= *(int *)&stru_B76900.hasParachute ) /*0x79c71c*/
+    if ( v5 >= *(int *)&dword_B76984) /*0x79c71c*/
     {
-      ((DynamicVector *)((DynamicVector *)&stru_B76900.needsRedraw))->EnsureCapacity(); /*0x79c723*/
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c728*/
+      ((DynamicVector *)((DynamicVector *)&dword_B76980))->EnsureCapacity(); /*0x79c723*/
+      v5 = *(unsigned int *)&dword_B76980; /*0x79c728*/
     }
     if ( v6 < v5 ) /*0x79c72f*/
     {
@@ -181,42 +181,42 @@ memcpy( /*0x79c74c*/ (void *)(&stru_B76900.parachute->AnimClass_field_0x4 + v6),
 
 
 
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c751*/
+      v5 = *(unsigned int *)&dword_B76980; /*0x79c751*/
     }
     v7 = (String *)(&stru_B76900.parachute->AnimClass_field_0x0 + v6); /*0x79c75f*/
     if ( v7 ) /*0x79c764*/
     {
       ((String *)(v7))->AssignFromPtr( (const char **)(&v11)); /*0x79c76b*/
-      v5 = *(unsigned int *)&stru_B76900.needsRedraw; /*0x79c770*/
+      v5 = *(unsigned int *)&dword_B76980; /*0x79c770*/
     }
-    *(unsigned int *)&stru_B76900.needsRedraw = v5 + 1; /*0x79c776*/
-    v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c77b*/
-    v9 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c780*/
-    if ( *(int *)g_WOL_BuddyList.__pad_0 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x79c78c*/
+    *(unsigned int *)&dword_B76980= v5 + 1; /*0x79c776*/
+    v8 = *(unsigned int *)&g_WOL_BuddyList; /*0x79c77b*/
+    v9 = *(unsigned int *)&g_WOL_BuddyList; /*0x79c780*/
+    if ( *(int *)&g_WOL_BuddyList>= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x79c78c*/
     {
       ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x79c793*/
-      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c798*/
+      v8 = *(unsigned int *)&g_WOL_BuddyList; /*0x79c798*/
     }
     if ( v8 >= *(int *)&g_WOL_BuddyList.DynamicVector_field_0x1[3] ) /*0x79c7a3*/
     {
       ((DynamicVector *)(&g_WOL_BuddyList))->EnsureCapacity(); /*0x79c7aa*/
-      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7af*/
+      v8 = *(unsigned int *)&g_WOL_BuddyList; /*0x79c7af*/
     }
     if ( v9 < v8 ) /*0x79c7b6*/
     {
       memcpy( /*0x79c7d3*/
-        (void *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v9 + 4),
-        (const void *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v9),
+        (void *)(dword_B779B8 + 4 * v9 + 4),
+        (const void *)(dword_B779B8 + 4 * v9),
         4 * (v8 + 0x3FFFFFFF * v9));
-      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7d8*/
+      v8 = *(unsigned int *)&g_WOL_BuddyList; /*0x79c7d8*/
     }
-    v10 = (String *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * v9); /*0x79c7e6*/
+    v10 = (String *)(dword_B779B8+ 4 * v9); /*0x79c7e6*/
     if ( v10 ) /*0x79c7eb*/
     {
       ((String *)(v10))->AssignFromPtr( (const char **)(&v11)); /*0x79c7f2*/
-      v8 = *(unsigned int *)g_WOL_BuddyList.__pad_0; /*0x79c7f7*/
+      v8 = *(unsigned int *)&g_WOL_BuddyList; /*0x79c7f7*/
     }
-    *(unsigned int *)g_WOL_BuddyList.__pad_0 = v8 + 1; /*0x79c802*/
+    *(unsigned int *)&g_WOL_BuddyList= v8 + 1; /*0x79c802*/
     if ( ((String*)((String *)&g_WindowManager.__pad_14[16]))->Length() ) /*0x79c807*/
     {
       if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x79c825*/
@@ -227,12 +227,12 @@ LABEL_33:
       }
       ((DeleteAndZero*)(DeleteAndZero *)&g_WindowManager.__pad_14[16])->Alt2(); /*0x79c830*/
     }
-    if ( *(unsigned int *)&stru_B76900.needsRedraw ) /*0x79c83c*/
+    if ( *(unsigned int *)&dword_B76980) /*0x79c83c*/
     {
-      if ( *(int *)&stru_B76900.needsRedraw > 0 ) /*0x79c83e*/
+      if ( *(int *)&dword_B76980> 0 ) /*0x79c83e*/
       {
-        ((String *)((String *)&g_WindowManager.__pad_14[16]))->Reassign((const char **)stru_B76900.parachute); /*0x79c84b*/
-        ((DynamicArray *)((DynamicArray *)&stru_B76900.needsRedraw))->Remove(0); /*0x79c857*/
+        ((String *)((String *)&g_WindowManager.__pad_14[16]))->Reassign((const char **)dword_B76988); /*0x79c84b*/
+        ((DynamicArray *)((DynamicArray *)&dword_B76980))->Remove(0); /*0x79c857*/
       }
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c864*/
       memset( (void *)(v12), 0, sizeof(v12)); /*0x79c874*/

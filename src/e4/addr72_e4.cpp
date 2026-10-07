@@ -177,7 +177,7 @@ AbstractClass * * sub_725C70()
     {
       while ( 1 ) /*0x725caa*/
       {
-v3 = (*(int (**)(int *, unsigned int **))(g_BuildingLoadQueue_Array.ToTile + 16))( /*0x725caa*/ &g_BuildingLoadQueue_Array.ToTile, (unsigned int **)(&v8));
+v3 = (*(int (**)(int *, unsigned int **))(stru_B0F698+ 16))( /*0x725caa*/ &stru_B0F698, (unsigned int **)(&v8));
 
 
         if ( v3 == -1 || v3 >= *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] ) /*0x725cba*/
@@ -230,7 +230,7 @@ void sub_728200()
   {
     v2 = (int16_t *)*((unsigned int *)dword_8B413C + v1); /*0x72821e*/
     v3 = (unsigned short *)((CellCoord *)(&dword_87F7E8))->To_CellObj(v2 + 18); /*0x72822f*/
-    if ( InfantryClass::IsInBounds((int)v3) ) /*0x728233*/
+    if ( InfantryClass::IsInBounds((gamemd::InfantryClass *)((int)v3)) ) /*0x728233*/
     {
       v3[139] = ++i; /*0x72825f*/
     }
@@ -415,9 +415,9 @@ int * * LoadingScreen_InitResources()
   LoadingScreen *v1; // [esp+0h] [ebp-4h]
   ObjectClass *v2; // [esp+0h] [ebp-4h]
 
-  if ( !g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72dfba*/
+  if ( !&byte_B0FBE0 ) /*0x72dfba*/
     goto LABEL_3; /*0x72dfba*/
-  g_BuildingLoadQueue_Array.__pad_F70[1072] = 0; /*0x72dfc0*/
+  &byte_B0FBE0 = 0; /*0x72dfc0*/
   LoadingScreen::DestroyFileTrees(); /*0x72dfc6*/
   LoadingScreen::CleanupObjects( (void *)(v1)); /*0x72dfcb*/
   RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120]); /*0x72dfd6*/
@@ -437,7 +437,7 @@ int * * LoadingScreen_InitResources()
   RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1148]); /*0x72e052*/
   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1148] = 0; /*0x72e05a*/
   result = ReleaseLoadingResources( (void *)(v2)); /*0x72e060*/
-  if ( !g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72e06b*/
+  if ( !&byte_B0FBE0 ) /*0x72e06b*/
   {
   LABEL_3:
     ((AssetClass *)v1)->ReleaseAndReload(); /*0x72e071*/
@@ -484,7 +484,7 @@ int * * LoadingScreen_InitResources()
       (int *)&g_BuildingLoadQueue_Array.__pad_F70[1064],
       &g_BuildingLoadQueue_Array.__pad_F70[1068]);
     result = (uint8_t)SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e193*/
-    g_BuildingLoadQueue_Array.__pad_F70[1072] = 1; /*0x72e198*/
+    &byte_B0FBE0 = 1; /*0x72e198*/
   }
   return (int * *)result; /*0x72e19f*/
 }
@@ -587,7 +587,7 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
   int v15; // [esp+18h] [ebp-8h]
   int v16; // [esp+1Ch] [ebp-4h]
 
-  if ( !g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72e460*/
+  if ( !&byte_B0FBE0 ) /*0x72e460*/
   {
     ((AssetClass *)v11)->ReleaseAndReload(); /*0x72e462*/
     Render_Render_72EB50(); /*0x72e467*/
@@ -604,7 +604,7 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
       (int *)&g_BuildingLoadQueue_Array.__pad_F70[1064],
       &g_BuildingLoadQueue_Array.__pad_F70[1068]);
     SetupMouseClassResources((int)g_DisplayWidth, (int)*(&g_DisplayWidth + 1)); /*0x72e4b7*/
-    g_BuildingLoadQueue_Array.__pad_F70[1072] = 1; /*0x72e4bc*/
+    &byte_B0FBE0 = 1; /*0x72e4bc*/
   }
   DrawScoreScreenStats(a1, (int)a2); /*0x72e4c9*/
   v5 = a2[1]; /*0x72e4d0*/
@@ -3945,9 +3945,9 @@ void FileTree_Cleanup()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1321] ) /*0x72cf9a*/
+  if ( &byte_B0FCD9 ) /*0x72cf9a*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1320] ) /*0x72cfa2*/
+    if ( &byte_B0FCD8 ) /*0x72cfa2*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[616]; /*0x72cfa5*/
       if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[616] ) /*0x72cfad*/
@@ -3955,7 +3955,7 @@ void FileTree_Cleanup()
         ((FileTreeNode *)(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[616]))->Destroy(); /*0x72cfb1*/
         RA2_OPDEL(v1); /*0x72cfb7*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1320] = 0; /*0x72cfbf*/
+      &byte_B0FCD8 = 0; /*0x72cfbf*/
     }
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[616] = 0; /*0x72cfcb*/
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1324] ) /*0x72cfd3*/
@@ -3971,7 +3971,7 @@ void FileTree_Cleanup()
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1328] = 0; /*0x72cff4*/
     }
   }
-  g_BuildingLoadQueue_Array.__pad_F70[1321] = 0; /*0x72cffa*/
+  &byte_B0FCD9 = 0; /*0x72cffa*/
 }
 } // namespace gamemd
 

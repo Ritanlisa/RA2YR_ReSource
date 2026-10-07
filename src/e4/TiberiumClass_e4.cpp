@@ -217,16 +217,16 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
     *(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * v4) = (unsigned int)(this); /*0x72181a*/
   }
   (*(void (**)(int *))((&this->GrowthPercentage)[1] + 12))( (int *)(&(&this->GrowthPercentage)[1])); /*0x721821*/
-  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x721857*/
-    || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
-    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-&& (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))( (int *)(&g_BuildingLoadQueue_Array.LightVisibility), g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0], 0) )
+  if ( dword_B0F680< dword_B0F678/*0x721857*/
+    || (BYTE1(byte_B0F67C) || !dword_B0F678)
+    && &dword_B0F684 > 0
+&& (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670+ 8))( (int *)(&dword_B0F670), dword_B0F678+ &dword_B0F684, 0) )
 
 
 
   {
-    v5 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x721864*/
-    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v5) = (unsigned int)this;
+    v5 = dword_B0F680++; /*0x721864*/
+    *(unsigned int *)(dword_B0F674+ 4 * v5) = (unsigned int)this;
   }
   return this; /*0x721878*/
 
@@ -283,11 +283,8 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v14 = INIClass::ReadInt_Overwrite(((INIClass *)((bool *)aP1)), (uint8_t *)(v5 + 36), (uint8_t *)(aPower_0), v13); /*0x721b1b*/
   v22 = *(unsigned int *)(v5 + 192); /*0x721b28*/
   *(unsigned int *)(v5 + 188) = v14; /*0x721b2f*/
-  *(unsigned int *)(v5 + 192) = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
-                            (BuildingTypeClass *)aP1,
-                            (uint8_t *)(v5 + 36),
-                            (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 95),
-                            v22);
+  *(unsigned int *)(v5 + 192) = BuildingTypeClass::FindAnimByName((gamemd::INIClass *)(/*0x721b3a*/
+                            (BuildingTypeClass *)aP1), (uint8_t *)(v5 + 36), (gamemd::AnimTypeClass *)((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 95)), v22);
   if ( ((INIClass*)/*0x721b57*/
          (INIClass *)aP1)->GetString(/*0x721b57*/ (uint8_t *)(v5 + 36), aDebris, &g_INI_DefaultBuffer, (char *)&v25.DynamicVector_field_0x1C, 128) )
   {

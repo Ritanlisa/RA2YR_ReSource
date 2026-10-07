@@ -638,7 +638,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 
   v2 = (int *)((gamemd::ParticleTypeClass *)((int *)a2));
   v3 = a1; /*0x645669*/
-  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (gamemd::ObjectTypeClass *)(a2)); /*0x64566f*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)((IUnknown *)((ObjectTypeClass *)a1)), (int)((gamemd::ObjectTypeClass *)(a2))); /*0x64566f*/
   if ( result >= 0 ) /*0x645678*/
   {
     if ( v3 ) /*0x645680*/
@@ -732,16 +732,15 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   this->ParticleTypeClass_field_0xC =(unsigned int)(&vt_ParticleTypeClass); /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&this->ArrayIndex, 1); /*0x645971*/
   v7 = (gamemd::ParticleTypeClass *)(this); /*0x645986*/
-v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/ &g_BuildingLoadQueue_Array.LightVisibility, (ParticleTypeClass **)(&v7));
+v3 = (*(int (**)(int *, ParticleTypeClass **))(dword_B0F670+ 16))( /*0x64598a*/ &dword_B0F670, (ParticleTypeClass **)(&v7));
 
 
-  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x64599a*/
+  if ( v3 != -1 && v3 < dword_B0F680) /*0x64599a*/
   {
-    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x64599f*/
+    --dword_B0F680; /*0x64599f*/
     for ( ; /*0x6459a5*/
-          v3 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
-                                                                                         + 4 * v3) )
+          v3 < dword_B0F680;
+          *(unsigned int *)(dword_B0F674+ 4 * v3 - 4) = *(unsigned int *)(dword_B0F674+ 4 * v3) )
     {
       ++v3; /*0x6459ad*/
     }

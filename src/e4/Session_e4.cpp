@@ -234,7 +234,7 @@ LABEL_44:
   {
     if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x5e7584*/
     {
-      v3 = ((Network *)&unk_A8E9C0.Socket)->SendMessage( (int)Str, 47, 1, (int)&stru_A8BB1C, 0, 0); /*0x5e759d*/
+      v3 = ((Network *)&unk_A8E9C0)->SendMessage( (int)Str, 47, 1, (int)&stru_A8BB1C, 0, 0); /*0x5e759d*/
     }
     else
     {

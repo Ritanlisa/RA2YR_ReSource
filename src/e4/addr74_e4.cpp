@@ -964,7 +964,7 @@ int InitializeVeinholeSystem(char a1)
     goto LABEL_18; /*0x74dffd*/
   }
   for ( i = dword_B1D2A0 - 1; i >= 0; --i ) /*0x74deb8*/
-    System_Init_74E8A0(*((unsigned int *)dword_B1D294 + i)); /*0x74dec3*/
+    System_Init_74E8A0((gamemd::ObjectClass *)(*((unsigned int *)dword_B1D294 + i))); /*0x74dec3*/
   v4 = (void *)((unsigned int)(void *)(dword_B1D2F0)); /*0x74decb*/
   if ( dword_B1D2F0 ) /*0x74ded2*/
   {
@@ -1033,7 +1033,7 @@ int InitializeVeinholeSystem(char a1)
     if ( *(unsigned char *)(v16 + 256) ) /*0x74e07a*/
       RulesClass::Reset(); /*0x74e084*/
     else
-      ProcessVeinholeMonster(v16); /*0x74e08b*/
+      ProcessVeinholeMonster((gamemd::ObjectClass *)(v16)); /*0x74e08b*/
   }
   ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x74e098*/
   result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x74e0a2*/

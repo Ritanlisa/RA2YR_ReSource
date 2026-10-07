@@ -180,7 +180,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   if ( a8 ) /*0x704dae*/
   {
     v27 = (0x7FFFFFFF - (int)dword_A8ED84) % 15; /*0x704dc9*/
-    result = ClipLine( (int)(&v31), (int)(&v29), v38); /*0x704dd4*/
+    result = ClipLine((int [])((int)(&v31)), (int [])((int)(&v29)), v38); /*0x704dd4*/
     if ( result ) /*0x704ddb*/
 return (*(int (**)(int, int *, int *, int, void *, int, unsigned int))(*(unsigned int *)DSurface_Composite + 76))( /*0x704df8*/ DSurface_Composite, (int *)(&v31), (int *)(&v29), (int)v20, (void *)(&unk_843128), v27, 0);
 
@@ -193,7 +193,7 @@ return (*(int (**)(int, int *, int *, int, void *, int, unsigned int))(*(unsigne
   }
   else
   {
-    result = ClipLine( (int)(&v31), (int)(&v29), v38); /*0x704e14*/
+    result = ClipLine((int [])((int)(&v31)), (int [])((int)(&v29)), v38); /*0x704e14*/
     if ( result ) /*0x704e1b*/
 return (*(int (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x704e30*/ DSurface_Composite, (int *)(&v31), (int *)(&v29), (int)v20);
 
@@ -311,7 +311,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(&v38), (int *)(&v21)); /*0x705144*/
     v25 += dword_886FA4; /*0x705158*/
     v22 += dword_886FA4; /*0x70516b*/
-    if ( ClipLine( (int)(&v24), (int)(&v21), v44) ) /*0x70516f*/
+    if ( ClipLine((int [])((int)(&v24)), (int [])((int)(&v21)), v44) ) /*0x70516f*/
     {
       v20 = (void *)((int16_t)(IDA_BYTE2(a7)));
       v19 = (void *)((unsigned int)(a7));
@@ -395,7 +395,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v47 = (unsigned int *)*a4; /*0x706f45*/
   v13 = v47; /*0x706f34*/
   v39 = (int *)((int)v14); /*0x706f49*/
-  Audio_Render( (unsigned int *)(v47), 0, 0, (float *)v51, (float *)stru_887430.m_Data, (float *)&stru_887460.Buffer_field_10, 3.0); /*0x706f4d*/
+  Audio_Render( (unsigned int *)(v47), 0, 0, (float *)v51, (float *)&stru_887430, (float *)&dword_887470, 3.0); /*0x706f4d*/
   Viewport::Clear( (void *)(v38)); /*0x706f52*/
   v15 = 0; /*0x706f5a*/
   if ( v47[1] ) /*0x706f57*/
@@ -409,7 +409,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
         v13 = v47; /*0x706fb5*/
         v14 = (unsigned int *)v39; /*0x706fb9*/
       }
-      v16 = (float *)(MultiplyMatrix3x4( (ObjectClass *)(v53), (float *)stru_887430.m_Data, (float *)(v50)));
+      v16 = (float *)(MultiplyMatrix3x4( (ObjectClass *)(v53), (float *)&stru_887430, (float *)(v50)));
       TransformVoxelVertex( (gamemd::VoxelSection *)(v13), (gamemd::VoxelSection *)(v15++), 0, (float *)(v16)); /*0x706fda*/
     }
     while ( v15 < ((unsigned int *)(v13))[1] ); /*0x706fe5*/

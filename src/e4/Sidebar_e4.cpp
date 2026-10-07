@@ -337,9 +337,8 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
   v2 = 0; /*0x533f59*/
   if ( dword_87F668 > 0 ) /*0x533f5f*/
   {
-    while ( strcmp( /*0x533f9f*/
-              (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)),
-              this) (const char *)()) (const char *)()) (const char *)()) )
+    while ( strcmp(/*0x533f9f*/
+              (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)), (const char *)(this)) (const char *)()) (const char *)()) (const char *)()) )
     {
       result = (int)((gamemd::CreateTeamCommand **)(dword_87F668)); /*0x533fa1*/
       if ( ++v2 >= dword_87F668 ) /*0x533fa9*/
@@ -746,7 +745,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
   {
 LABEL_13:
-(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))( /*0x6a7241*/ stru_887598.lineTrailer, (DSurface *)(DSurface_Sidebar), 1);
+(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x6a7241*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
 
 
 
@@ -841,7 +840,7 @@ v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))
   }
   if ( *((unsigned char *)this + 21416) )
   {
-(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))( /*0x6a71c7*/ stru_887598.lineTrailer, (DSurface *)(DSurface_Sidebar), 1);
+(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x6a71c7*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
 
 
 

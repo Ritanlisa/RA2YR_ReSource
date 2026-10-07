@@ -18,7 +18,7 @@ bool CopyProtection::CheckLauncher()
   HANDLE MutexA; // esi
   bool v1; // bl
 
-  ((gamemd::Debug*)aCopyprotection_0)->Log(); /*0x49f5c8*/
+  ((gamemd::Debug*)aCopyprotection_0)->Log("COPYPROTECTION - Checking if launcher is running\n"); /*0x49f5c8 G57w12: IDA push seq @ 0x49f5c8*/
   MutexA = CreateMutexA(0, 0, Name); /*0x49f5df*/
   v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/
@@ -38,7 +38,7 @@ char CopyProtection::NotifyLauncher()
   DWORD v2; // esi
   struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
 
-  ((gamemd::Debug*)aCopyprotection_1)->Log(); /*0x49f62c*/
+  ((gamemd::Debug*)aCopyprotection_1)->Log("COPYPROTECTION - Notify launcher\n"); /*0x49f62c G57w12: IDA push seq @ 0x49f62c*/
   PeekMessageA(&Msg, 0, 0x400u, 0x400u, 0); /*0x49f647*/
   v0 = timeGetTime() + 60000; /*0x49f657*/
   if ( timeGetTime() < v0 ) /*0x49f661*/
@@ -54,8 +54,8 @@ char CopyProtection::NotifyLauncher()
     }
     SetEvent( (void *)((void *)(v1))); /*0x49f690*/
     CloseHandle(v1); /*0x49f697*/
-    ((gamemd::Debug*)aLauncherNotifi)->Log(); /*0x49f6a2*/
-    ((gamemd::Debug*)aWaitingForMess)->Log(); /*0x49f6ac*/
+    ((gamemd::Debug*)aLauncherNotifi)->Log("Launcher notified.\n"); /*0x49f6a2 G57w12: IDA push seq @ 0x49f6a2*/
+    ((gamemd::Debug*)aWaitingForMess)->Log("Waiting for message from launcher.\n"); /*0x49f6ac G57w12: IDA push seq @ 0x49f6ac*/
     v2 = timeGetTime() + 10000; /*0x49f6b8*/
     if ( timeGetTime() <= v2 ) /*0x49f6c2*/
     {
@@ -71,7 +71,7 @@ char CopyProtection::NotifyLauncher()
     }
   }
 LABEL_9:
-  ((gamemd::Debug*)aFailedToNotify)->Log(); /*0x49f6f2*/
+  ((gamemd::Debug*)aFailedToNotify)->Log("***** Failed to notify launcher!\n"); /*0x49f6f2 G57w12: IDA push seq @ 0x49f6f2*/
   return 0; /*0x49f701*/
 
 }

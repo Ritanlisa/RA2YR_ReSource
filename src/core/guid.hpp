@@ -21,7 +21,7 @@ public:
 
     // Takes a pointer to another GUID, returns true if equal
     // Supports two comparison modes controlled by dword_828140
-     bool __fastcall Compare(const GUID& a, const GUID& b) noexcept;
+    bool __fastcall Compare(int a2);  // 0x53EE70 g57w12-r raw supply (v3: bool __thiscall(this, int))
 };
 
 } // namespace gamemd

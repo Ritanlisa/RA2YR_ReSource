@@ -55,7 +55,7 @@ int KeyboardConfig::LoadINI()
     *(unsigned int *)&stru_87F5F0.__pad_58[56] = 0; /*0x533d7a*/
     *(unsigned int *)&stru_87F5F0.__pad_58[60] = 0; /*0x533d85*/
     *(unsigned int *)&stru_87F5F0.__pad_58[64] = 0; /*0x533d8b*/
-    stru_87F5F0.__pad_58[68] = 0; /*0x533d91*/
+    &byte_87F68C = 0; /*0x533d91*/
     *(unsigned int *)&stru_87F5F0.__pad_58[72] = 0; /*0x533d97*/
     for ( i = 0; i < (int)(INIClass)::GetKeyCount(v9.INIClass, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
     {
@@ -87,7 +87,7 @@ int KeyboardConfig::LoadINI()
 LABEL_13:
             *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[56] + 8 * *(unsigned int *)&stru_87F5F0.__pad_58[60]) = Int_Overwrite; /*0x533e74*/
             *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[56] + 8 * *(unsigned int *)&stru_87F5F0.__pad_58[60] + 4) = v4; /*0x533e83*/
-            stru_87F5F0.__pad_58[68] = 0; /*0x533e8d*/
+            &byte_87F68C = 0; /*0x533e8d*/
             ++*(unsigned int *)&stru_87F5F0.__pad_58[60]; /*0x533e93*/
           }
         }

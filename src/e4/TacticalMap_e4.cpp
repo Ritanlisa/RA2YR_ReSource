@@ -151,7 +151,7 @@ int TacticalMap::Redraw()
 
   v1 = (gamemd::AudioStream *)(g_DSurface_Hidden_2);
   g_DSurface_Hidden_2 = DSurface_Composite; /*0x4f4492*/
-(*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))( /*0x4f44a2*/ stru_887598.lineTrailer, (AudioStream *)(DSurface_Composite), 0);
+(*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x4f44a2*/ dword_887640, (AudioStream *)(DSurface_Composite), 0);
 
 
 
@@ -168,7 +168,7 @@ int TacticalMap::Redraw()
   }
   if ( byte_B0B519 && !((unsigned int *)&stru_A8EB00)[391] ) /*0x4f452b*/
   {
-(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_100))( /*0x4f453d*/ stru_887598.lineTrailer, (DSurface *)(DSurface_Sidebar), 1);
+(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x4f453d*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
 
 
 
@@ -183,7 +183,7 @@ int TacticalMap::Redraw()
       0);
   if ( byte_A8B8B4 ) /*0x4f457a*/
     DrawHUD( (void *)(v5)); /*0x4f457e*/
-(*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->__pad_0F0))( /*0x4f4593*/ stru_887598.lineTrailer, (AudioStream *)(DSurface_Composite), 0);
+(*(void (**)(void *, AudioStream *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0F0))( /*0x4f4593*/ dword_887640, (AudioStream *)(DSurface_Composite), 0);
 
 
 
@@ -231,7 +231,7 @@ char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
   result = BYTE1(this->m_TintFactor); /*0x5d49b4*/
   if ( result ) /*0x5d49b9*/
   {
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x5d49c8*/
+    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x5d49c8*/
     (*(void (**)(unsigned int, int))(**((unsigned int **)this + 9) + 108))(*((unsigned int *)this + 9), 1); /*0x5d49d2*/
     ((TextRenderer *)this)->GetInstance(); /*0x5d49db*/
     v3 = Text::MeasureWidth(*(unsigned int *)(*((unsigned int *)this + 9) + 48), 0); /*0x5d49f8*/
@@ -251,7 +251,7 @@ v6 = (unsigned int *)(*(int (**)(AudioStream *, unsigned char *))(*(unsigned int
 
       TextRenderer::DrawText(&v11, (size_t)&v9, (int)g_DSurface_Hidden_2, v6, (int)v10, v7, 0, v8); /*0x5d4a79*/
     }
-    result = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x5d4a89*/
+    result = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x5d4a89*/
   }
   if ( this->TacticalMap_field_00 ) /*0x5d4a8d*/
     return (*(char (**)(int, int))(*(unsigned int *)this->TacticalMap_field_00 + 44))( /*0x5d4a98*/
@@ -916,8 +916,8 @@ LABEL_54:
     v85 = (int *)++v16; /*0x6d95a5*/
   }
   while ( v16 < 5 ); /*0x6d95a9*/
-  p_count = &stru_8A0360.count; /*0x6d95af*/
-  v85 = &stru_8A0360.count; /*0x6d95b4*/
+  p_count = &dword_8A0364; /*0x6d95af*/
+  v85 = &dword_8A0364; /*0x6d95b4*/
   do /*0x6d97b5*/
   {
     result = 0; /*0x6d95bb*/
@@ -1033,7 +1033,6 @@ return (*(int (**)(AudioStream *, CellStruct *, unsigned int *, int))(*(unsigned
   return result; /*0x6da224*/
 
 }
-}  // G42.18c ns repair
 // 0x7BCFB0
 unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
 {
@@ -1153,3 +1152,4 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, int a4, int a5)
   return result; /*0x7bd0d7*/
 
 }
+}  // G42.18c ns repair

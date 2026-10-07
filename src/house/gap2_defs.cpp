@@ -765,20 +765,6 @@ int CounterClass::Load(int a1) {
   }
 }
 }
-// 0x49FCE0
-namespace gamemd { 
-void* CounterClass::QueryInterface(int a2) {
-  void *count; // eax
-
-  count = (void *)this->count; /*0x49fce3*/
-  this->items = (int32_t *)(void *)&VectorClass_int_vftable; /*0x49fce6 g57w11 r4: cast*/
-  if ( count && this->u32_D ) /*0x49fcf0*/
-  {
-    RA2_OPDEL(count); /*0x49fcf8*/
-    this->count = 0; /*0x49fd00*/
-  }
-}
-}
 // 0x4B69B0
 namespace gamemd { 
 void* HouseClass::initDropshipData() {
@@ -1012,7 +998,7 @@ void HouseClass::processTargetSelection() {
       v3 = *(void (****)(unsigned int, int))(*((unsigned int *)v6 + 1) + 4 * v7); /*0x4f21dc*/
       if ( v3 ) /*0x4f21e1*/
         (**v3)(v3, 1); /*0x4f21e7*/
-      ((void (*)(void ***))v5[2])(&v5); /*0x4f21f1*/
+      ((void ((unsigned int)(*))(void ***))v5[2])(&v5); /*0x4f21f1*/
     }
     while ( ((uint8_t (*)(void ***))v5[1])(&v5) ); /*0x4f21fc*/
   }
@@ -1818,7 +1804,7 @@ int HouseClass::NotifyUnderAttack(void* a1) {
 
   if ( a1 ) /*0x4f93ed*/
   {
-    result = (*(int (**)(unsigned int *))(*a1 + 128))(a1); /*0x4f93f3*/
+    result = (*(int ((unsigned int *)(**))(unsigned int *))(*a1 + 128))(a1); /*0x4f93f3*/
     if ( (unsigned char)result ) /*0x4f93fb*/
       return result; /*0x4f93fb*/
   }

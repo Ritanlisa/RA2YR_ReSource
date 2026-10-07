@@ -645,7 +645,7 @@ int Game::MakeScreenshot(int a1)
         v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537c7c*/
         if ( v12 >= v3 ) /*0x537c86*/
           v12 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537c96*/
-        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_30))(stru_887598.lineTrailer);  /*0x537ca4*/
+        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x537ca4*/
         v4 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537cb8*/
         v5 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537cbc*/
         v15[0] = 0; /*0x537cd8*/
@@ -660,7 +660,7 @@ int Game::MakeScreenshot(int a1)
 
 
 
-        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)stru_887598.lineTrailer)->q_40))(stru_887598.lineTrailer);  /*0x537cfb*/
+        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x537cfb*/
         v6 = -1; /*0x537cfe*/
         do /*0x537d6d*/
         {
@@ -1343,7 +1343,7 @@ LABEL_6:
     SwizzleManager::ConvertWrapper((int)&SwizzleManagerClass_Instance); /*0x67e680*/
     Game_Load(); /*0x67e685*/
     SidebarClass::InitButtons(&dword_87F7E8); /*0x67e68f*/
-    TacticalClass::BuildCommandBar(&dword_87F7E8, (int)MultiByteToWideChar, 1); /*0x67e69f*/
+    TacticalClass::BuildCommandBar((gamemd::TacticalClass *)(&dword_87F7E8), (int)MultiByteToWideChar, 1); /*0x67e69f*/
     SidebarClass::LoadResources(); /*0x67e6a9*/
     BuildingClass::ClearOccupancyData(); /*0x67e6ae*/
     BuildingClass::ClearFactoryData(); /*0x67e6b3*/
@@ -2249,7 +2249,7 @@ void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
           while ( 1 ) /*0x7a22ab*/
           {
             v9 = ToWideStringChar(*v8); /*0x7a22ab*/
-            if ( !_strcmpi(aP0, v9) ) /*0x7a22b2*/
+            if ( !_strcmpi((const char *)(aP0), v9) ) /*0x7a22b2*/
               break; /*0x7a22b2*/
             ++v8; /*0x7a22be*/
             ++v7; /*0x7a22c1*/
@@ -2309,7 +2309,7 @@ AbstractClass * * Game::SetupWOLTournament()
   v6 = strtok(0, (char *)&::Delimiter); /*0x7a23a9*/
   v24 = strtok(0, (char *)&::Delimiter); /*0x7a23b7*/
   v7 = strtok(0, (char *)&::Delimiter); /*0x7a23bb*/
-  Game_Setup(v1, v6, v24, v7); /*0x7a23cd*/
+  Game_Setup((gamemd::CCINIClass *)(v1), v6, v24, v7); /*0x7a23cd*/
   ((String *)(&v24))->Assign( (const char *)(v1)); /*0x7a23d7*/
   SetupLobbyPlayerSlot((const char **)&v24, v3, v5, -2, -2); /*0x7a23e7*/
   j_DeleteAndZero( (void *)((void **)&v24)); /*0x7a23f0*/
@@ -2321,7 +2321,7 @@ AbstractClass * * Game::SetupWOLTournament()
   v13 = strtok(0, (char *)&::Delimiter); /*0x7a243e*/
   v24 = strtok(0, (char *)&::Delimiter); /*0x7a244c*/
   v14 = strtok(0, (char *)&::Delimiter); /*0x7a2450*/
-  Game_Setup(v8, v13, v24, v14); /*0x7a2462*/
+  Game_Setup((gamemd::CCINIClass *)(v8), v13, v24, v14); /*0x7a2462*/
   ((String *)(&v24))->Assign( (const char *)(v8)); /*0x7a246c*/
   SetupLobbyPlayerSlot((const char **)&v24, v10, v12, -2, -2); /*0x7a247c*/
   j_DeleteAndZero( (void *)((void **)&v24)); /*0x7a2485*/
@@ -2413,10 +2413,10 @@ int Game::loadCampaignData(void *a1_1)
   v4 = this; /*0x550000*/
   for ( result = g_MissionQueueFrame.random[31]; g_MissionQueueFrame.random[31]; result = g_MissionQueueFrame.random[31] ) /*0x550008*/
   {
-    v2 = *(void **)g_MissionQueueFrame.random[28]; /*0x550010*/
-    if ( *(unsigned int *)g_MissionQueueFrame.random[28] ) /*0x550010*/
+    v2 = *(void **)&dword_ABC828; /*0x550010*/
+    if ( *(unsigned int *)&dword_ABC828 ) /*0x550010*/
     {
-      v4 = *(Game **)g_MissionQueueFrame.random[28]; /*0x550026*/
+      v4 = *(Game **)&dword_ABC828; /*0x550026*/
 v3 = (*(int (**)(int *, Game **))(g_MissionQueueFrame.random[27] + 16))( /*0x55002a*/ &g_MissionQueueFrame.random[27], (Game **)(&v4));
 
 
@@ -2425,7 +2425,7 @@ v3 = (*(int (**)(int *, Game **))(g_MissionQueueFrame.random[27] + 16))( /*0x550
         --g_MissionQueueFrame.random[31]; /*0x55003f*/
         for ( ; /*0x550045*/
               v3 < g_MissionQueueFrame.random[31];
-              *(unsigned int *)(g_MissionQueueFrame.random[28] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[28]
+              *(unsigned int *)(&dword_ABC828 + 4 * v3 - 4) = *(unsigned int *)(&dword_ABC828
                                                                                    + 4 * v3) )
         {
           ++v3; /*0x55004d*/
@@ -2451,7 +2451,7 @@ void sub_556DF0()
 
   for ( i = 0; i < g_MissionQueueFrame.random[223]; ++i ) /*0x556dfe*/
   {
-    v2 = *(unsigned int **)(g_MissionQueueFrame.random[220] + 4 * i); /*0x556e06*/
+    v2 = *(unsigned int **)(&dbl_ABC8E8 + 4 * i); /*0x556e06*/
     if ( v2 ) /*0x556e0b*/
     {
       v3 = v2[1]; /*0x556e0d*/
@@ -2469,7 +2469,7 @@ v4 = (*(int (**)(int *, unsigned int **))(g_MissionQueueFrame.random[219] + 16))
         --g_MissionQueueFrame.random[223]; /*0x556e46*/
         for ( ; /*0x556e4c*/
               v4 < g_MissionQueueFrame.random[223];
-              *(unsigned int *)(g_MissionQueueFrame.random[220] + 4 * v4 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[220]
+              *(unsigned int *)(&dbl_ABC8E8 + 4 * v4 - 4) = *(unsigned int *)(&dbl_ABC8E8
                                                                                     + 4 * v4) )
         {
           ++v4; /*0x556e54*/
@@ -2479,10 +2479,10 @@ v4 = (*(int (**)(int *, unsigned int **))(g_MissionQueueFrame.random[219] + 16))
     }
   }
   g_MissionQueueFrame.random[223] = 0; /*0x556e7f*/
-  if ( g_MissionQueueFrame.random[220] && IDA_BYTE1(g_MissionQueueFrame.random[222]) ) /*0x556e8f*/
+  if ( &dbl_ABC8E8 && IDA_BYTE1(g_MissionQueueFrame.random[222]) ) /*0x556e8f*/
   {
-    RA2_OPDEL((void *)g_MissionQueueFrame.random[220]); /*0x556e92*/
-    g_MissionQueueFrame.random[220] = 0; /*0x556e9a*/
+    RA2_OPDEL((void *)&dbl_ABC8E8); /*0x556e92*/
+    &dbl_ABC8E8 = 0; /*0x556e9a*/
   }
   IDA_BYTE1(g_MissionQueueFrame.random[222]) = 0; /*0x556ea0*/
   g_MissionQueueFrame.random[221] = 0; /*0x556ea6*/
@@ -2640,8 +2640,8 @@ char Game::LoadMultiplayerScoreAssets()
   char result; // al
   char *v3; // ecx
 
-  result = g_BuildingLoadQueue_Array.__pad_F70[1032]; /*0x72d730*/
-  if ( !g_BuildingLoadQueue_Array.__pad_F70[1032] ) /*0x72d73a*/
+  result = &byte_B0FBB8; /*0x72d730*/
+  if ( !&byte_B0FBB8 ) /*0x72d73a*/
   {
     ((Game *)this)->shutdownGame(); /*0x72d73c*/
     if ( this ) /*0x72d743*/
@@ -2658,7 +2658,7 @@ char Game::LoadMultiplayerScoreAssets()
                v3,
                (int *)&g_BuildingLoadQueue_Array.__pad_F70[1024],
                &g_BuildingLoadQueue_Array.__pad_F70[1028]);
-    g_BuildingLoadQueue_Array.__pad_F70[1032] = 1; /*0x72d76d*/
+    &byte_B0FBB8 = 1; /*0x72d76d*/
   }
   return result; /*0x72d774*/
 
@@ -2717,20 +2717,20 @@ char Game::InitializeToolTipColor()
     if ( this == (Game *)1 ) /*0x72f460*/
     {
       *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[620] = *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[852]; /*0x72f46e*/
-      g_BuildingLoadQueue_Array.__pad_F70[622] = g_BuildingLoadQueue_Array.__pad_F70[854]; /*0x72f475*/
-      return g_BuildingLoadQueue_Array.__pad_F70[854]; /*0x72f469*/
+      g_BuildingLoadQueue_Array.__pad_F70[622] = &byte_B0FB06; /*0x72f475*/
+      return &byte_B0FB06; /*0x72f469*/
     }
     else
     {
       *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[620] = *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[752]; /*0x72f488*/
-      g_BuildingLoadQueue_Array.__pad_F70[622] = g_BuildingLoadQueue_Array.__pad_F70[754]; /*0x72f48f*/
+      g_BuildingLoadQueue_Array.__pad_F70[622] = &byte_B0FAA2; /*0x72f48f*/
     }
   }
   else
   {
     *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[620] = *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[552]; /*0x72f450*/
-    g_BuildingLoadQueue_Array.__pad_F70[622] = g_BuildingLoadQueue_Array.__pad_F70[554]; /*0x72f456*/
-    return g_BuildingLoadQueue_Array.__pad_F70[552]; /*0x72f444*/
+    g_BuildingLoadQueue_Array.__pad_F70[622] = &byte_B0F9DA; /*0x72f456*/
+    return &word_B0F9D8; /*0x72f444*/
   }
   return result; /*0x72f45c*/
 
@@ -2793,7 +2793,7 @@ int Game::CreateAIPlayer()
     dword_A8DA78[v3] = v2; /*0x796ea8*/
   }
   v4 = dword_A8B54C; /*0x796eab*/
-  *((unsigned int *)&g_WOL_UserList.attachedTag + dword_A8B54C) = 100; /*0x796eb2*/
+  *((unsigned int *)&dword_B7790C+ dword_A8B54C) = 100; /*0x796eb2*/
   result = v4 + 1; /*0x796ebd*/
   dword_A8B54C = result; /*0x796ebe*/
   return result; /*0x796eb0*/
@@ -2843,7 +2843,7 @@ int Game::CreateAIPlayer_Potato()
     dword_A8DA78[v3] = v2; /*0x796f94*/
   }
   v4 = dword_A8B54C; /*0x796f97*/
-  *((unsigned int *)&g_WOL_UserList.attachedTag + dword_A8B54C) = 100; /*0x796f9e*/
+  *((unsigned int *)&dword_B7790C+ dword_A8B54C) = 100; /*0x796f9e*/
   result = v4 + 1; /*0x796fa9*/
   dword_A8B54C = result; /*0x796faa*/
   return result; /*0x796f9c*/

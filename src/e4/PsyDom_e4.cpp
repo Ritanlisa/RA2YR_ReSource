@@ -89,13 +89,8 @@ void PsyDom::Fire()
     PsyDom_Anim = (int)((AnimClass *)(v8))->ctor( (void *)(v5), (int *)(v33), 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
   else
     PsyDom_Anim = 0; /*0x53b145*/
-  PlaySoundEffectAt( /*0x53b16b*/
-    v33,
-    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 780),
-    0,
-    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 760),
-    1,
-    (int)LightningStorm_Owner);
+  PlaySoundEffectAt((gamemd::TechnoClass *)(/*0x53b16b*/
+    v33), *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 780), 0, *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 760), 1, (int)LightningStorm_Owner);
   v9 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 776); /*0x53b176*/
   if ( v9 >= 10 ) /*0x53b17f*/
     v9 = 10; /*0x53b181*/

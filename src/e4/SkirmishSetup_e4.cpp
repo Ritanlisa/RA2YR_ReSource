@@ -464,7 +464,7 @@ int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
   result = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60829f*/
                      + 4
                      * ((*(int (**)(SkirmishSetup **))&g_DialogPool.__pad_208[80])( (SkirmishSetup **)(&v4))
-                      & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                      & ((1 << &dword_AC1B0C) - 1)));
   if ( !result ) /*0x6082a4*/
     goto LABEL_6; /*0x6082a4*/
   while ( *(SkirmishSetup **)result != v4 ) /*0x6082ac*/

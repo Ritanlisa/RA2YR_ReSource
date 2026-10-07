@@ -399,7 +399,7 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
       v19 = v7 / 2; /*0x4a23c2*/
       v20[0] = 2; /*0x4a23c6*/
       v8 = *(unsigned int *)(v5 + 4); /*0x4a241f*/
-      v9 = ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[620] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a2422*/
+      v9 = ((uint8_t)&dword_B0FA1C >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a2422*/
          | ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[621] >> g_BitMask_Blue << g_BitMask_Green)
          | ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[622] >> g_BitMask_Red << g_BitShift_Blue);
       if ( v8 / 3600 > 99 ) /*0x4a243a*/
@@ -437,7 +437,7 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
       UI_Draw_6D0E60(v4); /*0x4a253d*/
       v19 = v7 / 2; /*0x4a254e*/
       v20[0] = 2; /*0x4a2552*/
-      v16 = ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[620] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a25be*/
+      v16 = ((uint8_t)&dword_B0FA1C >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a25be*/
           | ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[621] >> g_BitMask_Blue << g_BitMask_Green)
           | ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[622] >> g_BitMask_Red << g_BitShift_Blue);
       v15 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 30))( (DSurface *)(DSurface_Sidebar)); /*0x4a25c7*/

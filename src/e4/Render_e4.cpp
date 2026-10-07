@@ -66,7 +66,7 @@ int Render_Load(void * a1, void * a2, void * a3)
   (*(void (**)(int, unsigned int))(*(unsigned int *)&((DSurface *)g_DSurface_Hidden)->q_60))(g_DSurface_Hidden, 0);  /*0x52ffa0*/
   int v8; // [esp+4h] [ebp-4h]
   int v7; // [esp+0h] [ebp-8h]
-  result = ScoreScreen::DrawSHPBackground(Source, (int *)g_DSurface_Hidden, a2, a3, (int)&DataGlobal_886080, v7, v8); /*0x52ffb0*/
+  result = ScoreScreen::DrawSHPBackground((char *)&Source, (int *)g_DSurface_Hidden, (int)(a2), a3, (int)&DataGlobal_886080, v7, v8); /*0x52ffb0*/
   if ( a2 ) /*0x52ffb9*/
   {
     IDA_LOBYTE(v6) = 1; /*0x52ffc3*/
@@ -393,7 +393,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(&v48), (int *)(&v33)); /*0x705747*/
     v30 += dword_886FA4; /*0x705761*/
     v34 += dword_886FA4; /*0x70576e*/
-    if ( ClipLine( (int)(&v29), (int)(&v33), v51) ) /*0x705772*/
+    if ( ClipLine((int [])((int)(&v29)), (int [])((int)(&v33)), v51) ) /*0x705772*/
     {
       v31 = a7; /*0x705794*/
       v32 = BYTE2(a7); /*0x705799*/
@@ -1544,10 +1544,10 @@ int sub_660000()
   int v4; // esi
   int v5; // eax
 
-  result = stru_B04DA8.LoadGame_field_0x10; /*0x660000*/
-  for ( i = 0; i < stru_B04DA8.LoadGame_field_0x10; ++i ) /*0x660006*/
+  result = dword_B04DB8; /*0x660000*/
+  for ( i = 0; i < dword_B04DB8; ++i ) /*0x660006*/
   {
-    v3 = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x660012*/
+    v3 = *(unsigned int *)(dword_B04DAC+ 4 * i); /*0x660012*/
     v4 = *(unsigned int *)(v3 + 48); /*0x660015*/
     v5 = *(unsigned int *)(v3 + 56); /*0x660018*/
     if ( v4 != -1 ) /*0x66001e*/
@@ -1562,7 +1562,7 @@ int sub_660000()
     if ( *(unsigned char *)(v3 + 60) ) /*0x660032*/
   LABEL_7:
       RenderGradientTrapezoid((float *)v3); /*0x660039*/
-    result = stru_B04DA8.LoadGame_field_0x10; /*0x66003e*/
+    result = dword_B04DB8; /*0x66003e*/
   }
   return result; /*0x660049*/
 }
@@ -1580,10 +1580,10 @@ void sub_6603B0()
   int v7; // eax
   int v8; // [esp+4h] [ebp-4h] BYREF
 
-  v1 = stru_B04DA8.LoadGame_field_0x10 - 1; /*0x6603b7*/
-  if ( stru_B04DA8.LoadGame_field_0x10 - 1 >= 0 ) /*0x6603bc*/
+  v1 = dword_B04DB8- 1; /*0x6603b7*/
+  if ( dword_B04DB8- 1 >= 0 ) /*0x6603bc*/
   {
-    LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x6603c4*/
+    LoadGame_field_0x04 = dword_B04DAC; /*0x6603c4*/
     do /*0x6603ca*/
     {
       v3 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v1); /*0x6603ca*/
@@ -1604,20 +1604,19 @@ void sub_6603B0()
           if ( v6 ) /*0x6603f6*/
           {
             v8 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v1); /*0x660408*/
-            v7 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v8)); /*0x66040c*/
-            if ( v7 != -1 && v7 < stru_B04DA8.LoadGame_field_0x10 ) /*0x66041c*/
+            v7 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)&stru_B04DA8+ 16))( (LoadGame *)(&stru_B04DA8), (int *)(&v8)); /*0x66040c*/
+            if ( v7 != -1 && v7 < dword_B04DB8) /*0x66041c*/
             {
-              --stru_B04DA8.LoadGame_field_0x10; /*0x660421*/
+              --dword_B04DB8; /*0x660421*/
               for ( ; /*0x660427*/
-                    v7 < stru_B04DA8.LoadGame_field_0x10;
-                    *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v7 - 4) = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04
-                                                                                          + 4 * v7) )
+                    v7 < dword_B04DB8;
+                    *(unsigned int *)(dword_B04DAC+ 4 * v7 - 4) = *(unsigned int *)(dword_B04DAC+ 4 * v7) )
               {
                 ++v7; /*0x66042f*/
               }
             }
             RA2_OPDEL(v6); /*0x660442*/
-            LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660447*/
+            LoadGame_field_0x04 = dword_B04DAC; /*0x660447*/
           }
         }
       }
@@ -1685,7 +1684,7 @@ void sub_556D40()
 
   for ( i = g_MissionQueueFrame.random[223] - 1; i >= 0; --i ) /*0x556d4c*/
   {
-    v2 = *(ObjectClass **)(g_MissionQueueFrame.random[220] + 4 * i); /*0x556d59*/
+    v2 = *(ObjectClass **)(&dbl_ABC8E8 + 4 * i); /*0x556d59*/
     Render_Render_556B70(v2); /*0x556d5e*/
     if ( ((unsigned int *)v2)[0] || *(&((unsigned int *)v2)[0] + 4 * (int)((unsigned int *)v2)[0]) ) /*0x556d70*/
     {
@@ -1702,7 +1701,7 @@ v3 = (*(int (**)(int *, ObjectClass **))(g_MissionQueueFrame.random[219] + 16))(
         --g_MissionQueueFrame.random[223]; /*0x556da5*/
         for ( ; /*0x556dab*/
               v3 < g_MissionQueueFrame.random[223];
-              *(unsigned int *)(g_MissionQueueFrame.random[220] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[220]
+              *(unsigned int *)(&dbl_ABC8E8 + 4 * v3 - 4) = *(unsigned int *)(&dbl_ABC8E8
                                                                                     + 4 * v3) )
         {
           ++v3; /*0x556db3*/
