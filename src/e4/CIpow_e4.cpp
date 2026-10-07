@@ -21,6 +21,9 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/COMClass_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int _load_CW(...); }  // w16g4 raw call-form
+namespace gamemd { int _twoToTOS(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int tbyte_87C4F0;  // data: 0x87c4f0 truth(IDA G42.57w9)
 extern unsigned int tbyte_87C550;  // data: 0x87c550 truth(IDA G42.57w9)

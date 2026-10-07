@@ -47,6 +47,12 @@
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/minimal_carriers.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_6616B0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_74F730(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_720960(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_5F15C0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_5408F0(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char byte_8B40E0;  // data: 0x8b40e0 truth(IDA G42.57w9)
 extern unsigned char byte_8B40E1;  // data: 0x8b40e1 truth(IDA G42.57w9)

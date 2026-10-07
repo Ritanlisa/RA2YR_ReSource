@@ -35,6 +35,8 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int __0Iostream_init_QAE_XZ_4(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char aAgent;  // data: 0x825954 truth(IDA G42.57w9)
 extern unsigned char aAssaulter;  // data: 0x82599c truth(IDA G42.57w9)

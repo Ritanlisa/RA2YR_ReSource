@@ -32,7 +32,7 @@ public:
     // IDA 0x48B2A0 area
     virtual int32_t ReadAndSeek(void* buf, int32_t size);  // 0x4114B0
     // IDA 0x48B2A0 area
-    virtual void Set2(int32_t val);  // 0x45AEA0
+    virtual int Set2(int32_t val);  // 0x45AEA0 (G57w16 G1: raw int)
     // IDA 0x48B2A0 area
     // design: virtual function, no binary implementation matched in IDA
     virtual int32_t Read(void* buf, int32_t size);

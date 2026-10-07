@@ -20,5 +20,11 @@ struct E4Recv_759BC0 {
     unsigned int q4760;  // 0x4760
 // --- flat members (END) ---
     unsigned int sub_759BC0(signed int a2);  // 0x759BC0
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int empLockRemaining;  // @0x759bda (W16G3 raw-usage vocab)
+    unsigned int threatPosed;  // @0x759bd3 (W16G3 raw-usage vocab)
+    char reloadTimer[4];  // @0x759bee (elem [1] arg) (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

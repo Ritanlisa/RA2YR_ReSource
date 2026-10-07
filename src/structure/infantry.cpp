@@ -1249,7 +1249,7 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
     if ( *(int *)((char *)this + 0x5A4) ) /*0x51c9cf g57w10 r4: live asm [ebx+5A4h] (ml Archive@0x5A4)*/
     {
       v11 = this->SequenceAnim; /*0x51c9d9*/
-      if ( v11 != -1 && !byte_7EAF7C[4 * v11] ) /*0x51c9e4*/
+      if ( v11 != -1 && !((unsigned char *)&byte_7EAF7C)[4 * v11] ) /*0x51c9e4*/
         return 7; /*0x51c9ed*/
     }
     if ( this->Type->IsSelectableCombatant ) /*0x51c9f9*/
@@ -2451,7 +2451,7 @@ int InfantryClass::FindMoveTarget()
     if ( (unsigned char)MissionControl || !*(&this->q0443) || v4 )
     {
       MissionControl = (char *)*(&this->currentMission3); /*0x51d1aa*/
-      if ( MissionControl == (char *)-1 || MissionControl == (char *)31 || byte_7EAF7C[4 * (unsigned int)MissionControl] )
+      if ( MissionControl == (char *)-1 || MissionControl == (char *)31 || ((unsigned char *)&byte_7EAF7C)[4 * (unsigned int)MissionControl] )
       {
         if ( *((unsigned char *)g_RulesClass_Instance + 6125) /*0x51d1fa*/
           || TechnoTypeClass::HasVoiceResponse((float *)this, 3)
@@ -3219,7 +3219,7 @@ lea     ecx, [eax-1]    ; switch 57 cases
 cmp     ecx, 38h
 ja      short def_51F1B4 ; jumptable 0051F1B4 default case, cases 1-8,10-26,30-56
 xor     edx, edx
-mov     dl, ds:byte_51F20C[ecx]
+mov     dl, ds:((unsigned char *)&byte_51F20C)[ecx]
 jmp     ds:jpt_51F1B4[edx*4] ; switch jump
 ; ---------------------------------------------------------------------------
 
@@ -7083,8 +7083,8 @@ int InfantryClass::RepairBridge()
         v120 = this->location[1]; /*0x51a6ef*/
         v121 = ((unsigned int)((*Value >> 12) + 1) >> 1) & 7; /*0x51a6f2*/
         v122 = this->location[2]; /*0x51a6f7*/
-        v123 = dword_89F6D8[2 * v121] + this->location[0]; /*0x51a6fc*/
-        v124 = dword_89F6DC[2 * v121]; /*0x51a70a*/
+        v123 = (&dword_89F6D8)[2 * v121] + this->location[0]; /*0x51a6fc*/
+        v124 = (&dword_89F6DC)[2 * v121]; /*0x51a70a*/
         v154 = v123; /*0x51a70d*/
         v125 = v120 + v124; /*0x51a711*/
         v126 = this->vtable1; /*0x51a713*/
@@ -7265,7 +7265,7 @@ int InfantryClass::SlaveGiveMoney_RecordBalanceBefore()
     {
       v6 = a2[135]; /*0x522d75*/
       v11 = v6->numOrePurifiers; /*0x522d89*/
-      if ( !v6->currentPlayer && dword_A8B238[0] ) /*0x522d97*/
+      if ( !v6->currentPlayer && (&dword_A8B238)[0] ) /*0x522d97*/
         v11 = *(unsigned int *)(*(unsigned int *)&dword_8871E0->__pad_C3C[1768] + 4 * v6->q184) /*0x522dae*/
             + v6->numOrePurifiers;
       if ( v5 == -1 ) /*0x522db5*/
@@ -7415,7 +7415,7 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
   v68 = 0; /*0x518fca*/
   if ( v21 ) /*0x518fce*/
   {
-    FlashFrameTime = dword_8871E0[1].FlashFrameTime; /*0x518fda*/
+    FlashFrameTime = (&dword_8871E0)[1].FlashFrameTime; /*0x518fda*/
     v23 = (char *)dword_8871E0 + 2 * FlashFrameTime; /*0x518fe0*/
     v24 = v23[FlashFrameTime + 6261]; /*0x518fed*/
     v66 = v23[FlashFrameTime + 6260]; /*0x518ffa*/
@@ -7687,6 +7687,9 @@ void InfantryClass::DrawShadow(Point2D* screen_pos, RectangleStruct* bounds) con
 #include "e4/classes/COMObject_e4.hpp"  // G42.36 C2027 supply
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/_tree_alias_e4.hpp"  // gB C2027 supply
+#include "e4/classes/TriggerTypeClass_e4.hpp"  // w16g4 C3861 TriggerTypeClass:: supply
+#include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
+#include "e4/classes/ObjectPlacement_e4.hpp"  // w16g4 C3861 ObjectPlacement:: supply
 
 namespace gamemd {
 

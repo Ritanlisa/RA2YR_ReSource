@@ -93,6 +93,11 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
 #include "e4/classes/MixFileClass_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int Render_Load_759830(...); }  // w16g4 raw call-form
+namespace gamemd { int Render_Render_759880(...); }  // w16g4 raw call-form
+namespace gamemd { int Render_Render_759850(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_5CAF70(...); }  // w16g4 raw call-form
 
 // 0x5B3B10
 namespace gamemd {
@@ -1084,17 +1089,17 @@ void * sub_5BDC00(int * a1, int a2)
 {
   int v2; // ebx
   int v3; // edi
-  int v4; // ecx
+  v4 = (&dword_82D03C)[7 * a2]; /*0x5bdc22*/
   int v5; // esi
 
   v2 = 0; /*0x5bdc17*/
   v3 = 0; /*0x5bdc19*/
-  v4 = dword_82D03C[7 * a2]; /*0x5bdc22*/
+  v5 = (&unk_82D040)[7 * a2]; /*0x5bdc48*/
   if ( v4 == 12345 ) /*0x5bdc2f*/
     v2 = *((int16_t *)dword_ABF294 + 1) / 2; /*0x5bdc3a*/
   if ( v4 == 54321 ) /*0x5bdc42*/
     v2 = *((int16_t *)dword_ABF294 + 1); /*0x5bdc44*/
-  v5 = unk_82D040[7 * a2]; /*0x5bdc48*/
+  v5 = (&unk_82D040)[7 * a2]; /*0x5bdc48*/
   if ( v5 == 12345 ) /*0x5bdc51*/
     v3 = *((int16_t *)dword_ABF294 + 2) / 2; /*0x5bdc5c*/
   if ( v5 == 54321 ) /*0x5bdc64*/
@@ -2330,12 +2335,12 @@ HWND E4Recv_5B57D0::sub_5B57D0()
           Format = (unsigned int)(wchar_t *)v4; /*0x5b58f6*/
           result = (int)GetDlgItem(vtable0, 1343); /*0x5b58fa*/
           v6 = (HWND)result; /*0x5b58fc*/
-          if ( result ) /*0x5b5900*/
+              v7 = (int (*)(char, char))(&dword_8316A8)[v5]; /*0x5b590b*/
           {
             if ( v5 >= 8 ) /*0x5b5904*/
               v7 = Math::InitDegToRad; /*0x5b5914*/
             else
-              v7 = (int (*)(char, char))dword_8316A8[v5]; /*0x5b590b*/
+              v7 = (int (*)(char, char))(&dword_8316A8)[v5]; /*0x5b590b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b5934*/
             return DrawDialogText( (LPARAM)((LPARAM)((LPARAM)v7)), (wchar_t *)(Buffer), (HWND)(v6)); /*0x5b5946*/
           }
@@ -2429,12 +2434,12 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     v4 = dword_A8B394; /*0x5b6e3d*/
     Format = (unsigned int)(wchar_t *)v3; /*0x5b6e49*/
     DlgItem = GetDlgItem((HWND)*(unsigned int *)&this->vfptr, 1343); /*0x5b6e53*/
-    if ( DlgItem ) /*0x5b6e57*/
+        v6 = (int (*)(char, char))(&dword_8316A8)[v4]; /*0x5b6e62*/
     {
       if ( v4 >= 8 ) /*0x5b6e5b*/
         v6 = Math::InitDegToRad; /*0x5b6e6b*/
       else
-        v6 = (int (*)(char, char))dword_8316A8[v4]; /*0x5b6e62*/
+        v6 = (int (*)(char, char))(&dword_8316A8)[v4]; /*0x5b6e62*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5b6e84*/
       DrawDialogText( (LPARAM)((LPARAM)((LPARAM)v6)), (wchar_t *)(Buffer), (HWND)(DlgItem)); /*0x5b6e96*/
     }
@@ -2683,12 +2688,12 @@ HWND E4Recv_5B9250::sub_5B9250()
           Format = (unsigned int)(wchar_t *)v4; /*0x5b9386*/
           result = (int)GetDlgItem(vtable0, 1343); /*0x5b938a*/
           v6 = (HWND)result; /*0x5b938c*/
-          if ( result ) /*0x5b9390*/
+              v7 = (int (*)(char, char))(&dword_8316A8)[v5]; /*0x5b939b*/
           {
             if ( v5 >= 8 ) /*0x5b9394*/
               v7 = Math::InitDegToRad; /*0x5b93a4*/
             else
-              v7 = (int (*)(char, char))dword_8316A8[v5]; /*0x5b939b*/
+              v7 = (int (*)(char, char))(&dword_8316A8)[v5]; /*0x5b939b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b93c4*/
             return DrawDialogText( (LPARAM)((LPARAM)((LPARAM)v7)), (wchar_t *)(Buffer), (HWND)(v6)); /*0x5b93d6*/
           }
@@ -2747,12 +2752,12 @@ unsigned int E4Recv_5B9450::sub_5B9450()
     if ( result != -1 ) /*0x5b947e*/
     {
       dword_A8B394 = result; /*0x5b9482*/
-      BYTE1(((unsigned int *)this)[0]) = 1; /*0x5b9489*/
+        return SendMessageA( (HWND)(v3), 0x498u, 0, (&dword_8316A8)[result]); /*0x5b94a6*/
       LOBYTE(((unsigned int *)this)[0]) = 1; /*0x5b948c*/
       if ( result >= 8 ) /*0x5b948f*/
         return SendMessageA( (HWND)(v3), 0x498u, 0, (LPARAM)((LPARAM)((LPARAM)Math::InitDegToRad))); /*0x5b94ba*/
       else
-        return SendMessageA( (HWND)(v3), 0x498u, 0, dword_8316A8[result]); /*0x5b94a6*/
+        return SendMessageA( (HWND)(v3), 0x498u, 0, (&dword_8316A8)[result]); /*0x5b94a6*/
     }
   }
   return result; /*0x5b94a8*/
@@ -2799,12 +2804,12 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
   if ( a4 ) /*0x5baa91*/
   {
     DlgItem = GetDlgItem((HWND)this->AbstractClass, 1343); /*0x5baaa1*/
-    if ( DlgItem ) /*0x5baaa5*/
+        v5 = (int (*)(char, char))(&dword_8316A8)[a3]; /*0x5baab8*/
     {
       if ( a3 >= 8 ) /*0x5baab1*/
         v5 = Math::InitDegToRad; /*0x5baac1*/
       else
-        v5 = (int (*)(char, char))dword_8316A8[a3]; /*0x5baab8*/
+        v5 = (int (*)(char, char))(&dword_8316A8)[a3]; /*0x5baab8*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5baada*/
       DrawDialogText( (LPARAM)((LPARAM)((LPARAM)v5)), (wchar_t *)(Buffer), (HWND)(DlgItem)); /*0x5baae9*/
     }
@@ -3047,7 +3052,7 @@ ObjectClass * sub_5BC440()
 namespace gamemd {
 int sub_5BC450(int a1)
 {
-  return dword_ABF168[a1]; /*0x5bc457*/
+  return (&dword_ABF168)[a1]; /*0x5bc457*/
 }
 }
 // 0x5BC460
@@ -3061,7 +3066,7 @@ char sub_5BC460(int a1)
   unsigned int *v5; // eax
   int v6; // esi
 
-  v1 = (unsigned char *)dword_ABF168[a1]; /*0x5bc460*/
+  v1 = (unsigned char *)(&dword_ABF168)[a1]; /*0x5bc460*/
   dword_ABF23C = (int)v1; /*0x5bc46a*/
   v2 = 0; /*0x5bc470*/
   v3 = v1 + 2000; /*0x5bc472*/

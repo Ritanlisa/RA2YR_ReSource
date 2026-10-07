@@ -1463,7 +1463,7 @@ return (gamemd::AbstractClass **)result; /*0x57dff0*/
       v59 = v38[1]; /*0x57e1a3*/
       v60 = v38[2]; /*0x57e1aa*/
       v61 = v38[3]; /*0x57e1b3*/
-      Cell::CreateCrater((void *)(*v38),(void *)( v38[1]),(void *)( v38[2]),(void *)(v38[3]), 0); /*0x57e1d3*/
+      Cell::CreateCrater((*v38),( v38[1]),( v38[2]),(v38[3]), 0); /*0x57e1d3*/
       if ( v23 == 100 ) /*0x57e1db*/
       {
         IDA_LOBYTE(v54) = 1; /*0x57e1e8*/
@@ -1744,7 +1744,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
       v58 = v39[1]; /*0x57e698*/
       v59 = v39[2]; /*0x57e69f*/
       v60 = v39[3]; /*0x57e6a8*/
-      Cell::CreateCrater((void *)(*v39),(void *)( v39[1]),(void *)( v39[2]),(void *)(v39[3]), 0); /*0x57e6c8*/
+      Cell::CreateCrater((*v39),( v39[1]),( v39[2]),(v39[3]), 0); /*0x57e6c8*/
       if ( v23 == 101 ) /*0x57e6d0*/
       {
         IDA_LOBYTE(v55) = 1; /*0x57e6e4*/
@@ -2029,7 +2029,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       v59 = v38[1]; /*0x57ebfd*/
       v60 = v38[2]; /*0x57ec04*/
       v61 = v38[3]; /*0x57ec0d*/
-      Cell::CreateCrater((void *)(*v38),(void *)( v38[1]),(void *)( v38[2]),(void *)(v38[3]), 0); /*0x57ec2d*/
+      Cell::CreateCrater((*v38),( v38[1]),( v38[2]),(v38[3]), 0); /*0x57ec2d*/
       if ( v23 == 231 ) /*0x57ec38*/
       {
         IDA_LOBYTE(v54) = 1; /*0x57ec45*/
@@ -2311,7 +2311,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
       v58 = v39[1]; /*0x57f102*/
       v59 = v39[2]; /*0x57f109*/
       v60 = v39[3]; /*0x57f112*/
-      Cell::CreateCrater((void *)(*v39),(void *)( v39[1]),(void *)( v39[2]),(void *)(v39[3]), 0); /*0x57f132*/
+      Cell::CreateCrater((*v39),( v39[1]),( v39[2]),(v39[3]), 0); /*0x57f132*/
       if ( v23 == 232 ) /*0x57f13d*/
       {
         IDA_LOBYTE(v55) = 1; /*0x57f151*/

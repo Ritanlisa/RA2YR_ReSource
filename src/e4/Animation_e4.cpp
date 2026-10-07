@@ -384,7 +384,7 @@ long long Animation::UpdateBobOffset()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = ((Math *)(dbl_B04E00 - dbl_B04E28))->Sin(); /*0x661d92*/
+  v0 = Math::Sin((dbl_B04E00 - dbl_B04E28)); /*0x661d92*/
   result = Math::RoundToInt(v0 * dbl_B04E20 * 0.5); /*0x661da6*/
   dword_B04E78 = result; /*0x661dab*/
   return result; /*0x661db0*/

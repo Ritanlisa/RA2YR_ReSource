@@ -83,10 +83,10 @@ struct E4Recv_431BC0 {
     unsigned int vt_slot_44;
     unsigned int vt_slot_52;
     unsigned int vt_slot_64;
-    void* ambientSoundController;  // 0x0 (no offset truth)
+    unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     void* attachedTag;  // 0x0 (no offset truth)
     void* nextObject;  // 0x0 (no offset truth)
-    void* customSound_controller;  // 0x0 (no offset truth)
+    unsigned int customSound_controller[5];  // G57w16 G1: til truth (AudioController 20B)
     void* occupant;  // 0x0 (no offset truth)
     void* attachedBomb;  // 0x0 (no offset truth)
     void* owningHouseIndex;  // 0x0 (no offset truth)

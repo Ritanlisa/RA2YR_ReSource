@@ -2907,7 +2907,7 @@ ObjectClass * E4Recv_727190::sub_727190()
   {
     ++v3; /*0x7271ac*/
     ++v2; /*0x7271af*/
-    if ( (int)v3 >= (int)aPersistent ) /*0x7271b6*/
+    if ( (int)v3 >= (int)"Persistent" /*w16g4 "Persistent" /*w16g4 aPersistent*/*/ ) /*0x7271b6*/
       return 0; /*0x7271bd*/
   }
   return (ObjectClass *)v2; /*0x7271b8*/

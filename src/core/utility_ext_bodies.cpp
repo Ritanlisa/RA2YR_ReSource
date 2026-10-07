@@ -2,6 +2,8 @@
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "utility_ext.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int DeleteAndZero(...); }  // w16g4 raw call-form
 namespace gamemd {
 // ---- g57c5 W5 vocab (declaration-only) ----
 void j_DeleteAndZero();  // g57c5 W5 vocab (csp)

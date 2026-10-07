@@ -74,6 +74,7 @@
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/WaypointClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"  // G42.36 C2027 supply
+namespace VectorClass { int CleanupTyped(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int Render_Helper(...);  // raw 00626120: unsigned int __thiscall Render_Helper(ObjectClass *this, unsigned __int8 a2, int a3)
@@ -4360,7 +4361,7 @@ namespace gamemd {
 int sub_4A86E0()
 {
   GadgetClass::Construct( (void *)(stru_8A06F8), 0, 0, 0, 0, 127, 1); /*0x4a86f1*/
-  stru_8A06F8[0] = (int)&DisplayClass_TacticalClass_vftable; /*0x4a86fb*/
+  ((unsigned char *)&stru_8A06F8)[0] = (int)&DisplayClass_TacticalClass_vftable; /*0x4a86fb*/
   return atexit(sub_4A8710); /*0x4a870b*/
 }
 } // namespace gamemd

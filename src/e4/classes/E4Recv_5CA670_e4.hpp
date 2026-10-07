@@ -7,5 +7,9 @@ namespace gamemd {
 struct E4Recv_5CA670 {
     void* vfptr;  // minimal E2 declaration
     void sub_5CA670();  // 0x5CA670
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int MultiplayerSiege_field_00;  // 0x0 @0x5ca670 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

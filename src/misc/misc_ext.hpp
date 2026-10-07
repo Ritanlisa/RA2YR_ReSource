@@ -673,6 +673,10 @@ public:
 
     uint32_t Coord3D_field_0x04; // G42: scalar per IDA til (array form broke Add/Equals arithmetic)
     uint32_t Coord3D_field_0x08; // G42: scalar per IDA til
+    // --- W16G3 supply (BEGIN) ---
+    char __pad_0[4];  // 0x0 vocab alias (W16G3 raw *(unsigned int*)x.__pad_0 usages, supplied_bodies x17)
+    // --- W16G3 supply (END) ---
+
 };
 // 1 methods in IDA
 // CSP: CoordBounds matched via T1

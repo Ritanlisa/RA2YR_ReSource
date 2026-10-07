@@ -51,6 +51,10 @@
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/ScriptQueue_e4.hpp"  // G57w10 D supply
+#include "e4/classes/ScriptClass_e4.hpp"  // w16g4 C3861 ScriptClass:: supply
+#include "e4/classes/Checksummer_e4.hpp"  // w16g4 C3861 Checksummer:: supply
+#include "e4/classes/IPersistStream_e4.hpp"  // w16g4 C3861 IPersistStream:: supply
+namespace TeknoClass { int GetType(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int Team_Destroy(...);  // raw 0063E5D0: char __thiscall Team_Destroy(ObjectClass *this, int a2)

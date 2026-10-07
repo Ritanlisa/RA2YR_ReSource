@@ -36,6 +36,8 @@
 #include "e4/classes/Coord_e4.hpp"  // G42.35: Coord::To_ScreenRaw 静态站点载体（0x6D7F8E/0x6D843B 同款 e4 TU）
 #include "e4/classes/AudioStream_e4.hpp"  // G42.35: g_DSurface_Hidden_2 宿主基类（完整 AudioStream）
 #include "core/ida_vtables.h"  // gC_vftable3// gC supply: extern declarations from src/e4/e4_globals_decls.hpp
+#include "e4/classes/MapClass_e4.hpp"  // w16g4 C3861 MapClass:: supply
+#include "e4/classes/MissionClass_e4.hpp"  // w16g4 C3861 MissionClass:: supply
 extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 (e4_protos.h:492 同形)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {

@@ -1,6 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DSurface_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/FileClass_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/SortedArray_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/Multiplayer_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/LightningStorm_e4.hpp"  // W16G3 C2027 supply
 #include "e4/classes/BulkData_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/E4Recv_538C40_e4.hpp"
@@ -1653,39 +1659,39 @@ CreateTeamCommand * * InitCommands()
     v175 = (int)((CursorPositionCommandClass *)v169)->Constructor(); /*0x533bf7*/
   else
     v175 = 0; /*0x533bfd*/
-  ((DynamicVector *)&(&dword_87F5D8)[32])->Add_Alt2( (DynamicVector *)(&v175)); /*0x533c0b*/
+  ((DynamicVector *)&(&dword_87F5D8)[32])->Add_Alt2( (DynamicVector *)(&v172)); /*0x533c39*/
   v170 = (unsigned int *)operator new(4); /*0x533c12*/
   if ( v170 ) /*0x533c1c*/
-    v172 = DeleteCommandClass::Constructor(v170); /*0x533c25*/
+  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533c56*/
   else
     v172 = (unsigned int *)(0); /*0x533c2b*/
-  ((DynamicVector *)&dword_87F5D8[32])->Add_Alt2( (DynamicVector *)(&v172)); /*0x533c39*/
+    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533c6d*/
   KeyboardConfig::LoadINI(); /*0x533c3e*/
   v175 = 46; /*0x533c52*/
-  if ( ((SortedArray *)(int)&dword_87F5D8[42])->FindPair( (int *)(&v175)) ) /*0x533c56*/
+  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v172)); /*0x533c85*/
   {
-    v175 = 46; /*0x533c69*/
-    ((SortedArray *)(int)&dword_87F5D8[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533c6d*/
+  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533c9d*/
+    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533c6d*/
   }
-  v175 = 46; /*0x533c81*/
-  ((SortedArray *)(int)&dword_87F5D8[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v172)); /*0x533c85*/
+    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cb4*/
+  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v172)); /*0x533c85*/
   v175 = 27; /*0x533c99*/
-  if ( ((SortedArray *)(int)&dword_87F5D8[42])->FindPair( (int *)(&v175)) ) /*0x533c9d*/
+  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v173)); /*0x533ccc*/
   {
-    v175 = 27; /*0x533cb0*/
-    ((SortedArray *)(int)&dword_87F5D8[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cb4*/
+  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533ce4*/
+    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cb4*/
   }
-  v175 = 27; /*0x533cc8*/
-  ((SortedArray *)(int)&dword_87F5D8[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v173)); /*0x533ccc*/
+    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cfb*/
+  ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v173)); /*0x533ccc*/
   v175 = 32; /*0x533ce0*/
-  if ( ((SortedArray *)(int)&dword_87F5D8[42])->FindPair( (int *)(&v175)) ) /*0x533ce4*/
-  {
+  if ( ((SortedArray *)(int)&(&dword_87F5D8)[42])->FindPair( (int *)(&v175)) ) /*0x533ce4*/
+  return ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v174)); /*0x533d18*/
     v175 = 32; /*0x533cf1*/
-    ((SortedArray *)(int)&dword_87F5D8[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cfb*/
+    ((SortedArray *)(int)&(&dword_87F5D8)[42])->RemoveByKey( (DynamicVector *)(&v175)); /*0x533cfb*/
   }
   v175 = 32; /*0x533d0f*/
 // 0x5387d0
-  return ((SortedArray *)(int)&dword_87F5D8[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v174)); /*0x533d18*/
+  return ((SortedArray *)(int)&(&dword_87F5D8)[42])->Append( (DynamicVector *)(&v175), (unsigned int *)(&v174)); /*0x533d18*/
 }
 } // namespace gamemd
 
@@ -1716,38 +1722,50 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   const char *v27; // eax
   bool v29; // [esp+29h] [ebp-1h]
 
-  ((gamemd::Debug*)aAllocatingNewS)->Log("Allocating new surfaces\n"); /*0x533fdd G57w12: IDA push seq @ 0x533fdd +4 reg-vararg omitted*/
+  ((gamemd::Debug*)"Allocating new surfaces
+" /*w16g4 "Allocating new surfaces
+" /*w16g4 aAllocatingNewS*/*/)->Log("Allocating new surfaces\n"); /*0x533fdd G57w12: IDA push seq @ 0x533fdd +4 reg-vararg omitted*/
   if ( DSurface_Alternate ) /*0x533fee*/
   {
-    ((gamemd::Debug*)aDeletingAltern)->Log("Deleting AlternateSurface\n"); /*0x533ff5 G57w12: IDA push seq @ 0x533ff5*/
+    ((gamemd::Debug*)"Deleting AlternateSurface
+" /*w16g4 "Deleting AlternateSurface
+" /*w16g4 aDeletingAltern*/*/)->Log("Deleting AlternateSurface\n"); /*0x533ff5 G57w12: IDA push seq @ 0x533ff5*/
     if ( DSurface_Alternate ) /*0x534005*/
       (**(void (***)(int, int))DSurface_Alternate)(DSurface_Alternate, 1); /*0x53400b*/
     DSurface_Alternate = 0; /*0x53400d*/
   }
   if ( g_DSurface_Hidden ) /*0x534019*/
   {
-    ((gamemd::Debug*)aDeletingHidden)->Log("Deleting HiddenSurface\n"); /*0x534020 G57w12: IDA push seq @ 0x534020*/
+    ((gamemd::Debug*)"Deleting HiddenSurface
+" /*w16g4 "Deleting HiddenSurface
+" /*w16g4 aDeletingHidden*/*/)->Log("Deleting HiddenSurface\n"); /*0x534020 G57w12: IDA push seq @ 0x534020*/
     if ( g_DSurface_Hidden ) /*0x534030*/
       (**(void (***)(int, int))g_DSurface_Hidden)(g_DSurface_Hidden, 1); /*0x534036*/
     g_DSurface_Hidden = 0; /*0x534038*/
   }
   if ( DSurface_Composite ) /*0x534044*/
   {
-    ((gamemd::Debug*)aDeletingCompos)->Log("Deleting CompositeSurface\n"); /*0x53404b G57w12: IDA push seq @ 0x53404b*/
+    ((gamemd::Debug*)"Deleting CompositeSurface
+" /*w16g4 "Deleting CompositeSurface
+" /*w16g4 aDeletingCompos*/*/)->Log("Deleting CompositeSurface\n"); /*0x53404b G57w12: IDA push seq @ 0x53404b*/
     if ( DSurface_Composite ) /*0x53405b*/
       (**(void (***)(int, int))DSurface_Composite)(DSurface_Composite, 1); /*0x534061*/
     DSurface_Composite = 0; /*0x534063*/
   }
   if ( DSurface_Tile ) /*0x53406f*/
   {
-    ((gamemd::Debug*)aDeletingTilesu)->Log("Deleting TileSurface\n"); /*0x534076 G57w12: IDA push seq @ 0x534076*/
+    ((gamemd::Debug*)"Deleting TileSurface
+" /*w16g4 "Deleting TileSurface
+" /*w16g4 aDeletingTilesu*/*/)->Log("Deleting TileSurface\n"); /*0x534076 G57w12: IDA push seq @ 0x534076*/
     if ( DSurface_Tile ) /*0x534086*/
       (**(void (***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x53408c*/
     DSurface_Tile = 0; /*0x53408e*/
   }
   if ( DSurface_Sidebar ) /*0x53409a*/
   {
-    ((gamemd::Debug*)aDeletingSideba)->Log("Deleting SidebarSurface\n"); /*0x5340a1 G57w12: IDA push seq @ 0x5340a1*/
+    ((gamemd::Debug*)"Deleting SidebarSurface
+" /*w16g4 "Deleting SidebarSurface
+" /*w16g4 aDeletingSideba*/*/)->Log("Deleting SidebarSurface\n"); /*0x5340a1 G57w12: IDA push seq @ 0x5340a1*/
     if ( DSurface_Sidebar ) /*0x5340b1*/
       (**(void (***)(int, int))DSurface_Sidebar)(DSurface_Sidebar, 1); /*0x5340b7*/
     DSurface_Sidebar = 0; /*0x5340b9*/
@@ -1802,7 +1820,9 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
       (**(void (***)(int))DSurface_Composite)(1); /*0x53425c*/
     if ( DSurface_Tile ) /*0x534266*/
       (**(void (***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x53426c*/
-    ((Debug *)aMovingTilesurf)->Log("Moving TileSurface and CompositeSurface into system memory\n"); /*0x534273 G57w12: IDA push seq @ 0x534273*/
+    ((Debug *)"Moving TileSurface and CompositeSurface into system memory
+" /*w16g4 "Moving TileSurface and CompositeSurface into system memory
+" /*w16g4 aMovingTilesurf*/*/)->Log("Moving TileSurface and CompositeSurface into system memory\n"); /*0x534273 G57w12: IDA push seq @ 0x534273*/
     v17 = (char *)RA2_OPNEW(0x24u); /*0x53427a*/
     if ( v17 ) /*0x534286*/
       DSurface_Composite = (int)((DSurface*)v17)->Construct(aP1->vtable3, aP1->vtable4, 1, 1); /*0x53429b*/
@@ -1992,7 +2012,7 @@ void TheaterClass_LoadMIX(int a1)
         IDA_LOBYTE(v30) = i; /*0x534c63*/
         IDA_HIBYTE(v30) = -1 - i; /*0x534c67*/
         v19 = 4 * i; /*0x534c6d*/
-        v20 = (char *)&FileSystem_TEMPERAT_PAL + 3 * (i % 256); /*0x534c85*/
+      v23 = &((unsigned char *)&stru_886380)[3 * (j % 256)]; /*0x534cf7*/
         *(unsigned short *)v20 = v30; /*0x534c8d*/
         v20[2] = v19; /*0x534c95*/
       }
@@ -2005,7 +2025,7 @@ void TheaterClass_LoadMIX(int a1)
       Block::Copy( (const void *)(stru_886380), (void *)(v21)); /*0x534cd9*/
     for ( j = 0; j < 256; ++j ) /*0x534cde*/
     {
-      v23 = &stru_886380[3 * (j % 256)]; /*0x534cf7*/
+      v23 = &((unsigned char *)&stru_886380)[3 * (j % 256)]; /*0x534cf7*/
       IDA_LOBYTE(v31) = 4 * *v23; /*0x534d01*/
       v24 = DataGlobal_886382[3 * (j % 256)]; /*0x534d0c*/
       IDA_HIBYTE(v31) = 4 * DataGlobal_886381[3 * (j % 256)]; /*0x534d16*/
@@ -2542,7 +2562,7 @@ int SuperWeapon_Update()
     IDA_LOBYTE(v17) = LightningStorm_Deferment; /*0x53aa9f*/
     if ( LightningStorm_Deferment > 0 ) /*0x53aaa6*/
     {
-      v29 = LightningStorm_Deferment - 1; /*0x53aaac*/
+              v31 = *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4]; /*0x53ab01*/
       LightningStorm_Deferment = v29; /*0x53aaad*/
       if ( v29 ) /*0x53aab2*/
       {
@@ -2555,7 +2575,7 @@ int SuperWeapon_Update()
           {
             v31 = 3; /*0x53aaf8*/
             if ( dword_A83D4C ) /*0x53aaff*/
-              v31 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x53ab01*/
+              v31 = *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4]; /*0x53ab01*/
             ((VoxClass *)(&stru_828080))->FindAndPlay(-1); /*0x53ab11*/
             StringCSF = GetStringCSF( (wchar_t *)(aTxtLightningSt_0), 0, (const char *)(g_Str_File_Ion_cpp), 974); /*0x53ab31*/
             IDA_LOBYTE(v17) = MessageListClass::AddMessage( /*0x53ab40*/
@@ -2599,9 +2619,9 @@ int SuperWeapon_Update()
         while ( 1 ) /*0x53a9a7*/
         {
           *(unsigned int *)v37 = LightningStorm_Coords; /*0x53a9a7*/
-          v22 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -v21, v21); /*0x53a9ab*/
+          v22 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, -v21, v21); /*0x53a9ab*/
           v37[0] += v22; /*0x53a9b6*/
-          v23 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, -v21, v21); /*0x53a9c3*/
+          v23 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, -v21, v21); /*0x53a9c3*/
           v24 = 0; /*0x53a9c8*/
           v37[1] += v23; /*0x53a9ca*/
           v36 = 0; /*0x53a9d6*/
@@ -2690,7 +2710,7 @@ AnimClass * * PsyDom::Update(void *a1, void *a2, void *a3, void *a4)
       }
       break; /*0x53b03e*/
     case 5: /*0x53af50*/
-      if ( dword_A8B230[378].vtable2 == dword_A8B230[378].vtable1 ) /*0x53b052*/
+      if ( (&dword_A8B230)[378].vtable2 == dword_A8B230[378].vtable1 ) /*0x53b052*/
         PsyDom_Status = 0; /*0x53b054*/
       break; /*0x53b054*/
     default:
@@ -2738,7 +2758,7 @@ void sub_53B460(int a1, Scenario * a2)
     AudioController::Init( (void *)(&stru_A9F9B8)); /*0x53b512*/
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
     SetVocClassEnabled(0); /*0x53b538*/
-    byte_A9FAD1 = IDA_BYTE2(dword_A8B230[381].vtable3); /*0x53b549*/
+    byte_A9FAD1 = IDA_BYTE2((&dword_A8B230)[381].vtable3); /*0x53b549*/
     Scenario::ClearScreen( a2); /*0x53b54f*/
     Map_Process_753570(); /*0x53b554*/
   }
@@ -4420,7 +4440,7 @@ int sub_53D9F0(int a1)
   int result; // eax
   int v6; // [esp+Ch] [ebp-8h] BYREF
 
-  dword_A9FAE8[0] = 0; /*0x53d9f3*/
+  (&dword_A9FAE8)[0] = 0; /*0x53d9f3*/
   dword_AA0150 = a1; /*0x53da02*/
   v2 = 1; /*0x53da08*/
   v3 = &unk_A9FAEC; /*0x53da0d*/
@@ -4612,7 +4632,7 @@ void sub_53F2D0()
 namespace gamemd {
 void sub_53F2F0()
 {
-  *(double *)&unk_AA047C[132] = 0.0174532925199433 * 90.0; /*0x53f2fc*/
+  *(double *)&((unsigned char *)&unk_AA047C)[132] = 0.0174532925199433 * 90.0; /*0x53f2fc*/
 }
 } // namespace gamemd
 
@@ -4623,7 +4643,7 @@ long long sub_53F310()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(*(double *)&unk_AA047C[132] - dbl_AA0538); /*0x53f322*/
+  v0 = Math::Sin(*(double *)&((unsigned char *)&unk_AA047C)[132] - dbl_AA0538); /*0x53f322*/
   result = Math::RoundToInt(v0 * dbl_AA0528 * 0.5); /*0x53f336*/
   dword_AA05A0 = result; /*0x53f33b*/
   return result; /*0x53f340*/

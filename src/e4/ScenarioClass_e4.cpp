@@ -62,6 +62,8 @@
 #include "e4/classes/Node_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_4072B0(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int SeedInitRNG(...);  // raw 0065C6D0: _DWORD *__thiscall SeedInitRNG(ObjectClass *this, int a2)

@@ -130,7 +130,7 @@ unsigned short * Vector::ToFacingMath(unsigned short *a2)
   }
   Math::Sqrt(v6); /*0x41c2ff*/
   __asm { fstp [esp+14h+var_8] } /*0x41c307*/
-  ((Math *)*(double *)(_ESI + 16))->CalcAngle( v7); /*0x41c31a*/
+  Math::CalcAngle(*(double *)(_ESI + 16), v7); /*0x41c31a*/
   __asm { fsub ds:dbl_7E2820 } /*0x41c31f*/
   __asm { fmul ds:dbl_7E2818 }
   *(unsigned short *)a2 = Math::RoundToInt(v3); /*0x41c338*/

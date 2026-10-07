@@ -180,6 +180,10 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/ScriptAction_e4.hpp"
 #include "e4/e4_globals.hpp"  // G42.32 S R5: DSurface_ViewBounds flat + g_TacticalClass_Instance
+#include "e4/classes/Display_e4.hpp"  // w16g4 C3861 Display:: supply
+#include "e4/classes/Factory_e4.hpp"  // w16g4 C3861 Factory:: supply
+#include "e4/classes/Vector_e4.hpp"  // w16g4 C3861 Vector:: supply
+namespace Mission_e4 { int SetAndCall(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int DrawTacticalFillScanline(...);  // raw 0063D910: char __fastcall DrawTacticalFillScanline(int a1, int a2, int a3, int a4, int a5, int a6)
@@ -1399,7 +1403,7 @@ unsigned int * ScriptAction::ReadParameter()
     v2 = this->ScriptAction_field_0x4[0] / 256; /*0x6e184e*/
     v5[0] = v1; /*0x6e1851*/
     v5[1] = v2; /*0x6e1856*/
-    if ( (unsigned short)v1 == *(unsigned short *)dword_B0E680 && (unsigned short)v2 == *(unsigned short *)&dword_B0E680[2] ) /*0x6e1875*/
+    if ( (unsigned short)v1 == *(unsigned short *)dword_B0E680 && (unsigned short)v2 == *(unsigned short *)&(&dword_B0E680)[2] ) /*0x6e1875*/
       return 0; /*0x6e189e*/
     v3 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v5); /*0x6e1886*/
     result = Cell::IsBridge(v3); /*0x6e188a*/

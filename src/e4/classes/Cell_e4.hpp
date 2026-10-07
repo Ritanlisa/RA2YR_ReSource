@@ -179,7 +179,7 @@ struct Cell {
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
     static void * Clear(Cell * aP1);  // 0x5A9940 G57w15f3: static receiver-first per raw __thiscall (Cell *this); needed for legal fn-ptr cast at Array::ForEach call sites
     int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
-    void* CreateCrater(void *a1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790 (G42.35m: IUnknown placeholder -> void*)
+    static void * CreateCrater(int a1, int a2, int a3, int a4, int a5);  // 0x6D2790 [w16g2] static + int params per raw __stdcall (no receiver)
     static int GetAdjacentPassableMask(__int16 *a1, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
     unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
     unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00

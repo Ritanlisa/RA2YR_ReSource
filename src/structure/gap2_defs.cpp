@@ -27,6 +27,8 @@ using ra2::game::ObjectClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "misc/misc_ext.hpp"// 0x517CC0
+#include "e4/classes/Game_e4.hpp"  // w16g4 C3861 Game:: supply
+#include "e4/classes/Math_e4.hpp"  // w16g4 C3861 Math:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int OleRun(...);  // raw 007C88CC: // attributes: thunk HRESULT __stdcall OleRun(LPUNKNOWN pUnknown)
@@ -986,7 +988,7 @@ int BuildingClass::HandleFactoryCommand() {
         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4434a3*/
         {
           qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v5, 0x6Fu); /*0x4434bf*/
-          dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4434d0*/
+          (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4434d0*/
           dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4434e7*/
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
@@ -1146,7 +1148,7 @@ int BuildingClass::HandleFactoryCommand() {
         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4434a3*/
         {
           qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v5, 0x6Fu); /*0x4434bf*/
-          dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4434d0*/
+          (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4434d0*/
           dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4434e7*/
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
@@ -1297,7 +1299,7 @@ int BuildingClass::HandleFactoryCommand() {
         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4434a3*/
         {
           qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v5, 0x6Fu); /*0x4434bf*/
-          dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4434d0*/
+          (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4434d0*/
           dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4434e7*/
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
@@ -1414,7 +1416,7 @@ int BuildingClass::HandleFactoryCommand() {
         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4434a3*/
         {
           qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v5, 0x6Fu); /*0x4434bf*/
-          dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4434d0*/
+          (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4434d0*/
           dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x4434e7*/
           ++stru_A80220.lineTrailer; /*0x4434ed*/
         }
@@ -1842,7 +1844,7 @@ int BuildingClass::CreateUnits()
                   v79 = ((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F; /*0x4466b7*/
                   if ( v78 ) /*0x4466bc*/
                   {
-                    *(unsigned int *)(v78 + 172) = dword_7F4890[v79]; /*0x4466c5*/
+                    *(unsigned int *)(v78 + 172) = (&dword_7F4890)[v79]; /*0x4466c5*/
                     *(unsigned int *)(v78 + 196) = 0; /*0x4466cb*/
                   }
                 }
@@ -2641,7 +2643,7 @@ int BuildingClass::CheckAdjacentCells() {
     {
       v3 = this->q044; /*0x48549e*/
       v4 = dword_A83D84; /*0x4854a1*/
-      if ( v3 == -1 || (result = *(unsigned int *)dword_A83D84[4 * v3], *(unsigned char *)(result + 686)) ) /*0x4854af*/
+      if ( v3 == -1 || (result = *(unsigned int *)(&dword_A83D84)[4 * v3], *(unsigned char *)(result + 686)) ) /*0x4854af*/
       {
         v5 = 0; /*0x4854bd*/
         v6 = 1; /*0x4854bf*/
@@ -2651,8 +2653,8 @@ int BuildingClass::CheckAdjacentCells() {
           {
             v7 = v5 & 7; /*0x4854cd*/
             v11 = this->objectTypeFlags; /*0x4854d0*/
-            IDA_LOWORD(v10) = v11 + IDA_LOWORD(dword_89F688[v7]); /*0x4854ef*/
-            IDA_HIWORD(v10) = IDA_HIWORD(v11) + IDA_HIWORD(dword_89F688[v7]); /*0x4854f8*/
+            IDA_LOWORD(v10) = v11 + IDA_LOWORD((&dword_89F688)[v7]); /*0x4854ef*/
+            IDA_HIWORD(v10) = IDA_HIWORD(v11) + IDA_HIWORD((&dword_89F688)[v7]); /*0x4854f8*/
             v11 = v10; /*0x485501*/
             result = (int)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v11); /*0x48550b*/
             v4 = dword_A83D84; /*0x485510*/
@@ -2717,7 +2719,7 @@ int BuildingClass::CheckAdjacentCells() {
     {
       v3 = this->q044; /*0x48549e*/
       v4 = dword_A83D84; /*0x4854a1*/
-      if ( v3 == -1 || (result = *(unsigned int *)dword_A83D84[4 * v3], *(unsigned char *)(result + 686)) ) /*0x4854af*/
+      if ( v3 == -1 || (result = *(unsigned int *)(&dword_A83D84)[4 * v3], *(unsigned char *)(result + 686)) ) /*0x4854af*/
       {
         v5 = 0; /*0x4854bd*/
         v6 = 1; /*0x4854bf*/
@@ -2727,8 +2729,8 @@ int BuildingClass::CheckAdjacentCells() {
           {
             v7 = v5 & 7; /*0x4854cd*/
             v11 = this->objectTypeFlags; /*0x4854d0*/
-            IDA_LOWORD(v10) = v11 + IDA_LOWORD(dword_89F688[v7]); /*0x4854ef*/
-            IDA_HIWORD(v10) = IDA_HIWORD(v11) + IDA_HIWORD(dword_89F688[v7]); /*0x4854f8*/
+            IDA_LOWORD(v10) = v11 + IDA_LOWORD((&dword_89F688)[v7]); /*0x4854ef*/
+            IDA_HIWORD(v10) = IDA_HIWORD(v11) + IDA_HIWORD((&dword_89F688)[v7]); /*0x4854f8*/
             v11 = v10; /*0x485501*/
             result = (int)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v11); /*0x48550b*/
             v4 = dword_A83D84; /*0x485510*/
@@ -3252,7 +3254,7 @@ double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
 }
 }
 // 0x6c9650
-    return Float4::Sum(v1) / ((unsigned int *)&(double)dword_8871E0[1])[1]; /*0x4f9780*/
+    return Float4::Sum(v1) / ((unsigned int *)&(double)(&dword_8871E0)[1])[1]; /*0x4f9780*/
 // 0x4FAD20
 namespace gamemd { 
 int SuperWeapon::SelectSuperWeaponTarget(int a1) {

@@ -346,7 +346,7 @@ struct BuildingClass {
     void* SetType;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
-    int AllocAndCtor(BuildingClass * aP0, int aP2);
+    static int AllocAndCtor(BuildingClass * aP0, int aP2);  // [w16g2] static (def body this=0)
     int AnimController();
     int AssignDestination_SyncLog();
     int FindClosestForRepair(unsigned int * a1);
@@ -418,7 +418,11 @@ static int GetSHPFrame(BuildingClass * aP1, int a2);  // G57w10-S raw 0x00490B90
     int UpdateSuperWeaponReadyState(int a1);
     void DispatchTeam(int a1, int a2);
     unsigned int q_610;  // +0x610 flat supply (CSP-fed)
-    unsigned int q_290;  // +0x290 flat supply (final pass)
+    unsigned int q_290;
+    static int Draw_0(...);
+    static int CheckBridge(...);
+    static int GetDrawColor(...);
+    static int DrawActionLines(...);  // w16g4 C3861 static supply (raw 0x0063BE60)  // w16g4 C3861 static supply (raw 0x0063CE40)  // w16g4 C3861 static supply (raw 0x006B0880)  // w16g4 C3861 static supply (raw 0x0047F6A0)  // +0x290 flat supply (final pass)
 };
 
 } // namespace gamemd

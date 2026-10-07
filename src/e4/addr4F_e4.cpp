@@ -2275,8 +2275,8 @@ namespace gamemd {
 unsigned int * sub_4FD120(unsigned int * dword_A8EFF8, int a2)
 {
   *dword_A8EFF8 = (unsigned int)dword_A8EFF8; /*0x4fd12c*/
-  dword_A8EFF8[1] = dword_A8EFFC; /*0x4fd134*/
-  dword_A8EFF8[2] = dword_A8F000; /*0x4fd13d*/
+  (&dword_A8EFF8)[1] = dword_A8EFFC; /*0x4fd134*/
+  (&dword_A8EFF8)[2] = dword_A8F000; /*0x4fd13d*/
   return dword_A8EFF8; /*0x4fd140*/
 }
 } // namespace gamemd

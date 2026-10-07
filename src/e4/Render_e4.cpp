@@ -57,6 +57,8 @@
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int ButtonDown(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int RenderGradientTrapezoid(...);  // raw 00660050: char __thiscall RenderGradientTrapezoid(float *this)
@@ -1932,7 +1934,7 @@ int sub_6D9A50(int a1, int a2, int a3, int a4)
         v8 = dword_886FA4 + v6[1]; /*0x6d9ac4*/
         if ( a1 < v6[2] + v7 && a2 < v6[3] + v8 && a1 + a3 > v7 && a4 + a2 > v8 ) /*0x6d9af2*/
         {
-          Cell::CreateCrater((void *)(*v6),(void *)( v6[1]),(void *)( v6[2]),(void *)(v6[3]), 0); /*0x6d9b15*/
+          Cell::CreateCrater((*v6),( v6[1]),( v6[2]),(v6[3]), 0); /*0x6d9b15*/
           v5[128] = 0; /*0x6d9b1a*/
         }
       }

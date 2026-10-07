@@ -35,11 +35,15 @@ struct CCFileClass {
     void * ReadEntireFile();  // was C2597 interim stub, := truth 0x0x4a3890
     static int Reset(CCFileClass * aP1);  // G57w10-S raw 0x00473CE0 (was C2597 interim stub)
 static int GetSize(CCFileClass * aP1);  // G57w10-S raw 0x00473C00 (was C2597 interim stub)
-    void Construct2(char **a2);  // init file object with name
+    void *Construct2(char **a2);  // G57w16 G1: raw _DWORD*  // init file object with name
      _DWORD * Construct(char *Source);
     LONG Load();  // 0x595bc0
     int Reopen(char *Source, CHAR *a3);  // 0x47af10
     AudioController * * Close(void * a1);
+    // --- W16G3 supply (BEGIN) ---
+    static int Cleanup(void *aP1);  // W16G3 static-form (BinkMovie 0x7xxx)
+    // --- W16G3 supply (END) ---
+
 };
 #endif  // GAMEMD_G2_CCFileClass_DEF
 

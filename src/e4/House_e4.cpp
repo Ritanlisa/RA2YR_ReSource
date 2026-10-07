@@ -1121,7 +1121,7 @@ int House::LookupObject(int a2, void *a2_2)
 
   v2 = (unsigned int *)(*(int (**)(House *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x544be2*/
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x544c03*/
-    return dword_8288E4[*(char *)(v3 + 41)]; /*0x544c09*/
+    return (&dword_8288E4)[*(char *)(v3 + 41)]; /*0x544c09*/
   else
     return 0; /*0x544c13*/
 

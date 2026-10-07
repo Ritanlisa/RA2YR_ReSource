@@ -58,6 +58,9 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
+namespace MultiplayerTeam { int Destructor(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_5D30C0(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ComputeModularInverse(...);  // raw 005C80A0: int __thiscall ComputeModularInverse(ObjectClass *this, _WORD *a2, int a3)
@@ -4757,7 +4760,7 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
   {
     if ( (uint16_t)((WideString *)a2)->GetChar( v4) == 10 ) /*0x5ce35c*/
       break; /*0x5ce35c*/
-    vtable0 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce364*/
+    vtable0 = (int (**)(TagClass *, int))(*(void **)this->attachedTag); /*0x5ce364*/
     Char = ((WideString *)a2)->GetChar( v4); /*0x5ce366*/
     v3 = vtable0[1](this->attachedTag, Char) + i; /*0x5ce378*/
     ++v4; /*0x5ce37a*/
@@ -4811,10 +4814,10 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
       }
       else
       {
-        vtable0 = (void (**)(TagClass *, int, int, void *, void *, int, int))this->attachedTag->AbstractClass; /*0x5ce44b*/
+        vtable0 = (void (**)(TagClass *, int, int, void *, void *, int, int))(*(void **)this->attachedTag); /*0x5ce44b*/
         Char = ((WideString *)(const wchar_t **)&((unsigned int *)this)[0])->GetChar( v9); /*0x5ce45b*/
         vtable0[4](this->attachedTag, a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
-        v10 = (int (**)(TagClass *, int))this->attachedTag->AbstractClass; /*0x5ce46b*/
+        v10 = (int (**)(TagClass *, int))(*(void **)this->attachedTag); /*0x5ce46b*/
         v11 = ((WideString *)(const wchar_t **)&((unsigned int *)this)[0])->GetChar( v9); /*0x5ce46d*/
         v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
         vtable2 = v18; /*0x5ce479*/

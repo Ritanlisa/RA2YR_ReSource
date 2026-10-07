@@ -61,6 +61,8 @@
 #include "e4/classes/NetworkEventQueueClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Theme_e4.hpp"  // G42.36 C2027 supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_4B5830(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char byte_A8B8B4;  // data: 0xa8b8b4 truth(IDA G42.57w9)
 extern unsigned char byte_A8EDDC;  // data: 0xa8eddc truth(IDA G42.57w9)
@@ -330,7 +332,7 @@ v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass
   v2 = (unsigned int)(v1[9]);
   v59 = (unsigned int)(v1[12]);
   v58 = v2; /*0x550b37*/
-  v3 = ((Math *)(double)v1[10] - (double)v1[13])->CalcAngle( (double)(int)v59 - (double)v2); /*0x550b56*/
+  v3 = Math::CalcAngle((double)v1[10] - (double)v1[13], (double)(int)v59 - (double)v2); /*0x550b56*/
   IDA_LOWORD(v59) = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x550b6f*/
   v59 = (((v59 >> 12) + 1) >> 1) & 7; /*0x550b8d*/
   ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v1 + 9), (int *)(&v75)); /*0x550b91*/
@@ -2863,16 +2865,16 @@ v23 = (unsigned int *)(*(int (**)(AudioStream *, int *, int *, int))(*(unsigned 
 namespace gamemd {
 void* unknown_libname_21()
 {
-  unk_ABCE70[0] = 3; /*0x5fa35a*/
-  unk_ABCE70[1] = 1; /*0x5fa360*/
-  unk_ABCE70[3] = 0; /*0x5fa363*/
-  unk_ABCE70[4] = 3; /*0x5fa366*/
-  IDA_LOBYTE(unk_ABCE70[5]) = 1; /*0x5fa36d*/
-  unk_ABCE70[6] = 2; /*0x5fa370*/
-  IDA_LOBYTE(unk_ABCE70[7]) = 1; /*0x5fa377*/
-  IDA_BYTE1(unk_ABCE70[7]) = 1; /*0x5fa37a*/
-  IDA_BYTE2(unk_ABCE70[7]) = 1; /*0x5fa37d*/
-  IDA_LOBYTE(unk_ABCE70[8]) = 1; /*0x5fa380*/
+  ((unsigned char *)&unk_ABCE70)[0] = 3; /*0x5fa35a*/
+  ((unsigned char *)&unk_ABCE70)[1] = 1; /*0x5fa360*/
+  ((unsigned char *)&unk_ABCE70)[3] = 0; /*0x5fa363*/
+  ((unsigned char *)&unk_ABCE70)[4] = 3; /*0x5fa366*/
+  IDA_LOBYTE(((unsigned char *)&unk_ABCE70)[5]) = 1; /*0x5fa36d*/
+  ((unsigned char *)&unk_ABCE70)[6] = 2; /*0x5fa370*/
+  IDA_LOBYTE(((unsigned char *)&unk_ABCE70)[7]) = 1; /*0x5fa377*/
+  IDA_BYTE1(((unsigned char *)&unk_ABCE70)[7]) = 1; /*0x5fa37a*/
+  IDA_BYTE2(((unsigned char *)&unk_ABCE70)[7]) = 1; /*0x5fa37d*/
+  IDA_LOBYTE(((unsigned char *)&unk_ABCE70)[8]) = 1; /*0x5fa380*/
   unk_ABCEB5 = 1; /*0x5fa383*/
   unk_ABCF08 = 18; /*0x5fa38b*/
   unk_ABCF0C = 18; /*0x5fa391*/
@@ -2884,7 +2886,7 @@ void* unknown_libname_21()
   dword_ABCE98 = -1; /*0x5fa3c4*/
   unk_ABCEBC = -1; /*0x5fa3c7*/
   unk_ABCEC0 = -1; /*0x5fa3ca*/
-  IDA_HIBYTE(unk_ABCE70[7]) = 0; /*0x5fa3cd*/
+  IDA_HIBYTE(((unsigned char *)&unk_ABCE70)[7]) = 0; /*0x5fa3cd*/
   unk_ABCE9C = 800; /*0x5fa3d0*/
   unk_ABCEA0 = 600; /*0x5fa3d7*/
   unk_ABCEA4 = 0; /*0x5fa3de*/

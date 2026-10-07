@@ -2393,7 +2393,7 @@ int E4Recv_43EE50::sub_43EE50()
       return 0; /*0x43eea7*/
     Value = (unsigned int *)ProgressTimer::GetValue( (ProgressTimer *)this->primaryFacing, (void *)(&v5)); /*0x43ee76*/
     v3 = *((unsigned int *)this + 352); /*0x43ee7d*/
-    result = dword_7F4890[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F]; /*0x43ee8e*/
+    result = (&dword_7F4890)[((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F]; /*0x43ee8e*/
     if ( v3 ) /*0x43ee95*/
     {
       *(unsigned int *)(v3 + 172) = result; /*0x43ee97*/

@@ -19,7 +19,6 @@
 #define GAMEMD_E4_Settings 1
 #define GAMEMD_E4_Screen 1
 #define GAMEMD_E4_Lobby 1
-#define GAMEMD_E4_Count 1
 #include "e4/classes/Text_e4.hpp"
 #include "core/stream_ext.hpp"
 #include "core/utility_ext.hpp"
@@ -78,6 +77,10 @@ using ra2::game::AbstractClass;
 #include "e4/classes/Debug_e4.hpp"  // G42.35: Debug::Log 体表词汇
 #include "e4/classes/Vector_e4.hpp"  // G42.35: Vector::Clear 体表词汇
 #include "e4/classes/Audio_e4.hpp"  // G42.35: Audio::IsSoundEnabled 体表词汇
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int Dtor(...); }  // w16g4 raw call-form
+namespace gamemd { int Reset(...); }  // w16g4 raw call-form
+namespace gamemd { int Read(...); }  // w16g4 raw call-form
 // ---- g57b5 W5: qualified-call free-form vocab ----
 namespace gamemd {
 int FindDialogTemplate(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)

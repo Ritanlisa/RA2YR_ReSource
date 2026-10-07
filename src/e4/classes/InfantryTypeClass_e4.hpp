@@ -177,7 +177,7 @@ struct InfantryTypeClass {
     InfantryClass *  ConstructInfantry(AbstractClass * ppv);
     InfantryTypeClass * Constructor(char *aP1);
     InfantryTypeClass * ddtor(char a2);
-    WeaponTypeClass * * Find(char *Source);
+    static WeaponTypeClass * * Find(char *Source);  // [w16g2] static (def body this=0)
     int * GetDimensions(int a1);
     int CreateInfantry(short * a2, AbstractClass * ppv);
     int GetAuxField();

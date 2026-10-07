@@ -1871,14 +1871,14 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
   v10 = a1; /*0x5df41f*/
   if ( a1 < 1 ) /*0x5df423*/
   {
-    String = (unsigned int)GetStringCSF( aTxtMustSelectG, 0, (const char *)(g_Str_File_netdlg2_cpp), 3712); /*0x5df436*/
+    String = (unsigned int)GetStringCSF( "TXT_MUST_SELECT_GAME" /*w16g4 "TXT_MUST_SELECT_GAME" /*w16g4 aTxtMustSelectG*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3712); /*0x5df436*/
     Dialog::ShowMessage(-1, (size_t)String); /*0x5df442*/
     PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df462*/
     return 0; /*0x5df473*/
   }
   if ( dword_A8DA6C <= 1 || a1 > dword_A8DA6C ) /*0x5df484*/
   {
-    v5 = GetStringCSF( aTxtNothingToJo, 0, (const char *)(g_Str_File_netdlg2_cpp), 3719); /*0x5df87b*/
+    v5 = GetStringCSF( "TXT_NOTHING_TO_JOIN" /*w16g4 "TXT_NOTHING_TO_JOIN" /*w16g4 aTxtNothingToJo*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3719); /*0x5df87b*/
   }
   else if ( strlen( (const char *)(unk_A8B380)) ) /*0x5df48f*/
   {
@@ -1891,7 +1891,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       || !strcmp((const char *)(unk_A8B380), ToWideStringChar( (IUnknown *)((char *)dword_AC1194)))
       || (((String *)((char **)&v9))->Assign( (const char *)(unk_A8B380)), v6 = Network_Send(&v9), j_DeleteAndZero( (void *)(&v9)), v6) )
     {
-      v8 = GetStringCSF( aErrorNameisres, 0, (const char *)(g_Str_File_netdlg2_cpp), 3742); /*0x5df82c*/
+      v8 = GetStringCSF( "ERROR:NameIsReservedWord" /*w16g4 "ERROR:NameIsReservedWord" /*w16g4 aErrorNameisres*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3742); /*0x5df82c*/
       Dialog::ShowMessage(-1, (size_t)v8); /*0x5df838*/
       PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df858*/
       return 0; /*0x5df869*/
@@ -1920,7 +1920,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       dword_AC0238 = 600; /*0x5df806*/
       return 1; /*0x5df81a*/
     }
-    v5 = GetStringCSF( (wchar_t *)aTxtGameIsClose, 0, (const char *)(g_Str_File_netdlg2_cpp), 3750); /*0x5df6f0*/
+    v5 = GetStringCSF( (wchar_t *)"TXT_GAME_IS_CLOSED" /*w16g4 "TXT_GAME_IS_CLOSED" /*w16g4 aTxtGameIsClose*/*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3750); /*0x5df6f0*/
   }
   else
   {
@@ -2480,7 +2480,7 @@ int sub_5D5AA0()
 namespace gamemd {
 int sub_5D7550(int a1)
 {
-  return *(unsigned int *)(*(unsigned int *)dword_A8022C[4 * a1] + 90204); /*0x5d7563*/
+  return *(unsigned int *)(*(unsigned int *)(&dword_A8022C)[4 * a1] + 90204); /*0x5d7563*/
 }
 } // namespace gamemd
 
@@ -3258,7 +3258,7 @@ char InitNetworkGameState()
 
   if ( !Network_Init(unk_A8E9C0) ) /*0x5db688*/
     return 0; /*0x5db691*/
-  if ( dword_A8B238[0] != 4 ) /*0x5db69e*/
+  if ( (&dword_A8B238)[0] != 4 ) /*0x5db69e*/
   {
     if ( dword_A8D5FC ) /*0x5db6a7*/
     {

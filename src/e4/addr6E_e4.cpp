@@ -71,6 +71,8 @@
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/LayerClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/LightningStorm_e4.hpp"  // G42.36 C2027 supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int Get_Waypoint_Location(...); }  // w16g4 raw call-form
 
 // 0x6E0250
 namespace gamemd {
@@ -183,7 +185,7 @@ char globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
     v17[0] = v13 + 128; /*0x6e2165*/
     v17[2] = dword_B0E6D4; /*0x6e2171*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v17), (int *)(v16)); /*0x6e217d*/
-    Cell::CreateCrater((void *)(v16[0] - 128),(void *)( v16[1] - 128),(void *)( 256),(void *)(256), 0); /*0x6e21af*/
+    Cell::CreateCrater((v16[0] - 128),( v16[1] - 128),( 256),(256), 0); /*0x6e21af*/
   }
   return v15; /*0x6e21b8*/
 }

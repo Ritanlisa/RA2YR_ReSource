@@ -69,6 +69,8 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/CellSystem_e4.hpp"  // G57w10 D supply
 #include "e4/classes/LoadProgressMgr_e4.hpp"  // G57w10 D supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int __0Iostream_init_QAE_XZ_5(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ParseAndApplyAlliances(...);  // raw 0069B170: void __thiscall ParseAndApplyAlliances(ObjectClass *this)
@@ -1382,7 +1384,7 @@ int Scenario_EndGameFlow()
   dword_A8D57C = (unsigned int)(wchar_t *)((char *)dword_A8D57C + 1); /*0x685817*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x68581d*/
   {
-    StringCSF = GetStringCSF( aTxtAwayScoresc, 0, (const char *)(g_Str_File_Scenario_CPP), 2024); /*0x685830*/
+    StringCSF = GetStringCSF( "TXT_AWAY_SCORESCREEN" /*w16g4 "TXT_AWAY_SCORESCREEN" /*w16g4 aTxtAwayScoresc*/*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2024); /*0x685830*/
     ChatMessageWOL( 1, (wchar_t *)(StringCSF)); /*0x685839*/
     v10 = *(unsigned int *)&dword_A8B238; /*0x68583e*/
   }
@@ -1668,7 +1670,7 @@ int Scenario_EndGame()
   dword_A8D57C = (unsigned int)(wchar_t *)((char *)dword_A8D57C + 1); /*0x685f62*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x685f68*/
   {
-    StringCSF = GetStringCSF( aTxtAwayScoresc, 0, (const char *)(g_Str_File_Scenario_CPP), 2492); /*0x685f7b*/
+    StringCSF = GetStringCSF( "TXT_AWAY_SCORESCREEN" /*w16g4 "TXT_AWAY_SCORESCREEN" /*w16g4 aTxtAwayScoresc*/*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2492); /*0x685f7b*/
     ChatMessageWOL( 1, (wchar_t *)(StringCSF)); /*0x685f84*/
     v10 = *(unsigned int *)&dword_A8B238; /*0x685f89*/
   }
@@ -1708,7 +1710,7 @@ int Scenario_EndGame()
     || (v31[1] = (ObjectClass *)asc_82083C,
         v29 = GetStringCSF( (wchar_t *)(g_Str_TXT_NO), 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
         v28 = GetStringCSF( (wchar_t *)(g_Str_TXT_YES), 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
-        v16 = (int *)GetStringCSF( aTxtToReplay, 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
+        v16 = (int *)GetStringCSF( "TXT_TO_REPLAY" /*w16g4 "TXT_TO_REPLAY" /*w16g4 aTxtToReplay*/*/, 0, (const char *)(g_Str_File_Scenario_CPP), 2559),
         (v15 = ((Dialog *)v16)->ShowMessageBox( (unsigned short *)(v28), (unsigned short *)(v29), 0, 0, v30)) != 0) )
   {
     if ( !v11 ) /*0x6860f0*/
@@ -1756,13 +1758,13 @@ int Scenario_EndGame()
       *(unsigned int *)&stru_A8B250.__pad_0[i * 4 + 44] = v32[i]; /*0x68624a*/
       v22 = v33[i]; /*0x686250*/
       *(unsigned int *)&stru_A8B250.__pad_0[i * 4 + 76] = v21; /*0x686254*/
-      v23 = v35[i]; /*0x68625a*/
+      (&dword_A8DA90)[i] = v23; /*0x686264*/
       *(unsigned int *)&stru_A8B250.__pad_0[i * 4 + 108] = v22; /*0x68625e*/
-      dword_A8DA90[i] = v23; /*0x686264*/
+      (&dword_A8DA90)[i] = v23; /*0x686264*/
     }
     ((Timer*)(*(Timer **)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x686278*/
   LABEL_65:
-    ScenarioClass::LoadScenarioAndStart((char *)&dword_A8B230[130].abstractFlags, 0, v2, dword_A8B230[375].uniqueId); /*0x686282*/
+    ScenarioClass::LoadScenarioAndStart((char *)(&dword_A8B230)[130].abstractFlags, 0, v2, dword_A8B230[375].uniqueId); /*0x686282*/
     if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x6862be*/
       && dword_A8B23C
       && (*((uint8_t (**)(ObjectClass *))dword_A8B23C->vtable1 + 2))( (ObjectClass *)(dword_A8B23C)) )

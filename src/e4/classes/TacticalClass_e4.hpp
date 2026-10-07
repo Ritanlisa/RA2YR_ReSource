@@ -144,6 +144,14 @@ struct TacticalClass {
     int ScrollView(char aP1);  // 0x554af0
     AnimClass * SetObserverView(); // N_fix R5 supply (cache truth)
     int DrawTerrain(int *a2, unsigned int *a3, int a4);
+    static int FillScanlinesTransparent(...);
+    static int updateScroll(...);  // w16g4 C3861 static supply (raw 0x007343E0)  // w16g4 C3861 static supply (raw 0x00411330)
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int uniqueId4;  // @0x6d7c19 (W16G3 raw-usage vocab)
+    unsigned int uniqueId5;  // @0x6d7ccd (W16G3 raw-usage vocab)
+    unsigned int abstractFlags6;  // @0x6d30a2 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 
 } // namespace gamemd

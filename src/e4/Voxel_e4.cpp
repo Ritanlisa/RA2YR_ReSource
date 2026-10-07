@@ -24,6 +24,8 @@
 #include "e4/classes/Float4_e4.hpp"
 #include "e4/classes/Int4_e4.hpp"
 #include "e4/classes/DynamicVectorClass_flat_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/VoxelPalette_e4.hpp"  // w16g4 C3861 VoxelPalette:: supply
+#include "e4/classes/ObjectPlacement_e4.hpp"  // w16g4 C3861 ObjectPlacement:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int GenerateLightRemapTable(...);  // raw 00758B70: int __thiscall GenerateLightRemapTable(ObjectClass *this, float *a2, int a3)
@@ -1082,19 +1084,19 @@ int Voxel::ProcessColor(unsigned int *a2, float *a3)
   v18 = v6; /*0x7565e3*/
   v33 = v16; /*0x7565e7*/
   v34 = v6; /*0x7565eb*/
-  v19[0] = *(unsigned int *)v4; /*0x7565f1*/
+  v7 = 3 * (&dword_8468C4)[v5]; /*0x756605*/
   v19[1] = *(unsigned int *)(v4 + 4); /*0x7565f8*/
-  v7 = 3 * dword_8468C4[v5]; /*0x756605*/
-  v19[2] = *(unsigned int *)(v4 + 8); /*0x756608*/
-  v8 = (float *)&a2[v7 + 10]; /*0x75660c*/
-  v35 = (float *)&a2[3 * dword_8468CC[v5] + 10]; /*0x756630*/
-  v9 = (float *)&a2[3 * dword_8468D0[v5] + 10]; /*0x756637*/
-  v10 = dword_8468E0[v5]; /*0x756641*/
-  v19[4] = dword_8468DC[v5]; /*0x756647*/
+  v7 = 3 * (&dword_8468C4)[v5]; /*0x756605*/
+  v35 = (float *)&a2[3 * (&dword_8468CC)[v5] + 10]; /*0x756630*/
+  v9 = (float *)&a2[3 * (&dword_8468D0)[v5] + 10]; /*0x756637*/
+  v10 = (&dword_8468E0)[v5]; /*0x756641*/
+  v19[4] = (&dword_8468DC)[v5]; /*0x756647*/
+  v10 = (&dword_8468E0)[v5]; /*0x756641*/
+  v11 = (&dword_8468D8)[v5]; /*0x756658*/
   v15 = v9; /*0x75664f*/
-  v11 = dword_8468D8[v5]; /*0x756658*/
+  v19[3] = (v32 - 1) * (&dword_8468D4)[v5] + v32 * (v16 - 1) * v11; /*0x75668a*/
   v19[5] = v32 * v10; /*0x756661*/
-  v19[3] = (v32 - 1) * dword_8468D4[v5] + v32 * (v16 - 1) * v11; /*0x75668a*/
+  v19[3] = (v32 - 1) * (&dword_8468D4)[v5] + v32 * (v16 - 1) * v11; /*0x75668a*/
   v20 = Math::RoundToInt((*v8 + 128.0 - *a3) * 256.0); /*0x7566a7*/
   v21 = Math::RoundToInt((v8[1] + 128.0 - a3[1]) * 256.0); /*0x7566cb*/
   v12 = (double)v32; /*0x7566e7*/
@@ -1111,9 +1113,9 @@ int Voxel::ProcessColor(unsigned int *a2, float *a3)
     v36 = (float)v16; /*0x75670f*/
     v28 = Math::RoundToInt((v35[2] - v8[2]) / v36 * 256.0); /*0x7567f0*/
     v17 = (float)v18; /*0x756740*/
-    v31 = Math::RoundToInt((v15[2] - v8[2]) / v17 * 256.0); /*0x75680a*/
+  v13 = (&dword_8468C0)[v5]; /*0x756818*/
   }
-  v13 = dword_8468C0[v5]; /*0x756818*/
+  v13 = (&dword_8468C0)[v5]; /*0x756818*/
   if ( dword_B43180 ) /*0x756820*/
     v13 |= 2u; /*0x756822*/
   if ( dword_B43184 ) /*0x75682c*/
@@ -1322,9 +1324,9 @@ int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * 
   int result; // eax
 
   v5 = word_B46254[(int)this->Voxel_field_0x130 /*0x75ee44*/
-                 + (uint16_t)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->Voxel_field_0xCC - aP2)]];
+                 + (uint16_t)((unsigned short *)&word_B4669C)[300 * arg8 + abs32(a2 - (unsigned int)this->Voxel_field_0xCC - aP2)]];
   LODWORD(v5) = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x75ee47*/
-  v6 = dword_B46648[(unsigned int)v5]; /*0x75ee50*/
+  v6 = (&dword_B46648)[(unsigned int)v5]; /*0x75ee50*/
   WORD2(v5) = a4[*(unsigned int *)&this->__pad_134[4 * v5 + 212]]; /*0x75ee57*/
   v7 = ((v6 * (uint8_t)((uint8_t)(WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue)) >> 8) /*0x75eeb8*/
      + (uint8_t)((uint8_t)(WORD2(v5) >> g_BitMask_Green) << g_BitMask_Blue);
@@ -1798,12 +1800,12 @@ int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
   int result; // eax
 
   v5 = word_B45E68[(int)this->Voxel_field_0x130 /*0x7601d9*/
-                 + (uint16_t)word_B4669C[300 * arg8 + abs32(a2 - (unsigned int)this->Voxel_field_0xCC - aP2)]];
+                 + (uint16_t)((unsigned short *)&word_B4669C)[300 * arg8 + abs32(a2 - (unsigned int)this->Voxel_field_0xCC - aP2)]];
   v6 = (HIDWORD(v5) ^ v5) - HIDWORD(v5); /*0x7601dc*/
   if ( v6 >= 9 ) /*0x7601e1*/
     v6 = 9; /*0x7601e3*/
   v7 = a4[*(unsigned int *)&this->__pad_134[4 * v6 + 212]]; /*0x7601fb*/
-  v8 = dword_B46648[v6]; /*0x760256*/
+  v8 = (&dword_B46648)[v6]; /*0x760256*/
   v9 = (((uint8_t)((uint8_t)(v7 >> g_BitShift_Red) << g_BitShift_Green_0) * (v8 / 2)) >> 8) /*0x76027d*/
      + (uint8_t)((uint8_t)(v7 >> g_BitShift_Red) << g_BitShift_Green_0);
   v10 = 255; /*0x760286*/
@@ -2322,7 +2324,7 @@ int Voxel::SectionProject(int * a2, int a3)
   if ( (byte_B45DA0 & 1) == 0 ) /*0x76165b*/
   {
     byte_B45DA0 |= 1u; /*0x76167d*/
-    dword_B45DA8[0] = -1041235968; /*0x76168f*/
+    (&dword_B45DA8)[0] = -1041235968; /*0x76168f*/
     dword_B45DAC = -1027080192; /*0x7616a0*/
     dword_B45DB0 = 0; /*0x7616b2*/
     dword_B45DB4 = -1041235968; /*0x7616c4*/
@@ -2873,7 +2875,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   if ( (byte_B45D88 & 1) == 0 ) /*0x76208b*/
   {
     byte_B45D88 |= 1u; /*0x7620ad*/
-    dword_B45CA0[0] = -1041235968; /*0x7620bf*/
+    (&dword_B45CA0)[0] = -1041235968; /*0x7620bf*/
     dword_B45CA4 = -1027080192; /*0x7620d0*/
     dword_B45CA8 = 0; /*0x7620e2*/
     dword_B45CAC = -1041235968; /*0x7620f4*/

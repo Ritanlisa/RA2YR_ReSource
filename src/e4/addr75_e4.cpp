@@ -2177,8 +2177,8 @@ int sub_75A350(int a1, int a2, unsigned char * a3, unsigned int a4)
 // 0x75A7D0
 namespace gamemd {
 int AnimSystem_Reset(int a1)
-{
-  byte_B45BA8[a1 >> 3] |= 1 << (a1 & 7); /*0x75a7dc*/
+  ((unsigned char *)&byte_B45BA8)[a1 >> 3] |= 1 << (a1 & 7); /*0x75a7dc*/
+  ((unsigned char *)&byte_B45BA8)[a1 >> 3] |= 1 << (a1 & 7); /*0x75a7dc*/
   return a1 >> 3; /*0x75a7e2*/
 }
 }
@@ -3351,8 +3351,8 @@ float * sub_7559D0(float * a1, float * a2, void * a3, double a4)
   }
   else
   {
-    v6 = a4; /*0x755a04*/
-    v5 = (float *)Math::QuaternionSlerp( (unsigned int *)(v7), (float *)(&stru_B44348[4 * (unsigned int)a1]), (float *)(&stru_B44348[4 * (unsigned int)a2]), v6); /*0x755a1a*/
+    v5 = (float *)Math::QuaternionSlerp( (unsigned int *)(v7), (float *)(&((unsigned char *)&stru_B44348)[4 * (unsigned int)a1]), (float *)(&((unsigned char *)&stru_B44348)[4 * (unsigned int)a2]), v6); /*0x755a1a*/
+    v5 = (float *)Math::QuaternionSlerp( (unsigned int *)(v7), (float *)(&((unsigned char *)&stru_B44348)[4 * (unsigned int)a1]), (float *)(&((unsigned char *)&stru_B44348)[4 * (unsigned int)a2]), v6); /*0x755a1a*/
     result = ToQuaternionMatrix(v8, v5); /*0x755a25*/
     qmemcpy( (void *)(a3), (const void *)(result), 0x30u); /*0x755a35*/
   }
@@ -3388,8 +3388,8 @@ void * VoxelAnim_InterpolatePose(void * a1, int a2, int a3, double a4)
 // 0x755AC0
 namespace gamemd {
 int sub_755AC0(int a1)
-{
-  return dword_8467FC[a1]; /*0x755ac7*/
+  return (&dword_8467FC)[a1]; /*0x755ac7*/
+  return (&dword_8467FC)[a1]; /*0x755ac7*/
 }
 } // namespace gamemd
 
@@ -3401,7 +3401,7 @@ char sub_755AD0(unsigned int * a1, int * a2)
   unsigned int v4; // [esp+14h] [ebp-4h]
 
   v4 = *a1; /*0x755ad8*/
-  v2 = ((Math *)(double)(int)a1[1] - (double)a2[1])->CalcAngle( (double)*a2 - (double)(int)*a1); /*0x755afa*/
+  v2 = Math::CalcAngle((double)(int)a1[1] - (double)a2[1], (double)*a2 - (double)(int)*a1); /*0x755afa*/
   IDA_LOWORD(v4) = Math::RoundToInt((v2 - 1.570796326794897) * -10430.06004058427); /*0x755b10*/
   return 32 - (((v4 >> 7) + 1) >> 1); /*0x755b26*/
 }
@@ -3813,8 +3813,8 @@ bool BitArray_Test(int a1)
 {
   int result; // eax
 
-  result = a1 >> 3; /*0x75a81b*/
-  IDA_LOBYTE(result) = ((uint8_t)(1 << (a1 & 7)) & (uint8_t)byte_B45BA8[a1 >> 3]) != 0; /*0x75a824*/
+  IDA_LOBYTE(result) = ((uint8_t)(1 << (a1 & 7)) & (uint8_t)((unsigned char *)&byte_B45BA8)[a1 >> 3]) != 0; /*0x75a824*/
+  IDA_LOBYTE(result) = ((uint8_t)(1 << (a1 & 7)) & (uint8_t)((unsigned char *)&byte_B45BA8)[a1 >> 3]) != 0; /*0x75a824*/
   return result; /*0x75a827*/
 }
 } // namespace gamemd

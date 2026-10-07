@@ -91,6 +91,19 @@
 #include "classes/INIClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/_tree_full_e4.hpp"
+// [w16g4] type supply: _VectorClass_V_TRect_H (raw 0x769550 v51 offset evidence 0x0/0x4/0x8/0xC, VectorClass<TRect> flat)
+namespace gamemd {
+struct _VectorClass_V_TRect_H {
+    unsigned char __pad_0[4];   // 0x0 vfptr slot (raw: *(unsigned int*)v51.__pad_0 = &VectorClass_TRect_int_vftable)
+    unsigned char m_1[4];       // 0x4 (raw: *(unsigned int*)&v51.m_1[3] = ...)
+    unsigned int m_8;           // 0x8 (raw: v51.m_8 = 30)
+    unsigned char m_C[4];       // 0xC (raw: IDA_LOWORD(v51.m_C) = 1)
+    unsigned char __tail_10[8]; // 0x10 (raw: v51.__tail_10 member access)
+};
+} // namespace gamemd
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int Map_Load_769C20(...); }  // w16g4 raw call-form
+namespace gamemd { int Map_Load_7694C0(...); }  // w16g4 raw call-form
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int ReadInt(...); }
 namespace gamemd { int SetIntFormat(...); }
@@ -950,7 +963,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
       v45 = (ObjectClass *)_7694C0[1]; /*0x769aa9*/
       v55.fallRate = *_7694C0; /*0x769aac*/
       v55.v45 = v45; /*0x769ab0*/
-      v46 = ((String *)((String *)(char *)&v55))->Assign(aTarget_0); /*0x769acc*/
+      v46 = ((String *)((String *)(char *)&v55))->Assign("Target_" /*w16g4 "Target_" /*w16g4 aTarget_0*/*/); /*0x769acc*/
       v47 = ((String *)((String *)v46))->Concat((char **)(char *)&v55, (char **)(char *)&v55); /*0x769ad3*/
       ((INIClass *)(char *)&v55.ambientSoundController[1])->GetInt( (char **)&v55, (char **)(v47), (unsigned int *)(&v55.fallRate)); /*0x769ae2*/
       j_DeleteAndZero( (void *)((ObjectClass *)(char *)&v55)); /*0x769aeb*/
@@ -1107,10 +1120,10 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   ConcatStringAlloc( (ObjectClass *)((char **)&v32), (const char **)(aP5), (char **)(v13)); /*0x76fa2a*/
   j_DeleteAndZero( (void *)((void **)&a4)); /*0x76fa33*/
   v14 = ((String *)((char **)&v32))->GetOrEmpty(); /*0x76fa43*/
-  StringCSF = GetStringCSF((wchar_t *)v14, 0, aDRa2mdpostWdtt, 39); /*0x76fa4c*/
+  StringCSF = GetStringCSF((wchar_t *)v14, 0, "D:\ra2mdpost\WDTTerr.cpp" /*w16g4 "D:\ra2mdpost\WDTTerr.cpp" /*w16g4 aDRa2mdpostWdtt*/*/, 39); /*0x76fa4c*/
   ((WideString *)((void **)this + 3))->Assign_Alt( (wchar_t *)(StringCSF)); /*0x76fa55*/
   FromStringInt( (IUnknown *)((char **)&aP1), g_DisplayWidth); /*0x76fa64*/
-  v16 = ProcessStringAndCopy((char **)&a4, aTarget_0, (char **)&aP1); /*0x76fa78*/
+  v16 = ProcessStringAndCopy((char **)&a4, "Target_" /*w16g4 "Target_" /*w16g4 aTarget_0*/*/, (char **)&aP1); /*0x76fa78*/
   v17 = (char *)(aP3); /*0x76fa7d*/
   CoordPair = (int *)((INIClass *)(a2))->GetCoordPair( (unsigned int *)(v35), (char *)(aP3), (char **)(v16), (unsigned int *)this + 4); /*0x76fa8c*/
   v19 = *CoordPair; /*0x76fa91*/
@@ -1118,7 +1131,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   *((unsigned int *)this + 4) = v19; /*0x76fa96*/
   *((unsigned int *)this + 5) = v20; /*0x76fa9c*/
   j_DeleteAndZero( (void *)((void **)&a4)); /*0x76fa9f*/
-  v21 = ProcessStringAndCopy((char **)&a4, aOrigin_0, (char **)&aP1); /*0x76fab3*/
+  v21 = ProcessStringAndCopy((char **)&a4, "Origin_" /*w16g4 "Origin_" /*w16g4 aOrigin_0*/*/, (char **)&aP1); /*0x76fab3*/
   v22 = (int *)((INIClass *)(a2))->GetCoordPair( (unsigned int *)(v35), (char *)(v17), (char **)(v21), (unsigned int *)this + 6); /*0x76fac3*/
   v23 = *v22; /*0x76fac8*/
   v24 = v22[1]; /*0x76faca*/

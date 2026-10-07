@@ -28,7 +28,7 @@ struct WaypointPathClass {
     unsigned char q03A;  // 0x3A
     unsigned int q03C;  // 0x3C
     unsigned int AbstractClass;
-    unsigned int waypoints;
+    unsigned int waypoints;  // 0x632
     unsigned int u32_28;
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);

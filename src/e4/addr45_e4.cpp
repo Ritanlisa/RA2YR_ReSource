@@ -864,7 +864,7 @@ void * E4Recv_45DD20::sub_45DD20()
     if ( (int)v2 >= (int)&stru_81926C.voiceIndex ) /*0x45dd34*/
       return (char *)stru_81926C.Name[7]; /*0x45dd3b*/
   }
-  return (char *)&stru_81926C[2 * v1 + 7]; /*0x45dd3b*/
+  return (char *)&((unsigned char *)&stru_81926C)[2 * v1 + 7]; /*0x45dd3b*/
 
 }
 }
@@ -885,7 +885,7 @@ int E4Recv_45DD50::sub_45DD50()
     if ( (int)v3 >= (int)dword_8192B8) /*0x45dd76*/
       return 0; /*0x45dd7d*/
   }
-  return &stru_81926C[2 * v2 + 8]; /*0x45dd78*/
+  return &((unsigned char *)&stru_81926C)[2 * v2 + 8]; /*0x45dd78*/
 
 }
 }

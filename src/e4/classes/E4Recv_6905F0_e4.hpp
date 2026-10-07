@@ -21,5 +21,10 @@ struct E4Recv_6905F0 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     char * sub_6905F0();  // 0x6905F0
+    // --- W16G3 supply (BEGIN) ---
+    char __pad_0[4];  // 0x0 @0x6905f0 (W16G3 raw-usage vocab)
+    void* ScoreFontClass_field_0x0C;  // (W16G3 @0x6905f6 OPDEL/assign)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

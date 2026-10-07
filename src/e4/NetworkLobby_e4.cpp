@@ -1312,17 +1312,17 @@ LABEL_151:
               }
               if ( (int)*(&g_MatrixTransformState + 1301) > 0 && (CoordStruct *)i == *(&g_MatrixTransformState + 1300) )
                 *(&g_MatrixTransformState + 1301) = (CoordStruct *)-1;
-              RA2_OPDEL(*(void **)(*(unsigned int *)&HouseClass_Player[40212] + 4 * i));
+              RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * i));
   int v61; // eax
-v61 = (unsigned int)((*(int (**)(char *, int))(*(unsigned int *)&HouseClass_Player[40208] + 16))( (char *)(&HouseClass_Player[40208]), *(unsigned int *)&HouseClass_Player[40212] + 4 * i));
+v61 = (unsigned int)((*(int (**)(char *, int))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40208] + 16))( (char *)(&((unsigned char *)&HouseClass_Player)[40208]), *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * i));
 
 
-              if ( v61 != -1 && v61 < *(int *)&HouseClass_Player[40224] )
+              if ( v61 != -1 && v61 < *(int *)&((unsigned char *)&HouseClass_Player)[40224] )
               {
-                --*(unsigned int *)&HouseClass_Player[40224];
+                --*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40224];
                 for ( ;
-                      v61 < *(int *)&HouseClass_Player[40224];
-                      *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40212] + 4 * v61 - 4) = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40212] + 4 * v61) )
+                      v61 < *(int *)&((unsigned char *)&HouseClass_Player)[40224];
+                      *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * v61 - 4) = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40212] + 4 * v61) )
                 {
                   ++v61;
                 }
@@ -1333,67 +1333,67 @@ v61 = (unsigned int)((*(int (**)(char *, int))(*(unsigned int *)&HouseClass_Play
             }
           }
           char v62 = 0;
-          ((NetworkLobby *)&HouseClass_Player[39608])->CheckLobbyConditions();
-          for ( j = 0; j < *(int *)&HouseClass_Player[40248]; ++j )
+          ((NetworkLobby *)&((unsigned char *)&HouseClass_Player)[39608])->CheckLobbyConditions();
+          for ( j = 0; j < *(int *)&((unsigned char *)&HouseClass_Player)[40248]; ++j )
           {
             if ( GUID::Compare(
-                   (char *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * j) + 40),
-                   (int)&HouseClass_Player[39608]) )
+                   (char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * j) + 40),
+                   (int)&((unsigned char *)&HouseClass_Player)[39608]) )
             {
-              RA2_OPDEL(*(void **)(*(unsigned int *)&HouseClass_Player[40236] + 4 * j));
+              RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * j));
   int v64; // eax
-v64 = (*(int (**)(char *, int))(*(unsigned int *)&HouseClass_Player[40232] + 16))( (char *)(&HouseClass_Player[40232]), *(unsigned int *)&HouseClass_Player[40236] + 4 * j);
+v64 = (*(int (**)(char *, int))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40232] + 16))( (char *)(&((unsigned char *)&HouseClass_Player)[40232]), *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * j);
 
 
-              if ( v64 != -1 && v64 < *(int *)&HouseClass_Player[40248] )
+              if ( v64 != -1 && v64 < *(int *)&((unsigned char *)&HouseClass_Player)[40248] )
               {
-                --*(unsigned int *)&HouseClass_Player[40248];
+                --*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248];
                 for ( ;
-                      v64 < *(int *)&HouseClass_Player[40248];
-                      *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * v64 - 4) = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * v64) )
+                      v64 < *(int *)&((unsigned char *)&HouseClass_Player)[40248];
+                      *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * v64 - 4) = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * v64) )
                 {
                   ++v64;
                 }
               }
               v62 = 1;
               if ( (int)*(&g_MatrixTransformState + 1301) >= 2 )
-                PlayVocClass(*(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 1724), 0x2000, 1.0, 0);
+                PlayVocClass(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 1724), 0x2000, 1.0, 0);
             }
           }
           int v65 = 1;
-          if ( *(int *)&HouseClass_Player[40200] > 1 )
+          if ( *(int *)&((unsigned char *)&HouseClass_Player)[40200] > 1 )
           {
   int v67; // ecx
             do
             {
               if ( !GUID::Compare(
-                      (char *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v65) + 40),
-                      (int)&HouseClass_Player[39608])
-                || (RA2_OPDEL(*(void **)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v65)),
+                      (char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v65) + 40),
+                      (int)&((unsigned char *)&HouseClass_Player)[39608])
+                || (RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v65)),
   int v66; // eax
-v66 = (*(int (**)(char *, int))(*(unsigned int *)&HouseClass_Player[40184] + 16))( (char *)(&HouseClass_Player[40184]), *(unsigned int *)&HouseClass_Player[40188] + 4 * v65),
+v66 = (*(int (**)(char *, int))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40184] + 16))( (char *)(&((unsigned char *)&HouseClass_Player)[40184]), *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v65),
 
 
                     v66 == -1) )
               {
-                v67 = *(unsigned int *)&HouseClass_Player[40200];
+                v67 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40200];
               }
               else
               {
-                v67 = *(unsigned int *)&HouseClass_Player[40200];
-                if ( v66 < *(int *)&HouseClass_Player[40200] )
+                v67 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40200];
+                if ( v66 < *(int *)&((unsigned char *)&HouseClass_Player)[40200] )
                 {
-                  v67 = *(unsigned int *)&HouseClass_Player[40200] - 1;
-                  *(unsigned int *)&HouseClass_Player[40200] = v67;
+                  v67 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40200] - 1;
+                  *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40200] = v67;
                   if ( v66 < v67 )
                   {
                     do
                     {
                       ++v66;
-                      *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v66 - 4) = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v66);
-                      v67 = *(unsigned int *)&HouseClass_Player[40200];
+                      *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v66 - 4) = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v66);
+                      v67 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40200];
                     }
-                    while ( v66 < *(int *)&HouseClass_Player[40200] );
+                    while ( v66 < *(int *)&((unsigned char *)&HouseClass_Player)[40200] );
                   }
                 }
               }
@@ -1408,7 +1408,7 @@ v66 = (*(int (**)(char *, int))(*(unsigned int *)&HouseClass_Player[40184] + 16)
           EnablePlayerSlotControls(v68, 1);
           if ( Dialog::GetCurrentType() != 107 )
           {
-            (*(void (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936] + 144))(*(unsigned int *)&HouseClass_Player[29936]);
+            (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[29936] + 144))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936]);
 LABEL_222:
             v110 = 1;
             continue;
@@ -1425,17 +1425,17 @@ LABEL_222:
         case 0xE:
           if ( *(&g_MatrixTransformState + 1301) == (CoordStruct *)2 )
           {
-            *(unsigned int *)&HouseClass_Player[30724] = *(unsigned int *)&HouseClass_Player[39195];
-            *(unsigned int *)&HouseClass_Player[32208] = *(unsigned int *)&HouseClass_Player[39608];
-            *(unsigned int *)&HouseClass_Player[32212] = *(unsigned int *)&HouseClass_Player[39612];
-            *(unsigned int *)&HouseClass_Player[32216] = *(unsigned int *)&HouseClass_Player[39616];
-            *(unsigned int *)&HouseClass_Player[30720] = *(unsigned int *)&HouseClass_Player[40248];
+            *(unsigned int *)&((unsigned char *)&HouseClass_Player)[30724] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39195];
+            *(unsigned int *)&((unsigned char *)&HouseClass_Player)[32208] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39608];
+            *(unsigned int *)&((unsigned char *)&HouseClass_Player)[32212] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39612];
+            *(unsigned int *)&((unsigned char *)&HouseClass_Player)[32216] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39616];
+            *(unsigned int *)&((unsigned char *)&HouseClass_Player)[30720] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248];
             *(&g_MatrixTransformState + 1299) = (CoordStruct *)1;
-            if ( *(unsigned int *)&HouseClass_Player[39148] == 11 )
+            if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39148] == 11 )
             {
               *(&g_MatrixTransformState + 1301) = (CoordStruct *)3;
             }
-            else if ( *(unsigned int *)&HouseClass_Player[39148] == 14 )
+            else if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39148] == 14 )
             {
               *(&g_MatrixTransformState + 1301) = (CoordStruct *)4;
             }
@@ -1443,10 +1443,10 @@ LABEL_222:
           }
           break;
         case 4:
-          if ( *(unsigned int *)&HouseClass_Player[39195] != *(unsigned int *)&HouseClass_Player[30256] )
+          if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39195] != *(unsigned int *)&((unsigned char *)&HouseClass_Player)[30256] )
           {
             int v72 = 0;
-            if ( *(int *)&HouseClass_Player[40200] <= 0 )
+            if ( *(int *)&((unsigned char *)&HouseClass_Player)[40200] <= 0 )
             {
 LABEL_230:
               int v73 = operator new(0x85u);
@@ -1455,48 +1455,48 @@ LABEL_230:
                 ((Waypoint*)((unsigned char *)(v73 + 40)))->InitInvalid();
               else
                 v74 = 0;
-              char * v78 = CharToWideString( (unsigned char *)(&HouseClass_Player[39152]));
+              char * v78 = CharToWideString( (unsigned char *)(&((unsigned char *)&HouseClass_Player)[39152]));
               wcscpy((wchar_t *)v74, (const wchar_t *)v78);
-              *(unsigned int *)(v74 + 40) = *(unsigned int *)&HouseClass_Player[39608];
-              *(unsigned int *)(v74 + 44) = *(unsigned int *)&HouseClass_Player[39612];
-              *(unsigned int *)(v74 + 48) = *(unsigned int *)&HouseClass_Player[39616];
-              int v79 = *(unsigned int *)&stru_87C374[45004];
-              if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-                v79 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
+              *(unsigned int *)(v74 + 40) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39608];
+              *(unsigned int *)(v74 + 44) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39612];
+              *(unsigned int *)(v74 + 48) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39616];
+              int v79 = *(unsigned int *)&((unsigned char *)&stru_87C374)[45004];
+              if ( *(unsigned int *)&((unsigned char *)&stru_87C374)[44996] != -1 )
+                v79 += TimerGetTicks() - *(unsigned int *)&((unsigned char *)&stru_87C374)[44996];
               *(unsigned int *)(v74 + 52) = v79;
               *(unsigned char *)(v74 + 56) = 0;
-              *(unsigned int *)(v74 + 57) = *(unsigned int *)&HouseClass_Player[39199];
-              if ( *(int *)&HouseClass_Player[40200] < *(int *)&HouseClass_Player[40192]
-                || (HouseClass_Player[40197] || !*(unsigned int *)&HouseClass_Player[40192])
-                && *(int *)&HouseClass_Player[40204] > 0
-&& (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player[40184] + 8))( (char *)(&HouseClass_Player[40184]), *(unsigned int *)&HouseClass_Player[40192] + *(unsigned int *)&HouseClass_Player[40204], 0) )
+              *(unsigned int *)(v74 + 57) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39199];
+              if ( *(int *)&((unsigned char *)&HouseClass_Player)[40200] < *(int *)&((unsigned char *)&HouseClass_Player)[40192]
+                || (((unsigned char *)&HouseClass_Player)[40197] || !*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40192])
+                && *(int *)&((unsigned char *)&HouseClass_Player)[40204] > 0
+&& (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40184] + 8))( (char *)(&((unsigned char *)&HouseClass_Player)[40184]), *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40192] + *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40204], 0) )
 
 
 
 
               {
-                eax245 = (*(unsigned int *)&HouseClass_Player[40200])++;
-                *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * eax245) = v74;
+                eax245 = (*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40200])++;
+                *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * eax245) = v74;
               }
             }
             else
             {
               while ( !GUID::Compare(
-                         (char *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72) + 40),
-                         (int)&HouseClass_Player[39608]) )
+                         (char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v72) + 40),
+                         (int)&((unsigned char *)&HouseClass_Player)[39608]) )
               {
-                if ( ++v72 >= *(int *)&HouseClass_Player[40200] )
+                if ( ++v72 >= *(int *)&((unsigned char *)&HouseClass_Player)[40200] )
                   goto LABEL_230;
               }
-              v75 = (wchar_t **)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72);
-              char * v76 = CharToWideString( (unsigned char *)(&HouseClass_Player[39152]));
+              v75 = (wchar_t **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v72);
+              char * v76 = CharToWideString( (unsigned char *)(&((unsigned char *)&HouseClass_Player)[39152]));
               wcscpy(*v75, (const wchar_t *)v76);
-              int v77 = *(unsigned int *)&stru_87C374[45004];
-              if ( *(unsigned int *)&stru_87C374[44996] != -1 )
-                v77 += TimerGetTicks() - *(unsigned int *)&stru_87C374[44996];
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72) + 52) = v77;
-              *(unsigned char *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72) + 56) = 0;
-              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40188] + 4 * v72) + 57) = *(unsigned int *)&HouseClass_Player[39199];
+              int v77 = *(unsigned int *)&((unsigned char *)&stru_87C374)[45004];
+              if ( *(unsigned int *)&((unsigned char *)&stru_87C374)[44996] != -1 )
+                v77 += TimerGetTicks() - *(unsigned int *)&((unsigned char *)&stru_87C374)[44996];
+              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v72) + 52) = v77;
+              *(unsigned char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v72) + 56) = 0;
+              *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40188] + 4 * v72) + 57) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39199];
             }
             if ( !*(&g_MatrixTransformState + 1300) )
               v110 = 1;
@@ -1511,51 +1511,51 @@ LABEL_230:
             v124 = 0;
             char v125 = 0;
             v123[0] = 4;
-            v80 = *(ObjectClass **)&HouseClass_Player[30280];
-            strcpy( (char *)&v123[1], (const char *)(&HouseClass_Player[30260]));
-            *(unsigned int *)((char *)&v123[11] + 3) = *(unsigned int *)&HouseClass_Player[30256];
+            v80 = *(ObjectClass **)&((unsigned char *)&HouseClass_Player)[30280];
+            strcpy( (char *)&v123[1], (const char *)(&((unsigned char *)&HouseClass_Player)[30260]));
+            *(unsigned int *)((char *)&v123[11] + 3) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[30256];
             *(unsigned int *)((char *)&v123[12] + 3) = (unsigned int)v80;
             Network::SendMessage(
-              (int)&HouseClass_Player[44148],
+              (int)&((unsigned char *)&HouseClass_Player)[44148],
               (int)v123,
               455,
               1,
-              (int)&HouseClass_Player[39608],
+              (int)&((unsigned char *)&HouseClass_Player)[39608],
               0,
               0);
             Event::Dispatch();
           }
           continue;
         case 0xC:
-          v81 = *(ObjectClass **)&HouseClass_Player[39420];
+          v81 = *(ObjectClass **)&((unsigned char *)&HouseClass_Player)[39420];
           if ( *(&g_MatrixTransformState + 1301) != (CoordStruct *)2
-            || *(unsigned int *)&HouseClass_Player[39424] == WideString::Hash(  (wchar_t *)&HouseClass_Player[39108]) )
+            || *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39424] == WideString::Hash(  (wchar_t *)&((unsigned char *)&HouseClass_Player)[39108]) )
           {
-            char * v83 = CharToWideString( (unsigned char *)(&HouseClass_Player[39152]));
+            char * v83 = CharToWideString( (unsigned char *)(&((unsigned char *)&HouseClass_Player)[39152]));
             Dialog::ShowMessage( (LPARAM)v81, (size_t)g_Str_Trace___s_, (char *)((char)(v83)), 11064936);
-            PlayVocClass(*(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 1708), 0x2000, 1.0, 0);
+            PlayVocClass(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 1708), 0x2000, 1.0, 0);
           }
           continue;
         case 6:
-          if ( *(unsigned int *)&HouseClass_Player[40248] )
+          if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248] )
           {
             int v84 = 0;
             int v85 = 0;
             Blocka = 0;
             int v86 = 1;
-            if ( *(int *)&HouseClass_Player[40248] > 1 )
+            if ( *(int *)&((unsigned char *)&HouseClass_Player)[40248] > 1 )
             {
               while ( 1 )
               {
-                char * v87 = ToWideStringChar(*(IUnknown **)(*(unsigned int *)&HouseClass_Player[40236] + 4 * v86));
-                if ( !_strcmpi(v87, &HouseClass_Player[39152]) )
+                char * v87 = ToWideStringChar(*(IUnknown **)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * v86));
+                if ( !_strcmpi(v87, &((unsigned char *)&HouseClass_Player)[39152]) )
                   break;
-                if ( ++v86 >= *(int *)&HouseClass_Player[40248] )
+                if ( ++v86 >= *(int *)&((unsigned char *)&HouseClass_Player)[40248] )
                   goto LABEL_266;
               }
               if ( Network::processPacket(
-                     (char *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * v86) + 40),
-                     (TechnoTypeClass *)&HouseClass_Player[39608]) )
+                     (char *)(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * v86) + 40),
+                     (TechnoTypeClass *)&((unsigned char *)&HouseClass_Player)[39608]) )
               {
                 v84 = 1;
               }
@@ -1566,8 +1566,8 @@ LABEL_230:
               }
             }
 LABEL_266:
-            char * v88 = ToWideStringChar(**(IUnknown ***)&HouseClass_Player[40236]);
-            if ( !_strcmpi(v88, &HouseClass_Player[39152]) || v84 )
+            char * v88 = ToWideStringChar(**(IUnknown ***)&((unsigned char *)&HouseClass_Player)[40236]);
+            if ( !_strcmpi(v88, &((unsigned char *)&HouseClass_Player)[39152]) || v84 )
             {
               memset( (void *)(v119), 0, sizeof(v119));
               v120 = 0;
@@ -1575,18 +1575,18 @@ LABEL_266:
               v119[0] = 8;
               *(unsigned int *)((char *)&v119[11] + 3) = 0;
               Network::SendMessage(
-                (int)&HouseClass_Player[44148],
+                (int)&((unsigned char *)&HouseClass_Player)[44148],
                 (int)v119,
                 455,
                 1,
-                (int)&HouseClass_Player[39608],
+                (int)&((unsigned char *)&HouseClass_Player)[39608],
                 0,
                 0);
               continue;
             }
             if ( v85 )
               goto LABEL_276;
-            if ( *(unsigned int *)&HouseClass_Player[39235] != 1 )
+            if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39235] != 1 )
             {
               if ( NetworkLobby::CheckMinPlayers() )
               {
@@ -1596,16 +1596,16 @@ LABEL_266:
                 v119[0] = 8;
                 *(unsigned int *)((char *)&v119[11] + 3) = 1;
                 Network::SendMessage(
-                  (int)&HouseClass_Player[44148],
+                  (int)&((unsigned char *)&HouseClass_Player)[44148],
                   (int)v119,
                   455,
                   1,
-                  (int)&HouseClass_Player[39608],
+                  (int)&((unsigned char *)&HouseClass_Player)[39608],
                   0,
                   0);
                 continue;
               }
-              if ( *(unsigned int *)&HouseClass_Player[39235] != 1 )
+              if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39235] != 1 )
                 goto LABEL_276;
             }
             if ( GameOption::CheckDuplicate() )
@@ -1622,22 +1622,22 @@ LABEL_276:
               bool v89 = 1;
               if ( !Blocka )
               {
-                v89 = *(unsigned int *)&HouseClass_Player[39215] == (unsigned int)*(&g_MatrixTransformState + 1303);
-                if ( *(unsigned int *)&HouseClass_Player[39219] != unknown_libname_30() )
+                v89 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39215] == (unsigned int)*(&g_MatrixTransformState + 1303);
+                if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39219] != unknown_libname_30() )
                   v89 = 0;
-                if ( *(CoordStruct **)&HouseClass_Player[39223] != *(&g_MatrixTransformState + 1304) )
+                if ( *(CoordStruct **)&((unsigned char *)&HouseClass_Player)[39223] != *(&g_MatrixTransformState + 1304) )
                   v89 = 0;
-                if ( *(INIClass **)&HouseClass_Player[39227] != GameOptions::GetEntry() )
+                if ( *(INIClass **)&((unsigned char *)&HouseClass_Player)[39227] != GameOptions::GetEntry() )
                   v89 = 0;
               }
               aP1a = (SessionClass *)(0);
-              if ( *(int *)&HouseClass_Player[40248] > 0 )
+              if ( *(int *)&((unsigned char *)&HouseClass_Player)[40248] > 0 )
               {
-                int v90 = *(unsigned int *)&HouseClass_Player[40236];
-                int v91 = *(unsigned int *)&HouseClass_Player[40248];
+                int v90 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236];
+                int v91 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248];
                 do
                 {
-                  if ( !strcmp((const char *)(*(unsigned int *)v90 + 52), &HouseClass_Player[39172]) )
+                  if ( !strcmp((const char *)(*(unsigned int *)v90 + 52), &((unsigned char *)&HouseClass_Player)[39172]) )
                     aP1a = (SessionClass *)((char *)aP1a + 1);
                   v90 += 4;
                   --v91;
@@ -1651,11 +1651,11 @@ LABEL_276:
                   v119[0] = 8;
                   *(unsigned int *)((char *)&v119[11] + 3) = 7;
                   Network::SendMessage(
-                    (int)&HouseClass_Player[44148],
+                    (int)&((unsigned char *)&HouseClass_Player)[44148],
                     (int)v119,
                     455,
                     1,
-                    (int)&HouseClass_Player[39608],
+                    (int)&((unsigned char *)&HouseClass_Player)[39608],
                     0,
                     0);
                   continue;
@@ -1666,10 +1666,10 @@ LABEL_276:
                 if ( Blocka )
                   continue;
                 updated = NetworkBuffer::UpdateWindow(
-                            (VersionClass *)&HouseClass_Player[44948],
-                            *(CellStruct **)&HouseClass_Player[39207],
-                            *(unsigned int *)&HouseClass_Player[39211]);
-                *(unsigned int *)&HouseClass_Player[31608] = updated;
+                            (VersionClass *)&((unsigned char *)&HouseClass_Player)[44948],
+                            *(CellStruct **)&((unsigned char *)&HouseClass_Player)[39207],
+                            *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39211]);
+                *(unsigned int *)&((unsigned char *)&HouseClass_Player)[31608] = updated;
                 if ( updated )
                 {
                   if ( updated == -1 )
@@ -1680,17 +1680,17 @@ LABEL_276:
                     v119[0] = 8;
                     *(unsigned int *)((char *)&v119[11] + 3) = 3;
                     Network::SendMessage(
-                      (int)&HouseClass_Player[44148],
+                      (int)&((unsigned char *)&HouseClass_Player)[44148],
                       (int)v119,
                       455,
                       1,
-                      (int)&HouseClass_Player[39608],
+                      (int)&((unsigned char *)&HouseClass_Player)[39608],
                       0,
                       0);
                   }
                   else
                   {
-                    *(unsigned int *)&HouseClass_Player[29952] = ((Network *)(VersionClass *)&HouseClass_Player[44948])->GetMaxPacketSize();
+                    *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29952] = ((Network *)(VersionClass *)&((unsigned char *)&HouseClass_Player)[44948])->GetMaxPacketSize();
                     int v93 = operator new(0x85u);
                     int v94 = v93;
                     if ( v93 )
@@ -1699,32 +1699,32 @@ LABEL_276:
                       v94 = 0;
                     memset((void *)v94, 0, 0x84u);
                     *(unsigned char *)(v94 + 132) = 0;
-                    char * v95 = CharToWideString( (unsigned char *)(&HouseClass_Player[39152]));
+                    char * v95 = CharToWideString( (unsigned char *)(&((unsigned char *)&HouseClass_Player)[39152]));
                     wcscpy((wchar_t *)v94, (const wchar_t *)v95);
-                    *(unsigned int *)(v94 + 40) = *(unsigned int *)&HouseClass_Player[39608];
-                    *(unsigned int *)(v94 + 44) = *(unsigned int *)&HouseClass_Player[39612];
-                    *(unsigned int *)(v94 + 48) = *(unsigned int *)&HouseClass_Player[39616];
-                    if ( *(unsigned int *)&HouseClass_Player[29936] )
+                    *(unsigned int *)(v94 + 40) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39608];
+                    *(unsigned int *)(v94 + 44) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39612];
+                    *(unsigned int *)(v94 + 48) = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39616];
+                    if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936] )
                     {
-                      if ( (*(uint8_t (**)(unsigned int, unsigned int))(**(unsigned int **)&HouseClass_Player[29936]
+                      if ( (*(uint8_t (**)(unsigned int, unsigned int))(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[29936]
                                                                              + 28))(
-                             *(unsigned int *)&HouseClass_Player[29936],
-                             *(unsigned int *)&HouseClass_Player[39195]) )
+                             *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936],
+                             *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39195]) )
                       {
-                        v96 = *(SkirmishDialog **)&HouseClass_Player[39195];
+                        v96 = *(SkirmishDialog **)&((unsigned char *)&HouseClass_Player)[39195];
                       }
                       else
                       {
-                        v96 = (SkirmishDialog *)(*(int (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936]
-                                                                              + 40))(*(unsigned int *)&HouseClass_Player[29936]);
+                        v96 = (SkirmishDialog *)(*(int (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[29936]
+                                                                              + 40))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936]);
                       }
                       ((SessionClass *)(v94))->SetPlayerOption( (int)(v96));
                     }
-                    strcpy( (char *)(v94 + 52), (const char *)(&HouseClass_Player[39172]));
-                    int v97 = *(unsigned int *)&HouseClass_Player[39199];
-                    if ( ((NetworkLobby *)*(void **)&HouseClass_Player[39199])->CheckPlayerNameValid() )
+                    strcpy( (char *)(v94 + 52), (const char *)(&((unsigned char *)&HouseClass_Player)[39172]));
+                    int v97 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39199];
+                    if ( ((NetworkLobby *)*(void **)&((unsigned char *)&HouseClass_Player)[39199])->CheckPlayerNameValid() )
                       v97 = -2;
-                    if ( *(unsigned int *)&HouseClass_Player[39235] == 1 )
+                    if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39235] == 1 )
                     {
                       v97 = -2;
                       ((SessionClass *)(v94))->SetPlayerOption( (int)((SkirmishDialog *)0xFFFFFFFD));
@@ -1733,12 +1733,12 @@ LABEL_276:
                     else
                     {
                       *(unsigned int *)(v94 + 107) = 0;
-                      if ( *(unsigned int *)&HouseClass_Player[39195] == -3 )
+                      if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39195] == -3 )
                       {
-                        if ( *(unsigned int *)&HouseClass_Player[29936] )
+                        if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936] )
                         {
-                          v106 = (CCINIClass *)(*(int (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936]
-                                                                             + 40))(*(unsigned int *)&HouseClass_Player[29936]);
+                          v106 = (CCINIClass *)(*(int (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[29936]
+                                                                             + 40))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936]);
                           ((SessionClass *)(v94))->SetPlayerOption( (int)((SkirmishDialog *)v106));
                         }
                         else
@@ -1749,28 +1749,28 @@ LABEL_276:
                     }
                     ((SessionClass *)(v94))->SetPlayerColor(v97);
                     ((SessionClass *)(v94))->SetOption((SessionClass *)0xFFFFFFFE);
-                    if ( *(unsigned int *)&HouseClass_Player[29936] )
+                    if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936] )
                     {
-                      v107 = (CCINIClass *)(*(int (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936]
-                                                                         + 44))(*(unsigned int *)&HouseClass_Player[29936]);
+                      v107 = (CCINIClass *)(*(int (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[29936]
+                                                                         + 44))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936]);
                       ((SessionClass *)(v94))->SetOption2( (int)((SessionClass *)v107));
                     }
                     else
                     {
                       ((SessionClass *)(v94))->SetOption2( (int)((SessionClass *)0xFFFFFFFE));
                     }
-                    if ( *(int *)&HouseClass_Player[40248] < *(int *)&HouseClass_Player[40240]
-                      || (HouseClass_Player[40245] || !*(unsigned int *)&HouseClass_Player[40240])
-                      && *(int *)&HouseClass_Player[40252] > 0
-&& (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player[40232] + 8))( (char *)(&HouseClass_Player[40232]), *(unsigned int *)&HouseClass_Player[40240] + *(unsigned int *)&HouseClass_Player[40252], 0) )
+                    if ( *(int *)&((unsigned char *)&HouseClass_Player)[40248] < *(int *)&((unsigned char *)&HouseClass_Player)[40240]
+                      || (((unsigned char *)&HouseClass_Player)[40245] || !*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40240])
+                      && *(int *)&((unsigned char *)&HouseClass_Player)[40252] > 0
+&& (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40232] + 8))( (char *)(&((unsigned char *)&HouseClass_Player)[40232]), *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40240] + *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40252], 0) )
 
 
 
 
 
                     {
-                      int v98 = (*(unsigned int *)&HouseClass_Player[40248])++;
-                      *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * v98) = v94;
+                      int v98 = (*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248])++;
+                      *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * v98) = v94;
                     }
                     ebx325 = ((NetworkLobby *)v94)->AssignPlayerSlot();
                     Game::ResetReadyStates();
@@ -1779,26 +1779,26 @@ LABEL_276:
                     v121 = 0;
                     v119[0] = 7;
                     v110 = 1;
-                    strcpy( (char *)&v119[1], (const char *)(&HouseClass_Player[30260]));
+                    strcpy( (char *)&v119[1], (const char *)(&((unsigned char *)&HouseClass_Player)[30260]));
                     *(unsigned int *)((char *)&v119[11] + 3) = ((SessionClass *)(v94))->GetPlayerSide();
                     v99 = (SessionClass *)((SessionClass *)(v94))->GetPlayerColor();
                     *(unsigned int *)((char *)&v119[21] + 3) = *(unsigned int *)&stru_830620[4228];
                     *(unsigned int *)((char *)&v119[12] + 3) = (unsigned int)v99;
                     *(unsigned int *)((char *)&v119[20] + 3) = ebx325;
                     Network::SendMessage(
-                      (int)&HouseClass_Player[44148],
+                      (int)&((unsigned char *)&HouseClass_Player)[44148],
                       (int)v119,
                       455,
                       1,
-                      (int)&HouseClass_Player[39608],
+                      (int)&((unsigned char *)&HouseClass_Player)[39608],
                       0,
                       0);
-                    PlayVocClass(*(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 1728), 0x2000, 1.0, 0);
-                    if ( *(unsigned int *)&HouseClass_Player[29936] )
+                    PlayVocClass(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 1728), 0x2000, 1.0, 0);
+                    if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936] )
                     {
-                      int v101 = (*(int (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936] + 152))(*(unsigned int *)&HouseClass_Player[29936]);
+                      int v101 = (*(int (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&HouseClass_Player)[29936] + 152))(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29936]);
                       if ( v101 != -1 )
-                        *(unsigned int *)&HouseClass_Player[32192] = v101;
+                        *(unsigned int *)&((unsigned char *)&HouseClass_Player)[32192] = v101;
                     }
                     CheckGameSettingsChanged(1, 0);
   unsigned int v129[113]; // [esp+612h] [ebp-1C8h] BYREF
@@ -1806,17 +1806,17 @@ LABEL_276:
                     v130 = 0;
                     char v131 = 0;
                     v129[0] = 22;
-                    strcpy( (char *)&v129[1], (const char *)(&HouseClass_Player[30260]));
+                    strcpy( (char *)&v129[1], (const char *)(&((unsigned char *)&HouseClass_Player)[30260]));
                     ((Player *)(((char *)&v129[11] + 3)))->BuildListString();
-                    int v102 = *(unsigned int *)&HouseClass_Player[40248];
+                    int v102 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[40248];
                     for ( k = 1; k < v102; ++k )
                     {
                       Network::SendMessage(
-                        (int)&HouseClass_Player[44148],
+                        (int)&((unsigned char *)&HouseClass_Player)[44148],
                         (int)v129,
                         455,
                         1,
-                        *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * k) + 40,
+                        *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * k) + 40,
                         0,
                         0);
                       Event::Dispatch();
@@ -1850,11 +1850,11 @@ LABEL_276:
             *(unsigned int *)((char *)&v119[11] + 3) = 5;
           }
           Network::SendMessage(
-            (int)&HouseClass_Player[44148],
+            (int)&((unsigned char *)&HouseClass_Player)[44148],
             (int)v119,
             455,
             1,
-            (int)&HouseClass_Player[39608],
+            (int)&((unsigned char *)&HouseClass_Player)[39608],
             0,
             0);
           break;
@@ -1869,40 +1869,40 @@ LABEL_276:
       v127 = 0;
       char v128 = 0;
       v126[0] = 10;
-      strcpy( (char *)&v126[1], (const char *)(&HouseClass_Player[30260]));
-      for ( m = 1; m < *(int *)&HouseClass_Player[40248]; ++m )
+      strcpy( (char *)&v126[1], (const char *)(&((unsigned char *)&HouseClass_Player)[30260]));
+      for ( m = 1; m < *(int *)&((unsigned char *)&HouseClass_Player)[40248]; ++m )
       {
         Network::SendMessage(
-          (int)&HouseClass_Player[44148],
+          (int)&((unsigned char *)&HouseClass_Player)[44148],
           (int)v126,
           455,
           1,
-          *(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * m) + 40,
+          *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[40236] + 4 * m) + 40,
           0,
           0);
         Event::Dispatch();
       }
-      ((gamemd::Network*)(int)&HouseClass_Player[44148])->SendMessage( (int)v126, 455, 0, 0, 0, 0);
-      if ( *(unsigned int *)&HouseClass_Player[39088] )
+      ((gamemd::Network*)(int)&((unsigned char *)&HouseClass_Player)[44148])->SendMessage( (int)v126, 455, 0, 0, 0, 0);
+      if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39088] )
         Network::SendMessage(
-          (int)&HouseClass_Player[44148],
+          (int)&((unsigned char *)&HouseClass_Player)[44148],
           (int)v126,
           455,
           0,
-          (int)&HouseClass_Player[39092],
+          (int)&((unsigned char *)&HouseClass_Player)[39092],
           0,
           0);
-      while ( ((Network *)((int)&HouseClass_Player[44148]))->GetQueueCount() > 0 )
+      while ( ((Network *)((int)&((unsigned char *)&HouseClass_Player)[44148]))->GetQueueCount() > 0 )
       {
-        if ( !((Network *)(&HouseClass_Player[44148]))->ReceiveLoop() )
+        if ( !((Network *)(&((unsigned char *)&HouseClass_Player)[44148]))->ReceiveLoop() )
           break;
         Event::Dispatch();
       }
-      *(unsigned short *)&HouseClass_Player[39108] = 0;
+      *(unsigned short *)&((unsigned char *)&HouseClass_Player)[39108] = 0;
       Game::ResetFlags();
       GameClass::InitDifficultyButtons();
-      PtrVector::Destroy( (void *)(&HouseClass_Player[40232]));
-      PtrVector::Destroy( (void *)(&HouseClass_Player[40184]));
+      PtrVector::Destroy( (void *)(&((unsigned char *)&HouseClass_Player)[40232]));
+      PtrVector::Destroy( (void *)(&((unsigned char *)&HouseClass_Player)[40184]));
       *((unsigned long long *)&g_MatrixTransformState + 650) = 0xFFFFFFFF00000000uLL;
       stru_830620[3156] = 1;
       v35 = 4;
@@ -1910,7 +1910,7 @@ LABEL_276:
     }
     else if ( *(&g_MatrixTransformState + 1301) == (CoordStruct *)1 )
     {
-      v35 = *(unsigned int *)&HouseClass_Player[39195];
+      v35 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39195];
       *(&g_MatrixTransformState + 1301) = (CoordStruct *)-1;
     }
     else if ( *(&g_MatrixTransformState + 1301) != (CoordStruct *)-1 )
@@ -1919,7 +1919,7 @@ LABEL_276:
     }
     v37 = GetStringCSF( (wchar_t *)&stru_830620[3724], 0, (const char *)(&stru_830620[3176]), 4540);
     Dialog::ShowMessage(-1, (size_t)v37);
-    PlayVocClass(*(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 1712), 0x2000, 1.0, 0);
+    PlayVocClass(*(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 1712), 0x2000, 1.0, 0);
     switch ( v35 )
     {
       case 0:
@@ -2143,7 +2143,7 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
         }
         if ( !v25.__pad_0[(unsigned int)v10 + 4] )
         {
-          dword_A8DA90[(unsigned int)v10] = (LPARAM)v12; /*0x5e915c*/
+          (&dword_A8DA90)[(unsigned int)v10] = (LPARAM)v12; /*0x5e915c*/
           v19 = GetResourceID2CSF( (int)(v10)); /*0x5e9163*/
           SetupComboBoxObserver(v18, v19); /*0x5e916c*/
           if ( v10 )
@@ -2188,7 +2188,7 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
           SetupSkirmishSpawnLocations( (HWND)(v18), v22, 8); /*0x5e9207*/
         }
       }
-      dword_A8DA90[(unsigned int)v10] = (LPARAM)v12; /*0x5e9211*/
+      (&dword_A8DA90)[(unsigned int)v10] = (LPARAM)v12; /*0x5e9211*/
       v10 = (ObjectClass *)((char *)v10 + 1); /*0x5e921a*/
     }
   }
@@ -2213,7 +2213,7 @@ int NetworkLobby::AssignPlayerSlot()
     if ( (int)v2 >= (int)&dword_A8DAB0 ) /*0x5e9278*/
       return -1; /*0x5e9280*/
   }
-  dword_A8DA90[result] = (LPARAM)this; /*0x5e9284*/
+  (&dword_A8DA90)[result] = (LPARAM)this; /*0x5e9284*/
   return result; /*0x5e927a*/
 
 }
@@ -2297,7 +2297,7 @@ void * NetworkLobby::Dispatch()
       v2 = 1746; /*0x5ea2b5*/
     }
     DlgItem = GetDlgItem((HWND)this, v2); /*0x5ea31f*/
-    v4 = (wchar_t *)dword_A8DA90[i]; /*0x5ea321*/
+    v4 = (wchar_t *)(&dword_A8DA90)[i]; /*0x5ea321*/
     v5 = 0; /*0x5ea328*/
     if ( v4 /*0x5ea36c*/
       && v4 != (wchar_t *)g_HouseClass_ObserverFlags
@@ -2314,7 +2314,7 @@ LABEL_33:
       v5 = (HWND)v6; /*0x5ea3be*/
       goto LABEL_34; /*0x5ea3be*/
     }
-    v7 = dword_A8DA90[i]; /*0x5ea382*/
+    v7 = (&dword_A8DA90)[i]; /*0x5ea382*/
     if ( v7 && (v7 == g_Lobby_PlayerTeam || v7 == g_Lobby_PlayerSide || v7 == g_Lobby_PlayerColor) /*0x5ea3a9*/
       || *(unsigned int *)(v7 + 119) == 1 )
     {
@@ -2390,9 +2390,9 @@ int NetworkLobby::SetupPlayerSlotControls(HWND hDlg)
     if ( v5 && (v5 == g_Lobby_PlayerTeam || v5 == g_Lobby_PlayerSide || v5 == g_Lobby_PlayerColor) ) /*0x5eb749*/
     {
       if ( i >= v8 ) /*0x5eb74f*/
-        dword_A8DA90[i] = g_Lobby_PlayerCount; /*0x5eb765*/
+        (&dword_A8DA90)[i] = g_Lobby_PlayerCount; /*0x5eb765*/
       else
-        dword_A8DA90[i] = g_HouseClass_ObserverFlags; /*0x5eb756*/
+        (&dword_A8DA90)[i] = g_HouseClass_ObserverFlags; /*0x5eb756*/
       SetupSkirmishPlayerSlots( (HWND)hDlg, (void *)((void *)i), 0); /*0x5eb772*/
       *(unsigned int *)&stru_A8B250.__pad_0[4 * i + 44] = -1; /*0x5eb77a*/
       *(unsigned int *)&stru_A8B250.__pad_0[4 * i + 76] = -1; /*0x5eb781*/
@@ -2594,17 +2594,17 @@ char NetworkLobby::CheckLobbyConditions()
     if ( (int)v4 >= (int)&dword_A8DAB0 ) /*0x5e92f4*/
       return result; /*0x5e92f4*/
   }
-  result = dword_A8DA90[v3]; /*0x5e92fb*/
+  result = (&dword_A8DA90)[v3]; /*0x5e92fb*/
   if ( *(unsigned int *)(result + 107) == -1 ) /*0x5e9306*/
   {
-    dword_A8DA90[v3] = g_Lobby_MaxPlayers; /*0x5e930e*/
+    (&dword_A8DA90)[v3] = g_Lobby_MaxPlayers; /*0x5e930e*/
   }
   else
   {
     result = g_HouseClass_ObserverFlags; /*0x5e931a*/
     if ( v3 >= v2 ) /*0x5e9321*/
       result = g_Lobby_PlayerCount; /*0x5e9323*/
-    dword_A8DA90[v3] = result; /*0x5e9328*/
+    (&dword_A8DA90)[v3] = result; /*0x5e9328*/
   }
   return result; /*0x5e92f6*/
 
@@ -2643,11 +2643,11 @@ bool NetworkLobby::CheckMinPlayers()
     for ( i = dword_A8DA90; *i != g_HouseClass_ObserverFlags; ++i ) /*0x5e952e*/
     {
       if ( ++v2 >= v1 ) /*0x5e953d*/
-        return g_MPCooperativeState || v1 >= 8 || dword_A8DA90[v1] != g_HouseClass_ObserverFlags; /*0x5e953d*/
+        return g_MPCooperativeState || v1 >= 8 || (&dword_A8DA90)[v1] != g_HouseClass_ObserverFlags; /*0x5e953d*/
     }
     return 0; /*0x5e9535*/
   }
-  return g_MPCooperativeState || v1 >= 8 || dword_A8DA90[v1] != g_HouseClass_ObserverFlags; /*0x5e9554*/
+  return g_MPCooperativeState || v1 >= 8 || (&dword_A8DA90)[v1] != g_HouseClass_ObserverFlags; /*0x5e9554*/
 
 }
 } // namespace gamemd

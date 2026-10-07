@@ -20,6 +20,7 @@
 #include "e4/classes/Object_e4.hpp"  // gB C2027 supply
 #include "e4/classes/Timer_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+#include "e4/classes/Rules_e4.hpp"  // w16g4 C3861 Rules:: supply
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int vftable;  // 词表 (canon 无条目, int 兜底) L579
 extern char aEvaInsufficien[];  // G57w8: raw IDA string-label vocab

@@ -812,7 +812,7 @@ int HouseClass::Construct(int a2)
   }
   memset((char *)this + 5625, 0, 0x10810u); /*0x4f6324*/
   *((char *)this + 118) |= 1 << *((char *)this + 12); /*0x4f633d*/
-  v68 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 450, 1800); /*0x4f635a*/
+  v68 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 450, 1800); /*0x4f635a*/
   LOWORD(v51) = Math::RoundToInt((double)v68 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4264)); /*0x4f6368*/
   *((char *)this + 5500) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f6373*/
   *((char *)this + 5501) = *(unsigned int *)&Destination[4]; /*0x4f637d*/
@@ -1132,7 +1132,7 @@ int HouseClass::CanAlly(HouseClass * aP1)
     if ( v3 == *((unsigned int *)this + 12) || v3 != -1 && (*((unsigned int *)this + 5602) & (1 << v3)) != 0 ) /*0x501573*/
       return 0; /*0x501576*/
   }
-  if ( *(unsigned int *)(*(unsigned int *)(aP1 + 52) + 188) == ((HouseTypeClass *)g_INI_Key_Civilian)->Find() && dword_A8B238[0] ) /*0x501598*/
+  if ( *(unsigned int *)(*(unsigned int *)(aP1 + 52) + 188) == ((HouseTypeClass *)g_INI_Key_Civilian)->Find() && (&dword_A8B238)[0] ) /*0x501598*/
     return 0; /*0x50159b*/
   if ( dword_A8E7AC ) /*0x5015a8*/
     return 1; /*0x5015ab*/
@@ -1679,7 +1679,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
           fild [esp+174h+var_140]
           fstp [esp+174h+var_174]; double
         }
-        ((Math *)v102)->CalcAngle( v104); /*0x507042*/
+        Math::CalcAngle(v102, v104); /*0x507042*/
         __asm { fsub ds:dbl_7E2820 } /*0x507047*/
         __asm { fmul ds:dbl_7E2818 }
         v13 = Math::RoundToInt(a2); /*0x507056*/
@@ -1729,7 +1729,7 @@ AbstractClass * * HouseClass::AutoBuildScanAndSort(int a2, unsigned int * a3)
           fild [esp+16Ch+var_140]
         }
         __asm { fstp [esp+174h+var_174]; double }
-        ((Math *)v103)->CalcAngle( v105); /*0x50714f*/
+        Math::CalcAngle(v103, v105); /*0x50714f*/
         __asm { fsub ds:dbl_7E2820 } /*0x507154*/
         __asm { fmul ds:dbl_7E2818 }
         v28 = Math::RoundToInt(a2); /*0x507163*/
@@ -2821,7 +2821,7 @@ void HouseClass::LostPoweredCenter(int a2, void *a2_2)
         while ( v5 >= 0 ); /*0x50e14c*/
         if ( v4 && byte_A8E9A0 ) /*0x50e15a*/
         {
-          if ( dword_A8B238[0] ) /*0x50e163*/
+          if ( (&dword_A8B238)[0] ) /*0x50e163*/
           {
             if ( (void *)this != dword_A83D4C ) /*0x50e186*/
               return; /*0x50e186*/

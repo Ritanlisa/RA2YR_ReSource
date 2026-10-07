@@ -161,7 +161,7 @@ struct ScenarioClass {
     char initUnits();
     char initWaypoints();
     char loadGame();
-    char processAI();
+    static char processAI();  // [w16g2] static (def body this=0)
     char processTriggerEvents();
     char saveGame();
     int AssignStartPositions(char a1);

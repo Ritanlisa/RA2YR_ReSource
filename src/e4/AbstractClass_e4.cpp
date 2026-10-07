@@ -169,7 +169,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 
 // 0x4FB9B0
 namespace gamemd {
-VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, void * p_vtable0, void * a4, void * a5)
+VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(AbstractClass *a1, void * a2, void * p_vtable0, void * a4, void * a5)
 {
   AbstractClass *v6; // ebp
   p_vtable0 = &v6->vtable1; /*0x4fba45*/
@@ -213,19 +213,19 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   void ***result; // eax
   int v44; // ecx
 
-  v6 = this; /*0x4fb9b2*/
+  v6 = a1; /*0x4fb9b2*/
   v7 = v5; /*0x4fb9b7*/
-  if ( *(AbstractClass **)(v5 + 21728) == this ) /*0x4fb9c1*/
+  if ( *(AbstractClass **)(v5 + 21728) == a1 ) /*0x4fb9c1*/
     *(unsigned int *)(v5 + 21728) = 0; /*0x4fb9c3*/
-  this = (AbstractClass *)__RTDynamicCast( /*0x4fb9e1*/
+  a1 = (AbstractClass *)__RTDynamicCast( /*0x4fb9e1*/
                             &v6->vtable1,
                             0,
                             0,
                             (struct TypeDescriptor *)stru_8249A0.Priority,
                             0);
-  if ( this ) /*0x4fb9e5*/
+  if ( a1 ) /*0x4fb9e5*/
   {
-    v8 = (*(int (**)(int, AbstractClass **))(*(unsigned int *)(v7 + 56) + 16))( v7 + 56, (AbstractClass **)(&this)); /*0x4fb9f4*/
+    v8 = (*(int (**)(int, AbstractClass **))(*(unsigned int *)(v7 + 56) + 16))( v7 + 56, (AbstractClass **)(&a1)); /*0x4fb9f4*/
     if ( v8 != -1 ) /*0x4fb9fa*/
     {
       v9 = *(unsigned int *)(v7 + 72); /*0x4fb9fc*/

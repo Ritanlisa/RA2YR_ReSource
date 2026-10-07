@@ -10,5 +10,9 @@ struct E4Recv_492BA0 {
 // --- flat members (END) ---
     int Vf4(int,  ...);    // G6 vtable slot dispatch
     int sub_492BA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x492BA0
+    // --- W16G3 supply (BEGIN) ---
+    char __pad_0[4];  // 0x0 @0x492bca (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

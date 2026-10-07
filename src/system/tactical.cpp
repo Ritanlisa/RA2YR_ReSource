@@ -2351,11 +2351,11 @@ int TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
   }
   else
   {
-    dword_B0CEC8[3 * result] = obj; /*0x6d9f32*/
+    (&dword_B0CEC8)[3 * result] = obj; /*0x6d9f32*/
     v5 = this->visibleArea[1]; /*0x6d9f3f*/
     v6 = 3 * this->floats[0]; /*0x6d9f50*/
-    dword_B0CECC[v6] = this->visibleArea[0] + screen_x; /*0x6d9f53*/
-    dword_B0CED0[v6] = screen_y + v5; /*0x6d9f5b*/
+    (&dword_B0CECC)[v6] = this->visibleArea[0] + screen_x; /*0x6d9f53*/
+    (&dword_B0CED0)[v6] = screen_y + v5; /*0x6d9f5b*/
     result = this->floats[0] + 1; /*0x6d9f68*/
     this->floats[0] = result; /*0x6d9f69*/
     IDA_LOBYTE(result) = 1; /*0x6d9f6f*/

@@ -55,6 +55,8 @@
 #include "e4/classes/CrateClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 
 // 0x6A6AF0
 namespace gamemd {

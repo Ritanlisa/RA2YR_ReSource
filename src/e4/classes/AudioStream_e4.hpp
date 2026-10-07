@@ -154,7 +154,7 @@ struct AudioStream {
     static int CheckFormatChanged(int a1, const void * a2);  // 0x402800
     int InitListAndCounters(void *a1_1);  // 0x4028B0
     int UpdateTimers();  // 0x404FD0
-    int UpdateCountdowners();  // 0x405040
+    static int UpdateCountdowners();  // 0x405040 [w16g2] static (def body this=0)
     char * Constructor(uint64_t);  // 0x407860
     char * Constructor(uint64_t, void * a2, void * aAudioStream);
 };

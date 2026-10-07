@@ -53,6 +53,7 @@
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimClass_e4.hpp"  // G42.36 C2027 supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
@@ -447,7 +448,7 @@ RectangleStruct* ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown *
 }
 // 0x424CE0
 namespace gamemd {
-void * ProductionCompletionCallback(ObjectClass *self)
+void * ProductionCompletionCallback(TechnoClass *self)
 {
     unsigned int *v2; // eax
     int v3; // eax
@@ -542,7 +543,7 @@ void * ProductionCompletionCallback(ObjectClass *self)
 }
 // 0x424F00
 namespace gamemd {
-unsigned int * CreateUnitOnCompletion_addr42(ObjectClass *self)
+unsigned int * CreateUnitOnCompletion_addr42(TechnoClass *self)
 {
     unsigned int *v2; // eax
     int *v3; // eax
@@ -655,7 +656,7 @@ int sub_4251F0(int a1, short * a2)
 }
 // 0x425670
 namespace gamemd {
-int ConstructionPositionTracker(ObjectClass *self)
+int ConstructionPositionTracker(TechnoClass *self)
 {
     double v1; // st7
     int v3; // eax
@@ -878,8 +879,8 @@ int ConstructionPositionTracker(ObjectClass *self)
             IDA_WORD1(v48) = IDA_HIWORD(dword_89F6A0) + v30; /*0x425ae2*/
             if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj( (int16_t *)((__int16 *)&v48)) + 80) & 0x100) == 0 ) /*0x425b03*/
             {
-              IDA_LOWORD(v48) = IDA_LOWORD(dword_89F688[0]) + v36; /*0x425b1b*/
-              IDA_WORD1(v48) = IDA_HIWORD(dword_89F688[0]) + v30; /*0x425b20*/
+              IDA_LOWORD(v48) = IDA_LOWORD((&dword_89F688)[0]) + v36; /*0x425b1b*/
+              IDA_WORD1(v48) = IDA_HIWORD((&dword_89F688)[0]) + v30; /*0x425b20*/
               if ( (*((unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj( (int16_t *)((__int16 *)&v48)) + 80) & 0x100) == 0 ) /*0x425b41*/
                 self->isFallingDown[0] = 1; /*0x425b47*/
             }
@@ -899,7 +900,7 @@ int ConstructionPositionTracker(ObjectClass *self)
         v44 = *v43; /*0x425c45*/
         IDA_LODWORD(v48) = *v4; /*0x425c47*/
         IDA_LODWORD(v49) = v44; /*0x425c4b*/
-        ((Math *)(double)v43[1] - (double)self->animation[5])->CalcAngle( (double)IDA_SLODWORD(v48) - (double)v44); /*0x425c6a*/
+        Math::CalcAngle((double)v43[1] - (double)self->animation[5], (double)IDA_SLODWORD(v48) - (double)v44); /*0x425c6a*/
         IDA_LOWORD(v49) = Math::RoundToInt((v1 - 1.570796326794897) * -10430.06004058427); /*0x425c83*/
         v42 = *(unsigned int *)(self->missionTimer[0] + 848) /*0x425ca3*/
             * ((-1 - (((unsigned int)((IDA_LODWORD(v49) >> 12) + 1) >> 1) & 7)) & 7);
@@ -1331,8 +1332,8 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
       }
       else
       {
-        IDA_LOWORD(v12) = v4 + IDA_LOWORD(dword_89F688[v8]); /*0x4297f9*/
-        IDA_HIWORD(v12) = IDA_HIWORD(v11) + IDA_HIWORD(dword_89F688[v8]); /*0x4297fe*/
+        IDA_LOWORD(v12) = v4 + IDA_LOWORD((&dword_89F688)[v8]); /*0x4297f9*/
+        IDA_HIWORD(v12) = IDA_HIWORD(v11) + IDA_HIWORD((&dword_89F688)[v8]); /*0x4297fe*/
         v4 = v12; /*0x429803*/
       }
       ++a4; /*0x429807*/
@@ -1505,7 +1506,7 @@ void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
         }
         else
         {
-          v12 = dword_818760[v10 + 3 * (*(int16_t *)(*(unsigned int *)*v6 + 38) - *(int16_t *)(*(unsigned int *)*v5 + 38)) - v11]; /*0x42ab6d*/
+          v12 = (&dword_818760)[v10 + 3 * (*(int16_t *)(*(unsigned int *)*v6 + 38) - *(int16_t *)(*(unsigned int *)*v5 + 38)) - v11]; /*0x42ab6d*/
         }
         v2 = a1; /*0x42ab7f*/
         v4 = (unsigned int)aP1; /*0x42ab83*/
@@ -1820,8 +1821,8 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
     }
     while ( !v26 ); /*0x42b655*/
     v30 = v59 & 7; /*0x42b66e*/
-    v31 = IDA_HIWORD(v49) + IDA_HIWORD(dword_89F688[v30]); /*0x42b688*/
-    IDA_LOWORD(v56) = IDA_LOWORD(dword_89F688[v30]) + (unsigned short)v49; /*0x42b694*/
+    v31 = IDA_HIWORD(v49) + IDA_HIWORD((&dword_89F688)[v30]); /*0x42b688*/
+    IDA_LOWORD(v56) = IDA_LOWORD((&dword_89F688)[v30]) + (unsigned short)v49; /*0x42b694*/
     IDA_HIWORD(v56) = v31; /*0x42b69d*/
     v18 = (int16_t)v56; /*0x42b6a2*/
     v53 -= 2; /*0x42b6a7*/
@@ -1905,7 +1906,7 @@ void sub_42BCA0(int a1, int a2, int a3, unsigned int * a4, int * a5)
         goto LABEL_13; /*0x42bdaf*/
     }
     v11 = ((unsigned __int8)*v26 - 4) & 7; /*0x42bd05*/
-    v12 = dword_89F688[v11]; /*0x42bd08*/
+    v12 = (&dword_89F688)[v11]; /*0x42bd08*/
     v13 = (unsigned short *)(4 * v11 + 9041544); /*0x42bd10*/
     v22 = v8 + v12; /*0x42bd24*/
     v23 = v9 + v13[1]; /*0x42bd29*/
@@ -1937,8 +1938,8 @@ void sub_42BCA0(int a1, int a2, int a3, unsigned int * a4, int * a5)
     }
     v19 = ((((unsigned __int8)*v26 - 4) & 7) - 4) & 7; /*0x42bdd7*/
     *a4 = v20 + 1; /*0x42bdda*/
-    IDA_LOWORD(v28) = v15 + IDA_LOWORD(dword_89F688[v19]); /*0x42bdf3*/
-    result = v14 + IDA_HIWORD(dword_89F688[v19]); /*0x42bdfc*/
+    IDA_LOWORD(v28) = v15 + IDA_LOWORD((&dword_89F688)[v19]); /*0x42bdf3*/
+    result = v14 + IDA_HIWORD((&dword_89F688)[v19]); /*0x42bdfc*/
     IDA_HIWORD(v28) = result; /*0x42bdff*/
     *a5 = v28; /*0x42be0a*/
     return result; /*0x42bdbd*/
@@ -2036,8 +2037,8 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
       if ( v18 ) /*0x42bf23*/
         break; /*0x42bf23*/
       v20 = v32 & 7; /*0x42bf2d*/
-      IDA_LOWORD(v35) = (unsigned short)v19 + IDA_LOWORD(dword_89F688[v20]); /*0x42bf46*/
-      IDA_HIWORD(v35) = IDA_HIWORD(a5) + IDA_HIWORD(dword_89F688[v20]); /*0x42bf55*/
+      IDA_LOWORD(v35) = (unsigned short)v19 + IDA_LOWORD((&dword_89F688)[v20]); /*0x42bf46*/
+      IDA_HIWORD(v35) = IDA_HIWORD(a5) + IDA_HIWORD((&dword_89F688)[v20]); /*0x42bf55*/
       a5 = v35; /*0x42bf5e*/
       v21 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42bf6c*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData( (IUnknown *)((int16_t *)&a5), (IUnknown *)(v37)) * v39 >= 0.01 ) /*0x42bfa1*/
@@ -2064,8 +2065,8 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
     while ( !v18 ) /*0x42c026*/
     {
       v23 = v33 & 7; /*0x42c030*/
-      IDA_LOWORD(v36) = IDA_LOWORD(dword_89F688[v23]) + (unsigned short)v19; /*0x42c053*/
-      IDA_HIWORD(v36) = IDA_HIWORD(a5) + IDA_HIWORD(dword_89F688[v23]); /*0x42c058*/
+      IDA_LOWORD(v36) = IDA_LOWORD((&dword_89F688)[v23]) + (unsigned short)v19; /*0x42c053*/
+      IDA_HIWORD(v36) = IDA_HIWORD(a5) + IDA_HIWORD((&dword_89F688)[v23]); /*0x42c058*/
       a5 = v36; /*0x42c067*/
       v24 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42c070*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData( (IUnknown *)((int16_t *)&a5), (IUnknown *)(v37)) * v39 >= 0.01 ) /*0x42c0a5*/
@@ -2681,7 +2682,7 @@ int DecodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4)
                 }
                 v9 = *v6++; /*0x42fea3*/
                 --a2; /*0x42feab*/
-                v10 = byte_7E3914[v9]; /*0x42feb6*/
+                v10 = ((unsigned char *)&byte_7E3914)[v9]; /*0x42feb6*/
                 if ( v10 != -2 ) /*0x42febf*/
                   break; /*0x42febf*/
   LABEL_18:

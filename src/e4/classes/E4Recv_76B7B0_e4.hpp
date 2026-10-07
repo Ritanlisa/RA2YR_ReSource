@@ -13,5 +13,9 @@ struct E4Recv_76B7B0 {
 // --- flat members (END) ---
     int Vf12(int,  ...);    // G6 vtable slot dispatch
     unsigned int * sub_76B7B0(unsigned int * a2);  // 0x76B7B0
+    // --- W16G3 supply (BEGIN) ---
+    void** vtable1;  // (W16G3 @0x76b7c4 fnptr arith)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

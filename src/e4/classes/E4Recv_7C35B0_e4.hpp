@@ -15,5 +15,9 @@ struct E4Recv_7C35B0 {
     unsigned int q3624;  // 0x3624
 // --- flat members (END) ---
     int sub_7C35B0();  // 0x7C35B0
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int q05A6;  // @0x7c35b9 u16 view (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

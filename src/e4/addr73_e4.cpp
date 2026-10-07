@@ -50,6 +50,9 @@
 #include "e4/classes/FootClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/CSFClass_e4.hpp"  // G57w10 D supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int SelectFactionThemeMusic_Helper_734330(...); }  // w16g4 raw call-form
+namespace gamemd { int SelectFactionThemeMusic_Helper_734390(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aMissingHs[];  // data: 0x845820 truth(IDA G42.57w9)
 extern unsigned int a2;  // data: 0x822bc0 truth(IDA G42.57w9)

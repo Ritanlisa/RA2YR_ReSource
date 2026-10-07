@@ -667,7 +667,7 @@ extern void sub_4085E0(unsigned int * a1, int a2, int a3);
 extern void sub_40A850(void *a1 = 0);
 extern void sub_40FF90();
 extern int sub_4D2F00(int a1, int a2, int * a3);
-extern void sub_4F38B0(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+extern void *sub_4F38B0(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // G57w16 G1 raw 4-param  // G57w16 G1 raw 0x4F38B0 _DWORD *__fastcall
 extern void * unknown_libname_27(void *a1 = 0);  // G57w10-S asm@0x6406E0 mov eax,ecx 返回 this
 extern void unknown_libname_35(void *a1 = 0);
 extern void unknown_libname_73(void *a1 = 0);

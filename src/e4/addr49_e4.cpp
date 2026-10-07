@@ -6764,7 +6764,7 @@ int sub_49F2D0()
 namespace gamemd {
 int sub_49F2F0()
 {
-  dword_89F688[0] = -65536; /*0x49f305*/
+  (&dword_89F688)[0] = -65536; /*0x49f305*/
   dword_89F68C = -65535; /*0x49f322*/
   dword_89F690 = 1; /*0x49f336*/
   dword_89F694 = 65537; /*0x49f34a*/
@@ -6780,9 +6780,9 @@ int sub_49F2F0()
 namespace gamemd {
 int sub_49F3A0()
 {
-  dword_89F6DC[0] = -256; /*0x49f3a7*/
+  (&dword_89F6DC)[0] = -256; /*0x49f3a7*/
   dword_89F6E4 = -256; /*0x49f3ad*/
-  dword_89F6D8[0] = 0; /*0x49f3b3*/
+  (&dword_89F6D8)[0] = 0; /*0x49f3b3*/
   dword_89F6EC = 0; /*0x49f3bf*/
   dword_89F6E0 = 256; /*0x49f3c5*/
   dword_89F6E8 = 256; /*0x49f3ca*/
@@ -6871,9 +6871,9 @@ IUnknown * globalHelper_09F550(int * a1, IUnknown * a2, int a3)
   int v10; // [esp+Ch] [ebp-8h]
   int v11; // [esp+10h] [ebp-4h]
 
-  v4 = dword_89F6D8[2 * a3] + *a2; /*0x49f56c*/
+  v4 = (&dword_89F6D8)[2 * a3] + *a2; /*0x49f56c*/
   v5 = a2[2]; /*0x49f573*/
-  v10 = a2[1] + dword_89F6DC[2 * a3]; /*0x49f576*/
+  v10 = a2[1] + (&dword_89F6DC)[2 * a3]; /*0x49f576*/
   v9 = v4; /*0x49f57f*/
   v11 = v5; /*0x49f583*/
   v6 = v5 - Cell::GetGroundHeight( a2); /*0x49f595*/

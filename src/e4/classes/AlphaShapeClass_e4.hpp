@@ -34,6 +34,7 @@ struct AlphaShapeClass {
     int SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2);
     int SD_vt10(int a2, int a3);
     int SD_vt13(int a2);
+    static int CTOR(...);  // w16g4 C3861 static supply (raw 0x00420960)
 };
 
 } // namespace gamemd

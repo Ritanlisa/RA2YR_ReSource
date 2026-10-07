@@ -28,5 +28,10 @@ struct BSurface {
     BSurface * ScalarDtor(char * Block, char a2);  // 0x411650
     char Stub(int a1, int a2);
     unsigned int q_4;  // +0x4 flat supply (P5 provenance)
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int q058;  // @0x7b8cd9 (W16G3 raw-usage vocab)
+    unsigned int u32_6C;  // @0x7b8d16 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

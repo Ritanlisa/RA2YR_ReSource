@@ -64,6 +64,8 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int InitializeDialogControls(...);  // raw 0060F4B0: char __fastcall InitializeDialogControls(HWND a1, LPARAM a2)

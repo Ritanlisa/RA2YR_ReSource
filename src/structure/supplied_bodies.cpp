@@ -799,7 +799,7 @@ bool BuildingClass::CheckC4Active()
     {
   LABEL_7:
       result = *(unsigned int *)&this->animation; /*0x487c49*/
-      IDA_LOBYTE(result) = byte_89EA60[36 * result]; /*0x487c54*/
+      IDA_LOBYTE(result) = ((unsigned char *)&byte_89EA60)[36 * result]; /*0x487c54*/
     }
     return result; /*0x487c1e*/
 }
@@ -1652,7 +1652,7 @@ void BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5
         }
         else
         {
-          v27 = &v98[dword_7E3774[v96]]; /*0x429e16*/
+          v27 = &v98[(&dword_7E3774)[v96]]; /*0x429e16*/
         }
         v28 = *v27; /*0x429e19*/
         v99 = v27; /*0x429e1b*/
@@ -1666,7 +1666,7 @@ void BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _DWORD *a4, int a5
         }
         else
         {
-          v29 = dword_89A304[v96]; /*0x429e37*/
+          v29 = (&dword_89A304)[v96]; /*0x429e37*/
           v30 = v109; /*0x429e3e*/
         }
         v31 = v30 + v29; /*0x429e52*/
@@ -10525,7 +10525,7 @@ void BuildingClass::Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const
                      0,
                      1000,
                      0,
-                     dword_AA105C[*(unsigned __int8 *)(this + 284)],
+                     (&dword_AA105C)[*(unsigned __int8 *)(this + 284)],
                      0,
                      0,
                      0);
@@ -10537,7 +10537,7 @@ void BuildingClass::Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const
             return DrawToSurfaceSHP( /*0x47f9c1*/
                      (int)g_DSurface_Hidden_2,
                      *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4
-                                                                            * *(unsigned int *)&dword_A83D4C[134].__pad_90[4])
+                                                                            * *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4])
                                + 780),
                      result,
                      *(unsigned __int8 *)(this + 286),
@@ -10622,7 +10622,7 @@ void BuildingClass::Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const
                      0,
                      *(short *)(this + 268),
                      0,
-                     dword_AA105C[*(unsigned __int8 *)(this + 284)],
+                     (&dword_AA105C)[*(unsigned __int8 *)(this + 284)],
                      0,
                      30,
                      -2);
@@ -10655,7 +10655,7 @@ void BuildingClass::Draw_0(Point2D* screen_pos, RectangleStruct* bounds) const
       {
         v13 = *(unsigned __int8 *)(this + 286); /*0x47f7b3*/
         if ( !*(unsigned char *)(this + 286) || v13 == 9 ) /*0x47f7c0*/
-          v13 += dword_81CC30[*(unsigned char *)(this + 36) & 3 | (4 * (*(unsigned char *)(this + 38) & 3))]; /*0x47f7d3*/
+          v13 += (&dword_81CC30)[*(unsigned char *)(this + 36) & 3 | (4 * (*(unsigned char *)(this + 38) & 3))]; /*0x47f7d3*/
         DrawToSurfaceSHP( /*0x47f80b*/
           (int)g_DSurface_Hidden_2,
           *(unsigned int *)(this + 52),
@@ -11807,7 +11807,7 @@ void BuildingClass::TogglePower()
         *((unsigned char *)this + 4530) = 0; /*0x4ac6ad*/
         *((unsigned char *)this + 4531) = 0; /*0x4ac6b4*/
         *((unsigned char *)this + 4532) = 0; /*0x4ac6bb*/
-        if ( v4 && *(int *)&dword_A83D4C[1].__pad_38[24] > 0 ) /*0x4ac6d2*/
+        if ( v4 && *(int *)&(&dword_A83D4C)[1].__pad_38[24] > 0 ) /*0x4ac6d2*/
         {
           *((unsigned char *)this + 4529) = 1; /*0x4ac6d4*/
           return MapClass::UnselectAll_ClearLimboLaunchers(v6); /*0x4ac6db*/
@@ -14155,7 +14155,7 @@ void BuildingClass::RemoveShroud()
                 {
                   v19 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v25); /*0x6fb5eb*/
                   --v19[77]; /*0x6fb5fc*/
-                  if ( dword_A83D4C[33].__pad_B0[42] ) /*0x6fb603*/
+                  if ( (&dword_A83D4C)[33].__pad_B0[42] ) /*0x6fb603*/
                   {
                     if ( *((int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v25) + 77) <= 0 ) /*0x6fb628*/
                     {

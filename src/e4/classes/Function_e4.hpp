@@ -9,7 +9,10 @@ struct Function {
     int Method_6342D0(int a2);  // 0x6342d0
     int Function_643E80(void * a2);  // 0x643E80 (G42.36: was mis-modeled as data member)
     int sub_645D00(int a2);
-    int Function_field_0x04;  // 0x4 (G57W14E1 til supply)
+    int Function_field_0x04;
+    static int sub_41C430(...);
+    static int Method_643E80(...);
+    static int Method_46B260(...);  // w16g4 C3861 static supply (raw 0x0046B260)  // w16g4 C3861 static supply (raw 0x00643E80)  // w16g4 C3861 static supply (Cls call-form)  // 0x4 (G57W14E1 til supply)
 };
 
 } // namespace gamemd

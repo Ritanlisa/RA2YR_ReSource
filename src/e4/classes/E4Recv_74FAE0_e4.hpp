@@ -38,7 +38,7 @@ struct E4Recv_74FAE0 {
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
     void* owningHouseIndex;  // 0x0 (no offset truth)
-    void* ambientSoundController;  // 0x0 (no offset truth)
+    unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     void* attachedBomb;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AbstractClass * * sub_74FAE0();  // 0x74FAE0

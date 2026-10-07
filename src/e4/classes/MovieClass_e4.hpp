@@ -20,7 +20,8 @@ struct MovieClass {
     unsigned int ComputeTime();
     static int GetHeight(MovieClass * aP1);  // G57w10-S raw 0x00759F80 (was C2597 interim stub)
     static int GetWidth(MovieClass * aP1);  // G57w10-S raw 0x00759F70 (was C2597 interim stub)
-    int ReadConfig(HWND aP1, int nIDDlgItem);  // 0x5c23b0
+    int ReadConfig(HWND aP1, int nIDDlgItem);
+    static int RenderLoop(...);  // w16g4 C3861 static supply (raw 0x00759940)  // 0x5c23b0
 };
 
 } // namespace gamemd

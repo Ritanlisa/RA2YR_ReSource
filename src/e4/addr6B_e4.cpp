@@ -912,7 +912,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   LABEL_110:
   RA2_OPDEL(v10); /*0x6b362b*/
   g_SlaveManagerPool = 0; /*0x6b3649*/
-  Cell::CreateCrater( (void *)(v90),(void *)(v7 - dword_886FA4), (void *)(k), (void *)(v93), 0); /*0x6b366a*/
+  Cell::CreateCrater( (v90),(v7 - dword_886FA4), (k), (v93), 0); /*0x6b366a*/
   v61 = v79 - 1; /*0x6b3679*/
   v62 = v81 + 1; /*0x6b367a*/
   v82 = v61; /*0x6b367d*/
@@ -982,7 +982,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
             v74 = v71 - DSurface_ViewBounds; /*0x6b37c4*/
             v75 = v70 - dword_886FA4; /*0x6b37c6*/
             if ( v66 > 0 && v73 > 0 ) /*0x6b37ce*/
-              Cell::CreateCrater( (void *)(v74), (void *)(v75), (void *)(v66), (void *)(v73), 0); /*0x6b37e8*/
+              Cell::CreateCrater( (v74), (v75), (v66), (v73), 0); /*0x6b37e8*/
           }
           ++v77; /*0x6b37f8*/
         }
@@ -1945,7 +1945,7 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
   v41 = 0; /*0x6b8f45*/
   v7 = (&dword_84066C)[v6]; /*0x6b8f49*/
   v8 = (a4 * *a2) >> 1; /*0x6b8f55*/
-  v56 = dword_84026C[v6]; /*0x6b8f59*/
+  v56 = (&dword_84026C)[v6]; /*0x6b8f59*/
   v9 = (a4 * a2[1]) >> 1; /*0x6b8f62*/
   v10 = v56 * v9; /*0x6b8f64*/
   v11 = v7 * v9; /*0x6b8f69*/
@@ -2429,7 +2429,7 @@ int sub_6BB390()
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(MultiByteStr), 39, 0, 0); /*0x6bb3ea*/
   StringFromGUID2(stru_7E9510, sz, 39); /*0x6bb3fb*/
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(String), 39, 0, 0); /*0x6bb419*/
-  lstrcpyA( (LPSTR)(String1), aClsid); /*0x6bb42b*/
+  lstrcpyA( (LPSTR)(String1), "CLSID\" /*w16g4 "CLSID\" /*w16g4 aClsid*/*/); /*0x6bb42b*/
   lstrcatA(String1, MultiByteStr); /*0x6bb43d*/
   lstrcpyA( (LPSTR)(SubKey), (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb449*/
   if ( !RegCreateKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, 0) ) /*0x6bb472*/
@@ -2467,10 +2467,10 @@ int sub_6BB390()
     RegCloseKey(phkResult); /*0x6bb596*/
   }
   lstrcpyA( (LPSTR)(SubKey), (LPCSTR)(g_Str_WW_TiberianSun)); /*0x6bb5a6*/
-  if ( aCurver ) /*0x6bb5b0*/
+  if ( "CurVer" /*w16g4 "CurVer" /*w16g4 aCurver*/*/ ) /*0x6bb5b0*/
   {
     lstrcatA(SubKey, asc_815E74); /*0x6bb5bc*/
-    lstrcatA(SubKey, aCurver); /*0x6bb5c8*/
+    lstrcatA(SubKey, "CurVer" /*w16g4 "CurVer" /*w16g4 aCurver*/*/); /*0x6bb5c8*/
   }
   if ( !RegCreateKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, 0) ) /*0x6bb5eb*/
   {
@@ -2497,11 +2497,11 @@ int sub_6BB390()
     RegCloseKey(phkResult); /*0x6bb6a6*/
   }
   WriteRegistryKeyCOM(String1, 0, (LPCSTR)Data); /*0x6bb6b7*/
-  WriteRegistryKeyCOM(String1, aProgid, (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb6ca*/
-  WriteRegistryKeyCOM(String1, aVersionindepen, g_Str_WW_TiberianSun); /*0x6bb6dd*/
-  WriteRegistryKeyCOM(String1, aNotinsertable, 0); /*0x6bb6ed*/
-  WriteRegistryKeyCOM(String1, aInprocserver32, Filename); /*0x6bb703*/
-  WriteRegistryKeyCOM(String1, aTypelib, String); /*0x6bb719*/
+  WriteRegistryKeyCOM(String1, "ProgID" /*w16g4 "ProgID" /*w16g4 aProgid*/*/, (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb6ca*/
+  WriteRegistryKeyCOM(String1, "VersionIndependentProgID" /*w16g4 "VersionIndependentProgID" /*w16g4 aVersionindepen*/*/, g_Str_WW_TiberianSun); /*0x6bb6dd*/
+  WriteRegistryKeyCOM(String1, "NotInsertable" /*w16g4 "NotInsertable" /*w16g4 aNotinsertable*/*/, 0); /*0x6bb6ed*/
+  WriteRegistryKeyCOM(String1, "InprocServer32" /*w16g4 "InprocServer32" /*w16g4 aInprocserver32*/*/, Filename); /*0x6bb703*/
+  WriteRegistryKeyCOM(String1, "Typelib" /*w16g4 "Typelib" /*w16g4 aTypelib*/*/, String); /*0x6bb719*/
   pptlib = (ITypeLib *)(0); /*0x6bb722*/
   LoadTypeLib(&szFile, &pptlib); /*0x6bb730*/
   if ( pptlib ) /*0x6bb740*/
@@ -2783,7 +2783,7 @@ LABEL_2:
     Debug::Log();
     return 0;
   }
-  *(unsigned int *)&stru_B05488[26716] = CreateMutexA(0, 0, &stru_830620[67828]);
+  *(unsigned int *)&((unsigned char *)&stru_B05488)[26716] = CreateMutexA(0, 0, &stru_830620[67828]);
   if ( GetLastError() == 183 )
   {
     WindowA = FindWindowA(&stru_830620[67828], 0);
@@ -2793,34 +2793,34 @@ LABEL_2:
       SetForegroundWindow(WindowA);
       ShowWindow(v6, 9);
     }
-    if ( *(unsigned int *)&stru_B05488[26716] )
+    if ( *(unsigned int *)&((unsigned char *)&stru_B05488)[26716] )
     {
-      CloseHandle(*(HANDLE *)&stru_B05488[26716]);
-      *(unsigned int *)&stru_B05488[26716] = 0;
+      CloseHandle(*(HANDLE *)&((unsigned char *)&stru_B05488)[26716]);
+      *(unsigned int *)&((unsigned char *)&stru_B05488)[26716] = 0;
     }
     goto LABEL_2;
   }
   Debug::Log();
   do
   {
-    *(unsigned int *)&stru_B05488[26720] = OpenMutexA(0x1F0001u, 0, &stru_830620[67728]);
-    if ( *(unsigned int *)&stru_B05488[26720] )
+    *(unsigned int *)&((unsigned char *)&stru_B05488)[26720] = OpenMutexA(0x1F0001u, 0, &stru_830620[67728]);
+    if ( *(unsigned int *)&((unsigned char *)&stru_B05488)[26720] )
     {
       Debug::Log();
-      if ( WaitForSingleObject(*(HANDLE *)&stru_B05488[26720], 0x7530u) == -1 )
+      if ( WaitForSingleObject(*(HANDLE *)&((unsigned char *)&stru_B05488)[26720], 0x7530u) == -1 )
       {
         Debug::Log();
-        CloseHandle(*(HANDLE *)&stru_B05488[26720]);
-        *(unsigned int *)&stru_B05488[26720] = 0;
+        CloseHandle(*(HANDLE *)&((unsigned char *)&stru_B05488)[26720]);
+        *(unsigned int *)&((unsigned char *)&stru_B05488)[26720] = 0;
       }
     }
-    if ( *(unsigned int *)&stru_B05488[26720] )
+    if ( *(unsigned int *)&((unsigned char *)&stru_B05488)[26720] )
       break;
-    *(unsigned int *)&stru_B05488[26720] = CreateMutexA(0, 0, &stru_830620[67728]);
+    *(unsigned int *)&((unsigned char *)&stru_B05488)[26720] = CreateMutexA(0, 0, &stru_830620[67728]);
     if ( GetLastError() == 183 )
     {
-      CloseHandle(*(HANDLE *)&stru_B05488[26720]);
-      *(unsigned int *)&stru_B05488[26720] = 0;
+      CloseHandle(*(HANDLE *)&((unsigned char *)&stru_B05488)[26720]);
+      *(unsigned int *)&((unsigned char *)&stru_B05488)[26720] = 0;
       Sleep(0x9C4u);
     }
     else
@@ -2828,7 +2828,7 @@ LABEL_2:
       Debug::Log();
     }
   }
-  while ( !*(unsigned int *)&stru_B05488[26720] );
+  while ( !*(unsigned int *)&((unsigned char *)&stru_B05488)[26720] );
   Debug::Log();
   _controlfp(0x300u, 0x300u);
   CRT_FPU_InitControlWord();
@@ -2857,32 +2857,32 @@ LABEL_2:
     goto LABEL_374;
   unsigned int * v11 = (unsigned int *)operator new(0x24u);
   if ( v11 )
-    v12 = (CCINIClass *)((RawFileClass*)v11)->Construct((RawFileClass *)&stru_826420[36]);
+    v12 = (CCINIClass *)((RawFileClass*)v11)->Construct((RawFileClass *)&((unsigned char *)&stru_826420)[36]);
   CCINIClass *v12 = 0;
   aP1 = v12;
-  ((CCINIClass *)(&stru_87C374[44364]))->Load( (int)((MultiplayerGameMode *)v12), 0, 0);
+  ((CCINIClass *)(&((unsigned char *)&stru_87C374)[44364]))->Load( (int)((MultiplayerGameMode *)v12), 0, 0);
   stru_830620[66636] = INIClass::ReadBool_Overwrite(
-                                    (int)&stru_87C374[44364],
+                                    (int)&((unsigned char *)&stru_87C374)[44364],
                                     (uint8_t *)&stru_830620[11072],
                                     (CCINIClass *)&stru_830620[67592],
                                     1);
-  HouseClass_Player[45079] = INIClass::ReadBool_Overwrite(
-                                          (int)&stru_87C374[44364],
+  ((unsigned char *)&HouseClass_Player)[45079] = INIClass::ReadBool_Overwrite(
+                                          (int)&((unsigned char *)&stru_87C374)[44364],
                                           (uint8_t *)&stru_830620[11072],
                                           (CCINIClass *)&stru_830620[10940],
                                           0);
-  *(unsigned int *)&HouseClass_Player[44600] = INIClass::ReadInt_Overwrite(
-                                                      (int)&stru_87C374[44364],
+  *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44600] = INIClass::ReadInt_Overwrite(
+                                                      (int)&((unsigned char *)&stru_87C374)[44364],
                                                       (uint8_t *)&stru_830620[11072],
                                                       (CCINIClass *)&stru_830620[11080],
-                                                      *(INIClass **)&HouseClass_Player[44600]);
-  *(unsigned int *)&HouseClass_Player[44604] = INIClass::ReadInt_Overwrite(
-                                                      (int)&stru_87C374[44364],
+                                                      *(INIClass **)&((unsigned char *)&HouseClass_Player)[44600]);
+  *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44604] = INIClass::ReadInt_Overwrite(
+                                                      (int)&((unsigned char *)&stru_87C374)[44364],
                                                       (uint8_t *)&stru_830620[11072],
                                                       (CCINIClass *)&stru_830620[11056],
-                                                      *(INIClass **)&HouseClass_Player[44604]);
+                                                      *(INIClass **)&((unsigned char *)&HouseClass_Player)[44604]);
   Int_Overwrite = INIClass::ReadInt_Overwrite(
-                    (int)&stru_87C374[44364],
+                    (int)&((unsigned char *)&stru_87C374)[44364],
                     (uint8_t *)&stru_830620[10816],
                     (CCINIClass *)&stru_830620[10748],
                     0);
@@ -2890,10 +2890,10 @@ LABEL_2:
   {
     int v14 = Int_Overwrite + 0x4000;
     if ( v14 >= 0x4000 && v14 < 0x8000 )
-      Network::GetField( (HWND)(&HouseClass_Player[44148]), (void *)((void *)(v14)));
+      Network::GetField( (HWND)(&((unsigned char *)&HouseClass_Player)[44148]), (void *)((void *)(v14)));
   }
   memset( (void *)(String_v), 0, sizeof(String_v));
-  if ( ((INIClass*)((uint8_t ***)&stru_87C374[44364]))->GetString((INIClass *)&stru_830620[10816], (uint8_t *)&stru_830620[10732], 0, String_v, 512)
+  if ( ((INIClass*)((uint8_t ***)&((unsigned char *)&stru_87C374)[44364]))->GetString((INIClass *)&stru_830620[10816], (uint8_t *)&stru_830620[10732], 0, String_v, 512)
     && String_v
     && strlen(String_v[0].__pad_0) )
   {
@@ -2905,13 +2905,13 @@ LABEL_2:
     }
     if ( v15 >= 4 )
     {
-      *(unsigned int *)&HouseClass_Player[39088] = 1;
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39088] = 1;
       dwRegister.field_28 = -1;
       v216 = -1;
       unsigned int * v17 = ((NetworkAddress *)&dwRegister.field_10)->Assign( (unsigned int *)(&dwRegister[36]), (IUnknown *)&dwRegister.field_28, 0);
-      *(unsigned int *)&HouseClass_Player[39092] = *v17;
-      *(unsigned int *)&HouseClass_Player[39096] = v17[1];
-      *(unsigned int *)&HouseClass_Player[39100] = v17[2];
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39092] = *v17;
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39096] = v17[1];
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39100] = v17[2];
     }
   }
   unsigned int * v18 = (unsigned int *)operator new(0x320u);
@@ -2920,11 +2920,11 @@ LABEL_2:
   {
     NetworkSession::ResetState(v18);
     v19[199] = 1;
-    *(unsigned int *)&stru_87C374[13308] = (unsigned int)v19;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13308] = (unsigned int)v19;
   }
   else
   {
-    *(unsigned int *)&stru_87C374[13308] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[13308] = 0;
   }
   if ( DiskSpace::CheckAvailable() < 0x2000 )
   {
@@ -2975,472 +2975,472 @@ LABEL_2:
   COM_SafeRelease((int *)ppv);
 LABEL_56:
   RegisterClassesCOM();
-  CoRegisterClassObject(&rguid, (LPUNKNOWN)&HouseClass_Player[43900], 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  CoRegisterClassObject(&rguid, (LPUNKNOWN)&((unsigned char *)&HouseClass_Player)[43900], 1u, 1u, (LPDWORD)&dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v27 = (TClassFactory_VCStreamClass__ *)operator new(8u);
   if ( v27 )
     v28 = (IUnknown *)ClassFactory_CStream::Construct(v27);
   IUnknown *v28 = 0;
   CoRegisterClassObject(&stru_7E9540, v28, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v29 = (TClassFactory_VWaveClass__ *)operator new(8u);
   if ( v29 )
     v30 = (IUnknown *)ClassFactory_Wave::Construct(v29);
   IUnknown *v30 = 0;
   CoRegisterClassObject(&stru_7E9720, v30, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v31 = (TClassFactory_VTerrainTypeClass__ *)operator new(8u);
   if ( v31 )
     v32 = (IUnknown *)COMClassFactory_3::Construct(v31);
   IUnknown *v32 = 0;
   CoRegisterClassObject(&stru_7E95E0, v32, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v33 = (TClassFactory_VTerrainClass__ *)operator new(8u);
   if ( v33 )
     v34 = (IUnknown *)COMClassFactory_4::Construct(v33);
   IUnknown *v34 = 0;
   CoRegisterClassObject(&stru_7E9740, v34, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v35 = (TClassFactory_VSuperWeaponTypeClass__ *)operator new(8u);
   if ( v35 )
     v36 = (IUnknown *)COMClassFactory_5::Construct(v35);
   IUnknown *v36 = 0;
   CoRegisterClassObject(&stru_7E9570, v36, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v37 = (TClassFactory_VSuperClass__ *)operator new(8u);
   if ( v37 )
     v38 = (IUnknown *)COMClassFactory_6::Construct(v37);
   IUnknown *v38 = 0;
   CoRegisterClassObject(&stru_7E9580, v38, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v39 = (TClassFactory_VTactical__ *)operator new(8u);
   if ( v39 )
     v40 = (IUnknown *)COMClassFactory_7::Construct(v39);
   IUnknown *v40 = 0;
   CoRegisterClassObject(&stru_7E9950, v40, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v41 = (TClassFactory_VCellClass__ *)operator new(8u);
   if ( v41 )
     v42 = (IUnknown *)COMClassFactory_8::Construct(v41);
   IUnknown *v42 = 0;
   CoRegisterClassObject(&stru_7E9930, v42, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v43 = (TClassFactory_VEMPulseClass__ *)operator new(8u);
   if ( v43 )
     v44 = (IUnknown *)COMClassFactory_9::Construct(v43);
   IUnknown *v44 = 0;
   CoRegisterClassObject(&stru_7E9940, v44, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v45 = (TClassFactory_VLightSourceClass__ *)operator new(8u);
   if ( v45 )
     v46 = (IUnknown *)COMClassFactory_10::Construct(v45);
   IUnknown *v46 = 0;
   CoRegisterClassObject(&stru_7E98F0, v46, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v47 = (TClassFactory_VSideClass__ *)operator new(8u);
   if ( v47 )
     v48 = (IUnknown *)WinMain_Helper_6BFD40(v47);
   IUnknown *v48 = 0;
   CoRegisterClassObject(&stru_7E9910, v48, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v49 = (TClassFactory_VTiberiumClass__ *)operator new(8u);
   if ( v49 )
     v50 = (IUnknown *)WinMain_Helper_6BFEC0(v49);
   IUnknown *v50 = 0;
   CoRegisterClassObject(&stru_7E9920, v50, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v51 = (TClassFactory_VTubeClass__ *)operator new(8u);
   if ( v51 )
     v52 = (IUnknown *)WinMain_Helper_6C0040(v51);
   IUnknown *v52 = 0;
   CoRegisterClassObject(&stru_7E9750, v52, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v53 = (TClassFactory_VCampaignClass__ *)operator new(8u);
   if ( v53 )
     v54 = (IUnknown *)WinMain_Helper_6C01C0(v53);
   IUnknown *v54 = 0;
   CoRegisterClassObject(&stru_7E9900, v54, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v55 = (TClassFactory_VBuildingLightClass__ *)operator new(8u);
   if ( v55 )
     v56 = (IUnknown *)WinMain_Helper_6C0340(v55);
   IUnknown *v56 = 0;
   CoRegisterClassObject(&stru_7E9730, v56, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v57 = (TClassFactory_VWaypointPathClass__ *)operator new(8u);
   if ( v57 )
     v58 = (IUnknown *)WinMain_Helper_6C04C0(v57);
   IUnknown *v58 = 0;
   CoRegisterClassObject(&stru_7E9850, v58, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v59 = (TClassFactory_VTemporalClass__ *)operator new(8u);
   if ( v59 )
     v60 = (IUnknown *)WinMain_Helper_6C0640(v59);
   IUnknown *v60 = 0;
   CoRegisterClassObject(&stru_7E98D0, v60, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v61 = (TClassFactory_VAirstrikeClass__ *)operator new(8u);
   if ( v61 )
     v62 = (IUnknown *)WinMain_Helper_6C07C0(v61);
   IUnknown *v62 = 0;
   CoRegisterClassObject(&stru_7E98E0, v62, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v63 = (TClassFactory_VSpawnManagerClass__ *)operator new(8u);
   if ( v63 )
     v64 = (IUnknown *)WinMain_Helper_6C0940(v63);
   IUnknown *v64 = 0;
   CoRegisterClassObject(&stru_7E9860, v64, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v65 = (TClassFactory_VSlaveManagerClass__ *)operator new(8u);
   if ( v65 )
     Instance = (IUnknown *)COMClassFactory::CreateInstance(v65);
   else
     Instance = (IUnknown *)(0);
   CoRegisterClassObject(&stru_7E9870, Instance, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v67 = (TClassFactory_VCaptureManagerClass__ *)operator new(8u);
   if ( v67 )
     v68 = (IUnknown *)WinMain_Helper_6C0C40(v67);
   IUnknown *v68 = 0;
   CoRegisterClassObject(&stru_7E9880, v68, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v69 = (TClassFactory_VDiskLaserClass__ *)operator new(8u);
   if ( v69 )
     v70 = (IUnknown *)WinMain_Helper_6C0DC0(v69);
   IUnknown *v70 = 0;
   CoRegisterClassObject(&stru_7E9890, v70, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v71 = (TClassFactory_VParasiteClass__ *)operator new(8u);
   if ( v71 )
     v72 = (IUnknown *)WinMain_Helper_6C0F40(v71);
   IUnknown *v72 = 0;
   CoRegisterClassObject(&stru_7E98A0, v72, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v73 = (TClassFactory_VBombClass__ *)operator new(8u);
   if ( v73 )
     v74 = (IUnknown *)WinMain_Helper_6C10C0(v73);
   IUnknown *v74 = 0;
   CoRegisterClassObject(&stru_7E98B0, v74, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v75 = (TClassFactory_VRadSiteClass__ *)operator new(8u);
   if ( v75 )
     v76 = (IUnknown *)WinMain_Helper_6C1240(v75);
   IUnknown *v76 = 0;
   CoRegisterClassObject(&stru_7E98C0, v76, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v77 = (TClassFactory_VTEventClass__ *)operator new(8u);
   if ( v77 )
     v78 = (IUnknown *)WinMain_Helper_6C13C0(v77);
   IUnknown *v78 = 0;
   CoRegisterClassObject(&stru_7E9810, v78, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v79 = (TClassFactory_VVoxelAnimTypeClass__ *)operator new(8u);
   if ( v79 )
     v80 = (IUnknown *)WinMain_Helper_6C1540(v79);
   IUnknown *v80 = 0;
   CoRegisterClassObject(&stru_7E9790, v80, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v81 = (TClassFactory_VVoxelAnimClass__ *)operator new(8u);
   if ( v81 )
     v82 = (IUnknown *)WinMain_Helper_6C16C0(v81);
   IUnknown *v82 = 0;
   CoRegisterClassObject(&stru_7E9650, v82, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v83 = (TClassFactory_VTActionClass__ *)operator new(8u);
   if ( v83 )
     v84 = (IUnknown *)WinMain_Helper_6C1840(v83);
   IUnknown *v84 = 0;
   CoRegisterClassObject(&stru_7E9800, v84, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v85 = (TClassFactory_VTriggerClass__ *)operator new(8u);
   if ( v85 )
     v86 = (IUnknown *)WinMain_Helper_6C19C0(v85);
   IUnknown *v86 = 0;
   CoRegisterClassObject(&stru_7E97E0, v86, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v87 = (TClassFactory_VTriggerTypeClass__ *)operator new(8u);
   if ( v87 )
     v88 = (IUnknown *)WinMain_Helper_6C1B40(v87);
   IUnknown *v88 = 0;
   CoRegisterClassObject(&stru_7E97F0, v88, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v89 = (TClassFactory_VScriptClass__ *)operator new(8u);
   if ( v89 )
     v90 = (IUnknown *)WinMain_Helper_6C1CC0(v89);
   IUnknown *v90 = 0;
   CoRegisterClassObject(&stru_7E97A0, v90, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v91 = (TClassFactory_VScriptTypeClass__ *)operator new(8u);
   if ( v91 )
     v92 = (IUnknown *)WinMain_Helper_6C1E40(v91);
   IUnknown *v92 = 0;
   CoRegisterClassObject(&stru_7E97B0, v92, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v93 = (TClassFactory_VTagClass__ *)operator new(8u);
   if ( v93 )
     v94 = (IUnknown *)WinMain_Helper_6C1FC0(v93);
   IUnknown *v94 = 0;
   CoRegisterClassObject(&stru_7E97C0, v94, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v95 = (TClassFactory_VTagTypeClass__ *)operator new(8u);
   if ( v95 )
     v96 = (IUnknown *)WinMain_Helper_6C2140(v95);
   IUnknown *v96 = 0;
   CoRegisterClassObject(&stru_7E97D0, v96, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v97 = (TClassFactory_VTeamClass__ *)operator new(8u);
   if ( v97 )
     v98 = (IUnknown *)WinMain_Helper_6C22C0(v97);
   IUnknown *v98 = 0;
   CoRegisterClassObject(&stru_7E9760, v98, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v99 = (TClassFactory_VTeamTypeClass__ *)operator new(8u);
   if ( v99 )
     v100 = (IUnknown *)WinMain_Helper_6C2440(v99);
   IUnknown *v100 = 0;
   CoRegisterClassObject(&stru_7E9780, v100, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v101 = (TClassFactory_VTaskForceClass__ *)operator new(8u);
   if ( v101 )
     v102 = (IUnknown *)WinMain_Helper_6C25C0(v101);
   IUnknown *v102 = 0;
   CoRegisterClassObject(&stru_7E9770, v102, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v103 = (TClassFactory_VUnitTypeClass__ *)operator new(8u);
   if ( v103 )
     v104 = (IUnknown *)WinMain_Helper_6C2740(v103);
   IUnknown *v104 = 0;
   CoRegisterClassObject(&stru_7E9590, v104, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v105 = (TClassFactory_VBuildingTypeClass__ *)operator new(8u);
   if ( v105 )
     v106 = (IUnknown *)WinMain_Helper_6C28C0(v105);
   IUnknown *v106 = 0;
   CoRegisterClassObject(&stru_7E95C0, v106, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v107 = (TClassFactory_VAircraftTypeClass__ *)operator new(8u);
   if ( v107 )
     v108 = (IUnknown *)WinMain_Helper_6C2A40(v107);
   IUnknown *v108 = 0;
   CoRegisterClassObject(&stru_7E95B0, v108, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v109 = (TClassFactory_VInfantryTypeClass__ *)operator new(8u);
   if ( v109 )
     v110 = (IUnknown *)WinMain_Helper_6C2BC0(v109);
   IUnknown *v110 = 0;
   CoRegisterClassObject(&stru_7E95A0, v110, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v111 = (TClassFactory_VBulletTypeClass__ *)operator new(8u);
   if ( v111 )
     v112 = (IUnknown *)WinMain_Helper_6C2D40(v111);
   IUnknown *v112 = 0;
   CoRegisterClassObject(&stru_7E95D0, v112, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v113 = (TClassFactory_VIsometricTileTypeClass__ *)operator new(8u);
   if ( v113 )
     v114 = (IUnknown *)WinMain_Helper_6C2EC0(v113);
   IUnknown *v114 = 0;
   CoRegisterClassObject(&stru_7E95F0, v114, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v115 = (TClassFactory_VOverlayTypeClass__ *)operator new(8u);
   if ( v115 )
     v116 = (IUnknown *)WinMain_Helper_6C3040(v115);
   IUnknown *v116 = 0;
   CoRegisterClassObject(&stru_7E9600, v116, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v117 = (TClassFactory_VSmudgeTypeClass__ *)operator new(8u);
   if ( v117 )
     v118 = (IUnknown *)WinMain_Helper_6C31C0(v117);
   IUnknown *v118 = 0;
   CoRegisterClassObject(&stru_7E9610, v118, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v119 = (TClassFactory_VUnitClass__ *)operator new(8u);
   if ( v119 )
     v120 = (IUnknown *)WinMain_Helper_6C3340(v119);
   IUnknown *v120 = 0;
   CoRegisterClassObject(&stru_7E96F0, v120, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v121 = (TClassFactory_VBuildingClass__ *)operator new(8u);
   if ( v121 )
     v122 = (IUnknown *)WinMain_Helper_6C34C0(v121);
   IUnknown *v122 = 0;
   CoRegisterClassObject(&stru_7E96A0, v122, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v123 = (TClassFactory_VAircraftClass__ *)operator new(8u);
   if ( v123 )
     v124 = (IUnknown *)WinMain_Helper_6C3640(v123);
   IUnknown *v124 = 0;
   CoRegisterClassObject(&stru_7E9660, v124, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v125 = (TClassFactory_VInfantryClass__ *)operator new(8u);
   if ( v125 )
     v126 = (IUnknown *)WinMain_Helper_6C37C0(v125);
   IUnknown *v126 = 0;
   CoRegisterClassObject(&stru_7E9680, v126, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v127 = (TClassFactory_VAnimClass__ *)operator new(8u);
   if ( v127 )
     v128 = (IUnknown *)WinMain_Helper_6C3940(v127);
   IUnknown *v128 = 0;
   CoRegisterClassObject(&stru_7E9670, v128, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v129 = (TClassFactory_VAnimTypeClass__ *)operator new(8u);
   if ( v129 )
     v130 = (IUnknown *)WinMain_Helper_6C3AC0(v129);
   IUnknown *v130 = 0;
   CoRegisterClassObject(&stru_7E9620, v130, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v131 = (TClassFactory_VHouseTypeClass__ *)operator new(8u);
   if ( v131 )
     v132 = (IUnknown *)WinMain_Helper_6C3C40(v131);
   IUnknown *v132 = 0;
   CoRegisterClassObject(&stru_7E9630, v132, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v133 = (TClassFactory_VHouseClass__ *)operator new(8u);
   if ( v133 )
     v134 = (IUnknown *)WinMain_Helper_6C3DC0(v133);
   IUnknown *v134 = 0;
   CoRegisterClassObject(&stru_7E9560, v134, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v135 = (TClassFactory_VDriveLocomotionClass__ *)operator new(8u);
   if ( v135 )
     v136 = (IUnknown *)WinMain_Helper_6C3F40(v135);
   IUnknown *v136 = 0;
   CoRegisterClassObject(&stru_7E9A30, v136, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v137 = (TClassFactory_VJumpjetLocomotionClass__ *)operator new(8u);
   if ( v137 )
     v138 = (IUnknown *)WinMain_Helper_6C40C0(v137);
   IUnknown *v138 = 0;
   CoRegisterClassObject(&g_CLSID_JumpjetLocomotion, v138, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v139 = (TClassFactory_VHoverLocomotionClass__ *)operator new(8u);
   if ( v139 )
     v140 = (IUnknown *)WinMain_Helper_6C4240(v139);
   IUnknown *v140 = 0;
   CoRegisterClassObject(&stru_7E9A40, v140, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v141 = (TClassFactory_VRocketLocomotionClass__ *)operator new(8u);
   if ( v141 )
     v142 = (IUnknown *)WinMain_Helper_6C43C0(v141);
   IUnknown *v142 = 0;
   CoRegisterClassObject(&g_CLSID_ShipLocomotion, v142, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v143 = (TClassFactory_VTunnelLocomotionClass__ *)operator new(8u);
   if ( v143 )
     v144 = (IUnknown *)WinMain_Helper_6C4540(v143);
   IUnknown *v144 = 0;
   CoRegisterClassObject(&stru_7E9A50, v144, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v145 = (TClassFactory_VWalkLocomotionClass__ *)operator new(8u);
   if ( v145 )
     v146 = (IUnknown *)WinMain_Helper_6C46C0(v145);
   IUnknown *v146 = 0;
   CoRegisterClassObject(&g_CLSID_WalkLocomotion, v146, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v147 = (TClassFactory_VDropPodLocomotionClass__ *)operator new(8u);
   if ( v147 )
     v148 = (IUnknown *)WinMain_Helper_6C4840(v147);
   IUnknown *v148 = 0;
   CoRegisterClassObject(&g_CLSID_DriveLocomotion, v148, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v149 = (TClassFactory_VFlyLocomotionClass__ *)operator new(8u);
   if ( v149 )
     v150 = (IUnknown *)WinMain_Helper_6C49C0(v149);
   IUnknown *v150 = 0;
   CoRegisterClassObject(&g_CLSID_FlyLocomotion, v150, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v151 = (TClassFactory_VTeleportLocomotionClass__ *)operator new(8u);
   if ( v151 )
     v152 = (IUnknown *)WinMain_Helper_6C4B40(v151);
   IUnknown *v152 = 0;
   CoRegisterClassObject(&g_CLSID_HoverLocomotion, v152, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v153 = (TClassFactory_VMechLocomotionClass__ *)operator new(8u);
   if ( v153 )
     v154 = (IUnknown *)WinMain_Helper_6C4CC0(v153);
   IUnknown *v154 = 0;
   CoRegisterClassObject(&g_CLSID_TunnelLocomotion, v154, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v155 = (TClassFactory_VShipLocomotionClass__ *)operator new(8u);
   if ( v155 )
     v156 = (IUnknown *)WinMain_Helper_6C4E40(v155);
   IUnknown *v156 = 0;
   CoRegisterClassObject(&g_CLSID_DriveLocomotion2, v156, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v157 = (TClassFactory_VBulletClass__ *)operator new(8u);
   if ( v157 )
     v158 = (IUnknown *)WinMain_Helper_6C4FC0(v157);
   IUnknown *v158 = 0;
   CoRegisterClassObject(&rclsid, v158, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v159 = (TClassFactory_VFactoryClass__ *)operator new(8u);
   if ( v159 )
     v160 = (IUnknown *)WinMain_Helper_6C5140(v159);
   IUnknown *v160 = 0;
   CoRegisterClassObject(&stru_7E9820, v160, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v161 = (TClassFactory_VWarheadTypeClass__ *)operator new(8u);
   if ( v161 )
     v162 = (IUnknown *)WinMain_Helper_6C52C0(v161);
   IUnknown *v162 = 0;
   CoRegisterClassObject(&stru_7E9840, v162, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v163 = (TClassFactory_VWeaponTypeClass__ *)operator new(8u);
   if ( v163 )
     v164 = (IUnknown *)WinMain_Helper_6C5440(v163);
   IUnknown *v164 = 0;
   CoRegisterClassObject(&stru_7E9830, v164, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v165 = (TClassFactory_VParticleClass__ *)operator new(8u);
   if ( v165 )
     v166 = (IUnknown *)WinMain_Helper_6C55C0(v165);
   IUnknown *v166 = 0;
   CoRegisterClassObject(&stru_7E9700, v166, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v167 = (TClassFactory_VParticleTypeClass__ *)operator new(8u);
   if ( v167 )
     v168 = (IUnknown *)WinMain_Helper_6C5740(v167);
   IUnknown *v168 = 0;
   CoRegisterClassObject(&stru_7E9710, v168, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v169 = (TClassFactory_VParticleSystemClass__ *)operator new(8u);
   if ( v169 )
     v170 = (IUnknown *)WinMain_Helper_6C58C0(v169);
   IUnknown *v170 = 0;
   CoRegisterClassObject(&stru_7E96C0, v170, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v171 = (TClassFactory_VParticleSystemTypeClass__ *)operator new(8u);
   if ( v171 )
     v172 = (IUnknown *)WinMain_Helper_6C5A40(v171);
   IUnknown *v172 = 0;
   CoRegisterClassObject(&stru_7E96D0, v172, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v173 = (TClassFactory_VAITriggerTypeClass__ *)operator new(8u);
   if ( v173 )
     v174 = (IUnknown *)WinMain_Helper_6C5BC0(v173);
   IUnknown *v174 = 0;
   CoRegisterClassObject(&stru_7E9960, v174, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v175 = (TClassFactory_VNeuronClass__ *)operator new(8u);
   if ( v175 )
     v176 = (IUnknown *)WinMain_Helper_6C5D40(v175);
   IUnknown *v176 = 0;
   CoRegisterClassObject(&stru_7E9980, v176, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v177 = (TClassFactory_VFoggedObjectClass__ *)operator new(8u);
   if ( v177 )
     v178 = (IUnknown *)WinMain_Helper_6C5EC0(v177);
   IUnknown *v178 = 0;
   CoRegisterClassObject(&stru_7E9990, v178, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   v179 = (TClassFactory_VAlphaShapeClass__ *)operator new(8u);
   if ( v179 )
     v180 = (IUnknown *)WinMain_Helper_6C6040(v179);
   IUnknown *v180 = 0;
   CoRegisterClassObject(&stru_7E99A0, v180, 1u, 1u, (LPDWORD)&dwRegister);
-  DynamicVector::Add(&stru_B05488[26624], &dwRegister);
-  RegisterActiveObject(&unk_89A29C, &rguid, 1u, (DWORD *)&stru_B05488[26724]);
+  DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
+  RegisterActiveObject(&unk_89A29C, &rguid, 1u, (DWORD *)&((unsigned char *)&stru_B05488)[26724]);
   if ( IDA_LOBYTE(dwRegister.field_8) )
   {
     v205 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1618);
@@ -3459,21 +3459,21 @@ LABEL_56:
   Debug::Log();
   ((FileStraw *)(v213))->Open((int)&v212, 0);
   Debug::Log();
-  qmemcpy( (void *)(&stru_87C374[42508]), WinMain_Init(v213, v211, 1), 0x204u);
+  qmemcpy( (void *)(&((unsigned char *)&stru_87C374)[42508]), WinMain_Init(v213, v211, 1), 0x204u);
   HashTable_flat::DestroyHashTableINIClass( (void *)(v213));
   WinMain_Helper_65C2A0(&v212);
   int v182 = dword_81C1D0;
   SetSoundWarning(-2);
   unsigned int * v183 = (unsigned int *)operator new(0x28u);
   if ( v183 )
-    *(unsigned int *)&stru_87C374[35472] = ((MixFileClass*)v183)->FromFile( (char *)((MixFileClass *)&stru_830620[67388]), (int)&stru_87C374[42508]);
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[35472] = ((MixFileClass*)v183)->FromFile( (char *)((MixFileClass *)&stru_830620[67388]), (int)&((unsigned char *)&stru_87C374)[42508]);
   else
-    *(unsigned int *)&stru_87C374[35472] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[35472] = 0;
   unsigned int * v184 = (unsigned int *)operator new(0x28u);
   if ( v184 )
-    *(unsigned int *)&stru_87C374[35468] = ((MixFileClass*)v184)->FromFile( (char *)((MixFileClass *)&stru_830620[67372]), (int)&stru_87C374[42508]);
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[35468] = ((MixFileClass*)v184)->FromFile( (char *)((MixFileClass *)&stru_830620[67372]), (int)&((unsigned char *)&stru_87C374)[42508]);
   else
-    *(unsigned int *)&stru_87C374[35468] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[35468] = 0;
   SetSoundWarning(v182);
   atexit(WinMainSetup);
   WinMain_Helper_7B84F0();
@@ -3500,34 +3500,34 @@ LABEL_56:
     WideMessageBox(0, Buffer, v187, 0x10u);
     exit(1);
   }
-  RegisterActiveObject((IUnknown *)&stru_87C374[13428], &rguid, 1u, (DWORD *)&stru_830620[66644]);
-  if ( *(unsigned int *)&HouseClass_Player[44600] == -1 || *(unsigned int *)&HouseClass_Player[44604] == -1 )
+  RegisterActiveObject((IUnknown *)&((unsigned char *)&stru_87C374)[13428], &rguid, 1u, (DWORD *)&stru_830620[66644]);
+  if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44600] == -1 || *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44604] == -1 )
   {
-    bool v188 = stru_87C374[45745] && *(int *)&stru_87C374[45604] < 5;
+    bool v188 = ((unsigned char *)&stru_87C374)[45745] && *(int *)&((unsigned char *)&stru_87C374)[45604] < 5;
     if ( v188 || sub_4A4130() > 0x200000 )
     {
-      *(unsigned int *)&HouseClass_Player[44600] = 800;
-      *(unsigned int *)&HouseClass_Player[44604] = 600;
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44600] = 800;
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44604] = 600;
     }
     else
     {
-      *(unsigned int *)&HouseClass_Player[44600] = 640;
-      *(unsigned int *)&HouseClass_Player[44604] = 480;
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44600] = 640;
+      *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44604] = 480;
     }
   }
-  if ( HouseClass_Player[45079] )
+  if ( ((unsigned char *)&HouseClass_Player)[45079] )
   {
     InitWindowCreation((ObjectClass *)hInstance, nShowCmd, 640, 480);
     sub_4A3FD0();
-    if ( stru_89E138[6208] )
+    if ( ((unsigned char *)&stru_89E138)[6208] )
     {
-      *(unsigned int *)&stru_87C374[44092] = 0;
-      *(unsigned int *)&stru_87C374[44096] = 0;
-      *(unsigned int *)&stru_87C374[44100] = 640;
-      *(unsigned int *)&stru_87C374[44104] = 480;
-      *(unsigned int *)&stru_89E138[8044] = 640;
-      *(unsigned int *)&stru_89E138[8048] = 480;
-      *(unsigned int *)&stru_89E138[8052] = g_Is16BitMode != 0 ? 16 : 8;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44092] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44096] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44100] = 640;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44104] = 480;
+      *(unsigned int *)&((unsigned char *)&stru_89E138)[8044] = 640;
+      *(unsigned int *)&((unsigned char *)&stru_89E138)[8048] = 480;
+      *(unsigned int *)&((unsigned char *)&stru_89E138)[8052] = g_Is16BitMode != 0 ? 16 : 8;
     }
     else
     {
@@ -3536,10 +3536,10 @@ aP2.location[0] = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x
 
 
 
-      *(unsigned int *)&stru_87C374[44092] = 0;
-      *(unsigned int *)&stru_87C374[44096] = 0;
-      *(unsigned int *)&stru_87C374[44100] = 640;
-      *(unsigned int *)&stru_87C374[44104] = 480;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44092] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44096] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44100] = 640;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44104] = 480;
       if ( !aP2.location[0] )
       {
         sub_4A40C0();
@@ -3555,46 +3555,46 @@ aP2.location[0] = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x
     InitWindowCreation(
       (ObjectClass *)hInstance,
       nShowCmd,
-      *(int *)&HouseClass_Player[44608],
-      *(int *)&HouseClass_Player[44612]);
+      *(int *)&((unsigned char *)&HouseClass_Player)[44608],
+      *(int *)&((unsigned char *)&HouseClass_Player)[44612]);
     sub_4A3FD0();
-    if ( stru_89E138[6208] )
+    if ( ((unsigned char *)&stru_89E138)[6208] )
     {
-      *(unsigned int *)&stru_87C374[44092] = 0;
-      *(unsigned int *)&stru_87C374[44096] = 0;
-      *(unsigned int *)&stru_87C374[44100] = *(unsigned int *)&HouseClass_Player[44608];
-      *(unsigned int *)&stru_87C374[44104] = *(unsigned int *)&HouseClass_Player[44612];
-      *(unsigned int *)&stru_89E138[8044] = *(unsigned int *)&HouseClass_Player[44608];
-      *(unsigned int *)&stru_89E138[8048] = *(unsigned int *)&HouseClass_Player[44612];
-      *(unsigned int *)&stru_89E138[8052] = g_Is16BitMode != 0 ? 16 : 8;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44092] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44096] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44100] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44608];
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44104] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44612];
+      *(unsigned int *)&((unsigned char *)&stru_89E138)[8044] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44608];
+      *(unsigned int *)&((unsigned char *)&stru_89E138)[8048] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44612];
+      *(unsigned int *)&((unsigned char *)&stru_89E138)[8052] = g_Is16BitMode != 0 ? 16 : 8;
     }
     else
     {
-edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)(*(ObjectClass **)&HouseClass_Player[44608]), *(DWORD *)&HouseClass_Player[44612], g_Is16BitMode != 0 ? 16 : 8);
+edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)(*(ObjectClass **)&((unsigned char *)&HouseClass_Player)[44608]), *(DWORD *)&((unsigned char *)&HouseClass_Player)[44612], g_Is16BitMode != 0 ? 16 : 8);
 
 
 
 
-      *(unsigned int *)&stru_87C374[44092] = 0;
-      *(unsigned int *)&stru_87C374[44096] = 0;
-      *(unsigned int *)&stru_87C374[44100] = *(unsigned int *)&HouseClass_Player[44608];
-      *(unsigned int *)&stru_87C374[44104] = *(unsigned int *)&HouseClass_Player[44612];
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44092] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44096] = 0;
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44100] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44608];
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44104] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44612];
       if ( !edi325 )
       {
-        if ( *(unsigned int *)&HouseClass_Player[44600] != 640
-          || *(unsigned int *)&HouseClass_Player[44604] != 480 )
+        if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44600] != 640
+          || *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44604] != 480 )
         {
-          *(unsigned int *)&HouseClass_Player[44600] = 640;
-          *(unsigned int *)&HouseClass_Player[44604] = 480;
+          *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44600] = 640;
+          *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44604] = 480;
 edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x280), 0x1E0u, g_Is16BitMode != 0 ? 16 : 8);
 
 
 
 
-          *(unsigned int *)&stru_87C374[44092] = 0;
-          *(unsigned int *)&stru_87C374[44096] = 0;
-          *(unsigned int *)&stru_87C374[44100] = *(unsigned int *)&HouseClass_Player[44600];
-          *(unsigned int *)&stru_87C374[44104] = *(unsigned int *)&HouseClass_Player[44604];
+          *(unsigned int *)&((unsigned char *)&stru_87C374)[44092] = 0;
+          *(unsigned int *)&((unsigned char *)&stru_87C374)[44096] = 0;
+          *(unsigned int *)&((unsigned char *)&stru_87C374)[44100] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44600];
+          *(unsigned int *)&((unsigned char *)&stru_87C374)[44104] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44604];
         }
         if ( !edi325 )
         {
@@ -3607,19 +3607,19 @@ edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x280), 0x1
       }
     }
   }
-  if ( *(unsigned int *)&HouseClass_Player[47672] && InitializeAudioStreaming(1000, 102400) )
+  if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[47672] && InitializeAudioStreaming(1000, 102400) )
   {
-    if ( *(unsigned int *)&HouseClass_Player[47672] == 1 )
+    if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[47672] == 1 )
     {
       WinMain_Helper_53E4F0(&stru_830620[67084]);
     }
-    else if ( *(unsigned int *)&HouseClass_Player[47672] == 2 )
+    else if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[47672] == 2 )
     {
       WinMain_Write(&stru_830620[67084]);
     }
   }
-  *(unsigned int *)&stru_87C374[44948] = ((DSurface *)0)->CreatePrimary();
-  eax333 = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[44948] + 112))(*(unsigned int *)&stru_87C374[44948]);
+  *(unsigned int *)&((unsigned char *)&stru_87C374)[44948] = ((DSurface *)0)->CreatePrimary();
+  eax333 = (*(int (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[44948] + 112))(*(unsigned int *)&((unsigned char *)&stru_87C374)[44948]);
   g_Is16BitMode = eax333 == 2;
   if ( eax333 != 2 )
   {
@@ -3630,7 +3630,7 @@ edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x280), 0x1
   }
   do
     MessageLoop();
-  while ( !HouseClass_Player[45108] );
+  while ( !((unsigned char *)&HouseClass_Player)[45108] );
   if ( !CopyProtection::NotifyLauncher() )
   {
     Debug::Log();
@@ -3638,49 +3638,49 @@ edi325 = (uint8_t)InitializeDDraw( (int)g_hWnd, (int)((ObjectClass *)0x280), 0x1
   }
   do
     MessageLoop();
-  while ( !HouseClass_Player[45108] );
-  stru_89E138[8040] = 0;
-  if ( !stru_89E138[6208] )
-    (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_87C374[44948] + 24))(
-      *(unsigned int *)&stru_87C374[44948],
+  while ( !((unsigned char *)&HouseClass_Player)[45108] );
+  ((unsigned char *)&stru_89E138)[8040] = 0;
+  if ( !((unsigned char *)&stru_89E138)[6208] )
+    (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[44948] + 24))(
+      *(unsigned int *)&((unsigned char *)&stru_87C374)[44948],
       0);
-  WinMain_Create(g_hInstance, g_hWnd, stru_89E138[6208]);
+  WinMain_Create(g_hInstance, g_hWnd, ((unsigned char *)&stru_89E138)[6208]);
   WinMain_Helper_637070();
   nullsub_18();
-  if ( stru_89E138[11447] )
+  if ( ((unsigned char *)&stru_89E138)[11447] )
   {
     if ( !sub_4C1600() )
       goto LABEL_345;
     DDraw::CleanupSurfaces();
-    stru_89E138[11447] = 0;
+    ((unsigned char *)&stru_89E138)[11447] = 0;
   }
-  stru_89E138[11448] = 0;
+  ((unsigned char *)&stru_89E138)[11448] = 0;
 LABEL_345:
   aP2.NeedsSaveOrLink = 0;
   aP2.objectTypeFlags = 0;
   aP2.owningHouseIndex = 168;
-  aP2.fallRate = *(unsigned int *)&stru_87C374[44104];
+  aP2.fallRate = *(unsigned int *)&((unsigned char *)&stru_87C374)[44104];
   aP2.uniqueId = 0;
   aP2.abstractFlags = 0;
-  aP2.nextArrayIndex = *(unsigned int *)&stru_87C374[44100] - 168;
-  aP2.referenceCount = *(unsigned int *)&stru_87C374[44104];
+  aP2.nextArrayIndex = *(unsigned int *)&((unsigned char *)&stru_87C374)[44100] - 168;
+  aP2.referenceCount = *(unsigned int *)&((unsigned char *)&stru_87C374)[44104];
   *(unsigned int *)aP2[0] = 0;
   *(unsigned int *)&aP2[4] = 0;
-  *(unsigned int *)&aP2[8] = *(unsigned int *)&stru_87C374[44100] - 168;
-  *(unsigned int *)&aP2[12] = *(unsigned int *)&stru_87C374[44104];
-AllocateSurfaceScreenSurfaces( (int)&stru_87C374[44092], (ObjectClass *)(&aP2), (ObjectClass *)&aP2.uniqueId, (int)&aP2.NeedsSaveOrLink, 0);
+  *(unsigned int *)&aP2[8] = *(unsigned int *)&((unsigned char *)&stru_87C374)[44100] - 168;
+  *(unsigned int *)&aP2[12] = *(unsigned int *)&((unsigned char *)&stru_87C374)[44104];
+AllocateSurfaceScreenSurfaces( (int)&((unsigned char *)&stru_87C374)[44092], (ObjectClass *)(&aP2), (ObjectClass *)&aP2.uniqueId, (int)&aP2.NeedsSaveOrLink, 0);
 
 
 
 
 
-  if ( stru_89E138[11447] && InitializeRadialGradientTexture() )
+  if ( ((unsigned char *)&stru_89E138)[11447] && InitializeRadialGradientTexture() )
   {
     DDraw::CleanupSurfaces();
-    stru_89E138[11447] = 0;
-    stru_89E138[11448] = 0;
+    ((unsigned char *)&stru_89E138)[11447] = 0;
+    ((unsigned char *)&stru_89E138)[11448] = 0;
   }
-  *(unsigned int *)&stru_87C374[44960] = *(unsigned int *)&stru_87C374[44952];
+  *(unsigned int *)&((unsigned char *)&stru_87C374)[44960] = *(unsigned int *)&((unsigned char *)&stru_87C374)[44952];
   IDA_LOBYTE(v194) = 1;
   Frame::Present(v194, 0);
   unsigned int * v195 = (unsigned int *)operator new(0x30u);
@@ -3688,45 +3688,45 @@ AllocateSurfaceScreenSurfaces( (int)&stru_87C374[44092], (ObjectClass *)(&aP2), 
   if ( v195 )
     v196 = BSurface::ConstructEx(
              v195,
-             *(int *)&stru_87C374[44076],
-             *(int *)&stru_87C374[44080],
+             *(int *)&((unsigned char *)&stru_87C374)[44076],
+             *(int *)&((unsigned char *)&stru_87C374)[44080],
              480,
-             480 - *(unsigned int *)&stru_87C374[44080]);
+             480 - *(unsigned int *)&((unsigned char *)&stru_87C374)[44080]);
   else
     v196 = (unsigned int *)(0);
-  *(unsigned int *)&stru_87C374[45776] = (unsigned int)v196;
+  *(unsigned int *)&((unsigned char *)&stru_87C374)[45776] = (unsigned int)v196;
   v197 = aP1;
   v196[9] = 0x8000;
   unsigned int * v198 = (unsigned int *)operator new(0x30u);
   if ( v198 )
   {
-    *(unsigned int *)&stru_87C374[9520] = BSurface::Construct(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[9520] = BSurface::Construct(
                                                  v198,
-                                                 *(int *)&stru_87C374[44076],
-                                                 *(int *)&stru_87C374[44080],
+                                                 *(int *)&((unsigned char *)&stru_87C374)[44076],
+                                                 *(int *)&((unsigned char *)&stru_87C374)[44080],
                                                  480,
-                                                 480 - *(unsigned int *)&stru_87C374[44080]);
+                                                 480 - *(unsigned int *)&((unsigned char *)&stru_87C374)[44080]);
     v197 = aP1;
   }
   else
   {
-    *(unsigned int *)&stru_87C374[9520] = 0;
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[9520] = 0;
   }
   unsigned int * v199 = (unsigned int *)operator new(0x98u);
   if ( v199 )
     v190 = (MouseClass *)MouseClass::Construct(
                            v199,
-                           *(ObjectClass **)&stru_87C374[44948],
+                           *(ObjectClass **)&((unsigned char *)&stru_87C374)[44948],
                            (IUnknown *)g_hWnd);
   else
     v190 = (MouseClass *)(0);
-  *(unsigned int *)&stru_87C374[45772] = (unsigned int)v190;
+  *(unsigned int *)&((unsigned char *)&stru_87C374)[45772] = (unsigned int)v190;
   (*(void (**)(MouseClass *))(v190->field_0 + 12))( (MouseClass *)(v190));
-  *(unsigned int *)&HouseClass_Player[44040] = 0;
-  if ( *(unsigned int *)&HouseClass_Player[44036] )
+  *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44040] = 0;
+  if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44036] )
   {
-    v201 = *(unsigned int *)&HouseClass_Player[43932];
-    *(unsigned int *)&HouseClass_Player[44040] = 1;
+    v201 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[43932];
+    *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44040] = 1;
   }
   else
   {
@@ -3734,10 +3734,10 @@ AllocateSurfaceScreenSurfaces( (int)&stru_87C374[44092], (ObjectClass *)(&aP2), 
   }
   CD::SetCurrentInstance((void *)v201);
   Performance::Profile();
-  *(unsigned int *)&HouseClass_Player[44052] = *(unsigned int *)&HouseClass_Player[44052] & 0xFFFFFFFB
+  *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44052] = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44052] & 0xFFFFFFFB
                                                   | (4
                                                    * (INIClass::ReadBool_Overwrite(
-                                                        (int)&stru_87C374[44364],
+                                                        (int)&((unsigned char *)&stru_87C374)[44364],
                                                         (uint8_t *)&g_INI_Key_Intro,
                                                         (CCINIClass *)&stru_830620[67016],
                                                         1)
@@ -3749,21 +3749,21 @@ AllocateSurfaceScreenSurfaces( (int)&stru_87C374[44092], (ObjectClass *)(&aP2), 
     && !WinMain_Helper(&aP2.location[1])
     && !((Flag *)(&aP2.location[1]))->IsNot2() )
   {
-    v192 = *(ObjectClass **)&HouseClass_Player[44052];
-    IDA_LOBYTE(v192) = HouseClass_Player[44052] | 8;
-    *(unsigned int *)&HouseClass_Player[44052] = (unsigned int)v192;
+    v192 = *(ObjectClass **)&((unsigned char *)&HouseClass_Player)[44052];
+    IDA_LOBYTE(v192) = ((unsigned char *)&HouseClass_Player)[44052] | 8;
+    *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44052] = (unsigned int)v192;
   }
-  if ( (HouseClass_Player[44052] & 4) == 4 )
+  if ( (((unsigned char *)&HouseClass_Player)[44052] & 4) == 4 )
   {
-    INIClass::SetBool(&stru_87C374[44364], &g_INI_Key_Intro, &stru_830620[67016], 0);
+    INIClass::SetBool(&((unsigned char *)&stru_87C374)[44364], &g_INI_Key_Intro, &stru_830620[67016], 0);
     (*(void (**)(CCINIClass *))(*(unsigned int *)v197->__pad_0 + 52))( (CCINIClass *)(v197));
     (*(void (**)(CCINIClass *, int))(*(unsigned int *)v197->__pad_0 + 28))( (CCINIClass *)(v197), 1);
-    INIClass::WriteDigest(&stru_87C374[44364], v197, 0);
+    INIClass::WriteDigest(&((unsigned char *)&stru_87C374)[44364], v197, 0);
   }
   (*(void (**)(CCINIClass *))(*(unsigned int *)v197->__pad_0 + 52))( (CCINIClass *)(v197));
   if ( v197 )
     (**(void (***)(CCINIClass *, int))v197->__pad_0)(v197, 1);
-  if ( HouseClass_Player[47712] )
+  if ( ((unsigned char *)&HouseClass_Player)[47712] )
   {
     MainGame();
   }
@@ -3775,19 +3775,19 @@ AllocateSurfaceScreenSurfaces( (int)&stru_87C374[44092], (ObjectClass *)(&aP2), 
     ms_exc.registration.TryLevel = -1;
     SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)TopLevelExceptionFilter);
   }
-  (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
-  (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_87C374[44952] + 24))(
-    *(unsigned int *)&stru_87C374[44952],
+  (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[45772] + 12))(*(unsigned int *)&((unsigned char *)&stru_87C374)[45772]);
+  (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&((unsigned char *)&stru_87C374)[44952] + 24))(
+    *(unsigned int *)&((unsigned char *)&stru_87C374)[44952],
     0);
   IDA_LOBYTE(v203) = 1;
   Frame::Present(v203, 0);
-  *(unsigned int *)&HouseClass_Player[45196] = 1;
+  *(unsigned int *)&((unsigned char *)&HouseClass_Player)[45196] = 1;
   ((ThemeManager *)(int)&g_BuildingTypeClass_Count)->Cleanup();
   Audio::Shutdown();
   PostMessageA(g_hWnd, 2u, 0, 0);
   do
     MessageLoop();
-  while ( *(unsigned int *)&HouseClass_Player[45196] == 1 );
+  while ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[45196] == 1 );
   v10 = 0;
 LABEL_374:
   WinMain_Helper_5D7E50();
@@ -5623,22 +5623,22 @@ int sub_6BB760()
 
   StringFromGUID2(&rguid, sz, 39); /*0x6bb777*/
   WideCharToMultiByte( 0, 0x20u, (LPCWCH)(sz), -1, (LPSTR)(MultiByteStr), 39, 0, 0); /*0x6bb796*/
-  lstrcpyA( (LPSTR)(String1), aClsid); /*0x6bb7a6*/
+  lstrcpyA( (LPSTR)(String1), "CLSID\" /*w16g4 "CLSID\" /*w16g4 aClsid*/*/); /*0x6bb7a6*/
   lstrcatA(String1, MultiByteStr); /*0x6bb7b6*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, aWwTiberiansunC); /*0x6bb7cc*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, aWwTiberiansunC_0); /*0x6bb7d8*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, g_Str_WW_TiberianSun); /*0x6bb7e4*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, aWwTiberiansun1_0); /*0x6bb7f0*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, (LPCSTR)g_Str_WW_TiberianSun_1); /*0x6bb7fc*/
-  wsprintfA(SubKey, "%s\\%s", String1, aProgid); /*0x6bb81b*/
+  wsprintfA(SubKey, "%s\\%s", String1, "ProgID" /*w16g4 "ProgID" /*w16g4 aProgid*/*/); /*0x6bb81b*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb82a*/
-  wsprintfA(SubKey, "%s\\%s", String1, aVersionindepen); /*0x6bb840*/
+  wsprintfA(SubKey, "%s\\%s", String1, "VersionIndependentProgID" /*w16g4 "VersionIndependentProgID" /*w16g4 aVersionindepen*/*/); /*0x6bb840*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb84f*/
-  wsprintfA(SubKey, "%s\\%s", String1, aNotinsertable); /*0x6bb865*/
+  wsprintfA(SubKey, "%s\\%s", String1, "NotInsertable" /*w16g4 "NotInsertable" /*w16g4 aNotinsertable*/*/); /*0x6bb865*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb874*/
-  wsprintfA(SubKey, "%s\\%s", String1, aInprocserver32); /*0x6bb88d*/
+  wsprintfA(SubKey, "%s\\%s", String1, "InprocServer32" /*w16g4 "InprocServer32" /*w16g4 aInprocserver32*/*/); /*0x6bb88d*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb89c*/
-  wsprintfA(SubKey, "%s\\%s", String1, aTypelib); /*0x6bb8b2*/
+  wsprintfA(SubKey, "%s\\%s", String1, "Typelib" /*w16g4 "Typelib" /*w16g4 aTypelib*/*/); /*0x6bb8b2*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, SubKey); /*0x6bb8c1*/
   RegDeleteKeyA(HKEY_CLASSES_ROOT, String1); /*0x6bb8cd*/
   return 0; /*0x6bb8d1*/

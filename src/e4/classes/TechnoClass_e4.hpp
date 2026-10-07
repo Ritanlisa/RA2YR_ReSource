@@ -349,7 +349,19 @@ struct TechnoClass {
     unsigned int q_F20;  // +0xF20 flat supply (CSP-fed)
     int sub_724550();  // 0x724550
     int sub_724570();  // 0x724570
-    int sub_724A30(int * a2);  // 0x724A30
+    int sub_724A30(int * a2);
+    static int CalcFacingFromMatrix(...);
+    static int ClearArrays(...);  // w16g4 C3861 static supply (raw 0x00755C50)  // w16g4 C3861 static supply (Cls call-form)  // 0x724A30
+    // --- W16G3 supply (BEGIN) ---
+    void* vtable0;  // 0x0 (W16G3: addr42 0x424CE0/0x424F00/0x425670 receiver sites, ObjectClass-vocab)
+    // --- W16G3 supply (END) ---
+
+    // --- W16G3 supply (BEGIN) ---
+    char __pad_0B0[4];  // 0xB0 @0x6ea681 (W16G3 raw-usage vocab)
+    unsigned int q_610;  // 0x610 @0x6ea71e (W16G3 raw-usage vocab)
+    unsigned int q_220;  // 0x220 @0x6ea7xx (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

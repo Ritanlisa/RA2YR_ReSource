@@ -7810,7 +7810,7 @@ lea     eax, [ebp-3]    ; switch 19 cases
 cmp     eax, 12h
 ja      def_43C2F1      ; jumptable 0043C2F1 default case, cases 4-7,9,10,17-20
 xor     ecx, ecx
-mov     cl, ds:byte_43CE88[eax]
+mov     cl, ds:((unsigned char *)&byte_43CE88)[eax]
 jmp     ds:jpt_43C2F1[ecx*4] ; switch jump
 ; ---------------------------------------------------------------------------
 
@@ -12038,9 +12038,9 @@ jz      short loc_465D6B
 mov     eax, [ecx+0EF0h]
 mov     ecx, 1
 shl     eax, 2
-cmp     dword_8192B8[eax], ecx
+cmp     (&dword_8192B8)[eax], ecx
 jnz     short loc_465D6B
-cmp     dword_819310[eax], ecx
+cmp     (&dword_819310)[eax], ecx
 jnz     short loc_465D6B
 mov     eax, ecx
 retn

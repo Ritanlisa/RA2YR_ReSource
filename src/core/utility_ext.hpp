@@ -1573,7 +1573,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~HashTree() = default;
 
-    virtual void MarkEntry(); // 0x5B4270
+    virtual int MarkEntry(); // 0x5B4270 (G57w16 G1: raw int)
 
 };
 // 1 methods in IDA

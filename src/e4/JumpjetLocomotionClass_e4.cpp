@@ -2690,7 +2690,7 @@ int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
   v3 = 12 * a1->MovementSpeed[1] + 8333888; /*0x6a415c*/
   v4 = LOBYTE(a1->TrackIndex)
      ? (char)algn_7F2A41[12 * a1->MovementSpeed[1]]
-     : byte_7F2A40[12 * a1->MovementSpeed[1]];
+     : ((unsigned char *)&byte_7F2A40)[12 * a1->MovementSpeed[1]];
   if ( v2 == 8 ) /*0x6a4173*/
     return 0; /*0x6a4173*/
   if ( v2 == -1 ) /*0x6a417c*/
@@ -2701,13 +2701,13 @@ int JumpjetLocomotionClass::StubReturnZero_15(unsigned int a1)
   if ( (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) == v2 ) /*0x6a41a8*/
     return 0; /*0x6a41a8*/
   TrackNumber = v1->TrackNumber; /*0x6a41aa*/
-  if ( dword_7F2964[4 * v4] == TrackNumber /*0x6a41f1*/
+  if ( (&dword_7F2964)[4 * v4] == TrackNumber /*0x6a41f1*/
     && TrackNumber
     && (LOBYTE(v7) = 0,
         HIBYTE(v7) = *(unsigned char *)(v3 + 4),
         LOWORD(a1) = v7,
-        (v8 = byte_7F2A40[96 * (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) + 12 * v2]) != 0)
-    && dword_7F2968[4 * v8] )
+        (v8 = ((unsigned char *)&byte_7F2A40)[96 * (((((unsigned int)a1 >> 12) + 1) >> 1) & 7) + 12 * v2]) != 0)
+    && (&dword_7F2968)[4 * v8] )
   {
     return 1; /*0x6a41fc*/
   }

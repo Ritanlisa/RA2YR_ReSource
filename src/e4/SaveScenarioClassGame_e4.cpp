@@ -24,6 +24,13 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/GameOptions_e4.hpp"
 #include "e4/classes/GameState_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int Map_Save_681080(...); }  // w16g4 raw call-form
+namespace gamemd { int Map_Save_681110(...); }  // w16g4 raw call-form
+namespace gamemd { int Map_Save_681130(...); }  // w16g4 raw call-form
+namespace gamemd { int Map_Save_681280(...); }  // w16g4 raw call-form
+namespace gamemd { int Map_Save_681200(...); }  // w16g4 raw call-form
+namespace gamemd { int Map_Save_681240(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int Map_Save_6812C0(...);  // raw 006812C0: int __thiscall Map_Save_6812C0(TechnoClass *this, int a2)

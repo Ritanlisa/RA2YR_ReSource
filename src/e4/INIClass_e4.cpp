@@ -116,7 +116,7 @@ LABEL_19:
 }
 // 0x526960
 namespace gamemd {
-VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1, void *a2)
+int INIClass::GetKeyCount(INIClass * aP1, void *a2)
 {
 
   char *v2; // esi
@@ -130,30 +130,30 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1, void *a2)
   int v10; // esi
   unsigned int v12[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  if ( !aP1 ) /*0x52696d*/
+  if ( !a2 ) /*0x52696d*/
     return 0; /*0x52696d*/
   memset( (void *)(v12), 0, sizeof(v12)); /*0x52697a*/
-  v2 = (char *)((unsigned char *)this + 40); /*0x5269a2*/
-  v3 = ((Checksummer*)v12)->Add_Buffer( (unsigned char)((uint8_t *)aP1), strlen((const char *)aP1)); /*0x5269a5*/
-  aP1 = (gamemd::INIClass *)((uint8_t *)v3); /*0x5269a7*/
+  v2 = (char *)((unsigned char *)aP1 + 40); /*0x5269a2*/
+  v3 = ((Checksummer*)v12)->Add_Buffer( (unsigned char)((uint8_t *)a2), strlen((const char *)a2)); /*0x5269a5*/
+  a2 = (gamemd::INIClass *)((uint8_t *)v3); /*0x5269a7*/
   if ( !*((unsigned int *)v2 + 1) ) /*0x5269ab*/
     return 0; /*0x5269b0*/
   v4 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269b2*/
   if ( !v4 || *v4 != v3 ) /*0x5269bb*/
   {
-    v5 = SortedArray::BinarySearch( (int *)((int)((int *)(&aP1)))); /*0x5269c4*/
+    v5 = SortedArray::BinarySearch( (int *)((int)((int *)(&a2)))); /*0x5269c4*/
     if ( !v5 ) /*0x5269cb*/
       return 0; /*0x5269cb*/
     *((unsigned int *)v2 + 4) = v5; /*0x5269cd*/
   }
   v6 = (gamemd::INIClass *)((int)((gamemd::INIClass *)(*((unsigned int *)v2 + 1))));
-  aP1 = (gamemd::INIClass *)((uint8_t *)v3);
+  a2 = (gamemd::INIClass *)((uint8_t *)v3);
   if ( v6 ) /*0x5269d9*/
   {
     v7 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269db*/
     if ( v7 && *v7 == v3 ) /*0x5269e4*/
       goto LABEL_12; /*0x5269e4*/
-    v8 = SortedArray::BinarySearch( (int *)((int)((int *)(&aP1)))); /*0x5269ed*/
+    v8 = SortedArray::BinarySearch( (int *)((int)((int *)(&a2)))); /*0x5269ed*/
     if ( v8 ) /*0x5269f4*/
     {
       *((unsigned int *)v2 + 4) = v8; /*0x5269f6*/
@@ -165,7 +165,7 @@ LABEL_12:
   v9 = (int *)((gamemd::VoxelStruct **)((int *)&unk_B7882C));
 LABEL_14: v10 = (int)((gamemd::VoxelStruct **)(*v9));
   if ( v10 ) /*0x526a0a*/
-    return (gamemd::VoxelStruct **)(*(unsigned int *)(v10 + 48)); /*0x526a14*/
+    return (int)(*(unsigned int *)(v10 + 48));  /*[w16g2] int return per raw 0x526a14*/ /*0x526a14*/
   return 0; /*0x526a0f*/
 
 }
@@ -413,27 +413,27 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
   unsigned int *v8; // eax
   unsigned int v10[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  if ( !aP1 ) /*0x526ccd*/
+  if ( !aP2 ) /*0x526ccd*/
     return 0; /*0x526ccd*/
   memset( (void *)(v10), 0, sizeof(v10)); /*0x526cda*/
-  v3 = (char *)((unsigned char *)this + 40); /*0x526d02*/
-  v4 = ((Checksummer*)v10)->Add_Buffer( (unsigned char)((uint8_t *)aP1), strlen((const char *)aP1)); /*0x526d05*/
-  aP1 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d07*/
+  v3 = (char *)((unsigned char *)aP1 + 40); /*0x526d02*/
+  v4 = ((Checksummer*)v10)->Add_Buffer( (unsigned char)((uint8_t *)aP2), strlen((const char *)aP2)); /*0x526d05*/
+  aP2 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d07*/
   if ( !*((unsigned int *)v3 + 1) ) /*0x526d0b*/
     return 0; /*0x526d10*/
-  if ( !(uint8_t)SortedArray::CheckCache( &aP1) ) /*0x526d19*/
+  if ( !(uint8_t)SortedArray::CheckCache( &aP2) ) /*0x526d19*/
   {
-    v5 = SortedArray::BinarySearch( (int *)((int)((int *)(&aP1)))); /*0x526d29*/
+    v5 = SortedArray::BinarySearch( (int *)((int)((int *)(&aP2)))); /*0x526d29*/
     if ( !v5 ) /*0x526d30*/
       return 0; /*0x526d30*/
     *((unsigned int *)v3 + 4) = v5; /*0x526d32*/
   }
-  aP1 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d3c*/
-  v6 = *(unsigned int *)((SortedArray *)(&aP1))->FindValue(); /*0x526d45*/
+  aP2 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d3c*/
+  v6 = *(unsigned int *)((SortedArray *)(&aP2))->FindValue(); /*0x526d45*/
   if ( v6 ) /*0x526d49*/
   {
-    v7 = (int)(aP2); /*0x526d4b*/
-    if ( aP2 < (gamemd::CCINIClass *)(*(unsigned int *)(v6 + 48) )) /*0x526d54*/
+    v7 = (int)(a3); /*0x526d4b*/
+    if ( a3 < (gamemd::CCINIClass *)(*(unsigned int *)(v6 + 48) )) /*0x526d54*/
     {
       v8 = *(unsigned int **)(v6 + 24); /*0x526d56*/
       if ( v8 ) /*0x526d5b*/

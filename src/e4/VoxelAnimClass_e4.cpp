@@ -715,7 +715,7 @@ int VoxelAnimClass::VoxelAnimClass_Update()
             v91 = ++v41; /*0x74a56e*/
           }
           while ( v41 < 8 ); /*0x74a572*/
-          Cell::CreateCrater( (void *)(v108), (void *)(v109), (void *)(v6), (void *)(v110), 0); /*0x74a59f*/
+          Cell::CreateCrater( (v108), (v109), (v6), (v110), 0); /*0x74a59f*/
           return (*((int (**)(VoxelAnimClass *))v1->VoxelAnimClass_field_0x0 + 62))( (VoxelAnimClass *)(v1)); /*0x74a5b5*/
         }
       }

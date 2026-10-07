@@ -21,7 +21,7 @@ struct E4Recv_6E37F0 {
     unsigned int q1910;  // 0x1910
     unsigned int q5684;  // 0x5684
     unsigned int u32_204;
-    void* customSound_controller;  // 0x0 (no offset truth)
+    unsigned int customSound_controller[5];  // G57w16 G1: til truth (AudioController 20B)
     void* isAliveFlag;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     int sub_6E37F0(int a2, int a3, int a4, ObjectClass * aP4);  // 0x6E37F0

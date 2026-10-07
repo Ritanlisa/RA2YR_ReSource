@@ -2508,7 +2508,7 @@ int Dialog::Destroy()
       8 * (g_DialogTrackingList + 0x1FFFFFFF * (result + 1)));
     v4 = g_DialogTrackingList; /*0x622788*/
     *(&g_ClipboardBuffer + 2 * g_DialogTrackingList) = 0; /*0x622790*/
-    dword_B72D24[2 * v4] = 0; /*0x622797*/
+    (&dword_B72D24)[2 * v4] = 0; /*0x622797*/
     v5 = v4 - 1; /*0x62279e*/
     g_DialogTrackingList = v5; /*0x6227a1*/
     if ( v5 <= 0 ) /*0x6227a6*/
@@ -2521,7 +2521,7 @@ int Dialog::Destroy()
     else
     {
       v6 = *(&g_ClipboardBuffer + 2 * v5); /*0x6227a8*/
-      v7 = dword_B72D24[2 * v5]; /*0x6227af*/
+      v7 = (&dword_B72D24)[2 * v5]; /*0x6227af*/
       hWnd = v6; /*0x6227b7*/
       dword_B72F48 = v7; /*0x6227bd*/
       SetForegroundWindow(v6); /*0x6227c2*/
@@ -3419,7 +3419,7 @@ char Dialog::PumpMessages()
   int result; // eax
 
   MessageLoop(); /*0x623120*/
-  if ( !dword_A8B238[0] || dword_A8B238[0] == 5 || byte_A8D60E || dword_A8DAB4 ) /*0x623143*/
+  if ( !(&dword_A8B238)[0] || (&dword_A8B238)[0] == 5 || byte_A8D60E || dword_A8DAB4 ) /*0x623143*/
   {
     result = Event::Dispatch(); /*0x62315a*/
   }

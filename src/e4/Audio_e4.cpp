@@ -60,6 +60,8 @@
 #include "e4/classes/AudioMixer_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/AudioCodec_e4.hpp"  // G57w10 D supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_401580(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int Audio_Read_6C6B00(...);  // raw 006C6B00: _DWORD *__thiscall Audio_Read_6C6B00(ObjectClass *this, _DWORD *a2)

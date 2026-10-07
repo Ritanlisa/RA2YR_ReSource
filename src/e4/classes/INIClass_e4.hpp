@@ -53,10 +53,10 @@ struct INIClass {
 // --- flat members (END) ---
     int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
     static ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);  // G57w11: +static raw 0x00526810 __thiscall receiver-first (sibling G57w10-S form)
-    VoxelStruct * * GetKeyCount(INIClass * aP1, void *a2);
+    static int GetKeyCount(INIClass * aP1, void *a2);  // [w16g2] static receiver-first per raw __thiscall 0x526960 (INIClass* this, u8* section)
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(uint8_t *aP1, uint8_t *a2, int a4);
-    int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);
+    static int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);  // [w16g2] static receiver-first per raw __thiscall 0x526CC0 (INIClass* this, u8* section, int index)
     int ReadInt(String *a2, String *a3, int a4);
     int WOLobby_Play(const char *a1, const char *a2, int a3);
     int sub_44FE60();

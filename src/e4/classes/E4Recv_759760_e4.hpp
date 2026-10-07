@@ -15,5 +15,9 @@ struct E4Recv_759760 {
     unsigned int q5280;  // 0x5280
 // --- flat members (END) ---
     unsigned char * sub_759760(const void * a2);  // 0x759760
+    // --- W16G3 supply (BEGIN) ---
+    char reloadTimer[800];  // qmemcpy 0x300 at [2] @0x759773 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

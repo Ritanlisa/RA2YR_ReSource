@@ -95,7 +95,7 @@ int sub_5C7EC0(const void * a1, int a2)
   if ( dword_ABF8CC ) /*0x5c7f74*/
   {
   LABEL_16: v18 = (int)(v14);
-    v19 = (int *)(dword_ABF8C4[v14]);
+    v19 = (int *)((&dword_ABF8C4)[v14]);
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
     if ( v19 >= 0 ) /*0x5c7f9e*/

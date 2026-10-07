@@ -32,6 +32,8 @@
 #include "classes/ObjectPtr_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 #include "e4/classes/KeywordClass_e4.hpp"  // G57w10 D supply
+#include "e4/classes/SideClass_e4.hpp"  // w16g4 C3861 SideClass:: supply
+namespace VectorClass { int ClearAndFree4(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 
 // 0x511650
 namespace gamemd {
@@ -570,24 +572,24 @@ int HouseTypeClass_SaveLoad_Prefix_0(HouseTypeClass *aP0, int * a2, int * a3, in
     int v11; // edx
     int k; // ebx
 
-    result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)this), (ObjectTypeClass *)(a2), (ObjectTypeClass *)((int)a3)); /*0x512491*/
+    result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)aP0), (ObjectTypeClass *)(a2), (ObjectTypeClass *)((int)a3)); /*0x512491*/
     if ( result >= 0 ) /*0x512498*/
     {
       v7 = *a2; /*0x5124a4*/
-      a3 = (int *)this->veteranAircraft[0]; /*0x5124b1*/
+      a3 = (int *)aP0->veteranAircraft[0]; /*0x5124b1*/
       (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x5124b5*/
       for ( i = 0; i < a4; ++i ) /*0x5124c0*/
-        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, this->veteranInfantryCount + 4 * i, 4, 0); /*0x5124d3*/
+        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->veteranInfantryCount + 4 * i, 4, 0); /*0x5124d3*/
       v9 = *a2; /*0x5124e3*/
-      a4 = *(unsigned int *)&this->__pad_16D[11]; /*0x5124ef*/
+      a4 = *(unsigned int *)&aP0->__pad_16D[11]; /*0x5124ef*/
       (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x5124f3*/
       for ( j = 0; j < a4; ++j ) /*0x5124fe*/
-        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&this->smartAi + 4 * j, 4, 0); /*0x512511*/
+        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&aP0->smartAi + 4 * j, 4, 0); /*0x512511*/
       v11 = *a2; /*0x512521*/
-      a4 = *(unsigned int *)&this->__pad_16D[39]; /*0x51252d*/
+      a4 = *(unsigned int *)&aP0->__pad_16D[39]; /*0x51252d*/
       (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x512531*/
       for ( k = 0; k < (int)a3; ++k ) /*0x51253c*/
-        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&this->__pad_16D[27] + 4 * k, 4, 0); /*0x51254f*/
+        (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&aP0->__pad_16D[27] + 4 * k, 4, 0); /*0x51254f*/
       return 0; /*0x512559*/
     }
     return result; /*0x51255c*/

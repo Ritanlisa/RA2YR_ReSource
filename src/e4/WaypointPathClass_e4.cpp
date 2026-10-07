@@ -295,7 +295,7 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   if ( result >= 0 ) /*0x763daa*/
   {
     v4 = *a1; /*0x763daf*/
-    aP2 = aP0->waypoints[4]; /*0x763dbb*/
+    aP2 = (&aP0->waypoints)[4]; /*0x763dbb*/
     result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)(a1), (int *)(&aP2), 4, 0); /*0x763dbf*/
     if ( result >= 0 ) /*0x763dc4*/
     {

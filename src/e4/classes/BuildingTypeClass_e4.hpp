@@ -308,7 +308,7 @@ struct BuildingTypeClass {
     int GetFoundationHeight(char a2);  // 0x45eca0
     OverlayTypeClass * * FindOrCreate2(ObjectClass * Source);
     ParticleSystemTypeClass * * LoadOrGet(ObjectClass * Source);
-    AbstractClass * * FindOrCreateAlt(INIClass * Source);
+    static AbstractClass * * FindOrCreateAlt(INIClass * Source);  // [w16g2] static 1-arg overload (def body this=0)
     BuildingTypeClass * * ProcessEvent();
     int SaveLoad_Prefix_0();
 };

@@ -10,6 +10,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "classes/Array_e4.hpp"  // G42.57w9 method-carrier supply
+#include "e4/classes/ObjectClass_e4.hpp"  // w16g4 C3861 ObjectClass:: supply
 namespace gamemd {  // g57w12-r nsfix (orphan re-wrap)
 
 // 0x543780

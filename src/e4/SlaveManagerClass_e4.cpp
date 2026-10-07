@@ -21,6 +21,8 @@
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ObjectPtr_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TechnoTypeClass_e4.hpp"  // G42.36 C2027 supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int ProcessDeployAction(...); }  // w16g4 raw call-form
 
 // 0x522D00
 namespace gamemd {

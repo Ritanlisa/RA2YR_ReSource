@@ -270,15 +270,36 @@ struct WDTState;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; tw
 } // namespace gamemd
 namespace gamemd {
 struct CarryoverClass;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
-struct _DynamicVectorClass_PAUControlNode { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
-struct _VectorClass_PAUControlNode { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct _DynamicVectorClass_PAUControlNode {
+void* vfptr;
+    char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
+    unsigned int m_8;  // 0x8 vocab alias (Capacity)
+    unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
+    unsigned int m_10;  // 0x10 vocab alias (Count)
+    char __pad_0[4];  // 0x0 vocab alias (vfptr carrier)
+};
+  // minimal E2 (size-fix pending til evidence)
+struct _VectorClass_PAUControlNode {
+void* vfptr;
+    char m_1[8];  // @0x4xxxxx (m_1[3] vocab) (W16G3 raw-usage vocab)
+    unsigned int m_C;  // BYTE1 vocab (W16G3 raw-usage vocab)
+    unsigned int m_10;  // Count vocab (W16G3 raw-usage vocab)
+
+};  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct CoordBounds;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 struct Next { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
-struct _VectorClass_PAVParticleClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct _VectorClass_PAVParticleClass {
+void* vfptr;
+    char m_1[8];  // 0x1.. vocab alias (raw usage &x.m_1[3] = Items@0x4)
+    unsigned int m_8;  // 0x8 vocab alias (Capacity)
+    unsigned int m_C;  // 0xC..0xD vocab alias (IsInitialized/IsAllocated via LOBYTE/BYTE1)
+    char __pad_0[4];  // 0x0 vocab alias (vfptr carrier)
+};
+  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct Bootstrap { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
@@ -300,7 +321,19 @@ namespace gamemd {
 struct Add { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 #ifndef GAMEMD_E4_FLAT_MouseClass  // G57c2 dedup: full flat carrier MouseClass_e4.hpp wins (include order verified carrier-first)
 #define GAMEMD_E4_FLAT_MouseClass 1  // G57w8: twin-guard dedup, define restored
-struct MouseClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
+struct MouseClass {
+void* vfptr;
+    unsigned int q030;  // 0x30 (W16G3 raw vtable-slot vocab, Scenario/Dialog/addr48 sites)
+    unsigned int q040;  // 0x40 (W16G3 raw vtable-slot vocab)
+    unsigned int q_40;  // 0x40 alt-site (W16G3 raw vtable-slot vocab)
+    unsigned int u32_50;  // 0x50 (W16G3 raw vtable-slot vocab)
+    unsigned int q_A0;  // 0xA0 (W16G3 raw vtable-slot vocab)
+    unsigned int q0B0;  // 0xB0 (W16G3 raw vtable-slot vocab)
+    unsigned int __pad_0C0;  // 0xC0 (W16G3 raw vtable-slot vocab)
+    unsigned int q0F0;  // 0xF0 (W16G3 raw vtable-slot vocab)
+    unsigned int q100;  // 0x100 (W16G3 raw vtable-slot vocab)
+};
+  // minimal E2 (size-fix pending til evidence)
 #endif  // GAMEMD_E4_FLAT_MouseClass
 struct TileData;  // G57c2 dedup: fwd only -- other def lives in classes.hpp; twin collided (C2011)  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd

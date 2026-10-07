@@ -29,5 +29,9 @@ struct E4Recv_433C80 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     short sub_433C80(short a2);  // 0x433C80
+    // --- W16G3 supply (BEGIN) ---
+    void* occupant;  // (W16G3 @0x433cxx)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

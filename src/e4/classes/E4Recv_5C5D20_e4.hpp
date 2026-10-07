@@ -7,5 +7,9 @@ namespace gamemd {
 struct E4Recv_5C5D20 {
     void* vfptr;  // minimal E2 declaration
     void sub_5C5D20();  // 0x5C5D20
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int m_0;  // 0x0 @0x5c5d20 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

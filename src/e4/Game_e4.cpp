@@ -1923,7 +1923,7 @@ LABEL_16:
   v13 = (int *)(*(int * *)&MEMORY[0xA8B2DC]); /*0x77e6fc*/
   do /*0x77e740*/
   {
-    sprintf((unsigned char *)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), aDDDDD_0, *(v13 - 24), *(v13 - 16), *(v13 - 8), *v13, v13[8]); /*0x77e72f*/
+    sprintf((unsigned char *)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), "%d,%d,%d,%d,%d," /*w16g4 "%d,%d,%d,%d,%d," /*w16g4 aDDDDD_0*/*/, *(v13 - 24), *(v13 - 16), *(v13 - 8), *v13, v13[8]); /*0x77e72f*/
     ++v13; /*0x77e734*/
   }
   while ( (int)v13 < (int)MEMORY[0xA8B2FC] ); /*0x77e740*/
@@ -2808,7 +2808,7 @@ int Game::CreateAIPlayer()
 
   {
     v3 = dword_A8DA84++; /*0x796e99*/
-    dword_A8DA78[v3] = v2; /*0x796ea8*/
+    (&dword_A8DA78)[v3] = v2; /*0x796ea8*/
   }
   v4 = dword_A8B54C; /*0x796eab*/
   *((unsigned int *)&dword_B7790C+ dword_A8B54C) = 100; /*0x796eb2*/
@@ -2858,7 +2858,7 @@ int Game::CreateAIPlayer_Potato()
 
   {
     v3 = dword_A8DA84++; /*0x796f85*/
-    dword_A8DA78[v3] = v2; /*0x796f94*/
+    (&dword_A8DA78)[v3] = v2; /*0x796f94*/
   }
   v4 = dword_A8B54C; /*0x796f97*/
   *((unsigned int *)&dword_B7790C+ dword_A8B54C) = 100; /*0x796f9e*/

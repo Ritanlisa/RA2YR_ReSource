@@ -930,7 +930,7 @@ char Cell::UpdateTileType(__int16 *aP0, int aP1, int a3)
     v22[2] = 0; /*0x56ea47*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v22), (int *)(&v20)); /*0x56ea4f*/
     v21 -= 15 * *((char *)v6 + 283); /*0x56ea78*/
-    Cell::CreateCrater((void *)(v20 - 128),(void *)( v21 - 128),(void *)( 256),(void *)(256), 0); /*0x56ea98*/
+    Cell::CreateCrater((v20 - 128),( v21 - 128),( 256),(256), 0); /*0x56ea98*/
   }
   v9 = (int)(aP1); /*0x56eaa3*/
   LOBYTE(v7) = (v6[80] & 0x2000) != 0; /*0x56eaaa*/
@@ -1021,7 +1021,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
     v23[2] = 0; /*0x56ec02*/
     ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v23), (int *)(&v21)); /*0x56ec0a*/
     v22 -= 15 * *((char *)v8 + 283); /*0x56ec33*/
-    result = (char)(Cell::CreateCrater((void *)(v21 - 128),(void *)( v22 - 128),(void *)( 256),(void *)(256), 0)); /*0x56ec53*/
+    result = (char)(Cell::CreateCrater((v21 - 128),( v22 - 128),( 256),(256), 0)); /*0x56ec53*/
     v12 = v8[14]; /*0x56ec58*/
     v10 = (int)(a2); /*0x56ec5b*/
     if ( a2 == (IUnknown *)(v12) ) /*0x56ec61*/
@@ -1553,7 +1553,7 @@ LABEL_15:
 }
 // 0x6D2790
 namespace gamemd {
-void* Cell::CreateCrater(int a1, void *a2, void *a3, void *a4, void *a5)
+void* Cell::CreateCrater(int a1, int a2, int a3, int a4, int a5)
 {
 
   int v5; // ecx
@@ -1900,7 +1900,7 @@ unsigned short * Cell::GetHeight(int *aP1, int *a2)
 //L-fix     fisub dword ptr [ecx+4]
 //L-fix     fstp [esp+18h+var_18]; double
   }
-  ((Math *)v8)->CalcAngle( v9); /*0x4265e8*/
+  Math::CalcAngle(v8, v9); /*0x4265e8*/
   __asm { fsub ds:dbl_7E2820 } /*0x4265ed*/
   __asm { fmul ds:dbl_7E2818 }
   LOWORD(aP1) = Math::RoundToInt(v3); /*0x426601*/

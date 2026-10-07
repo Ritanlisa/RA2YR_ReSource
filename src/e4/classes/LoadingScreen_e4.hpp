@@ -28,7 +28,7 @@ struct LoadingScreen {
     char * GetBackgroundImage(ScenarioClass * aP1);
     char * GetOverlayImage(ScenarioClass * aP1);
     static char FreeResources3();
-    char Init();
+    static char Init();  // [w16g2] static (def body this=0)
     static char FreeResources(void *a1);
     int GetColorScheme();
     int ReleaseAnimObjects(char * Source);

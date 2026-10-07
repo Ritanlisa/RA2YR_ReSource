@@ -32,6 +32,7 @@ using ra2::game::ObjectClass;
 #include "e4/e4_globals_decls.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
 #include "e4/classes/BuildingTypeClass_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/WarheadTypeClass_e4.hpp"  // w16g4 C3861 WarheadTypeClass:: supply
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int aColoradd;  // 词表 (canon 无条目, int 兜底) L1404
 extern int aCountries;  // 词表 (canon 无条目, int 兜底) L1416
@@ -1436,18 +1437,18 @@ int RulesClass::Addition() {
         WeaponTypeClass::Create(Destination); /*0x668cd1*/
     }
     RulesClass::ReadDataList(this); /*0x668cde*/
-    v13 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aOverlaytypes); /*0x668cf1*/
+    v13 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"OverlayTypes" /*w16g4 "OverlayTypes" /*w16g4 aOverlaytypes*/*/); /*0x668cf1*/
     for ( j = 0; j < v13; ++j ) /*0x668cf7*/
     {
-      v15 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aOverlaytypes, j); /*0x668d0e*/
-      if ( INIClass::GetString(v1, (unsigned __int8 *)aOverlaytypes, v15, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d1d*/
+      v15 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"OverlayTypes" /*w16g4 "OverlayTypes" /*w16g4 aOverlaytypes*/*/, j); /*0x668d0e*/
+      if ( INIClass::GetString(v1, (unsigned __int8 *)"OverlayTypes" /*w16g4 "OverlayTypes" /*w16g4 aOverlaytypes*/*/, v15, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d1d*/
         BuildingTypeClass::FindOrCreate2(Destination); /*0x668d2a*/
     }
-    v16 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aSuperweapontyp); /*0x668d42*/
+    v16 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 "SuperWeaponTypes" /*w16g4 aSuperweapontyp*/*/); /*0x668d42*/
     for ( k = 0; k < v16; ++k ) /*0x668d48*/
     {
-      v18 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aSuperweapontyp, k); /*0x668d60*/
-      if ( INIClass::GetString(v1, (unsigned __int8 *)aSuperweapontyp, v18, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d6f*/
+      v18 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 "SuperWeaponTypes" /*w16g4 aSuperweapontyp*/*/, k); /*0x668d60*/
+      if ( INIClass::GetString(v1, (unsigned __int8 *)"SuperWeaponTypes" /*w16g4 "SuperWeaponTypes" /*w16g4 aSuperweapontyp*/*/, v18, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668d6f*/
         WeaponTypeClass::Process(Destination); /*0x668d7c*/
     }
     v19 = INIClass_GetKeyCount(v1->__pad_0, g_INI_Key_Warheads); /*0x668d92*/
@@ -1457,18 +1458,18 @@ int RulesClass::Addition() {
       if ( INIClass::GetString(v1, g_INI_Key_Warheads, v21, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668dbb*/
         WarheadTypeClass::FindOrCreate(Destination); /*0x668dc8*/
     }
-    v22 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aSmudgetypes); /*0x668de0*/
+    v22 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"SmudgeTypes" /*w16g4 "SmudgeTypes" /*w16g4 aSmudgetypes*/*/); /*0x668de0*/
     for ( n = 0; n < v22; ++n ) /*0x668de6*/
     {
-      v24 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aSmudgetypes, n); /*0x668dfd*/
-      if ( INIClass::GetString(v1, (unsigned __int8 *)aSmudgetypes, v24, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e0c*/
+      v24 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"SmudgeTypes" /*w16g4 "SmudgeTypes" /*w16g4 aSmudgetypes*/*/, n); /*0x668dfd*/
+      if ( INIClass::GetString(v1, (unsigned __int8 *)"SmudgeTypes" /*w16g4 "SmudgeTypes" /*w16g4 aSmudgetypes*/*/, v24, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e0c*/
         FactoryClass::FindOrCreate(Destination); /*0x668e19*/
     }
-    v25 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)aTerraintypes); /*0x668e31*/
+    v25 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"TerrainTypes" /*w16g4 aTerraintypes*/); /*0x668e31*/
     for ( ii = 0; ii < v25; ++ii ) /*0x668e37*/
     {
-      v27 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aTerraintypes, ii); /*0x668e4f*/
-      if ( INIClass::GetString(v1, (unsigned __int8 *)aTerraintypes, v27, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e5e*/
+      v27 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, (unsigned __int8 *)"TerrainTypes" /*w16g4 aTerraintypes*/, ii); /*0x668e4f*/
+      if ( INIClass::GetString(v1, (unsigned __int8 *)"TerrainTypes" /*w16g4 aTerraintypes*/, v27, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668e5e*/
         TerrainTypeClass::FindOrCreate(Destination); /*0x668e6b*/
     }
     RulesClass::LoadBuildingTypes(this); /*0x668e78*/

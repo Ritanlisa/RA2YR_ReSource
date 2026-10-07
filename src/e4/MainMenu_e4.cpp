@@ -17,6 +17,8 @@
 #include "e4/classes/Menu_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 
 // 0x531CC0
 namespace gamemd {

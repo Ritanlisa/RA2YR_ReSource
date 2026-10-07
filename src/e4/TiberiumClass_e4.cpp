@@ -492,7 +492,7 @@ int TiberiumClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   if ( result >= 0 ) /*0x7220e8*/
   {
     v4 = *a1; /*0x7220f0*/
-    aP2 = aP0->Debris[0]; /*0x7220fd*/
+    aP2 = aP0->Debris; /*0x7220fd*/
     (*(void (**)(int *, int *, int, unsigned int))(v4 + 16))( (int *)(a1), (int *)(&aP2), 4, 0); /*0x722101*/
     for ( i = 0; i < aP2; ++i ) /*0x72210c*/
       (*(void (**)(int *, int, int, unsigned int))(*(char *)a1 +6))( (int *)(a1), aP0->(char *)Value + * i, 4, 0); /*0x72211f*/

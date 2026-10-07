@@ -740,8 +740,8 @@ int PlayerClass::HasOccupiedCell() {
     {
       if ( *(unsigned char *)(*dword_B0CEC8 + 144) ) /*0x6da0ea*/
       {
-        v7 = dword_B0CEC8[1] - this->q02C; /*0x6da103*/
-        v8 = dword_B0CEC8[2] - this->u32_B4; /*0x6da108*/
+        v7 = (&dword_B0CEC8)[1] - this->q02C; /*0x6da103*/
+        v8 = (&dword_B0CEC8)[2] - this->u32_B4; /*0x6da108*/
         if ( v7 >= v3 && v7 < v3 + v11 && v8 >= v4 && v8 < v4 + v5 ) /*0x6da124*/
           break; /*0x6da124*/
       }

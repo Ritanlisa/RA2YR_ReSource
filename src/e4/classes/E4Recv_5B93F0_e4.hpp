@@ -11,5 +11,9 @@ struct E4Recv_5B93F0 {
     unsigned int M9;  // 0x9
 // --- flat members (END) ---
     char sub_5B93F0();  // 0x5B93F0
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int AbstractClass;  // @0x5b93fd (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

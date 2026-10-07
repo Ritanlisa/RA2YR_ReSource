@@ -347,7 +347,7 @@ void Multiplayer::ShowProgress(int a2)
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
             {
               Debug::Log("Sending guarenteed progress message to all players\n"); /*0x69afe6 G57w11: IDA push seq @ 0x69afe6*/
-              ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v16, 51, 1, (wchar_t *)dword_A8DA78[i]); /*0x69b006*/
+              ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v16, 51, 1, (wchar_t *)(&dword_A8DA78)[i]); /*0x69b006*/
             }
           }
           Event::Dispatch(); /*0x69b015*/

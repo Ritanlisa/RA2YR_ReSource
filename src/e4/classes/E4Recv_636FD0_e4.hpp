@@ -17,5 +17,9 @@ struct E4Recv_636FD0 {
     unsigned int q808;  // 0x808
 // --- flat members (END) ---
     int sub_636FD0();  // 0x636FD0
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int lastLayer;  // @0x636fd6 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

@@ -26,6 +26,8 @@
 #include "e4/classes/BINK_e4.hpp"
 #include "e4/classes/VtableStub_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 
 // 0x765840
 namespace gamemd {

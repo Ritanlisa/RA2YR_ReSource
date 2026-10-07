@@ -218,7 +218,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
       fild [esp+1Ch+arg_4]
     }
     __asm { fstp [esp+24h+var_24]; double }
-    ((Math *)v12)->CalcAngle( v13); /*0x50603c*/
+    Math::CalcAngle(v12, v13); /*0x50603c*/
     __asm { fsub ds:dbl_7E2820 } /*0x506041*/
     __asm { fmul ds:dbl_7E2818 }
     IDA_LOWORD(v15) = Math::RoundToInt(a3); /*0x506055*/

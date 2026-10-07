@@ -125,6 +125,8 @@
 #include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
 #include "e4/classes/PlanManager_e4.hpp"  // G57w10 D supply
 #include "e4/classes/_tree_full_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int UI_Pop_631500(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int RenderScenarioActionLines2(...);  // raw 0063CAE0: int __thiscall RenderScenarioActionLines2(ObjectClass *this)

@@ -40,6 +40,10 @@ struct ComPtr {
     static int DestroyWrapper(void *aP0, void *aP1);  // G57a1 static-form mirror
     static int Set(void *aP0, int aP2);  // G57a1 static-form mirror
     static int ReleaseSimple(void *aP0);  // G57a1 static-form mirror
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int ComPtr_field_0x08;  // 0x8 W16G3 alias (flat-carrier vocab, b4/b7/b8 precedent)
+    // --- W16G3 supply (END) ---
+
 };
 
 } // namespace gamemd

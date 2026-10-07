@@ -297,6 +297,8 @@ struct DynamicVectorClass {
     static int Destroy_Alt(void *aP0);  // A_c2039 R5 static-form sync
     unsigned int * Copy(unsigned int *a2);  // 0x4779e0
     unsigned int * AnimTypeConstructor(int a2, int a3);  // 0x525250
+    static int Destroy(void *aP1);  // W16G3 DVC Destroy supply (RandomMap 0x5959aa / TypeList 0x5ad682)
+
 };
 #endif
 
@@ -953,6 +955,13 @@ struct ObjectClass {
     char sub_728540(int a2);  // 0x728540
     char sub_736C10();  // 0x736C10
     int sub_77D3F0();  // 0x77D3F0
+    // --- W16G3 supply (BEGIN) ---
+    char __pad_524[340];  // 0x524 vocab (elem [336] @0x5f41bd) (W16G3 raw-usage vocab)
+    unsigned int field_520;  // 0x520 @0x5f48fa (W16G3 raw-usage vocab)
+    char isBerserk[4];  // @0x4d7d58 elem[0] (W16G3 raw-usage vocab)
+    unsigned int rockerLinkedUnit;  // @0x4d7d65 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 #endif // GAMEMD_TREE_UNIVERSE
 
@@ -1034,6 +1043,14 @@ struct VectorClass {
     unsigned int * BuildingConstructor(int a2, int a3);  // 0x510550
     void* vtable1;  // 0x0 (no offset truth)
     AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3);
+    // --- W16G3 supply (BEGIN) ---
+    static int CleanupTyped(int aP1);  // W16G3 static-form supply (VectorClass_e4 0x4a0c4e etc.)
+    static int ClearAndFree3(int aP1);  // W16G3 static-form supply (addr4F/addr6F)
+    static int ClearAndFree4(int aP1);  // W16G3 static-form supply (HouseTypeClass_e4 0x51202d)
+    static int ResizeEx(void *aP1, int a2, int a3);  // W16G3 static-form supply (RandomMap 0x58c859)
+    static int Cleanup(void *aP1);  // W16G3 static-form supply (TechnoTypeClass_e4)
+    // --- W16G3 supply (END) ---
+
 };
 #endif
 

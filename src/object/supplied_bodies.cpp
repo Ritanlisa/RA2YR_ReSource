@@ -53,6 +53,7 @@
 #include "ui/sidebar.hpp"
 #include "ui/ui_ext.hpp"
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
 struct AudioMixer;  // W13-C fwd (e4/classes/AudioMixer_e4.hpp 载体; (AudioMixer*) cast 用法)
 
 // G57w10: vtable externs (truth e4_globals_decls)
@@ -7944,7 +7945,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
         if ( (byte_AC1548 & 1) == 0 ) /*0x5fc7b4*/
         {
           byte_AC1548 |= 1u; /*0x5fc7d7*/
-          dword_AC154C[0] = -65536; /*0x5fc7eb*/
+          (&dword_AC154C)[0] = -65536; /*0x5fc7eb*/
           a2 = 0xFFFF; /*0x5fc7f0*/
           dword_AC1550 = -65536; /*0x5fc803*/
           dword_AC1554 = 0xFFFF; /*0x5fc809*/
@@ -7963,14 +7964,14 @@ int ObjectClass::FinalizeCellPlacement(int a2)
           dword_AC159C = 0x10000; /*0x5fc8b2*/
           atexit(nullsub_210); /*0x5fc8b8*/
         }
-        v20 = IDA_LOWORD(dword_AC154C[v19]) + v94[0]; /*0x5fc8cd*/
-        v21 = v94[1] + IDA_HIWORD(dword_AC154C[v19]); /*0x5fc8d5*/
+        v20 = IDA_LOWORD((&dword_AC154C)[v19]) + v94[0]; /*0x5fc8cd*/
+        v21 = v94[1] + IDA_HIWORD((&dword_AC154C)[v19]); /*0x5fc8d5*/
         v22 = 1; /*0x5fc8da*/
         v98 = 3; /*0x5fc8dc*/
         IDA_LOWORD(v96) = v20; /*0x5fc8e4*/
         IDA_HIWORD(v96) = v21; /*0x5fc8e9*/
         a2 = v96; /*0x5fc8f2*/
-        v23 = (unsigned short *)(4 * (dword_8333C0[v19] & 7) + 9041544); /*0x5fc900*/
+        v23 = (unsigned short *)(4 * ((&dword_8333C0)[v19] & 7) + 9041544); /*0x5fc900*/
         do /*0x5fc94a*/
         {
           if ( *((unsigned int *)CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&a2) + 17) != -1 ) /*0x5fc91a*/
@@ -7990,7 +7991,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
           do /*0x5fc9ad*/
           {
             v27 = CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&a2); /*0x5fc968*/
-            v27[17] = dword_8333D0[v19]; /*0x5fc976*/
+            v27[17] = (&dword_8333D0)[v19]; /*0x5fc976*/
             *((unsigned char *)v27 + 286) = v26; /*0x5fc97b*/
             House::AnnounceUpgrade((int)v27, -1); /*0x5fc981*/
             v28 = v23[1] + IDA_HIWORD(a2); /*0x5fc993*/
@@ -8000,15 +8001,15 @@ int ObjectClass::FinalizeCellPlacement(int a2)
             a2 = v98; /*0x5fc9a9*/
           }
           while ( v26 < 3 ); /*0x5fc9ad*/
-          v29 = dword_8333E0[v19]; /*0x5fc9af*/
+          v29 = (&dword_8333E0)[v19]; /*0x5fc9af*/
           v30 = 0; /*0x5fc9b6*/
           v31 = v29 & 7; /*0x5fc9ba*/
-          v32 = v94[1] + IDA_HIWORD(dword_89F688[v31]); /*0x5fc9d2*/
+          v32 = v94[1] + IDA_HIWORD((&dword_89F688)[v31]); /*0x5fc9d2*/
           v33 = (unsigned short *)(4 * v31 + 9041544); /*0x5fc9d7*/
-          IDA_LOWORD(v98) = v94[0] + IDA_LOWORD(dword_89F688[v31]); /*0x5fc9de*/
+          IDA_LOWORD(v98) = v94[0] + IDA_LOWORD((&dword_89F688)[v31]); /*0x5fc9de*/
           IDA_HIWORD(v98) = v32; /*0x5fc9e3*/
           a2 = v98; /*0x5fc9ee*/
-          v97 = dword_8333F8[v29 / 2]; /*0x5fca08*/
+          v97 = (&dword_8333F8)[v29 / 2]; /*0x5fca08*/
           if ( (unsigned __int8)LayerClass_CoordinatesLegal((void *)&dword_87F7E8, (__int16 *)&a2) ) /*0x5fca0c*/
           {
             while ( !v30 ) /*0x5fca1b*/
@@ -8034,9 +8035,9 @@ int ObjectClass::FinalizeCellPlacement(int a2)
             }
             v36 = (v29 - 4) & 7; /*0x5fca82*/
             v37 = v36 & 7; /*0x5fca8a*/
-            v38 = dword_89F688[v37]; /*0x5fca92*/
+            v38 = (&dword_89F688)[v37]; /*0x5fca92*/
             *(unsigned int *)v100 = 4 * v37 + 9041544; /*0x5fcaa1*/
-            IDA_LOWORD(v37) = IDA_HIWORD(a2) + IDA_HIWORD(dword_89F688[v37]); /*0x5fcaae*/
+            IDA_LOWORD(v37) = IDA_HIWORD(a2) + IDA_HIWORD((&dword_89F688)[v37]); /*0x5fcaae*/
             IDA_LOWORD(v98) = a2 + v38; /*0x5fcab3*/
             IDA_HIWORD(v98) = v37; /*0x5fcab8*/
             a2 = v98; /*0x5fcac6*/
@@ -8059,7 +8060,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
                   IDA_HIWORD(v98) = v44; /*0x5fcb2c*/
                   *(unsigned int *)v99 = v98; /*0x5fcb3b*/
                   v45 = CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, v99); /*0x5fcb4a*/
-                  v45[17] = dword_8333F0[v41] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcb67*/
+                  v45[17] = (&dword_8333F0)[v41] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcb67*/
                   *((unsigned char *)v45 + 286) = v42; /*0x5fcb6a*/
                   House::AnnounceUpgrade((int)v45, -1); /*0x5fcb70*/
                   ++v42; /*0x5fcb75*/
@@ -8084,7 +8085,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
         if ( (byte_AC1548 & 4) == 0 ) /*0x5fcbe4*/
         {
           byte_AC1548 |= 4u; /*0x5fcbf9*/
-          dword_AC155C[0] = -65536; /*0x5fcc1b*/
+          (&dword_AC155C)[0] = -65536; /*0x5fcc1b*/
           a2 = 0xFFFF; /*0x5fcc21*/
           dword_AC1560 = -65536; /*0x5fcc34*/
           dword_AC1564 = 0xFFFF; /*0x5fcc3a*/
@@ -8103,14 +8104,14 @@ int ObjectClass::FinalizeCellPlacement(int a2)
           dword_AC15B4 = 0x10000; /*0x5fcce0*/
           atexit(nullsub_208); /*0x5fcce6*/
         }
-        v48 = v94[0] + IDA_LOWORD(dword_AC155C[v47]); /*0x5fccfe*/
-        v49 = v94[1] + IDA_HIWORD(dword_AC155C[v47]); /*0x5fcd03*/
+        v48 = v94[0] + IDA_LOWORD((&dword_AC155C)[v47]); /*0x5fccfe*/
+        v49 = v94[1] + IDA_HIWORD((&dword_AC155C)[v47]); /*0x5fcd03*/
         v50 = 1; /*0x5fcd08*/
         v97 = 3; /*0x5fcd0a*/
         IDA_LOWORD(v96) = v48; /*0x5fcd12*/
         IDA_HIWORD(v96) = v49; /*0x5fcd17*/
         a2 = v96; /*0x5fcd20*/
-        v51 = (unsigned short *)(4 * (dword_833408[v47] & 7) + 9041544); /*0x5fcd2e*/
+        v51 = (unsigned short *)(4 * ((&dword_833408)[v47] & 7) + 9041544); /*0x5fcd2e*/
         do /*0x5fcd78*/
         {
           if ( *((unsigned int *)CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&a2) + 17) != -1 ) /*0x5fcd48*/
@@ -8130,7 +8131,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
           do /*0x5fcddb*/
           {
             v54 = CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)&a2); /*0x5fcd96*/
-            v54[17] = dword_833418[v47]; /*0x5fcda4*/
+            v54[17] = (&dword_833418)[v47]; /*0x5fcda4*/
             *((unsigned char *)v54 + 286) = v53; /*0x5fcda9*/
             House::AnnounceUpgrade((int)v54, -1); /*0x5fcdaf*/
             v55 = v51[1] + IDA_HIWORD(a2); /*0x5fcdc1*/
@@ -8140,15 +8141,15 @@ int ObjectClass::FinalizeCellPlacement(int a2)
             a2 = v98; /*0x5fcdd7*/
           }
           while ( v53 < 3 ); /*0x5fcddb*/
-          v56 = dword_833428[v47]; /*0x5fcddd*/
+          v56 = (&dword_833428)[v47]; /*0x5fcddd*/
           v57 = 0; /*0x5fcde4*/
           v58 = v56 & 7; /*0x5fcde8*/
-          v59 = v94[1] + IDA_HIWORD(dword_89F688[v58]); /*0x5fce00*/
+          v59 = v94[1] + IDA_HIWORD((&dword_89F688)[v58]); /*0x5fce00*/
           v60 = (unsigned short *)(4 * v58 + 9041544); /*0x5fce05*/
-          IDA_LOWORD(v98) = v94[0] + IDA_LOWORD(dword_89F688[v58]); /*0x5fce0c*/
+          IDA_LOWORD(v98) = v94[0] + IDA_LOWORD((&dword_89F688)[v58]); /*0x5fce0c*/
           IDA_HIWORD(v98) = v59; /*0x5fce11*/
           a2 = v98; /*0x5fce1c*/
-          *(unsigned int *)v100 = dword_833440[v56 / 2]; /*0x5fce36*/
+          *(unsigned int *)v100 = (&dword_833440)[v56 / 2]; /*0x5fce36*/
           if ( (unsigned __int8)LayerClass_CoordinatesLegal((void *)&dword_87F7E8, (__int16 *)&a2) ) /*0x5fce3a*/
           {
             while ( !v57 ) /*0x5fce49*/
@@ -8174,9 +8175,9 @@ int ObjectClass::FinalizeCellPlacement(int a2)
             }
             v63 = (v56 - 4) & 7; /*0x5fceb0*/
             v64 = v63 & 7; /*0x5fcebd*/
-            v65 = IDA_LOWORD(dword_89F688[v64]) + a2; /*0x5fcec5*/
+            v65 = IDA_LOWORD((&dword_89F688)[v64]) + a2; /*0x5fcec5*/
             *(unsigned int *)v99 = 4 * v64 + 9041544; /*0x5fced4*/
-            IDA_LOWORD(v64) = IDA_HIWORD(dword_89F688[v64]); /*0x5fced8*/
+            IDA_LOWORD(v64) = IDA_HIWORD((&dword_89F688)[v64]); /*0x5fced8*/
             IDA_LOWORD(v98) = v65; /*0x5fcedc*/
             IDA_HIWORD(v98) = IDA_HIWORD(a2) + v64; /*0x5fcee6*/
             v66 = (__int16)(IDA_HIWORD(a2) + v64) - IDA_SHIWORD(v96); /*0x5fcef2*/
@@ -8200,7 +8201,7 @@ int ObjectClass::FinalizeCellPlacement(int a2)
                   IDA_HIWORD(v98) = v72; /*0x5fcf5a*/
                   *(unsigned int *)v100 = v98; /*0x5fcf69*/
                   v73 = CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, v100); /*0x5fcf78*/
-                  v73[17] = dword_833438[v69] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcf95*/
+                  v73[17] = (&dword_833438)[v69] + (Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) & 3); /*0x5fcf95*/
                   *((unsigned char *)v73 + 286) = v70; /*0x5fcf98*/
                   House::AnnounceUpgrade((int)v73, -1); /*0x5fcf9e*/
                   ++v70; /*0x5fcfa3*/
@@ -19488,7 +19489,7 @@ int TechnoClass::FindBestMovementDirection()
       IDA_LOWORD(a2) = *v22 + v24; /*0x740da4*/
       IDA_HIWORD(a2) = v23; /*0x740da9*/
       *v20 = a2; /*0x740db2*/
-      result = dword_8458D0[v28]; /*0x740db4*/
+      result = (&dword_8458D0)[v28]; /*0x740db4*/
     }
     if ( *(unsigned char *)(*((unsigned int *)this + 433) + 3220) ) /*0x740dc1*/
       return ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)this->primaryFacing, &a2) >> 12) + 1) >> 1) & 7; /*0x740de3*/

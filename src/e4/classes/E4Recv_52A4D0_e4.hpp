@@ -46,7 +46,7 @@ struct E4Recv_52A4D0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    void* ambientSoundController;  // 0x0 (no offset truth)
+    unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
     void* attachedBomb;  // 0x0 (no offset truth)
     void* nextObject;  // 0x0 (no offset truth)
     void* fallRate;  // 0x0 (no offset truth)

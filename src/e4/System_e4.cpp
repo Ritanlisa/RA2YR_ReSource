@@ -53,6 +53,8 @@
 #include "e4/classes/MultiplayerConfig_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/DeleteAndZero_e4.hpp"  // G42.36 C2027 supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int _cfltcvt_init_13(...); }  // w16g4 raw call-form
 
 // 0x52A9E0
 namespace gamemd {

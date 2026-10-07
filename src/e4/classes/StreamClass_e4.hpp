@@ -29,6 +29,11 @@ struct StreamClass {
     int WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6);
     unsigned int ReadAndSeek(int aP1, int aP2);
     BOOL IsInactive(IUnknown * aP0);
+    // --- W16G3 supply (BEGIN) ---
+    char u32_5[4];  // @0x4114c9 decay (W16G3 raw-usage vocab)
+    unsigned int u32_7;  // @0x4b4cxx (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 
 } // namespace gamemd

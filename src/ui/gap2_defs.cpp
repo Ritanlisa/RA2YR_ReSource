@@ -33,6 +33,8 @@ using ra2::game::FootClass;
 #include "e4/e4_globals_decls.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "core/ida_vtables.h"  // gC_vftable3
+#include "e4/classes/Network_e4.hpp"  // w16g4 C3861 Network:: supply
+#include "e4/classes/Factory_e4.hpp"  // w16g4 C3861 Factory:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int PlayTauntClass(...);  // raw 00752B70: int __fastcall TauntClass_Play(int a1)
@@ -102,7 +104,7 @@ void MouseClass::initCursor() {
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x40d546*/
-  this->q010 = 0; /*0x40d549*/
+  *(unsigned int *)&this->CheckListClass_field_0x10 = 0; /*0x40d549*/
   if ( v2 && ((unsigned char*)&this->m_C)[1] ) /*0x40d550*/
   {
     RA2_OPDEL(v2); /*0x40d556*/
@@ -925,9 +927,9 @@ int TauntCommandClass::Do(int a1) {
             v8 = *((unsigned int *)stru_A80220.? + v7); /*0x536460*/
             if ( v8 ) /*0x536465*/
             {
-              if ( *(unsigned char *)(*(unsigned int *)(v8 + 52) + 421) ) /*0x53646e*/
+                if ( ((unsigned char *)&byte_A8D108)[v7] ) /*0x53647c*/
               {
-                if ( byte_A8D108[v7] ) /*0x53647c*/
+                if ( ((unsigned char *)&byte_A8D108)[v7] ) /*0x53647c*/
                 {
                   SendCount = Network::GetSendCount(&unk_A8E9C0); /*0x536494*/
                   v10 = 0; /*0x536496*/
@@ -984,15 +986,15 @@ namespace gamemd {
 void CheckListClass::initList() {
     void *v2; // eax
 
-    v2 = *(void **)&this->q004; /*0x556eb6*/
-    this->q010 = 0; /*0x556eb9*/
-    if ( v2 && IDA_BYTE1(this->q00C) ) /*0x556ec0*/
+    v2 = *(void **)&this->CheckListClass_field_0x04; /*0x556eb6*/
+    *(unsigned int *)&this->CheckListClass_field_0x10 = 0; /*0x556eb9*/
+    if ( v2 && IDA_BYTE1(this->CheckListClass_field_0x0C[0]) ) /*0x556ec0*/
     {
       RA2_OPDEL(v2); /*0x556ec6*/
-      *(unsigned int *)&this->q004 = 0; /*0x556ece*/
+      *(unsigned int *)&this->CheckListClass_field_0x04 = 0; /*0x556ece*/
     }
-    IDA_BYTE1(this->q00C) = 0; /*0x556ed1*/
-    this->q008 = 0; /*0x556ed4*/
+    IDA_BYTE1(this->CheckListClass_field_0x0C[0]) = 0; /*0x556ed1*/
+    *(unsigned int *)&this->CheckListClass_field_0x08 = 0; /*0x556ed4*/
 }
 }
 
@@ -1013,25 +1015,25 @@ int CheckListClass::removeItem(int a2, void* a3) {
 
     if ( a2 ) /*0x55709c*/
     {
-      IDA_LOBYTE(this->q00C) = 0; /*0x5570a2*/
+      IDA_LOBYTE(this->CheckListClass_field_0x0C[0]) = 0; /*0x5570a2*/
       if ( a3 ) /*0x5570a8*/
         v4 = (unsigned int *)a3; /*0x5570be*/
       else
         v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x5570ba*/
-      IDA_LOBYTE(this->q00C) = 1; /*0x5570c2*/
+      IDA_LOBYTE(this->CheckListClass_field_0x0C[0]) = 1; /*0x5570c2*/
       if ( !v4 ) /*0x5570c6*/
         return 0; /*0x55713a*/
-      if ( *(unsigned int *)&this->q004 ) /*0x5570c8*/
+      if ( *(unsigned int *)&this->CheckListClass_field_0x04 ) /*0x5570c8*/
       {
-        m_8 = this->q008; /*0x5570cf*/
+        m_8 = (*(unsigned int *)&this->CheckListClass_field_0x08); /*0x5570cf*/
         if ( a2 < m_8 ) /*0x5570d4*/
           m_8 = a2; /*0x5570d6*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x5570dc*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->CheckListClass_field_0x04 + 4 * i - 4) ) /*0x5570dc*/
           ++i; /*0x5570e1*/
-        if ( IDA_BYTE1(this->q00C) ) /*0x5570ee*/
+        if ( IDA_BYTE1(this->CheckListClass_field_0x0C[0]) ) /*0x5570ee*/
         {
-          RA2_OPDEL(*(void **)&this->q004); /*0x5570f9*/
-          *(unsigned int *)&this->q004 = 0; /*0x557101*/
+          RA2_OPDEL(*(void **)&this->CheckListClass_field_0x04); /*0x5570f9*/
+          *(unsigned int *)&this->CheckListClass_field_0x04 = 0; /*0x557101*/
         }
       }
       *(unsigned int *)&this->CheckListClass_field_0x04 = v4; /*0x55710a*/
@@ -3305,8 +3307,8 @@ void* PowerClass::getAvailable(int a1) {
 
     if ( a2 != 999 ) /*0x640459*/
       return RadarClass::Destru_vt33((RadarClass *)this, a2); /*0x64049b*/
-    v5 = *(unsigned int *)&dword_A83D4C[31].__pad_140[264]; /*0x64046c*/
-    v4 = *(const wchar_t **)&dword_A83D4C[31].__pad_140[260]; /*0x64046d*/
+    v5 = *(unsigned int *)&(&dword_A83D4C)[31].__pad_140[264]; /*0x64046c*/
+    v4 = *(const wchar_t **)&(&dword_A83D4C)[31].__pad_140[260]; /*0x64046d*/
     StringCSF = GetStringCSF(aTxtPowerDrain, 0, aDRa2mdpostPowe, 670); /*0x64047f*/
     swprintf((wchar_t *const)&stru_AC4B30.__pad_EC[276], (const size_t)StringCSF, v4, v5); /*0x64048a*/
     return (wchar_t *)&stru_AC4B30.__pad_EC[276]; /*0x640497*/
@@ -4291,7 +4293,7 @@ void SidebarClass::UpdateStrips(void* a1, void* a2) {
       *((unsigned int *)this + 5349) = 0; /*0x6a782f*/
   LABEL_11:
       v10 = *((unsigned char *)this + 21780); /*0x6a7835*/
-      *((unsigned char *)this + 21780) = *(unsigned int *)&dword_A83D4C[1].__pad_38[24] > 0; /*0x6a7866*/
+      *((unsigned char *)this + 21780) = *(unsigned int *)&(&dword_A83D4C)[1].__pad_38[24] > 0; /*0x6a7866*/
       if ( v10 != *((unsigned char *)this + 21780) ) /*0x6a7873*/
       {
         (*((void (__thiscall **)(SidebarClass *, unsigned int))this->SidebarClass_field_0x0 + 14))(this, 0); /*0x6a787b*/
@@ -4849,8 +4851,8 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
                       v26 = (const void *)EventClass::Init(v25, 11, v55, -1, v56, &word_B07DD8); /*0x6a8ee8*/
                       if ( dword_A802C8 < 128 ) /*0x6a8ef7*/
                       {
-                        qmemcpy(&byte_A802D4[111 * dword_A802D0], v26, 0x6Fu); /*0x6a8f13*/
-                        dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6a8f20*/
+                        qmemcpy(&((unsigned char *)&byte_A802D4)[111 * dword_A802D0], v26, 0x6Fu); /*0x6a8f13*/
+                        (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6a8f20*/
                         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6a8f37*/
                         ++dword_A802C8; /*0x6a8f3d*/
                       }
@@ -4934,7 +4936,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
           {
             if ( byte_884CF4 ) /*0x6a9080*/
             {
-              if ( dword_A8B238[0] == 4 ) /*0x6a9089*/
+              if ( (&dword_A8B238)[0] == 4 ) /*0x6a9089*/
               {
                 v36 = (unsigned int *)SidebarClass::FindProductionData(v35 + 90154); /*0x6a9091*/
                 if ( v36 ) /*0x6a9098*/
@@ -5043,7 +5045,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
     if ( v57 ) /*0x6a925e*/
     {
       byte_884B8E = 1; /*0x6a926b*/
-      byte_880D68[3988 * dword_884B84] = 1; /*0x6a9283*/
+      ((unsigned char *)&byte_880D68)[3988 * dword_884B84] = 1; /*0x6a9283*/
       MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x6a928b*/
       *(this + 60) = 1; /*0x6a929a*/
       MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x6a929e*/
@@ -5196,7 +5198,7 @@ int SidebarClass::UpdateProduction() {
             {
               qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v12, 0x6Fu); /*0x6aa812*/
               v9 = v41; /*0x6aa823*/
-              dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6aa827*/
+              (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6aa827*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6aa83e*/
               ++stru_A80220.lineTrailer; /*0x6aa844*/
             }
@@ -5219,7 +5221,7 @@ int SidebarClass::UpdateProduction() {
               {
                 qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v14, 0x6Fu); /*0x6aa8f8*/
                 v9 = v41; /*0x6aa909*/
-                dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6aa90d*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6aa90d*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6aa924*/
                 ++stru_A80220.lineTrailer; /*0x6aa92a*/
               }
@@ -5290,7 +5292,7 @@ int SidebarClass::UpdateProduction() {
         }
       }
     }
-    if ( dword_880D80[997 * *(unsigned int *)(this + 56)] <= 0 ) /*0x6aaaca*/
+    if ( (&dword_880D80)[997 * *(unsigned int *)(this + 56)] <= 0 ) /*0x6aaaca*/
     {
       DialogControl::Show((GadgetClass *)(&stru_B07C48 + 8 * *(unsigned int *)(this + 56))); /*0x6aaae7*/
       v22 = 0; /*0x6aaaec*/
@@ -5535,11 +5537,11 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab039*/
             {
               qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x6ab055*/
-              dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab066*/
+              (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab066*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab07d*/
               ++stru_A80220.lineTrailer; /*0x6ab083*/
             }
-            byte_880D68[3988 * *(unsigned int *)(v73[2].ControlClass_field_0x0C + 56)] = 1; /*0x6ab09f*/
+            ((unsigned char *)&byte_880D68)[3988 * *(unsigned int *)(v73[2].ControlClass_field_0x0C + 56)] = 1; /*0x6ab09f*/
           }
           else
           {
@@ -5563,7 +5565,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
               {
                 qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v19, 0x6Fu); /*0x6ab156*/
                 v12 = v75; /*0x6ab167*/
-                dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab16b*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab16b*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab182*/
                 ++stru_A80220.lineTrailer; /*0x6ab188*/
               }
@@ -5600,7 +5602,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                 goto LABEL_45; /*0x6ab20e*/
   LABEL_44:
               qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v21, 0x6Fu); /*0x6ab242*/
-              dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab26d*/
+              (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab26d*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab284*/
               ++stru_A80220.lineTrailer; /*0x6ab28a*/
             }
@@ -5666,7 +5668,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab77d*/
               {
                 qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v43, 0x6Fu); /*0x6ab799*/
-                dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab7aa*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab7aa*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab7c1*/
                 ++stru_A80220.lineTrailer; /*0x6ab7c7*/
               }
@@ -5767,7 +5769,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             {
               qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v30, 0x6Fu); /*0x6ab53c*/
               v28 = v73; /*0x6ab54d*/
-              dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab551*/
+              (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab551*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab568*/
               ++stru_A80220.lineTrailer; /*0x6ab56e*/
             }
@@ -5816,7 +5818,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab358*/
             {
               qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v25, 0x6Fu); /*0x6ab374*/
-              dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab385*/
+              (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab385*/
               dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab39c*/
               ++stru_A80220.lineTrailer; /*0x6ab3a2*/
             }
@@ -5834,7 +5836,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
           if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ab40b*/
           {
             qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v15, 0x6Fu); /*0x6ab42b*/
-            dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ab43c*/
+            (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x6ab43c*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ab453*/
             ++stru_A80220.lineTrailer; /*0x6ab459*/
           }
@@ -6522,13 +6524,13 @@ int SidebarClass::LoadButtonSHPs() {
       v4 = LoadFileSHP(Buffer, &v10); /*0x6d02e7*/
       v5 = v10; /*0x6d02ec*/
       *v3 = (int)v4; /*0x6d02f0*/
-      byte_B0CBDC[v2] = v5; /*0x6d02f2*/
+      ((unsigned char *)&byte_B0CBDC)[v2] = v5; /*0x6d02f2*/
       ++v3; /*0x6d02f8*/
       ++v2; /*0x6d02fb*/
     }
     while ( (int)v3 < (int)&byte_B0C1AC ); /*0x6d0302*/
-    dword_B0CD38 = *(short *)(dword_B0C148[0] + 2); /*0x6d0314*/
-    dword_B0CB50 = *(short *)(dword_B0C148[0] + 4); /*0x6d031e*/
+    dword_B0CD38 = *(short *)((&dword_B0C148)[0] + 2); /*0x6d0314*/
+    dword_B0CB50 = *(short *)((&dword_B0C148)[0] + 4); /*0x6d031e*/
     v6 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1212]; /*0x6d032a*/
     v12 = **(unsigned int **)&g_BuildingLoadQueue_Array.__pad_F70[1208]; /*0x6d032e*/
     v13 = *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1208] + 4); /*0x6d0335*/

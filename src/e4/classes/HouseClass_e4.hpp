@@ -243,7 +243,14 @@ struct HouseClass {
     unsigned int * ClearStatArray();  // 0x748fd0
     int SaveToINI(char *a2); // N_fix R5 supply (cache truth)
     int sub_63CF10();  // 0x63CF10
-    int sub_63CFC0();  // 0x63CFC0
+    int sub_63CFC0();
+    static int CheckDefeat(...);
+    static int ProcessPower(...);  // w16g4 C3861 static supply (raw 0x00425410)  // w16g4 C3861 static supply (raw 0x004FCBD0)  // 0x63CFC0
+    // --- W16G3 supply (BEGIN) ---
+    static int InitStatArray(void *aP1, unsigned int a2);  // W16G3 static-form (HouseClass_e4 0x4f639c x10)
+    static int initDropshipData(void *aP1);  // W16G3 static-form (0x4f5c0f)
+    // --- W16G3 supply (END) ---
+
 };
 #endif  // GAMEMD_G2_HouseClass_DEF
 

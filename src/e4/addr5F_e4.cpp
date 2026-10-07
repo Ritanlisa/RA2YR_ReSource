@@ -50,6 +50,8 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/HotkeyOptions_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/_tree_full_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 
 // 0x5F0070
 namespace gamemd {

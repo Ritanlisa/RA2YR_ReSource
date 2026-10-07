@@ -2207,7 +2207,7 @@ int BuildingTypeClass::GetMaxPips()
   int v2; // ecx
   int Storage; // ecx
 
-  result = 60 * dword_8192B8[this->Foundation[0]] / 8; /*0x45ed02*/
+  result = 60 * (&dword_8192B8)[this->Foundation[0]] / 8; /*0x45ed02*/
   if ( ((unsigned int *)this)[0] == 2 ) /*0x45ed08*/
   {
     if ( this->Weeder ) /*0x45ed14*/

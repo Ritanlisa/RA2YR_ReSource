@@ -134,7 +134,11 @@ static int * GetCoords(CellClass * aP1, int *a2);  // G57w10-S raw 0x00480A30 (w
     int ClearCrateStateForAll();  // 0x722AB0  G42.34 T11: supplied def carrier
     unsigned short * initCellData(unsigned short * a1);  // 0x588C40  G42.34 T11: supplied def carrier
     static void * AddObject(void * a1, void * a2);  // G42.39a static-call supply
-    static unsigned int * Construct(void *aP1);  // 0x47BBF0 raw: _DWORD* Construct(CellClass*)
+    static unsigned int * Construct(void *aP1);
+    static int ApplyTileMod58(...);
+    static int InitRandomOffsets(...);
+    static int ProcessUpdate(...);
+    static int FindOpenNeighbor(...);  // w16g4 C3861 static supply (Cls call-form)  // w16g4 C3861 static supply (raw 0x005A7B40)  // w16g4 C3861 static supply (raw 0x004814F0)  // w16g4 C3861 static supply (raw 0x0057F440)  // 0x47BBF0 raw: _DWORD* Construct(CellClass*)
 };
 
 } // namespace gamemd

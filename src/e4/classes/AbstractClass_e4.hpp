@@ -409,7 +409,8 @@ int DTOR(); // 0x4101F0
     unsigned int q_4B;  // +0x4B flat supply (final pass)
     unsigned int q_5C1C;  // +0x5C1C flat supply (final pass)
     int sub_5D9060(int a2);  // 0x5D9060
-    BOOL sub_7325C0();  // 0x7325C0
+    BOOL sub_7325C0();
+    static int IsTechno(...);  // w16g4 C3861 static supply (raw 0x0040DD20)  // 0x7325C0
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

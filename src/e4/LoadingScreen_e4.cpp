@@ -280,7 +280,7 @@ char LoadingScreen::FreeResources3()
   result = (unsigned int)(&byte_B0FBE0); /*0x72def0*/
   if ( &byte_B0FBE0 ) /*0x72defa*/
   {
-    &byte_B0FBE0 = 0; /*0x72df00*/
+    byte_B0FBE0 = 0; /*0x72df00*/
     LoadingScreen::DestroyFileTrees(); /*0x72df06*/
     LoadingScreen::CleanupObjects( (void *)(v1)); /*0x72df0b*/
     __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120]); /*0x72df16*/
@@ -361,7 +361,7 @@ char LoadingScreen::FreeResources(void *a1)
     __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1108]); /*0x73040d*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1108] = 0; /*0x730415*/
   }
-  HashTree::MarkEntry(off_844C08); /*0x730421*/
+  ((HashTree *)off_844C08)->MarkEntry(); /*0x730421*/
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1112] ) /*0x73042e*/
   {
     (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1112])( /*0x730434*/
@@ -374,7 +374,7 @@ char LoadingScreen::FreeResources(void *a1)
     __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1100]); /*0x730446*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1100] = 0; /*0x73044e*/
   }
-  HashTree::MarkEntry(off_844C04); /*0x73045a*/
+  ((HashTree *)off_844C04)->MarkEntry(); /*0x73045a*/
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1104] ) /*0x730467*/
   {
     (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1104])( /*0x73046d*/
@@ -387,7 +387,7 @@ char LoadingScreen::FreeResources(void *a1)
     __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1092]); /*0x73047f*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1092] = 0; /*0x730487*/
   }
-  HashTree::MarkEntry(off_844C00); /*0x730493*/
+  ((HashTree *)off_844C00)->MarkEntry(); /*0x730493*/
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1096] ) /*0x7304a0*/
   {
     (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1096])( /*0x7304a6*/
@@ -400,7 +400,7 @@ char LoadingScreen::FreeResources(void *a1)
     __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1076]); /*0x7304b8*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1076] = 0; /*0x7304c0*/
   }
-  HashTree::MarkEntry(off_844BF0); /*0x7304cc*/
+  ((HashTree *)off_844BF0)->MarkEntry(); /*0x7304cc*/
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1080] ) /*0x7304d9*/
   {
     (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1080])( /*0x7304df*/
@@ -413,7 +413,7 @@ char LoadingScreen::FreeResources(void *a1)
     __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1084]); /*0x7304f1*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1084] = 0; /*0x7304f9*/
   }
-  result = HashTree::MarkEntry(off_844BF4); /*0x730505*/
+  result = ((HashTree *)off_844BF4)->MarkEntry(); /*0x730505*/
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1088] ) /*0x730512*/
   {
     result = (***(int (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1088])( /*0x730518*/

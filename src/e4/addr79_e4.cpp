@@ -463,7 +463,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     goto LABEL_6; /*0x793d9b*/
   do /*0x793dd5*/
   {
-    v5 = (char *)dword_A8DA90[v3]; /*0x793da3*/
+    v5 = (char *)(&dword_A8DA90)[v3]; /*0x793da3*/
     v6 = ToWideStringChar((IUnknown *)((char *)((unsigned int *)(dword_A8DA78))[v4])); /*0x793db4*/
     v7 = ToWideStringChar((IUnknown *)(v5)); /*0x793db6*/
     if ( !_strcmpi(v6, v7) ) /*0x793dbd*/
@@ -483,7 +483,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   v9 = (char *)&unk_A8E060; /*0x793e44*/
   while ( *v9 ) /*0x793e4c*/
   {
-    v10 = (char *)(ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3]))); /*0x793e55*/
+    v10 = (char *)(ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA90)[v3]))); /*0x793e55*/
     if ( !_strcmpi(v9, v10) ) /*0x793e66*/
     {
             Debug::Log("Behind the same NAT, mangling == false\n") /*G57c1: IDA 0x793e7a push offset aBehindTheSameN*/;
@@ -525,7 +525,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         v17 = *(unsigned int *)(v16); /*0x793f5f*/
         v18 = (unsigned int *)((&dword_A8DA90)[*(unsigned int *)(v16)] + 40); /*0x793f68*/
         *(unsigned int *)v84 = *v18; /*0x793f6d*/
-        v19 = dword_A8DA90[v3] + 40; /*0x793f7e*/
+        v19 = (&dword_A8DA90)[v3] + 40; /*0x793f7e*/
         v85 = v18[1]; /*0x793f81*/
         v86 = v18[2]; /*0x793f8c*/
         if ( (uint8_t)((NetworkID *)((int)(v84)))->Compare(v19) ) /*0x793f9a*/
@@ -560,7 +560,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         }
       }
   LABEL_34:
-      v24 = (char *)(ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v72]))); /*0x794069*/
+      v24 = (char *)(ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA90)[v72]))); /*0x794069*/
       owningHouseIndex = dword_B77900; /*0x79407b*/
       v26 = (char *)(0); /*0x794080*/
       v27 = 0; /*0x794082*/
@@ -594,7 +594,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     {
       v13 = *(&dword_A8E2B2 + v62); /*0x793eec*/
             Debug::Log("Easy mangling, Session.OtherPlayersMangledPorts[%d] = %d\n") /*G57c1: IDA 0x793f02 push offset aEasyManglingSe*/;
-      dword_A8E050[v3] = v13; /*0x793f0a*/
+      (&dword_A8E050)[v3] = v13; /*0x793f0a*/
     }
     Ticks = ((Timer *)0)->GetTicks(); /*0x79413a*/
     v63 = Ticks; /*0x794141*/
@@ -626,24 +626,24 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         break; /*0x7941ba*/
       if ( v56 == 1 ) /*0x7941c2*/
       {
-        if ( dword_A8E050[v3] != v32 ) /*0x7941cc*/
+        if ( (&dword_A8E050)[v3] != v32 ) /*0x7941cc*/
           break; /*0x7941cc*/
       }
-      else if ( dword_A8E050[v3] ) /*0x7941dd*/
+      else if ( (&dword_A8E050)[v3] ) /*0x7941dd*/
       {
         break; /*0x7941e6*/
       }
       ((Game *)v29)->ProcessIdle(); /*0x7941ce*/
       v30 = v65; /*0x7941d3*/
     }
-    IDA_LOWORD(v31) = (unsigned short)(dword_A8E050[v3]); /*0x7941f3*/
+    IDA_LOWORD(v31) = (unsigned short)((&dword_A8E050)[v3]); /*0x7941f3*/
     v71 = v31; /*0x7941fe*/
     if ( (unsigned short)v31 ) /*0x794202*/
     {
       Debug::Log("Session.OtherPlayersMangledPorts[%d] != 0\n"); /*0x79420e G57c1: IDA 0x79420e push offset aSessionOtherpl*/
-      *(&dword_A8E2B2 + v12) = (unsigned int)(dword_A8E050[v3]); /*0x79421e*/
-      ((Network *)((gamemd::IPXManagerClass *)((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40))))->SetPort((void *)(dword_A8E050[v3])); /*0x79423b*/
-      ((Network *)((Network *)(dword_A8DA90[v3] + 40)))->SetPort(dword_A8E050[v3]); /*0x794253*/
+      *(&dword_A8E2B2 + v12) = (unsigned int)((&dword_A8E050)[v3]); /*0x79421e*/
+      ((Network *)((gamemd::IPXManagerClass *)((Network *)(((unsigned int *)(dword_A8DA78))[v12] + 40))))->SetPort((void *)((&dword_A8E050)[v3])); /*0x79423b*/
+      ((Network *)((Network *)((&dword_A8DA90)[v3] + 40)))->SetPort((&dword_A8E050)[v3]); /*0x794253*/
       memset( (void *)(v98), 0, sizeof(v98)); /*0x794266*/
       v99 = 0; /*0x794268*/
       v100 = 0; /*0x79426a*/
@@ -668,7 +668,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
           ((Game *)v34)->ProcessIdle(); /*0x7942fa*/
         }
       }
-      ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3])); /*0x794305*/
+      ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA90)[v3])); /*0x794305*/
       ((gamemd::Debug*)this)->Log("Sending NET_PORT_PROBE packet to %s at port %d\n"); /*0x794322 G57w12: IDA push seq @ 0x794322 +2 reg-vararg omitted*/
       v36 = ((Timer *)this)->GetTicks(); /*0x794331*/
       v88 = 360; /*0x794342*/
@@ -691,7 +691,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
         }
   LABEL_69:
         ((gamemd::Debug*)this)->Log("Sending NET_PORT_PROBE packet to player %S\n"); /*0x7943a5 G57w12: IDA push seq @ 0x7943a5 +1 reg-vararg omitted*/
-        ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v98, 47, 0, (wchar_t *)dword_A8DA90[v3]); /*0x7943d3*/
+        ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v98, 47, 0, (wchar_t *)(&dword_A8DA90)[v3]); /*0x7943d3*/
         v41 = TimerGetTicks(); /*0x7943dc*/
         v37 = 30; /*0x7943e5*/
         v75[1] = v41; /*0x7943ea*/
@@ -722,7 +722,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
             Debug::Log("Got NET_PORT_PROBE packet\n"); /*0x794481 G57c1: IDA 0x794481 push offset aGotNetPortProb_0*/
             if ( (uint8_t)((NetworkID *)((bool *)(((unsigned int *)dword_A8DA78)[v62] + 40)))->Compare((int)&v91) ) /*0x7944a1*/
             {
-              v45 = (char *)(ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3]))); /*0x7944bd*/
+              v45 = (char *)(ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA90)[v3]))); /*0x7944bd*/
               if ( !_strcmpi(v45, v97) ) /*0x7944c3*/
               {
                 Debug::Log("Got NET_PORT_PROBE packet from %s\n"); /*0x7944e0 G57c1: IDA 0x7944e0 push offset aGotNetPortProb_1*/
@@ -755,7 +755,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
                 v49[1] = v77; /*0x7945fc*/
                 v49[2] = 1200; /*0x7945ff*/
                 ++dword_A8E224; /*0x794609*/
-                dword_A8E184[v3] = v58; /*0x794619*/
+                (&dword_A8E184)[v3] = v58; /*0x794619*/
               }
             }
           }
@@ -803,7 +803,7 @@ char NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     if ( v42 && (&dword_A8DE4C)[v70] == 11 || v61 >= a3 ) /*0x7946e2*/
       break; /*0x7946e2*/
     ++v61; /*0x7946f2*/
-    v54 = (char *)(ToWideStringChar( (IUnknown *)((char *)dword_A8DA90[v3]))); /*0x7946f6*/
+    v54 = (char *)(ToWideStringChar( (IUnknown *)((char *)(&dword_A8DA90)[v3]))); /*0x7946f6*/
     v91.__pad_0[12] = 90; /*0x7946fd*/
     v91.__pad_0[13] = 49; /*0x794707*/
     v91.__pad_0[14] = v61 + 49; /*0x794714*/
@@ -1710,7 +1710,7 @@ int WOL_NegotiateScenario(char a1)
         if ( ++v32 >= dword_A8DA84 ) /*0x796648*/
           goto LABEL_142; /*0x796648*/
       }
-      if ( v32 < dword_A8DA84 &&(&dword_B73BB4)[v32] < dword_84A1E0[v32] ) /*0x79666b*/
+      if ( v32 < dword_A8DA84 &&(&dword_B73BB4)[v32] < (&dword_84A1E0)[v32] ) /*0x79666b*/
         (&dword_B73BB4)[v32] = 3; /*0x79666d*/
     }
   LABEL_142:
@@ -1788,7 +1788,7 @@ int WOL_NegotiateScenario(char a1)
                   v10 = v6 < dword_A8DA84; /*0x795ec3*/
                   v52[v7 + 5] = dword_A8D638; /*0x795ec5*/
                   v40 = 1; /*0x795ec9*/
-                  if ( v10 &&(&dword_B73BB8)[v7] < dword_84A1E4[v7] ) /*0x795ede*/
+                  if ( v10 &&(&dword_B73BB8)[v7] < (&dword_84A1E4)[v7] ) /*0x795ede*/
                     (&dword_B73BB8)[v7] = 0; /*0x795ee0*/
                 }
                 if ( v9 == 20 ) /*0x795eed*/
@@ -6729,7 +6729,7 @@ int E4Recv_793CD0::sub_793CD0()
   int *v2; // ecx
   int v4; // [esp+4h] [ebp-8h]
 
-  dword_A8E1A4[dword_A8E224] = this; /*0x793cd8*/
+  (&dword_A8E1A4)[dword_A8E224] = this; /*0x793cd8*/
   Ticks = TimerGetTicks(); /*0x793ce3*/
   v2 = (int *)(12 * dword_A8E224 + 11067844); /*0x793cf6*/
   *v2 = Ticks; /*0x793cfd*/

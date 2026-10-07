@@ -1137,9 +1137,9 @@ loc_5F9FF3:                             ; CODE XREF: Checksummer__HashString+195
 mov     dl, [esp+esi+0ACh+Destination]
 mov     edi, esi
 and     edi, 7
-mov     cl, byte_832C14[edi]
+mov     cl, ((unsigned char *)&byte_832C14)[edi]
 or      cl, dl
-mov     dl, byte_832C0C[edi]
+mov     dl, ((unsigned char *)&byte_832C0C)[edi]
 not     dl
 and     cl, dl
 mov     [esp+esi+0ACh+Destination], cl

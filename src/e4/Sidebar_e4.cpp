@@ -1193,9 +1193,9 @@ LABEL_59:
                   *(unsigned int *)&aP3[120] = v15;
                   *(unsigned int *)&aP3[124] = v17;
                   DrawToSurfaceSHP(
-                    *(int *)&stru_87C374[44940],
-                    *(int *)&stru_87C374[13144],
-                    *(ConvertClass **)&stru_B05488[10040],
+                    *(int *)&((unsigned char *)&stru_87C374)[44940],
+                    *(int *)&((unsigned char *)&stru_87C374)[13144],
+                    *(ConvertClass **)&((unsigned char *)&stru_B05488)[10040],
                     0,
                     (ConvertClass *)&aP3[120],
                     (ConvertClass *)&aP3[88],
@@ -1219,9 +1219,9 @@ LABEL_59:
                 char v75 = 0;
                 v34 = aP1;
   int v35; // edi
-                v35 = ((uint8_t)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
-                    | ((uint8_t)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
-                    | ((uint8_t)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]);
+                v35 = ((uint8_t)((unsigned char *)&stru_B05488)[42388] >> ((unsigned char *)&stru_89E138)[11420] << ((unsigned char *)&stru_89E138)[11416])
+                    | ((uint8_t)((unsigned char *)&stru_B05488)[42389] >> ((unsigned char *)&stru_89E138)[11436] << ((unsigned char *)&stru_89E138)[11432])
+                    | ((uint8_t)((unsigned char *)&stru_B05488)[42390] >> ((unsigned char *)&stru_89E138)[11428] << ((unsigned char *)&stru_89E138)[11424]);
                 if ( aP1 )
                 {
                   IDA_LOBYTE(v34) = aP1->__pad_BC0[270];
@@ -1249,13 +1249,13 @@ LABEL_59:
                       *(unsigned int *)&aP3[180] = TextBoundingRect[3];
                       DSurface::FillRectWithColor(
                         (int *)&aP3[168],
-                        *(ObjectClass **)&stru_87C374[44940],
+                        *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                         0,
                         0xAFu);
                       TextRenderer::Printf(
                         (ConvertClass *)&aP3[184],
                         (size_t)&g_Str_Fmt_PctD,
-                        *(ObjectClass **)&stru_87C374[44940],
+                        *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                         &aP3,
                         (int)&aP3[112],
                         v35,
@@ -1287,13 +1287,13 @@ LABEL_59:
                     *(unsigned int *)&aP3[68] = v41[3];
                     DSurface::FillRectWithColor(
                       (int *)&aP3[56],
-                      *(ObjectClass **)&stru_87C374[44940],
+                      *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                       0,
                       0xAFu);
                     TextRenderer::Printf(
                       (ConvertClass *)&aP3[200],
                       BufferCount,
-                      *(ObjectClass **)&stru_87C374[44940],
+                      *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                       &aP3,
                       (int)&aP3[104],
                       v35,
@@ -1306,9 +1306,9 @@ LABEL_59:
                     if ( (*(unsigned int *)&aP3[16] = v15,
                           *(unsigned int *)&aP3[20] = v17,
                           DrawToSurfaceSHP(
-                            *(int *)&stru_87C374[44940],
-                            *(int *)&stru_87C374[13144],
-                            *(ConvertClass **)&stru_B05488[24572],
+                            *(int *)&((unsigned char *)&stru_87C374)[44940],
+                            *(int *)&((unsigned char *)&stru_87C374)[13144],
+                            *(ConvertClass **)&((unsigned char *)&stru_B05488)[24572],
                             ProductionState + 1,
                             (ConvertClass *)&aP3[16],
                             (ConvertClass *)&aP3[88],
@@ -1343,13 +1343,13 @@ StringCSF = GetStringCSF( (wchar_t *)&stru_830620[62732], 0, (const char *)(&str
                         *(unsigned int *)&aP3[84] = v43[3];
                         DSurface::FillRectWithColor(
                           (int *)&aP3[72],
-                          *(ObjectClass **)&stru_87C374[44940],
+                          *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                           0,
                           0xAFu);
                         TextRenderer::Printf(
                           (ConvertClass *)&aP3[208],
                           (size_t)StringCSF,
-                          *(ObjectClass **)&stru_87C374[44940],
+                          *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                           &aP3,
                           (int)&aP3[24],
                           v35,
@@ -1376,13 +1376,13 @@ StringCSF = GetStringCSF( (wchar_t *)&stru_830620[62732], 0, (const char *)(&str
                         *(unsigned int *)&aP3[52] = v44[3];
                         DSurface::FillRectWithColor(
                           (int *)&aP3[40],
-                          *(ObjectClass **)&stru_87C374[44940],
+                          *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                           0,
                           0xAFu);
                         TextRenderer::Printf(
                           (ConvertClass *)&aP3[192],
                           (size_t)StringCSF,
-                          *(ObjectClass **)&stru_87C374[44940],
+                          *(ObjectClass **)&((unsigned char *)&stru_87C374)[44940],
                           &aP3,
                           (int)&aP3[32],
                           v35,
@@ -1417,11 +1417,11 @@ LABEL_135:
         while ( 1 )
         {
           int v45 = *(unsigned int *)(v84 + 68) + v85;
-          int v46 = *(unsigned int *)(v84 + 36) + 2 * v85 * *(unsigned int *)&stru_B05488[24696] + 1;
-          int v47 = *(unsigned int *)(v84 + 32) - *(unsigned int *)&stru_87C374[44060];
-          if ( v45 >= *(int *)&stru_87C374[35204] )
+          int v46 = *(unsigned int *)(v84 + 36) + 2 * v85 * *(unsigned int *)&((unsigned char *)&stru_B05488)[24696] + 1;
+          int v47 = *(unsigned int *)(v84 + 32) - *(unsigned int *)&((unsigned char *)&stru_87C374)[44060];
+          if ( v45 >= *(int *)&((unsigned char *)&stru_87C374)[35204] )
             goto LABEL_135;
-          v92 = *(unsigned int *)&stru_87C374[22428][4 * v45 + 12420];
+          v92 = *(unsigned int *)&((unsigned char *)&stru_87C374)[22428][4 * v45 + 12420];
           int v48 = v92;
           if ( !v92 )
             goto LABEL_135;
@@ -1431,7 +1431,7 @@ LABEL_135:
             int v50 = *(unsigned int *)(v49 + 188);
             if ( !v50 )
             {
-              v51 = *(ConvertClass **)&stru_B05488[24584];
+              v51 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24584];
 LABEL_105:
               if ( v51 )
               {
@@ -1444,8 +1444,8 @@ LABEL_105:
                 *(unsigned int *)&aP3[52] = v54;
                 *(unsigned int *)&aP3[36] = v46;
                 DrawToSurfaceSHP(
-                  *(int *)&stru_87C374[44940],
-                  *(int *)&stru_87C374[13148],
+                  *(int *)&((unsigned char *)&stru_87C374)[44940],
+                  *(int *)&((unsigned char *)&stru_87C374)[13148],
                   v51,
                   0,
                   (ConvertClass *)&aP3[32],
@@ -1466,12 +1466,12 @@ LABEL_105:
             eax100 = v50 - 1;
             if ( !eax100 )
             {
-              v51 = *(ConvertClass **)&stru_B05488[24588];
+              v51 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24588];
               goto LABEL_105;
             }
             if ( eax100 == 1 )
             {
-              v51 = *(ConvertClass **)&stru_B05488[24592];
+              v51 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24592];
               goto LABEL_105;
             }
           }
@@ -1483,40 +1483,40 @@ LABEL_107:
             switch ( eax108 )
             {
               case -3:
-                v56 = *(ConvertClass **)&stru_B05488[24600];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24600];
                 goto LABEL_121;
               case -2:
-                v56 = *(ConvertClass **)&stru_B05488[24596];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24596];
                 goto LABEL_121;
               case 0:
-                v56 = *(ConvertClass **)&stru_B05488[24604];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24604];
                 goto LABEL_121;
               case 1:
-                v56 = *(ConvertClass **)&stru_B05488[24608];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24608];
                 goto LABEL_121;
               case 2:
-                v56 = *(ConvertClass **)&stru_B05488[24612];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24612];
                 goto LABEL_121;
               case 3:
-                v56 = *(ConvertClass **)&stru_B05488[24616];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24616];
                 goto LABEL_121;
               case 4:
-                v56 = *(ConvertClass **)&stru_B05488[24620];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24620];
                 goto LABEL_121;
               case 5:
-                v56 = *(ConvertClass **)&stru_B05488[24624];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24624];
                 goto LABEL_121;
               case 6:
-                v56 = *(ConvertClass **)&stru_B05488[24628];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24628];
                 goto LABEL_121;
               case 7:
-                v56 = *(ConvertClass **)&stru_B05488[24632];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24632];
                 goto LABEL_121;
               case 8:
-                v56 = *(ConvertClass **)&stru_B05488[24636];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24636];
                 goto LABEL_121;
               case 9:
-                v56 = *(ConvertClass **)&stru_B05488[24640];
+                v56 = *(ConvertClass **)&((unsigned char *)&stru_B05488)[24640];
 LABEL_121:
                 if ( v56 )
                 {
@@ -1531,7 +1531,7 @@ LABEL_121:
                     *(unsigned int *)&aP3[24] = v47 + 70;
                     *(unsigned int *)&aP3[28] = v46 + 70;
                     DrawToSurfaceSHP(
-                      *(int *)&stru_87C374[44940],
+                      *(int *)&((unsigned char *)&stru_87C374)[44940],
                       updated,
                       v56,
                       0,
@@ -1559,8 +1559,8 @@ LABEL_121:
                     *(unsigned int *)&aP3[16] = v47 + 70;
                     *(unsigned int *)&aP3[20] = v46 + 70;
                     DrawToSurfaceSHP(
-                      *(int *)&stru_87C374[44940],
-                      *(int *)&stru_87C374[13148],
+                      *(int *)&((unsigned char *)&stru_87C374)[44940],
+                      *(int *)&((unsigned char *)&stru_87C374)[13148],
                       v56,
                       0,
                       (ConvertClass *)&aP3[16],
@@ -1582,29 +1582,29 @@ LABEL_121:
                 break;
             }
           }
-          wcscpy((wchar_t *)&stru_B05488[9256], (const wchar_t *)(v92 + 90154));
-          if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
-            _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12580], Format, 10);
-          _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12452], v98, 10);
-          _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12484], v101, 10);
-          _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12516], v99, 10);
-          v62 = *(ObjectClass **)&stru_87C374[22428][4 * v45 + 12548];
+          wcscpy((wchar_t *)&((unsigned char *)&stru_B05488)[9256], (const wchar_t *)(v92 + 90154));
+          if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
+            _itow(*(unsigned int *)&((unsigned char *)&stru_87C374)[22428][4 * v45 + 12580], Format, 10);
+          _itow(*(unsigned int *)&((unsigned char *)&stru_87C374)[22428][4 * v45 + 12452], v98, 10);
+          _itow(*(unsigned int *)&((unsigned char *)&stru_87C374)[22428][4 * v45 + 12484], v101, 10);
+          _itow(*(unsigned int *)&((unsigned char *)&stru_87C374)[22428][4 * v45 + 12516], v99, 10);
+          v62 = *(ObjectClass **)&((unsigned char *)&stru_87C374)[22428][4 * v45 + 12548];
           if ( *(unsigned char *)(v84 + 63) )
-            v46 += *(unsigned int *)(v84 + 76) - *(unsigned int *)&stru_B05488[24696];
+            v46 += *(unsigned int *)(v84 + 76) - *(unsigned int *)&((unsigned char *)&stru_B05488)[24696];
           v82 = v47 + 8;
           int v83 = v46 + 4;
           TextRenderer::DrawText(
             (int *)&aP3[192],
-            (size_t)&stru_B05488[9256],
-            *(IUnknown **)&stru_87C374[44940],
+            (size_t)&((unsigned char *)&stru_B05488)[9256],
+            *(IUnknown **)&((unsigned char *)&stru_87C374)[44940],
             &aP3,
             (int)&v82,
             v62,
             0,
             66);
-          if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
+          if ( *(unsigned int *)&((unsigned char *)&HouseClass_Player)[29932] == 4 )
           {
-            int v63 = *(unsigned int *)&stru_87C374[22428][4 * v45 + 12580];
+            int v63 = *(unsigned int *)&((unsigned char *)&stru_87C374)[22428][4 * v45 + 12580];
             v83 += 17;
             if ( v63 >= 1 )
             {
@@ -1619,7 +1619,7 @@ LABEL_121:
             TextRenderer::DrawText(
               (int *)&aP3[208],
               (size_t)&aP3[216],
-              *(IUnknown **)&stru_87C374[44940],
+              *(IUnknown **)&((unsigned char *)&stru_87C374)[44940],
               &aP3,
               (int)&v82,
               v62,
@@ -1632,7 +1632,7 @@ LABEL_121:
           TextRenderer::DrawText(
             (int *)&aP3[200],
             (size_t)&aP3[216],
-            *(IUnknown **)&stru_87C374[44940],
+            *(IUnknown **)&((unsigned char *)&stru_87C374)[44940],
             &aP3,
             (int)&v82,
             v62,
@@ -1644,7 +1644,7 @@ LABEL_121:
           TextRenderer::DrawText(
             (int *)&aP3[184],
             (size_t)&aP3[216],
-            *(IUnknown **)&stru_87C374[44940],
+            *(IUnknown **)&((unsigned char *)&stru_87C374)[44940],
             &aP3,
             (int)&v82,
             v62,
@@ -1656,7 +1656,7 @@ LABEL_121:
           TextRenderer::DrawText(
             (int *)&aP3[104],
             (size_t)&aP3[216],
-            *(IUnknown **)&stru_87C374[44940],
+            *(IUnknown **)&((unsigned char *)&stru_87C374)[44940],
             &aP3,
             (int)&v82,
             v62,

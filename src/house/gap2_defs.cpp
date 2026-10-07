@@ -31,6 +31,9 @@ using ra2::game::ObjectClass;
 #include "e4/classes/VeterancyStruct_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/INIClass_e4.hpp"  // g57c5 W5d scope supply
 #include "e4/classes/Math_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/Cell_e4.hpp"  // w16g4 C3861 Cell:: supply
+#include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
+#include "e4/classes/Radar_e4.hpp"  // w16g4 C3861 Radar:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int UpdateHouseClassAnger(...);  // raw 00504790: int __fastcall UpdateHouseClassAnger(unsigned int a1, int a2, int a3, int a4)
@@ -1965,10 +1968,10 @@ int HouseClass::HandleAlliance(int a1, int a2) {
           if ( a1 /*0x4f9eaf*/
             && ((ObjectClass *)a1 == dword_A83D4C
              || (v20 = *(void **)(a1 + 48), v20 == dword_A83D4C->Object_field_0x30)
-             || v20 != (void *)-1 && ((int)dword_A83D4C[33].Object_field_0xE8 & (1 << (char)v20)) != 0)
+             || v20 != (void *)-1 && ((int)(&dword_A83D4C)[33].Object_field_0xE8 & (1 << (char)v20)) != 0)
             && (this == (int *)dword_A83D4C
              || (v21 = (void *)*(&this->u32_42), v21 == dword_A83D4C->Object_field_0x30)
-             || v21 != (void *)-1 && ((int)dword_A83D4C[33].Object_field_0xE8 & (1 << (char)v21)) != 0) )
+             || v21 != (void *)-1 && ((int)(&dword_A83D4C)[33].Object_field_0xE8 & (1 << (char)v21)) != 0) )
           {
             VoxClass::FindAndPlay((VoxClass *)stru_82479C.Priority, -1); /*0x4f9ebb*/
           }
@@ -3379,7 +3382,7 @@ int HouseClass::ReadFromINI(void* a1) {
                               0);
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)a1, (uint8_t *)v38, (uint8_t *)aPlayercontrol, 0); /*0x500bd6*/
   this->u32_1ED = Bool_Overwrite; /*0x500bdd*/
-  if ( Bool_Overwrite && !dword_A8B238[0] ) /*0x500bec*/
+  if ( Bool_Overwrite && !(&dword_A8B238)[0] ) /*0x500bec*/
   {
     if ( dword_A8EB64 ) /*0x500bf5*/
     {
@@ -4328,7 +4331,7 @@ int HouseClass::ComputePowerDistribution() {
   v2 = this->enemyHouseIndex; /*0x508156*/
   if ( v2 == -1 ) /*0x50815f*/
     goto LABEL_3; /*0x50815f*/
-  v3 = *(unsigned int **)dword_A8022C[4 * v2]; /*0x508173*/
+  v3 = *(unsigned int **)(&dword_A8022C)[4 * v2]; /*0x508173*/
   v4 = v3[22572] + 3000; /*0x50818e*/
   v5 = v3[22571] + 3000; /*0x508194*/
   v6 = v3[22570] + 3000; /*0x5081a4*/
@@ -4530,7 +4533,7 @@ void HouseClass::FindAutoBuildLocation() {
     v10 = i; /*0x508493*/
     v11 = v116[i / 4]; /*0x50849d*/
     v12 = v114[i / 4]; /*0x5084a4*/
-    v95 = dword_7EA790[i / 4]; /*0x5084ac*/
+    v95 = (&dword_7EA790)[i / 4]; /*0x5084ac*/
     *(unsigned int *)v86 = v11; /*0x5084b2*/
     v87 = 0; /*0x5084b6*/
     v83 = 0; /*0x5084ba*/
@@ -4935,8 +4938,8 @@ int HouseClass::UpdateFogVisibility() {
                   v10 = 9; /*0x509534*/
                   do /*0x509565*/
                   {
-                    v11 = dword_8871E0 >> dword_8243EC[v9]; /*0x509541*/
-                    v12 = v5 + dword_8243C8[v9]; /*0x509549*/
+                    v11 = dword_8871E0 >> (&dword_8243EC)[v9]; /*0x509541*/
+                    v12 = v5 + (&dword_8243C8)[v9]; /*0x509549*/
                     v13 = v11 + this->threatPosed_estimates_padding[v12 + 1] < 0; /*0x50954b*/
                     this->threatPosed_estimates_padding[v12 + 1] += v11; /*0x50954b*/
                     v14 = &this->threatPosed_estimates_padding[v12 + 1]; /*0x509552*/
@@ -4958,8 +4961,8 @@ int HouseClass::UpdateFogVisibility() {
             v18 = 9; /*0x509583*/
             do /*0x5095b4*/
             {
-              v19 = dword_8871E0 >> dword_8243EC[v17]; /*0x509590*/
-              v20 = v16 + dword_8243C8[v17]; /*0x509598*/
+              v19 = dword_8871E0 >> (&dword_8243EC)[v17]; /*0x509590*/
+              v20 = v16 + (&dword_8243C8)[v17]; /*0x509598*/
               v13 = v19 + this->threatPosed_estimates_padding[v20 + 1] < 0; /*0x50959a*/
               this->threatPosed_estimates_padding[v20 + 1] += v19; /*0x50959a*/
               v21 = &this->threatPosed_estimates_padding[v20 + 1]; /*0x5095a1*/

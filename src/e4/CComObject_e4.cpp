@@ -36,6 +36,8 @@
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "classes/GameLoop_e4.hpp"  // G42.57w9 method-carrier supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int GameListRenderWOL(...);  // raw 00781480: void GameListRenderWOL(ObjectClass *this)

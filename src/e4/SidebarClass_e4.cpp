@@ -669,38 +669,38 @@ GadgetClass * SidebarClass::LoadResources(void *a1, void * aSidegdi1Shp, void * 
     dword_B0B46C = (unsigned int)SearchMIXFile( (char *)(aSidegdi2Shp), 0); /*0x6abd74*/
     dword_B0B470 = (unsigned int)SearchMIXFile( (char *)(aSidegdi3Shp), 0); /*0x6abd7e*/
   }
-  Rect_Point::Set( (int)(&stru_B07E58), DSurface_SidebarBounds + 16, (void *)((int)DSurface_ViewBounds.field_4)); /*0x6abd98*/
+  ((Rect_Point *)&stru_B07E58)->Set(DSurface_SidebarBounds + 16, ((int)DSurface_ViewBounds.field_4)); /*0x6abd98*/
   ((VectorClass_ptr_ConvertClass*)&stru_B07E58)->MarkDirty(); /*0x6abda2*/
   v2 = dword_B04A28+ dword_B04A20; /*0x6abdb2*/
   v23 = dword_B04A28+ dword_B04A20; /*0x6abdbc*/
   if ( LOBYTE(stru_A8EB00.ObjectTypeClass[31]) ) /*0x6abdbd*/
-    Rect_Point::Set( (int)(&stru_B07E58), DSurface_ViewBounds.field_0 + *(unsigned int *)DSurface_ViewBounds.__pad_8, (void *)((v23))); /*0x6abdce*/
+    ((Rect_Point *)&stru_B07E58)->Set(DSurface_ViewBounds.field_0 + *(unsigned int *)DSurface_ViewBounds.__pad_8, ((v23))); /*0x6abdce*/
   else
-    Rect_Point::Set( (int)(&stru_B07E58), 0, (void *)((v23))); /*0x6abdd7*/
+    ((Rect_Point *)&stru_B07E58)->Set(0, ((v23))); /*0x6abdd7*/
   v24 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))( (DSurface *)(DSurface_Sidebar)) - v2; /*0x6abdf2*/
   v3 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))( (DSurface *)(DSurface_Sidebar)); /*0x6abdf5*/
   ((ObjectClass *)(&stru_B07E58))->SetPositionXY(v3, v24); /*0x6abdfe*/
-  Rect_Point::Set( (int)((GadgetClass *)&stru_B0B3A0), dword_B0B4DC, (void *)((dword_B0B4E0))); /*0x6abe15*/
+  ((Rect_Point *)&stru_B0B3A0)->Set(dword_B0B4DC, ((dword_B0B4E0))); /*0x6abe15*/
   ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&stru_B0B3A0)->MarkDirty(); /*0x6abe1f*/
   dword_B0B3E4 = -DSurface_SidebarBounds; /*0x6abe37*/
-  Rect_Point::Set( (int)((GadgetClass *)&stru_B07DF8), dword_B0B3AC + dword_B0B4E4, (void *)((dword_B0B3B0))); /*0x6abe4c*/
+  ((Rect_Point *)&stru_B07DF8)->Set(dword_B0B3AC + dword_B0B4E4, ((dword_B0B3B0))); /*0x6abe4c*/
   ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&stru_B07DF8)->MarkDirty(); /*0x6abe56*/
   v4 = (GadgetClass *)&stru_B07C48; /*0x6abe60*/
   dword_B07E3C = -DSurface_SidebarBounds; /*0x6abe67*/
   v5 = 0; /*0x6abe6c*/
   do /*0x6abea8*/
   {
-    Rect_Point::Set( (int)(v4), dword_B0B4E8 + v5 * dword_B0B4F0, (void *)((dword_B0B4EC))); /*0x6abe88*/
+    ((Rect_Point *)v4)->Set(dword_B0B4E8 + v5 * dword_B0B4F0, ((dword_B0B4EC))); /*0x6abe88*/
     ((VectorClass_ptr_ConvertClass*)v4)->MarkDirty(); /*0x6abe8f*/
     v4 = (GadgetClass *)((char *)v4 + 96); /*0x6abe99*/
     *(unsigned int *)v4[-1].__pad_0 = -DSurface_SidebarBounds; /*0x6abe9e*/
     ++v5; /*0x6abea1*/
   }
   while ( (int)v4 < (int)&dword_B07DC8 ); /*0x6abea8*/
-  Rect_Point::Set( (int)((GadgetClass *)&stru_B0B328), dword_B0B508, (void *)((dword_B0B50C))); /*0x6abebd*/
+  ((Rect_Point *)&stru_B0B328)->Set(dword_B0B508, ((dword_B0B50C))); /*0x6abebd*/
   ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&stru_B0B328)->MarkDirty(); /*0x6abec7*/
   dword_B0B36C = -DSurface_SidebarBounds; /*0x6abedf*/
-  Rect_Point::Set( (int)((GadgetClass *)&g_SidebarFlag), dword_B0B508 + dword_B0B510, (void *)((dword_B0B50C))); /*0x6abef2*/
+  ((Rect_Point *)&g_SidebarFlag)->Set(dword_B0B508 + dword_B0B510, ((dword_B0B50C))); /*0x6abef2*/
   ((VectorClass_ptr_ConvertClass*)(GadgetClass *)&g_SidebarFlag)->MarkDirty(); /*0x6abefc*/
   dword_B0B44C = -DSurface_SidebarBounds; /*0x6abf0f*/
   v6 = 26; /*0x6abf1d*/
@@ -845,7 +845,7 @@ void SidebarClass::CreateScrollButtons()
     byte_B049A5 = 0; /*0x653053*/
     dword_B049A8 = 0; /*0x653059*/
     dword_B04998 = 5; /*0x65305f*/
-    Rect_Point::Set( (int)(&stru_B04978), dword_B04A00, (void *)((dword_B04A04))); /*0x653069*/
+    ((Rect_Point *)&stru_B04978)->Set(dword_B04A00, ((dword_B04A04))); /*0x653069*/
     ((ShapeButton *)((ShapeButtonClass *)&stru_B04978))->SetShape((int)dword_B048E0, 0, 0); /*0x65307b*/
     VectorClass_ptr_ConvertClass::MarkDirty( (void *)(&stru_B04978)); /*0x653085*/
     dword_B04960 = *(unsigned int *)&stru_87F5F0.__pad_58[132]; /*0x65309b*/
@@ -854,7 +854,7 @@ void SidebarClass::CreateScrollButtons()
     byte_B0493D = 0; /*0x6530b9*/
     dword_B04940 = 0; /*0x6530bf*/
     dword_B04930 = 5; /*0x6530c5*/
-    Rect_Point::Set( (int)(&stru_B04910), dword_B048C8, (void *)((dword_B048CC))); /*0x6530cf*/
+    ((Rect_Point *)&stru_B04910)->Set(dword_B048C8, ((dword_B048CC))); /*0x6530cf*/
     ((ShapeButton *)((ShapeButtonClass *)&stru_B04910))->SetShape((int)dword_B048AC, 0, 0); /*0x6530e2*/
     VectorClass_ptr_ConvertClass::MarkDirty( (void *)(&stru_B04910)); /*0x6530ec*/
   }

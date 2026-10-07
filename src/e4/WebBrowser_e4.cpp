@@ -22,6 +22,8 @@
 #include "e4/classes/Weapon_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 
 // 0x773600
 namespace gamemd {

@@ -42,6 +42,9 @@
 #include "e4/classes/ControlClass_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_4C2FC0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_557380(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int g_DDraw_Gray127;  // data: 0x8a0de8 truth(IDA G42.57w9)
 

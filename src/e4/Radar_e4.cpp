@@ -140,7 +140,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
       if ( (unsigned char)result ) /*0x4add2e*/
         break; /*0x4add2e*/
       if ( (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 6 /*0x4addce*/
-        && HIBYTE(dword_8871E0[1][2])
+        && HIBYTE((&dword_8871E0)[1][2])
         && (uint8_t)(((HouseClass *)(*(void **)(v5 + 540)))->IsAlliedWith( (HouseClass *)(dword_A83D4C))) )
       {
         (*(void (**)(int, unsigned int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v5 + 1160))( v5, 0, (int)(aP1), 0, 0, 0); /*0x4adde4*/
@@ -2117,7 +2117,7 @@ LABEL_65:
         {
           v26 = ((CellCoord *)(&dword_87F7E8))->To_CellObj( (int16_t *)(v14)); /*0x692adc*/
           v30 = 12; /*0x692af4*/
-          if ( (uint8_t)((House *)*(void **)dword_A8022C[4 * v26[20]])->IsHumanPlayer() ) /*0x692aed*/
+          if ( (uint8_t)((House *)*(void **)(&dword_A8022C)[4 * v26[20]])->IsHumanPlayer() ) /*0x692aed*/
             goto LABEL_81; /*0x692afc*/
         }
       }

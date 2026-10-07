@@ -18,9 +18,9 @@ namespace gamemd {
 int ParticleTypeClass::GetFoundationHeight(char a2)
 {
     if ( a2 && *((unsigned char *)this + 5488) ) /*0x45eca8*/
-      return dword_819310[*(this + 956)] + 1; /*0x45ecc4*/
+      return (&dword_819310)[*(this + 956)] + 1; /*0x45ecc4*/
     else
-      return dword_819310[*(this + 956)]; /*0x45ecd1*/
+      return (&dword_819310)[*(this + 956)]; /*0x45ecd1*/
 }
 } // namespace gamemd
 

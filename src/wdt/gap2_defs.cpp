@@ -26,6 +26,9 @@ using ra2::game::ObjectClass;
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/MovieClass_e4.hpp"
 #include "ui/ui_ext.hpp"// 0x4104C0
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int GetResourceID2CSF(...); }  // w16g4 raw call-form
+namespace gamemd { int SetupLobbyCountryCombo(...); }  // w16g4 raw call-form
 extern int g_DDrawSurfaceManager;  // data: 0x89F518 (e4_globals_decls.hpp:901)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {

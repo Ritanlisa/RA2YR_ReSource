@@ -23,5 +23,9 @@ struct E4Recv_4F7850 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     unsigned int * sub_4F7850();  // 0x4F7850
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int AbstractClass;  // @0x4f786a (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

@@ -1192,7 +1192,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
     char v33[12]; // [esp+68h] [ebp-18h] BYREF
     char v34[12]; // [esp+74h] [ebp-Ch] BYREF
 
-    v1 = a1[28] / dword_8871E0[1].?[1]; /*0x65bb67*/
+    v1 = a1[28] / (&dword_8871E0)[1].?[1]; /*0x65bb67*/
     v2 = *((__int16 *)a1 + 32); /*0x65bb6d*/
     v3 = a1[17]; /*0x65bb71*/
     v22 = a1; /*0x65bb74*/

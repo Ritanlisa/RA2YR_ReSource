@@ -20,7 +20,12 @@ struct VtableStub {
 // --- flat members (END) ---
     char RetZero_eax_35(int a1);
     static void sub_643E70(void *aP1);  // 0x643E70 raw: VtableStub::643E70(_DWORD*) [name illegal in C++; corpus sub_ form]
-    void Method_425270();  // 0x425270
+    void Method_425270();
+    static int Push_407510(...);
+    static int sub_55CBF0(...);
+    static int sub_5175D0(...);
+    static int sub_72F510(...);
+    static int sub_5CB6C0(...);  // w16g4 C3861 static supply (Cls call-form)  // w16g4 C3861 static supply (Cls call-form)  // w16g4 C3861 static supply (Cls call-form)  // w16g4 C3861 static supply (Cls call-form)  // w16g4 C3861 static supply (raw 0x00407510)  // 0x425270
 };
 
 } // namespace gamemd

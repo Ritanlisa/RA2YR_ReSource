@@ -65,6 +65,7 @@
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/Coord2D_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/AudioCodec_e4.hpp"  // w16g4 C3861 AudioCodec:: supply
 
 // 0x7B0310
 namespace gamemd {

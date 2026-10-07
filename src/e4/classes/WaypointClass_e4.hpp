@@ -24,6 +24,7 @@ struct WaypointClass {
     unsigned int q150;  // 0x150
 // --- flat members (END) ---
     WaypointPathClass * * FindOrAddPath(unsigned int * a2);
+    static int FindOrCreate(...);  // w16g4 C3861 static supply (raw 0x00502460)
 };
 
 } // namespace gamemd

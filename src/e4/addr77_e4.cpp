@@ -83,6 +83,9 @@
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int MainWindowProc_Helper_724000(...); }  // w16g4 raw call-form
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int LoadAccountInfoWOL_Load(...);  // raw 00779690: void *__thiscall LoadAccountInfoWOL_Load( ReferenceCounted *this, const char **a2, int a3,
@@ -2559,10 +2562,10 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
       v10 += 108; /*0x77e990*/
       if ( v9 >= dword_B77900) /*0x77e995*/
         goto LABEL_16; /*0x77e995*/
-    }
+      &(&dword_B76E60)[37 * v9] = a2; /*0x77e9a8*/
     if ( v9 != -1 ) /*0x77e99c*/
     {
-      &dword_B76E60[37 * v9] = a2; /*0x77e9a8*/
+      (&dword_B76E60)[37 * v9] = a2; /*0x77e9a8*/
       DisplayRankingsWOL(0); /*0x77e9af*/
     }
   }
@@ -2571,10 +2574,10 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   ((String *)((String *)&v23.q4))->ToLowerCopy((char **)&v24.DeleteAndZero_field_0x04); /*0x77e9cb*/
   v12 = 0; /*0x77e9d5*/
   if ( dword_A8DA84 > 0 ) /*0x77e9d9*/
-  {
+      ((WideString *)((wchar_t **)&v24))->Assign((wchar_t *)(&dword_A8DA78)[v12]); /*0x77e9e9*/
     while ( 1 ) /*0x77e9e9*/
     {
-      ((WideString *)((wchar_t **)&v24))->Assign((wchar_t *)dword_A8DA78[v12]); /*0x77e9e9*/
+      ((WideString *)((wchar_t **)&v24))->Assign((wchar_t *)(&dword_A8DA78)[v12]); /*0x77e9e9*/
       ToWideStringCharAlt((char **)&v23, (const wchar_t **)&v24); /*0x77e9f6*/
       ((DeleteAndZero*)&v24)->Alt(); /*0x77e9ff*/
       v13 = ((String *)(&v23))->ToLowerCopy((char **)&v24.DeleteAndZero_field_0x08); /*0x77ea12*/
@@ -2588,10 +2591,10 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     }
     j_DeleteAndZero( (void *)((ObjectClass *)&v23)); /*0x77ea42*/
   }
-  LABEL_21:
+    *(unsigned int *)((&dword_A8DA78)[v12] + 119) = a2; /*0x77ea61*/
   if ( v12 < dword_A8DA84 ) /*0x77ea4d*/
   {
-    *(unsigned int *)(dword_A8DA78[v12] + 119) = a2; /*0x77ea61*/
+    *(unsigned int *)((&dword_A8DA78)[v12] + 119) = a2; /*0x77ea61*/
     if ( v22 && (dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2) && !byte_B77DEC && v12 == 1 ) /*0x77ea92*/
     {
       v15 = dword_B77900; /*0x77ea98*/
@@ -2893,7 +2896,8 @@ char RequestChannelListWOL()
       DlgItem = GetDlgItem(Current, 1344); /*0x77f255*/
       if ( DlgItem ) /*0x77f25d*/
         SetFocus(DlgItem); /*0x77f260*/
-      ((Debug *)aWaitformultipl)->Log("WaitForMultipleObjects() failed in Get_Channel_List\n"); /*0x77f26b G57w12: IDA push seq @ 0x77f26b*/
+      ((Debug *)"WaitForMultipleObjects() failed in Get_Channel_List
+" /*w16g4 aWaitformultipl*/)->Log("WaitForMultipleObjects() failed in Get_Channel_List\n"); /*0x77f26b G57w12: IDA push seq @ 0x77f26b*/
       return 0; /*0x77f27a*/
     }
     if ( (v2 & 0x80u) != 0 ) /*0x77f1b2*/

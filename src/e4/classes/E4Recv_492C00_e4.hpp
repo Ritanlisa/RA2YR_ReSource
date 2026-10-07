@@ -10,5 +10,10 @@ struct E4Recv_492C00 {
     unsigned int M8;  // 0x8
 // --- flat members (END) ---
     unsigned short * sub_492C00(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x492C00
+    // --- W16G3 supply (BEGIN) ---
+    char m_4[4];  // 0x4 @0x492c0d (W16G3 raw-usage vocab)
+    unsigned int m_8;  // 0x8 @0x492c62 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

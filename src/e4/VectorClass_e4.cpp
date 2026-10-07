@@ -170,6 +170,7 @@
 #include "e4/classes/COMClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+namespace VectorClass { int CleanupTyped(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 
 // 0x4137A0
 namespace gamemd {
@@ -1596,7 +1597,7 @@ LABEL_26:
 }
 // 0x40B120
 namespace gamemd {  // G42.18c ns repair
-int VectorClass_flat::Clear(int a3)
+int VectorClass_flat::Clear(int a2, int a3)
 {
 
   int v3; // eax

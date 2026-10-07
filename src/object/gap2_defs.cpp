@@ -27,6 +27,11 @@ namespace gamemd { using ra2::game::AbstractClass;
 #include "e4/classes/HouseClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AnimClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/AirstrikeClass_e4.hpp"  // g57c5 W5d scope supply
+#include "e4/classes/Game_e4.hpp"  // w16g4 C3861 Game:: supply
+#include "e4/classes/DDraw_e4.hpp"  // w16g4 C3861 DDraw:: supply
+#include "e4/classes/CellClass_e4.hpp"  // w16g4 C3861 CellClass:: supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int GetHealthRatio(...); }  // w16g4 raw call-form
 
 // G57w10: vtable externs (truth e4_globals_decls)
 extern unsigned char vt_DynamicVectorClass_AbstractClass[4];  // data: 0x7E91EC  // G57w10 vftable residue fix
@@ -1625,8 +1630,8 @@ int ObjectClass::HandleRallyPointCommand() {
           result = (int)EventClass::Add(v11, v7, 0x16u, v8, v9); /*0x4437f0*/
           if ( *(int *)&dword_A802C8 < 128 ) /*0x4437ff*/
           {
-            qmemcpy(&byte_A802D4[111 * dword_A802D0], (const void *)result, 0x6Fu); /*0x44381b*/
-            dword_A83A54[dword_A802D0] = timeGetTime(); /*0x44382c*/
+            qmemcpy(&((unsigned char *)&byte_A802D4)[111 * dword_A802D0], (const void *)result, 0x6Fu); /*0x44381b*/
+            (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x44382c*/
             result = *(unsigned int *)&dword_A802C8 + 1; /*0x443842*/
             dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x443843*/
             ++*(unsigned int *)&dword_A802C8; /*0x443849*/
@@ -2217,7 +2222,7 @@ int ObjectClass::UpdateTiberiumGrowth(int a1) {
     if ( BuildingByTiberiumType == -1 ) /*0x4818fd*/
       return 0; /*0x4819f2*/
     v6 = 0; /*0x481909*/
-    v7 = *(unsigned int **)dword_B0F4EC[4 * BuildingByTiberiumType]; /*0x48190c*/
+    v7 = *(unsigned int **)(&dword_B0F4EC)[4 * BuildingByTiberiumType]; /*0x48190c*/
     v15 = v7[46]; /*0x481915*/
     if ( a2 ) /*0x48191f*/
       *(unsigned int *)(this + 68) = Random::Range((unsigned int *)dword_A8B230 + 134, v7[56], v7[56] + 700 * v7[58] - 700); /*0x481955*/
@@ -2229,8 +2234,8 @@ int ObjectClass::UpdateTiberiumGrowth(int a1) {
       {
         v11 = v8 & 7; /*0x481968*/
         v14 = *(unsigned int *)(this + 36); /*0x48196b*/
-        IDA_LOWORD(v16) = v14 + IDA_LOWORD(dword_89F688[v11]); /*0x48198a*/
-        IDA_HIWORD(v16) = IDA_HIWORD(v14) + IDA_HIWORD(dword_89F688[v11]); /*0x481993*/
+        IDA_LOWORD(v16) = v14 + IDA_LOWORD((&dword_89F688)[v11]); /*0x48198a*/
+        IDA_HIWORD(v16) = IDA_HIWORD(v14) + IDA_HIWORD((&dword_89F688)[v11]); /*0x481993*/
         v14 = v16; /*0x48199c*/
         v10 = CellCoord::To_CellObj(&dword_87F7E8, (__int16 *)&v14); /*0x4819a6*/
       }
@@ -2243,7 +2248,7 @@ int ObjectClass::UpdateTiberiumGrowth(int a1) {
       v9 = (unsigned int)++v8 < 8; /*0x4819b9*/
     }
     while ( v8 < 8 ); /*0x4819bc*/
-    v12 = byte_81CD28[4 * (v6 % *(unsigned int *)(*(unsigned int *)dword_B0F4EC[4 * v5] + 228))]; /*0x4819d1*/
+    v12 = ((unsigned char *)&byte_81CD28)[4 * (v6 % *(unsigned int *)(*(unsigned int *)(&dword_B0F4EC)[4 * v5] + 228))]; /*0x4819d1*/
     *(unsigned char *)(this + 286) = v12; /*0x4819d8*/
     return v15 * (v12 + 1); /*0x4819e4*/
 }
@@ -3000,7 +3005,7 @@ void TechnoClass::Find(int a1) {
           while ( v5 >= 0 ); /*0x50e081*/
           if ( v4 && byte_A8E9A0 ) /*0x50e08f*/
           {
-            if ( dword_A8B238[0] ) /*0x50e098*/
+            if ( (&dword_A8B238)[0] ) /*0x50e098*/
             {
               if ( (void *)this != dword_A83D4C ) /*0x50e0bb*/
                 return; /*0x50e0bb*/

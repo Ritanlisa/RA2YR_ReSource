@@ -35,6 +35,10 @@ struct MapSeed {
     int IsCellInBounds();
     int ValidateName(int a2);
     bool CheckTileMatch(int16_t *aP1, int16_t *aP2, int aP3, char aP4, char aP5, char aP6);  // 0x56d100
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int MapSeed_field_0x14;  // 0x14 @0x5924cc (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 
 } // namespace gamemd

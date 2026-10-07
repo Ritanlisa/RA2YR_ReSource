@@ -51,6 +51,8 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aInfo[];  // data: 0x84d410 truth(IDA G42.57w9)
 extern char aNeed[];  // data: 0x84d3d4 truth(IDA G42.57w9)
@@ -1631,7 +1633,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   IDA_HIBYTE(v19.DeleteAndZero_field_0x04) = a1; /*0x7afba6*/
   if ( (int)g_DisplayWidth > 640 ) /*0x7afbaa*/
   {
-    StringCSF = GetStringCSF( aWolWdtresoluti, 0, (const char *)(g_Str_File_WorldDom_cpp), 385); /*0x7afbc1*/
+    StringCSF = GetStringCSF( "WOL:WDTResolutionQuery" /*w16g4 "WOL:WDTResolutionQuery" /*w16g4 aWolWdtresoluti*/*/, 0, (const char *)(g_Str_File_WorldDom_cpp), 385); /*0x7afbc1*/
     ((WideString *)((wchar_t **)&v19))->Assign( (wchar_t *)(StringCSF)); /*0x7afbcb*/
     v4 = (wchar_t *)((WideString *)(wchar_t **)&v19)->GetOrEmpty(); /*0x7afbdb*/
     if ( ShowDialogConfirm((void *)(v4), (void *)(4), (uint8_t (*)(void))Game::ProcessIdle, (void *)(1)) != 6 /*0x7afc0e*/
@@ -1664,7 +1666,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
     else
       v22 = 0; /*0x7afcce*/
   }
-  v10 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct(aWdtvoxMix); /*0x7afcdb*/
+  v10 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("WDTVOX.MIX" /*w16g4 "WDTVOX.MIX" /*w16g4 aWdtvoxMix*/*/); /*0x7afcdb*/
   v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))( (unsigned int *)(v10), 0); /*0x7afcef*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afcf1*/
   v25 = 0; /*0x7afcf5*/
@@ -1675,11 +1677,11 @@ int StartWDTCampaign(char a1, char a2, int a3)
   {
     v12 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x7afd18*/
     if ( v12 ) /*0x7afd22*/
-      v21 = ((MixFileClass *)(v12))->FromFile(aWdtvoxMix, (int)dword_886980); /*0x7afd35*/
+      v21 = ((MixFileClass *)(v12))->FromFile("WDTVOX.MIX" /*w16g4 "WDTVOX.MIX" /*w16g4 aWdtvoxMix*/*/, (int)dword_886980); /*0x7afd35*/
     else
       v21 = (unsigned int *)(0); /*0x7afd3b*/
   }
-  v13 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct(aLocalMix_1); /*0x7afd48*/
+  v13 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("Local.MIX" /*w16g4 "Local.MIX" /*w16g4 aLocalMix_1*/*/); /*0x7afd48*/
   v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))( (unsigned int *)(v13), 0); /*0x7afd5c*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afd5e*/
   v25 = 0; /*0x7afd62*/
@@ -1690,7 +1692,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   {
     v15 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x7afd85*/
     if ( v15 ) /*0x7afd8f*/
-      *(unsigned int *)v19.__pad_0 = ((MixFileClass *)(v15))->FromFile(aLocalMix_1, (int)dword_886980); /*0x7afda2*/
+      *(unsigned int *)v19.__pad_0 = ((MixFileClass *)(v15))->FromFile("Local.MIX" /*w16g4 "Local.MIX" /*w16g4 aLocalMix_1*/*/, (int)dword_886980); /*0x7afda2*/
     else
       *(unsigned int *)v19.__pad_0 = 0; /*0x7afda8*/
     v6 = *(void (****)(unsigned int, int))v19.__pad_0; /*0x7afdac*/
@@ -1849,7 +1851,7 @@ void INIClass::SetGameOptionsPing(const char * a1, int a2)
     {
       if ( !strcmp(ToWideStringChar( (IUnknown *)(v5)), a1) ) /*0x7a0ed1*/
       {
-        dword_B76440[i] = a2; /*0x7a0ef8*/
+        (&dword_B76440)[i] = a2; /*0x7a0ef8*/
         GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0f04*/
         if ( GameUI ) /*0x7a0f08*/
         {

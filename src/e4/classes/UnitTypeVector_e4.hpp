@@ -23,6 +23,12 @@ struct UnitTypeVector {
     unsigned int * Construct2(int a2, int a3, void *a3_2);
     unsigned int * ConstructUnitTypeVectorClass(int a2, int a3);
     static unsigned int * Construct(void *aP1, int a2, int a3);  // 0x513190 raw: _DWORD* Construct(UnitTypeVector*, int, int)
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int UnitTypeVector_field_0x10;  // @0x511dee (W16G3 raw-usage vocab)
+    unsigned int UnitTypeVector_field_0x14;  // @0x511df6 (W16G3 raw-usage vocab)
+    unsigned int UnitTypeVector_field_0x18;  // @0x511909 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 
 } // namespace gamemd

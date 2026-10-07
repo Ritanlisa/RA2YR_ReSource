@@ -2144,31 +2144,31 @@ return (unsigned int *)&this->DynamicVectorClass; /*0x717cc9*/
 }  // G42.18c ns repair
 // 0x717CD0
 namespace gamemd {
-char TypeList_PushBack_free(void * aP1, unsigned int * a2)
+char TypeList_PushBack_free(TypeList *aP1, unsigned int * a2)
 {
     int Capacity; // ecx
     int CapacityIncrement; // eax
     int Count; // eax
     unsigned int *Items; // edx
 
-    Capacity = this->u32_8; /*0x717cd3*/
-    if ( this->u32_D >= Capacity ) /*0x717cdb*/
+    Capacity = aP1->u32_8; /*0x717cd3*/
+    if ( aP1->u32_D >= Capacity ) /*0x717cdb*/
     {
-      if ( !this->u32_14 && Capacity ) /*0x717ce6*/
+      if ( !aP1->u32_14 && Capacity ) /*0x717ce6*/
         return 0; /*0x717ce6*/
-      CapacityIncrement = this->CapacityIncrement; /*0x717ce8*/
+      CapacityIncrement = aP1->CapacityIncrement; /*0x717ce8*/
       if ( CapacityIncrement <= 0 /*0x717cf8*/
-        || !(*((unsigned __int8 (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))(
-              (TypeList *)this,
+        || !(*((unsigned __int8 (**)(TypeList *, int, unsigned int))aP1->DynamicVectorClass + 2))(
+              (TypeList *)aP1,
               Capacity + CapacityIncrement,
               0) )
       {
         return 0; /*0x717cff*/
       }
     }
-    Count = this->u32_10; /*0x717d05*/
-    Items = this->u32_4; /*0x717d08*/
-    this->u32_10 = Count + 1; /*0x717d0e*/
+    Count = aP1->u32_10; /*0x717d05*/
+    Items = aP1->u32_4; /*0x717d08*/
+    aP1->u32_10 = Count + 1; /*0x717d0e*/
     Items[Count] = *a2; /*0x717d18*/
     return 1; /*0x717d01*/
 }

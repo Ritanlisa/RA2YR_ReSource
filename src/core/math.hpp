@@ -31,6 +31,11 @@ struct Vector2D
 
     // unmatched: no callgraph reference and no git history record
     Vector2D& operator-=(const Vector2D& rhs);
+    // W16G3 static receiver-first forms (raw __thiscall; TU sites call Cls::Set(&v,x,y));
+    // decls only -- hpp-impl gate; defs live in cpp translation rounds
+    static void* Set(void* aP0, T a2, T a3);
+    static void* Add(void* aP0, void* aP1, void* aP2);
+
 
     // unmatched: no callgraph reference and no git history record
     Vector2D operator-() const;

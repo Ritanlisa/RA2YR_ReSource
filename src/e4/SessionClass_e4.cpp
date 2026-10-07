@@ -2513,7 +2513,7 @@ unsigned int SessionClass::GetPlayerColorScheme(ObjectClass * aP0)
   if ( aP0 == -2 ) /*0x69a317*/
     return unk_83ED1C; /*0x69a31e*/
   if ( aP0 < 9 ) /*0x69a32b*/
-    return byte_83ED14[aP0]; /*0x69a32d*/
+    return ((unsigned char *)&byte_83ED14)[aP0]; /*0x69a32d*/
   return result; /*0x69a325*/
 
 }
@@ -2532,7 +2532,7 @@ int SessionClass::AssignSide(int a2, char aP2)
     LOBYTE(result) = aP2; /*0x69b76c*/
     if ( aP2 ) /*0x69b772*/
     {
-      result = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 9); /*0x69b783*/
+      result = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 9); /*0x69b783*/
       this->Side = result; /*0x69b788*/
       this->Side2 = -2; /*0x69b78e*/
     }

@@ -41,6 +41,8 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int CreateDialog(...); }  // w16g4 raw call-form
 
 // 0x4F11B0
 namespace gamemd {

@@ -43,6 +43,8 @@
 #include "e4/classes/FileTreeNode_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_437F50(...); }  // w16g4 raw call-form
 
 // 0x437FD0
 namespace gamemd {

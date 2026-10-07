@@ -578,7 +578,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
       IDA_LODWORD(var84_4) = v83;
       *((double *)&_8 + 1) = (double)IDA_SLODWORD(desiredFacing_4) - (double)v83;
       *(double *)&_8 = (double)eax100[1] - (double)(int)v60[1];
-      double v84 = ((Math *)(AbstractClass *)_8)->CalcAngle( *(double *)((char *)&_8 + 4));
+      double v84 = Math::CalcAngle((AbstractClass *)_8, *(double *)((char *)&_8 + 4));
       IDA_LOWORD(desiredFacing_4) = Math::RoundToInt((v84 - 1.570796326794897) * -10430.06004058427);
       int v85 = *(unsigned int *)(a1 + 8);
       desiredFacing = (ObjectClass *)IDA_LODWORD(desiredFacing_4);
@@ -931,7 +931,7 @@ LABEL_11:
 }
 {
 
-  return dword_7F099C[4 * (int)this->AbstractClass]; /*0x660adb*/
+  return (&dword_7F099C)[4 * (int)this->AbstractClass]; /*0x660adb*/
 
 }
 } // namespace gamemd
@@ -941,7 +941,7 @@ namespace gamemd {
 int E4Recv_660AE0::sub_660AE0()
 {
 
-  return dword_7F09A0[4 * (int)this->AbstractClass]; /*0x660aeb*/
+  return (&dword_7F09A0)[4 * (int)this->AbstractClass]; /*0x660aeb*/
 
 }
 } // namespace gamemd
@@ -951,7 +951,7 @@ namespace gamemd {
 int E4Recv_660AF0::sub_660AF0()
 {
 
-  return dword_7F0998[4 * (int)this->AbstractClass]; /*0x660afb*/
+  return (&dword_7F0998)[4 * (int)this->AbstractClass]; /*0x660afb*/
 
 }
 } // namespace gamemd

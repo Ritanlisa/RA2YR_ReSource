@@ -19,5 +19,10 @@ struct E4Recv_5CF840 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     const char ** sub_5CF840(MapSelect * aP1);  // 0x5CF840
+    // --- W16G3 supply (BEGIN) ---
+    char customSound_controller[20];  // ObjectClass 0x50 vocab (audio controller 20B) (W16G3 raw-usage vocab)
+    char ambientSoundController[20];  // ObjectClass 0x3C vocab (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

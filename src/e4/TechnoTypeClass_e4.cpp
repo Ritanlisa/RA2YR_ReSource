@@ -36,6 +36,7 @@
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+namespace VectorClass { int Cleanup(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
 
 // 0x48DCD0
 namespace gamemd {
@@ -1415,7 +1416,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
 } // namespace gamemd
 // 0x716DC0
 namespace gamemd {
-int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3)
+int TechnoTypeClass::SaveLoad_Prefix_0(_DWORD *a2, int *a3, int a4, int a5)
 {
 
   int v5; // ebx
@@ -1439,65 +1440,65 @@ int TechnoTypeClass::SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoT
   int v23; // edx
   int mm; // ebx
 
-  result = AbstractClass::SaveLoad_PrefixWrapper( (TechnoTypeClass *)((AbstractClass *)a1), (ObjectTypeClass *)((int)aP2), (TechnoTypeClass *)((int)aP3)); /*0x716dd1*/
+  result = AbstractClass::SaveLoad_PrefixWrapper( (TechnoTypeClass *)((AbstractClass *)this), (ObjectTypeClass *)((int)a2), (TechnoTypeClass *)((int)a3)); /*0x716dd1*/
   if ( result >= 0 ) /*0x716dd8*/
   {
-    v7 = *(unsigned int *)aP2;
-    aP3 = (TechnoTypeClass *)(*(int **)&((unsigned int *)a1)[788]); /*0x716df1*/
-    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v7 + 16))( (unsigned int *)(aP2), (int **)(&aP3), 4, 0, v5); /*0x716df5*/
+    v7 = *(unsigned int *)a2;
+    a3 = (TechnoTypeClass *)(*(int **)&((unsigned int *)this)[788]); /*0x716df1*/
+    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v7 + 16))( (unsigned int *)(a2), (int **)(&a3), 4, 0, v5); /*0x716df5*/
     for ( i = 0; i < a4; ++i ) /*0x716e00*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[776] + 4 * i, 4, 0); /*0x716e13*/
-    v9 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[576]; /*0x716e2f*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v9 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4, 0); /*0x716e33*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[776] + 4 * i, 4, 0); /*0x716e13*/
+    v9 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[576]; /*0x716e2f*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v9 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x716e33*/
     for ( j = 0; j < a4; ++j ) /*0x716e3e*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[564] + 4 * j, 4, 0); /*0x716e51*/
-    v11 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[1264]; /*0x716e6d*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v11 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4, 0); /*0x716e71*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[564] + 4 * j, 4, 0); /*0x716e51*/
+    v11 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[1264]; /*0x716e6d*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v11 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x716e71*/
     for ( k = 0; k < a4; ++k ) /*0x716e7c*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[1252] + 4 * k, 4, 0); /*0x716e8f*/
-    v13 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[832]; /*0x716eab*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v13 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4, 0); /*0x716eaf*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[1252] + 4 * k, 4, 0); /*0x716e8f*/
+    v13 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[832]; /*0x716eab*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v13 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x716eaf*/
     for ( m = 0; m < a4; ++m ) /*0x716eba*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[820] + 4 * m, 4, 0); /*0x716ecd*/
-    v15 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[860]; /*0x716ee9*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v15 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4, 0); /*0x716eed*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[820] + 4 * m, 4, 0); /*0x716ecd*/
+    v15 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[860]; /*0x716ee9*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v15 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x716eed*/
     for ( n = 0; n < a4; ++n ) /*0x716ef8*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[848] + 4 * n, 4, 0); /*0x716f0b*/
-    v17 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[888]; /*0x716f27*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v17 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4, 0); /*0x716f2b*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[848] + 4 * n, 4, 0); /*0x716f0b*/
+    v17 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[888]; /*0x716f27*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v17 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x716f2b*/
     for ( ii = 0; ii < a4; ++ii ) /*0x716f36*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[876] + 4 * ii, 4, 0); /*0x716f49*/
-    v19 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[916]; /*0x716f65*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v19 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4, 0); /*0x716f69*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[876] + 4 * ii, 4, 0); /*0x716f49*/
+    v19 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[916]; /*0x716f65*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v19 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x716f69*/
     for ( jj = 0; jj < a4; ++jj ) /*0x716f74*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[904] + 4 * jj, 4, 0); /*0x716f87*/
-    v21 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[944]; /*0x716fa3*/
-    (*(void (**)(unsigned int *, int *, int, unsigned int))(v21 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4, 0); /*0x716fa7*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[904] + 4 * jj, 4, 0); /*0x716f87*/
+    v21 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[944]; /*0x716fa3*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v21 + 16))( (unsigned int *)(a2), (int *)(&a4), 4, 0); /*0x716fa7*/
     for ( kk = 0; kk < a4; ++kk ) /*0x716fb2*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[932] + 4 * kk, 4, 0); /*0x716fc5*/
-    v23 = *(unsigned int *)aP2;
-    a4 = *(unsigned int *)&((unsigned int *)a1)[972]; /*0x716fe1*/
-    (*(void (**)(unsigned int *, int *, int))(v23 + 16))( (unsigned int *)(aP2), (int *)(&a4), 4); /*0x716fe5*/
-    for ( mm = 0; mm < (int)aP3; ++mm ) /*0x716ff0*/
-      (*(void (**)(unsigned int *, int, int, unsigned int))(*aP2 + 16))( (unsigned int *)(aP2), *(unsigned int *)&((unsigned int *)a1)[960] + 4 * mm, 4, 0); /*0x717003*/
-    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)a1)[984]), (void *)(aP2)); /*0x717014*/
-    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)a1)[1012]), (void *)(aP2)); /*0x717020*/
-    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)a1)[1040]), (void *)(aP2)); /*0x71702c*/
-    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)a1)[1068]), (void *)(aP2)); /*0x717038*/
-    ((Stream *)&((unsigned int *)a1)[1608])->WriteIntArray( (TechnoTypeClass *)(aP2)); /*0x717044*/
-    ((Stream *)&((unsigned int *)a1)[1636])->WriteIntArray( (TechnoTypeClass *)(aP2)); /*0x717050*/
-    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)a1)[588]), (void *)(aP2)); /*0x71705c*/
-    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)a1)[1364]), (void *)(aP2)); /*0x717068*/
-    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)a1)[1392]), (void *)(aP2)); /*0x717074*/
-    ((TechnoTypeClass *)&((unsigned int *)a1)[1684])->SaveLoadDataArray( (TechnoTypeClass *)(aP2)); /*0x717080*/
-    ((TechnoTypeClass *)&((unsigned int *)a1)[1712])->SaveLoadDataArray( (TechnoTypeClass *)(aP2)); /*0x71708c*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[932] + 4 * kk, 4, 0); /*0x716fc5*/
+    v23 = *(unsigned int *)a2;
+    a4 = *(unsigned int *)&((unsigned int *)this)[972]; /*0x716fe1*/
+    (*(void (**)(unsigned int *, int *, int))(v23 + 16))( (unsigned int *)(a2), (int *)(&a4), 4); /*0x716fe5*/
+    for ( mm = 0; mm < (int)a3; ++mm ) /*0x716ff0*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))( (unsigned int *)(a2), *(unsigned int *)&((unsigned int *)this)[960] + 4 * mm, 4, 0); /*0x717003*/
+    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)this)[984]), (void *)(a2)); /*0x717014*/
+    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)this)[1012]), (void *)(a2)); /*0x717020*/
+    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)this)[1040]), (void *)(a2)); /*0x71702c*/
+    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)this)[1068]), (void *)(a2)); /*0x717038*/
+    ((Stream *)&((unsigned int *)this)[1608])->WriteIntArray( (TechnoTypeClass *)(a2)); /*0x717044*/
+    ((Stream *)&((unsigned int *)this)[1636])->WriteIntArray( (TechnoTypeClass *)(a2)); /*0x717050*/
+    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)this)[588]), (void *)(a2)); /*0x71705c*/
+    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)this)[1364]), (void *)(a2)); /*0x717068*/
+    DynamicVector::Read( (unsigned int *)((DynamicVector *)&((unsigned int *)this)[1392]), (void *)(a2)); /*0x717074*/
+    ((TechnoTypeClass *)&((unsigned int *)this)[1684])->SaveLoadDataArray( (TechnoTypeClass *)(a2)); /*0x717080*/
+    ((TechnoTypeClass *)&((unsigned int *)this)[1712])->SaveLoadDataArray( (TechnoTypeClass *)(a2)); /*0x71708c*/
     return 0; /*0x717091*/
   }
   return result; /*0x717094*/

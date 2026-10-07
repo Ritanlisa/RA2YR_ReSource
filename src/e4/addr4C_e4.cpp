@@ -59,6 +59,8 @@
 #include "e4/classes/BuildingAnim_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_4A3270(...); }  // w16g4 raw call-form
 
 // 0x4C1440
 namespace gamemd {
@@ -1077,7 +1079,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     {
       v38 = (*(int (**)(int *, unsigned int *))(**v6 + 72))( *v6, (unsigned int *)(v64)); /*0x4cf373*/
       v58 = *(float *)v38; /*0x4cf37f*/
-      v39 = ((Math *)(double)*(int *)(v38 + 4) - (double)a5)->CalcAngle( (double)IDA_SLODWORD(a4) - (double)IDA_SLODWORD(v58)); /*0x4cf398*/
+      v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)IDA_SLODWORD(a4) - (double)IDA_SLODWORD(v58)); /*0x4cf398*/
       IDA_LOWORD(a4) = Math::RoundToInt((v39 - 1.570796326794897) * -10430.06004058427); /*0x4cf3b1*/
       a4 = a4; /*0x4cf3ba*/
       v37 = (int *)&a4; /*0x4cf3be*/

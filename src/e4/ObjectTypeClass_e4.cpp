@@ -35,6 +35,9 @@
 #include "e4/classes/COMObject_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileExtension_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_45DD20(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_45DD50(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ObjectTypeClass_Read(...);  // raw 006CEE60: int __thiscall ObjectTypeClass_Read(ObjectClass *this)

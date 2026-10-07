@@ -58,6 +58,9 @@
 #include "e4/classes/CheckListClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/ColorListClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int ShowConfirmDialog(...); }  // w16g4 raw call-form
+namespace gamemd { int ShowGameDialog(...); }  // w16g4 raw call-form
 
 // 0x4880F0
 namespace gamemd {
@@ -877,11 +880,11 @@ LABEL_213:
       {
         v100 = (gamemd::ParticleSystemClass *)(ParticleSystemClass::Constructor()
                  v99,
-                 *(IUnknown **)(*(unsigned int *)&stru_87C374[44652] + 116),
+                 *(IUnknown **)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 116),
                  (IUnknown *)v94,
                  0,
                  0,
-                 (IUnknown *)&stru_89E138[1784],
+                 (IUnknown *)&((unsigned char *)&stru_89E138)[1784],
                  0);
         ParticleSystemClass::CreateParticle(v100, (IUnknown *)v94, (IUnknown *)v94);
       }
@@ -901,7 +904,7 @@ LABEL_213:
                (IUnknown *)v94,
                0,
                0,
-               (IUnknown *)&stru_89E138[1784],
+               (IUnknown *)&((unsigned char *)&stru_89E138)[1784],
                (IUnknown *)aP6);
     else
       v102 = (ParticleSystemClass *)(0);
@@ -1212,10 +1215,10 @@ AbstractClass * * Main_Game_Frame()
             if ( ShowConfirmDialog(StringCSF) ) /*0x48cba1*/
             {
               v8 = (char *)((EventClass *)v15)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 8u); /*0x48cbc0*/
-              if ( (int)dword_A802C8< 128 ) /*0x48cbcf*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x48cbfc*/
               {
                 qmemcpy( (char *)&byte_A802D4 + 111 * dword_A802D0, (const void *)(v8), 0x6Fu); /*0x48cbeb*/
-                dword_A83A54[dword_A802D0] = timeGetTime(); /*0x48cbfc*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x48cbfc*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48cc13*/
                 ++dword_A802C8; /*0x48cc19*/
               }
@@ -1234,7 +1237,7 @@ AbstractClass * * Main_Game_Frame()
               if ( (int)dword_A802C8< 128 ) /*0x48ca52*/
               {
                 qmemcpy( (char *)&byte_A802D4 + 111 * dword_A802D0, (const void *)(v5), 0x6Fu); /*0x48ca6e*/
-                dword_A83A54[dword_A802D0] = timeGetTime(); /*0x48ca7f*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x48ca7f*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48ca96*/
                 ++dword_A802C8; /*0x48ca9c*/
               }
@@ -1245,7 +1248,7 @@ AbstractClass * * Main_Game_Frame()
               if ( (int)dword_A802C8< 128 ) /*0x48cad3*/
               {
                 qmemcpy( (char *)&byte_A802D4 + 111 * dword_A802D0, (const void *)(v6), 0x6Fu); /*0x48caef*/
-                dword_A83A54[dword_A802D0] = timeGetTime(); /*0x48cb00*/
+                (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x48cb00*/
                 dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x48cb17*/
                 ++dword_A802C8; /*0x48cb1d*/
               }
@@ -1777,8 +1780,8 @@ unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
 
   result = a1; /*0x487ea0*/
   v4 = a3 & 7; /*0x487ea7*/
-  IDA_LOWORD(v5) = *a2 + IDA_LOWORD(dword_89F688[v4]); /*0x487ec4*/
-  IDA_HIWORD(v5) = a2[1] + IDA_HIWORD(dword_89F688[v4]); /*0x487eca*/
+  IDA_LOWORD(v5) = *a2 + IDA_LOWORD((&dword_89F688)[v4]); /*0x487ec4*/
+  IDA_HIWORD(v5) = a2[1] + IDA_HIWORD((&dword_89F688)[v4]); /*0x487eca*/
   *result = v5; /*0x487ed3*/
   return result; /*0x487ec9*/
 }
@@ -2746,14 +2749,14 @@ int sub_48E460()
 namespace gamemd {
 int sub_48E480()
 {
-  dword_89E9F0[0] = 128; /*0x48e489*/
-  dword_89E9F4[0] = 128; /*0x48e493*/
+  (&dword_89E9F0)[0] = 128; /*0x48e489*/
+  (&dword_89E9F4)[0] = 128; /*0x48e493*/
   dword_89E9FC = 64; /*0x48e49b*/
   dword_89EA00 = 64; /*0x48e4a5*/
   dword_89EA08 = 192; /*0x48e4ab*/
   dword_89EA0C = 64; /*0x48e4b0*/
   dword_89EA14 = 64; /*0x48e4bd*/
-  dword_89E9F8[0] = 0; /*0x48e4c4*/
+  (&dword_89E9F8)[0] = 0; /*0x48e4c4*/
   dword_89EA04 = 0; /*0x48e4ca*/
   dword_89EA10 = 0; /*0x48e4d0*/
   dword_89EA18 = 192; /*0x48e4d6*/

@@ -19,6 +19,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"  // W16G3 C2027 supply (0x5924xx)
 #include "e4/classes/RadioClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
@@ -35,6 +36,7 @@
 #include "e4/classes/Random_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
 #include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+#include "e4/classes/TileNode_e4.hpp"  // w16g4 C3861 TileNode:: supply
 // [w14e3] vocab extender (raw call-form evidence)
 namespace gamemd { int ResizeEx(...); }
 namespace gamemd { int PlaceMapSeedCityBlockVariant2(...); }
@@ -44,7 +46,12 @@ namespace gamemd { int FindByValue(...); }
 // usage: *(unsigned int*)v.__pad_0 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
 namespace gamemd {
 struct _VectorClass_VCell {
-    char __pad_0[4];  // 0x0 vfptr carrier
+    char __pad_0[1];        // 0x0 (vfptr carrier, dword-wide via cast; W16G3 raw vocab)
+    char m_1[7];            // 0x1..0x7 (raw usage &x.m_1[3] = Items @0x4)
+    int m_8;                // 0x8 Capacity
+    char m_C[2];            // 0xC..0xD IsInitialized/IsAllocated
+    char __pad_E[2];        // 0xE..0xF
+    char __tail_10[4];      // 0x10 Count
 };
 } // namespace gamemd
 
@@ -1752,7 +1759,7 @@ void* PlaceBuildings(void *a1, int a2, int a3)
 
 // 0x5905D0
 namespace gamemd {
-int AllocateArea()
+int RandomMap::AllocateArea()
 {
     RandomMap *v1; // esi
     int v2; // eax
@@ -2069,7 +2076,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
     v4 = (__int16 *)(a2); /*0x59097a*/
     v5 = a3; /*0x59097f*/
     v39[0] = 1; /*0x59098f*/
-    v7 = ((RandomMap *)this)->CheckNeighborhoodCompatibility( (unsigned short *)(a2), (DynamicVector *)(v39), (int)a3, a4); /*0x590999*/
+    v7 = ((RandomMap *)a1)->CheckNeighborhoodCompatibility( (unsigned short *)(a2), (DynamicVector *)(v39), (int)a3, a4); /*0x590999*/
     if ( !v39[0] ) /*0x5909a1*/
       return 0; /*0x5909a6*/
     v9 = 0; /*0x5909af*/
@@ -2087,7 +2094,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
       ++*(unsigned short *)&v39[3]; /*0x590a01*/
     if ( (v7 & 4) != 0 ) /*0x590a09*/
       IDA_LOWORD(a2) = (unsigned short)a2 - 1; /*0x590a0b*/
-    v9 = PlaceMapSeedCityBlockVariant2((ObjectClass *)this, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590a22*/
+    v9 = PlaceMapSeedCityBlockVariant2((ObjectClass *)a1, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590a22*/
     if ( !v9 ) /*0x590a26*/
     {
   LABEL_86:
@@ -2103,7 +2110,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
         --IDA_HIWORD(a2); /*0x590a65*/
       if ( (v7 & 1) != 0 ) /*0x590a6d*/
         --*(unsigned short *)&v39[1]; /*0x590a6f*/
-      v9 = MapSeed::PlaceCityBlock2((MapSeed *)this, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590a86*/
+      v9 = MapSeed::PlaceCityBlock2((MapSeed *)a1, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590a86*/
       if ( !v9 ) /*0x590a8a*/
       {
   LABEL_87:
@@ -2119,7 +2126,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
           IDA_LOWORD(a2) = (unsigned short)a2 - 1; /*0x590ac9*/
         if ( (v7 & 4) != 0 ) /*0x590ad1*/
           --*(unsigned short *)&v39[3]; /*0x590ad3*/
-        v9 = PlaceMapSeedCityBlockDiagonal((ObjectClass *)this, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590aea*/
+        v9 = PlaceMapSeedCityBlockDiagonal((ObjectClass *)a1, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590aea*/
         if ( !v9 ) /*0x590aee*/
         {
   LABEL_88:
@@ -2135,7 +2142,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
             ++IDA_HIWORD(a2); /*0x590b30*/
           if ( (v7 & 0x10) != 0 ) /*0x590b38*/
             ++*(unsigned short *)&v39[1]; /*0x590b3a*/
-          v9 = PlaceMapSeedCityBlockDiagonal((ObjectClass *)this, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590b51*/
+          v9 = PlaceMapSeedCityBlockDiagonal((ObjectClass *)a1, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590b51*/
           if ( !v9 ) /*0x590b55*/
           {
   LABEL_89:
@@ -2170,7 +2177,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
             }
             while ( v20 > 1 ); /*0x590c05*/
             IDA_LOWORD(a2) = v20 + (unsigned short)a2; /*0x590c07*/
-            v9 = ((RandomMap *)this)->CheckPlacementArea( (short *)((__int16 *)&v39[1]), (short *)((__int16 *)&a2), (ObjectClass *)(v5)); /*0x590c1e*/
+            v9 = ((RandomMap *)a1)->CheckPlacementArea( (short *)((__int16 *)&v39[1]), (short *)((__int16 *)&a2), (ObjectClass *)(v5)); /*0x590c1e*/
             if ( !v9 ) /*0x590c22*/
             {
   LABEL_90:
@@ -2205,7 +2212,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
               }
               while ( v23 > 1 ); /*0x590cd3*/
               IDA_LOWORD(a2) = v23 - 1 + (unsigned short)a2; /*0x590cd7*/
-              v9 = PlaceMapSeedCityArea((ObjectClass *)this, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590ced*/
+              v9 = PlaceMapSeedCityArea((ObjectClass *)a1, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590ced*/
               if ( !v9 ) /*0x590cf1*/
               {
   LABEL_91:
@@ -2241,7 +2248,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
                 }
                 while ( v27 > 1 ); /*0x590da1*/
                 IDA_HIWORD(a2) += v27; /*0x590da3*/
-                v9 = MapSeed::PlaceCityBuildings((MapSeed *)this, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590dba*/
+                v9 = MapSeed::PlaceCityBuildings((MapSeed *)a1, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590dba*/
                 if ( !v9 ) /*0x590dbe*/
                 {
   LABEL_64:
@@ -2277,7 +2284,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
                     }
                     while ( v31 > 1 ); /*0x590e6f*/
                     IDA_HIWORD(a2) += v31 - 1; /*0x590e73*/
-                    v9 = MapSeed::PlaceCityBlock((MapSeed *)this, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590e89*/
+                    v9 = MapSeed::PlaceCityBlock((MapSeed *)a1, (__int16 *)&v39[1], (__int16 *)&a2, v5); /*0x590e89*/
                   }
                 }
               }
@@ -2295,7 +2302,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
             IDA_HIWORD(a4) = IDA_HIWORD(a2),
             IDA_LOWORD(a4) = v33,
             IDA_LOWORD(a2) = v32,
-            (v9 = MapSeed::PlaceCityBlock((MapSeed *)this, (__int16 *)&a2, (__int16 *)&a4, a3)) == 0) )
+            (v9 = MapSeed::PlaceCityBlock((MapSeed *)a1, (__int16 *)&a2, (__int16 *)&a4, a3)) == 0) )
       {
         if ( (v7 & 2) != 0 /*0x590f34*/
           || (v34 = v4[1],
@@ -2303,7 +2310,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
               IDA_LOWORD(a4) = (unsigned short)a2,
               IDA_HIWORD(a4) = v34 - 4,
               IDA_HIWORD(a2) = v34 + 4,
-              (v9 = PlaceMapSeedCityArea((ObjectClass *)this, (__int16 *)&a2, (__int16 *)&a4, a3)) == 0) )
+              (v9 = PlaceMapSeedCityArea((ObjectClass *)a1, (__int16 *)&a2, (__int16 *)&a4, a3)) == 0) )
         {
           if ( (v7 & 8) != 0 /*0x590f7b*/
             || (v35 = *v4 - 4,
@@ -2312,7 +2319,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
                 IDA_LOWORD(a4) = v35,
                 IDA_HIWORD(a2) = v36,
                 IDA_HIWORD(a4) = v36,
-                (v9 = MapSeed::PlaceCityBuildings((MapSeed *)this, (__int16 *)&a2, (__int16 *)&a4, a3)) == 0) )
+                (v9 = MapSeed::PlaceCityBuildings((MapSeed *)a1, (__int16 *)&a2, (__int16 *)&a4, a3)) == 0) )
           {
             if ( (v7 & 0x20) == 0 ) /*0x590f80*/
             {
@@ -2322,7 +2329,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
               IDA_LOWORD(a4) = v37 - 1; /*0x590f97*/
               IDA_HIWORD(a2) = v38 - 4; /*0x590f9c*/
               IDA_HIWORD(a4) = v38 + 4; /*0x590fb1*/
-              return ((RandomMap *)this)->CheckPlacementArea( (short *)((__int16 *)&a2), (short *)((__int16 *)&a4), a3); /*0x590fbb*/
+              return ((RandomMap *)a1)->CheckPlacementArea( (short *)((__int16 *)&a2), (short *)((__int16 *)&a4), a3); /*0x590fbb*/
             }
           }
         }
@@ -2356,7 +2363,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int 
     v16 = v6; /*0x591000*/
     v7 = a2[1] - 2; /*0x591010*/
     v8 = (unsigned short *)(__int16)(*a2 - 2); /*0x591014*/
-    RandomMap_field_0x8 = this->RandomMap_field_0x8; /*0x59101a*/
+    RandomMap_field_0x8 = a1->RandomMap_field_0x8; /*0x59101a*/
     v15 = v7; /*0x59101d*/
     v18 = v7; /*0x591021*/
     v19 = 5; /*0x59102a*/
@@ -2376,7 +2383,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int 
           if ( v11 != 1 || v12 != 1 ) /*0x591076*/
           {
             v17 = (unsigned short *)(v13); /*0x59107c*/
-            v14 = this->RandomMap_field_0x8; /*0x591088*/
+            v14 = a1->RandomMap_field_0x8; /*0x591088*/
             v19 = 5; /*0x591094*/
             v20 = 5; /*0x591098*/
             v18 = v11 + v15 + 4 * v11 - 5; /*0x5910a0*/
@@ -2402,7 +2409,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int 
 }
 // 0x592440
 namespace gamemd {
-ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
+ObjectClass * * CheckPlacementArea(RandomMap *a1, short * a2, short * a3, ObjectClass * aP2)
 {
     __int16 v5; // ax
     __int16 v6; // bp
@@ -2491,7 +2498,7 @@ ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
     v73 = v8 - 4; /*0x592483*/
     v75 = a3[1] - v8 + 9; /*0x59249f*/
     v74 = v6 - v7 + 11; /*0x5924a9*/
-    result = ((BuildingTypeClass *)this)->CheckPlacementArea( (ObjectClass *)(&v72), (ObjectClass *)((int)a4)); /*0x5924ad*/
+    result = ((BuildingTypeClass *)a1)->CheckPlacementArea( (ObjectClass *)(&v72), (ObjectClass *)((int)a4)); /*0x5924ad*/
     if ( result ) /*0x5924b4*/
     {
       v10 = *a2; /*0x5924c0*/
@@ -2592,10 +2599,10 @@ ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
                 *(unsigned short *)&v66.__pad_0[2] = v66.MapSeed_field_0x04; /*0x592680*/
                 if ( (unsigned __int8)((MapSeed *)&v66)->IsCellInBounds() ) /*0x592689*/
                 {
-                  SetLayerDataMap((__int16 *)v66.__pad_0, (int)this->RandomMap_field_0x8); /*0x59269d*/
+                  SetLayerDataMap((__int16 *)v66.__pad_0, (int)a1->RandomMap_field_0x8); /*0x59269d*/
                   v29 = (unsigned char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( (int16_t *)((__int16 *)v66.__pad_0)); /*0x5926ac*/
                   MapSeed_field_0x10 = v66.MapSeed_field_0x10; /*0x5926b4*/
-                  v29[283] = this->RandomMap_field_0x10; /*0x5926b8*/
+                  v29[283] = a1->RandomMap_field_0x10; /*0x5926b8*/
                 }
                 ++v28; /*0x5926c2*/
               }
@@ -2627,8 +2634,8 @@ ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
                 *(unsigned short *)&v66.__pad_0[2] = v66.MapSeed_field_0x04; /*0x592725*/
                 if ( (unsigned __int8)((MapSeed *)&v66)->IsCellInBounds() ) /*0x59272a*/
                 {
-                  SetLayerDataMap((__int16 *)v66.__pad_0, (int)this->RandomMap_field_0x8); /*0x59273e*/
-                  *((unsigned char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( (int16_t *)((__int16 *)v66.__pad_0)) + 283) = this->RandomMap_field_0x10; /*0x592759*/
+                  SetLayerDataMap((__int16 *)v66.__pad_0, (int)a1->RandomMap_field_0x8); /*0x59273e*/
+                  *((unsigned char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( (int16_t *)((__int16 *)v66.__pad_0)) + 283) = a1->RandomMap_field_0x10; /*0x592759*/
                 }
                 ++v34; /*0x592763*/
               }
@@ -2642,18 +2649,18 @@ ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
         v35 = *a2 - 3; /*0x592788*/
         IDA_HIWORD(v66.MapSeed_field_0x08) = a2[1]; /*0x59278c*/
         IDA_LOWORD(v66.MapSeed_field_0x08) = v35; /*0x592796*/
-        RandomMap_field_0x10 = this->RandomMap_field_0x10; /*0x59279f*/
+        RandomMap_field_0x10 = a1->RandomMap_field_0x10; /*0x59279f*/
         v66.MapSeed_field_0x10 = v66.MapSeed_field_0x08; /*0x5927a2*/
         PlaceMapSeedClassBuildings( g_TerrainTypeTable2 + 7, (ObjectClass *)(&v66.MapSeed_field_0x10), (int)a4, (int)RandomMap_field_0x10); /*0x5927af*/
         v37 = a3[1] - 2; /*0x5927c0*/
         IDA_LOWORD(v66.MapSeed_field_0x08) = *a3 - 3; /*0x5927c4*/
-        v38 = this->RandomMap_field_0x10; /*0x5927c9*/
+        v38 = a1->RandomMap_field_0x10; /*0x5927c9*/
         IDA_HIWORD(v66.MapSeed_field_0x08) = v37; /*0x5927cc*/
         v66.MapSeed_field_0x10 = v66.MapSeed_field_0x08; /*0x5927d5*/
         PlaceMapSeedClassBuildings( g_TerrainTypeTable2 + 8, (ObjectClass *)(&v66.MapSeed_field_0x10), (int)a4, (int)v38); /*0x5927e7*/
         v39 = a3[1] - 1; /*0x5927f6*/
         IDA_LOWORD(v66.MapSeed_field_0x08) = *a3 - 1; /*0x5927f8*/
-        v40 = this->RandomMap_field_0x10; /*0x5927fd*/
+        v40 = a1->RandomMap_field_0x10; /*0x5927fd*/
         IDA_HIWORD(v66.MapSeed_field_0x08) = v39; /*0x592800*/
         v66.MapSeed_field_0x10 = v66.MapSeed_field_0x08; /*0x592809*/
         PlaceMapSeedClassBuildings( g_TerrainTypeTable2 + 9, (ObjectClass *)(&v66.MapSeed_field_0x10), (int)a4, (int)v40); /*0x59281b*/
@@ -2710,7 +2717,7 @@ ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
                 v52 = (unsigned char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( (int16_t *)((__int16 *)&v66.MapSeed_field_0x18)); /*0x592960*/
                 v53 = *(unsigned char *)v46++; /*0x592969*/
                 v47 += 4; /*0x59296e*/
-                v52[283] = IDA_LOBYTE(this->RandomMap_field_0x10) + v53 - 4; /*0x592977*/
+                v52[283] = IDA_LOBYTE(a1->RandomMap_field_0x10) + v53 - 4; /*0x592977*/
                 v54 = *(unsigned char *)(v47 - 4); /*0x59297d*/
                 v52[284] = v54; /*0x592980*/
                 v55 = g_CellTileLookup; /*0x592986*/
@@ -2755,7 +2762,7 @@ ObjectClass * * CheckPlacementArea(short * a2, short * a3, ObjectClass * aP2)
                           + g_MissionQueueFrame.localVariables[163]
                           + 56) = a4;
               v62 = (unsigned char *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( (int16_t *)((__int16 *)&v66.MapSeed_field_0x14)); /*0x592a81*/
-              v63 = (char)this->RandomMap_field_0x10; /*0x592a8a*/
+              v63 = (char)a1->RandomMap_field_0x10; /*0x592a8a*/
               v62[284] = 1; /*0x592a8d*/
               v64 = v63 - v42++ - 1; /*0x592a96*/
               v62[283] = v64; /*0x592a99*/

@@ -525,7 +525,7 @@ LABEL_47:
     --v46; /*0x4d1306*/
   }
   while ( !v43 ); /*0x4d130a*/
-  Cell::CreateCrater((void *)(*((unsigned int *)this + 16)),(void *)( *((unsigned int *)this + 17)),(void *)( *((unsigned int *)this + 18)),(void *)(*((unsigned int *)this + 19)), 0); /*0x4d1338*/
+  Cell::CreateCrater((*((unsigned int *)this + 16)),( *((unsigned int *)this + 17)),( *((unsigned int *)this + 18)),(*((unsigned int *)this + 19)), 0); /*0x4d1338*/
   *((unsigned int *)this + 16) += (&g_TacticalClass_Instance)[44].__tail_0; /*0x4d134d*/
   *((unsigned int *)this + 17) += (&g_TacticalClass_Instance)[45].__tail_0; /*0x4d135f*/
 return (gamemd::AbstractClass *)this; /*0x4d1364*/

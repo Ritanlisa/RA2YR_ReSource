@@ -26,7 +26,7 @@ struct E4Recv_474540 {
     unsigned int q5170;  // 0x5170
     unsigned int q5444;  // 0x5444
     unsigned int q6408;  // 0x6408
-    void* ambientSoundController;  // 0x0 (no offset truth)
+    unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
 // --- flat members (END) ---
     CCINIClass * sub_474540(CCINIClass * aP1, char a3);  // 0x474540
 };

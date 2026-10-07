@@ -1566,8 +1566,8 @@ bool TechnoClass::CreateUnit()
                   if ( v49 <= *(unsigned int *)(_ESI->AnimClass_field_0xC8 + 828) ) /*0x424057*/
                   {
                     v50 = i & 7; /*0x42407d*/
-                    v132[0] = AnimClass_field_0x9C / 256 + IDA_LOWORD(dword_89F688[v50]); /*0x424099*/
-                    v132[1] = v137 / 256 + IDA_HIWORD(dword_89F688[v50]); /*0x4240a8*/
+                    v132[0] = AnimClass_field_0x9C / 256 + IDA_LOWORD((&dword_89F688)[v50]); /*0x424099*/
+                    v132[1] = v137 / 256 + IDA_HIWORD((&dword_89F688)[v50]); /*0x4240a8*/
                     *(unsigned int *)&v132[2] = *(unsigned int *)v132; /*0x4240b7*/
                     v51 = (HouseClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, &v132[2]); /*0x4240c0*/
                     if ( (unsigned __int8)IsCoordValidMap((int)v51, 0) ) /*0x4240c6*/

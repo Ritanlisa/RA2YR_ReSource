@@ -21,7 +21,7 @@ struct E4Recv_41DD10 {
     unsigned int q598;  // 0x598
     unsigned int q774;  // 0x774
     unsigned int q5170;  // 0x5170
-    void* ambientSoundController;  // 0x0 (no offset truth)
+    unsigned int ambientSoundController[5];  // G57w16 G1: til truth (AudioController 20B)
 // --- flat members (END) ---
     char sub_41DD10();  // 0x41DD10
 };

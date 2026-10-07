@@ -26,6 +26,7 @@ struct BufferIOFileClass {
     void StubReturnFalse(int a1, int a2, int a3);
      unsigned __int8 * Constructor();  // G57w10-S raw 0x00431B20 (was C2597 interim stub)
 int Dtor();
+    static int Seek(...);  // w16g4 C3861 static supply (raw 0x00473BA0)
 };
 #endif  // GAMEMD_G2_BufferIOFileClass_DEF
 

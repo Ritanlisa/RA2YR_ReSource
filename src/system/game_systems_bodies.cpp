@@ -6,6 +6,14 @@
 #include "e4/e4_globals_decls.hpp"  // [w14e3] DSurface_Alternate/g_BitShift_* extern battery
 #include "core/globals_core.hpp"  // [w14e3] g_GameScreen*/g_ScreenSaverState/g_CreditsScreenState externs
 #include "e4/classes/ScenarioClass_e4.hpp"  // [w14e3] ScenarioClass::SetGlobalToByID carrier
+#include "e4/classes/Text_e4.hpp"  // w16g4 C3861 Text:: supply
+#include "e4/classes/Object_e4.hpp"  // w16g4 C3861 Object:: supply
+#include "e4/classes/Dialog_e4.hpp"  // w16g4 C3861 Dialog:: supply
+#include "e4/classes/GadgetClass_e4.hpp"  // w16g4 C3861 GadgetClass:: supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int DrawDialogGradient(...); }  // w16g4 raw call-form
+namespace gamemd { int PrintFontLayout(...); }  // w16g4 raw call-form
+namespace gamemd { int unknown_libname_74(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention)
 namespace gamemd {
 int Tooltip_Enable(...);  // [w14e3] raw 0x4E1FA9 Tooltip::Enable (flattened name)
@@ -481,7 +489,7 @@ void GameOption_WorldDominationTour::QueryInterface() {}
 void GameOption_WorldDominationTour::Constructor() {}
 
 // 0x4e1de0
-void GameOptions_GameSpeedChanged()
+char GameOptions::GameSpeedChanged()
 {
     HWND (__stdcall *v2)(HWND, int); // edi
     HWND DlgItem; // eax
@@ -2697,14 +2705,14 @@ void GameSetup_DisplayPlayers()
             if ( Render_Setup(v13) ) /*0x5db1cf*/
             {
               v32 = 2; /*0x5db1de*/
-              *(unsigned int *)(dword_A8DA78[v13] + 119) = 1; /*0x5db1e9*/
+              *(unsigned int *)((&dword_A8DA78)[v13] + 119) = 1; /*0x5db1e9*/
             }
             else
             {
-              v32 = *(unsigned int *)(dword_A8DA78[v13] + 119) != 0; /*0x5db202*/
+              v32 = *(unsigned int *)((&dword_A8DA78)[v13] + 119) != 0; /*0x5db202*/
             }
-            swprintf(lParam, (const size_t)&off_8240B4, (const wchar_t *const)dword_A8DA78[v13]); /*0x5db220*/
-            PlayerSide = (void *)SessionClass::GetPlayerSide((int *)dword_A8DA78[v13]); /*0x5db235*/
+            swprintf(lParam, (const size_t)&off_8240B4, (const wchar_t *const)(&dword_A8DA78)[v13]); /*0x5db220*/
+            PlayerSide = (void *)SessionClass::GetPlayerSide((int *)(&dword_A8DA78)[v13]); /*0x5db235*/
             Default = BuildingType::FindDefault(PlayerSide); /*0x5db241*/
             switch ( (unsigned int)PlayerSide ) /*0x5db24b*/
             {
@@ -2741,9 +2749,9 @@ void GameSetup_DisplayPlayers()
                 break;
             }
             SendMessageA(hWnd, 0x4CCu, 0xFFFFFFFF, (LPARAM)lParam); /*0x5db32a*/
-            v16 = *(unsigned int *)(dword_A8DA78[v13] + 83); /*0x5db351*/
+            v16 = *(unsigned int *)((&dword_A8DA78)[v13] + 83); /*0x5db351*/
             v34 = 4; /*0x5db358*/
-            v35.DeleteAndZero_field_0x08 = dword_8316A8[v16]; /*0x5db367*/
+            v35.DeleteAndZero_field_0x08 = (&dword_8316A8)[v16]; /*0x5db367*/
             WideString::Reassign((void **)&v35.DeleteAndZero_field_0x04, &g_TypeClass_DefaultString); /*0x5db36b*/
             v17 = (unsigned __int16)v13 << 16; /*0x5db384*/
             SendDlgItemMessageA(v6, 1342, 0x4A8u, v17 | (unsigned __int16)dword_AC01A0, (LPARAM)&v34); /*0x5db39a*/
@@ -5387,8 +5395,8 @@ void LoadScreen::RenderLoop()
       {
         v219 = *((unsigned int *)v323.? + v218); /*0x4b92a4*/
         v220 = 11 * (v218 / 5); /*0x4b92ba*/
-        v221 = &dword_A83D4C[32].__pad_140[4 * v220 + 304]; /*0x4b92c2*/
-        v222 = *(unsigned int *)&dword_A83D4C[32].__pad_140[4 * v220 + 320]; /*0x4b92c9*/
+        v221 = &(&dword_A83D4C)[32].__pad_140[4 * v220 + 304]; /*0x4b92c2*/
+        v222 = *(unsigned int *)&(&dword_A83D4C)[32].__pad_140[4 * v220 + 320]; /*0x4b92c9*/
         if ( v222 < 5 ) /*0x4b92d3*/
           break; /*0x4b92d3*/
   LABEL_396:
@@ -5742,7 +5750,7 @@ void LoadScreen_Render()
           v11 = *(unsigned int *)(a1 + 80); /*0x643b9a*/
           if ( v10 == 1 ) /*0x643b9f*/
           {
-            if ( dword_A8B238[0] ) /*0x643ba8*/
+            if ( (&dword_A8B238)[0] ) /*0x643ba8*/
             {
               if ( !v11 ) /*0x643bdc*/
                 v11 = *(unsigned int *)dword_A8DA78; /*0x643be4*/
@@ -7640,7 +7648,7 @@ void SkirmishMapGen::DlgProc()
                   ++v13; /*0x596502*/
                   *(unsigned int *)((char *)dword_A8B230 + v12 * 4 + 4) = v16; /*0x596505*/
                   v12 += 2; /*0x596513*/
-                  *(unsigned int *)((char *)dword_A8B230 + v13 * 4 - 4) = dword_ABE304[v13 - 1137]; /*0x59651a*/
+                  *(unsigned int *)((char *)dword_A8B230 + v13 * 4 - 4) = (&dword_ABE304)[v13 - 1137]; /*0x59651a*/
                   v11 = dword_A8B230; /*0x59651e*/
                   if ( v10 >= *((unsigned int *)dword_A8B230 + 1103) ) /*0x59652a*/
                     break; /*0x59652a*/

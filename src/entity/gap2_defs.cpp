@@ -37,6 +37,8 @@ using ra2::game::AbstractClass;
 // g57b5 W1b: e4 Vector3 include removed (C2011 vs utility_ext.hpp:1861 provider-in-TU)
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "misc/misc_ext.hpp"
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int ProcessTechnoMovementAction(...); }  // w16g4 raw call-form
 
 // G57w10: vtable externs (truth e4_globals_decls)
 extern unsigned char vt_DynamicVectorClass_Cell[4];  // data: 0x7E3890  // G57w10 vftable residue fix
@@ -916,7 +918,7 @@ void BulletClass::SetupVoxelTransform(void* a1, void* a2) {
               v16 = *(unsigned int *)&_ESI->__pad_110[4]; /*0x4683a1*/
               if ( v16 == -1 ) /*0x4683aa*/
                 v15 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x4683d1*/
-                                            + 4 * *(unsigned int *)&dword_A83D4C[134].__pad_90[4])
+                                            + 4 * *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4])
                                 + 780);
               else
                 v15 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * v16) + 780); /*0x4683b5*/
@@ -2278,7 +2280,7 @@ loc_547E02:                             ; CODE XREF: TerrainClass__GenerateTextu
 xor     edi, edi
 
 loc_547E04:                             ; CODE XREF: TerrainClass__GenerateTexture+122↓j
-cmp     ds:byte_7EC4C8[ecx+edi], 20h ; ' '
+cmp     ds:((unsigned char *)&byte_7EC4C8)[ecx+edi], 20h ; ' '
 jnz     short loc_547E16
 inc     edi
 cmp     edi, 3Ch ; '<'
@@ -2292,7 +2294,7 @@ mov     edx, 1
 cmp     eax, 3Ch ; '<'
 mov     [esp+2Ch+arg_0], edx
 jge     short loc_547E3F
-lea     ecx, unk_7EC4C9[ecx+edi]
+lea     ecx, ((unsigned char *)&unk_7EC4C9)[ecx+edi]
 
 loc_547E2E:                             ; CODE XREF: TerrainClass__GenerateTexture+149↓j
 cmp     byte ptr [ecx], 20h ; ' '

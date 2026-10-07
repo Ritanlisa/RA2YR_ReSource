@@ -15,7 +15,7 @@ struct E4Recv_4F2640 {
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
-    void* customSound_controller;  // 0x0 (no offset truth)
+    unsigned int customSound_controller[5];  // G57w16 G1: til truth (AudioController 20B)
 // --- flat members (END) ---
 int sub_4F2640(int (***a2)(unsigned int, int));  // 0x004f2640 g57w12-r raw-sync (def-form)
 };

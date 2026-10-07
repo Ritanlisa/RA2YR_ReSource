@@ -2683,8 +2683,8 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
   int v11; // [esp+1Ch] [ebp-4h]
   int v12; // [esp+1Ch] [ebp-4h]
 
-  v4 = aP0; /*0x65fa7c*/
-  if ( byte_7F09A4[16 * aP0] && (v5 = 0, dword_B04DB8> 0) ) /*0x65faa1*/
+  if ( ((unsigned char *)&byte_7F09A4)[16 * aP0] && (v5 = 0, dword_B04DB8> 0) ) /*0x65faa1*/
+  if ( ((unsigned char *)&byte_7F09A4)[16 * aP0] && (v5 = 0, dword_B04DB8> 0) ) /*0x65faa1*/
   {
     LoadGame_field_0x04 = dword_B04DAC; /*0x65faab*/
     while ( 1 ) /*0x65fab1*/
@@ -2711,7 +2711,7 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
         IDA_LOWORD(result) = Math::RoundToInt(v3); /*0x65fafc*/
         LoadGame_field_0x04 = dword_B04DAC; /*0x65fb01*/
         result = (int16_t)result; /*0x65fb07*/
-        if ( (int16_t)result < dword_7F0998[4 * **(unsigned int **)(dword_B04DAC+ 4 * v5)] ) /*0x65fb18*/
+        if ( (int16_t)result < (&dword_7F0998)[4 * **(unsigned int **)(dword_B04DAC+ 4 * v5)] ) /*0x65fb18*/
           break; /*0x65fb18*/
       }
       if ( ++v5 >= dword_B04DB8) /*0x65fb22*/
@@ -2882,7 +2882,7 @@ namespace gamemd {
 int sub_652870()
 {
   GadgetClass::Construct( (void *)(stru_B04A10), 0, 0, 0, 0, 159, 1); /*0x652884*/
-  stru_B04A10[0] = (int)&RadarClass_RTacticalClass_vftable; /*0x65288e*/
+  ((unsigned char *)&stru_B04A10)[0] = (int)&RadarClass_RTacticalClass_vftable; /*0x65288e*/
   return atexit(sub_6528A0); /*0x65289e*/
 }
 } // namespace gamemd
@@ -4129,6 +4129,6 @@ void E4Recv_65FB60::sub_65FB60()
 namespace gamemd {
 char sub_65FB70(int a1)
 {
-  return byte_7F09A4[16 * a1]; /*0x65fb79*/
+  return ((unsigned char *)&byte_7F09A4)[16 * a1]; /*0x65fb79*/
 }
 } // namespace gamemd

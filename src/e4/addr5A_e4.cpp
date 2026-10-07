@@ -73,6 +73,9 @@
 #include "e4/classes/Scalar_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 #include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_4866D0(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_4866F0(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int DrawIsoTile(...);  // raw 005A7FA0: int __fastcall IsoTile_Draw(int a1, _WORD *a2, char a3)
@@ -508,7 +511,7 @@ int GenerateTerrainHeightMapInternal()
         v4 = (unsigned int *)((int)((unsigned int *)((unsigned int)(v3)& 7)));
         v16 = (unsigned short)(i[9]);
         v5 = (unsigned short)(IDA_LOWORD(((unsigned int *)(dword_89F688))[v4]) + v16);
-        IDA_LOWORD(v4) = IDA_HIWORD(dword_89F688[v4]); /*0x5a3447*/
+        IDA_LOWORD(v4) = IDA_HIWORD((&dword_89F688)[v4]); /*0x5a3447*/
         IDA_LOWORD(v17) = (unsigned short)(v5); /*0x5a344b*/
         IDA_HIWORD(v17) = (unsigned short)(IDA_HIWORD(v16) + v4); /*0x5a3455*/
         v16 = v17; /*0x5a345e*/
@@ -5396,7 +5399,7 @@ double E4Recv_5AF3B0::sub_5AF3B0()
   v2[1] = 1.0; /*0x5af3c6*/
   v2[2] = 0.0; /*0x5af3ce*/
   v1 = TransformMatrix3x4Point( (AbstractClass *)(v3), (IUnknown *)((float *)this), (IUnknown *)(v2)); /*0x5af3d6*/
-  ((Math *)v1[2])->CalcAngle( v1[1]); /*0x5af404*/
+  Math::CalcAngle(v1[2], v1[1]); /*0x5af404*/
 
 }
 } // namespace gamemd
@@ -5414,7 +5417,7 @@ int E4Recv_5AF470::sub_5AF470()
   v2[1] = 0.0; /*0x5af486*/
   v2[2] = 0.0; /*0x5af48e*/
   v1 = TransformMatrix3x4Point( (AbstractClass *)(v3), (IUnknown *)((float *)this), (IUnknown *)(v2)); /*0x5af496*/
-  ((Math *)v1[1])->CalcAngle( *v1); /*0x5af4c4*/
+  Math::CalcAngle(v1[1], *v1); /*0x5af4c4*/
 
 }
 }

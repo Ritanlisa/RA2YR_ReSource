@@ -1735,17 +1735,17 @@ LABEL_81:
     if ( *((unsigned char *)ecx0 + 973) )
       *((unsigned short *)ecx0 + 485) = IDA_LOWORD(aP6.LockCount)
                              + IDA_WORD2(a2)
-                             + *(unsigned short *)(*(unsigned int *)&stru_87C374[44976] + 180)
+                             + *(unsigned short *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44976] + 180)
                              + IDA_LOWORD(aP6.Width)
                              - 128;
   }
   else
   {
-    int v41 = *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 180);
+    int v41 = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44976] + 180);
     v136 = 0.0;
     int v139 = v40 - v41;
     v137 = 0.0;
-    v138 = *(float *)&stru_87C374[44084];
+    v138 = *(float *)&((unsigned char *)&stru_87C374)[44084];
     int * v42 = ClipRectIntersection( (RectangleStruct*)((IUnknown *)&v123), (const RectangleStruct*)((IUnknown *)&v126), (const RectangleStruct*)((IUnknown *)&v136), 0, 0);
     v126 = *v42;
     v127 = v42[1];
@@ -1763,8 +1763,8 @@ LABEL_81:
   int v50; // ecx
   int v49; // edx
     started = ((Techno *)ecx0)->StartInvulnerability( v45);
-    int v46 = *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 6312);
-    int v47 = *(unsigned int *)&stru_87C374[44652] + 2 * v46;
+    int v46 = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 6312);
+    int v47 = *(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 2 * v46;
     v113 = *(unsigned char *)(v46 + v47 + 6260);
     v111 = *(unsigned char *)(v46 + v47 + 4174 + 2087);
     v108 = *(unsigned char *)(v46 + v47 + 6262);
@@ -1802,11 +1802,11 @@ LABEL_92:
 LABEL_94:
   if ( !*((unsigned char *)ecx0 + 664) )
     goto LABEL_102;
-  v54 = *(unsigned int *)(*(unsigned int *)&stru_87C374[44652] + 6316);
-  v55 = v54 + *(unsigned int *)&stru_87C374[44652] + 2 * v54;
+  v54 = *(unsigned int *)(*(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 6316);
+  v55 = v54 + *(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 2 * v54;
   v114 = *(unsigned char *)(v55 + 6260);
   v112 = *(unsigned char *)(v55 + 6262);
-  v109 = *(unsigned char *)(v54 + *(unsigned int *)&stru_87C374[44652] + 2 * v54 + 4174 + 2087);
+  v109 = *(unsigned char *)(v54 + *(unsigned int *)&((unsigned char *)&stru_87C374)[44652] + 2 * v54 + 4174 + 2087);
   v56 = DDraw_GetStatus() - 1;
   if ( v56 )
   {
@@ -1857,8 +1857,8 @@ LABEL_102:
     started,
     aP1g);
   v143[1] = aP6.Width;
-  v63 = *(ObjectClass **)&stru_87C374[44960];
-  *(unsigned int *)&stru_87C374[44960] = (unsigned int)v62;
+  v63 = *(ObjectClass **)&((unsigned char *)&stru_87C374)[44960];
+  *(unsigned int *)&((unsigned char *)&stru_87C374)[44960] = (unsigned int)v62;
   v116 = v63;
   IDA_LOBYTE(v63) = *((unsigned char *)ecx0 + 973);
   v143[0] = *(unsigned int *)aP6[0];
@@ -1897,7 +1897,7 @@ v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
       a1[1] = ecx0[40];
       GroundHeight = ecx0[41];
       GroundHeight = Cell::GetGroundHeight( (IUnknown *)a1);
-      ((Coord *)(*(unsigned int **)&stru_87C374[44976]))->To_Screen( (unsigned int *)(a1), (int *)((IUnknown *)&v118));
+      ((Coord *)(*(unsigned int **)&((unsigned char *)&stru_87C374)[44976]))->To_Screen( (unsigned int *)(a1), (int *)((IUnknown *)&v118));
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
       int * v68 = (int *)(*(int (**)(unsigned int, double *))(*(unsigned int *)ecx0[413] + 48))( ecx0[413], (double *)(&v123));
@@ -1912,7 +1912,7 @@ v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
     v136 = *((float *)ecx0 + 39);
     v137 = *((float *)ecx0 + 40);
     v138 = *((float *)ecx0 + 41);
-    v72 = (VectorClass_flat *)((Coord *)(&stru_87C374[13428]))->To_Cell((IUnknown *)&v136);
+    v72 = (VectorClass_flat *)((Coord *)(&((unsigned char *)&stru_87C374)[13428]))->To_Cell((IUnknown *)&v136);
     if ( *((unsigned char *)ecx0 + 1060) )
     {
       if ( !*((unsigned char *)ecx0 + 140) && v71 >= unk_B1D0AC )

@@ -18,5 +18,9 @@ struct E4Recv_5B4400 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     void sub_5B4400();  // 0x5B4400
+    // --- W16G3 supply (BEGIN) ---
+    void* occupant;  // (W16G3 @0x5b440d delete/bool)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

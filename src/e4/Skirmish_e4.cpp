@@ -304,7 +304,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
                              &Randomizer_Global,
                              *((unsigned int *)&dword_82B0A8 + aP1),
                              stru_82ADA8.Elasticity[aP1 + 1]);
-  *((unsigned int *)this + 17) = Random::Range(&Randomizer_Global, dword_82B10C[aP1], (&dword_82B120)[aP1]); /*0x59729f*/
+  *((unsigned int *)this + 17) = Random::Range(&Randomizer_Global, (&dword_82B10C)[aP1], (&dword_82B120)[aP1]); /*0x59729f*/
   *((unsigned int *)this + 24) = Random::Range( /*0x5972bc*/
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 175],
@@ -312,7 +312,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
   *((unsigned int *)this + 27) = Random::Range( /*0x5972d9*/
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 165],
-                             &dword_82B0D0[aP1]);
+                             &(&dword_82B0D0)[aP1]);
   *((unsigned int *)this + 28) = Random::Range( /*0x5972f6*/
                              &Randomizer_Global,
                              *(&dword_82B080 + aP1),

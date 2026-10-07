@@ -293,5 +293,6 @@ unsigned int * ctor(MultiplayerGameMode * aP1, MPCooperative * aP2, MultiplayerG
     char StubReturnFalse();  // 0x5C3700
     int COMStub_Ret2();  // 0x5C42C0
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_17();
+    static int validateMove(...);  // w16g4 C3861 static supply (raw 0x0049CC50)
 };
 } // namespace gamemd

@@ -2053,7 +2053,7 @@ int MapClass::ProcessRegion()
       if ( !v19 ) /*0x56d870*/
         v20 = g_TerrainBridgeIndex; /*0x56d872*/
       v21 = *(unsigned int *)(v5 + 56) - v20; /*0x56d878*/
-      if ( dword_82A734[v21] == *(uint8_t *)(v5 + 282) ) /*0x56d889*/
+      if ( (&dword_82A734)[v21] == *(uint8_t *)(v5 + 282) ) /*0x56d889*/
         break; /*0x56d889*/
 LABEL_42:
       result = ((LayerClass *)((LayerClass *)this))->CellIteratorNext(); /*0x56d9e9*/
@@ -2062,7 +2062,7 @@ LABEL_42:
         return result; /*0x56d9f6*/
     }
     v38 = 0; /*0x56d896*/
-    v41 = dword_82A774[v21]; /*0x56d89b*/
+    v41 = (&dword_82A774)[v21]; /*0x56d89b*/
     v39 = 1; /*0x56d89f*/
     for ( i = (Cell *)((Cell *)((Cell *)v5))->GetNeighbourContent(v41); ; i = (Cell *)((Cell *)(v23))->GetNeighbourContent(v41) ) /*0x56d8a7*/
     {
@@ -2113,7 +2113,7 @@ LABEL_36:
         v28 = g_Cell_BuildabilityLUT; /*0x56d910*/
 LABEL_27:
         v29 = Cell_field_0x38 - v28; /*0x56d916*/
-        if ( v29 != -1 && dword_82A7B4[v29] == (uint8_t)v23->__pad_FC[30] ) /*0x56d92e*/
+        if ( v29 != -1 && (&dword_82A7B4)[v29] == (uint8_t)v23->__pad_FC[30] ) /*0x56d92e*/
           v38 = 1; /*0x56d930*/
 LABEL_30:
         i = (Cell *)((Cell *)(v23))->GetNeighbourContent(v41); /*0x56d935*/

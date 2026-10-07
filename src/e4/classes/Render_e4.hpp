@@ -10,7 +10,7 @@ struct Render {
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     AbstractClass * * DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8);
-    void DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6);
+    static void DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6);  // [w16g2] static (def body this=0)
 };
 
 } // namespace gamemd

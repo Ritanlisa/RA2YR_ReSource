@@ -30,6 +30,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int InvalidateTileRegionMap(...);  // raw 0056DB70: int __thiscall InvalidateTileRegionMap(ObjectClass *this, __int16 *a2)
@@ -38,7 +39,12 @@ namespace gamemd {
 // usage: *(unsigned int*)v.__pad_0 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
 namespace gamemd {
 struct _VectorClass_VCell {
-    char __pad_0[4];  // 0x0 vfptr carrier
+    char __pad_0[1];        // 0x0 (vfptr carrier, dword-wide via cast; W16G3 raw vocab)
+    char m_1[7];            // 0x1..0x7 (raw usage &x.m_1[3] = Items @0x4)
+    int m_8;                // 0x8 Capacity
+    char m_C[2];            // 0xC..0xD IsInitialized/IsAllocated
+    char __pad_E[2];        // 0xE..0xF
+    char __tail_10[4];      // 0x10 Count
 };
 } // namespace gamemd
 
@@ -1609,7 +1615,7 @@ void Terrain::ProcessCellModification(__int16 *aP1)
         }
         DestroyCliffMap((gamemd::TechnoClass *)((ObjectClass *)this), (int)v57, 4, &v82); /*0x5707f8*/
 LABEL_109:
-        Cell::CreateCrater( (void *)(v82), (void *)(v83), (void *)(v84), (void *)(v85), 0); /*0x5707fd*/
+        Cell::CreateCrater( (v82), (v83), (v84), (v85), 0); /*0x5707fd*/
         goto LABEL_139; /*0x57082a*/
       }
       if ( (v37 == g_TerrainSoundConfig /*0x5704d6*/
@@ -1697,7 +1703,7 @@ LABEL_133:
               v73 = &g_MissionQueueFrame.briefing[130]; /*0x570a3f*/
             }
             DestroyCliffMap((gamemd::TechnoClass *)((ObjectClass *)v58), (int)v73, 4, &v82); /*0x570a4e*/
-            Cell::CreateCrater( (void *)(v82), (void *)(v83), (void *)(v84), (void *)(v85), 0); /*0x570a7b*/
+            Cell::CreateCrater( (v82), (v83), (v84), (v85), 0); /*0x570a7b*/
             v53 = this; /*0x570a80*/
 LABEL_137:
             if ( (unsigned char)aP1 ) /*0x570a8a*/
@@ -1789,7 +1795,7 @@ LABEL_101:
             v55 = &g_MissionQueueFrame.briefing[130]; /*0x570762*/
           }
           DestroyCliffMap((gamemd::TechnoClass *)((ObjectClass *)this), (int)v55, 2, &v82); /*0x570771*/
-          Cell::CreateCrater( (void *)(v82), (void *)(v83), (void *)(v84), (void *)(v85), 0); /*0x57079e*/
+          Cell::CreateCrater( (v82), (v83), (v84), (v85), 0); /*0x57079e*/
           goto LABEL_137; /*0x5707a3*/
         }
         goto LABEL_90; /*0x570705*/
@@ -2097,7 +2103,7 @@ LABEL_103:
               v63 = &g_MissionQueueFrame.briefing[130]; /*0x573c85*/
             }
             ((Terrain *)v47)->PlaceCliffs( (int)v63, 2, (IUnknown *)(&v88)); /*0x573c94*/
-            Cell::CreateCrater( (void *)(v88), (void *)(v89), (void *)(v90), (void *)(v91), 0); /*0x573cc1*/
+            Cell::CreateCrater( (v88), (v89), (v90), (v91), 0); /*0x573cc1*/
             goto LABEL_139; /*0x573cc6*/
           }
           v47 = this; /*0x573a74*/
@@ -2184,7 +2190,7 @@ LABEL_98:
           }
           ((Terrain *)this)->PlaceCliffs( (int)v65, 4, (IUnknown *)(&v88)); /*0x573d1b*/
 LABEL_111:
-          Cell::CreateCrater( (void *)(v88), (void *)(v89), (void *)(v90), (void *)(v91), 0); /*0x573d20*/
+          Cell::CreateCrater( (v88), (v89), (v90), (v91), 0); /*0x573d20*/
           goto LABEL_141; /*0x573d4d*/
         }
         if ( (v44 == g_TerrainSoundConfig /*0x5739d4*/
@@ -2276,7 +2282,7 @@ LABEL_135:
             v81 = &g_MissionQueueFrame.briefing[130]; /*0x573f62*/
           }
           ((Terrain *)v66)->PlaceCliffs( (int)v81, 4, (IUnknown *)(&v88)); /*0x573f71*/
-          Cell::CreateCrater( (void *)(v88), (void *)(v89), (void *)(v90), (void *)(v91), 0); /*0x573f9e*/
+          Cell::CreateCrater( (v88), (v89), (v90), (v91), 0); /*0x573f9e*/
           v47 = this; /*0x573fa3*/
 LABEL_139:
           if ( (unsigned char)aP1 ) /*0x573fad*/
@@ -2505,7 +2511,7 @@ LABEL_51:
       || v41 != *(unsigned int *)&g_MissionQueueFrame.waypoints[2130] )
     {
 LABEL_64:
-      LOBYTE(v10) = Cell::CreateCrater( (void *)(v10), (void *)(v29), (void *)(v31), (void *)(v30), 0); /*0x576b73*/
+      LOBYTE(v10) = Cell::CreateCrater( (v10), (v29), (v31), (v30), 0); /*0x576b73*/
     }
   }
   return v10; /*0x5768c0*/
@@ -3011,8 +3017,8 @@ LABEL_49:
     do /*0x5a2e54*/
     {
       v34 = v56 & 7; /*0x5a2c7c*/
-      v35 = v4[1] + HIWORD(dword_89F688[v34]); /*0x5a2c95*/
-      LOWORD(v57) = *v4 + LOWORD(dword_89F688[v34]); /*0x5a2c99*/
+      v35 = v4[1] + HIWORD((&dword_89F688)[v34]); /*0x5a2c95*/
+      LOWORD(v57) = *v4 + LOWORD((&dword_89F688)[v34]); /*0x5a2c99*/
       HIWORD(v57) = v35; /*0x5a2ca2*/
       v50 = v57; /*0x5a2cab*/
       if ( !((LayerClass *)(&dword_87F7E8))->IsWithinUsableArea((int16_t *)&v50, 1) ) /*0x5a2cbc*/

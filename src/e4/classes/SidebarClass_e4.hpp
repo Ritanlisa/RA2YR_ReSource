@@ -124,6 +124,9 @@ struct SidebarClass {
     int LoadButtonSHPs();  // 0x6d02b0
     int ReadButtonList();  // 0x674650
     GadgetClass * LoadResources(void *a1, void * aSidegdi1Shp, void * aSidegdi2Shp, void * aSidegdi3Shp);
+    static int updateStripVisibility(...);
+    static int initializeStrip(...);
+    static int updateStripPosition(...);  // w16g4 C3861 static supply (raw 0x006AB9E0)  // w16g4 C3861 static supply (raw 0x006AB990)  // w16g4 C3861 static supply (raw 0x006AB990)
 };
 
 } // namespace gamemd

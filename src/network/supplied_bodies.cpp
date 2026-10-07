@@ -44,6 +44,7 @@ using ra2::game::AbstractClass;
 #include "network/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/Dialog_e4.hpp"  // gB C2027 supply
 #include "e4/e4_globals_decls.hpp"  // gB globals supply
+#include "e4/classes/Stream_e4.hpp"  // w16g4 C3861 Stream:: supply
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int BulkCharToWide(...);  // raw 00735060: unsigned __int8 __fastcall CharToWide_Bulk(_WORD *a1, unsigned __int8 *a2, int a3)
@@ -1180,8 +1181,8 @@ void ModemGuest::InitDialog()
           DrawDialogText((LPARAM)Math::InitDegToRad, Buffer, v45); /*0x5b56a0*/
         }
       }
-    }
-    byte_AC1288[0] = 0; /*0x5b56ac*/
+    ((unsigned char *)&byte_AC1288)[0] = 0; /*0x5b56ac*/
+    ((unsigned char *)&byte_AC1288)[0] = 0; /*0x5b56ac*/
     NullModemClass::Flush((NullModemClass *)&unk_A8EA70, 1); /*0x5b56b3*/
     IDA_BYTE2(stru_A8D600.q00C) = 1; /*0x5b56bd*/
     PtrVector::Destroy(&stru_A8DA74); /*0x5b56c4*/
@@ -1220,8 +1221,8 @@ void ModemGame::AdvanceTauntCommand()
         IDA_LOBYTE(this->ModemGame_field_0x08) = 1; /*0x5b5a0c*/
         if ( v4 >= 8 ) /*0x5b5a0f*/
           return SendMessageA(v3, 0x498u, 0, (LPARAM)Math::InitDegToRad); /*0x5b5a3c*/
-        else
-          return SendMessageA(v3, 0x498u, 0, dword_8316A8[v4]); /*0x5b5a26*/
+          return SendMessageA(v3, 0x498u, 0, (&dword_8316A8)[v4]); /*0x5b5a26*/
+          return SendMessageA(v3, 0x498u, 0, (&dword_8316A8)[v4]); /*0x5b5a26*/
       }
     }
     return result; /*0x5b5a28*/
@@ -1262,7 +1263,7 @@ void ModemGame::UpdatePlayerNameAndColor()
       if ( a3 >= 8 ) /*0x5b5b87*/
         v10 = Math::InitDegToRad; /*0x5b5b97*/
       else
-        v10 = (int (*)(char, char))dword_8316A8[a3]; /*0x5b5b8e*/
+        v10 = (int (*)(char, char))(&dword_8316A8)[a3]; /*0x5b5b8e*/
       return SendMessageA(v9, 0x498u, 0, (LPARAM)v10); /*0x5b5ba6*/
     }
     return result; /*0x5b5ba8*/
@@ -1503,7 +1504,7 @@ void ModemGame::ProcessPacket()
               if ( v20 >= 8 ) /*0x5b66b4*/
                 v22 = Math::InitDegToRad; /*0x5b66bf*/
               else
-                v22 = (int (*)(char, char))dword_8316A8[v20]; /*0x5b66b6*/
+                v22 = (int (*)(char, char))(&dword_8316A8)[v20]; /*0x5b66b6*/
               swprintf(Buffer, (const size_t)g_Str_Trace___s_, (const wchar_t *const)v19, &v45[1]); /*0x5b66d8*/
               DrawDialogText((LPARAM)v22, Buffer, DlgItem); /*0x5b66ea*/
             }
@@ -1967,7 +1968,7 @@ void ModemHost::InitDialog()
     v48 = rand(); /*0x5b8af3*/
     v49 = g_UIControlState; /*0x5b8b04*/
     *(unsigned int * *)((char *)&stru_A8EB00 + 660) = v48; /*0x5b8b0a*/
-    dword_A8E960[0] = dword_A8E960[0] & 0xFFFFFFEF /*0x5b8b22*/
+    (&dword_A8E960)[0] = (&dword_A8E960)[0] & 0xFFFFFFEF /*0x5b8b22*/
                     | (16 * (*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5298) & 1));
     if ( g_UIControlState ) /*0x5b8b27*/
     {
@@ -2018,7 +2019,7 @@ void ModemHost::InitDialog()
         }
       }
     }
-    byte_AC1288[0] = 0; /*0x5b8c9a*/
+    ((unsigned char *)&byte_AC1288)[0] = 0; /*0x5b8c9a*/
     v57 = GetDlgItem(*v55, 1); /*0x5b8ca6*/
     if ( v57 ) /*0x5b8cb2*/
       EnableWindow(v57, 0); /*0x5b8cb7*/
@@ -2271,7 +2272,7 @@ void ModemGuest::ProcessPacket()
                 if ( v17 >= 8 ) /*0x5ba491*/
                   v20 = Math::InitDegToRad; /*0x5ba49c*/
                 else
-                  v20 = (int (*)(char, char))dword_8316A8[v17]; /*0x5ba493*/
+                  v20 = (int (*)(char, char))(&dword_8316A8)[v17]; /*0x5ba493*/
                 swprintf(Buffer, (const size_t)g_Str_Trace___s_, v18, &v42[1]); /*0x5ba4b5*/
                 DrawDialogText((LPARAM)v20, Buffer, DlgItem); /*0x5ba4c7*/
               }
@@ -2386,7 +2387,7 @@ void ModemHost::StartGame()
              0) )
       {
         v6 = dword_A8DA84++; /*0x5badb1*/
-        dword_A8DA78[v6] = v4; /*0x5badc0*/
+        (&dword_A8DA78)[v6] = v4; /*0x5badc0*/
       }
     }
     v7 = RA2_OPNEW(0x85u); /*0x5badc8*/
@@ -2408,7 +2409,7 @@ void ModemHost::StartGame()
              0) )
       {
         v10 = dword_A8DA84++; /*0x5bae49*/
-        dword_A8DA78[v10] = v8; /*0x5bae58*/
+        (&dword_A8DA78)[v10] = v8; /*0x5bae58*/
       }
     }
     else
@@ -2505,13 +2506,13 @@ void ModemHost::StartGame()
         IDA_BYTE2(stru_A8D600.q00C) = 0; /*0x5bb1c9*/
         dword_A8B230[130].vtable3 = *(void **)&stru_A8B250[4]; /*0x5bb1d0*/
         dword_A8B54C = dword_A8DA84; /*0x5bb1f0*/
-        v25 = dword_A8E960[0]; /*0x5bb1f5*/
-        IDA_BYTE1(v25) = IDA_BYTE1(dword_A8E960[0]) & 0x77; /*0x5bb1fc*/
+        v25 = (&dword_A8E960)[0]; /*0x5bb1f5*/
+        IDA_BYTE1(v25) = IDA_BYTE1((&dword_A8E960)[0]) & 0x77; /*0x5bb1fc*/
         v26 = v25 | ((byte_A8B31D & 1 | (16 * (stru_A8B250[16] & 1))) << 11); /*0x5bb202*/
-        IDA_LOBYTE(v26) = IDA_LOBYTE(dword_A8E960[0]) | 0xC0; /*0x5bb209*/
+        IDA_LOBYTE(v26) = IDA_LOBYTE((&dword_A8E960)[0]) | 0xC0; /*0x5bb209*/
         *(unsigned int * *)((char *)&stru_A8EB00 + 644) = 0; /*0x5bb20c*/
         dword_A8B24C = 2; /*0x5bb212*/
-        dword_A8E960[0] = v26; /*0x5bb21c*/
+        (&dword_A8E960)[0] = v26; /*0x5bb21c*/
         vtable0 = dword_A8B230->vtable1; /*0x5bb222*/
         IDA_BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable1 >> 8) & 0xFB; /*0x5bb229*/
         dword_A8B230->vtable1 = vtable0; /*0x5bb22c*/
@@ -3245,7 +3246,7 @@ void MultiplayerLobby::FillSlots()
         {
           v6 = 1041; /*0x5ec07d*/
         }
-        v7 = dword_A8DA90[v5]; /*0x5ec0e1*/
+        v7 = (&dword_A8DA90)[v5]; /*0x5ec0e1*/
         if ( v5 >= v4 ) /*0x5ec0f0*/
         {
           if ( v7 != g_Lobby_MaxPlayers && *(unsigned int *)(v7 + 107) != -1 ) /*0x5ec10e*/
@@ -3264,7 +3265,7 @@ void MultiplayerLobby::FillSlots()
           goto LABEL_74; /*0x5ec126*/
       }
     }
-    v8 = dword_A8DA90[(unsigned int)g_MPCooperativeState]; /*0x5ec137*/
+    v8 = (&dword_A8DA90)[(unsigned int)g_MPCooperativeState]; /*0x5ec137*/
     if ( *(unsigned int *)&stru_A8B250[4] == -1 ) /*0x5ec141*/
     {
       PlayerCountMap = 8; /*0x5ec143*/
@@ -5568,7 +5569,7 @@ void WOLobby::FormatLatencyText()
     wchar_t *StringCSF; // [esp-8h] [ebp-Ch]
     wchar_t *v8; // [esp-4h] [ebp-8h]
 
-    v2 = dword_B76440[WOLobby::FindPlayerIndex(this)]; /*0x78f5c8*/
+    v2 = (&dword_B76440)[WOLobby::FindPlayerIndex(this)]; /*0x78f5c8*/
     if ( v2 >= 0 ) /*0x78f5d1*/
     {
       if ( v2 >= 300 ) /*0x78f61a*/

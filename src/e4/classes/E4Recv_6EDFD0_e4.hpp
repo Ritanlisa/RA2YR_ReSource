@@ -25,7 +25,7 @@ struct E4Recv_6EDFD0 {
     unsigned int q6408;  // 0x6408
     unsigned int needsRedraw;
     unsigned int q054;
-    void* customSound_controller;  // 0x0 (no offset truth)
+    unsigned int customSound_controller[5];  // G57w16 G1: til truth (AudioController 20B)
 // --- flat members (END) ---
     void sub_6EDFD0(int a2, int a3);  // 0x6EDFD0
 };

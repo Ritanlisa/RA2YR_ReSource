@@ -82,5 +82,13 @@ static double Sqrt(double a1);  // G57w10-S raw 0x4CAC40 (was C2597 interim stub
     static double Dist2D(...);  // interim stub
      // dup: double DistSq2D(...);  // interim stub
     int Hypotenuse2D(void *a1_1);  // interim stub
+    // --- W16G3 supply (BEGIN) ---
+    char __pad_28[4];  // @0x629a40 (W16G3 raw-usage vocab)
+    unsigned int field_140;  // @0x421xxx (W16G3 raw-usage vocab)
+    char vtable3[4];  // @0x425xxx (W16G3 raw-usage vocab)
+    char q000[4];  // @0x425xxx (W16G3 raw-usage vocab)
+    char q004[4];  // @0x425xxx (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

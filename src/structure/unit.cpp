@@ -1828,7 +1828,7 @@ mov     esi, ecx
 cmp     eax, 21h
 ja      def_737455      ; jumptable 00737455 default case, cases 4-6,8-13,16-20,24-35
 xor     ecx, ecx
-mov     cl, ds:byte_737B78[eax]
+mov     cl, ds:((unsigned char *)&byte_737B78)[eax]
 jmp     ds:jpt_737455[ecx*4] ; switch jump
 ; ---------------------------------------------------------------------------
 
@@ -7048,8 +7048,8 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
     {
       v26 = ((unsigned char)v20 + v25) & 7; /*0x743ec3*/
       v27 = v26 & 7; /*0x743ec8*/
-      v28 = IDA_HIWORD(dword_89F688[v27]); /*0x743eda*/
-      IDA_LOWORD(v37.StreamClass_field_0C) = IDA_LOWORD(dword_89F688[v27]) + IDA_LOWORD(v37.m_Data); /*0x743ee2*/
+      v28 = IDA_HIWORD((&dword_89F688)[v27]); /*0x743eda*/
+      IDA_LOWORD(v37.StreamClass_field_0C) = IDA_LOWORD((&dword_89F688)[v27]) + IDA_LOWORD(v37.m_Data); /*0x743ee2*/
       IDA_HIWORD(v37.StreamClass_field_0C) = IDA_HIWORD(v37.m_Data) + v28; /*0x743ef1*/
       a3 = (unsigned int *)v37.StreamClass_field_0C; /*0x743efa*/
       v29 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (short *)&a3); /*0x743f08*/
@@ -10852,6 +10852,11 @@ void UnitClass::DrawPlacementPreview(Point2D* screen_pos, RectangleStruct* bound
 #include "e4/classes/MapClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Random_e4.hpp"  // G42.36 C2027 supply
 #include "structure/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/LayerClass_e4.hpp"  // w16g4 C3861 LayerClass:: supply
+#include "e4/classes/HouseClass_e4.hpp"  // w16g4 C3861 HouseClass:: supply
+#include "e4/classes/BuildingTypeClass_e4.hpp"  // w16g4 C3861 BuildingTypeClass:: supply
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int ProcessUnitDeploymentAtCell(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ProcessUnitDeploymentAtCell(...);  // raw 007187A0: char __thiscall ProcessUnitDeploymentAtCell(TechnoClass *this, int a2, int a3, int a4)

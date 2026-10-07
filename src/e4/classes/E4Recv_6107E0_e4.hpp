@@ -47,5 +47,11 @@ struct E4Recv_6107E0 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     unsigned int * sub_6107E0();  // 0x6107E0
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int u8_45;  // 0x45 @0x6107f6 (W16G3 raw-usage vocab)
+    unsigned int u32_46;  // 0x46 @0x6107fc (W16G3 raw-usage vocab)
+    unsigned int u32_47;  // 0x47 @0x610802 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

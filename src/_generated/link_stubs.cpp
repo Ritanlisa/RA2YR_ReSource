@@ -554,10 +554,10 @@ void gamemd::SuperWeaponTypeClass::SuperWeaponTypeClass(gamemd::AbstractTypeClas
     v4 = dword_A83CA8; /*0x511598*/
     if ( dword_A83CA8 < dword_A83CA0 /*0x5115d6*/
       || (byte_A83CA5 || !dword_A83CA0)
-      && dword_A83CAC[0] > 0
+      && (&dword_A83CAC)[0] > 0
       && (v5 = (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(dword_A83C98 + 8))(
                  &dword_A83C98,
-                 dword_A83CA0 + dword_A83CAC[0],
+                 dword_A83CA0 + (&dword_A83CAC)[0],
                  0) == 0,
           v4 = dword_A83CA8,
           !v5) )
@@ -7203,7 +7203,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                       {
   LABEL_116:
                         qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v44, 0x6Fu); /*0x4ac1c3*/
-                        dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4ac1ea*/
+                        (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4ac1ea*/
                         dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x4ac201*/
                         ++stru_A80220.lineTrailer; /*0x4ac207*/
                       }
@@ -7220,7 +7220,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                         if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac249*/
                         {
                           qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v46, 0x6Fu); /*0x4ac265*/
-                          dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4ac272*/
+                          (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4ac272*/
                           dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x4ac289*/
                           ++stru_A80220.lineTrailer; /*0x4ac28f*/
                         }
@@ -7301,7 +7301,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4abb64*/
     {
       qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x4abb80*/
-      dword_A83A54[dword_A802D0] = timeGetTime(); /*0x4abb91*/
+      (&dword_A83A54)[dword_A802D0] = timeGetTime(); /*0x4abb91*/
       dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x4abba8*/
       ++stru_A80220.lineTrailer; /*0x4abbae*/
     }

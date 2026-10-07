@@ -106,6 +106,10 @@
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
 #include "e4/classes/MiniMap_e4.hpp"  // G57w10 D supply
 #include "e4/classes/TechnoClass_e4.hpp"
+namespace OverlayClass { int WriteINI(...); }  // w16g4 C3861 ns-supply (no carrier hpp)
+// [w16g4] C3861 supply (raw call-form evidence)
+namespace gamemd { int sub_44FE60(...); }  // w16g4 raw call-form
+namespace gamemd { int sub_4FCE00(...); }  // w16g4 raw call-form
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int ReadAudioEventINI(...);  // raw 00727880: int __thiscall ReadAudioEventINI(INIClass *this)
@@ -1615,7 +1619,9 @@ void GenerateScenarioUnits()
       goto LABEL_111; /*0x68883d*/
     v54[252] = v13 + 36; /*0x688846*/
     v54[251] = v11; /*0x688847*/
-    v54[250] = aGeneratingUnit; /*0x688848*/
+    v54[250] = "Generating units for house %d (%s)
+" /*w16g4 "Generating units for house %d (%s)
+" /*w16g4 aGeneratingUnit*/*/; /*0x688848*/
     Debug::Log("Generating units for house %d (%s)\n"); /*0x68884d G57w11: IDA push seq @ 0x68884d +2 reg-vararg(s) omitted*/
     UnitTypeVector::Construct2(0, 0); /*0x68885b*/
     v67 = (void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x68886b*/
@@ -1833,7 +1839,9 @@ void GenerateScenarioUnits()
               v52 = (void *)ppv; /*0x688cef*/
               v54[252] = v47 + 36; /*0x688cf6*/
               v54[251] = *((unsigned int *)ppv + 13) + 36; /*0x688cfd*/
-              v54[250] = aHouseSDeployed; /*0x688cfe*/
+              v54[250] = "House %s deployed object %s
+" /*w16g4 "House %s deployed object %s
+" /*w16g4 aHouseSDeployed*/*/; /*0x688cfe*/
               Debug::Log("House %s deployed object %s\n"); /*0x688d03 G57w11: IDA push seq @ 0x688d03 +1 reg-vararg(s) omitted*/
               v46 += (*(int (**)(int))(v47->q02B))(v47);  /*0x688d19*/
               if ( v64 < v62 /*0x688d44*/
@@ -1894,7 +1902,9 @@ void GenerateScenarioUnits()
     }
   }
   v54[252] = Random::Range((Random *)((unsigned int *)dword_A8B230 + 134), 0, 0xFFFF); /*0x688e48*/
-  v54[251] = aFinishedUnitGe; /*0x688e5f*/
+  v54[251] = "Finished unit generation. Random number is %d
+" /*w16g4 "Finished unit generation. Random number is %d
+" /*w16g4 aFinishedUnitGe*/*/; /*0x688e5f*/
   Debug::Log("Finished unit generation. Random number is %d\n"); /*0x688e64 G57w11: IDA push seq @ 0x688e64 +1 reg-vararg(s) omitted*/
   v80 = (void*)&VectorClass_Cell_vftable; /*0x688e75*/
   if ( v81 && v83 ) /*0x688e88*/
@@ -1990,7 +2000,7 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
   if ( a3 < 32 ) /*0x688fc4*/
   {
   LABEL_8:
-    v29 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x688fce*/
+    v29 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 7); /*0x688fce*/
     v30 = 0; /*0x688fe6*/
     v37 = 0; /*0x688fea*/
     while ( 1 ) /*0x689032*/
@@ -2066,8 +2076,8 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
         v20 = (int16_t)v13; /*0x6890c7*/
         v38 = *(unsigned int *)&stru_87F5F0.__pad_58[708] + *(unsigned int *)&stru_87F5F0.__pad_58[716] - 1; /*0x6890d0*/
         v39 = *(unsigned int *)&stru_87F5F0.__pad_58[712] + *(unsigned int *)&stru_87F5F0.__pad_58[720] - 1; /*0x6890e5*/
-        v32 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x6890fe*/
-        if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x68910a*/
+        v32 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x6890fe*/
+        if ( Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x68910a*/
         {
           v21 = v20 - v32; /*0x68911e*/
           if ( v21 < v15 ) /*0x689124*/
@@ -2079,8 +2089,8 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
           if ( v21 > v38 ) /*0x689118*/
             IDA_LOWORD(v21) = v38; /*0x68911a*/
         }
-        v22 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x68913d*/
-        if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x689156*/
+        v22 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x68913d*/
+        if ( Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x689156*/
         {
           v23 = v19 - v22; /*0x689166*/
           if ( v23 < v16 ) /*0x68916a*/

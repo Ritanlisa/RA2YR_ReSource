@@ -6,6 +6,8 @@
 namespace gamemd {
 struct SuperWeaponClass {
     unsigned char q000[20];  // 0x0 (canon size filler)
-    static int UpdateAll(void *aP1);  // 0x6DA740 raw: int UpdateAll(SuperWeaponClass*)
+    static int UpdateAll(void *aP1);
+    static int LoadFromSaveStream(...);
+    static int FindByName(...);  // w16g4 C3861 static supply (raw 0x00773030)  // w16g4 C3861 static supply (raw 0x00539890)  // 0x6DA740 raw: int UpdateAll(SuperWeaponClass*)
 };
 } // namespace gamemd

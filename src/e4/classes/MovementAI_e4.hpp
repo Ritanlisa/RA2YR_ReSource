@@ -23,7 +23,8 @@ struct MovementAI {
     int IsProgressAtEnd();
     int MainFootClass(char a2);  // 0x514f70
     int StepFootClass(int a1);  // 0x5164d0
-    unsigned int q01C;  // 0x1C
+    unsigned int q01C;
+    static int Begin(...);  // w16g4 C3861 static supply (raw 0x006F9E50)  // 0x1C
 };
 
 } // namespace gamemd

@@ -2,6 +2,12 @@
 #define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DSurface_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/ScenarioClass_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/MixFileClass_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/SortedArray_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/Multiplayer_e4.hpp"  // W16G3 C2027 supply
+#include "e4/classes/LightningStorm_e4.hpp"  // W16G3 C2027 supply
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/E4Recv_401F80_e4.hpp"
@@ -1383,7 +1389,7 @@ LABEL_11:
       goto LABEL_12; /*0x406cf6*/
     }
     g_MixerChannel_SFX = (unsigned int)(ObjectClass *)&g_Audio_Enabled->__pad_5C[12]; /*0x406c4c*/
-    v3 = (unsigned int *)((CCFileClass*)&v14)->Construct(aAudiomdMix); /*0x406c51*/
+    v3 = (unsigned int *)((CCFileClass*)&v14)->Construct("AUDIOMD.MIX" /*w16g4 "AUDIOMD.MIX" /*w16g4 aAudiomdMix*/*/); /*0x406c51*/
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))( (unsigned int *)(v3), 0); /*0x406c65*/
     *(unsigned int *)v14.CDFileClass = (unsigned int)&vt_CCFileClass;
     v16 = 0; /*0x406c6f*/
@@ -1395,7 +1401,7 @@ LABEL_11:
       v5 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x406c93*/
       if ( v5 ) /*0x406c9d*/
       {
-        g_MixFile_AUDIO = (int)((MixFileClass *)(v5))->FromFile(aAudiomdMix, (int)dword_886980); /*0x406cb0*/
+        g_MixFile_AUDIO = (int)((MixFileClass *)(v5))->FromFile("AUDIOMD.MIX" /*w16g4 "AUDIOMD.MIX" /*w16g4 aAudiomdMix*/*/, (int)dword_886980); /*0x406cb0*/
         goto LABEL_10; /*0x406cb5*/
       }
     }
@@ -1404,13 +1410,13 @@ LABEL_11:
       v6 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x406cb7*/
       if ( v6 ) /*0x406cc1*/
       {
-        g_MixFile_AUDIO = (int)((MixFileClass *)(v6))->FromFile(aAudioMix, (int)dword_886980); /*0x406cd4*/
+        g_MixFile_AUDIO = (int)((MixFileClass *)(v6))->FromFile("AUDIO.MIX" /*w16g4 "AUDIO.MIX" /*w16g4 aAudioMix*/*/, (int)dword_886980); /*0x406cd4*/
         goto LABEL_10; /*0x406cd9*/
       }
     }
     g_MixFile_AUDIO = 0; /*0x406cdb*/
 LABEL_10:
-    g_AudioFileData = (unsigned int)(ObjectClass *)LoadAudioFile(aAudio, 0); /*0x406ce1*/
+    g_AudioFileData = (unsigned int)(ObjectClass *)LoadAudioFile("audio" /*w16g4 "audio" /*w16g4 aAudio*/*/, 0); /*0x406ce1*/
     if ( g_AudioFileData ) /*0x406cf4*/
       goto LABEL_12; /*0x406cf4*/
     goto LABEL_11; /*0x406cf4*/
@@ -2852,7 +2858,7 @@ int sub_40A900(int a1)
     return dword_816510; /*0x40a91f*/
   if ( v1 < 0 ) /*0x40a929*/
     v1 = 0; /*0x40a92b*/
-  return dword_816380[v1]; /*0x40a926*/
+  return (&dword_816380)[v1]; /*0x40a926*/
 }
 }
 // 0x40A940
@@ -5528,7 +5534,7 @@ short Coord_MoveByDirection(unsigned char a1, int * a2)
   bool v7; // sf
   int v8; // eax
 
-  v2 = dword_816558[a2[1]]; /*0x40acd5*/
+  v2 = (&dword_816558)[a2[1]]; /*0x40acd5*/
   v3 = v2 >> 3; /*0x40acde*/
   if ( (a1 & 1) != 0 ) /*0x40ace4*/
     v3 += v2 >> 2; /*0x40aceb*/
@@ -5550,7 +5556,7 @@ short Coord_MoveByDirection(unsigned char a1, int * a2)
     *a2 = 0x7FFF; /*0x40ad17*/
   }
   v5 = a2[1]; /*0x40ad2c*/
-  v6 = dword_816518[a1]; /*0x40ad35*/
+  v6 = (&dword_816518)[a1]; /*0x40ad35*/
   v7 = v6 + v5 < 0; /*0x40ad3c*/
   v8 = v6 + v5; /*0x40ad3c*/
   a2[1] = v8; /*0x40ad3e*/

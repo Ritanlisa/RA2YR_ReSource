@@ -147,7 +147,7 @@ struct Network {
     int Dispatch(void *a1_1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x48D1E0
     void * initConnection(int a2, unsigned int * a3, char a4);  // 0x4C6C50
     int SendOffer();  // 0x4FC980
-    AbstractClass * * Init();  // 0x52F3F0
+    static AbstractClass * * Init();  // 0x52F3F0 [w16g2] static per raw receiver-first (def body this=0)
     int GetAddress(unsigned int *a1, int aP2, unsigned short *a3);  // 0x53ED60
     void * CopyAddress(unsigned int *a2, int a3);  // 0x53EDA0
     int IsBroadcastAddr();  // 0x53EE00

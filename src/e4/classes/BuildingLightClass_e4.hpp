@@ -143,6 +143,19 @@ struct BuildingLightClass {
     int SD_vt54(int a1, int a2);
     int FindAllTargets(int a1, int a2, int a3, int a4);
     unsigned int * FindTarget(unsigned int *a2, int aP1, int a1, int aP0, int aP2);
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int uniqueId6;  // @0x43584f (W16G3 raw-usage vocab)
+    unsigned int uniqueId7;  // @0x435857 (W16G3 raw-usage vocab)
+    unsigned int uniqueId8;  // @0x435860 (W16G3 raw-usage vocab)
+    unsigned int uniqueId9;  // @0x43586f (W16G3 raw-usage vocab)
+    unsigned int abstractFlags0;  // @0x43587b (W16G3 raw-usage vocab)
+    unsigned int abstractFlags1;  // @0x435890 (W16G3 raw-usage vocab)
+    unsigned int abstractFlags2;  // @0x435884 (W16G3 raw-usage vocab)
+    unsigned int abstractFlags3;  // @0x43588a (W16G3 raw-usage vocab)
+    unsigned int abstractFlags6;  // @0x4358a3 (W16G3 raw-usage vocab)
+    unsigned int abstractFlags7;  // @0x4358a9 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 #endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
 

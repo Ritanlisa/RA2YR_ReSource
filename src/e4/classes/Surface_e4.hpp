@@ -35,6 +35,11 @@ struct Surface {
     void   RenderToSurfaceVoxel(unsigned int * a2, int * a3);
     unsigned int * CopyRect(int *aP1, void * a1);
     LPDIRECTDRAW CreateSurfacePalette(AbstractClass * Src);
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int u32_10A;  // @0x7bd6f2 (W16G3 raw-usage vocab)
+    unsigned int u32_1A8;  // @0x7bdxxx (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 
 } // namespace gamemd

@@ -26,6 +26,11 @@ struct InfantryTypeVector {
     unsigned int * Construct2(int a2, int a3);
     unsigned int * ConstructFromData(int a2, int a3);
     static unsigned int * Construct(void *aP1, int a2, int a3);  // 0x512DC0 raw: _DWORD* Construct(InfantryTypeVector*, int, int)
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int InfantryTypeVector_field_0x18;  // @0x511xxx (W16G3 raw-usage vocab)
+    unsigned int InfantryTypeVector_field_0x1C;  // @0x511xxx (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 
 } // namespace gamemd

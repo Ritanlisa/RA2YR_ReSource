@@ -484,6 +484,11 @@ public:
 class ScreenSaver {
 public:
     static TechnoTypeClass Process_f(void *aP1, void* a1, void* a2, void* a3);  // canon-transform 0x532100 (raw sig not found)
+    // --- W16G3 supply (BEGIN) ---
+    static int Process(void *aP1);  // W16G3 static-form (addr6B/addr77 x2)
+    static int Process(void *aP1, void *a2);  // W16G3 static-form 2-arg (Game_e4 0x77f90c, addr59)
+    // --- W16G3 supply (END) ---
+
 };
 
 // === ScriptActionQueue  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -708,6 +713,10 @@ public:
     char __pad_278[140];
     AbstractClass * q304;  // 0x304
     char q308[4];  /* unsigned int */  // 0x308
+    // --- W16G3 supply (BEGIN) ---
+    void* vfptr;  // 0x0 (W16G3: addr5A v7->vfptr/v7[1].vfptr raw usages)
+    // --- W16G3 supply (END) ---
+
 };
 
 // G57W14E1 til mirror: _TypeList_W4DiskID (rawcache this=TypeList; WDT disk list)

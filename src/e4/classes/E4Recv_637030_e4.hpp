@@ -15,5 +15,9 @@ struct E4Recv_637030 {
     unsigned int q5460;  // 0x5460
 // --- flat members (END) ---
     char sub_637030();  // 0x637030
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int isVisible;  // @0x637036 (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd

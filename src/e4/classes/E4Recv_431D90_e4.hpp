@@ -42,5 +42,18 @@ struct E4Recv_431D90 {
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
     void sub_431D90();  // 0x431D90
+    // --- W16G3 supply (BEGIN) ---
+    void* nextObject;  // (W16G3 @0x431d96 OPDEL)
+    unsigned int occupant;  // @0x431d9d LOBYTE (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
+    // --- W16G3 supply (BEGIN) ---
+    void* attachedTag;  // (W16G3 @0x431db1 assign 0)
+    // --- W16G3 supply (END) ---
+
+    // --- W16G3 supply (BEGIN) ---
+    unsigned int owningHouseIndex;  // @0x431dxx (W16G3 raw-usage vocab)
+    // --- W16G3 supply (END) ---
+
 };
 } // namespace gamemd
