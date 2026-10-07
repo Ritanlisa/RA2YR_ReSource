@@ -70,6 +70,8 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/GameSetup_e4.hpp"  // G57w10 D supply
+#include "e4/classes/NetworkManager_e4.hpp"  // G57w10 r5 supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aBattle[];  // data: 0x830c00 truth(IDA G42.57w9)
 extern char aCooperative[];  // data: 0x830bcc truth(IDA G42.57w9)

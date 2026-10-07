@@ -47,6 +47,8 @@
 #include "e4/classes/MultiplayerConfig_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/MultiMissionVector_e4.hpp"  // G57w10 D supply
+#include "e4/classes/SkirmishVector_e4.hpp"  // G57w10 D supply
 
 // 0x5D6130
 namespace gamemd {

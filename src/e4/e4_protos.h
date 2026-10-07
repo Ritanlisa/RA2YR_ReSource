@@ -565,7 +565,7 @@ extern int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2);
 extern void CellChainReact(void *a1 = 0);
 extern void CheckNetworkGameTimeout();
 extern int CleanupVeinholeSystem();
-extern void ComputeDistortionVariant(float a1);
+extern int ComputeDistortionVariant(float a1);  // G57w10-S raw 0x4CB150 int __stdcall(float)
 extern void ComputeNetworkFrameCRC(void *a1 = 0);
 extern int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2);
 extern void DSP_AudioProcess(AudioStream * aP0, int a2, char a3);
@@ -651,8 +651,8 @@ extern int UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a
 extern bool Weapon_Update(void * a1, void * a2);
 extern int WriteAudioStreamToFile(int aP0, FILE *a1, signed int arg0, char *a3);
 extern int closesocket(void *a1 = 0);
-extern void flsall(MouseClass * aP0);
-extern void j_DeleteAndZero(void *a1 = 0);
+extern int flsall(void *aP0);  // G57w10-S IDA _flsall@0x7CB25E int; raw _fflush return flsall(0)
+extern int j_DeleteAndZero(void *a1 = 0);  // G57w10-S DeleteAndZero@0x7B46F0 eax=旧指针(raw 调用侧用返回值)
 extern void nullsub_15();
 extern void nullsub_192(int a1);
 extern void nullsub_2(void *a1 = 0);
@@ -668,7 +668,7 @@ extern void sub_40A850(void *a1 = 0);
 extern void sub_40FF90();
 extern int sub_4D2F00(int a1, int a2, int * a3);
 extern void sub_4F38B0(void *a1 = 0, void *a2 = 0, void *a3 = 0);
-extern void unknown_libname_27(void *a1 = 0);
+extern void * unknown_libname_27(void *a1 = 0);  // G57w10-S asm@0x6406E0 mov eax,ecx 返回 this
 extern void unknown_libname_35(void *a1 = 0);
 extern void unknown_libname_73(void *a1 = 0);
 extern void *unknown_libname_74(void *a1 = 0);  // 0x7B66C0 returns _DWORD* (G42.33 b2 truth)
@@ -744,7 +744,7 @@ extern int GetResourceIDHardcodedCSF(void * aP0);  // aP0 void*: receiver render
 // removed G42.57w9: Get_Waypoint_Location -- clash in ScenarioClass_e4.hpp
 extern BOOL HandlePlanningModeClick_Handle(ObjectClass * aP0, _DWORD * a2);  // G42.57w9 supply (raw ObjectClass::HandlePlanningModeClick_Handle@0x63db20)
 // removed G42.57w9: HandleToolTipMessage -- clash in E4Recv_724200_e4.hpp
-extern void Hash_Check(void);  // G42.57w9 supply (raw Hash_Check@0x5c61d0)
+extern void * Hash_Check(void);  // G57w10-S raw 0x5C61D0 void *sub_5C61D0()
 extern int Hash_Check_5C61E0(void);  // G42.57w9 supply (raw Hash_Check_5C61E0@0x5c61e0)
 // removed G42.57w9: HideSkirmishSpawnLocations -- defined in e4 TU (reverted to C3861, no net regress)
 extern char InitDialogCountryIcons(int a1, int a2);  // G42.57w9 supply (raw InitDialogCountryIcons@0x61f210)

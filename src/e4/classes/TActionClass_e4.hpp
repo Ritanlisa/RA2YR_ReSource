@@ -61,42 +61,42 @@ struct TActionClass {
     unsigned int TActionClass_field_44;
     unsigned int Debug;
 // --- flat members (END) ---
-    AbstractClass * * ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4);
-    AbstractClass * * CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4);
-    AbstractClass * * executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4);
-    AnimClass * * executeEscortAction(int a2, int a3, int a4, IUnknown * aP4);
+    char ConvertHouseUnits(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E0B60 IUnknown 占位清除
+    char CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2390 IUnknown 占位清除
+    char executeGeneticMutatorAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4150 IUnknown 占位清除
+    char executeEscortAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2290 IUnknown 占位清除
     AnimClass * * executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4);
     ScenarioClass * * SpawnMeteorShower(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4);
     TActionClass();
     char CreateNukeEffect(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4);
     char PlayAudioAtRandomWP(int a2, int a3, int a4, int a5);
-    char RevealTileTypeAtWaypoint(int a2, int a3, int a4, IUnknown * aP4);
-    char RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4);
-    char executeCaptureAction(void * a1, int _C, unsigned int * a3, IUnknown * aP4);
-    char executeChronoSphereAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeChronoshiftAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeCloseGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);
-    char executeDominatorAction(unsigned int * a1, int a3, int a4, IUnknown * aP4);
-    char executeEMPulseAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeEnterAction(int a2, int _10, unsigned int * a3, IUnknown * aP4);
-    char executeExplodeAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeFollowAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeForceShieldAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeJumpjetAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);
-    char executeLightningAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeLoadAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeOpenGateAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);
-    char executePatrolAction(void * a1, int a3, int a4, IUnknown * aP4);
-    char executePlaceBeaconAction(int a2, int _C, unsigned int * a3, IUnknown * aP4);
-    char executePsychicDominatorAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeRevealAction(unsigned int * a1, int a3, int a4, IUnknown * aP4);
-    char executeSabotageAction(unsigned int * a1, int _C, unsigned int * a3, IUnknown * aP4);
-    char executeScatterAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeSelfDestructAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeSpyPlaneAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeUnloadAction(int a2, int a3, int a4, IUnknown * aP4);
-    char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4);
+    char RevealTileTypeAtWaypoint(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E11C0 IUnknown 占位清除
+    char RevealWaypointArea(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E0FE0 IUnknown 占位清除
+    char executeCaptureAction(void *a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E0CA0 IUnknown 占位清除
+    char executeChronoSphereAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E43A0 IUnknown 占位清除
+    char executeChronoshiftAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2F00 IUnknown 占位清除
+    char executeCloseGateAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E32A0 IUnknown 占位清除
+    char executeDominatorAction(unsigned int *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4460 IUnknown 占位清除
+    char executeEMPulseAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4560 IUnknown 占位清除
+    char executeEnterAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E0AA0 IUnknown 占位清除
+    char executeExplodeAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2EB0 IUnknown 占位清除
+    char executeFollowAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E21E0 IUnknown 占位清除
+    char executeForceShieldAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4200 IUnknown 占位清除
+    char executeGuardAreaAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E1980 IUnknown 占位清除
+    char executeJumpjetAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E31E0 IUnknown 占位清除
+    char executeLightningAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E3B40 IUnknown 占位清除
+    char executeLoadAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2520 IUnknown 占位清除
+    char executeOpenGateAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E3240 IUnknown 占位清除
+    char executePatrolAction(void *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E1A40 IUnknown 占位清除
+    char executePlaceBeaconAction(int a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E3180 IUnknown 占位清除
+    char executePsychicDominatorAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4100 IUnknown 占位清除
+    char executeRevealAction(unsigned int *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E44E0 IUnknown 占位清除
+    char executeSabotageAction(unsigned int *a2, int a3, unsigned int *a4, int a5);  // G57w10-S raw 0x006E0D00 IUnknown 占位清除
+    char executeScatterAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E1A70 IUnknown 占位清除
+    char executeSelfDestructAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2E60 IUnknown 占位清除
+    char executeSpyPlaneAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4360 IUnknown 占位清除
+    char executeUnloadAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E2AF0 IUnknown 占位清除
+    char executeWeatherStormAction(unsigned int *a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E43E0 IUnknown 占位清除
     int ExecuteAction(int a2, int a3);
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
@@ -111,10 +111,10 @@ struct TActionClass {
     int executeDeployAction(int a2);
     int executeGuardAction(int a2);
     int executeHuntAction(int a2);
-    int executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4);
+    char executeIronCurtainAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E42D0 IUnknown 占位清除
     int executeMoveAction(int a2);
-    int executeNukeAction(int a2, int a3, int a4, IUnknown * aP4);
-    int executeParadropAction(int a2, int a3, int a4, IUnknown * aP4);
+    char executeNukeAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E4320 IUnknown 占位清除
+    char executeParadropAction(int a2, int a3, int a4, int a5);  // G57w10-S raw 0x006E36E0 IUnknown 占位清除
     int executeRepairAction(int a2);
     int executeSellAction();
     unsigned int * executeHarvestAction(int a2, MouseClass * aP2);

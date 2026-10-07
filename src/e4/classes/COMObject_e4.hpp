@@ -6,6 +6,8 @@
 namespace gamemd {
 
 struct COMObject {
+    static int Release(void *aP1);  // 0x437FC0 raw: int Release(COMObject*)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4

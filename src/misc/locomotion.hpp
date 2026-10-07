@@ -319,10 +319,11 @@ public:
     CoordStruct   Dest;        // 0x18
     CoordStruct   HeadToCoord;        // 0x24
     FacingClass   LocomotionFacing;   // 0x30
-    double        MaxSpeed;           // 0x48
+    unsigned int  MaxSpeed[2];        // 0x48 (g57w10: raw _DWORD[2] view; asm 0x514380 fmul qword [this+0x4C] = &MaxSpeed[1])
+    char __stdcall DeployAnimation();  // 0x514310 (g57w10: canon vt+64, raw char __stdcall)
     double        CurrentSpeed;       // 0x50
     double        BoostSpeed;         // 0x58
-    double        CurrentWobbles;     // 0x60
+    unsigned int  CurrentWobbles[2];   // 0x60 (g57w10: raw _DWORD[2] view; asm 0x514b49 LOBYTE(CurrentWobbles[1]) = byte@0x64)
     bool          HoverLocomotionClass_field_bool_68;    // 0x68
     // padding 3 bytes            // 0x69-0x6B
     int32_t       HoverLocomotionClass_field_6C;         // 0x6C

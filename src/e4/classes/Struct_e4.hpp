@@ -46,7 +46,7 @@ struct Struct {
     int ZeroInitAndSetup_0_0();
     unsigned char * Zero3();
     unsigned int * InitTriple256(unsigned int * a1);
-    static double Zero25(...);  // C2597 interim stub
+    static unsigned int * Zero25(Struct * aP1);  // G57w10-S raw 0x006D1810 (was C2597 interim stub)
     wchar_t ** WideStringCopy(int a2);  // 0x6247d0
 };
 

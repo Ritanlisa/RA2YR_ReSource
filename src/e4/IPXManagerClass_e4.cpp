@@ -50,7 +50,7 @@ int IPXManagerClass::send(int a2)
   result = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(0)));
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
-  for ( i = (unsigned int *)this + 5; *(unsigned int *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
+  for ( i = (unsigned int *)this + 5; *(gamemd::IPXManagerClass *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
   {
     if ( ++result >= (gamemd::IPXManagerClass *)(int)(v2) ) /*0x54105f*/
       return -1; /*0x54105f*/

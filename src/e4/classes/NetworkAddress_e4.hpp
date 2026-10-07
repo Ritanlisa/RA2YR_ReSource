@@ -12,7 +12,7 @@ struct NetworkAddress {
     unsigned int u32_4;  // 0x4
     void* m_Port;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    int Assign(unsigned int * a1, IUnknown * aP2, int16_t a4);
+    unsigned int * Assign(unsigned int *a2, int a3, __int16 a4);  // G57w10-S raw 0x0053ECE0 IUnknown 占位清除
 };
 
 } // namespace gamemd

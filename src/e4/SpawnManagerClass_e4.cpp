@@ -746,7 +746,7 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char 
   this->q008 = 0; /*0x6b87c1*/
   if ( (a2 & 1) != 0 ) /*0x6b87c8*/
     __3_YAXPAX_Z(this); /*0x6b87cb*/
-  return (VectorClass_flat *)this; /*0x6b87d5*/
+  return (gamemd::DynamicVector *)((VectorClass_flat *)this; /*0x6b87d5*/);
 
 }
 } // namespace gamemd

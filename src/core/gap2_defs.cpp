@@ -9,6 +9,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #undef CreateDialog
+#include <ole2.h>  // g57w10 r4 item7: OleLoadFromStream 词表 (WIN32_LEAN_AND_MEAN 裁切补偿)
 #endif
 #include "object/abstract.hpp"
 #include "core/game_loop.hpp"
@@ -222,7 +223,7 @@ int CStreamClass::FindItem(unsigned int * a2) {
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->max_entries; /*0x4a4d60*/
+  m_10 = this->m_10; /*0x4a4d60 g57w10 r4: raw fn_4A 原文 this->m_10 (载体@0x10); max_entries=幻觉名*/
   result = 0; /*0x4a4d63*/
   if ( m_10 <= 0 ) /*0x4a4d68*/
     return -1; /*0x4a4d7f*/
@@ -268,9 +269,9 @@ namespace gamemd {
 void* Matrix3D::Constructor(float a1, float a2) {
   float v5; // [esp+0h] [ebp-8h]
 
-  *(unsigned int *)&this->m_1[3] = 0; /*0x5ae6fa*/
-  *(unsigned int *)&this->m_5[3] = 0; /*0x5ae6fd*/
-  *(unsigned int *)&this->m_9[3] = 0; /*0x5ae700*/
+  *((unsigned int *)this + 3) = 0; /*0x5ae6fa g57w10 r4: raw m_1[3]=this+0xC=ml q00C*/
+  *((unsigned int *)this + 7) = 0; /*0x5ae6fd g57w10 r4: raw m_5[3]=this+0x1C=ml q01C*/
+  *((unsigned int *)this + 11) = 0; /*0x5ae700 g57w10 r4: raw m_9[3]=this+0x2C=ml q02C*/
   *((unsigned int *)this + 4) = 0; /*0x5ae703*/
   *((unsigned int *)this + 6) = 0; /*0x5ae706*/
   *((unsigned int *)this + 7) = 0; /*0x5ae709*/
@@ -283,7 +284,7 @@ void* Matrix3D::Constructor(float a1, float a2) {
   ((Matrix2D*)(int *)this->__pad_0)->Rotate(a1); /*0x5ae724*/
   ((Matrix3x3*)(int *)this->__pad_0)->RotateX(a2); /*0x5ae730*/
   v5 = -a1; /*0x5ae73e*/
-  Matrix2D::Rotate((int *)this->__pad_0, v5); /*0x5ae741*/
+  ((Matrix2D *)(int *)this->__pad_0)->Rotate(v5); /*0x5ae741 g57w10 r4: 实例形态 (287 行同型)*/
   return (int *)this->__pad_0; /*0x5ae748*/
 }
 }
@@ -303,9 +304,9 @@ void Matrix3D::RotateZ(float a1) {
   a1 = a1; /*0x5af092*/
   v11 = Math_SinCos(a1); /*0x5af09f*/
   v4 = Math_ArcTan2(a1); /*0x5af0a5*/
-  v5 = *this; /*0x5af0aa*/
+  v5 = this->u32_0; /*0x5af0aa g57w10 r4: raw fld dword[esi] 元素*/
   v6 = this->u32_8; /*0x5af0ac*/
-  *this = v5 * v4 - v6 * v11; /*0x5af0bf*/
+  this->u32_0 = v5 * v4 - v6 * v11; /*0x5af0bf g57w10 r4: raw fstp dword[esi]*/
   this->u32_8 = v6 * v4 + v5 * v11; /*0x5af0cb*/
   v7 = this->u32_10; /*0x5af0ce*/
   v8 = this->u32_18; /*0x5af0d1*/
@@ -322,16 +323,16 @@ namespace gamemd {
 int Stream::WriteBlock(int a1, int a2, int a3) {
   int result; // eax
 
-  if ( !*(this + 15) ) /*0x5f1bf3*/
+  if ( !*((unsigned int *)this + 15) ) /*0x5f1bf3 g57w10 r4: 生成器丢失 u32 视图恢复*/
     return 0; /*0x5f1bfa*/
-  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)*(this + 14) + 8))( /*0x5f1c16*/
-             *(this + 14),
+  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)((unsigned int *)this + 14) + 8))( /*0x5f1c16 g57w10 r4*/
+             *((unsigned int *)this + 14),
              a1,
              a2,
              a3,
              0);
   if ( !result ) /*0x5f1c1b*/
-    ++*(this + 26); /*0x5f1c1d*/
+    ++*((unsigned int *)this + 26); /*0x5f1c1d g57w10 r4*/
   return result; /*0x5f1bfc*/
 }
 }
@@ -356,9 +357,9 @@ int Stream::ReadPacket() {
   if ( !this->u32_3C ) /*0x5f1c69*/
     return 0; /*0x5f1c79*/
   v3 = WinModemClass::ReadBytes( /*0x5f1c97*/
-         this->u32_58 + this->PacketsReceived,
-         this->u32_54 - this->u32_58)
-     + this->u32_58;
+         (unsigned char *)((char *)this->u32_58 + (unsigned int)this->PacketsReceived),  /*g57w10 r4: PacketsReceived 载体词表型 void* -> u32 视图*/
+         this->u32_54 - this->u32_58)  /*g57w10 r4: void* 算术/形参类型双修*/
+     + (unsigned int)this->u32_58;  /*g57w10 r4: int + 指针 显式转 u32*/
   this->u32_58 = v3; /*0x5f1c9c*/
   if ( v3 < 0xB ) /*0x5f1c9f*/
     return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1c9f*/
@@ -411,7 +412,7 @@ int Stream::ReadOLEObjects() {
     {
       while ( 1 ) /*0x67c6c6*/
       {
-        result = OleLoadFromStream((LPSTREAM)this, &IID_IUnknown, &ppvObj); /*0x67c6c6*/
+        result = OleLoadFromStream((LPSTREAM)this, IID_IUnknown, &ppvObj); /*0x67c6c6 g57w10 r4: 真形参 (const IID&)*/
         if ( result < 0 ) /*0x67c6ca*/
           break; /*0x67c6ca*/
         if ( ++v3 >= v4 ) /*0x67c6d3*/
@@ -432,17 +433,17 @@ void* StreamWrapper::QueryInterface(int a2)
     v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
     *(unsigned int *)this->__pad_0 = (unsigned int)(void *)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
     if ( v3 ) /*0x7b044e*/
-      (**v3)(v3, 1); /*0x7b0454*/
+      (**v3)((unsigned int)v3, 1); /*0x7b0454 g57w10 r4: 形参 unsigned int 显式转换*/
     v4 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
     if ( v4 ) /*0x7b045b*/
-      (**v4)(v4, 1); /*0x7b0461*/
+      (**v4)((unsigned int)v4, 1); /*0x7b0461 g57w10 r4*/
     v5 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 6); /*0x7b0463*/
     if ( v5 ) /*0x7b0468*/
-      (**v5)(v5, 1); /*0x7b046e*/
-    OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
+      (**v5)((unsigned int)v5, 1); /*0x7b046e g57w10 r4*/
+    ((OwnerDrawControl *)this)->InitVtable(); /*0x7b0472 g57w10 r4: 实例形态 (声明 0 参)*/
     if ( (a2 & 1) != 0 ) /*0x7b047c*/
       RA2_OPDEL(this); /*0x7b047f*/
-    return this->__pad_0; /*0x7b0489*/
+    return (void *)this->__pad_0; /*0x7b0489 g57w10 r4: 生成器括号破损重组*/
 }
 }
 // 0x7BCAE0

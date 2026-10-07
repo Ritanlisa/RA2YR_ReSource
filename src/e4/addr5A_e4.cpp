@@ -63,12 +63,13 @@
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/StringVector_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
-#include "src/e4/classes/BuildingClass_e4.hpp"
-#include "src/e4/classes/BuildingTypeClass_e4.hpp"
-#include "src/e4/classes/MapClass_e4.hpp"
-#include "src/e4/classes/PriorityQueue_e4.hpp"
-#include "src/e4/classes/SuperWeaponTypeClass_e4.hpp"
-#include "src/e4/classes/Type_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/PriorityQueue_e4.hpp"
+#include "e4/classes/SuperWeaponTypeClass_e4.hpp"
+#include "e4/classes/Type_e4.hpp"
+#include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
 
 // 0x5A1350
 namespace gamemd {
@@ -521,7 +522,7 @@ int GenerateTerrainHeightMapInternal()
           goto LABEL_24; /*0x5a34a9*/
       }
     }
-    if ( CellLand::IsBuildable((int)i) ) /*0x5a350f*/
+    if ( CellLand::IsBuildable((CellLand *)i) ) /*0x5a350f*/
     {
       v9 = dword_ABED04; /*0x5a351c*/
       for ( j = 0; j < 8; ++j ) /*0x5a3522*/

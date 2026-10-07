@@ -7,6 +7,10 @@
 namespace gamemd {
 
 struct MapSeed {
+    static char PlaceCityBlock(void *aP1, void *a2, void *aP3, void *a4);  // 0x5910F0 raw: char __thiscall MapSeed::PlaceCityBlock(MapSeed*, __int16*, __int16*, void*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static char PlaceCityBlock2(void *aP1, void *a2, void *aP3, void *a4);  // 0x593550 raw: char __thiscall MapSeed::PlaceCityBlock2(MapSeed*, __int16*, __int16*, void*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static char PlaceCityBuildings(void *aP1, void *a2, void *aP3, void *a4);  // 0x591D80 raw: char __thiscall MapSeed::PlaceCityBuildings(MapSeed*, __int16*, __int16*, void*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4

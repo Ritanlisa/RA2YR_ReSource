@@ -145,7 +145,7 @@ struct AudioStream {
     int GetChannel();  // 0x408D50
     int ReadStreamAndReturn(void *a1_1);  // 0x409310
     int ReadSamples(const void * a2, void *a2_2);  // 0x4A33A0
-    MouseClass * * DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8);  // 0x4BEAC0
+    char DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, unsigned __int8 *a5, int a6, int a7, int a8);  // G57w10-S raw 0x004BEAC0 IUnknown 占位清除
     int SetFlag4C();  // 0x7BD270
     int CalcReadPos();
     int ProcessStream();  // 0x7BEA80

@@ -49,6 +49,7 @@
 #include "e4/classes/CCINIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ScriptQueue_e4.hpp"  // G57w10 D supply
 
 // 0x4D9E70
 namespace gamemd {

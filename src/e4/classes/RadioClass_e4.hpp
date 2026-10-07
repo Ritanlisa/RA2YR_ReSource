@@ -91,7 +91,7 @@ struct RadioClass {
     unsigned int Undeploy;
     unsigned int *__pad_0;
 // --- flat members (END) ---
-    int ExecuteAction(TimerStruct * aP1, IUnknown * aP2);
+    int ExecuteAction(int a2, char a3);  // G57w10-S raw 0x0065AAC0 IUnknown 占位清除
     int FindLinkIndex(int a2);
     int HasFreeLink();
     int LoadState(int aP1, int aP2);
@@ -100,7 +100,7 @@ struct RadioClass {
     static int SaveState(int * a0, RadioClass * aP1, int aP2);
     _DWORD * Release(void *a1);
     void SetLinkCount(int a2);
-     double Constructor(...);  // C2597 interim stub
+     int Constructor(RadioClass * aP1);  // G57w10-S raw 0x5B2DA0 (was C2597 interim stub)
 };
 
 } // namespace gamemd

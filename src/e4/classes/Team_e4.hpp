@@ -49,6 +49,6 @@ struct Team {
 // --- flat members (END) ---
     int ReleaseAll(ObjectClass * aP1);  // 0x5D26C0
     int GetMember(int aP1);  // 0x65AD30
-    int AllMembersValid(...);  // 0x65AE30
+    int AllMembersValid();  // G57w10-S raw 0x0065AE30 (was C2597 interim stub)
 };
 } // namespace gamemd

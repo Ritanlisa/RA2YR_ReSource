@@ -28,10 +28,10 @@ struct MultiplayerGameMode {
 // --- flat members (END) ---
     MultiplayerGameMode * QueryInterface(char * Block, char a2);
     unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3, void *a3_2);
-     double Construct(...);  // C2597 interim stub
-     double Find(...);  // C2597 interim stub
+     void * Construct(const wchar_t **a2, const wchar_t **a3, const char **a4, const char **a5, char a6, int a7);  // G57w10-S raw 0x005D5B60 (was C2597 interim stub)
+     int Find();  // G57w10-S raw 0x005D5F30 (was C2597 interim stub)
     static double ListGet(...);  // C2597 interim stub
-     double Dtor(...);  // C2597 interim stub
+     void Dtor();  // G57w10-S raw 0x005D5D20 (was C2597 interim stub)
 };
 
 } // namespace gamemd

@@ -24,7 +24,7 @@ struct GameConfig {
     bool enable_log;  // 0xD0
     unsigned int *__pad_0;
 // --- flat members (END) ---
-     void Constructor();  // 0x5D67B0
+     char * Constructor();  // G57w10-S raw 0x5D67B0 char *__thiscall
     int  BuildChecksum(char * Buffer);  // 0x77E7A0
     static char * ComputeCRC();
     int ComputeHash();

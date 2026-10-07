@@ -252,7 +252,7 @@ LABEL_12:
     *((unsigned int *)v14 + 44) = 2; /*0x60adcf*/
     v17 = hWnd; /*0x60ade4*/
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
-    if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
+    if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp( ClassName, (const char *)(g_INI_Key_NewEdit) ) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
     if ( !strcmp(ClassName,(const char *)(g_INI_Key_ListBox)) && (v16 = 0, HashTable::Get( (void *)(&dword_AC1B00), (IUnknown *)(&v17), (IUnknown *)(&v16))) ) /*0x60aeab*/
     {

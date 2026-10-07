@@ -46,6 +46,47 @@ namespace gamemd {
 } // namespace gamemd
 // ---- g57b5 W3 end ----
 
+// ---- g57w10 r4 item1: 0x4E8290 族归属修正载体 (raw fn_4E 段头 this=DynamicVector/VectorClass<TagClass*>) ----
+// 布局三源: ml VectorClass(4=Items,8=Capacity,12=IsInitialized,13=IsAllocated)/DynamicVectorClass(16=Count);
+// canon DynamicVector(classes.hpp:133060) 与 e4 DynamicVector_e4.hpp 同布局; vector.inl 行为级真值。
+namespace gamemd {
+struct TagClassVectorHost {
+    void* vtable1;          // 0x00
+    void* Items;            // 0x04  (ml VectorClass@4)
+    int Capacity;           // 0x08  (canon/e4 q008)
+    bool IsInitialized;     // 0x0C
+    bool IsAllocated;       // 0x0D
+    int q010;               // 0x10  (ml DynamicVectorClass@16=Count; canon q010)
+    int CapacityIncrement;  // 0x14
+    void COMStub_3();  // 0x4E8290 vt+12 (Clear)
+    int COMStub_5(int a1);  // 0x4E82C0 vt+20 (GetItemIndex)
+    int COMStub_6(int a1);  // 0x4E82E0 vt+24 (GetItem)   [raw this=VectorClass]
+    int COMStub_1(int a1);  // 0x4E9200 vt+4  (operator==) [raw this=VectorClass]
+    int COMStub_2(int a1, void* a2);  // 0x4E9380 vt+8 (SetCapacity)
+    int COMStub_4(void* a1);  // 0x4E9430 vt+16 (FindItemIndex)
+    void* COMStub_0(int a2);  // 0x4EF530 vt+0 (scalar-deleting dtor)
+};
+} // namespace gamemd
+// g57w10 r4 item1-B: 0x4F2850 族归属修正载体 (raw fn_4F 段头 this=DynamicVector<GraphicMenuItem*>)
+// 布局与 TagClassVectorHost 同构 (三源同上); vtable 真身 VectorClass_GraphicMenuItem___vftable (ida_vtables.cpp)
+namespace gamemd {
+struct GraphicMenuItemVectorHost {
+    void* vtable1;          // 0x00
+    void* Items;            // 0x04
+    int Capacity;           // 0x08  (canon/e4 q008)
+    bool IsInitialized;     // 0x0C
+    bool IsAllocated;       // 0x0D
+    int q010;               // 0x10  (ml DynamicVectorClass@16=Count)
+    int CapacityIncrement;  // 0x14
+    void vt_placeholder_05();  // 0x4F2850 vt+12 (Clear)
+    int vt_placeholder_06(int a1);  // 0x4F2880 vt+20 (GetItemIndex)
+    int processWaypointPlanning(int a1, void* a2);  // 0x4F2A60 vt+8 (SetCapacity; gap2 占位名)
+    int vt_placeholder_08(void* a1);  // 0x4F2B10 vt+16 (FindItemIndex)
+    void* vt_placeholder_11(int a2);  // 0x4F2BB0 vt+0 (scalar-deleting dtor)
+};
+} // namespace gamemd
+// ---- g57w10 r4 item1 end ----
+
 // 0x42E6F0
 namespace gamemd { 
 void* BaseClass::Constructor() {
@@ -790,7 +831,7 @@ int HouseClass::UpdateTeamProductionSpeed() {
 }
 // 0x4E8290
 namespace gamemd { 
-void HouseClass::COMStub_3() {
+void TagClassVectorHost::COMStub_3() {  // g57w10 r4: 归属修正 (raw 段头 this=DynamicVector, 前误挂 HouseClass)
   void *v2; // eax
 
   v2 = this->Items; /*0x4e8296*/
@@ -804,22 +845,22 @@ void HouseClass::COMStub_3() {
 }
 // 0x4E82C0
 namespace gamemd { 
-int HouseClass::COMStub_5(int a1) {
-  if ( *(unsigned char *)(this + 12) ) /*0x4e82c0*/
-    return (unsigned int)(a1 - this->Items) >> 2; /*0x4e82d5*/
+int TagClassVectorHost::COMStub_5(int a1) {  // g57w10 r4 (raw this=DynamicVector)
+  if ( this->IsInitialized ) /*0x4e82c0 g57w10 r4: this+12 字节=ml IsInitialized*/
+    return (unsigned int)(a1 - (unsigned int)this->Items) >> 2; /*0x4e82d5*/
   else
     return 0; /*0x4e82c7*/
 }
 }
 // 0x4E82E0
 namespace gamemd { 
-int HouseClass::COMStub_6(int a1) {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a1); /*0x4e82ea*/
+int TagClassVectorHost::COMStub_6(int a1) {  // g57w10 r4 (raw this=VectorClass)
+  return ((unsigned int *)this->Items)[a1]; /*0x4e82ea g57w10 r4: raw m_1[3]==this+4==Items (ml Items@4)*/
 }
 }
 // 0x4E9200
 namespace gamemd { 
-int HouseClass::COMStub_1(int a1) {
+int TagClassVectorHost::COMStub_1(int a1) {  // g57w10 r4 (raw this=VectorClass)
   int v2; // esi
   int v3; // edx
   unsigned int *v4; // eax
@@ -831,7 +872,7 @@ int HouseClass::COMStub_1(int a1) {
     v3 = 0; /*0x4e920f*/
     if ( v2 <= 0 ) /*0x4e9213*/
       return 1; /*0x4e9233*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4e9215*/
+    v4 = (unsigned int *)this->Items; /*0x4e9215 g57w10 r4: raw m_1[3]==this+4==Items*/
     v5 = *(unsigned int *)(a1 + 4) - (unsigned int)v4; /*0x4e921b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4e9224*/
     {
@@ -841,11 +882,13 @@ int HouseClass::COMStub_1(int a1) {
         return 1; /*0x4e922c*/
     }
   }
+  return 0; /*0x4e922e g57w10 r4: raw 段尾真值补*/
 }
 }
+
 // 0x4E9380
 namespace gamemd { 
-int HouseClass::COMStub_2(int a1, void* a2) {
+int TagClassVectorHost::COMStub_2(int a1, void* a2) {  // g57w10 r4 (raw this=DynamicVector)
   unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
@@ -855,34 +898,41 @@ int HouseClass::COMStub_2(int a1, void* a2) {
   {
     this->IsInitialized = 0; /*0x4e9392*/
     if ( a2 ) /*0x4e9398*/
-      v4 = a2; /*0x4e93ae*/
+      v4 = (unsigned int *)a2; /*0x4e93ae*/
     else
-      v4 = RA2_OPNEW(4 * a1); /*0x4e93aa*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * a1); /*0x4e93aa*/
     this->IsInitialized = 1; /*0x4e93b2*/
     if ( !v4 ) /*0x4e93b6*/
       return 0; /*0x4e942a*/
     if ( this->Items ) /*0x4e93b8*/
     {
-      v5 = this->vtable3; /*0x4e93bf*/
+      v5 = this->Capacity; /*0x4e93bf g57w10 r4: raw q008(this+8)=ml Capacity; vtable3=生成器幻觉名*/
       if ( a1 < v5 ) /*0x4e93c4*/
         v5 = a1; /*0x4e93c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x4e93cc*/
+      for ( i = 0; i < v5; v4[i - 1] = ((unsigned int *)this->Items)[i - 1] ) /*0x4e93cc g57w10 r4: Items+4i-4 同构索引式*/
         ++i; /*0x4e93d1*/
       if ( this->IsAllocated ) /*0x4e93de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4e93e9*/
+        RA2_OPDEL(this->Items); /*0x4e93e9 g57w10 r4: raw *(this+4)==Items*/
         this->Items = 0; /*0x4e93f1*/
       }
     }
     this->Items = v4; /*0x4e93fa*/
-    this->vtable3 = a1; /*0x4e9402*/
+    this->Capacity = a1; /*0x4e9402 g57w10 r4: raw q008=this+8=ml Capacity; vtable3=幻觉名*/
     this->IsAllocated = a2 == 0; /*0x4e9405*/
   }
+  else
+  {
+    (*(void (__thiscall **)(TagClassVectorHost *))(*(void **)this + 12))(this); /*0x4e940e g57w10 r4: vt+12=COMStub_3(Clear); vector.inl SetCapacity(0)->Clear() 同真值*/
+  }
+  if ( this->Capacity < this->q010 ) /*0x4e9419 g57w10 r4: Count clamp (raw 尾段+vector.inl 同构)*/
+    this->q010 = this->Capacity; /*0x4e941b*/
+  return 1; /*0x4e941e*/
 }
 }
 // 0x4E9430
 namespace gamemd { 
-int HouseClass::COMStub_4(void* a1) {
+int TagClassVectorHost::COMStub_4(void* a1) {  // g57w10 r4 (raw this=DynamicVector)
   int v2; // edx
   int result; // eax
   unsigned int *i; // ecx
@@ -891,25 +941,32 @@ int HouseClass::COMStub_4(void* a1) {
   result = 0; /*0x4e9433*/
   if ( v2 <= 0 ) /*0x4e9438*/
     return -1; /*0x4e944f*/
-  for ( i = (unsigned int *)this->Items; *i != *a1; ++i ) /*0x4e943e*/
+  for ( i = (unsigned int *)this->Items; *i != *(unsigned int *)a1; ++i ) /*0x4e943e*/
   {
     if ( ++result >= v2 ) /*0x4e944d*/
       return -1; /*0x4e944d*/
   }
+  return result; /*0x4e9452 g57w10 r4: raw 段尾真值补*/
 }
 }
+
 // 0x4EF530
 namespace gamemd { 
-void* HouseClass::COMStub_0(int a2) {
+void* TagClassVectorHost::COMStub_0(int a2) {  // g57w10 r4 (raw this=DynamicVector; _vt00 scalar-deleting dtor)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4ef533*/
-  *this = (void *)&VectorClass_TagClass___vftable; /*0x4ef536*/
+  this->vtable1 = (void *)&VectorClass_TagClass___vftable; /*0x4ef536 g57w10 r4: raw *(this+0)=vfptr 写入*/
   if ( v3 && this->IsAllocated ) /*0x4ef540*/
   {
     RA2_OPDEL(v3); /*0x4ef548*/
     this->Items = 0; /*0x4ef550*/
   }
+  this->IsAllocated = 0; /*0x4ef55b g57w10 r4: raw 尾段真值补*/
+  this->Capacity = 0; /*0x4ef561 g57w10 r4: raw *(this+8)=0*/
+  if ( (a2 & 1) != 0 ) /*0x4ef568 g57w10 r4: scalar-deleting dtor 删除标志位*/
+    RA2_OPDEL(this); /*0x4ef56b*/
+  return this;
 }
 }
 // 0x4F21A0
@@ -960,7 +1017,7 @@ void* HouseClass::vt_placeholder_04(int a2) {
 }
 // 0x4F2850
 namespace gamemd { 
-void HouseClass::vt_placeholder_05() {
+void GraphicMenuItemVectorHost::vt_placeholder_05() {  // g57w10 r4: 归属修正 (raw this=DynamicVector<GraphicMenuItem*>, 前误挂 HouseClass)
   void *v2; // eax
 
   v2 = this->Items; /*0x4f2856*/
@@ -974,16 +1031,16 @@ void HouseClass::vt_placeholder_05() {
 }
 // 0x4F2880
 namespace gamemd { 
-int HouseClass::vt_placeholder_06(int a1) {
-  if ( *(unsigned char *)(this + 12) ) /*0x4f2880*/
-    return (unsigned int)(a1 - this->Items) >> 2; /*0x4f2895*/
+int GraphicMenuItemVectorHost::vt_placeholder_06(int a1) {  // g57w10 r4 (raw this=DynamicVector)
+  if ( this->IsInitialized ) /*0x4f2880 g57w10 r4: this+12 字节=ml IsInitialized*/
+    return (unsigned int)(a1 - (unsigned int)this->Items) >> 2; /*0x4f2895*/
   else
     return 0; /*0x4f2887*/
 }
 }
 // 0x4F2A60
 namespace gamemd { 
-int HouseClass::processWaypointPlanning(int a1, void* a2) {
+int GraphicMenuItemVectorHost::processWaypointPlanning(int a1, void* a2) {  // g57w10 r4 (raw this=DynamicVector; 实为 SetCapacity vt+8)
   unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
@@ -993,34 +1050,41 @@ int HouseClass::processWaypointPlanning(int a1, void* a2) {
   {
     this->IsInitialized = 0; /*0x4f2a72*/
     if ( a2 ) /*0x4f2a78*/
-      v4 = a2; /*0x4f2a8e*/
+      v4 = (unsigned int *)a2; /*0x4f2a8e*/
     else
-      v4 = RA2_OPNEW(4 * a1); /*0x4f2a8a*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * a1); /*0x4f2a8a*/
     this->IsInitialized = 1; /*0x4f2a92*/
     if ( !v4 ) /*0x4f2a96*/
       return 0; /*0x4f2b0a*/
     if ( this->Items ) /*0x4f2a98*/
     {
-      v5 = this->vtable3; /*0x4f2a9f*/
+      v5 = this->Capacity; /*0x4f2a9f g57w10 r4: raw q008(this+8)=ml Capacity; vtable3=幻觉名*/
       if ( a1 < v5 ) /*0x4f2aa4*/
         v5 = a1; /*0x4f2aa6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x4f2aac*/
+      for ( i = 0; i < v5; v4[i - 1] = ((unsigned int *)this->Items)[i - 1] ) /*0x4f2aac g57w10 r4: 同构索引式*/
         ++i; /*0x4f2ab1*/
       if ( this->IsAllocated ) /*0x4f2abe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4f2ac9*/
+        RA2_OPDEL(this->Items); /*0x4f2ac9 g57w10 r4: raw *(this+4)==Items*/
         this->Items = 0; /*0x4f2ad1*/
       }
     }
     this->Items = v4; /*0x4f2ada*/
-    this->vtable3 = a1; /*0x4f2ae2*/
+    this->Capacity = a1; /*0x4f2ae2 g57w10 r4: raw q008=this+8=ml Capacity; vtable3=幻觉名*/
     this->IsAllocated = a2 == 0; /*0x4f2ae5*/
   }
+  else
+  {
+    (*(void (__thiscall **)(GraphicMenuItemVectorHost *))(*(void **)this + 12))(this); /*0x4f2aee g57w10 r4: vt+12=vt_placeholder_05(Clear); vector.inl SetCapacity(0)->Clear() 同真值*/
+  }
+  if ( this->Capacity < this->q010 ) /*0x4f2af9 g57w10 r4: Count clamp (raw 尾段+vector.inl 同构)*/
+    this->q010 = this->Capacity; /*0x4f2afb*/
+  return 1; /*0x4f2afe*/
 }
 }
 // 0x4F2B10
 namespace gamemd { 
-int HouseClass::vt_placeholder_08(void* a1) {
+int GraphicMenuItemVectorHost::vt_placeholder_08(void* a1) {  // g57w10 r4 (raw this=DynamicVector)
   int v2; // edx
   int result; // eax
   unsigned int *i; // ecx
@@ -1029,25 +1093,31 @@ int HouseClass::vt_placeholder_08(void* a1) {
   result = 0; /*0x4f2b13*/
   if ( v2 <= 0 ) /*0x4f2b18*/
     return -1; /*0x4f2b2f*/
-  for ( i = (unsigned int *)this->Items; *i != *a1; ++i ) /*0x4f2b1e*/
+  for ( i = (unsigned int *)this->Items; *i != *(unsigned int *)a1; ++i ) /*0x4f2b1e*/
   {
     if ( ++result >= v2 ) /*0x4f2b2d*/
       return -1; /*0x4f2b2d*/
   }
+  return result; /*0x4f2b32 g57w10 r4: raw 段尾真值补*/
 }
 }
 // 0x4F2BB0
 namespace gamemd { 
-void* HouseClass::vt_placeholder_11(int a2) {
+void* GraphicMenuItemVectorHost::vt_placeholder_11(int a2) {  // g57w10 r4 (raw this=DynamicVector; _vt00 scalar-deleting dtor)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4f2bb3*/
-  *this = (void *)&VectorClass_GraphicMenuItem___vftable; /*0x4f2bb6*/
+  this->vtable1 = (void *)&VectorClass_GraphicMenuItem___vftable; /*0x4f2bb6 g57w10 r4: raw *(this+0)=vfptr 写入*/
   if ( v3 && this->IsAllocated ) /*0x4f2bc0*/
   {
     RA2_OPDEL(v3); /*0x4f2bc8*/
     this->Items = 0; /*0x4f2bd0*/
   }
+  this->IsAllocated = 0; /*0x4f2bdb g57w10 r4: raw 尾段真值补*/
+  this->Capacity = 0; /*0x4f2be1 g57w10 r4: raw *(this+8)=0*/
+  if ( (a2 & 1) != 0 ) /*0x4f2be8 g57w10 r4: scalar-deleting dtor 删除标志位*/
+    RA2_OPDEL(this); /*0x4f2beb*/
+  return this;
 }
 }
 // 0x4F5190

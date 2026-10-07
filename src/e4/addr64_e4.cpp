@@ -60,7 +60,7 @@
 #include "e4/classes/Multiplay_e4.hpp"
 #include "e4/classes/SyncDelayClass_e4.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
-#include "src/e4/classes/MapClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {

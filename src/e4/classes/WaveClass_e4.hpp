@@ -52,7 +52,7 @@ struct WaveClass {
     int LoadWaveData(int a2, int a3);
     int ProcessWaveTick(int * a1, int * a2, int a3);
     int StubReturnFalse();
-     double Destroy(...);  // C2597 interim stub
+     void Destroy();  // G57w10-S raw 0x00755D10 (was C2597 interim stub)
      double Dtor(...);  // C2597 interim stub
 };
 

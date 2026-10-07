@@ -35,7 +35,7 @@ struct ConnectionClass {
     int serviceSendQueue();
     int initQueue(unsigned int a2);
     void dtor();
-     double queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);
+     int queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);  // G57w10-S raw 0x0048B410 (was C2597 interim stub)
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

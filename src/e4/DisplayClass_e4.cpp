@@ -183,7 +183,7 @@ return (*(char (**)(DisplayClass *, GadgetClass *))(this->DisplayClass_field_0x0
 } // namespace gamemd
 // 0x4A9890
 namespace gamemd {
-Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
+char DisplayClass::UpdateCellPassability(__int16 *a1, int aP2)
 {
 
   int16_t *v3; // esi
@@ -366,13 +366,13 @@ LABEL_36:
     ((CellClass *)(((int)v5)))->SpiralFindClosest((gamemd::MouseClass *)(aP2),(IUnknown *)(v39)); /*0x4a9c67*/
   if ( (v5->flags[0] & 2) != 0 && v31 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4a9c88*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4a9c8c*/
-  return (gamemd::Tactical **)(v30); /*0x4a9c91*/
+  return (char)((gamemd::Tactical **)(v30); /*0x4a9c91*/);
 
 }
 } // namespace gamemd
 // 0x4A9DD0
 namespace gamemd {
-VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown * aP2)
+char DisplayClass::ProcessCellReveal(__int16 *aP1, int aP2)
 {
 
   CellClass *v5; // edi
@@ -480,13 +480,13 @@ LABEL_13:
     ((CellClass *)(((int)v5)))->SpiralFindClosest((gamemd::MouseClass *)(aP2),(IUnknown *)(v28)); /*0x4aa011*/
   if ( (v5->flags[0] & 2) != 0 && v21 && ((int)dword_A8B230->vtable1 & 0x1000) != 0 ) /*0x4aa032*/
     ((CellClass *)(v5))->UpdateZone(); /*0x4aa036*/
-  return (gamemd::VectorClass_flat **)(v29); /*0x4aa03b*/
+  return (char)((gamemd::VectorClass_flat **)(v29); /*0x4aa03b*/);
 
 }
 } // namespace gamemd
 // 0x4AA050
 namespace gamemd {
-int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
+bool DisplayClass::RevealFogCell(__int16 *a1, int aP2)
 {
 
   int16_t *v3; // edi
@@ -810,7 +810,7 @@ int DisplayClass::checkScreenBounds(int a2)
 } // namespace gamemd
 // 0x6D8530
 namespace gamemd {
-int DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
+int DisplayClass::ScrollTacticalView(int aP1, int aP2)
 {
 
   int v4; // edx
@@ -959,7 +959,7 @@ void DisplayClass::Update(PowerClass * aP1, int a3, void *a3_2, void *a4)
 } // namespace gamemd
 // 0x4A9840
 namespace gamemd {
-bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
+int DisplayClass::SetCoordVisible(DisplayClass *aP0, unsigned int *aP1, char a3)
 {
 
   int result; // eax

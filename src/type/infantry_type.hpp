@@ -120,6 +120,7 @@ public:
     int ConstructInfantry(int a1);  // 0x523b10 -- InfantryTypeClass::ConstructInfantry
     int PowerDrainUpdate(int a1);  // 0x524840 -- InfantryTypeClass::PowerDrainUpdate
     int GetAuxField();  // 0x524d60 -- InfantryTypeClass::GetAuxField
+    int DTOR();  // 0x5239D0 -- InfantryTypeClass::DTOR (g57w10 r4 item6: C2355 级联解锁)
     void* CopyDataArray(int a1);  // 0x524f20 -- InfantryTypeClass::CopyDataArray
     // === SYMBOL-ANCHOR (END) ===
     public:  // funcs-move

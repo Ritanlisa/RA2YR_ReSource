@@ -6,6 +6,8 @@
 namespace gamemd {
 
 struct Control {
+    static unsigned int * CreateControlDialog(void *aP1);  // 0x60CF00 raw: _DWORD* CreateControlDialog(Control*)
+
 // --- flat members (BEGIN) ---
 // --- flat members (END) ---
     int CheckControlTypeDialog();

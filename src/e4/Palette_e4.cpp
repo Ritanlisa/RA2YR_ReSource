@@ -378,7 +378,7 @@ dword_B0FB9C = 0; /*0x72b84f*/
   }
   if ( dword_B0FB9C ) /*0x72b844*/
   {
-    __3_YAXPAX_Z(dword_B0FB9C); /*0x72b847*/
+    __3_YAXPAX_Z( (void *)(dword_B0FB9C) ); /*0x72b847*/
     dword_B0FB9C = 0; /*0x72b84f*/
   }
   return LoadPaletteSimple(Source, &dword_B0FB9C, &dword_B0FBA0); /*0x72b86a*/

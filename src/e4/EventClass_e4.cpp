@@ -161,11 +161,11 @@ int EventClass::Add2(int a3, unsigned __int8 aP1, int aP3)
 }
 // 0x4C6970
 namespace gamemd {
-int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5)
+char * EventClass::AddEventEx(int a2, unsigned __int8 a3, int a4, int a5, int a6)
 {
 
   Debug::Log("Adding event %s\n", off_82091C[a3]); /*0x4c698c*/
-  if ( aP1 < 0 ) /*0x4c699a*/
+  if ( a2 < 0 ) /*0x4c699a*/
   {
     *((unsigned char *)this + 2) = -1; /*0x4c69c6*/
     *(unsigned int *)this = 0; /*0x4c69ca*/
@@ -174,11 +174,11 @@ int EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3
   }
   else
   {
-    *((unsigned char *)this + 2) = (unsigned char)(aP1); /*0x4c69a4*/
+    *((unsigned char *)this + 2) = (unsigned char)(a2); /*0x4c69a4*/
     *(unsigned int *)this = a3; /*0x4c69ab*/
-    *(unsigned int *)&this->q007 = (unsigned int)(aP3); /*0x4c69ad*/
-    *(unsigned int *)&this->q00B = (unsigned int)(aP4); /*0x4c69b0*/
-    *(unsigned int *)&this->u32_F = (unsigned int)(aP5); /*0x4c69b3*/
+    *(unsigned int *)&this->q007 = (unsigned int)(a4); /*0x4c69ad*/
+    *(unsigned int *)&this->q00B = (unsigned int)(a5); /*0x4c69b0*/
+    *(unsigned int *)&this->u32_F = (unsigned int)(a6); /*0x4c69b3*/
     *(unsigned int *)&this->u32_3 = (int)(dword_A8ED84); /*0x4c69be*/
     return (int)(this); /*0x4c69bc*/
   }
@@ -267,7 +267,7 @@ AbstractClass * * EventClass::ProcessEvent()
 
 // 0x542280
 namespace gamemd {
-int EventClass::deserializeEvent(int a2, IUnknown * aP2)
+int EventClass::deserializeEvent(int a2, unsigned int *aP2)
 {
 
   int result; // eax

@@ -108,7 +108,7 @@ int Coord::ToGridIndex(int aP1, int aP2, int aP3)
 }
 // 0x413A30
 namespace gamemd {
-unsigned int * Coord::ToCell(IUnknown * aP1)
+unsigned int * Coord::ToCell(unsigned int *aP1)
 {
 
   int v3; // [esp+0h] [ebp-4h]

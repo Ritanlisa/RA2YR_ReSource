@@ -6,6 +6,8 @@
 namespace gamemd {
 
 struct SuperWeapon {
+    static int SerializeSuperWeaponState(void *aP1);  // 0x539AE0 raw: int __thiscall SuperWeapon::SerializeSuperWeaponState(SuperWeapon*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     void* q004;  // 0x4
     void* q008;  // 0x8

@@ -27,8 +27,8 @@ struct Stream {
     int GetChecked();
     int ReadIntArray(int a2);
     int WriteIntArray(TechnoTypeClass * aP1);
-    void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
-    static double CopyFromTemplate(...);  // C2597 interim stub
+    char * InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a6, int a7, int a8);  // G57w10-S raw 0x00759260 IUnknown 占位清除
+    static void CopyFromTemplate(Stream * aP1);  // G57w10-S raw 0x007BE640 (was C2597 interim stub)
     int WriteBlock(int a1, int a2, int a3);  // 0x5f1bf0
     int ReadPacket(); // N_fix R5 supply (cache truth)
     BlowStraw * u32_58;  // 0x58

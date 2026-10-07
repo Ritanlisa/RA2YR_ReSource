@@ -249,7 +249,7 @@ struct UnitClass {
 
 // --- flat members (END) ---
     int ProcessIdleOrders();
-int Construct(...);  // C2597 interim stub
+int Construct(int a2, LPVOID ppv);  // G57w10-S raw 0x007353C0 (was C2597 interim stub)
     void ** Create(void *a2, _DWORD *a3, int a4); // N_fix R5 supply (cache truth)
     unsigned int q_C30;  // +0xC30 flat supply (three-ban reform)
 };

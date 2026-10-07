@@ -125,9 +125,9 @@ struct MouseClass {
 // --- flat members (END) ---
     char LoadCursors();
     char ToggleContextGadget(int a1, int a2);
-     double DrawCursor(...);  // C2597 interim stub
-    static double CalcConfiningRect(...);  // C2597 interim stub
-     double Construct(...);  // C2597 interim stub
+     int DrawCursor(LPSTREAM pStm);  // G57w10-S raw 0x005BE6D0 (was C2597 interim stub)
+    static void CalcConfiningRect(MouseClass * aP1);  // G57w10-S raw 0x007B8960 (was C2597 interim stub)
+     unsigned int * Construct(int a2, int a3);  // G57w10-S raw 0x007B8730 (was C2597 interim stub)
     void * LoadTypeData();  // 0x5bdf30
     unsigned char m_8[64];  // pad compile-supply (G41.47)
     unsigned char m_10[64];  // pad compile-supply (G41.47)

@@ -64,7 +64,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
             v6 = *(BuildingClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * v5); /*0x50afad*/
             if ( !((unsigned int *)v6)[0] && ((unsigned int *)v6)[0] ) /*0x50afbe*/
             {
-              v19 = (*((int (__stdcall **)(void **))((unsigned int *)v6)[0] + 4))(&((unsigned int *)v6)[0]); /*0x50afe3*/
+              v19 = (*((int (__stdcall **)(void **))((unsigned int *)v6)[0] + 4))(&(( (void **)(unsigned int *) )v6)[0]); /*0x50afe3*/
               if ( v19 == (*(int (__stdcall **)(SuperWeapon *))(*((unsigned int *)this + 1) + 16))(this + 4) ) /*0x50aff0*/
               {
                 Upgrades = v6->Upgrades; /*0x50aff2*/

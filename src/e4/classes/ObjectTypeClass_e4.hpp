@@ -141,7 +141,7 @@ struct ObjectTypeClass {
     int DeserializeArrays();
     int FindByName();
     int FreeLoaderBuffer();
-    static int LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1);
+    int LoadCleanup(ObjectTypeClass *aP1, int a2);  // G57w10-S raw 0x005F9720 IUnknown 占位清除
     int LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2);
     int ReadBool3(INIClass * aP1, unsigned char * a2, void * a4);
     int ReadDestroyAnim();

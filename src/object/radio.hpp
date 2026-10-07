@@ -10,6 +10,7 @@ enum class RadioCommand : int;
 
 class RadioClass : public MissionClass {
 public:
+    int RemoveElement(int a1, void* a2);  // 0x65A970 vt+636 (canon RadioClass 2 参; raw ret int; g57w10 r4 item5)
     virtual HRESULT __stdcall Load(IStream* stream) override;  // 0x65AB80
     virtual HRESULT __stdcall Save(IStream* stream, int clear_dirty) override;  // 0x65AC40
 

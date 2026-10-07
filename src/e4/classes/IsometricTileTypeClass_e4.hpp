@@ -66,7 +66,7 @@ struct IsometricTileTypeClass {
     unsigned int * Constructor_0(int a2, int a3);
     unsigned int PointerToIndex(int a2);
     void ClearBuffer(void *a1);
-    static double CleanupMembers(...);  // C2597 interim stub
+    static int CleanupMembers(IsometricTileTypeClass * aP1);  // G57w10-S raw 0x00544A70 (was C2597 interim stub)
 };
 
 } // namespace gamemd

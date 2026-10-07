@@ -1,0 +1,12 @@
+// G57w10 D-类体 supply: CoordBounds::ctor (raw 0x403870; canon CoordBounds size=4)
+// Dedicated e4 carrier (fwd-only before; consumer TUs include explicitly).
+#pragma once
+
+#include "e4/classes/_fwd_e4.hpp"
+
+namespace gamemd {
+struct CoordBounds {
+    unsigned char q000[4];  // 0x0 (canon size filler)
+    static __int64 Constructor(void *aP1, int a2, int a3);  // 0x403870 raw: __int64 Constructor(CoordBounds*, int, int)
+};
+} // namespace gamemd

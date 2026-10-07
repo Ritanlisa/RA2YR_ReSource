@@ -48,7 +48,7 @@ struct Buffer {
     int UpdateVolumeSettings();  // 0x40A6D0 G42.33 b3 supplied-body sync
     char * FillCircularBufferScroll(int a2, int a3, unsigned short a4);  // 0x410ED0 G42.33 b3 supplied-body sync
     _DWORD * Init(int a2, int Size, int aP2, int aP3, int aP1);
-    static unsigned int * Init(...);  // G57a1 static-form sync variadic bridge (Buffer::Init(0,size) 0x6c9a7e / 0x52ff3b)
+    static unsigned int * Init(Buffer * aP1, int a2, int Size);  // G57w10-S raw 0x0043AD00 (was C2597 interim stub)
     static int Cleanup(void *aP0);  // G57a1 static-form mirror
     static int AllocateCodecFrameBuffers(void *aP0);  // G57a1 static-form mirror
     static int * RotateBufferCrypto(void *aP0, int aP1);  // G57a1 static-form mirror

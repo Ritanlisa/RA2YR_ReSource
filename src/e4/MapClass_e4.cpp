@@ -50,6 +50,9 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/SubzoneHashVector_e4.hpp"  // G57w10 D supply
+#include "e4/classes/LZOPipe_e4.hpp"  // G57w10 D supply
+#include "e4/classes/TileData_e4.hpp"  // G57w10 D supply
 
 // 0x4112D0
 namespace gamemd {

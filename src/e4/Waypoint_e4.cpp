@@ -12,7 +12,7 @@
 
 // 0x5023B0
 namespace gamemd {
-unsigned int * Waypoint::FindByCell(IUnknown * aP1)
+unsigned int * Waypoint::FindByCell(unsigned short *aP1)
 {
 
   char * v2;

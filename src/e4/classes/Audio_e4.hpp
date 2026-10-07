@@ -7,6 +7,8 @@
 
 namespace gamemd {
 struct Audio {
+    static int IsMediumVolume(void *aP1);  // 0x74FF90 raw: int IsMediumVolume(int*)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
@@ -105,10 +107,10 @@ struct Audio {
     static int Callback();  // 0x4093B0
     LPDIRECTSOUND GetDirectSound();  // 0x40A7A0
     static int IsPlaying(...);  // 0x7529E0
-    static double SetScoreVolume(...);  // C2597 interim stub
-    static double SetSoundVolume(...);  // C2597 interim stub
-    static double SetVoiceVolume(...);  // C2597 interim stub
-    static double IsLoud(...);  // C2597 interim stub
+    static int SetScoreVolume(Audio * aP1, float a2, int a3);  // G57w10-S raw 0x005FA4A0 (was C2597 interim stub)
+    static int SetSoundVolume(Audio * aP1, float a2, char a3);  // G57w10-S raw 0x005FA510 (was C2597 interim stub)
+    static int SetVoiceVolume(Audio * aP1, float a2, char a3);  // G57w10-S raw 0x005FA590 (was C2597 interim stub)
+    static int IsLoud(Audio * aP1);  // G57w10-S raw 0x00750010 (was C2597 interim stub)
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority);
 };
 } // namespace gamemd

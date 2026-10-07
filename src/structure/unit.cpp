@@ -330,7 +330,7 @@ int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int 
     if ( *(unsigned int *)(this + 28) < result /*0x54e4b6*/
       || (*(unsigned char *)(this + 25) || !result)
       && (v13 = *(unsigned int *)(this + 32), v13 > 0)
-      && (result = (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(this + 12) + 8))(this + 12, result + v13, 0),
+      && (result = (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(this + 12) + 8))( (int)(this + 12), result + v13, 0 ),
           (unsigned char)result) )
     {
       result = *(unsigned int *)(this + 28); /*0x54e4b8*/
@@ -533,15 +533,15 @@ int UnitClass::Deploy()
     v2 = this; /*0x7192f6*/
     Owner = ((unsigned int *)this)[0]; /*0x7192fd*/
     v61 = 0; /*0x719300*/
-    if ( ((unsigned int *)Owner)[0] && !*(unsigned int *)&this->Moving && !((unsigned int *)Owner)[0] ) /*0x719313*/
+    if ( ((unsigned int *)Owner)[0] && !*(unsigned int *)&v2->Moving && !((unsigned int *)Owner)[0] ) /*0x719313 g57w10 r4: raw 0x7192F0 this=TeleportLocomotionClass; v2=真型载体 (ml Moving)*/
       goto LABEL_82; /*0x719319*/
-    v4 = *(unsigned int *)&this->Moving; /*0x719331*/
+    v4 = *(unsigned int *)&v2->Moving; /*0x719331 g57w10 r4*/
     if ( !v4 ) /*0x719336*/
     {
       owningHouseIndex0 = ((unsigned int *)Owner)[0]; /*0x719338*/
       if ( owningHouseIndex0 ) /*0x719340*/
       {
-        *(unsigned int *)&this->Moving = owningHouseIndex0; /*0x719342*/
+        *(unsigned int *)&v2->Moving = owningHouseIndex0; /*0x719342 g57w10 r4*/
         return 0; /*0x71934e*/
       }
     }
@@ -559,7 +559,7 @@ int UnitClass::Deploy()
     }
     else if ( v4 <= 0 ) /*0x719361*/
     {
-      if ( (*(unsigned __int8 (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)this->LocomotionClass + 16))(this) ) /*0x71936a*/
+      if ( (*(unsigned __int8 (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)v2 + 16))(this)  /*g57w10 r4: raw til 基类子对象渲染 this->LocomotionClass@0 = vfptr*/ ) /*0x71936a*/
       {
         v7 = ((unsigned int *)v2)[0]; /*0x719375*/
         v8 = (unsigned int *)&v2->MovingDestination + 2; /*0x719378*/  // g57e2 W3
@@ -569,7 +569,7 @@ int UnitClass::Deploy()
           && ((unsigned int *)&v2->LastCoords)[1] == ((unsigned int *)&g_BuildingLoadQueue_Array)[0] )
         {
           (*((void (__thiscall **)(FootClass *, unsigned int, int))v7->vtable1 + 288))(v7, 0, 1); /*0x7197b4*/
-          (*(void (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)v2->LocomotionClass + 72))(v2); /*0x7197bd*/
+          (*(void (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)v2 + 72))(v2); /*0x7197bd g57w10 r4: til 基类子对象渲染@0=vfptr*/
           return 0; /*0x7197c0*/
         }
         else
@@ -695,7 +695,7 @@ int UnitClass::Deploy()
             StartAudioControllerAt(v34, &v56, 0); /*0x719710*/
           }
           (*((void (__thiscall **)(FootClass *, int))((unsigned int *)v2)[0]->vtable1 + 99))(((unsigned int *)v2)[0], 2); /*0x71971c*/
-          (*(void (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)v2->LocomotionClass + 72))(v2); /*0x719725*/
+          (*(void (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)v2 + 72))(v2); /*0x719725 g57w10 r4: 同上*/
           CrateClass::ProcessPickup(v32, (int)((unsigned int *)v2)[0]); /*0x71972e*/
           (*((void (__thiscall **)(FootClass *, unsigned int, int))((unsigned int *)v2)[0]->vtable1 + 288))(((unsigned int *)v2)[0], 0, 1); /*0x71973c*/
           v36 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x719747*/

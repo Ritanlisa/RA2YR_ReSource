@@ -33,6 +33,7 @@
 #include "e4/classes/AnimTypeVector_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/INIClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/VocClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 
 // 0x512680
 namespace gamemd {
@@ -42,7 +43,7 @@ void * WeaponTypeClass::Create(AbstractClass * Source)
   int v2; // esi
   SuperWeaponTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x51269c*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x51269c*/
     return 0; /*0x5126ff*/
   v2 = 0; /*0x5126ad*/
   if ( dword_A83CA8 <= 0 ) /*0x5126b1*/
@@ -70,7 +71,7 @@ int WeaponTypeClass::Process(ObjectClass * Source)
   int v2; // esi
   void *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x6cef0c*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x6cef0c*/
     return 0; /*0x6cef6f*/
   v2 = 0; /*0x6cef1d*/
   if ( dword_A8E340 <= 0 ) /*0x6cef21*/
@@ -356,8 +357,8 @@ int WeaponTypeClass_SaveLoad_Prefix(WeaponTypeClass *aP0, void * a1, void * a2, 
   int m; // esi
 v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
   Report = (int *)(aP0->Report);
-  (*(void (**)(int *))(((unsigned int *)&aP0->Report)[0] + 12))(aP0->Report); /*0x772ce5*/
-  (*(void (**)(int *))((&v5->DownReport)[0] + 12))(v5->DownReport); /*0x772cf4*/
+  (*(void (**)(int *))(((unsigned int *)&aP0->Report)[0] + 12))( (int *)(aP0->Report) ); /*0x772ce5*/
+  (*(void (**)(int *))((&v5->DownReport)[0] + 12))( (int *)(v5->DownReport) ); /*0x772cf4*/
   v7 = (int *)(a2); /*0x772cf7*/
   result = AbstractClass::SaveLoad_Prefix_0((gamemd::AbstractClass *)(v5),(gamemd::AbstractClass *)((int)a2)); /*0x772cfd*/
   if ( result >= 0 ) /*0x772d04*/

@@ -1536,7 +1536,7 @@ LABEL_14:
                           while ( 1 ) /*0x541b87*/
                           {
                             v20 = ToWideStringChar( (IUnknown *)((char *)(v19->Socket + 104))); /*0x541b87*/
-                            if ( !_strcmpi(v20, &v47[0].q01C) ) /*0x541b8d*/
+                            if ( !_strcmpi( v20, (const char *)(&v47[0].q01C) ) ) /*0x541b8d*/
                               break; /*0x541b8d*/
                             ++v18; /*0x541b9c*/
                             v19 = (IPXManagerClass *)((char *)v19 + 4); /*0x541b9d*/

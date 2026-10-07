@@ -8,6 +8,9 @@ namespace gamemd {
 struct IPXInterfaceClass;  // fix_fwd_type_supply
 struct Game;  // fix_fwd_type_supply
 struct Scenario {
+    static int EndGame(void *aP1);  // 0x685DC0 raw: char __usercall Scenario::EndGame@<al>(Scenario*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int EndGameFlow(void *aP1);  // 0x685670 raw: __int16 __usercall Scenario::EndGameFlow@<ax>(Scenario*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     IPXInterfaceClass* q000;  // 0x0
     void* q004;  // 0x4
@@ -137,7 +140,7 @@ struct Scenario {
     Game * * ComputeDisplayPosition();  // 0x552B10
     unsigned int * ComputeDialogPos(unsigned int * a2);  // 0x552BE0
     void Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1);  // 0x55AFB0
-    int LoadOrReloadOptions(IUnknown * aP1);  // 0x597A10
+    char LoadOrReloadOptions(int a2);  // G57w10-S raw 0x00597A10 IUnknown 占位清除
     int PreGameInit();  // 0x5E7460
     void SetByte96();  // 0x642AD0
     static int ClearScreen(...);  // 0x684240

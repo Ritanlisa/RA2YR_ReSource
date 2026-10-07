@@ -23,6 +23,9 @@ struct LocomotionClass;  // fix_fwd_type_supply
 struct InfantryTypeClass;  // fix_fwd_type_supply
 
 struct InfantryClass {
+    static int SlaveGiveMoney_RecordBalanceBefore(int aP1);  // 0x522D50 raw 2-param (int* this, _DWORD* a2) site 1-arg int form  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int SetMission(void *aP1);  // 0x728280 raw: int __thiscall sub_728280(char*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -260,9 +263,9 @@ struct InfantryClass {
     static int ScanTarget(int * a1);
     int SetField6();  // 0x5176A0 G42.33 b3 member-form sync
     void* Destruct(IUnknown * a1, AbstractClass * edx0);
-    static double IsInBounds(...);  // C2597 interim stub
-     double Construct(...);  // C2597 interim stub
-    static double GetType(...);  // C2597 interim stub
+    static int IsInBounds(InfantryClass * aP1);  // G57w10-S raw 0x00484AB0 (was C2597 interim stub)
+     int Construct(int a2, int a3, IUnknown *ppv);  // G57w10-S raw 0x00517A50 (was C2597 interim stub)
+    static int GetType(InfantryClass * aP1);  // G57w10-S raw 0x00484F20 (was C2597 interim stub)
     void * FindNearbyCell(int a2);  // 0x418e20
     AnimClass * CanDeployAtCell(__int16 *a2, __int16 *a3, int a1, int a4);
     AnimClass * GetDeployWeaponIndex();

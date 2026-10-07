@@ -55,6 +55,7 @@
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/FileSystem_e4.hpp"
 #include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/CoordBounds_e4.hpp"  // G57w10 D supply
 
 // 0x530000
 namespace gamemd {

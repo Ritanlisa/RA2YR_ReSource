@@ -37,10 +37,10 @@ struct Vector {
     int Clear();  // 0x43AE50
     static int Clear(int aP0);  // 0x43AE50 G42.35 static-form sync (ui/supplied sites 0x5D3051/0x5D3098)
     int RemoveAt(int aP1);  // 0x45AE10
-    void ReallocDynamic(int a2);
+    char ReallocDynamic(int a2);  // G57w10-S raw 0x4D2E40 ReallocDynamicVector char __thiscall
     int Find(unsigned int * a2);  // 0x4E0550
     BOOL HasCapacity();  // 0x76F0B0
     char Grow();  // 0x7AEEC0
-    static double TwoDMagnitudeMath(...);  // C2597 interim stub
+    static double TwoDMagnitudeMath(Vector * aP1);  // G57w10-S raw 0x4C1B50 (was C2597 interim stub)
 };
 } // namespace gamemd

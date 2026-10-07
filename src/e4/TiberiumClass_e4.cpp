@@ -25,6 +25,8 @@
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+#include "e4/classes/Scalar_e4.hpp"  // G57w10 D supply
 
 // 0x5A0160
 namespace gamemd {

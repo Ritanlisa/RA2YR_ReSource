@@ -45,17 +45,17 @@ public:
     int ProcessDeployAction(int deploy_type, bool a3, bool a4);  // 0x51D6F0
     int ProcessIdleDeploy();  // 0x5200B0
     bool CanInitiateDeploy();  // 0x521B60
-    bool CanDeployAtCell();  // 0x5221D0
+    bool CanDeployAtCell(short* a2, short* a3);  // 0x5221D0 (g57w10 raw: bool(this, __int16* a2, __int16* a3))
     bool CheckDeployPath();  // 0x521EB0
     int CreateDeployLocomotor(int a2, int a3, int a4);  // 0x522FE0
     bool StartBombDeploy(char a2); // 0x522C00
     bool IsBombDeployMission();  // 0x5228D0
-    int DeployAnimation();  // 0x514310
+    // 0x514310 DeployAnimation removed g57w10: belongs to HoverLocomotionClass (canon vt+64, raw this=HoverLocomotionClass)
     int ComputeDeploySpeedFactor();  // 0x521D80
     int GetDeployWeaponIndex(int weapon_index);  // 0x5218E0 (vt+740; binary: (this, int))
 
     // === Phase 3: Firing / Combat ===
-    virtual int FireAtTargetPos();  // 0x522600
+    virtual int FireAtTargetPos(int a2, int a3, int a4);  // 0x522600 (g57w10 raw: int(this,int,int,int))
     virtual int FireWeaponWithCleanup(int a2, int a3);  // 0x51DF60
     virtual int GetFireError(int* target, int weapon_idx, int a4, int a5);  // 0x51C8B0
     virtual bool CanAttackTarget(HouseClass* target_house);  // 0x5227F0 (disguised-spy attack permission vs house)

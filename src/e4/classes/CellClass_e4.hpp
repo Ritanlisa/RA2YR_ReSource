@@ -79,39 +79,39 @@ struct CellClass {
     void* FindOpenNeighbor;  // 0x0 (no offset truth)
     void* RevealFogRect;  // 0x0 (no offset truth)
 // --- flat members (END) ---
-    int UpdateTerrain(IUnknown * aP0, IUnknown * aP1);
-    int UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1);
-    int UpdateVariant3(IUnknown * aP0, IUnknown * aP1);
-    int UpdateVariant4(IUnknown * aP0, IUnknown * aP1);
-    HouseClass * * UpdateVariant5(IUnknown * aP0, IUnknown * aP1);
-    HouseClass * * UpdateVariant6(IUnknown * aP0, IUnknown * aP1);
-    int UpdateVariant7(IUnknown * aP0, IUnknown * aP1);
-    int UpdateVariant8(IUnknown * aP0, IUnknown * aP1);
-    char SetTileType13(IUnknown * aP0, int a2);
-    char SetTileType14(IUnknown * aP0, int a2);
-    int CheckTilePassable(IUnknown * aP0);
-    int CheckTilePassable2(IUnknown * aP0);
+    char UpdateTerrain(unsigned short *a1, int a2);  // G57w10-S raw 0x0056F8B0 IUnknown 占位清除
+    char UpdateTileVariant2(unsigned short *a1, int a2);  // G57w10-S raw 0x0056FC80 IUnknown 占位清除
+    char UpdateVariant3(unsigned short *a1, int a2);  // G57w10-S raw 0x0056EF50 IUnknown 占位清除
+    char UpdateVariant4(unsigned short *a1, int a2);  // G57w10-S raw 0x0056F2F0 IUnknown 占位清除
+    char UpdateVariant5(unsigned short *a1, int a2);  // G57w10-S raw 0x00572DA0 IUnknown 占位清除
+    char UpdateVariant6(unsigned short *a1, int a2);  // G57w10-S raw 0x00573170 IUnknown 占位清除
+    char UpdateVariant7(unsigned short *a1, int a2);  // G57w10-S raw 0x00572440 IUnknown 占位清除
+    char UpdateVariant8(unsigned short *a1, int a2);  // G57w10-S raw 0x005727E0 IUnknown 占位清除
+    char SetTileType13(unsigned short *a1, int a2);  // G57w10-S raw 0x00572B80 IUnknown 占位清除
+    char SetTileType14(unsigned short *a1, int a2);  // G57w10-S raw 0x00572C90 IUnknown 占位清除
+    int CheckTilePassable(int a1);  // G57w10-S raw 0x0057CCF0 IUnknown 占位清除
+    int CheckTilePassable2(int a1);  // G57w10-S raw 0x0057BAA0 IUnknown 占位清除
     int EnsureFileLoaded();
     int GetBridgeIndex();
-    int GetByte284(IUnknown * aP0);
+    int GetByte284(unsigned int *a1);  // G57w10-S raw 0x006D6AD0 IUnknown 占位清除
     int GetOccupiedRatio();
-    int GetTileData(IUnknown * aP0, IUnknown * aP1);
-    int SpiralFindClosest(IUnknown * aP0, MouseClass * aP1, IUnknown * aP2);
+    int GetTileData(__int16 *a1, int a2);  // G57w10-S raw 0x0056BCD0 IUnknown 占位清除
+    int SpiralFindClosest(int a1, int a2, char a3);  // G57w10-S raw 0x005865F0 IUnknown 占位清除
     int StubReturn11();
     int StubReturn328();
-    static double DetermineTileType(...);  // C2597 interim stub
-static int * GetCoords(...);  // C2597 interim stub
+    static int DetermineTileType(CellClass * aP1);  // G57w10-S raw 0x0047CA80 (was C2597 interim stub)
+static int * GetCoords(CellClass * aP1, int *a2);  // G57w10-S raw 0x00480A30 (was C2597 interim stub)
     int GetTerrainFlag(int a2);  // was C2597 interim stub, := truth 0x0x5471f0
-     double IsBuildable(...);  // C2597 interim stub
-    static double IsTerrainType(...);  // C2597 interim stub
-    static double SetTerrainType(...);  // C2597 interim stub
-    static double ClearCellContents(...);  // C2597 interim stub
+     int IsBuildable();  // G57w10-S raw 0x006B25C0 (was C2597 interim stub)
+    static int IsTerrainType(CellClass * aP1);  // G57w10-S raw 0x004865B0 (was C2597 interim stub)
+    static int SetTerrainType(CellClass * aP1, __int16 *a2);  // G57w10-S raw 0x00587180 (was C2597 interim stub)
+    static int ClearCellContents(CellClass * aP1);  // G57w10-S raw 0x00486C50 (was C2597 interim stub)
     int * GetScreenRect(int *a2);  // was C2597 interim stub, := truth 0x0x47ff80
-    static double UpdateAnimations(...);  // C2597 interim stub
-    static double InBounds(...);  // C2597 interim stub
-    static double InMapDataRange(...);  // C2597 interim stub
-    static double AttachObject(...);  // C2597 interim stub
-    static double ReduceTiberium(...);  // C2597 interim stub
+    static int UpdateAnimations(CellClass * aP1);  // G57w10-S raw 0x0047DD70 (was C2597 interim stub)
+    static int InBounds(CellClass * aP1);  // G57w10-S raw 0x00486670 (was C2597 interim stub)
+    static int InMapDataRange(CellClass * aP1);  // G57w10-S raw 0x00486650 (was C2597 interim stub)
+    static int AttachObject(CellClass * aP1, int a2);  // G57w10-S raw 0x00487D70 (was C2597 interim stub)
+    static int ReduceTiberium(CellClass * aP1, int a2);  // G57w10-S raw 0x00480A80 (was C2597 interim stub)
     int DrawWithFlags(int a2, unsigned int *a3, int a4);  // 0x557830
     int DamageAllObjects();  // 0x483480
     int IsActiveOrNext();  // 0x486900
@@ -134,6 +134,7 @@ static int * GetCoords(...);  // C2597 interim stub
     int ClearCrateStateForAll();  // 0x722AB0  G42.34 T11: supplied def carrier
     unsigned short * initCellData(unsigned short * a1);  // 0x588C40  G42.34 T11: supplied def carrier
     static void * AddObject(void * a1, void * a2);  // G42.39a static-call supply
+    static unsigned int * Construct(void *aP1);  // 0x47BBF0 raw: _DWORD* Construct(CellClass*)
 };
 
 } // namespace gamemd

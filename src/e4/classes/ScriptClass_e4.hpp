@@ -11,6 +11,8 @@ namespace gamemd {
 struct ScriptTypeClass;  // fix_fwd_type_supply
 
 struct ScriptClass {
+    static unsigned int * GetNextAction(void *aP1, void *a2);  // 0x691540 raw: _DWORD* GetNextAction(ScriptClass*, _DWORD*)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4

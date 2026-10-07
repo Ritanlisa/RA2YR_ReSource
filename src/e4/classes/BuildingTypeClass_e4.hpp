@@ -289,7 +289,7 @@ struct BuildingTypeClass {
     int GetObjectSize();
     int GetPowerOutput(int aP1);
     int GetTypeIdentifier();
-    int IsPlacementValid(IUnknown * aP1, IUnknown * aP2);
+    bool IsPlacementValid(__int16 *a2, __int16 *a3);  // G57w10-S raw 0x00746000 IUnknown 占位清除
     int ProcessData(unsigned int * a2, short * a3);
     int SaveLoad_Prefix_0(unsigned int *a2, int *a3, int a4, int a5);
     int UpdatePower();
@@ -304,6 +304,7 @@ struct BuildingTypeClass {
     void LoadVoxel();
     void* LoadAnimations(int aP1);
     void* ProcessPower(int *aP1);
+    static int GetFoundationWidth(void *aP1);  // 0x45EC90 raw fn_45.c:11741 int __thiscall(BuildingTypeClass*); sites pass varied ptr types
     int GetFoundationHeight(char a2);  // 0x45eca0
     OverlayTypeClass * * FindOrCreate2(ObjectClass * Source);
     ParticleSystemTypeClass * * LoadOrGet(ObjectClass * Source);

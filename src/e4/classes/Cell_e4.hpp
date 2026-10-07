@@ -164,7 +164,7 @@ struct Cell {
     int IsShore();  // 0x4867B0
     int IsBuildableAdvanced();  // 0x486FF0
     int HasOccupierBit(char aP1);
-    int SearchEnemies(IUnknown * aP1);  // 0x487A10
+    int SearchEnemies(int a2);  // G57w10-S raw 0x00487A10 IUnknown 占位清除
     long long GetTraversability();  // 0x487CB0
     int GetSlopeIndex();  // 0x487D50
     int IsBridge2();  // 0x487DF0
@@ -172,21 +172,21 @@ struct Cell {
     int Exists(MouseClass * aP1);  // 0x5657E0
     int CoordToIndex(int16_t *aP1);
     int SetRadar(int16_t *aP1);
-    static AbstractClass * * UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3);  // 0x56E990
-    static ObjectClass * * SetTileType(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, int a5);  // 0x56EB80
-    int IsPassableAllied(IUnknown * aP0, IUnknown * aP1);  // 0x578AD0
+    char UpdateTileType(__int16 *a1, int a2, int a3);  // G57w10-S raw 0x0056E990 IUnknown 占位清除
+    char SetTileType(__int16 *a1, int a2, int a3, int a4, int a5);  // G57w10-S raw 0x0056EB80 IUnknown 占位清除
+    char IsPassableAllied(int a1, __int16 *a2);  // G57w10-S raw 0x00578AD0 IUnknown 占位清除
     static HouseClass * * GetAdjacencyFlags(MouseClass * aP0);  // 0x579B70
     int GetTerrainMask(int *aP1, int a3);  // 0x57B210
     void * Clear(void *a1_1);  // 0x5A9940
     int IsWalkable(unsigned short * a2, char a3);  // 0x6B5F80
     void* CreateCrater(void *a1, void *a2_1, void *a3_1, void *a4_1, void *a5_1);  // 0x6D2790 (G42.35m: IUnknown placeholder -> void*)
-    static CellStruct * * GetAdjacentPassableMask(IUnknown * aP0, int a2);  // 0x6D8700
+    int GetAdjacentPassableMask(__int16 *a1, int a2);  // G57w10-S raw 0x006D8700 IUnknown 占位清除
     unsigned short * GetHeight(int *aP1, int *a2);  // 0x4265B0
     unsigned int * GetWorldCoords(unsigned int *a2, int a3);  // 0x68BD00
     BOOL IsPassableOffset(int aP1);  // 0x4870D0
-    int PosToLinearIndex(IUnknown * aP0);  // 0x56BC50
+    int PosToLinearIndex(__int16 *a1);  // G57w10-S raw 0x0056BC50 IUnknown 占位清除
     int DecodeFlags();  // 0x56CB80
-    static int GetGroundHeight(...);  // 0x578080
+    static __int64 GetGroundHeight(unsigned int *a1);  // G57w10-S raw 0x00578080 (was C2597 interim stub)
     static int IsPassable(unsigned int *a1);  // 0x586360
     unsigned int * IsBridge();  // 0x47c520
     unsigned int q_4C4;  // +0x4C4 flat supply (final pass)

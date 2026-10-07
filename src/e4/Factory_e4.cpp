@@ -28,6 +28,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
 
 // 0x663D60
 namespace gamemd {
@@ -234,7 +235,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
       a5 = (void *)((gamemd::CellClass *)(a5));
       v79 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(v6[12])));
       v22 = (gamemd::CellClass *)(((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(&v74));
-      v23 = ObjectPlacement::CalcPosition((ObjectPlacement *)v22, &v80, &v74, a5, v67[0], 0); /*0x718e25*/
+      v23 = ObjectPlacement::CalcPosition((ObjectPlacement *)v22, &v80, &v74, (char)(intptr_t)a5, v67[0], 0); /*0x718e25 G57w10 raw a4=char*/
       *v8 = *v23; /*0x718e32*/
       v6[11] = v23[1]; /*0x718e3b*/
       v6[12] = v23[2]; /*0x718e41*/

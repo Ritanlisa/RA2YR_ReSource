@@ -9,6 +9,8 @@ struct ParticleSystemTypeClass;  // fix_fwd_type_supply
 struct VectorClass_flat;  // fix_fwd_type_supply
 
 struct ParticleSystemClass {
+    static int CreateParticle(void *aP1, void *a2, void *a3);  // 0x62E380 raw: int CreateParticle(ParticleSystemClass*, _DWORD*, _DWORD*)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4

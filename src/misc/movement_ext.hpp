@@ -168,6 +168,7 @@ public:
 
     virtual void AStar(); // 0x42C290
     virtual void CalcDistance(); // 0x42D170
+    static int CalcDistance(Pathfinding * aP1, short *a2, short *a3, int a4, int a5, int a6, int a7);  // 0x42D170 static-call twin (g57w10; mirrors e4 Pathfinding_e4 G57w10-S supply)
     virtual void SiftDown(); // 0x42DCA0
     virtual void CrossBridge(); // 0x583180
     virtual void SelectRegionPath(); // 0x5833F0

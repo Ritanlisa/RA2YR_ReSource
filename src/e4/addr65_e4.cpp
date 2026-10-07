@@ -1581,7 +1581,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   v12 = a2  !=  (void *)(-1); /*0x65d9ac*/
   v12 = v12; /*0x65d9b1*/
   if ( v12 ) /*0x65d9b5*/
-    Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (unsigned int *)(v48), *(int *)v48); /*0x65d9c7*/
+    Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (int *)(v48), *(int *)v48); /*0x65d9c7*/
   else
     Waypoint_Location = (int *)(((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords((unsigned int *)(v48))); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
@@ -2099,7 +2099,7 @@ void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, in
       *(unsigned char *)(v12 + 980) = 1; /*0x65e6be*/
       TransitionCount = *(int **)&a1->__pad_13C[164]; /*0x65e6c5*/
       if ( (unsigned int)TransitionCount >= 4 ) /*0x65e6cd*/
-        TransitionCount = (int *)HouseClass::GetTransitionCount(a1); /*0x65e6d6*/
+        TransitionCount = (int *)HouseClass::GetTransitionCount((void *)a1); /*0x65e6d6*/
       v15 = *CellClass::FindOpenNeighbor( /*0x65e6fb*/
                (CellClass *)&v27,
                a3,
@@ -2195,7 +2195,7 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
   v28 = (HouseClass *)(a1); /*0x65e869*/
   v31 = v10; /*0x65e86f*/
   if ( (unsigned int)TransitionCount >= 4 ) /*0x65e873*/
-    TransitionCount = (int *)HouseClass::GetTransitionCount(a1); /*0x65e87c*/
+    TransitionCount = (int *)HouseClass::GetTransitionCount((void *)a1); /*0x65e87c*/
   v30 = *CellClass::FindOpenNeighbor( /*0x65e8a6*/
            (CellClass *)&v29,
            a3,
@@ -3721,7 +3721,7 @@ int globalHelper_05EAB0(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a
       *(unsigned char *)(v9 + 980) = 1; /*0x65eb10*/
       TransitionCount = *(int **)&a1->__pad_13C[164]; /*0x65eb17*/
       if ( (unsigned int)TransitionCount >= 4 ) /*0x65eb1f*/
-        TransitionCount = (int *)HouseClass::GetTransitionCount(a1); /*0x65eb28*/
+        TransitionCount = (int *)HouseClass::GetTransitionCount((void *)a1); /*0x65eb28*/
       v12 = *CellClass::FindOpenNeighbor( /*0x65eb4d*/
                (CellClass *)&v19,
                a3,

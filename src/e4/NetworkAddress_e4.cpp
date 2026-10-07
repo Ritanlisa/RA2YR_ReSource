@@ -11,7 +11,7 @@
 
 // 0x53ECE0
 namespace gamemd {
-int NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, int16_t a4)
+unsigned int * NetworkAddress::Assign(unsigned int *a1, int aP2, __int16 a4)
 {
 
   unsigned int *result; // eax
@@ -30,7 +30,7 @@ int NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, int16_t a4)
     *result = 0; /*0x53ed13*/
     *(unsigned short *)result = a4; /*0x53ed19*/
   }
-  return (int)(result); /*0x53ecf3*/
+  return (unsigned int *)((int)(result); /*0x53ecf3*/);
 
 }
 } // namespace gamemd

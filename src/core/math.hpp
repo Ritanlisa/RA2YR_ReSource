@@ -143,6 +143,8 @@ struct Matrix3D
     float Data[12] = {};  // data: 0x840b4c
     unsigned char __pad_0;  // 0x0
     unsigned int q080;  // 0x80
+    unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float 元素词表)
+    unsigned int u32_8;   // 0x8 (raw fld [esi+8])
     unsigned int u32_10;  // 0x10
     unsigned int u32_18;  // 0x18
     unsigned int u32_28;  // 0x28

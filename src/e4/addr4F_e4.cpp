@@ -72,6 +72,7 @@
 #include "classes/DSurface_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/classes/ThemeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/GraphicMenuItem_e4.hpp"  // G57w10 D supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aActiverect[];  // data: 0x824240 truth(IDA G42.57w9)
 extern char aAlt[];  // data: 0x82437c truth(IDA G42.57w9)
@@ -951,7 +952,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     if ( v18 )
     {
       v20 = (unsigned int *)RA2_OPNEW(0x3Cu); /*0x4f352f*/
-      v21 = v20 ? MSPCXAnim::Construct(v20, v17, (int)(v12 + 6), v19, 1) : 0;
+      v21 = v20 ? MSPCXAnim::Construct(v20, (void *)v17, (int)(v12 + 6), v19, 1) : 0;
       *(unsigned int *)(this + 40) = (unsigned int)v21; /*0x4f3550*/
       if ( v21 ) /*0x4f3553*/
       {
@@ -963,7 +964,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     if ( ((String *)a6)->Length() )
     {
       v23 = (unsigned int *)RA2_OPNEW(0x3Cu); /*0x4f357a*/
-      v24 = v23 ? MSPCXAnim::Construct(v23, v22, (int)(v12 + 6), v19, 1) : 0;
+      v24 = v23 ? MSPCXAnim::Construct(v23, (void *)v22, (int)(v12 + 6), v19, 1) : 0;
       *(unsigned int *)(this + 36) = (unsigned int)v24; /*0x4f359b*/
       if ( v24 ) /*0x4f359e*/
         ((PriorityQueue *)v12)->Add( (int)v24); /*0x4f35a3*/
@@ -973,7 +974,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
     {
       v26 = (unsigned int *)RA2_OPNEW(0x3Cu); /*0x4f35b9*/
       if ( v26 ) /*0x4f35c3*/
-        v27 = MSPCXAnim::Construct(v26, v25, (int)(v12 + 6), v19, 1); /*0x4f35cf*/
+        v27 = MSPCXAnim::Construct(v26, (void *)v25, (int)(v12 + 6), v19, 1); /*0x4f35cf*/
       else
         v27 = (unsigned int *)(0); /*0x4f35d6*/
       *(unsigned int *)(this + 44) = (unsigned int)v27; /*0x4f35da*/
@@ -1523,7 +1524,7 @@ int sub_4F1B80(char ** a1, int a2)
       Vector::Clear((int)v8); /*0x4f1c7d*/
       *(unsigned int *)v7.CDFileClass = (unsigned int)&off_7E1668;
       ((BufferIOFileClass *)&v7)->Dtor(); /*0x4f1c8e*/
-      return v4; /*0x4f1c93*/
+      return (int)(v4; /*0x4f1c93*/);
     }
     else
     {

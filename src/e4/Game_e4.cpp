@@ -1244,7 +1244,7 @@ LABEL_22:
 }
 // 0x67C3A0
 namespace gamemd {
-unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
+unsigned int * Game::LockMutex(int aP1, int aP2)
 {
 
   this->Game_field_0x4 = 0; /*0x67c3ab*/

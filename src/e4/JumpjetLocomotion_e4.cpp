@@ -30,7 +30,7 @@
 
 // 0x4B0AD0
 namespace gamemd {
-AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
+char JumpjetLocomotion::MoveTo(int aP1, unsigned int *aP3, int a3_1)
 {
 
   unsigned int *v3; // edx
@@ -90,7 +90,7 @@ AbstractClass * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3, void *a3_1)
                 LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&this->q00C + 244))( /*0x4b0bbf*/
                                *((unsigned int *)this + 3),
                                (unsigned int *)aP1);
-                return (gamemd::AbstractClass *)(v5);
+                return (char)((gamemd::AbstractClass *)(v5));
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
               {
@@ -121,7 +121,7 @@ LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&thi
 
     }
   }
-  return (gamemd::AbstractClass *)(v5);
+  return (char)((gamemd::AbstractClass *)(v5));
 
 }
 }

@@ -177,7 +177,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3);  // 0x59097
     VectorClass_flat * * PlaceMapSeedBuildings();  // 0x5A80B0
     AbstractClass * * RegenerateRandomMapPreview();  // 0x5B9C90
     unsigned int * PlaceTileSet();  // 0x6558D0
-    int RemoveMatching(IUnknown * aP1);  // 0x74EF10
+    int RemoveMatching(int a2);  // G57w10-S raw 0x0074EF10 IUnknown 占位清除
     wchar_t * ddtor();  // 0x42F420
     unsigned int Write(int a2);  // 0x42F450
     unsigned int * Seek(unsigned int * a2, int a3, void *a3_2);  // 0x42F470

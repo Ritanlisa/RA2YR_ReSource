@@ -282,6 +282,7 @@ protected:
     TeamClass*         team;
     FootClass*         nextTeamMember;
     uint32_t           FootClass_field_5DC;
+public:  // g57w10: locomotion-family access (0x51456a; binary flat-access)
     int32_t            pathDirections[24];
     TimerStruct        pathDelayTimer;
     int32_t            FootClass_field_int_64C;
@@ -292,6 +293,7 @@ public:
     YRComPtr           locomotor;   // YRpp: public (written by LocomotionClass::ChangeLocomotorTo)
 protected:
     CoordStruct        unknownPoint3d678;
+public:  // g57w10: locomotion-family access (0x51470d; binary flat-access)
     signed char        tubeIndex;
     bool               unknownBool685;
     signed char        waypointIndex;
@@ -320,6 +322,7 @@ protected:
     bool               FootClass_field_bool_6B3;
     bool               FootClass_field_bool_6B4;
     bool               FootClass_field_bool_6B5;
+public:  // g57w10: locomotion-family access (0x51451e/0x514528; binary flat-access)
     bool               frozenStill;
     bool               FootClass_field_bool_6B7;
     bool               FootClass_field_bool_6B8;

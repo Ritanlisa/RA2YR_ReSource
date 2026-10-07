@@ -47,6 +47,8 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FootClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
+#include "e4/classes/CSFClass_e4.hpp"  // G57w10 D supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aMissingHs[];  // data: 0x845820 truth(IDA G42.57w9)
 extern unsigned int a2;  // data: 0x822bc0 truth(IDA G42.57w9)
@@ -1635,7 +1637,7 @@ wchar_t * GetStringCSF(wchar_t *Format, unsigned int *a2, const char *aP3, int a
   if ( a2 ) /*0x734e68*/
     *a2 = 0; /*0x734e6a*/
   if ( !dword_B1CF74 ) /*0x734e77*/
-    return aFatalStringMan; /*0x734e7a*/
+    return (wchar_t *)(aFatalStringMan; /*0x734e7a*/);
   v7 = (unsigned int *)(bsearch(Format,(const void *)( dword_B1CF74), dword_B1CF6C, 0x28u, _strcmpi)); /*0x734e93*/
   if ( v7 ) /*0x734e9d*/
   {

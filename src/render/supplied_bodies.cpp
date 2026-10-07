@@ -341,7 +341,7 @@ int BuildingQueue::AllocSlot(int a2)
     if ( FreeSlot == -1 ) /*0x42eb30*/
       return 0; /*0x42eb3e*/
     else
-      return this->BuildingQueue_field_0x08 + 16 * FreeSlot; /*0x42eb39*/
+      return (int)(this->BuildingQueue_field_0x08 + 16 * FreeSlot; /*0x42eb39*/);
 }
 } // namespace gamemd
 
@@ -1531,7 +1531,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3)
     }
     else
     {
-      (*(void (__thiscall **)(_VectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4d2b07*/
+      (*(void (__thiscall **)(_VectorClass_UDrawRecord_FoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))( (_VectorClass_UDrawRecord_FoggedObjectClass *)(this) ); /*0x4d2b07*/
       return 1; /*0x4d2b0d*/
     }
 }
@@ -2271,7 +2271,7 @@ unsigned int * VoxelAnimTypeVector::Constructor(int a2, int a3)
       *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x67c34d*/
       *((unsigned char *)this + 13) = 1; /*0x67c350*/
     }
-    return this; /*0x67c33d*/
+    return (unsigned int *)(this; /*0x67c33d*/);
 }
 } // namespace gamemd
 

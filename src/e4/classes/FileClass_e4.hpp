@@ -28,7 +28,7 @@ struct FileClass {
     int StubReturnFalse();
     int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);
     unsigned int * loc_401950();
-     double Load(...);  // C2597 interim stub
+     int Load(FileClass * aP1, const char * a2);  // G57w10-S raw 0x473D10 (was C2597 interim stub)
     int Write2(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite);  // 0x65cdd0
     int Open2(const CHAR *a2);  // 0x65cb50
     static const char * SetName(void * aP0, char * aP1);  // 0x65CAC0 thiscall static-form sync (G42.33 b3)

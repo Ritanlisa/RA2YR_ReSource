@@ -118,7 +118,7 @@ bool Weapon_Update(void * a1, void * a2)
 }
 // 0x70C690
 namespace gamemd {  // G42.18c ns repair
-AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
+int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
 {
 
   int *v5; // eax

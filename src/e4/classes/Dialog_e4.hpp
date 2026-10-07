@@ -22,6 +22,8 @@ struct AnimClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
 struct Dialog {
+    static int TabControlPaint(int a1, int a2, int a3, int a4);  // 0x6137D0 raw: LRESULT __stdcall Dialog_TabControlPaint(HWND,UINT,WPARAM,LPARAM) fn-ptr site form  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4

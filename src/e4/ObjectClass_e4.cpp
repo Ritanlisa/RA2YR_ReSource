@@ -703,7 +703,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
   if ( (unsigned char)a4 && v35 == 2 ) /*0x4de3cb*/
   {
     if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*v7 + 132))( (unsigned int *)(v7)) + 3372) /*0x4de3f7*/
-      || (v22 = (*(int (**)(unsigned int *))(*v7 + 456))( (unsigned int *)(v7)), a2 = (unsigned int *)1, v22 >= 0) )
+      || (v22 = (*(int (**)(unsigned int *))(*v7 + 456))( (IUnknown **)(v7)), a2 = (unsigned int *)1, v22 >= 0) )
     {
       a2 = (IUnknown **)(0); /*0x4de3f9*/
     }
@@ -938,7 +938,7 @@ namespace gamemd {
 void ObjectClass::ObjectClass_GetTypeVt41_0()
 {
 
-  return ObjectClass::GetTypeVt41(int a1) ;
+  return ObjectClass::GetTypeVt41((ObjectClass *)this);
 
 }
 }
@@ -1118,7 +1118,7 @@ int ObjectClass::DropAsBomb_Track()
         v4 = this->field_0; /*0x5f41f1*/
         v5[1] = *(unsigned int *)this->__pad_A0; /*0x5f41f6*/
         v5[2] = this->field_A4; /*0x5f4204*/
-        return (*(int (**)(IUnknown *, unsigned int *))(v4 + 244))( this, (unsigned int *)(v5)); /*0x5f4208*/
+        return (*(int (**)(IUnknown *, unsigned int *))(v4 + 244))( this, (unsigned int *)( (IUnknown *)(v5) )); /*0x5f4208*/
       }
     }
   }
@@ -2174,7 +2174,7 @@ namespace gamemd {
 void ObjectClass::ObjectClass_GetTypeVt41_2()
 {
 
-  return ObjectClass::GetTypeVt41(int a1) ;
+  return ObjectClass::GetTypeVt41((ObjectClass *)this);
 
 }
 }

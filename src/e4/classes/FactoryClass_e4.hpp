@@ -7,6 +7,8 @@
 namespace gamemd {
 
 struct FactoryClass {
+    static char RemoveItem(void *aP1, int a2);  // 0x63F000 raw: char __thiscall FactoryClass::RemoveItem(FactoryClass*, int)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -52,7 +54,7 @@ struct FactoryClass {
     AbstractClass * * Stat(int * a2);
     char GetFlag();
     char RemoveOneFromQueue(char a2);
-    int CountType(IUnknown * aP1);
+    int CountType(int a2);  // G57w10-S raw 0x004CA670 IUnknown 占位清除
     int DemandProduction(int a2, void * a3, char a4);
     int FinishProduction(int a2);
     int GetBuildTimeFrames();
@@ -70,7 +72,7 @@ struct FactoryClass {
     int UpdateProduction();
     int ddtor(int a1, unsigned int * a2);
     void * CopyTo(char a2);
-    static double AbandonProduction(...);  // C2597 interim stub
+    static char AbandonProduction(FactoryClass * aP1);  // G57w10-S raw 0x4C9FF0 (was C2597 interim stub)
     int ClearObjects();  // 0x635120
     wchar_t * ResetProductionTimers();  // 0x6b0c80
     unsigned int * CompleteItem();  // 0x71abc0

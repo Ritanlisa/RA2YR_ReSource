@@ -1065,7 +1065,7 @@ int TechnoClass::HasVoiceResponse(int weaponIndex)
     if ( !(unsigned char)result ) /*0x70d0ef*/
       goto LABEL_10; /*0x70d0ef*/
   }
-  v5 = (*(int (**)(int *))(*(unsigned int *)this + 132))(this); /*0x70d0fd*/
+  v5 = (*(int (**)(int *))(*(unsigned int *)this + 132))( (int *)(this) ); /*0x70d0fd*/
   result = Audio::IsMediumVolume(v3); /*0x70d0ff*/
   if ( (unsigned char)result && *(unsigned char *)(v5 + weaponIndex + 668) ) /*0x70d10c*/
   {

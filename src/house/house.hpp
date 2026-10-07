@@ -109,6 +109,9 @@ struct CounterClass
 {
     int32_t* items;
     int32_t  count;
+    unsigned int u32_8;   // g57w10 C2039 supply (ml offset 8)
+    unsigned int u32_C;   // ml offset 12
+    unsigned int u32_D;   // ml offset 13
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct();  // 0x49F9B0
     int Decrement(int a1);  // 0x49FA70
@@ -596,26 +599,20 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int updateBuildingProduction(void* a1, void* a2, int a3);  // 0x4759D0
     int MarkCellBuildable(int a1);  // 0x483410
     int checkAutoProduction();  // 0x483460
-    bool HasType();  // 0x4870F0
+    bool HasType(int a2);  // 0x4870F0 (g57w10 r4: raw int(this,int); 前 0 参声明 stale)
     int FindHouseIndexByName();  // 0x48DB80
     void* initDropshipData();  // 0x4B69B0
     int RegisterForSwizzleTracking();  // 0x4B6BB0
     int UpdateTeamProductionSpeed();  // 0x4CA6E0
-    void COMStub_3();  // 0x4E8290
-    int COMStub_5(int a1);  // 0x4E82C0
-    int COMStub_6(int a1);  // 0x4E82E0
-    int COMStub_1(int a1);  // 0x4E9200
-    int COMStub_2(int a1, void* a2);  // 0x4E9380
-    int COMStub_4(void* a1);  // 0x4E9430
-    void* COMStub_0(int a1);  // 0x4EF530
+    // g57w10 r4: 0x4E8290/82C0/82E0/9200/9380/9430/EF530 COMStub 族已归属修正 --
+    // raw fn_4E 段头真 this=DynamicVector/VectorClass<TagClass*> (前误挂 HouseClass),
+    // 载体 = gap2_defs.cpp TU-local TagClassVectorHost
     void processTargetSelection();  // 0x4F21A0
     void* vt_placeholder_03(int a1);  // 0x4F2810
     void* vt_placeholder_04(int a1);  // 0x4F2830
-    void vt_placeholder_05();  // 0x4F2850
-    int vt_placeholder_06(int a1);  // 0x4F2880
-    int processWaypointPlanning(int a1, void* a2);  // 0x4F2A60
-    int vt_placeholder_08(void* a1);  // 0x4F2B10
-    void* vt_placeholder_11(int a1);  // 0x4F2BB0
+    // g57w10 r4: 0x4F2850/2880/2A60/2B10/2BB0 已归属修正 -- raw fn_4F 段头真
+    // this=DynamicVector<GraphicMenuItem*> (前误挂 HouseClass), 载体 = gap2_defs.cpp
+    // TU-local GraphicMenuItemVectorHost (0x4F2810/2830 raw this=HouseClass 真身保留)
     int Constructor(int a1);  // 0x4F5190
     int Construct(int a1);  // 0x4F54A0
     int SetCombatPower(int a1);  // 0x4F6EC0

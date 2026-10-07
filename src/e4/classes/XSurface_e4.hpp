@@ -37,9 +37,9 @@ struct XSurface {
     int vt_entry_40(int a1);
     int vt_entry_68();
     void* WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5_len, int a6, int a7, int a8, int a9, int a10);
-    static double Fill(...);  // C2597 interim stub
-    static double GetPixel(...);  // C2597 interim stub
-    static double SetPixel(...);  // C2597 interim stub
+    static int Fill(XSurface * aP1, int a2);  // G57w10-S raw 0x007BBAB0 (was C2597 interim stub)
+    static int GetPixel(XSurface * aP1, unsigned int *a2);  // G57w10-S raw 0x007BAE60 (was C2597 interim stub)
+    static int SetPixel(XSurface * aP1, unsigned int *a2, __int16 a3);  // G57w10-S raw 0x007BAEB0 (was C2597 interim stub)
     void* WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10);
 };
 

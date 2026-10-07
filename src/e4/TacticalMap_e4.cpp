@@ -43,6 +43,7 @@
 #include "e4/classes/Vector2_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BuildingClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/IsoCoord_e4.hpp"  // G57w10 D supply
 
 // 0x484680
 namespace gamemd {

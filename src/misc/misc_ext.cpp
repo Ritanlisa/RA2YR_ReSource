@@ -567,35 +567,35 @@ int AnimSequence::Parse()
                32) > 0 )
         {
           sscanf(Buffer, "%d,%d,%d,%s", v5 - 3, v5 - 2, v5 - 1, &v15); /*0x523db0*/
-          if ( !strcmp(aN, &v15) ) /*0x523dc7*/
+          if ( !strcmp( (const char *)(aN), &v15 ) ) /*0x523dc7*/
           {
             *v5 = 0; /*0x523dee*/
           }
-          else if ( !strcmp(aNe, &v15) ) /*0x523e05*/
+          else if ( !strcmp( (const char *)(aNe), &v15 ) ) /*0x523e05*/
           {
             *v5 = 1; /*0x523e2c*/
           }
-          else if ( !strcmp(aE, &v15) ) /*0x523e47*/
+          else if ( !strcmp( (const char *)(aE), &v15 ) ) /*0x523e47*/
           {
             *v5 = 2; /*0x523e6e*/
           }
-          else if ( !strcmp(aSe, &v15) ) /*0x523e89*/
+          else if ( !strcmp( (const char *)(aSe), &v15 ) ) /*0x523e89*/
           {
             *v5 = 3; /*0x523eb0*/
           }
-          else if ( !strcmp(aS_5, &v15) ) /*0x523ecb*/
+          else if ( !strcmp( (const char *)(aS_5), &v15 ) ) /*0x523ecb*/
           {
             *v5 = 4; /*0x523ef2*/
           }
-          else if ( !strcmp(aSw, &v15) ) /*0x523f0d*/
+          else if ( !strcmp( (const char *)(aSw), &v15 ) ) /*0x523f0d*/
           {
             *v5 = 5; /*0x523f34*/
           }
-          else if ( !strcmp(g_Str_W, &v15) ) /*0x523f4c*/
+          else if ( !strcmp( (const char *)(g_Str_W), &v15 ) ) /*0x523f4c*/
           {
             *v5 = 6; /*0x523f73*/
           }
-          else if ( !strcmp(aNw, &v15) ) /*0x523f8b*/
+          else if ( !strcmp( (const char *)(aNw), &v15 ) ) /*0x523f8b*/
           {
             *v5 = 7; /*0x523fb2*/
           }
@@ -609,15 +609,15 @@ int AnimSequence::Parse()
                Buffer,
                32) > 0 )
         {
-          v7 = strtok(Buffer, asc_8258AC); /*0x524000*/
+          v7 = strtok( Buffer, (const char *)(asc_8258AC) ); /*0x524000*/
           while ( v7 ) /*0x52400a*/
           {
             v8 = atoi(v7); /*0x524019*/
-            v9 = strtok(0, asc_8258AC); /*0x52401b*/
+            v9 = strtok( 0, (const char *)(asc_8258AC) ); /*0x52401b*/
             if ( !v9 ) /*0x524025*/
               break; /*0x524025*/
             Index = VocClass::FindIndex((VocClass *)v9); /*0x524035*/
-            v7 = strtok(0, asc_8258AC); /*0x524037*/
+            v7 = strtok( 0, (const char *)(asc_8258AC) ); /*0x524037*/
             if ( Index != -1 ) /*0x524042*/
             {
               v11 = v5[1]; /*0x524044*/
@@ -673,12 +673,12 @@ int AnimTypeVector::Constructor(int a2, int a3)
       if ( a3 ) /*0x5256a6*/
       {
         *((unsigned int *)this + 1) = a3; /*0x5256a8*/
-        return this; /*0x5256ae*/
+        return (int)(this; /*0x5256ae*/);
       }
       *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x5256bd*/
       *((unsigned char *)this + 13) = 1; /*0x5256c0*/
     }
-    return this; /*0x5256ad*/
+    return (int)(this; /*0x5256ad*/);
 }
 // 0x595710
 // G42 T9: body quarantined -- q03C member absent from tree CSFClass.
@@ -747,11 +747,11 @@ int CSFClass::LoadFile()
     dword_B1CF68 = (int)this; /*0x7346d0*/
     dword_B1CF80 = 1; /*0x7346dd*/
     dword_B1CF58 = 0; /*0x7346e7*/
-    strcpy(byte_B13EB0, this); /*0x73470a*/
+    strcpy( (char *)(byte_B13EB0), this ); /*0x73470a*/
     v2 = strchr(byte_B13EB0, 46); /*0x734713*/
     if ( v2 ) /*0x73471d*/
       *v2 = 0; /*0x73471f*/
-    strcat(byte_B13EB0, aCsf); /*0x73474b*/
+    strcat( (char *)(byte_B13EB0), aCsf ); /*0x73474b*/
     CCFileClass::Construct(v10, byte_B13EB0); /*0x734758*/
     v3 = 0; /*0x73475d*/
     if ( !CCFileClass::Open(v10, 0) || !FileClass::Load(v10, 1) ) /*0x734777*/
@@ -797,7 +797,7 @@ int CSFClass::LoadFile()
       return 0; /*0x7348ac*/
     memset(v6, 0, 4 * dword_B1CF70); /*0x7348ba*/
     File::ParseCSFString(byte_B13EB0); /*0x7348c1*/
-    qsort(dword_B1CF74, dword_B1CF6C, 0x28u, _strcmpi); /*0x7348db*/
+    qsort( (void *)(dword_B1CF74), dword_B1CF6C, 0x28u, _strcmpi ); /*0x7348db*/
     Debug::Log(); /*0x7348eb*/
     v7 = dword_845678; /*0x7348f0*/
     for ( i = &dword_845678; v7 != 10; i += 4 ) /*0x734901*/

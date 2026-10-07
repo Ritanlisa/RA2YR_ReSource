@@ -1072,7 +1072,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                   v67 = v51[2]; /*0x516b30*/
                   if ( Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v65)->landType != 10 ) /*0x516b46*/
                   {
-                    (*(void (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))((unsigned int *)&this->m_Target + 1); /*0x516b4f*/  // g57e2 W3
+                    (*(void (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))(( (int *)(unsigned int *) )&this->m_Target + 1); /*0x516b4f*/  // g57e2 W3
                     return (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))( /*0x516b6a*/
                              this->m_State,
                              0,
@@ -1157,7 +1157,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
           v25[403] = v26 - 1; /*0x5167cd*/
         }
       }
-      if ( !(*(unsigned __int8 (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 16))((unsigned int *)&this->m_Target + 1) ) /*0x516829*/  // g57e2 W3
+      if ( !(*(unsigned __int8 (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 16))(( (int *)(unsigned int *) )&this->m_Target + 1) ) /*0x516829*/  // g57e2 W3
       {
         v27 = (unsigned int *)this->m_State; /*0x516830*/
         if ( v27[173] ) /*0x516833*/
@@ -1181,7 +1181,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
         *((unsigned int *)this + 10) = *(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x5168b5*/
         *((unsigned int *)this + 11) = *(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x5168bd*/
       }
-      return (*(int (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))((unsigned int *)&this->m_Target + 1); /*0x5168c3*/  // g57e2 W3
+      return (*(int (__stdcall **)(int *))(((unsigned int *)&this->m_Target)[1] + 72))(( (int *)(unsigned int *) )&this->m_Target + 1); /*0x5168c3*/  // g57e2 W3
     }
     return result; /*0x5166dd*/
 }

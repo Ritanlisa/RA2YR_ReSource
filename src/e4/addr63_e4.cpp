@@ -121,6 +121,8 @@
 #include "e4/classes/RulesClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/SuperWeaponClass_e4.hpp"  // G57w10 D supply
+#include "e4/classes/PlanManager_e4.hpp"  // G57w10 D supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aMsgPlanningmod_4;  // data: 0x836d60 truth(IDA G42.57w9)
 extern unsigned int aMsgPostloop;  // data: 0x836bf0 truth(IDA G42.57w9)
@@ -2955,7 +2957,7 @@ void* DrawTacticalLine2D(int a1, ObjectClass * aP1, int aP0, int aP0_4, int aP0_
     if ( aP0_16 ) /*0x63d8b6*/
     {
       Time = timeGetTime(); /*0x63d8b8*/
-return (*(int (**)(int, int *, int *, int, void *, int))(*(unsigned int *)DSurface_Composite + 72))( /*0x63d8e3*/ DSurface_Composite, (int *)(&aP0), (int *)(&aP0_8), (int)(aP1), (void *)(&unk_836880), ((signed int)-Time >> 5) & 0xF);
+return (void *)((*(int (**)(int, int *, int *, int, void *, int))(*(unsigned int *)DSurface_Composite + 72))( /*0x63d8e3*/ DSurface_Composite, (int *)(&aP0), (int *)(&aP0_8), (int)(aP1), (void *)(&unk_836880), ((signed int)-Time >> 5) & 0xF));
 
 
 
@@ -2965,7 +2967,7 @@ return (*(int (**)(int, int *, int *, int, void *, int))(*(unsigned int *)DSurfa
     }
     else
     {
-return (*(int (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x63d903*/ DSurface_Composite, (int *)(&aP0), (int *)(&aP0_8), (int)(aP1));
+return (void *)((*(int (**)(int, int *, int *, int))(*(unsigned int *)DSurface_Composite + 48))( /*0x63d903*/ DSurface_Composite, (int *)(&aP0), (int *)(&aP0_8), (int)(aP1)));
 
 
 

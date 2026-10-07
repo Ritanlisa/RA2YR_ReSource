@@ -24,6 +24,11 @@ struct Coord;  // fix_fwd_type_supply
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct TechnoClass {
+    static void Find(int aP1, int aP2);  // 0x50E010 raw: void __thiscall sub_50E010(int this, int a2)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int GetTypeVt40(void *aP1);  // 0x70F070 raw: int __thiscall TechnoClass::GetTypeVt40(TechnoClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int CalcOffsetFacing(void *aP1);  // 0x70BE50 raw: int __thiscall TechnoClass::CalcOffsetFacing(TechnoClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int ComputeScanRange(void *aP1, double a2);  // 0x48AB90 raw: __int64 __thiscall(TechnoClass*, double) site int-result form  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -312,21 +317,21 @@ struct TechnoClass {
     TechnoClass(AbstractClass * aP1);
     unsigned int * Update(int a2);
     bool GetField(void *a1, void *a2);
-    void updateSightRange(IUnknown * aP1, int a3);
-    static double GetTileAnimationData(...);  // C2597 interim stub
-    static double InvulnerabilityIntensity_SetContext(...);  // C2597 interim stub
-    static double MutateAll(...);  // C2597 interim stub
-    static double SetFocus(...);  // C2597 interim stub
-    static double EjectPassengers(...);  // C2597 interim stub
-    static double CreatePlanningNode(...);  // C2597 interim stub
-    static double IsDeployed(...);  // C2597 interim stub
-    static double IsWaypointHidden(...);  // C2597 interim stub
-    static double FindClosestPlacementCell(...);  // C2597 interim stub
-     double GetValue(...);  // C2597 interim stub
-    static double CreateFireEffect(...);  // C2597 interim stub
-    static double CreateRadarBlip(...);  // C2597 interim stub
+    void updateSightRange(unsigned __int8 *a2, int a3);  // G57w10-S raw 0x004C2BD0 IUnknown 占位清除
+    static char GetTileAnimationData(TechnoClass * aP1, int a2, unsigned int *a3, unsigned int *a4);  // G57w10-S raw 0x00547150 (was C2597 interim stub)
+    static int InvulnerabilityIntensity_SetContext(TechnoClass * aP1, int a2);  // G57w10-S raw 0x0070E380 (was C2597 interim stub)
+    static int MutateAll(TechnoClass * aP1, int a2, int a3);  // G57w10-S raw 0x006B0AE0 (was C2597 interim stub)
+    static int SetFocus(TechnoClass * aP1, int a2);  // G57w10-S raw 0x0070C610 (was C2597 interim stub)
+    static int EjectPassengers(TechnoClass * aP1, char a2);  // G57w10-S raw 0x0070FEE0 (was C2597 interim stub)
+    static int CreatePlanningNode(TechnoClass * aP1);  // G57w10-S raw 0x00638A80 (was C2597 interim stub)
+    static int IsDeployed(TechnoClass * aP1);  // G57w10-S raw 0x006EF9E0 (was C2597 interim stub)
+    static int IsWaypointHidden(TechnoClass * aP1);  // G57w10-S raw 0x006EC300 (was C2597 interim stub)
+    static void * FindClosestPlacementCell(TechnoClass * aP1);  // G57w10-S raw 0x0041A160 (was C2597 interim stub)
+     int GetValue(int a2);  // G57w10-S raw 0x006F3970 (was C2597 interim stub)
+    static char * CreateFireEffect(TechnoClass * aP1, unsigned __int8 *a2, int a3, int a4, int *a5);  // G57w10-S raw 0x006FD210 (was C2597 interim stub)
+    static int CreateRadarBlip(TechnoClass * aP1, unsigned __int8 *a2, int a3, unsigned int *a4);  // G57w10-S raw 0x006FD460 (was C2597 interim stub)
     bool ProcessTarget(int a2);  // 0x50cad0
-    static int CleanupAll(...);  // 0x707cb0
+    static int CleanupAll(TechnoClass * aP1, int a2);  // G57w10-S raw 0x00707CB0 (was C2597 interim stub)
     int IsOwnedByHuman();  // 0x732580
     int CalcFlashAlpha(int a2);  // 0x70e4b0
     int CleanupDirection();  // 0x4db260

@@ -379,7 +379,7 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
   LABEL_6:
     v9 = (char *)RA2_OPNEW(0x33Cu); /*0x68ca15*/
     if ( v9 ) /*0x68ca24*/
-      FontClass::InitMetrics(v9, aP0, a1, aP3, a4, a5, 1); /*0x68ca37*/
+      FontClass::InitMetrics(v9, aP0, (int)(intptr_t)a1, (int)(intptr_t)aP3, a4, a5, 1); /*0x68ca37 G57w10 raw a3/a4=int*/
   }
   v7 = (unsigned int *)(dword_B054D4);
   while ( 1 ) /*0x68c9f6*/

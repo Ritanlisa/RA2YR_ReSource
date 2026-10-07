@@ -714,7 +714,7 @@ void * globalHelper_04BB20(ObjectClass * Source, int a2)
   int v4; // esi
   VoxelAnimTypeClass *v5; // eax
 
-  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x74bb3f*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x74bb3f*/
     return 0; /*0x74bb9c*/
   v4 = 0; /*0x74bb4e*/
   if ( *(int *)(a2 + 16) <= 0 ) /*0x74bb52*/
@@ -901,7 +901,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
     }
     vtable3 = (void (**)(void **))((unsigned int *)this)[0]; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
-    vtable3[3](&((unsigned int *)this)[0]); /*0x74be84*/
+    vtable3[3](&(( (void **)(unsigned int *) )this)[0]); /*0x74be84*/
     return 1; /*0x74be89*/
   }
 

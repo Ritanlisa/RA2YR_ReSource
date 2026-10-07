@@ -8,6 +8,8 @@ namespace gamemd {
 struct DynamicVector;  // fix_fwd_type_supply
 
 struct MapFile {
+    static wchar_t * LoadDescription(void *aP1, void *a2, void *a3);  // 0x69A3B0 raw: wchar_t* LoadDescription(MapFile*, uint8_t***, char*)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4

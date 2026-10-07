@@ -6,6 +6,8 @@
 namespace gamemd {
 
 struct LoadScreen {
+    static int RenderLoop(void *aP1);  // 0x4B6C30 raw: int LoadScreen::RenderLoop(LoadScreen*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4

@@ -206,7 +206,7 @@ struct TechnoTypeClass {
     void * ReadINI(char * Source, int a3, void *a3_2);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();
-    static double HasVoiceResponse(...);  // C2597 interim stub
+    static int HasVoiceResponse(TechnoTypeClass * aP1, int a2);  // G57w10-S raw 0x0070D0D0 (was C2597 interim stub)
     int DTOR(void *a1);
     int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
     TechnoTypeClass * ddtor(void * Block, char a2);

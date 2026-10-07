@@ -195,7 +195,7 @@ int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
     *v4 = *v1; /*0x410508*/
     v4[1] = v1[1]; /*0x41050d*/
     v4[2] = v1[2]; /*0x410514*/
-    return (int)v4; /*0x410510*/
+    return (int *)((int)v4; /*0x410510*/);
 }
 }
 }
@@ -769,7 +769,7 @@ int ObjectClass::Set(void* a1) {
     this->vtable1 = (int)&vt_BufferIOFileClass; /*0x431a8a*/
     if ( ObjectClass::GetMember06((RawFileClass *)this) && IDA_BYTE1(this->owningHouseIndex) ) /*0x431a9a*/
     {
-      if ( !strcmp(Source, (const char *)(*(int (__thiscall **)(ObjectClass *))((char *)this->vtable1 + 4))(this)) ) /*0x431ab7*/
+      if ( !strcmp(Source, (const char *)(*(int (__thiscall **)(ObjectClass *))((char *)this->vtable1 + 4))( (const char *)(this) )) ) /*0x431ab7*/
       {
         (*(void (__thiscall **)(ObjectClass *))((char *)this->vtable1 + 4))(this); /*0x431ae6*/
         return (int)this; /*0x431aed*/
@@ -929,7 +929,7 @@ int AbstractClass::Construct(void* a1) {
             || (IDA_BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[0]) || !((char *)&g_BuildingLoadQueue_Array))
             && ((unsigned int *)&g_BuildingLoadQueue_Array)[2] > 0
             && (*(unsigned __int8 (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 8))(
-                 &((unsigned int *)&g_BuildingLoadQueue_Array)[2],
+                 &(( (char *)(unsigned int *) )&g_BuildingLoadQueue_Array)[2],
                  ((char *)&g_BuildingLoadQueue_Array) + ((unsigned int *)&g_BuildingLoadQueue_Array)[2],
                  0) )
           {

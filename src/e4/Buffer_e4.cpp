@@ -74,7 +74,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
 
   v5 = *((unsigned int *)this + 10); /*0x7bcb60*/
   v52 = this->Buffer_field_10 / 2 % v5; /*0x7bcb72*/
-  if ( (int)abs32((int)(a2)) > v5 || (result = (char *)abs32(aP2), (int)result > *((unsigned int *)this + 11)) ) /*0x7bcb8e*/
+  if ( (int)abs32((int)(a2)) > v5 || (result = (char *)abs32(aP2), (int)result > *(( (int)(unsigned int *) )this + 11)) ) /*0x7bcb8e*/
   {
     v50 = *((unsigned int *)this + 11); /*0x7bcf06*/
     v53 = 0; /*0x7bcf0b*/

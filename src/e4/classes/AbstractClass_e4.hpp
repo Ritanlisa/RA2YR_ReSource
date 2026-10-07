@@ -393,9 +393,9 @@ int DTOR(); // 0x4101F0
     int computeDistanceSquared();  // 0x410490
     int COMStub_Return0_15();  // 0x4104A0
     int COMStub_Return0_16();  // 0x4104B0
-     double Constructor(...);  // C2597 interim stub
-    static double InitVtables(...);  // C2597 interim stub
-    static double IsTechnoType(...);  // C2597 interim stub
+     AbstractClass * Constructor();  // G57w10-S raw 0x00410170 (was C2597 interim stub)
+    static unsigned int * InitVtables(AbstractClass * aP1, int a2);  // G57w10-S raw 0x004101C0 (was C2597 interim stub)
+    static void * IsTechnoType(AbstractClass * aP1);  // G57w10-S raw 0x0040DD70 (was C2597 interim stub)
     int processDetection(int a2);  // 0x439150
     int COMStub_Release(); // N_fix R5 supply (cache truth)
     int COMStub_AddRef(); // N_fix R5 supply (cache truth)

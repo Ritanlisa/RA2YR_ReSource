@@ -1615,7 +1615,7 @@ OverlayTypeClass * * BuildingTypeClass::FindOrCreate2(ObjectClass * Source)
   int v2; // esi
   OverlayTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x5fec8c*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x5fec8c*/
     return 0; /*0x5fecef*/
   v2 = 0; /*0x5fec9d*/
   if ( *(int *)&stru_A83D50.__pad_3C[4] <= 0 ) /*0x5feca1*/
@@ -1626,12 +1626,12 @@ LABEL_6:
       return OverlayTypeClass::OverlayTypeClass(v3, Source); /*0x5fece1*/
     return 0; /*0x5fecd5*/
   }
-  while ( _strcmpi((*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2) + 36), Source) ) /*0x5fecba*/
+  while ( _strcmpi((*(unsigned int *)(*( (const char *)(unsigned int *) )stru_A83D50.__pad_34 + 4 * v2) + 36), Source) ) /*0x5fecba*/
   {
     if ( ++v2 >= *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fecc4*/
       goto LABEL_6; /*0x5fecc4*/
   }
-  return *(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2); /*0x5fecdf*/
+  return (gamemd::OverlayTypeClass **)(*(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2); /*0x5fecdf*/);
 
 }
 } // namespace gamemd
@@ -1643,7 +1643,7 @@ ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet(ObjectClass * Source)
   int v2; // esi
   OverlayTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x6448ac*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x6448ac*/
     return 0; /*0x64490f*/
   v2 = 0; /*0x6448bd*/
   if ( (int)stru_A83D50.SuperClass_field_0x28 <= 0 ) /*0x6448c1*/

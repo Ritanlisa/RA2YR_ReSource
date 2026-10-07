@@ -42,7 +42,7 @@ struct TriggerClass {
     int StubReturn38();
     int StubReturn72();
     int ddtor(int a1, unsigned int * a2);
-    static double NotifyLocalChanged(...);  // C2597 interim stub
+    static void NotifyLocalChanged(TriggerClass * aP1, int a2);  // G57w10-S raw 0x007263D0 (was C2597 interim stub)
     char EvaluateCondition(TriggerClass *a2, unsigned int *a3, char a4);  // 0x41e720
     int ProcessEvents();  // 0x726e00
     int RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0);

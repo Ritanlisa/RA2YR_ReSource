@@ -626,7 +626,7 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
           {
             if ( !v8[361] ) /*0x6afbc2*/
             {
-              InfantryClass::SlaveGiveMoney_RecordBalanceBefore(a1[9]); /*0x6afbd2*/
+              InfantryClass::SlaveGiveMoney_RecordBalanceBefore(((unsigned int *)a1)[9]); /*0x6afbd2*/
               (*(void (**)(int *))(*v8 + 212))( (int *)(v8)); /*0x6afbdb*/
               g_CurrentFrame = g_CurrentFrame; /*0x6afbe1*/
               v55 = a1[13]; /*0x6afbe6*/

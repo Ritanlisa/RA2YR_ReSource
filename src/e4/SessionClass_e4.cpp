@@ -1662,7 +1662,7 @@ AbstractClass * * SessionClass::LoadMissionList()
         cFileName = FindFileData.cAlternateFileName; /*0x699ca3*/
         if ( !strlen(FindFileData.cAlternateFileName) ) /*0x699caa*/
           cFileName = FindFileData.cFileName; /*0x699cb1*/
-        if ( _strcmpi(cFileName, aMissionsYro) ) /*0x699cbe*/
+        if ( _strcmpi( cFileName, (const char *)(aMissionsYro) ) ) /*0x699cbe*/
         {
           v26 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x699cd0*/
           if ( v26 ) /*0x699cda*/

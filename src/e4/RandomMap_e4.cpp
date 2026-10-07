@@ -33,6 +33,8 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
+#include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 
 // 0x486790
 namespace gamemd {

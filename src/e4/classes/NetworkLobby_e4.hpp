@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct NetworkLobby {
+    static int UpdatePlayerList();  // 0x5DB9B0 raw: int NetworkLobby_UpdatePlayerList() [cdecl no-this]  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int UpdatePlayerList(void *aP1);  // 0x5DB9B0 1-arg ptr site form (NetworkLobby_e4 L1894)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char __pad_0;  // 0x0

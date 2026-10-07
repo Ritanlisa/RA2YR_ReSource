@@ -35,6 +35,14 @@ struct VectorClass_flat;  // fix_fwd_type_supply
 struct VectorCursor;  // fix_fwd_type_supply
 
 struct HouseClass {
+    static int ClearLowPowerTargets(void *aP1);  // 0x4FC6D0 raw: int __thiscall HouseClass::ClearLowPowerTargets(HouseClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static void * ClampToUsableCell(void *aP1, void *a2);  // 0x586E50 raw 3-param (HouseClass*, _DWORD*, __int16*) site 2-arg form  // G57w10 r5 D-classbody supply (raw-anchored)
+
+    static int SetCombatPower(void *aP1, int a2);  // 0x4F6EC0 raw: int SetCombatPower(int*, int)
+
+    static char GetColor(void *aP1);  // 0x50B840 raw: char GetColor(char*)
+    static int GetTransitionCount(void *aP1);  // 0x50DA80 raw: int GetTransitionCount(HouseClass*)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -151,7 +159,7 @@ struct HouseClass {
     char ReshroudMap();
     char Set(void *a1, void *a2, void *a3);
     char UpdateAllSilos(int a2, int a3);
-    double GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2);
+    int GiveTiberium_Storage(float a2, int a3);  // G57w10-S raw 0x004F9610 (was C2597 interim stub)
     int COMStub_Ret1_1(int a1);
     static int NetworkConvert(void *aP0);  // 0x749100 G42.33 b5 static-form sync
     static int IncrementStat(void *aP0, unsigned int aP1);  // 0x749020 G42.33 b7 static-form sync
@@ -169,11 +177,11 @@ struct HouseClass {
     int GetCameoTypeIndex(int a2);
     int GetInfSelfHealStep();
     int GetRepairStepAmount();
-    static int GetStatus(...);
+    static int GetStatus(HouseClass * aP1, int a2);  // G57w10-S raw 0x006ABC60 (was C2597 interim stub)
     int GetUnitSelfHealStep();
     int InitAlliances();
     int IsAlliedWith(HouseClass *other);  // G57w4: raw fn_4F.c other@[ebp+4]
-    int IsCellOccupied(IUnknown * aP1, char a3);
+    int IsCellOccupied(int a2, char a3);  // G57w10-S raw 0x004FBE40 IUnknown 占位清除
     int MakeAlly(int a2, char a3);
     int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);
     int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
@@ -200,18 +208,18 @@ struct HouseClass {
     void LostPoweredCenter(int a2, void *a2_2);
     int ResetObjectOrders(char a1, int a2);
     void vt_03_();
-    static double CalcProductionSpeed(...);  // C2597 interim stub
-     double FindByName(...);  // C2597 interim stub
-    static double FindType15(...);  // C2597 interim stub
-    static double FirstBuildableFromArray(...);  // C2597 interim stub
-    static double GetCurrentOption(...);  // C2597 interim stub
-    static double GetMaxBuildLevel(...);  // C2597 interim stub
-    static double GetStartCoords(...);  // C2597 interim stub
+    static int CalcProductionSpeed(HouseClass * aP1);  // G57w10-S raw 0x006F47A0 (was C2597 interim stub)
+     int FindByName();  // G57w10-S raw 0x0050C170 (was C2597 interim stub)
+    static char FindType15(HouseClass * aP1);  // G57w10-S raw 0x00726FE0 (was C2597 interim stub)
+    static unsigned int * FirstBuildableFromArray(HouseClass * aP1, int a2);  // G57w10-S raw 0x005051E0 (was C2597 interim stub)
+    static unsigned int * GetCurrentOption(HouseClass * aP1, unsigned int *a2);  // G57w10-S raw 0x0050DEF0 (was C2597 interim stub)
+    static int GetMaxBuildLevel(HouseClass * aP1);  // G57w10-S raw 0x006E8780 (was C2597 interim stub)
+    static unsigned int * GetStartCoords(HouseClass * aP1, unsigned int *a2);  // G57w10-S raw 0x0050DF30 (was C2597 interim stub)
     int IsAllied(int a1);  // was C2597 interim stub, := truth 0x0x4f9a10
-    static double ProcessPowerDrain(...);  // C2597 interim stub
-    static double ShouldDisableCameo(...);  // C2597 interim stub
-    static double UpdateProduction(...);  // C2597 interim stub
-    static double GetPowerRatio(...);  // C2597 interim stub
+    static int ProcessPowerDrain(HouseClass * aP1, int a2);  // G57w10-S raw 0x004F9790 (was C2597 interim stub)
+    static char ShouldDisableCameo(HouseClass * aP1, int a2);  // G57w10-S raw 0x0050B370 (was C2597 interim stub)
+    static int UpdateProduction(HouseClass * aP1, int a2, int a3, int a4);  // G57w10-S raw 0x00509140 (was C2597 interim stub)
+    static int GetPowerRatio(HouseClass * aP1);  // G57w10-S raw 0x004FCE30 (was C2597 interim stub)
     bool FindType24();  // 0x726fb0
     int HasType26Building();  // 0x726f50
     int HasType25Building();  // 0x726f80
@@ -229,7 +237,6 @@ struct HouseClass {
     int HandleAlliance(int a2, char a3);  // 0x4f9b70
     unsigned int * ClearStatArray();  // 0x748fd0
     int SaveToINI(char *a2); // N_fix R5 supply (cache truth)
-    double GiveTiberium_Storage(float aP1, int aP2);
 };
 
 } // namespace gamemd

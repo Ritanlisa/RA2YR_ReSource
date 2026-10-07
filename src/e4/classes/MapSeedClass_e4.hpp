@@ -46,6 +46,7 @@ struct MapSeedClass {
     char PlaceCityBlockDiagonal(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
 
     char PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
+    static int Constructor(int aP1);  // 0x595680 raw: int Constructor(int this) [raw int-this; site v10 int]
 };
 
 } // namespace gamemd

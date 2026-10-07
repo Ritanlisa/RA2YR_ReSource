@@ -98,6 +98,7 @@
 #include "e4/classes/ScriptTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/TeamTypeClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/MiniMap_e4.hpp"  // G57w10 D supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern char aGascloudsys[];  // data: 0x83da90 truth(IDA G42.57w9)
 extern char aHumanPlayer[];  // data: 0x83dc8c truth(IDA G42.57w9)
@@ -1446,7 +1447,7 @@ AbstractClass * * SessionClass_AssignHouses()
   }
   *(unsigned int *)(v26 + 90196) = Network_Assign(g_INI_Key_LightGrey, 53); /*0x68836d*/
 // 0x50b840
-  return HouseClass::GetColor((char *)v26); /*0x688378*/
+  return (gamemd::AbstractClass **)(HouseClass::GetColor((char *)v26); /*0x688378*/);
 }
 }
 // 0x6886B0

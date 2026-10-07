@@ -8,7 +8,6 @@
 #define GAMEMD_E4_BuildingLoadQueue 1
 #define GAMEMD_E4_FrameTimer 1
 #define GAMEMD_E4_MoveFeedback 1
-#define GAMEMD_E4_COMClass 1
 #define GAMEMD_E4_Hash 1
 #define GAMEMD_E4_Queue 1
 #define GAMEMD_E4_SHA1 1
@@ -39,7 +38,7 @@
 #include "e4/classes/MSEngine_e4.hpp"
 // G42.33 b3: e4 flat 载体 (体表词汇 m_C/m_1/__pad_0/*_field_0xNN 宿主)
 #include "e4/classes/Buffer_e4.hpp"
-#include "e4/classes/COMClass_e4.hpp"
+#include "e4/classes/_fwd_e4.hpp"  // g57w10 r4 item3: COMClass 定义链修正 — utility_ext 全量体 (COMClass_field_0xNN 词表) 胜出, e4 平板体不再抢占; fwd 词表保留
 #include "e4/classes/Hash_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/MoveFeedback_e4.hpp"
@@ -258,7 +257,7 @@ void GraphicMenuAnimItem::Stub() {
 // 0x4F4000
 namespace gamemd {
 unsigned int * VectorCursor_uint_DynamicVectorClass_uint::ddtor() {
-    --this->vtable3; /*0x4f4002*/
+    --this->q008; /*0x4f4002 g57w10 r4: raw fn_4F 原文 --this->q008*/
     return this->__pad_0; /*0x4f4005*/
 }
 } // namespace gamemd
@@ -702,7 +701,7 @@ namespace gamemd {
 int Vector3::Magnitude() {
     return Math::Sqrt( /*0x41c3e9*/
              *(double *)this * *(double *)this
-           + this->vtable3 * this->vtable3
+           + *((double *)this + 1) * *((double *)this + 1)  /*g57w10 r4: raw fn_41:9575 原文 (第二 double 分量)*/
            + this->q040 * this->q040);
 }
 } // namespace gamemd
@@ -2995,14 +2994,14 @@ unsigned int * GraphicMenuShortcutItem::QueryInterface(char a2) {
 // 0x4F3FC0
 namespace gamemd {
 BOOL VectorCursor_uint_DynamicVectorClass_uint::AddRef() {
-    return this->vtable3 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f3fcd*/
+    return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f3fcd g57w10 r4: raw 原文 q008*/
 }
 } // namespace gamemd
 
 // 0x4F3FF0
 namespace gamemd {
 unsigned int * VectorCursor_uint_DynamicVectorClass_uint::Release() {
-    ++this->vtable3; /*0x4f3ff2*/
+    ++this->q008; /*0x4f3ff2 g57w10 r4: raw 原文 ++this->q008*/
     return this->__pad_0; /*0x4f3ff5*/
 }
 } // namespace gamemd

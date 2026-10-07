@@ -127,7 +127,7 @@ struct Game {
     int GetMultiplayerScoreScreenBar();  // 0x5CA110
     void BuildGameSettingsPacket(char * Buffer);  // 0x5DBB60
     unsigned char ManageGameSpeed();  // 0x6579E0
-    unsigned int * LockMutex(IUnknown * aP1, IUnknown * aP2);  // 0x67C3A0
+    unsigned int * LockMutex(int a2, int a3);  // G57w10-S raw 0x0067C3A0 IUnknown 占位清除
     int LoadSaved(LPCCH a1_1);
     CellStruct * * SerializeGameSaveState();  // 0x67F9C0
     int validateScenario(unsigned int *a2);  // 0x680F70

@@ -497,6 +497,7 @@ int CanAcceptType(int,int);  // 0x452670
     uint32_t                              LaserFenceFrame;
     uint32_t                              FirestormWallFrame;
     ProgressTimer                         RepairProgress;
+    unsigned char                         __pad_628[20];  // 0x628-0x63B 窗口 (ml q628..q63B; raw ProcessRepair 0x44B8AE 字节索引; g57w10 r4 item2)
     RectangleStruct                       BuildingClass_field_rect_63C;
     CoordStruct                           BuildingClass_field_coord_64C;
     int32_t                               BuildingClass_field_int_658;

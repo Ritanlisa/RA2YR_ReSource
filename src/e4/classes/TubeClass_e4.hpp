@@ -68,7 +68,7 @@ struct TubeClass {
     int StubReturn452();
     int StubReturn53();
     int ddtor(int a1, unsigned int * a2);
-     double Construct(...);  // C2597 interim stub
+     AbstractClass * Construct(__int16 *a2, int a3);  // G57w10-S raw 0x00727FD0 (was C2597 interim stub)
 };
 
 } // namespace gamemd

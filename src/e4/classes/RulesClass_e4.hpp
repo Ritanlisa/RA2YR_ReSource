@@ -18,6 +18,8 @@ struct SHPStruct;  // fix_fwd_type_supply
 struct INIClass;  // fix_fwd_type_supply
 
 struct RulesClass {
+    static int Addition(void *aP1);  // 0x668BF0 raw: int __thiscall RulesClass::Addition(RulesClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned int DetailMinFrameRateNormal;  // 0x0
     void *q4;  // 0x4
@@ -155,8 +157,8 @@ struct RulesClass {
     void readMaximums();
     void readVehicleTypes();
     void* readAudioVisual();
-     double SaveLoad_Prefix(...);  // C2597 interim stub
-    static double SaveLoad_Prefix_0(...);  // C2597 interim stub
+     int SaveLoad_Prefix(int *a2);  // G57w10-S raw 0x00674730 (was C2597 interim stub)
+    static int SaveLoad_Prefix_0(RulesClass * aP1, int i);  // G57w10-S raw 0x00675210 (was C2597 interim stub)
     int ReadDataList();  // 0x672440
     int LoadCountries();  // 0x6722f0
     int Reset();  // 0x74e6b0

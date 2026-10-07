@@ -59,6 +59,7 @@
 #include "e4/classes/Render_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/AudioMixer_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/AudioCodec_e4.hpp"  // G57w10 D supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aEvaStream;  // data: 0x84667c truth(IDA G42.57w9)
 extern unsigned int aTauntStream;  // data: 0x846688 truth(IDA G42.57w9)
@@ -1324,7 +1325,7 @@ void Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 IDA_LOBYTE(a1) = -1; /*0x7c8035*/
             }
             IDA_BYTE1(a1) = (unsigned char)(a1); /*0x7c803e*/
-            v24 = __ROR4__(a1, 8); /*0x7c8040*/
+            v24 = __ROR4__( (unsigned int)(a1), 8 ); /*0x7c8040*/
             IDA_LOBYTE(v21) = v20; /*0x7c8043*/
             v23 = v21 >> 2; /*0x7c8045*/
             IDA_LOBYTE(v23) = v23 & 3; /*0x7c8048*/

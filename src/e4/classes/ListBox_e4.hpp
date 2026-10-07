@@ -6,6 +6,8 @@
 namespace gamemd {
 
 struct ListBox {
+    static int SetCustomEntry(void *aP1, int a2, int a3, void *a4);  // 0x6969C0 raw: int __thiscall ListBox::SetCustomEntry(ListBox*, int, LPARAM, void*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4

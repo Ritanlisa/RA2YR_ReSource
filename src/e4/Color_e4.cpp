@@ -145,7 +145,7 @@ unsigned char Color::Lerp(uint8_t aP1, uint8_t *a2)
 } // namespace gamemd
 // 0x75F540
 namespace gamemd {
-int Color::RGBFromFloat(IUnknown * aP1, float a3)
+unsigned int * Color::RGBFromFloat(int aP1, float a3)
 {
 
   double v3; // st7
@@ -164,7 +164,7 @@ int Color::RGBFromFloat(IUnknown * aP1, float a3)
   this->Color_field_00 = v6; /*0x75f59e*/
   *((unsigned int *)this + 1) = v10; /*0x75f5a0*/
   *((unsigned int *)this + 2) = v8; /*0x75f5a3*/
-  return (int)(&this->Color_field_00); /*0x75f5ac*/
+  return (unsigned int *)((int)(&this->Color_field_00); /*0x75f5ac*/);
 
 }
 } // namespace gamemd

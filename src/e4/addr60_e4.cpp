@@ -32,6 +32,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Control_e4.hpp"
 #include "e4/classes/DialogClass_e4.hpp"
+#include "e4/classes/SymbolTable_e4.hpp"  // G57w10 D supply
 
 // 0x600750
 namespace gamemd {
@@ -1360,11 +1361,11 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
   {
     if ( DlgCtrlID == 1770 ) /*0x603791*/
     {
-      return UI_Helper_72DAC0(); /*0x603793*/
+      return (gamemd::AbstractClass **)(UI_Helper_72DAC0(); /*0x603793*/);
     }
     else if ( DlgCtrlID == 1772 ) /*0x6037bd*/
     {
-      return UI_Helper_72DAD0(); /*0x6037bf*/
+      return (gamemd::AbstractClass **)(UI_Helper_72DAD0(); /*0x6037bf*/);
     }
   }
   else if ( v4 == 259 || v4 == 3015 ) /*0x6037d6*/
@@ -1374,7 +1375,7 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
   }
   else if ( v4 == 196 && DlgCtrlID == 1961 ) /*0x6037f7*/
   {
-    return UI_Helper_72CC80(); /*0x6037f9*/
+    return (gamemd::AbstractClass **)(UI_Helper_72CC80(); /*0x6037f9*/);
   }
   return (gamemd::AbstractClass **)(result);
 }
@@ -1515,7 +1516,7 @@ int IsDialogWindowClass(HWND a1, HWND a2)
   *(unsigned int *)(v5 + 176) = 2; /*0x603b97*/
   hWnd = a2; /*0x603bac*/
   GetClassNameA(a2, ClassName, 128); /*0x603bb0*/
-  if ( !strcmp(ClassName,(const char *)( g_INI_Key_Edit)) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x603c05*/
+  if ( !strcmp(ClassName,(const char *)( g_INI_Key_Edit)) || !strcmp( ClassName, (const char *)(g_INI_Key_NewEdit) ) ) /*0x603c05*/
     return 192; /*0x603c2c*/
   if ( !strcmp(ClassName,(const char *)(g_INI_Key_ListBox)) /*0x603c99*/
     && dword_AC1B04

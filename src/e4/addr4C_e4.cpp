@@ -58,6 +58,7 @@
 #include "e4/classes/InfantryClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/BuildingAnim_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/CCFileClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
 
 // 0x4C1440
 namespace gamemd {
@@ -202,7 +203,7 @@ int sub_4C1600()
              (LPVOID *)&dword_8A0E00);
   if ( !result ) /*0x4c161c*/
   {
-    result = (**(int (***)(int, void *, int *))dword_8A0E00)(dword_8A0E00, &unk_7F8070, &dword_8A0DF4); /*0x4c1630*/
+    result = (**(int (***)(int, void *, int *))dword_8A0E00)( dword_8A0E00, &unk_7F8070, (int *)(&dword_8A0DF4) ); /*0x4c1630*/
     if ( !result ) /*0x4c1634*/
     {
       memset( (void *)(v2), 0, sizeof(v2)); /*0x4c1644*/
@@ -1436,7 +1437,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   int Instance; // eax
   int v13; // eax
 
-  ControlClass::Construct((ControlClass *)this, aP1, aP5, aP6, aP7, a9, 1, 0); /*0x4c2fe5*/
+  ControlClass::Construct((ControlClass *)this, (int)aP1, (int)aP5, (int)aP6, (int)aP7, a9, 1, 0); /*0x4c2fe5 G57w10 raw int-typing*/
   v11 = (unsigned int)aP4; /*0x4c2ff6*/
   BYTE1(v11) = BYTE1(aP4) & 0xFE; /*0x4c2ff8*/
   *((unsigned int *)this + 11) = v11; /*0x4c2ffc*/

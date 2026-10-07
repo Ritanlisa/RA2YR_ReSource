@@ -41,7 +41,7 @@
 
 // 0x47F510
 namespace gamemd {
-void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
+void TacticalClass::DrawBuildingPlacement(unsigned int *aP1, int *a2)
 {
 
   unsigned char *v4; // edi
@@ -139,7 +139,7 @@ LABEL_9:
 }
 // 0x4801F0
 namespace gamemd {
-unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
+unsigned int TacticalClass::RenderCellFogOfWar(unsigned int *aP1, int *aP2)
 {
 
   unsigned int v4; // eax
@@ -557,7 +557,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
 }
 // 0x547230
 namespace gamemd {
-void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8, int a9, int a10)
+void TacticalClass::DrawCellOverlay(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
   int v10; // edx
@@ -729,7 +729,7 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
 }
 // 0x6D2DE0
 namespace gamemd {
-signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2, char a4)
+signed int TacticalClass::RenderIsometricOverlay(int *aP1, int *aP2, char a4)
 {
 
   char v4; // bl
@@ -758,14 +758,14 @@ signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2,
   v4 = a4; /*0x6d2de4*/
   if ( a4 ) /*0x6d2dee*/
   {
-    TacticalClass::RenderIsometric((int)this, &DSurface_ViewBounds.field_0, (int)&DSurface_ViewBounds); /*0x6d2dfa*/
+    TacticalClass::RenderIsometric((void *)this, &DSurface_ViewBounds.field_0, (void *)&DSurface_ViewBounds); /*0x6d2dfa*/
   }
   else
   {
     if ( aP1[2] > 0 && aP1[3] > 0 ) /*0x6d2e0c*/
-      TacticalClass::RenderIsometric((int)this, aP1, (int)aP1); /*0x6d2e12*/
+      TacticalClass::RenderIsometric((void *)this, aP1, (void *)aP1); /*0x6d2e12*/
     if ( aP2[2] > 0 && aP2[3] > 0 ) /*0x6d2e27*/
-      TacticalClass::RenderIsometric((int)this, aP2, (int)aP2); /*0x6d2e2d*/
+      TacticalClass::RenderIsometric((void *)this, aP2, (void *)aP2); /*0x6d2e2d*/
   }
   if ( this->visibleCellCount > 0 && !a4 ) /*0x6d2e42*/
   {
@@ -825,7 +825,7 @@ signed int TacticalClass::RenderIsometricOverlay(IUnknown * aP1, IUnknown * aP2,
           v16 = v15[3]; /*0x6d300a*/
           v23 = v16; /*0x6d300f*/
           if ( result > 0 && v16 > 0 ) /*0x6d3017*/
-            result = TacticalClass::RenderIsometric((int)this, &v20, (int)&v20); /*0x6d3025*/
+            result = TacticalClass::RenderIsometric((void *)this, &v20, (void *)&v20); /*0x6d3025*/
           v14 -= 20; /*0x6d302a*/
           --v13; /*0x6d302d*/
         }

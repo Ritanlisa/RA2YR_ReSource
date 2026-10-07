@@ -23,7 +23,7 @@ struct RawFileClass {
 // --- flat members (END) ---
     int Close(int a2, int a3);
     int Dtor();
-     double Construct(...);  // C2597 interim stub
+     unsigned int * Construct(int a2);  // G57w10-S raw 0x0065CA80 (was C2597 interim stub)
     int Write(); // N_fix R5 supply (cache truth)
 };
 

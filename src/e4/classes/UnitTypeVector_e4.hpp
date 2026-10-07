@@ -22,6 +22,7 @@ struct UnitTypeVector {
 // --- flat members (END) ---
     unsigned int * Construct2(int a2, int a3, void *a3_2);
     unsigned int * ConstructUnitTypeVectorClass(int a2, int a3);
+    static unsigned int * Construct(void *aP1, int a2, int a3);  // 0x513190 raw: _DWORD* Construct(UnitTypeVector*, int, int)
 };
 
 } // namespace gamemd

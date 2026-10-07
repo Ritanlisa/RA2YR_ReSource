@@ -125,7 +125,7 @@ struct DSurface {
     void* DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, int a5, int a6, float * a7, float * a8);
     void* DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8);
     void* FillRectEx(int a2, int a3, int a4);
-    static double Lock(...);  // C2597 interim stub
+    static void * Lock(DSurface * aP1, int a2, int a3);  // G57w10-S raw 0x004BAD80 (was C2597 interim stub)
     int FillRectWithColor(int * a0, ObjectClass * aP1, int16_t a3, uint8_t a4);
     unsigned int q_1E0;  // +0x1E0 flat supply (P5 provenance)
     unsigned int q_1F0;  // +0x1F0 flat supply (P5 provenance)

@@ -84,7 +84,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   if ( CoCreateInstance(*(const IID *)&stru_7E9540, 0, 7u, *(const IID *)&riid, &ppv) >= 0 ) /*0x67d0e5*/
   {
     if ( OleRun((LPUNKNOWN)ppv) >= 0 ) /*0x67d0f4*/
-      (**(void (***)(LPVOID, IID *, int *))ppv)(ppv, &stru_83D598, &v9); /*0x67d107*/
+      (**(void (***)(LPVOID, IID *, int *))ppv)( ppv, (IID *)(&stru_83D598), &v9 ); /*0x67d107*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x67d110*/
   }
   if ( !v9 ) /*0x67d119*/

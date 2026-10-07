@@ -6,6 +6,8 @@
 namespace gamemd {
 
 struct Palette {
+    static int Preview_Generate(void *aP1, int a2, int a3, void *a4);  // 0x642130 raw: int __thiscall Palette::Preview_Generate(Palette*, char, int, size_t*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned int m_Colors;  // 0x0
     unsigned int u32_4;  // 0x4

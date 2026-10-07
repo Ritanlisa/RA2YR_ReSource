@@ -12,6 +12,8 @@ struct AITriggerTypeClass;  // fix_fwd_type_supply
 struct MultiplayerGameMode;  // fix_fwd_type_supply
 
 struct CCINIClass {
+    static int LoadAndVerifyDigest(void *aP1, int a2, char a3, char a4);  // 0x474320 raw: int LoadAndVerifyDigest(int*, int, char, char)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4

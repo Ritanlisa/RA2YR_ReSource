@@ -40,6 +40,7 @@
 #include "e4/classes/Straw_e4.hpp"
 #include "classes/ObjectTypeClass_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ControlClass_e4.hpp"  // G57w10 D supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char byte_8B40E0;  // data: 0x8b40e0 truth(IDA G42.57w9)
 extern unsigned char byte_8B40E1;  // data: 0x8b40e1 truth(IDA G42.57w9)
@@ -2407,7 +2408,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   int v7; // ecx
   int v8; // eax
 
-  ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
+  ControlClass::Construct((ControlClass *)this, (int)aP1, aP2, aP3, (int)aP4, aP5, 7, 1); /*0x4e2a74 G57w10 raw int-typing*/
   v7 = *((unsigned int *)this + 12); /*0x4e2a79*/
   *(unsigned int *)this->vfptr =(unsigned int)(&vt_GaugeClass); /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/

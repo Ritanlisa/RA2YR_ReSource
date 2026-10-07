@@ -26,7 +26,7 @@ struct AbstractClassVector {
     int Read(unsigned int * a2, void *a2_2);
     int Construct(int aP1, int aP2);
     unsigned int Write(int a2);
-     double ddtor(...);  // C2597 interim stub
+     void ddtor(AbstractClassVector * aP1);  // G57w10-S raw 0x4E0410 (was C2597 interim stub)
 };
 
 } // namespace gamemd

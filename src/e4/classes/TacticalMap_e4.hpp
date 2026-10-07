@@ -44,7 +44,7 @@ struct TacticalMap {
     unsigned int FillScanlinesOpaque(int a2, int a3, int aP3, int a5);
     void MultiplyByScalar(ObjectClass * aP1, void *a2);
     void* RenderCell(char arg0, AbstractClass * aP2, int a4, int a2);
-     double Render(...);  // C2597 interim stub
+     int Render(int a2, int a3, int a4);  // G57w10-S raw 0x006D3D10 (was C2597 interim stub)
     AbstractClass * * TacticalMap_Render(int a2);
     unsigned int q_80;  // +0x80 flat supply (P5 provenance)
     unsigned int q_A0;  // +0xA0 flat supply (P5 provenance)

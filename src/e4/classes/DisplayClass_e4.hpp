@@ -109,13 +109,13 @@ struct DisplayClass {
 // --- flat members (END) ---
     DisplayClass * Read(char * Block, char a2);
     HWND Render(void *a1, void *a2);
-    Tactical * * UpdateCellPassability(short * a1, IUnknown * aP2);
-    VectorClass_flat * * ProcessCellReveal(MouseClass * aP1, IUnknown * aP2);
+    char UpdateCellPassability(__int16 *a2, int a3);  // G57w10-S raw 0x004A9890 IUnknown 占位清除
+    char ProcessCellReveal(__int16 *a2, int a3);  // G57w10-S raw 0x004A9DD0 IUnknown 占位清除
     unsigned int DisplayClass_field_0x11D4;  // 0x11D4
     unsigned int DisplayClass_field_0x11D8;  // 0x11D8
     unsigned int DisplayClass_field_0x11DC;  // 0x11DC
     unsigned int DisplayClass_field_0x11E0;  // 0x11E0
-    bool SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3);
+    int SetCoordVisible(DisplayClass *aP1, unsigned int *a2, char a3);  // G57w10-S raw 0x004A9840 IUnknown 占位清除
     char ddtor(void *a1);
     int * processDisplayMode(char a2);
     int AdvanceFrameCounter();
@@ -128,8 +128,8 @@ struct DisplayClass {
     int ProcessTacticalMouseInput(char a2, int a3, int a4);
     int ReadFromBuffer(void * a1, signed int Size);
     int RenderStatusText(IUnknown * aP1, char a3);
-    int RevealFogCell(short * a1, IUnknown * aP2);
-    int ScrollTacticalView(IUnknown * aP1, IUnknown * aP2);
+    bool RevealFogCell(__int16 *a2, int a3);  // G57w10-S raw 0x004AA050 IUnknown 占位清除
+    int ScrollTacticalView(int a2, int a3);  // G57w10-S raw 0x006D8530 IUnknown 占位清除
     int SetSize();
     int SetSurface(unsigned int * a1);
     int UpdateDisplayTimer();

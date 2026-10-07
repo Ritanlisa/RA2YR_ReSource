@@ -259,7 +259,7 @@ int Gap2Free_3A80::DumpAudioDeviceDebug(void (__thiscall *a2)(char *), int a3)  
     while ( Next );
     v4 = a2; /*0x403cc6*/  // G57w8: raw 原文恢复（截断 cast 残渣清除）
   }
-  return ((int (__thiscall *)(char *))v4)(asc_815ECC); /*0x403cd2*/  // G57w8: raw 尾行恢复 + 括号平衡
+  return ((int (__thiscall *)(char *))v4)( (char *)(asc_815ECC) ); /*0x403cd2*/  // G57w8: raw 尾行恢复 + 括号平衡
 }
 }
 // 0x4048B0
@@ -715,7 +715,7 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
       return 0; /*0x415c77*/
     v3 = *(unsigned int *)this; /*0x415c83*/
     --*((unsigned int *)this + 191); /*0x415c8d*/
-    v4 = (*(int (__thiscall **)(char *, double *))(v3 + 72))(this, &v21); /*0x415c93*/
+    v4 = (*(int (__thiscall **)(char *, double *))(v3 + 72))( (char *)(this), &v21 ); /*0x415c93*/
     v23 = *(unsigned int *)v4; /*0x415c98*/
     v24 = *(unsigned int *)(v4 + 4); /*0x415c9f*/
     v5 = *(unsigned int *)(v4 + 8); /*0x415ca3*/

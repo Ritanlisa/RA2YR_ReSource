@@ -50,6 +50,12 @@ struct INILinkNode {
 // CSP: GenericList matched via T1
 struct GenericList {
     void* vtable;
+    unsigned int u32_4;   // g57w10 C2039 supply (ml offset 4)
+    unsigned int u32_8;   // ml offset 8
+    unsigned int u32_C;   // ml offset 12
+    unsigned int u32_10;  // g57w10 C2039 supply (ml offset 16)
+    unsigned int u32_14;  // ml offset 20
+    unsigned int u32_18;  // ml offset 24
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int * Constructor();  // 0x52ACE0  G42.34: ret sync to cache truth (_DWORD* __thiscall)
     // --- gap2 auto-generated stub declarations (END) ---

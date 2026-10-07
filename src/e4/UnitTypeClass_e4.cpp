@@ -616,7 +616,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
     int v2; // esi
     VoxelAnimTypeClass *v3; // eax
 
-    if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x74b97c*/
+    if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x74b97c*/
       return 0; /*0x74b9df*/
     v2 = 0; /*0x74b98d*/
     if ( stru_A8EB00.ObjectTypeClass[14] <= 0 ) /*0x74b991*/

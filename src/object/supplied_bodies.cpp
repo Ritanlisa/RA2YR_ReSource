@@ -951,7 +951,7 @@ void * AbstractClass::IsTechno()
 
     if ( !this ) /*0x40dd25*/
       return 0; /*0x40dd45*/
-    switch ( (*((int (__thiscall **)(unsigned int))this->vtable1 + 11))(this) ) /*0x40dd3a*/
+    switch ( (*((int (__thiscall **)(unsigned int))this->vtable1 + 11))( (unsigned int)(this) ) ) /*0x40dd3a*/
     {
       case 1: /*0x40dd3a*/
       case 2: /*0x40dd3a*/
@@ -974,7 +974,7 @@ void * AbstractClass::IsTechnoType()
 
     if ( !this ) /*0x40dd75*/
       return 0; /*0x40dd95*/
-    switch ( (*((int (__thiscall **)(unsigned int))this->vtable1 + 11))(this) ) /*0x40dd8a*/
+    switch ( (*((int (__thiscall **)(unsigned int))this->vtable1 + 11))( (unsigned int)(this) ) ) /*0x40dd8a*/
     {
       case 1: /*0x40dd8a*/
       case 2: /*0x40dd8a*/
@@ -5208,7 +5208,7 @@ int FootClass::Destru_vt30()
 
 // 0x4DB810
 namespace ra2::game {
-int TechnoClass::SetPositionAnimated()
+int TechnoClass::SetPositionAnimated(unsigned int *a2)  // g57w10 raw: int(this,_DWORD*)
 {
     int *location; // edx
     int v4; // eax

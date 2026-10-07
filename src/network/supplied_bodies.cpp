@@ -155,7 +155,7 @@ unsigned int * IPXConnClass::QueryInterface(char,int,int,int)
     ConnectionClass_dtor((void *)this); /*0x53f859*/
     if ( (a2 & 1) != 0 ) /*0x53f863*/
       RA2_OPDEL(this); /*0x53f866*/
-    return this; /*0x53f870*/  // g57e2 W2
+    return (unsigned int *)(this; /*0x53f870*/  // g57e2 W2);
 }
 } // namespace gamemd
 
@@ -610,7 +610,7 @@ unsigned int * NetworkSession::ResetState()
     *((unsigned int *)this + 197) = 0; /*0x54ee78*/
     *((unsigned int *)this + 198) = 0; /*0x54ee7e*/
     memset((char *)this + 20, 0, 0x100u); /*0x54ee84*/
-    return this->__pad_0; /*0x54ee88*/
+    return (unsigned int *)(this->__pad_0; /*0x54ee88*/);
 }
 } // namespace gamemd
 
@@ -701,7 +701,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
             strncpy(Destination, v47, 0x20u); /*0x56088b*/
             if ( strlen(v47) ) /*0x560894*/
             {
-              v20 = strtok(v47, asc_826598); /*0x5608b1*/
+              v20 = strtok( v47, (const char *)(asc_826598) ); /*0x5608b1*/
               v21 = -1; /*0x5608b9*/
               v22 = -1; /*0x5608bc*/
               v23 = -1; /*0x5608bf*/
@@ -715,7 +715,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
                 do /*0x5608fe*/
                 {
                   sscanf(v20, "%x", v24++); /*0x5608e5*/
-                  v20 = strtok(0, asc_826598); /*0x5608f4*/
+                  v20 = strtok( 0, (const char *)(asc_826598) ); /*0x5608f4*/
                 }
                 while ( v20 ); /*0x5608fe*/
                 v23 = v44; /*0x560900*/
@@ -738,7 +738,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
             v26 = GetDlgItem(hWnd, 1492); /*0x56099e*/
             dword_A8EBB4 = v16(v26, 0x147u, 0, 0); /*0x5609ac*/
             IDA_HIWORD(unk_A8EBA8) = v40; /*0x5609bf*/
-            strcpy(unk_A8EBB8, Destination); /*0x5609e1*/
+            strcpy( (char *)(unk_A8EBB8), Destination ); /*0x5609e1*/
             v27 = GetDlgItem(hWnd, 1495); /*0x5609ec*/
             memset(v49, 0, sizeof(v49)); /*0x5609fc*/
             SendMessageA(v27, 0x4B5u, 8u, (LPARAM)v49); /*0x560a0e*/
@@ -846,7 +846,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
           }
           SendMessageA(v11, 0xC5u, 5u, 0); /*0x5606ab*/
           v12 = GetDlgItem(hWnd, 1491); /*0x5606b5*/
-          if ( strlen(unk_A8EBB8) ) /*0x5606bc*/
+          if ( strlen( (const char *)(unk_A8EBB8) ) ) /*0x5606bc*/
             SendMessageA(v12, 0x4B4u, 0, (LPARAM)unk_A8EBB8); /*0x5606d4*/
           SendMessageA(v12, 0xC5u, 0xBu, 0); /*0x5606e0*/
           SendDlgItemMessageA(hWnd, 1890, 0xF1u, byte_A8E180 != 0, 0); /*0x5606fe*/
@@ -860,7 +860,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
           return 0; /*0x560722*/
         }
         if ( dword_887628 ) /*0x5605de*/
-          (*(void (__thiscall **)(unsigned int *, int))*dword_887628)(dword_887628, 1); /*0x5605e4*/
+          (*(void (__thiscall **)(unsigned int *, int))*dword_887628)( (unsigned int *)(dword_887628), 1 ); /*0x5605e4*/
       }
       dword_887628 = 0; /*0x5605e6*/
       goto LABEL_20; /*0x5605e6*/

@@ -63,7 +63,7 @@ struct TriggerTypeClass {
     int GetTypeIdentifier();
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int Write(TechnoTypeClass * aP0, int * a1, int aP2);
-    static double GetFlags(...);  // C2597 interim stub
+    static int GetFlags(TriggerTypeClass * aP1);  // G57w10-S raw 0x007271E0 (was C2597 interim stub)
     unsigned int * Construct(char *Source);  // 0x726c80
 };
 

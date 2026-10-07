@@ -33,10 +33,10 @@ struct BuildingPlacement {
     unsigned int u32_4C;
 // --- flat members (END) ---
     VectorClass_flat * * ProcessBuildingPlacementAction();
-    unsigned int * FindPosition(int * a0, IUnknown * aP1, IUnknown);
+    unsigned int * FindPosition(HouseClass *aP1, unsigned int *a2, unsigned int *a3);  // G57w10-S raw 0x00500200 IUnknown 占位清除
     unsigned int * SelectBuildingPlacementCells(int a2);
     void* Activate(int a2, unsigned int * a3);
-    static double ValidateType(...);  // C2597 interim stub
+    static int ValidateType(BuildingPlacement * aP1, int a2, int a3);  // G57w10-S raw 0x00480510 (was C2597 interim stub)
 };
 
 } // namespace gamemd

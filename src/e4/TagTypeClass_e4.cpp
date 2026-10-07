@@ -247,7 +247,7 @@ AbstractTypeClass * TagTypeClass::FindOrCreate(ObjectClass * Source)
   int v2; // esi
   char *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e632c*/
+  if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x6e632c*/
     return 0; /*0x6e638f*/
   v2 = 0; /*0x6e633d*/
   if ( g_MultiplayerCleanup <= 0 ) /*0x6e6341*/

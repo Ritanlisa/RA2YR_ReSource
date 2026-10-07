@@ -26,7 +26,7 @@ struct FileSystem {
     int ProcessNextFileExtension();
     void CleanupTrees();
     static void InitPipShapes();
-    static double FlushTempFiles(...);  // C2597 interim stub
+    static void FlushTempFiles(FileSystem * aP1);  // G57w10-S raw 0x006272A0 (was C2597 interim stub)
     int readFile();  // 0x628740
 };
 

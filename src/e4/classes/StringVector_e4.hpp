@@ -19,7 +19,7 @@ struct StringVector {
     char Release(int a2, unsigned int *a3);  // 0x49EE60 G42.33 b3 supplied-body sync
     unsigned int Remove(int a2);  // 0x49EF80 G42.33 b3 supplied-body sync
     unsigned int * QueryInterface(char a2);  // 0x49EFA0 G42.33 b3 supplied-body sync
-    static unsigned int * Construct(...);  // G57a1 static-form sync (addr63 0x626de1 (int,0,0) shape)
+    static unsigned int * Construct(StringVector * aP1, int a2, int a3);  // G57w10-S raw 0x005AD6F0 (was C2597 interim stub)
     static char Insert(void *aP0, const char **aP1, int aP2);  // G57a1 static-form sync (addr63 0x7ac28f+)
 };
 

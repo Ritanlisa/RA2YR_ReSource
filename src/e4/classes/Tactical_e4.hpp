@@ -616,10 +616,10 @@ struct Tactical {
     unsigned int field_24;
 // --- flat members (END) ---
     void * ConstructTacticalSurface();  // 0x42A6D0
-    void * CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, void *a7_1);  // 0x484050
-    ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8, void *a8_2);  // 0x484180
+    int CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a3, unsigned int *a4, int *a5, int a6, int a7);  // G57w10-S raw 0x00484050 IUnknown 占位清除
+    int CalculateTacticalLighting(Tactical *aP1, unsigned int *a2, unsigned int *a3, int *a4, int *a5, int *a6, int *a7, __int64 a8);  // G57w10-S raw 0x00484180 IUnknown 占位清除
     unsigned int * MouseMove(unsigned int *aP1, unsigned int *aP2);  // 0x4A91B0
-    int IsCellVisible(IUnknown * aP1);  // 0x568350
+    int IsCellVisible(unsigned int *a2);  // G57w10-S raw 0x00568350 IUnknown 占位清除
     void * GetCellData();  // 0x58C2A0
     int MouseOver(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5);  // 0x692300
     MouseClass * * HandleTacticalMouseInput(int _28, unsigned int * a2, int a4, MouseClass * aP4, void *a5_1);  // 0x6930A0

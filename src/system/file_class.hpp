@@ -64,6 +64,20 @@ public:
         return WriteBytes(&obj, size) == size;  // 0x411310
     }
 
+public:  // g57w10 C2039 supplies (raw-til member names used by system/gap2_defs bodies; compile-supply pattern)
+    int32_t StreamSize;
+    int32_t BufferSize;
+    int32_t BufferMaxSize;
+    int32_t FileID;
+    int32_t BufferCursor;
+    int32_t TotalBytesRead;
+    int32_t BufferReadSize;
+    int32_t TotalBytesWritten;
+    int32_t FileBaseOffset;
+    int32_t MixFileIndex;
+    int32_t BufferOffset;
+    int32_t BufferPosition;
+
 protected:
     // design: constexpr operator, compile-time only
     constexpr FileClass() noexcept = default;

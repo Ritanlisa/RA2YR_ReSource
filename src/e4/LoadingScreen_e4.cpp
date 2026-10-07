@@ -211,7 +211,7 @@ char * LoadingScreen::GetBackgroundImage(ScenarioClass * aP1)
 
   result = (char *)(off_844C34[0]);
   if ( this != (LoadingScreen *)640 ) /*0x72b2fb*/
-    return off_844C38[0]; /*0x72b2fd*/
+    return (char *)(off_844C38[0]; /*0x72b2fd*/);
   return result; /*0x72b302*/
 
 }
@@ -225,7 +225,7 @@ char * LoadingScreen::GetOverlayImage(ScenarioClass * aP1)
 
   result = (char *)(off_844C3C[0]);
   if ( this != (LoadingScreen *)640 ) /*0x72b31b*/
-    return off_844C40[0]; /*0x72b31d*/
+    return (char *)(off_844C40[0]; /*0x72b31d*/);
   return result; /*0x72b322*/
 
 }

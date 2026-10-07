@@ -58,6 +58,8 @@
 #include "e4/classes/NukeFlash_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/PsyDom_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/CellSystem_e4.hpp"  // G57w10 D supply
+#include "e4/classes/LoadProgressMgr_e4.hpp"  // G57w10 D supply
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned int aSed;  // data: 0x83da88 truth(IDA G42.57w9)
 extern unsigned int aSpldbrShp;  // data: 0x83da40 truth(IDA G42.57w9)
@@ -962,7 +964,7 @@ LABEL_82:
 }
 // 0x597A10
 namespace gamemd {
-int Scenario::LoadOrReloadOptions(IUnknown * aP1)
+char Scenario::LoadOrReloadOptions(int aP1)
 {
 
   if ( aP1 ) /*0x597a16*/

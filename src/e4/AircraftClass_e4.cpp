@@ -103,7 +103,7 @@ LABEL_9:
   }
   v16 = (gamemd::BuildingClass *)((gamemd::AircraftTypeClass *)((BuildingClass *)v3[135]));
   if ( v16 ) /*0x414065*/
-    return (unsigned int *)((BuildingClass *)v16)->PowerUpdate( v3); /*0x414068*/
+    return (gamemd::AircraftTypeClass *)((unsigned int *)((BuildingClass *)v16)->PowerUpdate( v3); /*0x414068*/);
   return (gamemd::AircraftTypeClass *)(result); /*0x41406d*/
 
 }
@@ -223,7 +223,7 @@ int AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void 
 }
 // 0x417CC0
 namespace gamemd {
-AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3_2)
+int AircraftClass::GetCursorOverObject(AircraftClass *aP1, int *a3, int *a3_2)
 {
 
   int *v3; // ebp
@@ -247,7 +247,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknown 
   result = (int)(InfantryClass::GetCursorOverObject((IUnknown *)((FootClass *)this),(IUnknown *)((int)aP1),(void *)((char)a3)));
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
-    return (gamemd::AircraftTypeClass *)(result); /*0x417cdd*/
+    return (int)((gamemd::AircraftTypeClass *)(result); /*0x417cdd*/);
   if ( result == 26 && this->Type[1].TechnoTypeClass[317] ) /*0x417cf4*/
     v7 = 0; /*0x417cfe*/
   if ( this->Type[1].TechnoTypeClass[300] && (uint8_t)((House*)(House *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x417d16*/
@@ -321,7 +321,7 @@ LABEL_36:
   }
   if ( this->Type[1].TechnoTypeClass[300] && v7 == 17 ) /*0x417e90*/
   {
-    a3 = (IUnknown *)(*(int **)(*(int (**)(int *, int **))(*v4 + 440))( (int *)(v4), (int **)(&aP1)));
+    a3 = (int *)(*(int **)(*(int (**)(int *, int **))(*v4 + 440))( (int *)(v4), (int **)(&aP1)));
     if ( a3 != (IUnknown *)(int *)g_AircraftStatusFlag ) /*0x417eae*/
     {
       v15 = (Cell *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&a3); /*0x417ecc*/
@@ -341,15 +341,15 @@ LABEL_36:
       {
         v17 = (*(int (**)(int *, int))(*v4 + 204))( (int *)(v4), 1); /*0x417f27*/
         if ( (*(int (**)(int))(*(unsigned int *)v17 + 44))(v17) == 21 ) /*0x417f37*/
-          return (gamemd::AircraftTypeClass *)(1); /*0x417f47*/
+          return (int)((gamemd::AircraftTypeClass *)(1); /*0x417f47*/);
       }
     }
   }
   else if ( v7 == 5 && *(unsigned char *)((*(int (**)(int *))(*v4 + 136))( (int *)(v4)) + 563) ) /*0x417f59*/
   {
-    return (gamemd::AircraftTypeClass *)(2); /*0x417f63*/
+    return (int)((gamemd::AircraftTypeClass *)(2); /*0x417f63*/);
   }
-  return (gamemd::AircraftTypeClass *)(v7); /*0x417cdf*/
+  return (int)((gamemd::AircraftTypeClass *)(v7); /*0x417cdf*/);
 
 }
 }
@@ -630,7 +630,7 @@ LABEL_4:
       (MapClass *)&stru_87F5F0.__pad_58[416],
       &v17,
       v10,
-      ((unsigned int *)this)[0],
+      (void *)((unsigned int *)this)[0],
       0,
       0,
       1,
@@ -647,7 +647,7 @@ LABEL_4:
              (MapClass *)&stru_87F5F0.__pad_58[416],
              &v17,
              v10,
-             ((unsigned int *)this)[0],
+             (void *)((unsigned int *)this)[0],
              0,
              0,
              1,
@@ -868,7 +868,7 @@ result = (*((char (**)(AircraftClass *, int, unsigned int, int *, unsigned int))
 
 // 0x417F80
 namespace gamemd {
-int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
+int AircraftClass::CanEnterCell(__int16 *a1, char aP2, char aP3)
 {
 
   int v6; // edi

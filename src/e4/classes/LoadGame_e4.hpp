@@ -6,6 +6,9 @@
 namespace gamemd {
 
 struct LoadGame {
+    static wchar_t * CleanupArray(void *aP1);  // 0x54E6F0 raw: wchar_t* __thiscall LoadGame::CleanupArray(LoadGame*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int ClearAllSlots(int aP1);  // 0x413800 raw: int __thiscall LoadGame::ClearAllSlots(LoadGame*) site int form (g_CellClassManager)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
@@ -35,7 +38,7 @@ struct LoadGame {
     char RemoveItem(int a2);
     int RestoreAudioState();
     char Start();
-    static double LoadBlock68(...);  // C2597 interim stub
+    static int LoadBlock68(LoadGame * aP1, int a2);  // G57w10-S raw 0x004C6320 (was C2597 interim stub)
 };
 
 } // namespace gamemd

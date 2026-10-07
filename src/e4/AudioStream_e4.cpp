@@ -30,6 +30,7 @@
 #include "e4/classes/Struct_e4.hpp"
 #include "classes/Audio_e4.hpp"  // G42.57w9 method-carrier supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/AudioCodec_e4.hpp"  // G57w10 D supply
 
 // 0x401910
 namespace gamemd {
@@ -586,7 +587,7 @@ return (*(int (**)(int, unsigned int, unsigned int, unsigned int *, int, unsigne
 }
 // 0x4BEAC0
 namespace gamemd {
-MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
+char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, unsigned __int8 *a5, int a6, int a7, int a8)
 {
 
   int *v8; // eax

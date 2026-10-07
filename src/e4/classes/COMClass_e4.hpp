@@ -38,7 +38,7 @@ struct COMClass {
 // --- flat members (END) ---
     VectorCursor * disconnectPoint(unsigned int * Block, char a2);
     void * lockServer(rc_ptr_base * Block, char a2);
-    static double RegisterAll(...);  // C2597 interim stub
+    static int RegisterAll(COMClass * aP1);  // G57w10-S raw 0x00490490 (was C2597 interim stub)
     unsigned int *m_1;  // G42.33 b3 flat-carrier vocab ([3] 索引基)
     unsigned int m_C;  // G42.33 b3 flat-carrier vocab
     unsigned int m_10;  // G42.33 b3 flat-carrier vocab

@@ -31,6 +31,7 @@
 #include "e4/classes/UnitClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/ToggleClass_e4.hpp"  // G57w10 D supply
 
 // 0x710860
 namespace gamemd {

@@ -270,7 +270,7 @@ int CampaignClass::GetValue(unsigned int *result) {
     result = this->q05C; /*0x49e503*/
     *result = result; /*0x49e506*/
     IDA_LOBYTE(result) = this->q060; /*0x49e508*/
-    return result; /*0x49e50b*/
+    return (int)(result; /*0x49e50b*/);
 }
 } // namespace gamemd
 

@@ -45,8 +45,8 @@ struct VocClass {
     char * GetSampleNameByIndex(int a1);
     int FindByName();
     int Release();
-     double Check(...);  // C2597 interim stub
-    static double FindIndex(...);  // C2597 interim stub
+     int Check();  // G57w10-S raw 0x00406170 (was C2597 interim stub)
+    static int FindIndex(VocClass * aP1);  // G57w10-S raw 0x007514D0 (was C2597 interim stub)
     char * GetSampleName(); // N_fix R5 supply (cache truth)
 
     char LoadFromINI(CCINIClass * aP1);  // G42.39 supply

@@ -57,8 +57,8 @@ struct LoadOptions {
     void** GetEntries(void);
     void SetExtension(const char *);
     void SetMode(uint32_t);
-     double Cleanup(...);  // C2597 interim stub
-    static double Run(...);  // C2597 interim stub
+     int Cleanup();  // G57w10-S raw 0x00558790 (was C2597 interim stub)
+    static int Run(LoadOptions * aP1);  // G57w10-S raw 0x005587F0 (was C2597 interim stub)
     // G42.35a: m_10[64] pad removed -- collides with generator-owned
     // `unsigned int m_10;` in the flat block (C2040); no user anywhere.
     char Check();  // 0x559c20

@@ -27,12 +27,12 @@ struct CCFileClass {
     int Destruct();
     int GetFileSize(void *a1, void *a2);
     void ProcessStream(unsigned int a1);
-    static double Construct3(...);  // C2597 interim stub
+    static int Construct3(CCFileClass * aP1);  // G57w10-S raw 0x00473A80 (was C2597 interim stub)
     bool Open(int a2);
-     double Read(...);  // C2597 interim stub
+     int Read(void *lpBuffer, signed int Size);  // G57w10-S raw 0x00473B10 (was C2597 interim stub)
     void * ReadEntireFile();  // was C2597 interim stub, := truth 0x0x4a3890
-    static double Reset(...);  // C2597 interim stub
-static int GetSize(...);  // C2597 interim stub
+    static int Reset(CCFileClass * aP1);  // G57w10-S raw 0x00473CE0 (was C2597 interim stub)
+static int GetSize(CCFileClass * aP1);  // G57w10-S raw 0x00473C00 (was C2597 interim stub)
     void Construct2(char **a2);  // init file object with name
      _DWORD * Construct(char *Source);
     LONG Load();  // 0x595bc0

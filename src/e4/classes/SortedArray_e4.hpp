@@ -30,8 +30,8 @@ struct SortedArray {
     int Append(DynamicVector * aP1, unsigned int * a2);
     int BinarySearch(int *aP1);
     int FindPair(int * a2);
-    static double CheckCache(...);  // C2597 interim stub
-     double FindValue(...);  // C2597 interim stub
+    static int CheckCache(SortedArray * aP1, unsigned int *a2);  // G57w10-S raw 0x0052B600 (was C2597 interim stub)
+     void * FindValue(int *a2);  // G57w10-S raw 0x0052B430 (was C2597 interim stub)
     int Find(int *a2);  // 0x52b170
     void * BinarySearch2(int *a2); // N_fix R5 supply (cache truth)
 };

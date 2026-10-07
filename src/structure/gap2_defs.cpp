@@ -202,8 +202,8 @@ void* BuildingLightClass::CTOR(int a1) {
   *(&this->abstractFlags6) = 0; /*0x4358a3*/
   *(&this->abstractFlags7) = a1; /*0x4358a9*/
   *this = (int)(void *)&BuildingLightClass_vftable; /*0x4358af*/
-  this->vtable2 = (int)(void *)&BuildingLightClass_vftable; /*0x4358b5*/
-  this->vtable3 = (int)(void *)&BuildingLightClass_vftable; /*0x4358bc*/
+  this->vtable2 = (void *)(void *)&BuildingLightClass_vftable; /*0x4358b5*/
+  this->vtable3 = (void *)(void *)&BuildingLightClass_vftable; /*0x4358bc*/
   this->vtable4 = (int)(void *)&BuildingLightClass_vftable; /*0x4358c3*/
   if ( dword_8B41A0 < dword_8B4198 /*0x435900*/
     || (byte_8B419D || !dword_8B4198)

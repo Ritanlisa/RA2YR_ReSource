@@ -38,7 +38,7 @@ int CellClass::EnsureFileLoaded()
 }
 // 0x56EF50
 namespace gamemd {
-int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
+char CellClass::UpdateVariant3(unsigned short *aP0, int aP1)
 {
 
   IUnknown * v2;
@@ -206,7 +206,7 @@ int CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x56F2F0
 namespace gamemd {
-int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
+char CellClass::UpdateVariant4(unsigned short *aP0, int aP1)
 {
 
   IUnknown * v2;
@@ -374,7 +374,7 @@ int CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x56F8B0
 namespace gamemd {
-int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
+char CellClass::UpdateTerrain(unsigned short *aP0, int aP1)
 {
 
   IUnknown * v2;
@@ -543,7 +543,7 @@ int CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x56FC80
 namespace gamemd {
-int CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
+char CellClass::UpdateTileVariant2(unsigned short *aP0, int aP1)
 {
 
   IUnknown * v2;
@@ -712,7 +712,7 @@ int CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x572440
 namespace gamemd {
-int CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
+char CellClass::UpdateVariant7(unsigned short *aP0, int aP1)
 {
 
   int v2; // edi
@@ -880,7 +880,7 @@ int CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x5727E0
 namespace gamemd {
-int CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
+char CellClass::UpdateVariant8(unsigned short *aP0, int aP1)
 {
 
   int v2; // edi
@@ -1048,7 +1048,7 @@ int CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
 }
 // 0x572DA0
 namespace gamemd {
-HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
+char CellClass::UpdateVariant5(unsigned short *aP0, int aP1)
 {
 
   int v2; // edi

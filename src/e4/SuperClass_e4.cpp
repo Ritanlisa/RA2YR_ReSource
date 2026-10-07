@@ -471,7 +471,7 @@ int SuperClass::Lose()
 }
 // 0x6CB830
 namespace gamemd {
-AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
+char SuperClass::StopPreclickAnim(int aP1)
 {
 
   int v3; // eax
@@ -515,7 +515,7 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
   *((unsigned int *)this + 14) = v6; /*0x6cb8f1*/
   if ( *(unsigned char *)(*((unsigned int *)this + 10) + 229) ) /*0x6cb8f7*/
     *((unsigned int *)this + 31) = 0; /*0x6cb8ff*/
-  return (gamemd::AbstractClass **)(1); /*0x6cb902*/
+  return (char)((gamemd::AbstractClass **)(1); /*0x6cb902*/);
 
 }
 }

@@ -587,7 +587,7 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
         if ( a4 != 2 ) /*0x4a32fb*/
           return (int *)this; /*0x4a3306*/
       }
-      (**(void (***)(int, void *, char *))v6)(v6, &unk_7F8130, &this->isOnMap); /*0x4a3356*/
+      (**(void (***)(int, void *, char *))v6)( v6, &unk_7F8130, (char *)(&this->isOnMap) ); /*0x4a3356*/
     }
   }
   return (int *)this; /*0x4a32ff*/
@@ -2277,7 +2277,7 @@ AbstractClass * * DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4)
   v27 = -1; /*0x4ae761*/
   IDA_LOBYTE(v26) = 0; /*0x4ae765*/
   if ( byte_A8ED6B ) /*0x4ae769*/
-    return (char)v4; /*0x4ae769*/
+    return (gamemd::AbstractClass **)((char)v4; /*0x4ae769*/);
   a2 = *(unsigned int *)HouseClass::ClampToUsableCell(&v28, &a2); /*0x4ae78f*/
   v5 = ((Waypoint *)(char *)dword_A83D4C)->FindByCell( (IUnknown *)(&a2)); /*0x4ae794*/
   if ( v5 ) /*0x4ae79b*/

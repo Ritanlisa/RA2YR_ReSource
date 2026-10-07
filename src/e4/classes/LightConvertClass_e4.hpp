@@ -89,8 +89,8 @@ struct LightConvertClass {
     unsigned char q5B8;  // 0x5B8
     unsigned char *__pad_5;  // 0x5
 // --- flat members (END) ---
-    int SelectRLEBlitter(IUnknown * aP1);
-     double Constructor(...);  // C2597 interim stub
+    int SelectRLEBlitter(int a2);  // G57w10-S raw 0x00490E50 IUnknown 占位清除
+     int Constructor(int a2, int a3, int a4, int a5, int a6, int a7, char a8, int a9, int a10);  // G57w10-S raw 0x00555DA0 (was C2597 interim stub)
     LightConvertClass * sub_556520(unsigned int * Block, char a2);
 };
 

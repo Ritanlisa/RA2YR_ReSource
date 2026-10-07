@@ -569,7 +569,7 @@ unsigned int * ScriptAction::Constructor(int a2)
     *(unsigned int *)this->__pad_90 = -1; /*0x635f61*/
     this->ScriptAction_field_0x94 = (void *)-1; /*0x635f67*/
     *(unsigned int *)this->__pad_0 = a2; /*0x635f6d*/
-    return this->__pad_0; /*0x635f6f*/
+    return (unsigned int *)(this->__pad_0; /*0x635f6f*/);
 }
 } // namespace gamemd
 

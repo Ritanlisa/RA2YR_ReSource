@@ -20,6 +20,7 @@
 #include "e4/classes/ParticleTypeClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/Heap_e4.hpp"  // G57w10 D supply
 
 // 0x5A5360
 namespace gamemd {

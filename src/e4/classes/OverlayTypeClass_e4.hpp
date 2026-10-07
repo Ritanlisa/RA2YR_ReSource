@@ -135,7 +135,7 @@ struct OverlayTypeClass {
     OverlayClass * GetDamage(int a2);
     OverlayTypeClass * ddtor(char a2);
     ScenarioClass * * SaveLoad_Prefix(int a1, int a2);
-    bool GetType(IUnknown * aP2, int a3);
+    bool GetType(__int16 *a2, int a3);  // G57w10-S raw 0x005FE530 IUnknown 占位清除
     int * GetTile(int a1);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);

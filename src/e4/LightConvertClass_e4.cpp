@@ -9,7 +9,7 @@
 
 // 0x490E50
 namespace gamemd {
-int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
+int LightConvertClass::SelectRLEBlitter(int aP1)
 {
 
   if ( !*(unsigned int *)&this->__pad_5[3] ) /*0x490e53*/

@@ -1325,7 +1325,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
         if ( !v11 ) /*0x6ca3f0*/
           goto LABEL_18; /*0x6ca3f0*/
       }
-      ((void (__fastcall *)(wchar_t *, int))v9[1])(v5, aP1); /*0x6ca3fa*/
+      ((void (__fastcall *)(wchar_t *, int))v9[1])( v5, (int)(aP1) ); /*0x6ca3fa*/
     }
   LABEL_18:
     ((WideString *)(v2))->Trim(); /*0x6ca3fd*/

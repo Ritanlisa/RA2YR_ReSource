@@ -460,7 +460,7 @@ dword_AC1644 = 2147450879; /*0x5fe504*/
 }  // G42.18c ns repair
 // 0x5FE530
 namespace gamemd {  // G42.18c ns repair
-bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
+bool OverlayTypeClass::GetType(__int16 *aP2, int a3)
 {
 
   Object *v4; // eax
@@ -663,6 +663,7 @@ int OverlayTypeClass::GetAuxField()
 }
 }  // G42.18c ns repair
 // 0x5FEF30
+namespace gamemd {  // G57w10-S ns repair (G42.18c 先例)
 OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
 {
 

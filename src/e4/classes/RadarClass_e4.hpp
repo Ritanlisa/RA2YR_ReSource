@@ -17,6 +17,13 @@ struct GadgetClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct RadarClass {
+    static void InitializeHashTable(void *aP1);  // 0x655B20 raw: void __thiscall RadarClass::InitializeHashTable(RadarClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int SetViewMode(void *aP1, int a2, int a3);  // 0x656CB0 raw: int __thiscall RadarClass::SetViewMode(int*, int, char)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int SetFlag(void *aP1, int a2);  // 0x656E90 raw: int __thiscall RadarClass::SetFlag(RadarClass*, char)  // G57w10 r5 D-classbody supply (raw-anchored)
+
+    static int SetGlobal(void *aP1);  // 0x55AF40 raw: int SetGlobal(RadarClass*)
+    static int IsActiveMode(void *aP1);  // 0x656E50 raw: int IsActiveMode(RadarClass*)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
@@ -115,8 +122,8 @@ struct RadarClass {
     int GetBlip(int a1, int a2, int a3, ObjectClass * aP3);
     unsigned int * initRadarSurface();
     void Destru_vt50();
-    static double Destru_vt05(...);  // C2597 interim stub
-    static double UpdateFoundationShapesCustom(...);  // C2597 interim stub
+    static int Destru_vt05(RadarClass * aP1);  // G57w10-S raw 0x00652CF0 (was C2597 interim stub)
+    static char UpdateFoundationShapesCustom(RadarClass * aP1);  // G57w10-S raw 0x006563B0 (was C2597 interim stub)
     char Destru_vt16(char a2);  // 0x653100
 };
 

@@ -239,7 +239,7 @@ void * Tactical::ConstructTacticalSurface()
 }
 // 0x484050
 namespace gamemd {
-void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, void *a7_1)
+int Tactical::CreateTacticalLightSurface(Tactical *aP1, int *a2, unsigned int *a3, unsigned int *a4, int *a5, int a6, int a7)
 {
 
   unsigned int *v7; // eax
@@ -252,12 +252,12 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   int64_t v15; // [esp-8h] [ebp-1Ch]
   int v16; // [esp+10h] [ebp-4h] BYREF
 
-  v7 = (unsigned int *)((int *)((unsigned int *)(a1)));
-  v8 = (int *)((unsigned int *)(a3));
-  v9 = (int *)((unsigned int *)((int *)aP5));
-  v11 = (unsigned int *)(aP2);
-  v12 = (int *)a4; /*0x484067*/
-  *a1 = 0x10000; /*0x48406b*/
+  v7 = (unsigned int *)((int *)((unsigned int *)(a3)));
+  v8 = (int *)((unsigned int *)(a5));
+  v9 = (int *)((unsigned int *)((int *)a7));
+  v11 = (unsigned int *)(a4);
+  v12 = (int *)a6; /*0x484067*/
+  *a3 = 0x10000; /*0x48406b*/
   *v11 = 0; /*0x484071*/
   *v8 = 1000; /*0x484077*/
   *v12 = 1000; /*0x48407d*/
@@ -270,24 +270,24 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   }
   else
   {
-    HIDWORD(v15) = (unsigned int)(&a4); /*0x4840b2*/
-    LODWORD(v15) = (unsigned int)(&aP5); /*0x4840b7*/
-    Tactical::CalculateTacticalLighting( (int *)(this), (IUnknown *)(v7), (int *)(v11), (int *)(v8), (IUnknown *)v12, (int *)(v9), (long long)(&v16), (void *)(v15)); /*0x4840c4*/
+    HIDWORD(v15) = (unsigned int)(&a6); /*0x4840b2*/
+    LODWORD(v15) = (unsigned int)(&a7); /*0x4840b7*/
+int Tactical::CalculateTacticalLighting(Tactical *aP1, unsigned int *a2, unsigned int *a5, int *a6, int *a5, int *a6, int *a7, __int64 a8) ; /*0x4840c4*/
     if ( *(unsigned int *)this->__pad_34 /*0x484125*/
-      && (a1 = (int *)((unsigned int *)v16),
-          aP2 =(IUnknown *)(unsigned int *)aP5,
-          a3 = (int *)a4,
-          QuantizeColorRGB((int *)&a1, (int *)&aP2, (int *)&a3),
+      && (a3 = (int *)((unsigned int *)v16),
+          a4 =(IUnknown *)(unsigned int *)a7,
+          a5 = (int *)a6,
+          QuantizeColorRGB((int *)&a3, (int *)&a4, (int *)&a5),
           v13 = *(unsigned int *)this->__pad_34,
-          *(unsigned int **)(v13 + 408) == (unsigned int *)(a1))
-      && *(unsigned int **)(v13 + 412) == (unsigned int *)(aP2)
-      && (result = *(unsigned int *)(v13 + 416), (int *)result == a3) )
+          *(unsigned int **)(v13 + 408) == (unsigned int *)(a3))
+      && *(unsigned int **)(v13 + 412) == (unsigned int *)(a4)
+      && (result = *(unsigned int *)(v13 + 416), (int *)result == a5) )
     {
       *a2 =(int)(int *)(int)(int *)v13; /*0x48412c*/
     }
     else
     {
-      result = CreateSurfaceClassPrimary(v16,(int)(aP5),(int)(a4)); /*0x484142*/
+      result = CreateSurfaceClassPrimary(v16,(int)(a7),(int)(a6)); /*0x484142*/
       *a2 = result; /*0x48414e*/
     }
   }

@@ -19,6 +19,7 @@ struct VtableStub {
     unsigned int VtableStub_643E70;
 // --- flat members (END) ---
     char RetZero_eax_35(int a1);
+    static void sub_643E70(void *aP1);  // 0x643E70 raw: VtableStub::643E70(_DWORD*) [name illegal in C++; corpus sub_ form]
     void Method_425270();  // 0x425270
 };
 

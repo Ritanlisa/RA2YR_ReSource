@@ -307,12 +307,12 @@ struct AircraftClass {
     void* Destruct;  // 0x0 (no offset truth)
 // --- flat members (END) ---
     AircraftClass * CheckActionStatus(char a2);
-    AircraftTypeClass * GetCursorOverObject(IUnknown * aP1, IUnknown * a3, void *a3_2);
+    int GetCursorOverObject(AircraftClass *aP1, int *a2, int *a3);  // G57w10-S raw 0x00417CC0 IUnknown 占位清除
     HRESULT CheckPassengerCount(int a1, int pPStm, int a3);
     char * CheckLandingClearance(int a2, int a3, int a4);
     char CheckDockState();
     char ValidateMovement(int a2, int * a3, int a4);
-    int CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3);
+    int CanEnterCell(__int16 *a2, char a3, char a4);  // G57w10-S raw 0x00417F80 IUnknown 占位清除
     int CheckMissionAbort();
     int CheckMissionFail();
     int CheckMissionStatus();
@@ -332,7 +332,7 @@ struct AircraftClass {
     int ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6);
     AircraftTypeClass * Update(int a2);
     void* LoadFromStream(unsigned int * a0, FootClass * aP1);
-     double Construct(...);  // C2597 interim stub
+     int Construct(int a2, int a3, IUnknown *ppv);  // G57w10-S raw 0x00413D20 (was C2597 interim stub)
     AircraftTypeClass * Update(void * a1, void * a2, void *a3, void *a4);
     unsigned int q_3E0;  // +0x3E0 flat supply (final pass)
 };

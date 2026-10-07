@@ -254,7 +254,7 @@ LABEL_22:
 }
 // 0x4CC310
 namespace gamemd {
-unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown * aP0, int * a1, int arg0, void * a3)
+unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(unsigned int *aP0, int *a1, int arg0, void *a3)
 {
 
   unsigned int *FirstObstacle; // eax

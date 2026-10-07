@@ -186,7 +186,7 @@ struct Network {
     void validatePacket();  // 0x663910
     int SendMasterPlayerList();  // 0x6639D0
     HashTable_flat * * ProcessAddressChange();  // 0x6640E0
-    void * processAcknowledgment(IUnknown * aP1);  // 0x6642A0
+    char * processAcknowledgment(void *a2);  // G57w10-S raw 0x006642A0 IUnknown 占位清除
     void * reconnect(DynamicVector * aP1, short a3);  // 0x664400
     unsigned int * processGameEvent();  // 0x69B540
     AbstractClass * * SyncPlayerList();  // 0x792F10
@@ -203,7 +203,7 @@ struct Network {
     int SendOptionsGame(char * Source);  // 0x5E3720
     int InitPlayerSlots();  // 0x5E8B60
     HWND handleTimeout(HWND hDlg);  // 0x5EFF70
-    AbstractClass * * handleDisconnect(IUnknown * aP1);  // 0x664390
+    __int16 handleDisconnect(void *a2);  // G57w10-S raw 0x00664390 IUnknown 占位清除
     int checkTimeout(int a2);  // 0x6643E0
     static bool IsMultiplayerActive();  // 0x77D940
     static char IsLobbyFeature();  // 0x77D970

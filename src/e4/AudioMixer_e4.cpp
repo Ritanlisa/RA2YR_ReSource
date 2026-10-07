@@ -184,7 +184,8 @@ int AudioMixer::Shutdown()
 
   if ( g_Audio_Enabled ) /*0x406e88*/
     ((AudioQueue *)(g_Audio_Enabled))->StopAllVoices(1); /*0x406e8f*/
-  return ((gamemd::AudioStream *)this)->CleanupChannels();
+  ((gamemd::AudioStream *)this)->CleanupChannels();
+    return 0;  // G57w10-S raw 0x404E70 void; raw 同型坏渲染(tail-call)
 
 }
 } // namespace gamemd

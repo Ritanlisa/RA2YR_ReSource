@@ -157,8 +157,8 @@ char MouseClass::selectCursor(int a2, unsigned int * a3) {
       (*(void (__thiscall **)(_DynamicVectorClass_PAVMixFileClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40d7ae*/
     }
     v7 = this->m_8; /*0x40d7b1*/
-    if ( v7 < this->m_10 ) /*0x40d7b9*/
-      this->m_10 = v7; /*0x40d7bb*/
+    if ( v7 < this->q010 ) /*0x40d7b9 g57w10 r4: ml MouseClass@0x10=q010; m_10=生成器名(三源无)*/
+      this->q010 = v7; /*0x40d7bb g57w10 r4*/
     return 1; /*0x40d7be*/
 }
 }
@@ -463,7 +463,7 @@ void DropListClass::OnKeyDown(void* a1) {
           v4 = (const wchar_t *)(*(int (__thiscall **)(char *, int))(*((unsigned int *)this + 44) + 160))( /*0x4b5557*/
                                   (char *)this + 176,
                                   v3);
-          if ( !_wcsicmp(String1, v4) ) /*0x4b555f*/
+          if ( !_wcsicmp( (const wchar_t *)(String1), v4 ) ) /*0x4b555f*/
             break; /*0x4b555f*/
           if ( ++v3 >= (*(int (__thiscall **)(DropListClass *))(*(unsigned int *)this->__pad_0 + 176))(this) ) /*0x4b5578*/
             return; /*0x4b5578*/
@@ -512,7 +512,7 @@ int DropListClass::SelectItem(void* a1, int a2, wchar_t *String, int a3) {  // g
     v4 = wcslen(String); /*0x4c30f3*/
     v5 = *this; /*0x4c30f8*/
     *(this + 15) = v4; /*0x4c30ff*/
-    return (*(int (__thiscall **)(int *))(v5 + 72))(this); /*0x4c3105*/
+    return (*(int (__thiscall **)(int *))(v5 + 72))( (int *)(this) ); /*0x4c3105*/
 }
 }
 
@@ -542,11 +542,11 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))(this); /*0x4c31b9*/
     }
     if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *))(*(unsigned int *)this + 88))(this) ) /*0x4c31cd*/
-      return CellClass::Draw((ControlClass *)this, v6, a3, 0); /*0x4c31d2*/
+      return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c31d2*/
     if ( *a3 == 27 ) /*0x4c31dd*/
     {
       (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c31e3*/
-      return CellClass::Draw((ControlClass *)this, 0, a3, 0); /*0x4c31f5*/
+      return ((CellClass *)(ControlClass *)this)->Draw(0, a3, 0);  // g57w10: instance form /*0x4c31f5*/
     }
     v7 = (unsigned __int8)Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], *a3); /*0x4c3209*/
     v8 = *a3; /*0x4c320b*/
@@ -555,20 +555,20 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       IDA_BYTE1(v8) &= ~0x10u; /*0x4c3221*/
       *a3 = v8; /*0x4c3227*/
       if ( (v6 & 0x44) != 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *, int))(*(unsigned int *)this + 152))(this, v7) ) /*0x4c3230*/
-        return CellClass::Draw((ControlClass *)this, v6, a3, 0); /*0x4c3238*/
+        return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c3238*/
     }
     else if ( (*a3 & 0x1000) == 0 && v7 >= 32 || v8 == 13 || v8 == 8 ) /*0x4c3255*/
     {
       if ( (v6 & 0x44) != 0 ) /*0x4c325a*/
-        return CellClass::Draw((ControlClass *)this, v6, a3, 0); /*0x4c325a*/
+        return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c325a*/
       v9 = *this; /*0x4c3263*/
       v10 = Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], v8); /*0x4c3266*/
       if ( !(*(unsigned __int8 (__thiscall **)(EditClass *, unsigned int))(*(unsigned int *)&v9 + 152))(this, v10) ) /*0x4c3271*/
-        return CellClass::Draw((ControlClass *)this, v6, a3, 0); /*0x4c327a*/
+        return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c327a*/
     }
     IDA_BYTE1(v6) &= ~1u; /*0x4c327c*/
     *a3 = 0; /*0x4c327f*/
-    return CellClass::Draw((ControlClass *)this, v6, a3, 0); /*0x4c319c*/
+    return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c319c*/
 }
 }
 
@@ -652,7 +652,7 @@ void* DropListClass::GetItemText(void* a1) {
           v14 = (*(int (__thiscall **)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x4c33f4*/
                   g_DSurface_Hidden_2,
                   v24);
-          return FillRectangle(v23, (int)asc_82076C, (int)g_DSurface_Hidden_2, v14, (int)&v21, v15, 0, v17, -1, 0); /*0x4c3407*/
+          return (void *)(FillRectangle(v23, (int)asc_82076C, (int)g_DSurface_Hidden_2, v14, (int)&v21, v15, 0, v17, -1, 0); /*0x4c3407*/);
         }
       }
     }

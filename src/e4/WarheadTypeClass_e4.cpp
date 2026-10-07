@@ -33,6 +33,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/GenericNode_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 // ==== G42.57w9 data-label supply (IDA truth; e4_globals pending) ====
 extern unsigned char aAmbientdamage;  // data: 0x849548 truth(IDA G42.57w9)
 extern unsigned char aDecloaktofire;  // data: 0x84951c truth(IDA G42.57w9)
@@ -659,7 +660,7 @@ int WarheadTypeClass::FindOrCreate(ObjectClass * Source)
 {
     int v2; // esi
 
-    if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x75e3cc*/
+    if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x75e3cc*/
       return 0; /*0x75e42f*/
     v2 = 0; /*0x75e3dd*/
     if ( g_WarheadTypePool <= 0 ) /*0x75e3e1*/

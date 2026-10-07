@@ -119,7 +119,7 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
 } // namespace gamemd
 // 0x759260
 namespace gamemd {
-void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8)
+char * Stream::InitializeBinkAudio(const char *a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
   int v9; // eax
@@ -240,7 +240,7 @@ LABEL_14:
   *((unsigned char *)this + 1360) = 0; /*0x7594f4*/
   *((unsigned char *)this + 1361) = 0; /*0x7594fa*/
   *(unsigned int *)this = 0; /*0x759500*/
-  return (void *)this; /*0x7594b6*/
+  return (char *)((void *)this; /*0x7594b6*/);
 
 }
 } // namespace gamemd

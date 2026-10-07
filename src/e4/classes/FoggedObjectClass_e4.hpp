@@ -53,7 +53,7 @@ struct FoggedObjectClass {
     unsigned char __pad_0;  // 0x0
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
-    AbstractClass * InitTerrainFog(IUnknown * aP1, int a3, int a4);
+    int InitTerrainFog(unsigned int *a2, int a3, int a4);  // G57w10-S raw 0x004D0C40 IUnknown 占位清除
     AbstractClass * * ResizeArray(int a2, char * a3);
     DynamicVector * QueryInterface(char a2, int a3);
     FoggedObjectClass * ddtor(char a2, int a3);

@@ -10,6 +10,8 @@ namespace gamemd {
 struct VoxelStruct;  // fix_fwd_type_supply
 
 struct INIClass {
+    static int ParseValue_Wide(void *aP1, void *a2, void *a3, void *a4, void *a5, unsigned int a6);  // 0x528F00 raw: int ParseValue_Wide(INIClass*, unsigned __int8*, unsigned __int8*, wchar_t*, wchar_t*, size_t)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned char __tail_0[2];  // 0x0
@@ -58,31 +60,31 @@ struct INIClass {
     INIClass();
     static unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count);
     void SetGameOptionsPing();
-    static double ClearSection(...);  // C2597 interim stub
-    static double GetBase64Data(...);  // C2597 interim stub
-    static double GetPipIdx(...);  // C2597 interim stub
-    static double GetStringEx(...);  // C2597 interim stub
-    static double LoadFile(...);  // C2597 interim stub
-    static double ReadBase64Data(...);  // C2597 interim stub
-    static double ReadBool_Overwrite(...);  // C2597 interim stub
-    static double ReadDouble_Overwrite(...);  // C2597 interim stub
-    static double ReadRGBColorList(...);  // C2597 interim stub
-    static double ResetSection(...);  // C2597 interim stub
-    static double SetBool(...);  // C2597 interim stub
-    static double SetRect(...);  // C2597 interim stub
-    static double WriteDigest(...);  // C2597 interim stub
-    static double GetCoord(...);  // C2597 interim stub
-    static double ReadPoint3D_Overwrite(...);  // C2597 interim stub
-    static double SetHouseName(...);  // C2597 interim stub
-    static double GetCoord2(...);  // C2597 interim stub
-    static double SetIntFormat(...);  // C2597 interim stub
-    static double ReadTokenizedPair(...);  // C2597 interim stub
-    static double SaveToPipe(...);  // C2597 interim stub
-static int WriteToString(...);  // C2597 interim stub
+    static int ClearSection(INIClass * aP1, int a2, unsigned __int8 *a3);  // G57w10-S raw 0x005257C0 (was C2597 interim stub)
+    static int GetBase64Data(INIClass * aP1, char *a2, int a3, size_t Size);  // G57w10-S raw 0x00526FB0 (was C2597 interim stub)
+    static int GetPipIdx(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, int a4);  // G57w10-S raw 0x004748A0 (was C2597 interim stub)
+    static int GetStringEx(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, wchar_t *String, size_t Count);  // G57w10-S raw 0x00529160 (was C2597 interim stub)
+    static int LoadFile(INIClass * aP1, int a2, char a3);  // G57w10-S raw 0x00525A60 (was C2597 interim stub)
+    static char ReadBase64Data(INIClass * aP1, unsigned __int8 *Block, int a3, signed int Size);  // G57w10-S raw 0x00526E80 (was C2597 interim stub)
+    static int ReadBool_Overwrite(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, char a4);  // G57w10-S raw 0x005295F0 (was C2597 interim stub)
+    static int ReadDouble_Overwrite(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, double a4);  // G57w10-S raw 0x005283D0 (was C2597 interim stub)
+    static int ReadRGBColorList(INIClass * aP1, int a2, unsigned __int8 *a3, unsigned __int8 *a4, void **a5, void *a6, int a7, __int16 a8, int a9, int a10, int a11);  // G57w10-S raw 0x00476B20 (was C2597 interim stub)
+    static int ResetSection(INIClass * aP1);  // G57w10-S raw 0x00526B00 (was C2597 interim stub)
+    static char SetBool(INIClass * aP1, unsigned __int8 *Block, char *a3, char a4);  // G57w10-S raw 0x00529560 (was C2597 interim stub)
+    static char SetRect(INIClass * aP1, unsigned __int8 *Block, char *a3, unsigned int *a4);  // G57w10-S raw 0x00527C10 (was C2597 interim stub)
+    static int WriteDigest(INIClass * aP1, int a2, char a3);  // G57w10-S raw 0x00474430 (was C2597 interim stub)
+    static int GetCoord(INIClass * aP1, int a2, unsigned __int8 *a3, unsigned __int8 *a4, unsigned __int8 *a5);  // G57w10-S raw 0x00474B50 (was C2597 interim stub)
+    static int * ReadPoint3D_Overwrite(INIClass * aP1, int *a2, unsigned __int8 *a3, int a4, unsigned int *a5);  // G57w10-S raw 0x00529CA0 (was C2597 interim stub)
+    static int SetHouseName(INIClass * aP1, unsigned __int8 *Block, char *a3, void *a4);  // G57w10-S raw 0x00475610 (was C2597 interim stub)
+    static int * GetCoord2(INIClass * aP1, int *a2, unsigned __int8 *a3, unsigned __int8 *a4, int *a5);  // G57w10-S raw 0x00476420 (was C2597 interim stub)
+    static char SetIntFormat(INIClass * aP1, char **a2, char **a3, int a4, int a5);  // G57w10-S raw 0x00527640 (was C2597 interim stub)
+    static void ReadTokenizedPair(INIClass * aP1, unsigned int *a2, char **a3, void *a4, int a5, char **a6);  // G57w10-S raw 0x007710B0 (was C2597 interim stub)
+    static int SaveToPipe(INIClass * aP1, int a2);  // G57w10-S raw 0x00526420 (was C2597 interim stub)
+static int WriteToString(INIClass * aP1, int a2);  // G57w10-S raw 0x00526470 (was C2597 interim stub)
     char ** GetStringByIndexEx(char **a2, char **a3, int a4);  // 0x526d90
-    static int SetInt(...);  // 0x5275c0
+    static int SetInt(INIClass * aP1, unsigned __int8 *Block, char *a3, int a4, int a5);  // G57w10-S raw 0x005275C0 (was C2597 interim stub)
     int ReadString(char **aP1, char **aP2, char **aP3, int a5);  // 0x528c00
-    static int ReadInt_Overwrite(...);  // 0x5276d0
+    static int ReadInt_Overwrite(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, int a4);  // G57w10-S raw 0x005276D0 (was C2597 interim stub)
     unsigned int * GetCoordPair(unsigned int *a2, char *Source, char **a4, unsigned int *a5);  // 0x529a30
     int ReadDifficultyModifiers(); // N_fix R5 supply (cache truth)
     int FindKey(char **a2); // N_fix R5 supply (cache truth)

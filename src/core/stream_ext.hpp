@@ -53,6 +53,7 @@ public:
     // design: virtual function, no binary implementation matched in IDA
     virtual int32_t GetPosition();
 
+    static int Set(StreamClass* aP1, void* aP2);  // g57w10: raw qualified-call vocab (raw renders inline ComPtr op as StreamClass::Set; e.g. 0x521f82)
     void*       m_Data;         // 0x00
     int32_t     m_Position;     // 0x04
     int32_t     m_Size;         // 0x08

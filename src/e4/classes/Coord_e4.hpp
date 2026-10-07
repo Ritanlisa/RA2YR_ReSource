@@ -60,7 +60,7 @@ struct Coord {
     unsigned int u32_14A8;
 // --- flat members (END) ---
     int ToGridIndex(int aP1, int aP2, int aP3);  // 0x4138C0
-    unsigned int * ToCell(IUnknown * aP1);  // 0x413A30
+    unsigned int * ToCell(unsigned int *a2);  // G57w10-S raw 0x00413A30 IUnknown 占位清除
     void * Subtract(int aP1, int aP2, int aP3);  // 0x41C230
     int Length();  // 0x41C380
     unsigned int * GetCoords(int * outCoords, void *a2_1);  // 0x4399A0

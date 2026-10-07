@@ -143,7 +143,7 @@ struct SuperClass {
 // --- flat members (END) ---
     AbstractClass * * Reset(void *a1, void *a2);
     AbstractClass * * StartTimer(int a2, char a3, char a4);
-    AbstractClass * * StopPreclickAnim(IUnknown * aP1);
+    char StopPreclickAnim(int a2);  // G57w10-S raw 0x006CB830 IUnknown 占位清除
     SuperClass * * CleanupMembers(void *a1);
     bool ShouldDrawProgress();
     bool ShouldFlashTab();

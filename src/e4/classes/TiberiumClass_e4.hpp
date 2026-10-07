@@ -103,7 +103,7 @@ struct TiberiumClass {
     int ddtor(int a1, unsigned int * a2);
     TiberiumClass(ObjectClass * aP1);
     int Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8);  // def-aligned
-    static double Grow(...);  // C2597 interim stub
+    static char Grow(TiberiumClass * aP1, unsigned short *a2);  // G57w10-S raw 0x0059C920 (was C2597 interim stub)
 };
 
 } // namespace gamemd

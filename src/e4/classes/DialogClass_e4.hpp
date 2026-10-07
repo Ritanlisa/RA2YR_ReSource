@@ -6,6 +6,8 @@
 namespace gamemd {
 
 struct DialogClass {
+    static unsigned int * CopyTemplateStruct(void *aP1, void *a2);  // 0x623610 raw: _DWORD* CopyTemplateStruct(DialogClass*, _DWORD*)
+
 // --- flat members (BEGIN) ---
     unsigned int u32_14;  // 0x14
     unsigned int q020;  // 0x20

@@ -15,6 +15,8 @@ struct TagClass;  // fix_fwd_type_supply
 struct CampaignClass;  // fix_fwd_type_supply
 
 struct TeamClass {
+    static int SumMemberCounts(void *aP1);  // 0x6E8160 raw: int __thiscall TeamClass::SumMemberCounts(TeamClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -119,8 +121,8 @@ struct TeamClass {
     void MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2);
     void Update(int a2);
     void* AttackCoordinator();
-    static double AddToBuildQueue(...);  // C2597 interim stub
-    static double CreateOneOf(...);  // C2597 interim stub
+    static int AddToBuildQueue(TeamClass * aP1);  // G57w10-S raw 0x00726720 (was C2597 interim stub)
+    static int CreateOneOf(TeamClass * aP1, TeamClass *a2);  // G57w10-S raw 0x006F09C0 (was C2597 interim stub)
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
     void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
     static int LiberateMember_Start(void * aP1, int aP2, int aP3);  // G42.39a static-call supply

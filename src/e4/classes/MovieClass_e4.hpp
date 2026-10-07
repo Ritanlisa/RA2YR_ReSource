@@ -18,8 +18,8 @@ struct MovieClass {
     unsigned int u32_78;
 // --- flat members (END) ---
     unsigned int ComputeTime();
-    static double GetHeight(...);  // C2597 interim stub
-    static double GetWidth(...);  // C2597 interim stub
+    static int GetHeight(MovieClass * aP1);  // G57w10-S raw 0x00759F80 (was C2597 interim stub)
+    static int GetWidth(MovieClass * aP1);  // G57w10-S raw 0x00759F70 (was C2597 interim stub)
     int ReadConfig(HWND aP1, int nIDDlgItem);  // 0x5c23b0
 };
 

@@ -608,11 +608,11 @@ int BuildingClass::Dtor()
   SuperWeapon_v = this->Type->SuperWeapon; /*0x43be50*/
   if ( (SuperWeapon_v == -1 /*0x43bee8*/
      || (v13 = *(unsigned int *)(*(unsigned int *)(*((unsigned int *)dword_A83CBC + SuperWeapon_v) + 40) + 200)) == 0
-     || (&this->owner->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(v13 + 3576)))
+     || DynamicVector::GetOrGrow(&this->owner->SuperWeaponsAvailable, (int)*(unsigned int *)(v13 + 3576)))  /*g57w10 r4: static 形态 (TU-local 0x49FAE0 真值)*/
     && this->Type->SuperWeapon != -1
     || ((SuperWeapon2 = this->Type->SuperWeapon2, SuperWeapon2 == -1)
      || (v15 = *(unsigned int *)(*(unsigned int *)(*((unsigned int *)dword_A83CBC + SuperWeapon2) + 40) + 200)) == 0
-     || (&this->owner->SuperWeaponsAvailable)->GetOrGrow(*(unsigned int *)(v15 + 3576)))
+     || DynamicVector::GetOrGrow(&this->owner->SuperWeaponsAvailable, (int)*(unsigned int *)(v15 + 3576)))  /*g57w10 r4*/
     && this->Type->SuperWeapon2 != -1 )
   {
     UpdateSuperWeaponsOwnedHouseClass(this->owner); /*0x43bef0 -- ASM: ecx=[esi+0x21C]*/
@@ -5739,7 +5739,7 @@ int BuildingClass::UpdateConstruction()
           ++dword_A8E7AC; /*0x443f63*/
           if ( HouseClass::IonSensitivesShouldBeOffline() ) /*0x443f6f*/
           {
-            PlacementCellsAlt = MapClass::FindPlacementCellsAlt((char *)v4, &v231, (int)this); /*0x443f83*/
+            PlacementCellsAlt = ((ObjectClass *)v4)->FindPlacementCellsAlt(&v231, (int)this); /*0x443f83 g57w10 r4: raw 0x703590 this=ObjectClass*/
             v17 = *(unsigned __int8 (__thiscall ***)(ObjectClass *, int *, int))v4; /*0x443f8a*/  // g57e2 W2
             bunkersCount = *PlacementCellsAlt; /*0x443f90*/
             v227[1] = 0; /*0x443f94*/
@@ -5844,7 +5844,7 @@ int BuildingClass::UpdateConstruction()
             }
             else
             {
-              *(unsigned int *)v203 = *MapClass::FindPlacementCellsAlt((char *)v4, &v228, (int)this); /*0x443ef1*/
+              *(unsigned int *)v203 = *((ObjectClass *)v4)->FindPlacementCellsAlt(&v228, (int)this); /*0x443ef1 g57w10 r4*/
               if ( *(unsigned int *)v203 == g_TerrainTypeTable ) /*0x443ef5*/
               {
                 (*((void (__thiscall **)(ObjectClass *, unsigned int, int))v4->vtable1 + 288))(v4, 0, 1); /*0x443f3c*/
@@ -6777,26 +6777,25 @@ void BuildingClass::ProcessRepair()
     int v153; // [esp+4Ch] [ebp-Ch]
     int v154; // [esp+50h] [ebp-8h]
 
-    _EBP = this; /*0x44b78b*/
     if ( this->Type->Bunker ) /*0x44b797*/
       BuildingClass::UpdateBunker(v148, v1); /*0x44b7a3*/
-    Type = _EBP->Type; /*0x44b7a8*/
+    Type = this->Type; /*0x44b7a8*/
     if ( Type->ConstructionYard ) /*0x44b7ae*/
     {
-      missionStatus = ((unsigned int *)_EBP)[0]; /*0x44b7bc*/
+      missionStatus = ((unsigned int *)this)[0]; /*0x44b7bc*/
       if ( missionStatus ) /*0x44b7c4*/
       {
-        if ( missionStatus == 2 && !(unsigned __int8)Team::AllMembersValid((Team *)_EBP) ) /*0x44b7d1*/
+        if ( missionStatus == 2 && !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44b7d1*/
         {
-          (*((void (__thiscall **)(BuildingClass *, int, unsigned int))_EBP->vtable1 + 122))(_EBP, 5, 0); /*0x44b7e6*/
-          BuildingClass::ClearAnims(_EBP, 7); /*0x44b7f0*/
+          (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44b7e6*/
+          BuildingClass::ClearAnims(this, 7); /*0x44b7f0*/
           return 1; /*0x44b801*/
         }
       }
       else
       {
-        BuildingClass::StartProduction(_EBP, 2); /*0x44b806*/
-        BuildingClass::GetHealthRatio(_EBP); /*0x44b80d*/
+        BuildingClass::StartProduction(this, 2); /*0x44b806*/
+        BuildingClass::GetHealthRatio(this); /*0x44b80d*/
         _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44b812*/
         __asm /*0x44b817*/
         {
@@ -6806,40 +6805,40 @@ void BuildingClass::ProcessRepair()
         if ( (_EAX & 0x4100) != 0 ) /*0x44b822*/
         {
           v8 = 1; /*0x44b82a*/
-          v9 = &_EBP->Type->__pad_F70[456]; /*0x44b82f*/
+          v9 = &this->Type->__pad_F70[456]; /*0x44b82f*/
         }
         else
         {
           v8 = 0; /*0x44b83c*/
-          v9 = &_EBP->Type->__pad_F70[440]; /*0x44b83e*/
+          v9 = &this->Type->__pad_F70[440]; /*0x44b83e*/
         }
         if ( v9 && *v9 ) /*0x44b847*/
-          BuildingClass::PlayAnim(_EBP, v6, v9, 7, v8, 0, 0); /*0x44b854*/
-        ((unsigned int *)_EBP)[0] = 2; /*0x44b859*/
+          BuildingClass::PlayAnim(this, v6, v9, 7, v8, 0, 0); /*0x44b854*/
+        ((unsigned int *)this)[0] = 2; /*0x44b859*/
       }
       return 1; /*0x44b86f*/
     }
     if ( Type->Hospital )
     {
-      v10 = ((unsigned int *)_EBP)[0]; /*0x44b87e*/
+      v10 = ((unsigned int *)this)[0]; /*0x44b87e*/
       if ( v10 )
       {
         if ( v10 == 2 ) /*0x44b88f*/
         {
-          if ( Locomotor::GetSpeed((Locomotor *)_EBP->__pad_628) || (v11 = *(unsigned int *)&_EBP->__pad_628[12]) == 0 ) /*0x44b8ae*/
+          if ( Locomotor::GetSpeed((Locomotor *)this->__pad_628) || (v11 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44b8ae*/
           {
-            IDA_LOBYTE(_EBP->RepairProgress[1]) = 0; /*0x44b8df*/
+            IDA_LOBYTE(this->RepairProgress.Timer) = 0; /*0x44b8df*/
           }
           else
           {
-            v12 = *(unsigned int *)&_EBP->__pad_628[16]; /*0x44b8b0*/
-            v13 = _EBP->RepairProgress[0]; /*0x44b8b6*/
-            IDA_LOBYTE(_EBP->RepairProgress[1]) = 1; /*0x44b8be*/
-            _EBP->RepairProgress[0] = v12 + v13; /*0x44b8c5*/
+            v12 = *(unsigned int *)&this->__pad_628[16]; /*0x44b8b0*/
+            v13 = this->RepairProgress.Value; /*0x44b8b6*/
+            IDA_LOBYTE(this->RepairProgress.Timer) = 1; /*0x44b8be*/
+            this->RepairProgress.Value = v12 + v13; /*0x44b8c5*/
             v14 = v153; /*0x44b8d1*/
-            *(unsigned int *)_EBP->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44b8d5*/
-            *(unsigned int *)&_EBP->__pad_628[4] = v14; /*0x44b8d7*/
-            *(unsigned int *)&_EBP->__pad_628[8] = v11; /*0x44b8da*/
+            *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44b8d5*/
+            *(unsigned int *)&this->__pad_628[4] = v14; /*0x44b8d7*/
+            *(unsigned int *)&this->__pad_628[8] = v11; /*0x44b8da*/
           }
           _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44b8e6*/
           __asm /*0x44b8eb*/
@@ -6852,61 +6851,61 @@ void BuildingClass::ProcessRepair()
           }
           if ( (_EAX & 0x4100) == 0 ) /*0x44b904*/
             return 1; /*0x44b904*/
-          vtable0 = (int (__thiscall **)(BuildingClass *, int))_EBP->TechnoClass; /*0x44b90a*/
-          _EBP->BuildingClass_field_bool_6DD = 0; /*0x44b911*/
-          _EBP->RepairProgress[0] = 0; /*0x44b918*/
-          v17 = vtable0[157](_EBP, 28) - 10; /*0x44b924*/
+          vtable0 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44b90a*/
+          this->BuildingClass_field_bool_6DD = 0; /*0x44b911*/
+          this->RepairProgress.Value = 0; /*0x44b918*/
+          v17 = vtable0[157](this, 28) - 10; /*0x44b924*/
           if ( v17 ) /*0x44b927*/
           {
             v18 = v17 - 22; /*0x44b929*/
             if ( !v18 ) /*0x44b92c*/
             {
-              v22 = (void (__thiscall **)(BuildingClass *, int, int))_EBP->TechnoClass; /*0x44b9e6*/
+              v22 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44b9e6*/
               v144 = g_TerrainTypeTable; /*0x44b9e9*/
-              v23 = LinkedList::Pop((LinkedList *)((unsigned int *)_EBP)[0]); /*0x44b9f0*/
-              v22[64](_EBP, v23, v144); /*0x44b9f8*/
+              v23 = LinkedList::Pop((LinkedList *)((unsigned int *)this)[0]); /*0x44b9f0*/
+              v22[64](this, v23, v144); /*0x44b9f8*/
               return 1; /*0x44ba0a*/
             }
             if ( v18 != 1 ) /*0x44b933*/
               return 1; /*0x44b9df*/
-            if ( (unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)_EBP)[0]) ) /*0x44b93f*/
+            if ( (unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x44b93f*/
             {
-              v19 = (int *)(*((int (__thiscall **)(BuildingClass *, void **))_EBP->vtable1 + 110))(_EBP, &v151.m_Data); /*0x44b952*/
+              v19 = (int *)(*((int (__thiscall **)(BuildingClass *, void **))this->vtable1 + 110))(this, &v151.m_Data); /*0x44b952*/
               if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, *v19, *v19) ) /*0x44b960*/
                 VoxClass::FindAndPlay((VoxClass *)&((unsigned int *)&stru_818E00)[6], -1); /*0x44b973*/
-              v152 = ((unsigned int *)_EBP)[0]; /*0x44b981*/
-              v153 = ((unsigned int *)_EBP)[1]; /*0x44b98e*/
-              v154 = ((unsigned int *)_EBP)[2]; /*0x44b999*/
+              v152 = ((unsigned int *)this)[0]; /*0x44b981*/
+              v153 = ((unsigned int *)this)[1]; /*0x44b98e*/
+              v154 = ((unsigned int *)this)[2]; /*0x44b999*/
               StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1816), &v152, 0); /*0x44b9a3*/
             }
           }
-          v20 = (void (__thiscall **)(BuildingClass *, int, int))_EBP->TechnoClass; /*0x44b9ad*/
+          v20 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44b9ad*/
           v143 = g_TerrainTypeTable; /*0x44b9b0*/
-          v21 = LinkedList::Pop((LinkedList *)((unsigned int *)_EBP)[0]); /*0x44b9b7*/
-          v20[64](_EBP, v21, v143); /*0x44b9bf*/
-          (*((void (__thiscall **)(BuildingClass *, int, unsigned int))_EBP->vtable1 + 122))(_EBP, 5, 0); /*0x44b9cd*/
+          v21 = LinkedList::Pop((LinkedList *)((unsigned int *)this)[0]); /*0x44b9b7*/
+          v20[64](this, v21, v143); /*0x44b9bf*/
+          (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44b9cd*/
           return 1; /*0x44b9cd*/
         }
       }
       else
       {
-        ((unsigned int *)_EBP)[0] = 2; /*0x44ba0b*/
-        _EBP->BuildingClass_field_bool_6DD = 0; /*0x44ba15*/
-        _EBP->RepairProgress[0] = 0; /*0x44ba1c*/
+        ((unsigned int *)this)[0] = 2; /*0x44ba0b*/
+        this->BuildingClass_field_bool_6DD = 0; /*0x44ba15*/
+        this->RepairProgress.Value = 0; /*0x44ba1c*/
         v24 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44ba22*/
-        *(unsigned int *)&_EBP->__pad_628[12] = 1; /*0x44ba32*/
-        *(unsigned int *)_EBP->__pad_628 = v24; /*0x44ba38*/
-        *(unsigned int *)&_EBP->__pad_628[4] = v153; /*0x44ba3e*/
-        *(unsigned int *)&_EBP->__pad_628[8] = 1; /*0x44ba41*/
-        if ( _EBP->((unsigned int *)Type)[0] != -1 )
+        *(unsigned int *)&this->__pad_628[12] = 1; /*0x44ba32*/
+        *(unsigned int *)this->__pad_628 = v24; /*0x44ba38*/
+        *(unsigned int *)&this->__pad_628[4] = v153; /*0x44ba3e*/
+        *(unsigned int *)&this->__pad_628[8] = 1; /*0x44ba41*/
+        if ( *(int *)((char *)this->Type + 0x684) != -1 ) /*0x44ba4a g57w10 r4: live asm cmp [ecx+684h],-1 (ml BuildingTypeClass q684 无语义名)*/
         {
-          v25 = ((unsigned int *)_EBP)[0] - 1; /*0x44ba5f*/
-          ((unsigned int *)_EBP)[0] = v25; /*0x44ba62*/
-          ((unsigned int *)_EBP)[0] = v25 <= 0 ? 0 : v25;
+          v25 = ((unsigned int *)this)[0] - 1; /*0x44ba5f*/
+          ((unsigned int *)this)[0] = v25; /*0x44ba62*/
+          ((unsigned int *)this)[0] = v25 <= 0 ? 0 : v25;
         }
       }
   LABEL_231:
-      _EAX = MissionClass::GetMissionControl((MissionClass *)_EBP); /*0x44c819*/
+      _EAX = MissionClass::GetMissionControl((MissionClass *)this); /*0x44c819*/
       __asm /*0x44c820*/
       {
         fld qword ptr [eax+10h]
@@ -6917,25 +6916,25 @@ void BuildingClass::ProcessRepair()
     }
     if ( Type->Armory )
     {
-      v26 = ((unsigned int *)_EBP)[0]; /*0x44ba87*/
+      v26 = ((unsigned int *)this)[0]; /*0x44ba87*/
       if ( v26 )
       {
         if ( v26 == 2 ) /*0x44ba98*/
         {
-          if ( Locomotor::GetSpeed((Locomotor *)_EBP->__pad_628) || (v27 = *(unsigned int *)&_EBP->__pad_628[12]) == 0 ) /*0x44bab7*/
+          if ( Locomotor::GetSpeed((Locomotor *)this->__pad_628) || (v27 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bab7*/
           {
-            IDA_LOBYTE(_EBP->RepairProgress[1]) = 0; /*0x44bae8*/
+            IDA_LOBYTE(this->RepairProgress.Timer) = 0; /*0x44bae8*/
           }
           else
           {
-            v28 = *(unsigned int *)&_EBP->__pad_628[16]; /*0x44bab9*/
-            v29 = _EBP->RepairProgress[0]; /*0x44babf*/
-            IDA_LOBYTE(_EBP->RepairProgress[1]) = 1; /*0x44bac7*/
-            _EBP->RepairProgress[0] = v28 + v29; /*0x44bace*/
+            v28 = *(unsigned int *)&this->__pad_628[16]; /*0x44bab9*/
+            v29 = this->RepairProgress.Value; /*0x44babf*/
+            IDA_LOBYTE(this->RepairProgress.Timer) = 1; /*0x44bac7*/
+            this->RepairProgress.Value = v28 + v29; /*0x44bace*/
             v30 = v153; /*0x44bada*/
-            *(unsigned int *)_EBP->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bade*/
-            *(unsigned int *)&_EBP->__pad_628[4] = v30; /*0x44bae0*/
-            *(unsigned int *)&_EBP->__pad_628[8] = v27; /*0x44bae3*/
+            *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bade*/
+            *(unsigned int *)&this->__pad_628[4] = v30; /*0x44bae0*/
+            *(unsigned int *)&this->__pad_628[8] = v27; /*0x44bae3*/
           }
           _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44baef*/
           __asm /*0x44baf4*/
@@ -6948,38 +6947,38 @@ void BuildingClass::ProcessRepair()
           }
           if ( (_EAX & 0x4100) != 0 ) /*0x44bb0d*/
           {
-            v32 = (Power *)(Team::GetMember((Team *)_EBP, 0) + 336); /*0x44bb1b*/
+            v32 = (Power *)(Team::GetMember((Team *)this, 0) + 336); /*0x44bb1b*/
             if ( VeinholeClass::GetState((float *)&v32->Power_field_0x0) ) /*0x44bb23*/
               Power::ChangedHouse(v32, 1); /*0x44bb30*/
             else
               Timer::SetFlag((Timer *)v32, 1); /*0x44bb37*/
-            v33 = (void (__thiscall **)(BuildingClass *, int, int))_EBP->TechnoClass; /*0x44bb42*/
+            v33 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44bb42*/
             v145 = g_TerrainTypeTable; /*0x44bb45*/
-            v34 = LinkedList::Pop((LinkedList *)((unsigned int *)_EBP)[0]); /*0x44bb4c*/
-            v33[64](_EBP, v34, v145); /*0x44bb54*/
-            (*((void (__thiscall **)(BuildingClass *, int, unsigned int))_EBP->vtable1 + 122))(_EBP, 5, 0); /*0x44bb62*/
+            v34 = LinkedList::Pop((LinkedList *)((unsigned int *)this)[0]); /*0x44bb4c*/
+            v33[64](this, v34, v145); /*0x44bb54*/
+            (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44bb62*/
           }
         }
       }
       else
       {
-        ((unsigned int *)_EBP)[0] = 2; /*0x44bb6d*/
-        _EBP->BuildingClass_field_bool_6DD = 0; /*0x44bb77*/
-        _EBP->RepairProgress[0] = 0; /*0x44bb7e*/
+        ((unsigned int *)this)[0] = 2; /*0x44bb6d*/
+        this->BuildingClass_field_bool_6DD = 0; /*0x44bb77*/
+        this->RepairProgress.Value = 0; /*0x44bb7e*/
         v35 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bb84*/
-        *(unsigned int *)&_EBP->__pad_628[12] = 1; /*0x44bb94*/
-        *(unsigned int *)_EBP->__pad_628 = v35; /*0x44bb9a*/
-        *(unsigned int *)&_EBP->__pad_628[4] = v153; /*0x44bba0*/
-        *(unsigned int *)&_EBP->__pad_628[8] = 1; /*0x44bba3*/
-        v36 = ((unsigned int *)_EBP)[0] - 1; /*0x44bbac*/
-        ((unsigned int *)_EBP)[0] = v36; /*0x44bbb1*/
-        ((unsigned int *)_EBP)[0] = v36 <= 0 ? 0 : v36;
+        *(unsigned int *)&this->__pad_628[12] = 1; /*0x44bb94*/
+        *(unsigned int *)this->__pad_628 = v35; /*0x44bb9a*/
+        *(unsigned int *)&this->__pad_628[4] = v153; /*0x44bba0*/
+        *(unsigned int *)&this->__pad_628[8] = 1; /*0x44bba3*/
+        v36 = ((unsigned int *)this)[0] - 1; /*0x44bbac*/
+        ((unsigned int *)this)[0] = v36; /*0x44bbb1*/
+        ((unsigned int *)this)[0] = v36 <= 0 ? 0 : v36;
       }
       goto LABEL_231; /*0x44bb68*/
     }
     if ( Type->UnitRepair )
     {
-      v37 = ((unsigned int *)_EBP)[0]; /*0x44bbd6*/
+      v37 = ((unsigned int *)this)[0]; /*0x44bbd6*/
       if ( v37 )
       {
         v38 = v37 - 1; /*0x44bbe4*/
@@ -6987,24 +6986,24 @@ void BuildingClass::ProcessRepair()
         {
           if ( v38 == 1 )
           {
-            if ( (unsigned __int8)Team::AllMembersValid((Team *)_EBP) )
+            if ( (unsigned __int8)Team::AllMembersValid((Team *)this) )
             {
-              if ( !*(unsigned int *)&_EBP->__pad_628[12] ) /*0x44bcc7*/
-                *(unsigned int *)&_EBP->__pad_628[12] = 1; /*0x44bcd6*/
-              if ( Locomotor::GetSpeed((Locomotor *)_EBP->__pad_628) || (v47 = *(unsigned int *)&_EBP->__pad_628[12]) == 0 ) /*0x44bcf5*/
+              if ( !*(unsigned int *)&this->__pad_628[12] ) /*0x44bcc7*/
+                *(unsigned int *)&this->__pad_628[12] = 1; /*0x44bcd6*/
+              if ( Locomotor::GetSpeed((Locomotor *)this->__pad_628) || (v47 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bcf5*/
               {
-                IDA_LOBYTE(_EBP->RepairProgress[1]) = 0; /*0x44bd26*/
+                IDA_LOBYTE(this->RepairProgress.Timer) = 0; /*0x44bd26*/
               }
               else
               {
-                v48 = *(unsigned int *)&_EBP->__pad_628[16]; /*0x44bcf7*/
-                v49 = _EBP->RepairProgress[0]; /*0x44bcfd*/
-                IDA_LOBYTE(_EBP->RepairProgress[1]) = 1; /*0x44bd05*/
-                _EBP->RepairProgress[0] = v48 + v49; /*0x44bd0c*/
+                v48 = *(unsigned int *)&this->__pad_628[16]; /*0x44bcf7*/
+                v49 = this->RepairProgress.Value; /*0x44bcfd*/
+                IDA_LOBYTE(this->RepairProgress.Timer) = 1; /*0x44bd05*/
+                this->RepairProgress.Value = v48 + v49; /*0x44bd0c*/
                 v50 = v153; /*0x44bd18*/
-                *(unsigned int *)_EBP->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bd1c*/
-                *(unsigned int *)&_EBP->__pad_628[4] = v50; /*0x44bd1e*/
-                *(unsigned int *)&_EBP->__pad_628[8] = v47; /*0x44bd21*/
+                *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bd1c*/
+                *(unsigned int *)&this->__pad_628[4] = v50; /*0x44bd1e*/
+                *(unsigned int *)&this->__pad_628[8] = v47; /*0x44bd21*/
               }
               _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bd2d*/
               __asm /*0x44bd32*/
@@ -7016,26 +7015,26 @@ void BuildingClass::ProcessRepair()
                 fnstsw ax
               }
               if ( (_EAX & 0x4100) != 0
-                && (*((int (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 19) == 1 )
+                && (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 19) == 1 )
               {
-                v52 = (int (__thiscall **)(BuildingClass *, int))_EBP->TechnoClass; /*0x44bd66*/
-                _EBP->BuildingClass_field_bool_6DD = 0; /*0x44bd6d*/
-                _EBP->RepairProgress[0] = 0; /*0x44bd74*/
-                v53 = v52[157](_EBP, 28) - 1; /*0x44bd80*/
+                v52 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44bd66*/
+                this->BuildingClass_field_bool_6DD = 0; /*0x44bd6d*/
+                this->RepairProgress.Value = 0; /*0x44bd74*/
+                v53 = v52[157](this, 28) - 1; /*0x44bd80*/
                 if ( v53 )
                 {
                   v54 = v53 == 31; /*0x44bd87*/
-                  isOwnedByCurrentPlayer = ((unsigned int *)_EBP)[0]; /*0x44bd8a*/
+                  isOwnedByCurrentPlayer = ((unsigned int *)this)[0]; /*0x44bd8a*/
                   if ( v54 )
                   {
                     if ( isOwnedByCurrentPlayer /*0x44bfd9*/
-                      && !(*(int (__stdcall **)(int *))(((unsigned int *)_EBP)[0]->arrayIndex + 24))(&((unsigned int *)_EBP)[0]->arrayIndex) )
+                      && !(*(int (__stdcall **)(int *))(((unsigned int *)this)[0]->arrayIndex + 24))(&((unsigned int *)this)[0]->arrayIndex) )
                     {
                       VoxClass::FindAndPlay((VoxClass *)((char *)&stru_818E00), -1); /*0x44bfea*/
                     }
-                    BuildingClass::ClearAnims(_EBP, 8); /*0x44bff3*/
-                    BuildingClass::ClearAnims(_EBP, 11); /*0x44bffc*/
-                    BuildingClass::GetHealthRatio(_EBP); /*0x44c003*/
+                    BuildingClass::ClearAnims(this, 8); /*0x44bff3*/
+                    BuildingClass::ClearAnims(this, 11); /*0x44bffc*/
+                    BuildingClass::GetHealthRatio(this); /*0x44c003*/
                     _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c008*/
                     __asm /*0x44c00e*/
                     {
@@ -7045,16 +7044,16 @@ void BuildingClass::ProcessRepair()
                     if ( (_AX & 0x4100) != 0 ) /*0x44c019*/
                     {
                       v75 = 1; /*0x44c021*/
-                      v76 = &_EBP->Type->__pad_F70[796]; /*0x44c023*/
+                      v76 = &this->Type->__pad_F70[796]; /*0x44c023*/
                     }
                     else
                     {
                       v75 = 0; /*0x44c030*/
-                      v76 = &_EBP->Type->__pad_F70[780]; /*0x44c032*/
+                      v76 = &this->Type->__pad_F70[780]; /*0x44c032*/
                     }
                     if ( v76 && *v76 ) /*0x44c03b*/
-                      BuildingClass::PlayAnim(_EBP, *(int *)&DSurface_ViewBounds.__pad_FC[324], v76, 12, v75, 0, 0); /*0x44c048*/
-                    BuildingClass::GetHealthRatio(_EBP); /*0x44c04f*/
+                      BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v76, 12, v75, 0, 0); /*0x44c048*/
+                    BuildingClass::GetHealthRatio(this); /*0x44c04f*/
                     _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c054*/
                     __asm /*0x44c059*/
                     {
@@ -7064,30 +7063,30 @@ void BuildingClass::ProcessRepair()
                     if ( (_EAX & 0x4100) != 0 ) /*0x44c064*/
                     {
                       v79 = 1; /*0x44c06c*/
-                      v80 = &_EBP->Type->__pad_F70[184]; /*0x44c06e*/
+                      v80 = &this->Type->__pad_F70[184]; /*0x44c06e*/
                     }
                     else
                     {
                       v79 = 0; /*0x44c07b*/
-                      v80 = &_EBP->Type->__pad_F70[168]; /*0x44c07d*/
+                      v80 = &this->Type->__pad_F70[168]; /*0x44c07d*/
                     }
                     if ( v80 && *v80 ) /*0x44c086*/
-                      BuildingClass::PlayAnim(_EBP, v77, v80, 3, v79, 0, 0); /*0x44c093*/
-                    ((unsigned int *)_EBP)[0] = 1; /*0x44c098*/
+                      BuildingClass::PlayAnim(this, v77, v80, 3, v79, 0, 0); /*0x44c093*/
+                    ((unsigned int *)this)[0] = 1; /*0x44c098*/
                   }
                   else
                   {
                     if ( isOwnedByCurrentPlayer ) /*0x44bd98*/
                     {
-                      v56 = ((__int64 (__thiscall *)(BuildingClass *, int *))*((unsigned int *)_EBP->vtable1 + 110))( /*0x44bda4*/
-                              _EBP,
+                      v56 = ((__int64 (__thiscall *)(BuildingClass *, int *))*((unsigned int *)this->vtable1 + 110))( /*0x44bda4*/
+                              this,
                               &v151.m_Position);
                       if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, IDA_SHIDWORD(v56), *(unsigned int *)v56) ) /*0x44bdb2*/
                         VoxClass::FindAndPlay((VoxClass *)&((unsigned int *)&stru_818E00)[6], -1); /*0x44bdc5*/
                     }
-                    BuildingClass::ClearAnims(_EBP, 8); /*0x44bdce*/
-                    BuildingClass::ClearAnims(_EBP, 11); /*0x44bdd7*/
-                    BuildingClass::GetHealthRatio(_EBP); /*0x44bdde*/
+                    BuildingClass::ClearAnims(this, 8); /*0x44bdce*/
+                    BuildingClass::ClearAnims(this, 11); /*0x44bdd7*/
+                    BuildingClass::GetHealthRatio(this); /*0x44bdde*/
                     _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bde3*/
                     __asm /*0x44bde9*/
                     {
@@ -7097,16 +7096,16 @@ void BuildingClass::ProcessRepair()
                     if ( (_AX & 0x4100) != 0 ) /*0x44bdf4*/
                     {
                       v59 = 1; /*0x44bdfc*/
-                      v60 = &_EBP->Type->__pad_F70[796]; /*0x44bdfe*/
+                      v60 = &this->Type->__pad_F70[796]; /*0x44bdfe*/
                     }
                     else
                     {
                       v59 = 0; /*0x44be0b*/
-                      v60 = &_EBP->Type->__pad_F70[780]; /*0x44be0d*/
+                      v60 = &this->Type->__pad_F70[780]; /*0x44be0d*/
                     }
                     if ( v60 && *v60 ) /*0x44be16*/
-                      BuildingClass::PlayAnim(_EBP, *(int *)&DSurface_ViewBounds.__pad_FC[324], v60, 12, v59, 0, 0); /*0x44be23*/
-                    BuildingClass::GetHealthRatio(_EBP); /*0x44be2a*/
+                      BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v60, 12, v59, 0, 0); /*0x44be23*/
+                    BuildingClass::GetHealthRatio(this); /*0x44be2a*/
                     _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44be2f*/
                     __asm /*0x44be34*/
                     {
@@ -7116,17 +7115,17 @@ void BuildingClass::ProcessRepair()
                     if ( (_EAX & 0x4100) != 0 ) /*0x44be3f*/
                     {
                       v63 = 1; /*0x44be47*/
-                      v64 = &_EBP->Type->__pad_F70[184]; /*0x44be49*/
+                      v64 = &this->Type->__pad_F70[184]; /*0x44be49*/
                     }
                     else
                     {
                       v63 = 0; /*0x44be56*/
-                      v64 = &_EBP->Type->__pad_F70[168]; /*0x44be58*/
+                      v64 = &this->Type->__pad_F70[168]; /*0x44be58*/
                     }
                     if ( v64 && *v64 ) /*0x44be61*/
-                      BuildingClass::PlayAnim(_EBP, v61, v64, 3, v63, 0, 0); /*0x44be6e*/
-                    ((unsigned int *)_EBP)[0] = 1; /*0x44be76*/
-                    Member = Team::GetMember((Team *)_EBP, 0); /*0x44be7c*/
+                      BuildingClass::PlayAnim(this, v61, v64, 3, v63, 0, 0); /*0x44be6e*/
+                    ((unsigned int *)this)[0] = 1; /*0x44be76*/
+                    Member = Team::GetMember((Team *)this, 0); /*0x44be7c*/
                     if ( Member )
                       v66 = (*(unsigned char *)(Member + 20) & 4) != 0 ? (TechnoClass *)Member : 0;
                     else
@@ -7139,19 +7138,19 @@ void BuildingClass::ProcessRepair()
                         v66->focus,
                         1);
                       TechnoClass::SetFocus(v66, 0); /*0x44bed0*/
-                      (*((void (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 3); /*0x44bedc*/
+                      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44bedc*/
                       v66->queueUpToEnter = 0; /*0x44bee2*/
                       return 1; /*0x44bef1*/
                     }
                     v146 = g_TerrainTypeTable; /*0x44befa*/
-                    v151.m_Data = _EBP->TechnoClass; /*0x44befe*/
-                    v67 = Team::GetMember((Team *)_EBP, 0); /*0x44bf02*/
+                    v151.m_Data = this->vtable1; /*0x44befe*/
+                    v67 = Team::GetMember((Team *)this, 0); /*0x44bf02*/
                     v68 = (unsigned int **)(*((int (__thiscall **)(BuildingClass *, int *, int, int))v151.m_Data + 309))( /*0x44bf13*/
-                                       _EBP,
+                                       this,
                                        &v151.m_Size,
                                        v67,
                                        v146);
-                    focus = ((unsigned int *)_EBP)[0]; /*0x44bf19*/
+                    focus = ((unsigned int *)this)[0]; /*0x44bf19*/
                     v70 = *v68; /*0x44bf1f*/
                     *(unsigned int *)v151.__pad_0 = v70; /*0x44bf23*/
                     if ( focus ) /*0x44bf27*/
@@ -7168,7 +7167,7 @@ void BuildingClass::ProcessRepair()
                       v71 = (void (__thiscall **)(TechnoClass *, void *, int))v66->RadioClass; /*0x44bf8d*/
                       v72 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)v151.__pad_0); /*0x44bf9a*/
                       v71[288](v66, v72, 1); /*0x44bfa2*/
-                      (*((void (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 3); /*0x44bfaf*/
+                      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44bfaf*/
                       v66->queueUpToEnter = 0; /*0x44bfb5*/
                       return 1; /*0x44bfc8*/
                     }
@@ -7179,9 +7178,9 @@ void BuildingClass::ProcessRepair()
             }
             else
             {
-              BuildingClass::ClearAnims(_EBP, 8); /*0x44bc05*/
-              BuildingClass::ClearAnims(_EBP, 11); /*0x44bc0e*/
-              BuildingClass::GetHealthRatio(_EBP); /*0x44bc15*/
+              BuildingClass::ClearAnims(this, 8); /*0x44bc05*/
+              BuildingClass::ClearAnims(this, 11); /*0x44bc0e*/
+              BuildingClass::GetHealthRatio(this); /*0x44bc15*/
               _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bc1a*/
               __asm /*0x44bc20*/
               {
@@ -7191,16 +7190,16 @@ void BuildingClass::ProcessRepair()
               if ( (_AX & 0x4100) != 0 ) /*0x44bc2b*/
               {
                 v41 = 1; /*0x44bc33*/
-                v42 = &_EBP->Type->__pad_F70[796]; /*0x44bc38*/
+                v42 = &this->Type->__pad_F70[796]; /*0x44bc38*/
               }
               else
               {
                 v41 = 0; /*0x44bc45*/
-                v42 = &_EBP->Type->__pad_F70[780]; /*0x44bc47*/
+                v42 = &this->Type->__pad_F70[780]; /*0x44bc47*/
               }
               if ( v42 && *v42 ) /*0x44bc50*/
-                BuildingClass::PlayAnim(_EBP, *(int *)&DSurface_ViewBounds.__pad_FC[324], v42, 12, v41, 0, 0); /*0x44bc5d*/
-              BuildingClass::GetHealthRatio(_EBP); /*0x44bc64*/
+                BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v42, 12, v41, 0, 0); /*0x44bc5d*/
+              BuildingClass::GetHealthRatio(this); /*0x44bc64*/
               _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bc69*/
               __asm /*0x44bc6e*/
               {
@@ -7210,29 +7209,29 @@ void BuildingClass::ProcessRepair()
               if ( (_EAX & 0x4100) != 0 ) /*0x44bc79*/
               {
                 v45 = 1; /*0x44bc81*/
-                v46 = &_EBP->Type->__pad_F70[184]; /*0x44bc86*/
+                v46 = &this->Type->__pad_F70[184]; /*0x44bc86*/
               }
               else
               {
                 v45 = 0; /*0x44bc93*/
-                v46 = &_EBP->Type->__pad_F70[168]; /*0x44bc95*/
+                v46 = &this->Type->__pad_F70[168]; /*0x44bc95*/
               }
               if ( v46 && *v46 ) /*0x44bc9e*/
-                BuildingClass::PlayAnim(_EBP, v43, v46, 3, v45, 0, 0); /*0x44bcab*/
-              ((unsigned int *)_EBP)[0] = 1; /*0x44bcb0*/
+                BuildingClass::PlayAnim(this, v43, v46, 3, v45, 0, 0); /*0x44bcab*/
+              ((unsigned int *)this)[0] = 1; /*0x44bcb0*/
               return 1; /*0x44bcba*/
             }
           }
         }
         else
         {
-          v54 = (unsigned __int8)Team::AllMembersValid((Team *)_EBP) == 0; /*0x44c0af*/
-          v81 = _EBP->Anims[8]; /*0x44c0b1*/
+          v54 = (unsigned __int8)Team::AllMembersValid((Team *)this) == 0; /*0x44c0af*/
+          v81 = this->Anims[8]; /*0x44c0b1*/
           if ( v54 ) /*0x44c0b7*/
           {
-            if ( v81 || _EBP->Anims[11] ) /*0x44c0c1*/
+            if ( v81 || this->Anims[11] ) /*0x44c0c1*/
             {
-              BuildingClass::GetHealthRatio(_EBP); /*0x44c0cf*/
+              BuildingClass::GetHealthRatio(this); /*0x44c0cf*/
               _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c0d4*/
               __asm /*0x44c0da*/
               {
@@ -7242,16 +7241,16 @@ void BuildingClass::ProcessRepair()
               if ( (_AX & 0x4100) != 0 ) /*0x44c0e5*/
               {
                 v85 = 1; /*0x44c0ed*/
-                v86 = &_EBP->Type->__pad_F70[796]; /*0x44c0f2*/
+                v86 = &this->Type->__pad_F70[796]; /*0x44c0f2*/
               }
               else
               {
                 v85 = 0; /*0x44c0ff*/
-                v86 = &_EBP->Type->__pad_F70[780]; /*0x44c101*/
+                v86 = &this->Type->__pad_F70[780]; /*0x44c101*/
               }
               if ( v86 && *v86 ) /*0x44c10a*/
-                BuildingClass::PlayAnim(_EBP, v82, v86, 12, v85, 0, 0); /*0x44c117*/
-              BuildingClass::GetHealthRatio(_EBP); /*0x44c11e*/
+                BuildingClass::PlayAnim(this, v82, v86, 12, v85, 0, 0); /*0x44c117*/
+              BuildingClass::GetHealthRatio(this); /*0x44c11e*/
               _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c123*/
               __asm /*0x44c129*/
               {
@@ -7261,33 +7260,33 @@ void BuildingClass::ProcessRepair()
               if ( (_AX & 0x4100) != 0 ) /*0x44c134*/
               {
                 v89 = 1; /*0x44c13c*/
-                v90 = &_EBP->Type->__pad_F70[184]; /*0x44c141*/
+                v90 = &this->Type->__pad_F70[184]; /*0x44c141*/
               }
               else
               {
                 v89 = 0; /*0x44c14e*/
-                v90 = &_EBP->Type->__pad_F70[168]; /*0x44c150*/
+                v90 = &this->Type->__pad_F70[168]; /*0x44c150*/
               }
               if ( v90 && *v90 ) /*0x44c159*/
-                BuildingClass::PlayAnim(_EBP, *(int *)&DSurface_ViewBounds.__pad_FC[324], v90, 3, v89, 0, 0); /*0x44c166*/
-              BuildingClass::ClearAnims(_EBP, 8); /*0x44c16f*/
-              BuildingClass::ClearAnims(_EBP, 11); /*0x44c178*/
+                BuildingClass::PlayAnim(this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v90, 3, v89, 0, 0); /*0x44c166*/
+              BuildingClass::ClearAnims(this, 8); /*0x44c16f*/
+              BuildingClass::ClearAnims(this, 11); /*0x44c178*/
             }
-            if ( !_EBP->Anims[12] ) /*0x44c17d*/
+            if ( !this->Anims[12] ) /*0x44c17d*/
             {
-              v91 = (void (__thiscall **)(BuildingClass *, int, int))_EBP->TechnoClass; /*0x44c185*/
-              _EBP->BuildingClass_field_bool_6DD = 1; /*0x44c18e*/
-              v91[122](_EBP, 5, 1); /*0x44c195*/
+              v91 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44c185*/
+              this->BuildingClass_field_bool_6DD = 1; /*0x44c18e*/
+              v91[122](this, 5, 1); /*0x44c195*/
             }
             return 1; /*0x44c1a7*/
           }
           if ( v81 ) /*0x44c1aa*/
             return 1; /*0x44c1b8*/
-          v92 = Team::GetMember((Team *)_EBP, 0); /*0x44c1bc*/
-          v93 = (int (__thiscall **)(BuildingClass *, int))_EBP->TechnoClass; /*0x44c1c1*/
+          v92 = Team::GetMember((Team *)this, 0); /*0x44c1bc*/
+          v93 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44c1c1*/
           v94 = v92; /*0x44c1c7*/
-          v95 = Team::GetMember((Team *)_EBP, 0); /*0x44c1c9*/
-          if ( v93[310](_EBP, v95) < 200 ) /*0x44c1dc*/
+          v95 = Team::GetMember((Team *)this, 0); /*0x44c1c9*/
+          if ( v93[310](this, v95) < 200 ) /*0x44c1dc*/
           {
             if ( !*(unsigned int *)(v94 + 1652) ) /*0x44c1e2*/
               WinAPI::Wrapper(-2147467261); /*0x44c1ef*/
@@ -7308,15 +7307,15 @@ void BuildingClass::ProcessRepair()
             if ( !v96 ) /*0x44c255*/
               WinAPI::Wrapper(-2147467261); /*0x44c25c*/
             if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 96))(*(unsigned int *)(v94 + 1652)) /*0x44c279*/
-              && *(unsigned int *)(Team::GetMember((Team *)_EBP, 0) + 1444) )
+              && *(unsigned int *)(Team::GetMember((Team *)this, 0) + 1444) )
             {
-              v97 = (FootClass *)Team::GetMember((Team *)_EBP, 0); /*0x44c284*/
+              v97 = (FootClass *)Team::GetMember((Team *)this, 0); /*0x44c284*/
               FootClass::ClearPathIndex(v97); /*0x44c28b*/
             }
           }
-          if ( (*((int (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 19) == 1 )
+          if ( (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 19) == 1 )
           {
-            v98 = Team::GetMember((Team *)_EBP, 0); /*0x44c2ae*/
+            v98 = Team::GetMember((Team *)this, 0); /*0x44c2ae*/
             BuildingClass::GetHealthRatio((BuildingClass *)v98); /*0x44c2b2*/
             _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c2b7*/
             __asm /*0x44c2bc*/
@@ -7326,17 +7325,17 @@ void BuildingClass::ProcessRepair()
             }
             v100 = (_EAX & 0x100) != 0; /*0x44c2c7*/
             v149 = *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v98 + 132))(v98) + 3364); /*0x44c2e6*/
-            v101 = (*((int (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 28); /*0x44c2ea*/
+            v101 = (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 28); /*0x44c2ea*/
             v102 = v101 == 1; /*0x44c2f3*/
             v103 = v101 == 33; /*0x44c2f9*/
             if ( (v100 || v149) && (v102 || v103) )
             {
               if ( !*(unsigned char *)(v98 + 976) || (unsigned __int8)House::IsCurrentPlayer(*(House **)(v98 + 540)) ) /*0x44c4cc*/
               {
-                if ( ((unsigned int *)_EBP)[0] ) /*0x44c4f3*/
+                if ( ((unsigned int *)this)[0] ) /*0x44c4f3*/
                   VoxClass::FindAndPlay((VoxClass *)&((unsigned int *)&stru_818E00)[5], -1); /*0x44c507*/
-                ((unsigned int *)_EBP)[0] = 2; /*0x44c50e*/
-                BuildingClass::GetHealthRatio(_EBP); /*0x44c518*/
+                ((unsigned int *)this)[0] = 2; /*0x44c50e*/
+                BuildingClass::GetHealthRatio(this); /*0x44c518*/
                 _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c51d*/
                 __asm /*0x44c523*/
                 {
@@ -7346,30 +7345,30 @@ void BuildingClass::ProcessRepair()
                 if ( (_AX & 0x4100) != 0 ) /*0x44c52e*/
                 {
                   v117 = 1; /*0x44c536*/
-                  v118 = &_EBP->Type->__pad_F70[660]; /*0x44c53b*/
+                  v118 = &this->Type->__pad_F70[660]; /*0x44c53b*/
                 }
                 else
                 {
                   v117 = 0; /*0x44c548*/
-                  v118 = &_EBP->Type->__pad_F70[644]; /*0x44c54a*/
+                  v118 = &this->Type->__pad_F70[644]; /*0x44c54a*/
                 }
                 if ( v118 && *v118 ) /*0x44c553*/
-                  BuildingClass::PlayAnim(_EBP, v114, v118, 10, v117, 0, 0); /*0x44c560*/
-                BuildingClass::ClearAnims(_EBP, 3); /*0x44c569*/
-                BuildingClass::ClearAnims(_EBP, 18); /*0x44c572*/
-                _EBP->BuildingClass_field_bool_6DD = 0; /*0x44c577*/
-                _EBP->RepairProgress[0] = 0; /*0x44c57e*/
-                *(unsigned int *)_EBP->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44c594*/
+                  BuildingClass::PlayAnim(this, v114, v118, 10, v117, 0, 0); /*0x44c560*/
+                BuildingClass::ClearAnims(this, 3); /*0x44c569*/
+                BuildingClass::ClearAnims(this, 18); /*0x44c572*/
+                this->BuildingClass_field_bool_6DD = 0; /*0x44c577*/
+                this->RepairProgress.Value = 0; /*0x44c57e*/
+                *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44c594*/
                 v119 = v153; /*0x44c596*/
-                *(unsigned int *)&_EBP->__pad_628[12] = 1; /*0x44c59a*/
-                *(unsigned int *)&_EBP->__pad_628[4] = v119; /*0x44c5a0*/
-                *(unsigned int *)&_EBP->__pad_628[8] = 1; /*0x44c5a3*/
+                *(unsigned int *)&this->__pad_628[12] = 1; /*0x44c59a*/
+                *(unsigned int *)&this->__pad_628[4] = v119; /*0x44c5a0*/
+                *(unsigned int *)&this->__pad_628[8] = 1; /*0x44c5a3*/
               }
               else
               {
                 (*(void (__thiscall **)(int, int))(*(unsigned int *)v98 + 416))(v98, 1); /*0x44c4db*/
-                ((unsigned int *)_EBP)[0] = 0; /*0x44c4e1*/
-                _EBP->BuildingClass_field_bool_6DD = 1; /*0x44c4e7*/
+                ((unsigned int *)this)[0] = 0; /*0x44c4e1*/
+                this->BuildingClass_field_bool_6DD = 1; /*0x44c4e7*/
               }
             }
             else
@@ -7387,7 +7386,7 @@ void BuildingClass::ProcessRepair()
                   WinAPI::Wrapper(-2147467261); /*0x44c342*/
                 if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v98 + 1652) + 96))(*(unsigned int *)(v98 + 1652)) )
                 {
-                  v105 = Team::GetMember((Team *)_EBP, 0); /*0x44c35e*/
+                  v105 = Team::GetMember((Team *)this, 0); /*0x44c35e*/
                   if ( v105 )
                     v106 = (*(unsigned char *)(v105 + 20) & 4) != 0 ? (TechnoClass *)v105 : 0;
                   else
@@ -7397,11 +7396,11 @@ void BuildingClass::ProcessRepair()
                   (*(void (__stdcall **)(int))(*(unsigned int *)v106[1].alignmentPadding154[0] + 88))(v106[1].alignmentPadding154[0]); /*0x44c394*/
                   if ( !v106->focus || (unsigned __int8)House::IsCurrentPlayer((House *)v106->owner) ) /*0x44c3a5*/
                   {
-                    v107 = (int (__thiscall **)(BuildingClass *, int *, int, int))_EBP->TechnoClass; /*0x44c3f3*/
+                    v107 = (int (__thiscall **)(BuildingClass *, int *, int, int))this->vtable1; /*0x44c3f3*/
                     v147 = g_TerrainTypeTable; /*0x44c3f6*/
-                    v108 = Team::GetMember((Team *)_EBP, 0); /*0x44c3fa*/
-                    v109 = (unsigned int **)v107[309](_EBP, &v151.StreamClass_field_0C, v108, v147); /*0x44c407*/
-                    v110 = ((unsigned int *)_EBP)[0]; /*0x44c40d*/
+                    v108 = Team::GetMember((Team *)this, 0); /*0x44c3fa*/
+                    v109 = (unsigned int **)v107[309](this, &v151.StreamClass_field_0C, v108, v147); /*0x44c407*/
+                    v110 = ((unsigned int *)this)[0]; /*0x44c40d*/
                     v111 = *v109; /*0x44c413*/
                     *(unsigned int *)v151.__pad_0 = v111; /*0x44c417*/
                     if ( v110 ) /*0x44c41b*/
@@ -7419,7 +7418,7 @@ void BuildingClass::ProcessRepair()
                       v113 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)v151.__pad_0); /*0x44c48e*/
                       v112[288](v106, v113, 1); /*0x44c496*/
                       TechnoClass::SetFocus(v106, 0); /*0x44c49f*/
-                      (*((void (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 3); /*0x44c4ab*/
+                      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44c4ab*/
                       v106->queueUpToEnter = 0; /*0x44c4b1*/
                     }
                   }
@@ -7432,7 +7431,7 @@ void BuildingClass::ProcessRepair()
                       1);
                     TechnoClass::SetFocus(v106, 0); /*0x44c3d1*/
                     v106->queueUpToEnter = 0; /*0x44c3d6*/
-                    (*((void (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 3); /*0x44c3e3*/
+                    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44c3e3*/
                   }
                 }
               }
@@ -7440,12 +7439,12 @@ void BuildingClass::ProcessRepair()
           }
           else if ( !HouseClass::IonSensitivesShouldBeOffline() ) /*0x44c5b1*/
           {
-            v120 = (unsigned int *)(Team::GetMember((Team *)_EBP, 0) + 1652); /*0x44c5ce*/
+            v120 = (unsigned int *)(Team::GetMember((Team *)this, 0) + 1652); /*0x44c5ce*/
             if ( !*v120 ) /*0x44c5c8*/
               WinAPI::Wrapper(-2147467261); /*0x44c5dd*/
             if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*v120 + 96))(*v120) ) /*0x44c5e7*/
             {
-              v121 = (unsigned int *)(Team::GetMember((Team *)_EBP, 0) + 1652); /*0x44c602*/
+              v121 = (unsigned int *)(Team::GetMember((Team *)this, 0) + 1652); /*0x44c602*/
               if ( !*v121 ) /*0x44c5fc*/
                 WinAPI::Wrapper(-2147467261); /*0x44c611*/
               (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v121 + 88))(*v121); /*0x44c61b*/
@@ -7455,11 +7454,11 @@ void BuildingClass::ProcessRepair()
       }
       else
       {
-        if ( !(unsigned __int8)Team::AllMembersValid((Team *)_EBP) ) /*0x44c625*/
+        if ( !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44c625*/
         {
-          BuildingClass::ClearAnims(_EBP, 8); /*0x44c636*/
-          BuildingClass::ClearAnims(_EBP, 11); /*0x44c63f*/
-          BuildingClass::GetHealthRatio(_EBP); /*0x44c646*/
+          BuildingClass::ClearAnims(this, 8); /*0x44c636*/
+          BuildingClass::ClearAnims(this, 11); /*0x44c63f*/
+          BuildingClass::GetHealthRatio(this); /*0x44c646*/
           _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c64b*/
           __asm /*0x44c650*/
           {
@@ -7469,16 +7468,16 @@ void BuildingClass::ProcessRepair()
           if ( (_EAX & 0x4100) != 0 ) /*0x44c65b*/
           {
             v124 = 1; /*0x44c663*/
-            v125 = &_EBP->Type->__pad_F70[796]; /*0x44c668*/
+            v125 = &this->Type->__pad_F70[796]; /*0x44c668*/
           }
           else
           {
             v124 = 0; /*0x44c675*/
-            v125 = &_EBP->Type->__pad_F70[780]; /*0x44c677*/
+            v125 = &this->Type->__pad_F70[780]; /*0x44c677*/
           }
           if ( v125 && *v125 ) /*0x44c680*/
-            BuildingClass::PlayAnim(_EBP, v122, v125, 12, v124, 0, 0); /*0x44c68d*/
-          BuildingClass::GetHealthRatio(_EBP); /*0x44c694*/
+            BuildingClass::PlayAnim(this, v122, v125, 12, v124, 0, 0); /*0x44c68d*/
+          BuildingClass::GetHealthRatio(this); /*0x44c694*/
           _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c699*/
           __asm /*0x44c69f*/
           {
@@ -7488,21 +7487,21 @@ void BuildingClass::ProcessRepair()
           if ( (_AX & 0x4100) != 0 ) /*0x44c6aa*/
           {
             v129 = 1; /*0x44c6b2*/
-            v130 = &_EBP->Type->__pad_F70[184]; /*0x44c6b7*/
+            v130 = &this->Type->__pad_F70[184]; /*0x44c6b7*/
           }
           else
           {
             v129 = 0; /*0x44c6c4*/
-            v130 = &_EBP->Type->__pad_F70[168]; /*0x44c6c6*/
+            v130 = &this->Type->__pad_F70[168]; /*0x44c6c6*/
           }
           if ( v130 && *v130 ) /*0x44c6cf*/
-            BuildingClass::PlayAnim(_EBP, v126, v130, 3, v129, 0, 0); /*0x44c6dc*/
-          (*((void (__thiscall **)(BuildingClass *, int, int))_EBP->vtable1 + 122))(_EBP, 5, 1); /*0x44c6ea*/
+            BuildingClass::PlayAnim(this, v126, v130, 3, v129, 0, 0); /*0x44c6dc*/
+          (*((void (__thiscall **)(BuildingClass *, int, int))this->vtable1 + 122))(this, 5, 1); /*0x44c6ea*/
           return 1; /*0x44c6fc*/
         }
-        _EBP->BuildingClass_field_bool_6DD = 0; /*0x44c700*/
+        this->BuildingClass_field_bool_6DD = 0; /*0x44c700*/
         v151.m_Data = (void *)100; /*0x44c707*/
-        v131 = Team::GetMember((Team *)_EBP, 0); /*0x44c70f*/
+        v131 = Team::GetMember((Team *)this, 0); /*0x44c70f*/
         v132 = (unsigned int *)(v131 + 1652); /*0x44c714*/
         *(unsigned int *)v151.__pad_0 = 0; /*0x44c71a*/
         if ( !*(unsigned int *)(v131 + 1652) ) /*0x44c71e*/
@@ -7518,15 +7517,15 @@ void BuildingClass::ProcessRepair()
           v151.m_Data = (void *)200; /*0x44c777*/
         if ( !memcmp(&v152, &g_CLSID_DriveLocomotion2, 0x10u) ) /*0x44c78b*/
           v151.m_Data = (void *)200; /*0x44c78f*/
-        if ( (*((int (__thiscall **)(BuildingClass *, int))_EBP->vtable1 + 157))(_EBP, 19) == 1 ) /*0x44c7a3*/
+        if ( (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 19) == 1 ) /*0x44c7a3*/
         {
-          v134 = (int (__thiscall **)(BuildingClass *, int))_EBP->TechnoClass; /*0x44c7a5*/
-          v135 = Team::GetMember((Team *)_EBP, 0); /*0x44c7ac*/
-          v136 = v134[310](_EBP, v135); /*0x44c7b4*/
+          v134 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44c7a5*/
+          v135 = Team::GetMember((Team *)this, 0); /*0x44c7ac*/
+          v136 = v134[310](this, v135); /*0x44c7b4*/
           if ( v136 < (int)v151.m_Data ) /*0x44c7be*/
           {
             v137 = *(unsigned int *)v151.__pad_0; /*0x44c7c0*/
-            ((unsigned int *)_EBP)[0] = 1; /*0x44c7c4*/
+            ((unsigned int *)this)[0] = 1; /*0x44c7c4*/
             if ( v137 ) /*0x44c7d0*/
               (*(void (__stdcall **)(int))(*(unsigned int *)v137 + 8))(v137); /*0x44c7d5*/
             return 3; /*0x44c7e4*/
@@ -7547,21 +7546,21 @@ void BuildingClass::ProcessRepair()
       return 15; /*0x44c971*/
     v139 = 0; /*0x44c84a*/
     v150 = 0; /*0x44c84e*/
-    if ( ((unsigned int *)_EBP)[2] <= 0 ) /*0x44c853*/
+    if ( ((unsigned int *)this)[2] <= 0 ) /*0x44c853*/
       goto LABEL_247; /*0x44c853*/
     do /*0x44c929*/
     {
-      v140 = Team::GetMember((Team *)_EBP, v139); /*0x44c85c*/
+      v140 = Team::GetMember((Team *)this, v139); /*0x44c85c*/
       v141 = (unsigned int *)v140; /*0x44c861*/
       if ( !v140 ) /*0x44c865*/
         goto LABEL_244; /*0x44c865*/
-      if ( (*((int (__thiscall **)(BuildingClass *, int, int))_EBP->vtable1 + 158))(_EBP, 29, v140) == 1 /*0x44c893*/
+      if ( (*((int (__thiscall **)(BuildingClass *, int, int))this->vtable1 + 158))(this, 29, v140) == 1 /*0x44c893*/
         && v141[27] == *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v141 + 132))(v141) + 160) )
       {
         goto LABEL_243; /*0x44c893*/
       }
       if ( (*(int (__thiscall **)(unsigned int *))(*v141 + 388))(v141) != 7 /*0x44c8b5*/
-        && (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))_EBP->vtable1 + 158))(_EBP, 19, v141) == 1 )
+        && (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))this->vtable1 + 158))(this, 19, v141) == 1 )
       {
         v150 = 1; /*0x44c8bb*/
         if ( (*(int (__thiscall **)(unsigned int *))(*v141 + 388))(v141) ) /*0x44c8bf*/
@@ -7569,8 +7568,8 @@ void BuildingClass::ProcessRepair()
           (*(void (__thiscall **)(unsigned int *, unsigned int, unsigned int))(*v141 + 488))(v141, 0, 0); /*0x44c8cf*/
           goto LABEL_244; /*0x44c8d5*/
         }
-        if ( (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))_EBP->vtable1 + 158))(_EBP, 31, v141) != 1 /*0x44c8fb*/
-          && (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))_EBP->vtable1 + 158))(_EBP, 28, v141) != 1 )
+        if ( (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))this->vtable1 + 158))(this, 31, v141) != 1 /*0x44c8fb*/
+          && (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))this->vtable1 + 158))(this, 28, v141) != 1 )
         {
   LABEL_243:
           (*(void (__thiscall **)(unsigned int *, unsigned int, int))(*v141 + 1156))(v141, 0, 1); /*0x44c904*/
@@ -7581,7 +7580,7 @@ void BuildingClass::ProcessRepair()
   LABEL_244:
       ++v139; /*0x44c920*/
     }
-    while ( v139 < ((unsigned int *)_EBP)[2] ); /*0x44c929*/
+    while ( v139 < ((unsigned int *)this)[2] ); /*0x44c929*/
     if ( v150 ) /*0x44c935*/
     {
       _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c937*/
@@ -7594,7 +7593,7 @@ void BuildingClass::ProcessRepair()
       return result; /*0x44c954*/
     }
   LABEL_247:
-    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))_EBP->vtable1 + 122))(_EBP, 5, 0); /*0x44c955*/
+    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44c955*/
     return 3; /*0x44b7fa*/
 }
 // 0x457ce0

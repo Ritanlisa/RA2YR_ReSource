@@ -58,8 +58,8 @@
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
-#include "src/e4/classes/LayerClass_e4.hpp"
-#include "src/e4/classes/Targeting_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/Targeting_e4.hpp"
 
 // 0x6613A0
 namespace gamemd {

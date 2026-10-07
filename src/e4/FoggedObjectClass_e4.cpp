@@ -166,7 +166,7 @@ LABEL_27:
 } // namespace gamemd
 // 0x4D0C40
 namespace gamemd {
-AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4)
+int FoggedObjectClass::InitTerrainFog(unsigned int *aP1, int a3, int a4)
 {
 
   int level; // eax
@@ -256,7 +256,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int a4
   {
     v16 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(dword_8B3CC8)));
     if ( dword_8B3CC8 < 0 ) /*0x4d0e2f*/
-      return (gamemd::AbstractClass *)((int)this); /*0x4d0e2f*/
+      return (int)((gamemd::AbstractClass *)((int)this); /*0x4d0e2f*/);
   }
   else
   {
@@ -280,7 +280,7 @@ LABEL_15:
     byte_8B3CCC = 0; /*0x4d0ed5*/
     ++g_MissionState; /*0x4d0edc*/
   }
-  return (gamemd::AbstractClass *)((int)this);
+  return (int)((gamemd::AbstractClass *)((int)this));
 
 }
 } // namespace gamemd

@@ -12,8 +12,8 @@ struct CommandClass {
 // --- flat members (END) ---
     int AddAction(ToolTipManager * aP1, void *a2);
     int BuildBar();
-    static double BinarySearchAction(...);  // C2597 interim stub
-    static double executeAction(...);  // C2597 interim stub
+    static int BinarySearchAction(CommandClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00724FC0 (was C2597 interim stub)
+    static bool executeAction(CommandClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00724FA0 (was C2597 interim stub)
 };
 
 } // namespace gamemd

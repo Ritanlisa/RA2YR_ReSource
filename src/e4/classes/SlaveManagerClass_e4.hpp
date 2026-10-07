@@ -62,7 +62,7 @@ struct SlaveManagerClass {
     void Constructor_SlaveManagerClass();
     void* ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6);
     wchar_t * CreateSlave(wchar_t ** a2);
-    static double ProcessSlaves(...);  // C2597 interim stub
+    static int ProcessSlaves(SlaveManagerClass *aP1, int *p_SlaveManagerClass_field_5C, int a3);  // G57w10-S raw 0x006AF6C0 (was C2597 interim stub)
     SlaveManagerClass * ProcessOrders(void * Block, char a2);
 };
 

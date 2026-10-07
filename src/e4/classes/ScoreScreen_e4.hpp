@@ -34,7 +34,7 @@ struct ScoreScreen {
     unsigned int * LoadCountryFlags(int a2);
     unsigned int * LoadScoreFont(int aP1);
     int RemoveItem(int a2, int a3, char aP3, char a5, int a6);
-    static double DrawSHPBackground(...);  // C2597 interim stub
+    static int DrawSHPBackground(char *Source, int *a2, int a3, int a4, int a5, int a6, int a7);  // G57w10-S raw 0x00778210 (was C2597 interim stub)
     static double LoadAudio(...);  // C2597 interim stub
 };
 

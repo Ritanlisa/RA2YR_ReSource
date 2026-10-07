@@ -832,7 +832,7 @@ UnitClass* UnitClass::updateHarvesting()
       *(unsigned int *)(result + 1756) = 0; /*0x4c2c19*/
       ((unsigned int *)this)[0] = 0; /*0x4c2c1f*/
     }
-    return result; /*0x4c2c22*/
+    return (gamemd::UnitClass *)(result; /*0x4c2c22*/);
 }
 } // namespace gamemd
 
@@ -913,7 +913,7 @@ int BuildingClass::SquaredDistanceTo(ObjectClass* target, int a2) const  // g57b
     v5 = *a2; /*0x5f6523*/
     v6 = v3[1]; /*0x5f6527*/
     v8[2] = v3[2]; /*0x5f652d*/
-    v7 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(v5 + 72))(a2, v8); /*0x5f6539*/
+    v7 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(v5 + 72))( (int *)(a2), v8 ); /*0x5f6539*/
     return (v4 - *v7) * (v4 - *v7) + (v6 - v7[1]) * (v6 - v7[1]); /*0x5f650e*/
 }
 } // namespace gamemd

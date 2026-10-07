@@ -92,6 +92,8 @@ char SuperClass::RemoveFromPointerArray(int a2) {
       }
       while ( a2 < (int)*(unsigned int *)((char *)&this->vtable26) ); /*0x6ce344 +0x10*/
     }
+}  // g57w10: restored missing fn closer (0x6CE320 RemoveFromPointerArray)
+} // namespace gamemd
 
 // 0x6E1C40
 namespace gamemd {

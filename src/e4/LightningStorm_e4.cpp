@@ -113,7 +113,7 @@ int LightningStorm::IsActive()
 }
 // 0x53A140
 namespace gamemd {
-void LightningStorm::Strike(IUnknown * aP0)
+int LightningStorm::Strike(int aP0)
 {
 
   unsigned int *v1; // esi

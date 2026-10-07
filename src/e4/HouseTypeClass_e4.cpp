@@ -29,6 +29,8 @@
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/Checksummer_e4.hpp"
 #include "classes/ObjectPtr_e4.hpp"  // G42.57w9 method-carrier supply
+#include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
+#include "e4/classes/KeywordClass_e4.hpp"  // G57w10 D supply
 
 // 0x511650
 namespace gamemd {

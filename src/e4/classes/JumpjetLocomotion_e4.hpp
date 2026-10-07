@@ -209,7 +209,7 @@ struct JumpjetLocomotion {
     unsigned char JumpjetLocomotion_field_0x74;  // 0x74
     unsigned char *__pad_78;  // 0x78
 // --- flat members (END) ---
-    AbstractClass * MoveTo(IUnknown * aP1, int aP3, void *a3_1);  // 0x4B0AD0
+    char MoveTo(int aP1, unsigned int *a2, int a3);  // G57w10-S raw 0x004B0AD0 IUnknown 占位清除
     AbstractClass * ProcessCollision(char a2, void *a2_2);  // 0x4B0F20
     int Update(unsigned char * a2, int a3, int a4, void *a4_2);  // 0x4B2630
     unsigned int * TransformCoords(unsigned int *aP1, int *aP2, int *aP3);  // 0x4B4780

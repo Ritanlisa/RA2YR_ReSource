@@ -32,6 +32,8 @@
 #include "e4/classes/Rect_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Coord2D_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/CellLand_e4.hpp"  // G57w10 D supply (IsBuildable 0x4863D0)
+#include "e4/classes/TileData_e4.hpp"  // G57w10 D supply
 
 // 0x574600
 namespace gamemd {
@@ -254,7 +256,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
       {
         do /*0x578eb0*/
         {
-          TileData::Constructor(v5); /*0x578ea7*/
+          TileData::Constructor((void *)v5); /*0x578ea7 G57w10 int-render receiver*/
           v5 += 20; /*0x578eac*/
           --v3; /*0x578eaf*/
         }
@@ -920,7 +922,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
     goto LABEL_37; /*0x57b672*/
   }
   if ( (uint8_t)CellClass::IsTerrainType(v14) && (uint8_t)Map_Helper(*(unsigned int *)(v29 + 660), v15) /*0x57b774*/
-    || (v28 = *(unsigned int *)(v29 + 660), v28 >= dword_ABAD28) && v28 < dword_ABAD28 + 42 && CellLand::IsBuildable((int)v14) )
+    || (v28 = *(unsigned int *)(v29 + 660), v28 >= dword_ABAD28) && v28 < dword_ABAD28 + 42 && CellLand::IsBuildable((CellLand *)v14) )
   {
   LABEL_58:
     *aP4 = 0; /*0x57b77d*/

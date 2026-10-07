@@ -31,6 +31,7 @@
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/TechnoTypeVector_e4.hpp"  // G57w10 D supply
 
 // 0x4C9B20
 namespace gamemd {
@@ -139,7 +140,7 @@ int FactoryClass::HasProgressChanged()
 }
 // 0x4C9C70
 namespace gamemd {
-int FactoryClass::DemandProduction(int a2, #375 *a3, char a4)
+int FactoryClass::DemandProduction(int a2, void *a3, char a4)
 {
 
   int v5; // ecx
@@ -501,7 +502,7 @@ int FactoryClass::StartProduction_2()
 }
 // 0x4CA670
 namespace gamemd {
-int FactoryClass::CountType(IUnknown * aP1)
+int FactoryClass::CountType(int aP1)
 {
 
   int v3; // edi

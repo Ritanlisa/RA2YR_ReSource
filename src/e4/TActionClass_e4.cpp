@@ -46,6 +46,8 @@
 #include "e4/classes/RadarClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Process_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/GlobalArray_e4.hpp"  // G57w10 D supply
+#include "e4/classes/CellSystem_e4.hpp"  // G57w10 D supply
 
 // 0x4FCDC0
 namespace gamemd {
@@ -404,7 +406,7 @@ LABEL_38:
 }
 // 0x6E0B60
 namespace gamemd {
-AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4)
+char TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int *a3, int aP4)
 {
 
   HouseClass *v5; // esi
@@ -490,7 +492,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
     }
     while ( v14 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 164) ); /*0x6e0c89*/
   }
-  return (gamemd::AbstractClass **)(v6); /*0x6e0ba6*/
+  return (char)((gamemd::AbstractClass **)(v6); /*0x6e0ba6*/);
 
 }
 }
@@ -528,7 +530,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
 }
 // 0x6E2290
 namespace gamemd {
-AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeEscortAction(int a2, int a3, int a4, int aP4)
 {
 
   AnimClass *v6; // eax
@@ -561,13 +563,13 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
     + 408) = 1;
   else
     MEMORY[0x198] = 1; /*0x6e237b*/
-  return (gamemd::AnimClass **)(1); /*0x6e2371*/
+  return (char)((gamemd::AnimClass **)(1); /*0x6e2371*/);
 
 }
 }
 // 0x6E2390
 namespace gamemd {
-AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, int aP4)
 {
 
   int v6; // edi
@@ -609,7 +611,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   }
   CreateSmokeEffectAt(v8, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), v16, v17, GroundHeight, 0, 0); /*0x6e24ea*/
   PlaySoundEffectAt((gamemd::TechnoClass *)(&v16), v8, 0, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), 1, 0); /*0x6e250b*/
-  return (gamemd::AbstractClass **)(1); /*0x6e2510*/
+  return (char)((gamemd::AbstractClass **)(1); /*0x6e2510*/);
 
 }
 }
@@ -685,7 +687,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
 }
 // 0x6E36E0
 namespace gamemd {
-int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeParadropAction(int a2, int a3, int a4, int aP4)
 {
 
   void *v5; // eax
@@ -746,7 +748,7 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
 }
 // 0x6E4150
 namespace gamemd {
-AbstractClass * * TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeGeneticMutatorAction(int a2, int a3, int a4, int aP4)
 {
 
   int v5; // eax
@@ -779,13 +781,13 @@ LABEL_7:
     (TActionClass *)&stru_87F5F0.__pad_58[416],
     *(unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v5),
     *(unsigned int *)&(&this->pad_6E)[34]);
-  return (gamemd::AbstractClass **)(1); /*0x6e41c3*/
+  return (char)((gamemd::AbstractClass **)(1); /*0x6e41c3*/);
 
 }
 }
 // 0x6E42D0
 namespace gamemd {
-int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeIronCurtainAction(int a2, int a3, int a4, int aP4)
 {
 
   int v5; // eax
@@ -808,7 +810,7 @@ int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP
 }
 // 0x6E4320
 namespace gamemd {
-int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeNukeAction(int a2, int a3, int a4, int aP4)
 {
 
   int v5; // eax
@@ -952,7 +954,7 @@ int TActionClass::ExecuteAction(int a2, int a3)
 
 // 0x6E0AA0
 namespace gamemd {
-char TActionClass::executeEnterAction(int a2, int _10, unsigned int * a3, IUnknown * aP4)
+char TActionClass::executeEnterAction(int a2, int _10, unsigned int *a3, int aP4)
 {
 
   HouseClass *v5; // esi
@@ -1012,7 +1014,7 @@ char TActionClass::executeEnterAction(int a2, int _10, unsigned int * a3, IUnkno
 
 // 0x6E0CA0
 namespace gamemd {
-char TActionClass::executeCaptureAction(void * a1, int _C, unsigned int * a3, IUnknown * aP4)
+char TActionClass::executeCaptureAction(void *a1, int _C, unsigned int *a3, int aP4)
 {
 
   HouseClass *v5; // esi
@@ -1044,7 +1046,7 @@ char TActionClass::executeCaptureAction(void * a1, int _C, unsigned int * a3, IU
 
 // 0x6E0D00
 namespace gamemd {
-char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int * a3, IUnknown * aP4)
+char TActionClass::executeSabotageAction(unsigned int *a1, int _C, unsigned int *a3, int aP4)
 {
 
   HouseClass *v5; // esi
@@ -1076,7 +1078,7 @@ char TActionClass::executeSabotageAction(unsigned int * a1, int _C, unsigned int
 
 // 0x6E0FE0
 namespace gamemd {
-char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::RevealWaypointArea(int a2, int a3, int a4, int aP4)
 {
 
   int v5; // edi
@@ -1106,7 +1108,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
     (MapClass *)&stru_87F5F0.__pad_58[416],
     &v8,
     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1580),
-    dword_A83D4C,
+    (void *)dword_A83D4C,
     0,
     0,
     0,
@@ -1119,7 +1121,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
     (MapClass *)&stru_87F5F0.__pad_58[416],
     &v8,
     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1580),
-    dword_A83D4C,
+    (void *)dword_A83D4C,
     0,
     0,
     0,
@@ -1132,7 +1134,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E11C0
 namespace gamemd {
-char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, int aP4)
 {
 
   int16_t *Waypoint_Location; // eax
@@ -1166,13 +1168,13 @@ char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, IUnknown * a
       v15[0] = ((int16_t)(*v8 - v10 / 2) << 8) + 128; /*0x6e1284*/
       v15[1] = ((int16_t)(v9 - v10 / 2) << 8) + 128; /*0x6e128f*/
       v15[2] = v10 * dword_B0E6E0; /*0x6e12a2*/
-      MapClass::RevealArea1((MapClass *)&stru_87F5F0.__pad_58[416], v15, 2, dword_A83D4C, 0, 0, 0, 1, 0); /*0x6e12a6*/
+      MapClass::RevealArea1((MapClass *)&stru_87F5F0.__pad_58[416], v15, 2, (void *)dword_A83D4C, 0, 0, 0, 1, 0); /*0x6e12a6*/
       v11 = *v8; /*0x6e12b1*/
       v12 = v8[1] - v10 / 2; /*0x6e12be*/
       v16[2] = v10 * dword_B0E6E0; /*0x6e12d3*/
       v16[0] = ((int16_t)(v11 - v10 / 2) << 8) + 128; /*0x6e12ea*/
       v16[1] = (v12 << 8) + 128; /*0x6e12f5*/
-      MapClass::RevealArea1((MapClass *)&stru_87F5F0.__pad_58[416], v16, 2, dword_A83D4C, 0, 0, 0, 1, 1); /*0x6e1301*/
+      MapClass::RevealArea1((MapClass *)&stru_87F5F0.__pad_58[416], v16, 2, (void *)dword_A83D4C, 0, 0, 0, 1, 1); /*0x6e1301*/
     }
     v7 = MapClass::SpiralSearch(  (MapClass *)&stru_87F5F0.__pad_58[416]); /*0x6e1310*/
   }
@@ -1226,7 +1228,7 @@ char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
 
 // 0x6E1980
 namespace gamemd {
-char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, int aP4)
 {
 
   int *WorldCoords; // eax
@@ -1263,14 +1265,14 @@ char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4
 
 // 0x6E1A40
 namespace gamemd {
-char TActionClass::executePatrolAction(void * a1, int a3, int a4, IUnknown * aP4)
+char TActionClass::executePatrolAction(void *a1, int a3, int a4, int aP4)
 {
 
   int *Waypoint_Location; // eax
   TActionClass *v7; // [esp+0h] [ebp-4h] BYREF
 
   v7 = this; /*0x6e1a40*/
-  Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (unsigned int *)(&v7), (int)this->TActionClass_field_44); /*0x6e1a50*/
+  Waypoint_Location = ((ScenarioClass*)((char *)dword_A8B230))->Get_Waypoint_Location( (int *)(&v7), (int)this->TActionClass_field_44); /*0x6e1a50*/
   SelectSimilarBuildingTypes((ObjectClass *)a1, *Waypoint_Location); /*0x6e1a5c*/
   return 1; /*0x6e1a64*/
 
@@ -1279,7 +1281,7 @@ char TActionClass::executePatrolAction(void * a1, int a3, int a4, IUnknown * aP4
 
 // 0x6E1A70
 namespace gamemd {
-char TActionClass::executeScatterAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeScatterAction(int a2, int a3, int a4, int aP4)
 {
 
   int v5; // esi
@@ -1312,7 +1314,7 @@ char TActionClass::executeScatterAction(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E21E0
 namespace gamemd {
-char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeFollowAction(int a2, int a3, int a4, int aP4)
 {
 
   void **p_TActionClass_field_34; // ecx
@@ -1346,7 +1348,7 @@ char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
 
 // 0x6E2520
 namespace gamemd {
-char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
+char TActionClass::executeLoadAction(int a2, int a3, int a4, int aP4)
 {
 
   void *v6; // eax

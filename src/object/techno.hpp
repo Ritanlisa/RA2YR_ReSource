@@ -500,7 +500,7 @@ public:
     virtual int PickAlternateTarget();  // 0x708E00
     virtual int SelectRandomTarget();  // 0x708EB0
     virtual int GetSecondaryTargetOrFallback() const;  // 0x709020
-    virtual int SetPositionAnimated(int a2 = 0);  // 0x4DB810
+    virtual int SetPositionAnimated(unsigned int* a2 = nullptr);  // 0x4DB810 (g57w10 raw: int(this,_DWORD*))
     virtual int GetTargetCellCenter(AbstractClass* target);  // 0x4DBA50
     virtual int ComputeSpeedFactor();  // 0x4DAFC0
     virtual int ComputeSpeedFactorEx();  // 0x4DB1A0

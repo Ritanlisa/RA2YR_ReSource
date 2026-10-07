@@ -93,6 +93,7 @@ public:
     // IDA 0x452820 area
     // design: static function, no direct binary match in IDA
     static bool IsLocomotor();
+    static int ProcessDamageArea(Warhead *aP1);  // 0x65B580 raw: int __thiscall ProcessDamageArea(Warhead*)
     // IDA 0x452820 area
     // design: static function, no direct binary match in IDA
     static float GetVerses(int32_t armor);
@@ -638,6 +639,9 @@ public:
     uint8_t CoopCampaignVector_field_0x14[4];
     uint8_t CoopCampaignVector_field_0x18[4];
     uint8_t CoopCampaignVector_field_0x1C[4];
+    unsigned int *m_1;   // g57w10 C2039 supply (e4 flat carrier name; bodies 0x5c5120/0x5c55f0 use m_1/m_8/m_C)
+    unsigned int m_8;
+    unsigned int m_C;
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Write(int a1);  // 0x5c5750 -- CoopCampaignVector::Write

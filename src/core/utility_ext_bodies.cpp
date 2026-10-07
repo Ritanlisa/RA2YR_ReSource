@@ -21,7 +21,7 @@ int AllocCallback::Dispatch(int a1, int a2, unsigned int Block, size_t Size)
         result = malloc(Size); /*0x7be5eb*/
         break; /*0x7be5f6*/
       case 3: /*0x7be5df*/
-        free(Block); /*0x7be5fc*/
+        free( (void *)(Block) ); /*0x7be5fc*/
         result = 0; /*0x7be604*/
         break; /*0x7be607*/
       case 4: /*0x7be5df*/
@@ -36,7 +36,7 @@ int AllocCallback::Dispatch(int a1, int a2, unsigned int Block, size_t Size)
         result = 0; /*0x7be61a*/
         break; /*0x7be61a*/
     }
-    return result; /*0x7be5f5*/
+    return (int)(result; /*0x7be5f5*/);
 }
 // 0x4f3840
 int GraphicMenuImageItem::QueryInterface(char a2)

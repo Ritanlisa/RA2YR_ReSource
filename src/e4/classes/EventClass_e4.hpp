@@ -107,10 +107,10 @@ struct EventClass {
     void * Add(AbstractClass * aP1, unsigned char a3, int a4, char a5);  // 0x4C65E0
     int AddEvent(int a2, unsigned __int8 a3);
     int Add2(int a3, unsigned __int8 aP1, int aP3);
-    int AddEventEx(SelectClass_StripClass_SidebarClass * aP1, uint8_t a3, IUnknown * aP3, SelectClass_StripClass_SidebarClass * aP4, SelectClass_StripClass_SidebarClass * aP5);  // 0x4C6970
+    char * AddEventEx(int a2, unsigned __int8 a3, int a4, int a5, int a6);  // G57w10-S raw 0x004C6970 IUnknown 占位清除
     int Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6, void *a7_1, void *a8_1);  // 0x4C6AE0
     AbstractClass * * ProcessEvent();  // 0x4C6CB0
-    int deserializeEvent(int a2, IUnknown * aP2);  // 0x542280
+    int deserializeEvent(int a2, unsigned int *a3);  // G57w10-S raw 0x00542280 IUnknown 占位清除
     int Enqueue(unsigned short a2, char a3);  // 0x54F200
     static int Enqueue(void *aP0, unsigned short aP1, char aP2);  // 0x54F200 G42.35 static-form sync (ui/supplied site 0x54F94F)
     int CheckFlag();  // 0x5F19C0

@@ -23,7 +23,7 @@ struct SwizzleManagerClass {
     int Lookup(int a1, int a2, int a3, int a4);
     int Release(int a1);
     int Remove(int a1, int a2, int a3);
-    static double Here_I_Am(...);  // C2597 interim stub
+    static int Here_I_Am(int a1, int a2, int a3);  // G57w10-S raw 0x006CF2C0 (was C2597 interim stub)
     static void Register(void);  // 0x6CF0F0 G42.33 b12 static-form (atexit target)
     };
 

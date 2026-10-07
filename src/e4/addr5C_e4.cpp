@@ -1436,7 +1436,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)((char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36)))))))))));
+          v39 = (char *)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = (unsigned char)((char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)((char *)((unsigned char)(v39) != 0 && !v36)))))))))));
           *(unsigned int *)v18 = (unsigned int)(v36); /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/

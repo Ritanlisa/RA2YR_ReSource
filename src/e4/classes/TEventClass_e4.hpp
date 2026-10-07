@@ -46,8 +46,8 @@ struct TEventClass {
     int StubReturn88();
     int ddtor(int a1, unsigned int * a2);
     void * Fire(char a2);
-    static double GetStateA(...);  // C2597 interim stub
-    static double GetStateB_SpyEvent(...);  // C2597 interim stub
+    static char GetStateA(TEventClass * aP1);  // G57w10-S raw 0x0071F950 (was C2597 interim stub)
+    static char GetStateB_SpyEvent(TEventClass * aP1);  // G57w10-S raw 0x0071F9C0 (was C2597 interim stub)
     void * Fire(void ** Block, char a2);
 };
 

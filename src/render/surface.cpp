@@ -791,10 +791,10 @@ bool DSurface::Blit(int *a2, int *a3, unsigned int *a4, int *a5, int *a6, int a7
     if ( !g_DDraw_Initialized && !*(unsigned int *)((char *)&stru_A8EB00 + 412) ) /*0x4bb20f*/
       return 0; /*0x4bb20f*/
     v14 = this->DSurface_field_0x1C[0]; /*0x4bb215*/
-    if ( v14 && (*(int (__stdcall **)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/
+    if ( v14 && (*(int (__stdcall **)(int))(*(unsigned int *)v14 + 96))( (int)(this->DSurface_field_0x1C[0]) ) == -2005532222 ) /*0x4bb227*/
     {
-      if ( (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb240*/
-        || (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+      if ( (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))( (int)(this->DSurface_field_0x1C[0]) ) /*0x4bb240*/
+        || (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))( (int)(this->DSurface_field_0x1C[0]) ) )
       {
         return 0; /*0x4bb245*/
       }

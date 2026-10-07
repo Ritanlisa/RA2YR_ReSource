@@ -47,8 +47,8 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
-#include "src/e4/classes/BufferIOFileClass_e4.hpp"
-#include "src/e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
 
 // 0x6B2430
 namespace gamemd {

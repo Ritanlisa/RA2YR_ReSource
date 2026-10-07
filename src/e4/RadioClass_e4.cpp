@@ -227,7 +227,7 @@ void RadioClass::SetLinkCount(int a2)
 
 // 0x65AAC0
 namespace gamemd {
-int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
+int RadioClass::ExecuteAction(int aP1, char aP2)
 {
 
   int result; // eax

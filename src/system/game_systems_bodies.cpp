@@ -697,7 +697,7 @@ int GameOptions::SaveLoad(int a2)
       return -2147467261; /*0x6812f7*/
     v5 = (int (__stdcall **)(int, void *, int **))*a2; /*0x6812fa*/
     a2 = 0; /*0x681307*/
-    if ( (*v5)(v2, &unk_7F7D00, &a2) >= 0 ) /*0x681313*/
+    if ( (*v5)( v2, &unk_7F7D00, (int **)(&a2) ) >= 0 ) /*0x681313*/
     {
       String = GameOptions_Load_6829A0(a2, 2, this + 8); /*0x68132b*/
       if ( String < 0 ) /*0x68132f*/
@@ -759,7 +759,7 @@ int GameOptions::SaveLoad(int a2)
       if ( v7 < 0 ) /*0x6814d8*/
       {
         if ( a2 ) /*0x6814e0*/
-          (*(void (__stdcall **)(int *))(*a2 + 8))(a2); /*0x6814e5*/
+          (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x6814e5*/
         return v7; /*0x6814ee*/
       }
       String = ReadStringCOM(a2, 8, (LPCCH)(this + 660)); /*0x681500*/
@@ -851,7 +851,7 @@ int GameOptions::SaveLoad(int a2)
     if ( v8 < 0 ) /*0x68175e*/
     {
       if ( a2 ) /*0x681766*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))(a2); /*0x68176b*/
+        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x68176b*/
       return v8; /*0x681774*/
     }
     String = WriteStringCOM(v2, 8, (LPCCH)(this + 660)); /*0x681782*/
@@ -867,7 +867,7 @@ int GameOptions::SaveLoad(int a2)
       if ( a2 ) /*0x6817bc*/
       {
   LABEL_77:
-        (*(void (__stdcall **)(int *))(*a2 + 8))(a2); /*0x6817be*/
+        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x6817be*/
         return String; /*0x6817ca*/
       }
       return String; /*0x6817bc*/
@@ -876,20 +876,20 @@ int GameOptions::SaveLoad(int a2)
     if ( String < 0 ) /*0x6817e2*/
     {
       if ( a2 ) /*0x6817ea*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))(a2); /*0x6817ef*/
+        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x6817ef*/
       return String; /*0x6817f8*/
     }
     Bool = PropertyReadBoolCOM(v2, 102, *(unsigned int *)(this + 1008)); /*0x68180c*/
     if ( Bool >= 0 ) /*0x681814*/
     {
       if ( a2 ) /*0x68182b*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))(a2); /*0x681830*/
+        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x681830*/
       return 0; /*0x681836*/
     }
     else
     {
       if ( a2 ) /*0x681818*/
-        (*(void (__stdcall **)(int *))(*a2 + 8))(a2); /*0x68181d*/
+        (*(void (__stdcall **)(int *))(*a2 + 8))( (int *)(a2) ); /*0x68181d*/
       return Bool; /*0x681820*/
     }
 }

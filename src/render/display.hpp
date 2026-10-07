@@ -55,6 +55,15 @@ class MapClass : public GScreenClass
 {
 public:
     virtual ~MapClass() override;  // 0x5652C0
+    static int RevealArea1(MapClass *aP1, void *a2, int a3, void *a4, char a5, int a6, char a7, char a8, char a9);
+    // 0x5678E0 raw fn_56.c:2487 verbatim (G57w10; display.hpp first-wins twin for entity TU; map.hpp twin has semantic member form)
+    // g57w10 r4 item2: MapClass C2039 补声明 (display.hpp 首赢孪生; raw 段头真值)
+    int ScrollOnce(int a1);  // 0x554A80 实例形态 (building.cpp:557/733); map.hpp:327 twin; raw this=LightSourceClass(CSP 判定, 调用方 BuildingClass::LightSource)
+    static int ScrollOnce(void *aP1, int a2);  // 0x554A80 static-call 形态 (structure/supplied_bodies.cpp:4299)
+    int GetTileIndex(int a1, int a2, int a3);  // 0x56D230 实例形态 (building.cpp:4302); raw this=MapClass; map.hpp twin
+    static int GetTileIndex(MapClass *aP1, int a2, int a3, int a4);  // 0x56D230 static-call 形态 (structure/supplied_bodies.cpp:976 四实参)
+    static void FillRevealBuffer(void *aP1, ...);  // 0x5683C0 static-call (unit.cpp:234/supplied_bodies/entity gap2_defs:7916 混合实参)
+    static void ApplyOverlayReveal(void *aP1, ...);  // 0x5687F0 static-call (unit.cpp:230/supplied_bodies)
 };
 #endif
 

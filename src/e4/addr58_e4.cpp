@@ -46,6 +46,9 @@
 #include "e4/classes/TileNode_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Random_e4.hpp"
+#include "e4/classes/MapResourceClass_e4.hpp"  // G57w10 D supply
+#include "e4/classes/TileSystem_e4.hpp"  // G57w10 D supply (BuildNodes 0x58D620)
+#include "e4/classes/IsoCoord_e4.hpp"  // G57w10 D supply
 
 // 0x5835D0
 namespace gamemd {
@@ -1745,7 +1748,7 @@ int sub_58B720()
 namespace gamemd {
 int sub_58B740()
 {
-  MapResourceClass::Constructor((int)byte_ABDFD8); /*0x58b745*/
+  MapResourceClass::Constructor((void *)byte_ABDFD8); /*0x58b745 G57w10 receiver form*/
   return atexit((void (__cdecl *)(void))(unknown_libname_23)); /*0x58b755*/
 }
 } // namespace gamemd

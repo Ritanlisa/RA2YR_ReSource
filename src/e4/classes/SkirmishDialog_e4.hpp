@@ -13,8 +13,8 @@ struct SkirmishDialog {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     int ResizeDialogAndEnum(void *a1, void *a2);
-     static double Show(...);  // C2597 interim stub
-    static double FillComboBoxes(...);  // C2597 interim stub
+     static int Show(HWND hWndParent, int a2, int a3);  // G57w10-S raw 0x005E68A0 (was C2597 interim stub)
+    static int FillComboBoxes(SkirmishDialog * aP1);  // G57w10-S raw 0x004E3B90 (was C2597 interim stub)
     SkirmishDialog * * HandleMultiplayerMapSelection();
 };
 

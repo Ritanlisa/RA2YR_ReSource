@@ -181,7 +181,7 @@ struct AnimClass {
     int Destruct(AnimClass * a2, void *a2_2);
     void FreeRenderBuffer(void *a1);
     void Render(ConvertClass * a2, ConvertClass * aP5);
-    static double SetField95(...);  // C2597 interim stub
+    static int SetField95(BuildingClass * aP1, int a2);  // G57w10-S raw 0x424C90 (was C2597 interim stub)
     void ** ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7, char a8);  // 0x421ea0
     AnimClass * * ComputePosition(int *aP1);
     int ReleaseBuffers();

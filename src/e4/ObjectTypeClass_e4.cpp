@@ -43,7 +43,7 @@ BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
   int v2; // esi
   BulletTypeClass *v3; // eax
 
-  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi(g_Str_none, Source) ) /*0x46c7ac*/
+  if ( !_strcmpi(g_Str__none_,(const char *)( Source)) || !_strcmpi( g_Str_none, (const char *)(Source) ) ) /*0x46c7ac*/
     return 0; /*0x46c80f*/
   v2 = 0; /*0x46c7bd*/
   if ( dword_A83C90 <= 0 ) /*0x46c7c1*/
@@ -829,7 +829,7 @@ int ObjectTypeClass::SetRTTI71()
 } // namespace gamemd
 // 0x5F9720
 namespace gamemd {
-int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
+int ObjectTypeClass::LoadCleanup(ObjectTypeClass *aP0, int aP1)
 {
 
   void *v2; // ebp

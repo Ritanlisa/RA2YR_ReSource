@@ -42,6 +42,7 @@
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
+#include "e4/classes/ObjectPlacement_e4.hpp"  // G57w10 D supply
 
 // 0x47C3D0
 namespace gamemd {

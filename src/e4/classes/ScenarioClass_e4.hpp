@@ -11,6 +11,13 @@ struct TechnoTypeClass;  // fix_fwd_type_supply
 struct TimerStruct;  // fix_fwd_type_supply
 
 struct ScenarioClass {
+    static void * ProcessAmbientEffects(void *aP1, int a2, int a3);  // 0x55BB40 raw: _DWORD* __thiscall ScenarioClass::ProcessAmbientEffects(ScenarioClass*, int, int)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int SetupAlliances(void *aP1);  // 0x686890 raw: int __thiscall ScenarioClass::SetupAlliances(ScenarioClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int UpdateScriptActions(void *aP1);  // 0x54E4D0 raw: int __thiscall ScenarioClass::UpdateScriptActions(ScenarioClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static void DestroyAndClearVector(void *aP1);  // 0x62E650 raw: void __thiscall ScenarioClass::DestroyAndClearVector(ScenarioClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static void DestroyAndClearVector();  // 0x62E650 0-arg site form (addr68)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static char SaveToINI(int aP1, void *a2, int a3);  // 0x68AD70 raw: char __thiscall ScenarioClass::SaveToINI(int this, char*, char)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     char nextScenario;  // 0x0
     void* Items;  // 0x4
@@ -138,6 +145,8 @@ struct ScenarioClass {
     void* checkWinningConditions(char a2);
     static ScenarioClass * * CopyStartPositions(void *a1);
     TimerStruct * * Constructor(void *a1, void *a2, void *a3);
+    static int Constructor(void *aP1);  // 0x6832C0 raw: int Constructor(ScenarioClass*) [overload: member ctor has arity 3]
+    static char Construct(void *aP1, double a2);  // 0x686730 raw: char __usercall@<al>(ecx=this Source, st0=double)
     char ClearFlag();
     char MissionStubReturnZero2(MPCooperative * aP0);
     char MissionStubReturnZero4(int a1);
@@ -177,16 +186,16 @@ struct ScenarioClass {
     void StubReturnTrue6();
     void StubReturnTrue7();
     void sub_5D80B0();
-    static double GetGlobalStateByID(...);  // C2597 interim stub
-    static double GetLocalStateByID(...);  // C2597 interim stub
-    static double Get_Waypoint_Location(unsigned int *a2, int a3);
-     double Load(...);  // C2597 interim stub
-     double SaveLoad_Prefix(...);  // C2597 interim stub
-    static double SaveLoad_Prefix_0(...);  // C2597 interim stub
-    static double ShowMissionBriefing(...);  // C2597 interim stub
+    static char GetGlobalStateByID(ScenarioClass * aP1, unsigned int a2, unsigned __int8 *a3);  // G57w10-S raw 0x00689760 (was C2597 interim stub)
+    static char GetLocalStateByID(ScenarioClass * aP1, unsigned int a2, unsigned __int8 *a3);  // G57w10-S raw 0x00689A00 (was C2597 interim stub)
+    static unsigned int * Get_Waypoint_Location(ScenarioClass * aP1, unsigned int *a2, int a3);  // G57w10-S raw 0x0068BCC0 (was C2597 interim stub)
+     char Load(int a2);  // G57w10-S raw 0x005AE100 (was C2597 interim stub)
+     char SaveLoad_Prefix(int *dropshipUnitCounts);  // G57w10-S raw 0x00689310 (was C2597 interim stub)
+    static void SaveLoad_Prefix_0(ScenarioClass * aP1, int a2);  // G57w10-S raw 0x00689470 (was C2597 interim stub)
+    static int ShowMissionBriefing(ScenarioClass * aP1);  // G57w10-S raw 0x0065F520 (was C2597 interim stub)
     static double UpdateLighting(...);  // C2597 interim stub
-    static double CheckExists(...);  // C2597 interim stub
-    static double InitTimer(...);  // C2597 interim stub
+    static int CheckExists(ScenarioClass * aP1, int a2);  // G57w10-S raw 0x0069AC30 (was C2597 interim stub)
+    static wchar_t * InitTimer(ScenarioClass * aP1);  // G57w10-S raw 0x00683610 (was C2597 interim stub)
     int CalcMinShroudLevel();  // 0x588990
     int LoadNetworkConfig();  // 0x6980c0
     char SetGlobalToByID(unsigned int a2, char a3);  // 0x689670

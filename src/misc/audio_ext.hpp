@@ -238,6 +238,10 @@ public:
 
     uint8_t AudioChannel_field_0x04[4];
     uint8_t AudioChannel_field_0x08[4];
+    unsigned int u32_28;  // g57w10 C2039 supply (ml offset name)
+    unsigned int u32_50;
+    unsigned int u32_A4;
+    unsigned int u32_D4;
 };
 // 1 methods in IDA
 // CSP: AudioCodec matched via T1

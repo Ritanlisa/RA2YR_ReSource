@@ -260,6 +260,8 @@ struct AudioChannel {
 };
 
 struct CampaignScore {
+    static int LoadCampaignScoreAssetsGame(void *aP1);  // 0x72D300 raw: int __thiscall CampaignScore::LoadCampaignScoreAssetsGame(CampaignScore*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
     void* vfptr;
     unsigned int u32_A2;  // 0xA2
     unsigned int q08B;  // 0x8B
@@ -619,10 +621,13 @@ struct KeywordType {
 struct Locomotor {
     void* vfptr;
     char Locomotor_field_00[4];  // 0x0
+    static int GetSpeed(void *aP1);  // 0x426630 raw: int __thiscall GetSpeed(Locomotor*)
 };
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct MSAnim {
+    static int Reset(void *aP1, int a2);  // 0x5CC6A0 raw: int __thiscall MSAnim::Reset(MSAnim*, int)  // G57w10 r5 D-classbody supply (raw-anchored)
+
     void* vfptr;
     void* vtable1;  // 0x0
     int GetField(unsigned int a2);  // 0x5cb840
@@ -635,6 +640,7 @@ struct MSAnim {
 struct MSShapeAnim {
     void* vfptr;
     unsigned int u32_7;  // 0x7
+    static void * Constructor(void *aP1, void *a2, int a3, int a4, int a5, int a6, char a7, int a8);  // 0x5CB6D0 raw: void* Constructor(MSShapeAnim*, char**, int, int, int, int, char, int)
     void* vftable;  // 0x0 (no offset truth)
     int EnableOnce(char aP1);
     MSShapeAnim * * initTrigger(char **aP1, int aP2, int a4, int a5, int a6, int a7, int aP7);
@@ -648,6 +654,12 @@ struct MSShapeAnim {
 
 #ifndef GAMEMD_TREE_UNIVERSE
 struct ObjectClass {
+    static int CleanupAudioAndRefs(void *aP1);  // 0x4389B0 raw: int __thiscall ObjectClass::CleanupAudioAndRefs(ObjectClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int CheckFlagD0(void *aP1, int a2);  // 0x5F6CB0 raw: int __thiscall ObjectClass::CheckFlagD0(ObjectClass*, int)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int CheckFlagD0(void *aP1, void *a2);  // 0x5F6CB0 ptr-2nd site form (TerrainClass v71)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int CalcDrawRect(void *aP1);  // 0x5F4B10 raw: int __thiscall ObjectClass::CalcDrawRect(ObjectClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int GetTypeVt41(void *aP1);  // 0x70F090 raw: int __thiscall ObjectClass::GetTypeVt41(ObjectClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
     static int DetectCloaked(void *a1);  // G42.33 supply (direct call @0x76108F, ObjectClass__DetectCloaked)
     char Release();  // 0x6241C0 G42.33 b3 member-form sync (def in ObjectClass_e4.cpp)
     void nullsub_40();  // 0x6C9F00 G42.33 b9 member-form (def in addr6C)
@@ -932,6 +944,7 @@ struct ObjectClass {
 struct ShapeButtonClass {
     void* vfptr;
     unsigned char __pad_0;  // 0x0
+    static int Destructor(void *aP1);  // 0x69DDC0 raw: int Destructor(int this)
     unsigned int ShapeButtonClass_field_0x04;  // 0x4
     unsigned int ShapeButtonClass_field_0x08;  // 0x8
     void* Constructor;  // 0x0 (no offset truth)
@@ -941,6 +954,7 @@ struct ShapeButtonClass {
 struct State {
     void* vfptr;
     int Players;  // 0x4
+    static int SetIfChanged(void *aP1, int a2);  // 0x4F3A90 raw: int SetIfChanged(State*, int)
     int AIPlayers;  // 0x8
     int GameSpeed;  // 0xC
     int StartingCredits;  // 0x10
@@ -965,6 +979,12 @@ struct State {
 
 #if !defined(GAMEMD_TREE_UNIVERSE) && !defined(GAMEMD_E4_VECTOR_TREE_TRUTH)
 struct VectorClass {
+    static void * CopyConstructor(void *aP1, void *a2);  // 0x512FA0 raw: _DWORD* __thiscall VectorClass::CopyConstructor(VectorClass*, _DWORD*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static char PushBack(void *aP1, void *a2);  // 0x5132F0 raw: char __thiscall VectorClass::PushBack(DynamicVectorClass*, _DWORD*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
+    static unsigned int * ConstructorWithVtable(void *aP1, int a2, int a3);  // 0x45AD80 raw
+    static unsigned int * ConstructorWithVtable(int a1, int a2);  // 0x45AD80 site-form (receiver elided)
+
     void* Items;  // 0x4
     int Capacity;  // 0x8
     void* ClearAndFree2;  // 0x0 (no offset truth)

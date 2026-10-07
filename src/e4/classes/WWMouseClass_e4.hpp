@@ -10,6 +10,8 @@ namespace gamemd {
 struct MouseClass;  // fix_fwd_type_supply
 
 struct WWMouseClass {
+    static int UpdateCursorMovement(void *aP1);  // 0x7BA090 raw: int __thiscall WWMouseClass::UpdateCursorMovement(WWMouseClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4

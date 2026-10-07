@@ -28,6 +28,15 @@ struct UnitTypeClass;  // fix_fwd_type_supply
 struct TechnoTypeClass;  // fix_fwd_type_supply
 
 struct BuildingClass {
+    static int ClearFactoryData(void *aP1);  // 0x72240 raw: int BuildingClass::ClearFactoryData(BuildingClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int ClearFactoryData();  // 0x72240 0-arg site form (Game/ScenarioClass_e4)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int ClearOccupancyData(void *aP1);  // 0x722D00 raw: int BuildingClass::ClearOccupancyData(BuildingClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int ClearOccupancyData();  // 0x722D00 0-arg site form (Game/ScenarioClass_e4)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static void DrawVisible(void *aP1, void *a2, void *aP3);  // 0x43E7B0 raw: void __thiscall BuildingClass::DrawVisible(BuildingClass*, int*, int*)  // G57w10 r5 D-classbody supply (raw-anchored)
+    static int SquaredDistanceTo(unsigned int aP1);  // 0x5F6500 raw 2-param (BuildingClass*, int*) site 1-arg int form  // G57w10 r5 D-classbody supply (raw-anchored)
+
+    static int GetPowerFrame(void *aP1);  // 0x4566B0 raw: int GetPowerFrame(TechnoClass*)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -348,37 +357,37 @@ struct BuildingClass {
     int processCapture();
     void ClearSuperWeaponAnim();
     void* LoadFromStream();
-    static double AbandonProduction(...);  // C2597 interim stub
-    static double AddUpgrade(...);  // C2597 interim stub
-    static double AimTurret(...);  // C2597 interim stub
-    static double CalcDrawPos(...);  // C2597 interim stub
-    static double ClearAnims(...);  // C2597 interim stub
+    static char AbandonProduction(BuildingClass * aP1);  // G57w10-S raw 0x004C9FF0 (was C2597 interim stub)
+    static int AddUpgrade(BuildingClass * aP1, int a2);  // G57w10-S raw 0x006551C0 (was C2597 interim stub)
+    static int AimTurret(BuildingClass * aP1, unsigned __int8 *a2);  // G57w10-S raw 0x00424B50 (was C2597 interim stub)
+    static unsigned int * CalcDrawPos(BuildingClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00480110 (was C2597 interim stub)
+    static int ClearAnims(BuildingClass * aP1, int a2);  // G57w10-S raw 0x00451E40 (was C2597 interim stub)
      int Construct(int a2, int a3);
-    static double DemolishBridge(...);  // C2597 interim stub
-    static double DetermineVisualState(...);  // C2597 interim stub
-    static double FindByCellHash(...);  // C2597 interim stub
-    static double FindBySWType(...);  // C2597 interim stub
-    static double GetHealthRatio(...);  // C2597 interim stub
-    static double GetPlacementCoords(...);  // C2597 interim stub
-static int * GetPlacementRect(...);  // C2597 interim stub
+    static void DemolishBridge(BuildingClass * aP1);  // G57w10-S raw 0x00452DC0 (was C2597 interim stub)
+    static void DetermineVisualState(BuildingClass * aP1);  // G57w10-S raw 0x00483C80 (was C2597 interim stub)
+    static int FindByCellHash(BuildingClass * aP1);  // G57w10-S raw 0x00485010 (was C2597 interim stub)
+    static int FindBySWType(BuildingClass * aP1, int a2);  // G57w10-S raw 0x00505310 (was C2597 interim stub)
+    static int GetHealthRatio(BuildingClass * aP1);  // G57w10-S raw 0x005F5C60 (was C2597 interim stub)
+    static int GetPlacementCoords(BuildingClass * aP1, int *a2, unsigned int *a3);  // G57w10-S raw 0x0045F160 (was C2597 interim stub)
+static int * GetPlacementRect(BuildingClass * aP1, int *a2);  // G57w10-S raw 0x0047FDE0 (was C2597 interim stub)
     static double GetType_Thunk(...);  // C2597 interim stub
-    static double IsCellPlaceable(...);  // C2597 interim stub
-    static double IsTiberiumSiloEligible(...);  // C2597 interim stub
-    static double PlayAnim(...);  // C2597 interim stub
-    static double PowerUpdate(...);  // C2597 interim stub
-    static double ReadConstructionData(...);  // C2597 interim stub
-    static double RepairPlacement(...);  // C2597 interim stub
-    static double SellEffects(...);  // C2597 interim stub
-    static double SetField95(...);  // C2597 interim stub
-    static double CreateIdleAnim(...);  // C2597 interim stub
-    static double Deactivate(...);  // C2597 interim stub
-    static double IsBeingRepairedOrCaptured(...);  // C2597 interim stub
-    static double PowerOff(...);  // C2597 interim stub
-    static double GetProductionFrame(...);  // C2597 interim stub
-    static double GetType(...);  // C2597 interim stub
-static int GetSHPFrame(...);  // C2597 interim stub
-    static double UpdateFloatPosition(...);  // C2597 interim stub
-    static int CreatePlacementCrater(...);  // 0x486e70
+    static int IsCellPlaceable(BuildingClass * aP1, __int16 *a2);  // G57w10-S raw 0x004260F0 (was C2597 interim stub)
+    static bool IsTiberiumSiloEligible(BuildingClass * aP1);  // G57w10-S raw 0x00483690 (was C2597 interim stub)
+    static int PlayAnim(BuildingClass *a1, int a2, AnimTypeClass *a3, int a4, int a5, int a6, void *a7);  // G57w10-S raw 0x00451890 (was C2597 interim stub)
+    static int PowerUpdate(BuildingClass * aP1, unsigned __int8 *a2);  // G57w10-S raw 0x004FF700 (was C2597 interim stub)
+    static char ReadConstructionData(BuildingClass *aP1, double a2, char *a3);  // G57w10-S raw 0x0044FEC0 (was C2597 interim stub)
+    static int RepairPlacement(BuildingClass * aP1, char a2);  // G57w10-S raw 0x004533A0 (was C2597 interim stub)
+    static int SellEffects(BuildingClass * aP1, int a2);  // G57w10-S raw 0x00480CB0 (was C2597 interim stub)
+    static int SetField95(BuildingClass * aP1, int a2);  // G57w10-S raw 0x00424C90 (was C2597 interim stub)
+    static void CreateIdleAnim(BuildingClass * aP1);  // G57w10-S raw 0x00486920 (was C2597 interim stub)
+    static void Deactivate(BuildingClass * aP1);  // G57w10-S raw 0x00452480 (was C2597 interim stub)
+    static int IsBeingRepairedOrCaptured(BuildingClass * aP1);  // G57w10-S raw 0x007105E0 (was C2597 interim stub)
+    static char PowerOff(BuildingClass * aP1);  // G57w10-S raw 0x00452360 (was C2597 interim stub)
+    static int GetProductionFrame(BuildingClass * aP1);  // G57w10-S raw 0x0043EF90 (was C2597 interim stub)
+    static int GetType(BuildingClass * aP1);  // G57w10-S raw 0x00705D20 (was C2597 interim stub)
+static int GetSHPFrame(BuildingClass * aP1, int a2);  // G57w10-S raw 0x00490B90 (was C2597 interim stub)
+    static int UpdateFloatPosition(BuildingClass * aP1);  // G57w10-S raw 0x0062D2A0 (was C2597 interim stub)
+    static int CreatePlacementCrater(BuildingClass * aP1);  // G57w10-S raw 0x00486E70 (was C2597 interim stub)
     void UnloadUnits(char a2, char a3);  // 0x457de0
     unsigned int * FindPlacementCells2(unsigned int *a2, int a3);  // 0x6b0300
     int ExecuteTriggers(int a2, char a3);  // 0x7265c0

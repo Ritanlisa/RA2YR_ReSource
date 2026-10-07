@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct CrateClass {
-    static int ProcessPickup(...);
+    static int ProcessPickup(CrateClass * aP1, int a2);  // G57w10-S raw 0x00481A00 (was C2597 interim stub)
 };
 
 } // namespace gamemd

@@ -22,7 +22,7 @@ struct Lobby {
     int InvalidatePlayerSlots(HWND hDlg);
     int SetupPlayerWidgets(HWND hDlg);
     void UpdatePlayerLabels();
-    static double InvalidateFactionCombos(...);  // C2597 interim stub
+    static int InvalidateFactionCombos(Lobby * aP1);  // G57w10-S raw 0x004E5310 (was C2597 interim stub)
     int FillPlayerFactions();  // 0x4e4820
     int UpdateReadyIcons(HWND hDlg);  // G42.33 b3 supplied-call sync 0x46F490
     int EnableStartButton(HWND hDlg);  // G42.33 b3 supplied-call sync 0x46F497

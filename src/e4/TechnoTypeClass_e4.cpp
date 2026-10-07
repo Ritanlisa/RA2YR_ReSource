@@ -31,6 +31,7 @@
 #include "e4/classes/AnimTypeVector_e4.hpp"
 #include "e4/classes/ObjectPtr_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 
 // 0x48DCD0
 namespace gamemd {
@@ -821,9 +822,9 @@ void TechnoTypeClass::Construct(int aP1)
   *((unsigned int *)this + 459) = (unsigned int)&vt_TypeList;
   ((ObjectTypeClass *)((char *)this + 1864))->CheckFlag(aP1); /*0x7119d0 G57e1 truth receiver*/
   *((unsigned int *)this + 466) = (unsigned int)&vt_TypeList;
-  TypeList::ParticleConstructor(0, 0); /*0x7119e6*/
+  TypeList::ParticleConstructor((TypeList *)((unsigned int *)this + 466), 0, 0); /*0x7119e6 G57w10 receiver=this+1864 (vt store 0x7119df)*/
   *((unsigned int *)this + 478) = (unsigned int)&vt_TypeList;
-  TypeList::ParticleConstructor(0, 0); /*0x7119fb*/
+  TypeList::ParticleConstructor((TypeList *)((unsigned int *)this + 478), 0, 0); /*0x7119fb G57w10 receiver=this+1912 (vt store 0x7119eb)*/
   *((unsigned int *)this + 485) = (unsigned int)&vt_TypeList;
   *((unsigned int *)this + 809) = 2; /*0x711a10*/
   *((unsigned int *)this + 810) = 1; /*0x711a16*/
@@ -1387,7 +1388,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     if ( !_strcmpi(Filename, &g_INI_Key_TRUCKA.__pad_1714[80]) ) /*0x716cab*/
       /*0x716cd4*/
         ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716cd4*/ (uint8_t *)aP0[9], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_Key_TRUCKA.__pad_1714[80], Filename, 256);
-    _makepath(Buffer, 0, 0, Filename, Ext); /*0x716ced*/
+    _makepath( Buffer, 0, 0, Filename, (const char *)(Ext) ); /*0x716ced*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = 0; /*0x716cfe*/
     v35 = (void *)SearchMIXFile( (char *)(Buffer), 0); /*0x716d04*/
     *(unsigned int *)&((unsigned int *)aP0)[1548] = (unsigned int)v35; /*0x716d0b*/
@@ -1395,7 +1396,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
       *(unsigned int *)&((unsigned int *)aP0)[1548] = SearchMIXFile( (char *)(&(unsigned int *)((char *)&stru_820320 + 143)), 0); /*0x716d1f*/
     /*0x716d3f*/
       ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x716d3f*/ &((unsigned int *)aP0)[276], (uint8_t *)&((char *)&g_INI_Key_TRUCKA), &g_INI_DefaultBuffer, Filename, 256);
-    _makepath(Buffer, 0, 0, Filename, Ext); /*0x716d58*/
+    _makepath( Buffer, 0, 0, Filename, (const char *)(Ext) ); /*0x716d58*/
     *(unsigned int *)&((unsigned int *)aP0)[1580] = 0; /*0x716d69*/
     *(unsigned int *)&((unsigned int *)aP0)[1580] = SearchMIXFile( (char *)(Buffer), 0); /*0x716d8d*/
     /*0x716d93*/

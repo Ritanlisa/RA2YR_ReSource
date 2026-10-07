@@ -29,6 +29,7 @@ public:
 
     virtual bool SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwner) override; // 0x41CB60 (as StubReturnFalse)
     virtual ObjectClass* CreateObject(HouseClass* pOwner) override; // 0x41CB70 (as CreateAircraft)
+    int* CreateAircraft();  // 0x41CB70 (g57w10: canon name twin for raw-qualified call sites; vt+144)
 
     AircraftTypeClass(const char* pID) noexcept;
 

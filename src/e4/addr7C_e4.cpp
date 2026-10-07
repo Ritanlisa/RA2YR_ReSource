@@ -6396,7 +6396,8 @@ int doexit(UINT uExitCode, int a2, int a3)
     dword_B78204 = 1; /*0x7cbeb3*/
     ExitProcess(uExitCode); /*0x7cbeb9*/
   }
-  return _unlockexit(); /*0x7cbead*/
+  _unlockexit(); /*0x7cbead*/
+  return 0;  // G57w10-S CRT __unlockexit@0x7CBECA void 尾调用
 }
 }
 // 0x7CBED3
@@ -12197,7 +12198,7 @@ int gethostname(char* name, int namelen)  // G42.33 b3 head truth 0x7c89ce
 namespace gamemd {
 int DirectDrawCreate(GUID* lpGUID, void* lplpDD, IUnknown* pUnkOuter)  // G42.33 b3 head truth 0x7c89d4
 {
-  return __imp_DirectDrawCreate(lpGUID, lplpDD, pUnkOuter);
+  return __imp_DirectDrawCreate( (GUID *)(lpGUID), lplpDD, pUnkOuter );
 }
 } // namespace gamemd
 

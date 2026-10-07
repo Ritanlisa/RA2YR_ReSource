@@ -24,7 +24,7 @@ struct Rect {
     _DWORD * Construct(unsigned int *aP1, int aP2, int aP3);
     BOOL Inflate(LPRECT lprc, int dx, int dy);
     unsigned int * Set(int aP1, int aP2, int aP3, int aP4);
-    int Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2);
+    int Union(LPRECT lprcDst, const RECT *lprcSrc1, const RECT *lprcSrc2);  // G57w10-S raw 0x00487F40 IUnknown 占位清除
     int SetRedraw(char a2); // N_fix R5 supply (cache truth)
 };
 

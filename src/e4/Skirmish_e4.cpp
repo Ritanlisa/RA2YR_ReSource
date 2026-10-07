@@ -47,6 +47,8 @@
 #include "e4/classes/PtrVector_e4.hpp"
 #include "e4/classes/Surface_e4.hpp"
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/GDlg_e4.hpp"  // G57w10 D supply
+#include "e4/classes/StartCombo_e4.hpp"  // G57w10 D supply
 
 // 0x46F600
 namespace gamemd {

@@ -813,11 +813,11 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~COMClass() = default;
 
-    virtual void RegisterAll(); // 0x490490
-    virtual void ReleaseRef(); // 0x65D670
-    virtual void initInterface(); // 0x65D6A0
-    virtual void queryProperty(); // 0x765680
-    virtual void setProperty(); // 0x7656B0
+    virtual int RegisterAll(); // 0x490490 (g57w10 r4: raw fn_49 原型 int __thiscall RegisterAll; 前声明 stale)
+    virtual int ReleaseRef(); // 0x65D670 (g57w10 r4: raw 原型 int; canon this=ReferenceCounted, TU 载体 COMClass)
+    virtual unsigned int* initInterface(char a2); // 0x65D6A0 (g57w10 r4: raw 原型 _DWORD*__(char); canon this=ReferenceCounted)
+    virtual int queryProperty(); // 0x765680 (g57w10 r4: raw 原型 int; canon this=WDT Conflict vector)
+    virtual unsigned int setProperty(int a2); // 0x7656B0 (g57w10 r4: raw 原型 unsigned(int); canon this=WDT Conflict vector)
     // +17 more virtual methods
 
     uint8_t COMClass_field_0x04[4];
@@ -846,8 +846,8 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* getTypeInfo(int a1);  // 0x7657C0
     int registerObject(int a1, void* a2);  // 0x7659F0
     int unregisterObject(int a1);  // 0x765B10
-    void* createInstance(int a1);  // 0x765BB0
-    void* getInterface(int a1);  // 0x765C20
+    char* createInstance(char a2);  // 0x765BB0 (g57w10 r4: raw 原型 char*__(char))
+    unsigned int* getInterface(char a2);  // 0x765C20 (g57w10 r4: raw 原型 _DWORD*__(char); canon this=WDT vector)
     unsigned int * releaseInterface();  // 0x765C70
     void* connectPoint(int a1);  // 0x7669C0
     int enumConnections(int a1);  // 0x766A80
@@ -855,7 +855,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* unadviseConnection(int a1);  // 0x766B90
     int unlockServer(int a1);  // 0x7674E0
     void* coInitialize(void* a1, int a2, void* a3);  // 0x767500
-    void* coUninitialize(int a1);  // 0x767880
+    void** coUninitialize(char a2);  // 0x767880 (g57w10 r4: raw 原型 void**__(char); canon this=FlagGameOption_WDT)
     unsigned int * marshalInterface(char a1);  // 0x767C50
     // --- gap2 auto-generated stub declarations (END) ---
 
@@ -890,6 +890,55 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     unsigned int u32_EC;  // G42.39 data supply
     unsigned int u32_F4;  // G42.39 data supply
     unsigned int u32_F8;  // G42.39 data supply
+    // g57w10 r4 item3: RegisterAll@0x490490 级联释放槽词表补 (raw fn_49 真名: this->Count/q018../u32_1xx;
+    // 0x54 起连续接口指针槽, til 命名混杂 — 词表供给同 G42.39 data supply 形态)
+    unsigned int Count;   // raw 0x4905d6 this->Count (级联槽)
+    unsigned int q018;    // raw 0x4905f6
+    unsigned int q01C;    // raw 0x490636
+    unsigned int q020;    // raw 0x490656
+    unsigned int q024;    // raw 0x490646
+    unsigned int q028;    // raw 0x490666
+    unsigned int q02C;    // raw 0x490676
+    unsigned int q030;    // raw 0x490686
+    unsigned int q034;    // raw 0x490696
+    unsigned int q038;    // raw 0x4906a6
+    unsigned int q03C;    // raw 0x4906b6
+    unsigned int q040;    // raw 0x4906c6
+    unsigned int q044;    // raw 0x4906d6
+    unsigned int q048;    // raw 0x4906e6
+    unsigned int q04C;    // raw 0x4906f6
+    unsigned int q050;    // raw 0x490706
+    unsigned int u32_FC;   // g57w10 r4 级联槽词表
+    unsigned int u32_104;
+    unsigned int u32_108;
+    unsigned int u32_10C;
+    unsigned int u32_114;
+    unsigned int u32_118;
+    unsigned int u32_11C;
+    unsigned int u32_124;
+    unsigned int u32_128;
+    unsigned int u32_12C;
+    unsigned int u32_134;
+    unsigned int u32_138;
+    unsigned int u32_13C;
+    unsigned int u32_144;
+    unsigned int u32_148;
+    unsigned int u32_14C;
+    unsigned int u32_150;
+    unsigned int u32_154;
+    unsigned int u32_158;
+    unsigned int u32_15C;
+    unsigned int u32_160;  // g57w10 r4 级联槽词表续
+    unsigned int u32_164;
+    unsigned int u32_168;
+    unsigned int u32_4;    // raw 0x65d673 ReleaseRef this+4 引用计数
+    // g57w10 r4 item3: e4 平板体词表转运 (COMClass_e4.hpp "flat-carrier vocab" 同型;
+    // 本 TU 语料 0x765686/0x7656a5/0x7656xx 使用)
+    unsigned int* m_1;     // e4 同型 (raw &this->m_1[3] 词汇)
+    unsigned int m_C;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int field_18;
 };
 #endif  // GAMEMD_E4_COMClass
 // 2 methods in IDA

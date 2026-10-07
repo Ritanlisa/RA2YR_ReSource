@@ -72,6 +72,7 @@
 #include "e4/classes/Palette_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/Block_e4.hpp"  // G42.36 C2027 supply
 #include "e4/minimal_carriers.hpp"  // G42.42q minimal carriers
+#include "e4/classes/TypeList_e4.hpp"  // G57w10 D supply (bare TypeList carrier)
 
 // 0x522100
 namespace gamemd {

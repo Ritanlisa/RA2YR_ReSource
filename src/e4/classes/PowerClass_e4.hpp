@@ -89,8 +89,8 @@ struct PowerClass {
     unsigned char q5488;  // 0x5488
 // --- flat members (END) ---
     void checkLowPower();
-    static double checkBlackout(...);  // C2597 interim stub
-    static double getDrain(...);  // C2597 interim stub
+    static void * checkBlackout(PowerClass * aP1);  // G57w10-S raw 0x0063F7C0 (was C2597 interim stub)
+    static char getDrain(PowerClass * aP1);  // G57w10-S raw 0x006403A0 (was C2597 interim stub)
 };
 
 } // namespace gamemd

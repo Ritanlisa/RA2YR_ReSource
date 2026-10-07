@@ -12,6 +12,8 @@ struct AnimClass;  // fix_fwd_type_supply
 struct LineTrail;  // fix_fwd_type_supply
 
 struct MissionClass {
+    static int SetState(void *aP1);  // 0x5B2FD0 raw: int __thiscall MissionClass::SetState(MissionClass*)  // G57w10 r5 D-classbody supply (raw-anchored)
+
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
@@ -101,7 +103,7 @@ struct MissionClass {
     int Return450M();
     int Return450N();
     int vt_entry_1FC();
-static char * GetMissionControl(...);  // C2597 interim stub
+static char * GetMissionControl(MissionClass * aP1);  // G57w10-S raw 0x005B3A00 (was C2597 interim stub)
     unsigned int * Init();  // 0x49b610
     int ForceMission();
     int NextMission();

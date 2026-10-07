@@ -213,7 +213,7 @@ int TagClass::AddTrigger(TriggerClass* a2)
 {
     *(unsigned int *)(a2 + 40) = *(this + 10); /*0x6e55c7*/
     *(this + 10) = a2; /*0x6e55ca*/
-    return a2; /*0x6e55cd*/
+    return (int)(a2; /*0x6e55cd*/);
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)
 {

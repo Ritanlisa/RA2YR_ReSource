@@ -111,12 +111,12 @@ AbstractClass * * Sidebar::StartSidebarProduction(HouseClass *a1, int aP2, char 
       v21 = 0; /*0x4fa40c*/
       break; /*0x4fa40c*/
   }
-  Sidebar::Dispatch((IUnknown *)((Sidebar *)this), (int)v6, aP3, v7, 0); /*0x4fa41c*/
+char Sidebar::Dispatch(Sidebar *aP1, int a3, char a4, int a5, char a5_2) ; /*0x4fa41c*/
   v9 = (int)(TechnoTypeClass::GetByTypeAndIndex((int)v6, aP2)); /*0x4fa42a*/
   v24 = 0; /*0x4fa440*/
-  if ( !(*(int (**)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/
+  if ( !(*(int (**)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))( v9, 0, 1, 1, (int)(this) ) ) /*0x4fa438*/
   {
-    if ( !a5 || !(*(int (**)(int, int, unsigned int, int, int))(*(unsigned int *)v9 + 148))(v9, 1, 0, 1, this) ) /*0x4fa45b*/
+    if ( !a5 || !(*(int (**)(int, int, unsigned int, int, int))(*(unsigned int *)v9 + 148))( v9, 1, 0, 1, (int)(this) ) ) /*0x4fa45b*/
     {
 LABEL_40:
       Debug::Log("Request to Begin_Production of '%s' was rejected. Cannot queue buildings.\n"); /*0x4fa533 G57c1: IDA 0x4fa53c push offset aRequestToBegin_1*/

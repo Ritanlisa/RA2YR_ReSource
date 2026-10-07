@@ -314,12 +314,12 @@ struct FootClass {
     void Destroyed(int a2);
     AbstractClass * FootClass_ImbueLocomotor(void * a1, void * a2, void * a3, void *a4, void *a5, void *a6);
     void Stub(int a1);
-     double GetField(...);  // C2597 interim stub
-    static double SetField(...);  // C2597 interim stub
-    static double ProcessDeploy(...);  // C2597 interim stub
-    static double AssignDestination(...);  // C2597 interim stub
-    static double RemoveFromPointerArray(...);  // C2597 interim stub
-    static double MissionMoveCarryallLand(...);  // C2597 interim stub
+     int GetField();  // G57w10-S raw 0x007500D0 (was C2597 interim stub)
+    static int SetField(FootClass * aP1, int a2);  // G57w10-S raw 0x007500E0 (was C2597 interim stub)
+    static int ProcessDeploy(FootClass *aP1, int a2, double a3, int *a4, int a5, int a6, void *a7, char a8, __int64 a9);  // G57w10-S raw 0x004D7330 (overload 纠偏: 消费点 0x4165F1 传 6+ 实参; 0x4D5350 为 InfantryClass 别名)
+    static char AssignDestination(FootClass * aP1, int a2, int a3);  // G57w10-S raw 0x004D94B0 (was C2597 interim stub)
+    static char RemoveFromPointerArray(FootClass * aP1, int a2);  // G57w10-S raw 0x004E0ED0 (was C2597 interim stub)
+    static void MissionMoveCarryallLand(FootClass * aP1);  // G57w10-S raw 0x00416AF0 (was C2597 interim stub)
     int CreateWakes(int a2, int a3, int a4);  // 0x629e90
     int ClearPathIndex();  // 0x4df0d0
     unsigned int * PostLoadInit(int a2);  // 0x4d3540

@@ -22,7 +22,7 @@ struct ObjectVector {
     unsigned int *__pad_0;
 // --- flat members (END) ---
     int Construct(int aP1, int aP2);
-     double ddtor(...);  // C2597 interim stub
+     void ddtor(ObjectVector * aP1);  // G57w10-S raw 0x40CDC0 (was C2597 interim stub)
 };
 
 } // namespace gamemd
