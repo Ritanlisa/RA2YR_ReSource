@@ -4,6 +4,8 @@
 
 #include <cstdint>
 #include <cstddef>
+#include "core/random.hpp"
+#include "core/reverse_marker.hpp"
 
 // IDA-named globals referenced (extern stubs)
 extern unsigned char byte_ABCD58;
@@ -1169,9 +1171,13 @@ int ReturnZero58B720()
 // IDA: 0x598000  proposal: RandomState
 // IDA: double sub_598000()
 //   return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10;
+// NOTE: the binary constant at 0x7ED898 is 0x3DF0000000100000 ==
+// 1/4294967295 == 2.3283064370807974e-10 (the IDA comment above truncates one
+// digit and would produce a different double).
+REVERSE(0x598000, "RandomState: uniform [0,1] on g_Randomizer", "None")
 double RandomState()
 {
-  return 0;
+  return (double)Random::State(&g_Randomizer) * 2.3283064370807974e-10;
 }
 
 // IDA: 0x5980A0  proposal: SetMember25980A0
