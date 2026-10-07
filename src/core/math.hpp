@@ -201,3 +201,16 @@ double Deg2Rad(double deg) noexcept;
 double Rad2Deg(double rad) noexcept;
 
 } // namespace gamemd::math
+
+namespace gamemd::Math
+{
+
+// Table-lookup math primitives from the original binary.
+// NOT std::sqrt/std::atan equivalents: both quantize through small tables and
+// carry the original's deliberate inaccuracies (RMG terrain shape depends on them).
+// Both rely on the process-global FPU rounding mode being chop-toward-zero
+// (_control87(_RC_CHOP) at startup), matching the original's fstp/_ftol semantics.
+double Sqrt(double x);    // 0x4CAC40
+double ArcTan(double x);  // 0x4CADE0
+
+} // namespace gamemd::Math
