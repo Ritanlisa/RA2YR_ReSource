@@ -3221,6 +3221,7 @@ int BuildingClass::Mission_Repair()
 // 0x44b780
 void BuildingClass::ProcessRepair()
 {
+  int _EAX; // fnstsw ax 结果 (x87 比较状态; W20M24)
     double v1; // st7
     BuildingTypeClass *Type; // eax
     int missionStatus; // eax
