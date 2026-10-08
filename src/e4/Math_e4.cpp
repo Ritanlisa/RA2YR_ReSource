@@ -56,7 +56,7 @@ int Math_Sqrt(double a1)
   v3 = (unsigned int)(a1 < 0.0);
   v4 = 0; /*0x4cac44*/
   v5 = a1 == 0.0; /*0x4cac44*/
-  IDA_LOWORD(result) = v1; /*0x4cac4a*/
+  (result) = ((result) & ~0xFFFF) | ((unsigned int)(v1) & 0xFFFF); /*0x4cac4a*/
   if ( a1 != 0.0 ) /*0x4cac4f*/
   {
     if ( a1 <= 0.0 ) /*0x4cac65*/
@@ -75,7 +75,7 @@ int Math_SinCos(double a1)
   char v2; // cl
   int result; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt(a1 * flt_8223B0); /*0x4cacba*/
+  (v1) = ((v1) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a1 * flt_8223B0)) & 0xFFFF); /*0x4cacba*/
   v2 = v1 & 1; /*0x4cacc4*/
   result = (v1 / 2) & 0x80001FFF; /*0x4cacc9*/
   if ( result < 0 )
@@ -97,7 +97,7 @@ int Math_ArcTan2(double a1)
   signed int v3; // eax
   int result; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt(a1 * flt_8223B4); /*0x4cad0a*/
+  (v1) = ((v1) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a1 * flt_8223B4)) & 0xFFFF); /*0x4cad0a*/
   v2 = v1 & 1; /*0x4cad14*/
   v3 = (v1 / 2) & 0x80001FFF; /*0x4cad19*/
   if ( v3 >= 0 || (v3 = (((unsigned short)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) ) /*0x4cad27*/
@@ -159,23 +159,23 @@ int Math_CalcAngle(double a1, double a2)
     v5 = v3 < 0.0; /*0x4cae56*/
     v6 = 0; /*0x4cae56*/
     v7 = v3 == 0.0; /*0x4cae56*/
-    IDA_LOWORD(result) = v2; /*0x4cae5c*/
+    (result) = ((result) & ~0xFFFF) | ((unsigned int)(v2) & 0xFFFF); /*0x4cae5c*/
     if ( v3 != 0.0 ) /*0x4cae61*/
     {
       v10 = v19 < 0.0; /*0x4cae6f*/
       v11 = 0; /*0x4cae6f*/
       v12 = v19 == 0.0; /*0x4cae6f*/
-      IDA_LOWORD(result) = v9; /*0x4cae75*/
+      (result) = ((result) & ~0xFFFF) | ((unsigned int)(v9) & 0xFFFF); /*0x4cae75*/
     }
   }
   else
   {
-    IDA_LOWORD(v13) = Math::RoundToInt((unsigned int)(v3)/ v18 / flt_8650B8); /*0x4cae96*/
+    (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((unsigned int)(v3)/ v18 / flt_8650B8)) & 0xFFFF); /*0x4cae96*/
     result = abs32(v13); /*0x4cae9e*/
     v15 = v19 < 0.0; /*0x4caed1*/
     v16 = 0; /*0x4caed1*/
     v17 = v19 == 0.0; /*0x4caed1*/
-    IDA_LOWORD(result) = v14; /*0x4caed7*/
+    (result) = ((result) & ~0xFFFF) | ((unsigned int)(v14) & 0xFFFF); /*0x4caed7*/
   }
   return result; /*0x4cae6a*/
 }
@@ -339,8 +339,8 @@ int Math_RoundToInt(void * a1)
   int result; // dx:ax
 
   v1 = (int64_t)a1; /*0x7c5f20*/
-  IDA_LOWORD(result) = v1; /*0x7c5f22*/
-  IDA_HIWORD(result) = IDA_WORD2(v1); /*0x7c5f22*/
+  (result) = ((result) & ~0xFFFF) | ((unsigned int)(v1) & 0xFFFF); /*0x7c5f22*/
+  (result) = ((result) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_WORD2(v1)) & 0xFFFF) << 16); /*0x7c5f22*/
   return result; /*0x7c5f22*/
 }
 }
@@ -437,7 +437,7 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
       v6 = *a2++; /*0x5c7dcc*/
       v7 = v5 + (uint16_t)*a1 + a3 * v6; /*0x5c7dda*/
       *a1++ = v7; /*0x5c7ddc*/
-      v8 = IDA_HIWORD(v7); /*0x5c7de2*/
+      v8 = (((unsigned int)(v7) >> 16) & 0xFFFF); /*0x5c7de2*/
       --v4; /*0x5c7de5*/
       v5 = v8; /*0x5c7de6*/
     }

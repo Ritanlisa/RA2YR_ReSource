@@ -1539,7 +1539,7 @@ int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
             break; /*0x7af779*/
           case 0x84u: /*0x7af734*/
             v11 = (uint16_t)v4; /*0x7af74d*/
-            v12 = IDA_HIWORD(v4); /*0x7af751*/
+            v12 = (((unsigned int)(v4) >> 16) & 0xFFFF); /*0x7af751*/
             WorldDominationFactionDlgProc_Helper(hWnd, (int)&v11); /*0x7af755*/
             result = 0; /*0x7af75d*/
             break; /*0x7af763*/

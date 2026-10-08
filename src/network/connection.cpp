@@ -236,7 +236,7 @@ int IPXConnClass::receive(int a2, int a3, int * a4, int ** a5, int a6, int a7)
       if ( v13 >= Network::GetSendCount(&unk_A8E9C0) ) /*0x53f7cb*/
         goto LABEL_27; /*0x53f7cb*/
       ConnectionSpeed = (&unk_A8E9C0)->GetConnectionSpeed(v14); /*0x53f7d3*/
-      IDA_LOWORD(v15) = IPXConnClass::closeConnection((IPXConnClass *)&dword_A8B238, ConnectionSpeed); /*0x53f7de*/
+      (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(IPXConnClass::closeConnection((IPXConnClass *)&dword_A8B238, ConnectionSpeed)) & 0xFFFF); /*0x53f7de*/
   LABEL_26:
       v9 = v15; /*0x53f7ef*/
       goto LABEL_27; /*0x53f7ef*/

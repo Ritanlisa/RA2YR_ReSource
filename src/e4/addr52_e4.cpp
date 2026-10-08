@@ -224,7 +224,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     v22.IsAllocated = (void **)(0);
     v22.Capacity =(int)(void **)(0);
     a5 = (void **)((void*)&VectorClass_int_vftable); /*0x525562*/
-    if ( a6 && IDA_HIBYTE(a8) ) /*0x525572*/
+    if ( a6 && (((unsigned int)(a8) >> 24) & 0xFF) ) /*0x525572*/
       goto LABEL_20; /*0x525572*/
   }
   else
@@ -242,7 +242,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
     v19 = a6; /*0x5255b9*/
     v18 = a6 == 0; /*0x5255c0*/
     *(unsigned int *)(a1 + 20) = v20; /*0x5255c2*/
-    if ( !v18 && IDA_HIBYTE(a8) ) /*0x5255ce*/
+    if ( !v18 && (((unsigned int)(a8) >> 24) & 0xFF) ) /*0x5255ce*/
   LABEL_20:
       RA2_OPDEL(v19); /*0x5255d0*/
   }
@@ -1750,7 +1750,7 @@ void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
       }
       else if ( (uint16_t)a3 == 1860 ) /*0x52d932*/
       {
-        v9 = IDA_HIWORD(a3) == 0; /*0x52d943*/
+        v9 = (((unsigned int)(a3) >> 16) & 0xFFFF) == 0; /*0x52d943*/
       }
       else
       {
@@ -2054,7 +2054,7 @@ LABEL_40:
         if ( &stru_89E138 != (IUnknown *)-22440 )
           Menu::Reset((int)&((unsigned char *)&stru_89E138)[22440]);
   int v57; // [esp+1Eh] [ebp-108h]
-        IDA_LOBYTE(v57) = 0;
+        (v57) = ((v57) & ~0xFF) | ((unsigned int)(0) & 0xFF);
         dwNewLong = -1;
         if ( g_UnitTypeInitState || (Credits::Screen(), g_UnitTypeInitState) )
         {
@@ -2249,7 +2249,7 @@ LABEL_184:
 
 
               int v44 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44052];
-              IDA_LOBYTE(v44) = ((unsigned char *)&HouseClass_Player)[44052] & 0xFB;
+              (v44) = ((v44) & ~0xFF) | ((unsigned int)(((unsigned char *)&HouseClass_Player)[44052] & 0xFB) & 0xFF);
               *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44052] = v44;
               goto LABEL_189;
             }
@@ -2258,7 +2258,7 @@ LABEL_184:
             *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39084] = (unsigned int)v49;
           }
           int v46 = *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44052];
-          IDA_LOBYTE(v46) = ((unsigned char *)&HouseClass_Player)[44052] & 0xFB;
+          (v46) = ((v46) & ~0xFF) | ((unsigned int)(((unsigned char *)&HouseClass_Player)[44052] & 0xFB) & 0xFF);
           *(unsigned int *)&((unsigned char *)&HouseClass_Player)[44052] = v46;
 LABEL_189:
           Debug::Log();
@@ -2681,7 +2681,7 @@ char CommandLine_Parse(int a1, int a2)
   if ( Checksummer::HashString(v5) == -648255326 ) /*0x52f787*/
   {
     v6 = dword_A8E960; /*0x52f789*/
-    IDA_LOBYTE(v6) = dword_A8E960 | 4; /*0x52f78e*/
+    (v6) = ((v6) & ~0xFF) | ((unsigned int)(dword_A8E960 | 4) & 0xFF); /*0x52f78e*/
     dword_A8E960 = v6; /*0x52f790*/
     goto LABEL_64; /*0x52f795*/
   }
@@ -2761,7 +2761,7 @@ char CommandLine_Parse(int a1, int a2)
   if ( strstr(v5, aAttract) ) /*0x52f9df*/
   {
     v12 = dword_A8D5F8; /*0x52f9eb*/
-    IDA_LOBYTE(v12) = dword_A8D5F8 | 4; /*0x52f9f0*/
+    (v12) = ((v12) & ~0xFF) | ((unsigned int)(dword_A8D5F8 | 4) & 0xFF); /*0x52f9f0*/
     dword_A8D5F8 = v12; /*0x52f9f2*/
     goto LABEL_64; /*0x52f9f7*/
   }

@@ -94,7 +94,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
           v5 = *((unsigned int *)dword_A8EC1C + v4); /*0x6b4e29*/
           sprintf(Buffer, "%d", v7); /*0x6b4e37*/
           sprintf(Source, "%s,%d,%d,%d", (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
-          IDA_LOBYTE(v4) = ((INIClass *)v9)->SetString( (unsigned __int8 *)unk_81732C, (char *)(Buffer), (char *)(Source)); /*0x6b4e71*/
+          (v4) = ((v4) & ~0xFF) | ((unsigned int)(((INIClass *)v9)->SetString( (unsigned __int8 *)unk_81732C, (char *)(Buffer), (char *)(Source))) & 0xFF); /*0x6b4e71*/
           ++v7; /*0x6b4e76*/
         }
       }
@@ -223,7 +223,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     v5 = (int *)((UnitClass *)v4)->Construct( (int)this, ppv); /*0x7474d8*/
     if ( !v5 ) /*0x7474dc*/
       return 0; /*0x747554*/
-    IDA_LOWORD(ppv) = 0; /*0x7474e4*/
+    (ppv) = ((ppv) & ~0xFFFF) | ((unsigned int)(0) & 0xFFFF); /*0x7474e4*/
     v6 = Random::State(  (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink); /*0x7474f1*/
     v7 = (unsigned int)ppv; /*0x7474f6*/
     IDA_LOBYTE(v8) = 0; /*0x7474fa*/
@@ -726,23 +726,23 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
 
     ((BuildingTypeClass *)(int)this)->ProcessPower( (int *)(a2)); /*0x747f79*/
     Power::TimerProcess(this->MovementRestrictedTo[0]); /*0x747f87*/
-    IDA_LOBYTE(v3) = this->Passive; /*0x747f8c*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->Passive) & 0xFF); /*0x747f8c*/
     Power::FlagProcess((Power *)a2, v3); /*0x747f95*/
-    IDA_LOBYTE(v4) = this->CrateGoodie; /*0x747f9a*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(this->CrateGoodie) & 0xFF); /*0x747f9a*/
     v5 = Power::FlagProcess((Power *)a2, v4); /*0x747fa3*/
-    IDA_LOBYTE(v5) = this->Harvester; /*0x747fa8*/
+    (v5) = ((v5) & ~0xFF) | ((unsigned int)(this->Harvester) & 0xFF); /*0x747fa8*/
     Power::FlagProcess((Power *)a2, v5); /*0x747fb1*/
-    IDA_LOBYTE(v6) = this->Weeder; /*0x747fb6*/
+    (v6) = ((v6) & ~0xFF) | ((unsigned int)(this->Weeder) & 0xFF); /*0x747fb6*/
     Power::FlagProcess((Power *)a2, v6); /*0x747fbf*/
-    IDA_LOBYTE(v7) = this->unknown_E10; /*0x747fc4*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)(this->unknown_E10) & 0xFF); /*0x747fc4*/
     v8 = Power::FlagProcess((Power *)a2, v7); /*0x747fcd*/
-    IDA_LOBYTE(v8) = this->HasTurret; /*0x747fd2*/
+    (v8) = ((v8) & ~0xFF) | ((unsigned int)(this->HasTurret) & 0xFF); /*0x747fd2*/
     Power::FlagProcess((Power *)a2, v8); /*0x747fdb*/
-    IDA_LOBYTE(v9) = this->IsTilter; /*0x747fe0*/
+    (v9) = ((v9) & ~0xFF) | ((unsigned int)(this->IsTilter) & 0xFF); /*0x747fe0*/
     Power::FlagProcess((Power *)a2, v9); /*0x747fe9*/
-    IDA_LOBYTE(v10) = this->IsSimpleDeployer; /*0x747fee*/
+    (v10) = ((v10) & ~0xFF) | ((unsigned int)(this->IsSimpleDeployer) & 0xFF); /*0x747fee*/
     v11 = Power::FlagProcess((Power *)a2, v10); /*0x747ff7*/
-    IDA_LOBYTE(v11) = this->UseTurretShadow; /*0x747ffc*/
+    (v11) = ((v11) & ~0xFF) | ((unsigned int)(this->UseTurretShadow) & 0xFF); /*0x747ffc*/
     return Power::FlagProcess((Power *)a2, v11); /*0x74800a*/
 }
 }  // G42.18c ns repair

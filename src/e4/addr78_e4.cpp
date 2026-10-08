@@ -863,7 +863,7 @@ int sub_781380(unsigned int * a1, unsigned int * a2)
   else
   {
     v4 = -(v2 != -1); /*0x781395*/
-    IDA_LOBYTE(v4) = v4 & 0xFE; /*0x781397*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(v4 & 0xFE) & 0xFF); /*0x781397*/
     return v4 + 1; /*0x781399*/
   }
 }
@@ -1165,7 +1165,7 @@ void GameListRenderWOL(CampaignScore * a1)
                 v23 = HashTable::Find( (void *)(&g_DialogHashTable), (const char *)g_Str_File_wolob_pcx, 0); /*0x781af5*/
                 goto LABEL_92; /*0x781af5*/
               }
-              SendMessageA( (HWND)(v21), 0x4A8u, v22 | IDA_LOWORD(*(unsigned int *)((char *)&stru_B76AC4 + 0x30)), (LPARAM)((LPARAM)((LPARAM)&v39))); /*0x781b18*/
+              SendMessageA( (HWND)(v21), 0x4A8u, v22 | ((unsigned int)(*(unsigned int *)((char *)&stru_B76AC4 + 0x30)) & 0xFFFF), (LPARAM)((LPARAM)((LPARAM)&v39))); /*0x781b18*/
               v24 = (const wchar_t *)v58[10]; /*0x781b1a*/
               if ( v58[10] == -1 ) /*0x781b24*/
               {
@@ -2187,14 +2187,14 @@ int sub_7830C0(signed int * a1, signed int * a2)
     else
     {
       v7 = -(v5 != -1); /*0x7830f7*/
-      IDA_LOBYTE(v7) = v7 & 0xFE; /*0x7830f9*/
+      (v7) = ((v7) & ~0xFF) | ((unsigned int)(v7 & 0xFE) & 0xFF); /*0x7830f9*/
       return v7 + 1; /*0x7830fb*/
     }
   }
   else
   {
     v3 = -(v2 != 0); /*0x7830dc*/
-    IDA_LOBYTE(v3) = v3 & 0xFE; /*0x7830df*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(v3 & 0xFE) & 0xFF); /*0x7830df*/
     return v3 + 1; /*0x7830e1*/
   }
 }
@@ -2355,7 +2355,7 @@ int sub_7835C0(int a1, signed int * a2)
   if ( v2 != a2[2] ) /*0x7835da*/
   {
     v3 = -(v2 != 0); /*0x7835de*/
-    IDA_LOBYTE(v3) = v3 & 0xFE; /*0x7835e1*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(v3 & 0xFE) & 0xFF); /*0x7835e1*/
     return v3 + 1; /*0x7835ea*/
   }
   v5 = (const char *)a2[1]; /*0x7835eb*/
@@ -2406,7 +2406,7 @@ int sub_7836E0(const void * a1, signed int * a2)
   if ( v2 != a2[2] ) /*0x7836fa*/
   {
     v3 = -(v2 != 0); /*0x7836fe*/
-    IDA_LOBYTE(v3) = v3 & 0xFE; /*0x783701*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(v3 & 0xFE) & 0xFF); /*0x783701*/
     return v3 + 1; /*0x78370a*/
   }
   v5 = (char *)a2[1]; /*0x78370b*/
@@ -2463,7 +2463,7 @@ char WOL_HandleLogout()
   }
   v2 = (HWND)((Dialog*)((Dialog *)0x11E))->FindByHandle(); /*0x7860ac*/
   if ( v2 ) /*0x7860b3*/
-    IDA_LOBYTE(v2) = CloseDialog( (HWND)(v2), 0); /*0x7860b9*/
+    (v2) = ((v2) & ~0xFF) | ((unsigned int)(CloseDialog( (HWND)(v2), 0)) & 0xFF); /*0x7860b9*/
   if ( byte_B77E75 ) /*0x7860c4*/
   {
     WinMainSetup_Setup_5DB6F0_Setup(); /*0x7860ca*/
@@ -2525,7 +2525,7 @@ char WOL_HandleLogout()
     do /*0x786257*/
       CloseHandle(*v9++); /*0x78624c*/
     while ( (int)v9 < (int)g_WOL_RequestObject ); /*0x786257*/
-    IDA_LOBYTE(v2) = HandleLogoutWOL_Handle((int)&dword_B76488); /*0x78625e*/
+    (v2) = ((v2) & ~0xFF) | ((unsigned int)(HandleLogoutWOL_Handle((int)&dword_B76488)) & 0xFF); /*0x78625e*/
     byte_B77E75 = 0; /*0x786263*/
   }
   return (char)v2; /*0x78626a*/
@@ -4352,10 +4352,10 @@ char ValidateJoinWOL(ObjectClass *aP0, int a2, int a3, int a4)
       if ( ShowDialogConfirm( (void *)(v10), (void *)((void *)4), (uint8_t (*)(void))GameLoop_Thunk, (void *)((void *)1)) == 6 ) /*0x789a06*/
       {
         v11 = -(v8 != 800); /*0x789a16*/
-        IDA_LOBYTE(v11) = v11 & 0x60; /*0x789a18*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(v11 & 0x60) & 0xFF); /*0x789a18*/
         ((A8EB00_flat *)&stru_A8EB00)->ObjectTypeClass[33] = v11 + 800; /*0x789a1f*/
         v12 = -(v11 != 0); /*0x789a2b*/
-        IDA_LOBYTE(v12) = v12 & 0x88; /*0x789a2d*/
+        (v12) = ((v12) & ~0xFF) | ((unsigned int)(v12 & 0x88) & 0xFF); /*0x789a2d*/
         ((A8EB00_flat *)&stru_A8EB00)->ObjectTypeClass[34] = v12 + 600; /*0x789a34*/
         ((ScenarioClass *)((ScenarioClass *)&((A8EB00_flat *)&stru_A8EB00)->ObjectTypeClass[24]))->SaveGameOptions(); /*0x789a39*/
       }
@@ -4500,7 +4500,7 @@ char CreateGameWOL(int a2)
     {
       v5 = v48[8]; /*0x789d50*/
       v48[5] = 1; /*0x789d57*/
-      (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 0x10; /*0x789d5b*/
+      (((v5) >> 8) & 0xFF) = (((unsigned int)(v48[8]) >> 8) & 0xFF) | 0x10; /*0x789d5b*/
       goto LABEL_22; /*0x789d5e*/
     }
   }
@@ -4509,7 +4509,7 @@ char CreateGameWOL(int a2)
   LABEL_29:
     v5 = v48[8]; /*0x789ec4*/
     v48[5] = 1; /*0x789ee7*/
-    (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 8; /*0x789eeb*/
+    (((v5) >> 8) & 0xFF) = (((unsigned int)(v48[8]) >> 8) & 0xFF) | 8; /*0x789eeb*/
     goto LABEL_22; /*0x789eee*/
   }
   if ( dword_A8B244 == 1 ) /*0x789d6b*/
@@ -4518,14 +4518,14 @@ char CreateGameWOL(int a2)
   {
     v5 = v48[8]; /*0x789ec9*/
     v48[5] = 0; /*0x789ed0*/
-    (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 8; /*0x789ed8*/
+    (((v5) >> 8) & 0xFF) = (((unsigned int)(v48[8]) >> 8) & 0xFF) | 8; /*0x789ed8*/
   }
   else
   {
     v5 = v48[8]; /*0x789d8a*/
     v48[5] = IDA_LOBYTE(v45.ComPtr_field_0x18); /*0x789d91*/
     if ( IDA_BYTE1(v45.ComPtr_field_0x18) ) /*0x789d95*/
-      (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 1; /*0x789d97*/
+      (((v5) >> 8) & 0xFF) = (((unsigned int)(v48[8]) >> 8) & 0xFF) | 1; /*0x789d97*/
     byte_A8B540 = IDA_BYTE2(v45.ComPtr_field_0x18); /*0x789da0*/
     if ( IDA_BYTE2(v45.ComPtr_field_0x18) )
       v5 |= ((A8EB00_flat *)&stru_A8EB00)->ObjectTypeClass[33] != 800 ? 512 : 1024;
@@ -4884,7 +4884,7 @@ int OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         return 0; /*0x78d773*/
       memset( (void *)(v44), 0, 0x40u); /*0x78d784*/
       SendDlgItemMessageA(hDlg, 1473, 0x4B5u, 0x3Cu, (LPARAM)v44); /*0x78d798*/
-      IDA_BYTE1(v44[2]) = 0; /*0x78d7a7*/
+      (v44[2]) = ((v44[2]) & ~(0xFFULL << 8)) | (((unsigned __int64)(unsigned int)(0) & 0xFF) << 8); /*0x78d7a7*/
       strcpy((char *)&v45[36], (const char *)v44); /*0x78d7c2*/
       if ( strlen((const char *)&v45[36]) ) /*0x78d7d4*/
       {
@@ -5604,7 +5604,7 @@ int GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
     }
     if ( (uint16_t)a3 == 1528 ) /*0x78ec60*/
     {
-      if ( IDA_HIWORD(a3) <= 1u ) /*0x78edfc*/
+      if ( (((unsigned int)(a3) >> 16) & 0xFFFF) <= 1u ) /*0x78edfc*/
       {
         if ( SendMessageA( (HWND)(a4), 0xF0u, 0, 0) != 1 ) /*0x78ee21*/
         {
@@ -5772,7 +5772,7 @@ int sub_781CC0(int a1, int a2)
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x781cd2*/
     return _strcmpi((const char *)(*(const void **)(a1 + 4)), (const char *)(*(const void **)(a2 + 4))); /*0x781ce4*/
   v3 = -(v2 != 0); /*0x781cd6*/
-  IDA_LOBYTE(v3) = v3 & 0xFE; /*0x781cd8*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(v3 & 0xFE) & 0xFF); /*0x781cd8*/
   return v3 + 1; /*0x781cd1*/
 }
 } // namespace gamemd
@@ -5788,7 +5788,7 @@ int sub_781CF0(const void * a1, const void ** a2)
   if ( v2 == a2[2] ) /*0x781d02*/
     return _strcmpi((const char *)a2[1], (const char *)*((char **)a1 + 1)); /*0x781d14*/
   v3 = -(v2 != 0); /*0x781d06*/
-  IDA_LOBYTE(v3) = v3 & 0xFE; /*0x781d08*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(v3 & 0xFE) & 0xFF); /*0x781d08*/
   return v3 + 1; /*0x781d01*/
 }
 } // namespace gamemd
@@ -5838,7 +5838,7 @@ int sub_7831A0(signed int * a1, signed int * a2)
   else
   {
     v3 = -(v2 != 0); /*0x7831bc*/
-    IDA_LOBYTE(v3) = v3 & 0xFE; /*0x7831bf*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(v3 & 0xFE) & 0xFF); /*0x7831bf*/
     return v3 + 1; /*0x7831c1*/
   }
 }

@@ -735,7 +735,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
   IDA_BYTE1(v51.m_C) = 1; /*0x769669*/
   Block = (void *)(0); /*0x76966e*/
   v53 = 30; /*0x769672*/
-  IDA_LOWORD(v54) = 1; /*0x769676*/
+  (v54) = ((v54) & ~0xFFFF) | ((unsigned int)(1) & 0xFFFF); /*0x769676*/
   *(unsigned int *)v51.__tail_10 = (unsigned int)(void*)&VectorClass_WorldDominationTour_Centroid_vftable; /*0x76967f*/
   v6 = (int *)RA2_OPNEW(0x168u); /*0x769687*/
   v7 = v6; /*0x76968c*/
@@ -784,14 +784,14 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
         v11 = abstractFlags + 1; /*0x769755*/
         if ( v53 < abstractFlags + 1 ) /*0x76975a*/
         {
-          IDA_LOBYTE(v54) = 0; /*0x76976b*/
+          (v54) = ((v54) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x76976b*/
           v12 = (int *)RA2_OPNEW(12 * v11); /*0x769773*/
           v13 = v12; /*0x769778*/
           if ( v12 ) /*0x76977f*/
             Array::ForEach(((Array *)v12), 12, abstractFlags + 1, (int (*)(int))unknown_libname_37); /*0x76978a*/
           else
             v13 = (int *)(0); /*0x769791*/
-          IDA_LOBYTE(v54) = 1; /*0x769795*/
+          (v54) = ((v54) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x769795*/
           if ( v13 ) /*0x76979a*/
           {
             if ( Block ) /*0x7697a0*/

@@ -3746,7 +3746,7 @@ int RadBeam::drawMindControlPips(int a2) {
 }
 // 0x659550
 char RadBeam::drawPassengerPips(char a2) {
-  IDA_LOBYTE(((unsigned int *)this)[2]) = a2; /*0x659554*/
+  (((unsigned int *)this)[2]) = ((((unsigned int *)this)[2]) & ~0xFF) | ((unsigned int)(a2) & 0xFF); /*0x659554*/
   return a2; /*0x659557*/
 }
 // 0x633d30

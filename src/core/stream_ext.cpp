@@ -77,7 +77,7 @@ int Buffer::CreateDirectSound()
     v17 = 0; /*0x40a4c9*/
     v19 = 0; /*0x40a4cd*/
     v18 = v10; /*0x40a4d1*/
-    IDA_LOWORD(v20) = 0; /*0x40a4da*/
+    (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(0) & 0xFFFF); /*0x40a4da*/
     v11 = v2[2] * v10; /*0x40a4e7*/
     v16 = v2[2]; /*0x40a4ea*/
     v19 = 8 * v9; /*0x40a4f7*/
@@ -86,7 +86,7 @@ int Buffer::CreateDirectSound()
     v22 = 0; /*0x40a50e*/
     v23 = 0; /*0x40a515*/
     v24 = 0; /*0x40a51e*/
-    IDA_LOWORD(v20) = 0; /*0x40a527*/
+    (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(0) & 0xFFFF); /*0x40a527*/
     v21[0] = 20; /*0x40a52e*/
     v21[1] = 232; /*0x40a53d*/
     v1[27] = ((int)(8 * (3 * v11 / 0x64u) + 1023) / 1024) << 10; /*0x40a55a*/

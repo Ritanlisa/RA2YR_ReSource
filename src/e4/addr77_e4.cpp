@@ -303,7 +303,7 @@ int Dialog_Close(HWND a1, int a2)
     {
       if ( ++result >= (gamemd::ObjectClass *)(g_DialogTrackingList) ) /*0x77581b*/
       {
-        IDA_LOBYTE(result) = 0; /*0x77581e*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x77581e*/
         return (int)(result); /*0x775822*/
       }
     }
@@ -311,7 +311,7 @@ int Dialog_Close(HWND a1, int a2)
     if ( result == (gamemd::ObjectClass *)(-1) ) /*0x775828*/
     {
   LABEL_11:
-      IDA_LOBYTE(result) = 0; /*0x77582b*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x77582b*/
     }
     else
     {
@@ -349,13 +349,13 @@ int Dialog_Close(HWND a1, int a2)
         dword_B72F48 = (unsigned int)((gamemd::ObjectClass *)(0));
         result = (gamemd::ObjectClass *)((int)SetFocus((HWND)(g_hWnd)));
       }
-      IDA_LOBYTE(result) = 1; /*0x7758cb*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x7758cb*/
       dword_B72F4C = a2; /*0x7758d3*/
     }
   }
   else
   {
-    IDA_LOBYTE(result) = 0; /*0x775801*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x775801*/
   }
   return (int)(result); /*0x775800*/
 }
@@ -662,9 +662,9 @@ struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
   struct tagRECT Rect; // [esp+18h] [ebp-38h] BYREF
   struct tagPOINT v12[5]; // [esp+28h] [ebp-28h] BYREF
 
-  v3 = IDA_HIWORD(a1); /*0x7764a7*/
+  v3 = (((unsigned int)(a1) >> 16) & 0xFFFF); /*0x7764a7*/
   v4 = (uint16_t)a1; /*0x7764a9*/
-  v9.y = IDA_HIWORD(a1); /*0x7764af*/
+  v9.y = (((unsigned int)(a1) >> 16) & 0xFFFF); /*0x7764af*/
   v9.x = (uint16_t)a1; /*0x7764b0*/
   WindowLongA = (HWND)GetWindowLongA((HWND)(qword_B730A0), -8); /*0x7764b4*/
   v6 = ChildWindowFromPoint(WindowLongA, v9); /*0x7764bd*/
@@ -2497,7 +2497,7 @@ int OpenURLWOL(INIClass * a1, int a2)
         do /*0x77de8b*/
         {
           Sleep(0x64u); /*0x77de83*/
-          IDA_LOBYTE(result) = Game::ProcessIdle(); /*0x77de85*/
+          (result) = ((result) & ~0xFF) | ((unsigned int)(Game::ProcessIdle()) & 0xFF); /*0x77de85*/
           --v10; /*0x77de8a*/
         }
         while ( v10 ); /*0x77de8b*/

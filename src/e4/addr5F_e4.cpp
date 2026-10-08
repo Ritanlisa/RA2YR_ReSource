@@ -204,7 +204,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   AbstractClass ** v21;
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
-v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(IDA_HIBYTE(a1))))))))))))));
+v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)((((unsigned int)(a1) >> 24) & 0xFF))))))))))))));
   v3 = (unsigned int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(3))));
   if ( a3 == (void *)(1) ) /*0x5f2d00*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0,(const char *)(g_Str_File_NullMgr_CPP), 1580); /*0x5f2d13*/
@@ -256,7 +256,7 @@ v9 = (*(int (**)(HWND, int, unsigned char *, int, int))(*(unsigned int *)g_Clipb
         goto LABEL_36; /*0x5f30d5*/
   LABEL_35:
       (((Buffer) >> 16) & 0xFF) = 0; /*0x5f310c*/
-      IDA_LOWORD(Buffer) = word_8327A0; /*0x5f3118*/
+      (Buffer) = ((Buffer) & ~0xFFFF) | ((unsigned int)(word_8327A0) & 0xFFFF); /*0x5f3118*/
       ((WinModemClass *)((int *)v14))->WriteSerial( (LPCVOID)(&Buffer), 2u); /*0x5f3124*/
       goto LABEL_36; /*0x5f3124*/
     }
@@ -452,7 +452,7 @@ char sub_5FBEF0()
         dwNewLong = 2; /*0x5fbf37*/
       if ( !byte_A8E9A0 ) /*0x5fbf46*/
       {
-        IDA_LOBYTE(v1) = 0; /*0x5fbf48*/
+        (v1) = ((v1) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x5fbf48*/
         Process(v1); /*0x5fbf4a*/
       }
     }
@@ -810,7 +810,7 @@ AbstractClass * * GenerateRangeRingTextures()
       *(unsigned int *)v31.Surface = (unsigned int)(&BSurface_Vtable); /*0x5ff649*/
       ((XSurface *)&v31)->Fill( 0); /*0x5ff652*/
       v21 = 60 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1960); /*0x5ff684*/
-      IDA_LOWORD(v14) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
+      (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)v21 * -0.002790178571428571)) & 0xFFFF); /*0x5ff692*/
       ((Draw *)((Draw *)&v31))->Ellipse(128, 128, i - v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
       {
@@ -842,9 +842,9 @@ AbstractClass * * GenerateRangeRingTextures()
   }
   dword_833588 = DDraw_GetStatus(); /*0x5ff73d*/
   v22 = 5; /*0x5ff742*/
-  IDA_HIBYTE(v19) = 0; /*0x5ff74a*/
+  (v19) = ((v19) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(0) & 0xFF) << 24); /*0x5ff74a*/
   result = GetVersionString((unsigned int *)(&v22), (unsigned char *)&v19 + 3, 0, 0); /*0x5ff74e*/
-  if ( IDA_HIBYTE(v19) && !dword_AC1838 ) /*0x5ff763*/
+  if ( (((unsigned int)(v19) >> 24) & 0xFF) && !dword_AC1838 ) /*0x5ff763*/
   {
     dword_AC1838 = (unsigned int)((void *)RA2_OPNEW(0x40000u)); /*0x5ff776*/
     do /*0x5ff7ed*/
@@ -1449,10 +1449,10 @@ int TheaterObjectTypeClassSpecificID(char *a1, int a2)
 
   if ( a2 != -1 ) /*0x5f96b4*/
   {
-    IDA_LOBYTE(result) = *a1; /*0x5f96b6*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(*a1) & 0xFF); /*0x5f96b6*/
     v3 = a1[1]; /*0x5f96b8*/
     if ( *a1 >= 65 && (char)result <= 90 ) /*0x5f96c1*/
-      IDA_LOBYTE(result) = result + 32; /*0x5f96c3*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result + 32) & 0xFF); /*0x5f96c3*/
     if ( v3 >= 65 && v3 <= 90 ) /*0x5f96cd*/
       v3 += 32; /*0x5f96cf*/
     if ( ((unsigned char)result == 103 || (unsigned char)result == 110 || (unsigned char)result == 99 || (unsigned char)result == 121) /*0x5f96ea*/

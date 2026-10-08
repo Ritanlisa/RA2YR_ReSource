@@ -134,7 +134,7 @@ void AudioMixer::ProcessAudioFrame() {
       AudioMixer_field_0C = this->AudioMixer_field_0C; /*0x408044*/
       if ( (AudioMixer_field_0C & 2) != 0 ) /*0x408049*/
       {
-        IDA_LOBYTE(AudioMixer_field_0C) = AudioMixer_field_0C & 0xFC | 1; /*0x40804d*/
+        (AudioMixer_field_0C) = ((AudioMixer_field_0C) & ~0xFF) | ((unsigned int)(AudioMixer_field_0C & 0xFC | 1) & 0xFF) /*0x40804d*/
         this->AudioMixer_field_0C = AudioMixer_field_0C; /*0x40804f*/
       }
       ((AudioChannel*)(AudioChannel *)this->AudioMixer_field_14)->ActivatePlay(); /*0x408055*/
@@ -854,7 +854,7 @@ int MovementAI::MarkOccupiedPathCell() {
         (double)(*v6 - this->MovementAI_field_18) * (double)(*v6 - this->MovementAI_field_18)
       + (double)v11 * (double)v11
       + (double)v12 * (double)v12);
-      IDA_LOWORD(v7) = Math_RoundToInt(v1); /*0x51646b*/
+      (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFF) /*0x51646b*/
       v8 = v7 / 256; /*0x516479*/
       if ( v8 < 24 ) /*0x51647f*/
       {
@@ -959,7 +959,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                            0)
                        + 8)
            - *((unsigned int *)this + 8);
-        result = (IDA_HIDWORD(v8) ^ v8) - IDA_HIDWORD(v8); /*0x51656c*/
+        result = (((unsigned int)((unsigned __int64)(v8) >> 32)) ^ v8) - ((unsigned int)((unsigned __int64)(v8) >> 32)); /*0x51656c*/
         if ( result < 2 * *(unsigned int *)((char *)&stru_A8EB00 + 1500) ) /*0x516573*/
         {
           (*(void (__stdcall **)(int *))(this->m_Target.Y + 72))(&this->m_Target.Y); /*0x51657c*/
@@ -987,7 +987,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
                           0)
                       + 8)
           - *((unsigned int *)this + 8);
-      result = (IDA_HIDWORD(v12) ^ v12) - IDA_HIDWORD(v12); /*0x516614*/
+      result = (((unsigned int)((unsigned __int64)(v12) >> 32)) ^ v12) - ((unsigned int)((unsigned __int64)(v12) >> 32)); /*0x516614*/
       if ( result <= 2 * *(unsigned int *)((char *)&stru_A8EB00 + 1500) ) /*0x51661b*/
         return result; /*0x51661b*/
     }
@@ -1003,13 +1003,13 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
     if ( result ) /*0x516645*/
       return result; /*0x516645*/
   LABEL_19:
-    IDA_LOWORD(v59) = *p_MovementAI_field_18 / 256; /*0x51664b*/
-    IDA_HIWORD(v59) = *((unsigned int *)this + 7) / 256; /*0x51666d*/
+    (v59) = ((v59) & ~0xFFFF) | ((unsigned int)(*p_MovementAI_field_18 / 256) & 0xFFFF) /*0x51664b*/
+    (v59) = ((v59) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(*((unsigned int *)this + 7) / 256) & 0xFFFF) << 16) /*0x51666d*/
     if ( (unsigned __int8)FootClass_MovementStep(v13, (int)p_MovementAI_field_18, v59, 0, a2, v57) ) /*0x51667e*/
     {
       v29 = dword_A8ED84; /*0x5168d6*/
       v30 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x5168e2*/
-      IDA_LOWORD(v31) = Math_RoundToInt(v30); /*0x5168e8*/
+      (v31) = ((v31) & ~0xFFFF) | ((unsigned int)(Math_RoundToInt(v30)) & 0xFFFF) /*0x5168e8*/
       v32 = v68[1]; /*0x5168f0*/
       v33 = (unsigned int *)(this->m_State + 1600); /*0x5168f4*/
       *v33 = v29; /*0x5168fa*/
@@ -1017,8 +1017,8 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
       v33[2] = v31; /*0x516904*/
       v34 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)this->m_State + 72))(this->m_State, v68); /*0x51690c*/
       v35 = *(unsigned int *)(this->m_State + 1504) & 7; /*0x516939*/
-      IDA_LOWORD(v60) = *v34 / 256 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v35 + 82]); /*0x516955*/
-      IDA_HIWORD(v60) = v34[1] / 256 + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v35 + 82]); /*0x516961*/
+      (v60) = ((v60) & ~0xFFFF) | ((unsigned int)(*v34 / 256 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v35 + 82])) & 0xFFFF) /*0x516955*/
+      (v60) = ((v60) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v34[1] / 256 + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v35 + 82])) & 0xFFFF) << 16) /*0x516961*/
       a2 = v60; /*0x516970*/
       if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (__int16 *)&a2, 1) ) /*0x516974*/
       {
@@ -1228,7 +1228,7 @@ int* Pathfinding::CheckCliff(_DWORD *a2, __int16 *a3, int a4, int a5) {
       NeighbourContent = (char *)v7; /*0x58388a*/
       v10 = -((v7[80] & 0x800) != 0); /*0x58388e*/
       v11 = (Cell *)v7; /*0x583890*/
-      IDA_LOBYTE(v10) = v10 & 0xFE; /*0x583892*/
+      (v10) = ((v10) & ~0xFF) | ((unsigned int)(v10 & 0xFE) & 0xFF) /*0x583892*/
       v22 = v7 + 80; /*0x583894*/
       p_Cell_field_0x140 = v7 + 80; /*0x58389b*/
       v12 = v10 + 4; /*0x58389f*/
@@ -1265,20 +1265,20 @@ int* Pathfinding::CheckCliff(_DWORD *a2, __int16 *a3, int a4, int a5) {
       v26[0] = a3; /*0x58397c*/
       v14 = a5; /*0x583983*/
       v15 = ((unsigned char)v12 - 2) & 7; /*0x58399b*/
-      IDA_LOWORD(v23) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[v13 + 82]) + (unsigned short)a3; /*0x58399e*/
-      IDA_HIWORD(v23) = IDA_HIWORD(a3) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v13 + 82]); /*0x5839aa*/
+      (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD(g_DDrawSurfaceManager.scenario[v13 + 82]) + (unsigned short)a3) & 0xFFFF) /*0x58399e*/
+      (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v13 + 82])) & 0xFFFF) << 16) /*0x5839aa*/
       v26[1] = v23; /*0x5839b3*/
       v16 = (unsigned short *)(4 * v15 + 9041544); /*0x5839b7*/
       IDA_LOWORD(a3) = (unsigned short)a3 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v15 + 82]); /*0x5839cb*/
       IDA_HIWORD(a3) += IDA_HIWORD(g_DDrawSurfaceManager.scenario[v15 + 82]); /*0x5839d7*/
-      IDA_LOWORD(v15) = g_DDrawSurfaceManager.scenario[v13 + 82]; /*0x5839e0*/
+      (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(g_DDrawSurfaceManager.scenario[v13 + 82]) & 0xFFFF) /*0x5839e0*/
       v26[2] = a3; /*0x5839e3*/
       v26[3] = v24; /*0x5839ee*/
       IDA_LOWORD(a3) = v24 + v15; /*0x5839f2*/
-      IDA_HIWORD(a3) = IDA_HIWORD(v24) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v13 + 82]); /*0x583a03*/
+      IDA_HIWORD(a3) = (((unsigned int)(v24) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v13 + 82]); /*0x583a03*/
       v26[4] = a3; /*0x583a0c*/
-      IDA_LOWORD(v15) = *v16; /*0x583a10*/
-      IDA_LOWORD(v16) = IDA_HIWORD(v24) + v16[1]; /*0x583a1a*/
+      (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(*v16) & 0xFFFF) /*0x583a10*/
+      (v16) = ((v16) & ~0xFFFF) | ((unsigned int)((((unsigned int)(v24) >> 16) & 0xFFFF) + v16[1]) & 0xFFFF) /*0x583a1a*/
       IDA_LOWORD(a3) = v24 + v15; /*0x583a1d*/
       IDA_HIWORD(a3) = (unsigned short)v16; /*0x583a22*/
       v26[5] = a3; /*0x583a2b*/
@@ -1648,11 +1648,11 @@ int RulesClass::LoadSpecialWeapons() {
           v19);
         result = g_WarheadTypePool; /*0x6691ad*/
       }
-      IDA_LOBYTE(result) = 1; /*0x6691b8*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x6691b8*/
     }
     else
     {
-      IDA_LOBYTE(result) = 0; /*0x6691c5*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x6691c5*/
     }
     return result; /*0x6691b7*/
 }
@@ -1730,11 +1730,11 @@ int RulesClass::ReadCountryList() {
         result = v15; /*0x66d124*/
         this->ColorAdd[8] = v15; /*0x66d127*/
       }
-      IDA_LOBYTE(result) = 1; /*0x66d118*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x66d118*/
     }
     else
     {
-      IDA_LOBYTE(result) = 0; /*0x66d13b*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x66d13b*/
     }
     return result; /*0x66d117*/
 }
@@ -6144,7 +6144,7 @@ int RulesClass::LoadSpeedTypes() {
       ++v1; /*0x674221*/
     }
     while ( (int)v2 < (int)((float *)&dbl_89EBF0 + 1) ); /*0x67422a*/
-    IDA_LOBYTE(result) = 1; /*0x674232*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x674232*/
     return result; /*0x674230*/
 }
 }
@@ -6226,11 +6226,11 @@ int RulesClass::ReadIQSection() {
                  aSellback,
                  *(unsigned int *)&this->__pad_C3C[2080]);
       *(unsigned int *)&this->__pad_C3C[2080] = result; /*0x6743b9*/
-      IDA_LOBYTE(result) = 1; /*0x6743c0*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x6743c0*/
     }
     else
     {
-      IDA_LOBYTE(result) = 0; /*0x6743c7*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x6743c7*/
     }
     return result; /*0x6743bf*/
 }
@@ -8102,18 +8102,18 @@ bool RulesClass::IsTypeBuildable(int a1) {
       goto LABEL_16; /*0x721150*/
     if ( a2 >= this->TunnelSpeed[1] ) /*0x721155*/
     {
-      IDA_LOBYTE(result) = 0; /*0x721157*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x721157*/
       return result; /*0x721159*/
     }
     result = *(unsigned int *)(this->AttackingAircraftSightRange + 4 * a2); /*0x72115f*/
     if ( !*(unsigned char *)(result + 650) ) /*0x721162*/
     {
-      IDA_LOBYTE(result) = 0; /*0x72116c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x72116c*/
       return result; /*0x72116e*/
     }
     if ( !*(unsigned char *)(result + 648) ) /*0x721171*/
     {
-      IDA_LOBYTE(result) = 0; /*0x72117b*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x72117b*/
       return result; /*0x72117d*/
     }
     if ( dword_A83D4C ) /*0x721188*/
@@ -8121,15 +8121,15 @@ bool RulesClass::IsTypeBuildable(int a1) {
       v3 = *(unsigned int *)(result + 652); /*0x72118a*/
       if ( v3 != -1 && *((unsigned int *)dword_A83D4C->Object_field_0x34 + 47) != v3 ) /*0x7211a2*/
       {
-        IDA_LOBYTE(result) = 0; /*0x7211a4*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x7211a4*/
         return result; /*0x7211a6*/
       }
     }
     if ( *(unsigned int *)&dword_A8B238 || (int)dword_A8B230[130].vtable3 >= *(unsigned int *)(result + 640) ) /*0x7211c7*/
   LABEL_16:
-      IDA_LOBYTE(result) = 1; /*0x7211ce*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x7211ce*/
     else
-      IDA_LOBYTE(result) = 0; /*0x7211c9*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x7211c9*/
     return result; /*0x721159*/
 }
 }
@@ -8200,7 +8200,7 @@ int RulesClass::Reset() {
                 fstp st
               }
               Math_Sqrt(v23); /*0x74e7af*/
-              IDA_LOWORD(v10) = Math_RoundToInt(v1); /*0x74e7b7*/
+              (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(Math_RoundToInt(v1)) & 0xFFFF) /*0x74e7b7*/
               v11 = *(unsigned int *)&this->__pad_A0[20]; /*0x74e7bc*/
               v12 = 1000 - v10; /*0x74e7c7*/
               v13 = *(unsigned int *)&this->__pad_A0[12]; /*0x74e7c9*/

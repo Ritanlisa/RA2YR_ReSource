@@ -58,7 +58,7 @@ int FileClass::Open(int a2)
     result = *(unsigned int *)&this->FileNameAllocated; /*0x65cbf4*/
     if ( !result ) /*0x65cbf9*/
     {
-      IDA_LOBYTE(result) = 0; /*0x65cbfc*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x65cbfc*/
       return result; /*0x65cbff*/
     }
     result = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this); /*0x65cc06*/
@@ -70,7 +70,7 @@ int FileClass::Open(int a2)
       *(unsigned int *)this->FileTimeDateLo = result; /*0x65cc62*/
       if ( result == -1 ) /*0x65cc65*/
       {
-        IDA_LOBYTE(result) = 0; /*0x65cc68*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x65cc68*/
         return result; /*0x65cc6b*/
       }
       result = CloseHandle((HANDLE)result); /*0x65cc6f*/
@@ -99,7 +99,7 @@ int FileClass::Open(int a2)
       goto LABEL_13; /*0x65cc8a*/
     }
   LABEL_14:
-    IDA_LOBYTE(result) = 1; /*0x65cc94*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x65cc94*/
     return result; /*0x65cbfb*/
 }
 } // namespace gamemd

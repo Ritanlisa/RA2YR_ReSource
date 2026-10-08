@@ -681,7 +681,7 @@ v110.ComPtr_field_0x0C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned in
       if ( *(unsigned char *)(_EBP + 1676) ) /*0x739eec*/
       {
         TechnoClass::Deploy(v107, a3); /*0x739ef8*/
-        IDA_LOBYTE(v8) = *(unsigned char *)(_EBP + 144); /*0x739efd*/
+        (v8) = ((v8) & ~0xFF) | ((unsigned int)(*(unsigned char *)(_EBP + 144)) & 0xFF); /*0x739efd*/
         if ( !(unsigned char)v8 ) /*0x739f05*/
           return (void*)v8; /*0x739f05*/
       }
@@ -716,9 +716,9 @@ v110.ComPtr_field_0x0C = *(unsigned int *)(*(int (**)(int, int *))(*(unsigned in
       v101 = *(unsigned int *)_EBP; /*0x73b074*/
       v102 = (*(int (**)(int, int *, unsigned int))(*(unsigned int *)_EBP + 440))( _EBP, (int *)(&v110.ComPtr_field_0x08), 0); /*0x73b080*/
       (*(void (**)(int, int))(v101 + 1332))(_EBP, v102); /*0x73b089*/
-      IDA_LOBYTE(v8) = *(unsigned char *)(_EBP + 144); /*0x73b08f*/
+      (v8) = ((v8) & ~0xFF) | ((unsigned int)(*(unsigned char *)(_EBP + 144)) & 0xFF); /*0x73b08f*/
       if ( (unsigned char)v8 ) /*0x73b097*/
-        IDA_LOBYTE(v8) = FootClass::UpdateAI((FootClass *)this, _EBP, (int)v96, a3, (int)v107); /*0x73b0a0*/
+        (v8) = ((v8) & ~0xFF) | ((unsigned int)(FootClass::UpdateAI((FootClass *)this, _EBP, (int)v96, a3, (int)v107)) & 0xFF); /*0x73b0a0*/
       return (void*)v8; /*0x73b0a0*/
     }
     v110.ComPtr_field_0x04 = ((Team *)_EBP)->GetMember( 0); /*0x739f1d*/

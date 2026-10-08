@@ -368,8 +368,8 @@ char sub_5902C0(int a1)
 
   v1 = (int *)a1; /*0x5902c4*/
   v2 = *(unsigned short *)a1; /*0x5902ce*/
-  IDA_HIWORD(a1) = *(unsigned short *)(a1 + 4); /*0x5902d6*/
-  IDA_LOWORD(a1) = v2; /*0x5902e1*/
+  (a1) = ((a1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(*(unsigned short *)(a1 + 4)) & 0xFFFF) << 16); /*0x5902d6*/
+  (a1) = ((a1) & ~0xFFFF) | ((unsigned int)(v2) & 0xFFFF); /*0x5902e1*/
   v3 = (char *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x5902e6*/
   v4 = v1[1]; /*0x5902f2*/
   v16 = v3[283]; /*0x5902f5*/
@@ -414,8 +414,8 @@ char sub_5902C0(int a1)
           }
           while ( 1 ) /*0x59043b*/
           {
-            IDA_LOWORD(a1) = v10; /*0x59043b*/
-            IDA_HIWORD(a1) = v9; /*0x590440*/
+            (a1) = ((a1) & ~0xFFFF) | ((unsigned int)(v10) & 0xFFFF); /*0x59043b*/
+            (a1) = ((a1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v9) & 0xFFFF) << 16); /*0x590440*/
             v11 = (int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a1); /*0x590445*/
             v12 = v11; /*0x59044a*/
             if ( v11[17] != -1 || *((char *)v11 + 283) != v16 || !((Cell*)v11)->IsEmpty() && !((Cell*)v12)->IsGroundTypeRange() ) /*0x59046c*/
@@ -1014,25 +1014,25 @@ char Object_Calc(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, i
   do
   {
     v22 = a5; /*0x7def26*/
-    IDA_HIWORD(v8) = 0; /*0x7def2b*/
+    (v8) = ((v8) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7def2b*/
     do
     {
-      IDA_LOBYTE(v9) = *v6; /*0x7def2d*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7def2d*/
       if ( *v6 )
       {
-        IDA_LOWORD(v8) = *v7; /*0x7def33*/
-        IDA_LOBYTE(v17) = *v6; /*0x7def36*/
+        (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(*v7) & 0xFFFF); /*0x7def33*/
+        (v17) = ((v17) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7def36*/
         v18 = v8; /*0x7def39*/
         v10 = (v8 >> 8) & 0xF8; /*0x7def45*/
         v11 = v10; /*0x7def50*/
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7def5c*/
         v13 = (v17 * ((v18 >> 3) & 0xFC)) >> 8; /*0x7def5f*/
-        IDA_LOBYTE(v12) = !__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1;
-        IDA_LOBYTE(v13) = !__CFADD__((v18 >> 3) & 0xFC, (unsigned char)v13) ? (uint8_t)(((v18 >> 3) & 0xFC) + v13) : -1;
+        (v12) = ((v12) & ~0xFF) | ((unsigned int)(!__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1) & 0xFF);
+        (v13) = ((v13) & ~0xFF) | ((unsigned int)(!__CFADD__((v18 >> 3) & 0xFC, (unsigned char)v13) ? (uint8_t)(((v18 >> 3) & 0xFC) + v13) : -1) & 0xFF);
         v8 = v12 >> 3 << 11; /*0x7def7a*/
         v14 = (uint8_t)(8 * v18); /*0x7def8e*/
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7def94*/
-        IDA_LOBYTE(v15) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1;
+        (v15) = ((v15) & ~0xFF) | ((unsigned int)(!__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1) & 0xFF);
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 2)); /*0x7defa3*/
         *v7 = v9; /*0x7defa5*/
       }
@@ -1079,25 +1079,25 @@ char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   do
   {
     v22 = a5; /*0x7df003*/
-    IDA_HIWORD(v8) = 0; /*0x7df008*/
+    (v8) = ((v8) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7df008*/
     do
     {
-      IDA_LOBYTE(v9) = *v6; /*0x7df00a*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7df00a*/
       if ( *v6 )
       {
-        IDA_LOWORD(v8) = *v7; /*0x7df010*/
-        IDA_LOBYTE(v17) = *v6; /*0x7df013*/
+        (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(*v7) & 0xFFFF); /*0x7df010*/
+        (v17) = ((v17) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7df013*/
         v18 = v8; /*0x7df016*/
         v10 = (v8 >> 8) & 0xFC; /*0x7df022*/
         v11 = v10; /*0x7df02d*/
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df039*/
         v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df03c*/
-        IDA_LOBYTE(v12) = !__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1;
-        IDA_LOBYTE(v13) = !__CFADD__((v18 >> 2) & 0xF8, (unsigned char)v13) ? (uint8_t)(((v18 >> 2) & 0xF8) + v13) : -1;
+        (v12) = ((v12) & ~0xFF) | ((unsigned int)(!__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1) & 0xFF);
+        (v13) = ((v13) & ~0xFF) | ((unsigned int)(!__CFADD__((v18 >> 2) & 0xF8, (unsigned char)v13) ? (uint8_t)(((v18 >> 2) & 0xF8) + v13) : -1) & 0xFF);
         v8 = v12 >> 2 << 10; /*0x7df057*/
         v14 = (uint8_t)(8 * v18); /*0x7df06b*/
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df071*/
-        IDA_LOBYTE(v15) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1;
+        (v15) = ((v15) & ~0xFF) | ((unsigned int)(!__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1) & 0xFF);
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 3)); /*0x7df080*/
         *v7 = v9; /*0x7df082*/
       }
@@ -1144,25 +1144,25 @@ char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   do
   {
     v22 = a5; /*0x7df0e0*/
-    IDA_HIWORD(v8) = 0; /*0x7df0e5*/
+    (v8) = ((v8) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7df0e5*/
     do
     {
-      IDA_LOBYTE(v9) = *v6; /*0x7df0e7*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7df0e7*/
       if ( *v6 )
       {
-        IDA_LOWORD(v8) = *v7; /*0x7df0ed*/
-        IDA_LOBYTE(v17) = *v6; /*0x7df0f0*/
+        (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(*v7) & 0xFFFF); /*0x7df0ed*/
+        (v17) = ((v17) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7df0f0*/
         v18 = v8; /*0x7df0f3*/
         v10 = (v8 >> 8) & 0xF8; /*0x7df0ff*/
         v11 = v10; /*0x7df10a*/
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df116*/
         v13 = (v17 * ((v18 >> 3) & 0xF8)) >> 8; /*0x7df119*/
-        IDA_LOBYTE(v12) = !__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1;
-        IDA_LOBYTE(v13) = !__CFADD__((v18 >> 3) & 0xF8, (unsigned char)v13) ? (uint8_t)(((v18 >> 3) & 0xF8) + v13) : -1;
+        (v12) = ((v12) & ~0xFF) | ((unsigned int)(!__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1) & 0xFF);
+        (v13) = ((v13) & ~0xFF) | ((unsigned int)(!__CFADD__((v18 >> 3) & 0xF8, (unsigned char)v13) ? (uint8_t)(((v18 >> 3) & 0xF8) + v13) : -1) & 0xFF);
         v8 = v12 >> 3 << 11; /*0x7df134*/
         v14 = (uint8_t)(4 * v18); /*0x7df148*/
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df14e*/
-        IDA_LOBYTE(v15) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1;
+        (v15) = ((v15) & ~0xFF) | ((unsigned int)(!__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1) & 0xFF);
         v9 = (v15 >> 2) | v8 | (v13 >> 3 << 6); /*0x7df15d*/
         *v7 = v9; /*0x7df15f*/
       }
@@ -1209,25 +1209,25 @@ char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, in
   do
   {
     v22 = a5; /*0x7df1bd*/
-    IDA_HIWORD(v8) = 0; /*0x7df1c2*/
+    (v8) = ((v8) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7df1c2*/
     do
     {
-      IDA_LOBYTE(v9) = *v6; /*0x7df1c4*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7df1c4*/
       if ( *v6 )
       {
-        IDA_LOWORD(v8) = *v7; /*0x7df1ca*/
-        IDA_LOBYTE(v17) = *v6; /*0x7df1cd*/
+        (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(*v7) & 0xFFFF); /*0x7df1ca*/
+        (v17) = ((v17) & ~0xFF) | ((unsigned int)(*v6) & 0xFF); /*0x7df1cd*/
         v18 = v8; /*0x7df1d0*/
         v10 = (v8 >> 7) & 0xF8; /*0x7df1dc*/
         v11 = v10; /*0x7df1e7*/
         v12 = (unsigned int)(v17 * v10) >> 8; /*0x7df1f3*/
         v13 = (v17 * ((v18 >> 2) & 0xF8)) >> 8; /*0x7df1f6*/
-        IDA_LOBYTE(v12) = !__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1;
-        IDA_LOBYTE(v13) = !__CFADD__((v18 >> 2) & 0xF8, (unsigned char)v13) ? (uint8_t)(((v18 >> 2) & 0xF8) + v13) : -1;
+        (v12) = ((v12) & ~0xFF) | ((unsigned int)(!__CFADD__(v11, (unsigned char)v12) ? (uint8_t)(v11 + v12) : -1) & 0xFF);
+        (v13) = ((v13) & ~0xFF) | ((unsigned int)(!__CFADD__((v18 >> 2) & 0xF8, (unsigned char)v13) ? (uint8_t)(((v18 >> 2) & 0xF8) + v13) : -1) & 0xFF);
         v8 = v12 >> 3 << 10; /*0x7df211*/
         v14 = (uint8_t)(8 * v18); /*0x7df225*/
         v15 = (unsigned int)(v17 * v14) >> 8; /*0x7df22b*/
-        IDA_LOBYTE(v15) = !__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1;
+        (v15) = ((v15) & ~0xFF) | ((unsigned int)(!__CFADD__((unsigned char)v14, (unsigned char)v15) ? (uint8_t)(v14 + v15) : -1) & 0xFF);
         v9 = (v15 >> 3) | v8 | (32 * (v13 >> 3)); /*0x7df23a*/
         *v7 = v9; /*0x7df23c*/
       }
@@ -1270,12 +1270,12 @@ char Object_Calc_7DF280(MouseClass * a1, unsigned char * a2, unsigned short * a3
   while ( 2 ) /*0x7df2c1*/
   {
     v19 = a6; /*0x7df2c1*/
-    IDA_HIWORD(v10) = 0; /*0x7df2c9*/
+    (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7df2c9*/
     do /*0x7df39c*/
     {
       while ( 1 ) /*0x7df340*/
       {
-        IDA_LOBYTE(v11) = *v8; /*0x7df340*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(*v8) & 0xFF); /*0x7df340*/
         if ( *v8 ) /*0x7df340*/
           break; /*0x7df340*/
         ++v8; /*0x7df300*/
@@ -1292,7 +1292,7 @@ char Object_Calc_7DF280(MouseClass * a1, unsigned char * a2, unsigned short * a3
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df346*/
-      IDA_LOWORD(v10) = *v9; /*0x7df349*/
+      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(*v9) & 0xFFFF); /*0x7df349*/
       v15.m64_i8[2] = *v8; /*0x7df34c*/
       v15.m64_i8[4] = *v8; /*0x7df34f*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df35a*/
@@ -1342,12 +1342,12 @@ int Object_Calc_7DF3C2(MouseClass * a1, unsigned char * a2, unsigned short * a3,
   while ( 2 ) /*0x7df403*/
   {
     v19 = a6; /*0x7df403*/
-    IDA_HIWORD(v10) = 0; /*0x7df40b*/
+    (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7df40b*/
     do /*0x7df4da*/
     {
       while ( 1 ) /*0x7df480*/
       {
-        IDA_LOBYTE(v11) = *v8; /*0x7df480*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(*v8) & 0xFF); /*0x7df480*/
         if ( *v8 ) /*0x7df480*/
           break; /*0x7df480*/
         ++v8; /*0x7df440*/
@@ -1364,7 +1364,7 @@ int Object_Calc_7DF3C2(MouseClass * a1, unsigned char * a2, unsigned short * a3,
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df486*/
-      IDA_LOWORD(v10) = *v9; /*0x7df489*/
+      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(*v9) & 0xFFFF); /*0x7df489*/
       v15.m64_i8[2] = *v8; /*0x7df48c*/
       v15.m64_i8[4] = *v8; /*0x7df48f*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df49a*/
@@ -1414,12 +1414,12 @@ int Object_Calc_7DF500(MouseClass * a1, unsigned char * a2, unsigned short * a3,
   while ( 2 ) /*0x7df541*/
   {
     v19 = a6; /*0x7df541*/
-    IDA_HIWORD(v10) = 0; /*0x7df549*/
+    (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7df549*/
     do /*0x7df61a*/
     {
       while ( 1 ) /*0x7df5c0*/
       {
-        IDA_LOBYTE(v11) = *v8; /*0x7df5c0*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(*v8) & 0xFF); /*0x7df5c0*/
         if ( *v8 ) /*0x7df5c0*/
           break; /*0x7df5c0*/
         ++v8; /*0x7df580*/
@@ -1436,7 +1436,7 @@ int Object_Calc_7DF500(MouseClass * a1, unsigned char * a2, unsigned short * a3,
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df5c6*/
-      IDA_LOWORD(v10) = *v9; /*0x7df5c9*/
+      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(*v9) & 0xFFFF); /*0x7df5c9*/
       v15.m64_i8[2] = *v8; /*0x7df5cc*/
       v15.m64_i8[4] = *v8; /*0x7df5cf*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df5da*/
@@ -1486,12 +1486,12 @@ int Object_Calc_7DF640(MouseClass * a1, unsigned char * a2, unsigned short * a3,
   while ( 2 ) /*0x7df681*/
   {
     v19 = a6; /*0x7df681*/
-    IDA_HIWORD(v10) = 0; /*0x7df689*/
+    (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7df689*/
     do /*0x7df75b*/
     {
       while ( 1 ) /*0x7df700*/
       {
-        IDA_LOBYTE(v11) = *v8; /*0x7df700*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(*v8) & 0xFF); /*0x7df700*/
         if ( *v8 ) /*0x7df700*/
           break; /*0x7df700*/
         ++v8; /*0x7df6c0*/
@@ -1508,7 +1508,7 @@ int Object_Calc_7DF640(MouseClass * a1, unsigned char * a2, unsigned short * a3,
         }
       }
       v15.m64_i8[0] = *v8; /*0x7df706*/
-      IDA_LOWORD(v10) = *v9; /*0x7df709*/
+      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(*v9) & 0xFFFF); /*0x7df709*/
       v15.m64_i8[2] = *v8; /*0x7df70c*/
       v15.m64_i8[4] = *v8; /*0x7df70f*/
       v12 = _m_psrlwi(_m_punpcklbw(a1, (__m64)*(unsigned int *)(a8 + 4 * v10)), 8u); /*0x7df71a*/
@@ -1565,8 +1565,8 @@ int sub_5A7E90(int a1, unsigned short * a2)
       {
         for ( i = 0; i < v2[185]; ++i ) /*0x5a7edd*/
         {
-          IDA_LOWORD(v9) = i + *a2; /*0x5a7ef4*/
-          IDA_HIWORD(v9) = a2[1] + v4; /*0x5a7ef9*/
+          (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(i + *a2) & 0xFFFF); /*0x5a7ef4*/
+          (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(a2[1] + v4) & 0xFFFF) << 16); /*0x5a7ef9*/
           v12 = v9; /*0x5a7f02*/
           v7 = IDA_SHIWORD(v9) + (int16_t)v9; /*0x5a7f0c*/
           if ( v7 > v5 ) /*0x5a7f11*/
@@ -1809,9 +1809,9 @@ char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a
   result = a1; /*0x637dd0*/
   if ( a1 == 4 ) /*0x637dd8*/
   {
-    IDA_HIBYTE(a8) = 1; /*0x637de8*/
+    (a8) = ((a8) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(1) & 0xFF) << 24); /*0x637de8*/
     qmemcpy( (void *)(v29), (const void *)(&a1), sizeof(v29)); /*0x637df0*/
-    IDA_LOWORD(v30) = a28; /*0x637df2*/
+    (v30) = ((v30) & ~0xFFFF) | ((unsigned int)(a28) & 0xFFFF); /*0x637df2*/
     (((v30) >> 16) & 0xFF) = (((a28) >> 16) & 0xFF); /*0x637df4*/
 // 0x6521c0
     return (char)(Network::RecordEvent( /*0x637df5*/

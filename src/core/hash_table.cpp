@@ -36,12 +36,12 @@ int Hash::InsertOrdered(void* table, const void* entry, int a2)
     result = (*(int (__thiscall **)(void *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4418*/
     if ( (unsigned char)result ) /*0x4f441d*/
     {
-      IDA_LOBYTE(result) = 0; /*0x4f441f*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x4f441f*/
     }
     else if ( *(unsigned int * *)((char *)&stru_A8EB00 + 1108) ) /*0x4f442c*/
     {
       result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a2 + 16))(a2, *(unsigned int * *)((char *)&stru_A8EB00 + 1108)); /*0x4f4433*/
-      IDA_LOBYTE(result) = 1; /*0x4f4436*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x4f4436*/
     }
     else
     {
@@ -126,7 +126,7 @@ int SHA1::Compute(char *a2, int a1)
     {
       v10 = *p_SHA1_field_0x04++; /*0x69dadf*/
       --v9; /*0x69db07*/
-      *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
+      *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | (((((unsigned int)(v10) >> 16) & 0xFFFF) | v10 & 0xFF0000) >> 8); /*0x69db08*/
     }
     while ( v9 ); /*0x69db0b*/
     this->state[0] = 1; /*0x69db18*/
@@ -175,8 +175,8 @@ int SHA1::Transform(int *a1, unsigned int *a2)
     do /*0x69db76*/
     {
       v4 = *v2++; /*0x69db49*/
-      v5 = IDA_HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
-      IDA_LOBYTE(v4) = 0; /*0x69db69*/
+      v5 = (((unsigned int)(v4) >> 24) & 0xFF) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
+      (v4) = ((v4) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x69db69*/
       (((v4) >> 8) & 0xFF) = (((v4) >> 16) & 0xFF); /*0x69db6b*/
       --v3; /*0x69db71*/
       *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/

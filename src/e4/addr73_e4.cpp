@@ -96,17 +96,17 @@ AbstractClass * * ProcessSelectionExperience()
   char v14; // [esp+13h] [ebp-5h]
   unsigned int v15;
 
-  IDA_LOBYTE(v1) = (unsigned char)((gamemd::AbstractClass **)((unsigned char)dword_A8ECC8)); /*0x730af3*/
+  (v1) = ((v1) & ~0xFF) | ((unsigned int)((unsigned char)((gamemd::AbstractClass **)((unsigned char)dword_A8ECC8))) & 0xFF); /*0x730af3*/
   v14 = 0; /*0x730afe*/
   if ( (int)dword_A8ECC8 <= 0 ) /*0x730b03*/
     return (gamemd::AbstractClass **)(v1); /*0x730b03*/
-  IDA_LOBYTE(v1) = (unsigned char)dword_A8ECBC; /*0x730b09*/
+  (v1) = ((v1) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ECBC) & 0xFF); /*0x730b09*/
   if ( !*(unsigned int *)dword_A8ECBC
     || (v2 = *(House ***)dword_A8ECBC,
         v1 = (*(int (**)(unsigned int))(**(unsigned int **)dword_A8ECBC + 44))(*(unsigned int *)dword_A8ECBC),
         v1 != 6)
     || (v1 = (*(int (**)(House **))&(*v2)->__pad_3D7[49])( (House **)(v2)), v1 <= 0)
-    || (IDA_LOBYTE(v1) = ((House*)v2[135])->IsHumanPlayer(), !(unsigned char)v1) )
+    || (((unsigned int)(v1) & 0xFF) = ((House*)v2[135])->IsHumanPlayer(), !(unsigned char)v1) )
   {
     v4 = dword_A8ECC8; /*0x730b71*/
     v5 = 0; /*0x730b77*/
@@ -147,7 +147,7 @@ AbstractClass * * ProcessSelectionExperience()
           ++v7; /*0x730d28*/
         }
         while ( v7 < (int)v4 );
-        IDA_LOBYTE(v1) = v14; /*0x730d31*/
+        (v1) = ((v1) & ~0xFF) | ((unsigned int)(v14) & 0xFF); /*0x730d31*/
         if ( v14 ) /*0x730d37*/
           goto LABEL_47; /*0x730d37*/
       }
@@ -164,7 +164,7 @@ AbstractClass * * ProcessSelectionExperience()
         {
           if ( !(uint8_t)((TechnoClass *)(this))->IsMission27to30() ) /*0x730bbc*/
             goto LABEL_17; /*0x730bbc*/
-          IDA_LOBYTE(v1) = v13; /*0x730bbe*/
+          (v1) = ((v1) & ~0xFF) | ((unsigned int)(v13) & 0xFF); /*0x730bbe*/
           v12 = 1; /*0x730bc2*/
           if ( v13 ) /*0x730bc9*/
             goto LABEL_24; /*0x730bc9*/
@@ -174,19 +174,19 @@ AbstractClass * * ProcessSelectionExperience()
           v1 = (*(int (**)(TechnoClass *))((char *)v6->vtable1 + 44))( (TechnoClass *)(v6)); /*0x730be0*/
           if ( v1 == 1 ) /*0x730be6*/
           {
-            IDA_LOBYTE(v1) = *(unsigned char *)(v6[1].ironTintTimer[2] + 3603); /*0x730bee*/
+            (v1) = ((v1) & ~0xFF) | ((unsigned int)(*(unsigned char *)(v6[1].ironTintTimer[2] + 3603)) & 0xFF); /*0x730bee*/
             if ( (unsigned char)v1 ) /*0x730bf6*/
             {
               if ( Event_Process_746D90(v6) ) /*0x730bfa*/
               {
-                IDA_LOBYTE(v1) = v13; /*0x730c03*/
+                (v1) = ((v1) & ~0xFF) | ((unsigned int)(v13) & 0xFF); /*0x730c03*/
                 v12 = 1; /*0x730c07*/
                 if ( v13 ) /*0x730c0e*/
                   goto LABEL_24; /*0x730c0e*/
                 goto LABEL_23; /*0x730c0e*/
               }
   LABEL_17:
-              IDA_LOBYTE(v1) = v12; /*0x730bcd*/
+              (v1) = ((v1) & ~0xFF) | ((unsigned int)(v12) & 0xFF); /*0x730bcd*/
               v13 = 1; /*0x730bd1*/
               if ( v12 ) /*0x730bd8*/
                 goto LABEL_24; /*0x730bd8*/
@@ -199,16 +199,16 @@ AbstractClass * * ProcessSelectionExperience()
         goto LABEL_24; /*0x730c13*/
     }
   }
-  IDA_LOBYTE(v1) = (unsigned char)dword_A8ECBC; /*0x730b41*/
+  (v1) = ((v1) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ECBC) & 0xFF); /*0x730b41*/
   v3 = *(unsigned char **)dword_A8ECBC; /*0x730b46*/
   if ( *(unsigned int *)dword_A8ECBC ) /*0x730b46*/
   {
     if ( (v3[20] & 1) != 0 ) /*0x730b54*/
     {
-      IDA_LOBYTE(v1) = (*(int (**)(unsigned char *, int))(*(unsigned int *)v3 + 884))( (unsigned char *)(v3), 9); /*0x730b5e*/
+      (v1) = ((v1) & ~0xFF) | ((unsigned int)((*(int (**)(unsigned char *, int))(*(unsigned int *)v3 + 884))( (unsigned char *)(v3), 9)) & 0xFF); /*0x730b5e*/
       if ( (unsigned char)v1 ) /*0x730b66*/
   LABEL_47:
-        IDA_LOBYTE(v1) = PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[40], 0x2000, 1.0, 0); /*0x730d39*/
+        (v1) = ((v1) & ~0xFF) | ((unsigned int)(PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[40], 0x2000, 1.0, 0)) & 0xFF); /*0x730d39*/
     }
   }
   return (gamemd::AbstractClass **)(v1);
@@ -682,7 +682,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
     v5 = 0; /*0x733015*/
     if ( HeightMap ) /*0x73301c*/
     {
-      IDA_LOBYTE(HeightMap) = (uint8_t)((EventClass *)((unsigned int *)HeightMap))->resetEvent(0, 0); /*0x733022*/
+      (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)((uint8_t)((EventClass *)((unsigned int *)HeightMap))->resetEvent(0, 0)) & 0xFF); /*0x733022*/
       *v4 = (unsigned int)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x733027*/
       v4[5] = 10; /*0x73302d*/
       v4[4] = 0; /*0x733034*/
@@ -697,14 +697,14 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
       do /*0x73309e*/
       {
         v7 = *((unsigned int *)dword_A8EC7C + v5); /*0x733052*/
-        IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman( v7, (void *)(a1)); /*0x733057*/
+        (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(StepTechnoClassCleanupIfHuman( v7, (void *)(a1))) & 0xFF); /*0x733057*/
         if ( (unsigned char)HeightMap ) /*0x73305e*/
         {
           v8 = v4[2]; /*0x733060*/
           if ( v4[4] < v8 /*0x73308a*/
-            || ((IDA_LOBYTE(HeightMap) = *((unsigned char *)v4 + 13), (unsigned char)HeightMap) || !v8)
+            || ((((unsigned int)(HeightMap) & 0xFF) = *((unsigned char *)v4 + 13), (unsigned char)HeightMap) || !v8)
             && (HeightMap = v4[5], HeightMap > 0)
-            && (IDA_LOBYTE(HeightMap) = (*(int (**)(unsigned int *, int, unsigned int))(*v4 + 8))( (unsigned int *)(v4), v8 + HeightMap, 0),
+            && (((unsigned int)(HeightMap) & 0xFF) = (*(int (**)(unsigned int *, int, unsigned int))(*v4 + 8))( (unsigned int *)(v4), v8 + HeightMap, 0),
                 (unsigned char)HeightMap) )
           {
             HeightMap = v4[4]; /*0x73308c*/
@@ -743,18 +743,18 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
         if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x733103*/
         {
           v17 = HeightMap; /*0x73310b*/
-          IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman( HeightMap, (void *)(a1)); /*0x73310f*/
+          (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(StepTechnoClassCleanupIfHuman( HeightMap, (void *)(a1))) & 0xFF); /*0x73310f*/
           if ( (unsigned char)HeightMap ) /*0x733116*/
-            IDA_LOBYTE(HeightMap) = ((DynamicVector *)(v4))->AddItem( (unsigned int *)(&v17)); /*0x73311f*/
+            (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(((DynamicVector *)(v4))->AddItem( (unsigned int *)(&v17))) & 0xFF); /*0x73311f*/
         }
       }
     }
   }
   v13 = v4[4]; /*0x733129*/
   for ( j = 0; j < v13; ++j ) /*0x733130*/
-    IDA_LOBYTE(HeightMap) = v18(*(unsigned int *)(v4[1] + 4 * j), a3); /*0x73313e*/
+    (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(v18(*(unsigned int *)(v4[1] + 4 * j), a3)) & 0xFF); /*0x73313e*/
   if ( v4 ) /*0x733149*/
-    IDA_LOBYTE(HeightMap) = (*(int (**)(unsigned int *, int))*v4)( (unsigned int *)(v4), 1); /*0x733151*/
+    (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)((*(int (**)(unsigned int *, int))*v4)( (unsigned int *)(v4), 1)) & 0xFF); /*0x733151*/
   return HeightMap; /*0x733153*/
 }
 }
@@ -860,11 +860,11 @@ char sub_7331B0()
         {
           if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x7332e4*/
           {
-            IDA_LOBYTE(HeightMap) = *(unsigned char *)(HeightMap + 144); /*0x7332e6*/
+            (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(*(unsigned char *)(HeightMap + 144)) & 0xFF); /*0x7332e6*/
             if ( (unsigned char)HeightMap ) /*0x7332ee*/
             {
               if ( *(unsigned int *)&dword_A8B238 ) /*0x7332f7*/
-                IDA_LOBYTE(HeightMap) = ((House*)v14[135])->IsHumanPlayer(); /*0x73330d*/
+                (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(((House*)v14[135])->IsHumanPlayer()) & 0xFF); /*0x73330d*/
               else
                 HeightMap = IDA_BYTE1(v14[135]->q1EC); /*0x7332ff*/
               if ( (unsigned char)HeightMap ) /*0x733314*/
@@ -874,9 +874,9 @@ char sub_7331B0()
                 {
                   v15 = v12->q008; /*0x733322*/
                   if ( *(unsigned int *)v12->__pad_10 < (int)v15 /*0x73334c*/
-                    || ((IDA_LOBYTE(HeightMap) = IDA_BYTE1(v12->EventClass_field_0xC), (unsigned char)HeightMap) || !v15)
+                    || ((((unsigned int)(HeightMap) & 0xFF) = IDA_BYTE1(v12->EventClass_field_0xC), (unsigned char)HeightMap) || !v15)
                     && (HeightMap = *(unsigned int *)&v12->__pad_10[4], HeightMap > 0)
-&& (IDA_LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v12->EventClass_field_0x0 + 8))( (EventClass *)(v12), (int)v15 + HeightMap, 0), (unsigned char)HeightMap) )
+&& (((unsigned int)(HeightMap) & 0xFF) = (*(int (**)(EventClass *, int, unsigned int))(v12->EventClass_field_0x0 + 8))( (EventClass *)(v12), (int)v15 + HeightMap, 0), (unsigned char)HeightMap) )
 
 
 
@@ -2315,7 +2315,7 @@ int WideToChar_Copy(unsigned char * a1, char * a2, int a3)
   {
     if ( !a3 ) /*0x73509d*/
       break; /*0x73509d*/
-    IDA_LOBYTE(result) = *a2; /*0x73509f*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(*a2) & 0xFF); /*0x73509f*/
     a2 += 2; /*0x7350a1*/
     *a1++ = result; /*0x7350a4*/
     if ( a3 != -1 ) /*0x7350aa*/

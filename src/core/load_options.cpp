@@ -146,7 +146,7 @@ int LoadOptions::Run() {
 
   *(unsigned int *)((unsigned char *)(this) + 0x4) = 1; /*0x5587f0*/
   this->field_0C = 0; /*0x5587f7*/
-  IDA_LOBYTE(result) = ((SaveLoadDialog*)(SaveLoadDialog *)this)->DlgProc(); /*0x5587fe*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(((SaveLoadDialog*)(SaveLoadDialog *)this)->DlgProc()) & 0xFF); /*0x5587fe*/
   return result;
 }
 // 0x559c20

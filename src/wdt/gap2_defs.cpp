@@ -103,7 +103,7 @@ void Campaign::SetupMovie(HWND hDlg) {  // g57b5 W4: raw 真值补参 (hDlg)
     v7 = dword_A8BB0C; /*0x5c2521*/
     dword_A8BB0C = dword_A8BB0C; /*0x5c252b*/
     v13 = 0; /*0x5c2536*/
-    IDA_LOBYTE(result) = Movie::GetSection((int)&g_DDrawSurfaceManager, v6, &v14); /*0x5c253a*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(Movie::GetSection((int)&g_DDrawSurfaceManager, v6, &v14)) & 0xFF) /*0x5c253a*/
     v8 = v14; /*0x5c253f*/
     if ( v14 ) /*0x5c2545*/
     {

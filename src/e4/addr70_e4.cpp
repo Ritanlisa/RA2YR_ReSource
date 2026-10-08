@@ -451,8 +451,8 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     if ( v21 <= 0 ) /*0x7070e6*/
     {
       if ( *((unsigned char *)a1 + 973) ) /*0x707140*/
-        *((unsigned short *)a1 + 485) = IDA_LOWORD(v48[5]) /*0x707166*/
-                             + IDA_LOWORD(v48[1])
+        *((unsigned short *)a1 + 485) = ((unsigned int)(v48[5]) & 0xFFFF) /*0x707166*/
+                             + ((unsigned int)(v48[1]) & 0xFFFF)
                              + *(unsigned short *)(a6 + 4)
                              + *(unsigned short *)((unsigned int *)(g_TacticalClass_Instance))[45].__tail_0;
     }
@@ -479,7 +479,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   if ( ((unsigned int)(v24)& 8) != 0 ) /*0x7071a1*/
   {
     v27 = (gamemd::BuildingClass *)((int)((gamemd::BuildingClass *)((*(int (**)(int *))(a1[1] + 16))(a1 + 1))));
-    IDA_LOWORD(v28) = Math::RoundToInt(*((float *)a1 + 147)); /*0x7071b5*/
+    (v28) = ((v28) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*((float *)a1 + 147))) & 0xFFFF); /*0x7071b5*/
     v29 = v27 + v28; /*0x7071ba*/
     v20 = (unsigned int *)a6; /*0x7071bc*/
     v26 = (gamemd::BuildingClass *)((unsigned int)(v29)% 400); /*0x7071c9*/

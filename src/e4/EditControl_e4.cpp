@@ -16,9 +16,9 @@ int sub_7781B0(short a1)
   char v5; // [esp+2h] [ebp-6h]
   WCHAR WideCharStr[2]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( IDA_HIBYTE(a1) ) /*0x7781b6*/
+  if ( (((unsigned int)(a1) >> 24) & 0xFF) ) /*0x7781b6*/
   {
-    MultiByteStr = IDA_HIBYTE(a1); /*0x7781c1*/
+    MultiByteStr = (((unsigned int)(a1) >> 24) & 0xFF); /*0x7781c1*/
     v4 = a1; /*0x7781c1*/
     v5 = 0; /*0x7781c5*/
   }

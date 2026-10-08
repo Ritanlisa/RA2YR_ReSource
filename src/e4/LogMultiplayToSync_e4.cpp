@@ -101,10 +101,10 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
     v9 = (char *)(((String *)(v64))->FormatDword()); /*0x6517f3*/
     fprintf((FILE *const )(v5), "Release Build: %s by %s - %s\r\n", v9, v52, v62);
     v60 = (char *)((int)((char *)(5)));
-    IDA_HIBYTE(v57) = 0; /*0x65181b*/
+    (v57) = ((v57) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(0) & 0xFF) << 24); /*0x65181b*/
     GetVersionString((unsigned int *)(&v60), (unsigned char *)&v57 + 3, 0, 0); /*0x651820*/
     v10 = (unsigned int)((char *)&off_821F08); /*0x65182b*/
-    if ( !IDA_HIBYTE(v57) ) /*0x651830*/
+    if ( !(((unsigned int)(v57) >> 24) & 0xFF) ) /*0x651830*/
       v10 = g_INI_Key_No; /*0x651832*/
     v10 = v10; /*0x65183c*/
     Name = PlayerType::GetName(); /*0x65183d*/
@@ -148,7 +148,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       {
         ((Network *)((unsigned int *)v15 + 3))->CopyAddress((unsigned int *)(&v54), (int)&v58); /*0x651970*/
         fprintf((FILE *const )(v5), "\nName: %s\n", v15 - 80);
-        fprintf((FILE *const )(v5), "Address: %d.%d.%d.%d\n", (uint8_t)v58, (((v58) >> 8) & 0xFF), (((v58) >> 16) & 0xFF), IDA_HIBYTE(v58));
+        fprintf((FILE *const )(v5), "Address: %d.%d.%d.%d\n", (uint8_t)v58, (((v58) >> 8) & 0xFF), (((v58) >> 16) & 0xFF), (((unsigned int)(v58) >> 24) & 0xFF));
         fprintf((FILE *const )(v5), "Max avg round trip: %d\n", *(unsigned int *)v15);
         fprintf((FILE *const )(v5), "Max round trip: %d\n", *((unsigned int *)v15 - 4));
         fprintf((FILE *const )(v5), "Resends: %d\n", *((unsigned int *)v15 - 3));

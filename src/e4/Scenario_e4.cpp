@@ -1664,7 +1664,7 @@ int Scenario_EndGame()
     if ( v13 ) /*0x686023*/
       (*((void (**)(ObjectClass *, unsigned int))v13->vtable1 + 41))( (ObjectClass *)(v13), 0); /*0x686028*/
     byte_A8E9A0 = 0; /*0x686035*/
-    IDA_LOBYTE(v15) = ChatMessageWOL( 0, (wchar_t *)(&g_TypeClass_DefaultString)); /*0x68603c*/
+    (v15) = ((v15) & ~0xFF) | ((unsigned int)(ChatMessageWOL( 0, (wchar_t *)(&g_TypeClass_DefaultString))) & 0xFF); /*0x68603c*/
     return v15; /*0x68604b*/
   }
   dword_A8D57C = (unsigned int)(wchar_t *)((char *)dword_A8D57C + 1); /*0x685f62*/
@@ -1704,7 +1704,7 @@ int Scenario_EndGame()
   ChatMessageWOL( 0, (wchar_t *)(&g_TypeClass_DefaultString)); /*0x68605b*/
   LABEL_40:
   Movie::PlayWrapper((int)((AbstractClass *)dword_A8B230)[144].vtable0, -1, v8, 1, 1, 1); /*0x686060*/
-  IDA_LOBYTE(v15) = Screen::Capture(1, 0, v11, -1); /*0x68607c*/
+  (v15) = ((v15) & ~0xFF) | ((unsigned int)(Screen::Capture(1, 0, v11, -1)) & 0xFF); /*0x68607c*/
   if ( *(unsigned int *)&dword_A8B238 /*0x6860ec*/
     || (dword_A8D5F8 & 2) != 0
     || (v31[1] = (ObjectClass *)asc_82083C,

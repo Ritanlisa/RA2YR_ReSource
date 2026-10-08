@@ -337,7 +337,7 @@ result = (*(int (**)(unsigned int, unsigned int *))(*(unsigned int *)IDA_HIDWORD
                       }
                       Math::Sqrt(v16); /*0x4c1834*/
                       __asm { fmul ds:dbl_7E3D90 } /*0x4c1839*/
-                      IDA_LOWORD(v11) = Math::RoundToInt(v1); /*0x4c1842*/
+                      (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x4c1842*/
                       v12 = 400 - v11; /*0x4c184c*/
                       if ( 400 - v11 >= 0 ) /*0x4c184e*/
                       {
@@ -517,7 +517,7 @@ void sub_4C2830()
       if ( (uint8_t)ClipLine( v19, v18, (int)(&DSurface_ViewBounds.field_0)) ) /*0x4c28f4*/
       {
         v11 = -(*((unsigned char *)v10 + 44) != 0); /*0x4c2904*/
-        IDA_LOBYTE(v11) = v11 & 0xFB; /*0x4c2906*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(v11 & 0xFB) & 0xFF); /*0x4c2906*/
         ((Lightning *)v10)->Draw( *v10, v10[1], v10[2], v10[3], v10[4], v10[5], v11 + 10); /*0x4c2938*/
       }
       ++v10[7]; /*0x4c293d*/
@@ -629,7 +629,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
       v10 = 1; /*0x4c397f*/
       v11 = &a1[2 * v9 + v9]; /*0x4c3984*/
       v14 = *(unsigned short *)v11; /*0x4c3989*/
-      IDA_LOBYTE(v11) = v11[2]; /*0x4c398e*/
+      (v11) = ((v11) & ~0xFF) | ((unsigned int)(v11[2]) & 0xFF); /*0x4c398e*/
       *v7 = 0; /*0x4c3991*/
       v15 = (char)v11; /*0x4c3995*/
       do /*0x4c39e6*/
@@ -790,7 +790,7 @@ void ComputeDistortionVariant(float a1)
   int v1; // eax
   int result; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt(flt_8223B0 * a1); /*0x4cb15a*/
+  (v1) = ((v1) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(flt_8223B0 * a1)) & 0xFFFF); /*0x4cb15a*/
   result = (v1 / 2) & 0x80001FFF; /*0x4cb169*/
   if ( result < 0 )
     return (((unsigned short)result - 1) | 0xFFFFE000) + 1 + ((int)((((unsigned short)result - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
@@ -987,11 +987,11 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     if ( *(unsigned char *)(*(unsigned int *)(v10 + 1732) + 3595) ) /*0x4cf055*/
       a3 = 0; /*0x4cf05f*/
   }
-  v11 = IDA_LODWORD(a4); /*0x4cf06c*/
+  v11 = ((unsigned int)(a4)); /*0x4cf06c*/
   v62 = a6; /*0x4cf06e*/
   v12 = a5; /*0x4cf072*/
-  IDA_LOWORD(v56) = IDA_SLODWORD(a4) / 256; /*0x4cf08c*/
-  IDA_HIWORD(v56) = a5 / 256; /*0x4cf09f*/
+  (v56) = ((v56) & ~0xFFFF) | ((unsigned int)(IDA_SLODWORD(a4) / 256) & 0xFFFF); /*0x4cf08c*/
+  (v56) = ((v56) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(a5 / 256) & 0xFFFF) << 16); /*0x4cf09f*/
   v13 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v56); /*0x4cf0ac*/
   v14 = ((Cell *)(v13))->IsBridge(); /*0x4cf0b8*/
   if ( v14 && !*(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf0cc*/
@@ -1030,14 +1030,14 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v19 = (int *)(*(int (**)(int *, int *))(**v6 + 72))( *v6, (int *)(v63)); /*0x4cf167*/
   v20 = *v19; /*0x4cf16a*/
   v21 = v19[1] - v12; /*0x4cf171*/
-  IDA_LODWORD(a4) = v20 - v11; /*0x4cf173*/
+  (a4) = (unsigned int)(v20 - v11); /*0x4cf173*/
   v61 = v21; /*0x4cf17b*/
   Vector::TwoDMagnitudeMath( (int *)&a4); /*0x4cf17f*/
   v23 = (int)v22; /*0x4cf184*/
   v56 = v22; /*0x4cf18c*/
   if ( !v55 || !(*(int (**)(int))(v55->q020))(v55) ) /*0x4cf197*/
   {
-    v24 = IDA_LODWORD(a4); /*0x4cf1a2*/
+    v24 = ((unsigned int)(a4)); /*0x4cf1a2*/
     a5 = a5; /*0x4cf1a6*/
     v26 = *v6; /*0x4cf1ae*/
     a4 = a4; /*0x4cf1b4*/
@@ -1052,16 +1052,16 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v29 = (int *)(*(int (**)(int *, int *))(**v6 + 72))( *v6, (int *)(v63)); /*0x4cf1f2*/
     v30 = *v29; /*0x4cf1f5*/
     v31 = v29[1] - a5; /*0x4cf1fc*/
-    IDA_LODWORD(a4) = v30 - v24; /*0x4cf1fe*/
+    (a4) = (unsigned int)(v30 - v24); /*0x4cf1fe*/
     v61 = v31; /*0x4cf206*/
     Vector::TwoDMagnitudeMath( (int *)&a4); /*0x4cf20a*/
     if ( v32 > 768 /*0x4cf248*/
       || (IDA_LOWORD(v58) = 0x2000,
-          IDA_LOWORD(a4) = v28 - *(unsigned short *)((ProgressTimer *)((unsigned short *)*v6 + 452))->GetValue(&a4),
+          (a4) = ((a4) & ~0xFFFF) | ((unsigned int)(v28 - *(unsigned short *)((ProgressTimer *)((unsigned short *)*v6 + 452))->GetValue(&a4),
           (uint8_t)UnitClass::CompareCoordinateMagnitude(&a4)) )
     {
   LABEL_32:
-      v63[2] = a6; /*0x4cf259*/
+      v63[2] = a6) & 0xFFFF); /*0x4cf259*/
       v33 = *v6; /*0x4cf25d*/
       v63[0] = v24; /*0x4cf260*/
       v63[1] = a5; /*0x4cf264*/
@@ -1738,7 +1738,7 @@ int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
   do /*0x4c3b3f*/
   {
     v8 = (int)&a1[2 * (v6 % 256) + v6 % 256]; /*0x4c3b0a*/
-    IDA_LOWORD(a3) = *(unsigned short *)v8; /*0x4c3b0f*/
+    (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v8) & 0xFFFF); /*0x4c3b0f*/
     (((a3) >> 16) & 0xFF) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
     ((Color *)((uint8_t *)&a3))->Lerp( a4, (uint8_t *)(v7)); /*0x4c3b24*/
     *(unsigned char *)(v6 + a2) = ((Palette *)(a1))->FindClosestColor( (Palette *)((int)&a3)); /*0x4c3b35*/
@@ -1761,14 +1761,14 @@ unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
   v6 = a4; /*0x4c3b7d*/
   v7 = (int)&a1[2 * (a3 % 256) + a3 % 256]; /*0x4c3b81*/
   v8 = 1; /*0x4c3b83*/
-  IDA_LOWORD(a3) = *(unsigned short *)v7; /*0x4c3b8b*/
-  IDA_LOBYTE(v7) = *(unsigned char *)(v7 + 2); /*0x4c3b90*/
+  (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v7) & 0xFFFF); /*0x4c3b8b*/
+  (v7) = ((v7) & ~0xFF) | ((unsigned int)(*(unsigned char *)(v7 + 2)) & 0xFF); /*0x4c3b90*/
   *a2 = 0; /*0x4c3b93*/
   (((a3) >> 16) & 0xFF) = v7; /*0x4c3b96*/
   do /*0x4c3be3*/
   {
     v9 = (int)&a1[2 * (v8 % 256) + v8 % 256]; /*0x4c3bad*/
-    IDA_LOWORD(a4) = *(unsigned short *)v9; /*0x4c3bbc*/
+    (a4) = ((a4) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v9) & 0xFFFF); /*0x4c3bbc*/
     (((a4) >> 16) & 0xFF) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
     ((Color *)((uint8_t *)&a4))->Lerp(v6, (uint8_t *)&a3); /*0x4c3bc8*/
     a2[v8++] = ((Palette *)(a1))->FindClosestColor( (Palette *)((int)&a4)); /*0x4c3bd9*/
@@ -2984,7 +2984,7 @@ double ComputeChronosphereDistortion(float a1)
   int v1; // eax
   signed int v2; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt(flt_8223B4 * a1); /*0x4cb1aa*/
+  (v1) = ((v1) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(flt_8223B4 * a1)) & 0xFFFF); /*0x4cb1aa*/
   v2 = (v1 / 2) & 0x80001FFF; /*0x4cb1b9*/
   if ( v2 >= 0 ) /*0x4cb1be*/
     return v2 + 2048; /*0x4cb1be*/

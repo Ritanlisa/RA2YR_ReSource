@@ -211,7 +211,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       v30 = 0; /*0x6423ed*/
       v46 = -1; /*0x6423ef*/
       v50 = 0xFFFF; /*0x6423f7*/
-      IDA_LOBYTE(v55) = (uint8_t)(v29 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x642408*/
+      (v55) = ((v55) & ~0xFF) | ((unsigned int)((uint8_t)(v29 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFF); /*0x642408*/
       (((v55) >> 8) & 0xFF) = (uint8_t)(v29 >> g_BitMask_Green) << g_BitMask_Blue; /*0x642429*/
       (((v55) >> 16) & 0xFF) = (uint8_t)(v29 >> g_BitShift_Blue) << g_BitMask_Red; /*0x642431*/
       if ( (int)v21 > 0 ) /*0x642435*/

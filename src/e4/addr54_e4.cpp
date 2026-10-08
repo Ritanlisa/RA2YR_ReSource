@@ -1190,7 +1190,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
         v6 = (unsigned int *)*((unsigned int *)g_FrameCounter + v4); /*0x546e07*/
         if ( (int)v6[188] > 1 ) /*0x546e11*/
         {
-          IDA_LOBYTE(inited) = *(unsigned char *)(i + 282); /*0x546e13*/
+          (inited) = ((inited) & ~0xFF) | ((unsigned int)(*(unsigned char *)(i + 282)) & 0xFF); /*0x546e13*/
           inited = inited; /*0x546e1d*/
           v8 = (unsigned int *)(*(int (**)(unsigned int))(*v6 + 156))(*((unsigned int *)g_FrameCounter + v4)); /*0x546e1f*/
           if ( v8 && (v9 = v8[inited % (*v8 * v8[1]) + 4]) != 0 && (*(unsigned int *)(v9 + 36) & 4) != 0 ) /*0x546e48*/

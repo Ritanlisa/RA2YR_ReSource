@@ -173,7 +173,7 @@ int AudioSample::ResetState() {
     if ( (*((unsigned char *)this + 164) & 8) != 0 ) /*0x4024aa*/
     {
       v2 = *((unsigned int *)this + 41); /*0x4024b1*/
-      IDA_LOBYTE(v2) = v2 & 0xF7; /*0x4024b7*/
+      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 & 0xF7) & 0xFF) /*0x4024b7*/
       *((unsigned int *)this + 41) = v2; /*0x4024b9*/
       *((unsigned int *)this + 87) = (unsigned int)AudioController::AdvanceQueue; /*0x4024c1 回调地址真值 AudioController::AdvanceQueue*/
       *((unsigned int *)this + 88) = (unsigned int)AudioController::UpdatePlayback; /*0x4024cb 回调地址真值 AudioController::UpdatePlayback*/
@@ -228,7 +228,7 @@ int AudioChannel::DeactivatePlay() {
       this->u32_A4 &= ~1u; /*0x40261e*/
       (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 20))(this); /*0x40262c*/
       v2 = this->u32_A4; /*0x40262f*/
-      IDA_LOBYTE(v2) = v2 | 4; /*0x402635*/
+      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 | 4) & 0xFF) /*0x402635*/
       this->u32_A4 = v2; /*0x402637*/
     }
 // 0x402600
@@ -242,7 +242,7 @@ int AudioChannel::DeactivatePlay() {
       this->u32_A4 &= ~1u; /*0x40261e*/
       (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 20))(this); /*0x40262c*/
       v2 = this->u32_A4; /*0x40262f*/
-      IDA_LOBYTE(v2) = v2 | 4; /*0x402635*/
+      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 | 4) & 0xFF) /*0x402635*/
       this->u32_A4 = v2; /*0x402637*/
     }
 
@@ -256,7 +256,7 @@ int AudioChannel::ActivatePlay() {
     {
       (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 24))(this); /*0x40266d*/
       v2 = this->u32_A4; /*0x402670*/
-      IDA_LOBYTE(v2) = v2 & 0xFB; /*0x402676*/
+      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 & 0xFB) & 0xFF) /*0x402676*/
       this->u32_A4 = v2; /*0x402678*/
       this->u32_A4 |= 1u; /*0x402687*/
     }
@@ -275,7 +275,7 @@ int AudioThread::UpdateStats(int64_t a2) {
     uint64_t v3; // kr00_8
 
     v3 = a2 - *((unsigned long long *)this + 5); /*0x403930*/
-    result = IDA_HIDWORD(v3); /*0x403930*/
+    result = ((unsigned int)((unsigned __int64)(v3) >> 32)); /*0x403930*/
     *((unsigned long long *)this + 2) = v3; /*0x403938*/
     ++*((unsigned int *)this + 18); /*0x403942*/
     if ( *((unsigned long long *)this + 3) > *((unsigned long long *)this + 4) ) /*0x403957*/
@@ -983,10 +983,10 @@ int FacingClass::Update(unsigned short *a2) {
     int v14; // [esp+0h] [ebp-10h]
     int v15; // [esp+8h] [ebp-8h]
 
-    IDA_LOWORD(result) = *(unsigned short *)this; /*0x4c9224*/
+    (result) = ((result) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)this) & 0xFFFF) /*0x4c9224*/
     if ( *(unsigned short *)this == *a2 ) /*0x4c922d*/
     {
-      IDA_LOBYTE(result) = 0; /*0x4c92f7*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x4c92f7*/
       return result; /*0x4c92f7*/
     }
 
@@ -1014,7 +1014,7 @@ int FacingClass::Set_SyncLog(unsigned int *a2) {
         if ( (int16_t)v4 <= 0 ) /*0x4c933e*/
         {
   LABEL_9:
-          IDA_LOWORD(v8) = v11; /*0x4c936a*/
+          (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(v11) & 0xFFFF) /*0x4c936a*/
           goto LABEL_12; /*0x4c936f*/
         }
         v5 = *((unsigned int *)this + 4); /*0x4c9340*/
@@ -1026,11 +1026,11 @@ int FacingClass::Set_SyncLog(unsigned int *a2) {
             v7 = 0; /*0x4c9371*/
             goto LABEL_8; /*0x4c9373*/
           }
-          IDA_LOWORD(v5) = v5 - ((unsigned short)dword_A8ED84 - v6); /*0x4c9356*/
+          (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(v5 - ((unsigned short)dword_A8ED84 - v6)) & 0xFFFF) /*0x4c9356*/
         }
         v7 = v5; /*0x4c9358*/
   LABEL_8:
-        IDA_LOWORD(v11) = v11 - v7 * ((int16_t)(*(unsigned short *)this - *((unsigned short *)this + 2)) / (int16_t)v4); /*0x4c935a*/
+        (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(v11 - v7 * ((int16_t)(*(unsigned short *)this - *((unsigned short *)this + 2)) / (int16_t)v4)) & 0xFFFF) /*0x4c935a*/
         goto LABEL_9; /*0x4c9365*/
       }
     }
@@ -1205,32 +1205,32 @@ void AudioOptionsClass::ApplySettings() {
     if ( v2 >= 1.0 ) /*0x5fb171*/
       v2 = 1.0; /*0x5fb175*/
     *((float *)this + 14) = v2; /*0x5fb17b*/
-    IDA_LOWORD(v3) = Math::RoundToInt(v2 * 16384.0); /*0x5fb184*/
+    (v3) = ((v3) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v2 * 16384.0)) & 0xFFFF) /*0x5fb184*/
     EndBufferMixer((int *)g_MixerChannel_Score, v3); /*0x5fb191*/
     Debug::Log(); /*0x5fb1a4*/
     v4 = *((float *)this + 15); /*0x5fb1a9*/
     if ( v4 >= 1.0 ) /*0x5fb1ba*/
       v4 = 1.0; /*0x5fb1be*/
     *((float *)this + 15) = v4; /*0x5fb1c4*/
-    IDA_LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fb1cd*/
+    (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v4 * 255.0)) & 0xFFFF) /*0x5fb1cd*/
     ThemeClass::GetField(v5); /*0x5fb1d4*/
-    IDA_LOWORD(v6) = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5fb1e2*/
+    (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*((float *)this + 15) * 16384.0)) & 0xFFFF) /*0x5fb1e2*/
     EndBufferMixer((int *)g_MixerChannel_Voice, v6); /*0x5fb1ef*/
     Debug::Log(); /*0x5fb202*/
     v7 = *((float *)this + 16); /*0x5fb207*/
     if ( v7 >= 1.0 ) /*0x5fb218*/
       v7 = 1.0; /*0x5fb21c*/
     *((float *)this + 16) = v7; /*0x5fb222*/
-    IDA_LOWORD(v8) = Math::RoundToInt(v7 * 16384.0); /*0x5fb22b*/
+    (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v7 * 16384.0)) & 0xFFFF) /*0x5fb22b*/
     EndBufferMixer((int *)g_MixerChannel_Theme, v8); /*0x5fb238*/
-    IDA_LOWORD(v9) = Math::RoundToInt(*((float *)this + 16) * 255.0); /*0x5fb246*/
+    (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*((float *)this + 16) * 255.0)) & 0xFFFF) /*0x5fb246*/
     TechnoTypeClass::CheckFlag((TechnoTypeClass *)&unk_A83D10, v9); /*0x5fb251*/
     Debug::Log(); /*0x5fb264*/
     byte_A83D20 = *((unsigned char *)this + 68); /*0x5fb26f*/
     Debug::Log(); /*0x5fb28b*/
     byte_A83D22 = *((unsigned char *)this + 70); /*0x5fb296*/
     v10 = Debug::Log(); /*0x5fb2b2*/
-    IDA_LOBYTE(v10) = *((unsigned char *)this + 29); /*0x5fb2b7*/
+    (v10) = ((v10) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 29)) & 0xFF) /*0x5fb2b7*/
     nullsub_36(v10); /*0x5fb2c3*/
     SetGlobalFlag(*((unsigned char *)this + 30)); /*0x5fb2cc*/
 }

@@ -539,7 +539,7 @@ CreateTeamCommand * * InitCommands()
   unsigned int *v173; // [esp+154h] [ebp-Ch] BYREF
   unsigned int *v174; // [esp+158h] [ebp-8h] BYREF
   int v175; // [esp+15Ch] [ebp-4h] BYREF
-  if ( IDA_LOBYTE(DataGlobal_87F7E8[536627]) ) /*0x53215e*/
+  if ( ((unsigned int)(DataGlobal_87F7E8[536627]) & 0xFF) ) /*0x53215e*/
   {
   CreateTeamCommand *v4; // esi
   unsigned int *v1; // esi
@@ -2550,7 +2550,7 @@ int SuperWeapon_Update()
   }
   if ( !LightningStorm_Active || LightningStorm_TimeToEnd ) /*0x53a913*/
   {
-    IDA_LOBYTE(v17) = LightningStorm_Deferment; /*0x53aa9f*/
+    (v17) = ((v17) & ~0xFF) | ((unsigned int)(LightningStorm_Deferment) & 0xFF); /*0x53aa9f*/
     if ( LightningStorm_Deferment > 0 ) /*0x53aaa6*/
     {
               v31 = *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4]; /*0x53ab01*/
@@ -2561,7 +2561,7 @@ int SuperWeapon_Update()
         v17 = v29 / 225; /*0x53aadd*/
         if ( !v30 ) /*0x53aae1*/
         {
-          IDA_LOBYTE(v17) = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6064); /*0x53aae9*/
+          (v17) = ((v17) & ~0xFF) | ((unsigned int)(*(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6064)) & 0xFF); /*0x53aae9*/
           if ( (unsigned char)v17 ) /*0x53aaf1*/
           {
             v31 = 3; /*0x53aaf8*/
@@ -2569,7 +2569,7 @@ int SuperWeapon_Update()
               v31 = *(unsigned int *)&(&dword_A83D4C)[134].__pad_90[4]; /*0x53ab01*/
             ((VoxClass *)(&stru_828080))->FindAndPlay(-1); /*0x53ab11*/
             StringCSF = GetStringCSF( (wchar_t *)(aTxtLightningSt_0), 0, (const char *)(g_Str_File_Ion_cpp), 974); /*0x53ab31*/
-            IDA_LOBYTE(v17) = MessageListClass::AddMessage( /*0x53ab40*/
+            (v17) = ((v17) & ~0xFF) | ((unsigned int)(MessageListClass::AddMessage( /*0x53ab40*/
                             (MessageListClass *)&stru_A8BB1C.__pad_87[189],
                             0,
                             0,
@@ -2577,19 +2577,19 @@ int SuperWeapon_Update()
                             v31,
                             70,
                             150,
-                            0);
+                            0)) & 0xFF);
           }
         }
       }
       else
       {
-        IDA_LOBYTE(v17) = LightningStorm::Start( LightningStorm_Duration, 0, LightningStorm_Coords, (void *)(LightningStorm_Owner)); /*0x53aaca*/
+        (v17) = ((v17) & ~0xFF) | ((unsigned int)(LightningStorm::Start( LightningStorm_Duration, 0, LightningStorm_Coords, (void *)(LightningStorm_Owner))) & 0xFF); /*0x53aaca*/
       }
     }
   }
   else
   {
-    IDA_LOBYTE(v17) = LightningStorm_Duration; /*0x53a919*/
+    (v17) = ((v17) & ~0xFF) | ((unsigned int)(LightningStorm_Duration) & 0xFF); /*0x53a919*/
     v18 = dword_A8ED84; /*0x53a91e*/
     if ( LightningStorm_Duration == -1 /*0x53a933*/
       || LightningStorm_Duration + LightningStorm_StartTime >= dword_A8ED84 )
@@ -2988,7 +2988,7 @@ int RenderChronosphereScreenEffect(char a1)
                 }
                 v61 = v61 + 1.0; /*0x53bdde*/
                 v17 = v49 + 2 * (v15 + v50 * v16); /*0x53bdeb*/
-                IDA_LOWORD(v17) = *(unsigned short *)v17; /*0x53bdee*/
+                (v17) = ((v17) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v17) & 0xFFFF); /*0x53bdee*/
                 *v52 = ((v17 & 0x1F) + ((int)((uint16_t)v51 * (31 - (v17 & 0x1F))) >> 8)) /*0x53be54*/
                      | (32 * (((v17 >> 5) & 0x1F) + ((int)((uint16_t)v51 * (31 - ((v17 >> 5) & 0x1F))) >> 8)))
                      | ((((v17 >> 10) & 0x1F)
@@ -3197,7 +3197,7 @@ void GenerateLightningStormGlow()
                 fdivp st(1), st
                 fadd ds:dbl_7E1738
               }
-              IDA_LOWORD(v12) = Math::RoundToInt(v1); /*0x53d490*/
+              (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x53d490*/
               LightningStormGlow_Helper = GenerateLightningStormGlow_Helper(0, v12); /*0x53d497*/
               v9 = 4 * v6 * v6; /*0x53d4a1*/
               *(unsigned char *)(v8 + (v6 << 9) + v7) = LightningStormGlow_Helper; /*0x53d4a8*/
@@ -4484,7 +4484,7 @@ DWORD sub_53E070(unsigned int * lpThreadParameter)
   {
     do /*0x53e1ac*/
     {
-      IDA_LODWORD(v2) = Audio::Callback(); /*0x53e096*/
+      (v2) = (unsigned int)(Audio::Callback()); /*0x53e096*/
       AudioThread::UpdateStats((int)(v1 + 8), v2); /*0x53e0a0*/
       v3 = (unsigned int *)dword_AA045C; /*0x53e0ac*/
       if ( dword_AA045C && dword_AA0444 && dword_AA0468 ) /*0x53e0c8*/

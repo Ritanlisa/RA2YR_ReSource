@@ -80,7 +80,7 @@ char NullModem_TestConnection(void * a1)
       v24 = 0; /*0x5f04be*/
       v6 = v10; /*0x5f04d1*/
       v23[0] = 100; /*0x5f04d3*/
-      IDA_LOBYTE(v23[6]) = dword_A8B394; /*0x5f04db*/
+      (v23[6]) = ((v23[6]) & ~0xFF) | ((unsigned int)(dword_A8B394) & 0xFF); /*0x5f04db*/
       ((Stream *)(&unk_A8EA70))->WriteBlock((int)v23, 250, 0); /*0x5f04df*/
     }
     if ( ((ObjectTypeClass *)((int)&unk_A8EA70))->CreateInstance((int)v25, (int)v22) > 0 ) /*0x5f04fd*/
@@ -101,7 +101,7 @@ char NullModem_TestConnection(void * a1)
         memset( (void *)(v23), 0, sizeof(v23)); /*0x5f0560*/
         v24 = 0; /*0x5f0571*/
         v23[0] = 100; /*0x5f0573*/
-        IDA_LOBYTE(v23[6]) = dword_A8B394; /*0x5f057b*/
+        (v23[6]) = ((v23[6]) & ~0xFF) | ((unsigned int)(dword_A8B394) & 0xFF); /*0x5f057b*/
         ((Stream *)(&unk_A8EA70))->WriteBlock((int)v23, 250, 1); /*0x5f057f*/
         v12 = dword_887340; /*0x5f0589*/
         if ( dword_887338 != -1 ) /*0x5f0594*/

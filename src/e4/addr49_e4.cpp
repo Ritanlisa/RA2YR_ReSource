@@ -2697,14 +2697,14 @@ int sub_491100(ObjectClass * a1, char a2, int a3, ObjectClass * a4, short a5, ch
       v11 = 256; /*0x49113e*/
       do /*0x4911ba*/
       {
-        IDA_LOWORD(a3) = *v10; /*0x491143*/
-        IDA_HIWORD(v12) = IDA_HIWORD(a3); /*0x491149*/
-        IDA_HIWORD(v13) = IDA_HIWORD(a3); /*0x49114b*/
+        (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(*v10) & 0xFFFF); /*0x491143*/
+        (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3)) & 0xFFFF) << 16); /*0x491149*/
+        (v13) = ((v13) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3)) & 0xFFFF) << 16); /*0x49114b*/
         v14 = *v10++ >> a1; /*0x49114d*/
         v15 = (uint8_t)((uint16_t)a3 >> a5) << a4; /*0x491165*/
-        IDA_LOWORD(a3) = (uint8_t)((uint8_t)((uint8_t)((uint16_t)a3 >> a7) << a6) >> g_BitMask_Red); /*0x491183*/
-        IDA_LOWORD(v12) = (uint8_t)((uint8_t)((unsigned char)v14 << a2) >> g_BitShift_Green_0); /*0x491197*/
-        IDA_LOWORD(v13) = (uint8_t)(v15 >> g_BitMask_Blue); /*0x4911ad*/
+        (a3) = ((a3) & ~0xFFFF) | ((unsigned int)((uint8_t)((uint8_t)((uint8_t)((uint16_t)a3 >> a7) << a6) >> g_BitMask_Red)) & 0xFFFF); /*0x491183*/
+        (v12) = ((v12) & ~0xFFFF) | ((unsigned int)((uint8_t)((uint8_t)((unsigned char)v14 << a2) >> g_BitShift_Green_0)) & 0xFFFF); /*0x491197*/
+        (v13) = ((v13) & ~0xFFFF) | ((unsigned int)((uint8_t)(v15 >> g_BitMask_Blue)) & 0xFFFF); /*0x4911ad*/
         a3 = (v13 << g_BitMask_Green) | (v12 << g_BitShift_Red) | (a3 << g_BitShift_Blue); /*0x4911b3*/
         --v11; /*0x4911b5*/
         *(v10 - 1) = a3; /*0x4911b6*/
@@ -3721,19 +3721,19 @@ char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5,
   int16_t v15; // bp
   uint8_t v17; // [esp+Ch] [ebp+Ch]
 
-  IDA_LOBYTE(v10) = a5; /*0x492740*/
+  (v10) = ((v10) & ~0xFF) | ((unsigned int)(a5) & 0xFF); /*0x492740*/
   if ( a5 > 0 ) /*0x492746*/
   {
     v13 = a5; /*0x492754*/
     do /*0x492791*/
     {
-      IDA_LOBYTE(v10) = *a4++; /*0x492756*/
+      (v10) = ((v10) & ~0xFF) | ((unsigned int)(*a4++) & 0xFF); /*0x492756*/
       v17 = v10; /*0x49275b*/
       if ( (unsigned char)v10 ) /*0x49275f*/
       {
-        IDA_LOWORD(a2) = *((unsigned short *)a1 + 4); /*0x492768*/
+        (a2) = ((a2) & ~0xFFFF) | ((unsigned int)(*((unsigned short *)a1 + 4)) & 0xFFFF); /*0x492768*/
         v14 = (uint16_t)*a3; /*0x492776*/
-        IDA_LOWORD(v14) = (uint16_t)v14 >> 2; /*0x492779*/
+        (v14) = ((v14) & ~0xFFFF) | ((unsigned int)((uint16_t)v14 >> 2) & 0xFFFF); /*0x492779*/
         v10 = a2 & v14; /*0x492781*/
         v15 = a2 & (*(unsigned short *)(a1->m_4 + 2 * v17) >> 2); /*0x492783*/
         a2 = 3 * v10; /*0x492785*/
@@ -6831,10 +6831,10 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
   v19 = (double)a4; /*0x49f47e*/
   v20 = (double)a2[1]; /*0x49f485*/
   Math::SinCos(v16); /*0x49f489*/
-  IDA_LOWORD(v9) = Math::RoundToInt(a3); /*0x49f496*/
+  (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a3)) & 0xFFFF); /*0x49f496*/
   v21 = v9; /*0x49f49d*/
   Math::ArcTan2(v16); /*0x49f4a1*/
-  IDA_LOWORD(v10) = Math::RoundToInt(a3 * v19 + (double)*a2); /*0x49f4af*/
+  (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a3 * v19 + (double)*a2)) & 0xFFFF); /*0x49f4af*/
   ((Coord *)(&v16))->Subtract(v10, v21, v8); /*0x49f4bf*/
   v11 = IDA_HIDWORD(v16); /*0x49f4c4*/
   v12 = v17; /*0x49f4c8*/

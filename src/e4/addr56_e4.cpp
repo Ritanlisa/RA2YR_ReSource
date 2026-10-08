@@ -436,8 +436,8 @@ int sub_568140(int * a1, int a2)
       {
         if ( v12 + v9 * v9 < v13 ) /*0x5681f9*/
         {
-          IDA_LOWORD(v21) = v10 + v19; /*0x56820c*/
-          IDA_HIWORD(v21) = v9 + v20; /*0x568211*/
+          (v21) = ((v21) & ~0xFFFF) | ((unsigned int)(v10 + v19) & 0xFFFF); /*0x56820c*/
+          (v21) = ((v21) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v9 + v20) & 0xFFFF) << 16); /*0x568211*/
           v14 = (unsigned int *)(((int16_t)(v9 + v20) << 9) + (int16_t)(v10 + v19)); /*0x568223*/
           if ( v14 >= (unsigned int *)(0x40000) || (v15 = *(unsigned int **)(dword_87F924 + 4 * v14)) == 0 ) /*0x56823b*/
           {
@@ -1018,9 +1018,9 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
 
   v2 = a2 & 7; /*0x56ed49*/
   v3 = (&dword_89F688)[v2]; /*0x56ed4c*/
-  IDA_LOWORD(v2) = ((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ed62*/
-  IDA_LOWORD(a2) = *(short *)aP0 + v3; /*0x56ed66*/
-  IDA_HIWORD(a2) = v2; /*0x56ed6e*/
+  (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2])) & 0xFFFF); /*0x56ed62*/
+  (a2) = ((a2) & ~0xFFFF) | ((unsigned int)(*(short *)aP0 + v3) & 0xFFFF); /*0x56ed66*/
+  (a2) = ((a2) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v2) & 0xFFFF) << 16); /*0x56ed6e*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56ed7d*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56ed97*/
   {
@@ -1042,15 +1042,15 @@ char globalHelper_06ED40(IUnknown * aP0, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56edde*/
   if ( v7 == dword_ABC1E8 || v7 == dword_AA0E38 ) /*0x56ede9*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( 1)), 0)); /*0x56ee37*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( 1)), 0))) & 0xFF); /*0x56ee37*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56edf3*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundTable2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ee03*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundTable2)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56ee03*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 2 ) /*0x56ee13*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ee25*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56ee25*/
   }
   return v7; /*0x56ee08*/
 }
@@ -1069,9 +1069,9 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
 
   v2 = a2 & 7; /*0x56ee49*/
   v3 = (&dword_89F688)[v2]; /*0x56ee4c*/
-  IDA_LOWORD(v2) = ((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56ee62*/
-  IDA_LOWORD(a2) = *(short *)aP0 + v3; /*0x56ee66*/
-  IDA_HIWORD(a2) = v2; /*0x56ee6e*/
+  (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2])) & 0xFFFF); /*0x56ee62*/
+  (a2) = ((a2) & ~0xFFFF) | ((unsigned int)(*(short *)aP0 + v3) & 0xFFFF); /*0x56ee66*/
+  (a2) = ((a2) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v2) & 0xFFFF) << 16); /*0x56ee6e*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56ee7d*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56ee97*/
   {
@@ -1093,15 +1093,15 @@ char globalHelper_06EE40(IUnknown * aP0, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56eede*/
   if ( v7 == dword_ABC2B4 || v7 == dword_AA1130 ) /*0x56eee9*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( 1)), 0)); /*0x56ef39*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( 1)), 0))) & 0xFF); /*0x56ef39*/
   }
   else if ( v7 == g_TerrainSoundTable2 ) /*0x56eef3*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ef05*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56ef05*/
   }
   else if ( v7 == g_TerrainSoundTable2 + 1 ) /*0x56ef15*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56ef27*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56ef27*/
   }
   return v7; /*0x56ef0a*/
 }
@@ -1120,7 +1120,7 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
 
   v2 = (unsigned int)aP1 & 7; /*0x56f699*/
   v3 = (&dword_89F688)[v2]; /*0x56f69c*/
-  IDA_LOWORD(v2) = ((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56f6b2*/
+  (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(((short *)aP0)[1] + IDA_HIWORD((&dword_89F688)[v2])) & 0xFFFF); /*0x56f6b2*/
   IDA_LOWORD(aP1) = *(short *)aP0 + v3; /*0x56f6b6*/
   IDA_HIWORD(aP1) = v2; /*0x56f6be*/
   v4 = (int16_t)aP1 + ((int16_t)v2 << 9); /*0x56f6cd*/
@@ -1147,15 +1147,15 @@ char globalHelper_06F690(IUnknown * aP0, IUnknown * aP1)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56f733*/
   if ( v7 == dword_ABC1D0 || v7 == dword_AA1540 ) /*0x56f73e*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( 1)), 0)); /*0x56f78c*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( 1)), 0))) & 0xFF); /*0x56f78c*/
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f748*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundConfig)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f758*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainBridgeIndex + g_TerrainSoundConfig)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56f758*/
   }
   else if ( v7 == g_TerrainSoundConfig + 2 ) /*0x56f768*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f77a*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&aP1)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56f77a*/
   }
   return v7; /*0x56f75d*/
 }
@@ -1174,9 +1174,9 @@ char sub_56F7A0(unsigned short * a1, int a2)
 
   v2 = a2 & 7; /*0x56f7a9*/
   v3 = (&dword_89F688)[v2]; /*0x56f7ac*/
-  IDA_LOWORD(v2) = a1[1] + IDA_HIWORD((&dword_89F688)[v2]); /*0x56f7c2*/
-  IDA_LOWORD(a2) = *a1 + v3; /*0x56f7c6*/
-  IDA_HIWORD(a2) = v2; /*0x56f7ce*/
+  (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(a1[1] + IDA_HIWORD((&dword_89F688)[v2])) & 0xFFFF); /*0x56f7c2*/
+  (a2) = ((a2) & ~0xFFFF) | ((unsigned int)(*a1 + v3) & 0xFFFF); /*0x56f7c6*/
+  (a2) = ((a2) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v2) & 0xFFFF) << 16); /*0x56f7ce*/
   v4 = (int16_t)a2 + ((int16_t)v2 << 9); /*0x56f7dd*/
   if ( v4 >= 0x40000 || (v5 = *(unsigned int **)(dword_87F924 + 4 * v4)) == 0 ) /*0x56f7f7*/
   {
@@ -1201,15 +1201,15 @@ char sub_56F7A0(unsigned short * a1, int a2)
   v7 = v5[14] - g_TerrainBridgeIndex + 1; /*0x56f843*/
   if ( v7 == dword_AA1548 || v7 == dword_AA0740 ) /*0x56f84e*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( 1)), 0)); /*0x56f89e*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::UpdateTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( 1)), 0))) & 0xFF); /*0x56f89e*/
   }
   else if ( v7 == g_TerrainSoundConfig ) /*0x56f858*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f86a*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 1)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56f86a*/
   }
   else if ( v7 == g_TerrainSoundConfig + 1 ) /*0x56f87a*/
   {
-    IDA_LOBYTE(v7) = (unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0)); /*0x56f88c*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((unsigned char)(Cell::SetTileType((short *)((IUnknown *)((int16_t *)&a2)), (int)((IUnknown *)( g_TerrainSoundConfig + g_TerrainBridgeIndex + 2)), (int)((IUnknown *)( -1)),(int)(-1), 0))) & 0xFF); /*0x56f88c*/
   }
   return v7; /*0x56f86f*/
 }

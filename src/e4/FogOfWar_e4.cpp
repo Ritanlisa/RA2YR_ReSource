@@ -448,8 +448,8 @@ bool FogOfWar_Get(IUnknown * aP0)
     v3 = (unsigned int)((int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9));
     if ( v3 >= 0x40000 || (v4 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v3))) == 0 ) /*0x58651e*/
     {
-      IDA_LOWORD(v11) =(unsigned int)v8 - v2; /*0x5864fa*/
-      IDA_HIWORD(v11) = v10 - v2; /*0x5864f5*/
+      (v11) = ((v11) & ~0xFFFF) | ((unsigned int)((unsigned int)v8 - v2) & 0xFFFF); /*0x5864fa*/
+      (v11) = ((v11) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v10 - v2) & 0xFFFF) << 16); /*0x5864f5*/
       dword_ABDC74 = v11; /*0x586524*/
       v4 = unk_ABDC50; /*0x586529*/
     }
@@ -460,8 +460,8 @@ bool FogOfWar_Get(IUnknown * aP0)
   else
   {
     v9 = (unsigned int)(*aP0 / 256);
-    IDA_HIWORD(v12) = aP0[1] / 256 - v1 / 2; /*0x586580*/
-    IDA_LOWORD(v12) = v9 - v1 / 2; /*0x586585*/
+    (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(aP0[1] / 256 - v1 / 2) & 0xFFFF) << 16); /*0x586580*/
+    (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(v9 - v1 / 2) & 0xFFFF); /*0x586585*/
     v6 = (int16_t)v12 + (IDA_SHIWORD(v12) << 9); /*0x586593*/
     if ( v6 >= 0x40000 || (NeighbourContent = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x5865a9*/
     {

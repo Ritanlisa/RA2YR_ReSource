@@ -279,7 +279,7 @@ int GameLobby::DlgProc(int a2, HWND hWnd, UINT a4, WPARAM a5, unsigned int a6)  
       if ( hWnda ) /*0x5e1da8*/
       {
         v10 = (unsigned __int16)a5; /*0x5e1dbd*/
-        v11 = IDA_HIWORD(a5); /*0x5e1dc3*/
+        v11 = (((unsigned int)(a5) >> 16) & 0xFFFF); /*0x5e1dc3*/
         GetWindowRect((HWND)this, &Rect); /*0x5e1dc5*/
         StringCSF = &g_TypeClass_DefaultString; /*0x5e1dd9*/
         v44.y = v11 - Rect.top; /*0x5e1dde*/
@@ -1110,7 +1110,7 @@ int GameResult::CalcScore()
       if ( v3 >= nextArrayIndex ) /*0x4c625d*/
         v3 = nextArrayIndex; /*0x4c6261*/
     }
-    IDA_LOWORD(v4) = Math::RoundToInt(v3); /*0x4c6265*/
+    (v4) = ((v4) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v3)) & 0xFFFF); /*0x4c6265*/
     v5 = v4; /*0x4c6270*/
     HouseClass::AddPower((HouseClass *)dword_A83D4C, v4); /*0x4c6273*/
     *(unsigned int *)&dword_A83D4C->__pad_140[156] += v5; /*0x4c6285*/
@@ -2702,7 +2702,7 @@ void GameSetup_DisplayPlayers()
       v41 = 0; /*0x5db0e1*/
       v40 = v10 - 1; /*0x5db0eb*/
       v38 = 0; /*0x5db0f1*/
-      IDA_LOBYTE(v42) = 0; /*0x5db0f9*/
+      (v42) = ((v42) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x5db0f9*/
       v39 = 1 << (v10 - 1); /*0x5db0fe*/
       Block = (void *)RA2_OPNEW(4 * v39); /*0x5db113*/
       memset(Block, 0, 4 * v39); /*0x5db117*/
@@ -2887,7 +2887,7 @@ void GameSetup::CompareWideString()
       do /*0x5e26ae*/
       {
         v4 = (unsigned int)v2 + v3 + WideString::GetOrEmpty((WideString *)this)[v3]; /*0x5e2698*/
-        v2 = (const wchar_t *)(IDA_HIBYTE(v4) ^ (v4 << 8)); /*0x5e26a4*/
+        v2 = (const wchar_t *)((((unsigned int)(v4) >> 24) & 0xFF) ^ (v4 << 8)); /*0x5e26a4*/
         ++v3; /*0x5e26a6*/
       }
       while ( v3 < (unsigned int)WideString::Length((WideString *)this) ); /*0x5e26ae*/
@@ -5355,10 +5355,10 @@ void LoadScreen::RenderLoop()
       }
       if ( v214 == -1 ) /*0x4b9136*/
   LABEL_364:
-        IDA_LOBYTE(v326[1]) = 1; /*0x4b90f3*/
+        (v326[1]) = ((v326[1]) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x4b90f3*/
       else
-        IDA_LOBYTE(v326[1]) = *((unsigned int *)dword_A8B230[377].vtable3 + v214) < *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b914a*/
-                                                                                    + 4 * v214);
+        (v326[1]) = ((v326[1]) & ~0xFF) | ((unsigned int)(*((unsigned int *)dword_A8B230[377].vtable3 + v214) < *(unsigned int *)(dword_A8B230[376].abstractFlags /*0x4b914a*/
+                                                                                    + 4 * v214)) & 0xFF);
       if ( v207 == v340 && !v295 ) /*0x4b910a*/
       {
         v215 = v254; /*0x4b9154*/
@@ -5377,7 +5377,7 @@ void LoadScreen::RenderLoop()
           (*(void (__thiscall **)(unsigned int, int))(*(unsigned int *)Block[v270] + 108))(Block[v270], 1); /*0x4b917d*/
         if ( v211 != -1 ) /*0x4b9183*/
         {
-          if ( IDA_LOBYTE(v326[1]) ) /*0x4b9192*/
+          if ( ((unsigned int)(v326[1]) & 0xFF) ) /*0x4b9192*/
           {
             v216 = 255 >> g_BitMask_Blue << g_BitMask_Green; /*0x4b91bb*/
             v217 = 0; /*0x4b91bd*/
@@ -5685,14 +5685,14 @@ void LoadScreen::RenderProgressBackground()
         a4,
         v20,
         ((unsigned __int8)v18 >> g_BitShift_Green_0 << g_BitShift_Red)
-      | (IDA_HIBYTE(v18) >> g_BitMask_Blue << g_BitMask_Green)
+      | ((((unsigned int)(v18) >> 24) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
       | (v12 >> g_BitMask_Red << g_BitShift_Blue));
     }
     v21[0] = v19; /*0x643538*/
     v21[1] = IDA_HIDWORD(a2) + 3; /*0x64353c*/
     v22 = v7; /*0x643544*/
     v23 = v8; /*0x643548*/
-    IDA_LOWORD(v14) = Math::RoundToInt((double)v7 * a3); /*0x64354c*/
+    (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)v7 * a3)) & 0xFFFF); /*0x64354c*/
     v22 = v14; /*0x643551*/
     a3 = 0.0; /*0x64357f*/
     DrawToSurfaceSHP( /*0x643594*/
@@ -5732,7 +5732,7 @@ void LoadScreen_Render()
     struct tagRECT Rect; // [esp+10h] [ebp-10h] BYREF
     double v18; // [esp+24h] [ebp+4h]
 
-    IDA_LOBYTE(result) = *(unsigned char *)(a1 + 96); /*0x643ae7*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(*(unsigned char *)(a1 + 96)) & 0xFF); /*0x643ae7*/
     if ( (unsigned char)result ) /*0x643aec*/
     {
       result = *(unsigned int *)(a1 + 84); /*0x643af2*/
@@ -5757,8 +5757,8 @@ void LoadScreen_Render()
           if ( *(unsigned __int64 *)&a4 == IDA___PAIR64__(IDA_LODWORD(a4), -1) ) /*0x643b83*/
           {
             v9 = *(unsigned int *)(a1 + 108); /*0x643b8c*/
-            IDA_LODWORD(v16) = *(unsigned int *)(a1 + 104); /*0x643b8f*/
-            IDA_HIDWORD(v16) = v9; /*0x643b93*/
+            (v16) = (unsigned int)(*(unsigned int *)(a1 + 104)); /*0x643b8f*/
+            (v16) = ((v16) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(v9) << 32); /*0x643b93*/
           }
           v10 = *(unsigned char *)(a1 + 97); /*0x643b97*/
           v11 = *(unsigned int *)(a1 + 80); /*0x643b9a*/
@@ -5801,7 +5801,7 @@ void LoadScreen_Render()
               while ( v11 < *(char *)(a1 + 97) ); /*0x643c36*/
             }
           }
-          return Frame::Present((int)g_DSurface_Hidden, a2, a3, v11, 0, v14, v15, (int *)IDA_LODWORD(v16)); /*0x643c42*/
+          return Frame::Present((int)g_DSurface_Hidden, a2, a3, v11, 0, v14, v15, (int *)((unsigned int)(v16))); /*0x643c42*/
         }
       }
     }
@@ -6031,7 +6031,7 @@ void LoadingScreen::Render()
         ColorScheme = (Color *)LoadingScreen::GetColorScheme((LoadingScreen *)&((stru_AC4B30_host *)(void *)&stru_AC4B30)->__pad_EC[828]); /*0x553608*/
         v37 = Color::ConvertToRGB(ColorScheme + 194, (int)&v80); /*0x553618*/
         v81.LoadingScreen_field_0x18 = ((unsigned __int8)*(unsigned short *)v37 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x55367f*/
-                                     | ((unsigned __int8)IDA_HIBYTE(*(unsigned short *)v37) >> g_BitMask_Blue << g_BitMask_Green)
+                                     | ((unsigned __int8)(((unsigned int)(*(unsigned short *)v37) >> 24) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
                                      | (*(unsigned __int8 *)(v37 + 2) >> g_BitMask_Red << g_BitShift_Blue);
         Tactical::Radar_Render(*((Tactical **)this + 24), PlayerSide, (int)this, v30, (int)v62, v65, v68, v71); /*0x553687*/
         if ( v33 ) /*0x55368e*/
@@ -6136,7 +6136,7 @@ void LoadingScreen::Render()
           &v81.LoadingScreen_field_0x20,
           v46,
           (unsigned __int8)*(unsigned short *)v47
-        | (((unsigned __int8)IDA_HIBYTE(*(unsigned short *)v47) | ((unsigned __int8)v47[2] << 8)) << 8),
+        | (((unsigned __int8)(((unsigned int)(*(unsigned short *)v47) >> 24) & 0xFF) | ((unsigned __int8)v47[2] << 8)) << 8),
           2,
           12,
           0,
@@ -6542,7 +6542,7 @@ void LoadingScreen::Render()
                                       &v81.LoadingScreen_field_0x20,
                                       v74,
                                       (unsigned __int8)*(unsigned short *)v27
-                                    | (((unsigned __int8)IDA_HIBYTE(*(unsigned short *)v27) | ((unsigned __int8)v27[2] << 8)) << 8),
+                                    | (((unsigned __int8)(((unsigned int)(*(unsigned short *)v27) >> 24) & 0xFF) | ((unsigned __int8)v27[2] << 8)) << 8),
                                       0,
                                       12,
                                       0,
@@ -7898,7 +7898,7 @@ void SyncDelayClass::ProcessNetworkSync()
       }
       goto LABEL_22; /*0x55df71*/
     }
-    IDA_LOBYTE(v2) = (*(int (__thiscall **)(int, int))(*(unsigned int *)v7 + 20))(v7, v3); /*0x55df82*/
+    (v2) = ((v2) & ~0xFF) | ((unsigned int)((*(int (__thiscall **)(int, int))(*(unsigned int *)v7 + 20))(v7, v3)) & 0xFF); /*0x55df82*/
     if ( !(unsigned char)v2 ) /*0x55df87*/
     {
       v13 = v3; /*0x55df8e*/
@@ -7927,10 +7927,10 @@ void SyncDelayClass::ProcessNetworkSync()
       switch ( v4 ) /*0x55e07c*/
       {
         case 27: /*0x55e07c*/
-          IDA_LOBYTE(v2) = UI_Create(v12); /*0x55e07e*/
+          (v2) = ((v2) & ~0xFF) | ((unsigned int)(UI_Create(v12)) & 0xFF); /*0x55e07e*/
           break;
         case 9: /*0x55e07c*/
-          IDA_LOBYTE(v2) = Network_Process_6ABC40(); /*0x55e094*/
+          (v2) = ((v2) & ~0xFF) | ((unsigned int)(Network_Process_6ABC40()) & 0xFF); /*0x55e094*/
           break;
         case 37: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e0ab*/
@@ -7951,17 +7951,17 @@ void SyncDelayClass::ProcessNetworkSync()
         case 38: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e10b*/
           if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e110*/
-            IDA_LOBYTE(v2) = g_MissionQueueFrame.waypoints[490] & 0xFE; /*0x55e112*/
+            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] & 0xFE) & 0xFF); /*0x55e112*/
           else
-            IDA_LOBYTE(v2) = g_MissionQueueFrame.waypoints[490] | 1; /*0x55e120*/
+            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] | 1) & 0xFF); /*0x55e120*/
           *(unsigned int *)&g_MissionQueueFrame.waypoints[490] = v2; /*0x55e116*/
           break;
         case 40: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e139*/
           if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e13e*/
-            IDA_LOBYTE(v2) = g_MissionQueueFrame.waypoints[490] & 0xEF; /*0x55e140*/
+            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] & 0xEF) & 0xFF); /*0x55e140*/
           else
-            IDA_LOBYTE(v2) = g_MissionQueueFrame.waypoints[490] | 0x10; /*0x55e14e*/
+            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] | 0x10) & 0xFF); /*0x55e14e*/
           *(unsigned int *)&g_MissionQueueFrame.waypoints[490] = v2; /*0x55e144*/
           break;
       }
@@ -7970,7 +7970,7 @@ void SyncDelayClass::ProcessNetworkSync()
     {
       if ( (*(unsigned __int8 (__thiscall **)(int, SyncDelayClass))(*(unsigned int *)v7 + 24))(v7, *this) ) /*0x55e006*/
         (*(void (__thiscall **)(int, SyncDelayClass))(*(unsigned int *)v7 + 32))(v7, *this); /*0x55e015*/
-      IDA_LOBYTE(v2) = (*(int (__thiscall **)(int, SyncDelayClass))(*(unsigned int *)v7 + 28))(v7, *this); /*0x55e020*/
+      (v2) = ((v2) & ~0xFF) | ((unsigned int)((*(int (__thiscall **)(int, SyncDelayClass))(*(unsigned int *)v7 + 28))(v7, *this)) & 0xFF); /*0x55e020*/
       if ( (unsigned char)v2 ) /*0x55e025*/
       {
         v10 = 0; /*0x55e031*/

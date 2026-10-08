@@ -319,7 +319,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
   int v18; // [esp+28h] [ebp+8h]
   int v19; // [esp+28h] [ebp+8h]
 
-  IDA_LOBYTE(v3) = on_bridge; /*0x47e8a0*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(on_bridge) & 0xFF); /*0x47e8a0*/
   if ( on_bridge ) /*0x47e8ae*/
     v5 = this->altObject; /*0x47e8b0*/
   else
@@ -369,7 +369,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v3 = (*(int (**)(unsigned int *))(*content + 44))(content); /*0x47e9e7*/
     if ( v3 != 15 ) /*0x47e9ee*/
     {
-      IDA_LOBYTE(v3) = (*(int (**)(unsigned int *))(*content + 192))(content); /*0x47e9f9*/
+      (v3) = ((v3) & ~0xFF) | ((unsigned int)((*(int (**)(unsigned int *))(*content + 192))(content)) & 0xFF); /*0x47e9f9*/
       if ( (unsigned char)v3 ) /*0x47ea01*/
       {
         if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
@@ -388,7 +388,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v16 = (int)(content[40]);
           v17 = (int)(content[41]);
         }
-        IDA_LOBYTE(v3) = (*(int (**)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
+        (v3) = ((v3) & ~0xFF) | ((unsigned int)((*(int (**)(unsigned int *, int *))(v11 + 240))(content, &v15)) & 0xFF); /*0x47ea43*/
       }
     }
   }
@@ -565,13 +565,13 @@ int CellClass::Unshroud()
   int result; // eax
 
   copyFlags = this->copyFlags; /*0x4876f0*/
-  IDA_LOBYTE(copyFlags) = copyFlags | 0x18; /*0x4876f6*/
+  (copyFlags) = ((copyFlags) & ~0xFF) | ((unsigned int)(copyFlags | 0x18) & 0xFF); /*0x4876f6*/
   this->copyFlags = copyFlags; /*0x4876f8*/
   result = this->shroudCounter; /*0x4876fe*/
   if ( result > 0 ) /*0x487706*/
   {
     result = this->flags[0]; /*0x487708*/
-    IDA_LOBYTE(result) = result | 0x20; /*0x48770e*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(result | 0x20) & 0xFF); /*0x48770e*/
     this->flags[0] = result; /*0x487710*/
   }
   return result; /*0x487716*/
@@ -791,8 +791,8 @@ void CellClass::ReduceTiberium(int amount)
     for ( i = 0; i < 8; ++i ) /*0x480bf6*/
     {
       v20 = i & 7; /*0x480bfa*/
-      IDA_LOWORD(v23) = *(unsigned short *)v18 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c1b*/
-      IDA_HIWORD(v23) = *((unsigned short *)v18 + 1) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c24*/
+      (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v18 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v20 + 82])) & 0xFFFF); /*0x480c1b*/
+      (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(*((unsigned short *)v18 + 1) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82])) & 0xFFFF) << 16); /*0x480c24*/
       v23 = v23; /*0x480c33*/
       if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&v23) ) /*0x480c37*/
       {
@@ -862,6 +862,6 @@ int CellClass::IsTunnelEntrance()
 {
   int16_t v1; // ax
 
-  v1 = IDA_HIWORD(((unsigned int *)this)[0]); /*0x484ab0*/
+  v1 = (((unsigned int)(((unsigned int *)this)[0]) >> 16) & 0xFFFF); /*0x484ab0*/
   return v1 >= 0 && v1 < ((unsigned int *)&FootClass_Array)[0] && ((unsigned int *)this)[3] == 10; /*0x484ad7*/
 }

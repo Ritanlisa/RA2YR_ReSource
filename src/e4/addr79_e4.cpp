@@ -1532,7 +1532,7 @@ int WOL_NegotiateScenario(char a1)
   Flagged = GameSettings::FindFlagged(); /*0x795d12*/
   if ( !Flagged || (v3 = ((String *)((char **)&dword_B73E40))->GetOrEmpty_Alt(), _strcmpi(Flagged + 36, v3)) ) /*0x795d2b*/
   {
-    IDA_LOBYTE(v1) = dword_A8BB08; /*0x79616e*/
+    (v1) = ((v1) & ~0xFF) | ((unsigned int)(dword_A8BB08) & 0xFF); /*0x79616e*/
     if ( FindAndValidateMap( (ObjectClass *)(&byte_A8B8E0), dword_A8BB04, (const char *)(&byte_A8BAE2), v1, 1) ) /*0x796187*/
     {
       memset( (void *)(v53), 0, sizeof(v53)); /*0x7961a8*/
@@ -2082,7 +2082,7 @@ CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
           (*(void (**)(LONG, HWND, unsigned int))(*(unsigned int *)WindowLongA + 4))( WindowLongA, (HWND)((HWND)((HWND)((HWND)(v5)))), 0); /*0x796d83*/
           return 0; /*0x796d8c*/
         }
-        if ( (uint16_t)v7 == 1008 && IDA_HIWORD(v7) == 1 ) /*0x796d45*/
+        if ( (uint16_t)v7 == 1008 && (((unsigned int)(v7) >> 16) & 0xFFFF) == 1 ) /*0x796d45*/
         {
           v18 = SendMessageA( (HWND)(v4), 0x188u, 0, 0) != -1; /*0x796d63*/
           v13 = GetDlgItem(v5, 1); /*0x796d66*/
@@ -3802,7 +3802,7 @@ if ( !(*(int (**)(LPVOID, int, const char **, const char **))(*(unsigned int *)p
       if ( hCtl > 32 )
       {
         ((DeleteAndZero *)(void **)&g_WebBrowser)->Alt2();
-        IDA_LOBYTE(hCtl) = 0;
+        (hCtl) = ((hCtl) & ~0xFF) | ((unsigned int)(0) & 0xFF);
         ((String *)((char **)&g_WebBrowser))->Reassign((const char **)&hWnd);
         goto LABEL_106;
       }
@@ -3810,7 +3810,7 @@ if ( !(*(int (**)(LPVOID, int, const char **, const char **))(*(unsigned int *)p
     ((String *)((void **)&g_WebBrowser))->Assign_Alt( (const char *)(lParam));
     ((String *)((void **)&g_WebBrowserConfig))->Assign_Alt( (const char *)(v88));
     IDA_LOBYTE(dword_84A238) = 0;
-    IDA_LOBYTE(hCtl) = 1;
+    (hCtl) = ((hCtl) & ~0xFF) | ((unsigned int)(1) & 0xFF);
 LABEL_106:
     char * v59 = ((String *)((char **)&g_WebBrowser))->GetOrEmpty_Alt();
     SendMessageA( (HWND)(v54), 0x4B4u, 0, (LPARAM)((LPARAM)((LPARAM)v59)));
@@ -5043,7 +5043,7 @@ int WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
     }
     if ( (uint16_t)v6 == 1344 ) /*0x79d849*/
     {
-      v17 = IDA_HIWORD(v6); /*0x79d985*/
+      v17 = (((unsigned int)(v6) >> 16) & 0xFFFF); /*0x79d985*/
       switch ( v17 ) /*0x79d98e*/
       {
         case 0x300u: /*0x79d98e*/
@@ -5214,7 +5214,7 @@ int WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
     }
     if ( (uint16_t)a3 == 1344 ) /*0x79e0b0*/
     {
-      if ( IDA_HIWORD(a3) ) /*0x79e42b*/
+      if ( (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x79e42b*/
       {
         unknown_libname_73( (void *)(v24)); /*0x79e438*/
         GetDialogText( (HWND)(a4), (String *)v24); /*0x79e443*/
@@ -6660,19 +6660,19 @@ short sub_793710(int a1, int a2, int a3, int a4)
 {
   int v4; // esi
 
-  IDA_LOWORD(v4) = a1 + a2; /*0x79371c*/
+  (v4) = ((v4) & ~0xFFFF) | ((unsigned int)(a1 + a2) & 0xFFFF); /*0x79371c*/
   if ( a4 != 1 ) /*0x79371f*/
   {
     if ( a4 == 2 ) /*0x793724*/
     {
-      IDA_LOWORD(v4) = a2 + 2 * a1; /*0x793726*/
+      (v4) = ((v4) & ~0xFFFF) | ((unsigned int)(a2 + 2 * a1) & 0xFFFF); /*0x793726*/
     }
     else if ( a4 <= 1 ) /*0x79372e*/
     {
       if ( a4 < 0 ) /*0x793753*/
       {
         if ( a4 == -100 ) /*0x793758*/
-          IDA_LOWORD(v4) = a2 + 100 * a1; /*0x793760*/
+          (v4) = ((v4) & ~0xFFFF) | ((unsigned int)(a2 + 100 * a1) & 0xFFFF); /*0x793760*/
         else
           v4 = a2 + a1 % 2 - a4 * (a1 / 2); /*0x793780*/
       }
@@ -6811,9 +6811,9 @@ char sub_798360()
   {
     cbData = 512; /*0x7983a2*/
     v1 = RegQueryValueExA(phkResult, g_INI_Key_Community, 0, &Type, Data, &cbData); /*0x7983b0*/
-    IDA_LOBYTE(v0) = RegCloseKey(phkResult); /*0x7983b7*/
+    (v0) = ((v0) & ~0xFF) | ((unsigned int)(RegCloseKey(phkResult)) & 0xFF); /*0x7983b7*/
     if ( !v1 ) /*0x7983c0*/
-      IDA_LOBYTE(v0) = OpenURLWOL( (INIClass *)((const char *)Data), 0); /*0x7983c8*/
+      (v0) = ((v0) & ~0xFF) | ((unsigned int)(OpenURLWOL( (INIClass *)((const char *)Data), 0)) & 0xFF); /*0x7983c8*/
   }
   return v0; /*0x7983cd*/
 }

@@ -708,7 +708,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     ((Vector *)((int)v55))->Clear((int)((Vector *)((int)v55))); /*0x6947c6*/
     *(unsigned int *)v54.CDFileClass = (unsigned int)(&off_7E1668); /*0x6947cf*/
     result = ((BufferIOFileClass *)((BufferIOFileClass *)&v54))->Dtor(); /*0x6947d7*/
-    IDA_LOBYTE(result) = 0; /*0x6947dc*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6947dc*/
     return result; /*0x6947e8*/
   }
   Size = CCFileClass::GetSize( &v54); /*0x6947f4*/
@@ -1199,18 +1199,18 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
     switch ( (int16_t)a3 ) /*0x695a7f*/
     {
       case 1628: /*0x695a7f*/
-        if ( IDA_HIWORD(a3) ) /*0x695b69*/
+        if ( (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x695b69*/
         {
           SendMessageA( (HWND)(a4), 0xF1u, 1u, 0); /*0x695b78*/
           SendDlgItemMessageA(hWnd, 1627, 0xF1u, 0, 0); /*0x695b8d*/
         }
         return 0; /*0x695b8d*/
       case 1629: /*0x695a7f*/
-        if ( IDA_HIWORD(a3) != 1281 ) /*0x695b2d*/
+        if ( (((unsigned int)(a3) >> 16) & 0xFFFF) != 1281 ) /*0x695b2d*/
           return 0; /*0x695b2d*/
         goto LABEL_55; /*0x695b2d*/
       case 1630: /*0x695a7f*/
-        if ( IDA_HIWORD(a3) != 2 ) /*0x695ab1*/
+        if ( (((unsigned int)(a3) >> 16) & 0xFFFF) != 2 ) /*0x695ab1*/
           return 0; /*0x695ab1*/
         if ( SendMessageA( (HWND)(a4), 0x18Bu, 0, 0) <= 0 ) /*0x695acb*/
           return 0; /*0x695acb*/
@@ -1227,17 +1227,17 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
         SetFocus(v20); /*0x695b15*/
         return 0; /*0x695b21*/
       case 1631: /*0x695a7f*/
-        if ( IDA_HIWORD(a3) != 1281 && IDA_HIWORD(a3) != 512 ) /*0x695a95*/
+        if ( (((unsigned int)(a3) >> 16) & 0xFFFF) != 1281 && (((unsigned int)(a3) >> 16) & 0xFFFF) != 512 ) /*0x695a95*/
           return 0; /*0x695a95*/
         DlgProcLoadGame_Load(WindowLongA); /*0x695a9d*/
         return 0; /*0x695aa8*/
       case 1632: /*0x695a7f*/
-        if ( IDA_HIWORD(a3) ) /*0x695b54*/
+        if ( (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x695b54*/
           return 0; /*0x695b57*/
         DlgProcLoadGame_Load_696C40((gamemd::ObjectClass *)(WindowLongA)); /*0x695b5b*/
         return 0; /*0x695b66*/
       case 1633: /*0x695a7f*/
-        if ( IDA_HIWORD(a3) ) /*0x695b3f*/
+        if ( (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x695b3f*/
           return 0; /*0x695b42*/
   LABEL_55:
         DlgProcLoadGame_Load_696AE0((gamemd::ObjectClass *)(WindowLongA)); /*0x695b2f*/
@@ -1250,7 +1250,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   }
   if ( (uint16_t)a3 == 1627 ) /*0x695819*/
   {
-    if ( IDA_HIWORD(a3) ) /*0x695a3a*/
+    if ( (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x695a3a*/
     {
       SendMessageA( (HWND)(a4), 0xF1u, 1u, 0); /*0x695a4d*/
       SendDlgItemMessageA(hWnd, 1628, 0xF1u, 0, 0); /*0x695a62*/
@@ -1265,14 +1265,14 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
       case 0x3EBu: /*0x695826*/
         goto LABEL_65; /*0x695826*/
       case 1u: /*0x695826*/
-        if ( !IDA_HIWORD(a3) && (uint8_t)ApplyModemConfigSettings((gamemd::ObjectClass *)(WindowLongA)) == 1 ) /*0x695886*/
+        if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) && (uint8_t)ApplyModemConfigSettings((gamemd::ObjectClass *)(WindowLongA)) == 1 ) /*0x695886*/
         {
           *(unsigned int *)(WindowLongA + 4) = 1; /*0x69588c*/
           return 0; /*0x695899*/
         }
         return 0; /*0x695886*/
       case 2u: /*0x695826*/
-        if ( !IDA_HIWORD(a3) ) /*0x69585b*/
+        if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x69585b*/
         {
           *(unsigned int *)(WindowLongA + 4) = 2; /*0x695864*/
           return 0; /*0x695871*/
@@ -1280,7 +1280,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
         return 0; /*0x69585e*/
       case 0x3EAu: /*0x695826*/
   LABEL_65:
-        if ( IDA_HIWORD(a3) ) /*0x695839*/
+        if ( (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x695839*/
         {
           SendMessageA( (HWND)(a4), 0xF1u, 1u, 0); /*0x69584c*/
           return 0; /*0x695858*/
@@ -1291,7 +1291,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   }
   if ( (uint16_t)a3 == 1623 ) /*0x6958a1*/
   {
-    if ( IDA_HIWORD(a3) != 1 ) /*0x695998*/
+    if ( (((unsigned int)(a3) >> 16) & 0xFFFF) != 1 ) /*0x695998*/
       return 0; /*0x695998*/
     v11 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x69599e*/
     wParamb = SendMessageA( (HWND)(a4), 0x147u, 0, 0); /*0x6959b9*/
@@ -1308,7 +1308,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   }
   if ( (uint16_t)a3 != 1625 ) /*0x6958aa*/
   {
-    if ( (uint16_t)a3 == 1626 && (IDA_HIWORD(a3) == 1281 || IDA_HIWORD(a3) == 512) ) /*0x6958c6*/
+    if ( (uint16_t)a3 == 1626 && ((((unsigned int)(a3) >> 16) & 0xFFFF) == 1281 || (((unsigned int)(a3) >> 16) & 0xFFFF) == 512) ) /*0x6958c6*/
     {
       v9 = GetDlgItem(*(HWND *)WindowLongA, 1626); /*0x6958d4*/
       v10 = v9; /*0x6958da*/

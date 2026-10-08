@@ -31,6 +31,14 @@ struct BuildingAnimFrameStruct
 
 class BuildingTypeClass : public TechnoTypeClass
 {
+    // --- g57w20m17 supply (ml truth) ---
+public:
+    int OwnerFlags;              // +0x57C (ml 1404 OwnerFlags int)
+    bool q5EC;                   // +0x5EC (ml 1516 q5EC bool)
+    bool q5ED;                   // +0x5ED (ml 1517 q5ED bool)
+
+
+
 public:
     static constexpr AbstractType AbsID = AbstractType::BuildingType;
 

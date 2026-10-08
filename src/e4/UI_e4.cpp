@@ -745,7 +745,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 v6 = (unsigned int)(v20);
                 v17 = v16 + v12 * (uint16_t)(v7 & g_CreditsScreenState); /*0x621963*/
                 v10 = v21; /*0x621965*/
-                IDA_LOWORD(v14) = v15 | v14; /*0x621969*/
+                (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(v15 | v14) & 0xFFFF); /*0x621969*/
                 v7 = a3; /*0x62196b*/
                 *v21 = ((unsigned int)(v17)>> 8) | v14; /*0x621974*/
                 v5 = aP1; /*0x621977*/
@@ -1222,7 +1222,7 @@ char sub_63AB00(int a1, int a2)
 {
   int v2; // eax
 
-  IDA_LOBYTE(v2) = byte_AC4CF4; /*0x63ab00*/
+  (v2) = ((v2) & ~0xFF) | ((unsigned int)(byte_AC4CF4) & 0xFF); /*0x63ab00*/
   byte_AC4CB0 = 0; /*0x63ab09*/
   if ( byte_AC4CF4 ) /*0x63ab0f*/
   {
@@ -1856,7 +1856,7 @@ char sub_732CC0()
 {
   int v0; // eax
 
-  IDA_LOBYTE(v0) = byte_B0FE65; /*0x732cc0*/
+  (v0) = ((v0) & ~0xFF) | ((unsigned int)(byte_B0FE65) & 0xFF); /*0x732cc0*/
   if ( byte_B0FE65 ) /*0x732cc7*/
   {
     byte_B0FE65 = 0; /*0x732cc9*/
@@ -1864,7 +1864,7 @@ char sub_732CC0()
     if ( v0 <= 500 ) /*0x732ce6*/
     {
       SelectAllOfType(); /*0x732ce8*/
-      IDA_LOBYTE(v0) = ((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw((int)((MapClass *)((int)(&dword_87F7E8))), 1); /*0x732cf4*/
+      (v0) = ((v0) & ~0xFF) | ((unsigned int)(((MapClass *)((int)(&dword_87F7E8)))->MarkForRedraw((int)((MapClass *)((int)(&dword_87F7E8))), 1)) & 0xFF); /*0x732cf4*/
     }
   }
   return v0; /*0x732cf9*/
@@ -1891,8 +1891,8 @@ unsigned short sub_734120()
   v4 = *v0; /*0x734150*/
   v1 = v4; /*0x73414e*/
   dword_845558 = timeGetTime(); /*0x73415d*/
-  result = IDA_HIWORD(v4); /*0x734162*/
-  if ( IDA___PAIR32__(IDA_HIWORD(v4), v1) != word_B0FDF0 ) /*0x734167*/
+  result = (((unsigned int)(v4) >> 16) & 0xFFFF); /*0x734162*/
+  if ( IDA___PAIR32__((((unsigned int)(v4) >> 16) & 0xFFFF), v1) != word_B0FDF0 ) /*0x734167*/
   {
     v5 = ((int16_t)v1 << 8) + 128; /*0x73418c*/
     v6 = (IDA_SHIWORD(v4) << 8) + 128; /*0x73419c*/

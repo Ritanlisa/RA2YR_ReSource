@@ -239,9 +239,9 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
       *v8 = *v23; /*0x718e32*/
       v6[11] = v23[1]; /*0x718e3b*/
       v6[12] = v23[2]; /*0x718e41*/
-      IDA_LOWORD(v68) = *v8 / 256; /*0x718e52*/
+      (v68) = ((v68) & ~0xFFFF) | ((unsigned int)(*v8 / 256) & 0xFFFF); /*0x718e52*/
       v24 = (int *)v6[3]; /*0x718e63*/
-      IDA_HIWORD(v68) = v6[11] / 256; /*0x718e69*/
+      (v68) = ((v68) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v6[11] / 256) & 0xFFFF) << 16); /*0x718e69*/
       *(unsigned int *)v71 = v68; /*0x718e76*/
       v25 = *v24; /*0x718e7a*/
       v26 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v71)); /*0x718e82*/

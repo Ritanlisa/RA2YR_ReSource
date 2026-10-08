@@ -301,11 +301,11 @@ int _filbuf(MouseClass * aP0)
       return -1; /*0x7d0715*/
     if ( (flag & 2) != 0 ) /*0x7d071d*/
     {
-      IDA_LOBYTE(flag) = flag | 0x20; /*0x7d071f*/
+      (flag) = ((flag) & ~0xFF) | ((unsigned int)(flag | 0x20) & 0xFF); /*0x7d071f*/
       (((_iobuf_msvc6 *)File)->_flag) = flag; /*0x7d0721*/
       return -1; /*0x7d07da*/
     }
-    IDA_LOBYTE(flag) = flag | 1; /*0x7d0729*/
+    (flag) = ((flag) & ~0xFF) | ((unsigned int)(flag | 1) & 0xFF); /*0x7d0729*/
     (((_iobuf_msvc6 *)File)->_flag) = flag; /*0x7d072f*/
     if ( (flag & 0x10C) != 0 ) /*0x7d0732*/
       (((_iobuf_msvc6 *)File)->_ptr) = (((_iobuf_msvc6 *)File)->_base); /*0x7d0740*/
@@ -897,7 +897,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
   if ( !v9 ) /*0x7d11ae*/
     return 0; /*0x7d11ae*/
   v11 = 2 * v9 + 3; /*0x7d11ba*/
-  IDA_LOBYTE(v11) = v11 & 0xFC; /*0x7d11bd*/
+  (v11) = ((v11) & ~0xFF) | ((unsigned int)(v11 & 0xFC) & 0xFF); /*0x7d11bd*/
   v12 = alloca(v11); /*0x7d11bf*/
   ms_exc.old_esp = (DWORD)v18; /*0x7d11c4*/
   lpWideCharStr = (LPWSTR)((unsigned int)v18); /*0x7d11c9*/
@@ -919,7 +919,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
   else
   {
     v15 = 2 * v13 + 3; /*0x7d126e*/
-    IDA_LOBYTE(v15) = v15 & 0xFC; /*0x7d1271*/
+    (v15) = ((v15) & ~0xFF) | ((unsigned int)(v15 & 0xFC) & 0xFF); /*0x7d1271*/
     v16 = alloca(v15); /*0x7d1273*/
     ms_exc.old_esp = (DWORD)v18; /*0x7d1278*/
     v21 = v18; /*0x7d127d*/
@@ -953,18 +953,18 @@ int _isctype(int C, int Type)
     }
     if ( *((char *)off_87C590 + 2 * (((C) >> 8) & 0xFF) + 1) >= 0 ) /*0x7d1344*/
     {
-      IDA_LOWORD(SrcStr) = (unsigned __int8)C; /*0x7d1358*/
+      (SrcStr) = ((SrcStr) & ~0xFFFF) | ((unsigned int)((unsigned __int8)C) & 0xFFFF); /*0x7d1358*/
       result = __crtGetStringTypeA(1u, (LPCSTR)&SrcStr, 1, (LPWORD)&C + 1, 0, 0, 1); /*0x7d136f*/
     }
     else
     {
-      IDA_LOBYTE(SrcStr) = (((C) >> 8) & 0xFF); /*0x7d134a*/
+      (SrcStr) = ((SrcStr) & ~0xFF) | ((unsigned int)((((C) >> 8) & 0xFF)) & 0xFF); /*0x7d134a*/
       *(unsigned short *)((char *)&SrcStr + 1) = (unsigned __int8)C; /*0x7d134d*/
       result = __crtGetStringTypeA(1u, (LPCSTR)&SrcStr, 2, (LPWORD)&C + 1, 0, 0, 1); /*0x7d1352*/
     }
     if ( result ) /*0x7d1379*/
     {
-      v3 = IDA_HIWORD(C); /*0x7d137d*/
+      v3 = (((unsigned int)(C) >> 16) & 0xFFFF); /*0x7d137d*/
       return Type & v3; /*0x7d137d*/
     }
     return result; /*0x7d137b*/
@@ -1881,7 +1881,7 @@ return (AbstractClass **)v51; /*0x7d21ef*/
               v55 |= 2u; /*0x7d2290*/
               break;
             case '#': /*0x7d2253*/
-              IDA_LOBYTE(v55) = v55 | 0x80; /*0x7d2287*/
+              (v55) = ((v55) & ~0xFF) | ((unsigned int)(v55 | 0x80) & 0xFF); /*0x7d2287*/
               break;
             case '+': /*0x7d2253*/
               v55 |= 1u; /*0x7d227e*/
@@ -3135,7 +3135,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
   int v74; // [esp+231Ch] [ebp+Ch]
 
   v66 = 0; /*0x7d3a7a*/
-  IDA_LOWORD(v3) = C[0]; /*0x7d3a80*/
+  (v3) = ((v3) & ~0xFFFF) | ((unsigned int)(C[0]) & 0xFFFF); /*0x7d3a80*/
   v4 = (wint_t *)(aP1); /*0x7d3a84*/
   v5 = *(unsigned int *)aP1;
   v73 = 0; /*0x7d3a8c*/
@@ -3264,7 +3264,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
       {
         v11 = _whiteout_0((int)&v73, File); /*0x7d3c3e*/
       }
-      IDA_LOWORD(v3) = v11; /*0x7d3c51*/
+      (v3) = ((v3) & ~0xFFFF) | ((unsigned int)(v11) & 0xFFFF); /*0x7d3c51*/
       *(unsigned int *)C = v11; /*0x7d3c54*/
     }
     if ( v58 && !v68 ) /*0x7d3c62*/
@@ -3296,7 +3296,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
             v29 = (int)memset( (void *)(v49), 0, sizeof(v49)); /*0x7d406d*/
             if ( v10 == 123 ) /*0x7d4086*/
             {
-              IDA_HIWORD(v29) = 0; /*0x7d408a*/
+              (v29) = ((v29) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7d408a*/
               if ( *v27 == 93 ) /*0x7d408e*/
               {
                 v59 = 93; /*0x7d4091*/
@@ -4063,7 +4063,7 @@ ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
     goto main_loop_entrance_1; /*0x7d4c6b*/
   while ( 1 ) /*0x7d4c6d*/
   {
-    IDA_LOBYTE(v8) = *v7++; /*0x7d4c6d*/
+    (v8) = ((v8) & ~0xFF) | ((unsigned int)(*v7++) & 0xFF); /*0x7d4c6d*/
     if ( !(unsigned char)v8 ) /*0x7d4c72*/
       break; /*0x7d4c72*/
     *v6++ = v8; /*0x7d4c74*/
@@ -4614,8 +4614,8 @@ int _sopen(const char * FileName, int OpenFlag, int ShareFlag, ...)
         }
         else
         {
-          IDA_HIBYTE(ShareFlag) = 0; /*0x7d56b3*/
-          if ( !_read_lk(v6, (char *)&ShareFlag + 3, 1u) && IDA_HIBYTE(ShareFlag) == 26 && _chsize_lk(v6, dwShareMode) == -1 /*0x7d56f0*/
+          (ShareFlag) = ((ShareFlag) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(0) & 0xFF) << 24); /*0x7d56b3*/
+          if ( !_read_lk(v6, (char *)&ShareFlag + 3, 1u) && (((unsigned int)(ShareFlag) >> 24) & 0xFF) == 26 && _chsize_lk(v6, dwShareMode) == -1 /*0x7d56f0*/
             || _lseek_lk(v6, 0, 0) == -1 )
           {
             goto LABEL_63; /*0x7d56f0*/
@@ -5236,7 +5236,7 @@ AbstractClass * * __init_ctype()
       v5 = &CPInfo.LeadByte[1]; /*0x7d6b85*/
       do /*0x7d6ba7*/
       {
-        IDA_LOBYTE(j) = *v5; /*0x7d6b88*/
+        (j) = ((j) & ~0xFF) | ((unsigned int)(*v5) & 0xFF); /*0x7d6b88*/
         if ( !*v5 ) /*0x7d6b88*/
           break; /*0x7d6b8c*/
         v7 = *(v5 - 1); /*0x7d6b8e*/
@@ -5391,7 +5391,7 @@ int LangCountryEnumProc_4(LPSTR a1)
 
     v1 = LcidFromHexString(a1); /*0x7d6f98*/
     v2 = -(dword_B78548 != 0); /*0x7d6fa7*/
-    IDA_LOWORD(v2) = v2 & 0xF005; /*0x7d6fa9*/
+    (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(v2 & 0xF005) & 0xFFFF); /*0x7d6fa9*/
     if ( !dword_B78564(v1, v2 + 4098, String2, 120) ) /*0x7d6fbc*/
       goto LABEL_17; /*0x7d6fbc*/
     if ( !_strcmpi(dword_B78558, String2) )
@@ -5466,7 +5466,7 @@ int LanguageEnumProc_4(LPSTR a1)
 
     v1 = LcidFromHexString(a1); /*0x7d71f0*/
     v2 = -(dword_B78550 != 0); /*0x7d71ff*/
-    IDA_LOWORD(v2) = v2 & 0xF002; /*0x7d7201*/
+    (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(v2 & 0xF002) & 0xFFFF); /*0x7d7201*/
     if ( !dword_B78564(v1, v2 + 4097, String2, 120) ) /*0x7d720c*/
     {
       dword_B7855C = 0; /*0x7d7216*/
@@ -5505,7 +5505,7 @@ int CountryEnumProc_4(LPSTR a1)
 
     v1 = LcidFromHexString(a1); /*0x7d72e4*/
     v2 = -(dword_B78548 != 0); /*0x7d72f3*/
-    IDA_LOWORD(v2) = v2 & 0xF005; /*0x7d72f5*/
+    (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(v2 & 0xF005) & 0xFFFF); /*0x7d72f5*/
     if ( dword_B78564(v1, v2 + 4098, v4, 120) ) /*0x7d7300*/
     {
       if ( !_strcmpi(dword_B78558, v4) ) /*0x7d731f*/
@@ -5553,7 +5553,7 @@ void * memset(void * a0, int Val, AbstractClass * aP2)
   v3 = (unsigned int)aP2; /*0x7d75e0*/
   if ( !aP2 ) /*0x7d75ea*/
     return a0; /*0x7d7633*/
-  IDA_LOBYTE(v4) = Val; /*0x7d75ee*/
+  (v4) = ((v4) & ~0xFF) | ((unsigned int)(Val) & 0xFF); /*0x7d75ee*/
   v5 = (unsigned char *)(a0); /*0x7d75f3*/
   if ( aP2 < 4 ) /*0x7d75f8*/
     goto LABEL_13; /*0x7d75f8*/
@@ -5670,7 +5670,7 @@ void _ld12cvt(unsigned short * a1, unsigned int * a2, int * a3)
           {
             _FillZeroMan(&v20); /*0x7d7ba0*/
             v16 = a3[3]; /*0x7d7ba5*/
-            IDA_HIBYTE(v20) |= 0x80u; /*0x7d7ba8*/
+            (((unsigned int)(v20) >> 24) & 0xFF) |= 0x80u; /*0x7d7ba8*/
             _ShrMan(&v20, v16); /*0x7d7bb0*/
             v8 = *a3 + a3[5]; /*0x7d7bbb*/
             v17 = 1; /*0x7d7bbd*/
@@ -5678,7 +5678,7 @@ void _ld12cvt(unsigned short * a1, unsigned int * a2, int * a3)
           }
           v18 = a3[3]; /*0x7d7bc4*/
           v12 = a3[5]; /*0x7d7bc7*/
-          IDA_HIBYTE(v20) &= ~0x80u; /*0x7d7bca*/
+          (((unsigned int)(v20) >> 24) & 0xFF) &= ~0x80u; /*0x7d7bca*/
           v8 = v7 + v12; /*0x7d7bd2*/
           _ShrMan(&v20, v18); /*0x7d7bd4*/
           goto LABEL_16; /*0x7d7bd4*/
@@ -5736,11 +5736,11 @@ void unknown_libname_76(_TBYTE a1, _TBYTE a2)
     v3 = *(double *)&a1; /*0x7d7ee4*/
     while ( !__CFADD__(DWORD1(a1), DWORD1(a1)) ) /*0x7d7eee*/
     {
-      if ( !*(unsigned __int64 *)&a1 || (IDA_HIWORD(a1) & 0x7FFF) != 0 ) /*0x7d7f90*/
+      if ( !*(unsigned __int64 *)&a1 || ((((unsigned int)(a1) >> 16) & 0xFFFF) & 0x7FFF) != 0 ) /*0x7d7f90*/
         return v2 / v3; /*0x7d7f90*/
-      if ( (IDA_HIWORD(a2) & 0x7FFF) != 0 ) /*0x7d7fb5*/
+      if ( ((((unsigned int)(a2) >> 16) & 0xFFFF) & 0x7FFF) != 0 ) /*0x7d7fb5*/
       {
-        if ( (IDA_HIWORD(a2) & 0x7FFF) == 0x7FFF || !__CFADD__(DWORD1(a2), DWORD1(a2)) ) /*0x7d7fc2*/
+        if ( ((((unsigned int)(a2) >> 16) & 0xFFFF) & 0x7FFF) == 0x7FFF || !__CFADD__(DWORD1(a2), DWORD1(a2)) ) /*0x7d7fc2*/
           return v2 / v3; /*0x7d7ff4*/
       }
       else if ( __CFADD__(DWORD1(a2), DWORD1(a2)) ) /*0x7d7fce*/
@@ -5755,9 +5755,9 @@ void unknown_libname_76(_TBYTE a1, _TBYTE a2)
       return v2 / v3; /*0x7d7f02*/
     if ( !((unsigned char *)&byte_87D3F0)[v4 >> 28] ) /*0x7d7f06*/
       return v2 / v3; /*0x7d7f11*/
-    if ( (IDA_HIWORD(a1) & 0x7FFF) == 0 || (IDA_HIWORD(a1) & 0x7FFF) == 0x7FFF ) /*0x7d7f22*/
+    if ( ((((unsigned int)(a1) >> 16) & 0xFFFF) & 0x7FFF) == 0 || ((((unsigned int)(a1) >> 16) & 0xFFFF) & 0x7FFF) == 0x7FFF ) /*0x7d7f22*/
       return v2 / v3; /*0x7d7f86*/
-    if ( (IDA_HIWORD(a2) & 0x7FFF) == 1 ) /*0x7d7f4a*/
+    if ( ((((unsigned int)(a2) >> 16) & 0xFFFF) & 0x7FFF) == 1 ) /*0x7d7f4a*/
       return v2 * flt_87D404 / (v3 * flt_87D404); /*0x7d7f77*/
     else
       return v2 * flt_87D400 / (v3 * flt_87D400); /*0x7d7f60*/
@@ -6456,7 +6456,7 @@ void* unknown_libname_90(char a1, __int128 a2, int a3, int a4, __int128 a5)
             {
               if ( (IDA_WORD4(a5) & 0x7FFFu) > (IDA_WORD4(a2) & 0x7FFFu) + 63 ) /*0x7d876e*/
               {
-                v6 = ((IDA_BYTE8(a5) - IDA_BYTE8(a2)) & 0x3F | 0x20) + 1; /*0x7d8811*/
+                v6 = (((((unsigned int)(a5) >> 64) & 0xFF) - IDA_BYTE8(a2)) & 0x3F | 0x20) + 1; /*0x7d8811*/
                 v7 = fabs(*(long double *)&a2); /*0x7d8830*/
                 v9 = fabs(*(long double *)&a5); /*0x7d8836*/
                 do /*0x7d8852*/
@@ -6561,7 +6561,7 @@ void* unknown_libname_92(char a1, __int128 a2, int a3, int a4, __int128 a5)
             {
               if ( (IDA_WORD4(a5) & 0x7FFFu) > (IDA_WORD4(a2) & 0x7FFFu) + 63 ) /*0x7d8a26*/
               {
-                v6 = ((IDA_BYTE8(a5) - IDA_BYTE8(a2)) & 0x3F | 0x20) + 1; /*0x7d8ac9*/
+                v6 = (((((unsigned int)(a5) >> 64) & 0xFF) - IDA_BYTE8(a2)) & 0x3F | 0x20) + 1; /*0x7d8ac9*/
                 v7 = fabs(*(long double *)&a2); /*0x7d8ae8*/
                 v9 = fabs(*(long double *)&a5); /*0x7d8aee*/
                 do /*0x7d8b0a*/
@@ -6733,21 +6733,21 @@ void __decomp(double a1, int * a2)
       v2 = 0; /*0x7d8e38*/
       v5 = 0.0; /*0x7d8e3a*/
     }
-    else if ( (IDA_HIWORD(a1) & 0x7FF0) == 0 && ((IDA_HIDWORD(a1) & 0xFFFFF) != 0 || IDA_LODWORD(a1)) ) /*0x7d8e58*/
+    else if ( ((((unsigned int)(a1) >> 16) & 0xFFFF) & 0x7FF0) == 0 && ((((unsigned int)((unsigned __int64)(a1) >> 32)) & 0xFFFFF) != 0 || ((unsigned int)(a1))) ) /*0x7d8e58*/
     {
       v2 = -1021; /*0x7d8e63*/
       v3 = a1 < 0.0; /*0x7d8e6b*/
-      while ( (IDA_BYTE6(a1) & 0x10) == 0 ) /*0x7d8e78*/
+      while ( ((((unsigned int)(a1) >> 48) & 0xFF) & 0x10) == 0 ) /*0x7d8e78*/
       {
-        IDA_HIDWORD(a1) *= 2; /*0x7d8e7a*/
+        ((unsigned int)((unsigned __int64)(a1) >> 32)) *= 2; /*0x7d8e7a*/
         if ( SBYTE3(a1) < 0 ) /*0x7d8e81*/
-          IDA_HIDWORD(a1) |= 1u; /*0x7d8e83*/
-        IDA_LODWORD(a1) *= 2; /*0x7d8e87*/
+          ((unsigned int)((unsigned __int64)(a1) >> 32)) |= 1u; /*0x7d8e83*/
+        ((unsigned int)(a1)) *= 2; /*0x7d8e87*/
         --v2; /*0x7d8e8a*/
       }
-      IDA_HIWORD(a1) &= ~0x10u; /*0x7d8e8d*/
+      (((unsigned int)(a1) >> 16) & 0xFFFF) &= ~0x10u; /*0x7d8e8d*/
       if ( v3 ) /*0x7d8e95*/
-        IDA_HIBYTE(a1) |= 0x80u; /*0x7d8e97*/
+        (((unsigned int)(a1) >> 24) & 0xFF) |= 0x80u; /*0x7d8e97*/
       v5 = _set_exp(a1, 0); /*0x7d8ea9*/
     }
     else
@@ -6815,22 +6815,22 @@ double _nextafter(double X, double Y)
     }
     if ( X == 0.0 ) /*0x7d910d*/
     {
-      IDA_LODWORD(v6) = 1; /*0x7d9115*/
+      (v6) = (unsigned int)(1); /*0x7d9115*/
       if ( Y <= X ) /*0x7d911f*/
-        IDA_HIDWORD(v6) = 0x80000000; /*0x7d9127*/
+        (v6) = ((v6) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(0x80000000) << 32); /*0x7d9127*/
       else
-        IDA_HIDWORD(v6) = 0; /*0x7d9121*/
+        (v6) = ((v6) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(0) << 32); /*0x7d9121*/
     }
     if ( (X <= 0.0 || Y >= X) && (X >= 0.0 || Y <= X) ) /*0x7d915e*/
     {
       if ( (X <= 0.0 || Y <= X) && (X >= 0.0 || Y >= X) ) /*0x7d91a3*/
       {
-        v4 = IDA_LODWORD(v6); /*0x7d91bb*/
+        v4 = ((unsigned int)(v6)); /*0x7d91bb*/
         goto LABEL_32; /*0x7d91bb*/
       }
       v4 = IDA_LODWORD(X) + 1; /*0x7d91a8*/
-      IDA_LODWORD(v6) = IDA_LODWORD(X) + 1; /*0x7d91ad*/
-      IDA_HIDWORD(v6) = IDA_HIDWORD(X); /*0x7d91b0*/
+      (v6) = (unsigned int)(IDA_LODWORD(X) + 1); /*0x7d91ad*/
+      (v6) = ((v6) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(IDA_HIDWORD(X)) << 32); /*0x7d91b0*/
       if ( IDA_LODWORD(X) == -1 ) /*0x7d91b3*/
       {
         v5 = IDA_HIDWORD(X) + 1; /*0x7d91b5*/
@@ -6840,13 +6840,13 @@ double _nextafter(double X, double Y)
     else
     {
       v4 = IDA_LODWORD(X) - 1; /*0x7d9163*/
-      IDA_LODWORD(v6) = IDA_LODWORD(X) - 1; /*0x7d9168*/
-      IDA_HIDWORD(v6) = IDA_HIDWORD(X); /*0x7d916b*/
+      (v6) = (unsigned int)(IDA_LODWORD(X) - 1); /*0x7d9168*/
+      (v6) = ((v6) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(IDA_HIDWORD(X)) << 32); /*0x7d916b*/
       if ( !IDA_LODWORD(X) ) /*0x7d916e*/
       {
         v5 = IDA_HIDWORD(X) - 1; /*0x7d9170*/
   LABEL_30:
-        IDA_HIDWORD(v6) = v5; /*0x7d91b6*/
+        (v6) = ((v6) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(v5) << 32); /*0x7d91b6*/
       }
     }
   LABEL_32:
@@ -7000,7 +7000,7 @@ void __crtGetStringTypeA(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, LPWORD 
         {
           v11 = 2 * v10; /*0x7d97fe*/
           v12 = 2 * v10 + 3; /*0x7d9803*/
-          IDA_LOBYTE(v12) = v12 & 0xFC; /*0x7d9806*/
+          (v12) = ((v12) & ~0xFF) | ((unsigned int)(v12 & 0xFC) & 0xFF); /*0x7d9806*/
           v13 = alloca(v12); /*0x7d9808*/
           ms_exc.old_esp = (DWORD)v15; /*0x7d980d*/
           v16 = v15; /*0x7d9812*/
@@ -7492,13 +7492,13 @@ int _flswbuf(unsigned short Buf, FILE * a2)
       a2->_cnt = 0; /*0x7d9ff4*/
       if ( (flag & 0x10) != 0 ) /*0x7d9ff7*/
       {
-        IDA_LOBYTE(flag) = flag & 0xFE; /*0x7da000*/
+        (flag) = ((flag) & ~0xFF) | ((unsigned int)(flag & 0xFE) & 0xFF); /*0x7da000*/
         (((_iobuf_msvc6 *)v2)->_ptr) = (((_iobuf_msvc6 *)v2)->_base); /*0x7da002*/
         (((_iobuf_msvc6 *)v2)->_flag) = flag; /*0x7da004*/
         goto LABEL_6; /*0x7da004*/
       }
   LABEL_25:
-      IDA_LOBYTE(flag) = flag | 0x20; /*0x7da0e3*/
+      (flag) = ((flag) & ~0xFF) | ((unsigned int)(flag | 0x20) & 0xFF); /*0x7da0e3*/
       (((_iobuf_msvc6 *)v2)->_flag) = flag; /*0x7da0e5*/
       return 0xFFFF; /*0x7da0e5*/
     }
@@ -7506,7 +7506,7 @@ int _flswbuf(unsigned short Buf, FILE * a2)
     v5 = (((_iobuf_msvc6 *)v2)->_flag); /*0x7da007*/
     (((_iobuf_msvc6 *)v2)->_cnt) = 0; /*0x7da00a*/
     a2 = (FILE *)(0); /*0x7da00f*/
-    IDA_LOBYTE(v5) = v5 & 0xED | 2; /*0x7da012*/
+    (v5) = ((v5) & ~0xFF) | ((unsigned int)(v5 & 0xED | 2) & 0xFF); /*0x7da012*/
     (((_iobuf_msvc6 *)v2)->_flag) = v5; /*0x7da018*/
     if ( (v5 & 0x10C) == 0 ) /*0x7da01b*/
     {
@@ -7596,7 +7596,7 @@ int __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINICla
       if ( v8 ) /*0x7da1b1*/
       {
         v10 = v8 + 3; /*0x7da1ba*/
-        IDA_LOBYTE(v10) = v10 & 0xFC; /*0x7da1bd*/
+        (v10) = ((v10) & ~0xFF) | ((unsigned int)(v10 & 0xFC) & 0xFF); /*0x7da1bd*/
         v11 = alloca(v10); /*0x7da1bf*/
         ms_exc.old_esp = (DWORD)v16; /*0x7da1c4*/
         lpMultiByteStr = (LPSTR)v16; /*0x7da1c9*/
@@ -7607,7 +7607,7 @@ int __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINICla
           if ( WideCharToMultiByte( CodePage, 0x220u, lpSrcStr, cchSrc, (LPSTR)(lpMultiByteStr), v9, 0, 0) ) /*0x7da20d*/
           {
             v12 = 2 * v9 + 5; /*0x7da226*/
-            IDA_LOBYTE(v12) = v12 & 0xFC; /*0x7da229*/
+            (v12) = ((v12) & ~0xFF) | ((unsigned int)(v12 & 0xFC) & 0xFF); /*0x7da229*/
             v13 = alloca(v12); /*0x7da22b*/
             ms_exc.old_esp = (DWORD)v16; /*0x7da230*/
             v19 = v16; /*0x7da235*/
@@ -7680,7 +7680,7 @@ ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, Cam
     if ( v8 ) /*0x7da39b*/
     {
       v9 = v8 + 3; /*0x7da3a4*/
-      IDA_LOBYTE(v9) = v9 & 0xFC; /*0x7da3a7*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(v9 & 0xFC) & 0xFF); /*0x7da3a7*/
       v10 = alloca(v9); /*0x7da3a9*/
       ms_exc.old_esp = (DWORD)v17; /*0x7da3ae*/
       lpMultiByteStr = (unsigned int)v17; /*0x7da3b3*/
@@ -7695,7 +7695,7 @@ ControlClass * * __crtLCMapStringW(CampaignScore * aP0, CampaignScore * aP1, Cam
           if ( v11 ) /*0x7da410*/
           {
             v13 = v11 + 3; /*0x7da41d*/
-            IDA_LOBYTE(v13) = v13 & 0xFC; /*0x7da420*/
+            (v13) = ((v13) & ~0xFF) | ((unsigned int)(v13 & 0xFC) & 0xFF); /*0x7da420*/
             v14 = alloca(v13); /*0x7da422*/
             ms_exc.old_esp = (DWORD)v17; /*0x7da427*/
             v19 = v17; /*0x7da42c*/
@@ -7833,7 +7833,7 @@ int _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
         *v3 += 2; /*0x7da709*/
       }
       v3[1] += 2; /*0x7da70b*/
-      IDA_LOBYTE(v5) = v5 & 0xEE | 1; /*0x7da711*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(v5 & 0xEE | 1) & 0xFF); /*0x7da711*/
       *v3 -= 2; /*0x7da713*/
       v3[3] = v5; /*0x7da716*/
       *(unsigned short *)*v3 = v2; /*0x7da71b*/
@@ -7858,7 +7858,7 @@ int _ungetwc_lk(wchar_t MbCh, unsigned int * a2)
       *(unsigned char *)--*v3 = MbCh; /*0x7da6e5*/
       v3[1] += v7; /*0x7da6e7*/
       v9 = v3[3]; /*0x7da6ea*/
-      IDA_LOBYTE(v9) = v9 & 0xEE | 1; /*0x7da6ef*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(v9 & 0xEE | 1) & 0xFF); /*0x7da6ef*/
       v3[3] = v9; /*0x7da6f1*/
       return v2; /*0x7da6f4*/
     }
@@ -7965,7 +7965,7 @@ int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cch
       if ( v13 ) /*0x7da8b9*/
       {
         v14 = 2 * v13 + 3; /*0x7da8c4*/
-        IDA_LOBYTE(v14) = v14 & 0xFC; /*0x7da8c7*/
+        (v14) = ((v14) & ~0xFF) | ((unsigned int)(v14 & 0xFC) & 0xFF); /*0x7da8c7*/
         v15 = alloca(v14); /*0x7da8c9*/
         ms_exc.old_esp = (DWORD)v21; /*0x7da8ce*/
         lpWideCharStr = (unsigned int)v21; /*0x7da8d3*/
@@ -7980,7 +7980,7 @@ int __crtCompareStringA(LCID Locale, DWORD dwCmpFlags, CHAR * lpString1, int cch
             if ( v16 ) /*0x7da92b*/
             {
               v18 = 2 * v16 + 3; /*0x7da933*/
-              IDA_LOBYTE(v18) = v18 & 0xFC; /*0x7da936*/
+              (v18) = ((v18) & ~0xFF) | ((unsigned int)(v18 & 0xFC) & 0xFF); /*0x7da936*/
               v19 = alloca(v18); /*0x7da938*/
               ms_exc.old_esp = (DWORD)v21; /*0x7da93d*/
               v23 = v21; /*0x7da942*/
@@ -8379,12 +8379,12 @@ AbstractClass * * _I10_OUTPUT(long long a1, int a2, int a3, char a4, int a5)
   }
   *(unsigned short *)v24 = 0; /*0x7db325*/
   *(unsigned short *)&v24[10] = v7; /*0x7db32f*/
-  v9 = (int)(77 * (IDA_HIBYTE(v7) + 2 * IDA_HIBYTE(a2)) + 19728 * v7 - 323162868) >> 16; /*0x7db343*/
+  v9 = (int)(77 * ((((unsigned int)(v7) >> 24) & 0xFF) + 2 * (((unsigned int)(a2) >> 24) & 0xFF)) + 19728 * v7 - 323162868) >> 16; /*0x7db343*/
   *(unsigned long long *)&v24[2] = IDA___PAIR64__(a2, (unsigned int)a1); /*0x7db346*/
   __multtenpow12(v24, -(int16_t)v9, 1); /*0x7db353*/
   if ( *(unsigned short *)&v24[10] >= 0x3FFFu ) /*0x7db361*/
   {
-    IDA_LOWORD(v9) = v9 + 1; /*0x7db366*/
+    (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(v9 + 1) & 0xFFFF); /*0x7db366*/
     __ld12mul((int)v24, (int)v23); /*0x7db36c*/
   }
   v10 = (a5 & 1) == 0; /*0x7db373*/
@@ -8998,10 +8998,10 @@ int __ld12mul(int a1, int a2)
           }
           while ( v12 ); /*0x7dc05a*/
           if ( v15 ) /*0x7dc060*/
-            IDA_LOBYTE(v13[0]) |= 1u; /*0x7dc062*/
+            ((unsigned int)(v13[0]) & 0xFF) |= 1u; /*0x7dc062*/
         }
       }
-      if ( IDA_LOWORD(v13[0]) > 0x8000u || (v13[0] & 0x1FFFF) == 0x18000 ) /*0x7dc07b*/
+      if ( ((unsigned int)(v13[0]) & 0xFFFF) > 0x8000u || (v13[0] & 0x1FFFF) == 0x18000 ) /*0x7dc07b*/
       {
         if ( *(unsigned int *)((char *)v13 + 2) == -1 ) /*0x7dc081*/
         {
@@ -9009,14 +9009,14 @@ int __ld12mul(int a1, int a2)
           if ( *(unsigned int *)((char *)&v13[1] + 2) == -1 ) /*0x7dc08b*/
           {
             *(unsigned int *)((char *)&v13[1] + 2) = 0; /*0x7dc08d*/
-            if ( IDA_HIWORD(v13[2]) == 0xFFFF ) /*0x7dc097*/
+            if ( (((unsigned int)(v13[2]) >> 16) & 0xFFFF) == 0xFFFF ) /*0x7dc097*/
             {
               ++v21; /*0x7dc099*/
-              IDA_HIWORD(v13[2]) = 0x8000; /*0x7dc09c*/
+              (v13[2]) = ((v13[2]) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0x8000) & 0xFFFF) << 16); /*0x7dc09c*/
             }
             else
             {
-              ++IDA_HIWORD(v13[2]); /*0x7dc0a4*/
+              ++(((unsigned int)(v13[2]) >> 16) & 0xFFFF); /*0x7dc0a4*/
             }
           }
           else
@@ -9033,7 +9033,7 @@ int __ld12mul(int a1, int a2)
       if ( (unsigned __int16)v21 < 0x7FFFu ) /*0x7dc0b9*/
       {
         result = v9 | v21; /*0x7dc0bf*/
-        *(unsigned short *)a1 = IDA_HIWORD(v13[0]); /*0x7dc0c1*/
+        *(unsigned short *)a1 = (((unsigned int)(v13[0]) >> 16) & 0xFFFF); /*0x7dc0c1*/
         *(unsigned int *)(a1 + 2) = v13[1]; /*0x7dc0c7*/
         *(unsigned int *)(a1 + 6) = v13[2]; /*0x7dc0cd*/
   LABEL_45:
@@ -9163,7 +9163,7 @@ int _setmode_lk(int a1, int a2)
   LABEL_5:
       v5 = -(*v2 < 0); /*0x7dc4ab*/
       *v2 = v4; /*0x7dc4af*/
-      IDA_LOWORD(v5) = v5 & 0xC000; /*0x7dc4b1*/
+      (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(v5 & 0xC000) & 0xFFFF); /*0x7dc4b1*/
       return v5 + 0x8000; /*0x7dc4b8*/
     }
     if ( a2 == 0x4000 ) /*0x7dc4a6*/
@@ -9216,7 +9216,7 @@ int __crtGetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData
     if ( !LocaleInfoA ) /*0x7dc569*/
       return 0; /*0x7dc569*/
     v8 = LocaleInfoA + 3; /*0x7dc56e*/
-    IDA_LOBYTE(v8) = v8 & 0xFC; /*0x7dc571*/
+    (v8) = ((v8) & ~0xFF) | ((unsigned int)(v8 & 0xFC) & 0xFF); /*0x7dc571*/
     v9 = alloca(v8); /*0x7dc573*/
     ms_exc.old_esp = (DWORD)v11; /*0x7dc578*/
     v12 = v11; /*0x7dc57d*/
@@ -9270,7 +9270,7 @@ int __crtGetLocaleInfoA(LCID Locale, LCTYPE LCType, CCINIClass * aP2, int cchDat
     if ( !LocaleInfoW ) /*0x7dc680*/
       return 0; /*0x7dc680*/
     v8 = 2 * LocaleInfoW + 3; /*0x7dc687*/
-    IDA_LOBYTE(v8) = v8 & 0xFC; /*0x7dc68a*/
+    (v8) = ((v8) & ~0xFF) | ((unsigned int)(v8 & 0xFC) & 0xFF); /*0x7dc68a*/
     v9 = alloca(v8); /*0x7dc68c*/
     ms_exc.old_esp = (DWORD)v11; /*0x7dc691*/
     v12 = v11; /*0x7dc696*/
@@ -9362,7 +9362,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
     {
       v11 = 16 * v10; /*0x7dc836*/
       v12 = 16 * v10 + 3; /*0x7dc838*/
-      IDA_LOBYTE(v12) = v12 & 0xFC; /*0x7dc83b*/
+      (v12) = ((v12) & ~0xFF) | ((unsigned int)(v12 & 0xFC) & 0xFF); /*0x7dc83b*/
       v13 = alloca(v12); /*0x7dc83d*/
       v14 = v42; /*0x7dc842*/
       memset( (void *)(v42), 0, v11); /*0x7dc84d*/
@@ -9419,7 +9419,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
             switch ( v20 ) /*0x7dc8b9*/
             {
               case 2u: /*0x7dc8b9*/
-                IDA_LOWORD(v21) = *(unsigned short *)(v18 + 4); /*0x7dc8c0*/
+                (v21) = ((v21) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)(v18 + 4)) & 0xFFFF); /*0x7dc8c0*/
                 v19 += 4; /*0x7dc8c4*/
                 v18 += 4; /*0x7dc8c6*/
                 goto LABEL_17; /*0x7dc8c6*/
@@ -9626,10 +9626,10 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
       if ( pperrinfo->lpVtbl->QueryInterface(pperrinfo, &stru_87D9F0, a8) < 0 ) /*0x7dcae8*/
         *v40 = 0; /*0x7dcaea*/
     }
-    if ( !IDA_LOWORD(v43[0]) ) /*0x7dcaf0*/
+    if ( !((unsigned int)(v43[0]) & 0xFFFF) ) /*0x7dcaf0*/
       return v43[7]; /*0x7dcb12*/
-    if ( IDA_LOWORD(v43[0]) < 0xFE00u ) /*0x7dcaf8*/
-      return IDA_LOWORD(v43[0]) - 2147220992; /*0x7dcb08*/
+    if ( ((unsigned int)(v43[0]) & 0xFFFF) < 0xFE00u ) /*0x7dcaf8*/
+      return ((unsigned int)(v43[0]) & 0xFFFF) - 2147220992; /*0x7dcb08*/
     return -2147155969; /*0x7dcbb3*/
 }
 }
@@ -9896,7 +9896,7 @@ void output(char * a1, int a2)
                 v56 |= 2u; /*0x7dd5e1*/
                 break;
               case '#': /*0x7dd5a4*/
-                IDA_LOBYTE(v56) = v56 | 0x80; /*0x7dd5d8*/
+                (v56) = ((v56) & ~0xFF) | ((unsigned int)(v56 | 0x80) & 0xFF); /*0x7dd5d8*/
                 break;
               case '+': /*0x7dd5a4*/
                 v56 |= 1u; /*0x7dd5cf*/
@@ -10491,12 +10491,12 @@ unsigned int  ConvertRGB24to556(int a1, unsigned short * a2, __m64 a3, __m64 a4,
     {
       while ( 1 )
       {
-        IDA_LOBYTE(v8) = v6[1]; /*0x7de442*/
+        (v8) = ((v8) & ~0xFF) | ((unsigned int)(v6[1]) & 0xFF); /*0x7de442*/
         v31 = 0; /*0x7de445*/
         v32 = *v6; /*0x7de447*/
         if ( !*v7 ) /*0x7de449*/
           break; /*0x7de449*/
-        IDA_LOBYTE(v31) = v6[2]; /*0x7de44e*/
+        (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7de44e*/
         ++v7; /*0x7de451*/
         v6 += 3; /*0x7de461*/
         v33 = (8 /*0x7de4aa*/
@@ -10518,7 +10518,7 @@ unsigned int  ConvertRGB24to556(int a1, unsigned short * a2, __m64 a3, __m64 a4,
         if ( v34 ) /*0x7de4b9*/
           return result; /*0x7de4b9*/
       }
-      IDA_LOBYTE(v31) = v6[2]; /*0x7de4c2*/
+      (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7de4c2*/
       ++v7; /*0x7de4c5*/
       v6 += 3; /*0x7de4d5*/
       v35 = (8 /*0x7de51e*/
@@ -10674,12 +10674,12 @@ unsigned int  ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64 a3, __m64 
     {
       while ( 1 )
       {
-        IDA_LOBYTE(v8) = v6[1]; /*0x7de782*/
+        (v8) = ((v8) & ~0xFF) | ((unsigned int)(v6[1]) & 0xFF); /*0x7de782*/
         v31 = 0; /*0x7de785*/
         v32 = *v6; /*0x7de787*/
         if ( !*v7 ) /*0x7de789*/
           break; /*0x7de789*/
-        IDA_LOBYTE(v31) = v6[2]; /*0x7de78e*/
+        (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7de78e*/
         ++v7; /*0x7de791*/
         v6 += 3; /*0x7de7a1*/
         v33 = (4 /*0x7de7ea*/
@@ -10701,7 +10701,7 @@ unsigned int  ConvertRGB24toRGB565(int a1, unsigned short * a2, __m64 a3, __m64 
         if ( v34 ) /*0x7de7f9*/
           return result; /*0x7de7f9*/
       }
-      IDA_LOBYTE(v31) = v6[2]; /*0x7de802*/
+      (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7de802*/
       ++v7; /*0x7de805*/
       v6 += 3; /*0x7de815*/
       v35 = (4 /*0x7de85e*/
@@ -10857,12 +10857,12 @@ unsigned int  ConvertRGB24to655(int a1, unsigned short * a2, __m64 a3, __m64 a4,
     {
       while ( 1 )
       {
-        IDA_LOBYTE(v8) = v6[1]; /*0x7deac2*/
+        (v8) = ((v8) & ~0xFF) | ((unsigned int)(v6[1]) & 0xFF); /*0x7deac2*/
         v31 = 0; /*0x7deac5*/
         v32 = *v6; /*0x7deac7*/
         if ( !*v7 ) /*0x7deac9*/
           break; /*0x7deac9*/
-        IDA_LOBYTE(v31) = v6[2]; /*0x7deace*/
+        (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7deace*/
         ++v7; /*0x7dead1*/
         v6 += 3; /*0x7deae1*/
         v33 = (8 /*0x7deb2a*/
@@ -10884,7 +10884,7 @@ unsigned int  ConvertRGB24to655(int a1, unsigned short * a2, __m64 a3, __m64 a4,
         if ( v34 ) /*0x7deb39*/
           return result; /*0x7deb39*/
       }
-      IDA_LOBYTE(v31) = v6[2]; /*0x7deb42*/
+      (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7deb42*/
       ++v7; /*0x7deb45*/
       v6 += 3; /*0x7deb55*/
       v35 = (8 /*0x7deb9e*/
@@ -11040,12 +11040,12 @@ unsigned int  ConvertRGB24to565(int a1, unsigned short * a2, __m64 a3, __m64 a4,
     {
       while ( 1 )
       {
-        IDA_LOBYTE(v8) = v6[1]; /*0x7dee02*/
+        (v8) = ((v8) & ~0xFF) | ((unsigned int)(v6[1]) & 0xFF); /*0x7dee02*/
         v31 = 0; /*0x7dee05*/
         v32 = *v6; /*0x7dee07*/
         if ( !*v7 ) /*0x7dee09*/
           break; /*0x7dee09*/
-        IDA_LOBYTE(v31) = v6[2]; /*0x7dee0e*/
+        (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7dee0e*/
         ++v7; /*0x7dee11*/
         v6 += 3; /*0x7dee21*/
         v33 = (4 /*0x7dee6a*/
@@ -11067,7 +11067,7 @@ unsigned int  ConvertRGB24to565(int a1, unsigned short * a2, __m64 a3, __m64 a4,
         if ( v34 ) /*0x7dee79*/
           return result; /*0x7dee79*/
       }
-      IDA_LOBYTE(v31) = v6[2]; /*0x7dee82*/
+      (v31) = ((v31) & ~0xFF) | ((unsigned int)(v6[2]) & 0xFF); /*0x7dee82*/
       ++v7; /*0x7dee85*/
       v6 += 3; /*0x7dee95*/
       v35 = (4 /*0x7deede*/
@@ -11958,7 +11958,7 @@ wint_t towupper_0(wint_t C)
     bool v3; // zf
     WCHAR DestStr; // [esp+0h] [ebp-2h] BYREF
 
-    DestStr = IDA_HIWORD(v1); /*0x7d39f9*/
+    DestStr = (((unsigned int)(v1) >> 16) & 0xFFFF); /*0x7d39f9*/
     result = C; /*0x7d39fa*/
     if ( C != 0xFFFF ) /*0x7d3a01*/
     {
@@ -12168,7 +12168,7 @@ char * _i64toa(long long Value, char * Buffer, int Radix)
   v3 = 0; /*0x7d475d*/
   if ( Radix == 10 && IDA_SHIDWORD(Value) <= 0 ) /*0x7d4768*/
     v3 = Value < 0; /*0x7d4773*/
-  x64toa_20(Value, IDA_HIDWORD(Value), Buffer, Radix, v3); /*0x7d4781*/
+  x64toa_20(Value, ((unsigned int)((unsigned __int64)(Value) >> 32)), Buffer, Radix, v3); /*0x7d4781*/
   return Buffer; /*0x7d4789*/
 }
 } // namespace gamemd
@@ -13480,9 +13480,9 @@ unsigned long long _aullrem(unsigned long long a1, long long a2)
   int v8; // ecx
   uint64_t v9; // rax
 
-  if ( IDA_HIDWORD(a2) ) /*0x7d7847*/
+  if ( ((unsigned int)((unsigned __int64)(a2) >> 32)) ) /*0x7d7847*/
   {
-    v4 = IDA_HIDWORD(a2); /*0x7d7861*/
+    v4 = ((unsigned int)((unsigned __int64)(a2) >> 32)); /*0x7d7861*/
     v5 = a2; /*0x7d7863*/
     v6 = a1; /*0x7d786b*/
     do /*0x7d7879*/
@@ -13493,7 +13493,7 @@ unsigned long long _aullrem(unsigned long long a1, long long a2)
       v6 >>= 1; /*0x7d7873*/
     }
     while ( v4 ); /*0x7d7879*/
-    v8 = IDA_HIDWORD(a2) * (v6 / v5); /*0x7d7883*/
+    v8 = ((unsigned int)((unsigned __int64)(a2) >> 32)) * (v6 / v5); /*0x7d7883*/
     v9 = (unsigned int)a2 * (uint64_t)(unsigned int)(v6 / v5); /*0x7d7884*/
     v7 = __CFADD__(v8, IDA_HIDWORD(v9)); /*0x7d7888*/
     IDA_HIDWORD(v9) += v8; /*0x7d7888*/
@@ -13503,8 +13503,8 @@ unsigned long long _aullrem(unsigned long long a1, long long a2)
   }
   else
   {
-    IDA_LODWORD(v2) = a1; /*0x7d7859*/
-    IDA_HIDWORD(v2) = IDA_HIDWORD(a1) % (unsigned int)a2; /*0x7d7859*/
+    (v2) = (unsigned int)(a1); /*0x7d7859*/
+    (v2) = ((v2) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(IDA_HIDWORD(a1) % (unsigned int)a2) << 32); /*0x7d7859*/
     return v2 % (unsigned int)a2; /*0x7d785d*/
   }
 }
@@ -13841,7 +13841,7 @@ int ___dtold(unsigned int a1, int a2, int * a3)
     unsigned int v13; // [esp+Ch] [ebp-4h]
     __int16 v14; // [esp+1Ch] [ebp+Ch]
 
-    IDA_LOWORD(a1) = *((unsigned short *)a3 + 3); /*0x7d7e26*/
+    (a1) = ((a1) & ~0xFFFF) | ((unsigned int)(*((unsigned short *)a3 + 3)) & 0xFFFF); /*0x7d7e26*/
     v4 = (a1 >> 4) & 0x7FF; /*0x7d7e39*/
     v14 = a1 & 0x8000; /*0x7d7e3b*/
     v5 = a3[1]; /*0x7d7e3e*/
@@ -13877,7 +13877,7 @@ int ___dtold(unsigned int a1, int a2, int * a3)
       v12 = 2 * IDA___PAIR64__(v11, *(unsigned int *)a2); /*0x7d7eb2*/
       *(unsigned __int64 *)a2 = v12; /*0x7d7eb5*/
       --v8; /*0x7d7eba*/
-      v11 = IDA_HIDWORD(v12); /*0x7d7ec0*/
+      v11 = ((unsigned int)((unsigned __int64)(v12) >> 32)); /*0x7d7ec0*/
     }
     *(unsigned short *)(a2 + 8) = v8 | v14; /*0x7d7ec9*/
     return result; /*0x7d7ecd*/
@@ -13951,7 +13951,7 @@ double _set_exp(double a1, short a2)
     double v3; // [esp+0h] [ebp-8h]
 
     v3 = a1; /*0x7d8d53*/
-    IDA_HIWORD(v3) = IDA_HIWORD(a1) & 0x800F | (16 * (a2 + 1022)); /*0x7d8d5b*/
+    (v3) = ((v3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) & 0x800F | (16 * (a2 + 1022))) & 0xFFFF) << 16); /*0x7d8d5b*/
     return v3; /*0x7d8d62*/
 }
 } // namespace gamemd
@@ -13963,7 +13963,7 @@ double _set_bexp(double a1, short a2)
     double v3; // [esp+0h] [ebp-8h]
 
     v3 = a1; /*0x7d8db5*/
-    IDA_HIWORD(v3) = IDA_HIWORD(a1) & 0x800F | (16 * a2); /*0x7d8dbf*/
+    (v3) = ((v3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) & 0x800F | (16 * a2)) & 0xFFFF) << 16); /*0x7d8dbf*/
     return v3; /*0x7d8dc6*/
 }
 } // namespace gamemd
@@ -13981,9 +13981,9 @@ int _sptype(int a1, int a2)
     {
       return 2; /*0x7d8def*/
     }
-    if ( (IDA_HIWORD(a2) & 0x7FF8) == 0x7FF8 ) /*0x7d8dfe*/
+    if ( ((((unsigned int)(a2) >> 16) & 0xFFFF) & 0x7FF8) == 0x7FF8 ) /*0x7d8dfe*/
       return 3; /*0x7d8e02*/
-    if ( (IDA_HIWORD(a2) & 0x7FF8) == 0x7FF0 && ((a2 & 0x7FFFF) != 0 || a1) ) /*0x7d8e17*/
+    if ( ((((unsigned int)(a2) >> 16) & 0xFFFF) & 0x7FF8) == 0x7FF0 && ((a2 & 0x7FFFF) != 0 || a1) ) /*0x7d8e17*/
       return 4; /*0x7d8e19*/
     return 0; /*0x7d8e1c*/
 }
@@ -14129,13 +14129,13 @@ int _fpclass(double X)
     else if ( (IDA_HIWORD(X) & 0x7FF0) == 0 && ((IDA_HIDWORD(X) & 0xFFFFF) != 0 || IDA_LODWORD(X)) ) /*0x7d9368*/
     {
       v4 = -((IDA_HIWORD(X) & 0x8000) != 0); /*0x7d936e*/
-      IDA_LOBYTE(v4) = v4 & 0x90; /*0x7d9370*/
+      (v4) = ((v4) & ~0xFF) | ((unsigned int)(v4 & 0x90) & 0xFF); /*0x7d9370*/
       return v4 + 128; /*0x7d9372*/
     }
     else
     {
       v5 = -((IDA_HIWORD(X) & 0x8000) != 0); /*0x7d938b*/
-      IDA_LOBYTE(v5) = 0; /*0x7d938d*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x7d938d*/
       if ( X == 0.0 ) /*0x7d9387*/
         return v5 + 64; /*0x7d938f*/
       else
@@ -14362,11 +14362,11 @@ int __allshl(long long a1, unsigned char a2)
 
     if ( a2 >= 0x40u ) /*0x7d9eb3*/
     {
-      IDA_LODWORD(v2) = 0; /*0x7d9eca*/
+      (v2) = (unsigned int)(0); /*0x7d9eca*/
     }
     else if ( a2 >= 0x20u ) /*0x7d9eb8*/
     {
-      IDA_LODWORD(v2) = 0; /*0x7d9ec2*/
+      (v2) = (unsigned int)(0); /*0x7d9ec2*/
     }
     else
     {
@@ -14423,7 +14423,7 @@ int ungetc_0(int Character, FILE * Stream)
     }
     v4 = (((_iobuf_msvc6 *)Stream)->_flag); /*0x7d9f50*/
     ++(((_iobuf_msvc6 *)Stream)->_cnt); /*0x7d9f53*/
-    IDA_LOBYTE(v4) = v4 & 0xEE | 1; /*0x7d9f58*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(v4 & 0xEE | 1) & 0xFF); /*0x7d9f58*/
     (((_iobuf_msvc6 *)Stream)->_flag) = v4; /*0x7d9f5a*/
     return (unsigned __int8)Character; /*0x7d9f47*/
 }
@@ -14794,8 +14794,8 @@ short __mtold12(char * a1, int a2, int a3)
     while ( !*(unsigned int *)(a3 + 8) ) /*0x7db1b7*/
     {
       v4 = *(unsigned int *)(a3 + 4); /*0x7db1b9*/
-      *(unsigned int *)(a3 + 8) = IDA_HIWORD(v4); /*0x7db1c1*/
-      v5 = (v4 << 16) | IDA_HIWORD(*(unsigned int *)a3); /*0x7db1ce*/
+      *(unsigned int *)(a3 + 8) = (((unsigned int)(v4) >> 16) & 0xFFFF); /*0x7db1c1*/
+      v5 = (v4 << 16) | (((unsigned int)(*(unsigned int *)a3) >> 16) & 0xFFFF); /*0x7db1ce*/
       v6 = *(unsigned int *)a3 << 16; /*0x7db1d0*/
       v11 += 65520; /*0x7db1d3*/
       *(unsigned int *)(a3 + 4) = v5; /*0x7db1da*/
@@ -14915,7 +14915,7 @@ double _except2(DWORD dwExceptionCode, int a2, double a3, double a4, double a5, 
     if ( !_handle_exc(dwExceptionCode, &a5, a6) ) /*0x7db5f6*/
     {
       v6 = v12; /*0x7db602*/
-      IDA_LOBYTE(v6) = v12 & 0xE0 | 3; /*0x7db607*/
+      (v6) = ((v6) & ~0xFF) | ((unsigned int)(v12 & 0xE0 | 3) & 0xFF); /*0x7db607*/
       v12 = v6; /*0x7db609*/
       v11 = a4; /*0x7db620*/
       _raise_exc((ULONG_PTR)Arguments, (int)&a6, dwExceptionCode, a2, (int)&a3, (int)&a5); /*0x7db628*/
@@ -15079,9 +15079,9 @@ void __multtenpow12(unsigned short * a1, int a2, int a3)
           v6 = &v3[12 * v5]; /*0x7dc14a*/
           if ( *(unsigned short *)v6 >= 0x8000u ) /*0x7dc14d*/
           {
-            IDA_LODWORD(v8) = *(unsigned int *)v6; /*0x7dc152*/
+            (v8) = (unsigned int)(*(unsigned int *)v6); /*0x7dc152*/
             v7 = v6 + 4; /*0x7dc152*/
-            IDA_HIDWORD(v8) = *v7; /*0x7dc153*/
+            (v8) = ((v8) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(*v7) << 32); /*0x7dc153*/
             v9 = v7[1]; /*0x7dc154*/
             --*(unsigned int *)((char *)&v8 + 2); /*0x7dc155*/
             v6 = (char *)&v8; /*0x7dc158*/
@@ -15742,7 +15742,7 @@ int sub_7DD2E0()
     int v1; // eax
     int v2; // esi
 
-    IDA_LOBYTE(result) = dword_87DD70; /*0x7dd2e0*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(dword_87DD70) & 0xFF); /*0x7dd2e0*/
     if ( dword_87DD70 == -1 ) /*0x7dd2e9*/
     {
       v1 = _getch(); /*0x7dd2f7*/
@@ -15784,7 +15784,7 @@ int _kbhit()
       if ( !NumberOfEvents ) /*0x7dd378*/
         return 0; /*0x7dd378*/
       v0 = 20 * NumberOfEvents + 3; /*0x7dd380*/
-      IDA_LOBYTE(v0) = v0 & 0xFC; /*0x7dd383*/
+      (v0) = ((v0) & ~0xFF) | ((unsigned int)(v0 & 0xFC) & 0xFF); /*0x7dd383*/
       v1 = alloca(v0); /*0x7dd385*/
       v2 = &v5; /*0x7dd38a*/
       if ( !&v5 /*0x7dd3b0*/
@@ -16073,7 +16073,7 @@ int _wcsnicmp(ObjectClass * aP0, const wchar_t * String2, size_t MaxCount)
         v5 = String1; /*0x7dde9e*/
         do /*0x7ddee8*/
         {
-          IDA_LOWORD(result) = *v5; /*0x7ddea1*/
+          (result) = ((result) & ~0xFFFF) | ((unsigned int)(*v5) & 0xFFFF); /*0x7ddea1*/
           if ( *v5 <= 0x5Au && (unsigned __int16)result >= 0x41u ) /*0x7ddeae*/
             result += 32; /*0x7ddeb0*/
           String2a = (const wchar_t *)result; /*0x7ddeb3*/
@@ -16085,7 +16085,7 @@ int _wcsnicmp(ObjectClass * aP0, const wchar_t * String2, size_t MaxCount)
           ++v4; /*0x7ddece*/
           if ( !--MaxCount ) /*0x7dded2*/
             break; /*0x7dded2*/
-          IDA_HIWORD(result) = IDA_HIWORD(String2a); /*0x7dded8*/
+          (result) = ((result) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(String2a)) & 0xFFFF) << 16); /*0x7dded8*/
           if ( !(unsigned short)String2a ) /*0x7ddede*/
             break; /*0x7ddede*/
         }
@@ -16177,7 +16177,7 @@ wint_t towlower_0(wint_t C)
     bool v3; // zf
     WCHAR DestStr; // [esp+0h] [ebp-2h] BYREF
 
-    DestStr = IDA_HIWORD(v1); /*0x7de07f*/
+    DestStr = (((unsigned int)(v1) >> 16) & 0xFFFF); /*0x7de07f*/
     result = C; /*0x7de080*/
     if ( C != 0xFFFF ) /*0x7de087*/
     {
@@ -16251,13 +16251,13 @@ int _putch(int Ch)
     DWORD NumberOfCharsWritten; // [esp+0h] [ebp-4h] BYREF
 
     NumberOfCharsWritten = v1; /*0x7de180*/
-    IDA_HIBYTE(Ch) = Ch; /*0x7de18b*/
+    (Ch) = ((Ch) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(Ch) & 0xFF) << 24); /*0x7de18b*/
     if ( hConsoleOutput == (HANDLE)-2 ) /*0x7de18e*/
       __initconout(); /*0x7de190*/
     if ( hConsoleOutput == (HANDLE)-1 || !WriteConsoleA(hConsoleOutput, (char *)&Ch + 3, 1u, &NumberOfCharsWritten, 0) ) /*0x7de1ac*/
       return -1; /*0x7de1bc*/
     else
-      return IDA_HIBYTE(Ch); /*0x7de1b6*/
+      return (((unsigned int)(Ch) >> 24) & 0xFF); /*0x7de1b6*/
 }
 } // namespace gamemd
 

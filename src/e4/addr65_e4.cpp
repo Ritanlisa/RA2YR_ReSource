@@ -756,7 +756,7 @@ char RenderScoreboardSidebar(void * a1, void * a2)
   char v54[12]; // [esp+ACh] [ebp-1Ch] BYREF
   char v55[16]; // [esp+B8h] [ebp-10h] BYREF
 
-  IDA_LOBYTE(v3) = byte_884B8D; /*0x653fa0*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(byte_884B8D) & 0xFF); /*0x653fa0*/
   v4 = v2; /*0x653faf*/
   if ( byte_884B8D )
   {
@@ -1055,7 +1055,7 @@ AbstractClass * * UpdateProjectileTrails()
         if ( *(unsigned char *)(v10 + 9) ) /*0x6592d6*/
         {
           v14 = Random::Range((Random *)(&Randomizer_Global), 0, 99); /*0x6592e8*/
-          IDA_LOWORD(v15) = Math::RoundToInt(v24 * 100.0); /*0x6592f4*/
+          (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v24 * 100.0)) & 0xFFFF); /*0x6592f4*/
           if ( v14 < v15 ) /*0x6592fb*/
             *((unsigned char *)Block + 9) = 0; /*0x659301*/
         }
@@ -1066,7 +1066,7 @@ AbstractClass * * UpdateProjectileTrails()
       if ( --v9 < 0 ) /*0x6593d6*/
         return; /*0x6593d6*/
     }
-    IDA_LOWORD(v12) = Math::RoundToInt(v23 * 10.0); /*0x65929b*/
+    (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v23 * 10.0)) & 0xFFFF); /*0x65929b*/
     IDA_LODWORD(v22) = v12; /*0x6592a3*/
     if ( v12 >= 10 ) /*0x6592a7*/
     {
@@ -1682,10 +1682,10 @@ if ( (*((int (**)(ObjectClass *, unsigned int *, ScriptActionQueue))v16->vtable1
                                (LayerClass *)&stru_87F5F0.__pad_58[416],
                                (int16_t *)&v45,
                                1),
-        IDA_LOBYTE(v46) = 1,
+        (v46) = ((v46) & ~0xFF) | ((unsigned int)(1,
         !IsWithinUsableArea) )
   {
-    IDA_LOBYTE(v46) = 0; /*0x65db4b*/
+    IDA_LOBYTE(v46) = 0) & 0xFF); /*0x65db4b*/
   }
   if ( !v43 ) /*0x65db56*/
   {
@@ -1881,8 +1881,8 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   v14 = 0; /*0x65e132*/
   v49 = v10; /*0x65e13b*/
   v50 = v13; /*0x65e13f*/
-  IDA_LOBYTE(aP1_4) = 0; /*0x65e143*/
-  if ( IDA___PAIR32__(IDA_HIWORD(v51), v10) != dword_B04C38 ) /*0x65e14a*/
+  (aP1_4) = ((aP1_4) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x65e143*/
+  if ( IDA___PAIR32__((((unsigned int)(v51) >> 16) & 0xFFFF), v10) != dword_B04C38 ) /*0x65e14a*/
   {
     while ( 1 ) /*0x65e1d5*/
     {
@@ -1895,10 +1895,10 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         }
         v52 = v52; /*0x65e185*/
         v16 = *v5; /*0x65e189*/
-        IDA_LOWORD(v56) = (unsigned short)v52 << 13; /*0x65e191*/
+        (v56) = ((v56) & ~0xFFFF) | ((unsigned int)((unsigned short)v52 << 13) & 0xFFFF); /*0x65e191*/
         if ( v5->vt_slot_44() == 2 ) /*0x65e19e*/
         {
-          IDA_LOWORD(v56) = ((v52 << 13) - 24577) & 0xE000; /*0x65e1af*/
+          (v56) = ((v56) & ~0xFFFF) | ((unsigned int)(((v52 << 13) - 24577) & 0xE000) & 0xFFFF); /*0x65e1af*/
           v17 = v56; /*0x65e1b4*/
           v56 = v56; /*0x65e1b8*/
         }
@@ -1933,7 +1933,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v13 = v50; /*0x65e2ca*/
   LABEL_31:
         v36 = *v5; /*0x65e442*/
-        IDA_LOBYTE(aP1_4) = 1; /*0x65e447*/
+        (aP1_4) = ((aP1_4) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x65e447*/
         if ( v5->vt_slot_44() != 2 ) /*0x65e455*/
         {
           (*(void (**)(unsigned int *, int, unsigned int))(*v5 + 488))( (unsigned int *)(v5), 5, 0); /*0x65e460*/
@@ -1945,9 +1945,9 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
           while ( 1 ) /*0x65e486*/
           {
             v38 = v37 & 7; /*0x65e486*/
-            v39 = IDA_HIWORD(v49) + IDA_HIWORD((&dword_89F688)[v38]); /*0x65e499*/
-            IDA_LOWORD(v54) = IDA_LOWORD((&dword_89F688)[v38]) + v49; /*0x65e4a5*/
-            IDA_HIWORD(v54) = v39; /*0x65e4b1*/
+            v39 = (((unsigned int)(v49) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[v38]); /*0x65e499*/
+            (v54) = ((v54) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD((&dword_89F688)[v38]) + v49) & 0xFFFF); /*0x65e4a5*/
+            (v54) = ((v54) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v39) & 0xFFFF) << 16); /*0x65e4b1*/
             a2 = v54; /*0x65e4c0*/
             if ( ((LayerClass *)(&dword_87F7E8))->CoordinatesLegal((int16_t *)&a2) ) /*0x65e4c7*/
               break; /*0x65e4c7*/
@@ -2451,8 +2451,8 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         v17 = *v16; /*0x65ee3f*/
         v61 = 0; /*0x65ee41*/
         v18 = (unsigned int *)v16->vt_slot_72(v71); /*0x65ee59*/
-        IDA_LOWORD(v62) = *v18 / 256; /*0x65ee70*/
-        IDA_HIWORD(v62) = v18[1] / 256; /*0x65ee91*/
+        (v62) = ((v62) & ~0xFFFF) | ((unsigned int)(*v18 / 256) & 0xFFFF); /*0x65ee70*/
+        (v62) = ((v62) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v18[1] / 256) & 0xFFFF) << 16); /*0x65ee91*/
         v62 = v62; /*0x65ee9f*/
         v60 = *LayerClass::Pathfinding_Find( /*0x65eec2*/
                  &MapClass_Instance,
@@ -2478,8 +2478,8 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         v59[0] = 0; /*0x65eed2*/
         v59[1] = 0; /*0x65eed7*/
         v19 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v16 + 72))( (unsigned int *)(v16), (char *)(v75)); /*0x65eee8*/
-        IDA_LOWORD(v63) = *v19 / 256; /*0x65eeff*/
-        IDA_HIWORD(v63) = v19[1] / 256; /*0x65ef15*/
+        (v63) = ((v63) & ~0xFFFF) | ((unsigned int)(*v19 / 256) & 0xFFFF); /*0x65eeff*/
+        (v63) = ((v63) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v19[1] / 256) & 0xFFFF) << 16); /*0x65ef15*/
         v63 = v63; /*0x65ef22*/
         v20 = (*((int (**)(LPVOID *))*v9 + 33))( (LPVOID *)(v9)); /*0x65ef38*/
         v60 = *LayerClass::Pathfinding_Find( /*0x65ef61*/
@@ -2695,7 +2695,7 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
       v7 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v5); /*0x65fab1*/
       if ( *(unsigned int *)v7 == aP0 ) /*0x65faba*/
       {
-        v11 = (int16_t)(IDA_HIWORD(aP2) - *(unsigned short *)(v7 + 34)); /*0x65fad3*/
+        v11 = (int16_t)((((unsigned int)(aP2) >> 16) & 0xFFFF) - *(unsigned short *)(v7 + 34)); /*0x65fad3*/
         __asm { fild [esp+20h+var_4] } /*0x65fad7*/
         v12 = (int16_t)(aP2 - *(unsigned short *)(v7 + 32)); /*0x65fadb*/
         __asm /*0x65fadf*/
@@ -2711,7 +2711,7 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
           fstp st
         }
         Math::Sqrt(v9); /*0x65faf4*/
-        IDA_LOWORD(result) = Math::RoundToInt(v3); /*0x65fafc*/
+        (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v3)) & 0xFFFF); /*0x65fafc*/
         LoadGame_field_0x04 = dword_B04DAC; /*0x65fb01*/
         result = (int16_t)result; /*0x65fb07*/
         if ( (int16_t)result < (&dword_7F0998)[4 * **(unsigned int **)(dword_B04DAC+ 4 * v5)] ) /*0x65fb18*/
@@ -2723,7 +2723,7 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
         goto LABEL_8; /*0x65fb24*/
       }
     }
-    IDA_LOBYTE(result) = 0; /*0x65fb4c*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x65fb4c*/
   }
   else
   {
@@ -2731,7 +2731,7 @@ int CreateTriggerClassIfFarEnough(int aP0, int a2, int aP2)
     result = RA2_OPNEW(0x40u); /*0x65fb28*/
     if ( result ) /*0x65fb34*/
       result = (int)Team_Load_65FB80((ObjectClass *)result, v4, aP2); /*0x65fb3a*/
-    IDA_LOBYTE(result) = 1; /*0x65fb3f*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x65fb3f*/
   }
   return result; /*0x65fb41*/
 }
@@ -3920,7 +3920,7 @@ int sub_65F710(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   {
     if ( a2 == 273 ) /*0x65f739*/
     {
-      if ( GetDlgCtrlID(hWnd) == 1059 && !IDA_HIWORD(a3) ) /*0x65f77b*/
+      if ( GetDlgCtrlID(hWnd) == 1059 && !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x65f77b*/
         *(unsigned int *)GetWindowLongA(hDlg, 8) = 1059; /*0x65f789*/
     }
     else if ( a2 == 1175 ) /*0x65f741*/

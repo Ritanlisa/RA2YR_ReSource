@@ -76,7 +76,7 @@ bool ObjectClass::Remove()
     int v3; // eax
     IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
 
-    IDA_LOBYTE(result) = this->isSelected; /*0x5f44a4*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(this->isSelected) & 0xFF); /*0x5f44a4*/
     if ( (unsigned char)result ) /*0x5f44ac*/
     {
       v4 = (IUnknown *)(IPersistStream *)this; /*0x5f44be*/
@@ -146,7 +146,7 @@ int ObjectClass::MarkForRedraw()
 {
     int result; // eax
 
-    IDA_LOBYTE(result) = this->needsRedraw; /*0x5f4d10*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(this->needsRedraw) & 0xFF); /*0x5f4d10*/
     if ( !(unsigned char)result ) /*0x5f4d18*/
     {
       this->needsRedraw = 1; /*0x5f4d1a*/

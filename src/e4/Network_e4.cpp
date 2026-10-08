@@ -3108,7 +3108,7 @@ AbstractClass * * Network_ModemConnectionDialog()
     {
       while ( (uint8_t)Dialog::PumpMessages() != 1 ) /*0x5ef5b8*/
       {
-        IDA_LOBYTE(v8) = 0; /*0x5ef5ba*/
+        (v8) = ((v8) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x5ef5ba*/
         ScreenSaver::Process(v8, v52); /*0x5ef5bc*/
         v4 = dwNewLong; /*0x5ef5c1*/
         if ( dwNewLong >= 0 ) /*0x5ef5c7*/
@@ -3317,7 +3317,7 @@ AbstractClass * * Network_ModemConnectionDialog()
       goto LABEL_106; /*0x5efaa9*/
     v70[0] = 100; /*0x5efab9*/
     *(int *)((char *)&v70[36] + 2) = ((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efacc*/
-    IDA_LOBYTE(v70[6]) = (uint8_t)&v77; /*0x5efae7*/
+    (v70[6]) = ((v70[6]) & ~0xFF) | ((unsigned int)((uint8_t)&v77) & 0xFF); /*0x5efae7*/
     ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v70, 250, 1); /*0x5efaee*/
     Elapsed = ((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efb02*/
     if ( (unsigned int)(((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed() - Elapsed) < 0x50 ) /*0x5efb0e*/
@@ -3340,12 +3340,12 @@ AbstractClass * * Network_ModemConnectionDialog()
       }
       if ( v69 == *(int *)((char *)&v70[36] + 2) ) /*0x5efcbc*/
       {
-        if ( v68 > IDA_LOBYTE(v70[6]) ) /*0x5efccf*/
+        if ( v68 > ((unsigned int)(v70[6]) & 0xFF) ) /*0x5efccf*/
         {
           v22 = 2; /*0x5efcd1*/
           goto LABEL_106; /*0x5efcd6*/
         }
-        if ( v68 == IDA_LOBYTE(v70[6]) ) /*0x5efcd8*/
+        if ( v68 == ((unsigned int)(v70[6]) & 0xFF) ) /*0x5efcd8*/
         {
           v22 = 3; /*0x5efcde*/
           goto LABEL_106; /*0x5efce3*/
@@ -3388,9 +3388,9 @@ AbstractClass * * Network_ModemConnectionDialog()
       {
         if ( v69 == *(int *)((char *)&v70[36] + 2) ) /*0x5efce5*/
         {
-          if ( v68 <= IDA_LOBYTE(v70[6]) ) /*0x5efcf4*/
+          if ( v68 <= ((unsigned int)(v70[6]) & 0xFF) ) /*0x5efcf4*/
           {
-            if ( v68 == IDA_LOBYTE(v70[6]) ) /*0x5efcff*/
+            if ( v68 == ((unsigned int)(v70[6]) & 0xFF) ) /*0x5efcff*/
             {
               v23 = 0; /*0x5efd01*/
               v22 = 3; /*0x5efd03*/
@@ -4787,7 +4787,7 @@ void Network_Process_5F0120(int a1)
     case 2: /*0x5f012d*/
       if ( (Dialog::CheckButtonState() & 0x80u) != 0 ) /*0x5f0140*/
         goto LABEL_3; /*0x5f0140*/
-      IDA_LOBYTE(v2) = 1; /*0x5f014d*/
+      (v2) = ((v2) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5f014d*/
       result = Modem::CheckStatus(v2, dword_AC1234, a1); /*0x5f014f*/
       break; /*0x5f014f*/
     case 3: /*0x5f012d*/
@@ -4798,7 +4798,7 @@ void Network_Process_5F0120(int a1)
       }
       else
       {
-        IDA_LOBYTE(v3) = 1; /*0x5f0168*/
+        (v3) = ((v3) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5f0168*/
         result = Modem::DetectAndConnect(v3, dword_AC1234, a1); /*0x5f016a*/
       }
       break; /*0x5f016a*/
@@ -5039,7 +5039,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
     *(unsigned int *)(aP0 + 8) = *(unsigned int *)(a4 + 4); /*0x541701*/
     ((Network *)((uint16_t *)a4))->FormatAddress(0); /*0x541704*/
     Debug::Log("Forwarding packet from %s ; %d to forwarder\n"); /*0x54170f G57w11: IDA push seq @ 0x54170f +1 reg-vararg(s) omitted*/
-    IDA_LOWORD(v5) = dword_841F3C; /*0x541714*/
+    (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(dword_841F3C) & 0xFFFF); /*0x541714*/
 (*(void (**)(int, int, int, void *, int, unsigned int, int, int))(*(unsigned int *)&((IPXInterfaceClass *)dword_887628)->q_30))( /*0x54173c*/ dword_887628, (int)(aP1), a3, (void *)(&unk_AA06AC), 12, 0, 1, v5);
 
 
@@ -5732,7 +5732,7 @@ char * sub_652110(int a1, int a2)
     v5 = a1 + 24 * a2; /*0x652138*/
     if ( byte_A8DBA0 ) /*0x652142*/
     {
-      IDA_LOWORD(v6) = Math::RoundToInt(-60.0 / ((double)(int)dword_A8B558 / (double)(unsigned int)dword_A8B554)); /*0x652168*/
+      (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(-60.0 / ((double)(int)dword_A8B558 / (double)(unsigned int)dword_A8B554))) & 0xFFFF); /*0x652168*/
       v7 = (dword_A8E2D4 >> 1) + (*(unsigned int *)(v5 + 16) >> 1) - v6 / 2; /*0x652183*/
     }
     else

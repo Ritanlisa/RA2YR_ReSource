@@ -197,7 +197,7 @@ int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   {
     if ( a2 == 273 ) /*0x4e200d*/
     {
-      v30 = IDA_HIWORD(a3); /*0x4e233f*/
+      v30 = (((unsigned int)(a3) >> 16) & 0xFFFF); /*0x4e233f*/
       WindowLongA = (unsigned int *)GetWindowLongA(hDlg, 8); /*0x4e2342*/
       switch ( (uint16_t)a3 ) /*0x4e2354*/
       {
@@ -315,7 +315,7 @@ int GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
     }
     if ( (unsigned short)a3 == 5 ) /*0x4e227c*/
     {
-      v25 = IDA_HIWORD(a3); /*0x4e228e*/
+      v25 = (((unsigned int)(a3) >> 16) & 0xFFFF); /*0x4e228e*/
       if ( hWnd == GetDlgItem(hDlg, 1321) ) /*0x4e2295*/
       {
         v26 = (wchar_t *)((&off_822730)[v25]);
@@ -853,7 +853,7 @@ bool FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   while ( (int)v6 < (int)&dbl_8B40A0 ); /*0x4e472c*/
   SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e473b*/
   result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e4747*/
-  IDA_LOBYTE(result) = v10; /*0x4e4749*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(v10) & 0xFF); /*0x4e4749*/
   if ( !v10 ) /*0x4e474f*/
     return ShowWindow((HWND)(DlgItem), 5); /*0x4e4754*/
   return result; /*0x4e475a*/
@@ -958,7 +958,7 @@ int SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
       break;
     default:
       v6 = -(nIDDlgItem != 1320); /*0x4e4a38*/
-      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e4a3a*/
+      (v6) = ((v6) & ~0xFF) | ((unsigned int)(v6 & 0xF8) & 0xFF); /*0x4e4a3a*/
       v5 = v6 + 7; /*0x4e4a3c*/
       break;
   }
@@ -1111,7 +1111,7 @@ char FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
       break;
     default:
       v5 = -(nIDDlgItem != 1320); /*0x4e4c95*/
-      IDA_LOBYTE(v5) = v5 & 0xF8; /*0x4e4c97*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(v5 & 0xF8) & 0xFF); /*0x4e4c97*/
       v4 = v5 + 7; /*0x4e4c99*/
       break;
   }
@@ -1274,7 +1274,7 @@ bool FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   while ( (int)v6 < (int)&dword_8B3F98 ); /*0x4e5228*/
   SendMessageA((HWND)(DlgItem), 0x14Eu, wParam, 0); /*0x4e5237*/
   result = SendMessageA((HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e5243*/
-  IDA_LOBYTE(result) = v10; /*0x4e5245*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(v10) & 0xFF); /*0x4e5245*/
   if ( !v10 ) /*0x4e524b*/
     return ShowWindow((HWND)(DlgItem), 5); /*0x4e5250*/
   return result; /*0x4e5256*/
@@ -1377,7 +1377,7 @@ int SetupLobbyFactionSlots(HWND aP0, int nIDDlgItem, int a3)
       break;
     default:
       v6 = -(nIDDlgItem != 1707); /*0x4e5518*/
-      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e551a*/
+      (v6) = ((v6) & ~0xFF) | ((unsigned int)(v6 & 0xF8) & 0xFF); /*0x4e551a*/
       v5 = v6 + 7; /*0x4e551c*/
       break;
   }
@@ -1530,7 +1530,7 @@ char FillComboBoxSides(HWND hDlg, int nIDDlgItem)
       break;
     default:
       v5 = -(nIDDlgItem != 1707); /*0x4e5775*/
-      IDA_LOBYTE(v5) = v5 & 0xF8; /*0x4e5777*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(v5 & 0xF8) & 0xFF); /*0x4e5777*/
       v4 = v5 + 7; /*0x4e5779*/
       break;
   }
@@ -1683,7 +1683,7 @@ bool FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   }
   else
   {
-    IDA_LOBYTE(result) = v11; /*0x4e5c96*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(v11) & 0xFF); /*0x4e5c96*/
     if ( !v11 ) /*0x4e5c9c*/
       return ShowWindow(DlgItem, 5); /*0x4e5ca1*/
   }
@@ -1811,7 +1811,7 @@ bool SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
   }
   else
   {
-    IDA_LOBYTE(result) = v10; /*0x4e6011*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(v10) & 0xFF); /*0x4e6011*/
     if ( !v10 ) /*0x4e6017*/
       return ShowWindow(hWnd, 5); /*0x4e6020*/
   }
@@ -2631,7 +2631,7 @@ bool FillComboBoxRandomOnly(HWND hDlg, int nIDDlgItem)
   }
   SendMessageA( (HWND)(DlgItem), 0x4F1u, 0, 0); /*0x4e3ad9*/
   result = SendMessageA( (HWND)(DlgItem), 0x14Eu, 0, 0); /*0x4e3ae5*/
-  IDA_LOBYTE(result) = v11; /*0x4e3ae7*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(v11) & 0xFF); /*0x4e3ae7*/
   if ( !v11 ) /*0x4e3aed*/
     return ShowWindow(DlgItem, 5); /*0x4e3af2*/
   return result; /*0x4e3af8*/

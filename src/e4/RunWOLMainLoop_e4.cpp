@@ -62,12 +62,12 @@ Coord * * sub_77E110()
     {
   LABEL_5:
       ((Theme *)((Theme *)&unk_A83D10))->Stop(0); /*0x77e16a*/
-      IDA_LOBYTE(v1) = ((Theme*)((IUnknown *)((int)&unk_A83D10)))->QueueSong( (int)((void *)(-2))); /*0x77e176*/
+      (v1) = ((v1) & ~0xFF) | ((unsigned int)(((Theme*)((IUnknown *)((int)&unk_A83D10)))->QueueSong( (int)((void *)(-2)))) & 0xFF); /*0x77e176*/
     }
   }
   else
   {
-    IDA_LOBYTE(v1) = ((Theme*)((IUnknown *)((int)&unk_A83D10)))->QueueSong( (int)((void *)(-3))); /*0x77e1c2*/
+    (v1) = ((v1) & ~0xFF) | ((unsigned int)(((Theme*)((IUnknown *)((int)&unk_A83D10)))->QueueSong( (int)((void *)(-3)))) & 0xFF); /*0x77e1c2*/
   }
   return (gamemd::Coord **)(v1);
 }

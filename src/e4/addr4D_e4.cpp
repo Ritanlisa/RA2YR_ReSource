@@ -171,8 +171,8 @@ int sub_4D2370()
       v11 = v5; /*0x4d23e4*/
       while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x4d23f9*/
       {
-        IDA_LOWORD(v9) = v5 + *v4; /*0x4d2408*/
-        IDA_HIWORD(v9) = IDA_HIWORD(v5) + v4[1]; /*0x4d240d*/
+        (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(v5 + *v4) & 0xFFFF); /*0x4d2408*/
+        (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v5) + v4[1]) & 0xFFFF) << 16); /*0x4d240d*/
         v11 = v9; /*0x4d241c*/
         v6 = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v11); /*0x4d2420*/
         v4 += 2; /*0x4d2436*/

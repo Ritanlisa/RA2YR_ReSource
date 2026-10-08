@@ -508,7 +508,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
       ValidateRect(v4, 0); /*0x61d8eb*/
       return 0; /*0x61d8f3*/
     case 0x401u: /*0x61d75b*/
-      v7 = IDA_HIWORD(a4); /*0x61d77d*/
+      v7 = (((unsigned int)(a4) >> 16) & 0xFFFF); /*0x61d77d*/
       v6[58] = (uint16_t)a4; /*0x61d780*/
       v6[59] = v7; /*0x61d786*/
       return 0; /*0x61d793*/
@@ -663,7 +663,7 @@ namespace gamemd {
 
   result = IDA_HIBYTE(a1); /*0x61ef7c*/
   v3 = (void *)(unsigned int)a1; /*0x61ef84*/
-  IDA_LOBYTE(Format[0]) = 0; /*0x61ef88*/
+  (Format[0]) = ((Format[0]) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x61ef88*/
   *(unsigned int *)(a2) = 0; /*0x61ef8d*/
   if ( ((unsigned int)(a1)& 0x800) == 0 ) /*0x61ef92*/
   {

@@ -687,12 +687,12 @@ bool FrameTimer::HasRemaining() const { /*G42.33 b3: 载体签名 (cache this=Te
       if ( dword_A8ED84 - v1 < result ) /*0x41bf5b*/
       {
         result -= dword_A8ED84 - v1; /*0x41bf5d*/
-        IDA_LOBYTE(result) = result > 0; /*0x41bf66*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(result > 0) & 0xFF); /*0x41bf66*/
         return result; /*0x41bf68*/
       }
       result = 0; /*0x41bf69*/
     }
-    IDA_LOBYTE(result) = result > 0; /*0x41bf72*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(result > 0) & 0xFF); /*0x41bf72*/
     return result; /*0x41bf68*/
 }
 } // namespace gamemd
@@ -725,14 +725,14 @@ int Vector2::NormalizeNonZero() {
     v3 = v2 < 0.0; /*0x41c462*/
     v4 = 0; /*0x41c462*/
     v5 = v2 == 0.0; /*0x41c462*/
-    IDA_LOWORD(result) = v1; /*0x41c468*/
+    (result) = ((result) & ~0xFFFF) | ((unsigned int)(v1) & 0xFFFF); /*0x41c468*/
     if ( v2 == 0.0 ) /*0x41c46d*/
     {
       v8 = this->u32_8; /*0x41c46f*/
       v9 = v8 < 0.0; /*0x41c472*/
       v10 = 0; /*0x41c472*/
       v11 = v8 == 0.0; /*0x41c472*/
-      IDA_LOWORD(result) = v7; /*0x41c478*/
+      (result) = ((result) & ~0xFFFF) | ((unsigned int)(v7) & 0xFFFF); /*0x41c478*/
       if ( v8 == 0.0 ) /*0x41c47d*/
       {
         *(int *)this = 0; /*0x41c47f G42.33 b3 裸 this 数组算术*/
@@ -838,7 +838,7 @@ char PlayerClass::FindNearestWaypoint(int a2, int a3, int a4) {
         v18 = a2 - *v7; /*0x430fc4*/
         v13 = (double)v19 * v19 + (double)v20 * v20 + (double)v18 * v18;
         v4 = Math::Sqrt((double)v13); /*0x430fec*/
-        IDA_LOWORD(v8) = Math::RoundToInt(v4); /*0x430ff4*/
+        (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v4)) & 0xFFFF); /*0x430ff4*/
         if ( v8 < 128 ) /*0x430ffe*/
           break; /*0x430ffe*/
       }
@@ -927,11 +927,11 @@ void BufferIO::Flush() { /*G42.33 b3: 载体签名*/
         result = ((RawFileClass *)this)->CloseHandle(); /*0x431e62*/
       }
       *((unsigned char *)this + 40) = 0; /*0x431e2b*/
-      IDA_LOBYTE(result) = 1; /*0x431e30*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x431e30*/
     }
     else
     {
-      IDA_LOBYTE(result) = 0; /*0x431e70*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x431e70*/
     }
     return; /*0x431e32*/
 }
@@ -1071,7 +1071,7 @@ int Text::Layout(uint16_t *a2, int *a3, unsigned int *a4, int a5) {
       result = (int)a4; /*0x433e71*/
       if ( a4 ) /*0x433e77*/
         *a4 = v19; /*0x433e7d*/
-      IDA_LOBYTE(result) = 1; /*0x433e7f*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x433e7f*/
     }
     else
     {
@@ -1080,7 +1080,7 @@ int Text::Layout(uint16_t *a2, int *a3, unsigned int *a4, int a5) {
       result = (int)a3; /*0x433e92*/
       if ( a3 ) /*0x433e98*/
         *a3 = 0; /*0x433e9a*/
-      IDA_LOBYTE(result) = 0; /*0x433e9c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x433e9c*/
     }
     return result; /*0x433e81*/
 }
@@ -1989,12 +1989,12 @@ char CountdownTimer::UpdateDisplay(char a2) {
       }
       v5 = *((unsigned int *)this + 1); /*0x4a265b*/
       *(unsigned int *)this = uniqueId / 60; /*0x4a2660 G42.33 b3 首槽写*/
-      if ( uniqueId / 60 != v5 || (IDA_LOBYTE(abstractFlags) = a2) != 0 ) /*0x4a266a*/
+      if ( uniqueId / 60 != v5 || (((unsigned int)(abstractFlags) & 0xFF) = a2) != 0 ) /*0x4a266a*/
       {
         *((unsigned int *)this + 1) = uniqueId / 60; /*0x4a2670*/
   LABEL_26:
         *((unsigned char *)this + 8) = 1; /*0x4a2757*/
-        IDA_LOBYTE(abstractFlags) = MarkForRedraw((void *)((char *)&stru_87F5F0 + 0x240), 0); /*0x4a2761 G42.33 b4 C1 host 形态*/
+        (abstractFlags) = ((abstractFlags) & ~0xFF) | ((unsigned int)(MarkForRedraw((void *)((char *)&stru_87F5F0 + 0x240), 0)) & 0xFF); /*0x4a2761 G42.33 b4 C1 host 形态*/
         byte_884B90 = 1; /*0x4a2766*/
         return abstractFlags; /*0x4a2766*/
       }
@@ -2017,7 +2017,7 @@ char CountdownTimer::UpdateDisplay(char a2) {
     {
   LABEL_12:
       *((unsigned char *)this + 8) = 1; /*0x4a26d3*/
-      IDA_LOBYTE(abstractFlags) = MarkForRedraw((void *)((char *)&stru_87F5F0 + 0x240), 0); /*0x4a26d6 G42.33 b4 C1 自由形*/
+      (abstractFlags) = ((abstractFlags) & ~0xFF) | ((unsigned int)(MarkForRedraw((void *)((char *)&stru_87F5F0 + 0x240), 0)) & 0xFF); /*0x4a26d6 G42.33 b4 C1 自由形*/
     }
   LABEL_13:
     v9 = *((unsigned int *)this + 1); /*0x4a26db*/
@@ -2198,7 +2198,7 @@ namespace gamemd {
 int Flag::CheckNone() {
     int result; // eax
 
-    IDA_LOBYTE(result) = !this->u32_18 && !this->u32_19; /*0x4a51e1*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(!this->u32_18 && !this->u32_19) & 0xFF); /*0x4a51e1*/
     return result; /*0x4a51e0*/
 }
 } // namespace gamemd
@@ -2552,14 +2552,14 @@ int PlayerClass::ExecuteCommand(int a2, int16_t *a3, void *a4, int a5, int a6) {
             0,
             0,
             0);
-    if ( !v10 || (v11 = v10[3278], IDA_LOBYTE(v56[0]) = 1, !v11) ) /*0x4abaee*/
-      IDA_LOBYTE(v56[0]) = 0; /*0x4abaf0*/
+    if ( !v10 || (v11 = v10[3278], ((unsigned int)(v56[0]) & 0xFF) = 1, !v11) ) /*0x4abaee*/
+      (v56[0]) = ((v56[0]) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x4abaf0*/
     v12 = a3[1] + *(unsigned short *)&this->__pad_41E[3420]; /*0x4abb06*/
     v13 = *(unsigned int *)&this->__pad_1198[12]; /*0x4abb0a*/
     IDA_LOWORD(v55) = *(unsigned short *)&this->__pad_41E[3418] + *a3; /*0x4abb10*/
     DisplayClass_field_0x11A8 = (void *)this->DisplayClass_field_0x11A8; /*0x4abb15 G42.34 C5*/
     IDA_HIWORD(v55) = v12; /*0x4abb1b*/
-    v50 = IDA_LOBYTE(v56[0]); /*0x4abb38*/
+    v50 = ((unsigned int)(v56[0]) & 0xFF); /*0x4abb38*/
     v48 = (*(int (__thiscall **)(void *))(*(unsigned int *)DisplayClass_field_0x11A8 + 64))(DisplayClass_field_0x11A8); /*0x4abb3c*/
     v15 = (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 44))(v13); /*0x4abb41*/
     v16 = (char *)EventClass_Init((void *)v57, (int)((Object_A83D4C_shadow_c *)(void *)dword_A83D4C)->Object_field_0x30, 11, v15, v48, v50, (void *)&v55); /*0x4abb55 G42.33 b4 C4 自由形*/
@@ -2765,7 +2765,7 @@ int CountryCombo::IDToIndex() {
     if ( this == (CountryCombo *)1312 ) /*0x4e3882*/
       return 6; /*0x4e3884*/
     v2 = -(this != (CountryCombo *)1313); /*0x4e3891*/
-    IDA_LOBYTE(v2) = v2 & 0xF8; /*0x4e3893*/
+    (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 & 0xF8) & 0xFF); /*0x4e3893*/
     return v2 + 7; /*0x4e383b*/
 }
 } // namespace gamemd
@@ -3042,7 +3042,7 @@ int Flag::IsNot2() {
     int result; // eax
 
     result = *(unsigned int *)this->__pad_0; /*0x5176b0*/
-    IDA_LOBYTE(result) = (~(uint8_t)*(unsigned int *)this->__pad_0 & 2) != 0; /*0x5176b6*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)((~(uint8_t)*(unsigned int *)this->__pad_0 & 2) != 0) & 0xFF); /*0x5176b6*/
     return result; /*0x5176b8*/
 }
 } // namespace gamemd
@@ -3172,7 +3172,7 @@ int HashTable::BinarySearch(int *a2) {
       result = *(unsigned int *)result; /*0x52b3a8*/
       if ( result == *a2 ) /*0x52b3ae*/
       {
-        IDA_LOBYTE(result) = 1; /*0x52b3b3*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x52b3b3*/
         return result; /*0x52b3b6*/
       }
     }
@@ -3208,11 +3208,11 @@ int HashTable::BinarySearch(int *a2) {
     if ( !v9 ) /*0x52b419*/
     {
   LABEL_13:
-      IDA_LOBYTE(result) = 0; /*0x52b40e*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x52b40e*/
       return result; /*0x52b414*/
     }
     this->u32_10 = v9; /*0x52b41d G42.35 C6*/
-    IDA_LOBYTE(result) = 1; /*0x52b421*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x52b421*/
     return result; /*0x52b3b0*/
 }
 } // namespace gamemd
@@ -3316,13 +3316,13 @@ int EventBuffer::Enqueue(int16_t a2) {
     result = (v2 + 1) % 256; /*0x54f1d7*/
     if ( result == this->u32_314 ) /*0x54f1de*/
     {
-      IDA_LOBYTE(result) = 0; /*0x54f1f9*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x54f1f9*/
     }
     else
     {
       *((unsigned short *)this + v2 + 138) = a2; /*0x54f1e5*/
       this->u32_318 = result; /*0x54f1ed*/
-      IDA_LOBYTE(result) = 1; /*0x54f1f3*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x54f1f3*/
     }
     return result; /*0x54f1f5*/
 }
@@ -3349,7 +3349,7 @@ int Vector8::EraseAt(int a2) {
     result = a2; /*0x589293*/
     if ( a2 >= v2 ) /*0x589299*/
     {
-      IDA_LOBYTE(result) = 0; /*0x5892c4*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x5892c4*/
     }
     else
     {
@@ -3366,7 +3366,7 @@ int Vector8::EraseAt(int a2) {
         }
         while ( result < *((unsigned int *)this + 4) ); /*0x5892bc*/
       }
-      IDA_LOBYTE(result) = 1; /*0x5892bf*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5892bf*/
     }
     return result; /*0x5892c1*/
 }
@@ -3771,7 +3771,7 @@ BOOL Text::DrawCharAtGrid(HDC hdc, int String, int a4) {
       }
       this->u32_2714 = v7; /*0x5bd43c*/
     }
-    IDA_LOBYTE(String) = *((unsigned char *)&this->Text_field_00 + 20 * v5 + 5 * v5 + a4); /*0x5bd45a*/
+    (String) = ((String) & ~0xFF) | ((unsigned int)(*((unsigned char *)&this->Text_field_00 + 20 * v5 + 5 * v5 + a4)) & 0xFF); /*0x5bd45a*/
     return TextOutA( /*0x5bd484*/
              hdc,
              v5 * ((MQF_ABFBE0_c *)(void *)&dword_ABFBE0)->localVariables[471] + 10,
@@ -4152,7 +4152,7 @@ int Vector4::EraseAt_Copy(int a2) {
     result = a2; /*0x63ef73*/
     if ( a2 >= v2 ) /*0x63ef79*/
     {
-      IDA_LOBYTE(result) = 0; /*0x63ef9c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x63ef9c*/
     }
     else
     {
@@ -4167,7 +4167,7 @@ int Vector4::EraseAt_Copy(int a2) {
         }
         while ( result < *((unsigned int *)this + 4) ); /*0x63ef94*/
       }
-      IDA_LOBYTE(result) = 1; /*0x63ef97*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x63ef97*/
     }
     return result; /*0x63ef99*/
 }
@@ -4364,11 +4364,11 @@ int SHA1::Reset(int a2) {
       *(unsigned char *)(a2 + 52) = 0; /*0x69dff9*/
       *(unsigned int *)(a2 + 60) = 0; /*0x69dffc*/
       *(unsigned int *)(a2 + 56) = 0; /*0x69dfff*/
-      IDA_LOBYTE(result) = 1; /*0x69e002*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x69e002*/
     }
     else
     {
-      IDA_LOBYTE(result) = 0; /*0x69e005*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x69e005*/
     }
     return result; /*0x69e004*/
 }

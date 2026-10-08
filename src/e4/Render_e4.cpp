@@ -163,7 +163,7 @@ int sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, i
           }
           v30 = v30 + 1.0; /*0x53c1c5*/
           v13 = a2 + 2 * (v11 + a7 * v12); /*0x53c1d2*/
-          IDA_LOWORD(v13) = *(unsigned short *)v13; /*0x53c1d5*/
+          (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)v13) & 0xFFFF); /*0x53c1d5*/
           *v26 = ((v13 & 0x1F) + ((int)(a3 * (31 - (v13 & 0x1F))) >> 8)) /*0x53c23a*/
                | (32 * (((v13 >> 5) & 0x3F) + ((int)(a3 * (63 - ((v13 >> 5) & 0x3F))) >> 8)))
                | ((((uint16_t)v13 >> 11) + (uint16_t)((a3 * (31 - ((uint16_t)v13 >> 11))) >> 8)) << 11);

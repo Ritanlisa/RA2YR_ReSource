@@ -1177,7 +1177,7 @@ LABEL_343:
     qmemcpy( (void *)(&v290[2]), (const void *)(vfptr), 4 * (*(unsigned int *)((char *)&g_OverlayTypeConfig + 17816) >> 2));
     v247 = &vfptr[4 * v245];
     unsigned int * v246 = &v290[v245 + 2];
-    IDA_LOBYTE(v245) = v244;
+    (v245) = ((v245) & ~0xFF) | ((unsigned int)(v244) & 0xFF);
     int v248 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17756);
     qmemcpy( (void *)(v246), v247, v245 & 3);
     int v249 = *(unsigned int *)((char *)&g_OverlayTypeConfig + 17752);

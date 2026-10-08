@@ -493,17 +493,17 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
     {
       case 0: /*0x6eec7c*/
         v11 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v7 + 72))( (unsigned int *)(v7), (char *)(v50)); /*0x6eec8c*/
-        IDA_LOWORD(v33) = *v11 / 256; /*0x6eec9f*/
+        (v33) = ((v33) & ~0xFFFF) | ((unsigned int)(*v11 / 256) & 0xFFFF); /*0x6eec9f*/
         v12 = v9->owner; /*0x6eecb0*/
-        IDA_HIWORD(v33) = v11[1] / 256; /*0x6eecb9*/
+        (v33) = ((v33) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v11[1] / 256) & 0xFFFF) << 16); /*0x6eecb9*/
         v33 = v33; /*0x6eecc6*/
         v10 = 0x7FFFFFFF - ((CellClass *)((int16_t *)&v33))->GetTileData(v12); /*0x6eecdb*/
         break; /*0x6eecdd*/
       case 1: /*0x6eec7c*/
         v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v7 + 72))( (unsigned int *)(v7), (char *)(v51)); /*0x6eeceb*/
-        IDA_LOWORD(v34) = *v13 / 256; /*0x6eecfe*/
+        (v34) = ((v34) & ~0xFFFF) | ((unsigned int)(*v13 / 256) & 0xFFFF); /*0x6eecfe*/
         v14 = v9->owner; /*0x6eed0f*/
-        IDA_HIWORD(v34) = v13[1] / 256; /*0x6eed18*/
+        (v34) = ((v34) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v13[1] / 256) & 0xFFFF) << 16); /*0x6eed18*/
         v34 = v34; /*0x6eed25*/
         TileData = ((CellClass *)((int16_t *)&v34))->GetTileData(v14); /*0x6eed30*/
         goto LABEL_13; /*0x6eed35*/

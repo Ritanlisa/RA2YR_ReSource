@@ -83,8 +83,8 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
 
   v1 = a1; /*0x6d6bb2*/
   v2 = *a1 + 2; /*0x6d6bbd*/
-  IDA_HIWORD(a1) = a1[1]; /*0x6d6bc1*/
-  IDA_LOWORD(a1) = v2; /*0x6d6bc6*/
+  (a1) = ((a1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(a1[1]) & 0xFFFF) << 16); /*0x6d6bc1*/
+  (a1) = ((a1) & ~0xFFFF) | ((unsigned int)(v2) & 0xFFFF); /*0x6d6bc6*/
   v3 = 0; /*0x6d6bd3*/
   while ( 1 ) /*0x6d6bdf*/
   {
@@ -92,12 +92,12 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
     v5 = result[80]; /*0x6d6be4*/
     if ( (v5 & 0x80u) != 0 && result[17] && (v5 & 0x800) != 0 ) /*0x6d6bf9*/
       break; /*0x6d6bf9*/
-    ++IDA_HIWORD(a1); /*0x6d6bff*/
+    ++(((unsigned int)(a1) >> 16) & 0xFFFF); /*0x6d6bff*/
     if ( ++v3 >= 5 ) /*0x6d6c08*/
     {
       v6 = *v1 + 1; /*0x6d6c11*/
-      IDA_HIWORD(a1) = v1[1]; /*0x6d6c13*/
-      IDA_LOWORD(a1) = v6; /*0x6d6c18*/
+      (a1) = ((a1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v1[1]) & 0xFFFF) << 16); /*0x6d6c13*/
+      (a1) = ((a1) & ~0xFFFF) | ((unsigned int)(v6) & 0xFFFF); /*0x6d6c18*/
       v7 = 0; /*0x6d6c25*/
       while ( 1 ) /*0x6d6c31*/
       {
@@ -105,12 +105,12 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
         v8 = result[80]; /*0x6d6c36*/
         if ( (v8 & 0x80u) != 0 && result[17] && (v8 & 0x800) != 0 ) /*0x6d6c4b*/
           break; /*0x6d6c4b*/
-        ++IDA_HIWORD(a1); /*0x6d6c51*/
+        ++(((unsigned int)(a1) >> 16) & 0xFFFF); /*0x6d6c51*/
         if ( ++v7 >= 5 ) /*0x6d6c5a*/
         {
           v9 = v1[1] + 2; /*0x6d6c63*/
-          IDA_LOWORD(a1) = *v1; /*0x6d6c67*/
-          IDA_HIWORD(a1) = v9; /*0x6d6c6c*/
+          (a1) = ((a1) & ~0xFFFF) | ((unsigned int)(*v1) & 0xFFFF); /*0x6d6c67*/
+          (a1) = ((a1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v9) & 0xFFFF) << 16); /*0x6d6c6c*/
           v10 = 0; /*0x6d6c79*/
           while ( 1 ) /*0x6d6c85*/
           {
@@ -118,12 +118,12 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
             v11 = result[80]; /*0x6d6c8a*/
             if ( (v11 & 0x80u) != 0 && result[17] && (v11 & 0x800) == 0 ) /*0x6d6c9f*/
               break; /*0x6d6c9f*/
-            IDA_LOWORD(a1) = (unsigned short)a1 + 1; /*0x6d6ca1*/
+            (a1) = ((a1) & ~0xFFFF) | ((unsigned int)((unsigned short)a1 + 1) & 0xFFFF); /*0x6d6ca1*/
             if ( ++v10 >= 5 ) /*0x6d6caa*/
             {
               v12 = v1[1] + 1; /*0x6d6cb3*/
-              IDA_LOWORD(a1) = *v1; /*0x6d6cb5*/
-              IDA_HIWORD(a1) = v12; /*0x6d6cba*/
+              (a1) = ((a1) & ~0xFFFF) | ((unsigned int)(*v1) & 0xFFFF); /*0x6d6cb5*/
+              (a1) = ((a1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v12) & 0xFFFF) << 16); /*0x6d6cba*/
               v13 = 0; /*0x6d6cc7*/
               while ( 1 ) /*0x6d6cd3*/
               {
@@ -131,7 +131,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
                 v14 = result[80]; /*0x6d6cd8*/
                 if ( (v14 & 0x80u) != 0 && result[17] && (v14 & 0x800) == 0 ) /*0x6d6ced*/
                   break; /*0x6d6ced*/
-                IDA_LOWORD(a1) = (unsigned short)a1 + 1; /*0x6d6cef*/
+                (a1) = ((a1) & ~0xFFFF) | ((unsigned int)((unsigned short)a1 + 1) & 0xFFFF); /*0x6d6cef*/
                 if ( ++v13 >= 5 ) /*0x6d6cf8*/
                   return 0; /*0x6d6cfa*/
               }
@@ -485,7 +485,7 @@ int ZCoordToScreenY(int aP0)
 {
   int result; // eax
 
-  IDA_LOWORD(result) = Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0  >=  (int)(728))) + 0.5); /*0x6d2113*/
+  (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)aP0 * dbl_B0CD48 + (double)(aP0  >=  (int)(728))) + 0.5)) & 0xFFFF); /*0x6d2113*/
   return result; /*0x6d2118*/
 }
 } // namespace gamemd

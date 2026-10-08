@@ -531,10 +531,10 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
       {
         if ( (uint16_t)a3 == 1508 ) /*0x630e66*/
         {
-          if ( !IDA_HIWORD(a3) ) /*0x630e82*/
+          if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x630e82*/
             UI_Pop_631500(WindowLongA); /*0x630e89*/
         }
-        else if ( (uint16_t)a3 == 1633 && !IDA_HIWORD(a3) ) /*0x630e6d*/
+        else if ( (uint16_t)a3 == 1633 && !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x630e6d*/
         {
           UI_Pop((gamemd::ObjectClass *)(WindowLongA)); /*0x630e74*/
           return 0; /*0x630e7f*/
@@ -545,7 +545,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
         switch ( (uint16_t)a3 ) /*0x630cc4*/
         {
           case 0x5E0u: /*0x630cc4*/
-            if ( IDA_HIWORD(a3) == 1 ) /*0x630dda*/
+            if ( (((unsigned int)(a3) >> 16) & 0xFFFF) == 1 ) /*0x630dda*/
             {
               DlgItem = GetDlgItem(*(HWND *)WindowLongA, 1504); /*0x630dee*/
               v10 = DlgItem; /*0x630df0*/
@@ -566,21 +566,21 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
             }
             break;
           case 1u: /*0x630cc4*/
-            if ( !IDA_HIWORD(a3) && (uint8_t)UI_Get_630EA0((gamemd::ObjectClass *)(WindowLongA)) == 1 ) /*0x630dbe*/
+            if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) && (uint8_t)UI_Get_630EA0((gamemd::ObjectClass *)(WindowLongA)) == 1 ) /*0x630dbe*/
             {
               *(unsigned int *)(WindowLongA + 4) = 1; /*0x630dc4*/
               return 0; /*0x630dd1*/
             }
             break;
           case 2u: /*0x630cc4*/
-            if ( !IDA_HIWORD(a3) ) /*0x630d93*/
+            if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x630d93*/
             {
               *(unsigned int *)(WindowLongA + 4) = 2; /*0x630d9c*/
               return 0; /*0x630da9*/
             }
             break;
           default:
-            if ( (uint16_t)a3 == 1339 && !IDA_HIWORD(a3) ) /*0x630ce3*/
+            if ( (uint16_t)a3 == 1339 && !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x630ce3*/
             {
               v6 = GetDlgItem(*(HWND *)WindowLongA, 1504); /*0x630cfa*/
               if ( v6 ) /*0x630cfe*/
@@ -718,13 +718,13 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
       {
         if ( (uint16_t)a3 == 1635 ) /*0x63190a*/
         {
-          if ( IDA_HIWORD(a3) ) /*0x631986*/
+          if ( (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x631986*/
           {
             SendMessageA( (HWND)(a4), 0xF1u, 1u, 0); /*0x631995*/
             SendDlgItemMessageA(hWnd, 1636, 0xF1u, 0, 0); /*0x6319aa*/
           }
         }
-        else if ( (uint16_t)a3 == 1636 && IDA_HIWORD(a3) ) /*0x631913*/
+        else if ( (uint16_t)a3 == 1636 && (((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x631913*/
         {
           SendMessageA( (HWND)(a4), 0xF1u, 1u, 0); /*0x631926*/
           SendDlgItemMessageA(hWnd, 1635, 0xF1u, 0, 0); /*0x63193b*/
@@ -741,7 +741,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
         switch ( (uint16_t)a3 ) /*0x631805*/
         {
           case 0x5E5u: /*0x631805*/
-            if ( IDA_HIWORD(a3) == 1281 || IDA_HIWORD(a3) == 512 ) /*0x6318c3*/
+            if ( (((unsigned int)(a3) >> 16) & 0xFFFF) == 1281 || (((unsigned int)(a3) >> 16) & 0xFFFF) == 512 ) /*0x6318c3*/
             {
               SendMessageA( (HWND)(a4), 0x4B3u, 0x40u, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x6318dc*/
               ((WideString *)(lParam))->Trim(); /*0x6318e2*/
@@ -750,7 +750,7 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
             }
             break;
           case 1u: /*0x631805*/
-            if ( !IDA_HIWORD(a3) ) /*0x63188c*/
+            if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x63188c*/
             {
               Network_Set(); /*0x631895*/
               *(unsigned int *)(v6 + 4) = 1; /*0x6318a1*/
@@ -758,14 +758,14 @@ int NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
             }
             break;
           case 2u: /*0x631805*/
-            if ( !IDA_HIWORD(a3) ) /*0x63186d*/
+            if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x63186d*/
             {
               *(unsigned int *)(WindowLongA + 4) = 2; /*0x631879*/
               return 0; /*0x631889*/
             }
             break;
           default:
-            if ( (uint16_t)a3 == 1503 && (IDA_HIWORD(a3) == 1281 || IDA_HIWORD(a3) == 512) ) /*0x63182b*/
+            if ( (uint16_t)a3 == 1503 && ((((unsigned int)(a3) >> 16) & 0xFFFF) == 1281 || (((unsigned int)(a3) >> 16) & 0xFFFF) == 512) ) /*0x63182b*/
             {
               SendMessageA( (HWND)(a4), 0x4B5u, 0x40u, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x631844*/
               ((String *)((char *)lParam))->Trim(); /*0x63184a*/
@@ -2161,10 +2161,10 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   *((unsigned char *)v11 + 152) = 1; /*0x63999b*/
   if ( v2 ) /*0x6399a1*/
     ((ScriptAction *)v2)->FindSquadMember(); /*0x6399a5*/
-  IDA_LOBYTE(v23) = stru_AC4B30.__pad_EC[180]; /*0x6399aa*/
+  (v23) = ((v23) & ~0xFF) | ((unsigned int)(stru_AC4B30.__pad_EC[180]) & 0xFF); /*0x6399aa*/
   if ( !stru_AC4B30.__pad_EC[180] ) /*0x6399b1*/
   {
-    IDA_LOBYTE(v23) = ((House *)((unsigned int *)v37)[0])->IsHumanPlayer(); /*0x6399c1*/
+    (v23) = ((v23) & ~0xFF) | ((unsigned int)(((House *)((unsigned int *)v37)[0])->IsHumanPlayer()) & 0xFF); /*0x6399c1*/
     if ( (unsigned char)v23 ) /*0x6399c8*/
     {
       stru_AC4B30.__pad_EC[180] = 1; /*0x6399ce*/
@@ -2179,9 +2179,9 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
         for ( i = 0; i < v25; ++i ) /*0x639a1f*/
         {
           v29 = **(unsigned char ***)(*(unsigned int *)(v24 + 4) + 4 * i); /*0x639a27*/
-          IDA_LOBYTE(v23) = v29[131]; /*0x639a29*/
+          (v23) = ((v23) & ~0xFF) | ((unsigned int)(v29[131]) & 0xFF); /*0x639a29*/
           if ( (unsigned char)v23 ) /*0x639a31*/
-            IDA_LOBYTE(v23) = (*(int (**)(unsigned char *))(*(unsigned int *)v29 + 336))( (unsigned char *)(v29)); /*0x639a35*/
+            (v23) = ((v23) & ~0xFF) | ((unsigned int)((*(int (**)(unsigned char *))(*(unsigned int *)v29 + 336))( (unsigned char *)(v29))) & 0xFF); /*0x639a35*/
         }
       }
       else
@@ -2190,9 +2190,9 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
         {
           v23 = *(unsigned int *)(*(unsigned int *)(v24 + 4) + 4 * j); /*0x6399f4*/
           v27 = *(unsigned int *)v23; /*0x6399f7*/
-          IDA_LOBYTE(v23) = *(unsigned char *)(*(unsigned int * *)&v23->q20C; /*0x6399f9*/
+          (v23) = ((v23) & ~0xFF) | ((unsigned int)(*(unsigned char *)(*(unsigned int * *)&v23->q20C) & 0xFF); /*0x6399f9*/
           if ( !(unsigned char)v23 ) /*0x639a01*/
-            IDA_LOBYTE(v23) = (*(int (**)(int))(*(unsigned int *)v27 + 332))(v27); /*0x639a05*/
+            (v23) = ((v23) & ~0xFF) | ((unsigned int)((*(int (**)(int))(*(unsigned int *)v27 + 332))(v27)) & 0xFF); /*0x639a05*/
         }
       }
     }
@@ -2507,7 +2507,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
         v19 = *(unsigned int *)WaypointCoords; /*0x63af74*/
         IDA_LOBYTE(WaypointCoords) = WaypointCoords[4]; /*0x63af7b*/
         *(unsigned int *)&v23[104] = v19; /*0x63af7f*/
-        IDA_LOBYTE(v24) = (unsigned char)WaypointCoords; /*0x63af81*/
+        (v24) = ((v24) & ~0xFF) | ((unsigned int)((unsigned char)WaypointCoords) & 0xFF); /*0x63af81*/
         v20 = ((ScriptAction *)(&v29[12]))->GetWaypointCoords( v16); /*0x63af88*/
         ScenarioClass::SetEvent( /*0x63afac*/
           &v29[20],
@@ -2518,7 +2518,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
           *(int *)&v23[104],
           v24);
         qmemcpy( (void *)(v23), (const void *)(&v29[20]), sizeof(v23)); /*0x63afc2*/
-        IDA_LOWORD(v24) = *(unsigned short *)&v29[128]; /*0x63afc4*/
+        (v24) = ((v24) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)&v29[128]) & 0xFFFF); /*0x63afc4*/
         (((v24) >> 16) & 0xFF) = v29[130]; /*0x63afc6*/
         Network::RecordEvent( /*0x63afc7*/
           *(int64_t *)v23,
@@ -4743,7 +4743,7 @@ char sub_6394E0(IUnknown * a1, int a2)
   }
   else
   {
-    IDA_LOBYTE(Next) = v12[39]; /*0x63951d*/
+    (Next) = ((Next) & ~0xFF) | ((unsigned int)(v12[39]) & 0xFF); /*0x63951d*/
     if ( !v12[39] ) /*0x639523*/
       return (char)Next; /*0x639523*/
     v4 = (BuildingLoadQueue *)&v12[35]; /*0x639525*/
@@ -4755,7 +4755,7 @@ char sub_6394E0(IUnknown * a1, int a2)
     v7 = *(unsigned int *)WaypointCoords; /*0x63953c*/
     IDA_LOBYTE(WaypointCoords) = WaypointCoords[4]; /*0x639543*/
     *(unsigned int *)&v10[104] = v7; /*0x639547*/
-    IDA_LOBYTE(v11) = (unsigned char)WaypointCoords; /*0x639549*/
+    (v11) = ((v11) & ~0xFF) | ((unsigned int)((unsigned char)WaypointCoords) & 0xFF); /*0x639549*/
     v8 = ((ScriptAction *)v12)->GetWaypointCoords( (a1)); /*0x639550*/
     ScenarioClass::SetEvent( /*0x639577*/
       &v12[128],
@@ -4766,9 +4766,9 @@ char sub_6394E0(IUnknown * a1, int a2)
       *(int *)&v10[104],
       v11);
     qmemcpy( (void *)(v10), (const void *)(&v12[128]), sizeof(v10)); /*0x63958d*/
-    IDA_LOWORD(v11) = v13; /*0x63958f*/
+    (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(v13) & 0xFFFF); /*0x63958f*/
     (((v11) >> 16) & 0xFF) = v14; /*0x639591*/
-    IDA_LOBYTE(Next) = Network::RecordEvent( /*0x639592*/
+    (Next) = ((Next) & ~0xFF) | ((unsigned int)(Network::RecordEvent( /*0x639592*/
                      *(int64_t *)v10,
                      *(int *)&v10[8],
                      *(int *)&v10[12],
@@ -4795,7 +4795,7 @@ char sub_6394E0(IUnknown * a1, int a2)
                      *(int *)&v10[96],
                      *(int *)&v10[100],
                      *(int *)&v10[104],
-                     v11);
+                     v11)) & 0xFF);
   }
   return (char)Next; /*0x639597*/
 }
@@ -4818,7 +4818,7 @@ int sub_63A440(int a1, int a2)
   if ( (v2 == 1 || v2 == 11) && (v5 == 11 || v2 == 11 && !v5) ) /*0x63a480*/
     return 0; /*0x63a482*/
   v6 = -(*(unsigned int *)(a1 + 20) != 15); /*0x63a490*/
-  IDA_LOBYTE(v6) = v6 & 0xFD; /*0x63a492*/
+  (v6) = ((v6) & ~0xFF) | ((unsigned int)(v6 & 0xFD) & 0xFF); /*0x63a492*/
   return v6 + 2; /*0x63a45b*/
 }
 } // namespace gamemd
@@ -4981,7 +4981,7 @@ char DrawTacticalFillScanline(AbstractClass * aP0, BuildingClass * aP1, int a3, 
   if ( v9 <= (int)aP0 / 2 ) /*0x63d925*/
   {
     do /*0x63d94a*/
-      IDA_LOBYTE(v7) = DrawTacticalLine2D(v9++, (gamemd::ObjectClass *)(aP1), a3, (int)(aP3), a5, a6, 0); /*0x63d942*/
+      (v7) = ((v7) & ~0xFF) | ((unsigned int)(DrawTacticalLine2D(v9++, (gamemd::ObjectClass *)(aP1), a3, (int)(aP3), a5, a6, 0)) & 0xFF); /*0x63d942*/
     while ( v9 <= v8 ); /*0x63d94a*/
   }
   return v7; /*0x63d94d*/
@@ -5010,7 +5010,7 @@ char globalHelper_03D960(Tactical * aP0, int a2, int a3, int a4, int a5, int a6)
     v8 = 0; /*0x63d970*/
   }
   for ( ; v7 <= v8; ++v7 ) /*0x63d984*/
-    IDA_LOBYTE(v9) = DrawTacticalLine2D(v7, (gamemd::ObjectClass *)(a2), a3, a4, a5, a6, 1); /*0x63d9a4*/
+    (v9) = ((v9) & ~0xFF) | ((unsigned int)(DrawTacticalLine2D(v7, (gamemd::ObjectClass *)(a2), a3, a4, a5, a6, 1)) & 0xFF); /*0x63d9a4*/
   return v9; /*0x63d9b3*/
 }
 } // namespace gamemd

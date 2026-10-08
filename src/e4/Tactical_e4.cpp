@@ -834,7 +834,7 @@ v37 = (*(int (**)(unsigned int, unsigned char *, unsigned int, unsigned int))(**
 
 
     (*(void (**)(char *, int *, unsigned int, int))(v36 + 8))( (char *)(v34), (int *)(&v72), *v35, v37); /*0x640e3d*/
-    IDA_HIBYTE(v56) = 0; /*0x640e49*/
+    (v56) = ((v56) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(0) & 0xFF) << 24); /*0x640e49*/
     FileSHP = (int)LoadFileSHP( aMmpbShp, (bool *)((bool *)&v56 + 3)); /*0x640e53*/
     v38 = 0; /*0x640e5b*/
     v58 = 0; /*0x640e5f*/

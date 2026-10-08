@@ -878,22 +878,22 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
     Power::TimerProcess((int)(this->ChargingVoice)); /*0x6ce951*/
     Power::TimerProcess((int)(this->ImpatientVoice)); /*0x6ce95f*/
     v3 = Power::TimerProcess((int)(this->SuspendVoice)); /*0x6ce96d*/
-    IDA_LOBYTE(v3) = this->IsPowered; /*0x6ce972*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->IsPowered) & 0xFF); /*0x6ce972*/
     Power::FlagProcess((Power *)a2, v3); /*0x6ce97b*/
-    IDA_LOBYTE(v4) = this->DisableableFromShell; /*0x6ce980*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(this->DisableableFromShell) & 0xFF); /*0x6ce980*/
     Power::FlagProcess((Power *)a2, v4); /*0x6ce989*/
-    IDA_LOBYTE(v5) = this->PreClick; /*0x6ce98e*/
+    (v5) = ((v5) & ~0xFF) | ((unsigned int)(this->PreClick) & 0xFF); /*0x6ce98e*/
     v6 = Power::FlagProcess((Power *)a2, v5); /*0x6ce997*/
-    IDA_LOBYTE(v6) = this->PostClick; /*0x6ce99c*/
+    (v6) = ((v6) & ~0xFF) | ((unsigned int)(this->PostClick) & 0xFF); /*0x6ce99c*/
     Power::FlagProcess((Power *)a2, v6); /*0x6ce9a5*/
     Power::TimerProcess(this->PreDependent); /*0x6ce9b3*/
-    IDA_LOBYTE(v7) = this->ShowTimer; /*0x6ce9b8*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)(this->ShowTimer) & 0xFF); /*0x6ce9b8*/
     Power::FlagProcess((Power *)a2, v7); /*0x6ce9c1*/
     Power::TimerProcess((int)(this->RechargeTime)); /*0x6ce9cf*/
     Power::TimerProcess((int)this->Type); /*0x6ce9dd*/
-    IDA_LOBYTE(v8) = this->UseChargeDrain; /*0x6ce9e2*/
+    (v8) = ((v8) & ~0xFF) | ((unsigned int)(this->UseChargeDrain) & 0xFF); /*0x6ce9e2*/
     v9 = Power::FlagProcess((Power *)a2, v8); /*0x6ce9eb*/
-    IDA_LOBYTE(v9) = this->ManualControl; /*0x6ce9f0*/
+    (v9) = ((v9) & ~0xFF) | ((unsigned int)(this->ManualControl) & 0xFF); /*0x6ce9f0*/
     return Power::FlagProcess((Power *)a2, v9); /*0x6ce9fe*/
 }
 } // namespace gamemd

@@ -753,7 +753,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
       }
       if ( !(unsigned __int8)((IsRandMap *)&dword_A8B238)->Sed2() ) /*0x7a80e2*/
       {
-        IDA_LOBYTE(v16) = dword_A8BB08; /*0x7a80ef*/
+        (v16) = ((v16) & ~0xFF) | ((unsigned int)(dword_A8BB08) & 0xFF); /*0x7a80ef*/
         if ( !FindAndValidateMap( (ObjectClass *)(byte_A8B8E0), dword_A8BB04, (const char *)(&byte_A8BAE2), v16, 0) /*0x7a813d*/
           || (((RawFileClass *)Buffer)->Construct( (int)byte_A8B8E0),
               v17 = (unsigned __int8)((FileClass *)(RawFileClass *)Buffer)->Open( 0) != 0,
@@ -1088,9 +1088,9 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
         v8 = (wchar_t *)((WideString *)(wchar_t **)&v26)->GetOrEmpty(); /*0x7a92fd*/
         swprintf(v28, (const size_t)g_Str_Trace___hs_, (const wchar_t *const)a3 + 18, v8); /*0x7a930e*/
         Type = BuildingAnim::GetType(); /*0x7a9321*/
-        IDA_LOWORD(v10) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9331*/
+        (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFF); /*0x7a9331*/
         MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, v28, Type, 22, v10, 0); /*0x7a9348*/
-        IDA_LOWORD(v11) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9360*/
+        (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFF); /*0x7a9360*/
         v25 = v11; /*0x7a9365*/
         StringCSF = GetStringCSF( (wchar_t *)(aTxtHowToReply), 0, (const char *)(g_Str_File_wonline_cpp), 8066); /*0x7a937a*/
         MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, StringCSF, Type, 22, v25, 0); /*0x7a9389*/
@@ -1219,7 +1219,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     {
       swprintf((wchar_t *const)((char *)v18 + 4), (const size_t)g_Str_Trace___hs_, (const wchar_t *)(a3 + 36), String); /*0x7a9625*/
       Type = BuildingAnim::GetType(); /*0x7a9638*/
-      IDA_LOWORD(v10) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9648*/
+      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFF); /*0x7a9648*/
       MessageListClass::AddMessage( /*0x7a965f*/
         (MessageListClass *)&stru_A8BB1C.__pad_87[189],
         0,
@@ -1331,7 +1331,7 @@ ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_27(int a1, int a2)
       if ( (unsigned __int8)((SessionClass *)&dword_A8B238)->GetGameSpeed() ) /*0x7a9920*/
       {
         Type = BuildingAnim::GetType(); /*0x7a9934*/
-        IDA_LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9944*/
+        (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFF); /*0x7a9944*/
         MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Buffer, Type, 22, v7, 0); /*0x7a995b*/
       }
       return 0; /*0x7a9961*/
@@ -1365,7 +1365,7 @@ int CComObject_CChatEventSink___ATL_DispatchStub_19(int a2, int a3)
           StringCSF = GetStringCSF( aTxtWolConnlost, 0, (const char *)(g_Str_File_wonline_cpp), 8460); /*0x7aa749*/
           swprintf(Buffer, (const size_t)StringCSF, v3); /*0x7aa754*/
           Type = BuildingAnim::GetType(); /*0x7aa761*/
-          IDA_LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7aa776*/
+          (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFF); /*0x7aa776*/
           MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, Buffer, Type, 22, v7, 0); /*0x7aa78d*/
           ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 0); /*0x7aa799*/
           memset( (void *)(&stru_B76AC4.ambientSoundController[4]), 0, 0x10Cu); /*0x7aa7af*/
@@ -1835,7 +1835,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a
       {
         do /*0x7abd74*/
         {
-          ((String *)&a2)->Assign_Bool( (const char *)(IDA_LODWORD(v4) + 36)); /*0x7abd74*/
+          ((String *)&a2)->Assign_Bool( (const char *)(((unsigned int)(v4)) + 36)); /*0x7abd74*/
           v5 = *(unsigned int *)(dword_B76680+ 4 * ((*(unsigned int (*)(void *))&dword_B76698)( (void *)(&a2)) & ((1 << IDA_SLOBYTE(&dword_B7668C)) - 1))); /*0x7abd98*/
           if ( !v5 ) /*0x7abd9d*/
             goto LABEL_21; /*0x7abd9d*/

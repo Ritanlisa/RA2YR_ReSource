@@ -188,8 +188,8 @@ int sub_567F70(int * a1, int a2)
         {
           if ( v13 + v9 * v9 < v14 ) /*0x568033*/
           {
-            IDA_HIWORD(v22) = v9 + v21; /*0x568045*/
-            IDA_LOWORD(v22) = v10 + v20; /*0x56804a*/
+            (v22) = ((v22) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v9 + v21) & 0xFFFF) << 16); /*0x568045*/
+            (v22) = ((v22) & ~0xFFFF) | ((unsigned int)(v10 + v20) & 0xFFFF); /*0x56804a*/
             v15 = (unsigned int)(unsigned int *)(((int16_t)(v9 + v21) << 9) + (int16_t)(v10 + v20)); /*0x56805c*/
             if ( v15  >=  (unsigned int)(0x40000) || (v16 = (unsigned int)(*(unsigned int **)(v12 + 4 * v15))) == 0 ) /*0x56806e*/
             {

@@ -205,16 +205,16 @@ bool FootClass::MovementAI()
       && !((unsigned int *)this)[0] )
     {
       v3 = (unsigned int *)(*((int (__thiscall **)(FootClass *, int *))this->vtable1 + 18))(this, &v46); /*0x4da5a8*/
-      IDA_LOWORD(Traversability) = *v3 / 256; /*0x4da5bb*/
-      IDA_HIWORD(Traversability) = v3[1] / 256; /*0x4da5d3*/
+      (Traversability) = ((Traversability) & ~0xFFFF) | ((unsigned int)(*v3 / 256) & 0xFFFF); /*0x4da5bb*/
+      (Traversability) = ((Traversability) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v3[1] / 256) & 0xFFFF) << 16); /*0x4da5d3*/
       *(unsigned int *)v45 = Traversability; /*0x4da5dc*/
       v4 = (double *)CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v45); /*0x4da5e6*/
       Traversability = Cell::GetTraversability(v4); /*0x4da5f4*/
       if ( Traversability > 0 ) /*0x4da5f8*/
       {
         v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4da5fe*/
-        IDA_LOWORD(v6) = RoundToInt((double)Traversability * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x4da60a*/
-                                                                         + 6168));
+        (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(RoundToInt((double)Traversability * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] /*0x4da60a*/
+                                                                         + 6168))) & 0xFFFF);
         Traversability = v6; /*0x4da610*/
         result = (*((int (__thiscall **)(FootClass *, int *, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int))this->TechnoClass /*0x4da629*/
                   + 91))(

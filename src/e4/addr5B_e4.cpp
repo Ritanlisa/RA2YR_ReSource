@@ -399,7 +399,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
       {
         if ( (uint16_t)a3 == 1344 ) /*0x5b4b82*/
         {
-          if ( IDA_HIWORD(a3) == 1281 ) /*0x5b4c4b*/
+          if ( (((unsigned int)(a3) >> 16) & 0xFFFF) == 1281 ) /*0x5b4c4b*/
           {
             DlgItem = GetDlgItem(*(HWND *)WindowLongA, 1344); /*0x5b4c5a*/
             v8 = DlgItem; /*0x5b4c60*/
@@ -418,7 +418,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
                     v19 = 0; /*0x5b4ce7*/
                     v18[0] = 104; /*0x5b4cf3*/
                     strcpy((char *)&v18[1],(const char *)(unk_A8B380)); /*0x5b4d11*/
-                    IDA_LOBYTE(v18[6]) = dword_A8B394; /*0x5b4d26*/
+                    (v18[6]) = ((v18[6]) & ~0xFF) | ((unsigned int)(dword_A8B394) & 0xFF); /*0x5b4d26*/
                     wcscpy( (wchar_t *)((char *)&v18[6] + 1), (const wchar_t *)(lParam)); /*0x5b4d2a*/
                     ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v18, 250, 1); /*0x5b4d43*/
                     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5b4d4d*/
@@ -436,21 +436,21 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
         {
           if ( (uint16_t)a3 == 2 ) /*0x5b4b8c*/
           {
-            if ( !IDA_HIWORD(a3) ) /*0x5b4bbb*/
+            if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x5b4bbb*/
             {
               ((Game *)(WindowLongA))->processStartup(); /*0x5b4bc6*/
               *(unsigned int *)(WindowLongA + 4) = 2; /*0x5b4bcb*/
               return 0; /*0x5b4bde*/
             }
           }
-          else if ( (uint16_t)a3 == 1029 && IDA_HIWORD(a3) == 1 ) /*0x5b4b9f*/
+          else if ( (uint16_t)a3 == 1029 && (((unsigned int)(a3) >> 16) & 0xFFFF) == 1 ) /*0x5b4b9f*/
           {
             ((ModemGame *)(WindowLongA))->AdvanceTauntCommand(); /*0x5b4ba7*/
             return 0; /*0x5b4bb8*/
           }
           return 0; /*0x5b4b9f*/
         }
-        if ( !IDA_HIWORD(a3) ) /*0x5b4be1*/
+        if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x5b4be1*/
         {
           v6 = GetDlgItem(*(HWND *)WindowLongA, 1); /*0x5b4bf4*/
           if ( v6 ) /*0x5b4bfc*/
@@ -465,7 +465,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
       }
       if ( (uint16_t)a3 != 1473 ) /*0x5b4d87*/
       {
-        if ( (uint16_t)a3 == 1639 && IDA_HIWORD(a3) == 1 ) /*0x5b4d9e*/
+        if ( (uint16_t)a3 == 1639 && (((unsigned int)(a3) >> 16) & 0xFFFF) == 1 ) /*0x5b4d9e*/
         {
           v10 = GetDlgItem(*(HWND *)WindowLongA, 1639); /*0x5b4da9*/
           v11 = v10; /*0x5b4daf*/
@@ -483,7 +483,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
         }
         return 0; /*0x5b4dce*/
       }
-      if ( IDA_HIWORD(a3) != 1281 && IDA_HIWORD(a3) != 768 ) /*0x5b4e08*/
+      if ( (((unsigned int)(a3) >> 16) & 0xFFFF) != 1281 && (((unsigned int)(a3) >> 16) & 0xFFFF) != 768 ) /*0x5b4e08*/
         return 0; /*0x5b4e08*/
       v13 = GetDlgItem(*(HWND *)WindowLongA, 1473); /*0x5b4e17*/
       v14 = v13; /*0x5b4e1d*/
@@ -491,7 +491,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
         return 0; /*0x5b4e21*/
       SendMessageA( (HWND)(v13), 0x4B3u, 0x15u, (LPARAM)((LPARAM)((LPARAM)v17))); /*0x5b4e3a*/
       ((WideString *)(v17))->Trim(); /*0x5b4e40*/
-      if ( IDA_HIWORD(a3) != 768 ) /*0x5b4e4a*/
+      if ( (((unsigned int)(a3) >> 16) & 0xFFFF) != 768 ) /*0x5b4e4a*/
         SendMessageA( (HWND)(v14), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)v17))); /*0x5b4e59*/
       CopyWideToChar((unsigned char *)(unk_A8B380), (char *)v17, -1); /*0x5b4e66*/
       *(unsigned char *)(WindowLongA + 9) = 1; /*0x5b4e72*/
@@ -565,7 +565,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   *(unsigned int *)((char *)&stru_A8EB00 + 432) = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
   v6 = *(unsigned int *)(aP0 + 150); /*0x5b6abc*/
   (&dword_A8E960)[0] = v6; /*0x5b6ac4*/
-  IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
+  (v6) = ((v6) & ~0xFF) | ((unsigned int)(v6 | 0xC0) & 0xFF); /*0x5b6acf*/
   *(unsigned int *)&((unsigned char *)&stru_A8B250)[24] = aP0->u32_A2; /*0x5b6ad1*/
   stru_A8EB00.ObjectTypeClass[24] = *(unsigned int *)&((unsigned char *)&stru_A8B250)[24]; /*0x5b6ad7*/
   ((unsigned char *)&stru_A8B250)[18] = ((*(unsigned int *)&aP0->wasFallingDown) & 0x10) != 0; /*0x5b6ae9*/
@@ -1347,7 +1347,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   if ( g_MissionQueueFrame.localVariables[606] == 1 ) /*0x5bfb8f*/
   {
     v41 = v41; /*0x5bfb91*/
-    IDA_LOBYTE(v41) = v41 | 2; /*0x5bfb95*/
+    (v41) = ((v41) & ~0xFF) | ((unsigned int)(v41 | 2) & 0xFF); /*0x5bfb95*/
     v41 = v41; /*0x5bfb97*/
   }
   if ( a12 == 1 ) /*0x5bfba3*/
@@ -2137,7 +2137,7 @@ char ReturnTrue(AnimClass * aP0)
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = 1; /*0x5b43f0*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5b43f0*/
   return result; /*0x5b43f2*/
 }
 } // namespace gamemd
@@ -2471,9 +2471,9 @@ HWND sub_5B6F30()
 
   memset( (void *)(v7), 0, sizeof(v7)); /*0x5b6f45*/
   v8 = 0; /*0x5b6f51*/
-  IDA_LOBYTE(v7[6]) = dword_A8DB30; /*0x5b6f58*/
+  (v7[6]) = ((v7[6]) & ~0xFF) | ((unsigned int)(dword_A8DB30) & 0xFF); /*0x5b6f58*/
   v7[0] = 102; /*0x5b6f67*/
-  IDA_BYTE1(v7[7]) = dword_A8B394; /*0x5b6f6f*/
+  (v7[7]) = ((v7[7]) & ~(0xFFULL << 8)) | (((unsigned __int64)(unsigned int)(dword_A8B394) & 0xFF) << 8); /*0x5b6f6f*/
   ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v7, 250, 1); /*0x5b6f73*/
   StringCSF = GetStringCSF( (wchar_t *)(aTxtSigningOff), 0, aDRa2mdpostMode, 1683); /*0x5b6f8b*/
   MessageBox = (unsigned int)CreateMessageBox( (LPARAM)((LPARAM)((LPARAM)StringCSF)), 0, 0); /*0x5b6f94*/
@@ -2841,9 +2841,9 @@ HWND sub_5BAB00()
 
   memset( (void *)(v7), 0, sizeof(v7)); /*0x5bab15*/
   v8 = 0; /*0x5bab21*/
-  IDA_LOBYTE(v7[6]) = dword_A8DB30; /*0x5bab28*/
+  (v7[6]) = ((v7[6]) & ~0xFF) | ((unsigned int)(dword_A8DB30) & 0xFF); /*0x5bab28*/
   v7[0] = 102; /*0x5bab37*/
-  IDA_BYTE1(v7[7]) = dword_A8B394; /*0x5bab3f*/
+  (v7[7]) = ((v7[7]) & ~(0xFFULL << 8)) | (((unsigned __int64)(unsigned int)(dword_A8B394) & 0xFF) << 8); /*0x5bab3f*/
   ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v7, 250, 1); /*0x5bab43*/
   StringCSF = GetStringCSF( (wchar_t *)(aTxtSigningOff), 0, aDRa2mdpostMode_0, 2398); /*0x5bab5b*/
   MessageBox = (unsigned int)CreateMessageBox( (LPARAM)((LPARAM)((LPARAM)StringCSF)), 0, 0); /*0x5bab64*/

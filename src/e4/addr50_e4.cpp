@@ -221,9 +221,9 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
     Math::CalcAngle(v12, v13); /*0x50603c*/
     __asm { fsub ds:dbl_7E2820 } /*0x506041*/
     __asm { fmul ds:dbl_7E2818 }
-    IDA_LOWORD(v15) = Math::RoundToInt(a3); /*0x506055*/
+    (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a3)) & 0xFFFF); /*0x506055*/
     v10 = 32 * a5 - (uint8_t)(((v15 >> 7) + 1) >> 1); /*0x506071*/
-    v9 = (IDA_HIDWORD(v10) ^ v10) - IDA_HIDWORD(v10); /*0x506074*/
+    v9 = (((unsigned int)((unsigned __int64)(v10) >> 32)) ^ v10) - ((unsigned int)((unsigned __int64)(v10) >> 32)); /*0x506074*/
     if ( v9 >= 128 ) /*0x50607b*/
       v9 = 255 - v9; /*0x506084*/
   }

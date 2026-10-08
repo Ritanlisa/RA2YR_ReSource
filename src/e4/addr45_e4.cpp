@@ -237,7 +237,7 @@ int sub_452000(unsigned int * a1)
       }
       v7 = *((char *)a1 + 1773); /*0x4520cf*/
       if ( v7 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))( (unsigned int *)(a1), 0, 0) == 5 ) /*0x4520e9*/
-        IDA_LOBYTE(v7) = 16; /*0x4520eb*/
+        (v7) = ((v7) & ~0xFF) | ((unsigned int)(16) & 0xFF); /*0x4520eb*/
       v8 = a1 + 343; /*0x4520f0*/
       v9 = 21; /*0x4520f2*/
       do /*0x452107*/
@@ -256,7 +256,7 @@ int sub_452000(unsigned int * a1)
   while ( !v10 ); /*0x45211d*/
   v11 = *((char *)a1 + 1773); /*0x452123*/
   if ( v11 == 15 && (*(int (**)(unsigned int *, unsigned int, unsigned int))(*a1 + 104))( (unsigned int *)(a1), 0, 0) == 5 ) /*0x45213d*/
-    IDA_LOBYTE(v11) = 16; /*0x45213f*/
+    (v11) = ((v11) & ~0xFF) | ((unsigned int)(16) & 0xFF); /*0x45213f*/
   v12 = (int *)(a1 + 343); /*0x452144*/
   v13 = 21; /*0x452146*/
   do /*0x45215b*/
@@ -399,7 +399,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
       ((uint8_t)v38 >> g_BitShift_Green_0 << g_BitShift_Red)
     | (IDA_HIBYTE(v38) >> g_BitMask_Blue << g_BitMask_Green)
     | (v39 >> g_BitMask_Red << g_BitShift_Blue));
-    IDA_LOBYTE(v14) = (unsigned char)(aP0); /*0x456bee*/
+    (v14) = ((v14) & ~0xFF) | ((unsigned int)((unsigned char)(aP0)) & 0xFF); /*0x456bee*/
     if ( aP0 ) /*0x456bf4*/
     {
       v15 = (unsigned int)((double)v36);
@@ -450,7 +450,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
         IDA_LODWORD(v48) = v21 - *(unsigned int *)&*(unsigned int *)&DSurface_ViewBounds; /*0x456da3*/
         v31 = v29; /*0x456da7*/
         v47[1] = v22 - dword_886FA4; /*0x456dc9*/
-        IDA_LOBYTE(v14) = (*(int (**)(int, int *, double *, unsigned int *, int *, int, int, unsigned int, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 60))( /*0x456dd8*/
+        (v14) = ((v14) & ~0xFF) | ((unsigned int)((*(int (**)(int, int *, double *, unsigned int *, int *, int, int, unsigned int, int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 + 60))( /*0x456dd8*/
                         g_DSurface_Hidden_2,
                         (int *)&DSurface_ViewBounds,
                         &v48,
@@ -462,7 +462,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
                         1,
                         1,
                         1,
-                        IDA_LODWORD(v31));
+                        IDA_LODWORD(v31))) & 0xFF);
         ++v16; /*0x456ddf*/
         ++v36; /*0x456de9*/
       }
@@ -1329,7 +1329,7 @@ char sub_45E8F0()
   int i; // ecx
   unsigned int v6[4]; // [esp+4h] [ebp-10h] BYREF
 
-  IDA_LOBYTE(SubFile) = (unsigned char)dword_89DDBC; /*0x45e8f0*/
+  (SubFile) = ((SubFile) & ~0xFF) | ((unsigned int)((unsigned char)dword_89DDBC) & 0xFF); /*0x45e8f0*/
   if ( !dword_89DDBC ) /*0x45e8fb*/
   {
     dword_89DDBC = (unsigned int)((void *)SearchMIXFile((char *)(aBuildngzSha), 0)); /*0x45e90d*/
@@ -1344,10 +1344,10 @@ char sub_45E8F0()
       {
         for ( i = 0; i < v1; ++i ) /*0x45e944*/
         {
-          IDA_LOBYTE(SubFile) = *(unsigned char *)(v2 + i); /*0x45e946*/
+          (SubFile) = ((SubFile) & ~0xFF) | ((unsigned int)(*(unsigned char *)(v2 + i)) & 0xFF); /*0x45e946*/
           if ( (unsigned char)SubFile ) /*0x45e94b*/
           {
-            IDA_LOBYTE(SubFile) = SubFile - 65; /*0x45e94d*/
+            (SubFile) = ((SubFile) & ~0xFF) | ((unsigned int)(SubFile - 65) & 0xFF); /*0x45e94d*/
             *(unsigned char *)(v2 + i) = SubFile; /*0x45e94f*/
           }
         }

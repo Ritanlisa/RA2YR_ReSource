@@ -40,7 +40,7 @@ void  sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
       v8 = *a1; /*0x7e0040*/
       a1 = (int *)((char *)a1 + 2); /*0x7e0042*/
       v9 = __ROR4__(v8, 8); /*0x7e004f*/
-      IDA_LOBYTE(v9) = ((unsigned char *)&byte_A8F91C)[(uint16_t)v8]; /*0x7e0052*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(((unsigned char *)&byte_A8F91C)[(uint16_t)v8]) & 0xFF); /*0x7e0052*/
       (((v9) >> 8) & 0xFF) = (((v8) >> 8) & 0xFF); /*0x7e0058*/
       v10 = __ROR4__(v9, 8); /*0x7e005f*/
       (((v10) >> 8) & 0xFF) = ((unsigned char *)&byte_A8F91C)[(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
@@ -88,7 +88,7 @@ void  sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
       v8 = *a1; /*0x7e00e0*/
       a1 = (int *)((char *)a1 + 2); /*0x7e00e2*/
       v9 = __ROR4__(v8, 8); /*0x7e00ef*/
-      IDA_LOBYTE(v9) = ((unsigned char *)&byte_A8F91C)[(uint16_t)v8]; /*0x7e00f2*/
+      (v9) = ((v9) & ~0xFF) | ((unsigned int)(((unsigned char *)&byte_A8F91C)[(uint16_t)v8]) & 0xFF); /*0x7e00f2*/
       (((v9) >> 8) & 0xFF) = (((v8) >> 8) & 0xFF); /*0x7e00f8*/
       v10 = __ROR4__(v9, 8); /*0x7e00ff*/
       (((v10) >> 8) & 0xFF) = ((unsigned char *)&byte_A8F91C)[(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
@@ -141,7 +141,7 @@ void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
     v6 = *a1; /*0x7e0182*/
     a1 = (int *)((char *)a1 + 2); /*0x7e0184*/
     v7 = __ROR4__(v6, 8); /*0x7e0191*/
-    IDA_LOBYTE(v7) = ((unsigned char *)&byte_A8F91C)[(uint16_t)v6]; /*0x7e0194*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)(((unsigned char *)&byte_A8F91C)[(uint16_t)v6]) & 0xFF); /*0x7e0194*/
     (((v7) >> 8) & 0xFF) = (((v6) >> 8) & 0xFF); /*0x7e019a*/
     v8 = __ROR4__(v7, 8); /*0x7e01a1*/
     (((v8) >> 8) & 0xFF) = ((unsigned char *)&byte_A8F91C)[(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
@@ -153,7 +153,7 @@ void  ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
   *(unsigned char *)a2 = *(unsigned short *)a1; /*0x7e01bd*/
   v10 = (unsigned char *)((char *)a2 + 1); /*0x7e01bf*/
   *v10++ = ((unsigned char *)&byte_A8F91C)[v9]; /*0x7e01c6*/
-  *v10 = IDA_HIBYTE(v9); /*0x7e01c9*/
+  *v10 = (((unsigned int)(v9) >> 24) & 0xFF); /*0x7e01c9*/
   v10[1] = 0; /*0x7e01cc*/
 }
 } // namespace gamemd
@@ -165,11 +165,11 @@ void  sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned char * a3, int
   int v7; // eax
   int v8; // ecx
 
-  IDA_HIWORD(v7) = 0; /*0x7e01df*/
+  (v7) = ((v7) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x7e01df*/
   v8 = 2 * a4; /*0x7e01e4*/
   do /*0x7e01f6*/
   {
-    IDA_LOBYTE(v7) = *a1; /*0x7e01e6*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)(*a1) & 0xFF); /*0x7e01e6*/
     (((v7) >> 8) & 0xFF) = *a2; /*0x7e01e8*/
     ++a1; /*0x7e01ea*/
     ++a2; /*0x7e01eb*/

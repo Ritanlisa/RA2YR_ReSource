@@ -182,7 +182,7 @@ int sub_796960()
   int16_t v11; // [esp+244h] [ebp-4h]
   char v12; // [esp+246h] [ebp-2h]
 
-  IDA_LOBYTE(owningHouseIndex) = dword_A8B238; /*0x796960*/
+  (owningHouseIndex) = ((owningHouseIndex) & ~0xFF) | ((unsigned int)(dword_A8B238) & 0xFF); /*0x796960*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x796970*/
     return owningHouseIndex; /*0x796970*/
   ((Waypoint*)v9)->InitInvalid(); /*0x79697a*/
@@ -244,7 +244,7 @@ int sub_796960()
         }
       }
   LABEL_24:
-      IDA_LOBYTE(owningHouseIndex) = ((Event *)0)->Dispatch(); /*0x796b09*/
+      (owningHouseIndex) = ((owningHouseIndex) & ~0xFF) | ((unsigned int)(((Event *)0)->Dispatch()) & 0xFF); /*0x796b09*/
     }
   }
   return owningHouseIndex; /*0x796ad4*/

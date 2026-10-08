@@ -271,7 +271,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
                     *(unsigned int *)(v13 + 28) = ((Time *)0)->GetElapsedMS() - *(unsigned int *)(v13 + 24);
                     Debug::Log("Ahandle: PauseAdjust %ld\n") /*G57c1: IDA 0x411a55 push offset g_Str_Trace_Ahandle__PauseAdjust__ld*/;
           v14 = *(unsigned int *)(v13 + 40); /*0x411a5a*/
-          IDA_LOBYTE(v14) = v14 & 0xFE; /*0x411a60*/
+          (v14) = ((v14) & ~0xFF) | ((unsigned int)(v14 & 0xFE) & 0xFF); /*0x411a60*/
           *(unsigned int *)(v13 + 40) = v14; /*0x411a62*/
           LeaveCriticalSection((LPCRITICAL_SECTION)(v13 + 160)); /*0x411a69*/
           result = -1; /*0x411a6f*/
@@ -442,7 +442,7 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
       v18 = (*(int (**)(int *, unsigned int, unsigned int, int))(**v7 + 48))(*v7, 0, 0, 1); /*0x411fe8*/
       LeaveCriticalSection(lpCriticalSectiona); /*0x411feb*/
       v19 = -(v18 != 0); /*0x411ff6*/
-      IDA_LOBYTE(v19) = v19 & 0xF4; /*0x411ff9*/
+      (v19) = ((v19) & ~0xFF) | ((unsigned int)(v19 & 0xF4) & 0xFF); /*0x411ff9*/
       return v19 - 1; /*0x411ffc*/
     }
     LeaveCriticalSection(lpCriticalSectiona); /*0x411f73*/
@@ -465,7 +465,7 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
         *(unsigned int *)(v3 + 28) = ((Time *)0)->GetElapsedMS() - *(unsigned int *)(v3 + 24);
         Debug::Log("Ahandle: PauseAdjust %ld\n") /*G57c1: IDA 0x411e60 push offset g_Str_Trace_Ahandle__PauseAdjust__ld*/;
     v4 = *(unsigned int *)(v3 + 40); /*0x411e65*/
-    IDA_LOBYTE(v4) = v4 & 0xFE; /*0x411e6b*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(v4 & 0xFE) & 0xFF); /*0x411e6b*/
     *(unsigned int *)(v3 + 40) = v4; /*0x411e6d*/
     LeaveCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x411e74*/
     return -1; /*0x411e7a*/
@@ -793,16 +793,16 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
             {
               v17 = strtok(0, (char *)&::Delimiter); /*0x41b242*/
               v18 = atoi(v17); /*0x41b248*/
-              IDA_LOWORD(v37) = v18 % 128; /*0x41b263*/
-              IDA_HIWORD(v37) = v18 / 128; /*0x41b26d*/
+              (v37) = ((v37) & ~0xFFFF) | ((unsigned int)(v18 % 128) & 0xFFFF); /*0x41b263*/
+              (v37) = ((v37) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v18 / 128) & 0xFFFF) << 16); /*0x41b26d*/
               v16 = v37; /*0x41b272*/
             }
             else
             {
               v14 = strtok(0, (char *)&::Delimiter); /*0x41b212*/
-              IDA_LOWORD(v38) = atoi(v14); /*0x41b224*/
+              (v38) = ((v38) & ~0xFFFF) | ((unsigned int)(atoi(v14)) & 0xFFFF); /*0x41b224*/
               v15 = strtok(0, (char *)&::Delimiter); /*0x41b229*/
-              IDA_HIWORD(v38) = atoi(v15); /*0x41b234*/
+              (v38) = ((v38) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(atoi(v15)) & 0xFFFF) << 16); /*0x41b234*/
               v16 = v38; /*0x41b239*/
             }
             v40[0] = ((int16_t)v16 << 8) + 128; /*0x41b29b*/
@@ -838,7 +838,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2, void * aAircraft)
             if ( (*(uint8_t (**)(int, unsigned int *, int, int))(*(unsigned int *)v12 + 216))( v12, (unsigned int *)(v40), v20, (int)(a2)) ) /*0x41b39b*/
             {
               v31 = *(unsigned int *)(v12 + 1732); /*0x41b3a9*/
-              IDA_LOWORD(v32) = Math::RoundToInt((double)v39 * (double)*(int *)(v31 + 160) * 0.00390625); /*0x41b3bb*/
+              (v32) = ((v32) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)v39 * (double)*(int *)(v31 + 160) * 0.00390625)) & 0xFFFF); /*0x41b3bb*/
               *(unsigned int *)(v12 + 108) = v32; /*0x41b3c0*/
               v33 = *(unsigned int *)(v31 + 160); /*0x41b3c3*/
               if ( v32 > v33 - 3 ) /*0x41b3ce*/

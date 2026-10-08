@@ -241,7 +241,7 @@ v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v24->vta
   if ( v1->MovementSpeed[1] == -1 /*0x4b05c4*/
     && ((*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))( (DriveLocomotionClass *)(v1))
      || ((unsigned int *)v1)[0]->pathDirections[0] != -1)
-    && ((*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 11))(((unsigned int *)v1)[0]) != 1 || !IDA_BYTE1(((unsigned int *)v1)[1])) )
+    && ((*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 11))(((unsigned int *)v1)[0]) != 1 || !(((unsigned int)(((unsigned int *)v1)[1]) >> 8) & 0xFF)) )
   {
     v5 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b05d0*/
     IDA_LOBYTE(a1) = 0; /*0x4b05d3*/
@@ -1345,11 +1345,11 @@ short BlendMinimapPixel(unsigned short a1, unsigned short a2, int a3)
 {
   int v3; // eax
 
-  IDA_LOWORD(v3) = a1; /*0x4bf658*/
+  (v3) = ((v3) & ~0xFFFF) | ((unsigned int)(a1) & 0xFFFF); /*0x4bf658*/
   switch ( a3 ) /*0x4bf664*/
   {
     case 0: /*0x4bf664*/
-      IDA_LOWORD(v3) = a2; /*0x4bf6c0*/
+      (v3) = ((v3) & ~0xFFFF) | ((unsigned int)(a2) & 0xFFFF); /*0x4bf6c0*/
       break; /*0x4bf6c0*/
     case 25: /*0x4bf664*/
       v3 = 4 * (IDA_HIWORD(g_DDraw_Gray127) & (a1 >> 2)); /*0x4bf6ba*/

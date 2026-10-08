@@ -47,11 +47,11 @@ char VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
     if ( ++v5 > a2 + ((short *)aP0)[1] ) /*0x58633d*/
       return 0; /*0x58633d*/
   }
-  IDA_HIWORD(v12) = v5; /*0x5862f0*/
+  (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v5) & 0xFFFF) << 16); /*0x5862f0*/
   while ( 1 ) /*0x5862fb*/
   {
     v9 = ((int16_t)v5 << 9) + (int16_t)v8; /*0x5862fb*/
-    IDA_LOWORD(v12) = v8; /*0x5862fd*/
+    (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(v8) & 0xFFFF); /*0x5862fd*/
     if ( v9 >= 0x40000 || (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) == 0 ) /*0x586311*/
     {
       dword_ABDC74 = (unsigned int)((gamemd::CellClass *)(v12));

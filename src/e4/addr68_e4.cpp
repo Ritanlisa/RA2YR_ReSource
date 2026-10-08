@@ -2056,13 +2056,13 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
       if ( v13 > *(unsigned int *)&stru_87F5F0.__pad_58[708] + *(unsigned int *)&stru_87F5F0.__pad_58[716] - 1 ) /*0x689087*/
         v13 = *(unsigned int *)&stru_87F5F0.__pad_58[708] + *(unsigned int *)&stru_87F5F0.__pad_58[716] - 1; /*0x689089*/
       if ( v13 < *(int *)&stru_87F5F0.__pad_58[708] ) /*0x68908d*/
-        IDA_LOWORD(v13) = *(unsigned short *)&stru_87F5F0.__pad_58[708]; /*0x68908f*/
+        (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)&stru_87F5F0.__pad_58[708]) & 0xFFFF); /*0x68908f*/
       if ( v14 > v32 ) /*0x689097*/
         v14 = v32; /*0x689099*/
       if ( v14 < *(int *)&stru_87F5F0.__pad_58[712] ) /*0x68909d*/
-        IDA_LOWORD(v14) = *(unsigned short *)&stru_87F5F0.__pad_58[712]; /*0x68909f*/
-      IDA_LOWORD(v31) = v13; /*0x6890a6*/
-      IDA_HIWORD(v31) = v14; /*0x6890ab*/
+        (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)&stru_87F5F0.__pad_58[712]) & 0xFFFF); /*0x68909f*/
+      (v31) = ((v31) & ~0xFFFF) | ((unsigned int)(v13) & 0xFFFF); /*0x6890a6*/
+      (v31) = ((v31) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v14) & 0xFFFF) << 16); /*0x6890ab*/
       v18 = v13; /*0x6890b0*/
       *(unsigned int *)v28 = v31; /*0x6890b4*/
       if ( v30 <= 0 ) /*0x6890b8*/
@@ -2081,13 +2081,13 @@ int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3)
         {
           v21 = v20 - v32; /*0x68911e*/
           if ( v21 < v15 ) /*0x689124*/
-            IDA_LOWORD(v21) = v15; /*0x689126*/
+            (v21) = ((v21) & ~0xFFFF) | ((unsigned int)(v15) & 0xFFFF); /*0x689126*/
         }
         else
         {
           v21 = v32 + v20; /*0x689114*/
           if ( v21 > v38 ) /*0x689118*/
-            IDA_LOWORD(v21) = v38; /*0x68911a*/
+            (v21) = ((v21) & ~0xFFFF) | ((unsigned int)(v38) & 0xFFFF); /*0x68911a*/
         }
         v22 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 1); /*0x68913d*/
         if ( Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 0, 99) >= 50 ) /*0x689156*/

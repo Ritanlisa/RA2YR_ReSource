@@ -173,16 +173,16 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
               {
                 v17 = strtok(0, (char *)&::Delimiter); /*0x7433d0*/
                 v18 = atoi(v17); /*0x7433d6*/
-                IDA_LOWORD(v55) = v18 % 128; /*0x7433f1*/
-                IDA_HIWORD(v55) = v18 / 128; /*0x7433fb*/
+                (v55) = ((v55) & ~0xFFFF) | ((unsigned int)(v18 % 128) & 0xFFFF); /*0x7433f1*/
+                (v55) = ((v55) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v18 / 128) & 0xFFFF) << 16); /*0x7433fb*/
                 v16 = v55; /*0x743400*/
               }
               else
               {
                 v14 = strtok(0, (char *)&::Delimiter); /*0x7433a1*/
-                IDA_LOWORD(v56) = atoi(v14); /*0x7433b2*/
+                (v56) = ((v56) & ~0xFFFF) | ((unsigned int)(atoi(v14)) & 0xFFFF); /*0x7433b2*/
                 v15 = strtok(0, (char *)&::Delimiter); /*0x7433b7*/
-                IDA_HIWORD(v56) = atoi(v15); /*0x7433c2*/
+                (v56) = ((v56) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(atoi(v15)) & 0xFFFF) << 16); /*0x7433c2*/
                 v16 = v56; /*0x7433c7*/
               }
               v53 = v16; /*0x743404*/

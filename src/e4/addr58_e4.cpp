@@ -144,12 +144,12 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
       if ( IDA___PAIR32__(IDA_HIWORD(v22), v13) == dword_ABD480 ) /*0x583758*/
         goto LABEL_28; /*0x583758*/
       v14 = (unsigned short *)aP2; /*0x58376c*/
-      v15 = (double)(int16_t)(IDA_HIWORD(v21) - aP2->u32_2); /*0x58378e*/
+      v15 = (double)(int16_t)((((unsigned int)(v21) >> 16) & 0xFFFF) - aP2->u32_2); /*0x58378e*/
       aP2 = (IUnknown *)((int16_t)(v21 - *(unsigned short *)aP2)); /*0x583792*/
       v16 = Math::Sqrt((double)aP2 * (double)aP2 + v15 * v15); /*0x5837ab*/
       v17 = Math::RoundToInt(v16); /*0x5837ba*/
       v18 = (unsigned short)aP1 - *v14; /*0x5837c5*/
-      aP2 = (IUnknown *)((int16_t)(IDA_HIWORD(aP1) - v14[1])); /*0x5837ce*/
+      aP2 = (IUnknown *)((int16_t)((((unsigned int)(aP1) >> 16) & 0xFFFF) - v14[1])); /*0x5837ce*/
       v19 = (double)aP2; /*0x5837d2*/
       aP2 = (IUnknown *)(v18); /*0x5837d6*/
       v20 = Math::Sqrt((double)v18 * (double)v18 + v19 * v19); /*0x5837ef*/
@@ -370,7 +370,7 @@ int InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
                   + 23024);
   v19 = ((unsigned int *)(dword_82A988))[2 * v18]; /*0x586178*/
   v20 = v8 + IDA_LOWORD(((unsigned int *)(dword_ABD460))[v19]); /*0x58618e*/
-  IDA_LOWORD(v19) = v9 + IDA_HIWORD((&dword_ABD460)[v19]); /*0x586195*/
+  (v19) = ((v19) & ~0xFFFF) | ((unsigned int)(v9 + IDA_HIWORD((&dword_ABD460)[v19])) & 0xFFFF); /*0x586195*/
   v22 = *(unsigned int *)(a1 + 4 * (v20 / 4 + 130 * ((int16_t)v19 / 4)) + 23024); /*0x5861be*/
   v25 = v27; /*0x5861cb*/
   if ( v27 >= v22 ) /*0x5861cf*/
@@ -455,13 +455,13 @@ int MarkCliffEdgePassability(int a1)
             if ( (v9[80] & 0x100) == 0 ) /*0x586cc1*/
             {
               v10 = (unsigned int)(-2);
-              IDA_HIWORD(v22) = IDA_HIWORD(i); /*0x586cc8*/
+              (v22) = ((v22) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(i)) & 0xFFFF) << 16); /*0x586cc8*/
               do /*0x586d1b*/
               {
                 v11 = (unsigned int)(v7 + (int16_t)(v10 + i));
                 if ( v11 >= 0x40000 || (v12 = (unsigned int)(*(unsigned int **)(dword_87F924 + 4 * v11))) == 0 ) /*0x586cef*/
                 {
-                  IDA_LOWORD(v22) = v10 + i; /*0x586cd0*/
+                  (v22) = ((v22) & ~0xFFFF) | ((unsigned int)(v10 + i) & 0xFFFF); /*0x586cd0*/
                   dword_ABDC74 = v22; /*0x586cf5*/
                   v12 = unk_ABDC50; /*0x586cfa*/
                 }
@@ -471,8 +471,8 @@ int MarkCliffEdgePassability(int a1)
               while ( v10 <= 1 ); /*0x586d1b*/
               v3 = v21; /*0x586d1d*/
             }
-            IDA_LOWORD(v23) = i + *v5; /*0x586d2e*/
-            IDA_HIWORD(v23) = IDA_HIWORD(i) + v5[1]; /*0x586d33*/
+            (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(i + *v5) & 0xFFFF); /*0x586d2e*/
+            (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(i) + v5[1]) & 0xFFFF) << 16); /*0x586d33*/
           }
         }
         else
@@ -482,7 +482,7 @@ int MarkCliffEdgePassability(int a1)
           {
             v15 = (unsigned short)j == *(unsigned short *)(v3 + 4); /*0x586d6b*/
             v31 = j; /*0x586d6f*/
-            if ( v15 && IDA_HIWORD(v31) == *(unsigned short *)(v3 + 6) ) /*0x586d7d*/
+            if ( v15 && (((unsigned int)(v31) >> 16) & 0xFFFF) == *(unsigned short *)(v3 + 6) ) /*0x586d7d*/
               break; /*0x586d7d*/
             v16 = (int16_t)j + (IDA_SHIWORD(v31) << 9); /*0x586d8c*/
             if ( v16 >= 0x40000 || (v17 = *(unsigned int **)(dword_87F924 + 4 * v16)) == 0 ) /*0x586da2*/
@@ -493,13 +493,13 @@ int MarkCliffEdgePassability(int a1)
             if ( (v17[80] & 0x100) == 0 ) /*0x586db8*/
             {
               v18 = (unsigned int)(-2);
-              IDA_LOWORD(v24) = j; /*0x586dbf*/
+              (v24) = ((v24) & ~0xFFFF) | ((unsigned int)(j) & 0xFFFF); /*0x586dbf*/
               do /*0x586e08*/
               {
-                v19 = (unsigned int)((int16_t)j + ((int16_t)(IDA_HIWORD(j) + v18) << 9));
+                v19 = (unsigned int)((int16_t)j + ((int16_t)((((unsigned int)(j) >> 16) & 0xFFFF) + v18) << 9));
                 if ( v19 >= 0x40000 || (v20 = *(unsigned int **)(dword_87F924 + 4 * v19), v3 = v21, !v20) ) /*0x586ded*/
                 {
-                  IDA_HIWORD(v24) = IDA_HIWORD(j) + v18; /*0x586dc7*/
+                  (v24) = ((v24) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(j) + v18) & 0xFFFF) << 16); /*0x586dc7*/
                   dword_ABDC74 = v24; /*0x586df3*/
                   v20 = unk_ABDC50; /*0x586df8*/
                 }
@@ -508,8 +508,8 @@ int MarkCliffEdgePassability(int a1)
               }
               while ( v18 <= 1 ); /*0x586e08*/
             }
-            IDA_LOWORD(v25) = j + *v13; /*0x586e17*/
-            IDA_HIWORD(v25) = IDA_HIWORD(j) + v13[1]; /*0x586e1c*/
+            (v25) = ((v25) & ~0xFFFF) | ((unsigned int)(j + *v13) & 0xFFFF); /*0x586e17*/
+            (v25) = ((v25) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(j) + v13[1]) & 0xFFFF) << 16); /*0x586e1c*/
           }
         }
       }
@@ -562,8 +562,8 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
       v6 = (unsigned short *)(4 * (v3 & 7) + 9041544); /*0x5885ab*/
       while ( 1 ) /*0x5885c3*/
       {
-        IDA_HIWORD(v20) = IDA_HIWORD(v17) + v6[1]; /*0x5885c3*/
-        IDA_LOWORD(v20) = v17 + *v6; /*0x5885c8*/
+        (v20) = ((v20) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v17) + v6[1]) & 0xFFFF) << 16); /*0x5885c3*/
+        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(v17 + *v6) & 0xFFFF); /*0x5885c8*/
         v17 = v20; /*0x5885da*/
         v7 = (IDA_SHIWORD(v20) << 9) + (int16_t)v20; /*0x5885de*/
         if ( v7 >= 0x40000 || (v8 = *(unsigned int **)(dword_87F924 + 4 * v7)) == 0 ) /*0x5885f7*/
@@ -577,7 +577,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           if ( *(unsigned char *)(*(unsigned int *)(v5 + 1312) + 5824) ) /*0x588613*/
           {
             v9 = (gamemd::VectorClass_flat *)((unsigned char)((gamemd::VectorClass_flat *)(*(unsigned int *)(v5 + 540))));
-            IDA_LOBYTE(v5) = (unsigned char)(aP1); /*0x588623*/
+            (v5) = ((v5) & ~0xFF) | ((unsigned int)((unsigned char)(aP1)) & 0xFF); /*0x588623*/
             if ( v9 == aP1 ) /*0x588629*/
               break; /*0x588629*/
           }
@@ -591,10 +591,10 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           dword_ABDC74 = (unsigned int)((unsigned int *)(v20));
           v11 = (unsigned int *)(unk_ABDC50); /*0x58864d*/
         }
-        IDA_LOBYTE(v5) = ((CellClass *)((int)v11))->IsPassable(aP2->u32_67C,(int)(aP2),(int)(aP1)); /*0x58865f*/
+        (v5) = ((v5) & ~0xFF) | ((unsigned int)(((CellClass *)((int)v11))->IsPassable(aP2->u32_67C,(int)(aP2),(int)(aP1))) & 0xFF); /*0x58865f*/
         if ( (unsigned char)v5 ) /*0x588666*/
         {
-          IDA_LOBYTE(v5) = ++v18; /*0x588674*/
+          (v5) = ((v5) & ~0xFF) | ((unsigned int)(++v18) & 0xFF); /*0x588674*/
           if ( v18 < v5 ) /*0x58867b*/
             continue; /*0x58867b*/
         }
@@ -613,7 +613,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
           v15 = *v14; /*0x5886fb*/
           v23[2] = 0; /*0x588700*/
           (*(void (**)(int *, unsigned int *, unsigned int))(v15 + 216))( (int *)(v14), (unsigned int *)(v23), 0); /*0x588708*/
-          IDA_LOWORD(v5) = v19 + v6[1]; /*0x588718*/
+          (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(v19 + v6[1]) & 0xFFFF); /*0x588718*/
           v13 += *v6; /*0x588725*/
           --v18; /*0x588729*/
           v19 = v5; /*0x58872a*/
@@ -660,7 +660,7 @@ int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseCl
   v22 = result; /*0x588760*/
   if ( !result ) /*0x588764*/
     return result; /*0x588764*/
-  IDA_LOBYTE(result) = 0; /*0x58876b*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x58876b*/
   for ( i = 0; i < 8; i += 2 ) /*0x58876f*/
   {
     v5 = (int)(v3[366] >> 8); /*0x58877d*/
@@ -673,11 +673,11 @@ int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseCl
     v7 = (unsigned short *)(4 * (result & 7) + 9041544); /*0x58879d*/
     while ( 1 ) /*0x5887b3*/
     {
-      IDA_LOWORD(v17) = v6 + *v7; /*0x5887b3*/
-      IDA_HIWORD(v17) = IDA_HIWORD(v18) + v7[1]; /*0x5887b8*/
+      (v17) = ((v17) & ~0xFFFF) | ((unsigned int)(v6 + *v7) & 0xFFFF); /*0x5887b3*/
+      (v17) = ((v17) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v18) + v7[1]) & 0xFFFF) << 16); /*0x5887b8*/
       v8 = (IDA_SHIWORD(v17) << 9) + (int16_t)v17; /*0x5887ca*/
-      IDA_HIWORD(v18) = IDA_HIWORD(v17); /*0x5887d0*/
-      IDA_LOWORD(v6) = v17; /*0x5887d0*/
+      (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v17)) & 0xFFFF) << 16); /*0x5887d0*/
+      (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(v17) & 0xFFFF); /*0x5887d0*/
       if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x5887e8*/
       {
         dword_ABDC74 = (unsigned int)((unsigned int *)(v17)); /*0x5887ea*/
@@ -1087,7 +1087,7 @@ AbstractClass * * BuildRandomMapTiles(ObjectClass *self)
   v22 = ((double)&dword_ABDBC8 * 0.005 + 0.05) /*0x58ed89*/
       * (double)g_MissionQueueFrame.briefing[453]
       * (double)&dword_ABDC0C;
-  IDA_LOWORD(v23) = Math::RoundToInt(v22 + v22); /*0x58eda9*/
+  (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v22 + v22)) & 0xFFFF); /*0x58eda9*/
   v24 = v23; /*0x58edae*/
   LABEL_32:
   result = g_MissionQueueFrame.briefing[342]; /*0x58edb5*/

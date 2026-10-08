@@ -170,13 +170,13 @@ int Network_SendTimestamp(int a1, int a2, int a3, int a4)
   v7 = (double)a1; /*0x4891c6*/
   v10 = v7; /*0x4891ca*/
   v11 = v7 * *(float *)(a2 + 300); /*0x4891d4*/
-  IDA_LOWORD(v8) = Math::RoundToInt(*(float *)(a2 + 292) * 256.0); /*0x4891e4*/
+  (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(float *)(a2 + 292) * 256.0)) & 0xFFFF); /*0x4891e4*/
   if ( v11 != v10 && v8 ) /*0x489200*/
   {
-    IDA_LOWORD(v9) = Math::RoundToInt((v10 - v11) * (double)(v8 - a4) / (double)v8 + v11); /*0x489220*/
+    (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((v10 - v11) * (double)(v8 - a4) / (double)v8 + v11)) & 0xFFFF); /*0x489220*/
     v4 = v9; /*0x489225*/
   }
-  IDA_LOWORD(result) = Math::RoundToInt((double)(v4 <= 0 ? 0 : v4) * *(double *)(a2 + 8 * a3 + 160));
+  (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)(v4 <= 0 ? 0 : v4) * *(double *)(a2 + 8 * a3 + 160))) & 0xFFFF);
   if ( result >= dword_8871E0->IRepairRate[0] ) /*0x489257*/
     return dword_8871E0->IRepairRate[0]; /*0x48925a*/
   return result; /*0x4891b8*/
@@ -275,8 +275,8 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   v134 = Math::RoundToInt(*(float *)&aP3[1].spawnStatus * 256.0);
   bool v106 = aP3   ==   (int)(*(ObjectClass **)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 4012)));
   int v108; // [esp+50h] [ebp-D0h]
-  IDA_LOWORD(v108) = *(unsigned int *)aP0->__pad_0 / 256;
-  IDA_HIWORD(v108) = *(unsigned int *)&aP0->__pad_0[4] / 256;
+  (v108) = ((v108) & ~0xFFFF) | ((unsigned int)(*(unsigned int *)aP0->__pad_0 / 256) & 0xFFFF);
+  (v108) = ((v108) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(*(unsigned int *)&aP0->__pad_0[4] / 256) & 0xFFFF) << 16);
   int v115 = v108;
   v9 = (VectorClass_flat *)((CellCoord *)(&((unsigned int *)(stru_87C374))[13428]))->To_CellObj((int16_t *)&v115);
   double v10 = *(float *)&aP3[1].spawnStatus;
@@ -364,7 +364,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   int v26; // esi
     while ( 1 )
     {
-      ax29 = IDA_HIWORD(v115) + IDA_HIWORD((&dword_ABD490)[v110]);
+      ax29 = (((unsigned int)(v115) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_ABD490)[v110]);
       IDA_LOWORD(v138) = v115 + IDA_LOWORD((&dword_ABD490)[v110]);
       IDA_HIWORD(v138) = ax29;
       j = v138;
@@ -942,11 +942,11 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
   double v10; // st7
   int v11; // esi
 
-  IDA_LOBYTE(v7) = g_lParam; /*0x48a620*/
+  (v7) = ((v7) & ~0xFF) | ((unsigned int)(g_lParam) & 0xFF); /*0x48a620*/
   if ( g_lParam && (v7 = PingPongBuffer::GetWriteOffset(), (unsigned int)dword_ABCD44 >= v7) || (a7 & 0xF) != 0 ) /*0x48a644*/
   {
-    IDA_LOBYTE(v7) = a6; /*0x48a64a*/
-    if ( a6 || a2 && (IDA_LOBYTE(v7) = *(unsigned char *)(a2 + 336), (unsigned char)v7) ) /*0x48a662*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)(a6) & 0xFF); /*0x48a64a*/
+    if ( a6 || a2 && (((unsigned int)(v7) & 0xFF) = *(unsigned char *)(a2 + 336), (unsigned char)v7) ) /*0x48a662*/
     {
       v10 = *(float *)(a2 + 316); /*0x48a668*/
       if ( v10 <= 0.0 ) /*0x48a679*/
@@ -976,7 +976,7 @@ AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, ch
       else
       {
         *(unsigned int *)g_abs_14 |= a7; /*0x48a6f7*/
-        IDA_LOBYTE(v7) = 0; /*0x48a6f5*/
+        (v7) = ((v7) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x48a6f5*/
       }
     }
   }
@@ -1364,7 +1364,7 @@ char MainGame()
       mbp.dwStyle = 327696; /*0x48cd6e*/
       memset( (void *)(&mbp.lpszIcon), 0, 12); /*0x48cd75*/
       mbp.dwLanguageId = 1024; /*0x48cd7e*/
-      IDA_LOBYTE(inited) = MessageBoxIndirectA(&mbp); /*0x48cd85*/
+      (inited) = ((inited) & ~0xFF) | ((unsigned int)(MessageBoxIndirectA(&mbp)) & 0xFF); /*0x48cd85*/
     }
     return inited; /*0x48cd90*/
   }
@@ -1373,7 +1373,7 @@ char MainGame()
   g_ExceptionReturnAddr = (int)&loc_48CDA8; /*0x48cda3*/
   Debug::Log("ExceptionReturnStack = %08X\n"); /*0x48cdb4 G57w11: IDA push seq @ 0x48cdb4 +1 reg-vararg(s) omitted*/
   Debug::Log("ExceptionReturnAddress = %08X\n"); /*0x48cdc5 G57w11: IDA push seq @ 0x48cdc5 +1 reg-vararg(s) omitted*/
-  IDA_LOBYTE(inited) = MenuSelect(v9); /*0x48cdd3*/
+  (inited) = ((inited) & ~0xFF) | ((unsigned int)(MenuSelect(v9)) & 0xFF); /*0x48cdd3*/
   while ( (unsigned char)inited ) /*0x48cdda*/
   {
     dword_A8E7AC = 0; /*0x48cdf0*/
@@ -1455,10 +1455,10 @@ char MainGame()
       dword_A8D5F8 = dword_A8D5F8; /*0x48cf9a*/
       (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))( (MouseClass *)(dword_887640)); /*0x48cfa1*/
     }
-    IDA_LOBYTE(inited) = MenuSelect(v9); /*0x48cfa4*/
+    (inited) = ((inited) & ~0xFF) | ((unsigned int)(MenuSelect(v9)) & 0xFF); /*0x48cfa4*/
   }
   if ( dword_887640 ) /*0x48cfbf*/
-    IDA_LOBYTE(inited) = (*(char (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 20))( (MouseClass *)(dword_887640)); /*0x48cfc3*/
+    (inited) = ((inited) & ~0xFF) | ((unsigned int)((*(char (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 20))( (MouseClass *)(dword_887640))) & 0xFF); /*0x48cfc3*/
   return inited; /*0x48cd8b*/
 }
 }
@@ -1796,8 +1796,8 @@ unsigned int * Coord_Neighbor(unsigned int * a1, unsigned short * a2, char a3)
 
   result = a1; /*0x487ea0*/
   v4 = a3 & 7; /*0x487ea7*/
-  IDA_LOWORD(v5) = *a2 + IDA_LOWORD((&dword_89F688)[v4]); /*0x487ec4*/
-  IDA_HIWORD(v5) = a2[1] + IDA_HIWORD((&dword_89F688)[v4]); /*0x487eca*/
+  (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(*a2 + IDA_LOWORD((&dword_89F688)[v4])) & 0xFFFF); /*0x487ec4*/
+  (v5) = ((v5) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(a2[1] + IDA_HIWORD((&dword_89F688)[v4])) & 0xFFFF) << 16); /*0x487eca*/
   *result = v5; /*0x487ed3*/
   return result; /*0x487ec9*/
 }
@@ -2102,31 +2102,31 @@ char Math_ComputeFacingAngle(char a1, int a2, int a3, int a4, double a5, unsigne
   {
     if ( a1 ) /*0x48a907*/
     {
-      IDA_LOWORD(a4) = Math::RoundToInt((a5 - 1.570796326794897) * -10430.06004058427); /*0x48a91e*/
+      (a4) = ((a4) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((a5 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x48a91e*/
       result = (int)a6; /*0x48a923*/
       *a6 = a4; /*0x48a92d*/
-      IDA_LOBYTE(result) = 1; /*0x48a930*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x48a930*/
     }
     else
     {
       SolveMathTrajectory(0, a2, a3 + 1, a4, v6, (int)v12); /*0x48a94f*/
       if ( v11 ) /*0x48a965*/
       {
-        IDA_LOWORD(a4) = Math::RoundToInt((-a5 - 1.570796326794897) * -10430.06004058427); /*0x48a97e*/
+        (a4) = ((a4) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((-a5 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x48a97e*/
         result = a4; /*0x48a983*/
       }
       else
       {
-        IDA_LOWORD(result) = Math::RoundToInt((a5 - 1.570796326794897) * -10430.06004058427); /*0x48a9a1*/
-        IDA_LOWORD(a4) = result; /*0x48a9aa*/
+        (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((a5 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x48a9a1*/
+        (a4) = ((a4) & ~0xFFFF) | ((unsigned int)(result) & 0xFFFF); /*0x48a9aa*/
       }
       *a6 = a4; /*0x48a989*/
-      IDA_LOBYTE(result) = 1; /*0x48a98c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x48a98c*/
     }
   }
   else
   {
-    IDA_LOBYTE(result) = 0; /*0x48a9c4*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x48a9c4*/
   }
   return result; /*0x48a92b*/
 }

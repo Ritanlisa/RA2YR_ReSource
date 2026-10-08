@@ -537,11 +537,11 @@ int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
   v4 = 0; /*0x47a943*/
   while ( 1 )
   {
-    IDA_LOBYTE(v5) = 0; /*0x47a949*/
+    (v5) = ((v5) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x47a949*/
     v4 = v4 != 0 ? 8 : 72;
     (((v5) >> 8) & 0xFF) = v4; /*0x47a957*/
     v5 = (uint16_t)v5; /*0x47a95a*/
-    IDA_LOBYTE(v5) = v5 | 0x6A; /*0x47a963*/
+    (v5) = ((v5) & ~0xFF) | ((unsigned int)(v5 | 0x6A) & 0xFF); /*0x47a963*/
     InBuffer[2] = v5; /*0x47a967*/
     InBuffer[3] = 17421; /*0x47a976*/
     InBuffer[0] = v3; /*0x47a97e*/
@@ -551,13 +551,13 @@ int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
     GetLastError(); /*0x47a98f*/
         Debug::Log("DeviceIoControl failed to perform DOS IO control function. Error %d - %s\n") /*G57c1: IDA 0x47a99b push offset g_Str_Trace_DeviceIoControl_failed_to_perform_DOS_IO*/;
   LABEL_5:
-    IDA_LOBYTE(result) = 0; /*0x47a9ac*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x47a9ac*/
     if ( v4 == 8 ) /*0x47a9b1*/
       return result; /*0x47a9b1*/
   }
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a9aa*/
     goto LABEL_5; /*0x47a9aa*/
-  IDA_LOBYTE(result) = 1; /*0x47a9b5*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x47a9b5*/
   return result; /*0x47a9b7*/
 }
 }
@@ -664,8 +664,8 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e126*/
   if ( a3 < 8 ) /*0x47e132*/
   {
-    IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e157*/
-    IDA_HIWORD(v41) = IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e166*/
+    (v41) = ((v41) & ~0xFFFF) | ((unsigned int)(*p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF); /*0x47e157*/
+    (v41) = ((v41) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF) << 16); /*0x47e166*/
     *(unsigned int *)v48 = v41; /*0x47e16f*/
     v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v48)); /*0x47e17d*/
   }
@@ -697,8 +697,8 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   {
     v19 = g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]; /*0x47e218*/
     *(unsigned int *)v49 = v4->smudgeTypeIndex; /*0x47e227*/
-    IDA_LOWORD(v42) = v49[0] + v19; /*0x47e232*/
-    IDA_HIWORD(v42) = v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e241*/
+    (v42) = ((v42) & ~0xFFFF) | ((unsigned int)(v49[0] + v19) & 0xFFFF); /*0x47e232*/
+    (v42) = ((v42) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF) << 16); /*0x47e241*/
     *(unsigned int *)v49 = v42; /*0x47e24a*/
     v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v49)); /*0x47e258*/
     v18 = a3; /*0x47e25a*/
@@ -727,8 +727,8 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e2d3*/
   {
     *(unsigned int *)v50 = v4->smudgeTypeIndex; /*0x47e2e9*/
-    IDA_LOWORD(v43) = v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e2fc*/
-    IDA_HIWORD(v43) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e305*/
+    (v43) = ((v43) & ~0xFFFF) | ((unsigned int)(v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF); /*0x47e2fc*/
+    (v43) = ((v43) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF) << 16); /*0x47e305*/
     *(unsigned int *)v50 = v43; /*0x47e314*/
     mapCoords = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e318*/
     v24 = a3; /*0x47e31d*/
@@ -745,8 +745,8 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   {
     v29 = g_DDrawSurfaceManager.scenario[v27 + 82]; /*0x47e34c*/
     *(unsigned int *)v50 = *p_smudgeTypeIndex; /*0x47e35b*/
-    IDA_LOWORD(v46) = v50[0] + v29; /*0x47e366*/
-    IDA_HIWORD(v46) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82]); /*0x47e375*/
+    (v46) = ((v46) & ~0xFFFF) | ((unsigned int)(v50[0] + v29) & 0xFFFF); /*0x47e366*/
+    (v46) = ((v46) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82])) & 0xFFFF) << 16); /*0x47e375*/
     *(unsigned int *)v50 = v46; /*0x47e37e*/
     v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e387*/
     v24 = a3; /*0x47e38c*/
@@ -876,8 +876,8 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   ((BuildingClass *)(int *)&stru_87F5F0.__pad_58[416])->AddUpgrade( (int)&v4->smudgeTypeIndex); /*0x47e556*/
   if ( a3 < 8 ) /*0x47e562*/
   {
-    IDA_LOWORD(v41) = *p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e587*/
-    IDA_HIWORD(v41) = IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e596*/
+    (v41) = ((v41) & ~0xFFFF) | ((unsigned int)(*p_smudgeTypeIndex + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF); /*0x47e587*/
+    (v41) = ((v41) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(*p_smudgeTypeIndex) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF) << 16); /*0x47e596*/
     *(unsigned int *)v48 = v41; /*0x47e59f*/
     v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v48)); /*0x47e5ad*/
   }
@@ -909,8 +909,8 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   {
     v19 = g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]; /*0x47e648*/
     *(unsigned int *)v49 = v4->smudgeTypeIndex; /*0x47e657*/
-    IDA_LOWORD(v42) = v49[0] + v19; /*0x47e662*/
-    IDA_HIWORD(v42) = v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e671*/
+    (v42) = ((v42) & ~0xFFFF) | ((unsigned int)(v49[0] + v19) & 0xFFFF); /*0x47e662*/
+    (v42) = ((v42) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v49[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF) << 16); /*0x47e671*/
     *(unsigned int *)v49 = v42; /*0x47e67a*/
     v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v49)); /*0x47e688*/
     v18 = a3; /*0x47e68a*/
@@ -939,8 +939,8 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   if ( a3 < 8 ) /*0x47e703*/
   {
     *(unsigned int *)v50 = v4->smudgeTypeIndex; /*0x47e719*/
-    IDA_LOWORD(v43) = v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e72c*/
-    IDA_HIWORD(v43) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82]); /*0x47e735*/
+    (v43) = ((v43) & ~0xFFFF) | ((unsigned int)(v50[0] + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF); /*0x47e72c*/
+    (v43) = ((v43) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a3 & 7) + 82])) & 0xFFFF) << 16); /*0x47e735*/
     *(unsigned int *)v50 = v43; /*0x47e744*/
     mapCoords = (unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e748*/
     v24 = a3; /*0x47e74d*/
@@ -957,8 +957,8 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   {
     v29 = g_DDrawSurfaceManager.scenario[v27 + 82]; /*0x47e77c*/
     *(unsigned int *)v50 = *p_smudgeTypeIndex; /*0x47e78b*/
-    IDA_LOWORD(v46) = v50[0] + v29; /*0x47e796*/
-    IDA_HIWORD(v46) = v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82]); /*0x47e7a5*/
+    (v46) = ((v46) & ~0xFFFF) | ((unsigned int)(v50[0] + v29) & 0xFFFF); /*0x47e796*/
+    (v46) = ((v46) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v50[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v27 + 82])) & 0xFFFF) << 16); /*0x47e7a5*/
     *(unsigned int *)v50 = v46; /*0x47e7ae*/
     v30 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v50)); /*0x47e7b7*/
     v24 = a3; /*0x47e7bc*/

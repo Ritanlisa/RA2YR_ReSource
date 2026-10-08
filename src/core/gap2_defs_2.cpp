@@ -327,7 +327,7 @@ bool EventQueue::CheckPosition() {
   int result; // eax
 
   result = (this->q318 + 1) % 256; /*0x54f6c4*/
-  IDA_LOBYTE(result) = result == this->q314; /*0x54f6cb*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(result == this->q314) & 0xFF); /*0x54f6cb*/
   return result; /*0x54f6ce*/
 }
 }
@@ -777,7 +777,7 @@ int PlayerClass::UpdateAIUnits() {
     v3 = 0; /*0x732620*/
     if ( HeightMap ) /*0x732627*/
     {
-      IDA_LOBYTE(HeightMap) = (uint8_t)EventClass::resetEvent((EventClass *)HeightMap, 0, 0); /*0x73262d*/
+      (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)((uint8_t)EventClass::resetEvent((EventClass *)HeightMap, 0, 0)) & 0xFF); /*0x73262d*/
       v2->EventClass_field_0x0 = (int)(void *)&DynamicVectorClass_TechnoClass___vftable; /*0x732632*/
       *(unsigned int *)&v2->__pad_10[4] = 10; /*0x732638*/
       *(unsigned int *)v2->__pad_10 = 0; /*0x73263f*/
@@ -792,14 +792,14 @@ int PlayerClass::UpdateAIUnits() {
       do /*0x7326a6*/
       {
         v5 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x73265a*/
-        IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v5, this); /*0x73265f*/
+        (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(StepTechnoClassCleanupIfHuman(v5, this)) & 0xFF); /*0x73265f*/
         if ( (unsigned char)HeightMap ) /*0x732666*/
         {
           EventClass_field_0x8 = v2->EventClass_field_0x8; /*0x732668*/
           if ( *(unsigned int *)v2->__pad_10 < (int)EventClass_field_0x8 /*0x732692*/
-            || ((IDA_LOBYTE(HeightMap) = IDA_BYTE1(v2->EventClass_field_0xC), (unsigned char)HeightMap) || !EventClass_field_0x8)
+            || ((((unsigned int)(HeightMap) & 0xFF) = IDA_BYTE1(v2->EventClass_field_0xC), (unsigned char)HeightMap) || !EventClass_field_0x8)
             && (HeightMap = *(unsigned int *)&v2->__pad_10[4], HeightMap > 0)
-            && (IDA_LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
+            && (((unsigned int)(HeightMap) & 0xFF) = (*(int (**)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
                                       v2,
                                       (int)EventClass_field_0x8 + HeightMap,
                                       0),
@@ -841,9 +841,9 @@ int PlayerClass::UpdateAIUnits() {
         if ( (*(unsigned char *)(HeightMap + 20) & 1) != 0 ) /*0x73270c*/
         {
           v16 = HeightMap; /*0x732714*/
-          IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(HeightMap, this); /*0x732718*/
+          (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(StepTechnoClassCleanupIfHuman(HeightMap, this)) & 0xFF); /*0x732718*/
           if ( (unsigned char)HeightMap ) /*0x73271f*/
-            IDA_LOBYTE(HeightMap) = DynamicVector::AddItem((DynamicVector *)v2, &v16); /*0x732728*/
+            (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)(DynamicVector::AddItem((DynamicVector *)v2, &v16)) & 0xFF); /*0x732728*/
         }
       }
     }
@@ -852,10 +852,10 @@ int PlayerClass::UpdateAIUnits() {
   for ( j = 0; j < v11; ++j ) /*0x732739*/
   {
     v13 = *((unsigned int *)v2->EventClass_field_0x4 + j); /*0x73273e*/
-    IDA_LOBYTE(HeightMap) = (*(int (**)(int))(*(unsigned int *)v13 + 336))(v13); /*0x732743*/
+    (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)((*(int (**)(int))(*(unsigned int *)v13 + 336))(v13)) & 0xFF); /*0x732743*/
   }
   if ( v2 ) /*0x732750*/
-    IDA_LOBYTE(HeightMap) = (*(char (**)(EventClass *, int))v2->EventClass_field_0x0)(v2, 1); /*0x732758*/
+    (HeightMap) = ((HeightMap) & ~0xFF) | ((unsigned int)((*(char (**)(EventClass *, int))v2->EventClass_field_0x0)(v2, 1)) & 0xFF); /*0x732758*/
   return HeightMap; /*0x73275a*/
 }
 }

@@ -263,7 +263,7 @@ void FindGameDirectoryCD(const char* path) {
         v1 = 1;
         if ( AlwaysFindYRCD() <= -1 )
           continue;
-        Str1[0] = IDA_LOBYTE(DataGlobal_87F7E8[31499]) + 65;
+        Str1[0] = ((unsigned int)(DataGlobal_87F7E8[31499]) & 0xFF) + 65;
         v6 = (unsigned int *)RA2_OPNEW(8);
         v6[1] = (unsigned int)(_strdup(Str1));
         *v6 = 0;
@@ -610,13 +610,13 @@ void NetworkGetField(int port) {
 {
   int result; // eax
   int16_t v3; // dx
-  IDA_LOWORD(result) = a2;
+  (result) = ((result) & ~0xFFFF) | ((unsigned int)(a2) & 0xFFFF);
   {
     int result; // eax
     int16_t v3; // dx
 
-    IDA_LOWORD(result) = result; /*0x542430*/
-    IDA_LOBYTE(v3) = IDA_HIBYTE(result); /*0x542437*/
+    (result) = ((result) & ~0xFFFF) | ((unsigned int)(result) & 0xFFFF); /*0x542430*/
+    IDA_LOBYTE(v3) = (((unsigned int)(result) >> 24) & 0xFF); /*0x542437*/
     IDA_HIBYTE(v3) = result; /*0x542439*/
     *(unsigned short *)this->Network_field_0x22 = v3; /*0x54243b*/
     return result; /*0x54243f*/
@@ -749,7 +749,7 @@ char CleanupCampaignResources() {
 {
   int16_t v5; // [esp+74h] [ebp-4h]
   int v0; // eax
-  IDA_LOBYTE(v0) = DataGlobal_87F7E8[538500];
+  (v0) = ((v0) & ~0xFF) | ((unsigned int)(DataGlobal_87F7E8[538500]) & 0xFF);
   unsigned char v4[108]; // [esp+8h] [ebp-70h] BYREF
   v4[0] = 0;
   if ( (DataGlobal_87F7E8[538500] & 2) == 0 )
@@ -765,7 +765,7 @@ char CleanupCampaignResources() {
       v1 += TimerGetTicks() - DataGlobal_87F7E8[7892];
     while ( 1 )
     {
-      IDA_LOBYTE(v0) = DataGlobal_87F7E8[7892];
+      (v0) = ((v0) & ~0xFF) | ((unsigned int)(DataGlobal_87F7E8[7892]) & 0xFF);
       int v2 = DataGlobal_87F7E8[7894];
       if ( DataGlobal_87F7E8[7892] != -1 )
       {
@@ -848,7 +848,7 @@ retn
 void NetworkShutdownInterface() {
 int result; // eax
 
-IDA_LOWORD(DataGlobal_87F7E8[538506]) = 0;
+(DataGlobal_87F7E8[538506]) = ((DataGlobal_87F7E8[538506]) & ~0xFFFF) | ((unsigned int)(0) & 0xFFFF);
 {
   int result; // eax
 
@@ -867,7 +867,7 @@ int j; // esi
 int k; // edi
 char Destination[128]; // [esp+20h] [ebp-80h] BYREF
 
-IDA_HIWORD(v1) = 0;
+(v1) = ((v1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16);
 {
   unsigned int v3; // kr04_4
   int v4; // ebx
@@ -893,7 +893,7 @@ IDA_HIWORD(v1) = 0;
   int v24; // [esp+1Ch] [ebp-84h]
   char Destination[128]; // [esp+20h] [ebp-80h] BYREF
 
-  IDA_HIWORD(v1) = 0; /*0x5f9e89*/
+  (v1) = ((v1) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x5f9e89*/
   if ( !v1 ) /*0x5f9e8d*/
     return 0; /*0x5f9e8f*/
   memset(Destination, 0xA5u, sizeof(Destination)); /*0x5f9eaa*/
@@ -953,7 +953,7 @@ IDA_HIWORD(v1) = 0;
   for ( k = 0; k < v4; Destination[k - 1] = (v17 + v16) ^ v15 ) /*0x5fa01b*/
   {
     v12 = Destination[k]; /*0x5fa01d*/
-    IDA_LOWORD(v1) = Destination[k + 2]; /*0x5fa029*/
+    (v1) = ((v1) & ~0xFFFF) | ((unsigned int)(Destination[k + 2]) & 0xFFFF); /*0x5fa029*/
     v13 = v12 * v12; /*0x5fa033*/
     v14 = Destination[k + 3]; /*0x5fa036*/
     v19 = 2 * Destination[k + 1]; /*0x5fa03c*/

@@ -856,7 +856,7 @@ LABEL_9:
         int v21 = *(unsigned int *)(*(unsigned int *)(v19 + 4 * v18) + 111);
         if ( v21 != *(unsigned int *)(HouseClass_Player.field_0 + 48) )
         {
-          IDA_LOWORD(v21) = *v20;
+          (v21) = ((v21) & ~0xFFFF) | ((unsigned int)(*v20) & 0xFFFF);
           Network::SendMessage(
             (int)&((unsigned int *)HouseClass_Player)[44148],
             (int)&v168,
@@ -2041,7 +2041,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   if ( v3 >= 100 && v3 < 109 || v3 >= 110 && v3 <= 116 || dword_A8B54C == 1 || !*(unsigned char *)a1 || *(unsigned char *)a1 >= 0x2Fu ) /*0x64a790*/
     return 4; /*0x64a790*/
   v11 = -(*((unsigned int *)dword_A83D4C + 12) != *(char *)(a1 + 2)); /*0x64a7a4*/
-  IDA_LOBYTE(v11) = v11 & 0xFA; /*0x64a7a7*/
+  (v11) = ((v11) & ~0xFF) | ((unsigned int)(v11 & 0xFA) & 0xFF); /*0x64a7a7*/
   return v11 + 6; /*0x64a660*/
 }
 }
@@ -2212,7 +2212,7 @@ int Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned ch
             result = (int)a2; /*0x64b5ac*/
             *a2 += 5 - 5 * v17; /*0x64b5b0*/
           }
-          IDA_LOBYTE(result) = 1; /*0x64b5b4*/
+          (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x64b5b4*/
           if ( a5 ) /*0x64b5b6*/
           {
             *a1 = 0; /*0x64b5c6*/
@@ -2264,7 +2264,7 @@ int Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned ch
     (&dword_AFA338)[v9] = *a1; /*0x64b647*/
     a3[6] = v9; /*0x64b64e*/
   }
-  IDA_LOBYTE(result) = 0; /*0x64b651*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x64b651*/
   return result; /*0x64b5c4*/
 }
 }
@@ -2306,7 +2306,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
   v30 = a2; /*0x64b688*/
   v28 = 0; /*0x64b68e*/
   v25 = (unsigned char *)(0); /*0x64b692*/
-  IDA_LOBYTE(v23) = 0; /*0x64b696*/
+  (v23) = ((v23) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x64b696*/
   v22 = 0; /*0x64b69b*/
   v24 = 0; /*0x64b6a0*/
   v26 = (unsigned char *)(0); /*0x64b6a5*/
@@ -2319,21 +2319,21 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
     while ( v28 < a5 ) /*0x64b6d4*/
     {
       v8 = ((unsigned char *)&byte_A802D4)[111 * v7]; /*0x64b6ef*/
-      IDA_LOBYTE(v29) = v8; /*0x64b6f6*/
+      (v29) = ((v29) & ~0xFF) | ((unsigned int)(v8) & 0xFF); /*0x64b6f6*/
       v9 = (uint8_t)((unsigned char *)&byte_8208EC)[v8]; /*0x64b70c*/
       if ( v8 == 31 ) /*0x64b70e*/
         v10 = *(int *)((char *)&dword_A802DF + 111 * v7) + v9 + 1; /*0x64b717*/
       else
         v10 = v9 + 1; /*0x64b71d*/
-      if ( IDA_LOBYTE(v31[0]) == 4 ) /*0x64b725*/
+      if ( ((unsigned int)(v31[0]) & 0xFF) == 4 ) /*0x64b725*/
       {
         if ( v8 == 4 ) /*0x64b72d*/
         {
           if ( !v24 /*0x64b798*/
-            && (v24 = *((unsigned char *)&dword_A802DF + 111 * v7 + 1), v24 == IDA_LOBYTE(v31[6]))
-            && ((unsigned char *)&byte_A802E6)[111 * v7] == IDA_LOBYTE(v31[9])
+            && (v24 = *((unsigned char *)&dword_A802DF + 111 * v7 + 1), v24 == ((unsigned int)(v31[6]) & 0xFF))
+            && ((unsigned char *)&byte_A802E6)[111 * v7] == ((unsigned int)(v31[9]) & 0xFF)
             && *(int *)((char *)&dword_A802DF + 111 * v7 + 3) == *(unsigned int *)&v31[7]
-            && ((unsigned char *)&byte_A802EB)[111 * v7] == IDA_HIBYTE(v31[11])
+            && ((unsigned char *)&byte_A802EB)[111 * v7] == (((unsigned int)(v31[11]) >> 24) & 0xFF)
             && *(unsigned int *)((char *)&unk_A802E7 + 111 * v7) == *(unsigned int *)((char *)&v31[9] + 1) )
           {
             if ( byte_A8ED74 ) /*0x64b7a5*/
@@ -2344,7 +2344,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
             }
             v9 = 5; /*0x64b83f*/
             v10 = 5; /*0x64b846*/
-            IDA_LOBYTE(v23) = v23 + 1; /*0x64b848*/
+            (v23) = ((v23) & ~0xFF) | ((unsigned int)(v23 + 1) & 0xFF); /*0x64b848*/
             v22 = 1; /*0x64b84c*/
           }
           else
@@ -2356,7 +2356,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
             ++v10; /*0x64b8a0*/
             v22 = 0; /*0x64b8a9*/
             *v25 = v23; /*0x64b8ae*/
-            IDA_LOBYTE(v23) = 1; /*0x64b8b7*/
+            (v23) = ((v23) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x64b8b7*/
             v7 = dword_A802CC; /*0x64b8c0*/
             v25 = (unsigned char *)(a1 + a4 + 1); /*0x64b8c6*/
           }
@@ -2370,7 +2370,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
           v22 = 0; /*0x64b912*/
           *v11 = v23; /*0x64b917*/
           v7 = dword_A802CC; /*0x64b919*/
-          IDA_LOBYTE(v23) = 0; /*0x64b91f*/
+          (v23) = ((v23) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x64b91f*/
         }
       }
       else if ( v8 == 4 ) /*0x64b928*/
@@ -2381,7 +2381,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
           v7 = dword_A802CC; /*0x64b93d*/
         }
         ++v10; /*0x64b94d*/
-        IDA_LOBYTE(v23) = 1; /*0x64b94e*/
+        (v23) = ((v23) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x64b94e*/
         v22 = 0; /*0x64b953*/
         v25 = (unsigned char *)(a1 + a4 + 1); /*0x64b95c*/
       }
@@ -2390,7 +2390,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
       {
         if ( (unsigned char)v29 == 4 && v22 ) /*0x64bd5d*/
         {
-          IDA_LOBYTE(v23) = v23 - 1; /*0x64bd65*/
+          (v23) = ((v23) & ~0xFF) | ((unsigned int)(v23 - 1) & 0xFF); /*0x64bd65*/
           Debug::Log("Compress: Out of buffer space at %d units\n"); /*0x64bd79 G57w11: IDA push seq @ 0x64bd79 +1 reg-vararg(s) omitted*/
           DictionaryCompressLookup((uint8_t *)&v23, &a4, v27, v26, 1); /*0x64bd98*/
           *v25 = v23; /*0x64bda5*/
@@ -2568,7 +2568,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     if ( v7 == 28 ) /*0x64be30*/
     {
       v8 = *(unsigned int *)(v5 + 3); /*0x64be35*/
-      IDA_BYTE2(v45[0]) = v5[2]; /*0x64be38*/
+      (v45[0]) = ((v45[0]) & ~(0xFFULL << 16)) | (((unsigned __int64)(unsigned int)(v5[2]) & 0xFF) << 16); /*0x64be38*/
       v3 += 6; /*0x64be40*/
       *(unsigned int *)((char *)v45 + 3) = v8; /*0x64be43*/
       v9 = v34 - 6; /*0x64be47*/
@@ -2584,7 +2584,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     v34 = v9; /*0x64be5e*/
   LABEL_9:
     memset((char *)&v45[1] + 3, 0, 0x68u); /*0x64be6d*/
-    IDA_LOBYTE(v45[0]) = v44; /*0x64be75*/
+    (v45[0]) = ((v45[0]) & ~0xFF) | ((unsigned int)(v44) & 0xFF); /*0x64be75*/
     v11 = (uint8_t)((unsigned char *)&byte_8208EC)[v44]; /*0x64be85*/
     v38 = v11; /*0x64be8d*/
     if ( v44 != 4 ) /*0x64be91*/
@@ -2622,14 +2622,14 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
       v34 += -1 - v11; /*0x64bf52*/
       v38 = 5; /*0x64bf56*/
       Debug::Log("Decoding new MEGAMISSION\n"); /*0x64bf5e G57w11: IDA push seq @ 0x64bf5e*/
-      v16 = IDA_HIBYTE(v45[2]); /*0x64bf70*/
+      v16 = (((unsigned int)(v45[2]) >> 24) & 0xFF); /*0x64bf70*/
       v17 = SBYTE1(v45[3]) + 8 * v40; /*0x64bf77*/
       v18 = (char *)&unk_AFA468 + 640 * v17; /*0x64bf84*/
       *(unsigned int *)v18 = *(unsigned int *)((char *)&v45[1] + 3); /*0x64bf89*/
       v18[4] = v16; /*0x64bf8b*/
       v43 = 1; /*0x64bf93*/
       (&dword_AC50FC)[v17] = 1; /*0x64bf97*/
-      if ( !*(unsigned int *)((char *)v45 + 3) || !IDA_LOBYTE(v45[0]) ) /*0x64bfac*/
+      if ( !*(unsigned int *)((char *)v45 + 3) || !((unsigned int)(v45[0]) & 0xFF) ) /*0x64bfac*/
         Debug::Log("Frame %d:Empty megamission decoded\n"); /*0x64bfba G57w11: IDA push seq @ 0x64bfba +1 reg-vararg(s) omitted*/
       v36 = &a1[v3]; /*0x64bfe0*/
       v42 = (char *)&unk_AFA46D + 640 * v17; /*0x64bfe4*/
@@ -2639,7 +2639,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
         qmemcpy( (void *)(v19), (const void *)(v45), 0x6Cu); /*0x64c013*/
         v19 += 108; /*0x64c013*/
         *(unsigned short *)v19 = v45[27]; /*0x64c015*/
-        v19[2] = IDA_BYTE2(v45[27]); /*0x64c017*/
+        v19[2] = (((unsigned int)(v45[27]) >> 16) & 0xFF); /*0x64c017*/
         (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x64c028*/
         dword_8B4200 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x64c047*/
         ++dword_8B41F8; /*0x64c051*/
@@ -2647,7 +2647,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
         v20 = v36[4]; /*0x64c05e*/
         ++v35; /*0x64c063*/
         *(unsigned int *)v42 = *(unsigned int *)v36; /*0x64c06b*/
-        IDA_HIBYTE(v45[2]) = v20; /*0x64c06d*/
+        (v45[2]) = ((v45[2]) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(v20) & 0xFF) << 24); /*0x64c06d*/
         v42[4] = v20; /*0x64c071*/
         v21 = v33 - 1; /*0x64c078*/
         v33 = v21; /*0x64c081*/
@@ -2674,14 +2674,14 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
   LABEL_14:
     v14 = *(char **)((char *)&v45[1] + 3); /*0x64beb5*/
   LABEL_40:
-    if ( !*(unsigned int *)((char *)v45 + 3) || !IDA_LOBYTE(v45[0]) ) /*0x64c264*/
+    if ( !*(unsigned int *)((char *)v45 + 3) || !((unsigned int)(v45[0]) & 0xFF) ) /*0x64c264*/
     {
       Debug::Log("Frame %d: Empty event being added to queue\n"); /*0x64c271 G57w11: IDA push seq @ 0x64c271 +1 reg-vararg(s) omitted*/
       v6 = dword_8B4200; /*0x64c276*/
     }
     if ( dword_8B41F8 >= 0x4000 ) /*0x64c289*/
     {
-      if ( IDA_LOBYTE(v45[0]) == 31 ) /*0x64c357*/
+      if ( ((unsigned int)(v45[0]) & 0xFF) == 31 ) /*0x64c357*/
         RA2_OPDEL(v14); /*0x64c35a*/
       return -1; /*0x64c35a*/
     }
@@ -2689,7 +2689,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     qmemcpy( (void *)(v30), (const void *)(v45), 0x6Cu); /*0x64c2a5*/
     v30 += 108; /*0x64c2a5*/
     *(unsigned short *)v30 = v45[27]; /*0x64c2a7*/
-    v30[2] = IDA_BYTE2(v45[27]); /*0x64c2a9*/
+    v30[2] = (((unsigned int)(v45[27]) >> 16) & 0xFF); /*0x64c2a9*/
     (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x64c2bd*/
     v6 = ((unsigned short)dword_8B4200 + 1) & 0x3FFF; /*0x64c2d6*/
     v3 += v38 + 1; /*0x64c2de*/
@@ -2718,8 +2718,8 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
   v23 = (char *)&unk_AFA468 + 640 * v22; /*0x64c130*/
   v14 = *(char **)v23; /*0x64c136*/
   *(unsigned int *)((char *)&v45[1] + 3) = *(unsigned int *)v23; /*0x64c138*/
-  IDA_HIBYTE(v45[2]) = v23[4]; /*0x64c13f*/
-  if ( !*(unsigned int *)((char *)v45 + 3) || !IDA_LOBYTE(v45[0]) ) /*0x64c151*/
+  (v45[2]) = ((v45[2]) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(v23[4]) & 0xFF) << 24); /*0x64c13f*/
+  if ( !*(unsigned int *)((char *)v45 + 3) || !((unsigned int)(v45[0]) & 0xFF) ) /*0x64c151*/
   {
     Debug::Log("Frame %d:Empty megamission decoded from slot %d. Player %d\n"); /*0x64c165 G57w11: IDA push seq @ 0x64c165 +3 reg-vararg(s) omitted*/
     v6 = dword_8B4200; /*0x64c16a*/
@@ -2733,7 +2733,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     qmemcpy( (void *)(v25), (const void *)(v45), 0x6Cu); /*0x64c1b7*/
     v25 += 108; /*0x64c1b7*/
     *(unsigned short *)v25 = v45[27]; /*0x64c1b9*/
-    v25[2] = IDA_BYTE2(v45[27]); /*0x64c1bb*/
+    v25[2] = (((unsigned int)(v45[27]) >> 16) & 0xFF); /*0x64c1bb*/
     v26 = v24; /*0x64c1cc*/
     (&dword_A70204)[dword_8B4200] = timeGetTime(); /*0x64c1d1*/
     v41 = (void **)((char *)v24 + 5); /*0x64c1e8*/
@@ -2748,7 +2748,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     ++v35; /*0x64c211*/
     --v33; /*0x64c215*/
     *(unsigned int *)((char *)&v45[1] + 3) = (unsigned int)v14; /*0x64c219*/
-    IDA_HIBYTE(v45[2]) = v28; /*0x64c21d*/
+    (v45[2]) = ((v45[2]) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(v28) & 0xFF) << 24); /*0x64c21d*/
     if ( v29 ) /*0x64c221*/
     {
       v38 = -1; /*0x64c231*/
@@ -2958,7 +2958,7 @@ void Network_ProcessMapEvent(int a1, int a2)
             Base = (void *)(0); /*0x64cf3c*/
             NumOfElements = 0; /*0x64cf40*/
             v91 = 0; /*0x64cf44*/
-            IDA_LOBYTE(v92) = 0; /*0x64cf48*/
+            (v92) = ((v92) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x64cf48*/
             v93 = 0.0; /*0x64cf4d*/
             if ( v81 > 0 ) /*0x64cf51*/
             {
@@ -2987,7 +2987,7 @@ v16 = (unsigned int *)(*(int (**)(unsigned int, float *))(**((unsigned int **)Bl
   LABEL_22:
                   *((unsigned int *)Base + 2 * NumOfElements) = v20; /*0x64d003*/
                   *((unsigned int *)Base + 2 * NumOfElements + 1) = *v19; /*0x64d010*/
-                  IDA_LOBYTE(v92) = 0; /*0x64d019*/
+                  (v92) = ((v92) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x64d019*/
                   ++NumOfElements; /*0x64d01e*/
                 }
                 ++v10; /*0x64d026*/
@@ -3175,7 +3175,7 @@ v61 = (unsigned short *)(*(int (**)(unsigned int, char *))(**((unsigned int **)B
                         &MapClass_Instance,
                         (int16_t *)&v121,
                         *(unsigned int *)(v127 + 1460),
-                        IDA_BYTE1(v42[80]) & 1);
+                        (((unsigned int)(v42[80]) >> 8) & 0xFF) & 1);
 v44 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v29 + 428))( /*0x64d535*/ v29, (unsigned int *)(v42), -1, v36, 0, 1);
 
 

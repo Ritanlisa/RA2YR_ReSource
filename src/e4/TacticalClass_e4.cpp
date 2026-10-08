@@ -677,7 +677,7 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
     {
       ((CommandClass *)v6)->BuildBar(); /*0x6d0525*/
       result = (*(int (**)(CommandClass *, int))(*(unsigned int *)v6 + 56))( (CommandClass *)(v6), 2); /*0x6d0530*/
-      IDA_LOBYTE(result) = v8; /*0x6d0533*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(v8) & 0xFF); /*0x6d0533*/
       return result; /*0x6d053a*/
     }
     (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)v6 + 48))( (CommandClass *)(v6), (GadgetClass *)(&stru_B0CC40)); /*0x6d0546*/
@@ -693,7 +693,7 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d059b*/
       CommandClass::AddAction( (ToolTipManager *)(*(int **)&stru_88732C.__pad_1C[32]), (void *)((int)v17)); /*0x6d05ab*/
       result = (*(int (**)(CommandClass *, int))(*(unsigned int *)v6 + 56))( (CommandClass *)(v6), 2); /*0x6d05b6*/
-      IDA_LOBYTE(result) = v8; /*0x6d05b9*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(v8) & 0xFF); /*0x6d05b9*/
       return result; /*0x6d05c0*/
     }
     goto LABEL_18; /*0x6d0550*/
@@ -705,7 +705,7 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
   LABEL_18:
     result = (*(int (**)(CommandClass *, int))(*(unsigned int *)v6 + 56))( (CommandClass *)(v6), 2); /*0x6d0669*/
   LABEL_19:
-    IDA_LOBYTE(result) = v8; /*0x6d0672*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(v8) & 0xFF); /*0x6d0672*/
     return result; /*0x6d0672*/
   }
   v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0); /*0x6d05cc*/
@@ -731,7 +731,7 @@ int TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
   while ( (int)v11 < (int)byte_B0CBDC ); /*0x6d0627*/
   HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 240); /*0x6d0634*/
   result = (*(int (**)(CommandClass *, int))(*(unsigned int *)v6 + 56))( (CommandClass *)(v6), 2); /*0x6d0640*/
-  IDA_LOBYTE(result) = v8; /*0x6d0643*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(v8) & 0xFF); /*0x6d0643*/
   return result; /*0x6d0535*/
 }
 }

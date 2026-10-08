@@ -337,7 +337,7 @@ v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass
   v59 = (unsigned int)(v1[12]);
   v58 = v2; /*0x550b37*/
   v3 = Math::CalcAngle((double)v1[10] - (double)v1[13], (double)(int)v59 - (double)v2); /*0x550b56*/
-  IDA_LOWORD(v59) = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x550b6f*/
+  (v59) = ((v59) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x550b6f*/
   v59 = (((v59 >> 12) + 1) >> 1) & 7; /*0x550b8d*/
   ((Coord *)(g_TacticalClass_Instance))->To_Screen( (unsigned int *)(v1 + 9), (int *)(&v75)); /*0x550b91*/
   ((Coord *)(g_TacticalClass_Instance))->To_Screen((unsigned int *)(v1 + 12), (int *)&v74); /*0x550ba2*/
@@ -369,16 +369,16 @@ v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass
     v11 = 2 * *((uint8_t *)v1 + 65); /*0x550c66*/
     v12 = 2 * *((uint8_t *)v1 + 66); /*0x550c68*/
     if ( v10 > 0xFF ) /*0x550c6f*/
-      IDA_LOBYTE(v10) = -1; /*0x550c71*/
+      (v10) = ((v10) & ~0xFF) | ((unsigned int)(-1) & 0xFF); /*0x550c71*/
     if ( v12 > 0xFF ) /*0x550c7c*/
-      IDA_LOBYTE(v12) = -1; /*0x550c7e*/
+      (v12) = ((v12) & ~0xFF) | ((unsigned int)(-1) & 0xFF); /*0x550c7e*/
     if ( v11 > 0xFF ) /*0x550c89*/
-      IDA_LOBYTE(v11) = -1; /*0x550c8b*/
+      (v11) = ((v11) & ~0xFF) | ((unsigned int)(-1) & 0xFF); /*0x550c8b*/
     IDA_LOBYTE(v60) = v11; /*0x550c90*/
     IDA_HIBYTE(v60) = v12; /*0x550c94*/
     v61 = v10; /*0x550c9d*/
     v54 = v60; /*0x550ca1*/
-    IDA_LOBYTE(v11) = v10; /*0x550ca6*/
+    (v11) = ((v11) & ~0xFF) | ((unsigned int)(v10) & 0xFF); /*0x550ca6*/
   }
   else
   {
@@ -388,7 +388,7 @@ v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass
     v14 = *((unsigned char *)v1 + 67); /*0x550cc3*/
     IDA_LOBYTE(v54) = (uint8_t)v60 >> 1; /*0x550cca*/
     IDA_HIBYTE(v54) = v13 >> 1; /*0x550cce*/
-    IDA_LOBYTE(v11) = v14 >> 1; /*0x550cd2*/
+    (v11) = ((v11) & ~0xFF) | ((unsigned int)(v14 >> 1) & 0xFF); /*0x550cd2*/
   }
   v63 = (int)(v75);
   v64 = (int)(v76);
@@ -678,7 +678,7 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
           (((a1) >> 8) & 0xFF) = v11; /*0x551d38*/
           v15 = 4 - (v5 & 3); /*0x551d40*/
           v16 = (unsigned int)a1 << 16; /*0x551d42*/
-          IDA_LOWORD(v16) = (unsigned short)a1; /*0x551d47*/
+          (v16) = ((v16) & ~0xFFFF) | ((unsigned int)((unsigned short)a1) & 0xFFFF); /*0x551d47*/
           memset32((void *)v5, v16, v15 >> 2); /*0x551d4d*/
           a1 = (unsigned char *)(v38); /*0x551d51*/
           memset((void *)(v5 + 4 * (v15 >> 2)), v16, v15 & 3); /*0x551d58*/
@@ -686,7 +686,7 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
           v11 = v36; /*0x551d62*/
         }
         v17 = (unsigned int *)v5; /*0x551d68*/
-        IDA_HIWORD(v18) = IDA_HIWORD(v14); /*0x551d6a*/
+        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v14)) & 0xFFFF) << 16); /*0x551d6a*/
         for ( v5 += v14 & 0xFFFFFFFC; (unsigned int)v17 < v5; v17 += 2 ) /*0x551d71*/
         {
           *v17 = v13; /*0x551d73*/
@@ -695,10 +695,10 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
         v19 = v5 + (v14 & 3); /*0x551d82*/
         if ( v5 < v19 ) /*0x551d86*/
         {
-          IDA_LOBYTE(v18) = v11; /*0x551d8c*/
+          (v18) = ((v18) & ~0xFF) | ((unsigned int)(v11) & 0xFF); /*0x551d8c*/
           (((v18) >> 8) & 0xFF) = v11; /*0x551d90*/
           v20 = v18 << 16; /*0x551d98*/
-          IDA_LOWORD(v20) = v18; /*0x551da1*/
+          (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(v18) & 0xFFFF); /*0x551da1*/
           v21 = (v19 - v5) >> 2; /*0x551da4*/
           memset32((void *)v5, v20, v21); /*0x551da7*/
           memset((void *)(v5 + 4 * v21), v18, ((unsigned char)v19 - (unsigned char)v5) & 3); /*0x551dae*/
@@ -1009,10 +1009,10 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
         v14 = v13 + v11; /*0x55270a*/
         if ( v4 < v4 - (v4 & 3) + 4 ) /*0x552712*/
         {
-          IDA_LOBYTE(v13) = v10; /*0x552714*/
+          (v13) = ((v13) & ~0xFF) | ((unsigned int)(v10) & 0xFF); /*0x552714*/
           (((v13) >> 8) & 0xFF) = v10; /*0x552718*/
           v15 = v13 << 16; /*0x552722*/
-          IDA_LOWORD(v15) = v13; /*0x552727*/
+          (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(v13) & 0xFFFF); /*0x552727*/
           v16 = (4 - (v4 & 3)) >> 2; /*0x55272a*/
           memset32((void *)v4, v15, v16); /*0x55272d*/
           memset((void *)(v4 + 4 * v16), v13, (4 - (v4 & 3)) & 3); /*0x552734*/
@@ -1020,7 +1020,7 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
           v10 = v13; /*0x552742*/
         }
         v17 = (unsigned int *)v4; /*0x552746*/
-        IDA_HIWORD(v18) = IDA_HIWORD(v14); /*0x552748*/
+        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v14)) & 0xFFFF) << 16); /*0x552748*/
         for ( v4 += v14 & 0xFFFFFFFC; (unsigned int)v17 < v4; v17 += 2 ) /*0x55274f*/
         {
           *v17 = v12; /*0x552751*/
@@ -1029,10 +1029,10 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
         v19 = v4 + (v14 & 3); /*0x552760*/
         if ( v4 < v19 ) /*0x552764*/
         {
-          IDA_LOBYTE(v18) = v10; /*0x55276a*/
+          (v18) = ((v18) & ~0xFF) | ((unsigned int)(v10) & 0xFF); /*0x55276a*/
           (((v18) >> 8) & 0xFF) = v10; /*0x55276e*/
           v20 = v18 << 16; /*0x552776*/
-          IDA_LOWORD(v20) = v18; /*0x55277f*/
+          (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(v18) & 0xFFFF); /*0x55277f*/
           v21 = (v19 - v4) >> 2; /*0x552782*/
           memset32((void *)v4, v20, v21); /*0x552785*/
           memset((void *)(v4 + 4 * v21), v18, ((unsigned char)v19 - (unsigned char)v4) & 3); /*0x55278c*/
@@ -1233,7 +1233,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
     (((v15) >> 32) & 0xFF) = 0; /*0x55503e*/
     v16 = -((uint8_t)ReturnFalse2(v15, IDA_HIDWORD(v15)) != 0); /*0x55504d*/
     dword_ABCA78 = dword_ABCA74; /*0x55504f*/
-    IDA_LOBYTE(v16) = v16 & 0xCF; /*0x555055*/
+    (v16) = ((v16) & ~0xFF) | ((unsigned int)(v16 & 0xCF) & 0xFF); /*0x555055*/
     dword_829AE8 = v16 + 50; /*0x55505a*/
   }
 }
@@ -1603,7 +1603,7 @@ void CompressLCWBuffer(Pipe * aP0, int edx0, unsigned char * a2, unsigned int * 
           while ( v24 ); /*0x55be1b*/
           v20 = v62; /*0x55be1d*/
           v5 = v64; /*0x55be21*/
-          IDA_LOBYTE(v22) = v25; /*0x55be25*/
+          (v22) = ((v22) & ~0xFF) | ((unsigned int)(v25) & 0xFF); /*0x55be25*/
           v21 = v68; /*0x55be27*/
         }
         *v23 = v22; /*0x55be2b*/
@@ -2030,13 +2030,13 @@ AbstractClass * * Game_Frame_Check()
   {
     ++dword_A8DAB4; /*0x55d080*/
     v2 = Scenario::ClearScreen(v8); /*0x55d086*/
-    IDA_LOBYTE(v2) = byte_A83D49; /*0x55d08b*/
+    (v2) = ((v2) & ~0xFF) | ((unsigned int)(byte_A83D49) & 0xFF); /*0x55d08b*/
     if ( byte_A83D49 || byte_A8ECD0 ) /*0x55d09a*/
     {
       if ( dword_887368 ) /*0x55d0a8*/
       {
         v2 = ((Tooltip *)(dword_887368))->Enable(0); /*0x55d0ab*/
-        IDA_LOBYTE(v2) = byte_A83D49; /*0x55d0b0*/
+        (v2) = ((v2) & ~0xFF) | ((unsigned int)(byte_A83D49) & 0xFF); /*0x55d0b0*/
       }
       if ( (unsigned char)v2 || byte_A8ECD0 ) /*0x55d0bf*/
       {
@@ -2044,7 +2044,7 @@ AbstractClass * * Game_Frame_Check()
         if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x55d0dd*/
         {
           (*(void (**)(int))(dword_A8B23C->vtable1 + 160))(v2); /*0x55d0e2*/
-          IDA_LOBYTE(v2) = byte_A83D49; /*0x55d0e8*/
+          (v2) = ((v2) & ~0xFF) | ((unsigned int)(byte_A83D49) & 0xFF); /*0x55d0e8*/
           v3 = *(unsigned int *)&dword_A8B238; /*0x55d0ed*/
         }
         if ( (unsigned char)v2 ) /*0x55d0f5*/
@@ -2873,12 +2873,12 @@ void* unknown_libname_21()
   ((unsigned char *)&unk_ABCE70)[1] = 1; /*0x5fa360*/
   ((unsigned char *)&unk_ABCE70)[3] = 0; /*0x5fa363*/
   ((unsigned char *)&unk_ABCE70)[4] = 3; /*0x5fa366*/
-  IDA_LOBYTE(((unsigned char *)&unk_ABCE70)[5]) = 1; /*0x5fa36d*/
+  (((unsigned char *)&unk_ABCE70)[5]) = ((((unsigned char *)&unk_ABCE70)[5]) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5fa36d*/
   ((unsigned char *)&unk_ABCE70)[6] = 2; /*0x5fa370*/
-  IDA_LOBYTE(((unsigned char *)&unk_ABCE70)[7]) = 1; /*0x5fa377*/
-  IDA_BYTE1(((unsigned char *)&unk_ABCE70)[7]) = 1; /*0x5fa37a*/
-  IDA_BYTE2(((unsigned char *)&unk_ABCE70)[7]) = 1; /*0x5fa37d*/
-  IDA_LOBYTE(((unsigned char *)&unk_ABCE70)[8]) = 1; /*0x5fa380*/
+  (((unsigned char *)&unk_ABCE70)[7]) = ((((unsigned char *)&unk_ABCE70)[7]) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5fa377*/
+  (((unsigned char *)&unk_ABCE70)[7]) = ((((unsigned char *)&unk_ABCE70)[7]) & ~(0xFFULL << 8)) | (((unsigned __int64)(unsigned int)(1) & 0xFF) << 8); /*0x5fa37a*/
+  (((unsigned char *)&unk_ABCE70)[7]) = ((((unsigned char *)&unk_ABCE70)[7]) & ~(0xFFULL << 16)) | (((unsigned __int64)(unsigned int)(1) & 0xFF) << 16); /*0x5fa37d*/
+  (((unsigned char *)&unk_ABCE70)[8]) = ((((unsigned char *)&unk_ABCE70)[8]) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5fa380*/
   unk_ABCEB5 = 1; /*0x5fa383*/
   unk_ABCF08 = 18; /*0x5fa38b*/
   unk_ABCF0C = 18; /*0x5fa391*/
@@ -2890,7 +2890,7 @@ void* unknown_libname_21()
   dword_ABCE98 = -1; /*0x5fa3c4*/
   unk_ABCEBC = -1; /*0x5fa3c7*/
   unk_ABCEC0 = -1; /*0x5fa3ca*/
-  IDA_HIBYTE(((unsigned char *)&unk_ABCE70)[7]) = 0; /*0x5fa3cd*/
+  (((unsigned char *)&unk_ABCE70)[7]) = ((((unsigned char *)&unk_ABCE70)[7]) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(0) & 0xFF) << 24); /*0x5fa3cd*/
   unk_ABCE9C = 800; /*0x5fa3d0*/
   unk_ABCEA0 = 600; /*0x5fa3d7*/
   unk_ABCEA4 = 0; /*0x5fa3de*/
@@ -4235,7 +4235,7 @@ int sub_558A30(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
           Dialog::StopBink( (void *)(hWnd)); /*0x558b0b*/
           return 1; /*0x558b19*/
         case 0x111u: /*0x558a63*/
-          v5 = IDA_HIWORD(a3); /*0x558a89*/
+          v5 = (((unsigned int)(a3) >> 16) & 0xFFFF); /*0x558a89*/
           WindowLongA = GetWindowLongA(hWnd, 8); /*0x558a8c*/
           v7 = WindowLongA; /*0x558a98*/
           switch ( (uint16_t)a3 ) /*0x558a9a*/
@@ -4303,7 +4303,7 @@ int sub_558B90(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
           Dialog::StopBink( (void *)(hWnd)); /*0x558bf3*/
           return 1; /*0x558c01*/
         case 0x111u: /*0x558bbf*/
-          sub_5588E0(hWnd, (uint16_t)a3, a4, IDA_HIWORD(a3)); /*0x558be3*/
+          sub_5588E0(hWnd, (uint16_t)a3, a4, (((unsigned int)(a3) >> 16) & 0xFFFF)); /*0x558be3*/
           return 0; /*0x558bee*/
       }
     }
@@ -4343,7 +4343,7 @@ int sub_558CB0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
           Dialog::StopBink( (void *)(hWnd)); /*0x558d4d*/
           return 1; /*0x558d5b*/
         case 0x111u: /*0x558ce3*/
-          v5 = IDA_HIWORD(a3); /*0x558cfb*/
+          v5 = (((unsigned int)(a3) >> 16) & 0xFFFF); /*0x558cfb*/
           WindowLongA = GetWindowLongA(hWnd, 8); /*0x558cfe*/
           if ( (uint16_t)a3 == 1670 ) /*0x558d10*/
           {

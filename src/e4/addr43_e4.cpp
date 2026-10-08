@@ -223,7 +223,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   v76[0] = (gamemd::XSurface *)(*aP5);
   aP0 = (gamemd::XSurface *)((int)(aP0));
   v14 = ((int *)aP5)[1];
-  IDA_LOBYTE(aP5) = 0; /*0x4373cc*/
+  (aP5) = ((aP5) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x4373cc*/
   v76[1] = v14; /*0x4373d1*/
   v62 = 0; /*0x4373d5*/
   v15 = ((int *)aP5)[2]; /*0x4373d9*/
@@ -1653,7 +1653,7 @@ char sub_437290(int * a1, int a2, int * a3)
     v12 = &BSurface_Vtable; /*0x437313*/
     v11[0] = 0; /*0x43731b*/
     v11[1] = 0; /*0x437323*/
-IDA_LOBYTE(v6) = (*(int (**)(int *, int, int (***)(void *, char), unsigned int *, unsigned int, int))(v10 + 8))( /*0x437332*/ a1, a2, (int (***)(void *, char))(&v12), (unsigned int *)(v11), 0, 1);
+(v6) = ((v6) & ~0xFF) | ((unsigned int)((*(int (**)(int *, int, int (***)(void *, char), unsigned int *, unsigned int, int))(v10 + 8))( /*0x437332*/ a1, a2, (int (***)(void *, char))(&v12), (unsigned int *)(v11), 0, 1)) & 0xFF);
 
 
 

@@ -323,8 +323,8 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
       while ( 1 ) /*0x594598*/
       {
         v19 = v18 & 7; /*0x594598*/
-        IDA_LOWORD(v28) = v13 + IDA_LOWORD((&dword_89F688)[v19]); /*0x5945ba*/
-        IDA_HIWORD(v28) = IDA_HIWORD(v26) + IDA_HIWORD((&dword_89F688)[v19]); /*0x5945c3*/
+        (v28) = ((v28) & ~0xFFFF) | ((unsigned int)(v13 + IDA_LOWORD((&dword_89F688)[v19])) & 0xFFFF); /*0x5945ba*/
+        (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v26) + IDA_HIWORD((&dword_89F688)[v19])) & 0xFFFF) << 16); /*0x5945c3*/
         v30 = v28; /*0x5945d2*/
         v20 = (int16_t *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v30); /*0x5945d6*/
         v21 = v20[18]; /*0x5945db*/
@@ -354,7 +354,7 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
         }
         if ( ++v18 >= 8 ) /*0x5946b7*/
           break; /*0x5946b7*/
-        IDA_LOWORD(v13) = v26; /*0x594592*/
+        (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(v26) & 0xFFFF); /*0x594592*/
       }
       v9 = v36; /*0x5946bd*/
       v10 = v36; /*0x5946c1*/
@@ -429,12 +429,12 @@ ObjectClass * * RandomMap_DistributeTerrain()
   v1 = (double)g_MissionQueueFrame.briefing[453] * (double)&dword_ABDC0C * 0.03; /*0x594b7e*/
   if ( v1 < 400.0 ) /*0x594b91*/
     v1 = 400.0; /*0x594b95*/
-  IDA_LOWORD(v2) = Math::RoundToInt(v1); /*0x594b9b*/
+  (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x594b9b*/
   v2 = v2; /*0x594ba5*/
   v3 = Terrain::ConnectivityGraph(  (Terrain *)&stru_87F5F0.__pad_58[416]); /*0x594ba9*/
-  IDA_HIWORD(v5) = 0; /*0x594bb4*/
+  (v5) = ((v5) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x594bb4*/
   v4 = v44[g_MissionQueueFrame.briefing[371]]; /*0x594bb6*/
-  IDA_LOWORD(v5) = *(unsigned short *)(*(unsigned int *)&dbl_87F648[4 * v4 + 440] + 2 * v3); /*0x594bc1*/
+  (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)(*(unsigned int *)&dbl_87F648[4 * v4 + 440] + 2 * v3)) & 0xFFFF); /*0x594bc1*/
   Map_Helper_58CE90(v34); /*0x594bc5*/
   ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorReset(); /*0x594bcf*/
   for ( i = ((LayerClass *)((LayerClass *)&stru_87F5F0.__pad_58[416]))->CellIteratorNext(); /*0x594be2*/
@@ -551,7 +551,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     if ( v27 == v20 - 1 ) /*0x594e1b*/
       v29 = m - v26; /*0x594e21*/
     else
-      IDA_LOWORD(v29) = Math::RoundToInt((double)v25 / (double)v36 * (double)(int)m + 0.5 - (double)IDA_SHIDWORD(m)); /*0x594e3b*/
+      (v29) = ((v29) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)v25 / (double)v36 * (double)(int)m + 0.5 - (double)IDA_SHIDWORD(m))) & 0xFFFF); /*0x594e3b*/
     *(unsigned int *)(v28 + 32) = v29; /*0x594e40*/
     v26 += v29; /*0x594e43*/
     v20 = *(unsigned int *)v45.__tail_10; /*0x594e45*/

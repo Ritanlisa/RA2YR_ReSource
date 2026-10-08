@@ -85,7 +85,7 @@ int Color_ComputeSaturation(unsigned int a1, int a2, int a3)
   v3 = *(uint8_t *)a1; /*0x6613ad*/
   v4 = *(uint8_t *)(a1 + 2); /*0x6613b4*/
   v5 = *(uint8_t *)(a1 + 1); /*0x6613b7*/
-  IDA_LOBYTE(a1) = 0; /*0x6613b9*/
+  (a1) = ((a1) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6613b9*/
   v13 = v4; /*0x6613bd*/
   v6 = v3; /*0x6613c1*/
   if ( v3 <= v5 ) /*0x6613c3*/
@@ -97,7 +97,7 @@ int Color_ComputeSaturation(unsigned int a1, int a2, int a3)
     v12 = v5; /*0x6613d5*/
   if ( v4 < v12 ) /*0x6613dd*/
     v12 = v4; /*0x6613df*/
-  IDA_LOBYTE(v15) = 0; /*0x6613e5*/
+  (v15) = ((v15) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6613e5*/
   if ( v6 ) /*0x6613e9*/
   {
     v7 = v6 - v12; /*0x6613f5*/
@@ -352,7 +352,7 @@ LABEL_23:
 LABEL_29:
           int v15 = v126;
           int v16 = -(*(unsigned int *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1352) != *(unsigned int *)(v4 + 48));
-          IDA_LOBYTE(v16) = v16 & 0xFC;
+          (v16) = ((v16) & ~0xFF) | ((unsigned int)(v16 & 0xFC) & 0xFF);
           *(unsigned int *)(a1 + 60) = v16 + 6;
           int v17 = *(unsigned int *)(v4 + 4);
           *(unsigned int *)(a1 + 32) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];

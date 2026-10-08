@@ -251,17 +251,17 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
         v14 = *a1 + a3; /*0x621a36*/
         if ( v13 < v13 + a3 ) /*0x621a3b*/
         {
-          IDA_HIWORD(v15) = IDA_HIWORD(v27); /*0x621a3d*/
+          (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v27)) & 0xFFFF) << 16); /*0x621a3d*/
           v16 = (unsigned short *)(v27 + 2 * (v12 + *a1)); /*0x621a45*/
           do /*0x621a8c*/
           {
-            IDA_LOWORD(v15) = *v16++; /*0x621a4f*/
-            IDA_LOWORD(v11) = IDA_HIWORD(g_ScreenSaverState) & (IDA_HIWORD(g_ScreenSaverState) >> 1); /*0x621a5b*/
-            IDA_LOWORD(v14) = (uint16_t)g_ScreenSaverState >> 1; /*0x621a65*/
+            (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(*v16++) & 0xFFFF); /*0x621a4f*/
+            (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(IDA_HIWORD(g_ScreenSaverState) & (IDA_HIWORD(g_ScreenSaverState) >> 1)) & 0xFFFF); /*0x621a5b*/
+            (v14) = ((v14) & ~0xFFFF) | ((unsigned int)((uint16_t)g_ScreenSaverState >> 1) & 0xFFFF); /*0x621a65*/
             v14 &= g_ScreenSaverState; /*0x621a68*/
-            IDA_LOWORD(v15) = (uint16_t)v15 >> 1; /*0x621a6e*/
+            (v15) = ((v15) & ~0xFFFF) | ((unsigned int)((uint16_t)v15 >> 1) & 0xFFFF); /*0x621a6e*/
             v17 = v14 | v11; /*0x621a71*/
-            IDA_LOWORD(v14) = (uint16_t)g_CreditsScreenState >> 1; /*0x621a7a*/
+            (v14) = ((v14) & ~0xFFFF) | ((unsigned int)((uint16_t)g_CreditsScreenState >> 1) & 0xFFFF); /*0x621a7a*/
             v11 = v15 & (v14 | v17); /*0x621a7f*/
             ++v13; /*0x621a81*/
             *(v16 - 1) = v11; /*0x621a82*/
@@ -296,13 +296,13 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
           v23 = (unsigned short *)(v27 + 2 * v22); /*0x621aed*/
           do /*0x621b35*/
           {
-            IDA_LOWORD(v22) = *v23++; /*0x621af7*/
-            IDA_LOWORD(v20) = IDA_HIWORD(g_ScreenSaverState) & (IDA_HIWORD(g_ScreenSaverState) >> 1); /*0x621b03*/
-            IDA_LOWORD(v19) = (uint16_t)g_ScreenSaverState >> 1; /*0x621b0d*/
+            (v22) = ((v22) & ~0xFFFF) | ((unsigned int)(*v23++) & 0xFFFF); /*0x621af7*/
+            (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(IDA_HIWORD(g_ScreenSaverState) & (IDA_HIWORD(g_ScreenSaverState) >> 1)) & 0xFFFF); /*0x621b03*/
+            (v19) = ((v19) & ~0xFFFF) | ((unsigned int)((uint16_t)g_ScreenSaverState >> 1) & 0xFFFF); /*0x621b0d*/
             v19 &= g_ScreenSaverState; /*0x621b10*/
-            IDA_LOWORD(v22) = (uint16_t)v22 >> 1; /*0x621b16*/
+            (v22) = ((v22) & ~0xFFFF) | ((unsigned int)((uint16_t)v22 >> 1) & 0xFFFF); /*0x621b16*/
             v24 = v19 | v20; /*0x621b19*/
-            IDA_LOWORD(v19) = (uint16_t)g_CreditsScreenState >> 1; /*0x621b22*/
+            (v19) = ((v19) & ~0xFFFF) | ((unsigned int)((uint16_t)g_CreditsScreenState >> 1) & 0xFFFF); /*0x621b22*/
             v20 = v22 & (v19 | v24); /*0x621b27*/
             ++v21; /*0x621b29*/
             *(v23 - 1) = v20; /*0x621b2a*/
@@ -493,7 +493,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
     v8 = v9[9]; /*0x638bcc*/
   LABEL_9:
     v11 = v8; /*0x638bef*/
-    return (unsigned short)v6 == (unsigned short)v8 && IDA_HIWORD(v6) == IDA_HIWORD(v11); /*0x638bef*/
+    return (unsigned short)v6 == (unsigned short)v8 && (((unsigned int)(v6) >> 16) & 0xFFFF) == (((unsigned int)(v11) >> 16) & 0xFFFF); /*0x638bef*/
   }
   v10 = ((BuildingLoadQueue *)(&a3))->Find(); /*0x638bd5*/
   if ( v10 ) /*0x638bdc*/
@@ -501,7 +501,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
     v8 = *(unsigned int *)(*(int (**)(void *, int *))(v10->u32_1B8))( (void *)(v10), (int *)(&v11));  /*0x638bed*/
     goto LABEL_9; /*0x638bed*/
   }
-  return (unsigned short)v6 == (unsigned short)v8 && IDA_HIWORD(v6) == IDA_HIWORD(v11); /*0x638b89*/
+  return (unsigned short)v6 == (unsigned short)v8 && (((unsigned int)(v6) >> 16) & 0xFFFF) == (((unsigned int)(v11) >> 16) & 0xFFFF); /*0x638b89*/
 }
 }
 // 0x65AD30
@@ -612,7 +612,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
       byte_A8B31D = 0; /*0x76edfd*/
       byte_A8B31C = v7 & 1; /*0x76ee06*/
       g_abs_A8B258[0] = (*(unsigned int *)(v10 + 56) & 0x10) != 0; /*0x76ee14*/
-      IDA_LOBYTE(v7) = (*(unsigned int *)(v10 + 56) & 0x20) != 0; /*0x76ee20*/
+      (v7) = ((v7) & ~0xFF) | ((unsigned int)((*(unsigned int *)(v10 + 56) & 0x20) != 0) & 0xFF); /*0x76ee20*/
       byte_A8B31F = 0; /*0x76ee22*/
       IDA_LOBYTE(dword_A8B320) = v7; /*0x76ee29*/
       g_abs_A8B260[0] = 1; /*0x76ee2f*/

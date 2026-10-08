@@ -165,7 +165,7 @@ int RadarClass_RecreateSurface(void * a1, void * a2)
     }
     *((unsigned int *)v3 + 1159) = (unsigned int)(v17); /*0x65479d*/
     (*(void (**)(char *, unsigned int))(v17->nextArrayIndex))( (char *)(v17), 0);  /*0x6547a8*/
-    IDA_LOBYTE(result) = RadarClass::UpdateFoundationShapesCustom((gamemd::RadarClass *)(v3)); /*0x6547ad*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(RadarClass::UpdateFoundationShapesCustom((gamemd::RadarClass *)(v3))) & 0xFF); /*0x6547ad*/
   }
   return (int)(result); /*0x6547b3*/
 }

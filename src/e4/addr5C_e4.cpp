@@ -291,7 +291,7 @@ char LCW_DecodeLength(int a1, unsigned char * a2, int a3)
   unsigned char *v13; // ecx
   char v14; // dl
 
-  IDA_LOBYTE(v3) = *a2; /*0x5c6370*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(*a2) & 0xFF); /*0x5c6370*/
   v4 = a2 + 1; /*0x5c6374*/
   if ( (unsigned char)v3 != 2 ) /*0x5c637b*/
     return v3; /*0x5c637b*/
@@ -311,7 +311,7 @@ char LCW_DecodeLength(int a1, unsigned char * a2, int a3)
   }
   else
   {
-    IDA_LOBYTE(v3) = *v4; /*0x5c6383*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(*v4) & 0xFF); /*0x5c6383*/
     v6 = (uint8_t)*v4; /*0x5c6388*/
   }
   ++v4; /*0x5c63aa*/
@@ -322,7 +322,7 @@ char LCW_DecodeLength(int a1, unsigned char * a2, int a3)
     v10 = (char *)(v4);
     v11 = *v4 & 0x80; /*0x5c63be*/
     v12 = v9 - v6; /*0x5c63c6*/
-    IDA_LOBYTE(v3) = -(v11 != 0); /*0x5c63c8*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(-(v11 != 0)) & 0xFF); /*0x5c63c8*/
     v13 = (unsigned char *)(v9 + a1); /*0x5c63cd*/
     if ( v9 - v6 > 0 ) /*0x5c63d2*/
     {
@@ -370,10 +370,10 @@ unsigned int sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
   v8 = v5 - 4 * a4; /*0x5c6426*/
   if ( v5 != 4 * a4 ) /*0x5c6428*/
   {
-    IDA_LOBYTE(a3) = (*((unsigned int *)this + a4 - 1) >= 0) - 1; /*0x5c642b*/
+    (a3) = ((a3) & ~0xFF) | ((unsigned int)((*((unsigned int *)this + a4 - 1) >= 0) - 1) & 0xFF); /*0x5c642b*/
     (((a3) >> 8) & 0xFF) = (unsigned char)(a3); /*0x5c642d*/
     v9 = (void *)((unsigned int)(a3)<< 16); /*0x5c6435*/
-    IDA_LOWORD(v9) = (unsigned short)(a3); /*0x5c6438*/
+    (v9) = ((v9) & ~0xFFFF) | ((unsigned int)((unsigned short)(a3)) & 0xFFFF); /*0x5c6438*/
     memset32(a2,(unsigned int)(v9), v8 >> 2); /*0x5c643f*/
     memset( (void *)(&a2[4 * (v8 >> 2)]), (int)(a3), v8 & 3); /*0x5c644a*/
     v6 = (unsigned char *)(&a2[v8]); /*0x5c6450*/
@@ -856,7 +856,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
           v42 = v37 + a3 * v41; /*0x5c6fb9*/
           *(uint16_t *)((char *)v38 + v39 - 2) = v42; /*0x5c6fbb*/
           --v40; /*0x5c6fc3*/
-          v37 = IDA_HIWORD(v42); /*0x5c6fc4*/
+          v37 = (((unsigned int)(v42) >> 16) & 0xFFFF); /*0x5c6fc4*/
         }
         while ( v40 ); /*0x5c6fc6*/
       }
@@ -875,7 +875,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
           v32 = v27 + (int16_t)-a3 * v31; /*0x5c6f46*/
           *(uint16_t *)((char *)v28 + v29 - 2) = v32; /*0x5c6f48*/
           --v30; /*0x5c6f50*/
-          v27 = IDA_HIWORD(v32); /*0x5c6f51*/
+          v27 = (((unsigned int)(v32) >> 16) & 0xFFFF); /*0x5c6f51*/
         }
         while ( v30 ); /*0x5c6f53*/
         v5 = a1; /*0x5c6f55*/
@@ -946,7 +946,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
         v22 = v19 + a3 * v21; /*0x5c6ebe*/
         *(uint16_t *)((char *)(unsigned int)(v20)+ v5 - (char *)v44 - 2) = v22; /*0x5c6ec0*/
         --v18; /*0x5c6ec8*/
-        v19 = IDA_HIWORD(v22); /*0x5c6ec9*/
+        v19 = (((unsigned int)(v22) >> 16) & 0xFFFF); /*0x5c6ec9*/
       }
       while ( v18 ); /*0x5c6ecb*/
     }
@@ -990,7 +990,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
     v16 = v13 + (int16_t)-a3 * v15; /*(unsigned int)(0x5c6e77)*/
     *(uint16_t *)((char *)(unsigned int)(v14)+ v5 - (char *)v44 - 2) = v16; /*0x5c6e79*/
     --v12; /*0x5c6e81*/
-    v13 = IDA_HIWORD(v16); /*0x5c6e82*/
+    v13 = (((unsigned int)(v16) >> 16) & 0xFFFF); /*0x5c6e82*/
   }
   while ( v12 ); /*0x5c6e84*/
   return 0; /*0x5c6e86*/
@@ -1767,7 +1767,7 @@ char sub_5C7BA0(const char * a1, unsigned short * a2, int a3)
 
   v3 = (uint16_t *)(a2); /*0x5c7ba5*/
   v4 = a1; /*0x5c7ba7*/
-  IDA_LOBYTE(v5) = 0; /*0x5c7bae*/
+  (v5) = ((v5) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x5c7bae*/
   memset( (void *)(a2), 0, 4 * a3); /*0x5c7bb2*/
   *(unsigned int *)a2 = 0; /*0x5c7bba*/
   if ( a1 )
@@ -1816,7 +1816,7 @@ char sub_5C7BA0(const char * a1, unsigned short * a2, int a3)
               v15 = v11 + v28 * v14; /*0x5c7cb6*/
               *(v12 - 1) = v15; /*0x5c7cb8*/
               --v13; /*0x5c7cbf*/
-              v11 = IDA_HIWORD(v15); /*0x5c7cc0*/
+              v11 = (((unsigned int)(v15) >> 16) & 0xFFFF); /*0x5c7cc0*/
             }
             while ( v13 ); /*0x5c7cc2*/
             v10 = a3; /*0x5c7cc4*/
@@ -2538,7 +2538,7 @@ char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
     {
       v24 = (unsigned int *)(*aP0 + *(unsigned int *)((char *)v29 + v30)); /*0x5c8fc5*/
       v31 = (char *)v24 + v35; /*0x5c8fcd*/
-      v35 = (unsigned int)v24 < *(unsigned int *)aP0 || (IDA_LOBYTE(v24) = v35) != 0 && !v31; /*0x5c8ffa*/
+      v35 = (unsigned int)v24 < *(unsigned int *)aP0 || (((unsigned int)(v24) & 0xFF) = v35) != 0 && !v31; /*0x5c8ffa*/
       *v29 = (unsigned int)(v31); /*0x5c8fff*/
       ++aP0; /*0x5c9001*/
       ++v29; /*0x5c9004*/
@@ -3770,7 +3770,7 @@ char sub_5C6550(int a1, unsigned char * a2, int a3, int a4)
     v6 = a3; /*0x5c6576*/
     do /*0x5c657f*/
     {
-      IDA_LOBYTE(v5) = *a2; /*0x5c6578*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(*a2) & 0xFF); /*0x5c6578*/
       --v4; /*0x5c657a*/
       ++a2; /*0x5c657b*/
       --v6; /*0x5c657c*/
@@ -3906,7 +3906,7 @@ int sub_5C6D90(int a1, unsigned short * a2, short a3, int a4)
     v8 = v4 + a3 * v7; /*0x5c6db3*/
     *(uint16_t *)((char *)a2 + v5 - 2) = v8; /*0x5c6db5*/
     --v6; /*0x5c6dbd*/
-    v4 = IDA_HIWORD(v8); /*0x5c6dbe*/
+    v4 = (((unsigned int)(v8) >> 16) & 0xFFFF); /*0x5c6dbe*/
   }
   while ( v6 ); /*0x5c6dc0*/
   return 0; /*0x5c6dc6*/
@@ -3955,7 +3955,7 @@ int sub_5C7E00(unsigned int * a1, unsigned short * a2, unsigned short * a3, int 
           v11 = *v8++; /*0x5c7e6b*/
           v12 = v10 + (uint16_t)*v9 + v7 * v11; /*0x5c7e79*/
           *v9++ = v12; /*0x5c7e7b*/
-          v10 = IDA_HIWORD(v12); /*0x5c7e84*/
+          v10 = (((unsigned int)(v12) >> 16) & 0xFFFF); /*0x5c7e84*/
           --v17; /*0x5c7e8b*/
         }
         while ( v17 ); /*0x5c7e8f*/

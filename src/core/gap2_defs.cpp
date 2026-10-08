@@ -165,7 +165,7 @@ void CStreamClass::ClearBuffer() {
 // 0x4A4B00
 namespace gamemd { 
 int CStreamClass::PointerToIndex(int a2) {
-  if ( IDA_LOBYTE(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4b00*/
+  if ( ((unsigned int)(*(unsigned int *)&this->CStreamClass_field_0x0C) & 0xFF) ) /*0x4a4b00*/
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a4b15*/
   else
     return 0; /*0x4a4b07*/
@@ -181,12 +181,12 @@ int CStreamClass::CopyItems(int a1, void* a2) {
 
   if ( a1 ) /*0x4a4cbc*/
   {
-    IDA_LOBYTE(*(unsigned int *)&this->CStreamClass_field_0x0C) = 0; /*0x4a4cc2*/
+    (*(unsigned int *)&this->CStreamClass_field_0x0C) = ((*(unsigned int *)&this->CStreamClass_field_0x0C) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x4a4cc2*/
     if ( a2 ) /*0x4a4cc8*/
       v4 = (unsigned int *)(a2); /*0x4a4cde*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a1); /*0x4a4cda*/
-    IDA_LOBYTE(*(unsigned int *)&this->CStreamClass_field_0x0C) = 1; /*0x4a4ce2*/
+    (*(unsigned int *)&this->CStreamClass_field_0x0C) = ((*(unsigned int *)&this->CStreamClass_field_0x0C) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x4a4ce2*/
     if ( !v4 ) /*0x4a4ce6*/
       return 0; /*0x4a4d5a*/
     if ( *(unsigned int *)&this->m_1[3] ) /*0x4a4ce8*/

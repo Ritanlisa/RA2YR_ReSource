@@ -723,8 +723,8 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
     else
     {
       v4 = ((unsigned int *)&this->visibleArea)[1] + v3; /*0x6d22bf G42.34 T11: visibleArea is RectangleStruct -- raw word view*/
-      IDA_LODWORD(v10[0]) = ((unsigned int *)&this->visibleArea)[0] + *a3; /*0x6d22c1 G42.34 T11*/
-      IDA_LODWORD(v10[1]) = v4; /*0x6d22c5*/
+      (v10[0]) = (unsigned int)(((unsigned int *)&this->visibleArea)[0] + *a3) /*0x6d22c1 G42.34 T11*/
+      (v10[1]) = (unsigned int)(v4) /*0x6d22c5*/
       v11 = (float)IDA_SLODWORD(v10[0]); /*0x6d22dc*/
       v13 = 0; /*0x6d22e4*/
       v12 = (float)v4; /*0x6d22ec*/
@@ -732,9 +732,9 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
       v11 = *v5; /*0x6d22f7*/
       v12 = v5[1]; /*0x6d2302*/
       v13 = *((unsigned int *)v5 + 2); /*0x6d2309*/
-      IDA_LOWORD(v6) = Math::RoundToInt(v11); /*0x6d230d*/
+      (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v11)) & 0xFFFF) /*0x6d230d*/
       v7 = v6; /*0x6d2316*/
-      IDA_LOWORD(v8) = Math::RoundToInt(v12); /*0x6d2318*/
+      (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v12)) & 0xFFFF) /*0x6d2318*/
       *a2 = v7; /*0x6d2325*/
       a2[1] = v8; /*0x6d2327*/
       a2[2] = 0; /*0x6d232c*/

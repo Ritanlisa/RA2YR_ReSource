@@ -1774,8 +1774,8 @@ LABEL_81:
         v52 = a8;
         goto LABEL_92;
       }
-      IDA_LOWORD(v50) = v113;
-      IDA_LOWORD(v49) = v111;
+      (v50) = ((v50) & ~0xFFFF) | ((unsigned int)(v113) & 0xFFFF);
+      (v49) = ((v49) & ~0xFFFF) | ((unsigned int)(v111) & 0xFFFF);
       v50 = v108 | (32 * (v49 | (v50 << 6)));
       v51 = v50 | a8;
     }
@@ -1783,16 +1783,16 @@ LABEL_81:
     {
       v51 = a8;
     }
-    IDA_LOWORD(v48) = v113;
-    IDA_LOWORD(v49) = v111 >> 1;
-    IDA_LOWORD(v50) = v108;
+    (v48) = ((v48) & ~0xFFFF) | ((unsigned int)(v113) & 0xFFFF);
+    (v49) = ((v49) & ~0xFFFF) | ((unsigned int)(v111 >> 1) & 0xFFFF);
+    (v50) = ((v50) & ~0xFFFF) | ((unsigned int)(v108) & 0xFFFF);
     v48 *= 32;
     v49 = v50 | ((v48 | v49) << 6);
     v52 = v49 | v51;
 LABEL_92:
-    IDA_LOWORD(v50) = v108;
-    IDA_LOWORD(v49) = v111 >> 1;
-    IDA_LOWORD(v48) = v113;
+    (v50) = ((v50) & ~0xFFFF) | ((unsigned int)(v108) & 0xFFFF);
+    (v49) = ((v49) & ~0xFFFF) | ((unsigned int)(v111 >> 1) & 0xFFFF);
+    (v48) = ((v48) & ~0xFFFF) | ((unsigned int)(v113) & 0xFFFF);
     v53 = v50 | (32 * ((32 * v48) | v49)) | v52;
     goto LABEL_94;
   }

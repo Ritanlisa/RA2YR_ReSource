@@ -308,9 +308,9 @@ char sub_626AB0(const char * a1, int a2)
   v15 = *((unsigned int *)g_FileExtensionState + 2); /*0x626c07*/
   v16 = *(unsigned int *)(v15 + 8); /*0x626c0a*/
   if ( *(unsigned int *)(v15 + 16) < v16 /*0x626c34*/
-    || ((IDA_LOBYTE(v17) = *(unsigned char *)(v15 + 13), (unsigned char)v17) || !v16)
+    || ((((unsigned int)(v17) & 0xFF) = *(unsigned char *)(v15 + 13), (unsigned char)v17) || !v16)
     && (v17 = *(unsigned int *)(v15 + 20), v17 > 0)
-    && (IDA_LOBYTE(v17) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
+    && (((unsigned int)(v17) & 0xFF) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
   {
     v18 = *(unsigned int *)(v15 + 16); /*0x626c36*/
     v19 = v18 + 1; /*0x626c39*/
@@ -319,7 +319,7 @@ char sub_626AB0(const char * a1, int a2)
     *(unsigned int *)(v15 + 16) = v19; /*0x626c42*/
     v21 = v17 + v20; /*0x626c45*/
     *(unsigned short *)v21 = *(unsigned short *)a2; /*0x626c4e*/
-    IDA_LOBYTE(v17) = *(unsigned char *)(a2 + 2); /*0x626c51*/
+    (v17) = ((v17) & ~0xFF) | ((unsigned int)(*(unsigned char *)(a2 + 2)) & 0xFF); /*0x626c51*/
     *(unsigned char *)(v21 + 2) = v17; /*0x626c54*/
   }
   return v17; /*0x626c57*/

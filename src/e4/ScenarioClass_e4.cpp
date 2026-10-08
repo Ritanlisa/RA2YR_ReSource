@@ -1783,7 +1783,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                      (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
                      (CCINIClass *)&stru_830620.__pad_579C[33400],
                      *((unsigned char *)this + 13479));
-  IDA_LOBYTE(aP3[1]) = *((unsigned char *)this + 13480);
+  (aP3[1]) = ((aP3[1]) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 13480)) & 0xFF);
   aP3[0] = (INIClass *)&stru_830620.__pad_579C[33380];
   v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
   *((unsigned char *)this + 13479) = Bool_Overwrite;
@@ -1814,7 +1814,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
                     (uint8_t *)&g_INI_Key_Lighting.sectionHead[1],
                     (CCINIClass *)&stru_830620.__pad_579C[33316],
                     *(INIClass **)((char *)this + 528));
-  IDA_LOBYTE(aP3[1]) = 0;
+  (aP3[1]) = ((aP3[1]) & ~0xFF) | ((unsigned int)(0) & 0xFF);
   aP3[0] = (INIClass *)&stru_830620.__pad_579C[33308];
   v117 = (INIClass *)&g_INI_Key_Lighting.sectionHead[1];
   *((unsigned int *)this + 132) = Int_Overwrite;

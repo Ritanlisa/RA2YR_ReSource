@@ -1704,7 +1704,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
   else
     v2 = ((Network *)&unk_A8E9C0)->GetLobbyStatus() + 2; /*0x5dd8c2*/
   v3 = ((Network *)(&unk_A8E9C0))->SetConnectionParams(v2, -1, 1000, 1); /*0x5dd8dd*/
-  IDA_LOBYTE(v3) = dword_A8BB08; /*0x5dd8e2*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(dword_A8BB08) & 0xFF); /*0x5dd8e2*/
   if ( FindAndValidateMap( (ObjectClass *)(byte_A8B8E0), dword_A8BB04, (const char *)(&byte_A8BAE2), v3, 1) == 1 ) /*0x5dd906*/
   {
     Debug::Log("Found local scenario, file name is %d\n"); /*0x5dd911 G57w11: IDA push seq @ 0x5dd911*/
@@ -2248,7 +2248,7 @@ int sub_5D36A0(HWND hWnd, unsigned int a2, unsigned int a3, int * a4)
   {
     if ( a2 == 273 ) /*0x5d36cd*/
     {
-      v5 = IDA_HIWORD(a3); /*0x5d36f2*/
+      v5 = (((unsigned int)(a3) >> 16) & 0xFFFF); /*0x5d36f2*/
       WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x5d36f5*/
       if ( (uint16_t)a3 > 0x5AEu ) /*0x5d3709*/
       {

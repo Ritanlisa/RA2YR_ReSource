@@ -1766,7 +1766,7 @@ LABEL_430:
     if ( !v162 )
     {
 LABEL_463:
-      IDA_LOBYTE(v200[0]) = 0;
+      (v200[0]) = ((v200[0]) & ~0xFF) | ((unsigned int)(0) & 0xFF);
       ebp463 = &((unsigned char *)&HouseClass_Player)[30096];
       do
       {
@@ -3369,7 +3369,7 @@ void SetupSkirmishPlayerSlots(SkirmishDialog * hDlg, int a2, HWND hWnd)
       ShowWindow(nIDDlgItema, 5); /*0x5ea09f*/
       if ( *(unsigned int *)&dword_A8B238 != 4 ) /*0x5ea0a7*/
         return ShowWindow(v13, 5); /*0x5ea0a7*/
-      IDA_LOBYTE(result) = Network::IsLobbyFeature(); /*0x5ea0a9*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(Network::IsLobbyFeature()) & 0xFF); /*0x5ea0a9*/
       if ( !(unsigned char)result ) /*0x5ea0b0*/
         return ShowWindow(v13, 5); /*0x5ea0b5*/
     }

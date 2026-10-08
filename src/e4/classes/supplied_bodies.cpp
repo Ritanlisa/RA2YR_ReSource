@@ -897,7 +897,7 @@ char ScriptAction::ProcessIdleAction()
       qmemcpy(v75, v9, 0x6Cu); /*0x63b696*/
       v9 += 108; /*0x63b696*/
       v75[54] = *(unsigned short *)v9; /*0x63b698*/
-      IDA_LOBYTE(v75[55]) = v9[2]; /*0x63b69e*/
+      (v75[55]) = ((v75[55]) & ~0xFF) | ((unsigned int)(v9[2]) & 0xFF) /*0x63b69e*/
       v55 = *(Coord3D *)GetScenarioClassActionCoords(&v63, v75); /*0x63b6a6*/
       v10 = Coord3D::Set(&v60, -1, -1, -1); /*0x63b6c2*/
       if ( (unsigned __int8)Coord3D::Equals(&v55, v10) && this ) /*0x63b6d7*/
@@ -1211,7 +1211,7 @@ int Array::Contains(int a2)
   LABEL_6:
       result = -1; /*0x65ad77*/
     }
-    IDA_LOBYTE(result) = result != -1; /*0x65ad82*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(result != -1) & 0xFF) /*0x65ad82*/
     return result; /*0x65ad84*/
 }
 } // namespace gamemd
@@ -1639,7 +1639,7 @@ unsigned char * ScriptAction::GetWaypointCoords(void * aP1, void *a1)
       if ( (*(int (__thiscall **)(unsigned int *))(*a2 + 44))(a2) == 11 ) /*0x6e6ac6*/
       {
         IDA_LOBYTE(this->ScriptAction_field_0x4[0]) = 11; /*0x6e6ac8*/
-        *(unsigned int *)this->__pad_0 = (__int16)a2[9] + 1000 * (__int16)IDA_HIWORD(a2[9]); /*0x6e6ae7*/
+        *(unsigned int *)this->__pad_0 = (__int16)a2[9] + 1000 * (__int16)(((unsigned int)(a2[9]) >> 16) & 0xFFFF); /*0x6e6ae7*/
       }
       else
       {
@@ -1704,7 +1704,7 @@ int ScriptAction::ExecuteMissionCmd()
         v9[26],
         v10);
       qmemcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
-      IDA_LOWORD(v10) = v15; /*0x6ffca6*/
+      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v15) & 0xFFFF) /*0x6ffca6*/
       (((v10) >> 16) & 0xFF) = v16; /*0x6ffca8*/
       Object_Helper_637DD0( /*0x6ffca9*/
         v9[0],
@@ -1735,7 +1735,7 @@ int ScriptAction::ExecuteMissionCmd()
         v9[25],
         v9[26],
         v10);
-      IDA_LOBYTE(result) = 0; /*0x6ffcae*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x6ffcae*/
     }
     else
     {
@@ -1779,7 +1779,7 @@ int ScriptAction::ExecuteMissionCmd()
       ScriptAction::GetWaypointCoords((ScriptAction *)v12, v18); /*0x6ffdbb*/
       v8 = ScriptAction::GetWaypointCoords((ScriptAction *)v13, this); /*0x6ffdce*/
       Object_Init(v3, (int)v12, *(unsigned int *)v8, v8[4], (int)v11); /*0x6ffde6*/
-      IDA_LOBYTE(result) = 1; /*0x6ffdee*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x6ffdee*/
     }
     return result; /*0x6ffcb0*/
 }

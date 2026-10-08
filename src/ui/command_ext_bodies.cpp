@@ -84,13 +84,13 @@ char ScreenCapture::Frame()
     int v24[3]; // [esp+DCh] [ebp-14h] BYREF
     int v25; // [esp+E8h] [ebp-8h]
 
-    IDA_LOBYTE(v1) = *(unsigned int *)((char *)&stru_A8EB00 + 381); /*0x55cc20*/
+    (v1) = ((v1) & ~0xFF) | ((unsigned int)(*(unsigned int *)((char *)&stru_A8EB00 + 381)) & 0xFF); /*0x55cc20*/
     if ( *(unsigned int *)((char *)&stru_A8EB00 + 381) ) /*0x55cc33*/
     {
       if ( (g_MissionQueueFrame.waypoints[382] & 1) == 0 ) /*0x55cc40*/
       {
         g_MissionQueueFrame.waypoints[382] |= 1u; /*0x55cc44*/
-        IDA_LOWORD(v2) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6000) * 900.0); /*0x55cc5a*/
+        (v2) = ((v2) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6000) * 900.0)) & 0xFFFF); /*0x55cc5a*/
         *(unsigned int *)&g_MissionQueueFrame.waypoints[430] = v2; /*0x55cc5f*/
       }
       if ( !*(unsigned int *)&g_MissionQueueFrame.waypoints[482] ) /*0x55cc6a*/
@@ -166,7 +166,7 @@ char ScreenCapture::Frame()
               BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x55ced9*/
             }
             *(unsigned int *)&g_MissionQueueFrame.waypoints[486] = 0; /*0x55cef0*/
-            IDA_LOBYTE(v1) = DSurface::Destroy((DSurface *)v22); /*0x55cef6*/
+            (v1) = ((v1) & ~0xFF) | ((unsigned int)(DSurface::Destroy((DSurface *)v22)) & 0xFF); /*0x55cef6*/
           }
           else
           {

@@ -150,7 +150,7 @@ v15 = *(int16_t *)(*((int (**)(BuildingClass *, char *, unsigned int))v6->vtable
 
       BuildingClass::GetHealthRatio(v6); /*0x52004b*/
       v4 = v4 * 256.0; /*0x520050*/
-      IDA_LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/
+      (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v4)) & 0xFFFF); /*0x520056*/
       sprintf(Source,(const char *const)((const char *const )((const char *const)stru_825538.Type)), &(&owner->plainName)[4], v9, v14, v15); /*0x520068*/
       ((INIClass *)queuedMission)->SetString( (unsigned __int8 *)((uint8_t *)&g_INI_Key_Special.SidebarImage), (char *)(Buffer), (char *)(Source)); /*0x520085*/
       result = i; /*0x52008a*/

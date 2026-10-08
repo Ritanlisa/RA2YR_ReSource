@@ -333,7 +333,7 @@ int SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
       break;
     default:
       v5 = -(nIDDlgItem != 1309); /*0x6adc8b*/
-      IDA_LOBYTE(v5) = v5 & 0xF9; /*0x6adc8d*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(v5 & 0xF9) & 0xFF); /*0x6adc8d*/
       v4 = v5 + 6; /*0x6adc8f*/
       break;
   }

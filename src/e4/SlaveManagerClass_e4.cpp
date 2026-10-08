@@ -596,8 +596,8 @@ v81 = *(unsigned int *)(*(int (**)(int *, char *, int, unsigned int, int *, int)
             a2 = &v102; /*0x6afaa9*/
             v42 = (unsigned int *)(*(int (**)(int))(*(unsigned int *)v40 + 72))(v40); /*0x6afaaa*/
             v100[0] = *(unsigned int *)((CellStruct *)(v86))->Set(*v42 / 256, v42[1] / 256); /*0x6afad9*/
-            IDA_LOWORD(v79) = IDA_LOWORD(v100[0]) - v85; /*0x6afaef*/
-            IDA_HIWORD(v79) = IDA_HIWORD(v100[0]) - v84[3]; /*0x6afaf4*/
+            IDA_LOWORD(v79) = ((unsigned int)(v100[0]) & 0xFFFF) - v85; /*0x6afaef*/
+            IDA_HIWORD(v79) = (((unsigned int)(v100[0]) >> 16) & 0xFFFF) - v84[3]; /*0x6afaf4*/
             v77 = v79; /*0x6afb01*/
             if ( (int16_t)((SlaveManagerClass *)&v77)->Calc2DDistance() > *((unsigned int *)g_RulesClass_Instance + 894) ) /*0x6afb19*/
               IDA_HIBYTE(v78) = 1; /*0x6afb1b*/

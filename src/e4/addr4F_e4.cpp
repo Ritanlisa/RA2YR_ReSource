@@ -198,7 +198,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
       if ( a2 == 273 ) /*0x4f18dc*/
       {
         WindowLongA = (unsigned int *)GetWindowLongA(hDlg, 8); /*0x4f1a3a*/
-        if ( !IDA_HIWORD(a3) ) /*0x4f1a42*/
+        if ( !(((unsigned int)(a3) >> 16) & 0xFFFF) ) /*0x4f1a42*/
         {
           if ( (unsigned __int16)a3 > 0x6C9u ) /*0x4f1a55*/
           {
@@ -1206,12 +1206,12 @@ _BYTE * sub_4F4E53(unsigned char * result, int a2, int a3, int a4, int a5, int a
       v8 = 0; /*0x4f4e5e*/
       if ( !*result && !a7 ) /*0x4f4e66*/
         v8 = 0x8000; /*0x4f4e68*/
-      IDA_LOBYTE(a3) = result[2]; /*0x4f4e70*/
-      IDA_LOWORD(a2) = result[1] & 0xF8; /*0x4f4e77*/
+      (a3) = ((a3) & ~0xFF) | ((unsigned int)(result[2]) & 0xFF); /*0x4f4e70*/
+      (a2) = ((a2) & ~0xFFFF) | ((unsigned int)(result[1] & 0xF8) & 0xFFFF); /*0x4f4e77*/
       result += 4; /*0x4f4e7e*/
-      IDA_LOWORD(a3) = a3 & 0xF8; /*0x4f4e81*/
+      (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(a3 & 0xF8) & 0xFFFF); /*0x4f4e81*/
       v9 = a3 | (32 * a2); /*0x4f4e88*/
-      IDA_LOWORD(a3) = *(result - 1) >> 3; /*0x4f4e90*/
+      (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(*(result - 1) >> 3) & 0xFFFF); /*0x4f4e90*/
       a2 = a3 | (4 * v9); /*0x4f4e97*/
       a4 += 2; /*0x4f4e99*/
       --v7; /*0x4f4e9e*/

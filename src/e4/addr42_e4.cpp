@@ -92,7 +92,7 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
       {
         v8 = (unsigned char)((unsigned int)(v6)* ((unsigned int)(v5)>> 8) * (uint8_t)v5 / 32258);
         if ( v8 > (int)(v6) ) /*0x4201be*/
-          IDA_LOBYTE(v8) = (unsigned char)(aP0 - 1); /*0x4201c0*/
+          (v8) = ((v8) & ~0xFF) | ((unsigned int)((unsigned char)(aP0 - 1)) & 0xFF); /*0x4201c0*/
         IDA_LOBYTE(v9) = 0; /*0x4201c2*/
         ++v5; /*0x4201c4*/
         IDA_HIBYTE(v9) = v8; /*0x4201c5*/
@@ -484,10 +484,10 @@ void * ProductionCompletionCallback(TechnoClass *self)
     ((AudioController *)&self->airstrikeTimer[2])->Stop(); /*0x424d43*/
     if ( !*(unsigned int *)(self->missionTimer[0] + 664) ) /*0x424d4e*/
       CreateUnitOnCompletion(self); /*0x424d5a*/
-    IDA_LOBYTE(v3) = self->ironCurtainTimer[2]; /*0x424d5f*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(self->ironCurtainTimer[2]) & 0xFF); /*0x424d5f*/
     if ( !(unsigned char)v3 ) /*0x424d67*/
     {
-      IDA_LOBYTE(v3) = *(unsigned char *)(self->missionTimer[0] + 855); /*0x424d73*/
+      (v3) = ((v3) & ~0xFF) | ((unsigned int)(*(unsigned char *)(self->missionTimer[0] + 855)) & 0xFF); /*0x424d73*/
       if ( (unsigned char)v3 ) /*0x424d7b*/
       {
         v4 = (unsigned int *)(*(int (**)(TechnoClass *, char *))(self->vtable0 + 72))( (TechnoClass *)(self), (char *)(v21)); /*0x424d8a*/
@@ -567,8 +567,8 @@ unsigned int * CreateUnitOnCompletion_addr42(TechnoClass *self)
     int v22[4]; // [esp+20h] [ebp-10h] BYREF
 
     v2 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(self->vtable0 + 72))( (TechnoClass *)(self), (int *)(v22)); /*0x424f12*/
-    IDA_LOWORD(v17) = *v2 / 256; /*0x424f25*/
-    IDA_HIWORD(v17) = v2[1] / 256; /*0x424f3e*/
+    (v17) = ((v17) & ~0xFFFF) | ((unsigned int)(*v2 / 256) & 0xFFFF); /*0x424f25*/
+    (v17) = ((v17) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v2[1] / 256) & 0xFFFF) << 16); /*0x424f3e*/
     *(unsigned int *)v19 = v17; /*0x424f4b*/
     v3 = (int *)((CellCoord *)&dword_87F7E8)->To_CellObj( (int16_t *)(v19)); /*0x424f50*/
     vtable0 = (int)(self->vtable0); /*0x424f55*/
@@ -608,26 +608,26 @@ unsigned int * CreateUnitOnCompletion_addr42(TechnoClass *self)
         && (v20 = Random::Range( (Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2147483646),
             (double)v20 * 4.656612877414201e-10 >= 0.5) )
       {
-        IDA_LOBYTE(v11) = *(unsigned char *)(self->missionTimer[0] + 877); /*0x4250d7*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(*(unsigned char *)(self->missionTimer[0] + 877)) & 0xFF); /*0x4250d7*/
         if ( (unsigned char)v11 ) /*0x4250df*/
         {
           ((CellClass *)v21)->ReduceTiberium( 6); /*0x4250e7*/
           if ( *(unsigned char *)(self->missionTimer[0] + 878) ) /*0x4250f2*/
           {
             v14 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(self->vtable0 + 72))( (TechnoClass *)(self), (int *)(v22)); /*0x42510c*/
-            IDA_LOBYTE(v11) = TimedCreateUnitAtCoords(v14, 300, 300, 1); /*0x425116*/
+            (v11) = ((v11) & ~0xFF) | ((unsigned int)(TimedCreateUnitAtCoords(v14, 300, 300, 1)) & 0xFF); /*0x425116*/
           }
           else
           {
             v15 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(self->vtable0 + 72))( (TechnoClass *)(self), (int *)(v22)); /*0x425133*/
-            IDA_LOBYTE(v11) = TimedCreateUnitAtCoords(v15, v5, v18, 0); /*0x42513a*/
+            (v11) = ((v11) & ~0xFF) | ((unsigned int)(TimedCreateUnitAtCoords(v15, v5, v18, 0)) & 0xFF); /*0x42513a*/
           }
         }
       }
       else
       {
         v13 = (unsigned int *)(*(int (**)(TechnoClass *, int *))(self->vtable0 + 72))( (TechnoClass *)(self), (int *)(v22)); /*0x4250bd*/
-        IDA_LOBYTE(v11) = StandardCreateUnitAtCoords(v13, v5, v18, 0); /*0x4250c4*/
+        (v11) = ((v11) & ~0xFF) | ((unsigned int)(StandardCreateUnitAtCoords(v13, v5, v18, 0)) & 0xFF); /*0x4250c4*/
       }
     }
     return (unsigned int *)v11; /*0x4250c9*/
@@ -783,11 +783,11 @@ int ConstructionPositionTracker(TechnoClass *self)
         v49 = (double)((__int16)v23 - 0x3FFF) * -0.00009587672516830327; /*0x425946*/
         v48 = (double)v55; /*0x425958*/
         Math::SinCos(v49); /*0x42595c*/
-        IDA_LOWORD(v24) = Math::RoundToInt(v1); /*0x42596b*/
+        (v24) = ((v24) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x42596b*/
         IDA_LODWORD(v48) = v24; /*0x425974*/
         Math::ArcTan2(v49); /*0x42597e*/
         v1 = v1 * 18.0 + (double)v54; /*0x42598c*/
-        IDA_LOWORD(v25) = Math::RoundToInt(v1); /*0x425990*/
+        (v25) = ((v25) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x425990*/
         v51 = v25; /*0x42599d*/
         v52 = IDA_LODWORD(v48); /*0x4259a5*/
         v53 = v56; /*0x4259af*/
@@ -1055,10 +1055,10 @@ AbstractClass * * sub_426ED0(int a2)
       return 0; /*0x426eef*/
     for ( i = &self->ToolTipText[292]; ; i += 6 ) /*0x426ef1*/
     {
-      IDA_HIWORD(v6) = 0; /*0x426ef7*/
+      (v6) = ((v6) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x426ef7*/
       if ( *(unsigned __int16 *)i <= a2 ) /*0x426efe*/
       {
-        IDA_LOWORD(v6) = *(unsigned short *)i; /*0x426ef9*/
+        (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)i) & 0xFFFF); /*0x426ef9*/
         if ( v6 + *((unsigned __int16 *)i + 1) > a2 ) /*0x426f0a*/
           break; /*0x426f0a*/
       }
@@ -1156,11 +1156,11 @@ void sub_4270D0(int a1, unsigned int a2, AnimFile * a3, int a4, char * a5, int a
                 }
                 if ( v12 ) /*0x427171*/
                   break; /*0x427171*/
-                IDA_LOBYTE(a2) = i[1]; /*0x42717e*/
+                (a2) = ((a2) & ~0xFF) | ((unsigned int)(i[1]) & 0xFF); /*0x42717e*/
                 (((a2) >> 8) & 0xFF) = a2; /*0x427180*/
                 v15 = (unsigned __int8)*i; /*0x427188*/
                 v16 = a2 << 16; /*0x42718a*/
-                IDA_LOWORD(v16) = a2; /*0x42718f*/
+                (v16) = ((v16) & ~0xFFFF) | ((unsigned int)(a2) & 0xFFFF); /*0x42718f*/
                 memset32(v8, v16, v15 >> 2); /*0x427195*/
                 i += 2; /*0x427199*/
                 memset((char *)v8 + 4 * (v15 >> 2), a2, v15 & 3); /*0x42719d*/
@@ -1188,10 +1188,10 @@ void sub_4270D0(int a1, unsigned int a2, AnimFile * a3, int a4, char * a5, int a
           {
             v18 = (char *)v8; /*0x4271d3*/
             a2 -= 0x4000; /*0x4271d8*/
-            IDA_LOBYTE(v8) = *i; /*0x4271de*/
+            (v8) = ((v8) & ~0xFF) | ((unsigned int)(*i) & 0xFF); /*0x4271de*/
             (((v8) >> 8) & 0xFF) = *i++; /*0x4271e2*/
             v19 = (unsigned int)v8 << 16; /*0x4271e9*/
-            IDA_LOWORD(v19) = (unsigned short)v8; /*0x4271ec*/
+            (v19) = ((v19) & ~0xFFFF) | ((unsigned int)((unsigned short)v8) & 0xFFFF); /*0x4271ec*/
             v8 = v21; /*0x4271ef*/
             memset32(v18, v19, a2 >> 2); /*0x4271f6*/
             memset( (void *)(&v18[4 * (a2 >> 2)]), v19, a2 & 3); /*0x4271fd*/
@@ -1332,8 +1332,8 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
       }
       else
       {
-        IDA_LOWORD(v12) = v4 + IDA_LOWORD((&dword_89F688)[v8]); /*0x4297f9*/
-        IDA_HIWORD(v12) = IDA_HIWORD(v11) + IDA_HIWORD((&dword_89F688)[v8]); /*0x4297fe*/
+        (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(v4 + IDA_LOWORD((&dword_89F688)[v8])) & 0xFFFF); /*0x4297f9*/
+        (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v11) + IDA_HIWORD((&dword_89F688)[v8])) & 0xFFFF) << 16); /*0x4297fe*/
         v4 = v12; /*0x429803*/
       }
       ++a4; /*0x429807*/
@@ -1498,7 +1498,7 @@ void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
       {
         *(int *)((char *)v15 + (unsigned int)v8) = v6[1]; /*0x42ab2a*/
         v9 = *(int16_t *)(*(unsigned int *)*v6 + 38) - *(int16_t *)(*(unsigned int *)*v5 + 38); /*0x42ab48*/
-        if ( (int)((IDA_HIDWORD(v9) ^ v9) - IDA_HIDWORD(v9)) > 1 /*0x42ab64*/
+        if ( (int)((((unsigned int)((unsigned __int64)(v9) >> 32)) ^ v9) - ((unsigned int)((unsigned __int64)(v9) >> 32))) > 1 /*0x42ab64*/
           || (v10 = *(int16_t *)(*(unsigned int *)*v6 + 36), v11 = *(int16_t *)(*(unsigned int *)*v5 + 36),
                                                        (int)abs32(v10 - v11) > 1) )
         {
@@ -1556,11 +1556,11 @@ int sub_42B080(short * a1, int a2)
       v12 = -2; /*0x42b0c9*/
       do /*0x42b18f*/
       {
-        IDA_LOWORD(v11) = v4 + *v2; /*0x42b0dc*/
-        IDA_HIWORD(v11) = v10 + v2[1]; /*0x42b0e5*/
+        (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(v4 + *v2) & 0xFFFF); /*0x42b0dc*/
+        (v11) = ((v11) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v10 + v2[1]) & 0xFFFF) << 16); /*0x42b0e5*/
         a1 = (short *)(v11); /*0x42b0f4*/
         v5 = (unsigned int *)((CellCoord *)&dword_87F7E8)->To_CellObj( (int16_t *)((__int16 *)&a1)); /*0x42b0fd*/
-        if ( (v5[80] & 0x100) != 0 && (v6 = *((char *)v5 + 283) - a2, (int)((IDA_HIDWORD(v6) ^ v6) - IDA_HIDWORD(v6)) > 2) ) /*0x42b11d*/
+        if ( (v5[80] & 0x100) != 0 && (v6 = *((char *)v5 + 283) - a2, (int)((((unsigned int)((unsigned __int64)(v6) >> 32)) ^ v6) - ((unsigned int)((unsigned __int64)(v6) >> 32))) > 2) ) /*0x42b11d*/
           v7 = v5[58]; /*0x42b11f*/
         else
           v7 = v5[57]; /*0x42b127*/
@@ -1569,7 +1569,7 @@ int sub_42B080(short * a1, int a2)
           while ( 1 ) /*0x42b137*/
           {
             v8 = (*(unsigned char *)(v7 + 20) & 4) == 0; /*0x42b137*/
-            IDA_LOBYTE(a1) = (*(unsigned char *)(v7 + 20) & 4) != 0; /*0x42b13a*/
+            (a1) = ((a1) & ~0xFF) | ((unsigned int)((*(unsigned char *)(v7 + 20) & 4) != 0) & 0xFF); /*0x42b13a*/
             if ( !v8 ) /*0x42b13e*/
             {
               if ( !*(unsigned int *)(v7 + 1652) ) /*0x42b140*/
@@ -1670,7 +1670,7 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
   if ( v10 + 1 != v9 && v10 + 1 != v8 ) /*0x42b44c*/
   {
     v51 = 0; /*0x42b44e*/
-    IDA_LOBYTE(v10) = 0; /*0x42b456*/
+    (v10) = ((v10) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x42b456*/
   }
   if ( v8 == 8 || v9 == 8 ) /*0x42b466*/
   {
@@ -1749,9 +1749,9 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
     v21 = *v20; /*0x42b549*/
     v52 = v19; /*0x42b54d*/
     v22 = v18 + v21; /*0x42b551*/
-    v23 = IDA_HIWORD(v49) + v20[1]; /*0x42b558*/
-    IDA_LOWORD(v54) = v22; /*0x42b55d*/
-    IDA_HIWORD(v54) = v23; /*0x42b564*/
+    v23 = (((unsigned int)(v49) >> 16) & 0xFFFF) + v20[1]; /*0x42b558*/
+    (v54) = ((v54) & ~0xFFFF) | ((unsigned int)(v22) & 0xFFFF); /*0x42b55d*/
+    (v54) = ((v54) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v23) & 0xFFFF) << 16); /*0x42b564*/
     v50 = v54; /*0x42b579*/
     v24 = *(unsigned int *)(a3 + 4 * (v7 + a5 - v19)); /*0x42b581*/
     v25 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v50); /*0x42b58f*/
@@ -1805,9 +1805,9 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
       }
       v27 = (unsigned short)v50 + *v20; /*0x42b5ff*/
       --v52; /*0x42b605*/
-      v28 = IDA_HIWORD(v50) + v20[1]; /*0x42b60d*/
-      IDA_LOWORD(v55) = v27; /*0x42b612*/
-      IDA_HIWORD(v55) = v28; /*0x42b61b*/
+      v28 = (((unsigned int)(v50) >> 16) & 0xFFFF) + v20[1]; /*0x42b60d*/
+      (v55) = ((v55) & ~0xFFFF) | ((unsigned int)(v27) & 0xFFFF); /*0x42b612*/
+      (v55) = ((v55) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v28) & 0xFFFF) << 16); /*0x42b61b*/
       v50 = v55; /*0x42b624*/
       v25 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v50); /*0x42b633*/
       v29 = *((char *)v25 + 283); /*0x42b635*/
@@ -1821,9 +1821,9 @@ AbstractClass * * GeneratePathWaypoints(unsigned int * a1, int * a2, int a3, int
     }
     while ( !v26 ); /*0x42b655*/
     v30 = v59 & 7; /*0x42b66e*/
-    v31 = IDA_HIWORD(v49) + IDA_HIWORD((&dword_89F688)[v30]); /*0x42b688*/
-    IDA_LOWORD(v56) = IDA_LOWORD((&dword_89F688)[v30]) + (unsigned short)v49; /*0x42b694*/
-    IDA_HIWORD(v56) = v31; /*0x42b69d*/
+    v31 = (((unsigned int)(v49) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[v30]); /*0x42b688*/
+    (v56) = ((v56) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD((&dword_89F688)[v30]) + (unsigned short)v49) & 0xFFFF); /*0x42b694*/
+    (v56) = ((v56) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v31) & 0xFFFF) << 16); /*0x42b69d*/
     v18 = (int16_t)v56; /*0x42b6a2*/
     v53 -= 2; /*0x42b6a7*/
     v7 = a4; /*0x42b6ab*/
@@ -1910,11 +1910,11 @@ void sub_42BCA0(int a1, int a2, int a3, unsigned int * a4, int * a5)
     v13 = (unsigned short *)(4 * v11 + 9041544); /*0x42bd10*/
     v22 = v8 + v12; /*0x42bd24*/
     v23 = v9 + v13[1]; /*0x42bd29*/
-    v14 = IDA_HIWORD(v21) + v13[1]; /*0x42bd3a*/
+    v14 = (((unsigned int)(v21) >> 16) & 0xFFFF) + v13[1]; /*0x42bd3a*/
     v15 = v6 + *v13; /*0x42bd3f*/
-    IDA_LOWORD(v24) = v15; /*0x42bd42*/
-    IDA_HIWORD(v24) = v14; /*0x42bd47*/
-    IDA_HIWORD(v21) = v14; /*0x42bd53*/
+    (v24) = ((v24) & ~0xFFFF) | ((unsigned int)(v15) & 0xFFFF); /*0x42bd42*/
+    (v24) = ((v24) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v14) & 0xFFFF) << 16); /*0x42bd47*/
+    (v21) = ((v21) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v14) & 0xFFFF) << 16); /*0x42bd53*/
     v16 = abs16(v23); /*0x42bd5f*/
     v17 = abs16(v22); /*0x42bd64*/
     if ( v17 <= v16 ) /*0x42bd68*/
@@ -1938,9 +1938,9 @@ void sub_42BCA0(int a1, int a2, int a3, unsigned int * a4, int * a5)
     }
     v19 = ((((unsigned __int8)*v26 - 4) & 7) - 4) & 7; /*0x42bdd7*/
     *a4 = v20 + 1; /*0x42bdda*/
-    IDA_LOWORD(v28) = v15 + IDA_LOWORD((&dword_89F688)[v19]); /*0x42bdf3*/
+    (v28) = ((v28) & ~0xFFFF) | ((unsigned int)(v15 + IDA_LOWORD((&dword_89F688)[v19])) & 0xFFFF); /*0x42bdf3*/
     result = v14 + IDA_HIWORD((&dword_89F688)[v19]); /*0x42bdfc*/
-    IDA_HIWORD(v28) = result; /*0x42bdff*/
+    (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(result) & 0xFFFF) << 16); /*0x42bdff*/
     *a5 = v28; /*0x42be0a*/
     return result; /*0x42bdbd*/
 }
@@ -2037,8 +2037,8 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
       if ( v18 ) /*0x42bf23*/
         break; /*0x42bf23*/
       v20 = v32 & 7; /*0x42bf2d*/
-      IDA_LOWORD(v35) = (unsigned short)v19 + IDA_LOWORD((&dword_89F688)[v20]); /*0x42bf46*/
-      IDA_HIWORD(v35) = IDA_HIWORD(a5) + IDA_HIWORD((&dword_89F688)[v20]); /*0x42bf55*/
+      (v35) = ((v35) & ~0xFFFF) | ((unsigned int)((unsigned short)v19 + IDA_LOWORD((&dword_89F688)[v20])) & 0xFFFF); /*0x42bf46*/
+      (v35) = ((v35) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a5) + IDA_HIWORD((&dword_89F688)[v20])) & 0xFFFF) << 16); /*0x42bf55*/
       a5 = v35; /*0x42bf5e*/
       v21 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42bf6c*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData( (IUnknown *)((int16_t *)&a5), (IUnknown *)(v37)) * v39 >= 0.01 ) /*0x42bfa1*/
@@ -2056,7 +2056,7 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
           continue; /*0x42c002*/
       }
       v17 = *((char *)v21 + 283); /*0x42c004*/
-      IDA_LOWORD(v19) = (unsigned short)a5; /*0x42c006*/
+      (v19) = ((v19) & ~0xFFFF) | ((unsigned int)((unsigned short)a5) & 0xFFFF); /*0x42c006*/
     }
     while ( v16 > 0 ); /*0x42c00c*/
   }
@@ -2065,8 +2065,8 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
     while ( !v18 ) /*0x42c026*/
     {
       v23 = v33 & 7; /*0x42c030*/
-      IDA_LOWORD(v36) = IDA_LOWORD((&dword_89F688)[v23]) + (unsigned short)v19; /*0x42c053*/
-      IDA_HIWORD(v36) = IDA_HIWORD(a5) + IDA_HIWORD((&dword_89F688)[v23]); /*0x42c058*/
+      (v36) = ((v36) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD((&dword_89F688)[v23]) + (unsigned short)v19) & 0xFFFF); /*0x42c053*/
+      (v36) = ((v36) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a5) + IDA_HIWORD((&dword_89F688)[v23])) & 0xFFFF) << 16); /*0x42c058*/
       a5 = v36; /*0x42c067*/
       v24 = (unsigned int *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&a5); /*0x42c070*/
       if ( v39 > 0.00001 && (double)CellClass::GetTileData( (IUnknown *)((int16_t *)&a5), (IUnknown *)(v37)) * v39 >= 0.01 ) /*0x42c0a5*/
@@ -2081,7 +2081,7 @@ LocomotionClass * * WalkLineOfSight(char * a1, int a2, unsigned int * a3, short 
         v17 = *((char *)v24 + 283); /*0x42c10b*/
       if ( v34 <= 0 ) /*0x42c113*/
         goto LABEL_47; /*0x42c113*/
-      IDA_LOWORD(v19) = (unsigned short)a5; /*0x42c020*/
+      (v19) = ((v19) & ~0xFFFF) | ((unsigned int)((unsigned short)a5) & 0xFFFF); /*0x42c020*/
     }
     goto LABEL_48; /*0x42c026*/
   }
@@ -2155,12 +2155,12 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
     else
       a8 = a7; /*0x42c993*/
     v14 = (unsigned int *)((CellCoord *)&stru_87F5F0.__pad_58[416])->To_CellObj( a3); /*0x42c9b7*/
-    v15 = ((MapClass *)&stru_87F5F0.__pad_58[416])->GetTileIndex( a3, a8, IDA_BYTE1(v14[80]) & 1); /*0x42c9d7*/
+    v15 = ((MapClass *)&stru_87F5F0.__pad_58[416])->GetTileIndex( a3, a8, (((unsigned int)(v14[80]) >> 8) & 0xFF) & 1); /*0x42c9d7*/
     v33 = v15; /*0x42c9e0*/
-    IDA_LOBYTE(v15) = a4[140]; /*0x42c9e4*/
+    (v15) = ((v15) & ~0xFF) | ((unsigned int)(a4[140]) & 0xFF); /*0x42c9e4*/
     *(unsigned int *)v29 = *Pathfinding::CrossBridge(&a8, (int)v30, v15); /*0x42ca01*/
     v16 = v12[80] >> 8; /*0x42ca0b*/
-    IDA_LOBYTE(v16) = v16 & 1; /*0x42ca0e*/
+    (v16) = ((v16) & ~0xFF) | ((unsigned int)(v16 & 1) & 0xFF); /*0x42ca0e*/
     *(unsigned int *)v28 = *Pathfinding::CrossBridge(&a8, (int)v12, v16); /*0x42ca23*/
     if ( a7 == -1 ) /*0x42ca27*/
       a7 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)a4 + 132))(a4) + 1460); /*0x42ca3f*/
@@ -2172,7 +2172,7 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
       if ( !v17 ) /*0x42ca71*/
         goto LABEL_18; /*0x42ca71*/
       v19 = (**v17)(v17, &unk_818858, &a8); /*0x42ca80*/
-      IDA_LOBYTE(v18) = v19 < 0; /*0x42ca88*/
+      (v18) = ((v18) & ~0xFF) | ((unsigned int)(v19 < 0) & 0xFF); /*0x42ca88*/
       v20 = a8 & (v18 - 1); /*0x42ca8c*/
       if ( v19 < 0 && v19 != -2147467262 ) /*0x42ca97*/
         sub_7DC720(v19); /*0x42ca9a*/
@@ -2206,7 +2206,7 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
     }
     v34 = 0; /*0x42cb8f*/
     v23 = -(a6 != -1); /*0x42cb9a*/
-    IDA_LOBYTE(v23) = v23 & 0xFC; /*0x42cb9c*/
+    (v23) = ((v23) & ~0xFF) | ((unsigned int)(v23 & 0xFC) & 0xFF); /*0x42cb9c*/
     TileIndex = v23 + 5; /*0x42cba1*/
     while ( 1 ) /*0x42cba5*/
     {
@@ -2218,7 +2218,7 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
         break; /*0x42cc19*/
       v24 = abs32(a2[1] - a3[1]); /*0x42cc31*/
       v25 = *a2 - *a3; /*0x42cc38*/
-      v26 = (IDA_HIDWORD(v25) ^ v25) - IDA_HIDWORD(v25); /*0x42cc3b*/
+      v26 = (((unsigned int)((unsigned __int64)(v25) >> 32)) ^ v25) - ((unsigned int)((unsigned __int64)(v25) >> 32)); /*0x42cc3b*/
       if ( v26 <= v24 ) /*0x42cc3f*/
         v26 = v24; /*0x42cc41*/
       if ( v26 > 1 ) /*0x42cc46*/
@@ -2402,13 +2402,13 @@ void sub_42CF80(int a2, IUnknown * aP2)
         if ( v6 == v5 - 1 ) /*0x42cffc*/
         {
           v8 = v6 + 500 * a3; /*0x42d001*/
-          IDA_LOWORD(v9) = *((unsigned short *)self + v8 + 94); /*0x42d004*/
+          (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(*((unsigned short *)self + v8 + 94)) & 0xFFFF); /*0x42d004*/
           IDA_LOWORD(a3) = *((unsigned short *)self + v8 + 93); /*0x42d014*/
         }
         else
         {
           v10 = v6 + 500 * a3; /*0x42d01e*/
-          IDA_LOWORD(v9) = *((unsigned short *)self + v10 + 95); /*0x42d029*/
+          (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(*((unsigned short *)self + v10 + 95)) & 0xFFFF); /*0x42d029*/
           IDA_LOWORD(a3) = *((unsigned short *)self + v10 + 94); /*0x42d031*/
         }
         v9 = (unsigned __int16)v9; /*0x42d03a*/
@@ -2509,8 +2509,8 @@ unsigned int * Cell_GetNeighborCoord(unsigned int * a1, short * a2, int a3)
   else
   {
     v6 = IDA_HIWORD(g_DDrawSurfaceManager.scenario[a3 + 82]); /*0x42d4ea*/
-    IDA_LOWORD(v7) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[a3 + 82]) + *a2; /*0x42d4f6*/
-    IDA_HIWORD(v7) = a2[1] + v6; /*0x42d4fb*/
+    (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD(g_DDrawSurfaceManager.scenario[a3 + 82]) + *a2) & 0xFFFF); /*0x42d4f6*/
+    (v7) = ((v7) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(a2[1] + v6) & 0xFFFF) << 16); /*0x42d4fb*/
     *a1 = v7; /*0x42d504*/
     return a1; /*0x42d506*/
   }
@@ -2599,7 +2599,7 @@ int EncodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4)
         if ( !a2 ) /*0x42fd96*/
           goto LABEL_11; /*0x42fd96*/
         v10 = *v5++; /*0x42fd98*/
-        IDA_LOBYTE(v18) = v10; /*0x42fd9c*/
+        (v18) = ((v18) & ~0xFF) | ((unsigned int)(v10) & 0xFF); /*0x42fd9c*/
         --a2; /*0x42fda0*/
   LABEL_12:
         v11 = v6 + 1; /*0x42fda9*/
@@ -2823,7 +2823,7 @@ unsigned int * sub_4202F0(int a2)
     {
       v5 = v3 * (v2 >> 8) * (unsigned __int8)v2 / 32258; /*0x42032f*/
       if ( v5 > v3 ) /*0x420333*/
-        IDA_LOBYTE(v5) = a2 - 1; /*0x420335*/
+        (v5) = ((v5) & ~0xFF) | ((unsigned int)(a2 - 1) & 0xFF); /*0x420335*/
       IDA_LOBYTE(v6) = 0; /*0x420337*/
       ++v2; /*0x420339*/
       IDA_HIBYTE(v6) = v5; /*0x42033a*/
@@ -3281,10 +3281,10 @@ int sub_426E80(int a2)
       return -1; /*0x426ec3*/
     for ( i = &self->ToolTipText[292]; ; i += 6 ) /*0x426ea0*/
     {
-      IDA_HIWORD(v5) = 0; /*0x426ea6*/
+      (v5) = ((v5) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x426ea6*/
       if ( *(unsigned __int16 *)i <= a2 ) /*0x426ead*/
       {
-        IDA_LOWORD(v5) = *(unsigned short *)i; /*0x426ea8*/
+        (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)i) & 0xFFFF); /*0x426ea8*/
         if ( v5 + *((unsigned __int16 *)i + 1) > a2 ) /*0x426eb9*/
           break; /*0x426eb9*/
       }
@@ -3320,10 +3320,10 @@ unsigned short sub_426FD0(int a2)
       {
         for ( i = &self->ToolTipText[292]; ; i += 6 ) /*0x426ff3*/
         {
-          IDA_HIWORD(v8) = 0; /*0x426ff9*/
+          (v8) = ((v8) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(0) & 0xFFFF) << 16); /*0x426ff9*/
           if ( *(unsigned __int16 *)i <= a2 ) /*0x427000*/
           {
-            IDA_LOWORD(v8) = *(unsigned short *)i; /*0x426ffb*/
+            (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)i) & 0xFFFF); /*0x426ffb*/
             if ( v8 + *((unsigned __int16 *)i + 1) > a2 ) /*0x42700c*/
               break; /*0x42700c*/
           }

@@ -162,15 +162,15 @@ int Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5
     {
       if ( v45 == 1 ) /*0x6200b3*/
       {
-        IDA_LOBYTE(v6) = a4; /*0x6200bb*/
+        (v6) = ((v6) & ~0xFF) | ((unsigned int)(a4) & 0xFF); /*0x6200bb*/
         (((v6) >> 8) & 0xFF) = a4; /*0x6200bf*/
         v11 = v7 - v5 + 1; /*0x6200c4*/
         v12 = v6 << 16; /*0x6200c6*/
-        IDA_LOWORD(v12) = v6; /*0x6200c9*/
+        (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(v6) & 0xFFFF); /*0x6200c9*/
         memset32(v10, v12, v11 >> 2); /*0x6200cf*/
         memset( (void *)(&v10[2 * (v11 >> 2)]), a4, v11 & 3); /*0x6200d6*/
         result = (*(int (**)(int))(*(unsigned int *)a1 + 96))(a1); /*0x6200de*/
-        IDA_LOBYTE(result) = 1; /*0x6200e1*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x6200e1*/
         return result; /*0x6200ea*/
       }
       v13 = v7 - v5; /*0x6200ed*/
@@ -189,7 +189,7 @@ int Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5
           g_GameScreenConfig = v15; /*0x62014a*/
           v18 = (v15 * (uint16_t)(v17 & IDA_HIWORD(g_ScreenSaverState)) /*0x62018a*/
                + v14 * (unsigned int)(uint16_t)(IDA_HIWORD(g_ScreenSaverState) & a4)) >> 8;
-          IDA_LOWORD(v18) = IDA_HIWORD(g_ScreenSaverState) & v18; /*0x62018d*/
+          (v18) = ((v18) & ~0xFFFF) | ((unsigned int)(IDA_HIWORD(g_ScreenSaverState) & v18) & 0xFFFF); /*0x62018d*/
           v19 = v18 /*0x6201a3*/
               | g_ScreenSaverState
               & ((v15 * (uint16_t)(v17 & g_ScreenSaverState)
@@ -1111,7 +1111,7 @@ int sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LP
   {
     v6 = (HWND *)(8 * g_DialogTrackingList + 12004648); /*0x622690*/
     v7 = (int *)(8 * g_DialogTrackingList + 12004652); /*0x622697*/
-    IDA_LOWORD(dwInitParam[0]) = a1; /*0x62269f*/
+    (dwInitParam[0]) = ((dwInitParam[0]) & ~0xFFFF) | ((unsigned int)(a1) & 0xFFFF); /*0x62269f*/
     ++g_DialogTrackingList; /*0x6226a4*/
     dwInitParam[1] = a3; /*0x6226ae*/
     v12 = g_hWnd; /*0x6226b7*/

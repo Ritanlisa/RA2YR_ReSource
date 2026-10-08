@@ -484,38 +484,38 @@ void* WarheadTypeClass::ProcessPower(int * a2, void *a2_2)
     int v20; // [esp+Ch] [ebp-4h]
 
     v3 = ((AbstractTypeClass *)this)->ProcessPower( (int *)(a2)); /*0x75ded0*/
-    IDA_LOBYTE(v3) = this->__pad_144[0]; /*0x75ded5*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->__pad_144[0]) & 0xFF); /*0x75ded5*/
     Power::FlagProcess((Power *)a2, v3); /*0x75dede*/
-    IDA_LOBYTE(v4) = this->__pad_144[3]; /*0x75dee3*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(this->__pad_144[3]) & 0xFF); /*0x75dee3*/
     Power::FlagProcess((Power *)a2, v4); /*0x75deec*/
-    IDA_LOBYTE(v5) = this->__pad_144[4]; /*0x75def1*/
+    (v5) = ((v5) & ~0xFF) | ((unsigned int)(this->__pad_144[4]) & 0xFF); /*0x75def1*/
     v6 = Power::FlagProcess((Power *)a2, v5); /*0x75defa*/
-    IDA_LOBYTE(v6) = (&this->WarheadTypeClass_field_bool_149)[0]; /*0x75deff*/
+    (v6) = ((v6) & ~0xFF) | ((unsigned int)((&this->WarheadTypeClass_field_bool_149)[0]) & 0xFF); /*0x75deff*/
     Power::FlagProcess((Power *)a2, v6); /*0x75df08*/
-    IDA_LOBYTE(v7) = (&this->WarheadTypeClass_field_bool_149)[1]; /*0x75df0d*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)((&this->WarheadTypeClass_field_bool_149)[1]) & 0xFF); /*0x75df0d*/
     Power::FlagProcess((Power *)a2, v7); /*0x75df16*/
-    IDA_LOBYTE(v8) = (&this->WarheadTypeClass_field_bool_149)[2]; /*0x75df1b*/
+    (v8) = ((v8) & ~0xFF) | ((unsigned int)((&this->WarheadTypeClass_field_bool_149)[2]) & 0xFF); /*0x75df1b*/
     v9 = Power::FlagProcess((Power *)a2, v8); /*0x75df24*/
-    IDA_LOBYTE(v9) = (&this->WarheadTypeClass_field_bool_149)[3]; /*0x75df29*/
+    (v9) = ((v9) & ~0xFF) | ((unsigned int)((&this->WarheadTypeClass_field_bool_149)[3]) & 0xFF); /*0x75df29*/
     Power::FlagProcess((Power *)a2, v9); /*0x75df32*/
-    IDA_LOBYTE(v10) = (&this->Conventional)[0]; /*0x75df37*/
+    (v10) = ((v10) & ~0xFF) | ((unsigned int)((&this->Conventional)[0]) & 0xFF); /*0x75df37*/
     Power::FlagProcess((Power *)a2, v10); /*0x75df40*/
-    IDA_LOBYTE(v11) = (&this->Conventional)[1]; /*0x75df45*/
+    (v11) = ((v11) & ~0xFF) | ((unsigned int)((&this->Conventional)[1]) & 0xFF); /*0x75df45*/
     v12 = Power::FlagProcess((Power *)a2, v11); /*0x75df4e*/
-    IDA_LOBYTE(v12) = (&this->Conventional)[2]; /*0x75df53*/
+    (v12) = ((v12) & ~0xFF) | ((unsigned int)((&this->Conventional)[2]) & 0xFF); /*0x75df53*/
     Power::FlagProcess((Power *)a2, v12); /*0x75df5c*/
-    IDA_LOBYTE(v13) = (&this->Conventional)[3]; /*0x75df61*/
+    (v13) = ((v13) & ~0xFF) | ((unsigned int)((&this->Conventional)[3]) & 0xFF); /*0x75df61*/
     Power::FlagProcess((Power *)a2, v13); /*0x75df6a*/
-    IDA_LOBYTE(v14) = (&this->CLDisableRed)[0]; /*0x75df6f*/
+    (v14) = ((v14) & ~0xFF) | ((unsigned int)((&this->CLDisableRed)[0]) & 0xFF); /*0x75df6f*/
     v15 = Power::FlagProcess((Power *)a2, v14); /*0x75df78*/
-    IDA_LOBYTE(v15) = (&this->CLDisableRed)[1]; /*0x75df7d*/
+    (v15) = ((v15) & ~0xFF) | ((unsigned int)((&this->CLDisableRed)[1]) & 0xFF); /*0x75df7d*/
     Power::FlagProcess((Power *)a2, v15); /*0x75df86*/
-    IDA_LOBYTE(v16) = (&this->CLDisableRed)[2]; /*0x75df8b*/
+    (v16) = ((v16) & ~0xFF) | ((unsigned int)((&this->CLDisableRed)[2]) & 0xFF); /*0x75df8b*/
     Power::FlagProcess((Power *)a2, v16); /*0x75df94*/
     ((Checksummer *)a2)->Add_double( *(unsigned int *)&this->__pad_44[84], *(unsigned int *)&this->__pad_44[88]); /*0x75dfa9*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x100); /*0x75dfb7*/
     ((Checksummer *)a2)->Add_double( (int)this->WarheadTypeClass_field_0xF8, *(unsigned int *)this->__pad_FC); /*0x75dfcc*/
-    IDA_LOBYTE(v17) = IDA_HIBYTE(this->PsychicDamage); /*0x75dfd1*/
+    (v17) = ((v17) & ~0xFF) | ((unsigned int)(IDA_HIBYTE(this->PsychicDamage)) & 0xFF); /*0x75dfd1*/
     Power::FlagProcess((Power *)a2, v17); /*0x75dfda*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x17C); /*0x75dfe8*/
     Power::TimerProcess(this->WarheadTypeClass_field_0x180); /*0x75dff6*/

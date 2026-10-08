@@ -308,12 +308,12 @@ int NavigateDialogTab(HWND hCtl, bool a2)
   result = (int)GetNextDlgTabItem(Parent, hCtl, a2); /*0x600c86*/
   if ( (HWND)result == hCtl ) /*0x600c90*/
   {
-    IDA_LOBYTE(result) = 0; /*0x600c9c*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x600c9c*/
   }
   else
   {
     result = (int)SetFocus((HWND)result); /*0x600c93*/
-    IDA_LOBYTE(result) = 1; /*0x600c99*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x600c99*/
   }
   return result; /*0x600c8e*/
 }
@@ -1880,7 +1880,7 @@ LABEL_23:
   *(unsigned int *)&DataGlobal_AC4894 = 0;
   EnumChildWindows(v23, (WNDENUMPROC)(sub_60A250), 0);
   int v67; // [esp+50h] [ebp-174h]
-  IDA_HIBYTE(v67) = DataGlobal_AC4894 >= 1;
+  (v67) = ((v67) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(DataGlobal_AC4894 >= 1) & 0xFF) << 24);
   if ( DataGlobal_AC4894 < 1 )
     ++v75;
   int v25 = v24 + 1;
@@ -2694,7 +2694,7 @@ int IsDialogControlVisible(int a1, HWND a2)
      || v4 == 274)
     && result == 1684 )
   {
-    IDA_LOBYTE(result) = 1; /*0x608f35*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x608f35*/
     return result; /*0x608f39*/
   }
   if ( (v4 == 148 /*0x609082*/
@@ -2729,7 +2729,7 @@ int IsDialogControlVisible(int a1, HWND a2)
      || v4 == 3015)
     && result == 1820 )
   {
-    IDA_LOBYTE(result) = 1; /*0x609085*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x609085*/
     return result; /*0x609089*/
   }
   if ( (v4 == 188 /*0x6090d4*/
@@ -2743,7 +2743,7 @@ int IsDialogControlVisible(int a1, HWND a2)
      || v4 == 275)
     && result == 1128 )
   {
-    IDA_LOBYTE(result) = 1; /*0x6090d7*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x6090d7*/
     return result; /*0x6090db*/
   }
   switch ( v4 ) /*0x6090e2*/
@@ -2757,23 +2757,23 @@ int IsDialogControlVisible(int a1, HWND a2)
         return 1; /*0x60913d*/
       return result == 1679; /*0x609148*/
     case 297: /*0x6090e2*/
-      IDA_LOBYTE(result) = result == 1861; /*0x609160*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1861) & 0xFF); /*0x609160*/
       return result; /*0x609164*/
     case 256: /*0x6090e2*/
       if ( result == 1673 || result == 1672 ) /*0x60917d*/
         return 1; /*0x60917d*/
       return result == 1401; /*0x609188*/
     case 148: /*0x6090e2*/
-      IDA_LOBYTE(result) = result == 1038; /*0x6091a0*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1038) & 0xFF); /*0x6091a0*/
       return result; /*0x6091a4*/
     case 183: /*0x6090e2*/
-      IDA_LOBYTE(result) = result == 1039; /*0x6091b8*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1039) & 0xFF); /*0x6091b8*/
       return result; /*0x6091bc*/
     case 692: /*0x6090e2*/
-      IDA_LOBYTE(result) = result == 1735; /*0x6091d0*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1735) & 0xFF); /*0x6091d0*/
       return result; /*0x6091d4*/
     case 693: /*0x6090e2*/
-      IDA_LOBYTE(result) = result == 1736; /*0x6091e8*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1736) & 0xFF); /*0x6091e8*/
       return result; /*0x6091ec*/
     case 261: /*0x6090e2*/
       if ( result == 1732 || result == 1730 || result == 1731 ) /*0x609210*/
@@ -2804,10 +2804,10 @@ int IsDialogControlVisible(int a1, HWND a2)
         return 1; /*0x6092f3*/
       return result == 1; /*0x6092fc*/
     case 216: /*0x6090e2*/
-      IDA_LOBYTE(result) = result == 1739; /*0x609314*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1739) & 0xFF); /*0x609314*/
       return result; /*0x609318*/
     case 215: /*0x6090e2*/
-      IDA_LOBYTE(result) = result == 1; /*0x60932a*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1) & 0xFF); /*0x60932a*/
       return result; /*0x60932e*/
     case 188: /*0x6090e2*/
     case 194: /*0x6090e2*/
@@ -2962,16 +2962,16 @@ int GetDialogDefaultButton(int a1, HWND a2)
   switch ( v4 ) /*0x609789*/
   {
     case 226: /*0x609789*/
-      IDA_LOBYTE(result) = result == 1006; /*0x609796*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1006) & 0xFF); /*0x609796*/
       break;
     case 115: /*0x609789*/
     case 268: /*0x609789*/
     case 259: /*0x609789*/
-      IDA_LOBYTE(result) = result == 1059; /*0x609a8c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1059) & 0xFF); /*0x609a8c*/
       break;
     case 264: /*0x609789*/
     case 3015: /*0x609789*/
-      IDA_LOBYTE(result) = result == 1745; /*0x609a7c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1745) & 0xFF); /*0x609a7c*/
       break;
     case 148: /*0x609789*/
     case 182: /*0x609789*/
@@ -2999,7 +2999,7 @@ int GetDialogDefaultButton(int a1, HWND a2)
     case 271: /*0x609789*/
     case 276: /*0x609789*/
     case 270: /*0x609789*/
-      IDA_LOBYTE(result) = result == 1670; /*0x609a6c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1670) & 0xFF); /*0x609a6c*/
       break;
     case 258: /*0x609789*/
     case 261: /*0x609789*/
@@ -3007,7 +3007,7 @@ int GetDialogDefaultButton(int a1, HWND a2)
     case 187: /*0x609789*/
     case 279: /*0x609789*/
     case 3014: /*0x609789*/
-      IDA_LOBYTE(result) = result == 1472; /*0x609a5c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1472) & 0xFF); /*0x609a5c*/
       break;
     case 188: /*0x609789*/
     case 189: /*0x609789*/
@@ -3024,16 +3024,16 @@ int GetDialogDefaultButton(int a1, HWND a2)
     case 274: /*0x609789*/
     case 254: /*0x609789*/
     case 252: /*0x609789*/
-      IDA_LOBYTE(result) = result == 2; /*0x609a4c*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 2) & 0xFF); /*0x609a4c*/
       break;
     case 212: /*0x609789*/
-      IDA_LOBYTE(result) = result == 1; /*0x609a0a*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 1) & 0xFF); /*0x609a0a*/
       break;
     case 251: /*0x609789*/
-      IDA_LOBYTE(result) = result == 7; /*0x609a20*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(result == 7) & 0xFF); /*0x609a20*/
       break;
     default:
-      IDA_LOBYTE(result) = v4 == 255 && result == 1653; /*0x609a38*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(v4 == 255 && result == 1653) & 0xFF); /*0x609a38*/
       break;
   }
   return result; /*0x609795*/

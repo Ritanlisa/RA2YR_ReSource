@@ -1283,15 +1283,15 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
   {
     if ( !v9 && !v11 ) /*0x7bc3d4*/
     {
-      IDA_LOWORD(v36) = Math::RoundToInt(v44); /*0x7bc533*/
+      (v36) = ((v36) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v44)) & 0xFFFF); /*0x7bc533*/
       *aP0 = v36; /*0x7bc540*/
-      IDA_LOWORD(v37) = Math::RoundToInt(v42); /*0x7bc542*/
+      (v37) = ((v37) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v42)) & 0xFFFF); /*0x7bc542*/
       aP0[1] = v37; /*0x7bc54b*/
-      IDA_LOWORD(v38) = Math::RoundToInt(v50); /*0x7bc54e*/
+      (v38) = ((v38) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v50)) & 0xFFFF); /*0x7bc54e*/
       *a1 = v38; /*0x7bc557*/
-      IDA_LOWORD(result) = Math::RoundToInt(v45); /*0x7bc559*/
+      (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v45)) & 0xFFFF); /*0x7bc559*/
       a1[1] = result; /*0x7bc55e*/
-      IDA_LOBYTE(result) = 1; /*0x7bc561*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x7bc561*/
       return result; /*0x7bc569*/
     }
     if ( (v11 & v9) != 0 ) /*0x7bc3dc*/
@@ -1382,7 +1382,7 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
       }
     }
   }
-  IDA_LOBYTE(result) = 0; /*0x7bc574*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x7bc574*/
   return result; /*0x7bc563*/
 }
 }
@@ -1473,7 +1473,7 @@ int sub_7BD470(int a1)
     }
     else
     {
-      IDA_LOBYTE(v10) = v10 | 0x80; /*0x7bd54b*/
+      (v10) = ((v10) & ~0xFF) | ((unsigned int)(v10 | 0x80) & 0xFF); /*0x7bd54b*/
       v5 -= v2; /*0x7bd54e*/
       *(unsigned int *)(a1 + 1980) = v10; /*0x7bd550*/
       v12 = v4 - 1; /*0x7bd55a*/
@@ -2755,7 +2755,7 @@ bool String_ValidateContains(const char ** a1, const char * a2, char * Control)
 
   if ( Control && *a1 ) /*0x7b6639*/
     return strcspn(*a1, Control) < strlen( (const char *)(a2)); /*0x7b665f*/
-  IDA_LOBYTE(result) = 0; /*0x7b6665*/
+  (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x7b6665*/
   return result; /*0x7b6661*/
 }
 } // namespace gamemd
@@ -3645,7 +3645,7 @@ char sub_7BE940(int a1, int * a2)
   int v12; // ebx
   int v14; // [esp-8h] [ebp-24h]
 
-  IDA_LOBYTE(v4) = *(unsigned char *)(a1 + 420); /*0x7be94a*/
+  (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(unsigned char *)(a1 + 420)) & 0xFF); /*0x7be94a*/
   v5 = (unsigned int *)a2[1]; /*0x7be954*/
   v5 = v5; /*0x7be959*/
   if ( (v4 & 2) == 0 /*0x7be982*/
@@ -3668,7 +3668,7 @@ char sub_7BE940(int a1, int * a2)
       v12 = *v5; /*0x7be9c6*/
     if ( *(unsigned int *)(a1 + 72) && (v11 & 8) != 0 ) /*0x7be9d0*/
     {
-      IDA_LOBYTE(v11) = v11 & 0xF7; /*0x7be9d6*/
+      (v11) = ((v11) & ~0xFF) | ((unsigned int)(v11 & 0xF7) & 0xFF); /*0x7be9d6*/
       v5[3] = v11; /*0x7be9d8*/
       (*(void (**)(int, int, int, unsigned int))(a1 + 72))(a1, 3, v12, v5[5]); /*0x7be9e3*/
       v8 = v8; /*0x7be9e6*/
@@ -3681,7 +3681,7 @@ char sub_7BE940(int a1, int * a2)
       (*(void (**)(int, int, int, int, int, int))(a1 + 1924))(v12, v10, v9, v7, v8, v14); /*0x7bea07*/
     v4 = *(unsigned int *)(a1 + 72); /*0x7bea15*/
     if ( v4 ) /*0x7bea1e*/
-      IDA_LOBYTE(v4) = v4(a1, 7, 0, 0); /*0x7bea27*/
+      (v4) = ((v4) & ~0xFF) | ((unsigned int)(v4(a1, 7, 0, 0)) & 0xFF); /*0x7bea27*/
   }
   return v4; /*0x7bea2c*/
 }

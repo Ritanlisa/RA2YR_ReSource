@@ -486,9 +486,9 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
     ((Checksummer *)a2)->Add_double( (&this->costMult)[0], (&this->costMult)[1]); /*0x512222*/
     ((Checksummer *)a2)->Add_double( (&this->buildtimeMult)[0], (&this->buildtimeMult)[1]); /*0x512237*/
     Checksummer::Add_Buffer( (Checksummer *)a2, (unsigned char *)((unsigned char)((unsigned __int8 *)&this->__pad_16D[51])), strlen( (const char *)(&this->__pad_16D[51]))); /*0x512252*/
-    IDA_LOBYTE(v3) = this->__pad_16D[55]; /*0x512257*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->__pad_16D[55]) & 0xFF); /*0x512257*/
     v4 = ((Power *)a2)->FinalizeDrain( v3); /*0x512260*/
-    IDA_LOBYTE(v4) = this->__pad_16D[56]; /*0x512265*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(this->__pad_16D[56]) & 0xFF); /*0x512265*/
     return Power::FlagProcess((Power *)a2, v4); /*0x512273*/
 }
 }

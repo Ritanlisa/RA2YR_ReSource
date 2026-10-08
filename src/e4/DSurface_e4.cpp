@@ -919,11 +919,11 @@ int DSurface_FillRectWithFlags(DSurface *aP0, int a2, int a3, unsigned char * a4
   v33 = 255 - v16; /*0x4bb97b*/
   v45 = v16; /*0x4bb983*/
   thisa = (DSurface *)(0); /*0x4bb987*/
-  IDA_LOWORD(a2) = (uint8_t)(*(unsigned char *)(a3 + 2) >> g_BitMask_Red); /*0x4bb99a*/
-  IDA_LOWORD(v15) = (uint8_t)(*(unsigned char *)(a3 + 1) >> g_BitMask_Blue); /*0x4bb9b1*/
+  (a2) = ((a2) & ~0xFFFF) | ((unsigned int)((uint8_t)(*(unsigned char *)(a3 + 2) >> g_BitMask_Red)) & 0xFFFF); /*0x4bb99a*/
+  (v15) = ((v15) & ~0xFFFF) | ((unsigned int)((uint8_t)(*(unsigned char *)(a3 + 1) >> g_BitMask_Blue)) & 0xFFFF); /*0x4bb9b1*/
   v17 = v15 << g_BitMask_Green; /*0x4bb9b5*/
   v18 = v17 | (a2 << g_BitShift_Blue); /*0x4bb9c5*/
-  IDA_LOWORD(v17) = (uint8_t)(*(unsigned char *)a3 >> g_BitShift_Green_0); /*0x4bb9ca*/
+  (v17) = ((v17) & ~0xFFFF) | ((unsigned int)((uint8_t)(*(unsigned char *)a3 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4bb9ca*/
   v19 = (v17 << g_BitShift_Red) | v18; /*0x4bb9d2*/
   for ( i = v19; (int)thisa < v41; thisa = (DSurface *)((char *)thisa + 1) ) /*0x4bb9da*/
   {
@@ -950,9 +950,9 @@ int DSurface_FillRectWithFlags(DSurface *aP0, int a2, int a3, unsigned char * a4
           break; /*0x4bbabb*/
         v11 = v36; /*0x4bba5d*/
       }
-      IDA_LOWORD(v12) = v30; /*0x4bbabd*/
-      IDA_LOWORD(v19) = i; /*0x4bbac1*/
-      IDA_LOWORD(v11) = v31; /*0x4bbac5*/
+      (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(v30) & 0xFFFF); /*0x4bbabd*/
+      (v19) = ((v19) & ~0xFFFF) | ((unsigned int)(i) & 0xFFFF); /*0x4bbac1*/
+      (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(v31) & 0xFFFF); /*0x4bbac5*/
       v16 = v45; /*0x4bbac9*/
     }
   }
