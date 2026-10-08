@@ -1466,8 +1466,8 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
           v14 = (((unsigned int)(v35) >> 16) & 0xFFFF) + v11; /*0x42b94f*/
           (v41) = ((v41) & ~0xFFFF) | ((unsigned int)(v34 + v12) & 0xFFFF); /*0x42b959*/
           (v49) = ((v49) & ~0xFFFF) | ((unsigned int)(v35 + v12) & 0xFFFF); /*0x42b95e*/
-          (v49) = ((v49) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v35) + v11) & 0xFFFF) << 16); /*0x42b963*/
-          (v41) = ((v41) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v34) + v11) & 0xFFFF) << 16); /*0x42b968*/
+          (v49) = ((v49) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v35) >> 16) & 0xFFFF) + v11) & 0xFFFF) << 16); /*0x42b963*/
+          (v41) = ((v41) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v34) >> 16) & 0xFFFF) + v11) & 0xFFFF) << 16); /*0x42b968*/
           v15 = abs16(v34 + v12); /*0x42b979*/
           if ( v15 < v37 || (v16 = abs16(IDA_SHIWORD(v41)), v16 < v38) ) /*0x42b993*/
           {
@@ -1475,7 +1475,7 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
             {
               v42 = v40; /*0x42baf4*/
               (v51) = ((v51) & ~0xFFFF) | ((unsigned int)(v57 - v5) & 0xFFFF); /*0x42bb03*/
-              (v51) = ((v51) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v57) - IDA_HIWORD(v59)) & 0xFFFF) << 16); /*0x42bb08*/
+              (v51) = ((v51) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v57) >> 16) & 0xFFFF) - (((unsigned int)(v59) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x42bb08*/
               v35 = v51; /*0x42bb14*/
               v37 = 0; /*0x42bb18*/
               v38 = 0; /*0x42bb1c*/
@@ -1511,7 +1511,7 @@ void* Gap2Recv_42B7F0::SimplifyPathFilter(void* a2, int a3)
             v20 = g_DDrawSurfaceManager.scenario[v19 + 82]; /*0x42b9c8*/
             (v19) = ((v19) & ~0xFFFF) | ((unsigned int)(IDA_HIWORD(g_DDrawSurfaceManager.scenario[v19 + 82])) & 0xFFFF); /*0x42b9da*/
             (v60) = ((v60) & ~0xFFFF) | ((unsigned int)(v5 + v20) & 0xFFFF); /*0x42b9de*/
-            (v60) = ((v60) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v59) + v19) & 0xFFFF) << 16); /*0x42b9f4*/
+            (v60) = ((v60) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v59) >> 16) & 0xFFFF) + v19) & 0xFFFF) << 16); /*0x42b9f4*/
             v21 = v5 + v20; /*0x42b9fc*/
             v5 = v60; /*0x42ba03*/
             v59 = v60; /*0x42ba05*/
@@ -4455,7 +4455,7 @@ void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, i
         do /*0x4cbd16*/
         {
           --v16; /*0x4cbd08*/
-          (v30) = ((v30) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(v14 & 7) + 82])) & 0xFFFF) << 16); /*0x4cbd09*/
+          (v30) = ((v30) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(v14 & 7) + 82])) & 0xFFFF) << 16); /*0x4cbd09*/
           (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(v15 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(v14 & 7) + 82])) & 0xFFFF); /*0x4cbd0e*/
           (v30) = ((v30) & ~0xFFFF) | ((unsigned int)(v15) & 0xFFFF); /*0x4cbd03*/
           a3 = v30; /*0x4cbd12*/
@@ -4472,7 +4472,7 @@ void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, i
           {
             vtable0 = (int (__thiscall **)(ObjectClass *, void *, int, int, unsigned int, int))this->AbstractClass; /*0x4cbd55*/
             (v31) = ((v31) & ~0xFFFF) | ((unsigned int)(v15 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v17 + 82])) & 0xFFFF); /*0x4cbd5c*/
-            (v31) = ((v31) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v17 + 82])) & 0xFFFF) << 16); /*0x4cbd69*/
+            (v31) = ((v31) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v17 + 82])) & 0xFFFF) << 16); /*0x4cbd69*/
             a3 = v31; /*0x4cbd79*/
             v19 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a3); /*0x4cbd7d*/
             if ( !vtable0[107](this, v19, (v14 + 3) & 7, -1, 0, 1) ) /*0x4cbd85*/
@@ -4499,7 +4499,7 @@ void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, i
         {
           v24 = (int (__thiscall **)(ObjectClass *, void *, int, int, unsigned int, int))this->AbstractClass; /*0x4cbe4b*/
           (v33) = ((v33) & ~0xFFFF) | ((unsigned int)(v15 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v23 + 82])) & 0xFFFF); /*0x4cbe52*/
-          (v33) = ((v33) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v23 + 82])) & 0xFFFF) << 16); /*0x4cbe5f*/
+          (v33) = ((v33) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v23 + 82])) & 0xFFFF) << 16); /*0x4cbe5f*/
           a3 = v33; /*0x4cbe6f*/
           v25 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a3); /*0x4cbe73*/
           if ( !v24[107](this, v25, (v14 - 4) & 7, -1, 0, 1) ) /*0x4cbe7b*/
@@ -4521,7 +4521,7 @@ void* Gap2Recv_4CBC40::WalkPathfindingLine(void* a2, int a3, void* a4, int a5, i
     {
       v21 = (int (__thiscall **)(ObjectClass *, void *, int, int, unsigned int, int))this->AbstractClass; /*0x4cbdbe*/
       (v32) = ((v32) & ~0xFFFF) | ((unsigned int)(v15 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v20 + 82])) & 0xFFFF); /*0x4cbdd0*/
-      (v32) = ((v32) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82]) + IDA_HIWORD(a3)) & 0xFFFF) << 16); /*0x4cbdd9*/
+      (v32) = ((v32) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82]) + (((unsigned int)(a3) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x4cbdd9*/
       a3 = v32; /*0x4cbde8*/
       v22 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&a3); /*0x4cbdf3*/
       if ( !v21[107](this, v22, (v14 + 2) & 7, -1, 0, 1) ) /*0x4cbdfb*/

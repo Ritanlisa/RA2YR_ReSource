@@ -686,7 +686,7 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
           v11 = v36; /*0x551d62*/
         }
         v17 = (unsigned int *)v5; /*0x551d68*/
-        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v14)) & 0xFFFF) << 16); /*0x551d6a*/
+        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v14) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x551d6a*/
         for ( v5 += v14 & 0xFFFFFFFC; (unsigned int)v17 < v5; v17 += 2 ) /*0x551d71*/
         {
           *v17 = v13; /*0x551d73*/
@@ -1020,7 +1020,7 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
           v10 = v13; /*0x552742*/
         }
         v17 = (unsigned int *)v4; /*0x552746*/
-        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v14)) & 0xFFFF) << 16); /*0x552748*/
+        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v14) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x552748*/
         for ( v4 += v14 & 0xFFFFFFFC; (unsigned int)v17 < v4; v17 += 2 ) /*0x55274f*/
         {
           *v17 = v12; /*0x552751*/

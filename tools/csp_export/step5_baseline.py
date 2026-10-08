@@ -125,6 +125,17 @@ def main():
         print('    census 无计数输出, 末尾输出:')
         for ln in (r.stdout or '').split('\n')[-6:]:
             print('    |', ln)
+    print('[step5] b2. 空心体普查 (完全空定义+raw 真值; 用户使命: 体不得缺失)')
+    r = subprocess.run([sys.executable, str(TOOLS / 'census_hollow_bodies.py')],
+                       capture_output=True, text=True, encoding='utf-8',
+                       errors='replace', cwd=str(ROOT))
+    hollow_head = [ln for ln in (r.stdout or '').split('\n')
+                   if 'HOLLOW BODIES' in ln][:1]
+    for ln in hollow_head:
+        print('   ', ln.strip())
+    for ln in (r.stdout or '').split('\n')[:14]:
+        if ln.strip().startswith('src') or 'by TU' in ln:
+            print('    |', ln.strip())
 
     print('[step5] c. 抽样验证 (changed completed, 单进程批量)')
     addrs = changed_completed()

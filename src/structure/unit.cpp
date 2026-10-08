@@ -2691,7 +2691,7 @@ int UnitClass::CalcMoveTarget()
         else
           v45 = 362.0386719675124; /*0x735df8*/
         v48 = Math::RoundToInt(v45); /*0x735e14*/
-        (v47) = ((v47) & ~0xFFFF) | ((unsigned int)(IDA_HIWORD(v48)) & 0xFFFF); /*0x735e14*/
+        (v47) = ((v47) & ~0xFFFF) | ((unsigned int)((((unsigned int)(v48) >> 16) & 0xFFFF)) & 0xFFFF); /*0x735e14*/
         (v46) = ((v46) & ~0xFFFF) | ((unsigned int)(v48) & 0xFFFF); /*0x735e14*/
         ObjectVector_field_0x08 = v46; /*0x735e1d*/
         (*((void (__fastcall **)(UnitClass *, int, int *))this->vtable1 + 109))(this, v47, &v75); /*0x735e28*/
@@ -7215,7 +7215,7 @@ int UnitClass::CheckForNearbyEnemies()
       {
         v6 = v5 & 7; /*0x746996*/
         (v18) = ((v18) & ~0xFFFF) | ((unsigned int)(v3 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v6 + 82])) & 0xFFFF); /*0x7469b3*/
-        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v3) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v6 + 82])) & 0xFFFF) << 16); /*0x7469bf*/
+        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v3) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v6 + 82])) & 0xFFFF) << 16); /*0x7469bf*/
         *(unsigned int *)v19 = v18; /*0x7469ce*/
         v7 = (WTFMode *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v19); /*0x7469d2*/
         ObjectByType = WTFMode::FindObjectByType(v7, v20[0]); /*0x7469de*/

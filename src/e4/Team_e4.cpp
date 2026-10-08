@@ -251,7 +251,7 @@ int sub_6219D0(int * a1, int a2, int a3, int a4)
         v14 = *a1 + a3; /*0x621a36*/
         if ( v13 < v13 + a3 ) /*0x621a3b*/
         {
-          (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v27)) & 0xFFFF) << 16); /*0x621a3d*/
+          (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v27) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x621a3d*/
           v16 = (unsigned short *)(v27 + 2 * (v12 + *a1)); /*0x621a45*/
           do /*0x621a8c*/
           {

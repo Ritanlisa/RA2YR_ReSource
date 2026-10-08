@@ -1227,7 +1227,7 @@ char ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
     {
       v28 = a3; /*0x7573d7*/
       v31 = *(unsigned int *)(v4 + 12); /*0x7573db*/
-      (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a4)) & 0xFFFF) << 16); /*0x7573df*/
+      (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a4) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x7573df*/
       v30 = a4; /*0x7573e3*/
       v29 = a2; /*0x7573ec*/
       v23 = 0; /*0x7573f0*/
@@ -1868,7 +1868,7 @@ char ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
     {
       v28 = a3; /*0x7584a7*/
       v31 = *(unsigned int *)(v4 + 12); /*0x7584ab*/
-      (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a4)) & 0xFFFF) << 16); /*0x7584af*/
+      (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a4) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x7584af*/
       v30 = a4; /*0x7584b3*/
       v29 = a2; /*0x7584bc*/
       v23 = 0; /*0x7584c0*/

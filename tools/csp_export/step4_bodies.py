@@ -48,6 +48,14 @@ def main():
     print('[step4] a4. IDA 词汇 + 空返回擦洗 (kept 体覆盖)')
     run('rewrite_ida_vocab.py', '--apply',
         grep=('vocab rewrites',))
+    print('[step4] a4b. //DUPDEF 注释尸块清除 (G42.57 W20 用户指令: 不留 stub 尸块)')
+    run('fix_dupdef_corpses.py', '--apply',
+        grep=('corpses removed',))
+    print('[step4] a4c. IDA 字节/字宏值语义消除 (IDA_BYTE/LOBYTE/HIWORD... 读形掩码/写形 RMW;'
+          ' 守卫: #define 行/括号内 for 头/指针左值; 安全网 regress 紧随)')
+    run('fix_ida_byte_value.py', '--apply', grep=('fixed:',))
+    run('fix_ida_mem_macros.py', '--apply', grep=('fixed:',))
+    run('fix_ida_mem_regress.py', '--apply', grep=('reverted:',))
     print('[step4] a5. this 形参剔除 (成员形态非法参数)')
     run('fix_this_param.py', '--apply',
         grep=('this-params',))

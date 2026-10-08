@@ -3296,7 +3296,7 @@ int TileRenderer_DrawBlock2Sub(int a1, unsigned short * a2, unsigned char * a3, 
                 --v34; /*0x7c5a87*/
               }
               while ( v34 ); /*0x7c5a88*/
-              (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a6)) & 0xFFFF) << 16); /*0x7c5a8a*/
+              (v9) = ((v9) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a6) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x7c5a8a*/
               v39 = 2; /*0x7c5a95*/
               v40 = 2 * (2 - a6); /*0x7c5a9a*/
               v41 = &v8[v40]; /*0x7c5a9c*/
@@ -12639,7 +12639,7 @@ int _alldiv(unsigned long long a1, long long a2)
   if ( (a1 & 0x8000000000000000uLL) != 0LL ) /*0x7c92db*/
   {
     v2 = 1; /*0x7c92dd*/
-    (a1) = ((a1) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(-IDA_HIDWORD(a1) - ((unsigned int)a1 != 0)) << 32); /*0x7c92e9*/
+    (a1) = ((a1) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(-((unsigned int)((unsigned __int64)(a1) >> 32)) - ((unsigned int)a1 != 0)) << 32); /*0x7c92e9*/
     (a1) = (unsigned int)(-(int)a1); /*0x7c92ed*/
   }
   v3 = ((unsigned int)((unsigned __int64)(a2) >> 32)); /*0x7c92f1*/
@@ -12669,9 +12669,9 @@ int _alldiv(unsigned long long a1, long long a2)
   else
   {
     (v4) = (unsigned int)(a1); /*0x7c9323*/
-    (v4) = ((v4) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(IDA_HIDWORD(a1) % (unsigned int)a2) << 32); /*0x7c9323*/
+    (v4) = ((v4) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(((unsigned int)((unsigned __int64)(a1) >> 32)) % (unsigned int)a2) << 32); /*0x7c9323*/
     (v5) = (unsigned int)(v4 / (unsigned int)a2); /*0x7c9323*/
-    (v5) = ((v5) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(IDA_HIDWORD(a1) / (unsigned int)a2) << 32); /*0x7c9325*/
+    (v5) = ((v5) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(((unsigned int)((unsigned __int64)(a1) >> 32)) / (unsigned int)a2) << 32); /*0x7c9325*/
   }
   if ( v2 == 1 ) /*0x7c936b*/
     return -v5; /*0x7c9371*/
@@ -12713,7 +12713,7 @@ unsigned int _aulldiv(unsigned long long a1, long long a2)
   else
   {
     (v3) = (unsigned int)(a1); /*0x7c939c*/
-    (v3) = ((v3) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(IDA_HIDWORD(a1) % (unsigned int)a2) << 32); /*0x7c939c*/
+    (v3) = ((v3) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(((unsigned int)((unsigned __int64)(a1) >> 32)) % (unsigned int)a2) << 32); /*0x7c939c*/
     return v3 / (unsigned int)a2; /*0x7c939c*/
   }
 }

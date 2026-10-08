@@ -280,7 +280,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
     v15 = v15; /*0x6d7692*/
     v30 = v15 / 2; /*0x6d769b*/
     (v28) = ((v28) & ~0xFFFF) | ((unsigned int)(v25 + v16) & 0xFFFF); /*0x6d76ae*/
-    (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v30 + IDA_HIWORD(v25)) & 0xFFFF) << 16); /*0x6d76b9*/
+    (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v30 + (((unsigned int)(v25) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x6d76b9*/
     result = v32; /*0x6d76be*/
     *(unsigned int *)v28 = (unsigned int)(v28); /*0x6d76c8*/
     if ( v32 > 0 ) /*0x6d76cc*/
@@ -500,7 +500,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
             v19 = v19; /*0x6d79de*/
             IDA_HIWORD(v39) = (unsigned int)(v19 / 2); /*0x6d79e7*/
             (v45) = ((v45) & ~0xFFFF) | ((unsigned int)(v42 + v21) & 0xFFFF); /*0x6d79fa*/
-            (v45) = ((v45) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v39) + IDA_HIWORD(v42)) & 0xFFFF) << 16); /*0x6d7a05*/
+            (v45) = ((v45) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v39) + (((unsigned int)(v42) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x6d7a05*/
             *(unsigned int *)v45 = (unsigned int)(v45); /*0x6d7a10*/
             if ( v20 > 0 ) /*0x6d7a14*/
             {
@@ -637,7 +637,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a3, int a4)
   Coord_Subtract((void *)&v38, v8, v10, 0); /*0x6d7c9b*/
   v11 = *(unsigned int *)CellStruct::Set((CellStruct *)&v23, v38 / 256, v39 / 256); /*0x6d7ccb*/
   v12 = *(&this->uniqueId4); /*0x6d7ccd*/
-  (v37[0]) = ((v37[0]) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v11)) & 0xFFFF) << 16); /*0x6d7cd3*/
+  (v37[0]) = ((v37[0]) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v11) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x6d7cd3*/
   (v37[0]) = ((v37[0]) & ~0xFFFF) | ((unsigned int)(v11 - 2) & 0xFFFF); /*0x6d7ce0*/
   v13 = *a2; /*0x6d7ce9*/
   a2 = (int *)v37[0]; /*0x6d7ceb*/
@@ -661,7 +661,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a3, int a4)
   smudgeTypeIndex = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v38)->smudgeTypeIndex; /*0x6d7d95*/
   v20 = a2[3]; /*0x6d7d98*/
   v21 = a2[2]; /*0x6d7da0*/
-  (v37[0]) = ((v37[0]) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(smudgeTypeIndex) + 3) & 0xFFFF) << 16); /*0x6d7db0*/
+  (v37[0]) = ((v37[0]) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(smudgeTypeIndex) >> 16) & 0xFFFF) + 3) & 0xFFFF) << 16); /*0x6d7db0*/
   v22 = v20 / 15 + 20; /*0x6d7dbc*/
   (v37[0]) = ((v37[0]) & ~0xFFFF) | ((unsigned int)(smudgeTypeIndex - 2) & 0xFFFF); /*0x6d7dc9*/
   v23 = 0; /*0x6d7dd3*/
@@ -680,7 +680,7 @@ int TacticalClass::DrawTerrain(int *a2, unsigned int *a3, int a4)
       v28 = ((unsigned int)(v37[0]) & 0xFFFF) + v27; /*0x6d7e0d*/
       result = *(unsigned int *)((char *)v37 + 2); /*0x6d7e0f*/
       (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(v28) & 0xFFFF); /*0x6d7e13*/
-      (a3) = ((a3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v37[0]) + IDA_HIWORD(v38)) & 0xFFFF) << 16); /*0x6d7e1e*/
+      (a3) = ((a3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v37[0]) >> 16) & 0xFFFF) + (((unsigned int)(v38) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x6d7e1e*/
       a2 = a3; /*0x6d7e29*/
       if ( v25 > 0 ) /*0x6d7e2d*/
       {
@@ -916,7 +916,7 @@ Point2D* TacticalClass::CalcBuildingDrawPos(Point2D* out, BuildingClass* buildin
         v40 = v14; /*0x6d7321*/
         v34 = v14 / 2; /*0x6d732a*/
         (v32) = ((v32) & ~0xFFFF) | ((unsigned int)(smudgeTypeIndex + v15) & 0xFFFF); /*0x6d733d*/
-        (v32) = ((v32) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v34 + IDA_HIWORD(smudgeTypeIndex)) & 0xFFFF) << 16); /*0x6d7348*/
+        (v32) = ((v32) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v34 + (((unsigned int)(smudgeTypeIndex) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x6d7348*/
         *(unsigned int *)v27 = v32; /*0x6d7353*/
         if ( v13 > 0 ) /*0x6d7357*/
         {

@@ -1423,7 +1423,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
           (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(*v17) & 0xFFFF); /*0x4a63f5*/
         }
         while ( *v17 && v16 + v13 < a9 ); /*0x4a6409*/
-        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a9)) & 0xFFFF) << 16); /*0x4a640b*/
+        (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a9) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x4a640b*/
         if ( v16 + v13 >= a9 ) /*0x4a6417*/
         {
           (v18) = ((v18) & ~0xFFFF) | ((unsigned int)(*(v17 - 1)) & 0xFFFF); /*0x4a6419*/
@@ -2445,7 +2445,7 @@ int sub_4AEA20(int a1, int a2)
     v6 = &byte_885180[3 * v5]; /*0x4aea5c*/
     v4 += 2; /*0x4aea63*/
     (v5) = ((v5) & ~0xFFFF) | ((unsigned int)((uint8_t)((uint8_t)v6[2] >> g_BitMask_Red)) & 0xFFFF); /*0x4aea83*/
-    (a1) = ((a1) & ~0xFFFF) | ((unsigned int)((uint8_t)((uint8_t)IDA_HIBYTE(*(unsigned short *)v6) >> g_BitMask_Blue)) & 0xFFFF); /*0x4aea97*/
+    (a1) = ((a1) & ~0xFFFF) | ((unsigned int)((uint8_t)((uint8_t)(((unsigned int)(*(unsigned short *)v6) >> 24) & 0xFF) >> g_BitMask_Blue)) & 0xFFFF); /*0x4aea97*/
     v7 = a1 << g_BitMask_Green; /*0x4aea9b*/
     v8 = v7 | (v5 << g_BitShift_Blue); /*0x4aeaa3*/
     (v7) = ((v7) & ~0xFFFF) | ((unsigned int)((uint8_t)((uint8_t)*(unsigned short *)v6 >> g_BitShift_Green_0)) & 0xFFFF); /*0x4aeab1*/

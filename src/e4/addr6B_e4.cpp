@@ -164,7 +164,7 @@ CellClass * * InitializeBuildabilityGrid(int a1)
     v6 = a1 + 14; /*0x6b2809*/
   (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(dword_87F918 - dword_87F910) & 0xFFFF); /*0x6b2818*/
   if ( dword_87F918 - dword_87F910 >= (int16_t)((((unsigned int)(a1) >> 16) & 0xFFFF) + 14) ) /*0x6b2821*/
-    (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(IDA_HIWORD(a1) + 14) & 0xFFFF); /*0x6b2823*/
+    (v8) = ((v8) & ~0xFFFF) | ((unsigned int)((((unsigned int)(a1) >> 16) & 0xFFFF) + 14) & 0xFFFF); /*0x6b2823*/
   v9 = v7; /*0x6b2826*/
   v8 = (int16_t)v8; /*0x6b2829*/
   v20 = v7; /*0x6b282e*/
@@ -581,12 +581,12 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
 
   v84 = a1; /*0x6b2f46*/
   (v77) = ((v77) & ~0xFFFF) | ((unsigned int)(a3 - 14) & 0xFFFF); /*0x6b2f51*/
-  (v77) = ((v77) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) - 14) & 0xFFFF) << 16); /*0x6b2f56*/
+  (v77) = ((v77) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF) - 14) & 0xFFFF) << 16); /*0x6b2f56*/
   v3 = v77; /*0x6b2f5b*/
-  (v77) = ((v77) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) + 14) & 0xFFFF) << 16); /*0x6b2f62*/
+  (v77) = ((v77) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF) + 14) & 0xFFFF) << 16); /*0x6b2f62*/
   v89 = v3; /*0x6b2f73*/
   (v77) = ((v77) & ~0xFFFF) | ((unsigned int)(a3 + 14) & 0xFFFF); /*0x6b2f87*/
-  (v83) = ((v83) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3) + 14) & 0xFFFF) << 16); /*0x6b2f93*/
+  (v83) = ((v83) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF) + 14) & 0xFFFF) << 16); /*0x6b2f93*/
   v4 = (int16_t)(a3 - 14) < 0 ? 0 : v3;
   v5 = v3 < 0 ? 0 : (((unsigned int)(v3) >> 16) & 0xFFFF);
   (v83) = ((v83) & ~0xFFFF) | ((unsigned int)(dword_87F914 - dword_87F90C) & 0xFFFF); /*0x6b2fad*/

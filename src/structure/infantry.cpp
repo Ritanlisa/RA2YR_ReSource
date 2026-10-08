@@ -1941,7 +1941,7 @@ bool InfantryClass::CanMoveThroughCell()
     return 1; /*0x484e43*/
   v8 = v4[9]; /*0x484e49*/
   (occupant) = ((occupant) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD(g_DDrawSurfaceManager.scenario[86]) + v8) & 0xFFFF); /*0x484e58*/
-  (occupant) = ((occupant) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v8) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[86])) & 0xFFFF) << 16); /*0x484e6d*/
+  (occupant) = ((occupant) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v8) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[86])) & 0xFFFF) << 16); /*0x484e6d*/
   *(unsigned int *)v15 = occupant; /*0x484e76*/
   v9 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v15); /*0x484e88*/
   occupant = v4[9]; /*0x484e97*/
@@ -2661,11 +2661,11 @@ int InfantryClass::FindNearbyCell()
       if ( !(*((uint8_t (**)(InfantryClass *, int))this->vtable1 + 340))(this, a2) /*0x418eab*/
         || (v6 = (unsigned int *)(*(int (**)(int, double *, unsigned int))(*(unsigned int *)a2 + 76))(a2, &v26, 0),
             (v19) = ((v19) & ~0xFFFF) | ((unsigned int)(*v6 / 256,
-            IDA_HIWORD(v19) = v6[1] / 256,
+            (v19) = ((v19) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v6[1] / 256,
             *(unsigned int *)v20 = v19,
             !Cell::IsOccupied((Cell *)this, v20, 0)) )
       {
-        v7 = (int *)(*(int (**)(int, double *))(*(unsigned int *)a2 + 72))(a2, &v26)) & 0xFFFF); /*0x418ec1*/
+        v7 = (int *)(*(int (**)(int, double *))(*(unsigned int *)a2 + 72))(a2, &v26)) & 0xFFFF)) & 0xFFFF) << 16); /*0x418ec1*/
         v8 = *v7; /*0x418ec4*/
         v9 = v7[1]; /*0x418ec6*/
         v27 = v7[2]; /*0x418ed3*/
@@ -7443,7 +7443,7 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
     (v25) = ((v25) & ~0xFFFF) | ((unsigned int)(v67) & 0xFFFF); /*0x519041*/
     v26 *= 32; /*0x519047*/
     v27 = v25 | ((v26 | v27) << 6); /*0x51904f*/
-    (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v27) | IDA_HIWORD(v68)) & 0xFFFF) << 16); /*0x519055*/
+    (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v27) >> 16) & 0xFFFF) | (((unsigned int)(v68) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x519055*/
     v68 |= v27; /*0x519057*/
     goto LABEL_6; /*0x519057*/
   }

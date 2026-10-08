@@ -2698,8 +2698,8 @@ int sub_491100(ObjectClass * a1, char a2, int a3, ObjectClass * a4, short a5, ch
       do /*0x4911ba*/
       {
         (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(*v10) & 0xFFFF); /*0x491143*/
-        (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3)) & 0xFFFF) << 16); /*0x491149*/
-        (v13) = ((v13) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a3)) & 0xFFFF) << 16); /*0x49114b*/
+        (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x491149*/
+        (v13) = ((v13) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a3) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x49114b*/
         v14 = *v10++ >> a1; /*0x49114d*/
         v15 = (uint8_t)((uint16_t)a3 >> a5) << a4; /*0x491165*/
         (a3) = ((a3) & ~0xFFFF) | ((unsigned int)((uint8_t)((uint8_t)((uint8_t)((uint16_t)a3 >> a7) << a6) >> g_BitMask_Red)) & 0xFFFF); /*0x491183*/

@@ -324,7 +324,7 @@ void FloodFillRandomMapTerrain(int a1, int a2, int a3)
       {
         v19 = v18 & 7; /*0x594598*/
         (v28) = ((v28) & ~0xFFFF) | ((unsigned int)(v13 + IDA_LOWORD((&dword_89F688)[v19])) & 0xFFFF); /*0x5945ba*/
-        (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v26) + IDA_HIWORD((&dword_89F688)[v19])) & 0xFFFF) << 16); /*0x5945c3*/
+        (v28) = ((v28) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v26) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[v19])) & 0xFFFF) << 16); /*0x5945c3*/
         v30 = v28; /*0x5945d2*/
         v20 = (int16_t *)((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v30); /*0x5945d6*/
         v21 = v20[18]; /*0x5945db*/

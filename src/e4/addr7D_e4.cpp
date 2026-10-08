@@ -13504,7 +13504,7 @@ unsigned long long _aullrem(unsigned long long a1, long long a2)
   else
   {
     (v2) = (unsigned int)(a1); /*0x7d7859*/
-    (v2) = ((v2) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(IDA_HIDWORD(a1) % (unsigned int)a2) << 32); /*0x7d7859*/
+    (v2) = ((v2) & 0xFFFFFFFFULL) | ((unsigned __int64)(unsigned int)(((unsigned int)((unsigned __int64)(a1) >> 32)) % (unsigned int)a2) << 32); /*0x7d7859*/
     return v2 % (unsigned int)a2; /*0x7d785d*/
   }
 }
@@ -13951,7 +13951,7 @@ double _set_exp(double a1, short a2)
     double v3; // [esp+0h] [ebp-8h]
 
     v3 = a1; /*0x7d8d53*/
-    (v3) = ((v3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) & 0x800F | (16 * (a2 + 1022))) & 0xFFFF) << 16); /*0x7d8d5b*/
+    (v3) = ((v3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a1) >> 16) & 0xFFFF) & 0x800F | (16 * (a2 + 1022))) & 0xFFFF) << 16); /*0x7d8d5b*/
     return v3; /*0x7d8d62*/
 }
 } // namespace gamemd
@@ -13963,7 +13963,7 @@ double _set_bexp(double a1, short a2)
     double v3; // [esp+0h] [ebp-8h]
 
     v3 = a1; /*0x7d8db5*/
-    (v3) = ((v3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) & 0x800F | (16 * a2)) & 0xFFFF) << 16); /*0x7d8dbf*/
+    (v3) = ((v3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a1) >> 16) & 0xFFFF) & 0x800F | (16 * a2)) & 0xFFFF) << 16); /*0x7d8dbf*/
     return v3; /*0x7d8dc6*/
 }
 } // namespace gamemd

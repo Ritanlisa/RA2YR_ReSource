@@ -26078,7 +26078,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
     unsigned int v18[4]; // [esp+18h] [ebp-20h] BYREF
     unsigned char v19[16]; // [esp+28h] [ebp-10h] BYREF
 
-    (v8) = ((v8) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a4)) & 0xFFFF) << 16); /*0x5d3333*/
+    (v8) = ((v8) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a4) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x5d3333*/
     v6 = a3; /*0x5d3338*/
     v16 = a4; /*0x5d333c*/
     (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(*a3) & 0xFFFF); /*0x5d3343*/

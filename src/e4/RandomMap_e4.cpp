@@ -894,7 +894,7 @@ AbstractClass * * PlaceRandomMapTerrain(RandomMap *self)
       {
         v12 = k & 7; /*0x58eaa3*/
         (v17) = ((v17) & ~0xFFFF) | ((unsigned int)(v10 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v12 + 82])) & 0xFFFF); /*0x58eabf*/
-        (v17) = ((v17) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v10) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v12 + 82])) & 0xFFFF) << 16); /*0x58eac4*/
+        (v17) = ((v17) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v10) >> 16) & 0xFFFF) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v12 + 82])) & 0xFFFF) << 16); /*0x58eac4*/
         v13 = IDA_SHIWORD(v17) + (__int16)v17; /*0x58eacf*/
         if ( v13 > g_MissionQueueFrame.localVariables[160] /*0x58eafc*/
           && (__int16)v17 - IDA_SHIWORD(v17) < g_MissionQueueFrame.localVariables[160]
@@ -6775,7 +6775,7 @@ int PlaceRandomMapTiberium()
               }
               while ( v12 > v13 ); /*0x5a24bb*/
               v57 = *(unsigned int *)(*(unsigned char *)(_EDI.v + 11) + 4 * v12); /*0x5a24c3*/
-              (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(IDA_HIWORD(v57)) & 0xFFFF); /*0x5a24c7*/
+              (v12) = ((v12) & ~0xFFFF) | ((unsigned int)((((unsigned int)(v57) >> 16) & 0xFFFF)) & 0xFFFF); /*0x5a24c7*/
               v11 = v57; /*0x5a24cc*/
             }
             else

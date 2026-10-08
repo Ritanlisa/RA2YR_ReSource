@@ -455,7 +455,7 @@ int MarkCliffEdgePassability(int a1)
             if ( (v9[80] & 0x100) == 0 ) /*0x586cc1*/
             {
               v10 = (unsigned int)(-2);
-              (v22) = ((v22) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(i)) & 0xFFFF) << 16); /*0x586cc8*/
+              (v22) = ((v22) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(i) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x586cc8*/
               do /*0x586d1b*/
               {
                 v11 = (unsigned int)(v7 + (int16_t)(v10 + i));
@@ -472,7 +472,7 @@ int MarkCliffEdgePassability(int a1)
               v3 = v21; /*0x586d1d*/
             }
             (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(i + *v5) & 0xFFFF); /*0x586d2e*/
-            (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(i) + v5[1]) & 0xFFFF) << 16); /*0x586d33*/
+            (v23) = ((v23) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(i) >> 16) & 0xFFFF) + v5[1]) & 0xFFFF) << 16); /*0x586d33*/
           }
         }
         else
@@ -499,7 +499,7 @@ int MarkCliffEdgePassability(int a1)
                 v19 = (unsigned int)((int16_t)j + ((int16_t)((((unsigned int)(j) >> 16) & 0xFFFF) + v18) << 9));
                 if ( v19 >= 0x40000 || (v20 = *(unsigned int **)(dword_87F924 + 4 * v19), v3 = v21, !v20) ) /*0x586ded*/
                 {
-                  (v24) = ((v24) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(j) + v18) & 0xFFFF) << 16); /*0x586dc7*/
+                  (v24) = ((v24) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(j) >> 16) & 0xFFFF) + v18) & 0xFFFF) << 16); /*0x586dc7*/
                   dword_ABDC74 = v24; /*0x586df3*/
                   v20 = unk_ABDC50; /*0x586df8*/
                 }
@@ -509,7 +509,7 @@ int MarkCliffEdgePassability(int a1)
               while ( v18 <= 1 ); /*0x586e08*/
             }
             (v25) = ((v25) & ~0xFFFF) | ((unsigned int)(j + *v13) & 0xFFFF); /*0x586e17*/
-            (v25) = ((v25) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(j) + v13[1]) & 0xFFFF) << 16); /*0x586e1c*/
+            (v25) = ((v25) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(j) >> 16) & 0xFFFF) + v13[1]) & 0xFFFF) << 16); /*0x586e1c*/
           }
         }
       }
@@ -562,7 +562,7 @@ char globalHelper_088570(MouseClass * aP0, VectorClass_flat * aP1, MouseClass * 
       v6 = (unsigned short *)(4 * (v3 & 7) + 9041544); /*0x5885ab*/
       while ( 1 ) /*0x5885c3*/
       {
-        (v20) = ((v20) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v17) + v6[1]) & 0xFFFF) << 16); /*0x5885c3*/
+        (v20) = ((v20) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v17) >> 16) & 0xFFFF) + v6[1]) & 0xFFFF) << 16); /*0x5885c3*/
         (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(v17 + *v6) & 0xFFFF); /*0x5885c8*/
         v17 = v20; /*0x5885da*/
         v7 = (IDA_SHIWORD(v20) << 9) + (int16_t)v20; /*0x5885de*/
@@ -674,9 +674,9 @@ int ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseCl
     while ( 1 ) /*0x5887b3*/
     {
       (v17) = ((v17) & ~0xFFFF) | ((unsigned int)(v6 + *v7) & 0xFFFF); /*0x5887b3*/
-      (v17) = ((v17) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v18) + v7[1]) & 0xFFFF) << 16); /*0x5887b8*/
+      (v17) = ((v17) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v18) >> 16) & 0xFFFF) + v7[1]) & 0xFFFF) << 16); /*0x5887b8*/
       v8 = (IDA_SHIWORD(v17) << 9) + (int16_t)v17; /*0x5887ca*/
-      (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v17)) & 0xFFFF) << 16); /*0x5887d0*/
+      (v18) = ((v18) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v17) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x5887d0*/
       (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(v17) & 0xFFFF); /*0x5887d0*/
       if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(dword_87F924 + 4 * v8)) == 0 ) /*0x5887e8*/
       {

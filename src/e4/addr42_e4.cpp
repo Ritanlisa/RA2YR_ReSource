@@ -1333,7 +1333,7 @@ unsigned int * PathClass_WalkPath(unsigned int * a1, int * a2, int a3, int * a4)
       else
       {
         (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(v4 + IDA_LOWORD((&dword_89F688)[v8])) & 0xFFFF); /*0x4297f9*/
-        (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v11) + IDA_HIWORD((&dword_89F688)[v8])) & 0xFFFF) << 16); /*0x4297fe*/
+        (v12) = ((v12) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v11) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[v8])) & 0xFFFF) << 16); /*0x4297fe*/
         v4 = v12; /*0x429803*/
       }
       ++a4; /*0x429807*/

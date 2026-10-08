@@ -159,7 +159,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       {
         v10 = (void **)(&unk_ABDC50);
         (v37) = ((v37) & ~0xFFFF) | ((unsigned int)(dword_89F698 + a2) & 0xFFFF); /*0x575fba*/
-        (v37) = ((v37) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a2) + IDA_HIWORD(dword_89F698)) & 0xFFFF) << 16); /*0x575fc2*/
+        (v37) = ((v37) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a2) >> 16) & 0xFFFF) + IDA_HIWORD(dword_89F698)) & 0xFFFF) << 16); /*0x575fc2*/
         dword_ABDC74 = v37; /*0x575fee*/
       }
       v11 = (void **)((int)((void **)*((unsigned int *)v10 + 15)));
@@ -404,21 +404,21 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     if ( ((unsigned int)(v10)& 2) != 0 ) /*0x57a597*/
     {
       v52[0] = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
-      (v48) = ((v48) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v52[0])) & 0xFFFF) << 16); /*0x57a5ac*/
+      (v48) = ((v48) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v52[0]) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x57a5ac*/
       v16 = (int *)((int16_t)(((unsigned int)(v52[0]) & 0xFFFF) - 1) + (IDA_SHIWORD(v52[0]) << 9)); /*0x57a5bf*/
       if ( v16 >= (int *)(0x40000) || (v17 = *(int **)(dword_87F924 + 4 * v16)) == 0 ) /*0x57a5d5*/
       {
-        (v48) = ((v48) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD(v52[0]) - 1) & 0xFFFF); /*0x57a5b1*/
+        (v48) = ((v48) & ~0xFFFF) | ((unsigned int)(((unsigned int)(v52[0]) & 0xFFFF) - 1) & 0xFFFF); /*0x57a5b1*/
         dword_ABDC74 = v48; /*0x57a5db*/
         v17 = unk_ABDC50; /*0x57a5e0*/
       }
       v18 = (unsigned int)(((Cell *)(aP0))->GetTerrainMask((int *)(v17), 0));
       v52[0] = (unsigned int)(((gamemd::Terrain*)aP2)->outBuffer);
-      (v49) = ((v49) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(v52[0])) & 0xFFFF) << 16); /*0x57a600*/
+      (v49) = ((v49) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v52[0]) >> 16) & 0xFFFF)) & 0xFFFF) << 16); /*0x57a600*/
       v19 = (int *)((int16_t)(((unsigned int)(v52[0]) & 0xFFFF) - 2) + (IDA_SHIWORD(v52[0]) << 9)); /*0x57a613*/
       if ( v19 >= (int *)(0x40000) || (v20 = *(int **)(dword_87F924 + 4 * v19)) == 0 ) /*0x57a629*/
       {
-        (v49) = ((v49) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD(v52[0]) - 2) & 0xFFFF); /*0x57a605*/
+        (v49) = ((v49) & ~0xFFFF) | ((unsigned int)(((unsigned int)(v52[0]) & 0xFFFF) - 2) & 0xFFFF); /*0x57a605*/
         dword_ABDC74 = v49; /*0x57a62f*/
         v20 = unk_ABDC50; /*0x57a634*/
       }
@@ -959,7 +959,7 @@ int sub_57C870(int a1)
     {
       v3 = (((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[0]); /*0x57c895*/
       (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD((&dword_89F688)[0]) + v2) & 0xFFFF); /*0x57c89a*/
-      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0])) & 0xFFFF) << 16); /*0x57c8a5*/
+      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[0])) & 0xFFFF) << 16); /*0x57c8a5*/
       v2 += IDA_LOWORD((&dword_89F688)[0]); /*0x57c8aa*/
       v4 = (__int16)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[0])) << 9; /*0x57c8ae*/
       v5 = v2 + v4 < 0; /*0x57c8b1*/
@@ -1028,7 +1028,7 @@ int sub_57C990(int a1)
     {
       v3 = (((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD(dword_89F6A0); /*0x57c9b5*/
       (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(dword_89F6A0 + v2) & 0xFFFF); /*0x57c9ba*/
-      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0)) & 0xFFFF) << 16); /*0x57c9c5*/
+      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD(dword_89F6A0)) & 0xFFFF) << 16); /*0x57c9c5*/
       v2 += dword_89F6A0; /*0x57c9ca*/
       v4 = (__int16)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD(dword_89F6A0)) << 9; /*0x57c9ce*/
       v5 = v2 + v4 < 0; /*0x57c9d1*/
@@ -1097,7 +1097,7 @@ int sub_57DAF0(int a1)
     {
       v3 = (((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[0]); /*0x57db15*/
       (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(IDA_LOWORD((&dword_89F688)[0]) + v2) & 0xFFFF); /*0x57db1a*/
-      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) + IDA_HIWORD((&dword_89F688)[0])) & 0xFFFF) << 16); /*0x57db25*/
+      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[0])) & 0xFFFF) << 16); /*0x57db25*/
       v2 += IDA_LOWORD((&dword_89F688)[0]); /*0x57db2a*/
       v4 = (__int16)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[0])) << 9; /*0x57db2e*/
       v5 = v2 + v4 < 0; /*0x57db31*/
@@ -1166,7 +1166,7 @@ int sub_57DC20(int a1)
     {
       v3 = (((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD(dword_89F6A0); /*0x57dc45*/
       (v15) = ((v15) & ~0xFFFF) | ((unsigned int)(dword_89F6A0 + v2) & 0xFFFF); /*0x57dc4a*/
-      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(IDA_HIWORD(a1) + IDA_HIWORD(dword_89F6A0)) & 0xFFFF) << 16); /*0x57dc55*/
+      (v15) = ((v15) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD(dword_89F6A0)) & 0xFFFF) << 16); /*0x57dc55*/
       v2 += dword_89F6A0; /*0x57dc5a*/
       v4 = (__int16)((((unsigned int)(a1) >> 16) & 0xFFFF) + IDA_HIWORD(dword_89F6A0)) << 9; /*0x57dc5e*/
       v5 = v2 + v4 < 0; /*0x57dc61*/
