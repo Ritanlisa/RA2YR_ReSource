@@ -7547,27 +7547,22 @@ void BuildingClass::ProcessUpgradeEffects()
 // 0x7265c0
 int BuildingClass::ExecuteTriggers(int a2, char a3) // raw sig=csp (int,int,char); disasm arg_0/arg_4 实证
 {
-  int result; // eax
+  TechnoClass *result; // eax ([this+0x24] 主控; 高位残渣调用方不可观测)
   char v5; // bl
   TerrainClass *i; // esi (触发器链遍历)
   int Owner; // eax
 
   if ( !*(unsigned char *)&this->q044 || *(unsigned char *)&this->nextObject ) // 0x44 / 0x30 首字节
+    return 0;                                                          // xor al,al (调用方仅读 AL)
+  result = *(TechnoClass **)&this->occupant;                           // 0x24 槽位视图
+  v5 = 0;
+  for ( i = *(TerrainClass **)&result->q0B0; i; i = (TerrainClass *)i->q028 ) // [master+0xB0] 链头 / [i+0x28] next (canon void*)
   {
-    result = 0;                                                        // xor al,al (调用方仅读 AL)
+    Owner = ((HouseClass **)result->q0A4)[45]->FindOwner();            // [master+0xA4]->0xB4 = House*
+    if ( i->ProcessUpdate(Owner, a2, (int)this, (int)&a3) )            // 0x6dd8b0 (4 stack args)
+      v5 = 1;
   }
-  else
-  {
-    v5 = 0;
-    for ( i = *(TerrainClass **)&((TechnoClass *)*(TechnoClass **)&this->occupant)->q0B0; i; i = (TerrainClass *)*(unsigned int *)&i->q028[0] ) // [occupant+0xB0] 链头 / [i+0x28] next
-    {
-      Owner = ((HouseClass *)((HouseClass **)((TechnoClass *)*(TechnoClass **)&this->occupant)->q0A4)[45])->FindOwner(); // [[occupant+0xA4]+0xB4]
-      if ( i->ProcessUpdate(Owner, a2, (int)this, (int)&a3) )          // 0x6dd8b0 (4 stack args)
-        v5 = 1;
-    }
-    result = (unsigned char)v5;
-  }
-  return result;
+  return (unsigned char)v5;                                            // mov al,bl (调用方仅读 AL)
 }
 /* asm BuildingClass::ExecuteTriggers @0x7265C0
 ; BuildingClass::ExecuteTriggers

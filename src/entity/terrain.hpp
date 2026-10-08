@@ -21,8 +21,8 @@ class TerrainTypeClass;
 class TerrainClass : public ObjectClass
 {
 public:
-    // --- g57w20m20d supply (csp_canon 0x28) ---
-    unsigned int q028;    // 0x28
+    // --- g57w20m20e supply (csp_canon 0x28 void* 变体; 链 next) ---
+    void* q028;           // 0x28
 
     int GetCellCoords_Alt(int, ...); // vtable slot +440
     int GetOrCreateResHandle(int, ...); // vtable slot +264
