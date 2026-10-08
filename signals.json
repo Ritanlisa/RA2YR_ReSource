@@ -80638,8 +80638,8 @@
      "name": "p0"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -80740,8 +80740,8 @@
      "name": "p0"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -144277,8 +144277,8 @@
      "name": "p5"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -144310,8 +144310,8 @@
      "name": "p4"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -146897,8 +146897,8 @@
      "name": "p0"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },

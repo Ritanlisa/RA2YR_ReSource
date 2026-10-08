@@ -413,5 +413,26 @@ protected:
 };
 #endif
 
+// ============================================================================
+// Random-map blob placement geometry helpers (free functions)
+// ============================================================================
+
+// Full-map bounds rect used by the blob helpers as the "no constraint"
+// sentinel: a region field-for-field equal to it short-circuits.
+extern RectangleStruct g_MapFullBounds;  // data: 0xABE2F0
+
+// 0x59BAB0 — candidate cell inside the placement region (rect / inscribed
+// ellipse)?  Note the two branches use different coordinate spaces on purpose:
+// the rect branch compares iso coords directly, the ellipse branch first
+// inverse-transforms to real coords (verified against the original binary).
+bool InRegion(const CellStruct* cell, const RectangleStruct* region, bool ellipse,
+              double ellipse_a, double ellipse_b);
+
+// 0x59B940 — directional cost for blob growth priority mode != 0:
+// direction (n -> target) weighted by aspect, scaled by the Chebyshev step
+// distance between p and n. Bit-exactness matters: the result feeds a min-heap.
+double DirectionalCost(const CellStruct* p, const CellStruct* n, const RectangleStruct* region,
+                       const CellStruct* target, float aspect_x, float aspect_y);
+
 } // namespace gamemd
 
