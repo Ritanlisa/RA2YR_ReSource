@@ -112,7 +112,8 @@ struct CounterClass
     unsigned int u32_8;   // g57w10 C2039 supply (ml offset 8)
     unsigned int u32_C;   // ml offset 12
     unsigned int u32_D;   // ml offset 13
-public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
+public:
+    virtual int FindItemIndex_0();  // W20M26 vt+0x18 (PR 0x44bfd9)  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Construct();  // 0x49F9B0
     int Decrement(int a1);  // 0x49FA70
     int ddtor();  // 0x49FB40

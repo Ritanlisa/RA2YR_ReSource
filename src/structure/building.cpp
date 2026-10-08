@@ -3183,6 +3183,8 @@ void BuildingClass::SellUnit(int a2)
   return; /*0x4d9fe9*/
 }
 
+
+
 // 0x701410
 void BuildingClass::HandleSellOrRepair()
 {
@@ -3214,6 +3216,8 @@ void BuildingClass::HandleSellOrRepair()
     StartAudioControllerAt(dword_8871E0_m26_t->q1C4, (unsigned int *)&v7, 0); /*0x701494*/
   }
 }
+
+
 
 // IDA 0x44f450: repair mission
 int BuildingClass::Mission_Repair()
@@ -5577,6 +5581,8 @@ LABEL_247:
     44C97C retn
     44C97D align 10h
 */
+
+
 
 }
 // 0x446FF0

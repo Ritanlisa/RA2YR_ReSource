@@ -379,6 +379,7 @@ public:  // g57c5 W4b supply slot
     char q128C[16];  // 0x128C (PR 0x44C023 add eax,128Ch) 
     unsigned char __pad_129C[744];  // 0x129C..0x1583
 public:  // g57c5 W4b supply slot
+    int32_t q684;  // 0x684 (PR 0x44BA4A cmp dword ptr [ecx+684h],0FFFFFFFFh; W20M26)
     char __pad_1714;  // 0x1714 g57c5 W4b (self-desc vocab, ml slot witness)
 };
 
