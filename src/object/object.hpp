@@ -3,7 +3,7 @@
 #include "abstract.hpp"
 #include "system/ini_class.hpp"  // G42.55 closure (INIEntry)
 
-namespace gamemd { struct ILocomotion; struct RandomStruct; }
+namespace gamemd { struct ILocomotion; struct RandomStruct; class TechnoTypeClass; }
 namespace ra2 {
 namespace game {
 
@@ -543,7 +543,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Render(int a1, int a2, int a3, int a4);  // 0x6E1440
     int ReadINIEntry(int a1, int a2, int a3, int a4);  // 0x6E15F0
     int Get(int a1);  // 0x6EC130
-    ObjectTypeClass * Vt34Thunk();  // 0x6F3270 (W20M26 retype: PR 0x70142a [ret+0xA0]=Strength)
+    gamemd::TechnoTypeClass * Vt34Thunk();  // 0x6F3270 (IDA int(); 0x70142a [ret+A0]=Strength, 0x710695 [ret+564h]=EnterTransportSound) (W20M26 retype: PR 0x70142a [ret+0xA0]=Strength)
     int NotifyExpired(void* a1, void* a2);  // 0x7077C0
     int GetTypeVt28();  // 0x708B30
     int GetShroudByte();  // 0x70C5B0

@@ -49,6 +49,7 @@ class PassengersClass {
 public:
     int32_t     NumPassengers;
     FootClass*  FirstPassenger;
+    void AddObject(ObjectClass *a2);  // 0x4733a0 (CellClass::AddObject 同体向量加, passengers@0x114 thiscall)
 };
 
 struct VeterancyStruct {
@@ -98,7 +99,6 @@ public:
 
     int CheckTypeFlag1681(int, ...); // vtable slot +996
     int COMStub_Return0_34(int, ...); // vtable slot +136
-    int Vt34Thunk(int, ...); // vtable slot +132
 public:
     static constexpr AbstractType kObjectDeriveId = static_cast<AbstractType>(0x1);
 

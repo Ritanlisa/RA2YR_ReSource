@@ -201,7 +201,8 @@ int TagClass::Destroy()
                      &g_BuildingLoadQueue_Array.ToTile,
                      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                      0),
-          (unsigned char)result) )
+          result) )
+
     {
       result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5278*/
       *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x6e5287*/

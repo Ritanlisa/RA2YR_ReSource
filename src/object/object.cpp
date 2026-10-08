@@ -76,8 +76,9 @@ bool ObjectClass::Remove()
     int v3; // eax
     IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(this->isSelected) & 0xFF); /*0x5f44a4*/
-    if ( (unsigned char)result ) /*0x5f44ac*/
+    result = this->isSelected; /*0x5f44a4*/
+    if ( result ) /*0x5f44ac*/
+
     {
       v4 = (IUnknown *)(IPersistStream *)this; /*0x5f44be*/
       v3 = (*(int (__thiscall **)(unsigned char *, IUnknown **))(*(unsigned int * *)((char *)&stru_A8EB00 + 440) + 16))((unsigned char *)((char *)&stru_A8EB00 + 440), &v4); /*0x5f44c2*/
@@ -121,7 +122,8 @@ int ObjectClass::Destroy()
                      &g_BuildingLoadQueue_Array.ToTile,
                      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                      0),
-          (unsigned char)result) )
+          result) )
+
     {
       result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
       *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
@@ -146,8 +148,9 @@ int ObjectClass::MarkForRedraw()
 {
     int result; // eax
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(this->needsRedraw) & 0xFF); /*0x5f4d10*/
-    if ( !(unsigned char)result ) /*0x5f4d18*/
+    result = this->needsRedraw; /*0x5f4d10*/
+    if ( !result ) /*0x5f4d18*/
+
     {
       this->needsRedraw = 1; /*0x5f4d1a*/
       return ((gamemd::MapClass *)&stru_87F5F0.__pad_58[416])->MarkForRedraw(0); /*0x5f4d28*/

@@ -327,7 +327,7 @@ bool EventQueue::CheckPosition() {
   int result; // eax
 
   result = (this->q318 + 1) % 256; /*0x54f6c4*/
-  (result) = ((result) & ~0xFF) | ((unsigned int)(result == this->q314) & 0xFF); /*0x54f6cb*/
+  result = result == this->q314; /*0x54f6cb*/
   return result; /*0x54f6ce*/
 }
 }

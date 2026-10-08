@@ -687,12 +687,12 @@ bool FrameTimer::HasRemaining() const { /*G42.33 b3: 载体签名 (cache this=Te
       if ( dword_A8ED84 - v1 < result ) /*0x41bf5b*/
       {
         result -= dword_A8ED84 - v1; /*0x41bf5d*/
-        (result) = ((result) & ~0xFF) | ((unsigned int)(result > 0) & 0xFF); /*0x41bf66*/
+        result = result > 0; /*0x41bf66*/
         return result; /*0x41bf68*/
       }
       result = 0; /*0x41bf69*/
     }
-    (result) = ((result) & ~0xFF) | ((unsigned int)(result > 0) & 0xFF); /*0x41bf72*/
+    result = result > 0; /*0x41bf72*/
     return result; /*0x41bf68*/
 }
 } // namespace gamemd
@@ -927,11 +927,11 @@ void BufferIO::Flush() { /*G42.33 b3: 载体签名*/
         result = ((RawFileClass *)this)->CloseHandle(); /*0x431e62*/
       }
       *((unsigned char *)this + 40) = 0; /*0x431e2b*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x431e30*/
+      result = 1; /*0x431e30*/
     }
     else
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x431e70*/
+      result = 0; /*0x431e70*/
     }
     return; /*0x431e32*/
 }
@@ -1071,7 +1071,7 @@ int Text::Layout(uint16_t *a2, int *a3, unsigned int *a4, int a5) {
       result = (int)a4; /*0x433e71*/
       if ( a4 ) /*0x433e77*/
         *a4 = v19; /*0x433e7d*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x433e7f*/
+      result = 1; /*0x433e7f*/
     }
     else
     {
@@ -1080,7 +1080,7 @@ int Text::Layout(uint16_t *a2, int *a3, unsigned int *a4, int a5) {
       result = (int)a3; /*0x433e92*/
       if ( a3 ) /*0x433e98*/
         *a3 = 0; /*0x433e9a*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x433e9c*/
+      result = 0; /*0x433e9c*/
     }
     return result; /*0x433e81*/
 }
@@ -2198,7 +2198,7 @@ namespace gamemd {
 int Flag::CheckNone() {
     int result; // eax
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(!this->u32_18 && !this->u32_19) & 0xFF); /*0x4a51e1*/
+    result = !this->u32_18 && !this->u32_19; /*0x4a51e1*/
     return result; /*0x4a51e0*/
 }
 } // namespace gamemd
@@ -2765,7 +2765,7 @@ int CountryCombo::IDToIndex() {
     if ( this == (CountryCombo *)1312 ) /*0x4e3882*/
       return 6; /*0x4e3884*/
     v2 = -(this != (CountryCombo *)1313); /*0x4e3891*/
-    (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 & 0xF8) & 0xFF); /*0x4e3893*/
+    v2 = v2 & 0xF8; /*0x4e3893*/
     return v2 + 7; /*0x4e383b*/
 }
 } // namespace gamemd
@@ -3172,7 +3172,7 @@ int HashTable::BinarySearch(int *a2) {
       result = *(unsigned int *)result; /*0x52b3a8*/
       if ( result == *a2 ) /*0x52b3ae*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x52b3b3*/
+        result = 1; /*0x52b3b3*/
         return result; /*0x52b3b6*/
       }
     }
@@ -3208,11 +3208,11 @@ int HashTable::BinarySearch(int *a2) {
     if ( !v9 ) /*0x52b419*/
     {
   LABEL_13:
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x52b40e*/
+      result = 0; /*0x52b40e*/
       return result; /*0x52b414*/
     }
     this->u32_10 = v9; /*0x52b41d G42.35 C6*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x52b421*/
+    result = 1; /*0x52b421*/
     return result; /*0x52b3b0*/
 }
 } // namespace gamemd
@@ -3316,13 +3316,13 @@ int EventBuffer::Enqueue(int16_t a2) {
     result = (v2 + 1) % 256; /*0x54f1d7*/
     if ( result == this->u32_314 ) /*0x54f1de*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x54f1f9*/
+      result = 0; /*0x54f1f9*/
     }
     else
     {
       *((unsigned short *)this + v2 + 138) = a2; /*0x54f1e5*/
       this->u32_318 = result; /*0x54f1ed*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x54f1f3*/
+      result = 1; /*0x54f1f3*/
     }
     return result; /*0x54f1f5*/
 }
@@ -3349,7 +3349,7 @@ int Vector8::EraseAt(int a2) {
     result = a2; /*0x589293*/
     if ( a2 >= v2 ) /*0x589299*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x5892c4*/
+      result = 0; /*0x5892c4*/
     }
     else
     {
@@ -3366,7 +3366,7 @@ int Vector8::EraseAt(int a2) {
         }
         while ( result < *((unsigned int *)this + 4) ); /*0x5892bc*/
       }
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x5892bf*/
+      result = 1; /*0x5892bf*/
     }
     return result; /*0x5892c1*/
 }
@@ -4152,7 +4152,7 @@ int Vector4::EraseAt_Copy(int a2) {
     result = a2; /*0x63ef73*/
     if ( a2 >= v2 ) /*0x63ef79*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x63ef9c*/
+      result = 0; /*0x63ef9c*/
     }
     else
     {
@@ -4167,7 +4167,7 @@ int Vector4::EraseAt_Copy(int a2) {
         }
         while ( result < *((unsigned int *)this + 4) ); /*0x63ef94*/
       }
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x63ef97*/
+      result = 1; /*0x63ef97*/
     }
     return result; /*0x63ef99*/
 }
@@ -4364,11 +4364,11 @@ int SHA1::Reset(int a2) {
       *(unsigned char *)(a2 + 52) = 0; /*0x69dff9*/
       *(unsigned int *)(a2 + 60) = 0; /*0x69dffc*/
       *(unsigned int *)(a2 + 56) = 0; /*0x69dfff*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x69e002*/
+      result = 1; /*0x69e002*/
     }
     else
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x69e005*/
+      result = 0; /*0x69e005*/
     }
     return result; /*0x69e004*/
 }

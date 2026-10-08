@@ -173,7 +173,7 @@ int AudioSample::ResetState() {
     if ( (*((unsigned char *)this + 164) & 8) != 0 ) /*0x4024aa*/
     {
       v2 = *((unsigned int *)this + 41); /*0x4024b1*/
-      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 & 0xF7) & 0xFF); /*0x4024b7*/
+      v2 = v2 & 0xF7; /*0x4024b7*/
       *((unsigned int *)this + 41) = v2; /*0x4024b9*/
       *((unsigned int *)this + 87) = (unsigned int)AudioController::AdvanceQueue; /*0x4024c1 回调地址真值 AudioController::AdvanceQueue*/
       *((unsigned int *)this + 88) = (unsigned int)AudioController::UpdatePlayback; /*0x4024cb 回调地址真值 AudioController::UpdatePlayback*/
@@ -228,7 +228,7 @@ int AudioChannel::DeactivatePlay() {
       this->u32_A4 &= ~1u; /*0x40261e*/
       (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 20))(this); /*0x40262c*/
       v2 = this->u32_A4; /*0x40262f*/
-      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 | 4) & 0xFF); /*0x402635*/
+      v2 = v2 | 4; /*0x402635*/
       this->u32_A4 = v2; /*0x402637*/
     }
 // 0x402600
@@ -242,7 +242,7 @@ int AudioChannel::DeactivatePlay() {
       this->u32_A4 &= ~1u; /*0x40261e*/
       (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 20))(this); /*0x40262c*/
       v2 = this->u32_A4; /*0x40262f*/
-      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 | 4) & 0xFF); /*0x402635*/
+      v2 = v2 | 4; /*0x402635*/
       this->u32_A4 = v2; /*0x402637*/
     }
 
@@ -256,7 +256,7 @@ int AudioChannel::ActivatePlay() {
     {
       (*(void (__thiscall **)(AudioChannel *))(this->u32_D4 + 24))(this); /*0x40266d*/
       v2 = this->u32_A4; /*0x402670*/
-      (v2) = ((v2) & ~0xFF) | ((unsigned int)(v2 & 0xFB) & 0xFF); /*0x402676*/
+      v2 = v2 & 0xFB; /*0x402676*/
       this->u32_A4 = v2; /*0x402678*/
       this->u32_A4 |= 1u; /*0x402687*/
     }
@@ -986,7 +986,7 @@ int FacingClass::Update(unsigned short *a2) {
     (result) = ((result) & ~0xFFFF) | ((unsigned int)(*(unsigned short *)this) & 0xFFFF); /*0x4c9224*/
     if ( *(unsigned short *)this == *a2 ) /*0x4c922d*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x4c92f7*/
+      result = 0; /*0x4c92f7*/
       return result; /*0x4c92f7*/
     }
 

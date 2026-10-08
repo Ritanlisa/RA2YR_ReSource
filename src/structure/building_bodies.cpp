@@ -44,7 +44,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
     int j; // [esp+Eh] [ebp-8h]
     int v19; // [esp+12h] [ebp-4h]
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(byte_A8E9A0) & 0xFF); /*0x50af10*/
+    result = byte_A8E9A0; /*0x50af10*/
     if ( byte_A8E9A0 ) /*0x50af1d*/
     {
       v16 = (unsigned int)dword_A83D4C == (unsigned int)this; /*0x50af31*/

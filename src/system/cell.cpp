@@ -319,7 +319,7 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
   int v18; // [esp+28h] [ebp+8h]
   int v19; // [esp+28h] [ebp+8h]
 
-  (v3) = ((v3) & ~0xFF) | ((unsigned int)(on_bridge) & 0xFF); /*0x47e8a0*/
+  v3 = on_bridge; /*0x47e8a0*/
   if ( on_bridge ) /*0x47e8ae*/
     v5 = this->altObject; /*0x47e8b0*/
   else
@@ -370,7 +370,8 @@ char CellClass::AddContent(ObjectClass* content, bool on_bridge)
     if ( v3 != 15 ) /*0x47e9ee*/
     {
       (v3) = ((v3) & ~0xFF) | ((unsigned int)((*(int (**)(unsigned int *))(*content + 192))(content)) & 0xFF); /*0x47e9f9*/
-      if ( (unsigned char)v3 ) /*0x47ea01*/
+      if ( v3 ) /*0x47ea01*/
+
       {
         if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
         {
@@ -571,7 +572,7 @@ int CellClass::Unshroud()
   if ( result > 0 ) /*0x487706*/
   {
     result = this->flags[0]; /*0x487708*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(result | 0x20) & 0xFF); /*0x48770e*/
+    result = result | 0x20; /*0x48770e*/
     this->flags[0] = result; /*0x487710*/
   }
   return result; /*0x487716*/

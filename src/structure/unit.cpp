@@ -333,7 +333,8 @@ int UnitClass::GetExitCell(AbstractClass* aP1, AbstractClass* aP2, unsigned int 
       || (*(unsigned char *)(this + 25) || !result)
       && (v13 = *(unsigned int *)(this + 32), v13 > 0)
       && (result = (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(this + 12) + 8))( (int)(this + 12), result + v13, 0 ),
-          (unsigned char)result) )
+          result) )
+
     {
       result = *(unsigned int *)(this + 28); /*0x54e4b8*/
       v14 = *(unsigned int *)(this + 16); /*0x54e4bb*/
@@ -1344,8 +1345,9 @@ int UnitClass::SimpleDeployerUndeploy()
     int v18; // [esp+10h] [ebp-8h]
     int v19; // [esp+14h] [ebp-4h]
 
-    (v2) = ((v2) & ~0xFF) | ((unsigned int)(this->Deployed) & 0xFF); /*0x739cd7*/
-    if ( (unsigned char)v2 ) /*0x739cdf*/
+    v2 = this->Deployed; /*0x739cd7*/
+    if ( v2 ) /*0x739cdf*/
+
     {
       if ( this->Undeploying && (v3 = ((unsigned int *)this)[0]) != 0 ) /*0x739cf7*/
       {
@@ -6609,7 +6611,8 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
     }
   LABEL_38:
     (v11) = ((v11) & ~0xFF) | ((unsigned int)(((unsigned int *)this->Type)[0]) & 0xFF); /*0x736be2*/
-    if ( (unsigned char)v11 ) /*0x736bf1*/
+    if ( v11 ) /*0x736bf1*/
+
     {
       v11 = (unsigned __int8)TimerClass::Active((int)((unsigned int *)this)[0]); /*0x736bfe*/
       ((unsigned int *)this)[0] = v11; /*0x736c03*/
@@ -6900,7 +6903,8 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
     unsigned int v46[4]; // [esp+7Ch] [ebp-10h] BYREF
 
     result = (*(int (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)this + 652))(this); /*0x743a5c*/
-    if ( !(unsigned char)result ) /*0x743a64*/
+    if ( !result ) /*0x743a64*/
+
       return result; /*0x743a64*/
     v8 = *((unsigned int *)this + 413); /*0x743a6a*/
     v9 = this + 1652; /*0x743a70*/
@@ -7130,11 +7134,11 @@ int UnitClass::IsCellBlockedByBridge(void* aP1)
       result = ((unsigned int *)this)[0]; /*0x458a1a*/
       if ( *(unsigned int *)(result + 5664) == -1 ) /*0x458a27*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x458a2a*/
+        result = 1; /*0x458a2a*/
       }
       else if ( *(unsigned char *)(result + 5803) && (result = (int)((unsigned int *)this)[0]) != 0 ) /*0x458a42*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x458a45*/
+        result = 1; /*0x458a45*/
       }
       else
       {
@@ -7145,7 +7149,7 @@ int UnitClass::IsCellBlockedByBridge(void* aP1)
     }
     else
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x458a14*/
+      result = 0; /*0x458a14*/
     }
     return result; /*0x458a13*/
 }
@@ -7155,7 +7159,7 @@ int UnitClass::CompareCoordinateMagnitude(short* a2)
     int result; // eax
 
     result = abs16((__int16)this->FootClass); /*0x4d03e7*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(result >= abs16(*a2)) & 0xFF); /*0x4d03ef*/
+    result = result >= abs16(*a2); /*0x4d03ef*/
     return result; /*0x4d03eb*/
 }
 // IDA: 0x7178B0 (processEnterTarget, 14B)
@@ -9412,11 +9416,11 @@ int UnitClass::PowerDrainUpdate(int a2)
       Power::TimerProcess(v6); /*0x74468f*/
     }
     Power::TimerProcess(this->FlagHouseIndex); /*0x74469d*/
-    (v7) = ((v7) & ~0xFF) | ((unsigned int)(this->HasFollowerCar) & 0xFF); /*0x7446a2*/
+    v7 = this->HasFollowerCar; /*0x7446a2*/
     Power::FlagProcess((Power *)a2, v7); /*0x7446ab*/
-    (v8) = ((v8) & ~0xFF) | ((unsigned int)(this->Unloading) & 0xFF); /*0x7446b0*/
+    v8 = this->Unloading; /*0x7446b0*/
     v9 = Power::FlagProcess((Power *)a2, v8); /*0x7446b9*/
-    (v9) = ((v9) & ~0xFF) | ((unsigned int)(this->UnitClass_field_bool_6D2) & 0xFF); /*0x7446be*/
+    v9 = this->UnitClass_field_bool_6D2; /*0x7446be*/
     Power::FlagProcess((Power *)a2, v9); /*0x7446c7*/
     (v10) = ((v10) & ~0xFF) | ((unsigned int)(((unsigned int *)this)[0]) & 0xFF); /*0x7446cc*/
     return Power::FlagProcess((Power *)a2, v10); /*0x7446da*/

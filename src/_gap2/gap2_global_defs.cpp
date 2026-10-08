@@ -757,7 +757,7 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     v23 = *(unsigned int *)v4; /*0x415c98*/
     v24 = *(unsigned int *)(v4 + 4); /*0x415c9f*/
     v5 = *(unsigned int *)(v4 + 8); /*0x415ca3*/
-    (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(this + 764)) & 0xFF); /*0x415ca6*/
+    v4 = *(this + 764); /*0x415ca6*/
     v25 = v5; /*0x415cae*/
     if ( (v4 & 1) != 0 ) /*0x415cb2*/
       IDA_LOWORD(v20) = *(unsigned short *)ProgressTimer::GetValue((unsigned short *)this + 452, &v20) - 0x3FFF; /*0x415ccc*/
@@ -1335,7 +1335,7 @@ char Gap2Recv_42B210::ParsePathDirections(int a2, void* a3)
       if ( v9 + v8 >= v6 ) /*0x42b3d8*/
         break; /*0x42b3d8*/
     }
-    (v5) = ((v5) & ~0xFF) | ((unsigned int)(v29) & 0xFF); /*0x42b3de*/
+    v5 = v29; /*0x42b3de*/
     if ( v29 ) /*0x42b3e4*/
       (v5) = ((v5) & ~0xFF) | ((unsigned int)(GeneratePathWaypoints(a3, (int *)(v4 + 4 * v9), v27 + 4 * v9, v8, v19, &v20)) & 0xFF); /*0x42b406*/
     return (char)v5; /*0x42b40b*/
@@ -1799,7 +1799,8 @@ char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6)
     v19 = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x430283*/
                     + 4 * *(unsigned int *)(*((unsigned int *)dword_A8022C + *(unsigned int *)(this + 272)) + 90196));
     (v7) = ((v7) & ~0xFF) | ((unsigned int)(Coord::To_Screen((Coord *)g_TacticalClass_Instance, (unsigned int *)this, v24)) & 0xFF); /*0x430289*/
-    if ( (unsigned char)v7 )
+    if ( v7 )
+
     {
       DrawToSurfaceSHP(
         a2,
@@ -1988,7 +1989,7 @@ void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6)
           return; /*0x430c61*/
         }
       }
-      (a6) = ((a6) & ~0xFF) | ((unsigned int)(v12) & 0xFF); /*0x430c6b*/
+      a6 = v12; /*0x430c6b*/
       *((unsigned int *)&this->AbstractClass + 2 * a2 + v12 + a2) = v11; /*0x430c72*/
     }
     else
@@ -2576,7 +2577,7 @@ char Gap2Recv_455F10::MarkBuildingFoundationCells(int a2)
     }
     if ( v10 + v36 > v15[1] + v15[3] ) /*0x45608f*/
       v15[3] = v36 + v10 - v15[1]; /*0x45609e*/
-    (v20) = ((v20) & ~0xFF) | ((unsigned int)(a2) & 0xFF); /*0x4560a1*/
+    v20 = a2; /*0x4560a1*/
     if ( !(unsigned char)a2 ) /*0x4560a7*/
     {
       v21 = v9 - 1; /*0x4560ad*/
@@ -2585,7 +2586,7 @@ char Gap2Recv_455F10::MarkBuildingFoundationCells(int a2)
       v40 = v22; /*0x4560b7*/
       if ( v21 < v22 ) /*0x4560bb*/
       {
-        (v20) = ((v20) & ~0xFF) | ((unsigned int)(v10 + v36) & 0xFF); /*0x4560c1*/
+        v20 = v10 + v36; /*0x4560c1*/
         v41 = v10 - 1; /*0x4560c6*/
         v23 = v10 + v36 + 2; /*0x4560ca*/
         do /*0x4561dc*/
@@ -2861,7 +2862,8 @@ int Gap2Recv_4561F0::RecalculateBuildingFoundation()
             || (*(unsigned char *)(v31 + 13) || !result)
             && (v32 = *(unsigned int *)(v31 + 20), v32 > 0)
             && (result = (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v31 + 8))(v31, result + v32, 0),
-                (unsigned char)result) )
+                result) )
+
           {
             result = *(unsigned int *)(v31 + 16); /*0x4564df*/
             v33 = *(unsigned int *)(v31 + 4); /*0x4564e2*/
@@ -2924,7 +2926,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim()
       }
       v3 = (IDA_BYTE1(_EAX) & 0x41) != 0; /*0x458354*/
       v4 = (*(int (__thiscall **)(TechnoClass *))(this->vtable0 + 1032))(this) > 0; /*0x45836b*/
-      (v37) = ((v37) & ~0xFF) | ((unsigned int)(v4) & 0xFF); /*0x458370*/
+      v37 = v4; /*0x458370*/
       if ( v3 )
       {
         v6 = (AnimTypeClass *)(*((unsigned int *)this + 328) + 5156); /*0x45837c*/
@@ -2949,7 +2951,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim()
       }
       v11 = (_AX & 0x4100) != 0; /*0x4583d6*/
       v12 = (*(int (__thiscall **)(TechnoClass *))(this->vtable0 + 1032))(this) > 0; /*0x4583ed*/
-      (v37) = ((v37) & ~0xFF) | ((unsigned int)(v12) & 0xFF); /*0x4583f2*/
+      v37 = v12; /*0x4583f2*/
       if ( v11 )
       {
         v14 = (AnimTypeClass *)(*((unsigned int *)this + 328) + 4136); /*0x4583fe*/
@@ -2974,7 +2976,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim()
       }
       v18 = (_AX & 0x4100) != 0; /*0x458458*/
       v19 = (*(int (__thiscall **)(TechnoClass *))(this->vtable0 + 1032))(this) > 0; /*0x45846f*/
-      (v37) = ((v37) & ~0xFF) | ((unsigned int)(v19) & 0xFF); /*0x458474*/
+      v37 = v19; /*0x458474*/
       if ( v18 )
       {
         v21 = (AnimTypeClass *)(*((unsigned int *)this + 328) + 4204); /*0x458480*/
@@ -2999,7 +3001,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim()
       }
       v25 = (_AX & 0x4100) != 0; /*0x4584da*/
       v26 = (*(int (__thiscall **)(TechnoClass *))(this->vtable0 + 1032))(this) > 0; /*0x4584f1*/
-      (v37) = ((v37) & ~0xFF) | ((unsigned int)(v26) & 0xFF); /*0x4584f6*/
+      v37 = v26; /*0x4584f6*/
       if ( v25 )
       {
         v28 = (AnimTypeClass *)(*((unsigned int *)this + 328) + 4272); /*0x458502*/
@@ -3025,7 +3027,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim()
       }
       v33 = (_AX & 0x4100) != 0; /*0x45855c*/
       v34 = (*(int (__thiscall **)(TechnoClass *))(this->vtable0 + 1032))(this) > 0; /*0x458573*/
-      (v37) = ((v37) & ~0xFF) | ((unsigned int)(v34) & 0xFF); /*0x458578*/
+      v37 = v34; /*0x458578*/
       if ( v33 ) /*0x45857c*/
       {
         result = (unsigned char *)(*((unsigned int *)this + 328) + 4340); /*0x458584*/
@@ -3620,7 +3622,8 @@ char Gap2Recv_4838E0::IsCoordValidMap(ObjectClass * aP1)
     unsigned int *v6; // esi
 
     result = LayerClass::IsWithinUsableArea(&dword_87F7E8, (__int16 *)(this + 36), 1); /*0x4838ef*/
-    if ( (unsigned char)result ) /*0x4838f6*/
+    if ( result ) /*0x4838f6*/
+
     {
       result = *(unsigned int *)(this + 320); /*0x4838fc*/
       if ( (result & 0x500) == 0 ) /*0x483905*/
@@ -3670,7 +3673,7 @@ char Gap2Recv_4838E0::IsCoordValidMap(ObjectClass * aP1)
               result = *(unsigned int *)(this + 56); /*0x4839c0*/
               if ( result < 0 || result >= dword_A8ED38 || *(unsigned char *)(*((unsigned int *)dword_A8ED2C + result) + 774) ) /*0x4839d8*/
               {
-                (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x4839e3*/
+                result = 1; /*0x4839e3*/
                 return result; /*0x4839e6*/
               }
             }
@@ -3679,7 +3682,7 @@ char Gap2Recv_4838E0::IsCoordValidMap(ObjectClass * aP1)
       }
     }
   LABEL_24:
-    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x4839e9*/
+    result = 0; /*0x4839e9*/
     return result; /*0x4839e2*/
 }
 } // namespace gamemd
@@ -9991,7 +9994,8 @@ int Gap2Recv_5851B0::BuildTileAdjacencyTable(IUnknown * aP1) {
     if ( *(unsigned int *)(v53 + 16) < result /*0x585557*/
       || (*(unsigned char *)(v53 + 13) || !result)
       && (v55 = *(unsigned int *)(v53 + 20), v55 > 0)
-      && (result = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v53 + 8))(v53, result + v55, 0), (unsigned char)result) )
+      && (result = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v53 + 8))(v53, result + v55, 0), result) )
+
     {
       result = *(unsigned int *)(v53 + 16); /*0x585559*/
       v56 = *(unsigned int *)(v53 + 4); /*0x58555c*/
@@ -25808,7 +25812,8 @@ int Gap2Recv_6D5730::RenderBridgeRadarBlips(AbstractClass * aP1, AbstractClass *
         if ( result ) /*0x6d57cc*/
           goto LABEL_15; /*0x6d57cc*/
         result = (uint8_t)v10->slopeIndex[0]; /*0x6d57d2*/
-        if ( (unsigned char)result ) /*0x6d57da*/
+        if ( result ) /*0x6d57da*/
+
           goto LABEL_15; /*0x6d57da*/
         result = v10->CellClass_field_4C; /*0x6d57e0*/
         if ( result ) /*0x6d57e5*/
@@ -25821,7 +25826,8 @@ int Gap2Recv_6D5730::RenderBridgeRadarBlips(AbstractClass * aP1, AbstractClass *
       if ( *(unsigned char *)(*(unsigned int *)(result + 1312) + 5822) )
       {
         result = House::IsHumanPlayer(*(House **)(result + 540)); /*0x6d581b*/
-        if ( (unsigned char)result )
+        if ( result )
+
         {
           if ( v6 > 0 )
           {
@@ -28503,7 +28509,8 @@ int Gap2Recv_70E5A0::UpdateTechnoIdleTimer() {
   int v18; // [esp+Ch] [ebp-8h]
 
   result = (*((int (**)(ObjectClass *))this->vtable1 + 88))(this); /*0x70e5a9*/
-  if ( (unsigned char)result ) /*0x70e5b1*/
+  if ( result ) /*0x70e5b1*/
+
   {
     result = *((unsigned int *)this + 105); /*0x70e5b7*/
     switch ( result ) /*0x70e5c6*/
@@ -30140,7 +30147,8 @@ int Gap2Recv_737180::UpdateInfantryIdleWander() {
   if ( !*((unsigned int *)this + 413) ) /*0x737258*/
     sub_7DC720(-2147467261); /*0x737267*/
   result = (*(int (**)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)); /*0x737275*/
-  if ( !(unsigned char)result ) /*0x73727a*/
+  if ( !result ) /*0x73727a*/
+
   {
     if ( *(unsigned char *)(*((unsigned int *)this + 433) + 3608) ) /*0x737286*/
     {

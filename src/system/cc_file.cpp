@@ -38,15 +38,16 @@ int CCFileClass::Open(int a2)
 
     if ( *((unsigned int *)this + 26) == 1 ) /*0x473c5c*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x473c5e*/
+      result = 1; /*0x473c5e*/
     }
     else
     {
       result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 24))(this); /*0x473c69*/
-      if ( (unsigned char)result ) /*0x473c6e*/
+      if ( result ) /*0x473c6e*/
+
       {
         *((unsigned int *)this + 26) = 1; /*0x473c70*/
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x473c73*/
+        result = 1; /*0x473c73*/
       }
       else
       {
@@ -54,20 +55,21 @@ int CCFileClass::Open(int a2)
         if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
         {
           *((unsigned int *)this + 26) = 1; /*0x473c94*/
-          (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x473c97*/
+          result = 1; /*0x473c97*/
         }
         else
         {
           result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
-          if ( (unsigned char)result ) /*0x473ca9*/
+          if ( result ) /*0x473ca9*/
+
           {
             *((unsigned int *)this + 26) = 1; /*0x473cab*/
-            (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x473cae*/
+            result = 1; /*0x473cae*/
           }
           else
           {
             *((unsigned int *)this + 26) = 2; /*0x473cb5*/
-            (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x473cbd*/
+            result = 0; /*0x473cbd*/
           }
         }
       }
@@ -102,7 +104,7 @@ int CCFileClass::Reset()
     if ( v2 ) /*0x473ce8*/
       Buffer::Init(v2, 0, 0); /*0x473cee*/
     *((unsigned int *)this + 25) = 0; /*0x473cf5*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(CCFileClass::Close(this)) & 0xFF); /*0x473cfc*/
+    result = CCFileClass::Close(this); /*0x473cfc*/
     return result; /*0x473d01*/
 }  // L-fix: close namespace tail 1
 }

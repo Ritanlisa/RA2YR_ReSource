@@ -1228,7 +1228,7 @@ int* Pathfinding::CheckCliff(_DWORD *a2, __int16 *a3, int a4, int a5) {
       NeighbourContent = (char *)v7; /*0x58388a*/
       v10 = -((v7[80] & 0x800) != 0); /*0x58388e*/
       v11 = (Cell *)v7; /*0x583890*/
-      (v10) = ((v10) & ~0xFF) | ((unsigned int)(v10 & 0xFE) & 0xFF); /*0x583892*/
+      v10 = v10 & 0xFE; /*0x583892*/
       v22 = v7 + 80; /*0x583894*/
       p_Cell_field_0x140 = v7 + 80; /*0x58389b*/
       v12 = v10 + 4; /*0x58389f*/
@@ -1648,11 +1648,11 @@ int RulesClass::LoadSpecialWeapons() {
           v19);
         result = g_WarheadTypePool; /*0x6691ad*/
       }
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x6691b8*/
+      result = 1; /*0x6691b8*/
     }
     else
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6691c5*/
+      result = 0; /*0x6691c5*/
     }
     return result; /*0x6691b7*/
 }
@@ -1730,11 +1730,11 @@ int RulesClass::ReadCountryList() {
         result = v15; /*0x66d124*/
         this->ColorAdd[8] = v15; /*0x66d127*/
       }
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x66d118*/
+      result = 1; /*0x66d118*/
     }
     else
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x66d13b*/
+      result = 0; /*0x66d13b*/
     }
     return result; /*0x66d117*/
 }
@@ -6144,7 +6144,7 @@ int RulesClass::LoadSpeedTypes() {
       ++v1; /*0x674221*/
     }
     while ( (int)v2 < (int)((float *)&dbl_89EBF0 + 1) ); /*0x67422a*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x674232*/
+    result = 1; /*0x674232*/
     return result; /*0x674230*/
 }
 }
@@ -6226,11 +6226,11 @@ int RulesClass::ReadIQSection() {
                  aSellback,
                  *(unsigned int *)&this->__pad_C3C[2080]);
       *(unsigned int *)&this->__pad_C3C[2080] = result; /*0x6743b9*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x6743c0*/
+      result = 1; /*0x6743c0*/
     }
     else
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6743c7*/
+      result = 0; /*0x6743c7*/
     }
     return result; /*0x6743bf*/
 }
@@ -8102,18 +8102,18 @@ bool RulesClass::IsTypeBuildable(int a1) {
       goto LABEL_16; /*0x721150*/
     if ( a2 >= this->TunnelSpeed[1] ) /*0x721155*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x721157*/
+      result = 0; /*0x721157*/
       return result; /*0x721159*/
     }
     result = *(unsigned int *)(this->AttackingAircraftSightRange + 4 * a2); /*0x72115f*/
     if ( !*(unsigned char *)(result + 650) ) /*0x721162*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x72116c*/
+      result = 0; /*0x72116c*/
       return result; /*0x72116e*/
     }
     if ( !*(unsigned char *)(result + 648) ) /*0x721171*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x72117b*/
+      result = 0; /*0x72117b*/
       return result; /*0x72117d*/
     }
     if ( dword_A83D4C ) /*0x721188*/
@@ -8121,15 +8121,15 @@ bool RulesClass::IsTypeBuildable(int a1) {
       v3 = *(unsigned int *)(result + 652); /*0x72118a*/
       if ( v3 != -1 && *((unsigned int *)dword_A83D4C->Object_field_0x34 + 47) != v3 ) /*0x7211a2*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x7211a4*/
+        result = 0; /*0x7211a4*/
         return result; /*0x7211a6*/
       }
     }
     if ( *(unsigned int *)&dword_A8B238 || (int)dword_A8B230[130].vtable3 >= *(unsigned int *)(result + 640) ) /*0x7211c7*/
   LABEL_16:
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x7211ce*/
+      result = 1; /*0x7211ce*/
     else
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x7211c9*/
+      result = 0; /*0x7211c9*/
     return result; /*0x721159*/
 }
 }

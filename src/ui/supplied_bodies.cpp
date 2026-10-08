@@ -1842,13 +1842,13 @@ int InputManager::ProcessEvents() {
     if ( (uint8_t)Mouse::IsButtonDown(dword_A8EC00) || (uint8_t)Mouse::IsButtonDown(dword_A8EC04) ) /*0x4e1793*/
     {
       v7 = v12; /*0x4e179c*/
-      (v7) = ((v7) & ~0xFF) | ((unsigned int)(v12 | 2) & 0xFF); /*0x4e17a0*/
+      v7 = v12 | 2; /*0x4e17a0*/
       v12 = v7; /*0x4e17a2*/
     }
     if ( (uint8_t)Mouse::IsButtonDown(dword_A8EBF8) || (uint8_t)Mouse::IsButtonDown(dword_A8EBFC) ) /*0x4e17c7*/
     {
       v8 = v12; /*0x4e17d0*/
-      (v8) = ((v8) & ~0xFF) | ((unsigned int)(v12 | 4) & 0xFF); /*0x4e17d4*/
+      v8 = v12 | 4; /*0x4e17d4*/
       v12 = v8; /*0x4e17d6*/
     }
     if ( v11 ) /*0x4e17e0*/
@@ -2031,18 +2031,18 @@ int Keyboard::MapKey(uint16_t a2) {
 
     if ( (a2 & 0x800) != 0 ) /*0x54f461*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x54f464*/
+      result = 0; /*0x54f464*/
     }
     else
     {
       result = (uint8_t)a2; /*0x54f46f*/
       if ( (uint8_t)a2 == 36 ) /*0x54f478*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(8) & 0xFF); /*0x54f47b*/
+        result = 8; /*0x54f47b*/
       }
       else if ( (uint8_t)a2 == 35 ) /*0x54f488*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(92) & 0xFF); /*0x54f48b*/
+        result = 92; /*0x54f48b*/
       }
       else
       {
@@ -2062,7 +2062,7 @@ int Keyboard::MapKey(uint16_t a2) {
           this->u32_25 = 0; /*0x54f4fe*/
         if ( (a2 & 0x400) != 0 ) /*0x54f507*/
           this->u32_26 = 0; /*0x54f509*/
-        (v7) = ((v7) & ~0xFF) | ((unsigned int)(v7 != 1) & 0xFF); /*0x54f514*/
+        v7 = v7 != 1; /*0x54f514*/
         return *(unsigned int *)Char & (v7 - 1); /*0x54f519*/
       }
     }
@@ -3286,7 +3286,7 @@ namespace gamemd {
 int Tooltip::Enable(char a2) {
     int result; // eax
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(a2) & 0xFF); /*0x7241a0*/
+    result = a2; /*0x7241a0*/
     if ( *((unsigned char *)this + 12) != a2 ) /*0x7241aa*/
     {
       this->u32_C = a2; /*0x7241ae*/

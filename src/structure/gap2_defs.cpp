@@ -783,7 +783,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   Power::TimerProcess(this->BuildingLightClass_field_C4[1]); /*0x436fa4*/
   Power::TimerProcess(this->BuildingLightClass_field_C4[2]); /*0x436fb2*/
   Checksummer::Add_double((Checksummer *)a1, this->BuildingLightClass_field_D0, *(unsigned int *)this->__pad_D4); /*0x436fc7*/
-  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF); /*0x436fcc*/
+  v3 = this->BuildingLightClass_field_D8; /*0x436fcc*/
   Power::FlagProcess((Power *)a1, v3); /*0x436fd5*/
   Power::TimerProcess(this->BehaviourMode); /*0x436fe3*/
   result = this->BuildingLightClass_field_E0; /*0x436fe8*/
@@ -841,7 +841,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   Power::TimerProcess(this->BuildingLightClass_field_C4[1]); /*0x436fa4*/
   Power::TimerProcess(this->BuildingLightClass_field_C4[2]); /*0x436fb2*/
   Checksummer::Add_double((Checksummer *)a1, this->BuildingLightClass_field_D0, *(unsigned int *)this->__pad_D4); /*0x436fc7*/
-  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF); /*0x436fcc*/
+  v3 = this->BuildingLightClass_field_D8; /*0x436fcc*/
   Power::FlagProcess((Power *)a1, v3); /*0x436fd5*/
   Power::TimerProcess(this->BehaviourMode); /*0x436fe3*/
   result = this->BuildingLightClass_field_E0; /*0x436fe8*/
@@ -870,7 +870,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   Power::TimerProcess(this->BuildingLightClass_field_C4[1]); /*0x436fa4*/
   Power::TimerProcess(this->BuildingLightClass_field_C4[2]); /*0x436fb2*/
   Checksummer::Add_double((Checksummer *)a1, this->BuildingLightClass_field_D0, *(unsigned int *)this->__pad_D4); /*0x436fc7*/
-  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF); /*0x436fcc*/
+  v3 = this->BuildingLightClass_field_D8; /*0x436fcc*/
   Power::FlagProcess((Power *)a1, v3); /*0x436fd5*/
   Power::TimerProcess(this->BehaviourMode); /*0x436fe3*/
   result = this->BuildingLightClass_field_E0; /*0x436fe8*/
@@ -973,7 +973,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
+        result = 1; /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1017,7 +1017,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
+        result = 1; /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1133,7 +1133,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
+        result = 1; /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1177,7 +1177,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
+        result = 1; /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1284,7 +1284,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
+        result = 1; /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1328,7 +1328,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
+        result = 1; /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1401,7 +1401,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
+        result = 1; /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1445,7 +1445,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
+        result = 1; /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1596,8 +1596,9 @@ int BuildingClass::CreateUnits()
     char v132[64]; // [esp+4Ch] [ebp-40h] BYREF
     unsigned __int8 v133; // [esp+90h] [ebp+4h]
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(this->ActuallyPlacedOnMap) & 0xFF); /*0x445f89*/
-    if ( (unsigned char)result && !v133 ) /*0x445f99*/
+    result = this->ActuallyPlacedOnMap; /*0x445f89*/
+    if ( result && !v133 ) /*0x445f99*/
+
       return result; /*0x445f99*/
     Type = this->Type; /*0x445f9f*/
     ProduceCashDelay = Type->ProduceCashDelay; /*0x445fa5*/
@@ -1607,7 +1608,8 @@ int BuildingClass::CreateUnits()
       *(unsigned int *)&this->__pad_6B8[28] = v130; /*0x445fc5*/
       *(unsigned int *)&this->__pad_6B8[32] = ProduceCashDelay; /*0x445fc8*/
     }
-    if ( !(unsigned char)result ) /*0x445fd0*/
+    if ( !result ) /*0x445fd0*/
+
     {
       if ( Type->Refinery ) /*0x445fd6*/
       {
@@ -2260,10 +2262,12 @@ int BuildingClass::CreateUnits()
       }
     }
     IDA_LOBYTE(result) = *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6120); /*0x446ee8*/
-    if ( !(unsigned char)result ) /*0x446ef0*/
+    if ( !result ) /*0x446ef0*/
+
     {
       IDA_LOBYTE(result) = this->Type->HoverPad; /*0x446efc*/
-      if ( (unsigned char)result ) /*0x446f04*/
+      if ( result ) /*0x446f04*/
+
       {
         IDA_LOBYTE(result) = v133; /*0x446f0a*/
         if ( !v133 ) /*0x446f10*/
@@ -2285,7 +2289,8 @@ int BuildingClass::CreateUnits()
               Field9 = AbstractClass::GetField9(); /*0x446f67*/
               v119 = (*((int (__thiscall **)(BuildingClass *, int *, int))this->vtable1 + 18))(this, &v129, Field9); /*0x446f77*/
               result = (*(int (__thiscall **)(int, int))(v117 + 216))(v116, v119); /*0x446f7d*/
-              if ( (unsigned char)result ) /*0x446f85*/
+              if ( result ) /*0x446f85*/
+
               {
                 (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v116 + 488))(v116, 5, 0); /*0x446f8f*/
                 (*(void (__thiscall **)(int, int, BuildingClass *))(*(unsigned int *)v116 + 632))(v116, 2, this); /*0x446f9c*/
@@ -2314,7 +2319,8 @@ int BuildingClass::PushScriptAction() {
   if ( v6 ) /*0x44d76c*/
   {
     result = House::IsHumanPlayer((House *)((unsigned int *)this)[0]); /*0x44d774*/
-    if ( (unsigned char)result ) /*0x44d77b*/
+    if ( result ) /*0x44d77b*/
+
     {
       v3 = (unsigned int *)(*((int (**)(BuildingClass *, unsigned char *, unsigned int))this->vtable1 + 19))(this, v5, 0); /*0x44d788*/
       *(unsigned short *)v7.__tail_0 = *v3 / 256; /*0x44d79b*/
@@ -2689,7 +2695,7 @@ int BuildingClass::CheckAdjacentCells() {
           v6 = (unsigned int)v5 < 8; /*0x48556f*/
           if ( v5 >= 8 ) /*0x485572*/
           {
-            (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x485579*/
+            result = 1; /*0x485579*/
             return result; /*0x48557f*/
           }
         }
@@ -2765,7 +2771,7 @@ int BuildingClass::CheckAdjacentCells() {
           v6 = (unsigned int)v5 < 8; /*0x48556f*/
           if ( v5 >= 8 ) /*0x485572*/
           {
-            (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x485579*/
+            result = 1; /*0x485579*/
             return result; /*0x48557f*/
           }
         }
@@ -3415,14 +3421,16 @@ int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
   v4 = this->relatedTagsCapacity; /*0x4faf07*/
   if ( !*(unsigned char *)(v4 + 422) )
   {
-    (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(unsigned char *)(this + 492)) & 0xFF); /*0x4faf18*/
-    if ( !(unsigned char)v4 )
+    v4 = *(unsigned char *)(this + 492); /*0x4faf18*/
+    if ( !v4 )
+
     {
-      (v4) = ((v4) & ~0xFF) | ((unsigned int)(v5) & 0xFF); /*0x4faf26*/
+      v4 = v5; /*0x4faf26*/
       if ( v5 )
       {
         (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(unsigned char *)(*(unsigned int *)(v5 + 40) + 236)) & 0xFF); /*0x4faf35*/
-        if ( (unsigned char)v4 )
+        if ( v4 )
+
         {
           a2 = (int16_t *)CellCoord::To_CellObj(&MapClass_Instance, a2); /*0x4faf5f*/
           v5 = CellStruct::Equals((unsigned short *)(this + 21652), &g_ControlGroupState)
@@ -3500,7 +3508,7 @@ int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
   int Status; // eax
   char v17; // [esp+Bh] [ebp-9h]
 
-  (v2) = ((v2) & ~0xFF) | ((unsigned int)(*(&this->u32_C81)) & 0xFF); /*0x50b1d7*/
+  v2 = *(&this->u32_C81); /*0x50b1d7*/
   if ( !(unsigned char)v2 ) /*0x50b1df*/
   {
     v2 = this->q264; /*0x50b1e5*/

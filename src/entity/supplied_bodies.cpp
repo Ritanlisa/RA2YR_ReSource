@@ -412,18 +412,19 @@ int AnimClass::ProcessPower(int *a2)
     Power::TimerProcess((int)this->AnimClass_field_0x184->__pad_0); /*0x42547b*/
     Checksummer::Add_double((Checksummer *)a2, this->AnimClass_field_0x188, *(unsigned int *)this->__pad_18C); /*0x425490*/
     Power::TimerProcess(this->AnimClass_field_0x190); /*0x42549e*/
-    (v5) = ((v5) & ~0xFF) | ((unsigned int)(this->__pad_194[0]) & 0xFF); /*0x4254a3*/
+    v5 = this->__pad_194[0]; /*0x4254a3*/
     Power::FlagProcess((Power *)a2, v5); /*0x4254ac*/
-    v6 = Power::TimerProcess((unsigned __int8)this->__pad_194[1]); /*0x4254bc*/
-    (v6) = ((v6) & ~0xFF) | ((unsigned int)(this->__pad_194[2]) & 0xFF); /*0x4254c1*/
+    v6 = Power::TimerProcess(this->__pad_194[1]); /*0x4254bc*/
+
+    v6 = this->__pad_194[2]; /*0x4254c1*/
     Power::FlagProcess((Power *)a2, v6); /*0x4254ca*/
-    (v7) = ((v7) & ~0xFF) | ((unsigned int)(this->__pad_194[3]) & 0xFF); /*0x4254cf*/
+    v7 = this->__pad_194[3]; /*0x4254cf*/
     Power::FlagProcess((Power *)a2, v7); /*0x4254d8*/
-    (v8) = ((v8) & ~0xFF) | ((unsigned int)(this->__pad_194[7]) & 0xFF); /*0x4254dd*/
+    v8 = this->__pad_194[7]; /*0x4254dd*/
     v9 = Power::FlagProcess((Power *)a2, v8); /*0x4254e6*/
-    (v9) = ((v9) & ~0xFF) | ((unsigned int)(this->__pad_194[8]) & 0xFF); /*0x4254eb*/
+    v9 = this->__pad_194[8]; /*0x4254eb*/
     Power::FlagProcess((Power *)a2, v9); /*0x4254f4*/
-    (v10) = ((v10) & ~0xFF) | ((unsigned int)(this->__pad_194[10]) & 0xFF); /*0x4254f9*/
+    v10 = this->__pad_194[10]; /*0x4254f9*/
     return Power::FlagProcess((Power *)a2, v10); /*0x425507*/
 }
 } // namespace gamemd
@@ -535,7 +536,7 @@ int AnimClass::setLoopCount()
  Type = (BuildingTypeClass *)(this->Type); /*0x449ae8*/
     if ( !Type->LaserFence ) /*0x449aee*/
     {
-      (v4) = ((v4) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x449af8*/
+      v4 = 0; /*0x449af8*/
       (v4) = ((v4) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(Type->unknown___2) & 0xFF) << 24) /*0x449afe*/
       (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(v4) & 0xFFFF); /*0x449b05*/
       ((char *)((unsigned int *)this)[0])->Set_SyncLog(&v7); /*0x449b10*/

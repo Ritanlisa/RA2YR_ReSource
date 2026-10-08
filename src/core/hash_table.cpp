@@ -34,14 +34,15 @@ int Hash::InsertOrdered(void* table, const void* entry, int a2)
     int result; // eax
 
     result = (*(int (__thiscall **)(void *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4418*/
-    if ( (unsigned char)result ) /*0x4f441d*/
+    if ( result ) /*0x4f441d*/
+
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x4f441f*/
+      result = 0; /*0x4f441f*/
     }
     else if ( *(unsigned int * *)((char *)&stru_A8EB00 + 1108) ) /*0x4f442c*/
     {
       result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a2 + 16))(a2, *(unsigned int * *)((char *)&stru_A8EB00 + 1108)); /*0x4f4433*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x4f4436*/
+      result = 1; /*0x4f4436*/
     }
     else
     {
@@ -176,7 +177,7 @@ int SHA1::Transform(int *a1, unsigned int *a2)
     {
       v4 = *v2++; /*0x69db49*/
       v5 = (((unsigned int)(v4) >> 24) & 0xFF) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
-      (v4) = ((v4) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x69db69*/
+      v4 = 0; /*0x69db69*/
       (((v4) >> 8) & 0xFF) = (((v4) >> 16) & 0xFF); /*0x69db6b*/
       --v3; /*0x69db71*/
       *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/

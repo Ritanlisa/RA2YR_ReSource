@@ -1686,7 +1686,8 @@ bool TechnoClass::CreateUnit()
     if ( _ESI->__pad_194[7] ) /*0x42435f*/
       return (*(int (__thiscall **)(AnimClass *))(_ESI->AnimClass_field_0x0 + 248))(_ESI); /*0x424367*/
     IDA_LOBYTE(result) = _ESI->__pad_194[8]; /*0x42436d*/
-    if ( (unsigned char)result ) /*0x424375*/
+    if ( result ) /*0x424375*/
+
     {
       _ESI->__pad_194[8] = 0; /*0x424377*/
       return result; /*0x424385*/
@@ -1701,7 +1702,8 @@ bool TechnoClass::CreateUnit()
       return result; /*0x4243ad*/
     }
     result = (unsigned __int8)_ESI->__pad_7C[20]; /*0x4243ae*/
-    if ( (unsigned char)result )
+    if ( result )
+
     {
       if ( *(unsigned char *)(_ESI->AnimClass_field_0xC8 + 864) ) /*0x4243c2*/
       {
@@ -1730,10 +1732,12 @@ bool TechnoClass::CreateUnit()
         *(unsigned int *)(v77 + 700) = *(unsigned int *)(v77 + 704); /*0x424489*/
       result = (*(int (__thiscall **)(AnimClass *, int))(_ESI->AnimClass_field_0x0 + 292))(_ESI, 2); /*0x424495*/
       IDA_LOBYTE(result) = _ESI->__pad_194[10]; /*0x42449b*/
-      if ( !(unsigned char)result )
+      if ( !result )
+
       {
         IDA_LOBYTE(result) = _ESI->__pad_118[2]; /*0x4244a9*/
-        if ( !(unsigned char)result )
+        if ( !result )
+
         {
           result = Locomotor::GetSpeed((Locomotor *)&_ESI->AnimClass_field_0xB4); /*0x4244bf*/
           if ( result || (result = _ESI->AnimClass_field_0xC0) == 0 ) /*0x4244d4*/
@@ -1808,7 +1812,8 @@ bool TechnoClass::CreateUnit()
                             &AnimClass_field_0x9C);
           result = PlaySoundEffectAt(v91, v88, 0, v125, 1, 0); /*0x424647*/
           IDA_LOBYTE(result) = _ESI->__pad_7C[20]; /*0x42464c*/
-          if ( (unsigned char)result ) /*0x424654*/
+          if ( result ) /*0x424654*/
+
           {
   LABEL_120:
             v92 = _ESI->AnimClass_field_0xC8; /*0x42465d*/
@@ -1857,7 +1862,8 @@ bool TechnoClass::CreateUnit()
               if ( !*(unsigned char *)(result + 881) ) /*0x42473a*/
               {
                 IDA_LOBYTE(result) = _ESI->__pad_120[0]; /*0x424744*/
-                if ( !(unsigned char)result ) /*0x42474c*/
+                if ( !result ) /*0x42474c*/
+
                   return result; /*0x42474c*/
               }
               goto LABEL_142; /*0x42474c*/
@@ -1964,7 +1970,8 @@ bool TechnoClass::CreateUnit()
                   v115 = *(unsigned int *)v114; /*0x424a34*/
                   AnimClass_field_0xA4 = _ESI->AnimClass_field_0xA4; /*0x424a39*/
                   result = (*(int (__thiscall **)(unsigned char *, int *, int))(v115 + 216))(v114, &AnimClass_field_0x9C, 96); /*0x424a42*/
-                  if ( !(unsigned char)result ) /*0x424a4a*/
+                  if ( !result ) /*0x424a4a*/
+
                   {
                     --_ESI->AnimClass_field_0xAC; /*0x424b23*/
                     return result; /*0x424b30*/

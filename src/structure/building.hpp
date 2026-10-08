@@ -93,7 +93,7 @@ int Construct(int,int);  // 0x43B740
     int RepairPlacement(char a2);  // 0x4533A0
     bool CheckBuildability();  // 0x63AC70
     bool CheckCellPassability();  // 0x70C5A0
-    void OnCellPlacementComplete();  // 0x710670
+    void OnCellPlacementComplete(ObjectClass *a2);  // 0x710670 (IDA: thiscall(this, arg0))
 
     // Exit coordinates
     virtual CoordStruct* GetExitCoords(CoordStruct* out, uint32_t unknown) const override;  // 0x447AC0
@@ -122,7 +122,7 @@ int Construct(int,int);  // 0x43B740
     int StartProduction(int type_index);  // 0x447780
     void CheckState1();  // 0x4496B0
     void CompleteProduction();  // 0x639740
-    int ProductionDisplayUpdate();  // 0x43F180
+    int ProductionDisplayUpdate(int a1);  // 0x43F180 (IDA: thiscall(_BYTE*,int))
     void DisplayProductionFrame();  // 0x43D030
     bool ProductionCheck();  // 0x4513D0
 int CanAcceptType(int,int);  // 0x452670

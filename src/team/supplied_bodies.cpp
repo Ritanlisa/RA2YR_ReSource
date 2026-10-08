@@ -270,7 +270,7 @@ int CampaignClass::GetValue(unsigned int *result) {
       this->LoadFromINI(); /*0x49e4fa*/
     result = this->q05C; /*0x49e503*/
     *result = result; /*0x49e506*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(this->q060) & 0xFF); /*0x49e508*/
+    result = this->q060; /*0x49e508*/
     return (int)(result); /*0x49e50b*/
 }
 } // namespace gamemd
@@ -1185,7 +1185,8 @@ int TeamClass::AddToBuildQueue() {
                      (int *)&g_BuildingLoadQueue_Array.ToTile,
                      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                      0),
-          (unsigned char)result) )
+          result) )
+
     {
       result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x726768*/
       *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)this; /*0x726777*/
@@ -1215,7 +1216,7 @@ int TriggerClass::FireTrigger(void *a2) {
     }
     IDA_LOBYTE(nextTrigger) = this->destroyed; /*0x7267cb*/
     ((Power *)a2)->FlagProcess((int)nextTrigger); /*0x7267d1*/
-    (v6) = ((v6) & ~0xFF) | ((unsigned int)(this->enabled) & 0xFF); /*0x7267d6*/
+    v6 = this->enabled; /*0x7267d6*/
     ((Power *)a2)->FlagProcess(v6); /*0x7267dc*/
     v7 = *(int *)&this->timer; /*0x7267e1 timer[0]*/
     v8 = *((int *)&this->timer + 2); /*0x7267e4 timer[2]*/
@@ -2631,7 +2632,7 @@ int TeamClass::CoordinateSuperWeaponAttack(int a2, int a3) {
         v9 = *v6; /*0x6ed143*/
         v16[2] = v6[41]; /*0x6ed148*/
         v10 = *(unsigned int *)(this + 36); /*0x6ed14c*/
-        (v10) = ((v10) & ~0xFF) | ((unsigned int)(*(unsigned char *)(v10 + 247)) & 0xFF); /*0x6ed14f*/
+        v10 = *(unsigned char *)(v10 + 247); /*0x6ed14f*/
         v11 = (*(int (__thiscall **)(int *, int, unsigned int *, int))(v9 + 964))(v6, SuperWeaponTypeFlag, v16, v10); /*0x6ed15e*/
         this->SelectMember(v11); /*0x6ed167*/
         if ( *(unsigned int *)(this + 60) && (v12 = *(int **)(this + 84)) != 0 ) /*0x6ed17a*/
@@ -2780,7 +2781,7 @@ void TeamClass::ProcessTeamMovement(int a2, int a3) {
           v13 = (unsigned int *)vtable0[18](firstUnit, v23); /*0x6ee4d6*/
           (v25) = ((v25) & ~0xFFFF) | ((unsigned int)(*v13 / 256) & 0xFFFF); /*0x6ee4ed*/
           (v25) = ((v25) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v13[1] / 256) & 0xFFFF) << 16) /*0x6ee50d*/
-          (v13) = ((v13) & ~0xFF) | ((unsigned int)(*(unsigned char *)&firstUnit->onBridge) & 0xFF); /*0x6ee516 +8C*/
+          v13 = *(unsigned char *)&firstUnit->onBridge; /*0x6ee516 +8C*/
           *(unsigned int *)v20 = v25; /*0x6ee520*/
           TileIndex = ((MapClass *)&stru_87F5F0.__pad_58[416])->GetTileIndex((int)v20, v8, (char)v13); /*0x6ee538*/
           v14 = (*((int (__thiscall **)(FootClass *))*(void * *)&firstUnit->q021))(firstUnit); /*0x6ee53b*/
@@ -2842,7 +2843,8 @@ void TeamClass::SelectBestMember(int a2, int a3) {
     int v24; // [esp+2Ch] [ebp-4h]
 
     v3 = this; /*0x6ee5c9*/
-    if ( (unsigned char)a3 ) /*0x6ee5d3*/
+    if ( a3 ) /*0x6ee5d3*/
+
     {
       if ( this->queuedFocus ) /*0x6ee5d9*/
         goto LABEL_22; /*0x6ee5de*/
@@ -2886,7 +2888,7 @@ void TeamClass::SelectBestMember(int a2, int a3) {
           v14 = (unsigned int *)vtable0[18](firstUnit, v23); /*0x6ee70c*/
           (a3) = ((a3) & ~0xFFFF) | ((unsigned int)(*v14 / 256) & 0xFFFF); /*0x6ee723*/
           (a3) = ((a3) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v14[1] / 256) & 0xFFFF) << 16) /*0x6ee743*/
-          (v14) = ((v14) & ~0xFF) | ((unsigned int)(*(unsigned char *)&firstUnit->onBridge) & 0xFF); /*0x6ee74c +8C*/
+          v14 = *(unsigned char *)&firstUnit->onBridge; /*0x6ee74c +8C*/
           *(unsigned int *)v20 = a3; /*0x6ee756*/
           TileIndex = ((MapClass *)&stru_87F5F0.__pad_58[416])->GetTileIndex((int)v20, v9, (char)v14); /*0x6ee76e*/
           v15 = (*((int (__thiscall **)(FootClass *))*(void * *)&firstUnit->q021))(firstUnit); /*0x6ee771*/
@@ -3292,7 +3294,7 @@ void TeamClass::CheckMemberSuperWeapon(int a2, int a3) {
     v13 = *v5; /*0x6f0233*/
     v25[2] = v5[41]; /*0x6f0239*/
     v14 = *(unsigned int *)(v23 + 36); /*0x6f0241*/
-    (v14) = ((v14) & ~0xFF) | ((unsigned int)(*(unsigned char *)(v14 + 247)) & 0xFF); /*0x6f0244*/
+    v14 = *(unsigned char *)(v14 + 247); /*0x6f0244*/
     v15 = v5->SelectAutoTarget_Start_AU(v12, v25, v14); /*0x6f0253*/
     v23 = v23; /*0x6f0259*/
     v15 = v15; /*0x6f025d*/

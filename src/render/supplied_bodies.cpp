@@ -308,7 +308,7 @@ int BuildingQueue::IsCellSuitable(int a2)
     result = (int)BridgeClass::GetCellData((BridgeClass *)this, a2); /*0x42e789*/
     if ( result ) /*0x42e790*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x42e793*/
+      result = 1; /*0x42e793*/
       return result; /*0x42e796*/
     }
     v4 = (unsigned int)(16 * a2 + this->BuildingQueue_field_0x08); /*0x42e79f*/
@@ -321,15 +321,15 @@ int BuildingQueue::IsCellSuitable(int a2)
     result = (int)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)(v4 + 4)); /*0x42e7c5*/
     if ( *(unsigned int *)(result + 68) == *(unsigned int *)(*(unsigned int *)(v5 + 3668) + 660) ) /*0x42e7d9*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x42e7dc*/
+      result = 1; /*0x42e7dc*/
       return result; /*0x42e7df*/
     }
     result = (int)Cell::IsBridge((Cell *)result); /*0x42e7e4*/
     if ( result ) /*0x42e7eb*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x42e7ee*/
+      result = 1; /*0x42e7ee*/
     else
   LABEL_9:
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x42e7f5*/
+      result = 0; /*0x42e7f5*/
     return result; /*0x42e792*/
 }
 } // namespace gamemd
@@ -584,7 +584,7 @@ int BuildingPlacement::ValidateType(int a2, int a3)
     result = *((unsigned int *)this + 17); /*0x48051a*/
     if ( result == a2 && result != -1 ) /*0x480524*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x480529*/
+      result = 1; /*0x480529*/
       return result; /*0x48052c*/
     }
     if ( a2 == -1 ) /*0x480532*/
@@ -592,7 +592,7 @@ int BuildingPlacement::ValidateType(int a2, int a3)
       if ( result == 2 || result == 26 || result == 243 ) /*0x480543*/
       {
   LABEL_8:
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x480549*/
+        result = 1; /*0x480549*/
         return result; /*0x48054f*/
       }
     }
@@ -634,7 +634,7 @@ int BuildingPlacement::ValidateType(int a2, int a3)
         }
       }
     }
-    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x480622*/
+    result = 0; /*0x480622*/
     return result; /*0x480526*/
 }
 } // namespace gamemd
@@ -2099,7 +2099,8 @@ int ColorSchemeClass::LoadAllSchemes(int a2)
         v6 = 65 * v4++; /*0x627b6b*/
         v7 = (Flag *)(*((unsigned int *)v5 + 1) + 4 * v6); /*0x627b6e*/
         result = Flag::IsZero(v7); /*0x627b73*/
-        if ( !(unsigned char)result ) /*0x627b7a*/
+        if ( !result ) /*0x627b7a*/
+
           break; /*0x627b7a*/
         if ( v4 >= *((unsigned int *)v5 + 4) ) /*0x627b7f*/
           goto LABEL_6; /*0x627b7f*/
@@ -2186,7 +2187,8 @@ int ColorSchemeClass::LoadAllSchemes(int a2)
             v25 = 65 * v4++; /*0x627cc6*/
             v26 = (Flag *)(*(unsigned int *)(v24 + 4) + 4 * v25); /*0x627cc9*/
             result = Flag::IsZero(v26); /*0x627cce*/
-            if ( !(unsigned char)result ) /*0x627cd5*/
+            if ( !result ) /*0x627cd5*/
+
               break; /*0x627cd5*/
             if ( v4 >= *(unsigned int *)(v24 + 16) ) /*0x627cda*/
             {
@@ -4164,7 +4166,7 @@ void XSurface_DrawLineEx_raw(int a2, unsigned int *a3, unsigned int *a4, int16_t
       if ( v12 == 1 ) /*0x7ba6f1*/
       {
         (v14) = ((v14) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v35) >> 16) & 0xFFFF)) & 0xFFFF) << 16) /*0x7ba6f7*/
-        (v14) = ((v14) & ~0xFF) | ((unsigned int)(a5) & 0xFF); /*0x7ba701*/
+        v14 = a5; /*0x7ba701*/
         (((v14) >> 8) & 0xFF) = a5; /*0x7ba704*/
         v15 = v37 - v35 + 1; /*0x7ba706*/
         v16 = v14 << 16; /*0x7ba70a*/

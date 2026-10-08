@@ -2702,7 +2702,7 @@ void GameSetup_DisplayPlayers()
       v41 = 0; /*0x5db0e1*/
       v40 = v10 - 1; /*0x5db0eb*/
       v38 = 0; /*0x5db0f1*/
-      (v42) = ((v42) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x5db0f9*/
+      v42 = 0; /*0x5db0f9*/
       v39 = 1 << (v10 - 1); /*0x5db0fe*/
       Block = (void *)RA2_OPNEW(4 * v39); /*0x5db113*/
       memset(Block, 0, 4 * v39); /*0x5db117*/
@@ -5732,8 +5732,9 @@ void LoadScreen_Render()
     struct tagRECT Rect; // [esp+10h] [ebp-10h] BYREF
     double v18; // [esp+24h] [ebp+4h]
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(*(unsigned char *)(a1 + 96)) & 0xFF); /*0x643ae7*/
-    if ( (unsigned char)result ) /*0x643aec*/
+    result = *(unsigned char *)(a1 + 96); /*0x643ae7*/
+    if ( result ) /*0x643aec*/
+
     {
       result = *(unsigned int *)(a1 + 84); /*0x643af2*/
       if ( result ) /*0x643af7*/
@@ -7899,7 +7900,8 @@ void SyncDelayClass::ProcessNetworkSync()
       goto LABEL_22; /*0x55df71*/
     }
     (v2) = ((v2) & ~0xFF) | ((unsigned int)((*(int (__thiscall **)(int, int))(*(unsigned int *)v7 + 20))(v7, v3)) & 0xFF); /*0x55df82*/
-    if ( !(unsigned char)v2 ) /*0x55df87*/
+    if ( !v2 ) /*0x55df87*/
+
     {
       v13 = v3; /*0x55df8e*/
       if ( *(unsigned int *)&stru_87F5F0.__pad_58[60] ) /*0x55df94*/
@@ -7927,10 +7929,10 @@ void SyncDelayClass::ProcessNetworkSync()
       switch ( v4 ) /*0x55e07c*/
       {
         case 27: /*0x55e07c*/
-          (v2) = ((v2) & ~0xFF) | ((unsigned int)(UI_Create(v12)) & 0xFF); /*0x55e07e*/
+          v2 = UI_Create(v12); /*0x55e07e*/
           break;
         case 9: /*0x55e07c*/
-          (v2) = ((v2) & ~0xFF) | ((unsigned int)(Network_Process_6ABC40()) & 0xFF); /*0x55e094*/
+          v2 = Network_Process_6ABC40(); /*0x55e094*/
           break;
         case 37: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e0ab*/
@@ -7951,17 +7953,17 @@ void SyncDelayClass::ProcessNetworkSync()
         case 38: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e10b*/
           if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e110*/
-            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] & 0xFE) & 0xFF); /*0x55e112*/
+            v2 = g_MissionQueueFrame.waypoints[490] & 0xFE; /*0x55e112*/
           else
-            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] | 1) & 0xFF); /*0x55e120*/
+            v2 = g_MissionQueueFrame.waypoints[490] | 1; /*0x55e120*/
           *(unsigned int *)&g_MissionQueueFrame.waypoints[490] = v2; /*0x55e116*/
           break;
         case 40: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e139*/
           if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e13e*/
-            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] & 0xEF) & 0xFF); /*0x55e140*/
+            v2 = g_MissionQueueFrame.waypoints[490] & 0xEF; /*0x55e140*/
           else
-            (v2) = ((v2) & ~0xFF) | ((unsigned int)(g_MissionQueueFrame.waypoints[490] | 0x10) & 0xFF); /*0x55e14e*/
+            v2 = g_MissionQueueFrame.waypoints[490] | 0x10; /*0x55e14e*/
           *(unsigned int *)&g_MissionQueueFrame.waypoints[490] = v2; /*0x55e144*/
           break;
       }
@@ -7971,7 +7973,8 @@ void SyncDelayClass::ProcessNetworkSync()
       if ( (*(unsigned __int8 (__thiscall **)(int, SyncDelayClass))(*(unsigned int *)v7 + 24))(v7, *this) ) /*0x55e006*/
         (*(void (__thiscall **)(int, SyncDelayClass))(*(unsigned int *)v7 + 32))(v7, *this); /*0x55e015*/
       (v2) = ((v2) & ~0xFF) | ((unsigned int)((*(int (__thiscall **)(int, SyncDelayClass))(*(unsigned int *)v7 + 28))(v7, *this)) & 0xFF); /*0x55e020*/
-      if ( (unsigned char)v2 ) /*0x55e025*/
+      if ( v2 ) /*0x55e025*/
+
       {
         v10 = 0; /*0x55e031*/
         v2 = (unsigned __int16)EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x55e03b*/

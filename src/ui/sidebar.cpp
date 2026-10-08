@@ -113,7 +113,7 @@ bool SidebarClass::AddCameo(AbstractType a2, int32_t a3)
           goto LABEL_29; /*0x6a63fb*/
       }
   LABEL_57:
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6a65ff*/
+      result = 0; /*0x6a65ff*/
       return result; /*0x6a6602*/
     }
   LABEL_29:
@@ -198,7 +198,7 @@ bool SidebarClass::AddCameo(AbstractType a2, int32_t a3)
     result = SidebarClass_field_0x0[14](this, 0); /*0x6a65e3*/
     if ( v13 == *((unsigned int *)this + 5351) ) /*0x6a65ec*/
       g_TooltipActive = 1; /*0x6a65ee*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x6a65f8*/
+    result = 1; /*0x6a65f8*/
     return result; /*0x6a65f5*/
 }
 void SidebarClass::RepaintSidebar(int tab)

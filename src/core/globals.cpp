@@ -749,7 +749,7 @@ char CleanupCampaignResources() {
 {
   int16_t v5; // [esp+74h] [ebp-4h]
   int v0; // eax
-  (v0) = ((v0) & ~0xFF) | ((unsigned int)(DataGlobal_87F7E8[538500]) & 0xFF);
+  v0 = DataGlobal_87F7E8[538500];
   unsigned char v4[108]; // [esp+8h] [ebp-70h] BYREF
   v4[0] = 0;
   if ( (DataGlobal_87F7E8[538500] & 2) == 0 )
@@ -765,7 +765,7 @@ char CleanupCampaignResources() {
       v1 += TimerGetTicks() - DataGlobal_87F7E8[7892];
     while ( 1 )
     {
-      (v0) = ((v0) & ~0xFF) | ((unsigned int)(DataGlobal_87F7E8[7892]) & 0xFF);
+      v0 = DataGlobal_87F7E8[7892];
       int v2 = DataGlobal_87F7E8[7894];
       if ( DataGlobal_87F7E8[7892] != -1 )
       {

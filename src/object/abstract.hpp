@@ -197,7 +197,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x410170
     void* InitVtables(int a1);  // 0x4101C0
     int COMStub_AddRef();  // 0x410300
-    int COMStub_Release();  // 0x410310
+    int COMStub_Release(int a1);  // 0x410310 (IDA: int __stdcall(int), 76 xref)
     int ProcessPower();  // 0x410410
     int IsClean();  // 0x410450
     int* GetCoordsEx(int* outBuffer, AbstractClass* source);  // 0x4104F0

@@ -337,7 +337,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   unsigned int v16[2]; // [esp+14h] [ebp-8h] BYREF
   int v17; // [esp+28h] [ebp+Ch]
 
-  (v4) = ((v4) & ~0xFF) | ((unsigned int)(unk) & 0xFF); /*0x480350*/
+  v4 = unk; /*0x480350*/
   if ( unk ) /*0x48035f*/
     return v4; /*0x48035f*/
   if ( !this->ptr_34 ) /*0x480365*/
@@ -1146,7 +1146,7 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
                     v40 = 1000; /*0x4d20eb*/
                     v77 += DSurface_ViewBounds.field_0 - (unsigned int)vtable0; /*0x4d20f0*/
                     v41 = v39 + v41; /*0x4d20f8*/
-                    (v39) = ((v39) & ~0xFF) | ((unsigned int)(v18[861]) & 0xFF); /*0x4d20fa*/
+                    v39 = v18[861]; /*0x4d20fa*/
                     v41 = v41; /*0x4d2102*/
                     if ( !(unsigned char)v39 ) /*0x4d2106*/
                     {
@@ -1600,8 +1600,9 @@ int TacticalClass::RenderCells()
         g_MissionQueueFrame.altNextScenario[46] = 0; /*0x5503a0*/
         result = atexit(nullsub_21); /*0x5503a6*/
       }
-      (result) = ((result) & ~0xFF) | ((unsigned int)(IDA_BYTE1(_EBX->field50)) & 0xFF); /*0x5503ae*/
-      if ( !(unsigned char)result )
+      result = IDA_BYTE1(_EBX->field50); /*0x5503ae*/
+      if ( !result )
+
       {
         field24 = _EBX->field24; /*0x5503bc*/
         _EDI = &_EBX->field30; /*0x5503bf*/
@@ -1628,7 +1629,7 @@ int TacticalClass::RenderCells()
         v9 = ZCoordToScreenY(_EBX->field38); /*0x550448*/
         v41 = 0; /*0x550452*/
         v10 = -2 - v9; /*0x550457*/
-        (v9) = ((v9) & ~0xFF) | ((unsigned int)(_EBX->field44) & 0xFF); /*0x550459*/
+        v9 = _EBX->field44; /*0x550459*/
         v42 = 0; /*0x550463*/
         field30 = 0; /*0x550468*/
         v40 = 1; /*0x550470*/
@@ -2201,7 +2202,7 @@ AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
   int v23; // [esp+Ch] [ebp-10h]
   int v24; // [esp+14h] [ebp-8h]
 
-  (v1) = ((v1) & ~0xFF) | ((unsigned int)(g_NetworkEventPending) & 0xFF); /*0x6d2540*/
+  v1 = g_NetworkEventPending; /*0x6d2540*/
   v2 = 0; /*0x6d2549*/
   if ( (g_NetworkEventPending & 2) != 0 ) /*0x6d2550*/
     return v1; /*0x6d2550*/
@@ -2276,7 +2277,7 @@ AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
     goto LABEL_20; /*0x6d26b6*/
   }
   LABEL_21:
-  (v1) = ((v1) & ~0xFF) | ((unsigned int)((unsigned char)g_CurrentFrame) & 0xFF); /*0x6d26ed*/
+  v1 = (unsigned char)g_CurrentFrame; /*0x6d26ed*/
   this->q0A8 = g_CurrentFrame; /*0x6d26f3*/
   if ( this->u32_D74 != this->u32_D64 /*0x6d2715*/
     || (v1 = this->u32_D68, this->u32_D78 != v1) )
@@ -2300,7 +2301,7 @@ AbstractClass * * TacticalClass::ScrollViewport(int dx, int dy)
       this->u32_D74 = v19; /*0x6d2764*/
       this->u32_D68 = v20; /*0x6d276a*/
       this->u32_D78 = v20; /*0x6d2770*/
-      (v1) = ((v1) & ~0xFF) | ((unsigned int)(TacticalClass::CalcViewportCells(this)) & 0xFF); /*0x6d2778*/
+      v1 = TacticalClass::CalcViewportCells(this); /*0x6d2778*/
       this->u8_D7D = 1; /*0x6d277d*/
     }
   }
@@ -2347,7 +2348,7 @@ int TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
     || screen_y < -32
     || screen_y > *(unsigned int *)&DSurface_ViewBounds.__pad_8[4] + 32 )
   {
-    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6d9f75*/
+    result = 0; /*0x6d9f75*/
   }
   else
   {
@@ -2358,7 +2359,7 @@ int TacticalClass::AddToDrawQueue(ObjectClass* obj, int screen_x, int screen_y)
     (&dword_B0CED0)[v6] = screen_y + v5; /*0x6d9f5b*/
     result = this->floats[0] + 1; /*0x6d9f68*/
     this->floats[0] = result; /*0x6d9f69*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x6d9f6f*/
+    result = 1; /*0x6d9f6f*/
   }
   return result; /*0x6d9f4f*/
 }
@@ -2391,12 +2392,12 @@ int TacticalClass::DecrementCounter(uint32_t delta)
   this->field38 = result; /*0x631eeb*/
   if ( result > 0 ) /*0x631ef0*/
   {
-    (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x631efe*/
+    result = 0; /*0x631efe*/
   }
   else
   {
     this->field38 = 0; /*0x631ef2*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x631ef9*/
+    result = 1; /*0x631ef9*/
   }
   return result; /*0x631efb*/
 }
