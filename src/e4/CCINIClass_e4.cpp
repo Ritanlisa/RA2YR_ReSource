@@ -167,7 +167,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   }
   if ( Base64Data <= 0 ) /*0x47426e*/
     goto LABEL_7; /*0x47426e*/
-  INIClass::ClearSection((INIClass *)((int *)this->INIClass), (int)g_INI_Key_Digest, 0); /*0x47427d*/
+  INIClass::ClearSection((gamemd::INIClass*)((int *)this->INIClass), (int)g_INI_Key_Digest, 0); /*0x47427d*/
   memset( (void *)(&v12.SHA1_field_0x04), 0, 9); /*0x474286*/
   v18 = 0; /*0x474295*/
   v19 = 0; /*0x474299*/
@@ -177,7 +177,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v16 = 271733878; /*0x4742b5*/
   v17 = -1009589776; /*0x4742bd*/
   *(unsigned int *)v12.__pad_0 = (unsigned int)(&vt_SHAPipe); /*0x4742c5*/
-  ((INIClass *)this)->WriteToString( (int)&v12); /*0x4742cd*/
+  ((gamemd::INIClass*)this)->WriteToString( (int)&v12); /*0x4742cd*/
   ((SHA1 *)(&v12))->ComputeThunk((char *)(this->__pad_41)); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   ((::gamemd::Pipe*)(::gamemd::Pipe *)&v12)->Dtor(); /*0x4742e7*/
@@ -279,7 +279,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   {
     v9 = (unsigned int *)*((unsigned int *)dword_A8B204 + j); /*0x41f50a*/
     if ( v9[39] == a2 ) /*0x41f513*/
-      (*(void (**)(unsigned int *, INIClass *))(*v9 + 104))( (unsigned int *)(v9), (INIClass *)(a1)); /*0x41f518*/
+      (*(void (**)(unsigned int *, INIClass *))(*v9 + 104))( (unsigned int *)(v9), (gamemd::INIClass*)(a1)); /*0x41f518*/
     result = dword_A8B210; /*0x41f51b*/
   }
   if ( !a2 ) /*0x41f527*/
@@ -312,13 +312,13 @@ IUnknown * CCINIClass::WriteHouses()
   char Source[32]; // [esp+Ch] [ebp-40h] BYREF
   char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
 
-  INIClass::ClearSection((INIClass *)((int)this), (int)g_INI_Key_Houses, 0); /*0x50116f*/
+  INIClass::ClearSection((gamemd::INIClass*)((int)this), (int)g_INI_Key_Houses, 0); /*0x50116f*/
   result = dword_A80238; /*0x501174*/
   for ( i = 0; i < dword_A80238; ++i ) /*0x50117d*/
   {
     strcpy( (char *)(Source), (const char *)(*(unsigned int *)((unsigned int *)dword_A8022C)[4 * i] + 90100)); /*0x5011ac*/
     sprintf(Buffer,(const char *const )(g_Str_Trace), i); /*0x5011ba*/
-    ((INIClass *)this)->SetString( (unsigned __int8 *)((uint8_t *)g_INI_Key_Houses), (char *)(Buffer), (char *)(Source)); /*0x5011d3*/
+    ((gamemd::INIClass*)this)->SetString( (unsigned __int8 *)((uint8_t *)g_INI_Key_Houses), (char *)(Buffer), (char *)(Source)); /*0x5011d3*/
     result = dword_A80238; /*0x5011d8*/
   }
   v4 = 0; /*0x5011e3*/

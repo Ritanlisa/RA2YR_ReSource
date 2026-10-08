@@ -385,7 +385,7 @@ LABEL_35:
     LOBYTE(v12) = (gamemd::Process)(0); /*0x5f2a88*/
     Process(v12, v15); /*0x5f2a8a*/
     memset( (void *)(Source), 0, sizeof(Source)); /*0x5f2a9c*/
-v11 = (*(int (__thiscall **)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2ab1*/ g_ClipboardBuffer, v11, (char *)(Source), 81, 15);
+v11 = (*(int (__thiscall **)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( (HWND)(/*0x5f2ab1*/ g_ClipboardBuffer), v11, (char *)(Source), 81, 15);
 
 
 
@@ -1611,7 +1611,7 @@ LABEL_71:
   if ( (uint8_t)Dialog::UpdateControlState( (unsigned int *)(&hWnd), (unsigned int *)(&v31)) && v31 ) /*0x6102d2*/
     v28 = *(LRESULT (**)(HWND, UINT, WPARAM, LPARAM))v31; /*0x6102d4*/
   LOBYTE(lParam[0]) = 0; /*0x6102ee*/
-  CallWindowProcA(v28, hWnd, 0xDu, 0x800u, (LPARAM)lParam); /*0x6102f5*/
+  CallWindowProcA((WNDPROC)(v28), hWnd, 0xDu, 0x800u, (LPARAM)lParam); /*0x6102f5*/
   if ( LOBYTE(lParam[0]) ) /*0x610302*/
   {
     String = (wchar_t *)((unsigned int)GetStringCSF( (wchar_t *)(lParam), 0, (const char *)(g_Str_File_ownrdraw_cpp), 7392)); /*0x61031c*/
@@ -1646,7 +1646,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   int64_t v14; // [esp+10h] [ebp-208h] BYREF
   unsigned char v15[512]; // [esp+18h] [ebp-200h] BYREF
 
-  EnumChildWindows((HWND)this, DestroyDialogChildWindow, 0); /*0x610374*/
+  EnumChildWindows((HWND)this, (WNDENUMPROC)(DestroyDialogChildWindow), 0); /*0x610374*/
   hWnd = (HWND)this; /*0x610389*/
   ((DynamicArray *)((DynamicArray *)&g_DialogPool.__pad_208[128]))->Resize( (int *)&hWnd, (unsigned int *)(&v14)); /*0x61038d*/
   memset( (void *)(v15), 0, sizeof(v15)); /*0x6103a3*/
@@ -2077,11 +2077,11 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
       v66 = v57; /*0x613f5d*/
       v65 = top; /*0x613f6e*/
       v67 = v56; /*0x613f74*/
-      Surface::BlitTransparent( /*0x613fb5*/
-        &v64,
-        DSurface_Alternate,
+      Surface::BlitTransparent( (int *)(/*0x613fb5*/
+        &v64),
+        (gamemd::ObjectClass *)(DSurface_Alternate),
         v55,
-        (255 >> g_BitShift_Green_0 << g_BitShift_Red) | (0xFFu >> g_BitMask_Red << g_BitShift_Blue));
+        (gamemd::ObjectClass *)((255 >> g_BitShift_Green_0 << g_BitShift_Red) | (0xFFu >> g_BitMask_Red << g_BitShift_Blue)));
     }
     sprintf(Buffer, "tab_tr%c.pcx", v44); /*0x613fc8*/
     v58 = HashTable::Find( (void *)(g_DialogHashTable), (const char *)(Buffer), 0); /*0x613fdf*/
@@ -2095,9 +2095,9 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
       v60 = v60; /*0x61403b*/
       Surface::BlitTransparent( /*0x614082*/
         v86,
-        DSurface_Alternate,
+        (gamemd::ObjectClass *)(DSurface_Alternate),
         v58,
-        (255 >> g_BitShift_Green_0 << g_BitShift_Red) | (0xFFu >> g_BitMask_Red << g_BitShift_Blue));
+        (gamemd::ObjectClass *)((255 >> g_BitShift_Green_0 << g_BitShift_Red) | (0xFFu >> g_BitMask_Red << g_BitShift_Blue)));
     }
     if ( v89[3] ) /*0x614090*/
       strcpy((char *)word_AC1BA0, (const char *)v89[3]); /*0x6140a9*/
@@ -2445,7 +2445,7 @@ LABEL_43:
         v30 = 0; /*0x62226c*/
         v31 = 0; /*0x622270*/
         if ( v24 && v23 ) /*0x62227c*/
-          DrawToSurfaceSHP( v7, v24, (ConvertClass *)(v23), 0, (ConvertClass *)(&v30), (ConvertClass *)(&v39), 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6222a8*/
+          DrawToSurfaceSHP( v7, v24, (ConvertClass *)(v23), 0, (ConvertClass *)(&v30), (ConvertClass *)(&v39), (gamemd::ConvertClass *)(1024), 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x6222a8*/
       }
       else
       {
@@ -2523,8 +2523,8 @@ int Dialog::Destroy()
     {
       hWnd = 0; /*0x6227de*/
       dword_B72F48 = 0; /*0x6227e5*/
-      SetForegroundWindow(g_hWnd); /*0x6227eb*/
-      return (int)SetFocus(g_hWnd); /*0x6227f7*/
+      SetForegroundWindow((HWND)(g_hWnd)); /*0x6227eb*/
+      return (int)SetFocus((HWND)(g_hWnd)); /*0x6227f7*/
     }
     else
     {

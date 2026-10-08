@@ -307,8 +307,8 @@ void * sub_730F30()
   result = (wchar_t *)((unsigned int *)(dword_A8B538))[0]; /*0x730f30*/
   if ( !((unsigned int *)(dword_A8B538))[0] ) /*0x730f3a*/
   {
-    result = *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730f51*/
-    if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1408) < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x730f5a*/
+    result = (wchar_t **)dword_A8ED84; /*0x730f51*/
+    if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1408) < (int *)dword_A8ED84 ) /*0x730f5a*/
     {
       v2 = (char *)(((EventClass *)v3)->AddEvent( (int)dword_A83D4C->Object_field_0x30, 0x2Du)); /*0x730f6c*/
       if ( (int)dword_A802C8< 128 ) /*0x730f7b*/
@@ -318,8 +318,8 @@ void * sub_730F30()
         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x730fc3*/
         ++dword_A802C8; /*0x730fc9*/
       }
-      dword_84555C = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730fd3*/
-      return *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730fce*/
+      dword_84555C = dword_A8ED84; /*0x730fd3*/
+      return (wchar_t **)dword_A8ED84; /*0x730fce*/
     }
   }
   return result; /*0x730fd8*/
@@ -1897,7 +1897,7 @@ unsigned short sub_734120()
     v5 = ((int16_t)v1 << 8) + 128; /*0x73418c*/
     v6 = (IDA_SHIWORD(v4) << 8) + 128; /*0x73419c*/
     v7 = 0; /*0x7341a0*/
-    v3 = (*((char *)((Coord *)(&dword_87F7E8))->To_Cell(&v5) + 283) << 8) / 2; /*0x7341c6*/
+    v3 = (*((char *)((Coord *)(&dword_87F7E8))->To_Cell((unsigned int *)&v5) + 283) << 8) / 2; /*0x7341c6*/
     v6 -= v3; /*0x7341cc*/
     v5 -= v3; /*0x7341df*/
     ((Tactical *)((int)g_TacticalClass_Instance))->SetTacticalPosition( (int *)(&v5)); /*0x7341e3*/

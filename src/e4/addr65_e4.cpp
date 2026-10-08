@@ -969,7 +969,7 @@ int sub_6586D0(ObjectClass *a1)
     ((Dialog*)Dialog)->Destroy(); /*0x658733*/
   }
   ((Timer*)(*(Timer **)&((unsigned int *)(&dbl_87F648))[296]))->PumpMessages(); /*0x658740*/
-  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3); /*0x658758*/
+  *((unsigned int *)((char *)&stru_A8EB00 + 440)) = IDA_BYTE2(((gamemd::AbstractClass*)dword_A8B230)[381].vtable3); /*0x658758*/
   return ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x658763*/
 }
 }
@@ -1441,7 +1441,7 @@ unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
   if ( a3 && a2 ) /*0x65d53c*/
   {
     v6 = 0; /*0x65d54b*/
-    if ( FileStraw_Destru::Release((int)v10, (int)&v9, 1) == 1 ) /*0x65d556*/
+    if ( FileStraw_Destru::Release((void *)v10, (int)&v9, 1) == 1 ) /*0x65d556*/
     {
       v7 = (char *)a2; /*0x65d55a*/
       while ( v9 != 10 ) /*0x65d564*/
@@ -1592,7 +1592,7 @@ bool DeployScriptActionPlane(int a1, int edx0, void * a2, void * a3)
   v12 = a2  !=  (void *)(-1); /*0x65d9ac*/
   v12 = v12; /*0x65d9b1*/
   if ( v12 ) /*0x65d9b5*/
- Waypoint_Location = (int *)(ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (int *)(v48), *(int *)v48)); /*0x65d9c7*/
+ Waypoint_Location = (int *)(ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (unsigned int *)(v48), *(int *)v48)); /*0x65d9c7*/
   else
     Waypoint_Location = (int *)(((TechnoClass *)((TechnoClass *)v3))->GetWaypointCoords((unsigned int *)(v48))); /*0x65d9d5*/
   v14 = *Waypoint_Location; /*0x65d9de*/
@@ -1848,8 +1848,8 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
     v11 = *v5; /*0x65e0e5*/
     aP1_4 = 0; /*0x65e0ee*/
     v12 = v5->vt_slot_132(); /*0x65e0fe*/
-    v10 = *LayerClass::Pathfinding_Find( /*0x65e122*/
-             &dword_87F7E8,
+    v10 = *LayerClass::Pathfinding_Find( (gamemd::Type *)(/*0x65e122*/
+             &dword_87F7E8),
              (int)&v51,
              &a2,
              (int16_t *)&v51,
@@ -2527,7 +2527,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
       if ( v9[413] ) /*0x65f025*/
       {
         Checked = (int (***)(unsigned int, void *, int *))((Stream *)v9 + 413)->GetChecked(); /*0x65f02d*/
-        v26 = (**Checked)(Checked, &unk_819088, v67); /*0x65f041*/
+        v26 = (**Checked)((unsigned int)(Checked), &unk_819088, v67); /*0x65f041*/
         if ( v26 >= 0 ) /*0x65f045*/
         {
           v27 = v67[0]; /*0x65f05a*/
@@ -2554,7 +2554,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
       if ( ppv ) /*0x65f0d1*/
       {
         v30 = (int (***)(unsigned int, void *, int *))((Stream *)&ppv)->GetChecked(); /*0x65f0d7*/
-        v31 = (**v30)(v30, &unk_819088, &v57); /*0x65f0eb*/
+        v31 = (**v30)((unsigned int)(v30), &unk_819088, &v57); /*0x65f0eb*/
         if ( v31 >= 0 ) /*0x65f0ef*/
         {
           v57 = v57; /*0x65f0fe*/

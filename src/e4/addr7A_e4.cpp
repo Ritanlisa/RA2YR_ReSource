@@ -122,7 +122,7 @@ int CollectWOLConnectionTokens(void *a1)
       if ( v3 >= 0 && v2 < result ) /*0x7a0476*/
         qmemcpy( (void *)(v17), (char *)dword_B77908+ v3, sizeof(v17)); /*0x7a048a*/
       if ( (v17[0] & 1) != 0 /*0x7a04ba*/
-        || (v4 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(), !_strcmpi(&v17[36], v4)) )
+        || (v4 = ((String *)((String *)&g_WindowManager.__pad_EC[684]))->GetOrEmpty(), !_strcmpi((const char *)(&v17[36]), v4)) )
       {
         Debug::Log("%s is channel operator, no ping request\n"); /*0x7a049d G57w11: IDA push seq @ 0x7a049d +1 reg-vararg(s) omitted*/
       }
@@ -658,7 +658,7 @@ Coord * * UpdateWOLLobbyPings()
           {
             if ( v2 >= dword_B76970) /*0x7a13c9*/
               v2 = dword_B76970- 1; /*0x7a13cb*/
-            Object::DtorWithDelete((Object *)(dword_B76978+ 4 * v2), 0); /*0x7a13d8*/
+            Object::DtorWithDelete((void **)(dword_B76978+ 4 * v2), 0); /*0x7a13d8*/
             memcpy( /*0x7a1401*/
               (void *)(dword_B76978 + 4 * v2),
               (const void *)(dword_B76978 + 4 * (v2 + 1)),
@@ -897,7 +897,7 @@ AbstractClass * * WOL_MatchGame()
   v1 = 0; /*0x7a1bb9*/
   g_NetworkLobbyState = 0; /*0x7a1bbc*/
   Network::Init(); /*0x7a1bc2*/
-  strncpy( (char *)(Destination),&unk_B73714, 0x100u); /*0x7a1bd9*/
+  strncpy( (char *)(Destination),(const char *)(&unk_B73714), 0x100u); /*0x7a1bd9*/
   strtok(Destination,(const char *)( asc_8318B8)); /*0x7a1beb*/
   v2 = strtok(0, (char *)&::Delimiter); /*0x7a1bfb*/
   *(unsigned int *)&v28[12] = (unsigned int)v2; /*0x7a1c03*/
@@ -1121,7 +1121,7 @@ int BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
   if ( a2 == 272 && a4 ) /*0x7a2a09*/
     SetWindowLongA(hWnd, 8, *(unsigned int *)(a4 + 4)); /*0x7a2a12*/
   *(unsigned int *)v19.__pad_0 = a4; /*0x7a2a1f*/
-  result = BaseDialogProc( (SkirmishDialog *)(hWnd), a2, a3, v19); /*0x7a2a25*/
+  result = BaseDialogProc( (SkirmishDialog *)(hWnd), a2, a3, (unsigned int)(v19)); /*0x7a2a25*/
   if ( !result ) /*0x7a2a2c*/
   {
     *(unsigned int *)&v22[4] = GetWindowLongA(hWnd, 8); /*0x7a2a3e*/
@@ -1133,8 +1133,8 @@ int BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
           Dialog::Resize(  (char *)a4); /*0x7a2a91*/
           return 1; /*0x7a2aa5*/
         case 0xFu: /*0x7a2a44*/
-          Dialog::DrawBackground(  (Dialog *)hWnd); /*0x7a2a68*/
-          Dialog::StopBink(  (Dialog *)hWnd); /*0x7a2a6f*/
+          Dialog::DrawBackground(  (gamemd::Dialog*)hWnd); /*0x7a2a68*/
+          Dialog::StopBink(  (gamemd::Dialog*)hWnd); /*0x7a2a6f*/
           ValidateRect(hWnd, 0); /*0x7a2a77*/
           return 1; /*0x7a2a8c*/
         case 0x14u: /*0x7a2a44*/
@@ -1333,7 +1333,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
   }
   while ( v5 ); /*0x7a4c49*/
   v3 = v3; /*0x7a4c4b*/
-  v6 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x7a4c54*/
+  v6 = (HWND)((gamemd::Dialog*)((void *)0xC4))->FindByHandle(); /*0x7a4c54*/
   if ( v6 ) /*0x7a4c5b*/
   {
     dword_B77DC8 &= ~0x10u; /*0x7a4c66*/
@@ -1607,7 +1607,7 @@ AbstractClass * * sub_7AF970(int a2)
     ((CCFileClass *)&v12)->Destruct(); /*0x7afa5e*/
   }
   v11 = v8; /*0x7afa76*/
-  RunDialog(0x125u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)&v6); /*0x7afa7a*/
+  RunDialog(0x125u, (INT_PTR (__stdcall *)(HWND,UINT,WPARAM,LPARAM))((INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc), (LPARAM)&v6); /*0x7afa7a*/
   v4 = v7; /*0x7afa7f*/
   v6 = (OwnerDrawControl)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7afa83*/
   if ( v8 ) /*0x7afa91*/
@@ -1651,7 +1651,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
   IDA_HIBYTE(v19.DeleteAndZero_field_0x04) = a1; /*0x7afba6*/
   if ( (int)g_DisplayWidth > 640 ) /*0x7afbaa*/
   {
-    StringCSF = GetStringCSF( "WOL:WDTResolutionQuery" /*w16g4 aWolWdtresoluti*/, 0, (const char *)(g_Str_File_WorldDom_cpp), 385); /*0x7afbc1*/
+    StringCSF = GetStringCSF( (wchar_t *)("WOL:WDTResolutionQuery" /*w16g4 aWolWdtresoluti*/), 0, (const char *)(g_Str_File_WorldDom_cpp), 385); /*0x7afbc1*/
     ((WideString *)((wchar_t **)&v19))->Assign( (wchar_t *)(StringCSF)); /*0x7afbcb*/
     v4 = (wchar_t *)((WideString *)(wchar_t **)&v19)->GetOrEmpty(); /*0x7afbdb*/
     if ( ShowDialogConfirm((void *)(v4), (void *)(4), (uint8_t (*)(void))Game::ProcessIdle, (void *)(1)) != 6 /*0x7afc0e*/
@@ -1684,7 +1684,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
     else
       v22 = 0; /*0x7afcce*/
   }
-  v10 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("WDTVOX.MIX" /*w16g4 aWdtvoxMix*/); /*0x7afcdb*/
+  v10 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct((char *)("WDTVOX.MIX" /*w16g4 aWdtvoxMix*/)); /*0x7afcdb*/
   v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))( (unsigned int *)(v10), 0); /*0x7afcef*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afcf1*/
   v25 = 0; /*0x7afcf5*/
@@ -1699,7 +1699,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
     else
       v21 = (unsigned int *)(0); /*0x7afd3b*/
   }
-  v13 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct("Local.MIX" /*w16g4 aLocalMix_1*/); /*0x7afd48*/
+  v13 = (unsigned int *)((CCFileClass*)((CCFileClass *)&v23.ComPtr_field_0x08))->Construct((char *)("Local.MIX" /*w16g4 aLocalMix_1*/)); /*0x7afd48*/
   v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))( (unsigned int *)(v13), 0); /*0x7afd5c*/
   v23.ComPtr_field_0x08 = (int)&CCFileClass_vftable; /*0x7afd5e*/
   v25 = 0; /*0x7afd62*/
@@ -1722,7 +1722,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
     (**v22)(1); /*0x7b004a*/
   LABEL_46:
     if ( v6 ) /*0x7b004e*/
-      (**v6)(v6, 1); /*0x7b0057*/
+      (**v6)((unsigned int)(v6), 1); /*0x7b0057*/
     if ( v21 ) /*0x7b005f*/
       (*(void (**)(unsigned int *, int))*v21)( (unsigned int *)(v21), 1); /*0x7b0065*/
     return 0; /*0x7b006a*/
@@ -1739,7 +1739,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
       case 1:
         Screen::Capture(1, 0, v14, (int)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7afdf9*/
         Team_Start_7B0490(v26); /*0x7afe05*/
-        RunDialog(0x125u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)v26); /*0x7afe1c*/
+        RunDialog(0x125u, (INT_PTR (__stdcall *)(HWND,UINT,WPARAM,LPARAM))((INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc), (LPARAM)v26); /*0x7afe1c*/
         v17 = v26[3]; /*0x7afe21*/
         Team_Start_7AF500(v26); /*0x7afe2f*/
         dword_B77F94 = (unsigned int)(char *)v17; /*0x7afe34*/
@@ -1791,7 +1791,7 @@ int StartWDTCampaign(char a1, char a2, int a3)
         v6 = *(void (****)(unsigned int, int))v19.__pad_0; /*0x7afff4*/
   LABEL_41:
         ((void (*)(void (***)(int), int))**v22)(v22, 1); /*0x7afff8*/
-        (**v6)(v6, 1); /*0x7b0009*/
+        (**v6)((unsigned int)(v6), 1); /*0x7b0009*/
         if ( v21 ) /*0x7b0011*/
           (*(void (**)(unsigned int *, int))*v21)( (unsigned int *)(v21), 1); /*0x7b0017*/
         return v16 == 6;

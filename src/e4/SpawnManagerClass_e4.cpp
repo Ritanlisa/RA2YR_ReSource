@@ -130,9 +130,9 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
   (&this->spawns)[0] = (int)&vt_DynamicVectorClass; /*0x6b6ebb*/
   *(unsigned int *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
   *(unsigned int *)this->__pad_48 = 0; /*0x6b6ec8*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b6ed4*/
+  *(unsigned int *)&this->__pad_48[8] = dword_A8ED84; /*0x6b6ed4*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
-  this->SpawnManagerClass_field_5C = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b6ee0*/
+  this->SpawnManagerClass_field_5C = dword_A8ED84; /*0x6b6ee0*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
   this->vtable1 = &vt_SpawnManagerClass; /*0x6b6ee6*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SpawnManagerClass); /*0x6b6eec*/
@@ -141,13 +141,13 @@ void* SpawnManagerClass::Constructor(void *a1, void *a2, void *a3)
   this->owner = 0; /*0x6b6f01*/
   this->spawnOwner = 0; /*0x6b6f04*/
   this->spawnType = 0; /*0x6b6f07*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b6f11*/
+  *(unsigned int *)&this->__pad_48[8] = dword_A8ED84; /*0x6b6f11*/
   this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
   this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
   this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
   this->SpawnManagerClass_field_6C = 0; /*0x6b6f1d*/
   this->SpawnManagerClass_field_70 = 0; /*0x6b6f20*/
-  this->SpawnManagerClass_field_5C = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b6f28*/
+  this->SpawnManagerClass_field_5C = dword_A8ED84; /*0x6b6f28*/
   this->SpawnManagerClass_field_60 = v4; /*0x6b6f2f*/
   this->SpawnManagerClass_field_64 = 0; /*0x6b6f32*/
   if ( dword_B0B890 < dword_B0B888 /*0x6b6f69*/
@@ -190,7 +190,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   }
   v3 = *((unsigned int *)this + 16); /*0x6b7063*/
   (*(void (**)(void *))(*((unsigned int *)this + 14) + 12))((unsigned int *)this + 14); /*0x6b7066*/
-  (*(void ((gamemd::TaskManager *)(**))(TaskManager *, int, unsigned int))(*((unsigned int *)this + 14) + 8))((unsigned int *)this + 14, v3, 0); /*0x6b7070*/
+  (*(void (__thiscall **)(TaskManager *, int, unsigned int))(*((unsigned int *)this + 14) + 8))((unsigned int *)this + 14, v3, 0); /*0x6b7070*/
   v6 = (gamemd::TaskManager *)(this); /*0x6b7083*/
   v4 = (*(int (**)(int *, TaskManager **))(SpawnManagerClass_Array + 16))( (int *)(&SpawnManagerClass_Array), (TaskManager **)(&v6)); /*0x6b7087*/
   if ( v4 != -1 && v4 < dword_B0B890 && v4 < --dword_B0B890 ) /*0x6b70a3*/
@@ -325,20 +325,20 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   SpawnManagerClass_field_64 = (int)(this->SpawnManagerClass_field_64); /*0x6b7e2e*/
   if ( SpawnManagerClass_field_5C != -1 ) /*0x6b7e34*/
   {
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - SpawnManagerClass_field_5C >= SpawnManagerClass_field_64 ) /*0x6b7e40*/
+    if ( dword_A8ED84 - SpawnManagerClass_field_5C >= SpawnManagerClass_field_64 ) /*0x6b7e40*/
       SpawnManagerClass_field_64 = 0; /*0x6b7e46*/
     else
-      SpawnManagerClass_field_64 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - SpawnManagerClass_field_5C; /*0x6b7e42*/
+      SpawnManagerClass_field_64 -= dword_A8ED84 - SpawnManagerClass_field_5C; /*0x6b7e42*/
   }
   Power::TimerProcess(SpawnManagerClass_field_64); /*0x6b7e4b*/
   v9 = *(unsigned int *)&this->__pad_48[8]; /*0x6b7e50*/
   SpawnManagerClass_field_58 = this->SpawnManagerClass_field_58; /*0x6b7e53*/
   if ( v9 != -1 ) /*0x6b7e59*/
   {
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v9 >= SpawnManagerClass_field_58 ) /*0x6b7e65*/
+    if ( dword_A8ED84 - v9 >= SpawnManagerClass_field_58 ) /*0x6b7e65*/
       SpawnManagerClass_field_58 = 0; /*0x6b7e6b*/
     else
-      SpawnManagerClass_field_58 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v9; /*0x6b7e67*/
+      SpawnManagerClass_field_58 -= dword_A8ED84 - v9; /*0x6b7e67*/
   }
   Power::TimerProcess(SpawnManagerClass_field_58); /*0x6b7e70*/
   Power::TimerProcess(*(unsigned int *)this->__pad_48); /*0x6b7e7b*/
@@ -390,7 +390,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
     {
       AbstractClass::InitVtables(((AbstractClass *)v2), (int)&aP1); /*0x6b7f3b*/
       ((SpawnManagerClass *)v2->spawns)->Constructor_6B83A0( 0, 0); /*0x6b7f45*/
-      *(unsigned int *)&v2->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b7f51*/
+      *(unsigned int *)&v2->__pad_48[8] = dword_A8ED84; /*0x6b7f51*/
       v2->SpawnManagerClass_field_58 = 0; /*0x6b7f57*/
       ((Timer *)((Timer *)&v2->SpawnManagerClass_field_5C))->Start(0); /*0x6b7f5a*/
       v2->vtable1 = &vt_SpawnManagerClass; /*0x6b7f5f*/
@@ -435,7 +435,7 @@ LABEL_20:
           v8 = (unsigned int)__2_YAPAXI_Z(0x18u); /*0x6b7fc8*/
           if ( v8 ) /*0x6b7fd2*/
           {
-            v9 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b7fd4*/
+            v9 = dword_A8ED84; /*0x6b7fd4*/
             *(unsigned int *)(v8 + 16) = 0; /*0x6b7fda*/
             *(unsigned int *)(v8 + 8) = v9; /*0x6b7fdd*/
             v5 = v8; /*0x6b7fe0*/

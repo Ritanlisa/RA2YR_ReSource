@@ -211,8 +211,8 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
       *(unsigned char *)(_EBX + 176) = Destination.UnitTypeVector_field_0x18; /*0x511927*/
       v4 = this; /*0x511928*/
     }
-    *(unsigned int *)(_EBX + 192) = BuildingTypeClass::FindAnimByName( /*0x511942*/
-                                (BuildingTypeClass *)v4,
+    *(unsigned int *)(_EBX + 192) = BuildingTypeClass::FindAnimByName( (gamemd::INIClass *)(/*0x511942*/
+                                (BuildingTypeClass *)v4),
                                 (unsigned __int8 *)(_EBX + 36),
                                 (unsigned __int8 *)"Color", /*G57w19k3: disasm 0x511935 push offset aColor(0x81B138)="Color"*/
                                 *(unsigned int *)(_EBX + 192));

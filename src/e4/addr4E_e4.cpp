@@ -4760,7 +4760,7 @@ void sub_4E7FF0()
 namespace gamemd {
 int sub_4E8030()
 {
-  SessionClass::SessionClass((char *)dword_A8B238); /*0x4e8035*/
+  SessionClass::Constructor((char *)dword_A8B238); /*0x4e8035*/
   return atexit((void (__cdecl *)(void))(unknown_libname_17)); /*0x4e8045*/
 }
 } // namespace gamemd
@@ -4769,7 +4769,7 @@ int sub_4E8030()
 namespace gamemd {
 int unknown_libname_17()
 {
-  ObjectManager::CleanupArrays((int)dword_A8B238); /*0x4e8055*/
+  ObjectManager::CleanupArrays((void *)dword_A8B238); /*0x4e8055*/
 }
 } // namespace gamemd
 

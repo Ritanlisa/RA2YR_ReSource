@@ -59,7 +59,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
     if ( this->nextObject ) /*0x431bc8*/
       return !a2 && !a3; /*0x431bdb*/
     if ( (*((unsigned __int8 (**)(ObjectClass *, unsigned int))this->AbstractClass + 5))(this, 0) ) /*0x431bef*/
-      this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->AbstractClass + 11))((ObjectClass *)(this)); /*0x431bfd*/
+      this->ambientSoundController[3] = (*((int (**)(ObjectClass *))this->AbstractClass + 11))((gamemd::ObjectClass *)(this)); /*0x431bfd*/
     else
       this->ambientSoundController[3] = 0; /*0x431c02*/
     v5 = a2; /*0x431c05*/
@@ -69,7 +69,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       {
         v5 = 1024; /*0x431c1b*/
         if ( a3 ) /*0x431c20*/
-          (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 22, 0, 0); /*0x431c2a*/
+          (*((void (__thiscall **)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 22, 0, 0); /*0x431c2a*/
       }
       this->attachedTag = (TagClass *)v5; /*0x431c2f*/
       if ( v5 ) /*0x431c32*/
@@ -90,7 +90,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       this->nextObject = (ObjectClass *)RA2_OPNEW((size_t)this->attachedTag); /*0x431c61*/
     if ( !this->nextObject ) /*0x431c67*/
     {
-      (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 12, 0, 0); /*0x431d7d*/
+      (*((void (__thiscall **)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 12, 0, 0); /*0x431d7d*/
       return 0; /*0x431d7d*/
     }
     v6 = this->ambientSoundController[3]; /*0x431c6d*/
@@ -121,7 +121,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
       }
       else
       {
-        v7 = (BombClass *)vtable0[10](this, 0); /*0x431cbe*/
+        v7 = (BombClass *)vtable0[10]((gamemd::ObjectClass *)(this), 0); /*0x431cbe*/
         if ( this->M20 == -1 ) /*0x431cc5*/
           this->customSound_controller[0] = (int)v7; /*0x431cd6*/
         else
@@ -134,16 +134,16 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
         else
         {
           if ( v7 ) /*0x431ce5*/
-            (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, unsigned int, unsigned int))this->AbstractClass + 10))(this, 0, 0); /*0x431ced*/
+            (*((void (__thiscall **)(ObjectClass *, unsigned int, unsigned int))this->AbstractClass + 10))(this, 0, 0); /*0x431ced*/
           this->attachedBomb = v7; /*0x431cf0*/
           this->ambientSoundController[4] = (int)v7; /*0x431cf3*/
         }
       }
-if ( (TagClass *)(*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, ObjectClass *, TagClass *))this->AbstractClass + 9))( /*0x431d30*/ this, (ObjectClass *)(this->nextObject), (TagClass *)(attachedTag)) != attachedTag )
+if ( (TagClass *)(*((int (__thiscall **)(ObjectClass *, ObjectClass *, TagClass *))this->AbstractClass + 9))( /*0x431d30*/ this, (ObjectClass *)(this->nextObject), (TagClass *)(attachedTag)) != attachedTag )
 
 
 
-        (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
+        (*((void (__thiscall **)(ObjectClass *, int, unsigned int, unsigned int))this->AbstractClass + 16))(this, 5, 0, 0); /*0x431d3a*/
       if ( v11 ) /*0x431d41*/
       {
         (*((void (**)(ObjectClass *))this->AbstractClass + 13))((ObjectClass *)(this)); /*0x431d47*/
@@ -151,7 +151,7 @@ if ( (TagClass *)(*((int ((gamemd::ObjectClass *)(**))(ObjectClass *, ObjectClas
         IDA_BYTE1(this->owningHouseIndex) = 1; /*0x431d4e*/
         return 1; /*0x431d58*/
       }
-      (*((void ((gamemd::ObjectClass *)(**))(ObjectClass *, BombClass *, unsigned int))this->AbstractClass + 10))( this, (BombClass *)(v7), 0); /*0x431d61*/
+      (*((void (__thiscall **)(ObjectClass *, BombClass *, unsigned int))this->AbstractClass + 10))( this, (BombClass *)(v7), 0); /*0x431d61*/
       IDA_HIBYTE(this->occupant) = 1; /*0x431d64*/
     }
     IDA_BYTE1(this->owningHouseIndex) = 1; /*0x431d68*/

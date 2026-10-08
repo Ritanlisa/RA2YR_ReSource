@@ -282,7 +282,7 @@ LABEL_60:
     SendMessageA( (HWND)(a4), 0xF1u, 0, 0); /*0x658261*/
   else
     SendMessageA( (HWND)(a4), 0xF1u, 1u, 0); /*0x65824c*/
-  SquadClass::ProcessMove(v26); /*0x658269*/
+  SquadClass::ProcessMove((void *)(v26)); /*0x658269*/
   return 0; /*0x658178*/
 
 }

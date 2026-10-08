@@ -654,9 +654,9 @@ LABEL_16:
   v17 = *(unsigned int *)(v11 + 56); /*0x6efdcc*/
   if ( v16 == -1 ) /*0x6efdd2*/
     goto LABEL_23; /*0x6efdd2*/
-  if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v16 < v17 ) /*0x6efddd*/
+  if ( dword_A8ED84 - v16 < v17 ) /*0x6efddd*/
   {
-    v17 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v16; /*0x6efddf*/
+    v17 -= dword_A8ED84 - v16; /*0x6efddf*/
 LABEL_23:
     v21 = v17; /*0x6efde1*/
     goto LABEL_24; /*0x6efde1*/

@@ -1870,7 +1870,7 @@ LABEL_23:
     v88 = 5;
   v23 = hWnd;
   *(unsigned int *)&DataGlobal_AC1CAC = 0;
-  EnumChildWindows(hWnd, EnumFunc, 0);
+  EnumChildWindows(hWnd, (WNDENUMPROC)(EnumFunc), 0);
   int v24 = v70;
   int v74 = (int)(DataGlobal_AC1CAC);
   int v75 = v70 - 1;
@@ -1878,7 +1878,7 @@ LABEL_23:
   if ( v60 )
     v81 = v83 + v84;
   *(unsigned int *)&DataGlobal_AC4894 = 0;
-  EnumChildWindows(v23, sub_60A250, 0);
+  EnumChildWindows(v23, (WNDENUMPROC)(sub_60A250), 0);
   int v67; // [esp+50h] [ebp-174h]
   IDA_HIBYTE(v67) = DataGlobal_AC4894 >= 1;
   if ( DataGlobal_AC4894 < 1 )
@@ -3727,7 +3727,7 @@ int SkirmishDialog::ResizeDialogAndEnum(void *a1, void *lParam)
 
   MoveWindow((HWND)(hWndParent), 0, 0, g_DisplayWidth, *(&g_DisplayWidth + 1), 0); /*0x60c4ba*/
   dword_AC48A8 = (int)hWndParent; /*0x60c4c0*/
-  return EnumChildWindows(hWndParent, (WNDENUMPROC)RepositionDialogControls, lParam); /*0x60c4d3*/
+  return EnumChildWindows((HWND)(hWndParent), (WNDENUMPROC)RepositionDialogControls, (LPARAM)(lParam)); /*0x60c4d3*/
 
 }
 }  // G42.18c ns repair
@@ -3754,7 +3754,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
   v16 = a2; /*0x60f4be*/
   DialogClass::RegisterWinClasses(); /*0x60f4c2*/
   dword_AC48A8 = (int)a1; /*0x60f4cd*/
-  EnumChildWindows(a1, Dialog::InitWindow, 1); /*0x60f4db*/
+  EnumChildWindows(a1, (WNDENUMPROC)(Dialog::InitWindow), 1); /*0x60f4db*/
   v14 = (int)a1; /*0x60f4e6*/
   v15 = (unsigned int *)(0); /*0x60f4ea*/
   if ( dword_AC1B04 /*0x60f514*/
@@ -3805,9 +3805,9 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
   }
   v7[8] = 1; /*0x60f5fc*/
   EnumChildWindows(a1, Dialog::SubclassEditControl, 1); /*0x60f603*/
-  EnumChildWindows(a1, Dialog::InitializeControls, v2); /*0x60f60c*/
+  EnumChildWindows(a1, (WNDENUMPROC)(Dialog::InitializeControls), v2); /*0x60f60c*/
   Dialog::InitializeControls( (HWND)(a1), (LPARAM)((LPARAM)(v2))); /*0x60f610*/
-  EnumChildWindows(a1, Dialog::InitWindow, 0); /*0x60f61c*/
+  EnumChildWindows(a1, (WNDENUMPROC)(Dialog::InitWindow), 0); /*0x60f61c*/
   v14 = (int)a1; /*0x60f625*/
   v15 = (unsigned int *)(0); /*0x60f629*/
   if ( dword_AC1B04 /*0x60f653*/

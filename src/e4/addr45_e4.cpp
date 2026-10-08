@@ -123,7 +123,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
         if ( (BuildingTypeClass *)((char *)v14 + v12 * 4) != (BuildingTypeClass *)-3916 ) /*0x4514c7*/
         {
           if ( IDA_LOBYTE((&v14->BuildingAnim)[v12 + 12]) ) /*0x4514c9*/
-            BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), _EDX, &(&v14->BuildingAnim)[v12 + 12], v11, 0, 0, 0); /*0x4514d8*/
+            BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), (int)(_EDX), &(&v14->BuildingAnim)[v12 + 12], v11, 0, 0, 0); /*0x4514d8*/
         }
       }
       v12 += 17; /*0x4514dd*/
@@ -184,7 +184,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       else
                 v24 = (unsigned char *)(*(unsigned int *)(a1 + 1312) + 68 * (unsigned int)v23 + 3916);
       if ( v25 && *(unsigned char *)v25 ) /*0x451668*/
-        BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), (int)(v23), v25, v24, v23, 0, 0); /*0x451676*/
+        BuildingClass::PlayAnim((gamemd::BuildingClass *)(a1), (int)(v23), (gamemd::AnimTypeClass *)(v25), (int)(v24), (int)(v23), 0, 0); /*0x451676*/
       return 1; /*0x45167e*/
     }
   }

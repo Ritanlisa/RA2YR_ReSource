@@ -204,7 +204,7 @@ LABEL_55:
         if ( !*(unsigned int *)(v10 + 80) || a5 || v13 ) /*0x4fa5f6*/
         {
           v16 = *(unsigned char *)(v10 + 112); /*0x4fa622*/
-          ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
+          ProductionClass::StartTimer((int)(v10), v24); /*0x4fa628*/
           if ( !v16 && *(unsigned int *)&dword_A8B238 && *((unsigned char *)this + 492) ) /*0x4fa63a*/
           {
             v17 = (*(int (**)(unsigned int))(**(unsigned int **)(v10 + 88) + 132))(*(unsigned int *)(v10 + 88)); /*0x4fa649*/
@@ -339,7 +339,7 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
   if ( dword_87F668 > 0 ) /*0x533f5f*/
   {
     while ( strcmp(/*0x533f9f*/
-              (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)), (const char *)(this)) (const char *)()) (const char *)()) (const char *)()) )
+              (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)), (const char *)(this)) )
     {
       result = (int)((gamemd::CreateTeamCommand **)(dword_87F668)); /*0x533fa1*/
       if ( ++v2 >= dword_87F668 ) /*0x533fa9*/
@@ -422,7 +422,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Block = Block; /*0x636437*/
     if ( !stru_AC4B30.__pad_EC[217] ) /*0x63643d*/
     {
-v11 = (*(int (__thiscall **)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/ &stru_AC4B30.__pad_EC[92], (void **)(&Block));
+v11 = (*(int (__thiscall **)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( (char *)(/*0x63644f*/ &stru_AC4B30.__pad_EC[92]), (void **)(&Block));
 
 
       if ( v11 != -1 ) /*0x636454*/
@@ -746,7 +746,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
   {
 LABEL_13:
-(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))( /*0x6a7241*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
+(*(void (**)(void *, DSurface *, int))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0)))( /*0x6a7241*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
 
 
 
@@ -841,7 +841,7 @@ v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))
   }
   if ( *((unsigned char *)this + 21416) )
   {
-(*(void (**)(void *, DSurface *, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))( /*0x6a71c7*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
+(*(void (**)(void *, DSurface *, int))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0)))( /*0x6a71c7*/ dword_887640, (DSurface *)(DSurface_Sidebar), 1);
 
 
 
@@ -1170,9 +1170,9 @@ LABEL_59:
                   *(unsigned int *)&aP3[144] = v15;
                   *(unsigned int *)&aP3[148] = v17;
                   DrawToSurfaceSHP(
-                    *(int *)&(&stru_87C374)[44940,
-                    *(int *)&(&stru_87C374)[13144,
-                    *(ConvertClass **)&(&stru_B05488)[10040,
+                    *(int *)&(&stru_87C374)[44940],
+                    *(int *)&(&stru_87C374)[13144],
+                    *(ConvertClass **)&(&stru_B05488)[10040],
                     0,
                     (ConvertClass *)&aP3[144],
                     (ConvertClass *)&aP3[88],
@@ -1230,7 +1230,7 @@ LABEL_59:
                   BuildLimit = (int *)HouseClass::GetBuildLimit(HouseClass_Player.field_0, v36, v69, 0);
                   if ( BuildLimit )
                   {
-                    eax73 = ((FactoryClass *)BuildLimit)->CountType( (IUnknown *)(aP1));
+                    eax73 = ((FactoryClass *)BuildLimit)->CountType( (int)(aP1));
                     v37 = (CampaignScore *)eax73;
   int v39; // ecx
                     if ( eax73 > 1

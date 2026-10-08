@@ -147,7 +147,7 @@ LABEL_22:
                 if ( v13 ) /*0x6e50a8*/
                   *(unsigned int *)(Owner + 636) = v13 - 1; /*0x6e50ab*/
                 v14 = (unsigned int *)(Owner + 664); /*0x6e50b7*/
-                *v14 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6e50c1*/
+                *v14 = dword_A8ED84; /*0x6e50c1*/
                 v14[1] = v22[2]; /*0x6e50c7*/
                 v14[2] = 60; /*0x6e50ca*/
               }
@@ -183,7 +183,7 @@ LABEL_45:
     while ( v15 ); /*0x6e50d9*/
   }
   v22[0] = (unsigned int)(a1);
-v18 = (*(int (**)(int *, unsigned int *))(dword_B0F670+ 16))( /*0x6e5147*/ &dword_B0F670, (unsigned int *)((int *)((int *)((int *)(v22)))));
+v18 = (*(int (**)(int *, unsigned int *))(dword_B0F670+ 16))( /*0x6e5147*/ &dword_B0F670, (unsigned int *)((int *)((int *)((int *)((int *)(v22))))));
 
 
   if ( v18 != -1 && v18 < dword_B0F680) /*0x6e5157*/
@@ -197,7 +197,7 @@ v18 = (*(int (**)(int *, unsigned int *))(dword_B0F670+ 16))( /*0x6e5147*/ &dwor
     }
   }
   v22[0] = (unsigned int)(a1);
-v19 = (*(int (**)(int *, unsigned int *))(&dword_B0F708 + 16))( /*0x6e5190*/ &dword_B0F708, (unsigned int *)((int *)((int *)((int *)(v22)))));
+v19 = (*(int (**)(int *, unsigned int *))(&dword_B0F708 + 16))( /*0x6e5190*/ &dword_B0F708, (unsigned int *)((int *)((int *)((int *)((int *)(v22))))));
 
 
   if ( v19 != -1 && v19 < dword_B0F718) /*0x6e51a0*/

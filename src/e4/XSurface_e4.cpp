@@ -267,7 +267,7 @@ void* XSurface::WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (*a5)(
   v9 = v35 + *a4; /*0x7babef*/
   v32 = v36 + a4[1]; /*0x7babf1*/
   v31 = v9; /*0x7bac02*/
-  result = ClipLine((int [])((int)(&v29)), (int [])((int)(&v31)), (int)(&v35)); /*0x7bac06*/
+  result = ClipLine((int [])((int)(&v29)), (int [])((int)(&v31)), (int [])((int)((&v35)))); /*0x7bac06*/
   if ( result ) /*0x7bac0d*/
   {
     v11 = v29; /*0x7bac16*/

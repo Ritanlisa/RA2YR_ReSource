@@ -591,7 +591,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2, int aP0, int aP1, int aP2, int a1,
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428eba*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_AnimTypeClass); /*0x428ec1*/
   v6 = (gamemd::AnimTypeClass *)(this); /*0x428ecf*/
-v3 = (*(int (**)(int *, AnimTypeClass **))(dword_B0F670+ 16))( /*0x428ed3*/ &dword_B0F670, (AnimTypeClass **)((int *)((int *)((int *)(&v6)))));
+v3 = (*(int (**)(int *, AnimTypeClass **))(dword_B0F670+ 16))( /*0x428ed3*/ &dword_B0F670, (AnimTypeClass **)((int *)((int *)((int *)((int *)(&v6))))));
 
 
   if ( v3 != -1 && v3 < dword_B0F680) /*0x428ee3*/
@@ -819,7 +819,7 @@ int AnimTypeClass::ReadINIString(unsigned __int8 *a3, unsigned __int8 *aP1, unsi
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
   v5 = (char *)(globalHelper_08E090(a3)); /*0x47706d*/
-  if ( ((INIClass*)((INIClass *)this))->GetString(aP1, a2, v5, Destination, 128) ) /*0x477085*/
+  if ( ((INIClass*)((INIClass *)this))->GetString((void *)(aP1), (void *)(a2), (void *)(v5), (void *)(Destination), 128) ) /*0x477085*/
     return ((AnimTypeClass *)Destination)->LookupByName(); /*0x477092*/
   else
     return (int)(a3); /*0x4770a2*/

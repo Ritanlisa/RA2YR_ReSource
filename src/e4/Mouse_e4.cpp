@@ -67,7 +67,7 @@ int Mouse::SetBounds(const void *aP1)
     }
     qmemcpy( (void *)(&unk_8A041C), (const void *)(v5), 0x1E0u); /*0x4a8c85*/
     *((unsigned int *)this + 1119) = (unsigned int)&unk_8A041C; /*0x4a8c8f*/
-    v7 = *CoordList::GetBounds(&aP1, (int16_t *)&unk_8A041C); /*0x4a8c9e*/
+    v7 = *CoordList::GetBounds((unsigned int *)(&aP1), (int16_t *)&unk_8A041C); /*0x4a8c9e*/
     v9[0] = v7 - 1; /*0x4a8ca6*/
     v9[1] = HIWORD(v7) - 1; /*0x4a8cab*/
     LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/

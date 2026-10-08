@@ -184,7 +184,7 @@ int SlaveManagerClass::Constructor()
   (&this->slaves)[0] = (int)&vt_DynamicVectorClass; /*0x6af37e*/
   *(unsigned int *)&this->__pad_48[4] = 10; /*0x6af385*/
   *(unsigned int *)this->__pad_48 = 0; /*0x6af38c*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af395*/
+  *(unsigned int *)&this->__pad_48[8] = dword_A8ED84; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
   this->vtable1 = &vt_SlaveManagerClass; /*0x6af39b*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_SlaveManagerClass); /*0x6af3a1*/
@@ -195,7 +195,7 @@ int SlaveManagerClass::Constructor()
   this->slaveOwner = 0; /*0x6af3bc*/
   this->slaveType = 0; /*0x6af3bf*/
   this->slaveCount = 0; /*0x6af3c2*/
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af3cb*/
+  *(unsigned int *)&this->__pad_48[8] = dword_A8ED84; /*0x6af3cb*/
   this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -308,7 +308,7 @@ char SlaveManagerClass::UpdateSlaves()
   SlaveManagerClass *v6; // [esp+0h] [ebp-14h]
   int v7; // [esp+Ch] [ebp-8h]
 
-  v2 = *(int **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af5f7*/
+  v2 = (int **)dword_A8ED84; /*0x6af5f7*/
   v3 = *(unsigned int *)&this->__pad_48[8]; /*0x6af5fd*/
   SlaveManagerClass_field_58 = (TechnoClass *)this->SlaveManagerClass_field_58; /*0x6af600*/
   if ( v3 == -1 ) /*0x6af606*/
@@ -318,15 +318,15 @@ LABEL_4:
       return (char)SlaveManagerClass_field_58; /*0x6af614*/
     goto LABEL_5; /*0x6af614*/
   }
-  if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v3 < (int)SlaveManagerClass_field_58 ) /*0x6af60e*/
+  if ( dword_A8ED84 - v3 < (int)SlaveManagerClass_field_58 ) /*0x6af60e*/
   {
     SlaveManagerClass_field_58 = (TechnoClass *)((char *)SlaveManagerClass_field_58 /*0x6af610*/
-                                               - (*(unsigned int *)((char *)&stru_A8EB00 + 416)
+                                               - (dword_A8ED84
                                                 - v3));
     goto LABEL_4; /*0x6af610*/
   }
 LABEL_5:
-  *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af616*/
+  *(unsigned int *)&this->__pad_48[8] = dword_A8ED84; /*0x6af616*/
   this->SlaveManagerClass_field_54 = v7; /*0x6af622*/
   this->SlaveManagerClass_field_58 = 10; /*0x6af625*/
   SlaveManagerClass_field_58 = (gamemd::TechnoClass *)(this->master); /*0x6af628*/
@@ -748,7 +748,7 @@ int SlaveManagerClass::LostSlave(int aP1)
     v5[1] = 6; /*0x6b0a66*/
     slaveType = this->slaveType; /*0x6b0a73*/
     result = (int)(v5 + 2); /*0x6b0a76*/
-    *(unsigned int *)result = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b0a79*/
+    *(unsigned int *)result = *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x6b0a79*/
     *(unsigned int *)(result + 4) = v7; /*0x6b0a7f*/
     *(unsigned int *)(result + 8) = slaveType; /*0x6b0a82*/
   }
@@ -772,7 +772,7 @@ int SlaveManagerClass::ShouldWakeUpNow()
     return 1; /*0x6b104e*/
   if ( *(unsigned int *)((*((int (**)(TechnoClass *))master->vtable1 + 111))( (TechnoClass *)(master)) + 236) == 5 ) /*0x6b105e*/
     return 1; /*0x6b1064*/
-  if ( this->SlaveManagerClass_field_60 + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6032) >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x6b107d*/
+  if ( this->SlaveManagerClass_field_60 + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6032) >= *(int *)&(unsigned int *)(unsigned int)&dword_A8ED84 ) /*0x6b107d*/
     return 0; /*0x6b107d*/
 v4 = *(unsigned int *)(*((int (**)(TechnoClass *, int *, int, unsigned int))this->master->vtable1 + 206))( /*0x6b10ad*/ this->master, (int *)(&v4), *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6016) / 256, 0);
 
@@ -876,7 +876,7 @@ LABEL_20:
           v8 = (unsigned int)__2_YAPAXI_Z(0x14u); /*0x6b1232*/
           if ( v8 ) /*0x6b123c*/
           {
-            v9 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b123e*/
+            v9 = *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x6b123e*/
             *(unsigned int *)(v8 + 16) = 0; /*0x6b1244*/
             *(unsigned int *)(v8 + 8) = v9; /*0x6b1247*/
             v5 = v8; /*0x6b124a*/
@@ -967,8 +967,8 @@ wchar_t * SlaveManagerClass::CreateSlave(wchar_t ** a2)
     (*(void (**)(wchar_t *))(*(unsigned int *)result + 212))( (wchar_t *)(result)); /*0x6af67c*/
     *((unsigned int *)*a2 + 183) = this->master; /*0x6af68b*/
     a2[1] = 0; /*0x6af691*/
-    result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af698*/
-    a2[2] = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af6a2*/
+    result = *(wchar_t **)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x6af698*/
+    a2[2] = *(wchar_t **)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x6af6a2*/
     a2[3] = v6; /*0x6af6a4*/
     a2[4] = 0; /*0x6af6a7*/
   }

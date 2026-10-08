@@ -199,7 +199,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     goto LABEL_30; /*0x401393*/
   }
   LABEL_17:
-  qsort(*(void **)v3, *((unsigned int *)v3 + 1), 0x24u, _strcmpi); /*0x4013ab*/
+  qsort(*(void **)v3, *((unsigned int *)v3 + 1), 0x24u, (_CoreCrtNonSecureSearchSortCompareFunction)(_strcmpi)); /*0x4013ab*/
   *((unsigned int *)v3 + 69) = 0; /*0x4013c8*/
   if ( a2 ) /*0x4013ce*/
   {
@@ -1183,7 +1183,7 @@ LABEL_34:
     goto LABEL_29; /*0x404cfa*/
   v15 = 1; /*0x404cfc*/
 LABEL_30:
-  v16 = Random::Range(&Randomizer_Global, v15, *(unsigned int *)a1->gapSuperCharged - 1); /*0x404d05*/
+  v16 = Random::Range((gamemd::Random *)(&Randomizer_Global), v15, *(unsigned int *)a1->gapSuperCharged - 1); /*0x404d05*/
   v17 = a1->infantryBlinkTimer[v16 + 2]; /*0x404d1e*/
   v18 = v16; /*0x404d2f*/
   if ( v16 < *(unsigned int *)a1->gapSuperCharged - 1 ) /*0x404d31*/
@@ -1220,7 +1220,7 @@ int E4Recv_405AC0::sub_405AC0()
   v5 = v2[9]; /*0x405af5*/
   if ( (*(unsigned char *)(v5 + 16) & 0x88) == 0 || v3 || v2[154] ) /*0x405b02*/
   {
-    v6 = Random::Range(&Randomizer_Global, *(unsigned int *)(v5 + 88), *(unsigned int *)(v5 + 92)); /*0x405b19*/
+    v6 = Random::Range((gamemd::Random *)(&Randomizer_Global), *(unsigned int *)(v5 + 88), *(unsigned int *)(v5 + 92)); /*0x405b19*/
     if ( v6 < 0x21 ) /*0x405b21*/
     {
 LABEL_2:
@@ -1398,7 +1398,7 @@ LABEL_11:
       goto LABEL_12; /*0x406cf6*/
     }
     g_MixerChannel_SFX = (unsigned int)(ObjectClass *)&g_Audio_Enabled->__pad_5C[12]; /*0x406c4c*/
-    v3 = (unsigned int *)((CCFileClass*)&v14)->Construct("AUDIOMD.MIX" /*w16g4 aAudiomdMix*/); /*0x406c51*/
+    v3 = (unsigned int *)((CCFileClass*)&v14)->Construct((char *)("AUDIOMD.MIX" /*w16g4 aAudiomdMix*/)); /*0x406c51*/
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))( (unsigned int *)(v3), 0); /*0x406c65*/
     *(unsigned int *)v14.CDFileClass = (unsigned int)&vt_CCFileClass;
     v16 = 0; /*0x406c6f*/
@@ -1410,7 +1410,7 @@ LABEL_11:
       v5 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x406c93*/
       if ( v5 ) /*0x406c9d*/
       {
-        g_MixFile_AUDIO = (int)((MixFileClass *)(v5))->FromFile("AUDIOMD.MIX" /*w16g4 aAudiomdMix*/, (int)dword_886980); /*0x406cb0*/
+        g_MixFile_AUDIO = (int)((MixFileClass *)(v5))->FromFile((char *)("AUDIOMD.MIX" /*w16g4 aAudiomdMix*/), (int)dword_886980); /*0x406cb0*/
         goto LABEL_10; /*0x406cb5*/
       }
     }
@@ -1419,7 +1419,7 @@ LABEL_11:
       v6 = (MixFileClass *)__2_YAPAXI_Z(0x28u); /*0x406cb7*/
       if ( v6 ) /*0x406cc1*/
       {
-        g_MixFile_AUDIO = (int)((MixFileClass *)(v6))->FromFile("AUDIO.MIX" /*w16g4 aAudioMix*/, (int)dword_886980); /*0x406cd4*/
+        g_MixFile_AUDIO = (int)((MixFileClass *)(v6))->FromFile((char *)("AUDIO.MIX" /*w16g4 aAudioMix*/), (int)dword_886980); /*0x406cd4*/
         goto LABEL_10; /*0x406cd9*/
       }
     }
@@ -1603,14 +1603,14 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
     return 0; /*0x407ef8*/
   if ( a1[5] ) /*0x407b78*/
   {
-    EnterCriticalSection(&unk_87E7F8); /*0x407b82*/
+    EnterCriticalSection((LPCRITICAL_SECTION)(&unk_87E7F8)); /*0x407b82*/
     ((Voice *)(v44))->Stop(); /*0x407b8b*/
-    LeaveCriticalSection(&unk_87E7F8); /*0x407b95*/
+    LeaveCriticalSection((LPCRITICAL_SECTION)(&unk_87E7F8)); /*0x407b95*/
   }
   v5 = (void (***)(unsigned int, int))a1[31]; /*0x407b9b*/
   if ( v5 ) /*0x407ba0*/
   {
-    (**v5)(v5, 1); /*0x407ba6*/
+    (**v5)((unsigned int)(v5), 1); /*0x407ba6*/
     a1[31] = 0; /*0x407ba8*/
   }
   if ( !a3 )
@@ -1624,7 +1624,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
       {
         v8 = (void (***)(unsigned int, int))a1[31]; /*0x407bde*/
         if ( v8 ) /*0x407be3*/
-          (**v8)(v8, 1); /*0x407be9*/
+          (**v8)((unsigned int)(v8), 1); /*0x407be9*/
         a1[31] = 0; /*0x407beb*/
       }
     }
@@ -1646,7 +1646,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   {
     v43 = (void (***)(unsigned int, int))a1[31]; /*0x407f23*/
     if ( v43 ) /*0x407f28*/
-      (**v43)(v43, 1); /*0x407f2e*/
+      (**v43)((unsigned int)(v43), 1); /*0x407f2e*/
     a1[31] = 0; /*0x407f30*/
     goto LABEL_51; /*0x407f33*/
   }
@@ -1695,7 +1695,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
     v23 = 4LL * *(unsigned long long *)&qword_87E780; /*0x407d98*/
   if ( v23 <= 0xFA0 ) /*0x407da6*/
     v23 = 4000; /*0x407dad*/
-  EnterCriticalSection(&unk_87E7F8); /*0x407db4*/
+  EnterCriticalSection((LPCRITICAL_SECTION)(&unk_87E7F8)); /*0x407db4*/
   if ( v23 ) /*0x407dbe*/
   {
     v24 = ((gamemd::Audio*)(a1 + 23))->CalcRate( v23, IDA_SHIDWORD(v23)); /*0x407dc4*/
@@ -1717,7 +1717,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
     IDA_LOBYTE(v27) = v27 & 0xFB; /*0x407e20*/
     a1[3] = v27; /*0x407e22*/
   }
-  LeaveCriticalSection(&unk_87E7F8); /*0x407e2a*/
+  LeaveCriticalSection((LPCRITICAL_SECTION)(&unk_87E7F8)); /*0x407e2a*/
   if ( !a3 ) /*0x407e36*/
   {
   LABEL_51:

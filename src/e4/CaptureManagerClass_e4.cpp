@@ -309,7 +309,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       v12 = (unsigned int *)(0); /*0x471dd3*/
       if ( v11 ) /*0x471dda*/
       {
-        v13 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471ddc*/
+        v13 = dword_A8ED84; /*0x471ddc*/
         *(unsigned int *)(v11 + 16) = 0; /*0x471de2*/
         *(unsigned int *)(v11 + 8) = v13; /*0x471de5*/
         v12 = (unsigned int *)v11; /*0x471de8*/
@@ -330,7 +330,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       v18 = v12 + 2; /*0x471e31*/
       v5[176] = *(unsigned int *)((unsigned int)(a1)+ 72); /*0x471e34*/
       v19 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 784); /*0x471e45*/
-      *v18 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x471e4b*/
+      *v18 = dword_A8ED84; /*0x471e4b*/
       v18[1] = v33; /*0x471e52*/
       v18[2] = v19; /*0x471e57*/
       if ( !v5
@@ -508,7 +508,7 @@ int CaptureManagerClass::DrawLinks(int a1, ...)
       v9 = v6[2]; /*0x47219b*/
       if ( v9 == -1 ) /*0x4721a1*/
         goto LABEL_5; /*0x4721a1*/
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v9 < v8 ) /*0x4721ad*/
+      if ( dword_A8ED84 - v9 < v8 ) /*0x4721ad*/
         break; /*0x4721ad*/
 LABEL_7:
       if ( *(unsigned char *)(v7 + 131) ) /*0x4721b7*/
@@ -547,7 +547,7 @@ v12 = (*(int (**)(int, int, int, void *, int, int))(*(unsigned int *)v7 + 132))(
       if ( --v4 < 0 ) /*0x47228c*/
         return v3; /*0x47228c*/
     }
-    v8 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v9; /*0x4721af*/
+    v8 -= dword_A8ED84 - v9; /*0x4721af*/
 LABEL_5:
     if ( v8 > 0 ) /*0x4721b3*/
       v5 = 1; /*0x4721b5*/
@@ -761,13 +761,13 @@ int CaptureManagerClass::NeedsToDrawLinks()
       v8 = *(unsigned int *)(v6 + 16); /*0x472693*/
       if ( v7 == -1 ) /*0x472699*/
         goto LABEL_12; /*0x472699*/
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v7 < v8 ) /*0x4726a1*/
+      if ( *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v7 < v8 ) /*0x4726a1*/
         break; /*0x4726a1*/
 LABEL_13:
       if ( --v4 < 0 ) /*0x4726af*/
         return 0; /*0x4726af*/
     }
-    v8 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v7; /*0x4726a3*/
+    v8 -= *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v7; /*0x4726a3*/
 LABEL_12:
     if ( v8 > 0 ) /*0x4726a7*/
       return 1; /*0x4726a7*/
@@ -868,7 +868,7 @@ LABEL_19:
           v8 = (unsigned int)__2_YAPAXI_Z(0x14u); /*0x4727ca*/
           if ( v8 ) /*0x4727d4*/
           {
-            v9 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4727d6*/
+            v9 = *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x4727d6*/
             *(unsigned int *)(v8 + 16) = 0; /*0x4727dc*/
             *(unsigned int *)(v8 + 8) = v9; /*0x4727df*/
             v5 = (unsigned int *)v8; /*0x4727e2*/
@@ -885,7 +885,7 @@ LABEL_19:
             break; /*0x472818*/
           v5[1] = a2; /*0x472825*/
           *v5 = v16; /*0x47282c*/
-          v5[2] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x472833*/
+          v5[2] = *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x472833*/
           v5[3] = v19; /*0x47283e*/
           v5[4] = 0; /*0x472841*/
           controlNodeCapacity = v3->controlNodeCapacity; /*0x472844*/

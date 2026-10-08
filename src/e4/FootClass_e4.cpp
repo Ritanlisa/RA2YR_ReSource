@@ -141,8 +141,8 @@ int FootClass::updateThreat()
   v2 = ((unsigned int *)this)[2]; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < v2 ) /*0x70f7fb*/
-      return v2 == *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1; /*0x70f808*/
+    if ( dword_A8ED84 - v1 < v2 ) /*0x70f7fb*/
+      return v2 == dword_A8ED84 - v1; /*0x70f808*/
     v2 = 0; /*0x70f809*/
   }
   return v2 == 0; /*0x70f808*/

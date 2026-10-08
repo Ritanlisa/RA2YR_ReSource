@@ -352,7 +352,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   if ( timeBeginPeriod( (void *)((void *)(0x10u))) == 97 ) /*0x411c90*/
     return (gamemd::AbstractClass **)(-13); /*0x411cd5*/
     Debug::Log("Creating VQ audio timer thread\n") /*G57c1: IDA 0x411c97 push offset aCreatingVqAudi*/;
-  *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, fptc, dwUser, 1u); /*0x411cb6*/
+  *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, (LPTIMECALLBACK)(fptc), dwUser, 1u); /*0x411cb6*/
     Debug::Log("VQ audio handler opened OK\n") /*G57c1: IDA 0x411cb9 push offset aVqAudioHandler_0*/;
   return (gamemd::AbstractClass **)(*((unsigned int *)v5 + 24) != 0 ? -1 : -13);
 }
@@ -426,8 +426,8 @@ int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
       0);
     if ( *v7 ) /*0x411f66*/
     {
-      (*(unsigned int (__cdecl *)(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f84*/
-      (*(unsigned int (__cdecl *)(unsigned int))&dword_88776C)(lpCriticalSection); /*0x411f8b*/
+      (*(unsigned int (__cdecl *)(unsigned int))&dword_88776C)((unsigned int)(lpCriticalSection)); /*0x411f84*/
+      (*(unsigned int (__cdecl *)(unsigned int))&dword_88776C)((unsigned int)(lpCriticalSection)); /*0x411f8b*/
       v13 = *v7; /*0x411f91*/
       *(unsigned int *)(v3 + 68) = 0; /*0x411f96*/
       *(unsigned int *)(v3 + 156) = 0; /*0x411f99*/
@@ -1446,7 +1446,7 @@ void sub_4128F0()
 
 // 0x413490
 namespace gamemd {
-void nullsub_3(AbstractClass * aP0)
+void nullsub_3(int aP0)
 {
   ; /*0x413490*/
 }
@@ -1931,7 +1931,7 @@ namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
 
-  this->ambientSoundController[1] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x41dd15*/
+  this->ambientSoundController[1] = dword_A8ED84; /*0x41dd15*/
   LOBYTE(this->ambientSoundController[0]) = 0; /*0x41dd1a*/
   BYTE1(this->ambientSoundController[0]) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/
@@ -2127,8 +2127,8 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
     v4 = a2; /*0x41fef4*/
     if ( a2 ) /*0x41fefa*/
     {
-      a2 = (unsigned int *)*HouseClass::GetCurrentOption(((HouseClass *)a1), &a1); /*0x41ff14*/
- CurrentOption = (int *)(HouseClass::GetCurrentOption(((HouseClass *)v4), &a1)); /*0x41ff1b*/
+      a2 = (unsigned int *)*HouseClass::GetCurrentOption(((HouseClass *)a1), (unsigned int *)(&a1)); /*0x41ff14*/
+ CurrentOption = (int *)(HouseClass::GetCurrentOption(((HouseClass *)v4), (unsigned int *)(&a1))); /*0x41ff1b*/
       v6 = *(unsigned int *)(v3 + 236); /*0x41ff22*/
       aP0 = (IUnknown *)(*CurrentOption); /*0x41ff28*/
       if ( !*(unsigned char *)(v3 + 241) ) /*0x41ff37*/

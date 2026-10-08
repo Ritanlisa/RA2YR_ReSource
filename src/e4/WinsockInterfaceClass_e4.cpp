@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include <new>  // W20L4 T2 placement-new Constructor forwarding
 #include "e4/e4_globals.hpp"
 #include "e4/classes/NetworkClass_e4.hpp"
 #include "e4/classes/WinsockInterfaceClass_e4.hpp"
@@ -17,6 +18,10 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 
+// 0x7B1AB0 site-form Constructor supply (W20L4 T2; forwards to ctor def below)
+namespace gamemd {
+void WinsockInterfaceClass::Constructor(void *aP1) { new (aP1) WinsockInterfaceClass(); }
+}
 // 0x7B1AB0
 namespace gamemd {  // G42.18c ns repair
 WinsockInterfaceClass::WinsockInterfaceClass()

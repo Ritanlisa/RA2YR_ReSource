@@ -113,7 +113,7 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
   v20 = v4; /*0x561191*/
   dwNewLong = -1; /*0x561195*/
     Debug::Log("Testing display mode @ %dx%d\n") /*G57c1: IDA 0x56119d push offset aTestingDisplay*/;
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x5611ad*/
+  (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q_30)))(dword_887640);  /*0x5611ad*/
   (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))( (ObjectClass *)(g_DSurface_Hidden), 0); /*0x5611ba*/
   Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v13), (void *)(v15), (void *)(v17)); /*0x5611c7*/
   result = ChangeVideoMode(v6, yBottom); /*0x5611d0*/
@@ -121,7 +121,7 @@ char Team_Start(void * a1, void * a2, void * a3, void * a4)
   {
     (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable1 + 6))( (ObjectClass *)(g_DSurface_Hidden), 0); /*0x5611ea*/
     Frame::Present( (void *)((int)g_DSurface_Hidden), (void *)(a3), (void *)(yBottom), (void *)(a4), 0, (void *)(v14), (void *)(v16), (void *)(v18)); /*0x5611f7*/
-    (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x561204*/
+    (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q_40)))(dword_887640);  /*0x561204*/
     Screen::Capture( 1, 0, (int)(a3), yBottom); /*0x56120b*/
     Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
     if ( !Dialog ) /*0x561225*/

@@ -260,7 +260,7 @@ unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(unsigned int *aP0
   unsigned int *FirstObstacle; // eax
   unsigned int *v5; // esi
 
-  FirstObstacle = TrajectoryHelper::FindFirstObstacle( (IUnknown *)(aP0), (int *)(a1), *(unsigned int *)(arg0 + 160), (void *)(a3)); /*0x4cc322*/
+  FirstObstacle = TrajectoryHelper::FindFirstObstacle( (unsigned int *)(aP0), (int *)(a1), *(unsigned int *)(arg0 + 160), (void *)(a3)); /*0x4cc322*/
   v5 = FirstObstacle; /*0x4cc327*/
   if ( FirstObstacle /*0x4cc342*/
     && BuildingPlacement::ValidateType((gamemd::BuildingPlacement *)(FirstObstacle), -1, -1)

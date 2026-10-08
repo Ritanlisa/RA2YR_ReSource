@@ -396,17 +396,17 @@ int HouseClass::Construct(int a2)
   *((char *)this + 157) = -1; /*0x4f57ea*/
   *((char *)this + 158) = -1; /*0x4f57f0*/
   *((char *)this + 159) = 0; /*0x4f57f6*/
-  *((char *)this + 160) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5802*/
+  *((char *)this + 160) = dword_A8ED84; /*0x4f5802*/
   *((char *)this + 162) = 0; /*0x4f5808*/
-  v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f580e*/
+  v3 = dword_A8ED84; /*0x4f580e*/
   *((char *)this + 165) = 0; /*0x4f5814*/
   *((char *)this + 163) = v3; /*0x4f581a*/
-  *((char *)this + 166) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5825*/
+  *((char *)this + 166) = dword_A8ED84; /*0x4f5825*/
   *((char *)this + 168) = 0; /*0x4f582b*/
-  v4 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5831*/
+  v4 = dword_A8ED84; /*0x4f5831*/
   *((char *)this + 171) = 0; /*0x4f5837*/
   *((char *)this + 169) = v4; /*0x4f583d*/
-  *((char *)this + 172) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5849*/
+  *((char *)this + 172) = dword_A8ED84; /*0x4f5849*/
   *((char *)this + 174) = 0; /*0x4f584f*/
   *((unsigned char *)this + 700) = 0; /*0x4f5855*/
   *((unsigned char *)this + 701) = 0; /*0x4f585b*/
@@ -506,7 +506,7 @@ int HouseClass::Construct(int a2)
   CounterClass::Construct((int)(CounterClass *)((char *)this + 5485)); /*0x4f5b1e*/
   CounterClass::Construct((int)(CounterClass *)this + 2745); /*0x4f5b29*/
   CounterClass::Construct((int)(CounterClass *)((char *)this + 5495)); /*0x4f5b34*/
-  *((char *)this + 5500) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5b40*/
+  *((char *)this + 5500) = dword_A8ED84; /*0x4f5b40*/
   *((char *)this + 5502) = 0; /*0x4f5b46*/
   *((char *)this + 5503) = 0; /*0x4f5b4c*/
   *((char *)this + 5504) = -1; /*0x4f5b59*/
@@ -518,9 +518,9 @@ int HouseClass::Construct(int a2)
   *((char *)this + 5511) = (unsigned int)(int)&vt_DynamicVectorClass;
   *((char *)this + 5516) = 10; /*0x4f5b91*/
   *((char *)this + 5515) = 0; /*0x4f5b97*/
-  *((char *)this + 5517) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5ba2*/
+  *((char *)this + 5517) = dword_A8ED84; /*0x4f5ba2*/
   *((char *)this + 5519) = 0; /*0x4f5ba8*/
-  v5 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5bae*/
+  v5 = dword_A8ED84; /*0x4f5bae*/
   *((char *)this + 5522) = 0; /*0x4f5bb4*/
   *((char *)this + 5520) = v5; /*0x4f5bba*/
   *((char *)this + 5523) = -1; /*0x4f5bc0*/
@@ -561,22 +561,22 @@ int HouseClass::Construct(int a2)
   *((unsigned short *)this + 11203) = 0; /*0x4f5c94*/
   *((char *)this + 5602) = 0; /*0x4f5c9b*/
   LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5808) * 900.0); /*0x4f5cb3*/
-  v8 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cb8*/
+  v8 = dword_A8ED84; /*0x4f5cb8*/
   *((char *)this + 5605) = v7; /*0x4f5cbe*/
   *((char *)this + 5603) = v8; /*0x4f5cc4*/
-  *((char *)this + 5606) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cd5*/
+  *((char *)this + 5606) = dword_A8ED84; /*0x4f5cd5*/
   *((char *)this + 5608) = 1; /*0x4f5cdb*/
-  *((char *)this + 5609) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5ce7*/
+  *((char *)this + 5609) = dword_A8ED84; /*0x4f5ce7*/
   *((char *)this + 5611) = 0; /*0x4f5ced*/
-  v9 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5cf3*/
+  v9 = dword_A8ED84; /*0x4f5cf3*/
   *((char *)this + 5614) = 1; /*0x4f5cf9*/
   *((char *)this + 5612) = v9; /*0x4f5cff*/
-  *((char *)this + 5615) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5d0b*/
+  *((char *)this + 5615) = dword_A8ED84; /*0x4f5d0b*/
   *((char *)this + 5617) = 1; /*0x4f5d11*/
-  v10 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5d17*/
+  v10 = dword_A8ED84; /*0x4f5d17*/
   *((char *)this + 5620) = 1; /*0x4f5d1d*/
   *((char *)this + 5618) = v10; /*0x4f5d23*/
-  *((char *)this + 5621) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f5d2f*/
+  *((char *)this + 5621) = dword_A8ED84; /*0x4f5d2f*/
   *((char *)this + 5623) = 1; /*0x4f5d35*/
   *((char *)this + 5624) = 0; /*0x4f5d3b*/
   *((unsigned char *)this + 90100) = 0; /*0x4f5d41*/
@@ -814,7 +814,7 @@ int HouseClass::Construct(int a2)
   *((char *)this + 118) |= 1 << *((char *)this + 12); /*0x4f633d*/
   v68 = Random::Range((Random *)(&dword_A8B230)[14].NeedsSaveOrLink, 450, 1800); /*0x4f635a*/
   LOWORD(v51) = Math::RoundToInt((double)v68 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4264)); /*0x4f6368*/
-  *((char *)this + 5500) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4f6373*/
+  *((char *)this + 5500) = dword_A8ED84; /*0x4f6373*/
   *((char *)this + 5501) = *(unsigned int *)&Destination[4]; /*0x4f637d*/
   *((char *)this + 5502) = v51; /*0x4f6383*/
   *((char *)this + 5503) = v51; /*0x4f6389*/
@@ -2354,9 +2354,9 @@ LABEL_22:
   v11 = *(unsigned int *)(v4 + 684); /*0x508d56*/
   if ( v10 != -1 ) /*0x508d5f*/
   {
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v10 >= v11 ) /*0x508d6b*/
+    if ( dword_A8ED84 - v10 >= v11 ) /*0x508d6b*/
       goto LABEL_27; /*0x508d6b*/
-    v11 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v10; /*0x508d6d*/
+    v11 -= dword_A8ED84 - v10; /*0x508d6d*/
   }
   if ( v11 ) /*0x508d71*/
   {

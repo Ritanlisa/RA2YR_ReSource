@@ -30,7 +30,7 @@ int UnitClass::ProcessIdleOrders()
         if ( *(unsigned char *)(v5[433] + 3432) ) /*0x6b7bd7*/
         {
           UnitClass::GetExitCell((int)&g_MissionQueueFrame, v5, *(unsigned int **)&((unsigned int *)this)[0]); /*0x6b7beb*/
-          g_MissionQueueFrame = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b7bfa*/
+          g_MissionQueueFrame = dword_A8ED84; /*0x6b7bfa*/
           g_MissionQueueFrame.nextScenario[1] = v6; /*0x6b7bff*/
           g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7c05*/
           UnitClass::ClearTargetRef(this, **(unsigned int **)(((unsigned int *)this)[0] + 4 * v3)); /*0x6b7c16*/

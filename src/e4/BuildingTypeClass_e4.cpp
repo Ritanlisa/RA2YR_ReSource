@@ -741,7 +741,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     }
   }
   /*0x45f4e1*/
-    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f4e1*/ (uint8_t *)((char *)this + 504), aDooranim, &g_INI_DefaultBuffer, Filename, 64);
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f4e1*/ (uint8_t *)((char *)this + 504), (void *)(aDooranim), &g_INI_DefaultBuffer, (void *)(Filename), 64);
   if ( strlen( (const char *)(Filename)) ) /*0x45f4ea*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f507*/
@@ -755,7 +755,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     }
   }
   /*0x45f565*/
-    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f565*/ (uint8_t *)((char *)this + 504), aUnderdooranim, &g_INI_DefaultBuffer, Filename, 64);
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f565*/ (uint8_t *)((char *)this + 504), (void *)(aUnderdooranim), &g_INI_DefaultBuffer, (void *)(Filename), 64);
   if ( strlen( (const char *)(Filename)) ) /*0x45f56e*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f58f*/
@@ -789,7 +789,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     *v14 = 0; /*0x45f649*/
   }
   /*0x45f668*/
-    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f668*/ (uint8_t *)((char *)this + 504), aRubble, &g_INI_DefaultBuffer, Filename, 64);
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f668*/ (uint8_t *)((char *)this + 504), (void *)(aRubble), &g_INI_DefaultBuffer, (void *)(Filename), 64);
   if ( strlen( (const char *)(Filename)) ) /*0x45f671*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f68e*/
@@ -809,7 +809,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     }
   }
   /*0x45f711*/
-    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f711*/ (uint8_t *)((char *)this + 504), aUnderroofdoora, &g_INI_DefaultBuffer, Filename, 64);
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f711*/ (uint8_t *)((char *)this + 504), (void *)(aUnderroofdoora), &g_INI_DefaultBuffer, (void *)(Filename), 64);
   if ( strlen( (const char *)(Filename)) ) /*0x45f71a*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f73b*/
@@ -836,7 +836,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     }
   }
   /*0x45f7e9*/
-    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f7e9*/ (uint8_t *)((char *)this + 504), aSpecialzoverla, &g_INI_DefaultBuffer, Filename, 64);
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f7e9*/ (uint8_t *)((char *)this + 504), (void *)(aSpecialzoverla), &g_INI_DefaultBuffer, (void *)(Filename), 64);
   if ( strlen( (const char *)(Filename)) ) /*0x45f7f2*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f80f*/
@@ -850,7 +850,7 @@ void* BuildingTypeClass::LoadAnimations(int aP1)
     }
   }
   /*0x45f86d*/
-    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f86d*/ (uint8_t *)((char *)this + 504), aBibshape, &g_INI_DefaultBuffer, Filename, 64);
+    ((INIClass*)((INIClass *)&DSurface_ViewBounds.__pad_FC[228]))->GetString(/*0x45f86d*/ (uint8_t *)((char *)this + 504), (void *)(aBibshape), &g_INI_DefaultBuffer, (void *)(Filename), 64);
   if ( strlen( (const char *)(Filename)) ) /*0x45f876*/
   {
     _makepath(Source, 0, 0, Filename,(const char *)(::Ext)); /*0x45f897*/
@@ -1627,7 +1627,7 @@ LABEL_6:
       return OverlayTypeClass::OverlayTypeClass(v3, Source); /*0x5fece1*/
     return 0; /*0x5fecd5*/
   }
-  while ( _strcmpi((*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2) + 36), Source) ) /*0x5fecba*/
+  while ( _strcmpi((const char *)((*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v2) + 36)), (const char *)(Source)) ) /*0x5fecba*/
   {
     if ( ++v2 >= *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fecc4*/
       goto LABEL_6; /*0x5fecc4*/

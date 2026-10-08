@@ -1737,8 +1737,8 @@ AbstractClass * * sub_638E60()
 
   if ( !stru_AC4B30.__pad_EC[148] ) /*0x638e6b*/
   {
-    v1 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q0B0))(dword_887640);  /*0x638e85*/
-    v2 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->__pad_0C0))(dword_887640);  /*0x638e8c*/
+    v1 = (*(int (**)(void *))(*(unsigned int *)&((void *)dword_887640)->q0B0))(dword_887640);  /*0x638e85*/
+    v2 = (*(int (**)(void *))(*(unsigned int *)&((void *)dword_887640)->__pad_0C0))(dword_887640);  /*0x638e8c*/
     v3 = 0; /*0x638e93*/
     v7 = *(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x638e95*/
     if ( *(int *)&stru_AC4B30.__pad_EC[12] <= 0 ) /*0x638e9b*/
@@ -4063,7 +4063,7 @@ unsigned int * E4Recv_633C60::sub_633C60(unsigned int * a2)
   int v5[3]; // [esp+0h] [ebp-18h] BYREF
   unsigned int v6[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  ScenarioClassActionCoords = GetScenarioClassActionCoords( (unsigned int *)(v5), this); /*0x633c69*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords( (unsigned int *)(v5), (unsigned char *)(this)); /*0x633c69*/
   v6[0] = *ScenarioClassActionCoords; /*0x633c70*/
   v6[1] = ScenarioClassActionCoords[1]; /*0x633c82*/
   v6[2] = ScenarioClassActionCoords[2]; /*0x633c8e*/
@@ -4861,7 +4861,7 @@ void sub_63B090()
 
 // 0x63D070
 namespace gamemd {
-int ColorLerpAndPack(short * a1, unsigned char * a2, ObjectClass * aP1)
+int ColorLerpAndPack(short * a1, unsigned char * a2, int aP1)
 {
   int16_t vtable0; // ax
   Color v5; // [esp+0h] [ebp-8h] BYREF
@@ -4869,7 +4869,7 @@ int ColorLerpAndPack(short * a1, unsigned char * a2, ObjectClass * aP1)
   vtable0 = (int16_t)a1->AbstractClass; /*0x63d073*/
   IDA_BYTE2(v5.Color_field_00) = IDA_BYTE2(a1->AbstractClass); /*0x63d07e*/
   IDA_LOWORD(v5.Color_field_00) = vtable0; /*0x63d087*/
-  ((Color *)(&v5))->Lerp( aP1, (uint8_t *)(a2)); /*0x63d08c*/
+  ((Color *)(&v5))->Lerp( (uint8_t)(aP1), (uint8_t *)(a2)); /*0x63d08c*/
   return (IDA_LOBYTE(v5.Color_field_00) >> g_BitShift_Green_0 << g_BitShift_Red) /*0x63d0e2*/
        | (IDA_BYTE1(v5.Color_field_00) >> g_BitMask_Blue << g_BitMask_Green)
        | (IDA_BYTE2(v5.Color_field_00) >> g_BitMask_Red << g_BitShift_Blue);
@@ -4981,7 +4981,7 @@ char DrawTacticalFillScanline(AbstractClass * aP0, BuildingClass * aP1, int a3, 
   if ( v9 <= (int)aP0 / 2 ) /*0x63d925*/
   {
     do /*0x63d94a*/
-      IDA_LOBYTE(v7) = DrawTacticalLine2D(v9++, aP1, a3, aP3, a5, a6, 0); /*0x63d942*/
+      IDA_LOBYTE(v7) = DrawTacticalLine2D(v9++, (gamemd::ObjectClass *)(aP1), a3, (int)(aP3), a5, a6, 0); /*0x63d942*/
     while ( v9 <= v8 ); /*0x63d94a*/
   }
   return v7; /*0x63d94d*/
@@ -5010,7 +5010,7 @@ char globalHelper_03D960(Tactical * aP0, int a2, int a3, int a4, int a5, int a6)
     v8 = 0; /*0x63d970*/
   }
   for ( ; v7 <= v8; ++v7 ) /*0x63d984*/
-    IDA_LOBYTE(v9) = DrawTacticalLine2D(v7, a2, a3, a4, a5, a6, 1); /*0x63d9a4*/
+    IDA_LOBYTE(v9) = DrawTacticalLine2D(v7, (gamemd::ObjectClass *)(a2), a3, a4, a5, a6, 1); /*0x63d9a4*/
   return v9; /*0x63d9b3*/
 }
 } // namespace gamemd

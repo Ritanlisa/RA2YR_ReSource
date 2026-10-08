@@ -63,7 +63,7 @@ struct Coord {
     unsigned int * ToCell(unsigned int *a2);  // G57w10-S raw 0x00413A30 IUnknown 占位清除
     void * Subtract(int aP1, int aP2, int aP3);  // 0x41C230
     int Length();  // 0x41C380
-    unsigned int * GetCoords(int * outCoords, void *a2_1);  // 0x4399A0
+    static unsigned int * GetCoords(int * outCoords, void *a2_1);  // 0x4399A0
     void * Scale(float aP1);  // 0x43A0D0
     void * To_Cell(unsigned int *aP1);  // 0x565730
     int Compare2D(unsigned short * a2, void *a2_2);  // 0x5AC370

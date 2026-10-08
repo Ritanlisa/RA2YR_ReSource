@@ -63,6 +63,7 @@ struct INIClass {
     int WOLobby_Play(const char *a1, const char *a2, int a3);
     int sub_44FE60();
     INIClass();
+    static void * Constructor(void *aP1);  // 0x535AA0 raw: _DWORD *__thiscall INIClass::INIClass(INIClass*) -- site form (W20L4 T2)
     static unsigned int GetString(void *a2, void *a3, void *a4, void *a5, int Count);  // W19K4: widen to void* per raw 0x528A10 5-arg thiscall
     void SetGameOptionsPing();
     static int ClearSection(INIClass * aP1, int a2, unsigned __int8 *a3);  // G57w10-S raw 0x005257C0 (was C2597 interim stub)

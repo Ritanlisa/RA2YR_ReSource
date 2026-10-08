@@ -315,7 +315,11 @@ int ScenarioClass::AssignStartPositions(char a1)
 }
 // 0x6832C0
 namespace gamemd {
-TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
+// 0x6832C0 static site-form Constructor supply (W20L4 T2; forwards to member ctor below per raw fn_68.c:3392)
+namespace gamemd {
+int ScenarioClass::Constructor(void *aP1) { return ((ScenarioClass *)aP1)->Constructor(); }
+}
+int ScenarioClass::Constructor()
 {
 
   int v2; // eax
@@ -334,24 +338,24 @@ TimerStruct * * ScenarioClass::Constructor(void *a1, void *a2, void *a3)
   this->pauseTimer[0] = 0; /*0x6832eb*/
   this->pauseTimer[1] = ((::gamemd::Timer *)this)->GetTicks(); /*0x6832f6*/
   *(unsigned int *)this->__pad_628 = 0; /*0x6832fc*/
-  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683302*/
+  v2 = dword_A8ED84; /*0x683302*/
   this->missionTimer[2] = 0; /*0x683307*/
   this->missionTimer[0] = v2; /*0x68330d*/
   LOBYTE((&this->missionTimer_text)[0]) = 0; /*0x683313*/
-  v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683319*/
+  v3 = dword_A8ED84; /*0x683319*/
   this->shroudRegrowTimer[2] = 0; /*0x68331f*/
   this->shroudRegrowTimer[0] = v3; /*0x683325*/
-  this->fogTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683331*/
+  this->fogTimer[0] = dword_A8ED84; /*0x683331*/
   this->fogTimer[2] = 0; /*0x683337*/
-  v4 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x68333d*/
+  v4 = dword_A8ED84; /*0x68333d*/
   this->iceTimer[2] = 0; /*0x683342*/
   this->iceTimer[0] = v4; /*0x683348*/
-  this->ScenarioClass_field_timer_123c[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683354*/
+  this->ScenarioClass_field_timer_123c[0] = dword_A8ED84; /*0x683354*/
   this->ScenarioClass_field_timer_123c[2] = 0; /*0x68335a*/
-  v5 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683360*/
+  v5 = dword_A8ED84; /*0x683360*/
   this->ambientTimer[2] = 0; /*0x683366*/
   this->ambientTimer[0] = v5; /*0x68336c*/
-  this->ScenarioClass_field_timer_34C0[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683381*/
+  this->ScenarioClass_field_timer_34C0[0] = dword_A8ED84; /*0x683381*/
   this->ScenarioClass_field_timer_34C0[2] = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
@@ -607,7 +611,7 @@ int ScenarioClass::CleanupTemporary()
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))((void *)(dword_887640));  /*0x683f86*/
   ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 2); /*0x683f90*/
   ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x683f9a*/
-  return (*(int (**)(void *, ScenarioClass *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(
+  return (*(int (**)(void *, ScenarioClass *))(*(unsigned int *)&((void *)dword_887640)->q_40))(
            dword_887640,
            this);
 
@@ -664,7 +668,7 @@ int ScenarioClass_Construct(void * a2)
   result = (unsigned int)(*(uint8_t (**)(void *))(*(unsigned int *)dword_81C1D0 + 0))(dword_81C1D0); /*0x68674c*/
   if ( result ) /*0x686754*/
   {
-    *(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x686765*/
+    dword_A8ED84 = 0; /*0x686765*/
     *((unsigned int *)((char *)&v5 + 0)) = 0; /*0x68676b*/
     *((unsigned int *)((char *)&v5 + 1)) = 0; /*0x68676f*/
     ((GenericList *)((unsigned int *)((char *)&v5 + 2)))->Constructor(); /*0x686773*/
@@ -933,7 +937,7 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v20 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v20 = HashTableSection::FindSection((uint8_t *)((int)var158),
-                  (CCINIClass *)g_ScenarioClass_Instance->fileName,
+                  (uint8_t *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54712]);
         if ( v20 )
           g_ScenarioClass_Instance->ls800BriefLocY = INIClass::ReadInt_Overwrite(
@@ -946,8 +950,8 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v21 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v21 = HashTableSection::FindSection(
-                  (int)var158,
-                  (CCINIClass *)g_ScenarioClass_Instance->fileName,
+                  (uint8_t *)var158,
+                  (uint8_t *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54696]);
         if ( v21 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54696], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls640BkgdName, 64);
@@ -956,8 +960,8 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v22 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v22 = HashTableSection::FindSection(
-                  (int)var158,
-                  (CCINIClass *)g_ScenarioClass_Instance->fileName,
+                  (uint8_t *)var158,
+                  (uint8_t *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54680]);
         if ( v22 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54680], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls800BkgdName, 64);
@@ -966,8 +970,8 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
           int v23 = INIClass::BinarySearchSection( (INIClass *)((int)var158), (INIClass *)g_ScenarioClass_Instance->fileName);
         else
           v23 = HashTableSection::FindSection(
-                  (int)var158,
-                  (CCINIClass *)g_ScenarioClass_Instance->fileName,
+                  (uint8_t *)var158,
+                  (uint8_t *)g_ScenarioClass_Instance->fileName,
                   (CCINIClass *)&stru_830620[54664]);
         if ( v23 )
           ((INIClass*)var158)->GetString((INIClass *)g_ScenarioClass_Instance->fileName, (uint8_t *)&stru_830620[54664], (INIClass *)&DataGlobal_87F8E4[42624], (INIClass *)g_ScenarioClass_Instance->ls800BkgdPal, 64);

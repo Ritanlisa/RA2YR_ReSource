@@ -41,7 +41,7 @@ int HashTable_flat::Get(IUnknown * aP1, IUnknown * aP2)
   {
     result = *(unsigned int *)((unsigned int *)*(unsigned int *)this->__pad_0 /*0x62478a*/
                        + 4
-                       * (((int (__thiscall *)(unsigned int *))this->HashTable_field_0x18)(aP1)
+                       * (((int (__thiscall *)(unsigned int *))this->HashTable_field_0x18)((unsigned int *)(aP1))
                         & ((1 << this->HashTable_field_0x0C) - 1)));
     if ( result ) /*0x62478f*/
     {

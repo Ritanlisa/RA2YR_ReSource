@@ -200,7 +200,7 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_LocomotionClass;
       *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_LocomotionClass;
-      v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x72a177*/
+      v3 = *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x72a177*/
       a1->CurrentState[6] = 0; /*0x72a17d*/
       a1->CurrentState[4] = v3; /*0x72a180*/
       a1->CurrentState[7] = 0; /*0x72a183*/

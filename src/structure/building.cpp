@@ -5696,7 +5696,7 @@ int BuildingClass::UpdateConstruction()
         }
         v43 = *(int (__thiscall ***)(BuildingClass *, unsigned int *))this; /*0x44434b*/  // g57e2 W2
         v216 = 0; /*0x44434f*/
-        v44 = (unsigned int *)v43[18](this, &v210); /*0x444367*/
+        v44 = (unsigned int *)v43[18](this, (unsigned int *)(&v210)); /*0x444367*/
         *(unsigned int *)v195 = 0; /*0x44436c*/
         *(unsigned int *)&v194[2] = 0; /*0x44436e*/
         IDA_LOWORD(v200) = *v44 / 256; /*0x44437e*/
@@ -10764,7 +10764,7 @@ void BuildingClass::AddToProductionQueue(int a2)  // g57w11 r4: 参数命名 (ra
         *(unsigned char *)(this + 1713) = 0; /*0x4da10c*/
       v5 = *(unsigned int *)(this + 1460); /*0x4da113*/
       if ( *(unsigned int *)(this + 1468) < v5 /*0x4da144*/
-        || (*(unsigned char *)(this + 1465) || !v5)
+        || (*(unsigned char *)((int)(this + 1465)) || !v5)
         && (v6 = *(unsigned int *)(this + 1472), v6 > 0)
         && (*(unsigned __int8 (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(this + 1452) + 8))(this + 1452, v5 + v6, 0) )
       {
@@ -11222,7 +11222,7 @@ int BuildingClass::ProcessStructureAbandoned() {
         ((gamemd::BuildingClass *)(void *)(this))->UnloadUnits(0, 0); /*0x458229*/
       v3 = dword_A80238; /*0x458230*/
       v4 = 0; /*0x45823b*/
-      v5 = (int)(void *)(HouseTypeClass::Find(&g_INI_Key_Civilian)); /*0x45823d*/
+      v5 = (int)(void *)(HouseTypeClass::Find((int)(&g_INI_Key_Civilian))); /*0x45823d*/
       v6 = 0; /*0x458242*/
       if ( v3 > 0 ) /*0x458246*/
       {

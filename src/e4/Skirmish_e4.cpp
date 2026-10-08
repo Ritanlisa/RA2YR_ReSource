@@ -304,7 +304,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(int aP1)
                              &Randomizer_Global,
                              *((unsigned int *)&dword_82B0A8 + aP1),
                              stru_82ADA8.Elasticity[aP1 + 1]);
-  *((unsigned int *)this + 17) = Random::Range(&Randomizer_Global, (&dword_82B10C)[aP1], (&dword_82B120)[aP1]); /*0x59729f*/
+  *((unsigned int *)this + 17) = Random::Range((gamemd::Random *)(&Randomizer_Global), (&dword_82B10C)[aP1], (&dword_82B120)[aP1]); /*0x59729f*/
   *((unsigned int *)this + 24) = Random::Range( /*0x5972bc*/
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 175],
@@ -423,7 +423,7 @@ int Skirmish::RenderPreview(HWND aP1)
 
     DSurface_field_0x0 = (void (**)(DSurface *, int *, unsigned int, int))DSurface_Alternate->DSurface_field_0x0; /*0x64086c*/
     v13 = (*(int (**)(unsigned int, int *, unsigned int, unsigned int))(**(unsigned int * *)&this->infantryBlinkTimer))( *(unsigned int *)this, (int *)((gamemd::DSurface *)(v27)), 0, 0); /*0x640875*/
-    DSurface_field_0x0[2](DSurface_Alternate, &v34, *(unsigned int *)this, v13); /*0x640887*/
+    DSurface_field_0x0[2]((gamemd::DSurface *)(DSurface_Alternate), &v34, *(unsigned int *)this, v13); /*0x640887*/
     HIBYTE(v23) = 0; /*0x640896*/
     if ( (stru_AC4B30.__pad_EC[628] & 1) == 0 ) /*0x64089b*/
     {

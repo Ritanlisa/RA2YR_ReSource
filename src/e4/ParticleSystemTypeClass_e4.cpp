@@ -108,7 +108,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   ((ParticleSystemTypeClass*)_ESI)->ParticleSystemTypeClass_field_0x29C = (IUnknown *)INIClass::ReadInt_Overwrite( /*0x644351*/
                                                             (bool *)aP1,
                                                             (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->ParticleSystemTypeClass_field_0x29C,
-                                                            aSpawnframes,
+                                                            (unsigned char *)(aSpawnframes),
                                                             ParticleSystemTypeClass_field_0x29C);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644366*/
                     (bool *)aP1,
@@ -120,7 +120,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   v8 = INIClass::ReadInt_Overwrite( /*0x644380*/
          (bool *)aP1,
          (uint8_t *)&((ParticleSystemTypeClass*)_ESI)->ParticleSystemTypeClass_field_0x24,
-         aSpawnradius,
+         (unsigned char *)(aSpawnradius),
          ParticleSystemTypeClass_field_0x2A8);
   /* asm-debt:__asm { fld dword ptr [esi+2A0h] } */
   ((ParticleSystemTypeClass*)_ESI)->ParticleSystemTypeClass_field_0x2A8 = v8; /*0x644390*/
@@ -145,7 +145,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   ((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x2B8 = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6443fc*/
                                                 (bool *)aP1), (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x24, (unsigned char *)(aLifetime), ParticleSystemTypeClass_field_0x2B8);
   /*0x644416*/
-    ((INIClass*)((INIClass *)aP1))->GetString(/*0x644416*/ (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x24, aBehaveslike, &g_INI_DefaultBuffer, Destination, 64);
+    ((INIClass*)((INIClass *)aP1))->GetString(/*0x644416*/ (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x24, (void *)(aBehaveslike), &g_INI_DefaultBuffer, (void *)(Destination), 64);
   v45 = 0; /*0x64441b*/
   v44 = (int)off_836EE0; /*0x644423*/
   while ( 1 ) /*0x64443f*/
@@ -212,7 +212,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
             (INIClass *)aP1,
             (int)&v44,
             (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x24,
-            aLasercolor,
+            (unsigned char *)(aLasercolor),
             (uint8_t *)&((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x308);
   ParticleSystemTypeClass_field_0x300 = *(unsigned int *)&((ParticleSystemTypeClass *)&_ESI)->q300; /*0x644596*/
   LOWORD(((ParticleSystemTypeClass *)&_ESI)->ParticleSystemTypeClass_field_0x308) = *(unsigned short *)Coord; /*0x64459c*/
@@ -274,7 +274,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   this->SpawnCount = (unsigned int)&vt_ParticleSystemTypeClass; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)&this->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
   v5 =(gamemd::ParticleSystemTypeClass *)this; /*0x644996*/
-v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/ &stru_A83D50.__pad_14[4], (ParticleSystemTypeClass **)(&v5));
+v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( (char *)(/*0x64499a*/ &stru_A83D50.__pad_14[4]), (ParticleSystemTypeClass **)(&v5));
 
 
   if ( v3 != -1 && v3 < (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6449aa*/

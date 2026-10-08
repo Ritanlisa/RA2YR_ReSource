@@ -307,7 +307,7 @@ int E4Recv_728A00::sub_728A00()
   (&this->CurrentState)[1] = *(unsigned int *)&(&dbl_B0F7B0)[352]; /*0x728a16*/
   (&this->CurrentState)[2] = *(unsigned int *)&(&dbl_B0F7B0)[356]; /*0x728a1e*/
   (&this->CurrentState)[3] = *(unsigned int *)&(&dbl_B0F7B0)[360]; /*0x728a27*/
-  (&this->CurrentState)[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
+  (&this->CurrentState)[4] = dword_A8ED84; /*0x728a30*/
   (&this->CurrentState)[6] = 0; /*0x728a33*/
   (&this->CurrentState)[7] = 0; /*0x728a36*/
   LOBYTE((&this->CurrentState)[8]) = 0; /*0x728a39*/

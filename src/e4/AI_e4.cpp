@@ -42,7 +42,7 @@ char AI_CreateMCV(MultiplayerGameMode *self)
         StartCoords = (unsigned int *)(HouseClass::GetStartCoords(((HouseClass *)v3), v11));
         if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v8 + 216))( (int *)(v7), (unsigned int *)(StartCoords), 0) ) /*0x5d7098*/
           return 1; /*0x5d70aa*/
-        CurrentOption = (int16_t *)HouseClass::GetCurrentOption(((HouseClass *)v3), &self); /*0x5d70b6*/
+        CurrentOption = (int16_t *)HouseClass::GetCurrentOption(((HouseClass *)v3), (unsigned int *)(&self)); /*0x5d70b6*/
         if ( FindInfantryDeployPosition( (int *)(v7), (gamemd::RadarClass *)(CurrentOption), 1) ) /*0x5d70bf*/
           return 1; /*0x5d70cf*/
         (*(void (**)(int *, int))(*v7 + 32))( (int *)(v7), 1); /*0x5d70d8*/

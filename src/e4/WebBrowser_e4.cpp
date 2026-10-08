@@ -133,12 +133,12 @@ return (int)Debug::Log((const char *)aDowebpagedialo);  /* G57w13b: raw 0x774060
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
       *v5 = (unsigned int)(&vt_WebBrowser); /*0x773f95*/
-      ((Debug *)g_Str_Instantiating_embedded_WebBrow)->Log("Instantiating embedded WebBrowser\n"); /*0x773f9b G57w12: IDA push seq @ 0x773f9b*/
+      ((gamemd::Debug*)g_Str_Instantiating_embedded_WebBrow)->Log("Instantiating embedded WebBrowser\n"); /*0x773f9b G57w12: IDA push seq @ 0x773f9b*/
       *(unsigned int *)(v6 + 1040) = (unsigned int)(v3); /*0x773fa3*/
-      ((Debug *)g_Str_Creating_WOLBrowser_component_)->Log("Creating WOLBrowser component.\n"); /*0x773fae G57w12: IDA push seq @ 0x773fae*/
-      if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u,stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
+      ((gamemd::Debug*)g_Str_Creating_WOLBrowser_component_)->Log("Creating WOLBrowser component.\n"); /*0x773fae G57w12: IDA push seq @ 0x773fae*/
+      if ( CoCreateInstance(*(const IID *)&stru_7F7C60, 0, 1u,(const IID &)(stru_7F7C30), (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
       {
-        ((Debug *)g_Str_Starting_up_WOLBrowser)->Log("Starting up WOLBrowser\n"); /*0x773fd4 G57w12: IDA push seq @ 0x773fd4*/
+        ((gamemd::Debug*)g_Str_Starting_up_WOLBrowser)->Log("Starting up WOLBrowser\n"); /*0x773fd4 G57w12: IDA push seq @ 0x773fd4*/
         (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v6); /*0x773fe3*/
         (*(void (**)(unsigned int, HWND, int *))(*(unsigned int *)*v7 + 12))( *v7, (HWND)((HWND)((HWND)((HWND)(v3)))), (int *)(&v11)); /*0x773ff2*/
         (*(void (**)(unsigned int, int))(*(unsigned int *)*v7 + 60))(*v7, 1); /*0x773ffe*/
@@ -160,7 +160,7 @@ return (int)Debug::Log((const char *)aDowebpagedialo);  /* G57w13b: raw 0x774060
       (*(void (**)(int))(*(unsigned int *)dword_B72D0C + 8))(dword_B72D0C); /*0x77403c*/
       dword_B72D0C = 0; /*0x77403f*/
     }
-    return ((Dialog*)v3)->Destroy(); /*0x77404b*/
+    return ((gamemd::Dialog*)v3)->Destroy(); /*0x77404b*/
   }
   return (int)(result); /*0x774051*/
 

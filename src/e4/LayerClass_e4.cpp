@@ -474,9 +474,9 @@ LABEL_125:
     && aP14[1] == *(unsigned short *)&g_MissionQueueFrame.waypoints[2136] )
   {
     if ( v81 ) /*0x56e6b0*/
-      *(unsigned int *)aP2 = v105[*(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v81]; /*0x56e6c6*/
+      *(unsigned int *)aP2 = v105[dword_A8ED84 % (int)v81]; /*0x56e6c6*/
     else
-      *(unsigned int *)aP2 = v106[*(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v82]; /*0x56e6e5*/
+      *(unsigned int *)aP2 = v106[dword_A8ED84 % (int)v82]; /*0x56e6e5*/
     return aP2; /*0x56e6b4*/
   }
   else

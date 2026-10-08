@@ -372,9 +372,9 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
         v14 = (MSVQAnim *)RA2_OPNEW(0x30u); /*0x4f1e25*/
         if ( v14 ) /*0x4f1e2f*/
         {
-          Config = MSVQAnim::ConstructMSVQAnimHidden( /*0x4f1e4e*/
-                     v14,
-                     (char **)&v38.vtable1,
+          Config = MSVQAnim::ConstructMSVQAnimHidden( (char **)(/*0x4f1e4e*/
+                     v14),
+                     (int *)&v38.vtable1,
                      &DSurface_Alternate->DSurface_field_0x0,
                      v8 + 28,
                      1);
@@ -484,7 +484,7 @@ char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
         j_DeleteAndZero( (void *)(&v38)); /*0x4f20a5*/
         if ( v30 ) /*0x4f20ac*/
         {
-          v31 = sub_4F38B0((char **)(v38.NeedsSaveOrLink + 4), &v38.occupant, (int)p_nextObject, v37); /*0x4f20c6*/
+          v31 = sub_4F38B0((char **)(v38.NeedsSaveOrLink + 4), &v38.occupant, (void *)p_nextObject, v37); /*0x4f20c6*/
           if ( v31 ) /*0x4f20ca*/
           {
             v32 = *(unsigned int *)(v9 + 8); /*0x4f20cc*/
@@ -1026,7 +1026,7 @@ _DWORD * sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
     v6 = (unsigned int *)(0); /*0x4f3914*/
     if ( (unsigned __int8)((String *)(const char **)&v13)->Equals_Alt( (const char *)(g_INI_Key_Image)) ) /*0x4f391b*/
     {
-      v7 = (unsigned int *)ParseINIGadgetDefinition((gamemd::ObjectClass *)(Source),(gamemd::ObjectClass *)( a2),(unsigned int *)( a3), a4); /*0x4f3932*/
+      v7 = (unsigned int *)ParseINIGadgetDefinition((gamemd::ObjectClass *)(Source),(gamemd::ObjectClass *)( a2),(unsigned int *)( a3), (gamemd::ObjectClass)(a4)); /*0x4f3932*/
     }
     else if ( (unsigned __int8)((String *)(const char **)&v13)->Equals_Alt( aShortcut) ) /*0x4f3942*/
     {
@@ -1702,7 +1702,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
         v12 = (MSShapeAnim *)RA2_OPNEW(0x40u); /*0x4f2fc0*/
         if ( v12 ) /*0x4f2fca*/
         {
-          v13 = MSShapeAnim::Constructor(v12, a6, *a4, a4[1], *((unsigned int *)this + 9), a8, a9, 0); /*0x4f2ff2*/
+          v13 = MSShapeAnim::Constructor(v12, a6, (int)(*a4), a4[1], *((unsigned int *)this + 9), a8, a9, 0); /*0x4f2ff2*/
           if ( v13 ) /*0x4f2ff9*/
             ((PriorityQueue *)a3)->Add( (int)v13); /*0x4f3003*/
         }
@@ -2116,7 +2116,7 @@ int sub_4F50F0()
     dword_A8EFC8 = (unsigned int)(int)&off_7EA7B4;
     dword_A8EFDC = 10; /*0x4f5117*/
     dword_A8EFD8 = 0; /*0x4f5121*/
-    return atexit(sub_4F5130); /*0x4f512c*/
+    return atexit((void (__cdecl *)(void))(sub_4F5130)); /*0x4f512c*/
 }
 } // namespace gamemd
 

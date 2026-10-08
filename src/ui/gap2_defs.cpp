@@ -552,7 +552,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       (*(void (__thiscall **)(EditClass *))(*(unsigned int *)this + 72))((gamemd::EditClass *)(this)); /*0x4c31b9*/
     }
     if ( (v6 & 0x100) == 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *))(*(unsigned int *)this + 88))(this) ) /*0x4c31cd*/
-      return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c31d2*/
+      return ((CellClass *)(ControlClass *)this)->Draw((gamemd::EditClass *)(v6), a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c31d2*/
     if ( *(unsigned int *)a3 == 27 ) /*0x4c31dd*/
     {
       (*(void ((gamemd::EditClass *)(__thiscall **))(EditClass *))(*(unsigned int *)this + 84))(this); /*0x4c31e3*/
@@ -565,7 +565,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       IDA_BYTE1(v8) &= ~0x10u; /*0x4c3221*/
       *(unsigned int *)a3 = v8; /*0x4c3227*/
       if ( (v6 & 0x44) != 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *, int))(*(unsigned int *)this + 152))(this, v7) ) /*0x4c3230*/
-        return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c3238*/
+        return ((CellClass *)(ControlClass *)this)->Draw((gamemd::EditClass *)(v6), a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c3238*/
     }
     else if ( (*(unsigned int *)a3 & 0x1000) == 0 && v7 >= 32 || v8 == 13 || v8 == 8 ) /*0x4c3255*/
     {
@@ -574,7 +574,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       v9 = *this; /*0x4c3263*/
       v10 = Keyboard_MapKey(*(int **)&stru_87F5F0.__pad_58[296], v8); /*0x4c3266*/
       if ( !(*(unsigned __int8 (__thiscall **)(EditClass *, unsigned int))(*(unsigned int *)&v9 + 152))(this, v10) ) /*0x4c3271*/
-        return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c327a*/
+        return ((CellClass *)(ControlClass *)this)->Draw((gamemd::EditClass *)(v6), a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c327a*/
     }
     IDA_BYTE1(v6) &= ~1u; /*0x4c327c*/
     *(unsigned int *)a3 = 0; /*0x4c327f*/
@@ -4463,7 +4463,7 @@ void* TabClass::updateTabProduction(int a1) {
     result = this; /*0x6a80a0*/
     this->TabClass_field_0x0 = 0; /*0x6a80aa*/
     IDA_LOBYTE(this->TabClass_field_0x4) = 0; /*0x6a80ac*/
-    v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6a80af*/
+    v3 = dword_A8ED84; /*0x6a80af*/
     *((unsigned int *)result + 4) = 0; /*0x6a80b5*/
     *((unsigned int *)result + 2) = v3; /*0x6a80b8*/
     *((unsigned int *)result + 5) = 0; /*0x6a80bc*/
@@ -4492,7 +4492,7 @@ void* TabClass::updateTabProduction(int a1) {
     {
       *((unsigned int *)v5 - 1) = 0; /*0x6a811c*/
       *v5 = 0; /*0x6a811f*/
-      v7 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6a8121*/
+      v7 = dword_A8ED84; /*0x6a8121*/
       *((unsigned int *)v5 + 3) = 0; /*0x6a8127*/
       *((unsigned int *)v5 + 1) = v7; /*0x6a812a*/
       *((unsigned int *)v5 + 4) = 0; /*0x6a812d*/
@@ -5241,7 +5241,7 @@ int SidebarClass::UpdateProduction() {
               {
                 memset(v52, 0, 16); /*0x6aa957*/
                 v52[5] = 0; /*0x6aa967*/
-                v52[7] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6aa96b*/
+                v52[7] = dword_A8ED84; /*0x6aa96b*/
                 v52[9] = 0; /*0x6aa96f*/
                 v52[10] = 0; /*0x6aa973*/
                 IDA_LOBYTE(v52[6]) = 0; /*0x6aa982*/
@@ -5267,7 +5267,7 @@ int SidebarClass::UpdateProduction() {
           v19[24] = 0; /*0x6aa9f7*/
           *(unsigned int *)(this + 4 * (v18 + 4 * (3 * v18 + 6) + 2)) = 0; /*0x6aa9fd*/
           v19[27] = 0; /*0x6aaa01*/
-          v19[29] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6aaa0b*/
+          v19[29] = dword_A8ED84; /*0x6aaa0b*/
           v20 = v52[14]; /*0x6aaa0d*/
           v19[32] = 0; /*0x6aaa11*/
           v19[30] = v20; /*0x6aaa17*/
@@ -5735,7 +5735,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                       v54 = v73; /*0x6ab920*/
                       *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 108) = 0; /*0x6ab927*/
                       v55 = (unsigned int *)(v9 + v54[2].ControlClass_field_0x0C + 108); /*0x6ab932*/
-                      v56 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ab936*/
+                      v56 = dword_A8ED84; /*0x6ab936*/
                       v55[5] = v53; /*0x6ab93e*/
                       v55[2] = v56; /*0x6ab941*/
                       v55[3] = v77; /*0x6ab947*/
@@ -5793,7 +5793,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
             v36 = v69; /*0x6ab5b6*/
             *(unsigned int *)(v9 + v28[2].ControlClass_field_0x0C + 108) = Member09; /*0x6ab5ba*/
             BuildTimeFrames = FactoryClass::GetBuildTimeFrames((FactoryClass *)v36); /*0x6ab5be*/
-            v38 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ab5c6*/
+            v38 = dword_A8ED84; /*0x6ab5c6*/
             ++BuildTimeFrames; /*0x6ab5cc*/
             v39 = (unsigned int *)(v9 + v28[2].ControlClass_field_0x0C + 116); /*0x6ab5d3*/
             *(unsigned int *)(v9 + v28[2].ControlClass_field_0x0C + 128) = BuildTimeFrames; /*0x6ab5d6*/
@@ -5915,7 +5915,7 @@ int TabClass::drawTabBackground() {
 
     this->TabClass_field_0x14 = 0; /*0x6ac7c4*/
     this->__pad_18[0] = 0; /*0x6ac7c7*/
-    v2 = *(IUnknown **)((char *)&stru_A8EB00 + 416); /*0x6ac7ca*/
+    v2 = *(IUnknown **)(unsigned int)&dword_A8ED84; /*0x6ac7ca*/
     *(unsigned int *)&this->__pad_20[4] = 0; /*0x6ac7d0*/
     this->TabClass_field_0x1C = v2; /*0x6ac7d3*/
     *(unsigned int *)&this->__pad_20[8] = 0; /*0x6ac7d6*/
@@ -5931,7 +5931,7 @@ void* SidebarClass::initButtons() {
 
     this->SidebarClass_field_0x0 = 0; /*0x6ac874*/
     IDA_LOBYTE(this->SidebarClass_field_0x4) = 0; /*0x6ac876*/
-    v2 = *(void **)((char *)&stru_A8EB00 + 416); /*0x6ac879*/
+    v2 = (void *)dword_A8ED84; /*0x6ac879*/
     *(unsigned int *)&this->vtable4[4] = 0; /*0x6ac87f*/
     this->SidebarClass_field_0x8 = v2; /*0x6ac882*/
     this->SidebarClass_field_0x14 = 0; /*0x6ac885*/
@@ -6193,10 +6193,10 @@ int SidebarClass::GetProductionState() {
       SidebarClass_field_0x30 = this->SidebarClass_field_0x30; /*0x6cc00b*/
       if ( SidebarClass_field_0x30 != (TechnoClass *)-1 ) /*0x6cc011*/
       {
-        if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)SidebarClass_field_0x30 >= (int)SidebarClass_field_0x38 ) /*0x6cc01d*/
+        if ( dword_A8ED84 - (int)SidebarClass_field_0x30 >= (int)SidebarClass_field_0x38 ) /*0x6cc01d*/
           SidebarClass_field_0x38 = 0; /*0x6cc023*/
         else
-          SidebarClass_field_0x38 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)SidebarClass_field_0x30; /*0x6cc01f*/
+          SidebarClass_field_0x38 -= dword_A8ED84 - (unsigned int)SidebarClass_field_0x30; /*0x6cc01f*/
       }
       if ( v11 == -1 ) /*0x6cc028*/
         v18 = *(unsigned int *)(v1 + 176); /*0x6cc036*/
@@ -6215,10 +6215,10 @@ int SidebarClass::GetProductionState() {
       v9 = this->SidebarClass_field_0x30; /*0x6cbf98*/
       if ( v9 != (TechnoClass *)-1 ) /*0x6cbf9e*/
       {
-        if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)v9 >= (int)v8 ) /*0x6cbfaa*/
+        if ( dword_A8ED84 - (int)v9 >= (int)v8 ) /*0x6cbfaa*/
           v8 = 0; /*0x6cbfb0*/
         else
-          v8 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)v9; /*0x6cbfac*/
+          v8 -= dword_A8ED84 - (unsigned int)v9; /*0x6cbfac*/
       }
       if ( v6 == -1 ) /*0x6cbfb5*/
         v5 = (double)(v7 - (int)v8) / (double)*(int *)(v1 + 176); /*0x6cbfdf*/
@@ -6235,12 +6235,12 @@ int SidebarClass::GetProductionState() {
     v4 = this->SidebarClass_field_0x30; /*0x6cbf23*/
     if ( v4 != (TechnoClass *)-1 ) /*0x6cbf29*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)v4 >= (int)v3 ) /*0x6cbf34*/
+      if ( dword_A8ED84 - (int)v4 >= (int)v3 ) /*0x6cbf34*/
       {
         v15 = 0; /*0x6cbf47*/
         goto LABEL_11; /*0x6cbf4f*/
       }
-      v3 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)v4; /*0x6cbf36*/
+      v3 -= dword_A8ED84 - (unsigned int)v4; /*0x6cbf36*/
     }
     v15 = (int)v3; /*0x6cbf38*/
   LABEL_11:
@@ -6320,9 +6320,9 @@ void* TabClass::Constructor() {
     TabClass::initTabData((char *)this); /*0x6cfe2b*/
     *((unsigned int *)this + 5446) = (unsigned int)(void *)&INoticeSink_vftable; /*0x6cfe3c*/
     TabClass::initStripClass((TabClass *)((char *)this + 21788)); /*0x6cfe42*/
-    *((unsigned int *)this + 5451) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6cfe4e*/
+    *((unsigned int *)this + 5451) = dword_A8ED84; /*0x6cfe4e*/
     *((unsigned int *)this + 5453) = 0; /*0x6cfe54*/
-    v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6cfe5a*/
+    v2 = dword_A8ED84; /*0x6cfe5a*/
     *((unsigned int *)this + 5456) = 0; /*0x6cfe60*/
     *((unsigned int *)this + 5454) = v2; /*0x6cfe66*/
     *((unsigned int *)this + 5446) = (unsigned int)(void *)&TabClass_vftable; /*0x6cfe6e*/

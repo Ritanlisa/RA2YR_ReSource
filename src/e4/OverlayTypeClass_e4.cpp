@@ -193,7 +193,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   DamageLevels = this->DamageLevels; /*0x5fe867*/
   this->RadarColor[0] = v11; /*0x5fe884*/
   if ( /*0x5fe88a*/
-         ((INIClass*)((INIClass *)aP1))->GetString(/*0x5fe88a*/ (uint8_t *)((unsigned int *)this)[0], aCellanim, &g_INI_DefaultBuffer, Destination, 128) )
+         ((INIClass*)((INIClass *)aP1))->GetString(/*0x5fe88a*/ (uint8_t *)((unsigned int *)this)[0], (void *)(aCellanim), &g_INI_DefaultBuffer, (void *)(Destination), 128) )
   {
     v13 = (unsigned int *)AnimTypeClass::FindOrCreate(Destination); /*0x5fe897*/
   }
@@ -220,7 +220,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
             (INIClass *)aP1,
             (int)&v28,
             (uint8_t *)((unsigned int *)this)[0],
-            aRadarcolor,
+            (unsigned char *)(aRadarcolor),
             (uint8_t *)&this->__tail_2B5[1]);
   *(unsigned short *)&this->__tail_2B5[1] = *(unsigned short *)Coord; /*0x5fe94f*/
   Explodes = this->Explodes; /*0x5fe95e*/

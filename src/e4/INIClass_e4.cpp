@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include <new>  // W20L4 T2 placement-new Constructor forwarding
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Math_e4.hpp"
@@ -62,7 +63,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
     goto LABEL_9; /*0x526863*/
   if ( !*((unsigned char *)aP1 + 52) ) /*0x526865*/
   {
-    qsort(*(void **)&aP1->q028, v4, 8u, CompareFunc4Int); /*0x526876*/
+    qsort(*(void **)&aP1->q028, v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)(CompareFunc4Int)); /*0x526876*/
     *((unsigned int *)aP1 + 14) = 0; /*0x52687e*/
     *((unsigned char *)aP1 + 52) = 1; /*0x526881*/
   }
@@ -80,7 +81,7 @@ LABEL_9:
     return (gamemd::ObjectClass **)(*(unsigned int *)(*((unsigned int *)aP1 + 14) + 4)); /*0x526933*/
   if ( !*((unsigned char *)aP1 + 52) ) /*0x5268b7*/
   {
-    qsort(*(void **)&aP1->q028, v8, 8u, CompareFunc4Int); /*0x5268c8*/
+    qsort(*(void **)&aP1->q028, v8, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)(CompareFunc4Int)); /*0x5268c8*/
     *((unsigned int *)aP1 + 14) = 0; /*0x5268d0*/
     *((unsigned char *)aP1 + 52) = 1; /*0x5268d3*/
   }
@@ -306,6 +307,10 @@ LABEL_36:
   return strlen( (const char *)(v6)); /*0x528bbe*/
 
 }
+}
+// 0x535AA0 site-form Constructor supply (W20L4 T2; forwards to ctor def below)
+namespace gamemd {
+void * INIClass::Constructor(void *aP1) { return new (aP1) INIClass(); }
 }
 // 0x535AA0
 namespace gamemd {

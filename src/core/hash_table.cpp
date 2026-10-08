@@ -33,7 +33,7 @@ int Hash::InsertOrdered(void* table, const void* entry, int a2)
 {
     int result; // eax
 
-    result = (*(int (__thiscall **)(GScreenClass *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4418*/
+    result = (*(int (__thiscall **)(void *, int))(this->vfptr[0] + 44))(this, a2); /*0x4f4418*/
     if ( (unsigned char)result ) /*0x4f441d*/
     {
       IDA_LOBYTE(result) = 0; /*0x4f441f*/

@@ -56,7 +56,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
       if ( ((DSurface *)(DSurface_Sidebar))->RestoreIfLost() ) /*0x777511*/
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
-        if ( !((unsigned int *)&stru_A8EB00)[376] || *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > 16 ) /*0x777530*/
+        if ( !((unsigned int *)&stru_A8EB00)[376] || (int *)dword_A8ED84 > 16 ) /*0x777530*/
           (*((void (**)(DSurface *, unsigned int))DSurface_Sidebar->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Sidebar), 0); /*0x77753c*/
       }
     }

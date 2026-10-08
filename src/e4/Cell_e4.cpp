@@ -1032,7 +1032,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
     v20 = (int)(a4); /*0x56ec7c*/
     v8[14] = v10; /*0x56ec7d*/
     ((House *)((int)v8))->AnnounceUpgrade(v20); /*0x56ec80*/
-    BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8, v8 + 9); /*0x56ec8e*/
+    BuildingClass::AddUpgrade((BuildingClass *)&dword_87F7E8, (int)(v8 + 9)); /*0x56ec8e*/
     v13 = 0; /*0x56ec93*/
     a2 = (IUnknown *)(8); /*0x56ec95*/
     do /*0x56ed23*/
@@ -1052,7 +1052,7 @@ char Cell::SetTileType(__int16 *a1, int a2, int a3, int a4, int a5)
         v19 = (unsigned int *)(&unk_ABDC50); /*0x56ecf5*/
       }
       if ( v19[14] == v12 ) /*0x56ecfd*/
-        Cell::SetTileType( (IUnknown *)(&a1), (IUnknown *)v10, (IUnknown *)v12, (IUnknown *)(a4), 1); /*0x56ed11*/
+        Cell::SetTileType( (short *)(&a1), (int)v10, (int)v12, (int)(a4), 1); /*0x56ed11*/
       v13 = (v13 + 1) & 7; /*0x56ed1b*/
       result = (char)(--a2); /*0x56ed1e*/
     }

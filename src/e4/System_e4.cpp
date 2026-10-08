@@ -350,7 +350,7 @@ int sub_7A2EA0(int (__stdcall ***a1)(_DWORD, void *, int *), int a2, int a3, int
   v4 = *a1; /*0x7a2ead*/
   v8 = 0; /*0x7a2eb5*/
   v7 = 0; /*0x7a2ebd*/
-  v5 = (*v4)(a1, &unk_7F7CD0, &v8); /*0x7a2ec7*/
+  v5 = (*v4)((unsigned int)(a1), &unk_7F7CD0, &v8); /*0x7a2ec7*/
   if ( v5 >= 0 ) /*0x7a2ecb*/
   {
     v5 = (*(int (**)(int, int, int *))(*(unsigned int *)v8 + 16))( v8, a3, (int *)(&v7)); /*0x7a2ee1*/

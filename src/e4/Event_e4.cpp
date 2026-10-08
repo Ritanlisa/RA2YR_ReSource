@@ -210,12 +210,12 @@ int sub_796960()
     if ( !g_NetworkLobbyState && &dword_B76B10 ) /*0x796a00*/
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
-        qmemcpy( (void *)(&v9[0].__pad_0[12]), dword_B77908, 0x6Cu); /*0x796a1b*/
+        qmemcpy( (void *)(&v9[0].__pad_0[12]), (const void *)(dword_B77908), 0x6Cu); /*0x796a1b*/
       *(unsigned int *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
-      ((Network *)(v1))->SyncPlayerList(); /*0x796a29*/
+      ((gamemd::Network*)(v1))->SyncPlayerList(); /*0x796a29*/
       ((Event *)0)->Dispatch(); /*0x796a2e*/
-      ((Network *)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796a42*/
-      ((Network *)(&stru_A8BB1C))->FormatAddress(0); /*0x796a4e*/
+      ((gamemd::Network*)(&unk_A8E9C0))->SetConnectionParams(50, -1, 5000, 1); /*0x796a42*/
+      ((gamemd::Network*)(&stru_A8BB1C))->FormatAddress(0); /*0x796a4e*/
             Debug::Log("Poke_The_Host - Host address is %s\n") /*G57c1: IDA 0x796a59 push offset aPokeTheHostHos*/;
       memset( (void *)(v10), 0, sizeof(v10)); /*0x796a6f*/
       v11 = 0; /*0x796a79*/
@@ -240,7 +240,7 @@ int sub_796960()
         if ( &g_WebBrowserConfig != (int *)(ObjectClass *)-36 ) /*0x796ae4*/
         {
           v7 = CharToWideString( (unsigned char *)(&g_WebBrowserConfig.ambientSoundController[3])); /*0x796aeb*/
-          ((Network *)((int)&unk_A8E9C0))->SendToPlayer((int)((Network *)((int)&unk_A8E9C0)), (int)v10, 455, (wchar_t *)(1), (wchar_t *)v7); /*0x796b04*/
+          ((gamemd::Network*)((int)&unk_A8E9C0))->SendToPlayer((int)((gamemd::Network*)((int)&unk_A8E9C0)), (int)v10, 455, (wchar_t *)(1), (wchar_t *)v7); /*0x796b04*/
         }
       }
   LABEL_24:
@@ -303,7 +303,7 @@ int sub_7A0F40()
     }
         Debug::Log("Sending pings for users: %s\n") /*G57c1: IDA 0x7a103c push offset aSendingPingsFo*/;
 // 0x5e3720
-    return ((Network *)(Source))->SendOptionsGame(); /*0x7a1048*/
+    return ((gamemd::Network*)(Source))->SendOptionsGame(); /*0x7a1048*/
   }
   return result; /*0x7a104e*/
 }

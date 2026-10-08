@@ -15429,10 +15429,14 @@ extern unsigned int vt_AircraftClass_1;  // 0x7E2280 G42.42k supply
 extern void * vt_AircraftClass_6;  // 0x7E2250 G42.42k supply (Destruct [this+0x6C0])
 
 // G57w19k3 dot-q 清偿供给（逐站 live disasm 取证；地址=IDA 标签真值）
-extern unsigned int off_82AF14;   // data: 0x82AF14 Event::Dispatch_Return0 槽 (RandomMap [31] 族)
+extern void* off_82AF14;   // data: 0x82AF14 Event::Dispatch_Return0 槽 (RandomMap [31] 族)
 extern unsigned int dword_82AF18; // data: 0x82AF18 RandomMap flag 表基 (0x5910BD)
 extern unsigned char unk_82AFF0;  // data: 0x82AFF0 RandomMap 地形字节表 (0x5928C6)
 extern unsigned int off_82B038;   // data: 0x82B038 TXT 表基 (0x597003)
+extern unsigned char unk_82B004;  // data: 0x82B004 RandomMap 循环上界 (0x592993 cmp esi,offset unk_82B004)
+extern void* off_82B034;   // data: 0x82B034 CSF TXT 表基 (0x59704F mov ecx,off_82B034[ecx*4])
+extern unsigned char unk_82AF78;  // data: 0x82AF78 (0x591B56 mov esi,offset unk_82AF78)
+extern unsigned char unk_82AF8C;  // data: 0x82AF8C (0x591C1D cmp esi,offset unk_82AF8C)
 extern unsigned int dword_8B410C; // data: 0x8B410C FootClass Array Items (0x599DD2/0x7354A5)
 extern unsigned int dword_8B4124; // data: 0x8B4124 FootClass Array Items#2 (0x5120F9/0x6A46DF)
 extern unsigned int dword_8B4130; // data: 0x8B4130 FootClass Array Count (0x6A46F8)

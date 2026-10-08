@@ -48,7 +48,7 @@ int Session::RemoveTeam(int (***aP1)(unsigned int, int))
   if ( aP1 ) /*0x5d1d87*/
   {
     v3 = (void **)(&this->field_18); /*0x5d1d8c*/
-    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))( (&this->field_18), (unsigned int)(&aP1)); /*0x5d1d96*/
+    result = (*((int (**)(void **, unsigned int))this->field_18 + 4))( (&this->field_18), (unsigned int)((void **)(&aP1))); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
       result = (*((int (**)(void **, unsigned int))*v3 + 4))( (v3), (unsigned int)(&aP1)); /*0x5d1da7*/

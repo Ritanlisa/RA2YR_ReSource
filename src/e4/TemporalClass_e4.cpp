@@ -46,7 +46,7 @@ int TemporalClass::Constructor()
   int v3; // eax
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x71a453*/
-  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a458*/
+  v2 = dword_A8ED84; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(unsigned int *)&this->__pad_28[4] = v2; /*0x71a464*/
   this->vtable1 = &vt_TemporalClass; /*0x71a467*/
@@ -78,7 +78,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   int v5; // [esp+Ch] [ebp-8h]
 
   ((AbstractClass*)(AbstractClass *)this)->Constructor(); /*0x71a4e7*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a4fb*/
+  *(unsigned int *)&this->__pad_28[4] = dword_A8ED84; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->vtable1 = &vt_TemporalClass; /*0x71a501*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a507*/
@@ -86,7 +86,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_TemporalClass); /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_28 = 0; /*0x71a51f*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a529*/
+  *(unsigned int *)&this->__pad_28[4] = dword_A8ED84; /*0x71a529*/
   this->TemporalClass_field_30 = v5; /*0x71a52c*/
   this->TemporalClass_field_34 = 0; /*0x71a52f*/
   *((unsigned int *)this + 16) = 0; /*0x71a532*/

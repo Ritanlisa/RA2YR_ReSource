@@ -141,7 +141,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   LOBYTE(this->flashing[1]) = 0; /*0x6f2b58*/
   this->animation[0] = 0; /*0x6f2b5e*/
   LOBYTE(this->animation[1]) = 0; /*0x6f2b64*/
-  v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2b6a*/
+  v3 = dword_A8ED84; /*0x6f2b6a*/
   this->animation[4] = 0; /*0x6f2b6f*/
   this->animation[2] = v3; /*0x6f2b75*/
   this->animation[5] = 0; /*0x6f2b7b*/
@@ -165,22 +165,22 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   (&this->armorMultiplier)[1] = 1072693248; /*0x6f2bf8*/
   ((unsigned int *)&this->firepowerMultiplier)[0] = 0; /*0x6f2bfe*/
   ((unsigned int *)&this->firepowerMultiplier)[1] = 1072693248; /*0x6f2c04*/
-  this->idleActionTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2c10*/
+  this->idleActionTimer[0] = dword_A8ED84; /*0x6f2c10*/
   this->idleActionTimer[2] = 0; /*0x6f2c16*/
-  v4 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2c1c*/
+  v4 = dword_A8ED84; /*0x6f2c1c*/
   this->radarFlashTimer[2] = 0; /*0x6f2c22*/
   this->radarFlashTimer[0] = v4; /*0x6f2c28*/
-  this->targetingTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2c33*/
+  this->targetingTimer[0] = dword_A8ED84; /*0x6f2c33*/
   this->targetingTimer[2] = 45; /*0x6f2c39*/
-  v5 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2c43*/
+  v5 = dword_A8ED84; /*0x6f2c43*/
   this->ironCurtainTimer[1] = 0; /*0x6f2c49*/
   *(unsigned int *)this->__pad_18C = v5; /*0x6f2c4f*/
-  this->ironCurtainTimer[2] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2c5b*/
+  this->ironCurtainTimer[2] = dword_A8ED84; /*0x6f2c5b*/
   this->ironTintTimer[1] = 0; /*0x6f2c61*/
   this->ironTintTimer[2] = 10; /*0x6f2c67*/
-  this->ironTintStage = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2c76*/
+  this->ironTintStage = dword_A8ED84; /*0x6f2c76*/
   this->airstrikeTimer[1] = 0; /*0x6f2c7c*/
-  v6 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2c82*/
+  v6 = dword_A8ED84; /*0x6f2c82*/
   this->airstrikeTintTimer[1] = 0; /*0x6f2c88*/
   this->airstrikeTimer[2] = v6; /*0x6f2c8e*/
   *(unsigned int *)this->__pad_1C4 = 0; /*0x6f2c94*/
@@ -190,13 +190,13 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->drainAnim = 0; /*0x6f2cac*/
   this->isDisguisedFlag = 0; /*0x6f2cb2*/
   this->disguiseCreationFrame = 0; /*0x6f2cb8*/
-  v7 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2cbe*/
+  v7 = dword_A8ED84; /*0x6f2cbe*/
   ((unsigned int *)&this->infantryBlinkTimer)[2] = 0; /*0x6f2cc4*/
   ((unsigned int *)&this->infantryBlinkTimer)[0] = v7; /*0x6f2cca*/
-  this->disguiseBlinkTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2cd5*/
+  this->disguiseBlinkTimer[0] = dword_A8ED84; /*0x6f2cd5*/
   this->disguiseBlinkTimer[2] = 0; /*0x6f2cdb*/
   this->isTargetedByChrono = 0; /*0x6f2ce1*/
-  ((unsigned int *)&this->reloadTimer)[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2ced*/
+  ((unsigned int *)&this->reloadTimer)[0] = dword_A8ED84; /*0x6f2ced*/
   ((unsigned int *)&this->reloadTimer)[2] = 0; /*0x6f2cf3*/
   this->currentBurstCount = 0; /*0x6f2cf9*/
   this->currentBarrelIndex = 0; /*0x6f2cff*/
@@ -207,11 +207,11 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->cloakState = 0; /*0x6f2d21*/
   this->cloakProgress[0] = 0; /*0x6f2d27*/
   LOBYTE(this->cloakProgress[1]) = 0; /*0x6f2d2d*/
-  this->cloakProgress[2] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2d38*/
+  this->cloakProgress[2] = dword_A8ED84; /*0x6f2d38*/
   this->cloakProgress[4] = 0; /*0x6f2d3e*/
   this->cloakProgress[5] = 0; /*0x6f2d44*/
   this->cloakProgress[6] = 1; /*0x6f2d4a*/
-  v8 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2d50*/
+  v8 = dword_A8ED84; /*0x6f2d50*/
   this->cloakDelayTimer[2] = 0; /*0x6f2d56*/
   this->cloakDelayTimer[0] = v8; /*0x6f2d5c*/
   this->warpFactor = 0.0; /*0x6f2d62*/
@@ -258,7 +258,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->slaveManager = 0; /*0x6f2e6f*/
   this->slaveOwner = 0; /*0x6f2e75*/
   this->originalOwnerHouse = 0; /*0x6f2e7b*/
-  this->diskLaserTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2e86*/
+  this->diskLaserTimer[0] = dword_A8ED84; /*0x6f2e86*/
   this->diskLaserTimer[2] = 0; /*0x6f2e8c*/
   this->diskLaserChargeState = 0; /*0x6f2e98*/
   this->ammo = -1; /*0x6f2e9e*/
@@ -275,7 +275,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   ((FrameSnapshot *)(this->primaryFacing))->Init(); /*0x6f2ef1*/
   ((FrameSnapshot *)(this->secondaryFacing))->Init(); /*0x6f2efc*/
   this->currentBurstIndex = 0; /*0x6f2f01*/
-  this->targetLaserTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f2f0d*/
+  this->targetLaserTimer[0] = dword_A8ED84; /*0x6f2f0d*/
   this->targetLaserTimer[2] = 0; /*0x6f2f13*/
   *(unsigned short *)this->unknown_3CA = 0; /*0x6f2f1e*/
   this->countedAsOwned = 0; /*0x6f2f25*/
@@ -354,7 +354,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->isUnusedGattlingSoundPlaying = 0; /*0x6f30ee*/
   this->unknown_4D8 = 0; /*0x6f30f4*/
   this->unknown_bool_4F8 = 0; /*0x6f30fa*/
-  this->unknown_4FC = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6f3106*/
+  this->unknown_4FC = dword_A8ED84; /*0x6f3106*/
   this->queueUpToEnter = 0; /*0x6f310c*/
   this->empLockRemaining = 0; /*0x6f3112*/
   this->firingRadBeam = 0; /*0x6f3118*/
@@ -979,7 +979,7 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
   if ( (unsigned char)result ) /*0x7058e8*/
   {
     v10 = (int *)g_DSurface_Hidden_2; /*0x7058f0*/
-    v11 = Random::Range(Randomizer_Global, 190, 270); /*0x705905*/
+    v11 = Random::Range((gamemd::Random *)(Randomizer_Global), 190, 270); /*0x705905*/
     v21 = 0; /*0x70590c*/
     if ( v11 <= 255 ) /*0x70591c*/
     {
@@ -1036,14 +1036,14 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
       v33 = v16 + v22 / 4; /*0x705ae1*/
       v34 = v13 + v23 / 4; /*0x705af8*/
       v18 = v6 + v24 / 4; /*0x705b15*/
-      ((AudioStream *)v10)->DrawWaveform( (IUnknown *)(&DSurface_ViewBounds), (IUnknown *)(&v35), (IUnknown *)(&v33), (IUnknown *)(&v20), v25 / 4 + 255, v6, v18); /*0x705b34*/
+      ((AudioStream *)v10)->DrawWaveform( (int *)(&DSurface_ViewBounds), (unsigned int *)(&v35), (unsigned int *)(&v33), (unsigned char *)(&v20), v25 / 4 + 255, v6, v18); /*0x705b34*/
       if ( v28 <= v27 ) /*0x705b43*/
       {
         v39 = v35 + 1; /*0x705bc8*/
         v40 = v36; /*0x705bd1*/
         v37 = v33 + 1; /*0x705bd6*/
         v38 = v34; /*0x705bdf*/
-        ((AudioStream *)v10)->DrawWaveform( (IUnknown *)(&DSurface_ViewBounds), (IUnknown *)(&v39), (IUnknown *)(&v37), (IUnknown *)(&v20), v17, v6, v18); /*0x705bf6*/
+        ((AudioStream *)v10)->DrawWaveform( (int *)(&DSurface_ViewBounds), (unsigned int *)(&v39), (unsigned int *)(&v37), (unsigned char *)(&v20), v17, v6, v18); /*0x705bf6*/
         v39 = v35 - 1; /*0x705c08*/
         v40 = v36; /*0x705c11*/
         v37 = v33 - 1; /*0x705c16*/
@@ -1055,13 +1055,13 @@ int TechnoClass_DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, in
         v40 = v36 + 1; /*0x705b5a*/
         v37 = v33; /*0x705b60*/
         v38 = v34 + 1; /*0x705b69*/
-        ((AudioStream *)v10)->DrawWaveform( (IUnknown *)(&DSurface_ViewBounds), (IUnknown *)(&v39), (IUnknown *)(&v37), (IUnknown *)(&v20), v17, v6, v18); /*0x705b80*/
+        ((AudioStream *)v10)->DrawWaveform( (int *)(&DSurface_ViewBounds), (unsigned int *)(&v39), (unsigned int *)(&v37), (unsigned char *)(&v20), v17, v6, v18); /*0x705b80*/
         v39 = v35; /*0x705b91*/
         v40 = v36 - 1; /*0x705b9a*/
         v37 = v33; /*0x705ba0*/
         v38 = v34 - 1; /*0x705ba9*/
       }
-      ((AudioStream *)v10)->DrawWaveform( (IUnknown *)(&DSurface_ViewBounds), (IUnknown *)(&v39), (IUnknown *)(&v37), (IUnknown *)(&v20), v17, v6, v18); /*0x705bb9*/
+      ((AudioStream *)v10)->DrawWaveform( (int *)(&DSurface_ViewBounds), (unsigned int *)(&v39), (unsigned int *)(&v37), (unsigned char *)(&v20), v17, v6, v18); /*0x705bb9*/
       v35 = v33; /*0x705c47*/
       v36 = v34; /*0x705c4f*/
       v6 = v18; /*0x705c57*/

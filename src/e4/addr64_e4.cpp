@@ -619,7 +619,7 @@ if ( !(*(int (**)(IPXManagerClass *, void *, unsigned int *, int *))(v3->Socket 
       (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_170))( (LPPERSISTSTREAM)((LPPERSISTSTREAM)((LPPERSISTSTREAM)((LPPERSISTSTREAM)(g_TacticalClass_Instance)))));  /*0x6485cd*/
       ((TacticalMap*)((GScreenClass *)&stru_87F5F0.__pad_58[416]))->Redraw(); /*0x6485d5*/
     }
-    v10 = *(unsigned int *)((char *)&stru_A8EB00 + 416) + 1000; /*0x6485e7*/
+    v10 = dword_A8ED84 + 1000; /*0x6485e7*/
     v11 = 0; /*0x6485ed*/
     if ( (*(int (**)(IPXManagerClass *))(v3->Socket + 16))( (IPXManagerClass *)(v3)) > 0 ) /*0x6485f4*/
     {
@@ -633,7 +633,7 @@ if ( !(*(int (**)(IPXManagerClass *, void *, unsigned int *, int *))(v3->Socket 
       }
       while ( v11 < (*(int (**)(IPXManagerClass *))(v3->Socket + 16))( (IPXManagerClass *)(v3)) ); /*0x648615*/
     }
-    if ( v10 + dword_A8B554 < *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
+    if ( v10 + dword_A8B554 < (int *)dword_A8ED84 ) /*0x64862a*/
     {
             ((Debug *)0)->Log("Waiting for player %d on frame %d\n"); /*0x64862a G57w12: IDA push seq @ 0x64862a +2 reg-vararg omitted*/
       v2 = v13; /*0x648643*/
@@ -1880,7 +1880,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
         dword_A8E2C4 = v7; /*0x64a396*/
         return 0; /*0x64a3a4*/
       }
-      return (AbstractClass * *)v41; /*0x64a610*/
+      return (gamemd::AbstractClass* *)v41; /*0x64a610*/
     }
   }
   v24 = (unsigned int *)(a5 + 24 * v8); /*0x64a3b9*/
@@ -1908,7 +1908,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     if ( *(unsigned int *)(v6 + 7) != dword_A8E7A8 ) /*0x64a5e8*/
       return 2; /*0x64a5f9*/
     v24[3] = TimerGetTicks() - *a6; /*0x64a60d*/
-    return (AbstractClass * *)v41; /*0x64a60d*/
+    return (gamemd::AbstractClass* *)v41; /*0x64a60d*/
   }
   v26 = 0; /*0x64a417*/
   if ( dword_A8B24C ) /*0x64a41b*/
@@ -1978,7 +1978,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
       v33 = v27 - 1; /*0x64a56c*/
     Debug::Log("Frame %d, Receive packet uncompressed into %d commmands\n"); /*0x64a57c G57w11: IDA push seq @ 0x64a57c +2 reg-vararg(s) omitted*/
     v24[2] += v33; /*0x64a590*/
-    return (AbstractClass * *)v41; /*0x64a593*/
+    return (gamemd::AbstractClass* *)v41; /*0x64a593*/
   }
 }
 }
@@ -2490,7 +2490,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
   }
   result = a4; /*0x64bda7*/
   *a6 = v28; /*0x64bdbc*/
-  return (AbstractClass * *)result; /*0x64bdb9*/
+  return (gamemd::AbstractClass* *)result; /*0x64bdb9*/
 }
 }
 // 0x64BDD0
@@ -2550,7 +2550,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
   v5 = a1; /*0x64be0e*/
   v40 = a1[2]; /*0x64be10*/
   if ( a2 < 0xE ) /*0x64be14*/
-    return (AbstractClass * *)v35; /*0x64c370*/
+    return (gamemd::AbstractClass* *)v35; /*0x64c370*/
   v6 = dword_8B4200; /*0x64be1a*/
   while ( 1 ) /*0x64be20*/
   {
@@ -2699,7 +2699,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     ++v35; /*0x64c2f6*/
     v34 += -1 - v38; /*0x64c2fa*/
     if ( v29 ) /*0x64c2fe*/
-      return (AbstractClass * *)v35; /*0x64c2fe*/
+      return (gamemd::AbstractClass* *)v35; /*0x64c2fe*/
     v5 = &a1[v3]; /*0x64c306*/
     v4 = (uint8_t)((unsigned char *)&byte_8208EC)[(uint8_t)a1[v3]]; /*0x64c31c*/
     if ( a1[v3] == 4 ) /*0x64c31e*/
@@ -2707,7 +2707,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
     v2 = a1; /*0x64c321*/
   LABEL_48:
     if ( v34 < v4 + 1 ) /*0x64c32e*/
-      return (AbstractClass * *)v35; /*0x64c32e*/
+      return (gamemd::AbstractClass* *)v35; /*0x64c32e*/
   }
   v3 += v11 + 1; /*0x64c0f9*/
   v38 = 5; /*0x64c0fd*/

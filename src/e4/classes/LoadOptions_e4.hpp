@@ -42,6 +42,7 @@ struct LoadOptions {
     DynamicVector * vt00(char a2, int a1);
     LoadOptions * QueryInterface(char a2, int a3, int a1);
     VectorClass_flat * Constructor_VectorClass_FileEntryClass___(char a2, int a1);
+    static void * Constructor(void *aP1);  // 0x558740 raw: _DWORD *__thiscall LoadOptions::LoadOptions(LoadOptions*) -- site form (W20L4 T2; def=gap debt)
     bool ddtor(LPCSTR lpFileName);
     char * GetData(void *a1);
     char AddRef(LPCCH lpMultiByteStr);

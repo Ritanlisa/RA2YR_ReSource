@@ -968,7 +968,7 @@ char ScriptAction::ProcessIdleAction()
         v71 = v13; /*0x63b817*/
         v60.Coord3D_field_0x04 = v62; /*0x63b81b*/
         v19 = Coord2D::Sub((int *)((Coord2D *)&v60), (int *)v55.__pad_0, &v70); /*0x63b81f*/
-        Vector::TwoDMagnitudeMath(v19); /*0x63b826*/
+        Vector::TwoDMagnitudeMath((gamemd::Vector *)(v19)); /*0x63b826*/
         if ( v20 >= 37 ) /*0x63b82e*/
         {
           v21 = (int)&((unsigned char *)&v70->__pad_0)[*(unsigned int *)v60.__pad_0] / 2 - 10; /*0x63b857*/
@@ -1063,7 +1063,7 @@ char ScriptAction::ProcessIdleAction()
         *(unsigned int *)v55.__pad_0 = v31; /*0x63bb1e*/
         v67.Coord2D_field_0x04 = v62; /*0x63bb22*/
         v39 = Coord2D::Sub(&v67, &v61, &v55); /*0x63bb26*/
-        Vector::TwoDMagnitudeMath(v39); /*0x63bb2d*/
+        Vector::TwoDMagnitudeMath((gamemd::Vector *)(v39)); /*0x63bb2d*/
         if ( v40 >= 37 ) /*0x63bb35*/
         {
           v41 = (*(unsigned int *)v55.__pad_0 + *(unsigned int *)v67.__pad_0) / 2 - 10; /*0x63bb61*/
@@ -1334,7 +1334,7 @@ const char * ScriptAction::ParseScriptActionParams()
         *(unsigned int *)this->__pad_90 = VocClass::FindByName((VocClass *)v5); /*0x6dd7c3*/
         break; /*0x6dd7c9*/
       case 7: /*0x6dd60d*/
-        *(unsigned int *)this->__pad_90 = VocClass::FindIndex((VocClass *)v5); /*0x6dd7d5*/
+        *(unsigned int *)this->__pad_90 = VocClass::FindIndex((const char *)v5); /*0x6dd7d5*/
         break; /*0x6dd7db*/
       case 8: /*0x6dd60d*/
         *(unsigned int *)this->__pad_90 = StringList::Find((StringList *)&unk_A83D10, v5); /*0x6dd7eb*/

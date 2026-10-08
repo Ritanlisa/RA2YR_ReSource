@@ -95,7 +95,7 @@ int FileClass::Open(int a2)
       v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65cc40*/
   LABEL_12:
       LastError = GetLastError(); /*0x65cc7f*/
-      result = (*(int ((gamemd::RawFileClass *)(**))(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
+      result = (*(int (__thiscall **)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65cc8a*/
       goto LABEL_13; /*0x65cc8a*/
     }
   LABEL_14:
@@ -164,7 +164,7 @@ int FileClass::Read(char *aP1, signed int aP2)
       v9 = *(unsigned int *)this->FileClass; /*0x65cd81*/
       v12 = *(unsigned int *)&this->FileNameAllocated; /*0x65cd83*/
       LastError = GetLastError(); /*0x65cd86*/
-      (*(void ((gamemd::RawFileClass *)(**))(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
+      (*(void (__thiscall **)(RawFileClass *, DWORD, int, int))(v9 + 64))(this, LastError, 1, v12); /*0x65cd8f*/
       v4 = nNumberOfBytesToReada; /*0x65cd92*/
     }
   }

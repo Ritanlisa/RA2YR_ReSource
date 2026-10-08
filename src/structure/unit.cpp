@@ -141,7 +141,7 @@ int UnitClass::Mission_Harvest()
                    this,
                    ((unsigned int *)this)[0]) )
             {
-              DB = CCINIClass::GetDB((CCINIClass *)((unsigned int *)this)[0]); /*0x415334*/
+              DB = CCINIClass::GetDB((gamemd::AircraftClass *)((unsigned int *)this)[0]); /*0x415334*/
               v14 = DB; /*0x415339*/
               if ( DB /*0x415360*/
                 && (v15 = *(unsigned int *)(DB + 1492)) != 0
@@ -153,7 +153,7 @@ int UnitClass::Mission_Harvest()
                                               &v31);
                 v18 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], WaypointCoords); /*0x41538c*/
  NearbyCell = (void *)(InfantryClass::FindNearbyCell((InfantryClass *)this, (int)v18)); /*0x415394*/
-                vtable0[288](this, NearbyCell, 1); /*0x41539c*/
+                vtable0[288]((gamemd::AircraftClass *)(this), NearbyCell, 1); /*0x41539c*/
               }
               else
               {
@@ -161,7 +161,7 @@ int UnitClass::Mission_Harvest()
                 Waypoint_Location = (short *)ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v32, 700); /*0x4153bb*/
                 v22 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], Waypoint_Location); /*0x4153c6*/
  v23 = (void *)(InfantryClass::FindNearbyCell((InfantryClass *)this, (int)v22)); /*0x4153ce*/
-                v20[288](this, v23, 1); /*0x4153d6*/
+                v20[288]((gamemd::AircraftClass *)(this), v23, 1); /*0x4153d6*/
  team = (TeamClass *)(((unsigned int *)this)[0]); /*0x4153dc*/
                 if ( team ) /*0x4153e4*/
                   TeamClass::SelectMember((int)team, (int)((unsigned int *)this)[0]); /*0x4153f1*/
@@ -193,7 +193,7 @@ int UnitClass::Mission_Harvest()
           {
             v11 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x4152e9*/  // g57e2 W2
  ClosestPlacementCell = (void *)(TechnoClass_FindClosestPlacementCell((void *)this)); /*0x4152ef*/
-            v11[288](this, ClosestPlacementCell, 1); /*0x4152f7*/
+            v11[288]((gamemd::AircraftClass *)(this), ClosestPlacementCell, 1); /*0x4152f7*/
           }
         }
         goto LABEL_9; /*0x415250*/
@@ -203,7 +203,7 @@ int UnitClass::Mission_Harvest()
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x415447*/
           ((unsigned int *)this)[0] = 2; /*0x41544e*/
         if ( !(*((unsigned __int8 (__thiscall **)(AircraftClass *, AbstractClass *))this->vtable1 + 340))(this, ((unsigned int *)this)[0]) ) /*0x415463*/
-          ((unsigned int *)this)[0] = 0; /*0x415471*/
+          ((gamemd::AircraftClass *)this)[0] = 0; /*0x415471*/
         goto LABEL_9; /*0x41547b*/
       case 2:
         if ( !*(unsigned int *)&this->Locomotor ) /*0x415480*/
@@ -563,7 +563,7 @@ int UnitClass::Deploy()
     {
       if ( (*(unsigned __int8 (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)v2 + 16))(this)  /*g57w10 r4: raw til 基类子对象渲染 this->LocomotionClass@0 = vfptr*/ ) /*0x71936a*/
       {
- v7 = (FootClass *)(((unsigned int *)v2)[0]); /*0x719375*/
+ v7 = (FootClass *)((gamemd::TeleportLocomotionClass *)(((unsigned int *)v2)[0])); /*0x719375*/
  v8 = (int *)((unsigned int *)&v2->MovingDestination + 2); /*0x719378*/  // g57e2 W3
         if ( *(unsigned int *)&v7->vtable3 == ((unsigned int *)&v2->MovingDestination)[2] &&*(unsigned int *)((char *)v7 + 8) == ((unsigned int *)&v2->LastCoords)[0] &&((char *)v7 + 8) == ((unsigned int *)&v2->LastCoords)[1] /*0x7193c1*/  // g57e2 W3
           || *v8 == ((char *)&g_BuildingLoadQueue_Array)
@@ -675,7 +675,7 @@ int UnitClass::Deploy()
             v56 = (unsigned int)(*v31); /*0x719614*/
             v57 = v31[1]; /*0x71961b*/
             v58 = v31[2]; /*0x719624*/
-            StartAudioControllerAt(v30, &v56, 0); /*0x71962c*/
+            StartAudioControllerAt(v30, (unsigned int *)(&v56), 0); /*0x71962c*/
           }
           (*((void (__thiscall **)(FootClass *, int *))((unsigned int *)v2)[0]->vtable1 + 109))(((unsigned int *)v2)[0], &v2->MovingDestination[2]); /*0x719637*/
           IDA_LOWORD(this) = *v8 / 256; /*0x71964c*/
@@ -694,7 +694,7 @@ int UnitClass::Deploy()
             v56 = *v35; /*0x7196f8*/
             v57 = v35[1]; /*0x7196ff*/
             v58 = v35[2]; /*0x719708*/
-            StartAudioControllerAt(v34, &v56, 0); /*0x719710*/
+            StartAudioControllerAt(v34, (unsigned int *)(&v56), 0); /*0x719710*/
           }
           (*((void (__thiscall **)(FootClass *, int))((unsigned int *)v2)[0]->vtable1 + 99))(((unsigned int *)v2)[0], 2); /*0x71971c*/
           (*(void (__stdcall **)(TeleportLocomotionClass *))(*(unsigned int *)v2 + 72))(v2); /*0x719725 g57w10 r4: 同上*/
@@ -756,7 +756,7 @@ int UnitClass::Deploy()
           v56 = *v42; /*0x7198b6*/
           v57 = v42[1]; /*0x7198bd*/
           v58 = v42[2]; /*0x7198c6*/
-          StartAudioControllerAt(v41, &v56, 0); /*0x7198ce*/
+          StartAudioControllerAt(v41, (unsigned int *)(&v56), 0); /*0x7198ce*/
         }
         ((unsigned int *)v2)[0] = 1; /*0x7198da*/
         ((unsigned int *)v2)[0] = 0; /*0x7198e4*/
@@ -825,7 +825,7 @@ int UnitClass::Deploy()
       v56 = *v48; /*0x719a58*/
       v57 = v48[1]; /*0x719a5f*/
       v58 = v48[2]; /*0x719a68*/
-      StartAudioControllerAt(v47, &v56, 0); /*0x719a70*/
+      StartAudioControllerAt(v47, (unsigned int *)(&v56), 0); /*0x719a70*/
     }
     v49 = (short *)(*((int (__thiscall **)(FootClass *, TeleportLocomotionClass **))((unsigned int *)v2)[0]->vtable1 + 110))( /*0x719a81*/
                        ((unsigned int *)v2)[0],

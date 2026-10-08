@@ -937,8 +937,8 @@ bool DSurface::Blit(int *a2, int *a3, unsigned int *a4, int *a5, int *a6, int a7
       v43.Y = v61 + v57; /*0x4bb588*/
       v43.Height = v57 + v61 + v59; /*0x4bb5a0*/
       v43.Width = v56 + v60 + v58; /*0x4bb5a4*/
-      return (*(int (__stdcall **)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C[0] + 20))( /*0x4bb5d5*/
-               v48->DSurface_field_0x1C[0],
+      return (*(int (__stdcall **)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C[0] + 20))( (int)(/*0x4bb5d5*/
+               v48->DSurface_field_0x1C[0]),
                v53,
                a4[7],
                &v43,

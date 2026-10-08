@@ -69,8 +69,8 @@ int TActionClass::executeBuildAction()
   }
   if ( *((unsigned int *)this + 166) == -1 ) /*0x4fcde3*/
   {
-    result = *((unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x4fcde5*/
-    *((unsigned int *)this + 166) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4fcdea*/
+    result = *((unsigned int *)(unsigned int)&dword_A8ED84); /*0x4fcde5*/
+    *((unsigned int *)this + 166) = dword_A8ED84; /*0x4fcdea*/
   }
   return result; /*0x4fcddb*/
 
@@ -117,7 +117,7 @@ int TActionClass::executeHuntAction(int a2)
 {
 
   *((unsigned int *)this + 5437) = a2; /*0x50da24*/
-  *((unsigned int *)this + 5439) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x50da30*/
+  *((unsigned int *)this + 5439) = dword_A8ED84; /*0x50da30*/
   return a2; /*0x50da36*/
 
 }
@@ -400,9 +400,9 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
     if ( v9 >= (unsigned int *)(75) ) /*0x6ac6fd*/
       goto LABEL_38; /*0x6ac6fd*/
   }
-  *(unsigned int *)&v10[52 * v9 + 136] = (unsigned int)(aP2)+ *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ac713*/
+  *(unsigned int *)&v10[52 * v9 + 136] = (unsigned int)(aP2)+ dword_A8ED84; /*0x6ac713*/
 LABEL_38:
-  result = (unsigned int)((*(unsigned int *)((char *)&stru_A8EB00 + 416) + (unsigned int)(aP2)+ 1)); /*0x6ac71a*/
+  result = (unsigned int)((dword_A8ED84 + (unsigned int)(aP2)+ 1)); /*0x6ac71a*/
   *((unsigned int *)this + 5352) = result; /*0x6ac728*/
   return (unsigned int *)result; /*0x6ac670*/
 
@@ -1276,7 +1276,7 @@ char TActionClass::executePatrolAction(void *a1, int a3, int a4, int aP4)
   TActionClass *v7; // [esp+0h] [ebp-4h] BYREF
 
   v7 = this; /*0x6e1a40*/
- Waypoint_Location = (int *)(ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (int *)(&v7), (int)this->TActionClass_field_44)); /*0x6e1a50*/
+ Waypoint_Location = (int *)(ScenarioClass::Get_Waypoint_Location(((ScenarioClass*)((char *)dword_A8B230)), (unsigned int *)(&v7), (int)this->TActionClass_field_44)); /*0x6e1a50*/
   SelectSimilarBuildingTypes((ObjectClass *)a1, *Waypoint_Location); /*0x6e1a5c*/
   return 1; /*0x6e1a64*/
 

@@ -79,15 +79,15 @@ int CampaignClass::LoadFromINIList()
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = (int)(INIClass::GetKeyCount( (gamemd::INIClass *)(this->__pad_0),  (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2))); /*0x46ce1c*/
+  result = (int)(INIClass::GetKeyCount( (gamemd::INIClass *)(this->__pad_0),  (uint8_t *)"Battles")); /*0x46ce1c*/
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)( /*0x46ce48*/)    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x46ce48*/
                                          this->__pad_0,
-                                         (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2),
+                                         (uint8_t *)"Battles",
                                          v3);
-    ((::gamemd::INIClass*)(::gamemd::INIClass *)(this))->GetString((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 2), (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
+    ((::gamemd::INIClass*)(::gamemd::INIClass *)(this))->GetString((uint8_t *)"Battles", (unsigned char *)(gamemd::INIClass *)(StringByIndex), (char *)(gamemd::INIClass *)(&g_INI_DefaultBuffer), Source, 32); /*0x46ce55*/
     v5 = 0; /*0x46ce5f*/
     if ( dword_A83D08 <= 0 ) /*0x46ce63*/
       goto LABEL_7; /*0x46ce63*/

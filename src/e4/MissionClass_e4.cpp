@@ -86,7 +86,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
     v13 = g_Str__none_; /*0x5b38c3*/
   else
     v13 = (char *)off_816CAC[(unsigned int)vtable0]; /*0x5b38ca*/
-  INIClass::ReadDouble_Overwrite((INIClass *)((double *)a2), (uint8_t *)v13, (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 26), 0.0); /*0x5b38dd*/
+  INIClass::ReadDouble_Overwrite((INIClass *)((double *)a2), (uint8_t *)v13, (uint8_t *)"AARate", 0.0); /*0x5b38dd*/
   __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
   *(double *)&((unsigned int *)this)[0] = _RT1; /*0x5b38e2*/
   __asm /*0x5b38e5*/

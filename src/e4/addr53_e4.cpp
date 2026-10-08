@@ -1655,7 +1655,7 @@ CreateTeamCommand * * InitCommands()
   ((DynamicVector *)&(&dword_87F5D8)[32])->Add_Alt2( (DynamicVector *)(&v175)); /*0x533baf*/
   v168 = (unsigned int *)operator new(4); /*0x533bb6*/
   if ( v168 ) /*0x533bc0*/
-    v175 = (int)PageUserCommandClass::PageUserCommandClass(v168); /*0x533bc9*/
+    v175 = (int)PageUserCommandClass::Constructor(v168); /*0x533bc9*/
   else
     v175 = 0; /*0x533bcf*/
   ((DynamicVector *)&(&dword_87F5D8)[32])->Add_Alt2( (DynamicVector *)(&v175)); /*0x533bdd*/
@@ -2340,7 +2340,7 @@ char sub_538F20(int a1, int a2, char * Source)
     if ( !(uint8_t)((CCFileClass *)(&v20))->Open(0) ) /*0x538fe1*/
     {
       ((gamemd::FileClass*)&v20)->Load( (const CHAR *)2); /*0x538ff0*/
-      ((gamemd::FileClass*)&v20)->Write( &byte_A8F91C, 0x10000u); /*0x539003*/
+      ((gamemd::FileClass*)&v20)->Write( (gamemd::CCFileClass *)(&byte_A8F91C), 0x10000u); /*0x539003*/
       CCFileClass::Reset( &v20); /*0x53900c*/
     }
     v20.FileClass = (FileClass)(void*)&CCFileClass_vftable; /*0x539015*/
@@ -2449,11 +2449,11 @@ int SuperWeapon_Update()
 
   if ( NukeFlash_Status == 1 ) /*0x53a6cf*/
   {
-    if ( NukeFlash_Duration != -1 && NukeFlash_Duration + NukeFlash_StartTime < *(int *)((char *)&stru_A8EB00 + 416) ) /*0x53a6ea*/
+    if ( NukeFlash_Duration != -1 && NukeFlash_Duration + NukeFlash_StartTime < dword_A8ED84 ) /*0x53a6ea*/
     {
       NukeFlash_Status = 2; /*0x53a6ec*/
       NukeFlash_Duration = 15; /*0x53a6f6*/
-      NukeFlash_StartTime = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53a700*/
+      NukeFlash_StartTime = dword_A8ED84; /*0x53a700*/
       ScenarioClass::UpdateLighting(); /*0x53a705*/
       ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 1); /*0x53a711*/
     }
@@ -2590,15 +2590,15 @@ int SuperWeapon_Update()
   else
   {
     IDA_LOBYTE(v17) = LightningStorm_Duration; /*0x53a919*/
-    v18 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53a91e*/
+    v18 = dword_A8ED84; /*0x53a91e*/
     if ( LightningStorm_Duration == -1 /*0x53a933*/
-      || LightningStorm_Duration + LightningStorm_StartTime >= *(int *)((char *)&stru_A8EB00 + 416) )
+      || LightningStorm_Duration + LightningStorm_StartTime >= dword_A8ED84 )
     {
       v19 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x53a944*/
-      if ( !(*(unsigned int *)((char *)&stru_A8EB00 + 416) % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6048)) ) /*0x53a94d*/
+      if ( !(dword_A8ED84 % *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6048)) ) /*0x53a94d*/
       {
-        LightningStorm::Strike( (IUnknown *)(LightningStorm_Coords)); /*0x53a95e*/
-        v18 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x53a963*/
+        LightningStorm::Strike( (int)(LightningStorm_Coords)); /*0x53a95e*/
+        v18 = dword_A8ED84; /*0x53a963*/
         v19 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x53a969*/
       }
       v17 = v18 / v19->EngineerCaptureLevel; /*0x53a972*/
@@ -2805,7 +2805,7 @@ AnimClass * * UpdateChronosphereEffect()
         ScenarioClass::ProcessIntroTimer(); /*0x53b6e6*/
         ((Mixer*)((int **)&dword_A9F9B8))->ReleaseChannel(); /*0x53b6f0*/
         SetAudioSource( (AudioMixer *)((int)&dword_A9F9B8), 0, 0); /*0x53b6fe*/
-        AudioFileClass::Release( &dword_A9F9B8); /*0x53b708*/
+        AudioFileClass::Release( (gamemd::AudioFileClass *)(&dword_A9F9B8)); /*0x53b708*/
         SetVocClassEnabled(1); /*0x53b70f*/
         ChronoScreenEffect::DecrementCounter(); /*0x53b714*/
         if ( !byte_A9FAD1 ) /*0x53b720*/

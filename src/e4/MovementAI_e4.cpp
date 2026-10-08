@@ -52,10 +52,10 @@ int MovementAI::IsProgressAtEnd()
   MovementAI_field_10 = this->MovementAI_field_10; /*0x4a5169*/
   if ( v2 != -1 ) /*0x4a516f*/
   {
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 >= MovementAI_field_10 ) /*0x4a517b*/
+    if ( dword_A8ED84 - v2 >= MovementAI_field_10 ) /*0x4a517b*/
       MovementAI_field_10 = 0; /*0x4a5181*/
     else
-      MovementAI_field_10 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x4a517d*/
+      MovementAI_field_10 -= dword_A8ED84 - v2; /*0x4a517d*/
   }
   return (double)(MovementAI_field_14 - MovementAI_field_10) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
 

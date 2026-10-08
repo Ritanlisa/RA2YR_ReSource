@@ -152,7 +152,7 @@ LABEL_11:
           return 0; /*0x4f1489*/
         v12 = (void (*)(HWND, int))ShowWindow; /*0x4f148f*/
         ShowWindow(hDlg, 0); /*0x4f1497*/
-        Options_Constructor = (const char **)LoadOptions::LoadOptions(v28); /*0x4f14a0*/
+        Options_Constructor = (const char **)LoadOptions::Constructor(v28); /*0x4f14a0*/
         ((Options *)Options_Constructor)->PrepareSaveLoadDlg(); /*0x4f14a7*/
         v16 = v28; /*0x4f14ac*/
       }
@@ -173,7 +173,7 @@ LABEL_11:
             return 0; /*0x4f1356*/
           v12 = (void (*)(HWND, int))ShowWindow; /*0x4f135c*/
           ShowWindow(hDlg, 0); /*0x4f1364*/
-          LoadOptions::LoadOptions(v27); v13 = v27; /*0x4f136a*/
+          LoadOptions::Constructor(v27); v13 = v27; /*0x4f136a*/
           Options_Run = (uint8_t)LoadOptions::Run((gamemd::LoadOptions *)(v13)); /*0x4f137a*/
           ((LoadOptions *)(v27))->Cleanup(); /*0x4f137c*/
           if ( (unsigned char)Options_Run ) /*0x4f1383*/
@@ -201,7 +201,7 @@ LABEL_39:
           swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *const)dword_A8B230 + 2480); /*0x4f1455*/
         else
           swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *const)dword_A8B230 + 2541); /*0x4f1439*/
-        LoadOptions::LoadOptions(v26); /*0x4f1469*/
+        LoadOptions::Constructor(v26); /*0x4f1469*/
         ((void (*)(wchar_t *))ShowSaveLoadDialog)(Buffer); /*0x4f1470*/
         v16 = v26; /*0x4f1475*/
       }
@@ -453,8 +453,8 @@ int Options::DeleteAndZero()
     do /*0x62450e*/
     {
       v4 = (char *)this->field_8 + v3; /*0x6244f4*/
-      ((DeleteAndZero*)((DeleteAndZero *)(v4 + 8)))->Alt(); /*0x6244f9*/
-      ((DeleteAndZero*)((DeleteAndZero *)(v4 + 4)))->Alt(); /*0x624501*/
+      ((gamemd::DeleteAndZero*)((gamemd::DeleteAndZero*)(v4 + 8)))->Alt(); /*0x6244f9*/
+      ((gamemd::DeleteAndZero*)((gamemd::DeleteAndZero*)(v4 + 4)))->Alt(); /*0x624501*/
       result = *(unsigned int *)this->__pad_0; /*0x624506*/
       ++v2; /*0x624508*/
       v3 += 24; /*0x624509*/
@@ -603,7 +603,7 @@ LABEL_12:
   v6 = *(void **)&this->__pad_34[12]; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    ((DeleteAndZero*)(*(DeleteAndZero **)&this->__pad_34[12]))->Alt(); /*0x6255c4*/
+    ((gamemd::DeleteAndZero*)(*(gamemd::DeleteAndZero**)&this->__pad_34[12]))->Alt(); /*0x6255c4*/
     __3_YAXPAX_Z(v6); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
@@ -658,8 +658,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     do /*0x625665*/
     {
       v8 = (char *)v5[2] + v7; /*0x62564b*/
-      ((DeleteAndZero*)((DeleteAndZero *)(v8 + 8)))->Alt(); /*0x625650*/
-      ((DeleteAndZero*)((DeleteAndZero *)(v8 + 4)))->Alt(); /*0x625658*/
+      ((gamemd::DeleteAndZero*)((gamemd::DeleteAndZero*)(v8 + 8)))->Alt(); /*0x625650*/
+      ((gamemd::DeleteAndZero*)((gamemd::DeleteAndZero*)(v8 + 4)))->Alt(); /*0x625658*/
       ++v4; /*0x62565f*/
       v7 += 24; /*0x625660*/
     }
@@ -707,8 +707,8 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     }
     v3 = (int *)this; /*0x625752*/
   }
-  ((DeleteAndZero*)((DeleteAndZero *)&v19.DeleteAndZero_field_0x04))->Alt(); /*0x62575a*/
-  ((DeleteAndZero*)&v19)->Alt(); /*0x625763*/
+  ((gamemd::DeleteAndZero*)((gamemd::DeleteAndZero*)&v19.DeleteAndZero_field_0x04))->Alt(); /*0x62575a*/
+  ((gamemd::DeleteAndZero*)&v19)->Alt(); /*0x625763*/
   return v3; /*0x62576a*/
 
 }
@@ -761,7 +761,7 @@ HWND Options::InitDialogControls(HWND hDlg)
   result = *(unsigned int *)&dword_A8B238; /*0x4f1720*/
   if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x4f1739*/
   {
-    v7 = (LoadOptions *)LoadOptions::LoadOptions(&v10); /*0x4f17dd*/
+    v7 = (LoadOptions *)LoadOptions::Constructor(&v10); /*0x4f17dd*/
     v9 = ((LoadOptions *)(v7))->Check(); /*0x4f17ed*/
     ((LoadOptions*)&v10)->Cleanup(); /*0x4f17f1*/
     DlgItem = GetDlgItem((HWND)hDlg, 1310); /*0x4f1802*/
@@ -1289,8 +1289,8 @@ namespace gamemd {
 void Options::ClearComboBoxes()
 {
 
-  ((DeleteAndZero*)((DeleteAndZero *)&this->field_8))->Alt(); /*0x624466*/
-  ((DeleteAndZero*)((DeleteAndZero *)&this->field_4))->Alt(); /*0x62446e*/
+  ((gamemd::DeleteAndZero*)((gamemd::DeleteAndZero*)&this->field_8))->Alt(); /*0x624466*/
+  ((gamemd::DeleteAndZero*)((gamemd::DeleteAndZero*)&this->field_4))->Alt(); /*0x62446e*/
 
 }
 } // namespace gamemd

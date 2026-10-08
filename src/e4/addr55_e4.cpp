@@ -94,9 +94,9 @@ LABEL_4:
       goto LABEL_7; /*0x5500a1*/
     goto LABEL_5; /*0x5500a1*/
   }
-  if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable2 < uniqueId ) /*0x55009b*/
+  if ( dword_A8ED84 - (int)vtable2 < uniqueId ) /*0x55009b*/
   {
-    uniqueId -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable2; /*0x55009d*/
+    uniqueId -= dword_A8ED84 - (unsigned int)vtable2; /*0x55009d*/
     goto LABEL_4; /*0x55009d*/
   }
 LABEL_5:
@@ -107,7 +107,7 @@ LABEL_5:
     LOBYTE(((unsigned int *)this)[0]) = 1; /*0x5500b1*/
     this->AbstractClass = v5; /*0x5500b5*/
     v6 = (void *)v8[2]; /*0x5500bd*/
-    ((unsigned int *)this)[0] = (unsigned int)(*(void **)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x5500c1*/
+    ((unsigned int *)this)[0] = (unsigned int)((void **)dword_A8ED84); /*0x5500c1*/
     ((unsigned int *)this)[0] = (unsigned int)(v6); /*0x5500c4*/
     ((unsigned int *)this)[0] = abstractFlags; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
@@ -165,9 +165,9 @@ void sub_550150()
       v5 = v3[4]; /*0x550176*/
       if ( v4 != -1 ) /*0x55017c*/
       {
-        if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x550188*/
+        if ( dword_A8ED84 - v4 >= v5 ) /*0x550188*/
           goto LABEL_7; /*0x550188*/
-        v5 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x55018a*/
+        v5 -= dword_A8ED84 - v4; /*0x55018a*/
       }
       if ( v5 ) /*0x55018e*/
         goto LABEL_9; /*0x55018e*/
@@ -182,7 +182,7 @@ void sub_550150()
       v7 = v3[6] + *v3; /*0x55019c*/
       *((unsigned char *)v3 + 4) = 1; /*0x55019e*/
       *v3 = v7; /*0x5501a2*/
-      v3[2] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5501a9*/
+      v3[2] = dword_A8ED84; /*0x5501a9*/
       v3[3] = v2; /*0x5501ac*/
       v3[4] = v6; /*0x5501af*/
   LABEL_10:
@@ -549,20 +549,20 @@ v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass
     ((Tactical*)(char *)v77)->SetCellTransform( (int)((Tactical*)(char *)v77), 0, v41, (void *)(v47), v73, 0, 0); /*0x5510d3*/
     *(float *)&v48 = (float)v64; /*0x5510e5*/
     *(float *)&v42 = (float)v63; /*0x5510f4*/
-    ((Tactical*)((char *)v77))->SetCellTransform( 1, v42, (void *)(v48), v38, 0, 1065353216); /*0x5510f9*/
+    ((Tactical*)((char *)v77))->SetCellTransform( 1, v42, (int)(v48), v38, 0, 1065353216); /*0x5510f9*/
     v39 = v72; /*0x5510fe*/
     *(float *)&v49 = (float)IDA_SHIDWORD(v62); /*0x55110f*/
     *(float *)&v43 = (float)(int)v62; /*0x55111e*/
-    ((Tactical*)((char *)v77))->SetCellTransform( 2, v43, (void *)(v49), v72, 1065353216, 0); /*0x551123*/
+    ((Tactical*)((char *)v77))->SetCellTransform( 2, v43, (int)(v49), v72, 1065353216, 0); /*0x551123*/
     *(float *)&v50 = (float)v64; /*0x551135*/
     *(float *)&v44 = (float)v63; /*0x551144*/
-    ((Tactical*)((char *)v78))->SetCellTransform( 0, v44, (void *)(v50), v38, 0, 1065353216); /*0x551149*/
+    ((Tactical*)((char *)v78))->SetCellTransform( 0, v44, (int)(v50), v38, 0, 1065353216); /*0x551149*/
     *(float *)&v51 = (float)IDA_SHIDWORD(v67); /*0x55115e*/
     *(float *)&v45 = (float)(int)v67; /*0x55116d*/
-    ((Tactical*)((char *)v78))->SetCellTransform( 1, v45, (void *)(v51), v39, 1065353216, 1065353216); /*0x551172*/
+    ((Tactical*)((char *)v78))->SetCellTransform( 1, v45, (int)(v51), v39, 1065353216, 1065353216); /*0x551172*/
     *(float *)&v52 = (float)IDA_SHIDWORD(v62); /*0x551184*/
     *(float *)&v46 = (float)(int)v62; /*0x551193*/
-    ((Tactical*)((char *)v78))->SetCellTransform( 2, v46, (void *)(v52), v39, 1065353216, 0); /*0x551198*/
+    ((Tactical*)((char *)v78))->SetCellTransform( 2, v46, (int)(v52), v39, 1065353216, 0); /*0x551198*/
     ((StructTable *)(dword_8A0E10))->Append((void *)(v77)); /*0x5511ab*/
 // 0x4a3840
     return ((StructTable *)(dword_8A0E10))->Append((void *)(v78)); /*0x5511be*/
@@ -1173,7 +1173,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
         else
         {
           v6 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)(*((unsigned int *)dword_ABCA44 + v4) + 16)); /*0x554e27*/
-          Tactical::CreateTacticalLightSurface((::gamemd::Tactical *)((int *)((int)v6)), (int *)(&v24), (unsigned int *)((::gamemd::IUnknown *)(&v25)), (int *)(&v26), (int *)(&v27), (IUnknown *)((int)&v28), (void *)((int)&v29)); /*0x554e2e*/
+          Tactical::CreateTacticalLightSurface((::gamemd::Tactical *)((int *)((int)v6)), (int *)(&v24), (unsigned int *)((::gamemd::IUnknown *)(&v25)), (unsigned int *)(&v26), (int *)(&v27), (IUnknown *)((int)&v28), (void *)((int)&v29)); /*0x554e2e*/
           **((unsigned int **)dword_ABCA44 + dword_ABCA7C) = v24; /*0x554e46*/
           *(unsigned int *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 4) = v25; /*0x554e5a*/
           *(unsigned short *)(*((unsigned int *)dword_ABCA44 + dword_ABCA7C) + 8) = v26; /*0x554e70*/
@@ -1384,13 +1384,13 @@ int E4Recv_55B720::sub_55B720()
   {
     goto LABEL_8; /*0x55b74a*/
   }
-  v3 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b751*/
+  v3 = (void **)dword_A8ED84; /*0x55b751*/
   nextArrayIndex = ((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b757*/
   p_nextArrayIndex = &((AbstractClass *)dword_A8B230)[128].nextArrayIndex; /*0x55b75d*/
  NeedsSaveOrLink = (char *)((char *)((AbstractClass *)dword_A8B230)[128].NeedsSaveOrLink); /*0x55b766*/
   if ( nextArrayIndex != -1 ) /*0x55b769*/
   {
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
+    if ( dword_A8ED84 - nextArrayIndex >= (int)NeedsSaveOrLink ) /*0x55b771*/
     {
 LABEL_7:
       LOWORD(v7) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5696) * 900.0); /*0x55b779*/
@@ -1400,10 +1400,10 @@ LABEL_7:
       ((MapClass *)((MapClass *)&stru_87F5F0.__pad_58[416]))->ProcessVisibilityFlags(); /*0x55b79b*/
       v1 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b7a0*/
 LABEL_8:
-      v3 = *(void **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x55b7a6*/
+      v3 = (void **)dword_A8ED84; /*0x55b7a6*/
       goto LABEL_9; /*0x55b7a6*/
     }
-    NeedsSaveOrLink -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - nextArrayIndex; /*0x55b773*/
+    NeedsSaveOrLink -= dword_A8ED84 - nextArrayIndex; /*0x55b773*/
   }
   if ( !NeedsSaveOrLink ) /*0x55b777*/
     goto LABEL_7; /*0x55b777*/
@@ -2730,7 +2730,7 @@ BitFont * * DrawHUD()
       wcscpy( (wchar_t *)(v59), L"?"); /*0x55f2d2*/
       wcscpy( (wchar_t *)(v60), L"�"); /*0x55f2da*/
       (*(void (**)(AudioStream *, wchar_t *, unsigned int))(v4 + 20))( (AudioStream *)(v3), (wchar_t *)(v57), 0); /*0x55f2e2*/
-      swprintf(Buffer, (const size_t)&off_82A224, *(const wchar_t *const *)((char *)&stru_A8EB00 + 416)); /*0x55f2f6*/
+      swprintf(Buffer, (const size_t)&off_82A224, (const wchar_t *const)dword_A8ED84); /*0x55f2f6*/
       v53 = 0; /*0x55f308*/
       v54 = 302; /*0x55f30f*/
       BuildingAnimByName = FindBuildingAnimByName( (AbstractClass *)(&stru_822420.TrailerAnim), 1); /*0x55f317*/

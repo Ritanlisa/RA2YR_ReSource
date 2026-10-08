@@ -21,7 +21,7 @@ int Power::Update(int * a2, void *a2_2, void *a3_1, void *a4_1)
 {
 
   ((AbstractClass *)this)->ProcessPower(); /*0x43a5d9*/
-  return Power::TimerProcess(*(unsigned int *)((char *)&stru_A8EB00 + 416) - *((unsigned int *)this + 12)); /*0x43a5f0*/
+  return Power::TimerProcess(dword_A8ED84 - *((unsigned int *)this + 12)); /*0x43a5f0*/
 
 }
 }
@@ -276,7 +276,7 @@ unsigned int * Power::UpdateAll()
 
   if ( dword_A83D4C ) /*0x67ce96*/
     Power::TimerProcess((int)dword_A83D4C->Object_field_0x30); /*0x67cea0*/
-  Power::TimerProcess(*(int *)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x67ceb0*/
+  Power::TimerProcess((int *)dword_A8ED84); /*0x67ceb0*/
   Power::TimerProcess(*(int *)(unsigned int *)((char *)&stru_A8EB00 + 228)); /*0x67cebf*/
   v50 = v54; /*0x67ceca*/
   this->Power_field_0x0 = v53; /*0x67cece*/

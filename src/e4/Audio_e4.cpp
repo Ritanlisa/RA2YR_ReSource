@@ -735,9 +735,9 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
     INIClass::ReadDouble_Overwrite((INIClass *)(v4), (unsigned char *)(g_INI_Key_Defaults), (unsigned char *)(aMinvolume), flt_8464B8); /*0x751161*/
     flt_8464B8 = a3; /*0x751166*/
     /*0x751187*/
-      ((INIClass*)((INIClass *)v4))->GetString(/*0x751187*/ g_INI_Key_Defaults, (uint8_t *)aPriority, g_INI_Key_NORMAL, String, 2048);
+      ((INIClass*)((INIClass *)v4))->GetString(/*0x751187*/ (void *)(g_INI_Key_Defaults), (uint8_t *)aPriority, (void *)(g_INI_Key_NORMAL), (void *)(String), 2048);
     sub_4067D0(String, &dword_8464B0); /*0x751195*/
-    ((INIClass*)((INIClass *)v4))->GetString(g_INI_Key_Defaults, aControl, &g_INI_DefaultBuffer, String, 2048); /*0x7511b5*/
+    ((INIClass*)((INIClass *)v4))->GetString((void *)(g_INI_Key_Defaults), (void *)(aControl), &g_INI_DefaultBuffer, (void *)(String), 2048); /*0x7511b5*/
     v5 = strtok(String,(const char *)( asc_846570)); /*0x7511c4*/
     if ( v5 ) /*0x7511ce*/
     {
@@ -750,7 +750,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
       while ( v5 ); /*0x7511f7*/
     }
     /*0x751214*/
-      ((INIClass*)((INIClass *)v4))->GetString(/*0x751214*/ g_INI_Key_Defaults, (uint8_t *)g_INI_Key_Type, &g_INI_DefaultBuffer, String, 2048);
+      ((INIClass*)((INIClass *)v4))->GetString(/*0x751214*/ (void *)(g_INI_Key_Defaults), (uint8_t *)g_INI_Key_Type, &g_INI_DefaultBuffer, (void *)(String), 2048);
     v6 = strtok(String,(const char *)( asc_846570)); /*0x751223*/
     if ( v6 ) /*0x75122d*/
     {
@@ -775,7 +775,7 @@ int Audio::InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aC
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex( (CCINIClass *)((char *)v4), (CCINIClass *)(g_INI_Key_SoundList), (void *)(v9)); /*0x7512da*/
       KeyCount = /*0x7512e7*/
-                   ((INIClass*)((INIClass *)v4))->GetString(/*0x7512e7*/ g_INI_Key_SoundList, StringByIndex, &g_INI_DefaultBuffer, Destination, 32);
+                   ((INIClass*)((INIClass *)v4))->GetString(/*0x7512e7*/ (void *)(g_INI_Key_SoundList), (void *)(StringByIndex), &g_INI_DefaultBuffer, (void *)(Destination), 32);
       if ( KeyCount )
       {
         if ( &v18 == (int *)-16 ) /*0x7512fa*/

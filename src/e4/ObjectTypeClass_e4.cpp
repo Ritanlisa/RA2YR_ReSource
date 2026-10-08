@@ -702,12 +702,12 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
     return 0; /*0x5f969e*/
   strcpy( (char *)(Source), (const char *)(this->ImageFile)); /*0x5f931c*/
   /*0x5f933b*/
-    ((INIClass*)((INIClass *)aP1))->GetString(/*0x5f933b*/ (uint8_t *)((unsigned int *)this)[0], (uint8_t *)g_INI_Key_Image, Source, this->ImageFile, 25);
+    ((INIClass*)((INIClass *)aP1))->GetString(/*0x5f933b*/ (uint8_t *)((unsigned int *)this)[0], (uint8_t *)g_INI_Key_Image, (void *)(Source), (void *)(this->ImageFile), 25);
   v34 = (int)strcpy( (char *)(Source), (const char *)(this->AlphaImageFile)); /*0x5f9366*/
-  ((INIClass*)((INIClass *)aP1))->GetString((uint8_t *)((unsigned int *)this)[0], (gamemd::INIClass *)(aAlphaimage), Source, this->AlphaImageFile, 25); /*0x5f9386*/
+  ((INIClass*)((INIClass *)aP1))->GetString((uint8_t *)((unsigned int *)this)[0], (gamemd::INIClass *)(aAlphaimage), (void *)(Source), (void *)(this->AlphaImageFile), 25); /*0x5f9386*/
   CrushSound = this->CrushSound; /*0x5f938b*/
   if ( /*0x5f93a8*/
-         ((INIClass*)((INIClass *)aP1))->GetString(/*0x5f93a8*/ (uint8_t *)((unsigned int *)this)[0], aCrushsound, &g_INI_DefaultBuffer, (char *)&Destination, 128) )
+         ((INIClass*)((INIClass *)aP1))->GetString(/*0x5f93a8*/ (uint8_t *)((unsigned int *)this)[0], (void *)(aCrushsound), &g_INI_DefaultBuffer, (char *)&Destination, 128) )
   {
     Index = VocClass::FindIndex( &Destination); /*0x5f93b5*/
     if ( Index != -1 ) /*0x5f93bd*/
@@ -716,7 +716,7 @@ void* ObjectTypeClass::LoadFromINI(uint8_t ***aP1)
   this->CrushSound = CrushSound; /*0x5f93d5*/
   AmbientSound = this->AmbientSound; /*0x5f93db*/
   if ( !/*0x5f93f9*/
-          ((INIClass*)((INIClass *)aP1))->GetString(/*0x5f93f9*/ (uint8_t *)((unsigned int *)this)[0], aAmbientsound, &g_INI_DefaultBuffer, (char *)&Destination, 128)
+          ((INIClass*)((INIClass *)aP1))->GetString(/*0x5f93f9*/ (uint8_t *)((unsigned int *)this)[0], (void *)(aAmbientsound), &g_INI_DefaultBuffer, (char *)&Destination, 128)
     || (v6 = VocClass::FindIndex( &Destination), v6 == -1) )
   {
     v6 = AmbientSound; /*0x5f93fb*/

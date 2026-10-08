@@ -2329,7 +2329,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
               IDA_LOWORD(a4) = v37 - 1; /*0x590f97*/
               IDA_HIWORD(a2) = v38 - 4; /*0x590f9c*/
               IDA_HIWORD(a4) = v38 + 4; /*0x590fb1*/
-              return ((RandomMap *)a1)->CheckPlacementArea( (short *)((__int16 *)&a2), (short *)((__int16 *)&a4), a3); /*0x590fbb*/
+              return ((RandomMap *)a1)->CheckPlacementArea( (short *)((__int16 *)&a2), (short *)((__int16 *)&a4), (gamemd::ObjectClass *)(a3)); /*0x590fbb*/
             }
           }
         }
@@ -2340,7 +2340,7 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * a3, float a4)
 }
 // 0x590FD0
 namespace gamemd {
-int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int a3, DynamicVector * aP4, float a5)
+int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int a3, float a5)
 {
     int v6; // eax
     __int16 v7; // cx
@@ -2388,7 +2388,7 @@ int CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector * a2, int 
             v20 = 5; /*0x591098*/
             v18 = v11 + v15 + 4 * v11 - 5; /*0x5910a0*/
             if ( Map_Check((__int16 *)&v17, (int)v14, a3, v16) ) /*0x5910a9*/
-              v22 |= *(unsigned int *)&stru_82ADA8[8 * v11 + 35 + 4 * v12 + 4 * v11]; /*0x5910c6*/
+              v22 |= (&dword_82AF18)[v12 + 3 * v11]; /*0x5910c6*/
           }
           ++v12; /*0x5910ca*/
           v13 += 5; /*0x5910cb*/
@@ -2694,7 +2694,7 @@ ObjectClass * * CheckPlacementArea(RandomMap *a1, short * a2, short * a3, Object
             while ( 1 ) /*0x5928c4*/
             {
               v45 = 0; /*0x5928c4*/
-              v46 = &stru_82ADA8[1]; /*0x5928c6*/
+              v46 = &unk_82AFF0; /*0x5928c6*/
               v47 = 20 * v44 + 8564740; /*0x5928cb*/
               while ( 1 ) /*0x5928d8*/
               {
@@ -2724,7 +2724,7 @@ ObjectClass * * CheckPlacementArea(RandomMap *a1, short * a2, short * a3, Object
                 ++v45; /*0x592992*/
                 v52[282] = 0; /*0x592999*/
                 *((unsigned int *)v52 + 14) = v54 + v55 - 1; /*0x5929a4*/
-                if ( (int)v46 >= (int)((char *)&stru_82ADA8 + 56) ) /*0x5929a7*/
+                if ( (int)v46 >= (int)&unk_82B004 ) /*0x5929a7*/
                   break; /*0x5929a7*/
                 v44 = v66.MapSeed_field_0x08; /*0x5928d4*/
               }
@@ -2839,7 +2839,7 @@ CampaignClass * * CleanupRandomMapData()
     v6 = *(void (****)(unsigned int, int))&this->__pad_4C[300]; /*0x595968*/
     if ( v6 ) /*0x595970*/
     {
-      (**v6)(v6, 1); /*0x595976*/
+      (**v6)((unsigned int)(v6), 1); /*0x595976*/
       *(unsigned int *)&this->__pad_4C[300] = 0; /*0x595978*/
     }
     v7 = *(void **)&this->__pad_4C[304]; /*0x59597e*/
@@ -3021,13 +3021,13 @@ int SetupDialog(HWND hDlg)
       ++v10; /*0x596f82*/
     }
     while ( (int)p_Next < (int)&dword_82B080); /*0x596f89*/
-    v14 = GetStringCSF(*((wchar_t **)&off_82B070+ *(unsigned int *)&this->__pad_4C[24]), 0, ((char *)&stru_82BA00 + 100), 4902); /*0x596fa5*/
+    v14 = GetStringCSF(*((wchar_t **)&off_82B070+ *(unsigned int *)&this->__pad_4C[24]), 0, "D:\\ra2mdpost\\MapGen.cpp", 4902); /*0x596fa5*/
     v15 = SendMessageA( (HWND)(j), 0x4BEu, 0, (LPARAM)((LPARAM)((LPARAM)v14))); /*0x596fb3*/
     SendMessageA( (HWND)(j), 0x14Eu, v15, 0); /*0x596fbe*/
     for ( k = GetDlgItem(hDlg, 1029); SendMessageA( (HWND)(k), 0x146u, 0, 0) > 0; SendMessageA( (HWND)(k), 0x144u, 0, 0) ) /*0x596fd2*/
       ; /*0x596fec*/
     v17 = 1; /*0x596ffe*/
-    v18 = (wchar_t **)&stru_82ADA8[19]; /*0x597003*/
+    v18 = (wchar_t **)&off_82B038; /*0x597003*/
     do /*0x59703a*/
     {
       v19 = GetStringCSF( *v18, 0, (const char *)"D:\ra2mdpost\MapGen.cpp", 4914); /*0x597016*/
@@ -3037,7 +3037,7 @@ int SetupDialog(HWND hDlg)
       ++v17; /*0x597033*/
     }
     while ( (int)v18 < (int)&off_82B048); /*0x59703a*/
-    v21 = GetStringCSF((wchar_t *)stru_82ADA8[this->RandomMap_field_0x3C[0] + 18], 0, ((char *)&stru_82BA00 + 60), 4918); /*0x597056*/
+    v21 = GetStringCSF(*((wchar_t **)&off_82B034 + this->RandomMap_field_0x3C[0]), 0, "D:\\ra2mdpost\\MapGen.cpp", 4918); /*0x597056*/
     v22 = SendMessageA( (HWND)(k), 0x4BEu, 0, (LPARAM)((LPARAM)((LPARAM)v21))); /*0x597064*/
     SendMessageA( (HWND)(k), 0x14Eu, v22, 0); /*0x59706f*/
     for ( m = GetDlgItem(hDlg, 1031); SendMessageA( (HWND)(m), 0x146u, 0, 0) > 0; SendMessageA( (HWND)(m), 0x144u, 0, 0) ) /*0x597083*/
@@ -3238,9 +3238,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"RMGLevelLightSettings",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3260,9 +3260,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"RMGVegetationMinimums",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3282,9 +3282,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"RMGVegetationMaximums",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3304,9 +3304,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"TemperateAmbientLight",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3326,9 +3326,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"SnowAmbientLight",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3348,9 +3348,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"TemperateAmbientRed",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3370,9 +3370,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"TemperateAmbientGreen",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3392,9 +3392,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"TemperateAmbientBlue",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3414,9 +3414,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"SnowAmbientRed",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3436,9 +3436,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"SnowAmbientGreen",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3459,9 +3459,9 @@ WeaponStruct * * LoadConfig()
                                       off_82B134,
                                       (unsigned __int8 *)"SnowAmbientBlue",
                                       *(void ***)v24.VectorClass,
-                                      *(void **)&v24.?[3],
-                                      *(int *)&v24.?[3],
-                                      v24.?,
+                                      v24.Items,
+                                      v24.Capacity,
+                                      *(int *)&v24.IsInitialized,
                                       v24.Count,
                                       v24.CapacityIncrement,
                                       v25);
@@ -3578,8 +3578,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     ObjectClass v42[5]; // [esp+32h] [ebp-3F4h] BYREF
 
     v40 = (ObjectClass *)this; /*0x598973*/
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 116) ) /*0x598977*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 116))(); /*0x598979*/
+    if ( off_82AF14 ) /*0x598977*/
+      (*(void (**)(void))&off_82AF14)() /*0x598979*/
     v33 = v3; /*0x59897f*/
     qmemcpy( (void *)(&g_MissionQueueFrame.globalVariables[1552]), SeedInitRNG(v42, *(unsigned int *)&this->__pad_4C[40]), 0x3F4u); /*0x59899b*/
     IDA_LOBYTE(v41[0]) = 0; /*0x5989ab*/
@@ -3587,8 +3587,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     v41[3] = 0; /*0x5989b7*/
     v41[4] = sub_598000; /*0x5989bf*/
     qmemcpy( (void *)(&g_MissionQueueFrame.briefing[348]), (const void *)(v41), 0x18u); /*0x5989c9*/
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 13720) ) /*0x5989cb*/
-      (*(void (__stdcall **)())((char *)&stru_82ADA8 + 13720))(); /*0x5989cd*/
+    if ( off_82AF14 ) /*0x5989cb*/
+      (*(void (__stdcall **)())&off_82AF14)(); /*0x5989cd*/
     v38 = IDA_LOBYTE(dword_A8B230[381].vtable1) == 0; /*0x5989e7*/
     if ( !IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x5989dc*/
     {
@@ -3600,12 +3600,12 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       if ( DlgItem ) /*0x598a47*/
         ShowWindow(DlgItem, 5); /*0x598a4c*/
     }
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598a59*/
-      (*(void (__cdecl **)())&stru_82ADA8[31])(); /*0x598a5b*/
+    if ( off_82AF14 ) /*0x598a59*/
+      (*(void (__cdecl **)())&off_82AF14)(); /*0x598a5b*/
     Debug::Log("RMG: Init random map\n"); /*0x598a62 G57w11: IDA push seq @ 0x598a62*/
     ((RandomMap *)this)->SetupTheater( a2); /*0x598a74*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598a80*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598a82*/
+    if ( off_82AF14 ) /*0x598a80*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598a82*/
     ++dword_A8E7AC; /*0x598a9a*/
     if ( a2 ) /*0x598aa0*/
     {
@@ -3614,8 +3614,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x598ac4*/
         MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x598acc*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 60) ) /*0x598ad8*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 60))(); /*0x598ada*/
+    if ( off_82AF14 ) /*0x598ad8*/
+      (*(void (**)(void))&off_82AF14)() /*0x598ada*/
     ((RandomMap *)this)->LoadConfig(); /*0x598ade*/
     Debug::Log("RMG: Seeding water\n"); /*0x598ae8 G57w11: IDA push seq @ 0x598ae8*/
     v6 = this->RandomMap_field_0x3C[0]; /*0x598aed*/
@@ -3633,8 +3633,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 154); /*0x598b30*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 55.0, NAN); /*0x598b4b*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598b57*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598b59*/
+    if ( off_82AF14 ) /*0x598b57*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598b59*/
     if ( a2 ) /*0x598b62*/
     {
       MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x598b6a*/
@@ -3642,14 +3642,14 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x598b86*/
         MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x598b8e*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 13720) ) /*0x598b9a*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 13720))(); /*0x598b9c*/
+    if ( off_82AF14 ) /*0x598b9a*/
+      (*(void (**)(void))&off_82AF14)() /*0x598b9c*/
     if ( IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x598ba4*/
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 159); /*0x598bb6*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 60.0, NAN); /*0x598bd1*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598bdd*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598bdf*/
+    if ( off_82AF14 ) /*0x598bdd*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598bdf*/
     if ( a2 ) /*0x598be8*/
     {
       MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x598bf0*/
@@ -3657,8 +3657,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x598c0c*/
         MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x598c14*/
     }
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598c20*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598c22*/
+    if ( off_82AF14 ) /*0x598c20*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598c22*/
     Debug::Log("RMG: Init regions\n"); /*0x598c29 G57w11: IDA push seq @ 0x598c29*/
     if ( g_MissionQueueFrame.localVariables[163] ) /*0x598c38*/
     {
@@ -3702,8 +3702,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 164); /*0x598d19*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 65.0, NAN); /*0x598d34*/
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 60) ) /*0x598d40*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 60))(); /*0x598d42*/
+    if ( off_82AF14 ) /*0x598d40*/
+      (*(void (**)(void))&off_82AF14)() /*0x598d42*/
     Debug::Log("RMG: Making regions\n"); /*0x598d49 G57w11: IDA push seq @ 0x598d49*/
     v14 = v40->ambientSoundController[0]; /*0x598d55*/
     if ( v14 == 4 || v14 == 3 ) /*0x598d60*/
@@ -3718,8 +3718,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 169); /*0x598d9f*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 70.0, NAN); /*0x598dba*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598dc6*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598dc8*/
+    if ( off_82AF14 ) /*0x598dc6*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598dc8*/
     if ( a2 ) /*0x598dd1*/
     {
       MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x598dd9*/
@@ -3727,8 +3727,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x598e00*/
         MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x598e08*/
     }
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598e14*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598e16*/
+    if ( off_82AF14 ) /*0x598e14*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598e16*/
     ((RandomMap *)v33)->PlaceShoreObjects(); /*0x598e1a*/
     Debug::Log("RMG: Recalculating cell attributes\n"); /*0x598e24 G57w11: IDA push seq @ 0x598e24*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x598e31*/
@@ -3738,8 +3738,8 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     {
       ((House *)k)->AnnounceUpgrade( -1); /*0x598e48*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 13720) ) /*0x598e62*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 13720))(); /*0x598e64*/
+    if ( off_82AF14 ) /*0x598e62*/
+      (*(void (**)(void))&off_82AF14)() /*0x598e64*/
     if ( IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x598e6c*/
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 174); /*0x598e7e*/
     else
@@ -3754,12 +3754,12 @@ AbstractClass * * Generate(char a2, HWND hDlg)
     Debug::Log("RMG: Adding tech buildings\n"); /*0x598ec4 G57w11: IDA push seq @ 0x598ec4*/
     if ( v40->ambientSoundController[0] ) /*0x598ec9*/
       PlaceRandomAIBuildings(v40); /*0x598ed5*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598ee1*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598ee3*/
+    if ( off_82AF14 ) /*0x598ee1*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598ee3*/
     Debug::Log("RMG: Creating tiberium\n"); /*0x598eea G57w11: IDA push seq @ 0x598eea*/
     ((RandomMap *)v40)->PlaceRandomMapTiberium(); /*0x598ef4*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x598f00*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x598f02*/
+    if ( off_82AF14 ) /*0x598f00*/
+      (*(void (**)(void))&off_82AF14)(); /*0x598f02*/
     if ( g_MissionQueueFrame.localVariables[163] ) /*0x598f0a*/
     {
       v16 = g_MapCellWidth * g_MapCellWidth; /*0x598f12*/
@@ -3817,8 +3817,8 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 179); /*0x599011*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 80.0, NAN); /*0x59902c*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599038*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x59903a*/
+    if ( off_82AF14 ) /*0x599038*/
+      (*(void (**)(void))&off_82AF14)(); /*0x59903a*/
     if ( a2 ) /*0x599043*/
     {
       MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x59904b*/
@@ -3831,14 +3831,14 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     {
       v23 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x599088*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 13720) ) /*0x59909a*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 13720))(); /*0x59909c*/
+    if ( off_82AF14 ) /*0x59909a*/
+      (*(void (**)(void))&off_82AF14)() /*0x59909c*/
     if ( IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x5990a4*/
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 184); /*0x5990b6*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 85.0, NAN); /*0x5990d1*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x5990dd*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x5990df*/
+    if ( off_82AF14 ) /*0x5990dd*/
+      (*(void (**)(void))&off_82AF14)(); /*0x5990df*/
     if ( a2 ) /*0x5990e8*/
     {
       MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x5990f0*/
@@ -3846,8 +3846,8 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x599112*/
         MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x59911a*/
     }
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599126*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x599128*/
+    if ( off_82AF14 ) /*0x599126*/
+      (*(void (**)(void))&off_82AF14)(); /*0x599128*/
     Debug::Log("RMG: Recalculating cell attributes\n"); /*0x59912f G57w11: IDA push seq @ 0x59912f*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x59913c*/
     for ( ii = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x59914d*/
@@ -3856,8 +3856,8 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     {
       ((House *)ii)->AnnounceUpgrade( -1); /*0x599153*/
     }
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x59916d*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x59916f*/
+    if ( off_82AF14 ) /*0x59916d*/
+      (*(void (**)(void))&off_82AF14)(); /*0x59916f*/
     Debug::Log("RMG: Creating hills\n"); /*0x599176 G57w11: IDA push seq @ 0x599176*/
     v25 = v40; /*0x59917b*/
     GenerateTerrainHeightMap(v40); /*0x599184*/
@@ -3865,8 +3865,8 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 189); /*0x5991a1*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 90.0, NAN); /*0x5991bc*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x5991c8*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x5991ca*/
+    if ( off_82AF14 ) /*0x5991c8*/
+      (*(void (**)(void))&off_82AF14)(); /*0x5991ca*/
     if ( a2 ) /*0x5991d3*/
     {
       MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x5991db*/
@@ -3874,8 +3874,8 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
       if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x5991fd*/
         MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x599205*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 56) ) /*0x599211*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 56))(); /*0x599213*/
+    if ( off_82AF14 ) /*0x599211*/
+      (*(void (**)(void))&off_82AF14)() /*0x599213*/
     Debug::Log("RMG: Creating LATs, rocks etc\n"); /*0x59921a G57w11: IDA push seq @ 0x59921a*/
     if ( v25->attachedBomb ) /*0x59921f*/
     {
@@ -3898,14 +3898,14 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
       CellClass::Reset((CellClass *)v25); /*0x59922b*/
       ((RandomMap *)v25)->PlaceResources(); /*0x599232*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 13720) ) /*0x5992b7*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 13720))(); /*0x5992b9*/
+    if ( off_82AF14 ) /*0x5992b7*/
+      (*(void (**)(void))&off_82AF14)() /*0x5992b9*/
     if ( IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x5992c1*/
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 194); /*0x5992d3*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 95.0, NAN); /*0x5992ee*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x5992fa*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x5992fc*/
+    if ( off_82AF14 ) /*0x5992fa*/
+      (*(void (**)(void))&off_82AF14)(); /*0x5992fc*/
     if ( a2 ) /*0x599305*/
     {
       MiniMap::Render((MiniMap *)g_MissionQueueFrame.briefing[451]); /*0x59930d*/
@@ -3914,8 +3914,8 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
         MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x599337*/
     }
     --dword_A8E7AC; /*0x59934a*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599350*/
-      (*(void (__stdcall **)())&stru_82ADA8[31])(); /*0x599352*/
+    if ( off_82AF14 ) /*0x599350*/
+      (*(void (__stdcall **)())&off_82AF14)(); /*0x599352*/
     Debug::Log("RMG: Recalculating cell attributes\n"); /*0x599359 G57w11: IDA push seq @ 0x599359*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x599366*/
     for ( kk = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x599377*/
@@ -3924,8 +3924,8 @@ v20 = (*(int (**)(int *, _VectorClass_VCell **))(g_MissionQueueFrame.briefing[33
     {
       ((House *)kk)->AnnounceUpgrade( -1); /*0x59937d*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 772) ) /*0x599397*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 772))(); /*0x599399*/
+    if ( off_82AF14 ) /*0x599397*/
+      (*(void (**)(void))&off_82AF14)() /*0x599399*/
     BuildingClass::ClearOccupancyData((BuildingClass *)v35); /*0x59939b*/
     BuildingClass::ClearFactoryData(v36); /*0x5993a0*/
     Debug::Log("RMG: Cleanup\n"); /*0x5993aa G57w11: IDA push seq @ 0x5993aa*/
@@ -4132,7 +4132,7 @@ AbstractClass * * SetupTheater(char a2)
     ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"RedTint", 1.0); /*0x5998c1*/
     ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"GreenTint", 1.0); /*0x5998da*/
     ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"BlueTint", 1.0); /*0x5998f3*/
-    ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)&stru_82BA00.?, (char *)(g_INI_Key_Ground), 0.0); /*0x599908*/
+    ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)(g_INI_Key_Ground), 0.0); /*0x599908*/
     IDA_LODWORD(v74[0]) = *(unsigned int *)(*(unsigned int *)&v75->__pad_4C[320] + 4 * (int)v75->RandomMap_field_0x48) / 100; /*0x599935*/
     v11 = (double)IDA_SLODWORD(v74[0]); /*0x599939*/
     ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"Level", v11); /*0x59994a*/
@@ -4141,11 +4141,11 @@ AbstractClass * * SetupTheater(char a2)
     ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"IonGreen", 0.4); /*0x599999*/
     ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"IonBlue", 0.75); /*0x5999b2*/
     ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"IonGround", 0.0); /*0x5999c7*/
-    ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)&stru_82BA00.?, (char *)((char * *)((char *)&stru_82BA00 + 13720)), 0.0); /*0x5999dc*/
+    ((INIClass *)v80.__pad_0)->SetDouble( (unsigned __int8 *)"Lighting", (char *)"IonLevel", 0.0); /*0x5999dc*/
     if ( !IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x5999e7*/
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 1.0, NAN); /*0x599a03*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599a0f*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x599a11*/
+    if ( off_82AF14 ) /*0x599a0f*/
+      (*(void (**)(void))&off_82AF14)(); /*0x599a11*/
     BuildingClass::FreeUpgradeQueue(); /*0x599a13*/
     BuildingClass::FreeUpgradeQueue2(); /*0x599a18*/
     if ( !a2 ) /*0x599a20*/
@@ -4196,11 +4196,11 @@ AbstractClass * * SetupTheater(char a2)
       if ( v19[25] == *(unsigned int *)&v16->__pad_4C[24] && v19[26] == *(unsigned int *)&v16->__pad_4C[28] && uniqueId == v20 ) /*0x599bc7*/
         v68 = v19[20] != *(unsigned int *)&v16->__pad_4C[4]; /*0x599bd3*/
     }
-    v22 = *(void (__stdcall **)())&stru_82ADA8[31]; /*0x599bd7*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599bde*/
+    v22 = *(void (__stdcall **)())&off_82AF14; /*0x599bd7*/
+    if ( off_82AF14 ) /*0x599bde*/
     {
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 376))(); /*0x599be0*/
-      v22 = *(void (__stdcall **)())((char *)&stru_82ADA8 + 376); /*0x599be2*/
+      (*(void (**)(void))&off_82AF14)() /*0x599be0*/
+      v22 = *(void (__stdcall **)())&off_82AF14; /*0x599be2*/
       v20 = IDA_LODWORD(v74[0]); /*0x599be7*/
     }
     if ( !*(unsigned int *)&v16->__pad_4C[300] || v20 != uniqueId || v68 ) /*0x599bfb*/
@@ -4228,13 +4228,13 @@ AbstractClass * * SetupTheater(char a2)
           --v23; /*0x599c54*/
         }
         while ( v23 >= 0 ); /*0x599c55*/
-        v22 = *(void (__stdcall **)())&stru_82ADA8[31]; /*0x599c57*/
+        v22 = *(void (__stdcall **)())&off_82AF14; /*0x599c57*/
       }
       if ( v22 ) /*0x599c5e*/
         v22(); /*0x599c60*/
       Game::DestroyAllObjects(); /*0x599c62*/
-      if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599c6e*/
-        (*(void (**)(void))&stru_82ADA8[31])(); /*0x599c70*/
+      if ( off_82AF14 ) /*0x599c6e*/
+        (*(void (**)(void))&off_82AF14)(); /*0x599c70*/
       v25 = 0; /*0x599c77*/
       if ( *(int * *)((char *)&stru_A8EB00 + 568) > 0 ) /*0x599c7b*/
       {
@@ -4266,8 +4266,8 @@ AbstractClass * * SetupTheater(char a2)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 104); /*0x599cfe*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 5.0, NAN); /*0x599d19*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599d25*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x599d27*/
+    if ( off_82AF14 ) /*0x599d25*/
+      (*(void (**)(void))&off_82AF14)(); /*0x599d27*/
     if ( v68 ) /*0x599d2d*/
     {
       MouseClass::HandleClick((MouseClass *)&stru_87F5F0.__pad_58[416]); /*0x599d34*/
@@ -4315,8 +4315,8 @@ AbstractClass * * SetupTheater(char a2)
       if ( v38 ) /*0x599e53*/
         (*(void (**)(int, int))(*(unsigned int *)v38 + 32))(v38, 1); /*0x599e59*/
     }
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599e6c*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x599e6e*/
+    if ( off_82AF14 ) /*0x599e6c*/
+      (*(void (**)(void))&off_82AF14)(); /*0x599e6e*/
     ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorReset(); /*0x599e75*/
     for ( n = ((LayerClass *)&stru_87F5F0.__pad_58[416])->CellIteratorNext(); /*0x599e86*/
           n;
@@ -4329,8 +4329,8 @@ AbstractClass * * SetupTheater(char a2)
       *(unsigned int *)(n + 68) = -1; /*0x599ea3*/
       *(unsigned char *)(n + 286) = 0; /*0x599eaa*/
     }
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 13720) ) /*0x599ec0*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 13720))(); /*0x599ec2*/
+    if ( off_82AF14 ) /*0x599ec0*/
+      (*(void (**)(void))&off_82AF14)() /*0x599ec2*/
     if ( IDA_LOBYTE(dword_A8B230[381].vtable1) ) /*0x599ec9*/
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 114); /*0x599ed8*/
     else
@@ -4342,8 +4342,8 @@ AbstractClass * * SetupTheater(char a2)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 119); /*0x599f2b*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 20.0, NAN); /*0x599f46*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x599f52*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x599f54*/
+    if ( off_82AF14 ) /*0x599f52*/
+      (*(void (**)(void))&off_82AF14)(); /*0x599f54*/
     ScenarioClass::ClearAllWaypoints((char *)dword_A8B230); /*0x599f5c*/
     IDA_HIWORD(v73) = *(unsigned int *)&stru_87F5F0.__pad_58[664] / 2 + *(unsigned int *)&stru_87F5F0.__pad_58[660] / 2; /*0x599f7f*/
     IDA_LOWORD(v73) = IDA_HIWORD(v73) + 1; /*0x599f87*/
@@ -4359,8 +4359,8 @@ AbstractClass * * SetupTheater(char a2)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 124); /*0x59a02b*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 25.0, NAN); /*0x59a046*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x59a052*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 4696))(); /*0x59a054*/
+    if ( off_82AF14 ) /*0x59a052*/
+      (*(void (**)(void))&off_82AF14)() /*0x59a054*/
     v44 = IDA_LODWORD(v74[0]); /*0x59a061*/
     ++dword_A8E7AC; /*0x59a066*/
     if ( IDA_LODWORD(v74[0]) != dword_A8B230[130].uniqueId ) /*0x59a074*/
@@ -4372,8 +4372,8 @@ AbstractClass * * SetupTheater(char a2)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 129); /*0x59a0a1*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 30.0, NAN); /*0x59a0bc*/
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 376) ) /*0x59a0c8*/
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 376))(); /*0x59a0ca*/
+    if ( off_82AF14 ) /*0x59a0c8*/
+      (*(void (**)(void))&off_82AF14)() /*0x59a0ca*/
     v45 = v75; /*0x59a0cc*/
     if ( !*(unsigned int *)&v75->__pad_4C[300] || v44 != v71 || v68 ) /*0x59a0e2*/
     {
@@ -4384,11 +4384,11 @@ AbstractClass * * SetupTheater(char a2)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 134); /*0x59a11f*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 35.0, NAN); /*0x59a13a*/
-    v46 = *(void (__stdcall **)())((char *)&stru_82ADA8 + 376); /*0x59a13f*/
-    if ( *(unsigned int * *)((char *)&stru_82ADA8 + 376) ) /*0x59a146*/
+    v46 = *(void (__stdcall **)())&off_82AF14; /*0x59a13f*/
+    if ( off_82AF14 ) /*0x59a146*/
     {
-      (*(void (**)(void))( (char *)&stru_82ADA8 + 376))(); /*0x59a148*/
-      v46 = *(void (__stdcall **)())((char *)&stru_82ADA8 + 376); /*0x59a14a*/
+      (*(void (**)(void))&off_82AF14)() /*0x59a148*/
+      v46 = *(void (__stdcall **)())&off_82AF14; /*0x59a14a*/
     }
     if ( !*(unsigned int *)&v45->__pad_4C[300] || v44 != v71 || v68 ) /*0x59a161*/
     {
@@ -4408,7 +4408,7 @@ AbstractClass * * SetupTheater(char a2)
             ++v47; /*0x59a1b2*/
           }
           while ( v47 < dword_A83CA8 ); /*0x59a1b5*/
-          v46 = *(void (__stdcall **)())((char *)&stru_82ADA8 + 4696); /*0x59a1b7*/
+          v46 = *(void (__stdcall **)())&off_82AF14; /*0x59a1b7*/
         }
       }
       if ( v46 ) /*0x59a1be*/
@@ -4420,25 +4420,25 @@ AbstractClass * * SetupTheater(char a2)
       else
         LoadTerrainTypeClassTheatre(v50, 1); /*0x59a1e9*/
       LoadBuildingTypeClassSHPs(dword_A8B230[130].uniqueId); /*0x59a201*/
-      if ( *(unsigned int * *)((char *)&stru_82ADA8 + 4696) ) /*0x59a20d*/
+      if ( off_82AF14 ) /*0x59a20d*/
       {
-        (*(void (**)(void))( (char *)&stru_82ADA8 + 4696))(); /*0x59a20f*/
-        if ( *(unsigned int * *)((char *)&stru_82ADA8 + 4696) ) /*0x59a218*/
+        (*(void (**)(void))&off_82AF14)() /*0x59a20f*/
+        if ( off_82AF14 ) /*0x59a218*/
         {
-          (*(void (**)(void))( (char *)&stru_82ADA8 + 4696))(); /*0x59a21a*/
-          if ( *(unsigned int * *)((char *)&stru_82ADA8 + 4696) ) /*0x59a223*/
-            (*(void (**)(void))( (char *)&stru_82ADA8 + 4696))(); /*0x59a225*/
+          (*(void (**)(void))&off_82AF14)() /*0x59a21a*/
+          if ( off_82AF14 ) /*0x59a223*/
+            (*(void (**)(void))&off_82AF14)() /*0x59a225*/
         }
       }
       ((BuildingTypeClass *)v67)->LoadRepairAnimations(); /*0x59a233*/
-      if ( *(unsigned int * *)((char *)&stru_82ADA8 + 4696) ) /*0x59a23f*/
-        (*(void (**)(void))( (char *)&stru_82ADA8 + 4696))(); /*0x59a241*/
+      if ( off_82AF14 ) /*0x59a23f*/
+        (*(void (**)(void))&off_82AF14)() /*0x59a241*/
       LoadBuildingTypeClassTheatreSHP(dword_A8B230[130].uniqueId); /*0x59a24e*/
-      if ( *(unsigned int * *)((char *)&stru_82ADA8 + 4696) ) /*0x59a25a*/
-        (*(void (**)(void))( (char *)&stru_82ADA8 + 4696))(); /*0x59a25c*/
+      if ( off_82AF14 ) /*0x59a25a*/
+        (*(void (**)(void))&off_82AF14)() /*0x59a25c*/
       LoadFactoryClassTheaterSHP(dword_A8B230[130].uniqueId); /*0x59a26a*/
-      if ( *(unsigned int * *)((char *)&stru_82ADA8 + 4696) ) /*0x59a276*/
-        (*(void (**)(void))( (char *)&stru_82ADA8 + 4696))(); /*0x59a278*/
+      if ( off_82AF14 ) /*0x59a276*/
+        (*(void (**)(void))&off_82AF14)() /*0x59a278*/
       LoadMapClassIsometricTiles(0, 1); /*0x59a27e*/
     }
     dword_822CF8 = dword_A8B230[130].uniqueId; /*0x59a28f*/
@@ -4449,8 +4449,8 @@ AbstractClass * * SetupTheater(char a2)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 139); /*0x59a2bd*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 40.0, NAN); /*0x59a2d8*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x59a2e4*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x59a2e6*/
+    if ( off_82AF14 ) /*0x59a2e4*/
+      (*(void (**)(void))&off_82AF14)(); /*0x59a2e6*/
     if ( g_MissionQueueFrame.localVariables[163] ) /*0x59a2ef*/
       RA2_OPDEL((void *)g_MissionQueueFrame.localVariables[163]); /*0x59a2f2*/
     v52 = g_MapCellWidth * g_MapCellWidth; /*0x59a300*/
@@ -4513,8 +4513,8 @@ AbstractClass * * SetupTheater(char a2)
       ((Multiplayer *)&dword_A8B238)->ShowProgress( 144); /*0x59a3f5*/
     else
       Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, 45.0, NAN); /*0x59a410*/
-    if ( *(unsigned int *)&stru_82ADA8[31] ) /*0x59a41c*/
-      (*(void (**)(void))&stru_82ADA8[31])(); /*0x59a41e*/
+    if ( off_82AF14 ) /*0x59a41c*/
+      (*(void (**)(void))&off_82AF14)(); /*0x59a41e*/
     g_MissionQueueFrame.localVariables[164] = 0; /*0x59a426*/
     for ( jj = g_MissionQueueFrame.briefing[342] - 1; jj >= 0; --jj ) /*0x59a435*/
     {
@@ -8069,7 +8069,7 @@ AbstractClass * * RegenerateRandomMapPreview()
       {
         *(unsigned int *)&stru_A8B250[4] = v5; /*0x5b9e2f*/
         v11 = (AbstractClass *)(dword_A8B230); /*0x5b9e3b*/
-        strcpy( (char *)(byte_A8B8E0), (const char *)(&stru_82BA00.?)); /*0x5b9e51*/
+        strcpy( (char *)(byte_A8B8E0), (const char *)"RandMap.Sed"); /*0x5b9e51*/
         strcpy( (char *)&v11[130].abstractFlags, (const char *)(byte_A8B8E0)); /*0x5b9e79*/
         v12 = (unsigned int *)((CCFileClass *)&v17)->Construct( (char *)(byte_A8B8E0)); /*0x5b9e86*/
         v13 = (*(int (**)(unsigned int *, unsigned int))(*v12 + 20))( (unsigned int *)(v12), 0); /*0x5b9e98*/

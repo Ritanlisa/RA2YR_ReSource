@@ -423,8 +423,8 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
       StringCSF = (wchar_t *)(GetStringCSF( (wchar_t *)&stru_81AF8C.IsAnimatedTiberium, 0, (const char *)(aDRa2mdpostCred), 107)); /*0x4a2499*/
       _swprintf(&word_89F860, (const wchar_t *)StringCSF, (const wchar_t *const)v10, v17, v18); /*0x4a24a4*/
       v13 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 30))( (DSurface *)(DSurface_Sidebar)); /*0x4a24c6*/
-      result = (uint8_t)TextRenderer::Printf( /*0x4a24db*/
-                                  v20,
+      result = (uint8_t)TextRenderer::Printf( (gamemd::ConvertClass *)(/*0x4a24db*/
+                                  v20),
                                   (size_t)&word_89F860,
                                   (int)DSurface_Sidebar,
                                   v13,
@@ -453,8 +453,8 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
           | ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[621] >> g_BitMask_Blue << g_BitMask_Green)
           | ((uint8_t)g_BuildingLoadQueue_Array.__pad_F70[622] >> g_BitMask_Red << g_BitShift_Blue);
       v15 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 30))( (DSurface *)(DSurface_Sidebar)); /*0x4a25c7*/
-      result = (uint8_t)TextRenderer::Printf( /*0x4a25db*/
-                                  v20,
+      result = (uint8_t)TextRenderer::Printf( (gamemd::ConvertClass *)(/*0x4a25db*/
+                                  v20),
                                   (size_t)&off_81FBB4,
                                   (int)DSurface_Sidebar,
                                   v15,
@@ -821,7 +821,7 @@ unsigned int sub_4A4130(void *a1)
   v2 = 0; /*0x4a413c*/
   if ( !g_lpDirectDraw7 ) /*0x4a4148*/
   {
-    v3 = DirectDrawCreate(0, &g_lpDirectDraw7, 0); /*0x4a4153*/
+    v3 = DirectDrawCreate(0, (LPDIRECTDRAW *)(&g_lpDirectDraw7), 0); /*0x4a4153*/
     if ( v3 ) /*0x4a415a*/
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4168*/
@@ -2291,7 +2291,7 @@ AbstractClass * * DispatchSelectionWaypointMove(int a1, int a2, int a3, int a4)
   if ( byte_A8ED6B ) /*0x4ae769*/
     return (gamemd::AbstractClass **)((char)v4) /*0x4ae769*/;
   a2 = *(unsigned int *)HouseClass::ClampToUsableCell(&v28, &a2); /*0x4ae78f*/
-  v5 = ((Waypoint *)(char *)dword_A83D4C)->FindByCell( (IUnknown *)(&a2)); /*0x4ae794*/
+  v5 = ((Waypoint *)(char *)dword_A83D4C)->FindByCell( (unsigned short *)(&a2)); /*0x4ae794*/
   if ( v5 ) /*0x4ae79b*/
     WaypointClass::FindOrCreate((char *)dword_A83D4C, (int)v5, &v27, &v26); /*0x4ae7ae*/
   v6 = (wchar_t *)(dword_A8ECC8); /*0x4ae7b3*/
@@ -2681,7 +2681,7 @@ int DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Conv
           }
         }
         if ( v39 ) /*0x4af275*/
-          (**v39)(v39, 1); /*0x4af27b*/
+          (**v39)((unsigned int)(v39), 1); /*0x4af27b*/
 // 0x43ae50
         return ((Vector *)((int)v65))->Clear((int)((Vector *)((int)v65))); /*0x4af284*/
       }
@@ -2744,10 +2744,10 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
     fallRate = this->fallRate; /*0x4af9d3*/
     if ( occupant != -1 ) /*0x4af9df*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant >= fallRate ) /*0x4af9e7*/
+      if ( dword_A8ED84 - occupant >= fallRate ) /*0x4af9e7*/
         fallRate = 0; /*0x4af9ed*/
       else
-        fallRate -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant; /*0x4af9e9*/
+        fallRate -= dword_A8ED84 - occupant; /*0x4af9e9*/
     }
     if ( (double)((int)nextObject - fallRate) / (double)(int)this->nextObject < 1.0 ) /*0x4afa08*/
     {
@@ -2758,10 +2758,10 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
         v9 = this->fallRate; /*0x4afa20*/
         if ( v8 != -1 ) /*0x4afa26*/
         {
-          if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v8 >= v9 ) /*0x4afa2e*/
+          if ( dword_A8ED84 - v8 >= v9 ) /*0x4afa2e*/
             v9 = 0; /*0x4afa34*/
           else
-            v9 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v8; /*0x4afa30*/
+            v9 -= dword_A8ED84 - v8; /*0x4afa30*/
         }
         v7 = (double)((int)v6 - v9) / (double)(int)this->nextObject; /*0x4afa40*/
       }
@@ -4601,8 +4601,8 @@ double E4Recv_4AFAA0::sub_4AFAA0()
   fallRate = this->fallRate; /*0x4afabd*/
   if ( occupant != -1 ) /*0x4afac3*/
   {
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant < fallRate ) /*0x4afacf*/
-      return (double)((int)nextObject - (fallRate - (*(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant))) /*0x4afae5*/
+    if ( dword_A8ED84 - occupant < fallRate ) /*0x4afacf*/
+      return (double)((int)nextObject - (fallRate - (dword_A8ED84 - occupant))) /*0x4afae5*/
            / (double)(int)nextObject;
     fallRate = 0; /*0x4afae6*/
   }
@@ -4656,10 +4656,10 @@ BOOL E4Recv_4AFED0::sub_4AFED0()
     occupant = this->occupant; /*0x4afeeb*/
     if ( occupant != -1 ) /*0x4afef1*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant >= fallRate ) /*0x4afefd*/
+      if ( dword_A8ED84 - occupant >= fallRate ) /*0x4afefd*/
         fallRate = 0; /*0x4aff03*/
       else
-        fallRate -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant; /*0x4afeff*/
+        fallRate -= dword_A8ED84 - occupant; /*0x4afeff*/
     }
     v2 = (double)((int)nextObject - fallRate) / (double)(int)this->nextObject; /*0x4aff10*/
   }

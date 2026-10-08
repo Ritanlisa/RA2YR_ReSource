@@ -239,7 +239,7 @@ int ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)()
     {
       v6 = 208; /*0x5e2d09*/
     }
-    DialogIndirect = (DLGTEMPLATE *)CreateDialogIndirect(g_hInstance, (HWND)v6, g_hWnd, (DLGPROC)sub_5E2E40, 0); /*0x5e2d48*/
+    DialogIndirect = (DLGTEMPLATE *)CreateDialogIndirect((HINSTANCE)(g_hInstance), (LPCDLGTEMPLATEA)v6, (HWND)(g_hWnd), (DLGPROC)sub_5E2E40, 0); /*0x5e2d48*/
     SetupDialog((gamemd::Dialog *)((HWND)DialogIndirect), v6); /*0x5e2d4e*/
     switch ( nIDDlgItem ) /*0x5e2d5b*/
     {

@@ -1216,10 +1216,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v4 = this->idleActionTimer[2]; /*0x70c2be*/
   if ( v3 != -1 ) /*0x70c2c7*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v3 >= v4 ) /*0x70c2d3*/
+    if ( *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v3 >= v4 ) /*0x70c2d3*/
       v4 = 0; /*0x70c2d9*/
     else
-      v4 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v3; /*0x70c2d5*/
+      v4 -= *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v3; /*0x70c2d5*/
   }
   Power::TimerProcess(v4); /*0x70c2de*/
   Power::TimerProcess(this->displayProductionTo[0]); /*0x70c2ec*/
@@ -1228,10 +1228,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v6 = this->cloakDelayTimer[2]; /*0x70c305*/
   if ( v5 != -1 ) /*0x70c30e*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v5 >= v6 ) /*0x70c31a*/
+    if ( *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v5 >= v6 ) /*0x70c31a*/
       v6 = 0; /*0x70c320*/
     else
-      v6 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v5; /*0x70c31c*/
+      v6 -= *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v5; /*0x70c31c*/
   }
   Power::TimerProcess(v6); /*0x70c325*/
   ((Checksummer *)((Checksummer *)aP1))->Add_float(LODWORD(this->warpFactor)); /*0x70c333*/
@@ -1243,10 +1243,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v9 = this->diskLaserTimer[2]; /*0x70c368*/
   if ( v8 != -1 ) /*0x70c371*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8 >= v9 ) /*0x70c37d*/
+    if ( *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v8 >= v9 ) /*0x70c37d*/
       v9 = 0; /*0x70c383*/
     else
-      v9 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8; /*0x70c37f*/
+      v9 -= *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v8; /*0x70c37f*/
   }
   Power::TimerProcess(v9); /*0x70c388*/
   Power::TimerProcess(this->ammo); /*0x70c396*/
@@ -1254,10 +1254,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v11 = this->reloadTimer[2]; /*0x70c3a1*/
   if ( v10 != -1 ) /*0x70c3aa*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v10 >= v11 ) /*0x70c3b6*/
+    if ( *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v10 >= v11 ) /*0x70c3b6*/
       v11 = 0; /*0x70c3bc*/
     else
-      v11 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v10; /*0x70c3b8*/
+      v11 -= *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - v10; /*0x70c3b8*/
   }
   Power::TimerProcess(v11); /*0x70c3c1*/
   Power::TimerProcess(this->unitValue); /*0x70c3cf*/

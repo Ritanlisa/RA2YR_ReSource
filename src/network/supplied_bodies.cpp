@@ -694,8 +694,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
               if ( strlen((const char *)v46) > 5 || (unsigned __int16)v17 > 0x3FFFu ) /*0x560807*/
               {
                 v46[5] = (LPARAM)asc_82083C; /*0x560820*/
- StringCSF = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 983)); /*0x56082d*/
-                v18 = (int *)GetStringCSF((const char *)(aTxtInvalidSock), 0, g_Str_File_MainOpt_cpp, 983); /*0x56083f*/
+ StringCSF = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_MainOpt_cpp), 983)); /*0x56082d*/
+                v18 = (int *)GetStringCSF((const char *)(aTxtInvalidSock), 0, (const char *)(g_Str_File_MainOpt_cpp), 983); /*0x56083f*/
                 Dialog_ShowMessageBox(v18, StringCSF, 0, 0, 0, v37); /*0x560849*/
                 return 0; /*0x56085a*/
               }
@@ -737,8 +737,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
                 || (unsigned __int8)v23 != v23 )
               {
                 v46[6] = (LPARAM)asc_82083C; /*0x56095b*/
- v33 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1017)); /*0x560968*/
-                v25 = (int *)GetStringCSF((const char *)(aTxtDestnetAddr), 0, g_Str_File_MainOpt_cpp, 1017); /*0x56097a*/
+ v33 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_MainOpt_cpp), 1017)); /*0x560968*/
+                v25 = (int *)GetStringCSF((const char *)(aTxtDestnetAddr), 0, (const char *)(g_Str_File_MainOpt_cpp), 1017); /*0x56097a*/
                 Dialog_ShowMessageBox(v25, v33, 0, 0, 0, v37); /*0x560984*/
                 return 0; /*0x560995*/
               }
@@ -755,8 +755,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
             if ( v28 > 0xFFFF ) /*0x560a43*/
             {
               v46[4] = (LPARAM)asc_82083C; /*0x560a5c*/
- v34 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1058)); /*0x560a69*/
-              v29 = (int *)GetStringCSF((const char *)(aTxtPortNumberE), 0, g_Str_File_MainOpt_cpp, 1058); /*0x560a7b*/
+ v34 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_MainOpt_cpp), 1058)); /*0x560a69*/
+              v29 = (int *)GetStringCSF((const char *)(aTxtPortNumberE), 0, (const char *)(g_Str_File_MainOpt_cpp), 1058); /*0x560a7b*/
               Dialog_ShowMessageBox(v29, v34, 0, 0, 0, v37); /*0x560a85*/
               return 0; /*0x560a96*/
             }
@@ -765,8 +765,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
               if ( !byte_A8E180 ) /*0x560abf*/
               {
                 v46[8] = (LPARAM)asc_82083C; /*0x560ad8*/
- v35 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1067)); /*0x560ae1*/
-                v30 = (int *)GetStringCSF((const char *)(aTxtFirewallSet), 0, g_Str_File_MainOpt_cpp, 1067); /*0x560af3*/
+ v35 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_MainOpt_cpp), 1067)); /*0x560ae1*/
+                v30 = (int *)GetStringCSF((const char *)(aTxtFirewallSet), 0, (const char *)(g_Str_File_MainOpt_cpp), 1067); /*0x560af3*/
                 Dialog_ShowMessageBox(v30, v35, 0, 0, 0, v37); /*0x560afd*/
               }
               byte_A8E180 = 1; /*0x560b02*/
@@ -778,8 +778,8 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
             if ( v28 > 0 && !dword_A8E254 ) /*0x560b1d*/
             {
               v46[7] = (LPARAM)asc_82083C; /*0x560b36*/
- v36 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, g_Str_File_MainOpt_cpp, 1078)); /*0x560b3f*/
-              v31 = (int *)GetStringCSF((const char *)(aTxtFirewallSet_0), 0, g_Str_File_MainOpt_cpp, 1078); /*0x560b51*/
+ v36 = (wchar_t *)(GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_MainOpt_cpp), 1078)); /*0x560b3f*/
+              v31 = (int *)GetStringCSF((const char *)(aTxtFirewallSet_0), 0, (const char *)(g_Str_File_MainOpt_cpp), 1078); /*0x560b51*/
               Dialog_ShowMessageBox(v31, v36, 0, 0, 0, v37); /*0x560b5b*/
             }
             dword_A8E254 = v28; /*0x560b65*/
@@ -837,7 +837,7 @@ int NetworkOptions::DlgProc(HWND hWnd, unsigned int a2, int a3, HWND hCtl)
   LABEL_20:
           if ( !SendMessageA(v5, 0x146u, 0, 0) ) /*0x5605fa*/
           {
- v9 = (wchar_t *)(GetStringCSF((const char *)(aTxtNoBoundNetC), 0, g_Str_File_MainOpt_cpp, 894)); /*0x560611*/
+ v9 = (wchar_t *)(GetStringCSF((const char *)(aTxtNoBoundNetC), 0, (const char *)(g_Str_File_MainOpt_cpp), 894)); /*0x560611*/
             SendMessageA(v5, 0x4C2u, 0, (LPARAM)v9); /*0x56061f*/
           }
           v10 = dword_A8EBB4; /*0x560621*/
@@ -1167,9 +1167,9 @@ void ModemGuest::InitDialog()
       RA2_OPDEL(v44); /*0x5b560b*/
       g_UIControlState = 0; /*0x5b5613*/
     }
-    if ( strlen(byte_AC1288) > 0x4E ) /*0x5b562f*/
+    if ( strlen((const char *)(byte_AC1288)) > 0x4E ) /*0x5b562f*/
       byte_AC12D7 = 0; /*0x5b5631*/
-    if ( strlen(byte_AC1288) ) /*0x5b563b*/
+    if ( strlen((const char *)(byte_AC1288)) ) /*0x5b563b*/
     {
       BulkCharToWide(Format, (unsigned __int8 *)byte_AC1288, -1); /*0x5b5655*/
       if ( &g_TypeClass_DefaultString ) /*0x5b5661*/
@@ -1242,7 +1242,7 @@ void ModemGame::UpdatePlayerNameAndColor()
     HWND v11; // [esp-8h] [ebp-B8h]
     wchar_t lParam[80]; // [esp+10h] [ebp-A0h] BYREF
 
-    wcscpy((wchar_t *)this + 16, Source); /*0x5b5ae8*/
+    wcscpy((wchar_t *)this + 16, (const wchar_t *)(Source)); /*0x5b5ae8*/
     v5 = *(HWND *)this->__pad_0; /*0x5b5aed*/
     *((unsigned int *)this + 18) = a3; /*0x5b5aff*/
     DlgItem = GetDlgItem(v5, 1029); /*0x5b5b08*/
@@ -1343,8 +1343,8 @@ void ModemGame::ProcessPacket()
       {
         Debug::Log(); /*0x5b660d*/
         v37 = asc_82083C; /*0x5b661c*/
-        StringCSF = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1391); /*0x5b6639*/
-        v18 = (int *)GetStringCSF((wchar_t *)&((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1391); /*0x5b664b*/
+        StringCSF = GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1391); /*0x5b6639*/
+        v18 = (int *)GetStringCSF((const char *)&((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1391); /*0x5b664b*/
         Dialog_ShowMessageBox(v18, StringCSF, 0, 0, 0, v36); /*0x5b6655*/
         return 1; /*0x5b665d*/
       }
@@ -1361,8 +1361,8 @@ void ModemGame::ProcessPacket()
       {
         Debug::Log(); /*0x5b60ac*/
         v38 = asc_82083C; /*0x5b60bb*/
-        v29 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1177); /*0x5b60d8*/
-        v4 = (int *)GetStringCSF((wchar_t *)&((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1177); /*0x5b60ea*/
+        v29 = GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1177); /*0x5b60d8*/
+        v4 = (int *)GetStringCSF((const char *)&((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1177); /*0x5b60ea*/
         Dialog_ShowMessageBox(v4, v29, 0, 0, 0, v36); /*0x5b60f4*/
         return 1; /*0x5b6105*/
       }
@@ -1374,16 +1374,16 @@ void ModemGame::ProcessPacket()
           if ( !updated ) /*0x5b6226*/
           {
             v41 = asc_82083C; /*0x5b623c*/
-            v31 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1209); /*0x5b6249*/
-            v25 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1209); /*0x5b6260*/
+            v31 = GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1209); /*0x5b6249*/
+            v25 = (int *)GetStringCSF((const char *)((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1209); /*0x5b6260*/
             Dialog_ShowMessageBox(v25, v31, 0, 0, 0, v36); /*0x5b6265*/
             goto LABEL_35; /*0x5b6265*/
           }
           if ( updated == -1 ) /*0x5b626c*/
           {
             v40 = asc_82083C; /*0x5b6285*/
-            v32 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1215); /*0x5b6292*/
-            v26 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, (const char * *)((char *)&stru_82BA00 + 80), 1215); /*0x5b62a9*/
+            v32 = GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1215); /*0x5b6292*/
+            v26 = (int *)GetStringCSF((const char *)"TXT_YOURGAME_OUTDATED", 0, (const char *)"D:\\ra2mdpost\\ModemGst.cpp", 1215); /*0x5b62a9*/
             Dialog_ShowMessageBox(v26, v32, 0, 0, 0, v36); /*0x5b62ae*/
             goto LABEL_35; /*0x5b62ae*/
           }
@@ -1393,8 +1393,8 @@ void ModemGame::ProcessPacket()
           if ( v51 != *((unsigned int *)this + 21) || !v11 ) /*0x5b62e5*/
           {
             v39 = asc_82083C; /*0x5b62fe*/
-            v33 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1262); /*0x5b630b*/
-            v27 = (int *)GetStringCSF((wchar_t *)&((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1262); /*0x5b6322*/
+            v33 = GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1262); /*0x5b630b*/
+            v27 = (int *)GetStringCSF((const char *)&((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1262); /*0x5b6322*/
             Dialog_ShowMessageBox(v27, v33, 0, 0, 0, v36); /*0x5b6327*/
             goto LABEL_35; /*0x5b6327*/
           }
@@ -1420,8 +1420,8 @@ void ModemGame::ProcessPacket()
             Stream::ReadPacket((int)&unk_A8EA70); /*0x5b6181*/
           }
           v38 = asc_82083C; /*0x5b619f*/
-          v30 = GetStringCSF(g_Str_TXT_OK, 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1193); /*0x5b61ac*/
-          v8 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1193); /*0x5b61be*/
+          v30 = GetStringCSF((const char *)(g_Str_TXT_OK), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1193); /*0x5b61ac*/
+          v8 = (int *)GetStringCSF((const char *)((char *)&stru_82BA00), 0, (const char *)&((unsigned int *)&stru_82BA00)[40], 1193); /*0x5b61be*/
           Dialog_ShowMessageBox(v8, v30, 0, 0, 0, v36); /*0x5b61c8*/
           v9 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x5b61d2*/
           if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x5b61da*/

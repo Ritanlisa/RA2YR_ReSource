@@ -355,7 +355,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e2c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e33*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WaypointPathClass); /*0x763e3a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x763e41*/
+  AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass*)this, 1); /*0x763e41*/
   v6 = (gamemd::WaypointPathClass *)(this); /*0x763e56*/
   v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))( (int *)&dword_B72608, (WaypointPathClass **)(&v6)); /*0x763e5a*/
   if ( v3 != -1 && v3 < dword_B72618 && v3 < --dword_B72618 ) /*0x763e75*/
@@ -376,7 +376,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   }
   BYTE1((&this->waypoints)[3]) = 0; /*0x763ec1*/
   (&this->waypoints)[2] = 0; /*0x763ec5*/
-  ((AbstractClass*)((AbstractClass *)this))->DTOR(); /*0x763ecc*/
+  ((gamemd::AbstractClass*)((gamemd::AbstractClass*)this))->DTOR(); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
     __3_YAXPAX_Z(this); /*0x763ed9*/
   return (WaypointPathClass *)this; /*0x763ee3*/

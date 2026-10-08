@@ -58,6 +58,6 @@ struct Trigger {
     void ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6);    // 0x76D4D0
     unsigned int * processTrigger(int a2, int a3);  // 0x76F090
     unsigned int * checkCondition(int aP1, int aP2);  // 0x76F1C0
-    int executeActions(int a2, void *a2_2);  // 0x76FF20
+    int executeActions(int a2);  // 0x76FF20
 };
 } // namespace gamemd

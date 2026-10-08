@@ -601,7 +601,7 @@ void* Dialog_MessageLoop()
   if ( g_hWnd ) /*0x5d4d5e*/
   {
     ++dword_AA0430; /*0x5d4d77*/
-    for ( result = (HWND)GameLoopMessagePump((MSG *)( (MSG*)(&Msg)), 0, 0, 0, 0); result; result = (HWND)GameLoopMessagePump( /*0x5d4d84*/
+    for ( result = (HWND)GameLoopMessagePump((::MSG *)((::MSG *)&Msg), 0, 0, 0, 0); result; result = (HWND)GameLoopMessagePump( /*0x5d4d84*/
                                                                                          &Msg,
                                                                                          0,
                                                                                          0,
@@ -1748,7 +1748,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
   }
   *(unsigned int *)&((unsigned char *)&stru_A8B250)[4] = -1; /*0x5dda8c*/
   StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_OK), 0, (const char *)(g_Str_File_netdlg2_cpp), 710); /*0x5ddaaa*/
-  v7 = (int *)GetStringCSF( (wchar_t *)((char *)&stru_82BA00 + 2), 0, (const char *)(g_Str_File_netdlg2_cpp), 710); /*0x5ddab5*/
+  v7 = (int *)GetStringCSF( (wchar_t *)"TXT_UNABLE_PLAY_WAAUGH", 0, (const char *)(g_Str_File_netdlg2_cpp), 710); /*0x5ddab5*/
   ((Dialog *)v7)->ShowMessageBox( (unsigned short *)(StringCSF), 0, 0, 0, v1); /*0x5ddabf*/
   memset( (void *)(v11), 0, sizeof(v11)); /*0x5ddad3*/
   v12 = 0; /*0x5ddad5*/
@@ -1879,14 +1879,14 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
   v10 = a1; /*0x5df41f*/
   if ( a1 < 1 ) /*0x5df423*/
   {
-    String = (unsigned int)GetStringCSF( "TXT_MUST_SELECT_GAME" /*w16g4 aTxtMustSelectG*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3712); /*0x5df436*/
+    String = (unsigned int)GetStringCSF( (wchar_t *)("TXT_MUST_SELECT_GAME" /*w16g4 aTxtMustSelectG*/), 0, (const char *)(g_Str_File_netdlg2_cpp), 3712); /*0x5df436*/
     Dialog::ShowMessage(-1, (size_t)String); /*0x5df442*/
     PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df462*/
     return 0; /*0x5df473*/
   }
   if ( dword_A8DA6C <= 1 || a1 > dword_A8DA6C ) /*0x5df484*/
   {
-    v5 = GetStringCSF( "TXT_NOTHING_TO_JOIN" /*w16g4 aTxtNothingToJo*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3719); /*0x5df87b*/
+    v5 = GetStringCSF( (wchar_t *)("TXT_NOTHING_TO_JOIN" /*w16g4 aTxtNothingToJo*/), 0, (const char *)(g_Str_File_netdlg2_cpp), 3719); /*0x5df87b*/
   }
   else if ( strlen( (const char *)(unk_A8B380)) ) /*0x5df48f*/
   {
@@ -1899,7 +1899,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
       || !strcmp((const char *)(unk_A8B380), ToWideStringChar( (IUnknown *)((char *)dword_AC1194)))
       || (((String *)((char **)&v9))->Assign( (const char *)(unk_A8B380)), v6 = Network_Send(&v9), j_DeleteAndZero( (void *)(&v9)), v6) )
     {
-      v8 = GetStringCSF( "ERROR:NameIsReservedWord" /*w16g4 aErrorNameisres*/, 0, (const char *)(g_Str_File_netdlg2_cpp), 3742); /*0x5df82c*/
+      v8 = GetStringCSF( (wchar_t *)("ERROR:NameIsReservedWord" /*w16g4 aErrorNameisres*/), 0, (const char *)(g_Str_File_netdlg2_cpp), 3742); /*0x5df82c*/
       Dialog::ShowMessage(-1, (size_t)v8); /*0x5df838*/
       PlayVocClass(dword_8871E0->MovieOff, 0x2000, 1.0, 0); /*0x5df858*/
       return 0; /*0x5df869*/
@@ -2105,7 +2105,7 @@ int Network_SendPlayerOptions(unsigned int * a1, int a2)
       return 0; /*0x5dff1a*/
     v6 = (char *)(a1 + 1); /*0x5dff20*/
     v7 = ToWideStringChar( (IUnknown *)((char *)word_A8D610)); /*0x5dff28*/
-    if ( _strcmpi(v6, v7) || !wcslen(word_A8D610) || byte_A8D60C || g_NetworkSettingsState < 2 ) /*0x5dff68*/
+    if ( _strcmpi(v6, v7) || !wcslen((const wchar_t *)(word_A8D610)) || byte_A8D60C || g_NetworkSettingsState < 2 ) /*0x5dff68*/
     {
       return 0; /*0x5e00a0*/
     }
@@ -2144,12 +2144,12 @@ int Network_SendPlayerOptions(unsigned int * a1, int a2)
   }
   else
   {
-    if ( wcslen(word_A8D610) ) /*0x5dfe29*/
+    if ( wcslen((const wchar_t *)(word_A8D610)) ) /*0x5dfe29*/
     {
-      if ( !byte_A8D60E || (v3 = ToWideStringChar( (IUnknown *)((char *)word_A8D610)), !_strcmpi(unk_A8B380, v3)) ) /*0x5dfe52*/
+      if ( !byte_A8D60E || (v3 = ToWideStringChar( (IUnknown *)((char *)word_A8D610)), !_strcmpi((const char *)(unk_A8B380), v3)) ) /*0x5dfe52*/
       {
         v4 = ToWideStringChar( (IUnknown *)((char *)word_A8D610)); /*0x5dfe67*/
-        if ( _strcmpi(unk_A8B380, v4) && !byte_A8ED5C ) /*0x5dfe85*/
+        if ( _strcmpi((const char *)(unk_A8B380), v4) && !byte_A8ED5C ) /*0x5dfe85*/
           return 1; /*0x5dfe93*/
         memset( (void *)(v9), 0, sizeof(v9)); /*0x5dfe9f*/
         v10 = 0; /*0x5dfea1*/
@@ -3175,10 +3175,10 @@ unsigned char sub_5DAF20()
   LRESULT v8; // eax
   const wchar_t *v9; // eax
 
-  v0 = SendDlgItemMessageA(hDlg, 1363, 0x188u, 0, 0); /*0x5e670d*/
+  v0 = SendDlgItemMessageA((HWND)(hDlg), 1363, 0x188u, 0, 0); /*0x5e670d*/
   if ( v0 != -1 ) /*0x5e6712*/
   {
-    v1 = SendDlgItemMessageA(hDlg, 1363, 0x199u, v0, 0); /*0x5e672c*/
+    v1 = SendDlgItemMessageA((HWND)(hDlg), 1363, 0x199u, v0, 0); /*0x5e672c*/
     v2 = 0; /*0x5e6734*/
     if ( g_MultiplayerOptions > 0 ) /*0x5e6738*/
     {
@@ -3210,7 +3210,7 @@ unsigned char sub_5DAF20()
           ((Surface *)((char **)v6))->LoadToSurfaceSHP( (char *)(ExistingFileName)); /*0x5e67c2*/
           if ( !*(unsigned int *)g_UIControlState ) /*0x5e67cc*/
             Session::PrepareGame( (HWND)(hDlg)); /*0x5e67d7*/
-          InvalidateRect(hDlg, 0, 0); /*0x5e67e7*/
+          InvalidateRect((HWND)(hDlg), 0, 0); /*0x5e67e7*/
           ScenarioClass::CopyStartPositions(); /*0x5e67ed*/
         }
         else
@@ -3225,7 +3225,7 @@ unsigned char sub_5DAF20()
   }
   LABEL_20:
   v7 = hDlg; /*0x5e6816*/
-  v8 = SendDlgItemMessageA(hDlg, 1363, 0x188u, 0, 0); /*0x5e682c*/
+  v8 = SendDlgItemMessageA((HWND)(hDlg), 1363, 0x188u, 0, 0); /*0x5e682c*/
   if ( v8 == -1 || (v9 = (const wchar_t *)SendDlgItemMessageA(v7, 1363, 0x199u, v8, 0)) == 0 ) /*0x5e6845*/
     word_AC0EC8 = 0; /*0x5e6857*/
   else
@@ -3270,7 +3270,7 @@ char InitNetworkGameState()
   {
     if ( dword_A8D5FC ) /*0x5db6a7*/
     {
-      ((gamemd::Network*)(&stru_A8D600))->CopyAddress(&v1, (int)v2); /*0x5db6b8*/
+      ((gamemd::Network*)(&stru_A8D600))->CopyAddress((unsigned int *)(&v1), (int)v2); /*0x5db6b8*/
       Network_Init_542FC0(&v1); /*0x5db6c7*/
     }
   }

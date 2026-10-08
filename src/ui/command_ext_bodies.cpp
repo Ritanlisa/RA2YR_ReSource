@@ -100,14 +100,14 @@ char ScreenCapture::Frame()
         if ( !*(unsigned int *)&g_MissionQueueFrame.waypoints[482] ) /*0x55cc9b*/
           *(unsigned int *)((char *)&stru_A8EB00 + 381) = 0; /*0x55cc9d*/
       }
-      GetClientRect(g_hWnd, &Rect); /*0x55ccaf*/
+      GetClientRect((HWND)(g_hWnd), &Rect); /*0x55ccaf*/
       Point.x = Rect.left; /*0x55ccc7*/
       Point.y = Rect.top; /*0x55ccd3*/
-      v1 = ClientToScreen(g_hWnd, &Point); /*0x55ccd7*/
+      v1 = ClientToScreen((HWND)(g_hWnd), &Point); /*0x55ccd7*/
       if ( v1 ) /*0x55ccdb*/
       {
         v17 = *(struct tagPOINT *)&Rect.right; /*0x55cce9*/
-        v1 = ClientToScreen(g_hWnd, &v17); /*0x55ccfc*/
+        v1 = ClientToScreen((HWND)(g_hWnd), &v17); /*0x55ccfc*/
         if ( v1 ) /*0x55cd00*/
         {
           right = Rect.right; /*0x55cd13*/

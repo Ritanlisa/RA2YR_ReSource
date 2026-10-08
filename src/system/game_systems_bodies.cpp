@@ -866,21 +866,21 @@ int GameOptions::SaveLoad(int a2)
         goto LABEL_77; /*0x68166c*/
       return String; /*0x68166c*/
     }
-    String = WriteIntCOM(v2, 12, this + 984); /*0x681692*/
+    String = WriteIntCOM(v2, 12, (int)(this + 984)); /*0x681692*/
     if ( String < 0 ) /*0x681696*/
     {
       if ( a2 ) /*0x68169e*/
         goto LABEL_77; /*0x68169e*/
       return String; /*0x68169e*/
     }
-    String = WriteIntCOM(v2, 13, this + 1000); /*0x6816c4*/
+    String = WriteIntCOM(v2, 13, (int)(this + 1000)); /*0x6816c4*/
     if ( String < 0 ) /*0x6816c8*/
     {
       if ( a2 ) /*0x6816d0*/
         goto LABEL_77; /*0x6816d0*/
       return String; /*0x6816d0*/
     }
-    String = WriteIntCOM(v2, 10, this + 992); /*0x6816f6*/
+    String = WriteIntCOM(v2, 10, (int)(this + 992)); /*0x6816f6*/
     if ( String < 0 ) /*0x6816fa*/
     {
       if ( a2 ) /*0x681702*/
@@ -1026,7 +1026,7 @@ int GameOptionsClass::PopulateMovieList(HWND hWnd)
     {
       if ( off_832C24 ) /*0x5fc026*/
       {
-        StringCSF = GetStringCSF(off_832C24, 0, g_Str_File_Options_CPP, 1265); /*0x5fc034*/
+        StringCSF = GetStringCSF((const wchar_t *)(off_832C24), 0, (const char *)(g_Str_File_Options_CPP), 1265); /*0x5fc034*/
         v4 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)StringCSF); /*0x5fc042*/
         if ( v4 != -1 ) /*0x5fc047*/
           SendMessageA(hWnd, 0x19Au, v4, (LPARAM)off_832C20); /*0x5fc055*/
@@ -1048,7 +1048,7 @@ int GameOptionsClass::PopulateMovieList(HWND hWnd)
             v8 = (wchar_t *)v7[1]; /*0x5fc078*/
             if ( v8 ) /*0x5fc07d*/
             {
-              v9 = GetStringCSF(v8, 0, g_Str_File_Options_CPP, 1265); /*0x5fc08b*/
+              v9 = GetStringCSF(v8, 0, (const char *)(g_Str_File_Options_CPP), 1265); /*0x5fc08b*/
               v10 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v9); /*0x5fc099*/
               if ( v10 != -1 ) /*0x5fc09e*/
                 SendMessageA(hWnd, 0x19Au, v10, (LPARAM)v7); /*0x5fc0a8*/
@@ -1076,7 +1076,7 @@ int GameOptionsClass::PopulateMovieList(HWND hWnd)
           v15 = (wchar_t *)i[1]; /*0x5fc0da*/
           if ( v15 ) /*0x5fc0df*/
           {
-            v16 = GetStringCSF(v15, 0, g_Str_File_Options_CPP, 1265); /*0x5fc0ed*/
+            v16 = GetStringCSF(v15, 0, (const char *)(g_Str_File_Options_CPP), 1265); /*0x5fc0ed*/
             v17 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v16); /*0x5fc0fb*/
             if ( v17 != -1 ) /*0x5fc100*/
               SendMessageA(hWnd, 0x19Au, v17, (LPARAM)i); /*0x5fc10a*/
@@ -1125,13 +1125,13 @@ int GameResult::CalcScore()
         return result; /*0x4c6307*/
       }
       p_vtable3 = &((AbstractClass *)dword_A8B230)[127].vtable3; /*0x4c62b6*/
-      ((AbstractClass *)dword_A8B230)[127].vtable3 = *(void **)((char *)&stru_A8EB00 + 416); /*0x4c62bb*/
+      ((AbstractClass *)dword_A8B230)[127].vtable3 = (void *)dword_A8ED84; /*0x4c62bb*/
       p_vtable3[1] = (void *)IDA_HIDWORD(nextArrayIndex); /*0x4c62c1*/
       p_vtable3[2] = (void *)v7; /*0x4c62c4*/
       result = dword_A8B230; /*0x4c62c7*/
       if ( ((AbstractClass *)dword_A8B230)[127].vtable3 == (void *)-1 ) /*0x4c62d3*/
       {
-        ((AbstractClass *)dword_A8B230)[127].vtable3 = *(void **)((char *)&stru_A8EB00 + 416); /*0x4c62db*/
+        ((AbstractClass *)dword_A8B230)[127].vtable3 = (void *)dword_A8ED84; /*0x4c62db*/
         result = dword_A8B230; /*0x4c62e1*/
         IDA_LOWORD(((AbstractClass *)dword_A8B230)[381].vtable3) = *((unsigned short *)this + 32); /*0x4c62eb*/
         return result; /*0x4c62f6*/
@@ -1365,7 +1365,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
     hDlg = 0; /*0x60d5d7*/
     if ( g_GameScreenManager ) /*0x60d5db*/
     {
-      Parent = GetParent(g_GameScreenManager); /*0x60d5de*/
+      Parent = GetParent((HWND)(g_GameScreenManager)); /*0x60d5de*/
       hDlg = Parent; /*0x60d5e4*/
     }
     v185 = 0; /*0x60d5ea*/
@@ -1444,7 +1444,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
     if ( hWnd != (HWND)326 && hWnd != (HWND)340 && hWnd != (HWND)277 ) /*0x60d753*/
     {
       v15 = SendMessageA(result, 0x146u, 0, 0); /*0x60d771*/
-      v16 = SendMessageA(g_GameScreenManager, 0x154u, 0, 0); /*0x60d775*/
+      v16 = SendMessageA((HWND)(g_GameScreenManager), 0x154u, 0, 0); /*0x60d775*/
       if ( v16 <= 1 ) /*0x60d77a*/
         v16 = 1; /*0x60d77c*/
       dy.DeleteAndZero_field_0x08 = v15 * v16 > Rect.bottom - Rect.top; /*0x60d79a*/
@@ -1519,7 +1519,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
         {
           SetCapture((HWND)this); /*0x60e0f1*/
           g_GameScreenManager = *(HWND *)wParam; /*0x60e101*/
-          v56 = GetParent(g_GameScreenManager); /*0x60e106*/
+          v56 = GetParent((HWND)(g_GameScreenManager)); /*0x60e106*/
           sprintf(Buffer, "Dropd=%p  Master=%p  Dlg=%p", this, g_GameScreenManager, v56); /*0x60e128*/
           Debug_Log(); /*0x60e135*/
           SetTimer((HWND)this, 0, 0x14u, 0); /*0x60e149*/
@@ -1532,7 +1532,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
           {
             Y[0] = *(unsigned int *)(v185 + 100); /*0x60d857*/
             DlgItem = (HWND)SendMessageA(result, 0x146u, 0, 0); /*0x60d85f*/
-            v184.DeleteAndZero_field_0x08 = SendMessageA(g_GameScreenManager, 0x154u, 0, 0); /*0x60d874*/
+            v184.DeleteAndZero_field_0x08 = SendMessageA((HWND)(g_GameScreenManager), 0x154u, 0, 0); /*0x60d874*/
             v203 = Rect.bottom - Rect.top; /*0x60d895*/
             v190.bottom = Rect.bottom - Rect.top; /*0x60d89c*/
             v193 = *(unsigned int *)(v10 + 232); /*0x60d8a6*/
@@ -2393,7 +2393,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
         if ( (unsigned __int16)wParam < Rect.right && v170 < Rect.bottom )
         {
           v172 = SendMessageA(result, 0x154u, 0, 0); /*0x60f2de*/
-          v173 = SendMessageA(g_GameScreenManager, 0x146u, 0, 0); /*0x60f2e2*/
+          v173 = SendMessageA((HWND)(g_GameScreenManager), 0x146u, 0, 0); /*0x60f2e2*/
           v174 = *(unsigned int *)(v10 + 240) + v170 / v172 < 0 ? 0 : (HWND)(*(unsigned int *)(v10 + 240) + v170 / v172);
           v175 = (HWND)(v173 - 1); /*0x60f2fc*/
           if ( (int)v175 < (int)v174 ) /*0x60f2ff*/
@@ -2424,13 +2424,13 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
           if ( dy.DeleteAndZero_field_0x08 ) /*0x60e5f4*/
             DestroyWindow(*(HWND *)(v10 + 12)); /*0x60e5fa*/
           ReleaseCapture(); /*0x60e600*/
-          SendMessageA(g_GameScreenManager, 0x14Fu, 0, 0); /*0x60e616*/
+          SendMessageA((HWND)(g_GameScreenManager), 0x14Fu, 0, 0); /*0x60e616*/
           return 0; /*0x60e61b*/
         }
         else
         {
-          v78 = SendMessageA(g_GameScreenManager, 0x154u, 0, 0); /*0x60e54b*/
-          v79 = SendMessageA(g_GameScreenManager, 0x146u, 0, 0); /*0x60e54f*/
+          v78 = SendMessageA((HWND)(g_GameScreenManager), 0x154u, 0, 0); /*0x60e54b*/
+          v79 = SendMessageA((HWND)(g_GameScreenManager), 0x146u, 0, 0); /*0x60e54f*/
           v80 = v77 / v78; /*0x60e554*/
           if ( v10 ) /*0x60e558*/
             v80 += *(unsigned int *)(v10 + 240); /*0x60e55a*/
@@ -2438,12 +2438,12 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
           v82 = v79 - 1; /*0x60e56a*/
           if ( v82 < v81 ) /*0x60e56d*/
             v81 = v82; /*0x60e56f*/
-          SendMessageA(g_GameScreenManager, 0x14Eu, v81, 0); /*0x60e57f*/
-          v83 = GetWindowLongA(g_GameScreenManager, -12); /*0x60e590*/
+          SendMessageA((HWND)(g_GameScreenManager), 0x14Eu, v81, 0); /*0x60e57f*/
+          v83 = GetWindowLongA((HWND)(g_GameScreenManager), -12); /*0x60e590*/
           if ( dy.DeleteAndZero_field_0x08 ) /*0x60e598*/
             DestroyWindow(*(HWND *)(v10 + 12)); /*0x60e59e*/
           ReleaseCapture(); /*0x60e5a4*/
-          SendMessageA(g_GameScreenManager, 0x14Fu, 0, 0); /*0x60e5b9*/
+          SendMessageA((HWND)(g_GameScreenManager), 0x14Fu, 0, 0); /*0x60e5b9*/
           PostMessageA(hDlg, 0x111u, v83 | 0x10000, (LPARAM)g_GameScreenManager); /*0x60e5d9*/
           return 0; /*0x60e5e2*/
         }
@@ -3138,8 +3138,8 @@ void LoadGame::CleanupArray()
       &this->LoadGame_field_0x0C,
       LoadGame_field_0x14,
       0);
-    result = *(wchar_t **)((char *)&stru_A8EB00 + 416); /*0x54e728*/
-    *(unsigned int *)this->__pad_0 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e736*/
+    result = (wchar_t *)dword_A8ED84; /*0x54e728*/
+    *(unsigned int *)this->__pad_0 = dword_A8ED84; /*0x54e736*/
     this->LoadGame_field_0x04 = v5; /*0x54e738*/
     this->LoadGame_field_0x08 = 1; /*0x54e73b*/
     return result; /*0x54e73e*/

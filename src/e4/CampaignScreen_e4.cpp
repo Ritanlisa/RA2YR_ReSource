@@ -81,7 +81,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
   wchar_t v61[32]; // [esp+E8h] [ebp-80h] BYREF
   wchar_t v62[32]; // [esp+128h] [ebp-40h] BYREF
 
-  result = BaseDialogProc((HWND)self, (unsigned int)hWnd, wParam, (HWND)a4); /*0x470d58*/
+  result = BaseDialogProc((gamemd::SkirmishDialog *)self, (unsigned int)hWnd, (int)(wParam), (unsigned int)a4); /*0x470d58*/
   if ( !result ) /*0x470d5f*/
   {
     v51 = v5; /*0x470d65*/
@@ -99,7 +99,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
       }
       else if ( hWnd == (HWND)1261 ) /*0x471396*/
       {
-        Screen::Capture(1, 0, wParam, (int)v5); /*0x47139c*/
+        Screen::Capture(1, 0, (int)(wParam), (int)v5); /*0x47139c*/
         ShowWindow(0); /*0x4713a4*/
         Dialog::InitWindow(1); /*0x4713ad*/
         return 0; /*0x4713be*/

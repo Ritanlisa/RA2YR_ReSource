@@ -32,7 +32,7 @@ int LocomotionClass::Initialize()
   ((LocomotionClass*)this)->Init(); /*0x4af543*/
   *((unsigned int *)this + 7) = 0; /*0x4af54d*/
   *((unsigned int *)this + 8) = 0; /*0x4af550*/
-  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4af553*/
+  v2 = dword_A8ED84; /*0x4af553*/
   *((unsigned int *)this + 11) = 0; /*0x4af559*/
   *((unsigned int *)this + 9) = v2; /*0x4af55c*/
   *((unsigned int *)this + 12) = 0; /*0x4af55f*/
@@ -74,8 +74,8 @@ void * LocomotionClass::UpdateAll()
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
     v3 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
-    result = *(wchar_t **)(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c54be*/
-    if ( *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) >= v3[11] + v3[12] ) /*0x4c54c5*/
+    result = (wchar_t **)dword_A8ED84; /*0x4c54be*/
+    if ( (int *)dword_A8ED84 >= v3[11] + v3[12] ) /*0x4c54c5*/
     {
       if ( v3 ) /*0x4c54c9*/
         result = (wchar_t *)(*(int (**)(unsigned int *, int))(*v3 + 32))( (unsigned int *)(v3), 1); /*0x4c54cf*/

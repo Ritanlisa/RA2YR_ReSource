@@ -128,6 +128,7 @@ struct RulesClass {
     INIClass * * ReadPowerupsSection();
     INIClass * * readDifficulty();
     RulesClass();
+    static int Constructor(void *aP1);  // 0x665650 raw: int __thiscall RulesClass::RulesClass(RulesClass*) -- site form (W20L4 T2)
     static double GetFiringDistance();
     int DTOR(void *a1);
     int ReadColorAdd();

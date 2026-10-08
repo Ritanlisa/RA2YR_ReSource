@@ -185,7 +185,7 @@ AbstractClass * * sub_725C70()
     {
       while ( 1 ) /*0x725caa*/
       {
-v3 = (*(int (**)(int *, unsigned int **))(stru_B0F698+ 16))( /*0x725caa*/ &stru_B0F698, (unsigned int **)((int *)((int *)((int *)(&v8)))));
+v3 = (*(int (**)(int *, unsigned int **))(stru_B0F698+ 16))( /*0x725caa*/ &stru_B0F698, (unsigned int **)((int *)((int *)((int *)((int *)(&v8))))));
 
 
         if ( v3 == -1 || v3 >= *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] ) /*0x725cba*/

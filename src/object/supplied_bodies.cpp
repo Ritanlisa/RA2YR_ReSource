@@ -1499,7 +1499,7 @@ void * TechnoClass::FindClosestPlacementCell()
             vtable0 = (int (__thiscall **)(TechnoClass *, unsigned int *))this; /*0x41a327*/
             v35 = 0; /*0x41a334*/
             v36 = 0; /*0x41a339*/
-            v12 = (__int16 *)vtable0[110](this, &v39); /*0x41a33e*/
+            v12 = (__int16 *)vtable0[110](this, (unsigned int *)(&v39)); /*0x41a33e*/
             v29 = MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], v12, 0, 0); /*0x41a351*/
             v13 = ((__int64 (__thiscall *)(TechnoClass *, int *))*((unsigned int *)this->vtable1 + 110))(this, &v38); /*0x41a35a*/
             *(unsigned int *)v37 = *LayerClass_Pathfinding_Find( /*0x41a37c*/

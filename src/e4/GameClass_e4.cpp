@@ -132,7 +132,7 @@ int GameClass::loadScenarioFiles(int aP1)
     ClientToScreen((HWND)(g_hWnd), (LPPOINT)&Rect); /*0x5d228f*/
     v4 = (gamemd::ObjectClass *)(aP1); /*0x5d229b*/
     if ( dword_887640) /*0x5d22a1*/
-      (*(void (**)(void *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))(  /*0x5d22a8*/
+      (*(void (**)(void *, int, unsigned int))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0)))(  /*0x5d22a8*/
         dword_887640,
         aP1,
         0);
@@ -199,7 +199,7 @@ int GameClass::FrameLoop(int a2)
     {
       Event::Dispatch(); /*0x5d2437*/
       (*(void (**)(GameClass *))(*(unsigned int *)this->__pad_0 + 8))(this); /*0x5d2440*/
-      ((DDraw *)v9)->WaitForIdle(); /*0x5d2443*/
+      ((gamemd::DDraw*)v9)->WaitForIdle(); /*0x5d2443*/
       ((DSurface *)((DSurface *)this))->RenderToSurface((int *)g_DSurface_Hidden); /*0x5d2451*/
       ((GameClass *)(this))->loadScenarioFiles((int)g_DSurface_Hidden); /*0x5d245f*/
       MessageLoop(); /*0x5d2464*/
@@ -214,7 +214,7 @@ int GameClass::FrameLoop(int a2)
             v4 = v11 - v3; /*0x5d248f*/
           v11 = v4; /*0x5d2495*/
         }
-        ((DDraw *)this)->HandleSuspend(); /*0x5d249f*/
+        ((gamemd::DDraw*)this)->HandleSuspend(); /*0x5d249f*/
         Ticks = TimerGetTicks(); /*0x5d24b3*/
       }
       Sleep(0); /*0x5d24b9*/
@@ -741,7 +741,7 @@ namespace gamemd {
 int GameClass::loadGameState(int a2)
 {
 
-  return (*(int ((gamemd::PKPipe *)(**))(PKPipe *, int))(*(unsigned int *)this->__pad_0 + 12))(this, a2); /*0x632fea*/
+  return (*(int (__thiscall **)(PKPipe *, int))(*(unsigned int *)this->__pad_0 + 12))(this, a2); /*0x632fea*/
 
 }
 } // namespace gamemd
@@ -777,7 +777,7 @@ namespace gamemd {
 int GameClass::parseGameOptions(int a2)
 {
 
-  return (*(int ((gamemd::PKStraw *)(**))(PKStraw *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2); /*0x63336a*/
+  return (*(int (__thiscall **)(PKStraw *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2); /*0x63336a*/
 
 }
 } // namespace gamemd

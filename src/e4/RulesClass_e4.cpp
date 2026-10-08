@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include <new>  // W20L4 T2 placement-new Constructor forwarding
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/String_e4.hpp"
@@ -65,6 +66,10 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
 
 }
 } // namespace gamemd
+// 0x665650 site-form Constructor supply (W20L4 T2; forwards to ctor def below)
+namespace gamemd {
+int RulesClass::Constructor(void *aP1) { return (int)(void *)(new (aP1) RulesClass()); }
+}
 // 0x665650
 namespace gamemd {  // G42.18c ns repair
 RulesClass::RulesClass()

@@ -946,7 +946,7 @@ int AnimClass::ClearTargetReferences(int a2, int a3)
     if ( result == a2 && a2 ) /*0x425172*/
     {
       RemoveTarget((int)this); /*0x42517a*/
-      (*(void (__thiscall **)(void *, AnimClass *))(*(unsigned int *)this->AnimClass_field_0xCC + 96))( /*0x425188*/
+      (*(void (__thiscall **)(void *, AnimClass *))((void *)(*(unsigned int *)this->AnimClass_field_0xCC + 96)))( /*0x425188*/
         this->AnimClass_field_0xCC,
         this);
       AnimClass_field_0x0 = (int (__thiscall **)(AnimClass *, unsigned int))this->AnimClass_field_0x0; /*0x42518b*/
@@ -1192,7 +1192,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
     char v33[12]; // [esp+68h] [ebp-18h] BYREF
     char v34[12]; // [esp+74h] [ebp-Ch] BYREF
 
-    v1 = a1[28] / (&dword_8871E0)[1].?[1]; /*0x65bb67*/
+    v1 = a1[28] / (*(int *)((char *)dword_8871E0 + 0x1810)); /*0x65bb67*/
     v2 = *((__int16 *)a1 + 32); /*0x65bb6d*/
     v3 = a1[17]; /*0x65bb71*/
     v22 = a1; /*0x65bb74*/

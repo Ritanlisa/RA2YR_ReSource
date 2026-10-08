@@ -364,7 +364,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2, void *a2_2
 
   INIClass::ResetSection(((INIClass*)((INIClass *)a2))); /*0x41f595*/
   if ( !((INIClass*)/*0x41f5b9*/
-          (INIClass *)a2)->GetString(/*0x41f5b9*/ (uint8_t *)aAitriggertypes, (uint8_t *)&this->AITriggerTypeClass_field_0x24, &g_INI_DefaultBuffer, ((unsigned int *)(v46))[0], 512) )
+          (INIClass *)a2)->GetString(/*0x41f5b9*/ (uint8_t *)aAitriggertypes, (uint8_t *)&this->AITriggerTypeClass_field_0x24, &g_INI_DefaultBuffer, (void *)(((unsigned int *)(v46))[0]), 512) )
     return 0; /*0x41f5b9*/
   v4 = strtok((char *)(((unsigned int *)(v46))[0]), (char *)&::Delimiter); /*0x41f5d3*/
   if ( !v4 ) /*0x41f5df*/

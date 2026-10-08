@@ -171,7 +171,7 @@ LABEL_162:
         return 0;
       return (AbstractClass * *)DeployScriptActionPlane(v78, -1);
     case 8:
-      return ((TActionClass *)(int *)a1)->executeRetreatAction( a5, (int)v9, (int)a5, a8);
+      return ((TActionClass *)(int *)a1)->executeRetreatAction( (gamemd::AbstractClass *)(a5), (int)v9, (int)a5, a8);
     case 9:
       int v74 = ObjectClass_FindOwner((_DWORD *)(a5), *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v74 )
@@ -223,7 +223,7 @@ LABEL_162:
       *(unsigned char *)(v75 + 495) = 1;
       return 1;
     case 0xE:
-      return ((TActionClass *)(unsigned int *)a1)->executeEnterAction( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
+      return ((TActionClass *)(unsigned int *)a1)->executeEnterAction( (int)a5, (int)v9, (unsigned int *)(a5), (int)a8);
     case 0x10:
       if ( *(unsigned char *)(HouseClass_Player.field_0 + 576) )
         return 1;
@@ -238,9 +238,9 @@ LABEL_162:
       ((MapClass *)((int)(&((unsigned int *)(stru_87C374))[13428])))->MarkForRedraw((int)((MapClass *)((int)(&((unsigned int *)(stru_87C374))[13428]))), (void *)(1));
       return 1;
     case 0x11:
-      return ((TActionClass *)(int *)a1)->RevealWaypointArea( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->RevealWaypointArea( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x12:
-      return ((TActionClass *)(int *)a1)->RevealTileTypeAtWaypoint( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->RevealTileTypeAtWaypoint( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x13:
       PlayVocClass(*(unsigned int *)((unsigned int)(a1)+ 144), 0x2000, 1.0, 0);
       return 1;
@@ -384,7 +384,7 @@ LABEL_157:
       a5[603].NeedsSaveOrLink = *(void **)((char *)a1 +44);
       return 1;
     case 0x24:
-      return ((TActionClass *)(unsigned int *)a1)->ConvertHouseUnits( (int)a5, (int)v9, (unsigned int *)(a5), (IUnknown *)a8);
+      return ((TActionClass *)(unsigned int *)a1)->ConvertHouseUnits( (int)a5, (int)v9, (unsigned int *)(a5), (int)a8);
     case 0x25:
       v48 = (HouseClass *)((ObjectClass *)((unsigned int *)(a5)))->FindOwner( *(AnimClass **)((char *)a1 +44));
       int v49 = (int)v48;
@@ -406,13 +406,13 @@ LABEL_157:
     case 0x5D:
       return 1;
     case 0x28:
-      return ((TActionClass *)(int *)a1)->executeFollowAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->executeFollowAction( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x29:
-      return ((TActionClass *)(int *)a1)->executeEscortAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->executeEscortAction( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x2A:
-      return ((TActionClass *)(int *)a1)->CreateWeaponImpactAtWaypoint( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->CreateWeaponImpactAtWaypoint( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x2B:
-      return ((TActionClass *)(int *)a1)->executeLoadAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->executeLoadAction( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x2C:
       if ( LightningStorm::IsActive() )
         return 0;
@@ -555,7 +555,7 @@ LABEL_157:
       ScenarioClass::SetLocalToByID(*(unsigned char **)&((unsigned char *)&HouseClass_Player)[29924], *(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x3A:
-      return ((TActionClass *)(int *)a1)->SpawnMeteorShower( a5, (int)v9, (int)a5, a8);
+      return ((TActionClass *)(int *)a1)->SpawnMeteorShower( (gamemd::AbstractClass *)(a5), (int)v9, (int)a5, a8);
     case 0x3B:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)(a1 + 144));
       MapClass::TriggerEVA((short *)((IUnknown *)&v112));
@@ -822,7 +822,7 @@ LABEL_60:
       v128 = v101[1];
       GroundHeight = v101[2];
       ((CoordStruct *)&v131)->Set2( (IUnknown *)&v112, 0);
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v131);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (unsigned int *)&v131);
       int v102 = operator new(0x100u);
       if ( !v102 )
         return 1;
@@ -855,7 +855,7 @@ LABEL_60:
       return 1;
     case 0x5A:
       v106 = (IUnknown **)((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(v134), *(unsigned int *)(a1 + 68));
-      LightningStorm::Strike(*v106);
+      LightningStorm::Strike((int)(*v106));
       return 1;
     case 0x5B:
       char v14 = 0;
@@ -889,14 +889,14 @@ LABEL_60:
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v113);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (unsigned int *)&v113);
       unsigned int * v12 = (unsigned int *)operator new(0x14u);
       if ( !v12 )
         return 1;
       ((ActionQueue *)(v12))->PushEntry((int)v113, (int)v128, (int)GroundHeight);
       return 1;
     case 0x5F:
-      return ((TActionClass *)(int *)a1)->CreateNukeEffect( a5, (int)v9, (int)a5, a8);
+      return ((TActionClass *)(int *)a1)->CreateNukeEffect( (gamemd::AbstractClass *)(a5), (int)v9, (int)a5, (gamemd::AbstractClass *)(a8));
     case 0x60:
       return SuperWeaponClass::CreateChemLauncher((unsigned int *)a1, (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
     case 0x61:
@@ -904,7 +904,7 @@ LABEL_60:
                                                                                     + 13477) == 0;
       return 1;
     case 0x62:
-      Array::ForEach(((Array *)aP0),  4, (IUnknown *)0x64, (int (*)(int))__0Iostream_init_QAE_XZ_2);
+      Array::ForEach(((Array *)aP0),  4, (int)0x64, (int (*)(int))__0Iostream_init_QAE_XZ_2);
       int v65 = 0;
       int v66 = 0;
       v67 = aP0;
@@ -921,7 +921,7 @@ LABEL_60:
         ++v66;
       }
       while ( v66 < 702 );
-      int v68 = Random::Range((*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 536), 0, (IUnknown *)(v65 - 1));
+      int v68 = Random::Range((gamemd::Random *)((*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924] + 536)), 0, (int)(v65 - 1));
       unsigned int * v69 = ((CoordStruct *)&v131)->Set2( (IUnknown *)((char *)aP0 + 4 * v68), 0);
       PlayAudioAt2(*(IUnknown **)(a1 + 144), v69, 0);
       return 1;
@@ -943,17 +943,17 @@ LABEL_60:
       EnqueueAsyncIOMovie(*(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x65:
-      return ((TActionClass *)(int *)a1)->executeScatterAction( (int)a5, (int)v9, (int)a5, (IUnknown *)a8);
+      return ((TActionClass *)(int *)a1)->executeScatterAction( (int)a5, (int)v9, (int)a5, (int)a8);
     case 0x66:
       v112 = (IUnknown *)*((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), *(unsigned int *)(a1 + 68));
       ((Coord *)(&v131))->Subtract( (int)((IUnknown *)(((int16_t)v112 << 8) + 128)), (int)((IUnknown *)((IDA_SHIWORD(v112) << 8) + 128)), 0);
       v113 = v131;
       v128 = (CellStruct *)v132;
       GroundHeight = (CellStruct *)v133;
-      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (IUnknown *)&v113);
+      GroundHeight = (CellStruct *)Cell::GetGroundHeight( (unsigned int *)&v113);
       if ( (*((unsigned int *)((CellCoord *)(&((unsigned char *)&stru_87C374)[13428]))->To_CellObj((int16_t *)&v112) + 80) & 0x100) != 0 )
         GroundHeight = (CellStruct *)((char *)GroundHeight + *(unsigned int *)&((unsigned char *)&stru_B05488)[37452]);
-      int v13 = *((Coord *)&v113)->ToCell( (IUnknown *)&v130);
+      int v13 = *((Coord *)&v113)->ToCell( (unsigned int *)&v130);
       if ( LightningStorm::IsActive() )
         return 0;
       LightningStorm::Start(

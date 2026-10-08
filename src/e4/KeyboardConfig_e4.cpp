@@ -46,7 +46,7 @@ int KeyboardConfig::LoadINI()
   int v11[3]; // [esp+BCh] [ebp-14h] BYREF
   int v12; // [esp+C8h] [ebp-8h]
 
-  INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
+  INIClass::Constructor((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
   *(unsigned int *)v9.INIClass = (unsigned int)(&CCINIClass_Vtable); /*0x533d3f*/
   ((CCFileClass*)&v10)->Construct((char *)(void *)(aKeyboardmdIni)); /*0x533d47*/

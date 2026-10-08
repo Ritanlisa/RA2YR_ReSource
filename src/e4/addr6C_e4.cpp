@@ -1333,7 +1333,7 @@ int DlgProcScoreScreen(HWND hWnd, UINT a2, WPARAM wParam, LPARAM a4)
         if ( dword_B0BF64 ) /*0x6c906e*/
         {
           AudioFile::Stop((void *)&stru_B0BF28); /*0x6c9079*/
-          AudioFileClass::Release( (void *)&stru_B0BF28); /*0x6c9083*/
+          AudioFileClass::Release( (gamemd::AudioFileClass *)&stru_B0BF28); /*0x6c9083*/
           dword_B0BF64 = 0; /*0x6c908a*/
           return 0; /*0x6c909a*/
         }

@@ -127,7 +127,7 @@ AbstractClass * sub_686570(ObjectClass *a1)
   ((unsigned int *)(dword_A8B230))[130].vtable3 = (void *)1; /*0x6865b0*/
   ((AsyncIO *)(v9))->Shutdown(); /*0x6865ba*/
   ((gamemd::Timer*)(*(gamemd::Timer**)&stru_87F5F0.__pad_58[296]))->PumpMessages(); /*0x6865c5*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x6865d9*/ dword_887640, (ObjectClass *)((void *)((void *)((void *)(g_DSurface_Hidden)))), 0);
+(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x6865d9*/ dword_887640, (ObjectClass *)((void *)((void *)((void *)((void *)(g_DSurface_Hidden))))), 0);
 
 
 

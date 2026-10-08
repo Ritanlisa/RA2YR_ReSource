@@ -944,7 +944,7 @@ int AbstractClass::Construct(_DWORD *a2) {
             && ((unsigned int *)&g_BuildingLoadQueue_Array)[2] > 0
             && (*(unsigned __int8 (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 8))(
                  &((unsigned int *)&g_BuildingLoadQueue_Array)[2],
-                 ((char *)&g_BuildingLoadQueue_Array) + ((unsigned int *)&g_BuildingLoadQueue_Array)[2],
+                 ((char *)&g_BuildingLoadQueue_Array) + ((char *)&g_BuildingLoadQueue_Array)[2],
                  0) )
           {
             v8 = (unsigned int)(((unsigned int *)&g_BuildingLoadQueue_Array)[1]++); /*0x43a8b2*/
@@ -1212,7 +1212,7 @@ int FootClass::DrawPlacementPreview() {
   LABEL_24:
     if ( (*((unsigned __int8 (__thiscall **)(BuildingClass *))this->vtable1 + 88))(this) && ((unsigned int *)this)[0] == 1 ) /*0x43dce8*/
     {
-      v20 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6320); /*0x43dcf4*/
+      v20 = *(unsigned int *)((ra2::game::BuildingClass *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6320)); /*0x43dcf4*/
       v21 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2 * v20; /*0x43dcfa*/
       v22 = *(unsigned char *)(v20 + v21 + 4174 + 2087); /*0x43dd07*/
       v100 = *(unsigned char *)(v20 + v21 + 6260); /*0x43dd14*/

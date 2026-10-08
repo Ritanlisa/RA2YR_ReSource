@@ -722,7 +722,7 @@ char AudioStream::DrawWaveform(int *a2, unsigned int *a3, unsigned int *a4, unsi
   v20 = v17; /*0x4beb94*/
   v21 = v81; /*0x4beb96*/
   v79 = v83; /*0x4beba2*/
-  if ( !(uint8_t)ClipLine((int [])((int)(&v80)), (int)(&v82), (int)(&v84)) ) /*0x4beba6*/
+  if ( !(uint8_t)ClipLine((int [])((int)(&v80)), (int [])((int)((&v82))), (int [])((int)((&v84)))) ) /*0x4beba6*/
     return 0; /*0x4beba6*/
   v92 = (char *)v15; /*0x4bebc1*/
   v89 = (char *)v19; /*0x4bebc8*/

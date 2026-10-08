@@ -401,8 +401,8 @@ void CCFileClass::Create() {
     {
       Debug::Log("Failed to load RadarBeaconArt"); /*0x430a9c G57c1: IDA 0x430a9c push offset aFailedToLoadRa*/
     }
-    RawFileClass::Dtor(&v5); /*0x430aa8*/
-    RawFileClass::Dtor(&v6); /*0x430ab1*/
+    v5.RawFileClass::Dtor(); /*0x430aa8*/
+    v6.RawFileClass::Dtor(); /*0x430ab1*/
 }
 }
 
@@ -412,7 +412,7 @@ void* BufferIOFileClass::Constructor() {
     IDA_LOBYTE(this->FilePointer) = 0; /*0x431b27*/
     this->FileSize = 1; /*0x431b2a*/
     this->Handle = 0; /*0x431b31*/
-    this->FileName = -1; /*0x431b34*/
+    this->FileName = (const char *)-1; /*0x431b34*/
     *(unsigned int *)this->FileTimeDateLo = -1; /*0x431b37*/
     *(unsigned int *)this->FileNameAllocated = 0; /*0x431b3a*/
     *(unsigned short *)this->BufferDirty = 0; /*0x431b3d*/
@@ -431,7 +431,7 @@ void* BufferIOFileClass::Constructor() {
     this->TotalBytesWritten = 0; /*0x431b6f*/
     this->FileID = 0; /*0x431b72*/
     this->MixFileIndex = 0; /*0x431b75*/
-    this->FileClass = (FileClass)(void *)&BufferIOFileClass_vftable; /*0x431b78*/
+    this->FileClass = (uint32_t)&BufferIOFileClass_vftable; /*0x431b78*/
     return &this->FileClass; /*0x431b7e*/
 }
 }
@@ -442,7 +442,7 @@ int BufferIOFileClass::Dtor() {
     void *FileBaseOffset; // eax
 
     FileBaseOffset = (void *)this->FileBaseOffset; /*0x431b86*/
-    this->FileClass = (FileClass)(void *)&BufferIOFileClass_vftable; /*0x431b89*/
+    this->FileClass = (uint32_t)&BufferIOFileClass_vftable; /*0x431b89*/
     if ( FileBaseOffset ) /*0x431b91*/
     {
       if ( IDA_LOBYTE(this->BufferOffset) ) /*0x431b93*/
@@ -457,7 +457,7 @@ int BufferIOFileClass::Dtor() {
     IDA_HIBYTE(this->BufferOffset) = 0; /*0x431baf*/
     IDA_LOBYTE(this->BufferSize) = 0; /*0x431bb2*/
     IDA_BYTE1(this->BufferSize) = 0; /*0x431bb5*/
-    return RawFileClass::Dtor(this); /*0x431bbd*/
+    return this->RawFileClass::Dtor(); /*0x431bbd*/
 }
 }
 
@@ -492,34 +492,34 @@ BOOL BufferIOFileClass::Write(int a2, const CHAR *a3) {
 // 0x431F70
 namespace gamemd { 
 int BufferIOFileClass::Open(const CHAR *a2) {
-    FileClass v3; // eax
+    unsigned int v3; // eax
     const CHAR *v4; // eax
-    FileClass v5; // edx
+    unsigned int v5; // edx
     int BufferPosition; // eax
 
     if ( IDA_BYTE1(this->BufferSize) ) /*0x431f76*/
     {
-      BufferIO::Flush((BufferIO *)this); /*0x431f7b*/
+      this->Flush(); /*0x431f7b*/
       if ( IDA_BYTE2(this->BufferOffset) ) /*0x431f80*/
       {
         if ( this->MixFileIndex ) /*0x431f85*/
         {
           v3 = this->FileClass; /*0x431f8a*/
           IDA_BYTE1(this->BufferSize) = 0; /*0x431f8e*/
-          (*(void (__thiscall **)(CCFileClass *))(*(unsigned int *)&v3 + 52))(this); /*0x431f91*/
+          (*(void (__thiscall **)(void *))(*(unsigned int *)&v3 + 52))(this); /*0x431f91*/
           IDA_BYTE1(this->BufferSize) = 1; /*0x431f94*/
           IDA_BYTE2(this->BufferOffset) = 0; /*0x431f98*/
           IDA_BYTE1(this->BufferOffset) = 0; /*0x431f9b*/
           goto LABEL_8; /*0x431f9e*/
         }
-        FileClass::CloseHandle(this); /*0x431fa2*/
+        this->CloseHandle(); /*0x431fa2*/
         IDA_BYTE2(this->BufferOffset) = 0; /*0x431fa7*/
       }
       IDA_BYTE1(this->BufferOffset) = 0; /*0x431faa*/
     }
     else
     {
-      FileClass::CloseHandle(this); /*0x431faf*/
+      this->CloseHandle(); /*0x431faf*/
     }
   LABEL_8:
     v4 = a2; /*0x431fb4*/
@@ -543,8 +543,8 @@ int BufferIOFileClass::Open(const CHAR *a2) {
       }
       else if ( a2 == (const CHAR *)2 ) /*0x431fdd*/
       {
-        ((FileClass *)this)->Open2((const CHAR *)2); /*0x431fe2*/
-        FileClass::CloseHandle(this); /*0x431fe9*/
+        this->Open2((const CHAR *)2); /*0x431fe2*/
+        this->CloseHandle(); /*0x431fe9*/
         v4 = (const CHAR *)3; /*0x431fee*/
         this->MixFileIndex = 0; /*0x431ff3*/
       }
@@ -552,12 +552,12 @@ int BufferIOFileClass::Open(const CHAR *a2) {
       {
         v5 = this->FileClass; /*0x431ffb*/
         IDA_BYTE1(this->BufferSize) = 0; /*0x432000*/
-        (*(void (__thiscall **)(CCFileClass *, const CHAR *))(*(unsigned int *)&v5 + 28))(this, v4); /*0x432003*/
+        (*(void (__thiscall **)(void *, const CHAR *))(*(unsigned int *)&v5 + 28))(this, v4); /*0x432003*/
         IDA_BYTE1(this->BufferSize) = 1; /*0x432006*/
       }
       else
       {
-        ((FileClass *)this)->Open2(v4); /*0x43200f*/
+        this->Open2(v4); /*0x43200f*/
       }
       BufferPosition = this->BufferPosition; /*0x432014*/
       IDA_BYTE2(this->BufferOffset) = 1; /*0x432017*/
@@ -565,7 +565,7 @@ int BufferIOFileClass::Open(const CHAR *a2) {
         this->TotalBytesWritten = 0; /*0x432020*/
       goto LABEL_19; /*0x432020*/
     }
-    return ((FileClass *)this)->Open2(a2); /*0x432039*/
+    return this->Open2(a2); /*0x432039*/
 }
 }
 
@@ -577,7 +577,7 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
     int BufferReadSize; // eax
     signed int v7; // edi
     signed int TotalBytesWritten; // ebp
-    FileClass v9; // edx
+    unsigned int v9; // edx
     int StreamSize; // ecx
     int BufferCursor; // eax
     int v12; // eax
@@ -586,19 +586,19 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
     int v15; // ecx
     int v16; // edx
     int v17; // eax
-    FileClass v18; // edx
+    unsigned int v18; // edx
     int v19; // edi
     int FileID; // [esp-8h] [ebp-20h]
     int v21; // [esp+10h] [ebp-8h]
     int v22; // [esp+14h] [ebp-4h]
 
     v22 = 0; /*0x43205b*/
-    if ( !(*(unsigned __int8 (__thiscall **)(CCFileClass *))(*(unsigned int *)&this->FileClass + 24))(this) ) /*0x43205f*/
+    if ( !(*(unsigned __int8 (__thiscall **)(void *))(*(unsigned int *)this + 24))(this) ) /*0x43205f*/
     {
-      result = (*(int (__thiscall **)(CCFileClass *, int))(*(unsigned int *)&this->FileClass + 28))(this, 2); /*0x43206c*/
+      result = (*(int (__thiscall **)(void *, int))(*(unsigned int *)this + 28))(this, 2); /*0x43206c*/
       if ( !result ) /*0x432071*/
         return result; /*0x432071*/
-      this->MixFileIndex = FileClass::Seek(this, 0, 1u); /*0x432085*/
+      this->MixFileIndex = this->FileClass::Seek(0, (FileSeekMode)1u); /*0x432085*/
       v22 = 1; /*0x432088*/
     }
     if ( IDA_BYTE1(this->BufferSize) ) /*0x432090*/
@@ -606,7 +606,7 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
       v21 = 0; /*0x4320a2*/
       if ( this->BufferPosition == 1 ) /*0x4320a6*/
       {
-        (*(void (__thiscall **)(CCFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)&this->FileClass + 64))(this, 13, 0, 0); /*0x432262*/
+        (*(void (__thiscall **)(void *, int, unsigned int, unsigned int))(*(unsigned int *)this + 64))(this, 13, 0, 0); /*0x432262*/
       }
       else
       {
@@ -633,15 +633,15 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
               }
               if ( this->MixFileIndex ) /*0x4320f6*/
               {
-                v9 = this->FileClass; /*0x432100*/
+                v9 = *(unsigned int *)this; /*0x432100*/
                 FileID = this->FileID; /*0x432104*/
                 IDA_BYTE1(this->BufferSize) = 0; /*0x432107*/
-                (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v9 + 40))(this, FileID, 0); /*0x43210b*/
-                (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x43211a*/
+                (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)&v9 + 40))(this, FileID, 0); /*0x43210b*/
+                (*(void (__thiscall **)(void *, int, int))(*(unsigned int *)this + 36))( /*0x43211a*/
                   this,
                   this->FileBaseOffset,
                   this->BufferReadSize);
-                (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&this->FileClass + 40))( /*0x432127*/
+                (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)this + 40))( /*0x432127*/
                   this,
                   this->FileID,
                   0);
@@ -649,8 +649,8 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
               }
               else
               {
-                FileClass::Seek(this, this->BufferMaxSize, 0); /*0x432138*/
-                FileClass::Read(this, (char *)this->FileBaseOffset, TotalBytesWritten); /*0x432144*/
+                this->FileClass::Seek(this->BufferMaxSize, (FileSeekMode)0); /*0x432138*/
+                this->Read((char *)this->FileBaseOffset, TotalBytesWritten); /*0x432144*/
               }
               this->StreamSize = 0; /*0x43214c*/
               this->BufferCursor = -1; /*0x432153*/
@@ -684,7 +684,7 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
               this->TotalBytesWritten = v15; /*0x4321c5*/
             if ( v12 == this->BufferReadSize ) /*0x4321cb*/
             {
-              BufferIO::Flush((BufferIO *)this); /*0x4321cf*/
+              this->Flush(); /*0x4321cf*/
               v16 = this->FileID; /*0x4321d4*/
               this->StreamSize = 0; /*0x4321d7*/
               this->BufferMaxSize = v16; /*0x4321e0*/
@@ -694,14 +694,14 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
               {
                 if ( this->MixFileIndex ) /*0x4321f4*/
                 {
-                  v18 = this->FileClass; /*0x4321fb*/
+                  v18 = *(unsigned int *)this; /*0x4321fb*/
                   IDA_BYTE1(this->BufferSize) = 0; /*0x432202*/
-                  (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v18 + 40))(this, v17, 0); /*0x432206*/
-                  (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x432215*/
+                  (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)&v18 + 40))(this, v17, 0); /*0x432206*/
+                  (*(void (__thiscall **)(void *, int, int))(*(unsigned int *)this + 36))( /*0x432215*/
                     this,
                     this->FileBaseOffset,
                     this->BufferReadSize);
-                  (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&this->FileClass + 40))( /*0x432222*/
+                  (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)this + 40))( /*0x432222*/
                     this,
                     this->FileID,
                     0);
@@ -709,8 +709,8 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
                 }
                 else
                 {
-                  FileClass::Seek(this, v16, 0); /*0x432230*/
-                  FileClass::Read(this, (char *)this->FileBaseOffset, this->BufferReadSize); /*0x43223f*/
+                  this->FileClass::Seek(v16, (FileSeekMode)0); /*0x432230*/
+                  this->Read((char *)this->FileBaseOffset, this->BufferReadSize); /*0x43223f*/
                 }
               }
               else
@@ -728,11 +728,11 @@ int FileClass::BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite) {
     }
     else
     {
-      v19 = FileClass::Write2(this, lpBuffer, nNumberOfBytesToWrite); /*0x43227d*/
+      v19 = this->Write2(lpBuffer, nNumberOfBytesToWrite); /*0x43227d*/
     }
   LABEL_38:
     if ( v22 ) /*0x432285*/
-      (*(void (__thiscall **)(CCFileClass *))(*(unsigned int *)&this->FileClass + 52))(this); /*0x43228b*/
+      (*(void (__thiscall **)(void *))(*(unsigned int *)this + 52))(this); /*0x43228b*/
     return v19; /*0x432073*/
 }
 }
@@ -743,32 +743,32 @@ int FileClass::BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead) {
     signed int v4; // ebx
     signed int v5; // edi
     signed int BufferReadSize; // ebp
-    FileClass v7; // edx
+    unsigned int v7; // edx
     int v8; // eax
     int v9; // ecx
     int v10; // eax
-    FileClass v11; // edx
+    unsigned int v11; // edx
     int v12; // edi
     int FileID; // [esp-8h] [ebp-20h]
     int v15; // [esp+10h] [ebp-8h]
     int v16; // [esp+14h] [ebp-4h]
 
     v16 = 0; /*0x4322ab*/
-    if ( !(*(unsigned __int8 (__thiscall **)(CCFileClass *))(*(unsigned int *)&this->FileClass + 24))(this) /*0x4322bc*/
-      && (*(int (__thiscall **)(CCFileClass *, int))(*(unsigned int *)&this->FileClass + 28))(this, 1) )
+    if ( !(*(unsigned __int8 (__thiscall **)(void *))(*(unsigned int *)this + 24))(this) /*0x4322bc*/
+      && (*(int (__thiscall **)(void *, int))(*(unsigned int *)this + 28))(this, 1) )
     {
-      this->MixFileIndex = FileClass::Seek(this, 0, 1u); /*0x4322cd*/
+      this->MixFileIndex = this->FileClass::Seek(0, (FileSeekMode)1u); /*0x4322cd*/
       v16 = 1; /*0x4322d0*/
     }
     if ( !IDA_BYTE1(this->BufferSize) ) /*0x4322dd*/
     {
-      v12 = FileClass::Read(this, lpBuffer, nNumberOfBytesToRead); /*0x432492*/
+      v12 = this->Read(lpBuffer, nNumberOfBytesToRead); /*0x432492*/
       goto LABEL_29; /*0x432492*/
     }
     v15 = 0; /*0x4322ea*/
     if ( this->BufferPosition == 2 ) /*0x4322ee*/
     {
-      (*(void (__thiscall **)(CCFileClass *, int, unsigned int, unsigned int))(*(unsigned int *)&this->FileClass + 64))(this, 13, 0, 0); /*0x432477*/
+      (*(void (__thiscall **)(void *, int, unsigned int, unsigned int))(*(unsigned int *)this + 64))(this, 13, 0, 0); /*0x432477*/
       goto LABEL_27; /*0x432477*/
     }
     v4 = nNumberOfBytesToRead; /*0x4322f4*/
@@ -797,21 +797,21 @@ int FileClass::BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead) {
         }
         if ( this->MixFileIndex ) /*0x432338*/
         {
-          v7 = this->FileClass; /*0x432342*/
+          v7 = *(unsigned int *)this; /*0x432342*/
           FileID = this->FileID; /*0x432346*/
           IDA_BYTE1(this->BufferSize) = 0; /*0x432349*/
-          (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v7 + 40))(this, FileID, 0); /*0x43234d*/
-          (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x43235c*/
+          (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)&v7 + 40))(this, FileID, 0); /*0x43234d*/
+          (*(void (__thiscall **)(void *, int, int))(*(unsigned int *)this + 36))( /*0x43235c*/
             this,
             this->FileBaseOffset,
             this->BufferReadSize);
-          (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&this->FileClass + 40))(this, this->FileID, 0); /*0x432369*/
+          (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)this + 40))(this, this->FileID, 0); /*0x432369*/
           IDA_BYTE1(this->BufferSize) = 1; /*0x43236c*/
         }
         else
         {
-          FileClass::Seek(this, this->BufferMaxSize, 0); /*0x43237a*/
-          FileClass::Read(this, (char *)this->FileBaseOffset, BufferReadSize); /*0x432386*/
+          this->FileClass::Seek(this->BufferMaxSize, (FileSeekMode)0); /*0x43237a*/
+          this->Read((char *)this->FileBaseOffset, BufferReadSize); /*0x432386*/
         }
         this->StreamSize = 0; /*0x43238e*/
         this->BufferCursor = -1; /*0x432395*/
@@ -827,7 +827,7 @@ int FileClass::BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead) {
       this->StreamSize = v8; /*0x4323e1*/
       if ( v8 == v9 ) /*0x4323e4*/
       {
-        BufferIO::Flush((BufferIO *)this); /*0x4323e8*/
+        this->Flush(); /*0x4323e8*/
         v10 = this->FileID; /*0x4323ed*/
         this->StreamSize = 0; /*0x4323f0*/
         this->BufferMaxSize = v10; /*0x4323f9*/
@@ -837,20 +837,20 @@ int FileClass::BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead) {
         {
           if ( this->MixFileIndex ) /*0x432409*/
           {
-            v11 = this->FileClass; /*0x432410*/
+            v11 = *(unsigned int *)this; /*0x432410*/
             IDA_BYTE1(this->BufferSize) = 0; /*0x432417*/
-            (*(void ((gamemd::CCFileClass *)(__thiscall **))(CCFileClass *, int, unsigned int))(*(unsigned int *)&v11 + 40))(this, v10, 0); /*0x43241b*/
-            (*(void (__thiscall **)(CCFileClass *, int, int))(*(unsigned int *)&this->FileClass + 36))( /*0x43242a*/
+            (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)&v11 + 40))(this, v10, 0); /*0x43241b*/
+            (*(void (__thiscall **)(void *, int, int))(*(unsigned int *)this + 36))( /*0x43242a*/
               this,
               this->FileBaseOffset,
               this->BufferReadSize);
-            (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&this->FileClass + 40))(this, this->FileID, 0); /*0x432437*/
+            (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)this + 40))(this, this->FileID, 0); /*0x432437*/
             IDA_BYTE1(this->BufferSize) = 1; /*0x43243a*/
           }
           else
           {
-            FileClass::Seek(this, v10, 0); /*0x432445*/
-            FileClass::Read(this, (char *)this->FileBaseOffset, this->BufferReadSize); /*0x432454*/
+            this->FileClass::Seek(v10, (FileSeekMode)0); /*0x432445*/
+            this->Read((char *)this->FileBaseOffset, this->BufferReadSize); /*0x432454*/
           }
         }
         else
@@ -863,7 +863,7 @@ int FileClass::BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead) {
     v12 = v15; /*0x432467*/
   LABEL_29:
     if ( v16 ) /*0x43249a*/
-      (*(void (__thiscall **)(CCFileClass *))(*(unsigned int *)&this->FileClass + 52))(this); /*0x4324a0*/
+      (*(void (__thiscall **)(void *))(*(unsigned int *)this + 52))(this); /*0x4324a0*/
     return v12; /*0x4324a5*/
 }
 }
@@ -878,13 +878,13 @@ int BufferIOFileClass::SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod) {
     int BufferReadSize; // edx
     int v9; // eax
     int BufferMaxSize; // ecx
-    FileClass v11; // eax
+    unsigned int v11; // eax
     int v12; // ecx
     int v14; // [esp-8h] [ebp-14h]
     char v15; // [esp+Bh] [ebp-1h]
 
     if ( !IDA_BYTE1(this->BufferSize) ) /*0x4324b7*/
-      return FileClass::Seek(this, lDistanceToMove, dwMoveMethod); /*0x43258f*/
+      return this->FileClass::Seek(lDistanceToMove, (FileSeekMode)dwMoveMethod); /*0x43258f*/
     v15 = 0; /*0x4324c4*/
     if ( dwMoveMethod ) /*0x4324ca*/
     {
@@ -916,18 +916,18 @@ int BufferIOFileClass::SeekInternal(LONG lDistanceToMove, DWORD dwMoveMethod) {
       BufferMaxSize = this->BufferMaxSize; /*0x43251e*/
       if ( v9 < BufferMaxSize || v9 >= BufferMaxSize + BufferReadSize ) /*0x432529*/
       {
-        BufferIO::Flush((BufferIO *)this); /*0x432534*/
+        this->Flush(); /*0x432534*/
         if ( this->MixFileIndex ) /*0x432539*/
         {
-          v11 = this->FileClass; /*0x432541*/
+          v11 = *(unsigned int *)this; /*0x432541*/
           v14 = (int)this->FileID; /*0x432544*/
           IDA_BYTE1(this->BufferSize) = 0; /*0x432547*/
-          (*(void (__thiscall **)(CCFileClass *, int, unsigned int))(*(unsigned int *)&v11 + 40))(this, v14, 0); /*0x43254a*/
+          (*(void (__thiscall **)(void *, int, unsigned int))(*(unsigned int *)&v11 + 40))(this, v14, 0); /*0x43254a*/
           IDA_BYTE1(this->BufferSize) = 1; /*0x43254d*/
         }
         else
         {
-          FileClass::Seek(this, this->FileID, 0); /*0x43255a*/
+          this->FileClass::Seek(this->FileID, (FileSeekMode)0); /*0x43255a*/
         }
         IDA_HIBYTE(this->BufferOffset) = 0; /*0x43255f*/
       }
@@ -1145,7 +1145,7 @@ int CCFileClass::Read() {
         v7 = *((unsigned int *)this + 23) - v6; /*0x473b46*/
       if ( v7 ) /*0x473b4a*/
       {
-        memcpy(lpBuffer, (const void *)(v5 + v6), v7); /*0x473b55*/
+        memcpy((void *)(lpBuffer), (const void *)(v5 + v6), v7); /*0x473b55*/
         *((unsigned int *)this + 25) += v7; /*0x473b62*/
       }
       if ( v4 ) /*0x473b67*/
@@ -10585,8 +10585,8 @@ int CellClass::Cleanup() {
     if ( this->mapCoords[0] != -1 ) /*0x4a1785*/
     {
       bridgeOwnerCell = this->bridgeOwnerCell; /*0x4a1787*/
-      v5 = *(unsigned int *)((char *)&stru_A8EB00 + 416) - v3; /*0x4a1795*/
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v3 < (int)bridgeOwnerCell ) /*0x4a1799*/
+      v5 = dword_A8ED84 - v3; /*0x4a1795*/
+      if ( dword_A8ED84 - v3 < (int)bridgeOwnerCell ) /*0x4a1799*/
       {
         this->mapCoords[0] = -1; /*0x4a179d*/
         this->bridgeOwnerCell = (CellClass *)((char *)bridgeOwnerCell - v5); /*0x4a17a3*/
@@ -16217,15 +16217,15 @@ int ScenarioClass::UpdateScriptActions() {
         return result; /*0x54e4f4*/
       goto LABEL_5; /*0x54e4f4*/
     }
-    if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 < result ) /*0x54e4ee*/
+    if ( dword_A8ED84 - v2 < result ) /*0x54e4ee*/
     {
-      result -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x54e4f0*/
+      result -= dword_A8ED84 - v2; /*0x54e4f0*/
       goto LABEL_4; /*0x54e4f0*/
     }
   LABEL_5:
     v4 = v12[2]; /*0x54e4fa*/
     v5 = 0; /*0x54e505*/
-    this->nextScenario[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e507*/
+    this->nextScenario[0] = dword_A8ED84; /*0x54e507*/
     this->nextScenario[1] = v4; /*0x54e509*/
     this->nextScenario[2] = 30; /*0x54e50c*/
     result = this->nextScenario[7]; /*0x54e50f*/
@@ -24444,7 +24444,7 @@ int LayerClass::AssignCellOwnership() {
             {
               v8 = *(ObjectClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * v7); /*0x58562f*/
               v9 = ObjectClass::DistanceTo(v8, i); /*0x585634*/
-              if ( v8->isAliveFlag && v8->isOnMap && *(unsigned char *)(*(unsigned int *)(v8[3].? + 52) + 423) && (v6 == -1 || v9 < v10) ) /*0x585666*/
+              if ( v8->isAliveFlag && v8->isOnMap && *(unsigned char *)(*(unsigned int *)((*(unsigned int *)((char *)v8 + 0x21C)) + 52) + 423) && (v6 == -1 || v9 < v10) ) /*0x585666*/
               {
                 v10 = v9; /*0x585668*/
                 v6 = v7; /*0x58566c*/
@@ -25386,7 +25386,7 @@ int CCFileClass::Load() {
     Dialog = (Dialog *)CreateDialog(0x105u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SkirmishMapGen::DlgProc, 0); /*0x595be8*/
     if ( Dialog ) /*0x595bec*/
     {
-      *(unsigned int *)((char *)&stru_82ADA8 + 31) = this; /*0x595bf2*/
+      *(unsigned int *)&off_82AF14 = (unsigned int)this; /*0x595bf2*/
       g_MissionQueueFrame.briefing[361] = (int)this; /*0x595bfc*/
       SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x595c02*/
       SendMessageA((HWND)Dialog, 0x4A9u, 0, 1); /*0x595c11*/
@@ -25403,7 +25403,7 @@ int CCFileClass::Load() {
       Dialog::Destroy(Dialog); /*0x595c42*/
     }
     v4 = (ComPtr *)g_MissionQueueFrame.briefing[451]; /*0x595c47*/
-    *(unsigned int *)((char *)&stru_82ADA8 + 31) = Event_Dispatch::Return0; /*0x595c4d*/
+    *(unsigned int *)&off_82AF14 = (unsigned int)Event_Dispatch::Return0; /*0x595c4d*/
     g_MissionQueueFrame.briefing[361] = 0; /*0x595c59*/
     if ( g_MissionQueueFrame.briefing[451] ) /*0x595c5f*/
     {
@@ -38047,17 +38047,17 @@ void* ScenarioClass::InitTimer() {
     }
     this->ScenarioClass_field_62C = 0; /*0x6836d2*/
     this->unknown630[0] = 0; /*0x6836d8*/
-    this->missionTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6836e6*/
+    this->missionTimer[0] = dword_A8ED84; /*0x6836e6*/
     this->missionTimer[1] = v15; /*0x6836ec*/
     this->missionTimer[2] = 0; /*0x6836ef*/
     v9 = this->missionTimer[0]; /*0x6836f2*/
     if ( v9 != -1 ) /*0x6836f6*/
     {
       v10 = this->missionTimer[2]; /*0x6836fe*/
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v9 >= v10 ) /*0x683705*/
+      if ( dword_A8ED84 - v9 >= v10 ) /*0x683705*/
         v11 = 0; /*0x68370b*/
       else
-        v11 = v10 - (*(unsigned int *)((char *)&stru_A8EB00 + 416) - v9); /*0x683707*/
+        v11 = v10 - (dword_A8ED84 - v9); /*0x683707*/
       this->missionTimer[2] = v11; /*0x68370d*/
       this->missionTimer[0] = -1; /*0x683710*/
     }
@@ -38073,19 +38073,19 @@ void* ScenarioClass::InitTimer() {
     }
     if ( Destination != (char *)this->missionTimer_text ) /*0x68374f*/
       qmemcpy(this->missionTimer_text, Destination, sizeof(this->missionTimer_text)); /*0x68375a*/
-    this->shroudRegrowTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683770*/
+    this->shroudRegrowTimer[0] = dword_A8ED84; /*0x683770*/
     this->shroudRegrowTimer[1] = v15; /*0x683776*/
     this->shroudRegrowTimer[2] = 0; /*0x683779*/
-    this->fogTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x683785*/
+    this->fogTimer[0] = dword_A8ED84; /*0x683785*/
     this->fogTimer[1] = v15; /*0x683787*/
     this->fogTimer[2] = 0; /*0x68378e*/
-    this->iceTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x68379c*/
+    this->iceTimer[0] = dword_A8ED84; /*0x68379c*/
     this->iceTimer[1] = v15; /*0x6837a2*/
     this->iceTimer[2] = 0; /*0x6837a9*/
-    this->ScenarioClass_field_timer_123c[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6837b7*/
+    this->ScenarioClass_field_timer_123c[0] = dword_A8ED84; /*0x6837b7*/
     this->ScenarioClass_field_timer_123c[1] = v15; /*0x6837bd*/
     this->ScenarioClass_field_timer_123c[2] = 0; /*0x6837c4*/
-    this->ambientTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6837d2*/
+    this->ambientTimer[0] = dword_A8ED84; /*0x6837d2*/
     this->ambientTimer[1] = v15; /*0x6837d8*/
     this->ambientTimer[2] = 0; /*0x6837df*/
     this->theater = -1; /*0x6837e2*/
@@ -38122,7 +38122,7 @@ void* ScenarioClass::InitTimer() {
     this->playerSideIndex = 0; /*0x68389f*/
     this->multiplayerOnly = 0; /*0x6838a5*/
     this->pickedUpAnyCrate = 0; /*0x6838ab*/
-    this->ScenarioClass_field_timer_34C0[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6838bc*/
+    this->ScenarioClass_field_timer_34C0[0] = dword_A8ED84; /*0x6838bc*/
     this->ScenarioClass_field_timer_34C0[1] = v15; /*0x6838c7*/
     this->ScenarioClass_field_timer_34C0[2] = 0; /*0x6838ca*/
     this->startingDropships = 0; /*0x6838cd*/
@@ -40120,8 +40120,8 @@ void* FactoryClass::ResetProductionTimers() {
     int v4; // ecx
 
     *(unsigned int *)&this->__pad_42[26] = 0; /*0x6b0c84*/
-    result = *(wchar_t **)((char *)&stru_A8EB00 + 416); /*0x6b0c8b*/
-    this->balance = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b0c90*/
+    result = (wchar_t *)dword_A8ED84; /*0x6b0c8b*/
+    this->balance = dword_A8ED84; /*0x6b0c90*/
     for ( i = *(unsigned int *)&this->__pad_42[6] - 1; i >= 0; --i ) /*0x6b0c97*/
     {
       result = (wchar_t *)*((unsigned int *)&this->object->RadioClass + i); /*0x6b0c9c*/
@@ -40969,13 +40969,13 @@ int ScenarioClass::PrepareTextDisplay(int a1, int a2, int a3, int a4) {
 
     v5 = this->nextScenario[36]; /*0x6e1530*/
     p_vtable3 = &dword_A8B230[127].vtable3; /*0x6e1542*/
-    dword_A8B230[127].vtable3 = *(void **)((char *)&stru_A8EB00 + 416); /*0x6e154e*/
+    dword_A8B230[127].vtable3 = (void *)dword_A8ED84; /*0x6e154e*/
     p_vtable3[1] = v9; /*0x6e1557*/
     p_vtable3[2] = (void *)(15 * v5); /*0x6e155a*/
     v7 = dword_A8B230; /*0x6e155d*/
     if ( dword_A8B230[127].vtable3 == (void *)-1 ) /*0x6e1569*/
     {
-      dword_A8B230[127].vtable3 = *(void **)((char *)&stru_A8EB00 + 416); /*0x6e1571*/
+      dword_A8B230[127].vtable3 = (void *)dword_A8ED84; /*0x6e1571*/
       v7 = dword_A8B230; /*0x6e1577*/
     }
     v7[127].nextArrayIndex = (int)&g_TypeClass_DefaultString; /*0x6e1581*/
@@ -41469,7 +41469,7 @@ int TacticalClass::SetObserverView() {
             (*(void (__thiscall **)(int))(*(unsigned int *)v8 + 332))(v8); /*0x731344*/
             v10 = (unsigned int *)(v8 + 372); /*0x731355*/
             v11 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 140); /*0x73135b*/
-            *v10 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x731361*/
+            *v10 = dword_A8ED84; /*0x731361*/
             v10[1] = v14; /*0x731363*/
             v10[2] = v11; /*0x731366*/
             g_MoveFeedback = 0; /*0x731369*/

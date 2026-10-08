@@ -94,9 +94,9 @@ AbstractClass * DSurface::Construct(int aP1, int aP2, char aP3, char a5)
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
       *(unsigned int *)(*((unsigned int *)this + 8) + 104) = 8256; /*0x4ba63e*/
-    g_lpDirectDraw7->CreateSurface( /*0x4ba653*/
-      (LPDDSURFACEDESC)*((unsigned int *)this + 8),
-      (LPDIRECTDRAWSURFACE *)((unsigned char *)this + 28),
+    g_lpDirectDraw7->CreateSurface( (LPDDSURFACEDESC2)(/*0x4ba653*/
+      (LPDDSURFACEDESC)*((unsigned int *)this + 8)),
+      (LPDIRECTDRAWSURFACE7 *)((unsigned char *)this + 28),
       0);
     if ( *v6 ) /*0x4ba656*/
     {
@@ -220,9 +220,9 @@ AbstractClass * * DSurface::CreatePrimary()
   }
   Debug::Log("DSurface::Create_Primary - Creating surface\n"); /*0x4ba887 G57c1: IDA 0x4ba887 push offset aDsurfaceCreate_0*/
   v6 = (int *)(v5 + 7); /*0x4ba897*/
-  v7 = g_lpDirectDraw7->CreateSurface( /*0x4ba8a1*/
-         (LPDDSURFACEDESC)v5[8],
-         (LPDIRECTDRAWSURFACE *)(v5 + 7),
+  v7 = g_lpDirectDraw7->CreateSurface( (LPDDSURFACEDESC2)(/*0x4ba8a1*/
+         (LPDDSURFACEDESC)v5[8]),
+         (LPDIRECTDRAWSURFACE7 *)(v5 + 7),
          0);
   if ( !v7 ) /*0x4ba8a8*/
   {
@@ -260,7 +260,7 @@ AbstractClass * * DSurface::CreatePrimary()
       v15 = *(unsigned int *)g_DDraw_Clipper; /*0x4ba983*/
       ActiveWindow = GetActiveWindow(); /*0x4ba985*/
       if ( !(*(int (__stdcall **)(int, unsigned int, HWND))(v15 + 32))(g_DDraw_Clipper, 0, ActiveWindow) ) /*0x4ba994*/
-        (*(void (**)(int, int))(*(unsigned int *)*v6 + 112))(*v6, g_DDraw_Clipper); /*0x4ba9a7*/
+        (*(void (**)(int, int))(*(unsigned int *)*v6 + 112))((int)(*v6), g_DDraw_Clipper); /*0x4ba9a7*/
     }
     qmemcpy( (void *)(&g_DDraw_PixelFormatDesc), (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/
     if ( (*(int (**)(unsigned int *))(*v5 + 112))( (unsigned int *)(v5)) != 2 ) /*0x4ba9c7*/

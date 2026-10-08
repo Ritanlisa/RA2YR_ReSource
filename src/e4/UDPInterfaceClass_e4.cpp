@@ -577,7 +577,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2, int a3, int aP1, int a5
   }
   *((unsigned char *)this + 258885) = 0; /*0x7b428d*/
   *((unsigned int *)this + 64720) = 0; /*0x7b4293*/
-  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b4299*/
+  WinsockInterfaceClass::Constructor((void *)this); /*0x7b4299*/
   if ( (a2 & 1) != 0 ) /*0x7b42a3*/
     __3_YAXPAX_Z(this); /*0x7b42a6*/
 return (::gamemd::CampaignClass **)(void ***)this; /*0x7b42b0*/
@@ -790,7 +790,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
         v15 = *((unsigned int *)this + 64540); /*0x7b3688*/
         memset( (void *)(optval), 0, sizeof(optval)); /*0x7b3689*/
         setsockopt(v15, 0xFFFF, 128, optval, 4); /*0x7b3693*/
-        ((Socket *)((WinsockInterfaceClass *)this))->ConfigureBuffers(*((unsigned int *)this + 64540)); /*0x7b36a1*/
+        ((gamemd::Socket*)((WinsockInterfaceClass *)this))->ConfigureBuffers(*((unsigned int *)this + 64540)); /*0x7b36a1*/
         Debug::Log("Alternate UDP Socket init complete\n"); /*0x7b36ab G57c1: IDA 0x7b36ab push offset aAlternateUdpSo*/
         return (::gamemd::AbstractClass **)(1); /*0x7b36b3*/
       }

@@ -324,7 +324,7 @@ int E4Recv_5ADD10::Map_Delete()
   if ( v2 )
   {
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_TXT_OK), 0, (const char *)((char *)&stru_82BA00), 134)); /*0x5addba*/
-    v3 = (int *)GetStringCSF((wchar_t *)(unsigned int *)((char *)&stru_82BA00 + 19), 0, (const char *)((char *)&stru_82BA00), 134); /*0x5addc5*/
+    v3 = (int *)GetStringCSF((wchar_t *)"MSG:UnableMapSelect", 0, (const char *)"D:\\ra2mdpost\\MapSel.CPP", 134); /*0x5addc5*/
     ((Dialog*)v3)->ShowMessageBox( (unsigned short *)(StringCSF), 0, 0, 0, v6); /*0x5addcf*/
     return 0; /*0x5addd4*/
   }
@@ -2018,7 +2018,7 @@ const char * Map_Delete_5ADE20(ObjectClass * a1, const char * a2)
     return a2; /*0x5adf0b*/
   v9.AbstractClass = (void *)asc_82083C; /*0x5aded1*/
   StringCSF = GetStringCSF( (wchar_t *)(g_Str_TXT_OK), 0, (const char *)(char *)&stru_82BA00, 152); /*0x5adee5*/
-  v5 = (int *)GetStringCSF((wchar_t *)((char *)&stru_82BA00 + 19), 0, (const char *)(char *)&stru_82BA00, 152); /*0x5adef0*/
+  v5 = (int *)GetStringCSF((wchar_t *)"MSG:UnableMapSelect", 0, (const char *)"D:\\ra2mdpost\\MapSel.CPP", 152); /*0x5adef0*/
   ((Dialog *)v5)->ShowMessageBox( (unsigned short *)(StringCSF), 0, 0, 0, v8); /*0x5adefa*/
   return 0; /*0x5adf01*/
 }
@@ -2699,7 +2699,7 @@ VectorClass_flat * Map_WorldDominationTour_20::QueryInterface(unsigned int * Blo
   *(unsigned int *)&this->q000 = (unsigned int)&vt_VectorClassrc_ptr;
   if ( v3 && this->IsAllocated ) /*0x76a5d0*/
   {
-    (**v3)(v3, 3); /*0x76a5df*/
+    (**v3)((unsigned int)(v3), 3); /*0x76a5df*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x76a5e1*/
   }
   this->IsAllocated = 0; /*0x76a5ec*/
@@ -2743,7 +2743,7 @@ char sub_770C10(int a1, int a2, void ** a3)
   if ( v6 == 1 ) /*0x770c3a*/
     v8 = 0; /*0x770c3c*/
   else
-    v8 = Random::Range(Randomizer_Global, 0, v6 - 1); /*0x770c49*/
+    v8 = Random::Range((gamemd::Random *)(Randomizer_Global), 0, v6 - 1); /*0x770c49*/
   v9 = *(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v8); /*0x770c56*/
   if ( a1 == 3 ) /*0x770c59*/
   {

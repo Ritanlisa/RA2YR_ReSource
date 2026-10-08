@@ -672,7 +672,7 @@ return (char *)this; /*0x4f4cd7*/
 
 // 0x4F4CE0
 namespace gamemd {
-bool ((String *)ObjectClass * aP1)->Equals( void *a2_1)
+bool String::Equals(ObjectClass * aP1, void *a2_1)
 {
 
   int result; // eax

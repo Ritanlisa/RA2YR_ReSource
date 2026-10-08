@@ -835,10 +835,10 @@ int ConstructionPositionTracker(TechnoClass *self)
         IDA_LODWORD(v49) = *v4; /*0x42580f*/
         IDA_HIDWORD(v49) = self->animation[5]; /*0x42581b*/
         v50 = self->animation[6]; /*0x425822*/
-        if ( v13 > (int)(Cell::GetGroundHeight( &v49) + 2 * Map_CellHeight) ) /*0x42583b*/
-          v14 = Map_MaxHeight + Cell::GetGroundHeight( &v49); /*0x42585d*/
+        if ( v13 > (int)(Cell::GetGroundHeight( (unsigned int *)(&v49)) + 2 * Map_CellHeight) ) /*0x42583b*/
+          v14 = Map_MaxHeight + Cell::GetGroundHeight( (unsigned int *)(&v49)); /*0x42585d*/
         else
-          v14 = Cell::GetGroundHeight( &v49); /*0x425847*/
+          v14 = Cell::GetGroundHeight( (unsigned int *)(&v49)); /*0x425847*/
         v15 = self->vtable0; /*0x425863*/
         v50 = v14; /*0x425865*/
         (*(void (**)(TechnoClass *, double *))(v15 + 436))( (TechnoClass *)(self), (double *)(&v49)); /*0x425870*/
@@ -864,7 +864,7 @@ int ConstructionPositionTracker(TechnoClass *self)
         v53 = v32; /*0x425a5a*/
         v55 = self->location[1]; /*0x425a65*/
         v56 = self->location[2]; /*0x425a6d*/
-        v33 = Cell::GetGroundHeight( &v54); /*0x425a76*/
+        v33 = Cell::GetGroundHeight( (unsigned int *)(&v54)); /*0x425a76*/
         if ( v53 >= Map_MaxHeight + v33 ) /*0x425a89*/
         {
           v34 = self->location[1]; /*0x425a92*/

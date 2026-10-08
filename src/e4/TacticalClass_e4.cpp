@@ -361,7 +361,7 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
           result[1] = *((unsigned int *)this + 1137); /*0x4ac7ef*/
           result[2] = *((unsigned int *)this + 1138); /*0x4ac7f5*/
           *((unsigned int *)this + 1135) = 0; /*0x4ac7f8*/
-          return (*(unsigned int *(**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x4ac80a*/
+          return (*(unsigned int *(**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x4ac80a*/
         }
       }
     }
@@ -626,7 +626,7 @@ LABEL_17:
         DrawToSurfaceSHP( /*0x547362*/
           a3,
           *(unsigned int *)dword_87F69C,
-          (int)lpBuffer,
+          (gamemd::ConvertClass *)lpBuffer,
           v13 - 1,
           &a4,
           &aP5,

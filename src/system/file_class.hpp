@@ -92,6 +92,8 @@ private:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int BufferedWriter(char *lpBuffer, DWORD nNumberOfBytesToWrite);  // 0x432050
     int BufferedReader(char *lpBuffer, DWORD nNumberOfBytesToRead);  // 0x4322A0
+    int Read(void *a1, int a2);  // g57w20l3 raw call-form supply (system/gap2_defs 0x432144/0x43223f)
+    int Flush();  // g57w20l3 raw call-form supply (system/gap2_defs 0x4321cf/0x432246)
     int Load(int a1);  // 0x473D10
     bool OpenFileBufferIO();  // 0x47AAB0
     int OpenWithCDSearch(void* a1);  // 0x47AE10

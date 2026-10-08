@@ -478,6 +478,8 @@ public:
 #endif  // GAMEMD_G2_NetworkGameSetup_DEF
 // 2 methods in IDA
 // CSP: NetworkManager matched via T1
+#ifndef GAMEMD_G2_NetworkManager_DEF  // W20L4: shared twin guard w/ e4 NetworkManager_e4.hpp (first-include wins)
+#define GAMEMD_G2_NetworkManager_DEF 1
 class NetworkManager
 {
 public:
@@ -489,6 +491,7 @@ public:
 
     uint8_t NetworkManager_field_0x04[4];
 };
+#endif  // GAMEMD_G2_NetworkManager_DEF
 // 2 methods in IDA
 // CSP: NetworkOptions matched via T1
 class NetworkOptions

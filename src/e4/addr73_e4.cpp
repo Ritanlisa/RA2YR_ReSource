@@ -1642,7 +1642,7 @@ wchar_t * GetStringCSF(wchar_t *Format, unsigned int *a2, const char *aP3, int a
     *a2 = 0; /*0x734e6a*/
   if ( !dword_B1CF74 ) /*0x734e77*/
     return (wchar_t *)(aFatalStringMan); /*0x734e7a*/
-  v7 = (unsigned int *)(bsearch(Format,(const void *)( dword_B1CF74), dword_B1CF6C, 0x28u, _strcmpi)); /*0x734e93*/
+  v7 = (unsigned int *)(bsearch(Format,(const void *)( dword_B1CF74), dword_B1CF6C, 0x28u, (_CoreCrtNonSecureSearchSortCompareFunction)(_strcmpi))); /*0x734e93*/
   if ( v7 ) /*0x734e9d*/
   {
     if ( a2 ) /*0x734ea1*/

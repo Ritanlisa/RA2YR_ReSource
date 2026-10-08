@@ -81,7 +81,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 
   if ( !((GadgetClass*)((GadgetClass *)this))->ClearState( (int)(aP1)) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (**)(void *, int, int, int, int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_80))(  /*0x557965*/
+  (*(void (**)(void *, int, int, int, int))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q_80)))(  /*0x557965*/
     dword_887640,
     this->ListClass_field_0x0C,
     this->ListClass_field_0x10,
@@ -110,7 +110,7 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
           v7 == *((unsigned int *)this + 91));
     }
   }
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q090))(dword_887640);  /*0x5579f6*/
+  (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q090)))(dword_887640);  /*0x5579f6*/
   return 1; /*0x5579fe*/
 
 }

@@ -248,7 +248,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_32(int a1, int a2, int a
               {
                 v13 = 108 * IDA_LOBYTE(dword_B77900); /*0x7a50c6*/
                 v14 = (unsigned int)(108 * dword_B77900) >> 2; /*0x7a50c8*/
-                qmemcpy( (void *)(v10), dword_B77908, 4 * v14); /*0x7a50cb*/
+                qmemcpy( (void *)(v10), (const void *)(dword_B77908), 4 * v14); /*0x7a50cb*/
                 qmemcpy( (void *)(&v10->AbstractClass + v14), (const void *)(&nextObject->AbstractClass + v14), v13 & 3); /*0x7a50d2*/
  nextObject = (ObjectClass *)(dword_B77908); /*0x7a50d4*/
               }
@@ -479,7 +479,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
         Buffer[40] = 0; /*0x7a5827*/
         (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 168))(ppv, Buffer); /*0x7a5830*/
       }
-      v11 = (HWND)Dialog::FindByHandle(  (Dialog *)0xC4); /*0x7a583b*/
+      v11 = (HWND)Dialog::FindByHandle(  (gamemd::Dialog*)0xC4); /*0x7a583b*/
       if ( v11 ) /*0x7a5845*/
       {
         dword_B77DC8&= ~4u; /*0x7a5850*/
@@ -497,7 +497,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
       Dialog::ShowMessage(-1, (size_t)v3); /*0x7a56bc*/
       dword_B77E4C = 0; /*0x7a56c9*/
       &byte_B76B44= 0; /*0x7a56d3*/
-      v4 = (HWND)Dialog::FindByHandle(  (Dialog *)0xC4); /*0x7a56da*/
+      v4 = (HWND)Dialog::FindByHandle(  (gamemd::Dialog*)0xC4); /*0x7a56da*/
       if ( v4 ) /*0x7a56e1*/
       {
         dword_B77DC8&= ~4u; /*0x7a56ec*/
@@ -789,7 +789,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
       {
         sprintf((char *const)Buffer, "P%s", byte_A8B8E0); /*0x7a81cf*/
         if ( dword_B77900> 0 ) /*0x7a81de*/
-          qmemcpy( (void *)(v25), dword_B77908, sizeof(v25)); /*0x7a81ef*/
+          qmemcpy( (void *)(v25), (const void *)(dword_B77908), sizeof(v25)); /*0x7a81ef*/
         (*(void (__stdcall **)(LPVOID, unsigned char *, int *))(*(unsigned int *)ppv + 56))(ppv, v25, Buffer); /*0x7a8203*/
         Debug::Log("Sent private game option packet requesting a preview download\n"); /*0x7a820b G57c1: IDA 0x7a820b push offset aSentPrivateGam*/
         Event_Play(v5); /*0x7a8213*/
@@ -1096,14 +1096,14 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
         MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, StringCSF, Type, 22, v25, 0); /*0x7a9389*/
         ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 0); /*0x7a9395*/
         v13 = (wchar_t *)((WideString *)(wchar_t **)&v26)->GetOrEmpty(); /*0x7a939e*/
-        ((Dialog *)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(v13)); /*0x7a93b1*/
+        ((gamemd::Dialog*)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(v13)); /*0x7a93b1*/
         dword_B76478 = Timer::GetTicks(); /*0x7a93cb*/
         dword_B7647C = v27; /*0x7a93d0*/
         dword_B76480 = 300; /*0x7a93d6*/
       }
       else
       {
-        Current = (Dialog *)Dialog::GetCurrent(); /*0x7a93ec*/
+        Current = (gamemd::Dialog*)Dialog::GetCurrent(); /*0x7a93ec*/
         if ( Current ) /*0x7a93f0*/
         {
           while ( !GetDlgItem((HWND)Current, 1343) ) /*0x7a93fc*/
@@ -1111,9 +1111,9 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
             if ( GetDlgItem((HWND)Current, 1461) ) /*0x7a9404*/
             {
               v15 = (wchar_t *)((WideString *)(wchar_t **)&v26)->GetOrEmpty(); /*0x7a940e*/
-              ((Dialog *)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(v15)); /*0x7a9420*/
+              ((gamemd::Dialog*)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(v15)); /*0x7a9420*/
             }
-            Current = (Dialog *)((Dialog *)Current)->FindByPtr(); /*0x7a942f*/
+            Current = (gamemd::Dialog*)((gamemd::Dialog*)Current)->FindByPtr(); /*0x7a942f*/
             if ( !Current ) /*0x7a9433*/
               goto LABEL_22; /*0x7a9433*/
           }
@@ -1126,7 +1126,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
           ReleaseCapture(); /*0x7a945a*/
           Screen::Capture(1, 0, (int)(a3 + 36), (int)a3); /*0x7a9464*/
           Dialog = (HWND)CreateDialog(0x11Eu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))ChatDialog::DlgProc, 0); /*0x7a9475*/
-          Current = (Dialog *)Dialog; /*0x7a947a*/
+          Current = (gamemd::Dialog*)Dialog; /*0x7a947a*/
           if ( Dialog ) /*0x7a947e*/
           {
             SetFocus(Dialog); /*0x7a9481*/
@@ -1217,31 +1217,31 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
       return 0; /*0x7a9600*/
     if ( IDA_BYTE1(byte_B77DC0) ) /*0x7a9614*/
     {
-      swprintf((wchar_t *const)&v18[0].?, (const size_t)g_Str_Trace___hs_, (const wchar_t *)(a3 + 36), String); /*0x7a9625*/
+      swprintf((wchar_t *const)((char *)v18 + 4), (const size_t)g_Str_Trace___hs_, (const wchar_t *)(a3 + 36), String); /*0x7a9625*/
       Type = BuildingAnim::GetType(); /*0x7a9638*/
       IDA_LOWORD(v10) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7a9648*/
       MessageListClass::AddMessage( /*0x7a965f*/
         (MessageListClass *)&stru_A8BB1C.__pad_87[189],
         0,
         0,
-        (wchar_t *)&v18[0].?,
+        (wchar_t *)((char *)v18 + 4),
         Type,
         22,
         v10,
         0);
       ((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416])))->MarkForRedraw((int)((MapClass *)((int)((GScreenClass *)&stru_87F5F0.__pad_58[416]))), 0); /*0x7a966b*/
-      ((Dialog *)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(String)); /*0x7a967d*/
+      ((gamemd::Dialog*)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(String)); /*0x7a967d*/
     }
     else
     {
-      Current = (Dialog *)Dialog::GetCurrent(); /*0x7a9695*/
+      Current = (gamemd::Dialog*)Dialog::GetCurrent(); /*0x7a9695*/
       if ( Current ) /*0x7a9699*/
       {
         while ( !GetDlgItem((HWND)Current, 1343) ) /*0x7a96a5*/
         {
           if ( GetDlgItem((HWND)Current, 1461) ) /*0x7a96ad*/
-            ((Dialog *)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(String)); /*0x7a96cb*/
-          Current = (Dialog *)((Dialog *)Current)->FindByPtr(); /*0x7a96da*/
+            ((gamemd::Dialog*)0xFFFFFF)->ShowStatusText( (SessionClass *)((size_t)g_Str_Trace___hs_), a3 + 36, (CampaignScore *)(String)); /*0x7a96cb*/
+          Current = (gamemd::Dialog*)((gamemd::Dialog*)Current)->FindByPtr(); /*0x7a96da*/
           if ( !Current ) /*0x7a96de*/
             goto LABEL_27; /*0x7a96de*/
         }
@@ -1252,7 +1252,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
   LABEL_27:
         ReleaseCapture(); /*0x7a9706*/
         Screen::Capture(1, 0, v6, (int)String); /*0x7a9710*/
-        Current = (Dialog *)CreateDialog( /*0x7a9726*/
+        Current = (gamemd::Dialog*)CreateDialog( /*0x7a9726*/
                               0x11Eu,
                               (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))ChatDialog::DlgProc,
                               0);
@@ -1378,7 +1378,7 @@ int CComObject_CChatEventSink___ATL_DispatchStub_19(int a2, int a3)
       }
       else
       {
-        if ( Dialog::FindByHandle(  (Dialog *)0x113) ) /*0x7aa7e8*/
+        if ( Dialog::FindByHandle(  (gamemd::Dialog*)0x113) ) /*0x7aa7e8*/
         {
           v8 = GetStringCSF( aTxtYoureDiscon, 0, (const char *)(g_Str_File_wonline_cpp), 8478); /*0x7aa809*/
           ShowDialogConfirm( (void *)(v8), 0, (unsigned __int8 (*)(void))GameLoop_Thunk, 0); /*0x7aa812*/
@@ -1458,7 +1458,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_30(int a1, int a2, void 
               {
                 v13 = 108 * IDA_LOBYTE(dword_B77900); /*0x7ab580*/
                 v14 = (unsigned int)(108 * dword_B77900) >> 2; /*0x7ab582*/
-                qmemcpy( (void *)(v10), dword_B77908, 4 * v14); /*0x7ab585*/
+                qmemcpy( (void *)(v10), (const void *)(dword_B77908), 4 * v14); /*0x7ab585*/
                 qmemcpy( (void *)(&v10->AbstractClass + v14), (const void *)(&nextObject->AbstractClass + v14), v13 & 3); /*0x7ab58c*/
  nextObject = (ObjectClass *)(dword_B77908); /*0x7ab58e*/
               }
@@ -2110,7 +2110,7 @@ ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2,
       }
   LABEL_21:
       SendGameListWOL(v15); /*0x7ac410*/
-      v8 = (HWND)Dialog::FindByHandle(  (Dialog *)0xC4); /*0x7ac41a*/
+      v8 = (HWND)Dialog::FindByHandle(  (gamemd::Dialog*)0xC4); /*0x7ac41a*/
       if ( v8 ) /*0x7ac422*/
       {
         dword_B77DC8&= ~0x200u; /*0x7ac430*/
@@ -2121,7 +2121,7 @@ ObjectClass * * CComObject_CChatEventSink___ATL::DispatchStub_37(int a1, int a2,
       DlgItem = GetDlgItem(Current, 1344); /*0x7ac452*/
       if ( DlgItem ) /*0x7ac456*/
         SetFocus(DlgItem); /*0x7ac459*/
-      v11 = (ObjectClass *)Dialog::FindByHandle(  (Dialog *)0x116); /*0x7ac464*/
+      v11 = (ObjectClass *)Dialog::FindByHandle(  (gamemd::Dialog*)0x116); /*0x7ac464*/
       v12 = (HWND)v11; /*0x7ac469*/
       if ( v11 ) /*0x7ac46d*/
       {
@@ -2252,7 +2252,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
           v8 = 0; /*0x7a8e05*/
         }
         j_DeleteAndZero( (void *)((ObjectClass *)&String1)); /*0x7a8e44*/
-        if ( v8 && IsBuddyOrIgnoreWOL(v7) ) /*0x7a8e50*/
+        if ( v8 && IsBuddyOrIgnoreWOL((char *)(v7)) ) /*0x7a8e50*/
         {
           ((String *)&String1)->Assign( (const char *)(v6)); /*0x7a8e5e*/
           CharStringToWide( (ObjectClass *)((wchar_t **)&a2), (const char **)&String1); /*0x7a8e6b*/
@@ -2261,7 +2261,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_16(int a1, int a2, int a3, con
           if ( (*v7 & 1) != 0 ) /*0x7a8e83*/
             v9 = 16776960; /*0x7a8e85*/
           v10 = (char *)(v7 + 36); /*0x7a8e8b*/
-          if ( _strcmpi(unk_A8B380, v10) ) /*0x7a8e94*/
+          if ( _strcmpi((const char *)(unk_A8B380), v10) ) /*0x7a8e94*/
           {
             v11 = (wchar_t *)((WideString *)(wchar_t **)&a2)->GetOrEmpty(); /*0x7a8ea4*/
             Dialog::ShowMessage( v9, (size_t)aHsS_1, (char *)(v10), (wchar_t *)(v11)); /*0x7a8eb1*/
@@ -2311,7 +2311,7 @@ int CComObject_CChatEventSink___ATL::GetIDsOfNames(int a1, int a2, char * Source
     if ( a2 < 0 ) /*0x7a55fc*/
       return 0; /*0x7a55fe*/
     v4 = _strdup(Source); /*0x7a5617*/
-    for ( i = (unsigned __int8 *)strtok(v4, asc_83F328); i; i = (unsigned __int8 *)strtok(0, asc_83F328) ) /*0x7a5629*/
+    for ( i = (unsigned __int8 *)strtok(v4, (const char *)(asc_83F328)); i; i = (unsigned __int8 *)strtok(0, asc_83F328) ) /*0x7a5629*/
     {
       BulkCharToWide( (unsigned short *)(BufferCount), (uint8_t *)(i), -1); /*0x7a5633*/
       Dialog::ShowMessage(-1, (size_t)BufferCount); /*0x7a5644*/
@@ -2379,13 +2379,13 @@ int CComObject_CChatEventSink___ATL::Unadvise(int a1, int a2, const char * a3, c
         v6 = 0; /*0x7aafe2*/
       }
       j_DeleteAndZero( (void *)((ObjectClass *)&a2)); /*0x7ab021*/
-      if ( v6 && IsBuddyOrIgnoreWOL(v5) ) /*0x7ab02d*/
+      if ( v6 && IsBuddyOrIgnoreWOL((char *)(v5)) ) /*0x7ab02d*/
       {
         ((String *)&a2)->Assign( (const char *)(v4)); /*0x7ab03b*/
         CharStringToWide( (ObjectClass *)((wchar_t **)&a4), (const char **)&a2); /*0x7ab048*/
         j_DeleteAndZero( (void *)((ObjectClass *)&a2)); /*0x7ab051*/
         v7 = (char *)(v5 + 36); /*0x7ab056*/
-        if ( _strcmpi(unk_A8B380, v7) ) /*0x7ab05f*/
+        if ( _strcmpi((const char *)(unk_A8B380), v7) ) /*0x7ab05f*/
         {
           v8 = (wchar_t *)((WideString *)(wchar_t **)&a4)->GetOrEmpty(); /*0x7ab06f*/
           Dialog::ShowMessage( 16711935, (size_t)g_Str_Trace__hs, (char *)(v7), (wchar_t *)(v8)); /*0x7ab081*/
@@ -2441,10 +2441,10 @@ int CComObject_CChatEventSink___ATL::DispatchStub_42(int a1, int a2, const char 
         v6 = 0; /*0x7ab0d2*/
       }
       ((DeleteAndZero *)&a2)->Alt(); /*0x7ab123*/
-      if ( v6 && IsBuddyOrIgnoreWOL(v5) ) /*0x7ab12f*/
+      if ( v6 && IsBuddyOrIgnoreWOL((char *)(v5)) ) /*0x7ab12f*/
       {
         v9 = (char *)(v5 + 36); /*0x7ab138*/
-        if ( _strcmpi(unk_A8B380, v9) ) /*0x7ab141*/
+        if ( _strcmpi((const char *)(unk_A8B380), v9) ) /*0x7ab141*/
           Dialog::ShowMessage( 16711935, (size_t)g_Str_Trace__hs, (char *)(v9), (wchar_t *)(v4)); /*0x7ab15a*/
       }
     }
@@ -2487,13 +2487,13 @@ int CComObject_CChatEventSink___ATL::EnumDependents(int a1, int a2, int a3, cons
         v7 = 0; /*0x7ab1a2*/
       }
       j_DeleteAndZero( (void *)((ObjectClass *)&a2)); /*0x7ab1e1*/
-      if ( v7 && IsBuddyOrIgnoreWOL(v6) ) /*0x7ab1ed*/
+      if ( v7 && IsBuddyOrIgnoreWOL((char *)(v6)) ) /*0x7ab1ed*/
       {
         ((String *)&a2)->Assign( (const char *)(v5)); /*0x7ab1fb*/
         CharStringToWide( (ObjectClass *)((wchar_t **)&a5), (const char **)&a2); /*0x7ab208*/
         j_DeleteAndZero( (void *)((ObjectClass *)&a2)); /*0x7ab211*/
         v8 = (char *)(v6 + 36); /*0x7ab216*/
-        if ( _strcmpi(unk_A8B380, v8) ) /*0x7ab21f*/
+        if ( _strcmpi((const char *)(unk_A8B380), v8) ) /*0x7ab21f*/
         {
           v9 = (wchar_t *)((WideString *)(wchar_t **)&a5)->GetOrEmpty(); /*0x7ab22f*/
           Dialog::ShowMessage( 3166463, (size_t)g_Str_Trace__hs, (char *)(v8), (wchar_t *)(v9)); /*0x7ab241*/
@@ -2549,10 +2549,10 @@ int CComObject_CChatEventSink___ATL::DispatchStub_43(int a1, int a2, int a3, con
         v7 = 0; /*0x7ab292*/
       }
       ((DeleteAndZero *)&a2)->Alt(); /*0x7ab2e3*/
-      if ( v7 && IsBuddyOrIgnoreWOL(v6) ) /*0x7ab2ef*/
+      if ( v7 && IsBuddyOrIgnoreWOL((char *)(v6)) ) /*0x7ab2ef*/
       {
         v10 = (char *)(v6 + 36); /*0x7ab2f8*/
-        if ( _strcmpi(unk_A8B380, v10) ) /*0x7ab301*/
+        if ( _strcmpi((const char *)(unk_A8B380), v10) ) /*0x7ab301*/
           Dialog::ShowMessage( 3166463, (size_t)g_Str_Trace__hs, (char *)(v10), (wchar_t *)(v5)); /*0x7ab31a*/
       }
     }

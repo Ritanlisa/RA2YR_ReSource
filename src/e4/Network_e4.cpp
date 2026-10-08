@@ -1,4 +1,5 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
+#define GAMEMD_E4_VECTOR_TREE_TRUTH 1  // G57a2: G42.55 tree-truth bridge pulls core/vector.hpp templates
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_5CF830_e4.hpp"
@@ -46,8 +47,8 @@
 #include "e4/classes/IPXInterfaceClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
-#include "e4/classes/NetworkEventQueueClass_e4.hpp"
 #include "e4/classes/NetworkManager_e4.hpp"
+#include "e4/classes/NetworkEventQueueClass_e4.hpp"
 #include "e4/classes/Tooltip_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/SessionClass_e4.hpp"  // G42.36 C2027 supply
@@ -781,7 +782,7 @@ int Network::SendOffer()
     else
     {
       LOBYTE(this->u32_1F6) = 1; /*0x4fc9a2*/
-      *((unsigned int *)this + 166) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4fc9b6*/
+      *((unsigned int *)this + 166) = dword_A8ED84; /*0x4fc9b6*/
       result = v2; /*0x4fc9b8*/
       *((unsigned int *)this + 167) = v2; /*0x4fc9bc*/
       LOBYTE(result) = LOBYTE(this->u32_1F6); /*0x4fc9bf*/
@@ -1038,7 +1039,7 @@ AbstractClass * * Network::SetConnectionParams(int aP1, int a3, int a4, char aP4
   Debug::Log("IPX Manager: RetryDelta = %d\n"); /*0x540c7e G57c1: IDA 0x540c7e push offset aIpxManagerRetr*/
   Debug::Log("MaxAhead is %d\n"); /*0x540c8e G57c1: IDA 0x540c8e push offset aMaxaheadIsD*/
   if ( aP4 ) /*0x540c9c*/
-    (*(void ((gamemd::IPXManagerClass *)(**))(IPXManagerClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)&this->q000 + 56))( /*0x540cae*/
+    (*(void (__thiscall **)(IPXManagerClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)&this->q000 + 56))( /*0x540cae*/
       this,
       *((unsigned int *)this + 22),
       *((unsigned int *)this + 23),
@@ -1698,7 +1699,7 @@ LABEL_60:
             *v35 = *(unsigned int *)&v47[0].q000; /*0x542117*/
             v35[1] = (int)*(unsigned int *)&v47[0].q004; /*0x54211d*/
             v35[2] = (int)*(unsigned int *)&v47[0].q008; /*0x542124*/
-            if ( (*(int ((gamemd::IPXManagerClass *)(**))(IPXManagerClass *, int))(*(unsigned int *)&this->q000 + 24))(this, v44) != -1 ) /*0x542131*/
+            if ( (*(int (__thiscall **)(IPXManagerClass *, int))(*(unsigned int *)&this->q000 + 24))(this, v44) != -1 ) /*0x542131*/
             {
               v36 = (int *)(*((unsigned int *)this /*0x542143*/
                             + (*(int (**)(IPXManagerClass *, int))(*(unsigned int *)&this->q000 + 24))((IPXManagerClass *)(this), v30)
@@ -3315,22 +3316,22 @@ AbstractClass * * Network_ModemConnectionDialog()
     if ( v23 != 1 ) /*0x5efaa9*/
       goto LABEL_106; /*0x5efaa9*/
     v70[0] = 100; /*0x5efab9*/
-    *(int *)((char *)&v70[36] + 2) = ((Timer *)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efacc*/
+    *(int *)((char *)&v70[36] + 2) = ((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efacc*/
     IDA_LOBYTE(v70[6]) = (uint8_t)&v77; /*0x5efae7*/
     ((Stream *)((int *)&unk_A8EA70))->WriteBlock((int)v70, 250, 1); /*0x5efaee*/
-    Elapsed = ((Timer *)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efb02*/
-    if ( (unsigned int)(((Timer *)&stru_88732C.__pad_6[6])->GetElapsed() - Elapsed) < 0x50 ) /*0x5efb0e*/
+    Elapsed = ((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efb02*/
+    if ( (unsigned int)(((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed() - Elapsed) < 0x50 ) /*0x5efb0e*/
     {
       while ( 1 ) /*0x5efb15*/
       {
         ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5efb15*/
         if ( ((ObjectTypeClass *)(&unk_A8EA70))->CreateInstance((int)v67, (int)&v56) > 0 && v67[0] == 100 ) /*0x5efb36*/
           break; /*0x5efb36*/
-        if ( (unsigned int)(((Timer *)&stru_88732C.__pad_6[6])->GetElapsed() - Elapsed) >= 0x50 ) /*0x5efb4b*/
+        if ( (unsigned int)(((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed() - Elapsed) >= 0x50 ) /*0x5efb4b*/
           goto LABEL_73; /*0x5efb4b*/
       }
-      v44 = ((Timer *)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efc7a*/
-      while ( (unsigned int)(((Timer *)&stru_88732C.__pad_6[6])->GetElapsed() - v44) < 0x1E ) /*0x5efc86*/
+      v44 = ((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efc7a*/
+      while ( (unsigned int)(((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed() - v44) < 0x1E ) /*0x5efc86*/
         ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5efc8d*/
       if ( v69 > *(int *)((char *)&v70[36] + 2) ) /*0x5efcb3*/
       {
@@ -3360,7 +3361,7 @@ AbstractClass * * Network_ModemConnectionDialog()
     if ( !MessageBox ) /*0x5efb94*/
       goto LABEL_106; /*0x5efb94*/
     ((Dialog *)(MessageBox))->Show(); /*0x5efb9c*/
-    v42 = ((Timer *)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efbab*/
+    v42 = ((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efbab*/
     while ( (uint8_t)Dialog::PumpMessages() != 1 && !g_NetworkTestFlag ) /*0x5efbc1*/
     {
       IDA_LOBYTE(v43) = 0; /*0x5efbc7*/
@@ -3380,8 +3381,8 @@ AbstractClass * * Network_ModemConnectionDialog()
         v23 = 0; /*0x5efd13*/
         goto LABEL_101; /*0x5efd13*/
       }
-      v42 = ((Timer *)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efc20*/
-      while ( (unsigned int)(((Timer *)&stru_88732C.__pad_6[6])->GetElapsed() - v42) < 0x1E ) /*0x5efc2c*/
+      v42 = ((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed(); /*0x5efc20*/
+      while ( (unsigned int)(((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed() - v42) < 0x1E ) /*0x5efc2c*/
         ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5efc33*/
       if ( v69 <= *(int *)((char *)&v70[36] + 2) ) /*0x5efc59*/
       {
@@ -3408,7 +3409,7 @@ AbstractClass * * Network_ModemConnectionDialog()
         v22 = 2; /*0x5efc61*/
       }
   LABEL_101:
-      if ( (unsigned int)(((Timer *)&stru_88732C.__pad_6[6])->GetElapsed() - v42) > 0xE10 ) /*0x5efd26*/
+      if ( (unsigned int)(((gamemd::Timer*)&stru_88732C.__pad_6[6])->GetElapsed() - v42) > 0xE10 ) /*0x5efd26*/
         break; /*0x5efd26*/
       if ( v23 != 1 ) /*0x5efd2b*/
         goto LABEL_105; /*0x5efd2b*/
@@ -4369,8 +4370,8 @@ HashTable_flat * * Network::ProcessAddressChange()
   Waypoint v6; // [esp+10h] [ebp-8Ch] BYREF
 
   ((Waypoint*)((Waypoint *)&v6.__pad_0[12]))->InitInvalid(); /*0x6640ea*/
-  result = *(wchar_t **)((char *)&stru_A8EB00 + 416); /*0x6640ef*/
-  if ( *(int *)((char *)&stru_A8EB00 + 416) > 0 ) /*0x6640f6*/
+  result = (wchar_t *)dword_A8ED84; /*0x6640ef*/
+  if ( dword_A8ED84 > 0 ) /*0x6640f6*/
   {
     for ( result = (wchar_t *)Network::SendPacketThunk2( /*0x66411c*/
                                 (Network *)&unk_A8E9C0,
@@ -5669,7 +5670,7 @@ int sub_64D9E0()
   int i; // esi
   int Buffer; // [esp+8h] [ebp-4h] BYREF
 
-  if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) || (result = *(unsigned int *)&dword_A8B238) == 0 ) /*0x64d9f4*/
+  if ( dword_A8ED84 || (result = *(unsigned int *)&dword_A8B238) == 0 ) /*0x64d9f4*/
   {
     v2 = 0; /*0x64da00*/
     Buffer = 0; /*0x64da06*/
@@ -5679,7 +5680,7 @@ int sub_64D9E0()
       v4 = *(unsigned int *)(char *)&FootClass_Array; /*0x64da13*/
       do /*0x64da37*/
       {
-        if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) == *(int *)((char *)((char *)&FootClass_Array + 1) /*0x64da32*/
+        if ( dword_A8ED84 == *(int *)((char *)((char *)&FootClass_Array + 1) /*0x64da32*/
                                                       + 111 * (grindingAnimHandle & 0x3FFF)
                                                       + 3)
           && (*((unsigned char *)((char *)&FootClass_Array + 1) + 111 * (grindingAnimHandle & 0x3FFF) + 1) & 1) == 0 )
@@ -5696,7 +5697,7 @@ int sub_64D9E0()
     result = *(unsigned int *)(char *)&FootClass_Array; /*0x64da4f*/
     for ( i = 0; i < *(int *)(char *)&FootClass_Array; ++i ) /*0x64da59*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) == *(int *)((char *)((char *)&FootClass_Array + 1) /*0x64da85*/
+      if ( dword_A8ED84 == *(int *)((char *)((char *)&FootClass_Array + 1) /*0x64da85*/
                                                     + 111 * ((IDA_LOWORD(((char *)&FootClass_Array)) + (unsigned short)i) & 0x3FFF)
                                                     + 3)
         && (*((unsigned char *)((char *)&FootClass_Array + 1) + 111 * ((IDA_LOWORD(((char *)&FootClass_Array)) + (unsigned short)i) & 0x3FFF) + 1) & 1) == 0 )
@@ -5738,7 +5739,7 @@ char * sub_652110(int a1, int a2)
     {
       v7 = (unsigned int)IPXManagerClass::CheckStatus(&unk_A8E9C0, a2) >> 1; /*0x652192*/
     }
-    result = (char *)(*(unsigned int *)((char *)&stru_A8EB00 + 416) - v7 * *(unsigned int *)&g_MissionQueueFrame.waypoints[282] / 0x3C - v4); /*0x6521af*/
+    result = (char *)(dword_A8ED84 - v7 * *(unsigned int *)&g_MissionQueueFrame.waypoints[282] / 0x3C - v4); /*0x6521af*/
     (&dword_A8DB7C)[a2] = result; /*0x6521b2*/
   }
   else

@@ -234,7 +234,7 @@ LABEL_70:
         v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
         DrawTextRendererMultiline((IUnknown *)(/*0x614760*/
           (unsigned int *)DSurface_Alternate),(int *)(&v44.left),(wchar_t *)(&unk_AC1E04),
-          v41,
+          (gamemd::ObjectClass *)(v41),
           (unsigned int *)v8[25],
           dword_AC18A4,
           v8 + 17,

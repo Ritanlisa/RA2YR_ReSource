@@ -216,8 +216,8 @@ int WeaponTypeClass::Destructor(void *a1)
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
-  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))((unsigned int *)WeaponTypeClass_Array)[0])( /*0x771f99*/
-         &WeaponTypeClass_Array,
+  v2 = ((int (*)(WeaponTypeClass **, WeaponTypeClass **))((unsigned int *)WeaponTypeClass_Array)[0])( (gamemd::WeaponTypeClass **)(/*0x771f99*/
+         &WeaponTypeClass_Array),
          &v7);
   if ( v2 != -1 && v2 < g_WeaponTypePool && v2 < --g_WeaponTypePool ) /*0x771fb4*/
   {
@@ -466,7 +466,7 @@ WeaponTypeClass * WeaponTypeClass::ddtor(void ** Block, char a2)
   v3[4].uniqueId = 0; /*0x77311d*/
   v3[4].referenceCount = 0; /*0x773123*/
   v9 = v3; /*0x773135*/
-  v4 = ((int (*)(WeaponTypeClass **, AbstractClass **))((unsigned int *)WeaponTypeClass_Array)[0])(&WeaponTypeClass_Array, &v9); /*0x773139*/
+  v4 = ((int (*)(WeaponTypeClass **, AbstractClass **))((unsigned int *)WeaponTypeClass_Array)[0])((gamemd::WeaponTypeClass **)(&WeaponTypeClass_Array), &v9); /*0x773139*/
   if ( v4 != -1 && v4 < g_WeaponTypePool && v4 < --g_WeaponTypePool ) /*0x773154*/
   {
     do /*0x77316c*/

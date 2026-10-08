@@ -44,16 +44,8 @@
 #include "e4/classes/Multiplayer_e4.hpp"
 #include "e4/classes/_w14_nocarrier_e4.hpp"
 // [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char sub_49E740(int _DWORD *a2); }  // w18j2 raw 0x0049E740
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char sub_49E740(int _DWORD *a2); }  // w18j2 raw 0x0049E740
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char sub_49E740(int _DWORD *a2); }  // w18j2 raw 0x0049E740
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char sub_49E740(int _DWORD *a2); }  // w18j2 raw 0x0049E740
-// [w18j2] C3861 supply (raw-evidenced)
-namespace gamemd { char sub_49E740(int _DWORD *a2); }  // w18j2 raw 0x0049E740
-namespace gamemd { char LoadCoopCampaignSave(char *char *Destination); }  // w18j2 raw 0x0049D390
+namespace gamemd { char sub_49E740(int *a2); }  // w18j2 raw 0x0049E740
+namespace gamemd { char LoadCoopCampaignSave(char *Destination); }  // w18j2 raw 0x0049D390
 // [w14e3] fn vocab supply (g57b5-W5 variadic convention); evidence: raw_decomp entries
 namespace gamemd {
     int DecodeCampaignPlayerName(...);  // raw 0049CCF0: char __thiscall sub_49CCF0( int this, int a2, int a3, void *Block, int a5, __int16 a6, int
@@ -538,12 +530,12 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   ((CampaignClass *)((int *)&g_DDrawSurfaceManager))->GetValue((unsigned int *)(&aP4)); /*0x5c15b3*/
   for ( aP6 = 0; (int)aP6 < (int)aP4; ++aP6 ) /*0x5c15c2*/
   {
-    v19 = (gamemd::Init)((MissionClass *)__2_YAPAXI_Z(0x70u)); /*0x5c15c6*/
+    v19 = (gamemd::Init)((int *)__2_YAPAXI_Z(0x70u)); /*0x5c15c6*/
     if ( v19 ) /*0x5c15d0*/
       v20 = ((MissionClass *)(v19))->Init(); /*0x5c15d9*/
     else
       v20 = 0; /*0x5c15dd*/
-    ((Movie*)(int)v20)->SetupScreen(aP6); /*0x5c15e6*/
+    ((Movie*)(int)v20)->SetupScreen((int)(aP6)); /*0x5c15e6*/
     v21 = *(unsigned int *)&this->__pad_328[4]; /*0x5c15eb*/
     if ( *(unsigned int *)&this->__pad_328[12] >= v21 ) /*0x5c15f3*/
     {
@@ -560,7 +552,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
       }
     }
     v23 = *(unsigned int *)&this->__pad_328[12]; /*0x5c1616*/
-    v24 = (unsigned int)(*(unsigned int *)this->__pad_328); /*0x5c1619*/
+    v24 = (unsigned int)((int *)(*(unsigned int *)this->__pad_328)); /*0x5c1619*/
     *(unsigned int *)&this->__pad_328[12] = v23 + 1; /*0x5c161f*/
     *(unsigned int *)(v24 + 4 * v23) = (unsigned int)(v20); /*0x5c1622*/
   }
@@ -618,7 +610,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   v9 = (void (***)(unsigned int, int))v3[2].MultiplayerGameMode_field_0x18; /*0x5c16d1*/
   if ( v9 ) /*0x5c16d6*/
   {
-    (**v9)((unsigned int)(v9), 1); /*0x5c16dc*/
+    (**v9)((int *)(v9), 1); /*0x5c16dc*/
     v3[2].MultiplayerGameMode_field_0x18 = 0; /*0x5c16de*/
   }
   IDA_LOBYTE(v3->MultiplayerGameMode_field_0x04) = 0; /*0x5c16e1*/
@@ -1434,6 +1426,9 @@ LABEL_31:
 }
 }
 // 0x5C2A60
+namespace gamemd {
+const char * MPCooperative::UpdateLobby(const char * a2, char * String)
+{
   const char *result; // eax
   int *MPCooperative_field_0x1A4; // esi
   int v6; // ebp
@@ -1633,7 +1628,7 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   }
   else
   {
-    for ( result = Random::Range((unsigned int *)dword_A8B230 + 134, 0, *((unsigned int *)dword_A8B230 + 1145) - 1); /*0x5c2d70*/
+    for ( result = Random::Range((gamemd::Random *)dword_A8B230 + 134, 0, *((unsigned int *)dword_A8B230 + 1145) - 1); /*0x5c2d70*/
           *(unsigned char *)(result + a3);
           result = (result + 1) % *((unsigned int *)dword_A8B230 + 1145) )
     {
@@ -2597,7 +2592,7 @@ int MPCooperative::UpdateMovieScore()
   v21 = v14; /*0x5c4435*/
   v20 = uniqueId; /*0x5c4436*/
   ((MPCooperative *)v19)->processTurnEnd( (unsigned int *)(&v29)); /*0x5c4441*/
-  (*(void (**)(MultiplayerGameMode *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int, void ***, wchar_t *))(v11 + 4))( /*0x5c4449*/
+  (*(void (**)(MultiplayerGameMode *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int, void ***, wchar_t *))((gamemd::MultiplayerGameMode *)(v11 + 4)))( /*0x5c4449*/
     this->MPCooperative_field_0x50,
     v19[0],
     v19[1],

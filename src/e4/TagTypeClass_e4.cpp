@@ -133,7 +133,7 @@ AbstractClass * * TagTypeClass::CleanupMembers(void *a1)
     while ( v4 < g_GameObjectCleanup ); /*0x6e5d2e*/
   }
   v10 = (gamemd::AbstractTypeClass *)(this);
-v7 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0F670+ 16))( /*0x6e5d44*/ &dword_B0F670, (AbstractTypeClass **)((int *)((int *)((int *)(&v10)))));
+v7 = (*(int (**)(int *, AbstractTypeClass **))(dword_B0F670+ 16))( /*0x6e5d44*/ &dword_B0F670, (AbstractTypeClass **)((int *)((int *)((int *)((int *)(&v10))))));
 
 
   if ( v7 != -1 && v7 < dword_B0F680) /*0x6e5d54*/

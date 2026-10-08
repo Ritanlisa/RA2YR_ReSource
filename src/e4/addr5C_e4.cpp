@@ -4306,7 +4306,7 @@ LRESULT sub_5C9850(CampaignScore * aP0, int nIDDlgItem, wchar_t * Format)
   wchar_t Buffer[32]; // [esp+8h] [ebp-40h] BYREF
 
   swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, Format); /*0x5c9868*/
-  DlgItem = GetDlgItem(aP0, nIDDlgItem); /*0x5c9872*/
+  DlgItem = GetDlgItem((HWND)(aP0), nIDDlgItem); /*0x5c9872*/
   return SendMessageA( (HWND)(DlgItem), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)Buffer))); /*0x5c988b*/
 }
 } // namespace gamemd
@@ -4766,7 +4766,7 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
       break; /*0x5ce35c*/
     vtable0 = (int (**)(TagClass *, int))(*(void **)this->attachedTag); /*0x5ce364*/
     Char = ((WideString *)a2)->GetChar( v4); /*0x5ce366*/
-    v3 = vtable0[1](this->attachedTag, Char) + i; /*0x5ce378*/
+    v3 = vtable0[1]((gamemd::TagClass *)(this->attachedTag), Char) + i; /*0x5ce378*/
     ++v4; /*0x5ce37a*/
   }
   return v3; /*0x5ce38d*/
@@ -4820,10 +4820,10 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
       {
         vtable0 = (void (**)(TagClass *, int, int, void *, void *, int, int))(*(void **)this->attachedTag); /*0x5ce44b*/
         Char = ((WideString *)(const wchar_t **)&((unsigned int *)this)[0])->GetChar( v9); /*0x5ce45b*/
-        vtable0[4](this->attachedTag, a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
+        vtable0[4]((gamemd::TagClass *)(this->attachedTag), a2, Char, vtable1, vtable2, 2, 1); /*0x5ce461*/
         v10 = (int (**)(TagClass *, int))(*(void **)this->attachedTag); /*0x5ce46b*/
         v11 = ((WideString *)(const wchar_t **)&((unsigned int *)this)[0])->GetChar( v9); /*0x5ce46d*/
-        v12 = v10[1](this->attachedTag, v11); /*0x5ce476*/
+        v12 = v10[1]((gamemd::TagClass *)(this->attachedTag), v11); /*0x5ce476*/
         vtable2 = v18; /*0x5ce479*/
         vtable1 += v12; /*0x5ce47d*/
       }

@@ -282,7 +282,7 @@ v7 = (int *)(*((int (**)(AbstractClass *, int *, FootClass *))((unsigned int *)v
   LABEL_39:
   if ( (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))( (DriveLocomotionClass *)(v1)) ) /*0x4b078f*/
   {
-    if ( !(*(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
+    if ( !(dword_A8ED84 % 10) ) /*0x4b07a8*/
     {
       v18 = (gamemd::FootClass *)(((unsigned int *)v1)[0]); /*0x4b07ae*/
       if ( !*(unsigned short *)&v18->animation && *(unsigned int *)((*((int (**)(FootClass *))v18->vtable1 + 111))( (FootClass *)(v18)) + 236) == 2 ) /*0x4b07c8*/

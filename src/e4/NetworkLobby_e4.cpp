@@ -473,7 +473,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
           {
             g_MPCooperativeState = (int)((ObjectClass *)-1); /*0x5decfb*/
             g_MenuStateFlags = 0; /*0x5ded05*/
-            ((Dialog*)0)->RefreshDialogsGame((int)((Dialog*)0)); /*0x5ded0b*/
+            ((gamemd::Dialog*)0)->RefreshDialogsGame((int)((gamemd::Dialog*)0)); /*0x5ded0b*/
             *(unsigned int *)((&dword_A8DA90)[0] + 107) = 0; /*0x5ded15*/
             v21 = (*((int (**)(ObjectClass *))dword_A8B23C->vtable1 + 10))( (ObjectClass *)(dword_A8B23C)); /*0x5ded20*/
             ((SessionClass *)((int *)(&dword_A8DA90)[0]))->SetPlayerOption(v21); /*0x5ded2a*/
@@ -515,7 +515,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
     {
       if ( a2  ==  (void *)(1260) ) /*0x5deeff*/
       {
-        ((Dialog *)((Dialog *)hDlg))->EnumAndCleanup(); /*0x5def12*/
+        ((gamemd::Dialog*)((gamemd::Dialog*)hDlg))->EnumAndCleanup(); /*0x5def12*/
         return 0; /*0x5def12*/
       }
       return 0; /*0x5deeff*/
@@ -523,8 +523,8 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lPara
     ((WideString *)((void **)(lParam + 8)))->Assign_Alt(0); /*0x5def2d*/
     if ( *(unsigned int *)lParam && *(unsigned int *)(lParam + 4) != -1 ) /*0x5def40*/
     {
-      DlgCtrlID = (Dialog *)GetDlgCtrlID(*(HWND *)lParam); /*0x5def49*/
-      if ( ((Dialog *)(DlgCtrlID))->MapPlayerIDToIndex() != -1 ) /*0x5def55*/
+      DlgCtrlID = (gamemd::Dialog*)GetDlgCtrlID(*(HWND *)lParam); /*0x5def49*/
+      if ( ((gamemd::Dialog*)(DlgCtrlID))->MapPlayerIDToIndex() != -1 ) /*0x5def55*/
       {
         ComboBoxSelectedDefault = (GameClass *)GetComboBoxSelectedDefault(hDlg, (int)DlgCtrlID, *(unsigned int *)(lParam + 4)); /*0x5defa8*/
         DifficultyString = ((GameClass *)(ComboBoxSelectedDefault))->GetDifficultyString(); /*0x5defaf*/
@@ -563,7 +563,7 @@ LABEL_132:
         result = 0; /*0x5de6a7*/
         break; /*0x5de6b0*/
       case 0xFu: /*0x5de57f*/
-        ((Dialog*)(HWND)((Dialog *)hDlg))->DrawBackground(); /*0x5de634*/
+        ((gamemd::Dialog*)(HWND)((gamemd::Dialog*)hDlg))->DrawBackground(); /*0x5de634*/
         if ( g_UIControlState ) /*0x5de641*/
           ((Skirmish *)(g_UIControlState))->RenderPreview(hDlg); /*0x5de644*/
         if ( (uint8_t)((LoadScreen *)((LoadScreen *)&stru_AC4B30.__pad_EC[828]))->IsActive() ) /*0x5de64e*/
@@ -575,7 +575,7 @@ LABEL_132:
       case 0x14u: /*0x5de57f*/
         return 1;
       case 0x2Bu: /*0x5de57f*/
-        ((Dialog*)(char *)lParam)->Resize(); /*0x5de61b*/
+        ((gamemd::Dialog*)(char *)lParam)->Resize(); /*0x5de61b*/
         result = 1; /*0x5de623*/
         break; /*0x5de62f*/
       case 0x84u: /*0x5de57f*/
@@ -669,7 +669,7 @@ LABEL_48:
 LABEL_58:
         if ( !v11 || (v34 = 0, (*((uint8_t (**)(ObjectClass *))v11->vtable1 + 47))( (ObjectClass *)(v11))) ) /*0x5de93b*/
           v34 = 1; /*0x5de94a*/
-        ((Dialog *)v31)->IdleProcess( (ObjectClass *)hDlg); /*0x5de951*/
+        ((gamemd::Dialog*)v31)->IdleProcess( (ObjectClass *)hDlg); /*0x5de951*/
         ShowWindow(hDlg, 0); /*0x5de95f*/
         byte_8316D4 = 0; /*0x5de967*/
         if ( SkirmishDialog::Show((HWND)&g_hWnd, lParam, (int)v12) == 2 ) /*0x5de976*/
@@ -813,7 +813,7 @@ LABEL_75:
       goto LABEL_45;
     case 1344: /*0x5de7d6*/
       ReadChatMessage((wchar_t **)&v37, (HWND)lParam); /*0x5de7e3*/
-      ((DeleteAndZero*)&v37)->Alt(); /*0x5de7ec*/
+      ((gamemd::DeleteAndZero*)&v37)->Alt(); /*0x5de7ec*/
       if ( HIWORD(nIDDlgItem) != 1281 ) /*0x5de7fa*/
         return 0; /*0x5de7fa*/
       SendNetworkLobbyChatMessage(hDlg, (int)Math::InitDegToRad, 61680); /*0x5de80f*/
@@ -1118,7 +1118,7 @@ v25 = (*(int (**)(char *, int))(*(unsigned int *)&((unsigned char *)&HouseClass_
           }
 LABEL_79:
           Game::ResetReadyStates();
-          v26 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
+          v26 = (HWND)((gamemd::Dialog*)((void *)0xBD))->FindByHandle();
           EnablePlayerSlotControls(v26, 1);
           Debug::Log();
           v110 = 1;
@@ -1257,8 +1257,8 @@ SetupNetworkLobbyDialog( (char *)((VectorClass_flat *)&((unsigned char *)&HouseC
             aP1 = (SessionClass *)(0);
             if ( v53 )
               aP1 = (SessionClass *)atol(v53);
-            if ( !((Dialog*)((void *)0xBC))->FindByHandle() )
-              ((Dialog*)((void *)0xBD))->FindByHandle();
+            if ( !((gamemd::Dialog*)((void *)0xBC))->FindByHandle() )
+              ((gamemd::Dialog*)((void *)0xBD))->FindByHandle();
             PlayerSide = ((SessionClass *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[21864][4 * edi148 + 18396]))->GetPlayerSide();
             bool v114 = PlayerSide != (unsigned int)v48;
             if ( (SkirmishDialog *)PlayerSide != v48 )
@@ -1404,7 +1404,7 @@ v66 = (*(int (**)(char *, int))(*(unsigned int *)&((unsigned char *)&HouseClass_
           if ( !v62 )
             goto LABEL_222;
           Game::ResetReadyStates();
-          v68 = (HWND)((Dialog*)((void *)0xBD))->FindByHandle();
+          v68 = (HWND)((gamemd::Dialog*)((void *)0xBD))->FindByHandle();
           EnablePlayerSlotControls(v68, 1);
           if ( Dialog::GetCurrentType() != 107 )
           {
@@ -2051,7 +2051,7 @@ void NetworkLobby::SetupPlayers(wchar_t * Source)
     {
       ((WideString *)((wchar_t **)&v25))->Assign( (wchar_t *)(i)); /*0x5e8f93*/
       v12 = ((NetworkLobby *)&v25)->j_DeleteAndZero(); /*0x5e8fa5*/
-      ((DeleteAndZero*)&v25)->Alt(); /*0x5e8fa7*/
+      ((gamemd::DeleteAndZero*)&v25)->Alt(); /*0x5e8fa7*/
       if ( !v12 ) /*0x5e8fae*/
       {
         v12 = ((Player *)(((Player *)i)))->FindByName(); /*0x5e8fb7*/

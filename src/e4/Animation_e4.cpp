@@ -174,9 +174,9 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     v22 = *(unsigned int *)(v20 + 684); /*0x454c32*/
     if ( v21 != -1 ) /*0x454c3b*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v21 >= v22 ) /*0x454c47*/
+      if ( dword_A8ED84 - v21 >= v22 ) /*0x454c47*/
         goto LABEL_51; /*0x454c47*/
-      v22 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v21; /*0x454c49*/
+      v22 -= dword_A8ED84 - v21; /*0x454c49*/
     }
     if ( v22 ) /*0x454c4d*/
     {
@@ -234,10 +234,10 @@ int Animation::GetProgress()
       result = *((unsigned int *)this + 4); /*0x4a5314*/
       if ( v2 != -1 ) /*0x4a531a*/
       {
-        if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 >= result ) /*0x4a5326*/
+        if ( dword_A8ED84 - v2 >= result ) /*0x4a5326*/
           return 0; /*0x4a533d*/
         else
-          result -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x4a5328*/
+          result -= dword_A8ED84 - v2; /*0x4a5328*/
       }
     }
   }

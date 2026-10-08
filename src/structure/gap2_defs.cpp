@@ -148,7 +148,7 @@ int AircraftClass::Construct(int a1, void* a2) {
     }
     if ( !*v5 ) /*0x413e14*/
       WinAPI::Wrapper(-2147467261); /*0x413e1e*/
-    (*(void (**)(unsigned int, int))(*(unsigned int *)this->FootClass_field_680)(*v5, this); /*0x413e29*/
+    (*(void (__stdcall **)(unsigned int, int))(*(unsigned int *)a2 + 12))(a2, this); /*0x413e29*/
   }
 }
 }

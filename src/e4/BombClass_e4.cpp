@@ -68,10 +68,10 @@ void * BombClass::GetCurrentFrame()
   if ( (&this->audioController)[0] == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
   v2 = 2 /*0x438a4c*/
-     * ((*(unsigned int *)((char *)&stru_A8EB00 + 416) - (&this->audioController)[1])
+     * ((dword_A8ED84 - (&this->audioController)[1])
       / (*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048)
        / 6));
-  if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
+  if ( dword_A8ED84 % (2 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
     return (void *)(__0Iostream_init_QAE_XZ_1((Iostream_init *)v2)); /*0x438a59*/
@@ -106,7 +106,7 @@ int BombClass::Stat(int * a2)
   int BombClass_field_2C; // eax
   int v9; // eax
 
-  ((AbstractClass *)this)->ProcessPower(); /*0x438a99*/
+  ((gamemd::AbstractClass*)this)->ProcessPower(); /*0x438a99*/
   BombClass_field_28 = (int)(this->BombClass_field_28); /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
@@ -186,7 +186,7 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
   {
     if ( aP0 ) /*0x438b59*/
     {
-      ((AbstractClass *)aP0)->InitVtables( (int)&aP1); /*0x438b62*/
+      ((gamemd::AbstractClass*)aP0)->InitVtables( (int)&aP1); /*0x438b62*/
       aP0->vtable1 = &vt_BombClass; /*0x438b67*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b6d*/
       ((unsigned int *)aP0)[0] = (unsigned int)(&vt_BombClass); /*0x438b74*/

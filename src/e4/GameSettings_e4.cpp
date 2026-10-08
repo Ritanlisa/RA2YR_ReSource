@@ -149,8 +149,8 @@ int GameSettings::Read()
     Debug::Log("AllowHiRes is %s\n"); /*0x5fa96d G57c1: IDA 0x5fa96d push offset aAllowhiresIsS*/
     *(unsigned int *)((char *)&stru_A8EB00 + 611) = INIClass::ReadBool_Overwrite( /*0x5fa990*/
                            (int *)&DSurface_ViewBounds.__pad_FC[36],
-                           g_INI_Key_Video,
-                           aAllowmodetoggl,
+                           (unsigned char *)(g_INI_Key_Video),
+                           (unsigned char *)(aAllowmodetoggl),
                            *(unsigned char *)((char *)&stru_A8EB00 + 383));
     v10 = (GameSettings)INIClass::ReadBool_Overwrite((INIClass *)(/*0x5fa9a8*/
                           (int *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)(g_INI_Key_Video), (unsigned char *)(aAllowvramsideb), *(unsigned char *)(_ESI.v + 54));

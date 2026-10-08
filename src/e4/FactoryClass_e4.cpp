@@ -73,7 +73,7 @@ int FactoryClass::UpdateProduction()
       {
         ((unsigned int *)&this->production)[0] += (int)this->object; /*0x4c9b82*/
         LOBYTE(((unsigned int *)&this->production)[1]) = 1; /*0x4c9b89*/
-        *v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9b92*/
+        *v3 = dword_A8ED84; /*0x4c9b92*/
         (&this->queuedObjects)[0] = v11; /*0x4c9b94*/
         this->queuedCount = Speed; /*0x4c9b97*/
         v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4c9b9a*/
@@ -110,7 +110,7 @@ int FactoryClass::UpdateProduction()
         if ( ((unsigned int *)&this->production)[0] == 54 ) /*0x4c9c0a*/
         {
           this->isSuspended = 1; /*0x4c9c0c*/
-          v9 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9c0f*/
+          v9 = dword_A8ED84; /*0x4c9c0f*/
           this->queuedCapacity = 0; /*0x4c9c19*/
           ((unsigned int *)&this->production)[2] = v9; /*0x4c9c1c*/
           (&this->queuedObjects)[0] = v11; /*0x4c9c22*/
@@ -233,7 +233,7 @@ int FactoryClass::SetObject(int a2)
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
   this->owner = (unsigned int)(v3); /*0x4c9e30*/
-  (&this->production)[2] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c9e38*/
+  (&this->production)[2] = dword_A8ED84; /*0x4c9e38*/
   this->queuedCapacity = 0; /*0x4c9e3e*/
   (&this->queuedObjects)[0] = v5; /*0x4c9e41*/
   this->queuedCount = 0; /*0x4c9e46*/
@@ -414,7 +414,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log("SpecialItem\t= %d\n"); /*0x4ca4c3 G57c1: IDA 0x4ca4c3 push offset aSpecialitemD*/
   (*((void (**)(void **))((unsigned int *)this->owner)[0] + 4))( (void **)(&((unsigned int *)this->owner)[0])); /*0x4ca4d4*/
   Debug::Log("House->Fetch_ID()\t= %d\n"); /*0x4ca4dd G57c1: IDA 0x4ca4dd push offset aHouseFetchIdD*/
-  (*((void (__stdcall **)(void **))((unsigned int *)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
+  (*((void (__stdcall **)(void **))((void **)this)[0] + 4))(&((unsigned int *)this)[0]); /*0x4ca4ec*/
   Debug::Log("ID\t= %d\n"); /*0x4ca4f5 G57c1: IDA 0x4ca4f5 push offset aIdD_0*/
   v3 = ((AbstractClass *)this)->ProcessPower(); /*0x4ca504*/
   LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
@@ -586,7 +586,7 @@ v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C
   if ( byte_A8E9A0 ) /*0x4ca7e6*/
     BuildingClass::AbandonProduction((gamemd::BuildingClass *)((int)this)); /*0x4ca7ea*/
   v7 = (gamemd::FactoryClass *)(this); /*0x4ca7ff*/
-v4 = (*(int (**)(int *, FactoryClass **))(dword_B0F720+ 16))( /*0x4ca803*/ &dword_B0F720, (FactoryClass **)((int *)((int *)((int *)(&v7)))));
+v4 = (*(int (**)(int *, FactoryClass **))(dword_B0F720+ 16))( /*0x4ca803*/ &dword_B0F720, (FactoryClass **)((int *)((int *)((int *)((int *)(&v7))))));
 
 
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4ca813*/

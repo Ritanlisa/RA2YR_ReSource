@@ -146,7 +146,7 @@ struct ScenarioClass {
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     static ScenarioClass * * CopyStartPositions(void *a1);
-    TimerStruct * * Constructor(void *a1, void *a2, void *a3);
+    int Constructor();  // 0x6832C0 raw: int __thiscall ScenarioClass::Constructor(ScenarioClass*) (W20L4 T2 resign per raw fn_68.c:3392)
     static int Constructor(void *aP1);  // 0x6832C0 raw: int Constructor(ScenarioClass*) [overload: member ctor has arity 3]
     static char Construct(void *aP1, double a2);  // 0x686730 raw: char __usercall@<al>(ecx=this Source, st0=double)
     char ClearFlag();

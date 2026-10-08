@@ -57,7 +57,7 @@ int InfantryClass::ScanTarget(int * a1)
     && !(*((int (**)(FootClass *))a1->vtable1 + 114))( (FootClass *)(a1)) )
   {
     vtable0 = (void (**)(FootClass *, void *, int))a1->TechnoClass; /*0x4d4de8*/
-    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt( (gamemd::IUnknown *)((char *)a1), (gamemd::IUnknown *)(&v17),  (void *)((int)a1)); /*0x4d4df4*/
+    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt( (char *)((char *)a1), (unsigned int *)(&v17),  (int)((int)a1)); /*0x4d4df4*/
     v4 = ((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(PlacementCellsAlt)); /*0x4d4dff*/
     vtable0[288]((gamemd::FootClass *)a1, v4, 1); /*0x4d4e07*/
   }
@@ -145,7 +145,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
     else
     {
       *(unsigned int *)v13 = g_FootClass_Pool; /*0x4d5510*/
-      *(unsigned int *)v13 = *HouseClass::GetCurrentOption(((HouseClass *)dword_A83D4C), &v14); /*0x4d5529*/
+      *(unsigned int *)v13 = *HouseClass::GetCurrentOption(((HouseClass *)dword_A83D4C), (unsigned int *)(&v14)); /*0x4d5529*/
       if ( *(unsigned int *)v13 != g_FootClass_Pool ) /*0x4d552d*/
       {
         slaveManager = (FactoryClass *)((unsigned int *)a1)[0]; /*0x4d553d*/
@@ -258,7 +258,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   }
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)(a1), 1); /*0x517e75*/
   v17[0] = (int)a1; /*0x517e89*/
-v7 = (*(int (**)(char *, int *))(*(unsigned int *)&stru_A83D50.__pad_80[24] + 16))( /*0x517e8d*/ &stru_A83D50.__pad_80[24], (int *)(v17));
+v7 = (*(int (**)(char *, int *))(*(unsigned int *)&stru_A83D50.__pad_80[24] + 16))( /*0x517e8d*/ &stru_A83D50.__pad_80[24], (int *)((char *)(v17)));
 
 
   if ( v7 != -1 && v7 < *(int *)&stru_A83D50.__pad_80[40] ) /*0x517e9d*/

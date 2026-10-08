@@ -664,7 +664,7 @@ void * DisplayClass::Draw(int a2)
   }
   v3 = (int)((void *)(DSurface_ViewBounds.field_0)); /*0x4ae524*/
   v4 = (void *)((void *)(DSurface_ViewBounds.field_4)); /*0x4ae531*/
-v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_D0))( /*0x4ae538*/ dword_887640, (unsigned char *)((void *)((void *)(v18))));
+v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((void *)dword_887640)->q_D0))( /*0x4ae538*/ dword_887640, (unsigned char *)((void *)((void *)(v18))));
 
 
   v6 = v5[1]; /*0x4ae54a*/

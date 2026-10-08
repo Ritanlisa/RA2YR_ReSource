@@ -41,7 +41,7 @@
 #include "e4/classes/MPBattleClass_e4.hpp"  // G42.36 C2027 supply
 #include "e4/classes/FileClass_e4.hpp"  // G42.36 C2027 supply
 // [w14e3] fwd decl: nullsub_3 def at addr41_e4.cpp (void nullsub_3(AbstractClass * aP0)); raw 0x7259aa
-namespace gamemd { void nullsub_3(AbstractClass * aP0); }
+namespace gamemd { void nullsub_3(int aP0); }
 
 struct Type;  // fix_tu_missing_types
 
@@ -96,7 +96,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     v5[1].vtable1 = (void *)(*(int (**)(void *))(*(unsigned int *)&aP1->q0F0))( (void *)(aP1));  /*0x438f62*/
     v5[1].vtable0 = (unsigned int)(aP1); /*0x438f69*/
     v5[1].vtable2 = aP2; /*0x438f6c*/
-    v5[1].uniqueId = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x438f75*/
+    v5[1].uniqueId = dword_A8ED84; /*0x438f75*/
     v7 = v5[1].uniqueId + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4048); /*0x438f87*/
     v5[1].vtable3 = 0; /*0x438f89*/
     v5[1].abstractFlags = v7; /*0x438f8c*/
@@ -621,7 +621,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass *a1, int a
     for ( k = dword_8A0218 - 1; k >= 0; --k ) /*0x725981*/
       ((DiskLaserClass *)(*((DiskLaserClass **)dword_8A020C + k)))->PointerGotInvalid((int)aP0); /*0x72598d*/
     if ( v4 == 15 || v4 == 1 || v4 == 2 ) /*0x7259a2*/
-      nullsub_3(aP0); /*0x7259aa*/
+      nullsub_3((int)(aP0)); /*0x7259aa*/
     ((AbstractClass *)(aP0))->processRadarEvent(); /*0x7259b1*/
     if ( g_TacticalClass_Instance ) /*0x7259be*/
 (*(void (__thiscall **)(LPPERSISTSTREAM, AbstractClass *, int))(*(unsigned int *)&((TacticalMap *)g_TacticalClass_Instance)->q_A0))( /*0x7259c5*/ g_TacticalClass_Instance, (AbstractClass *)(aP0), 1);

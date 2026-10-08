@@ -670,7 +670,7 @@ namespace gamemd {
 IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2, int a1, int a3, int a4, int aP1)
 {
 
-  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b1793*/
+  WinsockInterfaceClass::Constructor((void *)this); /*0x7b1793*/
   if ( (a2 & 1) != 0 ) /*0x7b179d*/
     __3_YAXPAX_Z(this); /*0x7b17a0*/
   return (IPXInterfaceClass *)this; /*0x7b17aa*/

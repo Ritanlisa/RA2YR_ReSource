@@ -448,7 +448,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2, void *a2_
   }
   v40 = *(unsigned int *)(v4 + 688); /*0x46c2ad*/
   if ( /*0x46c2b9*/
-         ((INIClass*)((INIClass *)a2))->GetString(/*0x46c2b9*/ (uint8_t *)(v4 + 36), (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 1), &g_INI_DefaultBuffer, Destination, 128) )
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x46c2b9*/ (uint8_t *)(v4 + 36), (uint8_t *)"AirburstWeapon", &g_INI_DefaultBuffer, Destination, 128) )
   {
     v24 = InfantryTypeClass::Find( (char *)(Destination)); /*0x46c2c6*/
   }
@@ -624,7 +624,7 @@ v3 = (*(int (**)(int *, BulletTypeClass **))(dword_B0F670+ 16))( /*0x46c8ca*/ &d
     }
     while ( v4 < dword_A83C90 ); /*0x46c946*/
   }
-  ((ObjectTypeClass *)((int)this))->Destruct(); /*0x46c94a*/
+  ((gamemd::ObjectTypeClass*)((int)this))->Destruct(); /*0x46c94a*/
   if ( (a2 & 1) != 0 ) /*0x46c954*/
     __3_YAXPAX_Z(this); /*0x46c957*/
   return (void **)this; /*0x46c961*/
@@ -829,7 +829,7 @@ LABEL_81:
 LABEL_32:
   if ( (*(uint8_t (**)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))( (ShipLocomotionClass *)(v1)) ) /*0x69fe3c*/
   {
-    if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 8) /*0x69fe6e*/
+    if ( !(*(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 % 8) /*0x69fe6e*/
       && !*(unsigned char *)((*((int (**)(FootClass *))((FootClass *)((unsigned int *)v1))[0]->vtable1 + 33))(((unsigned int *)v1)[0]) + 3433) )
     {
       v12 = ((unsigned int *)v1)[0]; /*0x69fe76*/
@@ -898,7 +898,7 @@ unsigned int * BulletTypeClass::GetROF(unsigned int * a1, int * a2)
 } // namespace gamemd
 // 0x46C6A0
 namespace gamemd {
-int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
+int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
 {
 
   int result; // eax

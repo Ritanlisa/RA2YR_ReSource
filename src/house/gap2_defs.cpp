@@ -44,6 +44,22 @@ class INIClass;  // g57c5 W5 fwd
 class Math;  // g57c5 W5 fwd
 } // namespace gamemd
 // ---- g57c5 W5 end ----
+// ---- g57w20l3: TU-local static-form supplies (g57w11 r4 ObjectPtr/Map precedent; raw call-form truth) ----
+namespace gamemd {
+struct BuildingLoadQueue {  // fwd _fwd_e4.hpp:1067 completed TU-locally (raw 0x4f9cf1 call-form)
+    unsigned char BuildingLoadQueue_field_0x04;
+    wchar_t BuildingLoadQueue_field_0x08[64];
+    static void *Find(void *a1);  // raw 0x4f9cf1 BuildingLoadQueue::Find(&v)
+};
+struct ScriptAction {  // fwd _fwd_e4.hpp:12322 completed TU-locally (raw 0x4f9cd3 call-form)
+    static void GetWaypointCoords(void *a1, unsigned int a2);
+};
+struct MessageListClass {  // fwd _fwd_e4.hpp:10397 completed TU-locally (raw 0x4fa... 8-arg call-form)
+    static void *AddMessage(void *a1, int a2, int a3, void *a4, unsigned int a5, int a6, int a7, int a8);
+};
+const wchar_t *GetStringCSF(...);  // raw 0x734E60 4-arg call-form (def-aligned GetCSFString @core/globals.cpp)
+} // namespace gamemd
+// ---- g57w20l3 end ----
 // ---- g57b5 W3: TU-local 真形 vocab (declaration-only) 
 namespace gamemd {
 
@@ -1817,18 +1833,6 @@ int HouseClass::NotifyUnderAttack(void* a1) {
   }
 }
 }
-// 0x4f9950
-        return ((HouseClass *)this->planningPaths[3])->AddPower(v4); /*0x4587b1 g57w11 r4: 实例形 (hpp AddPower(int) 1 参)*/
-  return result; /*0x4587b6*/
-// 0x4f9a10
-            && ((HouseClass*)HouseClass_Player)->IsAllied(*(unsigned int *)(v8 + 272))
-            && (uint8_t)HouseClass::IsAlliedWith(
-                                  *(void **)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)],
-                                  HouseClass_Player)
-            && !*(unsigned char *)(*(unsigned int *)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)] + 501) )
-          {
-            ((BuildingPlacement *)v8)->RenderBuildingPlacementShadow(a2, a3, a4, a5, a6, 0); /*0x4317bf g57w11 r4: 实例形 (raw 0x430650 6 显式参; hpp 签名同步见 render_ext)*/
-          }
 // 0x4F9B70
 namespace gamemd { 
 int HouseClass::HandleAlliance(int a1, int a2) {
@@ -1852,12 +1856,12 @@ int HouseClass::HandleAlliance(int a1, int a2) {
   void *v21; // ecx
   BuildingLoadQueue v22; // [esp+8h] [ebp-A8h] BYREF
 
-  IDA_LOBYTE(result) = HouseClass::CanAlly((int)this, a1); /*0x4f9b82*/
+  IDA_LOBYTE(result) = this->CanAlly((HouseClass *)a1); /*0x4f9b82*/
   if ( (unsigned char)result )
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x4f9b9a*/
-    this->ptr_5788 |= 1 << *(unsigned int *)(a1 + 48); /*0x4f9bb3*/
-    HouseClass::UpdateFogVisibility((HouseClass *)this); /*0x4f9bb9*/
+    *(unsigned int *)&this->HouseClass_field_timer_D |= 1 << *(unsigned int *)(a1 + 48); /*0x4f9bb3*/
+    this->UpdateFogVisibility(); /*0x4f9bb9*/
     v6 = this->scoutNodesCount; /*0x4f9bbe*/
     v7 = 0; /*0x4f9bc4*/
     if ( v6 > 0 ) /*0x4f9bc8*/
@@ -1888,7 +1892,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
       && !*(unsigned char *)(*(unsigned int *)(a1 + 52) + 422)
       && *(unsigned int *)&unk_A8B238 )
     {
-      HouseClass::CanDetect(v3); /*0x4f9c7a*/
+      this->CanDetect(); /*0x4f9c7a*/
     }
     for ( i = 0; i < *(int *)&stru_87F5F0.__pad_58[320]; ++i )
     {
@@ -1897,7 +1901,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
       {
         if ( AbstractClass::IsTechnoType(*(AbstractClass **)(*(unsigned int *)&stru_87F5F0.__pad_58[308] + 4 * i)) )
         {
-          if ( !v11->inLimbo && (*(int (**)(int))(v11->attachedBomb)(v11) == *(&this->u32_42) )
+          if ( !v11->inLimbo && (*(int (**)(int))(v11->attachedBomb))(v11) == *(&this->u32_42) )
           {
             ScriptAction::GetWaypointCoords((ScriptAction *)&v22, v11->u32_2B4); /*0x4f9cd3*/
             if ( IDA_LOBYTE(v22.BuildingLoadQueue_field_0x04) )
@@ -1907,18 +1911,18 @@ int HouseClass::HandleAlliance(int a1, int a2) {
                 v12 = BuildingLoadQueue::Find(&v22); /*0x4f9cf1*/
                 if ( v12 )
                 {
-                  v13 = (int *)(*(int (**)(void *))(v12->ambientSoundController)(v12); /*0x4f9cfe*/
+                  v13 = (int *)(*(int (**)(void *))(v12->ambientSoundController))(v12); /*0x4f9cfe*/
                   if ( v13 )
                   {
-                    if ( v13 == this
+                    if ( v13 == (int *)this
                       || ((v14 = v13[12], v14 != *(&this->u32_42))
                         ? (v14 == -1
                          ? (v15 = 0)
-                         : (v15 = ((1 << v14) & this->ptr_5788) != 0))
+                         : (v15 = ((1 << v14) & *(unsigned int *)&this->HouseClass_field_timer_D) != 0))
                         : (v15 = 1),
                           v15) )
                     {
-                      (*(void (**)(int, unsigned int))(v11->u32_3C8)(v11, 0); /*0x4f9d3a*/
+                      (*(void (**)(int, unsigned int))(v11->u32_3C8))(v11, 0); /*0x4f9d3a*/
                     }
                   }
                 }
@@ -1928,9 +1932,9 @@ int HouseClass::HandleAlliance(int a1, int a2) {
         }
       }
     }
-    v16 = this->u32_1EC; /*0x4f9d54*/
+    v16 = this->currentPlayer; /*0x4f9d54*/
     if ( !*(unsigned int *)&unk_A8B238 ) /*0x4f9d5c*/
-      v16 = v16 || this->u32_1ED; /*0x4f9d70*/
+      v16 = v16 || this->playerControl; /*0x4f9d70*/
     if ( !v16 /*0x4f9e0a*/
       || !*(unsigned int *)&unk_A8B238
       || *(unsigned char *)(*(unsigned int *)(a1 + 52) + 422)
@@ -1996,7 +2000,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
     }
     else
     {
-      if ( this->u32_1EC || this->u32_1ED ) /*0x4f9edc*/
+      if ( this->currentPlayer || this->playerControl ) /*0x4f9edc*/
         goto LABEL_71; /*0x4f9ee4*/
       if ( !*(unsigned char *)(a1 + 492) && !*(unsigned char *)(a1 + 493) ) /*0x4f9f1e*/
         goto LABEL_79; /*0x4f9f1e*/
@@ -2059,8 +2063,8 @@ int HouseClass::SetAlliance(int a1, int a2) {
     String = GetStringCSF(aTxtAtWar, 0, g_Str_File_House_CPP, 3480); /*0x4fa12b*/
     swprintf(Buffer, (const size_t)String, (const wchar_t *const)(&this->u32_8CDC4), a1 + 90154); /*0x4fa136*/
     v9 = Math::RoundToInt(*((double *)g_RulesClass_Instance + 664) * 900.0); /*0x4fa152*/
-    MessageListClass::AddMessage( /*0x4fa175*/
-      g_GameNetworkObject,
+    MessageListClass::AddMessage( (void *)(/*0x4fa175*/
+      g_GameNetworkObject),
       0,
       0,
       Buffer,

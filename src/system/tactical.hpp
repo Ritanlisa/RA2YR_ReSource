@@ -117,7 +117,7 @@ int DrawTerrain(int *a2, unsigned int *a3, int a4);  // 0x006d7c00 g57w12-r raw-
     void DrawCellOverlay(int cx, int cy, int flags);  // 0x547230
     void DrawBuildings(const RectangleStruct& viewRect);  // 0x4D1890
     void DrawBuildingsInView(const RectangleStruct& viewRect);  // 0x6D6D10
-    void DrawBuildingPlacement(BuildingClass* building, int state); // 0x47F510
+    void DrawBuildingPlacement(BuildingClass* building, int *state); // 0x47F510
     void DrawPlacementCircles(ObjectClass* obj, int range, int color);  // 0x6DBE20
 
     // Draw queue

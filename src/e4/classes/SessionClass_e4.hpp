@@ -124,6 +124,7 @@ struct SessionClass {
     Coord * * BuildLaunchString();
     ObjectClass * * ParseGameInfo(char * Source, void * aP2, void * aP3, void * aP4, const char * a5, void * aP6, int a8);
     SessionClass();
+    static void * Constructor(void *aP1);  // 0x6970A0 raw: char *__thiscall SessionClass::SessionClass(SessionClass*) -- site form (W20L4 T2)
     TypeList_flat * QueryInterface(char a2);
     VectorClass_flat * validateGame(char a2);
     char AddRef(int a2);
@@ -179,7 +180,7 @@ struct SessionClass {
     int ddtor(int a1, unsigned int * a2);
     SessionClass * DtorWithDelete(void ** Block, char a2);
     SessionClass * * Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5);
-    ObjectClass * * ParseGameInfo(wchar_t * Destination, char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8);
+    wchar_t * ParseGameInfo(wchar_t * Destination, char * Source, wchar_t * aP2, char * aP3, char aP4, const char * a5, int aP6, int a8);  // 0x69A980 raw: wchar_t *__thiscall (this, char *Source, wchar_t *a3, char *a4, char a5, const char *a6, int a7, int a8) (W20L4 T2 resign)
     static unsigned int GetPlayerColorScheme(ObjectClass * aP0);
     TypeList_flat * QueryInterface(unsigned int * Block, char a2);
     VectorClass_flat * validateGame(unsigned int * Block, char a2);

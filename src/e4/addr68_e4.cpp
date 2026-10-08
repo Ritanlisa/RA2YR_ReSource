@@ -612,7 +612,7 @@ ScenarioClass * * Mouse_Update()
     && (*(int (*)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) )
   {
     do /*0x6842c0*/
-      (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))((void *)(dword_887640));  /*0x6842b5*/
+      (*(void (**)(void *))(*(unsigned int *)&((void *)dword_887640)->q_40))((void *)(dword_887640));  /*0x6842b5*/
     while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))((void *)(dword_887640)) );  /*0x6842c0*/
   }
   IDA_BYTE2(((AbstractClass *)dword_A8B230)[381].vtable3) = 0; /*0x6842cc*/
@@ -2690,7 +2690,7 @@ int sub_68C330()
   stru_B054D0 = (int)&DynamicVectorClass_ColorScheme___vftable; /*0x68c34d*/
   dword_B054E4 = 10; /*0x68c357*/
   dword_B054E0 = 0; /*0x68c361*/
-  return atexit(sub_68C370); /*0x68c36c*/
+  return atexit((void (__cdecl *)(void))(sub_68C370)); /*0x68c36c*/
 }
 } // namespace gamemd
 
@@ -2723,7 +2723,7 @@ int FindBuildingAnimByName(AbstractClass * aP0, int a2)
   v5 = (unsigned int *)(dword_B054D4); /*0x68ca62*/
   while ( 1 ) /*0x68ca7a*/
   {
-    v6 = _strcmpi(aP0, *(const void **)(v5[v2] + 772)) == 0; /*0x68ca7a*/
+    v6 = _strcmpi((const char *)(aP0), *(const void **)(v5[v2] + 772)) == 0; /*0x68ca7a*/
     v5 = (unsigned int *)(dword_B054D4); /*0x68ca7c*/
     if ( v6 && *(unsigned int *)(*((unsigned int *)dword_B054D4 + v2) + 784) == a2 ) /*0x68ca8c*/
       break; /*0x68ca8c*/

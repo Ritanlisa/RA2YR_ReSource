@@ -418,10 +418,10 @@ int Warhead::ProcessDamageArea()
 
   v28 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b5a3*/
   v29 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b5a7*/
-  *((unsigned int *)this + 10) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5ab*/
+  *((unsigned int *)this + 10) = dword_A8ED84; /*0x65b5ab*/
   *((unsigned int *)this + 11) = v32; /*0x65b5b3*/
   *((unsigned int *)this + 12) = v28; /*0x65b5b9*/
-  *((unsigned int *)this + 13) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5c2*/
+  *((unsigned int *)this + 13) = dword_A8ED84; /*0x65b5c2*/
   *((unsigned int *)this + 14) = v32; /*0x65b5c8*/
   *((unsigned int *)this + 15) = v29; /*0x65b5cb*/
   v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/

@@ -159,7 +159,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
                             (int *)&DSurface_ViewBounds.__pad_FC[228]), (uint8_t *)(v4 + 504), (unsigned char *)(aCustomrotor), v16);
   v19 = *(unsigned int *)(v4 + 3584); /*0x41cd15*/
   if ( ((INIClass*)/*0x41cd19*/
-         (INIClass *)&DSurface_ViewBounds.__pad_FC[228])->GetString(/*0x41cd19*/ (uint8_t *)(v4 + 504), aTrailer, &g_INI_DefaultBuffer, Destination, 128) )
+         (INIClass *)&DSurface_ViewBounds.__pad_FC[228])->GetString(/*0x41cd19*/ (uint8_t *)(v4 + 504), (void *)(aTrailer), &g_INI_DefaultBuffer, (void *)(Destination), 128) )
   {
     v10 = (int)(((AnimTypeClass *)(Destination))->FindOrCreate());
   }

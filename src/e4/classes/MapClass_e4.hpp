@@ -178,7 +178,7 @@ struct MapClass {
     unsigned int * AllocArrays();
     unsigned int * BuildSubzones();
     unsigned int * FastCellLookup(short * a2, int a3, char a4);
-    unsigned int * FindPlacementCellsAlt(char *aP1, unsigned int *a2, int a3);  // G57w10-S raw 0x00703590 IUnknown 占位清除
+    static unsigned int * FindPlacementCellsAlt(char *aP1, unsigned int *a2, int a3);  // G57w10-S raw 0x00703590 IUnknown 占位清除
     unsigned int * InitAllCells();
     unsigned int * SpiralSearch(void *a1);
     unsigned int * allocateMapBuffers();

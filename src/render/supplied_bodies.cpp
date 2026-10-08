@@ -2936,7 +2936,7 @@ int VoxelTypeClass::ReadINI(double a2)
           if ( *((unsigned int *)this + 361) /*0x73eb49*/
             && v10
             && (*(int (__thiscall **)(Class_7F5C70 *, int, unsigned int, unsigned int))(*(unsigned int *)this + 1320))(
-                 this,
+                 (gamemd::Class_7F5C70 *)(this),
                  v9 + 1000,
                  0,
                  0) )
@@ -2956,7 +2956,7 @@ int VoxelTypeClass::ReadINI(double a2)
             if ( !v29 ) /*0x73edc2*/
               goto LABEL_75; /*0x73edc2*/
             v52 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v29 + 72))(v29, v73); /*0x73edd7*/
-            v53 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))(this, v72); /*0x73ede0*/
+            v53 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))((gamemd::Class_7F5C70 *)(this), v72); /*0x73ede0*/
             v54 = *v53 - *v52; /*0x73ede7*/
             v55 = v53[1]; /*0x73ede9*/
             v56 = v53[2]; /*0x73edec*/
@@ -2973,7 +2973,7 @@ int VoxelTypeClass::ReadINI(double a2)
             if ( !v29 ) /*0x73eb90*/
               goto LABEL_75; /*0x73eb90*/
             v31 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v29 + 72))(v29, v72); /*0x73eba5*/
-            v32 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))(this, v73); /*0x73ebae*/
+            v32 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))((gamemd::Class_7F5C70 *)(this), v73); /*0x73ebae*/
             v33 = *v32 - *v31; /*0x73ebb5*/
             v34 = v32[1]; /*0x73ebb7*/
             v35 = v32[2]; /*0x73ebba*/
@@ -3002,7 +3002,7 @@ int VoxelTypeClass::ReadINI(double a2)
           if ( v37 ) /*0x73ec58*/
           {
             v39 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v37 + 72))(v37, v73); /*0x73ec6d*/
-            v40 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))(this, v72); /*0x73ec76*/
+            v40 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned char *))(*(unsigned int *)this + 72))((gamemd::Class_7F5C70 *)(this), v72); /*0x73ec76*/
             v41 = *v40 - *v39; /*0x73ec7d*/
             v42 = v40[1]; /*0x73ec7f*/
             v43 = v40[2]; /*0x73ec82*/
@@ -3054,7 +3054,7 @@ int VoxelTypeClass::ReadINI(double a2)
               {
                 v50 = *(unsigned int *)this; /*0x73ed9e*/
                 v51 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v66.__pad_0); /*0x73edad*/
-                (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v50 + 1152))(this, v51, 1); /*0x73edb5*/
+                (*(void (__thiscall **)(Class_7F5C70 *, void *, int))((gamemd::Class_7F5C70 *)(v50 + 1152)))(this, v51, 1); /*0x73edb5*/
               }
             }
           }
@@ -3071,7 +3071,7 @@ int VoxelTypeClass::ReadINI(double a2)
                    0,
                    1) )
             {
-              (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 20, 0); /*0x73eed9*/
+              (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))((gamemd::Class_7F5C70 *)(this), (int *)(20), 0); /*0x73eed9*/
             }
             else
             {
@@ -3094,7 +3094,7 @@ int VoxelTypeClass::ReadINI(double a2)
                                                &v66.ComPtr_field_0x1C,
                                                (int)v59);
               v63 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x73ef5a*/
-              (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v61 + 1152))(this, v63, 1); /*0x73ef62*/
+              (*(void (__thiscall **)(Class_7F5C70 *, void *, int))((gamemd::Class_7F5C70 *)(v61 + 1152)))(this, v63, 1); /*0x73ef62*/
             }
           }
           (*(void (__thiscall **)(Class_7F5C70 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 5, 0); /*0x73ef71*/

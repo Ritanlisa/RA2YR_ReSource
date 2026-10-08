@@ -193,7 +193,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
       {
         BitShift_Red = 0; /*0x56109f*/
         v26 = 0; /*0x5610aa*/
-(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x5610b5*/ dword_887640, (int *)((void *)((void *)((void *)(&BitShift_Red)))), v14, 0);
+(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x5610b5*/ dword_887640, (int *)((void *)((void *)((void *)((void *)(&BitShift_Red))))), v14, 0);
 
 
 
@@ -255,7 +255,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   {
     BitShift_Red = 0; /*0x560d88*/
     v26 = 0; /*0x560d94*/
-(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x560d9f*/ dword_887640, (int *)((void *)((void *)((void *)(&BitShift_Red)))), v5, 0);
+(*(void (**)(void *, int *, int, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_10))( /*0x560d9f*/ dword_887640, (int *)((void *)((void *)((void *)((void *)(&BitShift_Red))))), v5, 0);
 
 
 

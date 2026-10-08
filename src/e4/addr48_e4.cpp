@@ -103,7 +103,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 
   if ( !((Control *)((ControlClass *)this))->DispatchClick(a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x488110*/
+  (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q030)))(dword_887640);  /*0x488110*/
   uniqueId = ((unsigned int *)this)[0]; /*0x488116*/
   abstractFlags = ((unsigned int *)this)[0]; /*0x488119*/
   vtable3 = (void *)(((unsigned int *)this)[0]); /*0x48811c*/
@@ -145,7 +145,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
 
 
   }
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x4881f5*/
+  (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q040)))(dword_887640);  /*0x4881f5*/
   return (gamemd::ConvertClass **)(1); /*0x4881fd*/
 
 }
@@ -291,7 +291,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   if ( Cell::GetGroundHeight( (unsigned int *)((IUnknown *)&v143)) < *(unsigned int *)&((unsigned char *)&aP0->__pad_0)[8] )
   {
     int v11 = Math::RoundToInt(*(float *)&aP3[1].spawnStatus);
-    AircraftTrackerClass::FillCurrentVector((int)&(&stru_87C374)[46356], aP1a, v11);
+    AircraftTrackerClass::FillCurrentVector((int)&(&stru_87C374)[46356], (int)aP1a, v11);
     int v12 = ((VectorClass_flat *)(int)&((unsigned int *)(stru_87C374))[46356])->RemoveObjectById();
     if ( v12 )
     {
@@ -451,8 +451,7 @@ LABEL_58:
         IDA_HIDWORD(v132) = *(unsigned int *)&((gamemd::BuildingClass*)v32)->vtable2;
         v133 = *(float *)&v34;
   double v35; // st7
-        v35 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
-                                            (double)(int)v34 * (double)(int)v34
+        v35 = Math::Sqrt((double)((double)(int)v34 * (double)(int)v34
                                           + (double)IDA_SHIDWORD(v132) * (double)IDA_SHIDWORD(v132)
                                           + (double)(int)v132 * (double)(int)v132));
         v36 = Math::RoundToInt(v35) - 2 * *(unsigned int *)&((unsigned int *)(stru_89E138))[1848];
@@ -629,8 +628,7 @@ LABEL_82:
                     *((float *)&v130 + 1) = (float)((char *)v62 - (char *)v129);
                     float v131 = (float)v65;
   double v66; // st7
-                    v66 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
-                                                        *(float *)&v130 * *(float *)&v130
+                    v66 = Math::Sqrt((double)(*(float *)&v130 * *(float *)&v130
                                                       + *((float *)&v130 + 1) * *((float *)&v130 + 1)
                                                       + v131 * v131));
                     if ( v66 == 0.0 )
@@ -1117,7 +1115,7 @@ bool sub_48BB60(int a1)
   }
   if ( !byte_87F68C ) /*0x48bb91*/
   {
-    qsort(dword_87F680, dword_87F684, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x48bba1*/
+    qsort((void *)(dword_87F680), dword_87F684, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x48bba1*/
     v2 = dword_87F684; /*0x48bba6*/
     dword_87F690 = 0; /*0x48bbaf*/
     byte_87F68C = 1; /*0x48bbb9*/
@@ -1202,7 +1200,7 @@ AbstractClass * * Main_Game_Frame()
   }
   LABEL_9:
   ((ScenarioClass *)v10)->CleanupTemporary(); /*0x48c918*/
-  (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))(dword_887640);  /*0x48c925*/
+  (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50)))(dword_887640);  /*0x48c925*/
   while ( (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_A0))(dword_887640) ) /*0x48c930*/
     (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_40))(dword_887640);  /*0x48c93f*/
   v3 = *(unsigned int *)((char *)&stru_A8EB00 + 444); /*0x48c951*/
@@ -1325,7 +1323,7 @@ AbstractClass * * Main_Game_Frame()
     }
   }
   LABEL_45:
-  UpdateWindow(g_hWnd); /*0x48cc37*/
+  UpdateWindow((HWND)(g_hWnd)); /*0x48cc37*/
   if ( IDA_BYTE2(dword_A8B230[381].vtable3) ) /*0x48cc4b*/
     (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_30))(dword_887640);  /*0x48cc5d*/
   (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q_60))(dword_887640);  /*0x48cc68*/

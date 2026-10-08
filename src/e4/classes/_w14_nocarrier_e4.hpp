@@ -11,7 +11,7 @@ namespace gamemd {
 class AircraftTrackerClass {
 public:
     char q000[4];  /* unsigned char */  // 0x0
-    static int FillCurrentVector(void *aP1, int a2, int a3);  // raw 0x412b40
+    static int FillCurrentVector(int aP1, int a2, int a3);  // raw 0x412b40
 };
 
 // === AnimSequence  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===
@@ -456,7 +456,7 @@ public:
 class ProductionClass {
 public:
     char q000[4];  /* unsigned char */  // 0x0
-    static int StartTimer(void *aP1, char a2);  // raw 0x4c9ea0
+    static int StartTimer(int aP1, char a2);  // raw 0x4c9ea0
 };
 
 // === SHPClass  size=4  extracted from csp_canon/classes.hpp (W14-E4) ===

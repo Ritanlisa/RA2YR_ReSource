@@ -1257,7 +1257,7 @@ char CoopCampaignVector::Release(int a2, unsigned int *a3)
     }
     else
     {
-      (*(void (__thiscall **)(_VectorClass_PAVCoopCampaignClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5c56d2*/
+      (*(void (__thiscall **)(void *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5c56d2*/
       return 1; /*0x5c56d8*/
     }
 }

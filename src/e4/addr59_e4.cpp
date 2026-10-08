@@ -615,7 +615,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)RA2_OPNEW(0x140u); /*0x595d19*/
-  FirstFileA = FindFirstFileA((LPCSTR)(unsigned int *)((char *)&stru_82BA00 + 2), i); /*0x595d27*/
+  FirstFileA = FindFirstFileA((LPCSTR)"rmcache\\*.mmp", i); /*0x595d27*/
   if ( FirstFileA != (HANDLE)-1 ) /*0x595d2c*/
   {
     if ( j < v15.Capacity /*0x595d5f*/
@@ -794,10 +794,10 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     dword_ABDBC0 = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset( (void *)(Destination), 0, sizeof(Destination)); /*0x596033*/
-  strncpy( (char *)(Destination), (const char *)(unsigned int *)((char *)&stru_82BA00 + 13), 0x80u); /*0x596047*/
+  strncpy( (char *)(Destination), (const char *)"rmcache\\", 0x80u); /*0x596047*/
   strncat(Destination, v5, 0x80u); /*0x59605a*/
   RA2_OPDEL(v5); /*0x596060*/
-  strncat(Destination, (const char *)(unsigned int *)((char *)&stru_82BA00 + 11), 0x80u); /*0x596077*/
+  strncat(Destination, (const char *)".mmp", 0x80u); /*0x596077*/
   ((CCFileClass*)&v18)->Construct( (char *)(Destination)); /*0x59608b*/
   if ( (uint8_t)((CCFileClass *)(&v18))->Open((int)(0)) ) /*0x596097*/
   {
@@ -833,7 +833,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     g_MissionQueueFrame.briefing[451] = 0; /*0x596149*/
   }
-  *(unsigned int *)((char *)&stru_82ADA8 + 31) = (unsigned int)(a2); /*0x596154*/
+  *(unsigned int *)&off_82AF14 = (unsigned int)(a2); /*0x596154*/
   g_MissionQueueFrame.briefing[361] = (int)a2; /*0x59615d*/
   if ( g_MissionQueueFrame.briefing[385] == -1 ) /*0x596163*/
     g_MissionQueueFrame.briefing[385] = Random::Range((Random *)(&Randomizer_Global), 0, 0xFFFF); /*0x596175*/
@@ -850,7 +850,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     v11 = (int *)(0); /*0x5961d9*/
   g_MissionQueueFrame.briefing[450] = (int)v11; /*0x5961e7*/
   qmemcpy( (void *)(v11), (const void *)(&g_MissionQueueFrame.briefing[356]), 0x178u); /*0x5961ec*/
-  ((ScenarioClass *)(char *)dword_A8B230)->SetFileName( (char *)(unsigned int *)((char *)&stru_82BA00 + 8)); /*0x5961f9*/
+  ((ScenarioClass *)(char *)dword_A8B230)->SetFileName( (char *)"RandomMap"); /*0x5961f9*/
   IDA_LOBYTE(v12) = 0; /*0x5961fe*/
   ScreenSaver::Process(v12, v15); /*0x596200*/
   v13 = (ComPtr *)g_MissionQueueFrame.briefing[451]; /*0x596205*/
@@ -860,8 +860,8 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     {
       ((RawFileClass*)((RawFileClass *)&v17.q010))->Construct((int)ExistingFileName); /*0x596222*/
       CompressScreenshot( (int *)(&v17.q010), *(int **)g_MissionQueueFrame.briefing[451], (void *)(&FileSystem_TEMPERAT_PAL)); /*0x596237*/
-      if ( FindFirstFileA((LPCSTR)((char *)&stru_82BA00 + 6), &FindFileData) == (HANDLE)-1 ) /*0x596252*/
-        CreateDirectoryA((LPCSTR)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/
+      if ( FindFirstFileA((LPCSTR)"rmcache", &FindFileData) == (HANDLE)-1 ) /*0x596252*/
+        CreateDirectoryA((LPCSTR)"rmcache", 0); /*0x59625a*/
       CopyFileA((LPCSTR)(ExistingFileName), Destination, 0); /*0x59626e*/
       CleanupRandomMapCache(v16); /*0x596274*/
       ((RawFileClass *)((RawFileClass *)&v17.ComPtr_field_0x10))->Dtor(); /*0x59627d*/

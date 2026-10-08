@@ -131,7 +131,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   }
   if ( Destination != *(void **)this ) /*0x5449b6*/
   {
-    qmemcpy( ((unsigned int *)this)[0], (const void *)( (void *)(Destination) ), 0x30u); /*0x5449c1*/
+    qmemcpy( (void *)(((unsigned int *)this)[0]), (const void *)( (void *)(Destination) ), 0x30u); /*0x5449c1*/
     ((unsigned int *)this)[48] = v11; /*0x5449c3*/
   }
   *((unsigned char *)this + 757) = 0; /*0x5449c5*/

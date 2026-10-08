@@ -93,9 +93,9 @@ DynamicVector * TEventClass::Execute(int a2, int a3, int a4, int *a5, int a6, in
       v28 = a5[2]; /*0x71ec39*/
       if ( *a5 == -1 ) /*0x71ec3f*/
         goto LABEL_44; /*0x71ec3f*/
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v27 < v28 ) /*0x71ec4b*/
+      if ( dword_A8ED84 - v27 < v28 ) /*0x71ec4b*/
       {
-        v28 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v27; /*0x71ec4d*/
+        v28 -= dword_A8ED84 - v27; /*0x71ec4d*/
 LABEL_44:
         if ( v28 ) /*0x71ec51*/
           goto LABEL_139; /*0x71ec51*/
@@ -109,9 +109,9 @@ LABEL_44:
       abstractFlags = ((unsigned int *)(dword_A8B230))[127].abstractFlags; /*0x71ec02*/
       if ( vtable3 == (void *)-1 ) /*0x71ec0b*/
         goto LABEL_39; /*0x71ec0b*/
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable3 >= abstractFlags ) /*0x71ec17*/
+      if ( dword_A8ED84 - (int)vtable3 >= abstractFlags ) /*0x71ec17*/
         goto LABEL_153; /*0x71ec17*/
-      abstractFlags -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x71ec1d*/
+      abstractFlags -= dword_A8ED84 - (unsigned int)vtable3; /*0x71ec1d*/
 LABEL_39:
       if ( abstractFlags ) /*0x71ec21*/
         goto LABEL_139; /*0x71ec21*/
@@ -139,7 +139,7 @@ LABEL_39:
       LOBYTE(v18) = (int)((unsigned int *)(dword_A8B230))[378].vtable1 >= this->TEventClass_field_34; /*0x71eb1f*/
       return (DynamicVector *)v18; /*0x71eb25*/
     case 47: /*0x71e964*/
-      LOBYTE(v18) = this->TEventClass_field_34 <= *(unsigned int *)((char *)&stru_A8EB00 + 416) / 15; /*0x71eb49*/
+      LOBYTE(v18) = this->TEventClass_field_34 <= dword_A8ED84 / 15; /*0x71eb49*/
       return (DynamicVector *)v18; /*0x71eb50*/
     case 60: /*0x71e964*/
       v10 = -1; /*0x71e971*/

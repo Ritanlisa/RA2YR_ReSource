@@ -519,7 +519,7 @@ int Screen::TransitionLoop(int a2)
     v17[3] = 400; /*0x6901e3*/
     ((Rect *)(&v19))->Set(v3, v4, 640, 400); /*0x6901eb*/
     if ( dword_887640) /*0x6901f8*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0))( /*0x690205*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
+(*(void (**)(void *, ObjectClass *, unsigned int))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q0F0)))( /*0x690205*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 
@@ -532,7 +532,7 @@ int Screen::TransitionLoop(int a2)
 
 
     if ( dword_887640) /*0x690230*/
-(*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)&((MouseClass *)dword_887640)->q_100))( /*0x69023d*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
+(*(void (**)(void *, ObjectClass *, unsigned int))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q_100)))( /*0x69023d*/ dword_887640, (ObjectClass *)(g_DSurface_Hidden), 0);
 
 
 

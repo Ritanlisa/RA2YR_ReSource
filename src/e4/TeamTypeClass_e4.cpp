@@ -60,7 +60,7 @@ int TeamTypeClass::Construct()
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4c98b7*/
   this->TeamTypeClass_field_24 = 0; /*0x4c98be*/
   this->TeamTypeClass_field_28 = 0; /*0x4c98c1*/
-  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c98c4*/
+  v2 = dword_A8ED84; /*0x4c98c4*/
   this->TeamTypeClass_field_34 = 0; /*0x4c98c9*/
   this->TeamTypeClass_field_2C = v2; /*0x4c98cc*/
   this->TeamTypeClass_field_38 = 0; /*0x4c98d4*/
@@ -97,7 +97,7 @@ int TeamTypeClass::Construct()
     v3 = (*(unsigned int *)&stru_A83D50.__pad_C8[40])++; /*0x4c997a*/
     *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_C8[28] + 4 * v3) = (unsigned int)this;
   }
-  v4 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c998c*/
+  v4 = dword_A8ED84; /*0x4c998c*/
   this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
   this->TeamTypeClass_field_2C = v4; /*0x4c9999*/
   this->TeamTypeClass_field_30 = v7; /*0x4c999f*/

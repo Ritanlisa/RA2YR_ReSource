@@ -399,12 +399,12 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   v7.ambientSoundController[2] = 0; /*0x76522d*/
   ((unsigned int *)&v7)[0] = (unsigned int)(&vt_INIClass); /*0x765231*/
   ((BufferIOFile *)((BufferIOFile *)&v7.ambientSoundController[3]))->Init(); /*0x765239*/
-  ((CCFileClass *)((CDFileClass *)&v7.ambientSoundController[3]))->Reopen((char *)(g_Str_File_WDTHist_ini), (CHAR *)1); /*0x765249*/
+  ((CCFileClass *)((CDFileClass *)&v7.ambientSoundController[3]))->Reopen((char *)(g_Str_File_WDTHist_ini), (int)1); /*0x765249*/
   if ( !(uint8_t)((File *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->IsReady(0) ) /*0x765253*/
   {
     ((FileClass *)((RawFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765260*/
     ((CCFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765269*/
-    ((CCFileClass *)((CDFileClass *)&v7.ambientSoundController[3]))->Reopen((char *)(g_Str_File_WDTHist_ini), (CHAR *)1); /*0x765279*/
+    ((CCFileClass *)((CDFileClass *)&v7.ambientSoundController[3]))->Reopen((char *)(g_Str_File_WDTHist_ini), (int)1); /*0x765279*/
   }
   ((FileStraw *)((FileStraw *)((char *)&v7)))->Open((int)&v7.ambientSoundController[3], 0); /*0x765288*/
   ((CCFileClass *)((BufferIOFileClass *)&v7.ambientSoundController[3]))->Close(); /*0x765291*/
@@ -424,7 +424,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
     j_DeleteAndZero( (void *)(&v7)); /*0x765314*/
   }
   ((BufferIOFile *)((BufferIOFile *)&v7.location[1]))->Init(); /*0x765326*/
-  ((CCFileClass *)((CDFileClass *)&v7.location[1]))->Reopen( (char *)(g_Str_File_WDTHist_ini), (CHAR *)2); /*0x765339*/
+  ((CCFileClass *)((CDFileClass *)&v7.location[1]))->Reopen( (char *)(g_Str_File_WDTHist_ini), (int)2); /*0x765339*/
   ((INIClass *)((char *)&v7))->SaveToPipe( (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v7.location[1]))->Dtor(); /*0x765361*/
@@ -706,7 +706,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
 
   v55.ambientSoundController[0] = (int)a1; /*0x769558*/
   ((BufferIOFile *)((BufferIOFile *)&v55.needsRedraw))->Init(); /*0x769567*/
-  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen( (char *)(aWdtmapmdIni_0), (CHAR *)1); /*0x76957a*/
+  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen( (char *)(aWdtmapmdIni_0), (int)1); /*0x76957a*/
   v55.ambientSoundController[2] = 0; /*0x769588*/
   v55.ambientSoundController[3] = 0; /*0x76958c*/
   ((GenericList *)(&v55.ambientSoundController[4]))->Constructor(); /*0x769593*/
@@ -757,7 +757,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
       v8[1] = 0; /*0x7696e8*/
       v8[2] = 0; /*0x7696eb*/
       v8[3] = 0; /*0x7696ee*/
-      (*((void (__thiscall **)(void **))((char *)&v55) + 2))((char *)&v55); /*0x7696f5*/
+      (*((void (__thiscall **)(void **))((void **)&v55) + 2))((char *)&v55); /*0x7696f5*/
     }
     while ( (*(unsigned __int8 (__thiscall **)(int *))(*(unsigned int *)&v55 + 4))((char *)&v55) ); /*0x769700*/
   }
@@ -976,7 +976,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
       ((INIClass *)(char *)&v55.ambientSoundController[1])->GetInt( (char **)&v55, (char **)(v47), (unsigned int *)(&v55.fallRate)); /*0x769ae2*/
       j_DeleteAndZero( (void *)((ObjectClass *)(char *)&v55)); /*0x769aeb*/
       j_DeleteAndZero( (void *)((ObjectClass *)(char *)&v55)); /*0x769af4*/
-      (*((void (**)(void **))((char *)&v55) + 2))((char *)&v55); /*0x769b01*/
+      (*((void (**)(void **))((void **)&v55) + 2))((char *)&v55); /*0x769b01*/
       ++v41; /*0x769b08*/
       v42 += 12; /*0x769b09*/
       j_DeleteAndZero( (void *)((ObjectClass *)(char *)&v55)); /*0x769b0c*/
@@ -984,9 +984,9 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
     }
     while ( (*((uint8_t (**)(void **))((char *)&v55) + 1))((char *)&v55) ); /*0x769b22*/
   }
-  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen( (char *)(aWdtmapmdIni_0), (CHAR *)2); /*0x769b3b*/
+  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen( (char *)(aWdtmapmdIni_0), (int)2); /*0x769b3b*/
   ((INIClass *)&v55.ambientSoundController[1])->SaveToPipe( (int)&v55.needsRedraw); /*0x769b4c*/
-  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen( (char *)(aCodeWdtmapmdIn), (CHAR *)2); /*0x769b5f*/
+  ((CCFileClass *)((CDFileClass *)&v55.needsRedraw))->Reopen( (char *)(aCodeWdtmapmdIn), (int)2); /*0x769b5f*/
   ((INIClass *)&v55.ambientSoundController[1])->SaveToPipe( (int)&v55.needsRedraw); /*0x769b70*/
   ((unsigned int *)&v55)[0] = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769b79*/
   *(unsigned int *)v51.__tail_10 = (unsigned int)(void*)&VectorClass_WorldDominationTour_Centroid_vftable; /*0x769b81*/
@@ -1339,7 +1339,7 @@ int sub_763590()
   dword_B72608 = (int)&DynamicVectorClass_WaypointPathClass___vftable; /*0x7635ad*/
   dword_B7261C = 10; /*0x7635b7*/
   dword_B72618 = 0; /*0x7635c1*/
-  return atexit(sub_7635D0); /*0x7635cc*/
+  return atexit((void (__cdecl *)(void))(sub_7635D0)); /*0x7635cc*/
 }
 } // namespace gamemd
 
@@ -1562,7 +1562,7 @@ AbstractClass * * ObjectClass::sub_764A20()
     ((HashTable *)((INIClass *)&v4.m_3[1]))->DestroyHashTableINIClass(); /*0x764aea*/
     *(unsigned int *)v16.__pad_0 = (unsigned int)&off_7E1668;
     ((BufferIOFileClass *)((BufferIOFileClass *)&v16))->Dtor(); /*0x764afb*/
-    return (AbstractClass * *)Int; /*0x764b00*/
+    return (gamemd::AbstractClass* *)Int; /*0x764b00*/
   }
   else
   {
@@ -1754,7 +1754,7 @@ int sub_766070()
   stru_B72760 = (int)&DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76608d*/
   dword_B72774 = 10; /*0x766097*/
   dword_B72770 = 0; /*0x7660a1*/
-  return atexit(sub_7660B0); /*0x7660ac*/
+  return atexit((void (__cdecl *)(void))(sub_7660B0)); /*0x7660ac*/
 }
 } // namespace gamemd
 
@@ -2526,7 +2526,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   *((unsigned int *)v2 + 5) = v3; /*0x76ac65*/
   v7 = &vt_VectorClassrc_ptr; /*0x76ac68*/
   if ( !v5 && v11 ) /*0x76ac76*/
-    (**v4)(v4, 3); /*0x76ac7c*/
+    (**v4)((unsigned int)(v4), 3); /*0x76ac7c*/
   *((unsigned int *)this + 17) = 0; /*0x76ac7e*/
   return this->__pad_0; /*0x76ac83*/
 

@@ -741,7 +741,7 @@ CampaignClass * * WarheadTypeClass::Destructor(char a2, int a3, int a1)
       while ( v3 < g_WarheadTypePool ); /*0x75e57d*/
     }
     v9 = this; /*0x75e58f*/
-v4 = (*(int (**)(int *, WarheadTypeClass **))(dword_B0F670+ 16))( /*0x75e593*/ &dword_B0F670, (WarheadTypeClass **)((int *)((int *)((int *)(&v9)))));
+v4 = (*(int (**)(int *, WarheadTypeClass **))(dword_B0F670+ 16))( /*0x75e593*/ &dword_B0F670, (WarheadTypeClass **)((int *)((int *)((int *)((int *)(&v9))))));
 
 
     if ( v4 != -1 && v4 < dword_B0F680) /*0x75e5a3*/
@@ -866,7 +866,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     *(unsigned int *)(v4 + 152) = INIClass::ReadInt_Overwrite( /*0x7720c6*/
                               (bool *)a1,
                               (unsigned __int8 *)(v4 + 36),
-                              aAmbientdamage,
+                              (unsigned char *)(aAmbientdamage),
                               *(unsigned int *)(v4 + 152));
     *(unsigned char *)(v4 + 304) = INIClass::ReadBool_Overwrite( /*0x7720e0*/
                              &a1->vtable0,
@@ -951,7 +951,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     *(unsigned int *)(v4 + 316) = INIClass::ReadInt_Overwrite( /*0x772280*/
                               (bool *)a1,
                               (unsigned __int8 *)(v4 + 36),
-                              "DisguiseFakeBlinkTime" /*w16g4 aDisguisefakebl*/,
+                              (unsigned char *)("DisguiseFakeBlinkTime" /*w16g4 aDisguisefakebl*/),
                               *(unsigned int *)(v4 + 316));
     *(unsigned char *)(v4 + 324) = INIClass::ReadBool_Overwrite( /*0x77229a*/
                              &a1->vtable0,
@@ -966,12 +966,12 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     *(unsigned int *)(v4 + 156) = INIClass::ReadInt_Overwrite( /*0x7722ce*/
                               (bool *)a1,
                               (unsigned __int8 *)(v4 + 36),
-                              "Burst" /*w16g4 aBurst*/,
+                              (unsigned char *)("Burst" /*w16g4 aBurst*/),
                               *(unsigned int *)(v4 + 156));
     *(unsigned int *)(v4 + 164) = INIClass::ReadInt_Overwrite( /*0x7722e8*/
                               (bool *)a1,
                               (unsigned __int8 *)(v4 + 36),
-                              g_INI_Key_Damage,
+                              (unsigned char *)(g_INI_Key_Damage),
                               *(unsigned int *)(v4 + 164));
     *(unsigned int *)(v4 + 168) = WarheadTypeClass::loadWarheadINI( /*0x772302*/
                               (WarheadTypeClass *)a1,
@@ -981,7 +981,7 @@ void* WarheadTypeClass_ReadINI(WarheadTypeClass *a1)
     *(unsigned int *)(v4 + 176) = INIClass::ReadInt_Overwrite( /*0x77231c*/
                               (bool *)a1,
                               (unsigned __int8 *)(v4 + 36),
-                              &off_825478,
+                              (unsigned char *)(&off_825478),
                               *(unsigned int *)(v4 + 176));
     *(unsigned int *)(v4 + 180) = INIClass::ReadCoord((unsigned __int8 *)(v4 + 36), g_INI_Key_Range, *(unsigned int *)(v4 + 180)); /*0x772336*/
     *(unsigned int *)(v4 + 184) = INIClass::ReadCoord( /*0x77235b*/

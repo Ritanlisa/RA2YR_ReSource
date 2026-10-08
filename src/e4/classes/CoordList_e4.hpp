@@ -4,7 +4,7 @@
 namespace gamemd {
 
 struct CoordList {
-    unsigned int *__stdcall GetBounds(unsigned int * a1, int16_t * a2);
+    static unsigned int *__stdcall GetBounds(unsigned int * a1, int16_t * a2);
 };
 
 } // namespace gamemd

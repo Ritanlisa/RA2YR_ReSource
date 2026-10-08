@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include <new>  // W20L4 T2 placement-new Constructor forwarding
 
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
@@ -1020,6 +1021,10 @@ int SessionClass::SetOption2(int aP1)
 
 }
 } // namespace gamemd
+// 0x6970A0 site-form Constructor supply (W20L4 T2; forwards to ctor def below)
+namespace gamemd {
+void * SessionClass::Constructor(void *aP1) { return new (aP1) SessionClass(); }
+}
 // 0x6970A0
 namespace gamemd {  // G42.18c ns repair
 SessionClass::SessionClass()
@@ -1586,7 +1591,7 @@ AbstractClass * * SessionClass::LoadMissionList()
       while ( 1 ) /*0x699a3f*/
       {
         StringByIndex = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)( v60.__pad_0), (CCINIClass *)(g_INI_Key_MultiMaps), (void *)(v6)); /*0x699a3f*/
-        if ( ((INIClass*)&v60)->GetString(g_INI_Key_MultiMaps, StringByIndex, &g_INI_DefaultBuffer, v66, 64) ) /*0x699a4e*/
+        if ( ((INIClass*)&v60)->GetString((void *)(g_INI_Key_MultiMaps), StringByIndex, &g_INI_DefaultBuffer, (void *)(v66), 64) ) /*0x699a4e*/
         {
           v8 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699a5c*/
           if ( v8 ) /*0x699a66*/
@@ -1630,7 +1635,7 @@ AbstractClass * * SessionClass::LoadMissionList()
           for ( i = 0; i < v15; ++i )
           {
             v17 = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)( v60.__pad_0), (CCINIClass *)(g_INI_Key_MultiMaps), (void *)(i)); /*0x699b90*/
-            if ( ((INIClass*)&v60)->GetString(g_INI_Key_MultiMaps, v17, &g_INI_DefaultBuffer, v66, 64) )
+            if ( ((INIClass*)&v60)->GetString((void *)(g_INI_Key_MultiMaps), v17, &g_INI_DefaultBuffer, (void *)(v66), 64) )
             {
               v18 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699bad*/
               v19 = v18 ? MapFile::LoadDescription(v18, (uint8_t ***)&v60, v66) : 0;
@@ -1704,7 +1709,7 @@ AbstractClass * * SessionClass::LoadMissionList()
                 for ( j = 0; j < v62; ++j ) /*0x699dfd*/
                 {
                   v33 = (uint8_t *)INIClass::GetStringByIndex((gamemd::CCINIClass *)( v60.__pad_0), (CCINIClass *)(g_INI_Key_MultiMaps), (void *)(v32)); /*0x699e1c*/
-                  if ( ((INIClass*)&v60)->GetString(g_INI_Key_MultiMaps, v33, &g_INI_DefaultBuffer, v66, 64) ) /*0x699e2b*/
+                  if ( ((INIClass*)&v60)->GetString((void *)(g_INI_Key_MultiMaps), v33, &g_INI_DefaultBuffer, (void *)(v66), 64) ) /*0x699e2b*/
                   {
                     v34 = (MapFile *)__2_YAPAXI_Z(0x1BCu); /*0x699e3d*/
                     if ( v34 ) /*0x699e47*/
@@ -1780,8 +1785,8 @@ AbstractClass * * SessionClass::LoadMissionList()
         if ( !strlen(FindFileData.cAlternateFileName) ) /*0x69a048*/
           v45 = FindFileData.cFileName; /*0x69a04f*/
         /*0x69a073*/
-          ((INIClass*)&v60)->GetString(/*0x69a073*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Name, g_Str_No_Name, v66, 64);
-        ((INIClass*)&v60)->GetString((uint8_t *)g_INI_Key_Digest, a1, g_Str_No_Digest, v67, 32); /*0x69a095*/
+          ((INIClass*)&v60)->GetString(/*0x69a073*/ (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Name, (void *)(g_Str_No_Name), (void *)(v66), 64);
+        ((INIClass*)&v60)->GetString((uint8_t *)g_INI_Key_Digest, (void *)((unsigned char *)a1), (void *)(g_Str_No_Digest), (void *)(v67), 32); /*0x69a095*/
         BulkCharToWide( (unsigned short *)(v71), (uint8_t *)v66, -1); /*0x69a0aa*/
         v56[0] = INIClass::ReadBool_Overwrite((INIClass *)(/*0x69a0c8*/
                    (int *)v60.__pad_0), (uint8_t *)(char *)&stru_82BA00, (uint8_t *)g_INI_Key_Official, 0);
@@ -1790,7 +1795,7 @@ AbstractClass * * SessionClass::LoadMissionList()
         ParseMapFileHeader(v45, v71, v67, v73, v56, &v59, &v58); /*0x69a0fc*/
         v46 = (SessionClass *)__2_YAPAXI_Z(0x1BCu); /*0x69a106*/
         if ( v46 ) /*0x69a110*/
-          v47 = (wchar_t *)SessionClass::ParseGameInfo( (wchar_t *)(v46), (char *)(v45), (CampaignScore *)(v71), (CCINIClass *)(v67), v56[0], (const char *)(v73), (CampaignScore *)(v59), v58); /*0x69a141*/
+          v47 = (wchar_t *)SessionClass::ParseGameInfo( (wchar_t *)(v46), (char *)(v45), (wchar_t *)(v71), (char *)(v67), v56[0], (const char *)(v73), v59, v58); /*0x69a141*/
         else
           v47 = (wchar_t *)(0); /*0x69a145*/
         v48 = v4[2]; /*0x69a147*/
@@ -1820,7 +1825,7 @@ AbstractClass * * SessionClass::LoadMissionList()
 }  // G42.18c ns repair
 // 0x69A980
 namespace gamemd {  // G42.18c ns repair
-ObjectClass * *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Source, CampaignScore * aP2, CCINIClass * aP3, CampaignScore * aP4, const char * a5, CampaignScore * aP6, int a8)
+wchar_t *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Source, wchar_t * aP2, char * aP3, char aP4, const char * a5, int aP6, int a8)
 {
 
   SessionClass *v8; // esi
@@ -1933,7 +1938,7 @@ ObjectClass * *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Sourc
     }
     j_DeleteAndZero( (void *)((ObjectClass *)&Source)); /*0x69ac1a*/
   }
-  return (gamemd::ObjectClass **)((wchar_t *)v8); /*0x69ac21*/
+  return (wchar_t *)(v8); /*0x69ac21*/
 
 }
 }  // G42.18c ns repair

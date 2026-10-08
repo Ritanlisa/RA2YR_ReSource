@@ -926,7 +926,7 @@ char E4Recv_71C8E0::sub_71C8E0()
   if ( !result ) /*0x71c8eb*/
   {
     this->M205 = 1; /*0x71c8ee*/
-    this->M180 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71c905*/
+    this->M180 = dword_A8ED84; /*0x71c905*/
     this->M192 = 2; /*0x71c90b*/
     this->M184 = v2; /*0x71c911*/
     this->M188 = 2; /*0x71c914*/

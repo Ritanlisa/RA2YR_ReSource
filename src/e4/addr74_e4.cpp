@@ -906,7 +906,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
     }
     vtable3 = (void (**)(void **))((unsigned int *)this)[0]; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
-    vtable3[3](&((unsigned int *)this)[0]); /*0x74be84*/
+    vtable3[3]((void **)(&((unsigned int *)this)[0])); /*0x74be84*/
     return 1; /*0x74be89*/
   }
 

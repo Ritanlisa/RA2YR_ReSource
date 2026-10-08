@@ -352,9 +352,9 @@ LABEL_139:
     v31 = a0->diskLaserTimer[2]; /*0x6fc955*/
     if ( v30 != -1 ) /*0x6fc95e*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v30 >= v31 ) /*0x6fc96a*/
+      if ( dword_A8ED84 - v30 >= v31 ) /*0x6fc96a*/
         goto LABEL_164; /*0x6fc96a*/
-      v31 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v30; /*0x6fc96c*/
+      v31 -= dword_A8ED84 - v30; /*0x6fc96c*/
     }
     if ( v31 ) /*0x6fc970*/
       return (gamemd::TechnoClass **)(3); /*0x6fc97e*/
@@ -390,7 +390,7 @@ LABEL_164:
     return (gamemd::TechnoClass **)(5); /*0x6fcac2*/
   }
   v32 = *(unsigned char *)(*(unsigned int *)(v38 + 172) + 345); /*0x6fcacb*/
-  if ( v32 && (((unsigned int *)v25)[0] & 4) != 0 && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416)  <  (int)(v25->unknown698 )) /*0x6fcae9*/
+  if ( v32 && (((unsigned int *)v25)[0] & 4) != 0 && (int *)dword_A8ED84  <  (int)(v25->unknown698 )) /*0x6fcae9*/
     return (gamemd::TechnoClass **)(5); /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/

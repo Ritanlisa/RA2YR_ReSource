@@ -744,13 +744,13 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
   uniqueId = ((unsigned int *)this)[0]; /*0x4c95e0*/
   if ( vtable2 != (void *)-1 ) /*0x4c95ec*/
   {
-    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)vtable2 >= uniqueId ) /*0x4c95f4*/
+    if ( *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - (int)vtable2 >= uniqueId ) /*0x4c95f4*/
     {
 LABEL_14:
       vtable0 = this->AbstractClass; /*0x4c964f*/
       goto LABEL_15; /*0x4c964f*/
     }
-    uniqueId -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable2; /*0x4c95f6*/
+    uniqueId -= *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - (unsigned int)vtable2; /*0x4c95f6*/
   }
   if ( !uniqueId ) /*0x4c95fa*/
     goto LABEL_14; /*0x4c95fa*/
@@ -764,12 +764,12 @@ LABEL_14:
     v10 = ((unsigned int *)this)[0]; /*0x4c9621*/
     if ( v10 != (void *)-1 ) /*0x4c9627*/
     {
-      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)v10 >= v9 ) /*0x4c962f*/
+      if ( *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84 - (int)v10 >= v9 ) /*0x4c962f*/
       {
         v11 = 0; /*0x4c964b*/
         goto LABEL_11; /*0x4c964d*/
       }
-      LOWORD(v9) = v9 - (*(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned short)v10); /*0x4c9631*/
+      LOWORD(v9) = v9 - (*(unsigned short *)&(unsigned int *)(unsigned int)&dword_A8ED84 - (unsigned short)v10); /*0x4c9631*/
     }
     v11 = v9; /*0x4c9633*/
 LABEL_11:
@@ -2539,7 +2539,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6a48*/
     LOBYTE(this->AbstractClass) = 0; /*0x4c6a4c*/
-    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6a57*/
+    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x4c6a57*/
     return (char *)this; /*0x4c6a55*/
   }
   else
@@ -2551,7 +2551,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = 0; /*0x4c6a23*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 3) = *a5; /*0x4c6a2d*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 1) = a5[1]; /*0x4c6a35*/
-    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6a3e*/
+    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x4c6a3e*/
     return (char *)this; /*0x4c6a41*/
   }
 
@@ -2568,7 +2568,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
   {
     BYTE2(this->AbstractClass) = -1; /*0x4c6ac8*/
     LOBYTE(this->AbstractClass) = 0; /*0x4c6acc*/
-    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6ad7*/
+    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x4c6ad7*/
     return (char *)this; /*0x4c6ad5*/
   }
   else
@@ -2580,7 +2580,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = 0; /*0x4c6aa3*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 3) = *a6; /*0x4c6aad*/
     *(unsigned short *)((char *)&((unsigned int *)this)[0] + 1) = a6[1]; /*0x4c6ab5*/
-    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6abe*/
+    *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x4c6abe*/
     return (char *)this; /*0x4c6ac1*/
   }
 
@@ -2605,7 +2605,7 @@ char * E4Recv_4C6BE0::sub_4C6BE0(int a2, char a3, int a4, int a5)
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = (unsigned int)(void *)a4; /*0x4c6c19*/
     *(void **)((char *)&((unsigned int *)this)[0] + 3) = (unsigned int)(void *)a5; /*0x4c6c1c*/
   }
-  *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c6c27*/
+  *(void **)&this->M3 = (unsigned int)*(void **)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x4c6c27*/
   return (char *)this; /*0x4c6c2a*/
 
 }
@@ -2998,7 +2998,7 @@ double ComputeChronosphereDistortion(float a1)
 
 // 0x4CB3D0
 namespace gamemd {
-double globalHelper_0CB3D0(AbstractClass * aP0, AbstractClass * aP1)
+double globalHelper_0CB3D0(gamemd::AbstractClass* aP0, AbstractClass * aP1)
 {
   double v3; // st7
   char v4; // c3

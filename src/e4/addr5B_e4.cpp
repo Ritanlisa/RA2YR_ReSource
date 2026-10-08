@@ -423,7 +423,7 @@ int GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned in
                     ((Stream *)((int)&unk_A8EA70))->WriteBlock((int)v18, 250, 1); /*0x5b4d43*/
                     ((Stream *)(int)&unk_A8EA70)->ReadPacket(); /*0x5b4d4d*/
                     v9 = (char *)(CharToWideString((unsigned char *)(unk_A8B380))); /*0x5b4d57*/
-                    UI_Setup((wchar_t *)v9, dword_A8B394, (int)lParam); /*0x5b4d6e*/
+                    UI_Setup((wchar_t *)v9, (void *)(dword_A8B394), (int)lParam); /*0x5b4d6e*/
                     return 0; /*0x5b4d7f*/
                   }
                 }
@@ -873,7 +873,7 @@ int AudioDebug_DlgProc(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
           v28 = dword_ABF224; /*0x5bc881*/
           v9 = (char *)(aTestenvelopefs); /*0x5bc887*/
   LABEL_31:
-          Index = VocClass::FindIndex(v9); /*0x5bc88c*/
+          Index = VocClass::FindIndex((gamemd::VocClass *)(v9)); /*0x5bc88c*/
           PlayVocClass(Index, 0x2000, 1.0, v28); /*0x5bc898*/
           return 0; /*0x5bc89f*/
         }
@@ -3035,9 +3035,9 @@ int _ioterm()
   result = dword_ABF240; /*0x5bc326*/
   if ( dword_ABF240 ) /*0x5bc32e*/
   {
-    DeleteObject(dword_ABF244); /*0x5bc336*/
+    DeleteObject((HGDIOBJ)(dword_ABF244)); /*0x5bc336*/
     ((Object *)dword_ABF240)->RemoveObjectArray(); /*0x5bc342*/
-    result = (HWND)DestroyWindow(dword_ABF240); /*0x5bc34e*/
+    result = (HWND)DestroyWindow((HWND)(dword_ABF240)); /*0x5bc34e*/
     dword_ABF244 = 0; /*0x5bc354*/
     dword_ABF240 = 0; /*0x5bc35e*/
   }
@@ -3157,16 +3157,16 @@ int sub_5BC530()
   struct tagRECT v5; // [esp+20h] [ebp-4Ch] BYREF
   LOGFONTA lf; // [esp+30h] [ebp-3Ch] BYREF
 
-  dword_ABF240 = CreateDialogParamA(dword_ABF230, (LPCSTR)0xF8, dword_ABF234, DlgProcAudioDebug, 0); /*0x5bc559*/
+  dword_ABF240 = (unsigned int)CreateDialogParamA((HINSTANCE)(dword_ABF230), (LPCSTR)0xF8, (HWND)(dword_ABF234), (DLGPROC)(DlgProcAudioDebug), 0); /*0x5bc559*/
   TimerPool::AllocSlot(dword_ABF240); /*0x5bc55e*/
-  DC = GetDC(dword_ABF240); /*0x5bc570*/
+  DC = GetDC((HWND)(dword_ABF240)); /*0x5bc570*/
   DeviceCaps = GetDeviceCaps(DC, 90); /*0x5bc577*/
   lf.lfHeight = -MulDiv(8, DeviceCaps, 72); /*0x5bc588*/
   memset( (void *)(&lf.lfWidth), 0, 24); /*0x5bc5a6*/
   strcpy(lf.lfFaceName, "Courier"); /*0x5bc5d9*/
   dword_ABF244 = CreateFontIndirectA(&lf); /*0x5bc5f3*/
-  v2 = SelectObject(DC, dword_ABF244); /*0x5bc5fc*/
-  GetTextMetricsA(DC, &dword_ABF1C8); /*0x5bc604*/
+  v2 = SelectObject(DC, (HGDIOBJ)(dword_ABF244)); /*0x5bc5fc*/
+  GetTextMetricsA(DC, (LPTEXTMETRICA)(&dword_ABF1C8)); /*0x5bc604*/
   SelectObject(DC, v2); /*0x5bc60c*/
   dword_ABF128 = GetSysColor(15); /*0x5bc618*/
   dword_ABF110 = GetSysColor(8); /*0x5bc621*/
@@ -3175,11 +3175,11 @@ int sub_5BC530()
   Rect.right = 79 * dword_ABF1C8.tmMaxCharWidth + 20; /*0x5bc64b*/
   Rect.bottom = 25 * (dword_ABF1C8+ dword_ABF1C8.tmExternalLeading) + 20; /*0x5bc661*/
   AdjustWindowRect(&Rect, 0xC00000u, 0); /*0x5bc665*/
-  GetWindowRect(dword_ABF234, &v5); /*0x5bc677*/
-  MoveWindow(dword_ABF240, v5.right + 5, 0, Rect.right - Rect.left, Rect.bottom - Rect.top, 1); /*0x5bc6a4*/
-  ShowWindow(dword_ABF240, 0); /*0x5bc6b2*/
-  SetFocus(dword_ABF234); /*0x5bc6bf*/
-  return ReleaseDC(dword_ABF240, DC); /*0x5bc6d2*/
+  GetWindowRect((HWND)(dword_ABF234), &v5); /*0x5bc677*/
+  MoveWindow((HWND)(dword_ABF240), v5.right + 5, 0, Rect.right - Rect.left, Rect.bottom - Rect.top, 1); /*0x5bc6a4*/
+  ShowWindow((HWND)(dword_ABF240), 0); /*0x5bc6b2*/
+  SetFocus((HWND)(dword_ABF234)); /*0x5bc6bf*/
+  return ReleaseDC((HWND)(dword_ABF240), DC); /*0x5bc6d2*/
 }
 } // namespace gamemd
 
@@ -3470,7 +3470,7 @@ int sub_5BD9F0()
 {
   dword_ABF2A0 = TimerGetTicks(); /*0x5bd9ff*/
   dword_ABF2A8 = 0; /*0x5bda04*/
-  return atexit(sub_5BDA20); /*0x5bda14*/
+  return atexit((void (__cdecl *)(void))(sub_5BDA20)); /*0x5bda14*/
 }
 } // namespace gamemd
 
@@ -3848,7 +3848,7 @@ int sub_5BF7D0()
   dword_ABF390 = (int)&DynamicVectorClass_char_const___vftable; /*0x5bf7ed*/
   dword_ABF3A4 = 10; /*0x5bf7f7*/
   dword_ABF3A0 = 0; /*0x5bf801*/
-  return atexit(sub_5BF810); /*0x5bf80c*/
+  return atexit((void (__cdecl *)(void))(sub_5BF810)); /*0x5bf80c*/
 }
 } // namespace gamemd
 
@@ -3888,7 +3888,7 @@ int sub_5BF850()
   v3 = (*(int (**)(int))(*(unsigned int *)v0 + 128))(v0); /*0x5bf87e*/
   v4 = (*(int (**)(int, int))(*(unsigned int *)v0 + 116))(v0, v3); /*0x5bf88c*/
   v5 = (*(int (**)(int))(*(unsigned int *)v0 + 112))(v0); /*0x5bf892*/
-  Render_Load_759EB0(v2, 0, v4 / v5, v7, v8, 0); /*0x5bf8a1*/
+  Render_Load_759EB0((gamemd::TechnoClass *)(v2), 0, v4 / v5, v7, v8, 0); /*0x5bf8a1*/
   return v1; /*0x5bf8a8*/
 }
 } // namespace gamemd

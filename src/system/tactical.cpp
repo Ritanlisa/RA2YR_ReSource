@@ -449,7 +449,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
   result = PingPongBuffer_GetWriteOffset(); /*0x6d7847*/
   if ( (unsigned int)dword_ABCD44 >= result ) /*0x6d7852*/
   {
-    result = (*(int (**)(void *))(*(int *)(g_DSurface_Hidden_2) + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
+    result = (*(int (**)(void *))(*(int *)((void *)(g_DSurface_Hidden_2)) + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
     if ( result == 2 ) /*0x6d7866*/
     {
       result = dword_A8EB78; /*0x6d786c*/
@@ -465,7 +465,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v32 = v6; /*0x6d78b1*/
           if ( v6 > 0x3E8 ) /*0x6d78b5*/
             v32 = 1000; /*0x6d78b7*/
-          v7 = (int)((*(int (**)(void *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2)); /*0x6d78c9*/
+          v7 = (int)((*(int (**)(void *))(*(int *)((void *)(g_DSurface_Hidden_2)) + 116))(g_DSurface_Hidden_2)); /*0x6d78c9*/
           v8 = (int)((const gamemd::RectangleStruct *)((int)(((unsigned char *)(this) + 0x0B0)))); /*0x6d78d0*/
           v7 = v7; /*0x6d78dc*/
           v9 = (int)(((unsigned char *)(this) + 0x02D)); /*0x6d78e2*/
@@ -570,7 +570,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
               v18 = v18; /*0x6d7bd9*/
             }
           }
-          return (*(int (**)(void *))(*(unsigned int *)g_DSurface_Hidden_2 + 96))(g_DSurface_Hidden_2); /*0x6d7bed*/
+          return (*(int (**)(void *))(*(unsigned int *)g_DSurface_Hidden_2 + 96))((void *)(g_DSurface_Hidden_2)); /*0x6d7bed*/
         }
       }
     }
@@ -1356,8 +1356,8 @@ void* TacticalClass::DrawBuildings(const RectangleStruct& viewRect)
               v101[2] = v106[2]; /*0x4d1a96*/
               Coord_To_Screen((void *)g_TacticalClass_Instance, v101, v87); /*0x4d1a9d*/
               v87[0] -= 30; /*0x4d1aaf*/
-              BuildingClass::Draw_0((int)v6, v87, (int *)viewRect); /*0x4d1ab5*/
-              TacticalClass::DrawBuildingPlacement((int)v6, v87, (int *)viewRect); /*0x4d1ac2*/
+              ((BuildingClass *)v6)->Draw_0((gamemd::Point2D *)v87, (RectangleStruct *)&viewRect); /*0x4d1ab5*/
+              ((TacticalClass *)v6)->DrawBuildingPlacement((gamemd::BuildingClass *)v87, (int *)&viewRect); /*0x4d1ac2*/
               *(unsigned int *)&((unsigned char *)(v6) + 0x28)[28] = v7; /*0x4d1ac7*/
               v6->powerup = powerup; /*0x4d1ace*/
               break; /*0x4d1ad4*/

@@ -207,7 +207,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
         }
       }
     }
-    IntVector::Copy((IntVector *)a1, &v22); /*0x525514*/
+    IntVector::Copy((IntVector *)a1, (_DWORD *)(&v22)); /*0x525514*/
     *(unsigned int *)a1 = (unsigned int)((void*)&TypeList_int_vftable); /*0x52551e*/
     v16 = v24; /*0x525528*/
     *(unsigned int *)(a1 + 16) = v23; /*0x52552c*/
@@ -866,7 +866,7 @@ void InitGame()
     *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924]= 0;
     goto LABEL_3;
   }
-  *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924]= (int)(ScenarioClass::Constructor(v0));
+  *(unsigned int *)&((unsigned int *)HouseClass_Player)[29924]= (int)(ScenarioClass::Constructor((void *)(v0)));
   if ( !*(unsigned int *)&((unsigned int *)HouseClass_Player)[29924])
   {
 LABEL_3:
@@ -879,7 +879,7 @@ LABEL_3:
     *(unsigned int *)&(&stru_87C374)[44652 ]= 0;
     goto LABEL_3;
   }
-  *(unsigned int *)&(&stru_87C374)[44652 ]= RulesClass::RulesClass(v3);
+  *(unsigned int *)&(&stru_87C374)[44652 ]= RulesClass::Constructor(v3);
   if ( !*(unsigned int *)&(&stru_87C374)[44652 ])
     goto LABEL_3;
   Debug::Log("Bootstrap.....") /*G57c1: IDA 0x52bb07 push offset aBootstrap*/;
@@ -1219,7 +1219,7 @@ LABEL_68:
         kk = (int)(void*)&CD_vftable;
         v1 = 0;
       }
-      GameDirectoryCD = (unsigned char *)Game::FindGameDirectoryCD(Source);
+      GameDirectoryCD = (unsigned char *)Game::FindGameDirectoryCD((const char *)(Source));
       if ( GameDirectoryCD == (unsigned char *)1 )
         break;
       if ( GameDirectoryCD == (unsigned char *)2 )
@@ -1302,7 +1302,7 @@ LABEL_94:
     ((BufferIOFileClass *)(&aP1))->Destruct();
     return -1;
   }
-  INIClass::INIClass(v97);
+  INIClass::Constructor(v97);
   v98 = 0;
   v97[0] = (unsigned int)&CCINIClass_Vtable;
   if ( !((CCINIClass *)(v97))->Load( (int)(&aP1), 0, 0) )

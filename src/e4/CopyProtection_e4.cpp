@@ -21,7 +21,7 @@ bool CopyProtection::CheckLauncher()
   bool v1; // bl
 
   ((gamemd::Debug*)aCopyprotection_0)->Log("COPYPROTECTION - Checking if launcher is running\n"); /*0x49f5c8 G57w12: IDA push seq @ 0x49f5c8*/
-  MutexA = CreateMutexA(0, 0, Name); /*0x49f5df*/
+  MutexA = CreateMutexA(0, 0, (LPCSTR)(Name)); /*0x49f5df*/
   v1 = GetLastError() == 183; /*0x49f5ec*/
   if ( MutexA ) /*0x49f5f5*/
     CloseHandle(MutexA); /*0x49f5f8*/

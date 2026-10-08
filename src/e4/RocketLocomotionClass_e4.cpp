@@ -27,10 +27,10 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
   this->MovingDestination[1] = dword_B04E3C; /*0x661eda*/
   this->MovingDestination[2] = dword_B04E40; /*0x661ee3*/
-  this->MissionTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661eee*/
+  this->MissionTimer[0] = dword_A8ED84; /*0x661eee*/
   this->MissionTimer[2] = 0; /*0x661ef1*/
   this->MissionTimer[3] = 0; /*0x661ef4*/
-  v2 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661ef7*/
+  v2 = dword_A8ED84; /*0x661ef7*/
   this->TrailerTimer[2] = 0; /*0x661efd*/
   this->TrailerTimer[0] = v2; /*0x661f00*/
   (&this->CurrentSpeed)[0] = 0; /*0x661f03*/
@@ -74,7 +74,7 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_LocomotionClass;
       *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_LocomotionClass;
-      v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x663435*/
+      v3 = dword_A8ED84; /*0x663435*/
       a1->TrailerTimer[2] = 0; /*0x66343b*/
       a1->TrailerTimer[0] = v3; /*0x663442*/
       *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_RocketLocomotionClass;

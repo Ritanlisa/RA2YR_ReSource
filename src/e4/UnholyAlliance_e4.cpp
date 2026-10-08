@@ -50,9 +50,9 @@ AbstractClass * * UnholyAlliance_GetResult()
       if ( v5 ) /*0x5cb470*/
       {
         v6 = operator new(0x8E8u); /*0x5cb47e*/
-        if ( v6 && (v7 = (int *)((UnitClass *)((int)v6))->Construct(v5, v4)) != 0 ) /*0x5cb497*/
+        if ( v6 && (v7 = (int *)((UnitClass *)((int)v6))->Construct(v5, (LPVOID)(v4))) != 0 ) /*0x5cb497*/
         {
-          CurrentOption = (unsigned short *)(HouseClass::GetCurrentOption(((HouseClass *)v4), &ppv));
+          CurrentOption = (unsigned short *)(HouseClass::GetCurrentOption(((HouseClass *)v4), (unsigned int *)(&ppv)));
           v9 = *CurrentOption + 3; /*0x5cb4b0*/
           v10 = CurrentOption[1] + 3; /*0x5cb4b4*/
           if ( v3 /*0x5cb4ea*/
@@ -63,7 +63,7 @@ AbstractClass * * UnholyAlliance_GetResult()
                 v16[2] = 0,
                 !(*(uint8_t (**)(int *, unsigned int *, unsigned int))(v12 + 216))( (int *)(v7), (unsigned int *)(v16), 0)) )
           {
-            v13 = (int16_t *)HouseClass::GetCurrentOption(((HouseClass *)v4), &v15); /*0x5cb4fd*/
+            v13 = (int16_t *)HouseClass::GetCurrentOption(((HouseClass *)v4), (unsigned int *)(&v15)); /*0x5cb4fd*/
             if ( !FindInfantryDeployPosition( (int *)(v7), (gamemd::RadarClass *)(v13), 3) ) /*0x5cb506*/
             {
               v2 = 1; /*0x5cb515*/

@@ -161,7 +161,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       v14 = !*(unsigned char *)(this + 1092) || a5; /*0x76d635*/
       Map_Process_76FD40( /*0x76d64f*/
         *(unsigned int *)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
-        CellType,
+        (gamemd::ObjectClass *)(CellType),
         v13,
         v13,
         (int *)this,
@@ -218,9 +218,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
         ((MSAnim *)(v21))->SetField(*(unsigned int *)(this + 1144) - 1); /*0x76d7c8*/
         ((MSAnim *)(v21))->GetField(0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL((ObjectClass *)v21, 0); /*0x76d7d8*/
-        Trigger::executeActions( /*0x76d7f0*/
-          *(Trigger **)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4),
-          (int)v21);
+        (*(Trigger **)(*(unsigned int *)(v25.q010 + 4) + 8 * v25.q014 + 4))->executeActions((int)v21);
         if ( (int)(*(int *)&v28) < (*(int *)&v28) /*0x76d821*/
           || (((unsigned char *)&v28)[1] || !((char *)&v28))
           && v28.occupant > 0
@@ -350,7 +348,7 @@ unsigned int * Trigger::checkCondition(int aP1, int aP2)
 }
 // 0x76FF20
 namespace gamemd {
-int Trigger::executeActions(int a2, void *a2_2)
+int Trigger::executeActions(int a2)
 {
 
   this->Trigger_field_0x2C = (unsigned int)((void *)a2); /*0x76ff24*/

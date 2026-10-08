@@ -544,7 +544,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
             *((unsigned int *)this + 11) = *(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x51560a*/
           }
           v49 = (unsigned int *)(this->m_State + 1600); /*0x515615*/
-          *v49 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x51561c*/
+          *v49 = dword_A8ED84; /*0x51561c*/
           v49[1] = v109; /*0x515622*/
           v49[2] = 0; /*0x515625*/
           *(unsigned int *)(this->m_State + 1504) = -1; /*0x51562d*/
@@ -599,25 +599,25 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
           *(unsigned char *)(v79 + 1719) = 1; /*0x515d3a*/
           v80 = (unsigned int *)(this->m_State + 1640); /*0x515d4f*/
           v81 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5992); /*0x515d55*/
-          *v80 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x515d5b*/
+          *v80 = dword_A8ED84; /*0x515d5b*/
           v80[1] = v113; /*0x515d61*/
           v80[2] = v81; /*0x515d64*/
         }
         v82 = (unsigned int *)this->m_State; /*0x515d67*/
-        v83 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x515d6a*/
+        v83 = dword_A8ED84; /*0x515d6a*/
         v84 = v82[400]; /*0x515d70*/
         v85 = v82[402]; /*0x515d76*/
         if ( v84 == -1 ) /*0x515d7f*/
           goto LABEL_90; /*0x515d7f*/
-        if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v84 >= v85 ) /*0x515d87*/
+        if ( dword_A8ED84 - v84 >= v85 ) /*0x515d87*/
           goto LABEL_91; /*0x515d87*/
-        v85 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v84; /*0x515d89*/
+        v85 -= dword_A8ED84 - v84; /*0x515d89*/
   LABEL_90:
         if ( !v85 ) /*0x515d8d*/
         {
   LABEL_91:
           v82[376] = -1; /*0x515d8f*/
-          v83 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x515d99*/
+          v83 = dword_A8ED84; /*0x515d99*/
         }
         v86 = this->m_State; /*0x515d9f*/
         if ( !*(unsigned char *)(v86 + 1719) ) /*0x515daa*/
@@ -679,7 +679,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
             *((unsigned int *)this + 11) = *(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x515b4e*/
           }
           v68 = (unsigned int *)(this->m_State + 1600); /*0x515b59*/
-          *v68 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x515b62*/
+          *v68 = dword_A8ED84; /*0x515b62*/
           v68[1] = v113; /*0x515b68*/
           v68[2] = 0; /*0x515b6b*/
           *(unsigned int *)(this->m_State + 1504) = -1; /*0x515b71*/
@@ -808,7 +808,7 @@ int MovementAI::MainFootClass(int a1, char a2) {  // g57b5 W4: raw 真值补参 
           *((unsigned int *)this + 11) = *(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x5157d4*/
         }
         v55 = (unsigned int *)(this->m_State + 1600); /*0x5157df*/
-        *v55 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5157e8*/
+        *v55 = dword_A8ED84; /*0x5157e8*/
         v55[1] = v109; /*0x5157ee*/
         v55[2] = 0; /*0x5157f1*/
         *(unsigned int *)(this->m_State + 1504) = -1; /*0x5157f7*/
@@ -996,9 +996,9 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
     result = *(unsigned int *)(v13 + 1608); /*0x51662a*/
     if ( v14 != -1 ) /*0x516633*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v14 >= result ) /*0x51663f*/
+      if ( dword_A8ED84 - v14 >= result ) /*0x51663f*/
         goto LABEL_19; /*0x51663f*/
-      result -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v14; /*0x516641*/
+      result -= dword_A8ED84 - v14; /*0x516641*/
     }
     if ( result ) /*0x516645*/
       return result; /*0x516645*/
@@ -1007,7 +1007,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
     IDA_HIWORD(v59) = *((unsigned int *)this + 7) / 256; /*0x51666d*/
     if ( (unsigned __int8)FootClass_MovementStep(v13, (int)p_MovementAI_field_18, v59, 0, a2, v57) ) /*0x51667e*/
     {
-      v29 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x5168d6*/
+      v29 = dword_A8ED84; /*0x5168d6*/
       v30 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x5168e2*/
       IDA_LOWORD(v31) = Math_RoundToInt(v30); /*0x5168e8*/
       v32 = v68[1]; /*0x5168f0*/
@@ -1102,7 +1102,7 @@ int MovementAI::StepFootClass(int a1, int a2) {  // g57b5 W4: raw 真值补参 (
     }
     else
     {
-      v15 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x516690*/
+      v15 = dword_A8ED84; /*0x516690*/
       v16 = *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5984) * 900.0; /*0x51669c*/
       IDA_LOWORD(v17) = Math_RoundToInt(v16); /*0x5166a2*/
       v18 = v66; /*0x5166aa*/
@@ -1456,7 +1456,7 @@ int RulesClass::Addition() {
     {
       v21 = (unsigned __int8 *)INIClass_GetStringByIndex(v1->__pad_0, g_INI_Key_Warheads, m); /*0x668dae*/
       if ( INIClass::GetString(v1, g_INI_Key_Warheads, v21, &g_INI_DefaultBuffer, Destination, 32) ) /*0x668dbb*/
-        WarheadTypeClass::FindOrCreate(Destination); /*0x668dc8*/
+        WarheadTypeClass::FindOrCreate((ra2::game::ObjectClass *)(Destination)); /*0x668dc8*/
     }
     v22 = INIClass_GetKeyCount(v1->__pad_0, (unsigned __int8 *)"SmudgeTypes" /*w16g4 aSmudgetypes*/); /*0x668de0*/
     for ( n = 0; n < v22; ++n ) /*0x668de6*/
@@ -7955,8 +7955,8 @@ void SuperClass::AdvanceCountdown() {
     if ( this->SuperClass_field_0x0 != (void *)-1 ) /*0x6ce286*/
     {
       SuperClass_field_0x8 = (char *)this->SuperClass_field_0x8; /*0x6ce288*/
-      v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)SuperClass_field_0x0; /*0x6ce296*/
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)SuperClass_field_0x0 >= (int)SuperClass_field_0x8 ) /*0x6ce29a*/
+      v3 = dword_A8ED84 - (unsigned int)SuperClass_field_0x0; /*0x6ce296*/
+      if ( dword_A8ED84 - (int)SuperClass_field_0x0 >= (int)SuperClass_field_0x8 ) /*0x6ce29a*/
       {
         this->SuperClass_field_0x8 = 0; /*0x6ce2ab*/
         this->SuperClass_field_0x0 = (void *)-1; /*0x6ce2ae*/

@@ -1561,9 +1561,9 @@ int sub_660000()
     v5 = *(unsigned int *)(v3 + 56); /*0x660018*/
     if ( v4 != -1 ) /*0x66001e*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x66002a*/
+      if ( dword_A8ED84 - v4 >= v5 ) /*0x66002a*/
         goto LABEL_6; /*0x66002a*/
-      v5 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x66002c*/
+      v5 -= dword_A8ED84 - v4; /*0x66002c*/
     }
     if ( v5 > 0 ) /*0x660030*/
       goto LABEL_7; /*0x660030*/
@@ -1600,9 +1600,9 @@ void sub_6603B0()
       v5 = *(unsigned int *)(v3 + 44); /*0x6603d0*/
       if ( v4 != -1 ) /*0x6603d6*/
       {
-        if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v4 >= v5 ) /*0x6603e2*/
+        if ( dword_A8ED84 - v4 >= v5 ) /*0x6603e2*/
           goto LABEL_7; /*0x6603e2*/
-        v5 -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v4; /*0x6603e4*/
+        v5 -= dword_A8ED84 - v4; /*0x6603e4*/
       }
       if ( !v5 ) /*0x6603e8*/
       {
@@ -1760,7 +1760,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
       break; /*0x5c0688*/
   }
   *v3 = 0; /*0x5c0699*/
-  GameOptionsClass::UnlockMovieIfNeeded_MoviesList(dword_A8EB60, Source); /*0x5c06a3*/
+  GameOptionsClass::UnlockMovieIfNeeded_MoviesList((void *)(dword_A8EB60), Source); /*0x5c06a3*/
   strcpy( (char *)(v3), (const char *)(aBik_0)); /*0x5c06c9*/
   v5 = (unsigned int *)((CCFileClass*)v11)->Construct( (char *)(Source)); /*0x5c06d6*/
   v6 = (*(int (**)(unsigned int *, unsigned int))(*v5 + 20))( (unsigned int *)(v5), 0); /*0x5c06e8*/

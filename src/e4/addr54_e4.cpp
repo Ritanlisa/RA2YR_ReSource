@@ -2931,13 +2931,13 @@ int sub_54E260()
 {
   int v2; // [esp+4h] [ebp-8h]
 
-  &g_MissionQueueFrame = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e26d*/
+  &g_MissionQueueFrame = dword_A8ED84; /*0x54e26d*/
   g_MissionQueueFrame.nextScenario[2] = 0; /*0x54e276*/
   sub_54EBF0((VectorClass *)&g_MissionQueueFrame.nextScenario[3], 0, 0); /*0x54e280*/
   g_MissionQueueFrame.nextScenario[3] = (int)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e298*/
   g_MissionQueueFrame.nextScenario[8] = 10; /*0x54e2a2*/
   g_MissionQueueFrame.nextScenario[7] = 0; /*0x54e2ac*/
-  &g_MissionQueueFrame = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e2b6*/
+  &g_MissionQueueFrame = dword_A8ED84; /*0x54e2b6*/
   g_MissionQueueFrame.nextScenario[1] = v2; /*0x54e2bb*/
   g_MissionQueueFrame.nextScenario[2] = 100; /*0x54e2c1*/
   return atexit(loc_54E2D0); /*0x54e2cf*/
@@ -2951,7 +2951,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
 
   void *v2; // [esp+8h] [ebp-8h]
 
-  this->AbstractClass = *(void **)((char *)&stru_A8EB00 + 416); /*0x54e370*/
+  this->AbstractClass = (void *)dword_A8ED84; /*0x54e370*/
   ((unsigned int *)this)[0] = 0; /*0x54e375*/
   ((unsigned int *)this)[0] = 0; /*0x54e378*/
   ((unsigned int *)this)[0] = 0; /*0x54e37b*/
@@ -2960,7 +2960,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   ((unsigned int *)this)[0] = (unsigned int)&vt_DynamicVectorClass; /*0x54e385*/
   ((unsigned int *)this)[0] = (unsigned int)(void *)10; /*0x54e38c*/
   ((unsigned int *)this)[0] = 0; /*0x54e393*/
-  this->AbstractClass = *(void **)((char *)&stru_A8EB00 + 416); /*0x54e39e*/
+  this->AbstractClass = (void *)dword_A8ED84; /*0x54e39e*/
   ((unsigned int *)this)[0] = (unsigned int)v2; /*0x54e3a4*/
   ((unsigned int *)this)[0] = (unsigned int)(void *)100; /*0x54e3a7*/
   return (unsigned int *)this; /*0x54e3aa*/

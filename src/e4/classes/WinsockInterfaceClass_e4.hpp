@@ -14,6 +14,7 @@ struct WinsockInterfaceClass {
 // --- flat members (END) ---
     unsigned int * Destru_vt00(char a2);
     WinsockInterfaceClass();
+    static void Constructor(void *aP1);  // 0x7B1AB0 raw: void __thiscall WinsockInterfaceClass::WinsockInterfaceClass(WinsockInterfaceClass*) -- site form (W20L4 T2)
     char Destru_vt15(int a1);
     int Destru_vt13();
     int Destru_vt14(int a1);

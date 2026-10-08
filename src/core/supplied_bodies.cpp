@@ -684,9 +684,9 @@ bool FrameTimer::HasRemaining() const { /*G42.33 b3: 载体签名 (cache this=Te
     result = *(unsigned int *)&this->q190; /*0x41bf46 ironCurtainTimer[1]*/
     if ( v1 != -1 ) /*0x41bf4f*/
     {
-      if ( *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1 < result ) /*0x41bf5b*/
+      if ( dword_A8ED84 - v1 < result ) /*0x41bf5b*/
       {
-        result -= *(unsigned int *)((char *)&stru_A8EB00 + 416) - v1; /*0x41bf5d*/
+        result -= dword_A8ED84 - v1; /*0x41bf5d*/
         IDA_LOBYTE(result) = result > 0; /*0x41bf66*/
         return result; /*0x41bf68*/
       }

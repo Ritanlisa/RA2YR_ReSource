@@ -1005,7 +1005,7 @@ int E4Recv_70F740::sub_70F740(int a2)
   int v4; // [esp+4h] [ebp-8h]
 
   v2 = (ObjectClass *)((char *)this + 384); /*0x70f74c*/
-  v2->AbstractClass =(void *)(unsigned int)(*(void **)(unsigned int *)((char *)&stru_A8EB00 + 416)); /*0x70f752*/
+  v2->AbstractClass =(void *)(unsigned int)((void **)dword_A8ED84); /*0x70f752*/
   ((unsigned int *)v2)[0] = (unsigned int)((void *)v4); /*0x70f758*/
   ((unsigned int *)v2)[0] = (unsigned int)((void *)a2); /*0x70f75b*/
   return v4; /*0x70f75e*/

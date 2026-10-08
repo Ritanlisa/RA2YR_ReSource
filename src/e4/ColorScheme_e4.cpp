@@ -23,7 +23,7 @@ int ColorScheme::Destructor(void *a1)
     (**v2)((unsigned int)v2, 1); /*0x68c8ff*/
   (&this->data)[195] = 0; /*0x68c905*/
   v4 = this; /*0x68c91b*/
-result = (*(int (**)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)&stru_B054D0+ 16))( /*0x68c91f*/ &stru_B054D0, (ColorScheme **)((gamemd::_VectorClass_PAVColorScheme *)((gamemd::_VectorClass_PAVColorScheme *)((gamemd::_VectorClass_PAVColorScheme *)(&v4)))));
+result = (*(int (**)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)&stru_B054D0+ 16))( (gamemd::_VectorClass_PAVColorScheme *)(/*0x68c91f*/ &stru_B054D0), (ColorScheme **)((gamemd::_VectorClass_PAVColorScheme *)((gamemd::_VectorClass_PAVColorScheme *)((gamemd::_VectorClass_PAVColorScheme *)(&v4)))));
 
 
   if ( result != -1 && result < *(int *)&dword_B054E0) /*0x68c930*/

@@ -191,13 +191,13 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->TiberiumClass_field_F4 = 0; /*0x721758*/
   this->TiberiumClass_field_F8 = 0; /*0x72175e*/
   this->TiberiumClass_field_FC = 0; /*0x721764*/
-  this->SpreadTimer[0] = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721770*/
+  this->SpreadTimer[0] = dword_A8ED84; /*0x721770*/
   this->SpreadTimer[2] = 0; /*0x721776*/
   this->TiberiumClass_field_10C = 0; /*0x72177c*/
   this->TiberiumClass_field_110 = 0; /*0x721782*/
   this->TiberiumClass_field_114 = 0; /*0x721788*/
   this->TiberiumClass_field_118 = 0; /*0x72178e*/
-  v3 = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x721794*/
+  v3 = dword_A8ED84; /*0x721794*/
   this->GrowthTimer[2] = 0; /*0x72179a*/
   this->GrowthTimer[0] = v3; /*0x7217a0*/
   this->vtable1 = &vt_TiberiumClass; /*0x7217a6*/
@@ -286,7 +286,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(unsigned int *)(v5 + 192) = BuildingTypeClass::FindAnimByName((gamemd::INIClass *)(/*0x721b3a*/
                             (BuildingTypeClass *)aP1), (uint8_t *)(v5 + 36), (gamemd::AnimTypeClass *)((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 95)),(void *)(v22));
   if ( ((INIClass*)/*0x721b57*/
-         (INIClass *)aP1)->GetString(/*0x721b57*/ (uint8_t *)(v5 + 36), aDebris, &g_INI_DefaultBuffer, (char *)&v25.DynamicVector_field_0x1C, 128) )
+         (INIClass *)aP1)->GetString(/*0x721b57*/ (uint8_t *)(v5 + 36), (void *)(aDebris), &g_INI_DefaultBuffer, (char *)&v25.DynamicVector_field_0x1C, 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v25))->AnimTypeConstructor(0, 0); /*0x721b6c*/
     *(unsigned int *)v25.__pad_0 = (unsigned int)(&vt_TypeList); /*0x721b7b*/

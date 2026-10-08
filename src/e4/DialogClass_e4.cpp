@@ -61,7 +61,7 @@ int DialogClass::Reposition(int hWnd, int a2)
   }
   else
   {
-    DialogParamA = (HWND)((int)(CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0)));
+    DialogParamA = (HWND)((int)(CreateDialogParamA((HINSTANCE)(g_hInstance), (LPCSTR)0xC6, 0, (DLGPROC)(sub_775B40), 0)));
     GetClientRect(DialogParamA, &v10); /*0x775cb4*/
     DestroyWindow(DialogParamA); /*0x775cbb*/
     right = v10.right; /*0x775cc1*/

@@ -395,7 +395,7 @@ return (void *)(*(int (**)(unsigned char *, int, int, int *, int *, unsigned int
             0,
             0,
             0);
-    return (*(int (__thiscall **)(unsigned char *, int, int, char *, char *, unsigned int, int, unsigned int, int))(v44 + 1292))( /*0x73cead*/
+    return (*(int (__thiscall **)(unsigned char *, int, int, char *, char *, unsigned int, int, unsigned int, int))((unsigned char *)(v44 + 1292)))( /*0x73cead*/
              a1,
              v15,
              v16,

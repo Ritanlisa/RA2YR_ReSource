@@ -274,7 +274,7 @@ LABEL_40:
     *((unsigned int *)this + 5) = (unsigned int)(v22); /*0x432a2c*/
     *((unsigned int *)this + 6) = v27; /*0x432a2f*/
     *((unsigned int *)this + 7) = bottom; /*0x432a32*/
-    *((unsigned int *)this + 2) = (unsigned int)((gamemd::AbstractClass **)(BinkDDSurfaceType((*(unsigned int *)(g_DSurface_Primary + 28))))); /*0x432a44*/
+    *((unsigned int *)this + 2) = (unsigned int)((gamemd::AbstractClass **)(BinkDDSurfaceType((void *)((*(unsigned int *)(g_DSurface_Primary + 28)))))); /*0x432a44*/
     return (gamemd::AbstractClass **)(1); /*0x432a4a*/
   }
   else
@@ -460,7 +460,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
     *((unsigned int *)this + 44) = 0; /*0x432ea4*/
     BinkPause((void *)(v7), 1); /*0x432eab*/
   }
-  if ( *((unsigned int *)this + 45) || (result = BinkWait((*((unsigned int *)this + 1))), LOBYTE(result) = result == 0, (unsigned char)result) ) /*0x432f4e*/
+  if ( *((unsigned int *)this + 45) || (result = BinkWait((void *)((*((unsigned int *)this + 1)))), LOBYTE(result) = result == 0, (unsigned char)result) ) /*0x432f4e*/
   {
     do /*0x43300d*/
     {
@@ -489,7 +489,7 @@ int BinkMovie::RenderLoop(int aP1, int a3, int a4)
       v17 = *((unsigned int *)this + 1); /*0x432ff4*/
       *((unsigned int *)this + 12) = *(unsigned int *)(v17 + 12); /*0x432ff8*/
       BinkNextFrame((void *)(v17)); /*0x432ffb*/
-      result = BinkWait((*((unsigned int *)this + 1))); /*0x433005*/
+      result = BinkWait((void *)((*((unsigned int *)this + 1)))); /*0x433005*/
     }
     while ( !result ); /*0x43300d*/
     LOBYTE(result) = 1; /*0x433016*/

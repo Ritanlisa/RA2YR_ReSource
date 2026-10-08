@@ -42,7 +42,7 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 9) = 0; /*0x43a358*/
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
-  *((unsigned int *)this + 12) = *(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
+  *((unsigned int *)this + 12) = dword_A8ED84; /*0x43a372*/
   *(unsigned int *)this->__pad_0 = (unsigned int)(&vt_NeuronClass); /*0x43a375*/
   this->vtable2 =(void *)(int)&vt_NeuronClass; /*0x43a37b*/
   this->vtable3 =(void *)(int)&vt_NeuronClass; /*0x43a382*/
@@ -88,7 +88,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   this->vtable3 = (int)&vt_NeuronClass; /*0x43a9da*/
   this->vtable4 = (int)&vt_NeuronClass; /*0x43a9e1*/
   v6 = (unsigned int *)(this); /*0x43a9ef*/
-v3 = (*(int (**)(int *, NeuronClass **))(dword_B0F670+ 16))( /*0x43a9f3*/ &dword_B0F670, (NeuronClass **)((int *)((int *)((int *)(&v6)))));
+v3 = (*(int (**)(int *, NeuronClass **))(dword_B0F670+ 16))( /*0x43a9f3*/ &dword_B0F670, (NeuronClass **)((int *)((int *)((int *)((int *)(&v6))))));
 
 
   if ( v3 != -1 && v3 < dword_B0F680) /*0x43aa03*/

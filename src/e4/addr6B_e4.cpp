@@ -2425,9 +2425,9 @@ int sub_6BB390()
   CHAR Filename[260]; // [esp+1ECh] [ebp-104h] BYREF
 
   GetModuleFileNameA(g_hInstance, Filename, 0x104u); /*0x6bb3ae*/
-  StringFromGUID2(*(rguid), sz, 39); /*0x6bb3c9*/
+  StringFromGUID2((const GUID &)(*(rguid)), sz, 39); /*0x6bb3c9*/
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(MultiByteStr), 39, 0, 0); /*0x6bb3ea*/
-  StringFromGUID2(stru_7E9510, sz, 39); /*0x6bb3fb*/
+  StringFromGUID2((const GUID &)(stru_7E9510), sz, 39); /*0x6bb3fb*/
   WideCharToMultiByte( 0, 0, (LPCWCH)(sz), -1, (LPSTR)(String), 39, 0, 0); /*0x6bb419*/
   lstrcpyA( (LPSTR)(String1), "CLSID\\" /*w16g4 aClsid*/); /*0x6bb42b*/
   lstrcatA(String1, MultiByteStr); /*0x6bb43d*/
@@ -4443,7 +4443,7 @@ unsigned int * E4Recv_6B0A90::sub_6B0A90(int a2)
   v2[1] = 6; /*0x6b0ab3*/
   nextObject = this->nextObject; /*0x6b0ac0*/
   result = v2 + 2; /*0x6b0ac3*/
-  *result = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6b0ac6*/
+  *result = *(unsigned int *)&(unsigned int *)(unsigned int)&dword_A8ED84; /*0x6b0ac6*/
   result[1] = v5; /*0x6b0acc*/
   result[2] = nextObject; /*0x6b0acf*/
   return result; /*0x6b0ad2*/

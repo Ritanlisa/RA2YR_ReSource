@@ -668,7 +668,7 @@ int Game::MakeScreenshot(int a1)
         v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537c7c*/
         if ( v12 >= v3 ) /*0x537c86*/
           v12 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537c96*/
-        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q030))(dword_887640);  /*0x537ca4*/
+        (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q030)))(dword_887640);  /*0x537ca4*/
         v4 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 31))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537cb8*/
         v5 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->vtable1 + 32))( (ObjectClass *)(g_DSurface_Hidden)); /*0x537cbc*/
         v15[0] = 0; /*0x537cd8*/
@@ -683,7 +683,7 @@ int Game::MakeScreenshot(int a1)
 
 
 
-        (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->q040))(dword_887640);  /*0x537cfb*/
+        (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->q040)))(dword_887640);  /*0x537cfb*/
         v6 = -1; /*0x537cfe*/
         do /*0x537d6d*/
         {
@@ -781,7 +781,7 @@ HashTable_flat * * Game::StartModemMultiplayer(ObjectClass *a2, char a3)
   }
   if ( dword_A8B54C != 2 ) /*0x5b71f3*/
     return 0; /*0x5b71f7*/
-  StringCSF = GetStringCSF((wchar_t *)((char *)&stru_82BA00 + 4), 0, (const char *)((char *)&stru_82BA00 + 40), 1779); /*0x5b7211*/
+  StringCSF = GetStringCSF((wchar_t *)"TXT_SENDING_GO_ACK", 0, (const char *)"D:\\ra2mdpost\\ModemGst.cpp", 1779); /*0x5b7211*/
   MessageBox = (Dialog *)CreateMessageBox( (LPARAM)((LPARAM)((LPARAM)StringCSF)), 0, 0); /*0x5b721a*/
   v13 = MessageBox; /*0x5b721f*/
   if ( MessageBox ) /*0x5b7223*/
@@ -819,7 +819,7 @@ LABEL_31:
   BYTE1(v17) = BYTE1((&dword_A8E960)[0]) & 0x77; /*0x5b7319*/
   v18 = v17 | ((byte_A8B31D & 1 | (16 * (((unsigned char *)&stru_A8B250)[16] & 1))) << 11); /*0x5b731f*/
   LOBYTE(v18) = LOBYTE((&dword_A8E960)[0]) | 0xC0; /*0x5b7326*/
-  *(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x5b7329*/
+  dword_A8ED84 = 0; /*0x5b7329*/
   dword_A8B24C = 2; /*0x5b7333*/
   (&dword_A8E960)[0] = v18; /*0x5b733d*/
   nullsub_37(); /*0x5b7343*/
@@ -890,7 +890,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   BYTE2(v11[34]) = g_RulesInitConfig; /*0x5ba842*/
   HIBYTE(v11[34]) = ((unsigned char *)&stru_A8B250)[32]; /*0x5ba84e*/
   wcscpy((wchar_t *)&v11[9] + 1, *(const wchar_t **)(dword_A8B8CC + 4 * *(unsigned int *)((unsigned char *)&stru_A8B250 + 4))); /*0x5ba85e*/
-  ((CCFileClass*)&v13)->Construct((*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]) + 88)); /*0x5ba87f*/
+  ((CCFileClass*)&v13)->Construct((char *)((*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&((unsigned char *)&stru_A8B250)[4]) + 88))); /*0x5ba87f*/
   *(int *)((char *)&v11[39] + 2) = CCFileClass::GetSize( &v13); /*0x5ba896*/
   strncpy( /*0x5ba8b3*/
     (char *)&v11[40] + 3,
@@ -1091,8 +1091,8 @@ void Game::BuildGameSettingsPacket(char * Buffer)
       Option2SessionClass = ((SessionClass *)(v6))->GetOption2(); /*0x5dbce2*/
       v13 = (void *)OptionSessionClass; /*0x5dbce3*/
       v11 = ToWideStringChar( (IUnknown *)(*(char **)(dword_A8DA78 + 4 * v5))); /*0x5dbcf3*/
-      sprintf( /*0x5dbd07*/
-        &((unsigned char *)&byte_ABFF94)[strlen( (const char *)(byte_ABFF94))],
+      sprintf( (char *const)(/*0x5dbd07*/
+        &((unsigned char *)&byte_ABFF94)[strlen( (const char *)(byte_ABFF94))]),
         "%s,%d,%d,%d,%d,%x,%x,%x,",
         v11,
         PlayerSideSessionClass,
@@ -1115,7 +1115,7 @@ void Game::BuildGameSettingsPacket(char * Buffer)
     v10 = *v9; /*0x5dbd61*/
     if ( *v9 == -3 ) /*0x5dbd66*/
       v10 = -1; /*0x5dbd68*/
-    sprintf((unsigned char *)&byte_ABFF94 + strlen( (const char *)(byte_ABFF94)), "%d,%d,%d,%d,%d,", *(v9 - 8), v10, v9[8], v9[16], v9[24]); /*0x5dbd97*/
+    sprintf((char *const)&byte_ABFF94 + strlen( (const char *)(byte_ABFF94)), "%d,%d,%d,%d,%d,", *(v9 - 8), v10, v9[8], v9[16], v9[24]); /*0x5dbd97*/
     ++v9; /*0x5dbd9c*/
   }
   while ( (int)v9 < (int)MEMORY[0xA8B2BC] ); /*0x5dbda8*/
@@ -1345,7 +1345,7 @@ LABEL_6:
     if ( CoCreateInstance(*(const IID *)&stru_7E9540, 0, 7u, *(const IID *)&riid, (LPVOID *)&ppstgOpen) >= 0 ) /*0x67e5c9*/
     {
       if ( OleRun((LPUNKNOWN)ppstgOpen) >= 0 ) /*0x67e5d8*/
-        ppstgOpen->QueryInterface(&stru_83D598, (void **)&v7); /*0x67e5eb*/
+        ppstgOpen->QueryInterface((const IID &)(&stru_83D598), (void **)&v7); /*0x67e5eb*/
       ppstgOpen->Release(); /*0x67e5f4*/
     }
     if ( !v7 ) /*0x67e5fd*/
@@ -1432,7 +1432,7 @@ result = (*(int (**)(Game *, Object **, int, unsigned int))(*(unsigned int *)thi
     if ( result >= 0 )
     {
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&dword_A83D4C); /*0x67fa0e*/
-result = (*(int (**)(Game *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x67fa1f*/ this, (unsigned char *)(((char *)&stru_A8EB00 + 416)), 4, 0);
+result = (*(int (**)(Game *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x67fa1f*/ this, (unsigned char *)&dword_A8ED84, 4, 0);
 
 
 
@@ -1916,7 +1916,7 @@ LABEL_16:
       v16 = PlayerColor; /*0x77e673*/
       v15 = PlayerSide; /*0x77e674*/
       v14 = ((String *)((char **)&v24))->GetOrEmpty(); /*0x77e686*/
-      sprintf((unsigned char *)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), "%s,%d,%d,%d,%d,%x,%x,%x,", v14, v15, v16, v18, v20, v7, v11, v12); /*0x77e69a*/
+      sprintf((char *const)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), "%s,%d,%d,%d,%d,%x,%x,%x,", v14, v15, v16, v18, v20, v7, v11, v12); /*0x77e69a*/
       j_DeleteAndZero( (void *)(&v24)); /*0x77e6a6*/
       ++v5; /*0x77e6af*/
     }
@@ -1928,7 +1928,7 @@ LABEL_16:
   v13 = (int *)(*(int * *)&MEMORY[0xA8B2DC]); /*0x77e6fc*/
   do /*0x77e740*/
   {
-    sprintf((unsigned char *)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), "%d,%d,%d,%d,%d," /*w16g4 aDDDDD_0*/, *(v13 - 24), *(v13 - 16), *(v13 - 8), *v13, v13[8]); /*0x77e72f*/
+    sprintf((char *const)&byte_B76C24 + strlen( (const char *)(byte_B76C24)), "%d,%d,%d,%d,%d," /*w16g4 aDDDDD_0*/, *(v13 - 24), *(v13 - 16), *(v13 - 8), *v13, v13[8]); /*0x77e72f*/
     ++v13; /*0x77e734*/
   }
   while ( (int)v13 < (int)MEMORY[0xA8B2FC] ); /*0x77e740*/
@@ -2264,14 +2264,14 @@ void Game_Setup(CCINIClass * aP0, CCINIClass * aP1, char * Buffera, char * a3)
           Buffera = (char *)(0); /*0x7a2267*/
           a3 = (char *)(0); /*0x7a2272*/
           v11 = 0; /*0x7a2276*/
-          sscanf(aP1, "%X", &Buffera); /*0x7a227a*/
+          sscanf((const char *const)(aP1), "%X", &Buffera); /*0x7a227a*/
           sscanf(v5, "%X", &a3); /*0x7a228a*/
           sscanf(v6, "%X", &v11); /*0x7a229a*/
           v7 = 0; /*0x7a22a2*/
           v8 = (char **)&dword_A8DA90; /*0x7a22a4*/
           while ( 1 ) /*0x7a22ab*/
           {
-            v9 = ToWideStringChar(*v8); /*0x7a22ab*/
+            v9 = ToWideStringChar((IUnknown *)(*v8)); /*0x7a22ab*/
             if ( !_strcmpi((const char *)(aP0), v9) ) /*0x7a22b2*/
               break; /*0x7a22b2*/
             ++v8; /*0x7a22be*/
@@ -2323,8 +2323,8 @@ AbstractClass * * Game::SetupWOLTournament()
   char *v24; // [esp+10h] [ebp-104h] BYREF
   char String_v[256]; // [esp+14h] [ebp-100h] BYREF
 
-  strcpy( (char *)(String_v), this); /*0x7a2359*/
-  v1 = strtok(String_v, asc_84D68C); /*0x7a2373*/
+  strcpy( (char *)(String_v), (const char *)(this)); /*0x7a2359*/
+  v1 = strtok(String_v, (const char *)(asc_84D68C)); /*0x7a2373*/
   v2 = strtok(0, (char *)&::Delimiter); /*0x7a2375*/
   v3 = atol(v2); /*0x7a2387*/
   v4 = strtok(0, (char *)&::Delimiter); /*0x7a2389*/
@@ -2332,7 +2332,7 @@ AbstractClass * * Game::SetupWOLTournament()
   v6 = strtok(0, (char *)&::Delimiter); /*0x7a23a9*/
   v24 = strtok(0, (char *)&::Delimiter); /*0x7a23b7*/
   v7 = strtok(0, (char *)&::Delimiter); /*0x7a23bb*/
-  Game_Setup((gamemd::CCINIClass *)(v1), v6, v24, v7); /*0x7a23cd*/
+  Game_Setup((gamemd::CCINIClass *)(v1), (gamemd::CCINIClass *)(v6), v24, v7); /*0x7a23cd*/
   ((String *)(&v24))->Assign( (const char *)(v1)); /*0x7a23d7*/
   SetupLobbyPlayerSlot((const char **)&v24, v3, v5, -2, -2); /*0x7a23e7*/
   j_DeleteAndZero( (void *)((void **)&v24)); /*0x7a23f0*/
@@ -2344,7 +2344,7 @@ AbstractClass * * Game::SetupWOLTournament()
   v13 = strtok(0, (char *)&::Delimiter); /*0x7a243e*/
   v24 = strtok(0, (char *)&::Delimiter); /*0x7a244c*/
   v14 = strtok(0, (char *)&::Delimiter); /*0x7a2450*/
-  Game_Setup((gamemd::CCINIClass *)(v8), v13, v24, v14); /*0x7a2462*/
+  Game_Setup((gamemd::CCINIClass *)(v8), (gamemd::CCINIClass *)(v13), v24, v14); /*0x7a2462*/
   ((String *)(&v24))->Assign( (const char *)(v8)); /*0x7a246c*/
   SetupLobbyPlayerSlot((const char **)&v24, v10, v12, -2, -2); /*0x7a247c*/
   j_DeleteAndZero( (void *)((void **)&v24)); /*0x7a2485*/
@@ -2377,7 +2377,7 @@ LABEL_6:
   {
     v20 = (wchar_t *)__2_YAPAXI_Z(0x1BCu); /*0x7a2528*/
     if ( v20 ) /*0x7a2532*/
-      v21 = (wchar_t *)SessionClass::ParseGameInfo( (wchar_t *)(v20), (char *)(aRandmapSed), (CampaignScore *)(&unk_ABE050), (CCINIClass *)(v19), 1, 0, 2, 4); /*0x7a254e*/
+      v21 = (wchar_t *)SessionClass::ParseGameInfo( (wchar_t *)(v20), (char *)(aRandmapSed), (wchar_t *)(&unk_ABE050), (char *)(v19), 1, 0, 2, 4); /*0x7a254e*/
     else
       v21 = (wchar_t *)(0); /*0x7a2552*/
     if ( dword_A8B8D8 < dword_A8B8D0 /*0x7a258b*/
@@ -2627,7 +2627,7 @@ int Game::ResetReadyStates()
   v3 = dword_A8DA84; /*0x5e98a7*/
   for ( i = 0; i < v3; ++i ) /*0x5e98b1*/
   {
-    result = wcscmp(*(const wchar_t **)(dword_A8DA78 + 4 * i), &word_A8D610); /*0x5e98c1*/
+    result = wcscmp(*(const wchar_t **)(dword_A8DA78 + 4 * i), (const wchar_t *)(&word_A8D610)); /*0x5e98c1*/
     if ( result ) /*0x5e98cb*/
     {
       result = *(unsigned int *)(dword_A8DA78 + 4 * i); /*0x5e98d3*/

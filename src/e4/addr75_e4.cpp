@@ -654,7 +654,7 @@ int CCINIClass::InitFromINIEVA()
     {
       StringByIndex = (uint8_t *)gamemd::INIClass::GetStringByIndex( (gamemd::CCINIClass *)((char *)v1), (gamemd::CCINIClass *)(g_INI_Key_DialogList),  (void *)v4); /*0x753060*/
       KeyCount = /*0x75306d*/
-                   ((gamemd::INIClass*)((gamemd::INIClass*)v1))->GetString(/*0x75306d*/ g_INI_Key_DialogList, StringByIndex, &g_INI_DefaultBuffer, Destination, 200);
+                   ((gamemd::INIClass*)((gamemd::INIClass*)v1))->GetString(/*0x75306d*/ (void *)(g_INI_Key_DialogList), (void *)(StringByIndex), &g_INI_DefaultBuffer, (void *)(Destination), 200);
       if ( KeyCount ) /*0x753074*/
       {
         if ( &v11 == (int *)-28 ) /*0x753080*/
@@ -3074,12 +3074,12 @@ char * globalHelper_053F90(unsigned int * a0, ObjectClass * aP1, SomeVoxelCache 
   v15 = (float *)(Info + 64); /*0x753fdf*/
   do /*0x7540c6*/
   {
-    v16 = TransformMatrix3x4Point( (AbstractClass *)(v23), (IUnknown *)(a4), (IUnknown *)(v15)); /*0x753feb*/
+    v16 = TransformMatrix3x4Point( (gamemd::AbstractClass*)(v23), (IUnknown *)(a4), (IUnknown *)(v15)); /*0x753feb*/
     *v14 = *v16; /*0x753ff5*/
     v14[1] = v16[1]; /*0x753ffa*/
     v14[2] = v16[2]; /*0x754004*/
     v14[2] = 0.0; /*0x75400b*/
-    v17 = TransformMatrix3x4Point( (AbstractClass *)(v24), (IUnknown *)(a3), (IUnknown *)(v14)); /*0x754012*/
+    v17 = TransformMatrix3x4Point( (gamemd::AbstractClass*)(v24), (IUnknown *)(a3), (IUnknown *)(v14)); /*0x754012*/
     *v14 = *v17; /*0x75401b*/
     v14[1] = v17[1]; /*0x754020*/
     v14[2] = v17[2]; /*0x754026*/

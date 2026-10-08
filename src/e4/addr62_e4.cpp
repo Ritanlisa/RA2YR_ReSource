@@ -666,7 +666,7 @@ int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, voi
   v10 = (int *)((void *)(a3));
   v11 = (void *)(a3[3]);
   v12 = (unsigned int)(void *)(a3[2] - *(unsigned int *)(a3));
-  v18 = (void *)(*(unsigned int *)a3));
+  v18 = *(unsigned int *)a3; /*W20L4: raw 0x6210ad v18 = *a3*/
   v13 = ((uint8_t)yTop >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6210b1*/
       | (IDA_BYTE2(yTop) >> g_BitMask_Red << g_BitShift_Blue)
       | (IDA_BYTE1(yTop) >> g_BitMask_Blue << g_BitMask_Green);
@@ -677,7 +677,7 @@ int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, voi
   if ( ((unsigned int)(a6)& 4) != 0 ) /*0x6210ca*/
   {
     ((Text *)(a4))->Layout( (unsigned short *)(a2), (int *)&a4, (unsigned int *)(&a3), v12); /*0x6210da*/
-    yTop += (v14 - (int, unsigned int a10)a3) / 2; /*0x6210f2*/
+    yTop += (v14 - (int)a3) / 2; /*0x6210f2*/
   }
   ((Char *)(v15))->Swap(1); /*0x6210fa*/
   ((TextGroup *)((TextGroup *)v15))->SetRect((unsigned int *)(v10)); /*0x621102*/
@@ -1092,7 +1092,7 @@ int AddDynamicVector(HWND a1, int * a2)
 }
 // 0x622650
 namespace gamemd {
-int sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM)
+int sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM), LPARAM a3)  /*W20L4: raw fn_62.c:2008 __fastcall(ushort, INT_PTR (__stdcall*)(HWND,UINT,WPARAM,LPARAM), LPARAM)*/
 {
   int v4; // ebp
   int result; // eax
@@ -1157,12 +1157,12 @@ int SetupDialog(Dialog *hWnd, int a2)
 
   DialogClass::RegisterWinClasses(); /*0x62282b*/
   dword_AC48A8 = (int)hWnd; /*0x622836*/
-  EnumChildWindows((HWND)hWnd, Dialog::InitWindow, 1); /*0x622844*/
+  EnumChildWindows((HWND)hWnd, (WNDENUMPROC)(Dialog::InitWindow), 1); /*0x622844*/
   Dialog::InitWindow((int)((HWND)hWnd), 1); /*0x622849*/
   EnumChildWindows((HWND)hWnd, Dialog::SubclassEditControl, 1); /*0x622856*/
-  EnumChildWindows((HWND)hWnd, Dialog::InitializeControls, 0); /*0x622861*/
+  EnumChildWindows((HWND)hWnd, (WNDENUMPROC)(Dialog::InitializeControls), 0); /*0x622861*/
   Dialog::InitializeControls((HWND)hWnd, 0); /*0x622865*/
-  EnumChildWindows((HWND)hWnd, Dialog::InitWindow, 0); /*0x622871*/
+  EnumChildWindows((HWND)hWnd, (WNDENUMPROC)(Dialog::InitWindow), 0); /*0x622871*/
   Dialog::InitWindow((int)((HWND)hWnd), 0); /*0x622875*/
   ((Dialog *)hWnd)->GetField(); /*0x62287c*/
   lParam[0] = (LPARAM)hWnd; /*0x622890*/
@@ -1299,7 +1299,7 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
     if ( a2 > 0x497 ) /*0x622ea0*/
     {
       if ( a2 == 1260 ) /*0x6230be*/
-        EnumChildWindows((HWND)(aP0), sub_60AA60, 0); /*0x6230c8*/
+        EnumChildWindows((HWND)(aP0), (WNDENUMPROC)(sub_60AA60), 0); /*0x6230c8*/
       return 0; /*0x6230c8*/
     }
     if ( a2 == 1175 ) /*0x622ea6*/
@@ -1320,12 +1320,12 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       DialogClass::RegisterWinClasses(); /*0x622efe*/
       v22 = (void (*)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x622f03*/
       dword_AC48A8 = (int)aP0; /*0x622f09*/
-      EnumChildWindows((HWND)(aP0), Dialog::InitWindow, 1); /*0x622f17*/
+      EnumChildWindows((HWND)(aP0), (WNDENUMPROC)(Dialog::InitWindow), 1); /*0x622f17*/
       Dialog::InitWindow((int)(aP0), 1); /*0x622f1c*/
       EnumChildWindows((HWND)(aP0), Dialog::SubclassEditControl, 1); /*0x622f29*/
-      EnumChildWindows((HWND)(aP0), Dialog::InitializeControls, 0); /*0x622f32*/
+      EnumChildWindows((HWND)(aP0), (WNDENUMPROC)(Dialog::InitializeControls), 0); /*0x622f32*/
       Dialog::InitializeControls((HWND)(aP0), 0); /*0x622f36*/
-      EnumChildWindows((HWND)(aP0), Dialog::InitWindow, 0); /*0x622f42*/
+      EnumChildWindows((HWND)(aP0), (WNDENUMPROC)(Dialog::InitWindow), 0); /*0x622f42*/
       Dialog::InitWindow((int)(aP0), 0); /*0x622f46*/
       ((Dialog*)aP0)->GetField(); /*0x622f4d*/
       UI_Helper_60D2C0(aP0, v22); /*0x622f56*/
@@ -1924,9 +1924,9 @@ int E4Recv_6242B0::sub_6242B0(HWND hWnd)
   GetClassNameA((HWND)hWnd, ClassName, 128); /*0x6242c8*/
   if ( !strcmp(ClassName, g_INI_Key_Edit) ) /*0x6242df*/
     return 1; /*0x62430a*/
-  if ( !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x624325*/
+  if ( !strcmp(ClassName, (const char *)(g_INI_Key_NewEdit)) ) /*0x624325*/
     return 1; /*0x624350*/
-  if ( !strcmp(ClassName, g_INI_Key_ListBox) /*0x6243c1*/
+  if ( !strcmp(ClassName, (const char *)(g_INI_Key_ListBox)) /*0x6243c1*/
     && *(unsigned int *)&g_DialogPool.__pad_208[60]
     && (v2 = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56]
                        + 4
@@ -1938,14 +1938,14 @@ int E4Recv_6242B0::sub_6242B0(HWND hWnd)
     {
       v2 = *(unsigned int *)(v2 + 516); /*0x6243cb*/
       if ( !v2 ) /*0x6243d3*/
-        return !strcmp(ClassName, g_INI_Key_ComboBox) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x6243d3*/
+        return !strcmp(ClassName, (const char *)(g_INI_Key_ComboBox)) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x6243d3*/
     }
     return *(unsigned int *)(v2 + 108) == 1; /*0x6243e8*/
   }
   else
   {
     v3 = hWnd; /*0x6243f2*/
-    return !strcmp(ClassName, g_INI_Key_ComboBox) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
+    return !strcmp(ClassName, (const char *)(g_INI_Key_ComboBox)) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
   }
 
 }

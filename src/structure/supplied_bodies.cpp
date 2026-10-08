@@ -1157,7 +1157,7 @@ int UnitClass::Mission_Harvest()
                    this,
                    ((unsigned int *)this)[0]) )
             {
-              DB = CCINIClass::GetDB((CCINIClass *)((unsigned int *)this)[0]); /*0x415334*/
+              DB = CCINIClass::GetDB((gamemd::AircraftClass *)((unsigned int *)this)[0]); /*0x415334*/
               v14 = DB; /*0x415339*/
               if ( DB /*0x415360*/
                 && (v15 = *(unsigned int *)(DB + 1492)) != 0
@@ -1169,7 +1169,7 @@ int UnitClass::Mission_Harvest()
                                               &v31);
                 v18 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], WaypointCoords); /*0x41538c*/
  NearbyCell = (void *)(InfantryClass_FindNearbyCell((void *)this, (int)v18)); /*0x415394*/
-                vtable0[288](this, NearbyCell, 1); /*0x41539c*/
+                vtable0[288]((gamemd::AircraftClass *)(this), NearbyCell, 1); /*0x41539c*/
               }
               else
               {
@@ -1177,7 +1177,7 @@ int UnitClass::Mission_Harvest()
                 Waypoint_Location = (short *)ScenarioClass_Get_Waypoint_Location((char *)dword_A8B230, &v32, 700); /*0x4153bb*/
                 v22 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], Waypoint_Location); /*0x4153c6*/
  v23 = (void *)(InfantryClass_FindNearbyCell((void *)this, (int)v22)); /*0x4153ce*/
-                v20[288](this, v23, 1); /*0x4153d6*/
+                v20[288]((gamemd::AircraftClass *)(this), v23, 1); /*0x4153d6*/
  team = (TeamClass *)(((unsigned int *)this)[0]); /*0x4153dc*/
                 if ( team ) /*0x4153e4*/
                   TeamClass_SelectMember((int)team, (int)((unsigned int *)this)[0]); /*0x4153f1*/
@@ -1196,8 +1196,8 @@ int UnitClass::Mission_Harvest()
         }
         else
         {
-          v10 = (*((int (__thiscall **)(AircraftClass *, unsigned char *, unsigned int, unsigned int))this->vtable1 + 330))( /*0x4152cd*/
-                  this,
+          v10 = (*((int (__thiscall **)(AircraftClass *, unsigned char *, unsigned int, unsigned int))this->vtable1 + 330))( (gamemd::AircraftClass *)(/*0x4152cd*/
+                  this),
                   ((unsigned char *)this->Type + 1000),
                   0,
                   0);
@@ -1209,7 +1209,7 @@ int UnitClass::Mission_Harvest()
           {
             v11 = *(void (__thiscall ***)(AircraftClass *, void *, int))this; /*0x4152e9*/  // g57e2 W2
  ClosestPlacementCell = (void *)(TechnoClass_FindClosestPlacementCell((void *)this)); /*0x4152ef*/
-            v11[288](this, ClosestPlacementCell, 1); /*0x4152f7*/
+            v11[288]((gamemd::AircraftClass *)(this), ClosestPlacementCell, 1); /*0x4152f7*/
           }
         }
         goto LABEL_9; /*0x415250*/
@@ -1219,7 +1219,7 @@ int UnitClass::Mission_Harvest()
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x415447*/
           ((unsigned int *)this)[0] = 2; /*0x41544e*/
         if ( !(*((unsigned __int8 (__thiscall **)(AircraftClass *, AbstractClass *))this->vtable1 + 340))(this, ((unsigned int *)this)[0]) ) /*0x415463*/
-          ((unsigned int *)this)[0] = 0; /*0x415471*/
+          ((gamemd::AircraftClass *)this)[0] = 0; /*0x415471*/
         goto LABEL_9; /*0x41547b*/
       case 2:
         if ( !*(unsigned int *)&this->Locomotor ) /*0x415480*/
@@ -1339,7 +1339,7 @@ int BuildingClass::AimTurret(_BYTE a2)
       vtable0 = *(int (__thiscall ***)(BuildingClass *, unsigned int *))this; /*0x424bdd*/  // g57e2 W2
       v20 = v8; /*0x424be2*/
       *(unsigned int *)&this->q0CC = 0; /*0x424be6*/
-      result = vtable0[109](this, &v18); /*0x424bf0*/
+      result = vtable0[109](this, (unsigned int *)(&v18)); /*0x424bf0*/
       if ( isOnMap ) /*0x424bf8*/
         result = Targeting::Readd(this); /*0x424c00*/
     }
@@ -1359,7 +1359,7 @@ int BuildingClass::AimTurret(_BYTE a2)
       v20 = v22 - v14[2]; /*0x424c61*/
       v18 = v15; /*0x424c68*/
       v19 = v17; /*0x424c6c*/
-      v16[109](this, &v18); /*0x424c70*/
+      v16[109](this, (unsigned int *)(&v18)); /*0x424c70*/
       return Targeting::Readd(this); /*0x424c7c*/
     }
     return result; /*0x424c81*/

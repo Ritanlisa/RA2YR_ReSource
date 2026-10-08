@@ -353,7 +353,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v8 = *(unsigned int *)(v4 + 3616); /*0x52413b*/
   *(unsigned int *)(v4 + 3588) = v7; /*0x524141*/
   if ( /*0x52415e*/
-         ((INIClass*)((INIClass *)a2))->GetString(/*0x52415e*/ (uint8_t *)(v4 + 36), aEliteoccupywea, &g_INI_DefaultBuffer, String, 128) )
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x52415e*/ (uint8_t *)(v4 + 36), (void *)(aEliteoccupywea), &g_INI_DefaultBuffer, (void *)(String), 128) )
   {
     v9 = (int)(InfantryTypeClass::Find( (char *)(String))); /*0x52416b*/
   }
@@ -369,7 +369,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
                                             (uint8_t ***)a2,
-                                            inited,
+                                            (gamemd::INIClass *)(inited),
                                             (uint8_t *)aVoicecomment,
                                             *(void ***)&v44,
                                             *(void **)(unsigned int *)((char *)&v44 + 3),
@@ -386,7 +386,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_VectorClass); /*0x5241d7*/
   ((VectorClass *)((HWND)((int)&v48)))->Destroy(); /*0x5241df*/
   if ( ((INIClass*)/*0x5241fb*/
-         (INIClass *)a2)->GetString(/*0x5241fb*/ (uint8_t *)(v4 + 36), aDeadbodies, &g_INI_DefaultBuffer, String, 128) )
+         (INIClass *)a2)->GetString(/*0x5241fb*/ (uint8_t *)(v4 + 36), (void *)(aDeadbodies), &g_INI_DefaultBuffer, (void *)(String), 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v48))->AnimTypeConstructor(0, 0); /*0x524210*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_TypeList); /*0x52421f*/
@@ -415,7 +415,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v48.DynamicVector_field_0x1C = (unsigned int)((AbstractClass *)&vt_VectorClass); /*0x5242c9*/
   DynamicVectorClass::Destroy_Alt(  (_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5242cd*/
   if ( /*0x5242e9*/
-         ((INIClass*)((INIClass *)a2))->GetString(/*0x5242e9*/ (uint8_t *)(v4 + 36), aDeathanims, &g_INI_DefaultBuffer, String, 128) )
+         ((INIClass*)((INIClass *)a2))->GetString(/*0x5242e9*/ (uint8_t *)(v4 + 36), (void *)(aDeathanims), &g_INI_DefaultBuffer, (void *)(String), 128) )
   {
     ((DynamicVectorClass *)((DynamicVectorClass *)&v48))->AnimTypeConstructor(0, 0); /*0x5242fa*/
     *(unsigned int *)v48.__pad_0 = (unsigned int)(&vt_TypeList); /*0x524309*/
@@ -451,7 +451,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
     *(unsigned char *)(v4 + 3215) = 1; /*0x5243e7*/
   v17 = *(unsigned int *)(v4 + 3748); /*0x5243ee*/
   if ( !((INIClass*)/*0x524420*/
-          (INIClass *)a2)->GetString(/*0x524420*/ (uint8_t *)(v4 + 36), aEnterwatersoun, &g_INI_DefaultBuffer, String, 128)
+          (INIClass *)a2)->GetString(/*0x524420*/ (uint8_t *)(v4 + 36), (void *)(aEnterwatersoun), &g_INI_DefaultBuffer, (void *)(String), 128)
     || (Index = VocClass::FindIndex( (VocClass *)String), Index == -1) )
   {
     Index = v17; /*0x524422*/

@@ -886,7 +886,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
   if ( cchSrc > 0 ) /*0x7d113b*/
     cchSrc = (int)(strncnt((const unsigned char *)(aP2), cchSrc)); /*0x7d114a*/
   if ( dword_B782CC == 2 ) /*0x7d1155*/
-    return LCMapStringA(aP0, dwMapFlags, aP2, cchSrc, lpDestStr, cchDest); /*0x7d116f*/
+    return LCMapStringA((LCID)(aP0), dwMapFlags, (LPCSTR)(aP2), cchSrc, lpDestStr, cchDest); /*0x7d116f*/
   if ( dword_B782CC != 1 ) /*0x7d1177*/
     return 0; /*0x7d1177*/
   if ( !CodePage ) /*0x7d1180*/
@@ -906,14 +906,14 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     return 0; /*0x7d11e8*/
   if ( !MultiByteToWideChar( CodePage, 1u, (LPCCH)(aP2), cchSrc, (LPWSTR)(lpWideCharStr), v10) ) /*0x7d11f9*/
     return 0; /*0x7d11f9*/
-  v13 = LCMapStringW(aP0, dwMapFlags, lpWideCharStr, v10, 0, 0); /*0x7d120f*/
+  v13 = LCMapStringW((LCID)(aP0), dwMapFlags, lpWideCharStr, v10, 0, 0); /*0x7d120f*/
   v14 = v13; /*0x7d1215*/
   v19 = v13; /*0x7d1217*/
   if ( !v13 ) /*0x7d121c*/
     return 0; /*0x7d121c*/
   if ( (dwMapFlags & 0x400) != 0 )
   {
-    if ( cchDest && (v13 > cchDest || !LCMapStringW(aP0, dwMapFlags, lpWideCharStr, v10, (LPWSTR)lpDestStr, cchDest)) ) /*0x7d1242*/
+    if ( cchDest && (v13 > cchDest || !LCMapStringW((LCID)(aP0), dwMapFlags, lpWideCharStr, v10, (LPWSTR)lpDestStr, cchDest)) ) /*0x7d1242*/
       return 0; /*0x7d124a*/
   }
   else
@@ -924,7 +924,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     ms_exc.old_esp = (DWORD)v18; /*0x7d1278*/
     v21 = v18; /*0x7d127d*/
     ms_exc.registration.TryLevel = -1; /*0x7d1280*/
-    if ( !v18 || !LCMapStringW(aP0, dwMapFlags, lpWideCharStr, v22, v18, v14) ) /*0x7d12aa*/
+    if ( !v18 || !LCMapStringW((LCID)(aP0), dwMapFlags, lpWideCharStr, v22, v18, v14) ) /*0x7d12aa*/
       return 0; /*0x7d12aa*/
     v17 = cchDest
         ? WideCharToMultiByte( CodePage, 0x220u, (LPCWCH)(v18), v14, (LPSTR)(lpDestStr), cchDest, 0, 0)
@@ -2912,8 +2912,8 @@ unsigned int setSBUpLow(void *a1)
       while ( v2 ); /*0x7d374c*/
     }
     __crtGetStringTypeA(1u, SrcStr, 256, CharType, dword_B78840, dword_B78A64, 0); /*0x7d376f*/
-    __crtLCMapStringA(dword_B78A64, 0x100u, SrcStr, 256, DestStr, 256, dword_B78840, 0); /*0x7d3793*/
-    __crtLCMapStringA(dword_B78A64, 0x200u, SrcStr, 256, v10, 256, dword_B78840, 0); /*0x7d37bb*/
+    __crtLCMapStringA((gamemd::CampaignScore *)(dword_B78A64), 0x100u, SrcStr, 256, DestStr, 256, dword_B78840, 0); /*0x7d3793*/
+    __crtLCMapStringA((gamemd::CampaignScore *)(dword_B78A64), 0x200u, SrcStr, 256, v10, 256, dword_B78840, 0); /*0x7d37bb*/
     result = 0; /*0x7d37c3*/
     for ( j = CharType; ; ++j ) /*0x7d37c5*/
     {
@@ -3552,7 +3552,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
         ++v73; /*0x7d3d64*/
         v3 = fgetwc(File); /*0x7d3d6c*/
       }
-      mbtowc(&DstCh, SrcCh, SrcSizeInBytes); /*0x7d3d86*/
+      mbtowc(&DstCh, (const char *)(SrcCh), SrcSizeInBytes); /*0x7d3d86*/
       v16 = v68; /*0x7d3d8b*/
       if ( DstCh == (unsigned short)v3 )
       {
@@ -3839,7 +3839,7 @@ void * signal_7D482C(int Signal, void * Function)
       _lock(1); /*0x7d48fe*/
       if ( (Signal == 2 || Signal == 21) && !dword_B782EC ) /*0x7d4915*/
       {
-        if ( !SetConsoleCtrlHandler(ctrlevent_capture_4, 1) ) /*0x7d4925*/
+        if ( !SetConsoleCtrlHandler((PHANDLER_ROUTINE)(ctrlevent_capture_4), 1) ) /*0x7d4925*/
         {
           LastError = GetLastError(); /*0x7d4952*/
           *__doserrno() = LastError; /*0x7d495a*/
@@ -4156,7 +4156,7 @@ void* _tzset_lk()
   if ( !v0 ) /*0x7d4d5f*/
   {
     _unlock(12); /*0x7d4d66*/
-    if ( GetTimeZoneInformation(&TimeZoneInformation) == -1 ) /*0x7d4d7b*/
+    if ( GetTimeZoneInformation((LPTIME_ZONE_INFORMATION)(&TimeZoneInformation)) == -1 ) /*0x7d4d7b*/
       return; /*0x7d4d7b*/
     dword_87CA60 = 60 * TimeZoneInformation; /*0x7d4d99*/
     dword_B782F0 = 1; /*0x7d4d9e*/
@@ -4207,7 +4207,7 @@ void* _tzset_lk()
     *off_87CAF0 = 0; /*0x7d4f95*/
     return; /*0x7d4f9d*/
   }
-  if ( *v0 && (!dword_B783A4 || strcmp(v0, dword_B783A4)) ) /*0x7d4e76*/
+  if ( *v0 && (!dword_B783A4 || strcmp(v0, (const char *)(dword_B783A4))) ) /*0x7d4e76*/
   {
     free( (void *)(dword_B783A4)); /*0x7d4e8b*/
     v2 = strlen( (const char *)(v1)); /*0x7d4e91*/

@@ -91,7 +91,7 @@ int DDraw::CapabilityCheck()
   v0 = aFailed_1; /*0x4a3ed7*/
 LABEL_7:
   Debug::Log_0(  (void *)("%s\n"),  (void *)(v0)); /*0x4a3edc*/
-  ((Debug *)aCheckingOverla)->Log("Checking overlapped blit capability..."); /*0x4a3eec G57w12: IDA push seq @ 0x4a3eec*/
+  ((gamemd::Debug*)aCheckingOverla)->Log("Checking overlapped blit capability..."); /*0x4a3eec G57w12: IDA push seq @ 0x4a3eec*/
   byte_8205D5 = 1; /*0x4a3ef8*/
   ((XSurface *)v7)->Fill( 0); /*0x4a3f00*/
   v2 = 0; /*0x4a3f13*/
@@ -129,7 +129,7 @@ int DDraw::WaitForIdle()
   int result; // eax
 
   do /*0x4a4846*/
-    result = (*(int (__stdcall **)(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
+    result = (*(int (__stdcall **)(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))((int)(g_DDraw_PrimarySurface), 2); /*0x4a483a*/
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
 

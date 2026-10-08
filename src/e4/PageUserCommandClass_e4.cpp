@@ -1,5 +1,6 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
+#include <new>  // W20L4 T2 placement-new Constructor forwarding
 #include "e4/e4_globals.hpp"
 #include "e4/classes/PageUserCommandClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
@@ -23,6 +24,10 @@
 
 // 0x537DD0
 namespace gamemd {  // G42.18c ns repair
+// 0x537DD0 site-form Constructor supply (W20L4 T2; forwards to ctor def)
+namespace gamemd {
+void * PageUserCommandClass::Constructor(void *aP1) { return new (aP1) PageUserCommandClass(); }
+}
 PageUserCommandClass::PageUserCommandClass()
 {
 

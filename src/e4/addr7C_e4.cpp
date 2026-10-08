@@ -11930,7 +11930,7 @@ HRESULT StgOpenStorage(const WCHAR* pwcsName, void* pstgPriority, DWORD grfMode,
 namespace gamemd {
 int StringFromGUID2(const GUID* const rguid, wchar_t * lpsz, int cchMax)  // G42.33 b3 head truth 0x7c8902
 {
-  return __imp_StringFromGUID2(rguid, lpsz, cchMax);
+  return __imp_StringFromGUID2((const GUID *const)(rguid), lpsz, cchMax);
 }
 } // namespace gamemd
 

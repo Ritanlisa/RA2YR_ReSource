@@ -513,8 +513,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         IDA_LODWORD(var84_4) = v62 - IDA_LODWORD(desiredFacing_4);
         IDA_HIDWORD(var84_4) = v63 - IDA_HIDWORD(desiredFacing_4);
   double v64; // st7
-        v64 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
-                                            (double)(v63 - IDA_HIDWORD(desiredFacing_4))
+        v64 = Math::Sqrt((double)((double)(v63 - IDA_HIDWORD(desiredFacing_4))
                                           * (double)(v63 - IDA_HIDWORD(desiredFacing_4))
                                           + (double)(v62 - IDA_LODWORD(desiredFacing_4))
                                           * (double)(v62 - IDA_LODWORD(desiredFacing_4))));
@@ -565,8 +564,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         IDA_HIDWORD(desiredFacing_4) = v79 - IDA_HIDWORD(var74_4);
         v119 = (ObjectClass *)((char *)v82 - (char *)v121);
   double v81; // st7
-        v81 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
-                                            (double)((char *)v82 - (char *)v121) * (double)((char *)v82 - (char *)v121)
+        v81 = Math::Sqrt((double)((double)((char *)v82 - (char *)v121) * (double)((char *)v82 - (char *)v121)
                                           + (double)(v79 - IDA_HIDWORD(var74_4)) * (double)(v79 - IDA_HIDWORD(var74_4))
                                           + (double)v78 * (double)v78));
         if ( (int)Math::RoundToInt(v81) <= v74 )

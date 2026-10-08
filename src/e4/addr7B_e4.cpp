@@ -1737,7 +1737,7 @@ namespace gamemd {
 int sub_7B0090()
 {
   dword_B77F54 = 0; /*0x7b0095*/
-  return atexit(sub_7B00B0); /*0x7b00a5*/
+  return atexit((void (__cdecl *)(void))(sub_7B00B0)); /*0x7b00a5*/
 }
 } // namespace gamemd
 
@@ -1758,7 +1758,7 @@ namespace gamemd {
 int sub_7B00D0()
 {
   dword_B77F60 = 0; /*0x7b00d5*/
-  return atexit(sub_7B00F0); /*0x7b00e5*/
+  return atexit((void (__cdecl *)(void))(sub_7B00F0)); /*0x7b00e5*/
 }
 } // namespace gamemd
 
@@ -1780,7 +1780,7 @@ int sub_7B0110()
 {
   ((ComPtr *)(&dword_B77F58))->Constructor(); /*0x7b0115*/
   dword_B77F58 = (int)&rc_ptr_WDTState_vftable; /*0x7b011f*/
-  return atexit(sub_7B0130); /*0x7b012f*/
+  return atexit((void (__cdecl *)(void))(sub_7B0130)); /*0x7b012f*/
 }
 } // namespace gamemd
 
@@ -1799,7 +1799,7 @@ int sub_7B0150()
 {
   ((ComPtr *)(&dword_B77F70))->Constructor(); /*0x7b0155*/
   dword_B77F70 = (int)&rc_ptr_WDTState_vftable; /*0x7b015f*/
-  return atexit(sub_7B0170); /*0x7b016f*/
+  return atexit((void (__cdecl *)(void))(sub_7B0170)); /*0x7b016f*/
 }
 } // namespace gamemd
 
@@ -1818,7 +1818,7 @@ int sub_7B0190()
 {
   ((ComPtr *)(&stru_B77F68))->Constructor(); /*0x7b0195*/
   stru_B77F68 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b019f*/
-  return atexit(sub_7B01B0); /*0x7b01af*/
+  return atexit((void (__cdecl *)(void))(sub_7B01B0)); /*0x7b01af*/
 }
 } // namespace gamemd
 
@@ -1837,7 +1837,7 @@ int sub_7B01D0()
 {
   ((ComPtr *)(&dword_B77F78))->Constructor(); /*0x7b01d5*/
   dword_B77F78 = (int)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b01df*/
-  return atexit(sub_7B01F0); /*0x7b01ef*/
+  return atexit((void (__cdecl *)(void))(sub_7B01F0)); /*0x7b01ef*/
 }
 } // namespace gamemd
 

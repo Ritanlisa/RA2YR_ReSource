@@ -115,7 +115,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       v32 = 1; /*0x4f65d5*/
     if ( v36 && v33 ) /*0x4f65e8*/
       return (gamemd::AbstractClass **)(1); /*0x4f65f3*/
-    v11 = (*(int (__stdcall **)(int *))(*(unsigned int *)&this->nextArrayIndex + 24))(this->ActionValue); /*0x4f6603*/
+    v11 = (*(int (__stdcall **)(int *))(*(unsigned int *)&this->nextArrayIndex + 24))((int *)(this->ActionValue)); /*0x4f6603*/
     v38 = v11; /*0x4f6612*/
     BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                            (HouseClass *)this,
@@ -392,7 +392,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
 
     _EBP = v4; /*0x6cea2f*/
     INIClass::ResetSection( (INIClass *)this); /*0x6cea33*/
-    if ( !(unsigned __int8)((AbstractTypeClass *)_EBP)->LoadFromINI( (unsigned __int8 ***)this) ) /*0x6cea3b*/
+    if ( !(unsigned __int8)((gamemd::AbstractTypeClass*)_EBP)->LoadFromINI( (unsigned __int8 ***)this) ) /*0x6cea3b*/
       return 0; /*0x6cee51*/
     v6 = *(unsigned int *)(_EBP + 156); /*0x6cea4a*/
     if ( INIClass::GetString( /*0x6cea6d*/
@@ -729,7 +729,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
 {
     int v3; // eax
 
-    ((AbstractTypeClass *)this)->Constructor( (char *)(Source)); /*0x6ce5bb*/
+    ((gamemd::AbstractTypeClass*)this)->Constructor( (char *)(Source)); /*0x6ce5bb*/
     *(unsigned int *)(this + 156) = 0; /*0x6ce5cb*/
     *(unsigned int *)(this + 160) = -1; /*0x6ce5d1*/
     *(unsigned int *)(this + 164) = -1; /*0x6ce5d7*/
@@ -832,7 +832,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a2, int
 {
     int result; // eax
 
-    result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)this), a2, a3); /*0x6ce8df*/
+    result = AbstractClass::SaveLoad_Prefix( (ObjectTypeClass *)((int *)this), (gamemd::ObjectTypeClass *)(a2), a3); /*0x6ce8df*/
     if ( result >= 0 ) /*0x6ce8e6*/
       return 0; /*0x6ce8e8*/
     return result; /*0x6ce8ea*/

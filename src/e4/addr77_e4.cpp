@@ -254,13 +254,13 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * hInstance, HWND a2, HWND 
   if ( result ) /*0x775732*/
   {
     ++g_DialogTrackingList; /*0x775747*/
-    DialogIndirectParamA = CreateDialogIndirectParamA(hInstance, result, hWndParent, lpDialogFunc, 0); /*0x775755*/
+    DialogIndirectParamA = CreateDialogIndirectParamA((HINSTANCE)(hInstance), result, hWndParent, lpDialogFunc, 0); /*0x775755*/
     v11 = DialogIndirectParamA; /*0x77575b*/
     if ( DialogIndirectParamA ) /*0x77575f*/
     {
       ++dword_A8ED8C; /*0x77577c*/
       ((DialogQueue*)DialogIndirectParamA)->PushEntry(); /*0x775781*/
-      EnumChildWindows(v11, DialogClass::Reposition, 1); /*0x77578e*/
+      EnumChildWindows(v11, (WNDENUMPROC)(DialogClass::Reposition), 1); /*0x77578e*/
       DialogClass::Reposition((int)(v11), 0); /*0x775797*/
       *v6 = v11; /*0x77579c*/
       v6[1] = a2; /*0x77579e*/
@@ -616,7 +616,7 @@ int E4Recv_776320::sub_776320(LPARAM lParam)
   if ( !byte_B7309C ) /*0x776330*/
     return 0; /*0x776480*/
   ImageList_DragShowNolock(0); /*0x77633b*/
-  qmemcpy( (void *)(v7), HitDialogTest( (void *)((void *)((unsigned int)lParam)), (void *)((void *)(v2)), (void *)(v7)), sizeof(v7)); /*0x776359*/
+  qmemcpy( (void *)(v7), (const void *)(HitDialogTest( (void *)((void *)((unsigned int)lParam)), (void *)((void *)(v2)), (void *)(v7))), sizeof(v7)); /*0x776359*/
   qmemcpy( (void *)(wParam), (const void *)(v7), sizeof(wParam)); /*0x77636c*/
   if ( SendMessageA( (HWND)v7[0].y, 0x4C8u, (WPARAM)wParam, (LPARAM)((LPARAM)((LPARAM)lParam))) ) /*0x776379*/
   {
@@ -638,7 +638,7 @@ int E4Recv_776320::sub_776320(LPARAM lParam)
   ImageList_Destroy((HIMAGELIST)(himl)); /*0x7763f8*/
   himl = 0; /*0x776405*/
   byte_B7309C = 0; /*0x77640f*/
-  qmemcpy( (void *)(v7), HitDialogTest( (void *)((void *)((unsigned int)lParam)), (void *)((void *)((int)v7)), (void *)(v7)), sizeof(v7)); /*0x776426*/
+  qmemcpy( (void *)(v7), (const void *)(HitDialogTest( (void *)((void *)((unsigned int)lParam)), (void *)((void *)((int)v7)), (void *)(v7))), sizeof(v7)); /*0x776426*/
   qmemcpy( (void *)(v10), (const void *)(v7), sizeof(v10)); /*0x776435*/
   if ( v4 ) /*0x77643c*/
     SendMessageA( (HWND)v7[0].y, 0x4CAu, (WPARAM)v10, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x77644e*/
@@ -886,7 +886,7 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
           if ( !Render_Draw_774070() ) /*0x777750*/
           {
             v16 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x77775f*/
-            (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))(dword_887640);  /*0x777768*/
+            (*(void (**)(void *))((void *)(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70)))(dword_887640);  /*0x777768*/
             Frame::Present( (void *)((int)v16), 0, (void *)(a3), (void *)((int)v13), 0, (void *)((int)a4), (void *)(a5), (void *)(a2)); /*0x77776f*/
           }
   LABEL_26:
@@ -943,7 +943,7 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
             sub_407020(); /*0x7778e9*/
             if ( dword_887640) /*0x7778f6*/
             {
-              byte_B73560 = (*(int (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->MouseClass_field_0x70))(dword_887640);  /*0x7778fd*/
+              byte_B73560 = (*(int (**)(void *))(*(unsigned int *)&((void *)dword_887640)->MouseClass_field_0x70))(dword_887640);  /*0x7778fd*/
               Debug::Log("Focus_Loss(): _MouseCaptured = %s\n"); /*0x777916 G57c1: IDA 0x777916 push offset aFocusLossMouse*/
               (*(void (**)(void *))(*(unsigned int *)&((MouseClass *)dword_887640)->u32_50))((void *)(dword_887640));  /*0x777926*/
             }
@@ -1183,7 +1183,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
       ((String *)((String *)&v17))->Assign( (const char *)(g_INI_Key_Country)); /*0x778c32*/
       v9 = ((INIClass*)((bool *)(char *)&v17))->ReadInt((char **)(char *)&v17, (char **)&v17, -2); /*0x778c50*/
       j_DeleteAndZero( (void *)(&v17)); /*0x778c52*/
-      ((String *)((String *)&v17))->Assign(((char *)&stru_81AF8C + 95)); /*0x778c60*/
+      ((String *)((String *)&v17))->Assign("Color"); /*0x778c60*/
       v10 = ((INIClass*)((bool *)(char *)&v17))->ReadInt((char **)(char *)&v17, (char **)&v17, -2); /*0x778c7e*/
       j_DeleteAndZero( (void *)(&v17)); /*0x778c80*/
       ((String *)((String *)&v17))->Assign(aRank); /*0x778c8e*/
@@ -2879,7 +2879,7 @@ char RequestChannelListWOL()
   v1 = 0; /*0x77f16a*/
   while ( 1 ) /*0x77f179*/
   {
-    v2 = WaitForMultipleObjects(0x12u, &Handles, 0, 0x64u); /*0x77f179*/
+    v2 = WaitForMultipleObjects(0x12u, (const HANDLE *)(&Handles), 0, 0x64u); /*0x77f179*/
     if ( v2 == 258 ) /*0x77f181*/
       break; /*0x77f181*/
   LABEL_5:
@@ -2903,7 +2903,7 @@ char RequestChannelListWOL()
       v2 -= 128; /*0x77f1b4*/
     if ( v2 >= 0x12 ) /*0x77f1bd*/
       return 0; /*0x77f1bd*/
-    ResetEvent(*(&Handles + v2)); /*0x77f1cb*/
+    ResetEvent((HANDLE)(*(&Handles + v2))); /*0x77f1cb*/
     if ( v2 == 5 || !v2 ) /*0x77f1d8*/
     {
       v8 = (HWND)((Dialog*)((void *)0xC4))->FindByHandle(); /*0x77f280*/
@@ -2941,7 +2941,7 @@ char RequestChannelListWOL()
     if ( v1 > 30000 ) /*0x77f18c*/
       break; /*0x77f18c*/
     Game::ProcessIdle(); /*0x77f18e*/
-    v2 = WaitForMultipleObjects(0x12u, &Handles, 0, 0x64u); /*0x77f1a0*/
+    v2 = WaitForMultipleObjects(0x12u, (const HANDLE *)(&Handles), 0, 0x64u); /*0x77f1a0*/
     if ( v2 != 258 ) /*0x77f1a8*/
       goto LABEL_5; /*0x77f1a8*/
   }
@@ -3046,7 +3046,7 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
         return 1; /*0x77f512*/
     }
   }
-  return (AbstractClass * *)result; /*0x77f341*/
+  return (gamemd::AbstractClass* *)result; /*0x77f341*/
 }
 }
 // 0x77F520
@@ -3455,7 +3455,7 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   if ( v7 == 1 ) /*0x7709ae*/
     v9 = 0; /*0x7709b0*/
   else
-    v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x7709bd*/
+    v9 = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, v7 - 1); /*0x7709bd*/
   v10 = *((unsigned int *)v6[1] + v9); /*0x7709ca*/
   if ( vtable0 == (void *)3 ) /*0x7709cd*/
   {
@@ -3505,7 +3505,7 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   if ( v7 == 1 ) /*0x770a8e*/
     v9 = 0; /*0x770a90*/
   else
-    v9 = Random::Range(&Randomizer_Global, 0, v7 - 1); /*0x770a9d*/
+    v9 = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, v7 - 1); /*0x770a9d*/
   v10 = *((unsigned int *)v6[1] + v9); /*0x770aaa*/
   if ( vtable0 == (void *)3 ) /*0x770aad*/
   {
@@ -3556,7 +3556,7 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   if ( v6 == 1 ) /*0x770b66*/
     v8 = 0; /*0x770b68*/
   else
-    v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x770b75*/
+    v8 = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, v6 - 1); /*0x770b75*/
   v9 = *(unsigned int *)(*((unsigned int *)v5 + 1) + 4 * v8); /*0x770b82*/
   if ( vtable0 == (void *)3 ) /*0x770b85*/
   {
@@ -3641,7 +3641,7 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
   if ( v6 == 1 ) /*0x770f3e*/
     v8 = 0; /*0x770f40*/
   else
-    v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x770f4d*/
+    v8 = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, v6 - 1); /*0x770f4d*/
   v9 = *((unsigned int *)v5[1] + v8); /*0x770f57*/
   if ( a2 == 3 ) /*0x770f61*/
   {
@@ -3689,7 +3689,7 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
   if ( v6 == 1 ) /*0x77100e*/
     v8 = 0; /*0x771010*/
   else
-    v8 = Random::Range(&Randomizer_Global, 0, v6 - 1); /*0x77101d*/
+    v8 = Random::Range((gamemd::Random *)(&Randomizer_Global), 0, v6 - 1); /*0x77101d*/
   v9 = *(unsigned int *)(v5[1] + 4 * v8); /*0x771027*/
   if ( a2 == 3 ) /*0x771031*/
   {

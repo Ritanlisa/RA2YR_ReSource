@@ -2071,7 +2071,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
         v44 = v43[14] - g_Cell_BuildabilityLUT + 1; /*0x57393d*/
         if ( (v44 == dword_ABC2B4 || v44 == dword_AA1130) && *((unsigned char *)v43 + 282) == 8 ) /*0x573951*/
         {
-          Cell::UpdateTileType( (IUnknown *)(v87), 0, 0); /*0x573a26*/
+          Cell::UpdateTileType( (short *)(v87), 0, 0); /*0x573a26*/
           v45 = v87[0] + (v87[1] << 9); /*0x573a3a*/
           if ( v45 >= 0x40000 || (v46 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v45)) == 0 ) /*0x573a50*/
           {
@@ -2095,19 +2095,19 @@ LABEL_103:
             v85[0] = v38 - 2; /*0x573c32*/
             v85[1] = v87[1]; /*0x573c3f*/
             v86 = *(unsigned int *)v85; /*0x573c4c*/
-            ((Terrain *)v47)->RecursiveModify( (IUnknown *)((int)&v86)); /*0x573c53*/
+            ((Terrain *)v47)->RecursiveModify( (int)((int)&v86)); /*0x573c53*/
             v62 = v87[0] + (v87[1] << 9); /*0x573c67*/
             if ( v62 >= 0x40000 || (v63 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v62)) == 0 ) /*0x573c7d*/
             {
               g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573c7f*/
               v63 = &g_MissionQueueFrame.briefing[130]; /*0x573c85*/
             }
-            ((Terrain *)v47)->PlaceCliffs( (int)v63, 2, (IUnknown *)(&v88)); /*0x573c94*/
+            ((Terrain *)v47)->PlaceCliffs( (int)v63, 2, (int *)(&v88)); /*0x573c94*/
             Cell::CreateCrater( (v88), (v89), (v90), (v91), 0); /*0x573cc1*/
             goto LABEL_139; /*0x573cc6*/
           }
           v47 = this; /*0x573a74*/
-          Cell::SetTileType( (IUnknown *)(v87), g_TerrainSoundTable2 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x573a8a*/
+          Cell::SetTileType( (short *)(v87), g_TerrainSoundTable2 + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x573a8a*/
           LOWORD(aP1) = v87[0] + LOWORD(&word_89F598); /*0x573aa7*/
           v48 = (int16_t)(v87[0] + LOWORD(&word_89F598)); /*0x573aac*/
           HIWORD(aP1) = HIWORD(&word_89F598) + v87[1]; /*0x573aaf*/
@@ -2181,7 +2181,7 @@ LABEL_98:
         }
         if ( (v44 == dword_AA1548 || v44 == dword_AA0740) && *((unsigned char *)v43 + 282) == 12 ) /*0x5739a1*/
         {
-          Cell::UpdateTileType( (IUnknown *)(v87), 0, 0); /*0x573cda*/
+          Cell::UpdateTileType( (short *)(v87), 0, 0); /*0x573cda*/
           v64 = v87[0] + (v87[1] << 9); /*0x573cee*/
           if ( v64 >= 0x40000 || (v65 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v64)) == 0 ) /*0x573d04*/
           {
@@ -2215,7 +2215,7 @@ LABEL_111:
       goto LABEL_135; /*0x573f0c*/
     }
     v66 = this; /*0x573d5d*/
-    Cell::SetTileType( (IUnknown *)(v87), g_TerrainSoundConfig + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x573d73*/
+    Cell::SetTileType( (short *)(v87), g_TerrainSoundConfig + g_Cell_BuildabilityLUT - 1, -1, -1, 0); /*0x573d73*/
     v67 = *(unsigned int *)CellStruct::Add(((CellStruct *)((CellStruct *)v87)), (unsigned int *)(&aP1), (unsigned short *)(&g_DDrawSurfaceManager.scenario[82])); /*0x573d8b*/
     aP1 = (IUnknown *)(v67); /*0x573d8d*/
     *(unsigned int *)v84 = v67; /*0x573d91*/
@@ -2274,14 +2274,14 @@ LABEL_135:
           v85[0] = v38; /*0x573f10*/
           v85[1] = v87[1] - 2; /*0x573f20*/
           v86 = *(unsigned int *)v85; /*0x573f29*/
-          ((Terrain *)v66)->RecursiveModify( (IUnknown *)((int)&v86)); /*0x573f30*/
+          ((Terrain *)v66)->RecursiveModify( (int)((int)&v86)); /*0x573f30*/
           v80 = v87[0] + (v87[1] << 9); /*0x573f44*/
           if ( v80 >= 0x40000 || (v81 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v80)) == 0 ) /*0x573f5a*/
           {
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573f5c*/
             v81 = &g_MissionQueueFrame.briefing[130]; /*0x573f62*/
           }
-          ((Terrain *)v66)->PlaceCliffs( (int)v81, 4, (IUnknown *)(&v88)); /*0x573f71*/
+          ((Terrain *)v66)->PlaceCliffs( (int)v81, 4, (int *)(&v88)); /*0x573f71*/
           Cell::CreateCrater( (v88), (v89), (v90), (v91), 0); /*0x573f9e*/
           v47 = this; /*0x573fa3*/
 LABEL_139:
