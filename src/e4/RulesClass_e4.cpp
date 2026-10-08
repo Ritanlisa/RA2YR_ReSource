@@ -809,7 +809,7 @@ namespace gamemd {  // G42.18c ns repair
 int RulesClass::readGeneralSection(TechnoTypeClass * aP1)
 {
 
-  return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)&aP1->FreeMCV))( (int)(aP1), this, 3, 0);  /*0x6614ff*/
+  return (*(int (**)(int, RulesClass *, int, unsigned int))(*(unsigned int *)aP1 + 16))( (int)(aP1), this, 3, 0);  /*0x6614ff W19K4: raw *(_DWORD *)a2+16 = vfptr slot +16 (FreeMCV member was phantom)*/
 
 }
 }  // G42.18c ns repair

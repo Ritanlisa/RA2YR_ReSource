@@ -9697,7 +9697,7 @@ void BuildingClass::CompleteProduction()
 //DUPDEF } // G42.33c6 stub close (raw body preserved above)
 //DUPDEF } // G42.33c6 stub close (raw body preserved above)
 } // G42.33c6 stub close (raw body preserved above)
-void BuildingClass::ProductionDisplayUpdate()
+int BuildingClass::ProductionDisplayUpdate()
 {
     BuildingClass *v1; // edi
     int result; // eax

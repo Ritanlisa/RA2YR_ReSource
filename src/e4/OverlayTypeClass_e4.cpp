@@ -664,7 +664,7 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef3c*/
   ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef43*/
   ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef4a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x5fef51*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
   v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
          &stru_A83D50.SuperClass_field_0x30,

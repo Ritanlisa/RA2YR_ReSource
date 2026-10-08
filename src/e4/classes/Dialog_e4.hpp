@@ -95,6 +95,7 @@ struct Dialog {
     unsigned int *__pad_10;
     unsigned int Debug;
 // --- flat members (END) ---
+    void DrawBackground();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     void MapDialogResource();  // 0x49F740
     int InitializeGameSettings();  // 0x5B5BC0
     int ShowMessageBox(unsigned short *a2, unsigned short *aP2, unsigned short *aP3, unsigned short *a5, int a6);
@@ -129,6 +130,9 @@ struct Dialog {
     static int FindGameUI();  // 0x5E26C0
     HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);
     static HWND ShowMessage(int a1, int a2);  // G42.33 b4 static-form sync (raw 2-arg form; member truth 0x5E2700 is 3-arg thiscall)
+    static int ShowMessage(int aP0, size_t aP1, void *aP2);  // W19K4: raw 3-arg static-form calls 0x7A190B/0x7A1A07/0x7A1D51 (3 pushes)
+    static int ShowMessage(void *aP0, size_t aP1, void *aP2);  // W19K4: ptr-first 3-arg form (MatchGameWOL 0x7A1A07 passes (ObjectClass*)12648447)
+    static int ShowMessage(void *aP0, void *aP1, void *aP2);  // W19K4: all-ptr 3-arg form (MatchGameWOL 0x7A1A07 arg2=(CampaignScore*)cast)
     static int ShowMessage(int aP0, size_t aP1, char *aP2, wchar_t *aP3);  // G42.35 static-form sync (ui/supplied 4-arg raw site 0x46E1C3)
     static int DrawBackground(void *aP0);  // G42.33 b8 static-form sync
     static int StopBink(void *aP0);  // G42.33 b8 static-form sync

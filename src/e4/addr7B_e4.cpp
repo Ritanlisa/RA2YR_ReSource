@@ -575,7 +575,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
 }
 // 0x7B4620
 namespace gamemd {
-void ObjectClass::unknown_libname_73()
+_DWORD * ObjectClass::unknown_libname_73()
 {
 
   *this = 0; /*0x7b4622*/
@@ -614,7 +614,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   while ( 1 )
   {
     v8 = this->AbstractClass ? strlen((const char *)this->AbstractClass) : 0;
-    if ( v5 >= v8 || strchr(String2, *((char *)this->AbstractClass + v5)) ) /*0x7b6132*/
+    if ( v5 >= v8 || strchr((const char *)String2, *((char *)this->AbstractClass + v5)) ) /*0x7b6132*/
       break; /*0x7b6132*/
     ++v5; /*0x7b613e*/
   }
@@ -776,7 +776,7 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
 }
 // 0x7B66C0
 namespace gamemd {
-void ObjectClass::unknown_libname_74()
+_DWORD * ObjectClass::unknown_libname_74()
 {
 
   *this = 0; /*0x7b66c2*/
@@ -1179,7 +1179,7 @@ char sub_7BC250(XSurface * a1, XSurface * a2, XSurface * aP2, int arg4)
 }
 // 0x7BC2B0
 namespace gamemd {
-void ClipLine(IUnknown * aP0, int * a1, int * a2)
+int ClipLine(IUnknown * aP0, int * a1, int * a2)
 {
   int v4; // esi
   double v5; // st7

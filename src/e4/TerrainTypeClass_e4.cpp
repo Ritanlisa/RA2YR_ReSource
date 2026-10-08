@@ -360,7 +360,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(void * a2, char a3)
     __3_YAXPAX_Z(Image); /*0x71e38a*/
     ((unsigned int *)a3)[0] = 0; /*0x71e392*/
   }
-  AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x71e3a0*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)a3, 1); /*0x71e3a0*/
  v6 = (TerrainTypeClass *)(a3); /*0x71e3b5*/
   v4 = (unsigned int)((*(int (**)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6)); /*0x71e3b9*/
   if ( v4 != -1 && v4 < dword_A8E328 && v4 < --dword_A8E328 ) /*0x71e3d4*/

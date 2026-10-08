@@ -978,7 +978,7 @@ extern int g_InfantryDrawState;  // data: 0xB1D4CC
 extern int g_InfantryRenderPool;  // data: 0xB1D4A4
 extern int g_InfantrySelectState;  // data: 0xB1D4B0
 extern int g_InfantryTypeInitState;  // data: 0xA83D78
-extern int g_INI_DefaultBuffer;  // data: 0x889F64
+extern char g_INI_DefaultBuffer;  // data: 0x889F64 (W19K4: byte-offset semantics per IDA 0x41d12c)
 extern int g_INI_Key_A1;  // data: 0x831688
 extern int g_INI_Key_Action;  // data: 0x817270
 extern int g_INI_Key_AlliedLoad;  // data: 0x836EC0
@@ -1935,7 +1935,7 @@ extern int lpBaseAddress;  // data: 0x89F75C
 extern int lpBuffer;  // data: 0xABC554
 extern int lpCriticalSection;  // data: 0x87C2EC
 extern int lpfn;  // data: 0xB7856C
-extern int lpMultiByteStr;  // data: 0x87CAEC
+extern char *lpMultiByteStr;  // data: 0x87CAEC (W19K4: IDA verdict tzname ptr slot)
 extern int lpString2;  // data: 0x820E8C
 extern int Map_BottomRightCell;  // data: 0xB0B788
 extern int Map_CellHeight;  // data: 0x89A1C0
@@ -15427,3 +15427,21 @@ extern unsigned int dword_A8E3A0;  // G42.42k supply (count)
 extern unsigned int vt_AircraftClass_0;  // 0x7E22A4 G42.42k supply
 extern unsigned int vt_AircraftClass_1;  // 0x7E2280 G42.42k supply
 extern void * vt_AircraftClass_6;  // 0x7E2250 G42.42k supply (Destruct [this+0x6C0])
+
+// G57w19k3 dot-q 清偿供给（逐站 live disasm 取证；地址=IDA 标签真值）
+extern unsigned int off_82AF14;   // data: 0x82AF14 Event::Dispatch_Return0 槽 (RandomMap [31] 族)
+extern unsigned int dword_82AF18; // data: 0x82AF18 RandomMap flag 表基 (0x5910BD)
+extern unsigned char unk_82AFF0;  // data: 0x82AFF0 RandomMap 地形字节表 (0x5928C6)
+extern unsigned int off_82B038;   // data: 0x82B038 TXT 表基 (0x597003)
+extern unsigned int dword_8B410C; // data: 0x8B410C FootClass Array Items (0x599DD2/0x7354A5)
+extern unsigned int dword_8B4124; // data: 0x8B4124 FootClass Array Items#2 (0x5120F9/0x6A46DF)
+extern unsigned int dword_8B4130; // data: 0x8B4130 FootClass Array Count (0x6A46F8)
+extern unsigned int dword_8B417C; // data: 0x8B417C FootClass Array Items#3 (0x6DD67A)
+extern unsigned int dword_A8022C; // data: 0xA8022C HouseClass Array Items (0x47C8A2/0x48189C/0x566DD2/0x4FBD14/0x430EAD)
+extern unsigned int dword_A80238; // data: 0xA80238 HouseClass Array Count (0x48188B/0x566DC5/0x4FBD00/0x59A167)
+extern unsigned int dword_A8ED2C; // data: 0xA8ED2C RandomMap 对象计数 (0x599C82)
+extern unsigned int dword_B76E40; // data: 0xB76E40 WOL LoginObject 缓冲 @g_WOL_LoginObject+0x1C (0x7A576A)
+extern unsigned int unk_B76230;   // data: 0xB76230 (0x7A94FB)
+extern unsigned int dword_8367C8; // data: 0x8367C8 BuildingDebris 记录表基 (0x631D4C)
+extern unsigned int dword_820334; // data: 0x820334 剧场文件名指针表 (0x4B6C78)
+extern unsigned int dword_820324; // data: 0x820324 剧场文件名指针表 (0x4B6D3D)

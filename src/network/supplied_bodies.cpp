@@ -1258,7 +1258,7 @@ void ModemGame::UpdatePlayerNameAndColor()
     v9 = (HWND)result; /*0x5b5b43*/
     if ( result ) /*0x5b5b47*/
     {
-      swprintf(lParam, (const size_t)((char *)&stru_82BA00 + 96), Source, *(unsigned int *)(*((unsigned int *)dword_A83C9C + a4) + 96)); /*0x5b5b68*/
+      _swprintf(lParam, (const wchar_t *)((char *)&stru_82BA00 + 96), Source, *(unsigned int *)(*((unsigned int *)dword_A83C9C + a4) + 96)); /*0x5b5b68*/
       SendMessageA(v9, 0x4B2u, 0, (LPARAM)lParam); /*0x5b5b83*/
       if ( a3 >= 8 ) /*0x5b5b87*/
         v10 = Math::InitDegToRad; /*0x5b5b97*/

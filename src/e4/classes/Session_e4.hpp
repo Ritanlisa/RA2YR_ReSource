@@ -91,6 +91,7 @@ struct Session {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
+    int StartGame();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
 int RemoveTeam(int (***aP1)(unsigned int, int));  // 0x005d1d80 g57w12-r raw-sync (def-form)
     int PrepareGame(HWND hWnd);  // 0x5E74E0 (G42.57w14 D2b: 非静态保留 -- def 体内 this+hWnd 双槽, 调用侧统一 obj->PrepareGame((HWND)obj) 复现 raw 单指针流)
     int GetPlayerOption();  // 0x69B700

@@ -35,7 +35,7 @@ struct GameSettings {
     int Read();  // G42.35f: ida truth 0x5FA620 = int __thiscall Read(this) 0-param
     static char * FindFlagged();
     void * ParseNetworkAddress();
-    void SetScoreVolume(int volume, void *a2, void *a3);
+    int SetScoreVolume(int volume, void *a2, void *a3);
 };
 
 } // namespace gamemd

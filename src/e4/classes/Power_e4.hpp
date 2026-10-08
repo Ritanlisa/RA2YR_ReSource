@@ -74,6 +74,7 @@ struct Power {
     static unsigned int Fla(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* a2;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    static int FlagProcess(Power *pThis, int a2);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     int Update(int * a2, void *a2_2, void *a3_1, void *a4_1);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0
     void* ComputeHousePowerChecksum(unsigned int * a2, void *a2_2);  // 0x68B940

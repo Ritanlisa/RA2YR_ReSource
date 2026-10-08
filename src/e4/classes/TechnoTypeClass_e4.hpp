@@ -183,6 +183,7 @@ struct TechnoTypeClass {
     void* aP2;  // 0x0 (no offset truth)
     void* houseTypesCount;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    static int SaveLoad_Prefix_0(TechnoTypeClass *pThis, void *a2, void *a3, int a4, int a5);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     _DWORD * Construct(int aP1);
     static AbstractClass * * GetByTypeAndIndex(int a1, int a2);
     DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);

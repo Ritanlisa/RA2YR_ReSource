@@ -1320,7 +1320,7 @@ char Object_Calc_7DF280(MouseClass * a1, unsigned char * a2, unsigned short * a3
 }
 // 0x7DF3C2
 namespace gamemd {
-void Object_Calc_7DF3C2(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
+int Object_Calc_7DF3C2(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi
@@ -1392,7 +1392,7 @@ void Object_Calc_7DF3C2(MouseClass * a1, unsigned char * a2, unsigned short * a3
 }
 // 0x7DF500
 namespace gamemd {
-void Object_Calc_7DF500(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
+int Object_Calc_7DF500(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi
@@ -1464,7 +1464,7 @@ void Object_Calc_7DF500(MouseClass * a1, unsigned char * a2, unsigned short * a3
 }
 // 0x7DF640
 namespace gamemd {
-void Object_Calc_7DF640(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
+int Object_Calc_7DF640(MouseClass * a1, unsigned char * a2, unsigned short * a3, int a4, int a5, int a6, int a7, int a8)
 {
   unsigned char *v8; // esi
   unsigned short *v9; // edi

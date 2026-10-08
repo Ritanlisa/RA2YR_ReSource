@@ -521,7 +521,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
           String = (wchar_t *)((unsigned int)GetStringCSF((wchar_t *)(aGuiHostmaptran), 0,(const char *)(g_Str_File_netshare_cpp), 1173)); /*0x5e3a93*/
 // 0x5e2700
-          return Dialog::ShowMessage( (int)((gamemd::ObjectClass *)(-1)), (size_t)((gamemd::CampaignScore *)((size_t)String)), (char *)(v11), 11055906); /*0x5e3a9b*/
+          return Dialog::ShowMessage( (int)((gamemd::ObjectClass *)(-1)), (size_t)((gamemd::CampaignScore *)((size_t)String)), (char *)(v11), (wchar_t *)11055906); /*0x5e3a9b*/
         }
       }
       else
@@ -529,7 +529,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
         v10 = (wchar_t *)((int)((wchar_t *)(*(unsigned int *)(dword_A8DA78 + 4 * v6))));
         v8 = (wchar_t *)(GetStringCSF((wchar_t *)(g_Str_GUI_HostNoMap), 0,(const char *)(g_Str_File_netshare_cpp), 1169));
 // 0x5e2700
-        return Dialog::ShowMessage( (int)((gamemd::ObjectClass *)(-1)), (size_t)((gamemd::CampaignScore *)((size_t)v8)), (char *)((char)(v10)), 11055906); /*0x5e3a62*/
+        return Dialog::ShowMessage( (int)((gamemd::ObjectClass *)(-1)), (size_t)((gamemd::CampaignScore *)((size_t)v8)), (char *)(v10), 11055906); /*0x5e3a62*/
       }
     }
   }
@@ -681,7 +681,7 @@ int SendMultiplayerStartSignal()
 }
 // 0x5E3D10
 namespace gamemd {
-void SetupNetworkLobbyDialog(INIClass * Source, void * a2)
+bool SetupNetworkLobbyDialog(INIClass * Source, void * a2)
 {
   HWND v7; // edi
   HWND DlgItem; // eax

@@ -33,7 +33,7 @@ struct ProgressTimer
     int32 Timer;
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
-    void* GetValue(int a1);  // 0x4c93d0 -- ProgressTimer::GetValue
+    void* GetValue(void *a1);  // 0x4c93d0 -- W19K4: out-param is pointer per raw 0x41A581 receiver-first
     static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
     // === SYMBOL-ANCHOR (END) ===
 };

@@ -284,7 +284,7 @@ struct TechnoClass {
     unsigned int *__pad_18C;
     unsigned int __pad_1C4;
     unsigned int barrelRecoil;
-    unsigned int checkCloakState;
+    unsigned int checkCloakState_slot;
     unsigned int damageParticles_2;
     unsigned int master;
     unsigned int railgunParticles_2;
@@ -300,6 +300,7 @@ struct TechnoClass {
     static unsigned int GatherAllBuildings(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     void* IsCapturableByPlayer;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    static int checkCloakState(TechnoClass *pThis);  // G57w19k2 raw thiscall static-form supply (member checkCloakState -> checkCloakState_slot)
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);
     Coord * * RegisterKill();

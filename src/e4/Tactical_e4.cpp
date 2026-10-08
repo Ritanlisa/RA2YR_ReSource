@@ -1945,7 +1945,7 @@ int Tactical_42::FindItem(unsigned int * a2)
 }
 // 0x4A35F0
 namespace gamemd {
-char * Tactical::SetCellTransform(int a2, CoordStruct * aP2, int a4, CoordStruct * aP4, int a6, int a7, void *a7_2)
+char * Tactical::SetCellTransform(int a2, int aP2, int a4, int aP4, int a6, int a7)
 {
 
   char *result; // eax

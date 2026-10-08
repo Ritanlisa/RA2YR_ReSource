@@ -180,7 +180,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   int v24; // [esp+20h] [ebp-88h]
   char String[128]; // [esp+28h] [ebp-80h] BYREF
 
-  if ( ((INIClass*)(INIClass *)edx0)->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(String), 128) ) /*0x52545c*/
+  if ( ((INIClass*)(INIClass *)edx0)->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (void *)(String), 128) ) /*0x52545c*/
   {
     ((VectorClass *)(&v22))->Construct(0, 0); /*0x525471*/
     v24 = 10; /*0x52547a*/
@@ -411,7 +411,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   {
     v17 = strlen( (const char *)(v7)) + 1; /*0x529fab*/
     v18 = (gamemd::Checksummer *)((Checksummer *)KeyValuePair::Init(v26, 0)); /*0x529fb7*/
-    v19 = ((Checksummer*)v18)->Add_Buffer( (unsigned char)((uint8_t *)v7), v17 - 1); /*0x529fca*/
+    v19 = ((Checksummer*)v18)->Add_Buffer( (unsigned char *)((uint8_t *)v7), v17 - 1); /*0x529fca*/
     v23 = v19; /*0x529fcf*/
     if ( !(uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch( (int *)(&v23)) /*0x529ff0*/
       || (v24 = v19, (vtable2 = *(int **)((SortedArray *)&this->owningHouseIndex)->FindValue( &v24)) == 0) )
@@ -502,7 +502,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   else
   {
     memset( (void *)(&v21), 0, 12); /*0x52a256*/
-    *(float *)&v16 = COERCE_FLOAT(((Checksummer*)&v21)->Add_Buffer( (unsigned char)(a3), strlen((const char *)a3))); /*0x52a280*/
+    *(float *)&v16 = COERCE_FLOAT(((Checksummer*)&v21)->Add_Buffer( (unsigned char *)(a3), strlen((const char *)a3))); /*0x52a280*/
     a3 = (unsigned char *)(v16); /*0x52a285*/
     if ( !(uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch((int *)&a3) /*0x52a2a6*/
       || (v20 = (int)v16, (vtable2 = *(int **)((SortedArray *)&this->owningHouseIndex)->FindValue( &v20)) == 0) )
@@ -605,7 +605,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   {
     v17 = strlen( (const char *)(v7)) + 1; /*0x52a443*/
     v18 = (Checksummer *)KeyValuePair::Init(&v26, 0); /*0x52a44f*/
-    v19 = ((Checksummer*)v18)->Add_Buffer( (unsigned char)((uint8_t *)v7), v17 - 1); /*0x52a462*/
+    v19 = ((Checksummer*)v18)->Add_Buffer( (unsigned char *)((uint8_t *)v7), v17 - 1); /*0x52a462*/
     v23 = v19; /*0x52a467*/
     if ( !(uint8_t)((HashTable *)(&this->owningHouseIndex))->BinarySearch( (int *)(&v23)) /*0x52a488*/
       || (v24 = v19, (vtable2 = *(int **)((SortedArray *)&this->owningHouseIndex)->FindValue( &v24)) == 0) )

@@ -79,8 +79,8 @@ struct TacticalClass {
     unsigned int DisplayClass_field_0x11D8;
     unsigned int DisplayClass_field_0x11DC;
     unsigned int DisplayClass_field_0x11E0;
-    unsigned int InitScrollBounds;
-    unsigned int UpdateScrollMaxBounds;
+    unsigned int InitScrollBounds_slot;
+    unsigned int UpdateScrollMaxBounds_slot;
     unsigned int *__pad_11B4;
     unsigned int foggedness;
     void* ptr_34;
@@ -88,10 +88,13 @@ struct TacticalClass {
     unsigned int q0B0;
     unsigned int shroudedness;
     unsigned int u32_38;
-    unsigned int updateVisibility;
+    unsigned int updateVisibility_slot;
 
     void* TransformPixel;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    static int updateVisibility(TacticalClass *pThis);  // G57w19k2 raw thiscall static-form supply (member updateVisibility -> updateVisibility_slot)
+    static int UpdateScrollMaxBounds(TacticalClass *pThis, void *a2);  // G57w19k2 raw thiscall static-form supply (member UpdateScrollMaxBounds -> UpdateScrollMaxBounds_slot)
+    static int InitScrollBounds(TacticalClass *pThis, unsigned int *a2);  // G57w19k2 raw thiscall static-form supply (member InitScrollBounds -> InitScrollBounds_slot)
     char StubReturnFalse();
     char StubReturnFalse11();
     char StubReturnFalse7();

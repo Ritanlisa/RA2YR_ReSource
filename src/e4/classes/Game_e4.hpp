@@ -118,6 +118,7 @@ struct Game {
     unsigned int Settings;
     unsigned int Timer;
 // --- flat members (END) ---
+    char LoadSaved();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     void initScenario(void *a1_1);  // 0x430980
     int SendCampaignOptions();  // 0x46D4A0
     AbstractClass * * DestroyAllObjects();  // 0x534450

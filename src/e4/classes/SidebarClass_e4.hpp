@@ -110,6 +110,7 @@ struct SidebarClass {
     void* GetProductionState_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon SidebarClass::GetProductionState is a method)
     static unsigned int GetProductionState(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
+    static char LoadResources();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     static GadgetClass * LoadResources(void *a1);
     static int CalcBounds(char a1);
     int InitPositions();

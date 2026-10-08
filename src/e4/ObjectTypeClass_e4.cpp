@@ -136,7 +136,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   {
     v4 = (char *)(*((unsigned int *)dword_A8E334 + a4) + 36); /*0x474f65*/
   }
-  ((INIClass*)((INIClass *)this))->GetString(a2, (gamemd::INIClass *)(a3), (gamemd::INIClass *)(v4), (int)(Destination), 32); /*0x474f85*/
+  ((INIClass*)((INIClass *)this))->GetString(a2, (gamemd::INIClass *)(a3), (gamemd::INIClass *)(v4), (void *)(Destination), 32); /*0x474f85*/
   return ObjectTypeClass_Read((ObjectClass *)Destination); /*0x474f93*/
 
 }

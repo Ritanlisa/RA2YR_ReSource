@@ -101,7 +101,7 @@
 
 // 0x5BC180
 namespace gamemd {
-void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
+unsigned __int8 WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
   unsigned int v3;
   unsigned char * v4;

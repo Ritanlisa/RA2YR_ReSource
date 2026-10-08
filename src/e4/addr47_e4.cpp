@@ -71,7 +71,7 @@ void CaptureManagerClass__vt_03_(_DynamicVectorClass_PAUControlNode *a1)
 }
 // 0x472AD0
 namespace gamemd {
-void CaptureManagerClass__vt_06_(_VectorClass_PAUControlNode *a1, int a2)
+int CaptureManagerClass__vt_06_(_VectorClass_PAUControlNode *a1, int a2)
 {
 
   return *(unsigned int *)(*(unsigned int *)&a1->m_1[3] + 4 * a2); /*0x472ada*/
@@ -1004,7 +1004,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
 }
 // 0x47EFE0
 namespace gamemd {
-void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
+unsigned int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
 {
   int *FoundationSize; // eax
   int v5; // esi

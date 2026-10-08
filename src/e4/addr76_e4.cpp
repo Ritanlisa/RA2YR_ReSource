@@ -128,7 +128,7 @@ namespace gamemd {
 
 // 0x7636F0
 namespace gamemd {
-void unknown_libname_36(ObjectClass *self)
+_DWORD * unknown_libname_36(ObjectClass *self)
 {
   self->AbstractClass = 0; /*0x7636f4*/
   self->ShapeButtonClass_field_0x04 = 0; /*0x7636f6*/
@@ -638,7 +638,7 @@ void E4Recv_767EC0::sub_767EC0()
 }
 // 0x769480
 namespace gamemd {
-void unknown_libname_37(ObjectClass *a1)
+_DWORD * unknown_libname_37(ObjectClass *a1)
 {
     *a1 = 0;
     *((unsigned int *)a1 + 4) = 0;

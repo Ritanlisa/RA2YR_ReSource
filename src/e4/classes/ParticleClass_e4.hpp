@@ -124,7 +124,7 @@ struct ParticleClass {
     unsigned int q520;  // 0x520
     unsigned char q5B8;  // 0x5B8
     unsigned char q698;  // 0x698
-    unsigned int CheckWaterImpact;
+    unsigned int CheckWaterImpact_slot;
     unsigned int ParticleClass_field_0xAC;
     unsigned int ParticleClass_field_0xB4;
     unsigned int ParticleClass_field_0xB8;
@@ -135,6 +135,7 @@ struct ParticleClass {
     unsigned int __pad_B0;
     unsigned int __pad_E4;
 // --- flat members (END) ---
+    static void CheckWaterImpact(ParticleClass *pThis);  // G57w19k2 raw thiscall static-form supply (member CheckWaterImpact -> CheckWaterImpact_slot)
     int * CheckDrawFlags(int a1);
     int CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2);
     int CheckStateFlag();

@@ -274,7 +274,7 @@ v9 = (*(int (**)(HWND, int, unsigned char *, int, int))(*(unsigned int *)g_Clipb
       v9 = *(unsigned int *)(Buffer + 36); /*0x5f2eac*/
       goto LABEL_22; /*0x5f2eaf*/
     }
-    if ( strstr(Source, aConnect) ) /*0x5f2ebe*/
+    if ( strstr((const char *)Source, aConnect) ) /*0x5f2ebe*/
     {
       memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2ed8*/
       strncpy((char *)(byte_AC1288),(const char *)(Source), 0x4Fu); /*0x5f2ee4*/
@@ -1084,7 +1084,7 @@ int E4Recv_5F1F20::sub_5F1F20()
 
 // 0x5F3340
 namespace gamemd {
-void ObjectClass::nullsub_28()
+int ObjectClass::nullsub_28()
 {
 
   int result; // eax

@@ -167,7 +167,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         strcpy((char *)(Str),(const char *)(byte_A8B8E0)); /*0x5e765a*/
         _strupr((char *)(Str)); /*0x5e7668*/
         Debug::Log("Checking for file %s in local directory\n"); /*0x5e7677 G57c1: IDA 0x5e7677 push offset aCheckingForFil*/
-        if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
+        if ( !dword_A8BB08 && strstr((const char *)Str, aMpr) && strstr((const char *)Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
         ((RawFileClass *)(&v18))->Construct((int)byte_A8B8E0); /*0x5e76c1*/
         if ( (uint8_t)((FileClass *)(&v18))->Open(0) ) /*0x5e76cc*/

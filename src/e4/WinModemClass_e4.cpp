@@ -263,7 +263,7 @@ LABEL_2:
       if ( !v13 ) /*0x774e2b*/
       {
 LABEL_20: Str[a4 - 1] = (char)((char *)(0));
-        v15 = (char *)(strstr(Str, word_832678));
+        v15 = (char *)(strstr(Str, (const char *)word_832678));
         if ( v15 ) /*0x774e4c*/
         {
           if ( *Str == 65 && Str[1] == 84 && strchr(Str, 13) ) /*0x774e5d*/
@@ -461,9 +461,9 @@ LABEL_21:
 
     if ( !strcmp(Str, (const char *)((char *)&stru_82BA00)) ) /*0x77531d*/
       return (gamemd::AbstractClass **)(3); /*0x775437*/
-    if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
+    if ( strstr(Str, (const char *)g_INI_Key_OK) ) /*0x77532d*/
       return (gamemd::AbstractClass **)(2); /*0x775337*/
-    if ( strstr(Str, aError) ) /*0x775347*/
+    if ( strstr(Str, (const char *)aError) ) /*0x775347*/
       return (gamemd::AbstractClass **)(1); /*0x775449*/
     if ( strlen( (const char *)(Str)) == 3 /*0x77538a*/
       && Str[0] >= 48

@@ -567,7 +567,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca77c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca783*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_FactoryClass); /*0x4ca78a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x4ca791*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x4ca791*/
   v7 = (gamemd::FactoryClass *)(this); /*0x4ca7a6*/
 v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))((char *)(/*0x4ca7aa*/ &stru_A83D50.__pad_C8[24]), (FactoryClass **)(&v7));
 

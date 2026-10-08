@@ -1150,8 +1150,8 @@ int BuildingTypeClass::UpdatePower()
   Power::TimerProcess(this->OccupyHeight); /*0x464c2e*/
   Power::TimerProcess(this->MidPoint); /*0x464c3c*/
   Power::TimerProcess(this->DoorStages); /*0x464c4a*/
-  ((Checksummer*)v54)->Add_Buffer( (unsigned char)((uint8_t *)this->BuildingAnimFrame), 72); /*0x464c5a*/
-  ((Checksummer*)v54)->Add_Buffer( (unsigned char)((uint8_t *)&(&this->BuildingAnim)[12]), 1428); /*0x464c6d*/
+  ((Checksummer*)v54)->Add_Buffer( (unsigned char *)((uint8_t *)this->BuildingAnimFrame), 72); /*0x464c5a*/
+  ((Checksummer*)v54)->Add_Buffer( (unsigned char *)((uint8_t *)&(&this->BuildingAnim)[12]), 1428); /*0x464c6d*/
   Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1392]); /*0x464c7b*/
   v2 = Power::TimerProcess(*(unsigned int *)&this->__pad_F70[1444]); /*0x464c89*/
   LOBYTE(v2) = this->HoverPad; /*0x464c8e*/
@@ -1253,10 +1253,10 @@ int BuildingTypeClass::UpdatePower()
   ((Power *)((Power *)v54))->FlagProcess(v48); /*0x464f45*/
   ((Checksum *)((Checksum *)v54))->AddString((uint8_t *)this->__pad_1714); /*0x464f53*/
   ((Checksummer *)(v54))->Add_double(*(unsigned int *)&this->__pad_1714[20], *(unsigned int *)&this->__pad_1714[24]); /*0x464f68*/
-  ((Checksummer*)v54)->Add_Buffer( (unsigned char)((uint8_t *)&this->__pad_1714[28]), 12); /*0x464f78*/
-  ((Checksummer*)v54)->Add_Buffer( (unsigned char)((uint8_t *)&this->__pad_1714[40]), 12); /*0x464f88*/
-  ((Checksummer*)v54)->Add_Buffer( (unsigned char)((uint8_t *)&this->__pad_1714[52]), 12); /*0x464f98*/
-  v49 = ((Checksummer*)v54)->Add_Buffer( (unsigned char)((uint8_t *)&this->__pad_1714[64]), 12); /*0x464fa8*/
+  ((Checksummer*)v54)->Add_Buffer( (unsigned char *)((uint8_t *)&this->__pad_1714[28]), 12); /*0x464f78*/
+  ((Checksummer*)v54)->Add_Buffer( (unsigned char *)((uint8_t *)&this->__pad_1714[40]), 12); /*0x464f88*/
+  ((Checksummer*)v54)->Add_Buffer( (unsigned char *)((uint8_t *)&this->__pad_1714[52]), 12); /*0x464f98*/
+  v49 = ((Checksummer*)v54)->Add_Buffer( (unsigned char *)((uint8_t *)&this->__pad_1714[64]), 12); /*0x464fa8*/
   LOBYTE(v49) = this->__pad_1714[83]; /*0x464fad*/
   ((Power *)((Power *)v54))->FlagProcess(v49); /*0x464fb6*/
   LOBYTE(v50) = this->__pad_1714[84]; /*0x464fbb*/

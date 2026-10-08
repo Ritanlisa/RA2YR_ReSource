@@ -673,7 +673,7 @@ v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)&((M
   ((Tactical *)(v17))->MouseOver( (gamemd::MouseClass *)(v16), (gamemd::MouseClass *)(v19), (MouseClass *)(&v15), (MouseClass *)(&v14[3]), (MouseClass *)((bool *)&a2)); /*0x4ae571*/
   if ( LOBYTE(stru_A8EB00.__pad_CD4[1]) ) /*0x4ae57e*/
   {
-    swprintf(&word_8A0630, (const size_t)aDD_2, (const wchar_t *)(v19[0] / 256), v19[1] / 256); /*0x4ae5ac*/
+    _swprintf(&word_8A0630, (const wchar_t *)aDD_2, (const wchar_t *)(v19[0] / 256), v19[1] / 256); /*0x4ae5ac*/
     return &word_8A0630; /*0x4ae5be*/
   }
   if ( (((Coord *)((Coord *)&stru_87F5F0.__pad_58[416]))->To_Cell(v19)->copyFlags & 8) == 0 && g_hWnd ) /*0x4ae5e0*/

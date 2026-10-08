@@ -244,10 +244,12 @@ struct UnitClass {
     unsigned int u32_710;  // 0x710
     bool q730;  // 0x730
     void* q7B0;  // 0x7B0
-    unsigned int ClearTargetRef;
-    unsigned int GetExitCell;
+    unsigned int ClearTargetRef_slot;
+    unsigned int GetExitCell_slot;
 
 // --- flat members (END) ---
+    static int GetExitCell(int pThis, unsigned int *a2, unsigned int *a3);  // G57w19k2 raw thiscall static-form supply (member GetExitCell -> GetExitCell_slot)
+    static int ClearTargetRef(UnitClass *pThis, int a2);  // G57w19k2 raw thiscall static-form supply (member ClearTargetRef -> ClearTargetRef_slot)
     int ProcessIdleOrders();
 int Construct(int a2, LPVOID ppv);  // G57w10-S raw 0x007353C0 (was C2597 interim stub)
     void ** Create(void *a2, _DWORD *a3, int a4); // N_fix R5 supply (cache truth)

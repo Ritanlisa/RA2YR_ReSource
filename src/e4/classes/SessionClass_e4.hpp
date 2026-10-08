@@ -116,6 +116,7 @@ struct SessionClass {
     unsigned int unknown_14;
     void* unknown_08;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    int GetPlayerColorScheme();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     AbstractClass * * BuildLobbyPlayerList();
     AbstractClass * * LoadMapSelection(char **a1);
     AbstractClass * * LoadMissionList();

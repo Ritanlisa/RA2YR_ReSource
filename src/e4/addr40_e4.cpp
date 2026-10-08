@@ -745,7 +745,7 @@ void sub_403FA0(ObjectClass * a1)
 }
 // 0x4041D0
 namespace gamemd {
-void Audio_Process()
+int Audio_Process()
 {
   int result; // eax
   int v2; // esi

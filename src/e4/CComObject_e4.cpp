@@ -453,10 +453,10 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     {
       if ( *(unsigned int *)a3 ) /*0x7a572c*/
       {
-        memset( (void *)(&g_WOL_LoginObject.?), 0, 0x940u); /*0x7a576f*/
+        memset( (void *)&dword_B76E40, 0, 0x940u); /*0x7a576f G57w19k3: disasm 0x7A576A mov edi, offset unk_B76E40 (=g_WOL_LoginObject+0x1C)*/
         v9 = ((String *)&g_WindowManager.__pad_EC[684])->GetOrEmpty(); /*0x7a577b*/
         v10 = (TagClass *)dword_A8B3AC; /*0x7a5788*/
-        strcpy( (char *)&g_WOL_LoginObject.?, (const char *)(v9)); /*0x7a5799*/
+        strcpy( (char *)&dword_B76E40, (const char *)(v9)); /*0x7a5799 G57w19k3: disasm 0x7A5791 mov edi, offset unk_B76E40*/
         dword_B76E58= v10; /*0x7a57a8*/
         dword_B76E5C= 0; /*0x7a57ad*/
         dword_B76E54= (ObjectClass *)dword_A8B394; /*0x7a57b7*/
@@ -1145,7 +1145,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL::DispatchStub_28(int a1, int a
       if ( byte_B77E40 ) /*0x7a94f4*/
       {
         v23 = *(unsigned int *)ppv; /*0x7a9500*/
-        v24 = (wchar_t *)((WideString *)(wchar_t **)&stru_B7622C.?)->GetOrEmpty(); /*0x7a9502*/
+        v24 = (wchar_t *)((WideString *)(wchar_t **)&unk_B76230)->GetOrEmpty(); /*0x7a9502*/
         (*(void (__stdcall **)(LPVOID, const char *, wchar_t *))(v23 + 236))(ppv, a3, v24); /*0x7a9510*/
       }
       PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a952d*/
@@ -1245,7 +1245,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
           if ( !Current ) /*0x7a96de*/
             goto LABEL_27; /*0x7a96de*/
         }
-        Dialog::ShowMessage( 0xFFFFFF, (size_t)g_Str_Trace___hs_, a3 + 36, (wchar_t)(String)); /*0x7a96fa*/
+        Dialog::ShowMessage( 0xFFFFFF, (size_t)g_Str_Trace___hs_, a3 + 36, (wchar_t *)(String)); /*0x7a96fa*/
       }
       else
       {
@@ -1257,7 +1257,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
                               (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))ChatDialog::DlgProc,
                               0);
         SetFocus((HWND)Current); /*0x7a9729*/
-        Dialog::ShowMessage( 0xFFFFFF, (size_t)g_Str_Trace___hs_, a3 + 36, (wchar_t)(String)); /*0x7a9746*/
+        Dialog::ShowMessage( 0xFFFFFF, (size_t)g_Str_Trace___hs_, a3 + 36, (wchar_t *)(String)); /*0x7a9746*/
         ShowWindow((HWND)Current, 1); /*0x7a9751*/
       }
       DlgItem = GetDlgItem((HWND)Current, 1343); /*0x7a975d*/
@@ -1271,7 +1271,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_44(int a1, int a
     if ( byte_B77E40 ) /*0x7a97a3*/
     {
       v16 = *(unsigned int *)ppv; /*0x7a97ab*/
-      v17 = (wchar_t *)((WideString *)(wchar_t **)&stru_B7622C.?)->GetOrEmpty(); /*0x7a97b2*/
+      v17 = (wchar_t *)((WideString *)(wchar_t **)&unk_B76230)->GetOrEmpty(); /*0x7a97b2*/
       (*(void (__stdcall **)(LPVOID, int, wchar_t *))(v16 + 236))(ppv, v5, v17); /*0x7a97c0*/
     }
     PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1708), 0x2000, 1.0, 0); /*0x7a97dd*/

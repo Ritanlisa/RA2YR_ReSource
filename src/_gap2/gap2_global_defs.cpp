@@ -1797,7 +1797,7 @@ char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6)
     wchar_t Str[128]; // [esp+68h] [ebp-100h] BYREF
 
     v19 = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] /*0x430283*/
-                    + 4 * *(unsigned int *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(this + 272)) + 90196));
+                    + 4 * *(unsigned int *)(*((unsigned int *)dword_A8022C + *(unsigned int *)(this + 272)) + 90196));
     IDA_LOBYTE(v7) = Coord::To_Screen((Coord *)g_TacticalClass_Instance, (unsigned int *)this, v24); /*0x430289*/
     if ( (unsigned char)v7 )
     {
@@ -1905,9 +1905,9 @@ int Gap2Recv_430AC0::RenderAlliedBuildingTags(int a2, int a3, int a4, int a5, in
             && (*(unsigned char *)(vtable0 + 12) & 1) != 0
             && (unsigned __int8)HouseClass::IsAllied((HouseClass *)dword_A83D4C, *(unsigned int *)(vtable0 + 272))
             && (unsigned __int8)HouseClass::IsAlliedWith(
-                                  *((void **)stru_A80220.? + *(unsigned int *)(vtable0 + 272)),
+                                  *((void **)dword_A8022C + *(unsigned int *)(vtable0 + 272)),
                                   (void *)dword_A83D4C)
-            && !*(unsigned char *)(*((unsigned int *)stru_A80220.? + *(unsigned int *)(vtable0 + 272)) + 501) )
+            && !*(unsigned char *)(*((unsigned int *)dword_A8022C + *(unsigned int *)(vtable0 + 272)) + 501) )
           {
             RenderBuildingTag(vtable0, a2, a3, a4, a5, a6); /*0x430b64*/
           }
@@ -2046,9 +2046,9 @@ void Gap2Recv_430BA0::PlacePlayerBeacon(int a2, int a3, int a4, int a5, int a6)
       {
         if ( (unsigned __int8)HouseClass::IsAllied((HouseClass *)dword_A83D4C, v11[68]) ) /*0x430e98*/
         {
-          if ( (unsigned __int8)HouseClass::IsAlliedWith(*((void **)stru_A80220.? + v11[68]), (void *)dword_A83D4C) ) /*0x430eb6*/
+          if ( (unsigned __int8)HouseClass::IsAlliedWith(*((void **)dword_A8022C + v11[68]), (void *)dword_A83D4C) ) /*0x430eb6*/
           {
-            if ( !*(unsigned char *)(*((unsigned int *)stru_A80220.? + v11[68]) + 501) ) /*0x430ece*/
+            if ( !*(unsigned char *)(*((unsigned int *)dword_A8022C + v11[68]) + 501) ) /*0x430ece*/
             {
               IDA_LOWORD(v22) = a3 / 256; /*0x430ee6*/
               IDA_HIWORD(v22) = a4 / 256; /*0x430ef9*/
@@ -4869,7 +4869,7 @@ int ObjectClass::GetResourceID4CSF()
 namespace gamemd {
 char Gap2Recv_4F9F70::COMStub_4F9F70(int a2, char a3)
 {
-    return HouseClass::SetAlliance((int)this, *((unsigned int *)stru_A80220.? + a2), a3); /*0x4f9f87*/
+    return HouseClass::SetAlliance((int)this, *((unsigned int *)dword_A8022C + a2), a3); /*0x4f9f87*/
 }
 } // namespace gamemd
 namespace gamemd {

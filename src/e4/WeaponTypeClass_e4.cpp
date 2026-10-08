@@ -212,7 +212,7 @@ int WeaponTypeClass::Destructor(void *a1)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f5d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f64*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f6b*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(gamemd::AbstractClass *)(1)); /*0x771f72*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,1); /*0x771f72*/
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/

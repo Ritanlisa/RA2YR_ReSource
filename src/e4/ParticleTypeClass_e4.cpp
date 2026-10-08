@@ -730,7 +730,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2, int a3, int a4, int a5, in
   this->ParticleTypeClass_field_28C =(unsigned int)(&vt_ParticleTypeClass); /*0x64595c*/
   this->BehavesLike =(unsigned int)(&vt_ParticleTypeClass); /*0x645963*/
   this->ParticleTypeClass_field_0xC =(unsigned int)(&vt_ParticleTypeClass); /*0x64596a*/
-  AbstractClass::AnnounceExpiredPointer(&this->ArrayIndex, 1); /*0x645971*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)&this->ArrayIndex, 1); /*0x645971*/
   v7 = (gamemd::ParticleTypeClass *)(this); /*0x645986*/
 v3 = (*(int (**)(int *, ParticleTypeClass **))(dword_B0F670+ 16))( /*0x64598a*/ &dword_B0F670, (ParticleTypeClass **)((int *)((int *)((int *)(&v7)))));
 

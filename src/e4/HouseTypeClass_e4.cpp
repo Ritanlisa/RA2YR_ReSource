@@ -64,7 +64,7 @@ AbstractClass * HouseTypeClass::Dtor(void *a1)
     ((void **)this)[1] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
     ((void **)this)[2] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
     ((void **)this)[3] = (void *)((unsigned int)(void*)&HouseTypeClass_vftable);
-    AbstractClass::AnnounceExpiredPointer(&this->vtable1, 1); /*0x5116c2*/
+    AbstractClass::AnnounceExpiredPointer((AbstractClass *)&this->vtable1, 1); /*0x5116c2*/
     v7 = this; /*0x5116d7*/
     v2 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))( (unsigned int *)(&dword_A83C98), (HouseTypeClass **)(&v7)); /*0x5116db*/
     if ( v2 != -1 && v2 < dword_A83CA8 && v2 < --dword_A83CA8 ) /*0x5116f6*/
@@ -214,7 +214,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     *(unsigned int *)(_EBX + 192) = BuildingTypeClass::FindAnimByName( /*0x511942*/
                                 (BuildingTypeClass *)v4,
                                 (unsigned __int8 *)(_EBX + 36),
-                                (unsigned __int8 *)&stru_81AF8C.?[95],
+                                (unsigned __int8 *)"Color", /*G57w19k3: disasm 0x511935 push offset aColor(0x81B138)="Color"*/
                                 *(unsigned int *)(_EBX + 192));
     Source[0] = *(unsigned char *)(_EBX + 420); /*0x51195a*/
     Source[1] = 0; /*0x511966*/
@@ -423,7 +423,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
     CountryData = HouseTypeClass::loadCountryData( /*0x51209e*/
                     v4,
                     (unsigned __int8 *)(_EBX + 36),
-                    (unsigned __int8 *)&g_INI_Key_Special.?,
+                    (unsigned __int8 *)"Side",
                     v44);
     *(unsigned int *)(_EBX + 188) = CountryData; /*0x5120a5*/
     if ( CountryData != v44 ) /*0x5120ab*/
@@ -448,7 +448,7 @@ AbstractClass * HouseTypeClass::LoadFromINI(uint8_t *** aP1, void *a2)
       v51 = *(unsigned int *)(_EBX + 188); /*0x5120ee*/
       if ( v51 != -1 ) /*0x5120f7*/
       {
-        v52 = *(unsigned int *)(FootClass_Array.?[0] + 4 * v51); /*0x5120ff*/
+        v52 = *(unsigned int *)(dword_8B4124 + 4 * v51); /*0x5120ff*/
         v53 = *(unsigned int *)(v52 + 160); /*0x512102*/
         v54 = *(unsigned int *)(v52 + 168); /*0x512108*/
         v55 = v52 + 152; /*0x51210e*/
@@ -913,7 +913,7 @@ HouseTypeClass * HouseTypeClass::Destructor(char a2)
     ((void **)this)[1] = (unsigned int)(void*)&HouseTypeClass_vftable;
     ((void **)this)[2] = (unsigned int)(void*)&HouseTypeClass_vftable;
     ((void **)this)[3] = (unsigned int)(void*)&HouseTypeClass_vftable;
-    AbstractClass::AnnounceExpiredPointer(&this->vtable1, 1); /*0x512781*/
+    AbstractClass::AnnounceExpiredPointer((AbstractClass *)&this->vtable1, 1); /*0x512781*/
     v8 = this; /*0x512796*/
     v3 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))( (unsigned int *)(&dword_A83C98), (HouseTypeClass **)(&v8)); /*0x51279a*/
     if ( v3 != -1 && v3 < dword_A83CA8 && v3 < --dword_A83CA8 ) /*0x5127b5*/
@@ -1632,9 +1632,9 @@ int HouseTypeClass::Find()
     v1 = 0; /*0x6a46d6*/
     if ( *(unsigned int *)((char *)&FootClass_Array + 889) <= 0 ) /*0x6a46dd*/
       return -1; /*0x6a4702*/
-    while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.?[0] + 4 * v1) + 36), (char *)this) ) /*0x6a46f6*/
+    while ( _strcmpi((char *)(*(unsigned int *)(dword_8B4124 + 4 * v1) + 36), (char *)this) ) /*0x6a46f6*/
     {
-      if ( ++v1 >= FootClass_Array.?[0] ) /*0x6a4700*/
+      if ( ++v1 >= dword_8B4130 ) /*0x6a4700*/
         return -1; /*0x6a4700*/
     }
     return v1; /*0x6a4702*/

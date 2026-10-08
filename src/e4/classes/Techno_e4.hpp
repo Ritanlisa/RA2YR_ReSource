@@ -27,6 +27,7 @@ struct Techno {
     unsigned int q5684;  // 0x5684
     unsigned int u32_500;
 // --- flat members (END) ---
+    int StartInvulnerability();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     int GetOwnerHouse();  // 0x6F2070
     int StartInvulnerability(int a2);
     BuildingTypeClass * StartInvulnerability(int a2, int aP1, int a1);

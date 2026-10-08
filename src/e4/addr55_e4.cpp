@@ -549,20 +549,20 @@ v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass
     ((Tactical*)(char *)v77)->SetCellTransform( (int)((Tactical*)(char *)v77), 0, v41, (void *)(v47), v73, 0, 0); /*0x5510d3*/
     *(float *)&v48 = (float)v64; /*0x5510e5*/
     *(float *)&v42 = (float)v63; /*0x5510f4*/
-    ((Tactical*)((char *)v77))->SetCellTransform( (int)((Tactical*)((char *)v77)), 1, v42, (void *)(v48), v38, 0, 1065353216); /*0x5510f9*/
+    ((Tactical*)((char *)v77))->SetCellTransform( 1, v42, (void *)(v48), v38, 0, 1065353216); /*0x5510f9*/
     v39 = v72; /*0x5510fe*/
     *(float *)&v49 = (float)IDA_SHIDWORD(v62); /*0x55110f*/
     *(float *)&v43 = (float)(int)v62; /*0x55111e*/
-    ((Tactical*)((char *)v77))->SetCellTransform( (int)((Tactical*)((char *)v77)), 2, v43, (void *)(v49), v72, 1065353216, 0); /*0x551123*/
+    ((Tactical*)((char *)v77))->SetCellTransform( 2, v43, (void *)(v49), v72, 1065353216, 0); /*0x551123*/
     *(float *)&v50 = (float)v64; /*0x551135*/
     *(float *)&v44 = (float)v63; /*0x551144*/
-    ((Tactical*)((char *)v78))->SetCellTransform( (int)((Tactical*)((char *)v78)), 0, v44, (void *)(v50), v38, 0, 1065353216); /*0x551149*/
+    ((Tactical*)((char *)v78))->SetCellTransform( 0, v44, (void *)(v50), v38, 0, 1065353216); /*0x551149*/
     *(float *)&v51 = (float)IDA_SHIDWORD(v67); /*0x55115e*/
     *(float *)&v45 = (float)(int)v67; /*0x55116d*/
-    ((Tactical*)((char *)v78))->SetCellTransform( (int)((Tactical*)((char *)v78)), 1, v45, (void *)(v51), v39, 1065353216, 1065353216); /*0x551172*/
+    ((Tactical*)((char *)v78))->SetCellTransform( 1, v45, (void *)(v51), v39, 1065353216, 1065353216); /*0x551172*/
     *(float *)&v52 = (float)IDA_SHIDWORD(v62); /*0x551184*/
     *(float *)&v46 = (float)(int)v62; /*0x551193*/
-    ((Tactical*)((char *)v78))->SetCellTransform( (int)((Tactical*)((char *)v78)), 2, v46, (void *)(v52), v39, 1065353216, 0); /*0x551198*/
+    ((Tactical*)((char *)v78))->SetCellTransform( 2, v46, (void *)(v52), v39, 1065353216, 0); /*0x551198*/
     ((StructTable *)(dword_8A0E10))->Append((void *)(v77)); /*0x5511ab*/
 // 0x4a3840
     return ((StructTable *)(dword_8A0E10))->Append((void *)(v78)); /*0x5511be*/
@@ -602,7 +602,7 @@ v1 = (::gamemd::BuildingTypeClass *)((unsigned int)((::gamemd::BuildingTypeClass
 }
 // 0x551C60
 namespace gamemd {
-void int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
+int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
 {
   unsigned int v3; // ebp
   unsigned int v5; // esi

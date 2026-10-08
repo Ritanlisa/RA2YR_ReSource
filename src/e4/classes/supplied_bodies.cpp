@@ -159,6 +159,7 @@
 #include "object/abstract.hpp"
 #ifdef GAMEMD_TREE_UNIVERSE
 namespace gamemd {
+extern unsigned int dword_8B417C;  // G57w19k3 data: 0x8B417C FootClass Array Items#3
 using ra2::game::AbstractClass;
 }
 #endif
@@ -1275,7 +1276,7 @@ const char * ScriptAction::ParseScriptActionParams()
         }
         else
         {
-          *(unsigned int *)&this->__pad_34[28] = *(unsigned int *)(FootClass_Array.?[0] + 4 * v6); /*0x6dd682*/
+          *(unsigned int *)&this->__pad_34[28] = *(unsigned int *)(dword_8B417C + 4 * v6); /*0x6dd682*/
         }
         break; /*0x6dd664*/
       case 3: /*0x6dd60d*/

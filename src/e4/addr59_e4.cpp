@@ -123,7 +123,7 @@ char PlaceCabhutMap(FootClass * aP0)
 }
 // 0x594190
 namespace gamemd {
-void sub_594190(int * a1, int a2)
+int sub_594190(int * a1, int a2)
 {
   int *v2; // ebp
   int v3; // esi

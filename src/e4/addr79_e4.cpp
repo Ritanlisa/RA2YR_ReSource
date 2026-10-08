@@ -65,7 +65,7 @@ namespace gamemd {
 
 // 0x792CF0
 namespace gamemd {
-void sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
+INT_PTR sub_792CF0(HWND hWnd, UINT, WPARAM, char * a4, void * a2, void * a3)
 {
   INT_PTR result; // eax
   HWND DlgItem; // esi

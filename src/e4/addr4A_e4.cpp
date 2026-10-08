@@ -421,7 +421,7 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
       v18 = v11 % 60; /*0x4a2488*/
       v17 = v11 / 60; /*0x4a2489*/
       StringCSF = (wchar_t *)(GetStringCSF( (wchar_t *)&stru_81AF8C.IsAnimatedTiberium, 0, (const char *)(aDRa2mdpostCred), 107)); /*0x4a2499*/
-      swprintf(&word_89F860, (const size_t)StringCSF, (const wchar_t *const)v10, v17, v18); /*0x4a24a4*/
+      _swprintf(&word_89F860, (const wchar_t *)StringCSF, (const wchar_t *const)v10, v17, v18); /*0x4a24a4*/
       v13 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 30))( (DSurface *)(DSurface_Sidebar)); /*0x4a24c6*/
       result = (uint8_t)TextRenderer::Printf( /*0x4a24db*/
                                   v20,
@@ -1342,7 +1342,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
 }
 // 0x4A6010
 namespace gamemd {
-void globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int v11; // eax
   int *v12; // eax
@@ -1508,7 +1508,7 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
 }
 // 0x4A66D0
 namespace gamemd {
-void globalHelper_0A66D0(int * a1, void * a2, void * a3, void * a4, void * a5, short a6, int a7, int a8, void * a9, int a10)
+int * globalHelper_0A66D0(int * a1, void * a2, void * a3, void * a4, void * a5, short a6, int a7, int a8, void * a9, int a10)
 {
   int *v12; // eax
   int v14; // eax
@@ -1864,7 +1864,7 @@ int sub_4A80D6(int a1, signed int a2)
 }
 // 0x4A8EB0
 namespace gamemd {
-void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3)
+char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3)
 {
   int FoundationWidth; // eax
   int v6; // ebp
@@ -1959,7 +1959,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
 }
 // 0x4A9070
 namespace gamemd {
-void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3)
+bool ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3)
 {
   int FoundationHeight; // edi
   int FoundationWidth; // eax
@@ -2422,7 +2422,7 @@ v20 = (*(int (**)(unsigned int *, int *, unsigned int, unsigned int, int *, int 
 }
 // 0x4AEA20
 namespace gamemd {
-void sub_4AEA20(int a1, int a2)
+int sub_4AEA20(int a1, int a2)
 {
   int v2; // edx
   int v3; // esi
@@ -2460,7 +2460,8 @@ void sub_4AEA20(int a1, int a2)
 }
 // 0x4AED70
 namespace gamemd {
-void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, int aP10, ConvertClass * aP11  // G57e1: p10 int per IDA truth 0x4AED70 (raw literal 0/2/1000), int a13, ConvertClass * aP13, int a15, ConvertClass * aP15)
+// G57e1: p10 int per IDA truth 0x4AED70 (raw literal 0/2/1000)
+int DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, int aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15)
 {
   int result; // eax
   int v17; // edi

@@ -9,7 +9,13 @@ namespace gamemd {
 // TypeList  size=28  (bare-template collapse name; e4 corpus static-form qualified calls)
 struct TypeList {
     void* DynamicVectorClass;  // 0x0 vfptr (raw member name; TiberiumClass_e4.cpp v24 site 0x721c21)
-    unsigned char q004[20];    // 0x4..0x17 base DynamicVectorClass data (flat filler)
+    unsigned int Items;              // 0x4  (til VectorClass.Items)
+    unsigned int Capacity;           // 0x8  (til VectorClass.Capacity)
+    unsigned char IsInitialized;     // 0xC  (til VectorClass.IsInitialized char[1])
+    unsigned char IsAllocated;       // 0xD  (til VectorClass.IsAllocated char[1])
+    unsigned char __tail_E[2];       // 0xE  (til VectorClass tail char[2]; 布局守卫: 4+4+1+1+2+4+4=20 取代 q004[20])
+    int Count;                       // 0x10 (til DynamicVectorClass.Count)
+    int CapacityIncrement;           // 0x14 (til DynamicVectorClass.CapacityIncrement)
     int unknown_18;            // 0x18 (canon char[4] int; site 0x721c10)
     static unsigned int * Copy(TypeList *aP1, void *a2);  // 0x478720 raw: _DWORD* Copy(TypeList*, _DWORD*)
     static unsigned int * TechnoTypeConstructor(TypeList *aP1, int a2, int a3);  // 0x478790

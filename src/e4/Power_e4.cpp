@@ -513,7 +513,7 @@ namespace gamemd {
 int Power::TimerProcess(int a1)
 {
 
-  return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/
+  return Checksummer::Add_Buffer((Checksummer *)&a1, (unsigned char *)&a1, 4); /*0x4a1d64 W19K4: raw lea edx,&a1; push 4; push edx -- receiver-first static form*/
 
 }
 } // namespace gamemd

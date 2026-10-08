@@ -2007,7 +2007,7 @@ unsigned int ** sub_6393A0(int a1, int a2)
 }
 // 0x639470
 namespace gamemd {
-void sub_639470(int a1, int a2, int a3)
+int sub_639470(int a1, int a2, int a3)
 {
   int v3; // ebp
   int v4; // edi
@@ -2664,7 +2664,7 @@ AbstractClass * * sub_63B150()
 }
 // 0x63B2F0
 namespace gamemd {
-void RenderScriptActionHighlight()
+int RenderScriptActionHighlight()
 {
   ScriptAction *v1; // edi
   int result; // eax

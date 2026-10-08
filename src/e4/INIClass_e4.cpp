@@ -51,7 +51,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1, void *a2)
   if ( !a2 ) /*0x526820*/  // G57w11: raw 0x526820 判 a2
     return 0; /*0x526820*/
   memset( (void *)(v15), 0, sizeof(v15)); /*0x52682d*/
-  v3 = ((Checksummer*)v15)->Add_Buffer( (unsigned char)((uint8_t *)a2), strlen((const char *)a2)); /*0x526844*/
+  v3 = ((Checksummer*)v15)->Add_Buffer( (unsigned char *)((uint8_t *)a2), strlen((const char *)a2)); /*0x526844*/
   v4 = *((unsigned int *)aP1 + 11); /*0x526849*/
   v5 = v3; /*0x52684c*/
   v16 = v3; /*0x526850*/
@@ -134,7 +134,7 @@ int INIClass::GetKeyCount(INIClass * aP1, void *a2)
     return 0; /*0x52696d*/
   memset( (void *)(v12), 0, sizeof(v12)); /*0x52697a*/
   v2 = (char *)((unsigned char *)aP1 + 40); /*0x5269a2*/
-  v3 = ((Checksummer*)v12)->Add_Buffer( (unsigned char)((uint8_t *)a2), strlen((const char *)a2)); /*0x5269a5*/
+  v3 = ((Checksummer*)v12)->Add_Buffer( (unsigned char *)((uint8_t *)a2), strlen((const char *)a2)); /*0x5269a5*/
   a2 = (gamemd::INIClass *)((uint8_t *)v3); /*0x5269a7*/
   if ( !*((unsigned int *)v2 + 1) ) /*0x5269ab*/
     return 0; /*0x5269b0*/
@@ -390,7 +390,7 @@ int INIClass::GetBool(uint8_t *aP1, uint8_t *a2, int a4)
   int result; // eax
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( !((INIClass*)this)->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 128) ) /*0x4757f2*/
+  if ( !((INIClass*)this)->GetString((unsigned char *)(aP1), (gamemd::INIClass *)(a2), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (void *)(Destination), 128) ) /*0x4757f2*/
     return a4; /*0x4757f2*/
   result = LookupNameIndex((ObjectClass *)Destination); /*0x4757ff*/
   if ( result == -1 ) /*0x475807*/
@@ -417,7 +417,7 @@ int INIClass::GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3)
     return 0; /*0x526ccd*/
   memset( (void *)(v10), 0, sizeof(v10)); /*0x526cda*/
   v3 = (char *)((unsigned char *)aP1 + 40); /*0x526d02*/
-  v4 = ((Checksummer*)v10)->Add_Buffer( (unsigned char)((uint8_t *)aP2), strlen((const char *)aP2)); /*0x526d05*/
+  v4 = ((Checksummer*)v10)->Add_Buffer( (unsigned char *)((uint8_t *)aP2), strlen((const char *)aP2)); /*0x526d05*/
   aP2 = (gamemd::CCINIClass *)((uint8_t *)v4); /*0x526d07*/
   if ( !*((unsigned int *)v3 + 1) ) /*0x526d0b*/
     return 0; /*0x526d10*/

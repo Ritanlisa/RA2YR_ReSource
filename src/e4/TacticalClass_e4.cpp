@@ -531,12 +531,12 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
         {
           ((ColorStruct *)(&v6))->SetRGB(0x80u, 0x80u, 0x80u); /*0x4f463d*/
           ((ColorStruct *)(&v7))->SetRGB(0x80u, 0x80u, 0x80u); /*0x4f4655*/
-          ((Tactical*)(v6.__pad_0))->SetCellTransform((int)((Tactical*)(v6.__pad_0)), 0, 0, 0, 1008981770, 0, 0); /*0x4f466d*/
-          ((Tactical*)(v6.__pad_0))->SetCellTransform((int)((Tactical*)(v6.__pad_0)), 1, 0, 1132396544, 1008981770, 0, 1065353216); /*0x4f468b*/
-          ((Tactical*)(v6.__pad_0))->SetCellTransform((int)((Tactical*)(v6.__pad_0)), 2, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46af*/
-          ((Tactical*)(v7.__pad_0))->SetCellTransform((int)((Tactical*)(v7.__pad_0)), 0, 0, 0, 1008981770, 0, 0); /*0x4f46c7*/
-          ((Tactical*)(v7.__pad_0))->SetCellTransform((int)((Tactical*)(v7.__pad_0)), 1, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46eb*/
-          ((Tactical*)(v7.__pad_0))->SetCellTransform((int)((Tactical*)(v7.__pad_0)), 2, 1132396544, 0, 1008981770, 1065353216, 0); /*0x4f4709*/
+          ((Tactical*)(v6.__pad_0))->SetCellTransform(0, 0, 0, 1008981770, 0, 0); /*0x4f466d*/
+          ((Tactical*)(v6.__pad_0))->SetCellTransform(1, 0, 1132396544, 1008981770, 0, 1065353216); /*0x4f468b*/
+          ((Tactical*)(v6.__pad_0))->SetCellTransform(2, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46af*/
+          ((Tactical*)(v7.__pad_0))->SetCellTransform(0, 0, 0, 1008981770, 0, 0); /*0x4f46c7*/
+          ((Tactical*)(v7.__pad_0))->SetCellTransform(1, 1132396544, 1132396544, 1008981770, 1065353216, 1065353216); /*0x4f46eb*/
+          ((Tactical*)(v7.__pad_0))->SetCellTransform(2, 1132396544, 0, 1008981770, 1065353216, 0); /*0x4f4709*/
           ((StructTable *)(dword_8A0E10))->Append(&v6); /*0x4f4719*/
           ((StructTable *)(dword_8A0E10))->Append(&v7); /*0x4f4729*/
         }

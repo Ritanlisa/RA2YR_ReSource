@@ -124,7 +124,7 @@ struct BulletClass {
     unsigned int BulletClass_field_0x8;
     unsigned int BulletClass_field_0xAC;
     unsigned int BulletClass_field_0xB0;
-    unsigned int ResetDetonationTimer;
+    unsigned int ResetDetonationTimer_slot;
     unsigned int *__pad_0;
     unsigned int *__pad_110;
     unsigned int *__pad_134;
@@ -133,6 +133,7 @@ struct BulletClass {
     unsigned int *__pad_B4;
     unsigned int *__pad_C;
 // --- flat members (END) ---
+    static unsigned int * ResetDetonationTimer(BulletClass *pThis);  // G57w19k2 raw thiscall static-form supply (member ResetDetonationTimer -> ResetDetonationTimer_slot)
     BulletClass();
     BulletClass * * Dtor(void *a1);
     LONG CheckTargetValidity(int a1);

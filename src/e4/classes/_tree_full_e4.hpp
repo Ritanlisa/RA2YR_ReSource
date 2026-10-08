@@ -859,7 +859,7 @@ struct ObjectClass {
     void * sub_402440(int a1, int a2);
     char _do_always_noconv_codecvt_base_std__MBE_NXZ_20();
     void nullsub_5();
-    void nullsub_28();
+    int nullsub_28();
     void nullsub_29();
     void nullsub_86();
     void nullsub_84();

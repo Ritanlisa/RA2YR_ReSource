@@ -100,7 +100,7 @@ long MainMenu_Screen(void * a1, void * a2)
             ((unsigned int *)(byte_A8F7B8))[v7] = toupper((char)a1); /*0x531e77*/
             v8 = 0; /*0x531e7d*/
             v9 = (const char **)off_825C2C; /*0x531e7f*/
-            while ( !strstr(byte_A8F7B8, *v9) ) /*0x531e96*/
+            while ( !strstr((const char *)byte_A8F7B8, *v9) ) /*0x531e96*/
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/

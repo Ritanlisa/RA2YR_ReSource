@@ -1947,7 +1947,7 @@ int MapClass_IsAreaUniform(int * a1, char a2)
 }
 // 0x5A78D0
 namespace gamemd {
-void int PlaceMapSeedBuildingsStrategic(int a1)
+unsigned int PlaceMapSeedBuildingsStrategic(int a1)
 {
   int v1; // edi
   int v2; // ecx
@@ -2169,7 +2169,7 @@ int IsoTile_Draw(int a1, unsigned short * a2, char a3)
 }
 // 0x5A8720
 namespace gamemd {
-void PlaceNeutralCreeps(unsigned short * a1)
+int PlaceNeutralCreeps(unsigned short * a1)
 {
   void *v1; // eax
   IUnknown *OwnerHouseClass; // ebp
@@ -2627,7 +2627,7 @@ int MapSeed_ScheduleBuildings(int * a1)
 }
 // 0x5A8F00
 namespace gamemd {
-void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned int * a4, unsigned int * a5, int * a6)
+char PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned int * a4, unsigned int * a5, int * a6)
 {
   int v6; // edi
   double v7; // st7

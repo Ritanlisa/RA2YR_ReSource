@@ -709,7 +709,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)&vt_InfantryTypeClass; /*0x524d7c*/
   ((unsigned int *)this)[0] = (unsigned int)&vt_InfantryTypeClass; /*0x524d83*/
   ((unsigned int *)this)[0] = (unsigned int)&vt_InfantryTypeClass; /*0x524d8a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x524d91*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x524d91*/
   v8 = this; /*0x524da6*/
   v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))( (unsigned int *)(&dword_A8E348), (InfantryTypeClass **)(&v8)); /*0x524daa*/
   if ( v3 != -1 && v3 < dword_A8E358 && v3 < --dword_A8E358 ) /*0x524dc5*/

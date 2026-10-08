@@ -361,14 +361,14 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v18 = v88; /*0x422ee6*/
     *(float *)v100 = (float)*(int *)v101; /*0x422eef*/
     v19 = *(unsigned int *)v100; /*0x422ef3*/
-    ((Tactical*)v110.__pad_0)->SetCellTransform((int)((Tactical*)v110.__pad_0), 0, *(int *)v100, (void *)(v88), v104, 0, 0); /*0x422efa*/
+    ((Tactical*)v110.__pad_0)->SetCellTransform(0, *(int *)v100, (void *)(v88), v104, 0, 0); /*0x422efa*/
     *(float *)v100 = (float)v107; /*0x422f0f*/
-    ((Tactical*)(v110.__pad_0))->SetCellTransform((int)((Tactical*)(v110.__pad_0)), 1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
+    ((Tactical*)(v110.__pad_0))->SetCellTransform(1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
     *(float *)&v89 = (float)v106; /*0x422f37*/
-    ((Tactical*)(v110.__pad_0))->SetCellTransform((int)((Tactical*)(v110.__pad_0)), 2, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f47*/
-    ((Tactical*)(v111.__pad_0))->SetCellTransform( (int)((Tactical*)(v111.__pad_0)), 0, v19, (void *)(v18), v104, 0, 0); /*0x422f5c*/
-    ((Tactical*)(v111.__pad_0))->SetCellTransform((int)((Tactical*)(v111.__pad_0)), 1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
-    ((Tactical*)(v111.__pad_0))->SetCellTransform( (int)((Tactical*)(v111.__pad_0)), 2, v89, (void *)(v18), v104, 1065353216, 0); /*0x422f97*/
+    ((Tactical*)(v110.__pad_0))->SetCellTransform(2, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f47*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform( 0, v19, v18, v104, 0, 0); /*0x422f5c*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform(1, v89, *(int *)v100, v103, 1065353216, 1065353216); /*0x422f7f*/
+    ((Tactical*)(v111.__pad_0))->SetCellTransform( 2, v89, v18, v104, 1065353216, 0); /*0x422f97*/
     ((StructTable *)((void *)(dword_8A0E10)))->Append(&v110); /*0x422fa7*/
     ((StructTable *)((void *)(dword_8A0E10)))->Append(&v111); /*0x422fba*/
     return; /*0x422fc9*/

@@ -1013,7 +1013,7 @@ void * E4Recv_777BB0::sub_777BB0(char * Buffer)
   v4 = (&g_Str_gsmallwoo)[0]; /*0x777bde*/
   v5 = 0; /*0x777be2*/
   v6 = 0; /*0x777be7*/
-  v2 = (char *)(strchr(g_Str_gsmallwoo, 95)); /*0x777bec*/
+  v2 = (char *)(strchr((const char *)g_Str_gsmallwoo, 95)); /*0x777bec*/
   if ( v2 ) /*0x777bf6*/
     v5 = v2[1]; /*0x777bfb*/
   sprintf((char *const)Buffer, "%s-%s", &v4, Buffer); /*0x777c12*/
@@ -2646,7 +2646,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
 }
 // 0x77ED00
 namespace gamemd {
-void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int aP1a)
+int SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int aP1a)
 {
   int v5; // edi
   int v6; // ebp
@@ -2946,7 +2946,7 @@ char RequestChannelListWOL()
       goto LABEL_5; /*0x77f1a8*/
   }
   v3 = GetStringCSF( (wchar_t *)(g_Str_TXT_CANT_CONNECT), 0, (const char *)(g_Str_File_wonline_cpp), 2307); /*0x77f1fa*/
-  swprintf(&word_B77AD0, (const size_t)v3, v14); /*0x77f205*/
+  _swprintf(&word_B77AD0, (const wchar_t *)v3, v14); /*0x77f205*/
   SetEvent( (void *)((void *)(Handles))); /*0x77f214*/
   return 0; /*0x77f21c*/
 }

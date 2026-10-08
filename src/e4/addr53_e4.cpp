@@ -167,7 +167,7 @@ MixFileClass * * sub_530000()
 }
 // 0x5312A0
 namespace gamemd {
-void ShowLoadingScreen(void * a1, void * a2, void * a3)
+int ShowLoadingScreen(void * a1, void * a2, void * a3)
 {
   wchar_t *v20; // eax
   int16_t *v3; // esi
@@ -2152,7 +2152,7 @@ ObjectClass * * Radar_FindClosestEnemy(short * a1, int a2)
 }
 // 0x538D40
 namespace gamemd {
-void sub_538D40()
+int sub_538D40()
 {
   uint8_t *v1; // eax
   uint8_t *v2; // edi

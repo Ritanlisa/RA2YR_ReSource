@@ -543,7 +543,7 @@ int BufferIOFileClass::Open(const CHAR *a2) {
       }
       else if ( a2 == (const CHAR *)2 ) /*0x431fdd*/
       {
-        FileClass::Open2(this, (const CHAR *)2); /*0x431fe2*/
+        ((FileClass *)this)->Open2((const CHAR *)2); /*0x431fe2*/
         FileClass::CloseHandle(this); /*0x431fe9*/
         v4 = (const CHAR *)3; /*0x431fee*/
         this->MixFileIndex = 0; /*0x431ff3*/
@@ -557,7 +557,7 @@ int BufferIOFileClass::Open(const CHAR *a2) {
       }
       else
       {
-        FileClass::Open2(this, v4); /*0x43200f*/
+        ((FileClass *)this)->Open2(v4); /*0x43200f*/
       }
       BufferPosition = this->BufferPosition; /*0x432014*/
       IDA_BYTE2(this->BufferOffset) = 1; /*0x432017*/
@@ -565,7 +565,7 @@ int BufferIOFileClass::Open(const CHAR *a2) {
         this->TotalBytesWritten = 0; /*0x432020*/
       goto LABEL_19; /*0x432020*/
     }
-    return FileClass::Open2(this, a2); /*0x432039*/
+    return ((FileClass *)this)->Open2(a2); /*0x432039*/
 }
 }
 
@@ -1919,8 +1919,8 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
     if ( INIClass::GetString(this, a3, a4, &g_INI_DefaultBuffer, String, 512) ) /*0x476515*/
     {
       TypeList::TechnoTypeConstructor(&v22, 0, 0); /*0x47652a*/
-      v22.? = 10; /*0x476539*/
-      v22.? = 0; /*0x476541*/
+      v22.CapacityIncrement = 10; /*0x476539*/
+      v22.Count = 0; /*0x476541*/
       v22.DynamicVectorClass = (unsigned int)(void *)&TypeList_TechnoTypeClass___vftable; /*0x476545*/
       for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x476559*/
       {
@@ -1935,16 +1935,16 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
               goto LABEL_14; /*0x476594*/
           }
           v13 = (unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v12); /*0x4765a2*/
-          if ( v22.? < v22.? /*0x4765cb*/
-            || (v22.? || !v22.?)
-            && v22.? > 0
+          if ( v22.Count < v22.Capacity /*0x4765cb*/
+            || (v22.IsAllocated || !v22.Capacity)
+            && v22.CapacityIncrement > 0
             && (*((unsigned __int8 (__thiscall **)(TypeList *, int, unsigned int))v22.DynamicVectorClass + 2))(
                  &v22,
-                 v22.? + v22.?,
+                 v22.Capacity + v22.CapacityIncrement,
                  0) )
           {
-            v14 = v22.?++; /*0x4765da*/
-            *((unsigned int *)v22.? + v14) = *v13; /*0x4765e3*/
+            v14 = v22.Count++; /*0x4765da*/
+            *((unsigned int *)v22.Items + v14) = *v13; /*0x4765e3*/
           }
         }
   LABEL_14:
@@ -1952,21 +1952,21 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
       }
       v15 = a2; /*0x4765fe*/
       INIClass::parseSection((INIClass *)a2, &v22); /*0x47660c*/
-      Items = v22.?; /*0x476611*/
-      CapacityIncrement = v22.?; /*0x476619*/
-      v18 = v22.? == 0; /*0x476622*/
-      *(unsigned int *)(a2 + 16) = v22.?; /*0x476624*/
+      Items = v22.Items; /*0x476611*/
+      CapacityIncrement = v22.CapacityIncrement; /*0x476619*/
+      v18 = v22.Items == 0; /*0x476622*/
+      *(unsigned int *)(a2 + 16) = v22.Count; /*0x476624*/
       *(unsigned int *)(a2 + 20) = CapacityIncrement; /*0x476627*/
       *(unsigned int *)a2 = (unsigned int)(void *)&TypeList_TechnoTypeClass___vftable; /*0x47662a*/
       v22.DynamicVectorClass = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x476630*/
-      if ( !v18 && v22.? ) /*0x47663a*/
+      if ( !v18 && v22.Items ) /*0x47663a*/
       {
         RA2_OPDEL(Items); /*0x47663d*/
-        v22.? = 0; /*0x476645*/
+        v22.Items = 0; /*0x476645*/
       }
       v19 = a6; /*0x476649*/
-      v22.? = 0; /*0x476650*/
-      v22.? = 0; /*0x476656*/
+      v22.IsAllocated = 0; /*0x476650*/
+      v22.Capacity = 0; /*0x476656*/
       a5 = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x47665a*/
       if ( a6 && IDA_HIBYTE(a8) ) /*0x47666a*/
         goto LABEL_23; /*0x47666a*/
@@ -2904,7 +2904,7 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
       v13 = *(this + 20); /*0x47c899*/
       v14 = 0; /*0x47c89c*/
       if ( v13 >= 0 ) /*0x47c8a0*/
-        v14 = *((unsigned int *)stru_A80220.? + v13); /*0x47c8a8*/
+        v14 = *((unsigned int *)dword_A8022C + v13); /*0x47c8a8*/
       if ( v12 == 2 || !v12 ) /*0x47c8b8*/
       {
         if ( a3 ) /*0x47c8c0*/
@@ -3598,13 +3598,13 @@ int CellClass::SetThreatBounds(int aP1, int a3) {
 
     smudgeTypeIndex = this->smudgeTypeIndex; /*0x481880*/
     v3 = Cell::PosToLinearIndex((__int16 *)&smudgeTypeIndex); /*0x481889*/
-    result = stru_A80220.?; /*0x48188b*/
-    for ( i = 0; i < stru_A80220.?; ++i ) /*0x481894*/
+    result = dword_A80238; /*0x48188b*/
+    for ( i = 0; i < dword_A80238; ++i ) /*0x481894*/
     {
-      v6 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x4818a2*/
+      v6 = (HouseClass *)*((unsigned int *)dword_A8022C + i); /*0x4818a2*/
       if ( v6 && v6->relatedTagsCount != a2 && !(unsigned __int8)HouseClass::IsAllied(v6, a2) ) /*0x4818b7*/
         HouseClass::SetThreat_Bounds((char *)v6, v3, a3); /*0x4818c4*/
-      result = stru_A80220.?; /*0x4818c9*/
+      result = dword_A80238; /*0x4818c9*/
     }
     return result; /*0x4818d5*/
 }
@@ -5644,8 +5644,8 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
     if ( INIClass::GetString(this, a3, a4, &g_INI_DefaultBuffer, String, 512) ) /*0x476515*/
     {
       TypeList::TechnoTypeConstructor(&v22, 0, 0); /*0x47652a*/
-      v22.? = 10; /*0x476539*/
-      v22.? = 0; /*0x476541*/
+      v22.CapacityIncrement = 10; /*0x476539*/
+      v22.Count = 0; /*0x476541*/
       v22.DynamicVectorClass = (unsigned int)(void *)&TypeList_TechnoTypeClass___vftable; /*0x476545*/
       for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x476559*/
       {
@@ -5660,16 +5660,16 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
               goto LABEL_14; /*0x476594*/
           }
           v13 = (unsigned int *)(stru_A8EB00.ObjectTypeClass[1] + 4 * v12); /*0x4765a2*/
-          if ( v22.? < v22.? /*0x4765cb*/
-            || (v22.? || !v22.?)
-            && v22.? > 0
+          if ( v22.Count < v22.Capacity /*0x4765cb*/
+            || (v22.IsAllocated || !v22.Capacity)
+            && v22.CapacityIncrement > 0
             && (*((unsigned __int8 (__thiscall **)(TypeList *, int, unsigned int))v22.DynamicVectorClass + 2))(
                  &v22,
-                 v22.? + v22.?,
+                 v22.Capacity + v22.CapacityIncrement,
                  0) )
           {
-            v14 = v22.?++; /*0x4765da*/
-            *((unsigned int *)v22.? + v14) = *v13; /*0x4765e3*/
+            v14 = v22.Count++; /*0x4765da*/
+            *((unsigned int *)v22.Items + v14) = *v13; /*0x4765e3*/
           }
         }
   LABEL_14:
@@ -5677,21 +5677,21 @@ int INIClass::ReadTechnoTypeList(int a1, void* a2, void* a3, void* a4, void* a5,
       }
       v15 = a2; /*0x4765fe*/
       INIClass::parseSection((INIClass *)a2, &v22); /*0x47660c*/
-      Items = v22.?; /*0x476611*/
-      CapacityIncrement = v22.?; /*0x476619*/
-      v18 = v22.? == 0; /*0x476622*/
-      *(unsigned int *)(a2 + 16) = v22.?; /*0x476624*/
+      Items = v22.Items; /*0x476611*/
+      CapacityIncrement = v22.CapacityIncrement; /*0x476619*/
+      v18 = v22.Items == 0; /*0x476622*/
+      *(unsigned int *)(a2 + 16) = v22.Count; /*0x476624*/
       *(unsigned int *)(a2 + 20) = CapacityIncrement; /*0x476627*/
       *(unsigned int *)a2 = (unsigned int)(void *)&TypeList_TechnoTypeClass___vftable; /*0x47662a*/
       v22.DynamicVectorClass = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x476630*/
-      if ( !v18 && v22.? ) /*0x47663a*/
+      if ( !v18 && v22.Items ) /*0x47663a*/
       {
         RA2_OPDEL(Items); /*0x47663d*/
-        v22.? = 0; /*0x476645*/
+        v22.Items = 0; /*0x476645*/
       }
       v19 = a6; /*0x476649*/
-      v22.? = 0; /*0x476650*/
-      v22.? = 0; /*0x476656*/
+      v22.IsAllocated = 0; /*0x476650*/
+      v22.Capacity = 0; /*0x476656*/
       a5 = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x47665a*/
       if ( a6 && IDA_HIBYTE(a8) ) /*0x47666a*/
         goto LABEL_23; /*0x47666a*/
@@ -6629,7 +6629,7 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
       v13 = *(this + 20); /*0x47c899*/
       v14 = 0; /*0x47c89c*/
       if ( v13 >= 0 ) /*0x47c8a0*/
-        v14 = *((unsigned int *)stru_A80220.? + v13); /*0x47c8a8*/
+        v14 = *((unsigned int *)dword_A8022C + v13); /*0x47c8a8*/
       if ( v12 == 2 || !v12 ) /*0x47c8b8*/
       {
         if ( a3 ) /*0x47c8c0*/
@@ -7323,13 +7323,13 @@ int CellClass::SetThreatBounds(int aP1, int a3) {
 
     smudgeTypeIndex = this->smudgeTypeIndex; /*0x481880*/
     v3 = Cell::PosToLinearIndex((__int16 *)&smudgeTypeIndex); /*0x481889*/
-    result = stru_A80220.?; /*0x48188b*/
-    for ( i = 0; i < stru_A80220.?; ++i ) /*0x481894*/
+    result = dword_A80238; /*0x48188b*/
+    for ( i = 0; i < dword_A80238; ++i ) /*0x481894*/
     {
-      v6 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x4818a2*/
+      v6 = (HouseClass *)*((unsigned int *)dword_A8022C + i); /*0x4818a2*/
       if ( v6 && v6->relatedTagsCount != a2 && !(unsigned __int8)HouseClass::IsAllied(v6, a2) ) /*0x4818b7*/
         HouseClass::SetThreat_Bounds((char *)v6, v3, a3); /*0x4818c4*/
-      result = stru_A80220.?; /*0x4818c9*/
+      result = dword_A80238; /*0x4818c9*/
     }
     return result; /*0x4818d5*/
 }
@@ -12161,20 +12161,20 @@ void ScenarioClass::LoadMapData(void* a1) {
     Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 67); /*0x4ad339*/
     Event::Dispatch(); /*0x4ad33e*/
     Surface::Construct((Surface *)&v39, 640, 400); /*0x4ad351*/
-    v39.? = 0; /*0x4ad360*/
+    v39.LockCount = 0; /*0x4ad360*/
     *(unsigned int *)v39.XSurface = &XSurface_Vtable; /*0x4ad364*/
     v39.BytesPerPixel = 2; /*0x4ad36c*/
     Buffer::Init((Buffer *)&v39.Buffer, 0, 512000); /*0x4ad374*/
-    v24 = v39.? * v39.BytesPerPixel * v39.?; /*0x4ad386*/
+    v24 = v39.Height * v39.BytesPerPixel * v39.Width; /*0x4ad386*/
     Buffer = v39.Buffer; /*0x4ad38b*/
-    ++v39.?; /*0x4ad390*/
+    ++v39.LockCount; /*0x4ad390*/
     *(unsigned int *)v39.XSurface = &BSurface_Vtable; /*0x4ad398*/
     BSurface::GetBytesPerPixel(&v39); /*0x4ad3a0*/
     (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 116))(&v39); /*0x4ad3ae*/
     Base64Data = INIClass::GetBase64Data((INIClass *)a2, aIsomappack, (int)Buffer, v24); /*0x4ad3c0*/
     if ( Base64Data > 0 ) /*0x4ad3c4*/
     {
-      ++v39.?; /*0x4ad3cf*/
+      ++v39.LockCount; /*0x4ad3cf*/
       KeyCount = (int)v39.Buffer; /*0x4ad3d7*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 112))(&v39); /*0x4ad3df*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 116))(&v39); /*0x4ad3ea*/
@@ -12185,7 +12185,7 @@ void ScenarioClass::LoadMapData(void* a1) {
       v46.Buffer_field_0C = 0; /*0x4ad416*/
       *(unsigned int *)v44.__pad_0 = (unsigned int)(void *)&BufferStraw_vftable; /*0x4ad41a*/
       CellClass::LoadTerrainTiles((CellClass *)&stru_87F5F0.__pad_58[416], (int)&v44); /*0x4ad422*/
-      --v39.?; /*0x4ad430*/
+      --v39.LockCount; /*0x4ad430*/
       Vector::Clear((int)&v46); /*0x4ad434*/
       Straw::Dtor(&v44); /*0x4ad43d*/
     }
@@ -12195,7 +12195,7 @@ void ScenarioClass::LoadMapData(void* a1) {
     v28 = INIClass::GetBase64Data((INIClass *)a2, aIsomappack2, (int)v27, v24); /*0x4ad473*/
     if ( v28 > 0 ) /*0x4ad477*/
     {
-      ++v39.?; /*0x4ad482*/
+      ++v39.LockCount; /*0x4ad482*/
       KeyCount = (int)v39.Buffer; /*0x4ad48a*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 112))(&v39); /*0x4ad492*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 116))(&v39); /*0x4ad49d*/
@@ -12206,7 +12206,7 @@ void ScenarioClass::LoadMapData(void* a1) {
       v46.Buffer_field_0C = 0; /*0x4ad4c9*/
       *(unsigned int *)v44.__pad_0 = (unsigned int)(void *)&BufferStraw_vftable; /*0x4ad4cd*/
       CellClass::CreateOverlay((CellClass *)&stru_87F5F0.__pad_58[416], (int)&v44); /*0x4ad4d5*/
-      --v39.?; /*0x4ad4e3*/
+      --v39.LockCount; /*0x4ad4e3*/
       Vector::Clear((int)&v46); /*0x4ad4e7*/
       Straw::Dtor(&v44); /*0x4ad4f0*/
     }
@@ -12216,7 +12216,7 @@ void ScenarioClass::LoadMapData(void* a1) {
     v30 = INIClass::GetBase64Data((INIClass *)a2, aIsomappack3, (int)v29, v24); /*0x4ad526*/
     if ( v30 > 0 ) /*0x4ad52a*/
     {
-      ++v39.?; /*0x4ad535*/
+      ++v39.LockCount; /*0x4ad535*/
       KeyCount = (int)v39.Buffer; /*0x4ad53d*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 112))(&v39); /*0x4ad545*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 116))(&v39); /*0x4ad550*/
@@ -12227,7 +12227,7 @@ void ScenarioClass::LoadMapData(void* a1) {
       v46.Buffer_field_0C = 0; /*0x4ad57c*/
       *(unsigned int *)v44.__pad_0 = (unsigned int)(void *)&BufferStraw_vftable; /*0x4ad580*/
       CellClass::DecompressRawCellData((CellClass *)&stru_87F5F0.__pad_58[416], (int)&v44); /*0x4ad588*/
-      --v39.?; /*0x4ad596*/
+      --v39.LockCount; /*0x4ad596*/
       Vector::Clear((int)&v46); /*0x4ad59a*/
       Straw::Dtor(&v44); /*0x4ad5a3*/
     }
@@ -12237,7 +12237,7 @@ void ScenarioClass::LoadMapData(void* a1) {
     v32 = INIClass::GetBase64Data((INIClass *)a2, aIsomappack4, (int)v31, v24); /*0x4ad5d9*/
     if ( v32 > 0 ) /*0x4ad5dd*/
     {
-      ++v39.?; /*0x4ad5e8*/
+      ++v39.LockCount; /*0x4ad5e8*/
       KeyCount = (int)v39.Buffer; /*0x4ad5f0*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 112))(&v39); /*0x4ad5f8*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 116))(&v39); /*0x4ad603*/
@@ -12248,7 +12248,7 @@ void ScenarioClass::LoadMapData(void* a1) {
       v46.Buffer_field_0C = 0; /*0x4ad62f*/
       *(unsigned int *)v44.__pad_0 = (unsigned int)(void *)&BufferStraw_vftable; /*0x4ad633*/
       CellClass::DecompressTerrainDataSimple((CellClass *)&stru_87F5F0.__pad_58[416], (int)&v44); /*0x4ad63b*/
-      --v39.?; /*0x4ad649*/
+      --v39.LockCount; /*0x4ad649*/
       Vector::Clear((int)&v46); /*0x4ad64d*/
       Straw::Dtor(&v44); /*0x4ad656*/
     }
@@ -12259,7 +12259,7 @@ void ScenarioClass::LoadMapData(void* a1) {
     if ( v34 > 0 ) /*0x4ad690*/
     {
       v35 = v39.Buffer; /*0x4ad69a*/
-      ++v39.?; /*0x4ad69f*/
+      ++v39.LockCount; /*0x4ad69f*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 112))(&v39); /*0x4ad6a7*/
       (*(void (__thiscall **)(BSurface *))(*(unsigned int *)v39.XSurface + 116))(&v39); /*0x4ad6b2*/
       v44.Straw_field_0x04 = 0; /*0x4ad6bb*/
@@ -12269,11 +12269,11 @@ void ScenarioClass::LoadMapData(void* a1) {
       v46.Buffer_field_0C = 0; /*0x4ad6d4*/
       *(unsigned int *)v44.__pad_0 = (unsigned int)(void *)&BufferStraw_vftable; /*0x4ad6de*/
       CellClass::DecompressTerrainData((CellClass *)&stru_87F5F0.__pad_58[416], (int)&v44); /*0x4ad6e6*/
-      --v39.?; /*0x4ad6f4*/
+      --v39.LockCount; /*0x4ad6f4*/
       Vector::Clear((int)&v46); /*0x4ad6f8*/
       Straw::Dtor(&v44); /*0x4ad701*/
     }
-    --v39.?; /*0x4ad712*/
+    --v39.LockCount; /*0x4ad712*/
     Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 68); /*0x4ad716*/
     Event::Dispatch(); /*0x4ad71b*/
     if ( *(unsigned int *)((char *)&stru_A8EB00 + 391) || *(unsigned int *)((char *)&stru_A8EB00 + 377) ) /*0x4ad72e*/
@@ -12518,7 +12518,7 @@ void FactoryClass::AccumulateCreditsProgress(int a2, int a3) {
       v4 = this + 197; /*0x4f970f*/
       do /*0x4f9748*/
       {
-        v5 = (float)(&dword_8871E0)[1].?[1]; /*0x4f9722*/
+        v5 = (float)(*(int *)&((char *)&dword_8871E0)[6096]); /*0x4f9722 G57w19k3: disasm fild [dword_8871E0+0x17D0]*/
         if ( Float4::Sum(v4) >= v5 ) /*0x4f9734*/
           break; /*0x4f9734*/
         Float::Accumulate(v4, 1.0, a3); /*0x4f973e*/
@@ -17753,8 +17753,8 @@ void CellClass::UpdateTerrainAndWaypoints(void* a1, int a2, int a3, int a4) {
         (*(void (__thiscall **)(unsigned int *, int *))(v121 + 436))(v118, &v155); /*0x566dac*/
       }
     }
-    for ( ii = stru_A80220.? - 1; ii >= 0; --ii ) /*0x566dd0*/
-      CellClass::IterateOccupiers(*((CellClass **)stru_A80220.? + ii), *(int *)v152); /*0x566ddf*/
+    for ( ii = dword_A80238 - 1; ii >= 0; --ii ) /*0x566dd0*/
+      CellClass::IterateOccupiers(*((CellClass **)dword_A8022C + ii), *(int *)v152); /*0x566ddf*/
     v123 = 0; /*0x566ded*/
     for ( jj = 0; v123 < dword_A8E9B8; jj = v123 ) /*0x566df5*/
     {
@@ -25638,7 +25638,7 @@ void* MixFileClass::FromFile(void* a1, int a2) {
       ExitProgram((ObjectClass *)1); /*0x5b3c7a*/
     }
     CCFileClass::Construct(&v22, Source); /*0x5b3c8b*/
-    this->CountFiles = (int)_strdup(*(const char **)&v22.?); /*0x5b3c9d*/
+    this->CountFiles = (int)_strdup(*(const char **)&v22.FileNameAllocated); /*0x5b3c9d*/
     v18[1] = 0; /*0x5b3cb2*/
     v18[2] = 0; /*0x5b3cb6*/
     v18[3] = (int)&v22; /*0x5b3cba*/
@@ -25678,7 +25678,7 @@ void* MixFileClass::FromFile(void* a1, int a2) {
     {
       (*(void (__thiscall **)(void *, int, int))(*(unsigned int *)v4 + 8))(v4, v9, 12 * this->FileStartOffset); /*0x5b3dc8*/
       v10 = BufferIOFileClass::Seek(&v22, 0, 1u); /*0x5b3dd2*/
-      *(unsigned int *)this->__pad_1C = (char *)v22.? + v10; /*0x5b3ddf*/
+      *(unsigned int *)this->__pad_1C = (char *)v22.Handle + v10; /*0x5b3ddf*/
       v11 = g_MissionQueueFrame.localVariables[347]; /*0x5b3de2*/
       MixFileClass::LinkIntoPool(this); /*0x5b3de8*/
       v12 = *(GenericNode **)(v11 + 4); /*0x5b3ded*/
@@ -26520,9 +26520,9 @@ int ScenarioClass::AssignStartingPoints(int a1) {
     do /*0x5d6caa*/
       v13[v2++] = (Multiplayer)(*p_uniqueId++ != -1); /*0x5d6c97*/
     while ( v2 < 16 ); /*0x5d6caa*/
-    for ( i = 0; i < stru_A80220.?; ++i ) /*0x5d6cb6*/
+    for ( i = 0; i < dword_A80238; ++i ) /*0x5d6cb6*/
     {
-      v5 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5d6cc5*/
+      v5 = (HouseClass *)*((unsigned int *)dword_A8022C + i); /*0x5d6cc5*/
       if ( !*(unsigned char *)(v5->relatedTagsCapacity + 422) ) /*0x5d6ccb*/
       {
         v6 = 0; /*0x5d6cdb*/
@@ -27221,9 +27221,9 @@ int ScenarioClass::AssignStartingPoints(int a1) {
     do /*0x5d6caa*/
       v13[v2++] = (Multiplayer)(*p_uniqueId++ != -1); /*0x5d6c97*/
     while ( v2 < 16 ); /*0x5d6caa*/
-    for ( i = 0; i < stru_A80220.?; ++i ) /*0x5d6cb6*/
+    for ( i = 0; i < dword_A80238; ++i ) /*0x5d6cb6*/
     {
-      v5 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5d6cc5*/
+      v5 = (HouseClass *)*((unsigned int *)dword_A8022C + i); /*0x5d6cc5*/
       if ( !*(unsigned char *)(v5->relatedTagsCapacity + 422) ) /*0x5d6ccb*/
       {
         v6 = 0; /*0x5d6cdb*/
@@ -30531,7 +30531,7 @@ int ScenarioClass::ShowMissionBriefing() {
     GenericList::Constructor((GenericList *)((char *)&v9 + 2)); /*0x65f550*/
     *(unsigned int *)((char *)&v9 + 2) = (int)(void *)&List_INIClass_INISection___vftable; /*0x65f559*/
     Node::Init((Node *)((char *)&v9 + 8)); /*0x65f561*/
-    v9.? = 0; /*0x65f56a*/
+    v9.INIClass_field_3C = 0; /*0x65f56a*/
     v9.ownsFile = 0; /*0x65f56e*/
     *(unsigned int *)v9.INIClass = &CCINIClass_Vtable; /*0x65f572*/
     CCFileClass::Reset(&v10); /*0x65f57a*/
@@ -34760,7 +34760,7 @@ int ScenarioClass::ShowMissionBriefing() {
     GenericList::Constructor((GenericList *)((char *)&v9 + 2)); /*0x65f550*/
     *(unsigned int *)((char *)&v9 + 2) = (int)(void *)&List_INIClass_INISection___vftable; /*0x65f559*/
     Node::Init((Node *)((char *)&v9 + 8)); /*0x65f561*/
-    v9.? = 0; /*0x65f56a*/
+    v9.INIClass_field_3C = 0; /*0x65f56a*/
     v9.ownsFile = 0; /*0x65f56e*/
     *(unsigned int *)v9.INIClass = &CCINIClass_Vtable; /*0x65f572*/
     CCFileClass::Reset(&v10); /*0x65f57a*/
@@ -37279,7 +37279,7 @@ int ScenarioClass::ShowMissionBriefing() {
     GenericList::Constructor((GenericList *)((char *)&v9 + 2)); /*0x65f550*/
     *(unsigned int *)((char *)&v9 + 2) = (int)(void *)&List_INIClass_INISection___vftable; /*0x65f559*/
     Node::Init((Node *)((char *)&v9 + 8)); /*0x65f561*/
-    v9.? = 0; /*0x65f56a*/
+    v9.INIClass_field_3C = 0; /*0x65f56a*/
     v9.ownsFile = 0; /*0x65f56e*/
     *(unsigned int *)v9.INIClass = &CCINIClass_Vtable; /*0x65f572*/
     CCFileClass::Reset(&v10); /*0x65f57a*/
@@ -37738,7 +37738,7 @@ int ScenarioClass::ShowMissionBriefing() {
     GenericList::Constructor((GenericList *)((char *)&v9 + 2)); /*0x65f550*/
     *(unsigned int *)((char *)&v9 + 2) = (int)(void *)&List_INIClass_INISection___vftable; /*0x65f559*/
     Node::Init((Node *)((char *)&v9 + 8)); /*0x65f561*/
-    v9.? = 0; /*0x65f56a*/
+    v9.INIClass_field_3C = 0; /*0x65f56a*/
     v9.ownsFile = 0; /*0x65f56e*/
     *(unsigned int *)v9.INIClass = &CCINIClass_Vtable; /*0x65f572*/
     CCFileClass::Reset(&v10); /*0x65f57a*/
@@ -38679,12 +38679,12 @@ int ScenarioClass::SaveToINI(void* a1, int a2) {
     char Source[32]; // [esp+68h] [ebp-A0h] BYREF
     CHAR v33[128]; // [esp+88h] [ebp-80h] BYREF
 
-    INIClass::ClearSection((int *)a2, (int)&stru_82BA00.?, 0); /*0x68ad8d*/
-    INIClass::ClearSection((int *)a2, (int)&stru_82BA00.?, aCivevac); /*0x68ada0*/
+    INIClass::ClearSection((int *)a2, (int)"Basic", 0); /*0x68ad8d*/
+    INIClass::ClearSection((int *)a2, (int)"Basic", aCivevac); /*0x68ada0*/
     if ( strlen((const char *)&dword_A8B230[201].vtable3) ) /*0x68adb8*/
-      INIClass::SetString(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Briefing, (char *)&dword_A8B230[201].vtable3); /*0x68adcd*/
+      INIClass::SetString(a2, (unsigned __int8 *)"Basic", g_INI_Key_Briefing, (char *)&dword_A8B230[201].vtable3); /*0x68adcd*/
     if ( strlen((const char *)&dword_A8B230[140].vtable2 + 2) ) /*0x68ade5*/
-      INIClass::SetString(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_UIName, (char *)&dword_A8B230[140].vtable2 + 2); /*0x68adfb*/
+      INIClass::SetString(a2, (unsigned __int8 *)"Basic", g_INI_Key_UIName, (char *)&dword_A8B230[140].vtable2 + 2); /*0x68adfb*/
     LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x68ae05*/
     v4 = 10000; /*0x68ae0a*/
     v26[0] = 10000; /*0x68ae16*/
@@ -38755,48 +38755,48 @@ int ScenarioClass::SaveToINI(void* a1, int a2) {
     }
     while ( v14 < 8 ); /*0x68b09b*/
     ScenarioClass::RevealMapForHouse((ScenarioClass *)this, a2); /*0x68b0a4*/
-    INIClass::SetString(a2, (unsigned __int8 *)&stru_82BA00.?, aNextscenario, (char *)(this + 4)); /*0x68b0bb*/
-    INIClass::SetString(a2, (unsigned __int8 *)&stru_82BA00.?, aAltnextscenari, (char *)(this + 264)); /*0x68b0d4*/
-    INIClass::SetWideAsHex(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Name, (wchar_t *)(this + 4960)); /*0x68b0ee*/
-    INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aNewiniformat, 4, 0); /*0x68b104*/
-    INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aCarryovercap, *(unsigned int *)(this + 7296) / 100, 0); /*0x68b131*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aEndofgame, *(unsigned char *)(this + 13484)); /*0x68b14b*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aSkipscore, *(unsigned char *)(this + 13486)); /*0x68b164*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aOnetimeonly, *(unsigned char *)(this + 13487)); /*0x68b17e*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aSkipmapselect, *(unsigned char *)(this + 13488)); /*0x68b198*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Official, 1); /*0x68b1ad*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aIgnoreglobalai, *(unsigned char *)(this + 13492)); /*0x68b1c7*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aTruckcrate, *(unsigned char *)(this + 13489)); /*0x68b1e0*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aTraincrate, *(unsigned char *)(this + 13477)); /*0x68b1fa*/
-    INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aPercent, *(unsigned int *)(this + 7300), 0); /*0x68b216*/
-    ScenarioClass::SaveTypeNameListToINI(a2, (unsigned __int8 *)&stru_82BA00.?, aAllowableunits, this + 13524); /*0x68b22f*/
-    ScenarioClass::SaveIntListToINI(a2, (unsigned __int8 *)&stru_82BA00.?, aAllowableunitm, this + 13552); /*0x68b249*/
-    ScenarioClass::loadMapData(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Theme, *(unsigned int *)(this + 7280)); /*0x68b263*/
+    INIClass::SetString(a2, (unsigned __int8 *)"Basic", aNextscenario, (char *)(this + 4)); /*0x68b0bb*/
+    INIClass::SetString(a2, (unsigned __int8 *)"Basic", aAltnextscenari, (char *)(this + 264)); /*0x68b0d4*/
+    INIClass::SetWideAsHex(a2, (unsigned __int8 *)"Basic", g_INI_Key_Name, (wchar_t *)(this + 4960)); /*0x68b0ee*/
+    INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aNewiniformat, 4, 0); /*0x68b104*/
+    INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aCarryovercap, *(unsigned int *)(this + 7296) / 100, 0); /*0x68b131*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aEndofgame, *(unsigned char *)(this + 13484)); /*0x68b14b*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aSkipscore, *(unsigned char *)(this + 13486)); /*0x68b164*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aOnetimeonly, *(unsigned char *)(this + 13487)); /*0x68b17e*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aSkipmapselect, *(unsigned char *)(this + 13488)); /*0x68b198*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", g_INI_Key_Official, 1); /*0x68b1ad*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aIgnoreglobalai, *(unsigned char *)(this + 13492)); /*0x68b1c7*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aTruckcrate, *(unsigned char *)(this + 13489)); /*0x68b1e0*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aTraincrate, *(unsigned char *)(this + 13477)); /*0x68b1fa*/
+    INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aPercent, *(unsigned int *)(this + 7300), 0); /*0x68b216*/
+    ScenarioClass::SaveTypeNameListToINI(a2, (unsigned __int8 *)"Basic", aAllowableunits, this + 13524); /*0x68b22f*/
+    ScenarioClass::SaveIntListToINI(a2, (unsigned __int8 *)"Basic", aAllowableunitm, this + 13552); /*0x68b249*/
+    ScenarioClass::loadMapData(a2, (unsigned __int8 *)"Basic", g_INI_Key_Theme, *(unsigned int *)(this + 7280)); /*0x68b263*/
     if ( !a3 ) /*0x68b271*/
     {
       strcpy(Source, (const char *)&(&dword_A83D4C)[134].Object_field_0x34); /*0x68b2a1*/
-      INIClass::SetString(a2, (unsigned __int8 *)&stru_82BA00.?, (char *)&stru_82BA00.?, Source); /*0x68b2b7*/
-      INIClass::SetStringByIndex(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Intro, *(unsigned int *)(this + 5172)); /*0x68b2d1*/
-      INIClass::SetStringByIndex(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Brief, *(unsigned int *)(this + 5176)); /*0x68b2ea*/
-      INIClass::SetStringByIndex(a2, (unsigned __int8 *)&stru_82BA00.?, off_83E188, *(unsigned int *)(this + 5180)); /*0x68b304*/
-      INIClass::SetStringByIndex(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Lose, *(unsigned int *)(this + 5184)); /*0x68b31e*/
-      INIClass::SetStringByIndex(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Action, *(unsigned int *)(this + 5188)); /*0x68b337*/
-      INIClass::SetStringByIndex(a2, (unsigned __int8 *)&stru_82BA00.?, aPostscore, *(unsigned int *)(this + 5192)); /*0x68b351*/
-      INIClass::SetStringByIndex(a2, (unsigned __int8 *)&stru_82BA00.?, aPremapselect, *(unsigned int *)(this + 5196)); /*0x68b36b*/
-      INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aCarryovermoney, *(double *)(this + 7288)); /*0x68b38c*/
-      INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aTimerinherit, *(unsigned char *)(this + 13485)); /*0x68b3a5*/
-      INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aFillsilos, *(unsigned char *)(this + 13490)); /*0x68b3bf*/
-      INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aStartingdropsh, *(unsigned int *)(this + 13520), 0); /*0x68b3db*/
-      INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aHomecell, *(unsigned int *)(this + 524), 0); /*0x68b3f6*/
-      INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aAlthomecell, *(unsigned int *)(this + 528), 0); /*0x68b412*/
+      INIClass::SetString(a2, (unsigned __int8 *)"Basic", "Player", Source); /*0x68b2b7*/
+      INIClass::SetStringByIndex(a2, (unsigned __int8 *)"Basic", g_INI_Key_Intro, *(unsigned int *)(this + 5172)); /*0x68b2d1*/
+      INIClass::SetStringByIndex(a2, (unsigned __int8 *)"Basic", g_INI_Key_Brief, *(unsigned int *)(this + 5176)); /*0x68b2ea*/
+      INIClass::SetStringByIndex(a2, (unsigned __int8 *)"Basic", off_83E188, *(unsigned int *)(this + 5180)); /*0x68b304*/
+      INIClass::SetStringByIndex(a2, (unsigned __int8 *)"Basic", g_INI_Key_Lose, *(unsigned int *)(this + 5184)); /*0x68b31e*/
+      INIClass::SetStringByIndex(a2, (unsigned __int8 *)"Basic", g_INI_Key_Action, *(unsigned int *)(this + 5188)); /*0x68b337*/
+      INIClass::SetStringByIndex(a2, (unsigned __int8 *)"Basic", aPostscore, *(unsigned int *)(this + 5192)); /*0x68b351*/
+      INIClass::SetStringByIndex(a2, (unsigned __int8 *)"Basic", aPremapselect, *(unsigned int *)(this + 5196)); /*0x68b36b*/
+      INIClass::SetDouble(a2, (unsigned __int8 *)"Basic", aCarryovermoney, *(double *)(this + 7288)); /*0x68b38c*/
+      INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aTimerinherit, *(unsigned char *)(this + 13485)); /*0x68b3a5*/
+      INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aFillsilos, *(unsigned char *)(this + 13490)); /*0x68b3bf*/
+      INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aStartingdropsh, *(unsigned int *)(this + 13520), 0); /*0x68b3db*/
+      INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aHomecell, *(unsigned int *)(this + 524), 0); /*0x68b3f6*/
+      INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aAlthomecell, *(unsigned int *)(this + 528), 0); /*0x68b412*/
     }
-    INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aMultiplayeronl, *(unsigned __int8 *)(this + 13500), 0); /*0x68b430*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aTiberiumgrowth, *(unsigned char *)(this + 13478)); /*0x68b449*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aVeingrowthenab, *(unsigned char *)(this + 13479)); /*0x68b463*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aIcegrowthenabl, *(unsigned char *)(this + 13480)); /*0x68b47d*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aTiberiumdeatht, *(unsigned char *)(this + 13491)); /*0x68b496*/
-    INIClass::SetBool(a2, (unsigned __int8 *)&stru_82BA00.?, aFreeradar, *(unsigned char *)(this + 13476)); /*0x68b4b0*/
-    INIClass::SetInt(a2, (unsigned __int8 *)&stru_82BA00.?, aInittime, *(unsigned int *)(this + 13724), 0); /*0x68b4cc*/
+    INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aMultiplayeronl, *(unsigned __int8 *)(this + 13500), 0); /*0x68b430*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aTiberiumgrowth, *(unsigned char *)(this + 13478)); /*0x68b449*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aVeingrowthenab, *(unsigned char *)(this + 13479)); /*0x68b463*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aIcegrowthenabl, *(unsigned char *)(this + 13480)); /*0x68b47d*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aTiberiumdeatht, *(unsigned char *)(this + 13491)); /*0x68b496*/
+    INIClass::SetBool(a2, (unsigned __int8 *)"Basic", aFreeradar, *(unsigned char *)(this + 13476)); /*0x68b4b0*/
+    INIClass::SetInt(a2, (unsigned __int8 *)"Basic", aInittime, *(unsigned int *)(this + 13724), 0); /*0x68b4cc*/
     INIClass::ClearSection((int *)a2, (int)g_INI_Key_VariableNames, 0); /*0x68b4dc*/
     v18 = 0; /*0x68b4e1*/
     v19 = this + 9354; /*0x68b4e3*/
@@ -38819,58 +38819,58 @@ int ScenarioClass::SaveToINI(void* a1, int a2) {
     INIClass::SetString(a2, g_INI_Key_Ranking, aUnderparmessag, (char *)(this + 13775)); /*0x68b5b5*/
     INIClass::SetString(a2, g_INI_Key_Ranking, aOverpartitle, (char *)(this + 13806)); /*0x68b5cd*/
     INIClass::SetString(a2, g_INI_Key_Ranking, aOverparmessage, (char *)(this + 13837)); /*0x68b5e5*/
-    INIClass::ClearSection((int *)a2, (int)&stru_82BA00.?, 0); /*0x68b5f3*/
+    INIClass::ClearSection((int *)a2, (int)"Lighting", 0); /*0x68b5f3*/
     INIClass::SetDouble( /*0x68b616*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
-      (char *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
+      (char *)"Lighting",
       (double)*(int *)(this + 13608) * 0.01);
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, ((char *)&stru_820320 + 5), (double)*(int *)(this + 13620) * 0.01); /*0x68b639*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, ((char *)&stru_820320 + 9), (double)*(int *)(this + 13624) * 0.01); /*0x68b65c*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Blue, (double)*(int *)(this + 13628) * 0.01); /*0x68b67f*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, g_INI_Key_Ground, (double)*(int *)(this + 13632) * 0.001); /*0x68b6a2*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", ((char *)&stru_820320 + 5), (double)*(int *)(this + 13620) * 0.01); /*0x68b639*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", ((char *)&stru_820320 + 9), (double)*(int *)(this + 13624) * 0.01); /*0x68b65c*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", g_INI_Key_Blue, (double)*(int *)(this + 13628) * 0.01); /*0x68b67f*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", g_INI_Key_Ground, (double)*(int *)(this + 13632) * 0.001); /*0x68b6a2*/
     INIClass::SetDouble( /*0x68b6c5*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
       (char *)((char *)&stru_81AF8C + 17),
       (double)*(int *)(this + 13636) * 0.001);
     INIClass::SetDouble( /*0x68b6e8*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
-      (char *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
+      (char *)"Lighting",
       (double)*(int *)(this + 13640) * 0.01);
     INIClass::SetDouble( /*0x68b70b*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
-      (char *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
+      (char *)"Lighting",
       (double)*(int *)(this + 13644) * 0.01);
     INIClass::SetDouble( /*0x68b72e*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
-      (char *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
+      (char *)"Lighting",
       (double)*(int *)(this + 13648) * 0.01);
     INIClass::SetDouble( /*0x68b751*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
-      (char *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
+      (char *)"Lighting",
       (double)*(int *)(this + 13652) * 0.01);
     INIClass::SetDouble( /*0x68b774*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
-      (char *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
+      (char *)"Lighting",
       (double)*(int *)(this + 13656) * 0.001);
     INIClass::SetDouble( /*0x68b797*/
       a2,
-      (unsigned __int8 *)&stru_82BA00.?,
+      (unsigned __int8 *)"Lighting",
       (char *)((char *)&stru_82BA00 + 6),
       (double)*(int *)(this + 13660) * 0.001);
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aDominatorambie, (double)*(int *)(this + 13692) * 0.01); /*0x68b7ba*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aDominatorred, (double)*(int *)(this + 13696) * 0.01); /*0x68b7dd*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aDominatorgreen, (double)*(int *)(this + 13700) * 0.01); /*0x68b800*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aDominatorblue, (double)*(int *)(this + 13704) * 0.01); /*0x68b823*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aDominatorgroun, (double)*(int *)(this + 13708) * 0.001); /*0x68b846*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aDominatorlevel, (double)*(int *)(this + 13712) * 0.001); /*0x68b869*/
-    INIClass::SetDouble(a2, (unsigned __int8 *)&stru_82BA00.?, aDominatorambie_0, (double)*(int *)(this + 13716) * 0.001); /*0x68b88c*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorambie, (double)*(int *)(this + 13692) * 0.01); /*0x68b7ba*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorred, (double)*(int *)(this + 13696) * 0.01); /*0x68b7dd*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorgreen, (double)*(int *)(this + 13700) * 0.01); /*0x68b800*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorblue, (double)*(int *)(this + 13704) * 0.01); /*0x68b823*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorgroun, (double)*(int *)(this + 13708) * 0.001); /*0x68b846*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorlevel, (double)*(int *)(this + 13712) * 0.001); /*0x68b869*/
+    INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorambie_0, (double)*(int *)(this + 13716) * 0.001); /*0x68b88c*/
     return 1; /*0x68b891*/
 }
 }
@@ -39254,7 +39254,7 @@ int ScenarioClass::LoadNetworkConfig() {
     v9 = SuperWeaponTypeClass::FindOrCreate( /*0x69833a*/
            (SuperWeaponTypeClass *)&DSurface_ViewBounds.__pad_FC[36],
            (unsigned __int8 *)&stru_8263E0.Loop,
-           (unsigned __int8 *)&g_INI_Key_Special.?,
+           (unsigned __int8 *)"Side",
            v8);
     v10 = this->altNextScenario[33]; /*0x69833f*/
     this->altNextScenario[32] = v9; /*0x698345*/
@@ -39600,7 +39600,7 @@ int ScenarioClass::LoadNetworkConfig() {
         (INIClass *)&DSurface_ViewBounds.__pad_FC[36],
         g_INI_Key_SyncBug,
         aCoord,
-        (char *)&stru_82BA00.?,
+        (char *)"0",
         String,
         80);
       sscanf(String, "%d,%d,%d", &k, &v53, &v54); /*0x698ba6*/

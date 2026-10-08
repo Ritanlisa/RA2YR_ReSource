@@ -122,7 +122,7 @@ int Construct(int,int);  // 0x43B740
     int StartProduction(int type_index);  // 0x447780
     void CheckState1();  // 0x4496B0
     void CompleteProduction();  // 0x639740
-    void ProductionDisplayUpdate();  // 0x43F180
+    int ProductionDisplayUpdate();  // 0x43F180
     void DisplayProductionFrame();  // 0x43D030
     bool ProductionCheck();  // 0x4513D0
 int CanAcceptType(int,int);  // 0x452670

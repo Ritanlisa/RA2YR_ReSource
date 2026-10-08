@@ -332,7 +332,7 @@ int Trigger_AllocateLog(int a1)
       int v18 = *(unsigned int *)(v16 + 160);
       v86 = *(unsigned int *)(v16 + 164);
       *(unsigned int *)v15 = v17 / 10 + ((v18 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v16 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v16 + 904)))->GetValue(&v84) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v16 + 388))(v16);
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v16 + 1728) + 3576);
       *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v16 + 1400) * 256.0);
@@ -399,8 +399,8 @@ int Trigger_AllocateLog(int a1)
         int v30 = *(unsigned int *)(v28 + 160);
         v86 = *(unsigned int *)(v28 + 164);
         *(unsigned int *)v15 = v29 / 10 + ((v30 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v28 + 904)))->GetValue((int)(&v84)) >> 7) + 1) >> 1;
-        *(unsigned char *)(v15 + 101) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v28 + 928)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v28 + 904)))->GetValue(&v84) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 101) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v28 + 928)))->GetValue(v85) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v28 + 388))(v28);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v28 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v28 + 1400) * 256.0);
@@ -480,7 +480,7 @@ int Trigger_AllocateLog(int a1)
         int v42 = *(unsigned int *)(v40 + 160);
         v86 = *(unsigned int *)(v40 + 164);
         *(unsigned int *)v15 = v41 / 10 + ((v42 / 10) << 16);
-        *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v40 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
+        *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v40 + 904)))->GetValue(v85) >> 7) + 1) >> 1;
         *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v40 + 388))(v40);
         *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v40 + 1732) + 3576);
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v40 + 1400) * 256.0);
@@ -549,7 +549,7 @@ int Trigger_AllocateLog(int a1)
       int v55 = *(unsigned int *)(v53 + 160);
       v86 = *(unsigned int *)(v53 + 164);
       *(unsigned int *)v15 = v54 / 10 + ((v55 / 10) << 16);
-      *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v53 + 904)))->GetValue((int)(v85)) >> 7) + 1) >> 1;
+      *(unsigned char *)(v15 + 100) = (unsigned int)((*(unsigned int *)((ProgressTimer *)((unsigned short *)(v53 + 904)))->GetValue(v85) >> 7) + 1) >> 1;
       *(unsigned char *)(v15 + 102) = (*(int (**)(int))(*(unsigned int *)v53 + 388))(v53);
       int v56 = 0;
       *(unsigned int *)(v15 + 4) = *(unsigned int *)(*(unsigned int *)(v53 + 1312) + 3576);
@@ -1323,7 +1323,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
 }
 // 0x65C630
 namespace gamemd {
-void unknown_libname_28(ObjectClass *a1, int a2)
+_DWORD * unknown_libname_28(ObjectClass *a1, int a2)
 {
   *a1 = a2; /*0x65c636*/
   return a1; /*0x65c638*/
@@ -1471,7 +1471,7 @@ unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
 }
 // 0x65D5C0
 namespace gamemd {
-void int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
+int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
 {
   int v6; // ebp
   char *v7; // esi
@@ -1757,7 +1757,7 @@ if ( (*((int (**)(ObjectClass *, unsigned int *, ScriptActionQueue))v16->vtable1
 }
 // 0x65E010
 namespace gamemd {
-void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int * a2, int aP1_4)
+char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int * a2, int aP1_4)
 {
   int v4; // esi
   unsigned int *v5; // ebp
@@ -2071,7 +2071,7 @@ v32 = (*(int (**)(unsigned int *, int *, unsigned int))(v33 + 216))( /*0x65e434*
 }
 // 0x65E660
 namespace gamemd {
-void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8, int a9)
+int SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v10; // ecx
   int v11; // ebp
@@ -2174,7 +2174,7 @@ void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, in
 }
 // 0x65E850
 namespace gamemd {
-void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
   int v10; // ebp
   HouseClass *v11; // esi

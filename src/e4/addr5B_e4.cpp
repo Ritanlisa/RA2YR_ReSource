@@ -196,7 +196,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
   strcpy( (char *)(Str), (const char *)(Source)); /*0x5b40dd*/
   _strupr(Str); /*0x5b40ee*/
   memset( (void *)(&v14), 0, 12); /*0x5b4110*/
-  v3 = ((Checksummer*)&v14)->Add_Buffer( (unsigned char)((uint8_t *)Str), strlen( (const char *)(Str))); /*0x5b4127*/
+  v3 = ((Checksummer*)&v14)->Add_Buffer( (unsigned char *)((uint8_t *)Str), strlen( (const char *)(Str))); /*0x5b4127*/
   v4 = dword_ABF00C; /*0x5b4129*/
   if ( !dword_ABF00C ) /*0x5b4130*/
     goto LABEL_9; /*0x5b4130*/
@@ -241,7 +241,7 @@ AbstractClass * * SearchMIXFile(char *Source, char aP1)
       *v8 = 0; /*0x5b41cc*/
       v8[1] = 0; /*0x5b41ce*/
     }
-    if ( aP1 || strstr(Str, Ext) ) /*0x5b41f5*/
+    if ( aP1 || strstr((const char *)Str, (const char *)Ext) ) /*0x5b41f5*/
     {
       v12 = (::gamemd::ObjectClass *)((void *)((ObjectClass *)RA2_OPNEW(0x24u)));
       if ( v12 ) /*0x5b421a*/
@@ -291,7 +291,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
   strcpy( (char *)(String), (const char *)(a1)); /*0x5b4462*/
   _strupr(String); /*0x5b4470*/
   memset( (void *)(v14), 0, sizeof(v14)); /*0x5b4490*/
-  v5 = ((Checksummer*)v14)->Add_Buffer( (unsigned char)((uint8_t *)String), strlen( (const char *)(String))); /*0x5b449c*/
+  v5 = ((Checksummer*)v14)->Add_Buffer( (unsigned char *)((uint8_t *)String), strlen( (const char *)(String))); /*0x5b449c*/
   v6 = (unsigned int *)dword_ABEFE0; /*0x5b44a1*/
   LABEL_3:
   while ( 2 ) /*0x5b44c0*/

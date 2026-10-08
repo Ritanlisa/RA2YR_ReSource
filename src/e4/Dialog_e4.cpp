@@ -402,7 +402,7 @@ v11 = (*(int (__thiscall **)(HWND, int, char *, int, int))(*(unsigned int *)g_Cl
     _strupr(Source); /*0x5f2ac4*/
     if ( strlen( (const char *)(Source)) ) /*0x5f2acd*/
       Debug::Log("From Modem: %s\n"); /*0x5f2ae6 G57c1: IDA 0x5f2ae6 push offset aFromModemS*/
-    if ( strstr(Source, off_8327D8) ) /*0x5f2af8*/
+    if ( strstr(Source, (const char *)off_8327D8) ) /*0x5f2af8*/
     {
       memset((void *)(byte_AC1288), 0, 0x50u); /*0x5f2b12*/
       strncpy( (char *)(byte_AC1288), (const char *)(Source), 0x4Fu); /*0x5f2b1e*/
@@ -2110,7 +2110,7 @@ AbstractClass * * Dialog_TabControlPaint(HWND hWnd, UINT Msg, WPARAM wParam, LPA
     v84[3] = top + v72; /*0x6140e8*/
     if ( v77 == v40 ) /*0x6140ef*/
       v63 = yTop; /*0x6140f1*/
-    swprintf(word_AC462C, (const size_t)g_Str_Trace__hs, word_AC1BA0); /*0x614106*/
+    _swprintf(word_AC462C, (const wchar_t *)g_Str_Trace__hs, word_AC1BA0); /*0x614106*/
     PrintFontLayout(DSurface_Alternate, word_AC462C, v84, *(unsigned int **)(v78 + 100), v63, 5, 12, 0, 0, 0); /*0x614131*/
     ValidateRect(hWnd, &v83); /*0x614149*/
     if ( v61 == v62 ) /*0x61414d*/

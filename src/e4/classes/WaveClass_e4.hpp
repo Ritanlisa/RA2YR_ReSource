@@ -41,8 +41,9 @@ struct WaveClass {
     unsigned int q19C;  // 0x19C
     unsigned int q1AC;  // 0x1AC
     unsigned int q1B0;  // 0x1B0
-    unsigned int Constructor_7632D0;
+    unsigned int Constructor_7632D0_slot;
 // --- flat members (END) ---
+    static unsigned int * Constructor_7632D0(WaveClass *pThis, int a2, int a3);  // G57w19k2 raw thiscall static-form supply (member Constructor_7632D0 -> Constructor_7632D0_slot)
     WaveClass * ddtor(char a2, int aP1, int a1, int a3);
     char DamageArea(ObjectClass * aP1);
     int CheckStateFlag();

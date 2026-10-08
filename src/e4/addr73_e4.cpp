@@ -760,7 +760,7 @@ char sub_732FF0(void * a1, int (__fastcall *)(unsigned int, int), int a3)
 }
 // 0x7331B0
 namespace gamemd {
-void sub_7331B0()
+char sub_7331B0()
 {
   int v1; // ebp
   EventClass *v2; // eax

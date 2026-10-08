@@ -21,7 +21,7 @@ struct BuildingPlacement {
     unsigned int BuildingPlacement_field_0x04;
     unsigned int BuildingPlacement_field_0x0C;
     unsigned int BuildingPlacement_field_0x20;
-    unsigned int IsPlacementFlagSet;
+    unsigned int IsPlacementFlagSet_slot;
     unsigned int Object_field_0x30;
     unsigned int RenderBuildingPlacementShadow;
     unsigned int *__pad_0;
@@ -32,6 +32,7 @@ struct BuildingPlacement {
     unsigned int u32_48;
     unsigned int u32_4C;
 // --- flat members (END) ---
+    static bool IsPlacementFlagSet(BuildingPlacement *pThis, unsigned int a2, char a3);  // G57w19k2 raw thiscall static-form supply (member IsPlacementFlagSet -> IsPlacementFlagSet_slot)
     VectorClass_flat * * ProcessBuildingPlacementAction();
     unsigned int * FindPosition(HouseClass *aP1, unsigned int *a2, unsigned int *a3);  // G57w10-S raw 0x00500200 IUnknown 占位清除
     unsigned int * SelectBuildingPlacementCells(int a2);

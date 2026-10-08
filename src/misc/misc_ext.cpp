@@ -1100,7 +1100,7 @@ int CSFClass::LoadFile()
     dword_B1CF80 = 1; /*0x7346dd*/
     dword_B1CF58 = 0; /*0x7346e7*/
     strcpy( (char *)(byte_B13EB0),(const char *)(this)); /*0x73470a*/
- v2 = (char *)(strchr(byte_B13EB0, 46)); /*0x734713*/
+ v2 = (char *)(strchr((const char *)byte_B13EB0, 46)); /*0x734713*/
     if ( v2 ) /*0x73471d*/
       *v2 = 0; /*0x73471f*/
     strcat( (char *)(byte_B13EB0),(const char *)(aCsf)); /*0x73474b*/

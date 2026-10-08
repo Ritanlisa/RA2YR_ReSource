@@ -151,7 +151,7 @@ int GameSettings::Read()
                            (int *)&DSurface_ViewBounds.__pad_FC[36],
                            g_INI_Key_Video,
                            aAllowmodetoggl,
-                           stru_A8EB00.?[383]);
+                           *(unsigned char *)((char *)&stru_A8EB00 + 383));
     v10 = (GameSettings)INIClass::ReadBool_Overwrite((INIClass *)(/*0x5fa9a8*/
                           (int *)&DSurface_ViewBounds.__pad_FC[36]), (unsigned char *)(g_INI_Key_Video), (unsigned char *)(aAllowvramsideb), *(unsigned char *)(_ESI.v + 54));
     v34 = (double)*(float *)(_ESI.v + 56); /*0x5fa9ad G57c4 x87c4: fld dword [esi+38h] + fstp var slot@0x5fa9bb*/
@@ -214,11 +214,11 @@ int GameSettings::Read()
         ++v24; /*0x5fabe5*/
       }
       while ( *v24 ); /*0x5fabe8*/
-      v26 = wcstok(String, asc_82083C, v41); /*0x5fabf8*/
+      v26 = wcstok(String, (const wchar_t *)asc_82083C, v41); /*0x5fabf8*/
       if ( v26 ) /*0x5fac02*/
       {
         *(unsigned int *)(_ESI.v + 76) = wcstol(v26, 0, 10) - 1; /*0x5fac16*/
-        v27 = wcstok(0, asc_82083C, v33); /*0x5fac19*/
+        v27 = wcstok(0, (const wchar_t *)asc_82083C, v33); /*0x5fac19*/
         if ( v27 ) /*0x5fac23*/
           *(unsigned int *)(_ESI.v + 80) = wcstol(v27, 0, 10) - 1; /*0x5fac33*/
       }
@@ -314,7 +314,7 @@ void * GameSettings::ParseNetworkAddress()
 } // namespace gamemd
 // 0x721290
 namespace gamemd {
-void GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
+int GameSettings::SetScoreVolume(int volume, void *a2, void *a3)
 {
     int result; // eax
 

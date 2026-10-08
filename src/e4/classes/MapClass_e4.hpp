@@ -118,6 +118,8 @@ struct MapClass {
     void* field_16C0;  // 0x0 (no offset truth)
     void* field_4;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    int GetTileDataField14();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
+    static INIClass * * SaveCellTagsToINI(MapClass *pThis, char *a2);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1, void *a2);
     INIClass * * SaveCellTagsToINI(char * a2);

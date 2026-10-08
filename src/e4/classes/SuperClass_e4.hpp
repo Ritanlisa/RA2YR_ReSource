@@ -132,15 +132,17 @@ struct SuperClass {
     unsigned int Deviation;
     unsigned int NoWobbles;
     unsigned int Wobbles;
-    unsigned int SetCurrentFrame;
+    unsigned int SetCurrentFrame_slot;
     unsigned int q030;
     unsigned int q060;
     unsigned int q07C;
     unsigned int u32_7C;
-    unsigned int AdvanceCountdown;
+    unsigned int AdvanceCountdown_slot;
     unsigned int q078;
     unsigned int ChronoMapCoords;
 // --- flat members (END) ---
+    static wchar_t * SetCurrentFrame(SuperClass *pThis);  // G57w19k2 raw thiscall static-form supply (member SetCurrentFrame -> SetCurrentFrame_slot)
+    static void AdvanceCountdown(SuperClass *pThis);  // G57w19k2 raw thiscall static-form supply (member AdvanceCountdown -> AdvanceCountdown_slot)
     AbstractClass * * Reset(void *a1, void *a2);
     AbstractClass * * StartTimer(int a2, char a3, char a4);
     char StopPreclickAnim(int a2);  // G57w10-S raw 0x006CB830 IUnknown 占位清除

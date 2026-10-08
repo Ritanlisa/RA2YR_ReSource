@@ -53,6 +53,7 @@ struct JumpjetLocomotionClass {
     unsigned char unknown_91;  // 0x91
     ILocomotion* Piggybackee;  // 0x94
 // --- flat members (END) ---
+    int Update2(void * a2);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     AbstractClass * * FindClosestOccupiableCell();
     BOOL CheckWindowsErrorWrapper_0(int a2);
     BOOL ComputeFloatExpression(int a1);

@@ -270,7 +270,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
     StringByIndex = (uint8_t *)gamemd::INIClass::GetStringByIndex( a1->__pad_0, (CCINIClass *)((uint8_t *)aAitriggertypes), (void *)(i)); /*0x41f4b8*/
-    ((gamemd::INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)aAitriggertypes, (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (int)(Destination), 32); /*0x41f4d2*/
+    ((gamemd::INIClass*)(gamemd::INIClass *)(a1))->GetString((uint8_t *)aAitriggertypes, (gamemd::INIClass *)(StringByIndex), (gamemd::INIClass *)(&g_INI_DefaultBuffer), (void *)(Destination), 32); /*0x41f4d2*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/

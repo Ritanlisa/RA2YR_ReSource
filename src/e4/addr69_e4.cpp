@@ -1358,7 +1358,7 @@ int LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
 }
 // 0x6994F0
 namespace gamemd {
-void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
+int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
 {
   int v7; // edi
   void *v8; // ebp
@@ -1405,7 +1405,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
       v11 = v10; /*0x6995a2*/
       if ( v10 ) /*0x6995a9*/
       {
-        v12 = (char *)(strstr(v10 + 5, asc_83F484)); /*0x6995b4*/
+        v12 = (char *)(strstr((const char *)(v10 + 5), (const char *)asc_83F484)); /*0x6995b4*/
  v19 = (char *)(v12); /*0x6995be*/
         if ( v12 > v11 ) /*0x6995c2*/
         {
@@ -1561,7 +1561,7 @@ LABEL_10:
 }
 // 0x69BCC0
 namespace gamemd {
-void sub_69BCC0(ObjectClass * aP0)
+int sub_69BCC0(ObjectClass * aP0)
 {
   int v1; // edi
   char **v2; // esi
@@ -1584,7 +1584,7 @@ void sub_69BCC0(ObjectClass * aP0)
 }
 // 0x69F0C0
 namespace gamemd {
-void sub_69F0C0(ObjectClass *a1, void * a2)
+void * sub_69F0C0(ObjectClass *a1, void * a2)
 {
 
   ObjectClass *nextObject; // ebx

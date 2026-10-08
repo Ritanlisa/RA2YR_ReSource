@@ -318,7 +318,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     if ( v63 > v59 ) /*0x68f4aa*/
     {
       v54 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f585*/
-      swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f589*/
+      _swprintf(v76, (const wchar_t *)g_Str_Fmt_PctD, aP2); /*0x68f589*/
       v41 = (unsigned int *)*((unsigned int *)this + 3); /*0x68f58e*/
       v42 = v7 - v41[2] - v59; /*0x68f5a3*/
 (*(void (**)(unsigned int *, ObjectClass *, wchar_t *, int, int, int))(*v41 + 12))( /*0x68f5b5*/ v41, (ObjectClass *)(v54), (wchar_t *)(v76), v62, v42, 2);
@@ -459,7 +459,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 
 
   v50 = (gamemd::ObjectClass *)(g_DSurface_Hidden); /*0x68f7f0*/
-  swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f801*/
+  _swprintf(v76, (const wchar_t *)g_Str_Fmt_PctD, aP2); /*0x68f801*/
 (*(void (**)(unsigned int, ObjectClass *, wchar_t *, int, int, int))(**((unsigned int **)this + 3) + 12))( /*0x68f821*/ *((unsigned int *)this + 3), (ObjectClass *)(v50), (wchar_t *)(v76), v48, v7 - *(unsigned int *)(*((unsigned int *)this + 3) + 8) - v59, 2);
 
 
@@ -469,7 +469,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 
   (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))( *((unsigned int *)this + 3), (wchar_t *)(v76)); /*0x68f82e*/
   v51 = (gamemd::DSurface *)(DSurface_Alternate); /*0x68f838*/
-  swprintf(v76, (const size_t)g_Str_Fmt_PctD, aP2); /*0x68f849*/
+  _swprintf(v76, (const wchar_t *)g_Str_Fmt_PctD, aP2); /*0x68f849*/
 (*(void (**)(DSurface *, wchar_t *, int, int, int))(**((unsigned int **)this + 3) + 12))( /*0x68f86b*/ v51, (wchar_t *)(v76), v48, v7 - *(unsigned int *)(*((unsigned int *)this + 3) + 8) - v59, 2);
 
 

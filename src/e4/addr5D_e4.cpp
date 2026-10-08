@@ -1424,7 +1424,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
 }
 // 0x5DB720
 namespace gamemd {
-void CheckNetworkGameTimeout()
+int CheckNetworkGameTimeout()
 {
   int result; // eax
   int v2; // ebp
@@ -1774,7 +1774,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
 }
 // 0x5DF180
 namespace gamemd {
-void SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4)
+int SkirmishDialogProc(SkirmishDialog * aP0, int a2, unsigned short a3, HWND a4)
 {
   if ( !byte_AC0268 ) /*0x5df189*/
   {
@@ -1941,7 +1941,7 @@ int Network_SendJoinRequest(int a1, unsigned char a2)
 }
 // 0x5DF9E0
 namespace gamemd {
-void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
+int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
 {
   int Ticks; // eax
   int v6; // esi
@@ -2166,7 +2166,7 @@ int Network_SendPlayerOptions(unsigned int * a1, int a2)
 }
 // 0x5D0590
 namespace gamemd {
-void ObjectClass::nullsub_24()
+int ObjectClass::nullsub_24()
 {
 
   int result; // eax

@@ -725,7 +725,7 @@ Debug::Log("Player %s failed to make it into the game. Dropping %s\n");  /* G57w
 }
 // 0x684C30
 namespace gamemd {
-void PostLoadInitScenario()
+int PostLoadInitScenario()
 {
   int v1; // edi
   int i; // esi
@@ -1164,7 +1164,7 @@ int ScenarioClass_Reset()
 }
 // 0x687CE0
 namespace gamemd {
-void SaveScenarioToINI(char * Source, char a2, int a3)
+char * SaveScenarioToINI(char * Source, char a2, int a3)
 {
   unsigned int *v4; // eax
   char v5; // al

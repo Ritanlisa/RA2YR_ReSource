@@ -3879,7 +3879,7 @@ void LoadScreen::RenderLoop()
     IDA_LODWORD(v336) = 0; /*0x4b6c6c*/
     do /*0x4b6cfa*/
     {
-      CCFileClass::Construct(&v382, *(char **)((char *)&stru_820320.? + v2 * 4)); /*0x4b6c86*/
+      CCFileClass::Construct(&v382, *(char **)(&dword_820334 + v2)); /*0x4b6c86*/
       Size = CCFileClass::GetSize(&v382); /*0x4b6c92*/
       v4 = (void *)RA2_OPNEW(Size); /*0x4b6ca7*/
       v5 = CCFileClass::GetSize(&v382); /*0x4b6ca9*/
@@ -3893,10 +3893,10 @@ void LoadScreen::RenderLoop()
       ++v2; /*0x4b6cf4*/
     }
     while ( v2 < 4 ); /*0x4b6cfa*/
-    v343 = SearchMIXFile(stru_820320.?, 0); /*0x4b6d13*/
+    v343 = SearchMIXFile("PILOTLIT.SHP", 0); /*0x4b6d13*/
     v331 = SearchMIXFile(((char *)&stru_820320 + 155), 0); /*0x4b6d26*/
     v339 = SearchMIXFile(((char *)&stru_820320 + 143), 0); /*0x4b6d32*/
-    CCFileClass::Construct(&v385, *((char **)&stru_820320.? + abstractFlags)); /*0x4b6d4c*/
+    CCFileClass::Construct(&v385, *((char **)&dword_820324 + abstractFlags)); /*0x4b6d4c*/
     v6 = CCFileClass::GetSize(&v385); /*0x4b6d58*/
     v7 = RA2_OPNEW(v6); /*0x4b6d63*/
     v320 = v7; /*0x4b6d6f*/
@@ -4005,8 +4005,8 @@ void LoadScreen::RenderLoop()
     v33 = dword_A83CF0 + dword_A8E358; /*0x4b7048*/
     v34 = 0; /*0x4b704b*/
     v311.DynamicVectorClass = (unsigned int)(void *)&DynamicVectorClass_TechnoTypeClass___vftable; /*0x4b704f*/
-    v311.? = 10; /*0x4b7057*/
-    v311.? = 0; /*0x4b7062*/
+    v311.CapacityIncrement = 10; /*0x4b7057*/
+    v311.Count = 0; /*0x4b7062*/
     if ( dword_A83CA8 <= 0 ) /*0x4b706d*/
     {
   LABEL_25:
@@ -4029,28 +4029,28 @@ void LoadScreen::RenderLoop()
     if ( (int)dword_A8B230[376].vtable1 > 0 ) /*0x4b70a8*/
     {
       v38 = 0; /*0x4b70ae*/
-      Capacity = v311.?; /*0x4b70b8*/
+      Capacity = v311.Capacity; /*0x4b70b8*/
       v40 = v317; /*0x4b70bc*/
       while ( 1 ) /*0x4b70c9*/
       {
         v41 = *(unsigned int *)(v37[375].referenceCount + 4 * v38); /*0x4b70c9*/
         if ( (v40 & *(unsigned int *)(v41 + 1740)) != 0 && *(unsigned int *)(v37[376].abstractFlags + 4 * v38) ) /*0x4b70da*/
         {
-          if ( v311.? < Capacity ) /*0x4b70e7*/
+          if ( v311.Count < Capacity ) /*0x4b70e7*/
             goto LABEL_35; /*0x4b70e7*/
-          if ( !v311.? && Capacity || v311.? <= 0 ) /*0x4b70fe*/
+          if ( !v311.IsAllocated && Capacity || v311.CapacityIncrement <= 0 ) /*0x4b70fe*/
             goto LABEL_37; /*0x4b70fe*/
           if ( (*((unsigned __int8 (__thiscall **)(TypeList *, int, unsigned int))v311.DynamicVectorClass + 2))( /*0x4b710d*/
                  &v311,
-                 v311.? + Capacity,
+                 v311.CapacityIncrement + Capacity,
                  0) )
           {
   LABEL_35:
-            v42 = v311.?++; /*0x4b711b*/
-            *((unsigned int *)v311.? + v42) = v41; /*0x4b7129*/
+            v42 = v311.Count++; /*0x4b711b*/
+            *((unsigned int *)v311.Items + v42) = v41; /*0x4b7129*/
           }
           v37 = dword_A8B230; /*0x4b712c*/
-          Capacity = v311.?; /*0x4b7132*/
+          Capacity = v311.Capacity; /*0x4b7132*/
         }
   LABEL_37:
         if ( ++v38 >= (int)v37[376].vtable1 ) /*0x4b713f*/
@@ -4068,16 +4068,16 @@ void LoadScreen::RenderLoop()
         && v44[397] != -1
         && (*(int (__thiscall **)(unsigned int *))(*v44 + 172))(v44) > 10
         && (v44[435] & v317) != 0
-        && (v311.? < v311.?
-         || (v311.? || !v311.?)
-         && v311.? > 0
+        && (v311.Count < v311.Capacity
+         || (v311.IsAllocated || !v311.Capacity)
+         && v311.CapacityIncrement > 0
          && (*((unsigned __int8 (__thiscall **)(TypeList *, int, unsigned int))v311.DynamicVectorClass + 2))(
               &v311,
-              v311.? + v311.?,
+              v311.Capacity + v311.CapacityIncrement,
               0)) )
       {
-        v45 = v311.?++; /*0x4b7207*/
-        *((unsigned int *)v311.? + v45) = v44; /*0x4b7215*/
+        v45 = v311.Count++; /*0x4b7207*/
+        *((unsigned int *)v311.Items + v45) = v44; /*0x4b7215*/
       }
     }
   LABEL_56:
@@ -4085,7 +4085,7 @@ void LoadScreen::RenderLoop()
     v284 = 0; /*0x4b7235*/
     v277 = 0; /*0x4b7239*/
     v317 = 5 * abstractFlags + 10; /*0x4b723e*/
-    v276 = v311.? > 8; /*0x4b724d*/
+    v276 = v311.Count > 8; /*0x4b724d*/
     v47 = RA2_OPNEW(4 * v317); /*0x4b7257*/
     Block = (unsigned int *)v47; /*0x4b725c*/
     v310 = 0; /*0x4b7260*/
@@ -4095,10 +4095,10 @@ void LoadScreen::RenderLoop()
       v49 = (ShapeButtonClass *)RA2_OPNEW(0x60u); /*0x4b7270*/
       if ( v49 ) /*0x4b7277*/
       {
-        if ( v46 >= v311.? ) /*0x4b7280*/
+        if ( v46 >= v311.Count ) /*0x4b7280*/
           v50 = v339; /*0x4b7295*/
         else
-          v50 = (*(int (__thiscall **)(unsigned int))(**((unsigned int **)v311.? + v46) + 152))(*((unsigned int *)v311.? + v46)); /*0x4b7291*/
+          v50 = (*(int (__thiscall **)(unsigned int))(**((unsigned int **)v311.Items + v46) + 152))(*((unsigned int *)v311.Items + v46)); /*0x4b7291*/
         v51 = ShapeButtonClass::Constructor( /*0x4b72dd*/
                 v49,
                 v48,
@@ -4231,8 +4231,8 @@ void LoadScreen::RenderLoop()
     v309 = 0; /*0x4b75b5*/
     TypeList::TechnoTypeConstructor(&v323, 0, 0); /*0x4b75b9*/
     v323.DynamicVectorClass = (unsigned int)(void *)&DynamicVectorClass_TechnoTypeClass___vftable; /*0x4b75c4*/
-    v323.? = 10; /*0x4b75cf*/
-    v323.? = 0; /*0x4b75d6*/
+    v323.CapacityIncrement = 10; /*0x4b75cf*/
+    v323.Count = 0; /*0x4b75d6*/
     v333 = **(unsigned int **)&stru_87E790.__pad_D8[60]; /*0x4b75df*/
     v334 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4); /*0x4b75e9*/
     v335 = *(unsigned __int64 *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 8); /*0x4b75f3*/
@@ -4287,12 +4287,12 @@ void LoadScreen::RenderLoop()
         do /*0x4b787d*/
         {
           v72 = -1; /*0x4b7779*/
-          if ( v70 + v284 < v311.? ) /*0x4b7784*/
+          if ( v70 + v284 < v311.Count ) /*0x4b7784*/
           {
             vtable1 = dword_A8B230[376].vtable1; /*0x4b7786*/
             if ( vtable1 && (v72 = 0, (int)vtable1 > 0) ) /*0x4b7794*/
             {
-              while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v72) != *(unsigned int *)((char *)v311.? + v265) /*0x4b77b7*/
+              while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v72) != *(unsigned int *)((char *)v311.Items + v265) /*0x4b77b7*/
                    || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v72) == -1 )
               {
                 if ( ++v72 >= (int)vtable1 ) /*0x4b77bc*/
@@ -4355,9 +4355,9 @@ void LoadScreen::RenderLoop()
       {
         v76 = v75 + v284 - 1; /*0x4b78e5*/
         v296 = v76; /*0x4b78ea*/
-        if ( v76 >= 0 && v76 < v311.? ) /*0x4b78fb*/
+        if ( v76 >= 0 && v76 < v311.Count ) /*0x4b78fb*/
         {
-          v77 = *((unsigned int *)v311.? + v75 + v284 - 1); /*0x4b790b*/
+          v77 = *((unsigned int *)v311.Items + v75 + v284 - 1); /*0x4b790b*/
           v78 = dword_A8B230[376].vtable1; /*0x4b790f*/
           v300 = v77; /*0x4b7917*/
           if ( v78 && (v79 = 0, (int)v78 > 0) ) /*0x4b7921*/
@@ -4458,16 +4458,16 @@ void LoadScreen::RenderLoop()
             }
             if ( v266 != -1 ) /*0x4b7b7e*/
               ++*((unsigned int *)dword_A8B230[377].vtable3 + v266); /*0x4b7b93*/
-            if ( v323.? < v323.? /*0x4b7bd4*/
-              || (v323.? || !v323.?)
-              && v323.? > 0
+            if ( v323.Count < v323.Capacity /*0x4b7bd4*/
+              || (v323.IsAllocated || !v323.Capacity)
+              && v323.CapacityIncrement > 0
               && (*((unsigned __int8 (__thiscall **)(TypeList *, int, unsigned int))v323.DynamicVectorClass + 2))(
                    &v323,
-                   v323.? + v323.?,
+                   v323.Capacity + v323.CapacityIncrement,
                    0) )
             {
-              v98 = v323.?++; /*0x4b7be2*/
-              *((unsigned int *)v323.? + v98) = v77; /*0x4b7bf3*/
+              v98 = v323.Count++; /*0x4b7be2*/
+              *((unsigned int *)v323.Items + v98) = v77; /*0x4b7bf3*/
             }
             v254 = 1; /*0x4b7bff*/
             ++v309; /*0x4b7c07*/
@@ -4548,12 +4548,12 @@ void LoadScreen::RenderLoop()
         v301 = 4 * v106; /*0x4b7d8b*/
         do /*0x4b7e66*/
         {
-          if ( v108 >= v311.? ) /*0x4b7d96*/
+          if ( v108 >= v311.Count ) /*0x4b7d96*/
             v110 = v339; /*0x4b7db2*/
           else
-            v110 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)((char *)v311.? + v109) + 152))(*(unsigned int *)((char *)v311.? + v109)); /*0x4b7da1*/
+            v110 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)((char *)v311.Items + v109) + 152))(*(unsigned int *)((char *)v311.Items + v109)); /*0x4b7da1*/
           (*(void (__thiscall **)(unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)*v107 + 136))(*v107, v110, 0, 0); /*0x4b7dc2*/
-          if ( v108 >= v311.? ) /*0x4b7dcf*/
+          if ( v108 >= v311.Count ) /*0x4b7dcf*/
             goto LABEL_182; /*0x4b7dcf*/
           v111 = dword_A8B230[376].vtable1; /*0x4b7dd7*/
           if ( !v111 ) /*0x4b7ddf*/
@@ -4561,7 +4561,7 @@ void LoadScreen::RenderLoop()
           v112 = 0; /*0x4b7de1*/
           if ( (int)v111 <= 0 ) /*0x4b7de5*/
             goto LABEL_182; /*0x4b7de5*/
-          while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v112) != *(unsigned int *)((char *)v311.? + v109) /*0x4b7e03*/
+          while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v112) != *(unsigned int *)((char *)v311.Items + v109) /*0x4b7e03*/
                || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v112) == -1 )
           {
             if ( ++v112 >= (int)v111 ) /*0x4b7e0c*/
@@ -4603,7 +4603,7 @@ void LoadScreen::RenderLoop()
         (*(void (__thiscall **)(unsigned int, int))(*(unsigned int *)Block[v257 - 1] + 108))(Block[v257 - 1], 1); /*0x4b7e84*/
         v277 = v284 != 0; /*0x4b7e94*/
         v254 = 1; /*0x4b7e9c*/
-        v276 = v284 < v311.? - 8; /*0x4b7ea3*/
+        v276 = v284 < v311.Count - 8; /*0x4b7ea3*/
         goto LABEL_252; /*0x4b7ea8*/
       }
       if ( v75 == 10 ) /*0x4b7d55*/
@@ -4616,7 +4616,7 @@ void LoadScreen::RenderLoop()
       if ( v75 >= 11 && v75 < 5 * abstractFlags + 11 ) /*0x4b7f08*/
       {
         v114 = v75 - 11; /*0x4b7f15*/
-        if ( v75 - 11 < v323.? ) /*0x4b7f1a*/
+        if ( v75 - 11 < v323.Count ) /*0x4b7f1a*/
         {
           v115 = dword_A8B230; /*0x4b7f20*/
           v116 = dword_A8B230[376].vtable1; /*0x4b7f26*/
@@ -4625,7 +4625,7 @@ void LoadScreen::RenderLoop()
             v117 = 0; /*0x4b7f34*/
             if ( (int)v116 > 0 ) /*0x4b7f38*/
             {
-              v118 = *((unsigned int *)v323.? + v114); /*0x4b7f4b*/
+              v118 = *((unsigned int *)v323.Items + v114); /*0x4b7f4b*/
               while ( *(unsigned int *)(dword_A8B230[375].referenceCount + 4 * v117) != v118 /*0x4b7f5d*/
                    || *(unsigned int *)(dword_A8B230[376].abstractFlags + 4 * v117) == -1 )
               {
@@ -4638,14 +4638,14 @@ void LoadScreen::RenderLoop()
                                                                                 + 4 * v117) )
                 {
                   v119 = 0; /*0x4b7f93*/
-                  if ( v311.? > 0 ) /*0x4b7f97*/
+                  if ( v311.Count > 0 ) /*0x4b7f97*/
                   {
-                    Items = v311.?; /*0x4b7f9d*/
+                    Items = v311.Items; /*0x4b7f9d*/
                     while ( *Items != v118 ) /*0x4b7fa3*/
                     {
                       ++v119; /*0x4b7fa5*/
                       ++Items; /*0x4b7fa6*/
-                      if ( v119 >= v311.? ) /*0x4b7fab*/
+                      if ( v119 >= v311.Count ) /*0x4b7fab*/
                         goto LABEL_215; /*0x4b7fab*/
                     }
                     v121 = RA2_OPNEW(0x14u); /*0x4b7fb9*/
@@ -4683,19 +4683,19 @@ void LoadScreen::RenderLoop()
             }
           }
   LABEL_216:
-          v123 = (*(int (__thiscall **)(unsigned int))(**((unsigned int **)v323.? + v114) + 172))(*((unsigned int *)v323.? + v114)); /*0x4b8067*/
+          v123 = (*(int (__thiscall **)(unsigned int))(**((unsigned int **)v323.Items + v114) + 172))(*((unsigned int *)v323.Items + v114)); /*0x4b8067*/
           v318 += v123; /*0x4b8082*/
-          if ( v114 < v323.? ) /*0x4b8092*/
+          if ( v114 < v323.Count ) /*0x4b8092*/
           {
             v124 = v114; /*0x4b8095*/
-            if ( v114 < --v323.? ) /*0x4b80a0*/
+            if ( v114 < --v323.Count ) /*0x4b80a0*/
             {
               do /*0x4b80ba*/
               {
                 ++v124; /*0x4b80a9*/
-                *((unsigned int *)v323.? + v124 - 1) = *((unsigned int *)v323.? + v124); /*0x4b80ad*/
+                *((unsigned int *)v323.Items + v124 - 1) = *((unsigned int *)v323.Items + v124); /*0x4b80ad*/
               }
-              while ( v124 < v323.? ); /*0x4b80ba*/
+              while ( v124 < v323.Count ); /*0x4b80ba*/
             }
           }
           v254 = 1; /*0x4b80c0*/
@@ -5323,7 +5323,7 @@ void LoadScreen::RenderLoop()
           || v206 >= v197 + 68 * ((v206 - v197 - 491) / 68) + 555
           || v208 < v272 + 50 * v209 + 25
           || v208 >= v272 + 50 * v209 + 73
-          || (v210 = (v206 - v197 - 491) / 68 + 2 * v209, v210 + v284 >= v311.?) )
+          || (v210 = (v206 - v197 - 491) / 68 + 2 * v209, v210 + v284 >= v311.Count) )
         {
           v197 = v305; /*0x4b9094*/
           v211 = -1; /*0x4b9098*/
@@ -5335,7 +5335,7 @@ void LoadScreen::RenderLoop()
         {
           v197 = v305; /*0x4b9070*/
           v211 = v210; /*0x4b9074*/
-          v207 = (wchar_t *)*((unsigned int *)v311.? + v210 + v284); /*0x4b9076*/
+          v207 = (wchar_t *)*((unsigned int *)v311.Items + v210 + v284); /*0x4b9076*/
           v270 = v319; /*0x4b9080*/
           v319 = v210; /*0x4b9084*/
         }
@@ -5403,11 +5403,11 @@ void LoadScreen::RenderLoop()
     while ( !IDA_HIBYTE(v294) ); /*0x4b9282*/
     v218 = 0; /*0x4b928f*/
     v262 = 0; /*0x4b9293*/
-    if ( v323.? > 0 ) /*0x4b9297*/
+    if ( v323.Count > 0 ) /*0x4b9297*/
     {
       while ( 1 ) /*0x4b92a4*/
       {
-        v219 = *((unsigned int *)v323.? + v218); /*0x4b92a4*/
+        v219 = *((unsigned int *)v323.Items + v218); /*0x4b92a4*/
         v220 = 11 * (v218 / 5); /*0x4b92ba*/
         v221 = &(&dword_A83D4C)[32].__pad_140[4 * v220 + 304]; /*0x4b92c2*/
         v222 = *(unsigned int *)&(&dword_A83D4C)[32].__pad_140[4 * v220 + 320]; /*0x4b92c9*/
@@ -5415,7 +5415,7 @@ void LoadScreen::RenderLoop()
           break; /*0x4b92d3*/
   LABEL_396:
         v218 = ++v262; /*0x4b9367*/
-        if ( v262 >= v323.? ) /*0x4b9379*/
+        if ( v262 >= v323.Count ) /*0x4b9379*/
           goto LABEL_397; /*0x4b9379*/
       }
       v223 = (int)v212[376].vtable1; /*0x4b92d9*/
@@ -5549,13 +5549,13 @@ void LoadScreen::RenderLoop()
       g_ZBufferDescriptor = 0; /*0x4b9558*/
     (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4b9566*/
     v323.DynamicVectorClass = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x4b9577*/
-    if ( v323.? && v323.? ) /*0x4b9589*/
+    if ( v323.Items && v323.IsAllocated ) /*0x4b9589*/
     {
-      RA2_OPDEL(v323.?); /*0x4b958c*/
-      v323.? = 0; /*0x4b9594*/
+      RA2_OPDEL(v323.Items); /*0x4b958c*/
+      v323.Items = 0; /*0x4b9594*/
     }
-    v323.? = 0; /*0x4b95a2*/
-    v323.? = 0; /*0x4b95ac*/
+    v323.IsAllocated = 0; /*0x4b95a2*/
+    v323.Capacity = 0; /*0x4b95ac*/
     v311.unknown_18 = (int)(void *)&VectorClass_CrossDissolveEffect___vftable; /*0x4b95b3*/
     if ( v312 && IDA_BYTE1(v314) ) /*0x4b95c9*/
     {
@@ -5573,13 +5573,13 @@ void LoadScreen::RenderLoop()
     IDA_BYTE1(v321.LoadScreen_field_0x0C) = 0; /*0x4b961f*/
     v321.LoadScreen_field_0x08 = 0; /*0x4b9629*/
     v311.DynamicVectorClass = (unsigned int)(void *)&VectorClass_TechnoTypeClass___vftable; /*0x4b9630*/
-    if ( v311.? && v311.? ) /*0x4b963c*/
+    if ( v311.Items && v311.IsAllocated ) /*0x4b963c*/
     {
-      RA2_OPDEL(v311.?); /*0x4b963f*/
-      v311.? = 0; /*0x4b9647*/
+      RA2_OPDEL(v311.Items); /*0x4b963f*/
+      v311.Items = 0; /*0x4b9647*/
     }
-    v311.? = 0; /*0x4b9652*/
-    v311.? = 0; /*0x4b9657*/
+    v311.IsAllocated = 0; /*0x4b9652*/
+    v311.Capacity = 0; /*0x4b9657*/
     *(unsigned int *)v385.CDFileClass = (unsigned int)(void *)&CCFileClass_vftable; /*0x4b965b*/
     v387 = 0; /*0x4b9666*/
     Vector::Clear((int)v386); /*0x4b966d*/
@@ -6005,7 +6005,7 @@ void LoadingScreen::Render()
         *(unsigned int *)((char *)&v88 + 1) = 0; /*0x55350e*/
         INISectionList::Constructor((INISectionList *)((char *)&v88 + 2)); /*0x553515*/
         Node::Init((Node *)((char *)&v88 + 8)); /*0x553521*/
-        v88.? = 0; /*0x553532*/
+        v88.INIClass_field_3C = 0; /*0x553532 G57w19k3: disasm [var+0xC8]=CCINIClass+0x3C*/
         v88.ownsFile = 0; /*0x553539*/
         *(unsigned int *)v88.INIClass = &CCINIClass_Vtable; /*0x553541*/
         CCFileClass::Construct(&v89, byte_A8B8E0); /*0x55354c*/
@@ -6633,7 +6633,7 @@ void MultiplayerGameMode::Construct()
       v8[2] = 0; /*0x5d5c0d*/
       INISectionList::Constructor(v8 + 3); /*0x5d5c10*/
       Node::Init(v9 + 5); /*0x5d5c18*/
-      v9[7].? = 0; /*0x5d5c1d*/
+      v9[7].INIClass_field_3C = 0; /*0x5d5c1d G57w19k3: disasm mov [edi+3Ch], ebx*/
       v9[8].GenericNode[0] = 0; /*0x5d5c20*/
       *(unsigned int *)v9->GenericNode = &CCINIClass_Vtable; /*0x5d5c23*/
     }
@@ -7311,7 +7311,7 @@ void SkirmishDialog::HandleGameStart()
       LoadScenarioClassByIndex(v2); /*0x5b9ae0*/
       Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b9ae7*/
       ShowWindow(*(HWND *)this->__pad_0, 5); /*0x5b9af1*/
-      if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88), &stru_82BA00.?) ) /*0x5b9b0b*/
+      if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88), "RandMap.Sed") ) /*0x5b9b0b*/
       {
         Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b9b8c*/
         InvalidateRect(*(HWND *)this->__pad_0, 0, 0); /*0x5b9b98*/
@@ -7344,7 +7344,7 @@ void SkirmishDialog::HandleGameStart()
       {
         DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1448); /*0x5b9bc1*/
         SendMessageA(DlgItem, 0x4B2u, 0, 11055906); /*0x5b9bd4*/
-        if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88), &stru_82BA00.?) ) /*0x5b9bf1*/
+        if ( _strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250[4]) + 88), "RandMap.Sed") ) /*0x5b9bf1*/
         {
           Session::PrepareGame(*(Session **)this->__pad_0); /*0x5b9c64*/
         }

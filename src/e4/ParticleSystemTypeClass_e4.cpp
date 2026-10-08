@@ -272,7 +272,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   this->ParticleSystemTypeClass_field_0x4 = (unsigned int)&vt_ParticleSystemTypeClass; /*0x64496c*/
   this->ParticleSystemTypeClass_field_0x8 = (unsigned int)&vt_ParticleSystemTypeClass; /*0x644973*/
   this->SpawnCount = (unsigned int)&vt_ParticleSystemTypeClass; /*0x64497a*/
-  AbstractClass::AnnounceExpiredPointer(&this->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)&this->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
   v5 =(gamemd::ParticleSystemTypeClass *)this; /*0x644996*/
 v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/ &stru_A83D50.__pad_14[4], (ParticleSystemTypeClass **)(&v5));
 

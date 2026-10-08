@@ -304,8 +304,9 @@ struct AircraftClass {
     AircraftTypeClass* Type;  // 0x6C4
     unsigned int AircraftClass_field_6CC;  // 0x6CC
     unsigned int vtable0;
-    void* Destruct;  // 0x0 (no offset truth)
+    void* Destruct_slot;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    static int Destruct(AircraftClass *pThis);  // G57w19k2 raw thiscall static-form supply (member Destruct -> Destruct_slot)
     AircraftClass * CheckActionStatus(char a2);
     int GetCursorOverObject(AircraftClass *aP1, int *a2, int *a3);  // G57w10-S raw 0x00417CC0 IUnknown 占位清除
     HRESULT CheckPassengerCount(int a1, int pPStm, int a3);

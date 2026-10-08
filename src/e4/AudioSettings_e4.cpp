@@ -199,8 +199,8 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
             {
               if ( ((RulesClass *)(&unk_A83D10))->IsTypeBuildable(v21) ) /*0x6b6545*/
               {
-                v22 = AudioSettings::ComputeTransform(v21); /*0x6b6563*/
-                v46 = AudioSettings::Check(v21); /*0x6b656f*/
+                v22 = AudioSettings::ComputeTransform(this, v21); /*0x6b6563*/
+                v46 = AudioSettings::Check(this, v21); /*0x6b656f*/
                 swprintf(lParam, (const size_t)a02dSD02d, (const wchar_t *const)Format++, v46, v22 / 60, v22 % 60); /*0x6b65a1*/
                 v23 = SendMessageA( (HWND)(v19), 0x4CDu, 0, (LPARAM)((LPARAM)((LPARAM)lParam))); /*0x6b65bb*/
                 v24 = v23; /*0x6b65bd*/

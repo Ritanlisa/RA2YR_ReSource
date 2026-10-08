@@ -9,7 +9,7 @@
 
 // 0x4C93D0
 namespace gamemd {
-void* ProgressTimer::GetValue(unsigned int *aP1)
+void* ProgressTimer::GetValue(void *aP1)
 {
 
   void * ProgressTimer_field_0x14;

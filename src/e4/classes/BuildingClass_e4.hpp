@@ -332,10 +332,10 @@ struct BuildingClass {
     char ProductionTimer[4];  // 0x71C
     char ProductionFrame[4];  // 0x728
     unsigned int Audio8_2;
-    unsigned int CanRepair;
+    unsigned int CanRepair_slot;
     unsigned int SuperWeaponToken;
     unsigned int *__pad_6B8;
-    unsigned int ctor;
+    unsigned int ctor_slot;
 
     void* CheckBuildability_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::CheckBuildability is a method)
     static unsigned int CheckBuildability(...);  // w18j3 C2597 static-call supply (w16g4 convention)
@@ -350,6 +350,8 @@ struct BuildingClass {
     void* SetType_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon BuildingClass::SetType is a method)
     static unsigned int SetType(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 // --- flat members (END) ---
+    static unsigned int * ctor(BuildingClass *pThis, int a2);  // G57w19k2 raw thiscall static-form supply (member ctor -> ctor_slot)
+    static int CanRepair(BuildingClass *pThis, int a2);  // G57w19k2 raw thiscall static-form supply (member CanRepair -> CanRepair_slot)
     TechnoClass * ClearLimpetCheck();
     static int AllocAndCtor(BuildingClass * aP0, int aP2);  // [w16g2] static (def body this=0)
     int AnimController();

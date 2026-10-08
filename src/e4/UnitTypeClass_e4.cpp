@@ -549,7 +549,7 @@ char UnitTypeClass_LoadFromINI(void *a1, double a2, unsigned char *** a3)
     INIClass::GetString((INIClass *)self, p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
     _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2,(const char *)( Ext)); /*0x747ba6*/
     v83[1].BunkerState = (int)SearchMIXFile( (char *)(v86), 0); /*0x747bc4*/
-    if ( ((AbstractTypeClass *)(int)v83)->NameEquals( g_INI_Key_TRUCKA.?) ) /*0x747bca*/
+    if ( ((AbstractTypeClass *)(int)v83)->NameEquals( (const char *)&g_INI_Key_TRUCKA) ) /*0x747bca*/
     {
       v36 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant, (unsigned char *)(aNormalturretin), 0); /*0x747bf0*/
       v37 = INIClass::ReadInt_Overwrite((INIClass *)((bool *)self), p_occupant,(unsigned char *)(aNormalturretwe), -1); /*0x747bf2*/

@@ -20,7 +20,7 @@ struct ProgressTimer {
     unsigned char ProgressTimer_field_0x10;  // 0x10
     unsigned char ProgressTimer_field_0x14;  // 0x14
 // --- flat members (END) ---
-    void* GetValue(unsigned int *aP1);
+    void* GetValue(void *aP1);  // W19K4: widen out-param to void* per raw 0x41A581 receiver-first (&v4 untyped)
     static void * GetValue(void * aP1, void * aP2);  // G42.39a static-call supply
 };
 #endif  // GAMEMD_CORE_OWNS_PROGRESSTIMER

@@ -563,7 +563,7 @@ extern int AddMessageListPlayerMessage(wchar_t *a1, int a2);
 extern int Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3);
 extern int BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2);
 extern void CellChainReact(void *a1 = 0);
-extern void CheckNetworkGameTimeout();
+extern int CheckNetworkGameTimeout();
 extern int CleanupVeinholeSystem();
 extern int ComputeDistortionVariant(float a1);  // G57w10-S raw 0x4CB150 int __stdcall(float)
 extern void ComputeNetworkFrameCRC(void *a1 = 0);
@@ -578,7 +578,7 @@ extern int DivideBigInteger(unsigned int * a1, char * a2, int a3);
 extern int DrawDialogText(LPARAM, wchar_t *a1, HWND hWnd);
 extern void DrawPowerBarForPlayers(HWND hDlg);
 extern int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9);
-extern void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, int aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15);  // G57e1: p10 int per IDA truth 0x4AED70 (raw literal 0/2/1000)
+extern int DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, ConvertClass * aP4, ConvertClass * aP5, ConvertClass * aP6, ConvertClass * aP7, int aP7a, ConvertClass * aP9, int aP10, ConvertClass * aP11, int a13, ConvertClass * aP13, int a15, ConvertClass * aP15);  // G57e1: p10 int per IDA truth 0x4AED70 (raw literal 0/2/1000)
 extern int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned);
 extern int EncodeBitmapRGB(Pipe * aP0, int edx0, unsigned char *a2, int a4);
 extern char FillComboBoxSides(HWND hDlg, int nIDDlgItem);
@@ -589,7 +589,7 @@ extern int FindInfantryDeployPosition(int *a1, RadarClass * a2, int a3);
 extern void FloodFillRandomMapTerrain(int a1, int a2, int a3);
 extern int FormatHotkeyDisplayString(__int16 a1, wchar_t *a2);
 extern void GenerateLightningStormGlow(void *a1 = 0);
-extern void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3);
+extern char GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown * aP3);
 extern void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2);
 extern void InitRandomSeed();
 extern int InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection);
@@ -606,9 +606,9 @@ extern char Object_Calc_7DEFD7(MouseClass * aP0, unsigned short *a1, int a3, int
 extern char Object_Calc_7DF0B4(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6);
 extern char Object_Calc_7DF191(MouseClass * aP0, unsigned short *a1, int a3, int a4, int a5, int a6);
 extern char Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
-extern void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
-extern void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
-extern void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
+extern int Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
+extern int Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
+extern int Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8);
 extern int OpenURLWOL(INIClass * a1, int a2);
 extern unsigned int PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // G57w4: raw 0x41d926 uses retval
 extern int PlaceMapSeedClassBuildings(int aP0, ObjectClass * aP1, int a3, int a4);
@@ -616,7 +616,7 @@ extern int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int a
 extern int PlayVocClass(int a1, int a2, float a3 = 0, int a4 = 0);
 extern int PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9);
 extern int ProcessAudioStreamPlayback(int a1, unsigned int aP1, int arg0, char a4, char arg8, char * a5);  // 0x7C0740 truth int a2 (G42.33 b3)
-extern void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3);
+extern bool ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3);
 extern void PumpMessages(void *a1 = 0);
 extern void ReadAudioStream(AudioStream * aP0, int a2);
 extern char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4);
@@ -656,7 +656,7 @@ extern int j_DeleteAndZero(void *a1 = 0);  // G57w10-S DeleteAndZero@0x7B46F0 ea
 extern void nullsub_15();
 extern void nullsub_192(int a1);
 extern void nullsub_2(void *a1 = 0);
-extern void nullsub_24(void *a1 = 0);
+extern int nullsub_24(void *a1 = 0);
 extern void nullsub_29(void *a1 = 0);
 extern void nullsub_37();
 extern void nullsub_48();
@@ -670,7 +670,7 @@ extern int sub_4D2F00(int a1, int a2, int * a3);
 extern void *sub_4F38B0(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // G57w16 G1 raw 4-param  // G57w16 G1 raw 0x4F38B0 _DWORD *__fastcall
 extern void * unknown_libname_27(void *a1 = 0);  // G57w10-S asm@0x6406E0 mov eax,ecx 返回 this
 extern void unknown_libname_35(void *a1 = 0);
-extern void unknown_libname_73(void *a1 = 0);
+extern _DWORD * unknown_libname_73(void *a1 = 0);
 extern void *unknown_libname_74(void *a1 = 0);  // 0x7B66C0 returns _DWORD* (G42.33 b2 truth)
 extern void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int a6, int a7, int a8, IUnknown * a9, int a10, int a11, char a12);
 extern void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a4, IUnknown * aP5, unsigned char * a6, int * a7, int * a8);

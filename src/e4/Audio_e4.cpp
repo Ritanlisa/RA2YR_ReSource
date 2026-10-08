@@ -1178,7 +1178,7 @@ int sub_7C2250(int a1, int a2)
 }
 // 0x7C7F20
 namespace gamemd {
-void Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
+int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int v4; // kr00_4
   unsigned short *v5; // esi
@@ -1498,7 +1498,7 @@ int sub_7BE830(int a1, int a2)
 }
 // 0x7BEE20
 namespace gamemd {
-void int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
+signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
 {
   int v5; // ebp
   signed int v7; // esi
@@ -1701,7 +1701,7 @@ int Audio_Process_7C0530(int a1, int edx0, int a3)
 }
 // 0x7C06B0
 namespace gamemd {
-void Audio_Process_7C06B0(DSurface * aP0, int edx0, unsigned int * a2, unsigned int * a3)
+int Audio_Process_7C06B0(DSurface * aP0, int edx0, unsigned int * a2, unsigned int * a3)
 {
   int v4; // ebx
   int v5; // esi

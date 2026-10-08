@@ -32,7 +32,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
     v5 = (*(int (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 4))(this); /*0x473aed*/
     (*(void (**)(CCFileClass *, int, unsigned int, int))(*(unsigned int *)&v4 + 64))((CCFileClass *)this, 13, 0, v5); /*0x473af7*/
   }
-  return FileClass::BufferedWriter(int a1,(char *) aP1, nNumberOfBytesToWrite); /*0x473b0c*/
+  return FileClass::BufferedWriter(this, (char *)aP1, nNumberOfBytesToWrite); /*0x473b0c*/
 
 }
 } // namespace gamemd

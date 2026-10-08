@@ -11187,7 +11187,7 @@ extern unsigned char stru_8184C8;
 extern unsigned char stru_818A68;
 extern unsigned char stru_818E00;
 extern unsigned char stru_81926C;
-extern unsigned char stru_81AF8C;
+extern unsigned char stru_81AF8C[];  // W19K4: byte buffer (Hex-Rays .? member base)
 extern unsigned char stru_81B138;
 extern unsigned char stru_81BB58;
 extern unsigned char stru_81BBC8;
@@ -11215,7 +11215,7 @@ extern unsigned char stru_8292A8;
 extern unsigned char stru_8295E8;
 extern unsigned char stru_829ABC;
 extern unsigned char stru_82A038;
-extern unsigned char stru_82ADA8;
+extern unsigned char stru_82ADA8[];  // W19K4: byte buffer (Hex-Rays .? member base)
 extern unsigned char stru_82BBD0;
 extern unsigned char stru_830620[58523];  // .data blob base 0x830620, BYTE-indexed (G42.33 b3 truth)
 extern unsigned char stru_83665C;

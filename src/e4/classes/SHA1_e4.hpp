@@ -13,7 +13,7 @@ struct SHA1 {
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
-    unsigned int Compute;
+    unsigned int Compute_slot;
     int * ProcessBlock(const void **a2, int *a3);  // 0x69D8C0 G42.33 b3 supplied-body sync
     static void Transform(int *a5, unsigned int *a6);  // 0x69DB30 call-form sync
     int Reset(int a2);  // 0x69DFF0 G42.33 b3 supplied-body sync (cache 形参 this->a2)
@@ -22,6 +22,7 @@ struct SHA1 {
     unsigned int *__pad_0;
     unsigned int u32_2C;
 // --- flat members (END) ---
+    static int Compute(SHA1 *pThis, char *a2);  // G57w19k2 raw thiscall static-form supply (member Compute -> Compute_slot)
     int ComputeThunk(char *aP1);
 };
 

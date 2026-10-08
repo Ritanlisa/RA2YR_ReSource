@@ -3363,7 +3363,7 @@ bool sub_60A100(int a1, HWND a2)
 }
 // 0x60A180
 namespace gamemd {
-void EnumFunc(HWND hWnd, LPARAM)
+BOOL EnumFunc(HWND hWnd, LPARAM)
 {
   HWND v2; // esi
   HWND Parent; // edi
@@ -3400,7 +3400,7 @@ void EnumFunc(HWND hWnd, LPARAM)
 }
 // 0x60A250
 namespace gamemd {
-void sub_60A250(HWND hWnd, LPARAM)
+BOOL sub_60A250(HWND hWnd, LPARAM)
 {
   HWND v2; // esi
   HWND Parent; // edi

@@ -278,7 +278,7 @@ int sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 }
 // 0x4F1CA0
 namespace gamemd {
-void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
+char ** LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
 {
     String *v3; // edx
     unsigned __int8 *v5; // eax
@@ -1003,7 +1003,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int a2, ReferenceCounted * a3, unsigned int
 }
 // 0x4F38B0
 namespace gamemd {
-void sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
+_DWORD * sub_4F38B0(char ** Source, bool * a2, char * a3, char * a4)
 {
     unsigned int *v6; // ebp
     unsigned int *v7; // eax
@@ -1194,7 +1194,7 @@ int E4Recv_4F3D40::sub_4F3D40()
 }
 // 0x4F4E53
 namespace gamemd {
-void sub_4F4E53(unsigned char * result, int a2, int a3, int a4, int a5, int a6, int a7)
+_BYTE * sub_4F4E53(unsigned char * result, int a2, int a3, int a4, int a5, int a6, int a7)
 {
     int v7; // edi
     __int16 v8; // cx
@@ -1690,10 +1690,10 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
     *((unsigned int *)this + 9) = 0; /*0x4f2f5a*/
     *(unsigned int *)&this->vfptr = (unsigned int)(void*)&GraphicMenuAnimItem_vftable; /*0x4f2f5d*/
     ((CCFileClass *)&v15.estimatedHealth)->Construct2( (char **)(a6)); /*0x4f2f63*/
-    ((CCFileClass *)&v15.?)->Construct2( (char **)(a7)); /*0x4f2f74*/
+    ((CCFileClass *)&v15.vtable1)->Construct2( (char **)(a7)); /*0x4f2f74*/
     if ( (unsigned __int8)((CCFileClass *)&v15.estimatedHealth)->Open( 0) ) /*0x4f2f81*/
     {
-      if ( (unsigned __int8)((CCFileClass *)&v15.?)->Open( 0) ) /*0x4f2f8f*/
+      if ( (unsigned __int8)((CCFileClass *)&v15.vtable1)->Open( 0) ) /*0x4f2f8f*/
       {
         v11 = ((String *)a7)->GetOrEmpty_Alt(); /*0x4f2f9a*/
         ((String *)&v15)->Assign( (const char *)(v11)); /*0x4f2fa4*/
@@ -1708,11 +1708,11 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * a2, unsigned int * a3, Gra
         }
       }
     }
-    v15.? = (void*)&CCFileClass_vftable; /*0x4f3011*/
+    v15.vtable1 = (void*)&CCFileClass_vftable; /*0x4f3011*/
     *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
     Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
-    v15.? = &off_7E1668; /*0x4f3027*/
-    ((BufferIOFileClass *)&v15.?)->Dtor(); /*0x4f302b*/
+    v15.vtable1 = &off_7E1668; /*0x4f3027*/
+    ((BufferIOFileClass *)&v15.vtable1)->Dtor(); /*0x4f302b*/
     v15.estimatedHealth = (int)(void*)&CCFileClass_vftable; /*0x4f3037*/
     v17 = 0; /*0x4f303e*/
     Vector::Clear((int)v16); /*0x4f3045*/
@@ -2230,11 +2230,11 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
     ObjectClass *v5; // ecx
 
     v2 = 0; /*0x4fbd08*/
-    if ( stru_A80220.? <= 0 ) /*0x4fbd0e*/
+    if ( dword_A80238 <= 0 ) /*0x4fbd0e*/
       return 0; /*0x4fbd61*/
     while ( 1 ) /*0x4fbd19*/
     {
-      v4 = *((unsigned int *)stru_A80220.? + v2); /*0x4fbd19*/
+      v4 = *((unsigned int *)dword_A8022C + v2); /*0x4fbd19*/
       if ( v4 ) /*0x4fbd1e*/
       {
         if ( (ObjectClass *)v4 != this ) /*0x4fbd22*/
@@ -2248,7 +2248,7 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
           }
         }
       }
-      if ( ++v2 >= stru_A80220.? ) /*0x4fbd5f*/
+      if ( ++v2 >= dword_A80238 ) /*0x4fbd5f*/
         return 0; /*0x4fbd5f*/
     }
     return 1; /*0x4fbd61*/

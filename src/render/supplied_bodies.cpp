@@ -41,6 +41,7 @@
 extern int RoundToInt(double value);  // W13-C raw 0x7C5F00 (e4_protos.h:492 同形)
 // ---- g57c5 W5 vocab (declaration-only) ----
 namespace gamemd {
+extern unsigned int dword_8367C8;  // G57w19k3 data: 0x8367C8 BuildingDebris 记录表基 (namespace gamemd)
 namespace Timer { int GetTicks(...); }  // g57c5 W5 vocab
 } // namespace gamemd
 // ---- g57c5 W5 end ----
@@ -2223,33 +2224,33 @@ int BuildingDebris::Init(int a2)
     v3 = rand(); /*0x631d53*/
     *((unsigned int *)this + 12) = (v3 & 0x3F) - 31; /*0x631d69*/
     *((unsigned int *)this + 13) = ((v3 >> 5) & 0x1F) - 15; /*0x631d6c*/
-    *(this + 6) = *(BuildingDebris *)&stru_83665C.?[40 * a2 + 31]; /*0x631d71*/
-    *(this + 7) = *(BuildingDebris *)&stru_83665C.?[40 * a2 + 35]; /*0x631d77*/
-    *(this + 8) = *(BuildingDebris *)&stru_83665C.?[40 * a2 + 39]; /*0x631d7d*/
-    v4 = *(unsigned int *)&stru_83665C.?[40 * a2 + 55]; /*0x631d80*/
+    *(this + 6) = (*(BuildingDebris *)&((char *)&dword_8367C8)[40 * a2 + 0]); /*0x631d71*/
+    *(this + 7) = (*(BuildingDebris *)&((char *)&dword_8367C8)[40 * a2 + 4]); /*0x631d77*/
+    *(this + 8) = (*(BuildingDebris *)&((char *)&dword_8367C8)[40 * a2 + 8]); /*0x631d7d*/
+    v4 = (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 24]); /*0x631d80*/
     if ( v4 ) /*0x631d85*/
     {
       v5 = (1 << v4) - 1; /*0x631d8e*/
       v6 = rand(); /*0x631d8f*/
       v7 = *((unsigned int *)this + 7); /*0x631d9d*/
       *((unsigned int *)this + 6) -= v6 & v5; /*0x631da0*/
-      v8 = v6 >> *(unsigned int *)&stru_83665C.?[40 * a2 + 55]; /*0x631da6*/
+      v8 = v6 >> (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 24]); /*0x631da6*/
       *((unsigned int *)this + 7) = v7 - (v8 & v5); /*0x631dae*/
-      *((unsigned int *)this + 8) -= v5 & (v8 >> *(unsigned int *)&stru_83665C.?[40 * a2 + 55]); /*0x631dbd*/
+      *((unsigned int *)this + 8) -= v5 & (v8 >> (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 24])); /*0x631dbd*/
     }
-    v9 = *(unsigned int *)&stru_83665C.?[40 * a2 + 43]; /*0x631dc0*/
+    v9 = (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 12]); /*0x631dc0*/
     *((unsigned int *)this + 9) = v9; /*0x631dc3*/
     *((unsigned int *)this + 1) = v9; /*0x631dc6*/
-    v10 = *(unsigned int *)&stru_83665C.?[40 * a2 + 47]; /*0x631dc9*/
+    v10 = (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 16]); /*0x631dc9*/
     *((unsigned int *)this + 10) = v10; /*0x631dcc*/
     *((unsigned int *)this + 2) = v10; /*0x631dcf*/
-    v11 = *(unsigned int *)&stru_83665C.?[40 * a2 + 51]; /*0x631dd2*/
+    v11 = (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 20]); /*0x631dd2*/
     *((unsigned int *)this + 4) = 0; /*0x631dd5*/
     *((unsigned int *)this + 11) = v11; /*0x631ddc*/
     *((unsigned int *)this + 3) = v11; /*0x631ddf*/
-    v12 = *(unsigned int *)&stru_83665C.?[40 * a2 + 63] - *(unsigned int *)&stru_83665C.?[40 * a2 + 67] + 1; /*0x631dea*/
-    *((unsigned int *)this + 5) = *(unsigned int *)&stru_83665C.?[40 * a2 + 67] + rand() % v12; /*0x631df7*/
-    result = *(unsigned int *)&stru_83665C.?[40 * a2 + 59] & rand(); /*0x631e03*/
+    v12 = (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 32]) - (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 36]) + 1; /*0x631dea*/
+    *((unsigned int *)this + 5) = (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 36]) + rand() % v12; /*0x631df7*/
+    result = (*(unsigned int *)&((char *)&dword_8367C8)[40 * a2 + 28]) & rand(); /*0x631e03*/
     *((unsigned int *)this + 14) = result; /*0x631e05*/
     return result; /*0x631e02*/
 }
@@ -3583,14 +3584,14 @@ void Voxel_Section::Draw()
       TypeList::AnimTypeCopy(&v85, _ESI->__pad_104); /*0x75d710*/
     }
     VectorClass::CopyDefault((VectorClass *)_ESI->__pad_104, &v85); /*0x75d722*/
-    CapacityIncrement = v85.?; /*0x75d72b*/
+    CapacityIncrement = v85.CapacityIncrement; /*0x75d72b*/
     unknown_18 = v85.unknown_18; /*0x75d72f*/
-    _ESI->WarheadTypeClass_field_0x114 = v85.?; /*0x75d733*/
-    Items = v85.?; /*0x75d736*/
+    _ESI->WarheadTypeClass_field_0x114 = v85.Count; /*0x75d733*/
+    Items = v85.Items; /*0x75d736*/
     *(unsigned int *)_ESI->__pad_118 = CapacityIncrement; /*0x75d73a*/
     *(unsigned int *)&_ESI->__pad_118[4] = unknown_18; /*0x75d73f*/
     v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_AnimTypeClass_const___vftable; /*0x75d742*/
-    if ( Items && v85.? ) /*0x75d752*/
+    if ( Items && v85.IsAllocated ) /*0x75d752*/
       RA2_OPDEL(Items); /*0x75d755*/
     _ESI->WarheadTypeClass_field_0x120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
                                            (bool *)a2,
@@ -3849,9 +3850,9 @@ void Voxel_Section::Draw()
     if ( _ESI->DebrisTypes != (int *)&v85 ) /*0x75dbed*/
     {
       (*(void (__thiscall **)(int *))(_ESI->DebrisTypes[0] + 12))(_ESI->DebrisTypes); /*0x75dbf3*/
-      Capacity = v85.?; /*0x75dbf6*/
-      v54 = v85.? == 0; /*0x75dbfa*/
-      _ESI->MaxDebris = v85.?; /*0x75dbfc*/
+      Capacity = v85.Capacity; /*0x75dbf6*/
+      v54 = v85.Capacity == 0; /*0x75dbfa*/
+      _ESI->MaxDebris = v85.Capacity; /*0x75dbfc*/
       if ( v54 ) /*0x75dbff*/
       {
         _ESI->WarheadTypeClass_field_0x190[0] = 0; /*0x75dc38*/
@@ -3870,7 +3871,7 @@ void Voxel_Section::Draw()
           {
             do /*0x75dc34*/
             {
-              *(unsigned int *)(_ESI->WarheadTypeClass_field_0x190[0] + 4 * v57) = *((unsigned int *)v85.? + v57); /*0x75dc2b*/
+              *(unsigned int *)(_ESI->WarheadTypeClass_field_0x190[0] + 4 * v57) = *((unsigned int *)v85.Items + v57); /*0x75dc2b*/
               ++v57; /*0x75dc31*/
             }
             while ( v57 < _ESI->MaxDebris ); /*0x75dc34*/
@@ -3878,14 +3879,14 @@ void Voxel_Section::Draw()
         }
       }
     }
-    v58 = v85.?; /*0x75dc47*/
+    v58 = v85.Count; /*0x75dc47*/
     v59 = v85.unknown_18; /*0x75dc4b*/
-    _ESI->unused_1CC[0] = v85.?; /*0x75dc4f*/
-    v60 = v85.?; /*0x75dc52*/
+    _ESI->unused_1CC[0] = v85.CapacityIncrement; /*0x75dc4f*/
+    v60 = v85.unknown_18; /*0x75dc52*/
     *(unsigned int *)_ESI->__pad_1A0 = v58; /*0x75dc56*/
     *(unsigned int *)&_ESI->__pad_1A0[4] = v59; /*0x75dc5b*/
     v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dc5e*/
-    if ( v60 && v85.? ) /*0x75dc6e*/
+    if ( v60 && v85.IsAllocated ) /*0x75dc6e*/
       RA2_OPDEL(v60); /*0x75dc71*/
     v79 = 0; /*0x75dc88*/
     v80 = 0; /*0x75dc8b*/
@@ -3963,10 +3964,10 @@ void Voxel_Section::Draw()
     *(unsigned int *)&_ESI->__pad_1B0[8] = *((unsigned int *)IntList + 4); /*0x75dd9c*/
     _ESI->WarheadTypeClass_field_0x1BC[0] = *((unsigned int *)IntList + 5); /*0x75dda2*/
     v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
-    v69 = v85.?; /*0x75dda8*/
+    v69 = v85.Items; /*0x75dda8*/
     *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
     v85.DynamicVectorClass = (unsigned int)(void *)&VectorClass_int_vftable; /*0x75ddb1*/
-    if ( v69 && v85.? ) /*0x75ddc1*/
+    if ( v69 && v85.IsAllocated ) /*0x75ddc1*/
       RA2_OPDEL(v69); /*0x75ddc4*/
     if ( INIClass::GetString( /*0x75dde6*/
            (INIClass *)a2,

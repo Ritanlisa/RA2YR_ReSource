@@ -813,7 +813,7 @@ LABEL_36:
 
 // 0x4DE620
 namespace gamemd {
-void ObjectClass::ObjectClass_IsHeightAboveThreshold_0()
+int ObjectClass::ObjectClass_IsHeightAboveThreshold_0()
 {
 
   return ((ObjectClass *)((IUnknown *)this))->IsHeightAboveThreshold();
@@ -951,7 +951,7 @@ LABEL_16:
 
 // 0x5228B0
 namespace gamemd {
-void ObjectClass::ObjectClass_GetTypeVt40_0()
+int ObjectClass::ObjectClass_GetTypeVt40_0()
 {
 
   return TechnoClass::GetTypeVt40((TechnoClass *)this);
@@ -960,7 +960,7 @@ void ObjectClass::ObjectClass_GetTypeVt40_0()
 }
 // 0x5228C0
 namespace gamemd {
-void ObjectClass::ObjectClass_GetTypeVt41_0()
+int ObjectClass::ObjectClass_GetTypeVt41_0()
 {
 
   return ObjectClass::GetTypeVt41((ObjectClass *)this);
@@ -1576,7 +1576,7 @@ LABEL_10:
   if ( (ObjectClass *)MapClass::GetScrollMode( (MapClass *)&stru_87F5F0.__pad_58[416]) == this ) /*0x5f52fd*/
     ((MapClass *)((int)&stru_87F5F0.__pad_58[416]))->SetScrollMode(0); /*0x5f5306*/
   LOBYTE(v5) = v7; /*0x5f530b*/
-  AbstractClass::AnnounceExpiredPointer(this, v5); /*0x5f5311*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, v5); /*0x5f5311*/
   return (AbstractClass * *)result; /*0x5f5316*/
 
 }

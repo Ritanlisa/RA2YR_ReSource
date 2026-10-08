@@ -367,7 +367,7 @@ int Scenario::ReadTeams()
                       && (*(uint8_t (**)(int))(*(unsigned int *)v29 + 1020))(v29)
                       && *(unsigned int *)(v29 + 1408) )
                     {
-                      Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)(v29 + 904)))->GetValue((int)(&v76)));
+                      Value = (unsigned int *)(((ProgressTimer *)((ProgressTimer *)(v29 + 904)))->GetValue(&v76));
                       v53 = *(unsigned int *)(v29 + 1408); /*0x44fdfd*/
                       v54 = ((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F; /*0x44fe09*/
                       if ( v53 ) /*0x44fe0e*/

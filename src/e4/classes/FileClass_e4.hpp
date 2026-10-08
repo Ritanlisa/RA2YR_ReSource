@@ -10,7 +10,7 @@ namespace gamemd {
 struct FileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int BufferedWriter;
+    unsigned int BufferedWriter_slot;
     unsigned int FileName;
     unsigned int FileNameAllocated;
     unsigned int FilePointer;
@@ -19,6 +19,7 @@ struct FileClass {
     unsigned int u32_58;
 
 // --- flat members (END) ---
+    static int BufferedWriter(FileClass *pThis, char *lpBuffer, DWORD nNumberOfBytesToWrite);  // G57w19k2 raw thiscall static-form supply (member BufferedWriter -> BufferedWriter_slot)
     char Stub(int a1);
     int Close();
     int GetState();

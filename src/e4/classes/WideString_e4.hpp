@@ -22,6 +22,8 @@ struct WideString {
     unsigned int u32_468;  // 0x468
     unsigned int u32_478;  // 0x478
 // --- flat members (END) ---
+    wchar_t * Trim();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
+    int Hash();  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     int WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScore * aP3, int a5);  // 0x5D4B20
     AbstractClass * * Replace(CampaignScore * aP1, wchar_t * String);  // 0x7B73F0
     static int Trim(wchar_t * Source);  // 0x727D60

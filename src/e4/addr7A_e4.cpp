@@ -1095,7 +1095,7 @@ Coord * * E4Recv_7A2830::sub_7A2830()
 }
 // 0x7A29E0
 namespace gamemd {
-void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+int BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
   wchar_t *StringCSF; // eax
@@ -1445,7 +1445,7 @@ return (*((int (**)(DSurface *, unsigned int *, int, unsigned int *, unsigned in
 }
 // 0x7AF6C0
 namespace gamemd {
-void WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
+int WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   unsigned int v4; // ebp
   int result; // eax

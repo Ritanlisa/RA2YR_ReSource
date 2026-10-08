@@ -1012,7 +1012,7 @@ int InitializeAudioOcclusion(IUnknown * aP0, unsigned int *a1, unsigned int *a2)
 }
 // 0x757120
 namespace gamemd {
-void RenderVoxels(void * a1, void * a2, void * a3, void * a4)
+char RenderVoxels(void * a1, void * a2, void * a3, void * a4)
 {
   int *v4; // ecx
   unsigned int v5; // esi
@@ -1168,7 +1168,7 @@ void RenderVoxels(void * a1, void * a2, void * a3, void * a4)
 }
 // 0x757360
 namespace gamemd {
-void ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
+char ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
 {
   unsigned int v4; // ecx
   unsigned int v5; // esi
@@ -1322,7 +1322,7 @@ void ProcessVoxelDepthSamples(unsigned int a1, int a2, int a3, unsigned int a4)
 }
 // 0x757980
 namespace gamemd {
-void ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
+char ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
 {
   unsigned int v6; // esi
   unsigned short *v7; // eax
@@ -1485,7 +1485,7 @@ void ProcessVoxelColorScanline(unsigned int a1, int a2, int a3, int a4, int a5)
 }
 // 0x757BF0
 namespace gamemd {
-void VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
+char VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
 {
   unsigned int v5; // esi
   unsigned short *v6; // eax
@@ -1653,7 +1653,7 @@ void VoxelDrawScanline(unsigned int a1, int a2, int a3, int a4)
 }
 // 0x7581F0
 namespace gamemd {
-void ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
+char ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
 {
   int *v4; // ecx
   unsigned int v5; // esi
@@ -1809,7 +1809,7 @@ void ProcessVoxelColorSamples(int * a1, int a2, int a3, int * a4)
 }
 // 0x758430
 namespace gamemd {
-void ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
+char ProcessVoxelScanSamples(unsigned int a1, int a2, int a3, unsigned int a4)
 {
   unsigned int v4; // ecx
   unsigned int v5; // esi
@@ -2986,7 +2986,7 @@ int sub_753B40()
 
 // 0x753BF0
 namespace gamemd {
-void sub_753BF0(char a1, char a2, int a3, int a4, char a5, char a6, char a7, char a8)
+char * sub_753BF0(char a1, char a2, int a3, int a4, char a5, char a6, char a7, char a8)
 {
   unsigned short *v8; // esi
   char *result; // eax

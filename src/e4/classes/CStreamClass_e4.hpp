@@ -35,11 +35,15 @@ struct CStreamClass {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int IsEmpty;
-    void* AddRef;  // 0x0 (no offset truth)
-    void* QueryInterface;  // 0x0 (no offset truth)
-    void* Release;  // 0x0 (no offset truth)
+    unsigned int IsEmpty_slot;
+    void* AddRef_slot;  // 0x0 (no offset truth)
+    void* QueryInterface_slot;  // 0x0 (no offset truth)
+    void* Release_slot;  // 0x0 (no offset truth)
 // --- flat members (END) ---
+    static LONG Release(CStreamClass *pThis);  // G57w19k2 raw thiscall static-form supply (member Release -> Release_slot)
+    static int QueryInterface(CStreamClass *pThis, const void *a2, unsigned int *a3);  // G57w19k2 raw thiscall static-form supply (member QueryInterface -> QueryInterface_slot)
+    static BOOL IsEmpty(CStreamClass *pThis, int a2);  // G57w19k2 raw thiscall static-form supply (member IsEmpty -> IsEmpty_slot)
+    static LONG AddRef(CStreamClass *pThis);  // G57w19k2 raw thiscall static-form supply (member AddRef -> AddRef_slot)
     CStreamClass * ddtor(int a2, char a3);
     LONG IStreamAddRef(int a1);
     LONG IStreamRelease(int a1);

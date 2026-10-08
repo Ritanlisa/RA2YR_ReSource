@@ -68,8 +68,8 @@ int * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, 
   char v35[12]; // [esp+40h] [ebp-Ch] BYREF
 
   TextRenderer::GetInstance(); /*0x4b96c5*/
-  swprintf(&word_8A0870, (const size_t)&aSD, Format, a2); /*0x4b96dc*/
-  swprintf(&word_8A08C0, (const size_t)&aSD, Format, a1); /*0x4b96ed*/
+  _swprintf(&word_8A0870, (const wchar_t *)&aSD, Format, a2); /*0x4b96dc*/
+  _swprintf(&word_8A08C0, (const wchar_t *)&aSD, Format, a1); /*0x4b96ed*/
   if ( a6 ) /*0x4b96f7*/
   {
     v11 = *a3 - Text::MeasureWidth((int)&word_8A0870, 0) / 2; /*0x4b971b*/
@@ -277,7 +277,7 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
 
   if ( BufferCount ) /*0x4a60ec*/
   {
-    vswprintf(Buffer, BufferCount, &aP8, v12); /*0x4a60fc*/
+    vswprintf(Buffer, BufferCount, (const wchar_t *)&aP8, v12); /*0x4a60fc*/
     v9 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
     *(unsigned int *)aP0 = *v9; /*0x4a614e*/
     aP0[1] = (unsigned int *)(v9[1]); /*0x4a6153*/

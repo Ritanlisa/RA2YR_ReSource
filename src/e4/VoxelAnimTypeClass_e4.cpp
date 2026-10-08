@@ -444,7 +444,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba3c*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba43*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_VoxelAnimTypeClass); /*0x74ba4a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,(gamemd::AbstractClass *)(1)); /*0x74ba51*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this,1); /*0x74ba51*/
   v6 = (gamemd::VoxelAnimTypeClass *)(this); /*0x74ba66*/
 v3 = (*(int (**)(int *, VoxelAnimTypeClass **))(dword_B0F670+ 16))( /*0x74ba6a*/ &dword_B0F670, (VoxelAnimTypeClass **)((int *)((int *)((int *)(&v6)))));
 

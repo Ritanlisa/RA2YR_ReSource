@@ -13,9 +13,10 @@ struct EventQueue {
     unsigned int q018;  // 0x18
     unsigned int q024;  // 0x24
     unsigned int q034;  // 0x34
-    unsigned int CheckPosition;
+    unsigned int CheckPosition_slot;
     unsigned int u32_4;
 // --- flat members (END) ---
+    static int CheckPosition(EventQueue *pThis);  // G57w19k2 raw thiscall static-form supply (member CheckPosition -> CheckPosition_slot)
     __int16 Check();
     __int16 Process();
     short Read();

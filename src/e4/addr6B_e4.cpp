@@ -1532,7 +1532,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
 }
 // 0x6B59A0
 namespace gamemd {
-void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
+char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
 {
   unsigned int *v4; // ebp
   int v6; // edi
@@ -1683,7 +1683,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
 }
 // 0x6B5C90
 namespace gamemd {
-void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
+int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
 {
   unsigned int *v4; // ebp
   int v5; // kr00_4

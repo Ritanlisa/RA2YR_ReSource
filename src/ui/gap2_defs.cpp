@@ -4,6 +4,10 @@
 #include "object/foot.hpp"
 #ifdef GAMEMD_TREE_UNIVERSE
 namespace gamemd {
+extern unsigned int dword_A8022C;  // G57w19k3 data: 0xA8022C HouseClass Array Items
+extern unsigned int dword_A80238;  // G57w19k3 data: 0xA80238 HouseClass Array Count
+extern unsigned int dword_820334;  // G57w19k3 data: 0x820334
+extern unsigned int dword_820324;  // G57w19k3 data: 0x820324
 using ra2::game::AbstractClass;
 using ra2::game::FootClass;
 }
@@ -921,10 +925,10 @@ int TauntCommandClass::Do(int a1) {
           PlayTauntClass(v6); /*0x536438*/
           v7 = 0; /*0x536442*/
           v21 = 0; /*0x536446*/
-          nextArrayIndex = stru_A80220.?; /*0x53644b*/
+          nextArrayIndex = dword_A80238; /*0x53644b*/
           for ( i = 0; v7 < nextArrayIndex; i = v7 ) /*0x536453*/
           {
-            v8 = *((unsigned int *)stru_A80220.? + v7); /*0x536460*/
+            v8 = *((unsigned int *)dword_A8022C + v7); /*0x536460*/
             if ( v8 ) /*0x536465*/
             {
                 if ( ((unsigned char *)&byte_A8D108)[v7] ) /*0x53647c*/
@@ -4006,14 +4010,14 @@ int SidebarClass::Init() {
       if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x6a5587*/
       {
         v13 = 0; /*0x6a5595*/
-        if ( stru_A80220.? <= 0 ) /*0x6a5599*/
+        if ( dword_A80238 <= 0 ) /*0x6a5599*/
         {
   LABEL_17:
           v2 = 0; /*0x6a55d9*/
         }
         else
         {
-          vtable3 = (int *)stru_A80220.?; /*0x6a559b*/
+          vtable3 = (int *)dword_A8022C; /*0x6a559b*/
           while ( 1 ) /*0x6a55a5*/
           {
             v2 = *vtable3; /*0x6a55a5*/
@@ -4024,7 +4028,7 @@ int SidebarClass::Init() {
             }
             ++v13; /*0x6a55cf*/
             ++vtable3; /*0x6a55d0*/
-            if ( v13 >= stru_A80220.? ) /*0x6a55d5*/
+            if ( v13 >= dword_A80238 ) /*0x6a55d5*/
               goto LABEL_17; /*0x6a55d5*/
           }
         }
@@ -4098,9 +4102,9 @@ int SidebarClass::Init() {
           *((unsigned int *)this + 5444) = v25; /*0x6a57be*/
           v26 = v25; /*0x6a57ca*/
           v27 = 0; /*0x6a57cc*/
-          if ( stru_A80220.? > 0 ) /*0x6a57d0*/
+          if ( dword_A80238 > 0 ) /*0x6a57d0*/
           {
-            v28 = (int *)stru_A80220.?; /*0x6a57d2*/
+            v28 = (int *)dword_A8022C; /*0x6a57d2*/
             do /*0x6a5814*/
             {
               v2 = *v28; /*0x6a57dc*/
@@ -4116,7 +4120,7 @@ int SidebarClass::Init() {
               ++v27; /*0x6a580e*/
               ++v28; /*0x6a580f*/
             }
-            while ( v27 < stru_A80220.? ); /*0x6a5814*/
+            while ( v27 < dword_A80238 ); /*0x6a5814*/
           }
           v2 = 0; /*0x6a5818*/
   LABEL_44:

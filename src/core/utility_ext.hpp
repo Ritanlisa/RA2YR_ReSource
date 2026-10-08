@@ -2061,6 +2061,7 @@ public:
 
     virtual void Constructor(); // 0x42DC50
     unsigned int * Constructor(int a2, int a3);  // 0x42DC50 G42.33 b3 supplied-body sync (2 参形)
+    unsigned int * Constructor(int a2);  // G57w19k2 C2661 supply
 
 
     int Items;  // G42.39 data supply

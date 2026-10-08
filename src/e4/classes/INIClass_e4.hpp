@@ -52,17 +52,18 @@ struct INIClass {
     static unsigned int LookupEnum(...);  // w18j3 C2597 static-call supply (w16g4 convention)
 
 // --- flat members (END) ---
+    static int ReadInt(void *aP0, void *a2, void *a3, int a4);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     int ReadCoord(double *a1, double a2, unsigned __int8 *a3, unsigned __int8 *a4, int a5, int aP2, int aP1, int aP3);
     static ObjectClass * * BinarySearchSection(INIClass * aP1, void *a2);  // G57w11: +static raw 0x00526810 __thiscall receiver-first (sibling G57w10-S form)
     static int GetKeyCount(INIClass * aP1, void *a2);  // [w16g2] static receiver-first per raw __thiscall 0x526960 (INIClass* this, u8* section)
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(uint8_t *aP1, uint8_t *a2, int a4);
     static int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2, void *a3);  // [w16g2] static receiver-first per raw __thiscall 0x526CC0 (INIClass* this, u8* section, int index)
-    int ReadInt(String *a2, String *a3, int a4);
+    int ReadInt(void *a2, void *a3, int a4);  // W19K4: widen to void* per raw 3-arg thiscall (call sites pass char**/String*)
     int WOLobby_Play(const char *a1, const char *a2, int a3);
     int sub_44FE60();
     INIClass();
-    static unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count);
+    static unsigned int GetString(void *a2, void *a3, void *a4, void *a5, int Count);  // W19K4: widen to void* per raw 0x528A10 5-arg thiscall
     void SetGameOptionsPing();
     static int ClearSection(INIClass * aP1, int a2, unsigned __int8 *a3);  // G57w10-S raw 0x005257C0 (was C2597 interim stub)
     static int GetBase64Data(INIClass * aP1, char *a2, int a3, size_t Size);  // G57w10-S raw 0x00526FB0 (was C2597 interim stub)
@@ -70,7 +71,7 @@ struct INIClass {
     static int GetStringEx(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, wchar_t *String, size_t Count);  // G57w10-S raw 0x00529160 (was C2597 interim stub)
     static int LoadFile(INIClass * aP1, int a2, char a3);  // G57w10-S raw 0x00525A60 (was C2597 interim stub)
     static char ReadBase64Data(INIClass * aP1, unsigned __int8 *Block, int a3, signed int Size);  // G57w10-S raw 0x00526E80 (was C2597 interim stub)
-    static int ReadBool_Overwrite(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, char a4);  // G57w10-S raw 0x005295F0 (was C2597 interim stub)
+    static int ReadBool_Overwrite(void * aP1, unsigned __int8 *a2, unsigned __int8 *a3, char a4);  // G57w10-S raw 0x005295F0 (was C2597 interim stub)
     static int ReadDouble_Overwrite(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, double a4);  // G57w10-S raw 0x005283D0 (was C2597 interim stub)
     static int ReadRGBColorList(INIClass * aP1, int a2, unsigned __int8 *a3, unsigned __int8 *a4, void **a5, void *a6, int a7, __int16 a8, int a9, int a10, int a11);  // G57w10-S raw 0x00476B20 (was C2597 interim stub)
     static int ResetSection(INIClass * aP1);  // G57w10-S raw 0x00526B00 (was C2597 interim stub)
@@ -88,7 +89,7 @@ static int WriteToString(INIClass * aP1, int a2);  // G57w10-S raw 0x00526470 (w
     char ** GetStringByIndexEx(char **a2, char **a3, int a4);  // 0x526d90
     static int SetInt(INIClass * aP1, unsigned __int8 *Block, char *a3, int a4, int a5);  // G57w10-S raw 0x005275C0 (was C2597 interim stub)
     int ReadString(char **aP1, char **aP2, char **aP3, int a5);  // 0x528c00
-    static int ReadInt_Overwrite(INIClass * aP1, unsigned __int8 *a2, unsigned __int8 *a3, int a4);  // G57w10-S raw 0x005276D0 (was C2597 interim stub)
+    static int ReadInt_Overwrite(void * aP1, unsigned __int8 *a2, unsigned __int8 *a3, int a4);  // G57w10-S raw 0x005276D0 (was C2597 interim stub)
     unsigned int * GetCoordPair(unsigned int *a2, char *Source, char **a4, unsigned int *a5);  // 0x529a30
     int ReadDifficultyModifiers(); // N_fix R5 supply (cache truth)
     int FindKey(char **a2); // N_fix R5 supply (cache truth)

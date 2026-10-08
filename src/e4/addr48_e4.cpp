@@ -1335,7 +1335,7 @@ AbstractClass * * Main_Game_Frame()
 }
 // 0x48CCC0
 namespace gamemd {
-void MainGame()
+char MainGame()
 {
   int inited; // eax
   wchar_t *StringCSF; // eax

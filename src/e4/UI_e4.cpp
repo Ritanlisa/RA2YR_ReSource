@@ -1045,8 +1045,8 @@ LRESULT UI_Draw(HWND hWnd, wchar_t *Source, size_t Count, LPARAM lParam)
 
   memset( (void *)(&word_AC029C), 0, 0x400u); /*0x5e29b5*/
   wcsncpy( (wchar_t *)(&word_AC029C), (const wchar_t *)(Source), Count); /*0x5e29c2*/
-  v5 = (wchar_t *)(wcschr(&word_AC029C, 0xDu)); /*0x5e29ce*/
-  if ( v5 || (v5 = (wchar_t *)(wcschr(&word_AC029C, 0xAu))) != 0 ) /*0x5e29eb*/
+  v5 = (wchar_t *)(wcschr((const wchar_t *)&word_AC029C, 0xDu)); /*0x5e29ce*/
+  if ( v5 || (v5 = (wchar_t *)(wcschr((const wchar_t *)&word_AC029C, 0xAu))) != 0 ) /*0x5e29eb*/
     *v5 = 0; /*0x5e29ed*/
   v11 = SendMessageA( (HWND)(hWnd), 0x49Du, 0, 1); /*0x5e2a0e*/
   v6 = SendMessageA( (HWND)(hWnd), 0x18Eu, 0, 0); /*0x5e2a14*/

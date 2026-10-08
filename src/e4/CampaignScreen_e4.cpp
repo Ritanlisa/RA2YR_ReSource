@@ -132,7 +132,7 @@ int CampaignScreen_Init(void * a1, void * hWnd, void * wParam, void * a4)
     SendMessageA( (HWND)(v8), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)&word_89E0A4))); /*0x470de1*/
     v46 = dword_89DFC0; /*0x470deb*/
     StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)(aGuiCampaignlab), 0,(const char *)(g_Str_File_CampScor_cpp), 1792)); /*0x470dfb*/
-    swprintf(Buffer, (const size_t)StringCSF, v46); /*0x470e06*/
+    _swprintf(Buffer, (const wchar_t *)StringCSF, v46); /*0x470e06*/
     v10 = GetDlgItem((HWND)self, 1845); /*0x470e14*/
     SendMessageA( (HWND)(v10), 0x4B2u, 0, (LPARAM)((LPARAM)((LPARAM)Buffer))); /*0x470e23*/
     if ( dword_89E008 ) /*0x470e2c*/

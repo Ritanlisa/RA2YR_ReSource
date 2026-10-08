@@ -1285,7 +1285,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
   wchar_t *Stringa; // [esp+18h] [ebp+4h]
 
   v2 = (wchar_t *)(aP0);
-  for ( i = wcschr(aP0, 0x3Du); i; i = wcschr(v2, 0x3Du) ) /*0x6ca32c*/
+  for ( i = wcschr((const wchar_t *)aP0, 0x3Du); i; i = wcschr(v2, 0x3Du) ) /*0x6ca32c*/
   {
     v4 = (const wchar_t *)(v2); /*0x6ca332*/
     *i = 0; /*0x6ca336*/

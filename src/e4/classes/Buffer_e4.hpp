@@ -40,6 +40,7 @@ struct Buffer {
     unsigned int m_C;  // G42.33 b3 flat-carrier vocab
     unsigned int m_8;  // G42.33 b3 flat-carrier vocab
 // --- flat members (END) ---
+    unsigned int * Init(int a2);  // G57w19k2 C2661 supply (raw thiscall form; arity per verbatim raw call sites)
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2, int a3, int aP1);
     int * RotateBufferCrypto(int * a2, int a3);
     int AllocateCodecFrameBuffers();
