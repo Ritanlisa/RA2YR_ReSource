@@ -6570,7 +6570,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
     v6 = this->Type; /*0x736a8e*/
     if ( (((unsigned int)(((unsigned int *)v6)[0]) >> 8) & 0xFF) ) /*0x736a95*/
     {
-      (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(((unsigned __int8)((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v15) >> 7) + 1) >> 1) /*0x736acb*/
+      (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(((unsigned __int8)((unsigned int)((*(unsigned int *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v15) >> 7) + 1) >> 1); /*0x736acb*/
                    + 8) << 8) & 0xFFFF);
       FacingClass::Update((char *)((unsigned int *)this)[0], &v14); /*0x736ad0*/
       goto LABEL_38; /*0x736ad0*/

@@ -435,7 +435,7 @@ int DropListClass::Open(char a2, _DWORD *a3, char *a4) {
         IDA_LOBYTE(this->DropListClass_field_0x48) = 1; /*0x4b5148*/
       }
     }
-    (v12) = ((v12) & ~0xFFFF) | ((unsigned int)((unsigned short)a4) & 0xFFFF) /*0x4b514d*/
+    (v12) = ((v12) & ~0xFFFF) | ((unsigned int)((unsigned short)a4) & 0xFFFF); /*0x4b514d*/
     if ( a4 == (char *)this + 176 ) /*0x4b5159*/
     {
       DropListClass_field_0x38 = this->DropListClass_field_0x38; /*0x4b5160*/
@@ -917,7 +917,7 @@ int TauntCommandClass::Do(int a1) {
           v4 = WideString::Hash((wchar_t *)&stru_A8D600.q010); /*0x536413*/
           TauntCommandClass_field_00 = this->TauntCommandClass_field_00; /*0x53641e*/
           v24 = v4; /*0x536421*/
-          (v6) = ((v6) & ~0xFF) | ((unsigned int)((16 * *(unsigned char *)(*(unsigned int *)dword_A8DA78 + 75)) /*0x536432*/
+          (v6) = ((v6) & ~0xFF) | ((unsigned int)((16 * *(unsigned char *)(*(unsigned int *)dword_A8DA78 + 75)); /*0x536432*/
                      ^ ((16 * *(unsigned char *)(*(unsigned int *)dword_A8DA78 + 75))
                       ^ TauntCommandClass_field_00)
                      & 0xF) & 0xFF)
@@ -1152,7 +1152,7 @@ int CheckListClass::SetItemState(int a1) {
     int v3; // eax
     char *v4; // esi
 
-    (v3) = ((v3) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 84)) & 0xFF) /*0x557a24*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 84)) & 0xFF); /*0x557a24*/
     if ( (unsigned char)v3 ) /*0x557a29*/
     {
       v4 = (char *)this + 280; /*0x557a35*/
@@ -1160,7 +1160,7 @@ int CheckListClass::SetItemState(int a1) {
       if ( v3 ) /*0x557a46*/
       {
         *((unsigned int *)this + 92) = (*(int (__thiscall **)(char *))(*(unsigned int *)v4 + 144))((char *)this + 280); /*0x557a52*/
-        (v3) = ((v3) & ~0xFF) | ((unsigned int)((*(char (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this)) & 0xFF) /*0x557a5c*/
+        (v3) = ((v3) & ~0xFF) | ((unsigned int)((*(char (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this)) & 0xFF); /*0x557a5c*/
       }
     }
     return v3; /*0x557a5f*/
@@ -1173,7 +1173,7 @@ int CheckListClass::OnKeyUp(int a1) {
     int v3; // eax
     char *v4; // esi
 
-    (v3) = ((v3) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 84)) & 0xFF) /*0x557a74*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 84)) & 0xFF); /*0x557a74*/
     if ( (unsigned char)v3 ) /*0x557a79*/
     {
       v4 = (char *)this + 280; /*0x557a85*/
@@ -1181,7 +1181,7 @@ int CheckListClass::OnKeyUp(int a1) {
       if ( v3 ) /*0x557a96*/
       {
         *((unsigned int *)this + 92) = (*(int (__thiscall **)(char *))(*(unsigned int *)v4 + 144))((char *)this + 280); /*0x557aa2*/
-        (v3) = ((v3) & ~0xFF) | ((unsigned int)((*(char (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this)) & 0xFF) /*0x557aac*/
+        (v3) = ((v3) & ~0xFF) | ((unsigned int)((*(char (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this)) & 0xFF); /*0x557aac*/
       }
     }
     return v3; /*0x557aaf*/
@@ -3296,7 +3296,7 @@ int PowerClass::getDrain() {
       v6 = 8; /*0x64041b*/
       v7 = dword_B0B504; /*0x640423*/
       HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 999); /*0x640427*/
-      (v1) = ((v1) & ~0xFF) | ((unsigned int)(CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v3)) & 0xFF) /*0x640437*/
+      (v1) = ((v1) & ~0xFF) | ((unsigned int)(CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v3)) & 0xFF); /*0x640437*/
     }
     return v1; /*0x64043d*/
 }
@@ -3641,11 +3641,11 @@ int SidebarClass::ReadButtonList() {
         }
         result = globalHelper_0CFDB0(v4); /*0x67470b*/
       }
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x674712*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x674712*/
     }
     else
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x67471f*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x67471f*/
     }
     return result; /*0x674711*/
 }
@@ -3918,7 +3918,7 @@ int SidebarClass::Init() {
     SidebarClass::CreateScrollButtons(v30); /*0x6a5315*/
     SidebarClass::InitPositions(v31); /*0x6a531c*/
     SidebarClass::CalcBounds(0); /*0x6a5326*/
-    (v2) = ((v2) & ~0xFF) | ((unsigned int)(*(unsigned int *)((char *)&stru_A8EB00 + 391)) & 0xFF) /*0x6a532b*/
+    (v2) = ((v2) & ~0xFF) | ((unsigned int)(*(unsigned int *)((char *)&stru_A8EB00 + 391)) & 0xFF); /*0x6a532b*/
     if ( !*(unsigned int *)((char *)&stru_A8EB00 + 391) ) /*0x6a5332*/
     {
       dword_B0B3B0 = dword_B0B4E0; /*0x6a534b*/
@@ -4006,7 +4006,7 @@ int SidebarClass::Init() {
         (*((void (__thiscall **)(SidebarClass *, int))this->SidebarClass_field_0x0 + 54))(this, 1); /*0x6a556c*/
       }
       *((unsigned int *)this + 5444) = 0; /*0x6a5574*/
-      (v2) = ((v2) & ~0xFF) | ((unsigned int)(dword_A8B238) & 0xFF) /*0x6a557a*/
+      (v2) = ((v2) & ~0xFF) | ((unsigned int)(dword_A8B238) & 0xFF); /*0x6a557a*/
       if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x6a5587*/
       {
         v13 = 0; /*0x6a5595*/
@@ -4143,13 +4143,13 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
     int v8; // eax
     int v10; // [esp+14h] [ebp+4h]
 
-    (v3) = ((v3) & ~0xFF) | ((unsigned int)(*(unsigned char *)(this + 21413)) & 0xFF) /*0x6a5f26*/
+    (v3) = ((v3) & ~0xFF) | ((unsigned int)(*(unsigned char *)(this + 21413)) & 0xFF); /*0x6a5f26*/
     if ( (unsigned char)v3 ) /*0x6a5f2e*/
     {
       if ( a2 ) /*0x6a5f3a*/
       {
         v10 = (*(int (__thiscall **)(unsigned int *))(*a2 + 132))(a2); /*0x6a5f4b*/
-        (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A83D4C) & 0xFF) /*0x6a5f4f*/
+        (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A83D4C) & 0xFF); /*0x6a5f4f*/
         if ( dword_A83D4C ) /*0x6a5f56*/
         {
           v5 = (*(int (__thiscall **)(unsigned int *))(*a2 + 44))(a2); /*0x6a5f64*/
@@ -4182,24 +4182,24 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
           v7 = *(unsigned int *)(this + 21404); /*0x6a5fd3*/
           if ( v3 == v7 ) /*0x6a5fdb*/
           {
-            (v3) = ((v3) & ~0xFF) | ((unsigned int)(HouseClass::ShouldDisableCameo(dword_A83D4C, v10)) & 0xFF) /*0x6a5fe8*/
+            (v3) = ((v3) & ~0xFF) | ((unsigned int)(HouseClass::ShouldDisableCameo(dword_A83D4C, v10)) & 0xFF); /*0x6a5fe8*/
             if ( (unsigned char)v3 ) /*0x6a5fef*/
             {
               v8 = *(unsigned int *)(this + 21404); /*0x6a5ff5*/
               *(unsigned char *)(this + 21414) = 1; /*0x6a5ffb*/
               *(unsigned char *)(this + 3988 * v8 + 5504) = 1; /*0x6a6015*/
               MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x6a601c*/
-              (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84) & 0xFF) /*0x6a6021*/
+              (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84) & 0xFF); /*0x6a6021*/
               if ( *(unsigned int *)(this + 21408) <= (int)dword_A8ED84 ) /*0x6a602e*/
               {
-                (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84 + 2) & 0xFF) /*0x6a6030*/
+                (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84 + 2) & 0xFF); /*0x6a6030*/
                 *(unsigned int *)(this + 21408) = dword_A8ED84 + 1; /*0x6a6033*/
               }
             }
           }
           else if ( v5 == 6 ) /*0x6a6043*/
           {
-            (v3) = ((v3) & ~0xFF) | ((unsigned int)(*(unsigned char *)(a2[328] + 5835)) & 0xFF) /*0x6a604b*/
+            (v3) = ((v3) & ~0xFF) | ((unsigned int)(*(unsigned char *)(a2[328] + 5835)) & 0xFF); /*0x6a604b*/
             if ( (unsigned char)v3 ) /*0x6a6053*/
             {
               if ( v7 == 3 ) /*0x6a6058*/
@@ -4207,10 +4207,10 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
                 *(unsigned char *)(this + 21414) = 1; /*0x6a605a*/
                 *(unsigned char *)(this + 17468) = 1; /*0x6a6067*/
                 MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x6a606d*/
-                (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84) & 0xFF) /*0x6a6072*/
+                (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84) & 0xFF); /*0x6a6072*/
                 if ( *(unsigned int *)(this + 21408) <= (int)dword_A8ED84 ) /*0x6a607f*/
                 {
-                  (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84 + 2) & 0xFF) /*0x6a6081*/
+                  (v3) = ((v3) & ~0xFF) | ((unsigned int)((unsigned char)dword_A8ED84 + 2) & 0xFF); /*0x6a6081*/
                   *(unsigned int *)(this + 21408) = dword_A8ED84 + 1; /*0x6a6084*/
                 }
               }
@@ -5500,7 +5500,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
         v13 = a2; /*0x6aada1*/
         if ( (a2 & 8) != 0 ) /*0x6aadaa*/
         {
-          (v13) = ((v13) & ~0xFF) | ((unsigned int)(a2 & 0xF7) & 0xFF) /*0x6aadac*/
+          (v13) = ((v13) & ~0xFF) | ((unsigned int)(a2 & 0xF7) & 0xFF); /*0x6aadac*/
           a2 = v13; /*0x6aadae*/
         }
         if ( (v13 & 0x10) != 0 ) /*0x6aadb7*/
@@ -5964,14 +5964,14 @@ int SliderClass::OnClick(int a1) {
     else
       SliderClass_field_0x14 = this->SliderClass_field_0x18; /*0x6b1df5*/
     v5 = (double)this->SliderClass_field_0x30; /*0x6b1df8*/
-    (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v5)) & 0xFFFF) /*0x6b1e0a*/
+    (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v5)) & 0xFFFF); /*0x6b1e0a*/
     v7 = v6; /*0x6b1e12*/
     if ( v6 <= 4 ) /*0x6b1e14*/
       v7 = 4; /*0x6b1e16*/
     *((unsigned int *)this + 19) = v7; /*0x6b1e1e*/
     v9 = Math::RoundToInt(v5); /*0x6b1e25*/
     IDA_WORD2(result) = (((unsigned int)(v9) >> 16) & 0xFFFF); /*0x6b1e25*/
-    (result) = ((result) & ~0xFFFF) | ((unsigned int)(v9) & 0xFFFF) /*0x6b1e25*/
+    (result) = ((result) & ~0xFFFF) | ((unsigned int)(v9) & 0xFFFF); /*0x6b1e25*/
     if ( (int)result >= SliderClass_field_0x14 - v7 ) /*0x6b1e36*/
       *((unsigned int *)this + 20) = SliderClass_field_0x14 - v7; /*0x6b1e3f*/
     else
@@ -6002,12 +6002,12 @@ int SliderClass::Draw(int a1) {
     else
       SliderClass_field_0x14 = this->SliderClass_field_0x18; /*0x6b1e7f*/
     SliderClass_field_0x30 = (double)this->SliderClass_field_0x30; /*0x6b1e82*/
-    (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF) /*0x6b1e94*/
+    (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF); /*0x6b1e94*/
     v8 = v7; /*0x6b1e9c*/
     if ( v7 <= 4 ) /*0x6b1e9e*/
       v8 = 4; /*0x6b1ea0*/
     *((unsigned int *)this + 19) = v8; /*0x6b1ea8*/
-    (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF) /*0x6b1eaf*/
+    (v9) = ((v9) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF); /*0x6b1eaf*/
     if ( v9 >= SliderClass_field_0x14 - v8 ) /*0x6b1ebf*/
       v9 = SliderClass_field_0x14 - v8; /*0x6b1ec1*/
     *((unsigned int *)this + 20) = v9; /*0x6b1ec3*/
@@ -6143,14 +6143,14 @@ namespace gamemd {
 int SliderClass::SetRange(int a1, int a2, int a3) {
     int v4; // eax
 
-    (v4) = ((v4) & ~0xFF) | ((unsigned int)(a2) & 0xFF) /*0x6b2160*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(a2) & 0xFF); /*0x6b2160*/
     if ( (a2 & 4) != 0 ) /*0x6b2169*/
     {
       if ( a4 == *((unsigned int *)this + 15) ) /*0x6b2175*/
         (*(void (__thiscall **)(SliderClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 176))(this, 0); /*0x6b217b*/
       v4 = *((unsigned int *)this + 16); /*0x6b2181*/
       if ( a4 == v4 ) /*0x6b2187*/
-        (v4) = ((v4) & ~0xFF) | ((unsigned int)((*(char (__thiscall **)(SliderClass *, int))(*(unsigned int *)this->__pad_0 + 176))(this, 1)) & 0xFF) /*0x6b218f*/
+        (v4) = ((v4) & ~0xFF) | ((unsigned int)((*(char (__thiscall **)(SliderClass *, int))(*(unsigned int *)this->__pad_0 + 176))(this, 1)) & 0xFF); /*0x6b218f*/
     }
     return v4; /*0x6b2195*/
 }
@@ -6253,7 +6253,7 @@ int SidebarClass::GetProductionState() {
        / ((double)v17
         * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1888));
   LABEL_37:
-    (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v5 * 54.0)) & 0xFFFF) /*0x6cc048*/
+    (result) = ((result) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v5 * 54.0)) & 0xFFFF); /*0x6cc048*/
     if ( result >= 53 ) /*0x6cc056*/
       return 53; /*0x6cc05a*/
     return result; /*0x6cbfec*/
@@ -7228,7 +7228,7 @@ int CampaignScore::LoadCampaignScoreAssetsGame() {
     int result; // eax
     char *v3; // ecx
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(g_BuildingLoadQueue_Array.__pad_F70[1020]) & 0xFF) /*0x72d300*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(g_BuildingLoadQueue_Array.__pad_F70[1020]) & 0xFF); /*0x72d300*/
     if ( !g_BuildingLoadQueue_Array.__pad_F70[1020] ) /*0x72d30a*/
     {
       CampaignScore::LoadScreenAssets(this); /*0x72d30c*/
@@ -7756,7 +7756,7 @@ int WWMouseClass::updateCursorRect() {
     int v19; // [esp+20h] [ebp-14h]
     int v20[4]; // [esp+24h] [ebp-10h] BYREF
 
-    (WWMouseClass_field_0x24) = ((WWMouseClass_field_0x24) & ~0xFF) | ((unsigned int)(BSurface::CreateTripleBuffer((int)this)) & 0xFF) /*0x7b8f36*/
+    (WWMouseClass_field_0x24) = ((WWMouseClass_field_0x24) & ~0xFF) | ((unsigned int)(BSurface::CreateTripleBuffer((int)this)) & 0xFF); /*0x7b8f36*/
     if ( (unsigned char)WWMouseClass_field_0x24 ) /*0x7b8f3d*/
     {
       WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b8f43*/

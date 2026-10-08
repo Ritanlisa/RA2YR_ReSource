@@ -460,7 +460,7 @@ int FontClass::RenderText(unsigned __int16 *a2, int xLeft, int yTop, int a5, int
         IDA_LOWORD(v17.Color_field_00) = v16; /*0x4345b1*/
         IDA_BYTE2(v17.Color_field_00) = (uint8_t)(v10 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4345ba*/
         ((Color*)&v17)->Lerp(v12, (int)(uint8_t *)&stru_A80220); /*0x4345be*/
-        (v13) = ((v13) & ~0xFFFF) | ((unsigned int)((uint8_t)(IDA_BYTE2(v17.Color_field_00) >> g_BitMask_Red)) & 0xFFFF) /*0x4345ee*/
+        (v13) = ((v13) & ~0xFFFF) | ((unsigned int)((uint8_t)(IDA_BYTE2(v17.Color_field_00) >> g_BitMask_Red)) & 0xFFFF); /*0x4345ee*/
         v11 = a6; /*0x43460e*/
         *((unsigned short *)this + 18) = ((uint8_t)(IDA_LOBYTE(v17.Color_field_00) >> g_BitShift_Green) << g_BitShift_Red) /*0x434614*/
                               | (v13 << g_BitShift_Blue)
@@ -504,7 +504,7 @@ int FontRenderer::InitContext(int * a2) {
     v13 = result; /*0x434950*/
     if ( v7 | v5 ) /*0x434954*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(sub_434840((unsigned int *)this + 12, (unsigned int *)this + 12, &v10)) & 0xFF) /*0x434980*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(sub_434840((unsigned int *)this + 12, (unsigned int *)this + 12, &v10)) & 0xFF); /*0x434980*/
     }
     else
     {
@@ -1842,13 +1842,13 @@ int InputManager::ProcessEvents() {
     if ( (uint8_t)Mouse::IsButtonDown(dword_A8EC00) || (uint8_t)Mouse::IsButtonDown(dword_A8EC04) ) /*0x4e1793*/
     {
       v7 = v12; /*0x4e179c*/
-      (v7) = ((v7) & ~0xFF) | ((unsigned int)(v12 | 2) & 0xFF) /*0x4e17a0*/
+      (v7) = ((v7) & ~0xFF) | ((unsigned int)(v12 | 2) & 0xFF); /*0x4e17a0*/
       v12 = v7; /*0x4e17a2*/
     }
     if ( (uint8_t)Mouse::IsButtonDown(dword_A8EBF8) || (uint8_t)Mouse::IsButtonDown(dword_A8EBFC) ) /*0x4e17c7*/
     {
       v8 = v12; /*0x4e17d0*/
-      (v8) = ((v8) & ~0xFF) | ((unsigned int)(v12 | 4) & 0xFF) /*0x4e17d4*/
+      (v8) = ((v8) & ~0xFF) | ((unsigned int)(v12 | 4) & 0xFF); /*0x4e17d4*/
       v12 = v8; /*0x4e17d6*/
     }
     if ( v11 ) /*0x4e17e0*/
@@ -2031,18 +2031,18 @@ int Keyboard::MapKey(uint16_t a2) {
 
     if ( (a2 & 0x800) != 0 ) /*0x54f461*/
     {
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x54f464*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x54f464*/
     }
     else
     {
       result = (uint8_t)a2; /*0x54f46f*/
       if ( (uint8_t)a2 == 36 ) /*0x54f478*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(8) & 0xFF) /*0x54f47b*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(8) & 0xFF); /*0x54f47b*/
       }
       else if ( (uint8_t)a2 == 35 ) /*0x54f488*/
       {
-        (result) = ((result) & ~0xFF) | ((unsigned int)(92) & 0xFF) /*0x54f48b*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(92) & 0xFF); /*0x54f48b*/
       }
       else
       {
@@ -2062,7 +2062,7 @@ int Keyboard::MapKey(uint16_t a2) {
           this->u32_25 = 0; /*0x54f4fe*/
         if ( (a2 & 0x400) != 0 ) /*0x54f507*/
           this->u32_26 = 0; /*0x54f509*/
-        (v7) = ((v7) & ~0xFF) | ((unsigned int)(v7 != 1) & 0xFF) /*0x54f514*/
+        (v7) = ((v7) & ~0xFF) | ((unsigned int)(v7 != 1) & 0xFF); /*0x54f514*/
         return *(unsigned int *)Char & (v7 - 1); /*0x54f519*/
       }
     }
@@ -3157,13 +3157,13 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     else
       SliderClass_field_0x14 = *(unsigned int *)this->SliderClass_field_0x18; /*0x6b1c55*/
     v20 = (double)*(unsigned int *)this->SliderClass_field_0x30; /*0x6b1c58*/
-    (v21) = ((v21) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v20)) & 0xFFFF) /*0x6b1c74*/
+    (v21) = ((v21) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v20)) & 0xFFFF); /*0x6b1c74*/
     v22 = v21; /*0x6b1c7c*/
     if ( v21 <= 4 ) /*0x6b1c7e*/
       v22 = 4; /*0x6b1c80*/
     v23 = (double)*((int *)this + 13) / v20; /*0x6b1c85*/
     *((unsigned int *)this + 19) = v22; /*0x6b1c88*/
-    (v24) = ((v24) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v23)) & 0xFFFF) /*0x6b1c91*/
+    (v24) = ((v24) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v23)) & 0xFFFF); /*0x6b1c91*/
     if ( v24 >= SliderClass_field_0x14 - v22 ) /*0x6b1c9c*/
       v24 = SliderClass_field_0x14 - v22; /*0x6b1c9e*/
     *((unsigned int *)this + 20) = v24; /*0x6b1ca2*/
@@ -3171,12 +3171,12 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
       SliderClass_field_0x18 = *(unsigned int *)this->SliderClass_field_0x14; /*0x6b1ca7*/
     else
       SliderClass_field_0x18 = *(unsigned int *)this->SliderClass_field_0x18; /*0x6b1cac*/
-    (v26) = ((v26) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v23)) & 0xFFFF) /*0x6b1cbd*/
+    (v26) = ((v26) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v23)) & 0xFFFF); /*0x6b1cbd*/
     v27 = v26; /*0x6b1cc5*/
     if ( v26 <= 4 ) /*0x6b1cc7*/
       v27 = 4; /*0x6b1cc9*/
     *((unsigned int *)this + 19) = v27; /*0x6b1cd0*/
-    (v28) = ((v28) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v23)) & 0xFFFF) /*0x6b1cd3*/
+    (v28) = ((v28) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v23)) & 0xFFFF); /*0x6b1cd3*/
     if ( v28 >= SliderClass_field_0x18 - v27 ) /*0x6b1ce0*/
       v28 = SliderClass_field_0x18 - v27; /*0x6b1ce2*/
     *((unsigned int *)this + 20) = v28; /*0x6b1ce4*/
@@ -3224,12 +3224,12 @@ int SliderClass::GetValue(int a2) {
     else
       SliderClass_field_0x14 = *(unsigned int *)this->SliderClass_field_0x18; /*0x6b1d5f*/
     SliderClass_field_0x30 = (double)*(unsigned int *)this->SliderClass_field_0x30; /*0x6b1d62*/
-    (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF) /*0x6b1d74*/
+    (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF); /*0x6b1d74*/
     v6 = v5; /*0x6b1d7c*/
     if ( v5 <= 4 ) /*0x6b1d7e*/
       v6 = 4; /*0x6b1d80*/
     *((unsigned int *)this + 19) = v6; /*0x6b1d88*/
-    (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF) /*0x6b1d8f*/
+    (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(SliderClass_field_0x30)) & 0xFFFF); /*0x6b1d8f*/
     if ( v7 >= SliderClass_field_0x14 - v6 ) /*0x6b1da0*/
       v7 = SliderClass_field_0x14 - v6; /*0x6b1da2*/
     *((unsigned int *)this + 20) = v7; /*0x6b1da4*/
@@ -3286,7 +3286,7 @@ namespace gamemd {
 int Tooltip::Enable(char a2) {
     int result; // eax
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(a2) & 0xFF) /*0x7241a0*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(a2) & 0xFF); /*0x7241a0*/
     if ( *((unsigned char *)this + 12) != a2 ) /*0x7241aa*/
     {
       this->u32_C = a2; /*0x7241ae*/

@@ -732,9 +732,9 @@ unsigned int * TacticalClass::TransformPixel(unsigned int *a2, unsigned int *a3)
       v11 = *v5; /*0x6d22f7*/
       v12 = v5[1]; /*0x6d2302*/
       v13 = *((unsigned int *)v5 + 2); /*0x6d2309*/
-      (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v11)) & 0xFFFF) /*0x6d230d*/
+      (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v11)) & 0xFFFF); /*0x6d230d*/
       v7 = v6; /*0x6d2316*/
-      (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v12)) & 0xFFFF) /*0x6d2318*/
+      (v8) = ((v8) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v12)) & 0xFFFF); /*0x6d2318*/
       *a2 = v7; /*0x6d2325*/
       a2[1] = v8; /*0x6d2327*/
       a2[2] = 0; /*0x6d232c*/

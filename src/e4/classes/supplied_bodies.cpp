@@ -1211,7 +1211,7 @@ int Array::Contains(int a2)
   LABEL_6:
       result = -1; /*0x65ad77*/
     }
-    (result) = ((result) & ~0xFF) | ((unsigned int)(result != -1) & 0xFF) /*0x65ad82*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(result != -1) & 0xFF); /*0x65ad82*/
     return result; /*0x65ad84*/
 }
 } // namespace gamemd
@@ -1704,7 +1704,7 @@ int ScriptAction::ExecuteMissionCmd()
         v9[26],
         v10);
       qmemcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
-      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v15) & 0xFFFF) /*0x6ffca6*/
+      (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v15) & 0xFFFF); /*0x6ffca6*/
       (((v10) >> 16) & 0xFF) = v16; /*0x6ffca8*/
       Object_Helper_637DD0( /*0x6ffca9*/
         v9[0],
@@ -1735,7 +1735,7 @@ int ScriptAction::ExecuteMissionCmd()
         v9[25],
         v9[26],
         v10);
-      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x6ffcae*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x6ffcae*/
     }
     else
     {
@@ -1779,7 +1779,7 @@ int ScriptAction::ExecuteMissionCmd()
       ScriptAction::GetWaypointCoords((ScriptAction *)v12, v18); /*0x6ffdbb*/
       v8 = ScriptAction::GetWaypointCoords((ScriptAction *)v13, this); /*0x6ffdce*/
       Object_Init(v3, (int)v12, *(unsigned int *)v8, v8[4], (int)v11); /*0x6ffde6*/
-      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x6ffdee*/
+      (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x6ffdee*/
     }
     return result; /*0x6ffcb0*/
 }

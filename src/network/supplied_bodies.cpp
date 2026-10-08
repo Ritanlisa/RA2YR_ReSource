@@ -252,7 +252,7 @@ int IPXGlobalConnClass::GetQueueSize(unsigned short *a2, signed int a3, int *a4,
       v25 = 0; /*0x53feb9*/
       Debug::Log("Sending global ack packet to port %d\n"); /*0x53febe G57c1: IDA 0x53febe push offset aSendingGlobalA*/
       v19 = dword_A8EA0C; /*0x53fec3*/
-      (v19) = ((v19) & ~0xFF) | ((unsigned int)(this == (IPXGlobalConnClass *)dword_A8EA0C) & 0xFF) /*0x53fed3*/
+      (v19) = ((v19) & ~0xFF) | ((unsigned int)(this == (IPXGlobalConnClass *)dword_A8EA0C) & 0xFF); /*0x53fed3*/
       if ( (*(int (__thiscall **)(IPXGlobalConnClass *, short *, int, int *, int, int, int))(*(unsigned int *)&this->vtable1 /*0x53fee4*/
                                                                                              + 36))(
              this,
@@ -3430,7 +3430,7 @@ void Modem::CheckStatus()
       if ( v3 < 0 ) /*0x5f075f*/
       {
         v4 = dword_A8DAB8; /*0x5f0761*/
-        (v4) = ((v4) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF) /*0x5f0767*/
+        (v4) = ((v4) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF); /*0x5f0767*/
         dword_A8DAB8 = v4; /*0x5f076a*/
         return 1; /*0x5f0775*/
       }
@@ -3440,7 +3440,7 @@ void Modem::CheckStatus()
       Debug::Log(); /*0x5f077f*/
       NullModemClass::Negotiate((NullModemClass *)&unk_A8EA70); /*0x5f078c*/
       v6 = dword_A8DAB8; /*0x5f0791*/
-      (v6) = ((v6) & ~0xFF) | ((unsigned int)(dword_A8DAB8 & 0xFE) & 0xFF) /*0x5f0796*/
+      (v6) = ((v6) & ~0xFF) | ((unsigned int)(dword_A8DAB8 & 0xFE) & 0xFF); /*0x5f0796*/
       dword_A8DAB8 = v6; /*0x5f0798*/
     }
     AppState::CallMethod((int)AppendStringBuilderChar); /*0x5f07a7*/
@@ -3489,7 +3489,7 @@ void Modem::CheckStatus()
           Dialog_ShowMessageBox(v11, v20, 0, 0, 0, (int)v30); /*0x5f0843*/
   LABEL_21:
           v8 = dword_A8DAB8; /*0x5f0a85*/
-          (v8) = ((v8) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF) /*0x5f0a8a*/
+          (v8) = ((v8) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF); /*0x5f0a8a*/
           dword_A8DAB8 = v8; /*0x5f0a8d*/
           return 0; /*0x5f0a99*/
         }
@@ -3632,7 +3632,7 @@ void Modem::DetectAndConnect()
       if ( v3 < 0 ) /*0x5f0e2f*/
       {
         v4 = dword_A8DAB8; /*0x5f0e31*/
-        (v4) = ((v4) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF) /*0x5f0e37*/
+        (v4) = ((v4) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF); /*0x5f0e37*/
         dword_A8DAB8 = v4; /*0x5f0e3a*/
         return 1; /*0x5f0e45*/
       }
@@ -3642,7 +3642,7 @@ void Modem::DetectAndConnect()
       Debug::Log(); /*0x5f0e4f*/
       NullModemClass::Negotiate((NullModemClass *)&unk_A8EA70); /*0x5f0e5c*/
       v6 = dword_A8DAB8; /*0x5f0e61*/
-      (v6) = ((v6) & ~0xFF) | ((unsigned int)(dword_A8DAB8 & 0xFE) & 0xFF) /*0x5f0e66*/
+      (v6) = ((v6) & ~0xFF) | ((unsigned int)(dword_A8DAB8 & 0xFE) & 0xFF); /*0x5f0e66*/
       dword_A8DAB8 = v6; /*0x5f0e68*/
     }
     AppState::CallMethod((int)AppendStringBuilderChar); /*0x5f0e77*/
@@ -3691,7 +3691,7 @@ void Modem::DetectAndConnect()
           Dialog_ShowMessageBox(v10, v17, 0, 0, 0, (int)v25); /*0x5f0f13*/
   LABEL_21:
           v8 = dword_A8DAB8; /*0x5f1155*/
-          (v8) = ((v8) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF) /*0x5f115a*/
+          (v8) = ((v8) & ~0xFF) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFF); /*0x5f115a*/
           dword_A8DAB8 = v8; /*0x5f115d*/
           return 0; /*0x5f1169*/
         }
@@ -4663,7 +4663,7 @@ void NetworkEventQueueClass::WaitForResponse()
 
     memset(v5, 0, 338); /*0x664545*/
     result = Timer::GetTicks(); /*0x664551*/
-    (result) = ((result) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 24)) & 0xFF) /*0x66455a*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(*((unsigned char *)this + 24)) & 0xFF); /*0x66455a*/
     if ( (unsigned char)result ) /*0x664567*/
     {
       result = *((unsigned int *)this + 7); /*0x66456d*/

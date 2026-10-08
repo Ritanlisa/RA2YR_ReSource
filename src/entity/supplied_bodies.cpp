@@ -305,7 +305,7 @@ int AnimClass::UpdateProjectileTrajectory()
           v13 = abs32(v11[1] - v10[1]) + abs32(*v11 - *v10); /*0x423a3a*/
           if ( v13 <= *(unsigned int *)&v12[2].__pad_C[168] ) /*0x423a44*/
           {
-            (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)&v12[2].__pad_C[28])) & 0xFFFF) /*0x423a4c*/
+            (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(double *)&v12[2].__pad_C[28])) & 0xFFFF); /*0x423a4c*/
             vtable0 = firstObject->vtable1; /*0x423a51*/
             v22 = v14; /*0x423a55*/
             v20 = *(unsigned int *)&v12[2].__pad_C[164]; /*0x423a65*/
@@ -412,18 +412,18 @@ int AnimClass::ProcessPower(int *a2)
     Power::TimerProcess((int)this->AnimClass_field_0x184->__pad_0); /*0x42547b*/
     Checksummer::Add_double((Checksummer *)a2, this->AnimClass_field_0x188, *(unsigned int *)this->__pad_18C); /*0x425490*/
     Power::TimerProcess(this->AnimClass_field_0x190); /*0x42549e*/
-    (v5) = ((v5) & ~0xFF) | ((unsigned int)(this->__pad_194[0]) & 0xFF) /*0x4254a3*/
+    (v5) = ((v5) & ~0xFF) | ((unsigned int)(this->__pad_194[0]) & 0xFF); /*0x4254a3*/
     Power::FlagProcess((Power *)a2, v5); /*0x4254ac*/
     v6 = Power::TimerProcess((unsigned __int8)this->__pad_194[1]); /*0x4254bc*/
-    (v6) = ((v6) & ~0xFF) | ((unsigned int)(this->__pad_194[2]) & 0xFF) /*0x4254c1*/
+    (v6) = ((v6) & ~0xFF) | ((unsigned int)(this->__pad_194[2]) & 0xFF); /*0x4254c1*/
     Power::FlagProcess((Power *)a2, v6); /*0x4254ca*/
-    (v7) = ((v7) & ~0xFF) | ((unsigned int)(this->__pad_194[3]) & 0xFF) /*0x4254cf*/
+    (v7) = ((v7) & ~0xFF) | ((unsigned int)(this->__pad_194[3]) & 0xFF); /*0x4254cf*/
     Power::FlagProcess((Power *)a2, v7); /*0x4254d8*/
-    (v8) = ((v8) & ~0xFF) | ((unsigned int)(this->__pad_194[7]) & 0xFF) /*0x4254dd*/
+    (v8) = ((v8) & ~0xFF) | ((unsigned int)(this->__pad_194[7]) & 0xFF); /*0x4254dd*/
     v9 = Power::FlagProcess((Power *)a2, v8); /*0x4254e6*/
-    (v9) = ((v9) & ~0xFF) | ((unsigned int)(this->__pad_194[8]) & 0xFF) /*0x4254eb*/
+    (v9) = ((v9) & ~0xFF) | ((unsigned int)(this->__pad_194[8]) & 0xFF); /*0x4254eb*/
     Power::FlagProcess((Power *)a2, v9); /*0x4254f4*/
-    (v10) = ((v10) & ~0xFF) | ((unsigned int)(this->__pad_194[10]) & 0xFF) /*0x4254f9*/
+    (v10) = ((v10) & ~0xFF) | ((unsigned int)(this->__pad_194[10]) & 0xFF); /*0x4254f9*/
     return Power::FlagProcess((Power *)a2, v10); /*0x425507*/
 }
 } // namespace gamemd
@@ -452,7 +452,7 @@ int AnimClass::resetAnimation()
     v3 = *(unsigned int *)(*(unsigned int *)(v2 + 3796) + 40); /*0x449567*/
     v4 = (unsigned short *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 110))(this, &v13); /*0x449573*/
     (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v3) >> 16) & 0xFFFF) + v4[1]) & 0xFFFF) << 16) /*0x449596*/
-    (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v3 + *v4 - 1) & 0xFFFF) /*0x4495a1*/
+    (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v3 + *v4 - 1) & 0xFFFF); /*0x4495a1*/
     v15[1] = (IDA_SHIWORD(v10) << 8) + 128; /*0x4495be*/
     *(unsigned int *)v12 = v10; /*0x4495c2*/
     v15[0] = ((__int16)v10 << 8) + 128; /*0x4495cc*/
@@ -535,9 +535,9 @@ int AnimClass::setLoopCount()
  Type = (BuildingTypeClass *)(this->Type); /*0x449ae8*/
     if ( !Type->LaserFence ) /*0x449aee*/
     {
-      (v4) = ((v4) & ~0xFF) | ((unsigned int)(0) & 0xFF) /*0x449af8*/
+      (v4) = ((v4) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x449af8*/
       (v4) = ((v4) & ~(0xFFULL << 24)) | (((unsigned __int64)(unsigned int)(Type->unknown___2) & 0xFF) << 24) /*0x449afe*/
-      (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(v4) & 0xFFFF) /*0x449b05*/
+      (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(v4) & 0xFFFF); /*0x449b05*/
       ((char *)((unsigned int *)this)[0])->Set_SyncLog(&v7); /*0x449b10*/
     }
     BuildingTypeClass::IsPowered(this->Type); /*0x449b1b*/
@@ -1007,7 +1007,7 @@ int RadSiteClass::Add(int a2)
     int v4; // edi
     int v5; // eax
 
-    (v3) = ((v3) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)this->RadLevel * (double)this->RadTimeLeft / (double)this->RadDuration)) & 0xFFFF) /*0x65b541*/
+    (v3) = ((v3) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((double)this->RadLevel * (double)this->RadTimeLeft / (double)this->RadDuration)) & 0xFFFF); /*0x65b541*/
     v4 = v3; /*0x65b548*/
     ((gamemd::RadSiteClass *)(void *)(this))->Deactivate(); /*0x65b54a*/
     this->RadLevel = v4 + a2; /*0x65b556*/
@@ -1052,7 +1052,7 @@ double RadSiteClass::GetRadLevelAt(short *a2)
     v15 = v10; /*0x65b959*/
     v17 = v8 - v11; /*0x65b95d*/
     Math::Sqrt((double)v10 * (double)v10 + (double)(v8 - v11) * (double)(v8 - v11) + (double)v16 * (double)v16); /*0x65b982*/
-    (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFF) /*0x65b98a*/
+    (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFF); /*0x65b98a*/
     SpreadInLeptons = this->SpreadInLeptons; /*0x65b98f*/
     result = 0.0; /*0x65b992*/
     if ( v12 <= SpreadInLeptons ) /*0x65b99e*/
@@ -1231,7 +1231,7 @@ int RadSiteClass::Deactivate(unsigned int *a1)
                                                                                                    * (double)v31);
             v17 = Math::RoundToInt(v16); /*0x65bc65*/
             v18 = 0.0; /*0x65bc6e*/
-            (v27) = (unsigned int)(v22[18]) /*0x65bc79*/
+            (v27) = (unsigned int)(v22[18]); /*0x65bc79*/
             if ( v17 <= IDA_SLODWORD(v27) ) /*0x65bc7d*/
             {
               v26 = ((unsigned int)(v27)) - v17; /*0x65bc83*/
@@ -1327,7 +1327,7 @@ int RadSiteClass::RadSiteClass::DecreaseRadiation()
                                                                                                  * (double)v29);
           v16 = Math::RoundToInt(v15); /*0x65bdf8*/
           v17 = 0.0; /*0x65be01*/
-          (v25) = (unsigned int)(v21[18]) /*0x65be0c*/
+          (v25) = (unsigned int)(v21[18]); /*0x65be0c*/
           if ( v16 <= IDA_SLODWORD(v25) ) /*0x65be10*/
           {
             v24 = ((unsigned int)(v25)) - v16; /*0x65be16*/

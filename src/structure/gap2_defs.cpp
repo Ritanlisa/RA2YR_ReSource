@@ -327,13 +327,13 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
         v8 = this->FollowingObject; /*0x435c16*/
         if ( v8 )
         {
-          (BehaviourMode) = ((BehaviourMode) & ~0xFF) | ((unsigned int)(v8->isAliveFlag) & 0xFF) /*0x435c24*/
+          (BehaviourMode) = ((BehaviourMode) & ~0xFF) | ((unsigned int)(v8->isAliveFlag) & 0xFF); /*0x435c24*/
           if ( (unsigned char)BehaviourMode )
           {
-            (BehaviourMode) = ((BehaviourMode) & ~0xFF) | ((unsigned int)((*((int (**)(ObjectClass *))v8->vtable1 + 212))(this->FollowingObject)) & 0xFF) /*0x435c36*/
+            (BehaviourMode) = ((BehaviourMode) & ~0xFF) | ((unsigned int)((*((int (**)(ObjectClass *))v8->vtable1 + 212))(this->FollowingObject)) & 0xFF); /*0x435c36*/
             if ( (unsigned char)BehaviourMode )
             {
-              (BehaviourMode) = ((BehaviourMode) & ~0xFF) | ((unsigned int)(IDA_HIBYTE(v8[10].fallRate)) & 0xFF) /*0x435c44*/
+              (BehaviourMode) = ((BehaviourMode) & ~0xFF) | ((unsigned int)(IDA_HIBYTE(v8[10].fallRate)) & 0xFF); /*0x435c44*/
               if ( !(unsigned char)BehaviourMode )
               {
                 if ( ((int)dword_A8B230->vtable1 & 0x1000) == 0
@@ -382,7 +382,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
                     fstp st
                   }
                   Math::Sqrt(v57); /*0x435d22*/
-                  (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v3)) & 0xFFFF) /*0x435d2a*/
+                  (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v3)) & 0xFFFF); /*0x435d2a*/
                   v14 = v13; /*0x435d35*/
                   v15 = (unsigned int *)(*((int (**)(ObjectClass *, int *))this->FollowingObject->vtable1 + 18))( /*0x435d43*/
                                     this->FollowingObject,
@@ -696,7 +696,7 @@ int BuildingLightClass::SD_vt23() {
   v2 = *(&this->abstractFlags7); /*0x4361e4*/
   if ( !v2 || !*((unsigned char *)v2 + 144) ) /*0x4361f2*/
   {
-    (v44) = ((v44) & ~0xFF) | ((unsigned int)(((int (*)(int **))(*this)[62])(this)) & 0xFF) /*0x4368e5*/
+    (v44) = ((v44) & ~0xFF) | ((unsigned int)(((int (*)(int **))(*this)[62])(this)) & 0xFF); /*0x4368e5*/
     return v44; /*0x4368e5*/
   }
 }
@@ -757,7 +757,7 @@ int BuildingLightClass::CalculateDistanceIntensity() {
     (double)(*v4 - *v3) * (double)(*v4 - *v3)
   + (double)v8 * (double)v8
   + (double)(v4[1] - v3[1]) * (double)(v4[1] - v3[1]));
-  (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF) /*0x436ef7*/
+  (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x436ef7*/
   v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1932); /*0x436f03*/
   if ( v5 >= v6 ) /*0x436f0b*/
     return (v5 - v6) / ((*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1928) - v6) / 10); /*0x436f36*/
@@ -783,7 +783,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   Power::TimerProcess(this->BuildingLightClass_field_C4[1]); /*0x436fa4*/
   Power::TimerProcess(this->BuildingLightClass_field_C4[2]); /*0x436fb2*/
   Checksummer::Add_double((Checksummer *)a1, this->BuildingLightClass_field_D0, *(unsigned int *)this->__pad_D4); /*0x436fc7*/
-  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF) /*0x436fcc*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF); /*0x436fcc*/
   Power::FlagProcess((Power *)a1, v3); /*0x436fd5*/
   Power::TimerProcess(this->BehaviourMode); /*0x436fe3*/
   result = this->BuildingLightClass_field_E0; /*0x436fe8*/
@@ -815,7 +815,7 @@ int BuildingLightClass::CalculateDistanceIntensity() {
     (double)(*v4 - *v3) * (double)(*v4 - *v3)
   + (double)v8 * (double)v8
   + (double)(v4[1] - v3[1]) * (double)(v4[1] - v3[1]));
-  (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF) /*0x436ef7*/
+  (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x436ef7*/
   v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1932); /*0x436f03*/
   if ( v5 >= v6 ) /*0x436f0b*/
     return (v5 - v6) / ((*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1928) - v6) / 10); /*0x436f36*/
@@ -841,7 +841,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   Power::TimerProcess(this->BuildingLightClass_field_C4[1]); /*0x436fa4*/
   Power::TimerProcess(this->BuildingLightClass_field_C4[2]); /*0x436fb2*/
   Checksummer::Add_double((Checksummer *)a1, this->BuildingLightClass_field_D0, *(unsigned int *)this->__pad_D4); /*0x436fc7*/
-  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF) /*0x436fcc*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF); /*0x436fcc*/
   Power::FlagProcess((Power *)a1, v3); /*0x436fd5*/
   Power::TimerProcess(this->BehaviourMode); /*0x436fe3*/
   result = this->BuildingLightClass_field_E0; /*0x436fe8*/
@@ -870,7 +870,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   Power::TimerProcess(this->BuildingLightClass_field_C4[1]); /*0x436fa4*/
   Power::TimerProcess(this->BuildingLightClass_field_C4[2]); /*0x436fb2*/
   Checksummer::Add_double((Checksummer *)a1, this->BuildingLightClass_field_D0, *(unsigned int *)this->__pad_D4); /*0x436fc7*/
-  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF) /*0x436fcc*/
+  (v3) = ((v3) & ~0xFF) | ((unsigned int)(this->BuildingLightClass_field_D8) & 0xFF); /*0x436fcc*/
   Power::FlagProcess((Power *)a1, v3); /*0x436fd5*/
   Power::TimerProcess(this->BehaviourMode); /*0x436fe3*/
   result = this->BuildingLightClass_field_E0; /*0x436fe8*/
@@ -973,7 +973,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443442*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1017,7 +1017,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443568*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1030,7 +1030,7 @@ int BuildingClass::HandleFactoryCommand() {
       if ( v8 == 16 || v8 == 40 || v8 == 3 ) /*0x44363a*/
       {
         v12 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*v24 + 72))(v24, v21); /*0x44369b*/
-        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF) /*0x4436b0*/
+        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF); /*0x4436b0*/
         (v20) = ((v20) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v12[1] / 256) & 0xFFFF) << 16) /*0x4436c9*/
         *(unsigned int *)v19 = v20; /*0x4436d4*/
         BuildingClass::SetRallyPoint((int)this, v19, 1); /*0x4436d8*/
@@ -1133,7 +1133,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443442*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1177,7 +1177,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443568*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1190,7 +1190,7 @@ int BuildingClass::HandleFactoryCommand() {
       if ( v8 == 16 || v8 == 40 || v8 == 3 ) /*0x44363a*/
       {
         v12 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*v24 + 72))(v24, v21); /*0x44369b*/
-        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF) /*0x4436b0*/
+        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF); /*0x4436b0*/
         (v20) = ((v20) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v12[1] / 256) & 0xFFFF) << 16) /*0x4436c9*/
         *(unsigned int *)v19 = v20; /*0x4436d4*/
         BuildingClass::SetRallyPoint((int)this, v19, 1); /*0x4436d8*/
@@ -1284,7 +1284,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443442*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1328,7 +1328,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443568*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1341,7 +1341,7 @@ int BuildingClass::HandleFactoryCommand() {
       if ( v8 == 16 || v8 == 40 || v8 == 3 ) /*0x44363a*/
       {
         v12 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*v24 + 72))(v24, v21); /*0x44369b*/
-        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF) /*0x4436b0*/
+        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF); /*0x4436b0*/
         (v20) = ((v20) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v12[1] / 256) & 0xFFFF) << 16) /*0x4436c9*/
         *(unsigned int *)v19 = v20; /*0x4436d4*/
         BuildingClass::SetRallyPoint((int)this, v19, 1); /*0x4436d8*/
@@ -1401,7 +1401,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443442*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443442*/
         return result; /*0x44344d*/
       }
       goto LABEL_25; /*0x44342d*/
@@ -1445,7 +1445,7 @@ int BuildingClass::HandleFactoryCommand() {
                    v24,
                    0,
                    0);
-        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x443568*/
+        (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x443568*/
         return result; /*0x443573*/
       }
       goto LABEL_25; /*0x443551*/
@@ -1458,7 +1458,7 @@ int BuildingClass::HandleFactoryCommand() {
       if ( v8 == 16 || v8 == 40 || v8 == 3 ) /*0x44363a*/
       {
         v12 = (unsigned int *)(*(int (**)(unsigned int *, unsigned char *))(*v24 + 72))(v24, v21); /*0x44369b*/
-        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF) /*0x4436b0*/
+        (v20) = ((v20) & ~0xFFFF) | ((unsigned int)(*v12 / 256) & 0xFFFF); /*0x4436b0*/
         (v20) = ((v20) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v12[1] / 256) & 0xFFFF) << 16) /*0x4436c9*/
         *(unsigned int *)v19 = v20; /*0x4436d4*/
         BuildingClass::SetRallyPoint((int)this, v19, 1); /*0x4436d8*/
@@ -1596,7 +1596,7 @@ int BuildingClass::CreateUnits()
     char v132[64]; // [esp+4Ch] [ebp-40h] BYREF
     unsigned __int8 v133; // [esp+90h] [ebp+4h]
 
-    (result) = ((result) & ~0xFF) | ((unsigned int)(this->ActuallyPlacedOnMap) & 0xFF) /*0x445f89*/
+    (result) = ((result) & ~0xFF) | ((unsigned int)(this->ActuallyPlacedOnMap) & 0xFF); /*0x445f89*/
     if ( (unsigned char)result && !v133 ) /*0x445f99*/
       return result; /*0x445f99*/
     Type = this->Type; /*0x445f9f*/
@@ -1612,11 +1612,11 @@ int BuildingClass::CreateUnits()
       if ( Type->Refinery ) /*0x445fd6*/
       {
         Float4::Sum((int *)&((unsigned int *)this)[0]); /*0x445fec*/
-        (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFF) /*0x445ff1*/
+        (v6) = ((v6) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFF); /*0x445ff1*/
         if ( v6 ) /*0x445ff8*/
         {
           Float4::Sum((int *)&((unsigned int *)this)[0]); /*0x445ffc*/
-          (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFF) /*0x446001*/
+          (v7) = ((v7) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFF); /*0x446001*/
           v6 = 4 * v7 / ((unsigned int *)this->Type)[0]; /*0x446010*/
         }
         this->StorageFilledSlots = v6; /*0x446019*/
@@ -2653,7 +2653,7 @@ int BuildingClass::CheckAdjacentCells() {
           {
             v7 = v5 & 7; /*0x4854cd*/
             v11 = this->objectTypeFlags; /*0x4854d0*/
-            (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v11 + IDA_LOWORD((&dword_89F688)[v7])) & 0xFFFF) /*0x4854ef*/
+            (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v11 + IDA_LOWORD((&dword_89F688)[v7])) & 0xFFFF); /*0x4854ef*/
             (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v11) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[v7])) & 0xFFFF) << 16) /*0x4854f8*/
             v11 = v10; /*0x485501*/
             result = (int)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v11); /*0x48550b*/
@@ -2689,7 +2689,7 @@ int BuildingClass::CheckAdjacentCells() {
           v6 = (unsigned int)v5 < 8; /*0x48556f*/
           if ( v5 >= 8 ) /*0x485572*/
           {
-            (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x485579*/
+            (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x485579*/
             return result; /*0x48557f*/
           }
         }
@@ -2729,7 +2729,7 @@ int BuildingClass::CheckAdjacentCells() {
           {
             v7 = v5 & 7; /*0x4854cd*/
             v11 = this->objectTypeFlags; /*0x4854d0*/
-            (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v11 + IDA_LOWORD((&dword_89F688)[v7])) & 0xFFFF) /*0x4854ef*/
+            (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v11 + IDA_LOWORD((&dword_89F688)[v7])) & 0xFFFF); /*0x4854ef*/
             (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v11) >> 16) & 0xFFFF) + IDA_HIWORD((&dword_89F688)[v7])) & 0xFFFF) << 16) /*0x4854f8*/
             v11 = v10; /*0x485501*/
             result = (int)CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v11); /*0x48550b*/
@@ -2765,7 +2765,7 @@ int BuildingClass::CheckAdjacentCells() {
           v6 = (unsigned int)v5 < 8; /*0x48556f*/
           if ( v5 >= 8 ) /*0x485572*/
           {
-            (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF) /*0x485579*/
+            (result) = ((result) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x485579*/
             return result; /*0x48557f*/
           }
         }
@@ -3305,10 +3305,10 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
     if ( v3 ) /*0x4fadf3*/
     {
       v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 72))(v3, v15); /*0x4fadff*/
-      (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*v10 / 256) & 0xFFFF) /*0x4fae12*/
+      (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*v10 / 256) & 0xFFFF); /*0x4fae12*/
       (v13) = ((v13) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v10[1] / 256) & 0xFFFF) << 16) /*0x4fae2a*/
       v13 = v13; /*0x4fae37*/
-      (v5) = ((v5) & ~0xFF) | ((unsigned int)(SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v13)) & 0xFF) /*0x4fae3f*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v13)) & 0xFF); /*0x4fae3f*/
     }
   }
   }
@@ -3363,10 +3363,10 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
     if ( v3 ) /*0x4fadf3*/
     {
       v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 72))(v3, v15); /*0x4fadff*/
-      (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*v10 / 256) & 0xFFFF) /*0x4fae12*/
+      (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(*v10 / 256) & 0xFFFF); /*0x4fae12*/
       (v13) = ((v13) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v10[1] / 256) & 0xFFFF) << 16) /*0x4fae2a*/
       v13 = v13; /*0x4fae37*/
-      (v5) = ((v5) & ~0xFF) | ((unsigned int)(SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v13)) & 0xFF) /*0x4fae3f*/
+      (v5) = ((v5) & ~0xFF) | ((unsigned int)(SuperWeapon::FireSuperWeaponHouseClass(this, a1, (int)&v13)) & 0xFF); /*0x4fae3f*/
     }
   }
 }
@@ -3415,13 +3415,13 @@ int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
   v4 = this->relatedTagsCapacity; /*0x4faf07*/
   if ( !*(unsigned char *)(v4 + 422) )
   {
-    (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(unsigned char *)(this + 492)) & 0xFF) /*0x4faf18*/
+    (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(unsigned char *)(this + 492)) & 0xFF); /*0x4faf18*/
     if ( !(unsigned char)v4 )
     {
-      (v4) = ((v4) & ~0xFF) | ((unsigned int)(v5) & 0xFF) /*0x4faf26*/
+      (v4) = ((v4) & ~0xFF) | ((unsigned int)(v5) & 0xFF); /*0x4faf26*/
       if ( v5 )
       {
-        (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(unsigned char *)(*(unsigned int *)(v5 + 40) + 236)) & 0xFF) /*0x4faf35*/
+        (v4) = ((v4) & ~0xFF) | ((unsigned int)(*(unsigned char *)(*(unsigned int *)(v5 + 40) + 236)) & 0xFF); /*0x4faf35*/
         if ( (unsigned char)v4 )
         {
           a2 = (int16_t *)CellCoord::To_CellObj(&MapClass_Instance, a2); /*0x4faf5f*/
@@ -3467,7 +3467,7 @@ int SuperWeapon::EvaluateAITarget(int a1, void* a2) {
                 v14 = (unsigned int *)(*(int (**)(unsigned int, unsigned int *))(***(unsigned int ***)(this + 84) + 72))( /*0x4fb05d*/
                                   **(unsigned int **)(this + 84),
                                   v19);
-                (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(*v14 / 256) & 0xFFFF) /*0x4fb070*/
+                (v5) = ((v5) & ~0xFFFF) | ((unsigned int)(*v14 / 256) & 0xFFFF); /*0x4fb070*/
                 (v5) = ((v5) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v14[1] / 256) & 0xFFFF) << 16) /*0x4fb084*/
                 v4 = v5; /*0x4fb089*/
               }
@@ -3500,7 +3500,7 @@ int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
   int Status; // eax
   char v17; // [esp+Bh] [ebp-9h]
 
-  (v2) = ((v2) & ~0xFF) | ((unsigned int)(*(&this->u32_C81)) & 0xFF) /*0x50b1d7*/
+  (v2) = ((v2) & ~0xFF) | ((unsigned int)(*(&this->u32_C81)) & 0xFF); /*0x50b1d7*/
   if ( !(unsigned char)v2 ) /*0x50b1df*/
   {
     v2 = this->q264; /*0x50b1e5*/
@@ -3770,7 +3770,7 @@ int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5,
           fild [esp+0D0h+var_A4]
           fmul qword ptr [ebp+0F8h]
         }
-        (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFF) /*0x517fe3*/
+        (v12) = ((v12) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFF); /*0x517fe3*/
         this->vtable1 = v12; /*0x517feb*/
         if ( v12 < 1 ) /*0x517fed*/
           this->vtable1 = 1; /*0x517fef*/
