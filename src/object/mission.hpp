@@ -111,6 +111,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AdvanceState();  // 0x5B3570
     void* FindName();  // 0x5B3700
     void* GetMissionControl();  // 0x5B3A00
+    static void * GetMissionControl(void *a1);  // W20M26 static supply (PR 0x44c819 mov ecx,ebp)
     int Construct(int a1, int a2, int a3);  // 0x6E8A90
     int OverrideMission_SyncLog();  // 0x7013A0
     // --- gap2 auto-generated stub declarations (END) ---

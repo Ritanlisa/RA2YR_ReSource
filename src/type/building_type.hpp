@@ -362,7 +362,22 @@ public:
 public:  // g57c5 W4b supply slot
     bool __pad_1584;  // 0x1584 g57c5 W4b (self-desc vocab, ml slot witness)
 public:  // g57c5 W4b supply slot
-    unsigned char __pad_F70[348];  // 0xF70 g57c5 W4b (self-desc vocab, ml slot witness)
+    unsigned char __pad_F70[104];  // 0xF70..0xFD7 (tail split W20M26) 
+    char qFD8[16];  // 0xFD8 (PR 0x44B83E add eax,1128h family) 
+    char qFE8[16];  // 0xFE8 (PR 0x44B82F add eax,1138h) 
+    unsigned char __pad_FF8[32];  // 0xFF8..0x1017 
+    char q1018[16];  // 0x1018 (PR 0x44C6C6 add eax,1018h) 
+    char q1028[16];  // 0x1028 (PR 0x44C6CB pair full) 
+    unsigned char __pad_1038[240];  // 0x1038..0x1127 
+    char q1128[16];  // 0x1128 (PR 0x44B83E) 
+    char q1138[16];  // 0x1138 (PR 0x44B82F) 
+    unsigned char __pad_1148[172];  // 0x1148..0x11F3 
+    char q11F4[16];  // 0x11F4 (PR 0x44C54A add eax,11F4h) 
+    char q1204[16];  // 0x1204 (PR 0x44C53B add eax,1204h) 
+    unsigned char __pad_1214[104];  // 0x1214..0x127B 
+    char q127C[16];  // 0x127C (PR 0x44C032 add eax,127Ch) 
+    char q128C[16];  // 0x128C (PR 0x44C023 add eax,128Ch) 
+    unsigned char __pad_129C[744];  // 0x129C..0x1583
 public:  // g57c5 W4b supply slot
     char __pad_1714;  // 0x1714 g57c5 W4b (self-desc vocab, ml slot witness)
 };

@@ -352,7 +352,7 @@ public:
 
     // --- Cell / Coordinate queries ---
     // [165] 0x41BEA0 ObjectClass::GetCellCoords_Alt
-virtual int GetCellCoords_Alt(int a2 = 0) const;
+virtual CoordStruct * GetCellCoords_Alt(void *a2 = 0) const;  // W20M26 retype (PR 0x44b958 mov edx,[eax]; 0x44b952/0x44bda4 pass &buf)
     // [111] 0x5F6960 ObjectClass::GetCellCoords
     virtual CellClass* GetCell() const = 0;  // 0x5F6A10
     // [112] 0x5F69C0 ObjectClass::CoordToCell
@@ -543,7 +543,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Render(int a1, int a2, int a3, int a4);  // 0x6E1440
     int ReadINIEntry(int a1, int a2, int a3, int a4);  // 0x6E15F0
     int Get(int a1);  // 0x6EC130
-    int Vt34Thunk();  // 0x6F3270
+    ObjectTypeClass * Vt34Thunk();  // 0x6F3270 (W20M26 retype: PR 0x70142a [ret+0xA0]=Strength)
     int NotifyExpired(void* a1, void* a2);  // 0x7077C0
     int GetTypeVt28();  // 0x708B30
     int GetShroudByte();  // 0x70C5B0

@@ -47,6 +47,23 @@ int PlayAudioAt2(int a1, int a2, int a3);  // 0x750e20
 void globalHelper_051EE0(int a1, int a2, int a3);  // 0x451ee0
 #include "e4/classes/FacingClass_e4.hpp"  // gB C2027 supply
 #include "e4/classes/Math_e4.hpp"  // gB C2027 supply
+
+// ---- G57W20M26 vocab (ProcessRepair transplant) ----
+extern char aEvaUnitrepaire[];  // raw 0x44b96e
+extern char aEvaInsufficien[];  // raw 0x44bfe5
+extern char aEvaRepairing[];    // raw 0x44c502
+extern char aEvaUnitsold[];     // raw 0x4d9f8f
+struct dword_8871E0_m26_v {
+    unsigned char pad_0[0x1C4];
+    unsigned int q1C4;  // 0x70148E mov ecx,[ecx+1C4h]
+    unsigned char pad_1C8[0x4DC];
+    unsigned int q6A4;  // 0x4D9FAA mov ecx,[eax+6A4h]
+    unsigned char pad_6A8[0x105C];
+    double q1700;  // 0x44b817 fcomp [eax+1700h]
+};
+extern dword_8871E0_m26_v *dword_8871E0_m26_t;
+int StartAudioControllerAt(int a1, void *a2, int a3);  // W20M26 overload (0x701494)
+
 // ---- g57b5 W6: TU-local globals (csp_canon 驱动) ----
 extern int globalHelper_005F80;  // 词表 (canon 无条目, int 兜底) L5928
 // ---- g57b5 W6 end ----
@@ -3145,53 +3162,59 @@ int BuildingClass::Sell() { BeingProduced = false; CompleteSell(); return 5; }
 bool BuildingClass::CanBeSoldCheck() { return CanBeSold(); }
 
 // 0x4d9f70
-void BuildingClass::SellUnit()
+void BuildingClass::SellUnit(int a2)
 {
-  int a2; // raw param (truth 0x4D9F70 carries this + a2; hpp decl 0-param -- decl gap)
   int result; // eax
-  int v4; // eax
 
   result = a2; /*0x4d9f70*/
   if ( a2 ) /*0x4d9f79*/
   {
-    if ( (uint8_t)((HouseClass *)((unsigned int *)this)[0])->IsHumanPlayer() ) /*0x4d9f81*/
+    if ( (uint8_t)((HouseClass *)this->owner)->IsHumanPlayer() ) /*0x4d9f81*/
     {
-      ((VoxClass *)&((unsigned int *)&stru_822420)[24])->FindAndPlay(-1); /*0x4d9f94*/
-      PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1700), 0x2000, 1.0, 0); /*0x4d9fb0*/
+      ((VoxClass *)aEvaUnitsold)->FindAndPlay(-1); /*0x4d9f94*/
+      PlayVocClass(dword_8871E0_m26_t->q6A4, 0x2000, 1.0, 0); /*0x4d9fb0 [Rules+0x6A4]*/
     }
-    v4 = (*((int (**)(BuildingClass *))this->vtable1 + 175))(this); /*0x4d9fb9*/
-    ((HouseClass *)((unsigned int *)this)[0])->AddPower(v4); /*0x4d9fc6 -- house.hpp:628 takes 1*/
-    (*((void (**)(BuildingClass *))this->vtable1 + 232))(this); /*0x4d9fcf*/
-    (*((void (**)(BuildingClass *))this->vtable1 + 53))(this); /*0x4d9fd9*/
-    (*((void (**)(BuildingClass *))this->vtable1 + 62))(this); /*0x4d9fe3*/
+    result = this->vt_entry_2BC(); /*0x4d9fb9 vt+0x2BC*/
+    ((HouseClass *)this->owner)->AddPower(result); /*0x4d9fc6 -- house.hpp:628 takes 1*/
+    this->vt_entry_3A0(); /*0x4d9fcf vt+0x3A0*/
+    this->vt_entry_D4(); /*0x4d9fd9 vt+0xD4*/
+    this->vt_entry_F8(); /*0x4d9fe3 vt+0xF8*/
   }
   return; /*0x4d9fe9*/
 }
+
 // 0x701410
 void BuildingClass::HandleSellOrRepair()
 {
   double v1; // st7
   int v3; // eax
-  int result; // eax
   int v5; // edx
-  unsigned int *v6; // eax
   unsigned char v7[12]; // [esp+8h] [ebp-Ch] BYREF
 
-  (*((void (**)(TechnoClass *, int))this->vtable1 + 73))(this, 2); /*0x70141a*/
-  v3 = *(unsigned int *)((*((int (**)(TechnoClass *))this->vtable1 + 33))(this) + 160); /*0x70142a*/
-  ((unsigned int *)this)[0] = v3; /*0x701432*/
-  ((unsigned int *)this)[0] = v3; /*0x701435*/
-  result = (*((int (**)(TechnoClass *))this->vtable1 + 11))(this); /*0x70143a*/
-  if ( result == 6 ) /*0x701440*/
+  this->vt_entry_124(2); /*0x70141a vt+0x124*/
+  v3 = this->Vt34Thunk()->Strength; /*0x70142a ret+0xA0*/
+  this->health = v3; /*0x701432*/
+  this->estimatedHealth = v3; /*0x701435*/
+  if ( this->Mission_Construction() == 6 ) /*0x70143a vt+0x2C*/
   {
-    (*((void (**)(TechnoClass *, unsigned int))this->vtable1 + 103))(this, 0); /*0x701448*/
-    this->GetHealthRatio(); /*0x701450 -- building.hpp:341 instance 0-param*/
-    globalHelper_051EE0((int)this, v5, v1 <= *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5888)); /*0x701473*/
-    v6 = (unsigned int *)(*((int (**)(TechnoClass *, unsigned char *))this->vtable1 + 18))(this, v7); /*0x701483*/
-    (void)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 452), (int)v6, 0); /*0x701494 -- global_funcs.hpp:4804 (int,int,int)*/
+    this->ToggleRepairMode(0); /*0x701448 vt+0x19C*/
+    v1 = this->GetHealthRatio(); /*0x701450*/
+    _EAX = dword_8871E0;
+    __asm
+    {
+      fcomp      qword ptr [eax+1700h]
+      fnstsw     ax
+    }
+    if ( (_EAX & 0x4100) != 0 ) /*0x701465*/
+      v5 = 1;
+    else
+      v5 = 0;
+    globalHelper_051EE0((int)this, v5, v5); /*0x701473*/
+    this->GetExitCoords((CoordStruct *)&v7, 0); /*0x701483 vt+0x48*/
+    StartAudioControllerAt(dword_8871E0_m26_t->q1C4, (unsigned int *)&v7, 0); /*0x701494*/
   }
-  return; /*0x701499*/
 }
+
 // IDA 0x44f450: repair mission
 int BuildingClass::Mission_Repair()
 {
@@ -3219,1074 +3242,2342 @@ int BuildingClass::Mission_Repair()
 }
 
 // 0x44b780
-void BuildingClass::ProcessRepair()
+int BuildingClass::ProcessRepair()
 {
-  int _EAX; // fnstsw ax 结果 (x87 比较状态; W20M24)
-    double v1; // st7
-    BuildingTypeClass *Type; // eax
-    int missionStatus; // eax
-    int result; // eax
-    int v6; // edx
-    int v8; // ecx
-    char *v9; // eax
-    int v10; // eax
-    int v11; // eax
-    int v12; // ecx
-    int v13; // edx
-    int v14; // edx
-    int (__thiscall **vtable0)(BuildingClass *, int); // edx
-    int v17; // eax
-    int v18; // eax
-    int *v19; // eax
-    void (__thiscall **v20)(BuildingClass *, int, int); // esi
-    int v21; // eax
-    void (__thiscall **v22)(BuildingClass *, int, int); // esi
-    int v23; // eax
-    int v24; // eax
-    int v25; // eax
-    int v26; // eax
-    int v27; // eax
-    int v28; // ecx
-    int v29; // edx
-    int v30; // edx
-    Power *v32; // esi
-    void (__thiscall **v33)(BuildingClass *, int, int); // esi
-    int v34; // eax
-    int v35; // eax
-    int v36; // eax
-    int v37; // eax
-    int v38; // eax
-    int v41; // ecx
-    char *v42; // eax
-    int v43; // edx
-    int v45; // ecx
-    char *v46; // eax
-    int v47; // eax
-    int v48; // ecx
-    int v49; // edx
-    int v50; // edx
-    int (__thiscall **v52)(BuildingClass *, int); // eax
-    int v53; // eax
-    bool v54; // zf
-    char isOwnedByCurrentPlayer; // al
-    __int64 v56; // rax
-    int v59; // ecx
-    char *v60; // eax
-    int v61; // edx
-    int v63; // ecx
-    char *v64; // eax
-    int Member; // eax
-    TechnoClass *v66; // esi
-    int v67; // eax
-    unsigned int **v68; // eax
-    AbstractClass *focus; // ecx
-    unsigned int *v70; // eax
-    void (__thiscall **v71)(TechnoClass *, void *, int); // edi
-    void *v72; // eax
-    int v75; // ecx
-    char *v76; // eax
-    int v77; // edx
-    int v79; // ecx
-    char *v80; // eax
-    int v81; // eax
-    int v82; // edx
-    int v85; // ecx
-    char *v86; // eax
-    int v89; // ecx
-    char *v90; // eax
-    void (__thiscall **v91)(BuildingClass *, int, int); // eax
-    int v92; // eax
-    int (__thiscall **v93)(BuildingClass *, int); // ebx
-    int v94; // esi
-    int v95; // eax
-    int v96; // eax
-    FootClass *v97; // eax
-    int v98; // esi
-    bool v100; // bl
-    int v101; // eax
-    bool v102; // cl
-    bool v103; // al
-    int v105; // eax
-    TechnoClass *v106; // esi
-    int (__thiscall **v107)(BuildingClass *, int *, int, int); // ebx
-    int v108; // eax
-    unsigned int **v109; // eax
-    AbstractClass *v110; // ecx
-    unsigned int *v111; // eax
-    void (__thiscall **v112)(TechnoClass *, void *, int); // ebx
-    void *v113; // eax
-    int v114; // edx
-    int v117; // ecx
-    char *v118; // eax
-    int v119; // eax
-    unsigned int *v120; // esi
-    unsigned int *v121; // esi
-    int v122; // edx
-    int v124; // ecx
-    char *v125; // eax
-    int v126; // edx
-    int v129; // ecx
-    char *v130; // eax
-    int v131; // eax
-    unsigned int *v132; // ebx
-    int v133; // eax
-    int (__thiscall **v134)(BuildingClass *, int); // esi
-    int v135; // eax
-    int v136; // eax
-    int v137; // eax
-    int v139; // ebx
-    int v140; // eax
-    unsigned int *v141; // esi
-    int v143; // [esp+1Ch] [ebp-3Ch]
-    int v144; // [esp+1Ch] [ebp-3Ch]
-    int v145; // [esp+1Ch] [ebp-3Ch]
-    int v146; // [esp+1Ch] [ebp-3Ch]
-    int v147; // [esp+1Ch] [ebp-3Ch]
-    BuildingClass *v148; // [esp+20h] [ebp-38h]
-    char v149; // [esp+33h] [ebp-25h]
-    char v150; // [esp+33h] [ebp-25h]
-    StreamClass v151; // [esp+34h] [ebp-24h] BYREF
-    int v152; // [esp+48h] [ebp-10h] BYREF
-    int v153; // [esp+4Ch] [ebp-Ch]
-    int v154; // [esp+50h] [ebp-8h]
-
-    if ( this->Type->Bunker ) /*0x44b797*/
-      ((gamemd::BuildingClass *)(void *)(v148))->UpdateBunker(v1); /*0x44b7a3*/
-    Type = this->Type; /*0x44b7a8*/
-    if ( Type->ConstructionYard ) /*0x44b7ae*/
-    {
-      missionStatus = ((unsigned int *)this)[0]; /*0x44b7bc*/
-      if ( missionStatus ) /*0x44b7c4*/
-      {
-        if ( missionStatus == 2 && !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44b7d1*/
-        {
-          (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44b7e6*/
-          ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(7); /*0x44b7f0*/
-          return 1; /*0x44b801*/
-        }
-      }
-      else
-      {
-        ((gamemd::BuildingClass *)(void *)(this))->StartProduction(2); /*0x44b806*/
-        ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44b80d*/
-        _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44b812*/
-        __asm /*0x44b817*/
-        {
-          fcomp qword ptr [eax+1700h]
-          fnstsw ax
-        }
-        if ( (_EAX & 0x4100) != 0 ) /*0x44b822*/
-        {
-          v8 = 1; /*0x44b82a*/
-          v9 = (char *)(void *)(&this->Type->__pad_F70[456]); /*0x44b82f*/
-        }
-        else
-        {
-          v8 = 0; /*0x44b83c*/
-          v9 = (char *)this->Type->q1128; /*0x44b83e*/
-        }
-        if ( v9 && *v9 ) /*0x44b847*/
-          ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v6, v9, 7, v8, 0, 0); /*0x44b854*/
-        ((unsigned int *)this)[0] = 2; /*0x44b859*/
-      }
-      return 1; /*0x44b86f*/
-    }
-    if ( Type->Hospital )
-    {
-      v10 = ((unsigned int *)this)[0]; /*0x44b87e*/
-      if ( v10 )
-      {
-        if ( v10 == 2 ) /*0x44b88f*/
-        {
-          if ( Locomotor::GetSpeed(*(Locomotor **)&this->__pad_628[0]) || (v11 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44b8ae*/
-          {
-            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x44b8df*/
-          }
-          else
-          {
-            v12 = *(unsigned int *)&this->__pad_628[16]; /*0x44b8b0*/
-            v13 = this->RepairProgress.Value; /*0x44b8b6*/
-            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x44b8be*/
-            this->RepairProgress.Value = v12 + v13; /*0x44b8c5*/
-            v14 = v153; /*0x44b8d1*/
-            *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44b8d5*/
-            *(unsigned int *)&this->__pad_628[4] = v14; /*0x44b8d7*/
-            *(unsigned int *)&this->__pad_628[8] = v11; /*0x44b8da*/
-          }
-          _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44b8e6*/
-          __asm /*0x44b8eb*/
-          {
-            fild dword ptr [ebp+620h]
-            fld qword ptr [eax+16F0h]
-            fmul ds:dbl_7E27F8
-            fcompp
-            fnstsw ax
-          }
-          if ( (_EAX & 0x4100) == 0 ) /*0x44b904*/
-            return 1; /*0x44b904*/
-          vtable0 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44b90a*/
-          this->BuildingClass_field_bool_6DD = 0; /*0x44b911*/
-          this->RepairProgress.Value = 0; /*0x44b918*/
-          v17 = vtable0[157](this, 28) - 10; /*0x44b924*/
-          if ( v17 ) /*0x44b927*/
-          {
-            v18 = v17 - 22; /*0x44b929*/
-            if ( !v18 ) /*0x44b92c*/
-            {
-              v22 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44b9e6*/
-              v144 = g_TerrainTypeTable; /*0x44b9e9*/
-              v23 = (int)(void *)(LinkedList::Pop((LinkedList *)((unsigned int *)this)[0])); /*0x44b9f0*/
-              v22[64](this, v23, v144); /*0x44b9f8*/
-              return 1; /*0x44ba0a*/
-            }
-            if ( v18 != 1 ) /*0x44b933*/
-              return 1; /*0x44b9df*/
-            if ( (unsigned __int8)House::IsHumanPlayer((House *)((unsigned int *)this)[0]) ) /*0x44b93f*/
-            {
-              v19 = (int *)(*((int (__thiscall **)(BuildingClass *, void **))this->vtable1 + 110))(this, &v151.m_Data); /*0x44b952*/
-              if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, *v19, *v19) ) /*0x44b960*/
-                ((gamemd::VoxClass *)(void *)((VoxClass *)&((unsigned int *)&stru_818E00)[6]))->FindAndPlay(-1); /*0x44b973*/
-              v152 = ((unsigned int *)this)[0]; /*0x44b981*/
-              v153 = ((unsigned int *)this)[1]; /*0x44b98e*/
-              v154 = ((unsigned int *)this)[2]; /*0x44b999*/
-              StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1816),(int)(&v152), 0); /*0x44b9a3*/
-            }
-          }
-          v20 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44b9ad*/
-          v143 = g_TerrainTypeTable; /*0x44b9b0*/
-          v21 = (int)(void *)(LinkedList::Pop((LinkedList *)((unsigned int *)this)[0])); /*0x44b9b7*/
-          v20[64](this, v21, v143); /*0x44b9bf*/
-          (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44b9cd*/
-          return 1; /*0x44b9cd*/
-        }
-      }
-      else
-      {
-        ((unsigned int *)this)[0] = 2; /*0x44ba0b*/
-        this->BuildingClass_field_bool_6DD = 0; /*0x44ba15*/
-        this->RepairProgress.Value = 0; /*0x44ba1c*/
-        v24 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44ba22*/
-        *(unsigned int *)&this->__pad_628[12] = 1; /*0x44ba32*/
-        *(unsigned int *)this->__pad_628 = v24; /*0x44ba38*/
-        *(unsigned int *)&this->__pad_628[4] = v153; /*0x44ba3e*/
-        *(unsigned int *)&this->__pad_628[8] = 1; /*0x44ba41*/
-        if ( *(int *)((char *)this->Type + 0x684) != -1 ) /*0x44ba4a g57w10 r4: live asm cmp [ecx+684h],-1 (ml BuildingTypeClass q684 无语义名)*/
-        {
-          v25 = ((unsigned int *)this)[0] - 1; /*0x44ba5f*/
-          ((unsigned int *)this)[0] = v25; /*0x44ba62*/
-          ((unsigned int *)this)[0] = v25 <= 0 ? 0 : v25;
-        }
-      }
-  LABEL_231:
-      _EAX = MissionClass::GetMissionControl((MissionClass *)this); /*0x44c819*/
-      __asm /*0x44c820*/
-      {
-        fld qword ptr [eax+10h]
-        fmul ds:dbl_7E27F8
-      }
-      IDA_LOWORD(result) = Math::RoundToInt(v1); /*0x44c829*/
-      return result; /*0x44c835*/
-    }
-    if ( Type->Armory )
-    {
-      v26 = ((unsigned int *)this)[0]; /*0x44ba87*/
-      if ( v26 )
-      {
-        if ( v26 == 2 ) /*0x44ba98*/
-        {
-          if ( Locomotor::GetSpeed(*(Locomotor **)&this->__pad_628[0]) || (v27 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bab7*/
-          {
-            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x44bae8*/
-          }
-          else
-          {
-            v28 = *(unsigned int *)&this->__pad_628[16]; /*0x44bab9*/
-            v29 = this->RepairProgress.Value; /*0x44babf*/
-            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x44bac7*/
-            this->RepairProgress.Value = v28 + v29; /*0x44bace*/
-            v30 = v153; /*0x44bada*/
-            *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bade*/
-            *(unsigned int *)&this->__pad_628[4] = v30; /*0x44bae0*/
-            *(unsigned int *)&this->__pad_628[8] = v27; /*0x44bae3*/
-          }
-          _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44baef*/
-          __asm /*0x44baf4*/
-          {
-            fild dword ptr [ebp+620h]
-            fld qword ptr [eax+16F0h]
-            fmul ds:dbl_7E27F8
-            fcompp
-            fnstsw ax
-          }
-          if ( (_EAX & 0x4100) != 0 ) /*0x44bb0d*/
-          {
-            v32 = (Power *)(Team::GetMember((Team *)this, 0) + 336); /*0x44bb1b*/
-            if ( VeinholeClass::GetState((float *)&v32->Power_field_0x0) ) /*0x44bb23*/
-              Power::ChangedHouse(v32, 1); /*0x44bb30*/
-            else
-              Timer::SetFlag((Timer *)v32, 1); /*0x44bb37*/
-            v33 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44bb42*/
-            v145 = g_TerrainTypeTable; /*0x44bb45*/
-            v34 = (int)(void *)(LinkedList::Pop((LinkedList *)((unsigned int *)this)[0])); /*0x44bb4c*/
-            v33[64](this, v34, v145); /*0x44bb54*/
-            (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44bb62*/
-          }
-        }
-      }
-      else
-      {
-        ((unsigned int *)this)[0] = 2; /*0x44bb6d*/
-        this->BuildingClass_field_bool_6DD = 0; /*0x44bb77*/
-        this->RepairProgress.Value = 0; /*0x44bb7e*/
-        v35 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bb84*/
-        *(unsigned int *)&this->__pad_628[12] = 1; /*0x44bb94*/
-        *(unsigned int *)this->__pad_628 = v35; /*0x44bb9a*/
-        *(unsigned int *)&this->__pad_628[4] = v153; /*0x44bba0*/
-        *(unsigned int *)&this->__pad_628[8] = 1; /*0x44bba3*/
-        v36 = ((unsigned int *)this)[0] - 1; /*0x44bbac*/
-        ((unsigned int *)this)[0] = v36; /*0x44bbb1*/
-        ((unsigned int *)this)[0] = v36 <= 0 ? 0 : v36;
-      }
-      goto LABEL_231; /*0x44bb68*/
-    }
-    if ( Type->UnitRepair )
-    {
-      v37 = ((unsigned int *)this)[0]; /*0x44bbd6*/
-      if ( v37 )
-      {
-        v38 = v37 - 1; /*0x44bbe4*/
-        if ( v38 )
-        {
-          if ( v38 == 1 )
-          {
-            if ( (unsigned __int8)Team::AllMembersValid((Team *)this) )
-            {
-              if ( !*(unsigned int *)&this->__pad_628[12] ) /*0x44bcc7*/
-                *(unsigned int *)&this->__pad_628[12] = 1; /*0x44bcd6*/
-              if ( Locomotor::GetSpeed(*(Locomotor **)&this->__pad_628[0]) || (v47 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bcf5*/
-              {
-                (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x44bd26*/
-              }
-              else
-              {
-                v48 = *(unsigned int *)&this->__pad_628[16]; /*0x44bcf7*/
-                v49 = this->RepairProgress.Value; /*0x44bcfd*/
-                (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x44bd05*/
-                this->RepairProgress.Value = v48 + v49; /*0x44bd0c*/
-                v50 = v153; /*0x44bd18*/
-                *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bd1c*/
-                *(unsigned int *)&this->__pad_628[4] = v50; /*0x44bd1e*/
-                *(unsigned int *)&this->__pad_628[8] = v47; /*0x44bd21*/
-              }
-              _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bd2d*/
-              __asm /*0x44bd32*/
-              {
-                fild dword ptr [ebp+620h]
-                fld qword ptr [eax+16E8h]
-                fmul ds:dbl_7E27F8
-                fcompp
-                fnstsw ax
-              }
-              if ( (_EAX & 0x4100) != 0
-                && (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 19) == 1 )
-              {
-                v52 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44bd66*/
-                this->BuildingClass_field_bool_6DD = 0; /*0x44bd6d*/
-                this->RepairProgress.Value = 0; /*0x44bd74*/
-                v53 = v52[157](this, 28) - 1; /*0x44bd80*/
-                if ( v53 )
-                {
-                  v54 = v53 == 31; /*0x44bd87*/
-                  isOwnedByCurrentPlayer = ((unsigned int *)this)[0]; /*0x44bd8a*/
-                  if ( v54 )
-                  {
-                    if ( isOwnedByCurrentPlayer /*0x44bfd9*/
-                      && !(*(int (__stdcall **)(int *))(((unsigned int *)this)[0]->arrayIndex + 24))(&((unsigned int *)this)[0]->arrayIndex) )
-                    {
-                      ((gamemd::VoxClass *)(void *)((VoxClass *)((char *)&stru_818E00)))->FindAndPlay(-1); /*0x44bfea*/
-                    }
-                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44bff3*/
-                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44bffc*/
-                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c003*/
-                    _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c008*/
-                    __asm /*0x44c00e*/
-                    {
-                      fcomp qword ptr [edx+1700h]
-                      fnstsw ax
-                    }
-                    if ( (_AX & 0x4100) != 0 ) /*0x44c019*/
-                    {
-                      v75 = 1; /*0x44c021*/
-                      v76 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44c023*/
-                    }
-                    else
-                    {
-                      v75 = 0; /*0x44c030*/
-                      v76 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44c032*/
-                    }
-                    if ( v76 && *v76 ) /*0x44c03b*/
-                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v76, 12, v75, 0, 0); /*0x44c048*/
-                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c04f*/
-                    _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c054*/
-                    __asm /*0x44c059*/
-                    {
-                      fcomp qword ptr [eax+1700h]
-                      fnstsw ax
-                    }
-                    if ( (_EAX & 0x4100) != 0 ) /*0x44c064*/
-                    {
-                      v79 = 1; /*0x44c06c*/
-                      v80 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44c06e*/
-                    }
-                    else
-                    {
-                      v79 = 0; /*0x44c07b*/
-                      v80 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44c07d*/
-                    }
-                    if ( v80 && *v80 ) /*0x44c086*/
-                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v77, v80, 3, v79, 0, 0); /*0x44c093*/
-                    ((unsigned int *)this)[0] = 1; /*0x44c098*/
-                  }
-                  else
-                  {
-                    if ( isOwnedByCurrentPlayer ) /*0x44bd98*/
-                    {
-                      v56 = ((__int64 (__thiscall *)(BuildingClass *, int *))*((unsigned int *)this->vtable1 + 110))( /*0x44bda4*/
-                              this,
-                              &v151.m_Position);
-                      if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, IDA_SHIDWORD(v56), *(unsigned int *)v56) ) /*0x44bdb2*/
-                        ((gamemd::VoxClass *)(void *)((VoxClass *)&((unsigned int *)&stru_818E00)[6]))->FindAndPlay(-1); /*0x44bdc5*/
-                    }
-                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44bdce*/
-                    ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44bdd7*/
-                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44bdde*/
-                    _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bde3*/
-                    __asm /*0x44bde9*/
-                    {
-                      fcomp qword ptr [edx+1700h]
-                      fnstsw ax
-                    }
-                    if ( (_AX & 0x4100) != 0 ) /*0x44bdf4*/
-                    {
-                      v59 = 1; /*0x44bdfc*/
-                      v60 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44bdfe*/
-                    }
-                    else
-                    {
-                      v59 = 0; /*0x44be0b*/
-                      v60 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44be0d*/
-                    }
-                    if ( v60 && *v60 ) /*0x44be16*/
-                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v60, 12, v59, 0, 0); /*0x44be23*/
-                    ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44be2a*/
-                    _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44be2f*/
-                    __asm /*0x44be34*/
-                    {
-                      fcomp qword ptr [eax+1700h]
-                      fnstsw ax
-                    }
-                    if ( (_EAX & 0x4100) != 0 ) /*0x44be3f*/
-                    {
-                      v63 = 1; /*0x44be47*/
-                      v64 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44be49*/
-                    }
-                    else
-                    {
-                      v63 = 0; /*0x44be56*/
-                      v64 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44be58*/
-                    }
-                    if ( v64 && *v64 ) /*0x44be61*/
-                      ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v61, v64, 3, v63, 0, 0); /*0x44be6e*/
-                    ((unsigned int *)this)[0] = 1; /*0x44be76*/
-                    Member = Team::GetMember((Team *)this, 0); /*0x44be7c*/
-                    if ( Member )
-                      v66 = (*(unsigned char *)(Member + 20) & 4) != 0 ? (TechnoClass *)Member : 0;
-                    else
-                      v66 = 0; /*0x44be85*/
-                    if ( v66->focus && !(unsigned __int8)House::IsCurrentPlayer((House *)v66->owner) ) /*0x44bea5*/
-                    {
-                      (*((void (__thiscall **)(TechnoClass *, int, unsigned int))v66->vtable1 + 122))(v66, 2, 0); /*0x44beb5*/
-                      (*((void (__thiscall **)(TechnoClass *, AbstractClass *, int))v66->vtable1 + 288))( /*0x44bec7*/
-                        v66,
-                        v66->focus,
-                        1);
-                      TechnoClass::SetFocus(v66, 0); /*0x44bed0*/
-                      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44bedc*/
-                      v66->queueUpToEnter = 0; /*0x44bee2*/
-                      return 1; /*0x44bef1*/
-                    }
-                    v146 = g_TerrainTypeTable; /*0x44befa*/
-                    v151.m_Data = this->vtable1; /*0x44befe*/
-                    v67 = Team::GetMember((Team *)this, 0); /*0x44bf02*/
-                    v68 = (unsigned int **)(*((int (__thiscall **)(BuildingClass *, int *, int, int))v151.m_Data + 309))( /*0x44bf13*/
-                                       this,
-                                       &v151.m_Size,
-                                       v67,
-                                       v146);
-                    focus = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x44bf19*/
-                    v70 = *v68; /*0x44bf1f*/
-                    *(unsigned int *)v151.__pad_0 = v70; /*0x44bf23*/
-                    if ( focus ) /*0x44bf27*/
-                    {
-                      v70 = (unsigned int *)(*((int (__thiscall **)(AbstractClass *, int *))focus->vtable1 + 18))(focus, &v152); /*0x44bf30*/
-                      IDA_LOWORD(v151.m_Data) = *v70 / 256; /*0x44bf43*/
-                      IDA_HIWORD(v151.m_Data) = v70[1] / 256; /*0x44bf57*/
-                      IDA_LOWORD(v70) = v151.m_Data; /*0x44bf5c*/
-                      *(unsigned int *)v151.__pad_0 = v151.m_Data; /*0x44bf60*/
-                    }
-                    if ( IDA___PAIR32__(*(unsigned __int16 *)&v151.__pad_0[2], (unsigned __int16)v70) != g_TerrainTypeTable ) /*0x44bf6b*/
-                    {
-                      (*((void (__thiscall **)(TechnoClass *, int, unsigned int))v66->vtable1 + 122))(v66, 2, 0); /*0x44bf87*/
-                      v71 = (void (__thiscall **)(TechnoClass *, void *, int))v66->RadioClass; /*0x44bf8d*/
-                      v72 = ((gamemd::CellCoord *)(void *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((__int16 *)v151.__pad_0); /*0x44bf9a*/
-                      v71[288](v66, v72, 1); /*0x44bfa2*/
-                      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44bfaf*/
-                      v66->queueUpToEnter = 0; /*0x44bfb5*/
-                      return 1; /*0x44bfc8*/
-                    }
-                  }
-                }
-              }
-              return 1; /*0x44c09e*/
-            }
-            else
-            {
-              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44bc05*/
-              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44bc0e*/
-              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44bc15*/
-              _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bc1a*/
-              __asm /*0x44bc20*/
-              {
-                fcomp qword ptr [edx+1700h]
-                fnstsw ax
-              }
-              if ( (_AX & 0x4100) != 0 ) /*0x44bc2b*/
-              {
-                v41 = 1; /*0x44bc33*/
-                v42 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44bc38*/
-              }
-              else
-              {
-                v41 = 0; /*0x44bc45*/
-                v42 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44bc47*/
-              }
-              if ( v42 && *v42 ) /*0x44bc50*/
-                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v42, 12, v41, 0, 0); /*0x44bc5d*/
-              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44bc64*/
-              _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44bc69*/
-              __asm /*0x44bc6e*/
-              {
-                fcomp qword ptr [eax+1700h]
-                fnstsw ax
-              }
-              if ( (_EAX & 0x4100) != 0 ) /*0x44bc79*/
-              {
-                v45 = 1; /*0x44bc81*/
-                v46 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44bc86*/
-              }
-              else
-              {
-                v45 = 0; /*0x44bc93*/
-                v46 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44bc95*/
-              }
-              if ( v46 && *v46 ) /*0x44bc9e*/
-                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v43, v46, 3, v45, 0, 0); /*0x44bcab*/
-              ((unsigned int *)this)[0] = 1; /*0x44bcb0*/
-              return 1; /*0x44bcba*/
-            }
-          }
-        }
-        else
-        {
-          v54 = (unsigned __int8)Team::AllMembersValid((Team *)this) == 0; /*0x44c0af*/
-          v81 = (int)(void *)(this->Anims[8]); /*0x44c0b1*/
-          if ( v54 ) /*0x44c0b7*/
-          {
-            if ( v81 || this->Anims[11] ) /*0x44c0c1*/
-            {
-              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c0cf*/
-              _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c0d4*/
-              __asm /*0x44c0da*/
-              {
-                fcomp qword ptr [ecx+1700h]
-                fnstsw ax
-              }
-              if ( (_AX & 0x4100) != 0 ) /*0x44c0e5*/
-              {
-                v85 = 1; /*0x44c0ed*/
-                v86 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44c0f2*/
-              }
-              else
-              {
-                v85 = 0; /*0x44c0ff*/
-                v86 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44c101*/
-              }
-              if ( v86 && *v86 ) /*0x44c10a*/
-                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v82, v86, 12, v85, 0, 0); /*0x44c117*/
-              ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c11e*/
-              _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c123*/
-              __asm /*0x44c129*/
-              {
-                fcomp qword ptr [edx+1700h]
-                fnstsw ax
-              }
-              if ( (_AX & 0x4100) != 0 ) /*0x44c134*/
-              {
-                v89 = 1; /*0x44c13c*/
-                v90 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44c141*/
-              }
-              else
-              {
-                v89 = 0; /*0x44c14e*/
-                v90 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44c150*/
-              }
-              if ( v90 && *v90 ) /*0x44c159*/
-                ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v90, 3, v89, 0, 0); /*0x44c166*/
-              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44c16f*/
-              ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44c178*/
-            }
-            if ( !this->Anims[12] ) /*0x44c17d*/
-            {
-              v91 = (void (__thiscall **)(BuildingClass *, int, int))this->vtable1; /*0x44c185*/
-              this->BuildingClass_field_bool_6DD = 1; /*0x44c18e*/
-              v91[122](this, 5, 1); /*0x44c195*/
-            }
-            return 1; /*0x44c1a7*/
-          }
-          if ( v81 ) /*0x44c1aa*/
-            return 1; /*0x44c1b8*/
-          v92 = Team::GetMember((Team *)this, 0); /*0x44c1bc*/
-          v93 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44c1c1*/
-          v94 = v92; /*0x44c1c7*/
-          v95 = Team::GetMember((Team *)this, 0); /*0x44c1c9*/
-          if ( v93[310](this, v95) < 200 ) /*0x44c1dc*/
-          {
-            if ( !*(unsigned int *)(v94 + 1652) ) /*0x44c1e2*/
-              sub_7DC720(-2147467261); /*0x44c1ef*/
-            v54 = (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 96))(*(unsigned int *)(v94 + 1652)) == 0; /*0x44c200*/
-            v96 = *(unsigned int *)(v94 + 1652); /*0x44c202*/
-            if ( !v54 ) /*0x44c208*/
-            {
-              if ( !v96 ) /*0x44c20c*/
-                sub_7DC720(-2147467261); /*0x44c213*/
-              if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 16))(*(unsigned int *)(v94 + 1652)) ) /*0x44c221*/
-              {
-                if ( !*(unsigned int *)(v94 + 1652) ) /*0x44c228*/
-                  sub_7DC720(-2147467261); /*0x44c235*/
-                (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 92))(*(unsigned int *)(v94 + 1652)); /*0x44c243*/
-              }
-              return 1; /*0x44c252*/
-            }
-            if ( !v96 ) /*0x44c255*/
-              sub_7DC720(-2147467261); /*0x44c25c*/
-            if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v94 + 1652) + 96))(*(unsigned int *)(v94 + 1652)) /*0x44c279*/
-              && *(unsigned int *)(Team::GetMember((Team *)this, 0) + 1444) )
-            {
-              v97 = (FootClass *)Team::GetMember((Team *)this, 0); /*0x44c284*/
-              FootClass::ClearPathIndex(v97); /*0x44c28b*/
-            }
-          }
-          if ( (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 19) == 1 )
-          {
-            v98 = Team::GetMember((Team *)this, 0); /*0x44c2ae*/
-            ((gamemd::BuildingClass *)(void *)((BuildingClass *)v98))->GetHealthRatio(); /*0x44c2b2*/
-            _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c2b7*/
-            __asm /*0x44c2bc*/
-            {
-              fcomp qword ptr [eax+16F8h]
-              fnstsw ax
-            }
-            v100 = (_EAX & 0x100) != 0; /*0x44c2c7*/
-            v149 = *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v98 + 132))(v98) + 3364); /*0x44c2e6*/
-            v101 = (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 28); /*0x44c2ea*/
-            v102 = v101 == 1; /*0x44c2f3*/
-            v103 = v101 == 33; /*0x44c2f9*/
-            if ( (v100 || v149) && (v102 || v103) )
-            {
-              if ( !*(unsigned char *)(v98 + 976) || (unsigned __int8)House::IsCurrentPlayer(*(House **)(v98 + 540)) ) /*0x44c4cc*/
-              {
-                if ( ((unsigned int *)this)[0] ) /*0x44c4f3*/
-                  ((gamemd::VoxClass *)(void *)((VoxClass *)&((unsigned int *)&stru_818E00)[5]))->FindAndPlay(-1); /*0x44c507*/
-                ((unsigned int *)this)[0] = 2; /*0x44c50e*/
-                ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c518*/
-                _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c51d*/
-                __asm /*0x44c523*/
-                {
-                  fcomp qword ptr [ecx+1700h]
-                  fnstsw ax
-                }
-                if ( (_AX & 0x4100) != 0 ) /*0x44c52e*/
-                {
-                  v117 = 1; /*0x44c536*/
-                  v118 = (char *)(void *)(&this->Type->__pad_F70[660]); /*0x44c53b*/
-                }
-                else
-                {
-                  v117 = 0; /*0x44c548*/
-                  v118 = (char *)(void *)(&this->Type->__pad_F70[644]); /*0x44c54a*/
-                }
-                if ( v118 && *v118 ) /*0x44c553*/
-                  ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v114, v118, 10, v117, 0, 0); /*0x44c560*/
-                ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(3); /*0x44c569*/
-                ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(18); /*0x44c572*/
-                this->BuildingClass_field_bool_6DD = 0; /*0x44c577*/
-                this->RepairProgress.Value = 0; /*0x44c57e*/
-                *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44c594*/
-                v119 = v153; /*0x44c596*/
-                *(unsigned int *)&this->__pad_628[12] = 1; /*0x44c59a*/
-                *(unsigned int *)&this->__pad_628[4] = v119; /*0x44c5a0*/
-                *(unsigned int *)&this->__pad_628[8] = 1; /*0x44c5a3*/
-              }
-              else
-              {
-                (*(void (__thiscall **)(int, int))(*(unsigned int *)v98 + 416))(v98, 1); /*0x44c4db*/
-                ((unsigned int *)this)[0] = 0; /*0x44c4e1*/
-                this->BuildingClass_field_bool_6DD = 1; /*0x44c4e7*/
-              }
-            }
-            else
-            {
-              ((gamemd::BuildingClass *)(void *)((BuildingClass *)v98))->GetHealthRatio(); /*0x44c31a*/
-              _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c31f*/
-              __asm /*0x44c324*/
-              {
-                fcomp qword ptr [eax+16F8h]
-                fnstsw ax
-              }
-              if ( (_EAX & 0x4000) != 0 )
-              {
-                if ( !*(unsigned int *)(v98 + 1652) ) /*0x44c335*/
-                  sub_7DC720(-2147467261); /*0x44c342*/
-                if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v98 + 1652) + 96))(*(unsigned int *)(v98 + 1652)) )
-                {
-                  v105 = Team::GetMember((Team *)this, 0); /*0x44c35e*/
-                  if ( v105 )
-                    v106 = (*(unsigned char *)(v105 + 20) & 4) != 0 ? (TechnoClass *)v105 : 0;
-                  else
-                    v106 = 0; /*0x44c367*/
-                  if ( !v106[1].alignmentPadding154[0] ) /*0x44c379*/
-                    sub_7DC720(-2147467261); /*0x44c386*/
-                  (*(void (__stdcall **)(int))(*(unsigned int *)v106[1].alignmentPadding154[0] + 88))(v106[1].alignmentPadding154[0]); /*0x44c394*/
-                  if ( !v106->focus || (unsigned __int8)House::IsCurrentPlayer((House *)v106->owner) ) /*0x44c3a5*/
-                  {
-                    v107 = (int (__thiscall **)(BuildingClass *, int *, int, int))this->vtable1; /*0x44c3f3*/
-                    v147 = g_TerrainTypeTable; /*0x44c3f6*/
-                    v108 = Team::GetMember((Team *)this, 0); /*0x44c3fa*/
-                    v109 = (unsigned int **)v107[309](this, &v151.StreamClass_field_0C, v108, v147); /*0x44c407*/
-                    v110 = (ra2::game::AbstractClass *)(void *)((unsigned int *)this)[0]; /*0x44c40d*/
-                    v111 = *v109; /*0x44c413*/
-                    *(unsigned int *)v151.__pad_0 = v111; /*0x44c417*/
-                    if ( v110 ) /*0x44c41b*/
-                    {
-                      v111 = (unsigned int *)(*((int (__thiscall **)(AbstractClass *, int *))v110->vtable1 + 18))(v110, &v152); /*0x44c424*/
-                      IDA_LOWORD(v151.m_Data) = *v111 / 256; /*0x44c437*/
-                      IDA_HIWORD(v151.m_Data) = v111[1] / 256; /*0x44c44b*/
-                      IDA_LOWORD(v111) = v151.m_Data; /*0x44c450*/
-                      *(unsigned int *)v151.__pad_0 = v151.m_Data; /*0x44c454*/
-                    }
-                    if ( IDA___PAIR32__(*(unsigned __int16 *)&v151.__pad_0[2], (unsigned __int16)v111) != g_TerrainTypeTable ) /*0x44c45f*/
-                    {
-                      (*((void (__thiscall **)(TechnoClass *, int, unsigned int))v106->vtable1 + 122))(v106, 2, 0); /*0x44c47a*/
-                      v112 = (void (__thiscall **)(TechnoClass *, void *, int))v106->RadioClass; /*0x44c480*/
-                      v113 = ((gamemd::CellCoord *)(void *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((__int16 *)v151.__pad_0); /*0x44c48e*/
-                      v112[288](v106, v113, 1); /*0x44c496*/
-                      TechnoClass::SetFocus(v106, 0); /*0x44c49f*/
-                      (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44c4ab*/
-                      v106->queueUpToEnter = 0; /*0x44c4b1*/
-                    }
-                  }
-                  else
-                  {
-                    (*((void (__thiscall **)(TechnoClass *, int, unsigned int))v106->vtable1 + 122))(v106, 2, 0); /*0x44c3b5*/
-                    (*((void (__thiscall **)(TechnoClass *, AbstractClass *, int))v106->vtable1 + 288))( /*0x44c3c8*/
-                      v106,
-                      v106->focus,
-                      1);
-                    TechnoClass::SetFocus(v106, 0); /*0x44c3d1*/
-                    v106->queueUpToEnter = 0; /*0x44c3d6*/
-                    (*((void (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 3); /*0x44c3e3*/
-                  }
-                }
-              }
-            }
-          }
-          else if ( !HouseClass::IonSensitivesShouldBeOffline() ) /*0x44c5b1*/
-          {
-            v120 = (unsigned int *)(Team::GetMember((Team *)this, 0) + 1652); /*0x44c5ce*/
-            if ( !*v120 ) /*0x44c5c8*/
-              sub_7DC720(-2147467261); /*0x44c5dd*/
-            if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)*v120 + 96))(*v120) ) /*0x44c5e7*/
-            {
-              v121 = (unsigned int *)(Team::GetMember((Team *)this, 0) + 1652); /*0x44c602*/
-              if ( !*v121 ) /*0x44c5fc*/
-                sub_7DC720(-2147467261); /*0x44c611*/
-              (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v121 + 88))(*v121); /*0x44c61b*/
-            }
-          }
-        }
-      }
-      else
-      {
-        if ( !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44c625*/
-        {
-          ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(8); /*0x44c636*/
-          ((gamemd::BuildingClass *)(void *)(this))->ClearAnims(11); /*0x44c63f*/
-          ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c646*/
-          _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c64b*/
-          __asm /*0x44c650*/
-          {
-            fcomp qword ptr [eax+1700h]
-            fnstsw ax
-          }
-          if ( (_EAX & 0x4100) != 0 ) /*0x44c65b*/
-          {
-            v124 = 1; /*0x44c663*/
-            v125 = (char *)(void *)(&this->Type->__pad_F70[796]); /*0x44c668*/
-          }
-          else
-          {
-            v124 = 0; /*0x44c675*/
-            v125 = (char *)(void *)(&this->Type->__pad_F70[780]); /*0x44c677*/
-          }
-          if ( v125 && *v125 ) /*0x44c680*/
-            ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v122, v125, 12, v124, 0, 0); /*0x44c68d*/
-          ((gamemd::BuildingClass *)(void *)(this))->GetHealthRatio(); /*0x44c694*/
-          _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c699*/
-          __asm /*0x44c69f*/
-          {
-            fcomp qword ptr [ecx+1700h]
-            fnstsw ax
-          }
-          if ( (_AX & 0x4100) != 0 ) /*0x44c6aa*/
-          {
-            v129 = 1; /*0x44c6b2*/
-            v130 = (char *)(void *)(&this->Type->__pad_F70[184]); /*0x44c6b7*/
-          }
-          else
-          {
-            v129 = 0; /*0x44c6c4*/
-            v130 = (char *)(void *)(&this->Type->__pad_F70[168]); /*0x44c6c6*/
-          }
-          if ( v130 && *v130 ) /*0x44c6cf*/
-            ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v126, v130, 3, v129, 0, 0); /*0x44c6dc*/
-          (*((void (__thiscall **)(BuildingClass *, int, int))this->vtable1 + 122))(this, 5, 1); /*0x44c6ea*/
-          return 1; /*0x44c6fc*/
-        }
-        this->BuildingClass_field_bool_6DD = 0; /*0x44c700*/
-        v151.m_Data = (void *)100; /*0x44c707*/
-        v131 = Team::GetMember((Team *)this, 0); /*0x44c70f*/
-        v132 = (unsigned int *)(v131 + 1652); /*0x44c714*/
-        *(unsigned int *)v151.__pad_0 = 0; /*0x44c71a*/
-        if ( !*(unsigned int *)(v131 + 1652) ) /*0x44c71e*/
-          goto LABEL_215; /*0x44c71e*/
-        v133 = StreamClass::Set2(&v151, (unsigned int *)(v131 + 1652)); /*0x44c727*/
-        if ( v133 < 0 && v133 != -2147467262 ) /*0x44c735*/
-          sub_7DC720(v133); /*0x44c738*/
-        if ( !*(unsigned int *)v151.__pad_0 ) /*0x44c743*/
-  LABEL_215:
-          sub_7DC720(-2147467261); /*0x44c74a*/
-        (*(void (__stdcall **)(unsigned int, int *))(**(unsigned int **)v151.__pad_0 + 12))(*(unsigned int *)v151.__pad_0, &v152); /*0x44c75b*/
-        if ( !memcmp(&v152, &stru_7E9A40, 0x10u) ) /*0x44c76e*/
-          v151.m_Data = (void *)200; /*0x44c777*/
-        if ( !memcmp(&v152, &g_CLSID_DriveLocomotion2, 0x10u) ) /*0x44c78b*/
-          v151.m_Data = (void *)200; /*0x44c78f*/
-        if ( (*((int (__thiscall **)(BuildingClass *, int))this->vtable1 + 157))(this, 19) == 1 ) /*0x44c7a3*/
-        {
-          v134 = (int (__thiscall **)(BuildingClass *, int))this->vtable1; /*0x44c7a5*/
-          v135 = Team::GetMember((Team *)this, 0); /*0x44c7ac*/
-          v136 = v134[310](this, v135); /*0x44c7b4*/
-          if ( v136 < (int)v151.m_Data ) /*0x44c7be*/
-          {
-            v137 = *(unsigned int *)v151.__pad_0; /*0x44c7c0*/
-            ((unsigned int *)this)[0] = 1; /*0x44c7c4*/
-            if ( v137 ) /*0x44c7d0*/
-              (*(void (__stdcall **)(int))(*(unsigned int *)v137 + 8))(v137); /*0x44c7d5*/
-            return 3; /*0x44c7e4*/
-          }
-        }
-        if ( !HouseClass::IonSensitivesShouldBeOffline() ) /*0x44c7eb*/
-        {
-          if ( !*v132 ) /*0x44c7f4*/
-            sub_7DC720(-2147467261); /*0x44c7fe*/
-          (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v132 + 88))(*v132); /*0x44c808*/
-        }
-        if ( *(unsigned int *)v151.__pad_0 ) /*0x44c811*/
-          (*(void (__stdcall **)(unsigned int))(**(unsigned int **)v151.__pad_0 + 8))(*(unsigned int *)v151.__pad_0); /*0x44c816*/
-      }
-      goto LABEL_231; /*0x44bbec*/
-    }
-    if ( !Type->UnitReload ) /*0x44c83e*/
-      return 15; /*0x44c971*/
-    v139 = 0; /*0x44c84a*/
-    v150 = 0; /*0x44c84e*/
-    if ( ((unsigned int *)this)[2] <= 0 ) /*0x44c853*/
-      goto LABEL_247; /*0x44c853*/
-    do /*0x44c929*/
-    {
-      v140 = Team::GetMember((Team *)this, v139); /*0x44c85c*/
-      v141 = (unsigned int *)v140; /*0x44c861*/
-      if ( !v140 ) /*0x44c865*/
-        goto LABEL_244; /*0x44c865*/
-      if ( (*((int (__thiscall **)(BuildingClass *, int, int))this->vtable1 + 158))(this, 29, v140) == 1 /*0x44c893*/
-        && v141[27] == *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v141 + 132))(v141) + 160) )
-      {
-        goto LABEL_243; /*0x44c893*/
-      }
-      if ( (*(int (__thiscall **)(unsigned int *))(*v141 + 388))(v141) != 7 /*0x44c8b5*/
-        && (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))this->vtable1 + 158))(this, 19, v141) == 1 )
-      {
-        v150 = 1; /*0x44c8bb*/
-        if ( (*(int (__thiscall **)(unsigned int *))(*v141 + 388))(v141) ) /*0x44c8bf*/
-        {
-          (*(void (__thiscall **)(unsigned int *, unsigned int, unsigned int))(*v141 + 488))(v141, 0, 0); /*0x44c8cf*/
-          goto LABEL_244; /*0x44c8d5*/
-        }
-        if ( (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))this->vtable1 + 158))(this, 31, v141) != 1 /*0x44c8fb*/
-          && (*((int (__thiscall **)(BuildingClass *, int, unsigned int *))this->vtable1 + 158))(this, 28, v141) != 1 )
-        {
-  LABEL_243:
-          (*(void (__thiscall **)(unsigned int *, unsigned int, int))(*v141 + 1156))(v141, 0, 1); /*0x44c904*/
-          (*(void (__thiscall **)(unsigned int *, int))(*v141 + 496))(v141, 5); /*0x44c910*/
-          (*(void (__thiscall **)(unsigned int *))(*v141 + 820))(v141); /*0x44c91a*/
-        }
-      }
-  LABEL_244:
-      ++v139; /*0x44c920*/
-    }
-    while ( v139 < ((unsigned int *)this)[2] ); /*0x44c929*/
-    if ( v150 ) /*0x44c935*/
-    {
-      _EAX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x44c937*/
-      __asm /*0x44c93c*/
-      {
-        fld qword ptr [eax+1508h]
-        fmul ds:dbl_7E27F8
-      }
-      IDA_LOWORD(result) = Math::RoundToInt(v1); /*0x44c948*/
-      return result; /*0x44c954*/
-    }
-  LABEL_247:
-    (*((void (__thiscall **)(BuildingClass *, int, unsigned int))this->vtable1 + 122))(this, 5, 0); /*0x44c955*/
-    return 3; /*0x44b7fa*/
+  double v1; // st7
+  BuildingTypeClass *Type; // eax
+  int missionStatus; // eax
+  int result; // eax
+  int v6; // edx
+  int v8; // ecx
+  char *v9; // eax
+  int v10; // eax
+  int v11; // eax
+  int v12; // ecx
+  int v13; // edx
+  int v14; // edx
+  int v17; // eax
+  int v18; // eax
+  CoordStruct *v19; // eax
+  void *v21; // eax
+  void *v23; // eax
+  int v24; // eax
+  int v25; // eax
+  int v26; // eax
+  int v27; // eax
+  int v28; // ecx
+  int v29; // edx
+  int v30; // edx
+  Power *v32; // esi
+  void *v34; // eax
+  int v35; // eax
+  int v36; // eax
+  int v37; // eax
+  int v38; // eax
+  int v41; // ecx
+  char *v42; // eax
+  int v43; // edx
+  int v45; // ecx
+  char *v46; // eax
+  int v47; // eax
+  int v48; // ecx
+  int v49; // edx
+  int v50; // edx
+  int v53; // eax
+  bool v54; // zf
+  char isOwnedByCurrentPlayer; // al
+  int v59; // ecx
+  char *v60; // eax
+  int v61; // edx
+  int v63; // ecx
+  char *v64; // eax
+  TechnoClass *Member; // eax
+  TechnoClass *v66; // esi
+  int v67; // eax
+  unsigned int **v68; // eax
+  AbstractClass *focus; // ecx
+  unsigned int *v70; // eax
+  void *v72; // eax
+  int v75; // ecx
+  char *v76; // eax
+  int v77; // edx
+  int v79; // ecx
+  char *v80; // eax
+  AnimClass *v81; // eax
+  int v82; // edx
+  int v85; // ecx
+  char *v86; // eax
+  int v89; // ecx
+  char *v90; // eax
+  TechnoClass *v92; // eax
+  TechnoClass *v94; // esi
+  TechnoClass *v95; // eax
+  int v96; // eax
+  FootClass *v97; // eax
+  TechnoClass *v98; // esi
+  bool v100; // bl
+  int v101; // eax
+  bool v102; // cl
+  bool v103; // al
+  TechnoClass *v105; // eax
+  TechnoClass *v106; // esi
+  TechnoClass *v108; // eax
+  unsigned int **v109; // eax
+  AbstractClass *v110; // ecx
+  unsigned int *v111; // eax
+  void *v113; // eax
+  int v114; // edx
+  int v117; // ecx
+  char *v118; // eax
+  int v119; // eax
+  unsigned int *v120; // esi
+  unsigned int *v121; // esi
+  int v122; // edx
+  int v124; // ecx
+  char *v125; // eax
+  int v126; // edx
+  int v129; // ecx
+  char *v130; // eax
+  int v131; // eax
+  unsigned int *v132; // ebx
+  int v133; // eax
+  TechnoClass *v135; // eax
+  int v136; // eax
+  ILocomotion *v137; // eax
+  int v139; // ebx
+  int v140; // eax
+  unsigned int *v141; // esi
+  int v143; // [esp+1Ch] [ebp-3Ch]
+  int v144; // [esp+1Ch] [ebp-3Ch]
+  int v145; // [esp+1Ch] [ebp-3Ch]
+  int v146; // [esp+1Ch] [ebp-3Ch]
+  int v147; // [esp+1Ch] [ebp-3Ch]
+  BuildingClass *v148; // [esp+20h] [ebp-38h]
+  char v149; // [esp+33h] [ebp-25h]
+  char v150; // [esp+33h] [ebp-25h]
+  StreamClass v151; // [esp+34h] [ebp-24h] BYREF
+  int v152; // [esp+48h] [ebp-10h] BYREF
+  int v153; // [esp+4Ch] [ebp-Ch]
+  int v154; // [esp+50h] [ebp-8h]
+
+    int _EAX; int _EDX; int _ECX;  // fnstsw ax (W20M26)
+    int fildTmp;  // fild scratch (W20M26)
+  if ( this->Type->Bunker ) /*0x44b797*/
+    this->UpdateBunker(v1); /*0x44b7a3*/
+  Type = this->Type; /*0x44b7a8*/
+  if ( Type->ConstructionYard ) /*0x44b7ae*/
+  {
+    missionStatus = this->missionStatus; /*0x44b7bc*/
+    if ( missionStatus ) /*0x44b7c4*/
+    {
+      if ( missionStatus == 2 && !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44b7d1*/
+      {
+        this->MissionDispatch(5, 0); /*0x44b7e6*/
+        this->ClearAnims(7); /*0x44b7f0*/
+        return 1; /*0x44b801*/
+      }
+    }
+    else
+    {
+      this->StartProduction(2); /*0x44b806*/
+      this->GetHealthRatio(); /*0x44b80d*/
+      _EAX = dword_8871E0; /*0x44b812*/
+    fildTmp = this->RepairProgress.Value;
+      __asm /*0x44b817*/
+      {
+        fcomp qword ptr [eax+1700h]
+        fnstsw ax
+      }
+      if ( (_EAX & 0x4100) != 0 ) /*0x44b822*/
+      {
+        v8 = 1; /*0x44b82a*/
+        v9 = this->Type->q1138; /*0x44b82f*/
+      }
+      else
+      {
+        v8 = 0; /*0x44b83c*/
+        v9 = this->Type->q1128; /*0x44b83e*/
+      }
+      if ( v9 && *v9 ) /*0x44b847*/
+        this->PlayAnim(v6, v9, 7, v8, 0, 0); /*0x44b854*/
+      this->missionStatus = 2; /*0x44b859*/
+    }
+    return 1; /*0x44b86f*/
+  }
+  if ( Type->Hospital )
+  {
+    v10 = this->missionStatus; /*0x44b87e*/
+    if ( v10 )
+    {
+      if ( v10 == 2 ) /*0x44b88f*/
+      {
+        if ( (v11 = this->q634) == 0 ) /*0x44b8ae*/
+        {
+          *(unsigned char *)&this->RepairProgress.Timer = 0; /*0x44b8df*/
+        }
+        else
+        {
+          v12 = this->q638; /*0x44b8b0*/
+          v13 = this->RepairProgress.Value; /*0x44b8b6*/
+          *(unsigned char *)&this->RepairProgress.Timer = 1; /*0x44b8be*/
+          this->RepairProgress.Value = v12 + v13; /*0x44b8c5*/
+          v14 = v153; /*0x44b8d1*/
+          this->q628 = dword_A8ED84; /*0x44b8d5*/
+          this->q62C = v14; /*0x44b8d7*/
+          this->q630 = v11; /*0x44b8da*/
+        }
+        _EAX = dword_8871E0; /*0x44b8e6*/
+        __asm /*0x44b8eb*/
+        {
+          fild    dword ptr [fildTmp]
+          fld qword ptr [eax+16F0h]
+          fmul ds:dbl_7E27F8
+          fcompp
+          fnstsw ax
+        }
+        if ( (_EAX & 0x4100) == 0 ) /*0x44b904*/
+          return 1; /*0x44b904*/
+        this->BuildingClass_field_bool_6DD = 0; /*0x44b911*/
+        this->RepairProgress.Value = 0; /*0x44b918*/
+        v17 = this->ThunkTo159x4(28) - 10; /*0x44b924*/
+        if ( v17 ) /*0x44b927*/
+        {
+          v18 = v17 - 22; /*0x44b929*/
+          if ( !v18 ) /*0x44b92c*/
+          {
+            v144 = g_TerrainTypeTable; /*0x44b9e9*/
+            v23 = LinkedList::Pop((LinkedList *)&this->inAirFlag); /*0x44b9f0*/
+            this->vt_entry_100(v23, v144); /*0x44b9f8*/
+            return 1; /*0x44ba0a*/
+          }
+          if ( v18 != 1 ) /*0x44b933*/
+            return 1; /*0x44b9df*/
+          if ( (unsigned __int8)House::IsHumanPlayer((House *)this->owner) ) /*0x44b93f*/
+          {
+            v19 = this->GetCellCoords_Alt(&v151.m_Data); /*0x44b952*/
+            if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, v19->X, v19->X) ) /*0x44b960*/
+              ((VoxClass *)aEvaUnitrepaire)->FindAndPlay(-1); /*0x44b973*/
+            v152 = this->location.X; /*0x44b981*/
+            v153 = this->location.Y; /*0x44b98e*/
+            v154 = this->location.Z; /*0x44b999*/
+            StartAudioControllerAt(dword_8871E0_m26_t->q718, &v152, 0); /*0x44b9a3*/
+          }
+        }
+        v143 = g_TerrainTypeTable; /*0x44b9b0*/
+        v21 = LinkedList::Pop((LinkedList *)&this->inAirFlag); /*0x44b9b7*/
+        this->vt_entry_100(v21, v143); /*0x44b9bf*/
+        this->MissionDispatch(5, 0); /*0x44b9cd*/
+        return 1; /*0x44b9cd*/
+      }
+    }
+    else
+    {
+      this->missionStatus = 2; /*0x44ba0b*/
+      this->BuildingClass_field_bool_6DD = 0; /*0x44ba15*/
+      this->RepairProgress.Value = 0; /*0x44ba1c*/
+      v24 = dword_A8ED84; /*0x44ba22*/
+      this->q634 = 1; /*0x44ba32*/
+      this->q628 = v24; /*0x44ba38*/
+      this->q62C = v153; /*0x44ba3e*/
+      this->q630 = 1; /*0x44ba41*/
+      if ( this->Type->q684 != -1 )
+      {
+        v25 = this->pitchAngle - 1; /*0x44ba5f*/
+        this->pitchAngle = v25; /*0x44ba62*/
+        this->pitchAngle = v25 <= 0 ? 0 : v25;
+      }
+    }
+LABEL_231:
+    _EAX = MissionClass::GetMissionControl(this); /*0x44c819*/
+    __asm /*0x44c820*/
+    {
+      fld qword ptr [eax+10h]
+      fmul ds:dbl_7E27F8
+    }
+    result = Math::RoundToInt(v1); /*0x44c829*/
+    return result; /*0x44c835*/
+  }
+  if ( Type->Armory )
+  {
+    v26 = this->missionStatus; /*0x44ba87*/
+    if ( v26 )
+    {
+      if ( v26 == 2 ) /*0x44ba98*/
+      {
+        if ( (v27 = this->q634) == 0 ) /*0x44bab7*/
+        {
+          *(unsigned char *)&this->RepairProgress.Timer = 0; /*0x44bae8*/
+        }
+        else
+        {
+          v28 = this->q638; /*0x44bab9*/
+          v29 = this->RepairProgress.Value; /*0x44babf*/
+          *(unsigned char *)&this->RepairProgress.Timer = 1; /*0x44bac7*/
+          this->RepairProgress.Value = v28 + v29; /*0x44bace*/
+          v30 = v153; /*0x44bada*/
+          this->q628 = dword_A8ED84; /*0x44bade*/
+          this->q62C = v30; /*0x44bae0*/
+          this->q630 = v27; /*0x44bae3*/
+        }
+        _EAX = dword_8871E0; /*0x44baef*/
+        __asm /*0x44baf4*/
+        {
+          fild    dword ptr [fildTmp]
+          fld qword ptr [eax+16F0h]
+          fmul ds:dbl_7E27F8
+          fcompp
+          fnstsw ax
+        }
+        if ( (_EAX & 0x4100) != 0 ) /*0x44bb0d*/
+        {
+          v32 = (Power *)(Team::GetMember((Team *)this, 0) + 336); /*0x44bb1b*/
+          if ( VeinholeClass::GetState((float *)&v32->Power_field_0x0) ) /*0x44bb23*/
+            Power::ChangedHouse(v32, 1); /*0x44bb30*/
+          else
+            Timer::SetFlag((Timer *)v32, 1); /*0x44bb37*/
+          v145 = g_TerrainTypeTable; /*0x44bb45*/
+          v34 = LinkedList::Pop((LinkedList *)&this->inAirFlag); /*0x44bb4c*/
+          this->vt_entry_100(v34, v145); /*0x44bb54*/
+          this->MissionDispatch(5, 0); /*0x44bb62*/
+        }
+      }
+    }
+    else
+    {
+      this->missionStatus = 2; /*0x44bb6d*/
+      this->BuildingClass_field_bool_6DD = 0; /*0x44bb77*/
+      this->RepairProgress.Value = 0; /*0x44bb7e*/
+      v35 = dword_A8ED84; /*0x44bb84*/
+      this->q634 = 1; /*0x44bb94*/
+      this->q628 = v35; /*0x44bb9a*/
+      this->q62C = v153; /*0x44bba0*/
+      this->q630 = 1; /*0x44bba3*/
+      v36 = this->pitchAngle - 1; /*0x44bbac*/
+      this->pitchAngle = v36; /*0x44bbb1*/
+      this->pitchAngle = v36 <= 0 ? 0 : v36;
+    }
+    goto LABEL_231; /*0x44bb68*/
+  }
+  if ( Type->UnitRepair )
+  {
+    v37 = this->missionStatus; /*0x44bbd6*/
+    if ( v37 )
+    {
+      v38 = v37 - 1; /*0x44bbe4*/
+      if ( v38 )
+      {
+        if ( v38 == 1 )
+        {
+          if ( (unsigned __int8)Team::AllMembersValid((Team *)this) )
+          {
+            if ( !this->q634 ) /*0x44bcc7*/
+              this->q634 = 1; /*0x44bcd6*/
+            if ( (v47 = this->q634) == 0 ) /*0x44bcf5*/
+            {
+              *(unsigned char *)&this->RepairProgress.Timer = 0; /*0x44bd26*/
+            }
+            else
+            {
+              v48 = this->q638; /*0x44bcf7*/
+              v49 = this->RepairProgress.Value; /*0x44bcfd*/
+              *(unsigned char *)&this->RepairProgress.Timer = 1; /*0x44bd05*/
+              this->RepairProgress.Value = v48 + v49; /*0x44bd0c*/
+              v50 = v153; /*0x44bd18*/
+              this->q628 = dword_A8ED84; /*0x44bd1c*/
+              this->q62C = v50; /*0x44bd1e*/
+              this->q630 = v47; /*0x44bd21*/
+            }
+            _EAX = dword_8871E0; /*0x44bd2d*/
+            __asm /*0x44bd32*/
+            {
+              fild    dword ptr [fildTmp]
+              fld qword ptr [eax+16E8h]
+              fmul ds:dbl_7E27F8
+              fcompp
+              fnstsw ax
+            }
+            if ( (_EAX & 0x4100) != 0 && this->ThunkTo159x4(19) == 1 )
+            {
+              this->BuildingClass_field_bool_6DD = 0; /*0x44bd6d*/
+              this->RepairProgress.Value = 0; /*0x44bd74*/
+              v53 = this->ThunkTo159x4(28) - 1; /*0x44bd80*/
+              if ( v53 )
+              {
+                v54 = v53 == 31; /*0x44bd87*/
+                isOwnedByCurrentPlayer = this->isOwnedByCurrentPlayer; /*0x44bd8a*/
+                if ( v54 )
+                {
+                  if ( isOwnedByCurrentPlayer /*0x44bfd9*/ && !(this->owner->FindItemIndex_0()) )
+                  {
+                    ((VoxClass *)aEvaInsufficien)->FindAndPlay(-1); /*0x44bfea*/
+                  }
+                  this->ClearAnims(8); /*0x44bff3*/
+                  this->ClearAnims(11); /*0x44bffc*/
+                  this->GetHealthRatio(); /*0x44c003*/
+                  _EDX = dword_8871E0; /*0x44c008*/
+                  __asm /*0x44c00e*/
+                  {
+                    fcomp qword ptr [edx+1700h]
+                    fnstsw ax
+                  }
+                  if ( (_EAX & 0x4100) != 0 ) /*0x44c019*/
+                  {
+                    v75 = 1; /*0x44c021*/
+                    v76 = this->Type->q128C; /*0x44c023*/
+                  }
+                  else
+                  {
+                    v75 = 0; /*0x44c030*/
+                    v76 = this->Type->q127C; /*0x44c032*/
+                  }
+                  if ( v76 && *v76 ) /*0x44c03b*/
+                    this->PlayAnim(dword_8871E0, v76, 12, v75, 0, 0); /*0x44c048*/
+                  this->GetHealthRatio(); /*0x44c04f*/
+                  _EAX = dword_8871E0; /*0x44c054*/
+                  __asm /*0x44c059*/
+                  {
+                    fcomp qword ptr [eax+1700h]
+                    fnstsw ax
+                  }
+                  if ( (_EAX & 0x4100) != 0 ) /*0x44c064*/
+                  {
+                    v79 = 1; /*0x44c06c*/
+                    v80 = this->Type->q1028; /*0x44c06e*/
+                  }
+                  else
+                  {
+                    v79 = 0; /*0x44c07b*/
+                    v80 = this->Type->q1018; /*0x44c07d*/
+                  }
+                  if ( v80 && *v80 ) /*0x44c086*/
+                    this->PlayAnim(v77, v80, 3, v79, 0, 0); /*0x44c093*/
+                  this->missionStatus = 1; /*0x44c098*/
+                }
+                else
+                {
+                  if ( isOwnedByCurrentPlayer ) /*0x44bd98*/
+                  {
+                    v19 = this->GetCellCoords_Alt(&v151.m_Position);
+                    if ( (unsigned __int8)CreateTriggerClassIfFarEnough(8, v19->X, v19->X) ) /*0x44bdb2*/
+                      ((VoxClass *)aEvaUnitrepaire)->FindAndPlay(-1); /*0x44bdc5*/
+                  }
+                  this->ClearAnims(8); /*0x44bdce*/
+                  this->ClearAnims(11); /*0x44bdd7*/
+                  this->GetHealthRatio(); /*0x44bdde*/
+                  _EDX = dword_8871E0; /*0x44bde3*/
+                  __asm /*0x44bde9*/
+                  {
+                    fcomp qword ptr [edx+1700h]
+                    fnstsw ax
+                  }
+                  if ( (_EAX & 0x4100) != 0 ) /*0x44bdf4*/
+                  {
+                    v59 = 1; /*0x44bdfc*/
+                    v60 = this->Type->q128C; /*0x44bdfe*/
+                  }
+                  else
+                  {
+                    v59 = 0; /*0x44be0b*/
+                    v60 = this->Type->q127C; /*0x44be0d*/
+                  }
+                  if ( v60 && *v60 ) /*0x44be16*/
+                    this->PlayAnim(dword_8871E0, v60, 12, v59, 0, 0); /*0x44be23*/
+                  this->GetHealthRatio(); /*0x44be2a*/
+                  _EAX = dword_8871E0; /*0x44be2f*/
+                  __asm /*0x44be34*/
+                  {
+                    fcomp qword ptr [eax+1700h]
+                    fnstsw ax
+                  }
+                  if ( (_EAX & 0x4100) != 0 ) /*0x44be3f*/
+                  {
+                    v63 = 1; /*0x44be47*/
+                    v64 = this->Type->q1028; /*0x44be49*/
+                  }
+                  else
+                  {
+                    v63 = 0; /*0x44be56*/
+                    v64 = this->Type->q1018; /*0x44be58*/
+                  }
+                  if ( v64 && *v64 ) /*0x44be61*/
+                    this->PlayAnim(v61, v64, 3, v63, 0, 0); /*0x44be6e*/
+                  this->missionStatus = 1; /*0x44be76*/
+                  Member = Team::GetMember((Team *)this, 0); /*0x44be7c*/
+                  if ( Member )
+                    v66 = (Member->abstractFlags & 4) != 0 ? (TechnoClass *)Member : 0;
+                  else
+                    v66 = 0; /*0x44be85*/
+                  if ( v66->focus && !(unsigned __int8)House::IsCurrentPlayer((House *)v66->owner) ) /*0x44bea5*/
+                  {
+                    v66->MissionDispatch(2, 0); /*0x44beb5*/
+                    v66->vt_entry_480(v66->focus, 1);
+                    v66->SetFocus(0); /*0x44bed0*/
+                    this->ThunkTo159x4(3); /*0x44bedc*/
+                    v66->queueUpToEnter = 0; /*0x44bee2*/
+                    return 1; /*0x44bef1*/
+                  }
+                  v146 = g_TerrainTypeTable; /*0x44befa*/
+                  v67 = Team::GetMember((Team *)this, 0); /*0x44bf02*/
+                  v68 = (unsigned int **)(*((int (__thiscall **)(BuildingClass *, int *, int, int))v151.m_Data + 309))( /*0x44bf13*/ this, &v151.m_Size, v67, v146);
+                  focus = this->Owner; /*0x44bf19*/
+                  v70 = *v68; /*0x44bf1f*/
+                  *(unsigned int *)&v151.m_Data = *(unsigned int *)&v70; /*0x44bf23*/
+                  if ( focus ) /*0x44bf27*/
+                  {
+                    v70 = (unsigned int *)focus->GetInvalidCoord(&v152); /*0x44bf30*/
+                    *(unsigned int *)&v151.m_Data = ((*v70 / 256) & 0xFFFF) | ((v70[1] / 256) << 16);
+                     /*0x44bf60*/
+                  }
+                  if ( (unsigned __int16)(*(unsigned int *)&v151.m_Data) != (*(unsigned int *)&g_TerrainTypeTable & 0xFFFF) || (unsigned __int16)(*(unsigned int *)&v151.m_Data >> 16) != (*(unsigned int *)&g_TerrainTypeTable >> 16) ) /*0x44bf6b*/
+                  {
+                    v66->MissionDispatch(2, 0); /*0x44bf87*/
+                    v72 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (unsigned __int16 *)&v151.m_Data); /*0x44bf9a*/
+                    v66->vt_entry_480(v72, 1); /*0x44bfa2*/
+                    this->ThunkTo159x4(3); /*0x44bfaf*/
+                    v66->queueUpToEnter = 0; /*0x44bfb5*/
+                    return 1; /*0x44bfc8*/
+                  }
+                }
+              }
+            }
+            return 1; /*0x44c09e*/
+          }
+          else
+          {
+            this->ClearAnims(8); /*0x44bc05*/
+            this->ClearAnims(11); /*0x44bc0e*/
+            this->GetHealthRatio(); /*0x44bc15*/
+            _EDX = dword_8871E0; /*0x44bc1a*/
+            __asm /*0x44bc20*/
+            {
+              fcomp qword ptr [edx+1700h]
+              fnstsw ax
+            }
+            if ( (_EAX & 0x4100) != 0 ) /*0x44bc2b*/
+            {
+              v41 = 1; /*0x44bc33*/
+              v42 = this->Type->q128C; /*0x44bc38*/
+            }
+            else
+            {
+              v41 = 0; /*0x44bc45*/
+              v42 = this->Type->q127C; /*0x44bc47*/
+            }
+            if ( v42 && *v42 ) /*0x44bc50*/
+              this->PlayAnim(dword_8871E0, v42, 12, v41, 0, 0); /*0x44bc5d*/
+            this->GetHealthRatio(); /*0x44bc64*/
+            _EAX = dword_8871E0; /*0x44bc69*/
+            __asm /*0x44bc6e*/
+            {
+              fcomp qword ptr [eax+1700h]
+              fnstsw ax
+            }
+            if ( (_EAX & 0x4100) != 0 ) /*0x44bc79*/
+            {
+              v45 = 1; /*0x44bc81*/
+              v46 = this->Type->q1028; /*0x44bc86*/
+            }
+            else
+            {
+              v45 = 0; /*0x44bc93*/
+              v46 = this->Type->q1018; /*0x44bc95*/
+            }
+            if ( v46 && *v46 ) /*0x44bc9e*/
+              this->PlayAnim(v43, v46, 3, v45, 0, 0); /*0x44bcab*/
+            this->missionStatus = 1; /*0x44bcb0*/
+            return 1; /*0x44bcba*/
+          }
+        }
+      }
+      else
+      {
+        v54 = (unsigned __int8)Team::AllMembersValid((Team *)this) == 0; /*0x44c0af*/
+        v81 = this->Anims[8]; /*0x44c0b1*/
+        if ( v54 ) /*0x44c0b7*/
+        {
+          if ( v81 || this->Anims[11] ) /*0x44c0c1*/
+          {
+            this->GetHealthRatio(); /*0x44c0cf*/
+            _ECX = dword_8871E0; /*0x44c0d4*/
+            __asm /*0x44c0da*/
+            {
+              fcomp qword ptr [ecx+1700h]
+              fnstsw ax
+            }
+            if ( (_EAX & 0x4100) != 0 ) /*0x44c0e5*/
+            {
+              v85 = 1; /*0x44c0ed*/
+              v86 = this->Type->q128C; /*0x44c0f2*/
+            }
+            else
+            {
+              v85 = 0; /*0x44c0ff*/
+              v86 = this->Type->q127C; /*0x44c101*/
+            }
+            if ( v86 && *v86 ) /*0x44c10a*/
+              this->PlayAnim(v82, v86, 12, v85, 0, 0); /*0x44c117*/
+            this->GetHealthRatio(); /*0x44c11e*/
+            _EDX = dword_8871E0; /*0x44c123*/
+            __asm /*0x44c129*/
+            {
+              fcomp qword ptr [edx+1700h]
+              fnstsw ax
+            }
+            if ( (_EAX & 0x4100) != 0 ) /*0x44c134*/
+            {
+              v89 = 1; /*0x44c13c*/
+              v90 = this->Type->q1028; /*0x44c141*/
+            }
+            else
+            {
+              v89 = 0; /*0x44c14e*/
+              v90 = this->Type->q1018; /*0x44c150*/
+            }
+            if ( v90 && *v90 ) /*0x44c159*/
+              this->PlayAnim(dword_8871E0, v90, 3, v89, 0, 0); /*0x44c166*/
+            this->ClearAnims(8); /*0x44c16f*/
+            this->ClearAnims(11); /*0x44c178*/
+          }
+          if ( !this->Anims[12] ) /*0x44c17d*/
+          {
+            this->BuildingClass_field_bool_6DD = 1; /*0x44c18e*/
+            this->MissionDispatch(5, 1); /*0x44c195*/
+          }
+          return 1; /*0x44c1a7*/
+        }
+        if ( v81 ) /*0x44c1aa*/
+          return 1; /*0x44c1b8*/
+        v92 = Team::GetMember((Team *)this, 0); /*0x44c1bc*/
+        v94 = v92; /*0x44c1c7*/
+        v95 = Team::GetMember((Team *)this, 0); /*0x44c1c9*/
+        if ( this->initAnimation(v95) < 200 ) /*0x44c1dc*/
+        {
+          if ( !v94->Locomotor_m ) /*0x44c1e2*/
+            sub_7DC720(-2147467261); /*0x44c1ef*/
+          v54 = (*(unsigned __int8 (__stdcall **)(unsigned int))v94->Locomotor_m->Is_Powered() == 0; /*0x44c200*/
+          v96 = v94->Locomotor_m; /*0x44c202*/
+          if ( !v54 ) /*0x44c208*/
+          {
+            if ( !v96 ) /*0x44c20c*/
+              sub_7DC720(-2147467261); /*0x44c213*/
+            if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))v94->Locomotor_m->Is_Moving() ) /*0x44c221*/
+            {
+              if ( !v94->Locomotor_m ) /*0x44c228*/
+                sub_7DC720(-2147467261); /*0x44c235*/
+              (*(void (__stdcall **)(unsigned int))v94->Locomotor_m->Power_Off(); /*0x44c243*/
+            }
+            return 1; /*0x44c252*/
+          }
+          if ( !v96 ) /*0x44c255*/
+            sub_7DC720(-2147467261); /*0x44c25c*/
+          if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))v94->Locomotor_m->Is_Powered() /*0x44c279*/ && *(unsigned int *)(Team::GetMember((Team *)this, 0) + 1444) )
+          {
+            v97 = (FootClass *)Team::GetMember((Team *)this, 0); /*0x44c284*/
+            v97->ClearPathIndex(); /*0x44c28b*/
+          }
+        }
+        if ( this->ThunkTo159x4(19) == 1 )
+        {
+          v98 = Team::GetMember((Team *)this, 0); /*0x44c2ae*/
+          BuildingClass::GetHealthRatio((BuildingClass *)v98); /*0x44c2b2*/
+          _EAX = dword_8871E0; /*0x44c2b7*/
+          __asm /*0x44c2bc*/
+          {
+            fcomp qword ptr [eax+16F8h]
+            fnstsw ax
+          }
+          v100 = (_EAX & 0x100) != 0; /*0x44c2c7*/
+          v149 = *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v98 + 132))(v98) + 3364); /*0x44c2e6*/
+          v101 = this->ThunkTo159x4(28); /*0x44c2ea*/
+          v102 = v101 == 1; /*0x44c2f3*/
+          v103 = v101 == 33; /*0x44c2f9*/
+          if ( (v100 || v149) && (v102 || v103) )
+          {
+            if ( !*(unsigned char *)(v98 + 976) || (unsigned __int8)House::IsCurrentPlayer(*(House **)(v98 + 540)) ) /*0x44c4cc*/
+            {
+              if ( this->isOwnedByCurrentPlayer ) /*0x44c4f3*/
+                ((VoxClass *)aEvaRepairing)->FindAndPlay(-1); /*0x44c507*/
+              this->missionStatus = 2; /*0x44c50e*/
+              this->GetHealthRatio(); /*0x44c518*/
+              _ECX = dword_8871E0; /*0x44c51d*/
+              __asm /*0x44c523*/
+              {
+                fcomp qword ptr [ecx+1700h]
+                fnstsw ax
+              }
+              if ( (_EAX & 0x4100) != 0 ) /*0x44c52e*/
+              {
+                v117 = 1; /*0x44c536*/
+                v118 = this->Type->q1204; /*0x44c53b*/
+              }
+              else
+              {
+                v117 = 0; /*0x44c548*/
+                v118 = this->Type->q11F4; /*0x44c54a*/
+              }
+              if ( v118 && *v118 ) /*0x44c553*/
+                this->PlayAnim(v114, v118, 10, v117, 0, 0); /*0x44c560*/
+              this->ClearAnims(3); /*0x44c569*/
+              this->ClearAnims(18); /*0x44c572*/
+              this->BuildingClass_field_bool_6DD = 0; /*0x44c577*/
+              this->RepairProgress.Value = 0; /*0x44c57e*/
+              this->q628 = dword_A8ED84; /*0x44c594*/
+              v119 = v153; /*0x44c596*/
+              this->q634 = 1; /*0x44c59a*/
+              this->q62C = v119; /*0x44c5a0*/
+              this->q630 = 1; /*0x44c5a3*/
+            }
+            else
+            {
+              (*(void (__thiscall **)(int, int))(*(unsigned int *)v98 + 416))(v98, 1); /*0x44c4db*/
+              this->missionStatus = 0; /*0x44c4e1*/
+              this->BuildingClass_field_bool_6DD = 1; /*0x44c4e7*/
+            }
+          }
+          else
+          {
+            BuildingClass::GetHealthRatio((BuildingClass *)v98); /*0x44c31a*/
+            _EAX = dword_8871E0; /*0x44c31f*/
+            __asm /*0x44c324*/
+            {
+              fcomp qword ptr [eax+16F8h]
+              fnstsw ax
+            }
+            if ( (_EAX & 0x4000) != 0 )
+            {
+              if ( !v98->Locomotor_m ) /*0x44c335*/
+                sub_7DC720(-2147467261); /*0x44c342*/
+              if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))v98->Locomotor_m->Is_Powered() )
+              {
+                v105 = Team::GetMember((Team *)this, 0); /*0x44c35e*/
+                if ( v105 )
+                  v106 = (v105->abstractFlags & 4) != 0 ? (TechnoClass *)v105 : 0;
+                else
+                  v106 = 0; /*0x44c367*/
+                if ( !v106->Locomotor_m ) /*0x44c379*/
+                  sub_7DC720(-2147467261); /*0x44c386*/
+                (*(void (__stdcall **)(int))(*(unsigned int *)v106->Locomotor_m + 88))(v106->Locomotor_m); /*0x44c394*/
+                if ( !v106->focus || (unsigned __int8)House::IsCurrentPlayer((House *)v106->owner) ) /*0x44c3a5*/
+                {
+                  v147 = g_TerrainTypeTable; /*0x44c3f6*/
+                  v108 = Team::GetMember((Team *)this, 0); /*0x44c3fa*/
+                  v109 = (unsigned int **)this->ValidateFoundation_1(&v151.StreamClass_field_0C, v108, v147); /*0x44c407*/
+                  v110 = this->Owner; /*0x44c40d*/
+                  v111 = *v109; /*0x44c413*/
+                  v151.m_Data = v111; /*0x44c417*/
+                  if ( v110 ) /*0x44c41b*/
+                  {
+                    v111 = (unsigned int *)v110->GetInvalidCoord(&v152); /*0x44c424*/
+                    *(unsigned int *)&v151.m_Data = ((*v111 / 256) & 0xFFFF) | ((v111[1] / 256) << 16);
+                     /*0x44c454*/
+                  }
+                  if ( (unsigned __int16)v111 != (*(unsigned int *)&g_TerrainTypeTable & 0xFFFF) || (unsigned __int16)(*(unsigned int *)&v151.m_Data >> 16) != (*(unsigned int *)&g_TerrainTypeTable >> 16) ) /*0x44c45f*/
+                  {
+                    v106->MissionDispatch(2, 0); /*0x44c47a*/
+                    v113 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (unsigned __int16 *)&v151.m_Data); /*0x44c48e*/
+                    v106->vt_entry_480(v113, 1); /*0x44c496*/
+                    v106->SetFocus(0); /*0x44c49f*/
+                    this->ThunkTo159x4(3); /*0x44c4ab*/
+                    v106->queueUpToEnter = 0; /*0x44c4b1*/
+                  }
+                }
+                else
+                {
+                  v106->MissionDispatch(2, 0); /*0x44c3b5*/
+                  v106->vt_entry_480(v106->focus, 1);
+                  v106->SetFocus(0); /*0x44c3d1*/
+                  v106->queueUpToEnter = 0; /*0x44c3d6*/
+                  this->ThunkTo159x4(3); /*0x44c3e3*/
+                }
+              }
+            }
+          }
+        }
+        else if ( !HouseClass::IonSensitivesShouldBeOffline() ) /*0x44c5b1*/
+        {
+          v120 = &Team::GetMember((Team *)this, 0)->Locomotor_m; /*0x44c5ce*/
+          if ( !*v120 ) /*0x44c5c8*/
+            sub_7DC720(-2147467261); /*0x44c5dd*/
+          if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*v120)->Is_Powered() ) /*0x44c5e7*/
+          {
+            v121 = &Team::GetMember((Team *)this, 0)->Locomotor_m; /*0x44c602*/
+            if ( !*v121 ) /*0x44c5fc*/
+              sub_7DC720(-2147467261); /*0x44c611*/
+            (*(void (__stdcall **)(unsigned int))(*v121)->Power_On(); /*0x44c61b*/
+          }
+        }
+      }
+    }
+    else
+    {
+      if ( !(unsigned __int8)Team::AllMembersValid((Team *)this) ) /*0x44c625*/
+      {
+        this->ClearAnims(8); /*0x44c636*/
+        this->ClearAnims(11); /*0x44c63f*/
+        this->GetHealthRatio(); /*0x44c646*/
+        _EAX = dword_8871E0; /*0x44c64b*/
+        __asm /*0x44c650*/
+        {
+          fcomp qword ptr [eax+1700h]
+          fnstsw ax
+        }
+        if ( (_EAX & 0x4100) != 0 ) /*0x44c65b*/
+        {
+          v124 = 1; /*0x44c663*/
+          v125 = this->Type->q128C; /*0x44c668*/
+        }
+        else
+        {
+          v124 = 0; /*0x44c675*/
+          v125 = this->Type->q127C; /*0x44c677*/
+        }
+        if ( v125 && *v125 ) /*0x44c680*/
+          this->PlayAnim(v122, v125, 12, v124, 0, 0); /*0x44c68d*/
+        this->GetHealthRatio(); /*0x44c694*/
+        _ECX = dword_8871E0; /*0x44c699*/
+        __asm /*0x44c69f*/
+        {
+          fcomp qword ptr [ecx+1700h]
+          fnstsw ax
+        }
+        if ( (_EAX & 0x4100) != 0 ) /*0x44c6aa*/
+        {
+          v129 = 1; /*0x44c6b2*/
+          v130 = this->Type->q1028; /*0x44c6b7*/
+        }
+        else
+        {
+          v129 = 0; /*0x44c6c4*/
+          v130 = this->Type->q1018; /*0x44c6c6*/
+        }
+        if ( v130 && *v130 ) /*0x44c6cf*/
+          this->PlayAnim(v126, v130, 3, v129, 0, 0); /*0x44c6dc*/
+        this->MissionDispatch(5, 1); /*0x44c6ea*/
+        return 1; /*0x44c6fc*/
+      }
+      this->BuildingClass_field_bool_6DD = 0; /*0x44c700*/
+      v151.m_Data = (void *)100; /*0x44c707*/
+      v131 = Team::GetMember((Team *)this, 0); /*0x44c70f*/
+      v132 = (unsigned int *)&v131->Locomotor_m; /*0x44c714*/
+      v151.m_Data = 0; /*0x44c71a*/
+      if ( !v131->Locomotor_m ) /*0x44c71e*/
+        goto LABEL_215; /*0x44c71e*/
+      v133 = v151.Set2((unsigned int *)&v131->Locomotor_m); /*0x44c727*/
+      if ( v133 < 0 && v133 != -2147467262 ) /*0x44c735*/
+        sub_7DC720(v133); /*0x44c738*/
+      if ( !v151.m_Data ) /*0x44c743*/
+LABEL_215:
+        sub_7DC720(-2147467261); /*0x44c74a*/
+      ((ILocomotion *)v151.m_Data)->Link_To_Object(&v152); /*0x44c75b*/
+      if ( !memcmp(&v152, &stru_7E9A40, 0x10u) ) /*0x44c76e*/
+        v151.m_Data = (void *)200; /*0x44c777*/
+      if ( !memcmp(&v152, &g_CLSID_DriveLocomotion2, 0x10u) ) /*0x44c78b*/
+        v151.m_Data = (void *)200; /*0x44c78f*/
+      if ( this->ThunkTo159x4(19) == 1 ) /*0x44c7a3*/
+      {
+        v135 = Team::GetMember((Team *)this, 0); /*0x44c7ac*/
+        v136 = this->initAnimation(v135); /*0x44c7b4*/
+        if ( v136 < (int)v151.m_Data ) /*0x44c7be*/
+        {
+          v137 = (ILocomotion *)v151.m_Data; /*0x44c7c0*/
+          this->missionStatus = 1; /*0x44c7c4*/
+          if ( v137 ) /*0x44c7d0*/
+            v137->Release(); /*0x44c7d5*/
+          return 3; /*0x44c7e4*/
+        }
+      }
+      if ( !HouseClass::IonSensitivesShouldBeOffline() ) /*0x44c7eb*/
+      {
+        if ( !*v132 ) /*0x44c7f4*/
+          sub_7DC720(-2147467261); /*0x44c7fe*/
+        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*v132 + 88))(*v132); /*0x44c808*/
+      }
+      if ( v151.m_Data ) /*0x44c811*/
+        ((ILocomotion *)v151.m_Data)->Release(); /*0x44c816*/
+    }
+    goto LABEL_231; /*0x44bbec*/
+  }
+  if ( !Type->UnitReload ) /*0x44c83e*/
+    return 15; /*0x44c971*/
+  v139 = 0; /*0x44c84a*/
+  v150 = 0; /*0x44c84e*/
+  if ( this->q0E8[2] <= 0 ) /*0x44c853*/
+    goto LABEL_247; /*0x44c853*/
+  do /*0x44c929*/
+  {
+    v140 = Team::GetMember((Team *)this, v139); /*0x44c85c*/
+    v141 = (unsigned int *)v140; /*0x44c861*/
+    if ( !v140 ) /*0x44c865*/
+      goto LABEL_244; /*0x44c865*/
+    if ( this->ThunkTo636(29, v140) == 1 /*0x44c893*/ && v141[27] == *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v141 + 132))(v141) + 160) )
+    {
+      goto LABEL_243; /*0x44c893*/
+    }
+    if ( (*(int (__thiscall **)(unsigned int *))(*v141 + 388))(v141) != 7 /*0x44c8b5*/ && this->ThunkTo636(19, v141) == 1 )
+    {
+      v150 = 1; /*0x44c8bb*/
+      if ( (*(int (__thiscall **)(unsigned int *))(*v141 + 388))(v141) ) /*0x44c8bf*/
+      {
+        (*(void (__thiscall **)(unsigned int *, unsigned int, unsigned int))(*v141 + 488))(v141, 0, 0); /*0x44c8cf*/
+        goto LABEL_244; /*0x44c8d5*/
+      }
+      if ( this->ThunkTo636(31, v141) != 1 /*0x44c8fb*/ && this->ThunkTo636(28, v141) != 1 )
+      {
+LABEL_243:
+        (*(void (__thiscall **)(unsigned int *, unsigned int, int))(*v141 + 1156))(v141, 0, 1); /*0x44c904*/
+        (*(void (__thiscall **)(unsigned int *, int))(*v141 + 496))(v141, 5); /*0x44c910*/
+        (*(void (__thiscall **)(unsigned int *))(*v141 + 820))(v141); /*0x44c91a*/
+      }
+    }
+LABEL_244:
+    ++v139; /*0x44c920*/
+  }
+  while ( v139 < this->q0E8[2] ); /*0x44c929*/
+  if ( v150 ) /*0x44c935*/
+  {
+    _EAX = dword_8871E0; /*0x44c937*/
+    __asm /*0x44c93c*/
+    {
+      fld qword ptr [eax+1508h]
+      fmul ds:dbl_7E27F8
+    }
+    result = Math::RoundToInt(v1); /*0x44c948*/
+    return result; /*0x44c954*/
+  }
+LABEL_247:
+  this->MissionDispatch(5, 0); /*0x44c955*/
+  return 3; /*0x44b7fa*/
 }
-// 0x457ce0
-bool BuildingClass::CanRepair(TechnoClass* repairer) {
-if (!repairer)
-    return false;
-if (!this->Type->CanBeOccupied) /*truth: this->Type+5499; q520 == this->Type ptr @0x520*/
-    return false;
-if (this->currentMission == 18)
-    return false;
-if (this->currentMission == 19)
-    return false;
-CoordStruct exitCoords;
-CoordStruct* coords = this->GetExitCoords(&exitCoords, 0); /*building.hpp:99 takes 2*/
-if (!IsCoordVisibleMap(&DataGlobal_87F7E8[0], coords) /*0x5785F0 shim*/
-    || (*((int (**)(BuildingClass *))this->vtable1 + 117))(this)) /*truth 0x457ce0: TechnoClass vt slot 117 -- MI sub-vtable approximated via vtable1*/
-    return false;
-int typeEntry = *((int*)repairer + 432);
-if (!*(unsigned char*)(typeEntry + 3764))
-    return *(unsigned char*)(typeEntry + 3765)
-        && !((ra2::game::ObjectClass *)this->owner)->IsAlliedWithObjectHouse((int)repairer) /*truth 0x4f9a90 receiver=this->? @540*/
-        && this->MissionStubReturnZero6();
-HouseClass* ownerHouse = this->owner;
-return (ownerHouse == repairer->owner || *(unsigned char*)(*((int*)ownerHouse + 13) + 422))
-    && this->MissionStubReturnZero6() != this->Type->MaxNumberOccupants /*q520 == this->Type*/
-    && !this->IsHealthLow() /*building.hpp:342 instance 0-param*/
-    && !((BuildingClass *)repairer)->IsBeingRepairedOrCaptured(); /*truth 0x7105e0: receiver = a2 (repairer)*/
-
-/* ASM:
-sub     esp, 0Ch
-push    esi
-push    edi
-mov     edi, [esp+14h+arg_0]
-mov     esi, ecx
-test    edi, edi
-jz      loc_457DA3
-mov     eax, [esi+520h]
-mov     cl, [eax+157Bh]
-test    cl, cl
-jz      loc_457DA3
-mov     eax, [esi+0ACh]
-cmp     eax, 12h
-jz      loc_457DA3
-cmp     eax, 13h
-jz      loc_457DA3
-mov     edx, [esi]
-lea     eax, [esp+14h+var_C]
-push    eax
-mov     ecx, esi
-call    dword ptr [edx+48h]
-push    eax
-mov     ecx, 87F7E8h
-call    IsCoordVisibleMap
-test    al, al
-jz      short loc_457DA3
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+1D4h]
-test    al, al
-jnz     short loc_457DA3
-mov     eax, [edi+6C0h]
-mov     cl, [eax+0EB4h]
-test    cl, cl
-jz      short loc_457DAD
-mov     eax, [esi+21Ch]
-mov     ecx, [edi+21Ch]
-cmp     eax, ecx
-jz      short loc_457D75
-mov     eax, [eax+34h]
-mov     cl, [eax+1A6h]
-test    cl, cl
-jz      short loc_457DA3
-
-loc_457D75:                             ; CODE XREF: BuildingClass__CanRepair+86↑j
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+408h]
-mov     ecx, [esi+520h]
-cmp     eax, [ecx+1580h]
-jz      short loc_457DA3
-mov     ecx, esi
-call    BuildingClass__IsHealthLow
-test    al, al
-jnz     short loc_457DA3
-mov     ecx, edi
-call    BuildingClass__IsBeingRepairedOrCaptured
-test    al, al
-jz      short loc_457DD5
-
-loc_457DA3:                             ; CODE XREF: BuildingClass__CanRepair+D↑j
-; BuildingClass__CanRepair+21↑j ...
-pop     edi
-xor     al, al
-pop     esi
-add     esp, 0Ch
-retn    4
-; ---------------------------------------------------------------------------
-
-loc_457DAD:                             ; CODE XREF: BuildingClass__CanRepair+76↑j
-mov     cl, [eax+0EB5h]
-test    cl, cl
-jz      short loc_457DA3
-mov     ecx, [esi+21Ch]
-push    edi
-call    Object__IsAlliedWithObjectHouse
-test    al, al
-jnz     short loc_457DA3
-mov     edx, [esi]
-mov     ecx, esi
-call    dword ptr [edx+408h]
-test    eax, eax
-jz      short loc_457DA3
-
-loc_457DD5:                             ; CODE XREF: BuildingClass__CanRepair+C1↑j
-pop     edi
-mov     al, 1
-pop     esi
-add     esp, 0Ch
-retn    4
+/*
+    // IDA disasm 0x44B780..0x44C97F (W20M26)
+    44B780 push    ebp
+    44B781 mov     ebp, esp
+    44B783 and     esp, 0FFFFFFF8h
+    44B786 sub     esp, 28h
+    44B789 push    ebx
+    44B78A push    ebp
+    44B78B mov     ebp, ecx
+    44B78D push    esi
+    44B78E push    edi; this
+    44B78F xor     edi, edi
+    44B791 mov     eax, [ebp+520h]
+    44B797 mov     cl, [eax+16ABh]
+    44B79D test    cl, cl
+    44B79F jz      short loc_44B7A8
+    44B7A1 mov     ecx, ebp
+    44B7A3 call    BuildingClass__UpdateBunker
+    44B7A8 mov     eax, [ebp+520h]
+    44B7AE mov     cl, [eax+16B9h]
+    44B7B4 test    cl, cl
+    44B7B6 jz      loc_44B870
+    44B7BC mov     eax, [ebp+0BCh]
+    44B7C2 sub     eax, edi
+    44B7C4 jz      short loc_44B802
+    44B7C6 sub     eax, 2
+    44B7C9 jnz     loc_44B863
+    44B7CF mov     ecx, ebp; this
+    44B7D1 call    Team__AllMembersValid
+    44B7D6 test    al, al
+    44B7D8 jnz     loc_44B863
+    44B7DE mov     edx, [ebp+0]
+    44B7E1 push    edi
+    44B7E2 push    5
+    44B7E4 mov     ecx, ebp
+    44B7E6 call    dword ptr [edx+1E8h]
+    44B7EC push    7; int
+    44B7EE mov     ecx, ebp; this
+    44B7F0 call    BuildingClass__ClearAnims
+    44B7F5 mov     eax, 1
+    44B7FA pop     edi
+    44B7FB pop     esi
+    44B7FC pop     ebp
+    44B7FD pop     ebx
+    44B7FE mov     esp, ebp
+    44B800 pop     ebp
+    44B801 retn
+    44B802 push    2; int
+    44B804 mov     ecx, ebp; this
+    44B806 call    BuildingClass__StartProduction
+    44B80B mov     ecx, ebp; this
+    44B80D call    BuildingClass__GetHealthRatio
+    44B812 mov     eax, dword_8871E0
+    44B817 fcomp   qword ptr [eax+1700h]
+    44B81D fnstsw  ax
+    44B81F test    ah, 41h
+    44B822 jz      short loc_44B836
+    44B824 mov     eax, [ebp+520h]
+    44B82A mov     ecx, 1
+    44B82F add     eax, 1138h
+    44B834 jmp     short loc_44B843
+    44B836 mov     eax, [ebp+520h]
+    44B83C xor     ecx, ecx
+    44B83E add     eax, 1128h
+    44B843 cmp     eax, edi
+    44B845 jz      short loc_44B859
+    44B847 cmp     byte ptr [eax], 0
+    44B84A jz      short loc_44B859
+    44B84C push    edi; int
+    44B84D push    edi; int
+    44B84E push    ecx; int
+    44B84F push    7; int
+    44B851 push    eax; void *
+    44B852 mov     ecx, ebp
+    44B854 call    BuildingClass__PlayAnim
+    44B859 mov     dword ptr [ebp+0BCh], 2
+    44B863 mov     eax, 1
+    44B868 pop     edi
+    44B869 pop     esi
+    44B86A pop     ebp
+    44B86B pop     ebx
+    44B86C mov     esp, ebp
+    44B86E pop     ebp
+    44B86F retn
+    44B870 mov     cl, [eax+16C1h]
+    44B876 test    cl, cl
+    44B878 jz      loc_44BA79
+    44B87E mov     eax, [ebp+0BCh]
+    44B884 sub     eax, edi
+    44B886 jz      loc_44BA0B
+    44B88C sub     eax, 2
+    44B88F jnz     loc_44C819
+    44B895 lea     esi, [ebp+628h]
+    44B89B mov     ecx, esi; this
+    44B89D call    Locomotor__GetSpeed
+    44B8A2 test    eax, eax
+    44B8A4 jnz     short loc_44B8DF
+    44B8A6 mov     eax, [ebp+634h]
+    44B8AC cmp     eax, edi
+    44B8AE jz      short loc_44B8DF
+    44B8B0 mov     ecx, [ebp+638h]
+    44B8B6 mov     edx, [ebp+620h]
+    44B8BC add     edx, ecx
+    44B8BE mov     byte ptr [ebp+624h], 1
+    44B8C5 mov     [ebp+620h], edx
+    44B8CB mov     ecx, dword_A8ED84
+    44B8D1 mov     edx, [esp+38h+var_C]
+    44B8D5 mov     [esi], ecx
+    44B8D7 mov     [esi+4], edx
+    44B8DA mov     [esi+8], eax
+    44B8DD jmp     short loc_44B8E6
+    44B8DF mov     byte ptr [ebp+624h], 0
+    44B8E6 mov     eax, dword_8871E0
+    44B8EB fild    dword ptr [ebp+620h]
+    44B8F1 fld     qword ptr [eax+16F0h]
+    44B8F7 fmul    ds:dbl_7E27F8
+    44B8FD fcompp
+    44B8FF fnstsw  ax
+    44B901 test    ah, 41h
+    44B904 jz      loc_44B9D3
+    44B90A mov     edx, [ebp+0]
+    44B90D push    1Ch
+    44B90F mov     ecx, ebp
+    44B911 mov     byte ptr [ebp+6DDh], 0
+    44B918 mov     [ebp+620h], edi
+    44B91E call    dword ptr [edx+274h]
+    44B924 sub     eax, 0Ah
+    44B927 jz      short loc_44B9A8
+    44B929 sub     eax, 16h
+    44B92C jz      loc_44B9E0
+    44B932 dec     eax
+    44B933 jnz     loc_44B9D3
+    44B939 mov     ecx, [ebp+21Ch]; this
+    44B93F call    House__IsHumanPlayer
+    44B944 test    al, al
+    44B946 jz      short loc_44B9A8
+    44B948 mov     eax, [ebp+0]
+    44B94B lea     ecx, [esp+38h+var_24.m_Data]
+    44B94F push    ecx
+    44B950 mov     ecx, ebp
+    44B952 call    dword ptr [eax+1B8h]
+    44B958 mov     edx, [eax]; int
+    44B95A mov     ecx, 8; int
+    44B95F push    edx; int
+    44B960 call    CreateTriggerClassIfFarEnough
+    44B965 test    al, al
+    44B967 jz      short loc_44B978
+    44B969 push    0FFFFFFFFh; int
+    44B96B or      edx, 0FFFFFFFFh
+    44B96E mov     ecx, offset aEvaUnitrepaire; this
+    44B973 call    VoxClass__FindAndPlay
+    44B978 lea     eax, [ebp+9Ch]
+    44B97E push    edi
+    44B97F mov     ecx, [eax]
+    44B981 mov     [esp+3Ch+var_10], ecx
+    44B985 mov     ecx, dword_8871E0
+    44B98B mov     edx, [eax+4]
+    44B98E mov     [esp+3Ch+var_C], edx
+    44B992 lea     edx, [esp+3Ch+var_10]
+    44B996 mov     eax, [eax+8]
+    44B999 mov     [esp+3Ch+var_8], eax
+    44B99D mov     ecx, [ecx+718h]
+    44B9A3 call    StartAudioControllerAt
+    44B9A8 mov     eax, g_TerrainTypeTable
+    44B9AD mov     esi, [ebp+0]
+    44B9B0 push    eax
+    44B9B1 lea     ecx, [ebp+114h]; this
+    44B9B7 call    LinkedList__Pop
+    44B9BC push    eax
+    44B9BD mov     ecx, ebp
+    44B9BF call    dword ptr [esi+100h]
+    44B9C5 mov     edx, [ebp+0]
+    44B9C8 push    edi
+    44B9C9 push    5
+    44B9CB mov     ecx, ebp
+    44B9CD call    dword ptr [edx+1E8h]
+    44B9D3 mov     eax, 1
+    44B9D8 pop     edi
+    44B9D9 pop     esi
+    44B9DA pop     ebp
+    44B9DB pop     ebx
+    44B9DC mov     esp, ebp
+    44B9DE pop     ebp
+    44B9DF retn
+    44B9E0 mov     edx, g_TerrainTypeTable
+    44B9E6 mov     esi, [ebp+0]
+    44B9E9 push    edx
+    44B9EA lea     ecx, [ebp+114h]; this
+    44B9F0 call    LinkedList__Pop
+    44B9F5 push    eax
+    44B9F6 mov     ecx, ebp
+    44B9F8 call    dword ptr [esi+100h]
+    44B9FE mov     eax, 1
+    44BA03 pop     edi
+    44BA04 pop     esi
+    44BA05 pop     ebp
+    44BA06 pop     ebx
+    44BA07 mov     esp, ebp
+    44BA09 pop     ebp
+    44BA0A retn
+    44BA0B mov     dword ptr [ebp+0BCh], 2
+    44BA15 mov     byte ptr [ebp+6DDh], 0
+    44BA1C mov     [ebp+620h], edi
+    44BA22 mov     eax, dword_A8ED84
+    44BA27 lea     edx, [ebp+628h]
+    44BA2D mov     ecx, 1
+    44BA32 mov     [ebp+634h], ecx
+    44BA38 mov     [edx], eax
+    44BA3A mov     eax, [esp+38h+var_C]
+    44BA3E mov     [edx+4], eax
+    44BA41 mov     [edx+8], ecx
+    44BA44 mov     ecx, [ebp+520h]
+    44BA4A cmp     dword ptr [ecx+684h], 0FFFFFFFFh
+    44BA51 jz      loc_44C819
+    44BA57 mov     eax, [ebp+2FCh]
+    44BA5D xor     edx, edx
+    44BA5F dec     eax
+    44BA60 cmp     eax, edi
+    44BA62 mov     [ebp+2FCh], eax
+    44BA68 setle   dl
+    44BA6B dec     edx
+    44BA6C and     eax, edx
+    44BA6E mov     [ebp+2FCh], eax
+    44BA74 jmp     loc_44C819
+    44BA79 mov     cl, [eax+16C2h]
+    44BA7F test    cl, cl
+    44BA81 jz      loc_44BBC8
+    44BA87 mov     eax, [ebp+0BCh]
+    44BA8D sub     eax, edi
+    44BA8F jz      loc_44BB6D
+    44BA95 sub     eax, 2
+    44BA98 jnz     loc_44C819
+    44BA9E lea     esi, [ebp+628h]
+    44BAA4 mov     ecx, esi; this
+    44BAA6 call    Locomotor__GetSpeed
+    44BAAB test    eax, eax
+    44BAAD jnz     short loc_44BAE8
+    44BAAF mov     eax, [ebp+634h]
+    44BAB5 cmp     eax, edi
+    44BAB7 jz      short loc_44BAE8
+    44BAB9 mov     ecx, [ebp+638h]
+    44BABF mov     edx, [ebp+620h]
+    44BAC5 add     edx, ecx
+    44BAC7 mov     byte ptr [ebp+624h], 1
+    44BACE mov     [ebp+620h], edx
+    44BAD4 mov     ecx, dword_A8ED84
+    44BADA mov     edx, [esp+38h+var_C]
+    44BADE mov     [esi], ecx
+    44BAE0 mov     [esi+4], edx
+    44BAE3 mov     [esi+8], eax
+    44BAE6 jmp     short loc_44BAEF
+    44BAE8 mov     byte ptr [ebp+624h], 0
+    44BAEF mov     eax, dword_8871E0
+    44BAF4 fild    dword ptr [ebp+620h]
+    44BAFA fld     qword ptr [eax+16F0h]
+    44BB00 fmul    ds:dbl_7E27F8
+    44BB06 fcompp
+    44BB08 fnstsw  ax
+    44BB0A test    ah, 41h
+    44BB0D jz      loc_44C819
+    44BB13 push    edi; int
+    44BB14 mov     ecx, ebp; this
+    44BB16 call    Team__GetMember
+    44BB1B lea     esi, [eax+150h]
+    44BB21 mov     ecx, esi
+    44BB23 call    VeinholeClass__GetState
+    44BB28 test    al, al
+    44BB2A push    1; char
+    44BB2C mov     ecx, esi; this
+    44BB2E jz      short loc_44BB37
+    44BB30 call    Power__ChangedHouse
+    44BB35 jmp     short loc_44BB3C
+    44BB37 call    Timer__SetFlag
+    44BB3C mov     ecx, g_TerrainTypeTable
+    44BB42 mov     esi, [ebp+0]
+    44BB45 push    ecx
+    44BB46 lea     ecx, [ebp+114h]; this
+    44BB4C call    LinkedList__Pop
+    44BB51 push    eax
+    44BB52 mov     ecx, ebp
+    44BB54 call    dword ptr [esi+100h]
+    44BB5A mov     edx, [ebp+0]
+    44BB5D push    edi
+    44BB5E push    5
+    44BB60 mov     ecx, ebp
+    44BB62 call    dword ptr [edx+1E8h]
+    44BB68 jmp     loc_44C819
+    44BB6D mov     dword ptr [ebp+0BCh], 2
+    44BB77 mov     byte ptr [ebp+6DDh], 0
+    44BB7E mov     [ebp+620h], edi
+    44BB84 mov     eax, dword_A8ED84
+    44BB89 lea     edx, [ebp+628h]
+    44BB8F mov     ecx, 1
+    44BB94 mov     [ebp+634h], ecx
+    44BB9A mov     [edx], eax
+    44BB9C mov     eax, [esp+38h+var_C]
+    44BBA0 mov     [edx+4], eax
+    44BBA3 mov     [edx+8], ecx
+    44BBA6 mov     eax, [ebp+2FCh]
+    44BBAC dec     eax
+    44BBAD xor     ecx, ecx
+    44BBAF cmp     eax, edi
+    44BBB1 mov     [ebp+2FCh], eax
+    44BBB7 setle   cl
+    44BBBA dec     ecx
+    44BBBB and     eax, ecx
+    44BBBD mov     [ebp+2FCh], eax
+    44BBC3 jmp     loc_44C819
+    44BBC8 mov     cl, [eax+16A9h]
+    44BBCE test    cl, cl
+    44BBD0 jz      loc_44C836
+    44BBD6 mov     eax, [ebp+0BCh]
+    44BBDC sub     eax, edi
+    44BBDE jz      loc_44C623
+    44BBE4 dec     eax
+    44BBE5 jz      loc_44C0A8
+    44BBEB dec     eax
+    44BBEC jnz     loc_44C819
+    44BBF2 mov     ecx, ebp; this
+    44BBF4 call    Team__AllMembersValid
+    44BBF9 test    al, al
+    44BBFB jnz     loc_44BCC7
+    44BC01 push    8; int
+    44BC03 mov     ecx, ebp; this
+    44BC05 call    BuildingClass__ClearAnims
+    44BC0A push    0Bh; int
+    44BC0C mov     ecx, ebp; this
+    44BC0E call    BuildingClass__ClearAnims
+    44BC13 mov     ecx, ebp; this
+    44BC15 call    BuildingClass__GetHealthRatio
+    44BC1A mov     edx, dword_8871E0
+    44BC20 fcomp   qword ptr [edx+1700h]
+    44BC26 fnstsw  ax
+    44BC28 test    ah, 41h
+    44BC2B jz      short loc_44BC3F
+    44BC2D mov     eax, [ebp+520h]
+    44BC33 mov     ecx, 1
+    44BC38 add     eax, 128Ch
+    44BC3D jmp     short loc_44BC4C
+    44BC3F mov     eax, [ebp+520h]
+    44BC45 xor     ecx, ecx
+    44BC47 add     eax, 127Ch
+    44BC4C cmp     eax, edi
+    44BC4E jz      short loc_44BC62
+    44BC50 cmp     byte ptr [eax], 0
+    44BC53 jz      short loc_44BC62
+    44BC55 push    edi; int
+    44BC56 push    edi; int
+    44BC57 push    ecx; int
+    44BC58 push    0Ch; int
+    44BC5A push    eax; void *
+    44BC5B mov     ecx, ebp
+    44BC5D call    BuildingClass__PlayAnim
+    44BC62 mov     ecx, ebp; this
+    44BC64 call    BuildingClass__GetHealthRatio
+    44BC69 mov     eax, dword_8871E0
+    44BC6E fcomp   qword ptr [eax+1700h]
+    44BC74 fnstsw  ax
+    44BC76 test    ah, 41h
+    44BC79 jz      short loc_44BC8D
+    44BC7B mov     eax, [ebp+520h]
+    44BC81 mov     ecx, 1
+    44BC86 add     eax, 1028h
+    44BC8B jmp     short loc_44BC9A
+    44BC8D mov     eax, [ebp+520h]
+    44BC93 xor     ecx, ecx
+    44BC95 add     eax, 1018h
+    44BC9A cmp     eax, edi
+    44BC9C jz      short loc_44BCB0
+    44BC9E cmp     byte ptr [eax], 0
+    44BCA1 jz      short loc_44BCB0
+    44BCA3 push    edi; int
+    44BCA4 push    edi; int
+    44BCA5 push    ecx; int
+    44BCA6 push    3; int
+    44BCA8 push    eax; void *
+    44BCA9 mov     ecx, ebp
+    44BCAB call    BuildingClass__PlayAnim
+    44BCB0 mov     dword ptr [ebp+0BCh], 1
+    44BCBA mov     eax, 1
+    44BCBF pop     edi
+    44BCC0 pop     esi
+    44BCC1 pop     ebp
+    44BCC2 pop     ebx
+    44BCC3 mov     esp, ebp
+    44BCC5 pop     ebp
+    44BCC6 retn
+    44BCC7 mov     eax, [ebp+634h]
+    44BCCD mov     ebx, 1
+    44BCD2 cmp     eax, edi
+    44BCD4 jnz     short loc_44BCDC
+    44BCD6 mov     [ebp+634h], ebx
+    44BCDC lea     esi, [ebp+628h]
+    44BCE2 mov     ecx, esi; this
+    44BCE4 call    Locomotor__GetSpeed
+    44BCE9 test    eax, eax
+    44BCEB jnz     short loc_44BD26
+    44BCED mov     eax, [ebp+634h]
+    44BCF3 cmp     eax, edi
+    44BCF5 jz      short loc_44BD26
+    44BCF7 mov     ecx, [ebp+638h]
+    44BCFD mov     edx, [ebp+620h]
+    44BD03 add     edx, ecx
+    44BD05 mov     byte ptr [ebp+624h], 1
+    44BD0C mov     [ebp+620h], edx
+    44BD12 mov     ecx, dword_A8ED84
+    44BD18 mov     edx, [esp+38h+var_C]
+    44BD1C mov     [esi], ecx
+    44BD1E mov     [esi+4], edx
+    44BD21 mov     [esi+8], eax
+    44BD24 jmp     short loc_44BD2D
+    44BD26 mov     byte ptr [ebp+624h], 0
+    44BD2D mov     eax, dword_8871E0
+    44BD32 fild    dword ptr [ebp+620h]
+    44BD38 fld     qword ptr [eax+16E8h]
+    44BD3E fmul    ds:dbl_7E27F8
+    44BD44 fcompp
+    44BD46 fnstsw  ax
+    44BD48 test    ah, 41h
+    44BD4B jz      loc_44C09E
+    44BD51 mov     edx, [ebp+0]
+    44BD54 push    13h
+    44BD56 mov     ecx, ebp
+    44BD58 call    dword ptr [edx+274h]
+    44BD5E cmp     eax, ebx
+    44BD60 jnz     loc_44C09E
+    44BD66 mov     eax, [ebp+0]
+    44BD69 push    1Ch
+    44BD6B mov     ecx, ebp
+    44BD6D mov     byte ptr [ebp+6DDh], 0
+    44BD74 mov     [ebp+620h], edi
+    44BD7A call    dword ptr [eax+274h]
+    44BD80 dec     eax
+    44BD81 jz      loc_44C09E
+    44BD87 sub     eax, 1Fh
+    44BD8A mov     al, [ebp+41Ah]
+    44BD90 jz      loc_44BFC9
+    44BD96 test    al, al
+    44BD98 jz      short loc_44BDCA
+    44BD9A mov     edx, [ebp+0]
+    44BD9D lea     eax, [esp+38h+var_24.m_Position]
+    44BDA1 push    eax
+    44BDA2 mov     ecx, ebp
+    44BDA4 call    dword ptr [edx+1B8h]
+    44BDAA mov     ecx, [eax]
+    44BDAC push    ecx; int
+    44BDAD mov     ecx, 8; int
+    44BDB2 call    CreateTriggerClassIfFarEnough
+    44BDB7 test    al, al
+    44BDB9 jz      short loc_44BDCA
+    44BDBB push    0FFFFFFFFh; int
+    44BDBD or      edx, 0FFFFFFFFh
+    44BDC0 mov     ecx, offset aEvaUnitrepaire; this
+    44BDC5 call    VoxClass__FindAndPlay
+    44BDCA push    8; int
+    44BDCC mov     ecx, ebp; this
+    44BDCE call    BuildingClass__ClearAnims
+    44BDD3 push    0Bh; int
+    44BDD5 mov     ecx, ebp; this
+    44BDD7 call    BuildingClass__ClearAnims
+    44BDDC mov     ecx, ebp; this
+    44BDDE call    BuildingClass__GetHealthRatio
+    44BDE3 mov     edx, dword_8871E0
+    44BDE9 fcomp   qword ptr [edx+1700h]
+    44BDEF fnstsw  ax
+    44BDF1 test    ah, 41h
+    44BDF4 jz      short loc_44BE05
+    44BDF6 mov     eax, [ebp+520h]
+    44BDFC mov     ecx, ebx
+    44BDFE add     eax, 128Ch
+    44BE03 jmp     short loc_44BE12
+    44BE05 mov     eax, [ebp+520h]
+    44BE0B xor     ecx, ecx
+    44BE0D add     eax, 127Ch
+    44BE12 cmp     eax, edi
+    44BE14 jz      short loc_44BE28
+    44BE16 cmp     byte ptr [eax], 0
+    44BE19 jz      short loc_44BE28
+    44BE1B push    edi; int
+    44BE1C push    edi; int
+    44BE1D push    ecx; int
+    44BE1E push    0Ch; int
+    44BE20 push    eax; void *
+    44BE21 mov     ecx, ebp
+    44BE23 call    BuildingClass__PlayAnim
+    44BE28 mov     ecx, ebp; this
+    44BE2A call    BuildingClass__GetHealthRatio
+    44BE2F mov     eax, dword_8871E0
+    44BE34 fcomp   qword ptr [eax+1700h]
+    44BE3A fnstsw  ax
+    44BE3C test    ah, 41h
+    44BE3F jz      short loc_44BE50
+    44BE41 mov     eax, [ebp+520h]
+    44BE47 mov     ecx, ebx
+    44BE49 add     eax, 1028h
+    44BE4E jmp     short loc_44BE5D
+    44BE50 mov     eax, [ebp+520h]
+    44BE56 xor     ecx, ecx
+    44BE58 add     eax, 1018h
+    44BE5D cmp     eax, edi
+    44BE5F jz      short loc_44BE73
+    44BE61 cmp     byte ptr [eax], 0
+    44BE64 jz      short loc_44BE73
+    44BE66 push    edi; int
+    44BE67 push    edi; int
+    44BE68 push    ecx; int
+    44BE69 push    3; int
+    44BE6B push    eax; void *
+    44BE6C mov     ecx, ebp
+    44BE6E call    BuildingClass__PlayAnim
+    44BE73 push    edi; int
+    44BE74 mov     ecx, ebp; this
+    44BE76 mov     [ebp+0BCh], ebx
+    44BE7C call    Team__GetMember
+    44BE81 cmp     eax, edi
+    44BE83 jnz     short loc_44BE89
+    44BE85 xor     esi, esi
+    44BE87 jmp     short loc_44BE97
+    44BE89 mov     cl, [eax+14h]
+    44BE8C and     cl, 4
+    44BE8F neg     cl
+    44BE91 sbb     ecx, ecx
+    44BE93 and     ecx, eax
+    44BE95 mov     esi, ecx
+    44BE97 cmp     [esi+218h], edi
+    44BE9D jz      short loc_44BEF2
+    44BE9F mov     ecx, [esi+21Ch]; this
+    44BEA5 call    House__IsCurrentPlayer
+    44BEAA test    al, al
+    44BEAC jnz     short loc_44BEF2
+    44BEAE mov     edx, [esi]
+    44BEB0 push    edi
+    44BEB1 push    2
+    44BEB3 mov     ecx, esi
+    44BEB5 call    dword ptr [edx+1E8h]
+    44BEBB mov     ecx, [esi+218h]
+    44BEC1 mov     eax, [esi]
+    44BEC3 push    ebx
+    44BEC4 push    ecx
+    44BEC5 mov     ecx, esi
+    44BEC7 call    dword ptr [eax+480h]
+    44BECD push    edi; int
+    44BECE mov     ecx, esi; this
+    44BED0 call    TechnoClass__SetFocus
+    44BED5 mov     edx, [ebp+0]
+    44BED8 push    3
+    44BEDA mov     ecx, ebp
+    44BEDC call    dword ptr [edx+274h]
+    44BEE2 mov     [esi+500h], edi
+    44BEE8 mov     eax, ebx
+    44BEEA pop     edi
+    44BEEB pop     esi
+    44BEEC pop     ebp
+    44BEED pop     ebx
+    44BEEE mov     esp, ebp
+    44BEF0 pop     ebp
+    44BEF1 retn
+    44BEF2 mov     eax, g_TerrainTypeTable
+    44BEF7 mov     edx, [ebp+0]
+    44BEFA push    eax
+    44BEFB push    edi; int
+    44BEFC mov     ecx, ebp; this
+    44BEFE mov     [esp+40h+var_24.m_Data], edx
+    44BF02 call    Team__GetMember
+    44BF07 mov     edx, [esp+3Ch+var_24.m_Data]
+    44BF0B lea     ecx, [esp+3Ch+var_24.m_Size]
+    44BF0F push    eax
+    44BF10 push    ecx
+    44BF11 mov     ecx, ebp
+    44BF13 call    dword ptr [edx+4D4h]
+    44BF19 mov     ecx, [ebp+218h]
+    44BF1F mov     eax, [eax]
+    44BF21 test    ecx, ecx
+    44BF23 mov     dword ptr [esp+38h+var_24.__pad_0], eax
+    44BF27 jz      short loc_44BF64
+    44BF29 mov     eax, [ecx]
+    44BF2B lea     edx, [esp+38h+var_10]
+    44BF2F push    edx
+    44BF30 call    dword ptr [eax+48h]
+    44BF33 mov     ecx, eax
+    44BF35 mov     eax, [ecx]
+    44BF37 cdq
+    44BF38 and     edx, 0FFh
+    44BF3E add     eax, edx
+    44BF40 sar     eax, 8
+    44BF43 mov     word ptr [esp+38h+var_24.m_Data], ax
+    44BF48 mov     eax, [ecx+4]
+    44BF4B cdq
+    44BF4C and     edx, 0FFh
+    44BF52 add     eax, edx
+    44BF54 sar     eax, 8
+    44BF57 mov     word ptr [esp+38h+var_24.m_Data+2], ax
+    44BF5C mov     eax, [esp+38h+var_24.m_Data]
+    44BF60 mov     dword ptr [esp+38h+var_24.__pad_0], eax
+    44BF64 cmp     ax, word ptr g_TerrainTypeTable
+    44BF6B jnz     short loc_44BF7F
+    44BF6D mov     ax, word ptr [esp+38h+var_24.__pad_0+2]
+    44BF72 cmp     ax, word ptr g_TerrainTypeTable+2
+    44BF79 jz      loc_44C09E
+    44BF7F mov     edx, [esi]
+    44BF81 push    0
+    44BF83 push    2
+    44BF85 mov     ecx, esi
+    44BF87 call    dword ptr [edx+1E8h]
+    44BF8D mov     edi, [esi]
+    44BF8F lea     eax, [esp+38h+var_24]
+    44BF93 push    ebx
+    44BF94 push    eax; __int16 *
+    44BF95 mov     ecx, offset dword_87F7E8; this
+    44BF9A call    CellCoord__To_CellObj
+    44BF9F push    eax
+    44BFA0 mov     ecx, esi
+    44BFA2 call    dword ptr [edi+480h]
+    44BFA8 mov     edx, [ebp+0]
+    44BFAB push    3
+    44BFAD mov     ecx, ebp
+    44BFAF call    dword ptr [edx+274h]
+    44BFB5 mov     dword ptr [esi+500h], 0
+    44BFBF mov     eax, ebx
+    44BFC1 pop     edi
+    44BFC2 pop     esi
+    44BFC3 pop     ebp
+    44BFC4 pop     ebx
+    44BFC5 mov     esp, ebp
+    44BFC7 pop     ebp
+    44BFC8 retn
+    44BFC9 test    al, al
+    44BFCB jz      short loc_44BFEF
+    44BFCD mov     eax, [ebp+21Ch]
+    44BFD3 add     eax, 24h ; '$'
+    44BFD6 push    eax
+    44BFD7 mov     ecx, [eax]
+    44BFD9 call    dword ptr [ecx+18h]
+    44BFDC test    eax, eax
+    44BFDE jnz     short loc_44BFEF
+    44BFE0 push    0FFFFFFFFh; int
+    44BFE2 or      edx, 0FFFFFFFFh
+    44BFE5 mov     ecx, offset aEvaInsufficien; this
+    44BFEA call    VoxClass__FindAndPlay
+    44BFEF push    8; int
+    44BFF1 mov     ecx, ebp; this
+    44BFF3 call    BuildingClass__ClearAnims
+    44BFF8 push    0Bh; int
+    44BFFA mov     ecx, ebp; this
+    44BFFC call    BuildingClass__ClearAnims
+    44C001 mov     ecx, ebp; this
+    44C003 call    BuildingClass__GetHealthRatio
+    44C008 mov     edx, dword_8871E0
+    44C00E fcomp   qword ptr [edx+1700h]
+    44C014 fnstsw  ax
+    44C016 test    ah, 41h
+    44C019 jz      short loc_44C02A
+    44C01B mov     eax, [ebp+520h]
+    44C021 mov     ecx, ebx
+    44C023 add     eax, 128Ch
+    44C028 jmp     short loc_44C037
+    44C02A mov     eax, [ebp+520h]
+    44C030 xor     ecx, ecx
+    44C032 add     eax, 127Ch
+    44C037 cmp     eax, edi
+    44C039 jz      short loc_44C04D
+    44C03B cmp     byte ptr [eax], 0
+    44C03E jz      short loc_44C04D
+    44C040 push    edi; int
+    44C041 push    edi; int
+    44C042 push    ecx; int
+    44C043 push    0Ch; int
+    44C045 push    eax; void *
+    44C046 mov     ecx, ebp
+    44C048 call    BuildingClass__PlayAnim
+    44C04D mov     ecx, ebp; this
+    44C04F call    BuildingClass__GetHealthRatio
+    44C054 mov     eax, dword_8871E0
+    44C059 fcomp   qword ptr [eax+1700h]
+    44C05F fnstsw  ax
+    44C061 test    ah, 41h
+    44C064 jz      short loc_44C075
+    44C066 mov     eax, [ebp+520h]
+    44C06C mov     ecx, ebx
+    44C06E add     eax, 1028h
+    44C073 jmp     short loc_44C082
+    44C075 mov     eax, [ebp+520h]
+    44C07B xor     ecx, ecx
+    44C07D add     eax, 1018h
+    44C082 cmp     eax, edi
+    44C084 jz      short loc_44C098
+    44C086 cmp     byte ptr [eax], 0
+    44C089 jz      short loc_44C098
+    44C08B push    edi; int
+    44C08C push    edi; int
+    44C08D push    ecx; int
+    44C08E push    3; int
+    44C090 push    eax; void *
+    44C091 mov     ecx, ebp
+    44C093 call    BuildingClass__PlayAnim
+    44C098 mov     [ebp+0BCh], ebx
+    44C09E mov     eax, ebx
+    44C0A0 pop     edi
+    44C0A1 pop     esi
+    44C0A2 pop     ebp
+    44C0A3 pop     ebx
+    44C0A4 mov     esp, ebp
+    44C0A6 pop     ebp
+    44C0A7 retn
+    44C0A8 mov     ecx, ebp; this
+    44C0AA call    Team__AllMembersValid
+    44C0AF test    al, al
+    44C0B1 mov     eax, [ebp+57Ch]
+    44C0B7 jnz     loc_44C1A8
+    44C0BD cmp     eax, edi
+    44C0BF jnz     short loc_44C0CD
+    44C0C1 cmp     [ebp+588h], edi
+    44C0C7 jz      loc_44C17D
+    44C0CD mov     ecx, ebp; this
+    44C0CF call    BuildingClass__GetHealthRatio
+    44C0D4 mov     ecx, dword_8871E0
+    44C0DA fcomp   qword ptr [ecx+1700h]
+    44C0E0 fnstsw  ax
+    44C0E2 test    ah, 41h
+    44C0E5 jz      short loc_44C0F9
+    44C0E7 mov     eax, [ebp+520h]
+    44C0ED mov     ecx, 1
+    44C0F2 add     eax, 128Ch
+    44C0F7 jmp     short loc_44C106
+    44C0F9 mov     eax, [ebp+520h]
+    44C0FF xor     ecx, ecx
+    44C101 add     eax, 127Ch
+    44C106 cmp     eax, edi
+    44C108 jz      short loc_44C11C
+    44C10A cmp     byte ptr [eax], 0
+    44C10D jz      short loc_44C11C
+    44C10F push    edi; int
+    44C110 push    edi; int
+    44C111 push    ecx; int
+    44C112 push    0Ch; int
+    44C114 push    eax; void *
+    44C115 mov     ecx, ebp
+    44C117 call    BuildingClass__PlayAnim
+    44C11C mov     ecx, ebp; this
+    44C11E call    BuildingClass__GetHealthRatio
+    44C123 mov     edx, dword_8871E0
+    44C129 fcomp   qword ptr [edx+1700h]
+    44C12F fnstsw  ax
+    44C131 test    ah, 41h
+    44C134 jz      short loc_44C148
+    44C136 mov     eax, [ebp+520h]
+    44C13C mov     ecx, 1
+    44C141 add     eax, 1028h
+    44C146 jmp     short loc_44C155
+    44C148 mov     eax, [ebp+520h]
+    44C14E xor     ecx, ecx
+    44C150 add     eax, 1018h
+    44C155 cmp     eax, edi
+    44C157 jz      short loc_44C16B
+    44C159 cmp     byte ptr [eax], 0
+    44C15C jz      short loc_44C16B
+    44C15E push    edi; int
+    44C15F push    edi; int
+    44C160 push    ecx; int
+    44C161 push    3; int
+    44C163 push    eax; void *
+    44C164 mov     ecx, ebp
+    44C166 call    BuildingClass__PlayAnim
+    44C16B push    8; int
+    44C16D mov     ecx, ebp; this
+    44C16F call    BuildingClass__ClearAnims
+    44C174 push    0Bh; int
+    44C176 mov     ecx, ebp; this
+    44C178 call    BuildingClass__ClearAnims
+    44C17D cmp     [ebp+58Ch], edi
+    44C183 jnz     short loc_44C19B
+    44C185 mov     eax, [ebp+0]
+    44C188 push    1
+    44C18A push    5
+    44C18C mov     ecx, ebp
+    44C18E mov     byte ptr [ebp+6DDh], 1
+    44C195 call    dword ptr [eax+1E8h]
+    44C19B mov     eax, 1
+    44C1A0 pop     edi
+    44C1A1 pop     esi
+    44C1A2 pop     ebp
+    44C1A3 pop     ebx
+    44C1A4 mov     esp, ebp
+    44C1A6 pop     ebp
+    44C1A7 retn
+    44C1A8 cmp     eax, edi
+    44C1AA jz      short loc_44C1B9
+    44C1AC mov     eax, 1
+    44C1B1 pop     edi
+    44C1B2 pop     esi
+    44C1B3 pop     ebp
+    44C1B4 pop     ebx
+    44C1B5 mov     esp, ebp
+    44C1B7 pop     ebp
+    44C1B8 retn
+    44C1B9 push    edi; int
+    44C1BA mov     ecx, ebp; this
+    44C1BC call    Team__GetMember
+    44C1C1 mov     ebx, [ebp+0]
+    44C1C4 push    edi; int
+    44C1C5 mov     ecx, ebp; this
+    44C1C7 mov     esi, eax
+    44C1C9 call    Team__GetMember
+    44C1CE push    eax
+    44C1CF mov     ecx, ebp
+    44C1D1 call    dword ptr [ebx+4D8h]
+    44C1D7 cmp     eax, 0C8h
+    44C1DC jge     loc_44C290
+    44C1E2 cmp     [esi+674h], edi
+    44C1E8 jnz     short loc_44C1F4
+    44C1EA push    80004003h
+    44C1EF call    sub_7DC720
+    44C1F4 mov     eax, [esi+674h]
+    44C1FA push    eax
+    44C1FB mov     ecx, [eax]
+    44C1FD call    dword ptr [ecx+60h]
+    44C200 test    al, al
+    44C202 mov     eax, [esi+674h]
+    44C208 jz      short loc_44C253
+    44C20A cmp     eax, edi
+    44C20C jnz     short loc_44C218
+    44C20E push    80004003h
+    44C213 call    sub_7DC720
+    44C218 mov     eax, [esi+674h]
+    44C21E push    eax
+    44C21F mov     edx, [eax]
+    44C221 call    dword ptr [edx+10h]
+    44C224 test    al, al
+    44C226 jnz     short loc_44C246
+    44C228 cmp     [esi+674h], edi
+    44C22E jnz     short loc_44C23A
+    44C230 push    80004003h
+    44C235 call    sub_7DC720
+    44C23A mov     esi, [esi+674h]
+    44C240 push    esi
+    44C241 mov     eax, [esi]
+    44C243 call    dword ptr [eax+5Ch]
+    44C246 mov     eax, 1
+    44C24B pop     edi
+    44C24C pop     esi
+    44C24D pop     ebp
+    44C24E pop     ebx
+    44C24F mov     esp, ebp
+    44C251 pop     ebp
+    44C252 retn
+    44C253 cmp     eax, edi
+    44C255 jnz     short loc_44C261
+    44C257 push    80004003h
+    44C25C call    sub_7DC720
+    44C261 mov     esi, [esi+674h]
+    44C267 push    esi
+    44C268 mov     ecx, [esi]
+    44C26A call    dword ptr [ecx+60h]
+    44C26D test    al, al
+    44C26F jnz     short loc_44C290
+    44C271 push    edi; int
+    44C272 mov     ecx, ebp; this
+    44C274 call    Team__GetMember
+    44C279 cmp     [eax+5A4h], edi
+    44C27F jz      short loc_44C290
+    44C281 push    edi; int
+    44C282 mov     ecx, ebp; this
+    44C284 call    Team__GetMember
+    44C289 mov     ecx, eax; this
+    44C28B call    FootClass__ClearPathIndex
+    44C290 mov     edx, [ebp+0]
+    44C293 push    13h
+    44C295 mov     ecx, ebp
+    44C297 call    dword ptr [edx+274h]
+    44C29D cmp     eax, 1
+    44C2A0 jnz     loc_44C5AB
+    44C2A6 push    edi; int
+    44C2A7 mov     ecx, ebp; this
+    44C2A9 call    Team__GetMember
+    44C2AE mov     esi, eax
+    44C2B0 mov     ecx, esi; this
+    44C2B2 call    BuildingClass__GetHealthRatio
+    44C2B7 mov     eax, dword_8871E0
+    44C2BC fcomp   qword ptr [eax+16F8h]
+    44C2C2 fnstsw  ax
+    44C2C4 test    ah, 1
+    44C2C7 jz      short loc_44C2CD
+    44C2C9 mov     bl, 1
+    44C2CB jmp     short loc_44C2CF
+    44C2CD xor     bl, bl
+    44C2CF mov     edx, [esi]
+    44C2D1 mov     ecx, esi
+    44C2D3 call    dword ptr [edx+84h]
+    44C2D9 mov     al, [eax+0D24h]
+    44C2DF mov     edx, [ebp+0]
+    44C2E2 push    1Ch
+    44C2E4 mov     ecx, ebp
+    44C2E6 mov     byte ptr [esp+3Ch+var_28+3], al
+    44C2EA call    dword ptr [edx+274h]
+    44C2F0 cmp     eax, 1
+    44C2F3 setz    cl
+    44C2F6 cmp     eax, 21h ; '!'
+    44C2F9 setz    al
+    44C2FC test    bl, bl
+    44C2FE jnz     short loc_44C308
+    44C300 mov     dl, byte ptr [esp+38h+var_28+3]
+    44C304 test    dl, dl
+    44C306 jz      short loc_44C318
+    44C308 test    cl, cl
+    44C30A jnz     loc_44C4BC
+    44C310 test    al, al
+    44C312 jnz     loc_44C4BC
+    44C318 mov     ecx, esi; this
+    44C31A call    BuildingClass__GetHealthRatio
+    44C31F mov     eax, dword_8871E0
+    44C324 fcomp   qword ptr [eax+16F8h]
+    44C32A fnstsw  ax
+    44C32C test    ah, 40h
+    44C32F jz      loc_44C819
+    44C335 cmp     [esi+674h], edi
+    44C33B jnz     short loc_44C347
+    44C33D push    80004003h
+    44C342 call    sub_7DC720
+    44C347 mov     esi, [esi+674h]
+    44C34D push    esi
+    44C34E mov     ecx, [esi]
+    44C350 call    dword ptr [ecx+60h]
+    44C353 test    al, al
+    44C355 jnz     loc_44C819
+    44C35B push    edi; int
+    44C35C mov     ecx, ebp; this
+    44C35E call    Team__GetMember
+    44C363 cmp     eax, edi
+    44C365 jnz     short loc_44C36B
+    44C367 xor     esi, esi
+    44C369 jmp     short loc_44C379
+    44C36B mov     dl, [eax+14h]
+    44C36E and     dl, 4
+    44C371 neg     dl
+    44C373 sbb     edx, edx
+    44C375 and     edx, eax
+    44C377 mov     esi, edx
+    44C379 cmp     [esi+674h], edi
+    44C37F jnz     short loc_44C38B
+    44C381 push    80004003h
+    44C386 call    sub_7DC720
+    44C38B mov     eax, [esi+674h]
+    44C391 push    eax
+    44C392 mov     ecx, [eax]
+    44C394 call    dword ptr [ecx+58h]
+    44C397 cmp     [esi+218h], edi
+    44C39D jz      short loc_44C3EE
+    44C39F mov     ecx, [esi+21Ch]; this
+    44C3A5 call    House__IsCurrentPlayer
+    44C3AA test    al, al
+    44C3AC jnz     short loc_44C3EE
+    44C3AE mov     edx, [esi]
+    44C3B0 push    edi
+    44C3B1 push    2
+    44C3B3 mov     ecx, esi
+    44C3B5 call    dword ptr [edx+1E8h]
+    44C3BB mov     ecx, [esi+218h]
+    44C3C1 mov     eax, [esi]
+    44C3C3 push    1
+    44C3C5 push    ecx
+    44C3C6 mov     ecx, esi
+    44C3C8 call    dword ptr [eax+480h]
+    44C3CE push    edi; int
+    44C3CF mov     ecx, esi; this
+    44C3D1 call    TechnoClass__SetFocus
+    44C3D6 mov     [esi+500h], edi
+    44C3DC mov     edx, [ebp+0]
+    44C3DF push    3
+    44C3E1 mov     ecx, ebp
+    44C3E3 call    dword ptr [edx+274h]
+    44C3E9 jmp     loc_44C819
+    44C3EE mov     eax, g_TerrainTypeTable
+    44C3F3 mov     ebx, [ebp+0]
+    44C3F6 push    eax
+    44C3F7 push    edi; int
+    44C3F8 mov     ecx, ebp; this
+    44C3FA call    Team__GetMember
+    44C3FF lea     ecx, [esp+3Ch+var_24.StreamClass_field_0C]
+    44C403 push    eax
+    44C404 push    ecx
+    44C405 mov     ecx, ebp
+    44C407 call    dword ptr [ebx+4D4h]
+    44C40D mov     ecx, [ebp+218h]
+    44C413 mov     eax, [eax]
+    44C415 cmp     ecx, edi
+    44C417 mov     dword ptr [esp+38h+var_24.__pad_0], eax
+    44C41B jz      short loc_44C458
+    44C41D mov     edx, [ecx]
+    44C41F lea     eax, [esp+38h+var_10]
+    44C423 push    eax
+    44C424 call    dword ptr [edx+48h]
+    44C427 mov     ecx, eax
+    44C429 mov     eax, [ecx]
+    44C42B cdq
+    44C42C and     edx, 0FFh
+    44C432 add     eax, edx
+    44C434 sar     eax, 8
+    44C437 mov     word ptr [esp+38h+var_24.m_Data], ax
+    44C43C mov     eax, [ecx+4]
+    44C43F cdq
+    44C440 and     edx, 0FFh
+    44C446 add     eax, edx
+    44C448 sar     eax, 8
+    44C44B mov     word ptr [esp+38h+var_24.m_Data+2], ax
+    44C450 mov     eax, [esp+38h+var_24.m_Data]
+    44C454 mov     dword ptr [esp+38h+var_24.__pad_0], eax
+    44C458 cmp     ax, word ptr g_TerrainTypeTable
+    44C45F jnz     short loc_44C473
+    44C461 mov     cx, word ptr [esp+38h+var_24.__pad_0+2]
+    44C466 cmp     cx, word ptr g_TerrainTypeTable+2
+    44C46D jz      loc_44C819
+    44C473 mov     edx, [esi]
+    44C475 push    edi
+    44C476 push    2
+    44C478 mov     ecx, esi
+    44C47A call    dword ptr [edx+1E8h]
+    44C480 mov     ebx, [esi]
+    44C482 lea     eax, [esp+38h+var_24]
+    44C486 push    1
+    44C488 push    eax; __int16 *
+    44C489 mov     ecx, offset dword_87F7E8; this
+    44C48E call    CellCoord__To_CellObj
+    44C493 push    eax
+    44C494 mov     ecx, esi
+    44C496 call    dword ptr [ebx+480h]
+    44C49C push    edi; int
+    44C49D mov     ecx, esi; this
+    44C49F call    TechnoClass__SetFocus
+    44C4A4 mov     edx, [ebp+0]
+    44C4A7 push    3
+    44C4A9 mov     ecx, ebp
+    44C4AB call    dword ptr [edx+274h]
+    44C4B1 mov     [esi+500h], edi
+    44C4B7 jmp     loc_44C819
+    44C4BC mov     al, [esi+3D0h]
+    44C4C2 test    al, al
+    44C4C4 jz      short loc_44C4F3
+    44C4C6 mov     ecx, [esi+21Ch]; this
+    44C4CC call    House__IsCurrentPlayer
+    44C4D1 test    al, al
+    44C4D3 jnz     short loc_44C4F3
+    44C4D5 mov     eax, [esi]
+    44C4D7 push    1
+    44C4D9 mov     ecx, esi
+    44C4DB call    dword ptr [eax+1A0h]
+    44C4E1 mov     [ebp+0BCh], edi
+    44C4E7 mov     byte ptr [ebp+6DDh], 1
+    44C4EE jmp     loc_44C819
+    44C4F3 mov     al, [ebp+41Ah]
+    44C4F9 test    al, al
+    44C4FB jz      short loc_44C50C
+    44C4FD push    0FFFFFFFFh; int
+    44C4FF or      edx, 0FFFFFFFFh
+    44C502 mov     ecx, offset aEvaRepairing; this
+    44C507 call    VoxClass__FindAndPlay
+    44C50C mov     ecx, ebp; this
+    44C50E mov     dword ptr [ebp+0BCh], 2
+    44C518 call    BuildingClass__GetHealthRatio
+    44C51D mov     ecx, dword_8871E0
+    44C523 fcomp   qword ptr [ecx+1700h]
+    44C529 fnstsw  ax
+    44C52B test    ah, 41h
+    44C52E jz      short loc_44C542
+    44C530 mov     eax, [ebp+520h]
+    44C536 mov     ecx, 1
+    44C53B add     eax, 1204h
+    44C540 jmp     short loc_44C54F
+    44C542 mov     eax, [ebp+520h]
+    44C548 xor     ecx, ecx
+    44C54A add     eax, 11F4h
+    44C54F cmp     eax, edi
+    44C551 jz      short loc_44C565
+    44C553 cmp     byte ptr [eax], 0
+    44C556 jz      short loc_44C565
+    44C558 push    edi; int
+    44C559 push    edi; int
+    44C55A push    ecx; int
+    44C55B push    0Ah; int
+    44C55D push    eax; void *
+    44C55E mov     ecx, ebp
+    44C560 call    BuildingClass__PlayAnim
+    44C565 push    3; int
+    44C567 mov     ecx, ebp; this
+    44C569 call    BuildingClass__ClearAnims
+    44C56E push    12h; int
+    44C570 mov     ecx, ebp; this
+    44C572 call    BuildingClass__ClearAnims
+    44C577 mov     byte ptr [ebp+6DDh], 0
+    44C57E mov     [ebp+620h], edi
+    44C584 mov     eax, dword_A8ED84
+    44C589 lea     edx, [ebp+628h]
+    44C58F mov     ecx, 1
+    44C594 mov     [edx], eax
+    44C596 mov     eax, [esp+38h+var_C]
+    44C59A mov     [ebp+634h], ecx
+    44C5A0 mov     [edx+4], eax
+    44C5A3 mov     [edx+8], ecx
+    44C5A6 jmp     loc_44C819
+    44C5AB mov     ecx, [ebp+21Ch]
+    44C5B1 call    HouseClass__IonSensitivesShouldBeOffline
+    44C5B6 test    al, al
+    44C5B8 jnz     loc_44C819
+    44C5BE push    edi; int
+    44C5BF mov     ecx, ebp; this
+    44C5C1 call    Team__GetMember
+    44C5C6 mov     esi, eax
+    44C5C8 mov     eax, [esi+674h]
+    44C5CE add     esi, 674h
+    44C5D4 cmp     eax, edi
+    44C5D6 jnz     short loc_44C5E2
+    44C5D8 push    80004003h
+    44C5DD call    sub_7DC720
+    44C5E2 mov     esi, [esi]
+    44C5E4 push    esi
+    44C5E5 mov     ecx, [esi]
+    44C5E7 call    dword ptr [ecx+60h]
+    44C5EA test    al, al
+    44C5EC jnz     loc_44C819
+    44C5F2 push    edi; int
+    44C5F3 mov     ecx, ebp; this
+    44C5F5 call    Team__GetMember
+    44C5FA mov     esi, eax
+    44C5FC mov     eax, [esi+674h]
+    44C602 add     esi, 674h
+    44C608 cmp     eax, edi
+    44C60A jnz     short loc_44C616
+    44C60C push    80004003h
+    44C611 call    sub_7DC720
+    44C616 mov     esi, [esi]
+    44C618 push    esi
+    44C619 mov     edx, [esi]
+    44C61B call    dword ptr [edx+58h]
+    44C61E jmp     loc_44C819
+    44C623 mov     ecx, ebp; this
+    44C625 call    Team__AllMembersValid
+    44C62A test    al, al
+    44C62C jnz     loc_44C6FD
+    44C632 push    8; int
+    44C634 mov     ecx, ebp; this
+    44C636 call    BuildingClass__ClearAnims
+    44C63B push    0Bh; int
+    44C63D mov     ecx, ebp; this
+    44C63F call    BuildingClass__ClearAnims
+    44C644 mov     ecx, ebp; this
+    44C646 call    BuildingClass__GetHealthRatio
+    44C64B mov     eax, dword_8871E0
+    44C650 fcomp   qword ptr [eax+1700h]
+    44C656 fnstsw  ax
+    44C658 test    ah, 41h
+    44C65B jz      short loc_44C66F
+    44C65D mov     eax, [ebp+520h]
+    44C663 mov     ecx, 1
+    44C668 add     eax, 128Ch
+    44C66D jmp     short loc_44C67C
+    44C66F mov     eax, [ebp+520h]
+    44C675 xor     ecx, ecx
+    44C677 add     eax, 127Ch
+    44C67C cmp     eax, edi
+    44C67E jz      short loc_44C692
+    44C680 cmp     byte ptr [eax], 0
+    44C683 jz      short loc_44C692
+    44C685 push    edi; int
+    44C686 push    edi; int
+    44C687 push    ecx; int
+    44C688 push    0Ch; int
+    44C68A push    eax; void *
+    44C68B mov     ecx, ebp
+    44C68D call    BuildingClass__PlayAnim
+    44C692 mov     ecx, ebp; this
+    44C694 call    BuildingClass__GetHealthRatio
+    44C699 mov     ecx, dword_8871E0
+    44C69F fcomp   qword ptr [ecx+1700h]
+    44C6A5 fnstsw  ax
+    44C6A7 test    ah, 41h
+    44C6AA jz      short loc_44C6BE
+    44C6AC mov     eax, [ebp+520h]
+    44C6B2 mov     ecx, 1
+    44C6B7 add     eax, 1028h
+    44C6BC jmp     short loc_44C6CB
+    44C6BE mov     eax, [ebp+520h]
+    44C6C4 xor     ecx, ecx
+    44C6C6 add     eax, 1018h
+    44C6CB cmp     eax, edi
+    44C6CD jz      short loc_44C6E1
+    44C6CF cmp     byte ptr [eax], 0
+    44C6D2 jz      short loc_44C6E1
+    44C6D4 push    edi; int
+    44C6D5 push    edi; int
+    44C6D6 push    ecx; int
+    44C6D7 push    3; int
+    44C6D9 push    eax; void *
+    44C6DA mov     ecx, ebp
+    44C6DC call    BuildingClass__PlayAnim
+    44C6E1 mov     edx, [ebp+0]
+    44C6E4 push    1
+    44C6E6 push    5
+    44C6E8 mov     ecx, ebp
+    44C6EA call    dword ptr [edx+1E8h]
+    44C6F0 mov     eax, 1
+    44C6F5 pop     edi
+    44C6F6 pop     esi
+    44C6F7 pop     ebp
+    44C6F8 pop     ebx
+    44C6F9 mov     esp, ebp
+    44C6FB pop     ebp
+    44C6FC retn
+    44C6FD push    edi; int
+    44C6FE mov     ecx, ebp; this
+    44C700 mov     byte ptr [ebp+6DDh], 0
+    44C707 mov     [esp+3Ch+var_24.m_Data], 64h ; 'd'
+    44C70F call    Team__GetMember
+    44C714 lea     ebx, [eax+674h]
+    44C71A mov     dword ptr [esp+38h+var_24.__pad_0], edi
+    44C71E cmp     [ebx], edi
+    44C720 jz      short loc_44C745
+    44C722 push    ebx; _DWORD *
+    44C723 lea     ecx, [esp+3Ch+var_24]; this
+    44C727 call    StreamClass__Set2
+    44C72C cmp     eax, edi
+    44C72E jge     short loc_44C73D
+    44C730 cmp     eax, 80004002h
+    44C735 jz      short loc_44C73D
+    44C737 push    eax
+    44C738 call    sub_7DC720
+    44C73D mov     eax, dword ptr [esp+38h+var_24.__pad_0]
+    44C741 cmp     eax, edi
+    44C743 jnz     short loc_44C753
+    44C745 push    80004003h
+    44C74A call    sub_7DC720
+    44C74F mov     eax, dword ptr [esp+38h+var_24.__pad_0]
+    44C753 mov     ecx, [eax]
+    44C755 lea     edx, [esp+38h+var_10]
+    44C759 push    edx
+    44C75A push    eax
+    44C75B call    dword ptr [ecx+0Ch]
+    44C75E mov     ecx, 4
+    44C763 mov     edi, offset stru_7E9A40
+    44C768 lea     esi, [esp+38h+var_10]
+    44C76C xor     eax, eax
+    44C76E repe cmpsd
+    44C770 mov     eax, 0C8h
+    44C775 jnz     short loc_44C77B
+    44C777 mov     [esp+38h+var_24.m_Data], eax
+    44C77B mov     ecx, 4
+    44C780 mov     edi, offset g_CLSID_DriveLocomotion2
+    44C785 lea     esi, [esp+38h+var_10]
+    44C789 xor     edx, edx
+    44C78B repe cmpsd
+    44C78D jnz     short loc_44C793
+    44C78F mov     [esp+38h+var_24.m_Data], eax
+    44C793 mov     eax, [ebp+0]
+    44C796 push    13h
+    44C798 mov     ecx, ebp
+    44C79A call    dword ptr [eax+274h]
+    44C7A0 cmp     eax, 1
+    44C7A3 jnz     short loc_44C7E5
+    44C7A5 mov     esi, [ebp+0]
+    44C7A8 push    0; int
+    44C7AA mov     ecx, ebp; this
+    44C7AC call    Team__GetMember
+    44C7B1 push    eax
+    44C7B2 mov     ecx, ebp
+    44C7B4 call    dword ptr [esi+4D8h]
+    44C7BA cmp     eax, [esp+38h+var_24.m_Data]
+    44C7BE jge     short loc_44C7E5
+    44C7C0 mov     eax, dword ptr [esp+38h+var_24.__pad_0]
+    44C7C4 mov     dword ptr [ebp+0BCh], 1
+    44C7CE test    eax, eax
+    44C7D0 jz      short loc_44C7D8
+    44C7D2 mov     ecx, [eax]
+    44C7D4 push    eax
+    44C7D5 call    dword ptr [ecx+8]
+    44C7D8 mov     eax, 3
+    44C7DD pop     edi
+    44C7DE pop     esi
+    44C7DF pop     ebp
+    44C7E0 pop     ebx
+    44C7E1 mov     esp, ebp
+    44C7E3 pop     ebp
+    44C7E4 retn
+    44C7E5 mov     ecx, [ebp+21Ch]
+    44C7EB call    HouseClass__IonSensitivesShouldBeOffline
+    44C7F0 test    al, al
+    44C7F2 jnz     short loc_44C80B
+    44C7F4 cmp     dword ptr [ebx], 0
+    44C7F7 jnz     short loc_44C803
+    44C7F9 push    80004003h
+    44C7FE call    sub_7DC720
+    44C803 mov     ebx, [ebx]
+    44C805 push    ebx
+    44C806 mov     edx, [ebx]
+    44C808 call    dword ptr [edx+58h]
+    44C80B mov     eax, dword ptr [esp+38h+var_24.__pad_0]
+    44C80F test    eax, eax
+    44C811 jz      short loc_44C819
+    44C813 mov     ecx, [eax]
+    44C815 push    eax
+    44C816 call    dword ptr [ecx+8]
+    44C819 mov     ecx, ebp; this
+    44C81B call    MissionClass__GetMissionControl
+    44C820 fld     qword ptr [eax+10h]
+    44C823 fmul    ds:dbl_7E27F8
+    44C829 call    Math__RoundToInt
+    44C82E pop     edi
+    44C82F pop     esi
+    44C830 pop     ebp
+    44C831 pop     ebx
+    44C832 mov     esp, ebp
+    44C834 pop     ebp
+    44C835 retn
+    44C836 mov     cl, [eax+16AAh]
+    44C83C test    cl, cl
+    44C83E jz      loc_44C970
+    44C844 mov     eax, [ebp+0E8h]
+    44C84A xor     ebx, ebx
+    44C84C cmp     eax, edi
+    44C84E mov     byte ptr [esp+38h+var_28+3], 0
+    44C853 jle     loc_44C955
+    44C859 push    ebx; int
+    44C85A mov     ecx, ebp; this
+    44C85C call    Team__GetMember
+    44C861 mov     esi, eax
+    44C863 cmp     esi, edi
+    44C865 jz      loc_44C920
+    44C86B mov     edx, [ebp+0]
+    44C86E push    esi
+    44C86F push    1Dh
+    44C871 mov     ecx, ebp
+    44C873 call    dword ptr [edx+278h]
+    44C879 cmp     eax, 1
+    44C87C jnz     short loc_44C895
+    44C87E mov     eax, [esi]
+    44C880 mov     ecx, esi
+    44C882 call    dword ptr [eax+84h]
+    44C888 mov     ecx, [esi+6Ch]
+    44C88B mov     edx, [eax+0A0h]
+    44C891 cmp     ecx, edx
+    44C893 jz      short loc_44C8FD
+    44C895 mov     edx, [esi]
+    44C897 mov     ecx, esi
+    44C899 call    dword ptr [edx+184h]
+    44C89F cmp     eax, 7
+    44C8A2 jz      short loc_44C920
+    44C8A4 mov     eax, [ebp+0]
+    44C8A7 push    esi
+    44C8A8 push    13h
+    44C8AA mov     ecx, ebp
+    44C8AC call    dword ptr [eax+278h]
+    44C8B2 cmp     eax, 1
+    44C8B5 jnz     short loc_44C920
+    44C8B7 mov     edx, [esi]
+    44C8B9 mov     ecx, esi
+    44C8BB mov     byte ptr [esp+38h+var_28+3], al
+    44C8BF call    dword ptr [edx+184h]
+    44C8C5 test    eax, eax
+    44C8C7 jz      short loc_44C8D7
+    44C8C9 mov     eax, [esi]
+    44C8CB push    edi
+    44C8CC push    edi
+    44C8CD mov     ecx, esi
+    44C8CF call    dword ptr [eax+1E8h]
+    44C8D5 jmp     short loc_44C920
+    44C8D7 mov     edx, [ebp+0]
+    44C8DA push    esi
+    44C8DB push    1Fh
+    44C8DD mov     ecx, ebp
+    44C8DF call    dword ptr [edx+278h]
+    44C8E5 cmp     eax, 1
+    44C8E8 jz      short loc_44C920
+    44C8EA mov     eax, [ebp+0]
+    44C8ED push    esi
+    44C8EE push    1Ch
+    44C8F0 mov     ecx, ebp
+    44C8F2 call    dword ptr [eax+278h]
+    44C8F8 cmp     eax, 1
+    44C8FB jz      short loc_44C920
+    44C8FD mov     edx, [esi]
+    44C8FF push    1
+    44C901 push    edi
+    44C902 mov     ecx, esi
+    44C904 call    dword ptr [edx+484h]
+    44C90A mov     eax, [esi]
+    44C90C push    5
+    44C90E mov     ecx, esi
+    44C910 call    dword ptr [eax+1F0h]
+    44C916 mov     edx, [esi]
+    44C918 mov     ecx, esi
+    44C91A call    dword ptr [edx+334h]
+    44C920 mov     eax, [ebp+0E8h]
+    44C926 inc     ebx
+    44C927 cmp     ebx, eax
+    44C929 jl      loc_44C859
+    44C92F mov     al, byte ptr [esp+38h+var_28+3]
+    44C933 test    al, al
+    44C935 jz      short loc_44C955
+    44C937 mov     eax, dword_8871E0
+    44C93C fld     qword ptr [eax+1508h]
+    44C942 fmul    ds:dbl_7E27F8
+    44C948 call    Math__RoundToInt
+    44C94D pop     edi
+    44C94E pop     esi
+    44C94F pop     ebp
+    44C950 pop     ebx
+    44C951 mov     esp, ebp
+    44C953 pop     ebp
+    44C954 retn
+    44C955 mov     edx, [ebp+0]
+    44C958 push    edi
+    44C959 push    5
+    44C95B mov     ecx, ebp
+    44C95D call    dword ptr [edx+1E8h]
+    44C963 mov     eax, 3
+    44C968 pop     edi
+    44C969 pop     esi
+    44C96A pop     ebp
+    44C96B pop     ebx
+    44C96C mov     esp, ebp
+    44C96E pop     ebp
+    44C96F retn
+    44C970 pop     edi
+    44C971 mov     eax, 0Fh
+    44C976 pop     esi
+    44C977 pop     ebp
+    44C978 pop     ebx
+    44C979 mov     esp, ebp
+    44C97B pop     ebp
+    44C97C retn
+    44C97D align 10h
 */
+
 }
 // 0x446FF0
 int BuildingClass::ToggleRepairMode(int aP1) {

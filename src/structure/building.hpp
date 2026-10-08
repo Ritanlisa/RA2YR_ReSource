@@ -145,7 +145,7 @@ int CanAcceptType(int,int);  // 0x452670
     void ToggleSellMode();  // 0x447110
     int GetSellPriority();  // 0x5F5DD0
     void SellEffects();  // 0x480CB0
-    void SellUnit();  // 0x4D9F70
+    void SellUnit(int a2);  // 0x4D9F70 retn 4 (W20M26 true sig)
     void HandleSellOrRepair();  // 0x701410
 
     // Repair
@@ -497,8 +497,26 @@ int CanAcceptType(int,int);  // 0x452670
     LightSourceClass*                     LightSource;
     uint32_t                              LaserFenceFrame;
     uint32_t                              FirestormWallFrame;
+    virtual void vt_entry_100(void *, int);  // W20M26 vt+0x100 (canon ('buildingclass', 'HouseClass::UpdateConstruction'))
+    virtual void MissionDispatch(int, int);  // W20M26 vt+0x1E8 (canon ('buildingclass', 'ParticleClass::MissionDispatch'))
+    virtual int ThunkTo159x4(int);  // W20M26 vt+0x274 (canon ('buildingclass', 'ObjectClass::ThunkTo159x4'))
+    virtual int ThunkTo636(int, int);  // W20M26 vt+0x278 (canon ('buildingclass', 'ObjectClass::ThunkTo636'))
+    virtual int Vt46Thunk();  // W20M26 vt+0x2BC (canon ('buildingclass', 'TechnoClass::Vt46Thunk'))
+    virtual void ProcessDeploymentState();  // W20M26 vt+0x3A0 (canon ('buildingclass', 'TechnoClass::ProcessDeploymentState'))
+    virtual void Destroy_0();  // W20M26 vt+0xF8 (canon ('buildingclass', 'HouseClass::Destroy_0'))
+    virtual int * ValidateFoundation_1(void *, int, int);  // W20M26 vt+0x4D4 (canon ('buildingclass', 'HouseClass::ValidateFoundation_1'))
+    virtual int initAnimation(int);  // W20M26 vt+0x4D8 (canon ('buildingclass', 'AnimClass::initAnimation'))
+    int32_t                               q0BC;  // 0xBC (PR disasm [ebp+..]; canon None; W20M26)
+    int32_t                               q0E8;  // 0xE8 (PR disasm [ebp+..]; canon None; W20M26)
+    int32_t                               q114;  // 0x114 (PR disasm [ebp+..]; canon None; W20M26)
+    int32_t                               q2FC;  // 0x2FC (PR disasm [ebp+..]; canon None; W20M26)
+    int32_t                               q41A;  // 0x41A (PR disasm [ebp+..]; canon None; W20M26)
     ProgressTimer                         RepairProgress;
-    unsigned char                         __pad_628[20];  // 0x628-0x63B 窗口 (ml q628..q63B; raw ProcessRepair 0x44B8AE 字节索引; g57w10 r4 item2)
+    uint32_t                              q628;  // 0x628 (PR disasm window; W20M26)
+    uint32_t                              q62C;  // 0x62C (PR disasm window; W20M26)
+    uint32_t                              q630;  // 0x630 (PR disasm window; W20M26)
+    uint32_t                              q634;  // 0x634 (PR disasm window; W20M26)
+    uint32_t                              q638;  // 0x638 (PR disasm window; W20M26)
     RectangleStruct                       BuildingClass_field_rect_63C;
     CoordStruct                           BuildingClass_field_coord_64C;
     int32_t                               BuildingClass_field_int_658;
