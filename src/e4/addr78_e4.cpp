@@ -4500,7 +4500,7 @@ char CreateGameWOL(int a2)
     {
       v5 = v48[8]; /*0x789d50*/
       v48[5] = 1; /*0x789d57*/
-      IDA_BYTE1(v5) = IDA_BYTE1(v48[8]) | 0x10; /*0x789d5b*/
+      (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 0x10; /*0x789d5b*/
       goto LABEL_22; /*0x789d5e*/
     }
   }
@@ -4509,7 +4509,7 @@ char CreateGameWOL(int a2)
   LABEL_29:
     v5 = v48[8]; /*0x789ec4*/
     v48[5] = 1; /*0x789ee7*/
-    IDA_BYTE1(v5) = IDA_BYTE1(v48[8]) | 8; /*0x789eeb*/
+    (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 8; /*0x789eeb*/
     goto LABEL_22; /*0x789eee*/
   }
   if ( dword_A8B244 == 1 ) /*0x789d6b*/
@@ -4518,14 +4518,14 @@ char CreateGameWOL(int a2)
   {
     v5 = v48[8]; /*0x789ec9*/
     v48[5] = 0; /*0x789ed0*/
-    IDA_BYTE1(v5) = IDA_BYTE1(v48[8]) | 8; /*0x789ed8*/
+    (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 8; /*0x789ed8*/
   }
   else
   {
     v5 = v48[8]; /*0x789d8a*/
     v48[5] = IDA_LOBYTE(v45.ComPtr_field_0x18); /*0x789d91*/
     if ( IDA_BYTE1(v45.ComPtr_field_0x18) ) /*0x789d95*/
-      IDA_BYTE1(v5) = IDA_BYTE1(v48[8]) | 1; /*0x789d97*/
+      (((v5) >> 8) & 0xFF) = IDA_BYTE1(v48[8]) | 1; /*0x789d97*/
     byte_A8B540 = IDA_BYTE2(v45.ComPtr_field_0x18); /*0x789da0*/
     if ( IDA_BYTE2(v45.ComPtr_field_0x18) )
       v5 |= ((A8EB00_flat *)&stru_A8EB00)->ObjectTypeClass[33] != 800 ? 512 : 1024;
@@ -4719,8 +4719,8 @@ char CreateGameWOL(int a2)
   v36 = (int)ntohl( (void *)((void *)(unsigned int)v35)); /*0x78a31d*/
   IDA_HIBYTE(v45.ComPtr_field_0x18) = v36; /*0x78a326*/
   IDA_LOBYTE(v45.ComPtr_field_0x18) = IDA_HIBYTE(v36); /*0x78a332*/
-  IDA_BYTE2(v45.ComPtr_field_0x18) = IDA_BYTE1(v36); /*0x78a336*/
-  IDA_BYTE1(v45.ComPtr_field_0x18) = IDA_BYTE2(v36); /*0x78a34b*/
+  IDA_BYTE2(v45.ComPtr_field_0x18) = (((v36) >> 8) & 0xFF); /*0x78a336*/
+  IDA_BYTE1(v45.ComPtr_field_0x18) = (((v36) >> 16) & 0xFF); /*0x78a34b*/
   ((NetworkAddress *)&v47)->Assign( (unsigned int *)(&v45.ComPtr_field_0x20), (IUnknown *)((int)&v45.ComPtr_field_0x18), 0); /*0x78a34f*/
   v37 = (unsigned int *)(v10 + 40); /*0x78a354*/
   Flag_field_0x04 = v47.Flag_field_0x04; /*0x78a35b*/

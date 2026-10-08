@@ -9,11 +9,8 @@ namespace gamemd
 // def in misc/misc_ext.cpp @0x7DC720 pass-through)
 #ifndef GAMEMD_TREE_WINAPI
 #define GAMEMD_TREE_WINAPI
-class WinAPI
-{
-public:
-    static int Wrapper(int a2); // 0x7DC720 (G42 sig-sync: def in misc_ext.cpp)
-};
+// g57w20m7: 伪类 WinAPI 废除 (用户裁决: 无名函数用默认名) -> 自由函数默认名 sub_7DC720
+int sub_7DC720(int a2);  // 0x7DC720 (真身 ThrowErrorCOM(a2,0,0) 硬抛 _com_error; 旧体为 G42.33 占位 stub 已废)
 #endif  // GAMEMD_TREE_WINAPI
 
 // ============================================================================

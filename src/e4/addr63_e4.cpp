@@ -391,7 +391,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             }
             v45 = (char *)(v15 + v41); /*0x6308de*/
             IDA_LOBYTE(v15) = v60; /*0x6308e1*/
-            IDA_BYTE1(v15) = v60; /*0x6308e9*/
+            (((v15) >> 8) & 0xFF) = v60; /*0x6308e9*/
             v46 = v15 << 16; /*0x6308f1*/
             IDA_LOWORD(v46) = v15; /*0x6308f4*/
             v15 = v15; /*0x6308f7*/
@@ -2519,7 +2519,7 @@ AbstractClass * * ExportSelectionAsScriptAction()
           v24);
         qmemcpy( (void *)(v23), (const void *)(&v29[20]), sizeof(v23)); /*0x63afc2*/
         IDA_LOWORD(v24) = *(unsigned short *)&v29[128]; /*0x63afc4*/
-        IDA_BYTE2(v24) = v29[130]; /*0x63afc6*/
+        (((v24) >> 16) & 0xFF) = v29[130]; /*0x63afc6*/
         Network::RecordEvent( /*0x63afc7*/
           *(int64_t *)v23,
           *(int *)&v23[8],
@@ -4767,7 +4767,7 @@ char sub_6394E0(IUnknown * a1, int a2)
       v11);
     qmemcpy( (void *)(v10), (const void *)(&v12[128]), sizeof(v10)); /*0x63958d*/
     IDA_LOWORD(v11) = v13; /*0x63958f*/
-    IDA_BYTE2(v11) = v14; /*0x639591*/
+    (((v11) >> 16) & 0xFF) = v14; /*0x639591*/
     IDA_LOBYTE(Next) = Network::RecordEvent( /*0x639592*/
                      *(int64_t *)v10,
                      *(int *)&v10[8],

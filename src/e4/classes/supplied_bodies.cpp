@@ -1705,7 +1705,7 @@ int ScriptAction::ExecuteMissionCmd()
         v10);
       qmemcpy(v9, v14, sizeof(v9)); /*0x6ffca4*/
       IDA_LOWORD(v10) = v15; /*0x6ffca6*/
-      IDA_BYTE2(v10) = v16; /*0x6ffca8*/
+      (((v10) >> 16) & 0xFF) = v16; /*0x6ffca8*/
       Object_Helper_637DD0( /*0x6ffca9*/
         v9[0],
         v9[1],

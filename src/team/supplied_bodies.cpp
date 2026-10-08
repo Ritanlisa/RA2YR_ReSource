@@ -745,7 +745,7 @@ int TeamClass::AssignAttackTarget(int a2, int a3) {
                 if ( health ) /*0x6edbf9*/
                 {
                   if ( !*(void **)&i->Locomotor ) /*0x6edbfb*/
-                    WinAPI::Wrapper(-2147467261); /*0x6edc0a*/
+                    sub_7DC720(-2147467261); /*0x6edc0a*/
                   IDA_LOBYTE(health) = (*(int (__stdcall **)(int))(*(unsigned int *)*(void **)&i->Locomotor + 16))((int)*(void **)&i->Locomotor); /*0x6edc18*/
                   if ( !(unsigned char)health ) /*0x6edc1d*/
                   {
@@ -2443,7 +2443,7 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
       v5 = CellFromArray; /*0x6eca92*/
       if ( !CellFromArray /*0x6ecadc*/
         || (*(int (__thiscall **)(ObjectClass *))(*(void * *)&CellFromArray->fallRate))(CellFromArray) != 11
-        || (v6 = IDA_BYTE1(*(unsigned int *)&v5->q140) & 1,
+        || (v6 = (((unsigned int *)&v5->q140) >> 8) & 0xFF & 1,
             v11[0] = 0,
             v11[1] = 0,
             ObjectCell = (int)((ObjectClass *)v5)->FindObjectCell((int)v11, v6),

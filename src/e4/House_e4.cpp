@@ -1434,7 +1434,7 @@ char sub_637A10()
     ((EventClass *)v3)->AddEvent( *((unsigned int *)dword_A83D4C + 12), 0x2Bu); /*0x637a30*/
     qmemcpy( (void *)(v1), (const void *)(v3), sizeof(v1)); /*0x637a43*/
     IDA_LOWORD(v2) = v4; /*0x637a45*/
-    IDA_BYTE2(v2) = v5; /*0x637a47*/
+    (((v2) >> 16) & 0xFF) = v5; /*0x637a47*/
     Network::RecordEvent( /*0x637a48*/
       *(int64_t *)v1,
       *(int *)&v1[8],

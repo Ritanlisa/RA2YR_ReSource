@@ -111,6 +111,9 @@ struct BulletTypeClass {
     AnimTypeClass* Color;  // 0x2D4
     bool flat;  // 0x2F7
     void* ObjectTypeClass;  // 0x0 (no offset truth)
+    WeaponTypeClass* airburstWeapon;  // 0x2B0 (ml 688 airburstWeapon WeaponTypeClass*; RegisterForTracking 0x46c70a 站) g57w20m11
+    WeaponTypeClass* shrapnelWeapon;  // 0x2B4 (ml 692 shrapnelWeapon WeaponTypeClass*; 0x46c71b 站) g57w20m11
+    AnimTypeClass* trailer;           // 0x2D8 (ml 728 trailer AnimTypeClass*; 0x46c6f9 站) g57w20m11
 // --- flat members (END) ---
     static BuildingTypeClass * * ReadArmor();
     BuildingTypeClass * * ReadTrailerAnim();

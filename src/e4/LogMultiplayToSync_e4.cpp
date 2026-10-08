@@ -148,7 +148,7 @@ CellStruct * * LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, C
       {
         ((Network *)((unsigned int *)v15 + 3))->CopyAddress((unsigned int *)(&v54), (int)&v58); /*0x651970*/
         fprintf((FILE *const )(v5), "\nName: %s\n", v15 - 80);
-        fprintf((FILE *const )(v5), "Address: %d.%d.%d.%d\n", (uint8_t)v58, IDA_BYTE1(v58), IDA_BYTE2(v58), IDA_HIBYTE(v58));
+        fprintf((FILE *const )(v5), "Address: %d.%d.%d.%d\n", (uint8_t)v58, (((v58) >> 8) & 0xFF), (((v58) >> 16) & 0xFF), IDA_HIBYTE(v58));
         fprintf((FILE *const )(v5), "Max avg round trip: %d\n", *(unsigned int *)v15);
         fprintf((FILE *const )(v5), "Max round trip: %d\n", *((unsigned int *)v15 - 4));
         fprintf((FILE *const )(v5), "Resends: %d\n", *((unsigned int *)v15 - 3));

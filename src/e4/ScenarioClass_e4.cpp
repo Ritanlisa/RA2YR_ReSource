@@ -254,7 +254,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   {
     v23 = *(unsigned int *)(v5 + 56); /*0x5cc4cf*/
     v29 = *(unsigned int *)(v5 + 4); /*0x5cc4db*/
-    IDA_BYTE1(v23) |= 4u; /*0x5cc4e3*/
+    (((v23) >> 8) & 0xFF) |= 4u; /*0x5cc4e3*/
     v28 = v23; /*0x5cc4e7*/
     v30 = *(unsigned int *)(v5 + 8); /*0x5cc4e8*/
     v24 = (int *)(*(int (**)(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))( (MSOverlayAnim *)(aP0), (int *)(&v32)); /*0x5cc4f5*/
@@ -760,10 +760,10 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       g_ScenarioClass_Instance->difficulty2 = (int)DataGlobal_A8B278;
       g_ScenarioClass_Instance->elapsedTimer[0] = 2 - g_ScenarioClass_Instance->difficulty2;
       int v6 = g_ScenarioClass_Instance->nextScenario[0];
-      IDA_BYTE1(v6) = IDA_BYTE1(g_ScenarioClass_Instance->nextScenario[0]) & 0xEF;
+      (((v6) >> 8) & 0xFF) = IDA_BYTE1(g_ScenarioClass_Instance->nextScenario[0]) & 0xEF;
       g_ScenarioClass_Instance->nextScenario[0] = v6 | (((uint8_t)FOW & 1) << 12);
       v7 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900];
-      IDA_BYTE1(v7) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
+      (((v7) >> 8) & 0xFF) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
       *(unsigned int *)&(&g_NetworkPlayerBuffer)[4900 ]= (unsigned int)v7 | (((uint8_t)FOW & 1) << 12);
     }
     else
@@ -771,10 +771,10 @@ ScenarioClass * * ScenarioClass_LoadMap(void * a2)
       g_ScenarioClass_Instance->difficulty2 = *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416];
       ((unsigned int *)&g_ScenarioClass_Instance->elapsedTimer)[0] = 2 - *(unsigned int *)&(&g_NetworkPlayerBuffer)[5416];
       int v4 = g_ScenarioClass_Instance->nextScenario[0];
-      IDA_BYTE1(v4) = IDA_BYTE1(g_ScenarioClass_Instance->nextScenario[0]) & 0xEF;
+      (((v4) >> 8) & 0xFF) = IDA_BYTE1(g_ScenarioClass_Instance->nextScenario[0]) & 0xEF;
       g_ScenarioClass_Instance->nextScenario[0] = v4;
       v5 = *(ObjectClass **)&(&g_NetworkPlayerBuffer)[4900];
-      IDA_BYTE1(v5) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
+      (((v5) >> 8) & 0xFF) = (&g_NetworkPlayerBuffer)[4901] & 0xEF;
       *(unsigned int *)&(&g_NetworkPlayerBuffer)[4900 ]= (unsigned int)v5;
     }
     *(unsigned int *)&g_ScenarioClass_Instance->__pad_3566[54] = INIClass::ReadInt_Overwrite(
@@ -1165,7 +1165,7 @@ LABEL_124:
   if ( g_GameMode_Current && !(unsigned char)BridgeDestruction )
   {
     v47 = *(ObjectClass **)&g_NetworkPlayerBuffer[4900];
-    IDA_BYTE1(v47) = g_NetworkPlayerBuffer[4901] & 0x7F;
+    (((v47) >> 8) & 0xFF) = g_NetworkPlayerBuffer[4901] & 0x7F;
     *(unsigned int *)&g_NetworkPlayerBuffer[4900] = (unsigned int)v47;
   }
   nullsub_37();
@@ -1613,14 +1613,14 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
       if ( var58 )
       {
         v12 = 0;
-        for ( IDA_BYTE1(v119) = 1; v12 < (int)v115; ++v12 )
+        for ( (((v119) >> 8) & 0xFF) = 1; v12 < (int)v115; ++v12 )
           var58[v12] = *(unsigned int *)(*((unsigned int *)this + 3382) + 4 * v12);
       }
     }
     else
     {
       var58 = 0;
-      IDA_BYTE1(v119) = 0;
+      (((v119) >> 8) & 0xFF) = 0;
     }
   }
   TechnoTypeList = (void ***)INIClass::ReadTechnoTypeList(

@@ -981,10 +981,10 @@ if ( (*(int (**)(unsigned int, HWND, UINT, unsigned int, int *))(**(unsigned int
   if ( Msg == 646 )
   {
     v21 = wcslen((const wchar_t *)(&word_B730EC)); /*0x7779f2*/
-    if ( IDA_BYTE1(wParam) ) /*0x7779fe*/
+    if ( (((wParam) >> 8) & 0xFF) ) /*0x7779fe*/
     {
       *(unsigned short *)((char *)&hWnd + 1) = (uint8_t)wParam; /*0x777a02*/
-      IDA_LOBYTE(hWnd) = IDA_BYTE1(wParam); /*0x777a09*/
+      IDA_LOBYTE(hWnd) = (((wParam) >> 8) & 0xFF); /*0x777a09*/
     }
     else
     {
@@ -1596,7 +1596,7 @@ int RunWOLMainLoop(char a1)
     if ( !((String*)((String *)&g_WindowManager.__pad_EC[684]))->Length() ) /*0x77b352*/
     {
       IDA_LODWORD(v20) = 0; /*0x77b361*/
-      IDA_BYTE4(v20) = 0; /*0x77b365*/
+      (((v20) >> 32) & 0xFF) = 0; /*0x77b365*/
       ReadRegistryOptionsWOL((ObjectClass *)&v20); /*0x77b36a*/
       if ( (uint8_t)((Flag *)((Flag *)&v20))->IsNot2() ) /*0x77b373*/
       {
@@ -6642,10 +6642,10 @@ unsigned int * sub_77D720(unsigned int * a1, int a2)
   v8 = 0; /*0x77d730*/
   v11 = 0; /*0x77d738*/
   v4 = ntohl( (void *)((void *)(v3))); /*0x77d73d*/
-  v9[2] = IDA_BYTE1(v4); /*0x77d752*/
+  v9[2] = (((v4) >> 8) & 0xFF); /*0x77d752*/
   v10 = (uint8_t)v4; /*0x77d752*/
   v9[0] = IDA_HIBYTE(v4); /*0x77d756*/
-  v9[1] = IDA_BYTE2(v4); /*0x77d765*/
+  v9[1] = (((v4) >> 16) & 0xFF); /*0x77d765*/
   ((NetworkAddress *)v12)->Assign( (unsigned int *)(&v8), (IUnknown *)((int)v9), 0); /*0x77d76f*/
   v5 = v12[1]; /*0x77d77a*/
   *a1 = v12[0]; /*0x77d77e*/

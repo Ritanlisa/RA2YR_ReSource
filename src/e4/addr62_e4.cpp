@@ -163,7 +163,7 @@ int Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a5
       if ( v45 == 1 ) /*0x6200b3*/
       {
         IDA_LOBYTE(v6) = a4; /*0x6200bb*/
-        IDA_BYTE1(v6) = a4; /*0x6200bf*/
+        (((v6) >> 8) & 0xFF) = a4; /*0x6200bf*/
         v11 = v7 - v5 + 1; /*0x6200c4*/
         v12 = v6 << 16; /*0x6200c6*/
         IDA_LOWORD(v12) = v6; /*0x6200c9*/
@@ -449,7 +449,7 @@ int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
     v34 = -1; /*0x6209cc*/
   else
     v34 = ((int)(uint8_t)v7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x620a16*/
-        | (IDA_BYTE1(v7) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((((v7) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
         | (IDA_BYTE2(dword_AC1B94) >> g_BitMask_Red << g_BitShift_Blue);
   v8 = *a2; /*0x620a1d*/
   v9 = a2[1]; /*0x620a1f*/
@@ -515,8 +515,8 @@ int Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
           v4 = -1; /*0x620bf6*/
         else
           v4 = ((int)(uint8_t)v23 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x620c3e*/
-             | (IDA_BYTE1(v23) >> g_BitMask_Blue << g_BitMask_Green)
-             | (IDA_BYTE2(v42) >> g_BitMask_Red << g_BitShift_Blue);
+             | ((((v23) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+             | ((((v42) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
         v24 = *a1; /*0x620c48*/
         v49[0] = v28; /*0x620c4a*/
         v49[1] = v35 + v14; /*0x620c55*/
@@ -754,8 +754,8 @@ int DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, 
   v12 = (unsigned int *)((int)((unsigned int *)((int)((*aP2))))); /*0x621234*/
   v21 = (int)(aP2[3]); /*0x621255*/
   v13 = ((uint8_t)ecx0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x621259*/
-      | (IDA_BYTE1(ecx0) >> g_BitMask_Blue << g_BitMask_Green)
-      | (IDA_BYTE2(ecx0) >> g_BitMask_Red << g_BitShift_Blue);
+      | ((((ecx0) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+      | ((((ecx0) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
   yTopa = (int)((unsigned int *)((int)((unsigned int *)((int)(aP2[1])))));
   v14 = (unsigned int)(unsigned int *)(aP2[2]);
   v20 = (unsigned int *)(v14);
@@ -2420,7 +2420,7 @@ int sub_620870(unsigned short a1)
   int v1; // eax
 
   v1 = (uint8_t)((uint8_t)(a1 >> g_BitShift_Blue) << g_BitMask_Red); /*0x6208c7*/
-  IDA_BYTE1(v1) = 2; /*0x6208d2*/
+  (((v1) >> 8) & 0xFF) = 2; /*0x6208d2*/
   return (uint8_t)((uint8_t)(a1 >> g_BitShift_Red) << g_BitShift_Green_0) /*0x6208e5*/
        | (((uint8_t)((uint8_t)(a1 >> g_BitMask_Green) << g_BitMask_Blue) | (v1 << 8)) << 8);
 }

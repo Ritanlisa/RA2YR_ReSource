@@ -525,12 +525,12 @@ ClosestPlacementCell = (int *)(*((int (**)(FootClass *, int, unsigned int, unsig
             if ( *(unsigned char *)(v15 + 5801) || *(unsigned char *)(v15 + 5802) ) /*0x41ad29*/
             {
               if ( !a1->locomotor[0] ) /*0x41ad33*/
-                WinAPI::Wrapper(-2147467261); /*0x41ad42*/
+                sub_7DC720(-2147467261); /*0x41ad42*/
               if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1->locomotor[0] + 96))(a1->locomotor[0]) /*0x41ad5d*/
                 && !((HouseClass *)this)->IonSensitivesShouldBeOffline() )
               {
                 if ( !a1->locomotor[0] ) /*0x41ad66*/
-                  WinAPI::Wrapper(-2147467261); /*0x41ad75*/
+                  sub_7DC720(-2147467261); /*0x41ad75*/
                 (*(void (**)(int))(*(unsigned int *)a1->locomotor[0] + 88))(a1->locomotor[0]); /*0x41ad83*/
               }
               if ( (int *)((Team *)((Team *)a1))->GetMember(0) == v14 /*0x41ad9e*/
@@ -896,7 +896,7 @@ int AircraftClass::ProcessDockCheck()
 {
 
   if ( !((unsigned int *)this)[0] ) /*0x41adc3*/
-    WinAPI::Wrapper(-2147467261); /*0x41add2*/
+    sub_7DC720(-2147467261); /*0x41add2*/
   return (*(int (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 116))(((unsigned int *)this)[0]); /*0x41ade3*/
 
 }
@@ -926,7 +926,7 @@ int AircraftClass::IsBelowScreen()
     return ObjectClass::IsBelowScreen((IUnknown *)this); /*0x41b9a1*/
   }
   if ( !((unsigned int *)this)[0] ) /*0x41b9a8*/
-    WinAPI::Wrapper(-2147467261); /*0x41b9b7*/
+    sub_7DC720(-2147467261); /*0x41b9b7*/
   return (*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 128))(((unsigned int *)this)[0]) == 0; /*0x41b9a6*/
 
 }

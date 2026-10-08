@@ -673,7 +673,7 @@ void gamemd::UnitClass::UnitClass()
       ppv = 0; /*0x7354ea*/
       InstanceCOM = CreateInstanceCOM((ObjectClass *)&ppv, (IID *)(v6 + 844), 0, 7u); /*0x7354f2*/
       if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x735500*/
-        WinAPI::Wrapper(InstanceCOM); /*0x735503*/
+        sub_7DC720(InstanceCOM); /*0x735503*/
       v8 = (LPVOID)*(this + 413); /*0x735508*/
       v9 = ppv; /*0x73550e*/
       if ( v8 != ppv ) /*0x735514*/
@@ -693,7 +693,7 @@ void gamemd::UnitClass::UnitClass()
       if ( v9 ) /*0x73553a*/
         (*(void (__stdcall **)(LPVOID))(*(_DWORD *)v9 + 8))(v9); /*0x73553f*/
       if ( !*(this + 413) ) /*0x735542*/
-        WinAPI::Wrapper(-2147467261); /*0x735551*/
+        sub_7DC720(-2147467261); /*0x735551*/
       (*(void (__stdcall **)(_DWORD, int *))(*(_DWORD *)*(this + 413) + 12))(*(this + 413), this); /*0x735560*/
     }
     v10 = *(this + 433); /*0x735566*/

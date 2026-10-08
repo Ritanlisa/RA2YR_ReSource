@@ -228,7 +228,7 @@ char UnitTypeClass::CreateUnit(short *a2, void *ppv)
     v7 = (unsigned int)ppv; /*0x7474f6*/
     IDA_LOBYTE(v8) = 0; /*0x7474fa*/
     IDA_HIBYTE(v8) = v6; /*0x7474fc*/
-    IDA_BYTE1(v7) = 0; /*0x7474fe*/
+    (((v7) >> 8) & 0xFF) = 0; /*0x7474fe*/
     v13[2] = 0; /*0x747503*/
     v9 = v7 | v8; /*0x74750b*/
     v10 = (a2[1] << 8) + 128; /*0x747527*/

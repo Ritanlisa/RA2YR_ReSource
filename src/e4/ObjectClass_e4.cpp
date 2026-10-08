@@ -609,7 +609,7 @@ result = (*(int (**)(IStream *, struct IPersistStreamVtbl **, int, unsigned int)
         aP1 = (FootClass *)(0); /*0x4db786*/
       }
       if ( v12 < 0 && v12 != -2147467262 ) /*0x4db7b0*/
-        WinAPI::Wrapper(v12); /*0x4db7b3*/
+        sub_7DC720(v12); /*0x4db7b3*/
     }
     OleSaveToStream( (void *)((void *)(aP1)), (void *)(v3)); /*0x4db7be*/
     SizeMax = 0; /*0x4db7c4*/
@@ -1128,11 +1128,11 @@ int ObjectClass::DropAsBomb_Track()
     if ( (*((char *)&this->abstractFlags) & 4) != 0 ) /*0x5f41bb*/
     {
       if ( !*(unsigned int *)&this->__pad_524[336] ) /*0x5f41bd*/
-        WinAPI::Wrapper(-2147467261); /*0x5f41cc*/
+        sub_7DC720(-2147467261); /*0x5f41cc*/
       if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->__pad_524[336] + 16))(*(unsigned int *)&this->__pad_524[336]) ) /*0x5f41da*/
       {
         if ( !*(unsigned int *)&this->__pad_524[336] ) /*0x5f4213*/
-          WinAPI::Wrapper(-2147467261); /*0x5f4222*/
+          sub_7DC720(-2147467261); /*0x5f4222*/
         return (*(int (**)(unsigned int, unsigned int))(**(unsigned int **)&this->__pad_524[336] + 156))( /*0x5f4232*/
                  *(unsigned int *)&this->__pad_524[336],
                  0);

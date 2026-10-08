@@ -367,7 +367,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   v14 = *((unsigned int *)v13 + 2); /*0x456a75*/
   if ( v14 > 0 && *((int *)v13 + 3) > 0 ) /*0x456a85*/
   {
-    v39 = IDA_BYTE2(a6); /*0x456a92*/
+    v39 = (((a6) >> 16) & 0xFF); /*0x456a92*/
     v34 = 0; /*0x456a9c*/
     v35 = 0; /*0x456aa6*/
     v38 = a6; /*0x456aab*/

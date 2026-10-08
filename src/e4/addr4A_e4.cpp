@@ -521,7 +521,7 @@ int CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
     v11 = v6[2]; /*0x4a2c14*/
     a1 = 0; /*0x4a2c17*/
     if ( !v11 ) /*0x4a2c21*/
-      WinAPI::Wrapper(-2147467261); /*0x4a2c28*/
+      sub_7DC720(-2147467261); /*0x4a2c28*/
     v12 = (int *)(v6 + 9); /*0x4a2c34*/
     result = (*(int (**)(unsigned int, unsigned int *, int, int *))(*(unsigned int *)v6[2] + 12))( v6[2], v6 + 9, 8, (int *)(&a1)); /*0x4a2c3e*/
     if ( result < 0 ) /*0x4a2c43*/
@@ -529,7 +529,7 @@ int CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
     if ( a1 != 8 ) /*0x4a2c4a*/
       return -2147467259; /*0x4a2c4a*/
     if ( !v6[2] ) /*0x4a2c50*/
-      WinAPI::Wrapper(-2147467261); /*0x4a2c5c*/
+      sub_7DC720(-2147467261); /*0x4a2c5c*/
     result = (*(int (**)(unsigned int, unsigned int, int, int *))(*(unsigned int *)v6[2] + 12))( v6[2], v6[7], *v12, (int *)(&a1)); /*0x4a2c73*/
     if ( result < 0 ) /*0x4a2c78*/
       return result; /*0x4a2c78*/
@@ -909,7 +909,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   if ( g_lpDirectDraw7->lpVtbl->EnumDisplayModes(g_lpDirectDraw7, 0, 0, &v16, (LPDDENUMMODESCALLBACK)sub_4A4850) || !v19 ) /*0x4a4967*/
   {
     v16 = (void **)((void*)&VectorClass__DDSURFACEDESC___vftable); /*0x4a4a93*/
-    if ( Block && IDA_BYTE1(v18) ) /*0x4a4aa5*/
+    if ( Block && (((v18) >> 8) & 0xFF) ) /*0x4a4aa5*/
       RA2_OPDEL(Block); /*0x4a4aa8*/
     return 0; /*0x4a4aa8*/
   }
@@ -944,7 +944,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   LABEL_13:
     RA2_OPDEL(v5); /*0x4a4a1a*/
     v16 = (void **)((void*)&VectorClass__DDSURFACEDESC___vftable); /*0x4a4a28*/
-    if ( Block && IDA_BYTE1(v18) ) /*0x4a4a38*/
+    if ( Block && (((v18) >> 8) & 0xFF) ) /*0x4a4a38*/
     {
       RA2_OPDEL(Block); /*0x4a4a3b*/
       return 0; /*0x4a4a4b*/
@@ -953,7 +953,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
   }
   qsort(v5, NumOfElements, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_4A48C0); /*0x4a4a5b*/
   v16 = (void **)((void*)&VectorClass__DDSURFACEDESC___vftable); /*0x4a4a69*/
-  if ( Block && IDA_BYTE1(v18) ) /*0x4a4a79*/
+  if ( Block && (((v18) >> 8) & 0xFF) ) /*0x4a4a79*/
     RA2_OPDEL(Block); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
 }
@@ -1291,11 +1291,11 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
   v11 = a4[1] + *(unsigned int *)((char *)a5 +); /*0x4a5ed3*/
   v12 = (int)(*(unsigned int *)a5 + *(unsigned int *)a4); /*0x4a5ed8*/
   ((Text *)(g_FogOfWarState))->Layout( (unsigned short *)(a2), (int *)(&a5), (unsigned int *)(&a4), a4[2]); /*0x4a5eec*/
-  v13 = IDA_BYTE1(a8); /*0x4a5ef1*/
+  v13 = (((a8) >> 8) & 0xFF); /*0x4a5ef1*/
   if ( ((unsigned int)a8 & 0x100) != 0 ) /*0x4a5efc*/
   {
     v12 += (int)a5 / -2; /*0x4a5f07*/
-    v13 = IDA_BYTE1(a8); /*0x4a5f09*/
+    v13 = (((a8) >> 8) & 0xFF); /*0x4a5f09*/
   }
   else if ( ((unsigned int)a8 & 0x200) != 0 ) /*0x4a5f12*/
   {
@@ -1320,7 +1320,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass, v
     v22 = v12 - 1; /*0x4a5f42*/
     v14 = (int)(*(unsigned int *)a3); /*0x4a5f46*/
     IDA_LOWORD(a8) = 0; /*0x4a5f4c*/
-    IDA_BYTE2(a8) = 0; /*0x4a5f57*/
+    (((a8) >> 16) & 0xFF) = 0; /*0x4a5f57*/
     (*(void (**)(int *, int *, int *, int))(v14 + 28))( (int *)(a3), (int *)(&v22), (int *)(&a8), 60); /*0x4a5f5c*/
   }
   v15 = v9[2]; /*0x4a5f98*/
@@ -1350,7 +1350,7 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
 
   v11 = ((Color *)((uint8_t *)(a6 + 776)))->ConvertToRGB((int)&a6); /*0x4a6028*/
   IDA_LOWORD(v14) = *(unsigned short *)v11; /*0x4a6036*/
-  IDA_BYTE2(v14) = *(unsigned char *)(v11 + 2); /*0x4a603e*/
+  (((v14) >> 16) & 0xFF) = *(unsigned char *)(v11 + 2); /*0x4a603e*/
   v12 = RenderTextLabel( /*0x4a60b2*/
           &v14,
           a2,
@@ -1358,8 +1358,8 @@ int * globalHelper_0A6010(void * a1, void * a2, void * a3, void * a4, void * a5,
           a4,
           a5,
           ((uint8_t)v14 >> g_BitShift_Green_0 << g_BitShift_Red)
-        | (IDA_BYTE1(v14) >> g_BitMask_Blue << g_BitMask_Green)
-        | (IDA_BYTE2(v14) >> g_BitMask_Red << g_BitShift_Blue),
+        | ((((v14) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((((v14) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue),
           a7,
           a8,
           a9);
@@ -1548,7 +1548,7 @@ int * * sub_4A67E0(char a1, int a2)
   int v2; // ecx
 
   IDA_LOBYTE(a2) = a1; /*0x4a67e0*/
-  IDA_BYTE1(a2) = a1; /*0x4a67e4*/
+  (((a2) >> 8) & 0xFF) = a1; /*0x4a67e4*/
   dword_8A0150 = 0; /*0x4a67e6*/
   dword_8A0154 = 0; /*0x4a67ed*/
   v2 = a2 << 16; /*0x4a67f2*/
@@ -3272,7 +3272,7 @@ void E4Recv_4A2880::sub_4A2880()
            0) >= 0 )
     {
       if ( !this->CStreamClass_field_0x08 ) /*0x4a28dc*/
-        WinAPI::Wrapper(-2147467261); /*0x4a28e6*/
+        sub_7DC720(-2147467261); /*0x4a28e6*/
       (*(void (**)(int))(*(unsigned int *)this->CStreamClass_field_0x08 + 8))(this->CStreamClass_field_0x08); /*0x4a28f1*/
       this->CStreamClass_field_0x08 = 0; /*0x4a28f4*/
     }

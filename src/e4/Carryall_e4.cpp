@@ -122,7 +122,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClas
       {
         v12 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)&v11->q_120))( v11, (unsigned char *)(v29));  /*0x416f54*/
         if ( !*((unsigned int *)this + 413) ) /*0x416f5f*/
-          WinAPI::Wrapper(-2147467261); /*0x416f6e*/
+          sub_7DC720(-2147467261); /*0x416f6e*/
         (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(**((unsigned int **)this + 413) + 68))( /*0x416f89*/
           *((unsigned int *)this + 413),
           *v12,
@@ -157,7 +157,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClas
         return (gamemd::FootClass **)(1); /*0x417024*/
       }
       if ( !*((unsigned int *)this + 413) ) /*0x417025*/
-        WinAPI::Wrapper(-2147467261); /*0x417032*/
+        sub_7DC720(-2147467261); /*0x417032*/
       if ( (*(int (**)(unsigned int))(**((unsigned int **)this + 413) + 144))(*((unsigned int *)this + 413)) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
       Debug::Log("Do_MISSION_MOVE_Carryall - FLY_TO_LZ - Begin landing\n"); /*0x417054 G57c1: IDA 0x417054 push offset aDoMissionMoveC_7*/
@@ -177,7 +177,7 @@ LABEL_5: MissionControl = (char *)(MissionClass::GetMissionControl( (MissionClas
         *((unsigned char *)this + 1748) = 0; /*0x41710f*/
 LABEL_44:
         if ( !*((unsigned int *)this + 413) ) /*0x417116*/
-          WinAPI::Wrapper(-2147467261); /*0x417125*/
+          sub_7DC720(-2147467261); /*0x417125*/
         if ( !(*(uint8_t (**)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x417133*/
         {
           Debug::Log("Do_MISSION_MOVE_Carryall - FLY_TO_LZ - Stopped moving\n"); /*0x41713f G57c1: IDA 0x41713f push offset aDoMissionMoveC_9*/

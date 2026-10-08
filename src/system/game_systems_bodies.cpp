@@ -1734,7 +1734,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                           v50 = -1; /*0x60decf*/
                         else
                           v50 = ((int)(unsigned __int8)HashTable_field_0x4C >> g_BitShift_Green_0 << g_BitShift_Red) /*0x60df17*/
-                              | (IDA_BYTE1(HashTable_field_0x4C) >> g_BitMask_Blue << g_BitMask_Green)
+                              | ((((HashTable_field_0x4C) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
                               | ((unsigned __int8)v184.__pad_0[2] >> g_BitMask_Red << g_BitShift_Blue);
                         (*((void (__thiscall **)(DSurface *, RECT *, int))DSurface_Alternate->DSurface_field_0x0 + 5))( /*0x60df2a*/
                           DSurface_Alternate,
@@ -1792,7 +1792,7 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                 {
                   v46 = IDA_BYTE2(g_DialogHashTable.HashTable_field_0x38); /*0x60dd9e*/
   LABEL_92:
-                  HashTable_field_0x38 = (IDA_BYTE1(HashTable_field_0x38) >> g_BitMask_Blue << g_BitMask_Green) /*0x60ddbc*/
+                  HashTable_field_0x38 = ((((HashTable_field_0x38) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green) /*0x60ddbc*/
                                        | (v46 >> g_BitMask_Red << g_BitShift_Blue)
                                        | ((int)(unsigned __int8)HashTable_field_0x38 >> g_BitShift_Green_0 << g_BitShift_Red);
                 }
@@ -4446,7 +4446,7 @@ void LoadScreen::RenderLoop()
               v89 = 0; /*0x4b7b14*/
             }
             if ( kk < v313 /*0x4b7b55*/
-              || (IDA_BYTE1(v314) || !v313)
+              || ((((v314) >> 8) & 0xFF) || !v313)
               && v316 > 0
               && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(v311.unknown_18 + 8))(
                    &v311.unknown_18,
@@ -4784,7 +4784,7 @@ void LoadScreen::RenderLoop()
                 v134 = 0; /*0x4b824f*/
               }
               if ( kk < v313 /*0x4b8290*/
-                || (IDA_BYTE1(v314) || !v313)
+                || ((((v314) >> 8) & 0xFF) || !v313)
                 && v316 > 0
                 && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(v311.unknown_18 + 8))(
                      &v311.unknown_18,
@@ -4858,7 +4858,7 @@ void LoadScreen::RenderLoop()
             v146 = 0; /*0x4b840f*/
           }
           if ( kk < v313 /*0x4b8450*/
-            || (IDA_BYTE1(v314) || !v313)
+            || ((((v314) >> 8) & 0xFF) || !v313)
             && v316 > 0
             && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(v311.unknown_18 + 8))(
                  &v311.unknown_18,
@@ -5557,12 +5557,12 @@ void LoadScreen::RenderLoop()
     v323.IsAllocated = 0; /*0x4b95a2*/
     v323.Capacity = 0; /*0x4b95ac*/
     v311.unknown_18 = (int)(void *)&VectorClass_CrossDissolveEffect___vftable; /*0x4b95b3*/
-    if ( v312 && IDA_BYTE1(v314) ) /*0x4b95c9*/
+    if ( v312 && (((v314) >> 8) & 0xFF) ) /*0x4b95c9*/
     {
       RA2_OPDEL(v312); /*0x4b95cc*/
       v312 = 0; /*0x4b95d4*/
     }
-    IDA_BYTE1(v314) = 0; /*0x4b95e2*/
+    (((v314) >> 8) & 0xFF) = 0; /*0x4b95e2*/
     v313 = 0; /*0x4b95ec*/
     *(unsigned int *)v321.__pad_0 = &off_7E8500; /*0x4b95f3*/
     if ( v321.LoadScreen_field_0x04 && IDA_BYTE1(v321.LoadScreen_field_0x0C) ) /*0x4b9609*/
@@ -7855,10 +7855,10 @@ void SyncDelayClass::ProcessNetworkSync()
     v2 = (int)*this; /*0x55deed*/
     if ( !*(unsigned int *)this ) /*0x55def2*/
       return v2; /*0x55def2*/
-    IDA_BYTE1(v2) &= ~8u; /*0x55def8*/
+    (((v2) >> 8) & 0xFF) &= ~8u; /*0x55def8*/
     v3 = v2; /*0x55defc*/
     v4 = v2; /*0x55df03*/
-    IDA_BYTE1(v4) = IDA_BYTE1(v2) & 0xE8; /*0x55df05*/
+    (((v4) >> 8) & 0xFF) = (((v2) >> 8) & 0xFF) & 0xE8; /*0x55df05*/
     v14 = v4; /*0x55df0a*/
     if ( *(unsigned int *)&stru_87F5F0.__pad_58[60] ) /*0x55df0e*/
     {
@@ -7935,17 +7935,17 @@ void SyncDelayClass::ProcessNetworkSync()
         case 37: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e0ab*/
           if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e0b0*/
-            IDA_BYTE1(v2) = g_MissionQueueFrame.waypoints[491] & 0xFE; /*0x55e0b2*/
+            (((v2) >> 8) & 0xFF) = g_MissionQueueFrame.waypoints[491] & 0xFE; /*0x55e0b2*/
           else
-            IDA_BYTE1(v2) = g_MissionQueueFrame.waypoints[491] | 1; /*0x55e0c1*/
+            (((v2) >> 8) & 0xFF) = g_MissionQueueFrame.waypoints[491] | 1; /*0x55e0c1*/
           *(unsigned int *)&g_MissionQueueFrame.waypoints[490] = v2; /*0x55e0b7*/
           break;
         case 39: /*0x55e07c*/
           v2 = *(unsigned int *)&g_MissionQueueFrame.waypoints[490]; /*0x55e0db*/
           if ( (*(unsigned int *)this & 0x800) != 0 ) /*0x55e0e0*/
-            IDA_BYTE1(v2) = g_MissionQueueFrame.waypoints[491] & 0xEF; /*0x55e0e2*/
+            (((v2) >> 8) & 0xFF) = g_MissionQueueFrame.waypoints[491] & 0xEF; /*0x55e0e2*/
           else
-            IDA_BYTE1(v2) = g_MissionQueueFrame.waypoints[491] | 0x10; /*0x55e0f1*/
+            (((v2) >> 8) & 0xFF) = g_MissionQueueFrame.waypoints[491] | 0x10; /*0x55e0f1*/
           *(unsigned int *)&g_MissionQueueFrame.waypoints[490] = v2; /*0x55e0e7*/
           break;
         case 38: /*0x55e07c*/

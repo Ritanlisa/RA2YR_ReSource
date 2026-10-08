@@ -636,7 +636,7 @@ LABEL_12:
             if ( !v11 ) /*0x487b50*/
             {
               if ( !v10[413] ) /*0x487b56*/
-                WinAPI::Wrapper(-2147467261); /*0x487b65*/
+                sub_7DC720(-2147467261); /*0x487b65*/
               if ( (*(uint8_t (**)(int, unsigned int, unsigned int, int))(*(unsigned int *)v10[413] + 160))( /*0x487b88*/
                      v10[413],
                      v17[0],

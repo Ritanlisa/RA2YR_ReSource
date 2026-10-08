@@ -148,7 +148,7 @@ char DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
 
 
   }
-  v20 = (int *)((unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)));
+  v20 = (int *)((unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | ((((a7) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue) | ((((a7) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)));
   v35 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))))))))))))))))))));
   v36 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))))));
   v21 = (unsigned int *)((int *)(((Coord2D *)(&v35))->Add( (unsigned int *)(v37), (unsigned int *)(&v31))));
@@ -260,8 +260,8 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v29 = v25 - 2; /*0x704eeb*/
   v28 = v24 - 2; /*0x704f13*/
   v7 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704f1e*/
-     | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)
-     | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue);
+     | ((((a7) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green)
+     | ((((a7) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
   v8 = (int *)(((Rect*)v45)->Construct( (unsigned int *)(&v28), 3, 3));
   v34 = (int)(*v8);
   v35 = (int)(v8[1]);
@@ -313,7 +313,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     v22 += dword_886FA4; /*0x70516b*/
     if ( ClipLine((int [])((int)(&v24)), (int [])((int)(&v21)), v44) ) /*0x70516f*/
     {
-      v20 = (void *)((int16_t)(IDA_BYTE2(a7)));
+      v20 = (void *)((int16_t)((((a7) >> 16) & 0xFF)));
       v19 = (void *)((unsigned int)(a7));
       if ( (((unsigned short)v16 - (unsigned short)v28) & 0x1F8u) <= 0xF8 && (((unsigned short)v16 - (unsigned short)v28) & 0x1F8) != 0 ) /*0x7051aa*/
         ((Color *)((uint8_t *)&v19))->Lerp((v16 - v28) & 0xF8, (uint8_t *)&v26); /*0x7051b6*/

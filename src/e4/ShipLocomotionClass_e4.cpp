@@ -106,7 +106,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
       pPStm = (int *)(0); /*0x69ef7d*/
     }
     if ( v8 < 0 && v8 != -2147467262 ) /*0x69efa7*/
-      WinAPI::Wrapper(v8); /*0x69efaa*/
+      sub_7DC720(v8); /*0x69efaa*/
   }
   v10 = OleSaveToStream( (LPPERSISTSTREAM)pPStm, (void *)(v3)); /*0x69efbb*/
   if ( pPStm ) /*0x69efc3*/

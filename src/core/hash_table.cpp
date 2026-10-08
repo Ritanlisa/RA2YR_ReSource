@@ -177,7 +177,7 @@ int SHA1::Transform(int *a1, unsigned int *a2)
       v4 = *v2++; /*0x69db49*/
       v5 = IDA_HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
       IDA_LOBYTE(v4) = 0; /*0x69db69*/
-      IDA_BYTE1(v4) = IDA_BYTE2(v4); /*0x69db6b*/
+      (((v4) >> 8) & 0xFF) = (((v4) >> 16) & 0xFF); /*0x69db6b*/
       --v3; /*0x69db71*/
       *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
     }

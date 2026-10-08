@@ -1100,7 +1100,7 @@ __int64 sub_46D480(void * a1, void * a2)
 {
   int64_t result; // rax
 
-  *((unsigned char *)&g_GameModeOptionState+ a2) = IDA_BYTE4(result); /*0x46d480*/
+  *((unsigned char *)&g_GameModeOptionState+ a2) = (((result) >> 32) & 0xFF); /*0x46d480*/
   return result; /*0x46d486*/
 }
 }

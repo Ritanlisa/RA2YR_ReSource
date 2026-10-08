@@ -212,16 +212,16 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       v46 = -1; /*0x6423ef*/
       v50 = 0xFFFF; /*0x6423f7*/
       IDA_LOBYTE(v55) = (uint8_t)(v29 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x642408*/
-      IDA_BYTE1(v55) = (uint8_t)(v29 >> g_BitMask_Green) << g_BitMask_Blue; /*0x642429*/
-      IDA_BYTE2(v55) = (uint8_t)(v29 >> g_BitShift_Blue) << g_BitMask_Red; /*0x642431*/
+      (((v55) >> 8) & 0xFF) = (uint8_t)(v29 >> g_BitMask_Green) << g_BitMask_Blue; /*0x642429*/
+      (((v55) >> 16) & 0xFF) = (uint8_t)(v29 >> g_BitShift_Blue) << g_BitMask_Red; /*0x642431*/
       if ( (int)v21 > 0 ) /*0x642435*/
       {
         v31 = Blocka; /*0x642447*/
         v32 = (uint8_t)v55; /*0x642451*/
-        v54[0] = IDA_BYTE1(v55); /*0x642460*/
+        v54[0] = (((v55) >> 8) & 0xFF); /*0x642460*/
         while ( 1 ) /*0x642490*/
         {
-          v33 = 16 * (*v31 & 0xF) - IDA_BYTE2(v55); /*0x642490*/
+          v33 = 16 * (*v31 & 0xF) - (((v55) >> 16) & 0xFF); /*0x642490*/
           v34 = (IDA_HIDWORD(v33) ^ v33) - IDA_HIDWORD(v33) + abs32((((uint16_t)*v31 >> 4) & 0xF0) - v32); /*0x642499*/
           v35 = (*v31 & 0xF0) - v54[0]; /*0x6424a4*/
           v36 = (IDA_HIDWORD(v35) ^ v35) - IDA_HIDWORD(v35) + v34; /*0x6424a9*/

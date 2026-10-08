@@ -1215,7 +1215,7 @@ int UnitClass::Mission_Harvest()
         goto LABEL_9; /*0x415250*/
       case 1:
         if ( !*(unsigned int *)&this->Locomotor ) /*0x41542a*/
-          WinAPI::Wrapper(-2147467261); /*0x415439*/
+          sub_7DC720(-2147467261); /*0x415439*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x415447*/
           ((unsigned int *)this)[0] = 2; /*0x41544e*/
         if ( !(*((unsigned __int8 (__thiscall **)(AircraftClass *, AbstractClass *))this->vtable1 + 340))(this, ((unsigned int *)this)[0]) ) /*0x415463*/
@@ -1223,7 +1223,7 @@ int UnitClass::Mission_Harvest()
         goto LABEL_9; /*0x41547b*/
       case 2:
         if ( !*(unsigned int *)&this->Locomotor ) /*0x415480*/
-          WinAPI::Wrapper(-2147467261); /*0x41548f*/
+          sub_7DC720(-2147467261); /*0x41548f*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x41549d*/
           ((unsigned int *)this)[0] = 3; /*0x4154a4*/
         return 1; /*0x4154ba*/
@@ -1699,7 +1699,7 @@ int * BuildingClass::BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _D
             v46 = v45 < v43; /*0x429f2a*/
             v47 = 0; /*0x429f2a*/
             v48 = v45 == v43; /*0x429f2a*/
-            IDA_BYTE1(v35) = v44; /*0x429f2c*/
+            (((v35) >> 8) & 0xFF) = v44; /*0x429f2c*/
             if ( v45 < v43 ) /*0x429f31*/
               goto LABEL_107; /*0x429f31*/
           }
@@ -1715,7 +1715,7 @@ int * BuildingClass::BuildingClass::UpdatePowerAnimation(int a2, __int16 *a3, _D
           v40 = v39 < v37; /*0x429ef5*/
           v41 = 0; /*0x429ef5*/
           v42 = v39 == v37; /*0x429ef5*/
-          IDA_BYTE1(v35) = v38; /*0x429ef7*/
+          (((v35) >> 8) & 0xFF) = v38; /*0x429ef7*/
           if ( v39 < v37 ) /*0x429efc*/
             goto LABEL_107; /*0x429efc*/
         }
@@ -4104,7 +4104,7 @@ void BuildingClass::ProcessAttack()
         Member = Team::GetMember((Team *)this, v3); /*0x442301*/
         if ( Member /*0x442334*/
           && (v71 < v69
-           || (IDA_BYTE1(v70) || !v69)
+           || ((((v70) >> 8) & 0xFF) || !v69)
            && v72 > 0
            && ((unsigned __int8 (__thiscall *)(void ***, int, unsigned int))v67[2])(&v67, v72 + v69, 0)) )
         {
@@ -4119,7 +4119,7 @@ void BuildingClass::ProcessAttack()
     if ( Type[5823] && !(unsigned char)v89 ) /*0x442371*/
     {
       v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442377*/
-      if ( Block && IDA_BYTE1(v70) ) /*0x442389*/
+      if ( Block && (((v70) >> 8) & 0xFF) ) /*0x442389*/
       {
         RA2_OPDEL(Block); /*0x44238c*/
         return 0; /*0x4423a0*/
@@ -4129,7 +4129,7 @@ void BuildingClass::ProcessAttack()
     if ( Type[5814] && Type[563] ) /*0x4423ad*/
     {
       v67 = (void *)&vt_VectorClass_TechnoClass; /*0x4423bb*/
-      if ( Block && IDA_BYTE1(v70) ) /*0x4423cd*/
+      if ( Block && (((v70) >> 8) & 0xFF) ) /*0x4423cd*/
         RA2_OPDEL(Block); /*0x4423d0*/
       return 0; /*0x4423e4*/
     }
@@ -4142,7 +4142,7 @@ void BuildingClass::ProcessAttack()
       if ( !(unsigned char)v10 ) /*0x442438*/
       {
         v67 = (void *)&vt_VectorClass_TechnoClass; /*0x44243e*/
-        if ( Block && IDA_BYTE1(v70) ) /*0x442450*/
+        if ( Block && (((v70) >> 8) & 0xFF) ) /*0x442450*/
           RA2_OPDEL(Block); /*0x442453*/
         return v11; /*0x442467*/
       }
@@ -4329,7 +4329,7 @@ void BuildingClass::ProcessAttack()
         case 5: /*0x442476*/
           v12 = Block; /*0x44247d*/
           v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442481*/
-          if ( Block && IDA_BYTE1(v70) ) /*0x442497*/
+          if ( Block && (((v70) >> 8) & 0xFF) ) /*0x442497*/
             goto LABEL_126; /*0x442497*/
           return v74; /*0x442497*/
         default:
@@ -4371,7 +4371,7 @@ void BuildingClass::ProcessAttack()
               IDA_LOBYTE(v42) = 0; /*0x442a78*/
               IDA_HIBYTE(v42) = v41; /*0x442a7e*/
               v43 = v73; /*0x442a80*/
-              IDA_BYTE1(v43) = 0; /*0x442a84*/
+              (((v43) >> 8) & 0xFF) = 0; /*0x442a84*/
               Anims = (int *)(v43 | v42); /*0x442a8c*/
               FacingClass::Update((char *)this->primaryFacing, &Anims); /*0x442a90*/
             }
@@ -4466,13 +4466,13 @@ void BuildingClass::ProcessAttack()
       }
       v12 = Block; /*0x442be5*/
       v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442be9*/
-      if ( Block && IDA_BYTE1(v70) ) /*0x442bfb*/
+      if ( Block && (((v70) >> 8) & 0xFF) ) /*0x442bfb*/
   LABEL_126:
         RA2_OPDEL(v12); /*0x442bfd*/
       return v74; /*0x442bfe*/
     }
     v67 = (void *)&vt_VectorClass_TechnoClass; /*0x442913*/
-    if ( Block && IDA_BYTE1(v70) ) /*0x442925*/
+    if ( Block && (((v70) >> 8) & 0xFF) ) /*0x442925*/
       RA2_OPDEL(Block); /*0x442928*/
     return 4; /*0x442396*/
 }
@@ -6479,10 +6479,10 @@ void BuildingClass::ClearFactoryBib()
                 goto LABEL_57; /*0x44de9a*/
               v52 = StreamClass::Set2((StreamClass *)&v84.StreamClass_field_0C, v51); /*0x44dea1*/
               if ( v52 < 0 && v52 != -2147467262 ) /*0x44deaf*/
-                WinAPI::Wrapper(v52); /*0x44deb2*/
+                sub_7DC720(v52); /*0x44deb2*/
               if ( !v84.StreamClass_field_0C ) /*0x44debd*/
   LABEL_57:
-                WinAPI::Wrapper(-2147467261); /*0x44dec4*/
+                sub_7DC720(-2147467261); /*0x44dec4*/
               (*(void (__stdcall **)(int, int *))(*(unsigned int *)v84.StreamClass_field_0C + 12))( /*0x44ded5*/
                 v84.StreamClass_field_0C,
                 &v90);
@@ -6494,7 +6494,7 @@ void BuildingClass::ClearFactoryBib()
                 {
                   v59 = StreamClass::Set(&v84, v51); /*0x44dfc0*/
                   if ( v59 < 0 && v59 != -2147467262 ) /*0x44dfce*/
-                    WinAPI::Wrapper(v59); /*0x44dfd1*/
+                    sub_7DC720(v59); /*0x44dfd1*/
                   if ( *(unsigned int *)v84.__pad_0 /*0x44dfe1*/
                     && (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)v84.__pad_0 + 28))(*(unsigned int *)v84.__pad_0) )
                   {
@@ -6503,16 +6503,16 @@ void BuildingClass::ClearFactoryBib()
                     v60 = *(unsigned int *)v84.__pad_0; /*0x44dff4*/
                     *v51 = 0; /*0x44dff8*/
                     if ( !v60 ) /*0x44e000*/
-                      WinAPI::Wrapper(-2147467261); /*0x44e007*/
+                      sub_7DC720(-2147467261); /*0x44e007*/
                     (*(void (__stdcall **)(int, int *))(*(unsigned int *)v60 + 16))(v60, v51); /*0x44e014*/
                   }
                 }
                 v84.m_Position = 0; /*0x44e024*/
                 InstanceCOM = CreateInstanceCOM((ObjectClass *)&v84.m_Position, (IID *)&stru_7E9A30, 0, 7u); /*0x44e02c*/
                 if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x44e03a*/
-                  WinAPI::Wrapper(InstanceCOM); /*0x44e03d*/
+                  sub_7DC720(InstanceCOM); /*0x44e03d*/
                 if ( !v84.m_Position ) /*0x44e048*/
-                  WinAPI::Wrapper(-2147467261); /*0x44e04f*/
+                  sub_7DC720(-2147467261); /*0x44e04f*/
                 m_Size = (unsigned int *)v84.m_Size; /*0x44e058*/
                 (*(void (__stdcall **)(int, int))(*(unsigned int *)v84.m_Position + 12))(v84.m_Position, v84.m_Size); /*0x44e060*/
                 m_Data = 0; /*0x44e067*/
@@ -6536,7 +6536,7 @@ void BuildingClass::ClearFactoryBib()
                     v84.m_Data = 0; /*0x44e09a*/
                   }
                   if ( v64 < 0 && v64 != -2147467262 ) /*0x44e0c1*/
-                    WinAPI::Wrapper(v64); /*0x44e0c4*/
+                    sub_7DC720(v64); /*0x44e0c4*/
                 }
                 v66 = *(unsigned int *)v84.__pad_0; /*0x44e0cd*/
                 if ( *(void **)v84.__pad_0 != m_Data ) /*0x44e0d3*/
@@ -6568,7 +6568,7 @@ void BuildingClass::ClearFactoryBib()
                       (*(void (__stdcall **)(int))(*(unsigned int *)&v68->q_20)(v68); /*0x44e12e*/
                   }
                   if ( !*v51 ) /*0x44e131*/
-                    WinAPI::Wrapper(-2147467261); /*0x44e13b*/
+                    sub_7DC720(-2147467261); /*0x44e13b*/
                   (*(void (__stdcall **)(int, int, int, unsigned int, unsigned int))(*(unsigned int *)*v51 + 112))( /*0x44e160*/
                     *v51,
                     66,
@@ -6598,7 +6598,7 @@ void BuildingClass::ClearFactoryBib()
               else if ( !memcmp(&v90, &stru_7E9A30, 0x10u) ) /*0x44df1a*/
               {
                 if ( !*v51 ) /*0x44df72*/
-                  WinAPI::Wrapper(-2147467261); /*0x44df7c*/
+                  sub_7DC720(-2147467261); /*0x44df7c*/
                 (*(void (__stdcall **)(int, int, int, unsigned int, unsigned int))(*(unsigned int *)*v51 + 112))( /*0x44dfa1*/
                   *v51,
                   66,
@@ -8348,7 +8348,7 @@ void BuildingClass::TraverseBridgeSegments()
             *(unsigned int *)v17 = i; /*0x4532d5*/
             if ( (unsigned short)i == (unsigned short)vtable0 ) /*0x4532d9*/
             {
-              IDA_LOBYTE(v2) = IDA_BYTE2(v18); /*0x4532db*/
+              IDA_LOBYTE(v2) = (((v18) >> 16) & 0xFF); /*0x4532db*/
               if ( v17[1] == IDA_HIWORD(v18) ) /*0x4532e5*/
                 break; /*0x4532e5*/
             }
@@ -9469,7 +9469,7 @@ void BuildingClass::DrawDeployCircle(Point2D* screen_pos) const
               v17 = (float)v20; /*0x456835*/
               IDA_HIBYTE(v14) = v6; /*0x456838*/
               IDA_LOWORD(v14) = v22.Color_field_00; /*0x45683f*/
-              IDA_BYTE2(v14) = IDA_BYTE2(v22.Color_field_00); /*0x456847*/
+              (((v14) >> 16) & 0xFF) = IDA_BYTE2(v22.Color_field_00); /*0x456847*/
               v8 = (int *)(*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 18))(this, v21); /*0x45684e*/
               DrawTechnoDeployCircle(0, 0, *v8, v8[1], v8[2], v14, v17, 0, 1); /*0x45686a*/
             }
@@ -9482,7 +9482,7 @@ void BuildingClass::DrawDeployCircle(Point2D* screen_pos) const
               v18 = (float)(unsigned int)result; /*0x4568cb*/
               v15 = (int)&owner->base[4] + 1; /*0x4568ce*/
               IDA_LOWORD(v15) = *(unsigned short *)((char *)&owner->base[4] + 1); /*0x4568d7*/
-              IDA_BYTE2(v15) = IDA_HIBYTE(owner->base[4]); /*0x4568df*/
+              (((v15) >> 16) & 0xFF) = IDA_HIBYTE(owner->base[4]); /*0x4568df*/
               v11 = (int *)(*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 18))(this, v21); /*0x4568e6*/
               IDA_LOBYTE(result) = DrawTechnoDeployCircle(0, 0, *v11, v11[1], v11[2], v15, v18, 1, 1); /*0x456902*/
             }
@@ -9493,7 +9493,7 @@ void BuildingClass::DrawDeployCircle(Point2D* screen_pos) const
             v19 = (float)v20; /*0x456924*/
             v16 = (int)&v12->base[4] + 1; /*0x456927*/
             IDA_LOWORD(v16) = *(unsigned short *)((char *)&v12->base[4] + 1); /*0x456930*/
-            IDA_BYTE2(v16) = IDA_HIBYTE(v12->base[4]); /*0x456938*/
+            (((v16) >> 16) & 0xFF) = IDA_HIBYTE(v12->base[4]); /*0x456938*/
             v13 = (int *)(*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 18))(this, v21); /*0x45693f*/
             IDA_LOBYTE(result) = DrawTechnoDeployCircle(v22.Color_field_00, 1, *v13, v13[1], v13[2], v16, v19, 0, 1); /*0x45695d*/
           }
@@ -9889,7 +9889,7 @@ void BuildingClass::RemoveLimpet()
     if ( bunkerLinkedUnit && (*((int (__thiscall **)(TechnoClass *))bunkerLinkedUnit->vtable1 + 11))(((unsigned int *)this)[0]) == 1 ) /*0x4593c1*/
     {
       if ( !bunkerLinkedUnit[1].alignmentPadding154[0] ) /*0x4593c7*/
-        WinAPI::Wrapper(-2147467261); /*0x4593d6*/
+        sub_7DC720(-2147467261); /*0x4593d6*/
       (*(void (__stdcall **)(int))(*(unsigned int *)bunkerLinkedUnit[1].alignmentPadding154[0] + 88))(bunkerLinkedUnit[1].alignmentPadding154[0]); /*0x4593e4*/
       v3 = (int *)(*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 18))(this, &v11); /*0x4593f0*/
       v4 = *v3; /*0x4593f3*/
@@ -9900,7 +9900,7 @@ void BuildingClass::RemoveLimpet()
       v9 = v5 + 128; /*0x459407*/
       v12 = v6; /*0x45940f*/
       if ( !v7 ) /*0x459413*/
-        WinAPI::Wrapper(-2147467261); /*0x45941a*/
+        sub_7DC720(-2147467261); /*0x45941a*/
       (*(void (__stdcall **)(int, int, int, int, int))(*(unsigned int *)bunkerLinkedUnit[1].alignmentPadding154[0] + 112))( /*0x45943b*/
         bunkerLinkedUnit[1].alignmentPadding154[0],
         71,
@@ -10084,7 +10084,7 @@ void BuildingClass::EmptyBunker()
       {
         bunkerLinkedUnit->bunkerLinkedUnit = 0; /*0x4596e6*/
         if ( !bunkerLinkedUnit[1].alignmentPadding154[0] ) /*0x4596ec*/
-          WinAPI::Wrapper(-2147467261); /*0x4596fb*/
+          sub_7DC720(-2147467261); /*0x4596fb*/
         (*(void (__stdcall **)(int))(*(unsigned int *)bunkerLinkedUnit[1].alignmentPadding154[0] + 88))(bunkerLinkedUnit[1].alignmentPadding154[0]); /*0x459709*/
         v13 = (int *)(*((int (__thiscall **)(BuildingClass *, int *))this->vtable1 + 18))(this, &v30); /*0x459715*/
         v14 = *v13; /*0x459718*/
@@ -10095,7 +10095,7 @@ void BuildingClass::EmptyBunker()
         v19 = v15 + 128; /*0x45972c*/
         v32 = v16; /*0x459734*/
         if ( !v17 ) /*0x459738*/
-          WinAPI::Wrapper(-2147467261); /*0x45973f*/
+          sub_7DC720(-2147467261); /*0x45973f*/
         (*(void (__stdcall **)(int, int, int, int, int, int, int))(*(unsigned int *)bunkerLinkedUnit[1].alignmentPadding154[0] /*0x459760*/
                                                                  + 112))(
           bunkerLinkedUnit[1].alignmentPadding154[0],
@@ -13262,12 +13262,12 @@ int UnitClass::ProcessExitQueue()
                   goto LABEL_21; /*0x6b72fc*/
                 alignmentPadding154 = this->owner[1].alignmentPadding154; /*0x6b7301*/
                 if ( !*alignmentPadding154 ) /*0x6b7307*/
-                  WinAPI::Wrapper(-2147467261); /*0x6b7312*/
+                  sub_7DC720(-2147467261); /*0x6b7312*/
                 if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)*alignmentPadding154 + 16))(*alignmentPadding154) )
                 {
                   v13 = this->owner[1].alignmentPadding154; /*0x6b732c*/
                   if ( !*v13 ) /*0x6b7332*/
-                    WinAPI::Wrapper(-2147467261); /*0x6b733d*/
+                    sub_7DC720(-2147467261); /*0x6b733d*/
                   if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)*v13 + 128))(*v13) )
                   {
   LABEL_21:

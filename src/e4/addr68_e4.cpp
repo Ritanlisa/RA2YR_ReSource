@@ -159,13 +159,13 @@ int COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
   if ( v6 >= 0 ) /*0x6826ad*/
   {
     if ( !v9 ) /*0x6826d4*/
-      WinAPI::Wrapper(-2147467261); /*0x6826db*/
+      sub_7DC720(-2147467261); /*0x6826db*/
     v7 = wcslen(WideCharStr); /*0x6826f0*/
     v6 = (*(int (**)(int, WCHAR *, size_t, unsigned int))(*(unsigned int *)v9 + 16))( v9, (WCHAR *)(WideCharStr), 2 * v7 + 2, 0); /*0x682706*/
     if ( v6 >= 0 ) /*0x68270f*/
     {
       if ( !v9 ) /*0x682729*/
-        WinAPI::Wrapper(-2147467261); /*0x682730*/
+        sub_7DC720(-2147467261); /*0x682730*/
       v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 32))(v9, 0); /*0x682741*/
       if ( v6 >= 0 ) /*0x682749*/
       {
@@ -222,7 +222,7 @@ int COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
     v8[1] = a2; /*0x68293a*/
     v9[0] = 31; /*0x68293e*/
     if ( !v7 ) /*0x682945*/
-      WinAPI::Wrapper(-2147467261); /*0x68294c*/
+      sub_7DC720(-2147467261); /*0x68294c*/
     v5 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v7 + 16))( v7, 1, (unsigned int *)(v8), (int16_t *)(v9), 2); /*0x682969*/
     if ( v5 >= 0 ) /*0x682971*/
     {
@@ -271,12 +271,12 @@ v8 = (int)((unsigned int *)(0));
   if ( v6 >= 0 ) /*0x682ad4*/
   {
     if ( !v8 ) /*0x682af6*/
-      WinAPI::Wrapper(-2147467261); /*0x682afd*/
+      sub_7DC720(-2147467261); /*0x682afd*/
     v6 = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)v8 + 16))( v8, (char *)(&a3), 4, 0); /*0x682b15*/
     if ( v6 >= 0 ) /*0x682b1d*/
     {
       if ( !v8 ) /*0x682b32*/
-        WinAPI::Wrapper(-2147467261); /*0x682b39*/
+        sub_7DC720(-2147467261); /*0x682b39*/
       v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v8 + 32))(v8, 0); /*0x682b4a*/
       if ( v6 >= 0 ) /*0x682b52*/
       {
@@ -329,7 +329,7 @@ int COM_PropertyBag_Read(int * a1, int a2, int a3)
     v8[0] = 3; /*0x682c0c*/
     v9 = a3; /*0x682c13*/
     if ( !v6 ) /*0x682c17*/
-      WinAPI::Wrapper(-2147467261); /*0x682c1e*/
+      sub_7DC720(-2147467261); /*0x682c1e*/
     v4 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v6 + 16))( v6, 1, (unsigned int *)(v7), (int16_t *)(v8), 2); /*0x682c3b*/
     if ( v4 >= 0 ) /*0x682c43*/
     {
@@ -388,7 +388,7 @@ v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned int **)
   if ( v7 >= 0 ) /*0x682cc5*/
   {
     if ( !a3 ) /*0x682ce3*/
-      WinAPI::Wrapper(-2147467261); /*0x682cea*/
+      sub_7DC720(-2147467261); /*0x682cea*/
     v7 = (*(int (**)(unsigned int *, unsigned int *, int, unsigned int))(*a3 + 12))( (unsigned int *)(a3), (unsigned int *)(v3), 8, 0); /*0x682cfe*/
     if ( v7 >= 0 ) /*0x682d06*/
     {
@@ -437,12 +437,12 @@ v8 = (int)((unsigned int *)(0));
   if ( v6 >= 0 ) /*0x682e54*/
   {
     if ( !v8 ) /*0x682e76*/
-      WinAPI::Wrapper(-2147467261); /*0x682e7d*/
+      sub_7DC720(-2147467261); /*0x682e7d*/
     v6 = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v8 + 16))(v8, a3, 8, 0); /*0x682e95*/
     if ( v6 >= 0 ) /*0x682e9d*/
     {
       if ( !v8 ) /*0x682eb2*/
-        WinAPI::Wrapper(-2147467261); /*0x682eb9*/
+        sub_7DC720(-2147467261); /*0x682eb9*/
       v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v8 + 32))(v8, 0); /*0x682eca*/
       if ( v6 >= 0 ) /*0x682ed2*/
       {
@@ -499,7 +499,7 @@ int COM_SetBufferParams(int * a1, int a2, int * a3)
     v10 = *a3; /*0x682f9a*/
     v11 = v6; /*0x682fa0*/
     if ( !v7 ) /*0x682fa4*/
-      WinAPI::Wrapper(-2147467261); /*0x682fab*/
+      sub_7DC720(-2147467261); /*0x682fab*/
     v4 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v7 + 16))( v7, 1, (unsigned int *)(v8), (int16_t *)(v9), 2); /*0x682fc8*/
     if ( v4 >= 0 ) /*0x682fd0*/
     {
@@ -799,7 +799,7 @@ int PostLoadInitScenario()
     {
       v8 = (int)(((TeamClass *)(v7))->FindOrCreate()); /*0x684d77*/
       if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 6)) /*0x684da9*/
-        || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 7))) || !((unsigned int *)&FootClass_Array)[6])
+        || (((((unsigned int *)((char *)&FootClass_Array + 7))) >> 8) & 0xFF || !((unsigned int *)&FootClass_Array)[6])
         && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
 && (*(uint8_t (**)(int *, int, unsigned int))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 8))( (int *)((unsigned int *)((char *)&FootClass_Array + 4)), *((unsigned int *)((char *)&FootClass_Array + 6)) + *((unsigned int *)((char *)&FootClass_Array + 1)), 0) )
 
@@ -1691,7 +1691,7 @@ void GenerateScenarioUnits(char a1)
             {
               if ( v77 < v22 ) /*0x68899f*/
                 goto LABEL_45; /*0x68899f*/
-              if ( !IDA_BYTE1(v76) && v22 || v78 <= 0 ) /*0x6889b3*/
+              if ( !(((v76) >> 8) & 0xFF) && v22 || v78 <= 0 ) /*0x6889b3*/
                 goto LABEL_47; /*0x6889b3*/
               if ( ((uint8_t (*)(void ***, int, unsigned int))v73[2])(&v73, v78 + v22, 0) ) /*0x6889c2*/
               {
@@ -1878,12 +1878,12 @@ void GenerateScenarioUnits(char a1)
         v63 = 0; /*0x688dcf*/
         v62 = 0; /*0x688dd6*/
         v73 = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x688dda*/
-        if ( v74 && IDA_BYTE1(v76) ) /*0x688dea*/
+        if ( v74 && (((v76) >> 8) & 0xFF) ) /*0x688dea*/
         {
           RA2_OPDEL(v74); /*0x688ded*/
           v74 = (void *)(0); /*0x688df5*/
         }
-        IDA_BYTE1(v76) = 0; /*0x688dfd*/
+        (((v76) >> 8) & 0xFF) = 0; /*0x688dfd*/
         v75 = 0; /*0x688e04*/
         v67 = (void*)&VectorClass_UnitTypeClass___vftable; /*0x688e08*/
         if ( v68 && v70 ) /*0x688e18*/
@@ -2265,7 +2265,7 @@ int COM_Property_ReadScenario(int a1, int a2, unsigned int * a3)
     v6[0] = 1; /*0x6825c9*/
     v6[1] = a2; /*0x6825d1*/
     if ( !a3 ) /*0x6825d5*/
-      WinAPI::Wrapper(-2147467261); /*0x6825dc*/
+      sub_7DC720(-2147467261); /*0x6825dc*/
     v4 = (*(int (**)(unsigned int *, int, unsigned int *, unsigned short *))(*a3 + 12))( (unsigned int *)(a3), 1, (unsigned int *)(v6), (unsigned short *)(v7)); /*0x6825f7*/
     if ( v4 >= 0 ) /*0x6825fb*/
     {
@@ -2311,7 +2311,7 @@ int COM_ReadBuffer(int a1, int a2, unsigned int * a3)
     v7[0] = 1; /*0x682d90*/
     v7[1] = a2; /*0x682d98*/
     if ( !a3 ) /*0x682d9c*/
-      WinAPI::Wrapper(-2147467261); /*0x682da3*/
+      sub_7DC720(-2147467261); /*0x682da3*/
     v4 = (*(int (**)(unsigned int *, int, unsigned int *, unsigned short *))(*a3 + 12))( (unsigned int *)(a3), 1, (unsigned int *)(v7), (unsigned short *)(v8)); /*0x682dbe*/
     if ( v4 >= 0 ) /*0x682dc2*/
     {

@@ -1358,7 +1358,7 @@ int CampaignScore::DialogProc(HWND hWnd, unsigned int a2, UINT_PTR uIDEvent, HWN
                           + 776),
                   (int)&v130);
           IDA_LOWORD(v128) = *(unsigned short *)v86; /*0x46ef96*/
-          IDA_BYTE2(v128) = *(unsigned char *)(v86 + 2); /*0x46ef9e*/
+          (((v128) >> 16) & 0xFF) = *(unsigned char *)(v86 + 2); /*0x46ef9e*/
           v87 = (uint8_t)v128 | (*(uint16_t *)((char *)&v128 + 1) << 8); /*0x46efd4*/
           v88 = (LPARAM)*WindowLongA; /*0x46efd6*/
           v123 = *((unsigned int *)hDlg - 1); /*0x46efd9*/
@@ -1935,7 +1935,7 @@ unsigned int * GadgetClass::QueryInterface(char a2) {
     if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e1a72*/
     {
       v4 = *(unsigned int *)this->Hovered; /*0x4e1a74*/
-      IDA_BYTE1(v4) &= ~1u; /*0x4e1a77*/
+      (((v4) >> 8) & 0xFF) &= ~1u; /*0x4e1a77*/
       *(unsigned int *)this->Hovered = v4; /*0x4e1a7a*/
       v3 = 0; /*0x4e1a7d*/
       dword_8B3E90 = 0; /*0x4e1a7f*/
@@ -3151,7 +3151,7 @@ int * SliderClass::Constructor(int a2, int a3, int a4, int a5, int a6, int a7) {
     v17 = *(unsigned int *)this->__pad_0; /*0x6b1c3f*/
     *((unsigned int *)this + 18) = 1; /*0x6b1c43*/
     (*(void (__thiscall **)(SliderClass *))(v17 + 72))(this); /*0x6b1c46*/
-    v18 = IDA_BYTE2(*(unsigned int *)this->SliderClass_field_0x2C); /*0x6b1c49*/
+    v18 = (((unsigned int *)this->SliderClass_field_0x2C) >> 16) & 0xFF; /*0x6b1c49*/
     if ( v18 ) /*0x6b1c4e*/
       SliderClass_field_0x14 = *(unsigned int *)this->SliderClass_field_0x14; /*0x6b1c50*/
     else
@@ -3219,7 +3219,7 @@ int SliderClass::GetValue(int a2) {
 
     if ( !GaugeClass::SetValue((GaugeClass *)this, a2) ) /*0x6b1d48*/
       return 0; /*0x6b1db0*/
-    if ( IDA_BYTE2(*(unsigned int *)this->SliderClass_field_0x2C) ) /*0x6b1d51*/
+    if ( (((unsigned int *)this->SliderClass_field_0x2C) >> 16) & 0xFF ) /*0x6b1d51*/
       SliderClass_field_0x14 = *(unsigned int *)this->SliderClass_field_0x14; /*0x6b1d5a*/
     else
       SliderClass_field_0x14 = *(unsigned int *)this->SliderClass_field_0x18; /*0x6b1d5f*/

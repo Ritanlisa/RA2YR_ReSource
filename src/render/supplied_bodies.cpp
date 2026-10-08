@@ -231,9 +231,8 @@ extern float flt_B444A0_t[0x200];  // data: 0xB444A0 (ida_globals 裸 float 标�
 #define flt_B444A0 flt_B444A0_t
 extern float flt_8467E4_t[0x40];   // data: 0x8467E4
 #define flt_8467E4 flt_8467E4_t
-// G42.35 波11: WinAPI 站点壳（全树载体 _tree_full_e4.hpp 未纳入本 TU; 同款 static Wrapper）
-struct WinAPI_site { static int Wrapper(int a2); };  // 0x73E7F2 区 (consensus 350+ 1-arg 站点)
-#define WinAPI WinAPI_site  // G42.35: 语料名桥接（2 站点）
+// g57w20m8b: WinAPI 站点壳已废 (无名函数 0x7DC720 统一默认名 sub_7DC720, 见 g57w20m6/m7)
+int sub_7DC720(int a2);  // 0x7DC720 自由声明 (旧壳 WinAPI_site 删除后本 TU 调用点供给; g57w20m9)
 
 // 0x40D250
 namespace gamemd {
@@ -862,7 +861,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
           {
             v72[0] = a3; /*0x488ace*/
             v72[1] = a4; /*0x488ad9*/
-            IDA_BYTE1(v14) |= 0x20u; /*0x488ae0*/
+            (((v14) >> 8) & 0xFF) |= 0x20u; /*0x488ae0*/
             v15 = (int *)(*((unsigned int *)this + 14) + 4 * a2); /*0x488ae3*/
             v63 = *((unsigned int *)this + 12); /*0x488ae9*/
             v56 = v14; /*0x488af2*/
@@ -945,7 +944,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
             v33 = *((unsigned int *)this + 11); /*0x488d01*/
             v34 = *((unsigned int *)this + 14); /*0x488d0b*/
             v35 = *((unsigned int *)this + 94); /*0x488d0f*/
-            IDA_BYTE1(v33) |= 0x20u; /*0x488d15*/
+            (((v33) >> 8) & 0xFF) |= 0x20u; /*0x488d15*/
             v69 = a3; /*0x488d18*/
             v70[0] = a4; /*0x488d1c*/
             v59 = v33; /*0x488d25*/
@@ -2828,10 +2827,10 @@ int VoxelTypeClass::ReadINI(double a2)
             }
             *(unsigned int *)v66.__pad_0 = v17; /*0x73e7e3*/
             if ( v16 < 0 && v16 != -2147467262 ) /*0x73e7ef*/
-              WinAPI::Wrapper(v16); /*0x73e7f2*/
+              sub_7DC720(v16); /*0x73e7f2*/
             if ( !v17 ) /*0x73e7fd*/
   LABEL_31:
-              WinAPI::Wrapper(-2147467261); /*0x73e804*/
+              sub_7DC720(-2147467261); /*0x73e804*/
             (*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v17 + 12))(v17, v73); /*0x73e815*/
             if ( !memcmp(v73, &g_CLSID_HoverLocomotion, 0x10u) && *((unsigned int *)this + 361) ) /*0x73e82c*/
               (*(void (__thiscall **)(Class_7F5C70 *, unsigned int, int))(*(unsigned int *)this + 1152))((gamemd::Class_7F5C70 *)(this), 0, 1); /*0x73e83e*/
@@ -4166,7 +4165,7 @@ void XSurface_DrawLineEx_raw(int a2, unsigned int *a3, unsigned int *a4, int16_t
       {
         IDA_HIWORD(v14) = IDA_HIWORD(v35); /*0x7ba6f7*/
         IDA_LOBYTE(v14) = a5; /*0x7ba701*/
-        IDA_BYTE1(v14) = a5; /*0x7ba704*/
+        (((v14) >> 8) & 0xFF) = a5; /*0x7ba704*/
         v15 = v37 - v35 + 1; /*0x7ba706*/
         v16 = v14 << 16; /*0x7ba70a*/
         IDA_LOWORD(v16) = v14; /*0x7ba70d*/

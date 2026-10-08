@@ -879,7 +879,7 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.ComPtr
 
           v36 = v35[1]; /*0x73a3d3*/
           v37 = ((__int16)(*v35 / 256) << 8) + 128; /*0x73a3e6*/
-          v11 = (IDA_BYTE4(v37) + (int)v37) >> 8; /*0x73a41f*/
+          v11 = ((((v37) >> 32) & 0xFF) + (int)v37) >> 8; /*0x73a41f*/
           if ( (unsigned __int16)(v33 / 256) == (unsigned short)v11 /*0x73a437*/
             && (unsigned __int16)(v34 / 256) == (unsigned __int16)((((__int16)(v36 / 256) << 8) + 128) / 256) )
           {
@@ -901,10 +901,10 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.ComPtr
             }
             *(unsigned int *)v110.__pad_0 = v40; /*0x73a482*/
             if ( v39 < 0 && v39 != -2147467262 ) /*0x73a48e*/
-              WinAPI::Wrapper(v39); /*0x73a491*/
+              sub_7DC720(v39); /*0x73a491*/
             if ( !v40 ) /*0x73a49c*/
   LABEL_61:
-              WinAPI::Wrapper(-2147467261); /*0x73a4a3*/
+              sub_7DC720(-2147467261); /*0x73a4a3*/
             (*(void (__stdcall **)(int, int *))(*(unsigned int *)v40 + 12))(v40, &v110.ComPtr_field_0x20); /*0x73a4b4*/
             v42 = 4; /*0x73a4b7*/
             v43 = &stru_7E9A40; /*0x73a4bc*/
@@ -927,7 +927,7 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.ComPtr
               FootClass::UpdateAI((FootClass *)2, _EBP, (int)v43, a3, (int)v107); /*0x73a4fb*/
               (*(void (**)(int, int))(*(unsigned int *)_EBP + 628))(_EBP, 21); /*0x73a507*/
               if ( !*(unsigned int *)(_EBP + 1652) ) /*0x73a50d*/
-                WinAPI::Wrapper(-2147467261); /*0x73a51c*/
+                sub_7DC720(-2147467261); /*0x73a51c*/
               (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(_EBP + 1652) + 92))(*(unsigned int *)(_EBP + 1652)); /*0x73a52b*/
               IDA_LOBYTE(v8) = v110.__pad_0[0]; /*0x73a52e*/
               if ( *(unsigned int *)v110.__pad_0 ) /*0x73a534*/
@@ -1207,7 +1207,7 @@ v35 = (unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v110.ComPtr
       v87 = (CellClass *)Coord::To_Cell( (Coord *)&stru_87F5F0.__pad_58[416], (void *)(&v110.ComPtr_field_0x14)); /*0x73ae40*/
       landType = v87->landType; /*0x73ae4a*/
       if ( !*(unsigned int *)(_EBP + 1652) ) /*0x73ae42*/
-        WinAPI::Wrapper(-2147467261); /*0x73ae57*/
+        sub_7DC720(-2147467261); /*0x73ae57*/
       if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(_EBP + 1652) + 16))(*(unsigned int *)(_EBP + 1652)) /*0x73aea6*/
 && (*(int (**)(int, CellClass *, int, int, unsigned int, int))(*(unsigned int *)_EBP + 428))( _EBP, (CellClass *)(v87), -1, -1, 0, 1) == 7
 

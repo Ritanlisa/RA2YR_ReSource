@@ -1154,7 +1154,7 @@ LABEL_59:
                   *(unsigned int *)&aP3[156] = v17;
                   *(unsigned int *)&aP3[160] = 60;
                   *(unsigned int *)&aP3[164] = 48;
-                  IDA_BYTE2(v82) = (&stru_B05488)[42390];
+                  (((v82) >> 16) & 0xFF) = (&stru_B05488)[42390];
                   int v33 = **(unsigned int **)&(&stru_87C374)[44940];
                   IDA_LOWORD(v82) = *(unsigned short *)&(&stru_B05488)[42388];
 (*(void (**)(unsigned int, char *, char *, int))(v33 + 84))( *(unsigned int *)&(&stru_87C374)[44940], (char *)(&aP3[88]), (char *)(&aP3[152]), ((uint8_t)(&stru_B05488)[42388] >> (&stru_89E138)[11420] << (&stru_89E138)[11416]) | ((uint8_t)(&stru_B05488)[42389] >> (&stru_89E138)[11436] << (&stru_89E138)[11432]) | ((uint8_t)(&stru_B05488)[42390] >> (&stru_89E138)[11428] << (&stru_89E138)[11424]));

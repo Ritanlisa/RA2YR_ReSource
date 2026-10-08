@@ -77,15 +77,15 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   ((GameOptions*)(int)v15)->SaveLoad((int *)ppstgOpen); /*0x67d055*/
   v10 = 0; /*0x67d05a*/
   if ( !ppstgOpen ) /*0x67d064*/
-    WinAPI::Wrapper(-2147467261); /*0x67d06b*/
-  if ( ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&off_83D5A8, 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
+    sub_7DC720(-2147467261); /*0x67d06b*/
+  if ( ((IStorage *)ppstgOpen)->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&off_83D5A8, 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
   {
     if ( v10 ) /*0x67d095*/
       (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d09a*/
     if ( ppstgOpen ) /*0x67d0a3*/
     {
   LABEL_9:
-      ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d0a9*/
+      ((IStorage *)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d0a9*/
       return 0; /*0x67d0bb*/
     }
     return 0; /*0x67d0a3*/
@@ -99,7 +99,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv))))); /*0x67d110*/
   }
   if ( !v9 ) /*0x67d119*/
-    WinAPI::Wrapper(-2147467261); /*0x67d120*/
+    sub_7DC720(-2147467261); /*0x67d120*/
   if ( (*(int (**)(int, int))(*(unsigned int *)v9 + 12))(v9, v10) < 0 ) /*0x67d136*/
   {
         ((Debug *)this)->Log("\t***** FAILED!\n"); /*0x67d136 G57w12: IDA push seq @ 0x67d136*/
@@ -108,7 +108,7 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( v10 ) /*0x67d159*/
       (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d15e*/
     if ( ppstgOpen ) /*0x67d167*/
-      ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d16c*/
+      ((IStorage *)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d16c*/
     return 0; /*0x67d17b*/
   }
   pStm = 0; /*0x67d182*/
@@ -116,15 +116,15 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   {
     v6 = ((Game *)(&pStm))->validateScenario((unsigned int *)(&v9)); /*0x67d193*/
     if ( v6 < 0 && v6 != -2147467262 ) /*0x67d1a1*/
-      WinAPI::Wrapper(v6); /*0x67d1a4*/
+      sub_7DC720(v6); /*0x67d1a4*/
   }
   v7 = ((SaveGame *)(pStm))->Start(); /*0x67d1b4*/
   if ( !v9 ) /*0x67d1bc*/
-    WinAPI::Wrapper(-2147467261); /*0x67d1c3*/
+    sub_7DC720(-2147467261); /*0x67d1c3*/
   if ( (*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 16))(v9, 0) < 0 ) /*0x67d1d5*/
   {
     if ( pStm ) /*0x67d1dd*/
-      ((gamemd::WinAPI*)pStm)->lpVtbl->Release(pStm); /*0x67d1e2*/
+      ((IStream *)pStm)->lpVtbl->Release(pStm); /*0x67d1e2*/
     if ( v9 ) /*0x67d1eb*/
       (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d1f0*/
     if ( v10 ) /*0x67d1f9*/
@@ -134,32 +134,32 @@ char SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     return 0; /*0x67d207*/
   }
   if ( !v10 ) /*0x67d228*/
-    WinAPI::Wrapper(-2147467261); /*0x67d22f*/
+    sub_7DC720(-2147467261); /*0x67d22f*/
   (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d23b*/
   v10 = 0; /*0x67d23e*/
   if ( !ppstgOpen ) /*0x67d248*/
-    WinAPI::Wrapper(-2147467261); /*0x67d24f*/
-  if ( ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Commit(ppstgOpen, 0) < 0 ) /*0x67d261*/
+    sub_7DC720(-2147467261); /*0x67d24f*/
+  if ( ((IStorage *)ppstgOpen)->lpVtbl->Commit(ppstgOpen, 0) < 0 ) /*0x67d261*/
   {
     if ( pStm ) /*0x67d269*/
-      ((gamemd::WinAPI*)pStm)->lpVtbl->Release(pStm); /*0x67d26e*/
+      ((IStream *)pStm)->lpVtbl->Release(pStm); /*0x67d26e*/
     if ( v9 ) /*0x67d277*/
       (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d27c*/
     if ( v10 ) /*0x67d285*/
       (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d28a*/
     if ( ppstgOpen ) /*0x67d293*/
-      ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d298*/
+      ((IStorage *)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d298*/
     return 0; /*0x67d2a7*/
   }
     ((Debug *)this)->Log("SAVING GAME [%s] - Complete\n\n"); /*0x67d2a7 G57w12: IDA push seq @ 0x67d2a7 +2 reg-vararg omitted*/
   if ( pStm ) /*0x67d2bf*/
-    ((gamemd::WinAPI*)pStm)->lpVtbl->Release(pStm); /*0x67d2c4*/
+    ((IStream *)pStm)->lpVtbl->Release(pStm); /*0x67d2c4*/
   if ( v9 ) /*0x67d2cd*/
     (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d2d2*/
   if ( v10 ) /*0x67d2db*/
     (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d2e0*/
   if ( ppstgOpen ) /*0x67d2e9*/
-    ((gamemd::WinAPI*)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d2ee*/
+    ((IStorage *)ppstgOpen)->lpVtbl->Release(ppstgOpen); /*0x67d2ee*/
   return v7; /*0x67cf57*/
 }
 }

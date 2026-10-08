@@ -71,7 +71,7 @@ int LayerClass_IsWithinUsableArea(...);  // g57c5 W5 vocab
 int Random_Range(...);  // g57c5 W5 vocab
 int StartAudioControllerAt(...);  // g57c5 W5 vocab
 int WTFMode_ResetUnitFlags(...);  // g57c5 W5 vocab
-int WinAPI_Wrapper(...);  // g57c5 W5 vocab
+int sub_7DC720(...);  // g57c5 W5 vocab
 int nullsub_84(...);  // g57c5 W5 vocab
 } }
 // ---- g57c5 W5 end ----
@@ -103,7 +103,7 @@ int FootClass_MovementAI(...);   // g57b5 W5: raw 自由函数词表 (纯变参�
 int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int LayerClass_IsWithinUsableArea(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int WTFMode_ResetUnitFlags(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
-int WinAPI_Wrapper(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
+int sub_7DC720(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int nullsub_84(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int AbstractClass_Constructor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int AnimTypeClass_FindIndex(...);   // g57b5 W5: raw 词表 (纯变参兜底)
@@ -116,7 +116,7 @@ int LayerClass_CoordinatesLegal(...);   // g57b5 W5: raw 词表 (纯变参兜底
 int LayerClass_IsWithinUsableArea(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int ObjectClass_ctor(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int WTFMode_ResetUnitFlags(...);   // g57b5 W5: raw 词表 (纯变参兜底)
-int WinAPI_Wrapper(...);   // g57b5 W5: raw 词表 (纯变参兜底)
+int sub_7DC720(...);   // g57b5 W5: raw 词表 (纯变参兜底)
 int CCINIClass_GetDB(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int FindIndex(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
 int GetHealthRatio(...);   // g57b5 W5: raw 自由函数词表 (纯变参兜底)
@@ -314,7 +314,7 @@ int TechnoClass::SmokeUpdate(double a2) {  // g57b5 W4: raw 真值补参 (a2)
       goto LABEL_70; /*0x414c94*/
     }
     if ( !v3[413] ) /*0x414c9e*/
-      WinAPI_Wrapper(-2147467261); /*0x414cad*/
+      sub_7DC720(-2147467261); /*0x414cad*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v3[413] + 64))(v3[413]); /*0x414cbb*/
     IDA_LOBYTE(v6) = *((unsigned char *)v3 + 144); /*0x414cbe*/
     if ( (unsigned char)v6 )
@@ -940,7 +940,7 @@ int AbstractClass::Construct(_DWORD *a2) {
           v7->vtable2 = &vt_NeuronClass; /*0x43a866*/
           v7->vtable3 = &vt_NeuronClass; /*0x43a86d*/
           if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[1] < *(unsigned int *)&g_BuildingLoadQueue_Array /*0x43a8a5*/
-            || (IDA_BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[0]) || !((char *)&g_BuildingLoadQueue_Array))
+            || (((((unsigned int *)&g_BuildingLoadQueue_Array)[0]) >> 8) & 0xFF || !((char *)&g_BuildingLoadQueue_Array))
             && ((unsigned int *)&g_BuildingLoadQueue_Array)[2] > 0
             && (*(unsigned __int8 (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 8))(
                  &((unsigned int *)&g_BuildingLoadQueue_Array)[2],
@@ -2759,7 +2759,7 @@ void* FootClass::Construct(int a1) {
     }
     IDA_LOBYTE(((unsigned int *)this)[0]) |= 4u; /*0x4d34e0*/
     if ( ((unsigned int *)&g_BuildingLoadQueue_Array)[1] < ((char *)&g_BuildingLoadQueue_Array) /*0x4d3515*/
-      || (IDA_BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[0]) || !((char *)&g_BuildingLoadQueue_Array))
+      || (((((unsigned int *)&g_BuildingLoadQueue_Array)[0]) >> 8) & 0xFF || !((char *)&g_BuildingLoadQueue_Array))
       && ((unsigned int *)&g_BuildingLoadQueue_Array)[2] > 0
       && (*(unsigned __int8 (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&((unsigned int *)&g_BuildingLoadQueue_Array)[2] + 8))(
            &((unsigned int *)&g_BuildingLoadQueue_Array)[2],
@@ -9000,7 +9000,7 @@ void* AbstractClass::fireWeapon(int a2) {
           v9[0] = (*(int *)&this->__pad_0[20] >> 1) + *(unsigned int *)&this->__pad_0[12] - 1; /*0x7201a9*/
           v9[1] = *(unsigned int *)&this->__pad_0[16] + 1; /*0x7201b1*/
           v5 = v4 | *((unsigned int *)this + 15); /*0x7201b8*/
-          IDA_BYTE1(v5) |= 1u; /*0x7201be*/
+          (((v5) >> 8) & 0xFF) |= 1u; /*0x7201be*/
           v8 = v5; /*0x7201c1*/
           v7 = result; /*0x7201ca*/
           v6 = (unsigned int *)(*(int (__thiscall **)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x7201d3*/
@@ -9125,7 +9125,7 @@ int ObjectClass::DrawTypewriterText(int a1) {
     }
     v10 = Color::ConvertToRGB(v4 + 194, (int)&a2); /*0x72a56b*/
     IDA_LOWORD(v20) = *(unsigned short *)v10; /*0x72a573*/
-    IDA_BYTE2(v20) = *(unsigned char *)(v10 + 2); /*0x72a57b*/
+    (((v20) >> 16) & 0xFF) = *(unsigned char *)(v10 + 2); /*0x72a57b*/
     v11 = (unsigned __int8)*(unsigned short *)v10 | (*(unsigned __int16 *)((char *)&v20 + 1) << 8); /*0x72a5a8*/
     v12 = wcslen(*(const wchar_t **)&this->__pad_2C[4]); /*0x72a5af*/
     if ( this->__pad_40[1] ) /*0x72a5b1*/
@@ -9355,7 +9355,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
     if ( !*(unsigned char *)(v19 + 3598) || !IDA_BYTE2(v5[1].airstrikeTimer[1]) ) /*0x73d0e9*/
       goto LABEL_39; /*0x73d0e9*/
     if ( !v5[1].alignmentPadding154[0] ) /*0x73d0f7*/
-      WinAPI_Wrapper(-2147467261); /*0x73d106*/
+      sub_7DC720(-2147467261); /*0x73d106*/
     if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)v5[1].alignmentPadding154[0] + 128))(v5[1].alignmentPadding154[0]) ) /*0x73d114*/
     {
       v20 = (unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v5->primaryFacing, &v39) >> 12) + 1) >> 1 << 13; /*0x73d145*/

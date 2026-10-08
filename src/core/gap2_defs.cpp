@@ -142,7 +142,7 @@ void* WTFMode::FindObjectByType(int a1) {
 namespace gamemd { 
 int CStreamClass::IsEmpty(int a2) {
   if ( a2 ) /*0x4a31f9*/
-    WinAPI::Wrapper(-2147467261); /*0x4a3200*/
+    sub_7DC720(-2147467261); /*0x4a3200*/
   return *(unsigned int *)this->__pad_0 == 0; /*0x4a320e*/
 }
 }
@@ -153,12 +153,12 @@ void CStreamClass::ClearBuffer() {
 
   v2 = *(void **)&this->m_1[3]; /*0x4a4ad6*/
   *(unsigned int *)&this->CStreamClass_field_0x10 = 0; /*0x4a4ad9*/
-  if ( v2 && IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4ae0*/
+  if ( v2 && (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF ) /*0x4a4ae0*/
   {
     RA2_OPDEL(v2); /*0x4a4ae6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4aee*/
   }
-  IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) = 0; /*0x4a4af1*/
+  (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF = 0; /*0x4a4af1*/
   *(unsigned int *)&this->CStreamClass_field_0x08 = 0; /*0x4a4af4*/
 }
 }
@@ -196,7 +196,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
         m_8 = a1; /*0x4a4cf6*/
       for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a4cfc*/
         ++i; /*0x4a4d01*/
-      if ( IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4d0e*/
+      if ( (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF ) /*0x4a4d0e*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a4d19*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x4a4d21*/
@@ -204,7 +204,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
     }
     *(unsigned int *)&this->m_1[3] =(unsigned int)v4; /*0x4a4d2a*/
     *(unsigned int *)&this->CStreamClass_field_0x08 = a1; /*0x4a4d32*/
-    IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) = a2 == 0; /*0x4a4d35*/
+    (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF = a2 == 0; /*0x4a4d35*/
   }
   else
   {
@@ -241,7 +241,7 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
 
   v3 = *(void **)&this->m_1[3]; /*0x4a4de3*/
   *(unsigned int *)this->__pad_0 =(unsigned int)(void *)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
-  if ( v3 && IDA_BYTE1(*(unsigned int *)&this->CStreamClass_field_0x0C) ) /*0x4a4df0*/
+  if ( v3 && (((unsigned int *)&this->CStreamClass_field_0x0C) >> 8) & 0xFF ) /*0x4a4df0*/
   {
     RA2_OPDEL(v3); /*0x4a4df8*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x4a4e00*/

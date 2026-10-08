@@ -1226,7 +1226,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
       v5 = (unsigned short *)((char *)v5 + 1); /*0x7c7f6d*/
       v9 = 4 * v8; /*0x7c7f6e*/
       IDA_LOBYTE(v9) = (uint8_t)v9 >> 2; /*0x7c7f71*/
-      if ( IDA_BYTE1(v9) == 2 ) /*0x7c7f77*/
+      if ( (((v9) >> 8) & 0xFF) == 2 ) /*0x7c7f77*/
       {
         if ( (v9 & 0x20) != 0 ) /*0x7c7f7b*/
         {
@@ -1257,7 +1257,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
       else
       {
         IDA_LOBYTE(v9) = v9 + 1; /*0x7c7fa9*/
-        if ( IDA_BYTE1(v9) == 1 ) /*0x7c7fae*/
+        if ( (((v9) >> 8) & 0xFF) == 1 ) /*0x7c7fae*/
         {
           do /*0x7c8007*/
           {
@@ -1281,29 +1281,29 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
                 IDA_LOBYTE(a1) = -1; /*0x7c7fce*/
             }
             IDA_LOBYTE(v16) = v14 >> 4; /*0x7c7fdb*/
-            IDA_BYTE1(a1) = (unsigned char)((&byte_7C80F6)[v16] + a1); /*0x7c7fde*/
+            (((a1) >> 8) & 0xFF) = (unsigned char)((&byte_7C80F6)[v16] + a1); /*0x7c7fde*/
             v19 = __readeflags(); /*0x7c7fe4*/
             if ( (&byte_7C80F6)[v16] < 0 ) /*0x7c7fec*/
             {
               __writeeflags(v19); /*0x7c7ff5*/
               if ( !v18 ) /*0x7c7ff6*/
-                IDA_BYTE1(a1) = 0; /*0x7c7ff8*/
+                (((a1) >> 8) & 0xFF) = 0; /*0x7c7ff8*/
             }
             else
             {
               __writeeflags(v19); /*0x7c7fee*/
               if ( v18 ) /*0x7c7fef*/
-                IDA_BYTE1(a1) = -1; /*0x7c7ff1*/
+                (((a1) >> 8) & 0xFF) = -1; /*0x7c7ff1*/
             }
             *(unsigned short *)v6 = (unsigned int)a1; /*0x7c7ffa*/
             v7 -= 2; /*0x7c7ffd*/
             v6 += 2; /*0x7c8000*/
-            IDA_LOBYTE(a1) = IDA_BYTE1(a1); /*0x7c8003*/
+            IDA_LOBYTE(a1) = (((a1) >> 8) & 0xFF); /*0x7c8003*/
             IDA_LOBYTE(v9) = v9 - 1; /*0x7c8005*/
           }
           while ( (unsigned char)v9 ); /*0x7c8007*/
         }
-        else if ( IDA_BYTE1(v9) ) /*0x7c8011*/
+        else if ( (((v9) >> 8) & 0xFF) ) /*0x7c8011*/
         {
           memset( (void *)(v6), (int)(a1), (uint8_t)v9); /*0x7c80de*/
           v6 += (uint8_t)v9; /*0x7c80de*/
@@ -1331,7 +1331,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
               if ( v18 ) /*0x7c8033*/
                 IDA_LOBYTE(a1) = -1; /*0x7c8035*/
             }
-            IDA_BYTE1(a1) = (unsigned char)(a1); /*0x7c803e*/
+            (((a1) >> 8) & 0xFF) = (unsigned char)(a1); /*0x7c803e*/
             v24 = __ROR4__( (unsigned int)(a1), 8 ); /*0x7c8040*/
             IDA_LOBYTE(v21) = v20; /*0x7c8043*/
             v23 = v21 >> 2; /*0x7c8045*/
@@ -1350,7 +1350,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
               if ( v18 ) /*0x7c805c*/
                 IDA_LOBYTE(v24) = -1; /*0x7c805e*/
             }
-            IDA_BYTE1(v24) = v24; /*0x7c8067*/
+            (((v24) >> 8) & 0xFF) = v24; /*0x7c8067*/
             v27 = __ROR4__(v24, 8); /*0x7c8069*/
             IDA_LOBYTE(v23) = v20; /*0x7c806c*/
             v26 = v23 >> 4; /*0x7c806e*/
@@ -1369,7 +1369,7 @@ int Audio_Helper_7C7F20(void * a1, void * a2, void * a3, void * a4)
               if ( v18 ) /*0x7c8085*/
                 IDA_LOBYTE(v27) = -1; /*0x7c8087*/
             }
-            IDA_BYTE1(v27) = v27; /*0x7c8090*/
+            (((v27) >> 8) & 0xFF) = v27; /*0x7c8090*/
             v30 = __ROR4__(v27, 8); /*0x7c8092*/
             IDA_LOBYTE(v26) = v20; /*0x7c8095*/
             v29 = v26 >> 6; /*0x7c8097*/
@@ -1552,7 +1552,7 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
     if ( result <= v7 ) /*0x7beefc*/
     {
       v16 = *(unsigned int *)(a1 + 336); /*0x7bef3e*/
-      IDA_BYTE1(v16) &= ~8u; /*0x7bef44*/
+      (((v16) >> 8) & 0xFF) &= ~8u; /*0x7bef44*/
       *(unsigned int *)(a1 + 336) = v16; /*0x7bef47*/
     }
     else
@@ -1561,7 +1561,7 @@ signed int sub_7BEE20(int a1, int a2, int a3, int a4, int a5)
         Audio_Process_7C3950(a1, 60 * (v7 - result) / v5); /*0x7bef22*/
       v15 = *(unsigned int *)(a1 + 336); /*0x7bef27*/
       v14 = a2; /*0x7bef2d*/
-      IDA_BYTE1(v15) |= 8u; /*0x7bef31*/
+      (((v15) >> 8) & 0xFF) |= 8u; /*0x7bef31*/
       result = v7; /*0x7bef34*/
       *(unsigned int *)(a1 + 336) = v15; /*0x7bef36*/
     }
@@ -1950,7 +1950,7 @@ int sub_7DF7C0(int * a1)
   while ( v3 ); /*0x7df7fb*/
   v8 = &savedregs; /*0x7df7fd*/
   v23 = a1[6]; /*0x7df806*/
-  IDA_BYTE1(v3) = *((unsigned char *)a1 + 49); /*0x7df809*/
+  (((v3) >> 8) & 0xFF) = *((unsigned char *)a1 + 49); /*0x7df809*/
   do /*0x7df851*/
   {
     *(v8 - 1) = a1[3]; /*0x7df80f*/
@@ -1980,16 +1980,16 @@ int sub_7DF7C0(int * a1)
           v17 = v12 + 1; /*0x7df882*/
           IDA_LOBYTE(v13) = v13 - v16; /*0x7df883*/
           v15 += (&g_VoxelOffsetTable)[v16]; /*0x7df885*/
-          IDA_BYTE1(v13) = *v17; /*0x7df88c*/
-          for ( i = v17 + 1; IDA_BYTE1(v13); (&g_VoxelRenderBuffer)[v19] = v20 ) /*0x7df891*/
+          (((v13) >> 8) & 0xFF) = *v17; /*0x7df88c*/
+          for ( i = v17 + 1; (((v13) >> 8) & 0xFF); (&g_VoxelRenderBuffer)[v19] = v20 ) /*0x7df891*/
           {
             IDA_LOBYTE(v13) = v13 - 1; /*0x7df895*/
             v19 = IDA_HIWORD(v15); /*0x7df897*/
             v20 = *i; /*0x7df89a*/
-            IDA_LOBYTE(v19) = IDA_BYTE1(v15); /*0x7df89c*/
+            IDA_LOBYTE(v19) = (((v15) >> 8) & 0xFF); /*0x7df89c*/
             i += 2; /*0x7df89e*/
             v15 += v14; /*0x7df8a1*/
-            --IDA_BYTE1(v13); /*0x7df8a3*/
+            --(((v13) >> 8) & 0xFF); /*0x7df8a3*/
           }
           v12 = (unsigned char *)(i + 1); /*0x7df8ad*/
         }
@@ -2004,9 +2004,9 @@ int sub_7DF7C0(int * a1)
     *(v8 - 3) = a1[9] + *(v8 - 2); /*0x7df843*/
     result = a1[5] + *(v8 - 1); /*0x7df849*/
     a1[3] = result; /*0x7df84c*/
-    --IDA_BYTE1(v3); /*0x7df84f*/
+    --(((v3) >> 8) & 0xFF); /*0x7df84f*/
   }
-  while ( IDA_BYTE1(v3) ); /*0x7df851*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7df851*/
   return result; /*0x7df855*/
 }
 }
@@ -2059,7 +2059,7 @@ int sub_7DF8C0(int a1)
   while ( v3 ); /*0x7df8fb*/
   v8 = &savedregs; /*0x7df8fd*/
   v24 = *(unsigned int *)(a1 + 24); /*0x7df906*/
-  IDA_BYTE1(v3) = *(unsigned char *)(a1 + 49); /*0x7df909*/
+  (((v3) >> 8) & 0xFF) = *(unsigned char *)(a1 + 49); /*0x7df909*/
   do /*0x7df952*/
   {
     *(v8 - 1) = *(unsigned int *)(a1 + 12); /*0x7df90f*/
@@ -2082,17 +2082,17 @@ int sub_7DF8C0(int a1)
         IDA_LOWORD(v15) = *(unsigned short *)(a1 + 24); /*0x7df975*/
         while ( v13 ) /*0x7df97c*/
         {
-          IDA_BYTE1(v13) = *v12; /*0x7df97e*/
-          for ( i = v12 - 1; IDA_BYTE1(v13); (&g_VoxelRenderBuffer)[v18] = v19 ) /*0x7df983*/
+          (((v13) >> 8) & 0xFF) = *v12; /*0x7df97e*/
+          for ( i = v12 - 1; (((v13) >> 8) & 0xFF); (&g_VoxelRenderBuffer)[v18] = v19 ) /*0x7df983*/
           {
             IDA_LOBYTE(v13) = v13 - 1; /*0x7df987*/
             v17 = (char *)(i - 1); /*0x7df989*/
             v18 = IDA_HIWORD(v15); /*0x7df98a*/
             v19 = *v17; /*0x7df98d*/
-            IDA_LOBYTE(v18) = IDA_BYTE1(v15); /*0x7df98f*/
+            IDA_LOBYTE(v18) = (((v15) >> 8) & 0xFF); /*0x7df98f*/
             i = (uint8_t *)(v17 - 1); /*0x7df991*/
             v15 += v14; /*0x7df992*/
-            --IDA_BYTE1(v13); /*0x7df994*/
+            --(((v13) >> 8) & 0xFF); /*0x7df994*/
           }
           v20 = i - 1; /*0x7df99e*/
           v21 = *v20; /*0x7df9a1*/
@@ -2111,9 +2111,9 @@ int sub_7DF8C0(int a1)
     *(v8 - 3) = *(unsigned int *)(a1 + 36) + *(v8 - 2); /*0x7df944*/
     result = *(unsigned int *)(a1 + 20) + *(v8 - 1); /*0x7df94a*/
     *(unsigned int *)(a1 + 12) = result; /*0x7df94d*/
-    --IDA_BYTE1(v3); /*0x7df950*/
+    --(((v3) >> 8) & 0xFF); /*0x7df950*/
   }
-  while ( IDA_BYTE1(v3) ); /*0x7df952*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7df952*/
   return result; /*0x7df956*/
 }
 }
@@ -2166,7 +2166,7 @@ int sub_7DFD00(int a1)
   while ( v3 ); /*0x7dfd3e*/
   v8 = &savedregs; /*0x7dfd40*/
   v23 = *(unsigned int *)(a1 + 24); /*0x7dfd49*/
-  IDA_BYTE1(v3) = *(unsigned char *)(a1 + 49); /*0x7dfd4c*/
+  (((v3) >> 8) & 0xFF) = *(unsigned char *)(a1 + 49); /*0x7dfd4c*/
   do /*0x7dfd95*/
   {
     *(v8 - 1) = *(unsigned int *)(a1 + 12); /*0x7dfd52*/
@@ -2189,16 +2189,16 @@ int sub_7DFD00(int a1)
         IDA_LOWORD(v15) = *(unsigned short *)(a1 + 24); /*0x7dfdb5*/
         while ( v13 ) /*0x7dfdbc*/
         {
-          IDA_BYTE1(v13) = *v12; /*0x7dfdbe*/
-          for ( i = (char *)(v12 - 1); IDA_BYTE1(v13); (&g_VoxelRenderBuffer)[v17] = v18 ) /*0x7dfdc3*/
+          (((v13) >> 8) & 0xFF) = *v12; /*0x7dfdbe*/
+          for ( i = (char *)(v12 - 1); (((v13) >> 8) & 0xFF); (&g_VoxelRenderBuffer)[v17] = v18 ) /*0x7dfdc3*/
           {
             IDA_LOBYTE(v13) = v13 - 1; /*0x7dfdc7*/
             v17 = IDA_HIWORD(v15); /*0x7dfdc9*/
             v18 = *i; /*0x7dfdcc*/
-            IDA_LOBYTE(v17) = IDA_BYTE1(v15); /*0x7dfdce*/
+            IDA_LOBYTE(v17) = (((v15) >> 8) & 0xFF); /*0x7dfdce*/
             --i; /*0x7dfdd0*/
             v15 += v14; /*0x7dfdd1*/
-            --IDA_BYTE1(v13); /*0x7dfdd3*/
+            --(((v13) >> 8) & 0xFF); /*0x7dfdd3*/
           }
           v19 = i - 1; /*0x7dfddd*/
           v20 = (uint8_t)*v19; /*0x7dfde0*/
@@ -2217,9 +2217,9 @@ int sub_7DFD00(int a1)
     *(v8 - 3) = *(unsigned int *)(a1 + 36) + *(v8 - 2); /*0x7dfd87*/
     result = *(unsigned int *)(a1 + 20) + *(v8 - 1); /*0x7dfd8d*/
     *(unsigned int *)(a1 + 12) = result; /*0x7dfd90*/
-    --IDA_BYTE1(v3); /*0x7dfd93*/
+    --(((v3) >> 8) & 0xFF); /*0x7dfd93*/
   }
-  while ( IDA_BYTE1(v3) ); /*0x7dfd95*/
+  while ( (((v3) >> 8) & 0xFF) ); /*0x7dfd95*/
   return result; /*0x7dfd99*/
 }
 }

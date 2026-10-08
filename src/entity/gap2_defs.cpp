@@ -114,7 +114,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         if ( !*(unsigned int *)(*(unsigned int *)(v7 + 172) + 732) ) /*0x415f2b*/
         {
           if ( !*((unsigned int *)this + 413) ) /*0x415f39*/
-            WinAPI::Wrapper(-2147467261); /*0x415f48*/
+            sub_7DC720(-2147467261); /*0x415f48*/
           v66 = (*(int (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 132))(*((unsigned int *)this + 413)); /*0x415f5c*/
           _ESI = (double *)(v8 + 232); /*0x415f60*/
           __asm { fild [esp+78h+var_64] } /*0x415f66*/
@@ -1668,7 +1668,7 @@ int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
       }
       if ( a2[85] /*0x46af17*/
         && (((unsigned int *)&g_BuildingLoadQueue_Array)[1] < ((char *)&g_BuildingLoadQueue_Array)
-         || (IDA_BYTE1(((unsigned int *)&g_BuildingLoadQueue_Array)[0]) || !((char *)&g_BuildingLoadQueue_Array))
+         || (((((unsigned int *)&g_BuildingLoadQueue_Array)[0]) >> 8) & 0xFF || !((char *)&g_BuildingLoadQueue_Array))
          && ((unsigned int *)&g_BuildingLoadQueue_Array)[2] > 0
          && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(((unsigned int *)&g_BuildingLoadQueue_Array)[0] + 8))(
               ((char *)&g_BuildingLoadQueue_Array),
@@ -4412,7 +4412,7 @@ int TerrainClass::InitTheatre() {
             v40 = (double)IDA_SLODWORD(v40) * 0.08333333333333333; /*0x549fbd*/
             v23 = v40; /*0x549fc1*/
             v24 = Color::Lerp2(&v35, (int)v38, (int)&v43, v40); /*0x549fcc*/
-            IDA_BYTE1(v25) = 0; /*0x549fd4*/
+            (((v25) >> 8) & 0xFF) = 0; /*0x549fd4*/
             v37 = *(unsigned short *)v24; /*0x549fd7*/
             IDA_LOBYTE(v25) = v24[2] >> g_BitMask_Red; /*0x549fee*/
             IDA_LOWORD(v24) = (unsigned __int8)(IDA_HIBYTE(v37) >> g_BitMask_Blue); /*0x54a004*/
@@ -7155,9 +7155,9 @@ int ParticleSystemClass::SpawnParticle() {
           IDA_BYTE2(v66[0]) = 0; /*0x62f8d1*/
           IDA_HIBYTE(v64) = v58; /*0x62f8db*/
           IDA_LOWORD(v65) = 0; /*0x62f8dc*/
-          IDA_BYTE2(v65) = 0; /*0x62f8e5*/
+          (((v65) >> 16) & 0xFF) = 0; /*0x62f8e5*/
           IDA_LOWORD(v64) = this->Type->ParticleSystemTypeClass_field_0x308; /*0x62f8fa*/
-          IDA_BYTE2(v64) = IDA_BYTE2(this->Type->ParticleSystemTypeClass_field_0x308); /*0x62f900*/
+          (((v64) >> 16) & 0xFF) = IDA_BYTE2(this->Type->ParticleSystemTypeClass_field_0x308); /*0x62f900*/
           TimerClass::Construct( /*0x62f940*/
             v55,
             ((unsigned int *)this)[0],
@@ -8783,7 +8783,7 @@ void* TubeClass::Construct(void* a1, int a2) {
     AbstractClass::GenerateUniqueID((AbstractClass *)&((unsigned int *)this)[0]); /*0x728017*/
     memset(&((unsigned int *)this)[0], 0xFFu, 0x190u); /*0x728027*/
     if ( *(unsigned int *)((char *)&FootClass_Array + 889) < *(unsigned int *)((char *)&FootClass_Array + 893) /*0x72805f*/
-      || (IDA_BYTE1(((unsigned int *)&FootClass_Array)[5]) || !((unsigned int *)&FootClass_Array)[4])
+      || (((((unsigned int *)&FootClass_Array)[5]) >> 8) & 0xFF || !((unsigned int *)&FootClass_Array)[4])
       && ((unsigned int *)&FootClass_Array)[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(((unsigned int *)&FootClass_Array)[2] + 8))(
            &((unsigned int *)&FootClass_Array)[2],

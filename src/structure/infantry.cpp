@@ -340,7 +340,7 @@ int InfantryClass::ProcessIdleDeploy()
         if ( !((unsigned int *)this)[0] ) /*0x52018e*/
         {
           if ( !((unsigned int *)this)[0] ) /*0x520198*/
-            WinAPI::Wrapper(-2147467261); /*0x5201a7*/
+            sub_7DC720(-2147467261); /*0x5201a7*/
           if ( !(*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x5201b5*/
           {
   LABEL_42:
@@ -366,7 +366,7 @@ int InfantryClass::ProcessIdleDeploy()
         if ( !(unsigned char)movementDestination ) /*0x520217*/
         {
           if ( !((unsigned int *)this)[0] ) /*0x520219*/
-            WinAPI::Wrapper(-2147467261); /*0x520228*/
+            sub_7DC720(-2147467261); /*0x520228*/
           IDA_LOBYTE(movementDestination) = (*(int (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]); /*0x520236*/
           if ( !(unsigned char)movementDestination ) /*0x52023b*/
           {
@@ -395,7 +395,7 @@ bool InfantryClass::CanInitiateDeploy()
   if ( currentMission == 6 || currentMission == 21 || ((unsigned int *)this)[0] || ((unsigned int *)this)[0] ) /*0x521b89*/
     return 0; /*0x521b89*/
   if ( !((unsigned int *)this)[0] ) /*0x521b93*/
-    WinAPI::Wrapper(-2147467261); /*0x521ba2*/
+    sub_7DC720(-2147467261); /*0x521ba2*/
   if ( (*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 128))(((unsigned int *)this)[0]) /*0x521be7*/
     && (*((int (**)(InfantryClass *))this->vtable1 + 97))(this) != 5
     && (*((int (**)(InfantryClass *))this->vtable1 + 97))(this) != 15
@@ -498,7 +498,7 @@ bool InfantryClass::CheckDeployPath()
   locomotor = (int *)(((unsigned int *)this)[0]); /*0x521f00*/
   ((InfantryClass *)&v13)->updateOccupiedBuilding((void *)(int (****)(unsigned int, void *, unsigned int *))((unsigned int *)this)[0]); /*0x521f0b*/
   if ( !*(unsigned int *)v13.m_Data ) /*0x521f16*/
-    WinAPI::Wrapper(-2147467261); /*0x521f1d*/
+    sub_7DC720(-2147467261); /*0x521f1d*/
   (*(void (**)(unsigned int, int *))(**(unsigned int **)v13.m_Data + 12))(*(unsigned int *)v13.m_Data, &v13.m_Position); /*0x521f2e*/
   v13.m_Data = (void *)(memcmp(&v13.m_Position, &g_CLSID_JumpjetLocomotion, 0x10u) != 0); /*0x521f4e*/
   result = (AnimClass *)ComPtr_Release_Alt((void *)&v13); /*0x521f56*/
@@ -510,7 +510,7 @@ bool InfantryClass::CheckDeployPath()
     goto LABEL_38; /*0x521f77*/
   v6 = StreamClass::Set(&v13, (void *)((unsigned int *)this)[0]); /*0x521f82*/
   if ( v6 < 0 && v6 != -2147467262 ) /*0x521f90*/
-    WinAPI::Wrapper(v6); /*0x521f93*/
+    sub_7DC720(v6); /*0x521f93*/
   result = *(AnimClass **)v13.m_Data; /*0x521f98*/
   if ( !*(unsigned int *)v13.m_Data ) /*0x521f9e*/
     goto LABEL_38; /*0x521f9e*/
@@ -519,16 +519,16 @@ bool InfantryClass::CheckDeployPath()
   ppv = 0; /*0x521fbe*/
   InstanceCOM = ((ObjectClass *)&ppv)->CreateInstanceCOM((IID *)&g_CLSID_WalkLocomotion, 0, 7u); /*0x521fc2 (raw: ObjectClass::CreateInstanceCOM free-form; instance form per object.hpp 3-param)*/
   if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x521fd0*/
-    WinAPI::Wrapper(InstanceCOM); /*0x521fd3*/
+    sub_7DC720(InstanceCOM); /*0x521fd3*/
   if ( !ppv ) /*0x521fde*/
-    WinAPI::Wrapper(-2147467261); /*0x521fe5*/
+    sub_7DC720(-2147467261); /*0x521fe5*/
   (*(void (**)(LPVOID, InfantryClass *))(*(unsigned int *)ppv + 12))(ppv, this); /*0x521ff2*/
   v13.m_Data = 0; /*0x521ff9*/
   if ( ppv ) /*0x521fff*/
   {
     v8 = StreamClass::Set((StreamClass *)&v13.m_Data, &ppv); /*0x52200a*/
     if ( v8 < 0 && v8 != -2147467262 ) /*0x522018*/
-      WinAPI::Wrapper(v8); /*0x52201b*/
+      sub_7DC720(v8); /*0x52201b*/
   }
   ((COMObject *)&v13)->SwapReference((int)v13.m_Data); /*0x522029*/
   ((ObjectClass *)&v13.m_Data)->Release2COM(); /*0x522032*/
@@ -557,7 +557,7 @@ bool InfantryClass::CheckDeployPath()
                     (AbstractClass *)((unsigned int *)this)[0],
                     &v13.m_Position);
   if ( !*locomotor ) /*0x52207b*/
-    WinAPI::Wrapper(-2147467261); /*0x522087*/
+    sub_7DC720(-2147467261); /*0x522087*/
   (*(void (**)(int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)*locomotor + 68))(*locomotor, *v11, v11[1], v11[2]); /*0x5220a0*/
   if ( ppv ) /*0x5220a9*/
     (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x5220ae*/
@@ -593,7 +593,7 @@ int InfantryClass::CreateDeployLocomotor(int a2, int a3, int a4)  // g57b5 W4: r
     return 0; /*0x523239*/
   }
   if ( !((unsigned int *)this)[0] ) /*0x52303a*/
-    WinAPI::Wrapper(-2147467261); /*0x523049*/
+    sub_7DC720(-2147467261); /*0x523049*/
   (*(void (**)(int, unsigned int))(*(unsigned int *)((unsigned int *)this)[0] + 156))(((unsigned int *)this)[0], 0); /*0x523059*/
   (*((void (**)(InfantryClass *, int *))this->vtable1 + 61))(this, &a2); /*0x523068*/
   vtable0 = *(void (__thiscall ***)(InfantryClass *, CellClass *, int))this; /*0x52306e*/  // g57e2 W2
@@ -601,26 +601,26 @@ int InfantryClass::CreateDeployLocomotor(int a2, int a3, int a4)  // g57b5 W4: r
   v6 = (CellClass *)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2); /*0x523083*/
   vtable0[288](this, v6, 1); /*0x52308b*/
   if ( !((unsigned int *)this)[0] ) /*0x523091*/
-    WinAPI::Wrapper(-2147467261); /*0x5230ac*/
+    sub_7DC720(-2147467261); /*0x5230ac*/
   (*(void (**)(int, int, int, int))(*(unsigned int *)((unsigned int *)this)[0] + 120))(((unsigned int *)this)[0], a2, a3, a4); /*0x5230c7*/
   ppv = 0; /*0x5230d8*/
   InstanceCOM = ((ObjectClass *)&ppv)->CreateInstanceCOM((IID *)&g_CLSID_HoverLocomotion, 0, 7u); /*0x5230dc (instance form per object.hpp 3-param)*/
   if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x5230ea*/
-    WinAPI::Wrapper(InstanceCOM); /*0x5230ed*/
+    sub_7DC720(InstanceCOM); /*0x5230ed*/
   v18 = 0; /*0x5230f6*/
   if ( ppv ) /*0x5230fc*/
   {
     v8 = StreamClass::Set((StreamClass *)&v18, &ppv); /*0x523107*/
     if ( v8 < 0 && v8 != -2147467262 ) /*0x523115*/
-      WinAPI::Wrapper(v8); /*0x523118*/
+      sub_7DC720(v8); /*0x523118*/
   }
   if ( ((uint32_t)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2)->flags & 0x100) != 0 ) /*0x523135*/
     a4 += *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1616]; /*0x523143*/
   if ( !ppv ) /*0x52314d*/
-    WinAPI::Wrapper(-2147467261); /*0x523154*/
+    sub_7DC720(-2147467261); /*0x523154*/
   (*(void (**)(LPVOID, InfantryClass *))(*(unsigned int *)ppv + 12))(ppv, this); /*0x523161*/
   if ( !v18 ) /*0x523170*/
-    WinAPI::Wrapper(-2147467261); /*0x523177*/
+    sub_7DC720(-2147467261); /*0x523177*/
   (*(void (**)(int, int))(*(unsigned int *)v18 + 12))(v18, ((unsigned int *)this)[0]); /*0x523184*/
   v9 = (LPVOID)((unsigned int *)this)[0]; /*0x523187*/
   v10 = ppv; /*0x52318d*/
@@ -643,7 +643,7 @@ int InfantryClass::CreateDeployLocomotor(int a2, int a3, int a4)  // g57b5 W4: r
   v15 = (CellClass *)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2); /*0x5231de*/
   v13[288](this, v15, 1); /*0x5231e6*/
   if ( !((unsigned int *)this)[0] ) /*0x5231ec*/
-    WinAPI::Wrapper(-2147467261); /*0x5231f9*/
+    sub_7DC720(-2147467261); /*0x5231f9*/
   (*(void (**)(int, unsigned int))(*(unsigned int *)((unsigned int *)this)[0] + 156))(((unsigned int *)this)[0], 0); /*0x523208*/
   if ( v18 ) /*0x523214*/
     (*(void (**)(int))(*(unsigned int *)v18 + 8))(v18); /*0x523219*/
@@ -1260,17 +1260,17 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
         goto LABEL_37; /*0x51ca1d*/
       v13 = StreamClass::Set2(&a5, (unsigned int *)(&this->Locomotor)); /*0x51ca24 g57w10 r4: live asm lea eax,[ebx+674h]=ml Locomotor; hijackerInfantryType2=幻觉名证伪*/
       if ( v13 < 0 && v13 != -2147467262 ) /*0x51ca32*/
-        WinAPI::Wrapper(v13); /*0x51ca35*/
+        sub_7DC720(v13); /*0x51ca35*/
       if ( !a5 ) /*0x51ca40*/
   LABEL_37:
-        WinAPI::Wrapper(-2147467261); /*0x51ca47*/
+        sub_7DC720(-2147467261); /*0x51ca47*/
       (*(void (**)(int, char *))(*(unsigned int *)a5 + 12))(a5, v17); /*0x51ca59*/
       v14 = memcmp(v17, (const char *)&g_CLSID_JumpjetLocomotion, 16); /*0x51ca6a*/
       ComPtr::Release_Alt(&a5); /*0x51ca79*/
       if ( !v14 && *(unsigned char *)((char *)this->Type + 0xECB) ) /*0x51ca8e g57w10 r4: ml InfantryTypeClass qECB@0xECB*/
       {
         if ( !this->Locomotor ) /*0x51ca98*/
-          WinAPI::Wrapper(-2147467261); /*0x51caa7*/
+          sub_7DC720(-2147467261); /*0x51caa7*/
         if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)(&this->Locomotor) + 128))((unsigned int)(this->Locomotor)) ) /*0x51cab5 g57w10 r4: 同 0x51ca24*/
           return 7; /*0x51caca*/
       }
@@ -1292,7 +1292,7 @@ int InfantryClass::GetFireError(int* target, int weapon_idx, int a4, int a5)
     {
   LABEL_64:
       if ( !this->Locomotor ) /*0x51cb61*/
-        WinAPI::Wrapper(-2147467261); /*0x51cb70*/
+        sub_7DC720(-2147467261); /*0x51cb70*/
       result = (*(int (**)(unsigned int))(**(unsigned int **)(&this->Locomotor) + 140))((unsigned int)(this->Locomotor)); /*0x51cb7e g57w10 r4: 同 0x51ca24*/
       if ( !result ) /*0x51cb86*/
         return 0; /*0x51cb88*/
@@ -1709,11 +1709,11 @@ int InfantryClass::GetIdleTimer()
               if ( !IDA_HIBYTE(((unsigned int *)this->Type)[0]) ) /*0x5215ff*/
               {
                 if ( !((unsigned int *)this)[0] ) /*0x52160d*/
-                  WinAPI::Wrapper(-2147467261); /*0x52161c*/
+                  sub_7DC720(-2147467261); /*0x52161c*/
                 if ( (*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x52162a*/
                 {
                   if ( !((unsigned int *)this)[0] ) /*0x52165a*/
-                    WinAPI::Wrapper(-2147467261); /*0x521669*/
+                    sub_7DC720(-2147467261); /*0x521669*/
                   (*(void (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 72))(((unsigned int *)this)[0]); /*0x521677*/
                   this->ShouldDeploy = 1; /*0x52167c*/
                   MissionControl = MissionClass::GetMissionControl((MissionClass *)this); /*0x521683*/
@@ -1793,7 +1793,7 @@ bool InfantryClass::CanMoveFreely()
   if ( result ) /*0x5216da*/
   {
     if ( !((unsigned int *)this)[0] ) /*0x5216de*/
-      WinAPI::Wrapper(-2147467261); /*0x5216ed*/
+      sub_7DC720(-2147467261); /*0x5216ed*/
     if ( (*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x5216fb*/
     {
       return 0; /*0x521702*/
@@ -1829,7 +1829,7 @@ mov     eax, [esi+674h]
 test    eax, eax
 jnz     short loc_5216F2
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_5216F2:                             ; CODE XREF: InfantryClass__CanMoveFreely+16↑j
@@ -2017,7 +2017,7 @@ int InfantryClass::MoveToCell(int* a2, int a3)
 int InfantryClass::CancelMovement()
 {
   if ( !((unsigned int *)this)[0] ) /*0x51df13*/
-    WinAPI::Wrapper(-2147467261); /*0x51df22*/
+    sub_7DC720(-2147467261); /*0x51df22*/
   (*(void (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 172))(((unsigned int *)this)[0]); /*0x51df30*/
   this->unknown_int_6E8 = 2; /*0x51df38*/
   this->Crawling = 0; /*0x51df42*/
@@ -2032,7 +2032,7 @@ mov     eax, [esi+674h]
 test    eax, eax
 jnz     short loc_51DF27
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_51DF27:                             ; CODE XREF: InfantryClass__CancelMovement+B↑j
@@ -2306,7 +2306,7 @@ int InfantryClass::CalcMoveTarget()
         || (*(int (**)(unsigned int *))(*v53 + 44))(v53) == 15 )
       {
         if ( !v53[413] ) /*0x51b8a6*/
-          WinAPI::Wrapper(-2147467261); /*0x51b8b3*/
+          sub_7DC720(-2147467261); /*0x51b8b3*/
         if ( !(*(uint8_t (**)(unsigned int))(*(unsigned int *)v53[413] + 16))(v53[413]) ) /*0x51b8c1*/
         {
           v54 = *v53; /*0x51b8c8*/
@@ -2340,14 +2340,14 @@ int InfantryClass::CalcMoveTarget()
     v84 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1568]; /*0x51b9bc*/
     v85 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1572]; /*0x51b9c0*/
     if ( !v58 ) /*0x51b9c4*/
-      WinAPI::Wrapper(-2147467261); /*0x51b9cb*/
+      sub_7DC720(-2147467261); /*0x51b9cb*/
     (*(void (**)(int, unsigned int, int, int))(*(unsigned int *)((unsigned int *)this)[0] + 120))( /*0x51b9f4*/
       ((unsigned int *)this)[0],
       *(unsigned int *)&((unsigned int *)&stru_A8EB00)[1564],
       v84,
       v85);
     if ( !((unsigned int *)this)[0] ) /*0x51b9f7*/
-      WinAPI::Wrapper(-2147467261); /*0x51ba08*/
+      sub_7DC720(-2147467261); /*0x51ba08*/
     (*(void (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 172))(((unsigned int *)this)[0]); /*0x51ba16*/
     (*((void (**)(InfantryClass *, int))this->vtable1 + 73))(this, 1); /*0x51ba22*/
     v59 = *location; /*0x51ba2b*/
@@ -2441,7 +2441,7 @@ int InfantryClass::FindMoveTarget()
     }
   }
   if ( !*(&this->q0A43) ) /*0x51d150*/
-    WinAPI::Wrapper(-2147467261); /*0x51d15d*/
+    sub_7DC720(-2147467261); /*0x51d15d*/
   if ( (*(uint8_t (**)(unsigned int))(*(unsigned int *)*(&this->q0A43) + 16))(*(&this->q0A43)) ) /*0x51d16b*/
     v4 = 0; /*0x51d172*/
   MissionControl = MissionClass::GetMissionControl(this); /*0x51d176*/
@@ -2524,7 +2524,7 @@ int InfantryClass::FindMoveTarget()
             v20 = CellCoord_To_CellObj(&MapClass_Instance, (int16_t *)&v40); /*0x51d44d*/
             (*(void (**)(int *, void *, int))(IDA_LODWORD(v19) + 1152))(this, v20, 1); /*0x51d455*/
             if ( !*(&this->q0A43) ) /*0x51d45b*/
-              WinAPI::Wrapper(-2147467261); /*0x51d46a*/
+              sub_7DC720(-2147467261); /*0x51d46a*/
             IDA_LOBYTE(MissionControl) = (*(int (**)(unsigned int))(*(unsigned int *)*(&this->q0A43) + 64))(*(&this->q0A43)); /*0x51d478*/
             return (char)MissionControl; /*0x51d482*/
           }
@@ -3080,10 +3080,10 @@ int InfantryClass::CheckAndApplyBomb()
           v7 = 0; /*0x521e42*/
         }
         if ( v4 < 0 && v4 != -2147467262 ) /*0x521e67*/
-          WinAPI::Wrapper(v4); /*0x521e6a*/
+          sub_7DC720(v4); /*0x521e6a*/
         if ( !v5 ) /*0x521e75*/
   LABEL_12:
-          WinAPI::Wrapper(-2147467261); /*0x521e7c*/
+          sub_7DC720(-2147467261); /*0x521e7c*/
         (*(void (**)(int, char *))(*(unsigned int *)v5 + 12))(v5, v9); /*0x521e8d*/
         result = v7; /*0x521e90*/
         if ( v7 ) /*0x521e96*/
@@ -3721,7 +3721,7 @@ int InfantryClass::UpdateBehavior()
         if ( !(unsigned char)result && (int)dword_A8ED84 - *((unsigned int *)a4 + 48) > 300 ) /*0x736858*/
         {
           if ( !*((unsigned int *)a4 + 413) ) /*0x73685e*/
-            WinAPI::Wrapper(-2147467261); /*0x73686d*/
+            sub_7DC720(-2147467261); /*0x73686d*/
           result = (*(int (**)(unsigned int))(**((unsigned int **)a4 + 413) + 16))(*((unsigned int *)a4 + 413)); /*0x73687b*/
           if ( !(unsigned char)result ) /*0x736880*/
           {
@@ -4094,14 +4094,14 @@ int InfantryClass::EvaluateTarget()
                 {
                   case 1: /*0x51c669*/
                     if ( !*(unsigned int *)(v23 + 1652) ) /*0x51c670*/
-                      WinAPI::Wrapper(-2147467261); /*0x51c67f*/
+                      sub_7DC720(-2147467261); /*0x51c67f*/
                     if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)(v23 + 1652) + 16))(*(unsigned int *)(v23 + 1652)) /*0x51c694*/
                       || *(unsigned int *)(v23 + 1444) )
                     {
                       if ( *(unsigned char *)(v23 + 1718) ) /*0x51c6aa*/
                         goto LABEL_128; /*0x51c6aa*/
                       if ( !*(unsigned int *)(v23 + 1652) ) /*0x51c6b4*/
-                        WinAPI::Wrapper(-2147467261); /*0x51c6c3*/
+                        sub_7DC720(-2147467261); /*0x51c6c3*/
                       if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)(v23 + 1652) + 164))(*(unsigned int *)(v23 + 1652)) ) /*0x51c6d1*/
                       {
   LABEL_128:
@@ -4119,7 +4119,7 @@ int InfantryClass::EvaluateTarget()
                     return 7;
                   case 15: /*0x51c669*/
                     if ( !*(unsigned int *)(v23 + 1652) ) /*0x51c6e7*/
-                      WinAPI::Wrapper(-2147467261); /*0x51c6f6*/
+                      sub_7DC720(-2147467261); /*0x51c6f6*/
                     if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)(v23 + 1652) + 16))(*(unsigned int *)(v23 + 1652)) ) /*0x51c704*/
                       ++v47; /*0x51c70b*/
                     goto LABEL_134; /*0x51c70b*/
@@ -4464,7 +4464,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
     ((unsigned int *)this)[0] = 0; /*0x51ab44*/
   }
   if ( !((unsigned int *)this)[0] ) /*0x51ab4a*/
-    WinAPI::Wrapper(-2147467261); /*0x51ab57*/
+    sub_7DC720(-2147467261); /*0x51ab57*/
   if ( (*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x51ab65*/
   {
     if ( v6 ) /*0x51ab71*/
@@ -4510,7 +4510,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
     if ( v6 && ((unsigned int *)this->Type)[0] ) /*0x51ad25*/
     {
       if ( !((unsigned int *)this)[0] ) /*0x51ad33*/
-        WinAPI::Wrapper(-2147467261); /*0x51ad42*/
+        sub_7DC720(-2147467261); /*0x51ad42*/
       if ( (*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x51ad50*/
       {
         v19 = ((unsigned int *)this)[0]; /*0x51ad5b*/
@@ -4519,10 +4519,10 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
           goto LABEL_58; /*0x51ad71*/
         v20 = StreamClass::Set2((StreamClass *)&ppv, ((unsigned int *)this)[0]); /*0x51ad78*/
         if ( v20 < 0 && v20 != -2147467262 ) /*0x51ad86*/
-          WinAPI::Wrapper(v20); /*0x51ad89*/
+          sub_7DC720(v20); /*0x51ad89*/
         if ( !*(unsigned int *)ppv.__pad_0 ) /*0x51ad94*/
   LABEL_58:
-          WinAPI::Wrapper(-2147467261); /*0x51ad9b*/
+          sub_7DC720(-2147467261); /*0x51ad9b*/
         (*(void (**)(unsigned int, int *))(**(unsigned int **)ppv.__pad_0 + 12))( /*0x51adac*/
           *(unsigned int *)ppv.__pad_0,
           &ppv.ComPtr_field_0x18);
@@ -4599,7 +4599,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
   if ( ((unsigned int *)this->Type)[0] && v6 ) /*0x51ae72*/
   {
     if ( !((unsigned int *)this)[0] ) /*0x51ae78*/
-      WinAPI::Wrapper(-2147467261); /*0x51ae8d*/
+      sub_7DC720(-2147467261); /*0x51ae8d*/
     if ( !(*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x51ae97*/
     {
       v25 = (unsigned int *)(*((int (**)(AbstractClass *, int *))v6->vtable1 + 18))(v6, &ppv.ComPtr_field_0x18); /*0x51aeab*/
@@ -4617,7 +4617,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
         (/*0x51af4c*/
           (InfantryClass *)&ppv)->updateOccupiedBuilding((int (****)(unsigned int, void *, unsigned int *))((unsigned int *)this)[0]);
         if ( !*(unsigned int *)ppv.__pad_0 ) /*0x51af57*/
-          WinAPI::Wrapper(-2147467261); /*0x51af5e*/
+          sub_7DC720(-2147467261); /*0x51af5e*/
         (*(void (**)(unsigned int, int *))(**(unsigned int **)ppv.__pad_0 + 12))( /*0x51af6f*/
           *(unsigned int *)ppv.__pad_0,
           &ppv.ComPtr_field_0x18);
@@ -4644,11 +4644,11 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
           {
             v33 = StreamClass::Set((StreamClass *)&dest, ((unsigned int *)this)[0]); /*0x51afe1*/
             if ( v33 < 0 && v33 != -2147467262 ) /*0x51afef*/
-              WinAPI::Wrapper(v33); /*0x51aff2*/
+              sub_7DC720(v33); /*0x51aff2*/
             if ( dest && (*(uint8_t (**)(int *))(*dest + 28))(dest) ) /*0x51b002*/
             {
               if ( !dest ) /*0x51b00f*/
-                WinAPI::Wrapper(-2147467261); /*0x51b016*/
+                sub_7DC720(-2147467261); /*0x51b016*/
               if ( (*(uint8_t (**)(int *))(*dest + 20))(dest) ) /*0x51b022*/
               {
                 if ( *locomotor ) /*0x51b029*/
@@ -4656,7 +4656,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
                 v34 = dest; /*0x51b035*/
                 *locomotor = 0; /*0x51b039*/
                 if ( !v34 ) /*0x51b03d*/
-                  WinAPI::Wrapper(-2147467261); /*0x51b044*/
+                  sub_7DC720(-2147467261); /*0x51b044*/
                 (*(void (**)(int *, int *))(*v34 + 16))(v34, ((unsigned int *)this)[0]); /*0x51b051*/
               }
             }
@@ -4664,16 +4664,16 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
           *(unsigned int *)ppv.__pad_0 = 0; /*0x51b060*/
           InstanceCOM = CreateInstanceCOM((ObjectClass *)&ppv, (IID *)&g_CLSID_WalkLocomotion, 0, 7u); /*0x51b064*/
           if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x51b072*/
-            WinAPI::Wrapper(InstanceCOM); /*0x51b075*/
+            sub_7DC720(InstanceCOM); /*0x51b075*/
           if ( !*(unsigned int *)ppv.__pad_0 ) /*0x51b080*/
-            WinAPI::Wrapper(-2147467261); /*0x51b087*/
+            sub_7DC720(-2147467261); /*0x51b087*/
           (*(void (**)(unsigned int, InfantryClass *))(**(unsigned int **)ppv.__pad_0 + 12))(*(unsigned int *)ppv.__pad_0, this); /*0x51b094*/
           ppv.ComPtr_field_0x04 = 0; /*0x51b09b*/
           if ( *(unsigned int *)ppv.__pad_0 ) /*0x51b0a1*/
           {
             v36 = StreamClass::Set((StreamClass *)&ppv.ComPtr_field_0x04, &ppv); /*0x51b0ac*/
             if ( v36 < 0 && v36 != -2147467262 ) /*0x51b0ba*/
-              WinAPI::Wrapper(v36); /*0x51b0bd*/
+              sub_7DC720(v36); /*0x51b0bd*/
           }
           ((COMObject *)&dest)->SwapReference(ppv.ComPtr_field_0x04); /*0x51b0cb*/
           if ( ppv.ComPtr_field_0x04 ) /*0x51b0d6*/
@@ -4703,13 +4703,13 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
         {
           v40 = StreamClass::Set((StreamClass *)&dest, ((unsigned int *)this)[0]); /*0x51b149*/
           if ( v40 < 0 && v40 != -2147467262 ) /*0x51b157*/
-            WinAPI::Wrapper(v40); /*0x51b15a*/
+            sub_7DC720(v40); /*0x51b15a*/
           if ( dest ) /*0x51b165*/
           {
             if ( (*(uint8_t (**)(int *))(*dest + 28))(dest) ) /*0x51b16a*/
             {
               if ( !dest ) /*0x51b177*/
-                WinAPI::Wrapper(-2147467261); /*0x51b17e*/
+                sub_7DC720(-2147467261); /*0x51b17e*/
               if ( (*(uint8_t (**)(int *))(*dest + 20))(dest) ) /*0x51b18a*/
               {
                 if ( *v39 ) /*0x51b191*/
@@ -4717,7 +4717,7 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
                 v41 = dest; /*0x51b19d*/
                 *v39 = 0; /*0x51b1a1*/
                 if ( !v41 ) /*0x51b1a5*/
-                  WinAPI::Wrapper(-2147467261); /*0x51b1ac*/
+                  sub_7DC720(-2147467261); /*0x51b1ac*/
                 (*(void (**)(int *, int *))(*v41 + 16))(v41, ((unsigned int *)this)[0]); /*0x51b1b9*/
               }
             }
@@ -5560,7 +5560,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
                             goto LABEL_192; /*0x51ede5*/
                         }
                         if ( !v5[413] ) /*0x51edef*/
-                          WinAPI::Wrapper(-2147467261); /*0x51edfe*/
+                          sub_7DC720(-2147467261); /*0x51edfe*/
                         if ( (*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)v5[413] + 16))(v5[413]) ) /*0x51ee0c*/
                         {
   LABEL_192:
@@ -6605,7 +6605,7 @@ int InfantryClass::RepairBridge()
                   goto LABEL_113; /*0x519a6e*/
                 }
                 if ( !this->locomotor ) /*0x519a79*/
-                  WinAPI::Wrapper(-2147467261); /*0x519a88*/
+                  sub_7DC720(-2147467261); /*0x519a88*/
                 v39 = (int *)(*(int (__stdcall **)(int, int *))(*(unsigned int *)this->locomotor + 20))(this->locomotor, &v154); /*0x519a9b*/
                 v40 = *v39; /*0x519a9e*/
                 v41 = v39[1]; /*0x519aa6*/
@@ -7044,7 +7044,7 @@ int InfantryClass::RepairBridge()
       v4 = Coord::To_Cell((Coord *)&dword_87F7E8, &v154); /*0x51a94d*/
       landType = v4->landType; /*0x51a957*/
       if ( !this->locomotor ) /*0x51a94f*/
-        WinAPI::Wrapper(-2147467261); /*0x51a964*/
+        sub_7DC720(-2147467261); /*0x51a964*/
       if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->locomotor + 16))(this->locomotor) /*0x51a9b3*/
         && !*(unsigned char *)(this->Type + 3778)
         && !(unsigned __int8)TechnoTypeClass::HasVoiceResponse(&this->vtable1, 14)
@@ -7216,14 +7216,14 @@ void InfantryClass::CalculateApproachPath(char a2)
               else if ( v8 && !a2 ) /*0x522442*/
               {
                 if ( !((unsigned int *)this)[0] ) /*0x522444*/
-                  WinAPI::Wrapper(-2147467261); /*0x522453*/
+                  sub_7DC720(-2147467261); /*0x522453*/
                 if ( !(*(uint8_t (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x522461*/
                 {
                   (*((void (**)(InfantryClass *, int, unsigned int, unsigned int))this->vtable1 + 342))(this, 27, 0, 0); /*0x522472*/
                   return 0; /*0x52247c*/
                 }
                 if ( !((unsigned int *)this)[0] ) /*0x52247f*/
-                  WinAPI::Wrapper(-2147467261); /*0x52248e*/
+                  sub_7DC720(-2147467261); /*0x52248e*/
                 (*(void (**)(int))(*(unsigned int *)((unsigned int *)this)[0] + 72))(((unsigned int *)this)[0]); /*0x52249c*/
                 this->ShouldDeploy = 1; /*0x5224a1*/
                 MissionClass::GetMissionControl((MissionClass *)this); /*0x5224a8*/
@@ -7469,16 +7469,16 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
     goto LABEL_15; /*0x5190fd*/
   v33 = StreamClass::Set2(&v69, (unsigned int *)(v17 + 1652)); /*0x519104*/
   if ( v33 < 0 && v33 != -2147467262 ) /*0x519112*/
-    WinAPI::Wrapper(v33); /*0x519115*/
+    sub_7DC720(v33); /*0x519115*/
   if ( !*(unsigned int *)v69.__pad_0 ) /*0x519120*/
   LABEL_15:
-    WinAPI::Wrapper(-2147467261); /*0x519127*/
+    sub_7DC720(-2147467261); /*0x519127*/
   (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)v69.__pad_0 + 12))(*(unsigned int *)v69.__pad_0, v76); /*0x519138*/
   if ( (*(int (**)(int))(*(unsigned int *)v17 + 456))(v17) > 0 && !memcmp(v76, &g_CLSID_DriveLocomotion, 0x10u) ) /*0x51915e*/
   {
     v69.m_Position = (int)SearchMIXFile(aPodShp, 0); /*0x519172*/
     if ( !*v32 ) /*0x519176*/
-      WinAPI::Wrapper(-2147467261); /*0x519181*/
+      sub_7DC720(-2147467261); /*0x519181*/
     v34 = (unsigned int *)(*(int (**)(int *, int *))(**v32 + 48))(*v32, &v73); /*0x519190*/
     v35 = this; /*0x519193*/
     v36 = v34[1]; /*0x519199*/
@@ -7487,7 +7487,7 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
     v38 = *v32 == 0; /*0x5191ab*/
     v70 = v36 + v37; /*0x5191ad*/
     if ( v38 ) /*0x5191b1*/
-      WinAPI::Wrapper(-2147467261); /*0x5191b8*/
+      sub_7DC720(-2147467261); /*0x5191b8*/
     v39 = *v32; /*0x5191c3*/
     v65 = (*(int (**)(int, unsigned int))(*(unsigned int *)v17 + 748))(v17, 0) - 2; /*0x5191e1*/
     v63 = a3; /*0x5191f1*/
@@ -7512,7 +7512,7 @@ void InfantryClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
     CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&v69.m_Data); /*0x51921b*/
     CellCoord_To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&v69.m_Data); /*0x51922a*/
     if ( !*v32 ) /*0x51922f*/
-      WinAPI::Wrapper(-2147467261); /*0x51923c*/
+      sub_7DC720(-2147467261); /*0x51923c*/
     v41 = *v32; /*0x519248*/
     v42 = *v41; /*0x519255*/
     this = *(InfantryClass **)v17; /*0x519267*/

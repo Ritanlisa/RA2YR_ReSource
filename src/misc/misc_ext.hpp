@@ -52,7 +52,7 @@ template <typename T> class VectorClass;  // G42.35: 模板前置 (core/vector.h
 #endif
 
 // G42.42e supply decl (truth 0x7DC720; E_POINTER fail-fast helper)
-extern void WinAPI_Wrapper(int aP1);
+extern int sub_7DC720(int aP1);  // g57w20m7: 返回型对齐 def int (真身不返回但声明型=IDA int)
 } // namespace gamemd (bridge re-own, G42.29h)
 namespace ra2 { namespace game { class ObjectClass; } }
 namespace gamemd {
@@ -585,6 +585,10 @@ public:
 
     virtual int Constructor(int a2, int a3); // 0x525680 (G42 sig-sync: IDA (this,int,int); def quarantined in misc_ext.cpp)
 
+    // --- data slots (ml truth; 载体 vptr@0-3 与二进制 byte@0+pad 重合于 0x4) g57w20m11d ---
+    unsigned char __pad_004;  // 0x4 (ml __pad_004; DynamicVector@4 Items 槽; RA2_OPNEW 写站 0x5256bd)
+    char __pad_005[7];        // 0x5-0xB
+    unsigned int u32_C;       // 0xC (ml u32_C)
 };
 // 3 methods in IDA
 class CSFClass
@@ -5458,17 +5462,8 @@ public:
 // 1 methods in IDA
 #ifndef GAMEMD_TREE_WINAPI  // gC: shared guard -- tree-side supply also in core/stream_ext.hpp
 #define GAMEMD_TREE_WINAPI
-class WinAPI
-{
-public:
-    // design: defaulted virtual destructor, no binary equivalent
-    virtual ~WinAPI() = default;
-
-    // G42.33: binary truth 0x7DC720 -- __fastcall Wrapper(int); e4 corpus
-    // (addr4*_e4.cpp) has 350+ uniform 1-arg call sites; 0-arg callers: none.
-    static int Wrapper(int a2); // 0x7DC720 (G42 sig-sync: def; static-form restored -- e4 corpus addr4*_e4.cpp has 350+ instance-less call sites)
-
-};
+// g57w20m7: 伪类 WinAPI 废除 (用户裁决: 无名函数用默认名) -> 自由函数默认名 sub_7DC720
+int sub_7DC720(int a2);  // 0x7DC720 (真身 ThrowErrorCOM(a2,0,0) 硬抛 _com_error; 旧体为 G42.33 占位 stub 已废)
 #endif  // GAMEMD_TREE_WINAPI
 // 15 methods in IDA
 // CSP: WinModemClass matched via T1

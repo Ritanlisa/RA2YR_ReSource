@@ -1394,7 +1394,7 @@ LABEL_10:
   v133 = v14;
   aP3 = (TechnoClass *)((((unsigned char *)&stru_87C374)[45220] != 0) - 1);
   if ( !((unsigned int *)ecx0)[413] )
-    WinAPI::Wrapper(-2147467261);
+    sub_7DC720(-2147467261);
   int v15; // eax
 v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 36))( ecx0[413], (float *)(v145), (TechnoClass **)(&aP3));
 
@@ -1876,12 +1876,12 @@ LABEL_102:
     {
       aP3 = (TechnoClass *)(32 * v140);
       if ( !ecx0[413] )
-        WinAPI::Wrapper(-2147467261);
+        sub_7DC720(-2147467261);
       int v66 = (*(int (**)(unsigned int, double *))(*(unsigned int *)ecx0[413] + 48))( ecx0[413], (double *)(&v123));
       aP3 = (TechnoClass *)(((uint8_t)*(unsigned int *)(v66 + 4) - 16) & 0x1F | (unsigned int)aP3);
     }
     if ( !ecx0[413] )
-      WinAPI::Wrapper(-2147467261);
+      sub_7DC720(-2147467261);
   const void *v67; // eax
 v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 40))( ecx0[413], (float *)(v147), (TechnoClass **)(&aP3));
 
@@ -1897,7 +1897,7 @@ v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
       GroundHeight = Cell::GetGroundHeight( (IUnknown *)a1);
       ((Coord *)(*(unsigned int **)&((unsigned char *)&stru_87C374)[44976]))->To_Screen( (unsigned int *)(a1), (int *)((IUnknown *)&v118));
       if ( !ecx0[413] )
-        WinAPI::Wrapper(-2147467261);
+        sub_7DC720(-2147467261);
       int * v68 = (int *)(*(int (**)(unsigned int, double *))(*(unsigned int *)ecx0[413] + 48))( ecx0[413], (double *)(&v123));
       int v69 = *v68;
       int v70 = v68[1];
@@ -1946,9 +1946,9 @@ v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsign
     if ( v76 )
     {
       if ( !v77 )
-        WinAPI::Wrapper(-2147467261);
+        sub_7DC720(-2147467261);
       if ( !ecx0[413] )
-        WinAPI::Wrapper(-2147467261);
+        sub_7DC720(-2147467261);
       int v81 = ecx0[413];
       int v82 = (*(int (**)(int))(*(unsigned int *)v81 + 48))(v81);
   int v94; // [esp+F0h] [ebp-1CCh]
@@ -1976,9 +1976,9 @@ v94 = *(unsigned int *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v
     else
     {
       if ( !v77 )
-        WinAPI::Wrapper(-2147467261);
+        sub_7DC720(-2147467261);
       if ( !ecx0[413] )
-        WinAPI::Wrapper(-2147467261);
+        sub_7DC720(-2147467261);
       int v78 = ecx0[413];
       int v79 = (*(int (**)(int))(*(unsigned int *)v78 + 48))(v78);
   int v93; // [esp+F0h] [ebp-1CCh]

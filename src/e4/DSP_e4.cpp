@@ -139,12 +139,12 @@ LABEL_34:
         {
           int v21 = v4[5];
           int v22 = v117;
-          IDA_BYTE1(v21) |= 2u;
+          (((v21) >> 8) & 0xFF) |= 2u;
           v4[5] = v21;
           int v23 = *(unsigned int *)(a1 + 308);
           *(unsigned int *)(a1 + 320) = v22;
           int v24 = *(unsigned int *)(a1 + 336);
-          IDA_BYTE1(v24) |= 1u;
+          (((v24) >> 8) & 0xFF) |= 1u;
           *(unsigned int *)(a1 + 292) = v23;
           *(unsigned int *)(a1 + 308) = -1;
           *(unsigned int *)(a1 + 336) = v24;
@@ -322,7 +322,7 @@ LABEL_170:
                 int v82 = *(unsigned int *)(a1 + 368);
                 v28 = v115;
                 int v83 = *(unsigned int *)(v82 + 20);
-                IDA_BYTE1(v83) |= 4u;
+                (((v83) >> 8) & 0xFF) |= 4u;
                 *(unsigned int *)(v82 + 20) = v83;
               }
               else
@@ -359,7 +359,7 @@ LABEL_173:
                     {
                       int v90 = *(unsigned int *)(a1 + 368);
                       int v91 = *(unsigned int *)(v90 + 20);
-                      IDA_BYTE1(v91) |= 4u;
+                      (((v91) >> 8) & 0xFF) |= 4u;
                       *(unsigned int *)(v90 + 20) = v91;
                       goto LABEL_51;
                     }
@@ -720,7 +720,7 @@ LABEL_73:
       return -11;
     }
     int v26 = *(unsigned int *)(a1 + 1980);
-    IDA_BYTE1(v26) |= 1u;
+    (((v26) >> 8) & 0xFF) |= 1u;
     *(unsigned int *)(a1 + 336) &= ~1u;
     *(unsigned int *)(a1 + 1980) = v26;
   }

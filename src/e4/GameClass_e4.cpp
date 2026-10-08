@@ -52,7 +52,7 @@ int GameClass::initGameMode(int a2, int a3)
 {
 
   if ( !*(unsigned int *)this->__pad_0 ) /*0x437fd3*/
-    WinAPI::Wrapper(-2147467261); /*0x437fdd*/
+    sub_7DC720(-2147467261); /*0x437fdd*/
   return (*(int (**)(unsigned int, int, int))(**(unsigned int **)this->__pad_0 + 12))(*(unsigned int *)this->__pad_0, a3, a2); /*0x437ff4*/
 
 }

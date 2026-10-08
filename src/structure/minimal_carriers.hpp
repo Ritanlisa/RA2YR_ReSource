@@ -8,7 +8,6 @@ class CanDeployAtCell;  // G42.36 fwd supply
 namespace gamemd {
 struct CellCoord { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 struct Rules { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
-struct WinAPI { void* vfptr; };  // minimal E2 (size-fix pending til evidence)
 } // namespace gamemd
 namespace gamemd {
 struct InfantryClass { void* vfptr; };  // minimal E2 (size-fix pending til evidence)

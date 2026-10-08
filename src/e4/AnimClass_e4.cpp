@@ -733,22 +733,6 @@ LABEL_99:
   }
 
 }
-//DUPDEF   if ( dword_ABCD44 < (CampaignScore *)PingPongBuffer::GetWriteOffset() && *(int *)(*((unsigned int *)this + 50) + 724) > 1 ) /*0x422fe6*/
-//DUPDEF     return; /*0x422fe6*/
-//DUPDEF   if ( *((unsigned char *)this + 413) ) /*0x422fec*/
-//DUPDEF     return; /*0x422fec*/
-//DUPDEF   v20 = (CoordStruct *)*((unsigned int *)this + 50); /*0x422ffa*/
-//DUPDEF   if ( v20[60].Y > *(int *)&HouseClass_Player.__pad_5568[22724] || *((unsigned char *)this + 409) && IDA_LOBYTE(v20[73].Z) ) /*0x42301e*/
-//DUPDEF     return; /*0x42301e*/
-//DUPDEF   } *(float *)&v103 = COERCE_FLOAT((*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 27))(this));
-//DUPDEF   if ( !v103 ) /*0x423039*/
-//DUPDEF     return; /*0x423039*/
-//DUPDEF   v21 = (CoordStruct *)*((unsigned int *)this + 50); /*0x42303f*/
-//DUPDEF   v22 = *((unsigned int *)this + 100); /*0x42304b*/
-//DUPDEF   v90 = (CoordStruct *)*((unsigned int *)this + 43); /*0x423051*/
-//DUPDEF   aP4 = (CoordStruct *)((char *)v90 + v21[57].Z); /*0x42305d*/
-//DUPDEF   if ( *((unsigned char *)this + 281) ) /*0x423061*/
-//DUPDEF   {
 //L-fix     if ( IDA_LOBYTE(v21[72].Z) ) /*0x42306b*/
 //L-fix       v22 |= 6u; /*0x423075*/
 //L-fix     else
@@ -817,7 +801,7 @@ LABEL_99:
 //G42-DUP   }
 //G42-DUP LABEL_47:
 //G42-DUP   if ( (v22 & 1) == 0 ) /*0x423101*/
-//G42-DUP     IDA_BYTE1(v22) |= 8u; /*0x423103*/
+//G42-DUP     (((v22) >> 8) & 0xFF) |= 8u; /*0x423103*/
 //G42-DUP   *(unsigned int *)v101 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 114))(this);;
 //G42-DUP   v25 = (CoordStruct *)*((unsigned int *)this + 50); /*0x423114*/
 //G42-DUP   aP10 = (ConvertClass *)1000; /*0x42311a*/
@@ -995,11 +979,6 @@ LABEL_99:
 //G42-DUP   IDA_HIWORD(v94) = v60[1] / 256; /*0x423608*/
 //G42-DUP   aP0 = v94; /*0x423615*/
 //G42-DUP   v61 = ((CellCoord *)(&stru_87C374.__pad_14B0[8132]))->To_CellObj((int16_t *)&aP0); /*0x42361a*/
-//DUPDEF   if ( ((CellClass *)(v61))->QuickPassable() ) /*0x423621*/
-//DUPDEF   {
-//DUPDEF     *(float *)&v41 = 0.0; /*0x42362a*/
-//DUPDEF     *(float *)&aP2 = 0.0; /*0x42362c*/
-//DUPDEF   }
 //G42-DUP   v62 = (CoordStruct *)*((unsigned int *)this + 50); /*0x423630*/
 //G42-DUP   if ( IDA_HIBYTE(v62[71].Y) ) /*0x423636*/
 //G42-DUP   {
@@ -1015,7 +994,7 @@ LABEL_99:
 //G42-DUP     v86 = 0; /*0x423679*/
 //G42-DUP     v68 = (IUnknown *)(*(int (**)(unsigned int *))(v66 + 464))(this); /*0x42367e*/
 //G42-DUP     v69 = (ConvertClass *)(*((unsigned int *)this + 64) + *(unsigned int *)(*((unsigned int *)this + 50) + 836) - ZCoordToScreenY(v68) - 50); /*0x4236a1*/
-//G42-DUP     IDA_BYTE1(v22) |= 0x20u; /*0x4236a4*/
+//G42-DUP     (((v22) >> 8) & 0xFF) |= 0x20u; /*0x4236a4*/
 //G42-DUP     do /*0x423719*/
 //G42-DUP     {
 //G42-DUP       v70 = v67 + *(unsigned int *)(*((unsigned int *)this + 50) + 836); /*0x4236bb*/
@@ -1054,7 +1033,7 @@ LABEL_99:
 //G42-DUP     v72 = *this; /*0x42375e*/
 //G42-DUP     v102 = (ConvertClass *)(v109 + v71); /*0x423766*/
 //G42-DUP     v73 = (IUnknown *)(*(int (**)(unsigned int *))(v72 + 464))(this); /*0x42376a*/
-//G42-DUP     IDA_BYTE1(v22) |= 0x20u; /*0x42379b*/
+//G42-DUP     (((v22) >> 8) & 0xFF) |= 0x20u; /*0x42379b*/
 //G42-DUP     v80 = *((unsigned int *)this + 64) + *(unsigned int *)(*((unsigned int *)this + 50) + 836) - ZCoordToScreenY(v73) - 3; /*0x42379e*/
 //G42-DUP     DrawToSurfaceSHP( /*0x4237a9*/
 //G42-DUP       *(int *)&stru_87C374.__pad_579C[22532],
@@ -1083,7 +1062,7 @@ LABEL_99:
 //G42-DUP     v75 = (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 116))(this);;
 //G42-DUP     v76 = *((unsigned int *)this + 64) + *(unsigned int *)(*((unsigned int *)this + 50) + 836) - ZCoordToScreenY(v75); /*0x4237ff*/
 //G42-DUP     v77 = (ConvertClass *)v22; /*0x423801*/
-//G42-DUP     IDA_BYTE1(v77) = IDA_BYTE1(v22) | 0x20; /*0x423806*/
+//G42-DUP     (((v77) >> 8) & 0xFF) = (((v22) >> 8) & 0xFF) | 0x20; /*0x423806*/
 //G42-DUP     DrawToSurfaceSHP( /*0x423827*/
 //G42-DUP       *(int *)&stru_87C374.__pad_579C[22532],
 //G42-DUP       v105[0],

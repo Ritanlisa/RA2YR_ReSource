@@ -252,7 +252,7 @@ int Stream::GetChecked()
 {
 
   if ( !this->m_Stream ) /*0x45a053*/
-    WinAPI::Wrapper(-2147467261); /*0x45a05d*/
+    sub_7DC720(-2147467261); /*0x45a05d*/
   return (int)this->m_Stream->__pad_0; /*0x45a064*/
 
 }

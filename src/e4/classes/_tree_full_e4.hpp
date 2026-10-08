@@ -246,7 +246,6 @@ struct State;
 struct VectorClass;
 #endif
 struct VectorCursor_uint_DynamicVectorClass_uint;
-struct WinAPI;
 struct WorldDominationTour;
 struct _;
 
@@ -1065,14 +1064,6 @@ struct VectorCursor_uint_DynamicVectorClass_uint {
     unsigned char __pad_0;  // 0x0
 };
 #endif  // GAMEMD_TREE_UNIVERSE (VectorCursor_uint_DynamicVectorClass_uint)
-
-#ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
-struct WinAPI {
-    void* vfptr;
-    static int Wrapper(int a2);  // consensus: 350+ uniform 1-arg sites
-    void* lpVtbl;  // 0x0 (vtable slot)
-};
-#endif  // GAMEMD_TREE_UNIVERSE (WinAPI)
 
 #ifndef GAMEMD_TREE_UNIVERSE  // G42.35a: tree TU real class supplied elsewhere
 struct WorldDominationTour {

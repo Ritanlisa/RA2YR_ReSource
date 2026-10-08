@@ -371,7 +371,7 @@ unsigned int sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
   if ( v5 != 4 * a4 ) /*0x5c6428*/
   {
     IDA_LOBYTE(a3) = (*((unsigned int *)this + a4 - 1) >= 0) - 1; /*0x5c642b*/
-    IDA_BYTE1(a3) = (unsigned char)(a3); /*0x5c642d*/
+    (((a3) >> 8) & 0xFF) = (unsigned char)(a3); /*0x5c642d*/
     v9 = (void *)((unsigned int)(a3)<< 16); /*0x5c6435*/
     IDA_LOWORD(v9) = (unsigned short)(a3); /*0x5c6438*/
     memset32(a2,(unsigned int)(v9), v8 >> 2); /*0x5c643f*/
@@ -1238,7 +1238,7 @@ int SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4, 
               v35 = *((uint16_t *)v32 - 1) - v34 - v37; /*0x5c74ca*/
               *((unsigned short *)v32 - 1) = v35; /*0x5c74cc*/
               --v33; /*0x5c74d5*/
-              v37 = IDA_BYTE2(v35) & 1; /*0x5c74d6*/
+              v37 = (((v35) >> 16) & 0xFF) & 1; /*0x5c74d6*/
             }
             while ( v33 ); /*0x5c74da*/
           }
@@ -1544,7 +1544,7 @@ int ModInverseBigInteger(char * a1, const void * a2, const void * a3, int a4)
         v17 = *((uint16_t *)v12 - 1) - v16 - v27; /*0x5c78b9*/
         *((unsigned short *)v13 - 1) = v17; /*0x5c78bb*/
         --v14; /*0x5c78c4*/
-        v27 = IDA_BYTE2(v17) & 1; /*0x5c78c5*/
+        v27 = (((v17) >> 16) & 0xFF) & 1; /*0x5c78c5*/
       }
       while ( v14 ); /*0x5c78c9*/
     }
@@ -1713,7 +1713,7 @@ int DivideBigInteger(unsigned int * a1, char * a2, int a3)
             v26 = *((uint16_t *)v23 - 1) - v25 - v29; /*0x5c7b45*/
             *((unsigned short *)v23 - 1) = v26; /*0x5c7b47*/
             --v24; /*0x5c7b50*/
-            v29 = IDA_BYTE2(v26) & 1; /*0x5c7b51*/
+            v29 = (((v26) >> 16) & 0xFF) & 1; /*0x5c7b51*/
           }
           while ( v24 ); /*0x5c7b55*/
         }
@@ -2255,7 +2255,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
       v5 = 0; /*0x5c8b09*/
       *((unsigned short *)v6 - 1) = v9; /*0x5c8b0b*/
       --v7; /*0x5c8b14*/
-      v34 = IDA_BYTE2(v9) & 1; /*0x5c8b15*/
+      v34 = (((v9) >> 16) & 0xFF) & 1; /*0x5c8b15*/
     }
     while ( v7 ); /*0x5c8b19*/
   }
@@ -2293,7 +2293,7 @@ char ValidateRSAKey(int a1, char * a2, int a3, int a4)
         v14 = v13 - v37; /*0x5c8c15*/
         *((unsigned short *)v11 - 1) = v14; /*0x5c8c17*/
         --v12; /*0x5c8c20*/
-        v37 = IDA_BYTE2(v14) & 1; /*0x5c8c21*/
+        v37 = (((v14) >> 16) & 0xFF) & 1; /*0x5c8c21*/
       }
       while ( v12 ); /*0x5c8c25*/
       v10 = v36; /*0x5c8c27*/
@@ -2446,7 +2446,7 @@ char sub_5C8E40(ObjectClass * aP0, int a2, int a3, ObjectClass * aP3, int a5)
       v7 += 2; /*0x5c8ea1*/
       v9 = v8 - v33; /*0x5c8ea4*/
       *((unsigned short *)v7 - 1) = v9; /*0x5c8ea6*/
-      v33 = IDA_BYTE2(v9) & 1; /*0x5c8eaf*/
+      v33 = (((v9) >> 16) & 0xFF) & 1; /*0x5c8eaf*/
       --v36; /*0x5c8eb8*/
     }
     while ( v36 ); /*0x5c8ebc*/
@@ -3876,9 +3876,9 @@ unsigned char DecodeAudioSampleWord(int a1, unsigned short * a2, unsigned short 
     v8 = v7 - a3 - a4; /*0x5c6b93*/
     a3 = 0; /*0x5c6b95*/
     *(unsigned short *)(a1 - 2) = v8; /*0x5c6b97*/
-    result = IDA_BYTE2(v8) & 1; /*0x5c6b9e*/
+    result = (((v8) >> 16) & 0xFF) & 1; /*0x5c6b9e*/
     --v6; /*0x5c6ba0*/
-    a4 = IDA_BYTE2(v8) & 1; /*0x5c6ba1*/
+    a4 = (((v8) >> 16) & 0xFF) & 1; /*0x5c6ba1*/
   }
   while ( v6 ); /*0x5c6ba5*/
   return result; /*0x5c6ba8*/

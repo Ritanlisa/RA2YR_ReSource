@@ -745,7 +745,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
     v7 = (int *)(0); /*0x7696a5*/
   Block = (void *)(v7); /*0x7696ab*/
   ((unsigned int *)&v55)[0] = &v51; /*0x7696af*/
-  IDA_BYTE1(v54) = 1; /*0x7696b7*/
+  (((v54) >> 8) & 0xFF) = 1; /*0x7696b7*/
   ((unsigned int *)&v55)[0] = 0; /*0x7696bc*/
   ((unsigned int *)&v55)[0] = (unsigned int)((void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable); /*0x7696c0*/
   if ( Map_WorldDominationTour_38::AddRef(  (char *)&v55) ) /*0x7696c8*/
@@ -815,12 +815,12 @@ int WDTMap_LoadAsset(const char ** a1, int a2, void * aWdtmapmdIni_0)
                 while ( v14 ); /*0x7697cf*/
                 abstractFlags = (unsigned int)((char *)&v55); /*0x7697d1*/
               }
-              if ( IDA_BYTE1(v54) ) /*0x7697db*/
+              if ( (((v54) >> 8) & 0xFF) ) /*0x7697db*/
                 RA2_OPDEL(Block); /*0x7697e2*/
             }
             Block = (void *)(v13); /*0x7697ea*/
             v53 = v11; /*0x7697ee*/
-            IDA_BYTE1(v54) = 1; /*0x7697f2*/
+            (((v54) >> 8) & 0xFF) = 1; /*0x7697f2*/
           }
         }
         v18 = (unsigned int *)((char *)Block + 12 * abstractFlags); /*0x769810*/

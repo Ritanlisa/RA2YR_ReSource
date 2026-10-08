@@ -255,7 +255,7 @@ v9 = (*(int (**)(HWND, int, unsigned char *, int, int))(*(unsigned int *)g_Clipb
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
         goto LABEL_36; /*0x5f30d5*/
   LABEL_35:
-      IDA_BYTE2(Buffer) = 0; /*0x5f310c*/
+      (((Buffer) >> 16) & 0xFF) = 0; /*0x5f310c*/
       IDA_LOWORD(Buffer) = word_8327A0; /*0x5f3118*/
       ((WinModemClass *)((int *)v14))->WriteSerial( (LPCVOID)(&Buffer), 2u); /*0x5f3124*/
       goto LABEL_36; /*0x5f3124*/
@@ -849,12 +849,12 @@ AbstractClass * * GenerateRangeRingTextures()
     dword_AC1838 = (unsigned int)((void *)RA2_OPNEW(0x40000u)); /*0x5ff776*/
     do /*0x5ff7ed*/
     {
-      IDA_BYTE1(v21) = (uint8_t)((uint16_t)v1 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ff7aa*/
+      (((v21) >> 8) & 0xFF) = (uint8_t)((uint16_t)v1 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ff7aa*/
       IDA_LOBYTE(v18) = 0; /*0x5ff7bb*/
       IDA_HIBYTE(v18) = (uint8_t)((uint16_t)v1 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ff7bd*/
-      IDA_BYTE2(v21) = (uint8_t)((uint16_t)v1 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ff7bf*/
-      result = (char *)IDA_BYTE2(v21); /*0x5ff7dc*/
-      *((unsigned int *)dword_AC1838 + v1++) = IDA_BYTE2(v21) | ((IDA_BYTE1(v21) | v18) << 8); /*0x5ff7e3*/
+      (((v21) >> 16) & 0xFF) = (uint8_t)((uint16_t)v1 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ff7bf*/
+      result = (char *)(((v21) >> 16) & 0xFF); /*0x5ff7dc*/
+      *((unsigned int *)dword_AC1838 + v1++) = (((v21) >> 16) & 0xFF) | (((((v21) >> 8) & 0xFF) | v18) << 8); /*0x5ff7e3*/
     }
     while ( v1 < 0x10000 ); /*0x5ff7ed*/
   }

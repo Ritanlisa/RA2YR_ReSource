@@ -2413,7 +2413,7 @@ LABEL_80:
           if ( ((ObjectClass *)((ObjectClass *)firstUnit))->DistanceTo((int)firstUnit->movementDestination) <= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x6ebd7f*/
           {
             if ( !(&firstUnit->locomotor)[0] ) /*0x6ebd85*/
-              WinAPI::Wrapper(-2147467261); /*0x6ebd94*/
+              sub_7DC720(-2147467261); /*0x6ebd94*/
             if ( !(*(uint8_t (**)(int))(*(unsigned int *)(&firstUnit->locomotor)[0] + 16))((&firstUnit->locomotor)[0]) ) /*0x6ebda2*/
             {
 LABEL_87:

@@ -199,7 +199,7 @@ int UnitClass::Mission_Harvest()
         goto LABEL_9; /*0x415250*/
       case 1:
         if ( !*(unsigned int *)&this->Locomotor ) /*0x41542a*/
-          WinAPI::Wrapper(-2147467261); /*0x415439*/
+          sub_7DC720(-2147467261); /*0x415439*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x415447*/
           ((unsigned int *)this)[0] = 2; /*0x41544e*/
         if ( !(*((unsigned __int8 (__thiscall **)(AircraftClass *, AbstractClass *))this->vtable1 + 340))(this, ((unsigned int *)this)[0]) ) /*0x415463*/
@@ -207,7 +207,7 @@ int UnitClass::Mission_Harvest()
         goto LABEL_9; /*0x41547b*/
       case 2:
         if ( !*(unsigned int *)&this->Locomotor ) /*0x415480*/
-          WinAPI::Wrapper(-2147467261); /*0x41548f*/
+          sub_7DC720(-2147467261); /*0x41548f*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) ) /*0x41549d*/
           ((unsigned int *)this)[0] = 3; /*0x4154a4*/
         return 1; /*0x4154ba*/
@@ -1626,7 +1626,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
         return 1; /*0x737587*/
       case 0xEu:
         if ( !*((unsigned int *)this + 413) ) /*0x7377d8*/
-          WinAPI::Wrapper(-2147467261); /*0x7377e7*/
+          sub_7DC720(-2147467261); /*0x7377e7*/
         if ( ((*(unsigned __int8 (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) /*0x73780d*/
            || *((unsigned int *)this + 361))
           && *((unsigned int *)this + 43) == 2 )
@@ -1681,7 +1681,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
           }
           FootClass::MissionDispatch((FootClass *)a2, (int)v4, v4, (int)a4, v24); /*0x737a18*/
           if ( !*((unsigned int *)this + 413) ) /*0x737a1d*/
-            WinAPI::Wrapper(-2147467261); /*0x737a2c*/
+            sub_7DC720(-2147467261); /*0x737a2c*/
           if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) /*0x737a65*/
             && !*((unsigned char *)this + 1711)
             && !*((unsigned char *)this + 1048)
@@ -1757,7 +1757,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
         if ( *((unsigned char *)this + 1711) || *(unsigned short *)ProgressTimer::GetValue((ProgressTimer *)(this + 904), &v27) == 0x4000 ) /*0x7376de*/
         {
           if ( !*((unsigned int *)this + 413) ) /*0x73771b*/
-            WinAPI::Wrapper(-2147467261); /*0x73772a*/
+            sub_7DC720(-2147467261); /*0x73772a*/
           if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x737738*/
           {
             Member = Team::GetMember((Team *)this, 0); /*0x737748*/
@@ -1777,7 +1777,7 @@ int UnitClass::MissionDispatch(int* a2, int a3, int* a4)
         {
           IDA_LOWORD(a2) = 0x4000; /*0x7376e6*/
           if ( !*((unsigned int *)this + 413) ) /*0x7376e0*/
-            WinAPI::Wrapper(-2147467261); /*0x7376f6*/
+            sub_7DC720(-2147467261); /*0x7376f6*/
           (*(void (__stdcall **)(unsigned int, BuildingClass *))(**((unsigned int **)this + 413) + 76))(*((unsigned int *)this + 413), a2); /*0x737709*/
           return 1; /*0x73770f*/
         }
@@ -2111,7 +2111,7 @@ mov     word ptr [esp+34h+arg_0], 4000h
 test    eax, eax
 jnz     short loc_7376FB
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_7376FB:                             ; CODE XREF: UnitClass__MissionDispatch+2BF↑j
@@ -2136,7 +2136,7 @@ mov     eax, [esi+674h]
 test    eax, eax
 jnz     short loc_73772F
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_73772F:                             ; CODE XREF: UnitClass__MissionDispatch+2F3↑j
@@ -2214,7 +2214,7 @@ mov     eax, [esi+674h] ; jumptable 00737455 case 14
 test    eax, eax
 jnz     short loc_7377EC
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_7377EC:                             ; CODE XREF: UnitClass__MissionDispatch+3B0↑j
@@ -2413,7 +2413,7 @@ mov     eax, [esi+674h]
 test    eax, eax
 jnz     short loc_737A31
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_737A31:                             ; CODE XREF: UnitClass__MissionDispatch+5F5↑j
@@ -2786,7 +2786,7 @@ int UnitClass::CalcMoveTarget()
               || (*(int (__thiscall **)(unsigned int *))(*v55 + 44))(v55) == 15 )
             {
               if ( !v55[413] ) /*0x735f11*/
-                WinAPI::Wrapper(-2147467261); /*0x735f1e*/
+                sub_7DC720(-2147467261); /*0x735f1e*/
               if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)v55[413] + 16))(v55[413]) ) /*0x735f2c*/
               {
                 v56 = *v55; /*0x735f33*/
@@ -3201,7 +3201,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
         {
           v26 = this + 1652; /*0x741eb5*/
           if ( !*((unsigned int *)this + 413) ) /*0x741eaf*/
-            WinAPI::Wrapper(-2147467261); /*0x741ec4*/
+            sub_7DC720(-2147467261); /*0x741ec4*/
           if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int * *)&v26->uniqueId)(*(unsigned int *)v26) ) /*0x741ece*/
           {
             v27 = *(unsigned int *)v26; /*0x741ed9*/
@@ -3210,10 +3210,10 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               goto LABEL_90; /*0x741ee5*/
             v28 = StreamClass::Set2((StreamClass *)&v135.ComPtr_field_0x04, (unsigned int *)this + 413); /*0x741eec*/
             if ( v28 < 0 && v28 != -2147467262 ) /*0x741efa*/
-              WinAPI::Wrapper(v28); /*0x741efd*/
+              sub_7DC720(v28); /*0x741efd*/
             if ( !v135.ComPtr_field_0x04 ) /*0x741f08*/
   LABEL_90:
-              WinAPI::Wrapper(-2147467261); /*0x741f0f*/
+              sub_7DC720(-2147467261); /*0x741f0f*/
             (*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v135.ComPtr_field_0x04 + 12))(v135.ComPtr_field_0x04, v140); /*0x741f20*/
             if ( !memcmp(v140, &stru_7E9A30, 0x10u) ) /*0x741f33*/
             {
@@ -3235,7 +3235,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               (*(void (__thiscall **)(Class_7F5C70 *))(*((unsigned int *)this + 354) + 12))(this + 1416); /*0x741fa6*/
               v32 = (*(int (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)this + 452))(this); /*0x741fae*/
               v5 = (short *)v32; /*0x741fb4*/
-              IDA_BYTE4(a2) = 0; /*0x741fb6*/
+              (((a2) >> 32) & 0xFF) = 0; /*0x741fb6*/
               IDA_LODWORD(a2) = v32; /*0x741fc0*/
               if ( v32 ) /*0x741fc7*/
               {
@@ -3285,7 +3285,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
         }
         if ( !*(unsigned char *)(*((unsigned int *)this + 433) + 3372) ) /*0x7420a5*/
           goto LABEL_128; /*0x7420a5*/
-        if ( !IDA_BYTE4(a2) ) /*0x7420b4*/
+        if ( !(((a2) >> 32) & 0xFF) ) /*0x7420b4*/
           goto LABEL_143; /*0x7420b4*/
         v130 = (*(int (__thiscall **)(Class_7F5C70 *, unsigned int))(*(unsigned int *)this + 188))(this, 0); /*0x7420ca*/
         v36 = (unsigned int *)(*(int (__thiscall **)(Class_7F5C70 *, unsigned int *, unsigned int))(*(unsigned int *)this + 76))(this, v137, 0); /*0x7420d7*/
@@ -3357,7 +3357,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
           IDA_LODWORD(a2) = BuildingClass::FindPlacementCells((BuildingClass *)this, IDA_SLODWORD(a2)); /*0x7422d0*/
   LABEL_130:
           if ( !*((unsigned int *)this + 413) ) /*0x7422f7*/
-            WinAPI::Wrapper(-2147467261); /*0x742306*/
+            sub_7DC720(-2147467261); /*0x742306*/
           if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 152))(*((unsigned int *)this + 413)) ) /*0x742314*/
           {
             v44 = *((unsigned int *)this + 356); /*0x742322*/
@@ -3395,10 +3395,10 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
             goto LABEL_152; /*0x742424*/
           v49 = StreamClass::Set2((StreamClass *)&v135, (unsigned int *)this + 413); /*0x74242e*/
           if ( v49 < 0 && v49 != -2147467262 ) /*0x74243c*/
-            WinAPI::Wrapper(v49); /*0x74243f*/
+            sub_7DC720(v49); /*0x74243f*/
           if ( !*(unsigned int *)v135.__pad_0 ) /*0x74244a*/
   LABEL_152:
-            WinAPI::Wrapper(-2147467261); /*0x742451*/
+            sub_7DC720(-2147467261); /*0x742451*/
           (*(void (__stdcall **)(unsigned int, short *))(**(unsigned int **)v135.__pad_0 + 12))(*(unsigned int *)v135.__pad_0, v138); /*0x742462*/
           v131 = 1; /*0x742467*/
           if ( !v48 ) /*0x74246c*/
@@ -3425,7 +3425,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               {
                 v67 = this + 1652; /*0x7427d5*/
                 if ( !*((unsigned int *)this + 413) ) /*0x7427cf*/
-                  WinAPI::Wrapper(-2147467261); /*0x7427e4*/
+                  sub_7DC720(-2147467261); /*0x7427e4*/
                 if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int * *)&v67->uniqueId)(*(unsigned int *)v67) ) /*0x7427ee*/
                 {
                   v68 = *(unsigned int *)v67; /*0x7427f9*/
@@ -3447,10 +3447,10 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                   }
                   *(unsigned int *)v135.__pad_0 = v71; /*0x742841*/
                   if ( v70 < 0 && v70 != -2147467262 ) /*0x74284d*/
-                    WinAPI::Wrapper(v70); /*0x742850*/
+                    sub_7DC720(v70); /*0x742850*/
                   if ( !v71 ) /*0x74285b*/
   LABEL_240:
-                    WinAPI::Wrapper(-2147467261); /*0x742862*/
+                    sub_7DC720(-2147467261); /*0x742862*/
                   (*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v71 + 12))(v71, v141); /*0x742876*/
                   if ( !memcmp(v141, &stru_7E9A50, 0x10u) /*0x742899*/
                     && !(*(int (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)this + 456))(this) )
@@ -3517,7 +3517,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                         }
                         *(unsigned int *)v134.__pad_0 = v87; /*0x742a2a*/
                         if ( v86 < 0 && v86 != -2147467262 ) /*0x742a36*/
-                          WinAPI::Wrapper(v86); /*0x742a39*/
+                          sub_7DC720(v86); /*0x742a39*/
                         if ( v87 && (*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)v87 + 28))(v87) ) /*0x742a49*/
                         {
                           if ( *(unsigned int *)v84 ) /*0x742a50*/
@@ -3525,16 +3525,16 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                           v89 = *(unsigned int *)v134.__pad_0; /*0x742a5c*/
                           *(unsigned int *)v84 = 0; /*0x742a60*/
                           if ( !v89 ) /*0x742a68*/
-                            WinAPI::Wrapper(-2147467261); /*0x742a6f*/
+                            sub_7DC720(-2147467261); /*0x742a6f*/
                           (*(void (__stdcall **)(int, Class_7F5C70 *))(*(unsigned int *)v89 + 16))(v89, this + 1652); /*0x742a7c*/
                         }
                       }
                       v134.m_Data = 0; /*0x742a8c*/
                       InstanceCOM = CreateInstanceCOM((ObjectClass *)&v134.m_Data, (IID *)&stru_7E9A30, 0, 7u); /*0x742a94*/
                       if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x742aa2*/
-                        WinAPI::Wrapper(InstanceCOM); /*0x742aa5*/
+                        sub_7DC720(InstanceCOM); /*0x742aa5*/
                       if ( !v134.m_Data ) /*0x742ab0*/
-                        WinAPI::Wrapper(-2147467261); /*0x742ab7*/
+                        sub_7DC720(-2147467261); /*0x742ab7*/
                       (*(void (__stdcall **)(int, Class_7F5C70 *))(*(unsigned int *)v134.m_Data + 12))(v134.m_Data, this); /*0x742ac4*/
                       StreamClass_field_0C = 0; /*0x742acb*/
                       v134.StreamClass_field_0C = 0; /*0x742acf*/
@@ -3555,7 +3555,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                         }
                         v134.StreamClass_field_0C = StreamClass_field_0C; /*0x742b11*/
                         if ( v93 < 0 && v93 != -2147467262 ) /*0x742b1d*/
-                          WinAPI::Wrapper(v93); /*0x742b20*/
+                          sub_7DC720(v93); /*0x742b20*/
                       }
                       v95 = *(unsigned int *)v134.__pad_0; /*0x742b29*/
                       if ( *(unsigned int *)v134.__pad_0 != StreamClass_field_0C ) /*0x742b2f*/
@@ -3598,7 +3598,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                         v135.ComPtr_field_0x14 = *((unsigned int *)this + 40); /*0x742bab*/
                         v135.ComPtr_field_0x18 = *((unsigned int *)this + 41); /*0x742bb2*/
                         if ( !*(unsigned int *)v84 ) /*0x742bb6*/
-                          WinAPI::Wrapper(-2147467261); /*0x742bc1*/
+                          sub_7DC720(-2147467261); /*0x742bc1*/
                         v99 = *(int **)v84; /*0x742bc6*/
                         v100 = **(unsigned int **)v84; /*0x742bd2*/
                         v101 = Coord::To_Cell((Coord *)&dword_87F7E8, &v135.ComPtr_field_0x10); /*0x742bd4*/
@@ -3782,7 +3782,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               IDA_LODWORD(a2) = 0; /*0x742f3d*/
   LABEL_345:
               if ( !*((unsigned int *)this + 413) ) /*0x742f48*/
-                WinAPI::Wrapper(-2147467261); /*0x742f57*/
+                sub_7DC720(-2147467261); /*0x742f57*/
               if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 96))(*((unsigned int *)this + 413)) /*0x742f76*/
                 && !HouseClass::IonSensitivesShouldBeOffline() )
               {
@@ -3805,7 +3805,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                         goto LABEL_365; /*0x742fe2*/
                     }
                     if ( !*((unsigned int *)this + 413) ) /*0x74312f*/
-                      WinAPI::Wrapper(-2147467261); /*0x74313e*/
+                      sub_7DC720(-2147467261); /*0x74313e*/
                     (*(void (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 88))(*((unsigned int *)this + 413)); /*0x74314c*/
                   }
                 }
@@ -3823,12 +3823,12 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               {
                 v56 = StreamClass::Set(&v134, (unsigned int *)this + 413); /*0x74260d*/
                 if ( v56 < 0 && v56 != -2147467262 ) /*0x74261b*/
-                  WinAPI::Wrapper(v56); /*0x74261e*/
+                  sub_7DC720(v56); /*0x74261e*/
                 if ( *(unsigned int *)v134.__pad_0 /*0x74262e*/
                   && (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)v134.__pad_0 + 28))(*(unsigned int *)v134.__pad_0) )
                 {
                   if ( !*(unsigned int *)v134.__pad_0 ) /*0x74263b*/
-                    WinAPI::Wrapper(-2147467261); /*0x742642*/
+                    sub_7DC720(-2147467261); /*0x742642*/
                   if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)v134.__pad_0 + 20))(*(unsigned int *)v134.__pad_0) ) /*0x74264e*/
                   {
                     if ( *(unsigned int *)v47 ) /*0x742655*/
@@ -3836,7 +3836,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                     v57 = *(unsigned int *)v134.__pad_0; /*0x742661*/
                     *(unsigned int *)v47 = 0; /*0x742665*/
                     if ( !v57 ) /*0x74266d*/
-                      WinAPI::Wrapper(-2147467261); /*0x742674*/
+                      sub_7DC720(-2147467261); /*0x742674*/
                     (*(void (__stdcall **)(int, Class_7F5C70 *))(*(unsigned int *)v57 + 16))(v57, this + 1652); /*0x742681*/
                   }
                 }
@@ -3844,9 +3844,9 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               v134.StreamClass_field_0C = 0; /*0x742691*/
               v58 = CreateInstanceCOM((ObjectClass *)&v134.StreamClass_field_0C, (IID *)&stru_7E9A30, 0, 7u); /*0x742699*/
               if ( v58 < 0 && v58 != -2147467262 ) /*0x7426a7*/
-                WinAPI::Wrapper(v58); /*0x7426aa*/
+                sub_7DC720(v58); /*0x7426aa*/
               if ( !v134.StreamClass_field_0C ) /*0x7426b5*/
-                WinAPI::Wrapper(-2147467261); /*0x7426bc*/
+                sub_7DC720(-2147467261); /*0x7426bc*/
               (*(void (__stdcall **)(int, Class_7F5C70 *))(*(unsigned int *)v134.StreamClass_field_0C + 12))( /*0x7426c9*/
                 v134.StreamClass_field_0C,
                 this);
@@ -3869,7 +3869,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                 }
                 v134.m_Data = v59; /*0x742716*/
                 if ( v61 < 0 && v61 != -2147467262 ) /*0x742722*/
-                  WinAPI::Wrapper(v61); /*0x742725*/
+                  sub_7DC720(v61); /*0x742725*/
               }
               v63 = *(unsigned int *)v134.__pad_0; /*0x74272e*/
               if ( *(unsigned int *)v134.__pad_0 != v59 ) /*0x742734*/
@@ -3918,12 +3918,12 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
           {
             v53 = StreamClass::Set(&v134, (unsigned int *)this + 413); /*0x742513*/
             if ( v53 < 0 && v53 != -2147467262 ) /*0x742521*/
-              WinAPI::Wrapper(v53); /*0x742524*/
+              sub_7DC720(v53); /*0x742524*/
             if ( *(unsigned int *)v134.__pad_0 /*0x742534*/
               && (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)v134.__pad_0 + 28))(*(unsigned int *)v134.__pad_0) )
             {
               if ( !*(unsigned int *)v134.__pad_0 ) /*0x742541*/
-                WinAPI::Wrapper(-2147467261); /*0x742548*/
+                sub_7DC720(-2147467261); /*0x742548*/
               if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)v134.__pad_0 + 20))(*(unsigned int *)v134.__pad_0) ) /*0x742554*/
               {
                 if ( *(unsigned int *)v47 ) /*0x74255b*/
@@ -3931,7 +3931,7 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
                 v54 = *(unsigned int *)v134.__pad_0; /*0x742567*/
                 *(unsigned int *)v47 = 0; /*0x74256b*/
                 if ( !v54 ) /*0x742573*/
-                  WinAPI::Wrapper(-2147467261); /*0x74257a*/
+                  sub_7DC720(-2147467261); /*0x74257a*/
                 (*(void (__stdcall **)(int, Class_7F5C70 *))(*(unsigned int *)v54 + 16))(v54, this + 1652); /*0x742587*/
                 goto LABEL_179; /*0x74258a*/
               }
@@ -3949,10 +3949,10 @@ int UnitClass::AssignDestination_SyncLog(int64_t a2)
               goto LABEL_181; /*0x7425d8*/
             }
           }
-          WinAPI::Wrapper(-2147467261); /*0x742596*/
+          sub_7DC720(-2147467261); /*0x742596*/
         }
   LABEL_128:
-        if ( !IDA_BYTE4(a2) ) /*0x7422e2*/
+        if ( !(((a2) >> 32) & 0xFF) ) /*0x7422e2*/
           goto LABEL_143; /*0x7422e2*/
         (*(void (__thiscall **)(Class_7F5C70 *))(*((unsigned int *)this + 354) + 12))(this + 1416); /*0x7422f4*/
         goto LABEL_130; /*0x7422f4*/
@@ -4467,7 +4467,7 @@ lea     esi, [ebp+674h]
 test    eax, eax
 jnz     short loc_741EC9
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_741EC9:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+54D↑j
@@ -4489,7 +4489,7 @@ jge     short loc_741F02
 cmp     eax, 80004002h
 jz      short loc_741F02
 push    eax
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_741F02:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+583↑j
@@ -4500,7 +4500,7 @@ jnz     short loc_741F18
 
 loc_741F0A:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+575↑j
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_60]
 
@@ -4859,7 +4859,7 @@ mov     eax, [ebp+674h]
 test    eax, eax
 jnz     short loc_74230B
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_74230B:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+98F↑j
@@ -4967,7 +4967,7 @@ jge     short loc_742444
 cmp     eax, 80004002h
 jz      short loc_742444
 push    eax
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_742444:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+AC5↑j
@@ -4978,7 +4978,7 @@ jnz     short loc_74245A
 
 loc_74244C:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+AB7↑j
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_64]
 
@@ -5053,7 +5053,7 @@ jge     short loc_742529
 cmp     eax, 80004002h
 jz      short loc_742529
 push    eax
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_742529:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+BAA↑j
@@ -5070,7 +5070,7 @@ mov     eax, [esp+90h+var_78]
 test    eax, eax
 jnz     short loc_742551
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_78]
 
@@ -5093,7 +5093,7 @@ mov     dword ptr [ebx], 0
 test    eax, eax
 jnz     short loc_742583
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_78]
 
@@ -5112,7 +5112,7 @@ jnz     short loc_74259B
 
 loc_742591:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+B98↑j
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_74259B:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+C1F↑j
@@ -5164,7 +5164,7 @@ jge     short loc_742623
 cmp     eax, 80004002h
 jz      short loc_742623
 push    eax
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_742623:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+CA4↑j
@@ -5181,7 +5181,7 @@ mov     eax, [esp+90h+var_78]
 test    eax, eax
 jnz     short loc_74264B
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_78]
 
@@ -5204,7 +5204,7 @@ mov     dword ptr [ebx], 0
 test    eax, eax
 jnz     short loc_74267D
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_78]
 
@@ -5227,7 +5227,7 @@ jge     short loc_7426AF
 cmp     eax, 80004002h
 jz      short loc_7426AF
 push    eax
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_7426AF:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+D30↑j
@@ -5236,7 +5236,7 @@ mov     eax, [esp+90h+ppv]
 test    eax, eax
 jnz     short loc_7426C5
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+ppv]
 
@@ -5280,7 +5280,7 @@ jge     short loc_74272E
 cmp     esi, 80004002h
 jz      short loc_74272E
 push    esi
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, dword ptr [esp+90h+var_74]
 
@@ -5376,7 +5376,7 @@ lea     esi, [ebp+674h]
 test    eax, eax
 jnz     short loc_7427E9
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_7427E9:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+E6D↑j
@@ -5420,7 +5420,7 @@ jge     short loc_742859
 cmp     esi, 80004002h
 jz      short loc_742859
 push    esi
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_64]
 
@@ -5431,7 +5431,7 @@ jnz     short loc_74286B
 
 loc_74285D:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+E95↑j
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_64]
 
@@ -5587,7 +5587,7 @@ jge     short loc_742A42
 cmp     esi, 80004002h
 jz      short loc_742A42
 push    esi
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_78]
 
@@ -5613,7 +5613,7 @@ mov     dword ptr [ebx], 0
 test    eax, eax
 jnz     short loc_742A78
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+var_78]
 
@@ -5636,7 +5636,7 @@ jge     short loc_742AAA
 cmp     eax, 80004002h
 jz      short loc_742AAA
 push    eax
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_742AAA:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+112B↑j
@@ -5645,7 +5645,7 @@ mov     eax, dword ptr [esp+90h+var_74]
 test    eax, eax
 jnz     short loc_742AC0
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, dword ptr [esp+90h+var_74]
 
@@ -5689,7 +5689,7 @@ jge     short loc_742B29
 cmp     esi, 80004002h
 jz      short loc_742B29
 push    esi
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 mov     eax, [esp+90h+ppv]
 
@@ -5766,7 +5766,7 @@ mov     eax, [ebx]
 test    eax, eax
 jnz     short loc_742BC6
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_742BC6:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+124A↑j
@@ -6091,7 +6091,7 @@ mov     eax, [ebp+674h]
 test    eax, eax
 jnz     short loc_742F5C
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_742F5C:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+15E0↑j
@@ -6246,7 +6246,7 @@ mov     eax, [ebp+674h]
 test    eax, eax
 jnz     short loc_743143
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_743143:                             ; CODE XREF: UnitClass__AssignDestination_SyncLog+17C7↑j
@@ -6559,7 +6559,7 @@ int UnitClass::UpdateRotation_TurretFacing_EMP()
       else if ( ((unsigned int *)Type)[0] == 1 && !((unsigned int *)this)[0] ) /*0x736a38*/
       {
         if ( !*(unsigned int *)&this->Locomotor ) /*0x736a42*/
-          WinAPI::Wrapper(-2147467261); /*0x736a51*/
+          sub_7DC720(-2147467261); /*0x736a51*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) /*0x736a80*/
           && *(unsigned short *)ProgressTimer::GetValue((ProgressTimer *)((unsigned int *)this)[0], &v15) == (unsigned short)v14 )
         {
@@ -6680,7 +6680,7 @@ mov     eax, [esi+674h]
 test    eax, eax
 jnz     short loc_736A56
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_736A56:                             ; CODE XREF: UnitClass__UpdateRotation_TurretFacing_EMP+BA↑j
@@ -6909,14 +6909,14 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
       goto LABEL_7; /*0x743a80*/
     v10 = StreamClass::Set2(&v37, (unsigned int *)this + 413); /*0x743a87*/
     if ( v10 < 0 && v10 != -2147467262 ) /*0x743a95*/
-      WinAPI::Wrapper(v10); /*0x743a98*/
+      sub_7DC720(v10); /*0x743a98*/
     if ( !*(unsigned int *)v37.__pad_0 ) /*0x743aa3*/
   LABEL_7:
-      WinAPI::Wrapper(-2147467261); /*0x743aaa*/
+      sub_7DC720(-2147467261); /*0x743aaa*/
     (*(void (__stdcall **)(unsigned int, unsigned int *))(**(unsigned int **)v37.__pad_0 + 12))(*(unsigned int *)v37.__pad_0, v46); /*0x743abb*/
     if ( !memcmp(v46, &g_CLSID_HoverLocomotion, 0x10u) ) /*0x743ad0*/
       goto LABEL_66; /*0x743ad0*/
-    if ( !MissionClass_GetMissionControl((void *)this)[9] && !IDA_BYTE4(a2) ) /*0x743aea*/
+    if ( !MissionClass_GetMissionControl((void *)this)[9] && !(((a2) >> 32) & 0xFF) ) /*0x743aea*/
     {
       result = *(unsigned int *)v37.__pad_0; /*0x743aec*/
       if ( *(unsigned int *)v37.__pad_0 ) /*0x743af2*/
@@ -6940,7 +6940,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
       return result; /*0x744094*/
     }
     if ( !*(unsigned int *)v9 ) /*0x743b75*/
-      WinAPI::Wrapper(-2147467261); /*0x743b7f*/
+      sub_7DC720(-2147467261); /*0x743b7f*/
     if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int * *)&v9->u32_60)(*(unsigned int *)v9) ) /*0x743b89*/
     {
       result = *(unsigned int *)v37.__pad_0; /*0x743b90*/
@@ -6994,7 +6994,7 @@ int UnitClass::Scatter(CellStruct* threatPos, bool a3, bool a4)
     }
     if ( (*(int (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)this + 44))(this) == 1 && *((unsigned char *)this + 1745) /*0x743d33*/
       || *((unsigned int *)this + 361) && (!(unsigned char)a3 || *((unsigned char *)this + 1711))
-      || *((unsigned int *)this + 173) && !IDA_BYTE4(a2) && Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 1, 4) != 1 )
+      || *((unsigned int *)this + 173) && !(((a2) >> 32) & 0xFF) && Random_Range((void *)&dword_A8B230[14].NeedsSaveOrLink, 1, 4) != 1 )
     {
       goto LABEL_66; /*0x743d33*/
     }
@@ -7192,12 +7192,12 @@ int UnitClass::CheckForNearbyEnemies()
     if ( !(*((unsigned __int8 (__thiscall **)(UnitClass *))this->vtable1 + 49))(this) ) /*0x7468cd*/
     {
       if ( !*(unsigned int *)&this->Locomotor ) /*0x7468d7*/
-        WinAPI::Wrapper(-2147467261); /*0x7468e6*/
+        sub_7DC720(-2147467261); /*0x7468e6*/
       if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)((unsigned int *)this)[0] + 16))(((unsigned int *)this)[0]) && IDA_BYTE2(((unsigned int *)this->Type)[0]) ) /*0x746901*/
         v17 = Team::GetMember((Team *)this, 0) == 0; /*0x746918*/
     }
     if ( !*(unsigned int *)&this->Locomotor ) /*0x74691d*/
-      WinAPI::Wrapper(-2147467261); /*0x74692c*/
+      sub_7DC720(-2147467261); /*0x74692c*/
     if ( (*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)*(unsigned int *)&this->uniqueId + 16))(*(unsigned int *)&this->uniqueId) ) /*0x74693d*/
     {
   LABEL_30:
@@ -7298,7 +7298,7 @@ mov     eax, [esi+674h]
 test    eax, eax
 jnz     short loc_7468EB
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_7468EB:                             ; CODE XREF: UnitClass__CheckForNearbyEnemies+1F↑j
@@ -7325,7 +7325,7 @@ mov     eax, [esi+674h]
 test    eax, eax
 jnz     short loc_746931
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_746931:                             ; CODE XREF: UnitClass__CheckForNearbyEnemies+65↑j
@@ -8149,11 +8149,11 @@ int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
       if ( v20 > 2 && v20 < 6 && IDA_HIDWORD(a2) != -1 ) /*0x73f268*/
         return 7; /*0x73f279*/
     }
-    NeighbourContent = (InfantryClass *)((Cell *)IDA_LODWORD(a2))->GetNeighbourContent((IDA_BYTE4(a2) - 4) & 7); /*0x73f28a*/
+    NeighbourContent = (InfantryClass *)((Cell *)IDA_LODWORD(a2))->GetNeighbourContent(((((a2) >> 32) & 0xFF) - 4) & 7); /*0x73f28a*/
     v22 = InfantryClass::GetType(NeighbourContent); /*0x73f296*/
     if ( v22 ) /*0x73f29a*/
     {
-      v23 = abs32(((IDA_BYTE4(a2) - 4) & 7) - *(unsigned int *)(v22 + 44)); /*0x73f2a6*/
+      v23 = abs32((((((a2) >> 32) & 0xFF) - 4) & 7) - *(unsigned int *)(v22 + 44)); /*0x73f2a6*/
       if ( v23 > 2 && v23 < 6 && IDA_HIDWORD(a2) != -1 ) /*0x73f2b5*/
         return 7; /*0x73f2c6*/
     }
@@ -8385,7 +8385,7 @@ int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
             if ( !v44 && !(unsigned __int8)TimerClass::Active(v32 + 904) ) /*0x73f87f*/
             {
               if ( !*(unsigned int *)(v32 + 1652) ) /*0x73f888*/
-                WinAPI::Wrapper(-2147467261); /*0x73f897*/
+                sub_7DC720(-2147467261); /*0x73f897*/
               if ( !(*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v32 + 1652) + 16))(*(unsigned int *)(v32 + 1652)) ) /*0x73f8aa*/
                 goto LABEL_139; /*0x73f8aa*/
             }
@@ -8464,7 +8464,7 @@ int UnitClass::EvaluateTarget(int a2, int a3, int a4, int a5, char a6)
                   goto LABEL_150; /*0x73fa44*/
                 }
                 if ( !*(unsigned int *)(v57 + 1652) ) /*0x73fa46*/
-                  WinAPI::Wrapper(-2147467261); /*0x73fa55*/
+                  sub_7DC720(-2147467261); /*0x73fa55*/
                 if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)(v57 + 1652) + 164))(*(unsigned int *)(v57 + 1652)) ) /*0x73fa63*/
                 {
   LABEL_150:
@@ -9749,7 +9749,7 @@ int UnitClass::ApproachEvaluate()
         if ( !this->movementDestination ) /*0x4d45a2*/
           goto LABEL_28; /*0x4d45a2*/
         if ( !this->locomotor[0] ) /*0x4d45aa*/
-          WinAPI::Wrapper(-2147467261); /*0x4d45b7*/
+          sub_7DC720(-2147467261); /*0x4d45b7*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 16))(this->locomotor[0]) ) /*0x4d45c5*/
         {
   LABEL_28:
@@ -10306,7 +10306,7 @@ jz      short loc_4D45CE
 cmp     [esi+674h], ebx
 jnz     short loc_4D45BC
 push    80004003h
-call    WinAPI__Wrapper
+call    sub_7DC720
 ; ---------------------------------------------------------------------------
 
 loc_4D45BC:                             ; CODE XREF: UnitClass__ApproachEvaluate+330↑j

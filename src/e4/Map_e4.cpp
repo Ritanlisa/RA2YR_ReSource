@@ -370,7 +370,7 @@ int sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
     for ( i = WideCharStr; ; ++i ) /*0x6821ce*/
     {
       if ( !v9 ) /*0x6821d8*/
-        WinAPI::Wrapper(-2147467261); /*0x6821df*/
+        sub_7DC720(-2147467261); /*0x6821df*/
       v6 = (*(int (**)(int, WCHAR *, int, unsigned int))(*(unsigned int *)v9 + 12))( v9, (WCHAR *)(i), 2, 0); /*0x6821f3*/
       if ( v6 < 0 ) /*0x6821f7*/
         break; /*0x6821f7*/
@@ -1323,7 +1323,7 @@ v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned short *
     while ( 1 ) /*0x6822a9*/
     {
       if ( !a3 ) /*0x6822af*/
-        WinAPI::Wrapper(-2147467261); /*0x6822b6*/
+        sub_7DC720(-2147467261); /*0x6822b6*/
       v7 = (*(int (**)(unsigned short *, unsigned short *, int, unsigned int))(*(unsigned int *)a3 + 12))( (unsigned short *)(a3), (unsigned short *)(v3), 2, 0); /*0x6822ca*/
       if ( v7 < 0 ) /*0x6822ce*/
         break; /*0x6822ce*/
@@ -1379,7 +1379,7 @@ v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned int **)
   if ( v7 >= 0 ) /*0x6824fe*/
   {
     if ( !a3 ) /*0x68251c*/
-      WinAPI::Wrapper(-2147467261); /*0x682523*/
+      sub_7DC720(-2147467261); /*0x682523*/
     v7 = (*(int (**)(unsigned int *, unsigned int *, int, unsigned int))(*a3 + 12))( (unsigned int *)(a3), (unsigned int *)(v3), 4, 0); /*0x682537*/
     if ( v7 >= 0 ) /*0x68253f*/
     {
@@ -2216,7 +2216,7 @@ int sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
     v6[0] = 1; /*0x682346*/
     v6[1] = a2; /*0x68234e*/
     if ( !lpMultiByteStr ) /*0x682352*/
-      WinAPI::Wrapper(-2147467261); /*0x682359*/
+      sub_7DC720(-2147467261); /*0x682359*/
 v4 = (*(int (**)(LPSTR, int, unsigned int *, unsigned short *))(*(unsigned int *)lpMultiByteStr + 12))( /*0x682374*/ lpMultiByteStr, 1, (unsigned int *)(v6), (unsigned short *)(v7));
 
 
@@ -2263,7 +2263,7 @@ int sub_6823D0(int a1, int a2, wchar_t * Destination)
     v6[0] = 1; /*0x682428*/
     v6[1] = a2; /*0x682430*/
     if ( !Destination ) /*0x682434*/
-      WinAPI::Wrapper(-2147467261); /*0x68243b*/
+      sub_7DC720(-2147467261); /*0x68243b*/
     v4 = (*(int (**)(wchar_t *, int, unsigned int *, unsigned short *))(*(unsigned int *)Destination + 12))( (wchar_t *)(Destination), 1, (unsigned int *)(v6), (unsigned short *)(v7)); /*0x682456*/
     if ( v4 >= 0 ) /*0x68245a*/
     {

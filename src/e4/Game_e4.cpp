@@ -1337,7 +1337,7 @@ LABEL_6:
   }
   v9 = 0; /*0x67e54b*/
   if ( !v8 ) /*0x67e551*/
-    WinAPI::Wrapper(-2147467261); /*0x67e558*/
+    sub_7DC720(-2147467261); /*0x67e558*/
   if ( v8->OpenStream((const OLECHAR *)&off_83D5A8, 0, 16, 0, (IStream **)&v9) >= 0 ) /*0x67e577*/
   {
     v7 = 0; /*0x67e5a6*/
@@ -1349,19 +1349,19 @@ LABEL_6:
       ppstgOpen->Release(); /*0x67e5f4*/
     }
     if ( !v7 ) /*0x67e5fd*/
-      WinAPI::Wrapper(-2147467261); /*0x67e604*/
+      sub_7DC720(-2147467261); /*0x67e604*/
     (*(void (**)(int, int))(*(unsigned int *)v7 + 12))(v7, v9); /*0x67e615*/
     pStm = 0; /*0x67e618*/
     if ( v7 ) /*0x67e620*/
     {
       v5 = Game::validateScenario( (unsigned int *)((unsigned int)(&v7))); /*0x67e62b*/
       if ( v5 < 0 && v5 != -2147467262 ) /*0x67e639*/
-        WinAPI::Wrapper(v5); /*0x67e63c*/
+        sub_7DC720(v5); /*0x67e63c*/
     }
     ((ProgressAnim *)((int)dword_AC4F58))->Init( 0, 1079574528, 0, 0); /*0x67e64e*/
     ((LoadGame *)pStm)->Start(); /*0x67e659*/
     if ( !v7 ) /*0x67e664*/
-      WinAPI::Wrapper(-2147467261); /*0x67e66b*/
+      sub_7DC720(-2147467261); /*0x67e66b*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)v7 + 16))(v7, 0); /*0x67e678*/
     SwizzleManager::ConvertWrapper((int)&SwizzleManagerClass_Instance); /*0x67e680*/
     Game_Load(); /*0x67e685*/

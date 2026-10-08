@@ -199,7 +199,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
     {
       v11 = ((StreamClass *)(&v28))->Set((unsigned int *)(v6 + 413)); /*0x71007a*/
       if ( v11 < 0 && v11 != -2147467262 ) /*0x710088*/
-        WinAPI::Wrapper(v11); /*0x71008b*/
+        sub_7DC720(v11); /*0x71008b*/
     }
     if ( *(unsigned char *)((*(int (**)(int *))(*v6 + 132))( (int *)(v6)) + 1516)
       && *(unsigned int *)v28.__pad_0
@@ -207,13 +207,13 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       && (*(uint8_t (**)(unsigned int))(**(unsigned int **)v28.__pad_0 + 28))(*(unsigned int *)v28.__pad_0) )
     {
       if ( !*(unsigned int *)v28.__pad_0 ) /*0x7100d6*/
-        WinAPI::Wrapper(-2147467261); /*0x7100dd*/
+        sub_7DC720(-2147467261); /*0x7100dd*/
       v12 = (*(uint8_t (**)(unsigned int))(**(unsigned int **)v28.__pad_0 + 20))(*(unsigned int *)v28.__pad_0) == 0; /*0x7100ec*/
       v13 = *v10; /*0x7100ee*/
       if ( v12 ) /*0x7100f0*/
       {
         if ( !v13 ) /*0x710126*/
-          WinAPI::Wrapper(-2147467261); /*0x71012d*/
+          sub_7DC720(-2147467261); /*0x71012d*/
         (*(void (**)(int))(*(unsigned int *)*v10 + 72))(*v10); /*0x710137*/
         (*(void (**)(int *, int))(*v6 + 496))( (int *)(v6), -1); /*0x710140*/
         (*(void (**)(int *, int, unsigned int))(*v6 + 488))( (int *)(v6), 13, 0); /*0x71014e*/
@@ -225,19 +225,19 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         v14 = *(unsigned int *)v28.__pad_0; /*0x7100fc*/
         *v10 = 0; /*0x710100*/
         if ( !v14 ) /*0x710108*/
-          WinAPI::Wrapper(-2147467261); /*0x71010f*/
+          sub_7DC720(-2147467261); /*0x71010f*/
         (*(void (**)(int, int *))(*(unsigned int *)v14 + 16))(v14, v6 + 413); /*0x71011c*/
       }
     }
     else
     {
       if ( !*v10 ) /*0x710159*/
-        WinAPI::Wrapper(-2147467261); /*0x710163*/
+        sub_7DC720(-2147467261); /*0x710163*/
       (*(void (**)(int, unsigned int))(*(unsigned int *)*v10 + 156))(*v10, 0); /*0x71016f*/
       v12 = *v10 == 0; /*0x710189*/
       v29 = dword_B0EA98; /*0x71018b*/
       if ( v12 ) /*0x71018f*/
-        WinAPI::Wrapper(-2147467261); /*0x710196*/
+        sub_7DC720(-2147467261); /*0x710196*/
       (*(void (**)(int, int, unsigned int, int, int))(*(unsigned int *)*v10 + 112))( /*0x7101b3*/
         *v10,
         -1,
@@ -256,21 +256,21 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       {
         v18 = ((StreamClass *)((StreamClass *)&v28.m_Data))->Set((unsigned int *)(v6 + 413)); /*0x7101ed*/
         if ( v18 < 0 && v18 != -2147467262 ) /*0x7101fb*/
-          WinAPI::Wrapper(v18); /*0x7101fe*/
+          sub_7DC720(v18); /*0x7101fe*/
       }
       a1 = (void *)(0); /*0x71020f*/
       InstanceCOM = CreateInstanceCOM((ObjectClass *)&a1, (IID *)&a2, 0, 7u); /*0x710213*/
       if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x710221*/
-        WinAPI::Wrapper(InstanceCOM); /*0x710224*/
+        sub_7DC720(InstanceCOM); /*0x710224*/
       if ( !a1 ) /*0x71022f*/
-        WinAPI::Wrapper(-2147467261); /*0x710236*/
+        sub_7DC720(-2147467261); /*0x710236*/
       (*(void (**)(int, int *))(*(unsigned int *)a1 + 12))( (int)a1, (int *)(v6)); /*0x710243*/
       v28.m_Position = 0; /*0x71024a*/
       if ( a1 ) /*0x710250*/
       {
         v20 = ((StreamClass *)((StreamClass *)&v28.m_Position))->Set( (unsigned int *)(&a1)); /*0x71025b*/
         if ( v20 < 0 && v20 != -2147467262 ) /*0x710269*/
-          WinAPI::Wrapper(v20); /*0x71026c*/
+          sub_7DC720(v20); /*0x71026c*/
       }
       ((COMObject *)((COMObject *)&v28.m_Data))->SwapReference((int)(v28.m_Position)); /*0x71027a*/
       if ( v28.m_Position ) /*0x710285*/
@@ -283,7 +283,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         if ( v6[171] ) /*0x7102ab*/
           ((TechnoClass *)v6)->EjectPassengers( 1); /*0x7102b7*/
         if ( !v28.m_Data ) /*0x7102c4*/
-          WinAPI::Wrapper(-2147467261); /*0x7102cb*/
+          sub_7DC720(-2147467261); /*0x7102cb*/
         (*(void (**)(int, int))(*(unsigned int *)v28.m_Data + 12))((int)v28.m_Data, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
         if ( *v10   !=   (int)(a1 )) /*0x7102e3*/

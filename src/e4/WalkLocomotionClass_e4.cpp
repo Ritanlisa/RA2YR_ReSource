@@ -277,7 +277,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
       pPStm = (int *)(0); /*0x75c76d*/
     }
     if ( v8 < 0 && v8 != -2147467262 ) /*0x75c797*/
-      WinAPI::Wrapper(v8); /*0x75c79a*/
+      sub_7DC720(v8); /*0x75c79a*/
   }
   v10 = OleSaveToStream( (LPPERSISTSTREAM)pPStm, (void *)(v3)); /*0x75c7ab*/
   if ( pPStm ) /*0x75c7b3*/

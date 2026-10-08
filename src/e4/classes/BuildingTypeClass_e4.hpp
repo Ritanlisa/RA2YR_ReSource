@@ -267,6 +267,7 @@ struct BuildingTypeClass {
     int Adjacent;  // 0x14180
     unsigned int vtable0;
     void* Flat_flag;  // 0x0 (no offset truth)
+    unsigned char CloakRadiusInCells;  // 0x1707 (ml 5895 CloakRadiusInCells unsigned char; ReadArmor 0x465475 站) g57w20m11b
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();

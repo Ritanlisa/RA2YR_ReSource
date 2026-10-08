@@ -192,13 +192,13 @@ int DamageArea::CheckOccupancyEligibility()
         v8 = 0; /*0x4d0215*/
       }
       if ( v5 < 0 && v5 != -2147467262 ) /*0x4d023a*/
-        WinAPI::Wrapper(v5); /*0x4d023d*/
+        sub_7DC720(v5); /*0x4d023d*/
       if ( v4 ) /*0x4d0248*/
       {
         if ( !(*(int (**)(int))(*(unsigned int *)v4 + 24))(v4) ) /*0x4d024d*/
         {
           if ( !v8 ) /*0x4d025a*/
-            WinAPI::Wrapper(-2147467261); /*0x4d0261*/
+            sub_7DC720(-2147467261); /*0x4d0261*/
           if ( !(*(int (**)(int))(*(unsigned int *)v8 + 28))(v8) ) /*0x4d026d*/
           {
             v4 = v8; /*0x4d0274*/

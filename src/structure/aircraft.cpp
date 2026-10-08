@@ -128,7 +128,7 @@ int AircraftClass::Mission_Attack()
             }
             unsigned int loco = *(unsigned int *)&locomotor;
             if (loco == 0)
-                WinAPI_Wrapper((int)0x80004003);
+                sub_7DC720((int)0x80004003);
             if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 128))(loco) == 0)
             {
                 missionStatus = 4;
@@ -526,7 +526,7 @@ int AircraftClass::Mission_Enter()
         destCoords = ((FootClass *)movementDestination)->GetDeployCoords((int *)((void *)movementDestination),(int)(destCell));
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
-            WinAPI_Wrapper((int)0x80004003);
+            sub_7DC720((int)0x80004003);
         (*(void (__cdecl **)(unsigned int, int))(*(unsigned int *)loco + 68))(loco, *destCoords);
         missionStatus = 2;
         return 1;
@@ -557,7 +557,7 @@ int AircraftClass::Mission_Enter()
         }
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
-            WinAPI_Wrapper((int)0x80004003);
+            sub_7DC720((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
         {
             missionStatus = 3;
@@ -591,7 +591,7 @@ int AircraftClass::Mission_Enter()
     case 3:
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
-            WinAPI_Wrapper((int)0x80004003);
+            sub_7DC720((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
             this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
         return 1;
@@ -599,7 +599,7 @@ int AircraftClass::Mission_Enter()
     case 4:
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
-            WinAPI_Wrapper((int)0x80004003);
+            sub_7DC720((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0
          || movementDestination != nullptr
             && (destCoords = ((FootClass *)movementDestination)->GetDeployCoords(destCell, 0),
@@ -703,7 +703,7 @@ int AircraftClass::Mission_Transport()
             {
                 loco = *(unsigned int *)&locomotor;
                 if (loco == 0)
-                    WinAPI_Wrapper((int)0x80004003);
+                    sub_7DC720((int)0x80004003);
                 if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)loco + 36))(loco) == 1
                  || (*(unsigned char *)((char *)Type + 3597) != 0 && GetZAboveGround(0) == 0))
                 {
@@ -716,7 +716,7 @@ int AircraftClass::Mission_Transport()
             {
                 loco = *(unsigned int *)&locomotor;
                 if (loco == 0)
-                    WinAPI_Wrapper((int)0x80004003);
+                    sub_7DC720((int)0x80004003);
                 if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)loco + 36))(loco) == 1)
                 {
                     missionStatus = 7;
@@ -739,7 +739,7 @@ int AircraftClass::Mission_Transport()
         {
             loco = *(unsigned int *)&locomotor;
             if (loco == 0)
-                WinAPI_Wrapper((int)0x80004003);
+                sub_7DC720((int)0x80004003);
             if ((*(int (__stdcall **)(unsigned int))(*(unsigned int *)loco + 36))(loco) == 1)
             {
                 if (movementDestination != nullptr)
@@ -856,7 +856,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
         FootClass::MissionDispatch(a2, a3, a4);
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
-            WinAPI_Wrapper((int)0x80004003);
+            sub_7DC720((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) != 0)
             return 1;
         RateScaler_Init((void *)&this->storedTiberium, Type->DeployTime);
@@ -909,7 +909,7 @@ int AircraftClass::MissionDispatch(void * a2, int a3, void ** a4)
         int baseResult = FootClass::MissionDispatch(a2, a3, a4);
         loco = *(unsigned int *)&locomotor;
         if (loco == 0)
-            WinAPI_Wrapper((int)0x80004003);
+            sub_7DC720((int)0x80004003);
         if ((*(unsigned char (__stdcall **)(unsigned int))(*(unsigned int *)loco + 16))(loco) == 0)
             return 1;
         if (movementDestination == nullptr)
@@ -1615,7 +1615,7 @@ int AircraftClass::IsHeightAboveThreshold()
         return ObjectClass::IsHeightAboveThreshold();
     unsigned int loco = *(unsigned int *)&locomotor;
     if (loco == 0)
-        WinAPI_Wrapper((int)0x80004003);
+        sub_7DC720((int)0x80004003);
     return (*(unsigned char (__stdcall **)(int))(*(unsigned int *)loco + 128))((int)loco) != 0;
 }
 // IDA: 0x41B980 (IsBelowScreen, 82B)

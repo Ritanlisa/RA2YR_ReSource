@@ -1008,7 +1008,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
         *((unsigned int *)v44 + v11) = v5; /*0x59aa7f*/
       }
       if ( i < v39 /*0x59aaaf*/
-        || (IDA_BYTE1(v40) || !v39)
+        || ((((v40) >> 8) & 0xFF) || !v39)
         && v42 > 0
         && ((uint8_t (*)(void ***, int, unsigned int))v37[2])(&v37, v42 + v39, 0) )
       {
@@ -1097,13 +1097,13 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
     ++v16; /*0x59aca0*/
   }
   v37 = (void **)((void*)&VectorClass_int_vftable); /*0x59acb8*/
-  if ( Block && IDA_BYTE1(v40) ) /*0x59acc4*/
+  if ( Block && (((v40) >> 8) & 0xFF) ) /*0x59acc4*/
   {
     RA2_OPDEL(Block); /*0x59acc7*/
     Block = (void *)(0); /*0x59accf*/
   }
   v43 = (void **)((void*)&VectorClass_int_vftable); /*0x59acdb*/
-  IDA_BYTE1(v40) = 0; /*0x59ace2*/
+  (((v40) >> 8) & 0xFF) = 0; /*0x59ace2*/
   v39 = 0; /*0x59ace9*/
   if ( v44 ) /*0x59acf2*/
   {

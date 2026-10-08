@@ -616,7 +616,7 @@ bool Team_Start_76ED10(void * a1, void * a2)
       byte_A8B31F = 0; /*0x76ee22*/
       IDA_LOBYTE(dword_A8B320) = v7; /*0x76ee29*/
       g_abs_A8B260[0] = 1; /*0x76ee2f*/
-      g_abs_A8B261[0] = IDA_BYTE1(*(unsigned int *)(v10 + 56)) & 1; /*0x76ee3d*/
+      g_abs_A8B261[0] = (((unsigned int *)(v10 + 56)) >> 8) & 0xFF & 1; /*0x76ee3d*/
       g_abs_A8B262[0] = (*(unsigned int *)(v10 + 56) & 0x400) != 0; /*0x76ee4b*/
       v8 = (*(unsigned int *)(v10 + 56) & 0x200) != 0; /*0x76ee57*/
       IDA_LOBYTE(g_abs_A8B264) = 0; /*0x76ee59*/

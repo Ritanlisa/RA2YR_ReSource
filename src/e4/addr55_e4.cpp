@@ -675,7 +675,7 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
         if ( v5 < v5 - (v5 & 3) + 4 ) /*0x551d32*/
         {
           IDA_LOBYTE(a1) = v11; /*0x551d34*/
-          IDA_BYTE1(a1) = v11; /*0x551d38*/
+          (((a1) >> 8) & 0xFF) = v11; /*0x551d38*/
           v15 = 4 - (v5 & 3); /*0x551d40*/
           v16 = (unsigned int)a1 << 16; /*0x551d42*/
           IDA_LOWORD(v16) = (unsigned short)a1; /*0x551d47*/
@@ -696,7 +696,7 @@ int LCW_BitStreamIO(unsigned char * a1, unsigned int a2, int a3)
         if ( v5 < v19 ) /*0x551d86*/
         {
           IDA_LOBYTE(v18) = v11; /*0x551d8c*/
-          IDA_BYTE1(v18) = v11; /*0x551d90*/
+          (((v18) >> 8) & 0xFF) = v11; /*0x551d90*/
           v20 = v18 << 16; /*0x551d98*/
           IDA_LOWORD(v20) = v18; /*0x551da1*/
           v21 = (v19 - v5) >> 2; /*0x551da4*/
@@ -1010,7 +1010,7 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
         if ( v4 < v4 - (v4 & 3) + 4 ) /*0x552712*/
         {
           IDA_LOBYTE(v13) = v10; /*0x552714*/
-          IDA_BYTE1(v13) = v10; /*0x552718*/
+          (((v13) >> 8) & 0xFF) = v10; /*0x552718*/
           v15 = v13 << 16; /*0x552722*/
           IDA_LOWORD(v15) = v13; /*0x552727*/
           v16 = (4 - (v4 & 3)) >> 2; /*0x55272a*/
@@ -1030,7 +1030,7 @@ unsigned int sub_552640(unsigned char * a1, unsigned int a2)
         if ( v4 < v19 ) /*0x552764*/
         {
           IDA_LOBYTE(v18) = v10; /*0x55276a*/
-          IDA_BYTE1(v18) = v10; /*0x55276e*/
+          (((v18) >> 8) & 0xFF) = v10; /*0x55276e*/
           v20 = v18 << 16; /*0x552776*/
           IDA_LOWORD(v20) = v18; /*0x55277f*/
           v21 = (v19 - v4) >> 2; /*0x552782*/
@@ -1230,7 +1230,7 @@ void UpdateDeferredLightSurfaces(int a1, char a2)
     if ( v14 >= 1.0 ) /*0x55502d*/
       v14 = 1.0; /*0x555031*/
     v15 = Math::RoundToInt(v14); /*0x555037*/
-    IDA_BYTE4(v15) = 0; /*0x55503e*/
+    (((v15) >> 32) & 0xFF) = 0; /*0x55503e*/
     v16 = -((uint8_t)ReturnFalse2(v15, IDA_HIDWORD(v15)) != 0); /*0x55504d*/
     dword_ABCA78 = dword_ABCA74; /*0x55504f*/
     IDA_LOBYTE(v16) = v16 & 0xCF; /*0x555055*/
@@ -1439,7 +1439,7 @@ LABEL_16:
     if ( v14 && (*(unsigned char *)(v14 + 20) & 4) != 0 && *(unsigned int *)(v14 + 1652) && !*(unsigned char *)(v14 + 973) ) /*0x55b844*/
     {
       if ( !*(unsigned int *)(v14 + 1652) ) /*0x55b84e*/
-        WinAPI::Wrapper(-2147467261); /*0x55b85d*/
+        sub_7DC720(-2147467261); /*0x55b85d*/
       (*(void (**)(unsigned int))(**(unsigned int **)(v14 + 1652) + 64))(*(unsigned int *)(v14 + 1652)); /*0x55b86b*/
     }
     result = ((unsigned int *)this)[0]; /*0x55b86e*/

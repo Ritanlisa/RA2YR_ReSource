@@ -1057,7 +1057,7 @@ char VoxelAnimClass::UpdateMatrix()
     v8 = 0; /*0x4d0322*/
   }
   if ( v5 < 0 && v5 != -2147467262 ) /*0x4d0347*/
-    WinAPI::Wrapper(v5); /*0x4d034a*/
+    sub_7DC720(v5); /*0x4d034a*/
   if ( !v6 ) /*0x4d0355*/
     return 0; /*0x4d0355*/
   if ( !(*(int (**)(int))(*(unsigned int *)v6 + 32))(v6) ) /*0x4d0363*/

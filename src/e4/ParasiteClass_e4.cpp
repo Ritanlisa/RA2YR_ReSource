@@ -716,7 +716,7 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
     v16 = a2[40]; /*0x62aaed*/
     v17 = a2[41]; /*0x62aaf4*/
     if ( !*v12 ) /*0x62aaf8*/
-      WinAPI::Wrapper(-2147467261); /*0x62ab03*/
+      sub_7DC720(-2147467261); /*0x62ab03*/
     result = (*(int (**)(unsigned int, int, int, int, int))(*(unsigned int *)*v12 + 112))(*v12, -1, v13, v16, v17); /*0x62ab24*/
     a2[421] = *((unsigned int *)this + 9); /*0x62ab2b*/
     *((unsigned int *)this + 10) = (unsigned int)a2; /*0x62ab31*/

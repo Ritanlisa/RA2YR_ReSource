@@ -248,9 +248,9 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       }
       ((HouseClass *)(((unsigned int *)a1)[0]))->DecrementUnitCount((unsigned char *)(a1)); /*0x517e2e*/
       if ( !((unsigned int *)a1)[0] ) /*0x517e33*/
-        WinAPI::Wrapper(-2147467261); /*0x517e40*/
+        sub_7DC720(-2147467261); /*0x517e40*/
       (*(void (**)(int))(*(unsigned int *)((unsigned int *)a1)[0] + 172))(((unsigned int *)a1)[0]); /*0x517e4e*/
-      ((gamemd::WinAPI*)a1)->unknown_int_6E8 = 2; /*0x517e56*/
+      ((gamemd::InfantryClass *)a1)->waterState = 2; /*0x517e56*/
       ((gamemd::InfantryClass*)a1)->Crawling = 0; /*0x517e60*/
       ((gamemd::InfantryClass*)a1)->SequenceAnim[0] = 0; /*0x517e66*/
       ((TechnoClass *)((FootClass *)a1))->CleanupDirection(); /*0x517e6c*/

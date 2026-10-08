@@ -17206,7 +17206,6 @@ struct WideString;
 struct Win;
 struct WinA;
 struct WinAP;
-struct WinAPI;
 struct WinM;
 struct WinMa;
 struct WinMai;

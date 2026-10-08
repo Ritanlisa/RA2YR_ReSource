@@ -1265,13 +1265,13 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
   v13 = v45 < v47; /*0x7bc3ae*/
   v14 = 0; /*0x7bc3ae*/
   v15 = v45 == v47; /*0x7bc3ae*/
-  IDA_BYTE1(result) = v12; /*0x7bc3b2*/
+  (((result) >> 8) & 0xFF) = v12; /*0x7bc3b2*/
   if ( v45 < v47 ) /*0x7bc3b7*/
   {
     v17 = v45 < v6; /*0x7bc3c2*/
     v18 = 0; /*0x7bc3c2*/
     v19 = v45 == v6; /*0x7bc3c2*/
-    IDA_BYTE1(result) = v16; /*0x7bc3c4*/
+    (((result) >> 8) & 0xFF) = v16; /*0x7bc3c4*/
     if ( v45 < v6 ) /*0x7bc3c9*/
       goto LABEL_14; /*0x7bc3c9*/
   }
@@ -1339,13 +1339,13 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
       v23 = v7 < v47; /*0x7bc4ae*/
       v24 = 0; /*0x7bc4ae*/
       v25 = v7 == v47; /*0x7bc4ae*/
-      IDA_BYTE1(result) = v22; /*0x7bc4b2*/
+      (((result) >> 8) & 0xFF) = v22; /*0x7bc4b2*/
       if ( v7 < v47 ) /*0x7bc4b7*/
       {
         v26 = v7 < v6; /*0x7bc4c1*/
         v27 = 0; /*0x7bc4c1*/
         v28 = v7 == v6; /*0x7bc4c1*/
-        IDA_BYTE1(result) = v22; /*0x7bc4c3*/
+        (((result) >> 8) & 0xFF) = v22; /*0x7bc4c3*/
         if ( v7 < v6 ) /*0x7bc4c8*/
           v9 |= 8u; /*0x7bc4ce*/
       }
@@ -1365,13 +1365,13 @@ int ClipLine(IUnknown * aP0, int * a1, int * a2)
       v30 = v7 < v47; /*0x7bc504*/
       v31 = 0; /*0x7bc504*/
       v32 = v7 == v47; /*0x7bc504*/
-      IDA_BYTE1(result) = v29; /*0x7bc508*/
+      (((result) >> 8) & 0xFF) = v29; /*0x7bc508*/
       if ( v7 < v47 ) /*0x7bc50d*/
       {
         v33 = v7 < v6; /*0x7bc517*/
         v34 = 0; /*0x7bc517*/
         v35 = v7 == v6; /*0x7bc517*/
-        IDA_BYTE1(result) = v29; /*0x7bc519*/
+        (((result) >> 8) & 0xFF) = v29; /*0x7bc519*/
         if ( v7 < v6 ) /*0x7bc51e*/
   LABEL_14:
           v11 |= 8u; /*0x7bc3cb*/
@@ -1436,7 +1436,7 @@ int sub_7BD470(int a1)
       v6 = 0; /*0x7bd4b2*/
     if ( (v1 & 0x100) == 0 && !*(unsigned char *)(v6 + *(unsigned int *)(a1 + 1940)) ) /*0x7bd4bf*/
     {
-      IDA_BYTE1(v1) |= 4u; /*0x7bd4c5*/
+      (((v1) >> 8) & 0xFF) |= 4u; /*0x7bd4c5*/
       *(unsigned int *)(a1 + 1980) = v1; /*0x7bd4c8*/
     }
   }
@@ -1465,7 +1465,7 @@ int sub_7BD470(int a1)
     if ( (v10 & 0x100) != 0 ) /*0x7bd527*/
     {
       v11 = *(unsigned int *)(a1 + 1936); /*0x7bd529*/
-      IDA_BYTE1(v10) |= 2u; /*0x7bd52f*/
+      (((v10) >> 8) & 0xFF) |= 2u; /*0x7bd52f*/
       *(unsigned int *)(a1 + 1980) = v10; /*0x7bd534*/
       if ( v5 >= v11 ) /*0x7bd53a*/
         return 0; /*0x7bd54a*/

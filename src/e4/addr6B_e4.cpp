@@ -1613,7 +1613,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
         goto LABEL_35; /*0x6b5b5f*/
       if ( v28 < v12 ) /*0x6b5b65*/
         goto LABEL_33; /*0x6b5b65*/
-      if ( !IDA_BYTE1(v27) && v12 || v9 <= 0 ) /*0x6b5b73*/
+      if ( !(((v27) >> 8) & 0xFF) && v12 || v9 <= 0 ) /*0x6b5b73*/
         goto LABEL_35; /*0x6b5b73*/
       if ( ((uint8_t (*)(void ***, int, unsigned int))v24[2])(&v24, v9 + v12, 0) ) /*0x6b5b81*/
         goto LABEL_33; /*0x6b5b86*/
@@ -1632,7 +1632,7 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
       goto LABEL_35; /*0x6b5b2a*/
     if ( v28 >= v12 ) /*0x6b5b30*/
     {
-      if ( !IDA_BYTE1(v27) && v12 || v9 <= 0 ) /*0x6b5b3e*/
+      if ( !(((v27) >> 8) & 0xFF) && v12 || v9 <= 0 ) /*0x6b5b3e*/
         goto LABEL_35; /*0x6b5b3e*/
       if ( !((uint8_t (*)(void ***, int, unsigned int))v24[2])(&v24, v9 + v12, 0) ) /*0x6b5b51*/
         goto LABEL_34; /*0x6b5b51*/
@@ -1665,12 +1665,12 @@ char StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
     }
   }
   v24 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5c3c*/
-  if ( Block && IDA_BYTE1(v27) ) /*0x6b5c46*/
+  if ( Block && (((v27) >> 8) & 0xFF) ) /*0x6b5c46*/
   {
     RA2_OPDEL(Block); /*0x6b5c49*/
     Block = (void *)(0); /*0x6b5c51*/
   }
-  IDA_BYTE1(v27) = 0; /*0x6b5c59*/
+  (((v27) >> 8) & 0xFF) = 0; /*0x6b5c59*/
   v26 = 0; /*0x6b5c5f*/
   v30 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5c63*/
   if ( v31 ) /*0x6b5c67*/
@@ -1771,7 +1771,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
         goto LABEL_35; /*0x6b5e4f*/
       if ( v29 < v13 ) /*0x6b5e55*/
         goto LABEL_33; /*0x6b5e55*/
-      if ( !IDA_BYTE1(v28) && v13 || v10 <= 0 ) /*0x6b5e63*/
+      if ( !(((v28) >> 8) & 0xFF) && v13 || v10 <= 0 ) /*0x6b5e63*/
         goto LABEL_35; /*0x6b5e63*/
       if ( ((uint8_t (*)(void ***, int, unsigned int))v25[2])(&v25, v10 + v13, 0) ) /*0x6b5e71*/
         goto LABEL_33; /*0x6b5e76*/
@@ -1790,7 +1790,7 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
       goto LABEL_35; /*0x6b5e1a*/
     if ( v29 >= v13 ) /*0x6b5e20*/
     {
-      if ( !IDA_BYTE1(v28) && v13 || v10 <= 0 ) /*0x6b5e2e*/
+      if ( !(((v28) >> 8) & 0xFF) && v13 || v10 <= 0 ) /*0x6b5e2e*/
         goto LABEL_35; /*0x6b5e2e*/
       if ( !((uint8_t (*)(void ***, int, unsigned int))v25[2])(&v25, v10 + v13, 0) ) /*0x6b5e41*/
         goto LABEL_34; /*0x6b5e41*/
@@ -1823,13 +1823,13 @@ int TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
     }
   }
   v25 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5f2c*/
-  if ( Block && IDA_BYTE1(v28) ) /*0x6b5f36*/
+  if ( Block && (((v28) >> 8) & 0xFF) ) /*0x6b5f36*/
   {
     RA2_OPDEL(Block); /*0x6b5f39*/
     Block = (void *)(0); /*0x6b5f41*/
   }
   result = (int)v32; /*0x6b5f45*/
-  IDA_BYTE1(v28) = 0; /*0x6b5f49*/
+  (((v28) >> 8) & 0xFF) = 0; /*0x6b5f49*/
   v27 = 0; /*0x6b5f4f*/
   v31 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x6b5f53*/
   if ( v32 ) /*0x6b5f57*/
@@ -2964,7 +2964,7 @@ LABEL_2:
     if ( IDA_LOBYTE(dwRegister.field_8) )
       break;
     if ( !ppv[0] )
-      WinAPI::Wrapper(-2147467261);
+      sub_7DC720(-2147467261);
     (*(void (**)(LPVOID))(*(unsigned int *)ppv[0] + 8))(ppv[0]);
     ppv[0] = 0;
     COM_SafeRelease((int *)ppv);

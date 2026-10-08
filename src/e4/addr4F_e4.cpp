@@ -1146,14 +1146,14 @@ int E4Recv_4F3D40::sub_4F3D40()
     ((String *)&v8.m_3[1])->CopyTruncated( 4u); /*0x4f3dac*/
     if ( (unsigned __int8)((String *)&v8.m_3[1])->Equals_Alt( aAlt) ) /*0x4f3dba*/
     {
-      IDA_BYTE1(v1) |= 4u; /*0x4f3dcb*/
+      (((v1) >> 8) & 0xFF) |= 4u; /*0x4f3dcb*/
       ((String *)&v8)->Erase( 0, 4); /*0x4f3dce*/
     }
     ((String *)&v8.m_3[1])->Reassign( (const char **)&v8); /*0x4f3ddc*/
     ((String *)&v8.m_3[1])->CopyTruncated( 6u); /*0x4f3de7*/
     if ( (unsigned __int8)((String *)&v8.m_3[1])->Equals_Alt( aShift) ) /*0x4f3df5*/
     {
-      IDA_BYTE1(v1) |= 1u; /*0x4f3e06*/
+      (((v1) >> 8) & 0xFF) |= 1u; /*0x4f3e06*/
       ((String *)&v8)->Erase( 0, 6); /*0x4f3e09*/
     }
     v2 = ((String *)&v8)->Length(); /*0x4f3e12*/

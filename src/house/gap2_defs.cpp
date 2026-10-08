@@ -4069,7 +4069,7 @@ void HouseClass::GenerateAIBuildListEnsureSanity() {
                     *((unsigned int *)v93.Items + v14) = v5; /*0x505677*/
                   }
                   if ( v100 < v98 /*0x5056a7*/
-                    || (IDA_BYTE1(v99) || !v98)
+                    || ((((v99) >> 8) & 0xFF) || !v98)
                     && v101 > 0
                     && (*(uint8_t (**)(BoolVector *, int, unsigned int))(*(unsigned int *)&v96 + 8))(
                          &v96,
@@ -6268,7 +6268,7 @@ void* HouseClass::FindSWBuilding(void* a1) {
         {
           if ( v4 == v21 /*0x50d071*/
             && (v44 < v42
-             || (IDA_BYTE1(v43) || !v42)
+             || ((((v43) >> 8) & 0xFF) || !v42)
              && v45 > 0
              && ((uint8_t (*)(void ***, int, unsigned int))v40[2])(&v40, v45 + v42, 0)) )
           {
@@ -6279,12 +6279,12 @@ void* HouseClass::FindSWBuilding(void* a1) {
         else
         {
           v44 = 0; /*0x50cfe5*/
-          if ( Block && IDA_BYTE1(v43) ) /*0x50cff1*/
+          if ( Block && (((v43) >> 8) & 0xFF) ) /*0x50cff1*/
           {
             RA2_OPDEL(Block); /*0x50cff4*/
             Block = 0; /*0x50cffc*/
           }
-          IDA_BYTE1(v43) = 0; /*0x50d004*/
+          (((v43) >> 8) & 0xFF) = 0; /*0x50d004*/
           v42 = 0; /*0x50d00b*/
           if ( v44 < 0 || v45 > 0 && ((uint8_t (*)(void ***, int, unsigned int))v40[2])(&v40, v45, 0) ) /*0x50d023*/
           {

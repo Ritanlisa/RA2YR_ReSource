@@ -4282,14 +4282,14 @@ int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2)
                           || !*(unsigned char *)(v24 + 3608) )
                         {
                           if ( !v23[413] ) /*0x4c57c3*/
-                            WinAPI::Wrapper(-2147467261); /*0x4c57d0*/
+                            sub_7DC720(-2147467261); /*0x4c57d0*/
                           (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v23[413] + 92))(v23[413]); /*0x4c57de*/
                           if ( !v23[413] ) /*0x4c57e1*/
-                            WinAPI::Wrapper(-2147467261); /*0x4c57ee*/
+                            sub_7DC720(-2147467261); /*0x4c57ee*/
                           if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)v23[413] + 16))(v23[413]) ) /*0x4c57fc*/
                           {
                             if ( !v23[413] ) /*0x4c5803*/
-                              WinAPI::Wrapper(-2147467261); /*0x4c5810*/
+                              sub_7DC720(-2147467261); /*0x4c5810*/
                             (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v23[413] + 72))(v23[413]); /*0x4c581e*/
                           }
                           v23[321] = this->nextObject; /*0x4c5829*/
@@ -5753,10 +5753,10 @@ int Gap2Recv_518D80::CalculateLocomotionFrameIndex() {
     goto LABEL_16; /*0x518e4f*/
   v9 = StreamClass::Set2(&v16, (unsigned int *)this + 413); /*0x518e56*/
   if ( v9 < 0 && v9 != -2147467262 ) /*0x518e64*/
-    WinAPI::Wrapper(v9); /*0x518e67*/
+    sub_7DC720(v9); /*0x518e67*/
   if ( !*(unsigned int *)v16.__pad_0 ) /*0x518e72*/
 LABEL_16:
-    WinAPI::Wrapper(-2147467261); /*0x518e79*/
+    sub_7DC720(-2147467261); /*0x518e79*/
   (*(void (**)(unsigned int, int *))(**(unsigned int **)v16.__pad_0 + 12))(*(unsigned int *)v16.__pad_0, &v16.m_Position); /*0x518e8b*/
   v14 = memcmp(&v16.m_Position, &g_CLSID_JumpjetLocomotion, 0x10u) == 0; /*0x518ea4*/
   if ( *(unsigned int *)v16.__pad_0 ) /*0x518eac*/
@@ -6047,7 +6047,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
     if ( v17 ) /*0x5204e1*/
     {
       if ( !v18 ) /*0x5204e9*/
-        WinAPI::Wrapper(-2147467261); /*0x5204f0*/
+        sub_7DC720(-2147467261); /*0x5204f0*/
       v19 = (int *)(*(int (**)(unsigned int, unsigned int *))(**((unsigned int **)this + 413) + 20))( /*0x520503*/
                      *((unsigned int *)this + 413),
                      v42);
@@ -6057,7 +6057,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
       if ( v20 != dword_A8F200 || v21 != dword_A8F204 || v22 != dword_A8F208 ) /*0x520526*/
       {
         if ( !*((unsigned int *)this + 413) ) /*0x52052c*/
-          WinAPI::Wrapper(-2147467261); /*0x52053b*/
+          sub_7DC720(-2147467261); /*0x52053b*/
         v23 = (int *)(*(int (**)(unsigned int, unsigned int *))(**((unsigned int **)this + 413) + 20))( /*0x52054e*/
                        *((unsigned int *)this + 413),
                        v42);
@@ -6078,7 +6078,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
     else
     {
       if ( !v18 ) /*0x5205c9*/
-        WinAPI::Wrapper(-2147467261); /*0x5205d0*/
+        sub_7DC720(-2147467261); /*0x5205d0*/
       v29 = (int *)(*(int (**)(unsigned int, unsigned int *))(**((unsigned int **)this + 413) + 20))( /*0x5205e3*/
                      *((unsigned int *)this + 413),
                      v42);
@@ -6088,7 +6088,7 @@ char Gap2Recv_5202F0::ProcessTechnoSquadResponse() {
       if ( v30 != dword_A8F200 || v31 != dword_A8F204 || v32 != dword_A8F208 ) /*0x520606*/
       {
         if ( !*((unsigned int *)this + 413) ) /*0x52060c*/
-          WinAPI::Wrapper(-2147467261); /*0x52061b*/
+          sub_7DC720(-2147467261); /*0x52061b*/
         v33 = (unsigned int *)(*(int (**)(unsigned int, unsigned int *))(**((unsigned int **)this + 413) + 20))( /*0x52062e*/
                           *((unsigned int *)this + 413),
                           v42);
@@ -6196,10 +6196,10 @@ LABEL_12:
         goto LABEL_20; /*0x5207b9*/
       v10 = StreamClass::Set2(&v23, (unsigned int *)this + 413); /*0x5207c0*/
       if ( v10 < 0 && v10 != -2147467262 ) /*0x5207ce*/
-        WinAPI::Wrapper(v10); /*0x5207d1*/
+        sub_7DC720(v10); /*0x5207d1*/
       if ( !*(unsigned int *)v23.__pad_0 ) /*0x5207dc*/
 LABEL_20:
-        WinAPI::Wrapper(-2147467261); /*0x5207e3*/
+        sub_7DC720(-2147467261); /*0x5207e3*/
       (*(void (**)(unsigned int, unsigned char *))(**(unsigned int **)v23.__pad_0 + 12))(*(unsigned int *)v23.__pad_0, v25); /*0x5207f5*/
       v11 = memcmp(v25, &g_CLSID_JumpjetLocomotion, 0x10u) == 0; /*0x52080e*/
       if ( *(unsigned int *)v23.__pad_0 ) /*0x520813*/
@@ -22487,7 +22487,7 @@ LABEL_68:
   if ( v22 >= 0 ) /*0x681e59*/
   {
     if ( !v32 ) /*0x681e61*/
-      WinAPI::Wrapper(-2147467261); /*0x681e68*/
+      sub_7DC720(-2147467261); /*0x681e68*/
     v22 = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v32 + 12))(v32, (char *)this + 1000, 8, 0); /*0x681e7c*/
   }
   ReleaseCOM(&v32); /*0x681e82*/
@@ -22504,7 +22504,7 @@ LABEL_68:
     if ( Scenario >= 0 ) /*0x681eeb*/
     {
       if ( !v32 ) /*0x681ef3*/
-        WinAPI::Wrapper(-2147467261); /*0x681efa*/
+        sub_7DC720(-2147467261); /*0x681efa*/
       Scenario = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v32 + 12))(v32, (char *)this + 992, 8, 0); /*0x681f0e*/
     }
     ReleaseCOM(&v32); /*0x681f14*/
@@ -29984,7 +29984,7 @@ int Gap2Recv_736DF0::UpdateTechnoFiring() {
           if ( !this->u32_5A4 ) /*0x736fb6*/
           {
             if ( !*((unsigned int *)this + 413) ) /*0x736fc4*/
-              WinAPI::Wrapper(-2147467261); /*0x736fd3*/
+              sub_7DC720(-2147467261); /*0x736fd3*/
             if ( !(*(uint8_t (**)(unsigned int))(**((unsigned int **)this + 413) + 16))(this->u32_674) ) /*0x736fe1*/
             {
               v11 = ObjectClass::CalcTargetFacing(this, &v16, this->target); /*0x736ffc*/
@@ -30138,7 +30138,7 @@ int Gap2Recv_737180::UpdateInfantryIdleWander() {
   this->animation[3] = v6; /*0x737252*/
   this->animation[4] = 1; /*0x737255*/
   if ( !*((unsigned int *)this + 413) ) /*0x737258*/
-    WinAPI::Wrapper(-2147467261); /*0x737267*/
+    sub_7DC720(-2147467261); /*0x737267*/
   result = (*(int (**)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)); /*0x737275*/
   if ( !(unsigned char)result ) /*0x73727a*/
   {

@@ -1521,7 +1521,7 @@ int INIEntry::ReadColor(int a1, void* a2, void* a3, void* a4) {
       v10 = 0; /*0x474cd5*/
       v9 = 0; /*0x474cd9*/
       sscanf(Destination, "%d,%d,%d", &v8, &v10, &v9); /*0x474cf2*/
-      IDA_BYTE1(v8) = v10; /*0x474d0a*/
+      (((v8) >> 8) & 0xFF) = v10; /*0x474d0a*/
       v7 = v9; /*0x474d13*/
       *(unsigned short *)a2 = v8; /*0x474d1c*/
       *(unsigned char *)(a2 + 2) = v7; /*0x474d21*/
@@ -2894,7 +2894,7 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
         v17 = v16 < 0.0; /*0x47ca5f*/
         v18 = 0; /*0x47ca5f*/
         v19 = v16 == 0.0; /*0x47ca5f*/
-        IDA_BYTE1(result) = v15; /*0x47ca65*/
+        (((result) >> 8) & 0xFF) = v15; /*0x47ca65*/
         if ( v16 == 0.0 ) /*0x47ca6a*/
           goto LABEL_17; /*0x47ca6a*/
   LABEL_96:
@@ -3568,7 +3568,7 @@ int CellClass::InitRandomOffsets(int a1, int a2) {
     }
     v11 = *(this + 9); /*0x481572*/
     v12 = v11; /*0x48157b*/
-    IDA_LOBYTE(v16) = IDA_BYTE2(v11); /*0x481583*/
+    IDA_LOBYTE(v16) = (((v11) >> 16) & 0xFF); /*0x481583*/
     if ( *((unsigned char *)this + 282) ) /*0x481575*/
     {
       v13 = *((unsigned int *)dword_A8ED2C + a2); /*0x481596*/
@@ -5246,7 +5246,7 @@ int INIEntry::ReadColor(int a1, void* a2, void* a3, void* a4) {
       v10 = 0; /*0x474cd5*/
       v9 = 0; /*0x474cd9*/
       sscanf(Destination, "%d,%d,%d", &v8, &v10, &v9); /*0x474cf2*/
-      IDA_BYTE1(v8) = v10; /*0x474d0a*/
+      (((v8) >> 8) & 0xFF) = v10; /*0x474d0a*/
       v7 = v9; /*0x474d13*/
       *(unsigned short *)a2 = v8; /*0x474d1c*/
       *(unsigned char *)(a2 + 2) = v7; /*0x474d21*/
@@ -6619,7 +6619,7 @@ int CellClass::IsPassable(int aP1, int aP2, int aP3) {
         v17 = v16 < 0.0; /*0x47ca5f*/
         v18 = 0; /*0x47ca5f*/
         v19 = v16 == 0.0; /*0x47ca5f*/
-        IDA_BYTE1(result) = v15; /*0x47ca65*/
+        (((result) >> 8) & 0xFF) = v15; /*0x47ca65*/
         if ( v16 == 0.0 ) /*0x47ca6a*/
           goto LABEL_17; /*0x47ca6a*/
   LABEL_96:
@@ -7293,7 +7293,7 @@ int CellClass::InitRandomOffsets(int a1, int a2) {
     }
     v11 = *(this + 9); /*0x481572*/
     v12 = v11; /*0x48157b*/
-    IDA_LOBYTE(v16) = IDA_BYTE2(v11); /*0x481583*/
+    IDA_LOBYTE(v16) = (((v11) >> 16) & 0xFF); /*0x481583*/
     if ( *((unsigned char *)this + 282) ) /*0x481575*/
     {
       v13 = *((unsigned int *)dword_A8ED2C + a2); /*0x481596*/
@@ -11472,7 +11472,7 @@ int TacticalClass::HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5
     {
       v15 = *(unsigned short *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[128] + 372) + 2); /*0x4ab03d*/
       IDA_LOBYTE(a5) = (unsigned __int8)(v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4ab05c*/
-      IDA_BYTE1(a5) = (unsigned __int8)(v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4ab074*/
+      (((a5) >> 8) & 0xFF) = (unsigned __int8)(v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4ab074*/
       v16 = (unsigned __int8)(v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4ab088*/
       *(unsigned short *)v14 = a5; /*0x4ab08c*/
       this->__pad_11B4[26] = v16; /*0x4ab08f*/
@@ -11496,7 +11496,7 @@ int TacticalClass::HandlePlayerAction(void* a1, int a2, void* a3, int a4, int a5
           v23 = &byte_885180[3 * v22]; /*0x4ab0ed*/
           v21 += 2; /*0x4ab0f4*/
           IDA_LOWORD(a5) = *(unsigned short *)v23; /*0x4ab0fa*/
-          IDA_LOWORD(v6) = (unsigned __int8)(IDA_BYTE1(a5) >> g_BitMask_Blue); /*0x4ab114*/
+          IDA_LOWORD(v6) = (unsigned __int8)((((a5) >> 8) & 0xFF) >> g_BitMask_Blue); /*0x4ab114*/
           IDA_LOWORD(v22) = (unsigned __int8)((unsigned __int8)v23[2] >> g_BitMask_Red); /*0x4ab128*/
           v24 = v22 << g_BitShift_Blue; /*0x4ab12c*/
           v25 = v24 | (v6 << g_BitMask_Green); /*0x4ab134*/
@@ -18863,7 +18863,7 @@ int CellClass::ProcessTileChange(int a1) {
         {
           if ( (__int16)v24 > occupationFlags + v2->copyFlags ) /*0x571259*/
             return v11; /*0x571259*/
-          IDA_LOBYTE(v11) = IDA_BYTE2(a2); /*0x57125f*/
+          IDA_LOBYTE(v11) = (((a2) >> 16) & 0xFF); /*0x57125f*/
           altOccupationFlags = v2->altOccupationFlags; /*0x571264*/
           if ( IDA_SHIWORD(a2) < altOccupationFlags || IDA_SHIWORD(a2) > altOccupationFlags + v2->shroudCounter ) /*0x57127c*/
             return v11; /*0x57127c*/
@@ -41699,7 +41699,7 @@ int FactoryClass::CompleteProduction() {
               v55 = *(unsigned int *)&_ESI[1652]; /*0x73df84*/
               v112[0] = 0x4000; /*0x73df8a*/
               if ( !v55 ) /*0x73df93*/
-                WinAPI::Wrapper(-2147467261); /*0x73df9a*/
+                sub_7DC720(-2147467261); /*0x73df9a*/
               (*(void (__stdcall **)(unsigned int, unsigned int))(**(unsigned int **)&_ESI[1652] + 76))( /*0x73dfad*/
                 *(unsigned int *)&_ESI[1652],
                 *(unsigned int *)v112);
@@ -41906,7 +41906,7 @@ int FactoryClass::CompleteProduction() {
               else
               {
                 if ( !*(unsigned int *)&_ESI[1652] ) /*0x73e0ed*/
-                  WinAPI::Wrapper(-2147467261); /*0x73e0fa*/
+                  sub_7DC720(-2147467261); /*0x73e0fa*/
                 if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)&_ESI[1652] + 16))(*(unsigned int *)&_ESI[1652]) ) /*0x73e108*/
                   (*(void (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)_ESI + 1280))(_ESI); /*0x73e113*/
                 if ( !(*(unsigned __int8 (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)_ESI + 512))(_ESI) ) /*0x73e125*/
@@ -41938,7 +41938,7 @@ int FactoryClass::CompleteProduction() {
               else
               {
                 if ( !*(unsigned int *)&_ESI[1652] ) /*0x73e211*/
-                  WinAPI::Wrapper(-2147467261); /*0x73e21e*/
+                  sub_7DC720(-2147467261); /*0x73e21e*/
                 if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)&_ESI[1652] + 16))(*(unsigned int *)&_ESI[1652]) ) /*0x73e22c*/
                   (*(void (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)_ESI + 1280))(_ESI); /*0x73e237*/
                 if ( !(*(unsigned __int8 (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)_ESI + 512))(_ESI) ) /*0x73e249*/
@@ -41954,7 +41954,7 @@ int FactoryClass::CompleteProduction() {
           (*(void (__thiscall **)(Class_7F5C70 *, unsigned int, int))(*(unsigned int *)_ESI + 1156))(_ESI, 0, 1); /*0x73def2*/
           _ESI[1745] = 0; /*0x73def8*/
           if ( !*(unsigned int *)&_ESI[1652] ) /*0x73deff*/
-            WinAPI::Wrapper(-2147467261); /*0x73df0e*/
+            sub_7DC720(-2147467261); /*0x73df0e*/
           if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)&_ESI[1652] + 16))(*(unsigned int *)&_ESI[1652]) ) /*0x73df1c*/
             (*(void (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)_ESI + 1280))(_ESI); /*0x73df27*/
           if ( (*(unsigned __int8 (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)_ESI + 512))(_ESI) ) /*0x73df31*/
@@ -42008,7 +42008,7 @@ int FactoryClass::CompleteProduction() {
             *(unsigned int *)&_ESI[188] = 1; /*0x73dd98*/
           }
           if ( !*(unsigned int *)&_ESI[1652] ) /*0x73dda2*/
-            WinAPI::Wrapper(-2147467261); /*0x73ddaf*/
+            sub_7DC720(-2147467261); /*0x73ddaf*/
           if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**(unsigned int **)&_ESI[1652] + 16))(*(unsigned int *)&_ESI[1652]) ) /*0x73ddbd*/
           {
             v52 = *(unsigned int *)&_ESI[180]; /*0x73de20*/
@@ -42055,7 +42055,7 @@ int FactoryClass::CompleteProduction() {
     {
       case 0: /*0x73d707*/
         if ( !*((unsigned int *)this + 413) ) /*0x73d70e*/
-          WinAPI::Wrapper(-2147467261); /*0x73d71b*/
+          sub_7DC720(-2147467261); /*0x73d71b*/
         if ( (*(unsigned __int8 (__stdcall **)(unsigned int))(**((unsigned int **)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x73d729*/
           return 10; /*0x73d73c*/
         *(float *)v111 = *(float *)(*(int (__thiscall **)(Class_7F5C70 *, char *))(*(unsigned int *)_ESI + 440))(_ESI, v113); /*0x73d752*/
@@ -42101,7 +42101,7 @@ int FactoryClass::CompleteProduction() {
         v20 = *(unsigned int *)&_ESI[1652]; /*0x73d842*/
         IDA_LOWORD(v109) = v19 << 13; /*0x73d84d*/
         if ( !v20 ) /*0x73d852*/
-          WinAPI::Wrapper(-2147467261); /*0x73d859*/
+          sub_7DC720(-2147467261); /*0x73d859*/
         (*(void (__stdcall **)(unsigned int, float))(**(unsigned int **)&_ESI[1652] + 76))( /*0x73d86c*/
           *(unsigned int *)&_ESI[1652],
           COERCE_FLOAT(IDA_LODWORD(v109)));

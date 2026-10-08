@@ -45,13 +45,13 @@ int sub_682780(int a1, int a2, wchar_t * String)
   if ( v6 >= 0 ) /*0x6827c4*/
   {
     if ( !v9 ) /*0x6827e6*/
-      WinAPI::Wrapper(-2147467261); /*0x6827ed*/
+      sub_7DC720(-2147467261); /*0x6827ed*/
     v7 = wcslen(String); /*0x682803*/
     v6 = (*(int (**)(int, wchar_t *, size_t, unsigned int))(*(unsigned int *)v9 + 16))( v9, (wchar_t *)(String), 2 * v7 + 2, 0); /*0x682815*/
     if ( v6 >= 0 ) /*0x68281f*/
     {
       if ( !v9 ) /*0x682834*/
-        WinAPI::Wrapper(-2147467261); /*0x68283b*/
+        sub_7DC720(-2147467261); /*0x68283b*/
       v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 32))(v9, 0); /*0x68284c*/
       if ( v6 >= 0 ) /*0x682854*/
       {
@@ -104,7 +104,7 @@ int sub_6829A0(int * a1, int a2, int a3)
     v8[0] = 31; /*0x682a2c*/
     v9 = a3; /*0x682a33*/
     if ( !v6 ) /*0x682a37*/
-      WinAPI::Wrapper(-2147467261); /*0x682a3e*/
+      sub_7DC720(-2147467261); /*0x682a3e*/
     v4 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v6 + 16))( v6, 1, (unsigned int *)(v7), (int16_t *)(v8), 2); /*0x682a5b*/
     if ( v4 >= 0 ) /*0x682a63*/
     {

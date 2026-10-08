@@ -276,7 +276,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
             v69 = (*(int (**)(int, unsigned int))(*(unsigned int *)v35 + 188))(v35, 0); /*0x718f8e*/
             memset( (void *)(v67), 0, sizeof(v67)); /*0x718fae*/
             v36 = v6[3]; /*0x718fb8*/
-            v59 = IDA_BYTE1(*((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v68) + 80)) /*0x718fdd*/
+            v59 = ((((unsigned int *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj((int16_t *)&v68) + 80)) >> 8) & 0xFF /*0x718fdd*/
                 & 1;
             TileIndex = MapClass::GetTileIndex( /*0x718fee*/
                           (MapClass *)&stru_87F5F0.__pad_58[416],

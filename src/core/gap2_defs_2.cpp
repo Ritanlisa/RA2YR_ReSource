@@ -218,7 +218,7 @@ int COMObject::ActivateGlobal() {
     (*(void (**)(int))(*(unsigned int *)dword_8B3E90 + 84))(dword_8B3E90); /*0x4e19ba*/
   }
   v2 = *(unsigned int *)this->Hovered; /*0x4e19bd*/
-  IDA_BYTE1(v2) |= 1u; /*0x4e19c0*/
+  (((v2) >> 8) & 0xFF) |= 1u; /*0x4e19c0*/
   *(unsigned int *)this->Hovered = v2; /*0x4e19c3*/
   dword_8B3E90 = (int)this; /*0x4e19c6*/
   return v2; /*0x4e19cc*/
@@ -232,7 +232,7 @@ int COMObject::DeactivateGlobal() {
   if ( (ShpButtonClass *)dword_8B3E90 == this ) /*0x4e19d6*/
   {
     v1 = *(unsigned int *)this->Hovered; /*0x4e19d8*/
-    IDA_BYTE1(v1) &= ~1u; /*0x4e19db*/
+    (((v1) >> 8) & 0xFF) &= ~1u; /*0x4e19db*/
     *(unsigned int *)this->Hovered = v1; /*0x4e19de*/
     dword_8B3E90 = 0; /*0x4e19e1*/
   }
@@ -517,7 +517,7 @@ int ComPtr::ReleaseSimple() {
 namespace gamemd { 
 int COMObject::ValidatePtr() {
   if ( !*(unsigned int *)this->__pad_0 ) /*0x683033*/
-    WinAPI::Wrapper(-2147467261); /*0x68303d*/
+    sub_7DC720(-2147467261); /*0x68303d*/
   return *(unsigned int *)this->__pad_0; /*0x683044*/
 }
 }

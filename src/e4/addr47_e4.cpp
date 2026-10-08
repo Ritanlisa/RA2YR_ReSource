@@ -539,7 +539,7 @@ int DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
   {
     IDA_LOBYTE(v5) = 0; /*0x47a949*/
     v4 = v4 != 0 ? 8 : 72;
-    IDA_BYTE1(v5) = v4; /*0x47a957*/
+    (((v5) >> 8) & 0xFF) = v4; /*0x47a957*/
     v5 = (uint16_t)v5; /*0x47a95a*/
     IDA_LOBYTE(v5) = v5 | 0x6A; /*0x47a963*/
     InBuffer[2] = v5; /*0x47a967*/
@@ -643,13 +643,13 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   a4 = ((unsigned char)a4 == 0) << 10; /*0x47e097*/
   v38 = (a3 == 0) << 11; /*0x47e0af*/
   v9 = (v6 << 8) | *(unsigned int *)(a1 + 320) & 0xFFFFFE7F; /*0x47e0bf*/
-  IDA_BYTE1(v9) &= ~2u; /*0x47e0c5*/
+  (((v9) >> 8) & 0xFF) &= ~2u; /*0x47e0c5*/
   v10 = (v6 << 9) | v9; /*0x47e0c8*/
-  IDA_BYTE1(v10) &= ~0x10u; /*0x47e0ce*/
+  (((v10) >> 8) & 0xFF) &= ~0x10u; /*0x47e0ce*/
   v11 = (v6 << 16) | ((v6 << 12) | v10) & 0xFFFEFFFF; /*0x47e0d9*/
-  IDA_BYTE1(v11) &= ~4u; /*0x47e0db*/
+  (((v11) >> 8) & 0xFF) &= ~4u; /*0x47e0db*/
   v12 = a4 | v11; /*0x47e0de*/
-  IDA_BYTE1(v12) &= ~8u; /*0x47e0e4*/
+  (((v12) >> 8) & 0xFF) &= ~8u; /*0x47e0e4*/
   *(unsigned int *)(a1 + 320) = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e0f0*/
   if ( v5 )
   {
@@ -670,17 +670,17 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v48)); /*0x47e17d*/
   }
   v13 = v4->flags[0]; /*0x47e18f*/
-  IDA_BYTE1(v13) &= ~1u; /*0x47e195*/
+  (((v13) >> 8) & 0xFF) &= ~1u; /*0x47e195*/
   v47 = v5 != 0 ? a1 : 0;
   v14 = v39 | v13; /*0x47e19c*/
-  IDA_BYTE1(v14) &= ~2u; /*0x47e1a2*/
+  (((v14) >> 8) & 0xFF) &= ~2u; /*0x47e1a2*/
   *(unsigned int *)&v4->__pad_28[4] = v47; /*0x47e1a5*/
   v15 = v40 | v14; /*0x47e1a8*/
-  IDA_BYTE1(v15) &= ~0x10u; /*0x47e1ae*/
+  (((v15) >> 8) & 0xFF) &= ~0x10u; /*0x47e1ae*/
   v16 = v8 | (v7 | v15) & 0xFFFEFFFF; /*0x47e1b9*/
-  IDA_BYTE1(v16) &= ~4u; /*0x47e1bb*/
+  (((v16) >> 8) & 0xFF) &= ~4u; /*0x47e1bb*/
   v17 = a4 | v16; /*0x47e1be*/
-  IDA_BYTE1(v17) &= ~8u; /*0x47e1c4*/
+  (((v17) >> 8) & 0xFF) &= ~8u; /*0x47e1c4*/
   v4->flags[0] = v38 | v17; /*0x47e1cb*/
   if ( v5 )
   {
@@ -705,13 +705,13 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   }
   v20 = v4->flags[0]; /*0x47e262*/
   *(unsigned int *)&v4->__pad_28[4] = v47; /*0x47e268*/
-  IDA_BYTE1(v20) &= ~1u; /*0x47e26f*/
+  (((v20) >> 8) & 0xFF) &= ~1u; /*0x47e26f*/
   v21 = v39 | v20; /*0x47e272*/
-  IDA_BYTE1(v21) &= 0xEDu; /*0x47e278*/
+  (((v21) >> 8) & 0xFF) &= 0xEDu; /*0x47e278*/
   v22 = v8 | (v7 | v21) & 0xFFFEFFFF; /*0x47e283*/
-  IDA_BYTE1(v22) &= ~4u; /*0x47e285*/
+  (((v22) >> 8) & 0xFF) &= ~4u; /*0x47e285*/
   v23 = a4 | v22; /*0x47e288*/
-  IDA_BYTE1(v23) &= ~8u; /*0x47e28e*/
+  (((v23) >> 8) & 0xFF) &= ~8u; /*0x47e28e*/
   v4->flags[0] = v38 | v23; /*0x47e295*/
   if ( v5 )
   {
@@ -738,7 +738,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     mapCoords = (unsigned int *)(v4->mapCoords); /*0x47e2d5*/
   }
   v26 = mapCoords[80]; /*0x47e321*/
-  IDA_BYTE1(v26) &= ~0x10u; /*0x47e327*/
+  (((v26) >> 8) & 0xFF) &= ~0x10u; /*0x47e327*/
   mapCoords[80] = v7 | v26; /*0x47e32c*/
   v27 = ((unsigned char)v24 - 4) & 7; /*0x47e335*/
   if ( v27 < 8 ) /*0x47e33b*/
@@ -757,14 +757,14 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v28 = a1; /*0x47e33d*/
   }
   v31 = *(unsigned int *)(v28 + 320); /*0x47e392*/
-  IDA_BYTE1(v31) &= ~1u; /*0x47e39c*/
+  (((v31) >> 8) & 0xFF) &= ~1u; /*0x47e39c*/
   v32 = v39 | v31; /*0x47e3a3*/
-  IDA_BYTE1(v32) &= ~2u; /*0x47e3a9*/
+  (((v32) >> 8) & 0xFF) &= ~2u; /*0x47e3a9*/
   *(unsigned int *)(v28 + 44) = v47; /*0x47e3ac*/
   v33 = v40 | v32; /*0x47e3af*/
-  IDA_BYTE1(v33) &= ~4u; /*0x47e3b5*/
+  (((v33) >> 8) & 0xFF) &= ~4u; /*0x47e3b5*/
   v34 = v8 | (a4 | v33) & 0xFFFEEFFF; /*0x47e3c3*/
-  IDA_BYTE1(v34) &= ~8u; /*0x47e3c5*/
+  (((v34) >> 8) & 0xFF) &= ~8u; /*0x47e3c5*/
   *(unsigned int *)(v28 + 320) = v38 | v34; /*0x47e3cc*/
   if ( v5 )
   {
@@ -855,13 +855,13 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   a4 = ((unsigned char)a4 == 0) << 10; /*0x47e4c7*/
   v38 = (a3 == 0) << 11; /*0x47e4df*/
   v9 = (v6 << 8) | *(unsigned int *)(a1 + 320) & 0xFFFFFE7F; /*0x47e4ef*/
-  IDA_BYTE1(v9) &= ~2u; /*0x47e4f5*/
+  (((v9) >> 8) & 0xFF) &= ~2u; /*0x47e4f5*/
   v10 = (v6 << 9) | v9; /*0x47e4f8*/
-  IDA_BYTE1(v10) &= ~0x10u; /*0x47e4fe*/
+  (((v10) >> 8) & 0xFF) &= ~0x10u; /*0x47e4fe*/
   v11 = (v6 << 16) | ((v6 << 12) | v10) & 0xFFFEFFFF; /*0x47e509*/
-  IDA_BYTE1(v11) &= ~4u; /*0x47e50b*/
+  (((v11) >> 8) & 0xFF) &= ~4u; /*0x47e50b*/
   v12 = a4 | v11; /*0x47e50e*/
-  IDA_BYTE1(v12) &= ~8u; /*0x47e514*/
+  (((v12) >> 8) & 0xFF) &= ~8u; /*0x47e514*/
   *(unsigned int *)(a1 + 320) = v38 | ((v6 & 0xFFFFFDC1) << 7) | v12; /*0x47e520*/
   if ( v5 )
   {
@@ -882,17 +882,17 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v4 = (CellClass *)((CellCoord *)((CellCoord *)&stru_87F5F0.__pad_58[416]))->To_CellObj( (int16_t *)(v48)); /*0x47e5ad*/
   }
   v13 = v4->flags[0]; /*0x47e5bf*/
-  IDA_BYTE1(v13) &= ~1u; /*0x47e5c5*/
+  (((v13) >> 8) & 0xFF) &= ~1u; /*0x47e5c5*/
   v47 = v5 != 0 ? a1 : 0;
   v14 = v39 | v13; /*0x47e5cc*/
-  IDA_BYTE1(v14) &= ~2u; /*0x47e5d2*/
+  (((v14) >> 8) & 0xFF) &= ~2u; /*0x47e5d2*/
   *(unsigned int *)&v4->__pad_28[4] = v47; /*0x47e5d5*/
   v15 = v40 | v14; /*0x47e5d8*/
-  IDA_BYTE1(v15) &= ~0x10u; /*0x47e5de*/
+  (((v15) >> 8) & 0xFF) &= ~0x10u; /*0x47e5de*/
   v16 = v8 | (v7 | v15) & 0xFFFEFFFF; /*0x47e5e9*/
-  IDA_BYTE1(v16) &= ~4u; /*0x47e5eb*/
+  (((v16) >> 8) & 0xFF) &= ~4u; /*0x47e5eb*/
   v17 = a4 | v16; /*0x47e5ee*/
-  IDA_BYTE1(v17) &= ~8u; /*0x47e5f4*/
+  (((v17) >> 8) & 0xFF) &= ~8u; /*0x47e5f4*/
   v4->flags[0] = v38 | v17; /*0x47e5fb*/
   if ( v5 )
   {
@@ -917,13 +917,13 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   }
   v20 = v4->flags[0]; /*0x47e692*/
   *(unsigned int *)&v4->__pad_28[4] = v47; /*0x47e698*/
-  IDA_BYTE1(v20) &= ~1u; /*0x47e69f*/
+  (((v20) >> 8) & 0xFF) &= ~1u; /*0x47e69f*/
   v21 = v39 | v20; /*0x47e6a2*/
-  IDA_BYTE1(v21) &= 0xEDu; /*0x47e6a8*/
+  (((v21) >> 8) & 0xFF) &= 0xEDu; /*0x47e6a8*/
   v22 = v8 | (v7 | v21) & 0xFFFEFFFF; /*0x47e6b3*/
-  IDA_BYTE1(v22) &= ~4u; /*0x47e6b5*/
+  (((v22) >> 8) & 0xFF) &= ~4u; /*0x47e6b5*/
   v23 = a4 | v22; /*0x47e6b8*/
-  IDA_BYTE1(v23) &= ~8u; /*0x47e6be*/
+  (((v23) >> 8) & 0xFF) &= ~8u; /*0x47e6be*/
   v4->flags[0] = v38 | v23; /*0x47e6c5*/
   if ( v5 )
   {
@@ -950,7 +950,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     mapCoords = (unsigned int *)(v4->mapCoords); /*0x47e705*/
   }
   v26 = mapCoords[80]; /*0x47e751*/
-  IDA_BYTE1(v26) &= ~0x10u; /*0x47e757*/
+  (((v26) >> 8) & 0xFF) &= ~0x10u; /*0x47e757*/
   mapCoords[80] = v7 | v26; /*0x47e75c*/
   v27 = ((unsigned char)v24 - 4) & 7; /*0x47e765*/
   if ( v27 < 8 ) /*0x47e76b*/
@@ -969,14 +969,14 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v28 = a1; /*0x47e76d*/
   }
   v31 = *(unsigned int *)(v28 + 320); /*0x47e7c2*/
-  IDA_BYTE1(v31) &= ~1u; /*0x47e7cc*/
+  (((v31) >> 8) & 0xFF) &= ~1u; /*0x47e7cc*/
   v32 = v39 | v31; /*0x47e7d3*/
-  IDA_BYTE1(v32) &= ~2u; /*0x47e7d9*/
+  (((v32) >> 8) & 0xFF) &= ~2u; /*0x47e7d9*/
   *(unsigned int *)(v28 + 44) = v47; /*0x47e7dc*/
   v33 = v40 | v32; /*0x47e7df*/
-  IDA_BYTE1(v33) &= ~4u; /*0x47e7e5*/
+  (((v33) >> 8) & 0xFF) &= ~4u; /*0x47e7e5*/
   v34 = v8 | (a4 | v33) & 0xFFFEEFFF; /*0x47e7f3*/
-  IDA_BYTE1(v34) &= ~8u; /*0x47e7f5*/
+  (((v34) >> 8) & 0xFF) &= ~8u; /*0x47e7f5*/
   *(unsigned int *)(v28 + 320) = v38 | v34; /*0x47e7fc*/
   if ( v5 )
   {

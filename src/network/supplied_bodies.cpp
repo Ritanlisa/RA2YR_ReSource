@@ -2507,7 +2507,7 @@ void ModemHost::StartGame()
         dword_A8B230[130].vtable3 = *(void **)&stru_A8B250[4]; /*0x5bb1d0*/
         dword_A8B54C = dword_A8DA84; /*0x5bb1f0*/
         v25 = (&dword_A8E960)[0]; /*0x5bb1f5*/
-        IDA_BYTE1(v25) = IDA_BYTE1((&dword_A8E960)[0]) & 0x77; /*0x5bb1fc*/
+        (((v25) >> 8) & 0xFF) = IDA_BYTE1((&dword_A8E960)[0]) & 0x77; /*0x5bb1fc*/
         v26 = v25 | ((byte_A8B31D & 1 | (16 * (stru_A8B250[16] & 1))) << 11); /*0x5bb202*/
         IDA_LOBYTE(v26) = IDA_LOBYTE((&dword_A8E960)[0]) | 0xC0; /*0x5bb209*/
         *(unsigned int * *)((char *)&stru_A8EB00 + 644) = 0; /*0x5bb20c*/

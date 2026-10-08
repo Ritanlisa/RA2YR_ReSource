@@ -1556,7 +1556,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_24(int a1, int a2, int a3, int
     {
       sprintf((char *const)(byte_B785C0), "%s", v7); /*0x7ab744*/
     }
-    if ( (IDA_BYTE1(*(unsigned int *)a4) & 0x80u) == 0 ) /*0x7ab758*/
+    if ( ((((unsigned int *)a4) >> 8) & 0xFF & 0x80u) == 0 ) /*0x7ab758*/
     {
       if ( !((NetworkLobby *)v5)->CheckMinPlayers() ) /*0x7ab860*/
       {

@@ -323,7 +323,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
           pPStm = (int *)(0); /*0x4b632a*/
         }
         if ( v8 < 0 && v8 != -2147467262 ) /*0x4b6356*/
-          WinAPI::Wrapper(v8); /*0x4b6359*/
+          sub_7DC720(v8); /*0x4b6359*/
       }
       v10 = OleSaveToStream( (LPPERSISTSTREAM)pPStm, (void *)(v3)); /*0x4b636a*/
       if ( pPStm ) /*0x4b6372*/

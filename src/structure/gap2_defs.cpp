@@ -147,7 +147,7 @@ int AircraftClass::Construct(int a1, void* a2) {
       a2->lpVtbl->Release(a2); /*0x413e11*/
     }
     if ( !*v5 ) /*0x413e14*/
-      WinAPI::Wrapper(-2147467261); /*0x413e1e*/
+      sub_7DC720(-2147467261); /*0x413e1e*/
     (*(void (__stdcall **)(unsigned int, int))(*(unsigned int *)a2 + 12))(a2, this); /*0x413e29*/
   }
 }
@@ -1786,7 +1786,7 @@ int BuildingClass::CreateUnits()
                   }
                   v59 = (_AX & 0x4100) != 0; /*0x446493*/
                   v60 = (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 258))(this) > 0; /*0x4464ab*/
-                  IDA_BYTE4(v127) = v60; /*0x4464b0*/
+                  (((v127) >> 32) & 0xFF) = v60; /*0x4464b0*/
                   if ( v59 ) /*0x4464b4*/
                   {
                     v62 = &this->Type->__pad_F70[1068]; /*0x4464bc*/
@@ -1905,7 +1905,7 @@ int BuildingClass::CreateUnits()
         }
         v26 = (_EAX & 0x4100) != 0; /*0x44619a*/
         v27 = (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 258))(this) > 0; /*0x4461b2*/
-        IDA_BYTE4(v127) = v27; /*0x4461b7*/
+        (((v127) >> 32) & 0xFF) = v27; /*0x4461b7*/
         if ( v26 ) /*0x4461bb*/
         {
           v29 = &this->Type->__pad_F70[1204]; /*0x4461c3*/
@@ -1930,7 +1930,7 @@ int BuildingClass::CreateUnits()
         }
         v34 = (_AX & 0x4100) != 0; /*0x446213*/
         v35 = (*((int (__thiscall **)(BuildingClass *))this->vtable1 + 258))(this) > 0; /*0x44622b*/
-        IDA_BYTE4(v127) = v35; /*0x446230*/
+        (((v127) >> 32) & 0xFF) = v35; /*0x446230*/
         if ( v34 ) /*0x446234*/
         {
           v37 = &this->Type->__pad_F70[184]; /*0x44623c*/
@@ -4341,7 +4341,7 @@ void* InfantryClass::updateOccupiedBuilding(void* aP1) {
       this->FootClass = 0; /*0x523405*/
     }
     if ( v5 < 0 && v5 != -2147467262 ) /*0x52342b*/
-      WinAPI::Wrapper(v5); /*0x52342e*/
+      sub_7DC720(v5); /*0x52342e*/
   }
 }
 }
@@ -5025,7 +5025,7 @@ int UnitClass::Construct() {
   *(this + 3) = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x735454*/
   if ( ((unsigned int *)&FootClass_Array)[2] < ((unsigned int *)&FootClass_Array)[0] /*0x73548f*/
-    || (IDA_BYTE1(((unsigned int *)&FootClass_Array)[1]) || !((unsigned int *)&FootClass_Array)[0])
+    || (((((unsigned int *)&FootClass_Array)[1]) >> 8) & 0xFF || !((unsigned int *)&FootClass_Array)[0])
     && ((unsigned int *)&FootClass_Array)[3] > 0
     && (*(uint8_t (**)(float *, int, unsigned int))(IDA_LODWORD(((char *)&FootClass_Array)) + 8))(
          &((char *)&FootClass_Array),
@@ -5088,7 +5088,7 @@ int UnitClass::Construct() {
   *(this + 3) = (int)&off_7F5C44; /*0x73544d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)(this + 1)); /*0x735454*/
   if ( ((unsigned int *)&FootClass_Array)[2] < ((unsigned int *)&FootClass_Array)[0] /*0x73548f*/
-    || (IDA_BYTE1(((unsigned int *)&FootClass_Array)[1]) || !((unsigned int *)&FootClass_Array)[0])
+    || (((((unsigned int *)&FootClass_Array)[1]) >> 8) & 0xFF || !((unsigned int *)&FootClass_Array)[0])
     && ((unsigned int *)&FootClass_Array)[3] > 0
     && (*(uint8_t (**)(float *, int, unsigned int))(IDA_LODWORD(((char *)&FootClass_Array)) + 8))(
          &((char *)&FootClass_Array),

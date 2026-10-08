@@ -103,6 +103,7 @@ void AudioController_Init(void *aP1);                   // static Init(void*) G4
 int AbstractClass_ProcessPower(...);                    // 0x410410 静态渲染 (abstract.hpp:201 member 0 参形)
 void *AbstractClass_InitVtables(void *aP1, int a2);     // 0x4101C0 静态渲染 (abstract.hpp:198 member 1 参形)
 int StartAudioControllerAt(...);                        // 0x7509e0 (_generated/global_funcs.hpp:4804)
+void ThrowErrorCOM(int a1, int a2, int a3);              // 0x7dcd9c (_generated/global_funcs.hpp:6146; g57w20m7 sub_7DC720 真身依赖)
 void *Coord_To_Screen(void *aP1, void *a2, void *a3);   // 0x6D2140 Coord::To_Screen 静态渲染 (Coord_e4.hpp:71)
 void AnimClass_ctor(...);                               // AnimClass::ctor 静态渲染 (0x53ccce/0x53cd14/0x53cd62; C2027 前置声明消解)
 int PlaySoundEffectAt(...);                             // 0x489280 (_generated/global_funcs.hpp:869)
@@ -1079,7 +1080,7 @@ int AnimTypeVector::Constructor(int a2, int a3)
         *((unsigned int *)this + 1) = a3; /*0x5256a8*/
         return (int)(this); /*0x5256ae*/
       }
-      *((unsigned int *)this + 1) = (unsigned int)RA2_OPNEW(4 * a2); /*0x5256bd*/
+      *(unsigned int *)&this->__pad_004 = (unsigned int)RA2_OPNEW(4 * a2); /*0x5256bd*/
       *((unsigned char *)this + 13) = 1; /*0x5256c0*/
     }
     return (int)(this); /*0x5256ad*/
@@ -10901,7 +10902,7 @@ void ScoreScreenClass::ProcessFrame(char * a1, int a2)
         v9[3] = (int)(void *)&ScriptTypeClass_vftable; /*0x691a75*/
         v10 = *(unsigned int *)&FootClass_Array.?; /*0x691a7c*/
         if ( *(int *)&FootClass_Array.? < *(unsigned int *)((char *)&FootClass_Array + 6) /*0x691ab9*/
-          || (IDA_BYTE1(*(unsigned int *)((char *)&FootClass_Array + 7)) || !*(unsigned int *)((char *)&FootClass_Array + 6))
+          || ((((unsigned int *)((char *)&FootClass_Array + 7)) >> 8) & 0xFF || !*(unsigned int *)((char *)&FootClass_Array + 6))
           && *(int *)&FootClass_Array.? > 0
           && (v11 = (*(unsigned __int8 (__thiscall **)(int *, int, unsigned int))(*(unsigned int *)((char *)&FootClass_Array + 4) + 8))(
                       ((char *)&FootClass_Array + 4),
@@ -11436,7 +11437,7 @@ void SuperWeaponClass::CreateChemLauncher( int a2, int a3, int a4, IUnknown * aP
     int GroundHeight; // [esp+34h] [ebp-1Ch]
     unsigned __int64 v27[3]; // [esp+38h] [ebp-18h] BYREF
 
-    *(unsigned int *)v19 = *ScenarioClass_Get_Waypoint_Location((char *)dword_A8B230, v20, *((unsigned int *)this + 17)); /*0x6e3913*/
+    *(unsigned int *)v19 = *ScenarioClass_Get_Waypoint_Location((char *)dword_A8B230, v20, this->u32_44); /*0x6e3913*/
     GroundHeight = 0; /*0x6e3917*/
     v25 = (v19[1] << 8) + 128; /*0x6e3938*/
     v24 = (v19[0] << 8) + 128; /*0x6e3942*/
@@ -15648,7 +15649,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
         goto LABEL_62; /*0x7a5d2a*/
       }
       g_WindowManager.__pad_EC[136] = 0; /*0x7a5dfb*/
-      if ( (IDA_BYTE1(*(unsigned int *)a4) & 0x80u) == 0 ) /*0x7a5e07*/
+      if ( ((((unsigned int *)a4) >> 8) & 0xFF & 0x80u) == 0 ) /*0x7a5e07*/
       {
         if ( stru_B76AC4.ambientSoundController[4] == 41 ) /*0x7a6300*/
           PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1728), 0x2000, 1.0, 0); /*0x7a6319*/
@@ -15926,10 +15927,10 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
           *(unsigned int *)v152.__pad_0 = 0; /*0x7a6109*/
           IDA_WORD2(v154) = 0; /*0x7a6112*/
           v55 = ntohl(v54); /*0x7a6117*/
-          IDA_BYTE2(v154) = IDA_BYTE1(v55); /*0x7a612b*/
+          (((v154) >> 16) & 0xFF) = (((v55) >> 8) & 0xFF); /*0x7a612b*/
           *(unsigned short *)((char *)&v154 + 3) = (unsigned __int8)v55; /*0x7a612b*/
           IDA_LOBYTE(v154) = IDA_HIBYTE(v55); /*0x7a612f*/
-          IDA_BYTE1(v154) = IDA_BYTE2(v55); /*0x7a613e*/
+          (((v154) >> 8) & 0xFF) = (((v55) >> 16) & 0xFF); /*0x7a613e*/
           NetworkAddress::Assign(&v155, &v152, (int)&v154, 0); /*0x7a6148*/
           v56 = *(unsigned int *)v155.m_Port; /*0x7a6156*/
           *(unsigned int *)(v52 + 40) = v155.m_IP; /*0x7a615a*/
@@ -16015,7 +16016,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
             break;
         }
   LABEL_213:
-        if ( (IDA_BYTE1(*(unsigned int *)v80) & 0x80u) == 0 /*0x7a6970*/
+        if ( ((((unsigned int *)v80) >> 8) & 0xFF & 0x80u) == 0 /*0x7a6970*/
           && !*(unsigned int *)v81
           && (dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2) )
         {
@@ -16162,10 +16163,10 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
               *(unsigned int *)v152.__pad_0 = 0; /*0x7a6c64*/
               *(unsigned short *)&v152.m_3[1] = 0; /*0x7a6c69*/
               v122 = ntohl(v121); /*0x7a6c6e*/
-              v152.__pad_0[2] = IDA_BYTE1(v122); /*0x7a6c83*/
+              v152.__pad_0[2] = (((v122) >> 8) & 0xFF); /*0x7a6c83*/
               v152.m_3[0] = v122; /*0x7a6c83*/
               v152.__pad_0[0] = IDA_HIBYTE(v122); /*0x7a6c87*/
-              v152.__pad_0[1] = IDA_BYTE2(v122); /*0x7a6c96*/
+              v152.__pad_0[1] = (((v122) >> 16) & 0xFF); /*0x7a6c96*/
               NetworkAddress::Assign(&v155, &v154, (int)&v152, 0); /*0x7a6ca0*/
               v123 = *(unsigned int *)v155.m_Port; /*0x7a6cac*/
               *(unsigned int *)(v118 + 40) = v155.m_IP; /*0x7a6cb0*/
@@ -16195,7 +16196,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
                 }
                 v125 = dword_A8B244; /*0x7a6d28*/
               }
-              if ( (IDA_BYTE1(*(unsigned int *)a4) & 0x80u) != 0 && v125 != 3 && v125 != 1 && v125 != 2 && g_MenuStateFlags ) /*0x7a6d4a*/
+              if ( ((((unsigned int *)a4) >> 8) & 0xFF & 0x80u) != 0 && v125 != 3 && v125 != 1 && v125 != 2 && g_MenuStateFlags ) /*0x7a6d4a*/
               {
                 SessionClass::SetPlayerOption((int *)v118, -3); /*0x7a6d50*/
                 SessionClass::SetPlayerColor((int *)v118, -2); /*0x7a6d59*/
@@ -16282,7 +16283,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
               }
             }
           }
-          else if ( (IDA_BYTE1(*(unsigned int *)a4) & 0x80u) == 0 ) /*0x7a6f79*/
+          else if ( ((((unsigned int *)a4) >> 8) & 0xFF & 0x80u) == 0 ) /*0x7a6f79*/
           {
             v135 = RA2_OPNEW(0x85u); /*0x7a6f84*/
             v136 = v135; /*0x7a6f89*/
@@ -16300,10 +16301,10 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
             *(unsigned int *)v152.__pad_0 = 0; /*0x7a6fca*/
             *(unsigned short *)&v152.m_3[1] = 0; /*0x7a6fcf*/
             v140 = ntohl(v139); /*0x7a6fd4*/
-            v152.__pad_0[2] = IDA_BYTE1(v140); /*0x7a6fe9*/
+            v152.__pad_0[2] = (((v140) >> 8) & 0xFF); /*0x7a6fe9*/
             v152.m_3[0] = v140; /*0x7a6fe9*/
             v152.__pad_0[0] = IDA_HIBYTE(v140); /*0x7a6fed*/
-            v152.__pad_0[1] = IDA_BYTE2(v140); /*0x7a6ffc*/
+            v152.__pad_0[1] = (((v140) >> 16) & 0xFF); /*0x7a6ffc*/
             NetworkAddress::Assign(&v155, &v154, (int)&v152, 0); /*0x7a7006*/
             v141 = *(unsigned int *)v155.m_Port; /*0x7a7014*/
             *(unsigned int *)(v136 + 40) = v155.m_IP; /*0x7a7018*/
@@ -16724,8 +16725,8 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
               v26 = ntohl(v25); /*0x7a76c1*/
               IDA_HIBYTE(v46.?) = v26; /*0x7a76ca*/
               IDA_LOBYTE(v46.?) = IDA_HIBYTE(v26); /*0x7a76d6*/
-              IDA_BYTE2(v46.?) = IDA_BYTE1(v26); /*0x7a76da*/
-              IDA_BYTE1(v46.?) = IDA_BYTE2(v26); /*0x7a76ef*/
+              IDA_BYTE2(v46.?) = (((v26) >> 8) & 0xFF); /*0x7a76da*/
+              IDA_BYTE1(v46.?) = (((v26) >> 16) & 0xFF); /*0x7a76ef*/
               NetworkAddress::Assign((NetworkAddress *)&v46.attachedTag, &v46.?, (int)&v46.?, 0); /*0x7a76f3*/
               attachedBomb = v46.attachedBomb; /*0x7a7701*/
               *(unsigned int *)(v23 + 40) = v46.attachedTag; /*0x7a7705*/
@@ -21971,13 +21972,13 @@ void DiskLaserClass::Update()
           IDA_LOBYTE(v33) = *(unsigned char *)(v66 + 2); /*0x4a7627*/
           IDA_LOWORD(v56) = *(unsigned short *)v66; /*0x4a762a*/
           v55 = &v56; /*0x4a762d*/
-          IDA_BYTE2(v56) = (unsigned char)v33; /*0x4a762e*/
+          (((v56) >> 16) & 0xFF) = (unsigned char)v33; /*0x4a762e*/
           IDA_LOBYTE(v33) = *((unsigned char *)v65 + 2); /*0x4a763a*/
           IDA_LOWORD(v55) = *v65; /*0x4a763d*/
           v52 = &v55; /*0x4a7640*/
-          IDA_BYTE2(v55) = (unsigned char)v33; /*0x4a7641*/
+          (((v55) >> 16) & 0xFF) = (unsigned char)v33; /*0x4a7641*/
           IDA_LOWORD(v52) = *(unsigned short *)v62; /*0x4a7652*/
-          IDA_BYTE2(v52) = v62[2]; /*0x4a765a*/
+          (((v52) >> 16) & 0xFF) = v62[2]; /*0x4a765a*/
           TimerClass::Construct( /*0x4a7691*/
             v31,
             v70,
@@ -22049,12 +22050,12 @@ void DiskLaserClass::Update()
           v55 = v41; /*0x4a77a3*/
           v42 = *(unsigned char *)(v66 + 2); /*0x4a77a4*/
           IDA_LOWORD(v56) = (unsigned short)v41; /*0x4a77a7*/
-          IDA_BYTE2(v56) = v42; /*0x4a77ac*/
+          (((v56) >> 16) & 0xFF) = v42; /*0x4a77ac*/
           IDA_LOWORD(v55) = *v65; /*0x4a77b6*/
           v53 = &v55; /*0x4a77bc*/
-          IDA_BYTE2(v55) = *((unsigned char *)v65 + 2); /*0x4a77bd*/
+          (((v55) >> 16) & 0xFF) = *((unsigned char *)v65 + 2); /*0x4a77bd*/
           IDA_LOWORD(v53) = *(unsigned short *)v62; /*0x4a77cd*/
-          IDA_BYTE2(v53) = v62[2]; /*0x4a77da*/
+          (((v53) >> 16) & 0xFF) = v62[2]; /*0x4a77da*/
           TimerClass::Construct( /*0x4a7804*/
             v68,
             v70,
@@ -22094,14 +22095,14 @@ void DiskLaserClass::Update()
           v56 = v67; /*0x4a786e*/
           IDA_LOWORD(v56) = *(unsigned short *)v66; /*0x4a7878*/
           v49 = (DiskLaserClass **)v66; /*0x4a787b*/
-          IDA_BYTE2(v56) = *(unsigned char *)(v66 + 2); /*0x4a7882*/
-          IDA_LOBYTE(v49) = IDA_BYTE2(v56); /*0x4a787f*/
+          (((v56) >> 16) & 0xFF) = *(unsigned char *)(v66 + 2); /*0x4a7882*/
+          IDA_LOBYTE(v49) = (((v56) >> 16) & 0xFF); /*0x4a787f*/
           v55 = v49; /*0x4a7885*/
           IDA_LOWORD(v55) = *v65; /*0x4a788f*/
-          IDA_BYTE2(v55) = *((unsigned char *)v65 + 2); /*0x4a7899*/
+          (((v55) >> 16) & 0xFF) = *((unsigned char *)v65 + 2); /*0x4a7899*/
           IDA_HIBYTE(v54) = IDA_HIBYTE(v65); /*0x4a789c*/
           IDA_LOWORD(v54) = *(unsigned short *)v62; /*0x4a78ad*/
-          IDA_BYTE2(v54) = v62[2]; /*0x4a78b7*/
+          (((v54) >> 16) & 0xFF) = v62[2]; /*0x4a78b7*/
           TimerClass::Construct( /*0x4a78df*/
             v48,
             v70,
@@ -23562,7 +23563,7 @@ void GroupLabel::WndProc()
         else
         {
           v16 = v30; /*0x61e8e5*/
-          v27 = IDA_BYTE2(v26) >> g_BitMask_Red << g_BitShift_Blue; /*0x61e8f9*/
+          v27 = (((v26) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue; /*0x61e8f9*/
           v34 = ((int)(unsigned __int8)v26 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x61e925*/
               | ((unsigned __int8)g_DialogPool.__pad_208[205] >> g_BitMask_Blue << g_BitMask_Green)
               | v27;
@@ -23577,7 +23578,7 @@ void GroupLabel::WndProc()
           v16 = v30; /*0x61e950*/
           v33 = ((int)(unsigned __int8)g_DialogPool.__pad_208[208] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x61e97a*/
               | ((unsigned __int8)g_DialogPool.__pad_208[209] >> g_BitMask_Blue << g_BitMask_Green)
-              | (IDA_BYTE2(v25) >> g_BitMask_Red << g_BitShift_Blue);
+              | ((((v25) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue);
           v18 = v26; /*0x61e97e*/
         }
         v19 = 0; /*0x61e995*/
@@ -25297,7 +25298,7 @@ void MPScore::DlgProc()
                       + 776),
               (int)v56);
       IDA_LOWORD(v53) = *(unsigned short *)v25; /*0x5c9e1a*/
-      IDA_BYTE2(v53) = *(unsigned char *)(v25 + 2); /*0x5c9e22*/
+      (((v53) >> 16) & 0xFF) = *(unsigned char *)(v25 + 2); /*0x5c9e22*/
       v26 = (unsigned __int8)v53 | (*(unsigned __int16 *)((char *)&v53 + 1) << 8); /*0x5c9e58*/
       nIDDlgItem = (int)GetDlgItem(hWnd, (&dword_82FE04)[(unsigned int)v52]); /*0x5c9e5c*/
       v27 = (HWND)Game::GetMultiplayerScoreScreenBar((Game *)&v52->__pad_0[2]); /*0x5c9e67*/
@@ -26258,7 +26259,7 @@ int MSOverlayAnim::Load( int a2, int * a3)
     }
     v21 = *((unsigned int *)this + 14); /*0x5cb9b0*/
     v38 = this->MSShapeAnim_field_0x04; /*0x5cb9bc*/
-    IDA_BYTE1(v21) |= 4u; /*0x5cb9c4*/
+    (((v21) >> 8) & 0xFF) |= 4u; /*0x5cb9c4*/
     v37 = v21; /*0x5cb9c8*/
     v39 = *((unsigned int *)this + 2); /*0x5cb9c9*/
     v22 = (int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)a2 + 120))(a2, v45); /*0x5cb9d6*/
@@ -26400,7 +26401,7 @@ void MSOverlayAnim::Draw( int a2, int * a3)
       {
         v11 = *((unsigned int *)this + 14); /*0x5cbc5f*/
         v14[0] = this->MSShapeAnim_field_0x04; /*0x5cbc6b*/
-        IDA_BYTE1(v11) |= 4u; /*0x5cbc73*/
+        (((v11) >> 8) & 0xFF) |= 4u; /*0x5cbc73*/
         v13 = v11; /*0x5cbc77*/
         v14[1] = *((unsigned int *)this + 2); /*0x5cbc78*/
         v12 = (int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)a2 + 120))(a2, v19); /*0x5cbc85*/
@@ -28893,13 +28894,13 @@ void Multiplay::LogToSYNC_NOMPDEBUG()
                 v336 = AbstractType::FindName(v57); /*0x64e713*/
               }
               if ( !v46[413] ) /*0x64e717*/
-                WinAPI::Wrapper(-2147467261); /*0x64e726*/
+                sub_7DC720(-2147467261); /*0x64e726*/
               v344 = v46[413]; /*0x64e733*/
               if ( !v344 ) /*0x64e739*/
-                WinAPI::Wrapper(-2147467261); /*0x64e740*/
+                sub_7DC720(-2147467261); /*0x64e740*/
               v350 = v46[413]; /*0x64e74d*/
               if ( !v350 ) /*0x64e753*/
-                WinAPI::Wrapper(-2147467261); /*0x64e75a*/
+                sub_7DC720(-2147467261); /*0x64e75a*/
               v351 = v46[413]; /*0x64e769*/
               v348 = v46[433] + 36; /*0x64e77d*/
               v58 = (unsigned __int8)((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(v46 + 232), &v347) >> 7) /*0x64e795*/
@@ -31072,7 +31073,7 @@ void OreManagerClass::AssignMinerToRefinery( unsigned int * a2)
                 IDA_LOWORD(v21) = *v13 / 256; /*0x71b029*/
                 v14 = (int)v13[1]; /*0x71b031*/
                 IDA_HIWORD(v21) = (int)v14 / 256; /*0x71b042*/
-                if ( CreateTriggerClassIfFarEnough(4, IDA_BYTE4(v14), v21) ) /*0x71b04c*/
+                if ( CreateTriggerClassIfFarEnough(4, (((v14) >> 32) & 0xFF), v21) ) /*0x71b04c*/
                   VoxClass::FindAndPlay(aEvaOreminerund, -1); /*0x71b05f*/
               }
             }
@@ -42224,9 +42225,9 @@ void WideChar::ToLong(BlowStraw * aP0, int a2, int a3)
 {
 }
 // 0x7dc720
-int WinAPI::Wrapper(int a2)
+int sub_7DC720(int a2)
 {
-  return a2; /*0x7dc720 SetLastError 族封装占位 (G42.33 签名对齐二进制 __fastcall(int))*/
+  ThrowErrorCOM(a2, 0, 0); /*0x7dc720 push 0; push arg_0; tail-call (a3 未读; ThrowErrorCOM=Helper+硬抛 _com_error 不返回; G42.33 占位体已废 G42.57 真身还原)*/
 }
 
 // 0x774120

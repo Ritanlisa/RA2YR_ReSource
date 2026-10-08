@@ -41,7 +41,6 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
 
   int v0; // edx
   int v1; // edi
-  char *v2; // ecx
   unsigned int *v3; // esi
   int result; // eax
   int i; // edi
@@ -53,12 +52,12 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
   v1 = 0; /*0x46545e*/
   if ( dword_A83C78 > 0 ) /*0x465462*/
   {
-    v2 = (char *)dword_A83C6C; /*0x465464*/
+    i = 0; /*0x465464*/
     do /*0x46547d*/
     {
-      if ( v1 <= *(char *)(*(unsigned int *)v2 + 5895) ) /*0x465475*/
-        v1 = *(char *)(*(unsigned int *)v2 + 5895); /*0x465477*/
-      v2 += 4; /*0x465479*/
+      if ( v1 <= (char)((BuildingTypeClass *)(&dword_A83C6C)[i])->CloakRadiusInCells ) /*0x465475*/
+        v1 = (char)((BuildingTypeClass *)(&dword_A83C6C)[i])->CloakRadiusInCells; /*0x465477*/
+      ++i; /*0x465479*/
       --v0; /*0x46547c*/
     }
     while ( v0 ); /*0x46547d*/
@@ -919,9 +918,9 @@ int BulletTypeClass::SaveLoad_Prefix(gamemd::ObjectTypeClass* aP0, int aP1)
     }
     ((VoxelAnimType*)(char *)aP0)->LoadAnim(); /*0x46c6e1*/
     ((gamemd::ObjectTypeClass*)(char *)aP0)->Load2DArt(); /*0x46c6e8*/
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 182); /*0x46c6f9*/
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 172); /*0x46c70a*/
-    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 173); /*0x46c71b*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((gamemd::BulletTypeClass *)aP0)->trailer); /*0x46c6f9*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((gamemd::BulletTypeClass *)aP0)->airburstWeapon); /*0x46c70a*/
+    ObjectPtr_RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&((gamemd::BulletTypeClass *)aP0)->shrapnelWeapon); /*0x46c71b*/
     return 0; /*0x46c720*/
   }
   return result; /*0x46c722*/

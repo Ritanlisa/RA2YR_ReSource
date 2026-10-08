@@ -119,10 +119,10 @@ int E4Recv_522100::sub_522100()
   }
   v7 = v4; /*0x522161*/
   if ( v3 < 0 && v3 != -2147467262 ) /*0x52216d*/
-    WinAPI::Wrapper(v3); /*0x522170*/
+    sub_7DC720(v3); /*0x522170*/
   if ( !v4 ) /*0x52217b*/
 LABEL_11:
-    WinAPI::Wrapper(-2147467261); /*0x522182*/
+    sub_7DC720(-2147467261); /*0x522182*/
   (*(void (**)(int, unsigned char *))(*(unsigned int *)v4 + 12))( v4, (unsigned char *)(v9)); /*0x522193*/
   v6 = memcmp(v9, &g_CLSID_JumpjetLocomotion, 0x10u) == 0; /*0x5221ac*/
   if ( v7 ) /*0x5221b1*/

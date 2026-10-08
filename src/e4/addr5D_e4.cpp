@@ -335,7 +335,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     if ( !*a2 ) /*0x5d452b*/
       return 0; /*0x5d4537*/
     v7 = *a2; /*0x5d453a*/
-    IDA_BYTE1(v7) = IDA_BYTE1(aP0) & 0xF7; /*0x5d453c*/
+    (((v7) >> 8) & 0xFF) = IDA_BYTE1(aP0) & 0xF7; /*0x5d453c*/
     if ( v7 == 1 || v7 == 2 ) /*0x5d4547*/
     {
       if ( ((unsigned int)(aP0)& 2) != 0 && *(unsigned char *)(aP0 + 25) ) /*0x5d4552*/
@@ -387,7 +387,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     v13 = *a2; /*0x5d45f1*/
     if ( (*a2 & 0x1000) != 0 && v12 >= 48 && v12 <= 57 ) /*0x5d4605*/
     {
-      IDA_BYTE1(v13) &= ~0x10u; /*0x5d4609*/
+      (((v13) >> 8) & 0xFF) &= ~0x10u; /*0x5d4609*/
       *a2 = v13; /*0x5d460c*/
     }
     else if ( (*a2 & 0x1000) != 0 || (v13 & 0x8000) != 0 || v12 < 32 ) /*0x5d461c*/

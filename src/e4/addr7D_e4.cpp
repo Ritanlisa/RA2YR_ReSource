@@ -325,7 +325,7 @@ int _filbuf(MouseClass * aP0)
       v4 = (((_iobuf_msvc6 *)File)->_file) == -1 ? &unk_87C928 : (unsigned char *)(dword_B78A80[(((_iobuf_msvc6 *)File)->_file) >> 5] + 36 * ((((_iobuf_msvc6 *)File)->_file) & 0x1F));
       if ( (v4[4] & 0x82) == 0x82 ) /*0x7d0796*/
       {
-        IDA_BYTE1(v3) |= 0x20u; /*0x7d0798*/
+        (((v3) >> 8) & 0xFF) |= 0x20u; /*0x7d0798*/
         (((_iobuf_msvc6 *)File)->_flag) = v3; /*0x7d079b*/
       }
     }
@@ -951,14 +951,14 @@ int _isctype(int C, int Type)
       v3 = *((unsigned __int16 *)off_87C590 + C); /*0x7d1329*/
       return Type & v3; /*0x7d1381*/
     }
-    if ( *((char *)off_87C590 + 2 * IDA_BYTE1(C) + 1) >= 0 ) /*0x7d1344*/
+    if ( *((char *)off_87C590 + 2 * (((C) >> 8) & 0xFF) + 1) >= 0 ) /*0x7d1344*/
     {
       IDA_LOWORD(SrcStr) = (unsigned __int8)C; /*0x7d1358*/
       result = __crtGetStringTypeA(1u, (LPCSTR)&SrcStr, 1, (LPWORD)&C + 1, 0, 0, 1); /*0x7d136f*/
     }
     else
     {
-      IDA_LOBYTE(SrcStr) = IDA_BYTE1(C); /*0x7d134a*/
+      IDA_LOBYTE(SrcStr) = (((C) >> 8) & 0xFF); /*0x7d134a*/
       *(unsigned short *)((char *)&SrcStr + 1) = (unsigned __int8)C; /*0x7d134d*/
       result = __crtGetStringTypeA(1u, (LPCSTR)&SrcStr, 2, (LPWORD)&C + 1, 0, 0, 1); /*0x7d1352*/
     }
@@ -999,7 +999,7 @@ int strlen(const char * Str)
       v4 = *((unsigned int *)v1 - 1); /*0x7d15d8*/
       if ( !(unsigned char)v4 ) /*0x7d15dd*/
         break; /*0x7d15dd*/
-      if ( !IDA_BYTE1(v4) ) /*0x7d15e1*/
+      if ( !(((v4) >> 8) & 0xFF) ) /*0x7d15e1*/
         return v1 - 3 - Str; /*0x7d1610*/
       if ( (v4 & 0xFF0000) == 0 ) /*0x7d15e8*/
         return v1 - 2 - Str; /*0x7d1606*/
@@ -1932,7 +1932,7 @@ return (AbstractClass **)v51; /*0x7d21ef*/
               if ( *v56 == 54 && v56[1] == 52 ) /*0x7d2347*/
               {
                 v56 += 2; /*0x7d2349*/
-                IDA_BYTE1(v55) |= 0x80u; /*0x7d234d*/
+                (((v55) >> 8) & 0xFF) |= 0x80u; /*0x7d234d*/
               }
               else
               {
@@ -1946,7 +1946,7 @@ return (AbstractClass **)v51; /*0x7d21ef*/
               v55 |= 0x20u; /*0x7d2331*/
               break;
             case 'w': /*0x7d2318*/
-              IDA_BYTE1(v55) |= 8u; /*0x7d2328*/
+              (((v55) >> 8) & 0xFF) |= 8u; /*0x7d2328*/
               break;
           }
           goto LABEL_167; /*0x7d232c*/
@@ -1968,7 +1968,7 @@ return (AbstractClass **)v51; /*0x7d21ef*/
               case 'o': /*0x7d25bd*/
                 j = 8; /*0x7d265f*/
                 if ( (v55 & 0x80u) != 0 ) /*0x7d2666*/
-                  IDA_BYTE1(v55) |= 2u; /*0x7d2668*/
+                  (((v55) >> 8) & 0xFF) |= 2u; /*0x7d2668*/
   LABEL_113:
                 if ( (v55 & 0x8000) != 0 ) /*0x7d26a7*/
                 {
@@ -1997,7 +1997,7 @@ return (AbstractClass **)v51; /*0x7d21ef*/
                 if ( (v55 & 0x40) != 0 && v21 < 0 ) /*0x7d26fe*/
                 {
                   IDA_HIDWORD(v22) = -(int)v21; /*0x7d270b*/
-                  IDA_BYTE1(v55) |= 1u; /*0x7d270f*/
+                  (((v55) >> 8) & 0xFF) |= 1u; /*0x7d270f*/
                   IDA_LODWORD(v22) = (uint64_t)-v21 >> 32; /*0x7d2713*/
                 }
                 else
@@ -2318,7 +2318,7 @@ unsigned int * _openfile(char * FileName, unsigned char * a2, int ShareFlag, uns
   LABEL_38:
               v8 = 0; /*0x7d2d5a*/
             else
-              IDA_BYTE1(v6) |= 0x40u; /*0x7d2d1f*/
+              (((v6) >> 8) & 0xFF) |= 0x40u; /*0x7d2d1f*/
           }
           else
           {
@@ -2340,7 +2340,7 @@ unsigned int * _openfile(char * FileName, unsigned char * a2, int ShareFlag, uns
       {
         if ( (v6 & 0xC000) != 0 ) /*0x7d2d58*/
           goto LABEL_38; /*0x7d2d58*/
-        IDA_BYTE1(v6) |= 0x80u; /*0x7d2d61*/
+        (((v6) >> 8) & 0xFF) |= 0x80u; /*0x7d2d61*/
       }
     }
     else if ( v9 == 84 ) /*0x7d2c96*/
@@ -3537,7 +3537,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
       }
       if ( !v58 || v68 > 349 ) /*0x7d3d0f*/
         v68 = 349; /*0x7d3d11*/
-      for ( ; !IDA_BYTE1(v3); *(unsigned int *)C = v3 ) /*0x7d3d1b*/
+      for ( ; !(((v3) >> 8) & 0xFF); *(unsigned int *)C = v3 ) /*0x7d3d1b*/
       {
         if ( (int)SrcSizeInBytes <= 1 ) /*0x7d3d29*/
           v14 = *((unsigned char *)off_87C590 + 2 * (uint8_t)v3) & 4; /*0x7d3d48*/
@@ -3564,7 +3564,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
           *p_Source = DstCh; /*0x7d3daf*/
           *(unsigned int *)C = v3; /*0x7d3db4*/
           ++p_Source; /*0x7d3db7*/
-          while ( !IDA_BYTE1(v3) )
+          while ( !(((v3) >> 8) & 0xFF) )
           {
             if ( !((int)SrcSizeInBytes <= 1
                  ? *((unsigned char *)off_87C590 + 2 * (uint8_t)v3) & 4
@@ -3603,7 +3603,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
               goto LABEL_94; /*0x7d3e67*/
             v20 = 0; /*0x7d3e69*/
           }
-          while ( !IDA_BYTE1(v3) )
+          while ( !(((v3) >> 8) & 0xFF) )
           {
             if ( !((int)SrcSizeInBytes <= 1
                  ? *((unsigned char *)off_87C590 + 2 * (uint8_t)v3) & 4
@@ -3663,7 +3663,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
       {
         if ( v60 == 120 || v60 == 112 )
         {
-          if ( IDA_BYTE1(v3)
+          if ( (((v3) >> 8) & 0xFF)
             || ((int)SrcSizeInBytes <= 1
               ? (v46 = *((unsigned char *)off_87C590 + 2 * (uint8_t)v3) & 0x80)
               : (v46 = _isctype((uint8_t)v3, 128)),
@@ -3683,7 +3683,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
         }
         else
         {
-          if ( IDA_BYTE1(v3) ) /*0x7d43db*/
+          if ( (((v3) >> 8) & 0xFF) ) /*0x7d43db*/
             goto LABEL_238; /*0x7d43db*/
           if ( !((int)SrcSizeInBytes <= 1
                ? *((unsigned char *)off_87C590 + 2 * (uint8_t)v3) & 4
@@ -3719,7 +3719,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
     {
       if ( v60 == 120 )
       {
-        if ( IDA_BYTE1(v3) ) /*0x7d4260*/
+        if ( (((v3) >> 8) & 0xFF) ) /*0x7d4260*/
           break; /*0x7d4260*/
         if ( !((int)SrcSizeInBytes <= 1
              ? *((unsigned char *)off_87C590 + 2 * (uint8_t)v3) & 0x80
@@ -3731,7 +3731,7 @@ ControlClass * * _winput(FILE * File, CampaignScore * aP1, int a3)
         *(unsigned int *)C = v3; /*0x7d42b7*/
         goto LABEL_203; /*0x7d42ba*/
       }
-      if ( !IDA_BYTE1(v3) )
+      if ( !(((v3) >> 8) & 0xFF) )
       {
         if ( (int)SrcSizeInBytes <= 1
            ? *((unsigned char *)off_87C590 + 2 * (uint8_t)v3) & 4
@@ -4043,7 +4043,7 @@ ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
     v5 = *((unsigned int *)v2 - 1); /*0x7d4c34*/
     if ( !(unsigned char)v5 ) /*0x7d4c39*/
       break; /*0x7d4c39*/
-    if ( !IDA_BYTE1(v5) ) /*0x7d4c3d*/
+    if ( !(((v5) >> 8) & 0xFF) ) /*0x7d4c3d*/
     {
       v6 = v2 - 3; /*0x7d4c59*/
       goto copy_start_0; /*0x7d4c5c*/
@@ -4079,7 +4079,7 @@ ObjectClass * * strcat(CCINIClass * aP0, ObjectClass * aP1)
         {
           if ( !(unsigned char)v8 ) /*0x7d4ca2*/
             goto LABEL_26; /*0x7d4ca2*/
-          if ( !IDA_BYTE1(v8) ) /*0x7d4ca6*/
+          if ( !(((v8) >> 8) & 0xFF) ) /*0x7d4ca6*/
           {
             *(unsigned short *)v6 = (uint8_t)v8; /*0x7d4ccf*/
             return aP0; /*0x7d4cd7*/
@@ -8627,14 +8627,14 @@ int _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, sh
     if ( !v18 ) /*0x7db8e5*/
     {
       v20 = *v7; /*0x7db8fd*/
-      IDA_BYTE1(v20) = IDA_BYTE1(*v7) & 0xF3 | 4; /*0x7db902*/
+      (((v20) >> 8) & 0xFF) = IDA_BYTE1(*v7) & 0xF3 | 4; /*0x7db902*/
       goto LABEL_54; /*0x7db902*/
     }
     v19 = v18 - 1; /*0x7db8e7*/
     if ( !v19 ) /*0x7db8e8*/
     {
       v20 = *v7; /*0x7db8f3*/
-      IDA_BYTE1(v20) = IDA_BYTE1(*v7) & 0xF3 | 8; /*0x7db8f8*/
+      (((v20) >> 8) & 0xFF) = IDA_BYTE1(*v7) & 0xF3 | 8; /*0x7db8f8*/
   LABEL_54:
       *v7 = v20; /*0x7db905*/
       goto LABEL_56; /*0x7db907*/
@@ -8646,14 +8646,14 @@ int _raise_exc(ULONG_PTR Arguments, unsigned int * a2, DWORD dwExceptionCode, sh
     if ( !v21 ) /*0x7db916*/
     {
       v23 = *v7 & 0xFFFFF3FF; /*0x7db92d*/
-      IDA_BYTE1(v23) |= 3u; /*0x7db92f*/
+      (((v23) >> 8) & 0xFF) |= 3u; /*0x7db92f*/
       goto LABEL_62; /*0x7db92f*/
     }
     v22 = v21 - 1; /*0x7db918*/
     if ( !v22 ) /*0x7db919*/
     {
       v23 = *v7 & 0xFFFFF3FF; /*0x7db924*/
-      IDA_BYTE1(v23) |= 2u; /*0x7db926*/
+      (((v23) >> 8) & 0xFF) |= 2u; /*0x7db926*/
   LABEL_62:
       *v7 = v23; /*0x7db932*/
       goto LABEL_63; /*0x7db932*/
@@ -8769,8 +8769,8 @@ int _handle_exc(char a1, double * a2, short a3)
               if ( (IDA_LOBYTE(v20) & 1) != 0 && !v13 ) /*0x7dbaf5*/
                 v13 = 1; /*0x7dbaf7*/
               IDA_LODWORD(v20) >>= 1; /*0x7dbaf9*/
-              if ( (IDA_BYTE4(v20) & 1) != 0 ) /*0x7dbaff*/
-                IDA_BYTE3(v20) |= 0x80u; /*0x7dbb01*/
+              if ( ((((v20) >> 32) & 0xFF) & 1) != 0 ) /*0x7dbaff*/
+                (((v20) >> 24) & 0xFF) |= 0x80u; /*0x7dbb01*/
               IDA_HIDWORD(v20) >>= 1; /*0x7dbb05*/
               --v17; /*0x7dbb08*/
             }
@@ -9090,14 +9090,14 @@ int _filwbuf(unsigned short ** a1)
          : (unsigned char *)(dword_B78A80[(int)a1[4] >> 5] + 36 * ((unsigned int)a1[4] & 0x1F));
       if ( (v4[4] & 0x82) == 0x82 ) /*0x7dc329*/
       {
-        IDA_BYTE1(v3) |= 0x20u; /*0x7dc32b*/
+        (((v3) >> 8) & 0xFF) |= 0x20u; /*0x7dc32b*/
         a1[3] = v3; /*0x7dc32e*/
       }
     }
     if ( a1[6] == (unsigned __int16 *)512 ) /*0x7dc338*/
     {
       v5 = a1[3]; /*0x7dc33a*/
-      if ( ((unsigned __int8)v5 & 8) != 0 && (IDA_BYTE1(v5) & 4) == 0 ) /*0x7dc345*/
+      if ( ((unsigned __int8)v5 & 8) != 0 && ((((v5) >> 8) & 0xFF) & 4) == 0 ) /*0x7dc345*/
         a1[6] = (unsigned __int16 *)4096; /*0x7dc347*/
     }
     v6 = *a1; /*0x7dc34e*/
@@ -9946,7 +9946,7 @@ void output(char * a1, int a2)
               case 'I': /*0x7dd661*/
                 if ( IDA_LOBYTE(thisa->AbstractClass) == 54 && IDA_BYTE1(thisa->AbstractClass) == 52 ) /*0x7dd69c*/
                 {
-                  IDA_BYTE1(v56) |= 0x80u; /*0x7dd6a0*/
+                  (((v56) >> 8) & 0xFF) |= 0x80u; /*0x7dd6a0*/
                   thisa = (ObjectClass *)((char *)thisa + 2); /*0x7dd6a4*/
                 }
                 else
@@ -9993,7 +9993,7 @@ void output(char * a1, int a2)
                 case 'o': /*0x7dd916*/
                   v54 = 8; /*0x7dd9b4*/
                   if ( (v56 & 0x80u) != 0 ) /*0x7dd9bb*/
-                    IDA_BYTE1(v56) |= 2u; /*0x7dd9bd*/
+                    (((v56) >> 8) & 0xFF) |= 2u; /*0x7dd9bd*/
                   break;
                 default:
                   switch ( vtable0 ) /*0x7dd92d*/
@@ -10051,7 +10051,7 @@ void output(char * a1, int a2)
               if ( (v56 & 0x40) != 0 && int64_arg_1 < 0 ) /*0x7dda53*/
               {
                 IDA_HIDWORD(v23) = -(int)int64_arg_1; /*0x7dda60*/
-                IDA_BYTE1(v56) |= 1u; /*0x7dda64*/
+                (((v56) >> 8) & 0xFF) |= 1u; /*0x7dda64*/
                 IDA_LODWORD(v23) = (unsigned __int64)-int64_arg_1 >> 32; /*0x7dda68*/
               }
               else
@@ -10174,7 +10174,7 @@ void output(char * a1, int a2)
                 off_87C4D0[0](); /*0x7dd8b2*/
               case 'S': /*0x7dd70b*/
                 if ( (v56 & 0x830) == 0 ) /*0x7dd731*/
-                  IDA_BYTE1(v56) |= 8u; /*0x7dd733*/
+                  (((v56) >> 8) & 0xFF) |= 8u; /*0x7dd733*/
   LABEL_55:
                 v9 = v53; /*0x7dd737*/
                 if ( v53 == -1 ) /*0x7dd73d*/
@@ -13225,7 +13225,7 @@ bool TestDefaultLanguage(int a1, int a2)
     char v5[120]; // [esp+0h] [ebp-78h] BYREF
 
     v2 = a1 & 0x3FF; /*0x7d7408*/
-    IDA_BYTE1(v2) |= 4u; /*0x7d740f*/
+    (((v2) >> 8) & 0xFF) |= 4u; /*0x7d740f*/
     result = 0; /*0x7d7458*/
     if ( dword_B78564(v2, 1, v5, 120) ) /*0x7d7413*/
     {

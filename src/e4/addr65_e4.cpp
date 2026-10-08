@@ -406,13 +406,13 @@ int Trigger_AllocateLog(int a1)
         *(unsigned char *)(v15 + 103) = Math::RoundToInt(*(double *)(v28 + 1400) * 256.0);
         *(unsigned char *)(v15 + 32) = *(unsigned char *)(*(unsigned int *)(v28 + 540) + 48);
         if ( !*(unsigned int *)(v28 + 1652) )
-          WinAPI::Wrapper(-2147467261);
+          sub_7DC720(-2147467261);
         *(unsigned short *)(v15 + 96) = (*(int (**)(unsigned int))(**(unsigned int **)(v28 + 1652) + 188))(*(unsigned int *)(v28 + 1652));
         if ( !*(unsigned int *)(v28 + 1652) )
-          WinAPI::Wrapper(-2147467261);
+          sub_7DC720(-2147467261);
         *(unsigned short *)(v15 + 98) = (*(int (**)(unsigned int))(**(unsigned int **)(v28 + 1652) + 192))(*(unsigned int *)(v28 + 1652));
         if ( !*(unsigned int *)(v28 + 1652) )
-          WinAPI::Wrapper(-2147467261);
+          sub_7DC720(-2147467261);
         *(unsigned int *)(v15 + 92) = (*(int (**)(unsigned int))(**(unsigned int **)(v28 + 1652) + 196))(*(unsigned int *)(v28 + 1652));
         *(unsigned char *)(v15 + 31) = 0;
         strncpy((char *)(v15 + 8), (const char *)(*(unsigned int *)(v28 + 1732) + 36), 0x17u);
@@ -1918,7 +1918,7 @@ char MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v20 = ((CellCoord *)(&dword_87F7E8))->To_CellObj((int16_t *)&v49); /*0x65e225*/
         v5->vt_slot_1152(v20, 1); /*0x65e22d*/
         if ( !v5[413] ) /*0x65e23d*/
-          WinAPI::Wrapper(-2147467261); /*0x65e260*/
+          sub_7DC720(-2147467261); /*0x65e260*/
         (*(void (**)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e27b*/
           v5[413],
           ((int16_t)v49 << 8) + 128,
@@ -1998,7 +1998,7 @@ IDA_LOBYTE(a2) = (*(int (**)(unsigned int *, unsigned int *, unsigned int))(v27 
         v5->vt_slot_1152(v31, 1); /*0x65e396*/
         (*(void (**)(unsigned int *, unsigned int, int))(*v5 + 1348))( (unsigned int *)(v5), 0, 1072693248); /*0x65e3a8*/
         if ( !v5[413] ) /*0x65e3b8*/
-          WinAPI::Wrapper(-2147467261); /*0x65e3db*/
+          sub_7DC720(-2147467261); /*0x65e3db*/
         (*(void (**)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e3f6*/
           v5[413],
           ((int16_t)v49 << 8) + 128,
@@ -2540,14 +2540,14 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
           v50 = 0; /*0x65f050*/
         }
         if ( v26 < 0 && v26 != -2147467262 ) /*0x65f075*/
-          WinAPI::Wrapper(v26); /*0x65f078*/
+          sub_7DC720(v26); /*0x65f078*/
       }
       ppv = 0; /*0x65f08a*/
       v28 = CreateInstanceCOM( (void*)(&ppv), (IID *)&g_CLSID_HoverLocomotion, 0, 7u); /*0x65f092*/
       if ( v28 < 0 && v28 != -2147467262 ) /*0x65f0a0*/
-        WinAPI::Wrapper(v28); /*0x65f0a3*/
+        sub_7DC720(v28); /*0x65f0a3*/
       if ( !ppv ) /*0x65f0ae*/
-        WinAPI::Wrapper(-2147467261); /*0x65f0b5*/
+        sub_7DC720(-2147467261); /*0x65f0b5*/
       (*(void (**)(LPVOID, LPVOID *))(ppv->vtable4))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (LPVOID *)(v9));  /*0x65f0c2*/
       v29 = 0; /*0x65f0c5*/
       i = 0; /*0x65f0cb*/
@@ -2568,7 +2568,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         }
         i = v29; /*0x65f10f*/
         if ( v31 < 0 && v31 != -2147467262 ) /*0x65f11b*/
-          WinAPI::Wrapper(v31); /*0x65f11e*/
+          sub_7DC720(v31); /*0x65f11e*/
       }
       v33 = v50; /*0x65f127*/
       if ( v50 != v29 ) /*0x65f12d*/
@@ -2611,7 +2611,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
       v9[163] = (LPVOID)v53; /*0x65f1b1*/
       v9[164] = v54; /*0x65f1b8*/
       if ( !v9[413] ) /*0x65f1bb*/
-        WinAPI::Wrapper(-2147467261); /*0x65f1d6*/
+        sub_7DC720(-2147467261); /*0x65f1d6*/
       (*(void (**)(LPVOID, int, int, void *))(*(unsigned int *)v9[413] + 68))( v9[413], v52, v53, (void *)(v54)); /*0x65f1f1*/
       *((unsigned char *)v9 + 625) = 1; /*0x65f1f4*/
       v58 = v58; /*0x65f201*/

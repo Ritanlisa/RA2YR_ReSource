@@ -132,7 +132,7 @@ LABEL_20:
           }
         }
         if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520d1b*/
-          WinAPI::Wrapper(-2147467261); /*0x520d2a*/
+          sub_7DC720(-2147467261); /*0x520d2a*/
         if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) /*0x520d50*/
           && *(double *)&this->__pad_18C[1004] > 0.1 )
         {
@@ -147,7 +147,7 @@ LABEL_20:
           if ( v11 != 40 && v11 != 41 || !*(unsigned int *)&this->__pad_18C[264] || !*(unsigned int *)&this->__pad_18C[296] ) /*0x520d98*/
             goto LABEL_44; /*0x520d98*/
           if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520da2*/
-            WinAPI::Wrapper(-2147467261); /*0x520db1*/
+            sub_7DC720(-2147467261); /*0x520db1*/
           if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x520dbf*/
           {
             if ( this->__pad_5B8[291] ) /*0x520dc6*/
@@ -243,7 +243,7 @@ char Mission_e4::ProcessUnitMissionAI()
   if ( (*(int (**)(Mission_e4 *))(*(unsigned int *)this->__pad_0 + 388))(this) == 2 ) /*0x520f53*/
   {
     if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x520f55*/
-      WinAPI::Wrapper(-2147467261); /*0x520f64*/
+      sub_7DC720(-2147467261); /*0x520f64*/
     if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x520f72*/
     {
       v2 = *(unsigned int *)&this->__pad_18C[1048]; /*0x520f79*/
@@ -278,7 +278,7 @@ char Mission_e4::ProcessUnitMissionAI()
           (*(int (**)(Mission_e4 *, int))(v6 + 428))(this, v7) != 7) )
     {
       if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x521028*/
-        WinAPI::Wrapper(-2147467261); /*0x521037*/
+        sub_7DC720(-2147467261); /*0x521037*/
       if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 16))(*(unsigned int *)&this->__pad_5B8[188]) /*0x521050*/
         && !this->__pad_18C[652] )
       {
@@ -318,7 +318,7 @@ char Mission_e4::ProcessUnitMissionAI()
     }
   }
   if ( !*(unsigned int *)&this->__pad_5B8[188] ) /*0x521144*/
-    WinAPI::Wrapper(-2147467261); /*0x521153*/
+    sub_7DC720(-2147467261); /*0x521153*/
   if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)&this->__pad_5B8[188] + 168))(*(unsigned int *)&this->__pad_5B8[188]) ) /*0x521161*/
   {
     if ( !*(unsigned char *)(*(unsigned int *)&this->__pad_5B8[264] + 3476) ) /*0x521175*/
@@ -341,10 +341,10 @@ char Mission_e4::ProcessUnitMissionAI()
     }
     v22 = v14; /*0x5211ca*/
     if ( v13 < 0 && v13 != -2147467262 ) /*0x5211d6*/
-      WinAPI::Wrapper(v13); /*0x5211d9*/
+      sub_7DC720(v13); /*0x5211d9*/
     if ( !v14 ) /*0x5211e4*/
 LABEL_33:
-      WinAPI::Wrapper(-2147467261); /*0x5211eb*/
+      sub_7DC720(-2147467261); /*0x5211eb*/
     (*(void (**)(int, char *))(*(unsigned int *)v14 + 12))( v14, (char *)(v25)); /*0x5211fc*/
     v16 = memcmp(v25, &g_CLSID_JumpjetLocomotion, 0x10u) == 0; /*0x521215*/
     if ( v22 ) /*0x52121a*/

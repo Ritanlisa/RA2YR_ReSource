@@ -255,19 +255,19 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   ppv = (LPVOID)((unsigned int)(0));
   InstanceCOM = CreateInstanceCOM((ObjectClass *)&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
   if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x4db8da*/
-    WinAPI::Wrapper(InstanceCOM); /*0x4db8dd*/
+    sub_7DC720(InstanceCOM); /*0x4db8dd*/
   if ( !ppv ) /*0x4db8e8*/
-    WinAPI::Wrapper(-2147467261); /*0x4db8ef*/
+    sub_7DC720(-2147467261); /*0x4db8ef*/
   (*(void (**)(LPVOID, TechnoClass *))(*(unsigned int *)ppv + 12))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (TechnoClass *)this); /*0x4db8fc*/
   v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
   v4 = ((StreamClass *)((StreamClass *)&v8))->Set((unsigned int *)(&ppv)); /*0x4db918*/
   if ( v4 < 0 && v4 != -2147467262 ) /*0x4db926*/
-    WinAPI::Wrapper(v4); /*0x4db929*/
+    sub_7DC720(v4); /*0x4db929*/
   if ( !v8 ) /*0x4db934*/
 LABEL_13:
-    WinAPI::Wrapper(-2147467261); /*0x4db93b*/
+    sub_7DC720(-2147467261); /*0x4db93b*/
   (*(void (**)(int, int))(*(unsigned int *)v8 + 12))(v8, v2); /*0x4db949*/
   v5 = (LPVOID)*((unsigned int *)this + 413); /*0x4db94c*/
   result = (int)ppv; /*0x4db952*/

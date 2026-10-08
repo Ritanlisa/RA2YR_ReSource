@@ -3029,7 +3029,7 @@ v16 = (unsigned int *)(*(int (**)(unsigned int, float *))(**((unsigned int **)Bl
                 *((unsigned int *)Block + v25) = *v24; /*0x64d12f*/
               }
               if ( v104 < v102 /*0x64d171*/
-                || (IDA_BYTE1(v103) || !v102)
+                || ((((v103) >> 8) & 0xFF) || !v102)
                 && v105 > 0
                 && ((uint8_t (*)(void ***, int, unsigned int))v100[2])(&v100, v105 + v102, 0) )
               {
@@ -3037,7 +3037,7 @@ v16 = (unsigned int *)(*(int (**)(unsigned int, float *))(**((unsigned int **)Bl
                 *((unsigned int *)v101 + v26) = (unsigned int)v73; /*0x64d194*/
               }
               if ( j < v96 /*0x64d1c4*/
-                || (IDA_BYTE1(v97) || !v96)
+                || ((((v97) >> 8) & 0xFF) || !v96)
                 && v99 > 0
                 && ((uint8_t (*)(void ***, int, unsigned int))v94[2])(&v94, v99 + v96, 0) )
               {
@@ -3059,7 +3059,7 @@ v16 = (unsigned int *)(*(int (**)(unsigned int, float *))(**((unsigned int **)Bl
                 {
                   v30 = (unsigned int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v73); /*0x64d235*/
                   v31 = v30[80]; /*0x64d23a*/
-                  IDA_BYTE1(v31) |= 0x80u; /*0x64d245*/
+                  (((v31) >> 8) & 0xFF) |= 0x80u; /*0x64d245*/
                   v30[80] = v31; /*0x64d248*/
                   *(unsigned char *)v95 = 1; /*0x64d24e*/
                   goto LABEL_84; /*0x64d251*/
@@ -3263,7 +3263,7 @@ v44 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(
                 v58 = (unsigned int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)&v76); /*0x64d740*/
                 v59 = v58[80]; /*0x64d74f*/
                 v2 = a1; /*0x64d75a*/
-                IDA_BYTE1(v59) |= 0x80u; /*0x64d75e*/
+                (((v59) >> 8) & 0xFF) |= 0x80u; /*0x64d75e*/
                 v58[80] = v59; /*0x64d761*/
                 *((unsigned char *)v95 + v28) = 1; /*0x64d767*/
                 goto LABEL_84; /*0x64d767*/
@@ -3277,22 +3277,22 @@ v44 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(
             {
               v69 = (unsigned int *)((CellCoord *)(&MapClass_Instance))->To_CellObj((int16_t *)v101 + 2 * k); /*0x64d8c1*/
               v70 = v69[80]; /*0x64d8c6*/
-              IDA_BYTE1(v70) &= ~0x80u; /*0x64d8d1*/
+              (((v70) >> 8) & 0xFF) &= ~0x80u; /*0x64d8d1*/
               ++k; /*0x64d8d4*/
             }
-            if ( v95 && IDA_BYTE1(v97) ) /*0x64d8f8*/
+            if ( v95 && (((v97) >> 8) & 0xFF) ) /*0x64d8f8*/
             {
               RA2_OPDEL(v95); /*0x64d8fb*/
               v95 = (void *)(0); /*0x64d903*/
             }
-            IDA_BYTE1(v97) = 0; /*0x64d90e*/
+            (((v97) >> 8) & 0xFF) = 0; /*0x64d90e*/
             v96 = 0; /*0x64d915*/
-            if ( v101 && IDA_BYTE1(v103) ) /*0x64d92f*/
+            if ( v101 && (((v103) >> 8) & 0xFF) ) /*0x64d92f*/
             {
               RA2_OPDEL(v101); /*0x64d932*/
               v101 = (void *)(0); /*0x64d93a*/
             }
-            IDA_BYTE1(v103) = 0; /*0x64d945*/
+            (((v103) >> 8) & 0xFF) = 0; /*0x64d945*/
             v102 = 0; /*0x64d94e*/
             RA2_OPDEL(Base); /*0x64d955*/
           }

@@ -636,7 +636,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
       {
         v12 = (int)&a1[2 * (v10 % 256) + v10 % 256]; /*0x4c39ac*/
         IDA_LOWORD(v16) = *(unsigned short *)v12; /*0x4c39ba*/
-        IDA_BYTE2(v16) = *(unsigned char *)(v12 + 2); /*0x4c39c7*/
+        (((v16) >> 16) & 0xFF) = *(unsigned char *)(v12 + 2); /*0x4c39c7*/
         ((Color *)((uint8_t *)&v16))->Lerp(v18, (uint8_t *)&v14); /*0x4c39cb*/
         v7[v10++] = ((Palette *)(a1))->FindClosestColor( (Palette *)((int)&v16)); /*0x4c39dc*/
       }
@@ -969,7 +969,7 @@ int FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   {
     v8 = ComPtr::ReleaseAndSet( (void *)(&v55), (unsigned int *)(v6)); /*0x4cefe0*/
     if ( v8 < 0 && v8 != -2147467262 ) /*0x4cefee*/
-      WinAPI::Wrapper(v8); /*0x4ceff1*/
+      sub_7DC720(v8); /*0x4ceff1*/
     if ( v55 && (*v6)[173] && (*v6)[191] && (*(int (**)(int))(v55->q018))(v55) ) /*0x4cf017*/
       a3 = 0; /*0x4cf01e*/
   }
@@ -1739,7 +1739,7 @@ int sub_4C3AD0(char * a1, int a2, int a3, unsigned char a4)
   {
     v8 = (int)&a1[2 * (v6 % 256) + v6 % 256]; /*0x4c3b0a*/
     IDA_LOWORD(a3) = *(unsigned short *)v8; /*0x4c3b0f*/
-    IDA_BYTE2(a3) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
+    (((a3) >> 16) & 0xFF) = *(unsigned char *)(v8 + 2); /*0x4c3b20*/
     ((Color *)((uint8_t *)&a3))->Lerp( a4, (uint8_t *)(v7)); /*0x4c3b24*/
     *(unsigned char *)(v6 + a2) = ((Palette *)(a1))->FindClosestColor( (Palette *)((int)&a3)); /*0x4c3b35*/
     ++v6; /*0x4c3b38*/
@@ -1764,12 +1764,12 @@ unsigned char * sub_4C3B60(char * a1, unsigned char * a2, int a3, int a4)
   IDA_LOWORD(a3) = *(unsigned short *)v7; /*0x4c3b8b*/
   IDA_LOBYTE(v7) = *(unsigned char *)(v7 + 2); /*0x4c3b90*/
   *a2 = 0; /*0x4c3b93*/
-  IDA_BYTE2(a3) = v7; /*0x4c3b96*/
+  (((a3) >> 16) & 0xFF) = v7; /*0x4c3b96*/
   do /*0x4c3be3*/
   {
     v9 = (int)&a1[2 * (v8 % 256) + v8 % 256]; /*0x4c3bad*/
     IDA_LOWORD(a4) = *(unsigned short *)v9; /*0x4c3bbc*/
-    IDA_BYTE2(a4) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
+    (((a4) >> 16) & 0xFF) = *(unsigned char *)(v9 + 2); /*0x4c3bc4*/
     ((Color *)((uint8_t *)&a4))->Lerp(v6, (uint8_t *)&a3); /*0x4c3bc8*/
     a2[v8++] = ((Palette *)(a1))->FindClosestColor( (Palette *)((int)&a4)); /*0x4c3bd9*/
   }

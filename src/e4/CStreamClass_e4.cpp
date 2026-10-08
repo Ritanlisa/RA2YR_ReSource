@@ -120,7 +120,7 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
       && (*(int (**)(unsigned int, unsigned int))(**(unsigned int **)(v4 + 8) + 32))(*(unsigned int *)(v4 + 8), 0) >= 0 )
     {
       if ( !*(unsigned int *)(v4 + 8) ) /*0x4a317d*/
-        WinAPI::Wrapper(-2147467261); /*0x4a3187*/
+        sub_7DC720(-2147467261); /*0x4a3187*/
       (*(void (**)(unsigned int))(**(unsigned int **)(v4 + 8) + 8))(*(unsigned int *)(v4 + 8)); /*0x4a3192*/
       *(unsigned int *)(v4 + 8) = 0; /*0x4a3195*/
     }
@@ -151,7 +151,7 @@ int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
   if ( LOBYTE(a1->CStreamClass_field_0x10) || BYTE1(a1->CStreamClass_field_0x10) ) /*0x4a2e0c*/
     return -2147467259; /*0x4a2e45*/
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2e13*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2e1f*/
+    sub_7DC720(-2147467261); /*0x4a2e1f*/
   return (*(int (**)(int, int, int, int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 20))( /*0x4a2e41*/
            a1->CStreamClass_field_0x08,
            a2,
@@ -169,7 +169,7 @@ int CStreamClass::Write(int a1, int a2, int a3)
   if ( LOBYTE(a1->CStreamClass_field_0x10) || BYTE1(a1->CStreamClass_field_0x10) ) /*0x4a2e5c*/
     return -2147467259; /*0x4a2e8b*/
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2e63*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2e6f*/
+    sub_7DC720(-2147467261); /*0x4a2e6f*/
   return (*(int (**)(int, int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 24))( /*0x4a2e87*/
            a1->CStreamClass_field_0x08,
            a2,
@@ -183,7 +183,7 @@ int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2ea5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2eb1*/
+    sub_7DC720(-2147467261); /*0x4a2eb1*/
   return (*(int (**)(int, int, int, int, int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 28))( /*0x4a2ed8*/
            a1->CStreamClass_field_0x08,
            a2,
@@ -200,7 +200,7 @@ int CStreamClass::SetSize(int a1, int a2)
 {
 
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2ee5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2ef1*/
+    sub_7DC720(-2147467261); /*0x4a2ef1*/
   return (*(int (**)(int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 32))( /*0x4a2f04*/
            a1->CStreamClass_field_0x08,
            a2);
@@ -213,7 +213,7 @@ int CStreamClass::Commit(int a1)
 {
 
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2f15*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2f21*/
+    sub_7DC720(-2147467261); /*0x4a2f21*/
   return (*(int (**)(int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 36))(a1->CStreamClass_field_0x08); /*0x4a2f2f*/
 
 }
@@ -224,7 +224,7 @@ int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2f45*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2f51*/
+    sub_7DC720(-2147467261); /*0x4a2f51*/
   return (*(int (**)(int, int, int, int, int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 40))( /*0x4a2f78*/
            a1->CStreamClass_field_0x08,
            a2,
@@ -241,7 +241,7 @@ int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
 {
 
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2f85*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2f91*/
+    sub_7DC720(-2147467261); /*0x4a2f91*/
   return (*(int (**)(int, int, int, int, int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 44))( /*0x4a2fb8*/
            a1->CStreamClass_field_0x08,
            a2,
@@ -258,7 +258,7 @@ int CStreamClass::UnlockRegion(int a1, int a2, int a3)
 {
 
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2fc5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a2fd1*/
+    sub_7DC720(-2147467261); /*0x4a2fd1*/
   return (*(int (**)(int, int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 48))( /*0x4a2fe9*/
            a1->CStreamClass_field_0x08,
            a2,
@@ -272,7 +272,7 @@ int CStreamClass::Stat(int a1, int a2)
 {
 
   if ( !a1->CStreamClass_field_0x08 ) /*0x4a2ff5*/
-    WinAPI::Wrapper(-2147467261); /*0x4a3001*/
+    sub_7DC720(-2147467261); /*0x4a3001*/
   return (*(int (**)(int, int))(*(unsigned int *)a1->CStreamClass_field_0x08 + 52))( /*0x4a3014*/
            a1->CStreamClass_field_0x08,
            a2);

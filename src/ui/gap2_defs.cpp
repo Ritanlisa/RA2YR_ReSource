@@ -415,7 +415,7 @@ int DropListClass::Open(char a2, _DWORD *a3, char *a4) {
         (*(void (__thiscall **)(char *))(*((unsigned int *)this + 44) + 36))((char *)this + 176); /*0x4b50ed*/
         DropListClass_field_0x24 = (unsigned int)(this->DropListClass_field_0x24); /*0x4b50f0*/
         IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b50f3*/
-        IDA_BYTE1(DropListClass_field_0x24) |= 0x80u; /*0x4b50f7*/
+        (((DropListClass_field_0x24) >> 8) & 0xFF) |= 0x80u; /*0x4b50f7*/
         *a3 = DropListClass_field_0x24; /*0x4b50fa*/
       }
       else
@@ -443,7 +443,7 @@ int DropListClass::Open(char a2, _DWORD *a3, char *a4) {
       wcsncpy((wchar_t *)this->DropListClass_field_0x34, v13, DropListClass_field_0x38); /*0x4b516c*/
       (*(void (__thiscall **)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b5178*/
       v12 = (unsigned int)(this->DropListClass_field_0x24); /*0x4b517b*/
-      IDA_BYTE1(v12) |= 0x80u; /*0x4b517e*/
+      (((v12) >> 8) & 0xFF) |= 0x80u; /*0x4b517e*/
       *a3 = v12; /*0x4b5181*/
     }
     return v12; /*0x4b5183*/
@@ -562,7 +562,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
     v8 = *(unsigned int *)a3; /*0x4c320b*/
     if ( (*(unsigned int *)a3 & 0x1000) != 0 && v7 >= 48 && v7 <= 57 ) /*0x4c321f*/
     {
-      IDA_BYTE1(v8) &= ~0x10u; /*0x4c3221*/
+      (((v8) >> 8) & 0xFF) &= ~0x10u; /*0x4c3221*/
       *(unsigned int *)a3 = v8; /*0x4c3227*/
       if ( (v6 & 0x44) != 0 || !(*(unsigned __int8 (__thiscall **)(EditClass *, int))(*(unsigned int *)this + 152))(this, v7) ) /*0x4c3230*/
         return ((CellClass *)(ControlClass *)this)->Draw((gamemd::EditClass *)(v6), a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c3238*/
@@ -576,7 +576,7 @@ int DropListClass::GetCount(int a1, void* a2, int a3) {
       if ( !(*(unsigned __int8 (__thiscall **)(EditClass *, unsigned int))(*(unsigned int *)&v9 + 152))(this, v10) ) /*0x4c3271*/
         return ((CellClass *)(ControlClass *)this)->Draw((gamemd::EditClass *)(v6), a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c327a*/
     }
-    IDA_BYTE1(v6) &= ~1u; /*0x4c327c*/
+    (((v6) >> 8) & 0xFF) &= ~1u; /*0x4c327c*/
     *(unsigned int *)a3 = 0; /*0x4c327f*/
     return ((CellClass *)(ControlClass *)this)->Draw(v6, a3, 0);  // g57w10: instance form (gap2 CellClass::Draw(int,_DWORD*,int) const) /*0x4c319c*/
 }
@@ -1298,7 +1298,7 @@ void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
     Type = BuildingAnim::GetType(); /*0x557d35*/
     if ( a6 ) /*0x557d3d*/
     {
-      IDA_BYTE1(v7) |= 0x20u; /*0x557d44*/
+      (((v7) >> 8) & 0xFF) |= 0x20u; /*0x557d44*/
       v9 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * Type) + 796); /*0x557d52*/
       v10 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372); /*0x557d5b*/
       if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x557d61*/
@@ -1316,7 +1316,7 @@ void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
     }
     else if ( (v7 & 0x4000) == 0 ) /*0x557da1*/
     {
-      IDA_BYTE1(v7) |= 0x10u; /*0x557da3*/
+      (((v7) >> 8) & 0xFF) |= 0x10u; /*0x557da3*/
     }
     v12 = *((unsigned int *)this + 14); /*0x557daa*/
     v19[0] = a3; /*0x557db1*/
@@ -2523,7 +2523,7 @@ int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int
     if ( v22 ) /*0x5d3d37*/
     {
       v23 = a6; /*0x5d3d39*/
-      IDA_BYTE1(v23) = IDA_BYTE1(a6) | 0x80; /*0x5d3d47*/
+      (((v23) >> 8) & 0xFF) = (((a6) >> 8) & 0xFF) | 0x80; /*0x5d3d47*/
       v24 = MessageListClass::clearMessages(v22, (int)String, this->MaxMessageCount, this->ScrollOffset, a5, v23); /*0x5d3d60*/
     }
     else
@@ -4365,8 +4365,8 @@ void SidebarClass::UpdateStrips(void* a1, void* a2) {
         goto LABEL_31; /*0x6a7a5f*/
       }
       v24 = dword_B0B34C; /*0x6a7b18*/
-      IDA_BYTE1(v12) &= ~0x40u; /*0x6a7b1e*/
-      IDA_BYTE1(v24) = IDA_BYTE1(dword_B0B34C) | 0x80; /*0x6a7b21*/
+      (((v12) >> 8) & 0xFF) &= ~0x40u; /*0x6a7b1e*/
+      (((v24) >> 8) & 0xFF) = IDA_BYTE1(dword_B0B34C) | 0x80; /*0x6a7b21*/
       if ( v12 == v24 ) /*0x6a7b26*/
       {
         byte_B0B354 = 0; /*0x6a7b2c*/
@@ -4402,7 +4402,7 @@ void SidebarClass::UpdateStrips(void* a1, void* a2) {
       else
       {
         v29 = dword_B0B42C; /*0x6a7c5e*/
-        IDA_BYTE1(v29) = IDA_BYTE1(dword_B0B42C) | 0x80; /*0x6a7c64*/
+        (((v29) >> 8) & 0xFF) = IDA_BYTE1(dword_B0B42C) | 0x80; /*0x6a7c64*/
         if ( v12 != v29 ) /*0x6a7c69*/
           goto LABEL_32; /*0x6a7c69*/
         byte_B0B434 = 0; /*0x6a7c6f*/

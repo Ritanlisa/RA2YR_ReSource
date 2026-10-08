@@ -268,7 +268,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
   if ( !aP1 || (**(unsigned char **)&((unsigned int *)(HouseClass_Player))[29924] & 0x20) != 0 || (v8 = (gamemd::ObjectClass *)(aP3)) == 0 )
   {
     v117 = (IUnknown *)&vt_VectorClass_DamageGroup;
-    if ( Block && IDA_BYTE1(v127) )
+    if ( Block && (((v127) >> 8) & 0xFF) )
       RA2_OPDEL(Block);
     return 1;
   }
@@ -328,7 +328,7 @@ int PlaySoundEffectAt(TechnoClass * aP0, int aP1, unsigned int *a2, int aP3, cha
                 ((Coord*)(int *)&v132)->Length();
                 int v18 = v18;
                 if ( (int)v121 < v126
-                  || (IDA_BYTE1(v127) || !v126)
+                  || ((((v127) >> 8) & 0xFF) || !v126)
                   && var94 > 0
                   && ((uint8_t (*)(IUnknown **, int, unsigned int))((gamemd::VectorClass_flat*)v117)->u32_8)(&v117, var94 + v126, 0) )
                 {
@@ -472,7 +472,7 @@ LABEL_67:
           }
         }
         if ( (int)v121 < v126
-          || (IDA_BYTE1(v127) || !v126)
+          || ((((v127) >> 8) & 0xFF) || !v126)
           && var94 > 0
           && ((uint8_t (*)(IUnknown **, int, unsigned int))*(unsigned int *)&((gamemd::Math*)v117)->vtable3)(&v117, var94 + v126, 0) )
         {
@@ -567,7 +567,7 @@ LABEL_82:
     v117 = (IUnknown *)&vt_VectorClass_DamageGroup;
     if ( Block )
     {
-      if ( IDA_BYTE1(v127) )
+      if ( (((v127) >> 8) & 0xFF) )
         RA2_OPDEL(Block);
     }
     return 2;
@@ -928,7 +928,7 @@ LABEL_213:
   }
   BOOL v103 = v118 == 0;
   v117 = (IUnknown *)&vt_VectorClass_DamageGroup;
-  if ( Block && IDA_BYTE1(v127) )
+  if ( Block && (((v127) >> 8) & 0xFF) )
     RA2_OPDEL(Block);
   return v103;
 }
@@ -1099,11 +1099,11 @@ bool sub_48BB60(int a1)
   int v6; // edx
   unsigned int *v7; // eax
 
-  IDA_BYTE1(a1) &= ~8u; /*0x48bb61*/
+  (((a1) >> 8) & 0xFF) &= ~8u; /*0x48bb61*/
   v1 = a1; /*0x48bb65*/
   v2 = dword_87F684; /*0x48bb68*/
   v3 = a1; /*0x48bb6e*/
-  IDA_BYTE1(v3) = IDA_BYTE1(a1) & 0xE8; /*0x48bb71*/
+  (((v3) >> 8) & 0xFF) = (((a1) >> 8) & 0xFF) & 0xE8; /*0x48bb71*/
   if ( !dword_87F684 ) /*0x48bb76*/
     goto LABEL_12; /*0x48bb76*/
   v4 = dword_87F690; /*0x48bb78*/
@@ -1652,7 +1652,7 @@ int E4Recv_484F50::sub_484F50()
         || (result = (*(int (**)(unsigned int *))(*v7 + 44))( (unsigned int *)(v7)), result == 2) )
       {
         if ( !v7[413] ) /*0x484fab*/
-          WinAPI::Wrapper(-2147467261); /*0x484fba*/
+          sub_7DC720(-2147467261); /*0x484fba*/
         result = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)v7[413] + 124))( /*0x484fd1*/
                    v7[413],
                    *((uint8_t *)this + 284));
@@ -2284,9 +2284,9 @@ bool sub_48BB40(int a1, int a2)
 {
   int v2; // eax
 
-  IDA_BYTE1(a2) &= ~8u; /*0x48bb40*/
+  (((a2) >> 8) & 0xFF) &= ~8u; /*0x48bb40*/
   v2 = a2; /*0x48bb43*/
-  IDA_BYTE1(v2) = IDA_BYTE1(a2) & 0xE8; /*0x48bb45*/
+  (((v2) >> 8) & 0xFF) = (((a2) >> 8) & 0xFF) & 0xE8; /*0x48bb45*/
   return a2 == v2 || (*(uint8_t (**)(int, int))(*(unsigned int *)a1 + 20))(a1, a2) == 0; /*0x48bb57*/
 }
 } // namespace gamemd

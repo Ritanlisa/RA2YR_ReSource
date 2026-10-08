@@ -1157,7 +1157,7 @@ void sub_4270D0(int a1, unsigned int a2, AnimFile * a3, int a4, char * a5, int a
                 if ( v12 ) /*0x427171*/
                   break; /*0x427171*/
                 IDA_LOBYTE(a2) = i[1]; /*0x42717e*/
-                IDA_BYTE1(a2) = a2; /*0x427180*/
+                (((a2) >> 8) & 0xFF) = a2; /*0x427180*/
                 v15 = (unsigned __int8)*i; /*0x427188*/
                 v16 = a2 << 16; /*0x42718a*/
                 IDA_LOWORD(v16) = a2; /*0x42718f*/
@@ -1189,7 +1189,7 @@ void sub_4270D0(int a1, unsigned int a2, AnimFile * a3, int a4, char * a5, int a
             v18 = (char *)v8; /*0x4271d3*/
             a2 -= 0x4000; /*0x4271d8*/
             IDA_LOBYTE(v8) = *i; /*0x4271de*/
-            IDA_BYTE1(v8) = *i++; /*0x4271e2*/
+            (((v8) >> 8) & 0xFF) = *i++; /*0x4271e2*/
             v19 = (unsigned int)v8 << 16; /*0x4271e9*/
             IDA_LOWORD(v19) = (unsigned short)v8; /*0x4271ec*/
             v8 = v21; /*0x4271ef*/
@@ -1573,7 +1573,7 @@ int sub_42B080(short * a1, int a2)
             if ( !v8 ) /*0x42b13e*/
             {
               if ( !*(unsigned int *)(v7 + 1652) ) /*0x42b140*/
-                WinAPI::Wrapper(-2147467261); /*0x42b14f*/
+                sub_7DC720(-2147467261); /*0x42b14f*/
               if ( (*(unsigned __int8 (__stdcall **)(unsigned int, int, int, int))(**(unsigned int **)(v7 + 1652) + 160))( /*0x42b172*/
                      *(unsigned int *)(v7 + 1652),
                      v13,
@@ -2175,10 +2175,10 @@ void * FindPathWithRetry(FootClass * aP1, short * a2, int aP4, int a5, int a6, i
       IDA_LOBYTE(v18) = v19 < 0; /*0x42ca88*/
       v20 = a8 & (v18 - 1); /*0x42ca8c*/
       if ( v19 < 0 && v19 != -2147467262 ) /*0x42ca97*/
-        WinAPI::Wrapper(v19); /*0x42ca9a*/
+        sub_7DC720(v19); /*0x42ca9a*/
       if ( !v20 ) /*0x42caa1*/
   LABEL_18:
-        WinAPI::Wrapper(-2147467261); /*0x42caa8*/
+        sub_7DC720(-2147467261); /*0x42caa8*/
       (*(void (__stdcall **)(int, unsigned int *))(*(unsigned int *)v20 + 12))(v20, v32); /*0x42cab5*/
       (*(void (__stdcall **)(int))(*(unsigned int *)v20 + 8))(v20); /*0x42cabf*/
     }
@@ -2590,12 +2590,12 @@ int EncodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4)
         ++v5; /*0x42fd7f*/
         v18 = 0; /*0x42fd80*/
         --a2; /*0x42fd84*/
-        IDA_BYTE2(v18) = v7; /*0x42fd85*/
+        (((v18) >> 16) & 0xFF) = v7; /*0x42fd85*/
         if ( !a2 ) /*0x42fd89*/
           break; /*0x42fd89*/
         v9 = *v5++; /*0x42fd8b*/
         --a2; /*0x42fd8f*/
-        IDA_BYTE1(v18) = v9; /*0x42fd90*/
+        (((v18) >> 8) & 0xFF) = v9; /*0x42fd90*/
         if ( !a2 ) /*0x42fd96*/
           goto LABEL_11; /*0x42fd96*/
         v10 = *v5++; /*0x42fd98*/
@@ -2677,7 +2677,7 @@ int DecodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4)
                 if ( a2 <= 0 ) /*0x42fea1*/
                 {
   LABEL_19:
-                  v16 = IDA_BYTE2(v7); /*0x42ff10*/
+                  v16 = (((v7) >> 16) & 0xFF); /*0x42ff10*/
                   goto LABEL_20; /*0x42ff10*/
                 }
                 v9 = *v6++; /*0x42fea3*/
@@ -2691,7 +2691,7 @@ int DecodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4)
               }
               if ( v10 != -1 ) /*0x42fec4*/
                 break; /*0x42fec4*/
-              v16 = IDA_BYTE2(v7); /*0x42ff61*/
+              v16 = (((v7) >> 16) & 0xFF); /*0x42ff61*/
               a2 = 0; /*0x42ff65*/
   LABEL_20:
               *v4++ = v16; /*0x42ff14*/
@@ -2701,7 +2701,7 @@ int DecodeBitmapRGB(Pipe * a1, int a2, unsigned char * a3, int a4)
               {
                 if ( v8 > 2 ) /*0x42ff2c*/
                 {
-                  *v4++ = IDA_BYTE1(v7); /*0x42ff2e*/
+                  *v4++ = (((v7) >> 8) & 0xFF); /*0x42ff2e*/
                   --v5; /*0x42ff31*/
                   v15 = v13 + 1; /*0x42ff33*/
                 }

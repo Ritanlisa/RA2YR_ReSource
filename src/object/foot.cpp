@@ -29,7 +29,7 @@ class MovementAI;  // g57c5 W5 fwd
 class Random;  // g57c5 W5 fwd
 class Type;  // g57c5 W5 fwd
 int StartAudioControllerAt(...);  // g57c5 W5 vocab
-int WinAPI_Wrapper(...);  // g57c5 W5 vocab
+int sub_7DC720(...);  // g57c5 W5 vocab
 void GetTraversability();  // g57c5 W5 vocab (csp)
 } }
 // ---- g57c5 W5 end ----
@@ -37,7 +37,7 @@ void GetTraversability();  // g57c5 W5 vocab (csp)
 namespace gamemd {
 
     void Mixer_ReleaseChannel(void *a1);               // raw 0x4220d9 Mixer::ReleaseChannel;
-    void WinAPI_Wrapper(int a1);                       // 0x7DC720 真形 (stream_ext.hpp:12 同形);
+    void sub_7DC720(int a1);                       // 0x7DC720 真形 (stream_ext.hpp:12 同形);
     void MapClass_RevealArea2(void *self, int *coords, int a3, int a4, int a5);  // 0x567DA0 真形;
     void *CellCoord_To_CellObj(void *a1, void *a2);    // 0x5657A0 真形 (core/cellcoord.hpp 单源);
     int StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // 0x7509E0 真形;
@@ -240,7 +240,7 @@ bool FootClass::MovementAI()
       }
     }
     if ( !this->locomotor[0] ) /*0x4da677*/
-      WinAPI_Wrapper(-2147467261); /*0x4da684*/
+      sub_7DC720(-2147467261); /*0x4da684*/
     if ( (*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da6bb*/
       && (*((unsigned __int8 (__thiscall **)(FootClass *))this->vtable1 + 21))(this)
       && (unsigned __int8)HouseClass::IsAlliedWith((void *)((unsigned int *)this)[0], (void *)dword_A83D4C) )
@@ -316,7 +316,7 @@ bool FootClass::MovementAI()
       goto LABEL_67; /*0x4da856*/
     }
     if ( !this->locomotor[0] ) /*0x4da85c*/
-      WinAPI_Wrapper(-2147467261); /*0x4da869*/
+      sub_7DC720(-2147467261); /*0x4da869*/
     result = (*(int (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 64))(this->locomotor[0]); /*0x4da877*/
     if ( ((unsigned int *)this)[0] )
     {
@@ -325,7 +325,7 @@ bool FootClass::MovementAI()
       else
         v18 = 0; /*0x4da88a*/
       if ( !this->locomotor[0] ) /*0x4da8a0*/
-        WinAPI_Wrapper(-2147467261); /*0x4da8ad*/
+        sub_7DC720(-2147467261); /*0x4da8ad*/
       if ( ((*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da934*/
          && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vtable1 + 118))(this)
          || ((unsigned int *)this)[0]
@@ -343,7 +343,7 @@ bool FootClass::MovementAI()
       if ( *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vtable1 + 33))(this) + 664) ) /*0x4da94a*/
       {
         if ( !this->locomotor[0] ) /*0x4da952*/
-          WinAPI_Wrapper(-2147467261); /*0x4da95f*/
+          sub_7DC720(-2147467261); /*0x4da95f*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) /*0x4da9af*/
           && !(*(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]
              % *(unsigned int *)((*((int (__thiscall **)(FootClass *))this->vtable1 + 33))(this) + 664))
@@ -367,7 +367,7 @@ bool FootClass::MovementAI()
       if ( unknown538 == this->unknown538 ) /*0x4daa07*/
       {
         if ( !this->locomotor[0] ) /*0x4daa09*/
-          WinAPI_Wrapper(-2147467261); /*0x4daa16*/
+          sub_7DC720(-2147467261); /*0x4daa16*/
         if ( !(*(unsigned __int8 (__stdcall **)(int))(*(unsigned int *)this->locomotor[0] + 128))(this->locomotor[0]) ) /*0x4daa24*/
           goto LABEL_136; /*0x4daa24*/
       }
@@ -531,7 +531,7 @@ bool FootClass::MovementAI()
         v40 = (**v37)(v37, &((unsigned int *)&gamemd::stru_818E00)[17], v45); /*0x4dae7e*/
         v39 = v40 < 0 ? 0 : *(unsigned int *)v45;
         if ( v40 < 0 && v40 != -2147467262 ) /*0x4dae99*/
-          WinAPI_Wrapper(v40); /*0x4dae9c*/
+          sub_7DC720(v40); /*0x4dae9c*/
         if ( v39 && (*(unsigned __int8 (__stdcall **)(unsigned int))(*(unsigned int *)v39 + 20))(v40 < 0 ? 0 : *(unsigned int *)v45) )
         {
           if ( *locomotor ) /*0x4daeaf*/

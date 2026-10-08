@@ -1812,7 +1812,7 @@ char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a
     IDA_HIBYTE(a8) = 1; /*0x637de8*/
     qmemcpy( (void *)(v29), (const void *)(&a1), sizeof(v29)); /*0x637df0*/
     IDA_LOWORD(v30) = a28; /*0x637df2*/
-    IDA_BYTE2(v30) = IDA_BYTE2(a28); /*0x637df4*/
+    (((v30) >> 16) & 0xFF) = (((a28) >> 16) & 0xFF); /*0x637df4*/
 // 0x6521c0
     return (char)(Network::RecordEvent( /*0x637df5*/
              *(int64_t *)v29,

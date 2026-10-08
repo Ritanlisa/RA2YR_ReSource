@@ -220,11 +220,11 @@ int CellClass::Draw(int a1, int a2, void * a3) const
     v5 = this->smudgeTypeIndex; /*0x48e5b1*/
     if ( v5 ) /*0x48e5b6*/
     {
-      IDA_BYTE1(v5) |= 0x80u; /*0x48e5b8*/
+      (((v5) >> 8) & 0xFF) |= 0x80u; /*0x48e5b8*/
       *(unsigned int *)(a3) = v5; /*0x48e5be*/
       if ( ((unsigned int)(a2)& 0x40) != 0 && (this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
       {
-        IDA_BYTE1(v5) |= 0x40u; /*0x48e5c8*/
+        (((v5) >> 8) & 0xFF) |= 0x40u; /*0x48e5c8*/
         *(unsigned int *)(a3) = v5; /*0x48e5cb*/
       }
     }

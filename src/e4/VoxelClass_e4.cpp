@@ -130,7 +130,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     goto LABEL_21; /*0x73c674*/
   }
   if ( !*((unsigned int *)a1 + 413) ) /*0x73c679*/
-    WinAPI::Wrapper(-2147467261); /*0x73c688*/
+    sub_7DC720(-2147467261); /*0x73c688*/
   if ( (*(uint8_t (**)(unsigned int))(**((unsigned int **)a1 + 413) + 16))(*((unsigned int *)a1 + 413)) /*0x73c6a3*/
     || (v18 = *((unsigned int *)a1 + 433), *(unsigned int *)(v18 + 664)) )
   {
@@ -190,7 +190,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v28 = *((unsigned int *)a1 + 413); /*0x73c848*/
       v66 = -1; /*0x73c84e*/
       if ( !v28 ) /*0x73c858*/
-        WinAPI::Wrapper(-2147467261); /*0x73c85f*/
+        sub_7DC720(-2147467261); /*0x73c85f*/
 v29 = (const void *)(*(int (**)(unsigned int, unsigned char *, int *))(**((unsigned int **)a1 + 413) + 36))( /*0x73c87a*/ *((unsigned int *)a1 + 413), (unsigned char *)(v73), (int *)(&v66));
 
 

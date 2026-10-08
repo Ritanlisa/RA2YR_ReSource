@@ -2246,8 +2246,8 @@ int Surface_Render(ObjectClass * aP0, unsigned short * a1, int * yTop, unsigned 
   yTopa = yTop[1]; /*0x620fd2*/
   v10 = v8 - *yTop; /*0x620fda*/
   v16 = ((uint8_t)aP1 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x620fdc*/
-      | (IDA_BYTE2(aP1) >> g_BitMask_Red << g_BitShift_Blue)
-      | (IDA_BYTE1(aP1) >> g_BitMask_Blue << g_BitMask_Green);
+      | ((((aP1) >> 16) & 0xFF) >> g_BitMask_Red << g_BitShift_Blue)
+      | ((((aP1) >> 8) & 0xFF) >> g_BitMask_Blue << g_BitMask_Green);
   v12 = *yTop; /*0x620fe2*/
   if ( !a3 ) /*0x620fe6*/
     v6 = (unsigned char *)g_FogOfWarState; /*0x620fe8*/

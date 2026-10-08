@@ -791,7 +791,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
     {
   LABEL_5:
       if ( v2 != -2147467262 ) /*0x437fb0*/
-        WinAPI::Wrapper(v2); /*0x437fb3*/
+        sub_7DC720(v2); /*0x437fb3*/
     }
     return &*(unsigned int *)&this->vfptr; /*0x437fba*/
 }

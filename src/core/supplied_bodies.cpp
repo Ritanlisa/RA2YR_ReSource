@@ -2138,7 +2138,7 @@ int CStreamClass::StubReturnNullPointer(int (__stdcall ***a2)(unsigned int, void
       this->CStreamClass_field_0x04 = 0; /*0x4a2a69*/
     }
     if ( v3 < 0 && v3 != -2147467262 ) /*0x4a2a92*/
-      WinAPI::Wrapper(v3); /*0x4a2a95*/
+      sub_7DC720(v3); /*0x4a2a95*/
     return 0; /*0x4a2a2e*/
 }
 } // namespace gamemd
@@ -2158,19 +2158,19 @@ int CStreamClass::StreamRead(unsigned int *a2) {
     if ( a2 ) /*0x4a2aee*/
     {
       if ( !this->CStreamClass_field_0x04 ) /*0x4a2af0*/
-        WinAPI::Wrapper(-2147467261); /*0x4a2afc*/
+        sub_7DC720(-2147467261); /*0x4a2afc*/
       (*(void (__stdcall **)(int))(*(unsigned int *)this->CStreamClass_field_0x04 + 4))(this->CStreamClass_field_0x04); /*0x4a2b07*/
       *a2 = this->CStreamClass_field_0x04; /*0x4a2b0d*/
     }
     if ( !this->CStreamClass_field_0x04 ) /*0x4a2b0f*/
-      WinAPI::Wrapper(-2147467261); /*0x4a2b1c*/
+      sub_7DC720(-2147467261); /*0x4a2b1c*/
     result = (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)this->CStreamClass_field_0x04 + 32))( /*0x4a2b29*/
                this->CStreamClass_field_0x04,
                0);
     if ( result >= 0 ) /*0x4a2b2e*/
     {
       if ( !this->CStreamClass_field_0x04 ) /*0x4a2b30*/
-        WinAPI::Wrapper(-2147467261); /*0x4a2b3c*/
+        sub_7DC720(-2147467261); /*0x4a2b3c*/
       (*(void (__stdcall **)(int))(*(unsigned int *)this->CStreamClass_field_0x04 + 8))(this->CStreamClass_field_0x04); /*0x4a2b47*/
       this->CStreamClass_field_0x04 = 0; /*0x4a2b4a*/
       return 0; /*0x4a2b51*/
