@@ -260,7 +260,7 @@ LABEL_162:
       {
         int v94 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[44448] + 4 * v93);
         if ( *(unsigned int *)(v94 + 36) == *(unsigned int *)((unsigned int)(a1)+ 80) )
-          ((BuildingClass *)(v94))->ExecuteTriggers(0,(char)( *(TriggerClass **)&(&stru_B05488)[37368]));
+          ((ScriptClass *)(v94))->ExecuteTriggers(0,(char)( *(TriggerClass **)&(&stru_B05488)[37368]));
         ++v93;
       }
       while ( v93 < *(int *)&((unsigned int *)(HouseClass_Player))[44460] );

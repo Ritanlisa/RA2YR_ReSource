@@ -1171,7 +1171,7 @@ int TeamClass::Update_0(TeamClass *aP0, int aP1, int aP2, int aP3, char aP4, int
         v10 = *(unsigned int *)&aP0->buildingType[1].TeamTypeClass_field_28; /*0x6e5420*/
         if ( !v10 ) /*0x6e5429*/
         {
-          ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e546d*/
+          currentScript->ExecuteTriggers(aP2, aP3); /*0x6e546d*/
           result = TeamClass::AddToBuildQueue(currentScript); /*0x6e5474*/
           v7 = 1; /*0x6e5479*/
           v13 = 1; /*0x6e547b*/
@@ -1184,14 +1184,14 @@ LABEL_14:
         {
           if ( !--result ) /*0x6e542f*/
           {
-            result = ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e5439*/
+            result = result = currentScript->ExecuteTriggers(aP2, aP3); /*0x6e5439*/
             v7 = 1; /*0x6e543e*/
           }
           continue; /*0x6e5440*/
         }
         if ( aP0->owner != (HouseClass *)1 ) /*0x6e5446*/
           goto LABEL_14; /*0x6e5446*/
-        ((BuildingClass *)((int)currentScript))->ExecuteTriggers(aP2, aP3); /*0x6e5450*/
+        currentScript->ExecuteTriggers(aP2, aP3); /*0x6e5450*/
         result = TeamClass::AddToBuildQueue(currentScript); /*0x6e5457*/
         v13 = 1; /*0x6e545c*/
         v7 = 1; /*0x6e5461*/

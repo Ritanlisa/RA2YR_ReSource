@@ -2,7 +2,6 @@
 #pragma once
 #ifndef GAMEMD_E4_FLAT_ScriptClass
 #define GAMEMD_E4_FLAT_ScriptClass 1  // G57c2: suppress minimal_carriers.hpp twin
-#endif
 
 
 #include "e4/classes/_fwd_e4.hpp"
@@ -12,6 +11,7 @@ struct ScriptTypeClass;  // fix_fwd_type_supply
 
 struct ScriptClass {
     static unsigned int * GetNextAction(void *aP1, void *a2);  // 0x691540 raw: _DWORD* GetNextAction(ScriptClass*, _DWORD*)
+    int ExecuteTriggers(int a2, char a3);  // 0x7265C0 (def team/supplied_bodies.cpp; W20M21e 迁属声明)
 
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
@@ -36,3 +36,4 @@ struct ScriptClass {
 };
 
 } // namespace gamemd
+#endif  // GAMEMD_E4_FLAT_ScriptClass

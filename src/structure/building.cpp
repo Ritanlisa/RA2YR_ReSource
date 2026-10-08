@@ -7545,71 +7545,7 @@ void BuildingClass::ProcessUpgradeEffects()
 7264bd  retn
 */
 // 0x7265c0
-int BuildingClass::ExecuteTriggers(int a2, char a3) // raw sig=csp (int,int,char); disasm arg_0/arg_4 实证
-{
-  TechnoClass *result; // eax ([this+0x24] 主控; 高位残渣调用方不可观测)
-  char v5; // bl
-  TerrainClass *i; // esi (触发器链遍历)
-  int Owner; // eax
 
-  if ( !*(unsigned char *)&this->q044 || *(unsigned char *)&this->nextObject ) // 0x44 / 0x30 首字节
-    return 0;                                                          // xor al,al (调用方仅读 AL)
-  result = *(TechnoClass **)&this->occupant;                           // 0x24 槽位视图
-  v5 = 0;
-  for ( i = *(TerrainClass **)&result->q0B0; i; i = (TerrainClass *)i->q028 ) // [master+0xB0] 链头 / [i+0x28] next (canon void*)
-  {
-    Owner = ((HouseClass **)result->q0A4)[45]->FindOwner();            // [master+0xA4]->0xB4 = House*
-    if ( i->ProcessUpdate(Owner, a2, (int)this, (int)&a3) )            // 0x6dd8b0 (4 stack args)
-      v5 = 1;
-  }
-  return (unsigned char)v5;                                            // mov al,bl (调用方仅读 AL)
-}
-/* asm BuildingClass::ExecuteTriggers @0x7265C0
-; BuildingClass::ExecuteTriggers
-7265c0  push edi
-7265c1  mov edi, ecx
-7265c3  mov al, [edi+44h]
-7265c6  test al, al
-7265c8  jz short loc_726620
-7265ca  mov al, [edi+30h]
-7265cd  test al, al
-7265cf  jnz short loc_726620
-7265d1  mov eax, [edi+24h]
-7265d4  push ebx
-7265d5  push esi
-7265d6  xor bl, bl
-7265d8  mov esi, [eax+0B0h]
-7265de  test esi, esi
-7265e0  jz short loc_726618
-7265e2  push ebp
-7265e3  mov ebp, [esp+10h+arg_0]
-7265e7  mov edx, [edi+24h]
-7265ea  lea ecx, [esp+10h+arg_4]
-7265ee  push ecx
-7265ef  push edi
-7265f0  mov eax, [edx+0A4h]
-7265f6  push ebp
-7265f7  mov ecx, [eax+0B4h]; this
-7265fd  call HouseClass__FindOwner
-726602  push eax
-726603  mov ecx, esi
-726605  call TerrainClass__ProcessUpdate
-72660a  test al, al
-72660c  jz short loc_726610
-72660e  mov bl, 1
-726610  mov esi, [esi+28h]
-726613  test esi, esi
-726615  jnz short loc_7265E7
-726617  pop ebp
-726618  mov al, bl
-72661a  pop esi
-72661b  pop ebx
-72661c  pop edi
-72661d  retn 8
-726620  xor al, al
-726622  pop edi
-726623  retn 8
-*/
 // 0x459c20
 void BuildingClass::ProcessUpgradeTargeting()
 {

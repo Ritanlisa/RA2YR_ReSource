@@ -383,7 +383,7 @@ int CanAcceptType(int,int);  // 0x452670
     bool IsMassSelectable();  // 0x459C00
     void AddUpgrade(BuildingTypeClass* upgrade);  // 0x6551C0
     void ProcessUpgradeEffects();  // 0x726400
-    int ExecuteTriggers(int a2, char a3);  // 0x7265C0 (raw sig=csp 3参; g57w20m13 签名同步)
+
     void ProcessUpgradeTargeting();  // 0x459C20
     void ProcessSpreadEffect();  // 0x43FB20
     void Unlimbo_UnitDeliveryFix();  // 0x440580

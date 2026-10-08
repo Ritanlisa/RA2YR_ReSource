@@ -55,12 +55,20 @@ public:
     bool Reset();
     // unmatched: no callgraph reference and no git history record
     bool SetCurrentLine(int idx);
+
+    // --- g57w20m21 supply (csp_canon ScriptClass truth) ---
+    ScriptTypeClass* q024;  // 0x24 (CSP edx_v0x7265E7 ScriptTypeClass)
+    ObjectClass* ptr_30;    // 0x30
+    HashTable* q044;        // 0x44
+
+    int ExecuteTriggers(int a2, char a3);  // 0x7265C0 (sig=csp; W20M21 迁属)
     bool NextAction();
     // wrapper: delegates to ScriptClass::GetNextAction at 0x691540
     bool HasNextAction() const;
 
     ScriptTypeClass*    buildingType;
     int32_t             field28;
+
     int32_t             idxCurrentLine;
 
 protected:
@@ -79,6 +87,12 @@ class CCINIClass;
 
 class ScriptTypeClass : public AbstractClass
 {
+public:
+    // --- g57w20m21d supply (csp_canon ScriptTypeClass truth) ---
+    void* q0A4;              // 0xA4
+    unsigned int q0B0;       // 0xB0
+    void* q0B4;              // 0xB4 (CSP member(0xB4)=HouseClass)
+
 public:
     static constexpr AbstractType kObjectDeriveId = AbstractType::ScriptType;
 
