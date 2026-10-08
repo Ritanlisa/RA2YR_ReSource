@@ -117,11 +117,11 @@ inline unsigned char __CF__(int) { return 0; }
 #define RA2_OPDEL(p) operator delete((void *)(p))
 #endif
 
-#define ((x) & 0xFF) (((unsigned char*)&(x))[0])
-#define (((x) >> 8) & 0xFF) (((unsigned char*)&(x))[1])
-#define (((x) >> 16) & 0xFF) (((unsigned char*)&(x))[2])
-#define (((x) >> 24) & 0xFF) (((unsigned char*)&(x))[3])
-#define (((x) >> 32) & 0xFF) (((unsigned char*)&(x))[4])
+#define IDA_BYTE0(x) (((unsigned char*)&(x))[0])
+#define IDA_BYTE1(x) (((unsigned char*)&(x))[1])
+#define IDA_BYTE2(x) (((unsigned char*)&(x))[2])
+#define IDA_BYTE3(x) (((unsigned char*)&(x))[3])
+#define IDA_BYTE4(x) (((unsigned char*)&(x))[4])
 #define IDA_BYTE5(x) (((unsigned char*)&(x))[5])
 #define IDA_BYTE6(x) (((unsigned char*)&(x))[6])
 #define IDA_BYTE7(x) (((unsigned char*)&(x))[7])

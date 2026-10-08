@@ -1,5 +1,6 @@
 #include "structure/building.hpp"
 #include "entity/anim.hpp"  // AnimClass::SetField95/8 pending blocks (owner-fixed 2026-09-07)
+#include "entity/terrain.hpp"  // g57w20m13: TerrainClass::ProcessUpdate (ExecuteTriggers 0x726605 站)
 #include "house/house.hpp"
 #include "structure/globals_structure.hpp"
 #include "ui/message_list.hpp"
@@ -13,6 +14,12 @@
 #include "core/vector.hpp"
 #include "fundamentals.hpp"
 #include "object/techno.hpp"
+
+// ---- g57w20m13 TU vocab (hollow-body restoration truth) ----
+namespace gamemd {
+extern unsigned int dword_A8ED84;  // data 0xA8ED84 (ida_globals.h 同址; ProcessUpgradeEffects 0x726431/0x726488 存储)
+} // namespace gamemd
+// ---- g57w20m13 TU vocab end ----
 #include "structure/infantry.hpp"
 #include "type/infantry_type.hpp"
 #include "misc/super_weapon.hpp"
@@ -7225,76 +7232,90 @@ void BuildingClass::ProcessUpgradeEffects()
   int v5; // eax
   int v6; // eax
   int v7; // kr00_4
+  unsigned int v8; // [esp+10h] [ebp-8h] (二进制未初始化栈槽, 忠实保留)
 
   v2 = 0; /*0x726408*/
-  result = ((unsigned int *)this)[0]; /*0x72640a*/
+  result = *(unsigned int *)((char *)this + 0x24); /*0x72640a (disasm [esi+24h]; 旧体错为 [this+0])*/
   for ( i = *(unsigned int **)(result + 172); i; ++v2 ) /*0x726415*/
   {
     if ( i[11] == 13 ) /*0x726420*/
     {
-      v5 = 3 * i[13]; /*0x72642e*/
-      ((unsigned int *)this)[0] = 5 * v5; /*0x72643f*/
-      result = ~(1 << v2) & ((unsigned int *)this)[1]; /*0x72644e*/
-      ((unsigned int *)this)[1] = result; /*0x726450*/
+      v5 = 3 * i[13]; /*0x72642e (lea eax,[eax+eax*2])*/
+      *(unsigned int *)((char *)this + 0x34) = dword_A8ED84; /*0x726431 (mov [edx],ecx; ecx=dword_A8ED84)*/
+      *(unsigned int *)((char *)this + 0x38) = v8; /*0x72643a (mov [edx+4],ecx; ecx=[esp+var_8])*/
+      *(unsigned int *)((char *)this + 0x3C) = 5 * v5; /*0x72643f (lea eax,[eax+eax*4]; [edx+8])*/
+      result = ~((unsigned int)(1 << v2)) & *(unsigned int *)((char *)this + 0x40); /*0x72644e*/
+      *(unsigned int *)((char *)this + 0x40) = result; /*0x726450*/
     }
     if ( i[11] == 51 ) /*0x726457*/
     {
+      v6 = ((gamemd::Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink)->Range(0, i[13]); /*0x72646a (lea ecx,[eax+218h]; call Random__Range; 旧体整行丢失致 v6 未初始化)*/
       v7 = i[13]; /*0x72647b*/
-      ((unsigned int *)this)[0] = 15 * (v6 + v7 / 2); /*0x726494*/
-      result = ~(1 << v2); /*0x7264a3*/
-      ((unsigned int *)this)[1] &= result; /*0x7264a7*/
+      *(unsigned int *)((char *)this + 0x34) = dword_A8ED84; /*0x726488 (mov [esi+34h],ebx; ebx=dword_A8ED84)*/
+      *(unsigned int *)((char *)this + 0x38) = v8; /*0x72648e (mov [ecx+4],edx; edx=[esp+var_8])*/
+      *(unsigned int *)((char *)this + 0x3C) = 15 * (v6 + v7 / 2); /*0x726494 (x3 x5; [ecx+8])*/
+      result = ~(unsigned int)(1 << v2); /*0x7264a3*/
+      *(unsigned int *)((char *)this + 0x40) &= result; /*0x7264a7*/
     }
-    i = (unsigned int *)i[10]; /*0x7264aa*/
+    i = (unsigned int *)i[10]; /*0x7264aa (mov edi,[edi+28h])*/
   }
   return; /*0x7264b7 -- void per hpp*/
 }
 // 0x7265c0
-void BuildingClass::ExecuteTriggers()
+int BuildingClass::ExecuteTriggers(int a2, char a3) /*raw sig=csp (int,int,char); disasm arg_0/arg_4 实证; g57w20m13 签名同步*/
 {
   int result; // eax
   char v5; // bl
   int i; // esi
   int Owner; // eax
 
-  if ( this->nextObject ) /*0x7265ca -- raw '!this->q044 ||' dropped: q044 @0x110 has no hand-tree member*/
+  if ( !*(unsigned char *)((char *)this + 0x44) || *(unsigned char *)((char *)this + 0x30) ) /*0x7265c3 (mov al,[edi+44h]; mov al,[edi+30h]; 旧体条件被啃)*/
   {
     IDA_LOBYTE(result) = 0; /*0x726620*/
   }
   else
   {
+    result = *(unsigned int *)((char *)this + 0x24); /*0x7265d1*/
+    v5 = 0; /*0x7265d6*/
+    for ( i = *(unsigned int *)(result + 176); i; i = *(unsigned int *)(i + 40) ) /*0x7265e0 ([eax+0B0h]; [i+28h])*/
+    {
+      Owner = ((HouseClass *)(*(unsigned int *)(*(unsigned int *)((char *)this + 0x24) + 164) + 180))->FindOwner(); /*0x7265fd (mov ecx,[eax+0B4h]; call HouseClass__FindOwner)*/
+      if ( ((TerrainClass *)i)->ProcessUpdate(Owner, a2, (int)this, (int)&a3) ) /*0x726605 (binary 4 stack args; receiver=i)*/
+        v5 = 1; /*0x72660e*/
+    }
+    IDA_LOBYTE(result) = v5; /*0x726618*/
   }
+  return result; /*0x72661c*/
 }
 // 0x459c20
 void BuildingClass::ProcessUpgradeTargeting()
 {
+  AbstractClass *focus; // ecx
+  AbstractClass *v3; // esi
+  unsigned int v4; // eax
+  BuildingTypeClass *Type; // eax
+  int VoiceHarvest; // eax
 
-// 0x43fb20
-
-// 0x70ddf0
-// 0x441f60
-// 0x70ddf0
-
-// IDA 0x483690: check if eligible for tiberium storage
-// 0x483690
-
-// 0x458e50
-
-// IDA 0x424c90: set field at offset 95
-// 0x424c90
-// 0x425260
-
-// 0x449440
-
-
-// IDA 0x717890: set production slot
-// 0x717890
-// 0x447210
-// 0x41c060
-
-// G42.33 ph7v2: structural tail repairs applied
-
-// G42.33 ph8: orphan tail regions commented
-
-} // G42.33c13 stub close (raw body preserved above; 0x459C20)
+  focus = (AbstractClass *)*(unsigned int *)((char *)this + 0x218); /*0x459c23 (ml TechnoClass focus@536=0x218)*/
+  if ( focus && (*(int (__thiscall **)(AbstractClass *))(*(unsigned int *)focus + 44))(focus) == 11 ) /*0x459c2f (vt slot 11; [eax+2Ch])*/
+  {
+    v3 = (AbstractClass *)*(unsigned int *)((char *)this + 0x218); /*0x459c38*/
+    v4 = v3 ? ((*(int (__thiscall **)(AbstractClass *))(*(unsigned int *)v3 + 44))(v3) == 11 ? (unsigned int)v3 : 0) : 0; /*0x459c4a*/
+    if ( *(unsigned int *)(v4 + 236) == 5 ) /*0x459c5f ([eax+0ECh])*/
+    {
+      Type = (BuildingTypeClass *)*(unsigned int *)((char *)this + 0x520); /*0x459c64 (ml BuildingClass Type@1312=0x520)*/
+      if ( *(unsigned char *)((char *)Type + 0x5ED) ) /*0x459c6a (ml q5ED bool)*/
+      {
+        if ( *(unsigned char *)((char *)Type + 0x5EC) ) /*0x459c74 (ml q5EC bool)*/
+        {
+          VoiceHarvest = *(unsigned int *)((char *)Type + 0x57C); /*0x459c7e (ml OwnerFlags int)*/
+          if ( VoiceHarvest != -1 ) /*0x459c87*/
+            (*(int (__thiscall **)(BuildingClass *, int))(*(unsigned int *)this + 852))(this, VoiceHarvest); /*0x459c8e (vt slot 213=852B; push eax; mov ecx,edi)*/
+        }
+      }
+    }
+  }
+  ((TechnoClass *)this)->PickAlternateTarget(); /*0x459c98 (techno.hpp:500 virtual 0x708E00)*/
+}
 
 } // namespace gamemd  -- G42.33c14 (re)close: tail surplus closes were husks)

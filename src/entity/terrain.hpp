@@ -91,7 +91,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (END) ===
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
-    int ProcessUpdate(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x6dd8b0
+    int ProcessUpdate(int a1, int a2, int a3, int a4);  // 0x6dd8b0 (binary 4 stack args: Owner,a2,this,&a3; g57w20m13 校正)
     int CheckFrameUpdate(int a1, int a2, int a3);  // 0x71cf30
     int MissionStubReturnZero3(int a1, int a2);  // 0x71d310
     // === FUNCS-MOVE (END) ===
