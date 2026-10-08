@@ -15651,10 +15651,11 @@ int TechnoClass::Vt170()
 
 // 0x708D90
 namespace ra2::game {
-int TechnoClass::SetMoveDestination()
+int TechnoClass::SetMoveDestination(int a1)
 {
     int result; // eax
     int v3; // [esp+Ch] [ebp+4h]
+    v3 = a1;
 
     (result) = ((result) & ~0xFF) | ((unsigned int)(g_MoveFeedback) & 0xFF); /*0x708d90*/
     if ( g_MoveFeedback && v3 != -1 ) /*0x708da4*/

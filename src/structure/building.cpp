@@ -1,4 +1,5 @@
 #include "structure/building.hpp"
+#include "team/tag.hpp"  // g57w20m20b: TagClass 完整定义 (ProcessUpgradeEffects 附件链)
 #include "entity/anim.hpp"  // AnimClass::SetField95/8 pending blocks (owner-fixed 2026-09-07)
 #include "entity/terrain.hpp"  // g57w20m13: TerrainClass::ProcessUpdate (ExecuteTriggers 0x726605 站)
 #include "house/house.hpp"
@@ -7227,40 +7228,180 @@ retn
 void BuildingClass::ProcessUpgradeEffects()
 {
   char v2; // bp
-  int result; // eax
-  unsigned int *i; // edi ( attachedTag 链遍历游标 )
+  TechnoClass *result; // eax (0x24 主控建筑)
+  TagClass *i; // edi (附件链遍历)
   int v5; // eax
   int v6; // eax
   int v7; // kr00_4
   unsigned int v8; // [esp+10h] [ebp-8h] (二进制未初始化栈槽, 忠实保留)
 
   v2 = 0;
-  result = this->occupant;                                             // [this+0x24] (ObjectClass +0x24)
-  for ( i = ((unsigned int **)result)[43]; i; ++v2 )                   // [result+172] 链头
+  result = *(TechnoClass **)&this->occupant;                           // 0x24 槽位视图 (canon q024 TechnoClass*)
+  for ( i = (TagClass *)result->q0AC; i; ++v2 )                        // canon 0xAC 链头
   {
-    if ( i[11] == 13 )                                                 // [i+0x2C]
+    if ( *(unsigned int *)&i->q02C == 13 )                             // canon TagClass 0x2C (AbstractType::House)
     {
-      v5 = 3 * i[13];                                                  // [i+0x34]
-      this->attachedTag = (ra2::game::TagClass *)dword_A8ED84;                    // [this+0x34]
-      this->attachedBomb = (ra2::game::BombClass *)v8;                            // [this+0x38]
-      *(unsigned int *)&this->ambientSoundController = 5 * v5;         // [this+0x3C] (AudioController 首 dword)
-      result = ~((unsigned int)(1 << v2)) & ((unsigned int *)&this->ambientSoundController)[1]; // [this+0x40]
-      ((unsigned int *)&this->ambientSoundController)[1] = result;
+      v5 = 3 * *(unsigned int *)&i->q034[0];                           // canon TagClass 0x34
+      *(unsigned int *)&this->attachedTag = dword_A8ED84;              // 0x34 槽位视图
+      *(unsigned int *)&this->attachedBomb = v8;                       // 0x38 槽位视图
+      *(unsigned int *)&this->ambientSoundController = 5 * v5;         // 0x3C 槽位视图
+      this->q040 = ~((unsigned int)(1 << v2)) & this->q040;            // 0x40
     }
-    if ( i[11] == 51 )                                                 // [i+0x2C]
+    if ( *(unsigned int *)&i->q02C == 51 )
     {
-      v6 = ((gamemd::Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink)->Range(0, i[13]);
-      v7 = i[13];
-      this->attachedTag = (ra2::game::TagClass *)dword_A8ED84;
-      this->attachedBomb = (ra2::game::BombClass *)v8;
+      v6 = ((gamemd::Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink)->Range(0, *(unsigned int *)&i->q034[0]);
+      v7 = *(unsigned int *)&i->q034[0];
+      *(unsigned int *)&this->attachedTag = dword_A8ED84;
+      *(unsigned int *)&this->attachedBomb = v8;
       *(unsigned int *)&this->ambientSoundController = 15 * (v6 + v7 / 2);
-      result = ~(unsigned int)(1 << v2);
-      ((unsigned int *)&this->ambientSoundController)[1] &= result;
+      this->q040 &= ~(unsigned int)(1 << v2);
     }
-    i = (unsigned int *)i[10];                                         // [i+40] 链 next
+    i = *(TagClass **)&i->q028[0];                                     // canon TagClass 0x28 链 next
   }
   return;
 }
+/* asm BuildingClass::ProcessUpgradeEffects @0x726400
+; BuildingClass::ProcessUpgradeEffects
+726400  sub esp, 0Ch
+726403  push ebp
+726404  push esi
+726405  mov esi, ecx
+726407  push edi
+726408  xor ebp, ebp
+72640a  mov eax, [esi+24h]
+72640d  mov edi, [eax+0ACh]
+726413  test edi, edi
+726415  jz loc_7264B7
+72641b  push ebx
+72641c  cmp dword ptr [edi+2Ch], 0Dh
+726420  jnz short loc_726453
+726422  mov ecx, dword_A8ED84
+726428  mov eax, [edi+34h]
+72642b  lea edx, [esi+34h]
+72642e  lea eax, [eax+eax*2]
+726431  mov [edx], ecx
+726433  mov ecx, [esp+1Ch+var_8]
+726437  lea eax, [eax+eax*4]
+72643a  mov [edx+4], ecx
+72643d  mov ecx, ebp
+72643f  mov [edx+8], eax
+726442  mov eax, [esi+40h]
+726445  mov edx, 1
+72644a  shl edx, cl
+72644c  not edx
+72644e  and eax, edx
+726450  mov [esi+40h], eax
+726453  cmp dword ptr [edi+2Ch], 33h ; '3'
+726457  jnz short loc_7264AA
+726459  mov eax, [edi+34h]
+72645c  push eax; int
+72645d  mov eax, dword_A8B230
+726462  push 0; int
+726464  lea ecx, [eax+218h]; this
+72646a  call Random__Range
+72646f  mov ecx, eax
+726471  mov eax, [edi+34h]
+726474  cdq
+726475  mov ebx, dword_A8ED84
+72647b  sub eax, edx
+72647d  mov edx, [esp+1Ch+var_8]
+726481  sar eax, 1
+726483  add eax, ecx
+726485  lea ecx, [esi+34h]
+726488  mov [esi+34h], ebx
+72648b  lea eax, [eax+eax*2]
+72648e  mov [ecx+4], edx
+726491  lea eax, [eax+eax*4]
+726494  mov [ecx+8], eax
+726497  mov eax, 1
+72649c  mov ecx, ebp
+72649e  shl eax, cl
+7264a0  mov ecx, [esi+40h]
+7264a3  not eax
+7264a5  and ecx, eax
+7264a7  mov [esi+40h], ecx
+7264aa  mov edi, [edi+28h]
+7264ad  inc ebp
+7264ae  test edi, edi
+7264b0  jnz loc_72641C
+7264b6  pop ebx
+7264b7  pop edi
+7264b8  pop esi
+7264b9  pop ebp
+7264ba  add esp, 0Ch
+7264bd  retn
+*/
+/* asm BuildingClass::ProcessUpgradeEffects @0x726400
+; BuildingClass::ProcessUpgradeEffects
+726400  sub esp, 0Ch
+726403  push ebp
+726404  push esi
+726405  mov esi, ecx
+726407  push edi
+726408  xor ebp, ebp
+72640a  mov eax, [esi+24h]
+72640d  mov edi, [eax+0ACh]
+726413  test edi, edi
+726415  jz loc_7264B7
+72641b  push ebx
+72641c  cmp dword ptr [edi+2Ch], 0Dh
+726420  jnz short loc_726453
+726422  mov ecx, dword_A8ED84
+726428  mov eax, [edi+34h]
+72642b  lea edx, [esi+34h]
+72642e  lea eax, [eax+eax*2]
+726431  mov [edx], ecx
+726433  mov ecx, [esp+1Ch+var_8]
+726437  lea eax, [eax+eax*4]
+72643a  mov [edx+4], ecx
+72643d  mov ecx, ebp
+72643f  mov [edx+8], eax
+726442  mov eax, [esi+40h]
+726445  mov edx, 1
+72644a  shl edx, cl
+72644c  not edx
+72644e  and eax, edx
+726450  mov [esi+40h], eax
+726453  cmp dword ptr [edi+2Ch], 33h ; '3'
+726457  jnz short loc_7264AA
+726459  mov eax, [edi+34h]
+72645c  push eax; int
+72645d  mov eax, dword_A8B230
+726462  push 0; int
+726464  lea ecx, [eax+218h]; this
+72646a  call Random__Range
+72646f  mov ecx, eax
+726471  mov eax, [edi+34h]
+726474  cdq
+726475  mov ebx, dword_A8ED84
+72647b  sub eax, edx
+72647d  mov edx, [esp+1Ch+var_8]
+726481  sar eax, 1
+726483  add eax, ecx
+726485  lea ecx, [esi+34h]
+726488  mov [esi+34h], ebx
+72648b  lea eax, [eax+eax*2]
+72648e  mov [ecx+4], edx
+726491  lea eax, [eax+eax*4]
+726494  mov [ecx+8], eax
+726497  mov eax, 1
+72649c  mov ecx, ebp
+72649e  shl eax, cl
+7264a0  mov ecx, [esi+40h]
+7264a3  not eax
+7264a5  and ecx, eax
+7264a7  mov [esi+40h], ecx
+7264aa  mov edi, [edi+28h]
+7264ad  inc ebp
+7264ae  test edi, edi
+7264b0  jnz loc_72641C
+7264b6  pop ebx
+7264b7  pop edi
+7264b8  pop esi
+7264b9  pop ebp
+7264ba  add esp, 0Ch
+7264bd  retn
+*/
 /* asm BuildingClass::ProcessUpgradeEffects @0x726400
 ; BuildingClass::ProcessUpgradeEffects
 726400  sub esp, 0Ch
@@ -7408,20 +7549,19 @@ int BuildingClass::ExecuteTriggers(int a2, char a3) // raw sig=csp (int,int,char
 {
   int result; // eax
   char v5; // bl
-  TerrainClass *i; // esi ( 触发器链遍历游标 )
+  TerrainClass *i; // esi (触发器链遍历)
   int Owner; // eax
 
-  if ( !((unsigned char *)&this->ambientSoundController)[8] || ((unsigned char *)&this->nextObject)[0] ) // [this+0x44]/[this+0x30]
+  if ( !*(unsigned char *)&this->q044 || *(unsigned char *)&this->nextObject ) // 0x44 / 0x30 首字节
   {
     result = 0;                                                        // xor al,al (调用方仅读 AL)
   }
   else
   {
-    result = this->occupant;                                           // [this+0x24]
     v5 = 0;
-    for ( i = ((TerrainClass **)result)[44]; i; i = (TerrainClass *)((unsigned int **)i)[10] ) // [result+176]; [i+40]
+    for ( i = *(TerrainClass **)&((TechnoClass *)*(TechnoClass **)&this->occupant)->q0B0; i; i = (TerrainClass *)*(unsigned int *)&i->q028[0] ) // [occupant+0xB0] 链头 / [i+0x28] next
     {
-      Owner = (int)((HouseClass *)((unsigned int **)((unsigned int **)this->occupant)[41])[45])->FindOwner(); // [[occupant+164]+180]
+      Owner = ((HouseClass *)((HouseClass **)((TechnoClass *)*(TechnoClass **)&this->occupant)->q0A4)[45])->FindOwner(); // [[occupant+0xA4]+0xB4]
       if ( i->ProcessUpdate(Owner, a2, (int)this, (int)&a3) )          // 0x6dd8b0 (4 stack args)
         v5 = 1;
     }
@@ -7480,24 +7620,25 @@ void BuildingClass::ProcessUpgradeTargeting()
 {
   AbstractClass *focus; // ecx
   AbstractClass *v3; // esi
-  unsigned int v4; // eax
+  AbstractClass *v4; // eax
+  BuildingTypeClass *Type; // eax (CSP eax_v0x459C64 BuildingTypeClass ANCHORED)
   int VoiceHarvest; // eax
 
-  focus = this->focus;                                                 // [this+0x218] (techno.hpp:940)
-  if ( focus && ((int (__thiscall **)(AbstractClass *))*(unsigned int *)focus)[11](focus) == 11 ) // vt slot 11
+  focus = this->focus;                                                 // techno.hpp 0x218
+  if ( focus && focus->whatAmI() == AbstractType::Cell )               // vt slot 11; enums.hpp Cell=11
   {
     v3 = this->focus;
-    v4 = v3 ? (((int (__thiscall **)(AbstractClass *))*(unsigned int *)v3)[11](v3) == 11 ? (unsigned int)v3 : 0) : 0;
-    if ( ((unsigned int *)v4)[59] == 5 )                               // [v4+236]
+    v4 = v3 ? (v3->whatAmI() == AbstractType::Cell ? v3 : 0) : 0;
+    if ( *(unsigned int *)&((TechnoClass *)v4)->q0EC == 5 )            // canon TechnoClass 0xEC
     {
-      BuildingTypeClass *Type = this->Type;                            // [this+0x520]
-      if ( Type->q5ED )                                                // ml 1517
+      Type = this->Type;                                               // building.hpp 0x520
+      if ( Type->q5ED )                                                // ml 1517 (0x5ED)
       {
-        if ( Type->q5EC )                                              // ml 1516
+        if ( Type->q5EC )                                              // ml 1516 (0x5EC)
         {
           VoiceHarvest = Type->OwnerFlags;                             // [Type+0x57C] ml 1404
           if ( VoiceHarvest != -1 )
-            ((int (__thiscall **)(BuildingClass *, int))*(unsigned int *)this)[213](this, VoiceHarvest); // vt slot 213
+            this->SetMoveDestination(VoiceHarvest);                    // vt+852 canon TechnoClass::SetMoveDestination
         }
       }
     }

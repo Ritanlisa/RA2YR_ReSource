@@ -67,6 +67,11 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 //      sizeof: 0xAC (confirmed via ctor init chain)
 // ============================================================================
 class ObjectClass : public AbstractClass {
+
+public:
+    // --- g57w20m20c supply (csp_canon 0x40) ---
+    unsigned int q040;    // 0x40
+
 public:
     int* FindPlacementCellsAlt(int* a2, int a3);  // 0x703590 raw fn_70 段头 this=ObjectClass (段头名 MapClass::FindPlacementCellsAlt; g57w10 r4 item2)
     int COMStub_AddRef(int, ...); // vtable slot +636

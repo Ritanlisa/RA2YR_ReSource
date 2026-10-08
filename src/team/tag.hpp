@@ -71,6 +71,10 @@ public:
     void LocalChanged(int idx_local);
     bool IsOnlyInstanceOfType() const;  // 0x6E5850
 
+    // --- g57w20m20b supply (csp_canon TagClass truth) ---
+    char q028[4];            /* unsigned int */  // 0x28
+    ReferenceCounted* q02C;  // 0x2C
+    char q034[4];            /* unsigned char */  // 0x34
     // unmatched: no callgraph reference and no git history record
     bool RaiseEvent(int event, ObjectClass* tag_owner, CellStruct location, bool force_all = false, TechnoClass* source = nullptr);
 

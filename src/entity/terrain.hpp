@@ -20,6 +20,10 @@ class TerrainTypeClass;
 
 class TerrainClass : public ObjectClass
 {
+public:
+    // --- g57w20m20d supply (csp_canon 0x28) ---
+    unsigned int q028;    // 0x28
+
     int GetCellCoords_Alt(int, ...); // vtable slot +440
     int GetOrCreateResHandle(int, ...); // vtable slot +264
     int GetCoordsThunk2(int, ...); // vtable slot +172

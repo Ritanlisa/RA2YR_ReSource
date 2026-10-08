@@ -88,6 +88,14 @@ struct OwnedTiberiumStruct {
 };
 
 class TechnoClass : public RadioClass {
+
+public:
+    // --- g57w20m20c supply (csp_canon TechnoClass truth) ---
+    void* q0A4;           // 0xA4
+    void* q0AC;           // 0xAC
+    unsigned int q0B0;    // 0xB0
+    unsigned int q0EC;    // 0xEC
+
     int CheckTypeFlag1681(int, ...); // vtable slot +996
     int COMStub_Return0_34(int, ...); // vtable slot +136
     int Vt34Thunk(int, ...); // vtable slot +132
@@ -495,7 +503,7 @@ public:
     virtual int IsCloseEnoughToBuilding() const;   // 0x70D590
     virtual int IsCellPassableFor() const;  // 0x70D460
     virtual int IsPlayerCellPassable() const;  // 0x70D420
-    virtual int SetMoveDestination();  // 0x708D90
+    virtual int SetMoveDestination(int a1);  // 0x708D90 (raw [ebp+4] 栈参; W20M20 签名同步)
     virtual int GetPrimaryTargetOrFallback() const;  // 0x708DC0
     virtual int PickAlternateTarget();  // 0x708E00
     virtual int SelectRandomTarget();  // 0x708EB0
