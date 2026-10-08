@@ -3210,7 +3210,7 @@ int BuildingClass::Mission_Repair()
     if ( result == 6 ) /*0x701440*/
     {
       (*((void (__thiscall **)(TechnoClass *, unsigned int))this->vtable1 + 103))(this, 0); /*0x701448*/
-      ((gamemd::BuildingClass *)(void *)((BuildingClass *)this))->GetHealthRatio(); /*0x701450*/
+      this->GetHealthRatio(); /*0x701450*/
       globalHelper_051EE0((int)this, v5, v1 <= *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5888)); /*0x701473*/
       v6 = (unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned char *))this->vtable1 + 18))(this, v7); /*0x701483*/
       return (int)StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 452),(int)(v6), 0); /*0x701494*/
@@ -3382,7 +3382,7 @@ void BuildingClass::ProcessRepair()
         else
         {
           v8 = 0; /*0x44b83c*/
-          v9 = (char *)(void *)(&this->Type->__pad_F70[440]); /*0x44b83e*/
+          v9 = (char *)this->Type->q1128; /*0x44b83e*/
         }
         if ( v9 && *v9 ) /*0x44b847*/
           ((gamemd::BuildingClass *)(void *)(this))->PlayAnim(v6, v9, 7, v8, 0, 0); /*0x44b854*/
@@ -3397,15 +3397,15 @@ void BuildingClass::ProcessRepair()
       {
         if ( v10 == 2 ) /*0x44b88f*/
         {
-          if ( Locomotor::GetSpeed((Locomotor *)this->__pad_628) || (v11 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44b8ae*/
+          if ( Locomotor::GetSpeed(*(Locomotor **)&this->__pad_628[0]) || (v11 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44b8ae*/
           {
-            IDA_LOBYTE(this->RepairProgress.Timer) = 0; /*0x44b8df*/
+            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x44b8df*/
           }
           else
           {
             v12 = *(unsigned int *)&this->__pad_628[16]; /*0x44b8b0*/
             v13 = this->RepairProgress.Value; /*0x44b8b6*/
-            IDA_LOBYTE(this->RepairProgress.Timer) = 1; /*0x44b8be*/
+            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x44b8be*/
             this->RepairProgress.Value = v12 + v13; /*0x44b8c5*/
             v14 = v153; /*0x44b8d1*/
             *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44b8d5*/
@@ -3493,15 +3493,15 @@ void BuildingClass::ProcessRepair()
       {
         if ( v26 == 2 ) /*0x44ba98*/
         {
-          if ( Locomotor::GetSpeed((Locomotor *)this->__pad_628) || (v27 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bab7*/
+          if ( Locomotor::GetSpeed(*(Locomotor **)&this->__pad_628[0]) || (v27 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bab7*/
           {
-            IDA_LOBYTE(this->RepairProgress.Timer) = 0; /*0x44bae8*/
+            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x44bae8*/
           }
           else
           {
             v28 = *(unsigned int *)&this->__pad_628[16]; /*0x44bab9*/
             v29 = this->RepairProgress.Value; /*0x44babf*/
-            IDA_LOBYTE(this->RepairProgress.Timer) = 1; /*0x44bac7*/
+            (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x44bac7*/
             this->RepairProgress.Value = v28 + v29; /*0x44bace*/
             v30 = v153; /*0x44bada*/
             *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bade*/
@@ -3562,15 +3562,15 @@ void BuildingClass::ProcessRepair()
             {
               if ( !*(unsigned int *)&this->__pad_628[12] ) /*0x44bcc7*/
                 *(unsigned int *)&this->__pad_628[12] = 1; /*0x44bcd6*/
-              if ( Locomotor::GetSpeed((Locomotor *)this->__pad_628) || (v47 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bcf5*/
+              if ( Locomotor::GetSpeed(*(Locomotor **)&this->__pad_628[0]) || (v47 = *(unsigned int *)&this->__pad_628[12]) == 0 ) /*0x44bcf5*/
               {
-                IDA_LOBYTE(this->RepairProgress.Timer) = 0; /*0x44bd26*/
+                (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(0) & 0xFF); /*0x44bd26*/
               }
               else
               {
                 v48 = *(unsigned int *)&this->__pad_628[16]; /*0x44bcf7*/
                 v49 = this->RepairProgress.Value; /*0x44bcfd*/
-                IDA_LOBYTE(this->RepairProgress.Timer) = 1; /*0x44bd05*/
+                (this->RepairProgress.Timer) = ((this->RepairProgress.Timer) & ~0xFF) | ((unsigned int)(1) & 0xFF); /*0x44bd05*/
                 this->RepairProgress.Value = v48 + v49; /*0x44bd0c*/
                 v50 = v153; /*0x44bd18*/
                 *(unsigned int *)this->__pad_628 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x44bd1c*/
