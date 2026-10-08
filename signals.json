@@ -80638,8 +80638,8 @@
      "name": "p0"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -80740,8 +80740,8 @@
      "name": "p0"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -144036,8 +144036,8 @@
    "return_type": "double",
    "call_convention": "unknown",
    "params": [],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -144057,8 +144057,8 @@
      "name": "p1"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -144078,8 +144078,8 @@
      "name": "p1"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -144090,8 +144090,8 @@
    "return_type": "double",
    "call_convention": "thiscall",
    "params": [],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -195970,8 +195970,8 @@
      "name": "p0"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -195982,8 +195982,8 @@
    "return_type": "int",
    "call_convention": "thiscall",
    "params": [],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
@@ -196003,8 +196003,8 @@
      "name": "p1"
     }
    ],
-   "completed": false,
-   "translated": false,
+   "completed": true,
+   "translated": true,
    "done": false,
    "idempotent": null
   },
