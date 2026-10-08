@@ -249,7 +249,7 @@ int SaveGame::LoadMainGameState()
     {
       result = (*(int (**)(SaveGame *, unsigned char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f81f*/
                  this,
-                 (unsigned char *)(unsigned int *)((char *)&stru_A8EB00 + 416),
+                 (unsigned char *)&dword_A8ED84,
                  4,
                  0);
       if ( result >= 0 )

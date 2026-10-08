@@ -708,7 +708,7 @@ namespace gamemd {
 TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 {
 
-  *(unsigned int *)this->CommandClass = (unsigned int)&vt_CommandClass;
+  *(unsigned int *)this->CommandClass = (unsigned int)&vt_CommandClass; /*0x536589*/
   if ( (a2 & 1) != 0 ) /*0x53658f*/
     __3_YAXPAX_Z(this); /*0x536592*/
   return (std::locale::facet *)this; /*0x53659c*/

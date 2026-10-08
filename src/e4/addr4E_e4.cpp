@@ -1826,7 +1826,7 @@ int sub_4E6860()
   dword_A8ED48 = 0; /*0x4e686c*/
   byte_A8ED4C = 1; /*0x4e6871*/
   byte_A8ED4D = 0; /*0x4e6878*/
-  dword_A8ED40 = (unsigned int)(int)&off_7E4678;
+  dword_A8ED40 = (unsigned int)(int)&off_7E4678; /*0x4e687d*/
   dword_A8ED54 = 10; /*0x4e6887*/
   dword_A8ED50 = 0; /*0x4e6891*/
   return atexit((void (__cdecl *)(void))sub_4E68A0); /*0x4e689c*/
@@ -4997,7 +4997,7 @@ unsigned int * ParticleSystemClass_vt_00(_VectorClass_PAVParticleClass *Block, c
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4ef803*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4ef806*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4ef810*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef818*/

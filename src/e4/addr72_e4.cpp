@@ -363,7 +363,7 @@ int Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   *(unsigned int *)v17.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x72aee1*/
   v19 = 0; /*0x72aee9*/
   ((Vector *)((int)v18))->Clear((int)((Vector *)((int)v18))); /*0x72aef1*/
-  *(unsigned int *)v17.CDFileClass = (unsigned int)&off_7E1668;
+  *(unsigned int *)v17.CDFileClass = (unsigned int)&off_7E1668; /*0x72aefa*/
 // 0x431b80
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v17))->Dtor(); /*0x72af07*/
 }
@@ -1577,7 +1577,7 @@ unsigned int sub_720960(ObjectClass *a1)
   ((unsigned int *)a1)[0] = 0; /*0x720982*/
   LOBYTE(((unsigned int *)a1)[0]) = 1; /*0x720985*/
   BYTE1(((unsigned int *)a1)[0]) = 0; /*0x720989*/
-  ((unsigned int *)a1)[0] = (unsigned int)(int)&vt_DynamicVectorClass;
+  ((unsigned int *)a1)[0] = (unsigned int)(int)&vt_DynamicVectorClass; /*0x72098c*/
   a1->owningHouseIndex = 10; /*0x720993*/
   a1->occupant = 0; /*0x72099a*/
   a1->fallRate = 0; /*0x72099d*/

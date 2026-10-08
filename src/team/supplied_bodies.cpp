@@ -226,26 +226,26 @@ char CampaignClass::GetMapData(uint8_t ***a2) {
     if ( !(uint8_t)((AbstractTypeClass *)(AbstractTypeClass *)this)->LoadFromINI((CCINIClass *)a2) ) /*0x46cceb*/
       return 0; /*0x46cdf7*/
     Int_Overwrite = ((INIClass *)/*0x46cd0c*/
-                      (bool *)a2)->ReadInt_Overwrite((uint8_t *)&this->idxCd, (uint8_t *)((char *)&stru_81AF8C + 1), this->scenario[28]);
+                      (bool *)a2)->ReadInt_Overwrite((uint8_t *)&this->idxCd, (uint8_t *)"CD", this->scenario[28]);
     v4 = this->description[28]; /*0x46cd11*/
     this->scenario[28] = Int_Overwrite; /*0x46cd17*/
     this->description[28] = ((INIClass *)/*0x46cd40*/
-                              (INIClass *)a2)->GetBool((const char *)&this->idxCd, (const char *)((char *)&stru_81AF8C + 1), v4);
+                              (INIClass *)a2)->GetBool((const char *)&this->idxCd, (const char *)"FinalMovie", v4);
     ((INIClass *)/*0x46cd46*/
       (INIClass *)a2)->GetString((const char *)&this->idxCd, (const char *)&stru_81AF8C, (const char *)&this->scenario[29], (char *)&this->scenario[29], 512);
     _strupr((char *)&this->scenario[29]); /*0x46cd4c*/
     if ( (uint8_t)((INIClass *)/*0x46cd5e*/
-                            (int *)a2)->ReadBool_Overwrite((uint8_t *)&this->idxCd, (uint8_t *)((char *)&stru_81AF8C + 17), 0) )
+                            (int *)a2)->ReadBool_Overwrite((uint8_t *)&this->idxCd, (uint8_t *)"DebugOnly", 0) )
     {
       ((INIClass *)/*0x46cda3*/
-        (INIClass *)a2)->GetString((const char *)&this->idxCd, (const char *)((char *)&stru_81AF8C + 5), 0, Destination, 1024);
-      strcat(Destination, (char *)&stru_81AF8C + 8); /*0x46cdcf*/
+        (INIClass *)a2)->GetString((const char *)&this->idxCd, (const char *)"Description", 0, Destination, 1024);
+      strcat(Destination, " - for debug/testing"); /*0x46cdcf*/
       BulkCharToWide((unsigned short *)&this->description[29], (uint8_t *)Destination, -1); /*0x46cde2*/
     }
     else
     {
       ((INIClass *)/*0x46cd7b*/
-        a2)->GetStringEx((void *)(uint8_t *)&this->idxCd, (void *)(uint8_t *)((char *)&stru_81AF8C + 5), (void *)(wchar_t *)&this->description[29], (unsigned int)0x80u);
+        a2)->GetStringEx((void *)(uint8_t *)&this->idxCd, (void *)"Description", (void *)(wchar_t *)&this->description[29], (unsigned int)0x80u);
     }
     return 1; /*0x46cd82*/
 }

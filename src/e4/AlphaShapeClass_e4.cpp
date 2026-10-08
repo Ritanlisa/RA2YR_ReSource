@@ -69,7 +69,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   int v4; // eax
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_AlphaShapeClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_AlphaShapeClass; /*0x42173d*/
   this->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x421743*/
   this->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x42174a*/
   this->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x421751*/

@@ -38,7 +38,7 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
     a1->Piggybackee = 0; /*0x4af79c*/
     *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_DriveLocomotionClass;
     *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_DriveLocomotionClass;
-    *(unsigned int *)a1->__pad_18 = (unsigned int)&off_7E7E8C;
+    *(unsigned int *)a1->__pad_18 = (unsigned int)&off_7E7E8C; /*0x4af7b0*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( (int *)(v2), (int **)(&pStm), 1, 0); /*0x4af7c3*/
   if ( !(unsigned char)pStm ) /*0x4af7cc*/

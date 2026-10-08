@@ -212,10 +212,10 @@ CCINIClass::CCINIClass()
   result[2] = 0; /*0x535b3f*/
   sectionHead[1] = 0; /*0x535b42*/
   sectionHead[2] = 0; /*0x535b45*/
-  *sectionHead = (unsigned int)(int)&vt_GenericNode;
+  *sectionHead = (unsigned int)(int)&vt_GenericNode; /*0x535b48*/
   p_sectionCount[1] = 0; /*0x535b4e*/
   p_sectionCount[2] = 0; /*0x535b51*/
-  *p_sectionCount = (unsigned int)(int)&vt_GenericNode;
+  *p_sectionCount = (unsigned int)(int)&vt_GenericNode; /*0x535b54*/
   result[3] = (unsigned int)(&vt_GenericList); /*0x535b5d*/
   if ( p_sectionCount ) /*0x535b64*/
   {

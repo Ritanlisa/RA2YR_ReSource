@@ -770,7 +770,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(void * aP1)
 
     {
       v3 = dword_A8E340++; /*0x6ce6d1*/
-      *((unsigned int *)dword_A8E334 + v3) = (unsigned int)this;
+      *((unsigned int *)dword_A8E334 + v3) = (unsigned int)this; /*0x6ce6e0*/
     }
     if ( this + 36 != this + 204 ) /*0x6ce6e8*/
       qmemcpy((void *)(this + 204), (const void *)(this + 36), 0x19u); /*0x6ce6ef*/

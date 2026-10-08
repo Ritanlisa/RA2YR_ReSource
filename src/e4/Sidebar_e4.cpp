@@ -445,7 +445,7 @@ v11 = (*(int (__thiscall **)(char *, void **))(*(unsigned int *)&stru_AC4B30.__p
     *(unsigned int *)&Block->__pad_70[36] = -1; /*0x6364ca*/
     Block->__pad_70[41] = 0; /*0x6364d0*/
     Sidebar_field_0x8 = Block->Sidebar_field_0x8; /*0x6364d7*/
-    *Sidebar_field_0x4 = (unsigned int)(int)&vt_VectorClass;
+    *Sidebar_field_0x4 = (unsigned int)(int)&vt_VectorClass; /*0x6364de*/
     if ( Sidebar_field_0x8 ) /*0x6364e4*/
     {
       if ( BYTE1(Block->Sidebar_field_0x10) ) /*0x6364e6*/

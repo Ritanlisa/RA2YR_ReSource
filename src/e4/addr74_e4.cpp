@@ -1822,7 +1822,7 @@ char * E4Recv_74BBA0::sub_74BBA0(int a2, int a3)
   *((unsigned int *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
   v4[13] = 0; /*0x74bbca*/
-  *(unsigned int *)v4 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)v4 = (unsigned int)&vt_VectorClass; /*0x74bbcd*/
   (*(void (**)(char *, unsigned int, int))(*(unsigned int *)v4 + 8))( (char *)(v4), (unsigned int)(a2 + 7) >> 3, a3); /*0x74bbda*/
   return (char *)this; /*0x74bbdf*/
 
@@ -1998,7 +1998,7 @@ int sub_74C380()
   dword_B1D298 = 0; /*0x74c38c*/
   byte_B1D29C = 1; /*0x74c391*/
   byte_B1D29D = 0; /*0x74c398*/
-  stru_B1D290 = (unsigned int)(int)&off_7F663C;
+  stru_B1D290 = (unsigned int)(int)&off_7F663C; /*0x74c39d*/
   dword_B1D2A4 = 10; /*0x74c3a7*/
   dword_B1D2A0 = 0; /*0x74c3b1*/
   return atexit((void (__cdecl *)(void))(sub_74C3C0)); /*0x74c3bc*/

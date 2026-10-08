@@ -1005,7 +1005,7 @@ void * ObjectClass::checkLimbo()
 
   {
     v5 = dword_ABCB88++; /*0x556aac*/
-    *((unsigned int *)dword_ABCB7C + v5) = (unsigned int)this;
+    *((unsigned int *)dword_ABCB7C + v5) = (unsigned int)this; /*0x556abb*/
   }
   return (void *)this; /*0x556ac0*/
 
@@ -1536,7 +1536,7 @@ LABEL_41:
         }
         v19 = (*((int (**)(ObjectClass *))this->vtable1 + 34))(this); /*0x5f51ef*/
         result = ((ObjectClass *)this->lineTrailer)->updateMissionState( *(unsigned int *)(v19 + 576)); /*0x5f5202*/
-        *((unsigned int *)this->lineTrailer + 1) = (unsigned int)this;
+        *((unsigned int *)this->lineTrailer + 1) = (unsigned int)this; /*0x5f520d*/
       }
     }
   }

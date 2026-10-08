@@ -363,7 +363,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4786d3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4786d6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4786e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4786e8*/
@@ -595,7 +595,7 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4ba163*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4ba166*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4ba170*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba178*/
@@ -641,7 +641,7 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4ba2a3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4ba2a6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4ba2b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba2b8*/

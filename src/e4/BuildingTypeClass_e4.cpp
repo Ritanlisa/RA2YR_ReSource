@@ -1685,7 +1685,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
   ((BuildingTypeClass *)&((unsigned int *)this)[10])->loadBuildingProperty_b_5478850( 0, 0); /*0x644c37*/
   ((unsigned int *)this)[1] = 10; /*0x644c3c*/
   ((unsigned int *)this)[0] = 0; /*0x644c43*/
-  *(unsigned int *)&((unsigned int *)this)[10] = (unsigned int)&vt_TypeList;
+  *(unsigned int *)&((unsigned int *)this)[10] = (unsigned int)&vt_TypeList; /*0x644c46*/
   ((unsigned int *)this)[1] = 0; /*0x644c4c*/
   LOBYTE(((unsigned int *)this)[0]) = 0; /*0x644c66*/
   BYTE1(((unsigned int *)this)[0]) = 0; /*0x644c6c*/
@@ -1723,7 +1723,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1, void *a2, void 
 
   {
     v3 = (*(unsigned int *)&stru_A83D50.__pad_3C[28])++; /*0x644d50*/
-    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v3) = (unsigned int)this;
+    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * v3) = (unsigned int)this; /*0x644d5f*/
   }
   if ( dword_B0F680< dword_B0F678/*0x644d96*/
     || (BYTE1(byte_B0F67C) || !dword_B0F678)

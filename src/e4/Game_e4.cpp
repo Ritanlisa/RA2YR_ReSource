@@ -1274,7 +1274,7 @@ unsigned int * Game::LockMutex(int aP1, int aP2)
   *(unsigned int *)this->__pad_8 = (unsigned int)aP1; /*0x67c3ae*/
   this->__pad_8[4] = 1; /*0x67c3b1*/
   this->__pad_8[5] = 0; /*0x67c3b5*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x67c3b8*/
   if ( aP1 ) /*0x67c3be*/
   {
     if ( aP2 ) /*0x67c3c6*/

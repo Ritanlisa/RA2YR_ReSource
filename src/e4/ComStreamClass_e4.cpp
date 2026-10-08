@@ -365,9 +365,9 @@ unsigned int * ComStreamClass::seekToPosition()
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b0249*/
   ((ComPtr *)(&stru_B77F68))->Set(v3[1]); /*0x7b0257*/
-  *(unsigned int *)v5 = (unsigned int)&vt_rc_ptr;
+  *(unsigned int *)v5 = (unsigned int)&vt_rc_ptr; /*0x7b0260*/
   ((ComPtr *)((ComPtr *)v5))->Release(); /*0x7b0268*/
-  *(unsigned int *)v6 = (unsigned int)&vt_rc_ptr;
+  *(unsigned int *)v6 = (unsigned int)&vt_rc_ptr; /*0x7b0271*/
   return (unsigned int *)((ComPtr *)((ComPtr *)v6))->Release(); /*0x7b027e*/
 
 }
@@ -386,9 +386,9 @@ unsigned int * ComStreamClass::getStreamSize()
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b02c9*/
   ((ComPtr *)((ComPtr *)&dword_B77F78))->Set(v3[1]); /*0x7b02d7*/
-  *(unsigned int *)v5 = (unsigned int)&vt_rc_ptr;
+  *(unsigned int *)v5 = (unsigned int)&vt_rc_ptr; /*0x7b02e0*/
   ((ComPtr *)((ComPtr *)v5))->Release(); /*0x7b02e8*/
-  *(unsigned int *)v6 = (unsigned int)&vt_rc_ptr;
+  *(unsigned int *)v6 = (unsigned int)&vt_rc_ptr; /*0x7b02f1*/
   return (unsigned int *)((ComPtr *)((ComPtr *)v6))->Release(); /*0x7b02fe*/
 
 }

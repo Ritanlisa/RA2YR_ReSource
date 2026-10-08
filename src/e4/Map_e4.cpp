@@ -1631,7 +1631,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2, v
       do /*0x76a63f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76a62e*/
-        *(unsigned int *)v5->__pad_0 = (unsigned int)&vt_rc_ptr;
+        *(unsigned int *)v5->__pad_0 = (unsigned int)&vt_rc_ptr; /*0x76a633*/
         ((ComPtr *)(v5))->Release(); /*0x76a639*/
         --v7; /*0x76a63e*/
       }
@@ -2515,7 +2515,7 @@ namespace gamemd {
 VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2, void *a3_1)
 {
 
-  *(unsigned int *)&this->q000 = (unsigned int)&vt_VectorCursorTRectVectorClassTRect;
+  *(unsigned int *)&this->q000 = (unsigned int)&vt_VectorCursorTRectVectorClassTRect; /*0x769dc9*/
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
     __3_YAXPAX_Z(this); /*0x769dd2*/
   return this->q000; /*0x769ddc*/

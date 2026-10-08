@@ -1516,7 +1516,7 @@ CellStruct * * sub_48E0B0()
     v2 = result; /*0x48e0cf*/
     if ( result )
     {
-      fprintf(result, "Frames: %d\n", *(unsigned int *)((char *)&stru_A8EB00 + 416));
+      fprintf(result, "Frames: %d\n", dword_A8ED84);
       if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[290] ) /*0x48e0f8*/
         v3 = *(unsigned int *)&g_MissionQueueFrame.waypoints[286] / *(unsigned int *)&g_MissionQueueFrame.waypoints[290]; /*0x48e101*/
       else
@@ -1853,7 +1853,7 @@ CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, List
 
   ((ListClass *)((int)this))->Construct( (int)(aP1), a3, a4, (int)(aP4), a6, (int)(aP6), (int)(aP7), a9); /*0x4882ad*/
   *((unsigned char *)this + 372) = 0; /*0x4882b2*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_CheckListClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_CheckListClass; /*0x4882b9*/
   return this->__pad_0; /*0x4882c1*/
 
 }
@@ -1881,12 +1881,12 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   *((unsigned int *)this + 95) = 0; /*0x48879f*/
   *((unsigned char *)this + 384) = 1; /*0x4887a5*/
   *((unsigned char *)this + 385) = 0; /*0x4887ab*/
-  *((unsigned int *)this + 93) = (unsigned int)&vt_DynamicVectorClass;
+  *((unsigned int *)this + 93) = (unsigned int)&vt_DynamicVectorClass; /*0x4887b1*/
   *((unsigned int *)this + 98) = 10; /*0x4887bb*/
   *((unsigned int *)this + 97) = 0; /*0x4887c5*/
   *((unsigned int *)this + 100) = 0; /*0x4887cb*/
   *((unsigned int *)this + 99) = 1; /*0x4887d1*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ColorListClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ColorListClass; /*0x4887d7*/
   return this->__pad_0; /*0x4887df*/
 
 }
@@ -1903,11 +1903,11 @@ int E4Recv_4887F0::sub_4887F0()
 
   v2 = *((unsigned int *)this + 93); /*0x4887f5*/
   v3 = (char *)this + 372; /*0x4887fb*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ColorListClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ColorListClass; /*0x488803*/
   (*(void (**)(char *))(v2 + 12))((char *)this + 372); /*0x488809*/
   *((unsigned int *)this + 100) = 0; /*0x48880e*/
   v4 = (void *)*((unsigned int *)v3 + 1); /*0x488814*/
-  *(unsigned int *)v3 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)v3 = (unsigned int)&vt_VectorClass; /*0x488819*/
   if ( v4 && v3[13] ) /*0x488821*/
   {
     __3_YAXPAX_Z(v4); /*0x488827*/
@@ -2215,7 +2215,7 @@ void CommBufferClass::sub_48B1F0()
 
   v2 = 0; /*0x48b1f4*/
   v3 = *(unsigned int *)&this->__pad_0[4]; /*0x48b1f7*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_CommBufferClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_CommBufferClass; /*0x48b1fa*/
   if ( v3 > 0 ) /*0x48b202*/
   {
     v4 = 0; /*0x48b204*/

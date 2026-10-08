@@ -660,7 +660,7 @@ CampaignClass * * SessionClass::loadSettings()
     }
   }
   v7 = *(void **)&this->__pad_50[8]; /*0x5d00cf*/
-  *(unsigned int *)&this->__pad_50[4] = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)&this->__pad_50[4] = (unsigned int)&vt_VectorClass; /*0x5d00d2*/
   if ( v7 && this->__pad_50[17] ) /*0x5d00dd*/
   {
     __3_YAXPAX_Z(v7); /*0x5d00e3*/
@@ -1165,7 +1165,7 @@ SessionClass::SessionClass()
   *((unsigned int *)this + 2625) = 0; /*0x697313*/
   *((unsigned char *)this + 10504) = 1; /*0x697319*/
   *((unsigned char *)this + 10505) = 0; /*0x697320*/
-  *((unsigned int *)this + 2623) = (unsigned int)&off_7F11B4;
+  *((unsigned int *)this + 2623) = (unsigned int)&off_7F11B4; /*0x697326*/
   *((unsigned int *)this + 2628) = 10; /*0x697330*/
   *((unsigned int *)this + 2627) = 0; /*0x697336*/
   *((unsigned int *)this + 2630) = 0; /*0x69733c*/
@@ -1578,7 +1578,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   memset( (void *)(&v60.__pad_20[8]), 0, 13); /*0x6999b5*/
   v60.unknown38 = 0; /*0x6999c6*/
   v60.INIClass_field_3C = 0; /*0x6999ca*/
-  *(unsigned int *)v60.__pad_0 = (unsigned int)&vt_INIClass;
+  *(unsigned int *)v60.__pad_0 = (unsigned int)&vt_INIClass; /*0x6999ce*/
   (*(void (**)(int *))(v3 + 12))( (int *)(v4)); /*0x6999d6*/
   ((CCFileClass*)&v63)->Construct(aMissionsmdPkt); /*0x6999e2*/
   if ( (uint8_t)((CCFileClass *)(&v63))->Open(0) ) /*0x6999ec*/
@@ -1814,10 +1814,10 @@ AbstractClass * * SessionClass::LoadMissionList()
     while ( FindNextFileA(hFindFileb, &FindFileData) ); /*0x69a190*/
     FindClose(hFindFileb); /*0x69a1a3*/
   }
-  *(unsigned int *)v63.CDFileClass = (unsigned int)&vt_CCFileClass;
+  *(unsigned int *)v63.CDFileClass = (unsigned int)&vt_CCFileClass; /*0x69a1b2*/
   v65 = 0; /*0x69a1ba*/
   ((Vector *)((int)v64))->Clear((int)((Vector *)((int)v64))); /*0x69a1c1*/
-  *(unsigned int *)v63.CDFileClass = (unsigned int)&off_7E1668;
+  *(unsigned int *)v63.CDFileClass = (unsigned int)&off_7E1668; /*0x69a1ca*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v63))->Dtor(); /*0x69a1d2*/
   return (gamemd::AbstractClass **)(((HashTable *)(&v60))->DestroyHashTableINIClass()); /*0x69a1e0*/
 
@@ -1851,7 +1851,7 @@ wchar_t *  SessionClass::ParseGameInfo(wchar_t * Destination, char * Source, wch
   v10 = (int *)(&v8->SkirmishPreferences[6]); /*0x69a99c*/
   p_Side2[5] = 10; /*0x69a9ad*/
   p_Side2[4] = 0; /*0x69a9b0*/
-  *p_Side2 = (unsigned int)(int)&vt_TypeList;
+  *p_Side2 = (unsigned int)(int)&vt_TypeList; /*0x69a9b7*/
   ((VectorClass *)((VectorClass *)&v8->SkirmishPreferences[6]))->WstringConstructor(0, 0); /*0x69a9bd*/
   v11 = Source; /*0x69a9c2*/
   v8->SkirmishPreferences[6] = (int)&vt_DynamicVectorClass; /*0x69a9c6*/
@@ -2621,7 +2621,7 @@ TypeList_flat * TypeList_W4DiskID::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x69c6c3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x69c6c6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x69c6d0*/
   {
     __3_YAXPAX_Z(v3); /*0x69c6d8*/
@@ -2844,7 +2844,7 @@ VectorClass_flat * TypeList_W4DiskID::validateGame(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x69d463*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x69d466*/
   if ( v3 && BYTE1(this->m_C) ) /*0x69d470*/
   {
     __3_YAXPAX_Z(v3); /*0x69d478*/

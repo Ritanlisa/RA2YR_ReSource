@@ -593,7 +593,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
   int v3; // eax
 
   v3 = *((unsigned int *)this + 23); /*0x775613*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_WinModemClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_WinModemClass; /*0x775616*/
   if ( v3 != -1 ) /*0x77561f*/
   {
     Debug::Log("Closing serial port\n"); /*0x775626 G57c1: IDA 0x775626 push offset g_Str_Closing_serial_port*/

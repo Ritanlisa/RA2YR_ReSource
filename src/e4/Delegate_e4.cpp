@@ -263,7 +263,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int Previous; // ecx
   int v4; // eax
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_GenericNode;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_GenericNode; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     Previous = this->Previous; /*0x52ae2f*/

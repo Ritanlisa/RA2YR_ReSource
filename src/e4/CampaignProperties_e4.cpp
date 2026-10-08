@@ -64,7 +64,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d2ca3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d2ca6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d2cb0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d2cb8*/

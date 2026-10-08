@@ -41,7 +41,7 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
     a1->Piggybackee = 0; /*0x69eeac*/
     *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_ShipLocomotionClass;
     *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_ShipLocomotionClass;
-    *(unsigned int *)a1->__pad_18 = (unsigned int)&off_7F2D68;
+    *(unsigned int *)a1->__pad_18 = (unsigned int)&off_7F2D68; /*0x69eec0*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( (int *)(v2), (int **)(&pStm), 1, 0); /*0x69eed3*/
   if ( !(unsigned char)pStm ) /*0x69eedc*/

@@ -1483,7 +1483,7 @@ void * globalHelper_02AA90(int a1, DynamicVectorClass_uint * aP1)
   word_89A2F0 = 0; /*0x42aae2*/
   word_89A2F2 = 0; /*0x42aae9*/
   dword_89A2E4 = (unsigned int)aP1; /*0x42aaf0*/
-  dword_89A2EC = (unsigned int)(int)&unk_89A324;
+  dword_89A2EC = (unsigned int)(int)&unk_89A324; /*0x42aaf6*/
   v5 = *(unsigned int **)a1; /*0x42aafc*/
   v6 = *(unsigned int **)(*(unsigned int *)a1 + 8); /*0x42ab01*/
   v7 = *(unsigned int *)(a1 + 12) - 2; /*0x42ab04*/
@@ -2988,7 +2988,7 @@ int sub_4208E0()
     dword_88A0F8 = 0; /*0x4208ec*/
     byte_88A0FC = 1; /*0x4208f1*/
     byte_88A0FD = 0; /*0x4208f8*/
-    dword_88A0F0 = (unsigned int)(int)&off_7E3238;
+    dword_88A0F0 = (unsigned int)(int)&off_7E3238; /*0x4208fd*/
     dword_88A104 = 10; /*0x420907*/
     g_AlphaShapeLimit = 0; /*0x420911*/
     return atexit(sub_420920); /*0x42091c*/

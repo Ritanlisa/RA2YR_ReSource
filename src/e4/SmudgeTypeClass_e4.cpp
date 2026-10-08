@@ -161,7 +161,7 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
     Width = this->Width; /*0x6b5732*/
     this->Burn = v6; /*0x6b5739*/
     this->Width = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6b5744*/
-                    (bool *)aP1), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 151), Width);
+                    (bool *)aP1), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)"Width", Width);
     this->Height = INIClass::ReadInt_Overwrite((INIClass *)(/*0x6b575e*/
                      (bool *)aP1), (uint8_t *)((unsigned int *)this)[0], (uint8_t *)g_INI_Key_Height, this->Height);
     if ( ((unsigned int *)this)[0] ) /*0x6b5764*/

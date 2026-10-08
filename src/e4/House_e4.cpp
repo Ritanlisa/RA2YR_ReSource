@@ -1160,10 +1160,10 @@ void House::Constructor()
       *(unsigned int *)this->__pad_C = (unsigned int)v2; /*0x69e0bd*/
       this->__pad_C[4] = 1; /*0x69e0c0*/
     }
-    *(unsigned int *)v3.CDFileClass = (unsigned int)&vt_CCFileClass;
+    *(unsigned int *)v3.CDFileClass = (unsigned int)&vt_CCFileClass; /*0x69e0c8*/
     v5 = 0; /*0x69e0d0*/
     ((Vector *)((int)v4))->Clear((int)((Vector *)((int)v4))); /*0x69e0d8*/
-    *(unsigned int *)v3.CDFileClass = (unsigned int)&off_7E1668;
+    *(unsigned int *)v3.CDFileClass = (unsigned int)&off_7E1668; /*0x69e0e1*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v3))->Dtor(); /*0x69e0e9*/
   }
 

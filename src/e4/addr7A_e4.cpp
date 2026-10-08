@@ -1588,7 +1588,7 @@ AbstractClass * * sub_7AF970(int a2)
   *(unsigned int *)v12.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x7af9cf*/
   v14 = 0; /*0x7af9d3*/
   ((Vector *)((int)v13))->Clear((int)((Vector *)((int)v13))); /*0x7af9da*/
-  *(unsigned int *)v12.CDFileClass = (unsigned int)&off_7E1668;
+  *(unsigned int *)v12.CDFileClass = (unsigned int)&off_7E1668; /*0x7af9e3*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v12))->Dtor(); /*0x7af9eb*/
   if ( !v9 ) /*0x7af9f4*/
   {

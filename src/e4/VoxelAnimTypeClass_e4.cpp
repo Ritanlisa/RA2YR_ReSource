@@ -108,7 +108,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char *Source)
 
   {
     v4 = stru_A8EB00.ObjectTypeClass[14]++; /*0x74af4a*/
-    *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v4) = (unsigned int)this;
+    *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * v4) = (unsigned int)this; /*0x74af59*/
   }
   return (VoxelAnimTypeClass *)this; /*0x74af5e*/
 

@@ -1114,7 +1114,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4d2d63*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4d2d66*/
   if ( v3 && BYTE1(this->qC) ) /*0x4d2d70*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d78*/
@@ -1364,7 +1364,7 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4e0ce3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4e0ce6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/

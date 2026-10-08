@@ -1335,7 +1335,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v45 = v17 == 0; /*0x5bfb32*/
   v55 = 0; /*0x5bfb37*/
   ((Vector *)((int)v54))->Clear((int)((Vector *)((int)v54))); /*0x5bfb3e*/
-  *(unsigned int *)v53.CDFileClass = (unsigned int)&off_7E1668;
+  *(unsigned int *)v53.CDFileClass = (unsigned int)&off_7E1668; /*0x5bfb47*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v53))->Dtor(); /*0x5bfb4f*/
   if ( v45 ) /*0x5bfb58*/
     return 0; /*0x5bfb58*/
@@ -1998,8 +1998,8 @@ int sub_5B3AC0()
   dword_ABEFDC = (int)&GenericNode_vftable; /*0x5b3ad2*/
   dword_ABEFE8 = (int)&GenericNode_vftable; /*0x5b3ad7*/
   dword_ABEFEC = 0; /*0x5b3adc*/
-  dword_ABEFF0 = (unsigned int)(int)&dword_ABEFDC;
-  dword_ABEFE0 = (unsigned int)(int)&dword_ABEFE8;
+  dword_ABEFF0 = (unsigned int)(int)&dword_ABEFDC; /*0x5b3ae2*/
+  dword_ABEFE0 = (unsigned int)(int)&dword_ABEFE8; /*0x5b3aec*/
   dword_ABEFD8 = (int)&List_MixFileClass___vftable; /*0x5b3af6*/
   return atexit(sub_5B3B10); /*0x5b3b06*/
 }
@@ -2049,7 +2049,7 @@ void sub_5B3F50(MixFileClass *a1)
   int v7; // eax
 
   CountFiles = (void *)a1->CountFiles; /*0x5b3f56*/
-  *(unsigned int *)a1->Node = (unsigned int)&vt_MixFileClass;
+  *(unsigned int *)a1->Node = (unsigned int)&vt_MixFileClass; /*0x5b3f59*/
   if ( CountFiles ) /*0x5b3f61*/
     free( (void *)(CountFiles)); /*0x5b3f64*/
   if ( a1->MixFileClass_field_24 && BYTE2(a1->FileSize) ) /*0x5b3f73*/
@@ -2079,7 +2079,7 @@ void sub_5B3F50(MixFileClass *a1)
       }
     }
   }
-  *(unsigned int *)a1->Node = (unsigned int)&vt_GenericNode;
+  *(unsigned int *)a1->Node = (unsigned int)&vt_GenericNode; /*0x5b3fc0*/
   if ( a1 ) /*0x5b3fc6*/
   {
     v6 = ((unsigned int *)a1)[0]; /*0x5b3fc8*/
@@ -3494,7 +3494,7 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
   *((unsigned int *)this + 5464) = 0; /*0x5bda56*/
   *((unsigned int *)this + 5465) = 0; /*0x5bda5c*/
   *((unsigned int *)this + 5466) = 0; /*0x5bda62*/
-  *((unsigned int *)this + 5446) = (unsigned int)&vt_MouseClass;
+  *((unsigned int *)this + 5446) = (unsigned int)&vt_MouseClass; /*0x5bda68*/
   return (unsigned char *)this; /*0x5bda74*/
 
 }

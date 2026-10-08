@@ -2007,7 +2007,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   unsigned int *v9; // eax
   int16_t v10; // cx
 
-  *(unsigned int *)this = (unsigned int)&vt_IPXManagerClass;
+  *(unsigned int *)this = (unsigned int)&vt_IPXManagerClass; /*0x5408f7*/
   if ( dword_887628 ) /*0x540905*/
   {
     (**(void (***)(int, int))dword_887628)(dword_887628, 1); /*0x54090b*/

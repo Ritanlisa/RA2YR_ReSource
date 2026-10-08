@@ -381,7 +381,7 @@ int sub_6D1A60()
   dword_B0CE80 = 0; /*0x6d1a6c*/
   byte_B0CE84 = 1; /*0x6d1a71*/
   byte_B0CE85 = 0; /*0x6d1a78*/
-  dword_B0CE78 = (unsigned int)(int)&off_7F429C;
+  dword_B0CE78 = (unsigned int)(int)&off_7F429C; /*0x6d1a7d*/
   dword_B0CE8C = 10; /*0x6d1a87*/
   g_CraterCreationState = 0; /*0x6d1a91*/
   return atexit((void (__cdecl *)(void))sub_6D1AA0); /*0x6d1a9c*/
@@ -852,7 +852,7 @@ int sub_6DCF80()
   dword_B0E660 = 0; /*0x6dcf8c*/
   byte_B0E664 = 1; /*0x6dcf91*/
   byte_B0E665 = 0; /*0x6dcf98*/
-  dword_B0E658 = (unsigned int)(int)&off_7F43D0;
+  dword_B0E658 = (unsigned int)(int)&off_7F43D0; /*0x6dcf9d*/
   dword_B0E66C = 10; /*0x6dcfa7*/
   dword_B0E668 = 0; /*0x6dcfb1*/
   return atexit((void (__cdecl *)(void))sub_6DCFC0); /*0x6dcfbc*/

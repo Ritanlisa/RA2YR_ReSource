@@ -804,7 +804,7 @@ VectorClass_flat * MapSeedClass_18::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5ad433*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5ad436*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5ad440*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad448*/
@@ -827,7 +827,7 @@ DynamicVector * MapSeedClass_18::Constructor_VectorClass__WIN32_FIND_DATAA___(un
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5ad483*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5ad486*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5ad490*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad498*/

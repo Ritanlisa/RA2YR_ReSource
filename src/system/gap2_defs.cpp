@@ -12038,7 +12038,7 @@ void ScenarioClass::LoadMapData(void* a1) {
     Int_Overwrite = (TeamClass *)INIClass::ReadInt_Overwrite( /*0x4acf28*/
                                    (bool *)a2,
                                    &off_81FFF0,
-                                   (unsigned __int8 *)((char *)&stru_81AF8C + 17),
+                                   (unsigned __int8 *)"Level",
                                    0);
     *(unsigned int *)v42 = dword_AA10B0; /*0x4acf47*/
     j = 0; /*0x4acf4b*/
@@ -38713,7 +38713,7 @@ int ScenarioClass::SaveToINI(void* a1, int a2) {
     INIClass::SetInt(a2, g_INI_Key_Header, g_INI_Key_StartX, v4, 0); /*0x68aef4*/
     v9 = v26[0]; /*0x68aef9*/
     INIClass::SetInt(a2, g_INI_Key_Header, g_INI_Key_StartY, v26[0], 0); /*0x68af0c*/
-    INIClass::SetInt(a2, g_INI_Key_Header, ((char *)&stru_82BA00 + 151), v23 - v4, 0); /*0x68af26*/
+    INIClass::SetInt(a2, g_INI_Key_Header, "Width", v23 - v4, 0); /*0x68af26*/
     INIClass::SetInt(a2, g_INI_Key_Header, g_INI_Key_Height, v21 - v9, 0); /*0x68af40*/
     v10 = 0; /*0x68af58*/
     v11 = 0; /*0x68af5a*/
@@ -38832,7 +38832,7 @@ int ScenarioClass::SaveToINI(void* a1, int a2) {
     INIClass::SetDouble( /*0x68b6c5*/
       a2,
       (unsigned __int8 *)"Lighting",
-      (char *)((char *)&stru_81AF8C + 17),
+      (char *)"Level",
       (double)*(int *)(this + 13636) * 0.001);
     INIClass::SetDouble( /*0x68b6e8*/
       a2,
@@ -38862,7 +38862,7 @@ int ScenarioClass::SaveToINI(void* a1, int a2) {
     INIClass::SetDouble( /*0x68b797*/
       a2,
       (unsigned __int8 *)"Lighting",
-      (char *)((char *)&stru_82BA00 + 6),
+      (char *)"IonLevel",
       (double)*(int *)(this + 13660) * 0.001);
     INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorambie, (double)*(int *)(this + 13692) * 0.01); /*0x68b7ba*/
     INIClass::SetDouble(a2, (unsigned __int8 *)"Lighting", aDominatorred, (double)*(int *)(this + 13696) * 0.01); /*0x68b7dd*/
@@ -39242,7 +39242,7 @@ int ScenarioClass::LoadNetworkConfig() {
     this->altNextScenario[30] = INIClass::ReadInt_Overwrite( /*0x6982fd*/
                                   (bool *)&DSurface_ViewBounds.__pad_FC[36],
                                   (unsigned __int8 *)&stru_8263E0.Loop,
-                                  (unsigned __int8 *)((char *)&stru_81AF8C + 95),
+                                  (unsigned __int8 *)"Color",
                                   this->altNextScenario[30]);
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x698319*/
                       (bool *)&DSurface_ViewBounds.__pad_FC[36],

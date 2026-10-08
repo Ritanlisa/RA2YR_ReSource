@@ -1792,7 +1792,7 @@ int sub_58BC30()
   dword_ABDF98 = 0; /*0x58bc3c*/
   byte_ABDF9C = 1; /*0x58bc41*/
   byte_ABDF9D = 0; /*0x58bc48*/
-  dword_ABDF90 = (unsigned int)(int)&off_7ED858;
+  dword_ABDF90 = (unsigned int)(int)&off_7ED858; /*0x58bc4d*/
   dword_ABDFA4 = 10; /*0x58bc57*/
   dword_ABDFA0 = 0; /*0x58bc61*/
   return atexit((void (__cdecl *)(void))(sub_58BC70)); /*0x58bc6c*/

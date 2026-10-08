@@ -700,7 +700,7 @@ int HouseClass::Construct(int a2)
           v22 = *(unsigned int *)(v20 + 16); /*0x4f6073*/
           v23 = *(unsigned int *)(v20 + 4); /*0x4f6076*/
           *(unsigned int *)(v20 + 16) = v22 + 1; /*0x4f607c*/
-          *(unsigned int *)(v23 + 8 * v22) = (unsigned int)this;
+          *(unsigned int *)(v23 + 8 * v22) = (unsigned int)this; /*0x4f607f*/
           *(unsigned int *)(v23 + 8 * v22 + 4) = 0; /*0x4f6084*/
         }
         v24 = *((unsigned int *)((char *)&stru_A80220) + v62); /*0x4f6097*/
@@ -729,7 +729,7 @@ int HouseClass::Construct(int a2)
           v35 = *(unsigned int *)(v32 + 4); /*0x4f611c*/
           *(unsigned int *)(v32 + 16) = v34 + 1; /*0x4f6122*/
           v36 = v66; /*0x4f6125*/
-          *(unsigned int *)(v35 + 8 * v34) = (unsigned int)this;
+          *(unsigned int *)(v35 + 8 * v34) = (unsigned int)this; /*0x4f6129*/
           *(unsigned int *)(v35 + 8 * v34 + 4) = v36; /*0x4f612c*/
         }
         v37 = *((unsigned int *)((char *)&stru_A80220) + v62); /*0x4f6145*/
@@ -2566,7 +2566,7 @@ CellStruct * * HouseClass::UpdateAITryFireSW(void *a1)
             if ( (LOWORD(this->preferredDefensiveCell[0]) != *(unsigned short *)((char *)&stru_A8EB00 + 948) /*0x509a99*/
                || HIWORD(this->preferredDefensiveCell[0]) != *(unsigned short *)((char *)&stru_A8EB00 + 950))
               && *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3808)
-               + this->preferredDefensiveCellStartTime > *(int *)((char *)&stru_A8EB00 + 416) )
+               + this->preferredDefensiveCellStartTime > dword_A8ED84 )
             {
               v8 = this->preferredDefensiveCell[0]; /*0x509a9b*/
 LABEL_32:

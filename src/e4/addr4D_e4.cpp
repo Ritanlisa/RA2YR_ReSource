@@ -646,7 +646,7 @@ int sub_4D3160()
   dword_8B3DC8 = 0; /*0x4d316c*/
   byte_8B3DCC = 1; /*0x4d3171*/
   byte_8B3DCD = 0; /*0x4d3178*/
-  FootClass_Array = (unsigned int)(int)&off_7E8C28;
+  FootClass_Array = (unsigned int)(int)&off_7E8C28; /*0x4d317d*/
   dword_8B3DD4 = 10; /*0x4d3187*/
   dword_8B3DD0 = 0; /*0x4d3191*/
   return atexit((void (__cdecl *)(void))sub_4D31A0); /*0x4d319c*/

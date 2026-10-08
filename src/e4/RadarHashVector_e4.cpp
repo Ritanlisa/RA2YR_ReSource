@@ -315,7 +315,7 @@ char * RadarHashVector::Destructor(char a2)
   else
   {
     v11 = *(void **)&this->m_1[3]; /*0x658cc5*/
-    *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassHashObject;
+    *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassHashObject; /*0x658ccc*/
     if ( v11 && BYTE1(this->m_C) ) /*0x658cd4*/
     {
       __3_YAXPAX_Z(v11); /*0x658cda*/
@@ -338,7 +338,7 @@ VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x658d13*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassHashObject;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassHashObject; /*0x658d16*/
   if ( v3 && BYTE1(this->m_C) ) /*0x658d20*/
   {
     __3_YAXPAX_Z(v3); /*0x658d28*/

@@ -858,7 +858,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1, void *a2_1, void *a3_1, void *a4
       v6 = 0; /*0x5845bd*/
       WordVector::Constructor(&v109, 0, 0); /*0x5845c1*/
       v7 = *(unsigned int **)&v2->__pad_64[4 * i + 28]; /*0x5845c6*/
-      v109 = (unsigned int)&vt_DynamicVectorClass;
+      v109 = (unsigned int)&vt_DynamicVectorClass; /*0x5845cd*/
       v114 = 10; /*0x5845d5*/
       v113 = 0; /*0x5845dd*/
       v8 = v7[2]; /*0x5845e1*/

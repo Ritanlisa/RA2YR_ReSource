@@ -189,7 +189,7 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_TaskForceClass;
   this->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
   *(unsigned int *)this->__pad_8 = (unsigned int)&vt_TaskForceClass;
-  *(unsigned int *)&this->__pad_8[4] = (unsigned int)&vt_TaskForceClass;
+  *(unsigned int *)&this->__pad_8[4] = (unsigned int)&vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer((gamemd::AbstractClass *)((void **)this),(int)((gamemd::AbstractClass *)(1))); /*0x6e8811*/
   v5 = (gamemd::TaskForceClass *)(this); /*0x6e8826*/
   v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))( (unsigned int *)(&dword_A8E8D0), (TaskForceClass **)(&v5)); /*0x6e882a*/

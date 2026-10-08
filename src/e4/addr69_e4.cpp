@@ -1501,7 +1501,7 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
   *(unsigned int *)v20.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x699947*/
   v22 = 0; /*0x699953*/
   ((Vector *)((int)v21))->Clear((int)((Vector *)((int)v21))); /*0x69995a*/
-  *(unsigned int *)v20.CDFileClass = (unsigned int)&off_7E1668;
+  *(unsigned int *)v20.CDFileClass = (unsigned int)&off_7E1668; /*0x699963*/
 // 0x431b80
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v20))->Dtor(); /*0x699970*/
 }
@@ -1687,7 +1687,7 @@ char * E4Recv_6905F0::sub_6905F0()
   char *result; // eax
 
   ScoreFontClass_field_0x0C = (void *)this->ScoreFontClass_field_0x0C; /*0x6905f6*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ScoreFontClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ScoreFontClass; /*0x6905f9*/
   if ( ScoreFontClass_field_0x0C && *((unsigned char *)this + 16) == 1 ) /*0x690607*/
   {
     __3_YAXPAX_Z(ScoreFontClass_field_0x0C); /*0x69060a*/

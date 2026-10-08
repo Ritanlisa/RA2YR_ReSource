@@ -144,7 +144,7 @@ LABEL_6:
       ((AbstractTypeClass *)(v3))->Constructor((char *)(Source)); /*0x691c7c*/
       v4[39] = 0; /*0x691c81*/
       v4[40] = 0; /*0x691c8b*/
-      *v4 = (unsigned int)(int)&vt_ScriptTypeClass;
+      *v4 = (unsigned int)(int)&vt_ScriptTypeClass; /*0x691c95*/
       v4[1] = (int)&vt_ScriptTypeClass; /*0x691c9b*/
       v4[2] = (int)&vt_ScriptTypeClass; /*0x691ca2*/
       v4[3] = (int)&vt_ScriptTypeClass; /*0x691ca9*/

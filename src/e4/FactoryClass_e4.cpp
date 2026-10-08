@@ -600,7 +600,7 @@ v4 = (*(int (**)(int *, FactoryClass **))(dword_B0F720+ 16))( /*0x4ca803*/ &dwor
     }
   }
   v5 = *(void **)&this->__pad_42[2]; /*0x4ca838*/
-  *(unsigned int *)&this->onHold = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)&this->onHold = (unsigned int)&vt_VectorClass; /*0x4ca83b*/
   if ( v5 && this->__pad_42[11] ) /*0x4ca846*/
   {
     __3_YAXPAX_Z(v5); /*0x4ca84e*/

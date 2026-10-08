@@ -38,7 +38,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
     if ( DSurface_Composite /*0x7774c7*/
 // 0x4bb000
       && ((DSurface *)((DSurface *)DSurface_Composite))->RestoreIfLost()
-      && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
+      && (!((unsigned int *)&stru_A8EB00)[376] || dword_A8ED84 > 16) )
     {
       (*(void (**)(AudioStream *, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 24))( /*0x7774d3*/
         DSurface_Composite,
@@ -47,7 +47,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
     if ( DSurface_Tile /*0x7774f8*/
 // 0x4bb000
       && ((DSurface *)(DSurface_Tile))->RestoreIfLost()
-      && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
+      && (!((unsigned int *)&stru_A8EB00)[376] || dword_A8ED84 > 16) )
     {
       (*((void (**)(DSurface *, unsigned int))DSurface_Tile->DSurface_field_0x0 + 6))( (DSurface *)(DSurface_Tile), 0); /*0x777504*/
     }
@@ -63,7 +63,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
     if ( g_DSurface_Primary /*0x777561*/
 // 0x4bb000
       && ((DSurface *)(g_DSurface_Primary))->RestoreIfLost()
-      && (!((unsigned int *)&stru_A8EB00)[376] || *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
+      && (!((unsigned int *)&stru_A8EB00)[376] || dword_A8ED84 > 16) )
     {
 (*((void (**)(DSurface *, char *, unsigned int))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/ g_DSurface_Primary, (char *)(&DSurface_ViewBounds.__pad_8[8]), 0);
 

@@ -212,7 +212,7 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
     a1->Piggybackee = 0; /*0x75c69c*/
     *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_WalkLocomotionClass;
     *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_WalkLocomotionClass;
-    *(unsigned int *)a1->__pad_18 = (unsigned int)&vt_WalkLocomotionClass;
+    *(unsigned int *)a1->__pad_18 = (unsigned int)&vt_WalkLocomotionClass; /*0x75c6b0*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( (int *)(v2), (int **)(&pStm), 1, 0); /*0x75c6c3*/
   if ( !(unsigned char)pStm ) /*0x75c6cc*/
@@ -304,7 +304,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 
   *(unsigned int *)this->LocomotionClass = (unsigned int)&vt_WalkLocomotionClass;
   *(unsigned int *)&(&this->LocomotionClass)[4] = (unsigned int)&vt_WalkLocomotionClass;
-  *(unsigned int *)this->__pad_18 = (unsigned int)&vt_WalkLocomotionClass;
+  *(unsigned int *)this->__pad_18 = (unsigned int)&vt_WalkLocomotionClass; /*0x75cbf0*/
   Piggybackee =(gamemd::ILocomotion *)this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))( (ILocomotion *)(Piggybackee)); /*0x75cc01*/

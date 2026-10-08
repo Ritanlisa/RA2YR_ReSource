@@ -2113,7 +2113,7 @@ int sub_4F50F0()
     dword_A8EFD0 = 0; /*0x4f50fc*/
     byte_A8EFD4 = 1; /*0x4f5101*/
     byte_A8EFD5 = 0; /*0x4f5108*/
-    dword_A8EFC8 = (unsigned int)(int)&off_7EA7B4;
+    dword_A8EFC8 = (unsigned int)(int)&off_7EA7B4; /*0x4f510d*/
     dword_A8EFDC = 10; /*0x4f5117*/
     dword_A8EFD8 = 0; /*0x4f5121*/
     return atexit((void (__cdecl *)(void))(sub_4F5130)); /*0x4f512c*/

@@ -1304,7 +1304,7 @@ VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(u
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x473003*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x473006*/
   if ( v3 && BYTE1(this->m_C) ) /*0x473010*/
   {
     __3_YAXPAX_Z(v3); /*0x473018*/
@@ -1327,7 +1327,7 @@ DynamicVector * CaptureManagerClass::QueryInterface(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x473053*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x473056*/
   if ( v3 && BYTE1(this->m_C) ) /*0x473060*/
   {
     __3_YAXPAX_Z(v3); /*0x473068*/

@@ -42,19 +42,19 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
   else
     v4 = (char *)off_816CAC[(int)this->vtable1]; /*0x5b37a7*/
   LOBYTE(((unsigned int *)this)[0]) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5b37bf*/
-                      a2), (uint8_t *)v4, (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 8), (char)((unsigned int *)this)[0]);
+                      a2), (uint8_t *)v4, (uint8_t *)"NoThreat", (char)((unsigned int *)this)[0]);
   if ( this->vtable1 == (void *)-1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
   else
     v5 = (char *)off_816CAC[(int)this->vtable1]; /*0x5b37d0*/
   BYTE1(((unsigned int *)this)[0]) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5b37e8*/
-                     a2), (uint8_t *)v5, (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 6), BYTE1(((unsigned int *)this)[0]));
+                     a2), (uint8_t *)v5, (uint8_t *)"Zombie", BYTE1(((unsigned int *)this)[0]));
   if ( this->vtable1 == (void *)-1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
   else
     v6 = (char *)off_816CAC[(int)this->vtable1]; /*0x5b37f9*/
   BYTE2(((unsigned int *)this)[0]) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5b3811*/
-                     a2), (uint8_t *)v6, (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 3), BYTE2(((unsigned int *)this)[0]));
+                     a2), (uint8_t *)v6, (uint8_t *)"Recruitable", BYTE2(((unsigned int *)this)[0]));
   if ( this->vtable1 == (void *)-1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
   else
@@ -66,13 +66,13 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int *a2)
   else
     v8 = (char *)off_816CAC[(int)this->vtable1]; /*0x5b384b*/
   LOBYTE(((unsigned int *)this)[0]) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5b3863*/
-                      a2), (uint8_t *)v8, (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 30), (char)((unsigned int *)this)[0]);
+                      a2), (uint8_t *)v8, (uint8_t *)"Retaliate", (char)((unsigned int *)this)[0]);
   if ( this->vtable1 == (void *)-1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
   else
     v9 = (char *)off_816CAC[(int)this->vtable1]; /*0x5b3874*/
   BYTE1(((unsigned int *)this)[0]) = INIClass::ReadBool_Overwrite((INIClass *)(/*0x5b388c*/
-                     a2), (uint8_t *)v9, (uint8_t *)(unsigned int *)((char *)&stru_82BA00 + 28), BYTE1(((unsigned int *)this)[0]));
+                     a2), (uint8_t *)v9, (uint8_t *)"Scatter", BYTE1(((unsigned int *)this)[0]));
   if ( this->vtable1 == (void *)-1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/
   else

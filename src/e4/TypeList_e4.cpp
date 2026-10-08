@@ -267,7 +267,7 @@ VectorClass_flat * TypeList_Particle::Add(unsigned int * Block, char a2, void *a
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x45a9c3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x45a9c6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x45a9d0*/
   {
     __3_YAXPAX_Z(v3); /*0x45a9d8*/
@@ -511,7 +511,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2, void 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x478683*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x478686*/
   if ( v3 && BYTE1(this->m_C) ) /*0x478690*/
   {
     __3_YAXPAX_Z(v3); /*0x478698*/
@@ -695,7 +695,7 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2, vo
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x512e23*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x512e26*/
   if ( v3 && BYTE1(this->IsInitialized) ) /*0x512e30*/
   {
     __3_YAXPAX_Z(v3); /*0x512e38*/
@@ -790,7 +790,7 @@ DynamicVector * TypeList_Infantry::Constructor_0(unsigned int * Block, char a2, 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5131f3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5131f6*/
   if ( v3 && BYTE1(this->IsInitialized) ) /*0x513200*/
   {
     __3_YAXPAX_Z(v3); /*0x513208*/
@@ -813,7 +813,7 @@ DynamicVector * TypeList_Infantry::Constructor_1(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5135c3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5135c6*/
   if ( v3 && this->IsAllocated ) /*0x5135d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5135d8*/

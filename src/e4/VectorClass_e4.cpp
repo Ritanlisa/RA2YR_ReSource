@@ -2532,7 +2532,7 @@ VectorClass_flat * VectorClass_ptr_ScriptClass::QueryInterface(unsigned int * Bl
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40eab3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x40eab6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x40eac0*/
   {
     __3_YAXPAX_Z(v3); /*0x40eac8*/
@@ -2555,7 +2555,7 @@ DynamicVector * VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40eb03*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x40eb06*/
   if ( v3 && BYTE1(this->m_C) ) /*0x40eb10*/
   {
     __3_YAXPAX_Z(v3); /*0x40eb18*/
@@ -2923,7 +2923,7 @@ unsigned int * VectorClass_ptr_AlphaShapeClass::loc_421B10(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x421b13*/
-  *Block = (unsigned int)&vt_VectorClass_AlphaShapeClass;
+  *Block = (unsigned int)&vt_VectorClass_AlphaShapeClass; /*0x421b16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x421b20*/
   {
     __3_YAXPAX_Z(v3); /*0x421b28*/
@@ -3089,7 +3089,7 @@ DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2, v
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x42dc03*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x42dc06*/
   if ( v3 && BYTE1(this->m_C) ) /*0x42dc10*/
   {
     __3_YAXPAX_Z(v3); /*0x42dc18*/
@@ -3414,7 +3414,7 @@ DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_Fogge
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x45ab03*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x45ab06*/
   if ( v3 && BYTE1(this->m_C) ) /*0x45ab10*/
   {
     __3_YAXPAX_Z(v3); /*0x45ab18*/
@@ -3480,7 +3480,7 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor_VectorClass_Reestablish
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x45ad33*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x45ad36*/
   if ( v3 && BYTE1(this->m_C) ) /*0x45ad40*/
   {
     __3_YAXPAX_Z(v3); /*0x45ad48*/
@@ -3528,7 +3528,7 @@ unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, Buildi
   *(unsigned int *)&this->__pad_5[3] = (unsigned int)aP1; /*0x45ae5e*/
   LOBYTE(this->m_C) = 1; /*0x45ae61*/
   BYTE1(this->m_C) = 0; /*0x45ae65*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x45ae68*/
   if ( aP1 ) /*0x45ae6e*/
   {
     if ( aP2 ) /*0x45ae76*/
@@ -3642,7 +3642,7 @@ unsigned int * VectorClass_ptr_BulletClass::loc_46B910(unsigned int * Block, cha
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x46b913*/
-  *Block = (unsigned int)&vt_VectorClass_BulletClass;
+  *Block = (unsigned int)&vt_VectorClass_BulletClass; /*0x46b916*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x46b920*/
   {
     __3_YAXPAX_Z(v3); /*0x46b928*/
@@ -4186,7 +4186,7 @@ DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECT
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4a0e13*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4a0e16*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4a0e20*/
   {
     __3_YAXPAX_Z(v3); /*0x4a0e28*/
@@ -7303,7 +7303,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(unsign
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5102c3*/
-  *Block = (unsigned int)&vt_VectorClass_HouseClass_BuildChoiceClass;
+  *Block = (unsigned int)&vt_VectorClass_HouseClass_BuildChoiceClass; /*0x5102c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5102d0*/
   {
     __3_YAXPAX_Z(v3); /*0x5102d8*/
@@ -7324,7 +7324,7 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x510313*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x510316*/
   if ( v3 && BYTE1(this->m_C) ) /*0x510320*/
   {
     __3_YAXPAX_Z(v3); /*0x510328*/
@@ -8362,7 +8362,7 @@ unsigned int * VectorClass_ptr_MapRegionClass::loc_5AD3E0(unsigned int * Block, 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x5ad3e3*/
-  *Block = (unsigned int)&vt_VectorClass_MapRegionClass;
+  *Block = (unsigned int)&vt_VectorClass_MapRegionClass; /*0x5ad3e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad3f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad3f8*/
@@ -8766,7 +8766,7 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)this->field_50; /*0x5ef293*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_NullModemConnClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_NullModemConnClass; /*0x5ef296*/
   __3_YAXPAX_Z(v3); /*0x5ef29d*/
   ((ConnectionClass *)((ConnectionClass *)this))->dtor(); /*0x5ef2a7*/
   if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
@@ -9388,7 +9388,7 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x660fd3*/
-  *Block = (unsigned int)&vt_VectorClass_RadarEventClass;
+  *Block = (unsigned int)&vt_VectorClass_RadarEventClass; /*0x660fd6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x660fe0*/
   {
     __3_YAXPAX_Z(v3); /*0x660fe8*/
@@ -9773,7 +9773,7 @@ unsigned int * VectorClass_ptr_GlobalPacketType::loc_69D720(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x69d723*/
-  *Block = (unsigned int)&vt_VectorClass_PhoneEntryClass;
+  *Block = (unsigned int)&vt_VectorClass_PhoneEntryClass; /*0x69d726*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d730*/
   {
     __3_YAXPAX_Z(v3); /*0x69d738*/
@@ -10402,7 +10402,7 @@ unsigned int * VectorClass_UDirtyAreaStruct::loc_6DCC80(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x6dcc83*/
-  *Block = (unsigned int)&vt_VectorClass_DirtyAreaStruct;
+  *Block = (unsigned int)&vt_VectorClass_DirtyAreaStruct; /*0x6dcc86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6dcc90*/
   {
     __3_YAXPAX_Z(v3); /*0x6dcc98*/

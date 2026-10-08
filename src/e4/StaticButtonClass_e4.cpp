@@ -21,7 +21,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)this + 12); /*0x6c6883*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_StaticButtonClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_StaticButtonClass; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     __3_YAXPAX_Z(v3); /*0x6c6891*/
   ((Vector *)((int)this + 36))->Clear((int)((Vector *)((int)this + 36))); /*0x6c689c*/

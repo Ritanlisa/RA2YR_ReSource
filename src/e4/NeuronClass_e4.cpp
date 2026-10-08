@@ -83,7 +83,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   int v4; // eax
   unsigned (unsigned int)(int)* v6;
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_NeuronClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_NeuronClass; /*0x43a9cd*/
   this->vtable2 = (int)&vt_NeuronClass; /*0x43a9d3*/
   this->vtable3 = (int)&vt_NeuronClass; /*0x43a9da*/
   this->vtable4 = (int)&vt_NeuronClass; /*0x43a9e1*/
@@ -276,7 +276,7 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x43acb3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x43acb6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x43acc0*/
   {
     __3_YAXPAX_Z(v3); /*0x43acc8*/

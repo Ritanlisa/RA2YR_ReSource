@@ -201,7 +201,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40bcb3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x40bcb6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
@@ -324,7 +324,7 @@ _DWORD * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, char a2, 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40c163*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x40c166*/
   if ( v3 && BYTE1(this->m_C) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/

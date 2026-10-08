@@ -11227,7 +11227,7 @@ int _mtinit()
 namespace gamemd {
 int _initptd(int a1)
 {
-    *(unsigned int *)(a1 + 80) = (unsigned int)&unk_87CB20;
+    *(unsigned int *)(a1 + 80) = (unsigned int)&unk_87CB20; /*0x7d13fc*/
     *(unsigned int *)(a1 + 20) = 1; /*0x7d1403*/
     return a1; /*0x7d140a*/
 }

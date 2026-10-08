@@ -38,7 +38,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 
   ((AbstractClass *)this)->Constructor(); /*0x6b6c99*/
   ((SpawnControlVector *)((unsigned int *)this + 14))->Constructor((int)((SpawnControlVector *)((unsigned int *)this + 14)), 0, 0); /*0x6b6ca7*/
-  *((unsigned int *)this + 14) = (unsigned int)&vt_DynamicVectorClass;
+  *((unsigned int *)this + 14) = (unsigned int)&vt_DynamicVectorClass; /*0x6b6cb0*/
   *((unsigned int *)this + 19) = 10; /*0x6b6cb6*/
   *((unsigned int *)this + 18) = 0; /*0x6b6cbd*/
   v7 = dword_A8ED84; /*0x6b6cc0*/
@@ -110,7 +110,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 
   {
     v18 = dword_B0B890++; /*0x6b6e76*/
-    *((unsigned int *)dword_B0B884 + v18) = (unsigned int)this;
+    *((unsigned int *)dword_B0B884 + v18) = (unsigned int)this; /*0x6b6e85*/
   }
   return; /*0x6b6e8a*/
 
@@ -405,7 +405,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       if ( v2 != (SpawnManagerClass *)-56 ) /*0x6b7f97*/
       {
         ((SpawnControlVector *)((int)((SpawnControlVector *)v2->spawns)))->Constructor((int)((SpawnControlVector *)((int)((SpawnControlVector *)v2->spawns))), 0, 0); /*0x6b7f9d*/
-        *spawns = (unsigned int)(int)&vt_DynamicVectorClass;
+        *spawns = (unsigned int)(int)&vt_DynamicVectorClass; /*0x6b7fa2*/
         *(unsigned int *)&v2->__pad_48[4] = 10; /*0x6b7fa8*/
         *(unsigned int *)v2->__pad_48 = 0; /*0x6b7faf*/
       }

@@ -330,7 +330,7 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
     v9 = *(unsigned int *)&this->__pad_240[488]; /*0x674478*/
     *(unsigned int *)&this->__pad_240[480] = v7; /*0x67447e*/
     INIClass::ReadDouble_Overwrite((INIClass *)(/*0x674493*/
-      (double *)v16), (uint8_t *)aJumpjetcontrol, (uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 103), COERCE_DOUBLE(__PAIR64__(v8, v9)));
+      (double *)v16), (uint8_t *)aJumpjetcontrol, (uint8_t *)"Acceleration", COERCE_DOUBLE(__PAIR64__(v8, v9)));
     v10 = *(unsigned int *)&this->__pad_240[500]; /*0x674498*/
     v11 = *(unsigned int *)&this->__pad_240[496]; /*0x67449e*/
     __asm { fstp qword ptr [esi+428h] } /*0x6744a4*/

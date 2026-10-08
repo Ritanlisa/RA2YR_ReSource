@@ -166,7 +166,7 @@ UnitTypeClass::UnitTypeClass(char *Source, int aP1, int a2, int a1, int a3)
 
     {
       dword_A83CF0 = v3 + 1; /*0x74722b*/
-      *((unsigned int *)dword_A83CE4 + v3) = (unsigned int)this;
+      *((unsigned int *)dword_A83CE4 + v3) = (unsigned int)this; /*0x747235*/
       v3 = dword_A83CF0; /*0x747238*/
     }
     v5 = 0; /*0x74723d*/

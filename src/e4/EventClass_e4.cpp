@@ -710,7 +710,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40bc13*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x40bc16*/
   if ( v3 && BYTE1(this->q00C) ) /*0x40bc20*/
   {
     __3_YAXPAX_Z(v3); /*0x40bc28*/
@@ -755,7 +755,7 @@ namespace gamemd {
 void EventClass::finalizeEvent()
 {
 
-  dword_87F658 = (unsigned int)(int)&vt_VectorClass;
+  dword_87F658 = (unsigned int)(int)&vt_VectorClass; /*0x40be18*/
   if ( dword_87F65C && byte_87F665 ) /*0x40be2c*/
   {
     __3_YAXPAX_Z((void *)(dword_87F65C)); /*0x40be2f*/
@@ -775,7 +775,7 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40c113*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x40c116*/
   if ( v3 && BYTE1(this->q00C) ) /*0x40c120*/
   {
     __3_YAXPAX_Z(v3); /*0x40c128*/

@@ -1036,7 +1036,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
       do /*0x76b80b*/
       {
         ((ComPtr *)(v7))->Constructor(); /*0x76b7fc*/
-        *(unsigned int *)v7->__pad_0 = (unsigned int)&vt_rc_ptr;
+        *(unsigned int *)v7->__pad_0 = (unsigned int)&vt_rc_ptr; /*0x76b801*/
         v7 = (ComPtr *)((char *)v7 + 8); /*0x76b807*/
         --v4; /*0x76b80a*/
       }
@@ -1103,7 +1103,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
 
   v6 = aP1; /*0x76f975*/
   *((unsigned int *)this + 1) = 0; /*0x76f982*/
-  *(unsigned int *)this = (unsigned int)&vt_ReferenceCounted;
+  *(unsigned int *)this = (unsigned int)&vt_ReferenceCounted; /*0x76f985*/
   *((unsigned int *)this + 2) = v6; /*0x76f98b*/
   unknown_libname_74((unsigned char *)this + 12); /*0x76f98e*/
   v8 = (unsigned int *)((unsigned char *)this + 16); /*0x76f993*/
@@ -1553,7 +1553,7 @@ AbstractClass * * ObjectClass::sub_764A20()
     v13 = 0; /*0x764a9a*/
     v14 = 0; /*0x764a9e*/
     v15 = 0; /*0x764aa2*/
-    *(unsigned int *)&v4.m_3[1] = (unsigned int)&vt_INIClass;
+    *(unsigned int *)&v4.m_3[1] = (unsigned int)&vt_INIClass; /*0x764aa6*/
     ((FileStraw *)((FileStraw *)&v4.m_3[1]))->Open((int)&v16, 0); /*0x764aae*/
     ((CCFileClass *)((BufferIOFileClass *)&v16))->Close(); /*0x764ab7*/
     ((String *)(&v4))->Assign( (const char *)(g_INI_Key_CampaignID)); /*0x764ac5*/
@@ -2295,7 +2295,7 @@ unsigned int * E4Recv_767E90::sub_767E90()
   LOBYTE(this->MSFrameAnim_field_0xC) = 0; /*0x767e9f*/
   this->MSFrameAnim_field_0x10 = (void *)TimerGetTicks(); /*0x767ea7*/
   this->MSFrameAnim_field_0x18 = 0; /*0x767eaa*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSFrameAnim;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSFrameAnim; /*0x767ead*/
   return this->__pad_0; /*0x767eb5*/
 
 }
@@ -2505,9 +2505,9 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   *((unsigned int *)this + 12) = 0; /*0x76ac09*/
   *((unsigned int *)this + 13) = 0; /*0x76ac0c*/
   *((unsigned char *)this + 57) = 0; /*0x76ac0f*/
-  *((unsigned int *)this + 11) = (unsigned int)&vt_DynamicVectorClassrc_ptr;
+  *((unsigned int *)this + 11) = (unsigned int)&vt_DynamicVectorClassrc_ptr; /*0x76ac12*/
   *((unsigned int *)this + 15) = 0; /*0x76ac18*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_WDTState;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_WDTState; /*0x76ac1e*/
   *((unsigned char *)this + 20) = 0; /*0x76ac24*/
   *((unsigned int *)this + 6) = 0; /*0x76ac27*/
   *((unsigned int *)this + 8) = 0; /*0x76ac2a*/
@@ -2833,7 +2833,7 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
   ((ComPtr *)((ComPtr *)v7))->Constructor(); /*0x76d40c*/
   v7[0] = (int)&vt_rc_ptr; /*0x76d415*/
   ((ComPtr *)((ComPtr *)v7))->Set(v9); /*0x76d422*/
-  *(unsigned int *)v8 = (unsigned int)&vt_rc_ptr;
+  *(unsigned int *)v8 = (unsigned int)&vt_rc_ptr; /*0x76d42b*/
   ((ComPtr *)((ComPtr *)v8))->Release(); /*0x76d433*/
   v5 = TerritorySelectWDT(this, (int)v7); /*0x76d448*/
   v7[0] = (int)&vt_rc_ptr; /*0x76d44a*/
@@ -2857,7 +2857,7 @@ unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
     this->currentTargets[2] = (int)result; /*0x76d48e*/
     FindTerritoryWOL(v4, this->currentTargets[1] + 44, (int)result); /*0x76d4a2*/
     TerritorySelectWDT(this, (int)v4); /*0x76d4ae*/
-    *(unsigned int *)v4 = (unsigned int)&vt_rc_ptr;
+    *(unsigned int *)v4 = (unsigned int)&vt_rc_ptr; /*0x76d4b7*/
     return (unsigned int *)((ComPtr *)((ComPtr *)v4))->Release(); /*0x76d4bf*/
   }
   return result; /*0x76d4c4*/
@@ -2878,7 +2878,7 @@ int E4Recv_76DED0::sub_76DED0()
 
   v6 = 0; /*0x76deda*/
   v2 = this->currentTargets[1]; /*0x76dee2*/
-  *(unsigned int *)v5.__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr;
+  *(unsigned int *)v5.__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76dee8*/
   *(unsigned int *)&v5.m_1[3] = v2 + 44; /*0x76def3*/
   for ( result = VectorCursor::HasNext(&v5); /*0x76deff*/
         (unsigned char)result;
@@ -2910,7 +2910,7 @@ int E4Recv_76DF50::sub_76DF50()
 
   v6 = 0; /*0x76df5a*/
   v2 = this->currentTargets[1]; /*0x76df62*/
-  *(unsigned int *)v5.__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr;
+  *(unsigned int *)v5.__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76df68*/
   *(unsigned int *)&v5.m_1[3] = v2 + 44; /*0x76df73*/
   for ( result = VectorCursor::HasNext(&v5); /*0x76df7f*/
         (unsigned char)result;
@@ -2944,7 +2944,7 @@ void E4Recv_76DFD0::sub_76DFD0()
   {
     v4 = (char *)this + 1172; /*0x76e001*/
     v5 = 0; /*0x76e005*/
-    *(unsigned int *)&v3.m_3[1] = (unsigned int)&vt_VectorCursorMSSfxEntryDynamicVectorClass;
+    *(unsigned int *)&v3.m_3[1] = (unsigned int)&vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76e00d*/
     if ( ((Vector *)(_VectorCursor_PAVMSSfxEntry_V_DynamicVectorClass_PAVMSSfxEntry *)&v3.m_3[1])->HasCapacity() ) /*0x76e015*/
     {
       do /*0x76e04e*/
@@ -2978,7 +2978,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
   {
     *(unsigned int *)&v5.m_1[3] = (unsigned int)&this->turretRotateSoundController[3]; /*0x76e0c1*/
     v6 = 0; /*0x76e0c5*/
-    *(unsigned int *)v5.__pad_0 = (unsigned int)&vt_VectorCursorMSSfxEntryDynamicVectorClass;
+    *(unsigned int *)v5.__pad_0 = (unsigned int)&vt_VectorCursorMSSfxEntryDynamicVectorClass; /*0x76e0cd*/
     if ( ((Vector *)&v5)->HasCapacity() ) /*0x76e0d5*/
     {
       do /*0x76e10e*/

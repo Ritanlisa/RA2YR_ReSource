@@ -5525,7 +5525,7 @@ VectorClass_flat * JumpjetLocomotionClass_26::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x54eb53*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x54eb56*/
   if ( v3 && BYTE1(this->m_C) ) /*0x54eb60*/
   {
     __3_YAXPAX_Z(v3); /*0x54eb68*/
@@ -5548,7 +5548,7 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x54eba3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x54eba6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x54ebb0*/
   {
     __3_YAXPAX_Z(v3); /*0x54ebb8*/
@@ -6819,7 +6819,7 @@ HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
     a1->Piggybackee = 0; /*0x719cd8*/
     *(unsigned int *)a1->LocomotionClass = (unsigned int)&vt_TeleportLocomotionClass;
     *(unsigned int *)&a1->LocomotionClass[4] = (unsigned int)&vt_TeleportLocomotionClass;
-    *(unsigned int *)a1->__pad_18 = (unsigned int)&vt_TeleportLocomotionClass;
+    *(unsigned int *)a1->__pad_18 = (unsigned int)&vt_TeleportLocomotionClass; /*0x719cec*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))( (int *)(v2), (int **)(&pStm), 1, 0); /*0x719cff*/
   if ( !(unsigned char)pStm ) /*0x719d08*/

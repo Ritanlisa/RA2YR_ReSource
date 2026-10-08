@@ -104,7 +104,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
 
   {
     *(unsigned int *)&stru_A83D50.__pad_3C[4] = v3 + 1; /*0x5fe36d*/
-    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3) = (unsigned int)this;
+    *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3) = (unsigned int)this; /*0x5fe377*/
     v3 = *(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
@@ -317,10 +317,10 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     ((unsigned int *)this)[0] = (unsigned int)v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       ((unsigned int *)this)[0] = 1; /*0x5feeb9*/
-    *(unsigned int *)v4.CDFileClass = (unsigned int)&vt_CCFileClass;
+    *(unsigned int *)v4.CDFileClass = (unsigned int)&vt_CCFileClass; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     ((Vector *)((int)v5))->Clear((int)((Vector *)((int)v5))); /*0x5feed4*/
-    *(unsigned int *)v4.CDFileClass = (unsigned int)&off_7E1668;
+    *(unsigned int *)v4.CDFileClass = (unsigned int)&off_7E1668; /*0x5feedd*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v4))->Dtor(); /*0x5feee5*/
     return (gamemd::AnimTypeClass **)(v3); /*0x5feeea*/
   }
@@ -384,7 +384,7 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
 
   {
     v3 = stru_A83D50.SuperClass_field_0x28++; /*0x6441fc*/
-    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = (unsigned int)this;
+    *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * (unsigned int)v3) = (unsigned int)this; /*0x64420b*/
   }
   ((unsigned int *)this)[0] = 1; /*0x64420e*/
   return (unsigned int *)this; /*0x644217*/

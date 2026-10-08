@@ -1223,7 +1223,7 @@ LABEL_14:
 
       {
         result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5537*/
-        *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)aP0;
+        *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)aP0; /*0x6e5546*/
       }
     }
     LOBYTE(result) = v7; /*0x6e5549*/
@@ -2960,7 +2960,7 @@ char TeamClass::AddMember(int aP1, char aP2)
       *(unsigned char *)(v3 + 1673) = *((char *)this + 21) == 0; /*0x6ea55c*/
       *(unsigned int *)(v3 + 1496) = *((char *)this + 21); /*0x6ea565*/
       *((char *)this + 21) = v3; /*0x6ea56b*/
-      *(unsigned int *)(v3 + 1492) = (unsigned int)this;
+      *(unsigned int *)(v3 + 1492) = (unsigned int)this; /*0x6ea56e*/
       *(unsigned int *)(v3 + 532) = ((TeamTypeClass *)*((char *)this + 9))->GetGroup(); /*0x6ea57c*/
       if ( *((char *)this + 28) /*0x6ea5a8*/
         && (!*(unsigned char *)(*((char *)this + 9) + 179) || *(int *)((*(int (**)(int))(*(unsigned int *)v3 + 132))(v3) + 1504) > 0) )

@@ -442,7 +442,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
 
     {
       v3 = g_WarheadTypePool++; /*0x75d129*/
-      *((unsigned int *)dword_8874C4 + v3) = (unsigned int)this;
+      *((unsigned int *)dword_8874C4 + v3) = (unsigned int)this; /*0x75d138*/
     }
     if ( dword_B0F680 < dword_B0F678 /*0x75d16f*/
       || (byte_B0F67D || !dword_B0F678)
@@ -453,7 +453,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1, void *a2, void *a3, void *a4,
 
     {
       v4 = dword_B0F680++; /*0x75d17c*/
-      *((unsigned int *)dword_B0F674 + v4) = (unsigned int)this;
+      *((unsigned int *)dword_B0F674 + v4) = (unsigned int)this; /*0x75d18b*/
     }
     *(unsigned int *)(this + 160) = 0; /*0x75d19b*/
     *(unsigned int *)(this + 164) = 1072693248; /*0x75d1a0*/

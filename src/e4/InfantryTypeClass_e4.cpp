@@ -364,7 +364,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(unsigned int *)(v4 + 3616) = v9; /*0x52417f*/
   INIClassIntList = (DynamicVectorClass *)(&v44); /*0x524186*/
   ((DynamicVectorClass *)(&v44))->Copy((unsigned int *)(v4 + 3720)); /*0x52418a*/
-  *(unsigned int *)INIClassIntList->vtable1 = (unsigned int)&vt_TypeList;
+  *(unsigned int *)INIClassIntList->vtable1 = (unsigned int)&vt_TypeList; /*0x524198*/
   inited = (uint8_t *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,

@@ -312,7 +312,7 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 
     {
       result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e567d*/
-      *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)this;
+      *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = (unsigned int)this; /*0x6e568c*/
     }
   }
   return result; /*0x6e568f*/

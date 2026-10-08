@@ -491,7 +491,7 @@ bool HouseClass::ProcessData() {
     --v7; /*0x43189a*/
   }
   while ( v7 ); /*0x43189e g57w11 r4: raw 原文 do-while 闭合*/
-  return v6 && *(unsigned int *)((char *)&stru_A8EB00 + 416) % this->bunkersCapacity < dword_89C428 + 1; /*0x4318c3 g57w11 r4: raw 原文 bunkersCapacity*/
+  return v6 && dword_A8ED84 % this->bunkersCapacity < dword_89C428 + 1; /*0x4318c3 g57w11 r4: raw 原文 bunkersCapacity*/
 }
 } // namespace gamemd
 // 0x4575B0

@@ -23,7 +23,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
   int v8; // ebp
 
   v3 = *(unsigned int *)&this->m_1[3]; /*0x69d523*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x69d526*/
   if ( v3 && BYTE1(this->m_C) ) /*0x69d530*/
   {
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/

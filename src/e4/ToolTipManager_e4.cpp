@@ -66,7 +66,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x724f43*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x724f46*/
   if ( v3 && BYTE1(this->m_C) ) /*0x724f50*/
   {
     __3_YAXPAX_Z(v3); /*0x724f58*/

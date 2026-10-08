@@ -660,7 +660,7 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(unsigned int * Block, cha
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x42db13*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x42db16*/
   if ( v3 && BYTE1(this->m_C) ) /*0x42db20*/
   {
     __3_YAXPAX_Z(v3); /*0x42db28*/
@@ -683,7 +683,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(unsigned int * Block, cha
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x42db63*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x42db66*/
   if ( v3 && BYTE1(this->m_C) ) /*0x42db70*/
   {
     __3_YAXPAX_Z(v3); /*0x42db78*/
@@ -1107,7 +1107,7 @@ DynamicVector * DynamicVectorClass_PAD::Add(unsigned int * Block, char a2, void 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x49ee13*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x49ee16*/
   if ( v3 && BYTE1(this->IsInitialized) ) /*0x49ee20*/
   {
     __3_YAXPAX_Z(v3); /*0x49ee28*/
@@ -1130,7 +1130,7 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x49eff3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassDynamicVectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassDynamicVectorClass; /*0x49eff6*/
   if ( v3 && this->IsAllocated ) /*0x49f000*/
   {
     __3_YAXPAX_Z(v3); /*0x49f008*/
@@ -1153,7 +1153,7 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x49f043*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassDynamicVectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassDynamicVectorClass; /*0x49f046*/
   if ( v3 && this->IsAllocated ) /*0x49f050*/
   {
     __3_YAXPAX_Z(v3); /*0x49f058*/
@@ -1550,7 +1550,7 @@ DynamicVector * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Destr
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x628643*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x628646*/
   if ( v3 && BYTE1(this->m_C) ) /*0x628650*/
   {
     __3_YAXPAX_Z(v3); /*0x628658*/

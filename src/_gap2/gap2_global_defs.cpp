@@ -1805,7 +1805,7 @@ char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6)
         a2,
         *(unsigned int *)(v19 + 780),
         dword_89C474,
-        *(unsigned int *)((char *)&stru_A8EB00 + 416) % (g_VisibilitySystem.health / 2)
+        dword_A8ED84 % (g_VisibilitySystem.health / 2)
       + ((*(unsigned char *)(this + 12) & 2) != 0 ? g_VisibilitySystem.health / 2 : 0),
         v24,
         &a3,
@@ -13657,8 +13657,8 @@ int ObjectClass::ReadMPMapsINI(char* Source) {
     if ( !Int_Overwrite ) /*0x5c140d*/
       Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5c1423*/
                         (bool *)v4.__pad_0,
-                        (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 8),
-                        (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 139),
+                        (uint8_t *)"RandomMap",
+                        (uint8_t *)"NumPlayers",
                         0);
     HashTable::DestroyHashTableINIClass(&v4); /*0x5c1429*/
     *(unsigned int *)v5.CDFileClass = &vt_CCFileClass; /*0x5c1435*/

@@ -290,7 +290,7 @@ void AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
         AnimClass_field_0xBC = (IUnknown *)(0); /*0x422d05*/
       else
         AnimClass_field_0xBC = (IUnknown *)((char *)AnimClass_field_0xBC /*0x422d01*/
-                                          - (*(unsigned int *)((char *)&stru_A8EB00 + 416)
+                                          - (dword_A8ED84
                                            - (unsigned int)AnimClass_field_0xB4));
     }
     v7 = (int)AnimClass_field_0xC0 /*0x422d12*/

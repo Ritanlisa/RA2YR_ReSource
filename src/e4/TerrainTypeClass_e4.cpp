@@ -193,7 +193,7 @@ TerrainTypeClass::TerrainTypeClass(char *Source, int aP1, int aP3, int a2, int a
 
   {
     dword_A8E328 = v3 + 1; /*0x71db79*/
-    *((unsigned int *)dword_A8E31C + v3) = (unsigned int)this;
+    *((unsigned int *)dword_A8E31C + v3) = (unsigned int)this; /*0x71db83*/
     v3 = dword_A8E328; /*0x71db86*/
   }
   v5 = 0; /*0x71db8b*/

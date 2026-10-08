@@ -236,7 +236,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a348*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransLucent25Alpha;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransLucent25Alpha; /*0x49a34b*/
   FractalNoise::Dtor( (void *)(m_8)); /*0x49a352*/
   this->m_8 = 0; /*0x49a35b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;
@@ -266,7 +266,7 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a728*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransLucent25AlphaZReadWrite;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransLucent25AlphaZReadWrite; /*0x49a72b*/
   FractalNoise::Dtor( (void *)(m_8)); /*0x49a732*/
   this->m_8 = 0; /*0x49a73b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;

@@ -327,7 +327,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x53c783*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x53c786*/
   if ( v3 && BYTE1(this->m_C) ) /*0x53c790*/
   {
     __3_YAXPAX_Z(v3); /*0x53c798*/
@@ -350,7 +350,7 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x53c7d3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x53c7d6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x53c7e0*/
   {
     __3_YAXPAX_Z(v3); /*0x53c7e8*/

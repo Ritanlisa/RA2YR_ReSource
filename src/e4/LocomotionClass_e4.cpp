@@ -213,7 +213,7 @@ int LocomotionClass::Init()
   this->Dirty = 1; /*0x55a6cf*/
   this->RefCount = 0; /*0x55a6d2*/
   *(unsigned int *)this->ILocomotion = (unsigned int)(&vt_LocomotionClass); /*0x55a6d5*/
-  *(unsigned int *)&(&this->ILocomotion)[4] = (unsigned int)&vt_LocomotionClass;
+  *(unsigned int *)&(&this->ILocomotion)[4] = (unsigned int)&vt_LocomotionClass; /*0x55a6db*/
   return this->ILocomotion; /*0x55a6e2*/
 
 }

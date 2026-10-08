@@ -507,7 +507,7 @@ void RunNetworkGameLoop()
   int v33; // [esp+68h] [ebp-8h]
   int v34; // [esp+6Ch] [ebp-4h]
 
-    ((Debug *)0)->Log();
+    ((Debug *)0)->Log(); /*0x7A10FB*/
   if ( *(int *)&dword_A8B238 < 3 || *(int *)&dword_A8B238 > 4 ) /*0x648371*/
   {
     v13 = (void *)((gamemd::IPXManagerClass *)((void *)dword_A8EA74));

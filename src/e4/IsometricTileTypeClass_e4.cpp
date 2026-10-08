@@ -85,7 +85,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       *((unsigned int *)a1 + 169) = (unsigned int)(&vt_DynamicVectorClass); /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
-      *(unsigned int *)a1->__pad_0 = (unsigned int)&vt_IsometricTileTypeClass;
+      *(unsigned int *)a1->__pad_0 = (unsigned int)&vt_IsometricTileTypeClass; /*0x549d02*/
       a1->IsometricTileTypeClass_field_0x04 = (int)&vt_IsometricTileTypeClass; /*0x549d08*/
       a1->IsometricTileTypeClass_field_0x08 = (int)&vt_IsometricTileTypeClass; /*0x549d0f*/
       a1->IsometricTileTypeClass_field_0x0C = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
@@ -293,7 +293,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x54a763*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x54a766*/
   if ( v3 && BYTE1(this->m_C) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/

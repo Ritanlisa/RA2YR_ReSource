@@ -439,7 +439,7 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)this + 2); /*0x49a248*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlpha;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlpha; /*0x49a24b*/
   FractalNoise::Dtor( (void *)(v3)); /*0x49a252*/
   *((unsigned int *)this + 2) = 0; /*0x49a25b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;

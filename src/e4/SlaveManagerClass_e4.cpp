@@ -848,7 +848,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       if ( v3 != (SlaveManagerClass *)-56 ) /*0x6b1201*/
       {
         ((SlaveControlVector *)((int)((SlaveControlVector *)v3->slaves)))->Constructor((int)((SlaveControlVector *)((int)((SlaveControlVector *)v3->slaves))), 0, 0); /*0x6b1207*/
-        *slaves = (unsigned int)(int)&vt_DynamicVectorClass;
+        *slaves = (unsigned int)(int)&vt_DynamicVectorClass; /*0x6b120c*/
         *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b1212*/
         *(unsigned int *)v3->__pad_48 = 0; /*0x6b1219*/
       }
@@ -1213,7 +1213,7 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x6b1983*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x6b1986*/
   if ( v3 && BYTE1(this->m_C) ) /*0x6b1990*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1998*/

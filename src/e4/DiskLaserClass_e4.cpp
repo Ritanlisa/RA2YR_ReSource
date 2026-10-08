@@ -38,7 +38,7 @@ DiskLaserClass::DiskLaserClass()
   int v2; // eax
 
   ((AbstractClass *)this)->Constructor(); /*0x4a7a33*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_DiskLaserClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_DiskLaserClass; /*0x4a7a3a*/
   this->vtable2 = (int)&vt_DiskLaserClass; /*0x4a7a40*/
   this->vtable3 = (int)&vt_DiskLaserClass; /*0x4a7a47*/
   this->vtable4 = (int)&vt_DiskLaserClass; /*0x4a7a4e*/
@@ -58,7 +58,7 @@ DiskLaserClass::DiskLaserClass()
 
   {
     v2 = dword_8A0218++; /*0x4a7aab*/
-    *((unsigned int *)dword_8A020C + v2) = (unsigned int)this;
+    *((unsigned int *)dword_8A020C + v2) = (unsigned int)this; /*0x4a7aba*/
   }
   return; /*0x4a7abf*/
 
@@ -72,7 +72,7 @@ void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
   int v3; // eax
   DiskLaserClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_DiskLaserClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_DiskLaserClass; /*0x4a7c9d*/
   this->vtable2 = (int)&vt_DiskLaserClass; /*0x4a7ca3*/
   this->vtable3 = (int)&vt_DiskLaserClass; /*0x4a7caa*/
   this->vtable4 = (int)&vt_DiskLaserClass; /*0x4a7cb1*/
@@ -107,7 +107,7 @@ int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x4a7ba9*/
     {
       AbstractClass::InitVtables(((AbstractClass *)aP0), (int)&aP1); /*0x4a7bb2*/
-      *(unsigned int *)aP0->__pad_0 = (unsigned int)&vt_DiskLaserClass;
+      *(unsigned int *)aP0->__pad_0 = (unsigned int)&vt_DiskLaserClass; /*0x4a7bb7*/
       aP0->vtable2 = (int)&vt_DiskLaserClass; /*0x4a7bbd*/
       aP0->q008 = (int)&vt_DiskLaserClass; /*0x4a7bc4*/
       aP0->vtable4 = (int)&vt_DiskLaserClass; /*0x4a7bcb*/

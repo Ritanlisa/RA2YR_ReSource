@@ -642,7 +642,7 @@ int sub_4662E0()
   dword_89DE20 = 0; /*0x4662ec*/
   byte_89DE24 = 1; /*0x4662f1*/
   byte_89DE25 = 0; /*0x4662f8*/
-  dword_89DE18 = (unsigned int)(int)&off_7E4678;
+  dword_89DE18 = (unsigned int)(int)&off_7E4678; /*0x4662fd*/
   dword_89DE2C = 10; /*0x466307*/
   dword_89DE28 = 0; /*0x466311*/
   return atexit((void (__cdecl *)(void))sub_466320); /*0x46631c*/

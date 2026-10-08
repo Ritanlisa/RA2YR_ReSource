@@ -366,7 +366,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x55a413*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x55a416*/
   if ( v3 && BYTE1(this->m_C) ) /*0x55a420*/
   {
     __3_YAXPAX_Z(v3); /*0x55a428*/
@@ -389,7 +389,7 @@ DynamicVector * LoadOptions::vt00(char a2, int a1)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x55a463*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x55a466*/
   if ( v3 && BYTE1(this->m_C) ) /*0x55a470*/
   {
     __3_YAXPAX_Z(v3); /*0x55a478*/

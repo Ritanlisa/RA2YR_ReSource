@@ -47,7 +47,9 @@ struct CampaignScore;
 class BinkMovie;
 class MultiplayerGameMode;  // G42 fix_fwd_type_supply (AddToList param)
 class PriorityQueue;  // G42.35 ui-session 补: C2061 unblock (0x7681E0 sig-sync 参数, 定义在 3459)
+#ifndef GAMEMD_MC_VECTORCLASS_SKIP  // g57w20m1: misc TU minimal 结构胜出 (C2990)
 template <typename T> class VectorClass;  // G42.35: 模板前置 (core/vector.hpp 载体; sig-sync 参数用)
+#endif
 
 // G42.42e supply decl (truth 0x7DC720; E_POINTER fail-fast helper)
 extern void WinAPI_Wrapper(int aP1);
@@ -542,6 +544,8 @@ public:
     uint8_t AnimFile_field_0x10[4];
     uint8_t AnimFile_field_0x14[4];
     uint8_t AnimFile_field_0x18[4];
+    public:  // g57w20m1 supply slot
+    void* vtable1;  // 0x0 (ml 真值 AnimFile@0x0; AddRef 0x426763 读) g57w20m1
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x4272a0 -- AnimFile::QueryInterface
@@ -555,7 +559,7 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~AnimSequence() = default;
 
-    virtual void Parse(); // 0x523D00
+    virtual unsigned __int8 **Parse(); // 0x523D00 (truth u8** __thiscall; g57w20m1 C2556)
 
 };
 #ifndef GAMEMD_E4_AnimTypeList  // G57w8: e4 flat carrier wins in e4 TUs (C2011 vs _tree_full_e4.hpp G57e1 carrier)
@@ -590,8 +594,8 @@ public:
     virtual ~CSFClass() = default;
 
     virtual void CopyString(); // 0x595710
-    virtual void LoadMissingStrings(); // 0x6977C0
-    virtual void LoadFile(); // 0x7346A0
+    virtual int LoadMissingStrings(); // 0x6977C0 (truth int __thiscall; g57w20m1 C2556)
+    virtual int LoadFile(); // 0x7346A0 (truth int __thiscall; g57w20m1 C2556)
 
     uint8_t CSFClass_field_0x04[4];
     uint8_t CSFClass_field_0x08[4];
@@ -642,6 +646,8 @@ public:
     unsigned int *m_1;   // g57w10 C2039 supply (e4 flat carrier name; bodies 0x5c5120/0x5c55f0 use m_1/m_8/m_C)
     unsigned int m_8;
     unsigned int m_C;
+    public:  // g57w20m1 supply slot
+    void* __pad_0;  // 0x0 self-desc vocab (raw 0x5c56d2 虚调用经此槽) g57w20m1
     public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int Write(int a1);  // 0x5c5750 -- CoopCampaignVector::Write
@@ -687,6 +693,8 @@ public:
     virtual ~CoordBounds() = default;
     long long Constructor(int a2, int a3); // 0x403870 (G42 sig-sync: def)
 
+    public:  // g57w20m1 supply slot
+    unsigned char q000[1];  // 0x0 (ml q000@0x0; raw 0x403891 u64 读首 8 字节) g57w20m1
 };
 // 1 methods in IDA
 // CSP: CoordList matched via T1
@@ -716,6 +724,26 @@ public:
     // design: defaulted virtual destructor, no binary equivalent
     virtual ~DamageAnimClass() = default;
     void* Constructor(int a2, int *a3, int a4); // 0x7493B0 (G42 sig-sync: def)
+
+    // --- g57w20m1 supply: til VoxelAnimClass 布局 (IDA live 2026-10-08; 0x7493B0 raw this 型) ---
+    int VoxelAnimClass_field_0x0;   // 0x0 (vtable 安装站 0x749434)
+    int VoxelAnimClass_field_0x4;   // 0x4 (0x74943a; GenerateUniqueID 0x74944e 经此)
+    int VoxelAnimClass_field_0x8;   // 0x8 (0x749440)
+    char __pad_C[16];               // 0xC (til 名; raw 0x749447 *(_DWORD*)this->__pad_C)
+    int VoxelAnimClass_field_0x1C;  // 0x1C
+    char __pad_20[116];             // 0x20
+    int VoxelAnimClass_field_0x94;  // 0x94
+    char __pad_98[104];             // 0x98 (raw 0x7493d2-0x7493f7 写区)
+    int VoxelAnimClass_field_0x100; // 0x100
+    int VoxelAnimClass_field_0x104; // 0x104
+    int VoxelAnimClass_field_0x108; // 0x108
+    int VoxelAnimClass_field_0x10C; // 0x10C
+    char __pad_110[4];              // 0x110
+    int VoxelAnimClass_field_0x114; // 0x114 (AudioController::Init 站 0x749459)
+    char __pad_118[16];             // 0x118
+    int VoxelAnimClass_field_0x128; // 0x128 (AudioController::Init 站 0x749464)
+    char __pad_12C[20];             // 0x12C
+    int VoxelAnimClass_field_0x140; // 0x140
 
 };
 // 8 methods in IDA

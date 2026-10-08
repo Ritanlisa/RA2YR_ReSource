@@ -18,7 +18,7 @@ namespace gamemd {
 void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSFrameAnim;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSFrameAnim; /*0x769bd3*/
   VtableStub::sub_5CB6C0(this); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     __3_YAXPAX_Z(this); /*0x769be6*/
@@ -375,7 +375,7 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76a683*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr; /*0x76a686*/
   if ( v3 && BYTE1(this->m_C) ) /*0x76a690*/
   {
     (**v3)((unsigned int)(v3), 3); /*0x76a69f*/
@@ -398,7 +398,7 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x76a723*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x76a726*/
   if ( v3 && BYTE1(this->m_C) ) /*0x76a730*/
   {
     __3_YAXPAX_Z(v3); /*0x76a738*/

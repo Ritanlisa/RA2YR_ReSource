@@ -77,7 +77,7 @@ AircraftTypeClass::AircraftTypeClass(char *Source, int aP1, int a1, int a2, int 
         !v4) )
   {
     dword_A8B228 = v3 + 1; /*0x41c962*/
-    *((unsigned int *)dword_A8B21C + v3) = (unsigned int)this;
+    *((unsigned int *)dword_A8B21C + v3) = (unsigned int)this; /*0x41c96c*/
     v3 = dword_A8B228; /*0x41c96f*/
   }
   v5 = 0; /*0x41c974*/
@@ -186,7 +186,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2, int a1, int aP0, int aP1, 
   int v3; // eax
   AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->vtable1 = (unsigned int)&vt_AircraftTypeClass;
+  *(unsigned int *)this->vtable1 = (unsigned int)&vt_AircraftTypeClass; /*0x41cfe6*/
   *(unsigned int *)this[4] = (unsigned int)(&vt_AircraftTypeClass); /*0x41cfec*/
   *(unsigned int *)this[8] = (unsigned int)(&vt_AircraftTypeClass); /*0x41cff3*/
   *(unsigned int *)this[12] = (unsigned int)(&vt_AircraftTypeClass); /*0x41cffa*/
@@ -298,7 +298,7 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x41ce36*/
     {
       ((TechnoTypeClass*)(int)aP0)->Construct((int)&aP1); /*0x41ce3f*/
-      *(unsigned int *)aP0->vtable1 = (unsigned int)(void *)(&vt_AircraftTypeClass);
+      *(unsigned int *)aP0->vtable1 = (unsigned int)(void *)(&vt_AircraftTypeClass); /*0x41ce44*/
       *(unsigned int *)aP0[4] = (unsigned int)(unsigned int *)(&vt_AircraftTypeClass); /*0x41ce4a*/
       *(unsigned int *)aP0[8] = (unsigned int)(unsigned int *)(&vt_AircraftTypeClass); /*0x41ce51*/
       *(unsigned int *)aP0[12] = (unsigned int)(unsigned int *)(&vt_AircraftTypeClass); /*0x41ce58*/

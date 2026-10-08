@@ -366,7 +366,7 @@ _DWORD * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(unsigne
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x664a73*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x664a76*/
   if ( v3 && BYTE1(this->m_C) ) /*0x664a80*/
   {
     __3_YAXPAX_Z(v3); /*0x664a88*/
@@ -389,7 +389,7 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x664ac3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x664ac6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x664ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x664ad8*/

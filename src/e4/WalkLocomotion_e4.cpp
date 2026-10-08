@@ -129,7 +129,7 @@ LOBYTE(v5) = (*(char (**)(unsigned int, unsigned int *))(**(unsigned int **)&thi
 }
 // 0x6A05F0
 namespace gamemd {
-void WalkLocomotion::ProcessCollision(char a2, void *a2_2)
+char WalkLocomotion::ProcessCollision(char a2, void *a2_2)
 {
 
   int v4; // eax

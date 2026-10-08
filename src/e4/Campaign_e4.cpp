@@ -244,7 +244,7 @@ namespace gamemd {
 VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     __3_YAXPAX_Z(this); /*0x765782*/
   return (gamemd::VectorCursor *)(this->__pad_0); /*0x76578c*/
@@ -348,7 +348,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x765b63*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr; /*0x765b66*/
   if ( v3 && this->IsAllocated ) /*0x765b70*/
   {
     (**v3)((unsigned int)(v3), 3); /*0x765b7f*/

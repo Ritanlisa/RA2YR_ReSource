@@ -3146,7 +3146,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   }
   free(*((void **)this + 6)); /*0x52ab47*/
   *((unsigned int *)this + 6) = 0; /*0x52ab51*/
-  *(unsigned int *)this = (unsigned int)&vt_GenericNode;
+  *(unsigned int *)this = (unsigned int)&vt_GenericNode; /*0x52ab54*/
   if ( this ) /*0x52ab5a*/
   {
     v5 = *((unsigned int *)this + 1); /*0x52ab5c*/

@@ -284,7 +284,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   v22 = *(unsigned int *)(v5 + 192); /*0x721b28*/
   *(unsigned int *)(v5 + 188) = v14; /*0x721b2f*/
   *(unsigned int *)(v5 + 192) = BuildingTypeClass::FindAnimByName((gamemd::INIClass *)(/*0x721b3a*/
-                            (BuildingTypeClass *)aP1), (uint8_t *)(v5 + 36), (gamemd::AnimTypeClass *)((uint8_t *)(unsigned int *)((char *)&stru_81AF8C + 95)),(void *)(v22));
+                            (BuildingTypeClass *)aP1), (uint8_t *)(v5 + 36), (gamemd::AnimTypeClass *)((uint8_t *)"Color"),(void *)(v22));
   if ( ((INIClass*)/*0x721b57*/
          (INIClass *)aP1)->GetString(/*0x721b57*/ (uint8_t *)(v5 + 36), (void *)(aDebris), &g_INI_DefaultBuffer, (char *)&v25.DynamicVector_field_0x1C, 128) )
   {

@@ -6203,7 +6203,7 @@ int RulesClass::ReadIQSection() {
       *(unsigned int *)&this->__pad_C3C[2064] = INIClass::ReadInt_Overwrite( /*0x67433a*/
                                             v15,
                                             (unsigned __int8 *)g_INI_Key_IQ,
-                                            (unsigned __int8 *)((char *)&stru_82BA00 + 28),
+                                            (unsigned __int8 *)"Scatter",
                                             v10);
       v11 = INIClass::ReadInt_Overwrite( /*0x674355*/
               v15,

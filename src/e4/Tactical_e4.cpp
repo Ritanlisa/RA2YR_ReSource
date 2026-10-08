@@ -2125,7 +2125,7 @@ Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
 {
 
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Tactical;
-  *(unsigned int *)&this->Tactical_field_0x2[2] = (unsigned int)&vt_Tactical;
+  *(unsigned int *)&this->Tactical_field_0x2[2] = (unsigned int)&vt_Tactical; /*0x6dc479*/
   this->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6dc480*/
   this->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6dc487*/
   g_TacticalClass_Instance = 0; /*0x6dc48e*/
@@ -2373,7 +2373,7 @@ VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x6e4ab3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x6e4ab6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x6e4ac0*/
   {
     __3_YAXPAX_Z(v3); /*0x6e4ac8*/

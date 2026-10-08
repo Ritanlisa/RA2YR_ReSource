@@ -710,7 +710,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4ef5d3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4ef5d6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4ef5e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef5e8*/
@@ -733,7 +733,7 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4efd53*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4efd56*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4efd60*/
   {
     __3_YAXPAX_Z(v3); /*0x4efd68*/
@@ -756,7 +756,7 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4efdf3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4efdf6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4efe00*/
   {
     __3_YAXPAX_Z(v3); /*0x4efe08*/
@@ -779,7 +779,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4efe43*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4efe46*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4efe50*/
   {
     __3_YAXPAX_Z(v3); /*0x4efe58*/
@@ -802,7 +802,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4efee3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x4efee6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x4efef0*/
   {
     __3_YAXPAX_Z(v3); /*0x4efef8*/

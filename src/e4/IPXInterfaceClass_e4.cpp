@@ -810,7 +810,7 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x7b2b53*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x7b2b56*/
   if ( v3 && BYTE1(this->m_C) ) /*0x7b2b60*/
   {
     __3_YAXPAX_Z(v3); /*0x7b2b68*/

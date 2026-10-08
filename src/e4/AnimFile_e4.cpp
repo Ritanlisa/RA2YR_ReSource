@@ -25,7 +25,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   void (***v4)(unsigned int, int); // ecx
 
   v3 = *((unsigned char *)this + 137); /*0x4272a6*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_AnimFile;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_AnimFile; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (**)(unsigned int))(**((unsigned int **)this + 33) + 52))(*((unsigned int *)this + 33)); /*0x4272be*/

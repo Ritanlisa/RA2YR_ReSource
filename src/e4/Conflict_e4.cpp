@@ -426,7 +426,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x766fc3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr; /*0x766fc6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x766fd0*/
   {
     (**v3)((unsigned int)v3, 3); /*0x766fdf*/
@@ -449,7 +449,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x767083*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr; /*0x767086*/
   if ( v3 && BYTE1(this->m_C) ) /*0x767090*/
   {
     (**v3)((unsigned int)v3, 3); /*0x76709f*/

@@ -38,6 +38,10 @@ struct IdaRegVar {
     explicit operator unsigned long() const { return v; }
     explicit operator bool() const { return v != 0; }
     template <class T> explicit operator T*() const { return (T*)(uintptr_t)v; }
+    // g57w20m4: verbatim deref/index vocab (ida_cache 0x53CBE0 *_EBX / _EBX[n] 形;
+    // sizeof(IdaRegVar)==4 保持 &r[i] == (unsigned long*)r + i 地址精确)
+    IdaRegVar& operator*() { return *(IdaRegVar *)v; }
+    IdaRegVar& operator[](long i) { return ((IdaRegVar *)v)[i]; }
 };
 inline unsigned long operator+(const IdaRegVar& r, long d) { return r.v + d; }
 inline unsigned long operator+(long d, const IdaRegVar& r) { return d + r.v; }

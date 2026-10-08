@@ -3821,7 +3821,7 @@ namespace gamemd {
 LightConvertClass * E4Recv_556520::sub_556520(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_LightConvertClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_LightConvertClass; /*0x556523*/
   sub_490400((int)this); /*0x556529*/
   if ( (a2 & 1) != 0 ) /*0x556533*/
     __3_YAXPAX_Z(this); /*0x556536*/
@@ -4003,7 +4003,7 @@ int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
   *((unsigned int *)this + 12) = *(unsigned int *)(aP1 + 48); /*0x5581c3*/
   *((unsigned int *)this + 13) = *(unsigned int *)(aP1 + 52); /*0x5581c9*/
   *((unsigned int *)this + 14) = *(unsigned int *)(aP1 + 56); /*0x5581cf*/
-  *(unsigned int *)this = (unsigned int)&vt_GaugeClass;
+  *(unsigned int *)this = (unsigned int)&vt_GaugeClass; /*0x5581d2*/
   return this; /*0x5581da*/
 
 }
@@ -4387,10 +4387,10 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     ((::gamemd::FileClass*)(&v6))->SetFileName(Buffer); /*0x559621*/
   }
   while ( (uint8_t)((CCFileClass *)(&v6))->Open(0) == 1 ); /*0x559633*/
-  *(unsigned int *)v6.CDFileClass = (unsigned int)&vt_CCFileClass;
+  *(unsigned int *)v6.CDFileClass = (unsigned int)&vt_CCFileClass; /*0x559639*/
   v8 = 0; /*0x559641*/
   ((Vector *)((int)v7))->Clear((int)((Vector *)((int)v7))); /*0x559649*/
-  *(unsigned int *)v6.CDFileClass = (unsigned int)&off_7E1668;
+  *(unsigned int *)v6.CDFileClass = (unsigned int)&off_7E1668; /*0x559652*/
   return ((BufferIOFileClass *)((BufferIOFileClass *)&v6))->Dtor(); /*0x55965f*/
 
 }

@@ -524,7 +524,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5ad4d3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassTRect;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassTRect; /*0x5ad4d6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5ad4e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad4e8*/
@@ -547,7 +547,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5ad523*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassTRect;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassTRect; /*0x5ad526*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5ad530*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad538*/

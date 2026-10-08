@@ -165,10 +165,10 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
   void *m_C; // eax
 
   m_C = (void *)this->m_C; /*0x49aa48*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitTransZRemapXlatAlpha;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitTransZRemapXlatAlpha; /*0x49aa4b*/
   FractalNoise::Dtor( (void *)(m_C)); /*0x49aa52*/
   this->m_C = 0; /*0x49aa5b*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitter;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_RLEBlitter; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     __3_YAXPAX_Z(this); /*0x49aa6d*/
   return (gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)(this->__pad_0); /*0x49aa77*/

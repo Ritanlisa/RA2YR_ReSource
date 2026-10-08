@@ -177,7 +177,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1, void *a2, void *a
   this->IsRadEruption = 0; /*0x771e65*/
   this->RadLevel = 0; /*0x771e6b*/
   this->IsMagBeam = (unsigned int)(0); /*0x771e71*/
-  this->vtable1 = (void *)(&vt_WeaponTypeClass);
+  this->vtable1 = (void *)(&vt_WeaponTypeClass); /*0x771e77*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771e7d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771e83*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771e8a*/
@@ -208,7 +208,7 @@ int WeaponTypeClass::Destructor(void *a1)
   void *v5; // eax
   WeaponTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  this->vtable1 = (void *)(&vt_WeaponTypeClass);
+  this->vtable1 = (void *)(&vt_WeaponTypeClass); /*0x771f57*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f5d*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f64*/
   ((unsigned int *)this)[0] = (unsigned int)(&vt_WeaponTypeClass); /*0x771f6b*/

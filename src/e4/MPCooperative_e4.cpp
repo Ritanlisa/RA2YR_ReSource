@@ -1814,7 +1814,7 @@ LABEL_17:
       }
     }
   }
-  *(unsigned int *)v17 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)v17 = (unsigned int)&vt_VectorClass; /*0x5c308d*/
   if ( Block && v19 ) /*0x5c30a0*/
     __3_YAXPAX_Z(Block); /*0x5c30a3*/
   return 1; /*0x5c30ad*/
@@ -2943,7 +2943,7 @@ unsigned int * MPCooperative::initGame()
   this->MPCooperative_field_0x0 = &vt_CampaignScoreClass; /*0x46d334*/
   this->MPCooperative_field_0x4 = 0; /*0x46d33a*/
   dword_89E050 = 0; /*0x46d33d*/
-  *((unsigned int *)((char *)&stru_81AF8C + 6)) = -1; /*0x46d343*/
+  dword_81B1E8 = -1; /*0x46d343*/
   return &this->MPCooperative_field_0x0; /*0x46d34d*/
 
 }

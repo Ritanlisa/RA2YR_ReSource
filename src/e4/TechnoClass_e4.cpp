@@ -380,7 +380,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
 
   {
     v10 = (*(unsigned int *)((char *)&stru_A8EB00 + 164))++; /*0x6f31c3*/
-    *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v10) = (unsigned int)this;
+    *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v10) = (unsigned int)this; /*0x6f31d2*/
   }
   if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E88[16] < *(int *)&g_BuildingLoadQueue_Array.__pad_E88[8] /*0x6f3209*/
     || (&byte_B0F6D5 || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[8])
@@ -391,7 +391,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
          0) )
   {
     v11 = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[16])++; /*0x6f3216*/
-    *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[4] + 4 * v11) = (unsigned int)this;
+    *(unsigned int *)(*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E88[4] + 4 * v11) = (unsigned int)this; /*0x6f3225*/
   }
   LOBYTE(((unsigned int *)this)[0]) |= 1u; /*0x6f3237*/
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
@@ -605,7 +605,7 @@ int TechnoClass::DTOR()
   *(unsigned int *)this = (unsigned int)&vt_TechnoClass;
   *((unsigned int *)this + 1) = (unsigned int)&vt_TechnoClass;
   *((unsigned int *)this + 2) = (unsigned int)&vt_TechnoClass;
-  *((unsigned int *)this + 3) = (unsigned int)&off_7F4934;
+  *((unsigned int *)this + 3) = (unsigned int)&off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
   {
     Sidebar::CancelSidebarProductionQueue( (int *)(v2)); /*0x6f452c*/

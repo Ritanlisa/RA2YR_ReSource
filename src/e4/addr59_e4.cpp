@@ -475,7 +475,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     while ( v8 >= 0 ); /*0x594c81*/
   }
   TileSystem::Constructor((TileSystem *)&v45, 0, 0); /*0x594c89*/
-  *(unsigned int *)v45.__pad_0 = (unsigned int)&off_7ED858;
+  *(unsigned int *)v45.__pad_0 = (unsigned int)&off_7ED858; /*0x594c92*/
   v46 = 10; /*0x594c9a*/
   Base = (void *)(0); /*0x594ca2*/
   NumOfElements = 0; /*0x594ca6*/
@@ -883,7 +883,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   *(unsigned int *)v18.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
   ((Vector *)((int)v19))->Clear((int)((Vector *)((int)v19))); /*0x5962ce*/
-  *(unsigned int *)v18.CDFileClass = (unsigned int)&off_7E1668;
+  *(unsigned int *)v18.CDFileClass = (unsigned int)&off_7E1668; /*0x5962d7*/
   ((BufferIOFileClass *)((BufferIOFileClass *)&v18))->Dtor(); /*0x5962df*/
   *(unsigned int *)v17.__pad_0 = (unsigned int)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
 // 0x65d460

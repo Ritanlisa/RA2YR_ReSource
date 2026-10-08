@@ -1709,7 +1709,7 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
   int16_t v9; // [esp+215h] [ebp-3h]
   char v10; // [esp+217h] [ebp-1h]
 
-  *(unsigned int *)&v8[8] = (unsigned int)this;
+  *(unsigned int *)&v8[8] = (unsigned int)this; /*0x47624d*/
   v8[12] = g_INI_DefaultBuffer; /*0x476252*/
   memset( (void *)(&v8[13]), 0, 0x1FCu); /*0x476268*/
   v9 = 0; /*0x47626a*/

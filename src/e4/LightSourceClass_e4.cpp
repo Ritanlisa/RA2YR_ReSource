@@ -83,7 +83,7 @@ int LightSourceClass::Constructor()
 
   {
     v3 = g_MissionQueueFrame.random[133]++; /*0x5548c3*/
-    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = (unsigned int)this;
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = (unsigned int)this; /*0x5548d2*/
   }
   return (int)this; /*0x5548d7*/
 

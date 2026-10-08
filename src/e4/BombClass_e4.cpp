@@ -87,7 +87,7 @@ int BombClass::TimeToExplode()
 {
 
   return !(&this->audioController)[0] /*0x438a8c*/
-      && *(int *)(unsigned int *)((char *)&stru_A8EB00 + 416) > (&this->audioController)[2]
+      && dword_A8ED84 > (&this->audioController)[2]
       && !this->BombClass_field_58;
 
 }
@@ -140,7 +140,7 @@ int BombClass::InitPool()
   dword_89C670 = 0; /*0x43855c*/
   byte_89C674 = 1; /*0x438561*/
   byte_89C675 = 0; /*0x438568*/
-  dword_89C668 = (unsigned int)(int)&vt_DynamicVectorClass;
+  dword_89C668 = (unsigned int)(int)&vt_DynamicVectorClass; /*0x43856d*/
   dword_89C67C = 10; /*0x438577*/
   dword_89C678 = 0; /*0x438581*/
   return atexit((void (__cdecl *)(void))globalHelper_038590); /*0x43858c*/

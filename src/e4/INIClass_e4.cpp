@@ -332,7 +332,7 @@ INIClass::INIClass()
   result[2] = 0; /*0x535aaf*/
   sectionHead[1] = 0; /*0x535ab2*/
   sectionHead[2] = 0; /*0x535ab5*/
-  *sectionHead = (unsigned int)(int)&vt_GenericNode;
+  *sectionHead = (unsigned int)(int)&vt_GenericNode; /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
   result[7] = (unsigned int)(&vt_GenericNode); /*0x535ac4*/

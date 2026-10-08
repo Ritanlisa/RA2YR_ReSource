@@ -1384,7 +1384,7 @@ namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
 
-  *(unsigned int *)this->BlitterCore = (unsigned int)&vt_Blitter;
+  *(unsigned int *)this->BlitterCore = (unsigned int)&vt_Blitter; /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     __3_YAXPAX_Z(this); /*0x499cd2*/
   return (gamemd::Blitter *)((std::locale::facet *)this); /*0x499cdc*/
@@ -1436,7 +1436,7 @@ namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
 
-  *(unsigned int *)this->RLEBlitterCore = (unsigned int)&vt_RLEBlitter;
+  *(unsigned int *)this->RLEBlitterCore = (unsigned int)&vt_RLEBlitter; /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     __3_YAXPAX_Z(this); /*0x499db2*/
   return (gamemd::RLEBlitter *)((std::locale::facet *)this); /*0x499dbc*/

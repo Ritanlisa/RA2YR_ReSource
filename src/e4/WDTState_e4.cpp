@@ -170,7 +170,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x76bc13*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClassrc_ptr; /*0x76bc16*/
   if ( v3 && BYTE1(this->m_C) ) /*0x76bc20*/
   {
     (**v3)((unsigned int)v3, 3); /*0x76bc2f*/

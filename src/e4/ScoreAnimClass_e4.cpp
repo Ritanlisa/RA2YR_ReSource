@@ -15,7 +15,7 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ScoreAnimClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ScoreAnimClass; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     __3_YAXPAX_Z(this); /*0x691012*/
   return this->__pad_0; /*0x69101c*/
@@ -43,7 +43,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   char *v4; // eax
 
   v3 = (void *)this->field_C; /*0x6910a6*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ScoreFontClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ScoreFontClass; /*0x6910a9*/
   if ( v3 && *((unsigned char *)this + 16) == 1 ) /*0x6910b7*/
   {
     __3_YAXPAX_Z(v3); /*0x6910ba*/

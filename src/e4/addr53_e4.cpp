@@ -2460,7 +2460,7 @@ int SuperWeapon_Update()
   }
   else if ( NukeFlash_Status == 2 /*0x53a736*/
          && NukeFlash_Duration != -1
-         && NukeFlash_Duration + NukeFlash_StartTime < *(int *)((char *)&stru_A8EB00 + 416) )
+         && NukeFlash_Duration + NukeFlash_StartTime < dword_A8ED84 )
   {
     NukeFlash_Status = 0; /*0x53a738*/
   }

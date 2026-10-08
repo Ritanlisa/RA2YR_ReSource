@@ -2912,7 +2912,7 @@ int E4Recv_68F8A0::sub_68F8A0()
     *(unsigned int *)(v4 + 28) = 0; /*0x68f922*/
     *(unsigned int *)(v4 + 32) = 0; /*0x68f925*/
     *(unsigned char *)(v4 + 36) = 0; /*0x68f928*/
-    *(unsigned int *)v4 = (unsigned int)&vt_ScorePrintClass;
+    *(unsigned int *)v4 = (unsigned int)&vt_ScorePrintClass; /*0x68f92b*/
   }
   else
   {

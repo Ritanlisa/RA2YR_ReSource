@@ -1676,7 +1676,7 @@ if ( !(*(int (**)(unsigned int, char *, void *))(**((unsigned int **)this + 10) 
 LABEL_60:
         if ( *(unsigned int *)&dword_A8B238 == 4 /*0x541f4a*/
           && !dword_A8E7AC
-          && *(int *)((char *)&stru_A8EB00 + 416) > 8
+          && dword_A8ED84 > 8
           && !byte_A8DBA0
           && (unsigned int)Network_field_0xC > 0xF
           && v25 == 1
@@ -5643,7 +5643,7 @@ void sub_64D990()
     do /*0x64d9d5*/
     {
       if ( (*((unsigned char *)((char *)&FootClass_Array + 1) + 111 * grindingAnimHandle + 1) & 1) == 0 /*0x64d9bd*/
-        && *(int *)((char *)&stru_A8EB00 + 416) <= *(int *)((char *)((char *)&FootClass_Array + 1) + 111 * grindingAnimHandle + 3) )
+        && dword_A8ED84 <= *(int *)((char *)((char *)&FootClass_Array + 1) + 111 * grindingAnimHandle + 3) )
       {
         break; /*0x64d9bd*/
       }

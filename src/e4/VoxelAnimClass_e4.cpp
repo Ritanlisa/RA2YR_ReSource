@@ -987,7 +987,7 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
   this->VoxelAnimClass_field_0x0 = (unsigned int)(&vt_WaveClass); /*0x75ecaa*/
   this->VoxelAnimClass_field_0x4[0] = (int)&vt_WaveClass; /*0x75ecb0*/
   this->VoxelAnimClass_field_0x8 = (unsigned int)&vt_WaveClass; /*0x75ecb7*/
-  *(unsigned int *)this->__pad_C = (unsigned int)&off_7F6BC8;
+  *(unsigned int *)this->__pad_C = (unsigned int)&off_7F6BC8; /*0x75ecbe*/
   if ( *(int *)((char *)&stru_A8EB00 + 100) < *(int *)((char *)&stru_A8EB00 + 92) /*0x75ecfb*/
     || (*((unsigned int *)((char *)&stru_A8EB00 + 97)) || !*(unsigned int *)((char *)&stru_A8EB00 + 92))
     && *(int *)((char *)&stru_A8EB00 + 104) > 0
@@ -997,7 +997,7 @@ int VoxelAnimClass::Constructor(void *a1, void *a2, void *a3, void *a4, void *a5
 
   {
     v2 = (*(unsigned int *)((char *)&stru_A8EB00 + 100))++; /*0x75ed08*/
-    *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v2) = (unsigned int)this;
+    *(unsigned int *)(*(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v2) = (unsigned int)this; /*0x75ed17*/
   }
   if ( !byte_B725CC ) /*0x75ed20*/
     ((Voxel *)v4)->InitDistanceTable(); /*0x75ed22*/

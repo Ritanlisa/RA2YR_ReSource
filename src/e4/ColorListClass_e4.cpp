@@ -91,7 +91,7 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
 
   v3 = *((unsigned int *)this + 93); /*0x488f05*/
   v4 = (char *)this + 372; /*0x488f0b*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ColorListClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_ColorListClass; /*0x488f13*/
   (*(void (**)(char *))(v3 + 12))((char *)this + 372); /*0x488f19*/
   *((unsigned int *)this + 100) = 0; /*0x488f1e*/
   v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/

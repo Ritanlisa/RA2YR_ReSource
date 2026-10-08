@@ -117,7 +117,7 @@ unsigned int * TerrainTileDataConstructor(void *a1, int a2)
 
     {
       v6 = g_MissionQueueFrame.briefing[342]++; /*0x58c04e*/
-      *(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v6) = (unsigned int)self;
+      *(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v6) = (unsigned int)self; /*0x58c05d*/
     }
     return self->__pad_0; /*0x58c062*/
 }
@@ -8076,7 +8076,7 @@ AbstractClass * * RegenerateRandomMapPreview()
         *(unsigned int *)v17.CDFileClass = (unsigned int)(void*)&CCFileClass_vftable; /*0x5b9e9a*/
         v19 = 0; /*0x5b9ea2*/
         Vector::Clear((int)v18); /*0x5b9eaa*/
-        *(unsigned int *)v17.CDFileClass = (unsigned int)&off_7E1668;
+        *(unsigned int *)v17.CDFileClass = (unsigned int)&off_7E1668; /*0x5b9eb3*/
         ((BufferIOFileClass *)&v17)->Dtor(); /*0x5b9ebb*/
         if ( v13 ) /*0x5b9ec2*/
         {

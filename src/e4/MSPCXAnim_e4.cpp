@@ -98,7 +98,7 @@ MSPCXAnim * MSPCXAnim::QueryInterface(char a2, int a3)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 9); /*0x5ced73*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSPCXAnim;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSPCXAnim; /*0x5ced76*/
   if ( v3 ) /*0x5ced7e*/
     (**v3)((unsigned int)v3, 1); /*0x5ced84*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_MSAnim;
@@ -987,7 +987,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Bl
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d1713*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d1716*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d1720*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1728*/
@@ -1010,7 +1010,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned in
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d17b3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d17b6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d17c0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d17c8*/
@@ -1033,7 +1033,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned i
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d1853*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d1856*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d1860*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1868*/
@@ -1056,7 +1056,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(unsigned in
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d18a3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d18a6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d18b0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d18b8*/
@@ -1079,7 +1079,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d18f3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d18f6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d1900*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1908*/
@@ -1102,7 +1102,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d1943*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d1946*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d1950*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1958*/
@@ -1125,7 +1125,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(unsigned in
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d1993*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d1996*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d19a0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d19a8*/
@@ -1148,7 +1148,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(unsigned int
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5d1a33*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x5d1a36*/
   if ( v3 && BYTE1(this->m_C) ) /*0x5d1a40*/
   {
     __3_YAXPAX_Z(v3); /*0x5d1a48*/

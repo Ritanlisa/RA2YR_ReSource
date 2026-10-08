@@ -1333,7 +1333,7 @@ void * sub_406760(void *a1)
   if ( dword_87E298 )
   {
     sprintf(Buffer, "AudioEvents : %05d - Max: %05d", dword_87E28C, dword_87E290);
-    ((void (*)(char *))a1)(Buffer);
+    ((void (*)(char *))a1)(Buffer); /*0x406795*/
     sprintf(Buffer, "StaticSounds: %05d - Max: %05d", dword_B1D3A8, dword_B1D3AC);
     return ((void *(*)(char *))this)(Buffer); /*0x4067ba*/
   }
@@ -1400,10 +1400,10 @@ LABEL_11:
     g_MixerChannel_SFX = (unsigned int)(ObjectClass *)&g_Audio_Enabled->__pad_5C[12]; /*0x406c4c*/
     v3 = (unsigned int *)((CCFileClass*)&v14)->Construct((char *)("AUDIOMD.MIX" /*w16g4 aAudiomdMix*/)); /*0x406c51*/
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))( (unsigned int *)(v3), 0); /*0x406c65*/
-    *(unsigned int *)v14.CDFileClass = (unsigned int)&vt_CCFileClass;
+    *(unsigned int *)v14.CDFileClass = (unsigned int)&vt_CCFileClass; /*0x406c67*/
     v16 = 0; /*0x406c6f*/
     ((Vector *)((int)v15))->Clear((int)((Vector *)((int)v15))); /*0x406c76*/
-    *(unsigned int *)v14.CDFileClass = (unsigned int)&off_7E1668;
+    *(unsigned int *)v14.CDFileClass = (unsigned int)&off_7E1668; /*0x406c7f*/
     ((BufferIOFileClass *)((BufferIOFileClass *)&v14))->Dtor(); /*0x406c87*/
     if ( v4 ) /*0x406c91*/
     {
@@ -7228,7 +7228,7 @@ GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
   int Previous; // ecx
   int v4; // eax
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_GenericNode;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_GenericNode; /*0x40e397*/
   if ( this ) /*0x40e39d*/
   {
     Previous = (unsigned int)this->Previous; /*0x40e39f*/

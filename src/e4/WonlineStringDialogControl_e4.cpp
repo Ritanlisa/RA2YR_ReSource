@@ -337,7 +337,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x7ad373*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x7ad376*/
   if ( v3 && BYTE1(this->m_C) ) /*0x7ad380*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad388*/
@@ -360,7 +360,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x7ad3c3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x7ad3c6*/
   if ( v3 && BYTE1(this->m_C) ) /*0x7ad3d0*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad3d8*/

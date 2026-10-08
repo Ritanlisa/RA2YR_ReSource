@@ -422,7 +422,7 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a428*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlphaZRead;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_BlitTransXlatAlphaZRead; /*0x49a42b*/
   FractalNoise::Dtor( (void *)(m_8)); /*0x49a432*/
   this->m_8 = 0; /*0x49a43b*/
   *(unsigned int *)this->__pad_0 = (unsigned int)&vt_Blitter;

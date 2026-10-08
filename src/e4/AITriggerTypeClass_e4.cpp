@@ -673,7 +673,7 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
   int v3; // eax
   AITriggerTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_AITriggerTypeClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_AITriggerTypeClass; /*0x41fffd*/
   this->AITriggerTypeClass_field_0x04 = (int)&vt_AITriggerTypeClass; /*0x420003*/
   this->AITriggerTypeClass_field_0x08 = (int)&vt_AITriggerTypeClass; /*0x42000a*/
   this->AITriggerTypeClass_field_0x0C = (int)&vt_AITriggerTypeClass; /*0x420011*/
@@ -971,7 +971,7 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x420633*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x420636*/
   if ( v3 && BYTE1(this->m_C) ) /*0x420640*/
   {
     __3_YAXPAX_Z(v3); /*0x420648*/
@@ -994,7 +994,7 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x420683*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass; /*0x420686*/
   if ( v3 && BYTE1(this->m_C) ) /*0x420690*/
   {
     __3_YAXPAX_Z(v3); /*0x420698*/
