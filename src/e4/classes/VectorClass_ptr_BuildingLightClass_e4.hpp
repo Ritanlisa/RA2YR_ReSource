@@ -19,8 +19,8 @@ struct VectorClass_ptr_BuildingLightClass {
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_BuildingLightClass___(unsigned int * Block, char a2);  // 0x4EF7B0
     DynamicVector * Constructor_VectorClass_ParticleSystemClass___(unsigned int * Block, char a2);  // 0x4EFBC0
-    int Destroy(void *a1_1);  // 0x4E8410
-    unsigned int GetItemIndex(int a2);  // 0x4E8440
+    int Get(void *a1_1);  // 0x4E8410
+    unsigned int Get(int a2);  // 0x4E8440
     int Get(int a2, void *a2_2);  // 0x4E8460
     void Destroy_0();  // 0x4E8660
     unsigned int GetItemIndex_0(int a2);  // 0x4E8690
@@ -33,6 +33,6 @@ struct VectorClass_ptr_BuildingLightClass {
     int FindItemIndex(unsigned int * a2);  // 0x4E9DB0
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EACC0
     int FindItemIndex_0(unsigned int * a2);  // 0x4EAD70
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EF760
+    VectorClass_flat * Constructor_VectorClass_BuildingLightClass___(unsigned int * Block, char a2);  // 0x4EF760
 };
 } // namespace gamemd

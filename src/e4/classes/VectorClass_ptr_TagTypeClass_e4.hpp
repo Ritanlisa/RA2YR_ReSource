@@ -17,17 +17,17 @@ struct VectorClass_ptr_TagTypeClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Destroy(void *a1_1);  // 0x6E64E0
-    unsigned int GetItemIndex(int a2);  // 0x6E6510
+    int Get(void *a1_1);  // 0x6E64E0
+    unsigned int Get(int a2);  // 0x6E6510
     int Get(int a2, void *a2_2);  // 0x6E6530
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x6E6540
-    char Release(int a2, unsigned int * a3);  // 0x6E6580
-    void Remove(void *a1_1);  // 0x6E6630
-    int GetSize(unsigned int * a2);  // 0x6E6660
-    unsigned int LoadTypeData(int a2);  // 0x6E66A0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x6E66C0
-    int FindItemIndex(unsigned int * a2);  // 0x6E6770
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6E67A0
+    char Constructor_VectorClass_TagTypeClass___(int a2, void *a2_2, void *a3_1);  // 0x6E6540
+    char Constructor_VectorClass_TagTypeClass___(int a2, unsigned int * a3);  // 0x6E6580
+    void Constructor_VectorClass_TagTypeClass___(void *a1_1);  // 0x6E6630
+    int Constructor_VectorClass_TagTypeClass___(unsigned int * a2);  // 0x6E6660
+    unsigned int Constructor_VectorClass_TagTypeClass___(int a2);  // 0x6E66A0
+    char Constructor_VectorClass_TagTypeClass___(int a2, unsigned int * a3);  // 0x6E66C0
+    int Constructor_VectorClass_TagTypeClass___(unsigned int * a2);  // 0x6E6770
+    VectorClass_flat * Constructor_VectorClass_TagTypeClass___(unsigned int * Block, char a2);  // 0x6E67A0
     DynamicVector * Constructor_VectorClass_TagTypeClass___(unsigned int * Block, char a2);  // 0x6E67F0
 };
 } // namespace gamemd

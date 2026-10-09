@@ -31,8 +31,8 @@ struct VectorClass_UAngerStruct {
     unsigned int GetCapacity(int a2);  // 0x50F050
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x50F070
     int FindItemIndex_0(unsigned int * a2);  // 0x50F170
-    DynamicVector * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x5100E0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x510130
+    DynamicVector * Constructor_VectorClass_AngerStruct_(unsigned int * Block, char a2, void *a3_1);  // 0x5100E0
+    VectorClass_flat * Constructor_VectorClass_AngerStruct_(unsigned int * Block, char a2);  // 0x510130
     DynamicVector * Constructor_VectorClass_AngerStruct_(unsigned int * Block, char a2);  // 0x510180
 };
 } // namespace gamemd

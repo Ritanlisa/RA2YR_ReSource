@@ -17,13 +17,13 @@ struct VectorClass_N {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Destroy(void *a1_1);  // 0x5AC5F0
+    int Clear(void *a1_1);  // 0x5AC5F0
     char Release(int a2, unsigned int * a3);  // 0x5AD130
     char SetCapacity(int a2, unsigned int * a3);  // 0x5AD290
     int FindItemIndex(double * a2);  // 0x5AD350
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5AD5C0
+    VectorClass_flat * Constructor_VectorClass_double_(unsigned int * Block, char a2);  // 0x5AD5C0
     DynamicVector * Constructor_VectorClass_double_(unsigned int * Block, char a2);  // 0x5AD610
-    unsigned int GetItemIndex(int a2);  // 0x5AC620
+    unsigned int Clear(int a2);  // 0x5AC620
     double Clear(int a2);  // 0x5AC640
     char AddRef(int a2);  // 0x5AD0F0
     wchar_t * ddtor(void *a1_1);  // 0x5AD1F0

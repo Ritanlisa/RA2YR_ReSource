@@ -17,8 +17,8 @@ struct VectorClass_ptr_TubeClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Destroy(void *a1_1);  // 0x4E8600
-    unsigned int GetItemIndex(int a2);  // 0x4E8630
+    int Get(void *a1_1);  // 0x4E8600
+    unsigned int Get(int a2);  // 0x4E8630
     int Get(int a2, void *a2_2);  // 0x4E8650
     void Destroy_0();  // 0x4E86C0
     unsigned int GetItemIndex_0(int a2);  // 0x4E86F0
@@ -35,7 +35,7 @@ struct VectorClass_ptr_TubeClass {
     int FindItemIndex_0(unsigned int * a2);  // 0x4EAFD0
     char SetCapacity_1(int a2, unsigned int * a3);  // 0x4EB180
     int FindItemIndex_1(unsigned int * a2);  // 0x4EB230
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EFAD0
+    VectorClass_flat * Constructor_VectorClass_TubeClass___(unsigned int * Block, char a2);  // 0x4EFAD0
     DynamicVector * Constructor_VectorClass_TubeClass___(unsigned int * Block, char a2);  // 0x4EFB20
     DynamicVector * Constructor_VectorClass_WaveClass___(unsigned int * Block, char a2);  // 0x4EFC60
     DynamicVector * Constructor_VectorClass_OverlayClass___(unsigned int * Block, char a2);  // 0x4EFD00

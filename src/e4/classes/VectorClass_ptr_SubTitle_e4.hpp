@@ -17,12 +17,12 @@ struct VectorClass_ptr_SubTitle {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Destroy(void *a1_1);  // 0x6CA7C0
-    unsigned int GetItemIndex(int a2);  // 0x6CA7F0
+    int Get(void *a1_1);  // 0x6CA7C0
+    unsigned int Get(int a2);  // 0x6CA7F0
     int Get(int a2, void *a2_2);  // 0x6CA810
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x6CA820
-    char SetCapacity(int a2, unsigned int * a3);  // 0x6CA860
-    int FindItemIndex(unsigned int * a2);  // 0x6CA910
+    char Constructor_VectorClass_SubTitle___(int a2, void *a2_2, void *a3_1);  // 0x6CA820
+    char Constructor_VectorClass_SubTitle___(int a2, unsigned int * a3);  // 0x6CA860
+    int Constructor_VectorClass_SubTitle___(unsigned int * a2);  // 0x6CA910
     DynamicVector * Constructor_VectorClass_SubTitle___(unsigned int * Block, char a2);  // 0x6CA9C0
     char Release(int a2, unsigned int * a3);  // 0x6CAA10
     void Remove(void *a1_1);  // 0x6CAAC0

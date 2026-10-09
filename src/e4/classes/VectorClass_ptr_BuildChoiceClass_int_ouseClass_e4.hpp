@@ -134,9 +134,9 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     AbstractClass * * Release(int a2, unsigned int * a3);  // 0x50F520
     AbstractClass * * SetCapacity_6(int a2, unsigned int * a3);  // 0x50F660
     int StubReturnNullPointer_0(int a1, const void * a2, unsigned int * a3);  // 0x502550
-    void * GetItemIndex_0(int a2);  // 0x4F6930
+    void * GetItem(int a2);  // 0x4F6930
     bool GetItemIndex(int a1);  // 0x4F6910
-    BSTR FindItemIndex(int a1);  // 0x4F6950
+    BSTR GetItem(int a1);  // 0x4F6950
     long long FindItemIndex_0(int a1);  // 0x4F6990
     int Destroy(int a1);  // 0x4F69D0
     int GetItem(HouseClass * a1);  // 0x4F6A00
@@ -152,7 +152,7 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     int GetSize(unsigned int * a2);  // 0x50F600
     unsigned int GetCapacity(int a2);  // 0x50F640
     int FindItemIndex_1(unsigned int * a2);  // 0x50F710
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x510270
+    VectorClass_flat * loc_5102C0(unsigned int * Block, char a2);  // 0x510270
     unsigned int * loc_5102C0(unsigned int * Block, char a2);  // 0x5102C0
     int GetItem_2(int a1, const void * a2, unsigned int * a3);  // 0x510A50
     int GetItem_3(int a1);  // 0x510A60

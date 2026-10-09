@@ -18,8 +18,8 @@ struct VectorClass_ptr_CampaignClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_CampaignClass___(unsigned int * Block, char a2);  // 0x4F0200
-    int Destroy(void *a1_1);  // 0x4E8A20
-    unsigned int GetItemIndex(int a2);  // 0x4E8A50
+    int Get(void *a1_1);  // 0x4E8A20
+    unsigned int Get(int a2);  // 0x4E8A50
     int Get(int a2, void *a2_2);  // 0x4E8A70
     void Destroy_0();  // 0x4E8A80
     unsigned int GetItemIndex_0(int a2);  // 0x4E8AB0
@@ -32,7 +32,7 @@ struct VectorClass_ptr_CampaignClass {
     int FindItemIndex(unsigned int * a2);  // 0x4EC530
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EC6E0
     int FindItemIndex_0(unsigned int * a2);  // 0x4EC790
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F01B0
+    VectorClass_flat * Constructor_VectorClass_CampaignClass___(unsigned int * Block, char a2);  // 0x4F01B0
     DynamicVector * Constructor_VectorClass_SideClass___(unsigned int * Block, char a2);  // 0x4F02A0
 };
 } // namespace gamemd

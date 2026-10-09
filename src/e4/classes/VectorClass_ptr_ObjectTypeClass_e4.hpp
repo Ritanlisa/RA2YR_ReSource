@@ -18,16 +18,16 @@ struct VectorClass_ptr_ObjectTypeClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_ObjectTypeClass___(unsigned int * Block, char a2);  // 0x5F9E30
-    int Destroy(void *a1_1);  // 0x5F9B00
-    unsigned int GetItemIndex(int a2);  // 0x5F9B30
+    int Get(void *a1_1);  // 0x5F9B00
+    unsigned int Get(int a2);  // 0x5F9B30
     int Get(int a2, void *a2_2);  // 0x5F9B50
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x5F9B80
-    char Release(int a2, unsigned int * a3);  // 0x5F9BC0
-    void Remove(void *a1_1);  // 0x5F9C70
-    int GetSize(unsigned int * a2);  // 0x5F9CA0
-    unsigned int LoadTypeData(int a2);  // 0x5F9CE0
-    char SetCapacity(int a2, unsigned int * a3);  // 0x5F9D00
-    int FindItemIndex(unsigned int * a2);  // 0x5F9DB0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5F9DE0
+    char Constructor_VectorClass_ObjectTypeClass___(int a2, void *a2_2, void *a3_1);  // 0x5F9B80
+    char Constructor_VectorClass_ObjectTypeClass___(int a2, unsigned int * a3);  // 0x5F9BC0
+    void Constructor_VectorClass_ObjectTypeClass___(void *a1_1);  // 0x5F9C70
+    int Constructor_VectorClass_ObjectTypeClass___(unsigned int * a2);  // 0x5F9CA0
+    unsigned int Constructor_VectorClass_ObjectTypeClass___(int a2);  // 0x5F9CE0
+    char Constructor_VectorClass_ObjectTypeClass___(int a2, unsigned int * a3);  // 0x5F9D00
+    int Constructor_VectorClass_ObjectTypeClass___(unsigned int * a2);  // 0x5F9DB0
+    VectorClass_flat * Constructor_VectorClass_ObjectTypeClass___(unsigned int * Block, char a2);  // 0x5F9DE0
 };
 } // namespace gamemd

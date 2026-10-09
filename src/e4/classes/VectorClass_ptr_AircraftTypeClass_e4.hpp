@@ -19,8 +19,8 @@ struct VectorClass_ptr_AircraftTypeClass {
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_AircraftTypeClass___(unsigned int * Block, char a2);  // 0x4F0840
     DynamicVector * Constructor_VectorClass_UnitTypeClass___(unsigned int * Block, char a2);  // 0x4F08E0
-    int Destroy(void *a1_1);  // 0x4E8DE0
-    unsigned int GetItemIndex(int a2);  // 0x4E8E10
+    int Get(void *a1_1);  // 0x4E8DE0
+    unsigned int Get(int a2);  // 0x4E8E10
     int Get(int a2, void *a2_2);  // 0x4E8E30
     void Destroy_0();  // 0x4E8E40
     unsigned int GetItemIndex_0(int a2);  // 0x4E8E70
@@ -33,6 +33,6 @@ struct VectorClass_ptr_AircraftTypeClass {
     int FindItemIndex(unsigned int * a2);  // 0x4EDCF0
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EDEA0
     int FindItemIndex_0(unsigned int * a2);  // 0x4EDF50
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4F07F0
+    VectorClass_flat * Constructor_VectorClass_AircraftTypeClass___(unsigned int * Block, char a2);  // 0x4F07F0
 };
 } // namespace gamemd

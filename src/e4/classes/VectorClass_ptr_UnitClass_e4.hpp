@@ -17,8 +17,8 @@ struct VectorClass_ptr_UnitClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Destroy(void *a1_1);  // 0x4E88A0
-    unsigned int GetItemIndex(int a2);  // 0x4E88D0
+    int Get(void *a1_1);  // 0x4E88A0
+    unsigned int Get(int a2);  // 0x4E88D0
     int Get(int a2, void *a2_2);  // 0x4E88F0
     void Destroy_0();  // 0x4E8900
     unsigned int GetItemIndex_0(int a2);  // 0x4E8930
@@ -31,7 +31,7 @@ struct VectorClass_ptr_UnitClass {
     int FindItemIndex(unsigned int * a2);  // 0x4EBBB0
     char SetCapacity_0(int a2, unsigned int * a3);  // 0x4EBD60
     int FindItemIndex_0(unsigned int * a2);  // 0x4EBE10
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EFF30
+    VectorClass_flat * Constructor_VectorClass_UnitClass___(unsigned int * Block, char a2);  // 0x4EFF30
     DynamicVector * Constructor_VectorClass_UnitClass___(unsigned int * Block, char a2);  // 0x4EFF80
     DynamicVector * Constructor_VectorClass_HouseClass___(unsigned int * Block, char a2);  // 0x4F0020
 };

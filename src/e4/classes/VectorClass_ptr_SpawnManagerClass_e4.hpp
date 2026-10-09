@@ -18,16 +18,16 @@ struct VectorClass_ptr_SpawnManagerClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_SpawnManagerClass___(unsigned int * Block, char a2);  // 0x6B8830
-    int Destroy(void *a1_1);  // 0x6B81C0
-    unsigned int GetItemIndex(int a2);  // 0x6B81F0
+    int Get(void *a1_1);  // 0x6B81C0
+    unsigned int Get(int a2);  // 0x6B81F0
     int Get(int a2, void *a2_2);  // 0x6B8210
-    char Add(int a2, void *a2_2, void *a3_1);  // 0x6B84E0
-    char Release(int a2, unsigned int * a3);  // 0x6B8520
-    void Remove(void *a1_1);  // 0x6B85D0
-    int GetSize(unsigned int * a2);  // 0x6B8600
-    unsigned int GetCapacity(int a2);  // 0x6B8640
-    char SetCapacity(int a2, unsigned int * a3);  // 0x6B8660
-    int FindItemIndex(unsigned int * a2);  // 0x6B8710
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6B87E0
+    char Constructor_VectorClass_SpawnManagerClass___(int a2, void *a2_2, void *a3_1);  // 0x6B84E0
+    char Constructor_VectorClass_SpawnManagerClass___(int a2, unsigned int * a3);  // 0x6B8520
+    void Constructor_VectorClass_SpawnManagerClass___(void *a1_1);  // 0x6B85D0
+    int Constructor_VectorClass_SpawnManagerClass___(unsigned int * a2);  // 0x6B8600
+    unsigned int Constructor_VectorClass_SpawnManagerClass___(int a2);  // 0x6B8640
+    char Constructor_VectorClass_SpawnManagerClass___(int a2, unsigned int * a3);  // 0x6B8660
+    int Constructor_VectorClass_SpawnManagerClass___(unsigned int * a2);  // 0x6B8710
+    VectorClass_flat * Constructor_VectorClass_SpawnManagerClass___(unsigned int * Block, char a2);  // 0x6B87E0
 };
 } // namespace gamemd

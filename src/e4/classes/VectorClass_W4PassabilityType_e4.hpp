@@ -17,8 +17,8 @@ struct VectorClass_W4PassabilityType {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    int Destroy(void *a1_1);  // 0x588F00
-    unsigned int GetItemIndex(int a2);  // 0x588F30
+    int Clear(void *a1_1);  // 0x588F00
+    unsigned int Clear(int a2);  // 0x588F30
     int Clear(int a2);  // 0x588F50
     void Destroy_0();  // 0x588F60
     unsigned int GetItemIndex_0(int a2);  // 0x588F90
@@ -26,18 +26,18 @@ struct VectorClass_W4PassabilityType {
     unsigned int GetItemIndex_1(int a2);  // 0x589000
     char AddRef(int a2);  // 0x589EB0
     char Release(int a2, unsigned int * a3);  // 0x589EF0
-    wchar_t * ddtor(void *a1_1);  // 0x589FA0
-    int GetSize(unsigned int * a2);  // 0x589FD0
-    unsigned int GetCapacity(int a2);  // 0x58A010
-    char SetCapacity(int a2, unsigned int * a3);  // 0x58A030
-    int FindItemIndex(unsigned int * a2);  // 0x58A0E0
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x58A150
-    int FindItemIndex_0(unsigned int * a2);  // 0x58A230
+    wchar_t * SetCapacity_1(void *a1_1);  // 0x589FA0
+    int SetCapacity_1(unsigned int * a2);  // 0x589FD0
+    unsigned int SetCapacity_1(int a2);  // 0x58A010
+    char SetCapacity_1(int a2, unsigned int * a3);  // 0x58A030
+    int SetCapacity_1(unsigned int * a2);  // 0x58A0E0
+    char SetCapacity_1(int a2, unsigned int * a3);  // 0x58A150
+    int SetCapacity_1(unsigned int * a2);  // 0x58A230
     char SetCapacity_1(int a2, char * a3);  // 0x58A2A0
-    int FindItemIndex_1(unsigned int * a2);  // 0x58A3A0
-    char * Constructor(unsigned int * Block, char a2, void *a3_1);  // 0x58A630
+    int Constructor_0(unsigned int * a2);  // 0x58A3A0
+    char * Constructor_0(unsigned int * Block, char a2, void *a3_1);  // 0x58A630
     char * Constructor_0(unsigned int * Block, char a2, void *a3_1);  // 0x58A840
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x58AA90
+    VectorClass_flat * Constructor_1(unsigned int * Block, char a2);  // 0x58AA90
     DynamicVector * Constructor_1(unsigned int * Block, char a2);  // 0x58AAE0
 };
 } // namespace gamemd

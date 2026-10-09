@@ -26,7 +26,7 @@ struct VectorClass_ptr_MapRegionClass {
     unsigned int GetCapacity(int a2);  // 0x5AC800
     char SetCapacity(int a2, unsigned int * a3);  // 0x5AC820
     int FindItemIndex(unsigned int * a2);  // 0x5AC8D0
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5AD390
+    VectorClass_flat * loc_5AD3E0(unsigned int * Block, char a2);  // 0x5AD390
     unsigned int * loc_5AD3E0(unsigned int * Block, char a2);  // 0x5AD3E0
 };
 } // namespace gamemd

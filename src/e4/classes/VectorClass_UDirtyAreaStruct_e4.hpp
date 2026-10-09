@@ -24,15 +24,15 @@ struct VectorClass_UDirtyAreaStruct {
     int Clear(int a2, int a3);  // 0x6DC540
     void Destroy_0();  // 0x6DC580
     unsigned int GetItemIndex_0(int a2);  // 0x6DC5B0
-    char AddRef(int a2);  // 0x6DC5E0
-    char Release(int a2, char * a3);  // 0x6DC660
-    wchar_t * ddtor(void *a1_1);  // 0x6DC780
+    char GetSize(int a2);  // 0x6DC5E0
+    char GetSize(int a2, char * a3);  // 0x6DC660
+    wchar_t * GetSize(void *a1_1);  // 0x6DC780
     int GetSize(int a2);  // 0x6DC7B0
-    unsigned int GetCapacity(int a2);  // 0x6DC820
+    unsigned int FindItemIndex(int a2);  // 0x6DC820
     int FindItemIndex(int a2);  // 0x6DC970
-    char SetCapacity_0(int a2, unsigned int * a3);  // 0x6DCB50
-    int FindItemIndex_0(unsigned int * a2);  // 0x6DCC00
-    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6DCC30
+    char loc_6DCC80(int a2, unsigned int * a3);  // 0x6DCB50
+    int loc_6DCC80(unsigned int * a2);  // 0x6DCC00
+    VectorClass_flat * loc_6DCC80(unsigned int * Block, char a2);  // 0x6DCC30
     unsigned int * loc_6DCC80(unsigned int * Block, char a2);  // 0x6DCC80
 };
 } // namespace gamemd
