@@ -2135,7 +2135,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           if ( (&stru_A8EB00)[440] ) /*0x54f958*/
             goto LABEL_45; /*0x54f958*/
           v11 = this->u32_318 - this->u32_314; /*0x54f971*/
-          if ( (int)(256 - ((IDA_HIDWORD(v11) ^ v11) - IDA_HIDWORD(v11))) >= 3 ) /*0x54f97b*/
+          if ( (int)(256 - (((unsigned int)((v11) >> 32) ^ v11) - (unsigned int)((v11) >> 32))) >= 3 ) /*0x54f97b*/
           {
             EventClass::Enqueue((EventClass *)this, 1u, 0); /*0x54f983*/
             if ( !(uint8_t)EventQueue::CheckPosition((EventQueue *)this) ) /*0x54f98a*/
@@ -2147,7 +2147,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
           if ( (&stru_A8EB00)[440] ) /*0x54f9b2*/
             goto LABEL_45; /*0x54f9b2*/
           v12 = this->u32_318 - this->u32_314; /*0x54f9c6*/
-          if ( (int)(256 - ((IDA_HIDWORD(v12) ^ v12) - IDA_HIDWORD(v12))) < 3 ) /*0x54f9d5*/
+          if ( (int)(256 - (((unsigned int)((v12) >> 32) ^ v12) - (unsigned int)((v12) >> 32))) < 3 ) /*0x54f9d5*/
             goto LABEL_45; /*0x54f9d5*/
           EventClass::Enqueue((EventClass *)this, 1u, 1); /*0x54f9e1*/
           if ( !(uint8_t)EventQueue::CheckPosition((EventQueue *)this) ) /*0x54f9e8*/
@@ -2224,7 +2224,7 @@ int InputManager::WndProc(HWND hWnd, UINT Msg, WPARAM wParam, unsigned int lPara
             if ( !(&stru_A8EB00)[440] ) /*0x54f870*/
             {
               v8 = this->u32_318 - this->u32_314; /*0x54f889*/
-              if ( (int)(256 - ((IDA_HIDWORD(v8) ^ v8) - IDA_HIDWORD(v8))) >= 2 ) /*0x54f893*/
+              if ( (int)(256 - (((unsigned int)((v8) >> 32) ^ v8) - (unsigned int)((v8) >> 32))) >= 2 ) /*0x54f893*/
               {
                 EventClass::Enqueue((EventClass *)this, 0xAu, 0); /*0x54f89f*/
                 EventBuffer::Enqueue((EventBuffer *)this, (uint8_t)wParam); /*0x54f8af*/

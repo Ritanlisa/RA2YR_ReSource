@@ -603,24 +603,17 @@ retn    0Ch
 */
 
 // 0x542430: Network::GetField
-void NetworkGetField(int port) {
-}
-}
 // 0x542430
-{
-  int result; // eax
-  int16_t v3; // dx
-  (result) = ((result) & ~0xFFFF) | ((unsigned int)(a2) & 0xFFFF);
-  {
+static unsigned short g_NetworkGetField_sink; /*原 this->Network_field_0x22 (cmdline 自由调用形无 this, 值井升全局)*/
+int NetworkGetField(unsigned short a2) {
     int result; // eax
-    int16_t v3; // dx
+    short v3; // dx
 
-    (result) = ((result) & ~0xFFFF) | ((unsigned int)(result) & 0xFFFF); /*0x542430*/
-    IDA_LOBYTE(v3) = (((unsigned int)(result) >> 24) & 0xFF); /*0x542437*/
-    IDA_HIBYTE(v3) = result; /*0x542439*/
-    *(unsigned short *)this->Network_field_0x22 = v3; /*0x54243b*/
+    result = (result & 0xFFFF0000u) | ((unsigned int)(a2) & 0xFFFFu); /*0x542430*/
+    v3 = (short)(((unsigned int)result >> 24) | ((result & 0xFF) << 8)); /*0x542437-39 LOBYTE=byte3, HIBYTE=byte0*/
+    g_NetworkGetField_sink = (unsigned short)v3; /*0x54243b*/
     return result; /*0x54243f*/
-  }
+}
     (void)mode;
     // Simplified: just sleep briefly to simulate fade timing
     // Full impl: DSurface::Lock -> palette blend -> Unlock -> Flip, ~400B of loop

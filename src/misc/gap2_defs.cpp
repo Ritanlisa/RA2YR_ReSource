@@ -1703,8 +1703,8 @@ int RulesClass::ReadCountryList() {
       v7 = INIClass::ReadInt_Overwrite((bool *)v19->__pad_0, aRadiation, aRadlightdelay, this->ColorAdd[0]); /*0x66d030*/
       v8 = this->ColorAdd[2]; /*0x66d035*/
       this->ColorAdd[0] = v7; /*0x66d03b*/
-      IDA_HIDWORD(v16) = v8; /*0x66d04d*/
-      IDA_LODWORD(v16) = this->ColorAdd[1]; /*0x66d04e*/
+      v16 = ((v16) & 0xFFFFFFFFull) | (((unsigned long long)(v8) & 0xFFFFFFFFull) << 32); /*0x66d04d*/
+      v16 = this->ColorAdd[1]; /*0x66d04e*/
       INIClass::ReadDouble_Overwrite((double *)v19->__pad_0, aRadiation, aRadlevelfactor, v16); /*0x66d057*/
       v9 = *(double *)&this->ColorAdd[3]; /*0x66d062*/
       __asm { fstp qword ptr [esi+1818h] } /*0x66d068*/
@@ -5600,8 +5600,8 @@ int RulesClass::ReadMultiplayerDefaults() {
                             (int)v93[2],
                             v94,
                             v95,
-                            IDA_SLODWORD(v96),
-                            IDA_SHIDWORD(v96));
+                            ((int)(v96)),
+                            (int)((v96) >> 32));
       Rules::CopyDataArray((Rules *)this->AttackInterval, IntList); /*0x673314*/
       v14 = (int)IntList[6]; /*0x67331d*/
       *(unsigned int *)v98.__pad_0 = (unsigned int)(void *)&VectorClass_int_vftable; /*0x673320*/
@@ -5871,16 +5871,16 @@ int RulesClass::ReadMultiplayerDefaults() {
       v39 = INIClass::ReadInt_Overwrite((bool *)v103, (unsigned __int8 *)aAi, aBasesizeadd, v38); /*0x673ac5*/
       v40 = *(unsigned int *)&this->__pad_C3C[1260]; /*0x673aca*/
       *(unsigned int *)&this->__pad_C3C[1268] = v39; /*0x673ad0*/
-      IDA_HIDWORD(v96) = *(unsigned int *)&this->__pad_C3C[1264]; /*0x673ae2*/
-      IDA_LODWORD(v96) = v40; /*0x673ae3*/
+      v96 = ((v96) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)&this->__pad_C3C[1264]) & 0xFFFFFFFFull) << 32); /*0x673ae2*/
+      v96 = v40; /*0x673ae3*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aRefineryratio, v96); /*0x673aec*/
       v41 = *(unsigned int *)&this->__pad_C3C[1256]; /*0x673af1*/
       __asm { fstp qword ptr [esi+1128h] } /*0x673af7*/
       *(double *)&this->__pad_C3C[1260] = _RT1; /*0x673af7*/
       v43 = INIClass::ReadInt_Overwrite((bool *)v103, (unsigned __int8 *)aAi, aRefinerylimit, v41); /*0x673b0c*/
-      IDA_HIDWORD(v44) = *(unsigned int *)&this->__pad_C3C[1248]; /*0x673b11*/
+      v44 = ((v44) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)&this->__pad_C3C[1248]) & 0xFFFFFFFFull) << 32); /*0x673b11*/
       *(unsigned int *)&this->__pad_C3C[1256] = v43; /*0x673b17*/
-      IDA_LODWORD(v44) = *(unsigned int *)&this->__pad_C3C[1244]; /*0x673b1d*/
+      v44 = *(unsigned int *)&this->__pad_C3C[1244]; /*0x673b1d*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aBarracksratio, v44); /*0x673b33*/
       v45 = *(unsigned int *)&this->__pad_C3C[1252]; /*0x673b38*/
       __asm { fstp qword ptr [esi+1118h] } /*0x673b40*/
@@ -5900,16 +5900,16 @@ int RulesClass::ReadMultiplayerDefaults() {
       v52 = INIClass::ReadInt_Overwrite((bool *)v103, (unsigned __int8 *)aAi, aWarlimit, v50); /*0x673b98*/
       v53 = *(unsigned int *)&this->__pad_C3C[1212]; /*0x673b9d*/
       *(unsigned int *)&this->__pad_C3C[1236] = v52; /*0x673ba3*/
-      IDA_HIDWORD(v96) = *(unsigned int *)&this->__pad_C3C[1216]; /*0x673bb5*/
-      IDA_LODWORD(v96) = v53; /*0x673bb6*/
+      v96 = ((v96) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)&this->__pad_C3C[1216]) & 0xFFFFFFFFull) << 32); /*0x673bb5*/
+      v96 = v53; /*0x673bb6*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aDefenseratio, v96); /*0x673bbf*/
       v54 = *(unsigned int *)&this->__pad_C3C[1220]; /*0x673bc4*/
       __asm { fstp qword ptr [esi+10F8h] } /*0x673bca*/
       *(double *)&this->__pad_C3C[1212] = _RT1; /*0x673bca*/
       v56 = INIClass::ReadInt_Overwrite((bool *)v103, (unsigned __int8 *)aAi, aDefenselimit, v54); /*0x673bdf*/
-      IDA_HIDWORD(v57) = *(unsigned int *)&this->__pad_C3C[1200]; /*0x673be4*/
+      v57 = ((v57) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)&this->__pad_C3C[1200]) & 0xFFFFFFFFull) << 32); /*0x673be4*/
       *(unsigned int *)&this->__pad_C3C[1220] = v56; /*0x673bea*/
-      IDA_LODWORD(v57) = *(unsigned int *)&this->__pad_C3C[1196]; /*0x673bf0*/
+      v57 = *(unsigned int *)&this->__pad_C3C[1196]; /*0x673bf0*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aAaratio, v57); /*0x673c06*/
       v58 = *(unsigned int *)&this->__pad_C3C[1204]; /*0x673c0b*/
       __asm { fstp qword ptr [esi+10E8h] } /*0x673c13*/
@@ -5929,16 +5929,16 @@ int RulesClass::ReadMultiplayerDefaults() {
       v65 = INIClass::ReadInt_Overwrite((bool *)v103, (unsigned __int8 *)aAi, aTeslalimit, v63); /*0x673c6b*/
       v66 = *(unsigned int *)&this->__pad_C3C[1164]; /*0x673c70*/
       *(unsigned int *)&this->__pad_C3C[1188] = v65; /*0x673c76*/
-      IDA_HIDWORD(v96) = *(unsigned int *)&this->__pad_C3C[1168]; /*0x673c88*/
-      IDA_LODWORD(v96) = v66; /*0x673c89*/
+      v96 = ((v96) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)&this->__pad_C3C[1168]) & 0xFFFFFFFFull) << 32); /*0x673c88*/
+      v96 = v66; /*0x673c89*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aHelipadratio, v96); /*0x673c92*/
       v67 = *(unsigned int *)&this->__pad_C3C[1172]; /*0x673c97*/
       __asm { fstp qword ptr [esi+10C8h] } /*0x673c9d*/
       *(double *)&this->__pad_C3C[1164] = _RT1; /*0x673c9d*/
       v69 = INIClass::ReadInt_Overwrite((bool *)v103, (unsigned __int8 *)aAi, aHelipadlimit, v67); /*0x673cb2*/
-      IDA_HIDWORD(v70) = *(unsigned int *)&this->__pad_C3C[1152]; /*0x673cb7*/
+      v70 = ((v70) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)&this->__pad_C3C[1152]) & 0xFFFFFFFFull) << 32); /*0x673cb7*/
       *(unsigned int *)&this->__pad_C3C[1172] = v69; /*0x673cbd*/
-      IDA_LODWORD(v70) = *(unsigned int *)&this->__pad_C3C[1148]; /*0x673cc3*/
+      v70 = *(unsigned int *)&this->__pad_C3C[1148]; /*0x673cc3*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aAirstripratio, v70); /*0x673cd9*/
       v71 = *(unsigned int *)&this->__pad_C3C[1156]; /*0x673cde*/
       __asm { fstp qword ptr [esi+10B8h] } /*0x673ce6*/
@@ -5956,9 +5956,9 @@ int RulesClass::ReadMultiplayerDefaults() {
                          (unsigned __int8 *)aAi,
                          aParanoid,
                          this->ElevationIncrement);
-      IDA_HIDWORD(v76) = *(unsigned int *)&this->__pad_C3C[1144]; /*0x673d3d*/
+      v76 = ((v76) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)&this->__pad_C3C[1144]) & 0xFFFFFFFFull) << 32); /*0x673d3d*/
       this->ElevationIncrement = ((this->ElevationIncrement) & 0xFFFFFF00u) | ((unsigned int)(Bool_Overwrite) & 0xFFu); /*0x673d43*/
-      IDA_LODWORD(v76) = *(unsigned int *)&this->__pad_C3C[1140]; /*0x673d49*/
+      v76 = *(unsigned int *)&this->__pad_C3C[1140]; /*0x673d49*/
       INIClass::ReadDouble_Overwrite((double *)v103, (unsigned __int8 *)aAi, aPoweremergency, v76); /*0x673d5f*/
       v77 = *(unsigned int *)&this->__pad_C3C[2084]; /*0x673d64*/
       __asm { fstp qword ptr [esi+10B0h] } /*0x673d6c*/

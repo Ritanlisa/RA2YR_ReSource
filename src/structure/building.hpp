@@ -244,7 +244,7 @@ int CanAcceptType(int,int);  // 0x452670
     int SelectTargetTypeFlags();  // 0x445F00
     // wrapper: delegates to BuildingClass::SelectTargetTypeFlags at 0x445F00
     int DistanceToTarget();
-    CoordStruct *CalcBarrelFlashPosition(int a2, int a3, int a4);  // 0x453BF0 (调用点 3 参, 返回坐标指针)
+    CoordStruct *CalcBarrelFlashPosition(void *a2, int a3, int a4);  // 0x453BF0 (调用点 3 参, 返回坐标指针)
     void BuildTurretTransform();  // 0x458810
 
     // Bridge / Demolish
@@ -503,9 +503,7 @@ int CanAcceptType(int,int);  // 0x452670
     virtual int ThunkTo636(int, int);
     virtual int Vt46Thunk();  // vt+0x2BC (canon)
     virtual void Destroy_0();  // vt+0xF8 (canon)  // W20M26 vt+0x278 (canon ('buildingclass', 'ObjectClass::ThunkTo636'))
-    virtual int Vt46Thunk();  // W20M26 vt+0x2BC (canon ('buildingclass', 'TechnoClass::Vt46Thunk'))
     virtual void ProcessDeploymentState();  // W20M26 vt+0x3A0 (canon ('buildingclass', 'TechnoClass::ProcessDeploymentState'))
-    virtual void Destroy_0();  // W20M26 vt+0xF8 (canon ('buildingclass', 'HouseClass::Destroy_0'))
     virtual int * ValidateFoundation_1(void *, int, int);  // W20M26 vt+0x4D4 (canon ('buildingclass', 'HouseClass::ValidateFoundation_1'))
     virtual int initAnimation(int);  // W20M26 vt+0x4D8 (canon ('buildingclass', 'AnimClass::initAnimation'))
     int32_t                               q0BC;  // 0xBC (PR disasm [ebp+..]; canon None; W20M26)

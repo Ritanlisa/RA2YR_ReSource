@@ -3132,7 +3132,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
         v15 = (unsigned int *)((HouseClass *)v7)->GetStartCoords(&v28); /*0x6efaf7*/
         v16 = v15[1] - v31; /*0x6efb0f*/
         v17 = v15[2]; /*0x6efb11*/
-        IDA_LODWORD(v28) = *v15 - v10; /*0x6efb14*/
+        v28 = *v15 - v10; /*0x6efb14*/
         v25 = -v16; /*0x6efb1e*/
         v29 = v17; /*0x6efb22*/
         v23 = (double)(int)*(unsigned int *)&v28; /*0x6efb18 fild var_20(dx) -> fstp var_50 (G42.33 ICE 结构化)*/
@@ -3145,22 +3145,22 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
       else
       {
         v12 = ((Random_shadow *)&dword_A8B230_arr[14].NeedsSaveOrLink)->Range(0, 255); /*0x6efadc IDA: Random::Range(this,0,255)*/
-        IDA_LOBYTE(v13) = 0; /*0x6efae1*/
-        IDA_HIBYTE(v13) = v12; /*0x6efae3*/
+        v13 = ((v13) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x6efae1*/
+        v13 = ((v13) & 0xFFFF00FFu) | (((unsigned int)(v12) & 0xFFu) << 8); /*0x6efae3*/
         v14 = v13; /*0x6efaea*/
       }
       v25 = v14 - 0x3FFF; /*0x6efb61*/
       *(double *)&v25 = (double)(int)*(int *)&v25 * dbl_7E2810; /*0x6efb65 fild var_38 * -2pi/0x10000 -> fstp var_38 (弧度)*/
-      IDA_LODWORD(v27) = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3444) << 8; /*0x6efb78 半径*/
+      v27 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3444) << 8; /*0x6efb78 半径*/
       *(double *)&v28 = (double)(int)*(int *)&v27; /*0x6efb7c fild var_28(半径) -> fstp var_20 (G42.33 ICE 结构化)*/
       *(double *)&v27 = (double)v31; /*0x6efb84 fild var_8(Y中心) -> fstp var_28*/
       v3 = *(double *)&v27 - Math::SinCos(v25) * *(double *)&v28; /*0x6efb9a..0x6efba5 SinCos st0 * var_20(半径), fsubr var_28(Y中心) (G42.33 ICE 结构化)*/
       (v18) = ((v18) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v3)) & 0xFFFF); /*0x6efba7*/
-      IDA_LODWORD(v27) = v18; /*0x6efbae*/
+      v27 = v18; /*0x6efbae*/
       v3 = Math::ArcTan2(v25) * *(double *)&v28 + v30; /*0x6efbb2..0x6efbc0 ArcTan2 st * var_20(半径) + fiadd var_C(X中心) (G42.33 ICE 结构化)*/
       (v19) = ((v19) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v3)) & 0xFFFF); /*0x6efbc2*/
       v25 = ((v25) & 0xFFFF0000u) | ((unsigned int)(v19 / 256) & 0xFFFFu); /*0x6efbd7*/
-      v25 = ((v25) & 0xFFFFu) | (((unsigned int)(IDA_SLODWORD(v27) / 256) & 0xFFFFu) << 16); /*0x6efbef*/
+      v25 = ((v25) & 0xFFFFu) | (((unsigned int)(((int)(v27)) / 256) & 0xFFFFu) << 16); /*0x6efbef*/
       *(unsigned int *)v24 = ((unsigned int)(v25)); /*0x6efc01*/
       v25 = 0; /*0x6efc0d*/
       v20 = ((int (__thiscall *)(HouseClass **))(*i)->occupiablesCount)(i); /*0x6efc1e*/

@@ -2397,7 +2397,7 @@ int SuperWeapon::CreateNukePayload() {
   ppv = ((ppv) & 0xFFFF0000u) | ((unsigned int)(*v8 / 256) & 0xFFFFu); /*0x46b341*/
   ppv = ((ppv) & 0xFFFFu) | (((unsigned int)(v8[1] / 256) & 0xFFFFu) << 16); /*0x46b35a*/
   *(unsigned int *)ppv = ppv; /*0x46b367*/
-  IDA_LODWORD(v26) = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], ppv); /*0x46b376*/
+  v26 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], ppv); /*0x46b376*/
   ppv = 0; /*0x46b385*/
   v9 = (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + SuperWeaponClass::FindByName((SuperWeaponClass *)&((char *)&stru_81AF8C))); /*0x46b38d*/
   v10 = v9[40]; /*0x46b399*/
@@ -2417,7 +2417,7 @@ int SuperWeapon::CreateNukePayload() {
     if ( ppv ) /*0x46b40f*/
     {
       (*(void (**)(unsigned int *))(*ppv + 212))(ppv); /*0x46b419*/
-      v16 = IDA_LODWORD(v26); /*0x46b41f*/
+      v16 = ((unsigned int)(v26)); /*0x46b41f*/
       ppv[76] = v9; /*0x46b423*/
       v17 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v16 + 72))(v16, v29); /*0x46b430*/
       v18 = this->u32_130; /*0x46b435*/
@@ -2486,7 +2486,7 @@ int SuperWeapon::CreateNukePayload() {
   ppv = ((ppv) & 0xFFFF0000u) | ((unsigned int)(*v8 / 256) & 0xFFFFu); /*0x46b341*/
   ppv = ((ppv) & 0xFFFFu) | (((unsigned int)(v8[1] / 256) & 0xFFFFu) << 16); /*0x46b35a*/
   *(unsigned int *)ppv = ppv; /*0x46b367*/
-  IDA_LODWORD(v26) = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], ppv); /*0x46b376*/
+  v26 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], ppv); /*0x46b376*/
   ppv = 0; /*0x46b385*/
   v9 = (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + SuperWeaponClass::FindByName((SuperWeaponClass *)&((char *)&stru_81AF8C))); /*0x46b38d*/
   v10 = v9[40]; /*0x46b399*/
@@ -2506,7 +2506,7 @@ int SuperWeapon::CreateNukePayload() {
     if ( ppv ) /*0x46b40f*/
     {
       (*(void (**)(unsigned int *))(*ppv + 212))(ppv); /*0x46b419*/
-      v16 = IDA_LODWORD(v26); /*0x46b41f*/
+      v16 = ((unsigned int)(v26)); /*0x46b41f*/
       ppv[76] = v9; /*0x46b423*/
       v17 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v16 + 72))(v16, v29); /*0x46b430*/
       v18 = this->u32_130; /*0x46b435*/
@@ -2569,7 +2569,7 @@ int SuperWeapon::CreateNukePayload() {
   ppv = ((ppv) & 0xFFFF0000u) | ((unsigned int)(*v8 / 256) & 0xFFFFu); /*0x46b341*/
   ppv = ((ppv) & 0xFFFFu) | (((unsigned int)(v8[1] / 256) & 0xFFFFu) << 16); /*0x46b35a*/
   *(unsigned int *)ppv = ppv; /*0x46b367*/
-  IDA_LODWORD(v26) = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], ppv); /*0x46b376*/
+  v26 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], ppv); /*0x46b376*/
   ppv = 0; /*0x46b385*/
   v9 = (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + SuperWeaponClass::FindByName((SuperWeaponClass *)&((char *)&stru_81AF8C))); /*0x46b38d*/
   v10 = v9[40]; /*0x46b399*/
@@ -2589,7 +2589,7 @@ int SuperWeapon::CreateNukePayload() {
     if ( ppv ) /*0x46b40f*/
     {
       (*(void (**)(unsigned int *))(*ppv + 212))(ppv); /*0x46b419*/
-      v16 = IDA_LODWORD(v26); /*0x46b41f*/
+      v16 = ((unsigned int)(v26)); /*0x46b41f*/
       ppv[76] = v9; /*0x46b423*/
       v17 = (unsigned int *)(*(int (**)(int, double *))(*(unsigned int *)v16 + 72))(v16, v29); /*0x46b430*/
       v18 = this->u32_130; /*0x46b435*/

@@ -929,7 +929,7 @@ char ModemGuest::Dialog()
       CellClass_LockSurface((int)this, 0); /*0x5b4a9d*/
       if ( ModemGame_ProcessPacket((void *)this) == 1 ) /*0x5b4aab*/
         break; /*0x5b4aab*/
-      IDA_LOBYTE(v5) = 0; /*0x5b4aad*/
+      v5 = ((v5) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x5b4aad*/
       ScreenSaver::Process(v5, v9); /*0x5b4aaf*/
     }
     Dialog::Destroy(*(Dialog **)this->__pad_0); /*0x5b4abb*/
@@ -1432,7 +1432,7 @@ void ModemGame::ProcessPacket()
         case 'g': /*0x5b611a*/
         case 'k': /*0x5b611a*/
           Debug::Log(); /*0x5b637d*/
-          IDA_LOBYTE(v13) = dword_A8BB08; /*0x5b6382*/
+          v13 = ((v13) & 0xFFFFFF00u) | ((unsigned int)(dword_A8BB08) & 0xFFu); /*0x5b6382*/
           if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, v13, 1) == 1 ) /*0x5b63a5*/
           {
             memset(v52, 0, sizeof(v52)); /*0x5b63b7*/
@@ -1685,7 +1685,7 @@ void ModemHost::Dialog()
           CellClass::SetOccupancy((int)this, 0); /*0x5b78d7*/
           if ( ModemGuest::ProcessPacket((int)this, 0) == 1 ) /*0x5b78e6*/
             break; /*0x5b78e6*/
-          IDA_LOBYTE(v6) = 0; /*0x5b78e8*/
+          v6 = ((v6) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x5b78e8*/
           ScreenSaver::Process(v6, v8); /*0x5b78ea*/
         }
         while ( this->ModemHost_field_0x04 < 0 ); /*0x5b78f2*/
@@ -2509,7 +2509,7 @@ void ModemHost::StartGame()
         v25 = (&dword_A8E960)[0]; /*0x5bb1f5*/
         (((v25) >> 8) & 0xFF) = (unsigned char)(((&dword_A8E960)[0]) >> 8) & 0x77; /*0x5bb1fc*/
         v26 = v25 | ((byte_A8B31D & 1 | (16 * (stru_A8B250[16] & 1))) << 11); /*0x5bb202*/
-        IDA_LOBYTE(v26) = IDA_LOBYTE((&dword_A8E960)[0]) | 0xC0; /*0x5bb209*/
+        v26 = ((v26) & 0xFFFFFF00u) | ((unsigned int)((unsigned char)((&dword_A8E960)[0]) | 0xC0) & 0xFFu); /*0x5bb209*/
         *(unsigned int * *)((char *)&stru_A8EB00 + 644) = 0; /*0x5bb20c*/
         dword_A8B24C = 2; /*0x5bb212*/
         (&dword_A8E960)[0] = v26; /*0x5bb21c*/
@@ -3042,7 +3042,7 @@ void NetworkSettings::DlgProc()
           case 0x540u: /*0x5ddc72*/
             ReadChatMessage((wchar_t **)&a3, (HWND)a3.DeleteAndZero_field_0x04); /*0x5dde9c*/
             DeleteAndZero::Alt(&a3); /*0x5ddea5*/
-            if ( IDA_HIWORD(v4) == 1281 ) /*0x5ddeb3*/
+            if ( (unsigned short)((v4) >> 16) == 1281 ) /*0x5ddeb3*/
             {
               SendNetworkLobbyChatMessage(hWnd, (int)Math::InitDegToRad, 61680); /*0x5ddeca*/
               return 0; /*0x5dded8*/
@@ -3092,7 +3092,7 @@ void NetworkSettings::DlgProc()
             g_NetworkSetupConfig = v7; /*0x5ddcd4*/
             wcscpy((wchar_t *)&stru_A8D600.q010, *(const wchar_t **)(dword_A8DA60 + 4 * v7)); /*0x5ddce2*/
           }
-          if ( IDA_HIWORD(v4) == 1 ) /*0x5ddcf3*/
+          if ( (unsigned short)((v4) >> 16) == 1 ) /*0x5ddcf3*/
           {
             PtrVector::Destroy(&stru_A8DA74); /*0x5ddcfa*/
             if ( v6 != g_NetworkSetupConfig ) /*0x5ddd05*/
@@ -3100,7 +3100,7 @@ void NetworkSettings::DlgProc()
             GameSetup::DisplayPlayers(v33); /*0x5ddd19*/
             return 0; /*0x5ddd27*/
           }
-          if ( IDA_HIWORD(v4) == 2 ) /*0x5ddd2e*/
+          if ( (unsigned short)((v4) >> 16) == 2 ) /*0x5ddd2e*/
           {
             EnableWindow(hWnd, 0); /*0x5ddd3d*/
             v8 = GetDlgItem(hWnd, 1345); /*0x5ddd45*/
@@ -3581,7 +3581,7 @@ void Modem::CheckStatus()
     String::NormalizeNewlines(); /*0x5f0d14*/
     StringBuffer::Reset((StringBuffer *)&unk_A8EA70); /*0x5f0d1e*/
     v10 = dword_A8DAB8; /*0x5f0d23*/
-    IDA_LOBYTE(v10) = dword_A8DAB8 | 1; /*0x5f0d28*/
+    v10 = ((v10) & 0xFFFFFF00u) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFFu); /*0x5f0d28*/
     dword_A8DAB8 = v10; /*0x5f0d2b*/
     return v33; /*0x5f0766*/
 }
@@ -3763,7 +3763,7 @@ void Modem::DetectAndConnect()
     String::NormalizeNewlines(); /*0x5f1302*/
     StringBuffer::Reset((StringBuffer *)&unk_A8EA70); /*0x5f130c*/
     v9 = dword_A8DAB8; /*0x5f1311*/
-    IDA_LOBYTE(v9) = dword_A8DAB8 | 1; /*0x5f1316*/
+    v9 = ((v9) & 0xFFFFFF00u) | ((unsigned int)(dword_A8DAB8 | 1) & 0xFFu); /*0x5f1316*/
     dword_A8DAB8 = v9; /*0x5f1319*/
     return v28; /*0x5f0e36*/
 }

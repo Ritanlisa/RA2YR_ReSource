@@ -1871,10 +1871,10 @@ void GameScreen::DlgProc(int a2, int a3, int a4, HWND hWnd, UINT Msg, WPARAM wPa
                 ScreenDialogToClient((HWND)this, &v192); /*0x60e6ac*/
                 v87 = v192.left - lParam.left; /*0x60e6cb*/
                 v88 = v192.top - lParam.top; /*0x60e6d1*/
-                IDA_LOBYTE(v189) = 0; /*0x60e6d5*/
+                v189 = ((v189) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x60e6d5*/
                 Y[0] = v192.top - lParam.top + Rect.top; /*0x60e6e9*/
                 if ( *(unsigned int *)dy.__pad_0 ) /*0x60e6f9*/
-                  IDA_LOBYTE(v189) = *(unsigned char *)(*(unsigned int *)dy.__pad_0 + 205); /*0x60e701*/
+                  v189 = ((v189) & 0xFFFFFF00u) | ((unsigned int)(*(unsigned char *)(*(unsigned int *)dy.__pad_0 + 205)) & 0xFFu); /*0x60e701*/
                 Window = CreateWindowExA( /*0x60e72f*/
                            0,
                            ClassName,
@@ -3439,7 +3439,7 @@ void LoadSaveDialog::FillList()
             WideString::Reassign((void **)&v42, WideCharStr); /*0x559ad8*/
             v28 = (unsigned __int16)v25 << 16; /*0x559ae7*/
             v29 = v28; /*0x559aea*/
-            IDA_LOBYTE(v29) = -1; /*0x559aed*/
+            v29 = ((v29) & 0xFFFFFF00u) | ((unsigned int)(-1) & 0xFFu); /*0x559aed*/
             SendMessageA(hWnd, 0x4A8u, v29, (LPARAM)&lParam); /*0x559af7*/
             GetTimeFormatA(0x400u, 0, &SystemTime, 0, FileName, 128); /*0x559b0f*/
             lParam = 1; /*0x559b2b*/
@@ -4010,7 +4010,7 @@ void LoadScreen::RenderLoop()
     if ( dword_A83CA8 <= 0 ) /*0x4b706d*/
     {
   LABEL_25:
-      IDA_LOBYTE(v34) = -1; /*0x4b708a*/
+      v34 = ((v34) & 0xFFFFFF00u) | ((unsigned int)(-1) & 0xFFu); /*0x4b708a*/
     }
     else
     {
@@ -6973,7 +6973,7 @@ void SaveLoadDialog::DlgProc()
           v19(); /*0x559019*/
         if ( !byte_A8E9A0 ) /*0x559022*/
         {
-          IDA_LOBYTE(v18) = 0; /*0x559024*/
+          v18 = ((v18) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x559024*/
           ScreenSaver::Process(v18, v55); /*0x559026*/
         }
       }

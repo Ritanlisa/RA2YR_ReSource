@@ -4558,7 +4558,7 @@ void HouseClass::FindAutoBuildLocation() {
       v14 = *(int *)((char *)&dword_7EA7A0 + v10) & 7; /*0x508501*/
       v13 = v13; /*0x508504*/
       v16 = (unsigned short)(g_DDrawSurfaceManager.scenario[v14 + 82]) + v86[0]; /*0x508506*/
-      IDA_LOWORD(v14) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[v14 + 82]); /*0x508515*/
+      v14 = ((v14) & 0xFFFF0000u) | ((unsigned int)((unsigned short)((g_DDrawSurfaceManager.scenario[v14 + 82]) >> 16)) & 0xFFFFu); /*0x508515*/
       (v106) = ((v106) & ~0xFFFF) | ((unsigned int)(v16) & 0xFFFF); /*0x50851d*/
       (v106) = ((v106) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)(v86[1] + v14) & 0xFFFF) << 16) /*0x508537*/
       *(unsigned int *)v106 = v106; /*0x508546*/
@@ -4566,7 +4566,7 @@ void HouseClass::FindAutoBuildLocation() {
       v18 = *(unsigned int *)&v13->__pad_E8[4]; /*0x508564*/
       v19 = v13->Cell_field_0x11B[0] - v113; /*0x50856a*/
       v20 = *(unsigned int *)&v17->__pad_E8[4]; /*0x50856b*/
-      v90 = (int)((IDA_HIDWORD(v19) ^ v19) - IDA_HIDWORD(v19)) <= 2; /*0x508578*/
+      v90 = (int)(((unsigned int)((v19) >> 32) ^ v19) - (unsigned int)((v19) >> 32)) <= 2; /*0x508578*/
       if ( v18 == 3 || v18 == 2 || v18 == 8 || v20 == 3 || v20 == 2 || (v85 = 1, v20 == 8) ) /*0x50859e*/
         v85 = 0; /*0x5085a0*/
       v89 = *(unsigned int *)&v13->__pad_3C[8] == -1; /*0x5085ad*/
@@ -4630,7 +4630,7 @@ void HouseClass::FindAutoBuildLocation() {
                 v31 = v95 & 7; /*0x508789*/
                 v32 = (unsigned short *)(4 * v31 + 9041544); /*0x508794*/
                 v33 = v24 + (unsigned short)(g_DDrawSurfaceManager.scenario[v31 + 82]); /*0x50879b*/
-                IDA_LOWORD(v31) = IDA_HIWORD(v88) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v31 + 82]); /*0x5087a5*/
+                v31 = ((v31) & 0xFFFF0000u) | ((unsigned int)((unsigned short)((v88) >> 16) + (unsigned short)((g_DDrawSurfaceManager.scenario[v31 + 82]) >> 16)) & 0xFFFFu); /*0x5087a5*/
                 v34 = *v32 + *v32 + v33; /*0x5087ae*/
                 IDA_LOWORD(v32) = v32[1]; /*0x5087b1*/
                 v105 = ((v105) & 0xFFFF0000u) | ((unsigned int)(v34) & 0xFFFFu); /*0x5087bb*/
@@ -4660,7 +4660,7 @@ void HouseClass::FindAutoBuildLocation() {
                 ++v25; /*0x50884c*/
                 v39 = v95 & 7; /*0x50884d*/
                 v40 = v24 + (unsigned short)(g_DDrawSurfaceManager.scenario[v39 + 82]); /*0x50885f*/
-                IDA_LOWORD(v39) = IDA_HIWORD(g_DDrawSurfaceManager.scenario[v39 + 82]); /*0x508862*/
+                v39 = ((v39) & 0xFFFF0000u) | ((unsigned int)((unsigned short)((g_DDrawSurfaceManager.scenario[v39 + 82]) >> 16)) & 0xFFFFu); /*0x508862*/
                 v103 = ((v103) & 0xFFFF0000u) | ((unsigned int)(v40) & 0xFFFFu); /*0x508866*/
                 v103 = ((v103) & 0xFFFFu) | (((unsigned int)((unsigned short)((v88) >> 16) + v39) & 0xFFFFu) << 16); /*0x508870*/
                 v24 = v103; /*0x508875*/
@@ -4693,7 +4693,7 @@ void HouseClass::FindAutoBuildLocation() {
       v42 = (unsigned short)((g_DDrawSurfaceManager.scenario[v41 + 82]) >> 16); /*0x5088a5*/
       v104 = ((v104) & 0xFFFF0000u) | ((unsigned int)((unsigned short)(g_DDrawSurfaceManager.scenario[v41 + 82]) + v23) & 0xFFFFu); /*0x5088c1*/
       v104 = ((v104) & 0xFFFFu) | (((unsigned int)(v86[1] + v42) & 0xFFFFu) << 16); /*0x5088c6*/
-      IDA_LOWORD(v11) = v104; /*0x5088cb*/
+      v11 = ((v11) & 0xFFFF0000u) | ((unsigned int)(v104) & 0xFFFFu); /*0x5088cb*/
       *(unsigned int *)v86 = v104; /*0x5088cf*/
     }
     if ( v87 >= 5 ) /*0x5088df*/
@@ -5248,7 +5248,7 @@ int HouseClass::Fire_GenMutator(int a1) {
   int v23; // [esp+20h] [ebp-8h]
   int16_t v24[2]; // [esp+24h] [ebp-4h] BYREF
 
-  IDA_LOBYTE(v2) = ((unsigned int *)&stru_A8EB00)[948]; /*0x509f63*/
+  v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(((unsigned int *)&stru_A8EB00)[948]) & 0xFFu); /*0x509f63*/
   *(unsigned int *)v17 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948]; /*0x509f6c*/
   v19 = 0; /*0x509f70*/
   if ( this->preferredTargetCell == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] )
@@ -5314,14 +5314,14 @@ int HouseClass::Fire_GenMutator(int a1) {
           v23 = --v4; /*0x50a0dd*/
         }
         while ( v4 >= 0 );
-        IDA_LOBYTE(v2) = v19; /*0x50a0e7*/
+        v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(v19) & 0xFFu); /*0x50a0e7*/
         if ( v19 && (v14[0] != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] || v14[1] != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950]) ) /*0x50a10b*/
         {
-          IDA_LOBYTE(v2) = LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v14, 1); /*0x50a119*/
+          v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v14, 1)) & 0xFFu); /*0x50a119*/
           if ( (unsigned char)v2 ) /*0x50a120*/
           {
             v15 = (*(int (**)(int, char *))(this->supers + 16))(&this->u32_950, &a1); /*0x50a138*/
-            IDA_LOBYTE(v2) = SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v15, (int)v14); /*0x50a13e*/
+            v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v15, (int)v14)) & 0xFFu); /*0x50a13e*/
           }
         }
       }
@@ -5353,10 +5353,10 @@ int HouseClass::Fire_PsyDom(int a1) {
   int v23; // [esp+1Ch] [ebp-8h]
   int16_t v20[2]; // [esp+20h] [ebp-4h] BYREF
 
-  IDA_LOBYTE(v3) = PsyDom::IsActive(); /*0x50a157*/
+  v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(PsyDom::IsActive()) & 0xFFu); /*0x50a157*/
   if ( !(unsigned char)v3 && this->enemyHouseIndex != -1 ) /*0x50a16b*/
   {
-    IDA_LOBYTE(v3) = ((unsigned int *)&stru_A8EB00)[948]; /*0x50a171*/
+    v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(((unsigned int *)&stru_A8EB00)[948]) & 0xFFu); /*0x50a171*/
     v20 = 0; /*0x50a176*/
     v4 = this->preferredTargetCell == *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948]; /*0x50a17e*/
     *(unsigned int *)v18 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[948]; /*0x50a185*/
@@ -5427,14 +5427,14 @@ int HouseClass::Fire_PsyDom(int a1) {
               }
             v23 = --v5; /*0x50a2d3*/
           while ( v5 >= 0 ); /*0x50a2d7*/
-          IDA_LOBYTE(v3) = v19; /*0x50a2dd*/
+          v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(v19) & 0xFFu); /*0x50a2dd*/
           if ( v19 && (v15[0] != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[948] || v15[1] != *(unsigned short *)&((unsigned int *)&stru_A8EB00)[950]) ) /*0x50a301*/
           {
-            IDA_LOBYTE(v3) = LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v15, 1); /*0x50a30f*/
+            v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v15, 1)) & 0xFFu); /*0x50a30f*/
             if ( (unsigned char)v3 ) /*0x50a316*/
             {
               v16 = (*(int (**)(int, char *))(this->supers + 16))(&this->u32_950, &a1); /*0x50a32e*/
-              IDA_LOBYTE(v3) = SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v16, (int)v15); /*0x50a334*/
+              v3 = ((v3) & 0xFFFFFF00u) | ((unsigned int)(SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v16, (int)v15)) & 0xFFu); /*0x50a334*/
 // 0x50A350
 namespace gamemd { 
 int HouseClass::FireSuperWeaponAtBestTarget(int a1) {
@@ -6260,8 +6260,8 @@ void* HouseClass::FindSWBuilding(void* a1) {
       }
   LABEL_55:
       v20 = (unsigned int *)(*(int (**)(unsigned char *, unsigned int *))(*(unsigned int *)v5 + 72))(v5, v39); /*0x50cf38*/
-      IDA_LOWORD(v35) = *v20 / 256; /*0x50cf56*/
-      IDA_HIWORD(v35) = v20[1] / 256; /*0x50cf6e*/
+      v35 = ((v35) & 0xFFFF0000u) | ((unsigned int)(*v20 / 256) & 0xFFFFu); /*0x50cf56*/
+      v35 = ((v35) & 0xFFFFu) | (((unsigned int)(v20[1] / 256) & 0xFFFFu) << 16); /*0x50cf6e*/
       *(unsigned int *)v35 = v35; /*0x50cf77*/
       if ( !(uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v35, 1) ) /*0x50cf81*/
         v4 = 0; /*0x50cf8a*/

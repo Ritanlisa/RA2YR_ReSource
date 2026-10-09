@@ -760,19 +760,19 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     v4 = *(this + 764); /*0x415ca6*/
     v25 = v5; /*0x415cae*/
     if ( (v4 & 1) != 0 ) /*0x415cb2*/
-      IDA_LOWORD(v20) = *(unsigned short *)ProgressTimer::GetValue((unsigned short *)this + 452, &v20) - 0x3FFF; /*0x415ccc*/
+      v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)ProgressTimer::GetValue((unsigned short *)this + 452, &v20) - 0x3FFF) & 0xFFFFu); /*0x415ccc*/
     else
-      IDA_LOWORD(v20) = *(unsigned short *)ProgressTimer::GetValue((unsigned short *)this + 452, &v20) + 0x3FFF; /*0x415cee*/
+      v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)ProgressTimer::GetValue((unsigned short *)this + 452, &v20) + 0x3FFF) & 0xFFFFu); /*0x415cee*/
     v6 = v25; /*0x415d00*/
-    IDA_LODWORD(v20) = SLOWORD(v20) - 0x3FFF; /*0x415d04*/
-    v21 = (double)IDA_SLODWORD(v20) * -0.00009587672516830327; /*0x415d13*/
-    v7 = IDA_HIDWORD(v21); /*0x415d1b*/
+    v20 = SLOWORD(v20) - 0x3FFF; /*0x415d04*/
+    v21 = (double)((int)(v20)) * -0.00009587672516830327; /*0x415d13*/
+    v7 = (unsigned int)((v21) >> 32); /*0x415d1b*/
     v20 = (double)v24; /*0x415d25*/
     v8 = Math::SinCos(v21); /*0x415d29*/
-    IDA_LODWORD(v20) = Math::RoundToInt(v20 - v8 * 128.0); /*0x415d3d*/
+    v20 = Math::RoundToInt(v20 - v8 * 128.0); /*0x415d3d*/
     v9 = Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v7, IDA_LODWORD(v21)))); /*0x415d47*/
     v10 = Math::RoundToInt(v9 * 128.0 + (double)v23); /*0x415d59*/
-    v24 = IDA_LODWORD(v20); /*0x415d66*/
+    v24 = ((unsigned int)(v20)); /*0x415d66*/
     v23 = v10; /*0x415d70*/
     v25 = v6; /*0x415d74*/
     v11 = Coord::To_Cell(&dword_87F7E8, &v23); /*0x415d81*/
@@ -796,9 +796,9 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction()
     StartAudioControllerAt(dword_8871E0->?[2], (int)&v21, 0); /*0x415e21*/
     v16 = Coord::To_Cell(&dword_87F7E8, &v23); /*0x415e30*/
     v17 = (unsigned int *)(*(int (__thiscall **)(void *, double *))(*(unsigned int *)v16 + 72))(v16, &v21); /*0x415e3e*/
-    IDA_LOWORD(v20) = *v17 / 256; /*0x415e51*/
-    IDA_WORD1(v20) = v17[1] / 256; /*0x415e65*/
-    v2[343] = IDA_LODWORD(v20); /*0x415e6e*/
+    v20 = ((v20) & 0xFFFF0000u) | ((unsigned int)(*v17 / 256) & 0xFFFFu); /*0x415e51*/
+    v20 = ((v20) & 0xFFFFu) | (((unsigned int)(v17[1] / 256) & 0xFFFFu) << 16); /*0x415e65*/
+    v2[343] = ((unsigned int)(v20)); /*0x415e6e*/
     if ( *((unsigned int *)this + 373) ) /*0x415e74*/
       TeamClass::LiberateMember_Start(v2, -1, 0); /*0x415e83*/
     v18 = dword_A8ED84; /*0x415e88*/
@@ -1865,7 +1865,7 @@ char Gap2Recv_430250::RenderBuildingTag(int a2, int a3, int a4, int a5, int a6)
         v29[2] = v16[2]; /*0x43047a*/
         v29[3] = v16[3]; /*0x430498*/
         v17 = ((unsigned __int8)v20 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4304d4*/
-            | (IDA_HIBYTE(v20) >> g_BitMask_Blue << g_BitMask_Green)
+            | ((unsigned char)((v20) >> 8) >> g_BitMask_Blue << g_BitMask_Green)
             | (v21 >> g_BitMask_Red << g_BitShift_Blue);
         (*(void (__thiscall **)(int, unsigned int *, unsigned int))(*(unsigned int *)a2 + 20))(a2, v29, 0); /*0x4304d6*/
         (*(void (__thiscall **)(int, unsigned int *, int))(*(unsigned int *)a2 + 88))(a2, v29, v17); /*0x4304e4*/
@@ -3451,7 +3451,7 @@ int Gap2Recv_47BDB0::GetBridgeCellColor(char* a2, char a3)
     v20 = *(unsigned short *)RadarColor; /*0x47bebc*/
     v21 = *(unsigned char *)(RadarColor + 2); /*0x47beca*/
     v12 = (v21 >> g_BitMask_Red << g_BitShift_Blue) /*0x47bf24*/
-        | (IDA_HIBYTE(v20) >> g_BitMask_Blue << g_BitMask_Green)
+        | ((unsigned char)((v20) >> 8) >> g_BitMask_Blue << g_BitMask_Green)
         | ((unsigned __int8)v20 >> g_BitShift_Green_0 << g_BitShift_Red);
     if ( !v12 ) /*0x47bf26*/
     {
@@ -3584,19 +3584,19 @@ char Gap2Recv_47C060::GetCellRadarColors(int aThis, int a3)
       v17 = v16[44]; /*0x47c2ea*/
       v18 = v16[43]; /*0x47c2ed*/
       v26 = v16[45]; /*0x47c2f0*/
-      IDA_LOBYTE(v25) = v18; /*0x47c2fa*/
-      IDA_HIBYTE(v25) = v17; /*0x47c2fe*/
+      v25 = ((v25) & 0xFFFFFF00u) | ((unsigned int)(v18) & 0xFFu); /*0x47c2fa*/
+      v25 = ((v25) & 0xFFFF00FFu) | (((unsigned int)(v17) & 0xFFu) << 8); /*0x47c2fe*/
       v19 = Color::ScaleRGB(&v24, (unsigned __int8 *)&v25, (&dword_7E1BD0)[28 * *((unsigned int *)dword_A8B230 + 1174)]); /*0x47c324*/
       v25 = *(unsigned short *)v19; /*0x47c330*/
       v26 = v19[2]; /*0x47c338*/
       RadarColor = (unsigned __int8)v25 >> 1; /*0x47c353*/
-      v21 = IDA_HIBYTE(v25) >> 1; /*0x47c355*/
-      IDA_LOBYTE(v24) = (unsigned __int8)v25 >> 1; /*0x47c357*/
-      IDA_HIBYTE(v24) = IDA_HIBYTE(v25) >> 1; /*0x47c35b*/
+      v21 = (unsigned char)((v25) >> 8) >> 1; /*0x47c355*/
+      v24 = ((v24) & 0xFFFFFF00u) | ((unsigned int)((unsigned __int8)v25 >> 1) & 0xFFu); /*0x47c357*/
+      v24 = ((v24) & 0xFFFF00FFu) | (((unsigned int)((unsigned char)((v25) >> 8) >> 1) & 0xFFu) << 8); /*0x47c35b*/
       v22 = v26; /*0x47c364*/
       *(unsigned short *)a2 = v24; /*0x47c36a*/
-      IDA_HIBYTE(v27) = v21; /*0x47c36d*/
-      IDA_LOBYTE(v27) = RadarColor; /*0x47c375*/
+      v27 = ((v27) & 0xFFFF00FFu) | (((unsigned int)(v21) & 0xFFu) << 8); /*0x47c36d*/
+      v27 = ((v27) & 0xFFFFFF00u) | ((unsigned int)(RadarColor) & 0xFFu); /*0x47c375*/
       v22 >>= 1; /*0x47c37f*/
       *(unsigned char *)(a2 + 2) = v22; /*0x47c381*/
       *(unsigned short *)a3 = v27; /*0x47c384*/
@@ -4744,7 +4744,7 @@ char Gap2Recv_4DC340::DrawFootTargetLine()
       if ( (Time & 0x3FF & 0x200) == 0 ) /*0x4dc6b1*/
       {
         if ( (v16 & 0x100) != 0 ) /*0x4dc6b6*/
-          IDA_LOBYTE(v16) = ~(unsigned char)Time; /*0x4dc6b8*/
+          v16 = ((v16) & 0xFFFFFF00u) | ((unsigned int)(~(unsigned char)Time) & 0xFFu); /*0x4dc6b8*/
         Color::Lerp(&v18, v16, v24); /*0x4dc6cc*/
       }
       (target) = ((target) & ~0xFF) | ((unsigned int)((*(char (__thiscall **)(AudioStream *, int *, int *, int, void *, int, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 76))( /*0x4dc747*/
@@ -21355,7 +21355,7 @@ namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
     BunkerROFMultiplier = ((unsigned int *)this)[0];
     if ( v12 < ((int)(BunkerROFMultiplier)) )
     {
-      IDA_LODWORD(v14) = IDA_LODWORD(BunkerROFMultiplier) - 1;
+      v14 = ((unsigned int)(BunkerROFMultiplier)) - 1;
       for ( ((unsigned int *)this)[0] = v14;
             v12 < ((int)(((unsigned int *)this)[0]));
             *(unsigned int *)(((unsigned int)(((unsigned int *)this)[0])) + 4 * v12 - 4) = *(unsigned int *)(((unsigned int)(((unsigned int *)this)[0])) + 4 * v12) )

@@ -1195,7 +1195,7 @@ int FootClass::DrawPlacementPreview() {
         {
   LABEL_23:
           v19 = ((v19) & 0xFFFF0000u) | ((unsigned int)(v103) & 0xFFFFu); /*0x43dcab*/
-          IDA_LOWORD(v18) = v99; /*0x43dcb1*/
+          v18 = ((v18) & 0xFFFF0000u) | ((unsigned int)(v99) & 0xFFFFu); /*0x43dcb1*/
           v17 = ((v17) & 0xFFFF0000u) | ((unsigned int)(v16 >> 1) & 0xFFFFu); /*0x43dcbc*/
           v13 |= v18 | (32 * ((32 * v19) | v17)); /*0x43dcc8*/
           v107 = v13; /*0x43dcca*/
@@ -1207,7 +1207,7 @@ int FootClass::DrawPlacementPreview() {
       }
       v19 = ((v19) & 0xFFFF0000u) | ((unsigned int)(v103) & 0xFFFFu); /*0x43dc8a*/
       v17 = ((v17) & 0xFFFF0000u) | ((unsigned int)(v16 >> 1) & 0xFFFFu); /*0x43dc97*/
-      IDA_LOWORD(v18) = v99; /*0x43dc99*/
+      v18 = ((v18) & 0xFFFF0000u) | ((unsigned int)(v99) & 0xFFFFu); /*0x43dc99*/
       v19 *= 32; /*0x43dc9f*/
       v17 = v18 | ((v19 | v17) << 6); /*0x43dca7*/
       v13 |= v17; /*0x43dca9*/
@@ -1227,18 +1227,18 @@ int FootClass::DrawPlacementPreview() {
         if ( --v23 ) /*0x43dd2b*/
         {
   LABEL_30:
-          IDA_LOWORD(v24) = v100; /*0x43dd6b*/
+          v24 = ((v24) & 0xFFFF0000u) | ((unsigned int)(v100) & 0xFFFFu); /*0x43dd6b*/
           v23 = ((v23) & 0xFFFF0000u) | ((unsigned int)(v104) & 0xFFFFu); /*0x43dd71*/
           v25 = ((v25) & 0xFFFF0000u) | ((unsigned int)(v22 >> 1) & 0xFFFFu); /*0x43dd7c*/
           v107 = v23 | (32 * ((32 * v24) | v25)) | v13; /*0x43dd8a*/
           goto LABEL_31; /*0x43dd8a*/
         }
-        IDA_LOWORD(v24) = v104; /*0x43dd33*/
+        v24 = ((v24) & 0xFFFF0000u) | ((unsigned int)(v104) & 0xFFFFu); /*0x43dd33*/
         v25 = ((v25) & 0xFFFF0000u) | ((unsigned int)(v22) & 0xFFFFu); /*0x43dd3f*/
         v23 = v24 | (32 * (v25 | (v100 << 6))); /*0x43dd46*/
         v13 |= v23; /*0x43dd48*/
       }
-      IDA_LOWORD(v24) = v100; /*0x43dd4a*/
+      v24 = ((v24) & 0xFFFF0000u) | ((unsigned int)(v100) & 0xFFFFu); /*0x43dd4a*/
       v25 = ((v25) & 0xFFFF0000u) | ((unsigned int)(v22 >> 1) & 0xFFFFu); /*0x43dd57*/
       v23 = ((v23) & 0xFFFF0000u) | ((unsigned int)(v104) & 0xFFFFu); /*0x43dd59*/
       v24 *= 32; /*0x43dd5f*/
@@ -6639,7 +6639,7 @@ void* TechnoClass::GetTurretOffset(void* a1, int a2) {
     *(float *)&v24 = *v8; /*0x6f3ec2*/
     v9 = *((unsigned int *)v8 + 1); /*0x6f3ec6*/
     v10 = v8[2]; /*0x6f3ecd*/
-    IDA_HIDWORD(v24) = v9; /*0x6f3ed0*/
+    v24 = ((v24) & 0xFFFFFFFFull) | (((unsigned long long)(v9) & 0xFFFFFFFFull) << 32); /*0x6f3ed0*/
     v25 = v10; /*0x6f3ed4*/
     (v11) = ((v11) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(*(float *)&v24)) & 0xFFFF); /*0x6f3ed8*/
     v12 = v11; /*0x6f3ee3*/
@@ -7838,12 +7838,12 @@ int TechnoClass::DrawPips()
           *(double *)v102 = (double)(int)Block[0]; /*0x70a239*/
           *(double *)v98 = *(float *)v98 + *(float *)&v97 + *(float *)&v96; /*0x70a249*/
           v53 = v52[33](this); /*0x70a24d*/
-          IDA_LOWORD(v54) = Math::RoundToInt(*(double *)v98 / (double)*(int *)(v53 + 2048) * *(double *)v102 + 0.5); /*0x70a267*/
+          v54 = ((v54) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)v98 / (double)*(int *)(v53 + 2048) * *(double *)v102 + 0.5)) & 0xFFFFu); /*0x70a267*/
           v55 = (int (__thiscall **)(TechnoClass *))this; /*0x70a270*/
           *(double *)v98 = v95; /*0x70a275*/
           v96 = v54; /*0x70a279*/
           v56 = v55[33](this); /*0x70a27d*/
-          IDA_LOWORD(v57) = Math::RoundToInt(*(double *)v98 / (double)*(int *)(v56 + 2048) * *(double *)v102 + 0.5); /*0x70a297*/
+          v57 = ((v57) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)v98 / (double)*(int *)(v56 + 2048) * *(double *)v102 + 0.5)) & 0xFFFFu); /*0x70a297*/
           v97 = v57; /*0x70a29c*/
           if ( (int)Block[0] > 0 ) /*0x70a2a6*/
           {
@@ -9383,13 +9383,13 @@ int TechnoClass::Draw(void* a1, void* a2) {
     {
       v20 = (unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v5->primaryFacing, &v39) >> 12) + 1) >> 1 << 13; /*0x73d145*/
       v21 = (int *)(*((int (__thiscall **)(TechnoClass *, int *))v5->vtable1 + 43))(v5, v46); /*0x73d157*/
-      IDA_LODWORD(v39) = (__int16)v20 - 0x3FFF; /*0x73d159*/
+      v39 = (__int16)v20 - 0x3FFF; /*0x73d159*/
       v22 = v21[2]; /*0x73d161*/
-      v42 = (double)IDA_SLODWORD(v39) * -0.00009587672516830327; /*0x73d16a*/
+      v42 = (double)((int)(v39)) * -0.00009587672516830327; /*0x73d16a*/
       v39 = (double)v21[1]; /*0x73d17b*/
       Math::SinCos(v42); /*0x73d17f*/
       (v23) = ((v23) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFF); /*0x73d18e*/
-      IDA_LODWORD(v39) = v23; /*0x73d197*/
+      v39 = v23; /*0x73d197*/
       Math::ArcTan2(v42); /*0x73d1a1*/
       (v24) = ((v24) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(a2 * 30.0 + (double)*v21)) & 0xFFFF); /*0x73d1b1*/
       v42 = COERCE_DOUBLE(IDA___PAIR64__(IDA_LODWORD(v39), v24)); /*0x73d1ba*/
@@ -9517,7 +9517,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
       v11 -= *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416] - v34; /*0x73d432*/
     }
     if ( v11 ) /*0x73d436*/
-      IDA_LOBYTE(v11) = TechnoClass::DrawTargetLine(v5); /*0x73d43a*/
+      v11 = ((v11) & 0xFFFFFF00u) | ((unsigned int)(TechnoClass::DrawTargetLine(v5)) & 0xFFu); /*0x73d43a*/
     return v11; /*0x73d43f*/
 }
 }

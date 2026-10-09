@@ -1532,8 +1532,8 @@ int InfantryClass::ProcessIdleAction()
           break; /*0x51cef8*/
         case 6: /*0x51ced9*/
           (v12) = ((v12) & ~0xFFFF) | ((unsigned int)((uint16_t)Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51cf11*/
-          IDA_LOBYTE(v8) = 0; /*0x51cf16*/
-          IDA_HIBYTE(v8) = ((v12 >> 7) + 1) >> 1; /*0x51cf27*/
+          v8 = ((v8) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x51cf16*/
+          v8 = ((v8) & 0xFFFF00FFu) | (((unsigned int)(((v12 >> 7) + 1) >> 1) & 0xFFu) << 8); /*0x51cf27*/
           (v13) = ((v13) & ~0xFFFF) | ((unsigned int)(v8) & 0xFFFF); /*0x51cf2f*/
           result = ((char *)((unsigned int *)this)[0])->Set_SyncLog(&v13); /*0x51cf34*/
           result = 1; /*0x51cf3b*/
@@ -1564,9 +1564,9 @@ int InfantryClass::ProcessIdleAction()
         case 9: /*0x51ced9*/
         case 10: /*0x51ced9*/
           (v12) = ((v12) & ~0xFFFF) | ((unsigned int)((uint16_t)Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 7) << 13) & 0xFFFF); /*0x51d06f*/
-          IDA_LOBYTE(v11) = 0; /*0x51d074*/
-          IDA_HIBYTE(v11) = ((v12 >> 7) + 1) >> 1; /*0x51d085*/
-          IDA_LOWORD(v15) = v11; /*0x51d08d*/
+          v11 = ((v11) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x51d074*/
+          v11 = ((v11) & 0xFFFF00FFu) | (((unsigned int)(((v12 >> 7) + 1) >> 1) & 0xFFu) << 8); /*0x51d085*/
+          v15 = ((v15) & 0xFFFF0000u) | ((unsigned int)(v11) & 0xFFFFu); /*0x51d08d*/
           result = ((char *)((unsigned int *)this)[0])->Set_SyncLog(&v15); /*0x51d092*/
           goto LABEL_22; /*0x51d092*/
         default:
@@ -1779,7 +1779,7 @@ int InfantryClass::GetIdleTimer()
   {
     (*((void (**)(InfantryClass *))this->vtable1 + 266))(this); /*0x5214bd*/
     v14 = MissionClass::GetMissionControl((MissionClass *)this); /*0x5214c5*/
-    IDA_LOWORD(v15) = Math::RoundToInt(*((double *)v14 + 2) * 900.0); /*0x5214d3*/
+    v15 = ((v15) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*((double *)v14 + 2) * 900.0)) & 0xFFFFu); /*0x5214d3*/
     return v15 + Random::Range((Random *)&((AbstractClass *)dword_A8B230)[14].NeedsSaveOrLink, 0, 2); /*0x5214ee*/
   }
 }
@@ -2250,8 +2250,8 @@ int InfantryClass::CalcMoveTarget()
       else
         v32 = 256.0; /*0x51b665*/
       v35 = Math::RoundToInt(v32); /*0x51b679*/
-      v34 = ((v34) & 0xFFFF0000u) | ((unsigned int)(IDA_HIWORD(v35)) & 0xFFFFu); /*0x51b679*/
-      IDA_LOWORD(v33) = v35; /*0x51b679*/
+      v34 = ((v34) & 0xFFFF0000u) | ((unsigned int)((unsigned short)((v35) >> 16)) & 0xFFFFu); /*0x51b679*/
+      v33 = ((v33) & 0xFFFF0000u) | ((unsigned int)(v35) & 0xFFFFu); /*0x51b679*/
       v82 = v33; /*0x51b682*/
       return (*((int (__fastcall **)(InfantryClass *, int, int *))this->vtable1 + 109))(this, v34, &v80); /*0x51b69a*/
     }
@@ -2498,7 +2498,7 @@ int InfantryClass::FindMoveTarget()
           v16 = *(float *)this; /*0x51d38a*/
           v41 = ((((v14 >> 12) + 1) >> 1) & 7) + v15 - 2; /*0x51d390*/
           a3 = 0; /*0x51d39f*/
-          v17 = (unsigned int *)(*(int (**)(int *, unsigned short *, unsigned int))(IDA_LODWORD(v16) + 76))(this, v49, 0); /*0x51d3ae*/
+          v17 = (unsigned int *)(*(int (**)(int *, unsigned short *, unsigned int))(((unsigned int)(v16)) + 76))(this, v49, 0); /*0x51d3ae*/
           a4 = ((a4) & 0xFFFF0000u) | ((unsigned int)(*v17 / 256) & 0xFFFFu); /*0x51d3c5*/
           v18 = v17[1] / 256; /*0x51d3da*/
           a4 = ((a4) & 0xFFFFu) | (((unsigned int)(v18) & 0xFFFFu) << 16); /*0x51d3de*/
@@ -2526,7 +2526,7 @@ int InfantryClass::FindMoveTarget()
           {
             v19 = *(float *)this; /*0x51d43f*/
             v20 = CellCoord_To_CellObj(&MapClass_Instance, (int16_t *)&v40); /*0x51d44d*/
-            (*(void (**)(int *, void *, int))(IDA_LODWORD(v19) + 1152))(this, v20, 1); /*0x51d455*/
+            (*(void (**)(int *, void *, int))(((unsigned int)(v19)) + 1152))(this, v20, 1); /*0x51d455*/
             if ( !*(&this->q0A43) ) /*0x51d45b*/
               sub_7DC720(-2147467261); /*0x51d46a*/
             MissionControl = ((MissionControl) & 0xFFFFFF00u) | ((unsigned int)((*(int (**)(unsigned int))(*(unsigned int *)*(&this->q0A43) + 64))(*(&this->q0A43))) & 0xFFu); /*0x51d478*/
@@ -2546,7 +2546,7 @@ int InfantryClass::FindMoveTarget()
         v21 = *(float *)this; /*0x51d487*/
         a2 = 0; /*0x51d491*/
         a3 = 0; /*0x51d49b*/
-        v22 = (unsigned int *)(*(int (**)(int *, unsigned short *, unsigned int))(IDA_LODWORD(v21) + 76))(this, v49, 0); /*0x51d4a5*/
+        v22 = (unsigned int *)(*(int (**)(int *, unsigned short *, unsigned int))(((unsigned int)(v21)) + 76))(this, v49, 0); /*0x51d4a5*/
         a4 = ((a4) & 0xFFFF0000u) | ((unsigned int)(*v22 / 256) & 0xFFFFu); /*0x51d4b8*/
         a4 = ((a4) & 0xFFFFu) | (((unsigned int)(v22[1] / 256) & 0xFFFFu) << 16); /*0x51d4d0*/
         a4 = a4; /*0x51d4d9*/
@@ -2562,9 +2562,9 @@ int InfantryClass::FindMoveTarget()
           v27 = ((unsigned char)v41 + v26) & 7; /*0x51d536*/
           v28 = v27 & 7; /*0x51d53b*/
           v29 = (unsigned short)(Direction_X_Offsets[v28]) + a4; /*0x51d53e*/
-          IDA_LOWORD(v28) = IDA_HIWORD(Direction_X_Offsets[v28]); /*0x51d54d*/
-          IDA_LOWORD(v42) = v29; /*0x51d555*/
-          IDA_HIWORD(v42) = IDA_HIWORD(a4) + v28; /*0x51d569*/
+          v28 = ((v28) & 0xFFFF0000u) | ((unsigned int)((unsigned short)((Direction_X_Offsets[v28]) >> 16)) & 0xFFFFu); /*0x51d54d*/
+          v42 = ((v42) & 0xFFFF0000u) | ((unsigned int)(v29) & 0xFFFFu); /*0x51d555*/
+          v42 = ((v42) & 0xFFFFu) | (((unsigned int)((unsigned short)((a4) >> 16) + v28) & 0xFFFFu) << 16); /*0x51d569*/
           a4 = v42; /*0x51d572*/
           v30 = CellCoord_To_CellObj(&MapClass_Instance, (int16_t *)&a4); /*0x51d587*/
           if ( LayerClass::IsWithinUsableArea(&MapClass_Instance, (int16_t *)&a4, 1) ) /*0x51d589*/
@@ -2598,7 +2598,7 @@ int InfantryClass::FindMoveTarget()
                 v39 = (int *)a3; /*0x51d69b*/
                 if ( (unsigned short)a3 != (unsigned short)v33 ) /*0x51d69f*/
                   goto LABEL_62; /*0x51d69f*/
-                if ( (unsigned short)((a3) >> 16) == IDA_HIWORD(v33) ) /*0x51d6a6*/
+                if ( (unsigned short)((a3) >> 16) == (unsigned short)((v33) >> 16) ) /*0x51d6a6*/
                 {
                   MissionControl = ((MissionControl) & 0xFFFF0000u) | ((unsigned int)((unsigned short)a2) & 0xFFFFu); /*0x51d6a8*/
                   v39 = a2; /*0x51d6ac*/
@@ -2690,14 +2690,14 @@ int InfantryClass::FindNearbyCell()
             while ( 2 ) /*0x418f40*/
             {
               v10 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x418f40*/
-              IDA_LODWORD(v21) = (int16_t)v19; /*0x418f59*/
+              v21 = (int16_t)v19; /*0x418f59*/
               v22 = v10; /*0x418f5d*/
               __asm { fild dword ptr [esp+50h+var_30] } /*0x418f61*/
               v18 = 0.0; /*0x418f65*/
               __asm { fstp [esp+50h+var_20] } /*0x418f73*/
               do /*0x419063*/
               {
-                IDA_LODWORD(v21) = ((int16_t)((IDA_WORD2(v18) + (unsigned short)v22) << 13) & 0xFFFFE000) - 0x3FFF; /*0x418f93*/
+                v21 = ((int16_t)((IDA_WORD2(v18) + (unsigned short)v22) << 13) & 0xFFFFE000) - 0x3FFF; /*0x418f93*/
                 __asm /*0x418f97*/
                 {
                   fild dword ptr [esp+50h+var_30]
@@ -2721,7 +2721,7 @@ int InfantryClass::FindNearbyCell()
                 if ( (uint8_t)LayerClass_IsWithinUsableArea((void *)&stru_87F5F0.__pad_58[416], v17, 1) ) /*0x418ff8*/
                 {
                   v13 = CellCoord_To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v17); /*0x419010*/
-                  if ( *(unsigned int *)v17 != IDA_LODWORD(v18) ) /*0x41901c*/
+                  if ( *(unsigned int *)v17 != ((unsigned int)(v18)) ) /*0x41901c*/
                   {
                     v14 = v23; /*0x41902a*/
                     if ( (*(uint8_t (**)(Cell *, void *))(v23->Cell_field_0x0 + 1360))(v23, v13) ) /*0x419033*/
@@ -2730,11 +2730,11 @@ int InfantryClass::FindNearbyCell()
                         return v13; /*0x4190a0*/
                     }
                   }
-                  IDA_LODWORD(v18) = *(unsigned int *)v17; /*0x419053*/
+                  v18 = *(unsigned int *)v17; /*0x419053*/
                 }
-                ++IDA_HIDWORD(v18); /*0x41905f*/
+                ++(unsigned int)((v18) >> 32); /*0x41905f*/
               }
-              while ( IDA_SHIDWORD(v18) < 8 ); /*0x419063*/
+              while ( (int)((v18) >> 32) < 8 ); /*0x419063*/
               v15 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5240); /*0x419074*/
               if ( ++v19 < v15 / 256 ) /*0x41908c*/
                 continue; /*0x41908c*/
@@ -3562,7 +3562,7 @@ int InfantryClass::ProcessTunnelMovement()
         fdivr ds:dbl_7F5B18
         fdiv qword ptr [ecx+20h]
       }
-      IDA_LOWORD(v10) = Math::RoundToInt(v1); /*0x7292ba*/
+      v10 = ((v10) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFFu); /*0x7292ba*/
       v11 = *(unsigned int *)&((unsigned int *)&stru_A8EB00)[416]; /*0x7292bf*/
       ((unsigned int *)this)[0] = 2; /*0x7292c8*/
       ((unsigned int *)this)[0] = v11; /*0x7292d1*/
@@ -5732,7 +5732,7 @@ int InfantryClass::GetActionOnObject_EMP(AbstractClass* object, int flags)
         if ( (_AX & 0x4000) != 0 ) /*0x51e638*/
         {
           v16 = -(*(unsigned char *)(v5[328] + 5805) != 0); /*0x51e64c*/
-          IDA_LOBYTE(v16) = v16 & 0xEB; /*0x51e64e*/
+          v16 = ((v16) & 0xFFFFFF00u) | ((unsigned int)(v16 & 0xEB) & 0xFFu); /*0x51e64e*/
           return v16 + 32; /*0x51e650*/
         }
         else
@@ -6659,7 +6659,7 @@ int InfantryClass::RepairBridge()
               v50 = ((__int64 (__thiscall *)(InfantryClass *, CellClass **))*(unsigned int *)((char *)this->vtable1 + 440))( /*0x519ba8*/
                       this,
                       &p_Cell_field_0x0);
-              if ( (unsigned __int8)CreateTriggerClassIfFarEnough(14, IDA_SHIDWORD(v50), *(unsigned int *)v50) ) /*0x519bb6*/
+              if ( (unsigned __int8)CreateTriggerClassIfFarEnough(14, (int)((v50) >> 32), *(unsigned int *)v50) ) /*0x519bb6*/
                 VoxClass::FindAndPlay(&stru_825538, -1); /*0x519bc9*/
             }
             if ( *(unsigned int *)&dword_8871E0->__pad_240[8] != -1 ) /*0x519bda*/

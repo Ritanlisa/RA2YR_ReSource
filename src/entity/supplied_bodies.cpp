@@ -454,7 +454,7 @@ int AnimClass::resetAnimation()
     v4 = (unsigned short *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 110))(this, &v13); /*0x449573*/
     (v10) = ((v10) & ~(0xFFFFULL << 16)) | (((unsigned __int64)(unsigned int)((((unsigned int)(v3) >> 16) & 0xFFFF) + v4[1]) & 0xFFFF) << 16) /*0x449596*/
     (v10) = ((v10) & ~0xFFFF) | ((unsigned int)(v3 + *v4 - 1) & 0xFFFF); /*0x4495a1*/
-    v15[1] = (IDA_SHIWORD(v10) << 8) + 128; /*0x4495be*/
+    v15[1] = ((short)((v10) >> 16) << 8) + 128; /*0x4495be*/
     *(unsigned int *)v12 = v10; /*0x4495c2*/
     v15[0] = ((__int16)v10 << 8) + 128; /*0x4495cc*/
     v15[2] = 0; /*0x4495d6*/

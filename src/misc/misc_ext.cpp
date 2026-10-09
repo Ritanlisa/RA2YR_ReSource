@@ -2000,7 +2000,7 @@ void* DamageAnimClass::Constructor(int a2, int *a3, int a4)
       v13 = ((v13) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(v12 + 712) + *(double *)(v12 + 712))) & 0xFFFFu); /*0x749570*/
       v46 = v13; /*0x74957e*/
       v14 = (double)((int)abs32(v42) % v13) - *(double *)(v12 + 712); /*0x749592*/
-      IDA_LOWORD(v15) = Math::RoundToInt(v14); /*0x7495b0*/
+      v15 = ((v15) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v14)) & 0xFFFFu); /*0x7495b0*/
       v43 = (double)((int)abs32(v10) % v15) + *(double *)(v12 + 696); /*0x7495d8*/
       v16 = (double)((int)abs32(v44) % v46) - *(double *)(v12 + 712); /*0x7495ec*/
       v52 = v43; /*0x7495f2*/
@@ -5889,7 +5889,7 @@ void MapPreview::Upload()
             else
               v7 = dword_AC0B90; /*0x5e7f6d*/
             Size[1] = v7; /*0x5e7f72*/
-            sprintf(v34, ",%d,%d,%d,%d", v5, v6, (__int16)v7, IDA_SHIWORD(v7)); /*0x5e7f8f*/
+            sprintf(v34, ",%d,%d,%d,%d", v5, v6, (__int16)v7, (short)((v7) >> 16)); /*0x5e7f8f*/
             strcat(Buffer, v34); /*0x5e7fc1*/
           }
           Network::SendOptionsGame(Buffer); /*0x5e7fdb*/
@@ -6398,7 +6398,7 @@ void MapSeed::PlaceCityBlock( int16_t * a2, int16_t * a3, void * a4)
           do /*0x5914ce*/
           {
             v62 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x5914ae*/
-            IDA_LOWORD(v40) = Math::RoundToInt((double)v62 * 4.656612874161595e-10); /*0x5914c4*/
+            v40 = ((v40) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt((double)v62 * 4.656612874161595e-10)) & 0xFFFFu); /*0x5914c4*/
           }
           while ( v40 > 1 ); /*0x5914ce*/
           v59.MapSeed_field_0x20 = ((v59.MapSeed_field_0x20) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x5914d2*/
@@ -6770,7 +6770,7 @@ void MapSeed::PlaceCityBuildings( int16_t * a2, int16_t * a3, void * a4)
           do /*0x5921b0*/
           {
             v68 = (unsigned int)Random::State((Random *)&g_MissionQueueFrame.globalVariables[1552]); /*0x592190*/
-            IDA_LOWORD(v43) = Math::RoundToInt((double)v68 * 4.656612874161595e-10); /*0x5921a6*/
+            v43 = ((v43) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt((double)v68 * 4.656612874161595e-10)) & 0xFFFFu); /*0x5921a6*/
           }
           while ( v43 > 1 ); /*0x5921b0*/
           v63.MapSeed_field_0x20 = ((v63.MapSeed_field_0x20) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x5921b4*/
@@ -6806,8 +6806,8 @@ void MapSeed::PlaceCityBuildings( int16_t * a2, int16_t * a3, void * a4)
                 v65 = v45 + v49 + 3; /*0x592272*/
                 v66 = v64[1] - v46; /*0x592277*/
                 v63.MapSeed_field_0x10 = ((v63.MapSeed_field_0x10) & 0xFFFF0000u) | ((unsigned int)(v65 + (unsigned short)(v63.MapSeed_field_0x20)) & 0xFFFFu); /*0x59228f*/
-                IDA_WORD1(v68) = IDA_HIWORD(v63.MapSeed_field_0x20) + v64[1] - v46; /*0x592296*/
-                v63.MapSeed_field_0x10 = ((v63.MapSeed_field_0x10) & 0xFFFFu) | (((unsigned int)((unsigned short)(v63.MapSeed_field_0x0C) + IDA_WORD1(v68)) & 0xFFFFu) << 16); /*0x5922aa*/
+                v68 = ((v68) & 0xFFFFu) | (((unsigned int)((unsigned short)((v63.MapSeed_field_0x20) >> 16) + v64[1] - v46) & 0xFFFFu) << 16); /*0x592296*/
+                v63.MapSeed_field_0x10 = ((v63.MapSeed_field_0x10) & 0xFFFFu) | (((unsigned int)((unsigned short)(v63.MapSeed_field_0x0C) + (unsigned short)((v68) >> 16)) & 0xFFFFu) << 16); /*0x5922aa*/
                 v63.MapSeed_field_0x1C = v63.MapSeed_field_0x10; /*0x5922b7*/
                 v50 = CellCoord::To_CellObj((CellCoord *)&((Host_87F5F0_c *)&stru_87F5F0)->__pad_58[416], (__int16 *)&v63.MapSeed_field_0x1C); /*0x5922bc*/
                 v51 = *v47; /*0x5922c5*/
@@ -6845,7 +6845,7 @@ void MapSeed::PlaceCityBuildings( int16_t * a2, int16_t * a3, void * a4)
             {
               v57 = a3[1]; /*0x59234f*/
               v58 = *a3 + 3; /*0x592355*/
-              IDA_WORD1(v68) = -(__int16)i; /*0x59235b*/
+              v68 = ((v68) & 0xFFFFu) | (((unsigned int)(-(__int16)i) & 0xFFFFu) << 16); /*0x59235b*/
               v65 = v58; /*0x592360*/
               v66 = v57; /*0x592365*/
               v64[0] = v54 + v58; /*0x59237a*/
@@ -9166,9 +9166,9 @@ void ScoreScreen::Display()
     do /*0x68ce1f*/
     {
       v6 = 4 * *(v5 - 1); /*0x68cde3*/
-      IDA_LOBYTE(v288) = 4 * *(v5 - 2); /*0x68cde6*/
+      v288 = ((v288) & 0xFFFFFF00u) | ((unsigned int)(4 * *(v5 - 2)) & 0xFFu); /*0x68cde6*/
       v7 = *v5; /*0x68cdea*/
-      IDA_BYTE1(v288) = v6; /*0x68cdec*/
+      v288 = ((v288) & 0xFFFF00FFu) | (((unsigned int)(v6) & 0xFFu) << 8); /*0x68cdec*/
       v8 = (char *)&stru_886080 + 3 * (v4 % 256); /*0x68ce08*/
       ++v4; /*0x68ce0f*/
       v5 += 3; /*0x68ce10*/
@@ -11477,9 +11477,9 @@ void SuperWeaponClass::CreateChemLauncher( int a2, int a3, int a4, IUnknown * aP
     Math::SinCos(-0.00009587672516830327); /*0x6e3ab2*/
     *(double *)&v27[2] = v9 * 100.0; /*0x6e3ac5*/
     v15 = *UIObjectCOM; /*0x6e3ac9*/
-    IDA_LODWORD(v22) = ((__int16)v10 << 8) + 128; /*0x6e3ae0*/
-    IDA_HIDWORD(v22) = (v20[1] << 8) + 128; /*0x6e3ae4*/
-    IDA_LODWORD(v23) = 0; /*0x6e3af4*/
+    v22 = ((__int16)v10 << 8) + 128; /*0x6e3ae0*/
+    v22 = ((v22) & 0xFFFFFFFFull) | (((unsigned long long)((v20[1] << 8) + 128) & 0xFFFFFFFFull) << 32); /*0x6e3ae4*/
+    v23 = 0; /*0x6e3af4*/
     (*(void (__thiscall **)(int *, double *, unsigned __int64 *))(v15 + 496))(UIObjectCOM, &v22, v27); /*0x6e3afc*/
     return 1; /*0x6e3b04*/
 }
@@ -15938,7 +15938,7 @@ void CChatEventSink::HandleChatEvent(int a1, AnimClass * a2, uint8_t * a3, char 
           v55 = ntohl(v54); /*0x7a6117*/
           (((v154) >> 16) & 0xFF) = (((v55) >> 8) & 0xFF); /*0x7a612b*/
           *(unsigned short *)((char *)&v154 + 3) = (unsigned __int8)v55; /*0x7a612b*/
-          v154 = ((v154) & 0xFFFFFF00u) | ((unsigned int)(IDA_HIBYTE(v55)) & 0xFFu); /*0x7a612f*/
+          v154 = ((v154) & 0xFFFFFF00u) | ((unsigned int)((unsigned char)((v55) >> 8)) & 0xFFu); /*0x7a612f*/
           (((v154) >> 8) & 0xFF) = (((v55) >> 16) & 0xFF); /*0x7a613e*/
           NetworkAddress::Assign(&v155, &v152, (int)&v154, 0); /*0x7a6148*/
           v56 = *(unsigned int *)v155.m_Port; /*0x7a6156*/
@@ -16733,7 +16733,7 @@ void CChatEventSink::HandleChannelJoin(int a1, int a2, int a3, const char * a4)
               v46.? = ((v46.?) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x7a76bc*/
               v26 = ntohl(v25); /*0x7a76c1*/
               v46.? = ((v46.?) & 0xFFFF00FFu) | (((unsigned int)(v26) & 0xFFu) << 8); /*0x7a76ca*/
-              v46.? = ((v46.?) & 0xFFFFFF00u) | ((unsigned int)(IDA_HIBYTE(v26)) & 0xFFu); /*0x7a76d6*/
+              v46.? = ((v46.?) & 0xFFFFFF00u) | ((unsigned int)((unsigned char)((v26) >> 8)) & 0xFFu); /*0x7a76d6*/
               v46.? = ((v46.?) & 0xFF00FFFFu) | (((unsigned int)((((v26) >> 8) & 0xFF)) & 0xFFu) << 16); /*0x7a76da*/
               v46.? = ((v46.?) & 0xFFFF00FFu) | (((unsigned int)((((v26) >> 16) & 0xFF)) & 0xFFu) << 8); /*0x7a76ef*/
               NetworkAddress::Assign((NetworkAddress *)&v46.attachedTag, &v46.?, (int)&v46.?, 0); /*0x7a76f3*/
@@ -17689,7 +17689,7 @@ void CChatEventSink::HandleUserSearch( int a2, void * a3)
       if ( (unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x7aa648*/
       {
         Type = BuildingAnim::GetType(); /*0x7aa65c*/
-        IDA_LOWORD(v79) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x7aa66b*/
+        v79 = ((v79) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x7aa66b*/
         MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, v91, Type, 22, v79, 0); /*0x7aa680*/
       }
       g_WOL_LoginObject.? = ((g_WOL_LoginObject.?) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x7aa685*/
@@ -17778,7 +17778,7 @@ void CChatEventSink::HandleUserSearch( int a2, void * a3)
         else
         {
           v8 = -(_strnicmp(a3 + 52, aLob35, strlen(aLob35)) != 0); /*0x7a9a65*/
-          IDA_LOBYTE(v8) = v8 & 0xFC; /*0x7a9a67*/
+          v8 = ((v8) & 0xFFFFFF00u) | ((unsigned int)(v8 & 0xFC) & 0xFFu); /*0x7a9a67*/
           *(unsigned int *)v87.__pad_0 = v8 + 8; /*0x7a9a6c*/
         }
       }
@@ -18148,9 +18148,9 @@ void CDROM::LockVolume(ObjectClass * aP0, AnimClass * aP1, uint8_t a3, DWORD Byt
     int v10; // [esp+10h] [ebp-20h]
     unsigned int InBuffer[7]; // [esp+14h] [ebp-1Ch] BYREF
 
-    IDA_LOBYTE(v5) = 0; /*0x47a6fc*/
+    v5 = ((v5) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x47a6fc*/
     memset(&InBuffer[1], 0, 0x18u); /*0x47a706*/
-    IDA_HIBYTE(v5) = BytesReturned; /*0x47a708*/
+    v5 = ((v5) & 0xFFFF00FFu) | (((unsigned int)(BytesReturned) & 0xFFu) << 8); /*0x47a708*/
     v10 = 5; /*0x47a723*/
     v6 = a3 | v5; /*0x47a72b*/
     while ( 2 )
@@ -18158,10 +18158,10 @@ void CDROM::LockVolume(ObjectClass * aP0, AnimClass * aP1, uint8_t a3, DWORD Byt
       v7 = 0; /*0x47a72d*/
       do
       {
-        IDA_LOBYTE(v8) = 0; /*0x47a738*/
+        v8 = ((v8) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x47a738*/
         InBuffer[1] = a5; /*0x47a73d*/
         v7 = v7 != 0 ? 8 : 72;
-        IDA_HIBYTE(v8) = v7; /*0x47a748*/
+        v8 = ((v8) & 0xFFFF00FFu) | (((unsigned int)(v7) & 0xFFu) << 8); /*0x47a748*/
         InBuffer[2] = v8 | 0x4A; /*0x47a75a*/
         InBuffer[3] = 17421; /*0x47a76b*/
         InBuffer[0] = v6; /*0x47a773*/
@@ -18639,7 +18639,7 @@ void Chat::ProcessMessages()
           {
             if ( v16 == 27 ) /*0x55e680*/
             {
-              IDA_LOBYTE(v2) = Network::SendBeacon((Network *)&g_VisibilitySystem, 0, -1, -1, 1); /*0x55e689*/
+              v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(Network::SendBeacon((Network *)&g_VisibilitySystem, 0, -1, -1, 1)) & 0xFFu); /*0x55e689*/
             }
             else
             {
@@ -18651,12 +18651,12 @@ void Chat::ProcessMessages()
               v20 = CharToWideString(asc_818D7C); /*0x55e704*/
               wcsncat(Destination, (const wchar_t *)v20, 0xA2u); /*0x55e712*/
               v96 = 0; /*0x55e721*/
-              IDA_LOBYTE(v2) = Network::SendBeacon((Network *)&g_VisibilitySystem, Destination, -1, -1, 0); /*0x55e734*/
+              v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(Network::SendBeacon((Network *)&g_VisibilitySystem, Destination, -1, -1, 0)) & 0xFFu); /*0x55e734*/
             }
           }
           if ( v18 != 3 && v18 != 4 ) /*0x55e740*/
             goto LABEL_148; /*0x55e740*/
-          IDA_LOBYTE(v2) = dword_A8B238; /*0x55e746*/
+          v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(dword_A8B238) & 0xFFu); /*0x55e746*/
           if ( !*(unsigned int *)&dword_A8B238 || *(unsigned int *)&dword_A8B238 == 5 ) /*0x55e756*/
             goto LABEL_148; /*0x55e756*/
           if ( *(unsigned int *)&dword_A8B238 == 2 || *(unsigned int *)&dword_A8B238 == 1 ) /*0x55e768*/
@@ -18682,7 +18682,7 @@ void Chat::ProcessMessages()
           if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 ) /*0x55e775*/
           {
   LABEL_147:
-            IDA_LOBYTE(v2) = MapClass::MarkForRedraw((GScreenClass *)&((Host_87F5F0_c *)&stru_87F5F0)->__pad_58[416], 2); /*0x55f1b1*/
+            v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)(MapClass::MarkForRedraw((GScreenClass *)&((Host_87F5F0_c *)&stru_87F5F0)->__pad_58[416], 2)) & 0xFFu); /*0x55f1b1*/
   LABEL_148:
             if ( v18 == 3 ) /*0x55f1c0*/
               *(unsigned int *)&g_MissionQueueFrame.waypoints[494] = 0; /*0x55f1c2*/
@@ -18750,7 +18750,7 @@ void Chat::ProcessMessages()
                 if ( wcslen(v24) ) /*0x55e927*/
                 {
                   swprintf(v94, (const size_t)&off_82A0F8, (const wchar_t *const)*dword_A8DA78, v92); /*0x55e99a*/
-                  IDA_LOWORD(v29) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55e9b6*/
+                  v29 = ((v29) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55e9b6*/
                   v78 = v29; /*0x55e9bb*/
                   v72 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e9de*/
                   IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55e9e7*/
@@ -18765,7 +18765,7 @@ void Chat::ProcessMessages()
                 }
                 else
                 {
-                  IDA_LOWORD(v28) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55e946*/
+                  v28 = ((v28) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55e946*/
                   v77 = v28; /*0x55e94b*/
                   v71 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e968*/
                   v67 = GetStringCSF(g_Str_TXT_CANT_SEND_BLANK_PAGE, 0, g_Str_File_MainLoop_CPP, 2072); /*0x55e978*/
@@ -18782,7 +18782,7 @@ void Chat::ProcessMessages()
               }
               else
               {
-                IDA_LOWORD(v27) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55e8e9*/
+                v27 = ((v27) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55e8e9*/
                 v76 = v27; /*0x55e8f4*/
                 v70 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55e90c*/
                 v66 = GetStringCSF(g_Str_TXT_NO_NAME_SPECIFIED, 0, g_Str_File_MainLoop_CPP, 2067); /*0x55e91c*/
@@ -18858,7 +18858,7 @@ void Chat::ProcessMessages()
               {
                 if ( wcslen(v36) ) /*0x55ec34*/
                 {
-                  IDA_LOWORD(v41) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55ec54*/
+                  v41 = ((v41) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55ec54*/
                   v80 = v41; /*0x55ec59*/
                   v74 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ec7c*/
                   IDA_LOBYTE(v2) = MessageListClass::AddMessage( /*0x55ec80*/
@@ -18873,7 +18873,7 @@ void Chat::ProcessMessages()
                 }
                 else
                 {
-                  IDA_LOWORD(v42) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55ec93*/
+                  v42 = ((v42) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55ec93*/
                   v81 = v42; /*0x55ec9e*/
                   v75 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ecb6*/
                   v69 = GetStringCSF(g_Str_TXT_CANT_SEND_BLANK_PAGE, 0, g_Str_File_MainLoop_CPP, 2149); /*0x55eccc*/
@@ -18890,7 +18890,7 @@ void Chat::ProcessMessages()
               }
               else
               {
-                IDA_LOWORD(v40) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55ebf4*/
+                v40 = ((v40) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55ebf4*/
                 v79 = v40; /*0x55ebf9*/
                 v73 = SessionClass::GetPlayerColorScheme(dword_A8B394); /*0x55ec16*/
                 v68 = GetStringCSF(aTxtNameNotSpec, 0, g_Str_File_MainLoop_CPP, 2136); /*0x55ec2c*/
@@ -18929,7 +18929,7 @@ void Chat::ProcessMessages()
               if ( !v2 ) /*0x55ed98*/
                 goto LABEL_103; /*0x55ed98*/
   LABEL_102:
-              IDA_LOBYTE(v2) = (unsigned __int8)wcscat(v2, Source); /*0x55ed9a*/
+              v2 = ((v2) & 0xFFFFFF00u) | ((unsigned int)((unsigned __int8)wcscat(v2, Source)) & 0xFFu); /*0x55ed9a*/
   LABEL_103:
               word_A8BDCC = 0; /*0x55edab*/
               return (char)v2; /*0x55edbe*/
@@ -18979,7 +18979,7 @@ void Chat::ProcessMessages()
                   v47 = *(unsigned int *)&g_MissionQueueFrame.waypoints[494]; /*0x55ee97*/
                 }
                 Type = BuildingAnim::GetType(); /*0x55eef1*/
-                IDA_LOWORD(v51) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55ef06*/
+                v51 = ((v51) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55ef06*/
                 v82 = v51; /*0x55ef0b*/
                 v52 = GetStringCSF(aTxtObserverCan, 0, g_Str_File_MainLoop_CPP, 2234); /*0x55ef20*/
                 MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, v52, Type, 22, v82, 1); /*0x55ef2d*/
@@ -19043,7 +19043,7 @@ void Chat::ProcessMessages()
             Network::ReceiveLoop(&unk_A8E9C0); /*0x55f0a3*/
           }
           v60 = CharToWideString(&stru_A8D600.__pad_34[8]); /*0x55f0b8*/
-          IDA_LOWORD(v61) = Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0); /*0x55f0c7*/
+          v61 = ((v61) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5312) * 900.0)) & 0xFFFFu); /*0x55f0c7*/
           v83 = v61; /*0x55f0d2*/
           v62 = SessionClass::GetPlayerColorScheme(*(unsigned int *)&stru_A8D600.__pad_87[193]); /*0x55f0de*/
           MessageListClass::AddMessage( /*0x55f0f5*/
@@ -19659,7 +19659,7 @@ void Cliff::ProcessTransitions(MapClass * aP0, BombClass * aP1)
       v22 = *(unsigned int *)(v2 + 36); /*0x579052*/
       a1 = ((a1) & 0xFFFFu) | (((unsigned int)((((unsigned int)(v22) >> 16) & 0xFFFF)) & 0xFFFFu) << 16); /*0x57905e*/
       a1 = ((a1) & 0xFFFF0000u) | ((unsigned int)(v22 + 1) & 0xFFFFu); /*0x579063*/
-      v6 = (__int16)(v22 + 1) + (IDA_SHIWORD(v22) << 9); /*0x579071*/
+      v6 = (__int16)(v22 + 1) + ((short)((v22) >> 16) << 9); /*0x579071*/
       if ( v6 >= 0x40000 || (v7 = *(void **)(dword_87F924 + 4 * v6)) == 0 ) /*0x579087*/
       {
         dword_ABDC74 = a1; /*0x57908d*/
@@ -19673,7 +19673,7 @@ void Cliff::ProcessTransitions(MapClass * aP0, BombClass * aP1)
       v23 = *(unsigned int *)(v2 + 36); /*0x5790b0*/
       a1 = ((a1) & 0xFFFFu) | (((unsigned int)((((unsigned int)(v23) >> 16) & 0xFFFF)) & 0xFFFFu) << 16); /*0x5790bc*/
       a1 = ((a1) & 0xFFFF0000u) | ((unsigned int)(v23 - 1) & 0xFFFFu); /*0x5790c1*/
-      v8 = (__int16)(v23 - 1) + (IDA_SHIWORD(v23) << 9); /*0x5790cf*/
+      v8 = (__int16)(v23 - 1) + ((short)((v23) >> 16) << 9); /*0x5790cf*/
       if ( v8 >= 0x40000 || (v9 = *(void **)(dword_87F924 + 4 * v8)) == 0 ) /*0x5790e5*/
       {
         dword_ABDC74 = a1; /*0x5790eb*/
@@ -20640,7 +20640,7 @@ void CrateClass::ProcessPickup(int aP1)
                 *(unsigned int *)&v122.vtable4[8] = v42; /*0x482374*/
                 if ( v42 != dword_89E748 ) /*0x48237d*/
                 {
-                  *(unsigned int *)&v122.vtable4[164] = (IDA_SHIWORD(v42) << 8) + 128; /*0x4823a3*/
+                  *(unsigned int *)&v122.vtable4[164] = ((short)((v42) >> 16) << 8) + 128; /*0x4823a3*/
                   *(unsigned int *)&v122.vtable4[160] = ((__int16)v42 << 8) + 128; /*0x4823aa*/
                   *(unsigned int *)&v122.vtable4[168] = 0; /*0x4823b1*/
                   if ( (*(unsigned __int8 (__thiscall **)(unsigned int *, char *, unsigned int))(*v39 + 216))( /*0x4823c5*/
@@ -20675,7 +20675,7 @@ void CrateClass::ProcessPickup(int aP1)
                 v46 = j; /*0x482479*/
                 if ( !j ) /*0x482482*/
                 {
-                  IDA_LOWORD(v47) = Math::RoundToInt(*(double *)&v120); /*0x482488*/
+                  v47 = ((v47) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)&v120)) & 0xFFFFu); /*0x482488*/
                   v46 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, v47, v47 + 900); /*0x4824a5*/
                 }
                 if ( !(unsigned __int8)House::IsHumanPlayer(*(House **)(a2 + 540)) || *(unsigned int *)&dword_A8B238 ) /*0x4824bf*/
@@ -20771,7 +20771,7 @@ void CrateClass::ProcessPickup(int aP1)
                           (double)(*(unsigned int *)&v122.vtable4[16] - v71) * (double)(*(unsigned int *)&v122.vtable4[16] - v71)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]
                         + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
-                        IDA_LOWORD(v72) = Math::RoundToInt(v17); /*0x482938*/
+                        v72 = ((v72) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v17)) & 0xFFFFu); /*0x482938*/
                         if ( v72 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5932) ) /*0x482949*/
                           v119[978] = 1; /*0x48294f*/
                       }
@@ -20783,7 +20783,7 @@ void CrateClass::ProcessPickup(int aP1)
               case 4: /*0x481de0*/
                 Debug::Log(); /*0x482574*/
                 v48 = v120; /*0x482579*/
-                IDA_LOWORD(v49) = Math::RoundToInt(*(double *)&v120); /*0x482580*/
+                v49 = ((v49) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)&v120)) & 0xFFFFu); /*0x482580*/
                 *(unsigned int *)&v122.vtable4[8] = v49; /*0x482590*/
                 v113 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x4825a0*/
                 v119 = v49; /*0x4825a1*/
@@ -20863,7 +20863,7 @@ void CrateClass::ProcessPickup(int aP1)
                 Debug::Log(); /*0x48272d*/
                 v57 = *((unsigned int *)this + 9); /*0x482732*/
                 v58 = ((__int16)v57 << 8) + 128; /*0x482751*/
-                v59 = (IDA_SHIWORD(v57) << 8) + 128; /*0x482753*/
+                v59 = ((short)((v57) >> 16) << 8) + 128; /*0x482753*/
                 *(unsigned int *)v122.vtable4 = 128; /*0x482755*/
                 *(unsigned int *)&v122.vtable4[4] = 128; /*0x482759*/
                 v122.Coord_field_0x8 = (void *)Isometric::InitTables((int)this, v122.vtable4); /*0x48276a*/
@@ -20885,7 +20885,7 @@ void CrateClass::ProcessPickup(int aP1)
                     (void *)0x600,
                     0,
                     0);
-                IDA_LOWORD(v65) = Math::RoundToInt(*(double *)&v120); /*0x4827ec*/
+                v65 = ((v65) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)&v120)) & 0xFFFFu); /*0x4827ec*/
                 v66 = v65; /*0x4827f4*/
                 v67 = *(unsigned int *)a2; /*0x4827fd*/
                 *(unsigned int *)v122.vtable4 = v65; /*0x4827ff*/
@@ -21016,7 +21016,7 @@ void CrateClass::ProcessPickup(int aP1)
                           (double)(*(unsigned int *)&v122.vtable4[44] - v98) * (double)(*(unsigned int *)&v122.vtable4[44] - v98)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]
                         + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
-                        IDA_LOWORD(v99) = Math::RoundToInt(v17); /*0x483023*/
+                        v99 = ((v99) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v17)) & 0xFFFFu); /*0x483023*/
                         if ( v99 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5932) /*0x48305a*/
                           && !*(unsigned int *)(j + 1408)
                           && *(unsigned int *)(j + 1412) == 1072693248
@@ -21078,7 +21078,7 @@ void CrateClass::ProcessPickup(int aP1)
                           (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0
                         + (double)(*(unsigned int *)&v122.vtable4[44] - v104) * (double)(*(unsigned int *)&v122.vtable4[44] - v104)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]);
-                        IDA_LOWORD(v105) = Math::RoundToInt(v17); /*0x48320f*/
+                        v105 = ((v105) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v17)) & 0xFFFFu); /*0x48320f*/
                         if ( v105 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5932) /*0x48323a*/
                           && !*(unsigned int *)(j + 352)
                           && *(unsigned int *)(j + 356) == 1072693248 )
@@ -21152,7 +21152,7 @@ void CrateClass::ProcessPickup(int aP1)
                           (double)(*(unsigned int *)&v122.vtable4[44] - v74) * (double)(*(unsigned int *)&v122.vtable4[44] - v74)
                         + (double)*(int *)&v122.Coord_field_0x2[2] * (double)*(int *)&v122.Coord_field_0x2[2]
                         + (double)*(int *)v122.__pad_0 * (double)*(int *)v122.__pad_0);
-                        IDA_LOWORD(v75) = Math::RoundToInt(v17); /*0x482a6a*/
+                        v75 = ((v75) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v17)) & 0xFFFFu); /*0x482a6a*/
                         if ( v75 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5932) ) /*0x482a7b*/
                         {
                           if ( *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v119 + 132))(v119) + 3214) ) /*0x482a8f*/
@@ -21201,7 +21201,7 @@ void CrateClass::ProcessPickup(int aP1)
               case 16: /*0x481de0*/
                 Debug::Log(); /*0x481df6*/
                 v18 = Crate::applyCrateEffect(&stru_81D07C); /*0x481e0c*/
-                IDA_LOWORD(v19) = Math::RoundToInt(*(double *)&v120); /*0x481e0e*/
+                v19 = ((v19) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)&v120)) & 0xFFFFu); /*0x481e0e*/
                 v20 = *(unsigned int *)this->__pad_0; /*0x481e13*/
                 v21 = (int)v19; /*0x481e17*/
                 v119 = v19; /*0x481e28*/
@@ -21582,10 +21582,10 @@ void Dial8Class::SetValue( unsigned int a2, ControlClass * aP2, int a4)
                     v12);
       Math::CalcAngle((double)*((int *)this + 12) - (double)v8[1], (double)*v8 - (double)*((int *)this + 11)); /*0x4a5709*/
       (a2) = ((a2) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt((v4 - 1.570796326794897) * -10430.06004058427)) & 0xFFFF); /*0x4a5722*/
-      IDA_LOBYTE(v9) = 0; /*0x4a572f*/
+      v9 = ((v9) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x4a572f*/
       v10 = *((unsigned int *)this + 47); /*0x4a5738*/
-      IDA_HIBYTE(v9) = ((a2 >> 7) + 1) >> 1; /*0x4a573e*/
-      *((unsigned int *)this + 45) = IDA_HIBYTE(v9); /*0x4a5740*/
+      v9 = ((v9) & 0xFFFF00FFu) | (((unsigned int)(((a2 >> 7) + 1) >> 1) & 0xFFu) << 8); /*0x4a573e*/
+      *((unsigned int *)this + 45) = (unsigned char)((v9) >> 8); /*0x4a5740*/
       (a2) = ((a2) & ~0xFFFF) | ((unsigned int)(v9) & 0xFFFF); /*0x4a5746*/
       v11 = (((a2 >> 12) + 1) >> 1) & 7; /*0x4a5755*/
       *((unsigned int *)this + 46) = v11; /*0x4a575a*/
@@ -21954,8 +21954,8 @@ void DiskLaserClass::Update()
       else
       {
         v62 = (unsigned char *)(*(unsigned int *)(this->DiskLaserClass_field_0x24 + 540) + 22268); /*0x4a7535*/
-        IDA_LOBYTE(v63) = *v62 >> 1; /*0x4a753d*/
-        IDA_HIBYTE(v63) = v62[1] >> 1; /*0x4a754a*/
+        v63 = ((v63) & 0xFFFFFF00u) | ((unsigned int)(*v62 >> 1) & 0xFFu); /*0x4a753d*/
+        v63 = ((v63) & 0xFFFF00FFu) | (((unsigned int)(v62[1] >> 1) & 0xFFu) << 8); /*0x4a754a*/
         v64 = v62[2] >> 1; /*0x4a7557*/
         v25 = &v63; /*0x4a755b*/
       }
@@ -22059,22 +22059,22 @@ void DiskLaserClass::Update()
         v68 = (char *)new unsigned char[0x5Cu]; /*0x4a777a*/
         if ( v68 ) /*0x4a7780*/
         {
-          IDA_HIWORD(v41) = IDA_HIWORD(v67); /*0x4a7786*/
+          v41 = ((v41) & 0xFFFFu) | (((unsigned int)((unsigned short)((v67) >> 16)) & 0xFFFFu) << 16); /*0x4a7786*/
           v61 = 1056964608; /*0x4a778e*/
           v60 = 1065353216; /*0x4a7793*/
           v59 = 1; /*0x4a7798*/
           v58 = 0; /*0x4a779a*/
           v57 = v67; /*0x4a779c*/
           v56 = v67; /*0x4a779d*/
-          IDA_LOWORD(v41) = *(unsigned short *)v66; /*0x4a779e*/
+          v41 = ((v41) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)v66) & 0xFFFFu); /*0x4a779e*/
           v55 = v41; /*0x4a77a3*/
           v42 = *(unsigned char *)(v66 + 2); /*0x4a77a4*/
-          IDA_LOWORD(v56) = (unsigned short)v41; /*0x4a77a7*/
+          v56 = ((v56) & 0xFFFF0000u) | ((unsigned int)((unsigned short)v41) & 0xFFFFu); /*0x4a77a7*/
           (((v56) >> 16) & 0xFF) = v42; /*0x4a77ac*/
-          IDA_LOWORD(v55) = *v65; /*0x4a77b6*/
+          v55 = ((v55) & 0xFFFF0000u) | ((unsigned int)(*v65) & 0xFFFFu); /*0x4a77b6*/
           v53 = &v55; /*0x4a77bc*/
           (((v55) >> 16) & 0xFF) = *((unsigned char *)v65 + 2); /*0x4a77bd*/
-          IDA_LOWORD(v53) = *(unsigned short *)v62; /*0x4a77cd*/
+          v53 = ((v53) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)v62) & 0xFFFFu); /*0x4a77cd*/
           (((v53) >> 16) & 0xFF) = v62[2]; /*0x4a77da*/
           TimerClass::Construct( /*0x4a7804*/
             v68,
@@ -22113,15 +22113,15 @@ void DiskLaserClass::Update()
           v58 = 0; /*0x4a786b*/
           v57 = v67; /*0x4a786d*/
           v56 = v67; /*0x4a786e*/
-          IDA_LOWORD(v56) = *(unsigned short *)v66; /*0x4a7878*/
+          v56 = ((v56) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)v66) & 0xFFFFu); /*0x4a7878*/
           v49 = (DiskLaserClass **)v66; /*0x4a787b*/
           (((v56) >> 16) & 0xFF) = *(unsigned char *)(v66 + 2); /*0x4a7882*/
-          IDA_LOBYTE(v49) = (((v56) >> 16) & 0xFF); /*0x4a787f*/
+          v49 = ((v49) & 0xFFFFFF00u) | ((unsigned int)((((v56) >> 16) & 0xFF)) & 0xFFu); /*0x4a787f*/
           v55 = v49; /*0x4a7885*/
-          IDA_LOWORD(v55) = *v65; /*0x4a788f*/
+          v55 = ((v55) & 0xFFFF0000u) | ((unsigned int)(*v65) & 0xFFFFu); /*0x4a788f*/
           (((v55) >> 16) & 0xFF) = *((unsigned char *)v65 + 2); /*0x4a7899*/
-          IDA_HIBYTE(v54) = IDA_HIBYTE(v65); /*0x4a789c*/
-          IDA_LOWORD(v54) = *(unsigned short *)v62; /*0x4a78ad*/
+          v54 = ((v54) & 0xFFFF00FFu) | (((unsigned int)((unsigned char)((v65) >> 8)) & 0xFFu) << 8); /*0x4a789c*/
+          v54 = ((v54) & 0xFFFF0000u) | ((unsigned int)(*(unsigned short *)v62) & 0xFFFFu); /*0x4a78ad*/
           (((v54) >> 16) & 0xFF) = v62[2]; /*0x4a78b7*/
           TimerClass::Construct( /*0x4a78df*/
             v48,
@@ -27808,7 +27808,7 @@ void MiniMap::Render()
                 | (v22 << g_BitShift_Red);
             if ( v18 <= 5 ) /*0x641473*/
               v18 = (v49 >> g_BitMask_Red << g_BitShift_Blue) /*0x6414b7*/
-                  | (IDA_HIBYTE(v48) >> g_BitMask_Blue << g_BitMask_Green)
+                  | ((unsigned char)((v48) >> 8) >> g_BitMask_Blue << g_BitMask_Green)
                   | ((unsigned __int8)v48 >> ((signed char)(v41[0])) << g_BitShift_Red);
             v23 = *(unsigned char *)(v13 + 286); /*0x6414b9*/
             v19 = 75; /*0x6414bf*/
@@ -27828,7 +27828,7 @@ void MiniMap::Render()
           {
             *(unsigned int *)v41 = (unsigned __int8)g_BitShift_Green_0; /*0x641541*/
             v18 = (v49 >> g_BitMask_Red << g_BitShift_Blue) /*0x641582*/
-                | (IDA_HIBYTE(v48) >> g_BitMask_Blue << g_BitMask_Green)
+                | ((unsigned char)((v48) >> 8) >> g_BitMask_Blue << g_BitMask_Green)
                 | ((unsigned __int8)v48 >> g_BitShift_Green_0 << g_BitShift_Red);
             if ( v18 <= 5 ) /*0x641587*/
               v18 = (*(unsigned __int8 *)(v20 + 696) >> g_BitMask_Red << g_BitShift_Blue) /*0x6415cd*/
@@ -27891,7 +27891,7 @@ void MiniMap::Render()
       if ( (unsigned __int8)ScenarioClass_Is_Waypoint_Valid((char *)dword_A8B230, v34) ) /*0x641782*/
       {
         v51 = *ScenarioClass_Get_Waypoint_Location((char *)dword_A8B230, v41, v34); /*0x6417a6*/
-        IsoCoord::ToScreenOffset(((__int16)v51 << 8) + 128, (IDA_SHIWORD(v51) << 8) + 128, &v50, &v47); /*0x6417d1*/
+        IsoCoord::ToScreenOffset(((__int16)v51 << 8) + 128, ((short)((v51) >> 16) << 8) + 128, &v50, &v47); /*0x6417d1*/
         v57 = 4; /*0x6417ec*/
         v55.vfptr = (void *)(2 * (v50 / 60 - v2) - 1); /*0x641816*/
         v56 = v47 / 30 - v45 - 1; /*0x641821*/
@@ -27977,8 +27977,8 @@ void MiniMap::SavePreviewToINI( char * a2)
           v21[0] = i; /*0x6419c2*/
           v21[1] = v5; /*0x6419c6*/
           v13 = (*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v12 + 40))(v12, v21); /*0x6419d1*/
-          IDA_LOBYTE(v18) = (unsigned __int8)(v13 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x6419f1*/
-          IDA_HIBYTE(v18) = (unsigned __int8)(v13 >> g_BitMask_Green) << g_BitMask_Blue; /*0x641a12*/
+          v18 = ((v18) & 0xFFFFFF00u) | ((unsigned int)((unsigned __int8)(v13 >> g_BitShift_Red) << g_BitShift_Green_0) & 0xFFu); /*0x6419f1*/
+          v18 = ((v18) & 0xFFFF00FFu) | (((unsigned int)((unsigned __int8)(v13 >> g_BitMask_Green) << g_BitMask_Blue) & 0xFFu) << 8); /*0x641a12*/
           Src = v18; /*0x641a22*/
           v20 = (unsigned __int8)(v13 >> g_BitShift_Blue) << g_BitMask_Red; /*0x641a2b*/
           v4 += Compression::Read((int *)v24.__pad_0, (int)&Src, 3); /*0x641a36*/
@@ -28812,7 +28812,7 @@ void Multiplay::LogToSYNC_NOMPDEBUG()
               v316 = v338; /*0x64e493*/
               v302 = v346; /*0x64e498*/
               v296 = v345; /*0x64e4a1*/
-              IDA_LOWORD(v39) = Math::RoundToInt(*((double *)v22 + 175) * 256.0); /*0x64e4a2*/
+              v39 = ((v39) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*((double *)v22 + 175) * 256.0)) & 0xFFFFu); /*0x64e4a2*/
               v292 = v39; /*0x64e4af*/
               v288 = v336; /*0x64e4b4*/
               v284 = v337; /*0x64e4b5*/
@@ -32482,7 +32482,7 @@ void ProjectileTrail::ComputeRenderData()
     *(unsigned short *)v7.__tail_0 = Math::RoundToInt(v1); /*0x659b6c*/
     _ESI[41] = v7; /*0x659b71*/
     __asm { fstp st } /*0x659b7e*/
-    IDA_LODWORD(v21) = *(unsigned int *)&_ESI[34] + 1; /*0x659b80*/
+    v21 = *(unsigned int *)&_ESI[34] + 1; /*0x659b80*/
     __asm /*0x659b84*/
     {
       fild dword ptr [esp+28h+var_18]
@@ -32517,7 +32517,7 @@ void ProjectileTrail::ComputeRenderData()
     *(unsigned short *)v13.__tail_0 = Math::RoundToInt(v1); /*0x659c02*/
     _ESI[44] = v13; /*0x659c07*/
     (v14) = ((v14) & ~0xFFFF) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFF); /*0x659c0d*/
-    IDA_LODWORD(v22) = abs32(v14); /*0x659c19*/
+    v22 = abs32(v14); /*0x659c19*/
     __asm { fild dword ptr [esp+20h+var_18] } /*0x659c1f*/
     v15 = (unsigned __int8)_ESI[8].__tail_0[0]; /*0x659c25*/
     __asm /*0x659c28*/
@@ -32528,16 +32528,16 @@ void ProjectileTrail::ComputeRenderData()
       fst qword ptr [esi+0B8h]
     }
     *(double *)_ESI[46].__tail_0 = _RT1; /*0x659c37*/
-    IDA_LODWORD(v22) = (unsigned __int8)_ESI[8].__tail_0[1]; /*0x659c43*/
+    v22 = (unsigned __int8)_ESI[8].__tail_0[1]; /*0x659c43*/
     __asm { fild dword ptr [esp+20h+var_18] } /*0x659c47*/
-    IDA_LODWORD(v22) = (unsigned __int8)_ESI[8].__tail_0[2]; /*0x659c4b*/
+    v22 = (unsigned __int8)_ESI[8].__tail_0[2]; /*0x659c4b*/
     __asm /*0x659c4f*/
     {
       fmul st, st(1)
       fstp [esp+20h+var_10]
       fild dword ptr [esp+20h+var_18]
     }
-    IDA_LODWORD(v22) = v15; /*0x659c59*/
+    v22 = v15; /*0x659c59*/
     __asm /*0x659c5d*/
     {
       fmul st, st(1)
@@ -34159,9 +34159,9 @@ void Subzone::BuildGraph( IUnknown * aP2)
           v35 = *((unsigned int *)v34 - 1); /*0x58239c*/
           v36 = (unsigned __int16)v35; /*0x58239e*/
           v79 = *v34; /*0x5823a4*/
-          IDA_LOBYTE(v67) = *v34; /*0x5823ab*/
+          v67 = ((v67) & 0xFFFFFF00u) | ((unsigned int)(*v34) & 0xFFu); /*0x5823ab*/
           v37 = *(unsigned int *)(p_Subzone_field_0x08 + 4) + 36 * (unsigned __int16)v35; /*0x5823b8*/
-          v38 = IDA_HIWORD(v35); /*0x5823bd*/
+          v38 = (unsigned short)((v35) >> 16); /*0x5823bd*/
           v39 = *(unsigned int *)(v37 + 8); /*0x5823c3*/
           if ( *(unsigned int *)(v37 + 16) < v39 /*0x5823e8*/
             || (*(unsigned char *)(v37 + 13) || !v39)
@@ -34176,7 +34176,7 @@ void Subzone::BuildGraph( IUnknown * aP2)
             *(unsigned int *)(v42 + 8 * v41 + 4) = v43; /*0x582402*/
           }
           v44 = *(unsigned int *)(p_Subzone_field_0x08 + 4); /*0x582406*/
-          IDA_LOBYTE(v65) = v79; /*0x582414*/
+          v65 = ((v65) & 0xFFFFFF00u) | ((unsigned int)(v79) & 0xFFu); /*0x582414*/
           v45 = v44 + 36 * v38; /*0x582418*/
           v46 = *(unsigned int *)(v45 + 8); /*0x58241b*/
           if ( *(unsigned int *)(v45 + 16) < v46 /*0x582441*/
@@ -39328,7 +39328,7 @@ void TileSystem::BuildNodes()
     if ( v6 ) /*0x58d662*/
     {
       Block = v6; /*0x58d665*/
-      IDA_LODWORD(v158) = v5 - 1; /*0x58d669*/
+      v158 = v5 - 1; /*0x58d669*/
     }
     else
     {
@@ -39407,7 +39407,7 @@ void TileSystem::BuildNodes()
         fmul ds:dbl_7ED898
         fadd [esp+0B0h+var_58]
       }
-      IDA_LOWORD(v22) = Math::RoundToInt(v1); /*0x58d7a6*/
+      v22 = ((v22) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFFu); /*0x58d7a6*/
       v166 = v22; /*0x58d7ad*/
     }
     while ( v22 > v20 ); /*0x58d7b4*/
@@ -39427,7 +39427,7 @@ void TileSystem::BuildNodes()
         fmul [esp+0B0h+var_48]
         fmul ds:dbl_7ED898
       }
-      IDA_LOWORD(v24) = Math::RoundToInt(v1); /*0x58d7ed*/
+      v24 = ((v24) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v1)) & 0xFFFFu); /*0x58d7ed*/
     }
     while ( v24 > v23 ); /*0x58d7f4*/
     v25 = *(unsigned int *)(v157.TileSystem_field_0x08 + 44); /*0x58d7f6*/
@@ -39436,7 +39436,7 @@ void TileSystem::BuildNodes()
     v160 = *(unsigned int *)(v25 + 4 * v24); /*0x58d808*/
     *(unsigned int *)Block = v160; /*0x58d80c*/
     v26[1] = 0; /*0x58d80e*/
-    *(unsigned int *)(80 * ((__int16)v160 + g_MapCellWidth * IDA_SHIWORD(v160)) + g_MissionQueueFrame.localVariables[163] + 60) = -3; /*0x58d830*/
+    *(unsigned int *)(80 * ((__int16)v160 + g_MapCellWidth * (short)((v160) >> 16)) + g_MissionQueueFrame.localVariables[163] + 60) = -3; /*0x58d830*/
     v27 = *(unsigned int *)v8 + 1; /*0x58d83d*/
     v156 = v26[1]; /*0x58d840*/
     v28 = v27 >> 1; /*0x58d847*/
@@ -39534,7 +39534,7 @@ void TileSystem::BuildNodes()
                   v48 = *((unsigned int *)v46 + 1); /*0x58da65*/
                   v49 = *(unsigned int *)v8 + 1; /*0x58da68*/
                   v157.TileSystem_field_0x0C = v47; /*0x58da69*/
-                  IDA_LODWORD(v158) = v48; /*0x58da6f*/
+                  v158 = v48; /*0x58da6f*/
                   v50 = v49 >> 1; /*0x58da76*/
                   if ( v49 < *(unsigned int *)&v8[1] ) /*0x58da7a*/
                   {
@@ -39623,8 +39623,8 @@ void TileSystem::BuildNodes()
     v168 = 0; /*0x58dbb6*/
     while ( v61 ) /*0x58dbc1*/
     {
-      IDA_LODWORD(v158) = *v61; /*0x58dbca*/
-      *(unsigned int *)(80 * (SLOWORD(v158) + g_MapCellWidth * IDA_SWORD1(v158)) + g_MissionQueueFrame.localVariables[163] + 56) = -3; /*0x58dbea*/
+      v158 = *v61; /*0x58dbca*/
+      *(unsigned int *)(80 * (SLOWORD(v158) + g_MapCellWidth * (short)((v158) >> 16)) + g_MissionQueueFrame.localVariables[163] + 56) = -3; /*0x58dbea*/
       if ( !*(unsigned int *)v8 ) /*0x58dbee*/
         break; /*0x58dbf2*/
       v63 = v8[2]; /*0x58dbf4*/
@@ -39652,8 +39652,8 @@ void TileSystem::BuildNodes()
       do /*0x58df7f*/
       {
         v67 = *(unsigned int *)(*(unsigned int *)(TileSystem_field_0x08 + 44) + 4 * v65); /*0x58dc86*/
-        IDA_LODWORD(v158) = v67; /*0x58dc89*/
-        v68 = 80 * ((__int16)v67 + g_MapCellWidth * IDA_SHIWORD(v67)); /*0x58dca1*/
+        v158 = v67; /*0x58dc89*/
+        v68 = 80 * ((__int16)v67 + g_MapCellWidth * (short)((v67) >> 16)); /*0x58dca1*/
         if ( *(int *)(v68 + v66 + 56) < -1 ) /*0x58dcab*/
         {
           v162 = *(unsigned int *)(v68 + v66 + 56); /*0x58dcb5*/
@@ -39722,14 +39722,14 @@ void TileSystem::BuildNodes()
             for ( m = 0; m < 8; ++m ) /*0x58de27*/
             {
               v84 = *CellStruct::Add((CellStruct *)&v157, &v161, (unsigned short *)(4 * (v83 & 7) + 9041544)); /*0x58de44*/
-              IDA_LODWORD(v158) = v84; /*0x58de4c*/
-              v85 = IDA_SHIWORD(v84) + (__int16)v84; /*0x58de58*/
+              v158 = v84; /*0x58de4c*/
+              v85 = (short)((v84) >> 16) + (__int16)v84; /*0x58de58*/
               if ( v85 > g_MissionQueueFrame.localVariables[160] /*0x58de81*/
-                && (__int16)v84 - IDA_SHIWORD(v84) < g_MissionQueueFrame.localVariables[160]
-                && IDA_SHIWORD(v84) - (__int16)v84 < g_MissionQueueFrame.localVariables[160]
+                && (__int16)v84 - (short)((v84) >> 16) < g_MissionQueueFrame.localVariables[160]
+                && (short)((v84) >> 16) - (__int16)v84 < g_MissionQueueFrame.localVariables[160]
                 && v85 <= g_MissionQueueFrame.localVariables[161] )
               {
-                v86 = g_MissionQueueFrame.localVariables[163] + 80 * ((__int16)v84 + g_MapCellWidth * IDA_SHIWORD(v84)); /*0x58dea0*/
+                v86 = g_MissionQueueFrame.localVariables[163] + 80 * ((__int16)v84 + g_MapCellWidth * (short)((v84) >> 16)); /*0x58dea0*/
                 if ( *(unsigned int *)(v86 + 56) == (unsigned int)v162 ) /*0x58dea5*/
                 {
                   v87 = v73[2]; /*0x58deab*/
@@ -39793,7 +39793,7 @@ void TileSystem::BuildNodes()
         for ( ii = v98; ii >= 0; --ii ) /*0x58dffb*/
         {
           v99 = 0; /*0x58e004*/
-          IDA_LODWORD(v158) = *(unsigned int *)(v95[1] + 4 * v98); /*0x58e009*/
+          v158 = *(unsigned int *)(v95[1] + 4 * v98); /*0x58e009*/
           do /*0x58e08d*/
           {
             *(unsigned int *)v157.__pad_0 = *CellStruct::Add((CellStruct *)&v158, &v161, (unsigned short *)(4 * (v99 & 7) + 9041544)); /*0x58e030*/
@@ -41031,8 +41031,8 @@ void VeinholeMonsterClass::UpdateGrowth()
             }
             else if ( v3[52].Locomotor_field_00 == (&dword_846024)[v3[50].Locomotor_field_00] ) /*0x74cf57*/
             {
-              IDA_LODWORD(v42) = (int)abs32(Random_State((Random *)&dword_A8B230_arr[14].NeedsSaveOrLink)) % 10000; /*0x74cf7b*/
-              if ( (double)IDA_SLODWORD(v42) * 0.0001 < 0.004 ) /*0x74cf94*/
+              v42 = (int)abs32(Random_State((Random *)&dword_A8B230_arr[14].NeedsSaveOrLink)) % 10000; /*0x74cf7b*/
+              if ( (double)((int)(v42)) * 0.0001 < 0.004 ) /*0x74cf94*/
               {
                 v3[52].Locomotor_field_00 = (&dword_846034)[v3[50].Locomotor_field_00] - 1; /*0x74cfa8*/
                 v3[58].Locomotor_field_00 = -1; /*0x74cfae*/
@@ -41127,7 +41127,7 @@ void VeinholeMonsterClass::UpdateGrowth()
           v3[48].Locomotor_field_00 = v25; /*0x74d2b6*/
         }
   LABEL_63:
-        IDA_LOBYTE(v37) = v3[64].Locomotor_field_00; /*0x74d38e*/
+        v37 = ((v37) & 0xFFFFFF00u) | ((unsigned int)(v3[64].Locomotor_field_00) & 0xFFu); /*0x74d38e*/
         if ( !(unsigned char)v37 ) /*0x74d397*/
         {
           v37 = v3[50].Locomotor_field_00; /*0x74d399*/
@@ -41177,13 +41177,13 @@ void VeinholeMonsterClass::UpdateGrowth()
             v42 = (double)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646) /*0x74d136*/
                 * 4.656612877414201e-10
                 * 6.283185307179586;
-            v16 = IDA_HIDWORD(v42); /*0x74d13a*/
-            v17 = IDA_LODWORD(v42); /*0x74d13e*/
+            v16 = (unsigned int)((v42) >> 32); /*0x74d13a*/
+            v17 = ((unsigned int)(v42)); /*0x74d13e*/
             Math::ArcTan2(v42); /*0x74d144*/
-            IDA_LOWORD(v18) = Math::RoundToInt(a2); /*0x74d14f*/
+            v18 = ((v18) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x74d14f*/
             FireAtSW[48] = v18; /*0x74d156*/
             Math::SinCos(COERCE_DOUBLE(IDA___PAIR64__(v16, v17))); /*0x74d15c*/
-            IDA_LOWORD(v19) = Math::RoundToInt(a2); /*0x74d16a*/
+            v19 = ((v19) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(a2)) & 0xFFFFu); /*0x74d16a*/
             FireAtSW[49] = v19; /*0x74d16f*/
             v3[64].Locomotor_field_00 = ((v3[64].Locomotor_field_00) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); /*0x74d175*/
           }
@@ -41208,8 +41208,8 @@ void VeinholeMonsterClass::UpdateGrowth()
   LABEL_73:
           if ( v3[52].Locomotor_field_00 == (&dword_846024)[v3[50].Locomotor_field_00] ) /*0x74d1e9*/
           {
-            IDA_LODWORD(v42) = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x74d201*/
-            if ( (double)IDA_SLODWORD(v42) * 4.656612877414201e-10 < 0.1 ) /*0x74d21a*/
+            v42 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 2147483646); /*0x74d201*/
+            if ( (double)((int)(v42)) * 4.656612877414201e-10 < 0.1 ) /*0x74d21a*/
             {
               v3[52].Locomotor_field_00 = (&dword_846034)[v3[50].Locomotor_field_00] - 1; /*0x74d22a*/
               v3[58].Locomotor_field_00 = -1; /*0x74d230*/
@@ -41589,8 +41589,8 @@ void Viewport::ProcessScroll( unsigned int * a2)
     dword_B0565C = (unsigned __int8)((unsigned int)((((unsigned int)((unsigned __int64)(v33) >> 32)) >> 7) + 1) >> 1); /*0x692d4d*/
   LABEL_25:
     v14 = *((unsigned int *)this + 5458); /*0x692d52*/
-    IDA_LOBYTE(v15) = 0; /*0x692d58*/
-    IDA_HIBYTE(v15) = dword_B0565C; /*0x692d5a*/
+    v15 = ((v15) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x692d58*/
+    v15 = ((v15) & 0xFFFF00FFu) | (((unsigned int)(dword_B0565C) & 0xFFu) << 8); /*0x692d5a*/
     IDA_WORD2(v33) = v15; /*0x692d65*/
     _ESI = 8 - v14; /*0x692d71*/
     v17 = ((unsigned int)((((unsigned int)((unsigned __int64)(v33) >> 32)) >> 12) + 1) >> 1) & 7; /*0x692d7f*/
@@ -41611,9 +41611,9 @@ void Viewport::ProcessScroll( unsigned int * a2)
         _ESI = 4; /*0x692dac*/
       }
     }
-    IDA_LOBYTE(v18) = 0; /*0x692dbd*/
+    v18 = ((v18) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x692dbd*/
     v19 = *(unsigned int *)this->__pad_0; /*0x692dbf*/
-    IDA_HIBYTE(v18) = dword_B0565C; /*0x692dc1*/
+    v18 = ((v18) & 0xFFFF00FFu) | (((unsigned int)(dword_B0565C) & 0xFFu) << 8); /*0x692dc1*/
     IDA_WORD2(v33) = v18; /*0x692dcb*/
     v20 = ((unsigned int)((((unsigned int)((unsigned __int64)(v33) >> 32)) >> 12) + 1) >> 1) & 7; /*0x692ddc*/
     (v33) = (unsigned int)(1); /*0x692de3*/

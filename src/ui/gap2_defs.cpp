@@ -5628,7 +5628,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
                     *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 92),
                     *(unsigned int *)(v9 + v73[2].ControlClass_field_0x0C + 88));
             if ( !v41 || (v42 = *(unsigned char *)(v41 + 3278), IDA_LOBYTE(v69) = 1, !v42) ) /*0x6ab648*/
-              IDA_LOBYTE(v69) = 0; /*0x6ab64a*/
+              v69 = ((v69) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x6ab64a*/
             ShouldDisableCameo = HouseClass::ShouldDisableCameo((HouseClass *)dword_A83D4C, v41); /*0x6ab65d*/
             if ( v40 /*0x6ab67d*/
               && (*(unsigned int *)(v40 + 56) && !*(unsigned char *)(v40 + 112) || *(unsigned int *)(v40 + 88) || *(int *)(v40 + 80) > 0) )
@@ -5863,7 +5863,7 @@ int SidebarClass::ProcessInput(int a1, void* a2, int a3) {
     v14 = a2; /*0x6aae7c*/
     if ( (a2 & 8) != 0 ) /*0x6aae85*/
     {
-      IDA_LOBYTE(v14) = a2 & 0xF7; /*0x6aae87*/
+      v14 = ((v14) & 0xFFFFFF00u) | ((unsigned int)(a2 & 0xF7) & 0xFFu); /*0x6aae87*/
       a2 = v14; /*0x6aae89*/
     }
     if ( (v14 & 0x10) != 0 ) /*0x6aae92*/
