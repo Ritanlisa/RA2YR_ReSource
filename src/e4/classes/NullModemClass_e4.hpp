@@ -31,14 +31,14 @@ struct NullModemClass {
     int receiveData();
     int sendData();
     void * QueryInterface(char a2, int a1, int a3, int a4, int a5);
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int u32_1C;  // 0x1C (offset-truth supply)
-    unsigned int u32_34;  // 0x34 (offset-truth supply)
-    unsigned int u32_38;  // 0x38 (offset-truth supply)
-    unsigned int u32_3C;  // 0x3C (offset-truth supply)
-    unsigned char u32_51;  // 0x51 (offset-truth supply)
-    unsigned int u32_5C;  // 0x5C (offset-truth supply)
-    unsigned int u32_68;  // 0x68 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int u32_1C;  // 0x1C (offset-truth)
+    unsigned int u32_34;  // 0x34 (offset-truth)
+    unsigned int u32_38;  // 0x38 (offset-truth)
+    unsigned int u32_3C;  // 0x3C (offset-truth)
+    unsigned char u32_51;  // 0x51 (offset-truth)
+    unsigned int u32_5C;  // 0x5C (offset-truth)
+    unsigned int u32_68;  // 0x68 (offset-truth)
 };
 
 } // namespace gamemd

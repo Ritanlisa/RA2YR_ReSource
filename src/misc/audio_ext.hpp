@@ -63,7 +63,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Pump();  // 0x753620
     int Shutdown();  // 0x406e80
     // === FUNCS-MOVE (END) ===
-    unsigned int q008;  // 0x8 (offset-truth supply)
+    unsigned int q008;  // 0x8 (offset-truth)
 };
 #endif  // GAMEMD_G2_AudioMixer_DEF
 

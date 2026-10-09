@@ -34,12 +34,12 @@ struct Debug {
     static void Log_0();  // 0x4A4AC0
     static void Log_0(void *aP1);  // 0x4A4AC0 1参形态（DDraw 0x4a3f8a/0x4a3fac）
     static void Log_0(void *aP1, void *aP2);  // 0x4A4AC0 2参（DDraw 0x4a3edc static 式；Debug_e4.cpp:114 类外定义匹配）
-    unsigned int u32_2710;  // 0x2710 (offset-truth supply)
-    unsigned int u32_271C;  // 0x271C (offset-truth supply)
-    unsigned int u32_2720;  // 0x2720 (offset-truth supply)
-    unsigned int u32_2724;  // 0x2724 (offset-truth supply)
-    unsigned int u32_2728;  // 0x2728 (offset-truth supply)
-    unsigned int u32_272C;  // 0x272C (offset-truth supply)
-    unsigned int u32_2734;  // 0x2734 (offset-truth supply)
+    unsigned int u32_2710;  // 0x2710 (offset-truth)
+    unsigned int u32_271C;  // 0x271C (offset-truth)
+    unsigned int u32_2720;  // 0x2720 (offset-truth)
+    unsigned int u32_2724;  // 0x2724 (offset-truth)
+    unsigned int u32_2728;  // 0x2728 (offset-truth)
+    unsigned int u32_272C;  // 0x272C (offset-truth)
+    unsigned int u32_2734;  // 0x2734 (offset-truth)
 };
 } // namespace gamemd

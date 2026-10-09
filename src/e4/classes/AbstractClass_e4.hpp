@@ -17301,10 +17301,7 @@ struct GScreenClass {
     int checkTeamObjective();
     FileClass * processAITrigger(unsigned int * Block, char a2);
     void* vfptr;  // 0x0 (G57W14E1 til supply)
-    unsigned int DiskLaserClass_field_0x04;  // 0x4 (offset-truth supply)
-    unsigned int DiskLaserClass_field_0x08;  // 0x8 (offset-truth supply)
-    unsigned int DiskLaserClass_field_0x0C;  // 0xC (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 #endif  // G57w8 GScreenClass tree guard
   // G42.37 class-body supply (defs in AbstractClass_e4.cpp)

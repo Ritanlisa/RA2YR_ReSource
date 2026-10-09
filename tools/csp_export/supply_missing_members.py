@@ -31,6 +31,19 @@ SRC = ROOT / 'src'
 CANON_HPP = ROOT / 'src' / 'csp_canon' / 'classes.hpp'
 MTAB_PATH = ROOT / 'anchors' / 'csp_canon_members.json'
 ML_PATH = ROOT / 'tools' / 'member_lookup.json'
+
+def robust_write(p, text, tries=4):
+    """Defender/AV transiently locks freshly-written headers; retry."""
+    import time as _t
+    for k in range(tries):
+        try:
+            p.write_text(text, encoding='utf-8', newline='')
+            return True
+        except PermissionError:
+            _t.sleep(0.6)
+    print(f"WARN: could not write {p} (locked)", file=sys.stderr)
+    return False
+
 APPLY = '--apply' in sys.argv
 LOG = next((a for a in sys.argv[1:] if not a.startswith('--')), None)
 
@@ -139,8 +152,47 @@ def build_tree_def_index(want):
 
 want = {cls for _n, cls in pairs}
 tree_defs = build_tree_def_index(want)
+# class definitions anywhere (tree or e4) count as "type visible" -- the
+# TU sees at least a fwd decl via the shared fwd headers
+defined_idents_all = set(tree_defs.keys())
 
 # ------------------------------------------------------------------- supply
+
+BASIC_TYPE_TOKENS = {'void', 'int', 'char', 'bool', 'float', 'double',
+                     'short', 'long', 'unsigned', 'signed', 'size_t',
+                     'HWND', 'DWORD', 'LPVOID', 'LPARAM', 'WPARAM', 'HANDLE',
+                     'BOOL', 'UINT', 'BYTE', 'WORD', 'LONG', 'LPSTREAM',
+                     'IUnknown', 'IStream', 'IPersistStream', 'GUID',
+                     'IPersistStreamVtbl', 'int64_t', 'uint32_t', 'uint8_t',
+                     'uint16_t', 'uint64_t', 'intptr_t', 'uintptr_t'}
+WIDTH_TYPE = {8: 'double', 4: 'unsigned int', 2: 'unsigned short',
+              1: 'unsigned char'}
+
+
+def _base_token(t):
+    m = re.match(r'\s*(?:unsigned\s+|signed\s+|const\s+)*([A-Za-z_]\w*)',
+                 t or '')
+    return m.group(1) if m else ''
+
+
+def _render_member(type_str, name, size, off_val, note, visible):
+    """Render one declaration; degrade non-visible type tokens to
+    width-faithful basic types (C2238 guard: the target TU may not know
+    canon-only class names)."""
+    base = _base_token(type_str)
+    if base and base not in BASIC_TYPE_TOKENS and base not in visible:
+        type_str = WIDTH_TYPE.get(size or 4, 'unsigned int')
+    # array-form normalization: ml stores `char[12]` -- C declarator puts
+    # the bound on the name, not the type
+    am = re.match(r'^(.*?)(?:\[(\d+)\])$', type_str or '')
+    arr = ''
+    if am:
+        type_str, arr = am.group(1).strip(), '[%s]' % am.group(2)
+    if off_val is not None and (size or 4) == 4 and off_val % 4:
+        type_str = 'unsigned char'
+    cmt = '  // 0x%X%s' % (off_val, (' (%s)' % note) if note else '')
+    return '%s %s%s;%s' % (type_str, name, arr, cmt)
+
 
 supply = defaultdict(list)      # (cls, rel_path) -> [canon lines]
 no_def = []                     # (name, cls) with no definition in the
@@ -152,35 +204,40 @@ routed_param = 0
 already = 0
 
 for name, cls in sorted(pairs):
-    if VF_PTR.match(name):
+    if VF_PTR.match(name) or 'field_' in name:
+        # vtable access points / til artifact names: R4 OO-ification
+        # queue -- never reified as declarations (gate bans field_ too)
         routed_vfptr += 1
         continue
     if PARAM_LEAK.match(name):
         routed_param += 1
         continue
-    # canon truth: decl lines in the canon class body mentioning NAME
+    # truth candidates: list of (type_str, size, off_val, note)
+    meta = []
     body = CANON_BODIES.get(cls)
-    cand = []
     if body:
-        pat = re.compile(r'\b%s\b' % re.escape(name))
-        cand = [ln.strip() for ln in body if pat.search(ln) and ln.rstrip().endswith(';')]
-    if not cand:
-        # fallback 1: members table entry (render a fresh decl)
-        ent = MTAB.get(cls, {}).get('members', {})
-        for off, m in ent.items():
+        pat = re.compile(r'^\s*[\w:<>\*&\s]+%s\s*(?:\[[^\]]*\])?;' % re.escape(name))
+        for ln in body:
+            ln = ln.strip()
+            if ln.endswith(';') and pat.match(ln):
+                mm = re.match(r'^([\w:<>\*&\s]+?)\s*\b%s\s*(?:\[[^\]]*\])?;'
+                              % re.escape(name), ln)
+                if mm:
+                    meta.append((mm.group(1).strip(), 4, None, 'canon'))
+    if not meta:
+        for off, m in MTAB.get(cls, {}).get('members', {}).items():
             if isinstance(m, dict) and m.get('name') == name:
-                cand.append('%s %s;  // 0x%s' % (m.get('type') or 'unsigned int',
-                                                 name, off))
-    if not cand:
-        # fallback 1b: member_lookup reverse index (legacy til-synced names)
+                meta.append((m.get('type') or 'unsigned int',
+                             m.get('size') or 4, int(off), 'canon-mt'))
+    if not meta:
         for off, m in ML_DATA.get(cls, {}).items():
             if isinstance(m, dict) and m.get('name') == name:
-                cand.append('%s %s;  // 0x%s (ml)' %
-                            (m.get('type') or 'unsigned int', name, off))
-    if not cand:
-        # fallback 2: offset-encoded placeholder names carry their own
-        # offset truth. Explicit family table (no free-suffix guessing:
-        # 'Name' would parse as 0xE).
+                meta.append((m.get('type') or 'unsigned int',
+                             m.get('size') or 4, int(off), 'ml'))
+    if not meta:
+        # offset-encoded placeholder names carry their own offset truth.
+        # Explicit family table (no free-suffix guessing: 'Name' would
+        # parse as 0xE).
         HEX = r'[0-9A-Fa-f]+'
         FAM = ('^q(%s)$|^u8_(%s)$|^u16_(%s)$|^u32_(%s)$|^ptr_(%s)$'
                '|^flt_(%s)$|^dbl_(%s)$|^m_(%s)$|^__pad_(%s)$|^__tail_(%s)$'
@@ -191,27 +248,24 @@ for name, cls in sorted(pairs):
                 off = int(next(g for g in m.groups() if g), 16)
             except (StopIteration, ValueError):
                 m = None
-        if m:
-            w = 4
-            nl = name.lower()
-            if nl.startswith(('u8_', '__pad_', '__tail_')):
-                w = 1
-            elif nl.startswith('u16_'):
-                w = 2
-            elif nl.startswith('dbl_'):
-                w = 8
-            t = ('double' if w == 8 else
-                 'unsigned short' if w == 2 else
-                 'unsigned char' if w == 1 else
-                 'unsigned int')
-            if off % w:
-                t = 'unsigned char'
-            if nl.startswith('ptr_'):
-                t = 'void *'
-            if nl.startswith('flt_'):
-                t, w = 'float', 4
-            cand.append('%s %s;  // 0x%X (offset-truth supply)' % (t, name, off))
-    if not cand:
+            if m:
+                w = 4
+                nl = name.lower()
+                if nl.startswith(('u8_', '__pad_', '__tail_')):
+                    w = 1
+                elif nl.startswith('u16_'):
+                    w = 2
+                elif nl.startswith('dbl_'):
+                    w = 8
+                t = WIDTH_TYPE[w]
+                if nl.startswith('ptr_'):
+                    t, w = 'void *', 4
+                if nl.startswith('flt_'):
+                    t, w = 'float', 4
+                if off % w:
+                    t = 'unsigned char'
+                meta.append((t, w, off, 'offset-truth'))
+    if not meta:
         no_canon.append((name, cls))
         continue
     uni = ('e4' if pair_uni[(name, cls)]['e4'] >=
@@ -225,9 +279,9 @@ for name, cls in sorted(pairs):
         continue
     rel, text = defs[0]
     # class body span (brace may sit on the decl line or a following line)
-    m = DEF_RE.search(text)
-    span = _class_span(text, m.start()) if m else None
-    if not span:
+    dm = DEF_RE.search(text)
+    span = _class_span(text, dm.start()) if dm else None
+    if not span or dm is None:
         conflict.append((name, cls, ['unparseable body in ' + rel]))
         continue
     _nm, _bl, close = span
@@ -235,9 +289,21 @@ for name, cls in sorted(pairs):
     if re.search(r'\b%s\b' % re.escape(name), body_txt):
         already += 1
         continue
+    # type-visibility set: identifiers present in the target header
+    visible = set(re.findall(r'\b([A-Za-z_]\w*)\b', text)) | defined_idents_all
+    # polymorphic class (bases or own virtuals): offsets 0x0-0xC are the
+    # vptr zone -- those accesses are R4 OO-ification targets, never
+    # reifiable data members
+    decl_head = text[dm.start():_bl]
+    poly = (':' in decl_head) or ('virtual' in body_txt)
     indent = '    '
-    for ln in cand:
-        supply[(cls, rel)].append(indent + ln)
+    for (t, sz, off, note) in meta[:1]:  # highest-priority truth source only
+        if poly and note == 'offset-truth' and off in (0x0, 0x4, 0x8, 0xC):
+            routed_vfptr += 1
+            continue
+        supply[(cls, rel)].append(
+            indent + _render_member(t, name, sz, off if off is not None else 0,
+                                    note, visible))
 
 # ------------------------------------------------------------------- write
 
@@ -254,7 +320,7 @@ for (cls, rel), lines in sorted(supply.items()):
     block = '\n'.join(lines) + '\n'
     if APPLY:
         new = text[:close] + '\n' + block.rstrip('\n') + text[close:]
-        p.write_text(new, encoding='utf-8', newline='')
+        robust_write(p, new)
     inserted += len(lines)
     files_touched += 1
 

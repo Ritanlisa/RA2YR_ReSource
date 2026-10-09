@@ -32,12 +32,12 @@ struct Delegate {
     unsigned int * GetField();
     int Dispatch(int aP1, int aP2);
     int Set(int a2);
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int q004;  // 0x4 (offset-truth supply)
-    unsigned int q00C;  // 0xC (offset-truth supply)
-    unsigned int q010;  // 0x10 (offset-truth supply)
-    unsigned int q014;  // 0x14 (offset-truth supply)
-    unsigned int q018;  // 0x18 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int q004;  // 0x4 (offset-truth)
+    unsigned int q00C;  // 0xC (offset-truth)
+    unsigned int q010;  // 0x10 (offset-truth)
+    unsigned int q014;  // 0x14 (offset-truth)
+    unsigned int q018;  // 0x18 (offset-truth)
 };
 
 } // namespace gamemd

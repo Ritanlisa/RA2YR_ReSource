@@ -46,7 +46,7 @@ struct E4Recv_490400 {
     unsigned int q1918720483806452093044;  // 0x1918720483806452093044
 // --- flat members (END) ---
     int sub_490400();  // 0x490400
-    unsigned int u32_908;  // 0x908 (offset-truth supply)
-    unsigned char u32_946;  // 0x946 (offset-truth supply)
+    unsigned int u32_908;  // 0x908 (offset-truth)
+    unsigned char u32_946;  // 0x946 (offset-truth)
 };
 } // namespace gamemd

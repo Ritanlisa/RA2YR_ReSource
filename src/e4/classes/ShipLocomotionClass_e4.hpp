@@ -56,7 +56,7 @@ struct ShipLocomotionClass {
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
     int Owner;  // 0x8 (ml)
-    int Piggybackee;  // 0x104 (ml)
+    int Piggybackee;  // 0x68 (ml)
 };
 
 } // namespace gamemd

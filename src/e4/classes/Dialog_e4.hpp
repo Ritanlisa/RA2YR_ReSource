@@ -162,6 +162,6 @@ struct Dialog {
     char UpdateGameUI();  // 0x77D820
     static HWND CloseAll();  // 0x799D10
     AbstractClass * * MapControlToAction(HWND hWnd, LPARAM, void * a2);
-    char[24] __pad_10;  // 0x16 (ml)
+    char __pad_10[24];  // 0x10 (ml)
 };
 } // namespace gamemd

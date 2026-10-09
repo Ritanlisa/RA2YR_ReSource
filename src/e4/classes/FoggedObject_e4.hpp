@@ -11,8 +11,8 @@ struct FoggedObject {
     AbstractClass * ptr_4;  // 0x4
 // --- flat members (END) ---
     int DrawVector_Constructor(int aP1, int aP2);  // 0x4D2DB0
-    unsigned int u32_8;  // 0x8 (offset-truth supply)
-    unsigned int u32_C;  // 0xC (offset-truth supply)
-    unsigned char u32_D;  // 0xD (offset-truth supply)
+    unsigned int u32_8;  // 0x8 (offset-truth)
+    unsigned int u32_C;  // 0xC (offset-truth)
+    unsigned char u32_D;  // 0xD (offset-truth)
 };
 } // namespace gamemd

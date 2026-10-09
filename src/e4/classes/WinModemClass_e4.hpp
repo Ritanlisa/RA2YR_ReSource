@@ -38,16 +38,16 @@ struct WinModemClass {
     int WriteSerial(LPCVOID lpBuffer, DWORD aP2);
     int ddtor(int a2);
     int SaveToINI(const char * NumberOfBytesWritten, void * aP);
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned char q0083;  // 0x83 (offset-truth supply)
-    unsigned char q0146;  // 0x146 (offset-truth supply)
-    unsigned char q0242;  // 0x242 (offset-truth supply)
-    unsigned int u32_100;  // 0x100 (offset-truth supply)
-    unsigned int u32_288;  // 0x288 (offset-truth supply)
-    unsigned char u32_51;  // 0x51 (offset-truth supply)
-    unsigned int u32_58;  // 0x58 (offset-truth supply)
-    unsigned int u32_64;  // 0x64 (offset-truth supply)
-    unsigned int u32_68;  // 0x68 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned char q0083;  // 0x83 (offset-truth)
+    unsigned char q0146;  // 0x146 (offset-truth)
+    unsigned char q0242;  // 0x242 (offset-truth)
+    unsigned int u32_100;  // 0x100 (offset-truth)
+    unsigned int u32_288;  // 0x288 (offset-truth)
+    unsigned char u32_51;  // 0x51 (offset-truth)
+    unsigned int u32_58;  // 0x58 (offset-truth)
+    unsigned int u32_64;  // 0x64 (offset-truth)
+    unsigned int u32_68;  // 0x68 (offset-truth)
 };
 
 } // namespace gamemd

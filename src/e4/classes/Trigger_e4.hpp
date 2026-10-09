@@ -38,14 +38,14 @@ struct Trigger {
     unsigned int * processTrigger(int a2, int a3);  // 0x76F090
     unsigned int * checkCondition(int aP1, int aP2);  // 0x76F1C0
     int executeActions(int a2);  // 0x76FF20
-    char[24] __pad_30;  // 0x48 (ml)
-    unsigned int q008;  // 0x8 (offset-truth supply)
-    unsigned int q018;  // 0x18 (offset-truth supply)
-    unsigned int u32_444;  // 0x444 (offset-truth supply)
-    unsigned int u32_45C;  // 0x45C (offset-truth supply)
-    unsigned int u32_46C;  // 0x46C (offset-truth supply)
-    unsigned int u32_470;  // 0x470 (offset-truth supply)
-    unsigned int u32_478;  // 0x478 (offset-truth supply)
-    unsigned int u32_84;  // 0x84 (offset-truth supply)
+    char __pad_30[24];  // 0x30 (ml)
+    unsigned int q008;  // 0x8 (offset-truth)
+    unsigned int q018;  // 0x18 (offset-truth)
+    unsigned int u32_444;  // 0x444 (offset-truth)
+    unsigned int u32_45C;  // 0x45C (offset-truth)
+    unsigned int u32_46C;  // 0x46C (offset-truth)
+    unsigned int u32_470;  // 0x470 (offset-truth)
+    unsigned int u32_478;  // 0x478 (offset-truth)
+    unsigned int u32_84;  // 0x84 (offset-truth)
 };
 } // namespace gamemd

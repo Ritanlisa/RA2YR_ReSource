@@ -121,9 +121,9 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindExitCellByName();  // 0x523c90 -- Factory::FindExitCellByName
     int GetLinkedIndex(int a1);  // 0x663d60 -- Factory::GetLinkedIndex
     // === SYMBOL-ANCHOR (END) ===
-    TerrainTypeClass* q02C;  // 0x44
-    void* q058;  // 0x88
-    unsigned int u32_5D;  // 0x93
+    unsigned int q02C;  // 0x2C (canon-mt)
+    void* q058;  // 0x58 (canon-mt)
+    unsigned char u32_5D;  // 0x5D (canon-mt)
 };
 
 } // namespace gamemd

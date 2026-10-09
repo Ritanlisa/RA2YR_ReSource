@@ -34,7 +34,7 @@ struct VeinholeMonsterClass {
     int Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a4);
     int ddtor(int a1, unsigned int * a2);
     void UpdateVeinholeMonster();  // G42.39 supply
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 
 } // namespace gamemd

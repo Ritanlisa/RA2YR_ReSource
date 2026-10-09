@@ -702,14 +702,13 @@ struct FootClass {
     unsigned int * PostLoadInit(int a2);
     static BOOL checkPassability();
     static int CheckAccelLimit(...);  // w18j2 C3861 static supply  // w18j2 C3861 static supply (raw 0x0070FEB0)  // 0x4d3540
-    int FootClass_field_abstract_array_5AC;  // 0x1452 (ml)
-    char[20] __pad_58C;  // 0x1420 (ml)
-    char[20] __pad_5B0;  // 0x1456 (ml)
-    int currentJumpjetMapCoords;  // 0x1380 (ml)
-    int locomotor;  // 0x1652 (ml)
-    int parasiteImUsing;  // 0x1692 (ml)
-    int team;  // 0x1492 (ml)
-    int unknownAbstractArray588;  // 0x1416 (ml)
+    char __pad_58C[20];  // 0x58C (ml)
+    char __pad_5B0[20];  // 0x5B0 (ml)
+    int currentJumpjetMapCoords;  // 0x564 (ml)
+    int locomotor;  // 0x674 (ml)
+    int parasiteImUsing;  // 0x69C (ml)
+    int team;  // 0x5D4 (ml)
+    int unknownAbstractArray588;  // 0x588 (ml)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

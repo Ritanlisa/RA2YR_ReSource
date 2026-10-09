@@ -56,7 +56,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadThemeBank(int a1, int a2, int a3, int a4, int a5);  // 0x409de0
     void GetVolume();  // 0x72d170
     // === FUNCS-MOVE (END) ===
-    unsigned int q074;  // 0x74 (offset-truth supply)
+    unsigned int q074;  // 0x74 (offset-truth)
 };
 
 // ============================================================================

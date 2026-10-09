@@ -67,8 +67,8 @@ struct WWMouseClass {
     unsigned int * updatePosition(unsigned int * a2);
     void releaseMouse();
     void* captureMouse();
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int q048;  // 0x72
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int q048;  // 0x48 (canon-mt)
 };
 
 } // namespace gamemd

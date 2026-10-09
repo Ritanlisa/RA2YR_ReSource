@@ -14,8 +14,8 @@ struct Color {
     unsigned char * ScaleRGB(unsigned char * a2, float a3);
     unsigned char Lerp(uint8_t aP1, uint8_t *a2);
     unsigned int * RGBFromFloat(int a2, float a3);  // G57w10-S raw 0x0075F540 IUnknown 占位清除
-    unsigned int u32_4;  // 0x4 (offset-truth supply)
-    unsigned int u32_8;  // 0x8 (offset-truth supply)
+    unsigned int u32_4;  // 0x4 (offset-truth)
+    unsigned int u32_8;  // 0x8 (offset-truth)
 };
 
 } // namespace gamemd

@@ -49,6 +49,6 @@ struct Techno {
     int GetOwnerHouse();  // 0x6F2070
     int StartInvulnerability(int a2);
     BuildingTypeClass * StartInvulnerability(int a2, int aP1, int a1);
-    unsigned int u32_500;  // 0x500 (offset-truth supply)
+    unsigned int u32_500;  // 0x500 (offset-truth)
 };
 } // namespace gamemd

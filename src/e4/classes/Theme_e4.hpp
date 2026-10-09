@@ -18,8 +18,8 @@ struct Theme {
     bool IsPlaying();
     int QueueSong(int aP1);
     int Stop(char aP1);
-    void * ptr_41;  // 0x41 (offset-truth supply)
-    void * ptr_44;  // 0x44 (offset-truth supply)
+    unsigned char ptr_41;  // 0x41 (offset-truth)
+    void * ptr_44;  // 0x44 (offset-truth)
 };
 
 } // namespace gamemd

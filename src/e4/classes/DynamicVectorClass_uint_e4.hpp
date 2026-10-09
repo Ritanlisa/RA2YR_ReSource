@@ -58,8 +58,8 @@ struct DynamicVectorClass_uint {
     VectorClass_flat * Destructor(unsigned int * Block, char a2);  // 0x42DB10
     DynamicVectorClass_uint * Add(unsigned int * Block, char a2, void *a3_1);  // 0x42DB60
     unsigned int GetCapacity(int a2);  // 0x42D760
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

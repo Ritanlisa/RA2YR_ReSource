@@ -59,14 +59,14 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Release(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x491460
     int Convert(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x491490
     // --- gap2 auto-generated stub declarations (END) ---
-    unsigned int q0908;  // 0x908 (offset-truth supply)
-    unsigned int q16C;  // 0x364
-    int q188;  // 0x392
-    unsigned int q190;  // 0x400
-    LightConvertClass* q198;  // 0x408
-    ObjectClass* q19C;  // 0x412
-    LightConvertClass* q1A4;  // 0x420
-    ObjectClass* q1A8;  // 0x424
+    unsigned int q0908;  // 0x908 (offset-truth)
+    unsigned int q16C;  // 0x16C (canon-mt)
+    int q188;  // 0x188 (canon-mt)
+    unsigned int q190;  // 0x190 (canon-mt)
+    LightConvertClass* q198;  // 0x198 (canon-mt)
+    unsigned int q19C;  // 0x19C (canon-mt)
+    LightConvertClass* q1A4;  // 0x1A4 (canon-mt)
+    unsigned int q1A8;  // 0x1A8 (canon-mt)
 };
 
 class LightConvertClass : public ConvertClass

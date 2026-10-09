@@ -21,8 +21,8 @@ struct FilePipe_38 {
     int Read(unsigned char * a2, void *a2_2);  // 0x478470
     unsigned int Write(int a2);  // 0x4784C0
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4786D0
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

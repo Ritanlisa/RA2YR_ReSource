@@ -58,9 +58,9 @@ struct WinMain {
     LSTATUS CleanupResource();
     int Constructor_VectorClass_Wstring_();
     static unsigned int * ShutdownCleanup(...);
-    unsigned char u32_10642;  // 0x10642 (offset-truth supply)
-    unsigned char u32_106C6;  // 0x106C6 (offset-truth supply)
-    unsigned int u32_2A00;  // 0x2A00 (offset-truth supply)
+    unsigned char u32_10642;  // 0x10642 (offset-truth)
+    unsigned char u32_106C6;  // 0x106C6 (offset-truth)
+    unsigned int u32_2A00;  // 0x2A00 (offset-truth)
 };
 
 } // namespace gamemd

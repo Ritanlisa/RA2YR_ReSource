@@ -52,9 +52,8 @@ struct ParasiteClass {
     void DeploySquad();
     void TickDamage();
     void * UpdateParasite(ParasiteClass * Block, char a2);
-    int ParasiteClass_field_38;  // 0x56 (ml)
-    unsigned int u32_48;  // 0x48 (offset-truth supply)
-    unsigned int u32_54;  // 0x54 (offset-truth supply)
+    unsigned int u32_48;  // 0x48 (offset-truth)
+    unsigned int u32_54;  // 0x54 (offset-truth)
 };
 
 } // namespace gamemd

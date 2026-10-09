@@ -27,7 +27,7 @@ struct RawFileClass {
     int Dtor();
      unsigned int * Construct(int a2);  // G57w10-S raw 0x0065CA80 (was C2597 interim stub)
     int Write(); // N_fix R5 supply (cache truth)
-    char[4] __tail_0;  // 0x0 (ml)
+    char __tail_0[4];  // 0x0 (ml)
 };
 #endif  // GAMEMD_G2_RawFileClass_DEF
 

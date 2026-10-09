@@ -237,15 +237,12 @@ struct WarheadTypeClass {
     void GetClassIdentifier();
     void* ProcessPower(int * a2, void *a2_2);
     int Deform;  // 0x0 (ml)
-    int WarheadTypeClass_field_0x4;  // 0x4 (ml)
-    int WarheadTypeClass_field_0x8;  // 0x8 (ml)
-    int WarheadTypeClass_field_0xC;  // 0x12 (ml)
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_10;  // 0x10 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int u32_680;  // 0x680 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_10;  // 0x10 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int u32_680;  // 0x680 (offset-truth)
 };
 
 } // namespace gamemd

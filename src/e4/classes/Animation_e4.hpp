@@ -116,12 +116,12 @@ struct Animation {
     ObjectClass * * LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2);
     int GetProgress();
     long long UpdateBobOffset();
-    unsigned int q0084;  // 0x84 (offset-truth supply)
-    unsigned int u32_1508;  // 0x1508 (offset-truth supply)
-    unsigned char u32_1642;  // 0x1642 (offset-truth supply)
-    unsigned char u32_16C6;  // 0x16C6 (offset-truth supply)
-    unsigned int u32_1A04;  // 0x1A04 (offset-truth supply)
-    unsigned int u32_1A08;  // 0x1A08 (offset-truth supply)
+    unsigned int q0084;  // 0x84 (offset-truth)
+    unsigned int u32_1508;  // 0x1508 (offset-truth)
+    unsigned char u32_1642;  // 0x1642 (offset-truth)
+    unsigned char u32_16C6;  // 0x16C6 (offset-truth)
+    unsigned int u32_1A04;  // 0x1A04 (offset-truth)
+    unsigned int u32_1A08;  // 0x1A08 (offset-truth)
 };
 
 } // namespace gamemd

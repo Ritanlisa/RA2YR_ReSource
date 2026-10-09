@@ -27,13 +27,13 @@ struct FileEntryClass {
     char        FileName[128];  // data: 0x8221f8  // 0x100 — raw filename on disk
     uint32_t    FileTime_lo;        // 0x1AC — FILETIME low (stored as dword pair)
     uint32_t    FileTime_hi;        // 0x1B0 — FILETIME high
-    unsigned int q194;  // 0x404
-    unsigned int q198;  // 0x408
-    unsigned int q19C;  // 0x412
-    char[12] __pad_22;  // 0x34 (ml)
-    void* q004;  // 0x4
-    unsigned int q00C;  // 0x12
-    unsigned int q014;  // 0x14 (offset-truth supply)
+    unsigned int q194;  // 0x194 (canon-mt)
+    unsigned int q198;  // 0x198 (canon-mt)
+    unsigned int q19C;  // 0x19C (canon-mt)
+    char __pad_22[12];  // 0x22 (ml)
+    void* q004;  // 0x4 (canon-mt)
+    unsigned int q00C;  // 0xC (canon-mt)
+    unsigned int q014;  // 0x14 (offset-truth)
 };
 
 // ============================================================================

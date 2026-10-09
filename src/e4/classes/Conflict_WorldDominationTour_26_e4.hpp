@@ -12,6 +12,6 @@ struct Conflict_WorldDominationTour_26 {
     BOOL AddRef(void *a1_1);  // 0x766920
     BOOL Release(void *a1_1);  // 0x766FA0
     BOOL ddtor();  // 0x766FB0
-    unsigned int q000;  // 0x0
+    unsigned int q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd

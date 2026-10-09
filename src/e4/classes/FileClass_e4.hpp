@@ -30,9 +30,9 @@ struct FileClass {
     int Delete();  // 0x65d190
     int CloseHandle();  // 0x65cca0
     int OpenWithCDSearch(char *Source); // N_fix R5 supply (cache truth)
-    char[4] __tail_0;  // 0x0 (ml)
-    unsigned int u32_58;  // 0x58 (offset-truth supply)
-    unsigned int u32_68;  // 0x68 (offset-truth supply)
+    char __tail_0[4];  // 0x0 (ml)
+    unsigned int u32_58;  // 0x58 (offset-truth)
+    unsigned int u32_68;  // 0x68 (offset-truth)
 };
 #endif  // GAMEMD_G2_FileClass_DEF
 

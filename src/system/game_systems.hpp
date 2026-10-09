@@ -48,13 +48,13 @@ public:
     int EnableSpawnButtons();  // 0x6acd60 -- Skirmish::EnableSpawnButtons
     int SetupGame();  // 0x6ae6e0 -- Skirmish::SetupGame
     // === SYMBOL-ANCHOR (END) ===
-    unsigned int u32_10;  // 0x10 (offset-truth supply)
-    unsigned int u32_14;  // 0x14 (offset-truth supply)
-    unsigned int u32_4;  // 0x4 (offset-truth supply)
-    unsigned int u32_8;  // 0x8 (offset-truth supply)
-    unsigned int u32_C;  // 0xC (offset-truth supply)
-    unsigned char u32_D;  // 0xD (offset-truth supply)
-    unsigned int q000;  // 0x0
+    unsigned int u32_10;  // 0x10 (offset-truth)
+    unsigned int u32_14;  // 0x14 (offset-truth)
+    unsigned int u32_4;  // 0x4 (offset-truth)
+    unsigned int u32_8;  // 0x8 (offset-truth)
+    unsigned int u32_C;  // 0xC (offset-truth)
+    unsigned char u32_D;  // 0xD (offset-truth)
+    unsigned int q000;  // 0x0 (canon-mt)
 };
 
 // ============================================================================

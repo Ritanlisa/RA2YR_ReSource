@@ -24,8 +24,8 @@ struct BlitTransLucent25Alpha_ushort {
     int CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
     int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
     std::locale::facet * Constructor_Blitter(char a2);
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 
 } // namespace gamemd

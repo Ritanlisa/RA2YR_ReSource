@@ -10,7 +10,7 @@ struct Value {
     char Value_field_00[4];  // 0x0
 // --- flat members (END) ---
     int InRange();
-    unsigned int u32_38;  // 0x38 (offset-truth supply)
+    unsigned int u32_38;  // 0x38 (offset-truth)
 };
 
 } // namespace gamemd

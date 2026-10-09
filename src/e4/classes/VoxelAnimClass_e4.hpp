@@ -710,8 +710,7 @@ struct VoxelAnimClass {
     int VoxelAnimClass_Update();
     int Constructor(void *a1, void *a2, void *a3, void *a4, void *a5);
     VoxelAnimClass * DrawVoxel(void * Block, char a2);
-    int VoxelAnimClass_field_0x0;  // 0x0 (ml)
-    char[104] __pad_98;  // 0x152 (ml)
+    char __pad_98[104];  // 0x98 (ml)
 };
 
 } // namespace gamemd

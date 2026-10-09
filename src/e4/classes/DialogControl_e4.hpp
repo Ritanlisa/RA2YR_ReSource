@@ -18,13 +18,13 @@ struct DialogControl {
     int IsHidden();
     int Show(void *a1, void *a2);
     unsigned int * Constructor();
-    unsigned int u32_1C;  // 0x1C (offset-truth supply)
-    unsigned char u32_1E;  // 0x1E (offset-truth supply)
-    unsigned int u32_40;  // 0x40 (offset-truth supply)
-    unsigned int u32_5C;  // 0x5C (offset-truth supply)
-    unsigned int u32_64;  // 0x64 (offset-truth supply)
-    unsigned int u32_68;  // 0x68 (offset-truth supply)
-    unsigned int u32_90;  // 0x90 (offset-truth supply)
+    unsigned int u32_1C;  // 0x1C (offset-truth)
+    unsigned char u32_1E;  // 0x1E (offset-truth)
+    unsigned int u32_40;  // 0x40 (offset-truth)
+    unsigned int u32_5C;  // 0x5C (offset-truth)
+    unsigned int u32_64;  // 0x64 (offset-truth)
+    unsigned int u32_68;  // 0x68 (offset-truth)
+    unsigned int u32_90;  // 0x90 (offset-truth)
 };
 
 } // namespace gamemd

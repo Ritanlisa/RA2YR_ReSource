@@ -28,9 +28,9 @@ struct SwizzleManagerClass_19 {
     DynamicVector * Constructor_VectorClass_SwizzlePointerClass_(unsigned int * Block, char a2);  // 0x6CF8A0
     unsigned int PointerToIndex(int a2);  // 0x6CF520
     unsigned int Add(int a2, void *a2_2, void *a3_1);  // 0x6CF700
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_10;  // 0x10 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_10;  // 0x10 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

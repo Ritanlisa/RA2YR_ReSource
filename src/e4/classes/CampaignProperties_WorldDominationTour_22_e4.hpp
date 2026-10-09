@@ -21,7 +21,7 @@ struct CampaignProperties_WorldDominationTour_22 {
     int ddtor();  // 0x76F1B0
     unsigned int Write(int a2);  // 0x5D2940
     int AddRef(void *a1_1);  // def-aligned
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

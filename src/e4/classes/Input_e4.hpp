@@ -10,7 +10,7 @@ struct Input {
     char Input_field_00[4];  // 0x0
 // --- flat members (END) ---
     int OffsetToDirection();
-    unsigned int u32_4;  // 0x4 (offset-truth supply)
+    unsigned int u32_4;  // 0x4 (offset-truth)
 };
 
 } // namespace gamemd

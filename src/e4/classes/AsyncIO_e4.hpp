@@ -27,9 +27,9 @@ struct AsyncIO {
     char Shutdown();
     int Read();
     int WaitCompletion();
-    unsigned char q0242;  // 0x242 (offset-truth supply)
-    unsigned int u32_180;  // 0x180 (offset-truth supply)
-    unsigned char u32_1C6;  // 0x1C6 (offset-truth supply)
+    unsigned char q0242;  // 0x242 (offset-truth)
+    unsigned int u32_180;  // 0x180 (offset-truth)
+    unsigned char u32_1C6;  // 0x1C6 (offset-truth)
 };
 
 } // namespace gamemd

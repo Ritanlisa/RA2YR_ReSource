@@ -25,10 +25,9 @@ struct AudioMixer {
     static int RequestOrEndBuffer(int a1, unsigned int a2);
     int SetVolume();
     int Shutdown();
-    int AudioMixer_field_08;  // 0x8 (ml)
-    unsigned int u32_18;  // 0x18 (offset-truth supply)
-    unsigned int u32_1C;  // 0x1C (offset-truth supply)
-    unsigned int u32_4C;  // 0x4C (offset-truth supply)
+    unsigned int u32_18;  // 0x18 (offset-truth)
+    unsigned int u32_1C;  // 0x1C (offset-truth)
+    unsigned int u32_4C;  // 0x4C (offset-truth)
 };
 #endif  // GAMEMD_G2_AudioMixer_DEF
 

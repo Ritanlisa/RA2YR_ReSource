@@ -347,9 +347,9 @@ struct AnimTypeClass {
     void* GetWarhead(int a2);
     AnimTypeClass * * FindOrCreate(char *Source, int a2, int aP0, int aP1, int aP2, int a1, int a3);
     int ReadINIString(unsigned __int8 *a3, unsigned __int8 *aP1, unsigned int a2);
-    char[1] Flat_flag;  // 0x873 (ml)
-    char[3] __pad_98;  // 0x152 (ml)
-    unsigned int q024;  // 0x24 (offset-truth supply)
+    char Flat_flag[1];  // 0x369 (ml)
+    char __pad_98[3];  // 0x98 (ml)
+    unsigned int q024;  // 0x24 (offset-truth)
 };
 
 } // namespace gamemd

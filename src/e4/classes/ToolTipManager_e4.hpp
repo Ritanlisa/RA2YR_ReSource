@@ -39,10 +39,10 @@ struct ToolTipManager {
     int ddtor(char a2);
     int stubReturnFalse(int a1);
     void read(int a1);
-    char[1] IsVisible;  // 0x0 (ml)
-    unsigned int u32_23C;  // 0x23C (offset-truth supply)
-    unsigned int u32_248;  // 0x248 (offset-truth supply)
-    unsigned int u32_250;  // 0x250 (offset-truth supply)
+    char IsVisible[1];  // 0x0 (ml)
+    unsigned int u32_23C;  // 0x23C (offset-truth)
+    unsigned int u32_248;  // 0x248 (offset-truth)
+    unsigned int u32_250;  // 0x250 (offset-truth)
 };
 
 } // namespace gamemd

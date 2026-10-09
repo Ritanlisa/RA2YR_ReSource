@@ -50,7 +50,7 @@ struct TeleportLocomotionClass {
     char LocomotionClass[24];  // 0x0 LocomotionClass base sub-object (live til)
     char Moving;  // 0x34 (til char[1]; scalar per body mov [esi+34h],al - H3 C3863 recipe)
     TeleportLocomotionClass();  // 0x718000 sig=csp
-    unsigned int q018;  // 0x18 (offset-truth supply)
+    unsigned int q018;  // 0x18 (offset-truth)
 };
 
 } // namespace gamemd

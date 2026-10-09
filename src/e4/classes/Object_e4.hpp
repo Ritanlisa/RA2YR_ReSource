@@ -112,8 +112,7 @@ struct Object {
     int ddtor(int a1, unsigned int * a2);  // 0x5FDF10
     int StubReturn176();  // 0x5FDF00
     int StubReturn20();  // 0x5FDF50
-    char[4] Object_field_0x2;  // 0x2 (ml)
-    char[80] __pad_EC;  // 0x236 (ml)
-    unsigned int u32_5788;  // 0x5788 (offset-truth supply)
+    char __pad_EC[80];  // 0xEC (ml)
+    unsigned int u32_5788;  // 0x5788 (offset-truth)
 };
 } // namespace gamemd

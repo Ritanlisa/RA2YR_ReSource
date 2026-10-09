@@ -29,9 +29,9 @@ struct RocketLocomotionClass_17 {
     DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x664AC0
     unsigned int BeginMove(int a2);  // 0x6647E0
     unsigned int PointerToIndex(int a2);  // 0x664970
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_10;  // 0x10 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_10;  // 0x10 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

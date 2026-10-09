@@ -49,8 +49,8 @@ struct WaypointPathClass {
     int StubReturn64();
     int ddtor(int a1, unsigned int * a2);
     _DWORD * computePath(int a2, unsigned int *a3);
-    unsigned int q030;  // 0x48
-    int[6] waypoints;  // 0x40 (ml)
+    unsigned int q030;  // 0x30 (canon-mt)
+    int waypoints[6];  // 0x28 (ml)
 };
 
 } // namespace gamemd

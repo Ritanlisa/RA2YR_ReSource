@@ -109,7 +109,7 @@ struct Warhead {
     int GetWarheadSound(int a2);
     int ProcessDamageArea();
     int RemoveFromDamageList(int a2);
-    unsigned char u32_C2;  // 0xC2 (offset-truth supply)
+    unsigned char u32_C2;  // 0xC2 (offset-truth)
 };
 
 } // namespace gamemd

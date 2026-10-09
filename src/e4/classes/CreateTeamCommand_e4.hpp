@@ -159,7 +159,7 @@ struct DeployCommandClass {
     unsigned int performAction_240(int a2);
     int performAction_242(unsigned int * a2);
     DynamicVector * performAction_244(unsigned int * Block, char a2);
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
 };  // G42.37 class-body supply (defs in CreateTeamCommand_e4.cpp)
 struct CreateTeamCommand {
 // --- flat members (BEGIN) ---

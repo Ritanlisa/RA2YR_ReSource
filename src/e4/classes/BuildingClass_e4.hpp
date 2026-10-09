@@ -811,8 +811,8 @@ static int GetSHPFrame(BuildingClass * aP1, int a2);  // G57w10-S raw 0x00490B90
     static int CheckBridge(...);
     static int GetDrawColor(...);
     static int DrawActionLines(...);  // w16g4 C3861 static supply (raw 0x0063BE60)  // w16g4 C3861 static supply (raw 0x0063CE40)  // w16g4 C3861 static supply (raw 0x006B0880)  // w16g4 C3861 static supply (raw 0x0047F6A0)  // +0x290 flat supply (final pass)
-    unsigned int u32_898;  // 0x898 (offset-truth supply)
-    unsigned int u32_8B4;  // 0x8B4 (offset-truth supply)
+    unsigned int u32_898;  // 0x898 (offset-truth)
+    unsigned int u32_8B4;  // 0x8B4 (offset-truth)
 };
 
 } // namespace gamemd

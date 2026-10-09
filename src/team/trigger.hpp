@@ -148,7 +148,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* q1E8; // 0x1E8  gB member supply
     bool q278; // 0x278  gB member supply
     unsigned char u8_270; // 0x270  gB member supply
-    HouseTypeClass* House;  // 0x164
+    HouseTypeClass* House;  // 0xA4 (canon-mt)
 };
 
 // --- TriggerTypeClass ---

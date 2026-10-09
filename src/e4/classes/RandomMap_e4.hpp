@@ -171,6 +171,6 @@ char CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3);  // 0x59097
     unsigned int * Constructor_0(int a2, int a3, void *a3_2);  // 0x5ADA40
     unsigned int * Constructor_1(int a2, int a3);  // 0x5ADAB0
     int GenerateTerrainForAllCells();  // 0x58CF90
-    unsigned int q04C;  // 0x4C (offset-truth supply)
+    unsigned int q04C;  // 0x4C (offset-truth)
 };
 } // namespace gamemd

@@ -31,9 +31,9 @@ struct BlitTransXlatAlpha_ushort {
     int CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x493C30
     int CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x493C60
     int CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x493C90
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_4;  // 0x4 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_4;  // 0x4 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 } // namespace gamemd

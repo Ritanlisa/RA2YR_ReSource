@@ -42,14 +42,12 @@ struct Buffer {
     static int AppendCellData(void *aP0, int aP1);  // G57a1 static-form mirror
     static void * FillCircularBufferScroll2(void *aP0, int aP1, int aP2);  // G57a1 static-form mirror
     static void * Constructor_VectorClass_ObjectClass___(void *aP0, int aP1, int aP2);  // G57a1 static-form mirror
-    unsigned char Buffer_field_046;  // 0x46 (offset-truth supply)
-    unsigned char Buffer_field_047;  // 0x47 (offset-truth supply)
-    unsigned int q008;  // 0x8 (offset-truth supply)
-    unsigned int u32_28;  // 0x28 (offset-truth supply)
-    unsigned int u32_2C;  // 0x2C (offset-truth supply)
-    unsigned int u32_744;  // 0x744 (offset-truth supply)
-    unsigned int u32_748;  // 0x748 (offset-truth supply)
-    unsigned int u32_88;  // 0x88 (offset-truth supply)
+    unsigned int q008;  // 0x8 (offset-truth)
+    unsigned int u32_28;  // 0x28 (offset-truth)
+    unsigned int u32_2C;  // 0x2C (offset-truth)
+    unsigned int u32_744;  // 0x744 (offset-truth)
+    unsigned int u32_748;  // 0x748 (offset-truth)
+    unsigned int u32_88;  // 0x88 (offset-truth)
 };
 #endif  // GAMEMD_G2_Buffer_DEF
 

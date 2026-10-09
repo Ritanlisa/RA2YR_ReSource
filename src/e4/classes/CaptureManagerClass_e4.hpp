@@ -84,10 +84,10 @@ struct CaptureManagerClass {
     CaptureManagerClass * ddtor(unsigned int * Block, char a2);
     VectorClass_flat * Constructor_VectorClass_ControlNode___(unsigned int * Block, char a2);
     DynamicVector * QueryInterface(unsigned int * Block, char a2);
-    unsigned int u32_2C0;  // 0x2C0 (offset-truth supply)
-    unsigned int u32_2C8;  // 0x2C8 (offset-truth supply)
-    unsigned int u32_9C;  // 0x9C (offset-truth supply)
-    unsigned int u32_A4;  // 0xA4 (offset-truth supply)
+    unsigned int u32_2C0;  // 0x2C0 (offset-truth)
+    unsigned int u32_2C8;  // 0x2C8 (offset-truth)
+    unsigned int u32_9C;  // 0x9C (offset-truth)
+    unsigned int u32_A4;  // 0xA4 (offset-truth)
 };
 
 } // namespace gamemd

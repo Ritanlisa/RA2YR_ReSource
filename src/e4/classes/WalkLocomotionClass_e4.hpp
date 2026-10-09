@@ -40,8 +40,8 @@ struct WalkLocomotionClass {
     int SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4);
     int StubReturn60();
     int ddtor(int a1, unsigned int * a2);
-    int Piggybackee;  // 0x56 (ml)
-    unsigned int q018;  // 0x18 (offset-truth supply)
+    int Piggybackee;  // 0x38 (ml)
+    unsigned int q018;  // 0x18 (offset-truth)
 };
 
 } // namespace gamemd

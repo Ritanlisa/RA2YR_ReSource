@@ -46,10 +46,10 @@ struct Particle {
     void* q158;  // 0x158
 // --- flat members (END) ---
     int Init(int aP1, int aP2, int aP3, int aP4, int aP5, int a7, char aP7);  // 0x4664C0
-    unsigned char q0043;  // 0x43 (offset-truth supply)
-    unsigned int q0044;  // 0x44 (offset-truth supply)
-    unsigned int q0084;  // 0x84 (offset-truth supply)
-    unsigned char q0085;  // 0x85 (offset-truth supply)
-    unsigned char q0087;  // 0x87 (offset-truth supply)
+    unsigned char q0043;  // 0x43 (offset-truth)
+    unsigned int q0044;  // 0x44 (offset-truth)
+    unsigned int q0084;  // 0x84 (offset-truth)
+    unsigned char q0085;  // 0x85 (offset-truth)
+    unsigned char q0087;  // 0x87 (offset-truth)
 };
 } // namespace gamemd

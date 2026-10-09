@@ -25,14 +25,14 @@ struct LayerClass {
     static int Save(LayerClass * aP1, unsigned int *a2);  // G57w10-S raw 0x00551B20 (was C2597 interim stub)
     void Update_Pathfinding_2(int a2);  // 0x586990
     int IsWithinUsableArea(int16_t *aP1, char aP2);
-    unsigned int u32_100;  // 0x100 (offset-truth supply)
-    unsigned int u32_10C;  // 0x10C (offset-truth supply)
-    unsigned int u32_110;  // 0x110 (offset-truth supply)
-    unsigned int u32_114;  // 0x114 (offset-truth supply)
-    unsigned int u32_118;  // 0x118 (offset-truth supply)
-    unsigned int u32_13C;  // 0x13C (offset-truth supply)
-    unsigned int u32_F4;  // 0xF4 (offset-truth supply)
-    unsigned int u32_F8;  // 0xF8 (offset-truth supply)
+    unsigned int u32_100;  // 0x100 (offset-truth)
+    unsigned int u32_10C;  // 0x10C (offset-truth)
+    unsigned int u32_110;  // 0x110 (offset-truth)
+    unsigned int u32_114;  // 0x114 (offset-truth)
+    unsigned int u32_118;  // 0x118 (offset-truth)
+    unsigned int u32_13C;  // 0x13C (offset-truth)
+    unsigned int u32_F4;  // 0xF4 (offset-truth)
+    unsigned int u32_F8;  // 0xF8 (offset-truth)
 };
 
 } // namespace gamemd

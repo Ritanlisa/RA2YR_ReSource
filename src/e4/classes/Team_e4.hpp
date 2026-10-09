@@ -76,6 +76,6 @@ struct Team {
     int ReleaseAll(ObjectClass * aP1);  // 0x5D26C0
     int GetMember(int aP1);  // 0x65AD30
     int AllMembersValid();  // G57w10-S raw 0x0065AE30 (was C2597 interim stub)
-    unsigned int q000;  // 0x0
+    unsigned int q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd

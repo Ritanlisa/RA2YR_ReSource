@@ -18,7 +18,7 @@ struct VectorCursor {
     unsigned int * ddtor(void *a1);
     unsigned int * Release(void *a1);
     unsigned int * Construct(int a2, int a3);  // 0x76f0c0
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 
 } // namespace gamemd

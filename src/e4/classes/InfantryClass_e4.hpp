@@ -703,10 +703,10 @@ struct InfantryClass {
     bool CanEnterBuilding();
     int FindIdleAITarget();
     int PerFrameUpdate(int a2);
-    int locomotor;  // 0x1652 (ml)
-    int slaveOwner;  // 0x732 (ml)
-    int team;  // 0x1492 (ml)
-    int unknown_int_6E8;  // 0x1768 (ml)
+    int locomotor;  // 0x674 (ml)
+    int slaveOwner;  // 0x2DC (ml)
+    int team;  // 0x5D4 (ml)
+    int unknown_int_6E8;  // 0x6E8 (ml)
 };
 
 } // namespace gamemd

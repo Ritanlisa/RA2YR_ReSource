@@ -27,7 +27,7 @@ struct SortedArray {
      void * FindValue(int *a2);  // G57w10-S raw 0x0052B430 (was C2597 interim stub)
     int Find(int *a2);  // 0x52b170
     void * BinarySearch2(int *a2); // N_fix R5 supply (cache truth)
-    unsigned char q0046;  // 0x46 (offset-truth supply)
+    unsigned char q0046;  // 0x46 (offset-truth)
 };
 
 } // namespace gamemd

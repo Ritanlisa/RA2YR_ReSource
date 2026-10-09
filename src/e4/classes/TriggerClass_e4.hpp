@@ -54,7 +54,7 @@ struct TriggerClass {
     char EvaluateCondition(TriggerClass *a2, unsigned int *a3, char a4);  // 0x41e720
     int ProcessEvents();  // 0x726e00
     int RegisterEvent(int a2, int a3, char a4, char a5, int a6, int aP1, int aP2, int a1, int aP0);
-    unsigned int u32_54;  // 0x54 (offset-truth supply)
+    unsigned int u32_54;  // 0x54 (offset-truth)
 };
 
 } // namespace gamemd

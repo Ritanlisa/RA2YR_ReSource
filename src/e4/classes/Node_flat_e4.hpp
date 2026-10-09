@@ -13,7 +13,7 @@ struct Node_flat {
     unsigned int u32_10;  // 0x10
 // --- flat members (END) ---
 unsigned int * Init(void *a1, void *a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 
 } // namespace gamemd

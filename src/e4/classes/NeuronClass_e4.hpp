@@ -18,13 +18,10 @@ struct NeuronClass {
 // --- flat members (END) ---
     NeuronClass();
     void * Reset(unsigned int * Block, char a2);
-    int NeuronClass_field_0x04;  // 0x4 (ml)
-    int NeuronClass_field_0x08;  // 0x8 (ml)
-    int NeuronClass_field_0x0C;  // 0x12 (ml)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int u32_24;  // 0x24 (offset-truth supply)
-    unsigned int u32_28;  // 0x28 (offset-truth supply)
-    unsigned int u32_2C;  // 0x2C (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int u32_24;  // 0x24 (offset-truth)
+    unsigned int u32_28;  // 0x28 (offset-truth)
+    unsigned int u32_2C;  // 0x2C (offset-truth)
 };
 
 } // namespace gamemd

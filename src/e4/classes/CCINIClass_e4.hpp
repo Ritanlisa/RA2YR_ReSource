@@ -52,13 +52,12 @@ CCINIClass();
     int IterateNodes(int a2);  // 0x710550
     void Constructor();
     int BuildChecksum(char * Buffer);
-    int INIClass_field_3C;  // 0x60 (ml)
-    char[4] __pad_41;  // 0x65 (ml)
-    void* headNode;  // 0x4
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    int sectionCount;  // 0x28 (ml)
-    int[3] sectionHead;  // 0x16 (ml)
-    int unknown38;  // 0x56 (ml)
+    unsigned char __pad_41[4];  // 0x41 (ml)
+    void* headNode;  // 0x4 (canon-mt)
+    unsigned int q000;  // 0x0 (offset-truth)
+    int sectionCount;  // 0x1C (ml)
+    int sectionHead[3];  // 0x10 (ml)
+    int unknown38;  // 0x38 (ml)
 };
 #endif  // GAMEMD_E4_CCINIClass
 

@@ -15,7 +15,7 @@ struct SelectTeamCommand {
     char * AddRef();
     wchar_t * Release();
     wchar_t * ddtor();
-    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
 };
 
 } // namespace gamemd

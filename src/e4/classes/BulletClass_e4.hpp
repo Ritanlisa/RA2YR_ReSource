@@ -404,11 +404,9 @@ struct BulletClass {
     int PowerDrainProcess(int a1, unsigned int * a2);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     static int16_t LoseTarget(...);  // 0x468430
-    int BulletClass_field_0x4;  // 0x4 (ml)
-    int BulletClass_field_0x8;  // 0x8 (ml)
-    char[88] __pad_B4;  // 0x180 (ml)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int q00C;  // 0xC (offset-truth supply)
+    char __pad_B4[88];  // 0xB4 (ml)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int q00C;  // 0xC (offset-truth)
 };
 
 } // namespace gamemd

@@ -204,8 +204,8 @@ struct House {
     int LoadMapFileData(int a2, char a3);  // 0x544C20
     void Constructor();  // 0x69E090
     int PowerBeginUpdate(void * aP1);  // 0x70C270
-    unsigned char u32_702;  // 0x702 (offset-truth supply)
-    unsigned char u32_C6;  // 0xC6 (offset-truth supply)
-    unsigned int u32_C8;  // 0x200 (ml)
+    unsigned char u32_702;  // 0x702 (offset-truth)
+    unsigned char u32_C6;  // 0xC6 (offset-truth)
+    unsigned int u32_C8;  // 0xC8 (ml)
 };
 } // namespace gamemd

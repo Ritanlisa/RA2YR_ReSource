@@ -20,8 +20,8 @@ struct ConnectionPointClass_9 {
     int Advise(unsigned int * a2);  // 0x4A1360
     unsigned int * QueryInterface(char a2);  // 0x4A14F0 G42.41d truth (param1 was this)
     unsigned int Unadvise(int a2);  // 0x4A13A0
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

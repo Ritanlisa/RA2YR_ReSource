@@ -73,7 +73,7 @@ struct VocClass {
     static int FindIndex(VocClass * aP1);  // G57w10-S raw 0x007514D0 (was C2597 interim stub)
     char * GetSampleName(); // N_fix R5 supply (cache truth)
     char LoadFromINI(CCINIClass * aP1);  // G42.39 supply
-    unsigned int u32_278;  // 0x278 (offset-truth supply)
+    unsigned int u32_278;  // 0x278 (offset-truth)
 };
 #endif  // GAMEMD_G2_VocClass_DEF
 

@@ -132,8 +132,8 @@ struct Timer {
     static DWORD GetTicks();  // 0x6C8C40 [w16g2] static per raw __thiscall receiver-first
     char SetFlag(char a2);  // 0x7500B0
     unsigned long  longReadTSC(unsigned int * a1);  // 0x7C6064
-    char[18] __pad_6;  // 0x6 (ml)
-    int m_18;  // 0x24
-    unsigned int q000;  // 0x0
+    char __pad_6[18];  // 0x6 (ml)
+    int m_18;  // 0x18 (canon-mt)
+    unsigned int q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd

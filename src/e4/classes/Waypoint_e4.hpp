@@ -76,6 +76,6 @@ struct Waypoint {
     unsigned char * InitInvalid();  // 0x53ECB0
     int FindCell(unsigned int * a2);  // 0x763A50
     static char * To_String(int aP0);
-    unsigned int q000;  // 0x0
+    unsigned int q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd

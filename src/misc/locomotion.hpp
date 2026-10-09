@@ -31,9 +31,9 @@ public:  // symbol-anchor
     // === SYMBOL-ANCHOR (BEGIN) ===
     int TimeRemaining();  // 0x426630 -- CDTimerClass::TimeRemaining
     // === SYMBOL-ANCHOR (END) ===
-    unsigned int u32_10;  // 0x16
-    unsigned int u32_8;  // 0x8
-    unsigned char u8_14;  // 0x20
+    unsigned int u32_10;  // 0x10 (canon-mt)
+    unsigned int u32_8;  // 0x8 (canon-mt)
+    unsigned char u8_14;  // 0x14 (canon-mt)
 };
 static_assert(sizeof(CDTimerClass) == 0xC, "CDTimerClass size");
 static_assert(offsetof(CDTimerClass, TimeLeft) == 0x8, "CDTimerClass TimeLeft offset");

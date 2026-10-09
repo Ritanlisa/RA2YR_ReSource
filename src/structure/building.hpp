@@ -636,47 +636,46 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 
     void DispatchTeam(int a1, int a2);  // G42.39 supply (gap2_defs site)
     unsigned int q044; // 0x44  gB member supply
-    int Audio8_2;  // 0x1716 (ml)
-    unsigned int BuildingClass_field_5FC;  // 0x1532
-    void* q1600;  // 0x5632 (ml)
-    VectorClass* q2500;  // 0x9472 (ml)
-    unsigned char q2AC6;  // 0x2AC6 (offset-truth supply)
-    unsigned int q530;  // 0x1328
-    unsigned int q558;  // 0x1368
-    IUnknown* q5B4;  // 0x1460
-    unsigned char q5C0;  // 0x1472
-    unsigned int q5C4;  // 0x1476
-    unsigned char q5F0;  // 0x1520
-    void* q5F4;  // 0x1524
-    unsigned int q610;  // 0x1552
-    unsigned int q624;  // 0x1572
-    void* q640;  // 0x1600
-    void* q648;  // 0x1608
-    unsigned int q650;  // 0x1616
-    unsigned int q654;  // 0x1620
-    unsigned int q679;  // 0x1657
-    unsigned int q67C;  // 0x1660
-    unsigned int q680;  // 0x1664
-    void* q684;  // 0x1668
-    AudioController* q690;  // 0x1680
-    void* q694;  // 0x1684
-    unsigned int q698;  // 0x1688
-    void* q69C;  // 0x1692
-    bool q6C9;  // 0x1737
-    bool q6CA;  // 0x1738
-    bool q6CB;  // 0x1739
-    bool q6CC;  // 0x1740
-    void* q6D0;  // 0x1744
-    unsigned int q6D8;  // 0x1752
-    void* q70C;  // 0x1804
-    unsigned int u32_5B8;  // 0x1464
-    unsigned int u32_5BC;  // 0x1468
-    unsigned int u32_60C;  // 0x1548
-    unsigned int u32_691;  // 0x1681
-    unsigned int u32_710;  // 0x1808
-    unsigned char u8_6F9;  // 0x1785
-    unsigned char u8_6FA;  // 0x1786
-    void* vtable4;  // 0x12
+    int Audio8_2;  // 0x6B4 (ml)
+    void* q1600;  // 0x1600 (ml)
+    unsigned int q2500;  // 0x2500 (ml)
+    unsigned char q2AC6;  // 0x2AC6 (offset-truth)
+    unsigned int q530;  // 0x530 (canon-mt)
+    unsigned int q558;  // 0x558 (canon-mt)
+    IUnknown* q5B4;  // 0x5B4 (canon-mt)
+    unsigned char q5C0;  // 0x5C0 (canon-mt)
+    unsigned int q5C4;  // 0x5C4 (canon-mt)
+    unsigned char q5F0;  // 0x5F0 (canon-mt)
+    void* q5F4;  // 0x5F4 (canon-mt)
+    unsigned int q610;  // 0x610 (canon-mt)
+    unsigned int q624;  // 0x624 (canon-mt)
+    void* q640;  // 0x640 (canon-mt)
+    void* q648;  // 0x648 (canon-mt)
+    unsigned int q650;  // 0x650 (canon-mt)
+    unsigned int q654;  // 0x654 (canon-mt)
+    unsigned char q679;  // 0x679 (canon-mt)
+    unsigned int q67C;  // 0x67C (canon-mt)
+    unsigned int q680;  // 0x680 (canon-mt)
+    void* q684;  // 0x684 (canon-mt)
+    AudioController* q690;  // 0x690 (canon-mt)
+    void* q694;  // 0x694 (canon-mt)
+    unsigned int q698;  // 0x698 (canon-mt)
+    void* q69C;  // 0x69C (canon-mt)
+    unsigned char q6C9;  // 0x6C9 (canon-mt)
+    unsigned char q6CA;  // 0x6CA (canon-mt)
+    unsigned char q6CB;  // 0x6CB (canon-mt)
+    bool q6CC;  // 0x6CC (canon-mt)
+    void* q6D0;  // 0x6D0 (canon-mt)
+    unsigned int q6D8;  // 0x6D8 (canon-mt)
+    void* q70C;  // 0x70C (canon-mt)
+    unsigned int u32_5B8;  // 0x5B8 (canon-mt)
+    unsigned int u32_5BC;  // 0x5BC (canon-mt)
+    unsigned int u32_60C;  // 0x60C (canon-mt)
+    unsigned char u32_691;  // 0x691 (canon-mt)
+    unsigned int u32_710;  // 0x710 (canon-mt)
+    unsigned char u8_6F9;  // 0x6F9 (canon-mt)
+    unsigned char u8_6FA;  // 0x6FA (canon-mt)
+    void* vtable4;  // 0xC (canon-mt)
 };
 
 // External globals

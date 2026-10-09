@@ -12,12 +12,12 @@ struct DamageArea {
     int ApplyScatter();
     int CheckOccupancyEligibility();
     unsigned int * CalcScatterOffset(unsigned int * a2, int16_t * a3);
-    unsigned int u32_100;  // 0x100 (offset-truth supply)
-    unsigned char u32_51;  // 0x51 (offset-truth supply)
-    unsigned int u32_5C;  // 0x5C (offset-truth supply)
-    unsigned int u32_C;  // 0xC (offset-truth supply)
-    unsigned int u32_F4;  // 0xF4 (offset-truth supply)
-    unsigned int u32_FC;  // 0xFC (offset-truth supply)
+    unsigned int u32_100;  // 0x100 (offset-truth)
+    unsigned char u32_51;  // 0x51 (offset-truth)
+    unsigned int u32_5C;  // 0x5C (offset-truth)
+    unsigned int u32_C;  // 0xC (offset-truth)
+    unsigned int u32_F4;  // 0xF4 (offset-truth)
+    unsigned int u32_FC;  // 0xFC (offset-truth)
 };
 
 } // namespace gamemd

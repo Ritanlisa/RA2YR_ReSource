@@ -25,8 +25,8 @@ struct IdleOrderEntry {
     int32_t    frame;      // +8 — CurrentFrame at time of queuing
     int32_t    param;      // +C — parameter
     int32_t    field_30;   // +10 — copied from ObjectClass::nextObject (+0x30)
-    void* needsSave;  // 0x32
-    void* vtable4;  // 0x12
+    void* needsSave;  // 0x20 (canon-mt)
+    void* vtable4;  // 0xC (canon-mt)
 };
 
 // Thin array-view wrapper to access idle-order entries without raw pointer

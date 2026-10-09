@@ -37,8 +37,8 @@ struct CChatEventSink {
     int ComputeBucketMask(int a2);
     int GrowBuffer();
     int ProcessChatEvent();
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int u32_84;  // 0x84 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int u32_84;  // 0x84 (offset-truth)
 };
 
 } // namespace gamemd

@@ -86,14 +86,13 @@ struct TeamTypeClass {
     AbstractClass * * FindOrCreateTaskForce(char *Source, int a2, int a3, int aP1);
     AbstractClass * * LoadFromINI(unsigned char *** aP1, void *a2, void * aTaskforce, void * aWaypoint);
     AbstractClass * * GetMaxCount(CCINIClass * aP1, void * aTaskforce, void * aWaypoint);
-    int TeamTypeClass_field_60;  // 0x96 (ml)
-    unsigned char u32_A5;  // 0xA5 (offset-truth supply)
-    unsigned char u32_A6;  // 0xA6 (offset-truth supply)
-    unsigned char u32_A7;  // 0xA7 (offset-truth supply)
-    unsigned char u32_A9;  // 0xA9 (offset-truth supply)
-    unsigned char u32_AA;  // 0xAA (offset-truth supply)
-    unsigned int u32_C8;  // 0xC8 (offset-truth supply)
-    unsigned int u32_E4;  // 0xE4 (offset-truth supply)
+    unsigned char u32_A5;  // 0xA5 (offset-truth)
+    unsigned char u32_A6;  // 0xA6 (offset-truth)
+    unsigned char u32_A7;  // 0xA7 (offset-truth)
+    unsigned char u32_A9;  // 0xA9 (offset-truth)
+    unsigned char u32_AA;  // 0xAA (offset-truth)
+    unsigned int u32_C8;  // 0xC8 (offset-truth)
+    unsigned int u32_E4;  // 0xE4 (offset-truth)
 };
 
 } // namespace gamemd

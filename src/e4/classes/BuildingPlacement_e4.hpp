@@ -25,16 +25,16 @@ struct BuildingPlacement {
     unsigned int * SelectBuildingPlacementCells(int a2);
     void* Activate(int a2, unsigned int * a3);
     static int ValidateType(BuildingPlacement * aP1, int a2, int a3);  // G57w10-S raw 0x00480510 (was C2597 interim stub)
-    unsigned char q0046;  // 0x46 (offset-truth supply)
-    unsigned char q030;  // 0x48 (ml)
-    unsigned int q054;  // 0x84 (ml)
-    unsigned int u32_184;  // 0x184 (offset-truth supply)
-    unsigned int u32_204;  // 0x204 (offset-truth supply)
-    unsigned int u32_2C;  // 0x2C (offset-truth supply)
-    unsigned int u32_44;  // 0x44 (offset-truth supply)
-    unsigned int u32_48;  // 0x48 (offset-truth supply)
-    unsigned int u32_4C;  // 0x4C (offset-truth supply)
-    unsigned int u32_90;  // 0x90 (offset-truth supply)
+    unsigned char q0046;  // 0x46 (offset-truth)
+    unsigned char q030;  // 0x30 (ml)
+    unsigned int q054;  // 0x54 (ml)
+    unsigned int u32_184;  // 0x184 (offset-truth)
+    unsigned int u32_204;  // 0x204 (offset-truth)
+    unsigned int u32_2C;  // 0x2C (offset-truth)
+    unsigned int u32_44;  // 0x44 (offset-truth)
+    unsigned int u32_48;  // 0x48 (offset-truth)
+    unsigned int u32_4C;  // 0x4C (offset-truth)
+    unsigned int u32_90;  // 0x90 (offset-truth)
 };
 
 } // namespace gamemd

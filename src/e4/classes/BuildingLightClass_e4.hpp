@@ -144,7 +144,7 @@ struct BuildingLightClass {
     unsigned int abstractFlags3;  // @0x43588a (W16G3 raw-usage vocab)
     unsigned int abstractFlags6;  // @0x4358a3 (W16G3 raw-usage vocab)
     unsigned int abstractFlags7;  // @0x4358a9 (W16G3 raw-usage vocab)
-    char[4] __pad_B4;  // 0x180 (ml)
+    char __pad_B4[4];  // 0xB4 (ml)
 };
 #endif  // GAMEMD_CORE_OWNS_BUILDINGLIGHT
 

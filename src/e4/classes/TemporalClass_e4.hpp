@@ -39,12 +39,12 @@ struct TemporalClass {
     TemporalClass(TechnoClass * aP1);
     void * ProcessEvent(char a2, int aP1, int aP0, int a1, int aP2);
     void ** ProcessTimeWarp();
-    unsigned int u32_308;  // 0x308 (offset-truth supply)
-    unsigned int u32_38;  // 0x38 (offset-truth supply)
-    unsigned int u32_3C;  // 0x3C (offset-truth supply)
-    unsigned int u32_48;  // 0x48 (offset-truth supply)
-    unsigned int u32_4A8;  // 0x4A8 (offset-truth supply)
-    unsigned char u32_A6;  // 0xA6 (offset-truth supply)
+    unsigned int u32_308;  // 0x308 (offset-truth)
+    unsigned int u32_38;  // 0x38 (offset-truth)
+    unsigned int u32_3C;  // 0x3C (offset-truth)
+    unsigned int u32_48;  // 0x48 (offset-truth)
+    unsigned int u32_4A8;  // 0x4A8 (offset-truth)
+    unsigned char u32_A6;  // 0xA6 (offset-truth)
 };
 
 } // namespace gamemd

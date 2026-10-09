@@ -21,8 +21,8 @@ struct ParticleSystemClass_16 {
     int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);  // 0x4EB380
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x4EFD50
     unsigned int Read(int a2, void *a2_2);  // 0x4EB3C0
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

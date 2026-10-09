@@ -17,7 +17,7 @@ struct ParticleSystemClass_32_ {
     char ResizeDataArray(int a2, unsigned int * a3);  // 0x4EB8A0
     int FindElementByValue(unsigned int * a2);  // 0x4EB950
     unsigned int GetElementIndex(int a2);  // 0x4E8870
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

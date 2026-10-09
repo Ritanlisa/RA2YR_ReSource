@@ -224,10 +224,9 @@ struct WaveClass {
     int StubReturnFalse();
      void Destroy();  // G57w10-S raw 0x00755D10 (was C2597 interim stub)
      double Dtor(...);  // C2597 interim stub
-    unsigned char WaveClass_field_1706;  // 0x1706 (offset-truth supply)
-    unsigned int u32_1F4;  // 0x1F4 (offset-truth supply)
-    unsigned int u32_1F8;  // 0x1F8 (offset-truth supply)
-    unsigned char u32_1FD;  // 0x1FD (offset-truth supply)
+    unsigned int u32_1F4;  // 0x1F4 (offset-truth)
+    unsigned int u32_1F8;  // 0x1F8 (offset-truth)
+    unsigned char u32_1FD;  // 0x1FD (offset-truth)
 };
 
 } // namespace gamemd

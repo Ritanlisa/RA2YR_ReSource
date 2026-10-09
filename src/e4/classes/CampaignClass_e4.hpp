@@ -231,7 +231,7 @@ struct CampaignClass {
     AbstractClass * * sub_48B0E0(int a2, int a3, size_t Size, int a5);
     void sub_48B1F0();
     CampaignClass * * sub_7B2E50();
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 
 } // namespace gamemd

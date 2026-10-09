@@ -36,16 +36,16 @@ struct Surface {
     LPDIRECTDRAW CreateSurfacePalette(AbstractClass * Src);
     unsigned int u32_10A;  // @0x7bd6f2 (W16G3 raw-usage vocab)
     unsigned int u32_1A8;  // @0x7bdxxx (W16G3 raw-usage vocab)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int u32_104;  // 0x104 (offset-truth supply)
-    unsigned int u32_1224;  // 0x1224 (offset-truth supply)
-    unsigned int u32_1228;  // 0x1228 (offset-truth supply)
-    unsigned int u32_1234;  // 0x1234 (offset-truth supply)
-    unsigned int u32_123C;  // 0x123C (offset-truth supply)
-    unsigned int u32_1240;  // 0x1240 (offset-truth supply)
-    unsigned int u32_1244;  // 0x1244 (offset-truth supply)
-    unsigned int u32_1490;  // 0x1490 (offset-truth supply)
-    unsigned int u32_1498;  // 0x1498 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int u32_104;  // 0x104 (offset-truth)
+    unsigned int u32_1224;  // 0x1224 (offset-truth)
+    unsigned int u32_1228;  // 0x1228 (offset-truth)
+    unsigned int u32_1234;  // 0x1234 (offset-truth)
+    unsigned int u32_123C;  // 0x123C (offset-truth)
+    unsigned int u32_1240;  // 0x1240 (offset-truth)
+    unsigned int u32_1244;  // 0x1244 (offset-truth)
+    unsigned int u32_1490;  // 0x1490 (offset-truth)
+    unsigned int u32_1498;  // 0x1498 (offset-truth)
 };
 
 } // namespace gamemd

@@ -35,10 +35,10 @@ struct MapSeedClass {
     char PlaceCityBlockDiagonal(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
     char PlaceCityBlockVariant2(int16_t * a2, int16_t * a3, ObjectClass * aP2);  // G42.39 supply
     static int Constructor(int aP1);  // 0x595680 raw: int Constructor(int this) [raw int-this; site v10 int]
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 
 } // namespace gamemd

@@ -39,9 +39,9 @@ struct BlowPipe_23 {
     unsigned int GetCount_0(int a2);  // 0x63DD10
     unsigned int GetCount_1(int a2);  // 0x63E470
     unsigned int Write(int a2);  // 0x63E7B0
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_10;  // 0x10 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_10;  // 0x10 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

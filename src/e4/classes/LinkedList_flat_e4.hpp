@@ -32,12 +32,12 @@ int Remove(unsigned int * a2);
     unsigned int * Attach(int a2);
     int RemoveNode();
     int Pop();
-    unsigned char __tail_0;  // 0x0 (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int q004;  // 0x4 (offset-truth supply)
-    unsigned int q014;  // 0x14 (offset-truth supply)
-    unsigned int q018;  // 0x18 (offset-truth supply)
-    unsigned int q01C;  // 0x1C (offset-truth supply)
+    unsigned char __tail_0;  // 0x0 (offset-truth)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int q004;  // 0x4 (offset-truth)
+    unsigned int q014;  // 0x14 (offset-truth)
+    unsigned int q018;  // 0x18 (offset-truth)
+    unsigned int q01C;  // 0x1C (offset-truth)
 };
 
 

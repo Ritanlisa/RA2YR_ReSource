@@ -21,9 +21,9 @@ struct WDTState_4 {
     DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x76BC10
     unsigned int Write(int a2);  // 0x76B740
     int Constructor();  // 0x76BC60
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_10;  // 0x10 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_10;  // 0x10 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 } // namespace gamemd

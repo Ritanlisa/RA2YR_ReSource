@@ -21,7 +21,7 @@ struct MSPCXAnim {
     MSPCXAnim * QueryInterface(char a2, int a3);
     int Stub();
     static unsigned int * Construct(void *aP1, void *a2, int a3, void *a4, char a5);  // 0x5CE640 raw: _DWORD* Construct(MSPCXAnim*, const char**, int, _DWORD*, char)
-    unsigned char u32_29;  // 0x29 (offset-truth supply)
+    unsigned char u32_29;  // 0x29 (offset-truth)
 };
 
 } // namespace gamemd

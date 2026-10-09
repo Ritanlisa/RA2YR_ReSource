@@ -177,6 +177,6 @@ struct WalkLocomotion {
     char ProcessCollision(char a2, void *a2_2);  // 0x6A05F0 (W20M5: raw fn_6A.c char @<al; caller 0x69fc96 branches on result; main-tree locomotion.hpp:404 int)
     int Update(unsigned char * a2, int a3, int a4, void *a4_2);  // 0x6A1C80
     unsigned int * TransformCoords(unsigned int *aP1, int *aP2, int *aP3);  // 0x6A3DB0
-    unsigned char q0042;  // 0x42 (offset-truth supply)
+    unsigned char q0042;  // 0x42 (offset-truth)
 };
 } // namespace gamemd

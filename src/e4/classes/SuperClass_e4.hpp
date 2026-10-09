@@ -690,10 +690,7 @@ struct SuperClass {
     int Construct(int a2, CCINIClass * aP2, void *a3, void *a4, void *a5, void *a6);
     int AnnounceReady(DynamicVector * aP1, void *a2, void * aEvaForceshield, void * aEvaIroncurtain, void * aEvaNuclearmiss, void * aEvaPsychicdomi, void * aEvaReinforceme, void * aEvaSpyplanerea);
     wchar_t * NameReadiness(void * aTxtHold);
-    int SuperClass_field_0x0;  // 0x0 (ml)
-    int SuperClass_field_0x4;  // 0x4 (ml)
-    int SuperClass_field_0x8;  // 0x8 (ml)
-    unsigned int q00C;  // 0xC (offset-truth supply)
+    unsigned int q00C;  // 0xC (offset-truth)
 };
 
 } // namespace gamemd

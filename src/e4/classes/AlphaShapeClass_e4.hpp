@@ -28,14 +28,11 @@ struct AlphaShapeClass {
     int SD_vt10(int a2, int a3);
     int SD_vt13(int a2);
     static int CTOR(...);  // w16g4 C3861 static supply (raw 0x00420960)
-    int AlphaShapeClass_field_0x04;  // 0x4 (ml)
-    int AlphaShapeClass_field_0x08;  // 0x8 (ml)
-    int AlphaShapeClass_field_0x0C;  // 0x12 (ml)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int u32_28;  // 0x28 (offset-truth supply)
-    unsigned int u32_2C;  // 0x2C (offset-truth supply)
-    unsigned int u32_34;  // 0x34 (offset-truth supply)
-    unsigned int u32_3C;  // 0x3C (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int u32_28;  // 0x28 (offset-truth)
+    unsigned int u32_2C;  // 0x2C (offset-truth)
+    unsigned int u32_34;  // 0x34 (offset-truth)
+    unsigned int u32_3C;  // 0x3C (offset-truth)
 };
 
 } // namespace gamemd

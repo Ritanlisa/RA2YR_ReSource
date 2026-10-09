@@ -30,12 +30,12 @@ struct Vector {
     BOOL HasCapacity();  // 0x76F0B0
     char Grow();  // 0x7AEEC0
     static double TwoDMagnitudeMath(Vector * aP1);  // G57w10-S raw 0x4C1B50 (was C2597 interim stub)
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
-    unsigned int u32_14;  // 0x14 (offset-truth supply)
-    unsigned int u32_18;  // 0x18 (offset-truth supply)
-    unsigned int u32_1C;  // 0x1C (offset-truth supply)
-    unsigned int u32_24;  // 0x24 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
+    unsigned int u32_14;  // 0x14 (offset-truth)
+    unsigned int u32_18;  // 0x18 (offset-truth)
+    unsigned int u32_1C;  // 0x1C (offset-truth)
+    unsigned int u32_24;  // 0x24 (offset-truth)
 };
 } // namespace gamemd

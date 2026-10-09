@@ -111,14 +111,14 @@ void Shrink2();
     bool IsMultiplayerActive();
     char IsLobbyFeature();
     HashTable_flat * * WDT_Campaign_Constructor(const char ** a2, int a3);
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int q004;  // 0x4 (offset-truth supply)
-    unsigned int q00C;  // 0xC (offset-truth supply)
-    unsigned int q014;  // 0x14 (offset-truth supply)
-    unsigned int q018;  // 0x18 (offset-truth supply)
-    unsigned int q020;  // 0x20 (offset-truth supply)
-    unsigned int q030;  // 0x30 (offset-truth supply)
-    unsigned int u32_8;  // 0x8 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int q004;  // 0x4 (offset-truth)
+    unsigned int q00C;  // 0xC (offset-truth)
+    unsigned int q014;  // 0x14 (offset-truth)
+    unsigned int q018;  // 0x18 (offset-truth)
+    unsigned int q020;  // 0x20 (offset-truth)
+    unsigned int q030;  // 0x30 (offset-truth)
+    unsigned int u32_8;  // 0x8 (offset-truth)
 };
 
 } // namespace gamemd

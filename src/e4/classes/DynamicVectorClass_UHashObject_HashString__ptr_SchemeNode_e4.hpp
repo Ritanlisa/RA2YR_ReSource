@@ -38,10 +38,10 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     int Clear(int a2, int a3);  // 0x628860
     char AddRef(int a2);  // 0x6288A0
     int GetSize(int a2);  // 0x628D80
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_10;  // 0x10 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_10;  // 0x10 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 } // namespace gamemd

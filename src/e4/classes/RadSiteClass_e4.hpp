@@ -61,7 +61,7 @@ struct RadSiteClass {
     int ddtor(int a1, unsigned int * a2);
     RadSiteClass();
     int Constructor();  // G42.39 supply (0x4E2C10 family)
-    int IntensitySteps;  // 0x100
+    int IntensitySteps;  // 0x64 (canon-mt)
 };
 
 } // namespace gamemd

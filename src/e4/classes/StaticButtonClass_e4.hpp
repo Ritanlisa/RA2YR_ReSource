@@ -17,8 +17,8 @@ struct StaticButtonClass {
 // --- flat members (END) ---
     StaticButtonClass * QueryInterface(char a2);
     static void Draw(void * aP0, wchar_t * aP1, int aP2);  // G42.33 b9 static-form (call site 0x6c658e)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned char q00C6;  // 0xC6 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned char q00C6;  // 0xC6 (offset-truth)
 };
 
 } // namespace gamemd

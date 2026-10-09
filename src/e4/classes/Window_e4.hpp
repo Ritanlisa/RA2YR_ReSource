@@ -11,8 +11,8 @@ struct Window {
 // --- flat members (END) ---
     char ClampToScreen(int * a1);
     int IsVisible();
-    unsigned int u32_18;  // 0x18 (offset-truth supply)
-    unsigned char u32_19;  // 0x19 (offset-truth supply)
+    unsigned int u32_18;  // 0x18 (offset-truth)
+    unsigned char u32_19;  // 0x19 (offset-truth)
 };
 
 } // namespace gamemd

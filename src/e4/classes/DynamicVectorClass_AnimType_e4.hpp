@@ -19,9 +19,9 @@ struct DynamicVectorClass_AnimType {
     VectorClass_flat * Add(unsigned int * Block, char a2, void *a3_1);  // 0x525010
     int  GetSize(unsigned int * a2);  // 0x5251F0
     unsigned int Remove(int a2);  // 0x525230
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
-    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
+    unsigned int q000;  // 0x0 (offset-truth)
 };
 } // namespace gamemd

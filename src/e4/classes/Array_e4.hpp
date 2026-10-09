@@ -87,8 +87,8 @@ struct Array {
     char GetElementAt(unsigned int * a2, int a3);  // 0x49D070
     static void RemoveItemByValue(AbstractClass * aP0, int a2);  // 0x55B880
     int Contains(int a2);  // 0x65ad50
-    unsigned int q0044;  // 0x44 (offset-truth supply)
-    unsigned char q0045;  // 0x45 (offset-truth supply)
-    unsigned char q0046;  // 0x46 (offset-truth supply)
+    unsigned int q0044;  // 0x44 (offset-truth)
+    unsigned char q0045;  // 0x45 (offset-truth)
+    unsigned char q0046;  // 0x46 (offset-truth)
 };
 } // namespace gamemd

@@ -144,11 +144,11 @@ struct ParticleSystemClass {
     void GetClassIdentifier();
     void initParticleArray();
     int Constructor(int a1, int *a2, int a3, void *a4, unsigned int *a5, int a6);  // 0x62dc50
-    char[20] __pad_E5;  // 0x229 (ml)
-    unsigned char m_1;  // 0x1 (offset-truth supply)
-    unsigned int m_10;  // 0x10 (offset-truth supply)
-    unsigned int m_8;  // 0x8 (offset-truth supply)
-    unsigned int m_C;  // 0xC (offset-truth supply)
+    char __pad_E5[20];  // 0xE5 (ml)
+    unsigned char m_1;  // 0x1 (offset-truth)
+    unsigned int m_10;  // 0x10 (offset-truth)
+    unsigned int m_8;  // 0x8 (offset-truth)
+    unsigned int m_C;  // 0xC (offset-truth)
 };
 
 } // namespace gamemd

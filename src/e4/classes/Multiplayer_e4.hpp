@@ -27,7 +27,7 @@ struct Multiplayer {
     unsigned int * CopyDataArray(unsigned int *aP1);
     void * FindStartPositions();
     void ShowProgress(int a2);
-    unsigned char u32_42;  // 0x42 (offset-truth supply)
+    unsigned char u32_42;  // 0x42 (offset-truth)
 };
 #endif  // GAMEMD_G2_Multiplayer_DEF
 

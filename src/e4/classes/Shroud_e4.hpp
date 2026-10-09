@@ -56,14 +56,14 @@ struct Shroud {
     unsigned int q135464;  // 0x135464
 // --- flat members (END) ---
     RadarClass * * ProcessCellVisibility(MouseClass * aP1);
-    unsigned char __pad_14A0;  // 0x14A0 (offset-truth supply)
-    unsigned char __pad_14A8;  // 0x14A8 (offset-truth supply)
-    unsigned char __pad_C0;  // 0xC0 (offset-truth supply)
-    unsigned int q1490;  // 0x1490 (offset-truth supply)
-    unsigned int q1494;  // 0x1494 (offset-truth supply)
-    unsigned int q1498;  // 0x1498 (offset-truth supply)
-    unsigned int q149C;  // 0x149C (offset-truth supply)
-    unsigned int q14A4;  // 0x14A4 (offset-truth supply)
+    unsigned char __pad_14A0;  // 0x14A0 (offset-truth)
+    unsigned char __pad_14A8;  // 0x14A8 (offset-truth)
+    unsigned char __pad_C0;  // 0xC0 (offset-truth)
+    unsigned int q1490;  // 0x1490 (offset-truth)
+    unsigned int q1494;  // 0x1494 (offset-truth)
+    unsigned int q1498;  // 0x1498 (offset-truth)
+    unsigned int q149C;  // 0x149C (offset-truth)
+    unsigned int q14A4;  // 0x14A4 (offset-truth)
 };
 
 } // namespace gamemd

@@ -167,6 +167,6 @@ struct Game {
     int SetDword30(int a2);
     Game * * sub_634B20();
     HashTable_flat * * StartModemMultiplayer(ObjectClass *a2, char a3);
-    unsigned char u32_C2;  // 0xC2 (offset-truth supply)
+    unsigned char u32_C2;  // 0xC2 (offset-truth)
 };
 } // namespace gamemd

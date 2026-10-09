@@ -30,17 +30,17 @@ struct GadgetClass {
     static int Construct(void *aP0, int aP1, int aP2, int aP3, int aP4, int aP5, char aP6);  // 0x4E12F0 G42.35 static-form sync (ui/supplied site 0x48E543; truth char a7)
     static int Dtor(void *aP0);
     static int TrackState(...);  // w16g4 C3861 static supply (Cls call-form)  // 0x4E1390 G42.35 static-form sync (ui/supplied sites 0x48E663)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int q00C;  // 0xC (offset-truth supply)
-    unsigned int q014;  // 0x14 (offset-truth supply)
-    unsigned int u32_10;  // 0x10 (offset-truth supply)
-    unsigned int u32_16C;  // 0x16C (offset-truth supply)
-    unsigned int u32_170;  // 0x170 (offset-truth supply)
-    unsigned int u32_18;  // 0x18 (offset-truth supply)
-    unsigned int u32_28;  // 0x28 (offset-truth supply)
-    unsigned char u32_2D;  // 0x2D (offset-truth supply)
-    unsigned int u32_44;  // 0x44 (offset-truth supply)
-    unsigned int u32_4C;  // 0x4C (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int q00C;  // 0xC (offset-truth)
+    unsigned int q014;  // 0x14 (offset-truth)
+    unsigned int u32_10;  // 0x10 (offset-truth)
+    unsigned int u32_16C;  // 0x16C (offset-truth)
+    unsigned int u32_170;  // 0x170 (offset-truth)
+    unsigned int u32_18;  // 0x18 (offset-truth)
+    unsigned int u32_28;  // 0x28 (offset-truth)
+    unsigned char u32_2D;  // 0x2D (offset-truth)
+    unsigned int u32_44;  // 0x44 (offset-truth)
+    unsigned int u32_4C;  // 0x4C (offset-truth)
 };
 
 } // namespace gamemd

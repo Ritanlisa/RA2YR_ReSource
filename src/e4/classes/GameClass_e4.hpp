@@ -42,9 +42,9 @@ struct PKStrawClass {
     int parseGameOptions(int a2);  // G42.39 supply
     PKStrawClass * applyGameSettings(unsigned int * Block, char a2);  // G42.39 supply
     int FindPlayerName(int a1);  // G42.39 supply
-    unsigned int m_13C;  // 0x13C (offset-truth supply)
-    unsigned int m_34;  // 0x34 (offset-truth supply)
-    unsigned int q014;  // 0x14 (offset-truth supply)
+    unsigned int m_13C;  // 0x13C (offset-truth)
+    unsigned int m_34;  // 0x34 (offset-truth)
+    unsigned int q014;  // 0x14 (offset-truth)
 };
 struct GameClass {
 // --- flat members (BEGIN) ---

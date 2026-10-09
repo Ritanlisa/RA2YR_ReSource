@@ -565,14 +565,14 @@ struct ParticleClass {
     int AdjustHeight();
     void DrawParticle(int * a2, int * a3);
     void Update();  // G42.39 supply
-    char[4] __pad_B0;  // 0x176 (ml)
-    unsigned int q000;  // 0x0 (offset-truth supply)
-    unsigned int q0100;  // 0x100 (offset-truth supply)
-    unsigned char q0101;  // 0x101 (offset-truth supply)
-    unsigned char q0103;  // 0x103 (offset-truth supply)
-    unsigned int q0184;  // 0x184 (offset-truth supply)
-    unsigned char q0185;  // 0x185 (offset-truth supply)
-    unsigned char q0186;  // 0x186 (offset-truth supply)
+    char __pad_B0[4];  // 0xB0 (ml)
+    unsigned int q000;  // 0x0 (offset-truth)
+    unsigned int q0100;  // 0x100 (offset-truth)
+    unsigned char q0101;  // 0x101 (offset-truth)
+    unsigned char q0103;  // 0x103 (offset-truth)
+    unsigned int q0184;  // 0x184 (offset-truth)
+    unsigned char q0185;  // 0x185 (offset-truth)
+    unsigned char q0186;  // 0x186 (offset-truth)
 };
 
 } // namespace gamemd

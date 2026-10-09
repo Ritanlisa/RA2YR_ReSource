@@ -21,9 +21,8 @@ struct MovementAI {
     int MainFootClass(char a2);  // 0x514f70
     int StepFootClass(int a1);  // 0x5164d0
     static int Begin(...);  // w16g4 C3861 static supply (raw 0x006F9E50)  // 0x1C
-    int MovementAI_field_10;  // 0x16 (ml)
-    unsigned int u32_100;  // 0x100 (offset-truth supply)
-    unsigned int u32_E4;  // 0xE4 (offset-truth supply)
+    unsigned int u32_100;  // 0x100 (offset-truth)
+    unsigned int u32_E4;  // 0xE4 (offset-truth)
 };
 
 } // namespace gamemd

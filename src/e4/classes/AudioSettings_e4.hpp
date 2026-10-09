@@ -19,8 +19,8 @@ struct AudioSettings {
     AbstractClass * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd);
     void SetFlag68(char a2);
     void SetFlag70(char a2);
-    unsigned int u32_44;  // 0x44 (offset-truth supply)
-    unsigned char u32_46;  // 0x46 (offset-truth supply)
+    unsigned int u32_44;  // 0x44 (offset-truth)
+    unsigned char u32_46;  // 0x46 (offset-truth)
 };
 
 } // namespace gamemd

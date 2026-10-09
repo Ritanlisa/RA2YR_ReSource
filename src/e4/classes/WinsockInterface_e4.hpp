@@ -223,7 +223,7 @@ struct WinsockInterface {
     void * ProcessPacket(int a2);  // 0x770270
     int Init();  // 0x7B1DE0
     unsigned char m_1[64];  // pad compile-supply (G41.47)
-    int m_3F068;  // 0x258152 (ml)
-    unsigned int q000;  // 0x0
+    int m_3F068;  // 0x3F068 (ml)
+    unsigned int q000;  // 0x0 (canon-mt)
 };
 } // namespace gamemd
