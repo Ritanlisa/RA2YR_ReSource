@@ -2409,6 +2409,7 @@ struct HouseClass {
     static int initDropshipData(void *aP1);
     static char ClearPrimaryFactory();
     static char checkAutoProduction();  // w18j2 C3861 static supply (raw 0x00483460)  // w18j2 C3861 static supply (raw 0x00740E20)  // W16G3 static-form (0x4f5c0f)
+    unsigned int u32_54E4;  // 0x54E4 (offset-truth supply)
 };
 #endif  // GAMEMD_G2_HouseClass_DEF
 

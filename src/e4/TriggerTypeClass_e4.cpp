@@ -89,7 +89,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
     temporalUsing = a0->temporalUsing; /*0x6fc159*/
     if ( temporalUsing ) /*0x6fc161*/
     {
-      if ( aP2 == *(_BYTE **)temporalUsing->__pad_28 ) /*0x6fc166*/
+      if ( aP2 == *(_BYTE **)temporalUsing->q028 ) /*0x6fc166*/
         return 3; /*0x6fc174*/
     }
   }

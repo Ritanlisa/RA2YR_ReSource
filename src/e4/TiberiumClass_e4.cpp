@@ -203,7 +203,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   this->vfptr3 = &(void*)(void*)&TiberiumClass_vftable; /*0x7217ba*/
   *(_DWORD *)&this->isInLogic = g_BuildingLoadQueue_Array.BarrelAnimData[0]; /*0x7217c6*/
   if ( g_BuildingLoadQueue_Array.BarrelAnimData[0] < g_BuildingLoadQueue_Array.TurretAnimData[3] /*0x7217fe*/
-    || (g_BuildingLoadQueue_Array.__pad_CB5[0] || !g_BuildingLoadQueue_Array.TurretAnimData[3])
+    || (g_BuildingLoadQueue_Array.qCB5[0] || !g_BuildingLoadQueue_Array.TurretAnimData[3])
     && g_BuildingLoadQueue_Array.BarrelAnimData[1] > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.TurretAnimData[1] + 8))(
          &g_BuildingLoadQueue_Array.TurretAnimData[1],
@@ -284,19 +284,19 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
   *(_DWORD *)(v5 + 192) = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
                             (BuildingTypeClass *)aP1,
                             (unsigned __int8 *)(v5 + 36),
-                            (unsigned __int8 *)&stru_81AF8C.__pad_14D[95],
+                            (unsigned __int8 *)&stru_81AF8C.q14D[95],
                             v22);
   if ( INIClass::GetString( /*0x721b57*/
          (INIClass *)aP1,
          (unsigned __int8 *)(v5 + 36),
          aDebris,
          &g_INI_DefaultBuffer,
-         (char *)&v25.DynamicVector_field_0x1C,
+         (char *)&v25.q01C,
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v25, 0, 0); /*0x721b6c*/
-    *(_DWORD *)v25.__pad_0 = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x721b7b*/
-    for ( i = strtok((char *)&v25.DynamicVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
+    *(_DWORD *)v25.q000 = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x721b7b*/
+    for ( i = strtok((char *)&v25.q01C, Str); i; i = strtok(0, Str) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
         break; /*0x721b92*/
@@ -305,7 +305,7 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
         DynamicVector::Add_Alt4(&v25, &v23); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(&v24, &v25); /*0x721bcd*/
-    *(_DWORD *)v25.__pad_0 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x721bd6*/
+    *(_DWORD *)v25.q000 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x721bd6*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v25); /*0x721bde*/
   }
   else
@@ -331,18 +331,18 @@ char TiberiumClass::LoadFromINI(uint8_t *** aP1, void *a2)
     case -1: /*0x721c55*/
       goto LABEL_19;
     case 2: /*0x721c55*/
-      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 108); /*0x721c69*/
+      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 108); /*0x721c69*/
       *(_DWORD *)(v5 + 228) = 12; /*0x721c6f*/
       *(_DWORD *)(v5 + 232) = 12; /*0x721c75*/
       return 1; /*0x721c85*/
     case 3: /*0x721c55*/
-      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 508); /*0x721c94*/
+      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 508); /*0x721c94*/
       goto LABEL_18; /*0x721c9a*/
     case 4: /*0x721c55*/
-      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 588); /*0x721ca8*/
+      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 588); /*0x721ca8*/
       goto LABEL_18; /*0x721cae*/
     default:
-      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 408); /*0x721cbb*/
+      *(_DWORD *)(v5 + 224) = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 408); /*0x721cbb*/
   LABEL_18:
       *(_DWORD *)(v5 + 236) = 8; /*0x721cc1*/
       *(_DWORD *)(v5 + 228) = 12; /*0x721cd0*/

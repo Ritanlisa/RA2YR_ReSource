@@ -46,5 +46,6 @@ struct E4Recv_4517D0 {
     unsigned int q590014312473595134588200761168;  // 0x590014312473595134588200761168
 // --- flat members (END) ---
     int sub_4517D0();  // 0x4517D0
+    unsigned char u32_2242;  // 0x2242 (offset-truth supply)
 };
 } // namespace gamemd

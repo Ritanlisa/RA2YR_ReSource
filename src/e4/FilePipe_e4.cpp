@@ -116,7 +116,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_VRGBClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x478426*/
+    (*(void (__thiscall **)(_VectorClass_VRGBClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x478426*/
     return 1; /*0x47842c*/
   }
 }
@@ -222,7 +222,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4781ce*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x4781ce*/
   }
   v7 = this->m_8; /*0x4781d1*/
   if ( v7 < this->m_10 ) /*0x4781d9*/
@@ -340,7 +340,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4786d3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_RGBClass_vftable; /*0x4786d6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_RGBClass_vftable; /*0x4786d6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4786e0*/
   {
     RA2_OPDEL(v3); /*0x4786e8*/
@@ -350,7 +350,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x478701*/
   if ( (a2 & 1) != 0 ) /*0x478708*/
     RA2_OPDEL(Block); /*0x47870b*/
-  return Block->__pad_0; /*0x478715*/
+  return Block->q000; /*0x478715*/
 }
 } // namespace gamemd
 
@@ -450,7 +450,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4b9eae*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(_DWORD *)this->q000 + 12))(this); /*0x4b9eae*/
   }
   v7 = this->m_8; /*0x4b9eb1*/
   if ( v7 < this->m_10 ) /*0x4b9eb9*/
@@ -517,7 +517,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4ba10e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(_DWORD *)this->q000 + 12))(this); /*0x4ba10e*/
   }
   v7 = this->m_8; /*0x4ba111*/
   if ( v7 < this->m_10 ) /*0x4ba119*/
@@ -554,7 +554,7 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4ba163*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x4ba166*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x4ba166*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4ba170*/
   {
     RA2_OPDEL(v3); /*0x4ba178*/
@@ -564,7 +564,7 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x4ba191*/
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
     RA2_OPDEL(Block); /*0x4ba19b*/
-  return Block->__pad_0; /*0x4ba1a5*/
+  return Block->q000; /*0x4ba1a5*/
 }
 } // namespace gamemd
 
@@ -575,7 +575,7 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4ba203*/
-  *(_DWORD *)Block->__pad_0 = &off_7E8500; /*0x4ba206*/
+  *(_DWORD *)Block->q000 = &off_7E8500; /*0x4ba206*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4ba210*/
   {
     RA2_OPDEL(v3); /*0x4ba218*/
@@ -585,7 +585,7 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x4ba231*/
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
     RA2_OPDEL(Block); /*0x4ba23b*/
-  return Block->__pad_0; /*0x4ba245*/
+  return Block->q000; /*0x4ba245*/
 }
 } // namespace gamemd
 
@@ -596,7 +596,7 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4ba2a3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba2a6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba2a6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4ba2b0*/
   {
     RA2_OPDEL(v3); /*0x4ba2b8*/
@@ -606,6 +606,6 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x4ba2d1*/
   if ( (a2 & 1) != 0 ) /*0x4ba2d8*/
     RA2_OPDEL(Block); /*0x4ba2db*/
-  return Block->__pad_0; /*0x4ba2e5*/
+  return Block->q000; /*0x4ba2e5*/
 }
 } // namespace gamemd

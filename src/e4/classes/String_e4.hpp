@@ -88,5 +88,8 @@ struct String {
     // dup-decl: bool Equals(void * aP1);  // def-aligned
     // dup-decl: bool Equals(void * aP1);  // def-aligned
     bool NotEquals(const char *a2);  // def-aligned
+    unsigned int m_3;  // 0x3
+    void * ptr_88;  // 0x88 (offset-truth supply)
+    unsigned int q000;  // 0x0
 };
 } // namespace gamemd

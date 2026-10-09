@@ -111,5 +111,7 @@ struct EventClass {
     unsigned int dequeueEvent(int a2);  // 0x40C260
     void getEventCount();  // 0x40C590
     int GetState(int a1);  // 0x5F3440
+    char[5] __pad_10;  // 0x16 (ml)
+    unsigned char q0041;  // 0x41 (offset-truth supply)
 };
 } // namespace gamemd

@@ -230,7 +230,7 @@ void DialogClass::DrawBackground(DSurface* surface)
 void GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isSticky)
 {
     uint8_t* p = (uint8_t*)(this);
-    // Set vtable (IDA: *this = &GadgetClass::vftable) — skip for modern C++
+    // Set q000 (IDA: *this = &GadgetClass::vftable) — skip for modern C++
     p->u32_C = x;
     p->ptr_10 = y;
     p->ptr_14 = w;
@@ -248,7 +248,7 @@ void GadgetClass::Construct(int x, int y, int w, int h, unsigned flags, bool isS
 // IDA 0x4E1390: GadgetClass::Dtor — destructor, clears global gadget pointers
 int GadgetClass::Dtor()
 {
-    // IDA: *this = &GadgetClass::vftable (restore vtable)
+    // IDA: *this = &GadgetClass::vftable (restore q000)
     // Clears dword_8B3E90, dword_8B3E88, dword_8B3E8C if they point to this
     // Returns LinkClass::Destruct()
 
@@ -287,9 +287,9 @@ bool GadgetClass::ClearState(bool force)
 void GadgetClass::Show()
 {
     uint8_t* p = (uint8_t*)(this);
-    // IDA: vtable call to vfunc at +72 (update/redraw), set byte at +45 (0x2D) to 1
+    // IDA: q000 call to vfunc at +72 (update/redraw), set byte at +45 (0x2D) to 1
     p[0x2D] = 1; // Visible flag at offset 0x2D
-    // vtable[72/4=18]() — redraw callback, skipped for modern C++
+    // q000[72/4=18]() — redraw callback, skipped for modern C++
 }
 
 // IDA 0x723EB0: GadgetClass::Hide — hide gadget
@@ -297,7 +297,7 @@ void GadgetClass::Hide()
 {
     uint8_t* p = (uint8_t*)(this);
     p[0x2D] = 0; // Visible flag = 0
-    // vtable[72/4=18]() — redraw callback, skipped
+    // q000[72/4=18]() — redraw callback, skipped
 }
 
 // IDA 0x623560: GadgetClass::SetTooltip — set tooltip string (wchar_t*)
@@ -369,11 +369,11 @@ void Gadget_InitProperties(void* self)
 // ============================================================================
 
 // IDA 0x624110: SimpleDialogControl::Constructor
-// Initializes a 9-byte control: {vtable, dword0, byte8}
+// Initializes a 9-byte control: {q000, dword0, byte8}
 static void SimpleDialogControl_Construct(void* self)
 {
     uint8_t* p = (uint8_t*)(self);
-    p->u32_0 = 0; // +0: vtable placeholder
+    p->u32_0 = 0; // +0: q000 placeholder
     p[0x08] = 0; // +8: flag byte = 0
 }
 

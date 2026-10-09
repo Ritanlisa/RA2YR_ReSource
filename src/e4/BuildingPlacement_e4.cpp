@@ -52,7 +52,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
 
   if ( this != dword_A83D4C ) /*0x4fb84c*/
     return 0; /*0x4fb84c*/
-  if ( *(_DWORD *)&stru_87F5F0.__pad_E12[1422] ) /*0x4fb859*/
+  if ( *(_DWORD *)&stru_87F5F0.qE12[1422] ) /*0x4fb859*/
     return 0; /*0x4fb859*/
   v4 = a2; /*0x4fb85f*/
   if ( !a2 ) /*0x4fb865*/
@@ -63,14 +63,14 @@ void* BuildingPlacement::Activate(int a2, unsigned int *a3)
   MapClass::UnselectAll_ClearLimboLaunchers(v10); /*0x4fb877*/
   BuildingClass::TogglePower2((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x4fb883*/
   BuildingClass::TogglePower((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x4fb88f*/
-  stru_87F5F0.__pad_E12[1432] = 0; /*0x4fb894*/
-  stru_87F5F0.__pad_E12[1433] = 0; /*0x4fb89b*/
-  stru_87F5F0.__pad_E12[1434] = 0; /*0x4fb8a2*/
-  *(_DWORD *)&stru_87F5F0.__pad_E12[1438] = -1; /*0x4fb8a9*/
+  stru_87F5F0.qE12[1432] = 0; /*0x4fb894*/
+  stru_87F5F0.qE12[1433] = 0; /*0x4fb89b*/
+  stru_87F5F0.qE12[1434] = 0; /*0x4fb8a2*/
+  *(_DWORD *)&stru_87F5F0.qE12[1438] = -1; /*0x4fb8a9*/
   v6 = v5[328]; /*0x4fb8b3*/
-  *(_DWORD *)&stru_87F5F0.__pad_E12[1418] = v5; /*0x4fb8b9*/
-  *(_DWORD *)&stru_87F5F0.__pad_E12[1422] = v6; /*0x4fb8bf*/
-  *(_DWORD *)&stru_87F5F0.__pad_E12[1426] = this->Object_field_0x30; /*0x4fb8c7*/
+  *(_DWORD *)&stru_87F5F0.qE12[1418] = v5; /*0x4fb8b9*/
+  *(_DWORD *)&stru_87F5F0.qE12[1422] = v6; /*0x4fb8bf*/
+  *(_DWORD *)&stru_87F5F0.qE12[1426] = this->q030; /*0x4fb8c7*/
   v7 = (const void *)(*(int (__thiscall **)(_DWORD *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], v7); /*0x4fb8df*/
   v8 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
@@ -85,7 +85,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
 {
   BuildingPlacement *v2; // ebp
   CellClass *v3; // eax
-  int BuildingPlacement_field_0x0C; // ecx
+  int q00C; // ecx
   BuildingPlacement *v5; // edi
   int landType; // eax
   unsigned int v7; // edi
@@ -132,97 +132,97 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
 
   v2 = (BuildingPlacement *)((char *)&this->u32_184); /*0x54c55e*/
   v3 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (_DWORD *)&this->q0046); /*0x54c562*/
-  BuildingPlacement_field_0x0C = this->BuildingPlacement_field_0x0C; /*0x54c567*/
+  q00C = this->q00C; /*0x54c567*/
   v5 = (BuildingPlacement *)v3; /*0x54c56a*/
-  if ( !*(_BYTE *)(BuildingPlacement_field_0x0C + 1709) ) /*0x54c56c*/
+  if ( !*(_BYTE *)(q00C + 1709) ) /*0x54c56c*/
   {
     landType = v3->landType; /*0x54c57a*/
     if ( (landType == 2 || landType == 6) /*0x54c5a6*/
-      && *(_DWORD *)(BuildingPlacement_field_0x0C + 180) != 7
-      && (*(int (__thiscall **)(int))(*(_DWORD *)BuildingPlacement_field_0x0C + 388))(BuildingPlacement_field_0x0C) != 7 )
+      && *(_DWORD *)(q00C + 180) != 7
+      && (*(int (__thiscall **)(int))(*(_DWORD *)q00C + 388))(q00C) != 7 )
     {
-      if ( (unsigned __int8)ObjectClass::HasLinkedObject(this->BuildingPlacement_field_0x0C) ) /*0x54c5b5*/
+      if ( (unsigned __int8)ObjectClass::HasLinkedObject(this->q00C) ) /*0x54c5b5*/
       {
         v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x54c5d6*/
-        v8 = (Cell *)(*(int (__thiscall **)(int))(*(_DWORD *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c5da*/
-        v9 = *(_DWORD *)this->BuildingPlacement_field_0x0C; /*0x54c5e6*/
+        v8 = (Cell *)(*(int (__thiscall **)(int))(*(_DWORD *)this->q00C + 444))(this->q00C); /*0x54c5da*/
+        v9 = *(_DWORD *)this->q00C; /*0x54c5e6*/
         NeighbourContent = Cell::GetNeighbourContent(v8, v7); /*0x54c5ea*/
-        (*(void (__thiscall **)(int, void *, int))(v9 + 1152))(this->BuildingPlacement_field_0x0C, NeighbourContent, 1); /*0x54c5f3*/
-        v11 = (_BYTE *)this->BuildingPlacement_field_0x0C; /*0x54c5f9*/
+        (*(void (__thiscall **)(int, void *, int))(v9 + 1152))(this->q00C, NeighbourContent, 1); /*0x54c5f3*/
+        v11 = (_BYTE *)this->q00C; /*0x54c5f9*/
         IDA_LOBYTE(v9) = v11[116]; /*0x54c600*/
         (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v11 + 292))(v11, 0); /*0x54c603*/
-        v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c609*/
+        v12 = (CellClass *)this->q00C; /*0x54c609*/
         IDA_LOBYTE(v12->unknown74) = v9; /*0x54c60d*/
         this->q014 = 3; /*0x54c610*/
       }
       else
       {
-        v13 = (CellClass *)(*(int (__stdcall **)(int))(*(_DWORD *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c624*/
+        v13 = (CellClass *)(*(int (__stdcall **)(int))(*(_DWORD *)this->q00C + 444))(this->q00C); /*0x54c624*/
         CellClass::AttachObject(v13, v45); /*0x54c62c*/
-        v14 = (_BYTE *)this->BuildingPlacement_field_0x0C; /*0x54c631*/
+        v14 = (_BYTE *)this->q00C; /*0x54c631*/
         v15 = v14[116]; /*0x54c638*/
         IDA_LOBYTE(v12) = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v14 + 292))(v14, 0); /*0x54c63b*/
-        *(_BYTE *)(this->BuildingPlacement_field_0x0C + 116) = v15; /*0x54c645*/
+        *(_BYTE *)(this->q00C + 116) = v15; /*0x54c645*/
         v16 = this->u32_2C; /*0x54c648*/
         this->q014 = 2; /*0x54c64b*/
         this->u32_20 = v16; /*0x54c652*/
       }
       return (char)v12; /*0x54c61d*/
     }
-    v47 = (*(int (__thiscall **)(int, BuildingPlacement *, int, int, _DWORD, int))(*(_DWORD *)this->BuildingPlacement_field_0x0C /*0x54c675*/
+    v47 = (*(int (__thiscall **)(int, BuildingPlacement *, int, int, _DWORD, int))(*(_DWORD *)this->q00C /*0x54c675*/
                                                                                  + 428))(
-            this->BuildingPlacement_field_0x0C,
+            this->q00C,
             v5,
             -1,
             -1,
             0,
             1);
     v17 = Input::OffsetToDirection((Input *)&this->q0046); /*0x54c684*/
-    if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, IDA_BYTE1(v5[8].BuildingPlacement_field_0x20) & 1) /*0x54c699*/
+    if ( BuildingPlacement::IsPlacementFlagSet(v5, v17, IDA_BYTE1(v5[8].u32_20) & 1) /*0x54c699*/
       || (v46 = 0, this->u32_90) )
     {
       v46 = 1; /*0x54c6a8*/
     }
-    if ( (*(int (__thiscall **)(int))(*(_DWORD *)this->BuildingPlacement_field_0x0C + 44))(this->BuildingPlacement_field_0x0C) == 1 /*0x54c6bc*/
+    if ( (*(int (__thiscall **)(int))(*(_DWORD *)this->q00C + 44))(this->q00C) == 1 /*0x54c6bc*/
       && !v17 )
     {
       v46 = 1; /*0x54c6be*/
     }
-    v18 = (_DWORD *)this->BuildingPlacement_field_0x0C; /*0x54c6c2*/
+    v18 = (_DWORD *)this->q00C; /*0x54c6c2*/
     if ( v18[45] != 7 && (*(int (__thiscall **)(_DWORD *))(*v18 + 388))(v18) != 7 ) /*0x54c6d9*/
     {
       if ( !v46 /*0x54c70c*/
         || (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (_DWORD *)&this->q0046)->flags[0] & 0x100) == 0
         && (v47 > 2 || v47 == 2 && !this->u32_90) )
       {
-        IDA_LOBYTE(v12) = (*(char (__stdcall **)(int *))(this->BuildingPlacement_field_0x04 + 72))(&this->BuildingPlacement_field_0x04); /*0x54ca43*/
+        IDA_LOBYTE(v12) = (*(char (__stdcall **)(int *))(this->q004 + 72))(&this->q004); /*0x54ca43*/
         return (char)v12; /*0x54ca4d*/
       }
       if ( !this->u32_90 ) /*0x54c71a*/
       {
-        v19 = this->BuildingPlacement_field_0x0C; /*0x54c724*/
+        v19 = this->q00C; /*0x54c724*/
         this->u32_90 = 1; /*0x54c727*/
         (*(void (__thiscall **)(int, char *))(*(_DWORD *)v19 + 240))(v19, (char *)&this->u32_184); /*0x54c731*/
       }
     }
   }
-  v20 = (_DWORD *)this->BuildingPlacement_field_0x0C; /*0x54c737*/
+  v20 = (_DWORD *)this->q00C; /*0x54c737*/
   if ( v20 ) /*0x54c73c*/
   {
-    if ( (*(int (__thiscall **)(int))(*v20 + 44))(this->BuildingPlacement_field_0x0C) == 1 ) /*0x54c748*/
+    if ( (*(int (__thiscall **)(int))(*v20 + 44))(this->q00C) == 1 ) /*0x54c748*/
     {
       if ( *(_BYTE *)(v20[433] + 3603) ) /*0x54c750*/
       {
-        if ( !*(_BYTE *)(this->BuildingPlacement_field_0x0C + 1709) ) /*0x54c75d*/
+        if ( !*(_BYTE *)(this->q00C + 1709) ) /*0x54c75d*/
         {
-          v21 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c776*/
+          v21 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 72); /*0x54c776*/
           Value = ProgressTimer::GetValue((ProgressTimer *)((char *)&this->u32_204), &v47); /*0x54c77a*/
           IDA_LOBYTE(v23) = 0; /*0x54c77f*/
           IDA_HIBYTE(v23) = v21; /*0x54c781*/
           if ( *(_WORD *)Value != v23 ) /*0x54c786*/
           {
             IDA_LOBYTE(v24) = 0; /*0x54c78d*/
-            IDA_HIBYTE(v24) = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 72); /*0x54c793*/
+            IDA_HIBYTE(v24) = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 72); /*0x54c793*/
             IDA_LOWORD(v47) = v24; /*0x54c799*/
             this->q054.Update(&v47); /*0x54c79e*/
           }
@@ -230,10 +230,10 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       }
     }
   }
-  v25 = this->BuildingPlacement_field_0x0C; /*0x54c7a3*/
+  v25 = this->q00C; /*0x54c7a3*/
   this->u32_20 = 0; /*0x54c7a6*/
   v26 = (*(int (__thiscall **)(int))(*(_DWORD *)v25 + 456))(v25); /*0x54c7b8*/
-  v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c7ba*/
+  v12 = (CellClass *)this->q00C; /*0x54c7ba*/
   if ( !IDA_LOBYTE(v12->sensorsOfHouses[4]) ) /*0x54c7bd*/
   {
     v27 = &v12->sensorsOfHouses[8]; /*0x54c7c7*/
@@ -250,17 +250,17 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   }
   if ( !v26 )
   {
-    (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)this->BuildingPlacement_field_0x0C + 1348))( /*0x54c814*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)this->q00C + 1348))( /*0x54c814*/
+      this->q00C,
       0,
       0);
-    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this->BuildingPlacement_field_0x0C + 292))( /*0x54c820*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this->q00C + 292))( /*0x54c820*/
+      this->q00C,
       0);
-    v28 = (_BYTE *)this->BuildingPlacement_field_0x0C; /*0x54c826*/
+    v28 = (_BYTE *)this->q00C; /*0x54c826*/
     if ( !v28[1709] ) /*0x54c829*/
       (*(void (__thiscall **)(_BYTE *, char *))(*(_DWORD *)v28 + 436))(v28, (char *)&this->u32_184); /*0x54c836*/
-    v29 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c83f*/
+    v29 = (int *)(this->q00C + 156); /*0x54c83f*/
     v48 = *v29; /*0x54c848*/
     v49 = v29[1]; /*0x54c84f*/
     v30 = v29[2]; /*0x54c853*/
@@ -269,27 +269,27 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
     v50 = v29[2]; /*0x54c870*/
     if ( v30 > Cell::GetGroundHeight(&v48) ) /*0x54c87b*/
     {
-      v31 = (int *)(this->BuildingPlacement_field_0x0C + 156); /*0x54c880*/
+      v31 = (int *)(this->q00C + 156); /*0x54c880*/
       v48 = *v31; /*0x54c888*/
       v49 = v31[1]; /*0x54c894*/
       v50 = v31[2]; /*0x54c8a0*/
       if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v48)->flags[0] & 0x100) != 0 ) /*0x54c8b2*/
-        *(_BYTE *)(this->BuildingPlacement_field_0x0C + 140) = 1; /*0x54c8b7*/
+        *(_BYTE *)(this->q00C + 140) = 1; /*0x54c8b7*/
     }
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)this->BuildingPlacement_field_0x0C + 292))( /*0x54c8c5*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (__thiscall **)(int, int))(*(_DWORD *)this->q00C + 292))( /*0x54c8c5*/
+      this->q00C,
       1);
-    *(_DWORD *)v2->__pad_0 = dword_ABC5A8; /*0x54c8d2*/
+    *(_DWORD *)v2->q000 = dword_ABC5A8; /*0x54c8d2*/
     this->u32_44 = dword_ABC5AC; /*0x54c8db*/
-    v32 = this->BuildingPlacement_field_0x0C; /*0x54c8e4*/
+    v32 = this->q00C; /*0x54c8e4*/
     this->u32_48 = dword_ABC5B0; /*0x54c8e7*/
     this->u32_4C = 0; /*0x54c8ea*/
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v32 + 396))(v32, 2); /*0x54c8f0*/
-    (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this->BuildingPlacement_field_0x0C + 1152))( /*0x54c8ff*/
-      this->BuildingPlacement_field_0x0C,
+    (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this->q00C + 1152))( /*0x54c8ff*/
+      this->q00C,
       0,
       1);
-    v33 = (_BYTE *)this->BuildingPlacement_field_0x0C; /*0x54c905*/
+    v33 = (_BYTE *)this->q00C; /*0x54c905*/
     IDA_LOBYTE(v12) = v33[144]; /*0x54c908*/
     if ( (_BYTE)v12 )
     {
@@ -300,7 +300,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         if ( !(_BYTE)v12 )
         {
           (*(void (__thiscall **)(_BYTE *, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v33 + 1164))(v33, 0, 0, 0, 0); /*0x54c93c*/
-          v34 = (_BYTE *)this->BuildingPlacement_field_0x0C; /*0x54c942*/
+          v34 = (_BYTE *)this->q00C; /*0x54c942*/
           if ( v34[144] ) /*0x54c945*/
             (*(void (__thiscall **)(_BYTE *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v34 + 1160))( /*0x54c95b*/
               v34,
@@ -309,7 +309,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
               0,
               0,
               0);
-          v35 = this->BuildingPlacement_field_0x0C; /*0x54c961*/
+          v35 = this->q00C; /*0x54c961*/
           if ( *(_BYTE *)(v35 + 144) ) /*0x54c964*/
           {
             v48 = *(_DWORD *)(v35 + 156); /*0x54c978*/
@@ -322,41 +322,41 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
               *(_DWORD *)(v35 + 608) + 3,
               0);
           }
-          v47 = this->BuildingPlacement_field_0x0C; /*0x54c9ac*/
+          v47 = this->q00C; /*0x54c9ac*/
           v47 = v47; /*0x54c9aa*/
           if ( *(_DWORD *)((*(int (**)(void))(*(_DWORD *)v47 + 444))() + 224) == v47 ) /*0x54c9be*/
           {
             v37 = (CellClass *)(*(int (__thiscall **)(int))(*(_DWORD *)v47 + 444))(v47); /*0x54c9c6*/
             CellClass::AttachObject(v37, 0); /*0x54c9ce*/
           }
-          GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, this->BuildingPlacement_field_0x0C); /*0x54c9dc*/
-          v38 = this->BuildingPlacement_field_0x0C; /*0x54c9e1*/
+          GadgetGrid::RemoveItem((GadgetGrid *)&g_CellClassManager, this->q00C); /*0x54c9dc*/
+          v38 = this->q00C; /*0x54c9e1*/
           this->q014 = 0; /*0x54c9e4*/
           v38 = v38; /*0x54c9eb*/
           v39 = (CrateClass *)(*(int (__thiscall **)(int))(*(_DWORD *)v38 + 444))(v38); /*0x54c9ee*/
           CrateClass::ProcessPickup(v39, v38); /*0x54c9f6*/
-          v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54c9fb*/
-          v12[5].__pad_28[30] = 1; /*0x54c9fe*/
-          *(_BYTE *)(this->BuildingPlacement_field_0x0C + 1063) = 0; /*0x54ca08*/
-          *(_BYTE *)(this->BuildingPlacement_field_0x0C + 1061) = 0; /*0x54ca12*/
-          v40 = this->BuildingPlacement_field_0x0C; /*0x54ca19*/
+          v12 = (CellClass *)this->q00C; /*0x54c9fb*/
+          v12[5].q028[30] = 1; /*0x54c9fe*/
+          *(_BYTE *)(this->q00C + 1063) = 0; /*0x54ca08*/
+          *(_BYTE *)(this->q00C + 1061) = 0; /*0x54ca12*/
+          v40 = this->q00C; /*0x54ca19*/
           this->u32_90 = 0; /*0x54ca1e*/
           if ( v40 )
           {
             v12 = (CellClass *)(*(int (__thiscall **)(int))(*(_DWORD *)v40 + 44))(v40); /*0x54ca29*/
             if ( v12 == (CellClass *)1 )
             {
-              v41 = this->BuildingPlacement_field_0x0C; /*0x54ca31*/
+              v41 = this->q00C; /*0x54ca31*/
               if ( v41 )
-                v42 = (*(int (__thiscall **)(int))(*(_DWORD *)v41 + 44))(this->BuildingPlacement_field_0x0C) == 1
+                v42 = (*(int (__thiscall **)(int))(*(_DWORD *)v41 + 44))(this->q00C) == 1
                     ? v41
                     : 0;
               else
                 v42 = 0; /*0x54ca38*/
               v12 = (CellClass *)(*(int (__thiscall **)(int))(*(_DWORD *)v42 + 132))(v42); /*0x54ca62*/
-              if ( v12[5].__pad_28[29] ) /*0x54ca68*/
+              if ( v12[5].q028[29] ) /*0x54ca68*/
               {
-                v12 = (CellClass *)this->BuildingPlacement_field_0x0C; /*0x54ca72*/
+                v12 = (CellClass *)this->q00C; /*0x54ca72*/
                 IDA_LOBYTE(v12->gapsCoveringThisCell) = 0; /*0x54ca75*/
               }
             }
@@ -373,7 +373,7 @@ namespace gamemd {
 unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
 {
   double v2; // st7
-  int BuildingPlacement_field_0x20; // esi
+  int u32_20; // esi
   int v4; // eax
   int v5; // ebx
   VectorClass *v7; // eax
@@ -428,9 +428,9 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   unsigned __int64 v59; // [esp+40h] [ebp-8h]
 
   __asm { fild dword_ABE030 } /*0x594f49*/
-  BuildingPlacement_field_0x20 = this->BuildingPlacement_field_0x20; /*0x594f51*/
+  u32_20 = this->u32_20; /*0x594f51*/
   __asm { fmul ds:dbl_7E3808 } /*0x594f55*/
-  v45 = BuildingPlacement_field_0x20; /*0x594f5b*/
+  v45 = u32_20; /*0x594f5b*/
   v58 = -1.0; /*0x594f5f*/
   v48 = -1; /*0x594f6f*/
   __asm /*0x594f77*/
@@ -443,14 +443,14 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   IDA_LOWORD(v4) = Math::RoundToInt(v2); /*0x594f8d*/
   v5 = a2; /*0x594f92*/
   v40 = v4; /*0x594f99*/
-  if ( !BuildingPlacement_field_0x20 && *(int *)(a2 + 16) > 0 ) /*0x594fa4*/
+  if ( !u32_20 && *(int *)(a2 + 16) > 0 ) /*0x594fa4*/
   {
     v40 = *(_DWORD *)(a2 + 16); /*0x594fa6*/
     v4 = v40; /*0x594faa*/
   }
   if ( v4 > *(_DWORD *)(a2 + 16) || !v4 ) /*0x594fb5*/
   {
-    if ( !BuildingPlacement_field_0x20 ) /*0x594fb9*/
+    if ( !u32_20 ) /*0x594fb9*/
       return 0; /*0x594fc3*/
     v40 = *(_DWORD *)(a2 + 16); /*0x594fc6*/
   }

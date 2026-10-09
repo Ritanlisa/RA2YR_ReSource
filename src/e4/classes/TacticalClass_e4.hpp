@@ -325,6 +325,22 @@ struct TacticalClass {
     unsigned int uniqueId4;  // @0x6d7c19 (W16G3 raw-usage vocab)
     unsigned int uniqueId5;  // @0x6d7ccd (W16G3 raw-usage vocab)
     unsigned int abstractFlags6;  // @0x6d30a2 (W16G3 raw-usage vocab)
+    unsigned char __pad_11B4;  // 0x11B4 (offset-truth supply)
+    unsigned int q11B0;  // 0x11B0 (offset-truth supply)
+    unsigned int q11D0;  // 0x11D0 (offset-truth supply)
+    unsigned int q11D4;  // 0x11D4 (offset-truth supply)
+    unsigned int q11D8;  // 0x11D8 (offset-truth supply)
+    unsigned int q11DC;  // 0x11DC (offset-truth supply)
+    unsigned int q11E0;  // 0x11E0 (offset-truth supply)
+    unsigned int u32_11A8;  // 0x11A8 (offset-truth supply)
+    unsigned char u32_11B1;  // 0x11B1 (offset-truth supply)
+    unsigned char u32_11B2;  // 0x11B2 (offset-truth supply)
+    unsigned char u32_11B3;  // 0x11B3 (offset-truth supply)
+    unsigned int u32_11B4;  // 0x11B4 (offset-truth supply)
+    unsigned int u32_11BC;  // 0x11BC (offset-truth supply)
+    unsigned int u32_11C0;  // 0x11C0 (offset-truth supply)
+    unsigned int u32_11C4;  // 0x11C4 (offset-truth supply)
+    unsigned int u32_11C8;  // 0x11C8 (offset-truth supply)
 };
 
 } // namespace gamemd

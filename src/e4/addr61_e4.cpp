@@ -211,26 +211,26 @@ char sub_610B50()
   __int64 v3; // [esp+Ch] [ebp-18h]
   _QWORD v4[2]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[772] ) /*0x610b5d*/
+  if ( !*(_DWORD *)&g_DialogPool.q208[772] ) /*0x610b5d*/
     return 0; /*0x610b5f*/
-  if ( *(_DWORD *)&g_DialogPool.__pad_208[776] == 1 ) /*0x610b6d*/
+  if ( *(_DWORD *)&g_DialogPool.q208[776] == 1 ) /*0x610b6d*/
     return 0; /*0x610b6f*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[512] ) /*0x610b7e*/
+  if ( !*(_DWORD *)&g_DialogPool.q208[512] ) /*0x610b7e*/
     return 0; /*0x610b80*/
   v2[0] = 0; /*0x610b9e*/
   v2[1] = 0; /*0x610ba2*/
-  v4[0] = *(_QWORD *)&g_DialogPool.__pad_208[496]; /*0x610bab*/
-  v4[1] = *(_QWORD *)&g_DialogPool.__pad_208[504]; /*0x610bc4*/
-  v3 = *(_QWORD *)&g_DialogPool.__pad_208[504]; /*0x610bc8*/
+  v4[0] = *(_QWORD *)&g_DialogPool.q208[496]; /*0x610bab*/
+  v4[1] = *(_QWORD *)&g_DialogPool.q208[504]; /*0x610bc4*/
+  v3 = *(_QWORD *)&g_DialogPool.q208[504]; /*0x610bc8*/
   (*((void (__thiscall **)(DSurface *, _QWORD *, _DWORD, _DWORD *, _DWORD, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610bd3*/
    + 2))(
     g_DSurface_Primary,
     v4,
-    *(_DWORD *)&g_DialogPool.__pad_208[512],
+    *(_DWORD *)&g_DialogPool.q208[512],
     v2,
     0,
     1);
-  *(_DWORD *)&g_DialogPool.__pad_208[776] = 1; /*0x610bd6*/
+  *(_DWORD *)&g_DialogPool.q208[776] = 1; /*0x610bd6*/
   return 1; /*0x610b61*/
 }
 }
@@ -242,33 +242,33 @@ AbstractClass * * sub_610BF0()
   __int64 v3; // [esp+Ch] [ebp-18h]
   _QWORD v4[2]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[772] ) /*0x610bfd*/
+  if ( !*(_DWORD *)&g_DialogPool.q208[772] ) /*0x610bfd*/
     return 0; /*0x610c05*/
-  if ( *(_DWORD *)&g_DialogPool.__pad_208[776] == 1 ) /*0x610c0d*/
+  if ( *(_DWORD *)&g_DialogPool.q208[776] == 1 ) /*0x610c0d*/
     goto LABEL_6; /*0x610c0d*/
-  if ( *(_DWORD *)&g_DialogPool.__pad_208[512] ) /*0x610c17*/
+  if ( *(_DWORD *)&g_DialogPool.q208[512] ) /*0x610c17*/
   {
-    v4[0] = *(_QWORD *)&g_DialogPool.__pad_208[496]; /*0x610c35*/
-    v4[1] = *(_QWORD *)&g_DialogPool.__pad_208[504]; /*0x610c4f*/
+    v4[0] = *(_QWORD *)&g_DialogPool.q208[496]; /*0x610c35*/
+    v4[1] = *(_QWORD *)&g_DialogPool.q208[504]; /*0x610c4f*/
     v2[0] = 0; /*0x610c53*/
     v2[1] = 0; /*0x610c57*/
-    v3 = *(_QWORD *)&g_DialogPool.__pad_208[504]; /*0x610c5b*/
+    v3 = *(_QWORD *)&g_DialogPool.q208[504]; /*0x610c5b*/
     (*((void (__thiscall **)(DSurface *, _QWORD *, _DWORD, _DWORD *, _DWORD, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610c66*/
      + 2))(
       g_DSurface_Primary,
       v4,
-      *(_DWORD *)&g_DialogPool.__pad_208[512],
+      *(_DWORD *)&g_DialogPool.q208[512],
       v2,
       0,
       1);
-    *(_DWORD *)&g_DialogPool.__pad_208[776] = 1; /*0x610c69*/
+    *(_DWORD *)&g_DialogPool.q208[776] = 1; /*0x610c69*/
   LABEL_6:
-    if ( *(_DWORD *)&g_DialogPool.__pad_208[512] ) /*0x610c7c*/
-      (***(void (__thiscall ****)(_DWORD, int))&g_DialogPool.__pad_208[512])(*(_DWORD *)&g_DialogPool.__pad_208[512], 1); /*0x610c82*/
+    if ( *(_DWORD *)&g_DialogPool.q208[512] ) /*0x610c7c*/
+      (***(void (__thiscall ****)(_DWORD, int))&g_DialogPool.q208[512])(*(_DWORD *)&g_DialogPool.q208[512], 1); /*0x610c82*/
   }
-  *(_DWORD *)&g_DialogPool.__pad_208[512] = 0; /*0x610c84*/
-  *(_DWORD *)&g_DialogPool.__pad_208[772] = 0; /*0x610c8a*/
-  *(_DWORD *)&g_DialogPool.__pad_208[776] = 0; /*0x610c90*/
+  *(_DWORD *)&g_DialogPool.q208[512] = 0; /*0x610c84*/
+  *(_DWORD *)&g_DialogPool.q208[772] = 0; /*0x610c8a*/
+  *(_DWORD *)&g_DialogPool.q208[776] = 0; /*0x610c90*/
   return 1; /*0x610c01*/
 }
 }

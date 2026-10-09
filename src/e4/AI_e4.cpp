@@ -25,10 +25,10 @@ char AI_CreateMCV(MultiplayerGameMode *self)
   __int16 *CurrentOption; // eax
   _DWORD v11[3]; // [esp+8h] [ebp-Ch] BYREF
 
-  if ( !stru_A8B250.__pad_0[8] ) /*0x5d703c*/
+  if ( !stru_A8B250.q000[8] ) /*0x5d703c*/
     return 1; /*0x5d7045*/
   v3 = (HouseClass *)this; /*0x5d704d*/
-  v4 = BuildingClass::FindBySWType((BuildingClass *)this, *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2848); /*0x5d705e*/
+  v4 = BuildingClass::FindBySWType((BuildingClass *)this, *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2848); /*0x5d705e*/
   if ( v4 ) /*0x5d7062*/
   {
     v5 = (int *)RA2_OPNEW(0x8E8u); /*0x5d7069*/

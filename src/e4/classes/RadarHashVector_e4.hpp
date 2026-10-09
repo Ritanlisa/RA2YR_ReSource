@@ -33,6 +33,10 @@ struct RadarHashVector {
     unsigned int * Construct(MapClass * aP1, MapClass * aP2, void *a3, void *a4, void *a5, void *a6);
     unsigned int Write(int a2);
     void ddtor();
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -13,6 +13,7 @@ struct CenterTeamCommand {
     static _DWORD * Construct(void *aP1, int a2);  // G42.57w14 R2 raw 0x5361A0 _DWORD *__thiscall CenterTeamCommand::Construct(CenterTeamCommand *this, int a2)
     char * AddRef();
     wchar_t * Release();
+    unsigned char m_1;  // 0x1 (offset-truth supply)
 };
 
 } // namespace gamemd

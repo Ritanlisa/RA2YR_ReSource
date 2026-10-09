@@ -39,5 +39,9 @@ struct MSPCXAnim_42 {
     DynamicVector * Constructor_VectorClass_MSTextEntry___(unsigned int * Block, char a2);  // 0x5D17B0
     DynamicVector * Constructor_VectorClass_MapSelection___(unsigned int * Block, char a2);  // 0x5D1850
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5D1940
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 } // namespace gamemd

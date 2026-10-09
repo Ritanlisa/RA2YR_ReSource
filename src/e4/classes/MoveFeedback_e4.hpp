@@ -39,6 +39,10 @@ struct MoveFeedback {
     int ProcessCommand();
     unsigned int GetIndex2(int a2);
     void Destroy();
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 
 } // namespace gamemd

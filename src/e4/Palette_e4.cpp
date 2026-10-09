@@ -102,7 +102,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   v10 = *(_DWORD *)a1->m_Colors; /*0x642185*/
   Height = v61.Height; /*0x642187*/
   v58 = 0; /*0x64218b*/
-  *(_DWORD *)v61.__pad_0 = v61.LockCount; /*0x64218f*/
+  *(_DWORD *)v61.q000 = v61.LockCount; /*0x64218f*/
   v11 = (*(int (__thiscall **)(int))(*(_DWORD *)v10 + 120))(v10); /*0x64219c*/
   DSurface::BlitPart((DSurface *)&v61, (int)&v57, *(_DWORD *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
   v12 = (void *)RA2_OPNEW(0x4000u); /*0x6421bb*/

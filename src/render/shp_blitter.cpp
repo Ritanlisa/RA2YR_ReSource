@@ -66,21 +66,21 @@ bool SHPBlitterCopy(
         return false;
 
     // --- 2. Resolve blitter function pointers ---
-    // vtable layout varies based on the blitter type
-    // We use a simple struct with direct vtable offsets
+    // q000 layout varies based on the blitter type
+    // We use a simple struct with direct q000 offsets
     using BlitFn = void (*)(int, int*, int, int, int, int, int, int);
     using BlitFnTint = void (*)(int, int*, int, int, int, int, int);
 
     BlitFn blit_row = nullptr;
     BlitFnTint blit_row_tint = nullptr;
 
-    // Select correct function based on the blitter vtable at runtime
-    // The specific vtable varies by template instantiation
+    // Select correct function based on the blitter q000 at runtime
+    // The specific q000 varies by template instantiation
     auto* vt = (void**)(blitter_vtable);
     if (opacity != 0) {
-        blit_row_tint = (BlitFnTint)(vt[3]);  // vtable[12/4]
+        blit_row_tint = (BlitFnTint)(vt[3]);  // q000[12/4]
     } else {
-        blit_row = (BlitFn)(vt[1]);           // vtable[4/4]
+        blit_row = (BlitFn)(vt[1]);           // q000[4/4]
     }
 
     // --- 3. Lock destination surface ---

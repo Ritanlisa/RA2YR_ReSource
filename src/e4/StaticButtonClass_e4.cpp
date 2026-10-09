@@ -20,13 +20,13 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q00C; /*0x6c6883*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6886*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     RA2_OPDEL(v3); /*0x6c6891*/
   Vector::Clear((int)&this->q00C6); /*0x6c689c*/
   GadgetClass::Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     RA2_OPDEL(); /*0x6c68b0*/
-  return this->__pad_0; /*0x6c68ba*/
+  return this->q000; /*0x6c68ba*/
 }
 } // namespace gamemd

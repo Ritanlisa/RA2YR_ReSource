@@ -139,7 +139,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   vtable2 = this->vfptr2; /*0x645d7d*/
   vtable3 = this->vfptr3; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
-  v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
+  v4 = QuaternionMathMultiply((float *)v30[0].q000, (float *)&vtable0, v3); /*0x645d9c*/
   v5 = *(float *)&this->vfptr3; /*0x645da3*/
   v6 = *((_DWORD *)v4 + 1); /*0x645da6*/
   v25 = *(_DWORD *)v4; /*0x645da9*/
@@ -1313,7 +1313,7 @@ LABEL_223:
               if ( (*(int (**)(int *))(*v68 + 16))( (int *)(v68)) <= 0 )
               {
 LABEL_136:
-                if ( *(int *)&((unsigned char *)&HouseClass_Player)[45112] < (int)&((unsigned char *)&v97->__pad_0)[v70] )
+                if ( *(int *)&((unsigned char *)&HouseClass_Player)[45112] < (int)&((unsigned char *)&v97->q000)[v70] )
                   goto LABEL_223;
                 v72 = -1;
               }
@@ -1328,7 +1328,7 @@ LABEL_136:
                     goto LABEL_136;
                 }
               }
-              if ( *(int *)&((unsigned char *)&HouseClass_Player)[45112] < (int)&((unsigned char *)&v97->__pad_0)[v70] )
+              if ( *(int *)&((unsigned char *)&HouseClass_Player)[45112] < (int)&((unsigned char *)&v97->q000)[v70] )
                 v67 = -1;
               if ( ((unsigned char *)&HouseClass_Player)[31592]
                 &&((unsigned char *)&HouseClass_Player)[31593]
@@ -1373,7 +1373,7 @@ LABEL_148:
                 {
                   if ( ((unsigned char *)&HouseClass_Player)[31592] &&((unsigned char *)&HouseClass_Player)[31593] )
                   {
-                    edx158 = *(unsigned int *)v73->__pad_0;
+                    edx158 = *(unsigned int *)v73->q000;
                     v124 = 400;
                     v125 = 40;
                     var6A0 = 3;
@@ -2100,7 +2100,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   {
     v5 = CharToWideString((unsigned char *)(a1 + 4)); /*0x64a678*/
     v6 = (wchar_t *)(a1 + 25); /*0x64a67f*/
-    v7 = Math::RoundToInt(*(double *)&(&dword_8871E0)[1].__pad_A0 * 900.0); /*0x64a68e*/
+    v7 = Math::RoundToInt(*(double *)&(&dword_8871E0)[1].q0A0 * 900.0); /*0x64a68e*/
     if ( !((int (*)(wchar_t *, int, wchar_t *, int))ScrollingText::AddLine)( /*0x64a6a1*/
             (wchar_t *)v5,
             a1->q018,
@@ -2109,7 +2109,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     {
       v8 = CharToWideString((unsigned char *)(a1 + 4)); /*0x64a6b1*/
       v9 = a1->q018; /*0x64a6cb*/
-      v10 = Math::RoundToInt(*(double *)&(&dword_8871E0)[1].__pad_A0 * 900.0); /*0x64a6cd*/
+      v10 = Math::RoundToInt(*(double *)&(&dword_8871E0)[1].q0A0 * 900.0); /*0x64a6cd*/
       MessageListClass::AddMessage(unk_A8BC60, (wchar_t *)v8, v9, v6, v9, 16454, v10, 0); /*0x64a6e1*/
       PlayVocClass(dword_8871E0->MovieOn, 0x2000, 1.0, 0); /*0x64a6fe*/
     }

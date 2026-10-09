@@ -109,6 +109,10 @@ struct ConvertClass {
     unsigned int * Construct(int a2, int a3, int a4, int a5, char a6);
      unsigned int * InitTables();  // G57w10-S raw 0x0048EBF0 (was C2597 interim stub)
     ConvertClass * * sub_4880F0(int a2);
+    char[4] ConvertClass_field_0x2;  // 0x2 (ml)
+    char[362] __pad_6;  // 0x6 (ml)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int u32_17C;  // 0x17C (offset-truth supply)
 };
 
 } // namespace gamemd

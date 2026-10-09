@@ -145,6 +145,7 @@ struct TiberiumClass {
     TiberiumClass(ObjectClass * aP1);
     int Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8);  // def-aligned
     static char Grow(TiberiumClass * aP1, unsigned short *a2);  // G57w10-S raw 0x0059C920 (was C2597 interim stub)
+    char[8] __pad_E4;  // 0x228 (ml)
 };
 
 } // namespace gamemd

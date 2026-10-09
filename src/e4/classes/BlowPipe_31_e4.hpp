@@ -23,5 +23,9 @@ struct BlowPipe_31 {
     int Read(unsigned int * a2, void *a2_2);  // 0x63E620
     DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x63EDE0
     unsigned int Write(int a2);  // 0x63DC50
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 } // namespace gamemd

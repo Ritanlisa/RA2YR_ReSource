@@ -57,7 +57,7 @@ int SHA1::Process(int a2, int a3)  // g57c5 W5g2: raw param-name sync (69d960)
   int *v5; // edi
   int v6; // ebx
 
-  this->__pad_0[0] = 0; /*0x69d96f*/
+  this->q000[0] = 0; /*0x69d96f*/
   SHA1::ProcessBlock(this, (const void **)&a2, &a3); /*0x69d972*/
   a3 = a3; /*0x69d977*/
   if ( a3 ) /*0x69d97d*/
@@ -94,8 +94,8 @@ int SHA1::Compute(char *a2, int a1)
   unsigned int v12[5]; // [esp+14h] [ebp-54h] BYREF
   int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-  if ( a1->__pad_0[0] ) /*0x69d9e9*/
-    qmemcpy(a1, &a1->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
+  if ( a1->q000[0] ) /*0x69d9e9*/
+    qmemcpy(a1, &a1->u32_4, 0x14u); /*0x69d9fb*/
   v3 = *((_DWORD *)a1 + 12); /*0x69d9fd*/
   v4 = *((_DWORD *)a1 + 11); /*0x69da00*/
   qmemcpy(v13, (char *)a1 + 52, sizeof(v13)); /*0x69da14*/
@@ -118,8 +118,8 @@ int SHA1::Compute(char *a2, int a1)
   v7 = ((v7) & 0xFFFF00FFu) | (((unsigned int)(v5 >> 13) & 0xFFu) << 8); /*0x69da9e*/
   v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
   SHA1::Transform(v13, v12); /*0x69dac3*/
-  qmemcpy(&a1->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
-  p_SHA1_field_0x04 = &a1->SHA1_field_0x04; /*0x69dad8*/
+  qmemcpy(&a1->u32_4, v12, 0x14u); /*0x69dad6*/
+  p_SHA1_field_0x04 = &a1->u32_4; /*0x69dad8*/
   v9 = 5; /*0x69dada*/
   do /*0x69db0b*/
   {
@@ -128,8 +128,8 @@ int SHA1::Compute(char *a2, int a1)
     *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | (((((unsigned int)(v10) >> 16) & 0xFFFF) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
-  a1->__pad_0[0] = 1; /*0x69db18*/
-  qmemcpy(a1, &a1->SHA1_field_0x04, 0x14u); /*0x69db1c*/
+  a1->q000[0] = 1; /*0x69db18*/
+  qmemcpy(a1, &a1->u32_4, 0x14u); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
 // 0x69db30

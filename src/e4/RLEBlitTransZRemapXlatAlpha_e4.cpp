@@ -51,8 +51,8 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
     v18 = a4 - v17; /*0x497a93*/
     arg0 += 2 * v17; /*0x497a95*/
     result = &a7[v17]; /*0x497a98*/
-    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 28) ) /*0x497a9e*/
-      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x497aa0*/
+    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x497a9e*/
+      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x497aa0*/
   }
   while ( v18 > 0 ) /*0x497aab*/
   {
@@ -73,8 +73,8 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
       arg0 += v21; /*0x497ad7*/
       result = (unsigned __int16 *)((char *)result + v21); /*0x497ad9*/
     }
-    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 28) ) /*0x497b21*/
-      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x497b23*/
+    if ( (unsigned int)result >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x497b21*/
+      result = (unsigned __int16 *)((char *)result - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x497b23*/
   }
   return result; /*0x497b2a*/
 }
@@ -83,7 +83,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
 namespace gamemd {
 int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(_RLEBlitTransZRemapXlatAlpha_G *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this->__pad_0 + 4))( /*0x497b77*/
+  return (*(int (__thiscall **)(_RLEBlitTransZRemapXlatAlpha_G *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this->q000 + 4))( /*0x497b77*/
            this,
            a2,
            a3,
@@ -101,7 +101,7 @@ int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, 
 namespace gamemd {
 int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(_RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this->__pad_0 + 4))( /*0x4978b7*/
+  return (*(int (__thiscall **)(_RLEBlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this->q000 + 4))( /*0x4978b7*/
            this,
            a2,
            a3,
@@ -119,7 +119,7 @@ int RLEBlitTransZRemapXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int 
 namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9a9*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9a9*/
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
     RA2_OPDEL(); /*0x49a9b2*/
   return (std::locale::facet *)this; /*0x49a9bc*/
@@ -129,7 +129,7 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(
 namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9c9*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9c9*/
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
     RA2_OPDEL(); /*0x49a9d2*/
   return (std::locale::facet *)this; /*0x49a9dc*/
@@ -139,7 +139,7 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_
 namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9e9*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49a9e9*/
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
     RA2_OPDEL(); /*0x49a9f2*/
   return (std::locale::facet *)this; /*0x49a9fc*/
@@ -152,12 +152,12 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
   void *m_C; // eax
 
   m_C = (void *)Block->m_C; /*0x49aa48*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&RLEBlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49aa4b*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&RLEBlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49aa4b*/
   FractalNoise::Dtor(m_C); /*0x49aa52*/
   Block->m_C = 0; /*0x49aa5b*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aa64*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     RA2_OPDEL(Block); /*0x49aa6d*/
-  return Block->__pad_0; /*0x49aa77*/
+  return Block->q000; /*0x49aa77*/
 }
 } // namespace gamemd

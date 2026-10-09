@@ -19,7 +19,7 @@ int COMObject::FindNextActive(unsigned char * a1)
     return 0; /*0x4e1a16*/
   while ( !IDA_LOBYTE(a1->Image) ) /*0x4e1a09*/
   {
-    a1 = (ShpButtonClass *)(*(int (__thiscall **)(ShpButtonClass *))(*(_DWORD *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
+    a1 = (ShpButtonClass *)(*(int (__thiscall **)(ShpButtonClass *))(*(_DWORD *)a1->q000 + 4))(a1); /*0x4e1a10*/
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }
@@ -94,7 +94,7 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 namespace gamemd {
 int COMObject::GetSpecialValue(int a1)
 {
-  return (*(int (__thiscall **)(int))(*(_DWORD *)a1->field_8 + 1336))(a1->field_8); /*0x55ad1f*/
+  return (*(int (__thiscall **)(int))(*(_DWORD *)a1->q008 + 1336))(a1->q008); /*0x55ad1f*/
 }
 } // namespace gamemd
 // 0x5F9970

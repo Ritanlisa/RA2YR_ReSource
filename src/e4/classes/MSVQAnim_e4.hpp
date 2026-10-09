@@ -20,6 +20,9 @@ struct MSVQAnim {
     int Stub();
     void * GetFrameRect(int * a2);
     static unsigned int * ConstructMSVQAnimHidden(void * aP0, char ** aP1, int * aP2, int aP3, char aP4);  // 0x5ccc30
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int u32_28;  // 0x28 (offset-truth supply)
+    unsigned char u32_2D;  // 0x2D (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -990,14 +990,14 @@ unsigned int * E4Recv_6223C0::DestroyDialog(void *a1_1)
   void (__thiscall ***v3)(_DWORD, int); // ecx
   ObjectClass *v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = *(_DWORD **)&g_DialogPool.__pad_208[60]; /*0x6223c1*/
+  result = *(_DWORD **)&g_DialogPool.q208[60]; /*0x6223c1*/
   v4 = a1_1; /*0x6223c9*/
-  if ( *(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x6223cd*/
+  if ( *(_DWORD *)&g_DialogPool.q208[60] ) /*0x6223cd*/
   {
-    result = *(_DWORD **)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x6223ee*/
+    result = *(_DWORD **)(*(_DWORD *)&g_DialogPool.q208[56] /*0x6223ee*/
                         + 4
-                        * ((*(int (__thiscall **)(ObjectClass **))&g_DialogPool.__pad_208[80])(&v4)
-                         & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                        * ((*(int (__thiscall **)(ObjectClass **))&g_DialogPool.q208[80])(&v4)
+                         & ((1 << g_DialogPool.q208[68]) - 1)));
     if ( result ) /*0x6223f3*/
     {
       while ( (ObjectClass *)*result != v4 ) /*0x6223fb*/
@@ -1171,14 +1171,14 @@ int SetupDialog(Dialog *hWnd, int a2)
   Dialog::GetField(hWnd); /*0x62287c*/
   lParam[0] = (LPARAM)hWnd; /*0x622890*/
   v14 = 0; /*0x622894*/
-  HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], lParam, &v14); /*0x622898*/
+  HashTable::Get((HashTable *)&g_DialogPool.q208[56], lParam, &v14); /*0x622898*/
   if ( v14 ) /*0x6228a3*/
     *(_DWORD *)(v14 + 108) = a2; /*0x6228a5*/
   if ( !(unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x6228ad*/
     Control::CreateControlDialog((Control *)hWnd); /*0x6228b8*/
   lParam[0] = (LPARAM)hWnd; /*0x6228cc*/
   v14 = 0; /*0x6228d0*/
-  HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], lParam, &v14); /*0x6228d4*/
+  HashTable::Get((HashTable *)&g_DialogPool.q208[56], lParam, &v14); /*0x6228d4*/
   if ( v14 ) /*0x6228df*/
   {
     v4 = *(_DWORD *)(v14 + 108); /*0x6228e1*/
@@ -1195,7 +1195,7 @@ int SetupDialog(Dialog *hWnd, int a2)
   }
   lParam[0] = (LPARAM)hWnd; /*0x62293f*/
   v14 = 0; /*0x622943*/
-  HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], lParam, &v14); /*0x622947*/
+  HashTable::Get((HashTable *)&g_DialogPool.q208[56], lParam, &v14); /*0x622947*/
   if ( v14 ) /*0x622952*/
   {
     v6 = *(_DWORD *)(v14 + 108); /*0x622954*/
@@ -1204,7 +1204,7 @@ int SetupDialog(Dialog *hWnd, int a2)
   }
   lParam[0] = (LPARAM)hWnd; /*0x62299f*/
   v14 = 0; /*0x6229a3*/
-  HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], lParam, &v14); /*0x6229a7*/
+  HashTable::Get((HashTable *)&g_DialogPool.q208[56], lParam, &v14); /*0x6229a7*/
   if ( v14 ) /*0x6229b2*/
   {
     v8 = *(_DWORD *)(v14 + 108); /*0x6229b4*/
@@ -1213,7 +1213,7 @@ int SetupDialog(Dialog *hWnd, int a2)
   }
   lParam[0] = (LPARAM)hWnd; /*0x6229e3*/
   v14 = 0; /*0x6229e7*/
-  HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], lParam, &v14); /*0x6229eb*/
+  HashTable::Get((HashTable *)&g_DialogPool.q208[56], lParam, &v14); /*0x6229eb*/
   if ( v14 ) /*0x6229f6*/
   {
     v10 = *(_DWORD *)(v14 + 108); /*0x6229f8*/
@@ -1233,7 +1233,7 @@ int SetupDialog(Dialog *hWnd, int a2)
   {
     lParam[0] = (LPARAM)hWnd; /*0x622a7e*/
     v14 = 0; /*0x622a82*/
-    HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], lParam, &v14); /*0x622a86*/
+    HashTable::Get((HashTable *)&g_DialogPool.q208[56], lParam, &v14); /*0x622a86*/
     if ( v14 ) /*0x622a91*/
     {
       v12 = *(_DWORD *)(v14 + 108); /*0x622a97*/
@@ -1314,9 +1314,9 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       return 0; /*0x622ec6*/
     }
     ++*(_DWORD *)&stru_A8EB00.?[424]; /*0x622eed*/
-    if ( *(_DWORD *)a4.__pad_0 ) /*0x622ef3*/
+    if ( *(_DWORD *)a4.q000 ) /*0x622ef3*/
     {
-      v21 = **(_WORD **)a4.__pad_0; /*0x622efb*/
+      v21 = **(_WORD **)a4.q000; /*0x622efb*/
       DialogClass::RegisterWinClasses(); /*0x622efe*/
       v22 = (void (__stdcall *)(HWND, WNDENUMPROC, LPARAM))EnumChildWindows; /*0x622f03*/
       dword_AC48A8 = (int)hWnd; /*0x622f09*/
@@ -1355,10 +1355,10 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       InitializeDialogControls(hWnd, 0); /*0x622fcc*/
       Dialog::GetField((Dialog *)hWnd); /*0x622fd3*/
       v26[0] = hWnd; /*0x622fe7*/
-      *(_DWORD *)a4.__pad_0 = 0; /*0x622feb*/
-      HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], v26, &a4); /*0x622fef*/
-      if ( *(_DWORD *)a4.__pad_0 ) /*0x622ffa*/
-        *(_DWORD *)(*(_DWORD *)a4.__pad_0 + 108) = 0; /*0x622ffc*/
+      *(_DWORD *)a4.q000 = 0; /*0x622feb*/
+      HashTable::Get((HashTable *)&g_DialogPool.q208[56], v26, &a4); /*0x622fef*/
+      if ( *(_DWORD *)a4.q000 ) /*0x622ffa*/
+        *(_DWORD *)(*(_DWORD *)a4.q000 + 108) = 0; /*0x622ffc*/
       if ( !(unsigned __int8)SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238) ) /*0x623004*/
         Control::CreateControlDialog((Control *)hWnd); /*0x62300f*/
       UI_Helper_60CAF0((ObjectClass *)hWnd); /*0x623016*/
@@ -1383,23 +1383,23 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
         SetFocus(g_hWnd); /*0x622ba1*/
         return 0; /*0x622bb0*/
       case 0xFu: /*0x622b7f*/
-        *(_DWORD *)a4.__pad_0 = hWnd; /*0x622bd0*/
-        if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x622bd6*/
+        *(_DWORD *)a4.q000 = hWnd; /*0x622bd0*/
+        if ( !*(_DWORD *)&g_DialogPool.q208[60] ) /*0x622bd6*/
           return 0; /*0x622bd6*/
-        result = *(_DWORD *)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x622bf1*/
-                           + 4 * HashTable::ComputeHash((int *)&g_DialogPool.__pad_208[56], (int)&a4));
+        result = *(_DWORD *)(*(_DWORD *)&g_DialogPool.q208[56] /*0x622bf1*/
+                           + 4 * HashTable::ComputeHash((int *)&g_DialogPool.q208[56], (int)&a4));
         if ( !result ) /*0x622bf6*/
           return 0; /*0x622bf6*/
         break; /*0x622bf6*/
       case 0x14u: /*0x622b7f*/
         return 1;
       case 0x2Bu: /*0x622b7f*/
-        Dialog::Resize(*(char **)a4.__pad_0); /*0x622bb7*/
+        Dialog::Resize(*(char **)a4.q000); /*0x622bb7*/
         return 1; /*0x622bc8*/
       default:
         return 0;
     }
-    while ( *(_DWORD *)result != *(_DWORD *)a4.__pad_0 ) /*0x622c02*/
+    while ( *(_DWORD *)result != *(_DWORD *)a4.q000 ) /*0x622c02*/
     {
       result = *(_DWORD *)(result + 516); /*0x622c04*/
       if ( !result ) /*0x622c0c*/
@@ -1416,11 +1416,11 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
       else
       {
         Dialog::DrawBackground((Dialog *)hWnd); /*0x622c4f*/
-        v24.DeleteAndZero_field_0x04 = (int)hWnd; /*0x622c63*/
-        *(_DWORD *)a4.__pad_0 = 0; /*0x622c67*/
-        HashTable::Get((HashTable *)&g_DialogPool.__pad_208[56], &v24.DeleteAndZero_field_0x04, &a4); /*0x622c6f*/
-        v7 = *(_DWORD *)a4.__pad_0; /*0x622c74*/
-        if ( *(_DWORD *)a4.__pad_0 && *(_BYTE *)(*(_DWORD *)a4.__pad_0 + 190) ) /*0x622c7c*/
+        v24.q004 = (int)hWnd; /*0x622c63*/
+        *(_DWORD *)a4.q000 = 0; /*0x622c67*/
+        HashTable::Get((HashTable *)&g_DialogPool.q208[56], &v24.q004, &a4); /*0x622c6f*/
+        v7 = *(_DWORD *)a4.q000; /*0x622c74*/
+        if ( *(_DWORD *)a4.q000 && *(_BYTE *)(*(_DWORD *)a4.q000 + 190) ) /*0x622c7c*/
         {
           DlgItem = GetDlgItem(hWnd, 1818); /*0x622c8c*/
           if ( DlgItem ) /*0x622c94*/
@@ -1437,37 +1437,37 @@ CampaignScore * * BaseDialogProc(SkirmishDialog * aP0, unsigned int a2, int a3, 
   v26[0] = GetDlgItem(hWnd, 1685); /*0x622cd9*/
   if ( !v26[0] ) /*0x622cdd*/
     return 0; /*0x622cdd*/
-  v9 = *(unsigned __int16 *)a4.__pad_0; /*0x622cef*/
-  v10 = *(unsigned __int16 *)&a4.__pad_0[2]; /*0x622cf5*/
+  v9 = *(unsigned __int16 *)a4.q000; /*0x622cef*/
+  v10 = *(unsigned __int16 *)&a4.q000[2]; /*0x622cf5*/
   GetWindowRect(hWnd, &Rect); /*0x622cf8*/
   v11 = v9 - Rect.left; /*0x622d0c*/
-  v24.DeleteAndZero_field_0x08 = v10 - Rect.top; /*0x622d12*/
+  v24.q008 = v10 - Rect.top; /*0x622d12*/
   unknown_libname_74(&a4); /*0x622d16*/
-  v12 = ChildWindowFromPointEx(hWnd, (POINT)IDA___PAIR64__(v24.DeleteAndZero_field_0x08, v11), 1u); /*0x622d24*/
+  v12 = ChildWindowFromPointEx(hWnd, (POINT)IDA___PAIR64__(v24.q008, v11), 1u); /*0x622d24*/
   v13 = v12; /*0x622d2a*/
   if ( v12 ) /*0x622d2e*/
   {
     v14 = (unsigned __int16)v9 | ((unsigned __int16)v10 << 16); /*0x622d43*/
     v15 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x622d45*/
     v16 = SendMessageA(v12, 0x4E8u, 0, v14); /*0x622d54*/
-    UI_Assign((wchar_t **)&v24.DeleteAndZero_field_0x04, hWnd, (LPARAM)v13, v16); /*0x622d5e*/
+    UI_Assign((wchar_t **)&v24.q004, hWnd, (LPARAM)v13, v16); /*0x622d5e*/
     WideString::AssignFromPtr( /*0x622d6c*/
-      (wchar_t **)&v25.DeleteAndZero_field_0x04,
-      (const wchar_t **)&v24.DeleteAndZero_field_0x04);
-    DeleteAndZero::Alt((DeleteAndZero *)&v24.DeleteAndZero_field_0x04); /*0x622d75*/
-    WideString::Reassign_Alt((void **)&a4, (const wchar_t **)&v25.DeleteAndZero_field_0x04); /*0x622d83*/
-    DeleteAndZero::Alt((DeleteAndZero *)&v25.DeleteAndZero_field_0x04); /*0x622d8c*/
+      (wchar_t **)&v25.q004,
+      (const wchar_t **)&v24.q004);
+    DeleteAndZero::Alt((DeleteAndZero *)&v24.q004); /*0x622d75*/
+    WideString::Reassign_Alt((void **)&a4, (const wchar_t **)&v25.q004); /*0x622d83*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v25.q004); /*0x622d8c*/
     v17 = WideString::GetOrEmpty((wchar_t **)&a4); /*0x622d9a*/
     if ( !wcscmp(v17, &g_TypeClass_DefaultString) ) /*0x622da0*/
     {
       unknown_libname_74(&v25); /*0x622db4*/
-      v24.DeleteAndZero_field_0x04 = (int)v13; /*0x622dbd*/
-      v24.DeleteAndZero_field_0x08 = -1; /*0x622dca*/
-      SendMessageA(hWnd, 0x4E9u, 0, (LPARAM)&v24.DeleteAndZero_field_0x04); /*0x622dd2*/
-      WideString::AssignFromPtr((wchar_t **)&v25.DeleteAndZero_field_0x08, (const wchar_t **)&v25); /*0x622ddd*/
+      v24.q004 = (int)v13; /*0x622dbd*/
+      v24.q008 = -1; /*0x622dca*/
+      SendMessageA(hWnd, 0x4E9u, 0, (LPARAM)&v24.q004); /*0x622dd2*/
+      WideString::AssignFromPtr((wchar_t **)&v25.q008, (const wchar_t **)&v25); /*0x622ddd*/
       DeleteAndZero::Alt(&v25); /*0x622de6*/
-      WideString::Reassign_Alt((void **)&a4, (const wchar_t **)&v25.DeleteAndZero_field_0x08); /*0x622df4*/
-      DeleteAndZero::Alt((DeleteAndZero *)&v25.DeleteAndZero_field_0x08); /*0x622dfd*/
+      WideString::Reassign_Alt((void **)&a4, (const wchar_t **)&v25.q008); /*0x622df4*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v25.q008); /*0x622dfd*/
       v18 = WideString::GetOrEmpty((wchar_t **)&a4); /*0x622e0b*/
       if ( !wcscmp(v18, &g_TypeClass_DefaultString) ) /*0x622e11*/
       {
@@ -1885,7 +1885,7 @@ int Dialog_Run(unsigned __int16 a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, 
         MessageLoop(); /*0x624243*/
         if ( !*(_DWORD *)&dword_A8B238 /*0x624266*/
           || *(_DWORD *)&dword_A8B238 == 5
-          || IDA_BYTE2(stru_A8D600.Network_field_0xC)
+          || IDA_BYTE2(stru_A8D600.q00C)
           || dword_A8DAB4 )
         {
           Event::Dispatch(); /*0x62427c*/
@@ -1926,11 +1926,11 @@ int E4Recv_6242B0::sub_6242B0(HWND hWnd)
   if ( !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x624325*/
     return 1; /*0x624350*/
   if ( !strcmp(ClassName, g_INI_Key_ListBox) /*0x6243c1*/
-    && *(_DWORD *)&g_DialogPool.__pad_208[60]
-    && (v2 = *(_DWORD *)(*(_DWORD *)&g_DialogPool.__pad_208[56]
+    && *(_DWORD *)&g_DialogPool.q208[60]
+    && (v2 = *(_DWORD *)(*(_DWORD *)&g_DialogPool.q208[56]
                        + 4
-                       * ((*(int (__thiscall **)(HWND *))&g_DialogPool.__pad_208[80])(&hWnd)
-                        & ((1 << g_DialogPool.__pad_208[68]) - 1)))) != 0 )
+                       * ((*(int (__thiscall **)(HWND *))&g_DialogPool.q208[80])(&hWnd)
+                        & ((1 << g_DialogPool.q208[68]) - 1)))) != 0 )
   {
     v3 = hWnd; /*0x6243c3*/
     while ( *(HWND *)v2 != hWnd ) /*0x6243c9*/
@@ -2211,7 +2211,7 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
       (**v16)(v16, 1); /*0x627adf*/
     *(_DWORD *)(v9 + 256) = 0; /*0x627ae5*/
     *(_DWORD *)(v9 + 256) = v18; /*0x627aef*/
-    return v18->__pad_0; /*0x627ae1*/
+    return v18->q000; /*0x627ae1*/
   }
   else
   {

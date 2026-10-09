@@ -14,6 +14,7 @@ struct Progress {
 // --- flat members (END) ---
     int GetAverage();
     int GetWeighted(int a2);
+    unsigned char u32_61;  // 0x61 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -57,12 +57,12 @@ int Control::RepositionControlsDialog(HWND hWnd)
   v3 = v18.top - Rect.top; /*0x60b9ab*/
   nWidth = v18.right - v18.left; /*0x60b9ad*/
   v14 = Parent; /*0x60b9b3*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x60b9b7*/
+  if ( !*(_DWORD *)&g_DialogPool.q208[60] ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
-  v4 = *(_DWORD **)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x60b9d8*/
+  v4 = *(_DWORD **)(*(_DWORD *)&g_DialogPool.q208[56] /*0x60b9d8*/
                   + 4
-                  * ((*(int (__thiscall **)(HWND *))&g_DialogPool.__pad_208[80])(&v14)
-                   & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                  * ((*(int (__thiscall **)(HWND *))&g_DialogPool.q208[80])(&v14)
+                   & ((1 << g_DialogPool.q208[68]) - 1)));
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
@@ -337,14 +337,14 @@ int Control::CheckControlTypeDialog()
   int v2; // ecx
   Control *v3; // [esp+4h] [ebp-4h] BYREF
 
-  result = *(_DWORD *)&g_DialogPool.__pad_208[60]; /*0x60c541*/
+  result = *(_DWORD *)&g_DialogPool.q208[60]; /*0x60c541*/
   v3 = this; /*0x60c549*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x60c54d*/
+  if ( !*(_DWORD *)&g_DialogPool.q208[60] ) /*0x60c54d*/
     goto LABEL_7; /*0x60c54d*/
-  result = *(_DWORD *)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x60c570*/
+  result = *(_DWORD *)(*(_DWORD *)&g_DialogPool.q208[56] /*0x60c570*/
                      + 4
-                     * ((*(int (__thiscall **)(Control **))&g_DialogPool.__pad_208[80])(&v3)
-                      & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                     * ((*(int (__thiscall **)(Control **))&g_DialogPool.q208[80])(&v3)
+                      & ((1 << g_DialogPool.q208[68]) - 1)));
   if ( !result ) /*0x60c575*/
     goto LABEL_7; /*0x60c575*/
   while ( *(Control **)result != v3 ) /*0x60c57d*/

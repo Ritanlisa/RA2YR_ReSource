@@ -27,8 +27,8 @@ TiberiumClass::TiberiumClass(const CellStruct& cell,
     Color             = 0;
 
     // Debris (TypeList<AnimTypeClass*>) is default-constructed by its member
-    // constructor (vtable set, Count=0, CapacityIncrement=10), matching the IDA
-    // ctor @0x7216C0. A memset here would zero the vtable pointer of the now
+    // constructor (q000 set, Count=0, CapacityIncrement=10), matching the IDA
+    // ctor @0x7216C0. A memset here would zero the q000 pointer of the now
     // 24-byte DynamicVectorClass-derived TypeList; removed for IDA fidelity.
 
     Image      = nullptr;

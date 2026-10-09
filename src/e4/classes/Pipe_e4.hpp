@@ -18,6 +18,7 @@ struct Pipe {
 // --- flat members (END) ---
     int Dtor(void *a1 = 0);
     int SetDelegate(int a2);  // 0x631cc0
+    unsigned int q000;  // 0x0 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -26,6 +26,7 @@ struct GameSetup {
     int LookupDialogHash();
     static char FormatToString(GameSetup * aP1, unsigned __int8 *Block, char *a3, int a4, int a5, int a6);  // G57w10-S raw 0x00477510 (was C2597 interim stub)
     wchar_t * GetColorTooltip();  // 0x4e42a0
+    unsigned int q0104;  // 0x104 (offset-truth supply)
 };
 
 } // namespace gamemd

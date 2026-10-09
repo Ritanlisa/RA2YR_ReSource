@@ -34,5 +34,8 @@ struct Gadget {
     unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
     unsigned int * InitProperties();  // 0x600630
+    unsigned int m_1;  // 0x1
+    unsigned int m_5;  // 0x5
+    unsigned int q000;  // 0x0
 };
 } // namespace gamemd

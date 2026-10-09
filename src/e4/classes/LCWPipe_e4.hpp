@@ -12,6 +12,9 @@ struct LCWPipe {
 // --- flat members (END) ---
     int Dtor();
     unsigned int * Constructor(int a2, int a3);  // 0x551ff0
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int u32_14;  // 0x14 (offset-truth supply)
+    unsigned int u32_18;  // 0x18 (offset-truth supply)
 };
 
 } // namespace gamemd

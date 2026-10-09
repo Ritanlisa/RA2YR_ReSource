@@ -29,7 +29,7 @@ EMPulseClass * EMPulseClass::CopyTo(void * a2, char a3)
   int v3; // eax
   EMPulseClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)a3->__pad_0 = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5ac4*/
+  *(_DWORD *)a3->q000 = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5ac4*/
   a3->EMPulseClass_field_0x04 = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5aca*/
   a3->EMPulseClass_field_0x08 = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad1*/
   a3->EMPulseClass_field_0x0C = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad8*/

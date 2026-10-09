@@ -450,7 +450,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     if ( TechnoClass::GetValue(a1, -1) >= 0 ) /*0x6f8a3d*/
       break; /*0x6f8a3d*/
     BuildingClass::GetHealthRatio((BuildingClass *)v14); /*0x6f8a41*/
-    _ECX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x6f8a46*/
+    _ECX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x6f8a46*/
     __asm /*0x6f8a4c*/
     {
       fcomp qword ptr [ecx+16F8h]
@@ -477,7 +477,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       if ( a1->currentMission != 11 ) /*0x6f8afd*/
         goto LABEL_33; /*0x6f8afd*/
       BuildingClass::GetHealthRatio((BuildingClass *)v14); /*0x6f8b01*/
-      _EDX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x6f8b06*/
+      _EDX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x6f8b06*/
       __asm /*0x6f8b0c*/
       {
         fcomp qword ptr [edx+1708h]

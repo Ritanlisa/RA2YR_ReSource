@@ -207,7 +207,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v11 = *((_DWORD *)v6 + 17); /*0x75f439*/
     if ( v11 != -1 ) /*0x75f43f*/
     {
-      v12 = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * v11); /*0x75f447*/
+      v12 = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * v11); /*0x75f447*/
       if ( *(_BYTE *)(v12 + 689) ) /*0x75f44a*/
       {
         aP1 = (_DWORD *)*((_DWORD *)v6 + 9); /*0x75f45b*/
@@ -219,7 +219,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     IDA_LOBYTE(Owner) = CellClass::IsActiveOrNext((CellClass *)v6); /*0x75f47e*/
     if ( (_BYTE)Owner ) /*0x75f486*/
     {
-      v13 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x75f497*/
+      v13 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6092); /*0x75f497*/
       Owner = (void *)Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99); /*0x75f4a3*/
       if ( (int)Owner < v13 ) /*0x75f4aa*/
         IDA_LOBYTE(Owner) = LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v14, (int)v6); /*0x75f4b2*/

@@ -23,6 +23,7 @@ struct GaugeClass {
     GaugeClass * QueryInterface(unsigned int * Block, char a2);
     int Draw(int a2);
     int Stub();
+    unsigned char u32_2D;  // 0x2D (offset-truth supply)
 };
 
 } // namespace gamemd

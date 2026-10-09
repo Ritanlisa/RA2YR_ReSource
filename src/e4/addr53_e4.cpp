@@ -2604,7 +2604,7 @@ int SuperWeapon_Update()
         v17 = v29 / 225; /*0x53aadd*/
         if ( !v30 ) /*0x53aae1*/
         {
-          (v17) = ((v17) & ~0xFF) | ((unsigned int)(*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6064)) & 0xFF); /*0x53aae9*/
+          (v17) = ((v17) & ~0xFF) | ((unsigned int)(*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6064)) & 0xFF); /*0x53aae9*/
           if ( (_BYTE)v17 ) /*0x53aaf1*/
           {
             v31 = 3; /*0x53aaf8*/
@@ -2637,12 +2637,12 @@ int SuperWeapon_Update()
     if ( LightningStorm_Duration == -1 /*0x53a933*/
       || LightningStorm_Duration + LightningStorm_StartTime >= *(int *)&stru_A8EB00.?[416] )
     {
-      v19 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x53a944*/
-      if ( !(*(_DWORD *)&stru_A8EB00.?[416] % *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6048)) ) /*0x53a94d*/
+      v19 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x53a944*/
+      if ( !(*(_DWORD *)&stru_A8EB00.?[416] % *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6048)) ) /*0x53a94d*/
       {
         LightningStorm::Strike(LightningStorm_Coords); /*0x53a95e*/
         v18 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x53a963*/
-        v19 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x53a969*/
+        v19 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x53a969*/
       }
       v17 = v18 / v19->EngineerCaptureLevel; /*0x53a972*/
       if ( !(v18 % v19->EngineerCaptureLevel) ) /*0x53a972*/
@@ -2673,7 +2673,7 @@ int SuperWeapon_Update()
               v28 = v37[1] - (__int16)(v25[1] / 256); /*0x53aa26*/
               if ( v28 < 0 ) /*0x53aa28*/
                 v28 = (__int16)(v25[1] / 256) - v37[1]; /*0x53aa2a*/
-              if ( v27 + v28 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6060) ) /*0x53aa3a*/
+              if ( v27 + v28 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6060) ) /*0x53aa3a*/
                 break; /*0x53aa3a*/
               if ( ++v24 >= dword_A9F9E0 ) /*0x53aa44*/
                 goto LABEL_52; /*0x53aa44*/
@@ -2716,7 +2716,7 @@ AnimClass * * PsyDom::Update(void *a1, void *a2, void *a3, void *a4)
       break; /*0x53af63*/
     case 2: /*0x53af50*/
       v4 = *(_DWORD *)(PsyDom_Anim + 172); /*0x53af6f*/
-      if ( (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 772) * 0.01 <= (double)v4 /*0x53afaa*/
+      if ( (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 772) * 0.01 <= (double)v4 /*0x53afaa*/
                                                                                          / (double)*(__int16 *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(PsyDom_Anim + 200) + 156))(*(_DWORD *)(PsyDom_Anim + 200)) + 6) )
       {
         PsyDom_Status = 3; /*0x53afb0*/
@@ -2770,8 +2770,8 @@ void sub_53B460(int a1, Scenario * a2)
     v3 = (char *)RA2_OPNEW(0x24u); /*0x53b48d*/
     if ( v3 ) /*0x53b494*/
     {
-      v6 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)DSurface_Composite->__pad_0 + 128))(DSurface_Composite); /*0x53b4ae*/
-      v4 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)DSurface_Composite->__pad_0 + 124))(DSurface_Composite); /*0x53b4b1*/
+      v6 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)DSurface_Composite->q000 + 128))(DSurface_Composite); /*0x53b4ae*/
+      v4 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)DSurface_Composite->q000 + 124))(DSurface_Composite); /*0x53b4b1*/
       v5 = DSurface::Construct(v3, v4, v6, 1, 0); /*0x53b4b7*/
     }
     else
@@ -2788,7 +2788,7 @@ void sub_53B460(int a1, Scenario * a2)
     AudioMixer::Shutdown(); /*0x53b501*/
     StopThemeClass(1); /*0x53b508*/
     AudioController::Init(&stru_A9F9B8); /*0x53b512*/
-    PlayVocClass(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
+    PlayVocClass(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 644), 0x2000, 1.0, (int)&stru_A9F9B8); /*0x53b531*/
     SetVocClassEnabled(0); /*0x53b538*/
     byte_A9FAD1 = IDA_BYTE2(dword_A8B230[381].vfptr3); /*0x53b549*/
     Scenario::ClearScreen(a2); /*0x53b54f*/

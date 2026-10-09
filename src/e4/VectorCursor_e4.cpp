@@ -17,7 +17,7 @@ namespace gamemd {
 unsigned int * VectorCursor::Release(void *a1)
 {
   ++*((_DWORD *)a1 + 2); /*0x76f182*/
-  return a1->__pad_0; /*0x76f185*/
+  return a1->q000; /*0x76f185*/
 }
 } // namespace gamemd
 // 0x76F190
@@ -25,7 +25,7 @@ namespace gamemd {
 unsigned int * VectorCursor::ddtor(void *a1)
 {
   --*((_DWORD *)a1 + 2); /*0x76f192*/
-  return a1->__pad_0; /*0x76f195*/
+  return a1->q000; /*0x76f195*/
 }
 } // namespace gamemd
 // 0x4F42D0

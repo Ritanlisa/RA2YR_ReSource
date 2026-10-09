@@ -129,7 +129,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     v5 = ResourceIDCSF; /*0x46f91a*/
     if ( (unsigned __int8)Player::IsObserver((Player *)v4) ) /*0x46f91e*/
     {
-      PlayerColor = *(_DWORD *)&stru_A8B250.__pad_0[4 * (_DWORD)v1 + 108]; /*0x46f927*/
+      PlayerColor = *(_DWORD *)&stru_A8B250.q000[4 * (_DWORD)v1 + 108]; /*0x46f927*/
     }
     else if ( v4 == (SessionClass *)g_HouseClass_ObserverFlags ) /*0x46f936*/
     {
@@ -154,7 +154,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     SetupSkirmishSpawnLocations((HWND)hDlg, v5, PlayerColor); /*0x46f978*/
   }
   v7 = 0; /*0x46f97d*/
-  v8 = (int *)&stru_A8B250.__pad_0[108]; /*0x46f97f*/
+  v8 = (int *)&stru_A8B250.q000[108]; /*0x46f97f*/
   do /*0x46fa03*/
   {
     if ( v7 != v1 ) /*0x46f986*/
@@ -192,7 +192,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations(HWND hDlg)
     ++v8; /*0x46f9f9*/
     v7 = (ObjectClass *)((char *)v7 + 1); /*0x46f9fc*/
   }
-  while ( (int)v8 < (int)&stru_A8B250.__pad_0[140] ); /*0x46fa03*/
+  while ( (int)v8 < (int)&stru_A8B250.q000[140] ); /*0x46fa03*/
 }
 } // namespace gamemd
 // 0x596C70
@@ -918,11 +918,11 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
     v27 = *(_DWORD *)(MultiplayerGameMode::GetFirst() + 40); /*0x6aeae2*/
     dword_A8B3C4 = v27; /*0x6aeae5*/
   }
-  *(_DWORD *)stru_A8B250.__pad_0 = v27; /*0x6aeaeb*/
+  *(_DWORD *)stru_A8B250.q000 = v27; /*0x6aeaeb*/
   v28 = (char *)Skirmish_Setup(); /*0x6aeaf6*/
   First = (HWND)v28; /*0x6aeaf8*/
   dword_A8B3C4 = *((_DWORD *)v28 + 10); /*0x6aeaff*/
-  *(_DWORD *)stru_A8B250.__pad_0 = *((_DWORD *)v28 + 10); /*0x6aeb07*/
+  *(_DWORD *)stru_A8B250.q000 = *((_DWORD *)v28 + 10); /*0x6aeb07*/
   GDlg::LoadLetterStrings(); /*0x6aeb0d*/
   Lobby::InvalidatePlayerSlots(); /*0x6aeb14*/
   SetupLobbyPlayerSlotDialog(0); /*0x6aeb1d*/
@@ -932,8 +932,8 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
     v29 = 0; /*0x6aeb34*/
     dword_A8B3C8 = 0; /*0x6aeb36*/
   }
-  *(_DWORD *)&stru_A8B250.__pad_0[4] = LoadScenarioClassByIndex(v29) != 0 ? dword_A8B3C8 : 0;
-  nIDDlgItema = *(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4]); /*0x6aeb5e*/
+  *(_DWORD *)&stru_A8B250.q000[4] = LoadScenarioClassByIndex(v29) != 0 ? dword_A8B3C8 : 0;
+  nIDDlgItema = *(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.q000[4]); /*0x6aeb5e*/
   if ( !(unsigned __int8)MapPreview::Check(v28, nIDDlgItema) ) /*0x6aeb62*/
   {
     v30 = (*(int (__thiscall **)(char *))(*(_DWORD *)v28 + 68))(v28); /*0x6aeb6f*/
@@ -941,18 +941,18 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
     {
       First = (HWND)MultiplayerGameMode::GetFirst(); /*0x6aeb7f*/
       dword_A8B3C4 = *((_DWORD *)First + 10); /*0x6aeb83*/
-      *(struct HWND__ *)stru_A8B250.__pad_0 = First[10]; /*0x6aeb8c*/
+      *(struct HWND__ *)stru_A8B250.q000 = First[10]; /*0x6aeb8c*/
       v30 = (*(int (__thiscall **)(HWND))(*(_DWORD *)First + 68))(First); /*0x6aeb96*/
     }
     v31 = *(_DWORD *)(dword_A8B8CC + 4 * v30); /*0x6aeb9f*/
     dword_A8B3C8 = v30; /*0x6aeba2*/
     nIDDlgItema = v31; /*0x6aeba7*/
-    *(_DWORD *)&stru_A8B250.__pad_0[4] = v30; /*0x6aebab*/
+    *(_DWORD *)&stru_A8B250.q000[4] = v30; /*0x6aebab*/
     strcpy(byte_A8B8E0, (const char *)(v31 + 88)); /*0x6aebca*/
     v28 = (char *)First; /*0x6aebd3*/
   }
   dword_A8B23C = (ObjectClass *)v28; /*0x6aebdd*/
-  PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x6aebee*/
+  PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.q000[4]); /*0x6aebee*/
   if ( !(*((unsigned __int8 (__thiscall **)(ObjectClass *))dword_A8B23C->vfptr + 1))(dword_A8B23C) /*0x6aec07*/
     || (vtable2 = dword_A8B230[127].vfptr2, (int)vtable2 > PlayerCountMap) )
   {
@@ -972,7 +972,7 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
         SetupLobbyPlayerSlots(v35, -2); /*0x6aec52*/
     }
   }
-  Skirmish_Setup_6ADDF0(-1, *(int *)&stru_A8B250.__pad_0[4]); /*0x6aec69*/
+  Skirmish_Setup_6ADDF0(-1, *(int *)&stru_A8B250.q000[4]); /*0x6aec69*/
   dword_A8B23C = (ObjectClass *)v28; /*0x6aec6e*/
   (*(void (__thiscall **)(char *))(v28->u32_8)(v28); /*0x6aec78*/
   Skirmish::EnableSpawnButtons(); /*0x6aec7d*/
@@ -980,14 +980,14 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
   Dialog::ShowPlayerName(); /*0x6aec8d*/
   PtrVector::Destroy(&stru_A8DA74); /*0x6aec97*/
   v36 = GetDlgItem; /*0x6aecad*/
-  *(_DWORD *)&stru_A8B250.__pad_0[24] = dword_A8B3CC; /*0x6aecb9*/
-  *(_DWORD *)&stru_A8B250.__pad_0[12] = dword_A8B3D0; /*0x6aecbf*/
-  *(_DWORD *)&stru_A8B250.__pad_0[32] = dword_A8B3D4; /*0x6aecc5*/
+  *(_DWORD *)&stru_A8B250.q000[24] = dword_A8B3CC; /*0x6aecb9*/
+  *(_DWORD *)&stru_A8B250.q000[12] = dword_A8B3D0; /*0x6aecbf*/
+  *(_DWORD *)&stru_A8B250.q000[32] = dword_A8B3D4; /*0x6aecc5*/
   v37 = GetDlgItem((HWND)this, 1321); /*0x6aecca*/
   v37 = v37; /*0x6aeccc*/
   if ( v37 ) /*0x6aecd0*/
   {
-    v39 = 6 - *(_DWORD *)&stru_A8B250.__pad_0[24]; /*0x6aecea*/
+    v39 = 6 - *(_DWORD *)&stru_A8B250.q000[24]; /*0x6aecea*/
     SendMessageA(v37, 0x406u, 1u, 393216); /*0x6aecec*/
     SendMessageA(v37, 0x405u, 1u, v39); /*0x6aecf7*/
     v36 = GetDlgItem; /*0x6aecf9*/
@@ -999,10 +999,10 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
       v40,
       0x406u,
       1u,
-      *(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5248)
-    | (*(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5256) << 16));
-    SendMessageA(v40, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[12]); /*0x6aed42*/
-    SendMessageA(v40, 0x4ABu, 0, *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5260)); /*0x6aed59*/
+      *(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5248)
+    | (*(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5256) << 16));
+    SendMessageA(v40, 0x405u, 1u, *(LPARAM *)&stru_A8B250.q000[12]); /*0x6aed42*/
+    SendMessageA(v40, 0x4ABu, 0, *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5260)); /*0x6aed59*/
   }
   v41 = v36((HWND)this, 1292); /*0x6aed63*/
   if ( v41 ) /*0x6aed67*/
@@ -1011,30 +1011,30 @@ AbstractClass * * Skirmish::SetupGame(int hWnd)
       v41,
       0x406u,
       1u,
-      *(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5264)
-    | (*(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5272) << 16));
-    SendMessageA(v41, 0x405u, 1u, *(LPARAM *)&stru_A8B250.__pad_0[32]); /*0x6aed9e*/
+      *(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5264)
+    | (*(unsigned __int16 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5272) << 16));
+    SendMessageA(v41, 0x405u, 1u, *(LPARAM *)&stru_A8B250.q000[32]); /*0x6aed9e*/
   }
-  stru_A8B250.__pad_0[18] = byte_A8B3D8; /*0x6aedb1*/
-  stru_A8B250.__pad_0[19] = byte_A8B3D9; /*0x6aedbd*/
-  stru_A8B250.__pad_0[20] = byte_A8B3DA; /*0x6aedcf*/
+  stru_A8B250.q000[18] = byte_A8B3D8; /*0x6aedb1*/
+  stru_A8B250.q000[19] = byte_A8B3D9; /*0x6aedbd*/
+  stru_A8B250.q000[20] = byte_A8B3DA; /*0x6aedcf*/
   byte_A8B3DB = byte_A8B3DB; /*0x6aedd4*/
-  stru_A8B250.__pad_0[17] = byte_A8B3DC; /*0x6aedda*/
+  stru_A8B250.q000[17] = byte_A8B3DC; /*0x6aedda*/
   v42 = v36((HWND)this, 1358); /*0x6aede0*/
   if ( v42 ) /*0x6aede4*/
-    SendMessageA(v42, 0xF1u, stru_A8B250.__pad_0[18] != 0, 0); /*0x6aedfc*/
+    SendMessageA(v42, 0xF1u, stru_A8B250.q000[18] != 0, 0); /*0x6aedfc*/
   v43 = v36((HWND)this, 1690); /*0x6aee04*/
   if ( v43 ) /*0x6aee08*/
-    SendMessageA(v43, 0xF1u, stru_A8B250.__pad_0[19] != 0, 0); /*0x6aee20*/
+    SendMessageA(v43, 0xF1u, stru_A8B250.q000[19] != 0, 0); /*0x6aee20*/
   v44 = v36((HWND)this, 1693); /*0x6aee28*/
   if ( v44 ) /*0x6aee2c*/
-    SendMessageA(v44, 0xF1u, stru_A8B250.__pad_0[20] != 0, 0); /*0x6aee44*/
+    SendMessageA(v44, 0xF1u, stru_A8B250.q000[20] != 0, 0); /*0x6aee44*/
   v45 = v36((HWND)this, 1683); /*0x6aee4c*/
   if ( v45 ) /*0x6aee50*/
     SendMessageA(v45, 0xF1u, byte_A8B3DB != 0, 0); /*0x6aee68*/
   v46 = v36((HWND)this, 1686); /*0x6aee70*/
   if ( v46 ) /*0x6aee75*/
-    SendMessageA(v46, 0xF1u, stru_A8B250.__pad_0[17] != 0, 0); /*0x6aee8d*/
+    SendMessageA(v46, 0xF1u, stru_A8B250.q000[17] != 0, 0); /*0x6aee8d*/
   if ( !(unsigned __int8)IsRandMap::Sed(nIDDlgItema) ) /*0x6aee93*/
     goto LABEL_92; /*0x6aee93*/
   ScenarioClass::CopyStartPositions(v52); /*0x6aee9c*/

@@ -76,7 +76,7 @@ bool ObjectClass::Remove()
   int v3; // eax
   IUnknown *v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(this->__pad_74[15]) & 0xFFu); /*0x5f44a4*/
+  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(this->q074[15]) & 0xFFu); /*0x5f44a4*/
   if ( result ) /*0x5f44ac*/
 
   {
@@ -93,7 +93,7 @@ bool ObjectClass::Remove()
         ++v3; /*0x5f44e5*/
       }
     }
-    this->__pad_74[15] = 0; /*0x5f44fc*/
+    this->q074[15] = 0; /*0x5f44fc*/
     result = MapClass::GetScrollMode((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x5f4503*/
     if ( (IUnknown *)result == this ) /*0x5f450a*/
       return MapClass::SetScrollMode((int)&stru_87F5F0.__pad_58[416], 0); /*0x5f4513*/
@@ -147,16 +147,16 @@ int ObjectClass::MarkForRedraw()
 {
   int result; // eax
 
-  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(this->__pad_74[12]) & 0xFFu); /*0x5f4d10*/
+  result = ((result) & 0xFFFFFF00u) | ((unsigned int)(this->q074[12]) & 0xFFu); /*0x5f4d10*/
   if ( !result ) /*0x5f4d18*/
 
   {
-    this->__pad_74[12] = 1; /*0x5f4d1a*/
+    this->q074[12] = 1; /*0x5f4d1a*/
     return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
   }
   return result; /*0x5f4d2d*/
 }
-// ObjectClass vtable[67]: DrawBehind (IDA 0x426440)
+// ObjectClass q000[67]: DrawBehind (IDA 0x426440)
 // Draws behind object (shadow, etc.)
 // ============================================================
 void ObjectClass::DrawBehind(Point2D* screen_pos, RectangleStruct* bounds) const
@@ -168,7 +168,7 @@ void ObjectClass::DrawBehind(Point2D* screen_pos, RectangleStruct* bounds) const
 }
 
 // ============================================================
-// ObjectClass vtable[68]: DrawExtras (IDA 0x426450)
+// ObjectClass q000[68]: DrawExtras (IDA 0x426450)
 // Draws extra visual effects around the object.
 // ============================================================
 void ObjectClass::DrawExtras(Point2D* screen_pos, RectangleStruct* bounds) const
@@ -180,7 +180,7 @@ void ObjectClass::DrawExtras(Point2D* screen_pos, RectangleStruct* bounds) const
 }
 
 // ============================================================
-// ObjectClass vtable[69]: Draw (IDA 0x5B3A50)
+// ObjectClass q000[69]: Draw (IDA 0x5B3A50)
 // Main draw function. Thin stub in base class.
 // Overridden by: BuildingClass::Draw, TechnoClass::Draw, etc.
 // ============================================================
@@ -193,21 +193,21 @@ void ObjectClass::Draw(Point2D* screen_pos, RectangleStruct* bounds) const
 }
 
 // ============================================================
-// ObjectClass vtable[70]: DrawAgain (IDA 0x5F65D0)
+// ObjectClass q000[70]: DrawAgain (IDA 0x5F65D0)
 // Secondary draw pass (selection overlay, etc.)
 // ============================================================
 void ObjectClass::DrawAgain(Point2D* screen_pos, RectangleStruct* bounds) const
 {
-    // Base: delegates to vtable[69] Draw
+    // Base: delegates to q000[69] Draw
     Draw(screen_pos, bounds);
 }
 
 // ============================================================
-// ObjectClass vtable[71]: Undiscover
+// ObjectClass q000[71]: Undiscover
 // ============================================================
 
 // ============================================================
-// ObjectClass vtable[72]: See
+// ObjectClass q000[72]: See
 // ============================================================
 
 // IDA: 0x5F3900 -- ObjectClass::ctor

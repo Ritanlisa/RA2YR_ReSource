@@ -262,7 +262,7 @@ int TActionClass::executeRepairAction(int a2)
     }
   }
   Radar::UpdateReveal(0, 0); /*0x577d63*/
-  dword_A83D4C->__pad_140[256] = 0; /*0x577d72*/
+  dword_A83D4C->q140[256] = 0; /*0x577d72*/
   FogOfWar::Render((FogOfWar *)&stru_87F5F0.__pad_58[416]); /*0x577d79*/
   return (*((int (__thiscall **)(TActionClass *, int))this->vfptr + 14))(this, 2); /*0x577d88*/
 }
@@ -504,7 +504,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
   if ( v5 ) /*0x6e1d6a*/
     *((_BYTE *)AnimClass::ctor( /*0x6e1d92*/
                  v5,
-                 *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5244),
+                 *(void **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5244),
                  v9,
                  0,
                  1,
@@ -701,7 +701,7 @@ char TActionClass::executeParadropAction(int a2, int a3, int a4, int aP4)
     v19[1] = v8; /*0x6e3756*/
     AnimClass::ctor( /*0x6e3764*/
       v10,
-      *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 840),
+      *(void **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 840),
       v19,
       0,
       1,
@@ -723,7 +723,7 @@ char TActionClass::executeParadropAction(int a2, int a3, int a4, int aP4)
     {
       (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD, _DWORD))(*i + 340))( /*0x6e37c9*/
         i,
-        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4072),
+        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4072),
         0,
         0);
     }
@@ -863,7 +863,7 @@ TActionClass::TActionClass()
   }
   this->idxArray = v4; /*0x71e74f*/
   if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-    || (IDA_BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+    || (IDA_BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
     && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -1057,7 +1057,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, int aP4)
   int v10; // [esp+8h] [ebp-Ch]
   __int16 v11[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  if ( dword_A83D4C->__pad_140[256] ) /*0x6e0fe8*/
+  if ( dword_A83D4C->q140[256] ) /*0x6e0fe8*/
     return 1; /*0x6e116a*/
   *(_DWORD *)v11 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, &v8, *(_DWORD *)&this->pad_6E[34]); /*0x6e101b*/
   if ( (*((_DWORD *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v11) + 80) & 0x100) != 0 /*0x6e1047*/
@@ -1076,7 +1076,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, int aP4)
   MapClass::RevealArea1( /*0x6e10e5*/
     (MapClass *)&stru_87F5F0.__pad_58[416],
     &v8,
-    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1580),
+    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1580),
     dword_A83D4C,
     0,
     0,
@@ -1089,7 +1089,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, int aP4)
   MapClass::RevealArea1( /*0x6e115b*/
     (MapClass *)&stru_87F5F0.__pad_58[416],
     &v8,
-    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1580),
+    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1580),
     dword_A83D4C,
     0,
     0,
@@ -1116,7 +1116,7 @@ char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, int aP4)
   int v15[3]; // [esp+Ch] [ebp-18h] BYREF
   int v16[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  if ( dword_A83D4C->__pad_140[256] ) /*0x6e11c8*/
+  if ( dword_A83D4C->q140[256] ) /*0x6e11c8*/
     return 1; /*0x6e11c8*/
   Waypoint_Location = (__int16 *)ScenarioClass::Get_Waypoint_Location( /*0x6e11ee*/
                                    (char *)dword_A8B230,
@@ -1250,7 +1250,7 @@ char TActionClass::executeScatterAction(int a2, int a3, int a4, int aP4)
   int v8[3]; // [esp+0h] [ebp-14h] BYREF
   __int16 v9[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  if ( dword_A83D4C->__pad_140[256] ) /*0x6e1a78*/
+  if ( dword_A83D4C->q140[256] ) /*0x6e1a78*/
     return 1; /*0x6e1b79*/
   *(_DWORD *)v9 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v8, *(_DWORD *)&this->pad_6E[34]); /*0x6e1aaa*/
   if ( (*((_DWORD *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v9) + 80) & 0x100) != 0 /*0x6e1ad6*/
@@ -1266,7 +1266,7 @@ char TActionClass::executeScatterAction(int a2, int a3, int a4, int aP4)
   v8[2] = v6 * dword_B0E6E0; /*0x6e1b36*/
   v8[1] = ((__int16)(v9[1] - v6 / 2) << 8) + 128; /*0x6e1b3d*/
   v8[0] = ((__int16)(v9[0] - v6 / 2) << 8) + 128; /*0x6e1b4c*/
-  TActionClass_Helper(v8, *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1580)); /*0x6e1b61*/
+  TActionClass_Helper(v8, *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1580)); /*0x6e1b61*/
   CellSystem::UpdateVisibility((CellSystem *)&stru_87F5F0.__pad_58[416]); /*0x6e1b6b*/
   return 1; /*0x6e1b73*/
 }

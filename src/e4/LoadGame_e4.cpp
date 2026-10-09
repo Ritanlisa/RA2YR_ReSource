@@ -40,9 +40,9 @@
 namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
-  int LoadGame_field_0x10; // edx
+  int q010; // edx
   int v2; // edi
-  int LoadGame_field_0x04; // ecx
+  int q004; // ecx
   void *v5; // esi
   int v6; // eax
   int v7; // eax
@@ -52,40 +52,40 @@ int LoadGame::LoadTriggerEvents()
   int v12; // [esp+20h] [ebp-8h] BYREF
   int v13; // [esp+24h] [ebp-4h] BYREF
 
-  LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x660840*/
-  v2 = stru_B04DA8.LoadGame_field_0x10 - 1; /*0x66084d*/
-  if ( stru_B04DA8.LoadGame_field_0x10 - 1 >= 0 ) /*0x660856*/
+  q010 = stru_B04DA8.q010; /*0x660840*/
+  v2 = stru_B04DA8.q010 - 1; /*0x66084d*/
+  if ( stru_B04DA8.q010 - 1 >= 0 ) /*0x660856*/
   {
-    LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660858*/
+    q004 = stru_B04DA8.q004; /*0x660858*/
     do /*0x6608cb*/
     {
-      v5 = *(void **)(LoadGame_field_0x04 + 4 * v2); /*0x66085e*/
+      v5 = *(void **)(q004 + 4 * v2); /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
-        v12 = *(_DWORD *)(LoadGame_field_0x04 + 4 * v2); /*0x660875*/
-        v6 = (*(int (__thiscall **)(LoadGame *, int *))(*(_DWORD *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v12); /*0x660879*/
+        v12 = *(_DWORD *)(q004 + 4 * v2); /*0x660875*/
+        v6 = (*(int (__thiscall **)(LoadGame *, int *))(*(_DWORD *)stru_B04DA8.q000 + 16))(&stru_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
           LoadGame::RemoveItem(&stru_B04DA8, v6); /*0x660887*/
         RA2_OPDEL(v5); /*0x66088d*/
-        LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660892*/
-        LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x660898*/
+        q004 = stru_B04DA8.q004; /*0x660892*/
+        q010 = stru_B04DA8.q010; /*0x660898*/
       }
-      if ( v2 < LoadGame_field_0x10 ) /*0x6608a3*/
+      if ( v2 < q010 ) /*0x6608a3*/
       {
-        --LoadGame_field_0x10; /*0x6608a5*/
+        --q010; /*0x6608a5*/
         v7 = v2; /*0x6608a6*/
-        for ( stru_B04DA8.LoadGame_field_0x10 = LoadGame_field_0x10; v7 < stru_B04DA8.LoadGame_field_0x10; ++v7 ) /*0x6608b0*/
+        for ( stru_B04DA8.q010 = q010; v7 < stru_B04DA8.q010; ++v7 ) /*0x6608b0*/
         {
-          *(_DWORD *)(LoadGame_field_0x04 + 4 * v7) = *(_DWORD *)(LoadGame_field_0x04 + 4 * v7 + 4); /*0x6608b6*/
-          LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x6608b9*/
-          LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x6608bf*/
+          *(_DWORD *)(q004 + 4 * v7) = *(_DWORD *)(q004 + 4 * v7 + 4); /*0x6608b6*/
+          q010 = stru_B04DA8.q010; /*0x6608b9*/
+          q004 = stru_B04DA8.q004; /*0x6608bf*/
         }
       }
       --v2; /*0x6608ca*/
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  if ( (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+  if ( (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->q000 + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
@@ -102,14 +102,14 @@ int LoadGame::LoadTriggerEvents()
       {
         _65FB80 = 0; /*0x66091b*/
       }
-      if ( (*(int (__stdcall **)(LoadGame *, _DWORD *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))( /*0x660929*/
+      if ( (*(int (__stdcall **)(LoadGame *, _DWORD *, int, _DWORD))(*(_DWORD *)this->q000 + 12))( /*0x660929*/
              this,
              _65FB80,
              64,
              0) < 0 )
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        return (*(int (__stdcall **)(LoadGame *, __int16 *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))( /*0x660932*/
+        return (*(int (__stdcall **)(LoadGame *, __int16 *, int, _DWORD))(*(_DWORD *)this->q000 + 12))( /*0x660932*/
                  this,
                  &word_B04D78,
                  4,
@@ -117,7 +117,7 @@ int LoadGame::LoadTriggerEvents()
     }
     return 0; /*0x660929*/
   }
-  return (*(int (__stdcall **)(LoadGame *, __int16 *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))( /*0x6608df*/
+  return (*(int (__stdcall **)(LoadGame *, __int16 *, int, _DWORD))(*(_DWORD *)this->q000 + 12))( /*0x6608df*/
            this,
            &word_B04D78,
            4,
@@ -128,24 +128,24 @@ int LoadGame::LoadTriggerEvents()
 namespace gamemd {
 void LoadGame::RemoveItem(int a2)
 {
-  int LoadGame_field_0x10; // edx
+  int q010; // edx
   int v3; // eax
   int v4; // edx
 
-  LoadGame_field_0x10 = this->LoadGame_field_0x10; /*0x660f10*/
+  q010 = this->q010; /*0x660f10*/
   v3 = a2; /*0x660f13*/
-  if ( a2 >= LoadGame_field_0x10 ) /*0x660f19*/
+  if ( a2 >= q010 ) /*0x660f19*/
     return 0; /*0x660f3c*/
-  v4 = LoadGame_field_0x10 - 1; /*0x660f1b*/
-  this->LoadGame_field_0x10 = v4; /*0x660f1e*/
+  v4 = q010 - 1; /*0x660f1b*/
+  this->q010 = v4; /*0x660f1e*/
   if ( a2 < v4 ) /*0x660f21*/
   {
     do /*0x660f34*/
     {
       ++v3; /*0x660f27*/
-      *(_DWORD *)(this->LoadGame_field_0x04 + 4 * v3 - 4) = *(_DWORD *)(this->LoadGame_field_0x04 + 4 * v3); /*0x660f2b*/
+      *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3); /*0x660f2b*/
     }
-    while ( v3 < this->LoadGame_field_0x10 ); /*0x660f34*/
+    while ( v3 < this->q010 ); /*0x660f34*/
   }
   return 1; /*0x660f39*/
 }
@@ -244,7 +244,7 @@ int LoadGame::LoadBlock300(int a2)
     if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
     {
       v4 = (*(int (__stdcall **)(int, LoadGame *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
-      this->LoadGame_field_0x04 = -1; /*0x69b5e9*/
+      this->q004 = -1; /*0x69b5e9*/
       if ( v4 >= 0 ) /*0x69b5f0*/
         return 1; /*0x69b5ba*/
     }
@@ -290,7 +290,7 @@ int LoadGame::RestoreAudioState()
     while ( NextAlt ); /*0x751763*/
   }
   AudioMixer::Shutdown(); /*0x751765*/
-  result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)v1->__pad_0 + 12))(v1, &v14, 4, 0); /*0x751776*/
+  result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)v1->q000 + 12))(v1, &v14, 4, 0); /*0x751776*/
   if ( result >= 0 ) /*0x75177b*/
   {
     v13 = 0; /*0x751785*/
@@ -298,7 +298,7 @@ int LoadGame::RestoreAudioState()
     {
       while ( 1 ) /*0x7517a1*/
       {
-        result = (*(int (__stdcall **)(LoadGame *, _DWORD *, int, _DWORD))(*(_DWORD *)v1->__pad_0 + 12))(v1, v18, 16, 0); /*0x7517a1*/
+        result = (*(int (__stdcall **)(LoadGame *, _DWORD *, int, _DWORD))(*(_DWORD *)v1->q000 + 12))(v1, v18, 16, 0); /*0x7517a1*/
         v16 = result; /*0x7517a6*/
         if ( result < 0 ) /*0x7517aa*/
           break; /*0x7517aa*/
@@ -362,17 +362,17 @@ int LoadGame::LoadMagicAndAudio()
   if ( g_InfantryDrawState ) /*0x753418*/
     Audio::Release(g_InfantryDrawState); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753430*/
+  result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->q000 + 12))(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753455*/
+    result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->q000 + 12))(this, &v3, 4, 0); /*0x753455*/
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        result = (*(int (__stdcall **)(LoadGame *, _DWORD *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))( /*0x75347c*/
+        result = (*(int (__stdcall **)(LoadGame *, _DWORD *, int, _DWORD))(*(_DWORD *)this->q000 + 12))( /*0x75347c*/
                    this,
                    v4,
                    12,
@@ -381,7 +381,7 @@ int LoadGame::LoadMagicAndAudio()
         {
           if ( g_InfantryDrawState && v4[0] >= 0 && v4[0] < g_InfantrySelectState ) /*0x75349a*/
             Audio_Load(*((_DWORD *)g_InfantryRenderPool + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))( /*0x7534bf*/
+          result = (*(int (__stdcall **)(LoadGame *, int *, int, _DWORD))(*(_DWORD *)this->q000 + 12))( /*0x7534bf*/
                      this,
                      &v3,
                      4,
@@ -402,9 +402,9 @@ int LoadGame::LoadPointArray(int a2)
 {
   int v3; // ebx
   int *v4; // edi
-  int LoadGame_field_0x14; // eax
+  int q014; // eax
   int *p_LoadGame_field_0x0C; // esi
-  int LoadGame_field_0x20; // ecx
+  int q020; // ecx
   int v8; // eax
   int v9; // edx
   int v11; // [esp+28h] [ebp-8h] BYREF
@@ -424,17 +424,17 @@ int LoadGame::LoadPointArray(int a2)
         break; /*0x54e809*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1); /*0x54e81f*/
-      LoadGame_field_0x14 = v12->LoadGame_field_0x14; /*0x54e828*/
-      p_LoadGame_field_0x0C = &v12->LoadGame_field_0x0C; /*0x54e82b*/
-      if ( v12->LoadGame_field_0x1C >= LoadGame_field_0x14 ) /*0x54e833*/
+      q014 = v12->q014; /*0x54e828*/
+      p_LoadGame_field_0x0C = &v12->q00C; /*0x54e82b*/
+      if ( v12->q01C >= q014 ) /*0x54e833*/
       {
-        if ( !IDA_BYTE1(v12->LoadGame_field_0x18) && LoadGame_field_0x14 ) /*0x54e83e*/
+        if ( !IDA_BYTE1(v12->q018) && q014 ) /*0x54e83e*/
           continue; /*0x54e83e*/
-        LoadGame_field_0x20 = v12->LoadGame_field_0x20; /*0x54e840*/
-        if ( LoadGame_field_0x20 <= 0 /*0x54e850*/
+        q020 = v12->q020; /*0x54e840*/
+        if ( q020 <= 0 /*0x54e850*/
           || !(*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*p_LoadGame_field_0x0C + 8))(
-                &v12->LoadGame_field_0x0C,
-                LoadGame_field_0x14 + LoadGame_field_0x20,
+                &v12->q00C,
+                q014 + q020,
                 0) )
         {
           continue; /*0x54e850*/

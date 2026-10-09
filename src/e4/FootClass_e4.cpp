@@ -64,11 +64,11 @@ AbstractClass * FootClass::Destruct()
   if ( v3 != -1 ) /*0x4d35e7*/
     FootClass::RemoveFromPointerArray(&FootClass_Array, v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
-  v4 = (*(int (__thiscall **)(char *, FootClass **))(*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_D96[2] + 16))( /*0x4d3608*/
-         &g_BuildingLoadQueue_Array.__pad_D96[2],
+  v4 = (*(int (__thiscall **)(char *, FootClass **))(*(_DWORD *)&g_BuildingLoadQueue_Array.qD96[2] + 16))( /*0x4d3608*/
+         &g_BuildingLoadQueue_Array.qD96[2],
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
-    DynamicVector::RemoveItem((DynamicVector *)&g_BuildingLoadQueue_Array.__pad_D96[2], v4); /*0x4d3616*/
+    DynamicVector::RemoveItem((DynamicVector *)&g_BuildingLoadQueue_Array.qD96[2], v4); /*0x4d3616*/
   parasiteImUsing = this->parasiteImUsing; /*0x4d361b*/
   if ( parasiteImUsing ) /*0x4d3623*/
   {
@@ -186,7 +186,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       BuildingClass::Deploy(v27, v4, v5); /*0x710058*/
     v9 = v6[413]; /*0x71005d*/
     v10 = v6 + 413; /*0x710063*/
-    *(_DWORD *)v28.__pad_0 = 0; /*0x71006b*/
+    *(_DWORD *)v28.q000 = 0; /*0x71006b*/
     if ( v9 ) /*0x710073*/
     {
       v11 = StreamClass::Set(&v28, v6 + 413); /*0x71007a*/
@@ -194,13 +194,13 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
         sub_7DC720(v11); /*0x71008b*/
     }
     if ( *(_BYTE *)((*(int (__thiscall **)(int *))(*v6 + 132))(v6) + 1516)
-      && *(_DWORD *)v28.__pad_0
+      && *(_DWORD *)v28.q000
       && !v6[172]
-      && (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)v28.__pad_0 + 28))(*(_DWORD *)v28.__pad_0) )
+      && (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)v28.q000 + 28))(*(_DWORD *)v28.q000) )
     {
-      if ( !*(_DWORD *)v28.__pad_0 ) /*0x7100d6*/
+      if ( !*(_DWORD *)v28.q000 ) /*0x7100d6*/
         sub_7DC720(-2147467261); /*0x7100dd*/
-      v12 = (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)v28.__pad_0 + 20))(*(_DWORD *)v28.__pad_0) == 0; /*0x7100ec*/
+      v12 = (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)v28.q000 + 20))(*(_DWORD *)v28.q000) == 0; /*0x7100ec*/
       v13 = *v10; /*0x7100ee*/
       if ( v12 ) /*0x7100f0*/
       {
@@ -214,7 +214,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       {
         if ( v13 ) /*0x7100f4*/
           (*(void (__stdcall **)(int))(*(_DWORD *)v13 + 8))(*v10); /*0x7100f9*/
-        v14 = *(_DWORD *)v28.__pad_0; /*0x7100fc*/
+        v14 = *(_DWORD *)v28.q000; /*0x7100fc*/
         *v10 = 0; /*0x710100*/
         if ( !v14 ) /*0x710108*/
           sub_7DC720(-2147467261); /*0x71010f*/
@@ -313,8 +313,8 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
       if ( v28.m_Data ) /*0x7103ef*/
         (*(void (__stdcall **)(int))(*(_DWORD *)v28.m_Data + 8))(v28.m_Data); /*0x7103f4*/
     }
-    if ( *(_DWORD *)v28.__pad_0 ) /*0x7103fd*/
-      (*(void (__stdcall **)(_DWORD))(**(_DWORD **)v28.__pad_0 + 8))(*(_DWORD *)v28.__pad_0); /*0x710402*/
+    if ( *(_DWORD *)v28.q000 ) /*0x7103fd*/
+      (*(void (__stdcall **)(_DWORD))(**(_DWORD **)v28.q000 + 8))(*(_DWORD *)v28.q000); /*0x710402*/
   }
 }
 } // namespace ra2

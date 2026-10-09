@@ -14,6 +14,8 @@ struct RefCount {
 // --- flat members (END) ---
     int32_t Decrement();
     int Increment(int a2);
+    unsigned int u32_8;  // 0x8 (offset-truth supply)
+    unsigned int u32_C;  // 0xC (offset-truth supply)
 };
 #endif  // GAMEMD_G2_RefCount_DEF
 

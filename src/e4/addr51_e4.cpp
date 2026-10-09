@@ -109,9 +109,9 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
 
   INIClass::ClearSection(v3, (int)&g_INI_Key_Special.SidebarImage, 0); /*0x51ff02*/
   result = 0; /*0x51ff0d*/
-  for ( i = 0; result < *(int *)&stru_A83D50.__pad_80[40]; i = result ) /*0x51ff15*/
+  for ( i = 0; result < *(int *)&stru_A83D50.q080[40]; i = result ) /*0x51ff15*/
   {
-    v6 = *(BuildingClass **)(*(_DWORD *)&stru_A83D50.__pad_80[28] + 4 * result); /*0x51ff25*/
+    v6 = *(BuildingClass **)(*(_DWORD *)&stru_A83D50.q080[28] + 4 * result); /*0x51ff25*/
     if ( !v6->inLimbo ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
@@ -121,7 +121,7 @@ int SaveInfantryToINI(void * a1, void * a2, void * a3)
         queuedMission = (char *)(*((int (__thiscall **)(BuildingClass *))v6->vfptr + 97))(v6); /*0x51ff89*/
       v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->primaryFacing, &v27); /*0x51ff9d*/
       owner = v6->owner; /*0x51ffab*/
-      v9 = *(_DWORD *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
+      v9 = *(_DWORD *)&v6->q6B8[8] + 36; /*0x51ffb3*/
       v24.Input_field_00 = v6->location[0]; /*0x51ffb6*/
       isRecruitableByEnemy = (unsigned __int8)v6->isRecruitableByEnemy; /*0x51ffbf*/
       v25 = v6->location[1]; /*0x51ffc5*/

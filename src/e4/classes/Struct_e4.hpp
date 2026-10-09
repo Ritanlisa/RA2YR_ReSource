@@ -19,6 +19,24 @@ struct Struct {
     unsigned int * InitTriple256(unsigned int * a1);
     static unsigned int * Zero25(Struct * aP1);  // G57w10-S raw 0x006D1810 (was C2597 interim stub)
     wchar_t ** WideStringCopy(int a2);  // 0x6247d0
+    unsigned int u32_14;  // 0x14 (offset-truth supply)
+    unsigned int u32_18;  // 0x18 (offset-truth supply)
+    unsigned int u32_1C;  // 0x1C (offset-truth supply)
+    unsigned int u32_20;  // 0x20 (offset-truth supply)
+    unsigned int u32_24;  // 0x24 (offset-truth supply)
+    unsigned int u32_28;  // 0x28 (offset-truth supply)
+    unsigned int u32_2C;  // 0x2C (offset-truth supply)
+    unsigned int u32_30;  // 0x30 (offset-truth supply)
+    unsigned int u32_34;  // 0x34 (offset-truth supply)
+    unsigned int u32_38;  // 0x38 (offset-truth supply)
+    unsigned int u32_3C;  // 0x3C (offset-truth supply)
+    unsigned int u32_4;  // 0x4 (offset-truth supply)
+    unsigned int u32_40;  // 0x40 (offset-truth supply)
+    unsigned int u32_44;  // 0x44 (offset-truth supply)
+    unsigned int u32_48;  // 0x48 (offset-truth supply)
+    unsigned int u32_4C;  // 0x4C (offset-truth supply)
+    unsigned int u32_54;  // 0x54 (offset-truth supply)
+    unsigned int u32_8;  // 0x8 (offset-truth supply)
 };
 
 } // namespace gamemd

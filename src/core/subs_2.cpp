@@ -9,6 +9,6 @@
 
 namespace gamemd {
 
-// 46D350 stub removed in G28: real translation lives in src/e4/addr46_e4.cpp (vtable install)
+// 46D350 stub removed in G28: real translation lives in src/e4/addr46_e4.cpp (q000 install)
 
 } // namespace gamemd

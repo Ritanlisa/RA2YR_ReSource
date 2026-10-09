@@ -98,7 +98,7 @@ int ConnectionClass::connect()
 
   v2 = 0; /*0x48c5a4*/
   PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c5a6*/
-  if ( PlayerIndex->Terrain_field_0x38 > 0 ) /*0x48c5ae*/
+  if ( PlayerIndex->q038 > 0 ) /*0x48c5ae*/
   {
     do /*0x48c5e7*/
     {
@@ -112,7 +112,7 @@ int ConnectionClass::connect()
       PlayerIndex = (Terrain *)this->PlayerIndex; /*0x48c5e0*/
       ++v2; /*0x48c5e3*/
     }
-    while ( v2 < PlayerIndex->Terrain_field_0x38 ); /*0x48c5e7*/
+    while ( v2 < PlayerIndex->q038 ); /*0x48c5e7*/
   }
   return 1; /*0x48c5e9*/
 }
@@ -123,7 +123,7 @@ bool IPXConnClass::initConnection(int a2, int a3, int a4, __int16 a5, int a6, in
 
   a1->PhoneNumber[3] = ((a1->PhoneNumber[3]) & 0xFFFF0000u) | ((unsigned int)(a1) & 0xFFFFu); /*0x48be73*/
   a1->PhoneNumber[4] = a1; /*0x48be7b*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
   a1->PhoneNumber[1] = a1 + 14; /*0x48be89*/
   a1->PhoneNumber[5] = a1; /*0x48be8c*/
   a1->PhoneNumber[6] = a1; /*0x48be8f*/
@@ -154,7 +154,7 @@ bool IPXConnClass::closeConnection(int a2, int a1, int a3, int a4, int a5, int a
 // 0x53f5d0
 bool IPXConnClass::send(int a2, int a3, int a4, int a5, int a6, int a7)
 {
-  return (*(bool (__stdcall **)(int, int, char *, _DWORD, int, _DWORD))(*(_DWORD *)this->__pad_0 + 40))( /*0x53f5ec*/
+  return (*(bool (__stdcall **)(int, int, char *, _DWORD, int, _DWORD))(*(_DWORD *)this->q000 + 40))( /*0x53f5ec*/
            a2,
            a3,
            (char *)this + 76,
@@ -176,8 +176,8 @@ int IPXConnClass::receive(int a2, int a3, int * a4, int ** a5, int a6, int a7)
 
   Waypoint::InitInvalid((Waypoint *)&qword_A8DBA4); /*0x53f65d*/
   a5 = a5; /*0x53f666*/
-  *(_DWORD *)qword_A8DBA4.__pad_0 = *a4; /*0x53f670*/
-  qword_A8DBA4.NetworkID_field_0x04 = a4[1]; /*0x53f677*/
+  *(_DWORD *)qword_A8DBA4.q000 = *a4; /*0x53f670*/
+  qword_A8DBA4.q004 = a4[1]; /*0x53f677*/
   v19 = a4[2]; /*0x53f67e*/
   if ( a5 ) /*0x53f682*/
   {
@@ -197,7 +197,7 @@ int IPXConnClass::receive(int a2, int a3, int * a4, int ** a5, int a6, int a7)
   v10 = a2; /*0x53f6c9*/
   if ( !*(_BYTE *)(a2 + 3) ) /*0x53f6cd*/
   {
-    LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], this->u32_64); /*0x53f6dd*/
+    LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.q000[16], this->u32_64); /*0x53f6dd*/
     if ( !LinkedIndex ) /*0x53f6e4*/
       return 0; /*0x53f6ef*/
     *(_BYTE *)(a2 + 3) = LinkedIndex; /*0x53f6f2*/
@@ -205,8 +205,8 @@ int IPXConnClass::receive(int a2, int a3, int * a4, int ** a5, int a6, int a7)
   qword_A8DBA4 = qword_A8DBA4; /*0x53f706*/
   v9 = *(_DWORD *)&dword_841F3C; /*0x53f710*/
   v19 = dword_A8DBAC; /*0x53f71a*/
-  if ( (unsigned __int8)GUID::Compare(qword_A8DBB0.__pad_0, *dword_A8DA78 + 40) /*0x53f742*/
-    && (unsigned __int8)NetworkID::Compare((bool *)qword_A8DBA4.__pad_0, *dword_A8DA78 + 40) )
+  if ( (unsigned __int8)GUID::Compare(qword_A8DBB0.q000, *dword_A8DA78 + 40) /*0x53f742*/
+    && (unsigned __int8)NetworkID::Compare((bool *)qword_A8DBA4.q000, *dword_A8DA78 + 40) )
   {
     goto LABEL_13; /*0x53f749*/
   }

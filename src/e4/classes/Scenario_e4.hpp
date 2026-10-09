@@ -134,5 +134,6 @@ char LoadWithProgress();  // 0x00684620 g57w12-r raw-sync (def-form)
     void * ResetDisplayArrays();  // 0x5C9700
     int SetDword32(int a2);  // 0x642B10
     int SetDword30(int a2);  // 0x642DF0
+    char[512] __pad_9C;  // 0x156 (ml)
 };
 } // namespace gamemd

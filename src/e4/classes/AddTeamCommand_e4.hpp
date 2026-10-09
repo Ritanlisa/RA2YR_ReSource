@@ -15,6 +15,7 @@ struct AddTeamCommand {
     char * AddRef();
     wchar_t * Release();
     wchar_t * ddtor();
+    unsigned char m_1;  // 0x1 (offset-truth supply)
 };
 
 } // namespace gamemd

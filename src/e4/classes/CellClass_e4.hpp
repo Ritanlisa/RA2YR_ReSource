@@ -194,6 +194,8 @@ static int * GetCoords(CellClass * aP1, int *a2);  // G57w10-S raw 0x00480A30 (w
     static int InitRandomOffsets(...);
     static int ProcessUpdate(...);
     static int FindOpenNeighbor(...);  // w16g4 C3861 static supply (Cls call-form)  // w16g4 C3861 static supply (raw 0x005A7B40)  // w16g4 C3861 static supply (raw 0x004814F0)  // w16g4 C3861 static supply (raw 0x0057F440)  // 0x47BBF0 raw: _DWORD* Construct(CellClass*)
+    void* q028;  // 0x40
+    unsigned int u32_2F4;  // 0x2F4 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -52,6 +52,8 @@ struct CheckListClass {
     void StubReturnFalse(int a1, int a2, int a3);
     void StubReturnVoid();
     CheckListClass * sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9);
+    unsigned int u32_118;  // 0x118 (offset-truth supply)
+    unsigned int u32_B8;  // 0xB8 (offset-truth supply)
 };
 
 } // namespace gamemd

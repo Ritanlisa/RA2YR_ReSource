@@ -139,7 +139,7 @@ char HandlePlayerDisconnection(int a1, int a2)
         }
         if ( wcslen(String) ) /*0x5f0231*/
         {
-          v6 = Math::RoundToInt(*(double *)&dword_8871E0[1].__pad_A0 * 900.0); /*0x5f0250*/
+          v6 = Math::RoundToInt(*(double *)&dword_8871E0[1].q0A0 * 900.0); /*0x5f0250*/
           MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(_DWORD *)(v3->relatedTagsCapacity + 192), 16454, v6, 0); /*0x5f0273*/
           MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x5f027f*/
         }
@@ -170,7 +170,7 @@ char HandlePlayerDisconnection(int a1, int a2)
         {
           v9 = GetStringCSF(aTxtJustYouAndM, 0, g_Str_File_NullDlg_CPP, 6453); /*0x5f0342*/
           swprintf(String, (const size_t)&off_8240B4, v9); /*0x5f0352*/
-          v10 = Math::RoundToInt(*(double *)&dword_8871E0[1].__pad_A0 * 900.0); /*0x5f036e*/
+          v10 = Math::RoundToInt(*(double *)&dword_8871E0[1].q0A0 * 900.0); /*0x5f036e*/
           MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(_DWORD *)(v3->relatedTagsCapacity + 192), 16454, v10, 0); /*0x5f0391*/
           return MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x5f039d*/
         }
@@ -721,11 +721,11 @@ AbstractClass * * GenerateRangeRingTextures()
         if ( v3 ) /*0x5ff457*/
         {
           Surface::Construct(v3, 256, 128); /*0x5ff465*/
-          *(_DWORD *)v4[1].__pad_0 = 0; /*0x5ff46d*/
-          *(_DWORD *)v4->__pad_0 = &XSurface_Vtable; /*0x5ff476*/
+          *(_DWORD *)v4[1].q000 = 0; /*0x5ff46d*/
+          *(_DWORD *)v4->q000 = &XSurface_Vtable; /*0x5ff476*/
           v4[1].Width = 1; /*0x5ff47c*/
           Buffer::Init((Buffer *)&v4[1].Height, 0, 0x8000); /*0x5ff47f*/
-          *(_DWORD *)v4->__pad_0 = &BSurface_Vtable; /*0x5ff484*/
+          *(_DWORD *)v4->q000 = &BSurface_Vtable; /*0x5ff484*/
         }
         else
         {
@@ -791,11 +791,11 @@ AbstractClass * * GenerateRangeRingTextures()
         if ( v12 ) /*0x5ff5ca*/
         {
           Surface::Construct(v12, 256, 128); /*0x5ff5d8*/
-          *(_DWORD *)v13[1].__pad_0 = 0; /*0x5ff5e0*/
-          *(_DWORD *)v13->__pad_0 = &XSurface_Vtable; /*0x5ff5e9*/
+          *(_DWORD *)v13[1].q000 = 0; /*0x5ff5e0*/
+          *(_DWORD *)v13->q000 = &XSurface_Vtable; /*0x5ff5e9*/
           v13[1].Width = 1; /*0x5ff5ef*/
           Buffer::Init((Buffer *)&v13[1].Height, 0, 0x8000); /*0x5ff5f6*/
-          *(_DWORD *)v13->__pad_0 = &BSurface_Vtable; /*0x5ff5fb*/
+          *(_DWORD *)v13->q000 = &BSurface_Vtable; /*0x5ff5fb*/
         }
         else
         {
@@ -803,7 +803,7 @@ AbstractClass * * GenerateRangeRingTextures()
         }
         *v10 = v13; /*0x5ff605*/
       }
-      (*(void (__thiscall **)(Surface *, _DWORD))(*(_DWORD *)(*v10)->__pad_0 + 24))(*v10, 0); /*0x5ff60c*/
+      (*(void (__thiscall **)(Surface *, _DWORD))(*(_DWORD *)(*v10)->q000 + 24))(*v10, 0); /*0x5ff60c*/
       Surface::Construct((Surface *)&v31, 256, 256); /*0x5ff61d*/
       v31.LockCount = 0; /*0x5ff626*/
       *(_DWORD *)v31.Surface = &XSurface_Vtable; /*0x5ff630*/
@@ -811,7 +811,7 @@ AbstractClass * * GenerateRangeRingTextures()
       Buffer::Init((Buffer *)v33, 0, 0x10000); /*0x5ff640*/
       *(_DWORD *)v31.Surface = &BSurface_Vtable; /*0x5ff649*/
       XSurface::Fill(&v31, 0); /*0x5ff652*/
-      v21 = 60 * *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1960); /*0x5ff684*/
+      v21 = 60 * *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1960); /*0x5ff684*/
       IDA_LOWORD(v14) = Math::RoundToInt((double)v21 * -0.002790178571428571); /*0x5ff692*/
       Draw::Ellipse((Draw *)&v31, 128, 128, i - v14, 0, 0, 255, 255, v11); /*0x5ff6a9*/
       for ( k = 0; k < 128; ++k ) /*0x5ff6ae*/
@@ -825,7 +825,7 @@ AbstractClass * * GenerateRangeRingTextures()
         v28 = 2 * k; /*0x5ff6df*/
         v23 = 0; /*0x5ff6e3*/
         v24 = k; /*0x5ff6e7*/
-        (*(void (__thiscall **)(Surface *, int *, XSurface *, int *, _DWORD, int))(*(_DWORD *)v16->__pad_0 + 8))( /*0x5ff6f2*/
+        (*(void (__thiscall **)(Surface *, int *, XSurface *, int *, _DWORD, int))(*(_DWORD *)v16->q000 + 8))( /*0x5ff6f2*/
           v16,
           &v23,
           &v31,

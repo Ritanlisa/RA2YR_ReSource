@@ -137,7 +137,7 @@ namespace gamemd {
 int32_t Count::Release(void *a1)
 {
   ++*((_DWORD *)a1 + 2); /*0x76f162*/
-  return a1->__pad_0; /*0x76f165*/
+  return a1->q000; /*0x76f165*/
 }
 } // namespace gamemd
 // 0x76F170
@@ -145,6 +145,6 @@ namespace gamemd {
 int32_t Count::ddtor()
 {
   --this->u32_8; /*0x76f172*/
-  return this->__pad_0; /*0x76f175*/
+  return this->q000; /*0x76f175*/
 }
 } // namespace gamemd

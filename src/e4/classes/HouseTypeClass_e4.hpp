@@ -197,6 +197,7 @@ struct HouseTypeClass {
     unsigned int loadBuildLimits();
     void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5);
     AbstractClass * LoadFromINI(uint8_t *** aP1, void *a2);
+    char[58] pad_16D;  // 0x365 (ml)
 };
 
 } // namespace gamemd

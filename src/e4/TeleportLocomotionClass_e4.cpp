@@ -38,6 +38,6 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   this->Piggybackee = 0; /*0x71805b*/
   *(_DWORD *)this->0 = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
   *(_DWORD *)&this->0[4] = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x718064*/
-  *(_DWORD *)this->__pad_18 = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
+  *(_DWORD *)this->q018 = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
   return (int)this->0; /*0x718074*/
 }  // namespace gamemd  // g57w12-r nsfix

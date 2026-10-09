@@ -23,7 +23,7 @@ int GadgetGrid::InsertItem(int a2)
   int result; // eax
   GadgetGrid *v12; // esi
   int v13; // ecx
-  int GadgetGrid_field_0x04; // edx
+  int q004; // edx
   char v15[4]; // [esp+Ch] [ebp-4h] BYREF
   int v16; // [esp+14h] [ebp+4h]
 
@@ -49,16 +49,16 @@ int GadgetGrid::InsertItem(int a2)
   v10 = 3 * (v8 + 20 * v9); /*0x413541*/
   result = *((_DWORD *)this + 120 * v9 + 6 * v8 + 2); /*0x413544*/
   v12 = this + v10; /*0x413548*/
-  if ( *(_DWORD *)v12[2].__pad_0 < result /*0x413574*/
-    || (IDA_BYTE1(v12[1].GadgetGrid_field_0x04) || !result)
-    && (v13 = v12[2].GadgetGrid_field_0x04, v13 > 0)
-    && (result = (*(int (__thiscall **)(GadgetGrid *, int, _DWORD))(*(_DWORD *)v12->__pad_0 + 8))(v12, result + v13, 0),
+  if ( *(_DWORD *)v12[2].q000 < result /*0x413574*/
+    || (IDA_BYTE1(v12[1].q004) || !result)
+    && (v13 = v12[2].q004, v13 > 0)
+    && (result = (*(int (__thiscall **)(GadgetGrid *, int, _DWORD))(*(_DWORD *)v12->q000 + 8))(v12, result + v13, 0),
         (_BYTE)result) )
   {
-    result = *(_DWORD *)v12[2].__pad_0; /*0x413576*/
-    GadgetGrid_field_0x04 = v12->GadgetGrid_field_0x04; /*0x413579*/
-    *(_DWORD *)v12[2].__pad_0 = result + 1; /*0x41357f*/
-    *(_DWORD *)(GadgetGrid_field_0x04 + 4 * result) = a2; /*0x413582*/
+    result = *(_DWORD *)v12[2].q000; /*0x413576*/
+    q004 = v12->q004; /*0x413579*/
+    *(_DWORD *)v12[2].q000 = result + 1; /*0x41357f*/
+    *(_DWORD *)(q004 + 4 * result) = a2; /*0x413582*/
   }
   return result; /*0x413585*/
 }
@@ -98,18 +98,18 @@ int GadgetGrid::RemoveItem(int a2)
   v7 = v4 / (*(_DWORD *)&stru_87F5F0.__pad_58[720] / 20); /*0x413666*/
   if ( v7 > 19 ) /*0x41366b*/
     v7 = 19; /*0x41366d*/
-  v8 = *(_DWORD *)&this->__pad_0[480 * v7 + 24 * v6]; /*0x413680*/
+  v8 = *(_DWORD *)&this->q000[480 * v7 + 24 * v6]; /*0x413680*/
   v9 = this + 60 * v7 + 3 * v6; /*0x413683*/
   result = (*(int (__thiscall **)(GadgetGrid *, int *))(v8 + 16))(v9, &a2); /*0x413688*/
   if ( result != -1 ) /*0x41368e*/
   {
-    v11 = *(_DWORD *)v9[2].__pad_0; /*0x413690*/
+    v11 = *(_DWORD *)v9[2].q000; /*0x413690*/
     if ( result < v11 ) /*0x413695*/
     {
       v12 = v11 - 1; /*0x413697*/
-      for ( *(_DWORD *)v9[2].__pad_0 = v12; /*0x41369d*/
-            result < *(_DWORD *)v9[2].__pad_0;
-            *(_DWORD *)(v9->GadgetGrid_field_0x04 + 4 * result - 4) = *(_DWORD *)(v9->GadgetGrid_field_0x04 + 4 * result) )
+      for ( *(_DWORD *)v9[2].q000 = v12; /*0x41369d*/
+            result < *(_DWORD *)v9[2].q000;
+            *(_DWORD *)(v9->q004 + 4 * result - 4) = *(_DWORD *)(v9->q004 + 4 * result) )
       {
         ++result; /*0x4136a2*/
       }

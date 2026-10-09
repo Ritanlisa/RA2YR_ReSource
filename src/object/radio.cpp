@@ -11,17 +11,17 @@ extern int& CurrentFrame;
 // ============================================================
 // Layout verification (ABI: radioLinks 12 -> 16 bytes).
 // IDA ctor 0x65a750 proves radioLinks is a *base* VectorClass<TechnoClass*>:
-//   vtable@224, Items@228, Capacity@232, IsInitialized@236, IsAllocated@237.
+//   q000@224, Items@228, Capacity@232, IsInitialized@236, IsAllocated@237.
 // = 16 bytes (no Count/CapacityIncrement -> NOT DynamicVectorClass).
 // ============================================================
 static_assert(sizeof(gamemd::VectorClass<TechnoClass*>) == 16,
-              "radioLinks must be a 16-byte base VectorClass<TechnoClass*> (vtable+Items+Capacity+IsInitialized+IsAllocated) per IDA 0x65a750");
+              "radioLinks must be a 16-byte base VectorClass<TechnoClass*> (q000+Items+Capacity+IsInitialized+IsAllocated) per IDA 0x65a750");
 
 // ============================================================
 // RadioClass constructor (IDA: 0x65a750)
 // 1. Call MissionClass base constructor
 // 2. Allocate radioLinks with initial capacity 1
-// 3. Initialize vtable + lastCommands
+// 3. Initialize q000 + lastCommands
 // ============================================================
 RadioClass::RadioClass() noexcept
 {
@@ -40,9 +40,9 @@ RadioClass::RadioClass() noexcept
 
 // ============================================================
 // RadioClass destructor (ProcessEvent, IDA: 0x65aeb0)
-// 1. Set vtable to RadioClass vtables
+// 1. Set q000 to RadioClass vtables
 // 2. Free radioLinks.Items if we own it
-// 3. Set vtable back to MissionClass
+// 3. Set q000 back to MissionClass
 // 4. Call ObjectClass::Dtor
 // ============================================================
 // Destructor is =default in header; cleanup handled there
@@ -158,16 +158,16 @@ bool RadioClass::hasFreeLink() const
 // PowerDrainUpdate (IDA: 0x65ab10, vt13)  ->  int __thiscall _vt13(this, int a2)
 // IDA: Calls AbstractClass::COMStub_13(this, a2), then Power::TimerProcess on the
 // link count (radioLinks.Capacity), then iterates each non-null link calling the
-// COM-interface vtable[4] (on link+4) and the primary vtable[11], passing both
+// COM-interface q000[4] (on link+4) and the primary q000[11], passing both
 // results to Power::TimerProcess. Returns the (re-read) link Capacity.
 // Called from House::PowerBeginUpdate @ 70C270.
 // ============================================================
 int RadioClass::PowerDrainUpdate(int a2)
 {
     // IDA 0x65ab10 (_vt13): COMStub_13(this,a2); then Power::TimerProcess(Capacity)
-    // and, per non-null link, Power::TimerProcess of link COM vtable[4]/primary
-    // vtable[11]; returns the (re-read) Capacity. Power::TimerProcess (0x4A1D50)
-    // and the link vtable slots are not yet callable here -> deferred.
+    // and, per non-null link, Power::TimerProcess of link COM q000[4]/primary
+    // q000[11]; returns the (re-read) Capacity. Power::TimerProcess (0x4A1D50)
+    // and the link q000 slots are not yet callable here -> deferred.
     COMStub_13(a2);                                  // IDA 0x65ab1a
     for (int i = 0; i < radioLinks.Capacity; ++i)    // this->u32_E8 re-read each iter
     {
@@ -181,7 +181,7 @@ int RadioClass::PowerDrainUpdate(int a2)
 // ============================================================
 // ProcessCmd (IDA: 0x65aa80, vt53)
 // IDA: if (!inLimbo) — i.e., object is deployed/on-map:
-//   vtable[640](this, 3) — pre-undeploy processing
+//   q000[640](this, 3) — pre-undeploy processing
 // Then always calls ObjectClass::Undeploy(this)
 // Called from TechnoClass::CleanupDeploy @ 6F6AC0.
 // ============================================================
@@ -190,7 +190,7 @@ void RadioClass::ProcessCmd()
     // IDA: if (!inLimbo) — object is on map (not in limbo = deployed)
     if (!inLimbo)
     {
-        // IDA: vtable[640](this, 3) — pre-undeploy vtable dispatch
+        // IDA: q000[640](this, 3) — pre-undeploy q000 dispatch
         // This calls the derived class's deploy processing with parameter 3 (undeploy action)
     }
     // IDA: ObjectClass::Undeploy(this) — sub_5F4D30
@@ -297,7 +297,7 @@ void RadioClass::SetLinkCount(int count)
     int oldCapacity = radioLinks.Capacity;           // IDA 0x65ae60: link count = Capacity
     if (count > oldCapacity)
     {
-        radioLinks.SetCapacity(count, nullptr);      // vtable[2] = VectorClass::SetCapacity
+        radioLinks.SetCapacity(count, nullptr);      // q000[2] = VectorClass::SetCapacity
         for (int i = oldCapacity; i < count; ++i)
             radioLinks[i] = nullptr;                 // IDA: zero new slots [oldCapacity, count)
     }

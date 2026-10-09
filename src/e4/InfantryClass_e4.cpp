@@ -251,15 +251,15 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   }
   AbstractClass::AnnounceExpiredPointer(&this->vfptr, 1); /*0x517e75*/
   v17[0] = (int)this; /*0x517e89*/
-  v7 = (*(int (__thiscall **)(char *, int *))(*(_DWORD *)&stru_A83D50.__pad_80[24] + 16))( /*0x517e8d*/
-         &stru_A83D50.__pad_80[24],
+  v7 = (*(int (__thiscall **)(char *, int *))(*(_DWORD *)&stru_A83D50.q080[24] + 16))( /*0x517e8d*/
+         &stru_A83D50.q080[24],
          v17);
-  if ( v7 != -1 && v7 < *(int *)&stru_A83D50.__pad_80[40] ) /*0x517e9d*/
+  if ( v7 != -1 && v7 < *(int *)&stru_A83D50.q080[40] ) /*0x517e9d*/
   {
-    --*(_DWORD *)&stru_A83D50.__pad_80[40]; /*0x517ea2*/
+    --*(_DWORD *)&stru_A83D50.q080[40]; /*0x517ea2*/
     for ( ; /*0x517ea8*/
-          v7 < *(int *)&stru_A83D50.__pad_80[40];
-          *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_80[28] + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_80[28]
+          v7 < *(int *)&stru_A83D50.q080[40];
+          *(_DWORD *)(*(_DWORD *)&stru_A83D50.q080[28] + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)&stru_A83D50.q080[28]
                                                                                      + 4 * v7) )
     {
       ++v7; /*0x517eb0*/

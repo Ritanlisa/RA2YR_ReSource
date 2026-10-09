@@ -464,7 +464,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
       v39 = 0; /*0x707100*/
       v42 = v21 - *(_DWORD *)&v22; /*0x707104*/
       v40 = 0; /*0x70710c*/
-      v41 = *(_DWORD *)DSurface_ViewBounds.__pad_8; /*0x707110*/
+      v41 = *(_DWORD *)DSurface_ViewBounds.q008; /*0x707110*/
       v23 = ClipRectIntersection(v49, &v43, &v39, 0, 0); /*0x70711e*/
       v43 = *v23; /*0x707125*/
       v44 = v23[1]; /*0x70712c*/
@@ -496,7 +496,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   SHPFrame = (int *)BuildingClass::GetSHPFrame(v25, v24); /*0x707215*/
   v32 = Miles::DriverGet(); /*0x707227*/
   BlitterDrawSHP( /*0x707235*/
-    (int *)g_DSurface_Hidden_2->__pad_0,
+    (int *)g_DSurface_Hidden_2->q000,
     (int)v25,
     v32,
     &v48[2],
@@ -956,11 +956,11 @@ int E4Recv_7011A0::sub_7011A0()
 
   if ( (*((unsigned __int8 (__thiscall **)(ObjectClass *))this->vfptr + 21))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
-  if ( !*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6200) ) /*0x7011bd*/
+  if ( !*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6200) ) /*0x7011bd*/
     return 0; /*0x7011c8*/
-  v4 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6212); /*0x7011d5*/
+  v4 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6212); /*0x7011d5*/
   vtable0 = (int (__thiscall **)(ObjectClass *, _BYTE *))this->vfptr; /*0x7011db*/
-  v12 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6208); /*0x7011dd*/
+  v12 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6208); /*0x7011dd*/
   v13 = v4; /*0x7011e5*/
   v6 = (_DWORD *)vtable0[18](this, v14); /*0x7011ec*/
   IDA_LOWORD(v10) = *v6 / 256; /*0x7011ff*/

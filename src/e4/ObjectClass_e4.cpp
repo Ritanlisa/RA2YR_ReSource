@@ -53,7 +53,7 @@ namespace gamemd {
 struct Matrix3D
 {
     float Data[12] = {};  // data: 0x840b4c
-    unsigned char __pad_0;  // 0x0
+    unsigned char q000;  // 0x0
     unsigned int q080;  // 0x80
     unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
     unsigned int u32_8;   // 0x8 (raw fld [esi+8])
@@ -405,7 +405,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
   result = BuildingClass::AllocAndCtor(aP0, (int)pStm); /*0x4db3e7*/
   if ( result >= 0 ) /*0x4db3ee*/
   {
-    result = (*(int (__stdcall **)(IStream *, LPSTREAM *, int, _DWORD))(*(_DWORD *)pStm->__pad_0 + 12))(pStm, &pStm, 4, 0); /*0x4db400*/
+    result = (*(int (__stdcall **)(IStream *, LPSTREAM *, int, _DWORD))(*(_DWORD *)pStm->q000 + 12))(pStm, &pStm, 4, 0); /*0x4db400*/
     if ( result >= 0 ) /*0x4db405*/
     {
       v6 = aP0 + 1416; /*0x4db40b*/
@@ -420,7 +420,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       if ( (int)pStm <= 0 ) /*0x4db438*/
       {
   LABEL_16:
-        result = (*(int (__stdcall **)(IStream *, LPSTREAM *, int, _DWORD))(*(_DWORD *)pStm->__pad_0 + 12))( /*0x4db4a2*/
+        result = (*(int (__stdcall **)(IStream *, LPSTREAM *, int, _DWORD))(*(_DWORD *)pStm->q000 + 12))( /*0x4db4a2*/
                    pStm,
                    &pStm,
                    4,
@@ -470,7 +470,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
           {
             while ( 1 ) /*0x4db4e8*/
             {
-              v13 = *(_DWORD *)pStm->__pad_0; /*0x4db4e8*/
+              v13 = *(_DWORD *)pStm->q000; /*0x4db4e8*/
               v20 = 0; /*0x4db4f4*/
               result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v13 + 12))(pStm, &v20, 4, 0); /*0x4db4f8*/
               if ( result < 0 ) /*0x4db4fd*/
@@ -496,7 +496,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       {
         while ( 1 ) /*0x4db43a*/
         {
-          v7 = *(_DWORD *)pStm->__pad_0; /*0x4db43a*/
+          v7 = *(_DWORD *)pStm->q000; /*0x4db43a*/
           v20 = 0; /*0x4db446*/
           result = (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v7 + 12))(pStm, &v20, 4, 0); /*0x4db44a*/
           if ( result < 0 ) /*0x4db44f*/
@@ -543,7 +543,7 @@ int ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struc
   SizeMax = IPersistStream::GetSizeMax((TechnoClass *)a0, (int)aP1, (int)a2); /*0x4db6a7*/
   if ( SizeMax < 0 ) /*0x4db6ab*/
     return SizeMax; /*0x4db6ab*/
-  v6 = *(_DWORD *)v3->__pad_0; /*0x4db6b7*/
+  v6 = *(_DWORD *)v3->q000; /*0x4db6b7*/
   a2 = (struct IPersistStreamVtbl *)v4[8].a2; /*0x4db6c3*/
   result = (*(int (__stdcall **)(IStream *, struct IPersistStreamVtbl **, int, _DWORD))(v6 + 16))( /*0x4db6c7*/
              v3,
@@ -556,7 +556,7 @@ int ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struc
   if ( (int)a2 <= 0 ) /*0x4db6da*/
   {
   LABEL_6:
-    v9 = *(_DWORD *)v3->__pad_0; /*0x4db701*/
+    v9 = *(_DWORD *)v3->q000; /*0x4db701*/
     a2 = (struct IPersistStreamVtbl *)v4[8].customSound_controller[3]; /*0x4db713*/
     result = (*(int (__stdcall **)(IStream *, struct IPersistStreamVtbl **, int, _DWORD))(v9 + 16))( /*0x4db717*/
                v3,
@@ -570,7 +570,7 @@ int ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struc
     {
       do /*0x4db73d*/
       {
-        result = (*(int (__stdcall **)(IStream *, int, int, _DWORD))(*(_DWORD *)v3->__pad_0 + 16))( /*0x4db73d*/
+        result = (*(int (__stdcall **)(IStream *, int, int, _DWORD))(*(_DWORD *)v3->q000 + 16))( /*0x4db73d*/
                    v3,
                    v4[8].customSound_controller[0] + 4 * v10,
                    4,
@@ -609,7 +609,7 @@ int ObjectClass::SaveToStream_Common(IPersistStream * a0, FootClass * aP1, struc
   }
   while ( 1 ) /*0x4db6ed*/
   {
-    result = (*(int (__stdcall **)(IStream *, int, int, _DWORD))(*(_DWORD *)v3->__pad_0 + 16))( /*0x4db6ed*/
+    result = (*(int (__stdcall **)(IStream *, int, int, _DWORD))(*(_DWORD *)v3->q000 + 16))( /*0x4db6ed*/
                v3,
                v4[8].fallRate + 4 * v8,
                4,
@@ -1097,33 +1097,33 @@ int ObjectClass::DropAsBomb_Track()
   _DWORD v5[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   v2 = this->field_0; /*0x5f4168*/
-  this->__pad_8C[1] = 1; /*0x5f416a*/
-  this->__pad_8C[3] = 1; /*0x5f4171*/
+  this->q08C[1] = 1; /*0x5f416a*/
+  this->q08C[3] = 1; /*0x5f4171*/
   (*(void (__stdcall **)(_DWORD))(v2 + 292))(0); /*0x5f4178*/
   RemoveTarget(); /*0x5f4184*/
-  this->__pad_8C[0] = 0; /*0x5f418f*/
+  this->q08C[0] = 0; /*0x5f418f*/
   Targeting::Readd(); /*0x5f4196*/
   result = (*(int (__thiscall **)(IUnknown *, int))(this->field_0 + 292))(this, 1); /*0x5f41a1*/
   if ( this ) /*0x5f41a9*/
   {
-    IDA_LOBYTE(result) = (this->__pad_14[0] & 4) != 0; /*0x5f41b5*/
-    if ( (this->__pad_14[0] & 4) != 0 ) /*0x5f41bb*/
+    IDA_LOBYTE(result) = (this->q014[0] & 4) != 0; /*0x5f41b5*/
+    if ( (this->q014[0] & 4) != 0 ) /*0x5f41bb*/
     {
-      if ( !*(_DWORD *)&this->__pad_524[336] ) /*0x5f41bd*/
+      if ( !*(_DWORD *)&this->q524[336] ) /*0x5f41bd*/
         sub_7DC720(-2147467261); /*0x5f41cc*/
-      if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)&this->__pad_524[336] + 16))(*(_DWORD *)&this->__pad_524[336]) ) /*0x5f41da*/
+      if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)&this->q524[336] + 16))(*(_DWORD *)&this->q524[336]) ) /*0x5f41da*/
       {
-        if ( !*(_DWORD *)&this->__pad_524[336] ) /*0x5f4213*/
+        if ( !*(_DWORD *)&this->q524[336] ) /*0x5f4213*/
           sub_7DC720(-2147467261); /*0x5f4222*/
-        return (*(int (__stdcall **)(_DWORD, _DWORD))(**(_DWORD **)&this->__pad_524[336] + 156))( /*0x5f4232*/
-                 *(_DWORD *)&this->__pad_524[336],
+        return (*(int (__stdcall **)(_DWORD, _DWORD))(**(_DWORD **)&this->q524[336] + 156))( /*0x5f4232*/
+                 *(_DWORD *)&this->q524[336],
                  0);
       }
       else
       {
-        v5[0] = this->field_9C; /*0x5f41ed*/
+        v5[0] = this->q09C; /*0x5f41ed*/
         v4 = this->field_0; /*0x5f41f1*/
-        v5[1] = *(_DWORD *)this->__pad_A0; /*0x5f41f6*/
+        v5[1] = *(_DWORD *)this->q0A0; /*0x5f41f6*/
         v5[2] = this->field_A4; /*0x5f4204*/
         return (v5); /*0x5f4208*/
       }
@@ -1494,12 +1494,12 @@ AbstractClass * * ObjectClass::Deploy()
       this->lineTrailer = (void *)result; /*0x5f5181*/
       if ( result ) /*0x5f5187*/
       {
-        v28 = *(_WORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6243); /*0x5f519e*/
+        v28 = *(_WORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6243); /*0x5f519e*/
         if ( (_BYTE)v28 /*0x5f51b4*/
-          || IDA___PAIR16__(IDA_HIBYTE(v28), 0) != *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6245) )
+          || IDA___PAIR16__(IDA_HIBYTE(v28), 0) != *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6245) )
         {
-          v18 = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6245); /*0x5f51e2*/
-          *(_WORD *)result = *(_WORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6243); /*0x5f51e5*/
+          v18 = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6245); /*0x5f51e2*/
+          *(_WORD *)result = *(_WORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6243); /*0x5f51e5*/
           result->u32_2 = v18; /*0x5f51e8*/
         }
         else
@@ -1855,7 +1855,7 @@ unsigned char ObjectClass::ToggleSidebarDisplay(unsigned int * a0, TabClass * aP
   do /*0x6a7e47*/
   {
     Hash::Reset((LinkClass *)v11); /*0x6a7e2d*/
-    IDA_LOBYTE(v11[3].ShapeButtonClass_field_0x08) = 0; /*0x6a7e32*/
+    IDA_LOBYTE(v11[3].q008) = 0; /*0x6a7e32*/
     (*(void (__thiscall **)(int, ShapeButtonClass *))(*(_DWORD *)v7 + 48))(v7, v11); /*0x6a7e3b*/
     v11 += 8; /*0x6a7e3e*/
   }
@@ -1990,7 +1990,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
       altObject = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2)->altObject; /*0x71829e*/
     else
       altObject = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2)->firstObject; /*0x7182b5*/
-    v7 = *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2)->__pad_28[28]; /*0x7182ca*/
+    v7 = *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &a2)->q028[28]; /*0x7182ca*/
     for ( IDA_LOBYTE(a5) = 0; altObject; altObject = altObject->nextObject ) /*0x7182d6*/
     {
       if ( !(*((unsigned __int8 (__thiscall **)(ObjectClass *))altObject->vfptr + 88))(altObject) /*0x718305*/
@@ -2007,7 +2007,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
             altObject,
             &v37,
             0,
-            *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+            *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008),
             0,
             1,
             0,
@@ -2026,7 +2026,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
             this->vfptr3,
             v39,
             0,
-            *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+            *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008),
             0,
             1,
             0,
@@ -2046,7 +2046,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
           altObject,
           v38,
           0,
-          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008),
           0,
           1,
           0,
@@ -2065,7 +2065,7 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
     v40 = (__int16 *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v39); /*0x7184c0*/
     v38[0] = ObjectClass::processPointerInvalid != 0; /*0x7184d1*/
     if ( v7 != -1 /*0x7184f4*/
-      && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * v7) + 681)
+      && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * v7) + 681)
       && !ObjectClass::processPointerInvalid
       || (_BYTE)a5 )
     {
@@ -2274,7 +2274,7 @@ int ObjectClass::InputThunkB()
 namespace gamemd {
 int ObjectClass::GetWidth()
 {
-  return (int)this->m_Next->__pad_0; /*0x556623*/
+  return (int)this->m_Next->q000; /*0x556623*/
 }
 } // namespace gamemd
 
@@ -2299,7 +2299,7 @@ unsigned int * ObjectClass::ComputeScreenYOffset(BuildingTypeClass * aP0, unsign
   int v2; // eax
   int v3; // ecx
 
-  v2 = (*(int (__thiscall **)(int))(*(_DWORD *)aP0->field_8 + 456))(aP0->field_8); /*0x55a8cc*/
+  v2 = (*(int (__thiscall **)(int))(*(_DWORD *)aP0->q008 + 456))(aP0->q008); /*0x55a8cc*/
   v3 = ZCoordToScreenY(v2); /*0x55a8d9*/
   *a1 = 0; /*0x55a8df*/
   a1[1] = v3; /*0x55a8e1*/
@@ -2338,11 +2338,11 @@ int ObjectClass::GetZAboveGround()
   int v2; // ecx
   _DWORD v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v4[0] = this->field_9C; /*0x5f5f52*/
-  v4[1] = *(_DWORD *)this->__pad_A0; /*0x5f5f63*/
+  v4[0] = this->q09C; /*0x5f5f52*/
+  v4[1] = *(_DWORD *)this->q0A0; /*0x5f5f63*/
   v4[2] = this->field_A4; /*0x5f5f6a*/
   v2 = this->field_A4 - Cell::GetGroundHeight(v4); /*0x5f5f79*/
-  if ( this->__pad_8C[0] ) /*0x5f5f7b*/
+  if ( this->q08C[0] ) /*0x5f5f7b*/
     v2 -= dword_AC13BC; /*0x5f5f86*/
   return v2; /*0x5f5f83*/
 }
@@ -2483,7 +2483,7 @@ unsigned int * ObjectClass::clearTarget(char a2)
   GadgetClass::Dtor(); /*0x72a673*/
   if ( (a2 & 1) != 0 ) /*0x72a67d*/
     RA2_OPDEL(); /*0x72a680*/
-  return this->__pad_0; /*0x72a68a*/
+  return this->q000; /*0x72a68a*/
 }
 } // namespace gamemd
 
@@ -2522,7 +2522,7 @@ unsigned int * ObjectClass::loc_7A2E70(HWND hWnd, unsigned int a2, int a3, unsig
 
   if ( a2 == 272 && a4 ) /*0x7a2a09*/
     SetWindowLongA(hWnd, 8, *(unsigned int *)(a4 + 4)); /*0x7a2a12*/
-  *(unsigned int *)v19.__pad_0 = a4; /*0x7a2a1f*/
+  *(unsigned int *)v19.q000 = a4; /*0x7a2a1f*/
   result = BaseDialogProc( (SkirmishDialog *)(hWnd), a2, a3, v19); /*0x7a2a25*/
   if ( !result ) /*0x7a2a2c*/
   {
@@ -2668,26 +2668,26 @@ memcpy( /*0x7a2ccd*/ (void *)(&stru_B76900.parachute->AnimClass_field_0x4 + v14)
       v16 = *(unsigned int *)&g_WOL_BuddyList; /*0x7a2d78*/
     }
     *(unsigned int *)&g_WOL_BuddyList= v16 + 1; /*0x7a2d83*/
-    if ( ((String*)((String *)&g_WindowManager.__pad_14[16]))->Length() ) /*0x7a2d88*/
+    if ( ((String*)((String *)&g_WindowManager.q014[16]))->Length() ) /*0x7a2d88*/
     {
-      if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.__pad_20) < 5 ) /*0x7a2da6*/
+      if ( (unsigned int)(time(0) - *(unsigned int *)g_WOL_BuddyList.q020) < 5 ) /*0x7a2da6*/
       {
 LABEL_51:
         j_DeleteAndZero( (void *)((ObjectClass *)v22)); /*0x7a2e46*/
         goto LABEL_52; /*0x7a2e4a*/
       }
-      ((DeleteAndZero *)&g_WindowManager.__pad_14[16])->Alt2(); /*0x7a2db1*/
+      ((DeleteAndZero *)&g_WindowManager.q014[16])->Alt2(); /*0x7a2db1*/
     }
     if ( *(unsigned int *)&dword_B76980) /*0x7a2dbd*/
     {
       if ( (uint8_t)DynamicStringArray::Get( /*0x7a2dcf*/
                               (DynamicStringArray *)&dword_B76980,
-                              (char **)&g_WindowManager.__pad_14[16],
+                              (char **)&g_WindowManager.q014[16],
                               0) )
         ((DynamicArray *)((DynamicArray *)&dword_B76980))->Remove(0); /*0x7a2ddf*/
-      *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x7a2deb*/
+      *(unsigned int *)g_WOL_BuddyList.q020 = time(0); /*0x7a2deb*/
       memset( (void *)(&v22[116]), 0, 0x6Cu); /*0x7a2dfe*/
-      strcpy( (char *)(&v22[152]), ((String *)((String *)&g_WindowManager.__pad_14[16]))->GetOrEmpty()); /*0x7a2e31*/
+      strcpy( (char *)(&v22[152]), ((String *)((String *)&g_WindowManager.q014[16]))->GetOrEmpty()); /*0x7a2e31*/
       (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 96))( (LPVOID)((LPVOID)((LPVOID)((LPVOID)(ppv)))), (unsigned char *)(&v22[116])); /*0x7a2e43*/
     }
     goto LABEL_51; /*0x7a2e43*/

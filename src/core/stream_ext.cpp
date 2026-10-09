@@ -91,8 +91,8 @@ int Buffer::CreateDirectSound()
   v12 = v1[27]; /*0x40a562*/
   v24 = v15; /*0x40a56c*/
   v22 = 4 * v12; /*0x40a578*/
-  if ( (*(int (__stdcall **)(_DWORD, _DWORD *, int *, _DWORD))(**(_DWORD **)&stru_87E790.__pad_D8[52] + 12))( /*0x40a587*/
-         *(_DWORD *)&stru_87E790.__pad_D8[52],
+  if ( (*(int (__stdcall **)(_DWORD, _DWORD *, int *, _DWORD))(**(_DWORD **)&stru_87E790.q0D8[52] + 12))( /*0x40a587*/
+         *(_DWORD *)&stru_87E790.q0D8[52],
          v21,
          v1 + 25,
          0) )

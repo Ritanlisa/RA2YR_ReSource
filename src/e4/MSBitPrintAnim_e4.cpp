@@ -20,9 +20,9 @@
 namespace gamemd {
 MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
 {
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&MSBitPrintAnim_vftable; /*0x5ced16*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&MSBitPrintAnim_vftable; /*0x5ced16*/
   DeleteAndZero::Alt((DeleteAndZero *)((char *)Block + 28)); /*0x5ced1c*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&MSAnim_vftable; /*0x5ced25*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&MSAnim_vftable; /*0x5ced25*/
   if ( (a2 & 1) != 0 ) /*0x5ced2d*/
     RA2_OPDEL(Block); /*0x5ced30*/
   return (void **)Block; /*0x5ced3a*/

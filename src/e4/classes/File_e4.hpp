@@ -35,5 +35,12 @@ struct File {
     AbstractClass * * LoadWDTDecompress(int aP1, int a3);  // 0x76B0A0
     int ParseAudioFileRIFF();  // 0x7C12B0
     AbstractClass * * ParseFileHVA(int a2, int aP1, int a3);
+    char[4] File_field_0x2;  // 0x2 (ml)
+    char[35] __pad_6;  // 0x6 (ml)
+    unsigned int q004;  // 0x4 (offset-truth supply)
+    unsigned int u32_30;  // 0x30 (offset-truth supply)
+    unsigned int u32_34;  // 0x34 (offset-truth supply)
+    unsigned char u32_42;  // 0x42 (offset-truth supply)
+    unsigned int u32_E0;  // 0xE0 (offset-truth supply)
 };
 } // namespace gamemd

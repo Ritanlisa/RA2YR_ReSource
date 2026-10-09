@@ -36,13 +36,13 @@ int ColorListClass::Clear(unsigned int a2)
   else
   {
     this->u32_16C = a2; /*0x557f4c*/
-    (*(void (__thiscall **)(ListClass *))(*(_DWORD *)this->__pad_0 + 72))(this); /*0x557f56*/
+    (*(void (__thiscall **)(ListClass *))(*(_DWORD *)this->q000 + 72))(this); /*0x557f56*/
     if ( this->u32_16C < this->u32_170 ) /*0x557f67*/
-      (*(void (__thiscall **)(ListClass *, _DWORD))(*(_DWORD *)this->__pad_0 + 192))(this, this->u32_16C); /*0x557f6e*/
+      (*(void (__thiscall **)(ListClass *, _DWORD))(*(_DWORD *)this->q000 + 192))(this, this->u32_16C); /*0x557f6e*/
     v4 = this->q014; /*0x557f74*/
     result = this->u32_16C; /*0x557f7d*/
     if ( result >= v4 + this->u32_170 ) /*0x557f87*/
-      return (*(int (__thiscall **)(ListClass *, int))(*(_DWORD *)this->__pad_0 + 192))(this, result - v4 + 1); /*0x557f91*/
+      return (*(int (__thiscall **)(ListClass *, int))(*(_DWORD *)this->q000 + 192))(this, result - v4 + 1); /*0x557f91*/
   }
   return result; /*0x557f97*/
 }
@@ -61,7 +61,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
       if ( ++v3 >= this->u32_44 ) /*0x558044*/
         return; /*0x558044*/
     }
-    (*(void (__thiscall **)(ListClass *, int))(*(_DWORD *)this->__pad_0 + 184))(this, v3); /*0x558051*/
+    (*(void (__thiscall **)(ListClass *, int))(*(_DWORD *)this->q000 + 184))(this, v3); /*0x558051*/
   }
 }
 } // namespace gamemd
@@ -69,7 +69,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
 namespace gamemd {
 int ColorListClass::GetColor(int a2)
 {
-  return (*(int (__thiscall **)(ColorListClass *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 204))(this, a2, 0); /*0x488eef*/
+  return (*(int (__thiscall **)(ColorListClass *, int, _DWORD))(*(_DWORD *)this->q000 + 204))(this, a2, 0); /*0x488eef*/
 }
 } // namespace gamemd
 // 0x488F00
@@ -82,7 +82,7 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
 
   v3 = *((_DWORD *)Block + 93); /*0x488f05*/
   v4 = (char *)Block + 372; /*0x488f0b*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&ColorListClass_vftable; /*0x488f13*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&ColorListClass_vftable; /*0x488f13*/
   (*(void (__thiscall **)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
   *((_DWORD *)Block + 100) = 0; /*0x488f1e*/
   v5 = (void *)*((_DWORD *)v4 + 1); /*0x488f24*/
@@ -97,6 +97,6 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
   ListClass::Destruct((ListClass *)Block); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
     RA2_OPDEL(Block); /*0x488f57*/
-  return Block->__pad_0; /*0x488f61*/
+  return Block->q000; /*0x488f61*/
 }
 } // namespace gamemd

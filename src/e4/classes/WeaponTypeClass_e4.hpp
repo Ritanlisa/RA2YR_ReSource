@@ -211,6 +211,10 @@ struct WeaponTypeClass {
     void * Create();
     void * Create(AbstractClass * Source);
     WeaponTypeClass * ddtor(void ** Block, char a2);
+    int[7] DownReport;  // 0x216 (ml)
+    unsigned int DownReport;  // 0x534 (ml)
+    bool InfiniteMindControl;  // 0x244
+    bool IsMagBeam;  // 0x272
 };
 
 } // namespace gamemd

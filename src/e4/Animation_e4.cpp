@@ -101,7 +101,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
         if ( *(_BYTE *)(i + this->u32_520 + 3983) ) /*0x454aa7*/
         {
           BuildingClass::GetHealthRatio(); /*0x454ab4*/
-          _EDX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x454ab9*/
+          _EDX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x454ab9*/
           __asm /*0x454abf*/
           {
             fcomp qword ptr [edx+1700h]
@@ -181,7 +181,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     {
   LABEL_52:
       BuildingClass::GetHealthRatio(); /*0x454c59*/
-      _EDX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x454c60*/
+      _EDX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x454c60*/
       __asm /*0x454c66*/
       {
         fcomp qword ptr [edx+1700h]
@@ -198,7 +198,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
         v26 = (AnimTypeClass *)(this->u32_520 + 5208); /*0x454c8d*/
       }
       if ( v26 && IDA_LOBYTE(v26->vfptr) ) /*0x454c96*/
-        BuildingClass::PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v26, 19, v25, 0, 0); /*0x454ca5*/
+        BuildingClass::PlayAnim(*(int *)&DSurface_ViewBounds.q0FC[324], v26, 19, v25, 0, 0); /*0x454ca5*/
       v27 = 0; /*0x454caa*/
       for ( j = 0; j < 1428; j += 68 ) /*0x454cac*/
       {

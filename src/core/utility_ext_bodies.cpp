@@ -44,7 +44,7 @@ int GraphicMenuImageItem::QueryInterface(char a2)
   ObjectClass *v3; // edi
 
   v3 = (ObjectClass *)this->q00C; /*0x4f3844*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GraphicMenuImageItem_vftable; /*0x4f3847*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&GraphicMenuImageItem_vftable; /*0x4f3847*/
   if ( v3 ) /*0x4f384f*/
   {
     j_DeleteAndZero(v3); /*0x4f3853*/

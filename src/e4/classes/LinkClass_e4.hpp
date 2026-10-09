@@ -15,6 +15,7 @@ struct LinkClass {
     LinkClass * Destru_vt00(unsigned int * Block, char a2);
     int Destroy(void *a1);
     int Destruct();
+    unsigned int q000;  // 0x0 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -11,10 +11,10 @@
 // Normal@0xB9C int[20] g7-til-merge + q0A0/q0B8 byte windows) -- g57e2 W5
 int StartAudioController(unsigned int *aP0, ::gamemd::AudioSource *a1);  // g57e2 W5c: TU-local (entity/supplied_bodies.cpp:40 precedent; raw 0x423b00)
 struct dword_8871E0_v {
-    unsigned char __pad_0[0x94];
+    unsigned char q000[0x94];
     void *InfantryBrute;  // 0x94 (ml RulesClass@0x94 InfantryBrute g7-til-merge; g57e2 W5f)
     unsigned char __pad_98[8];
-    unsigned char __pad_A0[28];
+    unsigned char q0A0[28];
     unsigned char __pad_BC[0xB9C - 0xBC];
     int Normal[20];
 };
@@ -74,7 +74,7 @@ namespace gamemd {
     int ZCoordToScreenY(int a1);                       // raw 0x423a6c;
     int StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // 0x7509E0 真形;
     struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
-        unsigned char __pad_0[0x58];
+        unsigned char q000[0x58];
         unsigned char __pad_58[0x280 - 0x58];      // 覆盖 __pad_58[416] = +0x1F8
     };
     extern stru_87F5F0_host stru_87F5F0;          // data: 0x87F5F0
@@ -1206,30 +1206,30 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   {
     if ( sideIndex == 1 ) /*0x707d5a*/
     {
-      v5 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d5c*/
-      v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3964); /*0x707d61*/
+      v5 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x707d5c*/
+      v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3964); /*0x707d61*/
     }
     else
     {
       v7 = sideIndex == 2; /*0x707d69*/
-      v5 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d6c*/
+      v5 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x707d6c*/
       if ( v7 ) /*0x707d71*/
-        v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3968); /*0x707d73*/
+        v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3968); /*0x707d73*/
       else
-        v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707d7b*/
+        v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3948); /*0x707d7b*/
     }
   }
   else
   {
-    v5 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d4a*/
-    v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3960); /*0x707d4f*/
+    v5 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x707d4a*/
+    v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3960); /*0x707d4f*/
   }
   if ( *(_DWORD *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(_DWORD *)(v5 + 3948); /*0x707dc5*/
   if ( (*((unsigned __int8 (__thiscall **)(TechnoClass *))this->vfptr + 171))(this) /*0x707db2*/
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
-    return *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
+    return *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3948); /*0x707dc4*/
   }
   return v6; /*0x707d37*/
 }
@@ -1289,11 +1289,11 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
          &v7);
   if ( v2 != -1 ) /*0x633d54*/
     Array::RemoveAt((Array *)&stru_AC4B30.__pad_EC[124], v2); /*0x633d5c*/
-  v3 = (*(int (__thiscall **)(Array *, TechnoClass **))(*(_DWORD *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &v7); /*0x633d71*/
+  v3 = (*(int (__thiscall **)(Array *, TechnoClass **))(*(_DWORD *)stru_AC4B30.q000 + 16))(&stru_AC4B30, &v7); /*0x633d71*/
   if ( v3 != -1 ) /*0x633d77*/
     Array::RemoveAt(&stru_AC4B30, v3); /*0x633d7f*/
-  v4 = (*((int (__thiscall **)(void **, TechnoClass **))stru_AC4B30.Array_field_0xE8 + 4))( /*0x633d94*/
-         &stru_AC4B30.Array_field_0xE8,
+  v4 = (*((int (__thiscall **)(void **, TechnoClass **))stru_AC4B30.q0E8 + 4))( /*0x633d94*/
+         &stru_AC4B30.q0E8,
          &v7);
   if ( v4 != -1 && v4 < *(int *)&stru_AC4B30.__pad_EC[12] ) /*0x633da4*/
   {
@@ -1310,8 +1310,8 @@ int TechnoClass::ClearScriptPlanningData() { return 0;
     *(_DWORD *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
   if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[28] == v7 ) /*0x633de5*/
     *(_DWORD *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
-  if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
-    *(_DWORD *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
+  if ( *(TechnoClass **)&stru_AC4B30.q070[80] == v7 ) /*0x633df3*/
+    *(_DWORD *)&stru_AC4B30.q070[80] = 0; /*0x633df5*/
   occupant = (void *)this->occupant; /*0x633dfb*/
   this->NeedsSaveOrLink = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
   if ( occupant && (unsigned char)((this->fallRate) >> 8) ) /*0x633e09*/

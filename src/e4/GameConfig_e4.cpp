@@ -156,7 +156,7 @@ void GameConfig::Constructor()
   char v7[12]; // [esp+64h] [ebp-14h] BYREF
   int v8; // [esp+70h] [ebp-8h]
 
-  if ( !*(_DWORD *)&this->__pad_0[56] ) /*0x5d67bd*/
+  if ( !*(_DWORD *)&this->q000[56] ) /*0x5d67bd*/
   {
     v2 = RA2_OPNEW(0x58u); /*0x5d67c9*/
     v3 = v2; /*0x5d67ce*/
@@ -184,17 +184,17 @@ void GameConfig::Constructor()
     {
       v3 = 0; /*0x5d682f*/
     }
-    *(_DWORD *)&this->__pad_0[56] = v3; /*0x5d6839*/
-    CCFileClass::Construct2(&v6, (char **)&this->__pad_0[44]); /*0x5d683c*/
+    *(_DWORD *)&this->q000[56] = v3; /*0x5d6839*/
+    CCFileClass::Construct2(&v6, (char **)&this->q000[44]); /*0x5d683c*/
     if ( (unsigned __int8)CCFileClass::Open(&v6, 0) ) /*0x5d6846*/
-      CCINIClass::Load(*(CCINIClass **)&this->__pad_0[56], (int)&v6, 0, 0); /*0x5d685a*/
+      CCINIClass::Load(*(CCINIClass **)&this->q000[56], (int)&v6, 0, 0); /*0x5d685a*/
     *(_DWORD *)v6.__tail_0 = &(void*)(void*)&CCFileClass_vftable; /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
     *(_DWORD *)v6.__tail_0 = &off_7E1668; /*0x5d6878*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5d6880*/
   }
-  return *(char **)&this->__pad_0[56]; /*0x5d6888*/
+  return *(char **)&this->q000[56]; /*0x5d6888*/
 }
 }
 // 0x77E7A0

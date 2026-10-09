@@ -79,21 +79,21 @@ int Audio::GetChannelStatus(void *a1_1)
   int v3; // edi
   int v4; // eax
 
-  if ( (a1_1->__pad_3C[104] & 5) != 0 ) /*0x40272a*/
+  if ( (a1_1->q03C[104] & 5) != 0 ) /*0x40272a*/
     return -2146500608; /*0x40272c*/
-  if ( !*(_DWORD *)&a1_1->__pad_3C[300] ) /*0x402733*/
+  if ( !*(_DWORD *)&a1_1->q03C[300] ) /*0x402733*/
     return -2147024896; /*0x40273d*/
   Audio::InitChannels(a1_1->__pad_10); /*0x402748*/
   ObjectClass::Cleanup((ObjectClass *)a1_1); /*0x40274f*/
-  (*(void (__thiscall **)(Audio *))(*(_DWORD *)&a1_1->__pad_3C[152] + 40))(a1_1); /*0x40275c*/
-  v3 = (*(int (__thiscall **)(Audio *))(*(_DWORD *)&a1_1->__pad_3C[152] + 12))(a1_1); /*0x40276a*/
+  (*(void (__thiscall **)(Audio *))(*(_DWORD *)&a1_1->q03C[152] + 40))(a1_1); /*0x40275c*/
+  v3 = (*(int (__thiscall **)(Audio *))(*(_DWORD *)&a1_1->q03C[152] + 12))(a1_1); /*0x40276a*/
   if ( !v3 ) /*0x40276e*/
   {
-    v4 = *(_DWORD *)&a1_1->__pad_3C[104]; /*0x402770*/
+    v4 = *(_DWORD *)&a1_1->q03C[104]; /*0x402770*/
     IDA_LOBYTE(v4) = v4 | 1; /*0x402776*/
-    *(_DWORD *)&a1_1->__pad_3C[104] = v4; /*0x402778*/
+    *(_DWORD *)&a1_1->q03C[104] = v4; /*0x402778*/
   }
-  (*(void (__thiscall **)(Audio *))(*(_DWORD *)&a1_1->__pad_3C[152] + 44))(a1_1); /*0x402786*/
+  (*(void (__thiscall **)(Audio *))(*(_DWORD *)&a1_1->q03C[152] + 44))(a1_1); /*0x402786*/
   return v3; /*0x402731*/
 }
 }
@@ -106,24 +106,24 @@ int Audio::ReleaseChannelRefs()
   RefCount **v4; // esi
 
   v2 = 0; /*0x404d84*/
-  result = *(_DWORD *)&this->__pad_3C[108]; /*0x404d86*/
+  result = *(_DWORD *)&this->q03C[108]; /*0x404d86*/
   if ( result <= 0 ) /*0x404d8e*/
   {
-    *(_DWORD *)&this->__pad_3C[108] = 0; /*0x404dbd*/
+    *(_DWORD *)&this->q03C[108] = 0; /*0x404dbd*/
   }
   else
   {
-    v4 = (RefCount **)&this->__pad_18[16]; /*0x404d91*/
+    v4 = (RefCount **)&this->q018[16]; /*0x404d91*/
     do /*0x404dad*/
     {
       RefCount::Decrement(*v4); /*0x404d96*/
       *v4 = 0; /*0x404d9b*/
-      result = *(_DWORD *)&this->__pad_3C[108]; /*0x404da1*/
+      result = *(_DWORD *)&this->q03C[108]; /*0x404da1*/
       ++v2; /*0x404da7*/
       ++v4; /*0x404da8*/
     }
     while ( v2 < result ); /*0x404dad*/
-    *(_DWORD *)&this->__pad_3C[108] = 0; /*0x404daf*/
+    *(_DWORD *)&this->q03C[108] = 0; /*0x404daf*/
   }
   return result; /*0x404dba*/
 }
@@ -139,37 +139,37 @@ int Audio::UpdatePlaybackPosition()
   int v7; // edx
   int v8; // eax
 
-  v2 = *(_DWORD *)&this->__pad_3C[116]; /*0x4054a4*/
+  v2 = *(_DWORD *)&this->q03C[116]; /*0x4054a4*/
   if ( this != *(Audio **)(v2 + 192) ) /*0x4054b0*/
     return 0; /*0x4054b3*/
   AudioFile::GetCallback((AudioFile *)v2); /*0x4054b7*/
-  v4 = *(_DWORD **)&this->__pad_3C[268]; /*0x4054bc*/
-  v5 = *(_DWORD *)this->__pad_18; /*0x4054c2*/
+  v4 = *(_DWORD **)&this->q03C[268]; /*0x4054bc*/
+  v5 = *(_DWORD *)this->q018; /*0x4054c2*/
   IDA_LOBYTE(v5) = v5 | 8; /*0x4054c5*/
-  *(_DWORD *)this->__pad_18 = v5; /*0x4054c7*/
-  BindChannelAudioStream(*(_DWORD **)&this->__pad_3C[116], v4); /*0x4054d2*/
-  EndBufferMixer((int *)(*(_DWORD *)&this->__pad_3C[116] + 56), *(_DWORD *)&this->__pad_3C[272]); /*0x4054e6*/
-  v6 = *(_DWORD *)&this->__pad_3C[276]; /*0x4054eb*/
+  *(_DWORD *)this->q018 = v5; /*0x4054c7*/
+  BindChannelAudioStream(*(_DWORD **)&this->q03C[116], v4); /*0x4054d2*/
+  EndBufferMixer((int *)(*(_DWORD *)&this->q03C[116] + 56), *(_DWORD *)&this->q03C[272]); /*0x4054e6*/
+  v6 = *(_DWORD *)&this->q03C[276]; /*0x4054eb*/
   v7 = 0x4000; /*0x4054f1*/
   if ( v6 > 0 ) /*0x4054f8*/
     v7 = 0x4000 - (v6 << 14) / 0x64u; /*0x40550e*/
-  EndBufferMixer((int *)(*(_DWORD *)&this->__pad_3C[116] + 16), v7); /*0x405519*/
-  *(_DWORD *)&this->__pad_18[4] = 3; /*0x40551e*/
-  *(_DWORD *)this->__pad_18 |= 2u; /*0x40552b*/
-  *(_DWORD *)&this->__pad_3C[268] = 0; /*0x40552e*/
-  if ( Audio::GetChannelStatus(*(Audio **)&this->__pad_3C[116]) ) /*0x40553e*/
+  EndBufferMixer((int *)(*(_DWORD *)&this->q03C[116] + 16), v7); /*0x405519*/
+  *(_DWORD *)&this->q018[4] = 3; /*0x40551e*/
+  *(_DWORD *)this->q018 |= 2u; /*0x40552b*/
+  *(_DWORD *)&this->q03C[268] = 0; /*0x40552e*/
+  if ( Audio::GetChannelStatus(*(Audio **)&this->q03C[116]) ) /*0x40553e*/
   {
-    *(_DWORD *)&this->__pad_18[4] = 1; /*0x405547*/
-    *(_DWORD *)&this->__pad_3C[268] = v4; /*0x40554e*/
-    v8 = *(_DWORD *)this->__pad_18; /*0x405554*/
+    *(_DWORD *)&this->q018[4] = 1; /*0x405547*/
+    *(_DWORD *)&this->q03C[268] = v4; /*0x40554e*/
+    v8 = *(_DWORD *)this->q018; /*0x405554*/
     IDA_LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
-    *(_DWORD *)this->__pad_18 = v8; /*0x405559*/
-    AudioStream::Stop(*(AudioStream **)&this->__pad_3C[116]); /*0x405562*/
+    *(_DWORD *)this->q018 = v8; /*0x405559*/
+    AudioStream::Stop(*(AudioStream **)&this->q03C[116]); /*0x405562*/
     return 0; /*0x405567*/
   }
   else
   {
-    AudioStream::Stop(*(AudioStream **)&this->__pad_3C[116]); /*0x405572*/
+    AudioStream::Stop(*(AudioStream **)&this->q03C[116]); /*0x405572*/
     return 1; /*0x405577*/
   }
 }
@@ -269,9 +269,9 @@ int Audio::WaitForCallback()
   unsigned __int64 v4; // kr00_8
 
   v2 = Audio::Callback(); /*0x4070bd*/
-  IDA_LODWORD(v3) = *(_DWORD *)&this->__pad_0[4]; /*0x4070c9*/
+  IDA_LODWORD(v3) = *(_DWORD *)&this->q000[4]; /*0x4070c9*/
   v4 = *(_QWORD *)this->__pad_10 + IDA___PAIR64__(IDA_HIDWORD(v3), v2); /*0x4070cc*/
-  if ( (_DWORD)v3 != *(_DWORD *)&this->__pad_0[8] ) /*0x4070d0*/
+  if ( (_DWORD)v3 != *(_DWORD *)&this->q000[8] ) /*0x4070d0*/
   {
     do /*0x4070ee*/
     {
@@ -279,9 +279,9 @@ int Audio::WaitForCallback()
       if ( v3 >= v4 ) /*0x4070df*/
         break; /*0x4070df*/
       Event::Dispatch(); /*0x4070e1*/
-      IDA_LODWORD(v3) = *(_DWORD *)&this->__pad_0[8]; /*0x4070e9*/
+      IDA_LODWORD(v3) = *(_DWORD *)&this->q000[8]; /*0x4070e9*/
     }
-    while ( *(_DWORD *)&this->__pad_0[4] != (_DWORD)v3 ); /*0x4070ee*/
+    while ( *(_DWORD *)&this->q000[4] != (_DWORD)v3 ); /*0x4070ee*/
   }
   return v3; /*0x4070f0*/
 }
@@ -293,10 +293,10 @@ int Audio::Release()
   int result; // eax
   Voice *v2; // [esp+0h] [ebp-4h]
 
-  result = *(_DWORD *)&this->__pad_3C[76]; /*0x407f43*/
+  result = *(_DWORD *)&this->q03C[76]; /*0x407f43*/
   if ( !result ) /*0x407f4b*/
   {
-    result = (int)this->Audio_field_0x14; /*0x407f4d*/
+    result = (int)this->q014; /*0x407f4d*/
     if ( result ) /*0x407f52*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407f59*/
@@ -311,21 +311,21 @@ int Audio::Release()
 namespace gamemd {
 int Audio::IsSoundPlaying()
 {
-  return this->Audio_field_0xC[0] & 1; /*0x408076*/
+  return this->u32_C[0] & 1; /*0x408076*/
 }
 }
 // 0x408540
 namespace gamemd {
 int Audio::CalcRate(int a2, int a3)
 {
-  return a2 * (int)this->Audio_field_0x14 / 1000; /*0x40855b*/
+  return a2 * (int)this->q014 / 1000; /*0x40855b*/
 }
 }
 // 0x409320
 namespace gamemd {
 int Audio::GetSampleSize()
 {
-  return (char *)this->Audio_field_0x34 - (char *)this->Audio_field_0x38; /*0x409328*/
+  return (char *)this->q034 - (char *)this->q038; /*0x409328*/
 }
 }
 // 0x53E1D0
@@ -452,11 +452,11 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
 namespace gamemd {
 char ** Audio::SetSoundFileName(char *Source, int a3)
 {
-  *(_DWORD *)this->__pad_0 = 0; /*0x5d5825*/
-  *(_DWORD *)&this->__pad_0[4] = 0; /*0x5d5827*/
-  this->__pad_0[8] = 0; /*0x5d582a*/
+  *(_DWORD *)this->q000 = 0; /*0x5d5825*/
+  *(_DWORD *)&this->q000[4] = 0; /*0x5d5827*/
+  this->q000[8] = 0; /*0x5d582a*/
   if ( Audio::IsSoundEnabled() ) /*0x5d582d*/
-    *(_DWORD *)this->__pad_0 = _strdup(Source); /*0x5d5843*/
+    *(_DWORD *)this->q000 = _strdup(Source); /*0x5d5843*/
   return (char **)this; /*0x5d5847*/
 }
 }
@@ -640,20 +640,20 @@ int Audio::LoadWAVFiles(void *a1_1)
       IDA_LOBYTE(IsSoundEnabled) = stru_A8EB00.?[384]; /*0x720814*/
       if ( !stru_A8EB00.?[384] ) /*0x72081b*/
       {
-        IsSoundEnabled = *(_DWORD *)&a1_1->__pad_18[12]; /*0x720821*/
+        IsSoundEnabled = *(_DWORD *)&a1_1->q018[12]; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
-          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(*(_DWORD *)a1_1->__pad_18 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
+          _makepath(Buffer, 0, 0, (const char *)(*(_DWORD *)(*(_DWORD *)a1_1->q018 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
           CCFileClass::Construct(&v10, Buffer); /*0x720869*/
-          v4 = 4 * i + *(_DWORD *)a1_1->__pad_18; /*0x720877*/
+          v4 = 4 * i + *(_DWORD *)a1_1->q018; /*0x720877*/
           *(_BYTE *)(*(_DWORD *)v4 + 650) = CCFileClass::Open(&v10, 0); /*0x720881*/
-          if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)a1_1->__pad_18 + 4 * i) + 650) ) /*0x72088d*/
+          if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)a1_1->q018 + 4 * i) + 650) ) /*0x72088d*/
           {
             Struct::ZeroInit32(v9); /*0x72089b*/
             FileClass::Load(&v10, (const CHAR *)1); /*0x7208a6*/
             if ( ParseWaveFileHeader((int)&v10, v9, v8) ) /*0x7208b8*/
             {
-              v5 = (_DWORD *)(4 * i + *(_DWORD *)a1_1->__pad_18); /*0x7208cc*/
+              v5 = (_DWORD *)(4 * i + *(_DWORD *)a1_1->q018); /*0x7208cc*/
               v6 = sub_408560((int)v9, v8[0]) / 0x3E8; /*0x7208dc*/
               IDA_HIDWORD(v6) = *v5; /*0x7208e1*/
               v8[1] = v6; /*0x7208e4*/
@@ -665,7 +665,7 @@ int Audio::LoadWAVFiles(void *a1_1)
           Vector::Clear((int)v11); /*0x72090c*/
           *(_DWORD *)v10.__tail_0 = &off_7E1668; /*0x720915*/
           BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x72091d*/
-          IsSoundEnabled = *(_DWORD *)&a1_1->__pad_18[12]; /*0x720922*/
+          IsSoundEnabled = *(_DWORD *)&a1_1->q018[12]; /*0x720922*/
         }
       }
     }
@@ -2471,8 +2471,8 @@ namespace gamemd {
 int Audio::FlushChannel(unsigned int ** Block)
 {
   LinkedList::Init((LinkedList *)Block); /*0x404dd3*/
-  *(_DWORD *)&Block->__pad_3C[252] = 0; /*0x404dd8*/
-  if ( Block->__pad_18[0] >= 0 ) /*0x404de7*/
+  *(_DWORD *)&Block->q03C[252] = 0; /*0x404dd8*/
+  if ( Block->q018[0] >= 0 ) /*0x404de7*/
     PushFrontLinkedListAlt(dword_87E2A8, (int)Block); /*0x404e07*/
   else
     RA2_OPDEL(Block); /*0x404dea*/
@@ -2808,7 +2808,7 @@ int sub_7B84D0()
       return WWMouseClass::UpdateCursorMovement((LONG *)dword_B78164); /*0x7b84e3*/
       {
         int result; // eax
-        void *WWMouseClass_field_0x20; // edx
+        void *q020; // edx
         int v4; // eax
         void *v5; // ecx
         LONG v6; // eax
@@ -2817,46 +2817,46 @@ int sub_7B84D0()
         char v9; // bl
         int v10; // eax
         LONG y; // [esp+10h] [ebp-10h] BYREF
-        void *WWMouseClass_field_0x1C; // [esp+14h] [ebp-Ch] BYREF
+        void *q01C; // [esp+14h] [ebp-Ch] BYREF
         struct tagPOINT Point; // [esp+18h] [ebp-8h] BYREF
 
-        result = dword_B78164->WWMouseClass_field_0x24; /*0x7ba096*/
+        result = dword_B78164->q024; /*0x7ba096*/
         if ( result ) /*0x7ba09b*/
         {
           if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba0b7*/
             Debug::Log(); /*0x7ba0c8*/
           if ( UI_Update() ) /*0x7ba0d0*/
           {
-            WWMouseClass_field_0x20 = dword_B78164->WWMouseClass_field_0x20; /*0x7ba0dc*/
-            WWMouseClass_field_0x1C = dword_B78164->WWMouseClass_field_0x1C; /*0x7ba0df*/
-            y = (LONG)WWMouseClass_field_0x20; /*0x7ba0e3*/
+            q020 = dword_B78164->q020; /*0x7ba0dc*/
+            q01C = dword_B78164->q01C; /*0x7ba0df*/
+            y = (LONG)q020; /*0x7ba0e3*/
           }
           else
           {
             GetCursorPos(&Point); /*0x7ba0ee*/
-            v4 = *(_DWORD *)dword_B78164->__pad_0; /*0x7ba0fc*/
-            WWMouseClass_field_0x1C = (void *)Point.x; /*0x7ba0fe*/
+            v4 = *(_DWORD *)dword_B78164->q000; /*0x7ba0fc*/
+            q01C = (void *)Point.x; /*0x7ba0fe*/
             y = Point.y; /*0x7ba102*/
-            (*(void (__thiscall **)(WWMouseClass *, void **, LONG *))(v4 + 68))(dword_B78164, &WWMouseClass_field_0x1C, &y); /*0x7ba112*/
+            (*(void (__thiscall **)(WWMouseClass *, void **, LONG *))(v4 + 68))(dword_B78164, &q01C, &y); /*0x7ba112*/
             v5 = (void *)y; /*0x7ba119*/
-            dword_B78164->WWMouseClass_field_0x1C = WWMouseClass_field_0x1C; /*0x7ba11d*/
-            dword_B78164->WWMouseClass_field_0x20 = v5; /*0x7ba120*/
+            dword_B78164->q01C = q01C; /*0x7ba11d*/
+            dword_B78164->q020 = v5; /*0x7ba120*/
           }
-          if ( (*(unsigned __int8 (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)dword_B78164->WWMouseClass_field_0x24 + 104))( /*0x7ba13d*/
-                 dword_B78164->WWMouseClass_field_0x24,
+          if ( (*(unsigned __int8 (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)dword_B78164->q024 + 104))( /*0x7ba13d*/
+                 dword_B78164->q024,
                  0,
                  0)
             || byte_B78170 )
           {
             v7 = y; /*0x7ba16d*/
-            v8 = WWMouseClass_field_0x1C; /*0x7ba173*/
+            v8 = q01C; /*0x7ba173*/
             v9 = byte_B78170; /*0x7ba17d*/
             if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba18a*/
               Debug::Log(); /*0x7ba19b*/
-            if ( v8 != *(void **)dword_B78164->__pad_14 || v7 != *(_DWORD *)&dword_B78164->__pad_14[4] || v9 ) /*0x7ba1af*/
+            if ( v8 != *(void **)dword_B78164->q014 || v7 != *(_DWORD *)&dword_B78164->q014[4] || v9 ) /*0x7ba1af*/
             {
-              if ( (*(unsigned __int8 (__thiscall **)(WWMouseClass *))(*(_DWORD *)dword_B78164->__pad_0 + 28))(dword_B78164) /*0x7ba1d2*/
-                && !(*(unsigned __int8 (__thiscall **)(WWMouseClass *))(*(_DWORD *)dword_B78164->__pad_0 + 8))(dword_B78164)
+              if ( (*(unsigned __int8 (__thiscall **)(WWMouseClass *))(*(_DWORD *)dword_B78164->q000 + 28))(dword_B78164) /*0x7ba1d2*/
+                && !(*(unsigned __int8 (__thiscall **)(WWMouseClass *))(*(_DWORD *)dword_B78164->q000 + 8))(dword_B78164)
                 && stru_A8EB00.?[412] )
               {
                 if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba1eb*/
@@ -2864,17 +2864,17 @@ int sub_7B84D0()
                 WWMouseClass::initSurface(dword_B78164); /*0x7ba206*/
                 ReleaseMutex(hMutex); /*0x7ba212*/
               }
-              v10 = *(_DWORD *)dword_B78164->__pad_0; /*0x7ba218*/
-              *(_DWORD *)dword_B78164->__pad_14 = v8; /*0x7ba21c*/
-              *(_DWORD *)&dword_B78164->__pad_14[4] = v7; /*0x7ba21f*/
+              v10 = *(_DWORD *)dword_B78164->q000; /*0x7ba218*/
+              *(_DWORD *)dword_B78164->q014 = v8; /*0x7ba21c*/
+              *(_DWORD *)&dword_B78164->q014[4] = v7; /*0x7ba21f*/
               if ( (*(unsigned __int8 (__thiscall **)(WWMouseClass *))(v10 + 28))(dword_B78164) /*0x7ba23b*/
-                && !(*(unsigned __int8 (__thiscall **)(WWMouseClass *))(*(_DWORD *)dword_B78164->__pad_0 + 8))(dword_B78164)
+                && !(*(unsigned __int8 (__thiscall **)(WWMouseClass *))(*(_DWORD *)dword_B78164->q000 + 8))(dword_B78164)
                 && stru_A8EB00.?[412] )
               {
                 if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7ba253*/
                   Debug::Log(); /*0x7ba264*/
                 WWMouseClass::updateCursorRect(dword_B78164); /*0x7ba26e*/
-                Mouse::DrawCursor((Mouse *)dword_B78164, (int *)dword_B78164->WWMouseClass_field_0x24, 0, 0); /*0x7ba27d*/
+                Mouse::DrawCursor((Mouse *)dword_B78164, (int *)dword_B78164->q024, 0, 0); /*0x7ba27d*/
                 ReleaseMutex(hMutex); /*0x7ba289*/
               }
             }
@@ -2885,8 +2885,8 @@ int sub_7B84D0()
           else
           {
             v6 = y; /*0x7ba143*/
-            *(_DWORD *)dword_B78164->__pad_14 = WWMouseClass_field_0x1C; /*0x7ba147*/
-            *(_DWORD *)&dword_B78164->__pad_14[4] = v6; /*0x7ba14a*/
+            *(_DWORD *)dword_B78164->q014 = q01C; /*0x7ba147*/
+            *(_DWORD *)&dword_B78164->q014[4] = v6; /*0x7ba14a*/
             byte_B78170 = 1; /*0x7ba153*/
             return ReleaseMutex(hMutex); /*0x7ba15b*/
           }

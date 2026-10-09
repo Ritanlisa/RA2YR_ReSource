@@ -46,7 +46,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   m_8 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
-    (*(void (__thiscall **)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x76594d*/
+    (*(void (__thiscall **)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(_DWORD *)this->q000 + 12))(this); /*0x76594d*/
     return 1; /*0x765953*/
   }
   IDA_LOBYTE(this->m_C) = 0; /*0x765857*/
@@ -60,7 +60,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *(_DWORD *)v6->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7658bd*/
+        *(_DWORD *)v6->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -85,7 +85,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *(_DWORD *)v6->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x76588d*/
+        *(_DWORD *)v6->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x76588d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x765893*/
         --v7; /*0x765896*/
       }
@@ -131,7 +131,7 @@ namespace gamemd {
 BOOL Campaign_WorldDominationTour_24::Release(void *a1_1)
 {
   ++*((_DWORD *)a1_1 + 2); /*0x765b42*/
-  return a1_1->__pad_0; /*0x765b45*/
+  return a1_1->q000; /*0x765b45*/
 }
 }
 // 0x765B50
@@ -139,7 +139,7 @@ namespace gamemd {
 BOOL Campaign_WorldDominationTour_24::ddtor()
 {
   --this->u32_8; /*0x765b52*/
-  return this->__pad_0; /*0x765b55*/
+  return this->q000; /*0x765b55*/
 }
 }
 // 0x60D380
@@ -169,7 +169,7 @@ LONG Campaign::Screen(char a1)
       MessageLoop(); /*0x60d3d9*/
       if ( !*(_DWORD *)&dword_A8B238 /*0x60d3fc*/
         || *(_DWORD *)&dword_A8B238 == 5
-        || IDA_BYTE2(stru_A8D600.Network_field_0xC)
+        || IDA_BYTE2(stru_A8D600.q00C)
         || dword_A8DAB4 )
       {
         Event::Dispatch(); /*0x60d412*/
@@ -227,10 +227,10 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 namespace gamemd {
 VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765779*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     RA2_OPDEL(Block); /*0x765782*/
-  return Block->__pad_0; /*0x76578c*/
+  return Block->q000; /*0x76578c*/
 }
 } // namespace gamemd
 
@@ -321,7 +321,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = *(void (__thiscall ****)(_DWORD, int))&Block->m_1[3]; /*0x765b63*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765b66*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765b66*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/
@@ -331,6 +331,6 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   Block->m_8 = 0; /*0x765b92*/
   if ( (a2 & 1) != 0 ) /*0x765b99*/
     RA2_OPDEL(Block); /*0x765b9c*/
-  return Block->__pad_0; /*0x765ba6*/
+  return Block->q000; /*0x765ba6*/
 }
 } // namespace gamemd

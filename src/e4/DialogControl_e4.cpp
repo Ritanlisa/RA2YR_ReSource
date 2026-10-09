@@ -12,7 +12,7 @@ int DialogControl::Hide()
 {
   int v1; // eax
 
-  v1 = *(_DWORD *)this->__pad_0; /*0x4e1450*/
+  v1 = *(_DWORD *)this->q000; /*0x4e1450*/
   this->u32_1E = 0; /*0x4e1452*/
   this->u32_1C = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
@@ -53,6 +53,6 @@ _DWORD * DialogControl::Constructor()
   this->u32_40 = 0; /*0x62337c*/
   this->u32_5C = 0; /*0x62337f*/
   this->u32_90 = -1; /*0x623382*/
-  return this->__pad_0; /*0x62338e*/
+  return this->q000; /*0x62338e*/
 }
 } // namespace gamemd

@@ -20,7 +20,7 @@ ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char
 {
   _DWORD *result; // eax
 
-  result = this->__pad_0; /*0x4e12f4*/
+  result = this->q000; /*0x4e12f4*/
   this->Height = a3; /*0x4e12fb*/
   this->Width = a2; /*0x4e1302*/
   this->ID = a5; /*0x4e1309*/
@@ -31,7 +31,7 @@ ControlClass GadgetClass::Construct(int a2, int a3, int a4, int a5, int a6, char
   IDA_BYTE2(this->Image) = 0; /*0x4e1322*/
   IDA_BYTE1(this->Image) = a7; /*0x4e1327*/
   *(_DWORD *)this->Hovered = a6; /*0x4e132a*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GadgetClass_vftable; /*0x4e132d*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( a7 ) /*0x4e1334*/
     *(_DWORD *)this->Hovered = a6 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
@@ -44,7 +44,7 @@ ControlClass GadgetClass::Dtor()
   ShpButtonClass *v1; // eax
   int v2; // eax
 
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GadgetClass_vftable; /*0x4e1390*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&GadgetClass_vftable; /*0x4e1390*/
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e139f*/
   {
@@ -67,9 +67,9 @@ ControlClass GadgetClass::Dtor()
 namespace gamemd {
 ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 {
-  int ListClass_field_0x14; // ecx
-  int ListClass_field_0x10; // eax
-  int ListClass_field_0x18; // edx
+  int q014; // ecx
+  int u32_10; // eax
+  int u32_18; // edx
   int i; // edi
   int v7; // eax
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
@@ -78,17 +78,17 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     return 0; /*0x557a0b*/
   (*(void (__thiscall **)(void *, int, int, int, int))(*(_DWORD *)stru_887598.lineTrailer + 32))( /*0x557965*/
     stru_887598.lineTrailer,
-    this->ListClass_field_0x0C,
-    this->ListClass_field_0x10,
-    this->ListClass_field_0x14,
-    this->ListClass_field_0x18);
-  ListClass_field_0x14 = this->ListClass_field_0x14; /*0x55796b*/
-  ListClass_field_0x10 = this->ListClass_field_0x10; /*0x55796e*/
-  v9[0] = this->ListClass_field_0x0C; /*0x557971*/
-  ListClass_field_0x18 = this->ListClass_field_0x18; /*0x557975*/
-  v9[2] = ListClass_field_0x14; /*0x557978*/
-  v9[3] = ListClass_field_0x18; /*0x55797c*/
-  v9[1] = ListClass_field_0x10; /*0x55798b*/
+    this->q00C,
+    this->u32_10,
+    this->q014,
+    this->u32_18);
+  q014 = this->q014; /*0x55796b*/
+  u32_10 = this->u32_10; /*0x55796e*/
+  v9[0] = this->q00C; /*0x557971*/
+  u32_18 = this->u32_18; /*0x557975*/
+  v9[2] = q014; /*0x557978*/
+  v9[3] = u32_18; /*0x55797c*/
+  v9[1] = u32_10; /*0x55798b*/
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
   if ( this->u32_44 ) /*0x557994*/
   {
@@ -96,12 +96,12 @@ ControlClass GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     {
       v7 = i + this->u32_170; /*0x5579ad*/
       if ( this->u32_44 > v7 ) /*0x5579b1*/
-        (*(void (__thiscall **)(ListClass *, int, int, int, int, bool))(*(_DWORD *)this->__pad_0 + 200))( /*0x5579e0*/
+        (*(void (__thiscall **)(ListClass *, int, int, int, int, bool))(*(_DWORD *)this->q000 + 200))( /*0x5579e0*/
           this,
           v7,
-          this->ListClass_field_0x0C + 1,
-          i * this->u32_4C + this->ListClass_field_0x10 + 1,
-          this->ListClass_field_0x14 - 2,
+          this->q00C + 1,
+          i * this->u32_4C + this->u32_10 + 1,
+          this->q014 - 2,
           v7 == this->u32_16C);
     }
   }
@@ -303,7 +303,7 @@ ControlClass GadgetClass::Show()
 {
   int v1; // eax
 
-  v1 = *(_DWORD *)this->__pad_0; /*0x723ea0*/
+  v1 = *(_DWORD *)this->q000; /*0x723ea0*/
   this->u32_2D = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }

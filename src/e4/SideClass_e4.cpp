@@ -54,7 +54,7 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   for ( k = 0; k < FootClass_Array.secondaryFacing[0]; ++k ) /*0x679a66*/
     (*(void (__thiscall **)(_DWORD, char *))(**(_DWORD **)(FootClass_Array.primaryFacing[3] + 4 * k) + 100))( /*0x679a77*/
       *(_DWORD *)(FootClass_Array.primaryFacing[3] + 4 * k),
-      &DSurface_ViewBounds.__pad_FC[228]);
+      &DSurface_ViewBounds.q0FC[228]);
   for ( m = 0; m < dword_A83C78; ++m ) /*0x679a8d*/
     (*(void (__thiscall **)(_DWORD, _DWORD *))(**((_DWORD **)dword_A83C6C + m) + 100))( /*0x679a9a*/
       *((_DWORD *)dword_A83C6C + m),
@@ -95,17 +95,17 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
     (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(*(_DWORD *)&stru_A8EB00.?[56] + 4 * i4) + 100))( /*0x679bf9*/
       *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[56] + 4 * i4),
       aP0);
-  for ( i5 = 0; i5 < *(int *)&stru_A83D50.__pad_3C[4]; ++i5 ) /*0x679c0f*/
-    (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * i5) + 100))( /*0x679c1c*/
-      *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * i5),
+  for ( i5 = 0; i5 < *(int *)&stru_A83D50.q03C[4]; ++i5 ) /*0x679c0f*/
+    (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(*(_DWORD *)stru_A83D50.q034 + 4 * i5) + 100))( /*0x679c1c*/
+      *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * i5),
       aP0);
-  for ( i6 = 0; i6 < *(int *)&stru_A83D50.__pad_3C[28]; ++i6 ) /*0x679c32*/
-    (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.__pad_3C[16] + 4 * i6) + 100))( /*0x679c3f*/
-      *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_3C[16] + 4 * i6),
+  for ( i6 = 0; i6 < *(int *)&stru_A83D50.q03C[28]; ++i6 ) /*0x679c32*/
+    (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.q03C[16] + 4 * i6) + 100))( /*0x679c3f*/
+      *(_DWORD *)(*(_DWORD *)&stru_A83D50.q03C[16] + 4 * i6),
       aP0);
-  for ( i7 = 0; i7 < (int)stru_A83D50.SuperClass_field_0x28; ++i7 ) /*0x679c55*/
-    (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.__pad_14[8] + 4 * i7) + 100))( /*0x679c62*/
-      *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_14[8] + 4 * i7),
+  for ( i7 = 0; i7 < (int)stru_A83D50.q028; ++i7 ) /*0x679c55*/
+    (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.q014[8] + 4 * i7) + 100))( /*0x679c62*/
+      *(_DWORD *)(*(_DWORD *)&stru_A83D50.q014[8] + 4 * i7),
       aP0);
   for ( i8 = 0; i8 < stru_A8EB00.vfptr[14]; ++i8 ) /*0x679c78*/
     (*(void (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(stru_A8EB00.vfptr[11] + 4 * i8) + 100))( /*0x679c85*/

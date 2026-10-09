@@ -46,8 +46,8 @@ int Session::RemoveTeam(int (***aP1)(unsigned int, int))
   result = (int)a2; /*0x5d1d80*/
   if ( a2 ) /*0x5d1d87*/
   {
-    v3 = &this->field_18; /*0x5d1d8c*/
-    result = (*((int (__thiscall **)(void **, int))this->field_18 + 4))(&this->field_18, &a2); /*0x5d1d96*/
+    v3 = &this->q018; /*0x5d1d8c*/
+    result = (*((int (__thiscall **)(void **, int))this->q018 + 4))(&this->q018, &a2); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
       result = (*((int (__thiscall **)(void **, int))*v3 + 4))(v3, &a2); /*0x5d1da7*/
@@ -261,8 +261,8 @@ int Session::GetPlayerOption()
   int result; // eax
 
   result = -2; /*0x69b706*/
-  if ( this->field_178 != (void *)-2 ) /*0x69b70d*/
-    return (int)this->field_174; /*0x69b70f*/
+  if ( this->q178 != (void *)-2 ) /*0x69b70d*/
+    return (int)this->q174; /*0x69b70f*/
   return result; /*0x69b715*/
 }
 }
@@ -273,8 +273,8 @@ int Session::GetPlayerColor()
   int result; // eax
 
   result = -2; /*0x69b726*/
-  if ( this->field_160 != (void *)-2 ) /*0x69b72d*/
-    return (int)this->field_15C; /*0x69b72f*/
+  if ( this->q160 != (void *)-2 ) /*0x69b72d*/
+    return (int)this->q15C; /*0x69b72f*/
   return result; /*0x69b735*/
 }
 }
@@ -286,7 +286,7 @@ int Session::StartGame(HWND hWnd)
   ObjectClass *v3; // eax
   Skirmish *v4; // eax
 
-  if ( !(unsigned __int8)IsRandMap::Sed(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4])) ) /*0x5ed381*/
+  if ( !(unsigned __int8)IsRandMap::Sed(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.q000[4])) ) /*0x5ed381*/
     return Session::PrepareGame(hWnd); /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/

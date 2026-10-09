@@ -46,7 +46,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v15; // ebp
   int v16; // eax
   int v17; // esi
-  IUnknown *ParticleClass_field_0xB4; // ecx
+  IUnknown *q0B4; // ecx
   char *pad_B0; // eax
   __int16 v20; // dx
   char v21; // al
@@ -62,41 +62,41 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v31; // [esp+30h] [ebp-4h]
 
   if ( *(_DWORD *)&g_MissionQueueFrame.waypoints[282] >= (unsigned int)PingPongBuffer::GetWriteOffset() /*0x62cedc*/
-    || *((_DWORD *)this->ParticleClass_field_0xAC + 186) )
+    || *((_DWORD *)this->q0AC + 186) )
   {
-    if ( stru_A8EB00.vfptr[30] || (v4 = *((_DWORD *)this->ParticleClass_field_0xAC + 197), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
+    if ( stru_A8EB00.vfptr[30] || (v4 = *((_DWORD *)this->q0AC + 197), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
     {
       if ( stru_A8EB00.?[391] /*0x62cf58*/
         || !g_hWnd
         || ((int)dword_A8B230->vfptr & 0x1000) == 0
-        || (v29 = *(_DWORD *)&this->__pad_28[116],
-            v30 = *(_DWORD *)&this->__pad_28[120],
-            v31 = *(_DWORD *)&this->__pad_28[124],
+        || (v29 = *(_DWORD *)&this->q028[116],
+            v30 = *(_DWORD *)&this->q028[120],
+            v31 = *(_DWORD *)&this->q028[124],
             !(unsigned __int8)Game::Stub3((int)&v29)) )
       {
-        v5 = *((_DWORD *)this->ParticleClass_field_0xAC + 197); /*0x62cf6b*/
+        v5 = *((_DWORD *)this->q0AC + 197); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
-          v28[0] = *(_DWORD *)&this->__pad_28[116]; /*0x62d036*/
-          v28[1] = *(_DWORD *)&this->__pad_28[120]; /*0x62d048*/
-          v28[2] = *(_DWORD *)&this->__pad_28[124]; /*0x62d054*/
+          v28[0] = *(_DWORD *)&this->q028[116]; /*0x62d036*/
+          v28[1] = *(_DWORD *)&this->q028[120]; /*0x62d048*/
+          v28[2] = *(_DWORD *)&this->q028[124]; /*0x62d054*/
           Coord::To_Screen((Coord *)g_TacticalClass_Instance, v28, &v29); /*0x62d058*/
-          v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
-          v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
+          v12 = (char *)DSurface_ViewBounds.q004 + v30; /*0x62d06b*/
+          v30 += (int)DSurface_ViewBounds.q004; /*0x62d071*/
           if ( v29 >= *a3 && v29 < *a3 + a3[2] ) /*0x62d086*/
           {
             v13 = a3[1]; /*0x62d08c*/
             if ( (int)v12 >= v13 && (int)v12 < v13 + a3[3] ) /*0x62d09e*/
             {
               v14 = *(unsigned __int16 *)StreamClass::ReadAndSeek( /*0x62d0b6*/
-                                           *(int **)&stru_87E790.__pad_D8[60],
+                                           *(int **)&stru_87E790.q0D8[60],
                                            v29,
-                                           (int)&v12[-*(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 4)]);
+                                           (int)&v12[-*(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4)]);
               if ( (_WORD)v14 ) /*0x62d0bb*/
               {
                 v15 = v30 - g_ZBufferDescriptor->Stream_field_04; /*0x62d0d4*/
                 v28[0] = v29; /*0x62d0d9*/
-                v16 = ZCoordToScreenY(*(_DWORD *)&this->__pad_28[124]); /*0x62d0e8*/
+                v16 = ZCoordToScreenY(*(_DWORD *)&this->q028[124]); /*0x62d0e8*/
                 v17 = (unsigned __int16)(IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x62d10f*/
                                        + IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
                                        - v30)
@@ -104,17 +104,17 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     - 50;
                 if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v28[0], v15) ) /*0x62d11e*/
                 {
-                  ParticleClass_field_0xB4 = this->ParticleClass_field_0xB4; /*0x62d124*/
-                  if ( ParticleClass_field_0xB4 ) /*0x62d12c*/
-                    pad_B0 = (char *)(*((_DWORD *)this->ParticleClass_field_0xAC + 175) /*0x62d13f*/
-                                    + 3 * (_DWORD)ParticleClass_field_0xB4);
+                  q0B4 = this->q0B4; /*0x62d124*/
+                  if ( q0B4 ) /*0x62d12c*/
+                    pad_B0 = (char *)(*((_DWORD *)this->q0AC + 175) /*0x62d13f*/
+                                    + 3 * (_DWORD)q0B4);
                   else
                     pad_B0 = this->__pad_B0; /*0x62d12e*/
                   v20 = *(_WORD *)pad_B0; /*0x62d145*/
                   v21 = pad_B0[2]; /*0x62d148*/
                   IDA_LOWORD(v28[0]) = v20; /*0x62d14b*/
                   IDA_BYTE2(v28[0]) = v21; /*0x62d15a*/
-                  v22 = 1.0 - *(double *)&this->ParticleClass_field_0xB8; /*0x62d16d*/
+                  v22 = 1.0 - *(double *)&this->q0B8; /*0x62d16d*/
                   IDA_LOWORD(v23) = Math::RoundToInt(v22); /*0x62d1ac*/
                   v24 = v23; /*0x62d1c9*/
                   IDA_LOWORD(v25) = Math::RoundToInt(v22); /*0x62d1e1*/
@@ -126,7 +126,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     v26 = (v14 * v26) >> 7; /*0x62d22d*/
                     v27 = (v14 * v27) >> 7; /*0x62d230*/
                   }
-                  (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 36))( /*0x62d288*/
+                  (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 36))( /*0x62d288*/
                     g_DSurface_Hidden_2,
                     &v29,
                     (unsigned __int16)(v24 >> g_BitShift_Green_0 << g_BitShift_Red)
@@ -139,16 +139,16 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         }
         else
         {
-          v6 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->__pad_0 + 464))(this); /*0x62cf87*/
+          v6 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->q000 + 464))(this); /*0x62cf87*/
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
-          v8 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->__pad_0 + 108))(this); /*0x62cfa2*/
+          v8 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->q000 + 108))(this); /*0x62cfa2*/
           if ( v8 ) /*0x62cfa6*/
           {
             v9 = 10240; /*0x62cfb0*/
-            v10 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->__pad_0 + 488))(this); /*0x62cfb5*/
+            v10 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->q000 + 488))(this); /*0x62cfb5*/
             if ( stru_A8EB00.vfptr[30] == 2 ) /*0x62cfc2*/
             {
-              v11 = this->__pad_128[7]; /*0x62cfc4*/
+              v11 = this->q128[7]; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
               {
                 v9 = 10242; /*0x62cfcf*/
@@ -300,8 +300,8 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x62d820*/
-  aP0->__pad_128[8] = 1; /*0x62d825*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0->q000, a1, aP2); /*0x62d820*/
+  aP0->q128[8] = 1; /*0x62d825*/
   return result; /*0x62d82c*/
 }
 } // namespace gamemd

@@ -210,7 +210,7 @@ LABEL_151:
                   ((Surface *)((char **)v69))->LoadToSurfaceSHP((char *)(((unsigned int *)(stru_829ABC))[0]));
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
-                if ( !*(unsigned int *)v67->__pad_0 )
+                if ( !*(unsigned int *)v67->q000 )
                   ((Session*)(HWND)hWnd)->PrepareGame((HWND)hWnd);
                 InvalidateRect((HWND)hWnd, 0, 0);
               }
@@ -359,7 +359,7 @@ LABEL_151:
             }
             v25 = *(SkirmishDialog **)&((unsigned int *)(HouseClass_Player))[29936];
             unknown_libname_74( (void *)(&v82));
-if ( !(*(uint8_t (**)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->__pad_0 + 20))( (SkirmishDialog *)(v25), (wchar_t **)(&v82)) )
+if ( !(*(uint8_t (**)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->q000 + 20))( (SkirmishDialog *)(v25), (wchar_t **)(&v82)) )
 
 
             {

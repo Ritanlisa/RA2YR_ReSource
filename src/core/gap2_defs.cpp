@@ -143,7 +143,7 @@ namespace gamemd {
 int CStreamClass::IsEmpty(int a2) {
   if ( a2 ) /*0x4a31f9*/
     sub_7DC720(-2147467261); /*0x4a3200*/
-  return *(_DWORD *)this->__pad_0 == 0; /*0x4a320e*/
+  return *(_DWORD *)this->q000 == 0; /*0x4a320e*/
 }
 }
 // 0x4A4AD0
@@ -208,7 +208,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAU_DDSURFACEDESC *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4a4d3e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAU_DDSURFACEDESC *))(*(_DWORD *)this->q000 + 12))(this); /*0x4a4d3e*/
   }
   v7 = this->m_8; /*0x4a4d41*/
   if ( v7 < this->m_10 ) /*0x4a4d49*/
@@ -241,7 +241,7 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x4a4de3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4de6*/
   if ( v3 && (unsigned char)((this->m_C) >> 8) ) /*0x4a4df0*/
   {
     delete[] (v3); /*0x4a4df8*/
@@ -251,7 +251,7 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
   this->m_8 = 0; /*0x4a4e11*/
   if ( (a2 & 1) != 0 ) /*0x4a4e18*/
     delete this; /*0x4a4e1b*/
-  return this->__pad_0; /*0x4a4e25*/
+  return this->q000; /*0x4a4e25*/
 }
 }
 // 0x55A150
@@ -284,14 +284,14 @@ void* Matrix3D::Constructor(float a1, float a2) {
   this->q020 = 0; /*0x5ae70c*/
   this->q024 = 0; /*0x5ae70f*/
   this->q02C = 0; /*0x5ae712*/
-  *(_DWORD *)this->__pad_0 = 1065353216; /*0x5ae719*/
+  *(_DWORD *)this->q000 = 1065353216; /*0x5ae719*/
   this->q014 = 1065353216; /*0x5ae71b*/
   this->q028 = 1065353216; /*0x5ae71e*/
-  Matrix2D::Rotate((int *)this->__pad_0, a1); /*0x5ae724*/
-  Matrix3x3::RotateX((int *)this->__pad_0, a2); /*0x5ae730*/
+  Matrix2D::Rotate((int *)this->q000, a1); /*0x5ae724*/
+  Matrix3x3::RotateX((int *)this->q000, a2); /*0x5ae730*/
   v5 = -a1; /*0x5ae73e*/
-  Matrix2D::Rotate((int *)this->__pad_0, v5); /*0x5ae741*/
-  return (int *)this->__pad_0; /*0x5ae748*/
+  Matrix2D::Rotate((int *)this->q000, v5); /*0x5ae741*/
+  return (int *)this->q000; /*0x5ae748*/
 }
 }
 // 0x5AF080
@@ -609,7 +609,7 @@ void* StreamWrapper::QueryInterface(int a2)
   void (__thiscall ***v5)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))this->q010; /*0x7b0443*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
   if ( v3 ) /*0x7b044e*/
     (**v3)(v3, 1); /*0x7b0454*/
   v4 = (void (__thiscall ***)(_DWORD, int))this->q014; /*0x7b0456*/
@@ -621,7 +621,7 @@ void* StreamWrapper::QueryInterface(int a2)
   OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
   if ( (a2 & 1) != 0 ) /*0x7b047c*/
     delete this; /*0x7b047f*/
-  return this->__pad_0; /*0x7b0489*/
+  return this->q000; /*0x7b0489*/
 }
 }
 // 0x7BCAE0

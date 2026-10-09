@@ -258,6 +258,16 @@ struct AudioChannel {
     unsigned char q008;  // 0x8
     int DeactivatePlay();  // 0x402600
     unsigned char __pad_0;  // 0x0
+    unsigned char DynamicVector_field_0x1;  // 0x1 (offset-truth supply)
+    void * ptr_10;  // 0x10 (offset-truth supply)
+    void * ptr_18;  // 0x18 (offset-truth supply)
+    void * ptr_8;  // 0x8 (offset-truth supply)
+    unsigned int q00C;  // 0xC (offset-truth supply)
+    unsigned int q010;  // 0x10 (offset-truth supply)
+    unsigned int q014;  // 0x14 (offset-truth supply)
+    unsigned int u32_14;  // 0x14 (offset-truth supply)
+    unsigned int u32_4;  // 0x4 (offset-truth supply)
+    unsigned int u32_C;  // 0xC (offset-truth supply)
 };
 #endif  // GAMEMD_G2_AudioChannel_DEF
 

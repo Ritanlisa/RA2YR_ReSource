@@ -407,25 +407,25 @@ int Warhead::ProcessDamageArea()
   int v34; // [esp+30h] [ebp-10h]
   _BYTE v35[12]; // [esp+34h] [ebp-Ch] BYREF
 
-  v28 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b5a3*/
-  v29 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b5a7*/
+  v28 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6160); /*0x65b5a3*/
+  v29 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6164); /*0x65b5a7*/
   this->u32_A0 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x65b5ab*/
   this->u32_2C = v32; /*0x65b5b3*/
   this->u32_30 = v28; /*0x65b5b9*/
   this->q034 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x65b5c2*/
   this->u32_38 = v32; /*0x65b5c8*/
   this->u8_3C = v29; /*0x65b5cb*/
-  v2 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/
-  v3 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6194); /*0x65b5e2*/
-  v4 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6193); /*0x65b5e8*/
-  v5 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6192); /*0x65b5f5*/
+  v2 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x65b5ce*/
+  v3 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6194); /*0x65b5e2*/
+  v4 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6193); /*0x65b5e8*/
+  v5 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6192); /*0x65b5f5*/
   if ( dword_A8B230[130].uniqueId == 1 ) /*0x65b5fb*/
   {
     v3 = -128; /*0x65b5fd*/
     v5 = -128; /*0x65b602*/
   }
   v25 = 1000 * v5 / 255; /*0x65b62a*/
-  v6 = (double)this->q130 * *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6176); /*0x65b63e*/
+  v6 = (double)this->q130 * *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6176); /*0x65b63e*/
   v30 = this->q048; /*0x65b679*/
   v27 = 1000 * v3 / 255; /*0x65b684*/
   if ( v6 > 2000.0 ) /*0x65b68b*/

@@ -22,7 +22,7 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
   size_t v5; // edi
   signed int v6; // ebx
   int result; // eax
-  int CStreamClass_field_0x14; // ecx
+  int q014; // ecx
   int v9; // eax
   ULONG v10; // [esp+0h] [ebp-10h]
 
@@ -33,31 +33,31 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
     return -2147467261; /*0x4a2ceb*/
   if ( Size < 0 ) /*0x4a2cf0*/
     return -2147024809; /*0x4a2cfb*/
-  if ( !this->CStreamClass_field_0x08 ) /*0x4a2d02*/
+  if ( !this->q008 ) /*0x4a2d02*/
     return -2147467259; /*0x4a2d12*/
-  if ( IDA_LOBYTE(this->CStreamClass_field_0x10) ) /*0x4a2d15*/
+  if ( IDA_LOBYTE(this->q010) ) /*0x4a2d15*/
     return -2147467259; /*0x4a2d25*/
-  IDA_BYTE1(this->CStreamClass_field_0x10) = 1; /*0x4a2d2a*/
+  IDA_BYTE1(this->q010) = 1; /*0x4a2d2a*/
   if ( !Size ) /*0x4a2d2e*/
     return 0; /*0x4a2d2e*/
   if ( a4 ) /*0x4a2d3a*/
     *a4 = 0; /*0x4a2d3c*/
-  CStreamClass_field_0x14 = this->CStreamClass_field_0x14; /*0x4a2d42*/
-  if ( CStreamClass_field_0x14 > 0 ) /*0x4a2d47*/
+  q014 = this->q014; /*0x4a2d42*/
+  if ( q014 > 0 ) /*0x4a2d47*/
   {
-    if ( Size >= 0x10000 - CStreamClass_field_0x14 ) /*0x4a2d52*/
-      v5 = 0x10000 - CStreamClass_field_0x14; /*0x4a2d54*/
-    memcpy((void *)(this->CStreamClass_field_0x18 + this->CStreamClass_field_0x14), Src, v5); /*0x4a2d61*/
-    v9 = v5 + this->CStreamClass_field_0x14; /*0x4a2d72*/
+    if ( Size >= 0x10000 - q014 ) /*0x4a2d52*/
+      v5 = 0x10000 - q014; /*0x4a2d54*/
+    memcpy((void *)(this->q018 + this->q014), Src, v5); /*0x4a2d61*/
+    v9 = v5 + this->q014; /*0x4a2d72*/
     v4 = (IStream *)((char *)Src + v5); /*0x4a2d74*/
     v6 = Size - v5; /*0x4a2d76*/
-    this->CStreamClass_field_0x14 = v9; /*0x4a2d7d*/
+    this->q014 = v9; /*0x4a2d7d*/
     if ( v9 == 0x10000 ) /*0x4a2d80*/
     {
-      result = IStream::Read((IStream *)this->CStreamClass_field_0x18, (void *)0x10000, v10); /*0x4a2d8d*/
+      result = IStream::Read((IStream *)this->q018, (void *)0x10000, v10); /*0x4a2d8d*/
       if ( result < 0 ) /*0x4a2d94*/
         return result; /*0x4a2d94*/
-      this->CStreamClass_field_0x14 = 0; /*0x4a2d96*/
+      this->q014 = 0; /*0x4a2d96*/
     }
     v5 = Size; /*0x4a2d9d*/
   }
@@ -66,9 +66,9 @@ int CStreamClass::CopyStreamToBuffer(IStream *Src, signed int Size, size_t *a4, 
   LABEL_23:
     if ( v6 > 0 ) /*0x4a2dd4*/
     {
-      memcpy((void *)this->CStreamClass_field_0x18, v4, v6); /*0x4a2ddc*/
+      memcpy((void *)this->q018, v4, v6); /*0x4a2ddc*/
       v5 = Size; /*0x4a2de1*/
-      this->CStreamClass_field_0x14 = v6; /*0x4a2de8*/
+      this->q014 = v6; /*0x4a2de8*/
     }
     if ( a4 ) /*0x4a2df1*/
       *a4 = v5; /*0x4a2df3*/
@@ -143,12 +143,12 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
 {
-  if ( IDA_LOBYTE(a1->CStreamClass_field_0x10) || IDA_BYTE1(a1->CStreamClass_field_0x10) ) /*0x4a2e0c*/
+  if ( IDA_LOBYTE(a1->q010) || IDA_BYTE1(a1->q010) ) /*0x4a2e0c*/
     return -2147467259; /*0x4a2e45*/
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2e13*/
+  if ( !a1->q008 ) /*0x4a2e13*/
     sub_7DC720(-2147467261); /*0x4a2e1f*/
-  return (*(int (__stdcall **)(int, int, int, int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 20))( /*0x4a2e41*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int, int, int, int))(*(_DWORD *)a1->q008 + 20))( /*0x4a2e41*/
+           a1->q008,
            a2,
            a3,
            a4,
@@ -159,12 +159,12 @@ int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Write(int a1, int a2, int a3)
 {
-  if ( IDA_LOBYTE(a1->CStreamClass_field_0x10) || IDA_BYTE1(a1->CStreamClass_field_0x10) ) /*0x4a2e5c*/
+  if ( IDA_LOBYTE(a1->q010) || IDA_BYTE1(a1->q010) ) /*0x4a2e5c*/
     return -2147467259; /*0x4a2e8b*/
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2e63*/
+  if ( !a1->q008 ) /*0x4a2e63*/
     sub_7DC720(-2147467261); /*0x4a2e6f*/
-  return (*(int (__stdcall **)(int, int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 24))( /*0x4a2e87*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int, int))(*(_DWORD *)a1->q008 + 24))( /*0x4a2e87*/
+           a1->q008,
            a2,
            a3);
 }
@@ -173,10 +173,10 @@ int CStreamClass::Write(int a1, int a2, int a3)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2ea5*/
+  if ( !a1->q008 ) /*0x4a2ea5*/
     sub_7DC720(-2147467261); /*0x4a2eb1*/
-  return (*(int (__stdcall **)(int, int, int, int, int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 28))( /*0x4a2ed8*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int, int, int, int, int))(*(_DWORD *)a1->q008 + 28))( /*0x4a2ed8*/
+           a1->q008,
            a2,
            a3,
            a4,
@@ -188,10 +188,10 @@ int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::SetSize(int a1, int a2)
 {
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2ee5*/
+  if ( !a1->q008 ) /*0x4a2ee5*/
     sub_7DC720(-2147467261); /*0x4a2ef1*/
-  return (*(int (__stdcall **)(int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 32))( /*0x4a2f04*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int))(*(_DWORD *)a1->q008 + 32))( /*0x4a2f04*/
+           a1->q008,
            a2);
 }
 }  // G42.18c ns repair
@@ -199,19 +199,19 @@ int CStreamClass::SetSize(int a1, int a2)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Commit(int a1)
 {
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2f15*/
+  if ( !a1->q008 ) /*0x4a2f15*/
     sub_7DC720(-2147467261); /*0x4a2f21*/
-  return (*(int (__stdcall **)(int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 36))(a1->CStreamClass_field_0x08); /*0x4a2f2f*/
+  return (*(int (__stdcall **)(int))(*(_DWORD *)a1->q008 + 36))(a1->q008); /*0x4a2f2f*/
 }
 }  // G42.18c ns repair
 // 0x4A2F40
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2f45*/
+  if ( !a1->q008 ) /*0x4a2f45*/
     sub_7DC720(-2147467261); /*0x4a2f51*/
-  return (*(int (__stdcall **)(int, int, int, int, int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 40))( /*0x4a2f78*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int, int, int, int, int))(*(_DWORD *)a1->q008 + 40))( /*0x4a2f78*/
+           a1->q008,
            a2,
            a3,
            a4,
@@ -223,10 +223,10 @@ int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2f85*/
+  if ( !a1->q008 ) /*0x4a2f85*/
     sub_7DC720(-2147467261); /*0x4a2f91*/
-  return (*(int (__stdcall **)(int, int, int, int, int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 44))( /*0x4a2fb8*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int, int, int, int, int))(*(_DWORD *)a1->q008 + 44))( /*0x4a2fb8*/
+           a1->q008,
            a2,
            a3,
            a4,
@@ -238,10 +238,10 @@ int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::UnlockRegion(int a1, int a2, int a3)
 {
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2fc5*/
+  if ( !a1->q008 ) /*0x4a2fc5*/
     sub_7DC720(-2147467261); /*0x4a2fd1*/
-  return (*(int (__stdcall **)(int, int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 48))( /*0x4a2fe9*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int, int))(*(_DWORD *)a1->q008 + 48))( /*0x4a2fe9*/
+           a1->q008,
            a2,
            a3);
 }
@@ -250,10 +250,10 @@ int CStreamClass::UnlockRegion(int a1, int a2, int a3)
 namespace gamemd {  // G42.18c ns repair
 int CStreamClass::Stat(int a1, int a2)
 {
-  if ( !a1->CStreamClass_field_0x08 ) /*0x4a2ff5*/
+  if ( !a1->q008 ) /*0x4a2ff5*/
     sub_7DC720(-2147467261); /*0x4a3001*/
-  return (*(int (__stdcall **)(int, int))(*(_DWORD *)a1->CStreamClass_field_0x08 + 52))( /*0x4a3014*/
-           a1->CStreamClass_field_0x08,
+  return (*(int (__stdcall **)(int, int))(*(_DWORD *)a1->q008 + 52))( /*0x4a3014*/
+           a1->q008,
            a2);
 }
 }  // G42.18c ns repair
@@ -358,7 +358,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAU_DDSURFACEDESC *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4a4c12*/
+    (*(void (__thiscall **)(_VectorClass_PAU_DDSURFACEDESC *))(*(_DWORD *)this->q000 + 12))(this); /*0x4a4c12*/
     return 1; /*0x4a4c18*/
   }
 }
@@ -419,7 +419,7 @@ VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4a4d93*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4d96*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4d96*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4a4da0*/
   {
     RA2_OPDEL(v3); /*0x4a4da8*/
@@ -429,6 +429,6 @@ VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2
   Block->m_8 = 0; /*0x4a4dc1*/
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
     RA2_OPDEL(Block); /*0x4a4dcb*/
-  return Block->__pad_0; /*0x4a4dd5*/
+  return Block->q000; /*0x4a4dd5*/
 }
 } // namespace gamemd

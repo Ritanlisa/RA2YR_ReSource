@@ -600,6 +600,12 @@ struct TechnoClass {
     char __pad_0B0[4];  // 0xB0 @0x6ea681 (W16G3 raw-usage vocab)
     unsigned int q_610;  // 0x610 @0x6ea71e (W16G3 raw-usage vocab)
     unsigned int q_220;  // 0x220 @0x6ea7xx (W16G3 raw-usage vocab)
+    char[8] __pad_1C4;  // 0x452 (ml)
+    int[8] barrelRecoil;  // 0x1016 (ml)
+    RecoilData barrelRecoil;  // 0x4118 (ml)
+    int damageParticles_2;  // 0x804 (ml)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    int railgunParticles_2;  // 0x808 (ml)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 

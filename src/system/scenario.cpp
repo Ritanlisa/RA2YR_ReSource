@@ -148,17 +148,17 @@ ScenarioClass::ScenarioClass() noexcept
     // IDA 0x68338D: this->TypeList_34D4.TechnoTypeConstructor(0, 0)
     // IDA 0x683397: offset +13540 = 0
     // IDA 0x68339A: offset +13544 = 10
-    // IDA 0x68339D: vtable assignment (TypeList<TechnoTypeClass*>)
+    // IDA 0x68339D: q000 assignment (TypeList<TechnoTypeClass*>)
 
     // IDA 0x6833AD: this->VectorClass_34F0.Construct(0, 0)
     // IDA 0x6833B2: offset +13572 = 10
     // IDA 0x6833B5: offset +13568 = 0
-    // IDA 0x6833B8: vtable assignment (TypeList<int>)
+    // IDA 0x6833B8: q000 assignment (TypeList<int>)
 
     // IDA 0x6833C8: this->VectorClass_350C.Construct(0, 0)
     // IDA 0x6833CF: offset +13600 = 10
     // IDA 0x6833D2: offset +13596 = 0
-    // IDA 0x6833D5: vtable assignment (TypeList<int>)
+    // IDA 0x6833D5: q000 assignment (TypeList<int>)
 
     // IDA 0x6833DB: ScenarioClass::InitTimer(this)
     // IDA 0x6833E2: offset +13720 = 0

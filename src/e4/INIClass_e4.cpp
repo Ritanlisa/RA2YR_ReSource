@@ -177,7 +177,7 @@ unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char 
   unsigned __int8 *v11; // eax
   int v12; // ecx
   HashTable *v13; // esi
-  unsigned __int8 **HashTable_field_0x10; // ecx
+  unsigned __int8 **u32_10; // ecx
   int v15; // eax
   unsigned __int8 **v16; // ecx
   int v17; // eax
@@ -214,7 +214,7 @@ unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char 
   unknown38 = (unsigned __int8 **)this->unknown38; /*0x528b26*/
   if ( unknown38 && *unknown38 == v19 ) /*0x528b2f*/
     goto LABEL_24; /*0x528b2f*/
-  v21 = SortedArray::BinarySearch((SortedArray *)&this->__pad_20[8], (int *)&a2); /*0x528b38*/
+  v21 = SortedArray::BinarySearch((SortedArray *)&this->q020[8], (int *)&a2); /*0x528b38*/
   if ( !v21 ) /*0x528b3f*/
   {
   LABEL_29:
@@ -227,7 +227,7 @@ unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char 
   this->unknown38 = v21; /*0x528b41*/
   LABEL_24:
   a2 = v19; /*0x528b44*/
-  if ( (unsigned __int8)HashTable::BinarySearch((int *)&this->__pad_20[8], (int *)&a2) ) /*0x528b4f*/
+  if ( (unsigned __int8)HashTable::BinarySearch((int *)&this->q020[8], (int *)&a2) ) /*0x528b4f*/
     v22 = (int *)(this->unknown38 + 4); /*0x528b5b*/
   else
     v22 = (int *)&unk_B7882C; /*0x528b60*/
@@ -248,21 +248,21 @@ unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char 
     a3 = v11; /*0x528a8b*/
     if ( v12 ) /*0x528a8f*/
     {
-      HashTable_field_0x10 = (unsigned __int8 **)v13->HashTable_field_0x10; /*0x528a95*/
-      if ( HashTable_field_0x10 && *HashTable_field_0x10 == v11 ) /*0x528a9e*/
+      u32_10 = (unsigned __int8 **)v13->u32_10; /*0x528a95*/
+      if ( u32_10 && *u32_10 == v11 ) /*0x528a9e*/
       {
   LABEL_13:
-        if ( v13->HashTable_field_0x04 ) /*0x528abb*/
+        if ( v13->q004 ) /*0x528abb*/
         {
-          v16 = (unsigned __int8 **)v13->HashTable_field_0x10; /*0x528ac6*/
+          v16 = (unsigned __int8 **)v13->u32_10; /*0x528ac6*/
           if ( v16 && *v16 == v11 ) /*0x528acf*/
             goto LABEL_18; /*0x528acf*/
           v17 = HashTable::BinarySearchAlt(v13, (int *)&a3); /*0x528ad8*/
           if ( v17 ) /*0x528adf*/
           {
-            v13->HashTable_field_0x10 = v17; /*0x528ae5*/
+            v13->u32_10 = v17; /*0x528ae5*/
   LABEL_18:
-            v18 = (int *)(v13->HashTable_field_0x10 + 4); /*0x528ae8*/
+            v18 = (int *)(v13->u32_10 + 4); /*0x528ae8*/
   LABEL_31:
             v24 = *v18; /*0x528b97*/
             if ( v24 ) /*0x528b9b*/
@@ -283,7 +283,7 @@ unsigned int INIClass::GetString(unsigned __int8 *a2, unsigned __int8 *a3, char 
       v15 = HashTable::BinarySearchAlt(v13, (int *)&a3); /*0x528aa7*/
       if ( v15 ) /*0x528aae*/
       {
-        v13->HashTable_field_0x10 = v15; /*0x528ab4*/
+        v13->u32_10 = v15; /*0x528ab4*/
         v11 = a3; /*0x528ab7*/
         goto LABEL_13; /*0x528ab7*/
       }
@@ -320,7 +320,7 @@ INIClass::INIClass()
   int v6; // esi
   int v7; // esi
 
-  result = this->__pad_0; /*0x535aa0*/
+  result = this->q000; /*0x535aa0*/
   sectionHead = this->sectionHead; /*0x535aa6*/
   v3 = result + 7; /*0x535aa9*/
   result[1] = 0; /*0x535aac*/

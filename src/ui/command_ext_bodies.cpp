@@ -26,7 +26,7 @@ namespace gamemd {
     struct MQF_ABC5F8_c { unsigned int waypoints[1]; };  // 0xABC5F8 宿主词汇 (MQF_ABFBE0_c 同款 [1] 界约)
     extern MQF_ABC5F8_c g_MissionQueueFrame;             // data: 0xABC5F8 (csp_canon/globals.hpp:1106)
     struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
-        unsigned char __pad_0[0x58];
+        unsigned char q000[0x58];
         unsigned char __pad_58[0x280 - 0x58];      // 覆盖 __pad_58[416] = +0x1F8
     };
     extern stru_87F5F0_host stru_87F5F0;          // data: 0x87F5F0
@@ -38,9 +38,9 @@ namespace gamemd {
 extern unsigned int stru_A8EB00;
 extern int FileSystem_TEMPERAT_PAL;  // data: 0x885780 (e4_globals_decls.hpp:782)
 extern int g_DSurface_Primary;  // data: 0x887308 (e4_globals_decls.hpp:921)
-extern void* XSurface_Vtable[];  // W13-C vtable 词表 (ida_vtables.h 未载)
-extern void* BSurface_Vtable[];  // W13-C vtable 词表
-struct DSurface_ViewBounds_flat { unsigned int field_0; unsigned int field_4; unsigned char __pad_8[0x34 - 0x8]; unsigned char __pad_34[0xFC - 0x34]; unsigned char __pad_FC[0x240 - 0xFC]; };  // W13-C: e4_globals_decls.hpp:755 同形
+extern void* XSurface_Vtable[];  // W13-C q000 词表 (ida_vtables.h 未载)
+extern void* BSurface_Vtable[];  // W13-C q000 词表
+struct DSurface_ViewBounds_flat { unsigned int field_0; unsigned int q004; unsigned char q008[0x34 - 0x8]; unsigned char q034[0xFC - 0x34]; unsigned char q0FC[0x240 - 0xFC]; };  // W13-C: e4_globals_decls.hpp:755 同形
 extern DSurface_ViewBounds_flat DSurface_ViewBounds;  // data: 0x886FA0 (e4_globals_decls.hpp:762 同形)
 
 namespace gamemd {

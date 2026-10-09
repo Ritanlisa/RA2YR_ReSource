@@ -1214,6 +1214,9 @@ struct AnimClass {
     void ** ctor(void *a2, int *a3, void *a4, int a5, void *a6, void *a7, char a8);  // 0x421ea0
     AnimClass * * ComputePosition(int *aP1);
     int ReleaseBuffers();
+    int AnimClass_field_0x0;  // 0x0 (ml)
+    int AnimClass_field_0x8;  // 0x8 (ml)
+    unsigned int q00C;  // 0xC (offset-truth supply)
 };
 
 } // namespace gamemd

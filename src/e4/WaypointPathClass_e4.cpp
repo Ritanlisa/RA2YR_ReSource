@@ -60,7 +60,7 @@ int WaypointPathClass::Construct(unsigned int aP1)
   AbstractClass::Constructor(); /*0x763813*/
   this->idxArray = -1; /*0x76381e*/
   this->u32_2C = 0; /*0x763825*/
-  this->__pad_030 = 0; /*0x763828*/
+  this->q030 = 0; /*0x763828*/
   this->q034 = 1; /*0x76382b*/
   this->u32_35 = 0; /*0x76382f*/
   this->u32_28 = &(void*)(void*)&DynamicVectorClass_WaypointClass_vftable; /*0x763832*/

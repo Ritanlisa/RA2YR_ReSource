@@ -36,10 +36,10 @@ namespace gamemd {
     int InvalidateTileRegionMap(...);  // raw 0056DB70: int __thiscall InvalidateTileRegionMap(ObjectClass *this, __int16 *a2)
 } // namespace gamemd
 // [w14e3] _VectorClass_VCell supply: flat carrier (raw decl "_VectorClass_VCell vNN;" e.g. Terrain::PlaceCliffs 0x568E40;
-// usage: *(unsigned int*)v.__pad_0 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
+// usage: *(unsigned int*)v.q000 = vfptr -> 4-byte pad carrier, e4 minimal flat pattern (223 precedents)
 namespace gamemd {
 struct _VectorClass_VCell {
-    char __pad_0[1];        // 0x0 (vfptr carrier, dword-wide via cast; W16G3 raw vocab)
+    char q000[1];        // 0x0 (vfptr carrier, dword-wide via cast; W16G3 raw vocab)
     char m_1[7];            // 0x1..0x7 (raw usage &x.m_1[3] = Items @0x4)
     int m_8;                // 0x8 Capacity
     char m_C[2];            // 0xC..0xD IsInitialized/IsAllocated
@@ -53,8 +53,8 @@ struct _VectorClass_VCell {
 namespace gamemd {
 int Terrain::GetTileIndex(int a2)
 {
-  return (*((_DWORD *)this->Terrain_field_0x24 + 9 * *((_DWORD *)this->Terrain_field_0x30 + a2)) & 1) != 0
-       ? (int)this->Terrain_field_0x24 + 36 * *((_DWORD *)this->Terrain_field_0x30 + a2)
+  return (*((_DWORD *)this->q024 + 9 * *((_DWORD *)this->q030 + a2)) & 1) != 0
+       ? (int)this->q024 + 36 * *((_DWORD *)this->q030 + a2)
        : 0;
 }
 }
@@ -62,8 +62,8 @@ int Terrain::GetTileIndex(int a2)
 namespace gamemd {
 int Terrain::GetTileType(int aP1)
 {
-  return (*((_DWORD *)this->Terrain_field_0x34 + 6 * *((_DWORD *)this->Terrain_field_0x40 + aP1)) & 1) != 0
-       ? (int)this->Terrain_field_0x34 + 24 * *((_DWORD *)this->Terrain_field_0x40 + aP1)
+  return (*((_DWORD *)this->q034 + 6 * *((_DWORD *)this->q040 + aP1)) & 1) != 0
+       ? (int)this->q034 + 24 * *((_DWORD *)this->q040 + aP1)
        : 0;
 }
 }
@@ -166,7 +166,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
   VectorClass::CellConstructor((VectorClass *)&v81, 0, 0); /*0x568ea5*/
   v7 = g_TerrainSoundTable2; /*0x568eae*/
   v8 = g_TerrainSoundConfig; /*0x568eb4*/
-  *(_DWORD *)v81.__pad_0 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x568ebd*/
+  *(_DWORD *)v81.q000 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x568ebd*/
   v82 = 10; /*0x568ec5*/
   *(_DWORD *)v81.__tail_10 = 0; /*0x568ed4*/
   for ( i = 1; i < 30; ++i ) /*0x568edc*/
@@ -242,7 +242,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
               goto LABEL_39; /*0x56911e*/
             if ( !IDA_BYTE1(v81.m_C) && m_8 || v82 <= 0 ) /*0x569132*/
               goto LABEL_41; /*0x569132*/
-            if ( (*(unsigned __int8 (__thiscall **)(_VectorClass_VCell *, int, _DWORD))(*(_DWORD *)v81.__pad_0 + 8))( /*0x569141*/
+            if ( (*(unsigned __int8 (__thiscall **)(_VectorClass_VCell *, int, _DWORD))(*(_DWORD *)v81.q000 + 8))( /*0x569141*/
                    &v81,
                    v82 + m_8,
                    0) )
@@ -338,7 +338,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
           goto LABEL_75; /*0x569341*/
         if ( (IDA_BYTE1(v81.m_C) || !v37) && v82 > 0 ) /*0x569355*/
         {
-          if ( (*(unsigned __int8 (__thiscall **)(_VectorClass_VCell *, int, _DWORD))(*(_DWORD *)v81.__pad_0 + 8))( /*0x569364*/
+          if ( (*(unsigned __int8 (__thiscall **)(_VectorClass_VCell *, int, _DWORD))(*(_DWORD *)v81.q000 + 8))( /*0x569364*/
                  &v81,
                  v82 + v37,
                  0) )
@@ -362,7 +362,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
   }
   if ( i == 30 ) /*0x569473*/
   {
-    *(_DWORD *)v81.__pad_0 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x569479*/
+    *(_DWORD *)v81.q000 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x569479*/
     Buffer::Cleanup(&v81); /*0x569481*/
   }
   else
@@ -405,7 +405,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
             if ( v50 ) /*0x56958a*/
             {
               aP3 = (int *)v44[9]; /*0x569596*/
-              Object::SpawnAtCell(v50, *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 96), (__int16 *)&aP3, -1); /*0x5695a9*/
+              Object::SpawnAtCell(v50, *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 96), (__int16 *)&aP3, -1); /*0x5695a9*/
             }
           }
           else
@@ -414,7 +414,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
             if ( v51 ) /*0x5695b5*/
             {
               *(_DWORD *)v71 = v44[9]; /*0x5695be*/
-              Object::SpawnAtCell(v51, *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 100), v71, -1); /*0x5695d1*/
+              Object::SpawnAtCell(v51, *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 100), v71, -1); /*0x5695d1*/
             }
           }
         }
@@ -469,7 +469,7 @@ void Terrain::PlaceCliffs(int a2, int a3, int *aP3)
       Terrain::ConnectivityGraph(); /*0x56970c*/
     if ( *(int *)v81.__tail_10 > 0 ) /*0x569717*/
       LayerClass::Update_Pathfinding_2((int)&v81); /*0x569722*/
-    *(_DWORD *)v81.__pad_0 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x56972b*/
+    *(_DWORD *)v81.q000 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x56972b*/
     if ( *(_DWORD *)&v81.m_1[3] ) /*0x569735*/
     {
       if ( IDA_BYTE1(v81.m_C) ) /*0x56973d*/
@@ -483,7 +483,7 @@ namespace gamemd {
 AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
 {
   Terrain *v1; // ebp
-  _DWORD *Terrain_field_0x14; // esi
+  _DWORD *q014; // esi
   int v3; // ebx
   int v4; // edx
   int v5; // eax
@@ -589,16 +589,16 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
   v1 = a1_1; /*0x56c515*/
   v81 = -1; /*0x56c51a*/
   v95 = -1; /*0x56c51e*/
-  Terrain_field_0x14 = a1_1->Terrain_field_0x14; /*0x56c529*/
+  q014 = a1_1->q014; /*0x56c529*/
   v3 = 0; /*0x56c52c*/
-  v4 = *(_DWORD *)a1_1->__pad_68 + 4 * *(_DWORD *)&a1_1->__pad_68[4]; /*0x56c52e*/
+  v4 = *(_DWORD *)a1_1->q068 + 4 * *(_DWORD *)&a1_1->q068[4]; /*0x56c52e*/
   v100 = 0; /*0x56c531*/
   v101 = 0; /*0x56c535*/
   IDA_LOWORD(v102) = 1; /*0x56c539*/
   v99 = &(void*)(void*)&DynamicVectorClass_enum_PassabilityType_vftable; /*0x56c542*/
   v103 = 0; /*0x56c54a*/
   v104 = 300; /*0x56c54e*/
-  v5 = Terrain_field_0x14[2]; /*0x56c556*/
+  v5 = q014[2]; /*0x56c556*/
   v98 = a1_1; /*0x56c55c*/
   v87 = (unsigned __int8 *)v4; /*0x56c560*/
   if ( v5 > 0 ) /*0x56c564*/
@@ -606,13 +606,13 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     v6 = 0; /*0x56c566*/
     do /*0x56c57c*/
     {
-      (*(void (__thiscall **)(int))(*(_DWORD *)(*Terrain_field_0x14 + v6) + 12))(*Terrain_field_0x14 + v6); /*0x56c570*/
+      (*(void (__thiscall **)(int))(*(_DWORD *)(*q014 + v6) + 12))(*q014 + v6); /*0x56c570*/
       ++v3; /*0x56c576*/
       v6 += 24; /*0x56c577*/
     }
-    while ( v3 < Terrain_field_0x14[2] ); /*0x56c57c*/
+    while ( v3 < q014[2] ); /*0x56c57c*/
   }
-  pad_18 = (void **)v1->__pad_18; /*0x56c57e*/
+  pad_18 = (void **)v1->q018; /*0x56c57e*/
   v8 = 13; /*0x56c581*/
   do /*0x56c59f*/
   {
@@ -625,7 +625,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     --v8; /*0x56c59e*/
   }
   while ( v8 ); /*0x56c59f*/
-  for ( i = *(_DWORD *)v1->__pad_68; i < (unsigned int)v87; i += 4 ) /*0x56c5aa*/
+  for ( i = *(_DWORD *)v1->q068; i < (unsigned int)v87; i += 4 ) /*0x56c5aa*/
     *(_WORD *)(i + 2) = 0; /*0x56c5ac*/
   v10 = 1; /*0x56c5c3*/
   if ( v103 < v101 /*0x56c5eb*/
@@ -636,7 +636,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     v11 = v103++; /*0x56c5f6*/
     *((_DWORD *)v100 + v11) = 7; /*0x56c601*/
   }
-  v12 = *(unsigned __int8 **)v1->__pad_68; /*0x56c608*/
+  v12 = *(unsigned __int8 **)v1->q068; /*0x56c608*/
   v92 = 0; /*0x56c60b*/
   if ( v12 < v87 ) /*0x56c615*/
   {
@@ -672,23 +672,23 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     }
     while ( v12 < v87 ); /*0x56c6bc*/
   }
-  *(_DWORD *)&v1->__pad_44[8] = (unsigned __int16)v10; /*0x56c6c8*/
-  v17 = v1->Terrain_field_0x60[0] - 1; /*0x56c6ce*/
+  *(_DWORD *)&v1->q044[8] = (unsigned __int16)v10; /*0x56c6c8*/
+  v17 = v1->u32_60[0] - 1; /*0x56c6ce*/
   if ( v17 >= 0 ) /*0x56c6cf*/
   {
     v18 = 16 * v17; /*0x56c6d7*/
     v88 = (char *)(16 * v17); /*0x56c6db*/
-    v84 = v1->Terrain_field_0x60[0]; /*0x56c6df*/
+    v84 = v1->u32_60[0]; /*0x56c6df*/
     do /*0x56c7e0*/
     {
-      v19 = (__int16 *)(*(_DWORD *)&v1->__pad_44[16] + v18); /*0x56c6ea*/
+      v19 = (__int16 *)(*(_DWORD *)&v1->q044[16] + v18); /*0x56c6ea*/
       if ( *((_BYTE *)v19 + 8) ) /*0x56c6e6*/
       {
-        v20 = *(_DWORD *)&v1->__pad_68[144] + *(_DWORD *)&v1->__pad_68[140] + 1; /*0x56c704*/
+        v20 = *(_DWORD *)&v1->q068[144] + *(_DWORD *)&v1->q068[140] + 1; /*0x56c704*/
         v21 = *v19 + v20 * v19[1]; /*0x56c70f*/
         if ( v21 >= 0 ) /*0x56c711*/
         {
-          v22 = *(_DWORD *)&v1->__pad_68[4]; /*0x56c717*/
+          v22 = *(_DWORD *)&v1->q068[4]; /*0x56c717*/
           if ( v21 >= v22 ) /*0x56c71c*/
             v21 = v22 - 1; /*0x56c71e*/
         }
@@ -696,12 +696,12 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
         {
           v21 = 0; /*0x56c713*/
         }
-        v23 = *(_DWORD *)v1->__pad_68; /*0x56c725*/
+        v23 = *(_DWORD *)v1->q068; /*0x56c725*/
         v24 = *(unsigned __int16 *)(v23 + 4 * v21 + 2); /*0x56c72d*/
         v25 = v19[2] + v20 * v19[3]; /*0x56c736*/
         if ( v25 >= 0 ) /*0x56c738*/
         {
-          v26 = *(_DWORD *)&v1->__pad_68[4]; /*0x56c73e*/
+          v26 = *(_DWORD *)&v1->q068[4]; /*0x56c73e*/
           if ( v25 >= v26 ) /*0x56c743*/
             v25 = v26 - 1; /*0x56c745*/
         }
@@ -718,7 +718,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
             v24 = *(unsigned __int16 *)(v23 + 4 * v25 + 2); /*0x56c759*/
           }
           v28 = v27 | (v24 << 16); /*0x56c763*/
-          v29 = *(_DWORD *)v1->Terrain_field_0x14 + 24 * (v27 & 0xF | (16 * (v24 & 0xF))); /*0x56c775*/
+          v29 = *(_DWORD *)v1->q014 + 24 * (v27 & 0xF | (16 * (v24 & 0xF))); /*0x56c775*/
           v30 = *(_DWORD *)(v29 + 16); /*0x56c778*/
           v31 = *(_DWORD **)(v29 + 4); /*0x56c77c*/
           v32 = v30 - 1; /*0x56c77f*/
@@ -756,8 +756,8 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     }
     while ( !v37 ); /*0x56c7e0*/
   }
-  v38 = RA2_OPNEW(2 * *(_DWORD *)&v1->__pad_44[8]); /*0x56c7ec*/
-  v39 = *(_DWORD *)&v1->__pad_44[8]; /*0x56c7f1*/
+  v38 = RA2_OPNEW(2 * *(_DWORD *)&v1->q044[8]); /*0x56c7ec*/
+  v39 = *(_DWORD *)&v1->q044[8]; /*0x56c7f1*/
   v40 = (_WORD *)v38; /*0x56c7f4*/
   v41 = 0; /*0x56c7f9*/
   v97 = v40; /*0x56c7fd*/
@@ -770,11 +770,11 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       ++v41; /*0x56c80d*/
       ++v42; /*0x56c80e*/
     }
-    while ( v41 < *(_DWORD *)&v1->__pad_44[8] ); /*0x56c813*/
+    while ( v41 < *(_DWORD *)&v1->q044[8] ); /*0x56c813*/
   }
   for ( j = 0; j < 6144; j += 24 ) /*0x56c815*/
   {
-    v44 = j + *(_DWORD *)v1->Terrain_field_0x14; /*0x56c81c*/
+    v44 = j + *(_DWORD *)v1->q014; /*0x56c81c*/
     v45 = *(_DWORD *)(v44 + 16); /*0x56c81e*/
     if ( v45 > 0 ) /*0x56c823*/
     {
@@ -790,9 +790,9 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       while ( v45 ); /*0x56c84f*/
     }
   }
-  v77 = (int *)RA2_OPNEW(4 * *(_DWORD *)&v1->__pad_44[8]); /*0x56c868*/
+  v77 = (int *)RA2_OPNEW(4 * *(_DWORD *)&v1->q044[8]); /*0x56c868*/
   v89 = 0; /*0x56c872*/
-  if ( *(int *)&v1->__pad_44[8] > 0 ) /*0x56c87c*/
+  if ( *(int *)&v1->q044[8] > 0 ) /*0x56c87c*/
   {
     v48 = v77; /*0x56c87e*/
     v49 = v40; /*0x56c882*/
@@ -801,10 +801,10 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       *v48++ = RA2_OPNEW(2 * *v49++); /*0x56c891*/
       ++v89; /*0x56c8a6*/
     }
-    while ( (int)v89 < *(_DWORD *)&v1->__pad_44[8] ); /*0x56c8aa*/
+    while ( (int)v89 < *(_DWORD *)&v1->q044[8] ); /*0x56c8aa*/
   }
   v50 = 0; /*0x56c8af*/
-  if ( *(int *)&v1->__pad_44[8] > 0 ) /*0x56c8b3*/
+  if ( *(int *)&v1->q044[8] > 0 ) /*0x56c8b3*/
   {
     v51 = v40; /*0x56c8b5*/
     do /*0x56c8c5*/
@@ -813,13 +813,13 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       ++v50; /*0x56c8bf*/
       ++v51; /*0x56c8c0*/
     }
-    while ( v50 < *(_DWORD *)&v1->__pad_44[8] ); /*0x56c8c5*/
+    while ( v50 < *(_DWORD *)&v1->q044[8] ); /*0x56c8c5*/
   }
   v52 = 0; /*0x56c8c7*/
   v85 = 0; /*0x56c8c9*/
   do /*0x56c953*/
   {
-    v53 = *(_DWORD *)v1->Terrain_field_0x14; /*0x56c8d0*/
+    v53 = *(_DWORD *)v1->q014; /*0x56c8d0*/
     v54 = *(_DWORD *)(v53 + v52 + 16); /*0x56c8d2*/
     v55 = v52 + v53; /*0x56c8d6*/
     if ( v54 > 0 ) /*0x56c8da*/
@@ -846,33 +846,33 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
     v85 = v52; /*0x56c94f*/
   }
   while ( v52 < 6144 ); /*0x56c953*/
-  v59 = RA2_OPNEW(*(_DWORD *)&v1->__pad_44[8]); /*0x56c962*/
+  v59 = RA2_OPNEW(*(_DWORD *)&v1->q044[8]); /*0x56c962*/
   v60 = 0; /*0x56c96a*/
   for ( Blocka = (unsigned __int8 *)v59; /*0x56c972*/
-        v60 < *(_DWORD *)&v1->__pad_44[8];
+        v60 < *(_DWORD *)&v1->q044[8];
         *(_BYTE *)(v59 + v60 - 1) = *((char *)v100 + 4 * v60 - 4) )
   {
     ++v60; /*0x56c978*/
   }
-  v91 = (_WORD *)RA2_OPNEW(2 * *(_DWORD *)&v1->__pad_44[8]); /*0x56c993*/
+  v91 = (_WORD *)RA2_OPNEW(2 * *(_DWORD *)&v1->q044[8]); /*0x56c993*/
   v61 = dword_82A594; /*0x56c997*/
   v86 = dword_82A594; /*0x56c9a2*/
-  v83 = v1->__pad_18; /*0x56c9a6*/
+  v83 = v1->q018; /*0x56c9a6*/
   do /*0x56cb01*/
   {
     v78 = 2; /*0x56c9ad*/
-    v62 = RA2_OPNEW(2 * *(_DWORD *)&v1->__pad_44[8]); /*0x56c9b8*/
+    v62 = RA2_OPNEW(2 * *(_DWORD *)&v1->q044[8]); /*0x56c9b8*/
     v82 = (__int16 *)v62; /*0x56c9c4*/
     *v83 = v62; /*0x56c9c8*/
     v63 = 0; /*0x56c9cd*/
-    if ( *(int *)&v1->__pad_44[8] > 0 ) /*0x56c9d1*/
+    if ( *(int *)&v1->q044[8] > 0 ) /*0x56c9d1*/
     {
       v64 = (_WORD *)v62; /*0x56c9d3*/
       do /*0x56c9f3*/
         *v64++ = v61[Blocka[v63++]] != 1; /*0x56c9e7*/
-      while ( v63 < *(_DWORD *)&v1->__pad_44[8] ); /*0x56c9f3*/
+      while ( v63 < *(_DWORD *)&v1->q044[8] ); /*0x56c9f3*/
     }
-    v65 = *(_DWORD *)&v1->__pad_44[8]; /*0x56c9f5*/
+    v65 = *(_DWORD *)&v1->q044[8]; /*0x56c9f5*/
     v66 = 0; /*0x56c9f8*/
     v94 = 0; /*0x56c9fc*/
     if ( v65 > 0 ) /*0x56ca00*/
@@ -919,7 +919,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
           ++v78; /*0x56cac1*/
           v66 = v94; /*0x56cac5*/
         }
-        v73 = *(_DWORD *)&v1->__pad_44[8]; /*0x56cac9*/
+        v73 = *(_DWORD *)&v1->q044[8]; /*0x56cac9*/
         ++v66; /*0x56cacc*/
         ++v67; /*0x56cacd*/
         v94 = v66; /*0x56cad2*/
@@ -934,7 +934,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
   }
   while ( (int)v61 < (int)dword_82A734 ); /*0x56cb01*/
   v74 = 0; /*0x56cb0a*/
-  if ( *(int *)&v1->__pad_44[8] > 0 ) /*0x56cb0e*/
+  if ( *(int *)&v1->q044[8] > 0 ) /*0x56cb0e*/
   {
     v75 = (void **)v77; /*0x56cb10*/
     do /*0x56cb28*/
@@ -943,7 +943,7 @@ AbstractClass * * Terrain::ConnectivityGraph(void *a1_1)
       ++v74; /*0x56cb22*/
       ++v75; /*0x56cb23*/
     }
-    while ( v74 < *(_DWORD *)&v1->__pad_44[8] ); /*0x56cb28*/
+    while ( v74 < *(_DWORD *)&v1->q044[8] ); /*0x56cb28*/
   }
   RA2_OPDEL(Blocka); /*0x56cb2f*/
   RA2_OPDEL(v77); /*0x56cb39*/
@@ -1556,7 +1556,7 @@ void Terrain::ProcessCellModification(__int16 *aP1)
         goto LABEL_139; /*0x5703e8*/
       }
       v34 = (__int16)v32 + (v81[1] << 9); /*0x5703f1*/
-      if ( !*((_DWORD *)this->Terrain_field_0x13C + v34) ) /*0x570401*/
+      if ( !*((_DWORD *)this->q13C + v34) ) /*0x570401*/
         goto LABEL_74; /*0x570401*/
       if ( v34 < 0x40000 && (v35 = *(int **)(*(_DWORD *)&stru_87F5F0.__pad_58[732] + 4 * v34)) != 0 ) /*0x57041d*/
       {
@@ -1830,7 +1830,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
   int v37; // esi
   int v38; // ebx
   int v39; // eax
-  void *Terrain_field_0x128; // ecx
+  void *q128; // ecx
   unsigned int v41; // eax
   int *v42; // eax
   int *v43; // edx
@@ -2034,13 +2034,13 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       goto LABEL_141; /*0x5738a4*/
     while ( 1 ) /*0x5738aa*/
     {
-      if ( (__int16)v38 > (int)this->Terrain_field_0x12C + v39 ) /*0x5738bb*/
+      if ( (__int16)v38 > (int)this->q12C + v39 ) /*0x5738bb*/
         goto LABEL_141; /*0x5738bb*/
-      Terrain_field_0x128 = this->Terrain_field_0x128; /*0x5738ca*/
-      if ( v87[1] < (int)Terrain_field_0x128 || v87[1] > (int)Terrain_field_0x128 + *(_DWORD *)this->__pad_130 ) /*0x5738e6*/
+      q128 = this->q128; /*0x5738ca*/
+      if ( v87[1] < (int)q128 || v87[1] > (int)q128 + *(_DWORD *)this->q130 ) /*0x5738e6*/
         goto LABEL_141; /*0x5738e6*/
       v41 = (__int16)v38 + (v87[1] << 9); /*0x5738ef*/
-      if ( *((_DWORD *)this->Terrain_field_0x13C + v41) ) /*0x5738fb*/
+      if ( *((_DWORD *)this->q13C + v41) ) /*0x5738fb*/
       {
         if ( v41 < 0x40000 && (v42 = *(int **)(*(_DWORD *)&stru_87F5F0.__pad_58[732] + 4 * v41)) != 0 ) /*0x57391b*/
         {
@@ -2421,7 +2421,7 @@ int Terrain::CreateCrater(IUnknown * aP1, void *a2_1, void *a3_1, void *a4_1, vo
       return v10; /*0x576990*/
     }
     v24 = (__int16)v21 + (IDA_SHIWORD(a2) << 9); /*0x57699d*/
-    if ( !*((_DWORD *)this->Terrain_field_0x13C + v24) ) /*0x5769a9*/
+    if ( !*((_DWORD *)this->q13C + v24) ) /*0x5769a9*/
       goto LABEL_49; /*0x5769a9*/
     if ( v24 < 0x40000 && (v25 = *(int **)(*(_DWORD *)&stru_87F5F0.__pad_58[732] + 4 * v24)) != 0 ) /*0x5769c5*/
     {
@@ -3150,7 +3150,7 @@ int Terrain::LookupByName()
   v2 = 0; /*0x71dd8d*/
   if ( dword_A8E328 <= 0 ) /*0x71dd91*/
     return -1; /*0x71ddb6*/
-  while ( _strcmpi(this->__pad_0, (char *)(*((_DWORD *)dword_A8E31C + v2) + 36)) ) /*0x71ddaa*/
+  while ( _strcmpi(this->q000, (char *)(*((_DWORD *)dword_A8E31C + v2) + 36)) ) /*0x71ddaa*/
   {
     if ( ++v2 >= dword_A8E328 ) /*0x71ddb4*/
       return -1; /*0x71ddb4*/

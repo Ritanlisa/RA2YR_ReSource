@@ -102,5 +102,6 @@ struct Audio {
     static int SetVoiceVolume(Audio * aP1, float a2, char a3);  // G57w10-S raw 0x005FA590 (was C2597 interim stub)
     static int IsLoud(Audio * aP1);  // G57w10-S raw 0x00750010 (was C2597 interim stub)
     int InitFromINI(double a2, double a3, int a1, int aP1, int aP2, void * aControl, void * aLimit, void * aMinvolume, void * aPriority);
+    char[4] __pad_10;  // 0x16 (ml)
 };
 } // namespace gamemd

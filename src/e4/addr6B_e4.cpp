@@ -315,14 +315,14 @@ AbstractClass * * SlaveManager_InitGrid()
   }
   dword_8759A8 = *(_DWORD *)&stru_87F5F0.__pad_58[708]; /*0x6b2ae8*/
   dword_8759AC = *(_DWORD *)&stru_87F5F0.__pad_58[712]; /*0x6b2afa*/
-  v40.MapSeed_field_0x18 = -65536; /*0x6b2b11*/
+  v40.q018 = -65536; /*0x6b2b11*/
   result = *(_DWORD *)&stru_87F5F0.__pad_58[716] + 1; /*0x6b2b23*/
   v6 = *(_DWORD *)&stru_87F5F0.__pad_58[720] + 1; /*0x6b2b24*/
-  v40.MapSeed_field_0x1C = -1; /*0x6b2b25*/
+  v40.q01C = -1; /*0x6b2b25*/
   v7 = 0; /*0x6b2b37*/
   dword_8759A4 = *(_DWORD *)&stru_87F5F0.__pad_58[716] + 1; /*0x6b2b3b*/
   dword_8759A0 = *(_DWORD *)&stru_87F5F0.__pad_58[720] + 1; /*0x6b2b40*/
-  v40.MapSeed_field_0x20 = 0xFFFF; /*0x6b2b46*/
+  v40.q020 = 0xFFFF; /*0x6b2b46*/
   for ( i = 0; v7 < v6; i = v7 ) /*0x6b2b4e*/
   {
     v8 = 0; /*0x6b2b56*/
@@ -336,11 +336,11 @@ AbstractClass * * SlaveManager_InitGrid()
         v30 = (char *)g_SlaveManagerPool + 8 * v8 + 8 * v7 * result; /*0x6b2b82*/
         v30[4] = 0; /*0x6b2b86*/
         v30[5] = 0; /*0x6b2b8a*/
-        IDA_HIWORD(v40.MapSeed_field_0x10) = dword_8759AC + v7; /*0x6b2ba8*/
+        IDA_HIWORD(v40.q010) = dword_8759AC + v7; /*0x6b2ba8*/
         v9 = dword_8759A8 + v8; /*0x6b2bad*/
-        IDA_LOWORD(v40.MapSeed_field_0x10) = v9; /*0x6b2ba3*/
-        *(_DWORD *)v31 = v40.MapSeed_field_0x10; /*0x6b2bb1*/
-        for ( j = &v40.MapSeed_field_0x18; ; ++j ) /*0x6b2bb5*/
+        IDA_LOWORD(v40.q010) = v9; /*0x6b2ba3*/
+        *(_DWORD *)v31 = v40.q010; /*0x6b2bb1*/
+        for ( j = &v40.q018; ; ++j ) /*0x6b2bb5*/
         {
           v11 = v31[1] + v9; /*0x6b2bc1*/
           if ( v11 > g_MissionQueueFrame.localVariables[160] /*0x6b2bdc*/
@@ -352,8 +352,8 @@ AbstractClass * * SlaveManager_InitGrid()
           }
           if ( *(int *)v32 >= 3 ) /*0x6b2be3*/
             break; /*0x6b2be3*/
-          v12 = IDA_HIWORD(v40.MapSeed_field_0x10) + *((_WORD *)j + 1); /*0x6b2bf1*/
-          IDA_LOWORD(v34) = IDA_LOWORD(v40.MapSeed_field_0x10) + *(_WORD *)j; /*0x6b2bfa*/
+          v12 = IDA_HIWORD(v40.q010) + *((_WORD *)j + 1); /*0x6b2bf1*/
+          IDA_LOWORD(v34) = IDA_LOWORD(v40.q010) + *(_WORD *)j; /*0x6b2bfa*/
           IDA_HIWORD(v34) = v12; /*0x6b2bff*/
           v9 = v34; /*0x6b2c04*/
           *(_DWORD *)v31 = v34; /*0x6b2c09*/
@@ -375,21 +375,21 @@ AbstractClass * * SlaveManager_InitGrid()
               + *(_DWORD *)*(&off_83FF18 + v15);
           v17 = g_MissionQueueFrame.localVariables[160]; /*0x6b2c97*/
           v38 = v16; /*0x6b2c9c*/
-          v18 = (__int16)(IDA_HIWORD(v40.MapSeed_field_0x10) - 1); /*0x6b2ca3*/
-          v19 = v18 + SLOWORD(v40.MapSeed_field_0x10); /*0x6b2ca6*/
+          v18 = (__int16)(IDA_HIWORD(v40.q010) - 1); /*0x6b2ca3*/
+          v19 = v18 + SLOWORD(v40.q010); /*0x6b2ca6*/
           if ( v19 > g_MissionQueueFrame.localVariables[160] /*0x6b2ccd*/
-            && SLOWORD(v40.MapSeed_field_0x10) - v18 < g_MissionQueueFrame.localVariables[160]
-            && v18 - SLOWORD(v40.MapSeed_field_0x10) < g_MissionQueueFrame.localVariables[160]
+            && SLOWORD(v40.q010) - v18 < g_MissionQueueFrame.localVariables[160]
+            && v18 - SLOWORD(v40.q010) < g_MissionQueueFrame.localVariables[160]
             && v19 <= g_MissionQueueFrame.localVariables[161] )
           {
-            v35 = v40.MapSeed_field_0x10 - 0x10000; /*0x6b2cdc*/
-            *(_DWORD *)v32 = v40.MapSeed_field_0x10 - 0x10000; /*0x6b2ceb*/
+            v35 = v40.q010 - 0x10000; /*0x6b2cdc*/
+            *(_DWORD *)v32 = v40.q010 - 0x10000; /*0x6b2ceb*/
             v20 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v32); /*0x6b2cf4*/
-            *(_DWORD *)v40.__pad_0 = v20[9]; /*0x6b2cfd*/
+            *(_DWORD *)v40.q000 = v20[9]; /*0x6b2cfd*/
             if ( !(unsigned __int8)MapSeed::IsCellInBounds(&v40) /*0x6b2d4e*/
               || v20[17] != -1
               || v20[57]
-              || (v40.MapSeed_field_0x04 = v20[9], Tactical::GetCellData((Tactical *)&v40.MapSeed_field_0x04)[69])
+              || (v40.q004 = v20[9], Tactical::GetCellData((Tactical *)&v40.q004)[69])
               || (v21 = v20[14], v21 < *(int *)&stru_A8EB00.?[340])
               && v21 != 0xFFFF
               && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[328] + 4 * v21) + 736) )
@@ -398,18 +398,18 @@ AbstractClass * * SlaveManager_InitGrid()
             }
             v17 = g_MissionQueueFrame.localVariables[160]; /*0x6b2d60*/
           }
-          v22 = (__int16)(IDA_LOWORD(v40.MapSeed_field_0x10) - 1); /*0x6b2d73*/
-          v23 = (__int16)(IDA_HIWORD(v40.MapSeed_field_0x10) - 1); /*0x6b2d76*/
+          v22 = (__int16)(IDA_LOWORD(v40.q010) - 1); /*0x6b2d73*/
+          v23 = (__int16)(IDA_HIWORD(v40.q010) - 1); /*0x6b2d76*/
           if ( v23 + v22 > v17 /*0x6b2da0*/
             && v22 - v23 < v17
             && v23 - v22 < v17
             && v23 + v22 <= g_MissionQueueFrame.localVariables[161] )
           {
-            IDA_LOWORD(v36) = IDA_LOWORD(v40.MapSeed_field_0x10) - 1; /*0x6b2daa*/
-            IDA_HIWORD(v36) = IDA_HIWORD(v40.MapSeed_field_0x10) - 1; /*0x6b2daf*/
-            v40.MapSeed_field_0x04 = v36; /*0x6b2dbe*/
-            v24 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&v40.MapSeed_field_0x04); /*0x6b2dc7*/
-            *(_DWORD *)v40.__pad_0 = v24[9]; /*0x6b2dd0*/
+            IDA_LOWORD(v36) = IDA_LOWORD(v40.q010) - 1; /*0x6b2daa*/
+            IDA_HIWORD(v36) = IDA_HIWORD(v40.q010) - 1; /*0x6b2daf*/
+            v40.q004 = v36; /*0x6b2dbe*/
+            v24 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&v40.q004); /*0x6b2dc7*/
+            *(_DWORD *)v40.q000 = v24[9]; /*0x6b2dd0*/
             if ( !(unsigned __int8)MapSeed::IsCellInBounds(&v40) /*0x6b2e21*/
               || v24[17] != -1
               || v24[57]
@@ -422,30 +422,30 @@ AbstractClass * * SlaveManager_InitGrid()
             }
             v17 = g_MissionQueueFrame.localVariables[160]; /*0x6b2e33*/
           }
-          v26 = (__int16)(IDA_LOWORD(v40.MapSeed_field_0x10) - 1); /*0x6b2e3d*/
-          v27 = IDA_SHIWORD(v40.MapSeed_field_0x10) + v26; /*0x6b2e45*/
+          v26 = (__int16)(IDA_LOWORD(v40.q010) - 1); /*0x6b2e3d*/
+          v27 = IDA_SHIWORD(v40.q010) + v26; /*0x6b2e45*/
           if ( v27 > v17 /*0x6b2e60*/
-            && v26 - IDA_SHIWORD(v40.MapSeed_field_0x10) < v17
-            && IDA_SHIWORD(v40.MapSeed_field_0x10) - v26 < v17
+            && v26 - IDA_SHIWORD(v40.q010) < v17
+            && IDA_SHIWORD(v40.q010) - v26 < v17
             && v27 <= g_MissionQueueFrame.localVariables[161] )
           {
             v37[0] = -1; /*0x6b2e70*/
             v37[1] = 0; /*0x6b2e77*/
-            v40.MapSeed_field_0x08 = *CellStruct::Add( /*0x6b2e89*/
-                                        (CellStruct *)&v40.MapSeed_field_0x10,
-                                        &v40.MapSeed_field_0x0C,
+            v40.q008 = *CellStruct::Add( /*0x6b2e89*/
+                                        (CellStruct *)&v40.q010,
+                                        &v40.q00C,
                                         v37);
             v28 = (ObjectClass *)CellCoord::To_CellObj( /*0x6b2e93*/
                                    (CellCoord *)&stru_87F5F0.__pad_58[416],
-                                   (__int16 *)&v40.MapSeed_field_0x08);
+                                   (__int16 *)&v40.q008);
             if ( !System_Init_6B2520(v28) ) /*0x6b2e9c*/
               v30[4] = 1; /*0x6b2ea9*/
           }
-          if ( (unsigned __int8)MapSeed::IsCellInBounds((MapSeed *)&v40.MapSeed_field_0x10) ) /*0x6b2eb1*/
+          if ( (unsigned __int8)MapSeed::IsCellInBounds((MapSeed *)&v40.q010) ) /*0x6b2eb1*/
           {
             v29 = (ObjectClass *)CellCoord::To_CellObj( /*0x6b2ec4*/
                                    (CellCoord *)&stru_87F5F0.__pad_58[416],
-                                   (__int16 *)&v40.MapSeed_field_0x10);
+                                   (__int16 *)&v40.q010);
             if ( !System_Init_6B2520(v29) ) /*0x6b2ecd*/
               v30[4] = 1; /*0x6b2eda*/
           }
@@ -2897,10 +2897,10 @@ LABEL_2:
   memset( (void *)(String_v), 0, sizeof(String_v));
   if ( ((INIClass*)((uint8_t ***)&((unsigned char *)&stru_87C374)[44364]))->GetString((INIClass *)&stru_830620[10816], (uint8_t *)&stru_830620[10732], 0, String_v, 512)
     && String_v
-    && strlen(String_v[0].__pad_0) )
+    && strlen(String_v[0].q000) )
   {
     int v15 = 0;
-    for ( i = strtok(String_v[0].__pad_0, &stru_826598); i; i = strtok(0, &stru_826598) )
+    for ( i = strtok(String_v[0].q000, &stru_826598); i; i = strtok(0, &stru_826598) )
     {
       sscanf(i, (const char *const)&stru_825BAC.owningHouseIndex, dwRegister[32]);
       dwRegister[32][v15++ + 4] = dwRegister[32];
@@ -2908,9 +2908,9 @@ LABEL_2:
     if ( v15 >= 4 )
     {
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39088] = 1;
-      dwRegister.field_28 = -1;
+      dwRegister.q028 = -1;
       v216 = -1;
-      unsigned int * v17 = ((NetworkAddress *)&dwRegister.field_10)->Assign( (unsigned int *)(&dwRegister[36]), (IUnknown *)&dwRegister.field_28, 0);
+      unsigned int * v17 = ((NetworkAddress *)&dwRegister.q010)->Assign( (unsigned int *)(&dwRegister[36]), (IUnknown *)&dwRegister.q028, 0);
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39092] = *v17;
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39096] = v17[1];
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[39100] = v17[2];
@@ -2945,25 +2945,25 @@ LABEL_2:
   {
     ppv[0] = 0;
     int v23 = COMClassFactory::Register(ppv, *v22, 0, 7u);
-    IDA_LOBYTE(dwRegister.field_8) = v23 < 0;
+    IDA_LOBYTE(dwRegister.q008) = v23 < 0;
     if ( v23 < 0 )
     {
-      IDA_LOBYTE(dwRegister.field_8) = 0;
+      IDA_LOBYTE(dwRegister.q008) = 0;
       LibraryA = LoadLibraryA(v22[1]->Data2);
       v25 = LibraryA;
       if ( LibraryA )
       {
         ProcAddress = (void (*)(void))GetProcAddress(LibraryA, &stru_830620[67524]);
         if ( !ProcAddress || (ProcAddress(), COMClassFactory::Register(ppv, *v22, 0, 7u) < 0) )
-          IDA_LOBYTE(dwRegister.field_8) = 1;
+          IDA_LOBYTE(dwRegister.q008) = 1;
         FreeLibrary(v25);
       }
       else
       {
-        IDA_LOBYTE(dwRegister.field_8) = 1;
+        IDA_LOBYTE(dwRegister.q008) = 1;
       }
     }
-    if ( IDA_LOBYTE(dwRegister.field_8) )
+    if ( IDA_LOBYTE(dwRegister.q008) )
       break;
     if ( !ppv[0] )
       sub_7DC720(-2147467261);
@@ -3443,12 +3443,12 @@ LABEL_56:
   CoRegisterClassObject(&stru_7E99A0, v180, 1u, 1u, (LPDWORD)&dwRegister);
   DynamicVector::Add(&((unsigned char *)&stru_B05488)[26624], &dwRegister);
   RegisterActiveObject(&unk_89A29C, &rguid, 1u, (DWORD *)&((unsigned char *)&stru_B05488)[26724]);
-  if ( IDA_LOBYTE(dwRegister.field_8) )
+  if ( IDA_LOBYTE(dwRegister.q008) )
   {
     v205 = GetStringCSF( (wchar_t *)(g_Str_TXT_SHORT_TITLE), 0, (const char *)(&stru_830620[67564]), 1618);
     v181 = GetStringCSF( (wchar_t *)&stru_830620[67500], 0, (const char *)(&stru_830620[67564]), 1618);
     WideMessageBox(0, v181, v205, 0x30u);
-    if ( IDA_LOBYTE(dwRegister.field_8) )
+    if ( IDA_LOBYTE(dwRegister.q008) )
       exit(1);
   }
   Debug::Log();
@@ -3758,13 +3758,13 @@ AllocateSurfaceScreenSurfaces( (int)&((unsigned char *)&stru_87C374)[44092], (Ob
   if ( (((unsigned char *)&HouseClass_Player)[44052] & 4) == 4 )
   {
     INIClass::SetBool(&((unsigned char *)&stru_87C374)[44364], &g_INI_Key_Intro, &stru_830620[67016], 0);
-    (*(void (**)(CCINIClass *))(*(unsigned int *)v197->__pad_0 + 52))( (CCINIClass *)(v197));
-    (*(void (**)(CCINIClass *, int))(*(unsigned int *)v197->__pad_0 + 28))( (CCINIClass *)(v197), 1);
+    (*(void (**)(CCINIClass *))(*(unsigned int *)v197->q000 + 52))( (CCINIClass *)(v197));
+    (*(void (**)(CCINIClass *, int))(*(unsigned int *)v197->q000 + 28))( (CCINIClass *)(v197), 1);
     INIClass::WriteDigest(&((unsigned char *)&stru_87C374)[44364], v197, 0);
   }
-  (*(void (**)(CCINIClass *))(*(unsigned int *)v197->__pad_0 + 52))( (CCINIClass *)(v197));
+  (*(void (**)(CCINIClass *))(*(unsigned int *)v197->q000 + 52))( (CCINIClass *)(v197));
   if ( v197 )
-    (**(void (***)(CCINIClass *, int))v197->__pad_0)(v197, 1);
+    (**(void (***)(CCINIClass *, int))v197->q000)(v197, 1);
   if ( ((unsigned char *)&HouseClass_Player)[47712] )
   {
     MainGame();

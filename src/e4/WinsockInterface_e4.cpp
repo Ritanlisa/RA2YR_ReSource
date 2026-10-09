@@ -281,12 +281,12 @@ int WinsockInterface::Init()
       MessageBoxA(g_hWnd, aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
     v3 = RA2_OPNEW(0x590u); /*0x7b1e53*/
-    v4 = *(_DWORD *)this->__pad_0; /*0x7b1e58*/
+    v4 = *(_DWORD *)this->q000; /*0x7b1e58*/
     v5 = (struct WSAData *)v3; /*0x7b1e5a*/
     v11 = (struct WSAData *)v3; /*0x7b1e61*/
     this->u32_3F06C = -1; /*0x7b1e65*/
     (*(void (__thiscall **)(WinsockInterface *))(v4 + 20))(this); /*0x7b1e6f*/
-    (*(void (__thiscall **)(WinsockInterface *))(*(_DWORD *)this->__pad_0 + 24))(this); /*0x7b1e76*/
+    (*(void (__thiscall **)(WinsockInterface *))(*(_DWORD *)this->q000 + 24))(this); /*0x7b1e76*/
     Debug::Log(); /*0x7b1e7e*/
     if ( WSAStartup(0x101u, v5) ) /*0x7b1e8c*/
     {

@@ -184,7 +184,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAUtConnInfoStruct *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x7ad172*/
+    (*(void (__thiscall **)(_VectorClass_PAUtConnInfoStruct *))(*(_DWORD *)this->q000 + 12))(this); /*0x7ad172*/
     return 1; /*0x7ad178*/
   }
 }
@@ -276,7 +276,7 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUtConnInfoStruct *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x7ad29e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUtConnInfoStruct *))(*(_DWORD *)this->q000 + 12))(this); /*0x7ad29e*/
   }
   v7 = this->m_8; /*0x7ad2a1*/
   if ( v7 < this->m_10 ) /*0x7ad2a9*/
@@ -312,7 +312,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x7ad373*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad376*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad376*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x7ad380*/
   {
     RA2_OPDEL(v3); /*0x7ad388*/
@@ -322,7 +322,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
   Block->m_8 = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
     RA2_OPDEL(Block); /*0x7ad3ab*/
-  return Block->__pad_0; /*0x7ad3b5*/
+  return Block->q000; /*0x7ad3b5*/
 }
 } // namespace gamemd
 
@@ -333,7 +333,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x7ad3c3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad3c6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad3c6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x7ad3d0*/
   {
     RA2_OPDEL(v3); /*0x7ad3d8*/
@@ -343,7 +343,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   Block->m_8 = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
     RA2_OPDEL(Block); /*0x7ad3fb*/
-  return Block->__pad_0; /*0x7ad405*/
+  return Block->q000; /*0x7ad405*/
 }
 } // namespace gamemd
 

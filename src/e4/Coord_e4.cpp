@@ -110,7 +110,7 @@ unsigned int * Coord::ToCell(unsigned int *aP1)
 {
   int v3; // [esp+0h] [ebp-4h]
 
-  IDA_LOWORD(v3) = *(_DWORD *)this->__pad_0 / 256; /*0x413a3f*/
+  IDA_LOWORD(v3) = *(_DWORD *)this->q000 / 256; /*0x413a3f*/
   IDA_HIWORD(v3) = *(_DWORD *)&this->Coord_field_0x2[2] / 256; /*0x413a53*/
   *aP1 = v3; /*0x413a60*/
   return aP1; /*0x413a63*/
@@ -120,26 +120,26 @@ unsigned int * Coord::ToCell(unsigned int *aP1)
 namespace gamemd {
 void * Coord::Subtract(int aP1, int aP2, int aP3)
 {
-  *(_DWORD *)this->__pad_0 = aP1; /*0x41c23a*/
+  *(_DWORD *)this->q000 = aP1; /*0x41c23a*/
   *(_DWORD *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
-  this->Coord_field_0x8 = (void *)aP3; /*0x41c243*/
-  return this->__pad_0; /*0x41c246*/
+  this->q008 = (void *)aP3; /*0x41c243*/
+  return this->q000; /*0x41c246*/
 }
 }
 // 0x41C380
 namespace gamemd {
 int Coord::Length()
 {
-  double Coord_field_0x8; // st7
+  double q008; // st7
   __int64 result; // rax
   int v3; // kr00_4
 
-  Coord_field_0x8 = (double)(int)this->Coord_field_0x8; /*0x41c380*/
+  q008 = (double)(int)this->q008; /*0x41c380*/
   Math::Sqrt( /*0x41c3a4*/
-    (double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0
+    (double)*(int *)this->q000 * (double)*(int *)this->q000
   + (double)*(int *)&this->Coord_field_0x2[2] * (double)*(int *)&this->Coord_field_0x2[2]
-  + Coord_field_0x8 * Coord_field_0x8);
-  v3 = Math::RoundToInt(Coord_field_0x8); /*0x41c3ac*/
+  + q008 * q008);
+  v3 = Math::RoundToInt(q008); /*0x41c3ac*/
   IDA_WORD2(result) = IDA_HIWORD(v3); /*0x41c3ac*/
   IDA_LOWORD(result) = v3; /*0x41c3ac*/
   return result; /*0x41c3a9*/
@@ -191,7 +191,7 @@ void * Coord::To_Cell(unsigned int *aP1)
   v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
   if ( v3 >= 0 && v3 < this->q050 ) /*0x565764*/
   {
-    v4 = (CellClass *)*((_DWORD *)this->Coord_field_0x13C + v3); /*0x56576c*/
+    v4 = (CellClass *)*((_DWORD *)this->q13C + v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }
@@ -205,7 +205,7 @@ void * Coord::To_Cell(unsigned int *aP1)
 namespace gamemd {
 int Coord::Compare2D(unsigned short * a2, void *a2_2)
 {
-  return *(_WORD *)a2_2->__pad_0 != *a2_2 || *(_WORD *)a2_2->Coord_field_0x2 != a2_2[1]; /*0x5ac388*/
+  return *(_WORD *)a2_2->q000 != *a2_2 || *(_WORD *)a2_2->Coord_field_0x2 != a2_2[1]; /*0x5ac388*/
 }
 }
 // 0x6557F0
@@ -259,8 +259,8 @@ AbstractClass * * Coord::To_Screen(unsigned int *a2, int *a3)
   IDA_LOWORD(v6) = Math::RoundToInt((double)(int)a2[2] * dbl_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
   *a3 = v4; /*0x6d21fd*/
   a3[1] = v5 - v6; /*0x6d21ff*/
-  v7 = *a3 - *(_DWORD *)&this->__pad_C[164]; /*0x6d2213*/
-  v8 = a3[1] - *(_DWORD *)&this->__pad_C[168]; /*0x6d2215*/
+  v7 = *a3 - *(_DWORD *)&this->q00C[164]; /*0x6d2213*/
+  v8 = a3[1] - *(_DWORD *)&this->q00C[168]; /*0x6d2215*/
   *a3 = v7; /*0x6d2217*/
   a3[1] = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
@@ -282,8 +282,8 @@ void * Coord::Divide(int * a2, int a3)
   if ( a3 ) /*0x710708*/
   {
     v4 = *(_DWORD *)&this->Coord_field_0x2[2] / a3; /*0x71072f*/
-    v5 = (int)this->Coord_field_0x8 / a3; /*0x710735*/
-    *a2 = *(_DWORD *)this->__pad_0 / a3; /*0x71073d*/
+    v5 = (int)this->q008 / a3; /*0x710735*/
+    *a2 = *(_DWORD *)this->q000 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
     a2[2] = v5; /*0x710745*/
   }

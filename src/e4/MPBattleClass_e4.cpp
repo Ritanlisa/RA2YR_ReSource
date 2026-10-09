@@ -36,8 +36,8 @@ namespace gamemd {
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&MultiplayerBattle_vftable; /*0x5c0df8*/
-  return this->__pad_0; /*0x5c0e00*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&MultiplayerBattle_vftable; /*0x5c0df8*/
+  return this->q000; /*0x5c0e00*/
 }
 } // namespace gamemd
 // 0x5C5CE0
@@ -45,8 +45,8 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&FreeForAll_vftable; /*0x5c5d08*/
-  return this->__pad_0; /*0x5c5d10*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&FreeForAll_vftable; /*0x5c5d08*/
+  return this->q000; /*0x5c5d10*/
 }
 } // namespace gamemd
 // 0x5C6150
@@ -54,8 +54,8 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6, void *a7)
 {
   MultiplayerGameMode::Construct((MultiplayerGameMode *)a1, aP2, a3, aP4, aP5, aP6, a7); /*0x5c6173*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&MultiplayerManBattle_vftable; /*0x5c6178*/
-  return a1->__pad_0; /*0x5c6180*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&MultiplayerManBattle_vftable; /*0x5c6178*/
+  return a1->q000; /*0x5c6180*/
 }
 } // namespace gamemd
 // 0x5C93E0
@@ -63,8 +63,8 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
   MultiplayerGameMode::Construct(a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Megawealth_vftable; /*0x5c9408*/
-  return this->__pad_0; /*0x5c9410*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Megawealth_vftable; /*0x5c9408*/
+  return this->q000; /*0x5c9410*/
 }
 } // namespace gamemd
 // 0x5CA630
@@ -72,8 +72,8 @@ namespace gamemd {
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&MultiplayerSiege_vftable; /*0x5ca658*/
-  return this->__pad_0; /*0x5ca660*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&MultiplayerSiege_vftable; /*0x5ca658*/
+  return this->q000; /*0x5ca660*/
 }
 } // namespace gamemd
 // 0x5CA7D0
@@ -224,8 +224,8 @@ namespace gamemd {  // G42.18c ns repair
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&UnholyAlliance_vftable; /*0x5cb3c8*/
-  return this->__pad_0; /*0x5cb3d0*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&UnholyAlliance_vftable; /*0x5cb3c8*/
+  return this->q000; /*0x5cb3d0*/
 }
 }  // G42.18c ns repair
 // 0x5CB570

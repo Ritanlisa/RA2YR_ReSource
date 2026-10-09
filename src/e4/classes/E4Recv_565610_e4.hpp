@@ -23,5 +23,6 @@ struct E4Recv_565610 {
     unsigned int q388224393901144;  // 0x388224393901144
 // --- flat members (END) ---
     unsigned int * sub_565610(unsigned int * a2, short * a3);  // 0x565610
+    unsigned char q03D;  // 0x3D (offset-truth supply)
 };
 } // namespace gamemd

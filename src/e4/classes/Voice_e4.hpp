@@ -47,6 +47,7 @@ struct Voice {
 // --- flat members (END) ---
     int DetachChannel();
     int Stop();
+    unsigned int u32_104;  // 0x104 (offset-truth supply)
 };
 #endif  // GAMEMD_G2_Voice_DEF
 

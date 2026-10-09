@@ -496,7 +496,7 @@ char ReceiveNetworkFile(int a1, DWORD a2, int a3, char a4)
     ProgressAnim::Init((int)&dword_AC4F58, 0, 1079574528, 1, 0); /*0x69428f*/
     SHPClass::Load((int)&dword_AC4F58, g_Str_File_PROGBARM_SHP, 0, 0); /*0x6942a2*/
     StringCSF = GetStringCSF(aGuiMaptransfer, 0, aDRa2mdpostSend, 355); /*0x6942c2*/
-    TextRenderer::MeasureBuilding((int *)dword_AC4F58.__pad_0, -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
+    TextRenderer::MeasureBuilding((int *)dword_AC4F58.q000, -1, -1, (int)StringCSF, 0, 1); /*0x6942cf*/
     Screen::Capture(1, 0, a2, (int)v6); /*0x6942d8*/
     LoadScreen::Render((int)&dword_AC4F58, a2, (int)v6, NAN); /*0x6942ea*/
     Network::UpdateLatencyDisplay((int)&dword_AC4F58, 0, 0.0, NAN); /*0x694302*/
@@ -946,20 +946,20 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
       {
         if ( Count::GetCountQueue((Count *)&unk_A8EA70) >= 2 ) /*0x694fda*/
           goto LABEL_70; /*0x694fda*/
-        *(_DWORD *)&v57.__pad_0[12] = 112; /*0x694fe6*/
-        *(_WORD *)&v57.__pad_0[36] = v27; /*0x694ff1*/
-        *(_WORD *)&v57.__pad_0[38] = v31; /*0x694ff9*/
+        *(_DWORD *)&v57.q000[12] = 112; /*0x694fe6*/
+        *(_WORD *)&v57.q000[36] = v27; /*0x694ff1*/
+        *(_WORD *)&v57.q000[38] = v31; /*0x694ff9*/
         if ( v31 >= 192 ) /*0x695001*/
-          *(_WORD *)&v57.__pad_0[38] = 192; /*0x695003*/
-        v31 -= *(unsigned __int16 *)&v57.__pad_0[38]; /*0x695021*/
+          *(_WORD *)&v57.q000[38] = 192; /*0x695003*/
+        v31 -= *(unsigned __int16 *)&v57.q000[38]; /*0x695021*/
         v49 = v31; /*0x695028*/
-        v41 = CCFileClass::Read(&v54, &v57.__pad_0[40], *(unsigned __int16 *)&v57.__pad_0[38]); /*0x69502c*/
-        if ( v41 == *(unsigned __int16 *)&v57.__pad_0[38] ) /*0x695040*/
+        v41 = CCFileClass::Read(&v54, &v57.q000[40], *(unsigned __int16 *)&v57.q000[38]); /*0x69502c*/
+        if ( v41 == *(unsigned __int16 *)&v57.q000[38] ) /*0x695040*/
         {
           if ( v45 != -1 ) /*0x69504f*/
             Timer::GetTicks(); /*0x695055*/
           Debug::Log(); /*0x695072*/
-          Stream::WriteBlock((int *)&unk_A8EA70, (int)&v57.__pad_0[12], 220, 1); /*0x69508e*/
+          Stream::WriteBlock((int *)&unk_A8EA70, (int)&v57.q000[12], 220, 1); /*0x69508e*/
         }
         ++v27; /*0x69509e*/
         v48 += 100; /*0x6950a4*/
@@ -975,17 +975,17 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
     {
       if ( Network::GetQueueCount(&unk_A8E9C0) < 10 ) /*0x694ddc*/
       {
-        *(_DWORD *)&v57.__pad_0[12] = 18; /*0x694de4*/
-        *(_WORD *)&v57.__pad_0[36] = v27; /*0x694def*/
-        *(_WORD *)&v57.__pad_0[38] = v31; /*0x694df7*/
+        *(_DWORD *)&v57.q000[12] = 18; /*0x694de4*/
+        *(_WORD *)&v57.q000[36] = v27; /*0x694def*/
+        *(_WORD *)&v57.q000[38] = v31; /*0x694df7*/
         if ( v31 >= 192 ) /*0x694dff*/
-          *(_WORD *)&v57.__pad_0[38] = 192; /*0x694e01*/
+          *(_WORD *)&v57.q000[38] = 192; /*0x694e01*/
         v34 = ToWideStringChar((char *)*dword_A8DA78); /*0x694e17*/
         v35 = v49; /*0x694e31*/
-        strcpy(&v57.__pad_0[16], v34); /*0x694e38*/
-        v49 = v35 - *(unsigned __int16 *)&v57.__pad_0[38]; /*0x694e5c*/
-        v36 = CCFileClass::Read(&v54, &v57.__pad_0[40], *(unsigned __int16 *)&v57.__pad_0[38]); /*0x694e60*/
-        if ( v36 == *(unsigned __int16 *)&v57.__pad_0[38] ) /*0x694e74*/
+        strcpy(&v57.q000[16], v34); /*0x694e38*/
+        v49 = v35 - *(unsigned __int16 *)&v57.q000[38]; /*0x694e5c*/
+        v36 = CCFileClass::Read(&v54, &v57.q000[40], *(unsigned __int16 *)&v57.q000[38]); /*0x694e60*/
+        if ( v36 == *(unsigned __int16 *)&v57.q000[38] ) /*0x694e74*/
         {
           if ( v45 != -1 ) /*0x694e85*/
             Timer::GetTicks(); /*0x694e8b*/
@@ -996,7 +996,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
             {
               do /*0x694ef6*/
               {
-                v38 = Network::SendToPlayer((int)&unk_A8E9C0, (int)&v57.__pad_0[12], 220, 1, (wchar_t *)dword_A8DA78[i]); /*0x694eed*/
+                v38 = Network::SendToPlayer((int)&unk_A8E9C0, (int)&v57.q000[12], 220, 1, (wchar_t *)dword_A8DA78[i]); /*0x694eed*/
                 Event::Dispatch(); /*0x694eef*/
               }
               while ( !v38 ); /*0x694ef6*/
@@ -1010,7 +1010,7 @@ int Network_SendFile(char * Source, int a2, char a3, char a4)
               {
                 v40 = Network::SendToPlayer( /*0x694f39*/
                         (int)&unk_A8E9C0,
-                        (int)&v57.__pad_0[12],
+                        (int)&v57.q000[12],
                         220,
                         1,
                         (wchar_t *)dword_A8DA78[byte_A8BB10[j]]);
@@ -1434,33 +1434,33 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
               v27.headNode[0] = 0; /*0x6996a2*/
               v27.headNode[1] = 0; /*0x6996a9*/
               INISectionList::Constructor((INISectionList *)&v27.headNode[2]); /*0x6996b0*/
-              Node::Init((MixFileClass *)&v27.__pad_20[8]); /*0x6996bc*/
+              Node::Init((MixFileClass *)&v27.q020[8]); /*0x6996bc*/
               v27.INIClass_field_3C = 0; /*0x6996d5*/
               v28 = 0; /*0x6996dc*/
-              *(_DWORD *)v27.__pad_0 = &CCINIClass_Vtable; /*0x6996e3*/
+              *(_DWORD *)v27.q000 = &CCINIClass_Vtable; /*0x6996e3*/
               v25.Buffer_field_14 = 0; /*0x6996ea*/
               v25.Buffer_field_18 = 0; /*0x6996f1*/
               v25.Buffer_field_10 = (int)&(void*)(void*)&Straw_vftable; /*0x6996f8*/
               Buffer::Init((Buffer *)&v25.Buffer_field_1C, (int)v8, v19 - (_BYTE *)v8); /*0x699703*/
               v26 = 0; /*0x69970f*/
               v25.Buffer_field_10 = (int)&(void*)(void*)&BufferStraw_vftable; /*0x699720*/
-              CCINIClass::LoadAndVerifyDigest((int *)v27.__pad_0, (int)&v25.Buffer_field_10, 0, 0); /*0x69972b*/
+              CCINIClass::LoadAndVerifyDigest((int *)v27.q000, (int)&v25.Buffer_field_10, 0, 0); /*0x69972b*/
               v29.headNode[0] = 0; /*0x699737*/
               v29.headNode[1] = 0; /*0x69973e*/
               INISectionList::Constructor((INISectionList *)&v29.headNode[2]); /*0x699745*/
-              Node::Init((MixFileClass *)&v29.__pad_20[8]); /*0x699751*/
-              *(_DWORD *)v29.__pad_0 = &CCINIClass_Vtable; /*0x699756*/
+              Node::Init((MixFileClass *)&v29.q020[8]); /*0x699751*/
+              *(_DWORD *)v29.q000 = &CCINIClass_Vtable; /*0x699756*/
               v29.INIClass_field_3C = 0; /*0x699764*/
               v30 = 0; /*0x69976b*/
-              v23.Straw_field_0x04 = 0; /*0x69977f*/
+              v23.q004 = 0; /*0x69977f*/
               v24 = 0; /*0x699786*/
-              *(_DWORD *)v23.__pad_0 = &(void*)(void*)&Straw_vftable; /*0x69978d*/
+              *(_DWORD *)v23.q000 = &(void*)(void*)&Straw_vftable; /*0x69978d*/
               Buffer::Init(&v25, (int)v14, strlen((const char *)v14) + 1); /*0x699798*/
               v25.Buffer_field_0C = 0; /*0x6997ae*/
-              *(_DWORD *)v23.__pad_0 = &(void*)(void*)&BufferStraw_vftable; /*0x6997b5*/
-              CCINIClass::LoadAndVerifyDigest((int *)v29.__pad_0, (int)&v23, 0, 0); /*0x6997c0*/
-              *a5 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMinplayers, *a5); /*0x6997e5*/
-              *a6 = INIClass::ReadInt_Overwrite((bool *)v27.__pad_0, aBasic, aMaxplayers, *a6); /*0x69981b*/
+              *(_DWORD *)v23.q000 = &(void*)(void*)&BufferStraw_vftable; /*0x6997b5*/
+              CCINIClass::LoadAndVerifyDigest((int *)v29.q000, (int)&v23, 0, 0); /*0x6997c0*/
+              *a5 = INIClass::ReadInt_Overwrite((bool *)v27.q000, aBasic, aMinplayers, *a5); /*0x6997e5*/
+              *a6 = INIClass::ReadInt_Overwrite((bool *)v27.q000, aBasic, aMaxplayers, *a6); /*0x69981b*/
               INIClass::GetString( /*0x699833*/
                 &v27,
                 aBasic,
@@ -1471,7 +1471,7 @@ int ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Camp
               INIClass::GetString(&v27, aBasic, (unsigned __int8 *)g_INI_Key_Name, g_Str_No_Name, v31, 64); /*0x699858*/
               BulkCharToWide(a1, (unsigned __int8 *)v31, -1); /*0x69986a*/
               INIClass::GetString(&v29, (unsigned __int8 *)g_INI_Key_Digest, a1, g_Str_No_Digest, a2, 32); /*0x69988f*/
-              *a4 = INIClass::ReadBool_Overwrite((int *)v27.__pad_0, aBasic, (unsigned __int8 *)g_INI_Key_Official, 0); /*0x6998ba*/
+              *a4 = INIClass::ReadBool_Overwrite((int *)v27.q000, aBasic, (unsigned __int8 *)g_INI_Key_Official, 0); /*0x6998ba*/
               Debug::Log(); /*0x6998d9*/
               Debug::Log(); /*0x6998eb*/
               RA2_OPDEL(v8); /*0x6998f1*/
@@ -1679,15 +1679,15 @@ void E4Recv_690530::sub_690530(void * a2, int a3)
 namespace gamemd {
 char * E4Recv_6905F0::sub_6905F0()
 {
-  void *ScoreFontClass_field_0x0C; // eax
+  void *q00C; // eax
   char *result; // eax
 
-  ScoreFontClass_field_0x0C = (void *)this->ScoreFontClass_field_0x0C; /*0x6905f6*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&ScoreFontClass_vftable; /*0x6905f9*/
-  if ( ScoreFontClass_field_0x0C && this->M16 == 1 ) /*0x690607*/
+  q00C = (void *)this->q00C; /*0x6905f6*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&ScoreFontClass_vftable; /*0x6905f9*/
+  if ( q00C && this->M16 == 1 ) /*0x690607*/
   {
-    RA2_OPDEL(ScoreFontClass_field_0x0C); /*0x69060a*/
-    this->ScoreFontClass_field_0x0C = 0; /*0x690612*/
+    RA2_OPDEL(q00C); /*0x69060a*/
+    this->q00C = 0; /*0x690612*/
     this->M16 = 0; /*0x690615*/
   }
   result = (char *)--dword_B0558C; /*0x69061d*/

@@ -38,7 +38,7 @@ int AlphaShapeClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int Prefix; // eax
 
-  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x420e4f*/
+  Prefix = AbstractClass::SaveLoad_Prefix((int *)aP0->q000, a1, aP2); /*0x420e4f*/
   return Prefix >= 0 ? 0 : Prefix;
 }
 } // namespace gamemd
@@ -48,7 +48,7 @@ int AlphaShapeClass::SD_vt10(int a2, int a3)
 {
 
   a2 = a2; /*0x420e70*/
-  if ( a2 == this->AlphaShapeClass_field_0x24 ) /*0x420e79*/
+  if ( a2 == this->q024 ) /*0x420e79*/
     this->u32_3C = 1; /*0x420e7b*/
 }
 } // namespace gamemd
@@ -60,7 +60,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   int v4; // eax
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x42173d*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x42173d*/
   this->AlphaShapeClass_field_0x04 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x421743*/
   this->AlphaShapeClass_field_0x08 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x42174a*/
   this->AlphaShapeClass_field_0x0C = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x421751*/
@@ -93,7 +93,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2, int aP0, int aP1)
   AbstractClass::DTOR(); /*0x4217e3*/
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
     RA2_OPDEL(); /*0x4217f0*/
-  return this->__pad_0; /*0x4217fa*/
+  return this->q000; /*0x4217fa*/
 }
 } // namespace gamemd
 namespace gamemd {
@@ -108,12 +108,12 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x420df9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x420e02*/
-      *(unsigned int *)aP0->__pad_0 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
+      *(unsigned int *)aP0->q000 = (unsigned int)(&vt_AlphaShapeClass); /*0x420e07*/
       aP0->AlphaShapeClass_field_0x04 = (int)&vt_AlphaShapeClass; /*0x420e0d*/
       aP0->AlphaShapeClass_field_0x08 = (int)&vt_AlphaShapeClass; /*0x420e14*/
       aP0->AlphaShapeClass_field_0x0C = (int)&vt_AlphaShapeClass; /*0x420e1b*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->AlphaShapeClass_field_0x24)); /*0x420e2b*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance,(int *)(&aP0->q024)); /*0x420e2b*/
     *((unsigned int *)aP0 + 14) = 0; /*0x420e30*/
   }
   return Prefix_0; /*0x420e39*/

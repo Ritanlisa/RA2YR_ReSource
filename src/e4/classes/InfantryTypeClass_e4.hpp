@@ -1102,6 +1102,9 @@ struct InfantryTypeClass {
     unsigned int * GetDefaultDimensions(unsigned int * a1);
     InfantryTypeClass * ddtor(int Block, char a2);
     int DTOR();
+    unsigned int q5B84;  // 0x5B84 (offset-truth supply)
+    unsigned char q5C42;  // 0x5C42 (offset-truth supply)
+    unsigned int u32_5D00;  // 0x5D00 (offset-truth supply)
 };
 
 } // namespace gamemd

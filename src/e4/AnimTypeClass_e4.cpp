@@ -91,7 +91,7 @@ AnimTypeClass * AnimTypeClass::Construct(char *aP1)
   this->MiddleFrameIndex = -1; /*0x427544*/
   this->MiddleFrameWidth = 0; /*0x42754a*/
   this->MiddleFrameHeight = 0; /*0x427550*/
-  *(_DWORD *)this->__pad_2A0 = 0; /*0x427556*/
+  *(_DWORD *)this->q2A0 = 0; /*0x427556*/
   this->AnimTypeClass_field_2A4 = 0; /*0x42755c*/
   this->Damage[0] = 0; /*0x427562*/
   this->Damage[1] = 0; /*0x427568*/
@@ -251,7 +251,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       ImageFile = this->ImageFile; /*0x427ba5*/
       this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
-        ImageFile = (const char *)this->__pad_24; /*0x427bb9*/
+        ImageFile = (const char *)this->q024; /*0x427bb9*/
       _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x427bcb*/
       TheaterObjectTypeClassSpecificID(Buffer, a2); /*0x427bde*/
       v3 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427be9*/
@@ -281,7 +281,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       this->LoopEnd = this->End; /*0x427c5c*/
     this->MiddleFrameWidth = IDA_SHIWORD(Image[1].unused) / 2; /*0x427c6b*/
     this->MiddleFrameHeight = -1; /*0x427c74*/
-    *(_DWORD *)this->__pad_2A0 = -1; /*0x427c7a*/
+    *(_DWORD *)this->q2A0 = -1; /*0x427c7a*/
     IDA_LOBYTE(v3) = -1; /*0x427c71*/
   }
   return (char)v3; /*0x427c80*/
@@ -403,7 +403,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
           &v3[1],
           0,
           0,
-          (const char *)a1->__pad_24,
+          (const char *)a1->q024,
           (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId);
         a1->Image = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x428923*/
         return 0; /*0x428932*/
@@ -525,7 +525,7 @@ int AnimTypeClass::GetDamage()
     Debug::Log(); /*0x428c5e*/
     ImageFile = this->ImageFile; /*0x428c69*/
     if ( !this->ImageFile[0] ) /*0x428c63*/
-      ImageFile = (const char *)this->__pad_24; /*0x428c76*/
+      ImageFile = (const char *)this->q024; /*0x428c76*/
     _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x428c8b*/
     if ( this->Theater ) /*0x428c90*/
     {
@@ -533,7 +533,7 @@ int AnimTypeClass::GetDamage()
         Buffer,
         0,
         0,
-        (const char *)this->__pad_24,
+        (const char *)this->q024,
         (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId);
     }
     else if ( this->NewTheater ) /*0x428cd6*/
@@ -667,7 +667,7 @@ char AnimTypeClass::GetLoopCount(int a2)
         this->ImageAllocated = 0; /*0x427ad7*/
       }
       this->Image = 0; /*0x427af6*/
-      _makepath(Buffer, 0, 0, (const char *)this->__pad_24, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
+      _makepath(Buffer, 0, 0, (const char *)this->q024, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
       v2 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427b15*/
       this->Image = v2; /*0x427b1a*/
     }

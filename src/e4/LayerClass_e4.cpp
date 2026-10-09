@@ -213,11 +213,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
           {
             if ( !aP11 /*0x56de4c*/
-              || (v31 = v84 - 4 * (((unsigned int)v30->Cell_field_0x140 >> 8) & 1) - v30->Cell_field_0x11B[0],
+              || (v31 = v84 - 4 * (((unsigned int)v30->q140 >> 8) & 1) - v30->Cell_field_0x11B[0],
                   (int)((IDA_HIDWORD(v31) ^ v31) - IDA_HIDWORD(v31)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
-                && (aP13 || ((int)v30->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v30->q140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree(v17, v99, -1)) )
               {
                 v32 = v87; /*0x56deaa*/
@@ -272,11 +272,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
           {
             if ( !aP11 /*0x56e062*/
-              || (v40 = v84 - 4 * (((unsigned int)v39->Cell_field_0x140 >> 8) & 1) - v39->Cell_field_0x11B[0],
+              || (v40 = v84 - 4 * (((unsigned int)v39->q140 >> 8) & 1) - v39->Cell_field_0x11B[0],
                   (int)((IDA_HIDWORD(v40) ^ v40) - IDA_HIDWORD(v40)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
-                && (aP13 || ((int)v39->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v39->q140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree(v17, v98, -1)) )
               {
                 v41 = v87; /*0x56e0c0*/
@@ -340,11 +340,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
           {
             if ( !aP11 /*0x56e2a5*/
-              || (v50 = v84 - 4 * (((unsigned int)v49->Cell_field_0x140 >> 8) & 1) - v49->Cell_field_0x11B[0],
+              || (v50 = v84 - 4 * (((unsigned int)v49->q140 >> 8) & 1) - v49->Cell_field_0x11B[0],
                   (int)((IDA_HIDWORD(v50) ^ v50) - IDA_HIDWORD(v50)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
-                && (aP13 || ((int)v49->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v49->q140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree(v17, v100, -1)) )
               {
                 v51 = v76; /*0x56e303*/
@@ -394,11 +394,11 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
           if ( MapClass::CheckCellsBuildable(&v76, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
           {
             if ( !aP11 /*0x56e4a7*/
-              || (v57 = v84 - 4 * (((unsigned int)v56->Cell_field_0x140 >> 8) & 1) - v56->Cell_field_0x11B[0],
+              || (v57 = v84 - 4 * (((unsigned int)v56->q140 >> 8) & 1) - v56->Cell_field_0x11B[0],
                   (int)((IDA_HIDWORD(v57) ^ v57) - IDA_HIDWORD(v57)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
-                && (aP13 || ((int)v56->Cell_field_0x140 & 0x100) == 0)
+                && (aP13 || ((int)v56->q140 & 0x100) == 0)
                 && (!a17 || (unsigned __int8)MapClass::IsAreaFree(v17, v97, -1)) )
               {
                 v58 = v76; /*0x56e501*/
@@ -548,10 +548,10 @@ void * LayerClass::Reveal(int a2)
     v8 = 0; /*0x577dff*/
   }
   result = dword_A83D4C; /*0x577e04*/
-  if ( !dword_A83D4C->__pad_140[256] ) /*0x577e09*/
+  if ( !dword_A83D4C->q140[256] ) /*0x577e09*/
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/
-    dword_A83D4C->__pad_140[256] = 1; /*0x577e29*/
+    dword_A83D4C->q140[256] = 1; /*0x577e29*/
     dword_87F8DC = dword_87F8DC; /*0x577e3a*/
     dword_87F8F4 = 1; /*0x577e42*/
     dword_87F8FC = dword_87F8DC - 1; /*0x577e4b*/

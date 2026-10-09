@@ -10,5 +10,6 @@ struct E4Recv_491D90 {
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
     int sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZRead_E * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10);  // 0x491D90
+    unsigned char m_1;  // 0x1 (offset-truth supply)
 };
 } // namespace gamemd

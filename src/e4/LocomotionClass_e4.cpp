@@ -43,7 +43,7 @@ int LocomotionClass::Initialize()
   this->u8_14 = 0; /*0x4af597*/
   this->u32_4C = 0; /*0x4af59a*/
   this->u32_48 = v3; /*0x4af59d*/
-  this->__pad_015 = 0; /*0x4af5a3*/
+  this->q015 = 0; /*0x4af5a3*/
   this->u32_58 = -1; /*0x4af5a6*/
   this->u32_5C = -1; /*0x4af5a9*/
   this->u32_60 = 0; /*0x4af5ac*/
@@ -143,7 +143,7 @@ int LocomotionClass::ProcessData()
   this->u32_58 = 0; /*0x513c72*/
   this->u32_60 = 0; /*0x513c75*/
   this->u32_4C = 0; /*0x513c78*/
-  this->__pad_015 = 0; /*0x513c7b*/
+  this->q015 = 0; /*0x513c7b*/
   this->u32_5C = 1072693248; /*0x513c7e*/
   this->u32_64 = 0; /*0x513c85*/
   this->u32_68 = 0; /*0x513c88*/
@@ -170,13 +170,13 @@ int LocomotionClass::Update(void *a1, void *a2, void *a3, void *a4)
   this->DestinationCoords[2] = v2; /*0x54ac70*/
   FrameSnapshot::InitMax( /*0x54ac82*/
     (FrameSnapshot *)&this->__pad_50[4],
-    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
+    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1036));
   this->CurrentHeight = 0; /*0x54ac87*/
-  *(_DWORD *)&this->__pad_74[4] = 0; /*0x54ac8a*/
+  *(_DWORD *)&this->q074[4] = 0; /*0x54ac8a*/
   *(_DWORD *)&this->DestinationReached = 0; /*0x54ac8d*/
-  *(_DWORD *)this->__pad_74 = 0; /*0x54ac93*/
-  *(_DWORD *)&this->__pad_74[8] = 0; /*0x54ac96*/
-  *(_DWORD *)&this->__pad_74[12] = 0; /*0x54ac99*/
+  *(_DWORD *)this->q074 = 0; /*0x54ac93*/
+  *(_DWORD *)&this->q074[8] = 0; /*0x54ac96*/
+  *(_DWORD *)&this->q074[12] = 0; /*0x54ac99*/
   *(_DWORD *)&this->__pad_89[3] = 0; /*0x54ac9f*/
   this->__pad_89[7] = 0; /*0x54aca5*/
   this->unknown_91 = 0; /*0x54acab*/

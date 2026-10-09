@@ -77,10 +77,10 @@ extern unsigned int stru_A8EB00;      // data: 0xA8EB00
 // 与树头 C2011 相撞, 只取所需 typed 形态)
 struct DSurface_ViewBounds_flat {
     unsigned int field_0;
-    unsigned int field_4;
-    unsigned char __pad_8[0x34 - 0x8];
-    unsigned char __pad_34[0xFC - 0x34];
-    unsigned char __pad_FC[0x240 - 0xFC];   // 覆盖 __pad_FC[324] = +0x240
+    unsigned int q004;
+    unsigned char q008[0x34 - 0x8];
+    unsigned char q034[0xFC - 0x34];
+    unsigned char q0FC[0x240 - 0xFC];   // 覆盖 q0FC[324] = +0x240
 };
 extern DSurface_ViewBounds_flat DSurface_ViewBounds;  // data: 0x886FA0
 struct stru_87F5F0_host {
@@ -108,7 +108,7 @@ struct g_BuildingLoadQueue_Array_t {
     unsigned int PrimaryFirePixelOffset[2];
     unsigned int GateCloseDelay[2];
     unsigned int HalfDamageSmokeLocation2[3];
-    unsigned int align_E24;
+    unsigned int qE24;
     unsigned int __pad_E5C[4];
     unsigned int unknown___2;
     unsigned int ExitCoord[3];
@@ -214,7 +214,7 @@ char TriggerTypeClass::SaveToINI(char * a2) {
   return INIClass::SetString( /*0x41fc8a*/
            a2,
            (unsigned __int8 *)aAitriggertypes,
-           (char *)&this->AITriggerTypeClass_field_0x24,
+           (char *)&this->q024,
            Source);
 }
 } // namespace gamemd
@@ -729,7 +729,7 @@ void TeamClass::MoveToCellAndAttack(int a2, int a3) {
     if ( Entry[1] < 0x2BEu ) /*0x6ecd36*/
       TeamClass::SelectMember((int)this, (int)CellFromArray); /*0x6ecd3b*/
   }
-  v6 = ((v6) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4432) * 900.0)) & 0xFFFFu); /*0x6ecd52*/
+  v6 = ((v6) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4432) * 900.0)) & 0xFFFFu); /*0x6ecd52*/
   if ( !(*(_DWORD *)&stru_A8EB00.?[416] % v6) ) /*0x6ecd5f*/
   {
     firstUnit = this->firstUnit; /*0x6ecd69*/
@@ -979,9 +979,9 @@ void * TriggerTypeClass::ParseActionData() {
   char Destination[24]; // [esp+10h] [ebp-1Ch] BYREF
   char v10; // [esp+28h] [ebp-4h]
 
-  this->__pad_24[4] = 0; /*0x71f4f0*/
+  this->q024[4] = 0; /*0x71f4f0*/
   v2 = strtok(0, Str); /*0x71f4f7*/
-  this->__pad_24[2] = atoi(v2); /*0x71f509*/
+  this->q024[2] = atoi(v2); /*0x71f509*/
   v3 = strtok(0, Str); /*0x71f50c*/
   v4 = atoi(v3); /*0x71f51e*/
   v5 = strtok(0, Str); /*0x71f525*/
@@ -996,7 +996,7 @@ void * TriggerTypeClass::ParseActionData() {
     {
       if ( v8 == 1 ) /*0x71f550*/
       {
-        this->__pad_24[4] = v6; /*0x71f554*/
+        this->q024[4] = v6; /*0x71f554*/
         if ( result ) /*0x71f557*/
         {
           result = strncpy(Destination, result, 0x18u); /*0x71f567*/
@@ -1006,9 +1006,9 @@ void * TriggerTypeClass::ParseActionData() {
         {
           Destination[0] = 0; /*0x71f559*/
         }
-        if ( Destination != (char *)&this->__pad_24[5] ) /*0x71f57d*/
+        if ( Destination != (char *)&this->q024[5] ) /*0x71f57d*/
         {
-          qmemcpy(&this->__pad_24[5], Destination, 0x18u); /*0x71f588*/
+          qmemcpy(&this->q024[5], Destination, 0x18u); /*0x71f588*/
           this->UINameLabel[19] = v10; /*0x71f58a*/
         }
       }
@@ -1016,12 +1016,12 @@ void * TriggerTypeClass::ParseActionData() {
     else
     {
       result = (char *)TeamTypeClass::FindByName((TeamTypeClass *)v5); /*0x71f595*/
-      this->__pad_24[3] = (int)result; /*0x71f59a*/
+      this->q024[3] = (int)result; /*0x71f59a*/
     }
   }
   else
   {
-    this->__pad_24[4] = v6; /*0x71f5a5*/
+    this->q024[4] = v6; /*0x71f5a5*/
   }
   return result; /*0x71f58b*/
 }
@@ -1290,7 +1290,7 @@ void * TriggerTypeClass::Construct(void *Source) {
   this->vfptr2 = &(void*)(void*)&TriggerTypeClass_vftable; /*0x726cdf*/
   this->vfptr3 = &(void*)(void*)&TriggerTypeClass_vftable; /*0x726ce6*/
   if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
-    || ((unsigned char)((g_BuildingLoadQueue_Array.align_E24[0]) >> 8) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+    || ((unsigned char)((g_BuildingLoadQueue_Array.qE24[0]) >> 8) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
     && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -1459,7 +1459,7 @@ int TriggerTypeClass::GetParameter(void *a2) {
   char Buffer[512]; // [esp+14h] [ebp-200h] BYREF
 
   NextTrigger = this->NextTrigger; /*0x7276ab*/
-  pad_24 = (const char *)NextTrigger->__pad_24; /*0x7276b4*/
+  pad_24 = (const char *)NextTrigger->q024; /*0x7276b4*/
   if ( !NextTrigger ) /*0x7276b7*/
     pad_24 = g_Str__none_; /*0x7276b9*/
   House = this->House; /*0x7276be*/
@@ -1478,9 +1478,9 @@ int TriggerTypeClass::GetParameter(void *a2) {
     this->Difficulty[1] != 0,
     this->Difficulty[2] != 0,
     this->MustTransfer != 0);
-  v7 = this->__pad_24; /*0x72773a*/
-  v15 = this->__pad_24; /*0x727747*/
-  INIClass::SetString(a2, (unsigned __int8 *)aTriggers, (char *)this->__pad_24, Buffer); /*0x72774b*/
+  v7 = this->q024; /*0x72773a*/
+  v15 = this->q024; /*0x727747*/
+  INIClass::SetString(a2, (unsigned __int8 *)aTriggers, (char *)this->q024, Buffer); /*0x72774b*/
   FirstEvent = this->FirstEvent; /*0x727750*/
   for ( i = 0; FirstEvent; ++i ) /*0x72775a*/
     FirstEvent = (TEventClass *)FirstEvent->TEventClass_field_28; /*0x72775c*/
@@ -1495,7 +1495,7 @@ int TriggerTypeClass::GetParameter(void *a2) {
       v10 = (TEventClass *)v10->TEventClass_field_28; /*0x7277bb*/
     }
     while ( v10 ); /*0x7277c0*/
-    v7 = this->__pad_24; /*0x7277c2*/
+    v7 = this->q024; /*0x7277c2*/
   }
   INIClass::SetString(a2, (unsigned __int8 *)aEvents, (char *)v7, Buffer); /*0x7277da*/
   FirstAction = this->FirstAction; /*0x7277df*/
@@ -1595,8 +1595,8 @@ int TriggerClass::EvaluateCondition(void *a2, int a3, int a4) {
   if ( a3 ) /*0x41e762*/
   {
     v8 = a2; /*0x41e769*/
-    if ( !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6131) /*0x41e78c*/
-      || a2[307].abstractFlags >= *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5012)
+    if ( !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6131) /*0x41e78c*/
+      || a2[307].abstractFlags >= *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5012)
                                             + 4 * a2[5].referenceCount) )
     {
       if ( !v7 ) /*0x41e7a3*/
@@ -2446,7 +2446,7 @@ int TActionClass::ctor() {
     *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v6) = this; /*0x6dd117*/
   }
   if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x6dd14e*/
-    || ((unsigned char)((g_BuildingLoadQueue_Array.align_E24[0]) >> 8) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+    || ((unsigned char)((g_BuildingLoadQueue_Array.qE24[0]) >> 8) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
     && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
     && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
          g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -2589,8 +2589,8 @@ int TeamClass::SelectAttackTarget(int a2, int a3) {
     CellFromArray = (Object *)ScenarioClass::GetCellFromArray((ScenarioClass *)dword_A8B230, a2->vtable2); /*0x6eca8d*/
     v5 = CellFromArray; /*0x6eca92*/
     if ( !CellFromArray /*0x6ecadc*/
-      || (*(int (__thiscall **)(Object *))(*(_DWORD *)CellFromArray->__pad_0 + 44))(CellFromArray) != 11
-      || (v6 = (unsigned char)((*(_DWORD *)v5->__pad_140) >> 8) & 1,
+      || (*(int (__thiscall **)(Object *))(*(_DWORD *)CellFromArray->q000 + 44))(CellFromArray) != 11
+      || (v6 = (unsigned char)((*(_DWORD *)v5->q140) >> 8) & 1,
           v11[0] = 0,
           v11[1] = 0,
           ObjectCell = Object::FindObjectCell(v5, v11, v6),
@@ -3267,7 +3267,7 @@ void TeamClass::SelectDeploymentTarget(int a2, int a3) {
     v25 = v14 - 0x3FFF; /*0x6efb61*/
     __asm { fild dword ptr [esp+48h+var_38] } /*0x6efb65*/
     __asm { fmul ds:dbl_7E2810 }
-    v27 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3444) << 8; /*0x6efb78*/
+    v27 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3444) << 8; /*0x6efb78*/
     __asm /*0x6efb7c*/
     {
       fstp [esp+48h+var_38]
@@ -3643,7 +3643,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
   if ( !INIClass::GetString( /*0x72727b*/
           (INIClass *)a2,
           (unsigned __int8 *)aTriggers,
-          (unsigned __int8 *)this->__pad_24,
+          (unsigned __int8 *)this->q024,
           &g_INI_DefaultBuffer,
           String,
           512) )
@@ -3710,7 +3710,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
   if ( INIClass::GetString( /*0x7274bb*/
          (INIClass *)a2,
          (unsigned __int8 *)aEvents,
-         (unsigned __int8 *)this->__pad_24,
+         (unsigned __int8 *)this->q024,
          &g_INI_DefaultBuffer,
          String,
          512) )
@@ -3729,7 +3729,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
           v19 = 0; /*0x7274fb*/
         TriggerTypeClass::ParseActionData(v19); /*0x7274ff*/
         --v17; /*0x72750a*/
-        v19->__pad_24[1] = (int)this->FirstEvent; /*0x72750b*/
+        v19->q024[1] = (int)this->FirstEvent; /*0x72750b*/
         this->FirstEvent = (TEventClass *)v19; /*0x72750e*/
       }
       while ( v17 ); /*0x727514*/
@@ -3738,7 +3738,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
   if ( INIClass::GetString( /*0x727537*/
          (INIClass *)a2,
          (unsigned __int8 *)aActions,
-         (unsigned __int8 *)this->__pad_24,
+         (unsigned __int8 *)this->q024,
          &g_INI_DefaultBuffer,
          String,
          512) )
@@ -3759,7 +3759,7 @@ int TriggerTypeClass::LoadFromINI(void *a2) {
           v25 = 0; /*0x727582*/
         ScriptAction::ParseScriptActionParams(v25); /*0x727586*/
         if ( this->FirstAction ) /*0x72758b*/
-          *(_DWORD *)v22->__pad_28 = v25; /*0x72759d*/
+          *(_DWORD *)v22->q028 = v25; /*0x72759d*/
         else
           this->FirstAction = (TActionClass *)v25; /*0x727595*/
         --v23; /*0x7275a0*/

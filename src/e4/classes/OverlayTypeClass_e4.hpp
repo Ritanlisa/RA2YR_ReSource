@@ -289,6 +289,27 @@ OverlayTypeClass * ddtor(void ** Block, char a2);  // 0x005fef30 g57w12-r raw-sy
 OverlayTypeClass(ObjectClass * aP1);  // 0x005fe250 g57w12-r raw-sync (def-form)
     unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);
+    int Strength_2;  // 0x672 (ml)
+    int Strength_2;  // 0x1650 (ml)
+    unsigned int u32_2B8;  // 0x2B8 (offset-truth supply)
+    unsigned int u32_2BC;  // 0x2BC (offset-truth supply)
+    unsigned int u32_2C4;  // 0x2C4 (offset-truth supply)
+    unsigned int u32_2C8;  // 0x2C8 (offset-truth supply)
+    unsigned int u32_2CC;  // 0x2CC (offset-truth supply)
+    unsigned int u32_2D4;  // 0x2D4 (offset-truth supply)
+    unsigned int u32_2D8;  // 0x2D8 (offset-truth supply)
+    unsigned int u32_2DC;  // 0x2DC (offset-truth supply)
+    unsigned int u32_2E8;  // 0x2E8 (offset-truth supply)
+    unsigned int u32_2EC;  // 0x2EC (offset-truth supply)
+    unsigned int u32_2F4;  // 0x2F4 (offset-truth supply)
+    unsigned int u32_2F8;  // 0x2F8 (offset-truth supply)
+    unsigned int u32_2FC;  // 0x2FC (offset-truth supply)
+    unsigned int u32_300;  // 0x300 (offset-truth supply)
+    unsigned int u32_304;  // 0x304 (offset-truth supply)
+    unsigned int u32_308;  // 0x308 (offset-truth supply)
+    unsigned char u32_309;  // 0x309 (offset-truth supply)
+    unsigned char u32_30A;  // 0x30A (offset-truth supply)
+    unsigned char u32_30B;  // 0x30B (offset-truth supply)
 };
 
 } // namespace gamemd

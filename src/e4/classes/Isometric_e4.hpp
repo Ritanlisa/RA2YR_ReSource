@@ -20,6 +20,7 @@ struct Isometric {
     unsigned char q1604;  // 0x1604
 // --- flat members (END) ---
     AbstractClass * InitTables(unsigned int *aP1);
+    unsigned int u32_704;  // 0x704 (offset-truth supply)
 };
 
 } // namespace gamemd

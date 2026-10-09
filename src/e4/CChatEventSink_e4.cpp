@@ -61,7 +61,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
   memset(v34, 0, 513); /*0x7aa893*/
   *(_DWORD *)&v33[4] = 0; /*0x7aa89b*/
   memset(&v33[12], 0, 12); /*0x7aa8a1*/
-  if ( !IDA_BYTE1(stru_B77D80.HashTable_field_0x40) ) /*0x7aa8ad*/
+  if ( !IDA_BYTE1(stru_B77D80.q040) ) /*0x7aa8ad*/
   {
     *(_DWORD *)&v33[8] = 0; /*0x7aa8c0*/
     if ( a2 == 262459 ) /*0x7aa8ca*/
@@ -70,8 +70,8 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     }
     else
     {
-      if ( CChatEventSink::Check((CChatEventSink *)&stru_B76510.StringVector_field_0x10, &v33[8], 0) ) /*0x7aa8e4*/
-        CChatEventSink::EnsureCapacity((CChatEventSink *)&stru_B76510.StringVector_field_0x10, 0); /*0x7aa8f3*/
+      if ( CChatEventSink::Check((CChatEventSink *)&stru_B76510.q010, &v33[8], 0) ) /*0x7aa8e4*/
+        CChatEventSink::EnsureCapacity((CChatEventSink *)&stru_B76510.q010, 0); /*0x7aa8f3*/
       if ( a2 < 0 ) /*0x7aa8fa*/
       {
   LABEL_103:
@@ -230,8 +230,8 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               }
               DeleteAndZero((ObjectClass *)&v33[24]); /*0x7aac1e*/
             }
-            v20 = *(_DWORD *)(*(_DWORD *)g_WOL_ConnectionPool.__pad_0 /*0x7aac42*/
-                            + 4 * (dword_B76548(v33) & ((1 << IDA_SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
+            v20 = *(_DWORD *)(*(_DWORD *)g_WOL_ConnectionPool.q000 /*0x7aac42*/
+                            + 4 * (dword_B76548(v33) & ((1 << IDA_SLOBYTE(g_WOL_ConnectionPool.q00C)) - 1)));
             if ( v20 ) /*0x7aac47*/
             {
               while ( !(unsigned __int8)String::Compare((String *)v20, (const char **)v33) ) /*0x7aac57*/
@@ -295,10 +295,10 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               DeleteAndZero((ObjectClass *)&v33[28]); /*0x7aad3b*/
             }
             v25 = g_WOL_HashTable; /*0x7aad40*/
-            v26 = *(_DWORD *)(*(_DWORD *)v25->__pad_0 /*0x7aad5c*/
+            v26 = *(_DWORD *)(*(_DWORD *)v25->q000 /*0x7aad5c*/
                             + 4
-                            * (((int (__thiscall *)(_BYTE *))g_WOL_HashTable->HashTable_field_0x18)(v33)
-                             & ((1 << v25->HashTable_field_0x0C) - 1)));
+                            * (((int (__thiscall *)(_BYTE *))g_WOL_HashTable->q018)(v33)
+                             & ((1 << v25->q00C) - 1)));
             if ( v26 ) /*0x7aad61*/
             {
               while ( !(unsigned __int8)String::Compare((String *)v26, (const char **)v33) ) /*0x7aad71*/
@@ -326,7 +326,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
         {
           (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)g_UIPointerTable + 20))( /*0x7aae1f*/
             g_UIPointerTable,
-            stru_B76188.__pad_20,
+            stru_B76188.q020,
             g_WOL_GameConfig,
             v34,
             g_NetworkRematchState & 0xFFFF00,
@@ -335,7 +335,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
             0);
           (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)g_UIPointerTable + 56))( /*0x7aae4b*/
             g_UIPointerTable,
-            stru_B76188.__pad_20,
+            stru_B76188.q020,
             g_WOL_GameConfig,
             v34,
             g_NetworkRematchState & 0xFFFF00);
@@ -350,7 +350,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
       {
         (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)g_UIPointerTable + 20))( /*0x7aaead*/
           g_UIPointerTable,
-          stru_B76188.__pad_20,
+          stru_B76188.q020,
           g_WOL_GameConfig,
           v34,
           g_NetworkRematchState & 0xFFFF00,
@@ -359,7 +359,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
           0);
         (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)g_UIPointerTable + 56))( /*0x7aaed9*/
           g_UIPointerTable,
-          stru_B76188.__pad_20,
+          stru_B76188.q020,
           g_WOL_GameConfig,
           v34,
           g_NetworkRematchState & 0xFFFF00);
@@ -407,29 +407,29 @@ namespace gamemd {
 int CChatEventSink::GrowBuffer()
 {
   int v2; // eax
-  int CChatEventSink_field_0x04; // ecx
+  int q004; // ecx
   int v5; // ebx
   void *v6; // eax
-  const void *CChatEventSink_field_0x08; // esi
+  const void *u32_8; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *(_DWORD *)this->__pad_0; /*0x7ad935*/
-  CChatEventSink_field_0x04 = this->CChatEventSink_field_0x04; /*0x7ad938*/
-  if ( 3 * v2 > CChatEventSink_field_0x04 ) /*0x7ad940*/
+  v2 = *(_DWORD *)this->q000; /*0x7ad935*/
+  q004 = this->q004; /*0x7ad938*/
+  if ( 3 * v2 > q004 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
-  v5 = CChatEventSink_field_0x04 / 2; /*0x7ad94f*/
-  if ( CChatEventSink_field_0x04 / 2 < 10 ) /*0x7ad954*/
+  v5 = q004 / 2; /*0x7ad94f*/
+  if ( q004 / 2 < 10 ) /*0x7ad954*/
     v5 = 10; /*0x7ad956*/
-  if ( v5 >= CChatEventSink_field_0x04 ) /*0x7ad95d*/
+  if ( v5 >= q004 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
   v6 = (void *)RA2_OPNEW(268 * v5); /*0x7ad974*/
-  CChatEventSink_field_0x08 = (const void *)this->CChatEventSink_field_0x08; /*0x7ad979*/
+  u32_8 = (const void *)this->u32_8; /*0x7ad979*/
   v8 = (int)v6; /*0x7ad981*/
-  if ( CChatEventSink_field_0x08 ) /*0x7ad985*/
-    qmemcpy(v6, CChatEventSink_field_0x08, 268 * *(_DWORD *)this->__pad_0); /*0x7ad99f*/
-  RA2_OPDEL((void *)this->CChatEventSink_field_0x08); /*0x7ad9ad*/
-  this->CChatEventSink_field_0x08 = v8; /*0x7ad9b9*/
-  this->CChatEventSink_field_0x04 = v5; /*0x7ad9bc*/
+  if ( u32_8 ) /*0x7ad985*/
+    qmemcpy(v6, u32_8, 268 * *(_DWORD *)this->q000); /*0x7ad99f*/
+  RA2_OPDEL((void *)this->u32_8); /*0x7ad9ad*/
+  this->u32_8 = v8; /*0x7ad9b9*/
+  this->q004 = v5; /*0x7ad9bc*/
   return 1; /*0x7ad942*/
 }
 } // namespace gamemd
@@ -440,11 +440,11 @@ int CChatEventSink::ProcessChatEvent()
   int v2; // eax
   int v4; // ebp
   void *v5; // edx
-  const void *CChatEventSink_field_0x08; // esi
+  const void *u32_8; // esi
   int v7; // [esp+4h] [ebp-4h]
 
-  v2 = *(_DWORD *)this->__pad_0; /*0x7aed44*/
-  if ( *(_DWORD *)this->__pad_0 < this->CChatEventSink_field_0x04 ) /*0x7aed4b*/
+  v2 = *(_DWORD *)this->q000; /*0x7aed44*/
+  if ( *(_DWORD *)this->q000 < this->q004 ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
   v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
@@ -452,12 +452,12 @@ int CChatEventSink::ProcessChatEvent()
   v5 = (void *)RA2_OPNEW(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
   v7 = (int)v5; /*0x7aed87*/
-  CChatEventSink_field_0x08 = (const void *)this->CChatEventSink_field_0x08; /*0x7aed8d*/
-  if ( CChatEventSink_field_0x08 ) /*0x7aed92*/
-    qmemcpy(v5, CChatEventSink_field_0x08, 248 * *(_DWORD *)this->__pad_0); /*0x7aeda7*/
-  RA2_OPDEL((void *)this->CChatEventSink_field_0x08); /*0x7aedb4*/
-  this->CChatEventSink_field_0x04 = v4; /*0x7aedc0*/
-  this->CChatEventSink_field_0x08 = v7; /*0x7aedc3*/
+  u32_8 = (const void *)this->u32_8; /*0x7aed8d*/
+  if ( u32_8 ) /*0x7aed92*/
+    qmemcpy(v5, u32_8, 248 * *(_DWORD *)this->q000); /*0x7aeda7*/
+  RA2_OPDEL((void *)this->u32_8); /*0x7aedb4*/
+  this->q004 = v4; /*0x7aedc0*/
+  this->u32_8 = v7; /*0x7aedc3*/
   return 1; /*0x7aed4f*/
 }
 } // namespace gamemd
@@ -465,9 +465,9 @@ int CChatEventSink::ProcessChatEvent()
 namespace gamemd {
 char CChatEventSink::Check(unsigned int * a2, int a3)
 {
-  if ( a3 < 0 || a3 >= *(_DWORD *)this->__pad_0 ) /*0x7aee9a*/
+  if ( a3 < 0 || a3 >= *(_DWORD *)this->q000 ) /*0x7aee9a*/
     return 0; /*0x7aeead*/
-  *a2 = *(_DWORD *)(this->CChatEventSink_field_0x08 + 4 * a3); /*0x7aeea6*/
+  *a2 = *(_DWORD *)(this->u32_8 + 4 * a3); /*0x7aeea6*/
   return 1; /*0x7aeeaa*/
 }
 } // namespace gamemd
@@ -495,14 +495,14 @@ char CChatEventSink::EnsureCapacity(int a2)
   int v3; // esi
   int v5; // ecx
   int v6; // eax
-  int CChatEventSink_field_0x04; // ecx
+  int q004; // ecx
   int v8; // ebp
   void *v9; // eax
-  const void *CChatEventSink_field_0x08; // esi
+  const void *u32_8; // esi
   int v11; // [esp+Ch] [ebp+4h]
 
-  v3 = *(_DWORD *)this->__pad_0; /*0x7aedd4*/
-  if ( !*(_DWORD *)this->__pad_0 ) /*0x7aedd4*/
+  v3 = *(_DWORD *)this->q000; /*0x7aedd4*/
+  if ( !*(_DWORD *)this->q000 ) /*0x7aedd4*/
     return 0; /*0x7aeddb*/
   v5 = a2; /*0x7aede1*/
   if ( a2 < 0 ) /*0x7aede7*/
@@ -510,27 +510,27 @@ char CChatEventSink::EnsureCapacity(int a2)
   if ( v5 >= v3 ) /*0x7aeded*/
     v5 = v3 - 1; /*0x7aedef*/
   memcpy( /*0x7aee0f*/
-    (void *)(this->CChatEventSink_field_0x08 + 4 * v5),
-    (const void *)(this->CChatEventSink_field_0x08 + 4 * (v5 + 1)),
+    (void *)(this->u32_8 + 4 * v5),
+    (const void *)(this->u32_8 + 4 * (v5 + 1)),
     4 * (v3 + 0x3FFFFFFF * (v5 + 1)));
-  v6 = *(_DWORD *)this->__pad_0 - 1; /*0x7aee1a*/
-  *(_DWORD *)this->__pad_0 = v6; /*0x7aee1c*/
-  CChatEventSink_field_0x04 = this->CChatEventSink_field_0x04; /*0x7aee1e*/
-  if ( 3 * v6 <= CChatEventSink_field_0x04 ) /*0x7aee26*/
+  v6 = *(_DWORD *)this->q000 - 1; /*0x7aee1a*/
+  *(_DWORD *)this->q000 = v6; /*0x7aee1c*/
+  q004 = this->q004; /*0x7aee1e*/
+  if ( 3 * v6 <= q004 ) /*0x7aee26*/
   {
-    v8 = CChatEventSink_field_0x04 / 2; /*0x7aee2f*/
-    if ( CChatEventSink_field_0x04 / 2 < 10 ) /*0x7aee34*/
+    v8 = q004 / 2; /*0x7aee2f*/
+    if ( q004 / 2 < 10 ) /*0x7aee34*/
       v8 = 10; /*0x7aee36*/
-    if ( v8 < CChatEventSink_field_0x04 ) /*0x7aee3d*/
+    if ( v8 < q004 ) /*0x7aee3d*/
     {
       v9 = (void *)RA2_OPNEW(4 * v8); /*0x7aee47*/
-      CChatEventSink_field_0x08 = (const void *)this->CChatEventSink_field_0x08; /*0x7aee4c*/
+      u32_8 = (const void *)this->u32_8; /*0x7aee4c*/
       v11 = (int)v9; /*0x7aee54*/
-      if ( CChatEventSink_field_0x08 ) /*0x7aee58*/
-        qmemcpy(v9, CChatEventSink_field_0x08, 4 * *(_DWORD *)this->__pad_0); /*0x7aee66*/
-      RA2_OPDEL((void *)this->CChatEventSink_field_0x08); /*0x7aee73*/
-      this->CChatEventSink_field_0x08 = v11; /*0x7aee7f*/
-      this->CChatEventSink_field_0x04 = v8; /*0x7aee82*/
+      if ( u32_8 ) /*0x7aee58*/
+        qmemcpy(v9, u32_8, 4 * *(_DWORD *)this->q000); /*0x7aee66*/
+      RA2_OPDEL((void *)this->u32_8); /*0x7aee73*/
+      this->u32_8 = v11; /*0x7aee7f*/
+      this->q004 = v8; /*0x7aee82*/
     }
   }
   return 1; /*0x7aedda*/
@@ -550,16 +550,16 @@ char CChatEventSink::EncodeString(char a2)
   size_t v11; // ecx
   _BYTE *v12; // eax
 
-  if ( !*(_DWORD *)this->__pad_0 ) /*0x7b5e33*/
+  if ( !*(_DWORD *)this->q000 ) /*0x7b5e33*/
     return 0; /*0x7b5e39*/
-  v4 = strchr(*(const char **)this->__pad_0, a2); /*0x7b5e46*/
+  v4 = strchr(*(const char **)this->q000, a2); /*0x7b5e46*/
   if ( !v4 ) /*0x7b5e50*/
     return 0; /*0x7b5e52*/
-  v5 = &v4[-*(_DWORD *)this->__pad_0]; /*0x7b5e5c*/
+  v5 = &v4[-*(_DWORD *)this->q000]; /*0x7b5e5c*/
   v6 = (size_t)v5; /*0x7b5e5f*/
   v7 = &g_INI_DefaultBuffer; /*0x7b5e63*/
-  if ( *(_DWORD *)this->__pad_0 ) /*0x7b5e58*/
-    v7 = *(const char **)this->__pad_0; /*0x7b5e6a*/
+  if ( *(_DWORD *)this->q000 ) /*0x7b5e58*/
+    v7 = *(const char **)this->q000; /*0x7b5e6a*/
   v8 = (char *)RA2_OPNEW((size_t)(v5 + 1)); /*0x7b5e70*/
   v9 = v8; /*0x7b5e75*/
   *v8 = 0; /*0x7b5e7c*/
@@ -569,18 +569,18 @@ char CChatEventSink::EncodeString(char a2)
   v10 = &g_INI_DefaultBuffer; /*0x7b5e91*/
   if ( v9 ) /*0x7b5e98*/
     v10 = v9; /*0x7b5e9a*/
-  if ( *(_DWORD *)this->__pad_0 ) /*0x7b5e9c*/
-    RA2_OPDEL(*(void **)this->__pad_0); /*0x7b5ea3*/
-  *(_DWORD *)this->__pad_0 = 0; /*0x7b5ead*/
+  if ( *(_DWORD *)this->q000 ) /*0x7b5e9c*/
+    RA2_OPDEL(*(void **)this->q000); /*0x7b5ea3*/
+  *(_DWORD *)this->q000 = 0; /*0x7b5ead*/
   if ( v10 ) /*0x7b5eb3*/
     v11 = strlen(v10) + 1; /*0x7b5ebc*/
   else
     v11 = 1; /*0x7b5ec2*/
   v12 = (_BYTE *)RA2_OPNEW(v11); /*0x7b5ec8*/
-  *(_DWORD *)this->__pad_0 = v12; /*0x7b5ed0*/
+  *(_DWORD *)this->q000 = v12; /*0x7b5ed0*/
   *v12 = 0; /*0x7b5ed4*/
   if ( v10 ) /*0x7b5ed7*/
-    strcpy(*(char **)this->__pad_0, v10); /*0x7b5eef*/
+    strcpy(*(char **)this->q000, v10); /*0x7b5eef*/
   if ( v9 ) /*0x7b5efa*/
     RA2_OPDEL(v9); /*0x7b5efd*/
   return 1; /*0x7b5e3b*/

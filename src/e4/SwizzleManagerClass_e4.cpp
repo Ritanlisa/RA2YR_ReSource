@@ -118,7 +118,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_VSwizzlePointerClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x6cf684*/
+    (*(void (__thiscall **)(_VectorClass_VSwizzlePointerClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x6cf684*/
     return 1; /*0x6cf68a*/
   }
 }
@@ -219,7 +219,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_VSwizzlePointerClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x6cf7f8*/
+    (*(void (__thiscall **)(_DynamicVectorClass_VSwizzlePointerClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x6cf7f8*/
   }
   v15 = this->m_8; /*0x6cf7fb*/
   if ( v15 < this->m_10 ) /*0x6cf803*/
@@ -411,7 +411,7 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x6cf853*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf856*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf856*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x6cf860*/
   {
     RA2_OPDEL(v3); /*0x6cf868*/
@@ -421,7 +421,7 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
   Block->m_8 = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
     RA2_OPDEL(Block); /*0x6cf88b*/
-  return Block->__pad_0; /*0x6cf895*/
+  return Block->q000; /*0x6cf895*/
 }
 } // namespace gamemd
 
@@ -432,7 +432,7 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x6cf8a3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf8a6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf8a6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x6cf8b0*/
   {
     RA2_OPDEL(v3); /*0x6cf8b8*/
@@ -442,6 +442,6 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
   Block->m_8 = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
     RA2_OPDEL(Block); /*0x6cf8db*/
-  return Block->__pad_0; /*0x6cf8e5*/
+  return Block->q000; /*0x6cf8e5*/
 }
 } // namespace gamemd

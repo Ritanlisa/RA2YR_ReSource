@@ -22,5 +22,10 @@ struct RAMFileClass {
     unsigned char *  WinMain_Helper_65C250(int a2, void * aP2);  // 0x65C250
     void WinMain_Helper_65C2A0();  // 0x65C2A0
     char * nullsub_0_5();  // 0x65C550
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int u32_14;  // 0x14 (offset-truth supply)
+    unsigned int u32_18;  // 0x18 (offset-truth supply)
+    unsigned int u32_1C;  // 0x1C (offset-truth supply)
+    unsigned char u32_1D;  // 0x1D (offset-truth supply)
 };
 } // namespace gamemd

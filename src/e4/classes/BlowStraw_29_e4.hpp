@@ -18,5 +18,10 @@ struct BlowStraw_29 {
 // --- flat members (END) ---
     int Seek(int *aP1, unsigned int *a2);  // 0x6D0680
     TabClass * Read(char * Block, char a2);  // 0x5BE9E0
+    unsigned int TabClass_field_0x0;  // 0x0 (offset-truth supply)
+    unsigned int u32_5538;  // 0x5538 (offset-truth supply)
+    unsigned int u32_5540;  // 0x5540 (offset-truth supply)
+    unsigned int u32_5544;  // 0x5544 (offset-truth supply)
+    unsigned char u32_5545;  // 0x5545 (offset-truth supply)
 };
 } // namespace gamemd

@@ -805,7 +805,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PBVTechnoTypeClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4ca9d2*/
+    (*(void (__thiscall **)(_VectorClass_PBVTechnoTypeClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x4ca9d2*/
     return 1; /*0x4ca9d8*/
   }
 }
@@ -866,7 +866,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4cab53*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4cab56*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4cab56*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4cab60*/
   {
     RA2_OPDEL(v3); /*0x4cab68*/
@@ -876,7 +876,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
   Block->m_8 = 0; /*0x4cab81*/
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
     RA2_OPDEL(Block); /*0x4cab8b*/
-  return Block->__pad_0; /*0x4cab95*/
+  return Block->q000; /*0x4cab95*/
 }
 } // namespace gamemd
 

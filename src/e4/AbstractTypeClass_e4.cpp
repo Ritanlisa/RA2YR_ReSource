@@ -125,13 +125,13 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
   char Source[1024]; // [esp+40h] [ebp-400h] BYREF
 
   INIClass::ResetSection((INIClass *)aP1); /*0x410a74*/
-  result = INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->__pad_24); /*0x410a7f*/
+  result = INIClass::BinarySearchSection((int)aP1, (unsigned __int8 *)this->q024); /*0x410a7f*/
   if ( result ) /*0x410a86*/
   {
     Name = this->Name; /*0x410a91*/
     INIClass::GetString( /*0x410aa0*/
       (INIClass *)aP1,
-      (unsigned __int8 *)this->__pad_24,
+      (unsigned __int8 *)this->q024,
       (unsigned __int8 *)g_INI_Key_Name,
       this->Name,
       Source,
@@ -153,7 +153,7 @@ int AbstractTypeClass::LoadFromINI(unsigned __int8 ***aP1)
     UINameLabel = this->UINameLabel; /*0x410aeb*/
     INIClass::GetString( /*0x410afb*/
       (INIClass *)aP1,
-      (unsigned __int8 *)this->__pad_24,
+      (unsigned __int8 *)this->q024,
       (unsigned __int8 *)g_INI_Key_UIName,
       this->UINameLabel,
       Source,
@@ -248,8 +248,8 @@ char AbstractTypeClass::WriteINI(char *aP1)
 {
   unsigned __int8 *pad_24; // edi
 
-  pad_24 = (unsigned __int8 *)this->__pad_24; /*0x410b9b*/
-  INIClass::ClearSection((int *)aP1, (int)this->__pad_24, 0); /*0x410ba1*/
+  pad_24 = (unsigned __int8 *)this->q024; /*0x410b9b*/
+  INIClass::ClearSection((int *)aP1, (int)this->q024, 0); /*0x410ba1*/
   INIClass::SetString(aP1, pad_24, g_INI_Key_Name, this->Name); /*0x410bb2*/
   if ( this->UINameLabel[0] ) /*0x410bb7*/
     INIClass::SetString(aP1, pad_24, g_INI_Key_UIName, this->UINameLabel); /*0x410bca*/
@@ -261,7 +261,7 @@ namespace gamemd {
 int AbstractTypeClass::ProcessPower(int *aP1)
 {
   AbstractClass::ProcessPower(); /*0x410be9*/
-  Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->__pad_24); /*0x410bf4*/
+  Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->q024); /*0x410bf4*/
   Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->Name); /*0x410bff*/
   return Checksum::AddString((Checksum *)aP1, (unsigned __int8 *)this->UINameLabel); /*0x410c0f*/
 }

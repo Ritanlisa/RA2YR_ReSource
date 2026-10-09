@@ -33,7 +33,7 @@ namespace gamemd {
 struct Matrix3D
 {
     float Data[12] = {};  // data: 0x840b4c
-    unsigned char __pad_0;  // 0x0
+    unsigned char q000;  // 0x0
     unsigned int q080;  // 0x80
     unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
     unsigned int u32_8;   // 0x8 (raw fld [esi+8])
@@ -270,7 +270,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         IDA_LOBYTE(v32) = 0; /*0x73cb1e*/
         IDA_HIBYTE(v32) = v31; /*0x73cb27*/
         IDA_LOWORD(v59) = v32; /*0x73cb2e*/
-        FacingClass::Set_SyncLog(v75.__pad_0, &v59); /*0x73cb33*/
+        FacingClass::Set_SyncLog(v75.q000, &v59); /*0x73cb33*/
       }
       if ( *((_DWORD *)a1 + 260) ) /*0x73cb38*/
       {
@@ -381,7 +381,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       a7,
       v41,
       a9);
-    result = (*(int (__thiscall **)(AudioStream *, int *, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x73cdf0*/
+    result = (*(int (__thiscall **)(AudioStream *, int *, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x73cdf0*/
                g_DSurface_Hidden_2,
                &dword_B1CFC0,
                0);

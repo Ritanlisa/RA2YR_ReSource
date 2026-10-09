@@ -191,7 +191,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40bcb3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40bcc0*/
   {
     RA2_OPDEL(v3); /*0x40bcc8*/
@@ -201,7 +201,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2, int a1, int a3, int a4, in
   this->m_8 = 0; /*0x40bce1*/
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
     RA2_OPDEL(); /*0x40bceb*/
-  return this->__pad_0; /*0x40bcf5*/
+  return this->q000; /*0x40bcf5*/
 }
 } // namespace gamemd
 // 0x40BE50
@@ -269,7 +269,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVCommandClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x40c0be*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PBVCommandClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x40c0be*/
   }
   v7 = this->m_8; /*0x40c0c1*/
   if ( v7 < this->m_10 ) /*0x40c0c9*/
@@ -304,7 +304,7 @@ _DWORD * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, char a2, 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x40c163*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40c170*/
   {
     RA2_OPDEL(v3); /*0x40c178*/
@@ -314,6 +314,6 @@ _DWORD * MoveFeedback::MoveFeedback::Constructor(unsigned int * Block, char a2, 
   this->m_8 = 0; /*0x40c191*/
   if ( (a2 & 1) != 0 ) /*0x40c198*/
     RA2_OPDEL(); /*0x40c19b*/
-  return this->__pad_0; /*0x40c1a5*/
+  return this->q000; /*0x40c1a5*/
 }
 } // namespace gamemd

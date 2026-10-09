@@ -22,7 +22,7 @@ int Connection::Close()
 {
   int result; // eax
 
-  result = (int)this->Connection_field_0x48; /*0x543090*/
+  result = (int)this->q048; /*0x543090*/
   if ( result ) /*0x543095*/
     *(_BYTE *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/

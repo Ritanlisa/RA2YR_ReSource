@@ -75,6 +75,7 @@ struct GameOption {
     int GetField();
     int SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1);
     void * SetDigest(char *aP1);
+    unsigned char u32_949;  // 0x949 (offset-truth supply)
 };
 
 } // namespace gamemd

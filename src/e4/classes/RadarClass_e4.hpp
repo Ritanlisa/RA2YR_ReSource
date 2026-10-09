@@ -656,6 +656,9 @@ struct RadarClass {
     static int Destru_vt05(RadarClass * aP1);  // G57w10-S raw 0x00652CF0 (was C2597 interim stub)
     static char UpdateFoundationShapesCustom(RadarClass * aP1);  // G57w10-S raw 0x006563B0 (was C2597 interim stub)
     char Destru_vt16(char a2);  // 0x653100
+    int RadarClass_field_0x0;  // 0x0 (ml)
+    char[16] __pad_1264;  // 0x4708 (ml)
+    unsigned int q122C;  // 0x122C (offset-truth supply)
 };
 
 } // namespace gamemd

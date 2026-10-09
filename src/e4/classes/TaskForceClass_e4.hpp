@@ -82,5 +82,8 @@ struct TaskForceClass {
     int ddtor(int a1, unsigned int * a2);  // 0x6E8710
     int StubReturn33();  // 0x6E87D0
     int StubReturn212();  // 0x6E87E0
+    int TaskForceClass_field_0x4;  // 0x4 (ml)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q008;  // 0x8 (offset-truth supply)
 };
 } // namespace gamemd

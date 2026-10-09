@@ -12,7 +12,7 @@
 namespace gamemd {
 int GameOption::GetField()
 {
-  return *(_DWORD *)this->field_18C; /*0x69acc8*/
+  return *(_DWORD *)this->q18C; /*0x69acc8*/
 }
 } // namespace gamemd
 // 0x69ACD0
@@ -25,7 +25,7 @@ int GameOption::SetDescriptionWStr(wchar_t * Destination, CampaignScore * aP1)
   if ( aP1 ) /*0x69acd9*/
   {
     result = wcsncpy((wchar_t *)Destination, aP1, 0x2Cu); /*0x69acdf*/
-    *(_WORD *)&Destination->__pad_0[86] = 0; /*0x69ace7*/
+    *(_WORD *)&Destination->q000[86] = 0; /*0x69ace7*/
   }
   else
   {

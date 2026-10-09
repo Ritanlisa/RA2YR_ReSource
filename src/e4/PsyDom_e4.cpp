@@ -77,7 +77,7 @@ void PsyDom::Fire()
     v4 = 0; /*0x53b0d2*/
   }
   v4[4] = 1; /*0x53b0d4*/
-  v5 = *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 768); /*0x53b0e6*/
+  v5 = *(void **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 768); /*0x53b0e6*/
   v6 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], &PsyDom_Coords); /*0x53b0f1*/
   v7 = (int *)(*(int (__thiscall **)(void *, int *))(*(_DWORD *)v6 + 72))(v6, v34); /*0x53b0ff*/
   v33[0] = *v7; /*0x53b104*/
@@ -90,12 +90,12 @@ void PsyDom::Fire()
     PsyDom_Anim = 0; /*0x53b145*/
   PlaySoundEffectAt( /*0x53b16b*/
     v33,
-    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 780),
+    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 780),
     0,
-    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 760),
+    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 760),
     1,
     (int)LightningStorm_Owner);
-  v9 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 776); /*0x53b176*/
+  v9 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 776); /*0x53b176*/
   if ( v9 >= 10 ) /*0x53b17f*/
     v9 = 10; /*0x53b181*/
   v10 = dword_7ED3D0[v9]; /*0x53b186*/
@@ -142,7 +142,7 @@ void PsyDom::Fire()
           if ( v21 ) /*0x53b2e6*/
             v22 = (BuildingClass *)AnimClass::ctor( /*0x53b306*/
                                      v21,
-                                     *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 804),
+                                     *(void **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 804),
                                      v34,
                                      0,
                                      1,

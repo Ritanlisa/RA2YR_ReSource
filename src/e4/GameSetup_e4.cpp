@@ -28,12 +28,12 @@ int GameSetup::LookupDialogHash()
   GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x60d32c*/
+  if ( !*(_DWORD *)&g_DialogPool.q208[60] ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = *(GameSetup ***)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
+  v1 = *(GameSetup ***)(*(_DWORD *)&g_DialogPool.q208[56] /*0x60d34d*/
                       + 4
-                      * ((*(int (__thiscall **)(GameSetup **))&g_DialogPool.__pad_208[80])(&v4)
-                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                      * ((*(int (__thiscall **)(GameSetup **))&g_DialogPool.q208[80])(&v4)
+                       & ((1 << g_DialogPool.q208[68]) - 1)));
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/

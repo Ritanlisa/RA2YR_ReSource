@@ -46,6 +46,8 @@ struct TagClass {
     int StubReturn56();
     int ddtor(int a1, unsigned int * a2);
     TriggerClass * * Destructor(void * a1);
+    unsigned int u32_38;  // 0x38 (offset-truth supply)
+    unsigned int u32_3C;  // 0x3C (offset-truth supply)
 };
 
 } // namespace gamemd

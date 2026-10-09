@@ -247,10 +247,10 @@ int TerrainTypeClass::LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a
   if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, a2) ) /*0x71debb*/
   {
     if ( this->Strength == -1 ) /*0x71decf*/
-      this->Strength = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4420); /*0x71dedc*/
+      this->Strength = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4420); /*0x71dedc*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x71def6*/
                        (int *)a2,
-                       (unsigned __int8 *)this->__pad_24,
+                       (unsigned __int8 *)this->q024,
                        aIsveinhole,
                        this->IsVeinhole);
     this->IsVeinhole = Bool_Overwrite; /*0x71defd*/
@@ -259,19 +259,19 @@ int TerrainTypeClass::LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a
       this->IsLogic = 0; /*0x71df05*/
       this->LegalTarget = 1; /*0x71df0c*/
     }
-    v6 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aWaterbound, this->WaterBound); /*0x71df22*/
+    v6 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->q024, aWaterbound, this->WaterBound); /*0x71df22*/
     SpawnsTiberium = this->SpawnsTiberium; /*0x71df27*/
     this->WaterBound = v6; /*0x71df2d*/
-    v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aSpawnstiberium, SpawnsTiberium); /*0x71df3c*/
+    v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->q024, aSpawnstiberium, SpawnsTiberium); /*0x71df3c*/
     IsFlammable = this->IsFlammable; /*0x71df49*/
     this->SpawnsTiberium = v8; /*0x71df50*/
     this->IsFlammable = INIClass::ReadBool_Overwrite( /*0x71df5b*/
                           (int *)a2,
-                          (unsigned __int8 *)this->__pad_24,
+                          (unsigned __int8 *)this->q024,
                           aIsflammable,
                           IsFlammable);
     v9 = INIClass::LookupEnum( /*0x71df79*/
-           (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
+           (INIClass *)&DSurface_ViewBounds.q0FC[228],
            (unsigned __int8 *)this->ImageFile,
            g_INI_Key_Foundation,
            this->Foundation);
@@ -294,39 +294,39 @@ int TerrainTypeClass::LoadFromINI(unsigned __int8 ***a2, int aP1, int aP3, int a
     Coord = INIClass::GetCoord( /*0x71e00c*/
               (INIClass *)a2,
               (int)&v23,
-              (unsigned __int8 *)this->__pad_24,
+              (unsigned __int8 *)this->q024,
               aRadarcolor,
               (unsigned __int8 *)this->RadarColor);
     IsAnimated = this->IsAnimated; /*0x71e014*/
     *(_WORD *)this->RadarColor = *(_WORD *)Coord; /*0x71e01a*/
     this->RadarColor[2] = *(_BYTE *)(Coord + 2); /*0x71e02a*/
-    v15 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->__pad_24, aIsanimated, IsAnimated); /*0x71e02d*/
+    v15 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->q024, aIsanimated, IsAnimated); /*0x71e02d*/
     AnimationRate = this->AnimationRate; /*0x71e03a*/
     this->IsAnimated = v15; /*0x71e041*/
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x71e047*/
                       (bool *)a2,
-                      (unsigned __int8 *)this->__pad_24,
+                      (unsigned __int8 *)this->q024,
                       aAnimationrate,
                       AnimationRate);
     AnimationProbability = this->AnimationProbability; /*0x71e04c*/
     this->AnimationRate = Int_Overwrite; /*0x71e057*/
     INIClass::ReadDouble_Overwrite( /*0x71e066*/
       (double *)a2,
-      (unsigned __int8 *)this->__pad_24,
+      (unsigned __int8 *)this->q024,
       aAnimationproba,
       AnimationProbability);
     TemperateOccupationBits = this->TemperateOccupationBits; /*0x71e06b*/
     this->AnimationProbability = v2; /*0x71e073*/
     v19 = INIClass::ReadInt_Overwrite( /*0x71e080*/
             (bool *)a2,
-            (unsigned __int8 *)this->__pad_24,
+            (unsigned __int8 *)this->q024,
             aTemperateoccup,
             TemperateOccupationBits);
     SnowOccupationBits = this->SnowOccupationBits; /*0x71e085*/
     this->TemperateOccupationBits = v19; /*0x71e08b*/
     result = INIClass::ReadInt_Overwrite( /*0x71e09a*/
                (bool *)a2,
-               (unsigned __int8 *)this->__pad_24,
+               (unsigned __int8 *)this->q024,
                aSnowoccupation,
                SnowOccupationBits);
     this->SnowOccupationBits = result; /*0x71e0a0*/

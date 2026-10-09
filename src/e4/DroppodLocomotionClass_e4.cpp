@@ -88,16 +88,16 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
   v39[1] = v37; /*0x4b5b9e*/
   v39[2] = v4; /*0x4b5ba2*/
   thisa = (DropPodLocomotionClass *)((*((int (__thiscall **)(FootClass *))Owner->vfptr + 114))(Owner) / 10 + 2); /*0x4b5bc9*/
-  if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1452) > (int)thisa ) /*0x4b5bd5*/
-    thisa = *(DropPodLocomotionClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1452); /*0x4b5bd7*/
-  v30 = *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1456); /*0x4b5bf3*/
-  if ( !a1->__pad_18[0] ) /*0x4b5bdb*/
+  if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1452) > (int)thisa ) /*0x4b5bd5*/
+    thisa = *(DropPodLocomotionClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1452); /*0x4b5bd7*/
+  v30 = *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1456); /*0x4b5bf3*/
+  if ( !a1->q018[0] ) /*0x4b5bdb*/
     *(double *)v34 = (double)v36; /*0x4b5c1c*/
   v33 = (double)(int)thisa; /*0x4b5bf4*/
   Math::ArcTan2(v30); /*0x4b5bf8*/
   IDA_LOWORD(v5) = Math::RoundToInt(v1); /*0x4b5c38*/
   v36 = v5; /*0x4b5c41*/
-  v6 = *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1456); /*0x4b5c50*/
+  v6 = *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1456); /*0x4b5c50*/
   *(double *)v34 = (double)v38; /*0x4b5c56*/
   Math::SinCos(v6); /*0x4b5c5c*/
   v7 = *(double *)v34 - v1 * v33; /*0x4b5c68*/
@@ -109,7 +109,7 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
   if ( v10 > 0 ) /*0x4b5c87*/
   {
     (*((void (__thiscall **)(FootClass *, int *))v11->vfptr + 109))(v11, &v36); /*0x4b5eaa*/
-    v20 = *(_DWORD **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1444); /*0x4b5eb6*/
+    v20 = *(_DWORD **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1444); /*0x4b5eb6*/
     if ( v20 ) /*0x4b5ebe*/
     {
       if ( !(*(_DWORD *)&stru_A8EB00.?[416] % 6) ) /*0x4b5ecf*/
@@ -168,20 +168,20 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
       if ( v17 ) /*0x4b5db8*/
         AnimClass::ctor( /*0x4b5dd8*/
           v17,
-          *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 76),
+          *(void **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 76),
           &v36,
           0,
           1,
           (void *)0x600,
           0,
           0);
-      if ( a1->__pad_18[0] ) /*0x4b5ddd*/
+      if ( a1->q018[0] ) /*0x4b5ddd*/
       {
         v18 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4b5de9*/
         if ( v18 ) /*0x4b5df3*/
           AnimClass::ctor( /*0x4b5e16*/
             v18,
-            *(void **)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 264) + 4),
+            *(void **)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 264) + 4),
             &v36,
             0,
             1,
@@ -195,7 +195,7 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
         if ( v19 ) /*0x4b5e22*/
           AnimClass::ctor( /*0x4b5e47*/
             v19,
-            **(void ***)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 264),
+            **(void ***)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 264),
             &v36,
             0,
             1,
@@ -215,7 +215,7 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
         &v36,
         100,
         &a1->Owner->vfptr,
-        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008),
         1,
         0);
       v14 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4b5d37*/
@@ -224,7 +224,7 @@ int DropPodLocomotionClass::ILoco_Process(DropPodLocomotionClass * a1)
         v31 = (void *)Return::HRESULT_Fail(v36, v37, v38); /*0x4b5d64*/
         v15 = (void *)GetWarheadVersusMultiplier( /*0x4b5d8a*/
                         100,
-                        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+                        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008),
                         0,
                         &v36);
         AnimClass::ctor(v14, v15, &v36, 0, 1, (void *)0x2600, v31, 0); /*0x4b5d92*/
@@ -266,7 +266,7 @@ HRESULT DropPodLocomotionClass::BeginMove(DropPodLocomotionClass * a1, int * pSt
     a1->Piggybackee = 0; /*0x4b625c*/
     *(_DWORD *)a1->0 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6263*/
     *(_DWORD *)&a1->0[4] = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6269*/
-    *(_DWORD *)a1->__pad_18 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6270*/
+    *(_DWORD *)a1->q018 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6270*/
   }
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(_BYTE)pStm ) /*0x4b628c*/
@@ -300,7 +300,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
   {
     if ( v4->Piggybackee ) /*0x4b62de*/
     {
-      v6 = *(_DWORD *)v3->__pad_0; /*0x4b62e9*/
+      v6 = *(_DWORD *)v3->q000; /*0x4b62e9*/
       IDA_LOBYTE(a3) = 1; /*0x4b62f5*/
       (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v6 + 16))(v3, &a3, 1, 0); /*0x4b62fa*/
       Piggybackee = v4->Piggybackee; /*0x4b62fd*/
@@ -333,7 +333,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(DropPodLocomotionClass * a1, int 
     }
     else
     {
-      v11 = *(_DWORD *)v3->__pad_0; /*0x4b6381*/
+      v11 = *(_DWORD *)v3->q000; /*0x4b6381*/
       IDA_LOBYTE(a3) = 0; /*0x4b638d*/
       return (*(int (__stdcall **)(IStream *, int *, int, _DWORD))(v11 + 16))(v3, &a3, 1, 0); /*0x4b6392*/
     }
@@ -356,7 +356,7 @@ void * DropPodLocomotionClass::ProcessMove(char a2)
 
   *(_DWORD *)this->0 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f3*/
   *(_DWORD *)&this->0[4] = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f9*/
-  *(_DWORD *)this->__pad_18 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
+  *(_DWORD *)this->q018 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
   Piggybackee = this->Piggybackee; /*0x4b6707*/
   if ( Piggybackee ) /*0x4b670c*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/

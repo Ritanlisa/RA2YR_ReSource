@@ -37,6 +37,10 @@ struct IPXGlobalConnClass {
     int SendPacket(int a2, short a3);
     int ddtor(int a2, int a3);
     void ReceivePacket(int a2);
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned char u32_141;  // 0x141 (offset-truth supply)
+    unsigned int u32_CC;  // 0xCC (offset-truth supply)
+    unsigned int u32_D4;  // 0xD4 (offset-truth supply)
 };
 #endif  // GAMEMD_G2_IPXGlobalConnClass_DEF
 

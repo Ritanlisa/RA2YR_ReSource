@@ -81,5 +81,6 @@ struct NetworkLobby {
     char CheckPlayerNames();  // 0x5E9720
     void UpdateLabels(HWND hDlg);  // 0x5EE6A0
     int DlgProc(HWND hDlg, UINT, WPARAM nIDDlgItem, unsigned int lParam, void * a2);
+    char[960] __pad_3D;  // 0x61 (ml)
 };
 } // namespace gamemd

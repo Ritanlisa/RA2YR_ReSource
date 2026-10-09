@@ -53,7 +53,7 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
   double v4; // st7
   int v5; // edi
   int v6; // ebx
-  _BYTE *Object_field_0xE8; // ecx
+  _BYTE *q0E8; // ecx
   _BYTE *v8; // esi
   _DWORD *v9; // eax
   int v10; // eax
@@ -69,12 +69,12 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
   v5 = 7 * *aP1; /*0x47c3f2*/
   v6 = 7 * aP1[1]; /*0x47c3fe*/
   if ( aP2 ) /*0x47c405*/
-    Object_field_0xE8 = this->Object_field_0xE8; /*0x47c407*/
+    q0E8 = this->q0E8; /*0x47c407*/
   else
-    Object_field_0xE8 = this->Object_field_0xE4; /*0x47c40f*/
-  if ( !Object_field_0xE8 ) /*0x47c417*/
+    q0E8 = this->q0E4; /*0x47c40f*/
+  if ( !q0E8 ) /*0x47c417*/
     return 0; /*0x47c4bf*/
-  v8 = Object_field_0xE8; /*0x47c41d*/
+  v8 = q0E8; /*0x47c41d*/
   do /*0x47c4ac*/
   {
     if ( (v8[20] & 1) != 0 && v8 != (_BYTE *)aP3 ) /*0x47c435*/
@@ -101,21 +101,21 @@ int Object::FindClosestObjectCell(unsigned int *aP1, char aP2, int aP3)
 namespace gamemd {
 int Object::FindObjectCell(TechnoClass * aP1, char aP2)
 {
-  _DWORD *Object_field_0xE4; // esi
+  _DWORD *q0E4; // esi
   int result; // eax
 
   if ( byte_A8E9A0 ) /*0x47c5ab*/
   {
-    Object_field_0xE4 = this->Object_field_0xE4; /*0x47c5ad*/
-    if ( Object_field_0xE4 ) /*0x47c5b5*/
+    q0E4 = this->q0E4; /*0x47c5ad*/
+    if ( q0E4 ) /*0x47c5b5*/
     {
-      while ( (*(int (__thiscall **)(_DWORD *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 2 ) /*0x47c5c1*/
+      while ( (*(int (__thiscall **)(_DWORD *))(*q0E4 + 44))(q0E4) != 2 ) /*0x47c5c1*/
       {
-        Object_field_0xE4 = (_DWORD *)Object_field_0xE4[12]; /*0x47c5c3*/
-        if ( !Object_field_0xE4 ) /*0x47c5c8*/
+        q0E4 = (_DWORD *)q0E4[12]; /*0x47c5c3*/
+        if ( !q0E4 ) /*0x47c5c8*/
           goto LABEL_5; /*0x47c5c8*/
       }
-      return (int)Object_field_0xE4; /*0x47c5c1*/
+      return (int)q0E4; /*0x47c5c1*/
     }
   }
   LABEL_5:
@@ -124,16 +124,16 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
   {
     if ( byte_A8E9A0 ) /*0x47c5e8*/
     {
-      Object_field_0xE4 = this->Object_field_0xE4; /*0x47c5ea*/
-      if ( Object_field_0xE4 ) /*0x47c5f2*/
+      q0E4 = this->q0E4; /*0x47c5ea*/
+      if ( q0E4 ) /*0x47c5f2*/
       {
-        while ( (*(int (__thiscall **)(_DWORD *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 36 ) /*0x47c5fe*/
+        while ( (*(int (__thiscall **)(_DWORD *))(*q0E4 + 44))(q0E4) != 36 ) /*0x47c5fe*/
         {
-          Object_field_0xE4 = (_DWORD *)Object_field_0xE4[12]; /*0x47c600*/
-          if ( !Object_field_0xE4 ) /*0x47c605*/
+          q0E4 = (_DWORD *)q0E4[12]; /*0x47c600*/
+          if ( !q0E4 ) /*0x47c605*/
             return 0; /*0x47c605*/
         }
-        return (int)Object_field_0xE4; /*0x47c612*/
+        return (int)q0E4; /*0x47c612*/
       }
     }
     return 0; /*0x47c607*/
@@ -158,7 +158,7 @@ int Object::IsAlliedWithObjectHouse(int aP1)
     return result; /*0x4f9aab*/
   }
   result = *(_DWORD *)(result + 48); /*0x4f9aae*/
-  if ( (void *)result == this->Object_field_0x30 ) /*0x4f9ab6*/
+  if ( (void *)result == this->q030 ) /*0x4f9ab6*/
   {
     IDA_LOBYTE(result) = 1; /*0x4f9ab8*/
     return result; /*0x4f9abb*/
@@ -196,7 +196,7 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
     return result; /*0x4f9b11*/
   }
   result = *(_DWORD *)(result + 48); /*0x4f9b14*/
-  if ( (void *)result == this->Object_field_0x30 ) /*0x4f9b1c*/
+  if ( (void *)result == this->q030 ) /*0x4f9b1c*/
   {
     IDA_LOBYTE(result) = 1; /*0x4f9b1e*/
     return result; /*0x4f9b21*/
@@ -283,7 +283,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *(_DWORD *)&this->__pad_EC[12] ) /*0x56c39c*/
     {
       v12 = v8 + (v10 << 9); /*0x56c3a7*/
-      if ( v12 >= 0x40000 || (v13 = (int *)*((_DWORD *)this->Object_field_0x13C + v12)) == 0 ) /*0x56c3c1*/
+      if ( v12 >= 0x40000 || (v13 = (int *)*((_DWORD *)this->q13C + v12)) == 0 ) /*0x56c3c1*/
       {
         g_MissionQueueFrame.briefing[139] = v23; /*0x56c3c7*/
         v13 = &g_MissionQueueFrame.briefing[130]; /*0x56c3cc*/
@@ -427,11 +427,11 @@ int Object::SpawnAtCell(int aP1, int16_t *aP2, int aP3)  // G42.41k: dup head + 
 
   ObjectClass::ctor(); /*0x5fc386*/
   v5 = aP1; /*0x5fc38b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&OverlayClass_vftable; /*0x5fc38f*/
-  this->Object_field_0xAC = v5; /*0x5fc395*/
-  this->Object_field_0x8 = (int)&(void*)(void*)&OverlayClass_vftable; /*0x5fc39f*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&OverlayClass_vftable; /*0x5fc38f*/
+  this->q0AC = v5; /*0x5fc395*/
+  this->q008 = (int)&(void*)(void*)&OverlayClass_vftable; /*0x5fc39f*/
   *(_DWORD *)&this->Object_field_0x2[2] = &(void*)(void*)&OverlayClass_vftable; /*0x5fc3a6*/
-  *(_DWORD *)this->__pad_C = &(void*)(void*)&OverlayClass_vftable; /*0x5fc3ac*/
+  *(_DWORD *)this->q00C = &(void*)(void*)&OverlayClass_vftable; /*0x5fc3ac*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->Object_field_0x2[2]); /*0x5fc3b3*/
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
@@ -503,24 +503,24 @@ void* Object::HandleAction(int * a2, int * a3)
   GroundHeight = Cell::GetGroundHeight(&v32); /*0x5fd9af*/
   v29 = ZCoordToScreenY(GroundHeight); /*0x5fd9c1*/
   v7 = 0; /*0x5fd9c5*/
-  if ( *(int *)&stru_A83D50.__pad_3C[4] <= 0 ) /*0x5fd9c9*/
+  if ( *(int *)&stru_A83D50.q03C[4] <= 0 ) /*0x5fd9c9*/
   {
   LABEL_5:
     v7 = -1; /*0x5fd9e3*/
   }
   else
   {
-    v8 = *(OverlayTypeClass ***)stru_A83D50.__pad_34; /*0x5fd9d1*/
+    v8 = *(OverlayTypeClass ***)stru_A83D50.q034; /*0x5fd9d1*/
     while ( *v8 != this->Type ) /*0x5fd9d9*/
     {
       ++v7; /*0x5fd9db*/
       ++v8; /*0x5fd9dc*/
-      if ( v7 >= *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fd9e1*/
+      if ( v7 >= *(int *)&stru_A83D50.q03C[4] ) /*0x5fd9e1*/
         goto LABEL_5; /*0x5fd9e1*/
     }
   }
   v9 = 0; /*0x5fd9ec*/
-  v10 = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * v7); /*0x5fd9ee*/
+  v10 = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * v7); /*0x5fd9ee*/
   if ( *(_BYTE *)(v10 + 681) || *(_BYTE *)(v10 + 680) || *(_DWORD *)(v10 + 660) == 126 || *(_BYTE *)(v10 + 682) ) /*0x5fda0a*/
     v9 = -12; /*0x5fda12*/
   if ( *(_DWORD *)(v10 + 664) == 9 ) /*0x5fda1e*/
@@ -529,30 +529,30 @@ void* Object::HandleAction(int * a2, int * a3)
     --v9; /*0x5fda26*/
   v11 = v9 + a2[1]; /*0x5fda30*/
   v30 = *a2; /*0x5fda32*/
-  v31 = (char *)DSurface_ViewBounds.field_4 + v11; /*0x5fda42*/
+  v31 = (char *)DSurface_ViewBounds.q004 + v11; /*0x5fda42*/
   Type = this->Type; /*0x5fda46*/
   if ( Type->IsVeinholeMonster ) /*0x5fda4c*/
   {
     v13 = 0; /*0x5fda5a*/
-    if ( *(int *)&stru_A83D50.__pad_3C[4] <= 0 ) /*0x5fda5e*/
+    if ( *(int *)&stru_A83D50.q03C[4] <= 0 ) /*0x5fda5e*/
     {
   LABEL_20:
       v13 = -1; /*0x5fda72*/
     }
     else
     {
-      v14 = *(OverlayTypeClass ***)stru_A83D50.__pad_34; /*0x5fda60*/
+      v14 = *(OverlayTypeClass ***)stru_A83D50.q034; /*0x5fda60*/
       while ( *v14 != Type ) /*0x5fda68*/
       {
         ++v13; /*0x5fda6a*/
         ++v14; /*0x5fda6b*/
-        if ( v13 >= *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fda70*/
+        if ( v13 >= *(int *)&stru_A83D50.q03C[4] ) /*0x5fda70*/
           goto LABEL_20; /*0x5fda70*/
       }
     }
     v15 = *(_DWORD *)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * FindBuildingByTiberiumType(v13)); /*0x5fda8b*/
     v16 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(v15 + 192)); /*0x5fda93*/
-    v17 = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * *(_DWORD *)(*(_DWORD *)(v15 + 224) + 660)); /*0x5fdaa8*/
+    v17 = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * *(_DWORD *)(*(_DWORD *)(v15 + 224) + 660)); /*0x5fdaa8*/
     v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 156))(v17); /*0x5fdaad*/
     if ( !v18 ) /*0x5fdab5*/
     {
@@ -712,7 +712,7 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
   unsigned int v12; // esi
   Cell *v13; // ebp
   ObjectPlacement *NeighbourContent; // esi
-  int ObjectPlacement_field_0x04; // eax
+  int q004; // eax
   bool v16; // bl
   int v17; // eax
   _DWORD *v18; // eax
@@ -728,7 +728,7 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
   _BYTE v30[12]; // [esp+20h] [ebp-18h] BYREF
   int v31[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  if ( !*(_DWORD *)&this->__pad_C[28] ) /*0x62ac39*/
+  if ( !*(_DWORD *)&this->q00C[28] ) /*0x62ac39*/
   {
     result = a2; /*0x62ac40*/
     v4 = dword_AC4948; /*0x62ac44*/
@@ -741,21 +741,21 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
   }
   if ( !ParasiteClass::CanExistOnVictimCell((ParasiteClass *)this) ) /*0x62ac5a*/
   {
-    v12 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(*(_DWORD *)&this->__pad_C[28] + 904), &v26) >> 12) /*0x62ad3a*/
+    v12 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(*(_DWORD *)&this->q00C[28] + 904), &v26) >> 12) /*0x62ad3a*/
                         + 1) >> 1)
         & 7;
-    v13 = (Cell *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->__pad_C[28] + 444))(*(_DWORD *)&this->__pad_C[28]); /*0x62ad43*/
+    v13 = (Cell *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->q00C[28] + 444))(*(_DWORD *)&this->q00C[28]); /*0x62ad43*/
     NeighbourContent = (ObjectPlacement *)Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
-    if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->__pad_C[24] + 132))(*(_DWORD *)&this->__pad_C[24]) /*0x62ad5a*/
+    if ( !*(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->q00C[24] + 132))(*(_DWORD *)&this->q00C[24]) /*0x62ad5a*/
                    + 3278) )
     {
-      ObjectPlacement_field_0x04 = NeighbourContent[29].ObjectPlacement_field_0x04; /*0x62ad64*/
-      if ( ObjectPlacement_field_0x04 == 2 || ObjectPlacement_field_0x04 == 6 || ObjectPlacement_field_0x04 == 3 ) /*0x62ad77*/
+      q004 = NeighbourContent[29].q004; /*0x62ad64*/
+      if ( q004 == 2 || q004 == 6 || q004 == 3 ) /*0x62ad77*/
       {
-        v16 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->__pad_C[28] + 444))(*(_DWORD *)&this->__pad_C[28]) /*0x62ad90*/
+        v16 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->q00C[28] + 444))(*(_DWORD *)&this->q00C[28]) /*0x62ad90*/
                          + 320)
              & 0x100) == 0;
-        v17 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->__pad_C[28] + 444))(*(_DWORD *)&this->__pad_C[28]) /*0x62ad9d*/
+        v17 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)&this->q00C[28] + 444))(*(_DWORD *)&this->q00C[28]) /*0x62ad9d*/
                         + 68);
         if ( v17 >= 74 && v17 <= 99 ) /*0x62ada8*/
           v16 = 0; /*0x62adaa*/
@@ -768,12 +768,12 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
         }
       }
     }
-    v18 = (_DWORD *)(*(int (__thiscall **)(ObjectPlacement *, _BYTE *))(*(_DWORD *)NeighbourContent->__pad_0 + 72))( /*0x62adde*/
+    v18 = (_DWORD *)(*(int (__thiscall **)(ObjectPlacement *, _BYTE *))(*(_DWORD *)NeighbourContent->q000 + 72))( /*0x62adde*/
                       NeighbourContent,
                       v30);
     v19 = ObjectPlacement::CalcPosition(NeighbourContent, v31, v18, 0, 0, 0); /*0x62ade9*/
     v27 = *v19; /*0x62adf0*/
-    v20 = *(_DWORD *)&this->__pad_C[24]; /*0x62adf4*/
+    v20 = *(_DWORD *)&this->q00C[24]; /*0x62adf4*/
     v28 = v19[1]; /*0x62adfa*/
     v29 = v19[2]; /*0x62ae03*/
     if ( v20 && (*(int (__thiscall **)(int))(*(_DWORD *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
@@ -784,31 +784,31 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
       v28 = v22[1]; /*0x62ae37*/
       v29 = v22[2]; /*0x62ae3e*/
     }
-    if ( *(_BYTE *)(*(_DWORD *)&this->__pad_C[28] + 140) ) /*0x62ae45*/
+    if ( *(_BYTE *)(*(_DWORD *)&this->q00C[28] + 140) ) /*0x62ae45*/
     {
       if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27)->flags[0] & 0x100) != 0 ) /*0x62ae67*/
       {
         v29 += dword_AC497C; /*0x62ae75*/
-        *(_BYTE *)(*(_DWORD *)&this->__pad_C[24] + 140) = 1; /*0x62ae7c*/
+        *(_BYTE *)(*(_DWORD *)&this->q00C[24] + 140) = 1; /*0x62ae7c*/
         goto LABEL_34; /*0x62ae83*/
       }
       goto LABEL_29; /*0x62ae67*/
     }
     if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27)->flags[0] & 0x100) != 0 ) /*0x62aea9*/
     {
-      v23 = (*(int (__thiscall **)(Cell *, int *))(v13->Cell_field_0x0 + 72))(v13, v31); /*0x62aeb5*/
+      v23 = (*(int (__thiscall **)(Cell *, int *))(v13->q000 + 72))(v13, v31); /*0x62aeb5*/
       if ( v29 >= *(_DWORD *)(v23 + 8) ) /*0x62aec1*/
       {
   LABEL_29:
-        *(_BYTE *)(*(_DWORD *)&this->__pad_C[24] + 140) = 0; /*0x62ae85*/
+        *(_BYTE *)(*(_DWORD *)&this->q00C[24] + 140) = 0; /*0x62ae85*/
         goto LABEL_34; /*0x62ae8f*/
       }
       v29 += dword_AC497C; /*0x62aec9*/
-      *(_BYTE *)(*(_DWORD *)&this->__pad_C[24] + 140) = 1; /*0x62aed0*/
+      *(_BYTE *)(*(_DWORD *)&this->q00C[24] + 140) = 1; /*0x62aed0*/
     }
     else
     {
-      *(_BYTE *)(*(_DWORD *)&this->__pad_C[24] + 140) = 0; /*0x62aedc*/
+      *(_BYTE *)(*(_DWORD *)&this->q00C[24] + 140) = 0; /*0x62aedc*/
     }
   LABEL_34:
     v4 = dword_AC4948; /*0x62aee3*/
@@ -825,9 +825,9 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
     v5 = a2; /*0x62af25*/
     goto LABEL_39; /*0x62af25*/
   }
-  v6 = (int *)(*(_DWORD *)&this->__pad_C[28] + 156); /*0x62ac63*/
+  v6 = (int *)(*(_DWORD *)&this->q00C[28] + 156); /*0x62ac63*/
   v27 = *v6; /*0x62ac6a*/
-  v7 = *(_DWORD *)&this->__pad_C[24]; /*0x62ac6e*/
+  v7 = *(_DWORD *)&this->q00C[24]; /*0x62ac6e*/
   v28 = v6[1]; /*0x62ac74*/
   v29 = v6[2]; /*0x62ac7d*/
   if ( v7 ) /*0x62ac81*/
@@ -837,7 +837,7 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
       v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27); /*0x62ac97*/
       v9 = (int *)(*(int (__thiscall **)(CellClass *, _BYTE *))(v8->mapCoords[0] + 72))(v8, v30); /*0x62aca5*/
       v27 = *v9; /*0x62acaa*/
-      v10 = *(_DWORD *)&this->__pad_C[28]; /*0x62acae*/
+      v10 = *(_DWORD *)&this->q00C[28]; /*0x62acae*/
       v28 = v9[1]; /*0x62acb4*/
       v11 = v9[2]; /*0x62acb8*/
       v29 = v11; /*0x62acbb*/
@@ -845,10 +845,10 @@ void* * Object::CalculateObjectPlacementPosition(int *a2)
         v29 = dword_AC497C + v11; /*0x62accf*/
     }
   }
-  if ( *(_BYTE *)(*(_DWORD *)&this->__pad_C[28] + 140) ) /*0x62acd6*/
-    *(_BYTE *)(*(_DWORD *)&this->__pad_C[24] + 140) = 1; /*0x62ace3*/
+  if ( *(_BYTE *)(*(_DWORD *)&this->q00C[28] + 140) ) /*0x62acd6*/
+    *(_BYTE *)(*(_DWORD *)&this->q00C[24] + 140) = 1; /*0x62ace3*/
   else
-    *(_BYTE *)(*(_DWORD *)&this->__pad_C[24] + 140) = 0; /*0x62acef*/
+    *(_BYTE *)(*(_DWORD *)&this->q00C[24] + 140) = 0; /*0x62acef*/
   *a2 = v27; /*0x62ad03*/
   a2[1] = v28; /*0x62ad0a*/
   a2[2] = v29; /*0x62ad11*/
@@ -1646,8 +1646,8 @@ void ** Object::RemoveObjectArray()
   void **result; // eax
   int v2; // edx
 
-  result = (void **)stru_AA0398.AudioStream_field_0xB0; /*0x53e420*/
-  if ( stru_AA0398.AudioStream_field_0xB0 ) /*0x53e428*/
+  result = (void **)stru_AA0398.q0B0; /*0x53e420*/
+  if ( stru_AA0398.q0B0 ) /*0x53e428*/
   {
     if ( this ) /*0x53e42c*/
     {

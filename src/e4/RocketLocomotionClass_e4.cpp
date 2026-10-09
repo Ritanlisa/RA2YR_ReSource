@@ -207,7 +207,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x6648f2*/
+    (*(void (__thiscall **)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x6648f2*/
     return 1; /*0x6648f8*/
   }
 }
@@ -299,7 +299,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x664a1e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x664a1e*/
   }
   v7 = this->m_8; /*0x664a21*/
   if ( v7 < this->m_10 ) /*0x664a29*/
@@ -335,7 +335,7 @@ _DWORD * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(unsigne
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x664a73*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664a76*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664a76*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x664a80*/
   {
     RA2_OPDEL(v3); /*0x664a88*/
@@ -345,7 +345,7 @@ _DWORD * RocketLocomotionClass_17::RocketLocomotionClass_17::Constructor(unsigne
   this->m_8 = 0; /*0x664aa1*/
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
     RA2_OPDEL(); /*0x664aab*/
-  return this->__pad_0; /*0x664ab5*/
+  return this->q000; /*0x664ab5*/
 }
 } // namespace gamemd
 
@@ -356,7 +356,7 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x664ac3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664ac6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_OwnerTalkClass_ConnectionListStruct___vftable; /*0x664ac6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x664ad0*/
   {
     RA2_OPDEL(v3); /*0x664ad8*/
@@ -366,6 +366,6 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
   Block->m_8 = 0; /*0x664af1*/
   if ( (a2 & 1) != 0 ) /*0x664af8*/
     RA2_OPDEL(Block); /*0x664afb*/
-  return Block->__pad_0; /*0x664b05*/
+  return Block->q000; /*0x664b05*/
 }
 } // namespace gamemd

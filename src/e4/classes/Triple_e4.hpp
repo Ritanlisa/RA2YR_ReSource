@@ -10,6 +10,7 @@ struct Triple {
     unsigned char q000;  // 0x0
 // --- flat members (END) ---
     unsigned int * Set(int a2, int a3, int a4);
+    char[4] __tail_0;  // 0x0 (ml)
 };
 
 } // namespace gamemd

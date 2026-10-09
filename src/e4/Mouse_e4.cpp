@@ -227,7 +227,7 @@ void Mouse::DrawCursor(int * aP1, int aP2, int a4)
 namespace gamemd {
 SHORT Mouse::GetKeyState(uint8_t vKey)
 {
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec97*/
+  if ( stru_AA0398.q0AC ) /*0x53ec97*/
     return word_AA0168[(unsigned __int8)vKey]; /*0x53eca7*/
   else
     return GetAsyncKeyState((unsigned __int8)vKey); /*0x53ec9a*/

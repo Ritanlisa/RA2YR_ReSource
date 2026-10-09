@@ -137,17 +137,17 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   *(_DWORD *)&this->__pad_6[350] = 0; /*0x48e911*/
   *(_DWORD *)&this->__pad_6[354] = 0; /*0x48e917*/
   *(_DWORD *)&this->__pad_6[358] = a5; /*0x48e91d*/
-  this->ConvertClass_field_0x170 = 0; /*0x48e923*/
-  *(_DWORD *)this->__pad_174 = 0; /*0x48e929*/
-  this->ConvertClass_field_0x178 = 0; /*0x48e92f*/
+  this->q170 = 0; /*0x48e923*/
+  *(_DWORD *)this->q174 = 0; /*0x48e929*/
+  this->q178 = 0; /*0x48e92f*/
   this->u32_17C = 0; /*0x48e935*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&ConvertClass_vftable; /*0x48e93b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&ConvertClass_vftable; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *(_DWORD *)&this->__pad_6[358] = 1; /*0x48e943*/
   if ( *(_DWORD *)&this->ConvertClass_field_0x2[2] == 1 ) /*0x48e94f*/
   {
     v10 = (CampaignClass *)RA2_OPNEW(0x100u); /*0x48e95a*/
-    this->ConvertClass_field_0x178 = v10; /*0x48e95f*/
+    this->q178 = v10; /*0x48e95f*/
     IDA_LOBYTE(v10->vfptr) = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
@@ -159,14 +159,14 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
       v13 = Color::ConvertToRGB(&v29, (int)&v28); /*0x48e9ae*/
       IDA_LOWORD(a4) = *(_WORD *)v13; /*0x48e9b6*/
       IDA_BYTE2(a4) = *(_BYTE *)(v13 + 2); /*0x48e9c5*/
-      *((_BYTE *)this->ConvertClass_field_0x178 + v8++) = Palette::FindClosestColor((char *)a2, (int)&a4); /*0x48e9db*/
+      *((_BYTE *)this->q178 + v8++) = Palette::FindClosestColor((char *)a2, (int)&a4); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
     v14 = (CampaignClass *)RA2_OPNEW(*(_DWORD *)&this->__pad_6[358] << 8); /*0x48e9eb*/
-    this->ConvertClass_field_0x170 = v14; /*0x48e9f0*/
+    this->q170 = v14; /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
     v16 = *(_DWORD *)&this->__pad_6[358]; /*0x48e9f8*/
-    *(_DWORD *)this->__pad_174 = (char *)v15 + 256 * ((v16 - 1) >> 1); /*0x48ea10*/
+    *(_DWORD *)this->q174 = (char *)v15 + 256 * ((v16 - 1) >> 1); /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
       IDA_LOBYTE(v15->vfptr) = 0; /*0x48ea18*/
@@ -208,8 +208,8 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
   {
     v24 = (CampaignClass *)RA2_OPNEW(*(_DWORD *)&this->__pad_6[358] << 9); /*0x48eb1c*/
     v25 = *(_DWORD *)&this->__pad_6[358]; /*0x48eb21*/
-    this->ConvertClass_field_0x170 = v24; /*0x48eb2a*/
-    *(_DWORD *)this->__pad_174 = (char *)v24 + 512 * ((v25 - 1) >> 1); /*0x48eb3a*/
+    this->q170 = v24; /*0x48eb2a*/
+    *(_DWORD *)this->q174 = (char *)v24 + 512 * ((v25 - 1) >> 1); /*0x48eb3a*/
     if ( !a6 ) /*0x48eb46*/
       DSurface::BlitStretch((int)v24, v25, a2); /*0x48eb51*/
     this->q060 = (unsigned __int16)g_DDraw_Gray127; /*0x48eb60*/
@@ -228,14 +228,14 @@ unsigned int * ConvertClass::Construct(int a2, int a3, int a4, int a5, char a6)
     v26 = dword_89ED08++; /*0x48ebc4*/
     *((_DWORD *)dword_89ECFC + v26) = this; /*0x48ebd3*/
   }
-  return this->__pad_0; /*0x48ebd8*/
+  return this->q000; /*0x48ebd8*/
 }
 } // namespace gamemd
 // 0x491430
 namespace gamemd {
 int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitPlainXlat_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 /*0x49145a*/
+  return (*(int (__thiscall **)(_BlitPlainXlat_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 /*0x49145a*/
                                                                                               + 4))(
            this,
            a2,

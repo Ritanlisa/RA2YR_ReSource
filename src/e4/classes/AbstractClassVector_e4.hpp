@@ -21,6 +21,8 @@ struct AbstractClassVector {
     int Construct(int aP1, int aP2);
     unsigned int Write(int a2);
      void ddtor(AbstractClassVector * aP1);  // G57w10-S raw 0x4E0410 (was C2597 interim stub)
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -27,6 +27,10 @@ struct RLEBlitTransZRemapXlatAlpha_ushort {
     std::locale::facet * Constructor_RLEBlitter_0(char a2);
     std::locale::facet * Constructor_RLEBlitter_1(char a2);
     unsigned short * AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11);
+    unsigned int m_4;  // 0x4 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
 };
 
 } // namespace gamemd

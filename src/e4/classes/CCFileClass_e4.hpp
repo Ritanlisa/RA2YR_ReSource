@@ -55,6 +55,7 @@ static int GetSize(CCFileClass * aP1);  // G57w10-S raw 0x00473C00 (was C2597 in
     int Reopen(char *Source, CHAR *a3);  // 0x47af10
     AudioController * * Close(void * a1);
     static int Cleanup(void *aP1);  // W16G3 static-form (BinkMovie 0x7xxx)
+    char[4] __tail_0;  // 0x0 (ml)
 };
 #endif  // GAMEMD_G2_CCFileClass_DEF
 

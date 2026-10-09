@@ -184,14 +184,14 @@ int Team::ReleaseAll(ObjectClass * aP1)
   int v5; // ecx
 
   v3 = 0; /*0x5d26c4*/
-  result = *(_DWORD *)&this->__pad_0[40]; /*0x5d26c6*/
+  result = *(_DWORD *)&this->q000[40]; /*0x5d26c6*/
   if ( result > 0 ) /*0x5d26cb*/
   {
     do /*0x5d26e4*/
     {
-      v5 = *(_DWORD *)(*(_DWORD *)&this->__pad_0[28] + 4 * v3); /*0x5d26d6*/
+      v5 = *(_DWORD *)(*(_DWORD *)&this->q000[28] + 4 * v3); /*0x5d26d6*/
       (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, aP1); /*0x5d26db*/
-      result = *(_DWORD *)&this->__pad_0[40]; /*0x5d26de*/
+      result = *(_DWORD *)&this->q000[40]; /*0x5d26de*/
       ++v3; /*0x5d26e1*/
     }
     while ( v3 < result ); /*0x5d26e4*/
@@ -424,19 +424,19 @@ void ** E4Recv_637640::sub_637640()
       ++v1; /*0x637678*/
     }
   }
-  v2 = (*(int (__thiscall **)(Array *, _UNKNOWN **))(*(_DWORD *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &retaddr); /*0x63769a*/
-  if ( v2 != -1 && v2 < (int)stru_AC4B30.Array_field_0x10 ) /*0x6376aa*/
+  v2 = (*(int (__thiscall **)(Array *, _UNKNOWN **))(*(_DWORD *)stru_AC4B30.q000 + 16))(&stru_AC4B30, &retaddr); /*0x63769a*/
+  if ( v2 != -1 && v2 < (int)stru_AC4B30.q010 ) /*0x6376aa*/
   {
-    --stru_AC4B30.Array_field_0x10; /*0x6376af*/
+    --stru_AC4B30.q010; /*0x6376af*/
     for ( ; /*0x6376b5*/
-          v2 < (int)stru_AC4B30.Array_field_0x10;
-          *((_DWORD *)stru_AC4B30.Array_field_0x4 + v2 - 1) = *((_DWORD *)stru_AC4B30.Array_field_0x4 + v2) )
+          v2 < (int)stru_AC4B30.q010;
+          *((_DWORD *)stru_AC4B30.q004 + v2 - 1) = *((_DWORD *)stru_AC4B30.q004 + v2) )
     {
       ++v2; /*0x6376bd*/
     }
   }
   v5 = (ObjectClass *)&retaddr; /*0x6376d9*/
-  v3 = (*((int (__thiscall **)(void **))stru_AC4B30.Array_field_0xE8 + 4))(&stru_AC4B30.Array_field_0xE8); /*0x6376df*/
+  v3 = (*((int (__thiscall **)(void **))stru_AC4B30.q0E8 + 4))(&stru_AC4B30.q0E8); /*0x6376df*/
   if ( v3 != -1 && v3 < *(int *)&stru_AC4B30.__pad_EC[12] ) /*0x6376ef*/
   {
     --*(_DWORD *)&stru_AC4B30.__pad_EC[12]; /*0x6376f4*/
@@ -453,8 +453,8 @@ void ** E4Recv_637640::sub_637640()
     *(_DWORD *)&stru_AC4B30.__pad_EC[176] = 0; /*0x637724*/
   if ( *(ObjectClass **)&stru_AC4B30.__pad_EC[28] == v5 ) /*0x637730*/
     *(_DWORD *)&stru_AC4B30.__pad_EC[28] = 0; /*0x637732*/
-  if ( *(ObjectClass **)&stru_AC4B30.__pad_70[80] == v5 ) /*0x63773e*/
-    *(_DWORD *)&stru_AC4B30.__pad_70[80] = 0; /*0x637740*/
+  if ( *(ObjectClass **)&stru_AC4B30.q070[80] == v5 ) /*0x63773e*/
+    *(_DWORD *)&stru_AC4B30.q070[80] = 0; /*0x637740*/
   return result; /*0x637747*/
 }
 }
@@ -502,7 +502,7 @@ char sub_638B70(int * a1, int a2, char a3, char a4)
 namespace gamemd {
 int Team::GetMember(int aP1)
 {
-  return *((_DWORD *)this->field_E4 + aP1); /*0x65ad3d*/
+  return *((_DWORD *)this->q0E4 + aP1); /*0x65ad3d*/
 }
 }
 // 0x65AE30
@@ -513,7 +513,7 @@ int Team::AllMembersValid()
   int result; // eax
   _DWORD *v3; // ecx
 
-  v1 = this->field_E8; /*0x65ae30*/
+  v1 = this->q0E8; /*0x65ae30*/
   result = 0; /*0x65ae36*/
   if ( (int)v1 <= 0 ) /*0x65ae3a*/
   {
@@ -522,7 +522,7 @@ int Team::AllMembersValid()
   }
   else
   {
-    v3 = this->field_E4; /*0x65ae3c*/
+    v3 = this->q0E4; /*0x65ae3c*/
     while ( !*v3 ) /*0x65ae45*/
     {
       ++result; /*0x65ae47*/
@@ -697,7 +697,7 @@ rc_ptr_base * Team_Create_765F60(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x765fa9*/
   }
   ComPtr::Constructor(a1); /*0x765fad*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765fb4*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765fb4*/
   ComPtr::Set(a1, v5); /*0x765fbc*/
   return a1; /*0x765fc3*/
 }
@@ -728,7 +728,7 @@ rc_ptr_base * Team_Create_767B00(rc_ptr_base * a1, int a2)
     v5 = 0; /*0x767b49*/
   }
   ComPtr::Constructor(a1); /*0x767b4d*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x767b54*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x767b54*/
   ComPtr::Set(a1, v5); /*0x767b5c*/
   return a1; /*0x767b63*/
 }

@@ -128,7 +128,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   v17 = this->q011; /*0x4d0b00*/
   this->Count += *(_DWORD *)&g_TacticalClass_Instance[44]; /*0x4d0b0d*/
   this->q011 = *(_DWORD *)&g_TacticalClass_Instance[45] + v17; /*0x4d0b1d*/
-  v18 = this->q011 - (unsigned int)DSurface_ViewBounds.field_4; /*0x4d0b33*/
+  v18 = this->q011 - (unsigned int)DSurface_ViewBounds.q004; /*0x4d0b33*/
   this->Count -= DSurface_ViewBounds.field_0; /*0x4d0b35*/
   this->q011 = v18; /*0x4d0b37*/
   if ( g_FootClassConfig < dword_8B3D18 /*0x4d0b6f*/
@@ -909,7 +909,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4d2cab*/
+    (*(void (__thiscall **)(_DynamicVectorClass_UDrawRecord_FoggedObjectClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x4d2cab*/
   }
   v15 = *(_DWORD *)&this->__pad_5[3]; /*0x4d2cae*/
   if ( v15 < *(_DWORD *)this->__tail_10 ) /*0x4d2cb6*/
@@ -1070,7 +1070,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
   void *v3; // eax
 
   v3 = *(void **)&a3->m_1[3]; /*0x4d2d63*/
-  *(_DWORD *)a3->__pad_0 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d66*/
+  *(_DWORD *)a3->q000 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d66*/
   if ( v3 && IDA_BYTE1(a3->m_C) ) /*0x4d2d70*/
   {
     RA2_OPDEL(v3); /*0x4d2d78*/
@@ -1080,7 +1080,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(char a2, int a3)
   *(_DWORD *)&a3->__pad_5[3] = 0; /*0x4d2d91*/
   if ( (a3 & 1) != 0 ) /*0x4d2d98*/
     RA2_OPDEL(a3); /*0x4d2d9b*/
-  return a3->__pad_0; /*0x4d2da5*/
+  return a3->q000; /*0x4d2da5*/
 }
 }  // G42.18c ns repair
 // 0x4E01F0
@@ -1192,7 +1192,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVFootClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4e0662*/
+    (*(void (__thiscall **)(_VectorClass_PAVFootClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x4e0662*/
     return 1; /*0x4e0668*/
   }
 }
@@ -1300,7 +1300,7 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4e0ce3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_FootClass___vftable; /*0x4e0ce6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_FootClass___vftable; /*0x4e0ce6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4e0cf0*/
   {
     RA2_OPDEL(v3); /*0x4e0cf8*/
@@ -1310,6 +1310,6 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
   Block->m_8 = 0; /*0x4e0d11*/
   if ( (a2 & 1) != 0 ) /*0x4e0d18*/
     RA2_OPDEL(Block); /*0x4e0d1b*/
-  return Block->__pad_0; /*0x4e0d25*/
+  return Block->q000; /*0x4e0d25*/
 }
 } // namespace gamemd

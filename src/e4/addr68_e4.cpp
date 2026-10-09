@@ -961,7 +961,7 @@ int PostLoadInitScenario()
           v31 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x6850b1*/
           if ( v31 ) /*0x6850b8*/
           {
-            v32 = (int *)(*(int (__thiscall **)(Building *, int *))(*(_DWORD *)n->__pad_0 + 72))(n, &v36); /*0x6850cd*/
+            v32 = (int *)(*(int (__thiscall **)(Building *, int *))(*(_DWORD *)n->q000 + 72))(n, &v36); /*0x6850cd*/
             AnimClass::ctor(v31, (void *)dword_8871E0[1].LargeVisceroid, v32, 0, 1, (void *)0x600, 0, 0); /*0x6850e0*/
           }
         }
@@ -1263,7 +1263,7 @@ char * SaveScenarioToINI(char * Source, char a2, int a3)
 namespace gamemd {
 AbstractClass * * SessionClass_AssignHouses()
 {
-  int DeleteAndZero_field_0x08; // edi
+  int q008; // edi
   int v2; // esi
   int *v3; // ecx
   int v4; // edx
@@ -1298,9 +1298,9 @@ AbstractClass * * SessionClass_AssignHouses()
   char v34[20]; // [esp+3Ch] [ebp-18h] BYREF
   char v35; // [esp+50h] [ebp-4h]
 
-  DeleteAndZero_field_0x08 = dword_A8DA84; /*0x687f15*/
+  q008 = dword_A8DA84; /*0x687f15*/
   v2 = 0; /*0x687f1b*/
-  for ( v29.DeleteAndZero_field_0x08 = dword_A8DA84; v2 < DeleteAndZero_field_0x08; ++v2 ) /*0x687f23*/
+  for ( v29.q008 = dword_A8DA84; v2 < q008; ++v2 ) /*0x687f23*/
   {
     v3 = (int *)dword_A8DA78[v2]; /*0x687f2a*/
     if ( *(int *)((char *)v3 + 75) == -3 ) /*0x687f31*/
@@ -1309,9 +1309,9 @@ AbstractClass * * SessionClass_AssignHouses()
   v31[0] = 0; /*0x687f42*/
   v31[1] = 0; /*0x687f49*/
   HouseClass_Observer = 0; /*0x687f4d*/
-  if ( DeleteAndZero_field_0x08 > 0 ) /*0x687f53*/
+  if ( q008 > 0 ) /*0x687f53*/
   {
-    v30 = DeleteAndZero_field_0x08; /*0x687f59*/
+    v30 = q008; /*0x687f59*/
     do /*0x688146*/
     {
       v4 = -1; /*0x687f63*/
@@ -1328,7 +1328,7 @@ AbstractClass * * SessionClass_AssignHouses()
         ++v5; /*0x687f8f*/
         ++v6; /*0x687f90*/
       }
-      while ( v5 < DeleteAndZero_field_0x08 ); /*0x687f95*/
+      while ( v5 < q008 ); /*0x687f95*/
       v7 = dword_A8DA78[v28]; /*0x687fa0*/
       *((_BYTE *)v31 + v28) = 1; /*0x687fa3*/
       v8 = (int *)RA2_OPNEW(0x160B8u); /*0x687fa8*/
@@ -1339,9 +1339,9 @@ AbstractClass * * SessionClass_AssignHouses()
       if ( *(_DWORD *)&dword_A8B238 == 4 ) /*0x687fd5*/
       {
         WideString::Assign((wchar_t **)&v29, (wchar_t *)v7); /*0x687fdc*/
-        ToWideStringCharAlt((char **)&v29.DeleteAndZero_field_0x04, (const wchar_t **)&v29); /*0x687fe9*/
+        ToWideStringCharAlt((char **)&v29.q004, (const wchar_t **)&v29); /*0x687fe9*/
         DeleteAndZero::Alt(&v29); /*0x687ff2*/
-        v10 = String::GetOrEmpty((String *)&v29.DeleteAndZero_field_0x04); /*0x687ffb*/
+        v10 = String::GetOrEmpty((String *)&v29.q004); /*0x687ffb*/
         if ( v10 ) /*0x688002*/
         {
           strncpy(Destination, v10, 0x14u); /*0x688012*/
@@ -1355,9 +1355,9 @@ AbstractClass * * SessionClass_AssignHouses()
         {
           qmemcpy((void *)(v9 + 90100), Destination, 0x14u); /*0x688038*/
           *(_BYTE *)(v9 + 90120) = v33; /*0x68803a*/
-          DeleteAndZero_field_0x08 = v29.DeleteAndZero_field_0x08; /*0x68803b*/
+          q008 = v29.q008; /*0x68803b*/
         }
-        DeleteAndZero((ObjectClass *)&v29.DeleteAndZero_field_0x04); /*0x688043*/
+        DeleteAndZero((ObjectClass *)&v29.q004); /*0x688043*/
       }
       else
       {
@@ -1374,13 +1374,13 @@ AbstractClass * * SessionClass_AssignHouses()
         {
           qmemcpy((void *)(v9 + 90100), v34, 0x14u); /*0x68808b*/
           *(_BYTE *)(v9 + 90120) = v35; /*0x68808d*/
-          DeleteAndZero_field_0x08 = v29.DeleteAndZero_field_0x08; /*0x68808e*/
+          q008 = v29.q008; /*0x68808e*/
         }
       }
       wcsncpy((wchar_t *)(v9 + 90154), (const wchar_t *)v7, 0x15u); /*0x68809c*/
       *(_WORD *)(v9 + 90194) = 0; /*0x6880a4*/
       *(_BYTE *)(v9 + 492) = 1; /*0x6880ad*/
-      sub_4FCE00((ObjectClass *)v9, *(_DWORD *)(v7 + 83), *(_DWORD *)(v7 + 75), *(int *)&stru_A8B250.__pad_0[12]); /*0x6880c4*/
+      sub_4FCE00((ObjectClass *)v9, *(_DWORD *)(v7 + 83), *(_DWORD *)(v7 + 75), *(int *)&stru_A8B250.q000[12]); /*0x6880c4*/
       *(_DWORD *)(v9 + 90196) = SessionClass::GetPlayerColorScheme(*(_DWORD *)(v7 + 83)); /*0x6880d9*/
       HouseClass::GetColor((char *)v9); /*0x6880df*/
       ComputeSessionColorVector((ObjectClass *)v9); /*0x6880e6*/
@@ -1401,8 +1401,8 @@ AbstractClass * * SessionClass_AssignHouses()
     while ( v30 ); /*0x688146*/
   }
   v11 = 0; /*0x688152*/
-  v30 = *(_DWORD *)&stru_A8B250.__pad_0[36]; /*0x688154*/
-  v12 = (int *)&stru_A8B250.__pad_0[76]; /*0x688158*/
+  v30 = *(_DWORD *)&stru_A8B250.q000[36]; /*0x688154*/
+  v12 = (int *)&stru_A8B250.q000[76]; /*0x688158*/
   do /*0x6882cb*/
   {
     if ( v11 < v30 ) /*0x688161*/
@@ -1411,7 +1411,7 @@ AbstractClass * * SessionClass_AssignHouses()
       if ( *v12 != -1 && v13 != -3 ) /*0x688175*/
       {
         v14 = v12[8]; /*0x68817b*/
-        v29.DeleteAndZero_field_0x08 = v11 + 1; /*0x688184*/
+        v29.q008 = v11 + 1; /*0x688184*/
         v15 = (int *)RA2_OPNEW(0x160B8u); /*0x688188*/
         if ( v15 ) /*0x688192*/
           v16 = HouseClass::Construct(v15, *((_DWORD *)dword_A83C9C + v13)); /*0x6881a5*/
@@ -1420,7 +1420,7 @@ AbstractClass * * SessionClass_AssignHouses()
         v17 = g_RulesInitConfig; /*0x6881ab*/
         *(_BYTE *)(v16 + 492) = 0; /*0x6881b1*/
         *(_DWORD *)(v16 + 468) = v17; /*0x6881b8*/
-        sub_4FCE00((ObjectClass *)v16, v14, v13, *(int *)&stru_A8B250.__pad_0[12]); /*0x6881c8*/
+        sub_4FCE00((ObjectClass *)v16, v14, v13, *(int *)&stru_A8B250.q000[12]); /*0x6881c8*/
         *(_DWORD *)(v16 + 90196) = SessionClass::GetPlayerColorScheme(v14); /*0x6881da*/
         HouseClass::GetColor((char *)v16); /*0x6881e0*/
         ComputeSessionColorVector((ObjectClass *)v16); /*0x6881e7*/
@@ -1446,17 +1446,17 @@ AbstractClass * * SessionClass_AssignHouses()
         StringCSF = GetStringCSF(g_Str_TXT_COMPUTER, 0, g_Str_File_Scenario_CPP, 4032); /*0x688263*/
         wcscpy((wchar_t *)(v16 + 90154), StringCSF); /*0x688270*/
         if ( *(_DWORD *)&dword_A8B238 ) /*0x68827f*/
-          *(_DWORD *)(v16 + 588) = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5172); /*0x68828d*/
+          *(_DWORD *)(v16 + 588) = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5172); /*0x68828d*/
         v20 = *(v12 - 8); /*0x688299*/
-        if ( dword_A8DA84 > 1 && *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6115) && v20 > 0 ) /*0x6882b3*/
+        if ( dword_A8DA84 > 1 && *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6115) && v20 > 0 ) /*0x6882b3*/
           --v20; /*0x6882b5*/
         HouseClass::SetCombatPower((int *)v16, v20); /*0x6882b9*/
-        v11 = v29.DeleteAndZero_field_0x08; /*0x6882be*/
+        v11 = v29.q008; /*0x6882be*/
       }
     }
     ++v12; /*0x6882c2*/
   }
-  while ( (int)v12 < (int)&stru_A8B250.__pad_0[108] ); /*0x6882cb*/
+  while ( (int)v12 < (int)&stru_A8B250.q000[108] ); /*0x6882cb*/
   v21 = (int *)RA2_OPNEW(0x160B8u); /*0x6882de*/
   if ( v21 ) /*0x6882e4*/
   {
@@ -2874,7 +2874,7 @@ int E4Recv_68F8A0::sub_68F8A0()
   int v15; // [esp+10h] [ebp-18h] BYREF
   char Buffer[20]; // [esp+14h] [ebp-14h] BYREF
 
-  v2 = (*(int (__stdcall **)(char *))(*(_DWORD *)&dword_A83D4C->__pad_C[24] + 24))(&dword_A83D4C->__pad_C[24]); /*0x68f8b3*/
+  v2 = (*(int (__stdcall **)(char *))(*(_DWORD *)&dword_A83D4C->q00C[24] + 24))(&dword_A83D4C->q00C[24]); /*0x68f8b3*/
   sprintf(Buffer, "%d", v2); /*0x68f8c1*/
   v3 = strlen(Buffer) + 1; /*0x68f8d1*/
   v4 = RA2_OPNEW(0x2Cu); /*0x68f8e8*/

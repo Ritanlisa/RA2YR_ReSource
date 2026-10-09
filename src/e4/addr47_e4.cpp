@@ -88,86 +88,86 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
   int v19; // eax
   DynamicVector v21; // [esp+2Ch] [ebp-A0h] BYREF
 
-  if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.__pad_20, 128) ) /*0x47710a*/
+  if ( INIClass::GetString((INIClass *)a2, a3, a4, &g_INI_DefaultBuffer, v21.q020, 128) ) /*0x47710a*/
   {
     DynamicVectorClass::Construct((DynamicVectorClass *)&v21, 0, 0); /*0x477121*/
-    *(_DWORD *)v21.__pad_0 = &(void*)(void*)&TypeList_int_vftable; /*0x47712a*/
-    for ( i = strtok(v21.__pad_20, Str); i; i = strtok(0, Str) ) /*0x477144*/
+    *(_DWORD *)v21.q000 = &(void*)(void*)&TypeList_int_vftable; /*0x47712a*/
+    for ( i = strtok(v21.q020, Str); i; i = strtok(0, Str) ) /*0x477144*/
     {
       if ( !*i ) /*0x47714a*/
         break; /*0x47714d*/
       v13 = 0; /*0x477159*/
       if ( !_strcmpi(i, aPower) ) /*0x47715b*/
       {
-        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477194*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
-          && *(int *)v21.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.__pad_0 + 8))(
+        if ( v21.q010 < v21.q008 /*0x477194*/
+          || (v21.q00C[1] || !v21.q008)
+          && *(int *)v21.q014 > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.q000 + 8))(
                &v21,
-               v21.DynamicVector_field_0x8 + *(_DWORD *)v21.__pad_14,
+               v21.q008 + *(_DWORD *)v21.q014,
                0) )
         {
-          v14 = v21.DynamicVector_field_0x10++; /*0x47719f*/
+          v14 = v21.q010++; /*0x47719f*/
           *(_DWORD *)(*(_DWORD *)&v21.DynamicVector_field_0x1[3] + 4 * v14) = -1; /*0x4771aa*/
         }
         v13 = 1; /*0x4771b1*/
       }
       if ( !_strcmpi(i, aFactory) ) /*0x4771b9*/
       {
-        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4771f2*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
-          && *(int *)v21.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.__pad_0 + 8))(
+        if ( v21.q010 < v21.q008 /*0x4771f2*/
+          || (v21.q00C[1] || !v21.q008)
+          && *(int *)v21.q014 > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.q000 + 8))(
                &v21,
-               v21.DynamicVector_field_0x8 + *(_DWORD *)v21.__pad_14,
+               v21.q008 + *(_DWORD *)v21.q014,
                0) )
         {
-          v15 = v21.DynamicVector_field_0x10++; /*0x4771fd*/
+          v15 = v21.q010++; /*0x4771fd*/
           *(_DWORD *)(*(_DWORD *)&v21.DynamicVector_field_0x1[3] + 4 * v15) = -2; /*0x477208*/
         }
         v13 = 1; /*0x47720f*/
       }
       if ( !_strcmpi(i, aBarracks) ) /*0x477217*/
       {
-        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477250*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
-          && *(int *)v21.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.__pad_0 + 8))(
+        if ( v21.q010 < v21.q008 /*0x477250*/
+          || (v21.q00C[1] || !v21.q008)
+          && *(int *)v21.q014 > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.q000 + 8))(
                &v21,
-               v21.DynamicVector_field_0x8 + *(_DWORD *)v21.__pad_14,
+               v21.q008 + *(_DWORD *)v21.q014,
                0) )
         {
-          v16 = v21.DynamicVector_field_0x10++; /*0x47725b*/
+          v16 = v21.q010++; /*0x47725b*/
           *(_DWORD *)(*(_DWORD *)&v21.DynamicVector_field_0x1[3] + 4 * v16) = -3; /*0x477266*/
         }
         v13 = 1; /*0x47726d*/
       }
       if ( !_strcmpi(i, aRadar) ) /*0x477275*/
       {
-        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4772ae*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
-          && *(int *)v21.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.__pad_0 + 8))(
+        if ( v21.q010 < v21.q008 /*0x4772ae*/
+          || (v21.q00C[1] || !v21.q008)
+          && *(int *)v21.q014 > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.q000 + 8))(
                &v21,
-               v21.DynamicVector_field_0x8 + *(_DWORD *)v21.__pad_14,
+               v21.q008 + *(_DWORD *)v21.q014,
                0) )
         {
-          v17 = v21.DynamicVector_field_0x10++; /*0x4772b9*/
+          v17 = v21.q010++; /*0x4772b9*/
           *(_DWORD *)(*(_DWORD *)&v21.DynamicVector_field_0x1[3] + 4 * v17) = -4; /*0x4772c4*/
         }
         v13 = 1; /*0x4772cb*/
       }
       if ( !_strcmpi(i, aTech) ) /*0x4772d3*/
       {
-        if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47730c*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
-          && *(int *)v21.__pad_14 > 0
-          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.__pad_0 + 8))(
+        if ( v21.q010 < v21.q008 /*0x47730c*/
+          || (v21.q00C[1] || !v21.q008)
+          && *(int *)v21.q014 > 0
+          && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.q000 + 8))(
                &v21,
-               v21.DynamicVector_field_0x8 + *(_DWORD *)v21.__pad_14,
+               v21.q008 + *(_DWORD *)v21.q014,
                0) )
         {
-          v18 = v21.DynamicVector_field_0x10++; /*0x477317*/
+          v18 = v21.q010++; /*0x477317*/
           *(_DWORD *)(*(_DWORD *)&v21.DynamicVector_field_0x1[3] + 4 * v18) = -5; /*0x477322*/
         }
         v13 = 1; /*0x477329*/
@@ -176,26 +176,26 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       {
         if ( !v13 ) /*0x47738b*/
         {
-          v21.DynamicVector_field_0x1C = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)i); /*0x477397*/
-          if ( v21.DynamicVector_field_0x1C != -1 ) /*0x47739b*/
-            DynamicVector::Add_Alt(&v21, &v21.DynamicVector_field_0x1C); /*0x4773a6*/
+          v21.q01C = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)i); /*0x477397*/
+          if ( v21.q01C != -1 ) /*0x47739b*/
+            DynamicVector::Add_Alt(&v21, &v21.q01C); /*0x4773a6*/
         }
       }
-      else if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47736a*/
-             || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
-             && *(int *)v21.__pad_14 > 0
-             && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.__pad_0 + 8))(
+      else if ( v21.q010 < v21.q008 /*0x47736a*/
+             || (v21.q00C[1] || !v21.q008)
+             && *(int *)v21.q014 > 0
+             && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, _DWORD))(*(_DWORD *)v21.q000 + 8))(
                   &v21,
-                  v21.DynamicVector_field_0x8 + *(_DWORD *)v21.__pad_14,
+                  v21.q008 + *(_DWORD *)v21.q014,
                   0) )
       {
-        v19 = v21.DynamicVector_field_0x10++; /*0x477375*/
+        v19 = v21.q010++; /*0x477375*/
         *(_DWORD *)(*(_DWORD *)&v21.DynamicVector_field_0x1[3] + 4 * v19) = -6; /*0x477380*/
       }
     }
     DynamicVectorClass::Copy(a1, &v21); /*0x4773cb*/
     a1->vfptr = (int)&(void*)(void*)&TypeList_int_vftable; /*0x4773d9*/
-    *(_DWORD *)v21.__pad_0 = &(void*)(void*)&VectorClass_int_vftable; /*0x4773df*/
+    *(_DWORD *)v21.q000 = &(void*)(void*)&VectorClass_int_vftable; /*0x4773df*/
     VectorClass::Destroy((int)&v21); /*0x4773e3*/
     a5 = &(void*)(void*)&VectorClass_int_vftable; /*0x4773ef*/
     VectorClass::Destroy((int)&a5); /*0x4773f6*/
@@ -666,7 +666,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   v47 = v5 != 0 ? a1 : 0;
   v14 = v39 | v13; /*0x47e19c*/
   (((v14) >> 8) & 0xFF) &= ~2u; /*0x47e1a2*/
-  *(_DWORD *)&v4->__pad_28[4] = v47; /*0x47e1a5*/
+  *(_DWORD *)&v4->q028[4] = v47; /*0x47e1a5*/
   v15 = v40 | v14; /*0x47e1a8*/
   (((v15) >> 8) & 0xFF) &= ~0x10u; /*0x47e1ae*/
   v16 = v8 | (v7 | v15) & 0xFFFEFFFF; /*0x47e1b9*/
@@ -696,7 +696,7 @@ int CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     v18 = a3; /*0x47e25a*/
   }
   v20 = v4->flags[0]; /*0x47e262*/
-  *(_DWORD *)&v4->__pad_28[4] = v47; /*0x47e268*/
+  *(_DWORD *)&v4->q028[4] = v47; /*0x47e268*/
   (((v20) >> 8) & 0xFF) &= ~1u; /*0x47e26f*/
   v21 = v39 | v20; /*0x47e272*/
   (((v21) >> 8) & 0xFF) &= 0xEDu; /*0x47e278*/
@@ -878,7 +878,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   v47 = v5 != 0 ? a1 : 0;
   v14 = v39 | v13; /*0x47e5cc*/
   (((v14) >> 8) & 0xFF) &= ~2u; /*0x47e5d2*/
-  *(_DWORD *)&v4->__pad_28[4] = v47; /*0x47e5d5*/
+  *(_DWORD *)&v4->q028[4] = v47; /*0x47e5d5*/
   v15 = v40 | v14; /*0x47e5d8*/
   (((v15) >> 8) & 0xFF) &= ~0x10u; /*0x47e5de*/
   v16 = v8 | (v7 | v15) & 0xFFFEFFFF; /*0x47e5e9*/
@@ -908,7 +908,7 @@ int CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
     v18 = a3; /*0x47e68a*/
   }
   v20 = v4->flags[0]; /*0x47e692*/
-  *(_DWORD *)&v4->__pad_28[4] = v47; /*0x47e698*/
+  *(_DWORD *)&v4->q028[4] = v47; /*0x47e698*/
   (((v20) >> 8) & 0xFF) &= ~1u; /*0x47e69f*/
   v21 = v39 | v20; /*0x47e6a2*/
   (((v21) >> 8) & 0xFF) &= 0xEDu; /*0x47e6a8*/
@@ -2009,7 +2009,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   if ( !a3 ) /*0x474552*/
     return INIClass::WriteToString(aP1); /*0x47455c*/
   INIClass::ClearSection((int)g_INI_Key_Digest, 0); /*0x474575*/
-  memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
+  memset(&v6.u32_4, 0, 9); /*0x47457e*/
   v12 = 0; /*0x47458d*/
   v13 = 0; /*0x474591*/
   v7 = 1732584193; /*0x474595*/
@@ -2017,7 +2017,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v9 = -1732584194; /*0x4745a5*/
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
-  *(_DWORD *)v6.__pad_0 = &(void*)(void*)&SHAPipe_vftable; /*0x4745bd*/
+  *(_DWORD *)v6.q000 = &(void*)(void*)&SHAPipe_vftable; /*0x4745bd*/
   INIClass::WriteToString((int)&v6); /*0x4745c5*/
   SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
@@ -2054,7 +2054,7 @@ int E4Recv_476E20::sub_476E20()
   int v9; // [esp+3Ch] [ebp-48h]
   int v10; // [esp+40h] [ebp-44h]
 
-  memset(&v3.SHA1_field_0x04, 0, 9); /*0x476e29*/
+  memset(&v3.u32_4, 0, 9); /*0x476e29*/
   v9 = 0; /*0x476e35*/
   v10 = 0; /*0x476e39*/
   v4 = 1732584193; /*0x476e44*/
@@ -2062,7 +2062,7 @@ int E4Recv_476E20::sub_476E20()
   v6 = -1732584194; /*0x476e54*/
   v7 = 271733878; /*0x476e5c*/
   v8 = -1009589776; /*0x476e64*/
-  *(_DWORD *)v3.__pad_0 = &(void*)(void*)&SHAPipe_vftable; /*0x476e6c*/
+  *(_DWORD *)v3.q000 = &(void*)(void*)&SHAPipe_vftable; /*0x476e6c*/
   INIClass::WriteToString((int)&v3); /*0x476e74*/
   SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/

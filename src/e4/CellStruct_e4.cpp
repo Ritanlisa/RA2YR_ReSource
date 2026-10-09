@@ -27,7 +27,7 @@ unsigned int * CellStruct::Copy(CellStruct *aP0, void* aP1)  // G57w11: def åŒæ
   void *v4; // ecx
 
   v3 = aP0->field_0; /*0x437f34*/
-  v4 = aP0->field_4; /*0x437f36*/
+  v4 = aP0->q004; /*0x437f36*/
   *aP1 = v3; /*0x437f39*/
   aP1[1] = v4; /*0x437f3b*/
   return aP1; /*0x437f3e*/

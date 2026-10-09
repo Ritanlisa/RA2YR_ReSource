@@ -143,7 +143,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   v51 = 0; /*0x7432a7*/
   v50 = 0; /*0x7432ab*/
   v48 = 0; /*0x7432af*/
-  KeyCount = INIClass::GetKeyCount(v2->__pad_0, (unsigned __int8 *)aUnits); /*0x7432b3*/
+  KeyCount = INIClass::GetKeyCount(v2->q000, (unsigned __int8 *)aUnits); /*0x7432b3*/
   v4 = 0; /*0x7432b8*/
   v61 = KeyCount; /*0x7432bc*/
   v54 = 0; /*0x7432c0*/
@@ -151,7 +151,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2, void * aUnits)
   {
     while ( 1 ) /*0x7432dd*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2->__pad_0, (unsigned __int8 *)aUnits, v4); /*0x7432dd*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2->q000, (unsigned __int8 *)aUnits, v4); /*0x7432dd*/
       INIClass::GetString(v2, (unsigned __int8 *)aUnits, StringByIndex, 0, String, 128); /*0x7432f6*/
       v6 = strtok(String, Str); /*0x743305*/
       v7 = HouseClass::FindByName(v6); /*0x743314*/
@@ -1118,7 +1118,7 @@ char _e4::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVVeinholeMonsterClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x74f4a2*/
+    (*(void (__thiscall **)(_VectorClass_PAVVeinholeMonsterClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x74f4a2*/
     return 1; /*0x74f4a8*/
   }
 }

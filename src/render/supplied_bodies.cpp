@@ -82,13 +82,13 @@ int DrawBuildingTilesSHP(void* a1, int a2, int a3);  // 0x4A5A50 IDA SHP_DrawBui
 unsigned int TimerGetTicks(void);  // 0x5d41c1 调用 (IDA timeGetTicks 族)
 // G42.35: 结构化全局宿主（e4_globals_decls/ida_globals 载体为裸标量, 语料按 .__pad_N/成员访问）
 struct stru_87F5F0_flat {
-    unsigned char __pad_0[0x58];
+    unsigned char q000[0x58];
     unsigned char __pad_58[0xE12 - 0x58];    // 覆盖 __pad_58[416] = +0x1F8 (object TU 同款)
-    unsigned char __pad_E12[0x13AC - 0xE12]; // 覆盖 __pad_E12[1422] = +0x13A0 u32 读
+    unsigned char qE12[0x13AC - 0xE12]; // 覆盖 qE12[1422] = +0x13A0 u32 读
 };
 extern stru_87F5F0_flat stru_87F5F0_t;   // data: 0x87F5F0
 #define stru_87F5F0 stru_87F5F0_t
-struct stru_88732C_flat { unsigned char __pad_0[6]; unsigned char __pad_6[0x20]; };  // __pad_6[14] 读
+struct stru_88732C_flat { unsigned char q000[6]; unsigned char __pad_6[0x20]; };  // __pad_6[14] 读
 extern stru_88732C_flat stru_88732C_t;   // data: 0x88732C
 #define stru_88732C stru_88732C_t
 struct stru_887598_flat { void* lineTrailer; unsigned char __pad_rest[0x20]; };  // lineTrailer 指针槽
@@ -147,10 +147,10 @@ struct House_site { static unsigned char IsCurrentPlayer(void* self); };     // 
 extern int ZCoordToScreenY(int aP0);            // 0x6D20E0 (e4_protos 同形)
 extern int LoadPaletteSimple(void* aP0, void* a2, void* a3);  // 0x72AAB9 区 (e4_protos 真形 char*,int*,uint*; 调用点首参 off_844BXX 均为 ida_globals void*)
 extern int CompareFunction(void* a1, void* a2); // 0x6E7AC0 区 bsearch 比较子
-// g_BuildingLoadQueue_Array 宿主（e4_globals_decls 裸 int; 语料 .__pad_F70[N] 访问, N≤1464+4）
+// g_BuildingLoadQueue_Array 宿主（e4_globals_decls 裸 int; 语料 .qF70[N] 访问, N≤1464+4）
 struct g_BuildingLoadQueue_Array_flat {
-    unsigned char __pad_0[0xF70];
-    unsigned char __pad_F70[0x1360 - 0xF70];
+    unsigned char q000[0xF70];
+    unsigned char qF70[0x1360 - 0xF70];
     unsigned int* TechnoTypeClass;  // G42.35 til 槽词汇 (0x6E7AE8 vtable0 赋值形)
     // G42.35: 裸整型视图（同槽双视图 -- 标量用法站点 0x6E7A8D 等; 声明即可 /Zs）
     operator unsigned int() const;
@@ -163,8 +163,8 @@ extern g_BuildingLoadQueue_Array_flat g_BuildingLoadQueue_Array_t;  // data: 0xB
 // BuildingLoadQueue_site 置于 gamemd（其 FindBuilding def 在 namespace gamemd 块内, C2888 规避）
 namespace gamemd {                       // g57a5 W2a: 修复漂浮成员（缺失 opener, C2447/C2143 家族）
 struct BuildingLoadQueue_site {
-    void* __pad_0;   // til 槽词汇 (0x6E7AA9)
-    unsigned int BuildingLoadQueue_field_0x04[4];  // til 槽词汇
+    void* q000;   // til 槽词汇 (0x6E7AA9)
+    unsigned int q004[4];  // til 槽词汇
     int FindBuilding();   // 0x6E7A80 (def 0 参 int; 载体 misc 版无此法)
 };
 } // namespace gamemd
@@ -174,20 +174,20 @@ struct FootClass_site {
     static int ClearPathIndex(void* self);                   // 0x73EB55
 };
 struct ComPtr_site {
-    int ComPtr_field_0x04;  // til 槽词汇 (Validate int* 对齐)
-    int ComPtr_field_0x08;
-    int ComPtr_field_0x0C;
-    int ComPtr_field_0x10;
-    int ComPtr_field_0x14;
-    int ComPtr_field_0x18;
-    int ComPtr_field_0x20;
-    unsigned int* __pad_0;           // vfn 槽 (0x73E871)
+    int q004;  // til 槽词汇 (Validate int* 对齐)
+    int q008;
+    int q00C;
+    int q010;
+    int q014;
+    int q018;
+    int q020;
+    unsigned int* q000;           // vfn 槽 (0x73E871)
     static void Release_Alt(void* self);  // 0x73E7DA
 };
 struct DynamicVector_site {
-    unsigned int* __pad_0;                    // vfn 槽 (0x75E7xx)
+    unsigned int* q000;                    // vfn 槽 (0x75E7xx)
     unsigned char __pad_1[0x1C - 4];
-    unsigned char DynamicVector_field_0x1C[8];
+    unsigned char q01C[8];
     static int GetOrGrow(void* self, int a2);      // 0x73E6A2
     static void Add_Alt4(void* self, void* a2);    // 0x75D6CC
     static void Constructor_VoxelAnim(void* self, int a2, int a3);  // 0x75DB12
@@ -197,7 +197,7 @@ struct DynamicVector_site {
 #define ComPtr ComPtr_site                        // G42.35: 同上（v66 局部 + 2 站点）
 #define DynamicVector DynamicVector_site          // G42.35: 同上（v86 局部 + 3 站点）
 // stru_B054D0 宿主（ida_globals 裸标量; 语料 .m_1[3] 访问）
-struct stru_B054D0_flat { unsigned char __pad_0[4]; void* m_1[16]; };
+struct stru_B054D0_flat { unsigned char q000[4]; void* m_1[16]; };
 extern stru_B054D0_flat stru_B054D0_t;  // data: 0xB054D0
 #define stru_B054D0 stru_B054D0_t
 // G42.35 波9: Math 站点壳（gamemd::Math 仅 fwd; Sqrt/RoundToInt 静态形）
@@ -208,8 +208,8 @@ struct Math_site {
 #define Math Math_site  // G42.35: 语料名桥接（8 站点全 Math:: 静态形）
 // dword_8871E0 宿主（ida_globals 裸 uint; 语料 ->CollapseChance/MutateExplosion/ChronoHarvTooFarDistance/__pad_* 访问）
 struct dword_8871E0_v {
-    unsigned char __pad_0[0xC3C];
-    unsigned char __pad_C3C[8];
+    unsigned char q000[0xC3C];
+    unsigned char qC3C[8];
     unsigned int CollapseChance;
     unsigned int MutateExplosion;
     unsigned int ChronoHarvTooFarDistance;
@@ -217,9 +217,9 @@ struct dword_8871E0_v {
 };
 extern dword_8871E0_v* dword_8871E0_t;  // data: 0x8871E0 (Rules 实例指针, object TU 注释同款)
 #define dword_8871E0 dword_8871E0_t
-// g_DSurface_Hidden_2 宿主（e4_globals_decls 裸 int; 语料 ->__pad_0 + (int) 双视图 + AudioStream* 裸传参）
+// g_DSurface_Hidden_2 宿主（e4_globals_decls 裸 int; 语料 ->q000 + (int) 双视图 + AudioStream* 裸传参）
 struct g_DSurface_Hidden_2_v : gamemd::AudioStream {
-    unsigned int* __pad_0;   // vfn 槽 (0x488A9B 等 23 站点)
+    unsigned int* q000;   // vfn 槽 (0x488A9B 等 23 站点)
 };
 extern g_DSurface_Hidden_2_v* g_DSurface_Hidden_2_t;  // data: 0x887314
 #define g_DSurface_Hidden_2 g_DSurface_Hidden_2_t
@@ -311,7 +311,7 @@ int BuildingQueue::IsCellSuitable(int a2)
     result = ((result) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x42e793*/
     return result; /*0x42e796*/
   }
-  v4 = 16 * a2 + this->BuildingQueue_field_0x08; /*0x42e79f*/
+  v4 = 16 * a2 + this->q008; /*0x42e79f*/
   result = *(_DWORD *)v4; /*0x42e7a2*/
   if ( *(int *)v4 < 0 ) /*0x42e7a7*/
     goto LABEL_9; /*0x42e7a7*/
@@ -344,7 +344,7 @@ int BuildingQueue::AllocSlot(int a2)
   if ( FreeSlot == -1 ) /*0x42eb30*/
     return 0; /*0x42eb3e*/
   else
-    return this->BuildingQueue_field_0x08 + 16 * FreeSlot; /*0x42eb39*/
+    return this->q008 + 16 * FreeSlot; /*0x42eb39*/
 }
 } // namespace gamemd
 
@@ -361,7 +361,7 @@ int BuildingQueue::FindFreeSlot(int a2)
   v4 = 0; /*0x42eb63*/
   while ( a2 != -1 ) /*0x42eb68*/
   {
-    if ( *(_DWORD *)(this->BuildingQueue_field_0x08 + v4) == a2 /*0x42ebac*/
+    if ( *(_DWORD *)(this->q008 + v4) == a2 /*0x42ebac*/
       && !(unsigned __int8)BuildingQueue::IsCellSuitable(this, v3) )
     {
       return v3; /*0x42ebac*/
@@ -374,11 +374,11 @@ int BuildingQueue::FindFreeSlot(int a2)
   }
   if ( (unsigned __int8)BuildingQueue::IsCellSuitable(this, v3) ) /*0x42eb6d*/
     goto LABEL_11; /*0x42eb6d*/
-  if ( !*(_DWORD *)&dword_A8B238 || !*(_BYTE *)(v4 + this->BuildingQueue_field_0x08 + 8) ) /*0x42eb84*/
+  if ( !*(_DWORD *)&dword_A8B238 || !*(_BYTE *)(v4 + this->q008 + 8) ) /*0x42eb84*/
     return v3; /*0x42eb89*/
-  if ( !TechnoClass::ProcessTarget(*((TechnoClass **)&this->q0089), v4 + this->BuildingQueue_field_0x08) ) /*0x42eb8f*/
+  if ( !TechnoClass::ProcessTarget(*((TechnoClass **)&this->q0089), v4 + this->q008) ) /*0x42eb8f*/
     goto LABEL_11; /*0x42eb96*/
-  *(_DWORD *)(16 * v3 + this->BuildingQueue_field_0x08 + 4) = dword_89C310; /*0x42ebd1*/
+  *(_DWORD *)(16 * v3 + this->q008 + 4) = dword_89C310; /*0x42ebd1*/
   return v3; /*0x42ebb9*/
 }
 } // namespace gamemd
@@ -414,9 +414,9 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
   v22 = 0; /*0x47ecb4*/
   if ( (v5 & 2) == 0 && (v5 & 4) == 0 ) /*0x47ecbc*/
     return 0; /*0x47efca*/
-  v6 = *(_DWORD **)&stru_87F5F0.__pad_E12[1422]; /*0x47ecc2*/
+  v6 = *(_DWORD **)&stru_87F5F0.qE12[1422]; /*0x47ecc2*/
   if ( (v5 & 2) == 0 ) /*0x47ecca*/
-    v6 = *(_DWORD **)&stru_87F5F0.__pad_E12[1402]; /*0x47eccc*/
+    v6 = *(_DWORD **)&stru_87F5F0.qE12[1402]; /*0x47eccc*/
   v7 = -1; /*0x47ecd2*/
   if ( v6 && (*(int (__thiscall **)(_DWORD *))(*v6 + 44))(v6) == 7 ) /*0x47ece3*/
     v7 = v6[415]; /*0x47ece5*/
@@ -426,7 +426,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
   if ( this->u32_11C ) /*0x47ed05*/
     v9 -= 10; /*0x47ed0f*/
   if ( (this->u32_12C & 2) != 0 /*0x47ed2d*/
-    && (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87F5F0.__pad_E12[1422] + 44))(*(_DWORD *)&stru_87F5F0.__pad_E12[1422]) == 7 )
+    && (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87F5F0.qE12[1422] + 44))(*(_DWORD *)&stru_87F5F0.qE12[1422]) == 7 )
   {
     v10 = (*(__int16 *)(&this->q00C8) << 8) + 128; /*0x47ed48*/
     v26[0] = (*(__int16 *)(&this->q00C6) << 8) + 128; /*0x47ed4e*/
@@ -435,27 +435,27 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
     GroundHeight = Cell::GetGroundHeight(v26); /*0x47ed6f*/
     if ( (unsigned __int8)Cell::IsPassable(v26) ) /*0x47ed79*/
     {
-      if ( !stru_87F5F0.__pad_E12[1382] /*0x47eda4*/
-        || !*(_DWORD *)&stru_87F5F0.__pad_E12[1422]
-        || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87F5F0.__pad_E12[1422] + 44))(*(_DWORD *)&stru_87F5F0.__pad_E12[1422]) != 7
-        || !*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_E12[1422] + 3672) )
+      if ( !stru_87F5F0.qE12[1382] /*0x47eda4*/
+        || !*(_DWORD *)&stru_87F5F0.qE12[1422]
+        || (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87F5F0.qE12[1422] + 44))(*(_DWORD *)&stru_87F5F0.qE12[1422]) != 7
+        || !*(_DWORD *)(*(_DWORD *)&stru_87F5F0.qE12[1422] + 3672) )
       {
         v22 = 0; /*0x47edb0*/
         goto LABEL_43; /*0x47edb5*/
       }
       goto LABEL_42; /*0x47edaa*/
     }
-    if ( !*(_BYTE *)(*(_DWORD *)&stru_87F5F0.__pad_E12[1422] + 3720) ) /*0x47edc8*/
+    if ( !*(_BYTE *)(*(_DWORD *)&stru_87F5F0.qE12[1422] + 3720) ) /*0x47edc8*/
     {
-      if ( !stru_87F5F0.__pad_E12[1382] /*0x47eeb1*/
-        || !*(_DWORD *)&stru_87F5F0.__pad_E12[1422]
-        || (*(int (**)(void))(**(_DWORD **)&stru_87F5F0.__pad_E12[1422] + 44))() != 7
+      if ( !stru_87F5F0.qE12[1382] /*0x47eeb1*/
+        || !*(_DWORD *)&stru_87F5F0.qE12[1422]
+        || (*(int (**)(void))(**(_DWORD **)&stru_87F5F0.qE12[1422] + 44))() != 7
         || !(unsigned __int8)CellClass::IsPassable(
                                (int *)this,
                                v7,
-                               *(int *)&stru_87F5F0.__pad_E12[1422],
+                               *(int *)&stru_87F5F0.qE12[1422],
                                (int)dword_A83D4C)
-        || *(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_E12[1422] + 3672) && this->u32_EC == 1 )
+        || *(_DWORD *)(*(_DWORD *)&stru_87F5F0.qE12[1422] + 3672) && this->u32_EC == 1 )
       {
         goto LABEL_43; /*0x47eeb1*/
       }
@@ -498,7 +498,7 @@ char BuildingPlacement::RenderBuildingPlacementPreview(unsigned int *a2, int *a3
         goto LABEL_43; /*0x47ee44*/
     }
     if ( (*(int (__thiscall **)(bool *))(*(_DWORD *)v11 + 44))(v11) == 6 /*0x47ee61*/
-      && (unsigned __int8)BuildingClass::CanAcceptType(v11, *(int *)&stru_87F5F0.__pad_E12[1422], (int)dword_A83D4C) )
+      && (unsigned __int8)BuildingClass::CanAcceptType(v11, *(int *)&stru_87F5F0.qE12[1422], (int)dword_A83D4C) )
     {
   LABEL_42:
       v22 = 1; /*0x47eeb3*/
@@ -607,9 +607,9 @@ int BuildingPlacement::ValidateType(int a2, int a3)
         {
           result = i[328]; /*0x480578*/
           if ( (int)i[27] > 0 /*0x4805b1*/
-            && (result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2156) && (a3 == 2 || a3 == 6)
-             || result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2160) && (!a3 || a3 == 4)
-             || result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2172)) )
+            && (result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2156) && (a3 == 2 || a3 == 6)
+             || result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2160) && (!a3 || a3 == 4)
+             || result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2172)) )
           {
             goto LABEL_8; /*0x4805b1*/
           }
@@ -625,8 +625,8 @@ int BuildingPlacement::ValidateType(int a2, int a3)
         {
           result = j[328]; /*0x4805d8*/
           if ( (int)j[27] > 0 /*0x480615*/
-            && (result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2164) && (a3 == 2 || a3 == 6)
-             || result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2168) && (!a3 || a3 == 4)) )
+            && (result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2164) && (a3 == 2 || a3 == 6)
+             || result == *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2168) && (!a3 || a3 == 4)) )
           {
             goto LABEL_8; /*0x480615*/
           }
@@ -841,7 +841,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         v55 = this->u32_2C; /*0x488a72*/
         v12 = (int *)(4 * a2 + this->u32_38); /*0x488a80*/
         v48 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(this->u32_178 + 4 * a2)); /*0x488a89*/
-        v13 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488a9b*/
+        v13 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))( /*0x488a9b*/
                 g_DSurface_Hidden_2,
                 v83);
         result = FillRectangle(&v82, *v12, (int)g_DSurface_Hidden_2, v13, (int)&v65, v48, 0, v55, a5, v11); /*0x488aae*/
@@ -857,7 +857,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
           v63 = this->q00C; /*0x488ae9*/
           v14 = v14; /*0x488af2*/
           v49 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * v10); /*0x488b01*/
-          v16 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488b13*/
+          v16 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))( /*0x488b13*/
                   g_DSurface_Hidden_2,
                   v85);
           result = FillRectangle(&v81, *v15, (int)g_DSurface_Hidden_2, v16, (int)v72, v49, 0, v14, a5, v63); /*0x488b26*/
@@ -870,7 +870,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
           v64 = this->q00C; /*0x488b50*/
           v14 = v14; /*0x488b59*/
           v50 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * v10); /*0x488b68*/
-          v18 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488b7a*/
+          v18 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))( /*0x488b7a*/
                   g_DSurface_Hidden_2,
                   v87);
           result = FillRectangle(&v78, *v17, (int)g_DSurface_Hidden_2, v18, (int)v70, v50, 0, v14, a5, v64); /*0x488b8d*/
@@ -888,7 +888,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         v74[0] = a3; /*0x488bef*/
         v74[1] = a4; /*0x488bfd*/
         v74[3] = v22 + a4 - 2; /*0x488c01*/
-        (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 88))( /*0x488c0c*/
+        (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 88))( /*0x488c0c*/
           g_DSurface_Hidden_2,
           v74,
           v21);
@@ -899,7 +899,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         v72[0] = a4; /*0x488c32*/
         v23 = v23; /*0x488c3b*/
         v51 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(v25 + 4 * a2)); /*0x488c51*/
-        v26 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x488c5d*/
+        v26 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))(g_DSurface_Hidden_2); /*0x488c5d*/
         result = FillRectangle( /*0x488c71*/
                    &v80,
                    *(_DWORD *)(4 * a2 + v24),
@@ -928,7 +928,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
           v75[0] = a3; /*0x488ce0*/
           v75[1] = a4; /*0x488ce4*/
           v75[3] = v32; /*0x488ce8*/
-          (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488cf3*/
+          (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x488cf3*/
             g_DSurface_Hidden_2,
             v75,
             v31);
@@ -940,7 +940,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
           v70[0] = a4; /*0x488d1c*/
           v33 = v33; /*0x488d25*/
           v52 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(v35 + 4 * a2)); /*0x488d3b*/
-          v36 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x488d47*/
+          v36 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))(g_DSurface_Hidden_2); /*0x488d47*/
           result = FillRectangle( /*0x488d5b*/
                      &v77,
                      *(_DWORD *)(4 * a2 + v34),
@@ -966,7 +966,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
           v76[0] = a3; /*0x488daa*/
           v76[1] = a4; /*0x488dae*/
           v76[3] = v39; /*0x488db2*/
-          (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488dc0*/
+          (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x488dc0*/
             g_DSurface_Hidden_2,
             v76,
             v38);
@@ -977,7 +977,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
           v68[1] = a4; /*0x488de6*/
           v40 = v40; /*0x488def*/
           v53 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(v42 + 4 * a2)); /*0x488e05*/
-          v43 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x488e11*/
+          v43 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))(g_DSurface_Hidden_2); /*0x488e11*/
           result = FillRectangle( /*0x488e25*/
                      &v79,
                      *(_DWORD *)(4 * a2 + v41),
@@ -1003,7 +1003,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
         v46 = this->u32_4C; /*0x488e94*/
         v73[2] = a5; /*0x488e97*/
         v73[3] = v46; /*0x488ea2*/
-        result = (*(_DWORD *(__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488ead*/
+        result = (*(_DWORD *(__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x488ead*/
                    g_DSurface_Hidden_2,
                    v73,
                    v45);
@@ -1020,7 +1020,7 @@ unsigned int * ColorListClass::DrawColorRect(int a2, int a3, int a4, int a5, int
     v61 = this->q00C; /*0x4889c9*/
     v54 = this->u32_2C; /*0x4889d6*/
     v47 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(this->u32_178 + 4 * a2)); /*0x4889ef*/
-    v8 = (*(int (__thiscall **)(AudioStream *, _DWORD *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x4889f8*/
+    v8 = (*(int (__thiscall **)(AudioStream *, _DWORD *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))( /*0x4889f8*/
            g_DSurface_Hidden_2,
            v73);
     return FillRectangle(&v67, *(_DWORD *)(4 * a2 + v7), (int)g_DSurface_Hidden_2, v8, (int)&v65, v47, 0, v54, a5, v61); /*0x488a09*/
@@ -1036,13 +1036,13 @@ unsigned int * BlitPlainXlatAlpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q008; /*0x49a208*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitPlainXlatAlpha_unsigned_short_vftable; /*0x49a20b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitPlainXlatAlpha_unsigned_short_vftable; /*0x49a20b*/
   FractalNoise::Dtor(v3); /*0x49a212*/
   this->q008 = 0; /*0x49a21b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a224*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a224*/
   if ( (a2 & 1) != 0 ) /*0x49a22a*/
     delete this; /*0x49a22d*/
-  return this->__pad_0; /*0x49a237*/
+  return this->q000; /*0x49a237*/
 }
 } // namespace gamemd
 
@@ -1053,13 +1053,13 @@ unsigned int * BlitTransZRemapXlatAlpha_ushort::Blit(char a2)
   void *m_C; // eax
 
   m_C = (void *)this->m_C; /*0x49a288*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49a28b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49a28b*/
   FractalNoise::Dtor(m_C); /*0x49a292*/
   this->m_C = 0; /*0x49a29b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a2a4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a2a4*/
   if ( (a2 & 1) != 0 ) /*0x49a2aa*/
     delete this; /*0x49a2ad*/
-  return this->__pad_0; /*0x49a2b7*/
+  return this->q000; /*0x49a2b7*/
 }
 } // namespace gamemd
 
@@ -1070,13 +1070,13 @@ unsigned int * BlitTransLucent75Alpha_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a2c8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent75Alpha_unsigned_short_vftable; /*0x49a2cb*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent75Alpha_unsigned_short_vftable; /*0x49a2cb*/
   FractalNoise::Dtor(m_8); /*0x49a2d2*/
   this->m_8 = 0; /*0x49a2db*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a2e4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a2e4*/
   if ( (a2 & 1) != 0 ) /*0x49a2ea*/
     delete this; /*0x49a2ed*/
-  return this->__pad_0; /*0x49a2f7*/
+  return this->q000; /*0x49a2f7*/
 }
 } // namespace gamemd
 
@@ -1087,13 +1087,13 @@ unsigned int * BlitTransLucent50Alpha_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a308*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent50Alpha_unsigned_short_vftable; /*0x49a30b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent50Alpha_unsigned_short_vftable; /*0x49a30b*/
   FractalNoise::Dtor(m_8); /*0x49a312*/
   this->m_8 = 0; /*0x49a31b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a324*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a324*/
   if ( (a2 & 1) != 0 ) /*0x49a32a*/
     delete this; /*0x49a32d*/
-  return this->__pad_0; /*0x49a337*/
+  return this->q000; /*0x49a337*/
 }
 } // namespace gamemd
 
@@ -1104,13 +1104,13 @@ unsigned int * BlitTransZRemapXlatAlphaZRead_ushort::Blit(char a2)
   void *m_C; // eax
 
   m_C = (void *)this->m_C; /*0x49a468*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransZRemapXlatAlphaZRead_unsigned_short_vftable; /*0x49a46b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransZRemapXlatAlphaZRead_unsigned_short_vftable; /*0x49a46b*/
   FractalNoise::Dtor(m_C); /*0x49a472*/
   this->m_C = 0; /*0x49a47b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a484*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a484*/
   if ( (a2 & 1) != 0 ) /*0x49a48a*/
     delete this; /*0x49a48d*/
-  return this->__pad_0; /*0x49a497*/
+  return this->q000; /*0x49a497*/
 }
 } // namespace gamemd
 
@@ -1121,13 +1121,13 @@ unsigned int * BlitTransLucent75AlphaZRead_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a4a8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent75AlphaZRead_unsigned_short_vftable; /*0x49a4ab*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent75AlphaZRead_unsigned_short_vftable; /*0x49a4ab*/
   FractalNoise::Dtor(m_8); /*0x49a4b2*/
   this->m_8 = 0; /*0x49a4bb*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a4c4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a4c4*/
   if ( (a2 & 1) != 0 ) /*0x49a4ca*/
     delete this; /*0x49a4cd*/
-  return this->__pad_0; /*0x49a4d7*/
+  return this->q000; /*0x49a4d7*/
 }
 } // namespace gamemd
 
@@ -1138,13 +1138,13 @@ unsigned int * BlitTransLucent50AlphaZRead_ushort::Blit(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q008; /*0x49a4e8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent50AlphaZRead_unsigned_short_vftable; /*0x49a4eb*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent50AlphaZRead_unsigned_short_vftable; /*0x49a4eb*/
   FractalNoise::Dtor(v3); /*0x49a4f2*/
   this->q008 = 0; /*0x49a4fb*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a504*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a504*/
   if ( (a2 & 1) != 0 ) /*0x49a50a*/
     delete this; /*0x49a50d*/
-  return this->__pad_0; /*0x49a517*/
+  return this->q000; /*0x49a517*/
 }
 } // namespace gamemd
 
@@ -1155,13 +1155,13 @@ unsigned int * BlitTransLucent25AlphaZRead_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a528*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent25AlphaZRead_unsigned_short_vftable; /*0x49a52b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent25AlphaZRead_unsigned_short_vftable; /*0x49a52b*/
   FractalNoise::Dtor(m_8); /*0x49a532*/
   this->m_8 = 0; /*0x49a53b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a544*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a544*/
   if ( (a2 & 1) != 0 ) /*0x49a54a*/
     delete this; /*0x49a54d*/
-  return this->__pad_0; /*0x49a557*/
+  return this->q000; /*0x49a557*/
 }
 } // namespace gamemd
 
@@ -1172,13 +1172,13 @@ unsigned int * BlitTransLucent75AlphaZReadWarp_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a568*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent75AlphaZReadWarp_unsigned_short_vftable; /*0x49a56b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent75AlphaZReadWarp_unsigned_short_vftable; /*0x49a56b*/
   FractalNoise::Dtor(m_8); /*0x49a572*/
   this->m_8 = 0; /*0x49a57b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a584*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a584*/
   if ( (a2 & 1) != 0 ) /*0x49a58a*/
     delete this; /*0x49a58d*/
-  return this->__pad_0; /*0x49a597*/
+  return this->q000; /*0x49a597*/
 }
 } // namespace gamemd
 
@@ -1189,13 +1189,13 @@ unsigned int * BlitTransLucent50AlphaZReadWarp_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a5a8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent50AlphaZReadWarp_unsigned_short_vftable; /*0x49a5ab*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent50AlphaZReadWarp_unsigned_short_vftable; /*0x49a5ab*/
   FractalNoise::Dtor(m_8); /*0x49a5b2*/
   this->m_8 = 0; /*0x49a5bb*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a5c4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a5c4*/
   if ( (a2 & 1) != 0 ) /*0x49a5ca*/
     delete this; /*0x49a5cd*/
-  return this->__pad_0; /*0x49a5d7*/
+  return this->q000; /*0x49a5d7*/
 }
 } // namespace gamemd
 
@@ -1206,13 +1206,13 @@ unsigned int * BlitTransLucent25AlphaZReadWarp_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a5e8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent25AlphaZReadWarp_unsigned_short_vftable; /*0x49a5eb*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent25AlphaZReadWarp_unsigned_short_vftable; /*0x49a5eb*/
   FractalNoise::Dtor(m_8); /*0x49a5f2*/
   this->m_8 = 0; /*0x49a5fb*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a604*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a604*/
   if ( (a2 & 1) != 0 ) /*0x49a60a*/
     delete this; /*0x49a60d*/
-  return this->__pad_0; /*0x49a617*/
+  return this->q000; /*0x49a617*/
 }
 } // namespace gamemd
 
@@ -1223,13 +1223,13 @@ unsigned int * BlitTransXlatAlphaZReadWrite_ushort::Blit(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q008; /*0x49a628*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransXlatAlphaZReadWrite_unsigned_short_vftable; /*0x49a62b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransXlatAlphaZReadWrite_unsigned_short_vftable; /*0x49a62b*/
   FractalNoise::Dtor(v3); /*0x49a632*/
   this->q008 = 0; /*0x49a63b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a644*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a644*/
   if ( (a2 & 1) != 0 ) /*0x49a64a*/
     delete this; /*0x49a64d*/
-  return this->__pad_0; /*0x49a657*/
+  return this->q000; /*0x49a657*/
 }
 } // namespace gamemd
 
@@ -1240,13 +1240,13 @@ unsigned int * BlitTransLucent75AlphaZReadWrite_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a6a8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent75AlphaZReadWrite_unsigned_short_vftable; /*0x49a6ab*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent75AlphaZReadWrite_unsigned_short_vftable; /*0x49a6ab*/
   FractalNoise::Dtor(m_8); /*0x49a6b2*/
   this->m_8 = 0; /*0x49a6bb*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a6c4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a6c4*/
   if ( (a2 & 1) != 0 ) /*0x49a6ca*/
     delete this; /*0x49a6cd*/
-  return this->__pad_0; /*0x49a6d7*/
+  return this->q000; /*0x49a6d7*/
 }
 } // namespace gamemd
 
@@ -1257,13 +1257,13 @@ unsigned int * BlitTransLucent50AlphaZReadWrite_ushort::Blit(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49a6e8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&BlitTransLucent50AlphaZReadWrite_unsigned_short_vftable; /*0x49a6eb*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&BlitTransLucent50AlphaZReadWrite_unsigned_short_vftable; /*0x49a6eb*/
   FractalNoise::Dtor(m_8); /*0x49a6f2*/
   this->m_8 = 0; /*0x49a6fb*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a704*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a704*/
   if ( (a2 & 1) != 0 ) /*0x49a70a*/
     delete this; /*0x49a70d*/
-  return this->__pad_0; /*0x49a717*/
+  return this->q000; /*0x49a717*/
 }
 } // namespace gamemd
 
@@ -1274,13 +1274,13 @@ unsigned int * RLEBlitTransXlatAlpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q008; /*0x49aa08*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitTransXlatAlpha_unsigned_short_vftable; /*0x49aa0b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitTransXlatAlpha_unsigned_short_vftable; /*0x49aa0b*/
   FractalNoise::Dtor(v3); /*0x49aa12*/
   this->q008 = 0; /*0x49aa1b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aa24*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aa24*/
   if ( (a2 & 1) != 0 ) /*0x49aa2a*/
     delete this; /*0x49aa2d*/
-  return this->__pad_0; /*0x49aa37*/
+  return this->q000; /*0x49aa37*/
 }
 } // namespace gamemd
 
@@ -1291,13 +1291,13 @@ unsigned int * RLEBlitTransLucent75Alpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q008; /*0x49aa88*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitTransLucent75Alpha_unsigned_short_vftable; /*0x49aa8b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitTransLucent75Alpha_unsigned_short_vftable; /*0x49aa8b*/
   FractalNoise::Dtor(v3); /*0x49aa92*/
   this->q008 = 0; /*0x49aa9b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aaa4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aaa4*/
   if ( (a2 & 1) != 0 ) /*0x49aaaa*/
     delete this; /*0x49aaad*/
-  return this->__pad_0; /*0x49aab7*/
+  return this->q000; /*0x49aab7*/
 }
 } // namespace gamemd
 
@@ -1308,13 +1308,13 @@ unsigned int * RLEBlitTransLucent50Alpha_ushort::QueryInterface(char a2)
   void *m_8; // eax
 
   m_8 = (void *)this->m_8; /*0x49aac8*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitTransLucent50Alpha_unsigned_short_vftable; /*0x49aacb*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitTransLucent50Alpha_unsigned_short_vftable; /*0x49aacb*/
   FractalNoise::Dtor(m_8); /*0x49aad2*/
   this->m_8 = 0; /*0x49aadb*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aae4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49aae4*/
   if ( (a2 & 1) != 0 ) /*0x49aaea*/
     delete this; /*0x49aaed*/
-  return this->__pad_0; /*0x49aaf7*/
+  return this->q000; /*0x49aaf7*/
 }
 } // namespace gamemd
 
@@ -1325,13 +1325,13 @@ unsigned int * RLEBlitTransLucent25Alpha_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q008; /*0x49ab08*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitTransLucent25Alpha_unsigned_short_vftable; /*0x49ab0b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitTransLucent25Alpha_unsigned_short_vftable; /*0x49ab0b*/
   FractalNoise::Dtor(v3); /*0x49ab12*/
   this->q008 = 0; /*0x49ab1b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49ab24*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49ab24*/
   if ( (a2 & 1) != 0 ) /*0x49ab2a*/
     delete this; /*0x49ab2d*/
-  return this->__pad_0; /*0x49ab37*/
+  return this->q000; /*0x49ab37*/
 }
 } // namespace gamemd
 
@@ -1342,20 +1342,20 @@ unsigned int * RLEBlitTransXlatAlphaZRead_ushort::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q008; /*0x49ab48*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitTransXlatAlphaZRead_unsigned_short_vftable; /*0x49ab4b*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitTransXlatAlphaZRead_unsigned_short_vftable; /*0x49ab4b*/
   FractalNoise::Dtor(v3); /*0x49ab52*/
   this->q008 = 0; /*0x49ab5b*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RLEBlitter_vftable; /*0x49ab64*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RLEBlitter_vftable; /*0x49ab64*/
   if ( (a2 & 1) != 0 ) /*0x49ab6a*/
     delete this; /*0x49ab6d*/
-  return this->__pad_0; /*0x49ab77*/
+  return this->q000; /*0x49ab77*/
 }
 } // namespace gamemd
 
 // 0x4BAD70
 namespace gamemd {
 int DSurface::GetPitch() const { /*G42.35: const 对齐载体 override 链（语义不变 getter）*/
-  return *((_DWORD *)this->DSurface_field_0x20 + 4); /*0x4bad76*/
+  return *((_DWORD *)this->q020 + 4); /*0x4bad76*/
 }
 } // namespace gamemd
 
@@ -1365,13 +1365,13 @@ unsigned short * FrameSnapshot::Init()
 {
   int v2; // edx
 
-  *(_WORD *)this->__pad_0 = 0; /*0x4c91c4*/
-  this->FrameSnapshot_field_0x04 = ((this->FrameSnapshot_field_0x04) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x4c91c7*/
+  *(_WORD *)this->q000 = 0; /*0x4c91c4*/
+  this->q004 = ((this->q004) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x4c91c7*/
   v2 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x4c91cb*/
   this->q004 = 0; /*0x4c91d1*/
   this->u32_8 = v2; /*0x4c91d4*/
   this->u32_14 = 0; /*0x4c91d7*/
-  return this->__pad_0; /*0x4c91db*/
+  return this->q000; /*0x4c91db*/
 }
 } // namespace gamemd
 
@@ -1385,8 +1385,8 @@ unsigned short * FrameSnapshot::InitMax(int a2)
   __int16 v5; // dx
 
   result = this; /*0x4c91e0*/
-  *(_WORD *)this->__pad_0 = 0; /*0x4c91e4*/
-  this->FrameSnapshot_field_0x04 = ((this->FrameSnapshot_field_0x04) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x4c91e7*/
+  *(_WORD *)this->q000 = 0; /*0x4c91e4*/
+  this->q004 = ((this->q004) & 0xFFFF0000u) | ((unsigned int)(0) & 0xFFFFu); /*0x4c91e7*/
   v3 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x4c91eb*/
   this->q004 = 0; /*0x4c91f1*/
   this->u32_8 = v3; /*0x4c91f4*/
@@ -1525,7 +1525,7 @@ char FoggedObject_DrawVector::Release(int a2, char *a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_UDrawRecord_FoggedObjectClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4d2b07*/
+    (*(void (__thiscall **)(_VectorClass_UDrawRecord_FoggedObjectClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x4d2b07*/
     return 1; /*0x4d2b0d*/
   }
 }
@@ -1630,23 +1630,23 @@ int BuildingPlacementClass::Draw(int a2)
     stru_887598.lineTrailer,
     this->m_C,
     this->m_10,
-    *(_DWORD *)this->__pad_14,
-    *(_DWORD *)&this->__pad_14[4]);
+    *(_DWORD *)this->q014,
+    *(_DWORD *)&this->q014[4]);
   v3 = this->m_1E[0]; /*0x4e2b9b*/
-  v4 = *(_DWORD *)this->__pad_14; /*0x4e2b9e*/
+  v4 = *(_DWORD *)this->q014; /*0x4e2b9e*/
   m_10 = this->m_10; /*0x4e2ba1*/
   m_C = this->m_C; /*0x4e2ba4*/
-  v57 = *(_DWORD *)&this->__pad_14[4]; /*0x4e2bab*/
+  v57 = *(_DWORD *)&this->q014[4]; /*0x4e2bab*/
   v56 = v4; /*0x4e2bb3*/
   v55 = m_10; /*0x4e2bc0*/
   DrawBuildingTilesSHP(&m_C, v3 != 0, 1); /*0x4e2bc4*/
-  v6 = (*(int (__thiscall **)(TriColorGaugeClass *, _DWORD))(*(_DWORD *)this->__pad_0 + 164))( /*0x4e2bd9*/
+  v6 = (*(int (__thiscall **)(TriColorGaugeClass *, _DWORD))(*(_DWORD *)this->q000 + 164))( /*0x4e2bd9*/
          this,
          *(_DWORD *)&this->__pad_31[11]);
-  v7 = (*(int (__thiscall **)(TriColorGaugeClass *, _DWORD))(*(_DWORD *)this->__pad_0 + 164))( /*0x4e2be9*/
+  v7 = (*(int (__thiscall **)(TriColorGaugeClass *, _DWORD))(*(_DWORD *)this->q000 + 164))( /*0x4e2be9*/
          this,
          *(_DWORD *)&this->__pad_31[15]);
-  v8 = (*(int (__thiscall **)(TriColorGaugeClass *, _DWORD))(*(_DWORD *)this->__pad_0 + 164))( /*0x4e2bfa*/
+  v8 = (*(int (__thiscall **)(TriColorGaugeClass *, _DWORD))(*(_DWORD *)this->q000 + 164))( /*0x4e2bfa*/
          this,
          *(_DWORD *)&this->__pad_31[3]);
   v9 = *(_DWORD *)&this->__pad_31[3]; /*0x4e2bfc*/
@@ -1667,10 +1667,10 @@ int BuildingPlacementClass::Draw(int a2)
           m_C = v36 + 1; /*0x4e2e8e*/
           v55 = this->m_10 + 1; /*0x4e2e96*/
           v37 = v6 - v36; /*0x4e2e9c*/
-          v38 = *(_DWORD *)&this->__pad_14[4] - 2; /*0x4e2ea2*/
+          v38 = *(_DWORD *)&this->q014[4] - 2; /*0x4e2ea2*/
           v56 = v37 + 1; /*0x4e2ea5*/
           v57 = v38; /*0x4e2eaf*/
-          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2eb5*/
+          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2eb5*/
             g_DSurface_Hidden_2,
             &m_C,
             v35);
@@ -1680,10 +1680,10 @@ int BuildingPlacementClass::Draw(int a2)
             v39 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + 10); /*0x4e2eda*/
           v55 = this->m_10 + 1; /*0x4e2ee5*/
           v40 = v7 - this->m_C + 1; /*0x4e2ef4*/
-          v57 = *(_DWORD *)&this->__pad_14[4] - 2; /*0x4e2ef5*/
+          v57 = *(_DWORD *)&this->q014[4] - 2; /*0x4e2ef5*/
           m_C = v6; /*0x4e2eff*/
           v56 = v40; /*0x4e2f03*/
-          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2f0e*/
+          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2f0e*/
             g_DSurface_Hidden_2,
             &m_C,
             v39);
@@ -1692,12 +1692,12 @@ int BuildingPlacementClass::Draw(int a2)
           else
             v41 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + 6); /*0x4e2f31*/
           v42 = v8 - this->m_C; /*0x4e2f3c*/
-          v43 = *(_DWORD *)&this->__pad_14[4]; /*0x4e2f3e*/
+          v43 = *(_DWORD *)&this->q014[4]; /*0x4e2f3e*/
           v55 = this->m_10 + 1; /*0x4e2f41*/
           m_C = v7; /*0x4e2f4f*/
           v56 = v42 + 1; /*0x4e2f53*/
           v57 = v43 - 2; /*0x4e2f57*/
-          (*(void (__stdcall **)(int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))(&m_C, v41); /*0x4e2f62*/
+          (*(void (__stdcall **)(int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))(&m_C, v41); /*0x4e2f62*/
         }
         else
         {
@@ -1708,9 +1708,9 @@ int BuildingPlacementClass::Draw(int a2)
           v45 = this->m_10; /*0x4e2f88*/
           m_C = this->m_C + 1; /*0x4e2f8d*/
           v55 = v45 + 1; /*0x4e2f94*/
-          v56 = *(_DWORD *)this->__pad_14 - 2; /*0x4e2fa2*/
+          v56 = *(_DWORD *)this->q014 - 2; /*0x4e2fa2*/
           v57 = v6 - v45 + 1; /*0x4e2fac*/
-          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2fb8*/
+          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2fb8*/
             g_DSurface_Hidden_2,
             &m_C,
             v44);
@@ -1718,14 +1718,14 @@ int BuildingPlacementClass::Draw(int a2)
             v46 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + 5); /*0x4e2fd1*/
           else
             v46 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + 10); /*0x4e2fdd*/
-          v47 = *(_DWORD *)this->__pad_14; /*0x4e2fe4*/
+          v47 = *(_DWORD *)this->q014; /*0x4e2fe4*/
           v48 = this->m_C + 1; /*0x4e2fe7*/
           v55 = v6; /*0x4e2fe8*/
           v49 = this->m_10; /*0x4e2fec*/
           m_C = v48; /*0x4e2fef*/
           v56 = v47 - 2; /*0x4e2ffc*/
           v57 = v7 - v49 + 1; /*0x4e3000*/
-          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e3011*/
+          (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e3011*/
             g_DSurface_Hidden_2,
             &m_C,
             v46);
@@ -1733,13 +1733,13 @@ int BuildingPlacementClass::Draw(int a2)
             v50 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + 3); /*0x4e3027*/
           else
             v50 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + 6); /*0x4e3034*/
-          v51 = *(_DWORD *)this->__pad_14 - 2; /*0x4e303f*/
+          v51 = *(_DWORD *)this->q014 - 2; /*0x4e303f*/
           m_C = this->m_C + 1; /*0x4e3042*/
           v52 = v8 - this->m_10 + 1; /*0x4e3051*/
           v55 = v7; /*0x4e3052*/
           v56 = v51; /*0x4e3056*/
           v57 = v52; /*0x4e305a*/
-          (*(void (__stdcall **)(int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))(&m_C, v50); /*0x4e3066*/
+          (*(void (__stdcall **)(int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))(&m_C, v50); /*0x4e3066*/
         }
       }
     }
@@ -1756,10 +1756,10 @@ int BuildingPlacementClass::Draw(int a2)
         m_C = v20 + 1; /*0x4e2d10*/
         v55 = this->m_10 + 1; /*0x4e2d18*/
         v21 = v6 - v20; /*0x4e2d1e*/
-        v22 = *(_DWORD *)&this->__pad_14[4] - 2; /*0x4e2d24*/
+        v22 = *(_DWORD *)&this->q014[4] - 2; /*0x4e2d24*/
         v56 = v21 + 1; /*0x4e2d27*/
         v57 = v22; /*0x4e2d31*/
-        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2d37*/
+        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2d37*/
           g_DSurface_Hidden_2,
           &m_C,
           v19);
@@ -1770,12 +1770,12 @@ int BuildingPlacementClass::Draw(int a2)
         v24 = this->m_C; /*0x4e2d5d*/
         v25 = v6 - v24; /*0x4e2d63*/
         v26 = v8 - v24; /*0x4e2d65*/
-        v27 = *(_DWORD *)&this->__pad_14[4]; /*0x4e2d67*/
+        v27 = *(_DWORD *)&this->q014[4]; /*0x4e2d67*/
         v55 = this->m_10 + 1; /*0x4e2d6d*/
         m_C = v25 + 1; /*0x4e2d7b*/
         v56 = v26 - 1; /*0x4e2d7f*/
         v57 = v27 - 2; /*0x4e2d83*/
-        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2d8e*/
+        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2d8e*/
           g_DSurface_Hidden_2,
           &m_C,
           v23);
@@ -1789,9 +1789,9 @@ int BuildingPlacementClass::Draw(int a2)
         m_C = this->m_C + 1; /*0x4e2dbc*/
         v29 = this->m_10; /*0x4e2dc0*/
         v55 = v29 + 1; /*0x4e2dc7*/
-        v56 = *(_DWORD *)this->__pad_14 - 2; /*0x4e2dd1*/
+        v56 = *(_DWORD *)this->q014 - 2; /*0x4e2dd1*/
         v57 = v6 - v29 + 1; /*0x4e2dda*/
-        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2de6*/
+        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2de6*/
           g_DSurface_Hidden_2,
           &m_C,
           v28);
@@ -1803,10 +1803,10 @@ int BuildingPlacementClass::Draw(int a2)
         m_C = v31 + 1; /*0x4e2e18*/
         v32 = this->m_10; /*0x4e2e1c*/
         v55 = v6 - v32 + 1; /*0x4e2e2a*/
-        v33 = *(_DWORD *)this->__pad_14; /*0x4e2e2e*/
+        v33 = *(_DWORD *)this->q014; /*0x4e2e2e*/
         v57 = v8 - v32 + 1; /*0x4e2e36*/
         v56 = v31 + v33 - 2; /*0x4e2e3a*/
-        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2e40*/
+        (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2e40*/
           g_DSurface_Hidden_2,
           &m_C,
           v30);
@@ -1825,12 +1825,12 @@ int BuildingPlacementClass::Draw(int a2)
       v12 = this->m_C; /*0x4e2c34*/
       v13 = v8 - v12; /*0x4e2c38*/
       v14 = v12 + 1; /*0x4e2c3e*/
-      v15 = *(_DWORD *)&this->__pad_14[4]; /*0x4e2c41*/
+      v15 = *(_DWORD *)&this->q014[4]; /*0x4e2c41*/
       m_C = v14; /*0x4e2c44*/
       v55 = this->m_10 + 1; /*0x4e2c4d*/
       v56 = v13 + 1; /*0x4e2c5a*/
       v57 = v15 - 2; /*0x4e2c5e*/
-      (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2c65*/
+      (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2c65*/
         g_DSurface_Hidden_2,
         &m_C,
         v11);
@@ -1844,16 +1844,16 @@ int BuildingPlacementClass::Draw(int a2)
       m_C = this->m_C + 1; /*0x4e2c94*/
       v17 = this->m_10; /*0x4e2c98*/
       v55 = v17 + 1; /*0x4e2ca1*/
-      v56 = *(_DWORD *)this->__pad_14 - 2; /*0x4e2cac*/
+      v56 = *(_DWORD *)this->q014 - 2; /*0x4e2cac*/
       v57 = v8 - v17 + 1; /*0x4e2cb6*/
-      (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x4e2cbc*/
+      (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x4e2cbc*/
         g_DSurface_Hidden_2,
         &m_C,
         v16);
     }
   }
   if ( this->m_2D[0] ) /*0x4e3069*/
-    (*(void (__thiscall **)(TriColorGaugeClass *))(*(_DWORD *)this->__pad_0 + 156))(this); /*0x4e3074*/
+    (*(void (__thiscall **)(TriColorGaugeClass *))(*(_DWORD *)this->q000 + 156))(this); /*0x4e3074*/
   (*(void (__thiscall **)(void *))(*(_DWORD *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x4e3082*/
   return 1; /*0x4e308a*/
 }
@@ -2211,33 +2211,33 @@ int BuildingDebris::Init(int a2)
   v3 = rand(); /*0x631d53*/
   this->u32_30 = (v3 & 0x3F) - 31; /*0x631d69*/
   this->u32_34 = ((v3 >> 5) & 0x1F) - 15; /*0x631d6c*/
-  this->u32_18 = *(BuildingDebris *)&stru_83665C.__pad_14D[40 * a2 + 31]; /*0x631d71*/
-  this->u32_1C = *(BuildingDebris *)&stru_83665C.__pad_14D[40 * a2 + 35]; /*0x631d77*/
-  this->u32_20 = *(BuildingDebris *)&stru_83665C.__pad_14D[40 * a2 + 39]; /*0x631d7d*/
-  v4 = *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 55]; /*0x631d80*/
+  this->u32_18 = *(BuildingDebris *)&stru_83665C.q14D[40 * a2 + 31]; /*0x631d71*/
+  this->u32_1C = *(BuildingDebris *)&stru_83665C.q14D[40 * a2 + 35]; /*0x631d77*/
+  this->u32_20 = *(BuildingDebris *)&stru_83665C.q14D[40 * a2 + 39]; /*0x631d7d*/
+  v4 = *(_DWORD *)&stru_83665C.q14D[40 * a2 + 55]; /*0x631d80*/
   if ( v4 ) /*0x631d85*/
   {
     v5 = (1 << v4) - 1; /*0x631d8e*/
     v6 = rand(); /*0x631d8f*/
     v7 = this->u32_1C; /*0x631d9d*/
     this->u32_18 -= v6 & v5; /*0x631da0*/
-    v8 = v6 >> *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 55]; /*0x631da6*/
+    v8 = v6 >> *(_DWORD *)&stru_83665C.q14D[40 * a2 + 55]; /*0x631da6*/
     this->u32_1C = v7 - (v8 & v5); /*0x631dae*/
-    this->u32_20 -= v5 & (v8 >> *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 55]); /*0x631dbd*/
+    this->u32_20 -= v5 & (v8 >> *(_DWORD *)&stru_83665C.q14D[40 * a2 + 55]); /*0x631dbd*/
   }
-  v9 = *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 43]; /*0x631dc0*/
+  v9 = *(_DWORD *)&stru_83665C.q14D[40 * a2 + 43]; /*0x631dc0*/
   this->u32_24 = v9; /*0x631dc3*/
   this->u32_4 = v9; /*0x631dc6*/
-  v10 = *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 47]; /*0x631dc9*/
+  v10 = *(_DWORD *)&stru_83665C.q14D[40 * a2 + 47]; /*0x631dc9*/
   this->u32_28 = v10; /*0x631dcc*/
   this->u32_8 = v10; /*0x631dcf*/
-  v11 = *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 51]; /*0x631dd2*/
+  v11 = *(_DWORD *)&stru_83665C.q14D[40 * a2 + 51]; /*0x631dd2*/
   this->u32_10 = 0; /*0x631dd5*/
   this->u32_2C = v11; /*0x631ddc*/
   this->u32_C = v11; /*0x631ddf*/
-  v12 = *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 63] - *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 67] + 1; /*0x631dea*/
-  this->u32_14 = *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 67] + rand() % v12; /*0x631df7*/
-  result = *(_DWORD *)&stru_83665C.__pad_14D[40 * a2 + 59] & rand(); /*0x631e03*/
+  v12 = *(_DWORD *)&stru_83665C.q14D[40 * a2 + 63] - *(_DWORD *)&stru_83665C.q14D[40 * a2 + 67] + 1; /*0x631dea*/
+  this->u32_14 = *(_DWORD *)&stru_83665C.q14D[40 * a2 + 67] + rand() % v12; /*0x631df7*/
+  result = *(_DWORD *)&stru_83665C.q14D[40 * a2 + 59] & rand(); /*0x631e03*/
   this->u32_38 = result; /*0x631e05*/
   return result; /*0x631e02*/
 }
@@ -2484,54 +2484,54 @@ int PaletteManager::Load(int a2)
   void (__thiscall ***v5)(_DWORD, int); // ecx
   int result; // eax
 
-  v3 = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464]; /*0x72b530*/
+  v3 = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464]; /*0x72b530*/
   v4 = v2; /*0x72b53d*/
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] == 1 ) /*0x72b53f*/
+  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] == 1 ) /*0x72b53f*/
   {
     if ( !g_MenuStateFlags ) /*0x72b547*/
     {
-      result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b64d*/
+      result = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000]; /*0x72b64d*/
       goto LABEL_23; /*0x72b64d*/
     }
-    v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1008]; /*0x72b54d*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1008] ) /*0x72b555*/
+    v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1008]; /*0x72b54d*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1008] ) /*0x72b555*/
     {
-      (***(void (__thiscall ****)(_DWORD, _DWORD))&g_BuildingLoadQueue_Array.__pad_F70[1008])( /*0x72b55a*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1008],
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464]);
+      (***(void (__thiscall ****)(_DWORD, _DWORD))&g_BuildingLoadQueue_Array.qF70[1008])( /*0x72b55a*/
+        *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1008],
+        *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464]);
       v5 = 0; /*0x72b55c*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1008] = 0; /*0x72b55e*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1008] = 0; /*0x72b55e*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1004] ) /*0x72b56b*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1004] ) /*0x72b56b*/
     {
-      delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1004]); /*0x72b56e*/
-      v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1008]; /*0x72b573*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1004] = 0; /*0x72b57c*/
+      delete[] (*(void **)&g_BuildingLoadQueue_Array.qF70[1004]); /*0x72b56e*/
+      v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1008]; /*0x72b573*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1004] = 0; /*0x72b57c*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[996] ) /*0x72b589*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[996] ) /*0x72b589*/
     {
-      delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[996]); /*0x72b58c*/
-      v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1008]; /*0x72b591*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[996] = 0; /*0x72b59a*/
+      delete[] (*(void **)&g_BuildingLoadQueue_Array.qF70[996]); /*0x72b58c*/
+      v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1008]; /*0x72b591*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[996] = 0; /*0x72b59a*/
     }
-    result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b5a0*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000] ) /*0x72b5a7*/
+    result = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000]; /*0x72b5a0*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000] ) /*0x72b5a7*/
     {
-      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1000])( /*0x72b5af*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000],
+      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1000])( /*0x72b5af*/
+        *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000],
         1);
-      v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1008]; /*0x72b5b1*/
+      v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1008]; /*0x72b5b1*/
       result = 0; /*0x72b5b7*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000] = 0; /*0x72b5b9*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000] = 0; /*0x72b5b9*/
     }
   }
   else
   {
-    result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b5c0*/
-    v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1008]; /*0x72b5c5*/
+    result = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000]; /*0x72b5c0*/
+    v5 = *(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1008]; /*0x72b5c5*/
   }
-  v3 = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464]; /*0x72b5cb*/
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] != 2 || g_MenuStateFlags ) /*0x72b5e0*/
+  v3 = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464]; /*0x72b5cb*/
+  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] != 2 || g_MenuStateFlags ) /*0x72b5e0*/
   {
   LABEL_23:
     if ( result ) /*0x72b654*/
@@ -2545,38 +2545,38 @@ int PaletteManager::Load(int a2)
   if ( v5 ) /*0x72b5e4*/
   {
     (**v5)(v5, 1); /*0x72b5ea*/
-    result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b5ec*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1008] = 0; /*0x72b5f1*/
+    result = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000]; /*0x72b5ec*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1008] = 0; /*0x72b5f1*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1004] ) /*0x72b5ff*/
+  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1004] ) /*0x72b5ff*/
   {
-    delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1004]); /*0x72b602*/
-    result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b607*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1004] = 0; /*0x72b60f*/
+    delete[] (*(void **)&g_BuildingLoadQueue_Array.qF70[1004]); /*0x72b602*/
+    result = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000]; /*0x72b607*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1004] = 0; /*0x72b60f*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[996] ) /*0x72b61d*/
+  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[996] ) /*0x72b61d*/
   {
-    delete[] (*(void **)&g_BuildingLoadQueue_Array.__pad_F70[996]); /*0x72b620*/
-    result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000]; /*0x72b625*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[996] = 0; /*0x72b62d*/
+    delete[] (*(void **)&g_BuildingLoadQueue_Array.qF70[996]); /*0x72b620*/
+    result = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000]; /*0x72b625*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[996] = 0; /*0x72b62d*/
   }
   if ( result ) /*0x72b635*/
   {
     result = (**(int (__thiscall ***)(int, int))result)(result, 1); /*0x72b63d*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1000] = 0; /*0x72b63f*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 0; /*0x72b645*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1000] = 0; /*0x72b63f*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 0; /*0x72b645*/
     goto LABEL_26; /*0x72b64b*/
   }
   LABEL_24:
-  *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 0; /*0x72b656*/
+  *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 0; /*0x72b656*/
   LABEL_26:
   if ( g_MenuStateFlags ) /*0x72b66c*/
   {
     result = LoadPaletteSimple( /*0x72b67e*/
                off_844BC4,
-               (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-               &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 2; /*0x72b683*/
+               (int *)&g_BuildingLoadQueue_Array.qF70[996],
+               &g_BuildingLoadQueue_Array.qF70[1000]);
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 2; /*0x72b683*/
   }
   else if ( v4 ) /*0x72b692*/
   {
@@ -2584,83 +2584,83 @@ int PaletteManager::Load(int a2)
     {
       result = LoadPaletteSimple( /*0x72b6cb*/
                  off_844C1C,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b6d0*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b6d0*/
     }
     else if ( v4 == 2 ) /*0x72b6dc*/
     {
       result = LoadPaletteSimple( /*0x72b6ee*/
                  off_844C10,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b6f3*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b6f3*/
     }
     else if ( v4 == 3 ) /*0x72b703*/
     {
       result = LoadPaletteSimple( /*0x72b715*/
                  off_844C14,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b71a*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b71a*/
     }
     else if ( v4 == 4 ) /*0x72b72a*/
     {
       result = LoadPaletteSimple( /*0x72b73c*/
                  off_844C28,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b741*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b741*/
     }
     else if ( v4 == 5 ) /*0x72b751*/
     {
       result = LoadPaletteSimple( /*0x72b763*/
                  off_844C20,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b768*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b768*/
     }
     else if ( v4 == 6 ) /*0x72b778*/
     {
       result = LoadPaletteSimple( /*0x72b78a*/
                  off_844C18,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b78f*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b78f*/
     }
     else if ( v4 == 7 ) /*0x72b79f*/
     {
       result = LoadPaletteSimple( /*0x72b7b1*/
                  off_844C2C,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b7b6*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b7b6*/
     }
     else if ( v4 == 8 ) /*0x72b7c6*/
     {
       result = LoadPaletteSimple( /*0x72b7d8*/
                  off_844C24,
-                 (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                 &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b7dd*/
+                 (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                 &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b7dd*/
     }
     else
     {
       if ( v4 == 9 ) /*0x72b7ed*/
         result = LoadPaletteSimple( /*0x72b7ff*/
                    off_844C30,
-                   (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-                   &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b804*/
+                   (int *)&g_BuildingLoadQueue_Array.qF70[996],
+                   &g_BuildingLoadQueue_Array.qF70[1000]);
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b804*/
     }
   }
   else
   {
     result = LoadPaletteSimple( /*0x72b6a4*/
                off_844C0C,
-               (int *)&g_BuildingLoadQueue_Array.__pad_F70[996],
-               &g_BuildingLoadQueue_Array.__pad_F70[1000]);
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1464] = 1; /*0x72b6a9*/
+               (int *)&g_BuildingLoadQueue_Array.qF70[996],
+               &g_BuildingLoadQueue_Array.qF70[1000]);
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1464] = 1; /*0x72b6a9*/
   }
   return result; /*0x72b68d*/
 }
@@ -2684,7 +2684,7 @@ int VoxelTypeClass::ReadINI(double a2)
   int (__stdcall ***Checked)(_DWORD, void *, int *); // eax
   int v16; // esi
   int v17; // eax
-  int ComPtr_field_0x0C; // edi
+  int q00C; // edi
   int v20; // eax
   int v21; // eax
   int v23; // eax
@@ -2774,12 +2774,12 @@ int VoxelTypeClass::ReadINI(double a2)
           return 1; /*0x73e729*/
         }
         v11 = this->u32_218; /*0x73e72a*/
-        v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x73e730*/
+        v66.q004 = ((v66.q004) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x73e730*/
         if ( v11 ) /*0x73e737*/
         {
           (*(void (__thiscall **)(Class_7F5C70 *, int, int))(*(_DWORD *)this + 1152))(this, v11, 1); /*0x73e741*/
           TechnoClass::SetFocus((TechnoClass *)this, 0); /*0x73e74b*/
-          v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x73e750*/
+          v66.q004 = ((v66.q004) & 0xFFFFFF00u) | ((unsigned int)(0) & 0xFFu); /*0x73e750*/
         }
         v12 = this->u32_6C4; /*0x73e755*/
         this->u32_6D2 = 0; /*0x73e75b*/
@@ -2790,23 +2790,23 @@ int VoxelTypeClass::ReadINI(double a2)
         else
         {
           v14 = this->u32_674; /*0x73e793*/
-          *(_DWORD *)v66.__pad_0 = 0; /*0x73e7a1*/
+          *(_DWORD *)v66.q000 = 0; /*0x73e7a1*/
           if ( !v14 ) /*0x73e7a9*/
             goto LABEL_31; /*0x73e7a9*/
           Checked = (int (__stdcall ***)(_DWORD, void *, int *))Stream::GetChecked((Stream *)(this + 1652)); /*0x73e7ab*/
-          v16 = (**Checked)(Checked, &unk_818858, &v66.ComPtr_field_0x0C); /*0x73e7bf*/
+          v16 = (**Checked)(Checked, &unk_818858, &v66.q00C); /*0x73e7bf*/
           if ( v16 >= 0 ) /*0x73e7c3*/
           {
-            ComPtr_field_0x0C = v66.ComPtr_field_0x0C; /*0x73e7d2*/
+            q00C = v66.q00C; /*0x73e7d2*/
             ComPtr::Release_Alt(&v66); /*0x73e7da*/
-            v17 = ComPtr_field_0x0C; /*0x73e7df*/
+            v17 = q00C; /*0x73e7df*/
           }
           else
           {
             ComPtr::Release_Alt(&v66); /*0x73e7c9*/
             v17 = 0; /*0x73e7ce*/
           }
-          *(_DWORD *)v66.__pad_0 = v17; /*0x73e7e3*/
+          *(_DWORD *)v66.q000 = v17; /*0x73e7e3*/
           if ( v16 < 0 && v16 != -2147467262 ) /*0x73e7ef*/
             sub_7DC720(v16); /*0x73e7f2*/
           if ( !v17 ) /*0x73e7fd*/
@@ -2815,9 +2815,9 @@ int VoxelTypeClass::ReadINI(double a2)
           (*(void (__stdcall **)(int, _BYTE *))(*(_DWORD *)v17 + 12))(v17, v73); /*0x73e815*/
           if ( !memcmp(v73, &g_CLSID_HoverLocomotion, 0x10u) && this->u32_5A4 ) /*0x73e82c*/
             (*(void (__thiscall **)(Class_7F5C70 *, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1); /*0x73e83e*/
-          v13 = FootClass::MoveToTiberium((FootClass *)this, dword_8871E0->CollapseChance / 256, v66.ComPtr_field_0x04); /*0x73e869*/
-          if ( *(_DWORD *)v66.__pad_0 ) /*0x73e871*/
-            (*(void (__stdcall **)(_DWORD))(**(_DWORD **)v66.__pad_0 + 8))(*(_DWORD *)v66.__pad_0); /*0x73e876*/
+          v13 = FootClass::MoveToTiberium((FootClass *)this, dword_8871E0->CollapseChance / 256, v66.q004); /*0x73e869*/
+          if ( *(_DWORD *)v66.q000 ) /*0x73e871*/
+            (*(void (__stdcall **)(_DWORD))(**(_DWORD **)v66.q000 + 8))(*(_DWORD *)v66.q000); /*0x73e876*/
         }
         if ( v13 ) /*0x73e87b*/
         {
@@ -2873,22 +2873,22 @@ int VoxelTypeClass::ReadINI(double a2)
           if ( *(_BYTE *)(v25 + 3598) ) /*0x73e9da*/
             v26 = (int *)(*(int (__thiscall **)(Class_7F5C70 *, int *, int, _DWORD))(*(_DWORD *)this + 824))( /*0x73ea09*/
                            this,
-                           &v66.ComPtr_field_0x10,
+                           &v66.q010,
                            *(_DWORD *)dword_8871E0->MutateExplosion / 256,
                            0);
           else
             v26 = BuildingClass::Validate( /*0x73ea31*/
                     (BuildingClass *)this,
-                    &v66.ComPtr_field_0x14,
+                    &v66.q014,
                     *(_DWORD *)dword_8871E0->MutateExplosion / 256);
-          *(_DWORD *)v66.__pad_0 = *v26; /*0x73ea3f*/
-          if ( *(_DWORD *)v66.__pad_0 == g_UnitSelectionState ) /*0x73ea43*/
+          *(_DWORD *)v66.q000 = *v26; /*0x73ea3f*/
+          if ( *(_DWORD *)v66.q000 == g_UnitSelectionState ) /*0x73ea43*/
           {
             TechnoClass::SetFocus((TechnoClass *)this, 0); /*0x73ea7b*/
           }
           else
           {
-            v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v66.__pad_0); /*0x73ea5d*/
+            v27 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v66.q000); /*0x73ea5d*/
             TechnoClass::SetFocus((TechnoClass *)this, (int)v27); /*0x73ea65*/
           }
           return 1; /*0x73ea83*/
@@ -2940,12 +2940,12 @@ int VoxelTypeClass::ReadINI(double a2)
           v54 = *v53 - *v52; /*0x73ede7*/
           v55 = v53[1]; /*0x73ede9*/
           v56 = v53[2]; /*0x73edec*/
-          v66.ComPtr_field_0x20 = v54; /*0x73edef*/
+          v66.q020 = v54; /*0x73edef*/
           v67 = v55 - v52[1]; /*0x73edff*/
           v68 = v56 - v52[2]; /*0x73ee0c*/
           Math::Sqrt((double)v68 * (double)v68 + (double)v67 * (double)v67 + (double)v54 * (double)v54); /*0x73ee2d*/
           v57 = ((v57) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFFu); /*0x73ee35*/
-          if ( v57 > *(_DWORD *)&dword_8871E0->__pad_C3C[320] << 8 ) /*0x73ee4b*/
+          if ( v57 > *(_DWORD *)&dword_8871E0->qC3C[320] << 8 ) /*0x73ee4b*/
             goto LABEL_75; /*0x73ee4b*/
         }
         else
@@ -2957,12 +2957,12 @@ int VoxelTypeClass::ReadINI(double a2)
           v33 = *v32 - *v31; /*0x73ebb5*/
           v34 = v32[1]; /*0x73ebb7*/
           v35 = v32[2]; /*0x73ebba*/
-          v66.ComPtr_field_0x20 = v33; /*0x73ebbd*/
+          v66.q020 = v33; /*0x73ebbd*/
           v67 = v34 - v31[1]; /*0x73ebcd*/
           v68 = v35 - v31[2]; /*0x73ebda*/
           Math::Sqrt((double)v68 * (double)v68 + (double)v67 * (double)v67 + (double)v33 * (double)v33); /*0x73ebfb*/
           v36 = ((v36) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFFu); /*0x73ec03*/
-          if ( v36 > *(_DWORD *)&dword_8871E0->__pad_C3C[316] << 8 ) /*0x73ec19*/
+          if ( v36 > *(_DWORD *)&dword_8871E0->qC3C[316] << 8 ) /*0x73ec19*/
             goto LABEL_75; /*0x73ec19*/
         }
         if ( (*(int (__thiscall **)(Class_7F5C70 *, int, int))(*(_DWORD *)this + 632))(this, 2, v29) == 1 ) /*0x73ee62*/
@@ -2986,12 +2986,12 @@ int VoxelTypeClass::ReadINI(double a2)
           v41 = *v40 - *v39; /*0x73ec7d*/
           v42 = v40[1]; /*0x73ec7f*/
           v43 = v40[2]; /*0x73ec82*/
-          v66.ComPtr_field_0x20 = v41; /*0x73ec85*/
+          v66.q020 = v41; /*0x73ec85*/
           v44 = v39[2]; /*0x73ec91*/
           v67 = v42 - v39[1]; /*0x73ec94*/
           v68 = v43 - v44; /*0x73ec9e*/
           Math::Sqrt( /*0x73ecc3*/
-            (double)v66.ComPtr_field_0x20 * (double)v66.ComPtr_field_0x20
+            (double)v66.q020 * (double)v66.q020
           + (double)(v43 - v44) * (double)(v43 - v44)
           + (double)v67 * (double)v67);
           v45 = ((v45) & 0xFFFF0000u) | ((unsigned int)(Math::RoundToInt(v2)) & 0xFFFFu); /*0x73eccb*/
@@ -3002,17 +3002,17 @@ int VoxelTypeClass::ReadINI(double a2)
             v48 = *v46; /*0x73eceb*/
             v49 = v46[1]; /*0x73eced*/
             v74 = v46[2]; /*0x73ecf3*/
-            v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFF0000u) | ((unsigned int)(v48 / 256) & 0xFFFFu); /*0x73ed13*/
-            v66.ComPtr_field_0x04 = ((v66.ComPtr_field_0x04) & 0xFFFFu) | (((unsigned int)(v49 / 256) & 0xFFFFu) << 16); /*0x73ed18*/
-            *(_DWORD *)v66.__pad_0 = v66.ComPtr_field_0x04; /*0x73ed21*/
-            *(_WORD *)v66.__pad_0 = (unsigned short)(v66.ComPtr_field_0x04) + *(_WORD *)(v47 + 5656); /*0x73ed2f*/
-            *(_WORD *)&v66.__pad_0[2] = *(_WORD *)(v47 + 5660) + (unsigned short)((v66.ComPtr_field_0x04) >> 16); /*0x73ed3b*/
-            v66.ComPtr_field_0x08 = 0; /*0x73ed6b*/
-            *(_DWORD *)v66.__pad_0 = *LayerClass::Pathfinding_Find( /*0x73ed7f*/
+            v66.q004 = ((v66.q004) & 0xFFFF0000u) | ((unsigned int)(v48 / 256) & 0xFFFFu); /*0x73ed13*/
+            v66.q004 = ((v66.q004) & 0xFFFFu) | (((unsigned int)(v49 / 256) & 0xFFFFu) << 16); /*0x73ed18*/
+            *(_DWORD *)v66.q000 = v66.q004; /*0x73ed21*/
+            *(_WORD *)v66.q000 = (unsigned short)(v66.q004) + *(_WORD *)(v47 + 5656); /*0x73ed2f*/
+            *(_WORD *)&v66.q000[2] = *(_WORD *)(v47 + 5660) + (unsigned short)((v66.q004) >> 16); /*0x73ed3b*/
+            v66.q008 = 0; /*0x73ed6b*/
+            *(_DWORD *)v66.q000 = *LayerClass::Pathfinding_Find( /*0x73ed7f*/
                                         (Type *)&dword_87F7E8,
-                                        (int)&v66.ComPtr_field_0x08,
-                                        &v66.ComPtr_field_0x18,
-                                        (__int16 *)v66.__pad_0,
+                                        (int)&v66.q008,
+                                        &v66.q018,
+                                        (__int16 *)v66.q000,
                                         2,
                                         -1,
                                         0,
@@ -3023,17 +3023,17 @@ int VoxelTypeClass::ReadINI(double a2)
                                         0,
                                         0,
                                         1,
-                                        (__int16 *)&v66.ComPtr_field_0x08,
+                                        (__int16 *)&v66.q008,
                                         0,
                                         0);
-            if ( *(_DWORD *)v66.__pad_0 == g_UnitSelectionState ) /*0x73ed8a*/
+            if ( *(_DWORD *)v66.q000 == g_UnitSelectionState ) /*0x73ed8a*/
             {
               (*(void (__thiscall **)(Class_7F5C70 *, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1); /*0x73ee7f*/
             }
             else
             {
               v50 = *(_DWORD *)this; /*0x73ed9e*/
-              v51 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v66.__pad_0); /*0x73edad*/
+              v51 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (__int16 *)v66.q000); /*0x73edad*/
               (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v50 + 1152))(this, v51, 1); /*0x73edb5*/
             }
           }
@@ -3071,7 +3071,7 @@ int VoxelTypeClass::ReadINI(double a2)
             v61 = *(_DWORD *)this; /*0x73ef42*/
             PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt( /*0x73ef4f*/
                                              (char *)this,
-                                             &v66.ComPtr_field_0x1C,
+                                             &v66.q01C,
                                              (int)v59);
             v63 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, PlacementCellsAlt); /*0x73ef5a*/
             (*(void (__thiscall **)(Class_7F5C70 *, void *, int))(v61 + 1152))(this, v63, 1); /*0x73ef62*/
@@ -3156,7 +3156,7 @@ char VoxClass_Vector::removeItem(int a2, unsigned int *a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVVoxClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x7538be*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVVoxClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x7538be*/
   }
   v7 = this->m_8; /*0x7538c1*/
   if ( v7 < this->m_10 ) /*0x7538c9*/
@@ -3193,7 +3193,7 @@ unsigned int * VoxClass_Vector::findItem(char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x753963*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_VoxClass___vftable; /*0x753966*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_VoxClass___vftable; /*0x753966*/
   if ( v3 && (unsigned char)((this->m_C) >> 8) ) /*0x753970*/
   {
     delete[] (v3); /*0x753978*/
@@ -3203,7 +3203,7 @@ unsigned int * VoxClass_Vector::findItem(char a2)
   this->m_8 = 0; /*0x753991*/
   if ( (a2 & 1) != 0 ) /*0x753998*/
     delete this; /*0x75399b*/
-  return this->__pad_0; /*0x7539a5*/
+  return this->q000; /*0x7539a5*/
 }
 } // namespace gamemd
 
@@ -3269,7 +3269,7 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
     this->u32_14 = new unsigned char[0x8000u]; /*0x758993*/
     this->u32_1C = 1; /*0x758996*/
   }
-  return this->__pad_0; /*0x75899f*/
+  return this->q000; /*0x75899f*/
 }
 } // namespace gamemd
 
@@ -3297,7 +3297,7 @@ unsigned int * VoxelPalette::Init(int a2, int a3)
     this->u32_14 = new unsigned char[0x8000u]; /*0x758993*/
     this->u32_1C = 1; /*0x758996*/
   }
-  return this->__pad_0; /*0x75899f*/
+  return this->q000; /*0x75899f*/
 }
 } // namespace gamemd
 
@@ -3320,7 +3320,7 @@ void VoxelPalette::Reset()
 namespace gamemd {
 void Voxel_Section::Draw()
 {
-    unsigned int *WarheadTypeClass_field_0x140; // ebx
+    unsigned int *InfiniteMindControl; // ebx
     unsigned int *v9; // eax
     char *i; // eax
     int CapacityIncrement; // ecx
@@ -3353,7 +3353,7 @@ void Voxel_Section::Draw()
     char v40; // cl
     char v41; // al
     int v42; // eax
-    int WarheadTypeClass_field_0x180; // ecx
+    int q180; // ecx
     int v44; // eax
     int v45; // eax
     int v46; // ecx
@@ -3397,157 +3397,157 @@ void Voxel_Section::Draw()
 
     _ESI = this; /*0x75d3b1*/
     INIClass::ResetSection((INIClass *)a2); /*0x75d3b5*/
-    if ( !INIClass::BinarySearchSection(a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24) ) /*0x75d3c0*/
+    if ( !INIClass::BinarySearchSection(a2, (unsigned __int8 *)&_ESI->q024) ) /*0x75d3c0*/
       return 0; /*0x75deb2*/
     __asm { fld dword ptr [esi+124h] } /*0x75d3d2*/
     __asm { fstp [esp+154h+var_154]; double }
-    INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aCellspread, v83); /*0x75d3e6*/
+    INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)&_ESI->q024, aCellspread, v83); /*0x75d3e6*/
     __asm { fstp dword ptr [esi+124h] } /*0x75d3eb*/
-    *(float *)_ESI->__pad_124 = _ET1; /*0x75d3eb*/
+    *(float *)_ESI->q124 = _ET1; /*0x75d3eb*/
     __asm { fld dword ptr [esi+128h] } /*0x75d3f1*/
     __asm { fstp [esp+154h+var_154]; double }
-    INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aCellinset, v83); /*0x75d405*/
+    INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)&_ESI->q024, aCellinset, v83); /*0x75d405*/
     __asm { fstp dword ptr [esi+128h] } /*0x75d40a*/
-    *(float *)&_ESI->__pad_124[4] = _ET1; /*0x75d40a*/
+    *(float *)&_ESI->q124[4] = _ET1; /*0x75d40a*/
     __asm { fld dword ptr [esi+12Ch] } /*0x75d410*/
     __asm { fstp [esp+154h+var_154]; double }
     INIClass::ReadDouble_Overwrite( /*0x75d424*/
       (double *)a2,
-      (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+      (unsigned __int8 *)&_ESI->q024,
       aPercentatmax,
       v83);
     __asm { fstp dword ptr [esi+12Ch] } /*0x75d429*/
-    *(float *)&_ESI->__pad_124[8] = _ET1; /*0x75d429*/
-    _ESI->__pad_124[12] = INIClass::ReadBool_Overwrite( /*0x75d443*/
+    *(float *)&_ESI->q124[8] = _ET1; /*0x75d429*/
+    _ESI->q124[12] = INIClass::ReadBool_Overwrite( /*0x75d443*/
                             (int *)a2,
-                            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                            (unsigned __int8 *)&_ESI->q024,
                             aCausesdelaykil,
-                            _ESI->__pad_124[12]);
-    *(unsigned int *)&_ESI->__pad_124[16] = INIClass::ReadInt_Overwrite( /*0x75d45d*/
+                            _ESI->q124[12]);
+    *(unsigned int *)&_ESI->q124[16] = INIClass::ReadInt_Overwrite( /*0x75d45d*/
                                         (bool *)a2,
-                                        (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                                        (unsigned __int8 *)&_ESI->q024,
                                         aDelaykillframe,
-                                        *(unsigned int *)&_ESI->__pad_124[16]);
+                                        *(unsigned int *)&_ESI->q124[16]);
     __asm { fld dword ptr [esi+138h] } /*0x75d466*/
     __asm { fstp [esp+154h+var_154]; double }
     INIClass::ReadDouble_Overwrite( /*0x75d477*/
       (double *)a2,
-      (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+      (unsigned __int8 *)&_ESI->q024,
       aDelaykillatmax,
       v83);
     __asm { fstp dword ptr [esi+138h] } /*0x75d47c*/
-    *(float *)&_ESI->__pad_124[20] = _ET1; /*0x75d47c*/
+    *(float *)&_ESI->q124[20] = _ET1; /*0x75d47c*/
     __asm { fld dword ptr [esi+13Ch] } /*0x75d482*/
     __asm { fstp [esp+154h+var_154]; double }
     INIClass::ReadDouble_Overwrite( /*0x75d496*/
       (double *)a2,
-      (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+      (unsigned __int8 *)&_ESI->q024,
       aCombatlightsiz,
       v83);
     __asm { fstp dword ptr [esi+13Ch] } /*0x75d49b*/
-    *(float *)&_ESI->__pad_124[24] = _ET1; /*0x75d49b*/
-    WarheadTypeClass_field_0x140 = _ESI->WarheadTypeClass_field_0x140; /*0x75d4a1*/
+    *(float *)&_ESI->q124[24] = _ET1; /*0x75d49b*/
+    InfiniteMindControl = _ESI->InfiniteMindControl; /*0x75d4a1*/
     if ( INIClass::GetString( /*0x75d4be*/
            (INIClass *)a2,
-           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+           (unsigned __int8 *)&_ESI->q024,
            (unsigned __int8 *)((char *)&g_INI_Key_Special + 8),
            &g_INI_DefaultBuffer,
-           (char *)&v86.DynamicVector_field_0x1C,
+           (char *)&v86.q01C,
            128) )
     {
-      v9 = BuildingTypeClass::LoadOrGet((char *)&v86.DynamicVector_field_0x1C); /*0x75d4cb*/
+      v9 = BuildingTypeClass::LoadOrGet((char *)&v86.q01C); /*0x75d4cb*/
     }
     else
     {
-      v9 = WarheadTypeClass_field_0x140; /*0x75d4d2*/
+      v9 = InfiniteMindControl; /*0x75d4d2*/
     }
-    _ESI->WarheadTypeClass_field_0x140 = v9; /*0x75d4d4*/
+    _ESI->InfiniteMindControl = v9; /*0x75d4d4*/
     _ESI->Conventional[0] = INIClass::ReadBool_Overwrite( /*0x75d4ee*/
                               (int *)a2,
-                              (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                              (unsigned __int8 *)&_ESI->q024,
                               aConventional,
                               _ESI->Conventional[0]);
-    _ESI->__pad_144[0] = INIClass::ReadBool_Overwrite( /*0x75d508*/
+    _ESI->q144[0] = INIClass::ReadBool_Overwrite( /*0x75d508*/
                            (int *)a2,
-                           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                           (unsigned __int8 *)&_ESI->q024,
                            g_INI_Key_Wall,
-                           _ESI->__pad_144[0]);
-    _ESI->__pad_144[1] = INIClass::ReadBool_Overwrite( /*0x75d522*/
+                           _ESI->q144[0]);
+    _ESI->q144[1] = INIClass::ReadBool_Overwrite( /*0x75d522*/
                            (int *)a2,
-                           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                           (unsigned __int8 *)&_ESI->q024,
                            aWallabsolutede,
-                           _ESI->__pad_144[1]);
-    _ESI->__pad_144[2] = INIClass::ReadBool_Overwrite( /*0x75d53c*/
+                           _ESI->q144[1]);
+    _ESI->q144[2] = INIClass::ReadBool_Overwrite( /*0x75d53c*/
                            (int *)a2,
-                           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                           (unsigned __int8 *)&_ESI->q024,
                            aPenetratesbunk,
-                           _ESI->__pad_144[2]);
-    _ESI->__pad_144[3] = INIClass::ReadBool_Overwrite( /*0x75d556*/
+                           _ESI->q144[2]);
+    _ESI->q144[3] = INIClass::ReadBool_Overwrite( /*0x75d556*/
                            (int *)a2,
-                           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                           (unsigned __int8 *)&_ESI->q024,
                            aWood,
-                           _ESI->__pad_144[3]);
-    _ESI->__pad_144[4] = INIClass::ReadBool_Overwrite( /*0x75d570*/
+                           _ESI->q144[3]);
+    _ESI->q144[4] = INIClass::ReadBool_Overwrite( /*0x75d570*/
                            (int *)a2,
-                           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                           (unsigned __int8 *)&_ESI->q024,
                            (unsigned __int8 *)g_INI_Key_Tiberium,
-                           _ESI->__pad_144[4]);
+                           _ESI->q144[4]);
     _ESI->WarheadTypeClass_field_bool_149[1] = INIClass::ReadBool_Overwrite( /*0x75d58a*/
                                                  (int *)a2,
-                                                 (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                                                 (unsigned __int8 *)&_ESI->q024,
                                                  aSparky,
                                                  _ESI->WarheadTypeClass_field_bool_149[1]);
     _ESI->WarheadTypeClass_field_bool_149[2] = INIClass::ReadBool_Overwrite( /*0x75d5a4*/
                                                  (int *)a2,
-                                                 (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                                                 (unsigned __int8 *)&_ESI->q024,
                                                  aSonic,
                                                  _ESI->WarheadTypeClass_field_bool_149[2]);
     _ESI->Conventional[1] = INIClass::ReadBool_Overwrite( /*0x75d5be*/
                               (int *)a2,
-                              (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                              (unsigned __int8 *)&_ESI->q024,
                               aRocker,
                               _ESI->Conventional[1]);
     _ESI->Conventional[2] = INIClass::ReadBool_Overwrite( /*0x75d5d8*/
                               (int *)a2,
-                              (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                              (unsigned __int8 *)&_ESI->q024,
                               aDirectrocker,
                               _ESI->Conventional[2]);
     _ESI->WarheadTypeClass_field_bool_149[3] = INIClass::ReadBool_Overwrite( /*0x75d5f2*/
                                                  (int *)a2,
-                                                 (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                                                 (unsigned __int8 *)&_ESI->q024,
                                                  g_INI_Key_Fire,
                                                  _ESI->WarheadTypeClass_field_bool_149[3]);
     _ESI->Conventional[3] = INIClass::ReadBool_Overwrite( /*0x75d60c*/
                               (int *)a2,
-                              (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                              (unsigned __int8 *)&_ESI->q024,
                               aBright,
                               _ESI->Conventional[3]);
     _ESI->CLDisableRed[0] = INIClass::ReadBool_Overwrite( /*0x75d626*/
                               (int *)a2,
-                              (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                              (unsigned __int8 *)&_ESI->q024,
                               aCldisablered,
                               _ESI->CLDisableRed[0]);
     _ESI->CLDisableRed[1] = INIClass::ReadBool_Overwrite( /*0x75d640*/
                               (int *)a2,
-                              (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                              (unsigned __int8 *)&_ESI->q024,
                               aCldisablegreen,
                               _ESI->CLDisableRed[1]);
     _ESI->CLDisableRed[2] = INIClass::ReadBool_Overwrite( /*0x75d65a*/
                               (int *)a2,
-                              (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                              (unsigned __int8 *)&_ESI->q024,
                               aCldisableblue,
                               _ESI->CLDisableRed[2]);
     if ( INIClass::GetString( /*0x75d677*/
            (INIClass *)a2,
-           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+           (unsigned __int8 *)&_ESI->q024,
            aAnimlist,
            &g_INI_DefaultBuffer,
-           (char *)&v86.DynamicVector_field_0x1C,
+           (char *)&v86.q01C,
            128) )
     {
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v86, 0, 0); /*0x75d68c*/
-      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x75d69b*/
-      for ( i = strtok((char *)&v86.DynamicVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x75d6ad*/
+      *(unsigned int *)v86.q000 = (unsigned int)(void *)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x75d69b*/
+      for ( i = strtok((char *)&v86.q01C, Str); i; i = strtok(0, Str) ) /*0x75d6ad*/
       {
         if ( !*i ) /*0x75d6af*/
           break; /*0x75d6b2*/
@@ -3556,50 +3556,50 @@ void Voxel_Section::Draw()
           DynamicVector::Add_Alt4(&v86, &v84); /*0x75d6cc*/
       }
       TypeList::AnimTypeCopy(&v85, &v86); /*0x75d6ed*/
-      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x75d6f6*/
+      *(unsigned int *)v86.q000 = (unsigned int)(void *)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x75d6f6*/
       DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v86); /*0x75d6fe*/
     }
     else
     {
-      TypeList::AnimTypeCopy(&v85, _ESI->__pad_104); /*0x75d710*/
+      TypeList::AnimTypeCopy(&v85, _ESI->q104); /*0x75d710*/
     }
-    VectorClass::CopyDefault((VectorClass *)_ESI->__pad_104, &v85); /*0x75d722*/
+    VectorClass::CopyDefault((VectorClass *)_ESI->q104, &v85); /*0x75d722*/
     CapacityIncrement = v85.CapacityIncrement; /*0x75d72b*/
     unknown_18 = v85.unknown_18; /*0x75d72f*/
     _ESI->WarheadTypeClass_field_0x114 = v85.Count; /*0x75d733*/
     Items = v85.Items; /*0x75d736*/
-    *(unsigned int *)_ESI->__pad_118 = CapacityIncrement; /*0x75d73a*/
-    *(unsigned int *)&_ESI->__pad_118[4] = unknown_18; /*0x75d73f*/
+    *(unsigned int *)_ESI->q118 = CapacityIncrement; /*0x75d73a*/
+    *(unsigned int *)&_ESI->q118[4] = unknown_18; /*0x75d73f*/
     v85.DynamicVectorClass = (unsigned int)(void *)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x75d742*/
     if ( Items && v85.IsAllocated ) /*0x75d752*/
       delete[] (Items); /*0x75d755*/
-    _ESI->WarheadTypeClass_field_0x120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
+    _ESI->q120 = INIClass::ReadInt_Overwrite( /*0x75d771*/
                                            (bool *)a2,
-                                           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                                           (unsigned __int8 *)&_ESI->q024,
                                            aInfdeath,
-                                           _ESI->WarheadTypeClass_field_0x120);
+                                           _ESI->q120);
     INIClass::ReadDouble_Overwrite( /*0x75d78d*/
       (double *)a2,
-      (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+      (unsigned __int8 *)&_ESI->q024,
       aDeform,
-      *(double *)&_ESI->__pad_44[84]);
+      *(double *)&_ESI->q044[84]);
     __asm { fstp qword ptr [esi+98h] } /*0x75d792*/
-    *(double *)&_ESI->__pad_44[84] = _RT1; /*0x75d792*/
+    *(double *)&_ESI->q044[84] = _RT1; /*0x75d792*/
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x75d7a7*/
                       (bool *)a2,
-                      (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                      (unsigned __int8 *)&_ESI->q024,
                       aDeformthreshho,
-                      _ESI->WarheadTypeClass_field_0x100);
+                      _ESI->q100);
     v16 = _ESI->CLDisableRed[3]; /*0x75d7ac*/
-    _ESI->WarheadTypeClass_field_0x100 = Int_Overwrite; /*0x75d7b2*/
+    _ESI->q100 = Int_Overwrite; /*0x75d7b2*/
     Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x75d7c1*/
                        (int *)a2,
-                       (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                       (unsigned __int8 *)&_ESI->q024,
                        aEmeffect,
                        v16);
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->MindControl[0]) & 0xFFu) << 32); /*0x75d7ce*/
     v83 = aMindcontrol; /*0x75d7cf*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d7d4*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75d7d4*/
     _ESI->CLDisableRed[3] = Bool_Overwrite; /*0x75d7d5*/
     _ESI->MindControl[0] = INIClass::ReadBool_Overwrite( /*0x75d7e0*/
                              (int *)a2,
@@ -3608,15 +3608,15 @@ void Voxel_Section::Draw()
                              SBYTE4(v83));
     v18 = INIClass::ReadBool_Overwrite( /*0x75d7f5*/
             (int *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aPoison,
             _ESI->MindControl[1]);
     v19 = _ESI->MindControl[2]; /*0x75d7fa*/
     _ESI->MindControl[1] = v18; /*0x75d800*/
-    v20 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aIvanbomb, v19); /*0x75d80f*/
+    v20 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->q024, aIvanbomb, v19); /*0x75d80f*/
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->MindControl[3]) & 0xFFu) << 32); /*0x75d81c*/
     v83 = aElectricassaul; /*0x75d81d*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d822*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75d822*/
     _ESI->MindControl[2] = v20; /*0x75d823*/
     _ESI->MindControl[3] = INIClass::ReadBool_Overwrite( /*0x75d82e*/
                              (int *)a2,
@@ -3625,15 +3625,15 @@ void Voxel_Section::Draw()
                              SBYTE4(v83));
     v21 = INIClass::ReadBool_Overwrite( /*0x75d843*/
             (int *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aParasite,
             _ESI->Parasite[0]);
     v22 = _ESI->Parasite[1]; /*0x75d848*/
     _ESI->Parasite[0] = v21; /*0x75d84e*/
-    v23 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aTemporal, v22); /*0x75d85d*/
+    v23 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->q024, aTemporal, v22); /*0x75d85d*/
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->Parasite[2]) & 0xFFu) << 32); /*0x75d86a*/
     v83 = aIslocomotor; /*0x75d86b*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d870*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75d870*/
     _ESI->Parasite[1] = v23; /*0x75d871*/
     _ESI->Parasite[2] = INIClass::ReadBool_Overwrite( /*0x75d87c*/
                           (int *)a2,
@@ -3643,7 +3643,7 @@ void Voxel_Section::Draw()
     GUID_Overwrite = (unsigned int *)INIClass::ReadGUID_Overwrite( /*0x75d8b2*/
                                  a2,
                                  (int)&v86,
-                                 (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+                                 (unsigned __int8 *)&_ESI->q024,
                                  (unsigned __int8 *)&g_INI_Key_TRUCKA.__pad_1624[92],
                                  *(unsigned int *)&_ESI->Parasite[3],
                                  *(unsigned int *)&_ESI->__pad_15D[3],
@@ -3658,7 +3658,7 @@ void Voxel_Section::Draw()
     *(unsigned int *)&_ESI->__pad_15D[7] = v26; /*0x75d8cb*/
     v83 = aAirstrike; /*0x75d8ce*/
     v27 = GUID_Overwrite[3]; /*0x75d8d3*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d8d6*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75d8d6*/
     *(unsigned int *)&_ESI->__pad_15D[11] = v27; /*0x75d8d9*/
     v28 = INIClass::ReadBool_Overwrite( /*0x75d8dc*/
             (int *)a2,
@@ -3667,7 +3667,7 @@ void Voxel_Section::Draw()
             SBYTE4(v83));
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)((unsigned char)((_ESI->Airstrike) >> 8)) & 0xFFu) << 32); /*0x75d8e9*/
     v83 = aPsychedelic; /*0x75d8ea*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d8ef*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75d8ef*/
     _ESI->Airstrike = ((_ESI->Airstrike) & 0xFFFFFF00u) | ((unsigned int)(v28) & 0xFFu); /*0x75d8f0*/
     IDA_BYTE1(_ESI->Airstrike) = INIClass::ReadBool_Overwrite( /*0x75d8fb*/
                                (int *)a2,
@@ -3676,19 +3676,19 @@ void Voxel_Section::Draw()
                                SBYTE4(v83));
     v29 = INIClass::ReadBool_Overwrite( /*0x75d910*/
             (int *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aBombdisarm,
             (unsigned char)((_ESI->Airstrike) >> 16));
     Paralyzes = _ESI->Paralyzes; /*0x75d915*/
     _ESI->Airstrike = ((_ESI->Airstrike) & 0xFF00FFFFu) | (((unsigned int)(v29) & 0xFFu) << 16); /*0x75d91b*/
     v31 = INIClass::ReadInt_Overwrite( /*0x75d92a*/
             (bool *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aParalyzes,
             Paralyzes);
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->Culling) & 0xFFu) << 32); /*0x75d937*/
     v83 = aCulling; /*0x75d938*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d93d*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75d93d*/
     _ESI->Paralyzes = v31; /*0x75d93e*/
     IDA_LOBYTE(_ESI->Culling) = INIClass::ReadBool_Overwrite( /*0x75d949*/
                               (int *)a2,
@@ -3697,27 +3697,27 @@ void Voxel_Section::Draw()
                               SBYTE4(v83));
     v32 = INIClass::ReadBool_Overwrite( /*0x75d95e*/
             (int *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aMakesdisguise,
             (unsigned char)((_ESI->Culling) >> 8));
     v33 = (unsigned char)((_ESI->Culling) >> 16); /*0x75d963*/
     _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v32) & 0xFFu) << 8); /*0x75d969*/
-    v34 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aNukemaker, v33); /*0x75d978*/
-    v35 = ((v35) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)_ESI->__pad_FC) & 0xFFFFFFFFull) << 32); /*0x75d97d*/
+    v34 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->q024, aNukemaker, v33); /*0x75d978*/
+    v35 = ((v35) & 0xFFFFFFFFull) | (((unsigned long long)(*(unsigned int *)_ESI->q0FC) & 0xFFFFFFFFull) << 32); /*0x75d97d*/
     _ESI->Culling = ((_ESI->Culling) & 0xFF00FFFFu) | (((unsigned int)(v34) & 0xFFu) << 16); /*0x75d983*/
     v35 = _ESI->WarheadTypeClass_field_0xF8; /*0x75d989*/
-    INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aPronedamage, v35); /*0x75d999*/
+    INIClass::ReadDouble_Overwrite((double *)a2, (unsigned __int8 *)&_ESI->q024, aPronedamage, v35); /*0x75d999*/
     Culling_high = (unsigned char)((_ESI->Culling) >> 8); /*0x75d99e*/
     __asm { fstp qword ptr [esi+0F8h] } /*0x75d9a4*/
     *(double *)&_ESI->WarheadTypeClass_field_0xF8 = _RT1; /*0x75d9a4*/
     v38 = INIClass::ReadBool_Overwrite( /*0x75d9b3*/
             (int *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aRadiation,
             Culling_high);
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)(_ESI->PsychicDamage) & 0xFFu) << 32); /*0x75d9c0*/
     v83 = aPsychicdamage; /*0x75d9c1*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75d9c6*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75d9c6*/
     _ESI->Culling = ((_ESI->Culling) & 0xFFFF00FFu) | (((unsigned int)(v38) & 0xFFu) << 8); /*0x75d9c7*/
     IDA_LOBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75d9d2*/
                                     (int *)a2,
@@ -3726,15 +3726,15 @@ void Voxel_Section::Draw()
                                     SBYTE4(v83));
     v39 = INIClass::ReadBool_Overwrite( /*0x75d9e7*/
             (int *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aAffectsallies,
             (unsigned char)((_ESI->PsychicDamage) >> 8));
     v40 = (unsigned char)((_ESI->PsychicDamage) >> 16); /*0x75d9ec*/
     _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFFFF00FFu) | (((unsigned int)(v39) & 0xFFu) << 8); /*0x75d9f2*/
-    v41 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24, aBullets, v40); /*0x75da01*/
+    v41 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)&_ESI->q024, aBullets, v40); /*0x75da01*/
     v83 = ((v83) & 0xFFFFFFFFu) | (((unsigned int)((unsigned char)((_ESI->PsychicDamage) >> 8)) & 0xFFu) << 32); /*0x75da0e*/
     v83 = aVeinhole; /*0x75da0f*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75da14*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75da14*/
     _ESI->PsychicDamage = ((_ESI->PsychicDamage) & 0xFF00FFFFu) | (((unsigned int)(v41) & 0xFFu) << 16); /*0x75da15*/
     IDA_HIBYTE(_ESI->PsychicDamage) = INIClass::ReadBool_Overwrite( /*0x75da20*/
                                     (int *)a2,
@@ -3743,83 +3743,83 @@ void Voxel_Section::Draw()
                                     SBYTE4(v83));
     v42 = INIClass::ReadInt_Overwrite( /*0x75da35*/
             (bool *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aShakexlo,
-            _ESI->WarheadTypeClass_field_0x17C);
-    WarheadTypeClass_field_0x180 = _ESI->WarheadTypeClass_field_0x180; /*0x75da3a*/
-    _ESI->WarheadTypeClass_field_0x17C = v42; /*0x75da40*/
+            _ESI->q17C);
+    q180 = _ESI->q180; /*0x75da3a*/
+    _ESI->q17C = v42; /*0x75da40*/
     v44 = INIClass::ReadInt_Overwrite( /*0x75da4f*/
             (bool *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aShakexhi,
-            WarheadTypeClass_field_0x180);
-    v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(_ESI->WarheadTypeClass_field_0x184) & 0xFFFFFFFFull) << 32); /*0x75da5c*/
+            q180);
+    v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(_ESI->q184) & 0xFFFFFFFFull) << 32); /*0x75da5c*/
     v83 = aShakeylo; /*0x75da5d*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75da62*/
-    _ESI->WarheadTypeClass_field_0x180 = v44; /*0x75da63*/
-    _ESI->WarheadTypeClass_field_0x184 = INIClass::ReadInt_Overwrite( /*0x75da6e*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75da62*/
+    _ESI->q180 = v44; /*0x75da63*/
+    _ESI->q184 = INIClass::ReadInt_Overwrite( /*0x75da6e*/
                                            (bool *)a2,
                                            p_WarheadTypeClass_field_0x24,
                                            (unsigned __int8 *)((unsigned int)(v83)),
                                            (int)((v83) >> 32));
     v45 = INIClass::ReadInt_Overwrite( /*0x75da83*/
             (bool *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             aShakeyhi,
-            _ESI->WarheadTypeClass_field_0x188);
-    v46 = _ESI->WarheadTypeClass_field_0x1C4[0]; /*0x75da88*/
-    _ESI->WarheadTypeClass_field_0x188 = v45; /*0x75da8e*/
+            _ESI->q188);
+    v46 = _ESI->q1C4[0]; /*0x75da88*/
+    _ESI->q188 = v45; /*0x75da8e*/
     v47 = INIClass::ReadInt_Overwrite( /*0x75da9d*/
             (bool *)a2,
-            (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+            (unsigned __int8 *)&_ESI->q024,
             (unsigned __int8 *)&g_INI_Key_TRUCKA.__pad_1584[76],
             v46);
-    v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(_ESI->WarheadTypeClass_field_0x1C8[0]) & 0xFFFFFFFFull) << 32); /*0x75daaa*/
+    v83 = ((v83) & 0xFFFFFFFFull) | (((unsigned long long)(_ESI->q1C8[0]) & 0xFFFFFFFFull) << 32); /*0x75daaa*/
     v83 = &g_INI_Key_TRUCKA.__pad_1584[64]; /*0x75daab*/
-    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24; /*0x75dab0*/
-    _ESI->WarheadTypeClass_field_0x1C4[0] = v47; /*0x75dab1*/
+    p_WarheadTypeClass_field_0x24 = (unsigned __int8 *)&_ESI->q024; /*0x75dab0*/
+    _ESI->q1C4[0] = v47; /*0x75dab1*/
     v48 = INIClass::ReadInt_Overwrite( /*0x75dab7*/
             (bool *)a2,
             p_WarheadTypeClass_field_0x24,
             (unsigned __int8 *)((unsigned int)(v83)),
             (int)((v83) >> 32));
-    _ESI->WarheadTypeClass_field_0x1C8[0] = v48; /*0x75dabe*/
+    _ESI->q1C8[0] = v48; /*0x75dabe*/
     if ( v48 < 0 ) /*0x75dac4*/
-      _ESI->WarheadTypeClass_field_0x1C8[0] = 0; /*0x75dac6*/
-    v49 = _ESI->WarheadTypeClass_field_0x1C8[0]; /*0x75dad0*/
-    if ( _ESI->WarheadTypeClass_field_0x1C4[0] < v49 ) /*0x75dade*/
-      _ESI->WarheadTypeClass_field_0x1C4[0] = v49; /*0x75dae0*/
+      _ESI->q1C8[0] = 0; /*0x75dac6*/
+    v49 = _ESI->q1C8[0]; /*0x75dad0*/
+    if ( _ESI->q1C4[0] < v49 ) /*0x75dade*/
+      _ESI->q1C4[0] = v49; /*0x75dae0*/
     if ( INIClass::GetString( /*0x75dafd*/
            (INIClass *)a2,
-           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+           (unsigned __int8 *)&_ESI->q024,
            (unsigned __int8 *)&g_INI_Key_TRUCKA.__pad_1584[52],
            &g_INI_DefaultBuffer,
-           (char *)&v86.DynamicVector_field_0x1C,
+           (char *)&v86.q01C,
            128) )
     {
       DynamicVector::Constructor_VoxelAnim(&v86, 0, 0); /*0x75db12*/
-      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75db21*/
-      for ( j = strtok((char *)&v86.DynamicVector_field_0x1C, Str); j; j = strtok(0, Str) ) /*0x75db33*/
+      *(unsigned int *)v86.q000 = (unsigned int)(void *)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75db21*/
+      for ( j = strtok((char *)&v86.q01C, Str); j; j = strtok(0, Str) ) /*0x75db33*/
       {
         if ( !*j ) /*0x75db35*/
           break; /*0x75db38*/
         v51 = UnitTypeClass::FindOrCreate(j); /*0x75db41*/
         if ( v51 /*0x75db74*/
-          && ((int)v86.DynamicVector_field_0x10 < v86.DynamicVector_field_0x8
-           || (v86.vtable4[1] || !v86.DynamicVector_field_0x8)
-           && *(int *)v86.__pad_14 > 0
-           && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v86.__pad_0 + 8))(
+          && ((int)v86.q010 < v86.q008
+           || (v86.vtable4[1] || !v86.q008)
+           && *(int *)v86.q014 > 0
+           && (*(unsigned __int8 (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v86.q000 + 8))(
                 &v86,
-                v86.DynamicVector_field_0x8 + *(unsigned int *)v86.__pad_14,
+                v86.q008 + *(unsigned int *)v86.q014,
                 0)) )
         {
-          v52 = v86.DynamicVector_field_0x10++; /*0x75db7f*/
+          v52 = v86.q010++; /*0x75db7f*/
           *(unsigned int *)(*(unsigned int *)&v86.DynamicVector_field_0x1[3] + 4 * (unsigned int)v52) = v51; /*0x75db8a*/
         }
       }
       Voxel_Section::Constructor((Voxel_Section *)&v85, &v86); /*0x75dba9*/
       v85.DynamicVectorClass = (unsigned int)(void *)(void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x75dbb2*/
-      *(unsigned int *)v86.__pad_0 = (unsigned int)(void *)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dbba*/
+      *(unsigned int *)v86.q000 = (unsigned int)(void *)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dbba*/
       Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)&v86); /*0x75dbc2*/
     }
     else
@@ -3835,13 +3835,13 @@ void Voxel_Section::Draw()
       _ESI->MaxDebris = v85.Capacity; /*0x75dbfc*/
       if ( v54 ) /*0x75dbff*/
       {
-        _ESI->WarheadTypeClass_field_0x190[0] = 0; /*0x75dc38*/
+        _ESI->q190[0] = 0; /*0x75dc38*/
         _ESI->MinDebris = ((_ESI->MinDebris) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x75dc3f*/
       }
       else
       {
         v55 = new unsigned char[4 * Capacity]; /*0x75dc05*/
-        _ESI->WarheadTypeClass_field_0x190[0] = v55; /*0x75dc0d*/
+        _ESI->q190[0] = v55; /*0x75dc0d*/
         if ( v55 ) /*0x75dc12*/
         {
           MaxDebris = _ESI->MaxDebris; /*0x75dc14*/
@@ -3851,7 +3851,7 @@ void Voxel_Section::Draw()
           {
             do /*0x75dc34*/
             {
-              *(unsigned int *)(_ESI->WarheadTypeClass_field_0x190[0] + 4 * v57) = *((unsigned int *)v85.Items + v57); /*0x75dc2b*/
+              *(unsigned int *)(_ESI->q190[0] + 4 * v57) = *((unsigned int *)v85.Items + v57); /*0x75dc2b*/
               ++v57; /*0x75dc31*/
             }
             while ( v57 < _ESI->MaxDebris ); /*0x75dc34*/
@@ -3863,8 +3863,8 @@ void Voxel_Section::Draw()
     v59 = v85.unknown_18; /*0x75dc4b*/
     _ESI->unused_1CC[0] = v85.CapacityIncrement; /*0x75dc4f*/
     v60 = v85.unknown_18; /*0x75dc52*/
-    *(unsigned int *)_ESI->__pad_1A0 = v58; /*0x75dc56*/
-    *(unsigned int *)&_ESI->__pad_1A0[4] = v59; /*0x75dc5b*/
+    *(unsigned int *)_ESI->q1A0 = v58; /*0x75dc56*/
+    *(unsigned int *)&_ESI->q1A0[4] = v59; /*0x75dc5b*/
     v85.DynamicVectorClass = (unsigned int)(void *)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75dc5e*/
     if ( v60 && v85.IsAllocated ) /*0x75dc6e*/
       delete[] (v60); /*0x75dc71*/
@@ -3872,7 +3872,7 @@ void Voxel_Section::Draw()
     v80 = 0; /*0x75dc8b*/
     v81 = 1; /*0x75dc8e*/
     v78 = (unsigned int)(void *)(void*)&VectorClass_int_vftable; /*0x75dc95*/
-    if ( &v78 != (void ***)&_ESI->__pad_1A0[8] ) /*0x75dc9b*/
+    if ( &v78 != (void ***)&_ESI->q1A0[8] ) /*0x75dc9b*/
     {
       VectorClass::Destroy((int)&v78); /*0x75dc9f*/
       v80 = *(unsigned int *)_ESI->__pad_1B0; /*0x75dcad*/
@@ -3883,7 +3883,7 @@ void Voxel_Section::Draw()
         {
           v61 = 0; /*0x75dcc8*/
           for ( v81 = ((v81) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); v61 < v80; ++v61 ) /*0x75dcd0*/
-            v79[v61] = *((unsigned int *)&_ESI->WarheadTypeClass_field_0x1AC->AbstractClass + v61); /*0x75dcde*/
+            v79[v61] = *((unsigned int *)&_ESI->q1AC->AbstractClass + v61); /*0x75dcde*/
         }
       }
       else
@@ -3893,9 +3893,9 @@ void Voxel_Section::Draw()
       }
     }
     p_WarheadTypeClass_field_0x24 = *(unsigned __int8 **)&_ESI->__pad_1B0[8]; /*0x75dd01*/
-    v83 = _ESI->WarheadTypeClass_field_0x1BC[0]; /*0x75dd0c*/
+    v83 = _ESI->q1BC[0]; /*0x75dd0c*/
     v78 = (unsigned int)(void *)(void*)&TypeList_int_vftable; /*0x75dd0f*/
-    inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)&_ESI->WarheadTypeClass_field_0x24); /*0x75dd15*/
+    inited = (unsigned __int8 *)__0Iostream_init_QAE_XZ_4((Iostream_init *)&_ESI->q024); /*0x75dd15*/
     IntList = (char *)INIClass::ReadIntList( /*0x75dd22*/
                         (INIClass *)a2,
                         (int)&v85,
@@ -3909,15 +3909,15 @@ void Voxel_Section::Draw()
                         ((int)(v83)),
                         (int)((v83) >> 32));
     v84 = IntList; /*0x75dd2d*/
-    if ( &_ESI->__pad_1A0[8] != IntList ) /*0x75dd33*/
+    if ( &_ESI->q1A0[8] != IntList ) /*0x75dd33*/
     {
-      (*(void (__thiscall **)(char *))(*(unsigned int *)&_ESI->__pad_1A0[8] + 12))(&_ESI->__pad_1A0[8]); /*0x75dd39*/
+      (*(void (__thiscall **)(char *))(*(unsigned int *)&_ESI->q1A0[8] + 12))(&_ESI->q1A0[8]); /*0x75dd39*/
       v64 = *((unsigned int *)v84 + 2); /*0x75dd40*/
       *(unsigned int *)_ESI->__pad_1B0 = v64; /*0x75dd45*/
       if ( v64 ) /*0x75dd48*/
       {
         v65 = new unsigned char[4 * v64]; /*0x75dd52*/
-        _ESI->WarheadTypeClass_field_0x1AC = (CampaignClass *)v65; /*0x75dd5a*/
+        _ESI->q1AC = (CampaignClass *)v65; /*0x75dd5a*/
         if ( v65 ) /*0x75dd5f*/
         {
           v66 = *(unsigned int *)_ESI->__pad_1B0; /*0x75dd61*/
@@ -3928,7 +3928,7 @@ void Voxel_Section::Draw()
             do /*0x75dd86*/
             {
               ++v67; /*0x75dd72*/
-              *((unsigned int *)_ESI->WarheadTypeClass_field_0x1AC + v67 - 1) = *(unsigned int *)(*((unsigned int *)v84 + 1) + 4 * v67 - 4); /*0x75dd7d*/
+              *((unsigned int *)_ESI->q1AC + v67 - 1) = *(unsigned int *)(*((unsigned int *)v84 + 1) + 4 * v67 - 4); /*0x75dd7d*/
             }
             while ( v67 < *(unsigned int *)_ESI->__pad_1B0 ); /*0x75dd86*/
           }
@@ -3936,29 +3936,29 @@ void Voxel_Section::Draw()
       }
       else
       {
-        _ESI->WarheadTypeClass_field_0x1AC = 0; /*0x75dd8a*/
+        _ESI->q1AC = 0; /*0x75dd8a*/
         _ESI->__pad_1B0[5] = 0; /*0x75dd91*/
       }
       IntList = v84; /*0x75dd95*/
     }
     *(unsigned int *)&_ESI->__pad_1B0[8] = *((unsigned int *)IntList + 4); /*0x75dd9c*/
-    _ESI->WarheadTypeClass_field_0x1BC[0] = *((unsigned int *)IntList + 5); /*0x75dda2*/
+    _ESI->q1BC[0] = *((unsigned int *)IntList + 5); /*0x75dda2*/
     v68 = *((unsigned int *)IntList + 6); /*0x75dda5*/
     v69 = v85.Items; /*0x75dda8*/
-    *(unsigned int *)_ESI->__pad_1C0 = v68; /*0x75ddac*/
+    *(unsigned int *)_ESI->q1C0 = v68; /*0x75ddac*/
     v85.DynamicVectorClass = (unsigned int)(void *)(void*)&VectorClass_int_vftable; /*0x75ddb1*/
     if ( v69 && v85.IsAllocated ) /*0x75ddc1*/
       delete[] (v69); /*0x75ddc4*/
     if ( INIClass::GetString( /*0x75dde6*/
            (INIClass *)a2,
-           (unsigned __int8 *)&_ESI->WarheadTypeClass_field_0x24,
+           (unsigned __int8 *)&_ESI->q024,
            aVerses,
            a10010010010010,
            Destination,
            128) )
     {
       v70 = strtok(Destination, Str); /*0x75de04*/
-      v71 = (double *)&_ESI->__pad_44[92]; /*0x75de06*/
+      v71 = (double *)&_ESI->q044[92]; /*0x75de06*/
       v72 = 11; /*0x75de0c*/
       do /*0x75de58*/
       {
@@ -4023,11 +4023,11 @@ void Voxel_Section::Constructor()
   int v5; // ecx
   int v6; // eax
 
-  this->Voxel_Section_field_0x04 = 0; /*0x75e6bd*/
+  this->q004 = 0; /*0x75e6bd*/
   this->vtable3 = 0; /*0x75e6c0*/
   this->vtable4 = 1; /*0x75e6c3*/
   this->CombatLightSize = 0; /*0x75e6c7*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e6ca*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e6ca*/
   if ( this != (Voxel_Section *)a2 ) /*0x75e6d0*/
   {
     Vector::Cleanup2((_VectorClass_PBVVoxelAnimTypeClass *)this); /*0x75e6d2*/
@@ -4036,7 +4036,7 @@ void Voxel_Section::Constructor()
     if ( v3 ) /*0x75e6e0*/
     {
       v4 = new unsigned char[4 * v3]; /*0x75e6e6*/
-      this->Voxel_Section_field_0x04 = v4; /*0x75e6f0*/
+      this->q004 = v4; /*0x75e6f0*/
       if ( v4 ) /*0x75e6f3*/
       {
         v5 = this->Capacity; /*0x75e6f5*/
@@ -4046,7 +4046,7 @@ void Voxel_Section::Constructor()
         {
           do /*0x75e714*/
           {
-            *(_DWORD *)(this->Voxel_Section_field_0x04 + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x75e70b*/
+            *(_DWORD *)(this->q004 + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x75e70b*/
             ++v6; /*0x75e711*/
           }
           while ( v6 < this->Capacity ); /*0x75e714*/
@@ -4055,14 +4055,14 @@ void Voxel_Section::Constructor()
     }
     else
     {
-      this->Voxel_Section_field_0x04 = 0; /*0x75e718*/
+      this->q004 = 0; /*0x75e718*/
       this->IsAllocated = 0; /*0x75e71b*/
     }
   }
   this->Items = a2[4]; /*0x75e721*/
   this->u32_14 = a2[5]; /*0x75e727*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&DynamicVectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e72a*/
-  return this->__pad_0; /*0x75e732*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&DynamicVectorClass_VoxelAnimTypeClass_const___vftable; /*0x75e72a*/
+  return this->q000; /*0x75e732*/
 }
 } // namespace gamemd
 

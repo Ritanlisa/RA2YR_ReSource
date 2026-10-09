@@ -38,7 +38,7 @@ TriggerClass * * TagClass::Destructor(void * a1)
   TagTypeClass *v6; // ecx
   int v7; // eax
   TagClass **v8; // ecx
-  void *SuperClass_field_0x6C; // ecx
+  void *q06C; // ecx
   TriggerClass *firstTrigger; // eax
   TriggerTypeClass *v11; // eax
   int Owner; // eax
@@ -119,12 +119,12 @@ TriggerClass * * TagClass::Destructor(void * a1)
                   goto LABEL_22; /*0x6e5030*/
               }
             }
-            SuperClass_field_0x6C = stru_A83D50.SuperClass_field_0x6C; /*0x6e5035*/
-            if ( (int)stru_A83D50.SuperClass_field_0x6C >= v7 ) /*0x6e503d*/
+            q06C = stru_A83D50.q06C; /*0x6e5035*/
+            if ( (int)stru_A83D50.q06C >= v7 ) /*0x6e503d*/
             {
-              --stru_A83D50.SuperClass_field_0x6C; /*0x6e5042*/
-              if ( (int)SuperClass_field_0x6C - 1 < 0 && !FootClass_Array.barrelRecoil[0] ) /*0x6e504b*/
-                stru_A83D50.SuperClass_field_0x6C = 0; /*0x6e504d*/
+              --stru_A83D50.q06C; /*0x6e5042*/
+              if ( (int)q06C - 1 < 0 && !FootClass_Array.barrelRecoil[0] ) /*0x6e504b*/
+                stru_A83D50.q06C = 0; /*0x6e504d*/
             }
           }
         }

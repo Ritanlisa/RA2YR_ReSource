@@ -509,6 +509,11 @@ struct DisplayClass {
     void * Draw(int a2);
     void Update(int a2);
     void Update(PowerClass * aP1, int a3, void *a3_2, void *a4);
+    int DisplayClass_field_0x0;  // 0x0 (ml)
+    char[32] __pad_10;  // 0x16 (ml)
+    char[28] __pad_11B4;  // 0x4532 (ml)
+    char[960] __pad_41E;  // 0x1054 (ml)
+    unsigned int q008;  // 0x8 (offset-truth supply)
 };
 
 } // namespace gamemd

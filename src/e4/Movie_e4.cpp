@@ -165,17 +165,17 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
           if ( g_DDraw_AllowStretchBlits == 1 && v14 ) /*0x5befcb*/
           {
             v9 = (int)v13[11]; /*0x5befcd*/
-            if ( v9 < *(int *)&DSurface_ViewBounds.__pad_8[16] ) /*0x5befdb*/
+            if ( v9 < *(int *)&DSurface_ViewBounds.q008[16] ) /*0x5befdb*/
             {
               v10 = (int)v13[12]; /*0x5befdd*/
-              if ( v10 < *(int *)&DSurface_ViewBounds.__pad_8[20] ) /*0x5befec*/
+              if ( v10 < *(int *)&DSurface_ViewBounds.q008[20] ) /*0x5befec*/
               {
-                v15 = (double)*(int *)&DSurface_ViewBounds.__pad_8[16]; /*0x5befee*/
-                v13[15] = *(MovieContext *)&DSurface_ViewBounds.__pad_8[16]; /*0x5beff4*/
+                v15 = (double)*(int *)&DSurface_ViewBounds.q008[16]; /*0x5befee*/
+                v13[15] = *(MovieContext *)&DSurface_ViewBounds.q008[16]; /*0x5beff4*/
                 *(_WORD *)v16.__tail_0 = Math::RoundToInt(v15 / (double)v9); /*0x5bf001*/
                 v13[13] = 0; /*0x5bf008*/
                 v13[16] = v16; /*0x5bf00b*/
-                v13[14] = (MovieContext)((*(_DWORD *)&DSurface_ViewBounds.__pad_8[20] - *(_DWORD *)&v16) / 2); /*0x5bf01d*/
+                v13[14] = (MovieContext)((*(_DWORD *)&DSurface_ViewBounds.q008[20] - *(_DWORD *)&v16) / 2); /*0x5bf01d*/
                 Debug::Log(); /*0x5bf02b*/
               }
             }
@@ -241,7 +241,7 @@ int Movie::Play(int a1, int a2, int a3, const char *a4, char a5, char a6, char a
       }
       BinkMovie::Close(&v23, Str); /*0x5bedec*/
       if ( a8 == 1 ) /*0x5bedf9*/
-        v23.__pad_0[0] = 1; /*0x5bedfb*/
+        v23.q000[0] = 1; /*0x5bedfb*/
       if ( !IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bee06*/
       {
         AudioFrame::CounterInc(); /*0x5bee08*/
@@ -310,28 +310,28 @@ int Movie::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       IDA_LOBYTE(IsSoundEnabled) = stru_A8EB00.?[144]; /*0x7209ed*/
       if ( stru_A8EB00.?[144] ) /*0x7209f4*/
       {
-        IsSoundEnabled = this->Movie_field_0xC; /*0x7209fa*/
+        IsSoundEnabled = this->q00C; /*0x7209fa*/
         if ( (int)IsSoundEnabled > 0 ) /*0x7209ff*/
         {
-          v3 = *(AudioSample **)&this->__pad_28[4]; /*0x720a01*/
+          v3 = *(AudioSample **)&this->q028[4]; /*0x720a01*/
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
           if ( this->__pad_10[1] && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
-            Audio::Release(*(Audio **)&this->__pad_28[4]); /*0x720a1b*/
-          IDA_LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&this->__pad_28[4]) != 0; /*0x720a2a*/
+            Audio::Release(*(Audio **)&this->q028[4]); /*0x720a1b*/
+          IDA_LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&this->q028[4]) != 0; /*0x720a2a*/
           if ( !(_BYTE)IsSoundEnabled ) /*0x720a2f*/
           {
   LABEL_10:
-            IsSoundEnabled = (void *)this->Movie_field_0x8; /*0x720a31*/
+            IsSoundEnabled = (void *)this->q008; /*0x720a31*/
             if ( IsSoundEnabled != (void *)-1 && IsSoundEnabled != (void *)-3 && !dword_A8E7AC ) /*0x720a46*/
             {
               if ( IsSoundEnabled == (void *)-2 ) /*0x720a4b*/
               {
-                this->Movie_field_0x8 = Movie::SelectNextBuildableType((int)this, (int)this->Movie_field_0x4); /*0x720a5e*/
+                this->q008 = Movie::SelectNextBuildableType((int)this, (int)this->q004); /*0x720a5e*/
                 Debug::Log(); /*0x720a61*/
               }
-              IDA_LOBYTE(this->Movie_field_0x8); /*0x720a6f*/
-              this->Movie_field_0x8 = -2; /*0x720a74*/
+              IDA_LOBYTE(this->q008); /*0x720a6f*/
+              this->q008 = -2; /*0x720a74*/
             }
           }
         }

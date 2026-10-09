@@ -166,25 +166,25 @@ int WebBrowser::ShowDialog()
 namespace gamemd {
 int WebBrowser::GoForward()
 {
-  void *WebBrowser_field_0x8; // eax
+  void *q008; // eax
   char v4; // [esp+10h] [ebp+4h]
 
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&WebBrowser_vftable; /*0x7740a8*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&WebBrowser_vftable; /*0x7740a8*/
   Debug::Log(); /*0x7740ae*/
-  if ( this->WebBrowser_field_0x8 ) /*0x7740b3*/
+  if ( this->q008 ) /*0x7740b3*/
   {
     Debug::Log(); /*0x7740c2*/
-    (*(void (__stdcall **)(void *, WebBrowser *))(*(_DWORD *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
-      this->WebBrowser_field_0x8,
+    (*(void (__stdcall **)(void *, WebBrowser *))(*(_DWORD *)this->q008 + 24))( /*0x7740d1*/
+      this->q008,
       this);
-    (*(void (__stdcall **)(void *))(*(_DWORD *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
+    (*(void (__stdcall **)(void *))(*(_DWORD *)this->q008 + 16))(this->q008); /*0x7740da*/
   }
-  WebBrowser_field_0x8 = this->WebBrowser_field_0x8; /*0x7740dd*/
-  if ( WebBrowser_field_0x8 ) /*0x7740e2*/
-    (*(void (__stdcall **)(void *))(*(_DWORD *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
+  q008 = this->q008; /*0x7740dd*/
+  if ( q008 ) /*0x7740e2*/
+    (*(void (__stdcall **)(void *))(*(_DWORD *)q008 + 8))(this->q008); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
     RA2_OPDEL(); /*0x7740f2*/
-  return (int)this->__pad_0; /*0x7740fc*/
+  return (int)this->q000; /*0x7740fc*/
 }
 }
 // 0x551630
@@ -418,20 +418,20 @@ int WebBrowser::GoBack()
   wchar_t *Source; // [esp+9Ch] [ebp+8h]
   wchar_t *v7; // [esp+A0h] [ebp+Ch]
 
-  wcstombs((char *)&v4[0].Flag_field_0x08, Source, 0x40u); /*0x773d55*/
+  wcstombs((char *)&v4[0].q008, Source, 0x40u); /*0x773d55*/
   wcstombs(v5, v7, 0x40u); /*0x773d69*/
-  String::Assign(&v2, (const char *)&v4[0].Flag_field_0x08); /*0x773d7a*/
+  String::Assign(&v2, (const char *)&v4[0].q008); /*0x773d7a*/
   Debug::Log(); /*0x773d8e*/
   LoadPlayerProfile(&v2.m_3[1], (const char **)&v2); /*0x773d9e*/
-  *(_DWORD *)v4[0].__pad_0 = 0; /*0x773da9*/
-  IDA_LOBYTE(v4[0].Flag_field_0x04) = 0; /*0x773dad*/
+  *(_DWORD *)v4[0].q000 = 0; /*0x773da9*/
+  IDA_LOBYTE(v4[0].q004) = 0; /*0x773dad*/
   ReadRegistryOptionsWOL((ObjectClass *)v4); /*0x773db1*/
   if ( (unsigned __int8)Flag::IsNot2(v4) ) /*0x773dba*/
   {
-    FindChannelWOL((const char *)&v4[0].Flag_field_0x08, (int)v5, 1u, *(_DWORD *)(v3 + 16)); /*0x773dd5*/
+    FindChannelWOL((const char *)&v4[0].q008, (int)v5, 1u, *(_DWORD *)(v3 + 16)); /*0x773dd5*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x773ddf*/
   }
-  String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].Flag_field_0x08); /*0x773dee*/
+  String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].q008); /*0x773dee*/
   String::Assign_Alt((String *)&g_WebBrowserConfig, v5); /*0x773dfd*/
   *(_DWORD *)&v2.m_3[1] = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x773e06*/
   ComPtr::Release((ComPtr *)&v2.m_3[1]); /*0x773e0e*/

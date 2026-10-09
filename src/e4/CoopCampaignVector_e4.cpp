@@ -26,7 +26,7 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5c5943*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5c5950*/
   {
     RA2_OPDEL(v3); /*0x5c5958*/
@@ -36,28 +36,28 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
   Block->m_8 = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
     RA2_OPDEL(Block); /*0x5c597b*/
-  return Block->__pad_0; /*0x5c5985*/
+  return Block->q000; /*0x5c5985*/
 }
 } // namespace gamemd
 // 0x5C5A80
 namespace gamemd {
 _DWORD * CoopCampaignVector::Construct(int aP1, int aP2)
 {
-  this->CoopCampaignVector_field_0x04 = 0; /*0x5c5a8b*/
-  this->CoopCampaignVector_field_0x08 = aP1; /*0x5c5a8e*/
-  IDA_LOBYTE(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5a91*/
-  IDA_BYTE1(this->CoopCampaignVector_field_0x0C) = 0; /*0x5c5a95*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
+  this->q004 = 0; /*0x5c5a8b*/
+  this->q008 = aP1; /*0x5c5a8e*/
+  IDA_LOBYTE(this->q00C) = 1; /*0x5c5a91*/
+  IDA_BYTE1(this->q00C) = 0; /*0x5c5a95*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/
     {
-      this->CoopCampaignVector_field_0x04 = aP2; /*0x5c5aa8*/
-      return this->__pad_0; /*0x5c5aae*/
+      this->q004 = aP2; /*0x5c5aa8*/
+      return this->q000; /*0x5c5aae*/
     }
-    this->CoopCampaignVector_field_0x04 = RA2_OPNEW(4 * aP1); /*0x5c5abd*/
-    IDA_BYTE1(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5ac0*/
+    this->q004 = RA2_OPNEW(4 * aP1); /*0x5c5abd*/
+    IDA_BYTE1(this->q00C) = 1; /*0x5c5ac0*/
   }
-  return this->__pad_0; /*0x5c5aad*/
+  return this->q000; /*0x5c5aad*/
 }
 } // namespace gamemd

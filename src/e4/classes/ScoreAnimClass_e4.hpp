@@ -19,6 +19,9 @@ struct ScoreAnimClass {
     unsigned int * Constructor_ScoreAnimClass_0(char a2);
     unsigned int * Constructor_ScoreAnimClass_1(char a2);
     unsigned int * Constructor_ScoreFontClass(char a2);
+    unsigned int m_0;  // 0x0 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q00C;  // 0xC (offset-truth supply)
 };
 
 } // namespace gamemd

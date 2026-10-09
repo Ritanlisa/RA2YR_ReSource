@@ -10,6 +10,7 @@ struct MovieContext {
     unsigned char q000;  // 0x0
 // --- flat members (END) ---
     int Cleanup(void *a1 = 0);
+    char[4] __tail_0;  // 0x0 (ml)
 };
 
 } // namespace gamemd

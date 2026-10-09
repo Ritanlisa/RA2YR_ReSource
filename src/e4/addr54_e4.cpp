@@ -479,7 +479,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     int v19 = 768;
     do
     {
-      ((unsigned int *)&v18->__pad_0)[0] *= 4;
+      ((unsigned int *)&v18->q000)[0] *= 4;
       v18 = (CampaignScore *)((char *)v18 + 1);
       --v19;
     }
@@ -735,8 +735,8 @@ LABEL_26:
       int v29 = (char *)v71 - (char *)v27;
       v76 = v28;
       v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
-      v28->field_0 =(void *)(int)&v72->__pad_0[(unsigned int)v27];
-      v28->field_4 = (void *)v29;
+      v28->field_0 =(void *)(int)&v72->q000[(unsigned int)v27];
+      v28->q004 = (void *)v29;
       if ( *(int *)&(&g_NetworkPlayerBuffer)[80460] < *(int *)&(&g_NetworkPlayerBuffer)[80452]
         || ((&g_NetworkPlayerBuffer)[80457] || !*(unsigned int *)&(&g_NetworkPlayerBuffer)[80452])
         && *(int *)&(&g_NetworkPlayerBuffer)[80464] > 0
@@ -790,7 +790,7 @@ LABEL_26:
     {
       v33 = (INIClass *)v89;
       *(unsigned int *)&((unsigned int **)&g_NetworkPlayerBuffer)[22428][4 * (unsigned int)v89 + 57940] = (unsigned int)v70;
-      v89 = (AbstractClass *)&v33->__pad_0[1];
+      v89 = (AbstractClass *)&v33->q000[1];
     }
     v88 = (AbstractClass *)(0);
     if ( v32 )
@@ -1034,7 +1034,7 @@ LABEL_190:
             *((unsigned char *)v3 + 737) = v63;
           v45 = var974;
           v3[168] = *(unsigned int *)&((unsigned int **)&g_NetworkPlayerBuffer)[22428][4 * dword_ABC558 + 58212];
-          *(unsigned int *)&v45->__pad_298[36] =(unsigned int)v3;
+          *(unsigned int *)&v45->q298[36] =(unsigned int)v3;
           (*(void (**)(unsigned int *))(v3[169] + 12))(v3 + 169);
           var974 = (MapClass *)v3;
           if ( !v44 )
@@ -1081,8 +1081,8 @@ LABEL_217:
             int v53 = (char)v65 - 1;
             do
             {
-              *(unsigned int *)&v49->__pad_298[88] = v52;
-              v49 = *(MapClass **)&v49->__pad_298[36];
+              *(unsigned int *)&v49->q298[88] = v52;
+              v49 = *(MapClass **)&v49->q298[36];
               --v52;
               --v53;
             }

@@ -17,10 +17,10 @@
 namespace gamemd {
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&CCToolTip_vftable; /*0x7784a3*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&CCToolTip_vftable; /*0x7784a3*/
   ToolTipClass::updateString((ToolTipClass *)Block); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
     RA2_OPDEL(Block); /*0x7784b6*/
-  return Block->__pad_0; /*0x7784c0*/
+  return Block->q000; /*0x7784c0*/
 }
 } // namespace gamemd

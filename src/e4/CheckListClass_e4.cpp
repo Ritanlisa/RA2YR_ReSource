@@ -18,11 +18,11 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
   ListClass *v7; // ecx
   ListClass *v8; // esi
   size_t *result; // eax
-  int ListClass_field_0x0C; // edi
+  int q00C; // edi
   int Type; // ebx
   int v12; // ecx
   int v13; // eax
-  int ListClass_field_0x10; // eax
+  int u32_10; // eax
   int v15; // eax
   int v16; // [esp-20h] [ebp-114h]
   size_t v17; // [esp-10h] [ebp-104h]
@@ -33,7 +33,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
   _WORD v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
 
   v8 = v7; /*0x488527*/
-  result = (size_t *)(*(int (**)(void))(*(_DWORD *)v7->__pad_0 + 148))(); /*0x48852b*/
+  result = (size_t *)(*(int (**)(void))(*(_DWORD *)v7->q000 + 148))(); /*0x48852b*/
   if ( (int)this < (int)result )
   {
     result = (size_t *)Array::GetClamped(v8, (int)this); /*0x488543*/
@@ -44,35 +44,35 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
       v22[0] = *((_BYTE *)result + 4) != 0 ? 3 : 32;
       v22[1] = 32; /*0x48857e*/
       swprintf(&v22[2], v17, a2); /*0x488585*/
-      ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
+      q00C = v8[1].q00C; /*0x48858a*/
       Type = BuildingAnim::GetType(); /*0x48859c*/
       if ( a6 ) /*0x4885a7*/
       {
-        ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/
+        q00C |= 0x2000u; /*0x4885b4*/
         v12 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * Type) + 796); /*0x4885bd*/
         if ( *(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x4885c9*/
           v13 = *(unsigned __int8 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + v12); /*0x4885d6*/
         else
           v13 = *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_87F5F0.__pad_58[124] + 372) + 2 * v12); /*0x4885e2*/
         v19[0] = a3; /*0x4885f4*/
-        v19[3] = v8[2].ListClass_field_0x0C; /*0x4885fb*/
+        v19[3] = v8[2].q00C; /*0x4885fb*/
         v19[1] = a4; /*0x488606*/
         v19[2] = a5; /*0x48860a*/
-        (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/
+        (*(void (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 20))( /*0x488615*/
           g_DSurface_Hidden_2,
           v19,
           v13);
       }
-      else if ( (ListClass_field_0x0C & 0x4000) == 0 ) /*0x488620*/
+      else if ( (q00C & 0x4000) == 0 ) /*0x488620*/
       {
-        ListClass_field_0x0C |= 0x1000u; /*0x488622*/
+        q00C |= 0x1000u; /*0x488622*/
       }
-      ListClass_field_0x10 = v8[1].ListClass_field_0x10; /*0x48862f*/
+      u32_10 = v8[1].u32_10; /*0x48862f*/
       v20[0] = a3; /*0x488639*/
-      v18 = ListClass_field_0x10; /*0x488643*/
+      v18 = u32_10; /*0x488643*/
       v20[1] = a4; /*0x488644*/
       v16 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * Type); /*0x488659*/
-      v15 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488662*/
+      v15 = (*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))( /*0x488662*/
               g_DSurface_Hidden_2,
               v21);
       return FillRectangle( /*0x488675*/
@@ -83,7 +83,7 @@ size_t *CheckListClass_OnClick(void * a1, wchar_t * a2, void * a3, void * a4, vo
                (int)v20,
                v16,
                0,
-               ListClass_field_0x0C,
+               q00C,
                a5,
                v18);
     }

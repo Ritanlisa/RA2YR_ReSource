@@ -22,15 +22,15 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
   _DWORD v11[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   Waypoint::InitInvalid((Waypoint *)v11); /*0x53fbdc*/
-  *(_DWORD *)(this->IPXGlobalConnClass_field_0x20 + 8) = 0; /*0x53fbe6*/
-  *(_WORD *)(this->IPXGlobalConnClass_field_0x20 + 12) = 0; /*0x53fbec*/
-  *(_WORD *)this->IPXGlobalConnClass_field_0x20 = this->IPXGlobalConnClass_field_0x24; /*0x53fbf7*/
-  *(_BYTE *)(this->IPXGlobalConnClass_field_0x20 + 2) = !a5 || !a4; /*0x53fc0d*/
-  *(_DWORD *)(this->IPXGlobalConnClass_field_0x20 + 4) = *(_DWORD *)(this->IPXGlobalConnClass_field_0x04 + 44); /*0x53fc22*/
+  *(_DWORD *)(this->q020 + 8) = 0; /*0x53fbe6*/
+  *(_WORD *)(this->q020 + 12) = 0; /*0x53fbec*/
+  *(_WORD *)this->q020 = this->q024; /*0x53fbf7*/
+  *(_BYTE *)(this->q020 + 2) = !a5 || !a4; /*0x53fc0d*/
+  *(_DWORD *)(this->q020 + 4) = *(_DWORD *)(this->q004 + 44); /*0x53fc22*/
   if ( a7 ) /*0x53fc2b*/
-    *(_DWORD *)(this->IPXGlobalConnClass_field_0x20 + 4) = a7; /*0x53fc30*/
-  *(_WORD *)(this->IPXGlobalConnClass_field_0x20 + 14) = this->u32_B8; /*0x53fc3f*/
-  *(_BYTE *)(this->IPXGlobalConnClass_field_0x20 + 3) = 0; /*0x53fc46*/
+    *(_DWORD *)(this->q020 + 4) = a7; /*0x53fc30*/
+  *(_WORD *)(this->q020 + 14) = this->u32_B8; /*0x53fc3f*/
+  *(_BYTE *)(this->q020 + 3) = 0; /*0x53fc46*/
   if ( a4 ) /*0x53fc49*/
   {
     v8 = a4[1]; /*0x53fc4d*/
@@ -39,10 +39,10 @@ void IPXGlobalConnClass::Flush(const void *a2, unsigned int a3, unsigned int a4,
     v11[1] = v8; /*0x53fc57*/
     v11[2] = v9; /*0x53fc5b*/
   }
-  qmemcpy((void *)(this->IPXGlobalConnClass_field_0x20 + 16), a2, a3); /*0x53fc74*/
+  qmemcpy((void *)(this->q020 + 16), a2, a3); /*0x53fc74*/
   return ConnectionClass::queueSendPacket( /*0x53fc99*/
-           (ConnectionClass *)this->IPXGlobalConnClass_field_0x04,
-           (const void *)this->IPXGlobalConnClass_field_0x20,
+           (ConnectionClass *)this->q004,
+           (const void *)this->q020,
            a3 + 16,
            v11,
            12,

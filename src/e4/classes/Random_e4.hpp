@@ -20,6 +20,7 @@ struct Random {
     static int State(void *aP0);  // G57a1 static-form sync (Random::State(&Randomizer_Global) sites)
     static int Gaussian(void *aP0);  // G57a1 static-form sync (RandomMap 0x59c2c1+)
     static int AdvanceRandomBytes(void *aP0);  // G57a1 static-form sync
+    unsigned int u32_24;  // 0x24 (offset-truth supply)
 };
     int AdvanceRandomBytes();  // G57w19k2 C2661 supply
 #endif  // GAMEMD_G2_Random_DEF

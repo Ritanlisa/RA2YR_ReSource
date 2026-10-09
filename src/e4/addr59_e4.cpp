@@ -474,7 +474,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     while ( v8 >= 0 ); /*0x594c81*/
   }
   TileSystem::Constructor((TileSystem *)&v45, 0, 0); /*0x594c89*/
-  *(_DWORD *)v45.__pad_0 = &off_7ED858; /*0x594c92*/
+  *(_DWORD *)v45.q000 = &off_7ED858; /*0x594c92*/
   v46 = 10; /*0x594c9a*/
   Base = 0; /*0x594ca2*/
   NumOfElements = 0; /*0x594ca6*/
@@ -514,7 +514,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     if ( *(int *)v45.__tail_10 < v45.m_8 /*0x594da7*/
       || (IDA_BYTE1(v45.m_C) || !v45.m_8)
       && v46 > 0
-      && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVMapRegionClass *, int, _DWORD))(*(_DWORD *)v45.__pad_0 + 8))(
+      && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVMapRegionClass *, int, _DWORD))(*(_DWORD *)v45.q000 + 8))(
            &v45,
            v46 + v45.m_8,
            0) )
@@ -576,7 +576,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   }
   ComputeMapCameraBounds(v35); /*0x594ee3*/
   RA2_OPDEL(Base); /*0x594eed*/
-  *(_DWORD *)v45.__pad_0 = &(void*)(void*)&VectorClass_MapRegionClass___vftable; /*0x594efb*/
+  *(_DWORD *)v45.q000 = &(void*)(void*)&VectorClass_MapRegionClass___vftable; /*0x594efb*/
   Base = 0; /*0x594f08*/
   NumOfElements = 0; /*0x594f0c*/
   v41 = 0; /*0x594f10*/
@@ -778,15 +778,15 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   struct _WIN32_FIND_DATAA FindFileData; // [esp+130h] [ebp-140h] BYREF
 
   ComPtr::Constructor(&v17); /*0x595fc2*/
-  *(_DWORD *)v17.__pad_0 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x595fd8*/
+  *(_DWORD *)v17.q000 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x595fd8*/
   if ( *(_DWORD *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x595fe5*/
   {
-    WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.ComPtr_field_0x08, *(int *)dword_A8B240); /*0x595ff1*/
+    WDTTerritoryClass = FindWDTTerritoryClass((rc_ptr *)&v17.q008, *(int *)dword_A8B240); /*0x595ff1*/
     ComPtr::Set(&v17, WDTTerritoryClass[1]); /*0x595ffe*/
-    v17.ComPtr_field_0x08 = (int)&(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
-    ComPtr::Release((ComPtr *)&v17.ComPtr_field_0x08); /*0x59600b*/
+    v17.q008 = (int)&(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
+    ComPtr::Release((ComPtr *)&v17.q008); /*0x59600b*/
   }
-  if ( v17.ComPtr_field_0x04 ) /*0x596016*/
+  if ( v17.q004 ) /*0x596016*/
     g_MissionQueueFrame.briefing[376] = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset(Destination, 0, sizeof(Destination)); /*0x596033*/
@@ -809,8 +809,8 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     if ( Surface::LoadToSurfaceSHP(v6, Destination) ) /*0x5960d5*/
     {
-      RawFileClass::Construct((RawFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x5960e7*/
-      CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
+      RawFileClass::Construct((RawFileClass *)&v17.q010, (int)ExistingFileName); /*0x5960e7*/
+      CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x5960fc*/
       v8 = (void *)g_MissionQueueFrame.briefing[451]; /*0x596101*/
       if ( g_MissionQueueFrame.briefing[451] ) /*0x596109*/
       {
@@ -818,7 +818,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
         RA2_OPDEL(v8); /*0x596113*/
       }
       g_MissionQueueFrame.briefing[451] = 0; /*0x59611f*/
-      RawFileClass::Dtor((RawFileClass *)&v17.ComPtr_field_0x10); /*0x596125*/
+      RawFileClass::Dtor((RawFileClass *)&v17.q010); /*0x596125*/
       goto LABEL_39; /*0x59612a*/
     }
     v9 = (void *)g_MissionQueueFrame.briefing[451]; /*0x59612f*/
@@ -829,7 +829,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
     }
     g_MissionQueueFrame.briefing[451] = 0; /*0x596149*/
   }
-  *(_DWORD *)&stru_82ADA8.__pad_14D[31] = a2; /*0x596154*/
+  *(_DWORD *)&stru_82ADA8.q14D[31] = a2; /*0x596154*/
   g_MissionQueueFrame.briefing[361] = (int)a2; /*0x59615d*/
   if ( g_MissionQueueFrame.briefing[385] == -1 ) /*0x596163*/
     g_MissionQueueFrame.briefing[385] = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x596175*/
@@ -854,13 +854,13 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   {
     if ( *(_DWORD *)g_MissionQueueFrame.briefing[451] ) /*0x596215*/
     {
-      RawFileClass::Construct((RawFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x596222*/
-      CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
+      RawFileClass::Construct((RawFileClass *)&v17.q010, (int)ExistingFileName); /*0x596222*/
+      CompressScreenshot(&v17.q010, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
       if ( FindFirstFileA((LPCSTR)&stru_82BA00.ChargerBarrels[6], &FindFileData) == (HANDLE)-1 ) /*0x596252*/
         CreateDirectoryA((LPCSTR)&stru_82BA00.ChargerBarrels[6], 0); /*0x59625a*/
       CopyFileA(ExistingFileName, Destination, 0); /*0x59626e*/
       CleanupRandomMapCache(v16); /*0x596274*/
-      RawFileClass::Dtor((RawFileClass *)&v17.ComPtr_field_0x10); /*0x59627d*/
+      RawFileClass::Dtor((RawFileClass *)&v17.q010); /*0x59627d*/
       v13 = (ComPtr *)g_MissionQueueFrame.briefing[451]; /*0x596282*/
     }
     if ( v13 ) /*0x59628a*/
@@ -881,7 +881,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)())
   Vector::Clear((int)v19); /*0x5962ce*/
   *(_DWORD *)v18.__tail_0 = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
-  *(_DWORD *)v17.__pad_0 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
+  *(_DWORD *)v17.q000 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
   return ComPtr::Release(&v17); /*0x5962f5*/
 }
 }

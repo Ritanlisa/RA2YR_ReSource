@@ -380,7 +380,7 @@ void E4Recv_6EDFD0::sub_6EDFD0(int a2, int a3)
           v4,
           &v6,
           0,
-          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008),
           0,
           1,
           0,
@@ -651,7 +651,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   if ( *(_BYTE *)(v11 + 109) ) /*0x6efdf0*/
   {
     __asm { fild [esp+28h+var_14] } /*0x6efdfb*/
-    _EDX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x6efdff*/
+    _EDX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x6efdff*/
     __asm /*0x6efe05*/
     {
       fdiv st, st(1)
@@ -768,7 +768,7 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   _DWORD v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e07a3*/
+  v5 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008); /*0x6e07a3*/
   WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(_DWORD *)&this->Name[44]); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
@@ -783,7 +783,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   _DWORD v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0803*/
+  v5 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008); /*0x6e0803*/
   WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(_DWORD *)&this->Name[44]); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
@@ -798,7 +798,7 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   _DWORD v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008); /*0x6e0863*/
+  v5 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008); /*0x6e0863*/
   WorldCoords = Cell::GetWorldCoords((Cell *)dword_A8B230, v8, *(_DWORD *)&this->Name[44]); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
@@ -895,8 +895,8 @@ char E4Recv_6E35F0::sub_6E35F0(void * a2, int a3, int a4, int a5)
   if ( (unsigned __int8)LightningStorm::IsActive() ) /*0x6e369b*/
     return 0; /*0x6e36cc*/
   LightningStorm::Start( /*0x6e36bf*/
-    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6044),
-    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6036),
+    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6044),
+    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6036),
     v7,
     (void *)a2);
   return 1; /*0x6e36c6*/
@@ -959,7 +959,7 @@ unsigned int * Tactical_42::loc_6E4B00(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x6e4ab3*/
-  *(unsigned int *)this->__pad_0 = (unsigned int)&vt_VectorClass;
+  *(unsigned int *)this->q000 = (unsigned int)&vt_VectorClass;
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6e4ac0*/
   {
     RA2_OPDEL(v3); /*0x6e4ac8*/
@@ -969,7 +969,7 @@ unsigned int * Tactical_42::loc_6E4B00(unsigned int * Block, char a2)
   this->m_8 = 0; /*0x6e4ae1*/
   if ( (a2 & 1) != 0 ) /*0x6e4ae8*/
     RA2_OPDEL(); /*0x6e4aeb*/
-  return this->__pad_0; /*0x6e4af5*/
+  return this->q000; /*0x6e4af5*/
 
 }
 } // namespace gamemd

@@ -67,9 +67,9 @@ extern int MapClass_Instance;
 void LoadOptions::Construct() {
     mode         = 0;
     extension    = (const char*)(0x829EA0); // off_829EA0
-    field_0C     = 0;
+    q00C     = 0;
     max_entries  = 2048;
-    field_14     = 0;
+    q014     = 0;
     count        = 0;
     capacity     = 0;
     entries      = nullptr;
@@ -91,12 +91,12 @@ const char ** LoadOptions::GetExtension() {
   *(_DWORD *)p_is_active = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/
   *((_DWORD *)p_is_active + 5) = 10; /*0x55875b*/
   *((_DWORD *)p_is_active + 4) = 0; /*0x558762*/
-  *(_DWORD *)this->__pad_4 = 0; /*0x558765*/
-  this->field_0C = 0; /*0x558768*/
-  this->field_14 = 0; /*0x55876b*/
+  *(_DWORD *)this->q004 = 0; /*0x558765*/
+  this->q00C = 0; /*0x558768*/
+  this->q014 = 0; /*0x55876b*/
   v3 = *(_DWORD *)p_is_active; /*0x55876e*/
   this->extension = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
-  *(_DWORD *)&this->__pad_4[4] = &off_829EA0; /*0x558776*/
+  *(_DWORD *)&this->q004[4] = &off_829EA0; /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
   (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x558784*/
   return &this->extension; /*0x558789*/
@@ -147,8 +147,8 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 int LoadOptions::Run() {
   int result; // eax
 
-  *(_DWORD *)this->__pad_4 = 1; /*0x5587f0*/
-  this->field_0C = 0; /*0x5587f7*/
+  *(_DWORD *)this->q004 = 1; /*0x5587f0*/
+  this->q00C = 0; /*0x5587f7*/
   (result) = ((result) & ~0xFF) | ((unsigned int)(SaveLoadDialog::DlgProc((SaveLoadDialog *)this)) & 0xFF); /*0x5587fe*/
   return result;
 }
@@ -173,7 +173,7 @@ char LoadOptions::Check()
   struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
   v2 = 0; /*0x559c2f*/
-  v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
+  v3 = *(const char **)&this->q004[4]; /*0x559c31*/
   v9 = 0; /*0x559c34*/
   v10 = -1; /*0x559c42*/
   v12 = -1; /*0x559c4d*/
@@ -315,7 +315,7 @@ char LoadOptions::CopyItems(int new_size, unsigned int * out_buffer) {
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVFileEntryClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x55a292*/
+    (*(void (__thiscall **)(_VectorClass_PAVFileEntryClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
 }
@@ -495,9 +495,9 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
         // Set default values
         entry->field_436 = 1;  // is_available
         entry->field_437 = 0;  // is_multiplayer
-        entry->field_72  = (uint32_t)(-1);
-        entry->field_73  = (uint32_t)(-1);
-        entry->field_106 = (uint32_t)(-1);
+        entry->q194  = (uint32_t)(-1);
+        entry->q198  = (uint32_t)(-1);
+        entry->q19C = (uint32_t)(-1);
 
         // Set display name from filename
         int len = (int)(strlen(fd.cFileName));

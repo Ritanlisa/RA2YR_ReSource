@@ -39,7 +39,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
       do /*0x76703f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76702e*/
-        *(_DWORD *)v5->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x767033*/
+        *(_DWORD *)v5->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
@@ -51,11 +51,11 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
   }
   else
   {
-    *(_DWORD *)Block->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76705a*/
+    *(_DWORD *)Block->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76705a*/
     ComPtr::Release((ComPtr *)Block); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       RA2_OPDEL(Block); /*0x76706b*/
-    return Block->__pad_0; /*0x767073*/
+    return Block->q000; /*0x767073*/
   }
 }
 } // namespace gamemd
@@ -63,9 +63,9 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7669f9*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     RA2_OPDEL(Block); /*0x766a02*/
-  return Block->__pad_0; /*0x766a0c*/
+  return Block->q000; /*0x766a0c*/
 }
 } // namespace gamemd

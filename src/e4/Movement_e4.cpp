@@ -55,11 +55,11 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   void *v41; // ecx
   void *v42; // edx
   int v43; // eax
-  unsigned int Vector3_field_0x04; // ecx
+  unsigned int q004; // ecx
   int *v45; // eax
   double v46; // st7
   unsigned int v47; // ecx
-  unsigned int Vector3_field_0x08; // esi
+  unsigned int q008; // esi
   unsigned int v49; // edx
   void *v50; // eax
   double *v51; // eax
@@ -106,7 +106,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
 
   _ESI = a1; /*0x5b2104*/
   v11 = *a4 == (void *)g_MissionQueueFrame.localVariables[291]; /*0x5b210e*/
-  *(_DWORD *)v88.__pad_0 = a1; /*0x5b2110*/
+  *(_DWORD *)v88.q000 = a1; /*0x5b2110*/
   if ( v11 /*0x5b2134*/
     && a4[1] == (void *)g_MissionQueueFrame.localVariables[292]
     && a4[2] == (void *)g_MissionQueueFrame.localVariables[293] )
@@ -116,8 +116,8 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     Math::CalcAngle(_ESI[2], v74); /*0x5b214f*/
     __asm { fsub ds:dbl_7E2820 } /*0x5b2154*/
     __asm { fmul ds:dbl_7E2818 }
-    *(_WORD *)v88.__pad_0 = Math::RoundToInt(a3); /*0x5b216b*/
-    v85.Movement_field_00 = *(_DWORD *)v88.__pad_0; /*0x5b217e*/
+    *(_WORD *)v88.q000 = Math::RoundToInt(a3); /*0x5b216b*/
+    v85.Movement_field_00 = *(_DWORD *)v88.q000; /*0x5b217e*/
     IDA_LOWORD(v86) = 0x2000; /*0x5b2182*/
     if ( Math::Abs16Cmp((Math *)&v85, &v86, a5) ) /*0x5b2189*/
     {
@@ -131,17 +131,17 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     {
       IDA_LOWORD(v85.Movement_field_00) -= *a5; /*0x5b21ba*/
     }
-    *(_DWORD *)v88.__pad_0 = *(__int16 *)Vector::ToFacingMath((int *)&v89, v84) - 0x3FFF; /*0x5b21de*/
+    *(_DWORD *)v88.q000 = *(__int16 *)Vector::ToFacingMath((int *)&v89, v84) - 0x3FFF; /*0x5b21de*/
     __asm /*0x5b21e4*/
     {
-      fild dword ptr [esp+98h+var_64.__pad_0]
+      fild dword ptr [esp+98h+var_64.q000]
       fmul ds:dbl_7E2810
       fstp qword ptr [esp+98h+var_50]
     }
     Vector3::Magnitude((int *)_ESI); /*0x5b21f2*/
     __asm /*0x5b21f7*/
     {
-      fstp qword ptr [esp+98h+var_64.field_4]
+      fstp qword ptr [esp+98h+var_64.q004]
       fld qword ptr [esp+98h+var_50]
       fcomp ds:dbl_7E2800
       fnstsw ax
@@ -159,10 +159,10 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
       __asm { fstp qword ptr [esi+8] }
       _ESI[1] = _RT1; /*0x5b2230*/
     }
-    *(_DWORD *)v88.__pad_0 = SLOWORD(v85.Movement_field_00) - 0x3FFF; /*0x5b2241*/
+    *(_DWORD *)v88.q000 = SLOWORD(v85.Movement_field_00) - 0x3FFF; /*0x5b2241*/
     __asm /*0x5b2245*/
     {
-      fild dword ptr [esp+0A0h+var_64.__pad_0]
+      fild dword ptr [esp+0A0h+var_64.q000]
       fmul ds:dbl_7E2810
       fstp [esp+0A0h+var_A0]; double
     }
@@ -171,10 +171,10 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     Movement_field_00_low = SLOWORD(v85.Movement_field_00); /*0x5b2259*/
     __asm { fstp qword ptr [esi] } /*0x5b225e*/
     *_ESI = _RT1; /*0x5b225e*/
-    *(_DWORD *)v88.__pad_0 = Movement_field_00_low - 0x3FFF; /*0x5b2266*/
+    *(_DWORD *)v88.q000 = Movement_field_00_low - 0x3FFF; /*0x5b2266*/
     __asm /*0x5b226a*/
     {
-      fild dword ptr [esp+0A0h+var_64.__pad_0]
+      fild dword ptr [esp+0A0h+var_64.q000]
       fmul ds:dbl_7E2810
       fstp [esp+0A0h+var_A0]; double
     }
@@ -183,15 +183,15 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     v18 = SLOWORD(v85.Movement_field_00); /*0x5b227f*/
     __asm { fstp qword ptr [esi+8] } /*0x5b2284*/
     _ESI[1] = _RT1; /*0x5b2284*/
-    *(_DWORD *)v88.__pad_0 = v18 - 0x3FFF; /*0x5b228c*/
+    *(_DWORD *)v88.q000 = v18 - 0x3FFF; /*0x5b228c*/
     __asm /*0x5b2290*/
     {
-      fild dword ptr [esp+0A0h+var_64.__pad_0]
+      fild dword ptr [esp+0A0h+var_64.q000]
       fmul ds:dbl_7E2810
       fstp [esp+0A0h+var_A0]; double
     }
     Math::SinCos(v77); /*0x5b229d*/
-    __asm { fmul qword ptr [esp+0A0h+var_64.field_4] } /*0x5b22a2*/
+    __asm { fmul qword ptr [esp+0A0h+var_64.q004] } /*0x5b22a2*/
     v20 = *(_DWORD *)_ESI; /*0x5b22ab*/
     __asm { fst qword ptr [esi+10h] } /*0x5b22ad*/
     _ESI[2] = _RT1; /*0x5b22ad*/
@@ -206,13 +206,13 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     IDA_LOWORD(v25) = Math::RoundToInt(a3); /*0x5b22d8*/
     IDA_HIDWORD(v92) = v25; /*0x5b22dd*/
     IDA_LOWORD(v26) = Math::RoundToInt(a3); /*0x5b22e1*/
-    v78 = IDA___PAIR64__(v26 + a2->Vector3_field_0x08, IDA_HIDWORD(v92) + a2->Vector3_field_0x04); /*0x5b22f9*/
-    v27 = Coord::Subtract((Coord *)&v92, *(_DWORD *)a2->__pad_0 + v24, v78, IDA_SHIDWORD(v78)); /*0x5b22ff*/
+    v78 = IDA___PAIR64__(v26 + a2->q008, IDA_HIDWORD(v92) + a2->q004); /*0x5b22f9*/
+    v27 = Coord::Subtract((Coord *)&v92, *(_DWORD *)a2->q000 + v24, v78, IDA_SHIDWORD(v78)); /*0x5b22ff*/
     v28 = v27[1]; /*0x5b2308*/
     v29 = v27[2]; /*0x5b230b*/
-    *(_DWORD *)a2->__pad_0 = *v27; /*0x5b230e*/
-    a2->Vector3_field_0x04 = v28; /*0x5b2310*/
-    a2->Vector3_field_0x08 = v29; /*0x5b2313*/
+    *(_DWORD *)a2->q000 = *v27; /*0x5b230e*/
+    a2->q004 = v28; /*0x5b2310*/
+    a2->q008 = v29; /*0x5b2313*/
     __asm /*0x5b2316*/
     {
       fld qword ptr [esi+10h]
@@ -252,36 +252,36 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   IDA_LOWORD(v35) = Math::RoundToInt(a3); /*0x5b2388*/
   v36 = Coord::Subtract( /*0x5b23a6*/
           (Coord *)&v90,
-          *(_DWORD *)a2->__pad_0 + v33,
-          a2->Vector3_field_0x04 + IDA_HIDWORD(v92),
-          a2->Vector3_field_0x08 + v35);
+          *(_DWORD *)a2->q000 + v33,
+          a2->q004 + IDA_HIDWORD(v92),
+          a2->q008 + v35);
   v37 = v36[1]; /*0x5b23b2*/
   v38 = v36[2]; /*0x5b23b5*/
-  *(_DWORD *)a2->__pad_0 = *v36; /*0x5b23b8*/
-  a2->Vector3_field_0x04 = v37; /*0x5b23be*/
-  a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
+  *(_DWORD *)a2->q000 = *v36; /*0x5b23b8*/
+  a2->q004 = v37; /*0x5b23be*/
+  a2->q008 = v38; /*0x5b23c4*/
   v39 = Vector3::Subtract(a2, (int *)&v90, a4); /*0x5b23c7*/
   v40 = Coord::Length((Coord *)v39); /*0x5b23ce*/
   v41 = *a4; /*0x5b23d3*/
   v42 = a4[1]; /*0x5b23d5*/
   IDA_LODWORD(v89) = v40; /*0x5b23d8*/
-  v43 = *(_DWORD *)a2->__pad_0; /*0x5b23dc*/
-  v88.field_4 = v41; /*0x5b23de*/
-  Vector3_field_0x04 = a2->Vector3_field_0x04; /*0x5b23e2*/
-  v88.field_8 = v42; /*0x5b23e5*/
+  v43 = *(_DWORD *)a2->q000; /*0x5b23dc*/
+  v88.q004 = v41; /*0x5b23de*/
+  q004 = a2->q004; /*0x5b23e2*/
+  v88.q008 = v42; /*0x5b23e5*/
   *(_DWORD *)v87 = v43; /*0x5b23e9*/
-  *(_DWORD *)&v87[4] = Vector3_field_0x04; /*0x5b23f5*/
-  v45 = Coord2D::Sub((Coord2D *)v87, (int *)&v90, &v88.field_4); /*0x5b23ff*/
+  *(_DWORD *)&v87[4] = q004; /*0x5b23f5*/
+  v45 = Coord2D::Sub((Coord2D *)v87, (int *)&v90, &v88.q004); /*0x5b23ff*/
   v46 = Vector::TwoDMagnitudeMath(v45); /*0x5b2406*/
   v47 = (unsigned int)a4[2]; /*0x5b240b*/
-  Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/
+  q008 = a2->q008; /*0x5b240e*/
   v49 = (unsigned int)a4[1]; /*0x5b2411*/
-  v88.field_4 = v50; /*0x5b2414*/
+  v88.q004 = v50; /*0x5b2414*/
   v51 = (double *)Coord::Subtract( /*0x5b242c*/
                     (Coord *)&v90,
-                    (int)*a4 - *(_DWORD *)a2->__pad_0,
-                    v49 - a2->Vector3_field_0x04,
-                    v47 - Vector3_field_0x08);
+                    (int)*a4 - *(_DWORD *)a2->q000,
+                    v49 - a2->q004,
+                    v47 - q008);
   v92 = *v51; /*0x5b2433*/
   __asm { fild dword ptr [esp+98h+var_30] } /*0x5b243e*/
   v93[0] = *((_DWORD *)v51 + 2); /*0x5b2449*/
@@ -299,19 +299,19 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   }
   *(double *)&v87[8] = v91; /*0x5b2489*/
   qmemcpy(v94, v87, sizeof(v94)); /*0x5b248d*/
-  _ESI = *(_DWORD *)v88.__pad_0; /*0x5b248f*/
+  _ESI = *(_DWORD *)v88.q000; /*0x5b248f*/
   __asm { fld qword ptr [esi+8] } /*0x5b2498*/
   __asm
   {
     fchs
     fstp [esp+0A8h+var_A8]; double
   }
-  Math::CalcAngle(v72, **(double **)v88.__pad_0); /*0x5b24a5*/
+  Math::CalcAngle(v72, **(double **)v88.q000); /*0x5b24a5*/
   __asm { fsub ds:dbl_7E2820 } /*0x5b24aa*/
   __asm { fmul ds:dbl_7E2818 }
-  *(_WORD *)v88.__pad_0 = Math::RoundToInt(v46); /*0x5b24c5*/
+  *(_WORD *)v88.q000 = Math::RoundToInt(v46); /*0x5b24c5*/
   __asm { fld [esp+98h+var_10] } /*0x5b24d5*/
-  v86 = *(_DWORD *)v88.__pad_0; /*0x5b24e1*/
+  v86 = *(_DWORD *)v88.q000; /*0x5b24e1*/
   __asm /*0x5b24e5*/
   {
     fchs
@@ -335,28 +335,28 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   }
   Vector2::NormalizeNonZero((int *)_ESI); /*0x5b2557*/
   Function::41C430((double *)_ESI); /*0x5b255e*/
-  __asm { fstp qword ptr [esp+98h+var_88.field_8] } /*0x5b2568*/
-  *(_DWORD *)v88.__pad_0 = (__int16)v86 - 0x3FFF; /*0x5b2575*/
+  __asm { fstp qword ptr [esp+98h+var_88.q008] } /*0x5b2568*/
+  *(_DWORD *)v88.q000 = (__int16)v86 - 0x3FFF; /*0x5b2575*/
   __asm /*0x5b2579*/
   {
-    fild dword ptr [esp+0A0h+var_64.__pad_0]
+    fild dword ptr [esp+0A0h+var_64.q000]
     fmul ds:dbl_7E2810
     fstp [esp+0A0h+var_A0]; double
   }
   Math::ArcTan2(v80); /*0x5b2586*/
-  __asm { fmul qword ptr [esp+0A0h+var_88.field_8] } /*0x5b258b*/
+  __asm { fmul qword ptr [esp+0A0h+var_88.q008] } /*0x5b258b*/
   v53 = (__int16)v86; /*0x5b258f*/
   __asm { fstp qword ptr [esi] } /*0x5b2594*/
   *(double *)_ESI = _RT1; /*0x5b2594*/
-  *(_DWORD *)v88.__pad_0 = v53 - 0x3FFF; /*0x5b259c*/
+  *(_DWORD *)v88.q000 = v53 - 0x3FFF; /*0x5b259c*/
   __asm /*0x5b25a0*/
   {
-    fild dword ptr [esp+0A0h+var_64.__pad_0]
+    fild dword ptr [esp+0A0h+var_64.q000]
     fmul ds:dbl_7E2810
     fstp [esp+0A0h+var_A0]; double
   }
   Math::SinCos(v81); /*0x5b25ad*/
-  __asm { fmul qword ptr [esp+0A0h+var_88.field_8] } /*0x5b25b2*/
+  __asm { fmul qword ptr [esp+0A0h+var_88.q008] } /*0x5b25b2*/
   __asm
   {
     fchs
@@ -368,17 +368,17 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   Math::CalcAngle(*(double *)(_ESI + 16), v82); /*0x5b25d3*/
   __asm { fsub ds:dbl_7E2820 } /*0x5b25d8*/
   __asm { fmul ds:dbl_7E2818 }
-  *(_WORD *)v88.__pad_0 = Math::RoundToInt(v46); /*0x5b25ec*/
-  v85.Movement_field_00 = *(_DWORD *)v88.__pad_0; /*0x5b25fa*/
+  *(_WORD *)v88.q000 = Math::RoundToInt(v46); /*0x5b25ec*/
+  v85.Movement_field_00 = *(_DWORD *)v88.q000; /*0x5b25fa*/
   if ( a6
-    || !a7 && (int)v88.field_4 <= (a8 != 0 ? 6 : 3) << 8
+    || !a7 && (int)v88.q004 <= (a8 != 0 ? 6 : 3) << 8
     || (unsigned __int8)((unsigned int)((*(_DWORD *)a5 >> 7) + 1) >> 1) <= 1u )
   {
     if ( !a9 ) /*0x5b28a1*/
     {
       IDA_LOWORD(v89) = 256; /*0x5b28b6*/
       v68 = (Movement *)Movement::Check((Movement *)a5, &v88, &v89); /*0x5b28bd*/
-      v69 = Movement::DivideAndStoreScaled(v68, (int *)&v88.field_4, 2); /*0x5b28c4*/
+      v69 = Movement::DivideAndStoreScaled(v68, (int *)&v88.q004, 2); /*0x5b28c4*/
       v70 = (__int16 *)Vector::ToFacingMath((int *)v87, v69); /*0x5b28d6*/
       Movement::CompareAbsCoords(&v85, v70, v83); /*0x5b28e0*/
     }
@@ -396,12 +396,12 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   IDA_LOWORD(v59) = Math::RoundToInt(v46); /*0x5b266d*/
   IDA_HIDWORD(v90) = v59; /*0x5b2672*/
   IDA_LOWORD(v60) = Math::RoundToInt(v46); /*0x5b2676*/
-  v61 = Coord::Subtract((Coord *)&v88.field_4, 6 * v58, 6 * IDA_HIDWORD(v90), 6 * v60); /*0x5b2695*/
+  v61 = Coord::Subtract((Coord *)&v88.q004, 6 * v58, 6 * IDA_HIDWORD(v90), 6 * v60); /*0x5b2695*/
   v62 = (double *)Coord::Subtract( /*0x5b26b9*/
                     (Coord *)v87,
-                    *(_DWORD *)a2->__pad_0 + *v61,
-                    a2->Vector3_field_0x04 + v61[1],
-                    a2->Vector3_field_0x08 + v61[2]);
+                    *(_DWORD *)a2->q000 + *v61,
+                    a2->q004 + v61[1],
+                    a2->q008 + v61[2]);
   v90 = *v62; /*0x5b26c0*/
   IDA_LODWORD(v91) = *((_DWORD *)v62 + 2); /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight(&v90); /*0x5b26eb*/
@@ -418,7 +418,7 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
   }
   if ( !a9 ) /*0x5b2737*/
   {
-    v65 = a2->Vector3_field_0x08; /*0x5b2744*/
+    v65 = a2->q008; /*0x5b2744*/
     v66 = v65 - g_MissionQueueFrame.localVariables[307] * v64 - GroundHeight; /*0x5b274b*/
     if ( v66 >= -20 ) /*0x5b2750*/
     {
@@ -430,24 +430,24 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     {
       v67 = v65 + 18; /*0x5b2752*/
     }
-    a2->Vector3_field_0x08 = v67; /*0x5b275f*/
+    a2->q008 = v67; /*0x5b275f*/
   LABEL_34:
     if ( v66 >= g_MissionQueueFrame.localVariables[307] / -2 ) /*0x5b2773*/
     {
       if ( v66 <= g_MissionQueueFrame.localVariables[307] / 2 ) /*0x5b27fa*/
       {
-        IDA_LOWORD(v88.field_4) = 0x4000; /*0x5b2875*/
+        IDA_LOWORD(v88.q004) = 0x4000; /*0x5b2875*/
         IDA_LOWORD(v89) = *a5 / 2; /*0x5b2888*/
-        Movement::CompareAbsCoords(&v85, (__int16 *)&v88.field_4, (__int16 *)&v89); /*0x5b289a*/
+        Movement::CompareAbsCoords(&v85, (__int16 *)&v88.q004, (__int16 *)&v89); /*0x5b289a*/
       }
       else
       {
-        *(_WORD *)v88.__pad_0 = 18432; /*0x5b27ff*/
+        *(_WORD *)v88.q000 = 18432; /*0x5b27ff*/
         IDA_LOWORD(v89) = *a5 / 2; /*0x5b2812*/
         *(_DWORD *)v87 = IDA_LODWORD(v89); /*0x5b281f*/
         if ( Math::Abs16Cmp((Math *)&v85, &v88, (__int16 *)v87) ) /*0x5b2829*/
         {
-          IDA_LOWORD(v85.Movement_field_00) = *(_WORD *)v88.__pad_0; /*0x5b2837*/
+          IDA_LOWORD(v85.Movement_field_00) = *(_WORD *)v88.q000; /*0x5b2837*/
         }
         else if ( *(__int16 *)Math::Sub16(&v88, &v89, &v85) >= 0 ) /*0x5b2858*/
         {
@@ -463,18 +463,18 @@ int Movement::CalcVelocity(double *a1, Vector3 *a2, double a3, void **a4, __int1
     {
       *(_WORD *)v87 = 0x2000; /*0x5b2778*/
       IDA_LOWORD(v89) = *a5 / 2; /*0x5b278b*/
-      *(_DWORD *)v88.__pad_0 = IDA_LODWORD(v89); /*0x5b2798*/
-      if ( Math::Abs16Cmp((Math *)&v85, v87, (__int16 *)v88.__pad_0) ) /*0x5b27a2*/
+      *(_DWORD *)v88.q000 = IDA_LODWORD(v89); /*0x5b2798*/
+      if ( Math::Abs16Cmp((Math *)&v85, v87, (__int16 *)v88.q000) ) /*0x5b27a2*/
       {
         IDA_LOWORD(v85.Movement_field_00) = *(_WORD *)v87; /*0x5b27b0*/
       }
       else if ( *(__int16 *)Math::Sub16((Math *)v87, &v89, &v85) >= 0 ) /*0x5b27d1*/
       {
-        IDA_LOWORD(v85.Movement_field_00) += *(_WORD *)v88.__pad_0; /*0x5b27e7*/
+        IDA_LOWORD(v85.Movement_field_00) += *(_WORD *)v88.q000; /*0x5b27e7*/
       }
       else
       {
-        IDA_LOWORD(v85.Movement_field_00) -= *(_WORD *)v88.__pad_0; /*0x5b27d8*/
+        IDA_LOWORD(v85.Movement_field_00) -= *(_WORD *)v88.q000; /*0x5b27d8*/
       }
     }
   }

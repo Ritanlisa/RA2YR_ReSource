@@ -34,6 +34,18 @@ struct TacticalMap {
     unsigned int q_80;  // +0x80 flat supply (P5 provenance)
     unsigned int q_A0;  // +0xA0 flat supply (P5 provenance)
     unsigned int q_170;  // +0x170 flat supply (P5 provenance)
+    unsigned int q0A8;  // 0xA8 (offset-truth supply)
+    unsigned int q0AC;  // 0xAC (offset-truth supply)
+    unsigned int u32_104;  // 0x104 (offset-truth supply)
+    unsigned int u32_108;  // 0x108 (offset-truth supply)
+    unsigned char u32_10A;  // 0x10A (offset-truth supply)
+    unsigned int u32_10C;  // 0x10C (offset-truth supply)
+    unsigned char u32_10E;  // 0x10E (offset-truth supply)
+    unsigned char u32_11B;  // 0x11B (offset-truth supply)
+    unsigned int u32_24;  // 0x24 (offset-truth supply)
+    unsigned int u32_2B0;  // 0x2B0 (offset-truth supply)
+    unsigned int u32_2B4;  // 0x2B4 (offset-truth supply)
+    unsigned int u32_2B8;  // 0x2B8 (offset-truth supply)
 };
 
 } // namespace gamemd

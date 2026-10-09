@@ -42,6 +42,10 @@ struct TagTypeClass {
     int PowerDrainUpdate(int * a2);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     void* GetAction(unsigned char *** a2);
+    unsigned int u32_250;  // 0x250 (offset-truth supply)
+    unsigned int u32_94;  // 0x94 (offset-truth supply)
+    unsigned int u32_98;  // 0x98 (offset-truth supply)
+    unsigned int u32_9C;  // 0x9C (offset-truth supply)
 };
 
 } // namespace gamemd

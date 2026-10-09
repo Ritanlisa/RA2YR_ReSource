@@ -49,6 +49,12 @@ struct AITriggerTypeClass {
     int RegisterFailure();
     int RegisterSuccess();
     AITriggerTypeClass * ddtor(unsigned int * Block, char a2);
+    unsigned int u32_104;  // 0x104 (offset-truth supply)
+    unsigned int u32_108;  // 0x108 (offset-truth supply)
+    unsigned int u32_B8;  // 0xB8 (offset-truth supply)
+    unsigned int u32_BC;  // 0xBC (offset-truth supply)
+    unsigned int u32_D8;  // 0xD8 (offset-truth supply)
+    unsigned int u32_E4;  // 0xE4 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -210,7 +210,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v29 = v12; /*0x513dbb*/
     v31 = v10; /*0x513dbf*/
     if ( Cell::GetGroundHeight(&v29) > GroundHeight ) /*0x513dca*/
-      v28 = v26 - *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1484); /*0x513ddc*/
+      v28 = v26 - *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1484); /*0x513ddc*/
   }
   v13 = (double)v26 + *(double *)&this->customSound_controller[4]; /*0x513de4*/
   IDA_LOWORD(v14) = Math::RoundToInt(v13); /*0x513de7*/
@@ -221,7 +221,7 @@ signed int BuildingLightClass::UpdateOscillation()
   else
     v16 = 1.1; /*0x513e08*/
   v17 = *(_DWORD *)&stru_A8EB00.?[416] + 2 * v15; /*0x513e20*/
-  v18 = v16 * *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1488) * 900.0; /*0x513e23*/
+  v18 = v16 * *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1488) * 900.0; /*0x513e23*/
   IDA_LOWORD(v19) = Math::RoundToInt(v13); /*0x513e2b*/
   Math::SinCos((double)(v17 % v19) * 6.283185307179586 / v18); /*0x513e4f*/
   IDA_LOWORD(v20) = Math::RoundToInt(v13 + v13 + (double)v14); /*0x513e5d*/
@@ -237,34 +237,34 @@ signed int BuildingLightClass::UpdateOscillation()
   (*(void (__thiscall **)(void *, int))(*(_DWORD *)this->vfptr3 + 460))(this->vfptr3, v20); /*0x513e7f*/
   result = (signed int)this->vfptr3; /*0x513e85*/
   *(_BYTE *)(result + 116) = v22; /*0x513e8c*/
-  v24 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513e8f*/
-  if ( v28 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1484) ) /*0x513e9b*/
+  v24 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x513e8f*/
+  if ( v28 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1484) ) /*0x513e9b*/
   {
     if ( (unsigned __int8)StreamClass::GetDirty((IUnknown *)&this->vfptr1) ) /*0x513ea1*/
-      *(double *)&this->customSound_controller[4] = ((double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] /*0x513ec8*/
+      *(double *)&this->customSound_controller[4] = ((double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] /*0x513ec8*/
                                                                     + 1484)
-                                                   + (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]
+                                                   + (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324]
                                                                     + 1484)
                                                    - (double)v28)
-                                                  / (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1484)
-                                                  * (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5816)
+                                                  / (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1484)
+                                                  * (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5816)
                                                   + *(double *)&this->customSound_controller[4];
-    v24 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513ecd*/
-    result = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1484) / 4; /*0x513edf*/
+    v24 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x513ecd*/
+    result = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1484) / 4; /*0x513edf*/
     if ( v28 < result ) /*0x513ee4*/
     {
       result = (unsigned int)((unsigned __int64)(1431655766LL /*0x513ef5*/
-                                               * *(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5816)) >> 32) >> 31;
-      *(double *)&this->customSound_controller[4] = (double)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] /*0x513f05*/
+                                               * *(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5816)) >> 32) >> 31;
+      *(double *)&this->customSound_controller[4] = (double)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] /*0x513f05*/
                                                                        + 5816)
                                                            / 3)
                                                   + *(double *)&this->customSound_controller[4];
-      v24 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x513f08*/
+      v24 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x513f08*/
     }
   }
   v25 = *(double *)&this->customSound_controller[4] - (double)v24->RepairRate; /*0x513f15*/
   *(double *)&this->customSound_controller[4] = v25; /*0x513f18*/
-  *(double *)&this->customSound_controller[4] = v25 * *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1520); /*0x513f27*/
+  *(double *)&this->customSound_controller[4] = v25 * *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1520); /*0x513f27*/
   return result; /*0x513f2a*/
 }
 }

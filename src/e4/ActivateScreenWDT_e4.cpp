@@ -41,7 +41,7 @@ rc_ptr_base * ActivateScreenWDT_Create(rc_ptr_base * a1, int a2, unsigned int a3
     v6 = 0; /*0x76f4db*/
   }
   ComPtr::Constructor(a1); /*0x76f4df*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x76f4e6*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x76f4e6*/
   ComPtr::Set(a1, v6); /*0x76f4ee*/
   return a1; /*0x76f4f5*/
 }

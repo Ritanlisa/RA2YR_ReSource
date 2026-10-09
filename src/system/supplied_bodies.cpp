@@ -105,7 +105,7 @@ unsigned int * INIClass::sectionExists() {
   int v5; // edi
   int v6; // edi
 
-  result = this->__pad_0; /*0x52af50*/
+  result = this->q000; /*0x52af50*/
   sectionHead = this->sectionHead; /*0x52af59*/
   this->headNode[1] = 0; /*0x52af5f*/
   this->headNode[2] = 0; /*0x52af62*/
@@ -113,7 +113,7 @@ unsigned int * INIClass::sectionExists() {
   this->sectionHead[1] = 0; /*0x52af6b*/
   this->sectionHead[2] = 0; /*0x52af6e*/
   this->sectionHead[0] = (int)&(void*)(void*)&GenericNode_vftable; /*0x52af71*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GenericList_vftable; /*0x52af77*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&GenericList_vftable; /*0x52af77*/
   if ( this != (INIClass *)-16 ) /*0x52af7d*/
   {
     v3 = this->sectionHead[1]; /*0x52af7f*/
@@ -136,7 +136,7 @@ unsigned int * INIClass::sectionExists() {
   if ( v6 ) /*0x52afad*/
     *(_DWORD *)(v6 + 8) = sectionHead; /*0x52afaf*/
   this->headNode[1] = (int)sectionHead; /*0x52afb2*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&List_INIClass_INIEntry___vftable; /*0x52afb7*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&List_INIClass_INIEntry___vftable; /*0x52afb7*/
   return result; /*0x52afb5*/
 }
 } // namespace gamemd
@@ -287,9 +287,9 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
   this->headNode[1] = 0; /*0x477f50*/
   this->headNode[2] = ((this->headNode[2]) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x477f53*/
   this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x477f57*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x477f5a*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x477f5a*/
   if ( this == (INIClass *)a2 ) /*0x477f60*/
-    return this->__pad_0; /*0x477f60*/
+    return this->q000; /*0x477f60*/
   TypeList_TechnoType::ddtor((_VectorClass_PAVTechnoTypeClass *)this); /*0x477f62*/
   v3 = a2[2]; /*0x477f68*/
   this->headNode[1] = v3; /*0x477f6d*/
@@ -297,24 +297,24 @@ unsigned int * INIClass::parseSection(unsigned int *a2) {
   {
     this->headNode[0] = 0; /*0x477fae*/
     this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(0) & 0xFFu) << 8); /*0x477fb1*/
-    return this->__pad_0; /*0x477fb4*/
+    return this->q000; /*0x477fb4*/
   }
   v4 = new unsigned char[4 * v3]; /*0x477f76*/
   this->headNode[0] = v4; /*0x477f80*/
   if ( !v4 ) /*0x477f83*/
-    return this->__pad_0; /*0x477f83*/
+    return this->q000; /*0x477f83*/
   v5 = this->headNode[1]; /*0x477f85*/
   v6 = 0; /*0x477f88*/
   this->headNode[2] = ((this->headNode[2]) & 0xFFFF00FFu) | (((unsigned int)(1) & 0xFFu) << 8); /*0x477f8c*/
   if ( v5 <= 0 ) /*0x477f90*/
-    return this->__pad_0; /*0x477f90*/
+    return this->q000; /*0x477f90*/
   do /*0x477fa4*/
   {
     *(_DWORD *)(this->headNode[0] + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x477f9b*/
     ++v6; /*0x477fa1*/
   }
   while ( v6 < this->headNode[1] ); /*0x477fa4*/
-  return this->__pad_0; /*0x477fa8*/
+  return this->q000; /*0x477fa8*/
 }
 } // namespace gamemd
 
@@ -349,9 +349,9 @@ int * CellClass::GetScreenRect(int *a2) {
   v15 -= 30; /*0x47fffe*/
   v6 = v15; /*0x480002*/
   v7 = 30; /*0x480014*/
-  v16 += (int)DSurface_ViewBounds.field_4 - 5 * v5; /*0x480019*/
+  v16 += (int)DSurface_ViewBounds.q004 - 5 * v5; /*0x480019*/
   v8 = v16; /*0x48001d*/
-  v9 = *(_DWORD *)&this->__pad_28[16]; /*0x48001f*/
+  v9 = *(_DWORD *)&this->q028[16]; /*0x48001f*/
   if ( v9 == 0xFFFF ) /*0x480027*/
   {
     *a2 = v15; /*0x48002f*/
@@ -405,7 +405,7 @@ unsigned int * GenericList::Constructor() {
   int v5; // edi
   int v6; // edi
 
-  result = &this->vtable; /*0x52ace0*/
+  result = &this->q000; /*0x52ace0*/
   v2 = this + 4; /*0x52ace9*/
   this->u32_8 = 0; /*0x52acef*/
   this->u32_C = 0; /*0x52acf2*/
@@ -413,7 +413,7 @@ unsigned int * GenericList::Constructor() {
   this->u32_14 = 0; /*0x52acfb*/
   this->u32_18 = 0; /*0x52acfe*/
   this->u32_10 = &(void*)(void*)&GenericNode_vftable; /*0x52ad01*/
-  this->vtable = &(void*)(void*)&GenericList_vftable; /*0x52ad07*/
+  this->q000 = &(void*)(void*)&GenericList_vftable; /*0x52ad07*/
   if ( this != (GenericList *)-16 ) /*0x52ad0d*/
   {
     v3 = this->u32_14; /*0x52ad0f*/
@@ -449,11 +449,11 @@ unsigned int * INIClass::findSection(int a2, int a3, int a4, int a5, int a6, int
   this->headNode[2] = a2; /*0x52af19*/
   this->sectionHead[2] = a5; /*0x52af20*/
   this->sectionHead[1] = a4; /*0x52af27*/
-  *(_DWORD *)this->__pad_20 = a8; /*0x52af2e*/
+  *(_DWORD *)this->q020 = a8; /*0x52af2e*/
   this->sectionCount = a7; /*0x52af31*/
-  *(_DWORD *)&this->__pad_20[4] = a6; /*0x52af38*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&INIClass_INIEntry_vftable; /*0x52af3b*/
-  return this->__pad_0; /*0x52af41*/
+  *(_DWORD *)&this->q020[4] = a6; /*0x52af38*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&INIClass_INIEntry_vftable; /*0x52af3b*/
+  return this->q000; /*0x52af41*/
 }
 } // namespace gamemd
 
@@ -474,13 +474,13 @@ namespace gamemd {
   {
     if ( *a3 == 38 ) /*0x55786c*/
     {
-      (*(void (__thiscall **)(ListClass *, int))(*(_DWORD *)this->__pad_0 + 164))(this, -1); /*0x557874*/
+      (*(void (__thiscall **)(ListClass *, int))(*(_DWORD *)this->q000 + 164))(this, -1); /*0x557874*/
       *a3 = 0; /*0x557880*/
       return CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x557886*/
     }
     else if ( *a3 == 40 ) /*0x557894*/
     {
-      (*(void (__thiscall **)(ListClass *, int))(*(_DWORD *)this->__pad_0 + 164))(this, 1); /*0x55789c*/
+      (*(void (__thiscall **)(ListClass *, int))(*(_DWORD *)this->q000 + 164))(this, 1); /*0x55789c*/
       *a3 = 0; /*0x5578a8*/
       return CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x5578ae*/
     }
@@ -494,7 +494,7 @@ namespace gamemd {
   {
     v7 = this->u32_170 /*0x5578e8*/
        + ((*(int (__thiscall **)(void *))(*(_DWORD *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer)
-        - this->ListClass_field_0x10
+        - this->u32_10
         - 1)
        / this->u32_4C;
     this->u32_16C = v7; /*0x5578ea*/

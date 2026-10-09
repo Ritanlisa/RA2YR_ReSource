@@ -46,13 +46,13 @@ struct g_AudioStreamObject_host {
 extern g_AudioStreamObject_host g_AudioStreamObject;  // data: 0x87E180
 // stru_87F5F0 -- Sidebar 域宿主 (需覆盖 +0x258 = 0x87F7E8 SidebarClass 单例)
 struct stru_87F5F0_host {
-    unsigned char __pad_0[0x58];
+    unsigned char q000[0x58];
     unsigned char __pad_58[0x280 - 0x58];
 };
 extern stru_87F5F0_host stru_87F5F0;    // data: 0x87F5F0
 // stru_87E790 -- 临界区宿主 (Enter/LeaveCriticalSection @ +0x68)
 struct stru_87E790_host {
-    unsigned char __pad_0[0x280];
+    unsigned char q000[0x280];
 };
 extern stru_87E790_host stru_87E790;    // data: 0x87E790
 namespace gamemd {
@@ -74,16 +74,16 @@ bool InputManager_ProcessEvents::StubReturnFalse() {
 // 0x6CE320
 namespace gamemd {
 char SuperClass::RemoveFromPointerArray(int a2) {
-  char *SuperClass_field_0x10; // edx
+  char *q010; // edx
   int v3; // eax
   char *v4; // edx
 
-  SuperClass_field_0x10 = (char *)this->SuperClass_field_0x10; /*0x6ce320*/
+  q010 = (char *)this->q010; /*0x6ce320*/
   v3 = a2; /*0x6ce323*/
-  if ( a2 >= (int)SuperClass_field_0x10 ) /*0x6ce329*/
+  if ( a2 >= (int)q010 ) /*0x6ce329*/
     return 0; /*0x6ce34c*/
-  v4 = SuperClass_field_0x10 - 1; /*0x6ce32b*/
-  this->SuperClass_field_0x10 = v4; /*0x6ce32e*/
+  v4 = q010 - 1; /*0x6ce32b*/
+  this->q010 = v4; /*0x6ce32e*/
   if ( a2 < (int)v4 ) /*0x6ce331*/
   {
     do /*0x6ce344*/
@@ -91,7 +91,7 @@ char SuperClass::RemoveFromPointerArray(int a2) {
       ++v3; /*0x6ce337*/
       *((_DWORD *)this->SuperClass_field_0x4 + v3 - 1) = *((_DWORD *)this->SuperClass_field_0x4 + v3); /*0x6ce33b*/
     }
-    while ( v3 < (int)this->SuperClass_field_0x10 ); /*0x6ce344*/
+    while ( v3 < (int)this->q010 ); /*0x6ce344*/
   }
   return 1; /*0x6ce349*/
 }
@@ -102,11 +102,11 @@ namespace gamemd {
 char SuperClass::Get(int a2, int a3, int a4, int a5) {
   int Status; // eax
 
-  SuperClass::StartTimer(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(_DWORD *)&this->__pad_80[16]), 0, 0, 0); /*0x6e1c5d*/
-  *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(_DWORD *)&this->__pad_80[16]) + 96) = 0; /*0x6e1c71*/
+  SuperClass::StartTimer(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(_DWORD *)&this->q080[16]), 0, 0, 0); /*0x6e1c5d*/
+  *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(a2 + 600) + 4 * *(_DWORD *)&this->q080[16]) + 96) = 0; /*0x6e1c71*/
   if ( dword_A83D4C == (Object *)a2 ) /*0x6e1c7c*/
   {
-    SidebarClass::AddCameo((SidebarClass *)&stru_87F5F0.__pad_58[416], 31, *(_DWORD *)&this->__pad_80[16]); /*0x6e1c8c*/
+    SidebarClass::AddCameo((SidebarClass *)&stru_87F5F0.__pad_58[416], 31, *(_DWORD *)&this->q080[16]); /*0x6e1c8c*/
     Status = HouseClass::GetStatus((HouseClass *)0x1F, 0); /*0x6e1c9e*/
     Sidebar::ActivateTab((int *)&stru_87F5F0.__pad_58[416], Status); /*0x6e1ca9*/
   }
@@ -117,7 +117,7 @@ char SuperClass::Get(int a2, int a3, int a4, int a5) {
 // 0x4010A0
 namespace gamemd {
 int AudioChannel::IsActive() {
-  return (this->__pad_0[0] & 2) != 0 || (this->u32_28 & 2) != 0 || (this->u32_50 & 2) != 0; /*0x4010b4*/
+  return (this->q000[0] & 2) != 0 || (this->u32_28 & 2) != 0 || (this->u32_50 & 2) != 0; /*0x4010b4*/
 }
 } // namespace gamemd
 
@@ -244,17 +244,17 @@ int * AudioPool::ProcessQueue() {
   {
     if ( g_AudioConfigState ) /*0x4051d6*/
     {
-      v3 = *(LinkedList **)g_AudioStreamObject.__pad_0; /*0x4051d8*/
-      if ( *(DListNode **)g_AudioStreamObject.__pad_0 != &g_AudioStreamObject ) /*0x4051e4*/
+      v3 = *(LinkedList **)g_AudioStreamObject.q000; /*0x4051d8*/
+      if ( *(DListNode **)g_AudioStreamObject.q000 != &g_AudioStreamObject ) /*0x4051e4*/
       {
         do /*0x40522b*/
         {
-          v4 = *(DListNode **)v3->__pad_0; /*0x4051e8*/
-          if ( (v3[2].__pad_0[0] & 1) != 0 ) /*0x4051ef*/
+          v4 = *(DListNode **)v3->q000; /*0x4051e8*/
+          if ( (v3[2].q000[0] & 1) != 0 ) /*0x4051ef*/
           {
             LinkedList::Init(v3); /*0x4051f3*/
-            *(_DWORD *)v3[26].__pad_0 = 0; /*0x4051f8*/
-            if ( v3[2].__pad_0[0] < 0 ) /*0x405203*/
+            *(_DWORD *)v3[26].q000 = 0; /*0x4051f8*/
+            if ( v3[2].q000[0] < 0 ) /*0x405203*/
               delete[] (v3); /*0x405206*/
             else
               PushFrontLinkedListAlt(dword_87E2A8, (int)v3); /*0x405218*/
@@ -385,7 +385,7 @@ int AudioSample::Destructor() {
     int result; // eax
     Voice *v8; // [esp+0h] [ebp-Ch]
 
-    if ( (AudioSample *)this->AudioSample_field_0x04 != this ) /*0x407aa4*/
+    if ( (AudioSample *)this->q004 != this ) /*0x407aa4*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407aab*/
       LinkedList_Init((void *)this); /*0x407aaf 0x407450 真形*/
@@ -405,7 +405,7 @@ int AudioSample::Destructor() {
     int result; // eax
     Voice *v8; // [esp+0h] [ebp-Ch]
 
-    if ( (AudioSample *)this->AudioSample_field_0x04 != this ) /*0x407aa4*/
+    if ( (AudioSample *)this->q004 != this ) /*0x407aa4*/
     {
       EnterCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x407aab*/
       LinkedList_Init((void *)this); /*0x407aaf 0x407450 真形*/
@@ -417,7 +417,7 @@ int AudioSample::Destructor() {
 // 0x4080D0
 namespace gamemd {
 int AudioSample::IsBuffering() {
-  return (this->AudioSample_field_0x0C & 1) != 0 /*0x4080e8*/
+  return (this->q00C & 1) != 0 /*0x4080e8*/
       && *(_DWORD *)(this->u32_14 + 20) != *(_DWORD *)(this->u32_14 + 24);
 }
 } // namespace gamemd
@@ -436,7 +436,7 @@ int AudioNode::Release() {
 namespace gamemd {
 void AudioSample::InitLinkedList() {
   AudioSample *v1; // ebx
-  int AudioSample_field_0x04; // esi
+  int q004; // esi
   int *p_AudioSample_field_0x04; // edi
   _DWORD *v4; // eax
   int v5; // edx
@@ -449,23 +449,23 @@ void AudioSample::InitLinkedList() {
   int v12; // edi
   int *v13; // esi
 
-  AudioSample_field_0x04 = this->AudioSample_field_0x04; /*0x40884b*/
-  p_AudioSample_field_0x04 = &this->AudioSample_field_0x04; /*0x40884e*/
-  if ( (int *)AudioSample_field_0x04 != &this->AudioSample_field_0x04 ) /*0x408853*/
+  q004 = this->q004; /*0x40884b*/
+  p_AudioSample_field_0x04 = &this->q004; /*0x40884e*/
+  if ( (int *)q004 != &this->q004 ) /*0x408853*/
   {
     do /*0x4088a0*/
     {
-      LinkedList::Init((LinkedList *)AudioSample_field_0x04); /*0x40885c*/
-      v4 = *(_DWORD **)(AudioSample_field_0x04 + 48); /*0x408861*/
-      *(_DWORD *)(AudioSample_field_0x04 + 48) = 0; /*0x408864*/
+      LinkedList::Init((LinkedList *)q004); /*0x40885c*/
+      v4 = *(_DWORD **)(q004 + 48); /*0x408861*/
+      *(_DWORD *)(q004 + 48) = 0; /*0x408864*/
       v5 = v4[5]; /*0x40886d*/
       --*v4; /*0x408871*/
-      v4[5] = v5 - *(_DWORD *)(AudioSample_field_0x04 + 28); /*0x408878*/
+      v4[5] = v5 - *(_DWORD *)(q004 + 28); /*0x408878*/
       v4[4] &= ~2u; /*0x408880*/
-      if ( *(_DWORD *)(AudioSample_field_0x04 + 16) ) /*0x408883*/
-        delete[] (*(void **)(AudioSample_field_0x04 + 16)); /*0x40888b*/
-      delete[] ((void *)AudioSample_field_0x04); /*0x408894*/
-      AudioSample_field_0x04 = *p_AudioSample_field_0x04; /*0x408899*/
+      if ( *(_DWORD *)(q004 + 16) ) /*0x408883*/
+        delete[] (*(void **)(q004 + 16)); /*0x40888b*/
+      delete[] ((void *)q004); /*0x408894*/
+      q004 = *p_AudioSample_field_0x04; /*0x408899*/
     }
     while ( (int *)*p_AudioSample_field_0x04 != p_AudioSample_field_0x04 ); /*0x4088a0*/
   }
@@ -496,7 +496,7 @@ void AudioSample::InitLinkedList() {
     }
     while ( v8 != p_AudioSample_field_0x04 ); /*0x4088d5*/
   }
-  p_AudioSample_field_0x10 = &this->vtable4.AudioSample_field_0x10; /*0x4088db*/
+  p_AudioSample_field_0x10 = &this->vtable4.q010; /*0x4088db*/
   v12 = 2; /*0x4088de*/
   v13 = p_AudioSample_field_0x10; /*0x4088e3*/
   do /*0x408906*/
@@ -522,18 +522,18 @@ int AudioSample::SetField() {
 
   result = this->u32_28; /*0x408930*/
   this->u32_2C = 0; /*0x408937*/
-  this->AudioSample_field_0x0C = result; /*0x40893a*/
+  this->q00C = result; /*0x40893a*/
   if ( result ) /*0x40893d*/
   {
     result = *(_DWORD *)(result + 8 * this->u32_14 + 32); /*0x408943*/
-    this->AudioSample_field_0x04 = result; /*0x408948*/
+    this->q004 = result; /*0x408948*/
   }
   else
   {
-    this->AudioSample_field_0x04 = 0; /*0x408958*/
+    this->q004 = 0; /*0x408958*/
   }
-  this->AudioSample_field_0x08 = 0; /*0x40894b*/
-  this->AudioSample_field_0x10 &= ~1u; /*0x408954*/
+  this->q008 = 0; /*0x40894b*/
+  this->q010 &= ~1u; /*0x408954*/
   return result; /*0x408957*/
 }
 } // namespace gamemd
@@ -649,16 +649,16 @@ char Pathfinding::AStar(int16_t *a2, int16_t *a3, int a4, int a5) {
     double v5; // st7
     Pathfinding *v6; // edi
     int v8; // esi
-    unsigned int *Pathfinding_field_0x14; // eax
+    unsigned int *q014; // eax
     int i; // ecx
     int v11; // ebx
     int v12; // eax
-    int Pathfinding_field_0x10; // eax
+    int q010; // eax
     unsigned int v14; // ecx
     unsigned int v15; // edx
     Pathfinding *v17; // ecx
     unsigned int *v18; // eax
-    int Pathfinding_field_0x08; // eax
+    int q008; // eax
     unsigned int *v20; // ebx
     int v21; // edx
     int v22; // ecx
@@ -669,7 +669,7 @@ char Pathfinding::AStar(int16_t *a2, int16_t *a3, int a4, int a5) {
     int v28; // edx
     int v29; // esi
     int v31; // eax
-    int Pathfinding_field_0x0C; // ecx
+    int q00C; // ecx
     uint16_t v35; // cx
     uint16_t v36; // ax
     int v37; // eax
@@ -749,15 +749,15 @@ void Pathfinding::SiftDown(int a2) {
     int v2; // esi
     int v3; // edx
     int v4; // edi
-    int Pathfinding_field_0x08; // eax
+    int q008; // eax
     int v6; // ebp
     int v7; // edi
 
     v2 = a2; /*0x42dca5*/
     v3 = 2 * a2; /*0x42dcaa*/
     v4 = 2 * a2 + 1; /*0x42dcad*/
-    if ( 2 * a2 > *(unsigned int *)this->__pad_0 /*0x42dccb*/
-      || *(float *)(*(unsigned int *)(this->Pathfinding_field_0x08 + 4 * a2) + 8) <= (double)*(float *)(*(unsigned int *)(this->Pathfinding_field_0x08 + 8 * a2)
+    if ( 2 * a2 > *(unsigned int *)this->q000 /*0x42dccb*/
+      || *(float *)(*(unsigned int *)(this->q008 + 4 * a2) + 8) <= (double)*(float *)(*(unsigned int *)(this->q008 + 8 * a2)
                                                                                                 + 8) )
     {
       v3 = a2; /*0x42dccd*/
@@ -784,7 +784,7 @@ int DriveLocomotionClass::QueryInterface(const void *a2, int *a3) {
       if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x4af74b*/
       {
         if ( this ) /*0x4af752*/
-          pad_18 = this->__pad_18; /*0x4af754*/
+          pad_18 = this->q018; /*0x4af754*/
         else
           pad_18 = 0; /*0x4af759*/
         *a3 = (int)pad_18; /*0x4af75b*/
@@ -814,7 +814,7 @@ int DriveLocomotionClass::QueryInterface(const void *a2, int *a3) {
       if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x4af74b*/
       {
         if ( this ) /*0x4af752*/
-          pad_18 = this->__pad_18; /*0x4af754*/
+          pad_18 = this->q018; /*0x4af754*/
         else
           pad_18 = 0; /*0x4af759*/
         *a3 = (int)pad_18; /*0x4af75b*/
@@ -858,7 +858,7 @@ int DropPodLocomotionClass::QueryInterface(const void *a2, int *a3) {
       if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x4b649b*/
       {
         if ( this ) /*0x4b64a2*/
-          pad_18 = this->__pad_18; /*0x4b64a4*/
+          pad_18 = this->q018; /*0x4b64a4*/
         else
           pad_18 = 0; /*0x4b64a9*/
         *a3 = (int)pad_18; /*0x4b64ab*/
@@ -895,7 +895,7 @@ int DropPodLocomotionClass::QueryInterface(const void *a2, int *a3) {
       if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x4b649b*/
       {
         if ( this ) /*0x4b64a2*/
-          pad_18 = this->__pad_18; /*0x4b64a4*/
+          pad_18 = this->q018; /*0x4b64a4*/
         else
           pad_18 = 0; /*0x4b64a9*/
         *a3 = (int)pad_18; /*0x4b64ab*/
@@ -1019,8 +1019,8 @@ unsigned int * MovementClass::CompareAbsCoords(unsigned int *a2) {
       if ( *(unsigned int *)&(&stru_A8EB00)[416] - v3 >= v4 ) /*0x4c9554*/
       {
   LABEL_14:
-        v7 = *(unsigned int *)this->__pad_0; /*0x4c95b1*/
-        v11 = *(unsigned int *)this->__pad_0; /*0x4c95b3*/
+        v7 = *(unsigned int *)this->q000; /*0x4c95b1*/
+        v11 = *(unsigned int *)this->q000; /*0x4c95b3*/
         goto LABEL_15; /*0x4c95b3*/
       }
       v4 -= *(unsigned int *)&(&stru_A8EB00)[416] - v3; /*0x4c9556*/
@@ -1195,7 +1195,7 @@ int ShipLocomotionClass::QueryInterface(const void *a2, int *a3) {
       if ( !memcmp(a2, &IID_IPiggyback, 0x10u) ) /*0x69ee5b*/
       {
         if ( this ) /*0x69ee62*/
-          pad_18 = this->__pad_18; /*0x69ee64*/
+          pad_18 = this->q018; /*0x69ee64*/
         else
           pad_18 = 0; /*0x69ee69*/
         *a3 = (int)pad_18; /*0x69ee6b*/
@@ -1222,21 +1222,21 @@ int ShipLocomotionClass::QueryInterface(const void *a2, int *a3) {
 // 0x6E6E20
 namespace gamemd {
 void * BuildingLoadQueue::GetNext() {
-    char BuildingLoadQueue_field_0x04; // al
+    char q004; // al
     void *vtable1; // edx
     int uniqueId; // eax
     void ***v5; // eax
     int v7; // ecx
     int16_t v8[4]; // [esp+4h] [ebp-8h] BYREF
 
-    BuildingLoadQueue_field_0x04 = this->BuildingLoadQueue_field_0x04; /*0x6e6e26*/
-    if ( BuildingLoadQueue_field_0x04 == 52 ) /*0x6e6e2b*/
+    q004 = this->q004; /*0x6e6e26*/
+    if ( q004 == 52 ) /*0x6e6e2b*/
     {
       vtable1 = g_BuildingLoadQueue_Array; /*0x6e6e31*/
       if ( g_BuildingLoadQueue_Array ) /*0x6e6e39*/
       {
         uniqueId = g_BuildingLoadQueue_Array; /*0x6e6e3b*/
-        if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e6e4c*/
+        if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->q000 ) /*0x6e6e4c*/
           goto LABEL_10; /*0x6e6e4c*/
         if ( g_BuildingLoadQueue_Array ) /*0x6e6e50*/
         {
@@ -1251,7 +1251,7 @@ void * BuildingLoadQueue::GetNext() {
             g_BuildingLoadQueue_Array = 0; /*0x6e6e78*/
             g_BuildingLoadQueue_Array = ((g_BuildingLoadQueue_Array) & 0xFFFFFF00u) | ((unsigned int)(1) & 0xFFu); /*0x6e6e82*/
           }
-          *(unsigned int *)v8 = *(unsigned int *)this->__pad_0; /*0x6e6e96*/
+          *(unsigned int *)v8 = *(unsigned int *)this->q000; /*0x6e6e96*/
           uniqueId = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, (int *)v8); /*0x6e6e9a*/
           if ( uniqueId ) /*0x6e6ea1*/
           {
@@ -1282,13 +1282,13 @@ void * BuildingLoadQueue::Find() {
     unsigned int *vtable0; // edi
     int v6; // esi
 
-    if ( (unsigned char)(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6f27*/
+    if ( (unsigned char)(this->q004) != 52 ) /*0x6e6f27*/
       return 0; /*0x6e6fe0*/
     vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6f2d*/
     if ( !g_BuildingLoadQueue_Array ) /*0x6e6f37*/
       return AbstractClass::IsTechnoType(unk_B78828); /*0x6e6f37*/
     uniqueId = g_BuildingLoadQueue_Array; /*0x6e6f39*/
-    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e6f49*/
+    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->q000 ) /*0x6e6f49*/
       return AbstractClass::IsTechnoType(*(AbstractClass **)(uniqueId + 4)); /*0x6e6fdf*/
     if ( !(unsigned char)(g_BuildingLoadQueue_Array) ) /*0x6e6f56*/
     {
@@ -1314,13 +1314,13 @@ int BuildingLoadQueue::FindObject() {
     int v6; // esi
     void ***v7; // eax
 
-    if ( (unsigned char)(this->BuildingLoadQueue_field_0x04) != 52 ) /*0x6e6ff7*/
+    if ( (unsigned char)(this->q004) != 52 ) /*0x6e6ff7*/
       return 0; /*0x6e70b8*/
     vtable1 = (int)g_BuildingLoadQueue_Array; /*0x6e6ffd*/
     if ( !g_BuildingLoadQueue_Array ) /*0x6e7007*/
       goto LABEL_13; /*0x6e7007*/
     uniqueId = g_BuildingLoadQueue_Array; /*0x6e7009*/
-    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->__pad_0 ) /*0x6e7019*/
+    if ( g_BuildingLoadQueue_Array && *(unsigned int *)g_BuildingLoadQueue_Array == *(unsigned int *)this->q000 ) /*0x6e7019*/
     {
   LABEL_17:
       v7 = (void ***)(uniqueId + 4); /*0x6e70b3*/

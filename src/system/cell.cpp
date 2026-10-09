@@ -527,7 +527,7 @@ void CellClass::SetWallOwner(int a1, int a5, int a6)
   v7 = a1; /*0x47d214*/
   if ( result != -1 ) /*0x47d21b*/
   {
-    result = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * result); /*0x47d227*/
+    result = *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * result); /*0x47d227*/
     if ( *(_BYTE *)(result + 680) ) /*0x47d22a*/
     {
       result = stru_A8EB00.vfptr[20]; /*0x47d234*/
@@ -665,7 +665,7 @@ const wchar_t* CellClass::GetUIName() const
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)&this->__pad_28[28]); /*0x484ff3*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)&this->q028[28]); /*0x484ff3*/
   if ( BuildingByTiberiumType == -1 ) /*0x484ffb*/
     return 0; /*0x48500a*/
   else
@@ -769,7 +769,7 @@ void CellClass::ReduceTiberium(int amount)
     }
   }
   v12 = v12; /*0x480b4f*/
-  v27 = v13 - (unsigned int)DSurface_ViewBounds.field_4; /*0x480b5f*/
+  v27 = v13 - (unsigned int)DSurface_ViewBounds.q004; /*0x480b5f*/
   v14 = v14; /*0x480b66*/
   v9 = v9; /*0x480b6a*/
   BuildingByTiberiumType = FindBuildingByTiberiumType(*(&this->vtable27)); /*0x480b6e*/

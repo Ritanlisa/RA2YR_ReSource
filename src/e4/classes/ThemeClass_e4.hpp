@@ -33,6 +33,11 @@ struct ThemeClass {
     bool GetField(int a1);
     int Play(int a2);  // 0x720bb0
     int ReadThemeEntry(uint8_t ***a2, void * aRepeat, void * aScenario, void * aSide, void * aSound);
+    int[8] m_Name;  // 0x8 (ml)
+    unsigned int u32_280;  // 0x280 (offset-truth supply)
+    unsigned int u32_288;  // 0x288 (offset-truth supply)
+    unsigned char u32_289;  // 0x289 (offset-truth supply)
+    unsigned int u32_28C;  // 0x28C (offset-truth supply)
 };
 #endif  // GAMEMD_G2_ThemeClass_DEF
 

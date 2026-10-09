@@ -100,7 +100,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
       while ( v5 < 357 ); /*0x451475*/
     }
     BuildingClass::GetHealthRatio(a1); /*0x451479*/
-    _EDX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x45147e*/
+    _EDX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x45147e*/
     __asm /*0x451484*/
     {
       fcomp qword ptr [edx+1700h]
@@ -134,7 +134,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     a1->needsRedraw = 1; /*0x4514ec*/
   }
   v15 = a1->Type; /*0x4514f9*/
-  if ( v15 == *(BuildingTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2172) ) /*0x451505*/
+  if ( v15 == *(BuildingTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2172) ) /*0x451505*/
   {
     SuperWeaponToken = a1->SuperWeaponToken; /*0x45150b*/
     v17 = SuperWeaponToken + 1; /*0x451511*/
@@ -161,7 +161,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
   else
   {
     UpgradeLevel = a1->UpgradeLevel; /*0x4515e9*/
-    if ( UpgradeLevel == *(_DWORD *)&v15->__pad_F70[1392] ) /*0x4515fa*/
+    if ( UpgradeLevel == *(_DWORD *)&v15->qF70[1392] ) /*0x4515fa*/
     {
       return 0; /*0x4515ff*/
     }
@@ -169,7 +169,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
     {
       a1->UpgradeLevel = UpgradeLevel + 1; /*0x45160a*/
       BuildingClass::GetHealthRatio(a1); /*0x451610*/
-      _EAX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x451615*/
+      _EAX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x451615*/
       __asm /*0x45161a*/
       {
         fcomp qword ptr [eax+1700h]

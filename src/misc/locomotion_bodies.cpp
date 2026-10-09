@@ -133,7 +133,7 @@ bool LocomotionClass::Process()
   this->u8_14 = 0; /*0x69eca7*/
   this->u32_4C = 0; /*0x69ecaa*/
   this->u32_48 = v3; /*0x69ecad*/
-  this->__pad_015 = 0; /*0x69ecb3*/
+  this->q015 = 0; /*0x69ecb3*/
   this->u32_58 = -1; /*0x69ecb6*/
   this->u32_5C = -1; /*0x69ecb9*/
   this->u32_60 = 0; /*0x69ecbc*/

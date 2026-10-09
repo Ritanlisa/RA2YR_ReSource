@@ -20,5 +20,9 @@ struct DynamicVectorClass_SubzoneConn {
     DynamicVector * Add(unsigned int * Block, char a2, void *a3_1);  // 0x5890B0
     int GetSize(unsigned int * a2);  // 0x5892D0
     unsigned int Remove(int a2);  // 0x588CC0
+    unsigned char __pad_5;  // 0x5 (offset-truth supply)
+    unsigned char __tail_10;  // 0x10 (offset-truth supply)
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 } // namespace gamemd

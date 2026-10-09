@@ -13,7 +13,7 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x67c0b3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x67c0c0*/
   {
     RA2_OPDEL(v3); /*0x67c0c8*/
@@ -23,6 +23,6 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a
   Block->m_8 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
     RA2_OPDEL(Block); /*0x67c0eb*/
-  return Block->__pad_0; /*0x67c0f5*/
+  return Block->q000; /*0x67c0f5*/
 }
 } // namespace gamemd

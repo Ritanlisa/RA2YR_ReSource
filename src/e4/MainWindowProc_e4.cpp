@@ -39,7 +39,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
       && DSurface::RestoreIfLost((DSurface *)DSurface_Composite)
       && (!stru_A8EB00.?[376] || *(int *)&stru_A8EB00.?[416] > 16) )
     {
-      (*(void (__thiscall **)(AudioStream *, _DWORD))(*(_DWORD *)DSurface_Composite->__pad_0 + 24))( /*0x7774d3*/
+      (*(void (__thiscall **)(AudioStream *, _DWORD))(*(_DWORD *)DSurface_Composite->q000 + 24))( /*0x7774d3*/
         DSurface_Composite,
         0);
     }
@@ -64,7 +64,7 @@ AbstractClass * * sub_777420(ObjectClass *self)
     {
       (*((void (__thiscall **)(DSurface *, char *, _DWORD))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/
         g_DSurface_Primary,
-        &DSurface_ViewBounds.__pad_8[8],
+        &DSurface_ViewBounds.q008[8],
         0);
     }
   }

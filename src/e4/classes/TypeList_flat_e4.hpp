@@ -46,6 +46,10 @@ unsigned int GetCapacity(int a2);
 void InfantryCleanup();
 void ddtor();
     int * CopyFull(VectorClass * aP1);
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 
 } // namespace gamemd

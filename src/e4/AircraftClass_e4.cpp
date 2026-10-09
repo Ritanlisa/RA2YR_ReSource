@@ -615,7 +615,7 @@ int AircraftClass::RevealSight(int a2, int a3)
   result = (int)dword_A8B230->vfptr; /*0x41aeaa*/
   if ( ((int)dword_A8B230->vfptr & 0x1000) != 0 ) /*0x41aeaf*/
   {
-    v10 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 244); /*0x41aec5*/
+    v10 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 244); /*0x41aec5*/
     v17 = this->location[0]; /*0x41aecd*/
     v18 = this->location[1]; /*0x41aed6*/
     vtable0 = (int (__thiscall **)(AircraftClass *))this->vfptr; /*0x41aeda*/
@@ -629,7 +629,7 @@ int AircraftClass::RevealSight(int a2, int a3)
       0,
       0,
       1,
-      v12 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1972) / 2,
+      v12 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1972) / 2,
       0);
     v13 = this->location[1]; /*0x41af21*/
     v14 = this->location[2]; /*0x41af24*/
@@ -646,7 +646,7 @@ int AircraftClass::RevealSight(int a2, int a3)
              0,
              0,
              1,
-             v16 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1972) / 2,
+             v16 < *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1972) / 2,
              1);
   }
   return result; /*0x41ae9b*/
@@ -704,7 +704,7 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
       *p_vtable1 = &(void*)(void*)&AircraftClass_vftable; /*0x41b4e7*/
       v2->vfptr2 = &(void*)(void*)&AircraftClass_vftable; /*0x41b4ed*/
       v2->vfptr3 = &(void*)(void*)&AircraftClass_vftable; /*0x41b4f4*/
-      *(_DWORD *)v2->__pad_6C0 = &(void*)(void*)&AircraftClass_vftable; /*0x41b4fb*/
+      *(_DWORD *)v2->q6C0 = &(void*)(void*)&AircraftClass_vftable; /*0x41b4fb*/
     }
     v11 = v2->locomotor[0]; /*0x41b506*/
     if ( v11 != v10 ) /*0x41b50e*/
@@ -905,8 +905,8 @@ int AircraftClass::IsBelowScreen()
   AircraftTypeClass *Type; // eax
 
   Type = this->Type; /*0x41b989*/
-  if ( Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) /*0x41b99d*/
-    && Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1300) )
+  if ( Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1248) /*0x41b99d*/
+    && Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1300) )
   {
     return ObjectClass::IsBelowScreen(); /*0x41b9a1*/
   }

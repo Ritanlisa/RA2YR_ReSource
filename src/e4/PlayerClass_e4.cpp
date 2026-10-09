@@ -14,7 +14,7 @@ int PlayerClass::SetHouse(int a2)
 {
   char result; // al
 
-  result = (*(int (__thiscall **)(MultiplayerTeam *, int))(*(_DWORD *)this->__pad_0 + 4))(this, a2); /*0x5d8cbb*/
+  result = (*(int (__thiscall **)(MultiplayerTeam *, int))(*(_DWORD *)this->q000 + 4))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
     *(_DWORD *)(dword_A8DA78[a2] + 107) = this->q008; /*0x5d8cd5*/

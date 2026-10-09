@@ -29,8 +29,8 @@ int BlitPlainXlatAlpha_ushort::BlitPlainXlatAlpha_ushort::AddRef(int a2, unsigne
       ++a3; /*0x493d1d*/
       a2 += 2; /*0x493d1e*/
       *(_WORD *)(a2 - 2) = *(_WORD *)(*(_DWORD *)&this->m_1[3] + 2 * (v17 | *(unsigned __int16 *)(v11 + 2 * v15))); /*0x493d38*/
-      if ( (unsigned int)a7 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 28) ) /*0x493d45*/
-        a7 = (unsigned __int16 *)((char *)a7 - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x493d47*/
+      if ( (unsigned int)a7 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x493d45*/
+        a7 = (unsigned __int16 *)((char *)a7 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x493d47*/
       result = (int)v16 - 1; /*0x493d4e*/
       v16 = (unsigned __int16 *)((char *)v16 - 1); /*0x493d4f*/
     }
@@ -40,7 +40,7 @@ int BlitPlainXlatAlpha_ushort::BlitPlainXlatAlpha_ushort::AddRef(int a2, unsigne
 }
 // 0x493d90
 void BlitPlainXlatAlpha_ushort::Release() {
-  return (*(int (__thiscall **)(_BlitPlainXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493dba*/
+  return (*(int (__thiscall **)(_BlitPlainXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493dba*/
            this,
            a2,
            a3,

@@ -95,5 +95,20 @@ int Dispatch(IUnknown * aP1, char a3, int a4, char a5, void *a5_2);  // 0x005007
     AbstractClass * * FlushSidebarTooltip(char a2);  // 0x6A70E0
     char FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4, void *a4_2);  // 0x6A6140
     static char UpdateProductionDisplay(int a1, wchar_t a2, char a3);  // G57w10-S raw 0x006A9540 (was C2597 interim stub)
+    unsigned char __pad_1510;  // 0x1510 (offset-truth supply)
+    unsigned char __pad_152C;  // 0x152C (offset-truth supply)
+    unsigned char __pad_1534;  // 0x1534 (offset-truth supply)
+    unsigned int u32_53AC;  // 0x53AC (offset-truth supply)
+    unsigned int u32_53B0;  // 0x53B0 (offset-truth supply)
+    unsigned int u32_53B4;  // 0x53B4 (offset-truth supply)
+    unsigned int u32_53B8;  // 0x53B8 (offset-truth supply)
+    unsigned int u32_53BC;  // 0x53BC (offset-truth supply)
+    unsigned int u32_53CC;  // 0x53CC (offset-truth supply)
+    unsigned int u32_53D0;  // 0x53D0 (offset-truth supply)
+    unsigned char u32_53D1;  // 0x53D1 (offset-truth supply)
+    unsigned char u32_53D2;  // 0x53D2 (offset-truth supply)
+    unsigned char u32_53D3;  // 0x53D3 (offset-truth supply)
+    unsigned int u32_53D4;  // 0x53D4 (offset-truth supply)
+    unsigned int u32_53D8;  // 0x53D8 (offset-truth supply)
 };
 } // namespace gamemd

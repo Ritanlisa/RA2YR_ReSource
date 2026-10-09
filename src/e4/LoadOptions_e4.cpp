@@ -302,7 +302,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVFileEntryClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x55a3be*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVFileEntryClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x55a3be*/
   }
   v7 = this->m_8; /*0x55a3c1*/
   if ( v7 < this->m_10 ) /*0x55a3c9*/
@@ -338,7 +338,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
   void *v3; // eax
 
   v3 = *(void **)&a1->m_1[3]; /*0x55a413*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a416*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a416*/
   if ( v3 && IDA_BYTE1(a1->m_C) ) /*0x55a420*/
   {
     RA2_OPDEL(v3); /*0x55a428*/
@@ -348,7 +348,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
   a1->m_8 = 0; /*0x55a441*/
   if ( (a1 & 1) != 0 ) /*0x55a448*/
     RA2_OPDEL(a1); /*0x55a44b*/
-  return a1->__pad_0; /*0x55a455*/
+  return a1->q000; /*0x55a455*/
 }
 } // namespace gamemd
 
@@ -359,7 +359,7 @@ DynamicVector * LoadOptions::vt00(char a2, int a1)
   void *v3; // eax
 
   v3 = *(void **)&a1->m_1[3]; /*0x55a463*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a466*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a466*/
   if ( v3 && IDA_BYTE1(a1->m_C) ) /*0x55a470*/
   {
     RA2_OPDEL(v3); /*0x55a478*/
@@ -369,7 +369,7 @@ DynamicVector * LoadOptions::vt00(char a2, int a1)
   a1->m_8 = 0; /*0x55a491*/
   if ( (a1 & 1) != 0 ) /*0x55a498*/
     RA2_OPDEL(a1); /*0x55a49b*/
-  return a1->__pad_0; /*0x55a4a5*/
+  return a1->q000; /*0x55a4a5*/
 }
 } // namespace gamemd
 

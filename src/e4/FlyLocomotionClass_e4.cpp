@@ -62,7 +62,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int i; // edi
   int v4; // esi
   int v5; // eax
-  int ObjectVector_field_0x04; // ecx
+  int q004; // ecx
   int v7; // eax
   int v8; // esi
   void (__stdcall **vtable0)(_DWORD); // edx
@@ -73,13 +73,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( a1->Owner->target ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
-  *(_DWORD *)v11.__pad_0 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfeb7*/
-  v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
-  v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
+  *(_DWORD *)v11.q000 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfeb7*/
+  v11.q014 = 10; /*0x4cfebb*/
+  v11.q010 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  *(_DWORD *)v10.__pad_0 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfecd*/
-  v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
-  v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
+  *(_DWORD *)v10.q000 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfecd*/
+  v10.q014 = 10; /*0x4cfed3*/
+  v10.q010 = 0; /*0x4cfed7*/
   if ( !*(_DWORD *)&dword_A8B238 /*0x4cfeef*/
     || (owner = a1->Owner->owner, owner->enemyHouseIndex == -1)
     || (thisa = 1, (unsigned __int8)House::IsCurrentPlayer((House *)owner)) )
@@ -115,66 +115,66 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
          || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 15
          || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 2) )
       {
-        if ( v10.ObjectVector_field_0x10 >= v10.ObjectVector_field_0x08 /*0x4d0069*/
-          && (!IDA_BYTE1(v10.ObjectVector_field_0x0C) && v10.ObjectVector_field_0x08
-           || v10.ObjectVector_field_0x14 <= 0
-           || !(*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v10.__pad_0 + 8))(
+        if ( v10.q010 >= v10.q008 /*0x4d0069*/
+          && (!IDA_BYTE1(v10.q00C) && v10.q008
+           || v10.q014 <= 0
+           || !(*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v10.q000 + 8))(
                  &v10,
-                 v10.ObjectVector_field_0x14 + v10.ObjectVector_field_0x08,
+                 v10.q014 + v10.q008,
                  0)) )
         {
           continue; /*0x4d006e*/
         }
-        v5 = v10.ObjectVector_field_0x10++; /*0x4d0074*/
-        ObjectVector_field_0x04 = v10.ObjectVector_field_0x04; /*0x4d007b*/
+        v5 = v10.q010++; /*0x4d0074*/
+        q004 = v10.q004; /*0x4d007b*/
       }
       else
       {
-        if ( v11.ObjectVector_field_0x10 >= v11.ObjectVector_field_0x08 /*0x4d00ab*/
-          && (!IDA_BYTE1(v11.ObjectVector_field_0x0C) && v11.ObjectVector_field_0x08
-           || v11.ObjectVector_field_0x14 <= 0
-           || !(*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v11.__pad_0 + 8))(
+        if ( v11.q010 >= v11.q008 /*0x4d00ab*/
+          && (!IDA_BYTE1(v11.q00C) && v11.q008
+           || v11.q014 <= 0
+           || !(*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v11.q000 + 8))(
                  &v11,
-                 v11.ObjectVector_field_0x14 + v11.ObjectVector_field_0x08,
+                 v11.q014 + v11.q008,
                  0)) )
         {
           continue; /*0x4d00b0*/
         }
-        v5 = v11.ObjectVector_field_0x10++; /*0x4d00b6*/
-        ObjectVector_field_0x04 = v11.ObjectVector_field_0x04; /*0x4d00bd*/
+        v5 = v11.q010++; /*0x4d00b6*/
+        q004 = v11.q004; /*0x4d00bd*/
       }
-      *(_DWORD *)(ObjectVector_field_0x04 + 4 * v5) = v4; /*0x4d00c1*/
+      *(_DWORD *)(q004 + 4 * v5) = v4; /*0x4d00c1*/
     }
   }
-  if ( v10.ObjectVector_field_0x10 <= 0 ) /*0x4d00d1*/
+  if ( v10.q010 <= 0 ) /*0x4d00d1*/
   {
-    if ( v11.ObjectVector_field_0x10 <= 0 ) /*0x4d00f8*/
+    if ( v11.q010 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
-    v8 = v11.ObjectVector_field_0x04; /*0x4d0111*/
+    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.q010 - 1); /*0x4d0109*/
+    v8 = v11.q004; /*0x4d0111*/
     vtable0 = (void (__stdcall **)(_DWORD))a1->Owner->vfptr; /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
-    v8 = v10.ObjectVector_field_0x04; /*0x4d00ea*/
+    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.q010 - 1); /*0x4d00e2*/
+    v8 = v10.q004; /*0x4d00ea*/
     vtable0 = (void (__stdcall **)(_DWORD))a1->Owner->vfptr; /*0x4d00ee*/
   }
   vtable0[242](*(_DWORD *)(v8 + 4 * v7)); /*0x4d011b*/
   LABEL_45:
-  *(_DWORD *)v10.__pad_0 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0121*/
-  if ( v10.ObjectVector_field_0x04 && IDA_BYTE1(v10.ObjectVector_field_0x0C) ) /*0x4d0136*/
+  *(_DWORD *)v10.q000 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0121*/
+  if ( v10.q004 && IDA_BYTE1(v10.q00C) ) /*0x4d0136*/
   {
-    RA2_OPDEL((void *)v10.ObjectVector_field_0x04); /*0x4d0139*/
-    v10.ObjectVector_field_0x04 = 0; /*0x4d0141*/
+    RA2_OPDEL((void *)v10.q004); /*0x4d0139*/
+    v10.q004 = 0; /*0x4d0141*/
   }
-  *(_DWORD *)v11.__pad_0 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0149*/
-  IDA_BYTE1(v10.ObjectVector_field_0x0C) = 0; /*0x4d0150*/
-  v10.ObjectVector_field_0x08 = 0; /*0x4d0154*/
-  if ( v11.ObjectVector_field_0x04 ) /*0x4d0159*/
+  *(_DWORD *)v11.q000 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0149*/
+  IDA_BYTE1(v10.q00C) = 0; /*0x4d0150*/
+  v10.q008 = 0; /*0x4d0154*/
+  if ( v11.q004 ) /*0x4d0159*/
   {
-    if ( IDA_BYTE1(v11.ObjectVector_field_0x0C) ) /*0x4d015f*/
-      RA2_OPDEL((void *)v11.ObjectVector_field_0x04); /*0x4d0162*/
+    if ( IDA_BYTE1(v11.q00C) ) /*0x4d015f*/
+      RA2_OPDEL((void *)v11.q004); /*0x4d0162*/
   }
 }
 } // namespace gamemd

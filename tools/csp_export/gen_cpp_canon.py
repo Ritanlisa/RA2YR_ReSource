@@ -166,10 +166,17 @@ for _c, _i in TIL_SEEDED.items():
                                 'offsets': _i.get('offsets') or {},
                                 'parent': None, 'til_seeded': True})
 all_classes = set(db.keys()) | set(layouts.keys())
+# G42.57ax guard: a class named like the enclosing namespace name-hides the
+# namespace once emitted (`class gamemd;` inside `namespace gamemd` breaks
+# every `gamemd::X` reference corpus-wide). Data-side purge lives in
+# purge_gamemd_phantom.py; this keeps the header generator immune too.
+all_classes -= {'gamemd', 'ra2'}
 # classes known only through member evidence (member_types keys, synced
 # member_lookup classes such as Gap2Recv_*) join the canon universe
 all_classes |= {k.rsplit('+', 1)[0] for k in mtypes if '+' in k}
+all_classes -= {'gamemd', 'ra2'}  # re-apply: composite mtypes keys re-seed
 all_classes |= set(J(ROOT / 'tools/member_lookup.json').keys())
+all_classes -= {'gamemd', 'ra2'}  # re-apply after every |= (G42.57ax)
 canon_of = {}
 for c in all_classes:
     cc = canon(c) or c
@@ -474,6 +481,7 @@ for _h in ('src/core/math.hpp', 'src/core/enums.hpp'):
     except OSError:
         pass
 emitted_ident = {}
+NAME_MAP = {}  # G42.57ax: {class: {til member name: cpp member name}}
 _ident_counts = {}
 for cc in canon_keys:
     _n = ident(canon_of.get(cc, cc), canon_of.get(cc, cc))
@@ -723,6 +731,11 @@ for cc in emis_order:
     _drift = 0
     for (o, t, n, sz, orig) in emit_members:
         cmt = '  // 0x%X' % o + (' (was %s)' % orig if orig and orig != n else '')
+        # G42.57ax: record the til-name -> cpp-name rendering decision so a
+        # body-side rewriter (apply_canon_names.py) can converge regenerated
+        # bodies onto the gate-clean canon identifiers.
+        if orig and orig != n and PLACEHOLDER_RE.match(orig):
+            NAME_MAP.setdefault(cc, {})[orig] = n
         # alignment guard: mtab type strings are laid out verbatim, so a 4-byte
         # typed member at a non-4-aligned offset silently re-aligns and drifts
         # every following member. Degrade to size-faithful char[N] (same rule
@@ -846,6 +859,9 @@ for cc in emis_order:
 lines.append('} // namespace gamemd')
 (OUT / 'classes.hpp').write_text('\n'.join(lines), encoding='utf-8')
 print('classes emitted:', emitted)
+Path(ROOT / 'anchors/canon_member_names.json').write_text(
+    json.dumps(NAME_MAP, ensure_ascii=False), encoding='utf-8')
+print('name map entries:', sum(len(v) for v in NAME_MAP.values()))
 
 fl = ['// GENERATED canonical free-function signatures (mechanical).',
       '// sig=csp -> CSP solved; sig=ida-proto -> IDA prototype (unanchored).',

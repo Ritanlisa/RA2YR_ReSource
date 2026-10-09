@@ -42,7 +42,7 @@ namespace gamemd {
     void *CellCoord_To_CellObj(void *a1, void *a2);    // 0x5657A0 真形 (core/cellcoord.hpp 单源);
     int StartAudioControllerAt(int aP0, unsigned int *a2, int **a1);  // 0x7509E0 真形;
     struct stru_87F5F0_host {                      // 0x87F5F0 宿主 (object/supplied_bodies:106 同款)
-        unsigned char __pad_0[0x58];
+        unsigned char q000[0x58];
         unsigned char __pad_58[0x280 - 0x58];      // 覆盖 __pad_58[416] = +0x1F8
     };
     extern stru_87F5F0_host stru_87F5F0;          // data: 0x87F5F0
@@ -198,7 +198,7 @@ bool FootClass::MovementAI()
   if ( !result ) /*0x4da548*/
     return result; /*0x4da548*/
   this->FootClass_field_bool_6B3 = 0; /*0x4da54e*/
-  if ( !(*(_DWORD *)&stru_A8EB00.?[416] % *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6152)) /*0x4da593*/
+  if ( !(*(_DWORD *)&stru_A8EB00.?[416] % *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6152)) /*0x4da593*/
     && !*(_BYTE *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 3383)
     && !(*((unsigned __int8 (__thiscall **)(FootClass *))this->vfptr + 21))(this)
     && !this->inLimbo )
@@ -211,8 +211,8 @@ bool FootClass::MovementAI()
     Traversability = Cell::GetTraversability(v4); /*0x4da5f4*/
     if ( Traversability > 0 ) /*0x4da5f8*/
     {
-      v5 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4da5fe*/
-      IDA_LOWORD(v6) = Math::RoundToInt((double)Traversability * *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] /*0x4da60a*/
+      v5 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x4da5fe*/
+      IDA_LOWORD(v6) = Math::RoundToInt((double)Traversability * *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] /*0x4da60a*/
                                                                        + 6168));
       Traversability = v6; /*0x4da610*/
       result = (*((int (__thiscall **)(FootClass *, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))this->vfptr + 91))( /*0x4da629*/
@@ -445,13 +445,13 @@ bool FootClass::MovementAI()
         }
         if ( *(_DWORD *)((*((int (__thiscall **)(FootClass *))this->vfptr + 33))(this) + 1352) == -1 ) /*0x4dac3b*/
         {
-          if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 520) != -1 ) /*0x4dac86*/
+          if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 520) != -1 ) /*0x4dac86*/
           {
             v46 = this->location[0]; /*0x4dac94*/
             v47 = this->location[1]; /*0x4dac9b*/
             v48 = this->location[2]; /*0x4daca9*/
             StartAudioControllerAt( /*0x4dacb7*/
-              *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 520),
+              *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 520),
               &v46,
               (int **)this->audioController7);
           }

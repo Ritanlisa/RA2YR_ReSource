@@ -208,5 +208,7 @@ struct JumpjetLocomotion {
     unsigned int * TransformCoords(unsigned int *aP1, int *aP2, int *aP3);  // 0x4B4780
     void* Land();  // 0x54CA90
     void* UpdateFacing();  // 0x54D0F0
+    char[24] __pad_5C;  // 0x92 (ml)
+    char[9] __pad_78;  // 0x120 (ml)
 };
 } // namespace gamemd

@@ -392,8 +392,8 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, void * s, int a4, u
     if ( !v14 ) /*0x7b3c62*/
       v14 = hostshort; /*0x7b3c64*/
     *(_WORD *)netshort.sa_data = htons(v14); /*0x7b3c75*/
-    if ( *((_DWORD *)v13 + 1) == qword_A8DBB0.NetworkID_field_0x04 /*0x7b3c9a*/
-      && (!dword_A8DA84 || (unsigned __int8)GUID::Compare(qword_A8DBB0.__pad_0, *dword_A8DA78 + 40)) )
+    if ( *((_DWORD *)v13 + 1) == qword_A8DBB0.q004 /*0x7b3c9a*/
+      && (!dword_A8DA84 || (unsigned __int8)GUID::Compare(qword_A8DBB0.q000, *dword_A8DA78 + 40)) )
     {
       *(_DWORD *)&netshort.sa_data[2] = htonl(0x7F000001u); /*0x7b3cb4*/
       *(_WORD *)netshort.sa_data = htons(dword_841F3C); /*0x7b3cbe*/
@@ -629,7 +629,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAE *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x7b452e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAE *))(*(_DWORD *)this->q000 + 12))(this); /*0x7b452e*/
   }
   v7 = this->m_8; /*0x7b4531*/
   if ( v7 < this->m_10 ) /*0x7b4539*/
@@ -983,7 +983,7 @@ DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, 
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x7b45d3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b45d6*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_unsigned_char___vftable; /*0x7b45d6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x7b45e0*/
   {
     RA2_OPDEL(v3); /*0x7b45e8*/
@@ -993,5 +993,5 @@ DynamicVector * UDPInterfaceClass::receivePacket(unsigned int * Block, char a2, 
   this->m_8 = 0; /*0x7b4601*/
   if ( (a2 & 1) != 0 ) /*0x7b4608*/
     RA2_OPDEL(); /*0x7b460b*/
-  return this->__pad_0; /*0x7b4615*/
+  return this->q000; /*0x7b4615*/
 }  // G42.18c ns repair

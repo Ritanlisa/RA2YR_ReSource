@@ -57,7 +57,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d2ca3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d2cb0*/
   {
     RA2_OPDEL(v3); /*0x5d2cb8*/
@@ -67,7 +67,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
   Block->m_8 = 0; /*0x5d2cd1*/
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
     RA2_OPDEL(Block); /*0x5d2cdb*/
-  return Block->__pad_0; /*0x5d2ce5*/
+  return Block->q000; /*0x5d2ce5*/
 }
 } // namespace gamemd
 
@@ -84,7 +84,7 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Release(void *a1_1)
 {
   ++*((_DWORD *)a1_1 + 2); /*0x76f1a2*/
-  return a1_1->__pad_0; /*0x76f1a5*/
+  return a1_1->q000; /*0x76f1a5*/
 }
 } // namespace gamemd
 
@@ -93,6 +93,6 @@ namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::ddtor()
 {
   --this->q008; /*0x76f1b2*/
-  return this->__pad_0; /*0x76f1b5*/
+  return this->q000; /*0x76f1b5*/
 }
 } // namespace gamemd

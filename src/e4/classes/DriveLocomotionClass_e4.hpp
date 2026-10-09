@@ -55,6 +55,7 @@ struct DriveLocomotionClass {
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
+    int Piggybackee;  // 0x104 (ml)
 };
 
 } // namespace gamemd

@@ -431,5 +431,6 @@ struct VoxelAnimType {
     AbstractClass * * LoadSection(const char *a2, int a3);  // 0x5F7A90
     AbstractClass * * LoadBarrel(const char *a2, int a3);  // 0x5F7DB0
     int LoadAnim();  // 0x5F8110
+    unsigned int u32_104;  // 0x104 (offset-truth supply)
 };
 } // namespace gamemd

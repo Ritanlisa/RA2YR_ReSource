@@ -42,6 +42,7 @@ if _tools_dir not in sys.path:
     sys.path.insert(0, _tools_dir)
 
 from clang_ast_checker import ClangChecker
+import gate_clang_cache
 
 try:
     from load_signals import Signals
@@ -255,14 +256,21 @@ def _get_file_checker(filepath):
     return _file_checker_cache[filepath]
 
 
-def _check_ast_violations(filepath, func_start, func_end):
+def _check_ast_violations(filepath, func_start, func_end, file_violations=None):
     """Check a function body for violations using Clang AST.
+
+    file_violations: precomputed full-file violation list (from the
+    content-addressed gate cache). When provided, no libclang parse happens.
+    Falls back to a live parse otherwise.
 
     Returns list of (line_no, category, detail) tuples for violations
     that fall within [func_start, func_end].
     """
-    checker = _get_file_checker(filepath)
-    all_violations = checker.run_all_checks()
+    if file_violations is None:
+        checker = _get_file_checker(filepath)
+        all_violations = checker.run_all_checks()
+    else:
+        all_violations = file_violations
     # Filter to function range
     func_violations = []
     for line_no, category, detail in all_violations:
@@ -414,7 +422,8 @@ def _check_stub(body_lines, body_line_nums, sig_text):
 # Phase 4: Per-function check
 # ===================================================
 
-def _check_function(filepath, sig_text, body_lines, body_line_nums, func_start, func_end):
+def _check_function(filepath, sig_text, body_lines, body_line_nums, func_start, func_end,
+                    file_violations=None):
     """Run all checks on a single function. Returns list of failure reasons."""
     failures = []
 
@@ -424,7 +433,8 @@ def _check_function(filepath, sig_text, body_lines, body_line_nums, func_start, 
         failures.append(stub_reason)
 
     # Check coding violations (AST-based)
-    vios = _check_ast_violations(filepath, func_start, func_end)
+    vios = _check_ast_violations(filepath, func_start, func_end,
+                                 file_violations=file_violations)
     for line_no, category, detail in vios:
         failures.append(f"{category}: {detail}")
 
@@ -445,7 +455,7 @@ def _extract_full_name(sig_text):
 # ===================================================
 
 def _process_file(filepath, changed_lines, ida_client=None, ida_name_index=None,
-                  ida_min_ratio=0.3, ida_max_stub=0.3):
+                  ida_min_ratio=0.3, ida_max_stub=0.3, file_violations=None):
     try:
         with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
             lines = f.readlines()
@@ -462,7 +472,8 @@ def _process_file(filepath, changed_lines, ida_client=None, ida_name_index=None,
 
         func_name = _extract_func_name(sig_text)
         failures = _check_function(filepath, sig_text, body_lines, body_line_nums,
-                                   func_start, func_end)
+                                   func_start, func_end,
+                                   file_violations=file_violations)
 
         if failures:
             all_pass = False
@@ -579,42 +590,66 @@ def main():
         # Phase A: Check ALL .hpp files for forbidden implementations
         # (not just git-diff changed — violations in core/ headers must be caught
         #  even if those files haven't been recently modified)
+        # gate-perf: parse results come from the content-addressed cache
+        # (tools/gate_clang_cache.py); only cache misses hit libclang, and
+        # misses parse in a worker pool.
         import glob as _glob
         all_hpp = []
         for pattern in ['src/**/*.hpp', 'app/**/*.hpp']:
             all_hpp.extend(_glob.glob(pattern, root_dir=repo_root, recursive=True))
+        hpp_pairs = []
         for rel_path in sorted(set(all_hpp)):
             abs_path = os.path.join(repo_root, rel_path)
-            if not os.path.isfile(abs_path):
-                continue
-            try:
-                checker = ClangChecker(abs_path)
-                checker.parse()
-                hpp_vios = checker.check_hpp_implementations()
-                for line_no, category, detail in hpp_vios:
-                    full_msg = f"FAIL: {rel_path}:{line_no}: {category} -- {detail}"
-                    print(full_msg)
-                    all_pass = False
-                    total_checked += 1
-            except Exception as e:
-                print(f"WARNING: hpp check failed for {rel_path}: {e}", file=sys.stderr)
+            if os.path.isfile(abs_path):
+                hpp_pairs.append((rel_path, abs_path))
+        hpp_payloads = gate_clang_cache.gather_payloads(
+            [ap for _rel, ap in hpp_pairs])
+        for rel_path, abs_path in hpp_pairs:
+            pay = hpp_payloads.get(abs_path)
+            hpp_vios = None
+            if pay and not pay.get('error'):
+                hpp_vios = [tuple(v) for v in pay.get('hpp_impl', [])]
+            else:
+                try:
+                    checker = ClangChecker(abs_path)
+                    checker.parse()
+                    hpp_vios = checker.check_hpp_implementations()
+                except Exception as e:
+                    print(f"WARNING: hpp check failed for {rel_path}: {e}", file=sys.stderr)
+                    continue
+            for line_no, category, detail in hpp_vios:
+                full_msg = f"FAIL: {rel_path}:{line_no}: {category} -- {detail}"
+                print(full_msg)
+                all_pass = False
+                total_checked += 1
 
         # Phase B: Check .cpp files for function-level violations
-        for rel_path, changed_line_set in sorted(changed_files.items()):
+        # gate-perf: warm the cache pool for all changed cpp files in one
+        # parallel pass, then filter cached violations per function.
+        cpp_pairs = []
+        for rel_path in sorted(changed_files):
             if not rel_path.endswith('.cpp'):
                 continue
             if _should_skip(rel_path):
                 continue
-
             abs_path = os.path.join(repo_root, rel_path)
-            if not os.path.isfile(abs_path):
-                continue
+            if os.path.isfile(abs_path):
+                cpp_pairs.append((rel_path, abs_path))
+        cpp_payloads = gate_clang_cache.gather_payloads(
+            [ap for _rel, ap in cpp_pairs])
+        for rel_path, abs_path in cpp_pairs:
+            changed_line_set = changed_files[rel_path]
+            pay = cpp_payloads.get(abs_path)
+            file_violations = None
+            if pay and not pay.get('error'):
+                file_violations = [tuple(v) for v in pay.get('all', [])]
 
             outputs, file_pass = _process_file(
                 abs_path, changed_line_set,
                 ida_client=ida_client, ida_name_index=ida_name_index,
                 ida_min_ratio=args.min_ida_ratio,
-                ida_max_stub=args.max_ida_stub_ratio
+                ida_max_stub=args.max_ida_stub_ratio,
+                file_violations=file_violations
             )
 
             for line in outputs:
@@ -631,6 +666,7 @@ def main():
     finally:
         if ida_client:
             ida_client.disconnect()
+        gate_clang_cache.prune()
 
     if total_checked == 0:
         print("No functions to check in specified files.")

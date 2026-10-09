@@ -78,7 +78,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_VPoint2D *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d0a74*/
+    (*(void (__thiscall **)(_DynamicVectorClass_VPoint2D *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d0a74*/
   }
   v10 = this->m_8; /*0x5d0a77*/
   if ( v10 < this->m_10 ) /*0x5d0a7f*/
@@ -93,13 +93,13 @@ MSPCXAnim * MSPCXAnim::QueryInterface(char a2, int a3)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)a3 + 9); /*0x5ced73*/
-  *(_DWORD *)a3->__pad_0 = &(void*)(void*)&MSPCXAnim_vftable; /*0x5ced76*/
+  *(_DWORD *)a3->q000 = &(void*)(void*)&MSPCXAnim_vftable; /*0x5ced76*/
   if ( v3 ) /*0x5ced7e*/
     (**v3)(v3, 1); /*0x5ced84*/
-  *(_DWORD *)a3->__pad_0 = &(void*)(void*)&MSAnim_vftable; /*0x5ced8a*/
+  *(_DWORD *)a3->q000 = &(void*)(void*)&MSAnim_vftable; /*0x5ced8a*/
   if ( (a3 & 1) != 0 ) /*0x5ced92*/
     RA2_OPDEL(a3); /*0x5ced95*/
-  return a3->__pad_0; /*0x5ced9f*/
+  return a3->q000; /*0x5ced9f*/
 }
 }  // G42.18c ns repair
 // 0x5D05A0
@@ -350,7 +350,7 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVMSTextEntry *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d0cee*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVMSTextEntry *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d0cee*/
   }
   v7 = this->m_8; /*0x5d0cf1*/
   if ( v7 < this->m_10 ) /*0x5d0cf9*/
@@ -417,7 +417,7 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVMapSelection *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d0f4e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVMapSelection *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d0f4e*/
   }
   v7 = this->m_8; /*0x5d0f51*/
   if ( v7 < this->m_10 ) /*0x5d0f59*/
@@ -519,7 +519,7 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVMapStage *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d1082*/
+    (*(void (__thiscall **)(_VectorClass_PAVMapStage *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d1082*/
     return 1; /*0x5d1088*/
   }
 }
@@ -611,7 +611,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVMapStage *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d11ae*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVMapStage *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d11ae*/
   }
   v7 = this->m_8; /*0x5d11b1*/
   if ( v7 < this->m_10 ) /*0x5d11b9*/
@@ -713,7 +713,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVMSAnimEntry *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d12e2*/
+    (*(void (__thiscall **)(_VectorClass_PAVMSAnimEntry *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d12e2*/
     return 1; /*0x5d12e8*/
   }
 }
@@ -805,7 +805,7 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVMSAnimEntry *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d140e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVMSAnimEntry *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d140e*/
   }
   v7 = this->m_8; /*0x5d1411*/
   if ( v7 < this->m_10 ) /*0x5d1419*/
@@ -873,7 +873,7 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVMSSfxEntry *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d166e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVMSSfxEntry *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d166e*/
   }
   v7 = this->m_8; /*0x5d1671*/
   if ( v7 < this->m_10 ) /*0x5d1679*/
@@ -910,7 +910,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Bl
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d1713*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x5d1716*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x5d1716*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d1720*/
   {
     RA2_OPDEL(v3); /*0x5d1728*/
@@ -920,7 +920,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Bl
   Block->m_8 = 0; /*0x5d1741*/
   if ( (a2 & 1) != 0 ) /*0x5d1748*/
     RA2_OPDEL(Block); /*0x5d174b*/
-  return Block->__pad_0; /*0x5d1755*/
+  return Block->q000; /*0x5d1755*/
 }
 } // namespace gamemd
 
@@ -931,7 +931,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned in
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d17b3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MSTextEntry___vftable; /*0x5d17b6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MSTextEntry___vftable; /*0x5d17b6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d17c0*/
   {
     RA2_OPDEL(v3); /*0x5d17c8*/
@@ -941,7 +941,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned in
   Block->m_8 = 0; /*0x5d17e1*/
   if ( (a2 & 1) != 0 ) /*0x5d17e8*/
     RA2_OPDEL(Block); /*0x5d17eb*/
-  return Block->__pad_0; /*0x5d17f5*/
+  return Block->q000; /*0x5d17f5*/
 }
 } // namespace gamemd
 
@@ -952,7 +952,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned i
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d1853*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MapSelection___vftable; /*0x5d1856*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MapSelection___vftable; /*0x5d1856*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d1860*/
   {
     RA2_OPDEL(v3); /*0x5d1868*/
@@ -962,7 +962,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned i
   Block->m_8 = 0; /*0x5d1881*/
   if ( (a2 & 1) != 0 ) /*0x5d1888*/
     RA2_OPDEL(Block); /*0x5d188b*/
-  return Block->__pad_0; /*0x5d1895*/
+  return Block->q000; /*0x5d1895*/
 }
 } // namespace gamemd
 
@@ -973,7 +973,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(unsigned in
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d18a3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5d18a6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5d18a6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d18b0*/
   {
     RA2_OPDEL(v3); /*0x5d18b8*/
@@ -983,7 +983,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(unsigned in
   Block->m_8 = 0; /*0x5d18d1*/
   if ( (a2 & 1) != 0 ) /*0x5d18d8*/
     RA2_OPDEL(Block); /*0x5d18db*/
-  return Block->__pad_0; /*0x5d18e5*/
+  return Block->q000; /*0x5d18e5*/
 }
 } // namespace gamemd
 
@@ -994,7 +994,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d18f3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5d18f6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5d18f6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d1900*/
   {
     RA2_OPDEL(v3); /*0x5d1908*/
@@ -1004,7 +1004,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x5d1921*/
   if ( (a2 & 1) != 0 ) /*0x5d1928*/
     RA2_OPDEL(Block); /*0x5d192b*/
-  return Block->__pad_0; /*0x5d1935*/
+  return Block->q000; /*0x5d1935*/
 }
 } // namespace gamemd
 
@@ -1015,7 +1015,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d1943*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1946*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1946*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d1950*/
   {
     RA2_OPDEL(v3); /*0x5d1958*/
@@ -1025,7 +1025,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x5d1971*/
   if ( (a2 & 1) != 0 ) /*0x5d1978*/
     RA2_OPDEL(Block); /*0x5d197b*/
-  return Block->__pad_0; /*0x5d1985*/
+  return Block->q000; /*0x5d1985*/
 }
 } // namespace gamemd
 
@@ -1036,7 +1036,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(unsigned in
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d1993*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1996*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1996*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d19a0*/
   {
     RA2_OPDEL(v3); /*0x5d19a8*/
@@ -1046,7 +1046,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(unsigned in
   Block->m_8 = 0; /*0x5d19c1*/
   if ( (a2 & 1) != 0 ) /*0x5d19c8*/
     RA2_OPDEL(Block); /*0x5d19cb*/
-  return Block->__pad_0; /*0x5d19d5*/
+  return Block->q000; /*0x5d19d5*/
 }
 } // namespace gamemd
 
@@ -1057,7 +1057,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(unsigned int
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d1a33*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_MSSfxEntry___vftable; /*0x5d1a36*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_MSSfxEntry___vftable; /*0x5d1a36*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d1a40*/
   {
     RA2_OPDEL(v3); /*0x5d1a48*/
@@ -1067,6 +1067,6 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(unsigned int
   Block->m_8 = 0; /*0x5d1a61*/
   if ( (a2 & 1) != 0 ) /*0x5d1a68*/
     RA2_OPDEL(Block); /*0x5d1a6b*/
-  return Block->__pad_0; /*0x5d1a75*/
+  return Block->q000; /*0x5d1a75*/
 }
 } // namespace gamemd

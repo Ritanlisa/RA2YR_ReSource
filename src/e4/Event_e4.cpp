@@ -207,8 +207,8 @@ int sub_796960()
     if ( !g_NetworkLobbyState && stru_B76AC4.ambientSoundController[4] ) /*0x796a00*/
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
-        qmemcpy(&v9[0].__pad_0[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
-      *(_DWORD *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
+        qmemcpy(&v9[0].q000[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
+      *(_DWORD *)&v9[0].q000[44] = 0; /*0x796a21*/
       Network::SyncPlayerList(v1); /*0x796a29*/
       Event::Dispatch(); /*0x796a2e*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
@@ -336,7 +336,7 @@ int sub_786270()
   Debug::Log(); /*0x786353*/
   (*(void (__stdcall **)(LPVOID, char *, int, int))(*(_DWORD *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
-    &g_WindowManager.__pad_70[28],
+    &g_WindowManager.q070[28],
     stru_B76AC4.ambientSoundController[3],
     3);
   return 1; /*0x78631f*/

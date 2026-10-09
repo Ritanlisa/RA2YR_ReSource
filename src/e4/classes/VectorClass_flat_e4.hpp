@@ -232,5 +232,11 @@ void ClearAndFree4();void Destroy(void *a1);;
     bool SetCapacity(const char ** a2);  // 0x???
     char Remove(int a2, int * a3);
     char Clear(int a2);
+    unsigned char DynamicVector_field_0x1;  // 0x1 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q008;  // 0x8 (offset-truth supply)
+    unsigned int q00C;  // 0xC (offset-truth supply)
+    unsigned int q010;  // 0x10 (offset-truth supply)
+    unsigned int q014;  // 0x14 (offset-truth supply)
 };  // fix_truncated_headers: restored closer
 }  // fix_truncated_headers: restored closer // namespace gamemd

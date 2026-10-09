@@ -186,7 +186,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   INIClass::ResetSection((INIClass *)a2); /*0x6e6093*/
   if ( !INIClass::GetString( /*0x6e60b4*/
           (INIClass *)a2,
-          (unsigned __int8 *)&stru_842C2C.SuperWeaponClass_field_0x10,
+          (unsigned __int8 *)&stru_842C2C.q010,
           (unsigned __int8 *)&this->arrayIndex,
           &g_INI_DefaultBuffer,
           String,
@@ -228,7 +228,7 @@ int TagTypeClass::GetParameter(char * a2)
     wsprintfA(Source, "%s,<none>", (const char *)&this->persistence0); /*0x6e6181*/
   INIClass::SetString( /*0x6e6199*/
     a2,
-    (unsigned __int8 *)&stru_842C2C.SuperWeaponClass_field_0x10,
+    (unsigned __int8 *)&stru_842C2C.q010,
     (char *)&this->arrayIndex,
     Source);
   return 1; /*0x6e61db*/

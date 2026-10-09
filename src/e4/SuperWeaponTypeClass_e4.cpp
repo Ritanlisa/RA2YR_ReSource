@@ -83,7 +83,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   v36 = this->q057 > 0; /*0x4f6565*/
   v33 = this->u32_158 > 0; /*0x4f656c*/
   v37 = this->q058 > 0; /*0x4f6573*/
-  v2 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2848; /*0x4f657d*/
+  v2 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2848; /*0x4f657d*/
   v32 = (int)this->UIName > 0; /*0x4f6583*/
   v3 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->? + 152)); /*0x4f6598*/
   v4 = v2->uniqueId; /*0x4f659a*/
@@ -111,12 +111,12 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/
-  v11 = (*(int (__stdcall **)(int *))(this->__pad_24[0] + 24))(this->__pad_24); /*0x4f6603*/
+  v11 = (*(int (__stdcall **)(int *))(this->q024[0] + 24))(this->q024); /*0x4f6603*/
   v11 = v11; /*0x4f6612*/
   BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
                          (HouseClass *)this,
-                         *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2276);
-  v13 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2876; /*0x4f6623*/
+                         *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2276);
+  v13 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2876; /*0x4f6623*/
   v34 = BuildableFromArray != 0; /*0x4f662c*/
   v14 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->? + 152)); /*0x4f6641*/
   v15 = *(_DWORD *)(v13 + 16); /*0x4f6643*/
@@ -147,7 +147,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   v35 = v20 != 0; /*0x4f6673*/
   if ( v20 ) /*0x4f6677*/
   {
-    v21 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2876; /*0x4f668c*/
+    v21 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2876; /*0x4f668c*/
     v22 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->? + 152)); /*0x4f669e*/
     v23 = *(_DWORD *)(v21 + 16); /*0x4f66a0*/
     v24 = 0; /*0x4f66a3*/
@@ -181,7 +181,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
     v27 = 0x7FFFFFFF; /*0x4f6706*/
   }
   LABEL_28:
-  v28 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2360); /*0x4f670b*/
+  v28 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2360); /*0x4f670b*/
   v29 = (*(int (__thiscall **)(_DWORD *, SuperWeaponTypeClass *))(*v28 + 132))(v28, this); /*0x4f6728*/
   if ( !v34 && v35 ) /*0x4f6738*/
   {
@@ -191,7 +191,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       return 1; /*0x4f6761*/
     return v32 && v11 >= v27 + v29; /*0x4f6772*/
   }
-  v30 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2276); /*0x4f678f*/
+  v30 = HouseClass::FirstBuildableFromArray((HouseClass *)this, *(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2276); /*0x4f678f*/
   v31 = (*(int (__thiscall **)(_DWORD *, SuperWeaponTypeClass *))(*v30 + 132))(v30, this); /*0x4f6799*/
   if ( v34 && !v35 ) /*0x4f67ad*/
   {
@@ -580,7 +580,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   v32 = SearchMIXFile(Buffer, 0); /*0x6cee20*/
   *(_DWORD *)(_EBP + 184) = v32; /*0x6cee26*/
   if ( !v32 ) /*0x6cee2f*/
-    *(_DWORD *)(_EBP + 184) = SearchMIXFile(&stru_820320.__pad_14D[143], 0); /*0x6cee3d*/
+    *(_DWORD *)(_EBP + 184) = SearchMIXFile(&stru_820320.q14D[143], 0); /*0x6cee3d*/
   return 1; /*0x6cee43*/
 }
 }
@@ -840,7 +840,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
     v3 = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x6ce89b*/
     a1->SidebarImage = v3; /*0x6ce8a2*/
     if ( !v3 ) /*0x6ce8a8*/
-      a1->SidebarImage = (SHPStruct *)SearchMIXFile(&stru_820320.__pad_14D[143], 0); /*0x6ce8b6*/
+      a1->SidebarImage = (SHPStruct *)SearchMIXFile(&stru_820320.q14D[143], 0); /*0x6ce8b6*/
     return 0; /*0x6ce8bc*/
   }
   return result; /*0x6ce8be*/

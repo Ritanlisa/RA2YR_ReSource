@@ -89,18 +89,18 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
       {
         v52[0] = v47[0] - 128; /*0x5ff8c9*/
         v53[0] = DSurface_ViewBounds.field_0; /*0x5ff8d9*/
-        v53[1] = (int)DSurface_ViewBounds.field_4; /*0x5ff8e6*/
+        v53[1] = (int)DSurface_ViewBounds.q004; /*0x5ff8e6*/
         v6 = v3[3]; /*0x5ff8ed*/
-        v53[3] = *(_DWORD *)&DSurface_ViewBounds.__pad_8[4]; /*0x5ff8f0*/
+        v53[3] = *(_DWORD *)&DSurface_ViewBounds.q008[4]; /*0x5ff8f0*/
         v7 = byte_83358C[v6]; /*0x5ff8ff*/
         v52[1] = v47[1] - 64; /*0x5ff906*/
         v39 = g_DSurface_Hidden_2; /*0x5ff912*/
         v52[2] = 255; /*0x5ff916*/
         v52[3] = 127; /*0x5ff91e*/
-        v53[2] = *(_DWORD *)DSurface_ViewBounds.__pad_8; /*0x5ff925*/
+        v53[2] = *(_DWORD *)DSurface_ViewBounds.q008; /*0x5ff925*/
         if ( v7 < 64 ) /*0x5ff92c*/
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
-        v8 = *(_DWORD *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/
+        v8 = *(_DWORD *)g_DSurface_Hidden_2->q000; /*0x5ff946*/
         v40 = dword_AC1698[v7]; /*0x5ff94a*/
         v9 = (*(int (__thiscall **)(AudioStream *))(v8 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
         v48[0] = 0; /*0x5ff95a*/
@@ -295,7 +295,7 @@ Coord * * BuildingLight::CalculateShading(__m64, void * a1, void * a2)
                 goto LABEL_23;
             }
           }
-          (*(void (__thiscall **)(AudioStream *))(*(_DWORD *)v39->__pad_0 + 96))(v39); /*0x5fff6b*/
+          (*(void (__thiscall **)(AudioStream *))(*(_DWORD *)v39->q000 + 96))(v39); /*0x5fff6b*/
           IDA_LOBYTE(v5) = (*(char (__thiscall **)(int))(*(_DWORD *)v40 + 96))(v40); /*0x5fff74*/
         }
       }

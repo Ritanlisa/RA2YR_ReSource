@@ -2064,7 +2064,7 @@ AbstractClass * ParticleSystemClass__vt_02_(_VectorClass_PAVParticleClass *a1, i
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVParticleClass *))(*(_DWORD *)a1->__pad_0 + 12))(a1); /*0x4e9ec2*/
+    (*(void (__thiscall **)(_VectorClass_PAVParticleClass *))(*(_DWORD *)a1->q000 + 12))(a1); /*0x4e9ec2*/
     return 1; /*0x4e9ec8*/
   }
 }
@@ -2418,7 +2418,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
 
   ControlClass::Construct(aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   v7 = this->M48; /*0x4e2a79*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GaugeClass_vftable; /*0x4e2a83*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&GaugeClass_vftable; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     this->M48 = 255; /*0x4e2a8d*/
@@ -2430,7 +2430,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v8 != this->q034 ) /*0x4e2aa4*/
   {
     this->q034 = v8; /*0x4e2aa6*/
-    (*(void (__thiscall **)(GaugeClass *))(*(_DWORD *)this->__pad_0 + 72))(this); /*0x4e2aad*/
+    (*(void (__thiscall **)(GaugeClass *))(*(_DWORD *)this->q000 + 72))(this); /*0x4e2aad*/
   }
   this->M45 = 1; /*0x4e2ab2*/
   this->M46 = aP4 > aP5; /*0x4e2ab9*/
@@ -2438,8 +2438,8 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   this->M56 = 0; /*0x4e2ac0*/
   this->M60 = 0; /*0x4e2ac7*/
   this->q040 = 0; /*0x4e2ace*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&TriColorGaugeClass_vftable; /*0x4e2ad5*/
-  return (int)this->__pad_0; /*0x4e2add*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&TriColorGaugeClass_vftable; /*0x4e2ad5*/
+  return (int)this->q000; /*0x4e2add*/
 }
 } // namespace gamemd
 
@@ -4971,7 +4971,7 @@ unsigned int * ParticleSystemClass_vt_00(_VectorClass_PAVParticleClass *Block, c
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4ef803*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_ParticleClass___vftable; /*0x4ef806*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_ParticleClass___vftable; /*0x4ef806*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4ef810*/
   {
     RA2_OPDEL(v3); /*0x4ef818*/
@@ -4981,6 +4981,6 @@ unsigned int * ParticleSystemClass_vt_00(_VectorClass_PAVParticleClass *Block, c
   Block->m_8 = 0; /*0x4ef831*/
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
     RA2_OPDEL(Block); /*0x4ef83b*/
-  return Block->__pad_0; /*0x4ef845*/
+  return Block->q000; /*0x4ef845*/
 }
 } // namespace gamemd

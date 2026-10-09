@@ -257,7 +257,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
   unsigned __int8 *v8; // eax
   int v9; // ecx
   HashTable *v10; // esi
-  unsigned __int8 **HashTable_field_0x10; // ecx
+  unsigned __int8 **u32_10; // ecx
   int v12; // eax
   unsigned __int8 **v13; // ecx
   int v14; // eax
@@ -289,21 +289,21 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
           a3 = v8; /*0x528284*/
           if ( v9 ) /*0x528288*/
           {
-            HashTable_field_0x10 = (unsigned __int8 **)v10->HashTable_field_0x10; /*0x52828e*/
-            if ( HashTable_field_0x10 && *HashTable_field_0x10 == v8 ) /*0x528297*/
+            u32_10 = (unsigned __int8 **)v10->u32_10; /*0x52828e*/
+            if ( u32_10 && *u32_10 == v8 ) /*0x528297*/
             {
   LABEL_11:
-              if ( v10->HashTable_field_0x04 ) /*0x5282b4*/
+              if ( v10->q004 ) /*0x5282b4*/
               {
-                v13 = (unsigned __int8 **)v10->HashTable_field_0x10; /*0x5282bf*/
+                v13 = (unsigned __int8 **)v10->u32_10; /*0x5282bf*/
                 if ( v13 && *v13 == v8 ) /*0x5282c8*/
                   goto LABEL_16; /*0x5282c8*/
                 v14 = HashTable::BinarySearchAlt(v10, (int *)&a3); /*0x5282d1*/
                 if ( v14 ) /*0x5282d8*/
                 {
-                  v10->HashTable_field_0x10 = v14; /*0x5282de*/
+                  v10->u32_10 = v14; /*0x5282de*/
   LABEL_16:
-                  v15 = (int *)(v10->HashTable_field_0x10 + 4); /*0x5282e1*/
+                  v15 = (int *)(v10->u32_10 + 4); /*0x5282e1*/
                   goto LABEL_29; /*0x5282e7*/
                 }
               }
@@ -321,7 +321,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
             v12 = HashTable::BinarySearchAlt(v10, (int *)&a3); /*0x5282a0*/
             if ( v12 ) /*0x5282a7*/
             {
-              v10->HashTable_field_0x10 = v12; /*0x5282ad*/
+              v10->u32_10 = v12; /*0x5282ad*/
               v8 = a3; /*0x5282b0*/
               goto LABEL_11; /*0x5282b0*/
             }
@@ -906,8 +906,8 @@ LABEL_3:
                           4 * *esi20,
                           4 * (&stru_87C374)[22428][3 * (i % 256) + 18545],
                           4 * (&stru_87C374)[22428][3 * (i % 256) + 18546]);
-    *(unsigned short *)esi20 = *(unsigned short *)v9->__pad_0;
-    esi20[2] = ((unsigned char *)&v9->__pad_0)[2];
+    *(unsigned short *)esi20 = *(unsigned short *)v9->q000;
+    esi20[2] = ((unsigned char *)&v9->q000)[2];
   }
   IDA_LOBYTE(v11) = 0;
   v12 = (AbstractClass *)SearchMIXFile( (char *)(&(&g_Str_File_MOUSE_SHA)[124]),(char)(v11));
@@ -920,8 +920,8 @@ LABEL_3:
                            4 * *v14,
                            4 * (&stru_87C374)[22428][3 * (j % 256) + 15473],
                            4 * (&stru_87C374)[22428][3 * (j % 256) + 15474]);
-    *(unsigned short *)v14 = *(unsigned short *)v13->__pad_0;
-    v14[2] = ((unsigned char *)&v13->__pad_0)[2];
+    *(unsigned short *)v14 = *(unsigned short *)v13->q000;
+    v14[2] = ((unsigned char *)&v13->q000)[2];
   }
   Block::Copy(&(&stru_87C374)[38668], &(&stru_87C374)[37900]);
   Block::Copy(&(&stru_87C374)[40204], &(&stru_87C374)[37900]);
@@ -939,8 +939,8 @@ LABEL_3:
                            4 * *v19,
                            4 * ((unsigned char *)&stru_87C374)[22428][3 * (k % 256) + 13937],
                            4 * ((unsigned char *)&stru_87C374)[22428][3 * (k % 256) + 13938]);
-    *(unsigned short *)v19 = *(unsigned short *)v17->__pad_0;
-    v19[2] = ((unsigned char *)&v17->__pad_0)[2];
+    *(unsigned short *)v19 = *(unsigned short *)v17->q000;
+    v19[2] = ((unsigned char *)&v17->q000)[2];
   }
   ((CCFileClass*)Buffer)->Construct( (char *)((unsigned char *)&g_Str_File_MOUSE_SHA + 96));
   ((VoxelPaletteClass *)Buffer)->LoadFromFile();
@@ -953,8 +953,8 @@ LABEL_3:
     ecx26 = (unsigned char *)&stru_87C374 + 22428[3 * (v21 % 256) + 19312];
     v22 += 3;
     ++v21;
-    *(unsigned short *)ecx26 = *(unsigned short *)v20->__pad_0;
-    ecx26[2] = v20->__pad_0[2];
+    *(unsigned short *)ecx26 = *(unsigned short *)v20->q000;
+    ecx26[2] = v20->q000[2];
   }
   while ( (int)v22 < (int)&((unsigned char *)&stru_B1D188)[77041] );
   *(float *)&((unsigned char *)&stru_87C374)[45224] = 0.95990276;
@@ -989,8 +989,8 @@ LABEL_3:
                            4 * a0[(unsigned int)v24],
                            4 * a0[(unsigned int)v24 + 1],
                            4 * a0[(unsigned int)v24 + 2]);
-    *(unsigned short *)v30 = *(unsigned short *)v26->__pad_0;
-    v30[2] = v26->__pad_0[2];
+    *(unsigned short *)v30 = *(unsigned short *)v26->q000;
+    v30[2] = v26->q000[2];
   }
   unsigned int * v32 = (unsigned int *)operator new(0x188u);
   if ( v32 )
@@ -1016,8 +1016,8 @@ LABEL_3:
                            4 * a0[(unsigned int)v29],
                            4 * a0[(unsigned int)v29 + 1],
                            4 * a0[(unsigned int)v29 + 2]);
-    *(unsigned short *)v37 = *(unsigned short *)v31->__pad_0;
-    v37[2] = v31->__pad_0[2];
+    *(unsigned short *)v37 = *(unsigned short *)v31->q000;
+    v37[2] = v31->q000[2];
   }
   eax37 = (unsigned int)((unsigned int *)operator new(0x188u));
   if ( eax37 )
@@ -1043,8 +1043,8 @@ LABEL_3:
                            4 * a0[(unsigned int)v34],
                            4 * a0[(unsigned int)v34 + 1],
                            4 * a0[(unsigned int)v34 + 2]);
-    *(unsigned short *)esi41 = *(unsigned short *)v36->__pad_0;
-    esi41[2] = v36->__pad_0[2];
+    *(unsigned short *)esi41 = *(unsigned short *)v36->q000;
+    esi41[2] = v36->q000[2];
   }
   eax42 = (unsigned int)((unsigned int *)operator new(0x188u));
   if ( eax42 )
@@ -1070,8 +1070,8 @@ LABEL_3:
                            4 * a0[(unsigned int)v39],
                            4 * a0[(unsigned int)v39 + 1],
                            4 * a0[(unsigned int)v39 + 2]);
-    *(unsigned short *)v51 = *(unsigned short *)v41->__pad_0;
-    v51[2] = v41->__pad_0[2];
+    *(unsigned short *)v51 = *(unsigned short *)v41->q000;
+    v51[2] = v41->q000[2];
   }
   eax47 = (unsigned int)((unsigned int *)operator new(0x188u));
   if ( eax47 )
@@ -1097,8 +1097,8 @@ LABEL_3:
                            4 * a0[(unsigned int)v44],
                            4 * a0[(unsigned int)v44 + 1],
                            4 * a0[(unsigned int)v44 + 2]);
-    *(unsigned short *)GameDirectoryCD = *(unsigned short *)v46->__pad_0;
-    GameDirectoryCD[2] = v46->__pad_0[2];
+    *(unsigned short *)GameDirectoryCD = *(unsigned short *)v46->q000;
+    GameDirectoryCD[2] = v46->q000[2];
   }
   unsigned int * v60 = (unsigned int *)operator new(0x188u);
   if ( v60 )
@@ -1125,8 +1125,8 @@ LABEL_3:
                              4 * *GameDirectoryCD,
                              4 * GameDirectoryCD[1],
                              4 * GameDirectoryCD[2]);
-      *(unsigned short *)GameDirectoryCD = *(unsigned short *)v49->__pad_0;
-      GameDirectoryCD[2] = v49->__pad_0[2];
+      *(unsigned short *)GameDirectoryCD = *(unsigned short *)v49->q000;
+      GameDirectoryCD[2] = v49->q000[2];
     }
   }
       *(unsigned int *)&((unsigned char *)&HouseClass_Player)[47692] = ConvertClass::Construct(
@@ -1185,7 +1185,7 @@ LABEL_68:
       if ( *(int *)&((unsigned char *)&HouseClass_Player)[44036] > 0 )
     while ( 1 )
         char * v63 = &((unsigned char *)&HouseClass_Player)[43932];
-      Source[0].__pad_0[0] = 0;
+      Source[0].q000[0] = 0;
       if ( *(int *)((unsigned char *)&HouseClass_Player)[44036] > 0 )
       {
         char * v63 = ((unsigned char *)&HouseClass_Player)[43932];
@@ -1195,12 +1195,12 @@ LABEL_68:
             Buffer,
             (ObjectClass *)&g_Str_Trace______c_.ambientSoundController[3],
           if ( v1 >= *(int *)&((unsigned char *)&HouseClass_Player)[44036] )
-          strcat( Source[0].__pad_0, (const char *)(Buffer));
+          strcat( Source[0].q000, (const char *)(Buffer));
           ++v1;
           v63 += 4;
           if ( v1 >= *(int *)((unsigned char *)&HouseClass_Player)[44036] )
             break;
-          strcat(Source[0].__pad_0, Control[0]);
+          strcat(Source[0].q000, Control[0]);
         }
         kk = (int)(void*)(void*)&CD_vftable;
         v1 = 0;
@@ -1471,7 +1471,7 @@ void InitRules()
   struct _WIN32_FIND_DATAA FindFileData; // [esp+1DCh] [ebp-140h] BYREF
 
   RulesClass::InitINIChain((RulesClass *)&dwInitParam, 0, 0); /*0x52cd82*/
-  *(_DWORD *)dwInitParam.__pad_0 = &(void*)(void*)&DynamicVectorClass_CCINIClass___vftable; /*0x52cd8e*/
+  *(_DWORD *)dwInitParam.q000 = &(void*)(void*)&DynamicVectorClass_CCINIClass___vftable; /*0x52cd8e*/
   v18 = 10; /*0x52cd9c*/
   *(_DWORD *)dwInitParam.__tail_10 = 0; /*0x52cda4*/
   v16 = 0; /*0x52cda8*/
@@ -1492,7 +1492,7 @@ void InitRules()
     {
       INIClass::INIClass(v3); /*0x52ce03*/
       v4->ownsFile = 0; /*0x52ce08*/
-      *(_DWORD *)v4->__pad_0 = &CCINIClass_Vtable; /*0x52ce0b*/
+      *(_DWORD *)v4->q000 = &CCINIClass_Vtable; /*0x52ce0b*/
     }
     else
     {
@@ -1504,7 +1504,7 @@ void InitRules()
       if ( *(int *)dwInitParam.__tail_10 < dwInitParam.m_8 /*0x52cecb*/
         || (IDA_BYTE1(dwInitParam.m_C) || !dwInitParam.m_8)
         && v18 > 0
-        && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVCCINIClass *, int, _DWORD))(*(_DWORD *)dwInitParam.__pad_0
+        && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVCCINIClass *, int, _DWORD))(*(_DWORD *)dwInitParam.q000
                                                                                         + 8))(
              &dwInitParam,
              v18 + dwInitParam.m_8,
@@ -1521,7 +1521,7 @@ void InitRules()
       goto LABEL_15; /*0x52ce44*/
     if ( (IDA_BYTE1(dwInitParam.m_C) || !dwInitParam.m_8) /*0x52ce6c*/
       && v18 > 0
-      && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVCCINIClass *, int, _DWORD))(*(_DWORD *)dwInitParam.__pad_0
+      && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVCCINIClass *, int, _DWORD))(*(_DWORD *)dwInitParam.q000
                                                                                       + 8))(
            &dwInitParam,
            v18 + dwInitParam.m_8,
@@ -1535,10 +1535,10 @@ void InitRules()
       ++*(_DWORD *)dwInitParam.__tail_10; /*0x52ce9b*/
     }
   LABEL_24:
-    *(_DWORD *)v19.__pad_0 = &(void*)(void*)&CCFileClass_vftable; /*0x52cee4*/
+    *(_DWORD *)v19.q000 = &(void*)(void*)&CCFileClass_vftable; /*0x52cee4*/
     v21 = 0; /*0x52cef3*/
     Vector::Clear((int)v20); /*0x52cefa*/
-    *(_DWORD *)v19.__pad_0 = &off_7E1668; /*0x52cf03*/
+    *(_DWORD *)v19.q000 = &off_7E1668; /*0x52cf03*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cf0b*/
   }
   while ( FindNextFileA(FirstFileA, &FindFileData) ); /*0x52cf19*/
@@ -1553,7 +1553,7 @@ void InitRules()
     {
       INIClass::INIClass(v7); /*0x52cf58*/
       v8->ownsFile = 0; /*0x52cf5d*/
-      *(_DWORD *)v8->__pad_0 = &CCINIClass_Vtable; /*0x52cf60*/
+      *(_DWORD *)v8->q000 = &CCINIClass_Vtable; /*0x52cf60*/
     }
     else
     {
@@ -1571,7 +1571,7 @@ void InitRules()
     }
     else if ( (IDA_BYTE1(dwInitParam.m_C) || !dwInitParam.m_8) /*0x52cfa2*/
            && v18 > 0
-           && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVCCINIClass *, int, _DWORD))(*(_DWORD *)dwInitParam.__pad_0
+           && (*(unsigned __int8 (__thiscall **)(_VectorClass_PAVCCINIClass *, int, _DWORD))(*(_DWORD *)dwInitParam.q000
                                                                                            + 8))(
                 &dwInitParam,
                 v18 + dwInitParam.m_8,
@@ -1580,20 +1580,20 @@ void InitRules()
       v9 = *(_DWORD *)dwInitParam.__tail_10; /*0x52cfa9*/
       goto LABEL_36; /*0x52cfa9*/
     }
-    *(_DWORD *)v19.__pad_0 = &(void*)(void*)&CCFileClass_vftable; /*0x52cfe1*/
+    *(_DWORD *)v19.q000 = &(void*)(void*)&CCFileClass_vftable; /*0x52cfe1*/
     v21 = 0; /*0x52cfe5*/
     Vector::Clear((int)v20); /*0x52cfec*/
-    *(_DWORD *)v19.__pad_0 = &off_7E1668; /*0x52cffa*/
+    *(_DWORD *)v19.q000 = &off_7E1668; /*0x52cffa*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x52cffe*/
   }
   if ( *(int *)dwInitParam.__tail_10 <= 0 ) /*0x52d013*/
   {
-    *(_DWORD *)dwInitParam.__pad_0 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d019*/
+    *(_DWORD *)dwInitParam.q000 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d019*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d021*/
     return 0; /*0x52d032*/
   }
   CCFileClass::Construct(&v22, aArtmdIni); /*0x52d03f*/
-  if ( !CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[228], (int)&v22, 0, 0) ) /*0x52d053*/
+  if ( !CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.q0FC[228], (int)&v22, 0, 0) ) /*0x52d053*/
   {
     Debug::Log(); /*0x52d061*/
     *(_DWORD *)v22.__tail_0 = &(void*)(void*)&CCFileClass_vftable; /*0x52d070*/
@@ -1601,7 +1601,7 @@ void InitRules()
     Vector::Clear((int)v23); /*0x52d07e*/
     *(_DWORD *)v22.__tail_0 = &off_7E1668; /*0x52d08a*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d091*/
-    *(_DWORD *)dwInitParam.__pad_0 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d09a*/
+    *(_DWORD *)dwInitParam.q000 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d09a*/
     VectorClass_ptr_CCINIClass::ddtor(&dwInitParam); /*0x52d0a2*/
     return 0; /*0x52d0b3*/
   }
@@ -1616,36 +1616,36 @@ void InitRules()
       v12 = 0; /*0x52d0ea*/
     v11 = *(_DWORD *)(*(_DWORD *)&dwInitParam.m_1[3] + 4 * v12); /*0x52d0f0*/
   }
-  *(_DWORD *)&DSurface_ViewBounds.__pad_34[116] = v11; /*0x52d0fa*/
-  RulesClass::ReadColors(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d0ff*/
-  RulesClass::ReadColorAdd(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d111*/
-  RulesClass::ReadMovies(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d121*/
-  Rules::ReadMiscINI(*(Rules **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d132*/
-  Dialog::ReadMultiplayerDialogSettings(*(Dialog **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d144*/
-  *(_DWORD *)&stru_A8B250.__pad_0[12] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5252); /*0x52d159*/
-  *(_DWORD *)&stru_A8B250.__pad_0[32] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5268); /*0x52d165*/
-  g_RulesInitConfig = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5276); /*0x52d171*/
-  *(_DWORD *)&stru_A8B250.__pad_0[24] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5280); /*0x52d17d*/
-  *(_DWORD *)&stru_A8B250.__pad_0[40] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5284); /*0x52d189*/
-  *(_DWORD *)&stru_A8B250.__pad_0[36] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5288); /*0x52d195*/
-  stru_A8B250.__pad_0[16] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5292); /*0x52d1a1*/
-  stru_A8B250.__pad_0[8] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5295); /*0x52d1ad*/
-  stru_A8B250.__pad_0[17] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5297); /*0x52d1b9*/
-  byte_A8B31E = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5298); /*0x52d1c5*/
-  byte_A8B31D = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5299); /*0x52d1d1*/
-  stru_A8B250.__pad_0[28] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5300); /*0x52d1dd*/
-  byte_A8B31C = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5301); /*0x52d1e9*/
-  stru_A8B250.__pad_0[18] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5302); /*0x52d1f5*/
-  stru_A8B250.__pad_0[19] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5305); /*0x52d201*/
-  stru_A8B250.__pad_0[20] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5306); /*0x52d20d*/
-  byte_A8B31F = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5303); /*0x52d219*/
-  dword_A8B320 = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5304); /*0x52d22c*/
+  *(_DWORD *)&DSurface_ViewBounds.q034[116] = v11; /*0x52d0fa*/
+  RulesClass::ReadColors(*(RulesClass **)&DSurface_ViewBounds.q0FC[324]); /*0x52d0ff*/
+  RulesClass::ReadColorAdd(*(RulesClass **)&DSurface_ViewBounds.q0FC[324]); /*0x52d111*/
+  RulesClass::ReadMovies(*(RulesClass **)&DSurface_ViewBounds.q0FC[324]); /*0x52d121*/
+  Rules::ReadMiscINI(*(Rules **)&DSurface_ViewBounds.q0FC[324]); /*0x52d132*/
+  Dialog::ReadMultiplayerDialogSettings(*(Dialog **)&DSurface_ViewBounds.q0FC[324]); /*0x52d144*/
+  *(_DWORD *)&stru_A8B250.q000[12] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5252); /*0x52d159*/
+  *(_DWORD *)&stru_A8B250.q000[32] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5268); /*0x52d165*/
+  g_RulesInitConfig = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5276); /*0x52d171*/
+  *(_DWORD *)&stru_A8B250.q000[24] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5280); /*0x52d17d*/
+  *(_DWORD *)&stru_A8B250.q000[40] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5284); /*0x52d189*/
+  *(_DWORD *)&stru_A8B250.q000[36] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5288); /*0x52d195*/
+  stru_A8B250.q000[16] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5292); /*0x52d1a1*/
+  stru_A8B250.q000[8] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5295); /*0x52d1ad*/
+  stru_A8B250.q000[17] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5297); /*0x52d1b9*/
+  byte_A8B31E = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5298); /*0x52d1c5*/
+  byte_A8B31D = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5299); /*0x52d1d1*/
+  stru_A8B250.q000[28] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5300); /*0x52d1dd*/
+  byte_A8B31C = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5301); /*0x52d1e9*/
+  stru_A8B250.q000[18] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5302); /*0x52d1f5*/
+  stru_A8B250.q000[19] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5305); /*0x52d201*/
+  stru_A8B250.q000[20] = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5306); /*0x52d20d*/
+  byte_A8B31F = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5303); /*0x52d219*/
+  dword_A8B320 = *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5304); /*0x52d22c*/
   CCFileClass::Construct(&v25, aLangruleIni); /*0x52d231*/
   if ( (unsigned __int8)CCFileClass::Open(&v25, 0) == 1 ) /*0x52d245*/
   {
     INIClass::INIClass((INIClass *)&v19); /*0x52d24f*/
     v19.ownsFile = 0; /*0x52d25b*/
-    *(_DWORD *)v19.__pad_0 = &CCINIClass_Vtable; /*0x52d267*/
+    *(_DWORD *)v19.q000 = &CCINIClass_Vtable; /*0x52d267*/
     if ( CCINIClass::Load(&v19, (int)&v25, 1, 0) > 1 ) /*0x52d277*/
     {
       HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d281*/
@@ -1659,7 +1659,7 @@ void InitRules()
       Vector::Clear((int)v23); /*0x52d2c8*/
       *(_DWORD *)v22.__tail_0 = &off_7E1668; /*0x52d2d4*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d2db*/
-      *(_DWORD *)dwInitParam.__pad_0 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d2e4*/
+      *(_DWORD *)dwInitParam.q000 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d2e4*/
       if ( *(_DWORD *)&dwInitParam.m_1[3] ) /*0x52d2ee*/
       {
         if ( IDA_BYTE1(dwInitParam.m_C) ) /*0x52d2f4*/
@@ -1667,7 +1667,7 @@ void InitRules()
       }
       return 0; /*0x52d30b*/
     }
-    RulesClass::Addition(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x52d317*/
+    RulesClass::Addition(*(RulesClass **)&DSurface_ViewBounds.q0FC[324]); /*0x52d317*/
     HashTable::DestroyHashTableINIClass((INIClass *)&v19); /*0x52d320*/
   }
   v13 = 0; /*0x52d329*/
@@ -1677,7 +1677,7 @@ void InitRules()
     do /*0x52d355*/
     {
       v15 = *(void (__thiscall ****)(_DWORD, int))(v14 + 4 * v13); /*0x52d333*/
-      if ( v15 != *(void (__thiscall ****)(_DWORD, int))&DSurface_ViewBounds.__pad_34[116] && v15 ) /*0x52d342*/
+      if ( v15 != *(void (__thiscall ****)(_DWORD, int))&DSurface_ViewBounds.q034[116] && v15 ) /*0x52d342*/
       {
         (**v15)(v15, 1); /*0x52d348*/
         v14 = *(_DWORD *)&dwInitParam.m_1[3]; /*0x52d34a*/
@@ -1687,7 +1687,7 @@ void InitRules()
     while ( v13 < *(int *)dwInitParam.__tail_10 ); /*0x52d355*/
   }
   CCFileClass::Construct(&v28, aAimdIni); /*0x52d363*/
-  CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.__pad_FC[140], (int)&v28, 1, 0); /*0x52d378*/
+  CCINIClass::Load((CCINIClass *)&DSurface_ViewBounds.q0FC[140], (int)&v28, 1, 0); /*0x52d378*/
   *(_DWORD *)v28.__tail_0 = &(void*)(void*)&CCFileClass_vftable; /*0x52d384*/
   v29[3] = 0; /*0x52d38b*/
   Vector::Clear((int)v29); /*0x52d392*/
@@ -1703,7 +1703,7 @@ void InitRules()
   Vector::Clear((int)v23); /*0x52d3ec*/
   *(_DWORD *)v22.__tail_0 = &off_7E1668; /*0x52d3f8*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x52d3ff*/
-  *(_DWORD *)dwInitParam.__pad_0 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d408*/
+  *(_DWORD *)dwInitParam.q000 = &(void*)(void*)&VectorClass_CCINIClass___vftable; /*0x52d408*/
   if ( *(_DWORD *)&dwInitParam.m_1[3] && IDA_BYTE1(dwInitParam.m_C) ) /*0x52d418*/
     RA2_OPDEL(*(void **)&dwInitParam.m_1[3]); /*0x52d41b*/
   return 1; /*0x52d028*/
@@ -2194,7 +2194,7 @@ LABEL_147:
           goto LABEL_2;
         }
         if ( ScenarioClass::LoadScenarioAndStart(
-               (AnimClass *)(*(unsigned int *)&g_CampaignTypeArray->__pad_0[4
+               (AnimClass *)(*(unsigned int *)&g_CampaignTypeArray->q000[4
                                                                     * *(unsigned int *)(*(unsigned int *)&((unsigned char *)&HouseClass_Player)[29924]
                                                                                 + 13516)]
                            + 156),
@@ -2817,7 +2817,7 @@ Straw * * Random_Init()
     if ( !*(_DWORD *)&dword_A8B238 || *(_DWORD *)&dword_A8B238 == 5 ) /*0x52fc68*/
     {
       GetSystemTime(&SystemTime); /*0x52fc73*/
-      Random::AdvanceRandomBytes(stru_A8E7B0.__pad_0, SystemTime.wMilliseconds); /*0x52fc83*/
+      Random::AdvanceRandomBytes(stru_A8E7B0.q000, SystemTime.wMilliseconds); /*0x52fc83*/
       SHA1TickRNG((ObjectClass *)&stru_A8E7B0, SystemTime.wSecond); /*0x52fc98*/
       SHA1TickRNG((ObjectClass *)&stru_A8E7B0, SystemTime.wSecond >> 1); /*0x52fcae*/
       SHA1TickRNG((ObjectClass *)&stru_A8E7B0, SystemTime.wSecond >> 2); /*0x52fcc6*/

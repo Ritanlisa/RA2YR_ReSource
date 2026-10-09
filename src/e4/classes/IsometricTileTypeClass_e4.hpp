@@ -60,6 +60,17 @@ struct IsometricTileTypeClass {
     unsigned int PointerToIndex(int a2);
     void ClearBuffer(void *a1);
     static int CleanupMembers(IsometricTileTypeClass * aP1);  // G57w10-S raw 0x00544A70 (was C2597 interim stub)
+    int IsometricTileTypeClass_field_0x04;  // 0x4 (ml)
+    int IsometricTileTypeClass_field_0x08;  // 0x8 (ml)
+    int IsometricTileTypeClass_field_0x0C;  // 0x12 (ml)
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int u32_294;  // 0x294 (offset-truth supply)
+    unsigned int u32_2BC;  // 0x2BC (offset-truth supply)
+    unsigned int u32_2C8;  // 0x2C8 (offset-truth supply)
 };
 
 } // namespace gamemd

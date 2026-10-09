@@ -64,8 +64,8 @@ int VoxelPaletteClass::LoadFromFile()
 
   VoxelPalette::Init(&v4, (int)&unk_B2FB78, (int)g_VoxelColorPalette); /*0x753b84*/
   v2 = VoxelPaletteClass::ConvertFromFile((VoxelPaletteClass *)&v4, (int)this); /*0x753b93*/
-  dword_B2FB74 = *(_DWORD *)v4.__pad_0; /*0x753ba1*/
-  dword_B4317C = v4.VoxelPalette_field_0x04; /*0x753baa*/
+  dword_B2FB74 = *(_DWORD *)v4.q000; /*0x753ba1*/
+  dword_B4317C = v4.q004; /*0x753baa*/
   dword_B2FB58 = v5; /*0x753bb4*/
   dword_B43178 = v6; /*0x753bba*/
   VoxelPalette::Reset(&v4); /*0x753bbf*/

@@ -596,6 +596,16 @@ struct MapClass {
     MapClass * Destru_vt04(char * Block, char a2);
     VectorClass_flat * InitCellVe_vt00(unsigned int * Block, char a2);
     int GetTileDataField14(MapResourceClass * aP0);
+    int MapClass_field_0x0;  // 0x0 (ml)
+    char[24] __pad_30;  // 0x48 (ml)
+    char[92] __pad_5C;  // 0x92 (ml)
+    unsigned char q0086;  // 0x86 (offset-truth supply)
+    unsigned int q0088;  // 0x88 (offset-truth supply)
+    unsigned char q01C6;  // 0x1C6 (offset-truth supply)
+    unsigned int q0308;  // 0x308 (offset-truth supply)
+    unsigned char q0585;  // 0x585 (offset-truth supply)
+    unsigned char q0805;  // 0x805 (offset-truth supply)
+    unsigned char u32_6F47;  // 0x6F47 (offset-truth supply)
 };
 
 } // namespace gamemd

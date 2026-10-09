@@ -91,6 +91,8 @@ struct FactoryClass {
     int * RemoveFromArrays(char a2);  // 0x63d9c0
     void * CopyTo(void ** Block, char a2);
     static int FindOrCreate(...);  // w18j2 C3861 static supply
+    char[28] __pad_42;  // 0x66 (ml)
+    unsigned int u32_288;  // 0x288 (offset-truth supply)
 };
 
 } // namespace gamemd

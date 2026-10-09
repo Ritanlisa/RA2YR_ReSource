@@ -228,7 +228,7 @@ int Math::DistSq2D(TechnoClass * aP1)
   _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (__thiscall **)(Math *, _BYTE *))(*(_DWORD *)this->__pad_0 + 72))(this, v6); /*0x5f656e*/
+  v2 = (int *)(*(int (__thiscall **)(Math *, _BYTE *))(*(_DWORD *)this->q000 + 72))(this, v6); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
@@ -380,7 +380,7 @@ double Math::ArcTan(double a1)
 namespace gamemd {
 unsigned int * Math::Sub16(unsigned int *aP1, unsigned short *aP2)
 {
-  IDA_LOWORD(aP2) = *(_WORD *)this->__pad_0 - *aP2; /*0x5b295a*/
+  IDA_LOWORD(aP2) = *(_WORD *)this->q000 - *aP2; /*0x5b295a*/
   *aP1 = aP2; /*0x5b2967*/
   return aP1; /*0x5b2969*/
 }
@@ -390,7 +390,7 @@ unsigned int * Math::Sub16(unsigned int *aP1, unsigned short *aP2)
 namespace gamemd {
 bool Math::Abs16Cmp(unsigned short *aP1, __int16 *aP2)
 {
-  return abs16(*aP2) >= (int)abs16(*(_WORD *)this->__pad_0 - *aP1); /*0x5b29b3*/
+  return abs16(*aP2) >= (int)abs16(*(_WORD *)this->q000 - *aP1); /*0x5b29b3*/
 }
 } // namespace gamemd
 

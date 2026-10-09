@@ -114,13 +114,13 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
     {
       originalOwner = this->originalOwner; /*0x471a88*/
       v6 = 0; /*0x471a8b*/
-      v7 = *(_DWORD **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3820); /*0x471a8d*/
+      v7 = *(_DWORD **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3820); /*0x471a8d*/
       v20 = 0; /*0x471a93*/
       if ( (int)originalOwner > *v7 ) /*0x471a99*/
       {
         do /*0x471aaf*/
         {
-          if ( v6 >= *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3832) - 1 ) /*0x471aa4*/
+          if ( v6 >= *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3832) - 1 ) /*0x471aa4*/
             break; /*0x471aa4*/
           v8 = v7[1]; /*0x471aa6*/
           ++v7; /*0x471aa9*/
@@ -129,8 +129,8 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
         while ( (int)originalOwner > v8 ); /*0x471aaf*/
         v20 = v6; /*0x471ab1*/
       }
-      this->linkCount = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3876) + 4 * v6); /*0x471abe*/
-      v2 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3848) + 4 * v6); /*0x471acd*/
+      this->linkCount = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3876) + 4 * v6); /*0x471abe*/
+      v2 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3848) + 4 * v6); /*0x471acd*/
       v23 = v2; /*0x471ad2*/
       if ( v2 <= 0 ) /*0x471ad6*/
       {
@@ -145,7 +145,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
           overloadCount,
           &v23,
           0,
-          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4008),
           0,
           0,
           0,
@@ -156,7 +156,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
           v24 = *v10; /*0x471b1d*/
           v25 = v10[1]; /*0x471b2a*/
           v26 = v10[2]; /*0x471b35*/
-          StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 600), &v24, 0); /*0x471b3f*/
+          StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 600), &v24, 0); /*0x471b3f*/
           this->CaptureManagerClass_field_41 = 1; /*0x471b44*/
         }
         v22 = 5; /*0x471b48*/
@@ -182,7 +182,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
           if ( v17 ) /*0x471bf4*/
             ParticleSystemClass::Constructor( /*0x471c15*/
               v17,
-              *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4128),
+              *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4128),
               v27,
               0,
               0,
@@ -328,7 +328,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       }
       v18 = v12 + 2; /*0x471e31*/
       v5[176] = *(_DWORD *)(a1 + 72); /*0x471e34*/
-      v19 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 784); /*0x471e45*/
+      v19 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 784); /*0x471e45*/
       *v18 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x471e4b*/
       v18[1] = v33; /*0x471e52*/
       v18[2] = v19; /*0x471e57*/
@@ -363,7 +363,7 @@ void CaptureManagerClass::CaptureUnit(int a1, int a2, int a3, int aP1, int aP0)
       if ( v27 ) /*0x471f29*/
         v28 = (BuildingClass *)AnimClass::ctor( /*0x471f4c*/
                                  v27,
-                                 *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 800),
+                                 *(void **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 800),
                                  &v32,
                                  0,
                                  1,
@@ -419,11 +419,11 @@ char CaptureManagerClass::FreeUnit(int a2, int a3, unsigned int *a1, int aP1, un
       }
       if ( *(_DWORD *)((*((int (__thiscall **)(CaptureManagerClass *, int, int))this->vfptr + 33))(this, a3, a2) + 1456) == -1 ) /*0x472059*/
       {
-        if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 612) != -1 ) /*0x4720a3*/
+        if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 612) != -1 ) /*0x4720a3*/
         {
           v21 = this->u32_9C; /*0x4720af*/
           retaddr = (_UNKNOWN *)this->controlNodeCount; /*0x4720b6*/
-          StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 612), &v21, 0); /*0x4720cb*/
+          StartAudioControllerAt(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 612), &v21, 0); /*0x4720cb*/
         }
       }
       else
@@ -558,7 +558,7 @@ int CaptureManagerClass::DrawLinks(int a1, ...)
 namespace gamemd {
 int CaptureManagerClass::CannotControlAnyMore()
 {
-  return !this->CaptureManagerClass_field_40 && (int)this->originalOwner >= *(_DWORD *)this->__pad_3C; /*0x4722a7*/
+  return !this->CaptureManagerClass_field_40 && (int)this->originalOwner >= *(_DWORD *)this->q03C; /*0x4722a7*/
 }
 } // namespace ra2
 
@@ -609,7 +609,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
   if ( *(_BYTE *)(v7 + 492) ) /*0x472431*/
     return; /*0x472439*/
   v24 = 0; /*0x472446*/
-  if ( (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 36) + 24))(v8 + 36) >= *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] /*0x472459*/
+  if ( (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 36) + 24))(v8 + 36) >= *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] /*0x472459*/
                                                                                      + 3772) )
   {
     HouseClass::GetPowerRatio(*(HouseClass **)(this->overloadCount + 540)); /*0x472470*/
@@ -620,7 +620,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
     }
     if ( (_AX & 0x100) != 0 ) /*0x472480*/
     {
-      v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3716); /*0x47248f*/
+      v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3716); /*0x47248f*/
     }
     else
     {
@@ -628,7 +628,7 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
       __asm { fstp [esp+20h+var_8] }
       _EAX = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)_EBX + 132))(_EBX); /*0x4724a2*/
       __asm { fild dword ptr [eax+0A0h] } /*0x4724a8*/
-      _ESI = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x4724ae*/
+      _ESI = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x4724ae*/
       __asm /*0x4724b4*/
       {
         fdivr [esp+20h+var_8]
@@ -636,14 +636,14 @@ void CaptureManagerClass::DecideUnitFate(int aP1)
         fnstsw ax
       }
       if ( (_EAX & 0x100) != 0 ) /*0x4724c3*/
-        v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3688); /*0x4724cd*/
+        v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3688); /*0x4724cd*/
       else
-        v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3660); /*0x4724dd*/
+        v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3660); /*0x4724dd*/
     }
   }
   else
   {
-    v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3744); /*0x47245f*/
+    v9 = (_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3744); /*0x47245f*/
   }
   v13 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 1, 100); /*0x4724f7*/
   v27 = 0; /*0x4724f9*/
@@ -1151,7 +1151,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAUControlNode *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x472c22*/
+    (*(void (__thiscall **)(_VectorClass_PAUControlNode *))(*(_DWORD *)this->q000 + 12))(this); /*0x472c22*/
     return 1; /*0x472c28*/
   }
 }
@@ -1243,7 +1243,7 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUControlNode *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x472d4e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUControlNode *))(*(_DWORD *)this->q000 + 12))(this); /*0x472d4e*/
   }
   v7 = this->m_8; /*0x472d51*/
   if ( v7 < this->m_10 ) /*0x472d59*/
@@ -1259,7 +1259,7 @@ VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(u
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x473003*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x473006*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x473006*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x473010*/
   {
     RA2_OPDEL(v3); /*0x473018*/
@@ -1269,7 +1269,7 @@ VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(u
   Block->m_8 = 0; /*0x473031*/
   if ( (a2 & 1) != 0 ) /*0x473038*/
     RA2_OPDEL(Block); /*0x47303b*/
-  return Block->__pad_0; /*0x473045*/
+  return Block->q000; /*0x473045*/
 }
 } // namespace gamemd
 
@@ -1280,7 +1280,7 @@ DynamicVector * CaptureManagerClass::QueryInterface(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x473053*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x473056*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_ControlNode___vftable; /*0x473056*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x473060*/
   {
     RA2_OPDEL(v3); /*0x473068*/
@@ -1290,7 +1290,7 @@ DynamicVector * CaptureManagerClass::QueryInterface(unsigned int * Block, char a
   Block->m_8 = 0; /*0x473081*/
   if ( (a2 & 1) != 0 ) /*0x473088*/
     RA2_OPDEL(Block); /*0x47308b*/
-  return Block->__pad_0; /*0x473095*/
+  return Block->q000; /*0x473095*/
 }
 } // namespace gamemd
 

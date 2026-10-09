@@ -38,6 +38,7 @@ struct XSurface {
     static int SetPixel(XSurface * aP1, unsigned int *a2, __int16 a3);  // G57w10-S raw 0x007BAEB0 (was C2597 interim stub)
     void* WalkLine(int a2, unsigned int *a3, unsigned int *a4, void (__thiscall *a5)(int *), int a5, int a6, int a7, int a8, int a9, int a10);
     static int BlitWhole(...);  // w16g4 C3861 static supply (raw 0x004C1A90)
+    unsigned int q000;  // 0x0 (offset-truth supply)
 };
 
 } // namespace gamemd

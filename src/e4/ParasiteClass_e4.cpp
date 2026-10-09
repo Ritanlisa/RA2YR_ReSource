@@ -45,7 +45,7 @@ int ParasiteClass::Constructor()
   int v3; // eax
 
   AbstractClass::Constructor(); /*0x629213*/
-  *(_DWORD *)&this->__pad_28[4] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x62921f*/
+  *(_DWORD *)&this->q028[4] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
   v2 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
@@ -197,7 +197,7 @@ void ParasiteClass::DeploySquad()
 
   _ESI = this; /*0x6297fc*/
   v3 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x629807*/
-  v4 = *(int **)_ESI->__pad_28; /*0x62980d*/
+  v4 = *(int **)_ESI->q028; /*0x62980d*/
   v48[1] = *v3; /*0x629812*/
   v5 = *(_DWORD *)(v48[1] + 172); /*0x629816*/
   v48[0] = v5; /*0x629822*/
@@ -209,14 +209,14 @@ void ParasiteClass::DeploySquad()
   if ( !v6 || (unsigned __int8)Cell::IsValidHeight(v6) ) /*0x629854*/
   {
     v10 = *(_DWORD *)(v5 + 368); /*0x629898*/
-    v11 = (_DWORD *)(*(_DWORD *)_ESI->__pad_28 + 1696); /*0x62989e*/
+    v11 = (_DWORD *)(*(_DWORD *)_ESI->q028 + 1696); /*0x62989e*/
     *v11 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6298a4*/
     v11[1] = v59; /*0x6298aa*/
     v11[2] = v10; /*0x6298ad*/
     switch ( (unsigned int)_ESI[1].vfptr1 ) /*0x6298bc*/
     {
       case 0u: /*0x6298bc*/
-        *(_DWORD *)(*(_DWORD *)_ESI->__pad_28 + 808) = 0; /*0x6298c6*/
+        *(_DWORD *)(*(_DWORD *)_ESI->q028 + 808) = 0; /*0x6298c6*/
         Index = AnimTypeClass::FindIndex(&stru_83665C); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
@@ -230,13 +230,13 @@ void ParasiteClass::DeploySquad()
               if ( v15 ) /*0x62991a*/
               {
                 _ESI[1].vfptr = v15; /*0x62991c*/
-                if ( g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < g_BuildingLoadQueue_Array.__pad_D80 /*0x629953*/
-                  || (IDA_BYTE1(g_BuildingLoadQueue_Array.SecondSpawnOffset[0]) || !g_BuildingLoadQueue_Array.__pad_D80)
+                if ( g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < g_BuildingLoadQueue_Array.qD80 /*0x629953*/
+                  || (IDA_BYTE1(g_BuildingLoadQueue_Array.SecondSpawnOffset[0]) || !g_BuildingLoadQueue_Array.qD80)
                   && g_BuildingLoadQueue_Array.SecondSpawnOffset[2] > 0
                   && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.ForbiddenHouses[0]
                                                                            + 8))(
                        g_BuildingLoadQueue_Array.ForbiddenHouses,
-                       g_BuildingLoadQueue_Array.SecondSpawnOffset[2] + g_BuildingLoadQueue_Array.__pad_D80,
+                       g_BuildingLoadQueue_Array.SecondSpawnOffset[2] + g_BuildingLoadQueue_Array.qD80,
                        0) )
                 {
                   v16 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x629960*/
@@ -259,7 +259,7 @@ void ParasiteClass::DeploySquad()
           _ESI[1].vfptr1 = (void *)(3 - (v17 != 0)); /*0x6299ba*/
           _ESI[1].vfptr2 = 0; /*0x6299bd*/
           BuildingClass::AnimController((BuildingClass *)_ESI); /*0x6299c0*/
-          FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x6299e1*/
+          FootClass::CreateWakes(*(FootClass **)_ESI->q028, v55, v56, v57); /*0x6299e1*/
         }
         goto LABEL_47; /*0x6299e6*/
       case 2u: /*0x6298bc*/
@@ -283,14 +283,14 @@ void ParasiteClass::DeploySquad()
         }
         Math::SinCos(*(double *)&v48[1]); /*0x629a35*/
         __asm { fmul ds:flt_7EF8F8 } /*0x629a3a*/
-        v18 = *(_DWORD *)_ESI->__pad_28; /*0x629a40*/
+        v18 = *(_DWORD *)_ESI->q028; /*0x629a40*/
         __asm { fstp dword ptr [ecx+328h] } /*0x629a46*/
         v18->q328 = _ET1; /*0x629a46*/
         goto LABEL_47; /*0x629a4c*/
       case 4u: /*0x6298bc*/
-        *(_DWORD *)(*(_DWORD *)_ESI->__pad_28 + 808) = 0; /*0x629a59*/
-        v20 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3024); /*0x629a67*/
-        v45 = *(__int16 *)ProgressTimer::GetValue((ProgressTimer *)(*(_DWORD *)_ESI->__pad_28 + 904), &v50) - 0x3FFF; /*0x629a81*/
+        *(_DWORD *)(*(_DWORD *)_ESI->q028 + 808) = 0; /*0x629a59*/
+        v20 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3024); /*0x629a67*/
+        v45 = *(__int16 *)ProgressTimer::GetValue((ProgressTimer *)(*(_DWORD *)_ESI->q028 + 904), &v50) - 0x3FFF; /*0x629a81*/
         __asm /*0x629a85*/
         {
           fild dword ptr [esp+68h+var_5C+4]
@@ -344,7 +344,7 @@ void ParasiteClass::DeploySquad()
             v25 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v20 - 1); /*0x629b6f*/
             AnimClass::ctor( /*0x629b97*/
               v24,
-              *(void **)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3012) + 4 * v25),
+              *(void **)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3012) + 4 * v25),
               &v58,
               (void *)2,
               1,
@@ -354,15 +354,15 @@ void ParasiteClass::DeploySquad()
           }
         }
         if ( *(_BYTE *)(v48[0] + 372) /*0x629be6*/
-          && (!BuildingClass::GetSellPriority(*(BuildingClass **)_ESI->__pad_28)
-           || BuildingClass::GetSellPriority(*(BuildingClass **)_ESI->__pad_28) == 1
+          && (!BuildingClass::GetSellPriority(*(BuildingClass **)_ESI->q028)
+           || BuildingClass::GetSellPriority(*(BuildingClass **)_ESI->q028) == 1
            && (unsigned __int8)Audio::IsLoud((int *)(_ESI->creationFrame + 336))) )
         {
           if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)_ESI->creationFrame + 132))(_ESI->creationFrame) + 3214) ) /*0x629bfe*/
           {
-            v26 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)_ESI->__pad_28 + 132))(*(_DWORD *)_ESI->__pad_28); /*0x629c16*/
+            v26 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)_ESI->q028 + 132))(*(_DWORD *)_ESI->q028); /*0x629c16*/
             v27 = (*(int (__thiscall **)(int))(*(_DWORD *)_ESI->creationFrame + 132))(_ESI->creationFrame); /*0x629c23*/
-            v42 = *(_DWORD *)(*(_DWORD *)_ESI->__pad_28 + 540); /*0x629c2f*/
+            v42 = *(_DWORD *)(*(_DWORD *)_ESI->q028 + 540); /*0x629c2f*/
             v28 = (*(int (__thiscall **)(int))(v26->q084)(v26); /*0x629c30*/
             v29 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v27 + 132))( /*0x629c46*/
                     v27,
@@ -370,7 +370,7 @@ void ParasiteClass::DeploySquad()
                     v28);
             HouseClass::AccumulateScore((int *)(_ESI->creationFrame + 336), v29, v42); /*0x629c56*/
           }
-          v30 = *(_BYTE **)_ESI->__pad_28; /*0x629c5d*/
+          v30 = *(_BYTE **)_ESI->q028; /*0x629c5d*/
           BuildingClass::Deploy(v43, 0, (int)v30); /*0x629c62*/
           v31 = *(_DWORD *)v30; /*0x629c67*/
           v30[973] = 1; /*0x629c69*/
@@ -410,7 +410,7 @@ void ParasiteClass::DeploySquad()
         }
         else
         {
-          v35 = *(_DWORD *)_ESI->__pad_28; /*0x629d27*/
+          v35 = *(_DWORD *)_ESI->q028; /*0x629d27*/
           v49 = *(_DWORD *)(v48[1] + 164); /*0x629d2a*/
           (*(void (__thiscall **)(int, int *, _DWORD, _DWORD, int, _DWORD, int, _DWORD))(v35->q16C)( /*0x629d3b*/
             v35,
@@ -421,14 +421,14 @@ void ParasiteClass::DeploySquad()
             0,
             1,
             0);
-          if ( *(_DWORD *)_ESI->__pad_28 ) /*0x629d41*/
+          if ( *(_DWORD *)_ESI->q028 ) /*0x629d41*/
           {
             v36 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 1); /*0x629d58*/
             _ESI[1].vfptr3 = 0; /*0x629d66*/
             _ESI[1].vfptr1 = (void *)(3 - (v36 != 0)); /*0x629d69*/
             _ESI[1].vfptr2 = 0; /*0x629d6c*/
             BuildingClass::AnimController((BuildingClass *)_ESI); /*0x629d6f*/
-            FootClass::CreateWakes(*(FootClass **)_ESI->__pad_28, v55, v56, v57); /*0x629d90*/
+            FootClass::CreateWakes(*(FootClass **)_ESI->q028, v55, v56, v57); /*0x629d90*/
           }
           else
           {
@@ -466,13 +466,13 @@ void ParasiteClass::DeploySquad()
           {
             if ( _ESI->creationFrame ) /*0x629d9e*/
             {
-              v38 = *(_DWORD *)_ESI->__pad_28; /*0x629da3*/
+              v38 = *(_DWORD *)_ESI->q028; /*0x629da3*/
               if ( v38 ) /*0x629da8*/
               {
                 v39 = (*(int (__thiscall **)(int))(v38->u32_1BC)(v38); /*0x629db8*/
-                if ( *(_DWORD *)_ESI->__pad_28 != v37->missionTimer[1] ) /*0x629dbf*/
+                if ( *(_DWORD *)_ESI->q028 != v37->missionTimer[1] ) /*0x629dbf*/
                 {
-                  BuildingClass::AimTurret(v37, *(_BYTE **)_ESI->__pad_28); /*0x629dc4*/
+                  BuildingClass::AimTurret(v37, *(_BYTE **)_ESI->q028); /*0x629dc4*/
                   v37->lastCommands[0] = (*(int (__thiscall **)(int))(*(_DWORD *)_ESI->creationFrame + 484))(_ESI->creationFrame); /*0x629dd6*/
                   if ( v39 ) /*0x629ddc*/
                     v37->animation[1] = *(__int16 *)(v39 + 266); /*0x629de5*/
@@ -543,7 +543,7 @@ void ParasiteClass::TickDamage()
   int v35; // [esp+44h] [ebp-8h]
   int v36; // [esp+48h] [ebp-4h]
 
-  if ( !*(_DWORD *)this->__pad_28 ) /*0x629fde*/
+  if ( !*(_DWORD *)this->q028 ) /*0x629fde*/
     return; /*0x629fde*/
   if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame) + 3278) /*0x62a004*/
     && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame) + 3479) )
@@ -552,7 +552,7 @@ void ParasiteClass::TickDamage()
     return; /*0x62a01c*/
   }
   v4 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this->creationFrame + 1016))(this->creationFrame, 0); /*0x62a024*/
-  v5 = *(int **)this->__pad_28; /*0x62a02a*/
+  v5 = *(int **)this->q028; /*0x62a02a*/
   v6 = *(_DWORD **)v4; /*0x62a02d*/
   v7 = *(_DWORD *)(*(_DWORD *)v4 + 172); /*0x62a02f*/
   v28 = v7; /*0x62a03b*/
@@ -579,9 +579,9 @@ void ParasiteClass::TickDamage()
   *v12 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x62a09e*/
   v12[1] = v35; /*0x62a0a4*/
   v12[2] = v11; /*0x62a0a7*/
-  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 44))(*(_DWORD *)this->__pad_28) == 15 ) /*0x62a0b5*/
+  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->q028 + 44))(*(_DWORD *)this->q028) == 15 ) /*0x62a0b5*/
   {
-    v13 = *(_DWORD **)this->__pad_28; /*0x62a0b7*/
+    v13 = *(_DWORD **)this->q028; /*0x62a0b7*/
     v26[0] = v13[27]; /*0x62a0c3*/
     (*(void (__userpurge **)(_DWORD *, _DWORD, int, int, int, int, _DWORD, double@<st0>, double@<st1>))(*v13 + 364))( /*0x62a0ce*/
       v26,
@@ -600,13 +600,13 @@ void ParasiteClass::TickDamage()
     if ( v14 ) /*0x62a0e2*/
       ParticleSystemClass::Constructor( /*0x62a103*/
         v14,
-        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4128),
+        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4128),
         &v31,
         0,
         0,
         &dword_AC4948,
         0);
-    v15 = *ProgressTimer::GetValue((ProgressTimer *)(*(_DWORD *)this->__pad_28 + 904), &v27); /*0x62a11b*/
+    v15 = *ProgressTimer::GetValue((ProgressTimer *)(*(_DWORD *)this->q028 + 904), &v27); /*0x62a11b*/
     if ( v6[65] ) /*0x62a11d*/
     {
       v16 = *(void **)(v6[62] + 4 * ((((v15 >> 12) + 1) >> 1) & 7)); /*0x62a138*/
@@ -634,12 +634,12 @@ void ParasiteClass::TickDamage()
     IDA_LOWORD(v23) = Math::RoundToInt(v22); /*0x62a1f6*/
     v34 = v23; /*0x62a1ff*/
     v35 = v27; /*0x62a203*/
-    v24 = *(_DWORD *)this->__pad_28; /*0x62a207*/
+    v24 = *(_DWORD *)this->q028; /*0x62a207*/
     v36 = v19; /*0x62a20a*/
     (*(void (__thiscall **)(int, int *, int, _DWORD))(*(_DWORD *)v24 + 984))(v24, &v34, 1069547520, 0); /*0x62a21c*/
     creationFrame = this->creationFrame; /*0x62a228*/
     v26[0] = v6[41]; /*0x62a22f*/
-    (*(void (__userpurge **)(_DWORD *, _DWORD, int, int, _DWORD, int, _DWORD, double@<st0>, double@<st1>))(**(_DWORD **)this->__pad_28 + 364))( /*0x62a247*/
+    (*(void (__userpurge **)(_DWORD *, _DWORD, int, int, _DWORD, int, _DWORD, double@<st0>, double@<st1>))(**(_DWORD **)this->q028 + 364))( /*0x62a247*/
       v26,
       0,
       v28,
@@ -751,7 +751,7 @@ int ParasiteClass::CanExistOnVictimCell()
   int v8; // eax
   Cell *v9; // eax
 
-  v2 = *(_DWORD *)this->__pad_28; /*0x62ab44*/
+  v2 = *(_DWORD *)this->q028; /*0x62ab44*/
   if ( !v2 ) /*0x62ab49*/
     return 0; /*0x62ab4f*/
   if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v2 + 84))(v2) ) /*0x62ab52*/
@@ -763,25 +763,25 @@ int ParasiteClass::CanExistOnVictimCell()
   {
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)creationFrame + 44))(creationFrame) == 1 ) /*0x62ab86*/
     {
-      v5 = (CellClass *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28); /*0x62ab8f*/
+      v5 = (CellClass *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->q028 + 444))(*(_DWORD *)this->q028); /*0x62ab8f*/
       if ( CellClass::FindInfantry(v5, 0) ) /*0x62ab97*/
         return 0; /*0x62aba4*/
     }
   }
-  v6 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28) + 236); /*0x62abb0*/
+  v6 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->q028 + 444))(*(_DWORD *)this->q028) + 236); /*0x62abb0*/
   if ( v6 == 2 || v6 == 6 || v6 == 3 ) /*0x62abc3*/
   {
-    v7 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28) /*0x62abdc*/
+    v7 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->q028 + 444))(*(_DWORD *)this->q028) /*0x62abdc*/
                     + 320)
         & 0x100) == 0;
-    v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28) + 68); /*0x62abe9*/
+    v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->q028 + 444))(*(_DWORD *)this->q028) + 68); /*0x62abe9*/
     if ( v8 >= 74 && v8 <= 99 ) /*0x62abf4*/
       v7 = 0; /*0x62abf6*/
     if ( (v8 < 205 || v8 > 230) && v7 ) /*0x62ac08*/
       return 0; /*0x62ac0b*/
   }
   LABEL_20:
-  v9 = (Cell *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28); /*0x62ac14*/
+  v9 = (Cell *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->q028 + 444))(*(_DWORD *)this->q028); /*0x62ac14*/
   return Cell::IsBridge(v9) == 0; /*0x62ab4b*/
 }
 } // namespace ra2
@@ -1178,7 +1178,7 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       AbstractClass::InitVtables((AbstractClass *)a0, (int)&aP1); /*0x6295d6*/
       v4 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6295db*/
       a0->ParasiteClass_field_34 = 0; /*0x6295e1*/
-      *(_DWORD *)&a0->__pad_28[4] = v4; /*0x6295e8*/
+      *(_DWORD *)&a0->q028[4] = v4; /*0x6295e8*/
       a0->ParasiteClass_field_38 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6295f0*/
       a0->ParasiteClass_field_40 = 0; /*0x6295f3*/
       a0->vfptr = &(void*)(void*)&ParasiteClass_vftable; /*0x6295fa*/
@@ -1187,19 +1187,19 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       a0->vfptr3 = &(void*)(void*)&ParasiteClass_vftable; /*0x62960e*/
     }
     if ( *((_DWORD *)a0 + 17) /*0x629657*/
-      && (g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < g_BuildingLoadQueue_Array.__pad_D80
-       || (IDA_BYTE1(g_BuildingLoadQueue_Array.SecondSpawnOffset[0]) || !g_BuildingLoadQueue_Array.__pad_D80)
+      && (g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < g_BuildingLoadQueue_Array.qD80
+       || (IDA_BYTE1(g_BuildingLoadQueue_Array.SecondSpawnOffset[0]) || !g_BuildingLoadQueue_Array.qD80)
        && g_BuildingLoadQueue_Array.SecondSpawnOffset[2] > 0
        && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 8))(
             g_BuildingLoadQueue_Array.ForbiddenHouses,
-            g_BuildingLoadQueue_Array.__pad_D80 + g_BuildingLoadQueue_Array.SecondSpawnOffset[2],
+            g_BuildingLoadQueue_Array.qD80 + g_BuildingLoadQueue_Array.SecondSpawnOffset[2],
             0)) )
     {
       v5 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x629664*/
       *(_DWORD *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v5) = a0; /*0x629673*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a0->creationFrame); /*0x62967f*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a0->__pad_28); /*0x62968d*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a0->q028); /*0x62968d*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a0 + 17); /*0x629698*/
     return v3; /*0x62969e*/
   }

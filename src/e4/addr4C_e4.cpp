@@ -233,7 +233,7 @@ namespace gamemd {
 void InitializeRadialGradientTexture()
 {
   double v1; // st7
-  _DWORD *AudioStream_field_0x1C; // esi
+  _DWORD *q01C; // esi
   int result; // eax
   int v4; // eax
   ObjectClass *v5; // eax
@@ -258,12 +258,12 @@ void InitializeRadialGradientTexture()
   _DWORD v24[11]; // [esp+6Ch] [ebp-98h] BYREF
   _DWORD v25[27]; // [esp+98h] [ebp-6Ch] BYREF
 
-  AudioStream_field_0x1C = DSurface_Composite->AudioStream_field_0x1C; /*0x4c16b4*/
-  v22 = AudioStream_field_0x1C; /*0x4c16cb*/
+  q01C = DSurface_Composite->q01C; /*0x4c16b4*/
+  v22 = q01C; /*0x4c16cb*/
   result = (*(int (__stdcall **)(int, void *, _DWORD *, __int64 *))(*(_DWORD *)dword_8A0DF4 + 32))( /*0x4c16cf*/
              dword_8A0DF4,
              &unk_7F80B0,
-             AudioStream_field_0x1C,
+             q01C,
              &g_DrawColorState);
   if ( !result ) /*0x4c16d6*/
   {
@@ -281,9 +281,9 @@ void InitializeRadialGradientTexture()
       if ( !result ) /*0x4c171d*/
       {
         memset(v25, 0, sizeof(v25)); /*0x4c172e*/
-        v4 = *AudioStream_field_0x1C; /*0x4c1730*/
+        v4 = *q01C; /*0x4c1730*/
         v25[0] = 108; /*0x4c1738*/
-        result = (*(int (__stdcall **)(_DWORD *, _DWORD *))(v4 + 88))(AudioStream_field_0x1C, v25); /*0x4c1740*/
+        result = (*(int (__stdcall **)(_DWORD *, _DWORD *))(v4 + 88))(q01C, v25); /*0x4c1740*/
         if ( !result ) /*0x4c1745*/
         {
           memset(v24, 0, sizeof(v24)); /*0x4c175a*/
@@ -670,7 +670,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
   v5[0] = 0; /*0x4c3e09*/
   v5[1] = vtable2; /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
-  return (*(int (__thiscall **)(AudioStream *, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 /*0x4c3e28*/
+  return (*(int (__thiscall **)(AudioStream *, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 /*0x4c3e28*/
                                                                                     + 8))(
            g_DSurface_Hidden_2,
            v5,

@@ -521,12 +521,12 @@ bool ShowSkirmishSetupScreen(void * a1, void * a2)
 
   v10 = v3; /*0x6ae2cc*/
   dwNewLong = -1; /*0x6ae2ce*/
-  RulesClass::LoadCountries(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2d6*/
-  RulesClass::ReadDataList(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2e8*/
+  RulesClass::LoadCountries(*(RulesClass **)&DSurface_ViewBounds.q0FC[324]); /*0x6ae2d6*/
+  RulesClass::ReadDataList(*(RulesClass **)&DSurface_ViewBounds.q0FC[324]); /*0x6ae2e8*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
     (*(void (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
       *((_DWORD *)dword_A83C9C + i),
-      *(_DWORD *)&DSurface_ViewBounds.__pad_34[116]);
+      *(_DWORD *)&DSurface_ViewBounds.q034[116]);
   LoadingScreen::Init(); /*0x6ae317*/
   Dialog = (HWND)CreateDialog(0x102u, Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
   if ( Dialog ) /*0x6ae331*/
@@ -630,7 +630,7 @@ int TechnoClass::ProcessDeployAction()
         v3 = *(_DWORD *)(*(int (__thiscall **)(int, int *, int, int))(*(_DWORD *)this->occupant + 824))( /*0x6afe1c*/
                           this->occupant,
                           &v31,
-                          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
+                          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6024) / 256,
                           1);
         v30 = v3; /*0x6afe25*/
         *(_DWORD *)v29 = v3; /*0x6afe29*/
@@ -744,7 +744,7 @@ int TechnoClass::ProcessDeployAction()
         v3 = *(_DWORD *)(*(int (__thiscall **)(int, int *, int, _DWORD))(*(_DWORD *)this->occupant + 824))( /*0x6b008d*/
                           this->occupant,
                           &v31,
-                          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6016) / 256,
+                          *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6016) / 256,
                           0);
         v30 = v3; /*0x6b0096*/
         if ( v3 == dword_B0B5B8 ) /*0x6b009a*/
@@ -752,7 +752,7 @@ int TechnoClass::ProcessDeployAction()
           *(_DWORD *)v29 = *(_DWORD *)(*(int (__thiscall **)(int, int *, int, int))(*(_DWORD *)this->occupant + 824))( /*0x6b00e7*/
                                         this->occupant,
                                         &v31,
-                                        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6024) / 256,
+                                        *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6024) / 256,
                                         1);
           v30 = *BuildingClass::FindPlacementCells2((BuildingClass *)this, &v33, *(int *)v29); /*0x6b0100*/
           v16 = CellStruct::Sub((CellStruct *)&v30, &v34, v29); /*0x6b0104*/
@@ -797,7 +797,7 @@ int TechnoClass::ProcessDeployAction()
           }
           Math::Sqrt(v27); /*0x6b018f*/
           v23 = Math::RoundToInt(v1); /*0x6b01b8*/
-          v3 = v19 + *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6028) / 256; /*0x6b01bb*/
+          v3 = v19 + *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6028) / 256; /*0x6b01bb*/
           if ( v3 < v23 ) /*0x6b01bf*/
           {
             *(_BYTE *)(this->occupant + 1272) = 1; /*0x6b01c4*/

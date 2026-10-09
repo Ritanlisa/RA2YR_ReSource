@@ -55,5 +55,6 @@ struct SaveGame {
     bool SaveAudioData(int a2);  // 0x69B560
     int VtableDispatch(int a2);  // 0x721010
     int WriteMagicHeader();  // 0x7533B0
+    unsigned int q000;  // 0x0
 };
 } // namespace gamemd

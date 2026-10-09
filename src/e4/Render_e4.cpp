@@ -1632,9 +1632,9 @@ char sub_53D850()
   int i; // esi
   int v7; // [esp+4h] [ebp-8h] BYREF
 
-  if ( (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2) != dword_AA0150 ) /*0x53d865*/
+  if ( (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2) != dword_AA0150 ) /*0x53d865*/
   {
-    v1 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
+    v1 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 116))(g_DSurface_Hidden_2); /*0x53d874*/
     dword_A9FAE8[0] = 0; /*0x53d876*/
     dword_AA0150 = v1; /*0x53d880*/
     v2 = 1; /*0x53d886*/
@@ -1728,7 +1728,7 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
 namespace gamemd {
 AbstractClass * * sub_63B0A0()
 {
-  void *Array_field_0x10; // ebp
+  void *q010; // ebp
   int v2; // esi
   int v3; // edi
   int v4; // ebp
@@ -1741,12 +1741,12 @@ AbstractClass * * sub_63B0A0()
     RA2_OPDEL(*(void **)stru_AC4B30.__pad_EC); /*0x63b0be*/
     *(_DWORD *)stru_AC4B30.__pad_EC = 0; /*0x63b0c6*/
   }
-  Array_field_0x10 = stru_AC4B30.Array_field_0x10; /*0x63b0cc*/
+  q010 = stru_AC4B30.q010; /*0x63b0cc*/
   v2 = 0; /*0x63b0d2*/
   stru_AC4B30.__pad_EC[9] = 0; /*0x63b0d6*/
-  for ( *(_DWORD *)&stru_AC4B30.__pad_EC[4] = 0; v2 < (int)Array_field_0x10; ++v2 ) /*0x63b0e2*/
+  for ( *(_DWORD *)&stru_AC4B30.__pad_EC[4] = 0; v2 < (int)q010; ++v2 ) /*0x63b0e2*/
   {
-    v3 = *((_DWORD *)stru_AC4B30.Array_field_0x4 + v2); /*0x63b0e9*/
+    v3 = *((_DWORD *)stru_AC4B30.q004 + v2); /*0x63b0e9*/
     if ( (unsigned __int8)HouseClass::IsAlliedWith(*(void **)(**v3->vtable2 + 540), (void *)dword_A83D4C) ) /*0x63b100*/
       RenderScenarioActionLines((ObjectClass *)v3); /*0x63b10b*/
   }
@@ -1787,10 +1787,10 @@ int sub_660000()
   int v4; // esi
   int v5; // eax
 
-  result = stru_B04DA8.LoadGame_field_0x10; /*0x660000*/
-  for ( i = 0; i < stru_B04DA8.LoadGame_field_0x10; ++i ) /*0x660006*/
+  result = stru_B04DA8.q010; /*0x660000*/
+  for ( i = 0; i < stru_B04DA8.q010; ++i ) /*0x660006*/
   {
-    v3 = *(_DWORD *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x660012*/
+    v3 = *(_DWORD *)(stru_B04DA8.q004 + 4 * i); /*0x660012*/
     v4 = *(_DWORD *)(v3 + 48); /*0x660015*/
     v5 = *(_DWORD *)(v3 + 56); /*0x660018*/
     if ( v4 != -1 ) /*0x66001e*/
@@ -1805,7 +1805,7 @@ int sub_660000()
     if ( *(_BYTE *)(v3 + 60) ) /*0x660032*/
   LABEL_7:
       RenderGradientTrapezoid((float *)v3); /*0x660039*/
-    result = stru_B04DA8.LoadGame_field_0x10; /*0x66003e*/
+    result = stru_B04DA8.q010; /*0x66003e*/
   }
   return result; /*0x660049*/
 }
@@ -1815,7 +1815,7 @@ namespace gamemd {
 void sub_6603B0()
 {
   int v1; // ebx
-  int LoadGame_field_0x04; // edi
+  int q004; // edi
   int v3; // esi
   int v4; // edx
   int v5; // eax
@@ -1823,13 +1823,13 @@ void sub_6603B0()
   int v7; // eax
   int v8; // [esp+4h] [ebp-4h] BYREF
 
-  v1 = stru_B04DA8.LoadGame_field_0x10 - 1; /*0x6603b7*/
-  if ( stru_B04DA8.LoadGame_field_0x10 - 1 >= 0 ) /*0x6603bc*/
+  v1 = stru_B04DA8.q010 - 1; /*0x6603b7*/
+  if ( stru_B04DA8.q010 - 1 >= 0 ) /*0x6603bc*/
   {
-    LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x6603c4*/
+    q004 = stru_B04DA8.q004; /*0x6603c4*/
     do /*0x6603ca*/
     {
-      v3 = *(_DWORD *)(LoadGame_field_0x04 + 4 * v1); /*0x6603ca*/
+      v3 = *(_DWORD *)(q004 + 4 * v1); /*0x6603ca*/
       v4 = *(_DWORD *)(v3 + 36); /*0x6603cd*/
       v5 = *(_DWORD *)(v3 + 44); /*0x6603d0*/
       if ( v4 != -1 ) /*0x6603d6*/
@@ -1843,24 +1843,24 @@ void sub_6603B0()
   LABEL_7:
         if ( !*(_BYTE *)(v3 + 60) ) /*0x6603ea*/
         {
-          v6 = *(void **)(LoadGame_field_0x04 + 4 * v1); /*0x6603f1*/
+          v6 = *(void **)(q004 + 4 * v1); /*0x6603f1*/
           if ( v6 ) /*0x6603f6*/
           {
-            v8 = *(_DWORD *)(LoadGame_field_0x04 + 4 * v1); /*0x660408*/
-            v7 = (*(int (__thiscall **)(LoadGame *, int *))(*(_DWORD *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v8); /*0x66040c*/
-            if ( v7 != -1 && v7 < stru_B04DA8.LoadGame_field_0x10 ) /*0x66041c*/
+            v8 = *(_DWORD *)(q004 + 4 * v1); /*0x660408*/
+            v7 = (*(int (__thiscall **)(LoadGame *, int *))(*(_DWORD *)stru_B04DA8.q000 + 16))(&stru_B04DA8, &v8); /*0x66040c*/
+            if ( v7 != -1 && v7 < stru_B04DA8.q010 ) /*0x66041c*/
             {
-              --stru_B04DA8.LoadGame_field_0x10; /*0x660421*/
+              --stru_B04DA8.q010; /*0x660421*/
               for ( ; /*0x660427*/
-                    v7 < stru_B04DA8.LoadGame_field_0x10;
-                    *(_DWORD *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v7 - 4) = *(_DWORD *)(stru_B04DA8.LoadGame_field_0x04
+                    v7 < stru_B04DA8.q010;
+                    *(_DWORD *)(stru_B04DA8.q004 + 4 * v7 - 4) = *(_DWORD *)(stru_B04DA8.q004
                                                                                           + 4 * v7) )
               {
                 ++v7; /*0x66042f*/
               }
             }
             RA2_OPDEL(v6); /*0x660442*/
-            LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660447*/
+            q004 = stru_B04DA8.q004; /*0x660447*/
           }
         }
       }

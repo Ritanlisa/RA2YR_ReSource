@@ -76,7 +76,7 @@ void* FileSystem_GRFXTXT_Convert = nullptr; // 0xA8F798
 void* FileSystem_GRFXTXT_SHP = nullptr;    // 0xA8F794
 // Extern from other modules
 
-// CCINIClass vtable (IDA 0x7E1AF4)
+// CCINIClass q000 (IDA 0x7E1AF4)
 
 // ============================================================
 // IDA: init_stubs.cpp -- all InitGame dependency stubs
@@ -164,7 +164,7 @@ REVERSE(0x4a38d0, "LoadFileSHP: IDA verified", "None")
 void* SearchMIXFile(char* Source, char aP1);
 // IDA 0x4A38D0 -- LoadFileSHP: MIX-first SHP loader (truth: void *__fastcall(char*, bool*))
 // MIX hit  -> cached buffer returned, *a2 stays 0. MIX miss -> CCFileClass disk read into an
-// operator-new buffer; *a2 = (buffer != 0); stack object destroyed via vtable-install dtor chain.
+// operator-new buffer; *a2 = (buffer != 0); stack object destroyed via q000-install dtor chain.
 void* LoadFileSHP(char* Source, bool* a2) {
     void* result;      // eax
     void* v5;          // esi: loaded buffer
@@ -328,7 +328,7 @@ void InitRandomSeed() {
 // ============================================================
 // IDA 0x532150 -- InitCommands (7118B)
 // Registers ~40 CommandClass instances into g_CommandClassVector.
-// Each command class is instantiated (new(size) -- vtable assignment)
+// Each command class is instantiated (new(size) -- q000 assignment)
 // and appended to the global command vector via DynamicVector::Add.
 //
 // Command classes registered (in order):
@@ -715,8 +715,8 @@ int InitGame(bool no_cd)
     // IDA 0x52C358: LoadFileSHP("MOUSE.SHA") -- WWMouseClass interaction
     g_MouseSHP = LoadFileSHP((char*)"MOUSE.SHA", (bool*)&byte_B0BCF4);  // 0x52C347-58: ecx="MOUSE.SHA", edx=&byte_B0BCF4, ret->g_MouseSHP (G57e1)
     if (g_MouseSHP && WWMouseClass_Instance) {
-        // IDA: WWMouseClass vtable[3] -- set mouse approach
-        // IDA: WWMouseClass vtable[1] -- set position
+        // IDA: WWMouseClass q000[3] -- set mouse approach
+        // IDA: WWMouseClass q000[1] -- set position
     }
 
     // IDA 0x52C394: Mission::SetAndCall(0, 0) + Event::Dispatch()
@@ -765,7 +765,7 @@ int InitGame(bool no_cd)
 
     // IDA 0x52C668: TacticalMap::Construct(0xE18)
     if (TacticalClass_Instance) {
-        // IDA: TacticalClass vtable[1].QueryInterface(TacticalClass_Instance, 1)
+        // IDA: TacticalClass q000[1].QueryInterface(TacticalClass_Instance, 1)
     }
     {
         void* mem = malloc(0xE18);
@@ -791,7 +791,7 @@ int InitGame(bool no_cd)
         }
         void* ini_buf[16]; // INIClass
         INIClassConstruct(ini_buf);
-        // TODO: CCINIClass vtable assignment
+        // TODO: CCINIClass q000 assignment
         if (!CCINIClassLoad(ini_buf, fbuf, 0, 0)) {
             LOG_ERROR("Failed to load SOUNDMD.INI!");
             DestroyHashTableINIClass(ini_buf);
@@ -814,7 +814,7 @@ int InitGame(bool no_cd)
         }
         void* ini_buf[16];
         INIClassConstruct(ini_buf);
-        // TODO: CCINIClass vtable assignment
+        // TODO: CCINIClass q000 assignment
         if (!CCINIClassLoad(ini_buf, fbuf, 0, 0)) {
             LOG_ERROR("Failed to load EVAMD.INI!");
             DestroyHashTableINIClass(ini_buf);

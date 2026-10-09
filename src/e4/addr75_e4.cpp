@@ -173,8 +173,8 @@ double ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   v4 = (ObjectClass *)a3; /*0x750ac9*/
   *a1 = 0; /*0x750acd*/
   v21 = 0.0; /*0x750ade*/
-  v23 = (double)*(int *)DSurface_ViewBounds.__pad_8 * 0.5; /*0x750aec*/
-  v25 = (double)*(int *)&DSurface_ViewBounds.__pad_8[4] * 0.5; /*0x750afc*/
+  v23 = (double)*(int *)DSurface_ViewBounds.q008 * 0.5; /*0x750aec*/
+  v25 = (double)*(int *)&DSurface_ViewBounds.q008[4] * 0.5; /*0x750afc*/
   v22 = v23 + v23; /*0x750b06*/
   a3 = 60 * sub_405130(v4); /*0x750b1a*/
   v20 = (float)a3; /*0x750b22*/

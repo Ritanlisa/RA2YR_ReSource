@@ -20,7 +20,7 @@ namespace gamemd { class ObjectClass; class FootClass; }
 #include "src/csp_canon/classes.hpp"
 #include "src/misc/locomotion.hpp"
 
-// G57w10: vtable externs (truth e4_globals_decls)
+// G57w10: q000 externs (truth e4_globals_decls)
 extern unsigned char vt_AbstractTypeClass[4];  // data: 0x7E1FD4  // G57w10 vftable residue fix
 extern unsigned char vt_BufferIOFileClass[4];  // data: 0x7E3A2C  // G57w10 vftable residue fix
 extern unsigned char vt_CaptureManagerClass[4];  // data: 0x7E4B14  // G57w10 vftable residue fix
@@ -443,7 +443,7 @@ void gamemd::ObjectTypeClass::ObjectTypeClass(gamemd::ObjectTypeClass::noinit_t 
       --v4; /*0x5f7348*/
     }
     while ( v4 ); /*0x5f7349*/
-    v5 = &this->__pad_14D[11]; /*0x5f734b*/
+    v5 = &this->q14D[11]; /*0x5f734b*/
     v6 = 18; /*0x5f7351*/
     do /*0x5f735f*/
     {
@@ -1651,7 +1651,7 @@ bool gamemd::TriggerTypeClass::RemoveAction(gamemd::TActionClass* a0)
     this->? = (void *)&vt_TriggerTypeClass; /*0x726cdf*/
     this->? = (void *)&vt_TriggerTypeClass; /*0x726ce6*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -1709,7 +1709,7 @@ bool gamemd::TriggerTypeClass::RemoveEvent(gamemd::TEventClass* a0)
     this->? = (void *)&vt_TriggerTypeClass; /*0x726cdf*/
     this->? = (void *)&vt_TriggerTypeClass; /*0x726ce6*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x726d21*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -1993,7 +1993,7 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
 
     HIWORD(v6) = HIWORD(a2); /*0x4aae94*/
     v56 = 0; /*0x4aaea1*/
-    LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4aaeab*/
+    LOBYTE(this->q11D0) = 0; /*0x4aaeab*/
     if ( a4 ) /*0x4aaeb2*/
     {
       v56 = a4; /*0x4aaeb8*/
@@ -2010,9 +2010,9 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
     {
       v56 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x4aaff1*/
     }
-    if ( HIBYTE(this->DisplayClass_field_0x11B0)
+    if ( HIBYTE(this->q11B0)
       && *(_DWORD *)&this->__pad_11B4[8]
-      && !Waypoint::FindByCell(dword_A83D4C->__pad_0, a2)
+      && !Waypoint::FindByCell(dword_A83D4C->q000, a2)
       && (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], a2, 1) )
     {
       v10 = *(_DWORD **)&this->__pad_11B4[8]; /*0x4aaf37*/
@@ -2025,7 +2025,7 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
           : 0;
       *(_DWORD *)(*(_DWORD *)&this->__pad_11B4[8] + 8) = Cell::GetGroundHeight(*(_DWORD **)&this->__pad_11B4[8]) + v12; /*0x4aaf94*/
     }
-    if ( Waypoint::FindByCell(dword_A83D4C->__pad_0, a2) ) /*0x4aaf9e*/
+    if ( Waypoint::FindByCell(dword_A83D4C->q000, a2) ) /*0x4aaf9e*/
     {
       switch ( a5 ) /*0x4aafbb*/
       {
@@ -2068,7 +2068,7 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
       case '*': /*0x4ab0a6*/
       case '+': /*0x4ab0a6*/
       case '/': /*0x4ab0a6*/
-        v18 = *(_DWORD *)&dword_A83D4C->__pad_140[204]; /*0x4ab0b2*/
+        v18 = *(_DWORD *)&dword_A83D4C->q140[204]; /*0x4ab0b2*/
         if ( v18 == -1 ) /*0x4ab0bb*/
           v19 = 0; /*0x4ab0bd*/
         else
@@ -2099,10 +2099,10 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
       case '2': /*0x4ab0a6*/
       case '3': /*0x4ab0a6*/
         v55 = -1; /*0x4ab164*/
-        v26 = Waypoint::FindByCell(dword_A83D4C->__pad_0, a2); /*0x4ab16c*/
-        WaypointClass::FindOrCreate(dword_A83D4C->__pad_0, (int)v26, &v55, &a5); /*0x4ab182*/
-        if ( !HIBYTE(this->DisplayClass_field_0x11B0) ) /*0x4ab187*/
-          *(_DWORD *)&dword_A83D4C->__pad_140[204] = v55; /*0x4ab19b*/
+        v26 = Waypoint::FindByCell(dword_A83D4C->q000, a2); /*0x4ab16c*/
+        WaypointClass::FindOrCreate(dword_A83D4C->q000, (int)v26, &v55, &a5); /*0x4ab182*/
+        if ( !HIBYTE(this->q11B0) ) /*0x4ab187*/
+          *(_DWORD *)&dword_A83D4C->q140[204] = v55; /*0x4ab19b*/
         if ( v55 == -1 ) /*0x4ab1a8*/
           v27 = 0; /*0x4ab1aa*/
         else
@@ -2153,8 +2153,8 @@ bool gamemd::DisplayClass::ConvertAction(gamemd::Vector2D<short> const& a0, bool
           *(_WORD *)(v39 - 2) = v42; /*0x4ab327*/
         }
         while ( v43 < 8 ); /*0x4ab32e*/
-        if ( !HIBYTE(this->DisplayClass_field_0x11B0) ) /*0x4ab330*/
-          *(_DWORD *)&dword_A83D4C->__pad_140[204] = -1; /*0x4ab340*/
+        if ( !HIBYTE(this->q11B0) ) /*0x4ab330*/
+          *(_DWORD *)&dword_A83D4C->q140[204] = -1; /*0x4ab340*/
         break; /*0x4ab340*/
     }
     v44 = TacticalClass::MapSpecialDrawMode(v54, (int)a4); /*0x4ab355*/
@@ -2535,11 +2535,11 @@ bool gamemd::XSurface::CanLock(unsigned int a0, unsigned int a1)
     int v5; // eax
     _DWORD v6[27]; // [esp+4h] [ebp-6Ch] BYREF
 
-    result = (int)this->DSurface_field_0xC; /*0x4baec6*/
+    result = (int)this->q00C; /*0x4baec6*/
     if ( !result ) /*0x4baecb*/
     {
       memset(v6, 0, sizeof(v6)); /*0x4baed9*/
-      v5 = this->DSurface_field_0x1C[0]; /*0x4baedb*/
+      v5 = this->u32_1C[0]; /*0x4baedb*/
       v6[0] = 108; /*0x4baee6*/
       result = (*(int (__stdcall **)(int, _DWORD, _DWORD *, _DWORD, _DWORD))(*(_DWORD *)v5 + 100))(v5, 0, v6, 0, 0); /*0x4baef4*/
       if ( result ) /*0x4baefa*/
@@ -2547,8 +2547,8 @@ bool gamemd::XSurface::CanLock(unsigned int a0, unsigned int a1)
         LOBYTE(result) = 0; /*0x4baefc*/
         return result; /*0x4baf02*/
       }
-      result = (*(int (__stdcall **)(int, _DWORD))(*(_DWORD *)this->DSurface_field_0x1C[0] + 128))( /*0x4baf10*/
-                 this->DSurface_field_0x1C[0],
+      result = (*(int (__stdcall **)(int, _DWORD))(*(_DWORD *)this->u32_1C[0] + 128))( /*0x4baf10*/
+                 this->u32_1C[0],
                  v6[9]);
     }
     LOBYTE(result) = 1; /*0x4baf16*/
@@ -2557,8 +2557,8 @@ bool gamemd::XSurface::CanLock(unsigned int a0, unsigned int a1)
 // truth-filled 0x4BAF20 (G42.52 truth-emitting generator)
 bool gamemd::XSurface::CheckBltStatus()
 {
-    return (*(int (__stdcall **)(int, int))(*(_DWORD *)this->DSurface_field_0x1C[0] + 52))( /*0x4baf30*/
-             this->DSurface_field_0x1C[0],
+    return (*(int (__stdcall **)(int, int))(*(_DWORD *)this->u32_1C[0] + 52))( /*0x4baf30*/
+             this->u32_1C[0],
              1) == 0;
 }
 // truth-filled 0x4C0750 (G42.52 truth-emitting generator)
@@ -2675,12 +2675,12 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
       v76 = -1; /*0x4c07d3*/
     }
     v77 = StreamClass::ReadAndSeek( /*0x4c07f3*/
-            *(int **)&stru_87E790.__pad_D8[60],
+            *(int **)&stru_87E790.q0D8[60],
             v7,
-            v8 - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 4));
-    v87 = *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0801*/
+            v8 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4));
+    v87 = *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 40); /*0x4c0801*/
     if ( v8 > v10 ) /*0x4c0805*/
-      v87 = -*(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 40); /*0x4c080b*/
+      v87 = -*(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 40); /*0x4c080b*/
     v88 = (int *)(*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v7, v8); /*0x4c081c*/
     if ( v88 )
     {
@@ -2692,7 +2692,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
           if ( v17 >= 0 )
           {
             v18 = v88; /*0x4c0842*/
-            v19 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0846*/
+            v19 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0846*/
             v20 = a6; /*0x4c084c*/
             v21 = (_WORD *)v77; /*0x4c0850*/
             v22 = v17 + 1; /*0x4c0854*/
@@ -2704,7 +2704,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
               if ( *(_BYTE *)(v23 + a5) && !*v21 ) /*0x4c0874*/
               {
                 *v18 = a4; /*0x4c087f*/
-                v19 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0882*/
+                v19 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0882*/
               }
               if ( v87 <= 0 ) /*0x4c088e*/
               {
@@ -2733,7 +2733,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
           v25 = abs32(v10 - v8); /*0x4c08e6*/
           if ( v25 >= 0 )
           {
-            v26 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c08ee*/
+            v26 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c08ee*/
             v27 = a6; /*0x4c08f4*/
             v28 = v88; /*0x4c08fc*/
             v89 = v25 + 1; /*0x4c0901*/
@@ -2746,7 +2746,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
               if ( *(_BYTE *)(v30 + a5) && !*v29 ) /*0x4c0922*/
               {
                 *v28 = a4; /*0x4c092d*/
-                v26 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0930*/
+                v26 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0930*/
               }
               v28 = (_WORD *)((char *)v28 + v24); /*0x4c0936*/
               v29 += v87; /*0x4c0938*/
@@ -2783,7 +2783,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
           v90 = 0; /*0x4c09a9*/
           if ( v31 > 0 )
           {
-            v37 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c09b5*/
+            v37 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c09b5*/
             v38 = a6; /*0x4c09bb*/
             v39 = (_WORD *)v77; /*0x4c09bf*/
             do
@@ -2794,7 +2794,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
               if ( *(_BYTE *)(v40 + a5) && !*v39 ) /*0x4c09dc*/
               {
                 *((_WORD *)v88 + v35) = a4; /*0x4c09eb*/
-                v37 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c09f0*/
+                v37 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c09f0*/
               }
               if ( v36 > 0 ) /*0x4c09f8*/
               {
@@ -2827,7 +2827,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
         v41 = 2 * v31 - v34; /*0x4c0a68*/
         if ( v34 > 0 )
         {
-          v42 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0a72*/
+          v42 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0a72*/
           v43 = a6; /*0x4c0a78*/
           v44 = (_WORD *)v77; /*0x4c0a7c*/
           v83 = v34; /*0x4c0a84*/
@@ -2841,7 +2841,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
             if ( *(_BYTE *)(v46 + a5) && !*v44 ) /*0x4c0aad*/
             {
               *(_WORD *)((char *)v45 + v91) = a4; /*0x4c0abc*/
-              v42 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0ac0*/
+              v42 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0ac0*/
             }
             if ( v41 > 0 ) /*0x4c0ac8*/
             {
@@ -2879,7 +2879,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
           if ( v47 >= 0 )
           {
             v48 = v88; /*0x4c0b35*/
-            v49 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0b39*/
+            v49 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0b39*/
             v50 = a6; /*0x4c0b3f*/
             v51 = (_WORD *)v77; /*0x4c0b43*/
             v52 = v47 + 1; /*0x4c0b47*/
@@ -2891,7 +2891,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
               if ( *(_BYTE *)(v53 + a5) && *v51 ) /*0x4c0b67*/
               {
                 *v48 = a4; /*0x4c0b72*/
-                v49 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0b75*/
+                v49 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0b75*/
               }
               if ( v87 <= 0 ) /*0x4c0b81*/
               {
@@ -2920,7 +2920,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
           v55 = abs32(v10 - v8); /*0x4c0bd9*/
           if ( v55 >= 0 )
           {
-            v56 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0be1*/
+            v56 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0be1*/
             v57 = a6; /*0x4c0be7*/
             v58 = v88; /*0x4c0bef*/
             v92 = v55 + 1; /*0x4c0bf4*/
@@ -2933,7 +2933,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
               if ( *(_BYTE *)(v60 + a5) && *v59 ) /*0x4c0c15*/
               {
                 *v58 = a4; /*0x4c0c20*/
-                v56 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0c23*/
+                v56 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0c23*/
               }
               v58 = (_WORD *)((char *)v58 + v54); /*0x4c0c29*/
               v59 += v87; /*0x4c0c2b*/
@@ -2970,7 +2970,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
           v93 = 0; /*0x4c0c9c*/
           if ( v61 > 0 )
           {
-            v67 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0ca8*/
+            v67 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0ca8*/
             v68 = a6; /*0x4c0cae*/
             v69 = (_WORD *)v77; /*0x4c0cb2*/
             do
@@ -2981,7 +2981,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
               if ( *(_BYTE *)(v70 + a5) && *v69 ) /*0x4c0ccf*/
               {
                 *((_WORD *)v88 + v65) = a4; /*0x4c0cde*/
-                v67 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0ce3*/
+                v67 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0ce3*/
               }
               if ( v66 > 0 ) /*0x4c0ceb*/
               {
@@ -3014,7 +3014,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
         v71 = 2 * v61 - v64; /*0x4c0d5b*/
         if ( v64 > 0 )
         {
-          v72 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0d65*/
+          v72 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0d65*/
           v43 = a6; /*0x4c0d6b*/
           v73 = (_WORD *)v77; /*0x4c0d6f*/
           v82 = v64; /*0x4c0d77*/
@@ -3028,7 +3028,7 @@ bool gamemd::XSurface::DrawDashedLineStipple(gamemd::Vector2D<int> const& a0, ga
             if ( *(_BYTE *)(v75 + a5) && *v73 ) /*0x4c0da0*/
             {
               *(_WORD *)((char *)v74 + v94) = a4; /*0x4c0daf*/
-              v72 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0db3*/
+              v72 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0db3*/
             }
             if ( v71 > 0 ) /*0x4c0dbb*/
             {
@@ -3532,8 +3532,8 @@ bool gamemd::XSurface::DrawLineModulated(gamemd::Vector2D<int> const& a0, gamemd
           v94 = v97 - v95[2]; /*0x4bbe56*/
           __asm /*0x4bbe5a*/
           {
-            fild dword ptr [esp+80h+var_4C.__pad_C]
-            fild [esp+80h+var_4C.Vector_field_0x8]
+            fild dword ptr [esp+80h+var_4C.q00C]
+            fild [esp+80h+var_4C.q008]
             fld st
             fmul st, st(1)
             fld st(2)
@@ -3550,8 +3550,8 @@ bool gamemd::XSurface::DrawLineModulated(gamemd::Vector2D<int> const& a0, gamemd
           v94 = v24 - v95[2]; /*0x4bbe94*/
           __asm /*0x4bbe98*/
           {
-            fild dword ptr [esp+80h+var_4C.__pad_C]
-            fild [esp+80h+var_4C.Vector_field_0x8]
+            fild dword ptr [esp+80h+var_4C.q00C]
+            fild [esp+80h+var_4C.q008]
             fild [esp+80h+arg_14]
             fstp qword ptr [esp+50h]
             fld st
@@ -3592,7 +3592,7 @@ bool gamemd::XSurface::DrawLineModulated(gamemd::Vector2D<int> const& a0, gamemd
           SamplePosition = (_WORD *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v96, v97 - Stream_field_04); /*0x4bbf5d*/
           v88 = -1; /*0x4bbf6d*/
           LOWORD(v36) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4bbf79*/
-          pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4bbf80*/
+          pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->q000; /*0x4bbf80*/
           v37 = v110; /*0x4bbf8b*/
           v111 = v110 + v36 - v97 - v100; /*0x4bbf96*/
           if ( v34 ) /*0x4bbf9d*/
@@ -4129,12 +4129,12 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
     Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4c0016*/
     v88[2] = v90; /*0x4c001d*/
     SamplePosition = (_WORD *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v89, v90 - Stream_field_04); /*0x4c0034*/
-    v39 = *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 4); /*0x4c003a*/
+    v39 = *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4); /*0x4c003a*/
     v88[2] = v90; /*0x4c003d*/
-    v40 = (_WORD *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v89, v90 - v39); /*0x4c004e*/
+    v40 = (_WORD *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.q0D8[60], v89, v90 - v39); /*0x4c004e*/
     v82 = -1; /*0x4c0055*/
     LOWORD(v41) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4c0061*/
-    result = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4c0065*/
+    result = (int)g_ZBufferDescriptor[2].m_Stream->q000; /*0x4c0065*/
     v96 = result; /*0x4c0068*/
     v110 = v34 + v41 - v90 - v93; /*0x4c0076*/
     if ( !v36 ) /*0x4c007d*/
@@ -4177,7 +4177,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
         v88[1] = 2 * v46 - v45; /*0x4c055f*/
         if ( v45 > 0 ) /*0x4c0563*/
         {
-          v65 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0569*/
+          v65 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0569*/
           v79 = v45; /*0x4c056f*/
           v66 = g_ZBufferDescriptor; /*0x4c0573*/
           v101 = 0; /*0x4c0579*/
@@ -4201,7 +4201,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
               if ( a9 ) /*0x4c0634*/
                 *SamplePosition = v67; /*0x4c0636*/
               v66 = g_ZBufferDescriptor; /*0x4c0639*/
-              v65 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c063f*/
+              v65 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c063f*/
             }
             if ( v64 > 0 ) /*0x4c0647*/
             {
@@ -4260,7 +4260,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
         if ( v99 > 0 ) /*0x4c039c*/
         {
           v57 = g_ZBufferDescriptor; /*0x4c03a2*/
-          v58 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c03a8*/
+          v58 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c03a8*/
           do /*0x4c053c*/
           {
             v59 = (unsigned __int16)*v40; /*0x4c03bb*/
@@ -4276,7 +4276,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
               if ( a9 ) /*0x4c0443*/
                 *SamplePosition = v110; /*0x4c044d*/
               v57 = g_ZBufferDescriptor; /*0x4c0450*/
-              v58 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0456*/
+              v58 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0456*/
             }
             if ( v56 > 0 ) /*0x4c045e*/
             {
@@ -4334,7 +4334,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
       if ( v46 > 0 ) /*0x4c019f*/
       {
         v49 = g_ZBufferDescriptor; /*0x4c01a5*/
-        v50 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c01ab*/
+        v50 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c01ab*/
         v100 = 0; /*0x4c01b1*/
         v88[1] = v46; /*0x4c01bc*/
         do /*0x4c0358*/
@@ -4352,7 +4352,7 @@ bool gamemd::XSurface::DrawLineZBuf(gamemd::Vector2D<int> const& a0, gamemd::Vec
             if ( a9 ) /*0x4c0258*/
               *SamplePosition = v110; /*0x4c0262*/
             v49 = g_ZBufferDescriptor; /*0x4c0265*/
-            v50 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c026b*/
+            v50 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c026b*/
           }
           if ( v48 > 0 ) /*0x4c0273*/
           {
@@ -4702,12 +4702,12 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
     Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x4be27e*/
     v94[2] = v96; /*0x4be285*/
     SamplePosition = (_WORD *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v95, v96 - Stream_field_04); /*0x4be29c*/
-    v41 = *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 4); /*0x4be2a2*/
+    v41 = *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4); /*0x4be2a2*/
     v94[2] = v96; /*0x4be2a5*/
-    v42 = (unsigned __int16 *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v95, v96 - v41); /*0x4be2b6*/
+    v42 = (unsigned __int16 *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.q0D8[60], v95, v96 - v41); /*0x4be2b6*/
     v85 = -1; /*0x4be2c1*/
     LOWORD(v41) = LOWORD(g_ZBufferDescriptor->Stream_field_04) + LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4be2cd*/
-    pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4be2d4*/
+    pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->q000; /*0x4be2d4*/
     a8 = v109 + v41 - v96 - v99; /*0x4be2ea*/
     if ( !v38 ) /*0x4be2f1*/
       return 0; /*0x4be9b9*/
@@ -4796,13 +4796,13 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             if ( pad_0 <= 0 ) /*0x4be959*/
             {
               v74 = v42; /*0x4be970*/
-              if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 24) ) /*0x4be975*/
-                v74 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x4be97a*/
+              if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 24) ) /*0x4be975*/
+                v74 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be97a*/
               v42 = v74; /*0x4be97c*/
             }
-            else if ( (unsigned int)v42 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 28) ) /*0x4be963*/
+            else if ( (unsigned int)v42 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x4be963*/
             {
-              v42 = (unsigned __int16 *)((char *)v42 - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x4be965*/
+              v42 = (unsigned __int16 *)((char *)v42 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be965*/
             }
             v56 = v94[1] == 1; /*0x4be98f*/
             a8 += v85; /*0x4be990*/
@@ -4855,13 +4855,13 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
               if ( pad_0 <= 0 ) /*0x4be6fe*/
               {
                 v64 = v42; /*0x4be715*/
-                if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 24) ) /*0x4be71a*/
-                  v64 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x4be71f*/
+                if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 24) ) /*0x4be71a*/
+                  v64 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be71f*/
                 v42 = v64; /*0x4be721*/
               }
-              else if ( (unsigned int)v42 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 28) ) /*0x4be708*/
+              else if ( (unsigned int)v42 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x4be708*/
               {
-                v42 = (unsigned __int16 *)((char *)v42 - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x4be70a*/
+                v42 = (unsigned __int16 *)((char *)v42 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be70a*/
               }
               a8 += v85; /*0x4be730*/
             }
@@ -4931,13 +4931,13 @@ bool gamemd::XSurface::DrawLineZBufColored(gamemd::Vector2D<int> const& a0, game
             if ( pad_0 <= 0 ) /*0x4be4f9*/
             {
               v55 = v42; /*0x4be510*/
-              if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 24) ) /*0x4be515*/
-                v55 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x4be51a*/
+              if ( (unsigned int)v42 < *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 24) ) /*0x4be515*/
+                v55 = (unsigned __int16 *)((char *)v42 + *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be51a*/
               v42 = v55; /*0x4be51c*/
             }
-            else if ( (unsigned int)v42 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 28) ) /*0x4be503*/
+            else if ( (unsigned int)v42 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x4be503*/
             {
-              v42 = (unsigned __int16 *)((char *)v42 - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32)); /*0x4be505*/
+              v42 = (unsigned __int16 *)((char *)v42 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32)); /*0x4be505*/
             }
             v49 = v87; /*0x4be52b*/
             a8 += v85; /*0x4be52f*/
@@ -5067,12 +5067,12 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
     }
     v62[1] = v12; /*0x4c0eeb*/
     v13 = (_WORD *)StreamClass::ReadAndSeek( /*0x4c0f01*/
-                     *(int **)&stru_87E790.__pad_D8[60],
+                     *(int **)&stru_87E790.q0D8[60],
                      v9,
-                     v12 - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 4));
-    v71 = *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0f10*/
+                     v12 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4));
+    v71 = *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 40); /*0x4c0f10*/
     if ( v64 > v66 ) /*0x4c0f14*/
-      v71 = -*(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0f18*/
+      v71 = -*(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 40); /*0x4c0f18*/
     v72 = (__int16 *)(*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v63, v64); /*0x4c0f2c*/
     if ( !v72 ) /*0x4c0f30*/
       return 0; /*0x4c1428*/
@@ -5084,13 +5084,13 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
         if ( v65 - v63 >= 0 ) /*0x4c0f5b*/
         {
           v15 = v72; /*0x4c0f61*/
-          v16 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0f69*/
+          v16 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0f69*/
           do /*0x4c0fae*/
           {
             if ( !*v13 ) /*0x4c0f72*/
             {
               *v15 = a4; /*0x4c0f78*/
-              v16 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c0f7b*/
+              v16 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c0f7b*/
             }
             if ( v71 <= 0 ) /*0x4c0f82*/
             {
@@ -5118,13 +5118,13 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
         {
           v19 = v72; /*0x4c100e*/
           v20 = v18 + 1; /*0x4c1012*/
-          v21 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c1015*/
+          v21 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1015*/
           do /*0x4c1045*/
           {
             if ( !*v13 ) /*0x4c101a*/
             {
               *v19 = a4; /*0x4c1020*/
-              v21 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c1024*/
+              v21 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1024*/
             }
             v13 += v71; /*0x4c102b*/
             if ( v71 <= 0 ) /*0x4c102e*/
@@ -5159,7 +5159,7 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
           v31 = 2 * v22 - v25; /*0x4c1126*/
           if ( v25 > 0 ) /*0x4c112a*/
           {
-            v32 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c1130*/
+            v32 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1130*/
             v58 = v25; /*0x4c113a*/
             v33 = v72; /*0x4c113e*/
             v34 = 0; /*0x4c1142*/
@@ -5168,7 +5168,7 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
               if ( !*v13 ) /*0x4c114a*/
               {
                 v33[v34] = a4; /*0x4c1155*/
-                v32 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c1159*/
+                v32 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1159*/
               }
               if ( v31 > 0 ) /*0x4c1161*/
               {
@@ -5202,14 +5202,14 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
           v28 = v26 - v22; /*0x4c109b*/
           if ( v22 > 0 ) /*0x4c109f*/
           {
-            v29 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c10a5*/
+            v29 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c10a5*/
             v30 = v72; /*0x4c10aa*/
             do /*0x4c110f*/
             {
               if ( !*v13 ) /*0x4c10ae*/
               {
                 v30[v27] = a4; /*0x4c10b9*/
-                v29 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c10bd*/
+                v29 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c10bd*/
               }
               if ( v28 > 0 ) /*0x4c10c4*/
               {
@@ -5242,13 +5242,13 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
       if ( v65 - v63 >= 0 ) /*0x4c11ca*/
       {
         v36 = v72; /*0x4c11d0*/
-        v37 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c11d8*/
+        v37 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c11d8*/
         do /*0x4c121d*/
         {
           if ( *v13 ) /*0x4c11e1*/
           {
             *v36 = a4; /*0x4c11e7*/
-            v37 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c11ea*/
+            v37 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c11ea*/
           }
           if ( v71 <= 0 ) /*0x4c11f1*/
           {
@@ -5276,13 +5276,13 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
       {
         v40 = v72; /*0x4c127d*/
         v41 = v39 + 1; /*0x4c1281*/
-        v42 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c1284*/
+        v42 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1284*/
         do /*0x4c12b4*/
         {
           if ( *v13 ) /*0x4c1289*/
           {
             *v40 = a4; /*0x4c128f*/
-            v42 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c1293*/
+            v42 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1293*/
           }
           v13 += v71; /*0x4c129a*/
           if ( v71 <= 0 ) /*0x4c129d*/
@@ -5320,7 +5320,7 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
         v53 = 2 * v43 - v47; /*0x4c1395*/
         if ( v47 > 0 ) /*0x4c1399*/
         {
-          v54 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c139b*/
+          v54 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c139b*/
           v60 = v47; /*0x4c13a1*/
           v55 = 0; /*0x4c13a9*/
           do /*0x4c140f*/
@@ -5328,7 +5328,7 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
             if ( *v13 ) /*0x4c13ab*/
             {
               v72[v55] = a4; /*0x4c13b5*/
-              v54 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c13b9*/
+              v54 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c13b9*/
             }
             if ( v53 > 0 ) /*0x4c13c1*/
             {
@@ -5361,14 +5361,14 @@ bool gamemd::XSurface::DrawStippledRect(gamemd::Vector2D<int> const& a0, gamemd:
         v49 = 0; /*0x4c130b*/
         if ( v43 > 0 ) /*0x4c130f*/
         {
-          v50 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c1315*/
+          v50 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c1315*/
           v51 = v72; /*0x4c131a*/
           do /*0x4c137e*/
           {
             if ( *v13 ) /*0x4c131e*/
             {
               v51[v49] = a4; /*0x4c1329*/
-              v50 = *(_DWORD **)&stru_87E790.__pad_D8[60]; /*0x4c132d*/
+              v50 = *(_DWORD **)&stru_87E790.q0D8[60]; /*0x4c132d*/
             }
             if ( v48 > 0 ) /*0x4c1334*/
             {
@@ -5445,7 +5445,7 @@ bool gamemd::XSurface::FillRectWithFlags(gamemd::RectangleStruct const& a0, game
     v32 = v5; /*0x4bb839*/
     if ( (*(int (**)(void))(*(_DWORD *)v5 + 112))() < 2 ) /*0x4bb845*/
       return 0; /*0x4bb847*/
-    if ( (int)this->DSurface_field_0x8 <= 0 || (int)this->DSurface_field_0xC <= 0 ) /*0x4bb863*/
+    if ( (int)this->q008 <= 0 || (int)this->q00C <= 0 ) /*0x4bb863*/
       return 0; /*0x4bb865*/
     v8 = (int *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)v6 + 120))(v6, v38); /*0x4bb87a*/
     v9 = ClipRectIntersection(v42, v8, (int *)this, 0, 0); /*0x4bb888*/
@@ -5517,46 +5517,46 @@ bool gamemd::XSurface::FillRectWithFlags(gamemd::RectangleStruct const& a0, game
 bool gamemd::XSurface::Unlock()
 {
     int v2; // eax
-    void *DSurface_field_0xC; // edi
+    void *q00C; // edi
     void *DSurface_field_0x0; // edx
     int result; // eax
 
     if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4baf54*/
     {
-      v2 = this->DSurface_field_0x1C[0]; /*0x4baf56*/
+      v2 = this->u32_1C[0]; /*0x4baf56*/
       if ( v2 ) /*0x4baf5b*/
       {
-        if ( (*(int (__stdcall **)(int))(*(_DWORD *)v2 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 /*0x4baf7d*/
-          && !(*(int (__stdcall **)(int))(*(_DWORD *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0])
-          && !(*(int (__stdcall **)(int))(*(_DWORD *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+        if ( (*(int (__stdcall **)(int))(*(_DWORD *)v2 + 96))(this->u32_1C[0]) == -2005532222 /*0x4baf7d*/
+          && !(*(int (__stdcall **)(int))(*(_DWORD *)this->u32_1C[0] + 108))(this->u32_1C[0])
+          && !(*(int (__stdcall **)(int))(*(_DWORD *)this->u32_1C[0] + 96))(this->u32_1C[0]) )
         {
-          DSurface_field_0xC = this->DSurface_field_0xC; /*0x4baf84*/
-          if ( (int)DSurface_field_0xC > 0 ) /*0x4baf89*/
+          q00C = this->q00C; /*0x4baf84*/
+          if ( (int)q00C > 0 ) /*0x4baf89*/
           {
             DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4baf8b*/
-            this->DSurface_field_0xC = 0; /*0x4baf93*/
+            this->q00C = 0; /*0x4baf93*/
             (*((void (__thiscall **)(DSurface *, _DWORD, _DWORD))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4baf96*/
-            ++this->DSurface_field_0xC; /*0x4baf9f*/
+            ++this->q00C; /*0x4baf9f*/
             (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bafa4*/
-            this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bafa7*/
+            this->q00C = q00C; /*0x4bafa7*/
           }
         }
       }
     }
-    result = (int)this->DSurface_field_0xC; /*0x4bafaa*/
+    result = (int)this->q00C; /*0x4bafaa*/
     if ( result <= 0 ) /*0x4bafaf*/
     {
       LOBYTE(result) = 0; /*0x4bafd6*/
     }
     else
     {
-      this->DSurface_field_0xC = (void *)--result; /*0x4bafb4*/
+      this->q00C = (void *)--result; /*0x4bafb4*/
       if ( !result ) /*0x4bafb7*/
       {
-        result = (*(int (__stdcall **)(int, void *))(*(_DWORD *)this->DSurface_field_0x1C[0] + 128))( /*0x4bafc3*/
-                   this->DSurface_field_0x1C[0],
-                   this->DSurface_field_0x14);
-        this->DSurface_field_0x14 = 0; /*0x4bafc9*/
+        result = (*(int (__stdcall **)(int, void *))(*(_DWORD *)this->u32_1C[0] + 128))( /*0x4bafc3*/
+                   this->u32_1C[0],
+                   this->q014);
+        this->q014 = 0; /*0x4bafc9*/
       }
       LOBYTE(result) = 1; /*0x4bafd1*/
     }
@@ -5569,7 +5569,7 @@ int gamemd::MapClass::IsVisible(gamemd::Vector2D<short> a0)
     int *v3; // eax
 
     v2 = (__int16)a2 + (SHIWORD(a2) << 9); /*0x5656ed*/
-    if ( v2 >= 0x40000 || (v3 = (int *)*((_DWORD *)this->MapClass_field_0x13C + v2)) == 0 ) /*0x565707*/
+    if ( v2 >= 0x40000 || (v3 = (int *)*((_DWORD *)this->q13C + v2)) == 0 ) /*0x565707*/
     {
       v3 = &g_MissionQueueFrame.briefing[130]; /*0x56570d*/
       g_MissionQueueFrame.briefing[139] = a2; /*0x565712*/
@@ -5681,7 +5681,7 @@ long gamemd::TActionClass::GetClassID(GUID* a0)
     }
     this->idxArray = v4; /*0x71e74f*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -5760,7 +5760,7 @@ long gamemd::TActionClass::Load(struct IStream* a0)
     }
     this->idxArray = v4; /*0x71e74f*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -5839,7 +5839,7 @@ long gamemd::TActionClass::Save(struct IStream* a0, int a1)
     }
     this->idxArray = v4; /*0x71e74f*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -5936,19 +5936,19 @@ long gamemd::TacticalClass::Load(struct IStream* a0)
     {
       if ( this ) /*0x6dbd3d*/
         SmallFunc_6D1E30(this, (int)&a2); /*0x6dbd46*/
-      v3 = *(_DWORD *)&this->__pad_AC[52]; /*0x6dbd4b*/
+      v3 = *(_DWORD *)&this->q0AC[52]; /*0x6dbd4b*/
       v4 = 0; /*0x6dbd52*/
-      *(_DWORD *)&this->__pad_DA8[8] = 0; /*0x6dbd54*/
+      *(_DWORD *)&this->qDA8[8] = 0; /*0x6dbd54*/
       if ( v3 > 0 ) /*0x6dbd60*/
       {
-        v5 = (int *)&this->__pad_AC[56]; /*0x6dbd63*/
+        v5 = (int *)&this->q0AC[56]; /*0x6dbd63*/
         do /*0x6dbd80*/
         {
           ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5); /*0x6dbd6f*/
           ++v4; /*0x6dbd7a*/
           ++v5; /*0x6dbd7b*/
         }
-        while ( v4 < *(_DWORD *)&this->__pad_AC[52] ); /*0x6dbd80*/
+        while ( v4 < *(_DWORD *)&this->q0AC[52] ); /*0x6dbd80*/
       }
       v6 = *(_DWORD *)&this->__pad_11F[3145]; /*0x6dbd89*/
       v9 = *(_DWORD *)&this->__pad_11F[3141]; /*0x6dbd93*/
@@ -5978,7 +5978,7 @@ long gamemd::TacticalClass::Save(struct IStream* a0, int a1)
 {
     int result; // eax
 
-    result = AbstractClass::SaveLoad_Prefix((int *)this->__pad_0, a2, a3); /*0x6dbe0f*/
+    result = AbstractClass::SaveLoad_Prefix((int *)this->q000, a2, a3); /*0x6dbe0f*/
     if ( result >= 0 ) /*0x6dbe16*/
       return 0; /*0x6dbe18*/
     return result; /*0x6dbe1a*/
@@ -6002,11 +6002,11 @@ long gamemd::TeamTypeClass::GetClassID(GUID* a0)
     this->TeamTypeClass_field_3C = 1; /*0x4c98d7*/
     this->taskForceCount = 0; /*0x4c98da*/
     this->taskForceCapacity = 0; /*0x4c98dd*/
-    this->__pad_4C[0] = 1; /*0x4c98e0*/
-    this->__pad_4C[1] = 0; /*0x4c98e3*/
+    this->q04C[0] = 1; /*0x4c98e0*/
+    this->q04C[1] = 0; /*0x4c98e3*/
     this->taskForce[0] = (int)(void *)&vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4c98e6*/
-    *(_DWORD *)&this->__pad_4C[8] = 10; /*0x4c98ed*/
-    *(_DWORD *)&this->__pad_4C[4] = 0; /*0x4c98f4*/
+    *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
+    *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
     this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
     this->TeamTypeClass_field_58 = 0; /*0x4c98fd*/
     this->TeamTypeClass_field_5C = 0; /*0x4c9901*/
@@ -6070,11 +6070,11 @@ long gamemd::TeamTypeClass::Load(struct IStream* a0)
     this->TeamTypeClass_field_3C = 1; /*0x4c98d7*/
     this->taskForceCount = 0; /*0x4c98da*/
     this->taskForceCapacity = 0; /*0x4c98dd*/
-    this->__pad_4C[0] = 1; /*0x4c98e0*/
-    this->__pad_4C[1] = 0; /*0x4c98e3*/
+    this->q04C[0] = 1; /*0x4c98e0*/
+    this->q04C[1] = 0; /*0x4c98e3*/
     this->taskForce[0] = (int)(void *)&vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4c98e6*/
-    *(_DWORD *)&this->__pad_4C[8] = 10; /*0x4c98ed*/
-    *(_DWORD *)&this->__pad_4C[4] = 0; /*0x4c98f4*/
+    *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
+    *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
     this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
     this->TeamTypeClass_field_58 = 0; /*0x4c98fd*/
     this->TeamTypeClass_field_5C = 0; /*0x4c9901*/
@@ -6138,11 +6138,11 @@ long gamemd::TeamTypeClass::Save(struct IStream* a0, int a1)
     this->TeamTypeClass_field_3C = 1; /*0x4c98d7*/
     this->taskForceCount = 0; /*0x4c98da*/
     this->taskForceCapacity = 0; /*0x4c98dd*/
-    this->__pad_4C[0] = 1; /*0x4c98e0*/
-    this->__pad_4C[1] = 0; /*0x4c98e3*/
+    this->q04C[0] = 1; /*0x4c98e0*/
+    this->q04C[1] = 0; /*0x4c98e3*/
     this->taskForce[0] = (int)(void *)&vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4c98e6*/
-    *(_DWORD *)&this->__pad_4C[8] = 10; /*0x4c98ed*/
-    *(_DWORD *)&this->__pad_4C[4] = 0; /*0x4c98f4*/
+    *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
+    *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
     this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
     this->TeamTypeClass_field_58 = 0; /*0x4c98fd*/
     this->TeamTypeClass_field_5C = 0; /*0x4c9901*/
@@ -6439,9 +6439,9 @@ long ra2::game::SlaveManagerClass::GetClassID(GUID* a0)
     LOBYTE(this->creationFrame) = 1; /*0x6af377*/
     BYTE1(this->creationFrame) = 0; /*0x6af37b*/
     this->slaves[0] = (int)(void *)&vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af37e*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6af385*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6af38c*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
+    *(_DWORD *)this->q048 = 0; /*0x6af38c*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
     this->AbstractClass = (void *)&vt_SlaveManagerClass; /*0x6af39b*/
     this->? = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
@@ -6452,7 +6452,7 @@ long ra2::game::SlaveManagerClass::GetClassID(GUID* a0)
     this->slaveOwner = 0; /*0x6af3bc*/
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -6482,9 +6482,9 @@ long ra2::game::SlaveManagerClass::Load(struct IStream* a0)
     LOBYTE(this->creationFrame) = 1; /*0x6af377*/
     BYTE1(this->creationFrame) = 0; /*0x6af37b*/
     this->slaves[0] = (int)(void *)&vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af37e*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6af385*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6af38c*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
+    *(_DWORD *)this->q048 = 0; /*0x6af38c*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
     this->AbstractClass = (void *)&vt_SlaveManagerClass; /*0x6af39b*/
     this->? = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
@@ -6495,7 +6495,7 @@ long ra2::game::SlaveManagerClass::Load(struct IStream* a0)
     this->slaveOwner = 0; /*0x6af3bc*/
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -6525,9 +6525,9 @@ long ra2::game::SlaveManagerClass::Save(struct IStream* a0, int a1)
     LOBYTE(this->creationFrame) = 1; /*0x6af377*/
     BYTE1(this->creationFrame) = 0; /*0x6af37b*/
     this->slaves[0] = (int)(void *)&vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af37e*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6af385*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6af38c*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
+    *(_DWORD *)this->q048 = 0; /*0x6af38c*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
     this->AbstractClass = (void *)&vt_SlaveManagerClass; /*0x6af39b*/
     this->? = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
@@ -6538,7 +6538,7 @@ long ra2::game::SlaveManagerClass::Save(struct IStream* a0, int a1)
     this->slaveOwner = 0; /*0x6af3bc*/
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -6565,9 +6565,9 @@ long ra2::game::SpawnManagerClass::GetClassID(GUID* a0)
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
     this->spawns[0] = (int)(void *)&vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6b6ec8*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
+    *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
     this->SpawnManagerClass_field_5C = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ee0*/
     this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
@@ -6578,7 +6578,7 @@ long ra2::game::SpawnManagerClass::GetClassID(GUID* a0)
     this->owner = 0; /*0x6b6f01*/
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -6609,9 +6609,9 @@ long ra2::game::SpawnManagerClass::Load(struct IStream* a0)
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
     this->spawns[0] = (int)(void *)&vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6b6ec8*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
+    *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
     this->SpawnManagerClass_field_5C = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ee0*/
     this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
@@ -6622,7 +6622,7 @@ long ra2::game::SpawnManagerClass::Load(struct IStream* a0)
     this->owner = 0; /*0x6b6f01*/
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -6653,9 +6653,9 @@ long ra2::game::SpawnManagerClass::Save(struct IStream* a0, int a1)
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
     this->spawns[0] = (int)(void *)&vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6b6ec8*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
+    *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
     this->SpawnManagerClass_field_5C = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ee0*/
     this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
@@ -6666,7 +6666,7 @@ long ra2::game::SpawnManagerClass::Save(struct IStream* a0, int a1)
     this->owner = 0; /*0x6b6f01*/
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -6809,55 +6809,55 @@ unsigned long ra2::game::CaptureManagerClass::Release()
 void * gamemd::XSurface::Lock(int a0, int a1)
 {
     int v4; // eax
-    void *DSurface_field_0xC; // esi
+    void *q00C; // esi
     void *DSurface_field_0x0; // edx
     int v7; // eax
-    void *DSurface_field_0x20; // eax
+    void *q020; // eax
     int v9; // esi
     _DWORD v11[27]; // [esp+28h] [ebp-6Ch] BYREF
 
     if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bad99*/
       return 0; /*0x4bad99*/
-    v4 = this->DSurface_field_0x1C[0]; /*0x4bad9f*/
-    if ( v4 && (*(int (__stdcall **)(int))(*(_DWORD *)v4 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4badb1*/
+    v4 = this->u32_1C[0]; /*0x4bad9f*/
+    if ( v4 && (*(int (__stdcall **)(int))(*(_DWORD *)v4 + 96))(this->u32_1C[0]) == -2005532222 ) /*0x4badb1*/
     {
-      if ( (*(int (__stdcall **)(int))(*(_DWORD *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4badca*/
-        || (*(int (__stdcall **)(int))(*(_DWORD *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+      if ( (*(int (__stdcall **)(int))(*(_DWORD *)this->u32_1C[0] + 108))(this->u32_1C[0]) /*0x4badca*/
+        || (*(int (__stdcall **)(int))(*(_DWORD *)this->u32_1C[0] + 96))(this->u32_1C[0]) )
       {
         return 0; /*0x4badcf*/
       }
-      DSurface_field_0xC = this->DSurface_field_0xC; /*0x4badd5*/
-      if ( (int)DSurface_field_0xC > 0 ) /*0x4badda*/
+      q00C = this->q00C; /*0x4badd5*/
+      if ( (int)q00C > 0 ) /*0x4badda*/
       {
         DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4baddc*/
-        this->DSurface_field_0xC = 0; /*0x4bade0*/
+        this->q00C = 0; /*0x4bade0*/
         (*((void (__thiscall **)(DSurface *, _DWORD, _DWORD))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bade7*/
-        ++this->DSurface_field_0xC; /*0x4badf0*/
+        ++this->q00C; /*0x4badf0*/
         (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4badf5*/
-        this->DSurface_field_0xC = DSurface_field_0xC; /*0x4badf8*/
+        this->q00C = q00C; /*0x4badf8*/
       }
     }
     if ( a2 >= 0 && a3 >= 0 ) /*0x4bae13*/
     {
-      if ( this->DSurface_field_0xC ) /*0x4bae19*/
+      if ( this->q00C ) /*0x4bae19*/
       {
   LABEL_14:
-        ++this->DSurface_field_0xC; /*0x4bae7c*/
+        ++this->q00C; /*0x4bae7c*/
         v9 = a3 * (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4bae90*/
-        return (char *)this->DSurface_field_0x14 /*0x4baeac*/
+        return (char *)this->q014 /*0x4baeac*/
              + a2 * (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this)
              + v9;
       }
       memset(v11, 0, sizeof(v11)); /*0x4bae2d*/
-      v7 = this->DSurface_field_0x1C[0]; /*0x4bae2f*/
+      v7 = this->u32_1C[0]; /*0x4bae2f*/
       v11[0] = 108; /*0x4bae38*/
       if ( !(*(int (__stdcall **)(int, _DWORD, _DWORD *, int, _DWORD))(*(_DWORD *)v7 + 100))(v7, 0, v11, 1, 0) ) /*0x4bae46*/
       {
-        qmemcpy(this->DSurface_field_0x20, v11, 0x6Cu); /*0x4bae59*/
-        DSurface_field_0x20 = this->DSurface_field_0x20; /*0x4bae5b*/
-        this->DSurface_field_0x10 = (void *)((unsigned int)(*((_DWORD *)DSurface_field_0x20 + 21) + 7) >> 3); /*0x4bae67*/
-        BYTE1(this->DSurface_field_0x18) = (*((_DWORD *)DSurface_field_0x20 + 26) & 0x4000) != 0; /*0x4bae73*/
-        this->DSurface_field_0x14 = (void *)*((_DWORD *)DSurface_field_0x20 + 9); /*0x4bae79*/
+        qmemcpy(this->q020, v11, 0x6Cu); /*0x4bae59*/
+        q020 = this->q020; /*0x4bae5b*/
+        this->q010 = (void *)((unsigned int)(*((_DWORD *)q020 + 21) + 7) >> 3); /*0x4bae67*/
+        BYTE1(this->q018) = (*((_DWORD *)q020 + 26) & 0x4000) != 0; /*0x4bae73*/
+        this->q014 = (void *)*((_DWORD *)q020 + 9); /*0x4bae79*/
         goto LABEL_14; /*0x4bae79*/
       }
     }
@@ -6944,7 +6944,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     char v11; // cl
     __int16 v12; // dx
     int v13; // esi
-    void *DisplayClass_field_0x11A8; // ecx
+    void *q11A8; // ecx
     int v15; // eax
     char *v16; // eax
     int v17; // esi
@@ -6977,7 +6977,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     char *v44; // eax
     int FirstOfAction; // eax
     char *v46; // eax
-    void *Object_field_0x30; // [esp-Ch] [ebp-9Ch]
+    void *q030; // [esp-Ch] [ebp-9Ch]
     int v48; // [esp-8h] [ebp-98h]
     unsigned __int8 v49; // [esp-8h] [ebp-98h]
     int v50; // [esp-4h] [ebp-94h]
@@ -6998,7 +6998,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     {
       v6 = 0; /*0x4ab9ef*/
     }
-    if ( !*(_DWORD *)&this->__pad_1198[12] ) /*0x4ab9f9*/
+    if ( !*(_DWORD *)&this->q1198[12] ) /*0x4ab9f9*/
     {
       v26 = 0; /*0x4abca1*/
       if ( this->__pad_11B4[27] ) /*0x4abc94*/
@@ -7018,7 +7018,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
         DisplayClass_field_0x0 = (void (__thiscall **)(DisplayClass *, _DWORD, int))this->DisplayClass_field_0x0; /*0x4abcf5*/
         this->__pad_11B4[27] = 0; /*0x4abcfd*/
         DisplayClass_field_0x0[18](this, 0, a6); /*0x4abd04*/
-        LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4abd07*/
+        LOBYTE(this->q11D0) = 0; /*0x4abd07*/
         stru_A8EB00.?[441] = 1; /*0x4abd0e*/
         if ( !v26 ) /*0x4abd17*/
           goto LABEL_121; /*0x4abd17*/
@@ -7072,7 +7072,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
         if ( (*(int (__thiscall **)(House **))&(*v6)->House_field_0x29[3])(v6) != 6 /*0x4abe40*/
           || (unsigned __int8)House::IsHumanPlayer(v6[135])
           || *((_BYTE *)v6 + 1773) != 15
-          || (*(unsigned __int8 (__thiscall **)(House **))&(*v6)->__pad_2B0[120])(v6) )
+          || (*(unsigned __int8 (__thiscall **)(House **))&(*v6)->q2B0[120])(v6) )
         {
           MapClass::UnselectAll_ClearLimboLaunchers(v53); /*0x4abe4a*/
           if ( Selection::GetFlag() ) /*0x4abe4f*/
@@ -7151,7 +7151,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                 }
                 v51 = v37; /*0x4abfee*/
                 v52 = v38; /*0x4abff0*/
-                Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ac000*/
+                q030 = dword_A83D4C->q030; /*0x4ac000*/
               }
               else
               {
@@ -7162,7 +7162,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                     v40 = *((char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a3) + 283); /*0x4ac05a*/
                     PlacePlayerBeacon( /*0x4ac09d*/
                       &g_VisibilitySystem,
-                      (int)dword_A83D4C->Object_field_0x30,
+                      (int)dword_A83D4C->q030,
                       (*a3 << 8) + 128,
                       (a3[1] << 8) + 128,
                       dword_8A0740 * v40,
@@ -7180,7 +7180,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                   v49 = 21; /*0x4ac0e7*/
                   v51 = *(_DWORD *)v41; /*0x4ac0e9*/
                   v52 = v41[4]; /*0x4ac0eb*/
-                  Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ac0fb*/
+                  q030 = dword_A83D4C->q030; /*0x4ac0fb*/
                 }
                 else
                 {
@@ -7198,7 +7198,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                       goto LABEL_117; /*0x4ac154*/
                     if ( !v6 ) /*0x4ac15c*/
                     {
-                      v44 = PlayerClass::SetTargetOrClear(v57, (int)dword_A83D4C->Object_field_0x30, 23, a3); /*0x4ac1b2*/
+                      v44 = PlayerClass::SetTargetOrClear(v57, (int)dword_A83D4C->q030, 23, a3); /*0x4ac1b2*/
                       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac1c1*/
                       {
   LABEL_116:
@@ -7213,7 +7213,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                       {
                         v46 = SidebarClass::SetFlashEntry( /*0x4ac23a*/
                                 v57,
-                                (int)dword_A83D4C->Object_field_0x30,
+                                (int)dword_A83D4C->q030,
                                 18,
                                 *(_DWORD *)(FirstOfAction + 152),
                                 a3);
@@ -7232,10 +7232,10 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
                   v49 = 22; /*0x4ac172*/
                   v51 = *(_DWORD *)v43; /*0x4ac174*/
                   v52 = v43[4]; /*0x4ac176*/
-                  Object_field_0x30 = dword_A83D4C->Object_field_0x30; /*0x4ac186*/
+                  q030 = dword_A83D4C->q030; /*0x4ac186*/
                 }
               }
-              v44 = EventClass::Add(v57, (int)Object_field_0x30, v49, v51, v52); /*0x4ac187*/
+              v44 = EventClass::Add(v57, (int)q030, v49, v51, v52); /*0x4ac187*/
               if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4ac196*/
                 goto LABEL_116; /*0x4ac196*/
               goto LABEL_117; /*0x4ac196*/
@@ -7243,7 +7243,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
           }
         }
   LABEL_120:
-        LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac294*/
+        LOBYTE(this->q11D0) = 0; /*0x4ac294*/
   LABEL_121:
         TechnoClass::GetField(); /*0x4ac29b*/
         return result; /*0x4ac29b*/
@@ -7252,7 +7252,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
         goto LABEL_120; /*0x4abdda*/
       goto LABEL_56; /*0x4abdda*/
     }
-    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this->DisplayClass_field_0x11A8 + 44))(this->DisplayClass_field_0x11A8) == 7 ) /*0x4aba14*/
+    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this->q11A8 + 44))(this->q11A8) == 7 ) /*0x4aba14*/
     {
       v8 = a3[1] + *(_WORD *)&this->__pad_41E[3420]; /*0x4aba27*/
       LOWORD(v55) = *(_WORD *)&this->__pad_41E[3418] + *a3; /*0x4aba2b*/
@@ -7260,17 +7260,17 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
       v9 = *(_DWORD *)&this->__pad_41E[3422]; /*0x4aba39*/
       *(_DWORD *)v56 = v55; /*0x4aba43*/
       this->__pad_41E[3426] = GetBuildingPlacement( /*0x4aba5e*/
-                                (_DWORD *)this->DisplayClass_field_0x11A8,
-                                *(_DWORD *)this->__pad_11AC,
+                                (_DWORD *)this->q11A8,
+                                *(_DWORD *)this->q11AC,
                                 v9,
                                 v56);
     }
-    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this->DisplayClass_field_0x11A8 + 44))(this->DisplayClass_field_0x11A8) == 7 /*0x4aba94*/
+    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this->q11A8 + 44))(this->q11A8) == 7 /*0x4aba94*/
       && v6
       && (*(int (__thiscall **)(House **))&(*v6)->House_field_0x29[3])(v6) == 6
       && (unsigned __int8)BuildingClass::CanAcceptType(
                             (bool *)v6,
-                            (int)this->DisplayClass_field_0x11A8,
+                            (int)this->q11A8,
                             (int)dword_A83D4C) )
     {
       this->__pad_41E[3426] = 1; /*0x4aba9d*/
@@ -7282,7 +7282,7 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
       return result; /*0x4abc91*/
     }
     v10 = __RTDynamicCast( /*0x4abad5*/
-            (void **)this->DisplayClass_field_0x11A8,
+            (void **)this->q11A8,
             0,
             (&MEMORY[0x817F78]) /*ObjectTypeClass `RTTI Type Descriptor'*/,
             (&MEMORY[0x817F98]) /*TechnoTypeClass `RTTI Type Descriptor'*/,
@@ -7290,14 +7290,14 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     if ( !v10 || (v11 = v10[3278], LOBYTE(v56[0]) = 1, !v11) ) /*0x4abaee*/
       LOBYTE(v56[0]) = 0; /*0x4abaf0*/
     v12 = a3[1] + *(_WORD *)&this->__pad_41E[3420]; /*0x4abb06*/
-    v13 = *(_DWORD *)&this->__pad_1198[12]; /*0x4abb0a*/
+    v13 = *(_DWORD *)&this->q1198[12]; /*0x4abb0a*/
     LOWORD(v55) = *(_WORD *)&this->__pad_41E[3418] + *a3; /*0x4abb10*/
-    DisplayClass_field_0x11A8 = this->DisplayClass_field_0x11A8; /*0x4abb15*/
+    q11A8 = this->q11A8; /*0x4abb15*/
     HIWORD(v55) = v12; /*0x4abb1b*/
     v50 = LOBYTE(v56[0]); /*0x4abb38*/
-    v48 = (*(int (__thiscall **)(void *))(*(_DWORD *)DisplayClass_field_0x11A8 + 64))(DisplayClass_field_0x11A8); /*0x4abb3c*/
+    v48 = (*(int (__thiscall **)(void *))(*(_DWORD *)q11A8 + 64))(q11A8); /*0x4abb3c*/
     v15 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13); /*0x4abb41*/
-    v16 = EventClass::Init(v57, (int)dword_A83D4C->Object_field_0x30, 11, v15, v48, v50, &v55); /*0x4abb55*/
+    v16 = EventClass::Init(v57, (int)dword_A83D4C->q030, 11, v15, v48, v50, &v55); /*0x4abb55*/
     if ( (int)stru_A80220.lineTrailer < 128 ) /*0x4abb64*/
     {
       qmemcpy((char *)&byte_A802D4 + 111 * dword_A802D0, v16, 0x6Fu); /*0x4abb80*/
@@ -7305,9 +7305,9 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
       dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x4abba8*/
       ++stru_A80220.lineTrailer; /*0x4abbae*/
     }
-    v17 = *(_DWORD *)&this->__pad_1198[12]; /*0x4abbb3*/
+    v17 = *(_DWORD *)&this->q1198[12]; /*0x4abbb3*/
     if ( v17 )
-      v18 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v17 + 44))(*(_DWORD *)&this->__pad_1198[12]) == 6
+      v18 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v17 + 44))(*(_DWORD *)&this->q1198[12]) == 6
           ? (Selection *)v17
           : 0;
     else
@@ -7315,26 +7315,26 @@ void gamemd::DisplayClass::LeftMouseButtonUp(gamemd::Vector3D<int> const& a0, ga
     Selection::ClearGlobals(v18); /*0x4abbd7*/
     if ( stru_A8EB00.?[391] ) /*0x4abbe3*/
       goto LABEL_121; /*0x4abbe3*/
-    v19 = (IUnknown *)this->DisplayClass_field_0x11A8; /*0x4abbe9*/
-    v20 = *(_DWORD *)&this->__pad_1198[12]; /*0x4abbef*/
-    this->DisplayClass_field_0x1194 = v19; /*0x4abbf5*/
+    v19 = (IUnknown *)this->q11A8; /*0x4abbe9*/
+    v20 = *(_DWORD *)&this->q1198[12]; /*0x4abbef*/
+    this->q1194 = v19; /*0x4abbf5*/
     *(_DWORD *)&this->__pad_41E[3442] = v20; /*0x4abbfb*/
     v21 = *(_DWORD *)&this->__pad_41E[3418]; /*0x4abc03*/
     *(_DWORD *)&this->__pad_41E[3428] = *(_DWORD *)a3; /*0x4abc09*/
     v22 = *(_DWORD *)&this->__pad_41E[3422]; /*0x4abc0f*/
     *(_DWORD *)&this->__pad_41E[3432] = v21; /*0x4abc15*/
-    v23 = *(_DWORD *)this->__pad_11AC; /*0x4abc1b*/
+    v23 = *(_DWORD *)this->q11AC; /*0x4abc1b*/
     *(_DWORD *)&this->__pad_41E[3438] = v22; /*0x4abc23*/
-    *(_DWORD *)this->__pad_1198 = v23; /*0x4abc29*/
+    *(_DWORD *)this->q1198 = v23; /*0x4abc29*/
     if ( v19 ) /*0x4abc2f*/
     {
       v24 = (const void *)(*(int (__thiscall **)(IUnknown *, int))(v19->field_0 + 144))(v19, 1); /*0x4abc35*/
       MIXClass::CopyHeader((int *)&stru_87F5F0.__pad_58[416], v24); /*0x4abc41*/
     }
     Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x4abc4c*/
-    *(_DWORD *)&stru_87F5F0.__pad_E12[1418] = 0; /*0x4abc51*/
-    *(_DWORD *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x4abc57*/
-    *(_DWORD *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x4abc5d*/
+    *(_DWORD *)&stru_87F5F0.qE12[1418] = 0; /*0x4abc51*/
+    *(_DWORD *)&stru_87F5F0.qE12[1422] = 0; /*0x4abc57*/
+    *(_DWORD *)&stru_87F5F0.qE12[1426] = -1; /*0x4abc5d*/
     TechnoClass::GetField(); /*0x4abc67*/
     return result; /*0x4abc6c*/
 }
@@ -7344,7 +7344,7 @@ void gamemd::MapClass::AllocateCells()
     char *v2; // ecx
     int result; // eax
 
-    v2 = &this->__pad_134[4]; /*0x565aa3*/
+    v2 = &this->q134[4]; /*0x565aa3*/
     if ( v2 ) /*0x565aab*/
     {
       *((_DWORD *)v2 + 1) = 0; /*0x565aad*/
@@ -7353,8 +7353,8 @@ void gamemd::MapClass::AllocateCells()
       v2[13] = 0; /*0x565abf*/
       *(_DWORD *)v2 = (void *)&vt_VectorClass_CellClass; /*0x565ac3*/
     }
-    (*(void (__thiscall **)(char *, _DWORD, _DWORD))(*(_DWORD *)v2 + 8))(v2, *(_DWORD *)&this->__pad_144[16], 0); /*0x565ad4*/
-    for ( result = 0; result < *(_DWORD *)&this->__pad_144[16]; *((_DWORD *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565ae1*/
+    (*(void (__thiscall **)(char *, _DWORD, _DWORD))(*(_DWORD *)v2 + 8))(v2, *(_DWORD *)&this->q144[16], 0); /*0x565ad4*/
+    for ( result = 0; result < *(_DWORD *)&this->q144[16]; *((_DWORD *)this->q13C + result - 1) = 0 ) /*0x565ae1*/
       ++result; /*0x565ae9*/
     return result; /*0x565afc*/
 }
@@ -7369,15 +7369,15 @@ void gamemd::MapClass::ConstructCells()
 
     v2 = 0; /*0x565bc6*/
     v3 = 0; /*0x565bc8*/
-    *(_DWORD *)this->__pad_134 = 0; /*0x565bca*/
+    *(_DWORD *)this->q134 = 0; /*0x565bca*/
     do /*0x565bfc*/
     {
       v4 = 512; /*0x565bd0*/
       do /*0x565bf4*/
       {
-        if ( v2 < this->MapClass_field_0x140 ) /*0x565bdb*/
+        if ( v2 < this->q140 ) /*0x565bdb*/
         {
-          result = this->MapClass_field_0x13C; /*0x565bdd*/
+          result = this->q13C; /*0x565bdd*/
           v6 = (CellClass *)result[v3]; /*0x565be3*/
           if ( v6 ) /*0x565be8*/
             result = CellClass::Construct(v6); /*0x565bea*/
@@ -7523,7 +7523,7 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
     int v132; // ecx
     int v133; // ecx
     int v134; // edi
-    _DWORD *MapClass_field_0x13C; // eax
+    _DWORD *q13C; // eax
     int v136; // ecx
     __int16 v137; // si
     void *v138; // edx
@@ -7548,12 +7548,12 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
     int v157; // [esp+56h] [ebp-1Ch]
     int v158; // [esp+5Ah] [ebp-18h] BYREF
     int i; // [esp+5Eh] [ebp-14h]
-    void *MapClass_field_0xF4; // [esp+62h] [ebp-10h]
+    void *q0F4; // [esp+62h] [ebp-10h]
     int v161; // [esp+66h] [ebp-Ch]
     int v162; // [esp+6Ah] [ebp-8h]
     int n; // [esp+6Eh] [ebp-4h]
 
-    MapClass_field_0xF4 = this->MapClass_field_0xF4; /*0x565c24*/
+    q0F4 = this->q0F4; /*0x565c24*/
     v161 = *(_DWORD *)&g_MissionQueueFrame.waypoints[2134]; /*0x565c2e*/
     v6 = 0; /*0x565c37*/
     v7 = 0; /*0x565c3d*/
@@ -7561,34 +7561,34 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
     v158 = 0; /*0x565c45*/
     for ( i = 2 * *(_DWORD *)&stru_87F5F0.__pad_58[664] + 8; v7 < dword_A8E370; ++v7 ) /*0x565c4d*/
       (*(void (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)dword_A8E364 + v7) + 292))(*((_DWORD *)dword_A8E364 + v7), 0); /*0x565c5b*/
-    if ( this->MapClass_field_0x140 > 0 ) /*0x565c71*/
+    if ( this->q140 > 0 ) /*0x565c71*/
     {
       do /*0x565ce1*/
       {
         v8 = v6 % 512; /*0x565c84*/
-        v9 = this->MapClass_field_0xF4; /*0x565c90*/
+        v9 = this->q0F4; /*0x565c90*/
         v10 = (__int16)(v6 / 512); /*0x565c9c*/
         v11 = v8 + v10; /*0x565c9f*/
         if ( v11 <= (int)v9 || v8 - v10 >= (int)v9 || v10 - v8 >= (int)v9 || v11 > (int)v9 + 2 * *(_DWORD *)this->__pad_F8 ) /*0x565cbf*/
         {
-          v12 = *((_DWORD *)this->MapClass_field_0x13C + v6); /*0x565cc7*/
+          v12 = *((_DWORD *)this->q13C + v6); /*0x565cc7*/
           if ( v12 ) /*0x565ccc*/
             *(_BYTE *)(v12 + 283) = a4; /*0x565cd2*/
         }
         ++v6; /*0x565cde*/
       }
-      while ( v6 < this->MapClass_field_0x140 ); /*0x565ce1*/
+      while ( v6 < this->q140 ); /*0x565ce1*/
     }
     v153 = 0; /*0x565ce9*/
     if ( !(_BYTE)jj ) /*0x565cef*/
     {
-      Block = (void *)__2_YAPAXI_Z(328 * (_DWORD)MapClass_field_0xF4 * i); /*0x565d0d*/
+      Block = (void *)__2_YAPAXI_Z(328 * (_DWORD)q0F4 * i); /*0x565d0d*/
       v158 = (int)Block; /*0x565d11*/
-      v13 = this->MapClass_field_0xF4; /*0x565d15*/
-      *(_DWORD *)this->__pad_10C = 1; /*0x565d1b*/
-      *(_DWORD *)&this->__pad_10C[4] = v13; /*0x565d25*/
-      *(_DWORD *)&this->__pad_10C[8] = (char *)v13 - 1; /*0x565d31*/
-      *(_DWORD *)&this->__pad_10C[12] = (char *)this->MapClass_field_0x13C + 2048 * (_DWORD)v13 + 4; /*0x565d46*/
+      v13 = this->q0F4; /*0x565d15*/
+      *(_DWORD *)this->q10C = 1; /*0x565d1b*/
+      *(_DWORD *)&this->q10C[4] = v13; /*0x565d25*/
+      *(_DWORD *)&this->q10C[8] = (char *)v13 - 1; /*0x565d31*/
+      *(_DWORD *)&this->q10C[12] = (char *)this->q13C + 2048 * (_DWORD)v13 + 4; /*0x565d46*/
       v14 = LayerClass::CellIteratorNext((LayerClass *)this); /*0x565d51*/
       v161 = *(_DWORD *)(v14 + 36); /*0x565d58*/
       if ( v14 ) /*0x565d5c*/
@@ -7743,31 +7743,31 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
     v48 = a2; /*0x5662ac*/
     v49 = a2; /*0x5662b6*/
     v50 = 0; /*0x5662ba*/
-    this->MapClass_field_0xEC = (IUnknown *)*a2; /*0x5662be*/
+    this->q0EC = (IUnknown *)*a2; /*0x5662be*/
     *(_DWORD *)this->__pad_F0 = v49[1]; /*0x5662c3*/
-    this->MapClass_field_0xF4 = (void *)v49[2]; /*0x5662c9*/
+    this->q0F4 = (void *)v49[2]; /*0x5662c9*/
     *(_DWORD *)this->__pad_F8 = v49[3]; /*0x5662cf*/
-    v51 = (int)this->MapClass_field_0xF4; /*0x5662d2*/
-    this->MapClass_field_0xEC = 0; /*0x5662d8*/
+    v51 = (int)this->q0F4; /*0x5662d2*/
+    this->q0EC = 0; /*0x5662d8*/
     *(_DWORD *)this->__pad_F0 = 0; /*0x5662e1*/
     if ( v51 > 63 || *(int *)this->__pad_F8 > 63 ) /*0x5662ef*/
-      *(_DWORD *)&stru_87F5F0.__pad_E12[2162] = 2; /*0x5662f1*/
+      *(_DWORD *)&stru_87F5F0.qE12[2162] = 2; /*0x5662f1*/
     g_MissionQueueFrame.localVariables[160] = *(_DWORD *)&stru_87F5F0.__pad_58[660]; /*0x566306*/
     v155 = 0; /*0x56630b*/
     g_MissionQueueFrame.localVariables[161] = *(_DWORD *)&stru_87F5F0.__pad_58[660] /*0x566317*/
                                             + 2 * *(_DWORD *)&stru_87F5F0.__pad_58[664];
-    *(_DWORD *)&this->__pad_10C[24] = 1; /*0x56631c*/
-    this->MapClass_field_0x128 = (void *)1; /*0x566322*/
+    *(_DWORD *)&this->q10C[24] = 1; /*0x56631c*/
+    this->q128 = (void *)1; /*0x566322*/
     v52 = v48[3] + v48[2] - 1; /*0x56632e*/
-    *(_DWORD *)this->__pad_12C = v52; /*0x566332*/
-    this->MapClass_field_0x130 = (void *)v52; /*0x566338*/
+    *(_DWORD *)this->q12C = v52; /*0x566332*/
+    this->q130 = (void *)v52; /*0x566338*/
     if ( 2 * v52 + 2 > 0 ) /*0x566344*/
     {
       *(_DWORD *)v152 = 0; /*0x56634a*/
       do /*0x566451*/
       {
         v53 = 0; /*0x566354*/
-        if ( *(_DWORD *)this->__pad_12C + 2 > 0 ) /*0x56635b*/
+        if ( *(_DWORD *)this->q12C + 2 > 0 ) /*0x56635b*/
         {
           v148[0] = (__int16)v50; /*0x566364*/
           do /*0x56642c*/
@@ -7775,14 +7775,14 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
             LOWORD(v149) = v53; /*0x56636c*/
             HIWORD(v149) = v50; /*0x566374*/
             v54 = (__int16)v53 + v148[0]; /*0x566379*/
-            v55 = this->MapClass_field_0xF4; /*0x56637c*/
+            v55 = this->q0F4; /*0x56637c*/
             if ( v54 > (int)v55 /*0x5663ad*/
               && (__int16)v53 - v148[0] < (int)v55
               && v148[0] - (__int16)v53 < (int)v55
               && v54 <= (int)v55 + 2 * *(_DWORD *)this->__pad_F8 )
             {
               v56 = *(_DWORD *)v152 + v53; /*0x5663b9*/
-              v57 = (CellClass *)*((_DWORD *)this->MapClass_field_0x13C + *(_DWORD *)v152 + v53); /*0x5663bc*/
+              v57 = (CellClass *)*((_DWORD *)this->q13C + *(_DWORD *)v152 + v53); /*0x5663bc*/
               if ( v57 ) /*0x5663c1*/
               {
                 v60 = (ObjectClass *)CellClass::Construct(v57); /*0x5663fc*/
@@ -7796,28 +7796,28 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
                 else
                   v59 = 0; /*0x5663df*/
                 ObjectClass::SetMember09(v59, &v149); /*0x5663e8*/
-                *((_DWORD *)this->MapClass_field_0x13C + v56) = v59; /*0x5663f3*/
+                *((_DWORD *)this->q13C + v56) = v59; /*0x5663f3*/
                 v50 = v155; /*0x5663f6*/
               }
-              *(_BYTE *)(*((_DWORD *)this->MapClass_field_0x13C + v56) + 283) = a4; /*0x56641a*/
+              *(_BYTE *)(*((_DWORD *)this->q13C + v56) + 283) = a4; /*0x56641a*/
             }
             ++v53; /*0x566426*/
           }
-          while ( v53 < *(_DWORD *)this->__pad_12C + 2 ); /*0x56642c*/
+          while ( v53 < *(_DWORD *)this->q12C + 2 ); /*0x56642c*/
         }
         v155 = ++v50; /*0x56643d*/
         *(_DWORD *)v152 += 512; /*0x566441*/
       }
-      while ( v50 < 2 * (int)this->MapClass_field_0x130 + 2 ); /*0x566451*/
+      while ( v50 < 2 * (int)this->q130 + 2 ); /*0x566451*/
     }
     v147 = 0; /*0x566460*/
     if ( (_BYTE)jj ) /*0x566467*/
       goto LABEL_119; /*0x566467*/
-    v61 = this->MapClass_field_0xF4; /*0x56646d*/
-    *(_DWORD *)this->__pad_10C = 1; /*0x566473*/
-    *(_DWORD *)&this->__pad_10C[4] = v61; /*0x566479*/
-    *(_DWORD *)&this->__pad_10C[8] = (char *)v61 - 1; /*0x566482*/
-    *(_DWORD *)&this->__pad_10C[12] = (char *)this->MapClass_field_0x13C + 2048 * (_DWORD)v61 + 4; /*0x566497*/
+    v61 = this->q0F4; /*0x56646d*/
+    *(_DWORD *)this->q10C = 1; /*0x566473*/
+    *(_DWORD *)&this->q10C[4] = v61; /*0x566479*/
+    *(_DWORD *)&this->q10C[8] = (char *)v61 - 1; /*0x566482*/
+    *(_DWORD *)&this->q10C[12] = (char *)this->q13C + 2048 * (_DWORD)v61 + 4; /*0x566497*/
     v62 = *(_DWORD *)(LayerClass::CellIteratorNext((LayerClass *)this) + 36); /*0x5664a2*/
     v63 = a2[1]; /*0x5664b1*/
     v64 = *a2; /*0x5664b4*/
@@ -7840,7 +7840,7 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
         HIWORD(jj) = v152[1] + HIWORD(v161); /*0x566534*/
         v66 = (char *)(v65 - 9); /*0x566539*/
         v67 = (__int16)(v161 + v152[0]) + ((__int16)(v152[1] + HIWORD(v161)) << 9); /*0x566545*/
-        if ( v67 < 0x40000 && (v68 = (int *)*((_DWORD *)this->MapClass_field_0x13C + v67)) != 0 ) /*0x56655b*/
+        if ( v67 < 0x40000 && (v68 = (int *)*((_DWORD *)this->q13C + v67)) != 0 ) /*0x56655b*/
         {
           v69 = v68; /*0x56655d*/
         }
@@ -7993,15 +7993,15 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
       }
       while ( v155 ); /*0x566ab1*/
     }
-    v101 = this->MapClass_field_0xF4; /*0x566ab7*/
-    *(_DWORD *)this->__pad_10C = 1; /*0x566abd*/
-    *(_DWORD *)&this->__pad_10C[4] = v101; /*0x566ac7*/
-    *(_DWORD *)&this->__pad_10C[8] = (char *)v101 - 1; /*0x566ad0*/
-    *(_DWORD *)&this->__pad_10C[12] = (char *)this->MapClass_field_0x13C + 2048 * (_DWORD)v101 + 4; /*0x566ae5*/
+    v101 = this->q0F4; /*0x566ab7*/
+    *(_DWORD *)this->q10C = 1; /*0x566abd*/
+    *(_DWORD *)&this->q10C[4] = v101; /*0x566ac7*/
+    *(_DWORD *)&this->q10C[8] = (char *)v101 - 1; /*0x566ad0*/
+    *(_DWORD *)&this->q10C[12] = (char *)this->q13C + 2048 * (_DWORD)v101 + 4; /*0x566ae5*/
     for ( j = LayerClass::CellIteratorNext((LayerClass *)this); j; j = LayerClass::CellIteratorNext((LayerClass *)this) ) /*0x566af2*/
     {
       v103 = *(_DWORD *)(j + 36); /*0x566afc*/
-      v104 = this->MapClass_field_0xF4; /*0x566aff*/
+      v104 = this->q0F4; /*0x566aff*/
       jj = v103; /*0x566b05*/
       v105 = a2[1]; /*0x566b09*/
       v158 = v103; /*0x566b0c*/
@@ -8012,11 +8012,11 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
                                          + 2 * (*(_DWORD *)this->__pad_F8 - v105 - *(_DWORD *)&stru_87F5F0.__pad_58[664])
         || (__int16)v103 - SHIWORD(v103) > (int)v104
                                          + 2
-                                         * (int)((char *)MapClass_field_0xF4 - *a2 - *(_DWORD *)&stru_87F5F0.__pad_58[660])
+                                         * (int)((char *)q0F4 - *a2 - *(_DWORD *)&stru_87F5F0.__pad_58[660])
                                          - 1 )
       {
         v106 = (__int16)v103 + (SHIWORD(v103) << 9); /*0x566b86*/
-        v107 = *((_DWORD *)this->MapClass_field_0x13C + v106); /*0x566b88*/
+        v107 = *((_DWORD *)this->q13C + v106); /*0x566b88*/
         if ( v107 ) /*0x566b8d*/
           (*(void (__thiscall **)(int, int))(*(_DWORD *)v107 + 32))(v107, 1); /*0x566b93*/
         v108 = (CellClass *)__2_YAPAXI_Z(0x148u); /*0x566b9b*/
@@ -8024,13 +8024,13 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
           v109 = CellClass::Construct(v108); /*0x566ba9*/
         else
           v109 = 0; /*0x566bb0*/
-        *((_DWORD *)this->MapClass_field_0x13C + v106) = v109; /*0x566bbd*/
-        ObjectClass::SetMember09(*((ObjectClass **)this->MapClass_field_0x13C + v106), &v158); /*0x566bc9*/
-        *(_DWORD *)(*((_DWORD *)this->MapClass_field_0x13C + v106) + 56) = 0xFFFF; /*0x566bd7*/
-        *(_BYTE *)(*((_DWORD *)this->MapClass_field_0x13C + v106) + 282) = 0; /*0x566be7*/
-        *(_BYTE *)(*((_DWORD *)this->MapClass_field_0x13C + v106) + 284) = 0; /*0x566bf7*/
-        *(_DWORD *)(*((_DWORD *)this->MapClass_field_0x13C + v106) + 68) = -1; /*0x566c07*/
-        *(_BYTE *)(*((_DWORD *)this->MapClass_field_0x13C + v106) + 283) = a4; /*0x566c1b*/
+        *((_DWORD *)this->q13C + v106) = v109; /*0x566bbd*/
+        ObjectClass::SetMember09(*((ObjectClass **)this->q13C + v106), &v158); /*0x566bc9*/
+        *(_DWORD *)(*((_DWORD *)this->q13C + v106) + 56) = 0xFFFF; /*0x566bd7*/
+        *(_BYTE *)(*((_DWORD *)this->q13C + v106) + 282) = 0; /*0x566be7*/
+        *(_BYTE *)(*((_DWORD *)this->q13C + v106) + 284) = 0; /*0x566bf7*/
+        *(_DWORD *)(*((_DWORD *)this->q13C + v106) + 68) = -1; /*0x566c07*/
+        *(_BYTE *)(*((_DWORD *)this->q13C + v106) + 283) = a4; /*0x566c1b*/
       }
     }
     for ( k = 0; k < 702; ++k ) /*0x566c30*/
@@ -8108,7 +8108,7 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
                                 0); *kk != 0x7FFF || kk[1] != 0x7FFF; kk += 2 )
           {
             v130 = (__int16)(*kk + (_WORD)a2); /*0x566ee9*/
-            v131 = this->MapClass_field_0xF4; /*0x566eec*/
+            v131 = this->q0F4; /*0x566eec*/
             v132 = (__int16)(HIWORD(a2) + kk[1]); /*0x566ef2*/
             if ( v132 + v130 <= (int)v131 ) /*0x566efa*/
               goto LABEL_93; /*0x566efa*/
@@ -8134,18 +8134,18 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
     }
     v134 = 0; /*0x566f60*/
     --dword_A8E7AC; /*0x566f63*/
-    if ( this->MapClass_field_0x140 > 0 ) /*0x566f71*/
+    if ( this->q140 > 0 ) /*0x566f71*/
     {
       do /*0x566f77*/
       {
-        MapClass_field_0x13C = this->MapClass_field_0x13C; /*0x566f77*/
-        v136 = MapClass_field_0x13C[v134]; /*0x566f7d*/
-        a2 = &MapClass_field_0x13C[v134]; /*0x566f85*/
+        q13C = this->q13C; /*0x566f77*/
+        v136 = q13C[v134]; /*0x566f7d*/
+        a2 = &q13C[v134]; /*0x566f85*/
         jj = v136; /*0x566f89*/
         if ( v136 ) /*0x566f8d*/
         {
           v137 = v134 % 512; /*0x566fa0*/
-          v138 = this->MapClass_field_0xF4; /*0x566fac*/
+          v138 = this->q0F4; /*0x566fac*/
           v139 = (__int16)(v134 / 512); /*0x566fb8*/
           v140 = v137 + v139; /*0x566fbb*/
           if ( v140 > (int)v138 ) /*0x566fc0*/
@@ -8158,13 +8158,13 @@ void gamemd::MapClass::CreateEmptyMap(gamemd::RectangleStruct const& a0, bool a1
           (*(void (__thiscall **)(int, int))(*(_DWORD *)v136 + 32))(v136, 1); /*0x566fef*/
         }
       }
-      while ( ++v134 < this->MapClass_field_0x140 ); /*0x566f77*/
+      while ( ++v134 < this->q140 ); /*0x566f77*/
     }
-    v141 = this->MapClass_field_0xF4; /*0x567001*/
-    *(_DWORD *)this->__pad_10C = 1; /*0x567007*/
-    *(_DWORD *)&this->__pad_10C[4] = v141; /*0x567011*/
-    *(_DWORD *)&this->__pad_10C[8] = (char *)v141 - 1; /*0x56701a*/
-    *(_DWORD *)&this->__pad_10C[12] = (char *)this->MapClass_field_0x13C + 2048 * (_DWORD)v141 + 4; /*0x56702f*/
+    v141 = this->q0F4; /*0x567001*/
+    *(_DWORD *)this->q10C = 1; /*0x567007*/
+    *(_DWORD *)&this->q10C[4] = v141; /*0x567011*/
+    *(_DWORD *)&this->q10C[8] = (char *)v141 - 1; /*0x56701a*/
+    *(_DWORD *)&this->q10C[12] = (char *)this->q13C + 2048 * (_DWORD)v141 + 4; /*0x56702f*/
     for ( mm = (_DWORD *)LayerClass::CellIteratorNext((LayerClass *)this); /*0x56703c*/
           mm;
           mm = (_DWORD *)LayerClass::CellIteratorNext((LayerClass *)this) )
@@ -8207,30 +8207,30 @@ void gamemd::MapClass::DestructCells()
     int v5; // ecx
     int result; // eax
 
-    for ( i = 0; i < this->MapClass_field_0x140; ++i ) /*0x565b0e*/
+    for ( i = 0; i < this->q140; ++i ) /*0x565b0e*/
     {
-      v3 = *((_DWORD *)this->MapClass_field_0x13C + i); /*0x565b16*/
+      v3 = *((_DWORD *)this->q13C + i); /*0x565b16*/
       if ( v3 ) /*0x565b1b*/
       {
         *(_DWORD *)(v3 + 44) = 0; /*0x565b1d*/
         *(_DWORD *)(v3 + 48) = 0; /*0x565b20*/
       }
     }
-    for ( j = 0; j < this->MapClass_field_0x140; ++j ) /*0x565b39*/
+    for ( j = 0; j < this->q140; ++j ) /*0x565b39*/
     {
-      v5 = *((_DWORD *)this->MapClass_field_0x13C + j); /*0x565b41*/
+      v5 = *((_DWORD *)this->q13C + j); /*0x565b41*/
       if ( v5 ) /*0x565b46*/
       {
         (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x565b4c*/
-        *((_DWORD *)this->MapClass_field_0x13C + j) = 0; /*0x565b55*/
+        *((_DWORD *)this->q13C + j) = 0; /*0x565b55*/
       }
     }
     ReturnFalse2(); /*0x565b67*/
-    result = this->MapClass_field_0x140; /*0x565b6c*/
+    result = this->q140; /*0x565b6c*/
     if ( result < 0x40000 ) /*0x565b78*/
     {
-      (*(void (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&this->__pad_134[4] + 8))(&this->__pad_134[4], 0x40000, 0); /*0x565b8c*/
-      for ( result = 0; result < this->MapClass_field_0x140; *((_DWORD *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565b99*/
+      (*(void (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&this->q134[4] + 8))(&this->q134[4], 0x40000, 0); /*0x565b8c*/
+      for ( result = 0; result < this->q140; *((_DWORD *)this->q13C + result - 1) = 0 ) /*0x565b99*/
         ++result; /*0x565ba1*/
     }
     return result; /*0x565bb0*/
@@ -8240,7 +8240,7 @@ void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, boo
 {
     int v3; // esi
     int i; // ebp
-    int MapClass_field_0x1160; // ecx
+    int q1160; // ecx
     int v7; // eax
     int v8; // edx
     int *v9; // ecx
@@ -8257,12 +8257,12 @@ void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, boo
     {
       for ( i = 0; i < (int)this->MapClass_field_0x116C; ++i ) /*0x577943*/
       {
-        MapClass_field_0x1160 = this->MapClass_field_0x1160; /*0x57794a*/
-        v7 = *(__int16 *)(MapClass_field_0x1160 + 4 * i + 2); /*0x577950*/
-        v8 = *(__int16 *)(MapClass_field_0x1160 + 4 * i); /*0x577955*/
-        v9 = (int *)(MapClass_field_0x1160 + 4 * i); /*0x577959*/
+        q1160 = this->q1160; /*0x57794a*/
+        v7 = *(__int16 *)(q1160 + 4 * i + 2); /*0x577950*/
+        v8 = *(__int16 *)(q1160 + 4 * i); /*0x577955*/
+        v9 = (int *)(q1160 + 4 * i); /*0x577959*/
         v10 = v8 + (v7 << 9); /*0x57795f*/
-        if ( v10 < 0x40000 && (v11 = (ObjectClass *)*((_DWORD *)this->MapClass_field_0x13C + v10)) != 0 ) /*0x577975*/
+        if ( v10 < 0x40000 && (v11 = (ObjectClass *)*((_DWORD *)this->q13C + v10)) != 0 ) /*0x577975*/
         {
           v12 = v11; /*0x577977*/
         }
@@ -8274,8 +8274,8 @@ void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, boo
         if ( v12 && v12->ambientSoundController[0] == v3 ) /*0x57798e*/
         {
           ObjectClass::SetTriggerTarget(v12, 0); /*0x577994*/
-          v13 = ((int (__thiscall *)(ObjectClass **, int *))this->MapClass_field_0x115C->?)( /*0x5779ab*/
-                  &this->MapClass_field_0x115C,
+          v13 = ((int (__thiscall *)(ObjectClass **, int *))this->q115C->?)( /*0x5779ab*/
+                  &this->q115C,
                   &v12->occupant);
           if ( v13 != -1 ) /*0x5779b1*/
           {
@@ -8285,7 +8285,7 @@ void gamemd::MapClass::PointerGotInvalid(class ra2::game::AbstractClass* a0, boo
               v15 = (MapClass *)((char *)MapClass_field_0x116C - 1); /*0x5779ba*/
               for ( this->MapClass_field_0x116C = v15; /*0x5779c0*/
                     v13 < (int)this->MapClass_field_0x116C;
-                    *(_DWORD *)(this->MapClass_field_0x1160 + 4 * v13 - 4) = *(_DWORD *)(this->MapClass_field_0x1160
+                    *(_DWORD *)(this->q1160 + 4 * v13 - 4) = *(_DWORD *)(this->q1160
                                                                                        + 4 * v13) )
               {
                 ++v13; /*0x5779c5*/
@@ -8322,10 +8322,10 @@ void gamemd::MapClass::SetVisibleRect(gamemd::RectangleStruct const& a0)
     void **p_MapClass_field_0xFC; // esi
     void **v4; // eax
     int v5; // eax
-    int MapClass_field_0x100; // edx
-    void *MapClass_field_0xF4; // ecx
+    int q100; // edx
+    void *q0F4; // ecx
     int v8; // eax
-    void *MapClass_field_0x108; // ecx
+    void *q108; // ecx
     void *v10; // eax
     int result; // eax
     int i; // ebp
@@ -8335,30 +8335,30 @@ void gamemd::MapClass::SetVisibleRect(gamemd::RectangleStruct const& a0)
     char IsWithinUsableArea; // al
     int v17[4]; // [esp+Ch] [ebp-10h] BYREF
 
-    p_MapClass_field_0xFC = &this->MapClass_field_0xFC; /*0x56724b*/
-    v4 = (void **)ClipRectIntersection(v17, a2, (int *)&this->MapClass_field_0xEC, 0, 0); /*0x567251*/
+    p_MapClass_field_0xFC = &this->q0FC; /*0x56724b*/
+    v4 = (void **)ClipRectIntersection(v17, a2, (int *)&this->q0EC, 0, 0); /*0x567251*/
     *p_MapClass_field_0xFC = *v4; /*0x56725a*/
-    this->MapClass_field_0x100 = v4[1]; /*0x56725f*/
-    *(_DWORD *)this->__pad_104 = v4[2]; /*0x567265*/
-    this->MapClass_field_0x108 = v4[3]; /*0x56726b*/
+    this->q100 = v4[1]; /*0x56725f*/
+    *(_DWORD *)this->q104 = v4[2]; /*0x567265*/
+    this->q108 = v4[3]; /*0x56726b*/
     v5 = (int)*p_MapClass_field_0xFC; /*0x56726e*/
     if ( (int)*p_MapClass_field_0xFC <= 2 ) /*0x567273*/
       v5 = 2; /*0x567275*/
-    MapClass_field_0x100 = (int)this->MapClass_field_0x100; /*0x56727a*/
+    q100 = (int)this->q100; /*0x56727a*/
     *p_MapClass_field_0xFC = (void *)v5; /*0x567280*/
-    if ( MapClass_field_0x100 <= 2 ) /*0x567285*/
-      MapClass_field_0x100 = 2; /*0x567287*/
-    MapClass_field_0xF4 = this->MapClass_field_0xF4; /*0x56728c*/
-    this->MapClass_field_0x100 = (void *)MapClass_field_0x100; /*0x567292*/
-    v8 = (int)MapClass_field_0xF4 - v5 - 2; /*0x56729a*/
-    if ( *(_DWORD *)this->__pad_104 < v8 ) /*0x5672a5*/
-      v8 = *(_DWORD *)this->__pad_104; /*0x5672a7*/
-    MapClass_field_0x108 = this->MapClass_field_0x108; /*0x5672a9*/
-    *(_DWORD *)this->__pad_104 = v8; /*0x5672af*/
-    v10 = (void *)(*(_DWORD *)this->__pad_F8 - MapClass_field_0x100 - 6); /*0x5672bd*/
-    if ( (int)MapClass_field_0x108 < (int)v10 ) /*0x5672c2*/
-      v10 = MapClass_field_0x108; /*0x5672c4*/
-    this->MapClass_field_0x108 = v10; /*0x5672cd*/
+    if ( q100 <= 2 ) /*0x567285*/
+      q100 = 2; /*0x567287*/
+    q0F4 = this->q0F4; /*0x56728c*/
+    this->q100 = (void *)q100; /*0x567292*/
+    v8 = (int)q0F4 - v5 - 2; /*0x56729a*/
+    if ( *(_DWORD *)this->q104 < v8 ) /*0x5672a5*/
+      v8 = *(_DWORD *)this->q104; /*0x5672a7*/
+    q108 = this->q108; /*0x5672a9*/
+    *(_DWORD *)this->q104 = v8; /*0x5672af*/
+    v10 = (void *)(*(_DWORD *)this->__pad_F8 - q100 - 6); /*0x5672bd*/
+    if ( (int)q108 < (int)v10 ) /*0x5672c2*/
+      v10 = q108; /*0x5672c4*/
+    this->q108 = v10; /*0x5672cd*/
     MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5672d3*/
     result = *(_DWORD *)&stru_A8EB00.?[164]; /*0x5672d8*/
     for ( i = 0; i < *(int *)&stru_A8EB00.?[164]; ++i ) /*0x5672e1*/
@@ -8396,7 +8396,7 @@ void gamemd::MapClass::UpdateCrates()
       LOBYTE(v1) = stru_A8B250[17]; /*0x56bbec*/
       if ( stru_A8B250[17] ) /*0x56bbf3*/
       {
-        v3 = &this->__pad_144[20]; /*0x56bbf7*/
+        v3 = &this->q144[20]; /*0x56bbf7*/
         for ( i = 256; i; --i ) /*0x56bbfd*/
         {
           LOWORD(v1) = *((_WORD *)v3 + 6); /*0x56bc02*/
@@ -8512,7 +8512,7 @@ void gamemd::TActionClass::pointerExpired(class ra2::game::AbstractClass* a0, bo
     }
     this->idxArray = v4; /*0x71e74f*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -8557,11 +8557,11 @@ void gamemd::TeamTypeClass::pointerExpired(class ra2::game::AbstractClass* a0, b
     this->TeamTypeClass_field_3C = 1; /*0x4c98d7*/
     this->taskForceCount = 0; /*0x4c98da*/
     this->taskForceCapacity = 0; /*0x4c98dd*/
-    this->__pad_4C[0] = 1; /*0x4c98e0*/
-    this->__pad_4C[1] = 0; /*0x4c98e3*/
+    this->q04C[0] = 1; /*0x4c98e0*/
+    this->q04C[1] = 0; /*0x4c98e3*/
     this->taskForce[0] = (int)(void *)&vt_DynamicVectorClass_TechnoTypeClass_const; /*0x4c98e6*/
-    *(_DWORD *)&this->__pad_4C[8] = 10; /*0x4c98ed*/
-    *(_DWORD *)&this->__pad_4C[4] = 0; /*0x4c98f4*/
+    *(_DWORD *)&this->q04C[8] = 10; /*0x4c98ed*/
+    *(_DWORD *)&this->q04C[4] = 0; /*0x4c98f4*/
     this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
     this->TeamTypeClass_field_58 = 0; /*0x4c98fd*/
     this->TeamTypeClass_field_5C = 0; /*0x4c9901*/
@@ -8942,9 +8942,9 @@ void ra2::game::SlaveManagerClass::pointerExpired(class ra2::game::AbstractClass
     LOBYTE(this->creationFrame) = 1; /*0x6af377*/
     BYTE1(this->creationFrame) = 0; /*0x6af37b*/
     this->slaves[0] = (int)(void *)&vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af37e*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6af385*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6af38c*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
+    *(_DWORD *)this->q048 = 0; /*0x6af38c*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
     this->AbstractClass = (void *)&vt_SlaveManagerClass; /*0x6af39b*/
     this->? = (void *)&vt_SlaveManagerClass; /*0x6af3a1*/
@@ -8955,7 +8955,7 @@ void ra2::game::SlaveManagerClass::pointerExpired(class ra2::game::AbstractClass
     this->slaveOwner = 0; /*0x6af3bc*/
     this->slaveType = 0; /*0x6af3bf*/
     this->slaveCount = 0; /*0x6af3c2*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
     this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
     this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
     this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -8982,9 +8982,9 @@ void ra2::game::SpawnManagerClass::pointerExpired(class ra2::game::AbstractClass
     AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
     SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
     this->spawns[0] = (int)(void *)&vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
-    *(_DWORD *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
-    *(_DWORD *)this->__pad_48 = 0; /*0x6b6ec8*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
+    *(_DWORD *)&this->q048[4] = 10; /*0x6b6ec1*/
+    *(_DWORD *)this->q048 = 0; /*0x6b6ec8*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ed4*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6ed7*/
     this->SpawnManagerClass_field_5C = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6ee0*/
     this->SpawnManagerClass_field_64 = 0; /*0x6b6ee3*/
@@ -8995,7 +8995,7 @@ void ra2::game::SpawnManagerClass::pointerExpired(class ra2::game::AbstractClass
     this->owner = 0; /*0x6b6f01*/
     this->spawnOwner = 0; /*0x6b6f04*/
     this->spawnType = 0; /*0x6b6f07*/
-    *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
+    *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6b6f11*/
     this->SpawnManagerClass_field_54 = v4; /*0x6b6f14*/
     this->SpawnManagerClass_field_58 = 0; /*0x6b6f17*/
     this->SpawnManagerClass_field_68 = 0; /*0x6b6f1a*/
@@ -9310,7 +9310,7 @@ void gamemd::TActionClass::ExecuteAction(int a0, ra2::game::ObjectClass* a1, ra2
     }
     this->idxArray = v4; /*0x71e74f*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
@@ -9389,7 +9389,7 @@ void gamemd::TActionClass::ddtor()
     }
     this->idxArray = v4; /*0x71e74f*/
     if ( g_BuildingLoadQueue_Array.GateCloseDelay[0] < g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2] /*0x71e786*/
-      || (BYTE1(g_BuildingLoadQueue_Array.align_E24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
+      || (BYTE1(g_BuildingLoadQueue_Array.qE24[0]) || !g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[2])
       && g_BuildingLoadQueue_Array.GateCloseDelay[1] > 0
       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 8))(
            g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,

@@ -22,13 +22,13 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
   int v9; // ecx
 
   v4 = 0; /*0x4d2db9*/
-  this->FoggedObject_field_0x4 = 0; /*0x4d2dbd*/
+  this->ptr_4 = 0; /*0x4d2dbd*/
   this->u32_8 = aP1; /*0x4d2dc0*/
   this->u32_C = 1; /*0x4d2dc3*/
   this->u32_D = 0; /*0x4d2dc7*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
-    return this->__pad_0; /*0x4d2e38*/
+    return this->q000; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
     v8 = RA2_OPNEW(16 * aP1); /*0x4d2e07*/
@@ -51,9 +51,9 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
       }
       v4 = (AbstractClass *)v8; /*0x4d2e2f*/
     }
-    this->FoggedObject_field_0x4 = v4; /*0x4d2e31*/
+    this->ptr_4 = v4; /*0x4d2e31*/
     this->u32_D = 1; /*0x4d2e34*/
-    return this->__pad_0; /*0x4d2e34*/
+    return this->q000; /*0x4d2e34*/
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
   {
@@ -70,8 +70,8 @@ int FoggedObject::DrawVector_Constructor(int aP1, int aP2)
     }
     while ( aP1 ); /*0x4d2df4*/
   }
-  this->FoggedObject_field_0x4 = (AbstractClass *)aP2; /*0x4d2df6*/
-  return this->__pad_0; /*0x4d2dfb*/
+  this->ptr_4 = (AbstractClass *)aP2; /*0x4d2df6*/
+  return this->q000; /*0x4d2dfb*/
 }
 }
 // 0x4D2D10
@@ -80,7 +80,7 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block,
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4d2d13*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4d2d20*/
   {
     RA2_OPDEL(v3); /*0x4d2d28*/
@@ -90,5 +90,5 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block,
   Block->m_8 = 0; /*0x4d2d41*/
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
     RA2_OPDEL(Block); /*0x4d2d4b*/
-  return Block->__pad_0; /*0x4d2d55*/
+  return Block->q000; /*0x4d2d55*/
 }

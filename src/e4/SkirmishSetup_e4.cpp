@@ -235,7 +235,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
           LoadScenarioClassByIndex(v10); /*0x5e6b06*/
           if ( !*(_DWORD *)g_UIControlState ) /*0x5e6b10*/
             Session::PrepareGame(v9); /*0x5e6b17*/
-          *(_DWORD *)&stru_A8B250.__pad_0[4] = dword_AC10E0; /*0x5e6b22*/
+          *(_DWORD *)&stru_A8B250.q000[4] = dword_AC10E0; /*0x5e6b22*/
           LoadScenarioClassByIndex(dword_AC10E0); /*0x5e6b28*/
           IDA_LOBYTE(v10) = HandleMultiplayerMapSelection((ObjectClass *)v9); /*0x5e6b38*/
           Screen::Capture(1, 0, v10, a2); /*0x5e6b3a*/
@@ -351,7 +351,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
   if ( hWnd == (HWND)1175 ) /*0x5e6e12*/
   {
     byte_AC11C8 = 1; /*0x5e6eac*/
-    First = MultiplayerGameMode::Find(*(MultiplayerGameMode **)stru_A8B250.__pad_0); /*0x5e6eb8*/
+    First = MultiplayerGameMode::Find(*(MultiplayerGameMode **)stru_A8B250.q000); /*0x5e6eb8*/
     v36 = 0; /*0x5e6eba*/
     if ( !First ) /*0x5e6ebe*/
       First = MultiplayerGameMode::GetFirst(); /*0x5e6ec5*/
@@ -384,10 +384,10 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
     IDA_LOBYTE(this) = (*(int (__thiscall **)(int))(*(_DWORD *)First + 60))(First); /*0x5e6f7c*/
     v40 = GetDlgItem((HWND)v37, 1411); /*0x5e6f80*/
     EnableWindow(v40, (unsigned __int8)this); /*0x5e6f8e*/
-    v41 = *(_DWORD *)&stru_A8B250.__pad_0[4]; /*0x5e6f94*/
-    if ( *(_DWORD *)&stru_A8B250.__pad_0[4] != -1 && *(int *)&stru_A8B250.__pad_0[4] < dword_A8B8D8 ) /*0x5e6fa8*/
+    v41 = *(_DWORD *)&stru_A8B250.q000[4]; /*0x5e6f94*/
+    if ( *(_DWORD *)&stru_A8B250.q000[4] != -1 && *(int *)&stru_A8B250.q000[4] < dword_A8B8D8 ) /*0x5e6fa8*/
     {
-      this = *(SkirmishSetup **)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4]); /*0x5e6fb5*/
+      this = *(SkirmishSetup **)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.q000[4]); /*0x5e6fb5*/
       if ( this ) /*0x5e6fb9*/
       {
         v42 = 0; /*0x5e6fc1*/
@@ -406,7 +406,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
         }
         SendDlgItemMessageA((HWND)v37, 1363, 0x186u, v42, 0); /*0x5e700b*/
         SendDlgItemMessageA((HWND)v37, 1363, 0x197u, v42, 0); /*0x5e701b*/
-        v41 = *(_DWORD *)&stru_A8B250.__pad_0[4]; /*0x5e701d*/
+        v41 = *(_DWORD *)&stru_A8B250.q000[4]; /*0x5e701d*/
       }
     }
     dword_AC10E0 = v41; /*0x5e7022*/
@@ -455,14 +455,14 @@ int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
   result = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60826a*/
   if ( (_BYTE)result ) /*0x608271*/
     goto LABEL_6; /*0x608271*/
-  result = *(_DWORD *)&g_DialogPool.__pad_208[60]; /*0x608273*/
+  result = *(_DWORD *)&g_DialogPool.q208[60]; /*0x608273*/
   v4 = hWnd; /*0x608278*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x60827e*/
+  if ( !*(_DWORD *)&g_DialogPool.q208[60] ) /*0x60827e*/
     goto LABEL_6; /*0x60827e*/
-  result = *(_DWORD *)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x60829f*/
+  result = *(_DWORD *)(*(_DWORD *)&g_DialogPool.q208[56] /*0x60829f*/
                      + 4
-                     * ((*(int (__thiscall **)(SkirmishSetup **))&g_DialogPool.__pad_208[80])(&v4)
-                      & ((1 << g_DialogPool.__pad_208[68]) - 1)));
+                     * ((*(int (__thiscall **)(SkirmishSetup **))&g_DialogPool.q208[80])(&v4)
+                      & ((1 << g_DialogPool.q208[68]) - 1)));
   if ( !result ) /*0x6082a4*/
     goto LABEL_6; /*0x6082a4*/
   while ( *(SkirmishSetup **)result != v4 ) /*0x6082ac*/
@@ -476,7 +476,7 @@ int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
     && (!*(_BYTE *)(result + 189) || *(_DWORD *)(result + 176) != 1 ? (v3 = 0) : (v3 = 1),
         (result = IsWindowVisible((HWND)hWnd), IDA_LOBYTE(result) = result != 0, v3) && (_BYTE)result) )
   {
-    PlayVocClass(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 416), 0x2000, 1.0, 0); /*0x60830f*/
+    PlayVocClass(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 416), 0x2000, 1.0, 0); /*0x60830f*/
     IDA_LOBYTE(v4) = IsWindowEnabled((HWND)hWnd); /*0x608329*/
     EnableWindow((HWND)hWnd, 0); /*0x60832d*/
     EnumChildWindows((HWND)hWnd, Dialog::MapControlToAction, 1); /*0x60833d*/

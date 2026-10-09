@@ -149,5 +149,9 @@ struct DynamicVector {
     wchar_t * ddtor(void *a1_1);  // 0x4EA390
     char SetCapacity_1(int a2, unsigned int * a3);  // 0x4EB180
     char Remove(signed int Size, char * a3);
+    unsigned int DynamicVector_field_0x1;  // 0x1 (ml)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q00C;  // 0xC (offset-truth supply)
+    unsigned int q014;  // 0x14 (offset-truth supply)
 };
 } // namespace gamemd

@@ -26,6 +26,9 @@ struct ConnectionClass {
     int initQueue(unsigned int a2);
     void dtor();
      int queueSendPacket(const void *a2, signed int a3, const void *a4, signed int a5, __int16 a6);  // G57w10-S raw 0x0048B410 (was C2597 interim stub)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int u32_18;  // 0x18 (offset-truth supply)
+    unsigned int u32_1C;  // 0x1C (offset-truth supply)
 };
 #endif  // GAMEMD_TREE_UNIVERSE
 

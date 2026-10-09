@@ -17,6 +17,9 @@ struct VoxelRenderer {
 // --- flat members (END) ---
     int InitializeBuffers(int a2, unsigned int * a3, int a4);
     int ProjectVertex(float a2, float a3, float a4, char a5);
+    unsigned int u32_28;  // 0x28 (offset-truth supply)
+    unsigned int u32_2C;  // 0x2C (offset-truth supply)
+    unsigned int u32_70;  // 0x70 (offset-truth supply)
 };
 
 } // namespace gamemd

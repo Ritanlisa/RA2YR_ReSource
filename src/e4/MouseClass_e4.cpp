@@ -40,7 +40,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
       v3 = &stru_B0C1C0 + 8 * v2; /*0x6d1796*/
       if ( v3 ) /*0x6d179e*/
       {
-        if ( !IDA_BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
+        if ( !IDA_BYTE1(v3[3].q008) ) /*0x6d17a0*/
           GadgetClass::Show((GadgetClass *)v3); /*0x6d17a7*/
       }
     }
@@ -54,7 +54,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
       v6 = &stru_B0C1C0 + 8 * v5; /*0x6d17d4*/
       if ( v6 ) /*0x6d17dc*/
       {
-        if ( IDA_BYTE1(v6[3].ShapeButtonClass_field_0x08) ) /*0x6d17de*/
+        if ( IDA_BYTE1(v6[3].q008) ) /*0x6d17de*/
           GadgetClass::Hide((GadgetClass *)v6); /*0x6d17e5*/
       }
     }

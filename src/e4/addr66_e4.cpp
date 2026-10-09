@@ -301,7 +301,7 @@ char UpdateBullets(int a1)
   CoordStruct aP2; // [esp+B4h] [ebp-Ch] BYREF
 
   v1 = *(ObjectClass **)(a1 + 8);
-  int v2 = *(unsigned int *)&v1[10].__pad_0[12];
+  int v2 = *(unsigned int *)&v1[10].q000[12];
   if ( v2 == *(unsigned int *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1248) )
   {
     v3 = (ObjectClass *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 1200);
@@ -415,8 +415,8 @@ LABEL_17:
       if ( (double)(IDA_LODWORD(var84_4) - v39) / (double)IDA_SLODWORD(var84_4) != 1.0 )
       {
   double v47; // st5
-        st7_69 = *(float *)&v113->__pad_0[8] * 1.570796326794897;
-        st6_69 = *(float *)&v113->__pad_0[12] * 1.570796326794897;
+        st7_69 = *(float *)&v113->q000[8] * 1.570796326794897;
+        st6_69 = *(float *)&v113->q000[12] * 1.570796326794897;
         IDA_LODWORD(desiredFacing_4) = *(unsigned int *)(a1 + 44);
         if ( IDA_LODWORD(desiredFacing_4) )
         {
@@ -441,7 +441,7 @@ LABEL_17:
       else
       {
 LABEL_63:
-        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * 1.570796326794897;
+        *(float *)(a1 + 80) = *(float *)&v113->q000[12] * 1.570796326794897;
         *(unsigned int *)(a1 + 60) = 3;
 eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 756))( *(unsigned int *)(a1 + 8), (IUnknown **)(v128));
 
@@ -457,14 +457,14 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         }
         v46 = *(ObjectClass **)(a1 + 8);
         v124 = *(CoordStruct *)v46->location;
-        int v44 = (*(int (**)(ObjectClass *))(*(unsigned int *)v46->__pad_0 + 132))( (ObjectClass *)(v46));
+        int v44 = (*(int (**)(ObjectClass *))(*(unsigned int *)v46->q000 + 132))( (ObjectClass *)(v46));
         StartAudioControllerAt((int)(*(AudioController **)(v44 + 1324)),(unsigned int *)((int)&v124), 0);
       }
       goto LABEL_111;
     case 3:
       if ( !*(unsigned char *)(a1 + 76) )
       {
-        (*(void (**)(ObjectClass *, unsigned int))(*(unsigned int *)v1->__pad_0 + 292))( (ObjectClass *)(v1), 0);
+        (*(void (**)(ObjectClass *, unsigned int))(*(unsigned int *)v1->q000 + 292))( (ObjectClass *)(v1), 0);
         *(unsigned char *)(a1 + 76) = 1;
         Targeting::Readd( (unsigned int *)(*(IUnknown **)(a1 + 8)));
         (*(void (**)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 292))(*(unsigned int *)(a1 + 8), 1);
@@ -487,7 +487,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
       }
       goto LABEL_111;
     case 4:
-      if ( (*(int (**)(ObjectClass *))(*(unsigned int *)v1->__pad_0 + 456))( (ObjectClass *)(v1)) <= 0 )
+      if ( (*(int (**)(ObjectClass *))(*(unsigned int *)v1->q000 + 456))( (ObjectClass *)(v1)) <= 0 )
       {
         ((TechnoClass *)(a1 - 4))->CalculateDamage();
         return 0;
@@ -507,7 +507,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         v60 = (unsigned int *)(a1 + 20);
         IDA_HIDWORD(desiredFacing_4) = *(unsigned int *)(a1 + 24);
         IDA_LODWORD(desiredFacing_4) = v59;
-        eax91a = (int *)(*(int (**)(ObjectClass *, int *))(*(unsigned int *)v61->__pad_0 + 72))( (ObjectClass *)(v61), (int *)(&v125));
+        eax91a = (int *)(*(int (**)(ObjectClass *, int *))(*(unsigned int *)v61->q000 + 72))( (ObjectClass *)(v61), (int *)(&v125));
         int v62 = *eax91a;
         int v63 = eax91a[1];
         IDA_LODWORD(var84_4) = v62 - IDA_LODWORD(desiredFacing_4);
@@ -533,7 +533,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
           double v71 = -1.570796326794897;
         else
           v71 = Math::ArcTan(((double)v127 / v70));
-        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * var84_4 * 1.570796326794897 + v71 * var74_4;
+        *(float *)(a1 + 80) = *(float *)&v113->q000[12] * var84_4 * 1.570796326794897 + v71 * var74_4;
       }
       else
       {
@@ -554,7 +554,7 @@ eax63 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned in
         IDA_LODWORD(var84_4) = v75->location[0];
         v77 = (ObjectClass *)v75->location[2];
         IDA_HIDWORD(var84_4) = v75->location[1];
-        int v76 = *(unsigned int *)v75->__pad_0;
+        int v76 = *(unsigned int *)v75->q000;
         v121 = (IUnknown *)v77;
         eax98 = (*(int (**)(ObjectClass *, int *))(v76 + 72))( (ObjectClass *)(v75), (int *)(&v125));
         int v78 = *(unsigned int *)eax98 - IDA_LODWORD(var74_4);
@@ -648,14 +648,14 @@ v108 = (VectorClass_flat **)(*(int (**)(unsigned int, IUnknown **))(**(unsigned 
         v111 = *(ObjectClass **)(a1 + 8);
         v110 = *v108;
         desiredFacing = (ObjectClass *)v110;
-        if ( (unsigned short)v110 != *(unsigned short *)v111[8].__pad_0 || IDA_HIWORD(desiredFacing) != *(unsigned short *)&v111[8].__pad_0[2] )
+        if ( (unsigned short)v110 != *(unsigned short *)v111[8].q000 || IDA_HIWORD(desiredFacing) != *(unsigned short *)&v111[8].q000[2] )
         {
     unsigned int v90 = 0;  /* G37 hoist */
           if ( v111->isAliveFlag )
             Coord::ToGridIndex(
               &((unsigned int *)(stru_87C374))[46356],
               (VectorClass_flat *)v111,
-              *(VectorClass_flat **)v111[8].__pad_0,
+              *(VectorClass_flat **)v111[8].q000,
               v110);
         }
         if ( *(int *)(*(unsigned int *)(a1 + 8) + 108) <= 0 )
@@ -754,7 +754,7 @@ LABEL_38:
       else
       {
 LABEL_47:
-        *(float *)(a1 + 80) = *(float *)&v113->__pad_0[12] * 1.570796326794897;
+        *(float *)(a1 + 80) = *(float *)&v113->q000[12] * 1.570796326794897;
   unsigned short *v32; // eax
 v32 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int **)(a1 + 8) + 756))( *(unsigned int *)(a1 + 8), (IUnknown **)(&v128[1]));
 
@@ -766,7 +766,7 @@ v32 = (unsigned short *)(*(int (**)(unsigned int, IUnknown **))(**(unsigned int 
           v130[0] = v35->location[0];
           v130[1] = v35->location[1];
           v130[2] = v35->location[2];
-          int v34 = (*(int (**)(ObjectClass *))(*(unsigned int *)v35->__pad_0 + 132))( (ObjectClass *)(v35));
+          int v34 = (*(int (**)(ObjectClass *))(*(unsigned int *)v35->q000 + 132))( (ObjectClass *)(v35));
           StartAudioControllerAt( (int)(*(AudioController **)(v34 + 1324)), (unsigned int *)((int)v130), 0);
           ((GadgetGrid *)(&(&stru_87C374)[46356]))->InsertItem( (int)(*(ObjectClass **)(a1 + 8)));
         }
@@ -814,7 +814,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   v19 = 0; /*0x663dca*/
   Waypoint::InitInvalid(&v23); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
-  GetStartupInfoA((LPSTARTUPINFOA)&v23.__pad_0[28]); /*0x663de9*/
+  GetStartupInfoA((LPSTARTUPINFOA)&v23.q000[28]); /*0x663de9*/
   if ( !(*(int (__thiscall **)(_DWORD *))(*dword_887628 + 72))(dword_887628) ) /*0x663df7*/
     return 0; /*0x663e07*/
   if ( a2_2 ) /*0x663e15*/
@@ -834,7 +834,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
     dword_A8DBBC = *(_WORD *)(*dword_A8DA78 + 40); /*0x663f88*/
     v8 = (NetworkID *)(*dword_A8DA78 + 40); /*0x663f91*/
     qword_A8DBA4 = *v8; /*0x663f96*/
-    dword_A8DBAC = *(_DWORD *)v8[1].__pad_0; /*0x663fa8*/
+    dword_A8DBAC = *(_DWORD *)v8[1].q000; /*0x663fa8*/
     goto LABEL_10; /*0x663fa8*/
   }
   if ( !dword_A8DA84 ) /*0x663e22*/
@@ -848,8 +848,8 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
   {
     Network::CopyAddress(v5, &v20, (int)&v12); /*0x663e7e*/
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", v12, v13, v14, v15); /*0x663ebb*/
-    qword_A8DBB0 = *(NetworkID *)&v5->Network_field_0x0; /*0x663ec5*/
-    dword_A8DBB8 = v5->Network_field_0x8; /*0x663ed6*/
+    qword_A8DBB0 = *(NetworkID *)&v5->q000; /*0x663ec5*/
+    dword_A8DBB8 = v5->q008; /*0x663ed6*/
     dword_A8DBBC = 0; /*0x663edc*/
   LABEL_10:
     Network::FormatAddress((Network *)&qword_A8DBB0, 0); /*0x663fad*/
@@ -865,10 +865,10 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2, void 
          0x200u,
          0,
          0,
-         (LPSTARTUPINFOA)&v23.__pad_0[28],
-         (LPPROCESS_INFORMATION)&v23.__pad_0[12]) )
+         (LPSTARTUPINFOA)&v23.q000[28],
+         (LPPROCESS_INFORMATION)&v23.q000[12]) )
   {
-    *((_DWORD *)a2_2 + 7) = *(_DWORD *)&v23.__pad_0[12]; /*0x664029*/
+    *((_DWORD *)a2_2 + 7) = *(_DWORD *)&v23.q000[12]; /*0x664029*/
     Debug::Log(); /*0x66402c*/
     SetFocus(g_hWnd); /*0x66403b*/
     v9 = 1800; /*0x66404e*/
@@ -954,9 +954,9 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   ObjectClass *v3; // ebx
 
   v2 = 32; /*0x6616b8*/
-  this->Straw_field_0x04 = 0; /*0x6616bd*/
+  this->q004 = 0; /*0x6616bd*/
   this->M8 = 0; /*0x6616c0*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Straw_vftable; /*0x6616c3*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Straw_vftable; /*0x6616c3*/
   this->M12 = 0; /*0x6616c9*/
   this->M16 = 0; /*0x6616cc*/
   v3 = (ObjectClass *)((char *)&this->M80); /*0x6616cf*/
@@ -969,9 +969,9 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   this->M12 = 0; /*0x6616e1*/
   this->M16 = 0; /*0x6616e4*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&RandomStraw_vftable; /*0x6616f1*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&RandomStraw_vftable; /*0x6616f1*/
   memset((char *)&this->q050, 0, 0x100u); /*0x6616f7*/
-  return this->__pad_0; /*0x6616fb*/
+  return this->q000; /*0x6616fb*/
 }
 } // namespace gamemd
 
@@ -1009,7 +1009,7 @@ int E4Recv_661960::sub_661960(short a2)
     if ( v4 == (char *)2048 ) /*0x6619ae*/
     {
       v5 = 0; /*0x6619b4*/
-      v11.__pad_0[0] = 0; /*0x6619b9*/
+      v11.q000[0] = 0; /*0x6619b9*/
       v17 = 0; /*0x6619be*/
       v18 = 0; /*0x6619c2*/
       v12 = 1732584193; /*0x6619c6*/
@@ -1074,7 +1074,7 @@ int E4Recv_661A60::sub_661A60(int a2)
     if ( v4 == (char *)2048 ) /*0x661aae*/
     {
       v5 = 0; /*0x661ab4*/
-      v12.__pad_0[0] = 0; /*0x661ab9*/
+      v12.q000[0] = 0; /*0x661ab9*/
       v18 = 0; /*0x661abe*/
       v19 = 0; /*0x661ac2*/
       v13 = 1732584193; /*0x661ac6*/
@@ -1126,7 +1126,7 @@ void * E4Recv_661B70::sub_661B70()
   int v14; // [esp+50h] [ebp-44h]
 
   p_abstractFlags = &this->abstractFlags; /*0x661b7a*/
-  v7.__pad_0[0] = 0; /*0x661b7e*/
+  v7.q000[0] = 0; /*0x661b7e*/
   v13 = 0; /*0x661b82*/
   v14 = 0; /*0x661b86*/
   v8 = 1732584193; /*0x661b8a*/

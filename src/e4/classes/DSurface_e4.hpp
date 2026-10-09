@@ -310,6 +310,10 @@ struct DSurface {
     unsigned int q_1F0;  // +0x1F0 flat supply (P5 provenance)
     unsigned int q_200;  // +0x200 flat supply (P5 provenance)
     unsigned int q_60;  // +0x60 flat supply (P5 provenance)
+    int DSurface_field_0x0;  // 0x0 (ml)
+    unsigned int q0084;  // 0x84 (offset-truth supply)
+    unsigned char q0085;  // 0x85 (offset-truth supply)
+    unsigned int q0088;  // 0x88 (offset-truth supply)
 };
 
 } // namespace gamemd

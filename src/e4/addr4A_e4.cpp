@@ -90,7 +90,7 @@ namespace gamemd {
 int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
   int v3; // edi
-  int EnumConnectionsClass_field_0x0C; // eax
+  int q00C; // eax
   int v5; // eax
   int v6; // eax
   int v7; // ecx
@@ -111,14 +111,14 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   *(_BYTE *)(v3 + 16) = 1; /*0x4a01ce*/
   *(_BYTE *)(v3 + 17) = 0; /*0x4a01d2*/
   *(_DWORD *)(v3 + 4) = &(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a01d5*/
-  if ( (int *)(v3 + 4) != &a1->EnumConnectionsClass_field_0x04 ) /*0x4a01db*/
+  if ( (int *)(v3 + 4) != &a1->q004 ) /*0x4a01db*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a01df*/
-    EnumConnectionsClass_field_0x0C = a1->EnumConnectionsClass_field_0x0C; /*0x4a01e5*/
-    *(_DWORD *)(v3 + 12) = EnumConnectionsClass_field_0x0C; /*0x4a01ea*/
-    if ( EnumConnectionsClass_field_0x0C ) /*0x4a01ed*/
+    q00C = a1->q00C; /*0x4a01e5*/
+    *(_DWORD *)(v3 + 12) = q00C; /*0x4a01ea*/
+    if ( q00C ) /*0x4a01ed*/
     {
-      v5 = RA2_OPNEW(8 * EnumConnectionsClass_field_0x0C); /*0x4a01f7*/
+      v5 = RA2_OPNEW(8 * q00C); /*0x4a01f7*/
       *(_DWORD *)(v3 + 8) = v5; /*0x4a0201*/
       if ( v5 ) /*0x4a0204*/
       {
@@ -129,7 +129,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
         {
           do /*0x4a0236*/
           {
-            v8 = (_DWORD *)(a1->EnumConnectionsClass_field_0x08 + 8 * v7); /*0x4a021f*/
+            v8 = (_DWORD *)(a1->q008 + 8 * v7); /*0x4a021f*/
             v9 = (_DWORD *)(*(_DWORD *)(v3 + 8) + 8 * v7++); /*0x4a0224*/
             *v9 = *v8; /*0x4a0229*/
             v9[1] = v8[1]; /*0x4a022e*/
@@ -144,7 +144,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
       *(_BYTE *)(v3 + 17) = 0; /*0x4a023f*/
     }
   }
-  *(_DWORD *)(v3 + 20) = a1->EnumConnectionsClass_field_0x14; /*0x4a0249*/
+  *(_DWORD *)(v3 + 20) = a1->q014; /*0x4a0249*/
   *(_DWORD *)(v3 + 24) = *((_DWORD *)a1 + 6); /*0x4a024f*/
   *(_DWORD *)(v3 + 4) = &(void*)(void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a0252*/
   v10 = *((_DWORD *)a1 + 7); /*0x4a0258*/
@@ -177,15 +177,15 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   int i; // esi
   int v12; // [esp-4h] [ebp-14h]
 
-  p_EnumConnectionsClass_field_0x04 = &this->EnumConnectionsClass_field_0x04; /*0x4a02bc*/
-  this->EnumConnectionsClass_field_0x08 = 0; /*0x4a02c1*/
-  this->EnumConnectionsClass_field_0x0C = 0; /*0x4a02c4*/
-  IDA_LOBYTE(this->EnumConnectionsClass_field_0x10) = 1; /*0x4a02c7*/
-  IDA_BYTE1(this->EnumConnectionsClass_field_0x10) = 0; /*0x4a02cb*/
-  this->EnumConnectionsClass_field_0x04 = (int)&(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a02ce*/
-  if ( &this->EnumConnectionsClass_field_0x04 != a2 ) /*0x4a02d4*/
+  p_EnumConnectionsClass_field_0x04 = &this->q004; /*0x4a02bc*/
+  this->q008 = 0; /*0x4a02c1*/
+  this->q00C = 0; /*0x4a02c4*/
+  IDA_LOBYTE(this->q010) = 1; /*0x4a02c7*/
+  IDA_BYTE1(this->q010) = 0; /*0x4a02cb*/
+  this->q004 = (int)&(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a02ce*/
+  if ( &this->q004 != a2 ) /*0x4a02d4*/
   {
-    VectorClass::ClearAndFree2((int)&this->EnumConnectionsClass_field_0x04); /*0x4a02d8*/
+    VectorClass::ClearAndFree2((int)&this->q004); /*0x4a02d8*/
     v4 = a2[2]; /*0x4a02de*/
     p_EnumConnectionsClass_field_0x04[2] = v4; /*0x4a02e3*/
     if ( v4 ) /*0x4a02e6*/
@@ -222,13 +222,13 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   *p_EnumConnectionsClass_field_0x04 = (int)&(void*)(void*)&DynamicVectorClass_tagCONNECTDATA_vftable; /*0x4a033a*/
   this->M28 = 0; /*0x4a0340*/
   this->q020 = 0; /*0x4a0343*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a0346*/
-  for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0353*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a0346*/
+  for ( i = 0; i < this->q014; ++i ) /*0x4a0353*/
   {
-    v12 = *(_DWORD *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a035b*/
+    v12 = *(_DWORD *)(this->q008 + 8 * i); /*0x4a035b*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v12 + 4))(v12); /*0x4a035e*/
   }
-  return this->__pad_0; /*0x4a036b*/
+  return this->q000; /*0x4a036b*/
 }
 }
 // 0x4A0380
@@ -246,15 +246,15 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   int i; // esi
   int v13; // [esp-4h] [ebp-14h]
 
-  p_EnumConnectionsClass_field_0x04 = &this->EnumConnectionsClass_field_0x04; /*0x4a038f*/
-  this->EnumConnectionsClass_field_0x08 = 0; /*0x4a0394*/
-  this->EnumConnectionsClass_field_0x0C = 0; /*0x4a0397*/
-  IDA_LOBYTE(this->EnumConnectionsClass_field_0x10) = 1; /*0x4a039a*/
-  IDA_BYTE1(this->EnumConnectionsClass_field_0x10) = 0; /*0x4a039e*/
-  this->EnumConnectionsClass_field_0x04 = (int)&(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a03a1*/
-  if ( &this->EnumConnectionsClass_field_0x04 != a2 + 1 ) /*0x4a03a7*/
+  p_EnumConnectionsClass_field_0x04 = &this->q004; /*0x4a038f*/
+  this->q008 = 0; /*0x4a0394*/
+  this->q00C = 0; /*0x4a0397*/
+  IDA_LOBYTE(this->q010) = 1; /*0x4a039a*/
+  IDA_BYTE1(this->q010) = 0; /*0x4a039e*/
+  this->q004 = (int)&(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a03a1*/
+  if ( &this->q004 != a2 + 1 ) /*0x4a03a7*/
   {
-    VectorClass::ClearAndFree2((int)&this->EnumConnectionsClass_field_0x04); /*0x4a03ab*/
+    VectorClass::ClearAndFree2((int)&this->q004); /*0x4a03ab*/
     v4 = a2[3]; /*0x4a03b1*/
     p_EnumConnectionsClass_field_0x04[2] = v4; /*0x4a03b6*/
     if ( v4 ) /*0x4a03b9*/
@@ -292,13 +292,13 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   v10 = a2[7]; /*0x4a041b*/
   this->q020 = 0; /*0x4a041e*/
   this->M28 = v10; /*0x4a0421*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a0424*/
-  for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0431*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&EnumConnectionsClass_vftable; /*0x4a0424*/
+  for ( i = 0; i < this->q014; ++i ) /*0x4a0431*/
   {
-    v13 = *(_DWORD *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a0439*/
+    v13 = *(_DWORD *)(this->q008 + 8 * i); /*0x4a0439*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v13 + 4))(v13); /*0x4a043c*/
   }
-  return this->__pad_0; /*0x4a0449*/
+  return this->q000; /*0x4a0449*/
 }
 }
 // 0x4A0B20
@@ -306,7 +306,7 @@ namespace gamemd {  // G42.18c ns repair
 int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
   int v3; // edi
-  int EnumConnectionPointsClass_field_0x14; // eax
+  int q014; // eax
   int v5; // eax
   int v6; // ecx
   int v7; // eax
@@ -318,21 +318,21 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   v3 = RA2_OPNEW(0x24u); /*0x4a0b3d*/
   if ( !v3 ) /*0x4a0b44*/
     return -2147024882; /*0x4a0c13*/
-  *(_DWORD *)(v3 + 4) = a1->EnumConnectionPointsClass_field_0x04; /*0x4a0b59*/
+  *(_DWORD *)(v3 + 4) = a1->q004; /*0x4a0b59*/
   *(_DWORD *)(v3 + 8) = 0; /*0x4a0b5c*/
   *(_DWORD *)(v3 + 16) = 0; /*0x4a0b61*/
   *(_DWORD *)(v3 + 20) = 0; /*0x4a0b64*/
   *(_BYTE *)(v3 + 24) = 1; /*0x4a0b67*/
   *(_BYTE *)(v3 + 25) = 0; /*0x4a0b6b*/
   *(_DWORD *)(v3 + 12) = &(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0b6e*/
-  if ( (int *)(v3 + 12) != &a1->EnumConnectionPointsClass_field_0x0C ) /*0x4a0b74*/
+  if ( (int *)(v3 + 12) != &a1->q00C ) /*0x4a0b74*/
   {
     VectorClass::CleanupTyped(v3 + 12); /*0x4a0b78*/
-    EnumConnectionPointsClass_field_0x14 = a1->EnumConnectionPointsClass_field_0x14; /*0x4a0b7e*/
-    *(_DWORD *)(v3 + 20) = EnumConnectionPointsClass_field_0x14; /*0x4a0b83*/
-    if ( EnumConnectionPointsClass_field_0x14 ) /*0x4a0b86*/
+    q014 = a1->q014; /*0x4a0b7e*/
+    *(_DWORD *)(v3 + 20) = q014; /*0x4a0b83*/
+    if ( q014 ) /*0x4a0b86*/
     {
-      v5 = RA2_OPNEW(4 * EnumConnectionPointsClass_field_0x14); /*0x4a0b90*/
+      v5 = RA2_OPNEW(4 * q014); /*0x4a0b90*/
       *(_DWORD *)(v3 + 16) = v5; /*0x4a0b9a*/
       if ( v5 ) /*0x4a0b9d*/
       {
@@ -343,7 +343,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
         {
           do /*0x4a0bbe*/
           {
-            *(_DWORD *)(*(_DWORD *)(v3 + 16) + 4 * v7) = *(_DWORD *)(a1->EnumConnectionPointsClass_field_0x10 + 4 * v7); /*0x4a0bb5*/
+            *(_DWORD *)(*(_DWORD *)(v3 + 16) + 4 * v7) = *(_DWORD *)(a1->q010 + 4 * v7); /*0x4a0bb5*/
             ++v7; /*0x4a0bbb*/
           }
           while ( v7 < *(_DWORD *)(v3 + 20) ); /*0x4a0bbe*/
@@ -356,8 +356,8 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
       *(_BYTE *)(v3 + 25) = 0; /*0x4a0bc5*/
     }
   }
-  *(_DWORD *)(v3 + 28) = a1->EnumConnectionPointsClass_field_0x1C; /*0x4a0bcb*/
-  *(_DWORD *)(v3 + 32) = a1->EnumConnectionPointsClass_field_0x20; /*0x4a0bd1*/
+  *(_DWORD *)(v3 + 28) = a1->q01C; /*0x4a0bcb*/
+  *(_DWORD *)(v3 + 32) = a1->q020; /*0x4a0bd1*/
   *(_DWORD *)(v3 + 12) = &(void*)(void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0bd4*/
   *(_DWORD *)v3 = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0bda*/
   for ( i = 0; i < *(_DWORD *)(v3 + 28); ++i ) /*0x4a0be7*/
@@ -404,9 +404,9 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
       v19 = v7 / 2; /*0x4a23c2*/
       v20[0] = 2; /*0x4a23c6*/
       v8 = *(_DWORD *)(v5 + 4); /*0x4a241f*/
-      v9 = ((unsigned __int8)g_BuildingLoadQueue_Array.__pad_F70[620] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a2422*/
-         | ((unsigned __int8)g_BuildingLoadQueue_Array.__pad_F70[621] >> g_BitMask_Blue << g_BitMask_Green)
-         | ((unsigned __int8)g_BuildingLoadQueue_Array.__pad_F70[622] >> g_BitMask_Red << g_BitShift_Blue);
+      v9 = ((unsigned __int8)g_BuildingLoadQueue_Array.qF70[620] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a2422*/
+         | ((unsigned __int8)g_BuildingLoadQueue_Array.qF70[621] >> g_BitMask_Blue << g_BitMask_Green)
+         | ((unsigned __int8)g_BuildingLoadQueue_Array.qF70[622] >> g_BitMask_Red << g_BitShift_Blue);
       if ( v8 / 3600 > 99 ) /*0x4a243a*/
         v8 = 359999; /*0x4a243c*/
       v10 = v8 / 3600; /*0x4a2454*/
@@ -431,20 +431,20 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
     }
     else
     {
-      if ( *(_BYTE *)(v5 + 10) && *(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1756) >= 2 ) /*0x4a250b*/
+      if ( *(_BYTE *)(v5 + 10) && *(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1756) >= 2 ) /*0x4a250b*/
       {
         if ( *(_BYTE *)(v5 + 9) ) /*0x4a250d*/
-          v14 = **(_DWORD **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1744); /*0x4a2526*/
+          v14 = **(_DWORD **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1744); /*0x4a2526*/
         else
-          v14 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1744) + 4); /*0x4a2530*/
+          v14 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1744) + 4); /*0x4a2530*/
         PlayVocClass(v14, 0x2000, 0.5, 0); /*0x4a2533*/
       }
       UI_Draw_6D0E60(v4); /*0x4a253d*/
       v19 = v7 / 2; /*0x4a254e*/
       v20[0] = 2; /*0x4a2552*/
-      v16 = ((unsigned __int8)g_BuildingLoadQueue_Array.__pad_F70[620] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a25be*/
-          | ((unsigned __int8)g_BuildingLoadQueue_Array.__pad_F70[621] >> g_BitMask_Blue << g_BitMask_Green)
-          | ((unsigned __int8)g_BuildingLoadQueue_Array.__pad_F70[622] >> g_BitMask_Red << g_BitShift_Blue);
+      v16 = ((unsigned __int8)g_BuildingLoadQueue_Array.qF70[620] >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a25be*/
+          | ((unsigned __int8)g_BuildingLoadQueue_Array.qF70[621] >> g_BitMask_Blue << g_BitMask_Green)
+          | ((unsigned __int8)g_BuildingLoadQueue_Array.qF70[622] >> g_BitMask_Red << g_BitShift_Blue);
       v15 = (*((int (__thiscall **)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 30))(DSurface_Sidebar); /*0x4a25c7*/
       result = (unsigned __int8)TextRenderer::Printf( /*0x4a25db*/
                                   v20,
@@ -2771,20 +2771,20 @@ namespace gamemd {
 void E4Recv_4A0450::sub_4A0450()
 {
   int v2; // edi
-  int EnumConnectionsClass_field_0x04; // edx
+  int q004; // edx
   int *p_EnumConnectionsClass_field_0x04; // esi
   void *v5; // eax
   int v6; // [esp-4h] [ebp-10h]
 
   v2 = 0; /*0x4a0457*/
-  for ( *(_DWORD *)this->__pad_0 = &(void*)(void*)&EnumConnectionsClass_vftable; v2 < this->EnumConnectionsClass_field_0x14; ++v2 ) /*0x4a0464*/
+  for ( *(_DWORD *)this->q000 = &(void*)(void*)&EnumConnectionsClass_vftable; v2 < this->q014; ++v2 ) /*0x4a0464*/
   {
-    v6 = *(_DWORD *)(this->EnumConnectionsClass_field_0x08 + 8 * v2); /*0x4a046c*/
+    v6 = *(_DWORD *)(this->q008 + 8 * v2); /*0x4a046c*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x4a046f*/
   }
-  EnumConnectionsClass_field_0x04 = this->EnumConnectionsClass_field_0x04; /*0x4a047a*/
-  p_EnumConnectionsClass_field_0x04 = &this->EnumConnectionsClass_field_0x04; /*0x4a047d*/
-  (*(void (__thiscall **)(int *))(EnumConnectionsClass_field_0x04 + 12))(p_EnumConnectionsClass_field_0x04); /*0x4a0482*/
+  q004 = this->q004; /*0x4a047a*/
+  p_EnumConnectionsClass_field_0x04 = &this->q004; /*0x4a047d*/
+  (*(void (__thiscall **)(int *))(q004 + 12))(p_EnumConnectionsClass_field_0x04); /*0x4a0482*/
   v5 = (void *)p_EnumConnectionsClass_field_0x04[1]; /*0x4a0485*/
   *p_EnumConnectionsClass_field_0x04 = (int)&(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a0488*/
   if ( v5 && *((_BYTE *)p_EnumConnectionsClass_field_0x04 + 13) ) /*0x4a0492*/
@@ -2801,17 +2801,17 @@ void E4Recv_4A0450::sub_4A0450()
 namespace gamemd {
 void E4Recv_4A08D0::sub_4A08D0()
 {
-  int ConnectionPointClass_field_0x18; // eax
-  int ConnectionPointClass_field_0x1C; // edx
+  int q018; // eax
+  int q01C; // edx
   int *p_ConnectionPointClass_field_0x1C; // esi
   void *v5; // eax
 
-  ConnectionPointClass_field_0x18 = this->ConnectionPointClass_field_0x18; /*0x4a08d4*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&ConnectionPointClass_vftable; /*0x4a08d7*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)ConnectionPointClass_field_0x18 + 8))(ConnectionPointClass_field_0x18); /*0x4a08e0*/
-  ConnectionPointClass_field_0x1C = this->ConnectionPointClass_field_0x1C; /*0x4a08e3*/
-  p_ConnectionPointClass_field_0x1C = &this->ConnectionPointClass_field_0x1C; /*0x4a08e6*/
-  (*(void (__thiscall **)(int *))(ConnectionPointClass_field_0x1C + 12))(p_ConnectionPointClass_field_0x1C); /*0x4a08eb*/
+  q018 = this->q018; /*0x4a08d4*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&ConnectionPointClass_vftable; /*0x4a08d7*/
+  (*(void (__stdcall **)(int))(*(_DWORD *)q018 + 8))(q018); /*0x4a08e0*/
+  q01C = this->q01C; /*0x4a08e3*/
+  p_ConnectionPointClass_field_0x1C = &this->q01C; /*0x4a08e6*/
+  (*(void (__thiscall **)(int *))(q01C + 12))(p_ConnectionPointClass_field_0x1C); /*0x4a08eb*/
   v5 = (void *)p_ConnectionPointClass_field_0x1C[1]; /*0x4a08ee*/
   *p_ConnectionPointClass_field_0x1C = (int)&(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a08f5*/
   if ( v5 && *((_BYTE *)p_ConnectionPointClass_field_0x1C + 13) ) /*0x4a08fd*/
@@ -2831,60 +2831,60 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   int *p_EnumConnectionPointsClass_field_0x0C; // esi
   int v4; // eax
   int v5; // eax
-  int EnumConnectionPointsClass_field_0x14; // ecx
+  int q014; // ecx
   int v7; // eax
   int i; // esi
   int v10; // [esp-4h] [ebp-14h]
 
-  p_EnumConnectionPointsClass_field_0x0C = &this->EnumConnectionPointsClass_field_0x0C; /*0x4a0cf2*/
-  this->EnumConnectionPointsClass_field_0x04 = a2[1]; /*0x4a0cf5*/
-  this->EnumConnectionPointsClass_field_0x08 = 0; /*0x4a0cf8*/
-  this->EnumConnectionPointsClass_field_0x10 = 0; /*0x4a0cfd*/
-  this->EnumConnectionPointsClass_field_0x14 = 0; /*0x4a0d00*/
-  IDA_LOBYTE(this->EnumConnectionPointsClass_field_0x18) = 1; /*0x4a0d03*/
-  IDA_BYTE1(this->EnumConnectionPointsClass_field_0x18) = 0; /*0x4a0d07*/
-  this->EnumConnectionPointsClass_field_0x0C = (int)&(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0d0a*/
-  if ( &this->EnumConnectionPointsClass_field_0x0C != a2 + 3 ) /*0x4a0d10*/
+  p_EnumConnectionPointsClass_field_0x0C = &this->q00C; /*0x4a0cf2*/
+  this->q004 = a2[1]; /*0x4a0cf5*/
+  this->q008 = 0; /*0x4a0cf8*/
+  this->q010 = 0; /*0x4a0cfd*/
+  this->q014 = 0; /*0x4a0d00*/
+  IDA_LOBYTE(this->q018) = 1; /*0x4a0d03*/
+  IDA_BYTE1(this->q018) = 0; /*0x4a0d07*/
+  this->q00C = (int)&(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0d0a*/
+  if ( &this->q00C != a2 + 3 ) /*0x4a0d10*/
   {
-    VectorClass::CleanupTyped((int)&this->EnumConnectionPointsClass_field_0x0C); /*0x4a0d14*/
+    VectorClass::CleanupTyped((int)&this->q00C); /*0x4a0d14*/
     v4 = a2[5]; /*0x4a0d1a*/
-    this->EnumConnectionPointsClass_field_0x14 = v4; /*0x4a0d1f*/
+    this->q014 = v4; /*0x4a0d1f*/
     if ( v4 ) /*0x4a0d22*/
     {
       v5 = RA2_OPNEW(4 * v4); /*0x4a0d2c*/
-      this->EnumConnectionPointsClass_field_0x10 = v5; /*0x4a0d36*/
+      this->q010 = v5; /*0x4a0d36*/
       if ( v5 ) /*0x4a0d39*/
       {
-        EnumConnectionPointsClass_field_0x14 = this->EnumConnectionPointsClass_field_0x14; /*0x4a0d3b*/
+        q014 = this->q014; /*0x4a0d3b*/
         v7 = 0; /*0x4a0d3e*/
-        IDA_BYTE1(this->EnumConnectionPointsClass_field_0x18) = 1; /*0x4a0d42*/
-        if ( EnumConnectionPointsClass_field_0x14 > 0 ) /*0x4a0d46*/
+        IDA_BYTE1(this->q018) = 1; /*0x4a0d42*/
+        if ( q014 > 0 ) /*0x4a0d46*/
         {
           do /*0x4a0d5a*/
           {
-            *(_DWORD *)(this->EnumConnectionPointsClass_field_0x10 + 4 * v7) = *(_DWORD *)(a2[4] + 4 * v7); /*0x4a0d51*/
+            *(_DWORD *)(this->q010 + 4 * v7) = *(_DWORD *)(a2[4] + 4 * v7); /*0x4a0d51*/
             ++v7; /*0x4a0d57*/
           }
-          while ( v7 < this->EnumConnectionPointsClass_field_0x14 ); /*0x4a0d5a*/
+          while ( v7 < this->q014 ); /*0x4a0d5a*/
         }
       }
     }
     else
     {
-      this->EnumConnectionPointsClass_field_0x10 = 0; /*0x4a0d5e*/
-      IDA_BYTE1(this->EnumConnectionPointsClass_field_0x18) = 0; /*0x4a0d61*/
+      this->q010 = 0; /*0x4a0d5e*/
+      IDA_BYTE1(this->q018) = 0; /*0x4a0d61*/
     }
   }
-  this->EnumConnectionPointsClass_field_0x1C = a2[7]; /*0x4a0d67*/
-  this->EnumConnectionPointsClass_field_0x20 = a2[8]; /*0x4a0d6d*/
+  this->q01C = a2[7]; /*0x4a0d67*/
+  this->q020 = a2[8]; /*0x4a0d6d*/
   *p_EnumConnectionPointsClass_field_0x0C = (int)&(void*)(void*)&DynamicVectorClass_IConnectionPoint___vftable; /*0x4a0d70*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0d76*/
-  for ( i = 0; i < this->EnumConnectionPointsClass_field_0x1C; ++i ) /*0x4a0d83*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0d76*/
+  for ( i = 0; i < this->q01C; ++i ) /*0x4a0d83*/
   {
-    v10 = *(_DWORD *)(this->EnumConnectionPointsClass_field_0x10 + 4 * i); /*0x4a0d8b*/
+    v10 = *(_DWORD *)(this->q010 + 4 * i); /*0x4a0d8b*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v10 + 4))(v10); /*0x4a0d8e*/
   }
-  return this->__pad_0; /*0x4a0d9b*/
+  return this->q000; /*0x4a0d9b*/
 }
 } // namespace gamemd
 
@@ -2893,22 +2893,22 @@ namespace gamemd {
 void E4Recv_4A0DB0::sub_4A0DB0()
 {
   int v2; // edi
-  int EnumConnectionPointsClass_field_0x0C; // edx
+  int q00C; // edx
   int *p_EnumConnectionPointsClass_field_0x0C; // esi
   void *v5; // eax
   int v6; // [esp-4h] [ebp-10h]
 
   v2 = 0; /*0x4a0db7*/
-  for ( *(_DWORD *)this->__pad_0 = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0dc4*/
-        v2 < this->EnumConnectionPointsClass_field_0x1C;
+  for ( *(_DWORD *)this->q000 = &(void*)(void*)&EnumConnectionPointsClass_vftable; /*0x4a0dc4*/
+        v2 < this->q01C;
         ++v2 )
   {
-    v6 = *(_DWORD *)(this->EnumConnectionPointsClass_field_0x10 + 4 * v2); /*0x4a0dcc*/
+    v6 = *(_DWORD *)(this->q010 + 4 * v2); /*0x4a0dcc*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x4a0dcf*/
   }
-  EnumConnectionPointsClass_field_0x0C = this->EnumConnectionPointsClass_field_0x0C; /*0x4a0dda*/
-  p_EnumConnectionPointsClass_field_0x0C = &this->EnumConnectionPointsClass_field_0x0C; /*0x4a0ddd*/
-  (*(void (__thiscall **)(int *))(EnumConnectionPointsClass_field_0x0C + 12))(p_EnumConnectionPointsClass_field_0x0C); /*0x4a0de2*/
+  q00C = this->q00C; /*0x4a0dda*/
+  p_EnumConnectionPointsClass_field_0x0C = &this->q00C; /*0x4a0ddd*/
+  (*(void (__thiscall **)(int *))(q00C + 12))(p_EnumConnectionPointsClass_field_0x0C); /*0x4a0de2*/
   v5 = (void *)p_EnumConnectionPointsClass_field_0x0C[1]; /*0x4a0de5*/
   *p_EnumConnectionPointsClass_field_0x0C = (int)&(void*)(void*)&VectorClass_IConnectionPoint___vftable; /*0x4a0de8*/
   if ( v5 && *((_BYTE *)p_EnumConnectionPointsClass_field_0x0C + 13) ) /*0x4a0df2*/
@@ -3221,39 +3221,39 @@ int sub_4A2330()
 namespace gamemd {
 void E4Recv_4A2880::sub_4A2880()
 {
-  int CStreamClass_field_0x08; // eax
-  void *CStreamClass_field_0x18; // ecx
-  void *CStreamClass_field_0x1C; // edx
+  int q008; // eax
+  void *q018; // ecx
+  void *q01C; // edx
   int v5; // esi
   ULONG v6; // [esp+0h] [ebp-8h]
 
-  CStreamClass_field_0x08 = this->CStreamClass_field_0x08; /*0x4a2886*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&CStreamClass_vftable; /*0x4a2889*/
+  q008 = this->q008; /*0x4a2886*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&CStreamClass_vftable; /*0x4a2889*/
   this->CStreamClass_field_0x04 = (int)&(void*)(void*)&CStreamClass_vftable; /*0x4a2891*/
-  if ( CStreamClass_field_0x08 ) /*0x4a2898*/
+  if ( q008 ) /*0x4a2898*/
   {
-    if ( IDA_BYTE1(this->CStreamClass_field_0x10) && this->CStreamClass_field_0x14 > 0 && this->CStreamClass_field_0x08 ) /*0x4a28aa*/
-      IStream::Read((IStream *)this->CStreamClass_field_0x18, (void *)this->CStreamClass_field_0x14, v6); /*0x4a28b4*/
-    if ( this->CStreamClass_field_0x08 /*0x4a28da*/
-      && (*(int (__stdcall **)(int, _DWORD))(*(_DWORD *)this->CStreamClass_field_0x08 + 32))(
-           this->CStreamClass_field_0x08,
+    if ( IDA_BYTE1(this->q010) && this->q014 > 0 && this->q008 ) /*0x4a28aa*/
+      IStream::Read((IStream *)this->q018, (void *)this->q014, v6); /*0x4a28b4*/
+    if ( this->q008 /*0x4a28da*/
+      && (*(int (__stdcall **)(int, _DWORD))(*(_DWORD *)this->q008 + 32))(
+           this->q008,
            0) >= 0 )
     {
-      if ( !this->CStreamClass_field_0x08 ) /*0x4a28dc*/
+      if ( !this->q008 ) /*0x4a28dc*/
         sub_7DC720(-2147467261); /*0x4a28e6*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)this->CStreamClass_field_0x08 + 8))(this->CStreamClass_field_0x08); /*0x4a28f1*/
-      this->CStreamClass_field_0x08 = 0; /*0x4a28f4*/
+      (*(void (__stdcall **)(int))(*(_DWORD *)this->q008 + 8))(this->q008); /*0x4a28f1*/
+      this->q008 = 0; /*0x4a28f4*/
     }
   }
-  RA2_OPDEL((void *)this->CStreamClass_field_0x20); /*0x4a28fb*/
-  CStreamClass_field_0x18 = (void *)this->CStreamClass_field_0x18; /*0x4a2900*/
-  this->CStreamClass_field_0x20 = 0; /*0x4a2903*/
-  RA2_OPDEL(CStreamClass_field_0x18); /*0x4a2907*/
-  CStreamClass_field_0x1C = (void *)this->CStreamClass_field_0x1C; /*0x4a290c*/
-  this->CStreamClass_field_0x18 = 0; /*0x4a290f*/
-  RA2_OPDEL(CStreamClass_field_0x1C); /*0x4a2913*/
-  this->CStreamClass_field_0x1C = 0; /*0x4a2918*/
-  v5 = this->CStreamClass_field_0x08; /*0x4a291b*/
+  RA2_OPDEL((void *)this->q020); /*0x4a28fb*/
+  q018 = (void *)this->q018; /*0x4a2900*/
+  this->q020 = 0; /*0x4a2903*/
+  RA2_OPDEL(q018); /*0x4a2907*/
+  q01C = (void *)this->q01C; /*0x4a290c*/
+  this->q018 = 0; /*0x4a290f*/
+  RA2_OPDEL(q01C); /*0x4a2913*/
+  this->q01C = 0; /*0x4a2918*/
+  v5 = this->q008; /*0x4a291b*/
   if ( v5 ) /*0x4a2923*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v5 + 8))(v5); /*0x4a2928*/
 }

@@ -45,21 +45,21 @@ unsigned int AbstractClassVector::Write(int a2)
 namespace gamemd {
 int AbstractClassVector::Construct(int aP1, int aP2)
 {
-  this->AbstractClassVector_field_0x04 = 0; /*0x4e0e8b*/
-  this->AbstractClassVector_field_0x08 = aP1; /*0x4e0e8e*/
-  IDA_LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
-  IDA_BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
+  this->q004 = 0; /*0x4e0e8b*/
+  this->q008 = aP1; /*0x4e0e8e*/
+  IDA_LOBYTE(this->q00C) = 1; /*0x4e0e91*/
+  IDA_BYTE1(this->q00C) = 0; /*0x4e0e95*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/
     {
-      this->AbstractClassVector_field_0x04 = aP2; /*0x4e0ea8*/
-      return this->__pad_0; /*0x4e0eae*/
+      this->q004 = aP2; /*0x4e0ea8*/
+      return this->q000; /*0x4e0eae*/
     }
-    this->AbstractClassVector_field_0x04 = RA2_OPNEW(4 * aP1); /*0x4e0ebd*/
-    IDA_BYTE1(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0ec0*/
+    this->q004 = RA2_OPNEW(4 * aP1); /*0x4e0ebd*/
+    IDA_BYTE1(this->q00C) = 1; /*0x4e0ec0*/
   }
-  return this->__pad_0; /*0x4e0ead*/
+  return this->q000; /*0x4e0ead*/
 }
 } // namespace gamemd

@@ -168,7 +168,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PBVAnimClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x53c602*/
+    (*(void (__thiscall **)(_VectorClass_PBVAnimClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x53c602*/
     return 1; /*0x53c608*/
   }
 }
@@ -260,7 +260,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVAnimClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x53c72e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PBVAnimClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x53c72e*/
   }
   v7 = this->m_8; /*0x53c731*/
   if ( v7 < this->m_10 ) /*0x53c739*/
@@ -296,7 +296,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x53c783*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x53c790*/
   {
     RA2_OPDEL(v3); /*0x53c798*/
@@ -306,7 +306,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
   Block->m_8 = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
     RA2_OPDEL(Block); /*0x53c7bb*/
-  return Block->__pad_0; /*0x53c7c5*/
+  return Block->q000; /*0x53c7c5*/
 }
 } // namespace gamemd
 
@@ -317,7 +317,7 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x53c7d3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x53c7e0*/
   {
     RA2_OPDEL(v3); /*0x53c7e8*/
@@ -327,6 +327,6 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2, void *a3_1
   this->m_8 = 0; /*0x53c801*/
   if ( (a2 & 1) != 0 ) /*0x53c808*/
     RA2_OPDEL(); /*0x53c80b*/
-  return this->__pad_0; /*0x53c815*/
+  return this->q000; /*0x53c815*/
 }
 } // namespace gamemd

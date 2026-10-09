@@ -4113,7 +4113,7 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
   wchar_t *v9; // [esp+18h] [ebp-4h] BYREF
   LRESULT v10; // [esp+24h] [ebp+8h]
 
-  v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | (*(unsigned __int16 *)a5.__pad_0 << 16)); /*0x603ffc*/
+  v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | (*(unsigned __int16 *)a5.q000 << 16)); /*0x603ffc*/
   unknown_libname_74(&v9); /*0x604000*/
   lParam[0] = (LPARAM)hWnd; /*0x604016*/
   lParam[1] = v10; /*0x60401a*/

@@ -28,7 +28,7 @@ State::State()
     , ScenIndex(0)
     , MapIndex(0)
     , LastSave(0)
-    , align_34(0)
+    , q034(0)
 {
 }
 
@@ -110,7 +110,7 @@ Territory::Territory()
     : OwnerIndex(-1)
     , IncomePerTurn(0)
     , Center{}
-    , align_58(0)
+    , q058(0)
 {
     std::memset(Name, 0, sizeof(Name));
 }
@@ -157,7 +157,7 @@ Conflict::Conflict()
     : Attacker(nullptr)
     , Defender(nullptr)
     , Outcome(0)
-    , align_C(0)
+    , q014(0)
 {
 }
 

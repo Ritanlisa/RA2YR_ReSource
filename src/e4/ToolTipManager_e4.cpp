@@ -57,7 +57,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x724f43*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x724f50*/
   {
     RA2_OPDEL(v3); /*0x724f58*/
@@ -67,6 +67,6 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
     RA2_OPDEL(Block); /*0x724f7b*/
-  return Block->__pad_0; /*0x724f85*/
+  return Block->q000; /*0x724f85*/
 }
 } // namespace gamemd

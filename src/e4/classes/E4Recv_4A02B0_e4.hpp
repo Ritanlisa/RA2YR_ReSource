@@ -49,5 +49,11 @@ struct E4Recv_4A02B0 {
     unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
     unsigned int * sub_4A02B0(unsigned int * a2);  // 0x4A02B0
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q004;  // 0x4 (offset-truth supply)
+    unsigned int q008;  // 0x8 (offset-truth supply)
+    unsigned int q00C;  // 0xC (offset-truth supply)
+    unsigned int q010;  // 0x10 (offset-truth supply)
+    unsigned int q014;  // 0x14 (offset-truth supply)
 };
 } // namespace gamemd

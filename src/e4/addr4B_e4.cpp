@@ -281,7 +281,7 @@ char JumpjetLocomotionClass_Process(int a1)
       v18 = v1->Owner; /*0x4b07ae*/
       if ( !v18->onBridge && *(_DWORD *)((*((int (__thiscall **)(FootClass *))v18->vfptr + 111))(v18) + 236) == 2 ) /*0x4b07c8*/
       {
-        if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 148) ) /*0x4b07cf*/
+        if ( *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 148) ) /*0x4b07cf*/
         {
           v19 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x4b07dc*/
           if ( v19 ) /*0x4b07e6*/
@@ -292,7 +292,7 @@ char JumpjetLocomotionClass_Process(int a1)
             v32 = location[2]; /*0x4b0810*/
             AnimClass::ctor( /*0x4b0823*/
               v19,
-              *(void **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 148),
+              *(void **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 148),
               &v30,
               0,
               1,
@@ -499,9 +499,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   v8 = ((*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->vfptr + 32))(g_DSurface_Hidden) - v7) / 2; /*0x4b98e7*/
   v9 = (*(int (__thiscall **)(int *))(*a1 + 124))(a1); /*0x4b98f2*/
   v10 = (*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->vfptr + 31))(g_DSurface_Hidden); /*0x4b98f6*/
-  v44.Coord2D_field_0x04 = 300; /*0x4b9903*/
+  v44.q004 = 300; /*0x4b9903*/
   v40 = (v10 - v9) / 2; /*0x4b9909*/
-  *(_DWORD *)v44.__pad_0 = 450; /*0x4b9912*/
+  *(_DWORD *)v44.q000 = 450; /*0x4b9912*/
   v41 = v8; /*0x4b992b*/
   v11 = Coord2D::Add(&v44, &v42, &v40); /*0x4b992f*/
   v12 = Rect::Construct(&v47, v11, 190, 80); /*0x4b9939*/
@@ -547,8 +547,8 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
                       &v38,
                       BuildingAnimByName,
                       0);
-    TextRenderer::DrawText(&v44.Coord2D_field_0x04, (size_t)v54, (int)g_DSurface_Hidden, v19, 70, (int)v32, v35, v37); /*0x4b9aca*/
-    v42 = *(_DWORD *)v44.__pad_0 + 315; /*0x4b9ae0*/
+    TextRenderer::DrawText(&v44.q004, (size_t)v54, (int)g_DSurface_Hidden, v19, 70, (int)v32, v35, v37); /*0x4b9aca*/
+    v42 = *(_DWORD *)v44.q000 + 315; /*0x4b9ae0*/
     v41 = v43 + 450; /*0x4b9af8*/
     v20 = (_DWORD *)(*((int (__thiscall **)(ObjectClass *, int *, int *, int, _DWORD, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9b03*/
                       g_DSurface_Hidden,
@@ -557,7 +557,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
                       BuildingAnimByName,
                       0,
                       70);
-    TextRenderer::DrawText((int *)v44.__pad_0, (size_t)v50, (int)g_DSurface_Hidden, v20, v26, v29, v33, v36); /*0x4b9b1a*/
+    TextRenderer::DrawText((int *)v44.q000, (size_t)v50, (int)g_DSurface_Hidden, v20, v26, v29, v33, v36); /*0x4b9b1a*/
     v41 = v43 + 330; /*0x4b9b30*/
     v40 = v42 + 450; /*0x4b9b48*/
     v21 = (_DWORD *)(*((int (__thiscall **)(ObjectClass *, int *, int *, int, _DWORD, int))g_DSurface_Hidden->vfptr + 30))( /*0x4b9b53*/
@@ -715,19 +715,19 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   int v13; // edx
 
   sub_4C2FC0(aP1, String, a4, aP4, aP5, aP6, aP7, 18, 7); /*0x4b4e3f*/
-  IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4e62*/
-  this->DropListClass_field_0x4C = a9; /*0x4b4e66*/
-  ShapeButtonClass::Constructor((ShapeButtonClass *)&this->DropListClass_field_0x50, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
+  IDA_LOBYTE(this->q048) = 0; /*0x4b4e62*/
+  this->q04C = a9; /*0x4b4e66*/
+  ShapeButtonClass::Constructor((ShapeButtonClass *)&this->q050, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
   ListClass::Construct((int)&this->u32_2C0, 0, aP5, aP6 + *(__int16 *)(a11 + 4), aP7 + *(__int16 *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&DropListClass_vftable; /*0x4b4eac*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&DropListClass_vftable; /*0x4b4eac*/
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   v13 = this->M176; /*0x4b4eba*/
-  this->DropListClass_field_0x18 = *(_DWORD *)(Instance + 28) + 1; /*0x4b4ebf*/
+  this->q018 = *(_DWORD *)(Instance + 28) + 1; /*0x4b4ebf*/
   (*(void (__thiscall **)(char *, DropListClass *))(v13 + 132))((char *)&this->u32_2C0, this); /*0x4b4ec4*/
-  (*(void (__thiscall **)(int *, DropListClass *))(this->DropListClass_field_0x50 + 132))( /*0x4b4ecf*/
-    &this->DropListClass_field_0x50,
+  (*(void (__thiscall **)(int *, DropListClass *))(this->q050 + 132))( /*0x4b4ecf*/
+    &this->q050,
     this);
-  return (int)this->__pad_0; /*0x4b4ed7*/
+  return (int)this->q000; /*0x4b4ed7*/
 }
 } // namespace gamemd
 

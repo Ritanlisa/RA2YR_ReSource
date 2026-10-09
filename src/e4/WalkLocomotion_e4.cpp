@@ -589,11 +589,11 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
   int v5; // ebx
   int v6; // edi
   int v7; // esi
-  char *WalkLocomotion_field_0x40; // edx
-  char *WalkLocomotion_field_0x44; // ecx
+  char *q040; // edx
+  char *q044; // ecx
 
   v4 = *aP3; /*0x6a3dbd*/
-  v5 = dword_7F2A48[3 * (int)this->WalkLocomotion_field_0x58]; /*0x6a3dc1*/
+  v5 = dword_7F2A48[3 * (int)this->q058]; /*0x6a3dc1*/
   v6 = *aP2; /*0x6a3dcf*/
   v7 = aP2[1]; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
@@ -613,10 +613,10 @@ unsigned int * WalkLocomotion::TransformCoords(unsigned int *aP1, int *aP2, int 
     v4 = (unsigned __int8)(0x80 - v4); /*0x6a3e0d*/
   }
   *aP3 = v4; /*0x6a3e0f*/
-  WalkLocomotion_field_0x40 = (char *)this->WalkLocomotion_field_0x40; /*0x6a3e12*/
-  WalkLocomotion_field_0x44 = (char *)this->WalkLocomotion_field_0x44; /*0x6a3e15*/
-  *aP1 = &WalkLocomotion_field_0x40[v6]; /*0x6a3e22*/
-  aP1[1] = &WalkLocomotion_field_0x44[v7]; /*0x6a3e25*/
+  q040 = (char *)this->q040; /*0x6a3e12*/
+  q044 = (char *)this->q044; /*0x6a3e15*/
+  *aP1 = &q040[v6]; /*0x6a3e22*/
+  aP1[1] = &q044[v7]; /*0x6a3e25*/
   return aP1; /*0x6a3e20*/
 }
 }

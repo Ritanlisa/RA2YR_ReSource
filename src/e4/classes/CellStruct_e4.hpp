@@ -15,6 +15,8 @@ struct CellStruct {
 BOOL Equals(unsigned short * a2, void *a2_2);  // 0x50E470
     void* Sub(unsigned int *aP1, unsigned short *aP2);  // 0x588C60
     unsigned int * Set(int16_t a2, int16_t a3);  // 0x42D470
+    int field_0;  // 0x0 (ml)
+    unsigned int q004;  // 0x4 (offset-truth supply)
 };
 #endif // GAMEMD_TREE_UNIVERSE
 } // namespace gamemd

@@ -21,7 +21,7 @@
 namespace gamemd {
 int LinkClass::Destroy(void *a1)
 {
-  (*(void (__thiscall **)(GadgetClass *))(*(_DWORD *)a1->__pad_0 + 84))(a1); /*0x4e1485*/
+  (*(void (__thiscall **)(GadgetClass *))(*(_DWORD *)a1->q000 + 84))(a1); /*0x4e1485*/
   return LinkedList::RemoveNode((LinkClass *)a1); /*0x4e148f*/
 }
 } // namespace gamemd
@@ -34,9 +34,9 @@ int LinkClass::Destruct()
   LinkClass *m_Prev; // edx
   LinkClass *m_Next; // edx
 
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&LinkClass_vftable; /*0x5565a5*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&LinkClass_vftable; /*0x5565a5*/
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
-  result = (*(int (__thiscall **)(LinkClass *))(*(_DWORD *)this->__pad_0 + 28))(this); /*0x5565b7*/
+  result = (*(int (__thiscall **)(LinkClass *))(*(_DWORD *)this->q000 + 28))(this); /*0x5565b7*/
   m_Prev = this->m_Prev; /*0x5565ba*/
   if ( m_Prev ) /*0x5565c1*/
     m_Prev->m_Next = this->m_Next; /*0x5565c6*/
@@ -57,6 +57,6 @@ LinkClass * LinkClass::Destru_vt00(unsigned int * Block, char a2)
   LinkClass::Destruct(Block); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
     RA2_OPDEL(Block); /*0x4e1ae0*/
-  return Block->__pad_0; /*0x4e1aea*/
+  return Block->q000; /*0x4e1aea*/
 }
 } // namespace gamemd

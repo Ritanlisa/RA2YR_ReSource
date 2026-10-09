@@ -518,29 +518,29 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   int v11; // esi
   ObjectClass *v13; // [esp+0h] [ebp-Ch]
 
-  if ( stru_A8B250.__pad_0[8] == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
+  if ( stru_A8B250.q000[8] == (aP0->inOpenToppedTransport & 1) ) /*0x5b6807*/
   {
     v1 = aP0->wasFallingDown; /*0x5b680d*/
     if ( dword_A8B320 == ((v1 & 4) != 0) && byte_A8B31D == ((v1 & 2) != 0) ) /*0x5b6836*/
     {
       v2 = aP0->inOpenToppedTransport; /*0x5b683c*/
-      if ( stru_A8B250.__pad_0[16] == ((v2 & 2) != 0) /*0x5b6920*/
-        && stru_A8B250.__pad_0[17] == ((v2 & 4) != 0)
+      if ( stru_A8B250.q000[16] == ((v2 & 2) != 0) /*0x5b6920*/
+        && stru_A8B250.q000[17] == ((v2 & 4) != 0)
         && byte_A8B31F == ((v1 & 8) != 0)
-        && *(_DWORD *)&stru_A8B250.__pad_0[36] == aP0->onBridge
-        && *(_DWORD *)&stru_A8B250.__pad_0[40] == aP0->isFallingDown
+        && *(_DWORD *)&stru_A8B250.q000[36] == aP0->onBridge
+        && *(_DWORD *)&stru_A8B250.q000[40] == aP0->isFallingDown
         && g_RulesInitConfig == aP0->q08A
-        && *(_DWORD *)&stru_A8B250.__pad_0[12] == aP0->u32_7E
-        && *(_DWORD *)&stru_A8B250.__pad_0[32] == aP0->q08B
+        && *(_DWORD *)&stru_A8B250.q000[12] == aP0->u32_7E
+        && *(_DWORD *)&stru_A8B250.q000[32] == aP0->q08B
         && *(_DWORD *)&stru_A8EB00.?[432] == *(_DWORD *)(aP0 + 146)
         && ApplyGameOptions_Helper((ObjectClass *)dword_A8E960, (_DWORD *)(aP0 + 150))
-        && *(_DWORD *)&stru_A8B250.__pad_0[24] == aP0->u32_A2 )
+        && *(_DWORD *)&stru_A8B250.q000[24] == aP0->u32_A2 )
       {
         v3 = aP0->wasFallingDown; /*0x5b6926*/
-        if ( stru_A8B250.__pad_0[18] == ((v3 & 0x10) != 0) /*0x5b69da*/
-          && stru_A8B250.__pad_0[19] == ((v3 & 0x20) != 0)
-          && stru_A8B250.__pad_0[20] == ((v3 & 0x40) != 0)
-          && stru_A8B250.__pad_0[28] == ((v3 & 0x80) != 0)
+        if ( stru_A8B250.q000[18] == ((v3 & 0x10) != 0) /*0x5b69da*/
+          && stru_A8B250.q000[19] == ((v3 & 0x20) != 0)
+          && stru_A8B250.q000[20] == ((v3 & 0x40) != 0)
+          && stru_A8B250.q000[28] == ((v3 & 0x80) != 0)
           && !_strcmpi(byte_A8B8E0, (char *)(aP0 + 163))
           && !strcmp(&byte_A8BAE2, (const char *)(aP0 + 176))
           && dword_A8BB04 == aP0->u32_9E )
@@ -551,32 +551,32 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     }
   }
   Debug::Log(); /*0x5b69e9*/
-  stru_A8B250.__pad_0[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
+  stru_A8B250.q000[8] = aP0->inOpenToppedTransport & 1; /*0x5b69fa*/
   dword_A8B320 = (aP0->wasFallingDown & 4) != 0; /*0x5b6a0c*/
   v5 = dword_A8E960[0]; /*0x5b6a18*/
   IDA_BYTE1(v5) = IDA_BYTE1(dword_A8E960[0]) & 0x7F; /*0x5b6a22*/
-  stru_A8B250.__pad_0[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
+  stru_A8B250.q000[16] = (aP0->inOpenToppedTransport & 2) != 0; /*0x5b6a25*/
   dword_A8E960[0] = v5 | ((aP0->inOpenToppedTransport & 2) << 14); /*0x5b6a38*/
-  stru_A8B250.__pad_0[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
+  stru_A8B250.q000[17] = (aP0->inOpenToppedTransport & 4) != 0; /*0x5b6a49*/
   byte_A8B31F = (aP0->wasFallingDown & 8) != 0; /*0x5b6a5c*/
   byte_A8B31D = (aP0->wasFallingDown & 2) != 0; /*0x5b6a6f*/
-  *(_DWORD *)&stru_A8B250.__pad_0[36] = aP0->onBridge; /*0x5b6a7b*/
-  *(_DWORD *)&stru_A8B250.__pad_0[40] = aP0->isFallingDown; /*0x5b6a88*/
+  *(_DWORD *)&stru_A8B250.q000[36] = aP0->onBridge; /*0x5b6a7b*/
+  *(_DWORD *)&stru_A8B250.q000[40] = aP0->isFallingDown; /*0x5b6a88*/
   g_RulesInitConfig = aP0->q08A; /*0x5b6a96*/
-  *(_DWORD *)&stru_A8B250.__pad_0[12] = aP0->u32_7E; /*0x5b6a9f*/
-  *(_DWORD *)&stru_A8B250.__pad_0[32] = aP0->q08B; /*0x5b6aaa*/
+  *(_DWORD *)&stru_A8B250.q000[12] = aP0->u32_7E; /*0x5b6a9f*/
+  *(_DWORD *)&stru_A8B250.q000[32] = aP0->q08B; /*0x5b6aaa*/
   *(_DWORD *)&stru_A8EB00.?[432] = *(_DWORD *)(aP0 + 146); /*0x5b6ab6*/
   v6 = *(_DWORD *)(aP0 + 150); /*0x5b6abc*/
   dword_A8E960[0] = v6; /*0x5b6ac4*/
   IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
-  *(_DWORD *)&stru_A8B250.__pad_0[24] = aP0->u32_A2; /*0x5b6ad1*/
-  stru_A8EB00.vtable0[24] = *(_DWORD *)&stru_A8B250.__pad_0[24]; /*0x5b6ad7*/
-  stru_A8B250.__pad_0[18] = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
-  stru_A8B250.__pad_0[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
-  stru_A8B250.__pad_0[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
+  *(_DWORD *)&stru_A8B250.q000[24] = aP0->u32_A2; /*0x5b6ad1*/
+  stru_A8EB00.vtable0[24] = *(_DWORD *)&stru_A8B250.q000[24]; /*0x5b6ad7*/
+  stru_A8B250.q000[18] = (aP0->wasFallingDown & 0x10) != 0; /*0x5b6ae9*/
+  stru_A8B250.q000[19] = (aP0->wasFallingDown & 0x20) != 0; /*0x5b6afb*/
+  stru_A8B250.q000[20] = (aP0->wasFallingDown & 0x40) != 0; /*0x5b6b0d*/
   v7 = aP0->wasFallingDown >> 7; /*0x5b6b19*/
   dword_A8E960[0] = v6; /*0x5b6b1c*/
-  stru_A8B250.__pad_0[28] = v7 & 1; /*0x5b6b29*/
+  stru_A8B250.q000[28] = v7 & 1; /*0x5b6b29*/
   vtable0 = dword_A8B230->vtable0; /*0x5b6b2f*/
   IDA_BYTE1(vtable0) = ((unsigned __int16)dword_A8B230->vtable0 >> 8) & 0xFB; /*0x5b6b31*/
   dword_A8B230->vtable0 = vtable0; /*0x5b6b34*/
@@ -702,16 +702,16 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     v5 = Palette::Preview_Generate((Palette *)g_UIControlState, 64, (int)&Buffer, v9); /*0x5bb410*/
     Debug::Log(); /*0x5bb418*/
     v6 = (void *)RA2_OPNEW(4 * Buffer); /*0x5bb435*/
-    v15.Pipe_field_0x04 = 0; /*0x5bb437*/
-    v15.Pipe_field_0x08 = 0; /*0x5bb448*/
-    *(_DWORD *)v15.__pad_0 = &(void*)(void*)&Pipe_vftable; /*0x5bb44c*/
-    Buffer::Init((Buffer *)&v15.Pipe_field_0x0C, (int)v6, 4 * Buffer); /*0x5bb454*/
+    v15.q004 = 0; /*0x5bb437*/
+    v15.q008 = 0; /*0x5bb448*/
+    *(_DWORD *)v15.q000 = &(void*)(void*)&Pipe_vftable; /*0x5bb44c*/
+    Buffer::Init((Buffer *)&v15.q00C, (int)v6, 4 * Buffer); /*0x5bb454*/
     v16 = 0; /*0x5bb463*/
-    *(_DWORD *)v15.__pad_0 = &(void*)(void*)&BufferPipe_vftable; /*0x5bb467*/
+    *(_DWORD *)v15.q000 = &(void*)(void*)&BufferPipe_vftable; /*0x5bb467*/
     LZOPipe::Constructor((LZOPipe *)&v19, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate(&v19, (int)&v15); /*0x5bb47d*/
-    v7 = Compression::Read((int *)v19.__pad_0, v5, Buffer); /*0x5bb499*/
-    v8 = (*(int (__thiscall **)(Pipe *))(*(_DWORD *)v19.__pad_0 + 4))(&v19) + v7; /*0x5bb49e*/
+    v7 = Compression::Read((int *)v19.q000, v5, Buffer); /*0x5bb499*/
+    v8 = (*(int (__thiscall **)(Pipe *))(*(_DWORD *)v19.q000 + 4))(&v19) + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
     RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
     if ( (unsigned __int8)FileClass::Open((RawFileClass *)v18, 0) ) /*0x5bb4c1*/
@@ -725,7 +725,7 @@ LZOPipe * * GenerateRandomMapPreview(int a1, void * aPreviewBin)
     SendNetworkFile(aPreviewBin, 1, 0, 0); /*0x5bb521*/
     RawFileClass::Dtor((RawFileClass *)v18); /*0x5bb52a*/
     LZOPipe::Destructor((LZOPipe *)&v19); /*0x5bb533*/
-    Vector::Clear((int)&v15.Pipe_field_0x0C); /*0x5bb53c*/
+    Vector::Clear((int)&v15.q00C); /*0x5bb53c*/
     Pipe::Dtor(&v15); /*0x5bb545*/
   }
 }
@@ -2048,12 +2048,12 @@ void sub_5B3F50(MixFileClass *a1)
     RA2_OPDEL((void *)a1->MixFileClass_field_24); /*0x5b3f79*/
     IDA_BYTE2(a1->FileSize) = 0; /*0x5b3f81*/
   }
-  v3 = *(void **)&a1->__pad_1C[4]; /*0x5b3f84*/
+  v3 = *(void **)&a1->q01C[4]; /*0x5b3f84*/
   a1->MixFileClass_field_24 = 0; /*0x5b3f87*/
   if ( v3 ) /*0x5b3f8c*/
   {
     RA2_OPDEL(v3); /*0x5b3f8f*/
-    *(_DWORD *)&a1->__pad_1C[4] = 0; /*0x5b3f97*/
+    *(_DWORD *)&a1->q01C[4] = 0; /*0x5b3f97*/
   }
   if ( a1 ) /*0x5b3f9c*/
   {
@@ -2064,7 +2064,7 @@ void sub_5B3F50(MixFileClass *a1)
       if ( v5 ) /*0x5b3faa*/
       {
         *(_DWORD *)(v5 + 4) = Previous; /*0x5b3fac*/
-        *(_DWORD *)a1->?[1].__pad_0 = *(_DWORD *)&a1->Blowfish; /*0x5b3fb5*/
+        *(_DWORD *)a1->?[1].q000 = *(_DWORD *)&a1->Blowfish; /*0x5b3fb5*/
         *(_DWORD *)&a1->Blowfish = 0; /*0x5b3fb8*/
         a1->? = 0; /*0x5b3fbb*/
       }
@@ -2080,7 +2080,7 @@ void sub_5B3F50(MixFileClass *a1)
       if ( v7 ) /*0x5b3fd4*/
       {
         *(_DWORD *)(v7 + 4) = v6; /*0x5b3fd6*/
-        *(_DWORD *)a1->?[1].__pad_0 = *(_DWORD *)&a1->Blowfish; /*0x5b3fdf*/
+        *(_DWORD *)a1->?[1].q000 = *(_DWORD *)&a1->Blowfish; /*0x5b3fdf*/
         *(_DWORD *)&a1->Blowfish = 0; /*0x5b3fe2*/
         a1->? = 0; /*0x5b3fe5*/
       }

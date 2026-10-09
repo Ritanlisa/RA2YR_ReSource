@@ -879,27 +879,27 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
             {
               g_MultiplayerMode = v16 | 1; /*0x5d79eb*/
               MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d79f0*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d79fa*/
-              *(_DWORD *)g_MultiplayerModeConfig.__pad_0 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a05*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7a0b*/
+              g_MultiplayerModeConfig.q014 = 10; /*0x5d79fa*/
+              *(_DWORD *)g_MultiplayerModeConfig.q000 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a05*/
+              g_MultiplayerModeConfig.q010 = 0; /*0x5d7a0b*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a11*/
               v16 = g_MultiplayerMode; /*0x5d7a16*/
             }
-            if ( v15 >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 ) /*0x5d7a2b*/
+            if ( v15 >= g_MultiplayerModeConfig.q010 ) /*0x5d7a2b*/
               break; /*0x5d7a2b*/
             if ( (v16 & 1) == 0 ) /*0x5d7a2f*/
             {
               g_MultiplayerMode = v16 | 1; /*0x5d7a38*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7a3d*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7a43*/
-              IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7a49*/
-              *(_DWORD *)g_MultiplayerModeConfig.__pad_0 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a56*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7a5c*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7a62*/
+              g_MultiplayerModeConfig.q004 = 0; /*0x5d7a3d*/
+              g_MultiplayerModeConfig.u32_8 = 0; /*0x5d7a43*/
+              IDA_LOWORD(g_MultiplayerModeConfig.q00C) = 1; /*0x5d7a49*/
+              *(_DWORD *)g_MultiplayerModeConfig.q000 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7a56*/
+              g_MultiplayerModeConfig.q014 = 10; /*0x5d7a5c*/
+              g_MultiplayerModeConfig.q010 = 0; /*0x5d7a62*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7a68*/
               v16 = g_MultiplayerMode; /*0x5d7a6d*/
             }
-            if ( *(_DWORD *)(*(_DWORD *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * v15) + 40) > *(_DWORD *)(v19.occupant + 40) ) /*0x5d7a88*/
+            if ( *(_DWORD *)(*(_DWORD *)(g_MultiplayerModeConfig.q004 + 4 * v15) + 40) > *(_DWORD *)(v19.occupant + 40) ) /*0x5d7a88*/
               break; /*0x5d7a88*/
             ++v15; /*0x5d7a8a*/
           }
@@ -908,69 +908,69 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0, void * aDRa2mdp
             if ( (v16 & 1) == 0 ) /*0x5d7b56*/
             {
               g_MultiplayerMode = v16 | 1; /*0x5d7b5f*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7b64*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7b6a*/
-              IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7b70*/
-              *(_DWORD *)g_MultiplayerModeConfig.__pad_0 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7b7d*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7b83*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7b89*/
+              g_MultiplayerModeConfig.q004 = 0; /*0x5d7b64*/
+              g_MultiplayerModeConfig.u32_8 = 0; /*0x5d7b6a*/
+              IDA_LOWORD(g_MultiplayerModeConfig.q00C) = 1; /*0x5d7b70*/
+              *(_DWORD *)g_MultiplayerModeConfig.q000 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7b7d*/
+              g_MultiplayerModeConfig.q014 = 10; /*0x5d7b83*/
+              g_MultiplayerModeConfig.q010 = 0; /*0x5d7b89*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7b8f*/
             }
             v17 = v15 - 1; /*0x5d7ba2*/
-            if ( g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 /*0x5d7bcc*/
-              && (!IDA_BYTE1(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C)
-               && g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-               || g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 <= 0
-               || !(*(unsigned __int8 (__thiscall **)(MultiplayerGameMode *, int, _DWORD))(*(_DWORD *)g_MultiplayerModeConfig.__pad_0
+            if ( g_MultiplayerModeConfig.q010 >= g_MultiplayerModeConfig.u32_8 /*0x5d7bcc*/
+              && (!IDA_BYTE1(g_MultiplayerModeConfig.q00C)
+               && g_MultiplayerModeConfig.u32_8
+               || g_MultiplayerModeConfig.q014 <= 0
+               || !(*(unsigned __int8 (__thiscall **)(MultiplayerGameMode *, int, _DWORD))(*(_DWORD *)g_MultiplayerModeConfig.q000
                                                                                          + 8))(
                      &g_MultiplayerModeConfig,
-                     g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-                   + g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14,
+                     g_MultiplayerModeConfig.u32_8
+                   + g_MultiplayerModeConfig.q014,
                      0)) )
             {
               goto LABEL_45; /*0x5d7bd1*/
             }
-            if ( v17 < g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 - 1 ) /*0x5d7bde*/
+            if ( v17 < g_MultiplayerModeConfig.q010 - 1 ) /*0x5d7bde*/
               memcpy( /*0x5d7bff*/
-                (void *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * v17 + 8),
-                (const void *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * (v17 + 1)),
-                4 * (g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 + 0x3FFFFFFF * (v17 + 1)));
-            *(_DWORD *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * v17 + 4) = v19.occupant; /*0x5d7c10*/
+                (void *)(g_MultiplayerModeConfig.q004 + 4 * v17 + 8),
+                (const void *)(g_MultiplayerModeConfig.q004 + 4 * (v17 + 1)),
+                4 * (g_MultiplayerModeConfig.q010 + 0x3FFFFFFF * (v17 + 1)));
+            *(_DWORD *)(g_MultiplayerModeConfig.q004 + 4 * v17 + 4) = v19.occupant; /*0x5d7c10*/
           }
           else
           {
             if ( (v16 & 1) == 0 ) /*0x5d7a9a*/
             {
               g_MultiplayerMode = v16 | 1; /*0x5d7aa3*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = 0; /*0x5d7aa8*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7aae*/
-              IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7ab4*/
-              *(_DWORD *)g_MultiplayerModeConfig.__pad_0 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ac1*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7ac7*/
-              g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7acd*/
+              g_MultiplayerModeConfig.q004 = 0; /*0x5d7aa8*/
+              g_MultiplayerModeConfig.u32_8 = 0; /*0x5d7aae*/
+              IDA_LOWORD(g_MultiplayerModeConfig.q00C) = 1; /*0x5d7ab4*/
+              *(_DWORD *)g_MultiplayerModeConfig.q000 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ac1*/
+              g_MultiplayerModeConfig.q014 = 10; /*0x5d7ac7*/
+              g_MultiplayerModeConfig.q010 = 0; /*0x5d7acd*/
               atexit(MultiplayerConfig::Cleanup); /*0x5d7ad3*/
             }
-            if ( g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 /*0x5d7b16*/
-              && (!IDA_BYTE1(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C)
-               && g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-               || g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 <= 0
-               || !(*(unsigned __int8 (__thiscall **)(MultiplayerGameMode *, int, _DWORD))(*(_DWORD *)g_MultiplayerModeConfig.__pad_0
+            if ( g_MultiplayerModeConfig.q010 >= g_MultiplayerModeConfig.u32_8 /*0x5d7b16*/
+              && (!IDA_BYTE1(g_MultiplayerModeConfig.q00C)
+               && g_MultiplayerModeConfig.u32_8
+               || g_MultiplayerModeConfig.q014 <= 0
+               || !(*(unsigned __int8 (__thiscall **)(MultiplayerGameMode *, int, _DWORD))(*(_DWORD *)g_MultiplayerModeConfig.q000
                                                                                          + 8))(
                      &g_MultiplayerModeConfig,
-                     g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08
-                   + g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14,
+                     g_MultiplayerModeConfig.u32_8
+                   + g_MultiplayerModeConfig.q014,
                      0)) )
             {
               goto LABEL_45; /*0x5d7b1b*/
             }
-            if ( g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 ) /*0x5d7b28*/
+            if ( g_MultiplayerModeConfig.q010 ) /*0x5d7b28*/
               memcpy( /*0x5d7b3c*/
-                (void *)(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4),
-                (const void *)g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04,
-                4 * g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10);
-            *(_DWORD *)g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 = v19.occupant; /*0x5d7b4d*/
+                (void *)(g_MultiplayerModeConfig.q004 + 4),
+                (const void *)g_MultiplayerModeConfig.q004,
+                4 * g_MultiplayerModeConfig.q010);
+            *(_DWORD *)g_MultiplayerModeConfig.q004 = v19.occupant; /*0x5d7b4d*/
           }
-          ++g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10; /*0x5d7c14*/
+          ++g_MultiplayerModeConfig.q010; /*0x5d7c14*/
         }
   LABEL_45:
         DeleteAndZero((ObjectClass *)&v19.abstractFlags); /*0x5d7c1a*/
@@ -1009,7 +1009,7 @@ int GameInit_Complete()
       GameInit::InitMultiplayerModes((GameInit *)&g_MultiplayerModeConfig, 0, 0); /*0x5d7d08*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7d12*/
     }
-    if ( i >= g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 ) /*0x5d7d20*/
+    if ( i >= g_MultiplayerModeConfig.q010 ) /*0x5d7d20*/
       break; /*0x5d7d20*/
     v2 = *(void (__thiscall ****)(_DWORD, int))(System_Init()[1] + 4 * i); /*0x5d7d2a*/
     if ( v2 ) /*0x5d7d32*/
@@ -1284,7 +1284,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
   }
   if ( wcslen(String) ) /*0x5da802*/
   {
-    v5 = Math::RoundToInt(*(double *)&dword_8871E0[1].__pad_A0 * 900.0); /*0x5da822*/
+    v5 = Math::RoundToInt(*(double *)&dword_8871E0[1].q0A0 * 900.0); /*0x5da822*/
     MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(_DWORD *)(v4->q034 + 192), 16454, v5, 0); /*0x5da845*/
     MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x5da851*/
   }
@@ -1445,7 +1445,7 @@ int CheckNetworkGameTimeout()
   v2 = 1; /*0x5db72c*/
   for ( i = 1; i < dword_A8DA6C; ++i ) /*0x5db737*/
   {
-    if ( wcscmp(*(const wchar_t **)(dword_A8DA60 + 4 * i), (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5db74b*/
+    if ( wcscmp(*(const wchar_t **)(dword_A8DA60 + 4 * i), (const wchar_t *)&stru_A8D600.q010) ) /*0x5db74b*/
     {
       v4 = *(_DWORD *)&stru_88732C.__pad_6[14]; /*0x5db760*/
       if ( *(_DWORD *)&stru_88732C.__pad_6[6] != -1 ) /*0x5db769*/
@@ -1552,7 +1552,7 @@ void SetGameSetupPlayerState(char * a1, int a2)
     }
   }
   v6 = CharToWideString(v3); /*0x5dbe4e*/
-  if ( !wcscmp((const wchar_t *)v6, (const wchar_t *)&stru_A8D600.Network_field_0x10) ) /*0x5dbe54*/
+  if ( !wcscmp((const wchar_t *)v6, (const wchar_t *)&stru_A8D600.q010) ) /*0x5dbe54*/
     v4 = 1; /*0x5dbe60*/
   v7 = 0; /*0x5dbe6a*/
   if ( dword_A8DA84 > 0 ) /*0x5dbe6e*/
@@ -1743,7 +1743,7 @@ AbstractClass * * SynchronizeMultiplayerGameStart()
       }
     }
   }
-  *(_DWORD *)&stru_A8B250.__pad_0[4] = -1; /*0x5dda8c*/
+  *(_DWORD *)&stru_A8B250.q000[4] = -1; /*0x5dda8c*/
   StringCSF = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddaaa*/
   v7 = (int *)GetStringCSF((wchar_t *)&stru_82BA00.TurretAnimData[2], 0, g_Str_File_netdlg2_cpp, 710); /*0x5ddab5*/
   Dialog::ShowMessageBox(v7, StringCSF, 0, 0, 0, v1); /*0x5ddabf*/
@@ -3313,7 +3313,7 @@ unsigned char sub_5DAF20()
         || dword_B76180 < (unsigned int)(time(0) - 15) && dword_B777A0 > 0 )
       {
         *(_DWORD *)&v29.m_3[1] = 0; /*0x77fb14*/
-        *(_DWORD *)v29.__pad_0 = 0; /*0x77fb18*/
+        *(_DWORD *)v29.q000 = 0; /*0x77fb18*/
         do /*0x77fbde*/
         {
           if ( dword_B777A0 <= 0 ) /*0x77fb23*/
@@ -3337,9 +3337,9 @@ unsigned char sub_5DAF20()
             *(_DWORD *)&v29.m_3[1] = v6; /*0x77fbbe*/
           v1 = (signed int)v6; /*0x77fbcb*/
           DeleteAndZero((ObjectClass *)&v31); /*0x77fbcd*/
-          ++*(_DWORD *)v29.__pad_0; /*0x77fbda*/
+          ++*(_DWORD *)v29.q000; /*0x77fbda*/
         }
-        while ( *(int *)v29.__pad_0 < 10 ); /*0x77fbde*/
+        while ( *(int *)v29.q000 < 10 ); /*0x77fbde*/
         if ( ppv ) /*0x77fbeb*/
           (*(void (__stdcall **)(LPVOID, _DWORD))(*(_DWORD *)ppv + 192))(ppv, *(_DWORD *)&v29.m_3[1]); /*0x77fbf5*/
         v9 = *(_DWORD **)&v29.m_3[1]; /*0x77fc03*/
@@ -3366,9 +3366,9 @@ unsigned char sub_5DAF20()
         || dword_B7617C < (unsigned int)(time(0) - 3) && dword_B765F8 > 10
         || dword_B7617C < (unsigned int)(time(0) - 15) && dword_B765F8 > 0 )
       {
-        *(_DWORD *)v29.__pad_0 = 0; /*0x77fcbe*/
+        *(_DWORD *)v29.q000 = 0; /*0x77fcbe*/
         *(_DWORD *)&v29.m_3[1] = 0; /*0x77fcc2*/
-        *(_DWORD *)v30.__pad_0 = 0; /*0x77fcc6*/
+        *(_DWORD *)v30.q000 = 0; /*0x77fcc6*/
         do /*0x77fe52*/
         {
           if ( dword_B765F8 <= 0 ) /*0x77fcd1*/
@@ -3421,16 +3421,16 @@ unsigned char sub_5DAF20()
           if ( *(_DWORD *)&v29.m_3[1] ) /*0x77fe2e*/
             *(_DWORD *)(*(_DWORD *)&v29.m_3[1] + 32) = v12; /*0x77fe36*/
           else
-            *(_DWORD *)v29.__pad_0 = v12; /*0x77fe30*/
+            *(_DWORD *)v29.q000 = v12; /*0x77fe30*/
           *(_DWORD *)&v29.m_3[1] = v12; /*0x77fe3d*/
           DeleteAndZero((ObjectClass *)&v31); /*0x77fe41*/
-          ++*(_DWORD *)v30.__pad_0; /*0x77fe4e*/
+          ++*(_DWORD *)v30.q000; /*0x77fe4e*/
         }
-        while ( *(int *)v30.__pad_0 < 10 ); /*0x77fe52*/
+        while ( *(int *)v30.q000 < 10 ); /*0x77fe52*/
         if ( ppv ) /*0x77fe5f*/
-          (*(void (__stdcall **)(LPVOID, _DWORD))(*(_DWORD *)ppv + 188))(ppv, *(_DWORD *)v29.__pad_0); /*0x77fe69*/
-        v19 = *(_DWORD **)v29.__pad_0; /*0x77fe77*/
-        if ( *(_DWORD *)v29.__pad_0 ) /*0x77fe79*/
+          (*(void (__stdcall **)(LPVOID, _DWORD))(*(_DWORD *)ppv + 188))(ppv, *(_DWORD *)v29.q000); /*0x77fe69*/
+        v19 = *(_DWORD **)v29.q000; /*0x77fe77*/
+        if ( *(_DWORD *)v29.q000 ) /*0x77fe79*/
         {
           do /*0x77fe8b*/
           {

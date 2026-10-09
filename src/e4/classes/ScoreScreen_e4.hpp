@@ -28,6 +28,16 @@ struct ScoreScreen {
     int RemoveItem(int a2, int a3, char aP3, char a5, int a6);
     static int DrawSHPBackground(char *Source, int *a2, int a3, int a4, int a5, int a6, int a7);  // G57w10-S raw 0x00778210 (was C2597 interim stub)
     static double LoadAudio(...);  // C2597 interim stub
+    unsigned int u32_3AC;  // 0x3AC (offset-truth supply)
+    unsigned int u32_3B0;  // 0x3B0 (offset-truth supply)
+    unsigned int u32_3B4;  // 0x3B4 (offset-truth supply)
+    unsigned int u32_3B8;  // 0x3B8 (offset-truth supply)
+    unsigned int u32_3BC;  // 0x3BC (offset-truth supply)
+    unsigned int u32_3C4;  // 0x3C4 (offset-truth supply)
+    unsigned int u32_3C8;  // 0x3C8 (offset-truth supply)
+    unsigned char u32_3CD;  // 0x3CD (offset-truth supply)
+    unsigned int u32_3D0;  // 0x3D0 (offset-truth supply)
+    unsigned int u32_3D4;  // 0x3D4 (offset-truth supply)
 };
 
 } // namespace gamemd

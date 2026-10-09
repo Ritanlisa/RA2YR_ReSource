@@ -31,5 +31,6 @@ struct Campaign_WorldDominationTour_16 {
     unsigned char m_1[64];  // pad compile-supply (G41.47)
     rc_ptr * Constructor(char Block);
     rc_ptr * Constructor_0(char Block);
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 } // namespace gamemd

@@ -205,7 +205,7 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
     a1->Piggybackee = 0; /*0x75c69c*/
     *(_DWORD *)a1->0 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6a3*/
     *(_DWORD *)&a1->0[4] = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6a9*/
-    *(_DWORD *)a1->__pad_18 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6b0*/
+    *(_DWORD *)a1->q018 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6b0*/
   }
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(*v2 + 12))(v2, &pStm, 1, 0); /*0x75c6c3*/
   if ( !(_BYTE)pStm ) /*0x75c6cc*/
@@ -239,12 +239,12 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x75c71b*/
   if ( !v4->Piggybackee ) /*0x75c726*/
   {
-    v12 = *(_DWORD *)v3->__pad_0; /*0x75c7c3*/
+    v12 = *(_DWORD *)v3->q000; /*0x75c7c3*/
     IDA_LOBYTE(a3) = 0; /*0x75c7cf*/
     (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v12 + 16))(v3, &a3, 1, 0); /*0x75c7d4*/
     return IPersistStream; /*0x75c7d8*/
   }
-  v6 = *(_DWORD *)v3->__pad_0; /*0x75c72c*/
+  v6 = *(_DWORD *)v3->q000; /*0x75c72c*/
   IDA_LOBYTE(a3) = 1; /*0x75c738*/
   (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v6 + 16))(v3, &a3, 1, 0); /*0x75c73d*/
   Piggybackee = v4->Piggybackee; /*0x75c740*/
@@ -291,7 +291,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 
   *(_DWORD *)this->0 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbe3*/
   *(_DWORD *)&this->0[4] = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
-  *(_DWORD *)this->__pad_18 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
+  *(_DWORD *)this->q018 = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
   Piggybackee = this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/

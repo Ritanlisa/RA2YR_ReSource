@@ -31,5 +31,9 @@ struct WonlineStringDialogControl_12 {
     DynamicVector * Constructor_VectorClass_tConnInfoStruct___(unsigned int * Block, char a2);  // 0x7AD3C0
     unsigned int PointerToIndex(int a2);  // 0x7AC9A0
     unsigned int Write(int a2);  // 0x7AD1F0
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 } // namespace gamemd

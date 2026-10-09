@@ -61,5 +61,7 @@ struct E4Recv_56B250 {
     unsigned int q1918688943235778218370;  // 0x1918688943235778218370
 // --- flat members (END) ---
     BombClass * * sub_56B250(int a2);  // 0x56B250
+    unsigned char q03D;  // 0x3D (offset-truth supply)
+    unsigned int u32_F8;  // 0xF8 (offset-truth supply)
 };
 } // namespace gamemd

@@ -27,6 +27,7 @@ struct MapSeed {
     int ValidateName(int a2);
     bool CheckTileMatch(int16_t *aP1, int16_t *aP2, int aP3, char aP4, char aP5, char aP6);  // 0x56d100
     unsigned int MapSeed_field_0x14;  // 0x14 @0x5924cc (W16G3 raw-usage vocab)
+    unsigned int q00C0;  // 0xC0 (offset-truth supply)
 };
 
 } // namespace gamemd

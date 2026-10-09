@@ -225,7 +225,7 @@ int ComStreamClass::QueryInterface(unsigned int *a2, char **a3, int a4, int a1, 
 namespace gamemd {
 AbstractClass * * ComStreamClass::readData()
 {
-  int ComStreamClass_field_0x08; // esi
+  int q008; // esi
   _DWORD *v3; // ebp
   int v4; // edi
   void *v5; // edi
@@ -238,22 +238,22 @@ AbstractClass * * ComStreamClass::readData()
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( IDA_LOBYTE(this->ComStreamClass_field_0x14) != 1 ) /*0x7ae0e8*/
+  if ( IDA_LOBYTE(this->q014) != 1 ) /*0x7ae0e8*/
   {
-    ComStreamClass_field_0x08 = this->ComStreamClass_field_0x08; /*0x7ae0f0*/
-    v3 = *(_DWORD **)this->__pad_0; /*0x7ae0f3*/
-    v4 = this->ComStreamClass_field_0x0C + 1; /*0x7ae0fc*/
-    this->ComStreamClass_field_0x08 = 2 * ComStreamClass_field_0x08; /*0x7ae0fd*/
+    q008 = this->q008; /*0x7ae0f0*/
+    v3 = *(_DWORD **)this->q000; /*0x7ae0f3*/
+    v4 = this->q00C + 1; /*0x7ae0fc*/
+    this->q008 = 2 * q008; /*0x7ae0fd*/
     v13 = v3; /*0x7ae100*/
-    this->ComStreamClass_field_0x0C = v4; /*0x7ae108*/
-    v5 = (void *)RA2_OPNEW(8 * ComStreamClass_field_0x08); /*0x7ae113*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7ae118*/
-    *(_DWORD *)this->__pad_0 = v5; /*0x7ae11f*/
+    this->q00C = v4; /*0x7ae108*/
+    v5 = (void *)RA2_OPNEW(8 * q008); /*0x7ae113*/
+    v6 = 4 * this->q008; /*0x7ae118*/
+    *(_DWORD *)this->q000 = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
-    if ( ComStreamClass_field_0x08 > 0 ) /*0x7ae12f*/
+    if ( q008 > 0 ) /*0x7ae12f*/
     {
       v7 = v3; /*0x7ae131*/
-      v8 = ComStreamClass_field_0x08; /*0x7ae133*/
+      v8 = q008; /*0x7ae133*/
       do /*0x7ae167*/
       {
         v9 = *v7; /*0x7ae135*/
@@ -261,10 +261,10 @@ AbstractClass * * ComStreamClass::readData()
         {
           do /*0x7ae161*/
           {
-            v10 = ((int (__thiscall *)(int))this->ComStreamClass_field_0x18)(v9) /*0x7ae14b*/
-                & ((1 << this->ComStreamClass_field_0x0C) - 1);
-            v11 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10); /*0x7ae14f*/
-            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10) = v9; /*0x7ae155*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) /*0x7ae14b*/
+                & ((1 << this->q00C) - 1);
+            v11 = *(_DWORD *)(*(_DWORD *)this->q000 + 4 * v10); /*0x7ae14f*/
+            *(_DWORD *)(*(_DWORD *)this->q000 + 4 * v10) = v9; /*0x7ae155*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7ae157*/
             *(_DWORD *)(v9 + 72) = v11; /*0x7ae15a*/
             v9 = v12; /*0x7ae15d*/
@@ -285,9 +285,9 @@ AbstractClass * * ComStreamClass::readData()
 namespace gamemd {
 void ComStreamClass::flushStream()
 {
-  unsigned int ComStreamClass_field_0x08; // esi
+  unsigned int q008; // esi
   int *v3; // ebp
-  int ComStreamClass_field_0x0C; // edi
+  int q00C; // edi
   void *v5; // edi
   unsigned int v6; // edx
   int *v7; // edi
@@ -298,22 +298,22 @@ void ComStreamClass::flushStream()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  ComStreamClass_field_0x08 = this->ComStreamClass_field_0x08; /*0x7aef55*/
-  if ( ComStreamClass_field_0x08 > this->ComStreamClass_field_0x30 && IDA_LOBYTE(this->ComStreamClass_field_0x14) != 1 ) /*0x7aef67*/
+  q008 = this->q008; /*0x7aef55*/
+  if ( q008 > this->q030 && IDA_LOBYTE(this->q014) != 1 ) /*0x7aef67*/
   {
-    v3 = *(int **)this->__pad_0; /*0x7aef70*/
-    ComStreamClass_field_0x0C = this->ComStreamClass_field_0x0C; /*0x7aef73*/
-    v13 = *(int **)this->__pad_0; /*0x7aef76*/
-    this->ComStreamClass_field_0x08 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
-    this->ComStreamClass_field_0x0C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
-    v5 = (void *)RA2_OPNEW(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7aef94*/
-    *(_DWORD *)this->__pad_0 = v5; /*0x7aef9b*/
+    v3 = *(int **)this->q000; /*0x7aef70*/
+    q00C = this->q00C; /*0x7aef73*/
+    v13 = *(int **)this->q000; /*0x7aef76*/
+    this->q008 = q008 >> 1; /*0x7aef7c*/
+    this->q00C = q00C - 1; /*0x7aef84*/
+    v5 = (void *)RA2_OPNEW(4 * (q008 >> 1)); /*0x7aef8f*/
+    v6 = 4 * this->q008; /*0x7aef94*/
+    *(_DWORD *)this->q000 = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
-    if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
+    if ( (int)q008 > 0 ) /*0x7aefab*/
     {
       v7 = v3; /*0x7aefad*/
-      v8 = ComStreamClass_field_0x08; /*0x7aefaf*/
+      v8 = q008; /*0x7aefaf*/
       do /*0x7aefe3*/
       {
         v9 = *v7; /*0x7aefb1*/
@@ -321,10 +321,10 @@ void ComStreamClass::flushStream()
         {
           do /*0x7aefdd*/
           {
-            v10 = ((int (__thiscall *)(int))this->ComStreamClass_field_0x18)(v9) /*0x7aefc7*/
-                & ((1 << this->ComStreamClass_field_0x0C) - 1);
-            v11 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10); /*0x7aefcb*/
-            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10) = v9; /*0x7aefd1*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) /*0x7aefc7*/
+                & ((1 << this->q00C) - 1);
+            v11 = *(_DWORD *)(*(_DWORD *)this->q000 + 4 * v10); /*0x7aefcb*/
+            *(_DWORD *)(*(_DWORD *)this->q000 + 4 * v10) = v9; /*0x7aefd1*/
             v12 = *(_DWORD *)(v9 + 72); /*0x7aefd3*/
             *(_DWORD *)(v9 + 72) = v11; /*0x7aefd6*/
             v9 = v12; /*0x7aefd9*/
@@ -350,7 +350,7 @@ unsigned int * ComStreamClass::seekToPosition()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set((ComPtr *)&stru_B77EB0.lineTrailer, this->ComStreamClass_field_0x04); /*0x7b022f*/
+  ComPtr::Set((ComPtr *)&stru_B77EB0.lineTrailer, this->q004); /*0x7b022f*/
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b0249*/
   ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
@@ -369,10 +369,10 @@ unsigned int * ComStreamClass::getStreamSize()
   rc_ptr v5[4]; // [esp+4h] [ebp-10h] BYREF
   rc_ptr v6[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set((ComPtr *)&stru_B77F68.ComPtr_field_0x08, this->ComStreamClass_field_0x04); /*0x7b02af*/
+  ComPtr::Set((ComPtr *)&stru_B77F68.q008, this->q004); /*0x7b02af*/
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b02c9*/
-  ComPtr::Set((ComPtr *)&stru_B77F68.ComPtr_field_0x10, v3[1]); /*0x7b02d7*/
+  ComPtr::Set((ComPtr *)&stru_B77F68.q010, v3[1]); /*0x7b02d7*/
   *(_DWORD *)v5 = &(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b02e0*/
   ComPtr::Release((ComPtr *)v5); /*0x7b02e8*/
   *(_DWORD *)v6 = &(void*)(void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b02f1*/

@@ -1,5 +1,5 @@
 // AbstractClass -- root of the game object hierarchy
-// IDA: Constructor @ 0x410170, vtable[0] @ 0x7E1F50 (28 entries)
+// IDA: Constructor @ 0x410170, q000[0] @ 0x7E1F50 (28 entries)
 // Verified member offsets: +0x00/+0x04/+0x08/+0x0C vtables, +0x10 id, +0x14 flags, +0x18..+0x23 fields
 
 #include "object/abstract.hpp"
@@ -21,11 +21,11 @@ AbstractClass::AbstractClass() noexcept
 {
     // IDA preserves bits 7-3 of pre-existing abstractFlags (& 0xF8).
     // In practice heap memory is zeroed, so result is abstractFlags = 0.
-    // The vtable pointer dance (temp INoticeSink/INoticeSource -- final merged)
+    // The q000 pointer dance (temp INoticeSink/INoticeSource -- final merged)
     // is handled automatically by the C++ compiler for MI.
 }
 
-// IDA: 0x410260 -- vtable[0][0], AbstractClass::QueryInterface
+// IDA: 0x410260 -- q000[0][0], AbstractClass::QueryInterface
 REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
@@ -56,17 +56,17 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
   (*((void (__stdcall **)(AbstractClass *))thisa->vfptr + 1))(thisa); /*0x4102f2*/
   return 0; /*0x41026e*/
 }
-// IDA: 0x410300 -- vtable[0][1] (COMStub_AddRef)
+// IDA: 0x410300 -- q000[0][1] (COMStub_AddRef)
 ULONG AbstractClass::AddRef() {
     return 1;  // IDA: returns 1 (stub, not tracking ref count)
 }
 
-// IDA: 0x410310 -- vtable[0][2] (COMStub_Release)
+// IDA: 0x410310 -- q000[0][2] (COMStub_Release)
 ULONG AbstractClass::Release() {
     return 1;  // IDA: returns 1 (stub, not tracking ref count)
 }
 
-// IDA: vtable[0][3] -- GetClassID (XSurface::vt_entry_68 stub @ 0x4C9150)
+// IDA: q000[0][3] -- GetClassID (XSurface::vt_entry_68 stub @ 0x4C9150)
 HRESULT AbstractClass::GetClassID(CLSID* class_id) {
     return E_NOTIMPL;
 }
@@ -79,23 +79,23 @@ HRESULT AbstractClass::IsDirty() {
     return NeedsSaveOrLink ? S_OK : S_FALSE;
 }
 
-// IDA: vtable[0][5] -- Load (stub = XSurface::vt_entry_68)
+// IDA: q000[0][5] -- Load (stub = XSurface::vt_entry_68)
 HRESULT AbstractClass::Load(IStream* stream) {
     return S_OK;
 }
 
-// IDA: vtable[0][6] -- Save (stub = XSurface::vt_entry_68)
+// IDA: q000[0][6] -- Save (stub = XSurface::vt_entry_68)
 HRESULT AbstractClass::Save(IStream* stream, int clear_dirty) {
     return S_OK;
 }
 
-// IDA: vtable[0][7] -- GetSizeMax (delegated to ObjectClass::GetSizeMax @ 0x4103E0)
+// IDA: q000[0][7] -- GetSizeMax (delegated to ObjectClass::GetSizeMax @ 0x4103E0)
 HRESULT AbstractClass::GetSizeMax(ULARGE_INTEGER* size) {
     return E_NOTIMPL;
 }
 
-// IDA: 0x410230 -- vtable[1][5], GenerateUniqueID / createId
-// Calls updateAITimer() (vtable[1] method) when ScenarioClass instance exists,
+// IDA: 0x410230 -- q000[1][5], GenerateUniqueID / createId
+// Calls updateAITimer() (q000[1] method) when ScenarioClass instance exists,
 // stores returned ID into uniqueId. If no ScenarioClass, uniqueId = 0.
 void AbstractClass::createId() {
     if (gamemd::ScenarioClass::Instance) {
@@ -107,8 +107,8 @@ void AbstractClass::createId() {
     }
 }
 
-// IDA: 0x410540 -- vtable[0][22], AbstractClass::GetCoords
-// Dispatches vtable[0][18] (+72; base impl GetInvalidCoord @ 0x4104C0,
+// IDA: 0x410540 -- q000[0][22], AbstractClass::GetCoords
+// Dispatches q000[0][18] (+72; base impl GetInvalidCoord @ 0x4104C0,
 // overridden e.g. by BuildingClass::GetExitCoords @ 0x447AC0) into a local
 // buffer, then copies the returned XYZ to the out param.
 // 0x410540

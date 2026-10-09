@@ -46,6 +46,13 @@ struct FoggedObjectClass {
     int Read(unsigned int * a2, void *a2_2);
     int   SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * CheckVisibility(unsigned int * a2);
+    unsigned int u32_34;  // 0x34 (offset-truth supply)
+    unsigned int u32_38;  // 0x38 (offset-truth supply)
+    unsigned int u32_3C;  // 0x3C (offset-truth supply)
+    unsigned int u32_54;  // 0x54 (offset-truth supply)
+    unsigned int u32_58;  // 0x58 (offset-truth supply)
+    unsigned int u32_5C;  // 0x5C (offset-truth supply)
+    unsigned int u32_6C;  // 0x6C (offset-truth supply)
 };
 
 } // namespace gamemd

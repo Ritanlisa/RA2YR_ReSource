@@ -66,7 +66,7 @@ AnimClass * * Building::ComputePosition(int *aP1)
   int v41; // [esp+40h] [ebp-8h]
   int v42; // [esp+44h] [ebp-4h]
 
-  v3 = (int *)&this->__pad_C[144]; /*0x425d1d*/
+  v3 = (int *)&this->q00C[144]; /*0x425d1d*/
   v4 = v3[1]; /*0x425d29*/
   v5 = (unsigned __int8)(*v3 >> 31) + *v3; /*0x425d32*/
   v37 = 10000; /*0x425d34*/
@@ -101,12 +101,12 @@ AnimClass * * Building::ComputePosition(int *aP1)
             v36[1] = v13; /*0x425dc6*/
             v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x425dcb*/
             v15 = v14; /*0x425dd0*/
-            if ( *(_DWORD *)&v14->__pad_E8[4] == 2 /*0x425e18*/
-              && ((int)v14->Cell_field_0x140 & 0x100) == 0
+            if ( *(_DWORD *)&v14->q0E8[4] == 2 /*0x425e18*/
+              && ((int)v14->q140 & 0x100) == 0
               && (*((_DWORD *)Cell::GetNeighbourContent(v14, 6u) + 80) & 0x100) == 0
               && (*((_DWORD *)Cell::GetNeighbourContent(v15, 0) + 80) & 0x100) == 0 )
             {
-              if ( *(_DWORD *)&v15->__pad_1C[8] == v39 ) /*0x425e27*/
+              if ( *(_DWORD *)&v15->q01C[8] == v39 ) /*0x425e27*/
               {
                 v16 = 0; /*0x425e77*/
               }
@@ -240,11 +240,11 @@ int Building::GetNthOfType()
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)&this->__pad_C[56]); /*0x485026*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)&this->q00C[56]); /*0x485026*/
   if ( BuildingByTiberiumType == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
-    return ((unsigned __int8)this->__pad_A4[122] + 1) /*0x48504f*/
+    return ((unsigned __int8)this->q0A4[122] + 1) /*0x48504f*/
          * *(_DWORD *)(*(_DWORD *)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * BuildingByTiberiumType) + 184);
 }
 }
@@ -252,14 +252,14 @@ int Building::GetNthOfType()
 namespace gamemd {
 int Building::GetRenderType()
 {
-  _BYTE *Building_field_0xA0; // ecx
+  _BYTE *q0A0; // ecx
   int result; // eax
 
-  Building_field_0xA0 = this->Building_field_0xA0; /*0x772a90*/
+  q0A0 = this->q0A0; /*0x772a90*/
   result = 0; /*0x772a96*/
-  if ( Building_field_0xA0[676] ) /*0x772a98*/
+  if ( q0A0[676] ) /*0x772a98*/
     result = 4; /*0x772aa2*/
-  if ( Building_field_0xA0[677] ) /*0x772aa7*/
+  if ( q0A0[677] ) /*0x772aa7*/
     IDA_LOBYTE(result) = result | 0xB8; /*0x772ab1*/
   return result; /*0x772ab3*/
 }

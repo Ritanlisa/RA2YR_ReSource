@@ -327,8 +327,8 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
 
   v2 = this; /*0x627598*/
   v36 = this; /*0x62759c*/
-  v3 = *(_DWORD *)this->__pad_0; /*0x6275a0*/
-  if ( *(_DWORD *)this->__pad_0 == -1 ) /*0x6275a6*/
+  v3 = *(_DWORD *)this->q000; /*0x6275a0*/
+  if ( *(_DWORD *)this->q000 == -1 ) /*0x6275a6*/
     return 0; /*0x6275ab*/
   strcpy(String, a2); /*0x6275d6*/
   strcat(String, (const char *)&off_7E1BC6 + 112 * v3); /*0x627611*/
@@ -358,7 +358,7 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
     v10[1] = 4 * IDA_HIBYTE(v31); /*0x627706*/
     v10[2] = 4 * v11; /*0x62770f*/
   }
-  v12 = *(_DWORD *)(*(_DWORD *)v2[1].__pad_0 + 16); /*0x627719*/
+  v12 = *(_DWORD *)(*(_DWORD *)v2[1].q000 + 16); /*0x627719*/
   v37 = v12; /*0x62771c*/
   v13 = RA2_OPNEW(0x18u); /*0x627720*/
   v14 = (_DWORD *)v13; /*0x627725*/
@@ -385,8 +385,8 @@ unsigned int * MIXFile::Load(ObjectClass * a2)
     v32 = 0; /*0x627777*/
     while ( 1 ) /*0x62779b*/
     {
-      v15 = *(char **)(*((_DWORD *)v2->field_4 + 1) + 4 * v8); /*0x62779b*/
-      v16 = (__int16 *)(v32 + *(_DWORD *)(*(_DWORD *)v36[1].__pad_0 + 4)); /*0x6277a1*/
+      v15 = *(char **)(*((_DWORD *)v2->q004 + 1) + 4 * v8); /*0x62779b*/
+      v16 = (__int16 *)(v32 + *(_DWORD *)(*(_DWORD *)v36[1].q000 + 4)); /*0x6277a1*/
       v33 = *v16; /*0x6277a6*/
       v34 = *((_BYTE *)v16 + 2); /*0x6277ae*/
       v17 = (char *)RA2_OPNEW(0x33Cu); /*0x6277b2*/

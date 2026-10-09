@@ -30,6 +30,9 @@ struct DroppodLocomotionClass {
     void* q687470288706016221574;  // 0x687470288706016221574
 // --- flat members (END) ---
 
+    int Owner;  // 0x8
+    int RefCount;  // 0x20
+    unsigned int q018;  // 0x18 (offset-truth supply)
 };
 // G57w18j4: true 48B carrier (G57c2 twin-guard: full carrier wins when included before
 // minimal_carriers.hpp reaches this TU; minimal twin remains for minimal-only TUs).

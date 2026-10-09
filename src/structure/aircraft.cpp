@@ -428,7 +428,7 @@ int AircraftClass::Mission_Attack()
             AircraftClass_field_bool_6D5 = true;
             return 1;
         }
-        this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget vtable 508 */
+        this->hasValidTarget();  /* G57w9: raw 0x5B3A10 is 1-arg thiscall (this only); decl MissionClass::hasValidTarget q000 508 */
         AircraftClass_field_bool_6D5 = true;
         return 1;
     }
@@ -586,10 +586,10 @@ int AircraftClass::Mission_Retreat()
         {
   LABEL_15:
           Element = Array::GetElement( /*0x416864*/
-                      *(Array **)&dword_A83D4C->__pad_140[4 * v7->planningPathIdx + 208],
+                      *(Array **)&dword_A83D4C->q140[4 * v7->planningPathIdx + 208],
                       v7->waypointIndex);
           v21 = (int *)VectorClass::GetAtChecked( /*0x41687d*/
-                         *(VectorClass **)&dword_A83D4C->__pad_140[4 * v7->planningPathIdx + 208],
+                         *(VectorClass **)&dword_A83D4C->q140[4 * v7->planningPathIdx + 208],
                          Element);
           BuildingClass::ValidateFoundation_0(v7, a2, a3, v21, a4, a5); /*0x416885*/
         }
@@ -1237,7 +1237,7 @@ int AircraftClass::ValidateLandingCell()
   else
   {
     owner = verified->owner; /*0x415a60*/
-    TransitionCount = *(int **)&owner->__pad_13C[164]; /*0x415a66*/
+    TransitionCount = *(int **)&owner->q13C[164]; /*0x415a66*/
     if ( (unsigned int)TransitionCount >= 4 ) /*0x415a6e*/
       TransitionCount = (int *)HouseClass::GetTransitionCount(owner); /*0x415a75*/
     *(_DWORD *)v9 = *CellClass::FindOpenNeighbor( /*0x415aa3*/
@@ -1280,7 +1280,7 @@ int AircraftClass::Mission_Unload_full()
     return 5;
 }
 
-// IDA: 0x41BE60 (LandingCheckStub, 5B) — vtable entry, always returns 0
+// IDA: 0x41BE60 (LandingCheckStub, 5B) — q000 entry, always returns 0
 int AircraftClass::LandingCheckStub()
 {
     return 0;
@@ -1659,7 +1659,7 @@ int AircraftClass::LoadFromStream()
   disasm->vfptr2 = &(void*)(void*)&AircraftClass_vftable; /*0x414090*/
   disasm->vfptr3 = &(void*)(void*)&AircraftClass_vftable; /*0x414097*/
   disasm->vfptr1 = &(void*)(void*)&AircraftClass_vftable; /*0x41409e*/
-  *(_DWORD *)disasm->__pad_6C0 = &(void*)(void*)&AircraftClass_vftable; /*0x4140a4*/
+  *(_DWORD *)disasm->q6C0 = &(void*)(void*)&AircraftClass_vftable; /*0x4140a4*/
   if ( byte_A8E9A0 ) /*0x4140b5*/
   {
     Type = disasm->Type; /*0x4140b7*/
@@ -1768,8 +1768,8 @@ int AircraftClass::GetActionOnObject()
   AircraftTypeClass *Type; // eax
 
   Type = verified->Type; /*0x41b929*/
-  if ( Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1248) /*0x41b93d*/
-    && Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 1300) )
+  if ( Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1248) /*0x41b93d*/
+    && Type != *(AircraftTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 1300) )
   {
     return ObjectClass::IsHeightAboveThreshold_0((ObjectClass *)verified); /*0x41b941*/
   }

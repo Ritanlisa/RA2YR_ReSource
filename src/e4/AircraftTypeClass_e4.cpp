@@ -151,20 +151,20 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   v15 = *(_BYTE *)(v4 + 3592); /*0x41ccbb*/
   *(_BYTE *)(v4 + 3580) = v8; /*0x41ccc7*/
   v9 = INIClass::ReadBool_Overwrite( /*0x41cccd*/
-         (int *)&DSurface_ViewBounds.__pad_FC[228],
+         (int *)&DSurface_ViewBounds.q0FC[228],
          (unsigned __int8 *)(v4 + 504),
          aRotors,
          v15);
   v16 = *(_BYTE *)(v4 + 3593); /*0x41ccdd*/
   *(_BYTE *)(v4 + 3592) = v9; /*0x41cce4*/
   *(_BYTE *)(v4 + 3593) = INIClass::ReadBool_Overwrite( /*0x41ccf9*/
-                            (int *)&DSurface_ViewBounds.__pad_FC[228],
+                            (int *)&DSurface_ViewBounds.q0FC[228],
                             (unsigned __int8 *)(v4 + 504),
                             aCustomrotor,
                             v16);
   v19 = *(_DWORD *)(v4 + 3584); /*0x41cd15*/
   if ( INIClass::GetString( /*0x41cd19*/
-         (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
+         (INIClass *)&DSurface_ViewBounds.q0FC[228],
          (unsigned __int8 *)(v4 + 504),
          aTrailer,
          &g_INI_DefaultBuffer,
@@ -180,7 +180,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   v17 = *(_DWORD *)(v4 + 3588); /*0x41cd3c*/
   *(_DWORD *)(v4 + 3584) = v10; /*0x41cd43*/
   *(_DWORD *)(v4 + 3588) = INIClass::ReadInt_Overwrite( /*0x41cd4e*/
-                             (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                             (bool *)&DSurface_ViewBounds.q0FC[228],
                              (unsigned __int8 *)(v4 + 504),
                              aSpawndelay,
                              v17);
@@ -363,5 +363,5 @@ int AircraftTypeClass::GetAuxField()
 // 0x712120
 int AircraftTypeClass::GetGameplayValue()
 {
-  return *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5836); /*0x71212b*/
+  return *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5836); /*0x71212b*/
 }

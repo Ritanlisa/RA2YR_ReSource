@@ -17,11 +17,11 @@
 namespace gamemd {
 void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&MSFrameAnim_vftable; /*0x769bd3*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&MSFrameAnim_vftable; /*0x769bd3*/
   VtableStub::5CB6C0(Block); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     RA2_OPDEL(Block); /*0x769be6*/
-  return Block->__pad_0; /*0x769bf0*/
+  return Block->q000; /*0x769bf0*/
 }
 }
 // 0x769FE0
@@ -53,7 +53,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(_DWORD *)v8->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a05b*/
+          *(_DWORD *)v8->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -111,7 +111,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x76a0d9*/
+    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(_DWORD *)this->q000 + 12))(this); /*0x76a0d9*/
   }
   v12 = this->m_8; /*0x76a0dc*/
   if ( v12 < this->m_10 ) /*0x76a0e4*/
@@ -124,7 +124,7 @@ namespace gamemd {
 char MSFrameAnim::Load(int a1, int * a2, void *a3_1, void *a4_1)
 {
   if ( byte_8487BC ) /*0x767ed7*/
-    RenderScoreScreen((int *)this->__pad_0, a2, 1); /*0x767ee3*/
+    RenderScoreScreen((int *)this->q000, a2, 1); /*0x767ee3*/
   return 0; /*0x767eea*/
 }
 } // namespace gamemd
@@ -145,8 +145,8 @@ void MSFrameAnim::Draw(int a1, int * a2)
 
   if ( byte_8487BD ) /*0x767efc*/
   {
-    v2 = (*(int (__thiscall **)(MSFrameAnim *))(*(_DWORD *)a1->__pad_0 + 124))(a1); /*0x767f0d*/
-    v3 = (*(int (__thiscall **)(MSFrameAnim *))(*(_DWORD *)a1->__pad_0 + 128))(a1); /*0x767f0f*/
+    v2 = (*(int (__thiscall **)(MSFrameAnim *))(*(_DWORD *)a1->q000 + 124))(a1); /*0x767f0d*/
+    v3 = (*(int (__thiscall **)(MSFrameAnim *))(*(_DWORD *)a1->q000 + 128))(a1); /*0x767f0f*/
     if ( a2 ) /*0x767f1b*/
     {
       v4 = a2[1]; /*0x767f1f*/
@@ -164,7 +164,7 @@ void MSFrameAnim::Draw(int a1, int * a2)
       v9 = v2; /*0x767f65*/
       v10 = v3; /*0x767f69*/
     }
-    RenderScoreScreen((int *)a1->__pad_0, &v7, 1); /*0x767f40*/
+    RenderScoreScreen((int *)a1->q000, &v7, 1); /*0x767f40*/
   }
 }
 } // namespace gamemd
@@ -173,11 +173,11 @@ void MSFrameAnim::Draw(int a1, int * a2)
 namespace gamemd {
 unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 {
-  *(_DWORD *)a1->__pad_0 = 0; /*0x767f8c*/
-  a1->MSFrameAnim_field_0x4 = 0; /*0x767f99*/
-  a1->MSFrameAnim_field_0x8 = (void *)640; /*0x767f9c*/
-  a1->MSFrameAnim_field_0xC = (void *)480; /*0x767f9f*/
-  return a1->__pad_0; /*0x767fa2*/
+  *(_DWORD *)a1->q000 = 0; /*0x767f8c*/
+  a1->q004 = 0; /*0x767f99*/
+  a1->q008 = (void *)640; /*0x767f9c*/
+  a1->q00C = (void *)480; /*0x767f9f*/
+  return a1->q000; /*0x767fa2*/
 }
 } // namespace gamemd
 
@@ -245,11 +245,11 @@ unsigned int MSFrameAnim::pauseAnimation(int a2)
 namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
 {
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
   ComPtr::Release((ComPtr *)Block); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     RA2_OPDEL(Block); /*0x769da6*/
-  return Block->__pad_0; /*0x769db0*/
+  return Block->q000; /*0x769db0*/
 }
 } // namespace gamemd
 
@@ -311,7 +311,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(_DWORD *)this->__pad_0 /*0x76a33e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(_DWORD *)this->q000 /*0x76a33e*/
                                                                                               + 12))(this);
   }
   v7 = this->m_8; /*0x76a341*/
@@ -348,7 +348,7 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = *(void (__thiscall ****)(_DWORD, int))&Block->m_1[3]; /*0x76a683*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
@@ -358,7 +358,7 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x76a6b2*/
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
     RA2_OPDEL(Block); /*0x76a6bc*/
-  return Block->__pad_0; /*0x76a6c6*/
+  return Block->q000; /*0x76a6c6*/
 }
 } // namespace gamemd
 
@@ -369,7 +369,7 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x76a723*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x76a730*/
   {
     RA2_OPDEL(v3); /*0x76a738*/
@@ -379,7 +379,7 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x76a751*/
   if ( (a2 & 1) != 0 ) /*0x76a758*/
     RA2_OPDEL(Block); /*0x76a75b*/
-  return Block->__pad_0; /*0x76a765*/
+  return Block->q000; /*0x76a765*/
 }
 } // namespace gamemd
 
@@ -388,7 +388,7 @@ namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame(void *a1_1)
 {
   ComPtr::Constructor((ComPtr *)a1_1); /*0x76a7c3*/
-  *(_DWORD *)a1_1->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
-  return a1_1->__pad_0; /*0x76a7d0*/
+  *(_DWORD *)a1_1->q000 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
+  return a1_1->q000; /*0x76a7d0*/
 }
 } // namespace gamemd

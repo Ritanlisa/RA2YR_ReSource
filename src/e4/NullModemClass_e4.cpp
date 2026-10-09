@@ -129,7 +129,7 @@ void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
   void **v3; // edi
 
   v3 = (void **)this->u32_34; /*0x5f3654*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&NullModemClass_vftable; /*0x5f3657*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&NullModemClass_vftable; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
     FileFind::Close(v3); /*0x5f3663*/
@@ -153,10 +153,10 @@ void * NullModemClass::QueryInterface(char a2, int a1, int a3, int a4, int a5)
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
   LABEL_10:
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&ConnManClass_vftable; /*0x5f36cf*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&ConnManClass_vftable; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
     RA2_OPDEL(); /*0x5f36de*/
-  return this->__pad_0; /*0x5f36e8*/
+  return this->q000; /*0x5f36e8*/
 }
 } // namespace gamemd
 // 0x774670
@@ -200,8 +200,8 @@ int NullModemClass::sendData()
     Debug::Log(); /*0x774717*/
   }
   GetCommMask(*((HANDLE *)&this->Active3), &EvtMask); /*0x774728*/
-  (*(void (__thiscall **)(NullModemClass *, int))(*(_DWORD *)this->__pad_0 + 16))(this, 1); /*0x774734*/
-  (*(void (__thiscall **)(NullModemClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x77473b*/
+  (*(void (__thiscall **)(NullModemClass *, int))(*(_DWORD *)this->q000 + 16))(this, 1); /*0x774734*/
+  (*(void (__thiscall **)(NullModemClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x77473b*/
   if ( !EscapeCommFunction(*((HANDLE *)&this->Active3), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
@@ -258,7 +258,7 @@ int NullModemClass::receiveData()
     if ( !v5 ) /*0x77486f*/
       WinModemClass::LogCommErrors(v2, *(_BYTE *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
-  return (*(int (__thiscall **)(NullModemClass *, int))(*(_DWORD *)this->__pad_0 + 16))(this, 1); /*0x774893*/
+  return (*(int (__thiscall **)(NullModemClass *, int))(*(_DWORD *)this->q000 + 16))(this, 1); /*0x774893*/
 }
 } // namespace gamemd
 // 0x7754C0
@@ -286,7 +286,7 @@ int NullModemClass::Send()
 namespace gamemd {
 int NullModemClass::Disconnect(int a2, int a3, int a4)
 {
-  return (*(int (__thiscall **)(NullModemClass *, int, int, int, int))(*(_DWORD *)this->__pad_0 + 52))( /*0x5f3556*/
+  return (*(int (__thiscall **)(NullModemClass *, int, int, int, int))(*(_DWORD *)this->q000 + 52))( /*0x5f3556*/
            this,
            a2,
            a3,

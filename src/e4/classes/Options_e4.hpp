@@ -128,5 +128,7 @@ struct Options {
     HWND InitDialogControls(HWND hDlg);  // 0x4F1720
     int DialogProc(CCINIClass hWnd);  // 0x618D40
     void ClearComboBoxes();  // 0x624460
+    unsigned int q000;  // 0x0
+    unsigned int q004;  // 0x4 (offset-truth supply)
 };
 } // namespace gamemd

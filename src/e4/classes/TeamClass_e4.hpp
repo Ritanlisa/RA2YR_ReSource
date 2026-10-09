@@ -135,6 +135,13 @@ struct TeamClass {
     AbstractClass * * DestroyAllMembers(unsigned int *p_vtable0, int aP1, int a2, int a1);
     void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a4);
     static int LiberateMember_Start(void * aP1, int aP2, int aP3);  // G42.39a static-call supply
+    unsigned int u32_10C;  // 0x10C (offset-truth supply)
+    unsigned char u32_68F;  // 0x68F (offset-truth supply)
+    unsigned int u32_690;  // 0x690 (offset-truth supply)
+    unsigned char u32_691;  // 0x691 (offset-truth supply)
+    unsigned int u32_A8;  // 0xA8 (offset-truth supply)
+    unsigned int u32_B0;  // 0xB0 (offset-truth supply)
+    unsigned int u32_B4;  // 0xB4 (offset-truth supply)
 };
 
 } // namespace gamemd

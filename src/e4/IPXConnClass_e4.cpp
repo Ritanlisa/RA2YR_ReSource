@@ -20,7 +20,7 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
 
   IPXConnClass::initConnection((ModemConnectionClass *)aP1, aP2, aP3, aP4, a5, 2, -1, 60, a9); /*0x53f458*/
   Waypoint::InitInvalid((Waypoint *)((char *)aP1 + 76)); /*0x53f462*/
-  *(_DWORD *)aP1->__pad_0 = &(void*)(void*)&IPXConnClass_vftable; /*0x53f46b*/
+  *(_DWORD *)aP1->q000 = &(void*)(void*)&IPXConnClass_vftable; /*0x53f46b*/
   if ( aP8 ) /*0x53f473*/
   {
     *((_DWORD *)aP1 + 19) = *aP8; /*0x53f479*/

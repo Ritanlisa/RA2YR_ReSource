@@ -79,5 +79,6 @@ struct Terrain {
     void PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4);  // 0x5A28C0
     unsigned int * ClimbCheck(AbstractClass * aP0, AbstractClass * aP1);  // 0x6D6410
     int LookupByName();  // 0x71DD80
+    unsigned int u32_80;  // 0x80 (offset-truth supply)
 };
 } // namespace gamemd

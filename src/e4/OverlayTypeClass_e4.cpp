@@ -91,20 +91,20 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->Selectable = 0; /*0x5fe317*/
   this->Insignificant = 1; /*0x5fe31d*/
   this->AllowCellContent = 0; /*0x5fe324*/
-  v3 = *(_DWORD *)&stru_A83D50.__pad_3C[4]; /*0x5fe32a*/
-  if ( *(int *)&stru_A83D50.__pad_3C[4] < (int)stru_A83D50.SuperClass_field_0x38 /*0x5fe368*/
-    || (stru_A83D50.__pad_3C[1] || !stru_A83D50.SuperClass_field_0x38)
-    && *(int *)&stru_A83D50.__pad_3C[8] > 0
-    && (v4 = (*((unsigned __int8 (__thiscall **)(void **, char *, _DWORD))stru_A83D50.SuperClass_field_0x30 + 2))(
-               &stru_A83D50.SuperClass_field_0x30,
-               (char *)stru_A83D50.SuperClass_field_0x38 + *(_DWORD *)&stru_A83D50.__pad_3C[8],
+  v3 = *(_DWORD *)&stru_A83D50.q03C[4]; /*0x5fe32a*/
+  if ( *(int *)&stru_A83D50.q03C[4] < (int)stru_A83D50.q038 /*0x5fe368*/
+    || (stru_A83D50.q03C[1] || !stru_A83D50.q038)
+    && *(int *)&stru_A83D50.q03C[8] > 0
+    && (v4 = (*((unsigned __int8 (__thiscall **)(void **, char *, _DWORD))stru_A83D50.q030 + 2))(
+               &stru_A83D50.q030,
+               (char *)stru_A83D50.q038 + *(_DWORD *)&stru_A83D50.q03C[8],
                0) == 0,
-        v3 = *(_DWORD *)&stru_A83D50.__pad_3C[4],
+        v3 = *(_DWORD *)&stru_A83D50.q03C[4],
         !v4) )
   {
-    *(_DWORD *)&stru_A83D50.__pad_3C[4] = v3 + 1; /*0x5fe36d*/
-    *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * v3) = this; /*0x5fe377*/
-    v3 = *(_DWORD *)&stru_A83D50.__pad_3C[4]; /*0x5fe37a*/
+    *(_DWORD *)&stru_A83D50.q03C[4] = v3 + 1; /*0x5fe36d*/
+    *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * v3) = this; /*0x5fe377*/
+    v3 = *(_DWORD *)&stru_A83D50.q03C[4]; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
   if ( v3 <= 0 ) /*0x5fe383*/
@@ -115,7 +115,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   }
   else
   {
-    v6 = *(OverlayTypeClass ***)stru_A83D50.__pad_34; /*0x5fe385*/
+    v6 = *(OverlayTypeClass ***)stru_A83D50.q034; /*0x5fe385*/
     while ( *v6 != this ) /*0x5fe38d*/
     {
       ++v5; /*0x5fe38f*/
@@ -165,43 +165,43 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
     return 0; /*0x5fea1f*/
   INIString = (AnimTypeClass *)OverlayTypeClass::ReadINIString( /*0x5fe7ac*/
                                  (OverlayTypeClass *)a2,
-                                 (unsigned __int8 *)aP1->__pad_24,
+                                 (unsigned __int8 *)aP1->q024,
                                  aLand,
                                  (unsigned int)aP1->CellAnim);
   v4 = *(_DWORD *)&aP1->Wall; /*0x5fe7b1*/
   aP1->CellAnim = INIString; /*0x5fe7b7*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (unsigned __int8 *)aP1->__pad_24, aStrength, v4); /*0x5fe7c6*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)a2, (unsigned __int8 *)aP1->q024, aStrength, v4); /*0x5fe7c6*/
   NoUseTileLandType = aP1->NoUseTileLandType; /*0x5fe7d3*/
   *(_DWORD *)&aP1->Wall = Int_Overwrite; /*0x5fe7da*/
   aP1->NoUseTileLandType = INIClass::ReadBool_Overwrite( /*0x5fe7e5*/
                               (int *)a2,
-                              (unsigned __int8 *)aP1->__pad_24,
+                              (unsigned __int8 *)aP1->q024,
                               g_INI_Key_Wall,
                               NoUseTileLandType);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5fe7fa*/
                      (int *)a2,
-                     (unsigned __int8 *)aP1->__pad_24,
+                     (unsigned __int8 *)aP1->q024,
                      (unsigned __int8 *)g_INI_Key_Tiberium,
                      aP1->IsVeinholeMonster);
   IsVeins = aP1->IsVeins; /*0x5fe7ff*/
   aP1->IsVeinholeMonster = Bool_Overwrite; /*0x5fe805*/
-  v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aCrate, IsVeins); /*0x5fe814*/
+  v8 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aCrate, IsVeins); /*0x5fe814*/
   ImageLoaded = aP1->ImageLoaded; /*0x5fe821*/
   aP1->IsVeins = v8; /*0x5fe828*/
   aP1->ImageLoaded = INIClass::ReadBool_Overwrite( /*0x5fe833*/
                         (int *)a2,
-                        (unsigned __int8 *)aP1->__pad_24,
+                        (unsigned __int8 *)aP1->q024,
                         aCratetrigger,
                         ImageLoaded);
-  v9 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aExplodes, aP1->IsRubble); /*0x5fe848*/
+  v9 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aExplodes, aP1->IsRubble); /*0x5fe848*/
   v10 = aP1->RadarColor[0]; /*0x5fe84d*/
   aP1->IsRubble = v9; /*0x5fe853*/
-  v11 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aOverrides, v10); /*0x5fe862*/
+  v11 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aOverrides, v10); /*0x5fe862*/
   DamageLevels = aP1->DamageLevels; /*0x5fe867*/
   aP1->RadarColor[0] = v11; /*0x5fe884*/
   if ( INIClass::GetString( /*0x5fe88a*/
          (INIClass *)a2,
-         (unsigned __int8 *)aP1->__pad_24,
+         (unsigned __int8 *)aP1->q024,
          aCellanim,
          &g_INI_DefaultBuffer,
          Destination,
@@ -215,7 +215,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   }
   aP1->DamageLevels = (int)v13; /*0x5fe8a0*/
   aP1->Strength_2 = INIClass::ReadInt_Overwrite( /*0x5fe8c3*/
-                       (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                       (bool *)&DSurface_ViewBounds.q0FC[228],
                        (unsigned __int8 *)aP1->ImageFile,
                        aDamagelevels,
                        aP1->Strength_2);
@@ -234,29 +234,29 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1, void *a2)
   Coord = INIClass::GetCoord( /*0x5fe947*/
             (INIClass *)a2,
             (int)&v28,
-            (unsigned __int8 *)aP1->__pad_24,
+            (unsigned __int8 *)aP1->q024,
             aRadarcolor,
             (unsigned __int8 *)&aP1->__tail_2B5[1]);
   *(_WORD *)&aP1->__tail_2B5[1] = *(_WORD *)Coord; /*0x5fe94f*/
   Explodes = aP1->Explodes; /*0x5fe95e*/
   *((_BYTE *)aP1 + 696) = *(_BYTE *)(Coord + 2); /*0x5fe965*/
-  v16 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aNousetilelandt, Explodes); /*0x5fe968*/
+  v16 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aNousetilelandt, Explodes); /*0x5fe968*/
   ChainReaction = aP1->ChainReaction; /*0x5fe96d*/
   aP1->Explodes = v16; /*0x5fe973*/
-  v18 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aIsveinholemons, ChainReaction); /*0x5fe982*/
+  v18 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aIsveinholemons, ChainReaction); /*0x5fe982*/
   Overrides = aP1->Overrides; /*0x5fe98f*/
   aP1->ChainReaction = v18; /*0x5fe996*/
-  aP1->Overrides = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aIsveins, Overrides); /*0x5fe9a1*/
-  v19 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aChainreaction, aP1->IsARock); /*0x5fe9b6*/
+  aP1->Overrides = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aIsveins, Overrides); /*0x5fe9a1*/
+  v19 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aChainreaction, aP1->IsARock); /*0x5fe9b6*/
   v20 = aP1->RadarColor[1]; /*0x5fe9bb*/
   aP1->IsARock = v19; /*0x5fe9c1*/
-  v21 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aDrawflat, v20); /*0x5fe9d0*/
+  v21 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aDrawflat, v20); /*0x5fe9d0*/
   v27 = aP1->__tail_2B5[0]; /*0x5fe9dd*/
   aP1->RadarColor[1] = v21; /*0x5fe9e4*/
-  aP1->__tail_2B5[0] = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->__pad_24, aIsarock, v27); /*0x5fe9ef*/
+  aP1->__tail_2B5[0] = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)aP1->q024, aIsarock, v27); /*0x5fe9ef*/
   aP1->RadarColor[2] = INIClass::ReadBool_Overwrite( /*0x5fea0a*/
                           (int *)a2,
-                          (unsigned __int8 *)aP1->__pad_24,
+                          (unsigned __int8 *)aP1->q024,
                           aIsrubble,
                           aP1->RadarColor[2]);
   return 1; /*0x5fea11*/
@@ -387,16 +387,16 @@ unsigned int *  OverlayTypeClass::Construct(char *aP1)
   this->vfptr2 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441a8*/
   this->vfptr3 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x6441af*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->vfptr1); /*0x6441b6*/
-  if ( (int)stru_A83D50.SuperClass_field_0x28 < *(int *)&stru_A83D50.__pad_14[12] /*0x6441ef*/
-    || (IDA_BYTE1(stru_A83D50.SuperClass_field_0x24) || !*(_DWORD *)&stru_A83D50.__pad_14[12])
-    && (int)stru_A83D50.SuperClass_field_0x2C > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, char *, _DWORD))(*(_DWORD *)&stru_A83D50.__pad_14[4] + 8))(
-         &stru_A83D50.__pad_14[4],
-         (char *)stru_A83D50.SuperClass_field_0x2C + *(_DWORD *)&stru_A83D50.__pad_14[12],
+  if ( (int)stru_A83D50.q028 < *(int *)&stru_A83D50.q014[12] /*0x6441ef*/
+    || (IDA_BYTE1(stru_A83D50.q024) || !*(_DWORD *)&stru_A83D50.q014[12])
+    && (int)stru_A83D50.q02C > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, char *, _DWORD))(*(_DWORD *)&stru_A83D50.q014[4] + 8))(
+         &stru_A83D50.q014[4],
+         (char *)stru_A83D50.q02C + *(_DWORD *)&stru_A83D50.q014[12],
          0) )
   {
-    v3 = stru_A83D50.SuperClass_field_0x28++; /*0x6441fc*/
-    *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_14[8] + 4 * (_DWORD)v3) = this; /*0x64420b*/
+    v3 = stru_A83D50.q028++; /*0x6441fc*/
+    *(_DWORD *)(*(_DWORD *)&stru_A83D50.q014[8] + 4 * (_DWORD)v3) = this; /*0x64420b*/
   }
   this->IsLogic = 1; /*0x64420e*/
   return &this->vfptr; /*0x644217*/
@@ -482,7 +482,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   int v5; // eax
   int v6[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v4 = (char *)DSurface_ViewBounds.field_4 + a2[1] + 15; /*0x5fe5c1*/
+  v4 = (char *)DSurface_ViewBounds.q004 + a2[1] + 15; /*0x5fe5c1*/
   v6[0] = DSurface_ViewBounds.field_0 + *a2 + 30; /*0x5fe5c4*/
   v6[1] = (int)v4; /*0x5fe5c8*/
   v5 = (*((int (__thiscall **)(OverlayTypeClass *))this->vfptr + 39))(this); /*0x5fe5f3*/
@@ -647,15 +647,15 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   ((unsigned int *)this)[0] = (unsigned int)&vt_OverlayTypeClass; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
-  v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
-         &stru_A83D50.SuperClass_field_0x30,
+  v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.q030 + 4))( /*0x5fef6a*/
+         &stru_A83D50.q030,
          &v5);
-  if ( v3 != -1 && v3 < *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fef7a*/
+  if ( v3 != -1 && v3 < *(int *)&stru_A83D50.q03C[4] ) /*0x5fef7a*/
   {
-    --*(unsigned int *)&stru_A83D50.__pad_3C[4]; /*0x5fef7f*/
+    --*(unsigned int *)&stru_A83D50.q03C[4]; /*0x5fef7f*/
     for ( ; /*0x5fef85*/
-          v3 < *(int *)&stru_A83D50.__pad_3C[4];
-          *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34
+          v3 < *(int *)&stru_A83D50.q03C[4];
+          *(unsigned int *)(*(unsigned int *)stru_A83D50.q034 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)stru_A83D50.q034
                                                                                 + 4 * v3) )
     {
       ++v3; /*0x5fef8d*/

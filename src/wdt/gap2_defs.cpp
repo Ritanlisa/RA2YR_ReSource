@@ -66,7 +66,7 @@ int State::SetIfChanged(int a1) {
   result = a1; /*0x4f3a90*/
   if ( (_BYTE)a1 != (unsigned char)(this->AIPlayers) ) /*0x4f3a99*/
   {
-    v3 = *(_DWORD *)this->__pad_0; /*0x4f3a9b*/
+    v3 = *(_DWORD *)this->q000; /*0x4f3a9b*/
     this->AIPlayers = ((this->AIPlayers) & 0xFFFFFF00u) | ((unsigned int)(a1) & 0xFFu); /*0x4f3a9e*/
     return (*(int (__stdcall **)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }

@@ -167,9 +167,9 @@ int sub_6269A0()
       if ( v4 ) /*0x6269d7*/
       {
         StringVector::Construct(v4, 0, 0); /*0x6269df*/
-        *(_DWORD *)v5->__pad_0 = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x6269e4*/
-        v5->StringVector_field_0x14 = 10; /*0x6269ea*/
-        v5->StringVector_field_0x10 = 0; /*0x6269f1*/
+        *(_DWORD *)v5->q000 = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x6269e4*/
+        v5->q014 = 10; /*0x6269ea*/
+        v5->q010 = 0; /*0x6269f1*/
       }
       else
       {
@@ -473,33 +473,33 @@ void sub_72CA10()
 {
   void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1345] ) /*0x72ca1a*/
+  if ( g_BuildingLoadQueue_Array.qF70[1345] ) /*0x72ca1a*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1344] ) /*0x72ca22*/
+    if ( g_BuildingLoadQueue_Array.qF70[1344] ) /*0x72ca22*/
     {
-      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[688]; /*0x72ca25*/
-      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[688] ) /*0x72ca2d*/
+      v1 = *(void **)&g_BuildingLoadQueue_Array.qF70[688]; /*0x72ca25*/
+      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[688] ) /*0x72ca2d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[688]); /*0x72ca31*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.qF70[688]); /*0x72ca31*/
         RA2_OPDEL(v1); /*0x72ca37*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1344] = 0; /*0x72ca3f*/
+      g_BuildingLoadQueue_Array.qF70[1344] = 0; /*0x72ca3f*/
     }
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[688] = 0; /*0x72ca4b*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1348] ) /*0x72ca53*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[688] = 0; /*0x72ca4b*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1348] ) /*0x72ca53*/
     {
-      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1348]); /*0x72ca56*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1348] = 0; /*0x72ca5e*/
+      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.qF70[1348]); /*0x72ca56*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1348] = 0; /*0x72ca5e*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1352] ) /*0x72ca6c*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1352] ) /*0x72ca6c*/
     {
-      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1352])( /*0x72ca72*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1352],
+      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.qF70[1352])( /*0x72ca72*/
+        *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1352],
         1);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1352] = 0; /*0x72ca74*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[1352] = 0; /*0x72ca74*/
     }
   }
-  g_BuildingLoadQueue_Array.__pad_F70[1345] = 0; /*0x72ca7a*/
+  g_BuildingLoadQueue_Array.qF70[1345] = 0; /*0x72ca7a*/
 }
 } // namespace gamemd
 
@@ -528,9 +528,9 @@ rc_ptr * System_Init_766880(rc_ptr_base * a1, int a2, int a3, void * a4, ObjectC
   if ( v8 ) /*0x766895*/
   {
     *(_DWORD *)&v11.m_3[1] = aP4; /*0x76689f*/
-    *(_DWORD *)v11.__pad_0 = v7; /*0x7668a0*/
+    *(_DWORD *)v11.q000 = v7; /*0x7668a0*/
     String::AssignFromPtr(&v11, (const char **)&a4); /*0x7668a4*/
-    inited = System_Init_766A10(v8, a2, a3, *(void **)v11.__pad_0, *(int *)&v11.m_3[1]); /*0x7668b6*/
+    inited = System_Init_766A10(v8, a2, a3, *(void **)v11.q000, *(int *)&v11.m_3[1]); /*0x7668b6*/
   }
   else
   {

@@ -69,5 +69,12 @@ struct Movie {
     unsigned int SelectNextBuildableType(int aP1);  // 0x720A80
     char GetSectionID(unsigned int *a2);  // 0x49BC80
     char GetState(unsigned int *aP1);  // 0x49BCC0
+    char[20] __pad_10;  // 0x16 (ml)
+    unsigned int q0044;  // 0x44 (offset-truth supply)
+    unsigned int q0180;  // 0x180 (offset-truth supply)
+    unsigned int q028;  // 0x28 (offset-truth supply)
+    unsigned int q058;  // 0x58 (offset-truth supply)
+    unsigned int q05C;  // 0x5C (offset-truth supply)
+    unsigned int q060;  // 0x60 (offset-truth supply)
 };
 } // namespace gamemd

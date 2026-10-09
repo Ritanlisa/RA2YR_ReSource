@@ -44,6 +44,9 @@ public:
     virtual bool vt_entry_98(const CellStruct& cell, HouseClass* house);
     // unmatched: no callgraph reference and no git history record
     virtual bool vt_entry_9C(const CellStruct& cell, HouseClass* house);
+    unsigned int q034;  // 0x34 (offset-truth supply)
+    void* q12C;  // 0x300
+    void* q140;  // 0x320
 };
 #endif  // GAMEMD_G2_GScreenClass_DEF
 

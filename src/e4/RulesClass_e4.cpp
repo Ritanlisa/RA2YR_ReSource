@@ -315,47 +315,47 @@ INIClass * * RulesClass::readDifficulty(void * aClimb, void * aCruiseheight, voi
   result = INIClass::BinarySearchSection((int)v16, (unsigned __int8 *)aJumpjetcontrol); /*0x6743e0*/
   if ( result ) /*0x6743ec*/
   {
-    *(_DWORD *)&this->__pad_240[460] = INIClass::ReadInt_Overwrite( /*0x67440c*/
+    *(_DWORD *)&this->q240[460] = INIClass::ReadInt_Overwrite( /*0x67440c*/
                                          v16,
                                          (unsigned __int8 *)aJumpjetcontrol,
                                          aTurnrate,
-                                         *(_DWORD *)&this->__pad_240[460]);
+                                         *(_DWORD *)&this->q240[460]);
     Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x674427*/
                       v16,
                       (unsigned __int8 *)aJumpjetcontrol,
                       g_INI_Key_Speed,
-                      *(_DWORD *)&this->__pad_240[464]);
-    v4 = *(_DWORD *)&this->__pad_240[476]; /*0x67442c*/
-    *(_DWORD *)&this->__pad_240[464] = Int_Overwrite; /*0x674432*/
+                      *(_DWORD *)&this->q240[464]);
+    v4 = *(_DWORD *)&this->q240[476]; /*0x67442c*/
+    *(_DWORD *)&this->q240[464] = Int_Overwrite; /*0x674432*/
     IDA_HIDWORD(v15) = v4; /*0x674444*/
-    IDA_LODWORD(v15) = *(_DWORD *)&this->__pad_240[472]; /*0x674445*/
+    IDA_LODWORD(v15) = *(_DWORD *)&this->q240[472]; /*0x674445*/
     INIClass::ReadDouble_Overwrite((double *)v16, (unsigned __int8 *)aJumpjetcontrol, aClimb, v15); /*0x67444e*/
-    v5 = *(_DWORD *)&this->__pad_240[480]; /*0x674453*/
+    v5 = *(_DWORD *)&this->q240[480]; /*0x674453*/
     __asm { fstp qword ptr [esi+418h] } /*0x67445b*/
-    *(double *)&this->__pad_240[472] = _RT1; /*0x67445b*/
+    *(double *)&this->q240[472] = _RT1; /*0x67445b*/
     v7 = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol, aCruiseheight, v5); /*0x67446d*/
-    v8 = *(_DWORD *)&this->__pad_240[492]; /*0x674472*/
-    v9 = *(_DWORD *)&this->__pad_240[488]; /*0x674478*/
-    *(_DWORD *)&this->__pad_240[480] = v7; /*0x67447e*/
+    v8 = *(_DWORD *)&this->q240[492]; /*0x674472*/
+    v9 = *(_DWORD *)&this->q240[488]; /*0x674478*/
+    *(_DWORD *)&this->q240[480] = v7; /*0x67447e*/
     INIClass::ReadDouble_Overwrite( /*0x674493*/
       (double *)v16,
       (unsigned __int8 *)aJumpjetcontrol,
-      (unsigned __int8 *)&stru_81AF8C.__pad_14D[103],
+      (unsigned __int8 *)&stru_81AF8C.q14D[103],
       COERCE_DOUBLE(IDA___PAIR64__(v8, v9)));
-    v10 = *(_DWORD *)&this->__pad_240[500]; /*0x674498*/
-    v11 = *(_DWORD *)&this->__pad_240[496]; /*0x67449e*/
+    v10 = *(_DWORD *)&this->q240[500]; /*0x674498*/
+    v11 = *(_DWORD *)&this->q240[496]; /*0x67449e*/
     __asm { fstp qword ptr [esi+428h] } /*0x6744a4*/
-    *(double *)&this->__pad_240[488] = _RT1; /*0x6744a4*/
+    *(double *)&this->q240[488] = _RT1; /*0x6744a4*/
     INIClass::ReadDouble_Overwrite( /*0x6744b9*/
       (double *)v16,
       (unsigned __int8 *)aJumpjetcontrol,
       aWobblesperseco,
       COERCE_DOUBLE(IDA___PAIR64__(v10, v11)));
-    v13 = *(_DWORD *)&this->__pad_240[504]; /*0x6744be*/
+    v13 = *(_DWORD *)&this->q240[504]; /*0x6744be*/
     __asm { fstp qword ptr [esi+430h] } /*0x6744c4*/
-    *(double *)&this->__pad_240[496] = _RT1; /*0x6744c4*/
+    *(double *)&this->q240[496] = _RT1; /*0x6744c4*/
     result = INIClass::ReadInt_Overwrite(v16, (unsigned __int8 *)aJumpjetcontrol, aWobbledeviatio, v13); /*0x6744d9*/
-    *(_DWORD *)&this->__pad_240[504] = result; /*0x6744de*/
+    *(_DWORD *)&this->q240[504] = result; /*0x6744de*/
     IDA_LOBYTE(result) = 1; /*0x6744e5*/
   }
   else
@@ -380,11 +380,11 @@ INIClass * * RulesClass::ReadMovies(void * aMovies)
   result = INIClass::BinarySearchSection((int)v7, (unsigned __int8 *)aMovies); /*0x674560*/
   if ( result ) /*0x67456c*/
   {
-    result = INIClass::GetKeyCount(v7->__pad_0, (unsigned __int8 *)aMovies); /*0x67457d*/
+    result = INIClass::GetKeyCount(v7->q000, (unsigned __int8 *)aMovies); /*0x67457d*/
     v2 = result; /*0x674582*/
     for ( i = 0; i < v2; ++i ) /*0x674588*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7->__pad_0, (unsigned __int8 *)aMovies, i); /*0x6745a4*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v7->q000, (unsigned __int8 *)aMovies, i); /*0x6745a4*/
       result = INIClass::GetString(v7, (unsigned __int8 *)aMovies, StringByIndex, g_Str__none_, Source, 32); /*0x6745b3*/
       if ( result ) /*0x6745ba*/
       {
@@ -909,7 +909,7 @@ int RulesClass::ReadColorAdd(void * aColoradd)
   result = INIClass::BinarySearchSection((int)v13, (unsigned __int8 *)aColoradd); /*0x66d494*/
   if ( result ) /*0x66d4a2*/
   {
-    result = INIClass::GetKeyCount(v1->__pad_0, (unsigned __int8 *)aColoradd); /*0x66d4ae*/
+    result = INIClass::GetKeyCount(v1->q000, (unsigned __int8 *)aColoradd); /*0x66d4ae*/
     v4 = 0; /*0x66d4b3*/
     v12 = result; /*0x66d4b7*/
     if ( result > 0 ) /*0x66d4bb*/
@@ -917,7 +917,7 @@ int RulesClass::ReadColorAdd(void * aColoradd)
       v5 = (char *)aColoradd + 6260; /*0x66d4bd*/
       do /*0x66d511*/
       {
-        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (unsigned __int8 *)aColoradd, v4); /*0x66d4cd*/
+        StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->q000, (unsigned __int8 *)aColoradd, v4); /*0x66d4cd*/
         IDA_LOWORD(v13) = 0; /*0x66d4e6*/
         IDA_BYTE2(v13) = 0; /*0x66d4ee*/
         Coord = INIClass::GetCoord(v1, (int)v11, (unsigned __int8 *)aColoradd, StringByIndex, (unsigned __int8 *)&v13); /*0x66d4f2*/
@@ -951,10 +951,10 @@ int RulesClass::readCrateRules(void * aInfantrytypes)
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
   INIClass *v6; // [esp+30h] [ebp+4h]
 
-  KeyCount = INIClass::GetKeyCount(v6->__pad_0, (unsigned __int8 *)aInfantrytypes); /*0x672297*/
+  KeyCount = INIClass::GetKeyCount(v6->q000, (unsigned __int8 *)aInfantrytypes); /*0x672297*/
   for ( i = 0; i < KeyCount; ++i ) /*0x67229d*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, (unsigned __int8 *)aInfantrytypes, i); /*0x6722b5*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->q000, (unsigned __int8 *)aInfantrytypes, i); /*0x6722b5*/
     if ( INIClass::GetString( /*0x6722c3*/
            v6,
            (unsigned __int8 *)aInfantrytypes,
@@ -979,10 +979,10 @@ int RulesClass::readRadiation(void * aAircrafttypes)
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
   INIClass *v6; // [esp+30h] [ebp+4h]
 
-  KeyCount = INIClass::GetKeyCount(v6->__pad_0, (unsigned __int8 *)aAircrafttypes); /*0x6723e7*/
+  KeyCount = INIClass::GetKeyCount(v6->q000, (unsigned __int8 *)aAircrafttypes); /*0x6723e7*/
   for ( i = 0; i < KeyCount; ++i ) /*0x6723ed*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, (unsigned __int8 *)aAircrafttypes, i); /*0x672405*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->q000, (unsigned __int8 *)aAircrafttypes, i); /*0x672405*/
     if ( INIClass::GetString( /*0x672413*/
            v6,
            (unsigned __int8 *)aAircrafttypes,
@@ -1007,10 +1007,10 @@ int RulesClass::ReadSidesList(void * aSuperweapontyp)
   char Destination[32]; // [esp+Ch] [ebp-20h] BYREF
   INIClass *v6; // [esp+30h] [ebp+4h]
 
-  KeyCount = INIClass::GetKeyCount(v6->__pad_0, (unsigned __int8 *)aSuperweapontyp); /*0x672607*/
+  KeyCount = INIClass::GetKeyCount(v6->q000, (unsigned __int8 *)aSuperweapontyp); /*0x672607*/
   for ( i = 0; i < KeyCount; ++i ) /*0x67260d*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->__pad_0, (unsigned __int8 *)aSuperweapontyp, i); /*0x672625*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v6->q000, (unsigned __int8 *)aSuperweapontyp, i); /*0x672625*/
     if ( INIClass::GetString( /*0x672633*/
            v6,
            (unsigned __int8 *)aSuperweapontyp,

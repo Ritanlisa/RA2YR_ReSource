@@ -243,6 +243,6 @@ int Stream::GetChecked()
 {
   if ( !this->m_Stream ) /*0x45a053*/
     sub_7DC720(-2147467261); /*0x45a05d*/
-  return (int)this->m_Stream->__pad_0; /*0x45a064*/
+  return (int)this->m_Stream->q000; /*0x45a064*/
 }
 } // namespace gamemd

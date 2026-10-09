@@ -193,8 +193,8 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
   char *i; // eax
   int v7; // edi
   int v8; // eax
-  int InfantryTypeVector_field_0x14; // ecx
-  void *InfantryTypeVector_field_0x04; // eax
+  int q014; // ecx
+  void *u32_4; // eax
   bool v11; // zf
   int v13; // eax
   int v14; // eax
@@ -207,29 +207,29 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
          aP1,
          a3,
          &g_INI_DefaultBuffer,
-         (char *)&v17.InfantryTypeVector_field_0x1C,
+         (char *)&v17.q01C,
          128) )
   {
     InfantryTypeVector::Construct2(&v17, 0, 0); /*0x67bb51*/
-    v17.InfantryTypeVector_field_0x14 = 10; /*0x67bb5a*/
-    v17.InfantryTypeVector_field_0x10 = 0; /*0x67bb68*/
-    *(_DWORD *)v17.__pad_0 = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bb6c*/
-    for ( i = strtok((char *)&v17.InfantryTypeVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
+    v17.q014 = 10; /*0x67bb5a*/
+    v17.q010 = 0; /*0x67bb68*/
+    *(_DWORD *)v17.q000 = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bb6c*/
+    for ( i = strtok((char *)&v17.q01C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
       if ( !*i ) /*0x67bb80*/
         break; /*0x67bb82*/
       v7 = KeywordType::FindOrCreate2(i); /*0x67bb8b*/
       if ( v7 /*0x67bbbb*/
-        && (v17.InfantryTypeVector_field_0x10 < v17.InfantryTypeVector_field_0x08
-         || (IDA_BYTE1(v17.InfantryTypeVector_field_0x0C) || !v17.InfantryTypeVector_field_0x08)
-         && v17.InfantryTypeVector_field_0x14 > 0
-         && (*(unsigned __int8 (__thiscall **)(InfantryTypeVector *, int, _DWORD))(*(_DWORD *)v17.__pad_0 + 8))(
+        && (v17.q010 < v17.q008
+         || (IDA_BYTE1(v17.q00C) || !v17.q008)
+         && v17.q014 > 0
+         && (*(unsigned __int8 (__thiscall **)(InfantryTypeVector *, int, _DWORD))(*(_DWORD *)v17.q000 + 8))(
               &v17,
-              v17.InfantryTypeVector_field_0x14 + v17.InfantryTypeVector_field_0x08,
+              v17.q014 + v17.q008,
               0)) )
       {
-        v8 = v17.InfantryTypeVector_field_0x10++; /*0x67bbc6*/
-        *(_DWORD *)(v17.InfantryTypeVector_field_0x04 + 4 * v8) = v7; /*0x67bbd1*/
+        v8 = v17.q010++; /*0x67bbc6*/
+        *(_DWORD *)(v17.u32_4 + 4 * v8) = v7; /*0x67bbd1*/
       }
     }
     *(_DWORD *)(aP0 + 4) = 0; /*0x67bbed*/
@@ -239,15 +239,15 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     *(_DWORD *)aP0 = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bbfa*/
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
     *(_DWORD *)aP0 = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bc05*/
-    *(_DWORD *)v17.__pad_0 = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bc0b*/
-    InfantryTypeVector_field_0x14 = v17.InfantryTypeVector_field_0x14; /*0x67bc17*/
-    *(_DWORD *)(aP0 + 16) = v17.InfantryTypeVector_field_0x10; /*0x67bc1b*/
-    InfantryTypeVector_field_0x04 = (void *)v17.InfantryTypeVector_field_0x04; /*0x67bc1e*/
-    v11 = v17.InfantryTypeVector_field_0x04 == 0; /*0x67bc22*/
-    *(_DWORD *)(aP0 + 20) = InfantryTypeVector_field_0x14; /*0x67bc24*/
-    if ( !v11 && IDA_BYTE1(v17.InfantryTypeVector_field_0x0C) ) /*0x67bc31*/
+    *(_DWORD *)v17.q000 = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bc0b*/
+    q014 = v17.q014; /*0x67bc17*/
+    *(_DWORD *)(aP0 + 16) = v17.q010; /*0x67bc1b*/
+    u32_4 = (void *)v17.u32_4; /*0x67bc1e*/
+    v11 = v17.u32_4 == 0; /*0x67bc22*/
+    *(_DWORD *)(aP0 + 20) = q014; /*0x67bc24*/
+    if ( !v11 && IDA_BYTE1(v17.q00C) ) /*0x67bc31*/
     {
-      RA2_OPDEL(InfantryTypeVector_field_0x04); /*0x67bc38*/
+      RA2_OPDEL(u32_4); /*0x67bc38*/
       return aP0; /*0x67bc4b*/
     }
   }

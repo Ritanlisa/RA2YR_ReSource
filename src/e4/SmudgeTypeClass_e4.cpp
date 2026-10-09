@@ -149,20 +149,20 @@ int SmudgeTypeClass::GetSize(uint8_t *** aP1)
   INIClass::ResetSection((INIClass *)aP1); /*0x6b56e3*/
   if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x6b56eb*/
   {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->__pad_24, aCrater, this->Crater); /*0x6b570b*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aCrater, this->Crater); /*0x6b570b*/
     Burn = this->Burn; /*0x6b5710*/
     this->Crater = Bool_Overwrite; /*0x6b5716*/
-    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->__pad_24, aBurn, Burn); /*0x6b5725*/
+    v6 = INIClass::ReadBool_Overwrite((int *)aP1, (unsigned __int8 *)this->q024, aBurn, Burn); /*0x6b5725*/
     Width = this->Width; /*0x6b5732*/
     this->Burn = v6; /*0x6b5739*/
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                     (bool *)aP1,
-                    (unsigned __int8 *)this->__pad_24,
-                    (unsigned __int8 *)&stru_82BA00.__pad_14D[151],
+                    (unsigned __int8 *)this->q024,
+                    (unsigned __int8 *)&stru_82BA00.q14D[151],
                     Width);
     this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                      (bool *)aP1,
-                     (unsigned __int8 *)this->__pad_24,
+                     (unsigned __int8 *)this->q024,
                      (unsigned __int8 *)g_INI_Key_Height,
                      this->Height);
     if ( this->Theater ) /*0x6b5764*/

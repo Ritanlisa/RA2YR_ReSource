@@ -40,7 +40,7 @@ int BombClass::AbstractClass()
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
   AudioController::Init((AudioController *)&this->audioController[3]); /*0x438605*/
-  *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438615*/
+  *(_DWORD *)&this->q048[8] = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 524); /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
     && dword_89C67C > 0
@@ -66,9 +66,9 @@ void * BombClass::GetCurrentFrame()
     return (Iostream_init *)12; /*0x438a06*/
   v2 = 2 /*0x438a4c*/
      * ((*(_DWORD *)&stru_A8EB00.?[416] - this->audioController[1])
-      / (*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4048)
+      / (*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4048)
        / 6));
-  if ( *(_DWORD *)&stru_A8EB00.?[416] % (2 * *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4056)) >= *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4056) ) /*0x438a53*/
+  if ( *(_DWORD *)&stru_A8EB00.?[416] % (2 * *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4056)) >= *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 4056) ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
     return __0Iostream_init_QAE_XZ_1((Iostream_init *)v2); /*0x438a59*/
@@ -106,7 +106,7 @@ int BombClass::Stat(int * a2)
     v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(BombClass_field_28 + 4) + 16))(BombClass_field_28 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
-  v6 = *(_DWORD *)this->__pad_24; /*0x438ab7*/
+  v6 = *(_DWORD *)this->q024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
     v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
@@ -180,7 +180,7 @@ int BombClass::Write(int a2, int aP0, int aP1, int a1, int aP2)
     AudioController::Init((AudioController *)&this->audioController[3]); /*0x438b85*/
     this->BombClass_field_54 = 0; /*0x438b8d*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->BombClass_field_28); /*0x438b9a*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this->__pad_24); /*0x438ba8*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)this->q024); /*0x438ba8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &this->BombClass_field_2C); /*0x438bb6*/
   }
   return Prefix_0; /*0x438bbd*/

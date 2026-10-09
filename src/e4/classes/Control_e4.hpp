@@ -14,6 +14,7 @@ struct Control {
     int DispatchClick(int aP1);
     int RepositionControlsDialog();
     int RepositionControlsDialog(HWND hWnd);
+    unsigned int u32_28;  // 0x28 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -94,9 +94,9 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   DDraw::WaitForIdle(v18); /*0x560c5a*/
   if ( g_DDraw_Initialized == 1 ) /*0x560c66*/
   {
-    *(_DWORD *)&DSurface_ViewBounds.__pad_8[8] = 0; /*0x560c73*/
-    *(_DWORD *)&DSurface_ViewBounds.__pad_8[12] = 0; /*0x560c78*/
-    *(_QWORD *)&DSurface_ViewBounds.__pad_8[16] = v2; /*0x560c7e*/
+    *(_DWORD *)&DSurface_ViewBounds.q008[8] = 0; /*0x560c73*/
+    *(_DWORD *)&DSurface_ViewBounds.q008[12] = 0; /*0x560c78*/
+    *(_QWORD *)&DSurface_ViewBounds.q008[16] = v2; /*0x560c7e*/
     *(_QWORD *)&g_DisplayWidth = v2; /*0x560c8a*/
     Debug::Log(); /*0x560c96*/
   LABEL_19:
@@ -132,7 +132,7 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     {
       Debug::Log(); /*0x560eba*/
       if ( DSurface_Composite ) /*0x560eca*/
-        (**(void (__thiscall ***)(AudioStream *, int))DSurface_Composite->__pad_0)(DSurface_Composite, 1); /*0x560ed0*/
+        (**(void (__thiscall ***)(AudioStream *, int))DSurface_Composite->q000)(DSurface_Composite, 1); /*0x560ed0*/
       DSurface_Composite = 0; /*0x560ed2*/
     }
     if ( g_DDraw_Initialized ) /*0x560ee6*/
@@ -168,12 +168,12 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
     v12 = Viewport[3]; /*0x560fda*/
     v30[2] = v11; /*0x560fdd*/
     v31[3] = v12; /*0x560fe1*/
-    rc.bottom = *(_DWORD *)&DSurface_ViewBounds.__pad_8[20]; /*0x560feb*/
-    v29[3] = *(_DWORD *)&DSurface_ViewBounds.__pad_8[20]; /*0x560fef*/
-    v30[3] = *(_DWORD *)&DSurface_ViewBounds.__pad_8[20]; /*0x560ff3*/
+    rc.bottom = *(_DWORD *)&DSurface_ViewBounds.q008[20]; /*0x560feb*/
+    v29[3] = *(_DWORD *)&DSurface_ViewBounds.q008[20]; /*0x560fef*/
+    v30[3] = *(_DWORD *)&DSurface_ViewBounds.q008[20]; /*0x560ff3*/
     v30[0] = 0; /*0x561006*/
     v30[1] = 0; /*0x56100a*/
-    AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.__pad_8[8], (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
+    AllocateSurfaceScreenSurfaces((int)&DSurface_ViewBounds.q008[8], (int)v30, (int)v29, (int)&rc, 0); /*0x56100e*/
     g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x56101e*/
     Debug::Log(); /*0x561024*/
     sub_491100(BitShift_Red, BitShift_Green, 0, BitMask_Blue, BitMask_Green, BitMask_Red, BitShift_Blue); /*0x561046*/
@@ -235,9 +235,9 @@ char ChangeVideoMode(unsigned int xRight, unsigned int yBottom)
   if ( InitializeDDraw((int)g_hWnd, v2, IDA_HIDWORD(v2), 0x10u) ) /*0x560d07*/
   {
     Debug::Log(); /*0x560dd4*/
-    *(_DWORD *)&DSurface_ViewBounds.__pad_8[8] = 0; /*0x560de2*/
-    *(_DWORD *)&DSurface_ViewBounds.__pad_8[12] = 0; /*0x560de7*/
-    *(_QWORD *)&DSurface_ViewBounds.__pad_8[16] = v2; /*0x560ded*/
+    *(_DWORD *)&DSurface_ViewBounds.q008[8] = 0; /*0x560de2*/
+    *(_DWORD *)&DSurface_ViewBounds.q008[12] = 0; /*0x560de7*/
+    *(_QWORD *)&DSurface_ViewBounds.q008[16] = v2; /*0x560ded*/
     Debug::Log(); /*0x560df9*/
     goto LABEL_19; /*0x560df9*/
   }
@@ -546,7 +546,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
     --v12; /*0x56b0c6*/
   }
   while ( v12 ); /*0x56b0c7*/
-  (*(void (__thiscall **)(Pipe *))(*(_DWORD *)v17.__pad_0 + 4))(&v17); /*0x56b0d1*/
+  (*(void (__thiscall **)(Pipe *))(*(_DWORD *)v17.q000 + 4))(&v17); /*0x56b0d1*/
   LCWPipe::Dtor((LCWPipe *)&v17); /*0x56b0d8*/
   return v11; /*0x56b0df*/
 }
@@ -600,10 +600,10 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
               && (*(_DWORD *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
             {
               Src = v6; /*0x56b346*/
-              v8 = Compression::Read((int *)v17.__pad_0, (int)&Src, 4) + v3; /*0x56b356*/
-              v9 = Compression::Read((int *)v17.__pad_0, v5 + 56, 4) + v8; /*0x56b36a*/
-              v10 = Compression::Read((int *)v17.__pad_0, v5 + 282, 1) + v9; /*0x56b37e*/
-              v3 = Compression::Read((int *)v17.__pad_0, v5 + 283, 1) + v10; /*0x56b385*/
+              v8 = Compression::Read((int *)v17.q000, (int)&Src, 4) + v3; /*0x56b356*/
+              v9 = Compression::Read((int *)v17.q000, v5 + 56, 4) + v8; /*0x56b36a*/
+              v10 = Compression::Read((int *)v17.q000, v5 + 282, 1) + v9; /*0x56b37e*/
+              v3 = Compression::Read((int *)v17.q000, v5 + 283, 1) + v10; /*0x56b385*/
             }
           }
         }
@@ -614,8 +614,8 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
     while ( v4 < this->customSound_controller ); /*0x56b39c*/
   }
   v16 = *(_DWORD *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b3b5*/
-  v11 = Compression::Read((int *)v17.__pad_0, (int)&v16, 4) + v3; /*0x56b3c6*/
-  v12 = (*(int (__thiscall **)(Pipe *))(*(_DWORD *)v17.__pad_0 + 4))(&v17); /*0x56b3cf*/
+  v11 = Compression::Read((int *)v17.q000, (int)&v16, 4) + v3; /*0x56b3c6*/
+  v12 = (*(int (__thiscall **)(Pipe *))(*(_DWORD *)v17.q000 + 4))(&v17); /*0x56b3cf*/
   LZOPipe::Destructor((LZOPipe *)&v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
 }

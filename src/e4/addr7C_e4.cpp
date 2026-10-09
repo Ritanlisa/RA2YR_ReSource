@@ -148,9 +148,9 @@ extern void _CxxThrowException_8(void * aP0, struct _ThrowInfo * aP1);  // CRT t
 extern unsigned char _TI2_AVbad_typeid__[];  // .rdata ThrowInfo
 extern unsigned char _TI3_AV__non_rtti_object__[];  // .rdata ThrowInfo
 extern unsigned char _TI2_AVbad_cast__[];  // .rdata ThrowInfo
-extern unsigned int vt___non_rtti_object;  // vtable addr const
-extern unsigned int vt_bad_typeid;  // vtable addr const
-extern unsigned int vt_bad_cast;  // vtable addr const
+extern unsigned int vt___non_rtti_object;  // q000 addr const
+extern unsigned int vt_bad_typeid;  // q000 addr const
+extern unsigned int vt_bad_cast;  // q000 addr const
 extern int _fclose_lk(int aP0);  // def later in this TU (b24 truth int)
 extern int free(void * aP0);  // def later in this TU (b24 fwd for global op-delete)
 extern unsigned char * _mbsdec(const unsigned char * aP0, const unsigned char * aP1);  // CRT internal
@@ -13347,7 +13347,7 @@ int __RTtypeid(unsigned int * a1)
 
 // 0x7CAAE4
 namespace gamemd {
-unsigned char * __RTDynamicCast(void ** aP0, int arg4, struct TypeDescriptor * a2, struct TypeDescriptor * a3, int a5)  // G42.33 b24: aP0 void** (deref = vtable)
+unsigned char * __RTDynamicCast(void ** aP0, int arg4, struct TypeDescriptor * a2, struct TypeDescriptor * a3, int a5)  // G42.33 b24: aP0 void** (deref = q000)
 {
   _BYTE *result; // eax
   _BYTE *CompleteObject_YAPAXPAPAX_Z; // edi

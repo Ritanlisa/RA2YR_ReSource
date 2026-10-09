@@ -78,7 +78,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   unsigned __int8 v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
-  EventClass::Add(v5, (int)dword_A83D4C->Object_field_0x30, v8, *(_DWORD *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  EventClass::Add(v5, (int)dword_A83D4C->q030, v8, *(_DWORD *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
   if ( (_BYTE)result ) /*0x6ffe40*/
   {

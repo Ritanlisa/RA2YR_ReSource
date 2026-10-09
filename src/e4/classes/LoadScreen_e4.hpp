@@ -18,6 +18,7 @@ struct LoadScreen {
     void* Render_ph;  // 0x0 (no offset truth)  // w18j3: filler renamed (no offset truth; canon LoadScreen::Render is a method)
     static unsigned int Render(...);  // w18j3 C2597 static-call supply (w16g4 convention)
     int IsActive();
+    unsigned int u32_64;  // 0x64 (offset-truth supply)
 };
 
 } // namespace gamemd

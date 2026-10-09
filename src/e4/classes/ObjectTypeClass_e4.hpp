@@ -305,6 +305,17 @@ struct ObjectTypeClass {
     void UnloadPipsSHP();
     void* LoadFromINI(uint8_t ***aP1);
     ObjectTypeClass * Destru_vt08(void * Block, char a2);
+    int[20] VoxelCaches;  // 0x580 (ml)
+    unsigned int q0400;  // 0x400 (offset-truth supply)
+    unsigned char q0401;  // 0x401 (offset-truth supply)
+    unsigned char q0402;  // 0x402 (offset-truth supply)
+    unsigned int q0404;  // 0x404 (offset-truth supply)
+    unsigned int u32_384;  // 0x384 (offset-truth supply)
+    unsigned char u32_385;  // 0x385 (offset-truth supply)
+    unsigned char u32_386;  // 0x386 (offset-truth supply)
+    unsigned char u32_387;  // 0x387 (offset-truth supply)
+    unsigned char u32_389;  // 0x389 (offset-truth supply)
+    unsigned char u32_D41;  // 0xD41 (offset-truth supply)
 };
 
 } // namespace gamemd

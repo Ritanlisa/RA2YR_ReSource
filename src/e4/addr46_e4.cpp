@@ -139,7 +139,7 @@ char sub_46D8B0()
   v3 = (const wchar_t **)dword_A8DA90; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    v4 = CharToWideString(&stru_A8D600.__pad_34[8]); /*0x46d8c1*/
+    v4 = CharToWideString(&stru_A8D600.q034[8]); /*0x46d8c1*/
     if ( !wcscmp((const wchar_t *)v4, *v3) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
     ++v3; /*0x46d8d6*/
@@ -149,15 +149,15 @@ char sub_46D8B0()
   }
   if ( v2 == -1 ) /*0x46d8eb*/
     return 0; /*0x46d8f2*/
-  if ( SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
+  if ( SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.q064[7] ) /*0x46d907*/
     v1 = 1; /*0x46d909*/
   if ( dword_A8B23C ) /*0x46d913*/
   {
     if ( (*((unsigned __int8 (__thiscall **)(ObjectClass *, _DWORD))dword_A8B23C->vfptr + 7))( /*0x46d918*/
            dword_A8B23C,
-           *(_DWORD *)&stru_A8D600.__pad_64[7]) )
+           *(_DWORD *)&stru_A8D600.q064[7]) )
     {
-      SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.__pad_64[7]); /*0x46d926*/
+      SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.q064[7]); /*0x46d926*/
     }
     else if ( dword_A8B23C ) /*0x46d92f*/
     {
@@ -184,11 +184,11 @@ char sub_46D8B0()
   {
     SessionClass::SetPlayerColor((int *)dword_A8DA90[v2], *(int *)stru_A8D600.Network_field_0x6F); /*0x46d9b9*/
   }
-  if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.__pad_64[3] ) /*0x46d9d2*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.q064[3] ) /*0x46d9d2*/
     v1 = 1; /*0x46d9d4*/
-  if ( sub_4E50A0(*(int *)&stru_A8D600.__pad_64[3]) ) /*0x46d9d6*/
+  if ( sub_4E50A0(*(int *)&stru_A8D600.q064[3]) ) /*0x46d9d6*/
   {
-    if ( SessionClass::GetOption((int *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.__pad_64[3] ) /*0x46d9f1*/
+    if ( SessionClass::GetOption((int *)dword_A8DA90[v2]) != *(_DWORD *)&stru_A8D600.q064[3] ) /*0x46d9f1*/
     {
       SessionClass::SetOption((int *)dword_A8DA90[v2], -2); /*0x46d9fc*/
       return v1; /*0x46da06*/
@@ -196,7 +196,7 @@ char sub_46D8B0()
   }
   else
   {
-    SessionClass::SetOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.__pad_64[3]); /*0x46da15*/
+    SessionClass::SetOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.q064[3]); /*0x46da15*/
   }
   return v1; /*0x46d8e2*/
 }
@@ -1137,7 +1137,7 @@ int sub_46D810()
 // 0x541820
     return (int)(((Network *)(&unk_A8E9C0))->ReceiveLoop()); /*0x46d89f*/
     {
-      void *Network_field_0xC; // ebx
+      void *q00C; // ebx
       void *v3; // edx
       int v4; // ecx
       int v5; // edi
@@ -1184,38 +1184,38 @@ int sub_46D810()
       __int16 v46[2]; // [esp+34h] [ebp-4B8h] BYREF
       Network v47[2]; // [esp+38h] [ebp-4B4h] BYREF
 
-      v47[0].Network_field_0x10 = (void *)1; /*0x541830*/
+      v47[0].q010 = (void *)1; /*0x541830*/
       Waypoint::InitInvalid((Waypoint *)v47); /*0x541838*/
       if ( *(_DWORD *)&stru_887598.isAliveFlag ) /*0x541844*/
       {
         while ( 1 ) /*0x541864*/
         {
-          *(_DWORD *)v47[0].__pad_14 = 1024; /*0x541864*/
-          *(_DWORD *)&v47[0].__pad_14[4] = 128; /*0x54186c*/
+          *(_DWORD *)v47[0].q014 = 1024; /*0x541864*/
+          *(_DWORD *)&v47[0].q014[4] = 128; /*0x54186c*/
           *(_DWORD *)v46 = 0; /*0x541874*/
-          Network_field_0xC = (void *)(*(int (__thiscall **)(_DWORD, char *, char *, char *, char *, __int16 *))(**(_DWORD **)&stru_887598.isAliveFlag + 8))( /*0x541889*/
+          q00C = (void *)(*(int (__thiscall **)(_DWORD, char *, char *, char *, char *, __int16 *))(**(_DWORD **)&stru_887598.isAliveFlag + 8))( /*0x541889*/
                                         *(_DWORD *)&stru_887598.isAliveFlag,
                                         &v47[0].__pad_87[45],
-                                        v47[0].__pad_14,
-                                        v47[0].__pad_34,
-                                        &v47[0].__pad_14[4],
+                                        v47[0].q014,
+                                        v47[0].q034,
+                                        &v47[0].q014[4],
                                         v46);
-          v47[0].Network_field_0xC = Network_field_0xC; /*0x54188d*/
-          if ( !Network_field_0xC ) /*0x541891*/
+          v47[0].q00C = q00C; /*0x54188d*/
+          if ( !q00C ) /*0x541891*/
             goto LABEL_92; /*0x541891*/
-          v3 = *(void **)&v47[0].__pad_34[4]; /*0x54189b*/
-          v47[0].Network_field_0x0 = *(_DWORD *)v47[0].__pad_34; /*0x5418a6*/
+          v3 = *(void **)&v47[0].q034[4]; /*0x54189b*/
+          v47[0].q000 = *(_DWORD *)v47[0].q034; /*0x5418a6*/
           v4 = *((_DWORD *)int + 18); /*0x5418aa*/
           *((_DWORD *)int + 35) = &v47[0].__pad_87[45]; /*0x5418ad*/
-          v47[0].Network_field_0x4 = v3; /*0x5418b7*/
-          v47[0].Network_field_0x8 = *(void **)&v47[0].__pad_34[8]; /*0x5418bb*/
+          v47[0].q004 = v3; /*0x5418b7*/
+          v47[0].q008 = *(void **)&v47[0].q034[8]; /*0x5418bb*/
           if ( *(_WORD *)&v47[0].__pad_87[45] == *(_WORD *)(v4 + 36) ) /*0x5418cb*/
           {
             if ( Network_Recv( /*0x5418ee*/
                    (int)&v47[0].__pad_87[45],
                    (int)&v47[0].__pad_87[45],
-                   (int)Network_field_0xC,
-                   (int)v47[0].__pad_34,
+                   (int)q00C,
+                   (int)v47[0].q034,
                    v46[0]) )
             {
               goto LABEL_87; /*0x5418f5*/
@@ -1223,7 +1223,7 @@ int sub_46D810()
             if ( (*(int (__thiscall **)(_DWORD, char *, void *, Network *, _DWORD))(**((_DWORD **)int + 18) + 48))( /*0x541913*/
                    *((_DWORD *)int + 18),
                    &v47[0].__pad_87[45],
-                   Network_field_0xC,
+                   q00C,
                    v47,
                    *(_DWORD *)v46) )
             {
@@ -1237,28 +1237,28 @@ int sub_46D810()
                   if ( !v6 ) /*0x541980*/
                   {
                     Debug::Log(); /*0x54198b*/
-                    if ( (unsigned int)Network_field_0xC >= 0x10 /*0x5419ad*/
+                    if ( (unsigned int)q00C >= 0x10 /*0x5419ad*/
                       && v47[0].__pad_87[47] != 2
-                      && (unsigned int)Network_field_0xC >= 0x3F )
+                      && (unsigned int)q00C >= 0x3F )
                     {
                       v8 = *(_DWORD *)(*((_DWORD *)int + 35) + 16); /*0x5419bc*/
                       if ( v8 == 39 || v8 == 41 || v8 == 13 ) /*0x5419cb*/
                       {
                         v9 = (const char *)(*((_DWORD *)int + 35) + 20); /*0x5419d3*/
-                        *(_DWORD *)&v47[0].__pad_14[8] = 0; /*0x5419d6*/
-                        *(_DWORD *)&v47[0].__pad_14[12] = 0; /*0x5419dc*/
+                        *(_DWORD *)&v47[0].q014[8] = 0; /*0x5419d6*/
+                        *(_DWORD *)&v47[0].q014[12] = 0; /*0x5419dc*/
                         *(_DWORD *)&v47[0].Network_field_0x22[2] = 0; /*0x5419e4*/
-                        v47[0].Network_field_0x28[0] = 0; /*0x5419e9*/
+                        v47[0].u32_28[0] = 0; /*0x5419e9*/
                         *(_DWORD *)v47[0].__pad_2C = 0; /*0x5419ee*/
-                        IDA_LOWORD(v47[0].Network_field_0x30[0]) = 0; /*0x5419f2*/
-                        strncpy(&v47[0].__pad_14[8], v9, 0x14u); /*0x5419f7*/
+                        IDA_LOWORD(v47[0].u32_30[0]) = 0; /*0x5419f2*/
+                        strncpy(&v47[0].q014[8], v9, 0x14u); /*0x5419f7*/
                         v10 = 0; /*0x541a04*/
                         if ( dword_A8DA84 > 0 ) /*0x541a08*/
                         {
                           while ( 1 ) /*0x541a1b*/
                           {
                             v11 = ToWideStringChar((char *)dword_A8DA78[v10]); /*0x541a1b*/
-                            if ( !_strcmpi(v11, &v47[0].__pad_14[8]) ) /*0x541a21*/
+                            if ( !_strcmpi(v11, &v47[0].q014[8]) ) /*0x541a21*/
                               break; /*0x541a21*/
                             if ( ++v10 >= dword_A8DA84 ) /*0x541a35*/
                               goto LABEL_87; /*0x541a35*/
@@ -1271,7 +1271,7 @@ int sub_46D810()
                             v13 = *(&dword_A8E2B2 + v10); /*0x541a86*/
                             *(&dword_A8E2B2 + v10) = v46[0]; /*0x541a91*/
                             Network::reconnect( /*0x541aab*/
-                              (Network *)&stru_B052C0.__pad_0[16],
+                              (Network *)&stru_B052C0.q000[16],
                               *(_DWORD *)(dword_A8DA78[v10] + 111),
                               v12);
                             (*(void (__thiscall **)(_DWORD, Network *, __int16))(**((_DWORD **)int + 18) + 64))( /*0x541abb*/
@@ -1285,18 +1285,18 @@ int sub_46D810()
                               v47,
                               v14);
                             v15 = (int *)(dword_A8DA78[v10] + 40); /*0x541ae5*/
-                            *v15 = v47[0].Network_field_0x0; /*0x541ae8*/
-                            v15[1] = (int)v47[0].Network_field_0x4; /*0x541aee*/
-                            v15[2] = (int)v47[0].Network_field_0x8; /*0x541af5*/
+                            *v15 = v47[0].q000; /*0x541ae8*/
+                            v15[1] = (int)v47[0].q004; /*0x541aee*/
+                            v15[2] = (int)v47[0].q008; /*0x541af5*/
                             Network::SetPort((Network *)(dword_A8DA78[v10] + 40), v46[0]); /*0x541b09*/
                             NetworkManager::SetPlayerAddress( /*0x541b24*/
-                              (NetworkManager *)&stru_B052C0.__pad_0[16],
+                              (NetworkManager *)&stru_B052C0.q000[16],
                               *(_DWORD *)(dword_A8DA78[v10] + 111),
                               (_DWORD *)(dword_A8DA78[v10] + 40));
                             v16 = (int *)(dword_A8DA90[GameClass::FindPlayerName(v10)] + 40); /*0x541b3f*/
-                            *v16 = v47[0].Network_field_0x0; /*0x541b42*/
-                            v16[1] = (int)v47[0].Network_field_0x4; /*0x541b48*/
-                            v16[2] = (int)v47[0].Network_field_0x8; /*0x541b4f*/
+                            *v16 = v47[0].q000; /*0x541b42*/
+                            v16[1] = (int)v47[0].q004; /*0x541b48*/
+                            v16[2] = (int)v47[0].q008; /*0x541b4f*/
                             v43 = v46[0]; /*0x541b56*/
                             PlayerName = GameClass::FindPlayerName(v10); /*0x541b5d*/
                             Network::SetPort((Network *)(dword_A8DA90[PlayerName] + 40), v43); /*0x541b6c*/
@@ -1307,7 +1307,7 @@ int sub_46D810()
                               while ( 1 ) /*0x541b87*/
                               {
                                 v20 = ToWideStringChar((char *)(v19->Socket + 104)); /*0x541b87*/
-                                if ( !_strcmpi(v20, &v47[0].__pad_14[8]) ) /*0x541b8d*/
+                                if ( !_strcmpi(v20, &v47[0].q014[8]) ) /*0x541b8d*/
                                   break; /*0x541b8d*/
                                 ++v18; /*0x541b9c*/
                                 v19 = (IPXManagerClass *)((char *)v19 + 4); /*0x541b9d*/
@@ -1315,16 +1315,16 @@ int sub_46D810()
                                   goto LABEL_33; /*0x541ba2*/
                               }
                               v21 = (int *)(*((_DWORD *)int + v18 + 10) + 76); /*0x541bae*/
-                              *v21 = v47[0].Network_field_0x0; /*0x541bb1*/
-                              v21[1] = (int)v47[0].Network_field_0x4; /*0x541bb7*/
-                              v21[2] = (int)v47[0].Network_field_0x8; /*0x541bbe*/
+                              *v21 = v47[0].q000; /*0x541bb1*/
+                              v21[1] = (int)v47[0].q004; /*0x541bb7*/
+                              v21[2] = (int)v47[0].q008; /*0x541bbe*/
                               Network::SetPort((Network *)(*((_DWORD *)int + v18 + 10) + 76), v46[0]); /*0x541bcd*/
                               Network::FormatAddress((Network *)(*((_DWORD *)int + v18 + 10) + 76), 0); /*0x541bdb*/
                               Debug::Log(); /*0x541be7*/
       LABEL_33:
-                              Network_field_0xC = v47[0].Network_field_0xC; /*0x541bef*/
+                              q00C = v47[0].q00C; /*0x541bef*/
                             }
-                            if ( !IDA_BYTE2(stru_A8D600.Network_field_0xC) ) /*0x541bfa*/
+                            if ( !IDA_BYTE2(stru_A8D600.q00C) ) /*0x541bfa*/
                             {
                               if ( *((_DWORD *)int + 17) ) /*0x541c00*/
                               {
@@ -1339,16 +1339,16 @@ int sub_46D810()
                                     Network::FormatAddress((Network *)(*((_DWORD *)int + 20) + 76), 0); /*0x541c57*/
                                     Debug::Log(); /*0x541c69*/
                                     v23 = (int *)(*((_DWORD *)int + 20) + 76); /*0x541c75*/
-                                    *v23 = v47[0].Network_field_0x0; /*0x541c7b*/
-                                    v23[1] = (int)v47[0].Network_field_0x4; /*0x541c81*/
-                                    v23[2] = (int)v47[0].Network_field_0x8; /*0x541c88*/
+                                    *v23 = v47[0].q000; /*0x541c7b*/
+                                    v23[1] = (int)v47[0].q004; /*0x541c81*/
+                                    v23[2] = (int)v47[0].q008; /*0x541c88*/
                                     Network::SetPort((Network *)(*((_DWORD *)int + 20) + 76), v46[0]); /*0x541c96*/
-                                    stru_A8BB1C.Network_field_0x0 = v47[0].Network_field_0x0; /*0x541ca7*/
-                                    stru_A8BB1C.Network_field_0x8 = v47[0].Network_field_0x8; /*0x541cb1*/
-                                    stru_A8BB1C.Network_field_0x4 = v47[0].Network_field_0x4; /*0x541cbd*/
+                                    stru_A8BB1C.q000 = v47[0].q000; /*0x541ca7*/
+                                    stru_A8BB1C.q008 = v47[0].q008; /*0x541cb1*/
+                                    stru_A8BB1C.q004 = v47[0].q004; /*0x541cbd*/
                                     Network::SetPort(&stru_A8BB1C, v46[0]); /*0x541cc2*/
-                                    qword_A8DBA4 = *(NetworkID *)&v47[0].Network_field_0x0; /*0x541cd3*/
-                                    dword_A8DBAC = v47[0].Network_field_0x8; /*0x541ce8*/
+                                    qword_A8DBA4 = *(NetworkID *)&v47[0].q000; /*0x541cd3*/
+                                    dword_A8DBAC = v47[0].q008; /*0x541ce8*/
                                     Network::SetPort((Network *)&qword_A8DBA4, v46[0]); /*0x541cee*/
                                     dword_A8DBBC = v46[0]; /*0x541cf8*/
                                   }
@@ -1388,7 +1388,7 @@ int sub_46D810()
               || (*(int (__thiscall **)(_WORD *, char *, void *, Network *, _DWORD))(*(_DWORD *)v24 + 48))(
                    v24,
                    &v47[0].__pad_87[45],
-                   Network_field_0xC,
+                   q00C,
                    v47,
                    0) )
             {
@@ -1403,8 +1403,8 @@ int sub_46D810()
             || Network_Recv(
                  (int)&v47[0].__pad_87[45],
                  (int)&v47[0].__pad_87[45],
-                 (int)Network_field_0xC,
-                 (int)v47[0].__pad_34,
+                 (int)q00C,
+                 (int)v47[0].q034,
                  v46[0]) )
           {
             goto LABEL_87; /*0x541d6a*/
@@ -1417,7 +1417,7 @@ int sub_46D810()
               (*(void (__thiscall **)(_DWORD, char *, void *))(**((_DWORD **)int + 20) + 12))( /*0x541da0*/
                 *((_DWORD *)int + 20),
                 &v47[0].__pad_87[45],
-                Network_field_0xC);
+                q00C);
             }
             else if ( *((int *)int + 17) > 0 ) /*0x541dad*/
             {
@@ -1426,9 +1426,9 @@ int sub_46D810()
               if ( !(*(int (__thiscall **)(_DWORD, char *, void *))(**((_DWORD **)int + 10) + 12))( /*0x541e6f*/
                       *((_DWORD *)int + 10),
                       &v47[0].__pad_87[45],
-                      Network_field_0xC) )
+                      q00C) )
               {
-                Network_field_0xC = 0; /*0x541e80*/
+                q00C = 0; /*0x541e80*/
                 ++*((_DWORD *)int + 41); /*0x541e85*/
                 goto LABEL_74; /*0x541e91*/
               }
@@ -1443,7 +1443,7 @@ int sub_46D810()
               && !dword_A8E7AC
               && *(int *)&stru_A8EB00.?[416] > 8
               && !byte_A8DBA0
-              && (unsigned int)Network_field_0xC > 0xF
+              && (unsigned int)q00C > 0xF
               && v25 == 1
               && v47[0].__pad_87[59] == 25 )
             {
@@ -1461,21 +1461,21 @@ int sub_46D810()
                 }
                 v35 = (int *)(dword_A8DA78[v29] + 40); /*0x542113*/
                 v44 = v47[0].__pad_87[61]; /*0x542116*/
-                *v35 = v47[0].Network_field_0x0; /*0x542117*/
-                v35[1] = (int)v47[0].Network_field_0x4; /*0x54211d*/
-                v35[2] = (int)v47[0].Network_field_0x8; /*0x542124*/
+                *v35 = v47[0].q000; /*0x542117*/
+                v35[1] = (int)v47[0].q004; /*0x54211d*/
+                v35[2] = (int)v47[0].q008; /*0x542124*/
                 if ( (*(int (__thiscall **)(IPXManagerClass *, int))(int->Socket + 24))(int, v44) != -1 ) /*0x542131*/
                 {
                   v36 = (int *)(*((_DWORD *)int /*0x542143*/
                                 + (*(int (__thiscall **)(IPXManagerClass *, int))(int->Socket + 24))(int, v30)
                                 + 10)
                               + 76);
-                  *v36 = v47[0].Network_field_0x0; /*0x542146*/
-                  v36[1] = (int)v47[0].Network_field_0x4; /*0x54214c*/
-                  v36[2] = (int)v47[0].Network_field_0x8; /*0x542153*/
+                  *v36 = v47[0].q000; /*0x542146*/
+                  v36[1] = (int)v47[0].q004; /*0x54214c*/
+                  v36[2] = (int)v47[0].q008; /*0x542153*/
                 }
       LABEL_86:
-                Network_field_0xC = v47[0].Network_field_0xC; /*0x542156*/
+                q00C = v47[0].q00C; /*0x542156*/
               }
             }
             goto LABEL_87; /*0x542156*/
@@ -1483,7 +1483,7 @@ int sub_46D810()
           v27 = int + 5; /*0x541e9f*/
           while ( byte_A8DBA0 ) /*0x541ea9*/
           {
-            LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.__pad_0[16], *(_DWORD *)(v27->Socket + 100)); /*0x541eb6*/
+            LinkedIndex = Factory::GetLinkedIndex((Factory *)&stru_B052C0.q000[16], *(_DWORD *)(v27->Socket + 100)); /*0x541eb6*/
             v25 = v47[0].__pad_87[47]; /*0x541ebb*/
             if ( LinkedIndex == v47[0].__pad_87[48] ) /*0x541ec4*/
               goto LABEL_72; /*0x541ec4*/
@@ -1501,9 +1501,9 @@ int sub_46D810()
           if ( !(*(int (__thiscall **)(_DWORD, char *, void *))(**((_DWORD **)int + v26 + 10) + 12))( /*0x541f9b*/
                   *((_DWORD *)int + v26 + 10),
                   &v47[0].__pad_87[45],
-                  Network_field_0xC) )
+                  q00C) )
           {
-            Network_field_0xC = 0; /*0x541fa8*/
+            q00C = 0; /*0x541fa8*/
             ++*((_DWORD *)int + 41); /*0x541fad*/
       LABEL_74:
             Debug::Log(); /*0x541fb9*/
@@ -1526,20 +1526,20 @@ int sub_46D810()
                     Network::FormatAddress((Network *)(*((_DWORD *)int + 20) + 76), 0); /*0x54205f*/
                     Debug::Log(); /*0x542071*/
                     v33 = (int *)(dword_A8DA78[i] + 40); /*0x542085*/
-                    *v33 = v47[0].Network_field_0x0; /*0x542088*/
-                    v33[1] = (int)v47[0].Network_field_0x4; /*0x54208e*/
-                    v33[2] = (int)v47[0].Network_field_0x8; /*0x542095*/
+                    *v33 = v47[0].q000; /*0x542088*/
+                    v33[1] = (int)v47[0].q004; /*0x54208e*/
+                    v33[2] = (int)v47[0].q008; /*0x542095*/
                     v34 = (int *)(*((_DWORD *)int + 20) + 76); /*0x54209f*/
-                    *v34 = v47[0].Network_field_0x0; /*0x5420a2*/
-                    v34[1] = (int)v47[0].Network_field_0x4; /*0x5420a8*/
-                    v34[2] = (int)v47[0].Network_field_0x8; /*0x5420af*/
-                    stru_A8BB1C.Network_field_0x0 = v47[0].Network_field_0x0; /*0x5420be*/
-                    qword_A8DBA4 = *(NetworkID *)&v47[0].Network_field_0x0; /*0x5420c3*/
-                    stru_A8BB1C.Network_field_0x4 = v47[0].Network_field_0x4; /*0x5420cd*/
-                    stru_A8BB1C.Network_field_0x8 = v47[0].Network_field_0x8; /*0x5420d3*/
-                    dword_A8DBAC = v47[0].Network_field_0x8; /*0x5420df*/
+                    *v34 = v47[0].q000; /*0x5420a2*/
+                    v34[1] = (int)v47[0].q004; /*0x5420a8*/
+                    v34[2] = (int)v47[0].q008; /*0x5420af*/
+                    stru_A8BB1C.q000 = v47[0].q000; /*0x5420be*/
+                    qword_A8DBA4 = *(NetworkID *)&v47[0].q000; /*0x5420c3*/
+                    stru_A8BB1C.q004 = v47[0].q004; /*0x5420cd*/
+                    stru_A8BB1C.q008 = v47[0].q008; /*0x5420d3*/
+                    dword_A8DBAC = v47[0].q008; /*0x5420df*/
                     NetworkManager::SetPlayerAddress( /*0x5420f6*/
-                      (NetworkManager *)&stru_B052C0.__pad_0[16],
+                      (NetworkManager *)&stru_B052C0.q000[16],
                       *(_DWORD *)(dword_A8DA78[i] + 111),
                       v47);
                   }
@@ -1548,7 +1548,7 @@ int sub_46D810()
             }
           }
       LABEL_87:
-          if ( !Network_field_0xC ) /*0x54215c*/
+          if ( !q00C ) /*0x54215c*/
             goto LABEL_92; /*0x54215c*/
         }
         v25 = v47[0].__pad_87[47]; /*0x541eea*/
@@ -1560,7 +1560,7 @@ int sub_46D810()
       if ( v37 && *(_DWORD *)&stru_887598.isAliveFlag && !(*(int (__thiscall **)(int))(*(_DWORD *)v37 + 20))(v37) ) /*0x5421aa*/
       {
         (*(void (__thiscall **)(_DWORD))(**((_DWORD **)int + 18) + 24))(*((_DWORD *)int + 18)); /*0x5421b6*/
-        v47[0].Network_field_0x10 = 0; /*0x5421b9*/
+        v47[0].q010 = 0; /*0x5421b9*/
       }
       if ( byte_A8DBA0 ) /*0x5421c4*/
       {
@@ -1570,7 +1570,7 @@ int sub_46D810()
           if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v39 + 20))(v39) ) /*0x5421cf*/
           {
             (*(void (__thiscall **)(_DWORD))(**((_DWORD **)int + 19) + 24))(*((_DWORD *)int + 19)); /*0x5421db*/
-            v47[0].Network_field_0x10 = 0; /*0x5421de*/
+            v47[0].q010 = 0; /*0x5421de*/
           }
           if ( !byte_A8E2D0 ) /*0x5421e9*/
             Network::ProcessAddressChange(v45); /*0x5421f0*/
@@ -1583,7 +1583,7 @@ int sub_46D810()
             if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v40 + 20))(v40) ) /*0x542207*/
             {
               Debug::Log(); /*0x542213*/
-              v47[0].Network_field_0x10 = 0; /*0x54221b*/
+              v47[0].q010 = 0; /*0x54221b*/
             }
           }
         }
@@ -1595,7 +1595,7 @@ int sub_46D810()
         {
           if ( !(*(int (__thiscall **)(int))(*(_DWORD *)v41->Socket + 20))(v41->Socket) ) /*0x542233*/
           {
-            v47[0].Network_field_0x10 = 0; /*0x54223a*/
+            v47[0].q010 = 0; /*0x54223a*/
             *((_DWORD *)int + 42) = *(_DWORD *)(v41->Socket + 100); /*0x542249*/
             Debug::Log(); /*0x54224f*/
           }
@@ -1604,8 +1604,8 @@ int sub_46D810()
         }
         while ( v38 < *((_DWORD *)int + 17) ); /*0x542260*/
       }
-      result = (int)v47[0].Network_field_0x10; /*0x542262*/
-      if ( v47[0].Network_field_0x10 ) /*0x542268*/
+      result = (int)v47[0].q010; /*0x542262*/
+      if ( v47[0].q010 ) /*0x542268*/
         *((_DWORD *)int + 42) = -1; /*0x54226a*/
       return result; /*0x542274*/
     }

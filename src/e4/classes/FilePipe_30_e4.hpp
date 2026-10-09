@@ -33,5 +33,9 @@ struct FilePipe_30 {
     unsigned int Write(int a2);  // 0x4778D0
     unsigned int GetCount(int a2);  // 0x4B9C10
     unsigned int GetCount_0(int a2);  // 0x4B9C70
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 } // namespace gamemd

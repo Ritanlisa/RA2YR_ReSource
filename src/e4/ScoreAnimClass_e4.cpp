@@ -14,10 +14,10 @@
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&ScoreAnimClass_vftable; /*0x691009*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&ScoreAnimClass_vftable; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     RA2_OPDEL(); /*0x691012*/
-  return this->__pad_0; /*0x69101c*/
+  return this->q000; /*0x69101c*/
 }
 } // namespace gamemd
 // 0x691020
@@ -37,12 +37,12 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   void *v3; // eax
   char *v4; // eax
 
-  v3 = (void *)this->field_C; /*0x6910a6*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&ScoreFontClass_vftable; /*0x6910a9*/
+  v3 = (void *)this->q00C; /*0x6910a6*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&ScoreFontClass_vftable; /*0x6910a9*/
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
     RA2_OPDEL(v3); /*0x6910ba*/
-    this->field_C = 0; /*0x6910c2*/
+    this->q00C = 0; /*0x6910c2*/
     this->q010 = 0; /*0x6910c5*/
   }
   if ( !--dword_B0558C ) /*0x6910d3*/
@@ -58,6 +58,6 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x6910ee*/
     RA2_OPDEL(); /*0x6910f1*/
-  return this->__pad_0; /*0x6910fb*/
+  return this->q000; /*0x6910fb*/
 }
 } // namespace gamemd

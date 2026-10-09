@@ -145,10 +145,10 @@ int WinModemClass::ReadBytes(unsigned char * a2, int a3)
     v8 = (void (*)(void))this->u32_64; /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *(_BYTE *)(this->q015 + this->WinModemClass_field_0x24) != 13 ) /*0x774b78*/
+      if ( *(_BYTE *)(this->q015 + this->q024) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
-    *a2++ = *(_BYTE *)(this->q015 + this->WinModemClass_field_0x24); /*0x774b86*/
+    *a2++ = *(_BYTE *)(this->q015 + this->q024); /*0x774b86*/
     --v5; /*0x774b92*/
     this->q015 = ((unsigned __int16)this->q015 + 1) & 0x1FFF; /*0x774b93*/
   }
@@ -188,7 +188,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   WinModemClass *v5; // esi
   int v6; // ebx
   int v7; // edi
-  int (*WinModemClass_field_0x2C)(void); // eax
+  int (*q02C)(void); // eax
   int result; // eax
   int Bytes; // eax
   int v11; // esi
@@ -214,10 +214,10 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   v19 = Timer::GetTicks(); /*0x774d38*/
   while ( 1 )
   {
-    WinModemClass_field_0x2C = (int (*)(void))v5[1].WinModemClass_field_0x2C; /*0x774d63*/
-    if ( WinModemClass_field_0x2C ) /*0x774d68*/
+    q02C = (int (*)(void))v5[1].q02C; /*0x774d63*/
+    if ( q02C ) /*0x774d68*/
     {
-      result = WinModemClass_field_0x2C(); /*0x774d6a*/
+      result = q02C(); /*0x774d6a*/
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
@@ -439,7 +439,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     }
   LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (__thiscall **)(WinModemClass *, int, char *, int, int))(*(_DWORD *)this->__pad_0 + 20))( /*0x7752e6*/
+    (*(void (__thiscall **)(WinModemClass *, int, char *, int, int))(*(_DWORD *)this->q000 + 20))( /*0x7752e6*/
       this,
       v11,
       Str,
@@ -511,40 +511,40 @@ int WinModemClass::LogCommErrors(int aP1, char a3, int a4, int a5)
     if ( (aP1 & 8) != 0 ) /*0x7754e3*/
     {
       Debug::Log(); /*0x7754ea*/
-      result = this->WinModemClass_field_0x04 + 1; /*0x7754f5*/
-      this->WinModemClass_field_0x04 = result; /*0x7754f6*/
+      result = this->q004 + 1; /*0x7754f5*/
+      this->q004 = result; /*0x7754f6*/
     }
     if ( (aP1 & 0x10) != 0 ) /*0x7754fc*/
       result = Debug::Log(); /*0x775503*/
     if ( (aP1 & 0x400) != 0 ) /*0x77550e*/
     {
       Debug::Log(); /*0x775515*/
-      result = this->WinModemClass_field_0x08 + 1; /*0x775520*/
-      this->WinModemClass_field_0x08 = result; /*0x775521*/
+      result = this->q008 + 1; /*0x775520*/
+      this->q008 = result; /*0x775521*/
     }
     if ( (aP1 & 2) != 0 ) /*0x775527*/
     {
       Debug::Log(); /*0x77552e*/
-      result = this->WinModemClass_field_0x0C + 1; /*0x775539*/
-      this->WinModemClass_field_0x0C = result; /*0x77553a*/
+      result = this->q00C + 1; /*0x775539*/
+      this->q00C = result; /*0x77553a*/
     }
     if ( (aP1 & 1) != 0 ) /*0x775540*/
     {
       Debug::Log(); /*0x775547*/
-      result = this->WinModemClass_field_0x10 + 1; /*0x775552*/
-      this->WinModemClass_field_0x10 = result; /*0x775553*/
+      result = this->u32_10 + 1; /*0x775552*/
+      this->u32_10 = result; /*0x775553*/
     }
     if ( (aP1 & 4) != 0 ) /*0x775559*/
     {
       Debug::Log(); /*0x775560*/
-      result = this->WinModemClass_field_0x14 + 1; /*0x77556b*/
-      this->WinModemClass_field_0x14 = result; /*0x77556c*/
+      result = this->q014 + 1; /*0x77556b*/
+      this->q014 = result; /*0x77556c*/
     }
     if ( (aP1 & 0x100) != 0 ) /*0x775572*/
     {
       Debug::Log(); /*0x775579*/
-      result = this->WinModemClass_field_0x18 + 1; /*0x775584*/
-      this->WinModemClass_field_0x18 = result; /*0x775585*/
+      result = this->u32_18 + 1; /*0x775584*/
+      this->u32_18 = result; /*0x775585*/
     }
   }
   if ( (a3 & 1) != 0 ) /*0x77558f*/
@@ -571,15 +571,15 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
   int v3; // eax
 
   v3 = this->u32_17; /*0x775613*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&WinModemClass_vftable; /*0x775616*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&WinModemClass_vftable; /*0x775616*/
   if ( v3 != -1 ) /*0x77561f*/
   {
     Debug::Log(); /*0x775626*/
     CloseHandle(*((HANDLE *)&this->q0083)); /*0x775632*/
     this->u32_17 = -1; /*0x775638*/
   }
-  if ( this->WinModemClass_field_0x24 ) /*0x77563f*/
-    RA2_OPDEL((void *)this->WinModemClass_field_0x24); /*0x775647*/
+  if ( this->q024 ) /*0x77563f*/
+    RA2_OPDEL((void *)this->q024); /*0x775647*/
   if ( (a2 & 1) != 0 ) /*0x775654*/
     RA2_OPDEL(); /*0x775657*/
   return this; /*0x775661*/

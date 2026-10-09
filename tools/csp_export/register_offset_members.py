@@ -212,6 +212,14 @@ def upgrade(cls, off, fn):
 
 
 def reg(cls, off, ctype):
+    # G42.57ax guard: a class key equal to a namespace name name-hides the
+    # namespace itself once rendered into classes.hpp (`class gamemd;`
+    # inside `namespace gamemd` breaks every `gamemd::X` qualified
+    # reference corpus-wide -> ~588 TU C2027/C2327 cascades). Such a key is
+    # always a DEF_Q misparse (e.g. namespace-qualified def lines), never a
+    # real class -- refuse it at the single registration entry point.
+    if cls in ('gamemd', 'ra2', 'std'):
+        return
     # registration bound: an offset at/beyond the class layout size cannot
     # be a member of it (unbounded registration once bloated member_types
     # into a 2M-line classes.hpp). Classes without layout data get a hard

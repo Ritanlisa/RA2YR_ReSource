@@ -614,7 +614,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   {
     v23 = a1->field_0 + v58; /*0x437b5c*/
     Stream_field_04 = g_ZBufferDescriptor->Stream_field_04; /*0x437b5e*/
-    v56 = (char *)a1->field_4 + v59; /*0x437b61*/
+    v56 = (char *)a1->q004 + v59; /*0x437b61*/
     v25 = (int)&v56[-Stream_field_04]; /*0x437b67*/
     SamplePosition = Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v23, v25); /*0x437b73*/
     v46 = *(_DWORD *)(v18 + 8); /*0x437b7c*/
@@ -645,7 +645,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
       v17 = a8 /*0x437c67*/
           + (unsigned __int16)(IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04)
                              + IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
-                             - IDA_LOWORD(a1->field_4)
+                             - IDA_LOWORD(a1->q004)
                              - *((_WORD *)aP2 + 6)
                              - *((_WORD *)aP2 + 2)
                              + 1);
@@ -664,12 +664,12 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     v42 = (char *)&unk_89C568; /*0x437ccc*/
   }
   LABEL_12:
-  if ( *(_DWORD *)&stru_87E790.__pad_D8[60] ) /*0x437cdc*/
+  if ( *(_DWORD *)&stru_87E790.q0D8[60] ) /*0x437cdc*/
   {
     v31 = a1->field_0 + v58; /*0x437ce7*/
-    v32 = (int)a1->field_4 + v59 - *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 4); /*0x437cfa*/
-    v44 = StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v31, v32); /*0x437d18*/
-    v51 = *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 40); /*0x437d1c*/
+    v32 = (int)a1->q004 + v59 - *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 4); /*0x437cfa*/
+    v44 = StreamClass::ReadAndSeek(*(int **)&stru_87E790.q0D8[60], v31, v32); /*0x437d18*/
+    v51 = *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 40); /*0x437d1c*/
     v19 = (2 * (v32 & 1)) | ((unsigned __int8)v31 ^ (unsigned __int8)v32) & 1; /*0x437d20*/
   }
   v33 = (unsigned __int16 *)(*(int (__thiscall **)(int, _DWORD, _DWORD))(aP3->u32_5C)(aP3, 0, 0); /*0x437d36*/
@@ -748,8 +748,8 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
             }
           }
           v40 = v44 + 2 * v51; /*0x437eb6*/
-          if ( v40 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 28) ) /*0x437ec2*/
-            v40 -= *(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 32); /*0x437ec4*/
+          if ( v40 >= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 28) ) /*0x437ec2*/
+            v40 -= *(_DWORD *)(*(_DWORD *)&stru_87E790.q0D8[60] + 32); /*0x437ec4*/
           v44 = v40; /*0x437ec7*/
         }
         --v36; /*0x437ed3*/

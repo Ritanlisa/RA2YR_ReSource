@@ -531,9 +531,9 @@ void * ProductionCompletionCallback(TechnoClass *self)
         v20 = location[2]; /*0x424eba*/
         PlaySoundEffectAt( /*0x424ed1*/
           &v18,
-          *(_DWORD *)&dword_8871E0->__pad_240[808],
+          *(_DWORD *)&dword_8871E0->q240[808],
           0,
-          *(_DWORD *)&dword_8871E0->__pad_C3C[876],
+          *(_DWORD *)&dword_8871E0->qC3C[876],
           0,
           0);
         House::AnnounceUpgrade((int)v5, -1); /*0x424eda*/
@@ -2551,7 +2551,7 @@ void sub_42E150(unsigned int * a2)
     v6 = a2[3]; /*0x42e194*/
     v7[2] = v5; /*0x42e197*/
     v7[3] = v6; /*0x42e19b*/
-    return (*(int (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 88))( /*0x42e1ac*/
+    return (*(int (__thiscall **)(AudioStream *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 88))( /*0x42e1ac*/
              g_DSurface_Hidden_2,
              v7,
              v4);
@@ -3189,7 +3189,7 @@ void sub_4266D0()
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v2 = this->u32_89; /*0x4266d6*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&AnimFile_vftable; /*0x4266dc*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&AnimFile_vftable; /*0x4266dc*/
   if ( v2 ) /*0x4266e4*/
   {
     (*(void (__thiscall **)(_DWORD))(**((_DWORD **)&this->q00C3) + 52))(this->u32_84); /*0x4266ee*/
@@ -3208,7 +3208,7 @@ void sub_4266D0()
     this->u32_E10 = 0; /*0x426726*/
   }
   this->u32_88 = 0; /*0x42672c*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Animate_vftable; /*0x426732*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Animate_vftable; /*0x426732*/
 }
 } // namespace gamemd
 

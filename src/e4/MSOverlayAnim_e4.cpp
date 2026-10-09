@@ -20,16 +20,16 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((_DWORD *)Block + 7); /*0x5ceb83*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&MSShapeAnim_vftable; /*0x5ceb86*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&MSShapeAnim_vftable; /*0x5ceb86*/
   if ( v3 && *((_BYTE *)Block + 60) ) /*0x5ceb90*/
   {
     RA2_OPDEL(v3); /*0x5ceb98*/
     *((_DWORD *)Block + 7) = 0; /*0x5ceba0*/
     *((_BYTE *)Block + 60) = 0; /*0x5ceba7*/
   }
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&MSAnim_vftable; /*0x5cebaf*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&MSAnim_vftable; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
     RA2_OPDEL(Block); /*0x5cebba*/
-  return Block->__pad_0; /*0x5cebc4*/
+  return Block->q000; /*0x5cebc4*/
 }
 } // namespace gamemd

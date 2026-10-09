@@ -22,7 +22,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   void (__thiscall ***v4)(_DWORD, int); // ecx
 
   v3 = *((_BYTE *)Block + 137); /*0x4272a6*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&AnimFile_vftable; /*0x4272ac*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&AnimFile_vftable; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (__thiscall **)(_DWORD))(**((_DWORD **)Block + 33) + 52))(*((_DWORD *)Block + 33)); /*0x4272be*/
@@ -41,7 +41,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
     *((_DWORD *)Block + 900) = 0; /*0x4272f6*/
   }
   *((_BYTE *)Block + 136) = 0; /*0x427300*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&Animate_vftable; /*0x427308*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&Animate_vftable; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     RA2_OPDEL(Block); /*0x427311*/
   return Block; /*0x42731b*/

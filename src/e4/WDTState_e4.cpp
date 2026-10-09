@@ -38,7 +38,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *(_DWORD *)v8->__pad_0 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76baeb*/
+          *(_DWORD *)v8->q000 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -95,7 +95,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x76bb69*/
+    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(*(_DWORD *)this->q000 + 12))(this); /*0x76bb69*/
   }
   v12 = this->m_8; /*0x76bb6c*/
   if ( v12 < this->m_10 ) /*0x76bb74*/
@@ -161,7 +161,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   void (__thiscall ***v3)(_DWORD, int); // ecx
 
   v3 = *(void (__thiscall ****)(_DWORD, int))&Block->m_1[3]; /*0x76bc13*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
@@ -171,7 +171,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     RA2_OPDEL(Block); /*0x76bc4c*/
-  return Block->__pad_0; /*0x76bc56*/
+  return Block->q000; /*0x76bc56*/
 }
 } // namespace gamemd
 
@@ -180,7 +180,7 @@ namespace gamemd {
 int WDTState_4::Constructor()
 {
   ComPtr::Constructor(); /*0x76bc63*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/
-  return this->__pad_0; /*0x76bc70*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/
+  return this->q000; /*0x76bc70*/
 }
 } // namespace gamemd

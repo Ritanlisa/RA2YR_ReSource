@@ -11,6 +11,8 @@ struct Mixer {
 // --- flat members (END) ---
     int ReleaseChannel();
     static int RequestAllBuffers();
+    unsigned int u32_4;  // 0x4 (offset-truth supply)
+    unsigned int u32_8;  // 0x8 (offset-truth supply)
 };
 
 } // namespace gamemd

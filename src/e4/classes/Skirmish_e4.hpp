@@ -74,6 +74,7 @@ struct Skirmish {
     int ReadSettings(HWND hDlg);
     int RenderPreview(HWND aP1);
     static int RenderPreview(void *aP0, HWND aP1);  // 0x640710 G42.35 static-form sync (ui/supplied site 0x46E058)
+    unsigned int u32_300;  // 0x300 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -632,5 +632,12 @@ ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, 
     int StubReturn3608();  // 0x6DC460
     int UpdateUIVisibility(void *a1_1);
     int Init(unsigned int * a2, void *a2_2, void *a3_1, void *a4_1, void *a5_1, void *a6_1, void *a7_1, void *a8_1);
+    char[4] Tactical_field_0x11B;  // 0x283 (ml)
+    char[32] __pad_10;  // 0x16 (ml)
+    unsigned int q034;  // 0x34 (offset-truth supply)
+    unsigned int u32_1178;  // 0x1178 (offset-truth supply)
+    unsigned char u32_117A;  // 0x117A (offset-truth supply)
+    unsigned int u32_117C;  // 0x117C (offset-truth supply)
+    unsigned char u32_146;  // 0x146 (offset-truth supply)
 };
 } // namespace gamemd

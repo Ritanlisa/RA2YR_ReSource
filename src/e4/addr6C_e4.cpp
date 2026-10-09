@@ -381,7 +381,7 @@ int ProcessGameResults(char a1)
       {
         v60 = aP2;
         *ecx71++ = eax72;
-        aP2 = (ObjectClass *)&v60->__pad_0[1];
+        aP2 = (ObjectClass *)&v60->q000[1];
       }
       v55 =(IUnknown *)(unsigned int)((HouseClass *)((char *)v55 + 4));
       v59 =(unsigned int)(IUnknown *)((char *)v59 - 1);
@@ -823,7 +823,7 @@ LABEL_158:
       }
       for ( j = 0; j < (int)g_BuildingClass_Count; ++j )
       {
-        int v158 = *(unsigned int *)&g_InfantryClassLimit->__pad_0[4 * j];
+        int v158 = *(unsigned int *)&g_InfantryClassLimit->q000[4 * j];
         if ( v105 == *(unsigned int *)(v158 + 540) )
         {
           int v159 = *(unsigned int *)(v158 + 1728);
@@ -1732,17 +1732,17 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   Buffer::Init((Buffer *)((char *)&this->u32_C6), 0, 0); /*0x6c656c*/
   this->M48 = 0; /*0x6c657e*/
   this->M52 = a4; /*0x6c6585*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6588*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6588*/
   StaticButtonClass::Draw(String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
     Instance = TextRenderer::GetInstance(); /*0x6c65a8*/
     if ( aP3 == -1 ) /*0x6c65aa*/
-      this->StaticButtonClass_field_0x14 = Text::MeasureWidth(this->M48, 0); /*0x6c65b9*/
+      this->q014 = Text::MeasureWidth(this->M48, 0); /*0x6c65b9*/
     if ( aP4 == -1 ) /*0x6c65bf*/
       this->M24 = *(_DWORD *)(Instance + 28); /*0x6c65c4*/
   }
-  return this->__pad_0; /*0x6c65c9*/
+  return this->q000; /*0x6c65c9*/
 }
 } // namespace gamemd
 

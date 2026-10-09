@@ -22,6 +22,8 @@ struct CoopCampaignVector {
     VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     _DWORD * Construct(int aP1, int aP2);
     unsigned int Write(int a2);
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 
 } // namespace gamemd

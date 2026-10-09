@@ -15,7 +15,7 @@ void GraphicMenuItem::Dtor(void *a1)
   ObjectClass *v1; // esi
 
   v1 = (ObjectClass *)*((_DWORD *)a1 + 3); /*0x4f3a71*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&GraphicMenuItem_vftable; /*0x4f3a76*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&GraphicMenuItem_vftable; /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/

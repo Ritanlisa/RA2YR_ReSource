@@ -84,15 +84,15 @@ bool Weapon_Update(void * a1, void * a2)
         a2 = ((_DWORD)updated << g_BitShift_Red) | v6; /*0x659d55*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, (_DWORD *)(v3 + 156), v15); /*0x659d57*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, (_DWORD *)(v3 + 168), v14); /*0x659d68*/
-        v16[1] = (int)DSurface_ViewBounds.field_4; /*0x659d7e*/
+        v16[1] = (int)DSurface_ViewBounds.q004; /*0x659d7e*/
         v16[0] = DSurface_ViewBounds.field_0; /*0x659d86*/
-        v16[2] = *(_DWORD *)DSurface_ViewBounds.__pad_8; /*0x659d8f*/
-        v16[3] = *(_DWORD *)&DSurface_ViewBounds.__pad_8[4]; /*0x659d9c*/
+        v16[2] = *(_DWORD *)DSurface_ViewBounds.q008; /*0x659d8f*/
+        v16[3] = *(_DWORD *)&DSurface_ViewBounds.q008[4]; /*0x659d9c*/
         if ( (unsigned __int8)ClipLine(v15, v14, v16) ) /*0x659da0*/
         {
           v7 = *(_DWORD *)(v3 + 12) - ZCoordToScreenY(*(_DWORD *)(v3 + 164)) - 2; /*0x659db9*/
           v8 = ZCoordToScreenY(*(_DWORD *)(v3 + 176)); /*0x659dbc*/
-          (*(void (__thiscall **)(AudioStream *, CellStruct *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 52))( /*0x659de7*/
+          (*(void (__thiscall **)(AudioStream *, CellStruct *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 52))( /*0x659de7*/
             g_DSurface_Hidden_2,
             &DSurface_ViewBounds,
             v15,
@@ -130,9 +130,9 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
   int v14; // esi
   int v15; // edx
   int v16; // eax
-  int ObjectVector_field_0x10; // eax
+  int q010; // eax
   int v20; // ecx
-  _DWORD *ObjectVector_field_0x04; // edx
+  _DWORD *q004; // edx
   int GroundHeight; // eax
   int v23; // eax
   int v24; // ecx
@@ -215,9 +215,9 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     fstp [esp+0C8h+var_88]
   }
   ObjectVector::Construct(&v43, 0, 0); /*0x70c777*/
-  *(_DWORD *)v43.__pad_0 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x70c77c*/
-  v43.ObjectVector_field_0x14 = 10; /*0x70c784*/
-  v43.ObjectVector_field_0x10 = 0; /*0x70c78c*/
+  *(_DWORD *)v43.q000 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x70c77c*/
+  v43.q014 = 10; /*0x70c784*/
+  v43.q010 = 0; /*0x70c78c*/
   v42 = 0; /*0x70c790*/
   while ( 1 ) /*0x70c794*/
   {
@@ -344,7 +344,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
           __asm { fdivr [esp+0C8h+var_6C] } /*0x70c9c8*/
           __asm { fabs }
         }
-        _ECX = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x70c9d7*/
+        _ECX = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x70c9d7*/
         __asm /*0x70c9dd*/
         {
           fild dword ptr [ecx+494h]
@@ -354,18 +354,18 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
         }
         if ( (_AX & 0x100) == 0 && (int *)v14 != aP3 ) /*0x70c9f0*/
           goto LABEL_31; /*0x70c9f0*/
-        ObjectVector_field_0x10 = v43.ObjectVector_field_0x10; /*0x70c9f2*/
-        if ( v43.ObjectVector_field_0x10 ) /*0x70c9f8*/
+        q010 = v43.q010; /*0x70c9f2*/
+        if ( v43.q010 ) /*0x70c9f8*/
         {
           v20 = 0; /*0x70c9fa*/
-          if ( v43.ObjectVector_field_0x10 > 0 ) /*0x70c9fe*/
+          if ( v43.q010 > 0 ) /*0x70c9fe*/
           {
-            ObjectVector_field_0x04 = (_DWORD *)v43.ObjectVector_field_0x04; /*0x70ca00*/
-            while ( *ObjectVector_field_0x04 != v14 ) /*0x70ca06*/
+            q004 = (_DWORD *)v43.q004; /*0x70ca00*/
+            while ( *q004 != v14 ) /*0x70ca06*/
             {
               ++v20; /*0x70ca08*/
-              ++ObjectVector_field_0x04; /*0x70ca09*/
-              if ( v20 >= v43.ObjectVector_field_0x10 ) /*0x70ca0e*/
+              ++q004; /*0x70ca09*/
+              if ( v20 >= v43.q010 ) /*0x70ca0e*/
                 goto LABEL_24; /*0x70ca0e*/
             }
             if ( v20 != -1 ) /*0x70ca15*/
@@ -373,21 +373,21 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
           }
         }
   LABEL_24:
-        if ( v43.ObjectVector_field_0x10 >= v43.ObjectVector_field_0x08 ) /*0x70ca1d*/
+        if ( v43.q010 >= v43.q008 ) /*0x70ca1d*/
         {
-          if ( !IDA_BYTE1(v43.ObjectVector_field_0x0C) && v43.ObjectVector_field_0x08 /*0x70ca40*/
-            || v43.ObjectVector_field_0x14 <= 0
-            || !(*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v43.__pad_0 + 8))(
+          if ( !IDA_BYTE1(v43.q00C) && v43.q008 /*0x70ca40*/
+            || v43.q014 <= 0
+            || !(*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v43.q000 + 8))(
                   &v43,
-                  v43.ObjectVector_field_0x14 + v43.ObjectVector_field_0x08,
+                  v43.q014 + v43.q008,
                   0) )
           {
             goto LABEL_31; /*0x70ca45*/
           }
-          ObjectVector_field_0x10 = v43.ObjectVector_field_0x10; /*0x70ca47*/
+          q010 = v43.q010; /*0x70ca47*/
         }
-        v43.ObjectVector_field_0x10 = ObjectVector_field_0x10 + 1; /*0x70ca4e*/
-        *(_DWORD *)(v43.ObjectVector_field_0x04 + 4 * ObjectVector_field_0x10) = v14; /*0x70ca56*/
+        v43.q010 = q010 + 1; /*0x70ca4e*/
+        *(_DWORD *)(v43.q004 + 4 * q010) = v14; /*0x70ca56*/
   LABEL_31:
         v14 = *(_DWORD *)(v14 + 48); /*0x70ca59*/
       }
@@ -399,39 +399,39 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     {
       if ( v40 || !aP3 || (aP3[5] & 2) == 0 ) /*0x70caa3*/
         goto LABEL_55; /*0x70caa3*/
-      v23 = v43.ObjectVector_field_0x10; /*0x70caa9*/
-      if ( !v43.ObjectVector_field_0x10 ) /*0x70caaf*/
+      v23 = v43.q010; /*0x70caa9*/
+      if ( !v43.q010 ) /*0x70caaf*/
         goto LABEL_48; /*0x70caaf*/
       v24 = 0; /*0x70cab5*/
-      if ( v43.ObjectVector_field_0x10 <= 0 ) /*0x70cab9*/
+      if ( v43.q010 <= 0 ) /*0x70cab9*/
         goto LABEL_48; /*0x70cab9*/
-      v25 = (int **)v43.ObjectVector_field_0x04; /*0x70cabf*/
+      v25 = (int **)v43.q004; /*0x70cabf*/
       while ( *v25 != aP3 ) /*0x70cac5*/
       {
         ++v24; /*0x70cacb*/
         ++v25; /*0x70cacc*/
-        if ( v24 >= v43.ObjectVector_field_0x10 ) /*0x70cad1*/
+        if ( v24 >= v43.q010 ) /*0x70cad1*/
           goto LABEL_48; /*0x70cad1*/
       }
       if ( v24 == -1 ) /*0x70cb68*/
       {
   LABEL_48:
-        if ( v43.ObjectVector_field_0x10 < v43.ObjectVector_field_0x08 ) /*0x70cb70*/
+        if ( v43.q010 < v43.q008 ) /*0x70cb70*/
           goto LABEL_54; /*0x70cb70*/
-        if ( (IDA_BYTE1(v43.ObjectVector_field_0x0C) || !v43.ObjectVector_field_0x08) && v43.ObjectVector_field_0x14 > 0 ) /*0x70cb84*/
+        if ( (IDA_BYTE1(v43.q00C) || !v43.q008) && v43.q014 > 0 ) /*0x70cb84*/
         {
-          if ( (*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v43.__pad_0 + 8))( /*0x70cb93*/
+          if ( (*(unsigned __int8 (__thiscall **)(ObjectVector *, int, _DWORD))(*(_DWORD *)v43.q000 + 8))( /*0x70cb93*/
                  &v43,
-                 v43.ObjectVector_field_0x14 + v43.ObjectVector_field_0x08,
+                 v43.q014 + v43.q008,
                  0) )
           {
-            v23 = v43.ObjectVector_field_0x10; /*0x70cb9a*/
+            v23 = v43.q010; /*0x70cb9a*/
   LABEL_54:
-            v43.ObjectVector_field_0x10 = v23 + 1; /*0x70cb9e*/
-            *(_DWORD *)(v43.ObjectVector_field_0x04 + 4 * v23) = aP3; /*0x70cba9*/
+            v43.q010 = v23 + 1; /*0x70cb9e*/
+            *(_DWORD *)(v43.q004 + 4 * v23) = aP3; /*0x70cba9*/
           }
   LABEL_55:
-          v23 = v43.ObjectVector_field_0x10; /*0x70cbac*/
+          v23 = v43.q010; /*0x70cbac*/
         }
       }
       v33 = 0; /*0x70cbb0*/
@@ -440,9 +440,9 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
         do /*0x70cbf5*/
         {
           v52 = aP4->u8_98; /*0x70cbc3*/
-          (*(void (__thiscall **)(_DWORD, int *, _DWORD, _DWORD, Weapon *, _DWORD, _DWORD, _DWORD))(**(_DWORD **)(v43.ObjectVector_field_0x04 + 4 * v33) /*0x70cbe8*/
+          (*(void (__thiscall **)(_DWORD, int *, _DWORD, _DWORD, Weapon *, _DWORD, _DWORD, _DWORD))(**(_DWORD **)(v43.q004 + 4 * v33) /*0x70cbe8*/
                                                                                                   + 364))(
-            *(_DWORD *)(v43.ObjectVector_field_0x04 + 4 * v33),
+            *(_DWORD *)(v43.q004 + 4 * v33),
             &v52,
             0,
             aP4->q02B,
@@ -452,27 +452,27 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
             0);
           ++v33; /*0x70cbf2*/
         }
-        while ( v33 < v43.ObjectVector_field_0x10 ); /*0x70cbf5*/
+        while ( v33 < v43.q010 ); /*0x70cbf5*/
       }
       if ( (*(int (__thiscall **)(int *))(*aP3 + 44))(aP3) == 11 ) /*0x70cc01*/
       {
         if ( (unsigned __int8)CellClass::IsActiveOrNext((CellClass *)aP3) ) /*0x70cc05*/
         {
-          v34 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cc1e*/
+          v34 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6092); /*0x70cc1e*/
           if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v34 ) /*0x70cc31*/
             LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v35, (int)aP3); /*0x70cc39*/
         }
       }
       v56 = v56; /*0x70cc45*/
-      *(_DWORD *)v43.__pad_0 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cc4b*/
+      *(_DWORD *)v43.q000 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cc4b*/
       *a1 = v55; /*0x70cc53*/
       v57 = v57; /*0x70cc55*/
       a1[1] = v56; /*0x70cc59*/
       a1[2] = v57; /*0x70cc5c*/
-      if ( v43.ObjectVector_field_0x04 ) /*0x70cc65*/
+      if ( v43.q004 ) /*0x70cc65*/
       {
-        if ( IDA_BYTE1(v43.ObjectVector_field_0x0C) ) /*0x70cc6d*/
-          RA2_OPDEL((void *)v43.ObjectVector_field_0x04); /*0x70cc70*/
+        if ( IDA_BYTE1(v43.q00C) ) /*0x70cc6d*/
+          RA2_OPDEL((void *)v43.q004); /*0x70cc70*/
       }
       return a1; /*0x70cc78*/
     }
@@ -480,7 +480,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
   v26 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cae2*/
   if ( (unsigned __int8)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
   {
-    v27 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cb01*/
+    v27 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6092); /*0x70cb01*/
     if ( Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/
     {
       v28 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cb20*/
@@ -488,7 +488,7 @@ int * Weapon::DestroyTerrain(int *a1, int *aP2, int *aP3, int aP4)
     }
   }
   v50 = v50; /*0x70cb37*/
-  *(_DWORD *)v43.__pad_0 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cb3d*/
+  *(_DWORD *)v43.q000 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cb3d*/
   *a1 = v49; /*0x70cb45*/
   v51 = v51; /*0x70cb47*/
   a1[1] = v50; /*0x70cb4b*/

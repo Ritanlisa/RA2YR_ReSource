@@ -21,5 +21,9 @@ struct E4Recv_6D1E80 {
     unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
     void sub_6D1E80();  // 0x6D1E80
+    unsigned char Tactical_field_0x2;  // 0x2 (offset-truth supply)
+    unsigned int Tactical_field_0x8;  // 0x8 (offset-truth supply)
+    unsigned int Tactical_field_0xC;  // 0xC (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
 };
 } // namespace gamemd

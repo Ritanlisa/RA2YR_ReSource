@@ -107,7 +107,10 @@ except OSError:
 
 names |= {n for n in mtab
           if re.match(r'^[A-Za-z_]\w*$', n) and _decl_ok(n)
-          and n not in MATH_HPP_NAMES}
+          and n not in MATH_HPP_NAMES
+          and n not in ('gamemd', 'ra2')}  # G42.57ax: namespace-name keys
+# name-hide the namespace once emitted as `struct gamemd;` -- refuse here
+# too so a data-side regression cannot reintroduce the C2027 cascade
 
 # final filter: all-caps = Windows typedefs; tree enum/using-alias/template/
 # function-template names cannot be struct-fwd-declared even in e4 TUs —

@@ -79,15 +79,15 @@ char Debug::ScrollText(const char * aP1)
 namespace gamemd {
 int Debug::AccumFlags()
 {
-  TriggerTypeClass *Debug_field_0xA0; // esi
+  TriggerTypeClass *q0A0; // esi
   int i; // edi
   int Flags; // eax
 
-  Debug_field_0xA0 = (TriggerTypeClass *)this->Debug_field_0xA0; /*0x6e61f1*/
-  for ( i = 0; Debug_field_0xA0; i |= Flags ) /*0x6e61fc*/
+  q0A0 = (TriggerTypeClass *)this->q0A0; /*0x6e61f1*/
+  for ( i = 0; q0A0; i |= Flags ) /*0x6e61fc*/
   {
-    Flags = TriggerTypeClass::GetFlags(Debug_field_0xA0); /*0x6e6200*/
-    Debug_field_0xA0 = Debug_field_0xA0->NextTrigger; /*0x6e6205*/
+    Flags = TriggerTypeClass::GetFlags(q0A0); /*0x6e6200*/
+    q0A0 = q0A0->NextTrigger; /*0x6e6205*/
   }
   return i; /*0x6e6213*/
 }

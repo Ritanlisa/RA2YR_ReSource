@@ -88,6 +88,10 @@ public:
     int32_t     MoveFeedback_field_24;               // 0x24
     int32_t     MoveFeedback_field_28;               // 0x28
     int32_t     MoveFeedback_field_2C;               // 0x2C
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned char q00C;  // 0x12
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 #endif  // GAMEMD_G2_MoveFeedback_DEF
 #endif  // GAMEMD_E4_MoveFeedback

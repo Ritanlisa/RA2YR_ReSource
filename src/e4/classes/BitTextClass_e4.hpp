@@ -16,6 +16,7 @@ struct BitTextClass {
 // --- flat members (END) ---
     int ParseFontData(char * Source, void *a2);
     unsigned int * LoadFont();
+    int m_FontBitmap;  // 0x0 (ml)
 };
 
 } // namespace gamemd

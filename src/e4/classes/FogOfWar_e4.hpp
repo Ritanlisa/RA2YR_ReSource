@@ -101,6 +101,14 @@ struct FogOfWar {
     MapClass * * RevealArea(int *a2, int *aP1, int a1);
     int RenderCell();
     int Render();  // 0x657ce0
+    unsigned char q49D;  // 0x49D (offset-truth supply)
+    unsigned char u32_1CC9;  // 0x1CC9 (offset-truth supply)
+    unsigned int u32_1D00;  // 0x1D00 (offset-truth supply)
+    unsigned int u32_1D44;  // 0x1D44 (offset-truth supply)
+    unsigned int u32_7380;  // 0x7380 (offset-truth supply)
+    unsigned char u32_73C6;  // 0x73C6 (offset-truth supply)
+    unsigned int u32_7400;  // 0x7400 (offset-truth supply)
+    unsigned char u32_7546;  // 0x7546 (offset-truth supply)
 };
 
 } // namespace gamemd

@@ -33,5 +33,8 @@ struct WebBrowser {
     int UnlockRegion();  // 0x773BA0
     int COMStub_Return0();  // 0x773B00
     int WebBrowser___vt03();
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int u32_40C;  // 0x40C (offset-truth supply)
+    unsigned char u32_42;  // 0x42 (offset-truth supply)
 };
 } // namespace gamemd

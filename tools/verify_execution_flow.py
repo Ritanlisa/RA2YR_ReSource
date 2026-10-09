@@ -326,6 +326,24 @@ def build_member_name_index(M):
                 if nm:
                     idx[nm] = off
         M.member_name_to_off[cls] = idx
+    # G42.57ax: dual name universes. classes.hpp/bodies carry gate-clean
+    # canon render names (q%03X) while member tables/IDA carry til names
+    # (Cls_field_0xNN). Index BOTH: the canon name map (render-time
+    # til->cpp decisions) resolves cpp-side member events back to offsets.
+    nmap_path = os.path.join(str(PROJECT_ROOT), 'anchors',
+                             'canon_member_names.json')
+    try:
+        with open(nmap_path, 'r', encoding='utf-8') as f:
+            nmap = json.load(f)
+    except (OSError, ValueError):
+        return
+    for cls, mapping in nmap.items():
+        idx = M.member_name_to_off.setdefault(cls, {})
+        base = M.member_name_to_off.get(cls, {})
+        for til_name, cpp_name in mapping.items():
+            off = base.get(til_name)
+            if off is not None and cpp_name not in idx:
+                idx[cpp_name] = off
 
 
 def _inheritance_chain(cls, M):
@@ -1940,7 +1958,56 @@ def verify_single_function(ida_addr, func_name, display_name, M,
     return passed, info
 
 
+_MAPS_PKL_PATH = PROJECT_ROOT / '.omo' / 'cache' / 'verify_maps_v2.pkl'
+_MAPS_PKL_SCHEMA = 2
+
+
+def _load_maps_pickle(digest):
+    # Perf (gate-perf): signals.json (270MB) + member_lookup.json (459MB) JSON
+    # parse + member-name index build = ~60-120s per process, paid by the main
+    # process AND every spawn worker. Content-keyed pickle of the post-index
+    # Maps state loads in ~10s. Invalidated by any content change in signals,
+    # member_lookup, the verifier, or the scanned headers.
+    import pickle
+    try:
+        with open(_MAPS_PKL_PATH, 'rb') as f:
+            payload = pickle.load(f)
+    except Exception:
+        return None
+    if (not isinstance(payload, dict)
+            or payload.get('schema') != _MAPS_PKL_SCHEMA
+            or payload.get('digest') != digest
+            or payload.get('hppfp') != _hpp_fingerprint()):
+        return None
+    state = payload.get('state')
+    if not isinstance(state, dict):
+        return None
+    M = Maps()
+    for k, v in state.items():
+        setattr(M, k, v)
+    return M
+
+
+def _save_maps_pickle(M, digest):
+    import pickle
+    try:
+        _MAPS_PKL_PATH.parent.mkdir(parents=True, exist_ok=True)
+        payload = {'schema': _MAPS_PKL_SCHEMA, 'digest': digest,
+                   'hppfp': _hpp_fingerprint(),
+                   'state': dict(vars(M))}
+        tmp = str(_MAPS_PKL_PATH) + '.tmp'
+        with open(tmp, 'wb') as f:
+            pickle.dump(payload, f, protocol=4)
+        os.replace(tmp, _MAPS_PKL_PATH)
+    except OSError as e:
+        print("exec-flow: WARN maps pickle write failed: %s" % e,
+              file=sys.stderr)
+
+
 def load_all_maps():
+    M = _load_maps_pickle(_maps_content_digest())
+    if M is not None:
+        return M
     M = Maps()
     load_signals(M)
     # G30: header scans (globals map + vtable decl-order) dominate verify
@@ -1966,6 +2033,7 @@ def load_all_maps():
     if VTABLE_OFFSETS_JSON.exists():
         with open(VTABLE_OFFSETS_JSON, "r", encoding="utf-8") as f:
             M.vtable_offsets = json.load(f)
+    _save_maps_pickle(M, _maps_content_digest())
     return M
 
 
@@ -1993,18 +2061,42 @@ def _sha1_text(t):
     return hashlib.sha1(t.encode('utf-8', errors='replace')).hexdigest()
 
 
+def _sha1_file(path):
+    # Perf (gate-perf): content-addressed cache keys. mtime keys over-invalidated
+    # -- regen rewrites signals.json/member_lookup.json with identical content
+    # on every run, nuking the whole PASS cache -> full 19k-pool re-verify.
+    import hashlib
+    h = hashlib.sha1()
+    try:
+        with open(path, 'rb') as f:
+            for chunk in iter(lambda: f.read(1 << 22), b''):
+                h.update(chunk)
+    except OSError:
+        return 'missing'
+    return h.hexdigest()
+
+
+_MAPS_DIGEST = None
+
+
+def _maps_content_digest():
+    global _MAPS_DIGEST
+    if _MAPS_DIGEST is None:
+        import hashlib
+        h = hashlib.sha1()
+        for f in (os.path.join(str(PROJECT_ROOT), 'signals.json'),
+                  os.path.join(str(PROJECT_ROOT), 'tools',
+                               'member_lookup.json')):
+            h.update(_sha1_file(f).encode())
+        _MAPS_DIGEST = h.hexdigest()
+    return _MAPS_DIGEST
+
+
 def _gate_env_key():
     import hashlib
     h = hashlib.sha1()
-    for f in (os.path.abspath(__file__),
-              os.path.join(str(PROJECT_ROOT), 'tools', 'member_lookup.json'),
-              os.path.join(str(PROJECT_ROOT), 'signals.json')):
-        try:
-            st = os.stat(f)
-            h.update(('%s:%d:%d;' % (os.path.basename(f), st.st_size,
-                                     int(st.st_mtime))).encode())
-        except OSError:
-            h.update(('%s:missing;' % f).encode())
+    h.update(_sha1_file(os.path.abspath(__file__)).encode())
+    h.update(_maps_content_digest().encode())
     return h.hexdigest()[:16]
 
 

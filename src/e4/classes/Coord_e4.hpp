@@ -97,5 +97,11 @@ struct Coord {
     Coord * * sub_7A2830();
     static unsigned int * To_Cell(void * aP1, void * aP2);  // G42.39a static-call supply
     unsigned int q_2C0;  // +0x2C0 flat supply (CSP-fed)
+    char[4] Coord_field_0x2;  // 0x2 (ml)
+    unsigned int u32_1488;  // 0x1488 (offset-truth supply)
+    unsigned int u32_1490;  // 0x1490 (offset-truth supply)
+    unsigned int u32_1498;  // 0x1498 (offset-truth supply)
+    unsigned int u32_14A4;  // 0x14A4 (offset-truth supply)
+    unsigned int u32_14A8;  // 0x14A8 (offset-truth supply)
 };
 } // namespace gamemd

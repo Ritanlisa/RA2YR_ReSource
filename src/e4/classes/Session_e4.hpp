@@ -305,5 +305,6 @@ int RemoveTeam(int (***aP1)(unsigned int, int));  // 0x005d1d80 g57w12-r raw-syn
     int GetPlayerColor();  // 0x69B720
     int StartGame(HWND hWnd);  // 0x5ED370
     static int StartGame(void *aP0);  // 0x5ED370 G42.35 static-form sync (truth 0-arg thiscall; ui/supplied site 0x46F2C8)
+    unsigned int q018;  // 0x18 (offset-truth supply)
 };
 } // namespace gamemd

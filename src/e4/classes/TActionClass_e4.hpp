@@ -143,6 +143,15 @@ char executeWeatherStormAction(unsigned int * a1, int a3, int a4, IUnknown * aP4
     int executeSellAction();
     unsigned int * executeHarvestAction(int a2, MouseClass * aP2);
     void executeDetonateAction();
+    unsigned int u32_10C;  // 0x10C (offset-truth supply)
+    unsigned char u32_1F7;  // 0x1F7 (offset-truth supply)
+    unsigned int u32_1F8;  // 0x1F8 (offset-truth supply)
+    unsigned int u32_298;  // 0x298 (offset-truth supply)
+    unsigned int u32_53A0;  // 0x53A0 (offset-truth supply)
+    unsigned int u32_5494;  // 0x5494 (offset-truth supply)
+    unsigned int u32_54F0;  // 0x54F0 (offset-truth supply)
+    unsigned int u32_54F4;  // 0x54F4 (offset-truth supply)
+    unsigned int u32_54FC;  // 0x54FC (offset-truth supply)
 };
 
 } // namespace gamemd

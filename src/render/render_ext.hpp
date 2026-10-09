@@ -75,6 +75,8 @@ public:
     int DrawOccupiedRegion();  // 0x6da180 -- TacticalMap::DrawOccupiedRegion
     int FillScanlinesOpaque(int a1, int a2, int a3, int a4);  // 0x7bcfb0 -- TacticalMap::FillScanlinesOpaque
     // === SYMBOL-ANCHOR (END) ===
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned char q008;  // 0x8
 };
 
 // ============================================================================

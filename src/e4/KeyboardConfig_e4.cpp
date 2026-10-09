@@ -47,7 +47,7 @@ int KeyboardConfig::LoadINI()
 
   INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
   v9.ownsFile = 0; /*0x533d3b*/
-  *(_DWORD *)v9.__pad_0 = &CCINIClass_Vtable; /*0x533d3f*/
+  *(_DWORD *)v9.q000 = &CCINIClass_Vtable; /*0x533d3f*/
   CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
   if ( CCINIClass::Load(&v9, (int)&v10, 0, 0) ) /*0x533d57*/
   {
@@ -58,11 +58,11 @@ int KeyboardConfig::LoadINI()
     *(_DWORD *)&stru_87F5F0.__pad_58[64] = 0; /*0x533d8b*/
     stru_87F5F0.__pad_58[68] = 0; /*0x533d91*/
     *(_DWORD *)&stru_87F5F0.__pad_58[72] = 0; /*0x533d97*/
-    for ( i = 0; i < INIClass::GetKeyCount(v9.__pad_0, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
+    for ( i = 0; i < INIClass::GetKeyCount(v9.q000, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v9.__pad_0, g_INI_Key_Hotkey, v1); /*0x533dbf*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v9.q000, g_INI_Key_Hotkey, v1); /*0x533dbf*/
       v3 = 0; /*0x533dd1*/
-      Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)v9.__pad_0, g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
+      Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)v9.q000, g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
       if ( *(int *)&stru_87F5F0.__pad_58[32] > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/

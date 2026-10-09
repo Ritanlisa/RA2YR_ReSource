@@ -25,38 +25,38 @@ int SortedArray::BinarySearch(int *aP1)
   int result; // eax
   int v4; // edi
   int v5; // ebx
-  int SortedArray_field_0x04; // ecx
+  int q004; // ecx
   int v7; // esi
 
-  result = this->SortedArray_field_0x04; /*0x52b623*/
+  result = this->q004; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !IDA_LOBYTE(this->SortedArray_field_0x0C) ) /*0x52b62e*/
+    if ( !IDA_LOBYTE(this->q00C) ) /*0x52b62e*/
     {
-      qsort(*(void **)this->__pad_0, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b640*/
-      this->SortedArray_field_0x10 = 0; /*0x52b648*/
-      IDA_LOBYTE(this->SortedArray_field_0x0C) = 1; /*0x52b64f*/
+      qsort(*(void **)this->q000, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b640*/
+      this->q010 = 0; /*0x52b648*/
+      IDA_LOBYTE(this->q00C) = 1; /*0x52b64f*/
     }
-    v4 = *(_DWORD *)this->__pad_0; /*0x52b659*/
+    v4 = *(_DWORD *)this->q000; /*0x52b659*/
     v5 = *aP1; /*0x52b65b*/
-    SortedArray_field_0x04 = this->SortedArray_field_0x04; /*0x52b65d*/
-    if ( SortedArray_field_0x04 <= 0 ) /*0x52b662*/
+    q004 = this->q004; /*0x52b65d*/
+    if ( q004 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
     {
-      v7 = *(_DWORD *)(v4 + 8 * (SortedArray_field_0x04 / 2)); /*0x52b66b*/
+      v7 = *(_DWORD *)(v4 + 8 * (q004 / 2)); /*0x52b66b*/
       if ( v7 <= v5 ) /*0x52b673*/
       {
         if ( v7 == v5 ) /*0x52b679*/
-          return v4 + 8 * (SortedArray_field_0x04 / 2); /*0x52b693*/
-        v4 += 8 * (SortedArray_field_0x04 / 2) + 8; /*0x52b67b*/
-        SortedArray_field_0x04 += -1 - SortedArray_field_0x04 / 2; /*0x52b683*/
+          return v4 + 8 * (q004 / 2); /*0x52b693*/
+        v4 += 8 * (q004 / 2) + 8; /*0x52b67b*/
+        q004 += -1 - q004 / 2; /*0x52b683*/
       }
       else
       {
-        SortedArray_field_0x04 /= 2; /*0x52b675*/
+        q004 /= 2; /*0x52b675*/
       }
-      if ( SortedArray_field_0x04 <= 0 ) /*0x52b687*/
+      if ( q004 <= 0 ) /*0x52b687*/
         return 0; /*0x52b687*/
     }
   }

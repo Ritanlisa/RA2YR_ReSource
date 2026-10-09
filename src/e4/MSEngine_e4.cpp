@@ -91,7 +91,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_V_TRect_H *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5ace05*/
+    (*(void (__thiscall **)(_VectorClass_V_TRect_H *))(*(_DWORD *)this->q000 + 12))(this); /*0x5ace05*/
     return 1; /*0x5ace0b*/
   }
 }
@@ -165,7 +165,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_TRect_H *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5acf97*/
+    (*(void (__thiscall **)(_DynamicVectorClass_V_TRect_H *))(*(_DWORD *)this->q000 + 12))(this); /*0x5acf97*/
   }
   v12 = this->m_8; /*0x5acf9a*/
   if ( v12 < this->m_10 ) /*0x5acfa2*/
@@ -179,7 +179,7 @@ CampaignClass * MSEngine::Destructor()
 {
   void *v2; // eax
   void *v3; // eax
-  void *MSEngine_field_0x4; // eax
+  void *q004; // eax
 
   SessionClass::Destruct(); /*0x5cee64*/
   v2 = (void *)this->u32_48; /*0x5cee69*/
@@ -201,15 +201,15 @@ CampaignClass * MSEngine::Destructor()
   this->u32_39 = 0; /*0x5ceeb2*/
   this->IsAllocated = 0; /*0x5ceeb5*/
   DeleteAndZero((ObjectClass *)(this + 2)); /*0x5ceeb8*/
-  MSEngine_field_0x4 = this->MSEngine_field_0x4; /*0x5ceebd*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5ceec0*/
-  if ( MSEngine_field_0x4 && IDA_BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/
+  q004 = this->q004; /*0x5ceebd*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_MapStage___vftable; /*0x5ceec0*/
+  if ( q004 && IDA_BYTE1(this->u32_C[0]) ) /*0x5ceeca*/
   {
-    RA2_OPDEL(MSEngine_field_0x4); /*0x5ceed0*/
-    this->MSEngine_field_0x4 = 0; /*0x5ceed8*/
+    RA2_OPDEL(q004); /*0x5ceed0*/
+    this->q004 = 0; /*0x5ceed8*/
   }
-  IDA_BYTE1(this->MSEngine_field_0xC[0]) = 0; /*0x5ceedb*/
-  this->MSEngine_field_0x8 = 0; /*0x5ceede*/
+  IDA_BYTE1(this->u32_C[0]) = 0; /*0x5ceedb*/
+  this->q008 = 0; /*0x5ceede*/
 }
 }
 // 0x5D1AA0
@@ -219,7 +219,7 @@ CampaignClass * MSEngine::Construct()
   void **p_MSEngine_field_0x8; // ecx
   void (__thiscall **v3)(void **, int, _DWORD); // edx
 
-  p_MSEngine_field_0x8 = &this->MSEngine_field_0x8; /*0x5d1aa5*/
+  p_MSEngine_field_0x8 = &this->q008; /*0x5d1aa5*/
   p_MSEngine_field_0x8[1] = 0; /*0x5d1ab2*/
   p_MSEngine_field_0x8[2] = 0; /*0x5d1ab5*/
   *((_BYTE *)p_MSEngine_field_0x8 + 12) = 1; /*0x5d1ab8*/
@@ -240,12 +240,12 @@ CampaignClass * MSEngine::Construct()
   this->u32_44 = 10; /*0x5d1af2*/
   this->q010 = 0; /*0x5d1af9*/
   v3 = (void (__thiscall **)(void **, int, _DWORD))*p_MSEngine_field_0x8; /*0x5d1afc*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&MSEngine_vftable; /*0x5d1b01*/
-  this->MSEngine_field_0x4 = 0; /*0x5d1b07*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&MSEngine_vftable; /*0x5d1b01*/
+  this->q004 = 0; /*0x5d1b07*/
   v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
   (*(void (__thiscall **)(char *))(this->u32_18 + 12))((char *)&this->q0084); /*0x5d1b11*/
   (*(void (__thiscall **)(char *))(this->u32_C + 12))((char *)&this->q0108); /*0x5d1b18*/
-  return this->__pad_0; /*0x5d1b1b*/
+  return this->q000; /*0x5d1b1b*/
 }
 }
 // 0x5D1B30
@@ -259,14 +259,14 @@ CampaignClass * MSEngine::Destruct()
   int i; // edi
   void (__thiscall ***v7)(_DWORD, int); // ecx
   char *v8; // edi
-  void (__thiscall **MSEngine_field_0x8)(void **); // edx
+  void (__thiscall **q008)(void **); // edx
   void **p_MSEngine_field_0x8; // esi
   void *v11; // eax
   void *v12; // eax
   int result; // eax
 
   v2 = 0; /*0x5d1b37*/
-  for ( *(_DWORD *)this->__pad_0 = &(void*)(void*)&MSEngine_vftable; v2 < this->q010; ++v2 ) /*0x5d1b45*/
+  for ( *(_DWORD *)this->q000 = &(void*)(void*)&MSEngine_vftable; v2 < this->q010; ++v2 ) /*0x5d1b45*/
   {
     v3 = this->IsAllocated; /*0x5d1b47*/
     v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
@@ -286,9 +286,9 @@ CampaignClass * MSEngine::Destruct()
   }
   v8 = (char *)this + 24; /*0x5d1b98*/
   (*(void (__thiscall **)(char *))(this->u32_18 + 12))((char *)&this->q0084); /*0x5d1b9d*/
-  MSEngine_field_0x8 = (void (__thiscall **)(void **))this->MSEngine_field_0x8; /*0x5d1ba0*/
-  p_MSEngine_field_0x8 = &this->MSEngine_field_0x8; /*0x5d1ba3*/
-  MSEngine_field_0x8[3](p_MSEngine_field_0x8); /*0x5d1ba8*/
+  q008 = (void (__thiscall **)(void **))this->q008; /*0x5d1ba0*/
+  p_MSEngine_field_0x8 = &this->q008; /*0x5d1ba3*/
+  q008[3](p_MSEngine_field_0x8); /*0x5d1ba8*/
   v11 = (void *)*((_DWORD *)v5 + 1); /*0x5d1bab*/
   *(_DWORD *)v5 = &(void*)(void*)&VectorClass_MSSfx___vftable; /*0x5d1bae*/
   if ( v11 && v5[13] ) /*0x5d1bb9*/
@@ -496,7 +496,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5ad4d3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5ad4d6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5ad4d6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5ad4e0*/
   {
     RA2_OPDEL(v3); /*0x5ad4e8*/
@@ -506,7 +506,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x5ad501*/
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
     RA2_OPDEL(Block); /*0x5ad50b*/
-  return Block->__pad_0; /*0x5ad515*/
+  return Block->q000; /*0x5ad515*/
 }
 } // namespace gamemd
 
@@ -517,7 +517,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x5ad523*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5ad526*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_TRect_int_vftable; /*0x5ad526*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5ad530*/
   {
     RA2_OPDEL(v3); /*0x5ad538*/
@@ -527,7 +527,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
   this->m_8 = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
     RA2_OPDEL(); /*0x5ad55b*/
-  return this->__pad_0; /*0x5ad565*/
+  return this->q000; /*0x5ad565*/
 }
 } // namespace gamemd
 
@@ -535,7 +535,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2, void *a3_1)
 namespace gamemd {
 void MSEngine::DestroyData(void *a1_1)
 {
-  if ( *(_DWORD *)a1_1->__pad_0 ) /*0x5d5850*/
-    free(*(void **)a1_1->__pad_0); /*0x5d5857*/
+  if ( *(_DWORD *)a1_1->q000 ) /*0x5d5850*/
+    free(*(void **)a1_1->q000); /*0x5d5857*/
 }
 } // namespace gamemd

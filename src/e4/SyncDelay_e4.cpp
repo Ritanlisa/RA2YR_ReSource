@@ -47,13 +47,13 @@ signed int SyncDelay::Start(void *a1, void *a2)
   int v25; // [esp+10h] [ebp-14h] BYREF
   _DWORD v26[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v2 = *(_DWORD *)stru_88732C.__pad_1C; /*0x55e160*/
-  v3 = *(_DWORD *)&stru_88732C.__pad_1C[8]; /*0x55e171*/
-  if ( *(_DWORD *)stru_88732C.__pad_1C != -1 ) /*0x55e179*/
+  v2 = *(_DWORD *)stru_88732C.q01C; /*0x55e160*/
+  v3 = *(_DWORD *)&stru_88732C.q01C[8]; /*0x55e171*/
+  if ( *(_DWORD *)stru_88732C.q01C != -1 ) /*0x55e179*/
   {
     Ticks = Timer::GetTicks(); /*0x55e180*/
-    v2 = *(_DWORD *)stru_88732C.__pad_1C; /*0x55e185*/
-    v5 = Ticks - *(_DWORD *)stru_88732C.__pad_1C; /*0x55e18b*/
+    v2 = *(_DWORD *)stru_88732C.q01C; /*0x55e185*/
+    v5 = Ticks - *(_DWORD *)stru_88732C.q01C; /*0x55e18b*/
     if ( v5 >= v3 ) /*0x55e18f*/
       v3 = 0; /*0x55e195*/
     else
@@ -112,10 +112,10 @@ signed int SyncDelay::Start(void *a1, void *a2)
       goto LABEL_38; /*0x55e2a6*/
     goto LABEL_23; /*0x55e2a6*/
   }
-  v12 = *(_DWORD *)&stru_88732C.__pad_1C[8]; /*0x55e2b4*/
+  v12 = *(_DWORD *)&stru_88732C.q01C[8]; /*0x55e2b4*/
   if ( v2 != -1 ) /*0x55e2bc*/
   {
-    v13 = Timer::GetTicks() - *(_DWORD *)stru_88732C.__pad_1C; /*0x55e2c8*/
+    v13 = Timer::GetTicks() - *(_DWORD *)stru_88732C.q01C; /*0x55e2c8*/
     if ( v13 >= v12 ) /*0x55e2d0*/
       goto LABEL_38; /*0x55e2d0*/
     v12 -= v13; /*0x55e2d2*/
@@ -127,26 +127,26 @@ signed int SyncDelay::Start(void *a1, void *a2)
     {
       while ( 1 ) /*0x55e2e3*/
       {
-        v14 = *(_DWORD *)stru_88732C.__pad_1C; /*0x55e2e3*/
-        v15 = *(_DWORD *)&stru_88732C.__pad_1C[8]; /*0x55e2e9*/
-        if ( *(_DWORD *)stru_88732C.__pad_1C != -1 ) /*0x55e2f1*/
+        v14 = *(_DWORD *)stru_88732C.q01C; /*0x55e2e3*/
+        v15 = *(_DWORD *)&stru_88732C.q01C[8]; /*0x55e2e9*/
+        if ( *(_DWORD *)stru_88732C.q01C != -1 ) /*0x55e2f1*/
         {
           v16 = Timer::GetTicks(); /*0x55e2f8*/
-          v14 = *(_DWORD *)stru_88732C.__pad_1C; /*0x55e2fd*/
-          v17 = v16 - *(_DWORD *)stru_88732C.__pad_1C; /*0x55e303*/
+          v14 = *(_DWORD *)stru_88732C.q01C; /*0x55e2fd*/
+          v17 = v16 - *(_DWORD *)stru_88732C.q01C; /*0x55e303*/
           if ( v17 >= v15 ) /*0x55e307*/
             goto LABEL_38; /*0x55e307*/
           v15 -= v17; /*0x55e309*/
         }
         if ( !v15 ) /*0x55e30d*/
           goto LABEL_38; /*0x55e30d*/
-        v18 = *(_DWORD *)&stru_88732C.__pad_1C[8]; /*0x55e30f*/
+        v18 = *(_DWORD *)&stru_88732C.q01C[8]; /*0x55e30f*/
         if ( v14 != -1 ) /*0x55e317*/
           break; /*0x55e317*/
   LABEL_37:
         Sleep(v18); /*0x55e336*/
       }
-      v19 = Timer::GetTicks() - *(_DWORD *)stru_88732C.__pad_1C; /*0x55e323*/
+      v19 = Timer::GetTicks() - *(_DWORD *)stru_88732C.q01C; /*0x55e323*/
       if ( v19 >= v18 ) /*0x55e32b*/
       {
         v18 = 0; /*0x55e334*/

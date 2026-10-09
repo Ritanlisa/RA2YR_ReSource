@@ -502,7 +502,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   int v18; // ebx
   int result; // eax
   int v20; // edx
-  void *MapClass_field_0xF4; // ecx
+  void *q0F4; // ecx
   int v22; // esi
   char *v23; // ebp
   int v24; // eax
@@ -567,16 +567,16 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   }
   result = (__int16)v18; /*0x5679ff*/
   v20 = (__int16)v18 + (__int16)v17; /*0x567a06*/
-  MapClass_field_0xF4 = this->MapClass_field_0xF4; /*0x567a09*/
-  if ( v20 <= (int)MapClass_field_0xF4 ) /*0x567a11*/
+  q0F4 = this->q0F4; /*0x567a09*/
+  if ( v20 <= (int)q0F4 ) /*0x567a11*/
     return result; /*0x567a11*/
-  if ( (__int16)v17 - (__int16)v18 >= (int)MapClass_field_0xF4 ) /*0x567a1d*/
+  if ( (__int16)v17 - (__int16)v18 >= (int)q0F4 ) /*0x567a1d*/
     return result; /*0x567a1d*/
   result = (__int16)v18 - (__int16)v17; /*0x567a23*/
-  if ( result >= (int)MapClass_field_0xF4 ) /*0x567a27*/
+  if ( result >= (int)q0F4 ) /*0x567a27*/
     return result; /*0x567a27*/
   result = *(_DWORD *)this->__pad_F8; /*0x567a2d*/
-  if ( v20 > (int)MapClass_field_0xF4 + 2 * result ) /*0x567a38*/
+  if ( v20 > (int)q0F4 + 2 * result ) /*0x567a38*/
     return result; /*0x567a38*/
   result = radius; /*0x567a3e*/
   if ( !radius ) /*0x567a44*/
@@ -589,7 +589,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
   v22 = dword_7ED3D0[result]; /*0x567a63*/
   v44 = &g_MissionQueueFrame.waypoints[2150]; /*0x567a6a*/
   v23 = &g_MissionQueueFrame.waypoints[822]; /*0x567a72*/
-  if ( !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6126) && arg4 && result > 2 ) /*0x567a8c*/
+  if ( !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6126) && arg4 && result > 2 ) /*0x567a8c*/
   {
     v24 = dword_7ED3C4[result]; /*0x567a8e*/
     v22 -= v24; /*0x567a95*/
@@ -605,7 +605,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
     goto LABEL_27; /*0x567abb*/
   if ( owner != dword_A83D4C ) /*0x567abf*/
   {
-    if ( ((1 << *((_DWORD *)dword_A83D4C->Object_field_0x34 + 46)) & *((_DWORD *)owner + 5433)) != 0 ) /*0x567ad7*/
+    if ( ((1 << *((_DWORD *)dword_A83D4C->q034 + 46)) & *((_DWORD *)owner + 5433)) != 0 ) /*0x567ad7*/
     {
       v25 = (void *)dword_A83D4C; /*0x567ad9*/
       owner = dword_A83D4C; /*0x567adb*/
@@ -613,7 +613,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
     if ( v25 != (void *)dword_A83D4C ) /*0x567ae1*/
     {
       if ( (unsigned __int8)HouseClass::IsAlliedWith(v25, (void *)dword_A83D4C) /*0x567af4*/
-        && *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6119) )
+        && *(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6119) )
       {
         result = (int)dword_A83D4C; /*0x567afe*/
         v25 = (void *)dword_A83D4C; /*0x567b03*/
@@ -638,7 +638,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
       v44 += 4; /*0x567b3c*/
       v30 = *(_WORD *)v29 + v17; /*0x567b43*/
       v31 = v51 + *((_WORD *)v29 + 1); /*0x567b4a*/
-      v32 = this->MapClass_field_0xF4; /*0x567b4f*/
+      v32 = this->q0F4; /*0x567b4f*/
       v53 = ((v53) & 0xFFFF0000u) | ((unsigned int)(v30) & 0xFFFFu); /*0x567b55*/
       v26 += 4; /*0x567b5a*/
       v53 = ((v53) & 0xFFFFu) | (((unsigned int)(v31) & 0xFFFFu) << 16); /*0x567b5d*/
@@ -669,7 +669,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
         if ( (__int16)Math::RoundToInt(v9) <= radius ) /*0x567c0a*/
         {
           v34 = v52[0] + (v52[1] << 9); /*0x567c21*/
-          if ( v34 < 0x40000 && (v35 = (int *)*((_DWORD *)this->MapClass_field_0x13C + v34)) != 0 ) /*0x567c38*/
+          if ( v34 < 0x40000 && (v35 = (int *)*((_DWORD *)this->q13C + v34)) != 0 ) /*0x567c38*/
           {
             v36 = v35; /*0x567c3a*/
           }
@@ -678,7 +678,7 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
             g_MissionQueueFrame.briefing[139] = *(_DWORD *)v52; /*0x567c3e*/
             v36 = &g_MissionQueueFrame.briefing[130]; /*0x567c43*/
           }
-          if ( !arg7 || !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6126) ) /*0x567c56*/
+          if ( !arg7 || !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6126) ) /*0x567c56*/
             goto LABEL_47; /*0x567c56*/
           v57 = ((v57) & 0xFFFF0000u) | ((unsigned int)(v52[0] - v54 + *(_WORD *)v26) & 0xFFFFu); /*0x567c7c*/
           v57 = ((v57) & 0xFFFFu) | (((unsigned int)(v52[1] - v55 + *((_WORD *)v26 + 1)) & 0xFFFFu) << 16); /*0x567c81*/
@@ -706,15 +706,15 @@ int MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, Ce
                 goto LABEL_60; /*0x567d1d*/
               if ( v39 == 7 ) /*0x567d22*/
               {
-                if ( v40 == (char *)this->MapClass_field_0xF4 + 5 ) /*0x567d2f*/
+                if ( v40 == (char *)this->q0F4 + 5 ) /*0x567d2f*/
                   goto LABEL_61; /*0x567d2f*/
               }
-              else if ( v39 == 13 && v40 == (char *)this->MapClass_field_0xF4 + 11 ) /*0x567d43*/
+              else if ( v39 == 13 && v40 == (char *)this->q0F4 + 11 ) /*0x567d43*/
               {
                 goto LABEL_61; /*0x567d43*/
               }
               v42 = *(_DWORD *)this->__pad_F8; /*0x567d45*/
-              if ( v39 != v42 + 13 || v40 != (char *)this->MapClass_field_0xF4 + v42 - 15 ) /*0x567d5e*/
+              if ( v39 != v42 + 13 || v40 != (char *)this->q0F4 + v42 - 15 ) /*0x567d5e*/
   LABEL_60:
                 Conditions::CheckResult3((RadarClass *)v52, (int)owner, arg8); /*0x567d60*/
             }
@@ -816,7 +816,7 @@ int MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, ui
       v22 = (__int16)v28 + v21 < 0; /*0x567ed7*/
       v23 = (__int16)v28 + v21; /*0x567ed7*/
       a5 = v28; /*0x567ed9*/
-      if ( v22 || v23 >= 0x40000 || (v24 = (int *)*((_DWORD *)this->MapClass_field_0x13C + v23)) == 0 ) /*0x567ef5*/
+      if ( v22 || v23 >= 0x40000 || (v24 = (int *)*((_DWORD *)this->q13C + v23)) == 0 ) /*0x567ef5*/
       {
         g_MissionQueueFrame.briefing[139] = v28; /*0x567f0f*/
         v25 = &g_MissionQueueFrame.briefing[130]; /*0x567f15*/

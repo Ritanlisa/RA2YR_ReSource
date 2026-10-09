@@ -21,5 +21,6 @@ struct E4Recv_50DA40 {
     unsigned int q464390591787114616444907551711572278;  // 0x464390591787114616444907551711572278
 // --- flat members (END) ---
     int sub_50DA40(int a2);  // 0x50DA40
+    unsigned int u32_54F8;  // 0x54F8 (offset-truth supply)
 };
 } // namespace gamemd

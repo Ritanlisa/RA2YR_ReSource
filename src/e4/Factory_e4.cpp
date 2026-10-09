@@ -45,11 +45,11 @@ int Factory::GetLinkedIndex(int aP1)
   }
   else
   {
-    v3 = this->field_10; /*0x663d70*/
+    v3 = this->q010; /*0x663d70*/
     result = 0; /*0x663d73*/
     if ( (int)v3 <= 0 ) /*0x663d79*/
       goto LABEL_9; /*0x663d79*/
-    v4 = (char **)this->field_4; /*0x663d7b*/
+    v4 = (char **)this->q004; /*0x663d7b*/
     for ( i = v4; aP1 != **i; ++i ) /*0x663d7e*/
     {
       if ( ++result >= (int)v3 ) /*0x663d8f*/
@@ -157,17 +157,17 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
   {
     (*(void (__stdcall **)(_DWORD *))(*(_DWORD *)v6[3] + 244))(v6 + 10); /*0x718ba5*/
   }
-  v73[0] = *(_DWORD *)this->__pad_0; /*0x718bdf*/
-  v11 = *(_DWORD *)this->__pad_0; /*0x718be3*/
-  v73[1] = this->field_4; /*0x718be8*/
-  v74 = this->field_8; /*0x718bef*/
+  v73[0] = *(_DWORD *)this->q000; /*0x718bdf*/
+  v11 = *(_DWORD *)this->q000; /*0x718be3*/
+  v73[1] = this->q004; /*0x718be8*/
+  v74 = this->q008; /*0x718bef*/
   if ( v11 == g_BuildingLoadQueue_Array.BuildLimit /*0x718c13*/
-    && this->field_4 == (void *)g_BuildingLoadQueue_Array.Category[0]
-    && this->field_8 == (void *)g_BuildingLoadQueue_Array.unknown_3C0[0] )
+    && this->q004 == (void *)g_BuildingLoadQueue_Array.Category[0]
+    && this->q008 == (void *)g_BuildingLoadQueue_Array.unknown_3C0[0] )
   {
-    *v8 = *(_DWORD *)this->__pad_0; /*0x71923b*/
-    v6[11] = this->field_4; /*0x719240*/
-    v6[12] = this->field_8; /*0x719246*/
+    *v8 = *(_DWORD *)this->q000; /*0x71923b*/
+    v6[11] = this->q004; /*0x719240*/
+    v6[12] = this->q008; /*0x719246*/
   }
   else
   {
@@ -197,8 +197,8 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         {
           if ( (*(int (__thiscall **)(_DWORD))(*v71->fallRate)(*(_DWORD *)v71) == 1 ) /*0x718d02*/
           {
-            v15 = *(_DWORD *)this->__pad_0; /*0x718d13*/
-            v70 = (int)this->field_4 / 256; /*0x718d28*/
+            v15 = *(_DWORD *)this->q000; /*0x718d13*/
+            v70 = (int)this->q004 / 256; /*0x718d28*/
             if ( *(_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)v71 + 440))(*(_DWORD *)v71, v73) == IDA___PAIR32__(v70, v15 / 256) ) /*0x718d3c*/
               IDA_LOBYTE(a5) = 1; /*0x718d49*/
           }
@@ -209,9 +209,9 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
         {
           if ( (*(int (__thiscall **)(int))(*(_DWORD *)v16 + 44))(v16) == 2 ) /*0x718d67*/
           {
-            v17 = *(_DWORD *)this->__pad_0; /*0x718d78*/
+            v17 = *(_DWORD *)this->q000; /*0x718d78*/
             v18 = **(_DWORD **)v71; /*0x718d86*/
-            v70 = (int)this->field_4 / 256; /*0x718d8b*/
+            v70 = (int)this->q004 / 256; /*0x718d8b*/
             if ( *(_DWORD *)(*(int (__stdcall **)(_DWORD *))(v18 + 440))(v73) == IDA___PAIR32__(v70, v17 / 256) ) /*0x718da1*/
               IDA_LOBYTE(a5) = 1; /*0x718dae*/
           }
@@ -325,8 +325,8 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
       else
       {
         v42 = *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v41 + 132))(v41) + 1460); /*0x7190b0*/
-        v43 = *(_DWORD *)this->__pad_0 / 256; /*0x7190cf*/
-        v44 = (int)this->field_4 / 256; /*0x7190d2*/
+        v43 = *(_DWORD *)this->q000 / 256; /*0x7190cf*/
+        v44 = (int)this->q004 / 256; /*0x7190d2*/
         IDA_LOWORD(this) = v43; /*0x7190dc*/
         IDA_HIWORD(this) = v44; /*0x7190e1*/
         if ( IDA___PAIR32__(v44, v43) != g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x7190ee*/
@@ -401,14 +401,14 @@ int Factory::FindExitCellByName()
 {
   int v2; // esi
 
-  if ( !_strcmpi(this->__pad_0, g_Str__none_) ) /*0x523c9a*/
+  if ( !_strcmpi(this->q000, g_Str__none_) ) /*0x523c9a*/
     return -1; /*0x523c9a*/
-  if ( !_strcmpi(this->__pad_0, g_Str_none) ) /*0x523cac*/
+  if ( !_strcmpi(this->q000, g_Str_none) ) /*0x523cac*/
     return -1; /*0x523cac*/
   v2 = 0; /*0x523cbd*/
   if ( dword_A8E358 <= 0 ) /*0x523cc1*/
     return -1; /*0x523ce6*/
-  while ( _strcmpi((char *)(*((_DWORD *)dword_A8E34C + v2) + 36), this->__pad_0) ) /*0x523cda*/
+  while ( _strcmpi((char *)(*((_DWORD *)dword_A8E34C + v2) + 36), this->q000) ) /*0x523cda*/
   {
     if ( ++v2 >= dword_A8E358 ) /*0x523ce4*/
       return -1; /*0x523ce4*/

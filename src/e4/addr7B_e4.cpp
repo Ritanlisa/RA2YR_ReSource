@@ -1074,17 +1074,17 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   *a6 = 0; /*0x7bc05a*/
   *a7 = 0; /*0x7bc05d*/
   *a8 = 0; /*0x7bc063*/
-  v11 = *(_DWORD *)aP2->__pad_8; /*0x7bc069*/
+  v11 = *(_DWORD *)aP2->q008; /*0x7bc069*/
   v26[0] = a1; /*0x7bc06f*/
   v25[0] = ecx0; /*0x7bc073*/
   if ( v11 <= 0 /*0x7bc0d8*/
-    || *(int *)&aP2->__pad_8[4] <= 0
-    || *(int *)a1->__pad_8 <= 0
-    || *(int *)&a1->__pad_8[4] <= 0
-    || *(int *)aP5->__pad_8 <= 0
-    || *(int *)&aP5->__pad_8[4] <= 0
-    || *(int *)a4->__pad_8 <= 0
-    || *(int *)&a4->__pad_8[4] <= 0
+    || *(int *)&aP2->q008[4] <= 0
+    || *(int *)a1->q008 <= 0
+    || *(int *)&a1->q008[4] <= 0
+    || *(int *)aP5->q008 <= 0
+    || *(int *)&aP5->q008[4] <= 0
+    || *(int *)a4->q008 <= 0
+    || *(int *)&a4->q008[4] <= 0
     || !(unsigned __int8)IntersectSurfaceRects(&aP2->field_0, (int)a1, &aP5->field_0, (int)a4) )
   {
     return 0; /*0x7bc0d8*/
@@ -1094,13 +1094,13 @@ void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, int * a
   {
     v12 = aP2->field_0; /*0x7bc0f4*/
     v13 = aP5->field_0; /*0x7bc0f9*/
-    if ( aP5->field_0 < aP2->field_0 + *(_DWORD *)aP2->__pad_8 ) /*0x7bc0ff*/
+    if ( aP5->field_0 < aP2->field_0 + *(_DWORD *)aP2->q008 ) /*0x7bc0ff*/
     {
-      v14 = (int)aP2->field_4; /*0x7bc101*/
-      v15 = (int)aP5->field_4; /*0x7bc107*/
-      if ( v15 < v14 + *(_DWORD *)&aP2->__pad_8[4] /*0x7bc12a*/
-        && *(_DWORD *)aP5->__pad_8 + v13 > v12
-        && *(_DWORD *)&aP5->__pad_8[4] + v15 > v14
+      v14 = (int)aP2->q004; /*0x7bc101*/
+      v15 = (int)aP5->q004; /*0x7bc107*/
+      if ( v15 < v14 + *(_DWORD *)&aP2->q008[4] /*0x7bc12a*/
+        && *(_DWORD *)aP5->q008 + v13 > v12
+        && *(_DWORD *)&aP5->q008[4] + v15 > v14
         && (v15 < v14 || v15 == v14 && v13 < v12) )
       {
         *a6 = 1; /*0x7bc130*/
@@ -1861,7 +1861,7 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
 
   v3 = 0; /*0x7b03a2*/
   v7[3] = 0; /*0x7b03a6*/
-  FindWDTTerritoryClass_Find((char *)stru_B77F68.ComPtr_field_0x04, v7, a2); /*0x7b03aa*/
+  FindWDTTerritoryClass_Find((char *)stru_B77F68.q004, v7, a2); /*0x7b03aa*/
   if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(v7[0] + 4))(v7) ) /*0x7b03b7*/
   {
     v4 = (_DWORD *)(*(_DWORD *)(*(_DWORD *)(v7[1] + 4) + 8 * v7[2] + 4) + 8); /*0x7b03d0*/
@@ -3231,7 +3231,7 @@ BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(unsigned int * Bl
 namespace gamemd {
 int E4Recv_7BC6C0::sub_7BC6C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTrans_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x7bc6ea*/
+  return (*(int (__thiscall **)(_BlitTrans_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x7bc6ea*/
            this,
            a2,
            a3,
@@ -3248,7 +3248,7 @@ int E4Recv_7BC6C0::sub_7BC6C0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_7BC6F0::sub_7BC6F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTrans_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x7bc71a*/
+  return (*(int (__thiscall **)(_BlitTrans_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x7bc71a*/
            this,
            a2,
            a3,
@@ -3265,7 +3265,7 @@ int E4Recv_7BC6F0::sub_7BC6F0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_7BC720::sub_7BC720(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTrans_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x7bc74a*/
+  return (*(int (__thiscall **)(_BlitTrans_E *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x7bc74a*/
            this,
            a2,
            a3,
@@ -3361,7 +3361,7 @@ short sub_7BC890(unsigned short * a1, short * a2, int a3, int a4, int a5, int a6
     {
       result = *a2++; /*0x7bc8a3*/
       if ( result ) /*0x7bc8ac*/
-        *(_WORD *)a1->__pad_0 = result; /*0x7bc8ae*/
+        *(_WORD *)a1->q000 = result; /*0x7bc8ae*/
       a1 = (_BlitTrans_G *)((char *)a1 + 2); /*0x7bc8b1*/
       --v11; /*0x7bc8b4*/
     }
@@ -3375,7 +3375,7 @@ short sub_7BC890(unsigned short * a1, short * a2, int a3, int a4, int a5, int a6
 namespace gamemd {
 int E4Recv_7BC8C0::sub_7BC8C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTrans_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x7bc8ea*/
+  return (*(int (__thiscall **)(_BlitTrans_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x7bc8ea*/
            this,
            a2,
            a3,
@@ -3392,7 +3392,7 @@ int E4Recv_7BC8C0::sub_7BC8C0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_7BC8F0::sub_7BC8F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTrans_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x7bc91a*/
+  return (*(int (__thiscall **)(_BlitTrans_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x7bc91a*/
            this,
            a2,
            a3,
@@ -3409,7 +3409,7 @@ int E4Recv_7BC8F0::sub_7BC8F0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_7BC920::sub_7BC920(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTrans_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x7bc94a*/
+  return (*(int (__thiscall **)(_BlitTrans_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x7bc94a*/
            this,
            a2,
            a3,

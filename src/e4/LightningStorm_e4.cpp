@@ -86,7 +86,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
         v10 = 3; /*0x53a023*/
         if ( dword_A83D4C ) /*0x53a02a*/
           v10 = *(_DWORD *)&dword_A83D4C[134].__pad_90[4]; /*0x53a02c*/
-        PlayVocClass(*(_DWORD *)&dword_8871E0->__pad_704[44], 0x2000, 1.0, 0); /*0x53a044*/
+        PlayVocClass(*(_DWORD *)&dword_8871E0->q704[44], 0x2000, 1.0, 0); /*0x53a044*/
         StringCSF = GetStringCSF(aTxtLightningSt, 0, g_Str_File_Ion_cpp, 531); /*0x53a067*/
         MessageListClass::AddMessage(&unk_A8BC60, 0, 0, StringCSF, v10, 16454, 150, 0); /*0x53a076*/
       }

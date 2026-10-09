@@ -35,14 +35,14 @@ CampaignClass * RadarClass::Destruct()
   MapClass **p_RadarClass_field_0x1488; // esi
   int v3; // ebp
   void *v4; // eax
-  CampaignClass *RadarClass_field_0x1260; // eax
-  CampaignClass *RadarClass_field_0x1228; // eax
+  CampaignClass *ptr_1260; // eax
+  CampaignClass *ptr_1228; // eax
   int result; // eax
 
   this->RadarClass_field_0x0 = &(void*)(void*)&RadarClass_vftable; /*0x652c0c*/
-  AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
+  AudioFileClass::Release((AudioFileClass *)&this->q14C0); /*0x652c12*/
   TacticalClass::FreeResources(); /*0x652c19*/
-  p_RadarClass_field_0x1488 = &this->RadarClass_field_0x1488; /*0x652c1e*/
+  p_RadarClass_field_0x1488 = &this->q1488; /*0x652c1e*/
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
@@ -59,24 +59,24 @@ CampaignClass * RadarClass::Destruct()
     p_RadarClass_field_0x1488[2] = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x652c55*/
-  this->RadarClass_field_0x125C = (VectorClass *)&(void*)(void*)&VectorClass_Point2D_vftable; /*0x652c5b*/
-  if ( RadarClass_field_0x1260 && this->__pad_1264[5] ) /*0x652c69*/
+  ptr_1260 = this->ptr_1260; /*0x652c55*/
+  this->q125C = (VectorClass *)&(void*)(void*)&VectorClass_Point2D_vftable; /*0x652c5b*/
+  if ( ptr_1260 && this->__pad_1264[5] ) /*0x652c69*/
   {
-    RA2_OPDEL(RadarClass_field_0x1260); /*0x652c72*/
-    this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
+    RA2_OPDEL(ptr_1260); /*0x652c72*/
+    this->ptr_1260 = 0; /*0x652c7a*/
   }
   this->__pad_1264[5] = 0; /*0x652c80*/
   *(_DWORD *)this->__pad_1264 = 0; /*0x652c86*/
-  RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
-  this->RadarClass_field_0x1224 = (VectorClass *)&(void*)(void*)&VectorClass_Cell_vftable; /*0x652c92*/
-  if ( RadarClass_field_0x1228 && this->__pad_122C[5] ) /*0x652ca0*/
+  ptr_1228 = this->ptr_1228; /*0x652c8c*/
+  this->q1224 = (VectorClass *)&(void*)(void*)&VectorClass_Cell_vftable; /*0x652c92*/
+  if ( ptr_1228 && this->q122C[5] ) /*0x652ca0*/
   {
-    RA2_OPDEL(RadarClass_field_0x1228); /*0x652ca9*/
-    this->RadarClass_field_0x1228 = 0; /*0x652cb1*/
+    RA2_OPDEL(ptr_1228); /*0x652ca9*/
+    this->ptr_1228 = 0; /*0x652cb1*/
   }
-  this->__pad_122C[5] = 0; /*0x652cb9*/
-  *(_DWORD *)this->__pad_122C = 0; /*0x652cbf*/
+  this->q122C[5] = 0; /*0x652cb9*/
+  *(_DWORD *)this->q122C = 0; /*0x652cbf*/
   MapClass::Destruct(); /*0x652cc5*/
   return result; /*0x652cca*/
 }
@@ -366,9 +366,9 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 namespace gamemd {
 unsigned int * RadarClass::initRadarSurface()
 {
-  this->RadarClass_field_0x4 = 0; /*0x4f4224*/
-  this->RadarClass_field_0x8 = 0; /*0x4f4227*/
-  *(_DWORD *)this->__pad_C = 2; /*0x4f422a*/
+  this->q004 = 0; /*0x4f4224*/
+  this->q008 = 0; /*0x4f4227*/
+  *(_DWORD *)this->q00C = 2; /*0x4f422a*/
   this->RadarClass_field_0x0 = &off_7EA6FC; /*0x4f4231*/
   return &this->RadarClass_field_0x0; /*0x4f4237*/
 }

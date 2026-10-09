@@ -187,7 +187,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVPlanningNodeClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x63e3f2*/
+    (*(void (__thiscall **)(_VectorClass_PAVPlanningNodeClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x63e3f2*/
     return 1; /*0x63e3f8*/
   }
 }
@@ -279,7 +279,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x63e51e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x63e51e*/
   }
   v7 = this->m_8; /*0x63e521*/
   if ( v7 < this->m_10 ) /*0x63e529*/
@@ -380,7 +380,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVEventClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x63e732*/
+    (*(void (__thiscall **)(_VectorClass_PAVEventClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x63e732*/
     return 1; /*0x63e738*/
   }
 }
@@ -472,7 +472,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVEventClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x63e85e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVEventClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x63e85e*/
   }
   v7 = this->m_8; /*0x63e861*/
   if ( v7 < this->m_10 ) /*0x63e869*/
@@ -539,7 +539,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x63eb5e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x63eb5e*/
   }
   v7 = this->m_8; /*0x63eb61*/
   if ( v7 < this->m_10 ) /*0x63eb69*/
@@ -576,7 +576,7 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ed93*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ed96*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ed96*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x63eda0*/
   {
     RA2_OPDEL(v3); /*0x63eda8*/
@@ -586,7 +586,7 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x63edc1*/
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
     RA2_OPDEL(Block); /*0x63edcb*/
-  return Block->__pad_0; /*0x63edd5*/
+  return Block->q000; /*0x63edd5*/
 }
 } // namespace gamemd
 
@@ -597,7 +597,7 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ede3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ede6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ede6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x63edf0*/
   {
     RA2_OPDEL(v3); /*0x63edf8*/
@@ -607,7 +607,7 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x63ee11*/
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
     RA2_OPDEL(Block); /*0x63ee1b*/
-  return Block->__pad_0; /*0x63ee25*/
+  return Block->q000; /*0x63ee25*/
 }
 } // namespace gamemd
 
@@ -618,7 +618,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ee33*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_EventClass___vftable; /*0x63ee36*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_EventClass___vftable; /*0x63ee36*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x63ee40*/
   {
     RA2_OPDEL(v3); /*0x63ee48*/
@@ -628,7 +628,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x63ee61*/
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
     RA2_OPDEL(Block); /*0x63ee6b*/
-  return Block->__pad_0; /*0x63ee75*/
+  return Block->q000; /*0x63ee75*/
 }
 } // namespace gamemd
 
@@ -639,7 +639,7 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ee83*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_EventClass___vftable; /*0x63ee86*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_EventClass___vftable; /*0x63ee86*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x63ee90*/
   {
     RA2_OPDEL(v3); /*0x63ee98*/
@@ -649,7 +649,7 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x63eeb1*/
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
     RA2_OPDEL(Block); /*0x63eebb*/
-  return Block->__pad_0; /*0x63eec5*/
+  return Block->q000; /*0x63eec5*/
 }
 } // namespace gamemd
 
@@ -660,7 +660,7 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ef23*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_PlanningTokenClass___vftable; /*0x63ef26*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_PlanningTokenClass___vftable; /*0x63ef26*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x63ef30*/
   {
     RA2_OPDEL(v3); /*0x63ef38*/
@@ -670,6 +670,6 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x63ef51*/
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
     RA2_OPDEL(Block); /*0x63ef5b*/
-  return Block->__pad_0; /*0x63ef65*/
+  return Block->q000; /*0x63ef65*/
 }
 } // namespace gamemd

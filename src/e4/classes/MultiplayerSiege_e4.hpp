@@ -21,6 +21,7 @@ struct MultiplayerSiege {
     char StubReturnFalse();
     short Read(void *a1, void *a2);
     int Write(void ** a1);
+    int MultiplayerSiege_field_00;  // 0x0 (ml)
 };
 
 } // namespace gamemd

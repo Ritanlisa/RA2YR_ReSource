@@ -75,7 +75,7 @@ namespace gamemd {
 struct Matrix3D
 {
     float Data[12] = {};  // data: 0x840b4c
-    unsigned char __pad_0;  // 0x0
+    unsigned char q000;  // 0x0
     unsigned int q080;  // 0x80
     unsigned int u32_0;   // 0x0 (g57w10 r4: raw RotateZ 0x5af0aa fld [esi] float element vocab)
     unsigned int u32_8;   // 0x8 (raw fld [esi+8])
@@ -173,7 +173,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->targetingTimer[2] = 45; /*0x6f2c39*/
   v5 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6f2c43*/
   this->ironCurtainTimer[1] = 0; /*0x6f2c49*/
-  *(_DWORD *)this->__pad_18C = v5; /*0x6f2c4f*/
+  *(_DWORD *)this->q18C = v5; /*0x6f2c4f*/
   this->ironCurtainTimer[2] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6f2c5b*/
   this->ironTintTimer[1] = 0; /*0x6f2c61*/
   this->ironTintTimer[2] = 10; /*0x6f2c67*/
@@ -381,16 +381,16 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
     v10 = (*(_DWORD *)&stru_A8EB00.?[164])++; /*0x6f31c3*/
     *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[152] + 4 * v10) = this; /*0x6f31d2*/
   }
-  if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E88[16] < *(int *)&g_BuildingLoadQueue_Array.__pad_E88[8] /*0x6f3209*/
-    || (g_BuildingLoadQueue_Array.__pad_E88[13] || !*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E88[8])
-    && *(int *)&g_BuildingLoadQueue_Array.__pad_E88[20] > 0
-    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)g_BuildingLoadQueue_Array.__pad_E88 + 8))(
-         g_BuildingLoadQueue_Array.__pad_E88,
-         *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E88[20] + *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E88[8],
+  if ( *(int *)&g_BuildingLoadQueue_Array.qE88[16] < *(int *)&g_BuildingLoadQueue_Array.qE88[8] /*0x6f3209*/
+    || (g_BuildingLoadQueue_Array.qE88[13] || !*(_DWORD *)&g_BuildingLoadQueue_Array.qE88[8])
+    && *(int *)&g_BuildingLoadQueue_Array.qE88[20] > 0
+    && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)g_BuildingLoadQueue_Array.qE88 + 8))(
+         g_BuildingLoadQueue_Array.qE88,
+         *(_DWORD *)&g_BuildingLoadQueue_Array.qE88[20] + *(_DWORD *)&g_BuildingLoadQueue_Array.qE88[8],
          0) )
   {
-    v11 = (*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E88[16])++; /*0x6f3216*/
-    *(_DWORD *)(*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E88[4] + 4 * v11) = this; /*0x6f3225*/
+    v11 = (*(_DWORD *)&g_BuildingLoadQueue_Array.qE88[16])++; /*0x6f3216*/
+    *(_DWORD *)(*(_DWORD *)&g_BuildingLoadQueue_Array.qE88[4] + 4 * v11) = this; /*0x6f3225*/
   }
   IDA_LOBYTE(this->abstractFlags) |= 1u; /*0x6f3237*/
   this->initialOwner = (HouseClass *)aP1; /*0x6f3241*/
@@ -542,13 +542,13 @@ unsigned int * TechnoClass::Update(int a2)
       if ( sideIndex ) /*0x6f4237*/
       {
         if ( sideIndex == 1 ) /*0x6f4250*/
-          v3->disguiseAsType = *(ObjectTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3420); /*0x6f425d*/
+          v3->disguiseAsType = *(ObjectTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3420); /*0x6f425d*/
         else
-          v3->disguiseAsType = *(ObjectTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3424); /*0x6f4271*/
+          v3->disguiseAsType = *(ObjectTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3424); /*0x6f4271*/
       }
       else
       {
-        v3->disguiseAsType = *(ObjectTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3416); /*0x6f4245*/
+        v3->disguiseAsType = *(ObjectTypeClass **)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 3416); /*0x6f4245*/
       }
     }
     v25 = (_DWORD *)(*((int (__thiscall **)(TechnoClass *))v3->vfptr + 33))(v3); /*0x6f427b*/
@@ -647,11 +647,11 @@ int TechnoClass::DTOR()
   v9 = (*(int (__thiscall **)(_BYTE *, int *))(*(_DWORD *)&stru_A8EB00.?[148] + 16))(&stru_A8EB00.?[148], &this); /*0x6f462c*/
   if ( v9 != -1 ) /*0x6f4633*/
     FactoryClass::RemoveItem((FactoryClass *)&stru_A8EB00.?[148], v9); /*0x6f463b*/
-  v10 = (*(int (__thiscall **)(char *, int *))(*(_DWORD *)g_BuildingLoadQueue_Array.__pad_E88 + 16))( /*0x6f4654*/
-          g_BuildingLoadQueue_Array.__pad_E88,
+  v10 = (*(int (__thiscall **)(char *, int *))(*(_DWORD *)g_BuildingLoadQueue_Array.qE88 + 16))( /*0x6f4654*/
+          g_BuildingLoadQueue_Array.qE88,
           &this);
   if ( v10 != -1 ) /*0x6f465a*/
-    DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.__pad_E88, v10); /*0x6f4662*/
+    DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.qE88, v10); /*0x6f4662*/
   v11 = this->behindAnim; /*0x6f4667*/
   if ( v11 ) /*0x6f466f*/
   {
@@ -883,7 +883,7 @@ Coord * * TechnoClass::RegisterKill()
         if ( !*(_BYTE *)(result + 562) ) /*0x70303f*/
         {
           if ( this->u32_53C != -1 ) /*0x703054*/
-            ++*(_DWORD *)this->owner->__pad_5488; /*0x70305c*/
+            ++*(_DWORD *)this->owner->q5488; /*0x70305c*/
           if ( v28 && !*(_BYTE *)((*((int (__thiscall **)(TechnoClass *))this->vfptr + 33))(this) + 3231) ) /*0x703070*/
           {
             HouseClass::IncrementStat( /*0x703093*/
@@ -1209,8 +1209,8 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
     v32 = aP8; /*0x73b333*/
     v40 = dword_B1CFC4; /*0x73b339*/
     v30 = (*(int (__thiscall **)(int *, _DWORD, int))(v20 + 748))(v12, 0, aP7) - 5; /*0x73b34a*/
-    v21 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x73b35a*/
-    BlitterCopySHP(a1, &aP4, &v43, (int *)g_DSurface_Hidden_2->__pad_0, v21, &v48, v41, SHPFrame, v30, v32, v37, v35); /*0x73b377*/
+    v21 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))(g_DSurface_Hidden_2); /*0x73b35a*/
+    BlitterCopySHP(a1, &aP4, &v43, (int *)g_DSurface_Hidden_2->q000, v21, &v48, v41, SHPFrame, v30, v32, v37, v35); /*0x73b377*/
     v22 = v46 + v44; /*0x73b388*/
     v23 = v46 + v41[0]; /*0x73b38a*/
     v46 = 16; /*0x73b391*/
@@ -1219,12 +1219,12 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
     v41[0] = v23; /*0x73b3a6*/
     v34 = a10; /*0x73b3ac*/
     v28 = (*(int (__thiscall **)(int *))(*v12 + 748))(v12); /*0x73b3be*/
-    v24 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x73b3cc*/
+    v24 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))(g_DSurface_Hidden_2); /*0x73b3cc*/
     return BlitterCopySHP( /*0x73b3e5*/
              a1,
              &aP3,
              &v42,
-             (int *)g_DSurface_Hidden_2->__pad_0,
+             (int *)g_DSurface_Hidden_2->q000,
              v24,
              &v47,
              &v40,
@@ -1240,12 +1240,12 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
     v31 = aP7; /*0x73b404*/
     v26 = (*(int (__thiscall **)(int *))(*v12 + 752))(v12); /*0x73b407*/
     v29 = (*(int (__thiscall **)(int *, int))(*v12 + 748))(v12, v26); /*0x73b41e*/
-    v27 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x73b42c*/
+    v27 = (*(int (__thiscall **)(AudioStream *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))(g_DSurface_Hidden_2); /*0x73b42c*/
     return BlitterCopySHP( /*0x73b446*/
              (int *)a0,
              &aP3,
              &v42,
-             (int *)g_DSurface_Hidden_2->__pad_0,
+             (int *)g_DSurface_Hidden_2->q000,
              v27,
              &v47,
              &dword_B1CFC0,
@@ -1974,7 +1974,7 @@ v93 = *(unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v78 + 48))
         (int)&v123);
     }
   }
-  return (*(int (**)(ObjectClass *, unsigned int *, unsigned int))(*(unsigned int *)v116->__pad_0 + 20))( (ObjectClass *)(v116), (unsigned int *)(v143), 0);
+  return (*(int (**)(ObjectClass *, unsigned int *, unsigned int))(*(unsigned int *)v116->q000 + 20))( (ObjectClass *)(v116), (unsigned int *)(v143), 0);
 }
 } // namespace gamemd
 

@@ -34,5 +34,9 @@ struct MSFont_18 {
     unsigned int PointerToIndex(int a2);  // 0x5D50B0
     unsigned int PointerToIndex8(int a2);  // 0x5D5110
     unsigned int Draw(int a2);  // 0x5D52B0
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
 };
 } // namespace gamemd

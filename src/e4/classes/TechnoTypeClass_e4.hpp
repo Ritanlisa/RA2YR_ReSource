@@ -973,6 +973,23 @@ struct TechnoTypeClass {
     TechnoTypeClass * ddtor(void * Block, char a2);
     unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2, void *a3);
     TechnoTypeClass * * sub_404BB0();
+    unsigned char DynamicVector_field_0x1;  // 0x1 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q010;  // 0x10 (offset-truth supply)
+    unsigned int q024;  // 0x24 (offset-truth supply)
+    int q1504;  // 0x5380 (ml)
+    unsigned char q16C2;  // 0x16C2 (offset-truth supply)
+    IUnknown* q1884;  // 0x6276 (ml)
+    unsigned int u32_1900;  // 0x1900 (offset-truth supply)
+    unsigned int u32_1A00;  // 0x1A00 (offset-truth supply)
+    unsigned int u32_1A04;  // 0x1A04 (offset-truth supply)
+    unsigned int u32_1B80;  // 0x1B80 (offset-truth supply)
+    unsigned int u32_1C08;  // 0x1C08 (offset-truth supply)
+    unsigned int u32_8588;  // 0x8588 (offset-truth supply)
+    unsigned char u32_8589;  // 0x8589 (offset-truth supply)
+    unsigned int u32_85C0;  // 0x85C0 (offset-truth supply)
+    unsigned char u32_85C1;  // 0x85C1 (offset-truth supply)
+    unsigned char u32_85C2;  // 0x85C2 (offset-truth supply)
 };
 
 } // namespace gamemd

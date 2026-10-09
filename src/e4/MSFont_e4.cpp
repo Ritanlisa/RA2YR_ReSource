@@ -109,7 +109,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_UAcceleratorTracker *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d5678*/
+    (*(void (__thiscall **)(_DynamicVectorClass_UAcceleratorTracker *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d5678*/
   }
   v15 = this->m_8; /*0x5d567b*/
   if ( v15 < this->m_10 ) /*0x5d5683*/
@@ -265,7 +265,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAUHWND *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d5232*/
+    (*(void (__thiscall **)(_VectorClass_PAUHWND *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d5232*/
     return 1; /*0x5d5238*/
   }
 }
@@ -357,7 +357,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUHWND *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d535e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUHWND *))(*(_DWORD *)this->q000 + 12))(this); /*0x5d535e*/
   }
   v7 = this->m_8; /*0x5d5361*/
   if ( v7 < this->m_10 ) /*0x5d5369*/
@@ -413,7 +413,7 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d56e3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d56f0*/
   {
     RA2_OPDEL(v3); /*0x5d56f8*/
@@ -423,7 +423,7 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
     RA2_OPDEL(Block); /*0x5d571b*/
-  return Block->__pad_0; /*0x5d5725*/
+  return Block->q000; /*0x5d5725*/
 }
 } // namespace gamemd
 
@@ -434,7 +434,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d5733*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d5740*/
   {
     RA2_OPDEL(v3); /*0x5d5748*/
@@ -444,7 +444,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
   Block->m_8 = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
     RA2_OPDEL(Block); /*0x5d576b*/
-  return Block->__pad_0; /*0x5d5775*/
+  return Block->q000; /*0x5d5775*/
 }
 } // namespace gamemd
 
@@ -455,7 +455,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d57d3*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x5d57e0*/
   {
     RA2_OPDEL(v3); /*0x5d57e8*/
@@ -465,6 +465,6 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
   Block->m_8 = 0; /*0x5d5801*/
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
     RA2_OPDEL(Block); /*0x5d580b*/
-  return Block->__pad_0; /*0x5d5815*/
+  return Block->q000; /*0x5d5815*/
 }
 } // namespace gamemd

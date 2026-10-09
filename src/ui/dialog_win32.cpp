@@ -459,10 +459,10 @@ void HandleLauncherMessage(int msg_data)
 }
 
 // IDA 0x5F3450: Dialog::CheckButtonState — check modem button dialog state
-// Reads vtable-based GetState + SetState from g_ClipboardBuffer (internal dialog data)
+// Reads q000-based GetState + SetState from g_ClipboardBuffer (internal dialog data)
 uint32_t CheckButtonState()
 {
-    // IDA: vtable call to get state, then check if specific button is pressed
+    // IDA: q000 call to get state, then check if specific button is pressed
     // Returns modified flags (clears bit 7 if button is down)
     return 0;  // STUB
 }

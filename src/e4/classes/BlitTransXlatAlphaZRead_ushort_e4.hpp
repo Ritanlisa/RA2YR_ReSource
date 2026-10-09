@@ -50,6 +50,10 @@ struct BlitTransXlatAlphaZRead_ushort {
     std::locale::facet * Constructor_Blitter_2(char a2);
     unsigned short * Blit_Alpha_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
     unsigned short * Blit_Alpha_Lucent50_0(unsigned short * a1, unsigned char * a2, int a4, int a5, int _14, unsigned short * a6, int a8, int a9);
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_4;  // 0x4 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
 };
 
 } // namespace gamemd

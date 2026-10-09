@@ -59,6 +59,7 @@ struct BulletData
     TimerStruct  ArmTimer;
     CoordStruct  Location;
     int32_t      Distance;
+    void* q10C;  // 0x268
 };
 
 using BulletVelocity = Vector3D<double>;

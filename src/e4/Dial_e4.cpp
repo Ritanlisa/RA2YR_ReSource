@@ -118,7 +118,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVDiskLaserClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4a7e62*/
+    (*(void (__thiscall **)(_VectorClass_PAVDiskLaserClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x4a7e62*/
     return 1; /*0x4a7e68*/
   }
 }
@@ -210,7 +210,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVDiskLaserClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVDiskLaserClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x4a7f8e*/
   }
   v7 = this->m_8; /*0x4a7f91*/
   if ( v7 < this->m_10 ) /*0x4a7f99*/
@@ -246,7 +246,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4a8033*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8036*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8036*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4a8040*/
   {
     RA2_OPDEL(v3); /*0x4a8048*/
@@ -256,7 +256,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
     RA2_OPDEL(Block); /*0x4a806b*/
-  return Block->__pad_0; /*0x4a8075*/
+  return Block->q000; /*0x4a8075*/
 }
 } // namespace gamemd
 
@@ -267,7 +267,7 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigne
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4a8083*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8086*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8086*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x4a8090*/
   {
     RA2_OPDEL(v3); /*0x4a8098*/
@@ -277,6 +277,6 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigne
   Block->m_8 = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
     RA2_OPDEL(Block); /*0x4a80bb*/
-  return Block->__pad_0; /*0x4a80c5*/
+  return Block->q000; /*0x4a80c5*/
 }
 } // namespace gamemd

@@ -602,7 +602,7 @@ int WeaponTypeClass::CalculateSpeed()
   result = (int)this->Projectile; /*0x7729f6*/
   if ( result && !*(_DWORD *)(result + 732) ) /*0x772a00*/
   {
-    FiringDistance = (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5816); /*0x772a1e*/
+    FiringDistance = (double)*(int *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5816); /*0x772a1e*/
     if ( *(_BYTE *)(result + 661) ) /*0x772a16*/
       FiringDistance = RulesClass::GetFiringDistance(); /*0x772a29*/
     result = TechnoClass::ComputeScanRange((TechnoClass *)this->Range, FiringDistance); /*0x772a3d*/

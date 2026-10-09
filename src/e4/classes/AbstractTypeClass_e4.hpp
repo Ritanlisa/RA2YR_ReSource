@@ -96,6 +96,9 @@ struct AbstractTypeClass {
     void sub_4065D0();
     void sub_4065E0();
     void sub_406640();
+    unsigned int TaskForceClass_field_0x4;  // 0x4 (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q008;  // 0x8 (offset-truth supply)
 };
 
 } // namespace gamemd

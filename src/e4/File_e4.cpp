@@ -238,13 +238,13 @@ char File::Dispatch()
 namespace gamemd {
 unsigned int * File::LoadFileHVA(int a2)
 {
-  this->__pad_0[0] = 0; /*0x5bd575*/
+  this->q000[0] = 0; /*0x5bd575*/
   *(_DWORD *)&this->File_field_0x2[2] = 0; /*0x5bd577*/
   *(_DWORD *)&this->__pad_6[2] = 0; /*0x5bd57a*/
   *(_DWORD *)&this->__pad_6[6] = 0; /*0x5bd57d*/
   if ( !File::ParseFileHVA((int)this, a2) ) /*0x5bd585*/
-    this->__pad_0[0] = 1; /*0x5bd58e*/
-  return this->__pad_0; /*0x5bd593*/
+    this->q000[0] = 1; /*0x5bd58e*/
+  return this->q000; /*0x5bd593*/
 }
 }
 // 0x5BD5C0
@@ -350,13 +350,13 @@ File * * File::LoadPaletteData(unsigned short *aP1)
   u_short *v17; // [esp+14h] [ebp+4h]
 
   v3 = *aP1; /*0x625b02*/
-  *(_WORD *)this->__pad_0 = *aP1; /*0x625b05*/
-  *(_WORD *)this->__pad_0 = ntohs(v3); /*0x625b11*/
+  *(_WORD *)this->q000 = *aP1; /*0x625b05*/
+  *(_WORD *)this->q000 = ntohs(v3); /*0x625b11*/
   v4 = aP1[1]; /*0x625b17*/
   *(_WORD *)this->File_field_0x2 = v4; /*0x625b1a*/
   v5 = aP1 + 2; /*0x625b1f*/
   *(_WORD *)this->File_field_0x2 = ntohs(v4); /*0x625b27*/
-  v6 = *(_WORD *)this->__pad_0; /*0x625b2d*/
+  v6 = *(_WORD *)this->q000; /*0x625b2d*/
   *(_DWORD *)&this->File_field_0x2[2] = 0; /*0x625b30*/
   v15 = v6 - 4; /*0x625b3c*/
   if ( v15 <= 0 ) /*0x625b40*/
@@ -594,7 +594,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
 namespace gamemd {
 unsigned int * File::LoadFileVXL(int a2, int a3)
 {
-  this->__pad_0[0] = 0; /*0x755cd9*/
+  this->q000[0] = 0; /*0x755cd9*/
   *(_DWORD *)&this->File_field_0x2[2] = 0; /*0x755cdb*/
   *(_DWORD *)&this->__pad_6[2] = 0; /*0x755cde*/
   *(_DWORD *)&this->__pad_6[6] = 0; /*0x755ce1*/
@@ -602,8 +602,8 @@ unsigned int * File::LoadFileVXL(int a2, int a3)
   *(_DWORD *)&this->__pad_6[14] = 0; /*0x755ce7*/
   *(_DWORD *)&this->__pad_6[18] = 0; /*0x755cea*/
   if ( !Voxel::SortDepth((int)this, a2, a3) ) /*0x755cf5*/
-    this->__pad_0[0] = 1; /*0x755cfe*/
-  return this->__pad_0; /*0x755d03*/
+    this->q000[0] = 1; /*0x755cfe*/
+  return this->q000; /*0x755d03*/
 }
 }
 // 0x76AC90
@@ -874,8 +874,8 @@ int File::ParseAudioFileRIFF()
   IDA_LOBYTE(v4) = (IDA_HIBYTE(v52) + 1) & 0xFE; /*0x7c131f*/
   if ( (*((int (__cdecl **)(File *, int, File *, unsigned int))&this->u32_46))(this, 5, this + 38, v4) ) /*0x7c1326*/
     return -4; /*0x7c133c*/
-  v5 = *(_DWORD *)v3->__pad_0; /*0x7c133d*/
-  if ( *(_DWORD *)v3->__pad_0 ) /*0x7c133d*/
+  v5 = *(_DWORD *)v3->q000; /*0x7c133d*/
+  if ( *(_DWORD *)v3->q000 ) /*0x7c133d*/
   {
     v6 = 24 * v5; /*0x7c134c*/
     v7 = (*((int (__cdecl **)(File *, int, _DWORD, int))&this->u32_47))(this, 2, 0, 24 * v5); /*0x7c1354*/

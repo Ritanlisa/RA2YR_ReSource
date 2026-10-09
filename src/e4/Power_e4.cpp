@@ -99,9 +99,9 @@ unsigned int * Power::UpdateAll()
       &v53);
   for ( n = 0; n < dword_A8E358; ++n ) /*0x67c7b8*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_A8E34C + n) + 52))(*((_DWORD *)dword_A8E34C + n), &v53); /*0x67c7ca*/
-  for ( ii = 0; ii < *(int *)&stru_A83D50.__pad_80[40]; ++ii ) /*0x67c7e0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.__pad_80[28] + 4 * ii) + 52))( /*0x67c7f2*/
-      *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_80[28] + 4 * ii),
+  for ( ii = 0; ii < *(int *)&stru_A83D50.q080[40]; ++ii ) /*0x67c7e0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.q080[28] + 4 * ii) + 52))( /*0x67c7f2*/
+      *(_DWORD *)(*(_DWORD *)&stru_A83D50.q080[28] + 4 * ii),
       &v53);
   for ( jj = 0; jj < dword_A83C78; ++jj ) /*0x67c808*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_A83C6C + jj) + 52))( /*0x67c81a*/
@@ -183,9 +183,9 @@ unsigned int * Power::UpdateAll()
     (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(stru_A8EB00.vfptr[11] + 4 * i16) + 52))( /*0x67cb12*/
       *(_DWORD *)(stru_A8EB00.vfptr[11] + 4 * i16),
       &v53);
-  for ( i17 = 0; i17 < *(int *)&stru_88732C.__pad_1C[80]; ++i17 ) /*0x67cb28*/
-    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_88732C.__pad_1C[68] + 4 * i17) + 52))( /*0x67cb3a*/
-      *(_DWORD *)(*(_DWORD *)&stru_88732C.__pad_1C[68] + 4 * i17),
+  for ( i17 = 0; i17 < *(int *)&stru_88732C.q01C[80]; ++i17 ) /*0x67cb28*/
+    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_88732C.q01C[68] + 4 * i17) + 52))( /*0x67cb3a*/
+      *(_DWORD *)(*(_DWORD *)&stru_88732C.q01C[68] + 4 * i17),
       &v53);
   for ( i18 = 0; i18 < g_WarheadTypePool; ++i18 ) /*0x67cb50*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_8874C4 + i18) + 52))( /*0x67cb62*/
@@ -195,21 +195,21 @@ unsigned int * Power::UpdateAll()
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_WeaponTypeConfig + i19) + 52))( /*0x67cb8a*/
       *((_DWORD *)g_WeaponTypeConfig + i19),
       &v53);
-  for ( i20 = 0; i20 < *(int *)&stru_A83D50.__pad_3C[28]; ++i20 ) /*0x67cba0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.__pad_3C[16] + 4 * i20) + 52))( /*0x67cbb2*/
-      *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_3C[16] + 4 * i20),
+  for ( i20 = 0; i20 < *(int *)&stru_A83D50.q03C[28]; ++i20 ) /*0x67cba0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.q03C[16] + 4 * i20) + 52))( /*0x67cbb2*/
+      *(_DWORD *)(*(_DWORD *)&stru_A83D50.q03C[16] + 4 * i20),
       &v53);
-  for ( i21 = 0; i21 < *(int *)&stru_A83D50.__pad_80[8]; ++i21 ) /*0x67cbc8*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)stru_A83D50.SuperClass_field_0x7C + i21) + 52))( /*0x67cbda*/
-      *((_DWORD *)stru_A83D50.SuperClass_field_0x7C + i21),
+  for ( i21 = 0; i21 < *(int *)&stru_A83D50.q080[8]; ++i21 ) /*0x67cbc8*/
+    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)stru_A83D50.q07C + i21) + 52))( /*0x67cbda*/
+      *((_DWORD *)stru_A83D50.q07C + i21),
       &v53);
   for ( i22 = 0; i22 < g_GameCleanupState; ++i22 ) /*0x67cbf0*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_A8020C + i22) + 52))( /*0x67cc02*/
       *((_DWORD *)dword_A8020C + i22),
       &v53);
-  for ( i23 = 0; i23 < (int)stru_A83D50.SuperClass_field_0x28; ++i23 ) /*0x67cc18*/
-    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.__pad_14[8] + 4 * i23) + 52))( /*0x67cc2a*/
-      *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_14[8] + 4 * i23),
+  for ( i23 = 0; i23 < (int)stru_A83D50.q028; ++i23 ) /*0x67cc18*/
+    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_A83D50.q014[8] + 4 * i23) + 52))( /*0x67cc2a*/
+      *(_DWORD *)(*(_DWORD *)&stru_A83D50.q014[8] + 4 * i23),
       &v53);
   for ( i24 = 0; i24 < dword_A83C90; ++i24 ) /*0x67cc40*/
     (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)dword_A83C84 + i24) + 52))( /*0x67cc52*/
@@ -227,9 +227,9 @@ unsigned int * Power::UpdateAll()
     (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)&stru_A8EB00.?[56] + 4 * i27) + 52))( /*0x67ccca*/
       *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[56] + 4 * i27),
       &v53);
-  for ( i28 = 0; i28 < *(int *)&stru_A83D50.__pad_3C[4]; ++i28 ) /*0x67cce0*/
-    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * i28) + 52))( /*0x67ccf2*/
-      *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 + 4 * i28),
+  for ( i28 = 0; i28 < *(int *)&stru_A83D50.q03C[4]; ++i28 ) /*0x67cce0*/
+    (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(*(_DWORD *)stru_A83D50.q034 + 4 * i28) + 52))( /*0x67ccf2*/
+      *(_DWORD *)(*(_DWORD *)stru_A83D50.q034 + 4 * i28),
       &v53);
   for ( i29 = 0; i29 < g_MissionQueueFrame.random[133]; ++i29 ) /*0x67cd08*/
     (*(void (__thiscall **)(_DWORD, int *))(**(_DWORD **)(g_MissionQueueFrame.random[130] + 4 * i29) + 52))( /*0x67cd1a*/
@@ -272,15 +272,15 @@ unsigned int * Power::UpdateAll()
       *((_DWORD *)dword_A8E98C + i38),
       &v53);
   if ( dword_A83D4C ) /*0x67ce96*/
-    Power::TimerProcess((int)dword_A83D4C->Object_field_0x30); /*0x67cea0*/
+    Power::TimerProcess((int)dword_A83D4C->q030); /*0x67cea0*/
   Power::TimerProcess(*(int *)&stru_A8EB00.?[416]); /*0x67ceb0*/
   Power::TimerProcess(*(int *)&stru_A8EB00.?[228]); /*0x67cebf*/
   v50 = v54; /*0x67ceca*/
-  this->Power_field_0x0 = v53; /*0x67cece*/
+  this->q000 = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/
-  this->Power_field_0x4 = v50; /*0x67ced5*/
-  this->Power_field_0x8 = v51; /*0x67cedb*/
-  return &this->Power_field_0x0; /*0x67ced4*/
+  this->q004 = v50; /*0x67ced5*/
+  this->q008 = v51; /*0x67cedb*/
+  return &this->q000; /*0x67ced4*/
 }
 }
 // 0x68B940
@@ -420,27 +420,27 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2, void *a2_2)
 namespace gamemd {
 int Power::FinalizeDrain(int a2)
 {
-  void *Power_field_0x4; // eax
+  void *q004; // eax
   int result; // eax
   char *i; // eax
   int *p_Power_field_0x8; // esi
   unsigned int v6; // eax
   int v7; // edi
 
-  Power_field_0x4 = this->Power_field_0x4; /*0x4a1c10*/
-  if ( !Power_field_0x4 ) /*0x4a1c15*/
+  q004 = this->q004; /*0x4a1c10*/
+  if ( !q004 ) /*0x4a1c15*/
     this->a2 = 0; /*0x4a1c17*/
-  *((_BYTE *)&this->a2 + (_DWORD)Power_field_0x4) = a2; /*0x4a1c1f*/
-  result = (int)this->Power_field_0x4 + 1; /*0x4a1c27*/
-  this->Power_field_0x4 = (void *)result; /*0x4a1c29*/
+  *((_BYTE *)&this->a2 + (_DWORD)q004) = a2; /*0x4a1c1f*/
+  result = (int)this->q004 + 1; /*0x4a1c27*/
+  this->q004 = (void *)result; /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
-    IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1c34*/
-    for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
+    IDA_LOBYTE(this->q00C) = this->q004; /*0x4a1c34*/
+    for ( i = (char *)this->q004 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
       i[(_DWORD)&this->q008] = (char)this->a2; /*0x4a1c42*/
     a2 = (int)this->a2; /*0x4a1c50*/
     p_Power_field_0x8 = &a2; /*0x4a1c57*/
-    v6 = ~this->Power_field_0x0; /*0x4a1c5b*/
+    v6 = ~this->q000; /*0x4a1c5b*/
     v7 = 4; /*0x4a1c5d*/
     do /*0x4a1c7e*/
     {
@@ -450,8 +450,8 @@ int Power::FinalizeDrain(int a2)
     }
     while ( v7 ); /*0x4a1c7e*/
     result = ~v6; /*0x4a1c80*/
-    this->Power_field_0x0 = result; /*0x4a1c83*/
-    this->Power_field_0x4 = 0; /*0x4a1c85*/
+    this->q000 = result; /*0x4a1c83*/
+    this->q004 = 0; /*0x4a1c85*/
   }
   return result; /*0x4a1c8e*/
 }
@@ -459,29 +459,29 @@ int Power::FinalizeDrain(int a2)
 
 // 0x4A1CA0
 namespace gamemd {
-int Power::FlagProcess(int Power_field_0x8, int a2, int a1)
+int Power::FlagProcess(int q008, int a2, int a1)
 {
-  void *Power_field_0x4; // eax
+  void *q004; // eax
   int result; // eax
   char *i; // eax
   int *p_Power_field_0x8; // esi
   unsigned int v6; // eax
   int v7; // edi
 
-  Power_field_0x4 = this->Power_field_0x4; /*0x4a1ca0*/
-  if ( !Power_field_0x4 ) /*0x4a1ca7*/
-    this->Power_field_0x8 = 0; /*0x4a1ca9*/
-  *((_BYTE *)&this->Power_field_0x8 + (_DWORD)Power_field_0x4) = (_BYTE)Power_field_0x8 != 0; /*0x4a1cb7*/
-  result = (int)this->Power_field_0x4 + 1; /*0x4a1cbf*/
-  this->Power_field_0x4 = (void *)result; /*0x4a1cc1*/
+  q004 = this->q004; /*0x4a1ca0*/
+  if ( !q004 ) /*0x4a1ca7*/
+    this->q008 = 0; /*0x4a1ca9*/
+  *((_BYTE *)&this->q008 + (_DWORD)q004) = (_BYTE)q008 != 0; /*0x4a1cb7*/
+  result = (int)this->q004 + 1; /*0x4a1cbf*/
+  this->q004 = (void *)result; /*0x4a1cc1*/
   if ( result == 4 ) /*0x4a1cc7*/
   {
-    IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1ccc*/
-    for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1cd5*/
-      i[(_DWORD)&this->q008] = (char)this->Power_field_0x8; /*0x4a1cda*/
-    Power_field_0x8 = (int)this->Power_field_0x8; /*0x4a1ce8*/
-    p_Power_field_0x8 = &Power_field_0x8; /*0x4a1cef*/
-    v6 = ~this->Power_field_0x0; /*0x4a1cf3*/
+    IDA_LOBYTE(this->q00C) = this->q004; /*0x4a1ccc*/
+    for ( i = (char *)this->q004 + 1; (unsigned int)i < 4; ++i ) /*0x4a1cd5*/
+      i[(_DWORD)&this->q008] = (char)this->q008; /*0x4a1cda*/
+    q008 = (int)this->q008; /*0x4a1ce8*/
+    p_Power_field_0x8 = &q008; /*0x4a1cef*/
+    v6 = ~this->q000; /*0x4a1cf3*/
     v7 = 4; /*0x4a1cf5*/
     do /*0x4a1d16*/
     {
@@ -491,8 +491,8 @@ int Power::FlagProcess(int Power_field_0x8, int a2, int a1)
     }
     while ( v7 ); /*0x4a1d16*/
     result = ~v6; /*0x4a1d18*/
-    this->Power_field_0x0 = result; /*0x4a1d1b*/
-    this->Power_field_0x4 = 0; /*0x4a1d1d*/
+    this->q000 = result; /*0x4a1d1b*/
+    this->q004 = 0; /*0x4a1d1d*/
   }
   return result; /*0x4a1d23*/
 }
@@ -514,9 +514,9 @@ char Power::ChangedHouse(char a2)
 
   IDA_LOBYTE(result) = a2; /*0x750090*/
   if ( a2 ) /*0x750096*/
-    this->Power_field_0x0 = 1065353216; /*0x750098*/
+    this->q000 = 1065353216; /*0x750098*/
   else
-    this->Power_field_0x0 = 0; /*0x7500a1*/
+    this->q000 = 0; /*0x7500a1*/
   return result; /*0x75009e*/
 }
 } // namespace gamemd

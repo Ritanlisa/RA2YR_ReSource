@@ -162,7 +162,7 @@ int Scenario::ReadTeams()
 
   INIClass::ResetSection(); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
-  result = INIClass::GetKeyCount(this->__pad_0, (unsigned __int8 *)aStructures); /*0x44f84a*/
+  result = INIClass::GetKeyCount(this->q000, (unsigned __int8 *)aStructures); /*0x44f84a*/
   v3 = 0; /*0x44f84f*/
   result = result; /*0x44f853*/
   v68 = 0; /*0x44f857*/
@@ -170,7 +170,7 @@ int Scenario::ReadTeams()
   {
     while ( 1 ) /*0x44f874*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(this->__pad_0, (unsigned __int8 *)aStructures, v3); /*0x44f874*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(this->q000, (unsigned __int8 *)aStructures, v3); /*0x44f874*/
       INIClass::GetString(this, (unsigned __int8 *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
       v5 = strtok(String, Str); /*0x44f89e*/
       v6 = HouseClass::FindByName(v5); /*0x44f8a8*/
@@ -405,7 +405,7 @@ int Scenario::CopyLocalScenarioData()
     i += 41; /*0x4c618d*/
     ++v2; /*0x4c6190*/
   }
-  this->Scenario_field_0x34 = (void *)(*(int (__stdcall **)(char *))(*(_DWORD *)&dword_A83D4C->__pad_C[24] + 24))(&dword_A83D4C->__pad_C[24]); /*0x4c61b1*/
+  this->q034 = (void *)(*(int (__stdcall **)(char *))(*(_DWORD *)&dword_A83D4C->q00C[24] + 24))(&dword_A83D4C->q00C[24]); /*0x4c61b1*/
   vtable3 = dword_A8B230[127].vfptr3; /*0x4c61ba*/
   abstractFlags = (char *)dword_A8B230[127].abstractFlags; /*0x4c61c0*/
   if ( vtable3 != (void *)-1 ) /*0x4c61c9*/
@@ -415,10 +415,10 @@ int Scenario::CopyLocalScenarioData()
     else
       abstractFlags -= *(_DWORD *)&stru_A8EB00.?[416] - (_DWORD)vtable3; /*0x4c61d7*/
   }
-  this->Scenario_field_0x38 = abstractFlags; /*0x4c61dd*/
-  result = *(_DWORD *)&dword_A83D4C->__pad_140[68]; /*0x4c61e6*/
-  *(_DWORD *)this->__pad_3C = result; /*0x4c61ec*/
-  *(_WORD *)&this->__pad_3C[4] = dword_A8B230[381].vfptr3; /*0x4c61fc*/
+  this->q038 = abstractFlags; /*0x4c61dd*/
+  result = *(_DWORD *)&dword_A83D4C->q140[68]; /*0x4c61e6*/
+  *(_DWORD *)this->q03C = result; /*0x4c61ec*/
+  *(_WORD *)&this->q03C[4] = dword_A8B230[381].vfptr3; /*0x4c61fc*/
   return result; /*0x4c6200*/
 }
 }
@@ -445,7 +445,7 @@ int Scenario::ProcessSidebarUnits()
     if ( v3[135] == this ) /*0x50d63a*/
     {
       v4 = *(_DWORD *)(*(int (__thiscall **)(Scenario **, char *))&(*v3)->__pad_9C[284])(v3, v12); /*0x50d64d*/
-      v5 = (*(int (__thiscall **)(Scenario **))(*v3)->__pad_84)(v3); /*0x50d659*/
+      v5 = (*(int (__thiscall **)(Scenario **))(*v3)->q084)(v3); /*0x50d659*/
       v6 = (int *)RA2_OPNEW(8u); /*0x50d660*/
       *v6 = v5; /*0x50d665*/
       v6[1] = v4; /*0x50d66d*/
@@ -494,11 +494,11 @@ Game * * Scenario::ComputeDisplayPosition()
     if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552ba2*/
       v9 = 600; /*0x552ba4*/
     v10 = (int)*(&g_DisplayWidth + 1); /*0x552baa*/
-    this->Scenario_field_0x24 = v2; /*0x552baf*/
-    this->Scenario_field_0x28 = (void *)v9; /*0x552bb4*/
-    this->Scenario_field_0x20 = (void *)((v10 - v9) / 2); /*0x552bc6*/
-    result = (int)&v1->__pad_0[-v2] / 2; /*0x552bc9*/
-    this->Scenario_field_0x1C = (void *)result; /*0x552bcd*/
+    this->q024 = v2; /*0x552baf*/
+    this->q028 = (void *)v9; /*0x552bb4*/
+    this->q020 = (void *)((v10 - v9) / 2); /*0x552bc6*/
+    result = (int)&v1->q000[-v2] / 2; /*0x552bc9*/
+    this->q01C = (void *)result; /*0x552bcd*/
   }
   else
   {
@@ -506,23 +506,23 @@ Game * * Scenario::ComputeDisplayPosition()
     if ( g_DisplayWidth != (LoadingScreen *)640 ) /*0x552b44*/
       v3 = 600; /*0x552b46*/
     v4 = (void *)(v3 - 80); /*0x552b4b*/
-    v5 = (char *)&(*(&g_DisplayWidth + 1))[1].LoadingScreen_field_0x10 - v3; /*0x552b5c*/
-    this->Scenario_field_0x14 = (void *)v2; /*0x552b5e*/
-    this->Scenario_field_0x24 = v2; /*0x552b64*/
+    v5 = (char *)&(*(&g_DisplayWidth + 1))[1].q010 - v3; /*0x552b5c*/
+    this->q014 = (void *)v2; /*0x552b5e*/
+    this->q024 = v2; /*0x552b64*/
     v6 = (int)(v5 - 80) / 2; /*0x552b6f*/
-    this->Scenario_field_0x10 = (void *)v6; /*0x552b71*/
+    this->q010 = (void *)v6; /*0x552b71*/
     v6 += 40; /*0x552b74*/
-    v7 = (int)&v1->__pad_0[-v2] / 2; /*0x552b76*/
-    this->Scenario_field_0x34 = (void *)v2; /*0x552b78*/
-    this->Scenario_field_0xC = (void *)v7; /*0x552b7b*/
-    this->Scenario_field_0x1C = (void *)v7; /*0x552b7e*/
-    this->Scenario_field_0x20 = (void *)v6; /*0x552b81*/
-    this->Scenario_field_0x2C = (void *)v7; /*0x552b84*/
+    v7 = (int)&v1->q000[-v2] / 2; /*0x552b76*/
+    this->q034 = (void *)v2; /*0x552b78*/
+    this->q00C = (void *)v7; /*0x552b7b*/
+    this->q01C = (void *)v7; /*0x552b7e*/
+    this->q020 = (void *)v6; /*0x552b81*/
+    this->q02C = (void *)v7; /*0x552b84*/
     result = (int)v4 + v6; /*0x552b88*/
-    this->Scenario_field_0x28 = v4; /*0x552b8b*/
-    this->Scenario_field_0x18 = (void *)40; /*0x552b8f*/
-    this->Scenario_field_0x30 = (void *)result; /*0x552b92*/
-    this->Scenario_field_0x38 = (void *)40; /*0x552b95*/
+    this->q028 = v4; /*0x552b8b*/
+    this->q018 = (void *)40; /*0x552b8f*/
+    this->q030 = (void *)result; /*0x552b92*/
+    this->q038 = (void *)40; /*0x552b95*/
   }
   return result; /*0x552b87*/
 }
@@ -531,8 +531,8 @@ Game * * Scenario::ComputeDisplayPosition()
 namespace gamemd {
 unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 {
-  char *Scenario_field_0x2C; // edx
-  char *Scenario_field_0x30; // ecx
+  char *q02C; // edx
+  char *q030; // ecx
   _DWORD *result; // eax
   char *v5; // edx
   int *v6; // eax
@@ -544,7 +544,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
 
   if ( *(_DWORD *)&dword_A8B238 ) /*0x552beb*/
   {
-    v6 = Copy8Bytes(&v11, (int *)&this->Scenario_field_0x1C); /*0x552c3b*/
+    v6 = Copy8Bytes(&v11, (int *)&this->q01C); /*0x552c3b*/
     v7 = *v6; /*0x552c40*/
     v8 = v6[1]; /*0x552c48*/
     result = a2; /*0x552c54*/
@@ -563,15 +563,15 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
   }
   else
   {
-    Scenario_field_0x2C = (char *)this->Scenario_field_0x2C; /*0x552bf8*/
-    Scenario_field_0x30 = (char *)this->Scenario_field_0x30; /*0x552bff*/
+    q02C = (char *)this->q02C; /*0x552bf8*/
+    q030 = (char *)this->q030; /*0x552bff*/
     result = a2; /*0x552c02*/
     if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x552bfd*/
-      v5 = Scenario_field_0x2C + 84; /*0x552c06*/
+      v5 = q02C + 84; /*0x552c06*/
     else
-      v5 = Scenario_field_0x2C + 164; /*0x552c1f*/
+      v5 = q02C + 164; /*0x552c1f*/
     *a2 = v5; /*0x552c0c*/
-    a2[1] = Scenario_field_0x30 + 7; /*0x552c0e*/
+    a2[1] = q030 + 7; /*0x552c0e*/
   }
   return result; /*0x552c11*/
 }
@@ -737,9 +737,9 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
   IDA_BYTE1(dword_A8B230[374].uniqueId) = 0; /*0x55b1e4*/
   IDA_HIBYTE(dword_A8B230[374].uniqueId) = 0; /*0x55b1f1*/
   IDA_BYTE2(dword_A8B230[375].vfptr) = 0; /*0x55b1fe*/
-  v13 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b205*/
-  if ( !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6128) /*0x55b226*/
-    || *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5696) == 0.0 )
+  v13 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x55b205*/
+  if ( !*(_BYTE *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6128) /*0x55b226*/
+    || *(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5696) == 0.0 )
   {
     v14 = dword_A8B230; /*0x55b28e*/
     goto LABEL_41; /*0x55b28e*/
@@ -758,14 +758,14 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
     if ( NeedsSaveOrLink ) /*0x55b257*/
       goto LABEL_42; /*0x55b257*/
   }
-  IDA_LOWORD(v19) = Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5696) * 900.0); /*0x55b259*/
+  IDA_LOWORD(v19) = Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5696) * 900.0); /*0x55b259*/
   v65 = v65; /*0x55b26a*/
   *p_nextArrayIndex = v15; /*0x55b26e*/
   p_nextArrayIndex[1] = v65; /*0x55b270*/
   p_nextArrayIndex[2] = v19; /*0x55b278*/
   MapClass::ProcessVisibilityFlags((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x55b27b*/
   v14 = dword_A8B230; /*0x55b280*/
-  v13 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b286*/
+  v13 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x55b286*/
   LABEL_41:
   v15 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x55b294*/
   LABEL_42:
@@ -773,7 +773,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
   {
     CellSystem::UpdateVisibility((CellSystem *)&stru_87F5F0.__pad_58[416]); /*0x55b2ad*/
     v14 = dword_A8B230; /*0x55b2b2*/
-    v13 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b2b8*/
+    v13 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x55b2b8*/
     v15 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x55b2be*/
   }
   if ( ((int)v14->vfptr & 0x1000) != 0 && v13->FogRate != 0.0 ) /*0x55b2dd*/
@@ -792,7 +792,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
         v14[129].vfptr2 = v23; /*0x55b323*/
         MapClass::ProcessFogTransition((MapClass *)&stru_87F5F0.__pad_58[416]); /*0x55b326*/
         v14 = dword_A8B230; /*0x55b32b*/
-        v13 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x55b331*/
+        v13 = *(_DWORD *)&DSurface_ViewBounds.q0FC[324]; /*0x55b331*/
         v15 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x55b337*/
         goto LABEL_51; /*0x55b337*/
       }
@@ -828,7 +828,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
       if ( !(unsigned __int8)PsyDom::IsActive() ) /*0x55b3ab*/
       {
         v31 = *(void **)&stru_A8EB00.?[416]; /*0x55b3d2*/
-        IDA_LOWORD(v32) = Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5736) * 900.0); /*0x55b3e4*/
+        IDA_LOWORD(v32) = Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5736) * 900.0); /*0x55b3e4*/
         v33 = (void *)v65; /*0x55b3ef*/
         v34 = dword_A8B230 + 130; /*0x55b3f3*/
         dword_A8B230[130].vfptr = v31; /*0x55b3f9*/
@@ -845,7 +845,7 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
     v29->vfptr2 = v28; /*0x55b423*/
   LABEL_65:
     dword_A8B230[378].vfptr2 = (int)dword_A8B230[378].vfptr2 <= 0 ? 0 : dword_A8B230[378].vfptr2;
-    IDA_LOWORD(v35) = Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5744) * 100.0); /*0x55b453*/
+    IDA_LOWORD(v35) = Math::RoundToInt(*(double *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5744) * 100.0); /*0x55b453*/
     vtable1 = (char *)dword_A8B230[378].vfptr1; /*0x55b45e*/
     if ( (int)dword_A8B230[378].vfptr2 >= (int)vtable1 ) /*0x55b46c*/
     {
@@ -918,9 +918,9 @@ void Scenario::Update(void *a1_1, void *a2_1, void *a3_1, void *a4_1)
     (*(void (__thiscall **)(_DWORD))(**((_DWORD **)dword_B04BD4 + k) + 92))(*((_DWORD *)dword_B04BD4 + k)); /*0x55b5e4*/
   UpdateDeferredLightSurfaces(6, 0); /*0x55b5f1*/
   LocomotionClass::UpdateAll(v60); /*0x55b5f6*/
-  for ( m = 0; m < (int)this->Scenario_field_0x10; ++m ) /*0x55b606*/
+  for ( m = 0; m < (int)this->q010; ++m ) /*0x55b606*/
   {
-    v49 = *((_DWORD *)this->Scenario_field_0x4 + m); /*0x55b60b*/
+    v49 = *((_DWORD *)this->q004 + m); /*0x55b60b*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v49 + 92))(v49); /*0x55b610*/
   }
   if ( *(_DWORD *)&dword_A8B238 ) /*0x55b622*/
@@ -964,7 +964,7 @@ namespace gamemd {
 char Scenario::LoadOrReloadOptions(int aP1)
 {
   if ( aP1 ) /*0x597a16*/
-    return (*(char (__thiscall **)(Scenario *, int))(this->Scenario_field_0x0 + 4))(this, aP1); /*0x597a1b*/
+    return (*(char (__thiscall **)(Scenario *, int))(this->q000 + 4))(this, aP1); /*0x597a1b*/
   else
     return (unsigned __int8)LoadOptions::Run((LoadOptions *)this) != 0; /*0x597a28*/
 }
@@ -994,7 +994,7 @@ int Scenario::PreGameInit()
 namespace gamemd {
 void Scenario::SetByte96()
 {
-  IDA_LOBYTE(this->Scenario_field_0x60) = 0; /*0x642ad0*/
+  IDA_LOBYTE(this->q060) = 0; /*0x642ad0*/
 }
 }
 // 0x684240
@@ -1109,7 +1109,7 @@ char Scenario::LoadWithProgress()
     }
     v24 = *(_DWORD *)&dword_A8B238 != 0; /*0x684819*/
     v9 = Scenario::ComputeDialogPos(Instance, v30); /*0x68481e*/
-    TextRenderer::MeasureBuilding((int *)dword_AC4F58.__pad_0, *v9, v9[1], (int)v3, v24, v24); /*0x68482f*/
+    TextRenderer::MeasureBuilding((int *)dword_AC4F58.q000, *v9, v9[1], (int)v3, v24, v24); /*0x68482f*/
     v10 = Map_Load(); /*0x684836*/
     Scenario::SetDword30((Scenario *)&dword_AC4F58, v10); /*0x684841*/
     if ( dword_887628 ) /*0x68484d*/
@@ -1331,8 +1331,8 @@ int Scenario_EndGameFlow()
   AudioMixer::Shutdown(); /*0x685794*/
   AudioQueue::DrainAll(); /*0x685799*/
   EndBufferMixer((int *)g_MixerState, 0x4000); /*0x6857a9*/
-  if ( *(_DWORD *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.vfptr[35] /*0x6857ca*/
-    && *(_DWORD *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.vfptr[36] )
+  if ( *(_DWORD *)&DSurface_ViewBounds.q008[16] != stru_A8EB00.vfptr[35] /*0x6857ca*/
+    && *(_DWORD *)&DSurface_ViewBounds.q008[20] != stru_A8EB00.vfptr[36] )
   {
     Debug::Log(); /*0x6857d1*/
     ChangeVideoMode(stru_A8EB00.vfptr[35], stru_A8EB00.vfptr[36]); /*0x6857e5*/
@@ -1345,7 +1345,7 @@ int Scenario_EndGameFlow()
   {
     v12 = dword_A8B23C; /*0x6858c6*/
   LABEL_36:
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x6858ce*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x6858ce*/
     if ( v12 ) /*0x6858d7*/
       (*((void (__thiscall **)(ObjectClass *, int))v12->vfptr + 41))(v12, 1); /*0x6858dd*/
     byte_A8E9A0 = 0; /*0x6858ea*/
@@ -1361,12 +1361,12 @@ int Scenario_EndGameFlow()
   v8 = 0; /*0x685849*/
   if ( !dword_A8B23C ) /*0x68584d*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685879*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x685879*/
     goto LABEL_28; /*0x685879*/
   }
   if ( v10 != 3 && v10 != 4 || !(*((unsigned __int8 (**)(void))dword_A8B23C->vfptr + 2))() ) /*0x68585a*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x68586c*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x68586c*/
   LABEL_28:
     Scenario::ResetDisplayArrays((Scenario *)((char *)&v29 + 3)); /*0x685884*/
     Map_Load_5C9720(0, -1, 3); /*0x68588b*/
@@ -1459,11 +1459,11 @@ int Scenario_EndGameFlow()
         *(_DWORD *)&stru_887598.isAliveFlag = 0; /*0x685b4a*/
     }
     WinsockInterface::Init(*(WinsockInterface **)&stru_887598.isAliveFlag); /*0x685b56*/
-    v20 = *(_DWORD *)&stru_A8B250.__pad_0[36]; /*0x685b69*/
+    v20 = *(_DWORD *)&stru_A8B250.q000[36]; /*0x685b69*/
     qmemcpy(v33, dword_A8DA90, sizeof(v33)); /*0x685b6f*/
-    qmemcpy(v31, &stru_A8B250.__pad_0[108], sizeof(v31)); /*0x685b7f*/
-    qmemcpy(v30, &stru_A8B250.__pad_0[76], sizeof(v30)); /*0x685b8f*/
-    qmemcpy(v32, &stru_A8B250.__pad_0[44], sizeof(v32)); /*0x685b9f*/
+    qmemcpy(v31, &stru_A8B250.q000[108], sizeof(v31)); /*0x685b7f*/
+    qmemcpy(v30, &stru_A8B250.q000[76], sizeof(v30)); /*0x685b8f*/
+    qmemcpy(v32, &stru_A8B250.q000[44], sizeof(v32)); /*0x685b9f*/
     IDA_LOBYTE(result) = InitNetworkGameState(); /*0x685ba1*/
     if ( !(_BYTE)result ) /*0x685ba8*/
     {
@@ -1477,15 +1477,15 @@ int Scenario_EndGameFlow()
       byte_A8E9A0 = 0; /*0x685bc7*/
       return result; /*0x685bd5*/
     }
-    *(_DWORD *)&stru_A8B250.__pad_0[36] = v20; /*0x685bd6*/
+    *(_DWORD *)&stru_A8B250.q000[36] = v20; /*0x685bd6*/
     for ( i = 0; i < 8; ++i ) /*0x685bdc*/
     {
       v22 = v30[i]; /*0x685be2*/
-      *(_DWORD *)&stru_A8B250.__pad_0[i * 4 + 44] = v32[i]; /*0x685be6*/
+      *(_DWORD *)&stru_A8B250.q000[i * 4 + 44] = v32[i]; /*0x685be6*/
       v23 = v31[i]; /*0x685bec*/
-      *(_DWORD *)&stru_A8B250.__pad_0[i * 4 + 76] = v22; /*0x685bf0*/
+      *(_DWORD *)&stru_A8B250.q000[i * 4 + 76] = v22; /*0x685bf0*/
       v24 = v33[i]; /*0x685bf6*/
-      *(_DWORD *)&stru_A8B250.__pad_0[i * 4 + 108] = v23; /*0x685bfa*/
+      *(_DWORD *)&stru_A8B250.q000[i * 4 + 108] = v23; /*0x685bfa*/
       dword_A8DA90[i] = v24; /*0x685c00*/
     }
     Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x685c14*/
@@ -1527,8 +1527,8 @@ int Scenario_EndGameFlow()
     }
   }
   GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x685d7a*/
-  if ( *(_DWORD *)&stru_88732C.__pad_1C[32] ) /*0x685d87*/
-    Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.vfptr[32]); /*0x685d90*/
+  if ( *(_DWORD *)&stru_88732C.q01C[32] ) /*0x685d87*/
+    Tooltip::Enable(*(Tooltip **)&stru_88732C.q01C[32], stru_A8EB00.vfptr[32]); /*0x685d90*/
   TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x685d9a*/
   return FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x6858fa*/
 }
@@ -1596,8 +1596,8 @@ int Scenario_EndGame()
   (*(void (__thiscall **)(void *))(*(_DWORD *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x685e43*/
   Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x685e4f*/
   (*(void (__thiscall **)(void *))(*(_DWORD *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x685e5c*/
-  if ( *(_DWORD *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.vfptr[35] /*0x685e7b*/
-    && *(_DWORD *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.vfptr[36] )
+  if ( *(_DWORD *)&DSurface_ViewBounds.q008[16] != stru_A8EB00.vfptr[35] /*0x685e7b*/
+    && *(_DWORD *)&DSurface_ViewBounds.q008[20] != stru_A8EB00.vfptr[36] )
   {
     Debug::Log(); /*0x685e82*/
     ChangeVideoMode(stru_A8EB00.vfptr[35], stru_A8EB00.vfptr[36]); /*0x685e96*/
@@ -1630,7 +1630,7 @@ int Scenario_EndGame()
   {
     v13 = dword_A8B23C; /*0x686014*/
   LABEL_36:
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x68601a*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x68601a*/
     if ( v13 ) /*0x686023*/
       (*((void (__thiscall **)(ObjectClass *, _DWORD))v13->vfptr + 41))(v13, 0); /*0x686028*/
     byte_A8E9A0 = 0; /*0x686035*/
@@ -1646,12 +1646,12 @@ int Scenario_EndGame()
   }
   if ( !dword_A8B23C ) /*0x685f96*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685fc3*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x685fc3*/
     goto LABEL_28; /*0x685fc3*/
   }
   if ( v10 != 3 && v10 != 4 || !(*((unsigned __int8 (**)(void))dword_A8B23C->vfptr + 2))() ) /*0x685fa4*/
   {
-    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x685fb6*/
+    IDA_LOWORD(stru_A8D600.q010) = 0; /*0x685fb6*/
   LABEL_28:
     Scenario::ResetDisplayArrays((Scenario *)((char *)v31 + 3)); /*0x685fce*/
     Map_Load_5C9720(0, -1, v8); /*0x685fd5*/
@@ -1713,23 +1713,23 @@ int Scenario_EndGame()
       *(_DWORD *)&stru_887598.isAliveFlag = 0; /*0x686195*/
   }
   WinsockInterface::Init(*(WinsockInterface **)&stru_887598.isAliveFlag); /*0x6861a1*/
-  v19 = *(_DWORD *)&stru_A8B250.__pad_0[36]; /*0x6861b4*/
+  v19 = *(_DWORD *)&stru_A8B250.q000[36]; /*0x6861b4*/
   qmemcpy(v35, dword_A8DA90, sizeof(v35)); /*0x6861ba*/
-  qmemcpy(v33, &stru_A8B250.__pad_0[108], sizeof(v33)); /*0x6861ca*/
-  qmemcpy(v34, &stru_A8B250.__pad_0[76], sizeof(v34)); /*0x6861da*/
-  qmemcpy(v32, &stru_A8B250.__pad_0[44], sizeof(v32)); /*0x6861ea*/
+  qmemcpy(v33, &stru_A8B250.q000[108], sizeof(v33)); /*0x6861ca*/
+  qmemcpy(v34, &stru_A8B250.q000[76], sizeof(v34)); /*0x6861da*/
+  qmemcpy(v32, &stru_A8B250.q000[44], sizeof(v32)); /*0x6861ea*/
   IDA_LOBYTE(v15) = InitNetworkGameState(); /*0x6861ec*/
   if ( (_BYTE)v15 ) /*0x6861f3*/
   {
-    *(_DWORD *)&stru_A8B250.__pad_0[36] = v19; /*0x68623a*/
+    *(_DWORD *)&stru_A8B250.q000[36] = v19; /*0x68623a*/
     for ( i = 0; i < 8; ++i ) /*0x686240*/
     {
       v21 = v34[i]; /*0x686246*/
-      *(_DWORD *)&stru_A8B250.__pad_0[i * 4 + 44] = v32[i]; /*0x68624a*/
+      *(_DWORD *)&stru_A8B250.q000[i * 4 + 44] = v32[i]; /*0x68624a*/
       v22 = v33[i]; /*0x686250*/
-      *(_DWORD *)&stru_A8B250.__pad_0[i * 4 + 76] = v21; /*0x686254*/
+      *(_DWORD *)&stru_A8B250.q000[i * 4 + 76] = v21; /*0x686254*/
       v23 = v35[i]; /*0x68625a*/
-      *(_DWORD *)&stru_A8B250.__pad_0[i * 4 + 108] = v22; /*0x68625e*/
+      *(_DWORD *)&stru_A8B250.q000[i * 4 + 108] = v22; /*0x68625e*/
       dword_A8DA90[i] = v23; /*0x686264*/
     }
     Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x686278*/
@@ -1763,8 +1763,8 @@ int Scenario_EndGame()
       }
     }
     GameResult::CalcScore((GameResult *)&stru_8A38E0); /*0x68639a*/
-    if ( *(_DWORD *)&stru_88732C.__pad_1C[32] ) /*0x6863a7*/
-      Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.vfptr[32]); /*0x6863af*/
+    if ( *(_DWORD *)&stru_88732C.q01C[32] ) /*0x6863a7*/
+      Tooltip::Enable(*(Tooltip **)&stru_88732C.q01C[32], stru_A8EB00.vfptr[32]); /*0x6863af*/
     IDA_LOBYTE(v15) = TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6863b9*/
     goto LABEL_60; /*0x6863be*/
   }
@@ -1810,7 +1810,7 @@ void * Scenario::ResetDisplayArrays()
 namespace gamemd {
 int Scenario::SetDword32(int a2)
 {
-  this->Scenario_field_0x80 = (void *)a2; /*0x642b14*/
+  this->q080 = (void *)a2; /*0x642b14*/
   return a2; /*0x642b1a*/
 }
 } // namespace gamemd
@@ -1819,7 +1819,7 @@ int Scenario::SetDword32(int a2)
 namespace gamemd {
 int Scenario::SetDword30(int a2)
 {
-  this->Scenario_field_0x78 = (void *)a2; /*0x642df4*/
+  this->q078 = (void *)a2; /*0x642df4*/
   return a2; /*0x642df7*/
 }
 } // namespace gamemd

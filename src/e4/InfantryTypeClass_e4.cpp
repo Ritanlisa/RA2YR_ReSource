@@ -385,7 +385,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   *(_DWORD *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(_DWORD *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(_DWORD *)(v4 + 3744) = *(_DWORD *)v11[1].vfptr; /*0x5241d4*/
-  *(_DWORD *)v48.__pad_0 = &(void*)(void*)&VectorClass_int_vftable; /*0x5241d7*/
+  *(_DWORD *)v48.q000 = &(void*)(void*)&VectorClass_int_vftable; /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)a2,
@@ -396,7 +396,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/
-    *(_DWORD *)v48.__pad_0 = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x52421f*/
+    *(_DWORD *)v48.q000 = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x52421f*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
@@ -405,22 +405,22 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
       if ( INIClassIntList ) /*0x524245*/
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
     }
-    TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
-    *(_DWORD *)v48.__pad_0 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52427a*/
+    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v48); /*0x524271*/
+    *(_DWORD *)v48.q000 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
   else
   {
-    TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, (_DWORD *)(v4 + 3664)); /*0x524294*/
+    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, (_DWORD *)(v4 + 3664)); /*0x524294*/
   }
-  VectorClass::CopyDefault((VectorClass *)(v4 + 3664), &v48.DynamicVector_field_0x1C); /*0x5242a6*/
+  VectorClass::CopyDefault((VectorClass *)(v4 + 3664), &v48.q01C); /*0x5242a6*/
   v13 = v50; /*0x5242af*/
   v14 = v51; /*0x5242b3*/
   *(_DWORD *)(v4 + 3680) = v49; /*0x5242b7*/
   *(_DWORD *)(v4 + 3684) = v13; /*0x5242ba*/
   *(_DWORD *)(v4 + 3688) = v14; /*0x5242bd*/
-  v48.DynamicVector_field_0x1C = (AbstractClass *)&(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x5242c9*/
-  DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5242cd*/
+  v48.q01C = (AbstractClass *)&(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x5242c9*/
+  DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.q01C); /*0x5242cd*/
   if ( INIClass::GetString( /*0x5242e9*/
          (INIClass *)a2,
          (unsigned __int8 *)(v4 + 36),
@@ -430,7 +430,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
-    *(_DWORD *)v48.__pad_0 = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x524309*/
+    *(_DWORD *)v48.q000 = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x524309*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
@@ -439,18 +439,18 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
       if ( INIClassIntList ) /*0x52432f*/
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
     }
-    TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
-    *(_DWORD *)v48.__pad_0 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x524364*/
+    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, &v48); /*0x52435b*/
+    *(_DWORD *)v48.q000 = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x524364*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
   }
   else
   {
-    TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, (_DWORD *)(v4 + 3692)); /*0x52437a*/
+    TypeList::AnimTypeCopy((TypeList *)&v48.q01C, (_DWORD *)(v4 + 3692)); /*0x52437a*/
   }
-  InfantryTypeClass::CopyDataArray((InfantryTypeClass *)(v4 + 3692), &v48.DynamicVector_field_0x1C); /*0x52438c*/
+  InfantryTypeClass::CopyDataArray((InfantryTypeClass *)(v4 + 3692), &v48.q01C); /*0x52438c*/
   *(_DWORD *)(v4 + 3716) = v51; /*0x524399*/
-  v48.DynamicVector_field_0x1C = (AbstractClass *)&(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52439c*/
-  DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5243a4*/
+  v48.q01C = (AbstractClass *)&(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52439c*/
+  DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.q01C); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
                      (int *)a2,
                      (unsigned __int8 *)(v4 + 36),
@@ -600,7 +600,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   if ( *(_BYTE *)(v4 + 3780) ) /*0x524690*/
     *(_BYTE *)(v4 + 3774) = 1; /*0x52469a*/
   v39 = INIClass::ReadBool_Overwrite( /*0x5246b9*/
-          (int *)&DSurface_ViewBounds.__pad_FC[228],
+          (int *)&DSurface_ViewBounds.q0FC[228],
           (unsigned __int8 *)(v4 + 504),
           aCrawls,
           *(_BYTE *)(v4 + 3773));
@@ -609,19 +609,19 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v44.Count = v4 + 504; /*0x5246cf*/
   *(_BYTE *)(v4 + 3773) = v39; /*0x5246d0*/
   *(_DWORD *)(v4 + 3648) = INIClass::ReadInt_Overwrite( /*0x5246db*/
-                             (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                             (bool *)&DSurface_ViewBounds.q0FC[228],
                              (unsigned __int8 *)v44.Count,
                              (unsigned __int8 *)v44.CapacityIncrement,
                              v45);
   v40 = INIClass::ReadInt_Overwrite( /*0x5246f3*/
-          (bool *)&DSurface_ViewBounds.__pad_FC[228],
+          (bool *)&DSurface_ViewBounds.q0FC[228],
           (unsigned __int8 *)(v4 + 504),
           aFireprone,
           *(_DWORD *)(v4 + 3652));
   v41 = *(_DWORD *)(v4 + 3656); /*0x5246f8*/
   *(_DWORD *)(v4 + 3652) = v40; /*0x5246fe*/
   v42 = INIClass::ReadInt_Overwrite( /*0x524710*/
-          (bool *)&DSurface_ViewBounds.__pad_FC[228],
+          (bool *)&DSurface_ViewBounds.q0FC[228],
           (unsigned __int8 *)(v4 + 504),
           aSecondaryfire,
           v41);
@@ -630,7 +630,7 @@ int InfantryTypeClass::LoadFromINI(uint8_t *** a2, void *a2_2)
   v44.Count = v4 + 504; /*0x524726*/
   *(_DWORD *)(v4 + 3656) = v42; /*0x524727*/
   *(_DWORD *)(v4 + 3660) = INIClass::ReadInt_Overwrite( /*0x524734*/
-                             (bool *)&DSurface_ViewBounds.__pad_FC[228],
+                             (bool *)&DSurface_ViewBounds.q0FC[228],
                              (unsigned __int8 *)v44.Count,
                              (unsigned __int8 *)v44.CapacityIncrement,
                              v45);
@@ -933,7 +933,7 @@ unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 namespace gamemd {  // G42.18c ns repair
 int InfantryTypeClass::GetGameplayValue()
 {
-  return *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 5848); /*0x52479b*/
+  return *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 5848); /*0x52479b*/
 }
 }  // G42.18c ns repair
 // 0x5247A0

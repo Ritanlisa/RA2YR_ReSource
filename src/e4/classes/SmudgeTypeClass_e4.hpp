@@ -251,6 +251,14 @@ struct SmudgeTypeClass {
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     void vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6);
     unsigned int q_22F;  // +0x22F flat supply (three-ban reform)
+    char[1] Crater;  // 0x672 (ml)
+    unsigned int Crater;  // 0x1650 (ml)
+    unsigned char q0E01;  // 0xE01 (offset-truth supply)
+    unsigned char q0E02;  // 0xE02 (offset-truth supply)
+    unsigned char q0E03;  // 0xE03 (offset-truth supply)
+    unsigned char q0E05;  // 0xE05 (offset-truth supply)
+    unsigned char q10C2;  // 0x10C2 (offset-truth supply)
+    unsigned char q10C3;  // 0x10C3 (offset-truth supply)
 };
 
 } // namespace gamemd

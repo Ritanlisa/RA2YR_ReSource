@@ -170,9 +170,9 @@ int SlaveManagerClass::Constructor()
   IDA_LOBYTE(this->creationFrame) = 1; /*0x6af377*/
   IDA_BYTE1(this->creationFrame) = 0; /*0x6af37b*/
   this->slaves[0] = (int)&(void*)(void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6af37e*/
-  *(_DWORD *)&this->__pad_48[4] = 10; /*0x6af385*/
-  *(_DWORD *)this->__pad_48 = 0; /*0x6af38c*/
-  *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
+  *(_DWORD *)&this->q048[4] = 10; /*0x6af385*/
+  *(_DWORD *)this->q048 = 0; /*0x6af38c*/
+  *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
   this->vfptr = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af39b*/
   this->vfptr1 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6af3a1*/
@@ -183,7 +183,7 @@ int SlaveManagerClass::Constructor()
   this->slaveOwner = 0; /*0x6af3bc*/
   this->slaveType = 0; /*0x6af3bf*/
   this->slaveCount = 0; /*0x6af3c2*/
-  *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
+  *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af3cb*/
   this->SlaveManagerClass_field_54 = v4; /*0x6af3ce*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af3d1*/
   this->SlaveManagerClass_field_5C = 0; /*0x6af3d4*/
@@ -268,7 +268,7 @@ int SlaveManagerClass::SetOwner(TechnoClass * aP1)
       IDA_LOBYTE(master) = (*(int (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x6af5b9*/
   }
   *(_DWORD *)(aP1 + 728) = this; /*0x6af5bc*/
-  for ( i = *(_DWORD *)this->__pad_48 - 1; i >= 0; --i ) /*0x6af5c6*/
+  for ( i = *(_DWORD *)this->q048 - 1; i >= 0; --i ) /*0x6af5c6*/
   {
     master = **(TechnoClass ***)(this->slaveVectorCount + 4 * i); /*0x6af5ce*/
     if ( master ) /*0x6af5d2*/
@@ -289,7 +289,7 @@ char SlaveManagerClass::UpdateSlaves()
   int v7; // [esp+Ch] [ebp-8h]
 
   v2 = *(int **)&stru_A8EB00.?[416]; /*0x6af5f7*/
-  v3 = *(_DWORD *)&this->__pad_48[8]; /*0x6af5fd*/
+  v3 = *(_DWORD *)&this->q048[8]; /*0x6af5fd*/
   SlaveManagerClass_field_58 = (TechnoClass *)this->SlaveManagerClass_field_58; /*0x6af600*/
   if ( v3 == -1 ) /*0x6af606*/
   {
@@ -306,7 +306,7 @@ char SlaveManagerClass::UpdateSlaves()
     goto LABEL_4; /*0x6af610*/
   }
   LABEL_5:
-  *(_DWORD *)&this->__pad_48[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af616*/
+  *(_DWORD *)&this->q048[8] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6af616*/
   this->SlaveManagerClass_field_54 = v7; /*0x6af622*/
   this->SlaveManagerClass_field_58 = 10; /*0x6af625*/
   SlaveManagerClass_field_58 = this->master; /*0x6af628*/
@@ -432,7 +432,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
                                           + 206))(
                                            v9,
                                            v84,
-                                           *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6020) / 256,
+                                           *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6020) / 256,
                                            0,
                                            p_SlaveManagerClass_field_5C,
                                            a3);
@@ -516,7 +516,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
               v28 = *(_DWORD *)(v3 + 36); /*0x6af93f*/
               IDA_HIWORD(v78.master) = v27 / 2; /*0x6af946*/
               v29 = (CellStruct *)(*(int (__thiscall **)(int, int *))(v28->airstrikeTintTimer)(v28, v78.slaves); /*0x6af95c*/
-              v78.referenceCount = *CellStruct::Add(v29, &v78.__pad_48[4], &v78.master); /*0x6af96b*/
+              v78.referenceCount = *CellStruct::Add(v29, &v78.q048[4], &v78.master); /*0x6af96b*/
             }
             else
             {
@@ -585,7 +585,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             IDA_LOWORD(v78.vfptr2) = IDA_LOWORD(v83[0]) - slaveOwner; /*0x6afaef*/
             IDA_HIWORD(v78.vfptr2) = IDA_HIWORD(v83[0]) - IDA_HIWORD(v78.house); /*0x6afaf4*/
             v78.vfptr = v78.vfptr2; /*0x6afb01*/
-            if ( (__int16)SlaveManagerClass::Calc2DDistance(&v78) > *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] /*0x6afb19*/
+            if ( (__int16)SlaveManagerClass::Calc2DDistance(&v78) > *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] /*0x6afb19*/
                                                                               + 3576) )
               IDA_HIBYTE(v78.vfptr1) = 1; /*0x6afb1b*/
           }
@@ -601,7 +601,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
             v74 = CellStruct::Set((CellStruct *)v78.slaves, IDA_LOWORD(v78.vfptr) - 1, v48 / 2); /*0x6afb71*/
             v50 = (CellStruct *)(*(int (__thiscall **)(int, char *, int *))(v49->airstrikeTintTimer)( /*0x6afb7e*/
                                   v49,
-                                  v78.__pad_48,
+                                  v78.q048,
                                   &v78.slaveVectorCapacity);
             v51 = (void **)CellStruct::Add(v50, v74, p_SlaveManagerClass_field_5C); /*0x6afb86*/
           }
@@ -609,7 +609,7 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(unsigned int *a1, void * a2, voi
           {
             v51 = (void **)(*(int (__thiscall **)(_DWORD, char *, int *))(**(_DWORD **)(v3 + 36) + 440))( /*0x6afb97*/
                              *(_DWORD *)(v3 + 36),
-                             &v78.__pad_48[8],
+                             &v78.q048[8],
                              p_SlaveManagerClass_field_5C);
           }
           v53 = *(int (__thiscall ***)(wchar_t *))v9; /*0x6afb9f*/
@@ -730,7 +730,7 @@ int SlaveManagerClass::LostSlave(int aP1)
   int slaveType; // ecx
   int v7; // [esp+10h] [ebp-8h]
 
-  result = *(_DWORD *)this->__pad_48 - 1; /*0x6b0a26*/
+  result = *(_DWORD *)this->q048 - 1; /*0x6b0a26*/
   if ( result >= 0 ) /*0x6b0a2a*/
   {
     slaveVectorCount = this->slaveVectorCount; /*0x6b0a2c*/
@@ -768,12 +768,12 @@ int SlaveManagerClass::ShouldWakeUpNow()
     return 1; /*0x6b104e*/
   if ( *(_DWORD *)((*((int (__thiscall **)(TechnoClass *))master->vfptr + 111))(master) + 236) == 5 ) /*0x6b105e*/
     return 1; /*0x6b1064*/
-  if ( this->SlaveManagerClass_field_60 + *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6032) >= *(int *)&stru_A8EB00.?[416] ) /*0x6b107d*/
+  if ( this->SlaveManagerClass_field_60 + *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6032) >= *(int *)&stru_A8EB00.?[416] ) /*0x6b107d*/
     return 0; /*0x6b107d*/
   v4 = *(_DWORD *)(*((int (__thiscall **)(TechnoClass *, int *, int, _DWORD))this->master->vfptr + 206))( /*0x6b10ad*/
                     this->master,
                     &v4,
-                    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6016) / 256,
+                    *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 6016) / 256,
                     0);
   return v4 != dword_B0B5B8; /*0x6b10c6*/
 }
@@ -788,7 +788,7 @@ int SlaveManagerClass::AssignTask(AbstractClass * aP1)
 
   AbstractClass::ProcessPower(); /*0x6b10fa*/
   result = Power::TimerProcess(this->SlaveManagerClass_field_5C); /*0x6b1105*/
-  for ( i = *(_DWORD *)this->__pad_48 - 1; i >= 0; --i ) /*0x6b110e*/
+  for ( i = *(_DWORD *)this->q048 - 1; i >= 0; --i ) /*0x6b110e*/
     result = Power::TimerProcess(*(_DWORD *)(*(_DWORD *)(this->slaveVectorCount + 4 * i) + 4)); /*0x6b111c*/
   return result; /*0x6b1124*/
 }
@@ -824,9 +824,9 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       AbstractClass::InitVtables((AbstractClass *)a1, (int)&a1); /*0x6b119b*/
       SlaveControlVector::Constructor((SlaveControlVector *)a1->slaves, 0, 0); /*0x6b11a7*/
       a1->slaves[0] = (int)&(void*)(void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b11b0*/
-      *(_DWORD *)&a1->__pad_48[4] = 10; /*0x6b11b6*/
-      *(_DWORD *)a1->__pad_48 = 0; /*0x6b11bd*/
-      Timer::Start((Timer *)&a1->__pad_48[8], 0); /*0x6b11c0*/
+      *(_DWORD *)&a1->q048[4] = 10; /*0x6b11b6*/
+      *(_DWORD *)a1->q048 = 0; /*0x6b11bd*/
+      Timer::Start((Timer *)&a1->q048[8], 0); /*0x6b11c0*/
       a1->vfptr = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6b11c5*/
       a1->vfptr1 = &(void*)(void*)&SlaveManagerClass_vftable; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/
@@ -841,8 +841,8 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       {
         SlaveControlVector::Constructor((SlaveControlVector *)a1->slaves, 0, 0); /*0x6b1207*/
         *slaves = (int)&(void*)(void*)&DynamicVectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b120c*/
-        *(_DWORD *)&a1->__pad_48[4] = 10; /*0x6b1212*/
-        *(_DWORD *)a1->__pad_48 = 0; /*0x6b1219*/
+        *(_DWORD *)&a1->q048[4] = 10; /*0x6b1212*/
+        *(_DWORD *)a1->q048 = 0; /*0x6b1219*/
       }
       v7 = v16; /*0x6b121c*/
       a1 = 0; /*0x6b1220*/
@@ -877,17 +877,17 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
           if ( Prefix_0 < 0 ) /*0x6b125f*/
             break; /*0x6b125f*/
           slaveVectorCapacity = a1->slaveVectorCapacity; /*0x6b1265*/
-          if ( *(_DWORD *)a1->__pad_48 < slaveVectorCapacity /*0x6b128a*/
+          if ( *(_DWORD *)a1->q048 < slaveVectorCapacity /*0x6b128a*/
             || (IDA_BYTE1(a1->creationFrame) || !slaveVectorCapacity)
-            && (v11 = *(_DWORD *)&a1->__pad_48[4], v11 > 0)
+            && (v11 = *(_DWORD *)&a1->q048[4], v11 > 0)
             && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*slaves + 8))(
                  a1->slaves,
                  slaveVectorCapacity + v11,
                  0) )
           {
-            v12 = *(_DWORD *)a1->__pad_48; /*0x6b1291*/
+            v12 = *(_DWORD *)a1->q048; /*0x6b1291*/
             slaveVectorCount = a1->slaveVectorCount; /*0x6b1294*/
-            *(_DWORD *)a1->__pad_48 = v12 + 1; /*0x6b129a*/
+            *(_DWORD *)a1->q048 = v12 + 1; /*0x6b129a*/
             *(_DWORD *)(slaveVectorCount + 4 * v12) = v5; /*0x6b129d*/
           }
           v7 = v16; /*0x6b12a4*/
@@ -990,7 +990,7 @@ int SlaveManagerClass::SaveManager(TechnoTypeClass * aP0, int * a1, int aP2)
   if ( result >= 0 ) /*0x6b1319*/
   {
     v4 = *a1; /*0x6b131e*/
-    aP2 = *(_DWORD *)aP0->__pad_48; /*0x6b132a*/
+    aP2 = *(_DWORD *)aP0->q048; /*0x6b132a*/
     result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x6b132e*/
     if ( result >= 0 ) /*0x6b1333*/
     {
@@ -1141,7 +1141,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x6b167e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x6b167e*/
   }
   v7 = this->m_8; /*0x6b1681*/
   if ( v7 < this->m_10 ) /*0x6b1689*/
@@ -1177,7 +1177,7 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char 
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x6b1983*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b1986*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_SlaveManagerClass_SlaveControl___vftable; /*0x6b1986*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x6b1990*/
   {
     RA2_OPDEL(v3); /*0x6b1998*/
@@ -1187,6 +1187,6 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char 
   Block->m_8 = 0; /*0x6b19b1*/
   if ( (a2 & 1) != 0 ) /*0x6b19b8*/
     RA2_OPDEL(Block); /*0x6b19bb*/
-  return Block->__pad_0; /*0x6b19c5*/
+  return Block->q000; /*0x6b19c5*/
 }
 } // namespace gamemd

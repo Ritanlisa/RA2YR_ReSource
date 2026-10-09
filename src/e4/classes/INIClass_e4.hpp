@@ -120,6 +120,8 @@ static int WriteToString(INIClass * aP1, int a2);  // G57w10-S raw 0x00526470 (w
     unsigned int GetString(unsigned __int8 *a2, unsigned __int8 *a3, char *Source, char *Destination, int Count, int aP4, int aP1, int aP3, int a1, int a4, int a5, int aP2);
     int ReadInt(String *a2, String *a3, int a4, int aP2, int aP1, int a1, int aP3);
     static int ParseValue(...);  // w18j2 C3861 static supply
+    unsigned int q000;  // 0x0 (offset-truth supply)
+    unsigned int q020;  // 0x20 (offset-truth supply)
 };
 #endif  // GAMEMD_E4_INIClass
 

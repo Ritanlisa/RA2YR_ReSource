@@ -137,7 +137,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   result = this->ptr_8 + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
-    v14 = *(_DWORD *)&stru_87E790.__pad_D8[60]; /*0x493e35*/
+    v14 = *(_DWORD *)&stru_87E790.q0D8[60]; /*0x493e35*/
     v17 = (unsigned __int16 *)a4; /*0x493e3b*/
     do /*0x493e8e*/
     {
@@ -145,7 +145,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
       if ( v16 ) /*0x493e4c*/
       {
         *a2 = *(_WORD *)(*(_DWORD *)&this->m_1[3] + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
-        v14 = *(_DWORD *)&stru_87E790.__pad_D8[60]; /*0x493e6f*/
+        v14 = *(_DWORD *)&stru_87E790.q0D8[60]; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/
       ++a2; /*0x493e7b*/
@@ -162,7 +162,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493eca*/
+  return (*(int (__thiscall **)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493eca*/
            this,
            a2,
            a3,
@@ -179,7 +179,7 @@ int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493efa*/
+  return (*(int (__thiscall **)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493efa*/
            this,
            a2,
            a3,
@@ -195,7 +195,7 @@ int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, 
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493f2a*/
+  return (*(int (__thiscall **)(_BlitTransXlatAlpha_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493f2a*/
            this,
            a2,
            a3,
@@ -211,7 +211,7 @@ int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, i
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x4939fa*/
+  return (*(int (__thiscall **)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x4939fa*/
            this,
            a2,
            a3,
@@ -228,7 +228,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6,
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493a2a*/
+  return (*(int (__thiscall **)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493a2a*/
            this,
            a2,
            a3,
@@ -245,7 +245,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493a5a*/
+  return (*(int (__thiscall **)(_BlitTransLucent75ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493a5a*/
            this,
            a2,
            a3,
@@ -262,7 +262,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493b2a*/
+  return (*(int (__thiscall **)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493b2a*/
            this,
            a2,
            a3,
@@ -279,7 +279,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_2(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493b5a*/
+  return (*(int (__thiscall **)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493b5a*/
            this,
            a2,
            a3,
@@ -296,7 +296,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_3(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493b8a*/
+  return (*(int (__thiscall **)(_BlitTransLucent50ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493b8a*/
            this,
            a2,
            a3,
@@ -313,7 +313,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_4(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493c5a*/
+  return (*(int (__thiscall **)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493c5a*/
            this,
            a2,
            a3,
@@ -330,7 +330,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_5(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493c8a*/
+  return (*(int (__thiscall **)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493c8a*/
            this,
            a2,
            a3,
@@ -347,7 +347,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_6(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->__pad_0 + 4))( /*0x493cba*/
+  return (*(int (__thiscall **)(_BlitTransLucent25ZReadWrite_G *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this->q000 + 4))( /*0x493cba*/
            this,
            a2,
            a3,
@@ -364,7 +364,7 @@ int BlitTransXlatAlpha_ushort::CallBlit0_7(int a2, int a3, int a4, int a5, int a
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a1a9*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a1a9*/
   if ( (a2 & 1) != 0 ) /*0x49a1af*/
     RA2_OPDEL(); /*0x49a1b2*/
   return (std::locale::facet *)this; /*0x49a1bc*/
@@ -375,7 +375,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a1c9*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a1c9*/
   if ( (a2 & 1) != 0 ) /*0x49a1cf*/
     RA2_OPDEL(); /*0x49a1d2*/
   return (std::locale::facet *)this; /*0x49a1dc*/
@@ -386,7 +386,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a1e9*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a1e9*/
   if ( (a2 & 1) != 0 ) /*0x49a1ef*/
     RA2_OPDEL(); /*0x49a1f2*/
   return (std::locale::facet *)this; /*0x49a1fc*/
@@ -400,12 +400,12 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*((_DWORD *)Block + 2); /*0x49a248*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&BlitTransXlatAlpha_unsigned_short_vftable; /*0x49a24b*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&BlitTransXlatAlpha_unsigned_short_vftable; /*0x49a24b*/
   FractalNoise::Dtor(v3); /*0x49a252*/
   *((_DWORD *)Block + 2) = 0; /*0x49a25b*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&Blitter_vftable; /*0x49a264*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&Blitter_vftable; /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
     RA2_OPDEL(Block); /*0x49a26d*/
-  return Block->__pad_0; /*0x49a277*/
+  return Block->q000; /*0x49a277*/
 }
 } // namespace gamemd

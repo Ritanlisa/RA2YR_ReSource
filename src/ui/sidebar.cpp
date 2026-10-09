@@ -119,7 +119,7 @@ bool SidebarClass::AddCameo(AbstractType a2, int32_t a3)
   LABEL_29:
   if ( !dword_A8E7AC && a2 != 31 ) /*0x6a6409*/
     VoxClass::FindAndPlay(&stru_83FA64, -1); /*0x6a6415*/
-  TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)&this->__pad_CD2[3988 * v24 + 2162], a2, a3); /*0x6a641e*/
+  TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)&this->qCD2[3988 * v24 + 2162], a2, a3); /*0x6a641e*/
   *((_BYTE *)&this->u32_F94 * v24 + 5504) = 1; /*0x6a6423*/
   v10 = 0; /*0x6a6427*/
   g_CameoRenderFlag = 1; /*0x6a6429*/
@@ -165,7 +165,7 @@ bool SidebarClass::AddCameo(AbstractType a2, int32_t a3)
     {
       GadgetClass::Hide((GadgetClass *)(&stru_B07C48 + 8 * v15)); /*0x6a64e3*/
       v16 = 0; /*0x6a64f5*/
-      v17 = &this->__pad_CD2[3988 * this->u32_539C + 2162]; /*0x6a64fd*/
+      v17 = &this->qCD2[3988 * this->u32_539C + 2162]; /*0x6a64fd*/
       *((_BYTE *)&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a6504*/
       do /*0x6a652f*/
       {
@@ -177,7 +177,7 @@ bool SidebarClass::AddCameo(AbstractType a2, int32_t a3)
       while ( v16 < 60 ); /*0x6a652f*/
       this->u32_539C = v10; /*0x6a6534*/
       GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * v10)); /*0x6a6543*/
-      v18 = &this->__pad_CD2[3988 * this->u32_539C + 2162]; /*0x6a6560*/
+      v18 = &this->qCD2[3988 * this->u32_539C + 2162]; /*0x6a6560*/
       *((_BYTE *)&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a6567*/
       v19 = UI_Add_6AC430(v22); /*0x6a6570*/
       for ( i = 0; i < v19; ++i ) /*0x6a6576*/

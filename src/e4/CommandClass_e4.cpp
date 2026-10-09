@@ -32,7 +32,7 @@ int CommandClass::BuildBar()
   int v5; // edx
   int v6; // eax
   int v7; // ecx
-  int ShapeButtonClass_field_0x08; // edx
+  int q008; // edx
   unsigned int v9; // eax
   ShapeButtonClass *v10; // esi
   int v11; // edx
@@ -62,7 +62,7 @@ int CommandClass::BuildBar()
   char *v35; // eax
   Struct v37; // [esp+8h] [ebp-1Ch] BYREF
   int v38; // [esp+Ch] [ebp-18h]
-  int ShapeButtonClass_field_0x04; // [esp+10h] [ebp-14h]
+  int q004; // [esp+10h] [ebp-14h]
   int v40; // [esp+14h] [ebp-10h]
   int v41; // [esp+18h] [ebp-Ch]
   char *v42; // [esp+1Ch] [ebp-8h]
@@ -70,7 +70,7 @@ int CommandClass::BuildBar()
   v2 = &stru_B0C1C0; /*0x6d1207*/
   do /*0x6d1224*/
   {
-    (*(void (__thiscall **)(ShapeButtonClass *))(*(_DWORD *)v2->__pad_0 + 32))(v2); /*0x6d1210*/
+    (*(void (__thiscall **)(ShapeButtonClass *))(*(_DWORD *)v2->q000 + 32))(v2); /*0x6d1210*/
     (*(void (__thiscall **)(CommandClass *, ShapeButtonClass *))(*(_DWORD *)this + 48))(this, v2); /*0x6d1218*/
     v2 += 8; /*0x6d121b*/
   }
@@ -83,18 +83,18 @@ int CommandClass::BuildBar()
     if ( v4 ) /*0x6d1256*/
     {
       Struct::Zero25(&v37); /*0x6d125c*/
-      v5 = *(_DWORD *)v4[1].__pad_0; /*0x6d1264*/
-      v6 = *(_DWORD *)v4[3].__pad_0; /*0x6d1267*/
-      ShapeButtonClass_field_0x04 = v4[1].ShapeButtonClass_field_0x04; /*0x6d126a*/
-      v7 = *(_DWORD *)v4[2].__pad_0; /*0x6d126e*/
+      v5 = *(_DWORD *)v4[1].q000; /*0x6d1264*/
+      v6 = *(_DWORD *)v4[3].q000; /*0x6d1267*/
+      q004 = v4[1].q004; /*0x6d126a*/
+      v7 = *(_DWORD *)v4[2].q000; /*0x6d126e*/
       v38 = v5; /*0x6d1271*/
-      ShapeButtonClass_field_0x08 = v4[1].ShapeButtonClass_field_0x08; /*0x6d1275*/
+      q008 = v4[1].q008; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
       v37.Struct_field_00 = v6; /*0x6d1283*/
       v42 = aTipAttackmove; /*0x6d1287*/
-      v40 = ShapeButtonClass_field_0x08; /*0x6d128f*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v6); /*0x6d1293*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d12a3*/
+      v40 = q008; /*0x6d128f*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.q01C[32], v6); /*0x6d1293*/
+      CommandClass::AddAction(*(int **)&stru_88732C.q01C[32], (int)&v37); /*0x6d12a3*/
     }
   }
   v9 = g_ObjectTrackingPool[dword_B0CB3C]; /*0x6d12ad*/
@@ -104,18 +104,18 @@ int CommandClass::BuildBar()
     if ( v10 ) /*0x6d12cb*/
     {
       Struct::Zero25(&v37); /*0x6d12d1*/
-      v11 = v10[1].ShapeButtonClass_field_0x04; /*0x6d12d9*/
-      v12 = *(_DWORD *)v10[3].__pad_0; /*0x6d12dc*/
-      v38 = *(_DWORD *)v10[1].__pad_0; /*0x6d12df*/
-      v13 = v10[1].ShapeButtonClass_field_0x08; /*0x6d12e3*/
-      ShapeButtonClass_field_0x04 = v11; /*0x6d12e6*/
-      v14 = *(_DWORD *)v10[2].__pad_0; /*0x6d12ea*/
+      v11 = v10[1].q004; /*0x6d12d9*/
+      v12 = *(_DWORD *)v10[3].q000; /*0x6d12dc*/
+      v38 = *(_DWORD *)v10[1].q000; /*0x6d12df*/
+      v13 = v10[1].q008; /*0x6d12e3*/
+      q004 = v11; /*0x6d12e6*/
+      v14 = *(_DWORD *)v10[2].q000; /*0x6d12ea*/
       v40 = v13; /*0x6d12ed*/
       v37.Struct_field_00 = v12; /*0x6d12f8*/
       v42 = aTipBeacon; /*0x6d12fc*/
       v41 = v14; /*0x6d1304*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v12); /*0x6d1308*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1318*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.q01C[32], v12); /*0x6d1308*/
+      CommandClass::AddAction(*(int **)&stru_88732C.q01C[32], (int)&v37); /*0x6d1318*/
     }
   }
   v15 = g_ObjectTrackingPool[dword_B0C1B8]; /*0x6d1323*/
@@ -125,18 +125,18 @@ int CommandClass::BuildBar()
     if ( v16 ) /*0x6d1341*/
     {
       Struct::Zero25(&v37); /*0x6d1347*/
-      v17 = *(_DWORD *)v16[1].__pad_0; /*0x6d134f*/
-      v18 = *(_DWORD *)v16[3].__pad_0; /*0x6d1352*/
-      ShapeButtonClass_field_0x04 = v16[1].ShapeButtonClass_field_0x04; /*0x6d1355*/
-      v19 = *(_DWORD *)v16[2].__pad_0; /*0x6d1359*/
+      v17 = *(_DWORD *)v16[1].q000; /*0x6d134f*/
+      v18 = *(_DWORD *)v16[3].q000; /*0x6d1352*/
+      q004 = v16[1].q004; /*0x6d1355*/
+      v19 = *(_DWORD *)v16[2].q000; /*0x6d1359*/
       v38 = v17; /*0x6d135c*/
-      v20 = v16[1].ShapeButtonClass_field_0x08; /*0x6d1360*/
+      v20 = v16[1].q008; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
       v37.Struct_field_00 = v18; /*0x6d136e*/
       v42 = aTipCheer; /*0x6d1372*/
       v40 = v20; /*0x6d137a*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v18); /*0x6d137e*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d138e*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.q01C[32], v18); /*0x6d137e*/
+      CommandClass::AddAction(*(int **)&stru_88732C.q01C[32], (int)&v37); /*0x6d138e*/
     }
   }
   v21 = g_ObjectTrackingPool[dword_B0CB20]; /*0x6d1398*/
@@ -146,18 +146,18 @@ int CommandClass::BuildBar()
     if ( v22 ) /*0x6d13b6*/
     {
       Struct::Zero25(&v37); /*0x6d13bc*/
-      v23 = v22[1].ShapeButtonClass_field_0x04; /*0x6d13c4*/
-      v24 = *(_DWORD *)v22[3].__pad_0; /*0x6d13c7*/
-      v38 = *(_DWORD *)v22[1].__pad_0; /*0x6d13ca*/
-      v25 = v22[1].ShapeButtonClass_field_0x08; /*0x6d13ce*/
-      ShapeButtonClass_field_0x04 = v23; /*0x6d13d1*/
-      v26 = *(_DWORD *)v22[2].__pad_0; /*0x6d13d5*/
+      v23 = v22[1].q004; /*0x6d13c4*/
+      v24 = *(_DWORD *)v22[3].q000; /*0x6d13c7*/
+      v38 = *(_DWORD *)v22[1].q000; /*0x6d13ca*/
+      v25 = v22[1].q008; /*0x6d13ce*/
+      q004 = v23; /*0x6d13d1*/
+      v26 = *(_DWORD *)v22[2].q000; /*0x6d13d5*/
       v40 = v25; /*0x6d13d8*/
       v37.Struct_field_00 = v24; /*0x6d13e3*/
       v42 = aTipDeploy; /*0x6d13e7*/
       v41 = v26; /*0x6d13ef*/
-      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v24); /*0x6d13f3*/
-      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1403*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.q01C[32], v24); /*0x6d13f3*/
+      CommandClass::AddAction(*(int **)&stru_88732C.q01C[32], (int)&v37); /*0x6d1403*/
     }
   }
   v27 = g_ObjectTrackingPool[dword_B0CB68]; /*0x6d1410*/

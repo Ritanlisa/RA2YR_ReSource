@@ -50,5 +50,11 @@ int IsAtEnd(void *a1_1); // def-aligned
     int InitKeyframeTracking(char * Source, void * aSubtitlemdTxt);
     unsigned int q_20;  // +0x20 flat supply (CSP-fed)
     unsigned int q_50;  // +0x50 flat supply (CSP-fed)
+    unsigned int u32_104;  // 0x104 (offset-truth supply)
+    unsigned char u32_105;  // 0x105 (offset-truth supply)
+    unsigned int u32_24;  // 0x24 (offset-truth supply)
+    unsigned int u32_2C;  // 0x2C (offset-truth supply)
+    unsigned char u32_2D;  // 0x2D (offset-truth supply)
+    unsigned int u32_40;  // 0x40 (offset-truth supply)
 };
 } // namespace gamemd

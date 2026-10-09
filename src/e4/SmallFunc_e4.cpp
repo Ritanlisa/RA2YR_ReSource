@@ -56,12 +56,12 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   _DWORD *Base; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(a1->__pad_0, (unsigned __int8 *)g_INI_Key_TRUCKA.DebrisMaximums); /*0x6f19c1*/
+  result = INIClass::GetKeyCount(a1->q000, (unsigned __int8 *)g_INI_Key_TRUCKA.DebrisMaximums); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
   for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
     StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x6f19db*/
-                                         a1->__pad_0,
+                                         a1->q000,
                                          (unsigned __int8 *)g_INI_Key_TRUCKA.DebrisMaximums,
                                          i);
     INIClass::GetString( /*0x6f19f4*/
@@ -254,15 +254,15 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
 {
   Scenario *v5; // [esp+0h] [ebp-4h]
 
-  *(_DWORD *)&stru_87F5F0.__pad_E12[1418] = 0; /*0x6e2669*/
-  *(_DWORD *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x6e266f*/
-  *(_DWORD *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x6e2675*/
+  *(_DWORD *)&stru_87F5F0.qE12[1418] = 0; /*0x6e2669*/
+  *(_DWORD *)&stru_87F5F0.qE12[1422] = 0; /*0x6e266f*/
+  *(_DWORD *)&stru_87F5F0.qE12[1426] = -1; /*0x6e2675*/
   Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x6e267f*/
   BuildingClass::TogglePower2((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e268a*/
   BuildingClass::TogglePower((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e2695*/
-  stru_87F5F0.__pad_E12[1432] = 0; /*0x6e269a*/
-  stru_87F5F0.__pad_E12[1433] = 0; /*0x6e26a0*/
-  stru_87F5F0.__pad_E12[1434] = 0; /*0x6e26a6*/
+  stru_87F5F0.qE12[1432] = 0; /*0x6e269a*/
+  stru_87F5F0.qE12[1433] = 0; /*0x6e26a0*/
+  stru_87F5F0.qE12[1434] = 0; /*0x6e26a6*/
   Scenario::ClearScreen(v5); /*0x6e26ac*/
   return 1; /*0x6e26b3*/
 }
@@ -305,9 +305,9 @@ int E4Recv_728A00::sub_728A00()
 {
   LocomotionClass::Init(); /*0x728a03*/
   this->CurrentState[0] = 0; /*0x728a0d*/
-  this->CurrentState[1] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
-  this->CurrentState[2] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
-  this->CurrentState[3] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
+  this->CurrentState[1] = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[352]; /*0x728a16*/
+  this->CurrentState[2] = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[356]; /*0x728a1e*/
+  this->CurrentState[3] = *(_DWORD *)&g_BuildingLoadQueue_Array.qF70[360]; /*0x728a27*/
   this->CurrentState[4] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x728a30*/
   this->CurrentState[6] = 0; /*0x728a33*/
   this->CurrentState[7] = 0; /*0x728a36*/

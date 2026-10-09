@@ -36,5 +36,10 @@ struct MSFrameAnim {
     unsigned int startAnimation(int a2);  // 0x769C80
     unsigned int pauseAnimation(int a2);  // 0x769D00
     unsigned int * drawFrame(void *a1_1);  // 0x76A7C0
+    unsigned char m_1;  // 0x1 (offset-truth supply)
+    unsigned int m_10;  // 0x10 (offset-truth supply)
+    unsigned int m_8;  // 0x8 (offset-truth supply)
+    unsigned int m_C;  // 0xC (offset-truth supply)
+    unsigned int q000;  // 0x0 (offset-truth supply)
 };
 } // namespace gamemd

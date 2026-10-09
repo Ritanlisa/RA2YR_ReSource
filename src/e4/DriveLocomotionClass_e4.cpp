@@ -37,7 +37,7 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
     a1->Piggybackee = 0; /*0x4af79c*/
     *(_DWORD *)a1->0 = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af7a3*/
     *(_DWORD *)&a1->0[4] = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af7a9*/
-    *(_DWORD *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
+    *(_DWORD *)a1->q018 = &off_7E7E8C; /*0x4af7b0*/
   }
   (*(void (__stdcall **)(int *, int **, int, _DWORD))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4af7c3*/
   if ( !(_BYTE)pStm ) /*0x4af7cc*/
@@ -71,12 +71,12 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x4af81b*/
   if ( !v4->Piggybackee ) /*0x4af826*/
   {
-    v12 = *(_DWORD *)v3->__pad_0; /*0x4af8c3*/
+    v12 = *(_DWORD *)v3->q000; /*0x4af8c3*/
     IDA_LOBYTE(a3) = 0; /*0x4af8cf*/
     (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
     return IPersistStream; /*0x4af8d8*/
   }
-  v6 = *(_DWORD *)v3->__pad_0; /*0x4af82c*/
+  v6 = *(_DWORD *)v3->q000; /*0x4af82c*/
   IDA_LOBYTE(a3) = 1; /*0x4af838*/
   (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v6 + 16))(v3, &a3, 1, 0); /*0x4af83d*/
   Piggybackee = v4->Piggybackee; /*0x4af840*/
@@ -136,7 +136,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
 
   *(_DWORD *)Block->0 = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
   *(_DWORD *)&Block->0[4] = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
-  *(_DWORD *)Block->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
+  *(_DWORD *)Block->q018 = &off_7E7E8C; /*0x4b4d10*/
   Piggybackee = Block->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/
     (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/

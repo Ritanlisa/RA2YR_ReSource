@@ -182,5 +182,8 @@ struct Rules {
     char * GetProductionTimeMult(int a2);  // 0x5FB2E0
     unsigned char m_5[64];  // pad compile-supply (G41.47)
     unsigned char m_1[64];  // pad compile-supply (G41.47)
+    char[4] __tail_10;  // 0x16 (ml)
+    int m_C;  // 0x12
+    unsigned int q000;  // 0x0
 };
 } // namespace gamemd

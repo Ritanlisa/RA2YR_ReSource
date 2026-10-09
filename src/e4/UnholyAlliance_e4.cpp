@@ -40,13 +40,13 @@ AbstractClass * * UnholyAlliance_GetResult()
   _DWORD v16[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   v2 = 0; /*0x5cb450*/
-  v3 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2864) - 1; /*0x5cb452*/
+  v3 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2864) - 1; /*0x5cb452*/
   if ( v3 >= 0 ) /*0x5cb453*/
   {
     v4 = (HouseClass *)this; /*0x5cb45a*/
     do /*0x5cb51b*/
     {
-      v5 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2852) + 4 * v3); /*0x5cb46b*/
+      v5 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.q0FC[324] + 2852) + 4 * v3); /*0x5cb46b*/
       if ( v5 ) /*0x5cb470*/
       {
         v6 = (int *)RA2_OPNEW(0x8E8u); /*0x5cb47e*/
@@ -102,7 +102,7 @@ UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 namespace gamemd {  // G42.18c ns repair
 char UnholyAlliance::Read(void *a1, void *a2)
 {
-  stru_A8B250.__pad_0[8] = 1; /*0x5cb3f2*/
+  stru_A8B250.q000[8] = 1; /*0x5cb3f2*/
   return 1; /*0x5cb3f7*/
 }
 }  // G42.18c ns repair
@@ -110,12 +110,12 @@ char UnholyAlliance::Read(void *a1, void *a2)
 namespace gamemd {  // G42.18c ns repair
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
-  return stru_A8B250.__pad_0[8] && (unsigned __int8)ScenarioClass::MissionStubReturnZero2((int *)&aP0->m_Enabled); /*0x5cb41c*/
+  return stru_A8B250.q000[8] && (unsigned __int8)ScenarioClass::MissionStubReturnZero2((int *)&aP0->m_Enabled); /*0x5cb41c*/
 }
 }
 // 0x5CB430
 char UnholyAlliance::Seek(void *a1, void *a2, void *a3)
 {
-  stru_A8B250.__pad_0[8] = 1; /*0x5cb432*/
+  stru_A8B250.q000[8] = 1; /*0x5cb432*/
   return 1; /*0x5cb437*/
 }  // G42.18c ns repair

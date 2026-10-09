@@ -35,14 +35,14 @@ unsigned int * AudioQueue::CreateNode()
   v2 = (DListNode *)RA2_OPNEW(0x60u); /*0x402afc*/
   memset(v2, 0, 0x60u); /*0x402b07*/
   DListNode::InitEmpty(v2); /*0x402b0e*/
-  *(_DWORD *)v2[2].__pad_0 = 0; /*0x402b13*/
-  v2[1].DListNode_field_0x04 = (int)this; /*0x402b1c*/
-  if ( ((int (__thiscall *)(DListNode *))this->AudioQueue_field_0x14[0])(v2) ) /*0x402b1f*/
+  *(_DWORD *)v2[2].q000 = 0; /*0x402b13*/
+  v2[1].q004 = (int)this; /*0x402b1c*/
+  if ( ((int (__thiscall *)(DListNode *))this->u32_14[0])(v2) ) /*0x402b1f*/
   {
     if ( v2 ) /*0x402b28*/
     {
-      (*(void (__thiscall **)(DListNode *))(v2[1].DListNode_field_0x04 + 24))(v2); /*0x402b2f*/
-      *(_DWORD *)(v2[1].DListNode_field_0x04 + 12) &= ~1u; /*0x402b36*/
+      (*(void (__thiscall **)(DListNode *))(v2[1].q004 + 24))(v2); /*0x402b2f*/
+      *(_DWORD *)(v2[1].q004 + 12) &= ~1u; /*0x402b36*/
       RA2_OPDEL(v2); /*0x402b3a*/
       return 0; /*0x402b47*/
     }
@@ -50,11 +50,11 @@ unsigned int * AudioQueue::CreateNode()
   }
   if ( !v2 ) /*0x402b4a*/
     return 0; /*0x402b51*/
-  *(_DWORD *)&this->__pad_0[12] |= 1u; /*0x402b5e*/
+  *(_DWORD *)&this->q000[12] |= 1u; /*0x402b5e*/
   InsertAfterDListNode((int)off_815E98, v2); /*0x402b67*/
-  if ( (this->__pad_0[8] & 2) != 0 ) /*0x402b70*/
+  if ( (this->q000[8] & 2) != 0 ) /*0x402b70*/
     dword_87DE28 = 1; /*0x402b72*/
-  return v2->__pad_0; /*0x402b44*/
+  return v2->q000; /*0x402b44*/
 }
 }
 // 0x4035F0
@@ -578,10 +578,10 @@ int * AudioQueue::IteratorNext()
 {
   AudioQueue *v2; // ecx
 
-  v2 = *(AudioQueue **)this->__pad_0; /*0x4035d3*/
+  v2 = *(AudioQueue **)this->q000; /*0x4035d3*/
   if ( v2 ) /*0x4035d7*/
-    *(_DWORD *)this->__pad_0 = AudioQueue::GetNextAlt(v2); /*0x4035de*/
-  return *(int **)this->__pad_0; /*0x4035e2*/
+    *(_DWORD *)this->q000 = AudioQueue::GetNextAlt(v2); /*0x4035de*/
+  return *(int **)this->q000; /*0x4035e2*/
 }
 } // namespace gamemd
 
@@ -613,8 +613,8 @@ int AudioQueue::GetNext()
 
   if ( !this ) /*0x4073c2*/
     return 0; /*0x4073c2*/
-  result = *(_DWORD *)this->__pad_0; /*0x4073c4*/
-  if ( *(_DWORD *)this->__pad_0 ) /*0x4073c4*/
+  result = *(_DWORD *)this->q000; /*0x4073c4*/
+  if ( *(_DWORD *)this->q000 ) /*0x4073c4*/
   {
     if ( result == *(_DWORD *)(result + 8) ) /*0x4073cd*/
       return 0; /*0x4073cf*/
@@ -631,8 +631,8 @@ int AudioQueue::GetNextAlt()
 
   if ( !this ) /*0x4073e2*/
     return 0; /*0x4073e2*/
-  result = *(_DWORD *)this->__pad_0; /*0x4073e4*/
-  if ( *(_DWORD *)this->__pad_0 ) /*0x4073e4*/
+  result = *(_DWORD *)this->q000; /*0x4073e4*/
+  if ( *(_DWORD *)this->q000 ) /*0x4073e4*/
   {
     if ( result == *(_DWORD *)(result + 8) ) /*0x4073ed*/
       return 0; /*0x4073ef*/

@@ -45,29 +45,29 @@ int EventClass::serializeEvent(void *a1_1)
   int v2; // esi
   _DWORD *v3; // edx
 
-  result = (int)a1_1->EventClass_field_0x4; /*0x48b390*/
+  result = (int)a1_1->q004; /*0x48b390*/
   v2 = 0; /*0x48b397*/
-  a1_1->EventClass_field_0x28 = 0; /*0x48b39b*/
+  a1_1->q028 = 0; /*0x48b39b*/
   if ( result > 0 ) /*0x48b39e*/
   {
     result = 0; /*0x48b3a1*/
     do /*0x48b402*/
     {
-      *(_DWORD *)((char *)a1_1->EventClass_field_0x24 + result) &= ~1u; /*0x48b3ad*/
-      *(_DWORD *)((char *)a1_1->EventClass_field_0x24 + result) &= ~2u; /*0x48b3b9*/
-      v3 = (char *)a1_1->EventClass_field_0x24 + result; /*0x48b3be*/
+      *(_DWORD *)((char *)a1_1->q024 + result) &= ~1u; /*0x48b3ad*/
+      *(_DWORD *)((char *)a1_1->q024 + result) &= ~2u; /*0x48b3b9*/
+      v3 = (char *)a1_1->q024 + result; /*0x48b3be*/
       result += 36; /*0x48b3c0*/
       ++v2; /*0x48b3c8*/
       *v3 &= ~4u; /*0x48b3c9*/
-      *(_DWORD *)((char *)a1_1->EventClass_field_0x24 + result - 32) = 0; /*0x48b3ce*/
-      *(_DWORD *)((char *)a1_1->EventClass_field_0x24 + result - 28) = 0; /*0x48b3d5*/
-      *(_DWORD *)((char *)a1_1->EventClass_field_0x24 + result - 24) = 0; /*0x48b3dc*/
-      *(_DWORD *)((char *)a1_1->EventClass_field_0x24 + result - 20) = 0; /*0x48b3e3*/
-      *(_DWORD *)((char *)a1_1->EventClass_field_0x24 + result - 12) = 0; /*0x48b3ea*/
-      *(_WORD *)((char *)a1_1->EventClass_field_0x24 + result - 4) = 0; /*0x48b3f1*/
-      *((_DWORD *)a1_1->EventClass_field_0x30 + v2 - 1) = 0; /*0x48b3f9*/
+      *(_DWORD *)((char *)a1_1->q024 + result - 32) = 0; /*0x48b3ce*/
+      *(_DWORD *)((char *)a1_1->q024 + result - 28) = 0; /*0x48b3d5*/
+      *(_DWORD *)((char *)a1_1->q024 + result - 24) = 0; /*0x48b3dc*/
+      *(_DWORD *)((char *)a1_1->q024 + result - 20) = 0; /*0x48b3e3*/
+      *(_DWORD *)((char *)a1_1->q024 + result - 12) = 0; /*0x48b3ea*/
+      *(_WORD *)((char *)a1_1->q024 + result - 4) = 0; /*0x48b3f1*/
+      *((_DWORD *)a1_1->q030 + v2 - 1) = 0; /*0x48b3f9*/
     }
-    while ( v2 < (int)a1_1->EventClass_field_0x4 ); /*0x48b402*/
+    while ( v2 < (int)a1_1->q004 ); /*0x48b402*/
   }
   return result; /*0x48b405*/
 }
@@ -76,11 +76,11 @@ int EventClass::serializeEvent(void *a1_1)
 namespace gamemd {
 int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 {
-  this->EventClass_field_0x44 = (void *)a2; /*0x48bad8*/
-  this->EventClass_field_0x48 = (void *)a3; /*0x48badf*/
-  this->EventClass_field_0x4C[0] = a4; /*0x48bae6*/
-  this->EventClass_field_0x50 = (void *)a5; /*0x48baed*/
-  this->EventClass_field_0x54 = (void *)a6; /*0x48baf0*/
+  this->q044 = (void *)a2; /*0x48bad8*/
+  this->q048 = (void *)a3; /*0x48badf*/
+  this->u32_4C[0] = a4; /*0x48bae6*/
+  this->q050 = (void *)a5; /*0x48baed*/
+  this->q054 = (void *)a6; /*0x48baf0*/
   return a6; /*0x48baf3*/
 }
 }
@@ -271,16 +271,16 @@ AbstractClass * * EventClass::ProcessEvent()
   int v63; // eax
   int *v64; // eax
   wchar_t *v65; // eax
-  char *Network_field_0x8; // esi
+  char *q008; // esi
   int v67; // eax
   wchar_t *v68; // eax
   int v69; // esi
-  void *EventClass_field_0x8; // edx
+  void *q008; // edx
   int v71; // eax
   int EventClass_field_0x4_high; // esi
   unsigned int *v73; // ecx
   int *v74; // ecx
-  void *Object_field_0x30; // ebx
+  void *q030; // ebx
   char *v76; // edi
   int v77; // eax
   int v78; // esi
@@ -307,10 +307,10 @@ int EventClass::deserializeEvent(int a2, unsigned int *aP2)
   int result; // eax
   _DWORD *v5; // edx
 
-  result = (*(int (__thiscall **)(EventClass *, int))(this->EventClass_field_0x0 + 24))(this, a2); /*0x54228c*/
-  if ( result != -1 && result < (int)this->EventClass_field_0x44 ) /*0x542297*/
+  result = (*(int (__thiscall **)(EventClass *, int))(this->q000 + 24))(this, a2); /*0x54228c*/
+  if ( result != -1 && result < (int)this->q044 ) /*0x542297*/
   {
-    v5 = (_DWORD *)(*((_DWORD *)&this->EventClass_field_0x28 + result) + 76); /*0x5422a1*/
+    v5 = (_DWORD *)(*((_DWORD *)&this->q028 + result) + 76); /*0x5422a1*/
     *v5 = *aP2; /*0x5422a6*/
     v5[1] = aP2[1]; /*0x5422ab*/
     result = aP2[2]; /*0x5422ae*/
@@ -373,11 +373,11 @@ int EventClass::Enqueue(unsigned short a2, char a3)
 namespace gamemd {
 int EventClass::CheckFlag()
 {
-  EventClass **EventClass_field_0x38; // eax
+  EventClass **q038; // eax
 
-  EventClass_field_0x38 = (EventClass **)this->EventClass_field_0x38; /*0x5f19c0*/
-  if ( EventClass_field_0x38 ) /*0x5f19c5*/
-    EventClass::serializeEvent(EventClass_field_0x38[1]); /*0x5f19ca*/
+  q038 = (EventClass **)this->q038; /*0x5f19c0*/
+  if ( q038 ) /*0x5f19c5*/
+    EventClass::serializeEvent(q038[1]); /*0x5f19ca*/
   return 1; /*0x5f19d4*/
 }
 }
@@ -407,7 +407,7 @@ AbstractClass * * EventClass::validateEventType()
     {
       do /*0x66447c*/
       {
-        v5 = *(char **)(this->EventClass_field_0x4 + 4 * v4); /*0x664461*/
+        v5 = *(char **)(this->q004 + 4 * v4); /*0x664461*/
         if ( v5[41] && !v5[39] ) /*0x66446a*/
         {
           v1 = *v5; /*0x664470*/
@@ -426,7 +426,7 @@ AbstractClass * * EventClass::validateEventType()
     {
       do /*0x6644a7*/
       {
-        v8 = *(char **)(this->EventClass_field_0x4 + 4 * v7); /*0x66448e*/
+        v8 = *(char **)(this->q004 + 4 * v7); /*0x66448e*/
         v8[39] = *v8 == v1; /*0x664498*/
         ++v7; /*0x6644a4*/
       }
@@ -435,7 +435,7 @@ AbstractClass * * EventClass::validateEventType()
   }
   if ( SessionClass::IsValidHouse((int)&dword_A8B238, 0) /*0x6644d2*/
     || v1 == -1
-    || v1 != dword_A83D4C->Object_field_0x30
+    || v1 != dword_A83D4C->q030
     || dword_A8DA84 <= 2 )
   {
     return v1; /*0x664526*/
@@ -521,7 +521,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVBombClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x40b7e2*/
+    (*(void (__thiscall **)(_VectorClass_PAVBombClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x40b7e2*/
     return 1; /*0x40b7e8*/
   }
 }
@@ -565,7 +565,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVBombClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x40b90e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVBombClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x40b90e*/
   }
   v7 = this->m_8; /*0x40b911*/
   if ( v7 < this->m_10 ) /*0x40b919*/
@@ -617,7 +617,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVTechnoClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x40ba42*/
+    (*(void (__thiscall **)(_VectorClass_PAVTechnoClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x40ba42*/
     return 1; /*0x40ba48*/
   }
 }
@@ -661,7 +661,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3, void *a3_2)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVTechnoClass *))(*(_DWORD *)a3_2->__pad_0 + 12))(a3_2); /*0x40bb6e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVTechnoClass *))(*(_DWORD *)a3_2->q000 + 12))(a3_2); /*0x40bb6e*/
   }
   v7 = a3_2->m_8; /*0x40bb71*/
   if ( v7 < a3_2->m_10 ) /*0x40bb79*/
@@ -677,7 +677,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x40bc13*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_BombClass___vftable; /*0x40bc16*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_BombClass___vftable; /*0x40bc16*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x40bc20*/
   {
     RA2_OPDEL(v3); /*0x40bc28*/
@@ -687,7 +687,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x40bc41*/
   if ( (a2 & 1) != 0 ) /*0x40bc48*/
     RA2_OPDEL(Block); /*0x40bc4b*/
-  return Block->__pad_0; /*0x40bc55*/
+  return Block->q000; /*0x40bc55*/
 }
 } // namespace gamemd
 
@@ -695,22 +695,22 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
 namespace gamemd {
 unsigned int * EventClass::resetEvent(int aP1, int aP2)
 {
-  this->EventClass_field_0x4 = 0; /*0x40bd0b*/
-  this->EventClass_field_0x8 = (void *)aP1; /*0x40bd0e*/
-  IDA_LOBYTE(this->EventClass_field_0xC) = 1; /*0x40bd11*/
-  IDA_BYTE1(this->EventClass_field_0xC) = 0; /*0x40bd15*/
-  this->EventClass_field_0x0 = (int)&(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bd18*/
+  this->q004 = 0; /*0x40bd0b*/
+  this->q008 = (void *)aP1; /*0x40bd0e*/
+  IDA_LOBYTE(this->q00C) = 1; /*0x40bd11*/
+  IDA_BYTE1(this->q00C) = 0; /*0x40bd15*/
+  this->q000 = (int)&(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
     if ( aP2 ) /*0x40bd26*/
     {
-      this->EventClass_field_0x4 = (void *)aP2; /*0x40bd28*/
-      return &this->EventClass_field_0x0; /*0x40bd2e*/
+      this->q004 = (void *)aP2; /*0x40bd28*/
+      return &this->q000; /*0x40bd2e*/
     }
-    this->EventClass_field_0x4 = (void *)RA2_OPNEW(4 * aP1); /*0x40bd3d*/
-    IDA_BYTE1(this->EventClass_field_0xC) = 1; /*0x40bd40*/
+    this->q004 = (void *)RA2_OPNEW(4 * aP1); /*0x40bd3d*/
+    IDA_BYTE1(this->q00C) = 1; /*0x40bd40*/
   }
-  return &this->EventClass_field_0x0; /*0x40bd2d*/
+  return &this->q000; /*0x40bd2d*/
 }
 } // namespace gamemd
 
@@ -736,7 +736,7 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x40c113*/
-  *(_DWORD *)Block->__pad_0 = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c116*/
+  *(_DWORD *)Block->q000 = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c116*/
   if ( v3 && IDA_BYTE1(Block->m_C) ) /*0x40c120*/
   {
     RA2_OPDEL(v3); /*0x40c128*/
@@ -746,7 +746,7 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
   Block->m_8 = 0; /*0x40c141*/
   if ( (a2 & 1) != 0 ) /*0x40c148*/
     RA2_OPDEL(Block); /*0x40c14b*/
-  return Block->__pad_0; /*0x40c155*/
+  return Block->q000; /*0x40c155*/
 }
 } // namespace gamemd
 
@@ -799,7 +799,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVLightConvertClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x40c49e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVLightConvertClass *))(*(_DWORD *)this->q000 + 12))(this); /*0x40c49e*/
   }
   v7 = this->m_8; /*0x40c4a1*/
   if ( v7 < this->m_10 ) /*0x40c4a9*/
@@ -825,8 +825,8 @@ SHORT EventClass::GetKeyStateSafe(unsigned char nVirtKey)
 {
   int result; // eax
 
-  IDA_HIWORD(result) = IDA_HIWORD(stru_AA0398.AudioStream_field_0xAC); /*0x53ec70*/
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec77*/
+  IDA_HIWORD(result) = IDA_HIWORD(stru_AA0398.q0AC); /*0x53ec70*/
+  if ( stru_AA0398.q0AC ) /*0x53ec77*/
     IDA_LOWORD(result) = word_AA0168[(unsigned __int8)nVirtKey]; /*0x53ec87*/
   else
     IDA_LOWORD(result) = GetKeyState((unsigned __int8)nVirtKey); /*0x53ec7a*/

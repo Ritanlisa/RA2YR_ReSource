@@ -175,9 +175,9 @@ int TacticalMap::Redraw()
   if ( *(_DWORD *)&stru_A8EB00.?[880] ) /*0x4f454f*/
     (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)&stru_A8EB00.?[880] + 44))(*(_DWORD *)&stru_A8EB00.?[880], 0); /*0x4f4555*/
   TacticalMap::DrawCursor((TacticalMap *)&stru_A8BB1C.__pad_87[189]); /*0x4f455d*/
-  if ( *(_DWORD *)&stru_88732C.__pad_1C[32] ) /*0x4f456a*/
-    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)&stru_88732C.__pad_1C[32] + 12))( /*0x4f4570*/
-      *(_DWORD *)&stru_88732C.__pad_1C[32],
+  if ( *(_DWORD *)&stru_88732C.q01C[32] ) /*0x4f456a*/
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)&stru_88732C.q01C[32] + 12))( /*0x4f4570*/
+      *(_DWORD *)&stru_88732C.q01C[32],
       0);
   if ( byte_A8B8B4 ) /*0x4f457a*/
     DrawHUD(v5); /*0x4f457e*/
@@ -240,7 +240,7 @@ char TacticalMap::DrawCursor(void *a1, void *a2, void *a3, void *a4)
       v10[0] = v3 + v5; /*0x5d4a3d*/
       v8 = v4[11]; /*0x5d4a4c*/
       v7 = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * v4[13]); /*0x5d4a56*/
-      v6 = (_DWORD *)(*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x5d4a65*/
+      v6 = (_DWORD *)(*(int (__thiscall **)(AudioStream *, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2->q000 + 120))( /*0x5d4a65*/
                        g_DSurface_Hidden_2,
                        v12);
       TextRenderer::DrawText(&v11, (size_t)&v9, (int)g_DSurface_Hidden_2, v6, (int)v10, v7, 0, v8); /*0x5d4a79*/
@@ -261,22 +261,22 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   float v5; // [esp+0h] [ebp-10h]
 
   AbstractClass::Constructor(); /*0x6d1c25*/
-  this->Tactical_field_0xA8 = (IUnknown *)-1; /*0x6d1c2c*/
-  this->__pad_AC[0] = 0; /*0x6d1c36*/
-  this->__pad_AC[1] = 0; /*0x6d1c3c*/
-  *(_DWORD *)&this->__pad_AC[20] = 0; /*0x6d1c42*/
-  *(_DWORD *)&this->__pad_AC[4] = 0; /*0x6d1c48*/
-  *(_DWORD *)&this->__pad_AC[8] = 0; /*0x6d1c4e*/
-  *(_DWORD *)&this->__pad_AC[12] = 0; /*0x6d1c54*/
-  *(_DWORD *)&this->__pad_AC[16] = 0; /*0x6d1c5a*/
-  *(_DWORD *)&this->__pad_AC[24] = 1072693248; /*0x6d1c60*/
-  *(_DWORD *)&this->__pad_AC[28] = dword_B0CE08; /*0x6d1c6f*/
-  *(_DWORD *)&this->__pad_AC[32] = dword_B0CE0C; /*0x6d1c7b*/
-  *(_DWORD *)&this->__pad_AC[36] = dword_B0CE08; /*0x6d1c87*/
-  *(_DWORD *)&this->__pad_AC[40] = dword_B0CE0C; /*0x6d1c92*/
-  *(_DWORD *)&this->__pad_AC[44] = 0; /*0x6d1c98*/
-  *(_DWORD *)&this->__pad_AC[48] = 0; /*0x6d1c9e*/
-  *(_DWORD *)&this->__pad_AC[52] = 0; /*0x6d1ca4*/
+  this->q0A8 = (IUnknown *)-1; /*0x6d1c2c*/
+  this->q0AC[0] = 0; /*0x6d1c36*/
+  this->q0AC[1] = 0; /*0x6d1c3c*/
+  *(_DWORD *)&this->q0AC[20] = 0; /*0x6d1c42*/
+  *(_DWORD *)&this->q0AC[4] = 0; /*0x6d1c48*/
+  *(_DWORD *)&this->q0AC[8] = 0; /*0x6d1c4e*/
+  *(_DWORD *)&this->q0AC[12] = 0; /*0x6d1c54*/
+  *(_DWORD *)&this->q0AC[16] = 0; /*0x6d1c5a*/
+  *(_DWORD *)&this->q0AC[24] = 1072693248; /*0x6d1c60*/
+  *(_DWORD *)&this->q0AC[28] = dword_B0CE08; /*0x6d1c6f*/
+  *(_DWORD *)&this->q0AC[32] = dword_B0CE0C; /*0x6d1c7b*/
+  *(_DWORD *)&this->q0AC[36] = dword_B0CE08; /*0x6d1c87*/
+  *(_DWORD *)&this->q0AC[40] = dword_B0CE0C; /*0x6d1c92*/
+  *(_DWORD *)&this->q0AC[44] = 0; /*0x6d1c98*/
+  *(_DWORD *)&this->q0AC[48] = 0; /*0x6d1c9e*/
+  *(_DWORD *)&this->q0AC[52] = 0; /*0x6d1ca4*/
   *(_DWORD *)&this->__pad_11F[3141] = 0; /*0x6d1caa*/
   *(_DWORD *)&this->__pad_11F[3145] = 0; /*0x6d1cb0*/
   *(_DWORD *)&this->__pad_11F[3149] = 0; /*0x6d1cb6*/
@@ -295,23 +295,23 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   *(_DWORD *)&this->__pad_11F[3193] = 0; /*0x6d1d18*/
   *(_DWORD *)&this->__pad_11F[3197] = 0; /*0x6d1d1e*/
   *(_DWORD *)&this->__pad_11F[3201] = 0; /*0x6d1d2a*/
-  this->Tactical_field_0xDA4 = (AbstractClass *)Timer::GetTicks(); /*0x6d1d35*/
-  *(_DWORD *)&this->__pad_DA8[4] = 0; /*0x6d1d3b*/
-  *(_DWORD *)&this->__pad_DA8[8] = 0; /*0x6d1d4e*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Tactical_vftable; /*0x6d1d54*/
+  this->qDA4 = (AbstractClass *)Timer::GetTicks(); /*0x6d1d35*/
+  *(_DWORD *)&this->qDA8[4] = 0; /*0x6d1d3b*/
+  *(_DWORD *)&this->qDA8[8] = 0; /*0x6d1d4e*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&Tactical_vftable; /*0x6d1d54*/
   *(_DWORD *)&this->Tactical_field_0x2[2] = &(void*)(void*)&Tactical_vftable; /*0x6d1d5a*/
   this->Tactical_field_0x8[0] = (int)&(void*)(void*)&Tactical_vftable; /*0x6d1d61*/
   this->Tactical_field_0xC[0] = (int)&(void*)(void*)&Tactical_vftable; /*0x6d1d68*/
-  memset(&this->__pad_AC[56], 0, 0xC80u); /*0x6d1d6f*/
+  memset(&this->q0AC[56], 0, 0xC80u); /*0x6d1d6f*/
   *(_WORD *)&this->__pad_10[20] = 0; /*0x6d1d77*/
-  *(_DWORD *)&this->__pad_34[112] = -1; /*0x6d1d7d*/
-  Matrix3x4::Identity((Matrix3x4 *)&this->Tactical_field_0xDB4); /*0x6d1d87*/
+  *(_DWORD *)&this->q034[112] = -1; /*0x6d1d7d*/
+  Matrix3x4::Identity((Matrix3x4 *)&this->qDB4); /*0x6d1d87*/
   dbl_B0CD88 = dbl_B0CD88; /*0x6d1d95*/
-  Matrix3x3::RotateX((int *)&this->Tactical_field_0xDB4, dbl_B0CD88); /*0x6d1d98*/
+  Matrix3x3::RotateX((int *)&this->qDB4, dbl_B0CD88); /*0x6d1d98*/
   dbl_B0CE98 = dbl_B0CE98; /*0x6d1da6*/
-  Matrix2D::Rotate((int *)&this->Tactical_field_0xDB4, dbl_B0CE98); /*0x6d1da9*/
+  Matrix2D::Rotate((int *)&this->qDB4, dbl_B0CE98); /*0x6d1da9*/
   v5 = 60.0 / dbl_B0CD78; /*0x6d1dbb*/
-  TacticalMap::MultiplyByScalar((float *)&this->Tactical_field_0xDB4, v5); /*0x6d1dc0*/
+  TacticalMap::MultiplyByScalar((float *)&this->qDB4, v5); /*0x6d1dc0*/
   this->u32_DE4 = 1082689742; /*0x6d1dca*/
   this->u32_DE8 = 1091078350; /*0x6d1dd4*/
   this->u32_DEC = 0; /*0x6d1dda*/
@@ -325,7 +325,7 @@ void TacticalMap::Construct(void *a1, void *a2, void *a3, void *a4, void *a5, vo
   this->u32_E0C = 1065353216; /*0x6d1e0e*/
   this->u32_E10 = 0; /*0x6d1e18*/
   g_TacticalClass_Instance = (LPPERSISTSTREAM)this; /*0x6d1e1e*/
-  return (int)this->__pad_0; /*0x6d1e26*/
+  return (int)this->q000; /*0x6d1e26*/
 }
 } // namespace gamemd
 // 0x6D2B60
@@ -379,11 +379,11 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v33 = *(_DWORD *)((char *)g_CraterPool + v7 + 12); /*0x6d2bbd*/
           v30 += aP2; /*0x6d2bc7*/
           v31 += a4; /*0x6d2bd0*/
-          v26 = DSurface_ViewBounds.field_4; /*0x6d2bda*/
+          v26 = DSurface_ViewBounds.q004; /*0x6d2bda*/
           v28 = *(Coord2D *)&DSurface_ViewBounds.field_0; /*0x6d2bde*/
           v25 = DSurface_ViewBounds.field_0; /*0x6d2be7*/
-          v23 = *(_DWORD *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d2bf5*/
-          v22 = *(_DWORD *)DSurface_ViewBounds.__pad_8; /*0x6d2bfa*/
+          v23 = *(_DWORD *)&DSurface_ViewBounds.q008[4]; /*0x6d2bf5*/
+          v22 = *(_DWORD *)DSurface_ViewBounds.q008; /*0x6d2bfa*/
           v8 = Coord2D::Sub(&v28, v29, &v25); /*0x6d2c05*/
           v9 = Rect::Construct(&v35, v8, v22, v23); /*0x6d2c0f*/
           v34[0] = *v9; /*0x6d2c18*/
@@ -443,10 +443,10 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
       v27 = 0; /*0x6d2d59*/
       v20 = Coord::To_ScreenRaw(v29, &v25); /*0x6d2d61*/
       v21 = v20[1] - this->u32_B4; /*0x6d2d81*/
-      *(_DWORD *)v28.__pad_0 = *v20 - this->u32_B0 + DSurface_ViewBounds.field_0 - 30; /*0x6d2d8d*/
-      v28.Coord2D_field_0x04 = (int)DSurface_ViewBounds.field_4 + v21 - 15; /*0x6d2d9c*/
+      *(_DWORD *)v28.q000 = *v20 - this->u32_B0 + DSurface_ViewBounds.field_0 - 30; /*0x6d2d8d*/
+      v28.q004 = (int)DSurface_ViewBounds.q004 + v21 - 15; /*0x6d2d9c*/
       if ( g_hWnd ) /*0x6d2da0*/
-        DSurface::Process((int)*v18, (int *)v28.__pad_0, (int *)a2); /*0x6d2db1*/
+        DSurface::Process((int)*v18, (int *)v28.q000, (int *)a2); /*0x6d2db1*/
       result = this->u32_E0; /*0x6d2db6*/
       ++v17; /*0x6d2dbc*/
       ++v18; /*0x6d2dbd*/
@@ -620,43 +620,43 @@ int TacticalMap::RenderAllObjects(int a2)
   char v110[12]; // [esp+FCh] [ebp-18h] BYREF
   char v111[12]; // [esp+108h] [ebp-Ch] BYREF
 
-  v2 = *(_DWORD *)DSurface_ViewBounds.__pad_8; /*0x6d8db7*/
+  v2 = *(_DWORD *)DSurface_ViewBounds.q008; /*0x6d8db7*/
   v3 = this->u32_B0; /*0x6d8dc4*/
   v4 = this->u32_B4; /*0x6d8dd5*/
-  v81 = v3 + *(_DWORD *)DSurface_ViewBounds.__pad_8 / 2; /*0x6d8ddb*/
-  v77 = *(_DWORD *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d8de5*/
+  v81 = v3 + *(_DWORD *)DSurface_ViewBounds.q008 / 2; /*0x6d8ddb*/
+  v77 = *(_DWORD *)&DSurface_ViewBounds.q008[4]; /*0x6d8de5*/
   v5 = (float *)((char *)this + 3556); /*0x6d8deb*/
-  *(float *)v83.__pad_0 = (float)v81; /*0x6d8df1*/
-  v82 = v4 - *(_DWORD *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d8df5*/
+  *(float *)v83.q000 = (float)v81; /*0x6d8df1*/
+  v82 = v4 - *(_DWORD *)&DSurface_ViewBounds.q008[4]; /*0x6d8df5*/
   v84 = 0; /*0x6d8e08*/
-  *(float *)&v83.IsoCoord_field_0x04 = (float)(v4 - *(_DWORD *)&DSurface_ViewBounds.__pad_8[4]); /*0x6d8e10*/
-  v6 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, (float *)this + 889, (float *)v83.__pad_0); /*0x6d8e14*/
+  *(float *)&v83.q004 = (float)(v4 - *(_DWORD *)&DSurface_ViewBounds.q008[4]); /*0x6d8e10*/
+  v6 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.q000, (float *)this + 889, (float *)v83.q000); /*0x6d8e14*/
   v83 = *v6; /*0x6d8e1b*/
-  v84 = *(_DWORD *)v6[1].__pad_0; /*0x6d8e2d*/
-  IDA_LOWORD(v7) = Math::RoundToInt(*(float *)v83.__pad_0); /*0x6d8e31*/
+  v84 = *(_DWORD *)v6[1].q000; /*0x6d8e2d*/
+  IDA_LOWORD(v7) = Math::RoundToInt(*(float *)v83.q000); /*0x6d8e31*/
   v86 = v7; /*0x6d8e3a*/
-  IDA_LOWORD(v8) = Math::RoundToInt(*(float *)&v83.IsoCoord_field_0x04); /*0x6d8e3e*/
+  IDA_LOWORD(v8) = Math::RoundToInt(*(float *)&v83.q004); /*0x6d8e3e*/
   v8 = v8; /*0x6d8e43*/
   v81 = v3 + 2 * v2; /*0x6d8e4a*/
-  *(float *)v83.__pad_0 = (float)v81; /*0x6d8e62*/
+  *(float *)v83.q000 = (float)v81; /*0x6d8e62*/
   v78 = v77 / 2 + v4; /*0x6d8e74*/
   v82 = v78; /*0x6d8e66*/
   v84 = 0; /*0x6d8e78*/
-  *(float *)&v83.IsoCoord_field_0x04 = (float)v78; /*0x6d8e80*/
-  v9 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, v5, (float *)v83.__pad_0); /*0x6d8e84*/
+  *(float *)&v83.q004 = (float)v78; /*0x6d8e80*/
+  v9 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.q000, v5, (float *)v83.q000); /*0x6d8e84*/
   v83 = *v9; /*0x6d8e8b*/
-  v84 = *(_DWORD *)v9[1].__pad_0; /*0x6d8e9d*/
-  IDA_LOWORD(v10) = Math::RoundToInt(*(float *)v83.__pad_0); /*0x6d8ea1*/
+  v84 = *(_DWORD *)v9[1].q000; /*0x6d8e9d*/
+  IDA_LOWORD(v10) = Math::RoundToInt(*(float *)v83.q000); /*0x6d8ea1*/
   v10 = v10; /*0x6d8ea8*/
   v81 = v3 - v2; /*0x6d8eae*/
   v82 = v78; /*0x6d8eb6*/
-  *(float *)v83.__pad_0 = (float)(v3 - v2); /*0x6d8eba*/
-  *(float *)&v83.IsoCoord_field_0x04 = (float)v78; /*0x6d8ecd*/
+  *(float *)v83.q000 = (float)(v3 - v2); /*0x6d8eba*/
+  *(float *)&v83.q004 = (float)v78; /*0x6d8ecd*/
   v84 = 0; /*0x6d8ed1*/
-  v12 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.__pad_0, v5, (float *)v83.__pad_0); /*0x6d8ed9*/
+  v12 = (IsoCoord *)TransformMatrix3x4Point((float *)v97.q000, v5, (float *)v83.q000); /*0x6d8ed9*/
   v83 = *v12; /*0x6d8ee0*/
-  v84 = *(_DWORD *)v12[1].__pad_0; /*0x6d8ef2*/
-  IDA_LOWORD(v13) = Math::RoundToInt(*(float *)&v83.IsoCoord_field_0x04); /*0x6d8ef6*/
+  v84 = *(_DWORD *)v12[1].q000; /*0x6d8ef2*/
+  IDA_LOWORD(v13) = Math::RoundToInt(*(float *)&v83.q004); /*0x6d8ef6*/
   v14 = v86; /*0x6d8efb*/
   v95 = 2 * (v10 - v86); /*0x6d8f03*/
   v15 = v8; /*0x6d8f07*/
@@ -789,16 +789,16 @@ int TacticalMap::RenderAllObjects(int a2)
               v46 = v46; /*0x6d9335*/
               v45 = v45; /*0x6d9343*/
               v49 = ZCoordToScreenY(v47); /*0x6d934a*/
-              *(_DWORD *)v94.__pad_0 = v45 / 256; /*0x6d935f*/
-              v94.Vector2_field_0x04 = v46 / 256 - v49; /*0x6d936e*/
+              *(_DWORD *)v94.q000 = v45 / 256; /*0x6d935f*/
+              v94.q004 = v46 / 256 - v49; /*0x6d936e*/
               v50 = g_TacticalClass_Instance[45]; /*0x6d9378*/
               v100[0] = g_TacticalClass_Instance[44]; /*0x6d9383*/
               v100[1] = v50; /*0x6d938a*/
               Vector2::Subtract(&v94, v100); /*0x6d9391*/
-              if ( *(int *)v94.__pad_0 >= -360 /*0x6d93ca*/
-                && *(int *)v94.__pad_0 <= dword_B0CE30 + 360
-                && v94.Vector2_field_0x04 >= -180
-                && v94.Vector2_field_0x04 <= dword_B0CE34 + 180 )
+              if ( *(int *)v94.q000 >= -360 /*0x6d93ca*/
+                && *(int *)v94.q000 <= dword_B0CE30 + 360
+                && v94.q004 >= -180
+                && v94.q004 <= dword_B0CE34 + 180 )
               {
                 v51 = *v18; /*0x6d93cc*/
                 *((_BYTE *)v18 + 153) = 1; /*0x6d93da*/
@@ -873,10 +873,10 @@ int TacticalMap::RenderAllObjects(int a2)
             v93 = v64; /*0x6d94e7*/
             if ( v63 >= -360 && v63 <= dword_B0CE30 + 360 && v64 >= -180 && v64 <= dword_B0CE34 + 180 ) /*0x6d9516*/
             {
-              v101[2] = *(_DWORD *)DSurface_ViewBounds.__pad_8; /*0x6d952a*/
+              v101[2] = *(_DWORD *)DSurface_ViewBounds.q008; /*0x6d952a*/
               v101[0] = DSurface_ViewBounds.field_0; /*0x6d9539*/
-              v101[1] = (int)DSurface_ViewBounds.field_4; /*0x6d9540*/
-              v101[3] = *(_DWORD *)&DSurface_ViewBounds.__pad_8[4]; /*0x6d9547*/
+              v101[1] = (int)DSurface_ViewBounds.q004; /*0x6d9540*/
+              v101[3] = *(_DWORD *)&DSurface_ViewBounds.q008[4]; /*0x6d9547*/
               BuildingClass::DrawVisible(v54, &v92, v101); /*0x6d957a*/
             }
             v14 = v86; /*0x6d957f*/
@@ -921,8 +921,8 @@ int TacticalMap::RenderAllObjects(int a2)
                 v69 = *v68; /*0x6d9683*/
                 v99 = v68[1]; /*0x6d9689*/
                 v92 = v68[2]; /*0x6d9697*/
-                *(_DWORD *)v83.__pad_0 = -60 * v99 / 2 + 60 * v69 / 2; /*0x6d96d0*/
-                v70 = *(_DWORD *)v83.__pad_0 / 256; /*0x6d96f7*/
+                *(_DWORD *)v83.q000 = -60 * v99 / 2 + 60 * v69 / 2; /*0x6d96d0*/
+                v70 = *(_DWORD *)v83.q000 / 256; /*0x6d96f7*/
                 v71 = (30 * v99 / 2 + 30 * v69 / 2) / 256; /*0x6d96fa*/
                 IDA_LOWORD(v72) = Math::RoundToInt((double)v92 * dbl_B0CD48 + (double)(v92 >= 728) + 0.5); /*0x6d9721*/
                 v81 = v70; /*0x6d972d*/
@@ -996,7 +996,7 @@ int TacticalMap::DrawOccupiedRegion()
     v10[0] = v2; /*0x6da209*/
     v10[1] = v4; /*0x6da20d*/
     v10[3] = v5 - v4 + 1; /*0x6da211*/
-    return (*(int (__thiscall **)(AudioStream *, CellStruct *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 /*0x6da21e*/
+    return (*(int (__thiscall **)(AudioStream *, CellStruct *, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2->q000 /*0x6da21e*/
                                                                              + 84))(
              g_DSurface_Hidden_2,
              &DSurface_ViewBounds,

@@ -79,6 +79,9 @@ struct SideClass {
     void * Init(void ** Block, char a2, void *a3, void *a4, void *a5, void *a6, void *a7, void *a8);
     wchar_t * GetName();
     static double AbstractClass(...);  // C2597 interim stub
+    unsigned int u32_A4;  // 0xA4 (offset-truth supply)
+    unsigned char u32_A5;  // 0xA5 (offset-truth supply)
+    unsigned int u32_A8;  // 0xA8 (offset-truth supply)
 };
 
 } // namespace gamemd

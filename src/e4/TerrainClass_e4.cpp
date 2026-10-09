@@ -275,9 +275,9 @@ LABEL_162:
       v54 = (TerrainTypeClass *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584);
       if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) == -1 )
         return 1;
-      *(unsigned int *)&v54->__pad_0[8] = CDTimerClass::TimeRemaining((*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
+      *(unsigned int *)&v54->q000[8] = CDTimerClass::TimeRemaining((*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
                                                                       + 4584));
-      *(unsigned int *)v54->__pad_0 = -1;
+      *(unsigned int *)v54->q000 = -1;
       ((ObjectClass *)(&((unsigned int *)(stru_87C374))[13428]))->PreDraw();
       return 1;
     case 0x19:
@@ -345,14 +345,14 @@ LABEL_162:
       IDA_HIBYTE(a5[13].referenceCount) = 1;
       if ( a5[2].nextArrayIndex > 0 )
       {
-        v50 = *(IUnknown **)(**(unsigned int **)&a5[2].__pad_0[12] + 156);
-        int v53 = *(unsigned int *)(**(unsigned int **)&a5[2].__pad_0[12] + 160);
-        v133 = *(unsigned int *)(**(unsigned int **)&a5[2].__pad_0[12] + 164);
+        v50 = *(IUnknown **)(**(unsigned int **)&a5[2].q000[12] + 156);
+        int v53 = *(unsigned int *)(**(unsigned int **)&a5[2].q000[12] + 160);
+        v133 = *(unsigned int *)(**(unsigned int **)&a5[2].q000[12] + 164);
         v52 = *(IUnknown **)((CellStruct *)(&v130))->Set((int)v50 / 256, v53 / 256);
         ((HouseClass *)(a5))->SetMapSeed( (int)(v52));
         a5[620].NeedsSaveOrLink = v52;
       }
-      if ( !*(unsigned int *)&a5[619].__pad_0[8] )
+      if ( !*(unsigned int *)&a5[619].q000[8] )
       {
         ((HouseClass *)((int)a5))->SetPrimaryTechBuilding();
         return 1;
@@ -674,9 +674,9 @@ LABEL_60:
       v86 = *(CCINIClass **)&((unsigned char *)&stru_B05488)[37532];
       do
       {
-        if ( *(unsigned int *)(*(unsigned int *)&v86->__pad_0[4 * v90] + 36) == *(unsigned int *)(a1 + 76) )
+        if ( *(unsigned int *)(*(unsigned int *)&v86->q000[4 * v90] + 36) == *(unsigned int *)(a1 + 76) )
         {
-          int v92 = *(unsigned int *)&v86->__pad_0[4 * v90];
+          int v92 = *(unsigned int *)&v86->q000[4 * v90];
           if ( v92 )
           {
             (*(void (**)(int, int))(*(unsigned int *)v92 + 32))(v92, 1);
@@ -716,17 +716,17 @@ LABEL_60:
     case 0x4C:
       if ( !a5 )
         return 1;
-      *(unsigned int *)&a5[614].__pad_0[4] = *(unsigned int *)(a1 + 144);
+      *(unsigned int *)&a5[614].q000[4] = *(unsigned int *)(a1 + 144);
       return 1;
     case 0x4D:
       if ( !a5 )
         return 1;
-      *(unsigned int *)&a5[614].__pad_0[8] = *(unsigned int *)(a1 + 144);
+      *(unsigned int *)&a5[614].q000[8] = *(unsigned int *)(a1 + 144);
       return 1;
     case 0x4E:
       if ( !a5 )
         return 1;
-      *(unsigned int *)&a5[614].__pad_0[12] = *(unsigned int *)(a1 + 144);
+      *(unsigned int *)&a5[614].q000[12] = *(unsigned int *)(a1 + 144);
       return 1;
     case 0x4F:
       if ( !a5 )
@@ -842,7 +842,7 @@ LABEL_60:
         return 1;
       do
       {
-        unsigned char * v104 = *(unsigned char **)&dword_A8020C->__pad_0[4 * v103];
+        unsigned char * v104 = *(unsigned char **)&dword_A8020C->q000[4 * v103];
         if ( v104[144] )
         {
           unsigned short * v105 = (unsigned short *)(*(int (**)(unsigned char *, char *))(*(unsigned int *)v104 + 440))( (unsigned char *)(v104), (char *)(v134));
@@ -913,7 +913,7 @@ LABEL_60:
         if ( ((ScenarioClass *)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Is_Waypoint_Valid(v66) )
         {
           ++v65;
-          *(unsigned int *)v67->__pad_0 = *((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), v66);
+          *(unsigned int *)v67->q000 = *((ScenarioClass*)(*(char **)&((unsigned char *)&HouseClass_Player)[29924]))->Get_Waypoint_Location( (unsigned int *)(&v130), v66);
           v67 = (AbstractClass *)((char *)v67 + 4);
           if ( v65 == 400 )
             break;
@@ -1028,7 +1028,7 @@ LABEL_290:
       do
       {
         --v111;
-        *(unsigned char *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * v111 + 4] + 508) = 1;
+        *(unsigned char *)(*(unsigned int *)&HouseClass_Array->q000[4 * v111 + 4] + 508) = 1;
       }
       while ( v111 >= 0 );
       return 1;
@@ -1215,13 +1215,13 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   v11 = *(_DWORD *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
   this->TerrainClass_field_rect_D0[2] += *(_DWORD *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
   this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
-  if ( *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
+  if ( *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->q028[28] != -1 ) /*0x71d0ef*/
   {
-    if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 /*0x71d108*/
-                              + 4 * *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
+    if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)stru_A83D50.q034 /*0x71d108*/
+                              + 4 * *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->q028[28])
                   + 681) )
     {
-      *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
+      *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->q028[28] = -1; /*0x71d123*/
       Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->powerup = 0; /*0x71d12b*/
     }
   }

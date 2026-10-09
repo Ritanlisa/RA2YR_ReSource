@@ -75,7 +75,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         this->vfptr3,
         v23,
         0,
-        *(_DWORD *)&dword_8871E0->__pad_C3C[876],
+        *(_DWORD *)&dword_8871E0->qC3C[876],
         0,
         1,
         0,
@@ -129,7 +129,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
                         v20,
                         v23,
                         0,
-                        *(_DWORD *)&dword_8871E0->__pad_C3C[876],
+                        *(_DWORD *)&dword_8871E0->qC3C[876],
                         0,
                         1,
                         0,
@@ -1268,19 +1268,19 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   int Instance; // ebx
 
   ToggleClass::Construct(aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
-  this->__pad_0[53] = aP9; /*0x71ff52*/
-  this->__pad_0[52] = a9; /*0x71ff5c*/
+  this->q000[53] = aP9; /*0x71ff52*/
+  this->q000[52] = a9; /*0x71ff5c*/
   this->a3 = a3; /*0x71ff5f*/
   this->M60 = a4; /*0x71ff62*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&TextButtonClass_vftable; /*0x71ff65*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&TextButtonClass_vftable; /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/
     if ( aP4 == -1 ) /*0x71ff7c*/
-      *(_DWORD *)&this->__pad_0[20] = Text::MeasureWidth(this->a3, 0) + 8; /*0x71ff8e*/
+      *(_DWORD *)&this->q000[20] = Text::MeasureWidth(this->a3, 0) + 8; /*0x71ff8e*/
     if ( aP5 == -1 ) /*0x71ff94*/
-      *(_DWORD *)&this->__pad_0[24] = *(_DWORD *)(Instance + 28) + 2; /*0x71ff9c*/
+      *(_DWORD *)&this->q000[24] = *(_DWORD *)(Instance + 28) + 2; /*0x71ff9c*/
   }
-  return (int)this->__pad_0; /*0x71ffa1*/
+  return (int)this->q000; /*0x71ffa1*/
 }
 } // namespace gamemd

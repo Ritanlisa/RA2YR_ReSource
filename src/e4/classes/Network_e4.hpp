@@ -202,6 +202,8 @@ int GetSendCount();  // 0x00540f90 g57w12-r raw-sync (def-form)
     static double ShutdownInterface(...);  // C2597 interim stub
     void Network_resetConnectionState();
     void Network_UpdateLatencyDisplay(ProgressScreenClass * aP1, ProgressScreenClass * aP2, ProgressScreenClass * aP3);
+    char[4] Network_field_0x22;  // 0x34 (ml)
+    char[4] __pad_2C;  // 0x44 (ml)
 };
 #endif  // GAMEMD_G2_NETWORK_FLAT_DEF
 } // namespace gamemd

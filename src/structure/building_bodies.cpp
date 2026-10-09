@@ -97,7 +97,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
         }
       }
       v10 = *(_BYTE **)(*(_DWORD *)(*((_DWORD *)ownerHouse + 150) + 4 * i) + 40); /*0x50b078*/
-      if ( v10[231] && !stru_A8B250.__pad_0[19] ) /*0x50b099*/
+      if ( v10[231] && !stru_A8B250.q000[19] ) /*0x50b099*/
         v15 = 0; /*0x50b09b*/
       v11 = *((_DWORD *)ownerHouse + 5353); /*0x50b0a0*/
       v12 = *((_DWORD *)ownerHouse + 5354); /*0x50b0a6*/
@@ -111,9 +111,9 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
           goto LABEL_55; /*0x50b179*/
         if ( !v16 ) /*0x50b181*/
           goto LABEL_54; /*0x50b181*/
-        if ( *(_DWORD *)&stru_87F5F0.__pad_E12[1438] == i ) /*0x50b18e*/
+        if ( *(_DWORD *)&stru_87F5F0.qE12[1438] == i ) /*0x50b18e*/
   LABEL_52:
-          *(_DWORD *)&stru_87F5F0.__pad_E12[1438] = -1; /*0x50b190*/
+          *(_DWORD *)&stru_87F5F0.qE12[1438] = -1; /*0x50b190*/
   LABEL_53:
         Sidebar::ActivateTab((int *)&stru_87F5F0.__pad_58[416], Status); /*0x50b19a*/
         goto LABEL_54; /*0x50b1a0*/
@@ -136,7 +136,7 @@ int SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse)
   LABEL_45:
       if ( v16 ) /*0x50b150*/
       {
-        if ( *(_DWORD *)&stru_87F5F0.__pad_E12[1438] == v14 ) /*0x50b158*/
+        if ( *(_DWORD *)&stru_87F5F0.qE12[1438] == v14 ) /*0x50b158*/
           goto LABEL_52; /*0x50b158*/
         goto LABEL_53; /*0x50b158*/
       }

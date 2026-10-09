@@ -48,7 +48,7 @@ void* g_VisibleSurfaceDescriptor = g_VisibleSurfaceDescStub;  // data: 0x87e8a4
 namespace gamemd
 {
 
-// ==== Surface abstract base (vtable 0x7E2198) — IDA-verified defaults ====
+// ==== Surface abstract base (q000 0x7E2198) — IDA-verified defaults ====
 // Pure-virtual dtor definition (required at link time even for abstract class).
 Surface::~Surface() = default;
 
@@ -57,7 +57,7 @@ Surface::Surface()
 {
 }
 
-// vtable [28]/[29] in XSurface hold the shared `xor eax,eax` stub 0x4C9150.
+// q000 [28]/[29] in XSurface hold the shared `xor eax,eax` stub 0x4C9150.
 int Surface::GetBytesPerPixel() const { return 0; }
 int Surface::GetPitch() const { return 0; }
 
@@ -77,7 +77,7 @@ int Surface::GetWidth() const { return Width; }
 // 0x411550: mov eax,[ecx+8]
 int Surface::GetHeight() const { return Height; }
 
-// XSurface vtable [33] = 0x411590 StubReturnFalse
+// XSurface q000 [33] = 0x411590 StubReturnFalse
 bool Surface::IsDSurface() const { return false; }
 
 REVERSE(0x421B60, "ClipRectIntersection: rect intersection", "None")

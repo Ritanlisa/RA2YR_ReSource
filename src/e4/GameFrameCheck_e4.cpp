@@ -47,16 +47,16 @@ int sub_6863E0(void * a1, void * a2)
   int v10; // [esp+0h] [ebp-18h]
 
   MouseClass::LoadCursors(); /*0x6863e3*/
-  if ( *(_DWORD *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.vfptr[35] /*0x686404*/
-    && *(_DWORD *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.vfptr[36] )
+  if ( *(_DWORD *)&DSurface_ViewBounds.q008[16] != stru_A8EB00.vfptr[35] /*0x686404*/
+    && *(_DWORD *)&DSurface_ViewBounds.q008[20] != stru_A8EB00.vfptr[36] )
   {
     Debug::Log(); /*0x68640b*/
     ChangeVideoMode(stru_A8EB00.vfptr[35], stru_A8EB00.vfptr[36]); /*0x68641f*/
   }
   stru_A8EB00.?[376] = 0; /*0x68642a*/
   byte_A8E378 = 0; /*0x686433*/
-  if ( *(_DWORD *)&stru_88732C.__pad_1C[32] ) /*0x68643a*/
-    Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], 0); /*0x68643e*/
+  if ( *(_DWORD *)&stru_88732C.q01C[32] ) /*0x68643a*/
+    Tooltip::Enable(*(Tooltip **)&stru_88732C.q01C[32], 0); /*0x68643e*/
   p_vtable2 = &dword_A8B230[43].vfptr2; /*0x686450*/
   if ( dword_A8B230[43].vfptr2 != (void *)-1 ) /*0x686459*/
   {
@@ -93,8 +93,8 @@ int sub_6863E0(void * a1, void * a2)
     Event::Dispatch(); /*0x68652f*/
   }
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x686536*/
-  if ( *(_DWORD *)&stru_88732C.__pad_1C[32] ) /*0x68654a*/
-    Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.vfptr[32]); /*0x686553*/
+  if ( *(_DWORD *)&stru_88732C.q01C[32] ) /*0x68654a*/
+    Tooltip::Enable(*(Tooltip **)&stru_88732C.q01C[32], stru_A8EB00.vfptr[32]); /*0x686553*/
   return TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x686562*/
 }
 }
@@ -154,11 +154,11 @@ AbstractClass * sub_686570(ObjectClass *a1)
   AudioMixer::Shutdown(); /*0x686698*/
   AudioQueue::DrainAll(); /*0x68669d*/
   EndBufferMixer((int *)g_MixerState, 0x4000); /*0x6866ad*/
-  result = DSurface_ViewBounds.__pad_8[16]; /*0x6866b2*/
-  if ( *(_DWORD *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.vfptr[35] ) /*0x6866c0*/
+  result = DSurface_ViewBounds.q008[16]; /*0x6866b2*/
+  if ( *(_DWORD *)&DSurface_ViewBounds.q008[16] != stru_A8EB00.vfptr[35] ) /*0x6866c0*/
   {
     result = stru_A8EB00.vfptr[36]; /*0x6866c8*/
-    if ( *(_DWORD *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.vfptr[36] ) /*0x6866cf*/
+    if ( *(_DWORD *)&DSurface_ViewBounds.q008[20] != stru_A8EB00.vfptr[36] ) /*0x6866cf*/
     {
       Debug::Log(); /*0x6866d6*/
       result = ChangeVideoMode(stru_A8EB00.vfptr[35], stru_A8EB00.vfptr[36]); /*0x6866ea*/

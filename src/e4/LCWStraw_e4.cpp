@@ -16,7 +16,7 @@ int LCWStraw::Dtor(void *a1)
   void *v3; // ecx
 
   v2 = (void *)*((_DWORD *)a1 + 5); /*0x552453*/
-  *(_DWORD *)a1->__pad_0 = &(void*)(void*)&LCWStraw_vftable; /*0x552456*/
+  *(_DWORD *)a1->q000 = &(void*)(void*)&LCWStraw_vftable; /*0x552456*/
   RA2_OPDEL(v2); /*0x55245d*/
   v3 = (void *)*((_DWORD *)a1 + 6); /*0x552462*/
   *((_DWORD *)a1 + 5) = 0; /*0x552465*/

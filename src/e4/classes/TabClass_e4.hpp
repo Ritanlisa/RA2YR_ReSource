@@ -51,6 +51,7 @@ struct TabClass {
     int DrawPower(void *a1);
     unsigned int * initStripClass();
     int DrawPower(void *a1, void * aGrey);
+    int TabClass_field_0x0;  // 0x0 (ml)
 };
 
 } // namespace gamemd

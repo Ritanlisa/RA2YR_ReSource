@@ -158,7 +158,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
           v7 = (Network *)**((_DWORD **)this + 9); /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
           *(_WORD *)&to.sa_data[10] = htons(v25); /*0x7b1453*/
-          if ( v7->__pad_14[0] ) /*0x7b1458*/
+          if ( v7->q014[0] ) /*0x7b1458*/
           {
             *(_DWORD *)to.sa_data = this->u32_3F2FC; /*0x7b146b*/
             *(_DWORD *)&to.sa_data[4] = this->u32_3F300; /*0x7b1471*/
@@ -171,7 +171,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
             *(_DWORD *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(_WORD *)&to.sa_data[8] = v28; /*0x7b14a6*/
           }
-          if ( sendto(this->u32_3F06C, &v7->__pad_14[8], (int)v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
+          if ( sendto(this->u32_3F06C, &v7->q014[8], (int)v7->q010 + 4, 0, &to, 14) == -1 /*0x7b14da*/
             && WSAGetLastError() != 10035 )
           {
             break; /*0x7b14da*/
@@ -188,13 +188,13 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
               ++v10; /*0x7b14f6*/
             }
           }
-          if ( v7->__pad_14[2] ) /*0x7b1505*/
+          if ( v7->q014[2] ) /*0x7b1505*/
           {
             RA2_OPDEL(v7); /*0x7b150d*/
           }
           else
           {
-            v7->__pad_14[1] = 0; /*0x7b1517*/
+            v7->q014[1] = 0; /*0x7b1517*/
             --this->u32_3F060; /*0x7b1522*/
           }
           if ( !this->LocalNode ) /*0x7b1528*/
@@ -251,8 +251,8 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   if ( v17 > 0 && Random::Range(&Randomizer_Global, 0, 99) <= v17 ) /*0x7b1626*/
     return 0; /*0x7b1717*/
   v18 = (NetworkID *)IPXInterfaceClass::processPacket(this); /*0x7b1633*/
-  *(_DWORD *)v18[2].__pad_0 = v12 - 4; /*0x7b1646*/
-  v18[3].NetworkID_field_0x04 = this->u32_3F074; /*0x7b1651*/
+  *(_DWORD *)v18[2].q000 = v12 - 4; /*0x7b1646*/
+  v18[3].q004 = this->u32_3F074; /*0x7b1651*/
   qmemcpy(&v18[4], (char *)this + 258168, v12 - 4); /*0x7b1657*/
   if ( (*(unsigned __int8 (__thiscall **)(IPXInterfaceClass *, NetworkID *))(this->Socket + 88))(this, v18) ) /*0x7b1665*/
   {
@@ -275,13 +275,13 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   Debug::Log(); /*0x7b1671*/
   if ( !byte_B7801C ) /*0x7b1680*/
     byte_B7801C = 1; /*0x7b1682*/
-  if ( IDA_BYTE2(v18[2].NetworkID_field_0x04) ) /*0x7b1689*/
+  if ( IDA_BYTE2(v18[2].q004) ) /*0x7b1689*/
   {
     RA2_OPDEL(v18); /*0x7b1691*/
   }
   else
   {
-    IDA_BYTE1(v18[2].NetworkID_field_0x04) = 0; /*0x7b16a5*/
+    IDA_BYTE1(v18[2].q004) = 0; /*0x7b16a5*/
     --this->u32_3F060; /*0x7b16b1*/
   }
   return 0; /*0x7b13e4*/
@@ -579,7 +579,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass *))(*(_DWORD *)this->__pad_0 /*0x7b2aae*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass *))(*(_DWORD *)this->q000 /*0x7b2aae*/
                                                                                              + 12))(this);
   }
   v7 = this->m_8; /*0x7b2ab1*/
@@ -760,7 +760,7 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
   void *v3; // eax
 
   v3 = *(void **)&this->m_1[3]; /*0x7b2b53*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b2b56*/
+  *(_DWORD *)this->q000 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b2b56*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x7b2b60*/
   {
     RA2_OPDEL(v3); /*0x7b2b68*/
@@ -770,6 +770,6 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
   this->m_8 = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
     RA2_OPDEL(); /*0x7b2b8b*/
-  return this->__pad_0; /*0x7b2b95*/
+  return this->q000; /*0x7b2b95*/
 }
 } // namespace gamemd

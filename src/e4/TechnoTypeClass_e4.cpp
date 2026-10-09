@@ -78,19 +78,19 @@ double TechnoTypeClass::Dispatch(unsigned int * aP1)
   switch ( (*(int (__thiscall **)(_DWORD *))(*aP1 + 44))(aP1) ) /*0x50be0f*/
   {
     case 3: /*0x50be0f*/
-      result = *(float *)(*(_DWORD *)&this->__pad_24[16] + 284); /*0x50be37*/
+      result = *(float *)(*(_DWORD *)&this->q024[16] + 284); /*0x50be37*/
       break; /*0x50be3d*/
     case 7: /*0x50be0f*/
       if ( aP1[898] == 5 ) /*0x50be47*/
-        result = *(float *)(*(_DWORD *)&this->__pad_24[16] + 292); /*0x50be4e*/
+        result = *(float *)(*(_DWORD *)&this->q024[16] + 292); /*0x50be4e*/
       else
-        result = *(float *)(*(_DWORD *)&this->__pad_24[16] + 288); /*0x50be5c*/
+        result = *(float *)(*(_DWORD *)&this->q024[16] + 288); /*0x50be5c*/
       break; /*0x50be54*/
     case 16: /*0x50be0f*/
-      result = *(float *)(*(_DWORD *)&this->__pad_24[16] + 276); /*0x50be1b*/
+      result = *(float *)(*(_DWORD *)&this->q024[16] + 276); /*0x50be1b*/
       break; /*0x50be21*/
     case 40: /*0x50be0f*/
-      result = *(float *)(*(_DWORD *)&this->__pad_24[16] + 280); /*0x50be29*/
+      result = *(float *)(*(_DWORD *)&this->q024[16] + 280); /*0x50be29*/
       break; /*0x50be2f*/
     default:
       result = 1.0; /*0x50be65*/
@@ -1366,7 +1366,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     aP0->Image = (int)SearchMIXFile(Buffer, 0); /*0x716c96*/
     INIClass::GetString(&dword_887180, (unsigned __int8 *)aP0->ImageFile, aCameo, aXxicon, Filename, 256); /*0x716c9c*/
     if ( !_strcmpi(Filename, aXxicon) ) /*0x716cab*/
-      INIClass::GetString(&dword_887180, (unsigned __int8 *)aP0->__pad_24, aCameo, aXxicon, Filename, 256); /*0x716cd4*/
+      INIClass::GetString(&dword_887180, (unsigned __int8 *)aP0->q024, aCameo, aXxicon, Filename, 256); /*0x716cd4*/
     _makepath(Buffer, 0, 0, Filename, Ext); /*0x716ced*/
     aP0->Cameo = 0; /*0x716cfe*/
     v35 = SearchMIXFile(Buffer, 0); /*0x716d04*/
